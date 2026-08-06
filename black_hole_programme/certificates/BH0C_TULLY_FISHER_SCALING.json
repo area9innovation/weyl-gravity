@@ -1,0 +1,36 @@
+{
+  "certificate": "BH0C_TULLY_FISHER_SCALING",
+  "kind": "conditional-scaling-law",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "report": "black_hole_programme/reports/bh0c-tully-fisher-scaling.md",
+  "builds_on": "BH0B_GENERAL_STATIC_SPHERICAL_COMPLETENESS, which forces B = c0/r + c1 + c2 r + c3 r^2",
+  "establishes": "that at the flattest point of the rotation curve implied by the FORCED metric, v^4 = 2 G M gamma c^2 exactly. The rotation curve v^2/c^2 = beta/r + gamma r/2 has a stationary point at r* = sqrt(2 beta / gamma), that point is a MINIMUM, and the value there is v^2/c^2 = sqrt(2 beta gamma). Consequences, all exact: with gamma UNIVERSAL the Tully-Fisher slope is exactly 4 in v (v^4 linear in M); with gamma carrying a piece proportional to M the slope doubles to v^4 proportional to M^2; and matching the observed v^4 = G M a_0 forces gamma = a_0 / (2 c^2).",
+  "the_reverse_physics_statement": "run the implication in the direction this programme cares about: the observed baryonic Tully-Fisher relation, COMBINED WITH the forced form of the metric, FORCES gamma to be a universal constant of nature rather than a per-galaxy parameter -- and identifies it with MOND's acceleration scale. That is a prediction rather than a fit, and it is falsifiable in a specific way: if fitting galaxies requires gamma to carry a mass-dependent piece, the predicted Tully-Fisher slope moves off the observed one.",
+  "nothing_is_fitted": "no galaxy data enters. What is computed is the algebraic consequence of the forced metric. The only observational input is the SHAPE of the Tully-Fisher relation (v^4 proportional to M), used as a premise in the conditional, and it is not this repository's measurement.",
+  "a_qualitative_departure_from_MOND": "beyond r* the conformal-gravity curve RISES -- verified, dv^2/dr at 2r* is 3 gamma / 8 > 0 -- whereas MOND gives asymptotically FLAT curves. The two theories therefore disagree at large radius, which is a discriminant rather than a detail. The only term available to bend the rise back down is -k r^2, and that is verified to be the only one.",
+  "checks": {
+    "verifier": "black_hole_programme/bh0c_tully_fisher_scaling.py, 14 checks, all PASS",
+    "the_exact_orbit_condition_is_reduced_not_assumed": "the locally measured circular velocity is v^2/c^2 = r B'/(2B) exactly; the weak-field form r B'/2 is derived from it by scaling ALL THREE parameters by eps and matching at first order, rather than being written down.",
+    "a_check_that_failed_first_and_why": "the first draft compared exact and weak-field at beta -> 0 with gamma and k left finite. That is not a weak field at all -- r gamma /(2(1 + gamma r)) is not r gamma / 2 -- and the check failed, correctly. The weak field is SMALL DEVIATION OF B FROM 1, which is what the eps scaling encodes.",
+    "controls": "with gamma = 0 there must be NO stationary radius, so the flat part is genuinely produced by the linear term and not by the Newtonian one; the curve must RISE beyond r*, which is the qualitative departure; the -k r^2 term must be the only thing that can bend it back; and the scaling law must genuinely depend on M.",
+    "both_slopes_are_computed": "the universal-gamma slope and the mass-dependent-gamma slope are BOTH computed (1 and 2 in M, i.e. 4 and 8 in v), so the discriminating power is exhibited rather than asserted."
+  },
+  "does_not_establish": [
+    "that v_min IS the observed flat velocity. The algebra gives the value at the MINIMUM of the rotation curve. Identifying that with the velocity an observer fits as 'flat' is an INTERPRETIVE step, not a theorem, and everything downstream inherits it. It is the natural reading -- the curve is flattest there -- but it is a modelling choice.",
+    "any numerical value. a_0 is not measured here, no fitted gamma from the literature is checked, and no comparison of magnitudes is performed. The identification gamma = a_0/(2 c^2) is an algebraic consequence of a premise, not a numerical agreement.",
+    "that gamma is SOURCED by baryonic mass. This is the same gap BH0B leaves and it is untouched: gamma remains a free coefficient of the VACUUM solution. The conditional says what gamma must BE if Tully-Fisher holds; it does not say what determines it. THIS REMAINS THE CRUX.",
+    "any fit to any galaxy, any rotation curve, or any comparison with dark-matter models.",
+    "that conformal gravity reproduces MOND. It does not: beyond r* the curves RISE where MOND's are flat. What is established is that the two agree on the Tully-Fisher SCALING at the flattest point, given a universal gamma, and disagree in shape away from it.",
+    "anything about the ghost, the quantum theory, or cosmology."
+  ],
+  "verification": {
+    "commands": [
+      "cd black_hole_programme",
+      "python3 bh0c_tully_fisher_scaling.py    # 14 checks, all PASS",
+      "# needs the mise interpreter: ~/.local/share/mise/installs/python/3.12.13/bin/python3"
+    ]
+  },
+  "next": "the matter-coupling question, which BH0B and this both leave open and which is now the ONLY thing between the conditional and a physical claim. gamma is forced to EXIST as a coefficient and forced to be UNIVERSAL if Tully-Fisher holds; nothing yet says what fixes its value or ties it to the matter distribution. Conformal invariance forbids a mass scale, so the question is sharp: what must be assumed about how baryonic matter enters a conformally invariant action for the Newtonian coefficient beta to be G M / c^2 at all? Flanagan 2006 argues the Newtonian limit does not come out right when matter is coupled conformally; that objection now sits directly on the load path and should be formalised rather than cited."
+}
