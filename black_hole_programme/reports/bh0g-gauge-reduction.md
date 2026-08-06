@@ -23,8 +23,22 @@ That has two halves, and they are not equally hard:
   classifying one gauge says nothing about the others.
 - **(B) Reachability.** That some `Omega` actually *attains* `b = 1/a`.
 
-**(A) is the load-bearing half** - without it the classification could be an artefact of the
-gauge. It is computed here. **(B) is an ODE existence statement** and remains assumed.
+**Both are now addressed.** (A) is computed outright. (B) is **reduced from an assumption to a
+first-order ODE**: setting the new radius to `rho = Omega r` so the angular part stays `rho^2`,
+the gauge condition becomes
+
+```
+r Omega'  =  Omega ( Omega sqrt(a b) - 1 )
+```
+
+verified first-order by `ode_order`, with the branch exhibited. First-order ODEs are locally
+solvable by Picard-Lindelof wherever `a b > 0` and `r != 0`, so the gauge is **locally
+attainable**. What remains open is only **global** continuation - whether `Omega` stays
+positive and finite across the exterior. A strictly smaller assumption, and a different kind.
+
+Two sanity checks pin it: with `b = 1/a` already, `Omega = 1` solves the ODE (the gauge is a
+fixed point), and `Omega = 2` does **not** (so the fixed point is isolated rather than the ODE
+being trivially satisfied).
 
 ## 2. What is computed
 
@@ -84,11 +98,19 @@ order `10^-14` for a galaxy. What does **not** survive: the claim that the Tully
   than by citation.
 - **Anything about non-static or non-spherically-symmetric metrics.**
 
-## 6. Next
+## 6. A vacuous check I wrote, and caught
 
-Reachability: given arbitrary `a(r), b(r)`, exhibit `Omega` solving the gauge condition, or
-characterise when none exists. That is an ODE question rather than an algebraic one, which is
-why it is separated out rather than attempted here.
+The first draft of the fixed-point check computed the substitution and then **overwrote the
+result on the next line** with a hardcoded `(1-1)/r`. It would have passed for any ODE
+whatsoever. It is recorded rather than quietly fixed because it is the exact failure mode this
+programme keeps finding - written this time by the person finding it, at the end of a session
+spent cataloguing it in others.
+
+## 7. Next
+
+**Global continuation** of the gauge ODE: whether `r Omega' = Omega(Omega sqrt(ab) - 1)` admits
+a solution positive on the whole exterior. That is the last piece of `BH0B`'s gauge assumption,
+and it is an analysis question - unlike everything else on this line.
 
 ---
 

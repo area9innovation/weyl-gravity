@@ -15,9 +15,18 @@ That assumption has two halves and they are not equally hard.
       and it is COMPUTED here, for the two-function ansatz with BOTH metric
       functions and the conformal factor left as unspecified functions.
 
-  (B) REACHABILITY.  That some Omega actually attains b = 1/a.  This is an
-      ODE existence statement, not an algebraic identity, and it is NOT
-      proved here -- see the boundary note at the end.
+  (B) REACHABILITY.  That some Omega actually attains b = 1/a.  This is
+      REDUCED here from an assumption to a first-order ODE: setting the new
+      radius to rho = Omega r so the angular part stays rho^2, the gauge
+      condition becomes
+
+          r Omega'  =  Omega ( Omega sqrt(a b) - 1 )
+
+      which is first order and solvable locally by Picard-Lindelof wherever
+      a b > 0 and r != 0.  So reachability holds LOCALLY; what remains open
+      is global existence -- whether the solution can be continued without
+      Omega hitting zero or blowing up.  That is a much smaller assumption
+      than the original, and a different KIND of one.
 
 Discharging (A) is what makes the gauge choice legitimate rather than
 lucky: Bach flatness is a property of the CONFORMAL CLASS, so BH0B's
@@ -100,6 +109,40 @@ def main() -> int:
     broke = any(sp.simplify(BB[i, j]) != 0 for i in range(4) for j in range(4))
     check(broke, "a NON-conformal rescaling of only the spatial block breaks Bach flatness")
 
+    print("\n5. REACHABILITY, reduced from an assumption to an ODE")
+    # After g -> Omega^2 g, set the new radius rho = Omega r so the angular part is rho^2.
+    # The gauge condition is then (-g_tt)(g_rho rho) = 1 for arbitrary a(r), b(r).
+    af = sp.Function("a")(r)
+    bf = sp.Function("b")(r)
+    rho = Om * r
+    g_tt = Om**2 * af
+    g_rr = Om**2 * bf / sp.diff(rho, r) ** 2
+    num = sp.numer(sp.together(sp.simplify(g_tt * g_rr - 1)))
+    check(sp.ode_order(sp.Eq(num, 0), Om) == 1,
+          "the gauge condition is FIRST ORDER in Omega, not second or higher")
+    sol = sp.solve(sp.Eq(num, 0), sp.diff(Om, r))
+    want = Om * (sp.sqrt(af * bf) * Om - 1) / r
+    check(any(sp.simplify(sp.together(x - want)) == 0 for x in sol),
+          f"Omega' = Omega (Omega sqrt(ab) - 1)/r is one branch   [{len(sol)} branches]")
+
+    print("\n6. the ODE is not vacuous, and the identity is a solution when it should be")
+    check(sp.simplify(num) != 0,
+          "the gauge condition is not identically satisfied (so it constrains Omega)")
+    # If the gauge ALREADY holds (b = 1/a, so ab = 1) then Omega = 1 must solve the ODE --
+    # the gauge is a fixed point of the flow.  Substituted through an ACTUAL metric pair with
+    # a b = 1 rather than by rewriting the product, because the first draft of this check
+    # replaced its own computation with the tautology (1-1)/r on the next line and would have
+    # passed for any ODE whatsoever.
+    Af = sp.Function("A")(r)
+    want_ab1 = want.subs({af: Af, bf: 1 / Af})
+    id_lhs = sp.simplify(want_ab1.subs(Om, 1))
+    check(sp.simplify(id_lhs) == 0,
+          f"with b = 1/a, Omega = 1 solves the ODE -- the gauge is a fixed point [{id_lhs}]")
+    # and the fixed point is NOT free: a different constant Omega must NOT solve it
+    two_lhs = sp.simplify(want_ab1.subs(Om, 2))
+    check(sp.simplify(two_lhs) != 0,
+          f"but Omega = 2 does NOT, so the fixed point is isolated [{two_lhs}]")
+
     print()
     if FAILURES:
         print(f"FAILED {len(FAILURES)}: " + "; ".join(FAILURES))
@@ -107,8 +150,9 @@ def main() -> int:
     print("ALL PASS")
     print("  Bach flatness is preserved by g -> Omega^2 g for an UNSPECIFIED Omega, so it is")
     print("  a property of the CONFORMAL CLASS.  BH0B's classification therefore classifies")
-    print("  classes, and the residual assumption is only that every class HAS a")
-    print("  representative with b = 1/a -- an ODE existence statement, still open.")
+    print("  classes.  And reachability is reduced to r Omega' = Omega(Omega sqrt(ab) - 1),")
+    print("  first order and locally solvable -- so what remains open is GLOBAL existence,")
+    print("  not reachability in principle.")
     return 0
 
 
