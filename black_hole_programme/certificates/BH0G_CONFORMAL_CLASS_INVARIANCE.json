@@ -1,0 +1,34 @@
+{
+  "certificate": "BH0G_CONFORMAL_CLASS_INVARIANCE",
+  "kind": "assumption-partially-discharged",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "report": "black_hole_programme/reports/bh0g-gauge-reduction.md",
+  "closes_partially": {
+    "declared_in": "BH0B_GENERAL_STATIC_SPHERICAL_COMPLETENESS",
+    "what_it_was": "BH0B's does_not_establish: 'that an arbitrary static spherically symmetric metric diag(-a, b, r^2, ...) can be brought to that gauge by a conformal transformation and a radial reparametrisation is the standard Mannheim-Kazanas argument and is ASSUMED here, not proved.'"
+  },
+  "establishes": "the LOAD-BEARING half of that assumption. The Bach tensor has conformal weight -2 in D = 4: B_ab[Omega^2 g] = Omega^(-2) B_ab[g], verified for the Mannheim-Kazanas family with beta, gamma, k symbolic and Omega an UNSPECIFIED function -- so it is every conformal transformation of the whole family at once. Consequently Bach flatness is a property of the CONFORMAL CLASS, and BH0B's classification classifies classes rather than a gauge-dependent slice.",
+  "what_remains_assumed": "REACHABILITY: that every conformal class of static spherically symmetric metrics HAS a representative with b = 1/a. That is an ODE existence statement rather than an algebraic identity and is NOT proved here. The assumption is now strictly smaller: it is no longer 'the classification might be gauge-dependent' but only 'every class has a representative of the assumed form'.",
+  "a_real_error_this_caught": "the first draft used B = 1 - 2 beta/r + gamma r - k r^2, the WEAK-FIELD Mannheim-Kazanas form, and check 3 FAILED: that form has w = 1 and u = 2 beta, so w^2 + 3 u gamma = 1 + 6 beta gamma, which is off the constraint surface BH0B derived. It is not Bach-flat unless beta gamma = 0. The check was right and the input was wrong. The same weak-field form had been used in BH0C, which is now corrected -- see BH0C.a_correction_found_by_a_later_check: the exact family gives v^4 = 2 G M gamma c^2 (1 - 3 beta gamma / 2), so BH0C's scaling law is the LEADING TERM of an exact expression and its slope is exactly 4 only in the limit beta gamma -> 0.",
+  "checks": {
+    "verifier": "black_hole_programme/bh0g_gauge_reduction.py, 6 checks, all PASS",
+    "omega_is_unspecified": "the conformal factor is a sympy Function, so the covariance statement quantifies over every conformal transformation rather than a sampled one.",
+    "non_vacuity": "a metric OFF the Bach-flat locus is required to have nonzero Bach, or covariance would be a statement about a tensor that vanishes anyway.",
+    "the_control_is_a_NON_conformal_rescaling": "rescaling only the spatial block -- which is not a conformal transformation -- is required to BREAK Bach flatness. Without it, check 3 would be satisfied by a computation insensitive to the metric altogether."
+  },
+  "does_not_establish": [
+    "reachability of the gauge. See what_remains_assumed. This is the half that is still an assumption, and it is an ODE existence question.",
+    "anything about radial reparametrisation. Only the conformal half is treated; the reparametrisation that sets the angular part to r^2 is not analysed.",
+    "novelty. Conformal covariance of the Bach tensor in D = 4 is classical. What is contributed is that it is computed here for the family with an unspecified conformal factor, so BH0B's gauge choice is justified inside this repository rather than by citation.",
+    "anything about non-spherically-symmetric or non-static metrics."
+  ],
+  "verification": {
+    "commands": [
+      "cd black_hole_programme",
+      "python3 bh0g_gauge_reduction.py    # 6 checks, all PASS"
+    ]
+  },
+  "next": "reachability, which is the remaining half: given arbitrary a(r), b(r), exhibit Omega solving the gauge condition, or characterise when none exists. That is an ODE question rather than an algebraic one, so it needs a different kind of argument from everything else on this line -- which is why it was separated out rather than attempted here."
+}
