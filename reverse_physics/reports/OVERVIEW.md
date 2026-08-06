@@ -726,6 +726,14 @@ stream's centre of gravity rather than one result among many:
   anomaly *factorises*, the kernel of the trace map is `span{C², E₄}`, and
   `RP-WEYL ⟺ RP-TRACELESS` finally has its reverse direction. **`N2` and `G5`
   need the same witness.**
+- **Four of those results are no longer computed at sampled metrics**
+  ([report](symbolic-families.md)). Nesting jets — outer variables the
+  coordinates, inner the metric parameters — makes an identity that returns zero
+  zero **as a polynomial**, true for every member of a family at once. `G1` (which
+  rested on **one** metric), `G3`, Weyl tracelessness and `N1` are upgraded.
+  `LDLᵀ` is the general symmetric matrix, so ten parameters span every component
+  of a symmetric `4×4`; `N1` reaches fewer, because three covariant derivatives
+  cost rank-6 jet arrays. Still a metric **family** near flat, not every metric.
 - **`RP-DIFF` has a witness** ([report](diff-independence.md)) — see below.
 - **A comparison ledger** ([report](OPENS-AND-CHALLENGES.md)) states what Weyl
   gravity opens and challenges relative to Einstein gravity as **one forced

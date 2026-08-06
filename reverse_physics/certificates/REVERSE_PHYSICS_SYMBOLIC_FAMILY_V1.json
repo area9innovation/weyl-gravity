@@ -5,7 +5,7 @@
     "LOCAL-ALGEBRAIC"
   ],
   "report": "reverse_physics/reports/symbolic-families.md",
-  "establishes": "Curvature over a metric family carrying SYMBOLIC PARAMETERS, so an identity that returns zero is zero AS A POLYNOMIAL -- true for every member of the family at once rather than at sampled fixtures. The family is g = L S L^T with L unit lower-triangular and S diagonal, both varying: LDL^T is the general symmetric matrix, so ten parameters span every independent component of a symmetric 4x4. THREE STANDING LEDGER CLAIMS are upgraded from sampled to polynomial: Weyl tracelessness, both G1 coordinate-vector identities, and G3 (the conformal weight of the Weyl tensor).",
+  "establishes": "Curvature over a metric family carrying SYMBOLIC PARAMETERS, so an identity that returns zero is zero AS A POLYNOMIAL -- true for every member of the family at once rather than at sampled fixtures. The family is g = L S L^T with L unit lower-triangular and S diagonal, both varying: LDL^T is the general symmetric matrix, so ten parameters span every independent component of a symmetric 4x4. FOUR STANDING LEDGER CLAIMS are upgraded from sampled to polynomial: Weyl tracelessness, both G1 coordinate-vector identities, G3 (the conformal weight of the Weyl tensor), and N1 (nabla^a B_ab = 0, the Noether/diffeomorphism identity of the Weyl action). N1 holds over a STRICTLY SMALLER sub-family than the other three -- see n1.",
   "the_caveat_it_attacks": "every curvature result in this stream is computed AT SPECIFIC METRICS -- a dozen exact rational fixtures, ranks taken over them. Strictly stronger than an unverified citation, strictly weaker than a theorem. 'Zero at twelve fixtures' is not 'zero for all metrics', and G1 in particular -- the coordinate vectors the entire D = 4 classification is expressed in -- rested on ONE metric.",
   "how": {
     "the_observation": "a jet already IS a truncated polynomial over its coefficient type, so the moment Jet<Rat> satisfies the Field vocabulary that Jet<T> demands of its coefficients, jets nest: Jet<Jet<Rat>>, outer variables the coordinates and inner the symbolic parameters. No new polynomial type and no second arithmetic to keep in step.",
@@ -35,28 +35,46 @@
       "claim": "G3: C^{a}_{bcd} is unchanged under g -> Omega^2 g",
       "was": "fixtures",
       "control": "R^{a}_{bcd} under the SAME transformation must come back CHANGED. Weyl and Riemann differ only by trace terms, so without this the check could be comparing something to itself -- which is how two earlier drafts failed"
+    },
+    {
+      "claim": "N1: nabla^a B_ab = 0, the divergence of the Bach tensor",
+      "was": "REVERSE_PHYSICS_WEYL_GEOMETRY_DISCHARGE_V1, against SPECIFIC METRICS",
+      "family": "N1NP = 3 parameters by default, NOT the full ten -- strictly smaller than the other three claims here. np = 4 separately verified at 359 s; np = 5 not determined.",
+      "control": "the NEGATIVE control is the load-bearing one: nabla^a R_ab = (1/2) nabla_b R does NOT vanish, so the SAME divergence machinery applied to Ricci must come back NONZERO. Without it, 'the divergence vanishes' is indistinguishable from a divergence routine that returns zero for everything -- the exact failure this stream has hit three times. Paired with a two-route cross-check: the jet-level Bach must reproduce the value-level bach_of at the base point."
     }
   ],
   "checks": {
     "ok": true,
-    "passed": 9,
-    "total": 9,
-    "gate": "curvature_symbolic_family_gate 9/9, 49.78 s, peak RSS 109 MB",
+    "passed": 13,
+    "total": 13,
+    "gate": "curvature_symbolic_family_gate 13/13, 106.17 s, peak RSS 100 MB, with N1 at N1NP = 3. Checks 1-12 run at the full ten parameters; only N1 runs smaller. An earlier revision of this gate was 12/12 in 39.92 s -- N1 is the whole of the difference.",
     "substrate": "tango/forge/lib/math/jetfield.forge; jexp and jcoef made pub in math/jet, purely additive -- jet_nterms, jet_nv and jet_deg were already public, so a caller could see that a jet HAS terms but not what they are, which is what a nested coefficient ring must inspect to police its own truncation. All 13 dependent gates compile clean; jet_mul_gate 14/14 and curvature_covderiv_gate 23/23 re-run unchanged."
   },
   "verification": {
     "substrate": "Forge, in the tango repository (1f1e3c16a).",
     "commands": [
       "cd tango/forge && export FORGE_LIB=$PWD/lib",
-      "forge -run examples/curvature_symbolic_family_gate.forge   # 9/9, 49.78 s"
+      "forge -run examples/curvature_symbolic_family_gate.forge   # 13/13, 106.17 s, 100 MB",
+      "# to reproduce the np = 4 result for N1: set N1NP() to 4, expect 13/13 in ~359 s"
     ]
   },
   "does_not_establish": [
     "'all metrics'. The family is general in the METRIC -- ten parameters span every component of a symmetric 4x4, and the unimodularity restriction of an earlier draft is gone -- but each slot carries a FIXED QUADRATIC PATTERN in x rather than a general function. This is a generic metric FAMILY near flat, not every metric.",
-    "the rest of the ledger. Three claims are upgraded. N1 (nabla^a B_ab = 0), the trace law N2 and the Noether generator count are NOT, and all three wait on the same missing piece -- the Euler operator over this ring -- because each is about the VARIATION rather than the curvature. That is one job, not three.",
+    "the rest of the ledger. FOUR claims are upgraded. The trace law N2 and the Noether generator count are NOT, and both still wait on the Euler operator over this ring because both are about the VARIATION rather than the curvature. N1 was previously grouped with them and should not have been -- it needed only the covariant derivative.",
     "anything about the identities that were already certain. Last-pair antisymmetry and the first Bianchi identity are verified here because they exercise the pipeline, not because they were in doubt; only tracelessness, G1 and G3 were standing ledger claims.",
     "a theorem for all metrics in the mathematician's sense. What is established is a polynomial identity over an explicitly parameterised family, which is a different and weaker object.",
-    "anything quantum, dynamical, or about the gauge algebra beyond what REVERSE_PHYSICS_NOETHER_IDENTITIES_V1 already records."
+    "anything quantum, dynamical, or about the gauge algebra beyond what REVERSE_PHYSICS_NOETHER_IDENTITIES_V1 already records.",
+    "N1 over the full family. N1 is verified over N1NP parameters, a STRICTLY SMALLER sub-family than the ten over which tracelessness, G1 and G3 hold. The gate demands and prints that number rather than accepting whatever passed.",
+    "the Einstein-metric known-answer control for the Bach tensor, which was named in advance in an earlier revision of this certificate and has NOT been built. See n1.a_control_named_in_advance_and_then_not_built."
   ],
-  "next": "THE BACH TENSOR over this family, which delivers N1 -- the Noether/diff content, and the gauge layer's own identity. It needs C as jets to enough degree plus cv_cov_val/cv_cov_grad, and it needs its OWN known-answer control before it can be believed: the Bach tensor VANISHES on Einstein metrics, which is the check that would catch a wrong index placement in exactly the way nothing caught the eight malformed contractions earlier in this stream."
+  "next": "N2 (the trace law) and the Noether generator count, which are the two that genuinely do need THE EULER OPERATOR over this nested ring -- a port of roughly four hundred lines, not a reuse, because the Euler operator manipulates jet indices directly rather than going through the Field vocabulary. The generator count is the one that matters: it would turn 'one generator at three fixtures' into 'one generator for every metric in the family', which is the actual reverse-physics statement about the gauge algebra. Separately outstanding and cheaper: an Einstein metric with nonvanishing Weyl, as a jet, to discharge the Bach known-answer control that was substituted rather than met.",
+  "n1": {
+    "what_it_is": "nabla^a B_ab = 0 -- the gauge layer's own identity, the Noether/diffeomorphism content of the Weyl action.",
+    "why_bach_of_could_not_deliver_it": "bach_of returns Bach at a POINT because it is built on cv_cov_val, and a point cannot be differentiated. N1 needs Bach as a FUNCTION, so the chain was rebuilt with the jet-level covariant derivative throughout: nabla on C^a_{bcd} twice, contract to B_ab, raise, nabla once more, contract rho = e.",
+    "the_certificate_predicted_the_wrong_blocker": "this certificate previously recorded N1, N2 and the generator count as 'one job, not three -- the Euler operator over this ring'. That is correct for N2 and the generator count, which are about the VARIATION. It is WRONG for N1, which is about the TENSOR: nabla^a B_ab needs only the covariant derivative, which already existed. One of the three was not blocked at all, and grouping them hid that.",
+    "only_the_constant_term_is_read_and_that_is_derived": "each covariant derivative costs one valid outer order. From g at outer degree XDIV = 5: Riemann and C are trustworthy to 3, nabla nabla C to 1, nabla B to 0. Reading a higher order would be reading truncation garbage, so the constant term in the coordinates is the ONLY order read -- derived from the chain, not chosen for convenience. It is still a full polynomial in the PARAMETERS.",
+    "a_control_named_in_advance_and_then_not_built": "the previous `next` field said the Bach tensor should be checked to VANISH ON EINSTEIN METRICS. It is NOT checked. An Einstein metric with nonvanishing Weyl (Schwarzschild) is not a member of this LDL^T family and building one as a jet is a separate job. What stands in its place is four structural known-answers on the Bach tensor -- traceless, symmetric, conformal weight -2, and agreement between two independent constructions. That is a SUBSTITUTION, not a discharge, and it is recorded as one rather than quietly dropped.",
+    "the_cost_ceiling_is_measured": "three covariant derivatives mean rank-6 jet arrays at outer degree 5, and the cost climbs in the parameter count far faster than the undifferentiated identities do: twelve checks at the FULL ten parameters cost about 26 s, while N1 alone at three costs about 60 s. N1NP = 3 is A BUDGET, NOT A WALL, and the distinction is the point. np = 4 passes all four N1 conditions in 359 s and IS RECORDED AS VERIFIED; it is not the default only because it takes the gate from ~106 s to ~6 min, against this repository's own rule that a scoped rail routinely exceeding a minute should be split rather than normalised. np = 5 was NOT DETERMINED -- its run was killed to stop an out-of-proportion search, and a kill is neither a pass nor a fail. Elsewhere in this gate a PREDICTED cost nearly became a silent cap, which is why every other check demands the full family; the difference here is that the number is measured, the higher passing value is on the record, and the undetermined one is named as undetermined rather than implied to be a limit.",
+    "the_search_for_the_ceiling_was_itself_disproportionate": "an earlier attempt swept np = 2,3,4,5,6 and then 3,4,5,6,8,10 on a SHARED machine under load average 12-18, spending well over twenty minutes to locate an exact wall. The claim never depended on the ceiling being maximal, only on the printed number being TRUE, so the search was cut. Recorded because the failure is one of proportion rather than correctness, and that kind is the easiest to repeat. A second defect in the first sweep: the source was edited mid-sweep, so the later runs' sed no longer matched and they silently measured the OLD parameter count -- concurrent measurement and editing invalidate each other."
+  }
 }

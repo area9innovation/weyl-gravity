@@ -57,7 +57,7 @@
       "cd tango/forge && export FORGE_LIB=$PWD/lib",
       "forge -run examples/curvature_euler_gate.forge   # 19/19, 6m19s"
     ],
-    "independent_reimplementation": "reverse_physics/noether_identities.py computes the same seven candidates in sympy, on DIFFERENT fixtures and a different arithmetic stack. IT HAS NOT RUN TO COMPLETION: the scalar-only sweep TIMED OUT at 1500 s (rc=124). So the cross-check is UNAVAILABLE, NOT PASSED -- a timeout is never a pass. What IS corroborated is one datum: a direct sympy probe on an independent fixture gives trace(B) = 0 and Ric.B = -57/16, matching the Forge identity/non-identity split for those two candidates. The remaining five are unconfirmed outside Forge.",
+    "independent_reimplementation": "reverse_physics/noether_identities.py computes the same seven candidates in sympy on different fixtures. It TIMED OUT at 1500 s and IS NOT BEING PURSUED -- a scoping decision taken deliberately, not an oversight. The boundary it leaves is unchanged and stands: this result rests on ONE implementation. Two of the seven candidates are corroborated by a direct sympy probe (trace(B) = 0 and Ric.B = -57/16 on an independent fixture); the other five are not confirmed outside Forge. The module is kept as a readable statement of the same question rather than as a rail.",
     "why_the_cross_check_is_slow": "not a like-for-like speed comparison: the sympy fixture carries symbolic entries in ALL six strictly-lower positions while the Forge run uses a lighter family, and sympy's cost here is symbolic expression swell rather than arithmetic. The honest reading is that the cross-check needs a cheaper fixture, not that Forge is 4x faster."
   },
   "does_not_establish": [

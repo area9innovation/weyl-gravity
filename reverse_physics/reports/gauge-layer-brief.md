@@ -22,7 +22,7 @@ the relevant work is spread across five directories that reverse physics has nev
 |---|---|
 | `RP-DIFF` independence | `REVERSE_PHYSICS_DIFF_INDEPENDENCE_V1`. On the enlarged carrier of local metric densities at derivative order zero, the lowest weight-zero degree `√−g h^{ab}h^{cd}` is 55-dimensional and **entirely Weyl-invariant**, while its Diff-invariant subspace is **exactly 0** — two independent exact-rational rank routines, with a control space of known dimension 1 found to be 1. All 55 are witnesses. |
 | the consequence | the derived derivative order `k = D/2` — the ledger's strongest result, *"four derivatives is a consequence, not an assumption"* — **silently requires `RP-DIFF`**. |
-| `N1` | `∇^a B_ab = 0`, **computed** against the repository's own Bach tensor, not imported. This *is* the Noether/diff content. |
+| `N1` | `∇^a B_ab = 0`, **computed** against the repository's own Bach tensor, not imported. This *is* the Noether/diff content. **Since generalized** — `REVERSE_PHYSICS_SYMBOLIC_FAMILY_V1` now holds it as a **polynomial identity** over a symmetric metric family rather than against specific metrics, over a smaller sub-family than `G1`/`G3` because three covariant derivatives are expensive. |
 | `N2` | the trace law `g^{mn} E_mn = 2(a + b + 3c) □R`, discharged. For `C²`, `a + b + 3c = 0`, so the Bach tensor is traceless — the Noether/Weyl content. |
 | `N3` | topological terms have identically vanishing variation. |
 

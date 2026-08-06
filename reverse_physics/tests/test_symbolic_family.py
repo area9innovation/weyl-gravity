@@ -48,13 +48,14 @@ class TestWhatIsActuallyClaimed(unittest.TestCase):
         self.assertIn("LDL^T is the general symmetric matrix", e)
         self.assertIn("ten parameters", e)
 
-    def test_exactly_three_ledger_claims_are_upgraded(self):
+    def test_exactly_four_ledger_claims_are_upgraded(self):
         claims = self.cert["claims_upgraded"]
-        self.assertEqual(len(claims), 3)
+        self.assertEqual(len(claims), 4)
         names = " ".join(c["claim"] for c in claims)
         self.assertIn("tracelessness", names)
         self.assertIn("G1", names)
         self.assertIn("G3", names)
+        self.assertIn("N1", names)
 
     def test_every_upgraded_claim_records_what_it_was_before(self):
         for c in self.cert["claims_upgraded"]:
@@ -158,20 +159,105 @@ class TestTheCostLesson(unittest.TestCase):
         self.assertIn("stopped at three", self.c["the_lesson"])
 
 
-class TestTheRemainingWorkIsOneJobNotThree(unittest.TestCase):
-    def test_the_three_open_claims_share_a_blocker(self):
+class TestTheRemainingWorkIsTwoJobsNotThree(unittest.TestCase):
+    """It was recorded as three sharing one blocker.  That was wrong: N1 needed
+    only the covariant derivative, which already existed, and grouping it with
+    the two variational claims hid that."""
+
+    def test_only_the_two_variational_claims_share_the_blocker(self):
         dne = " ".join(load()["does_not_establish"])
-        self.assertIn("N1", dne)
         self.assertIn("N2", dne)
         self.assertIn("Euler operator over this ring", dne)
-        self.assertIn("one job, not three", dne)
+        self.assertIn("about the VARIATION rather than the curvature", dne)
 
-    def test_the_next_step_names_its_own_known_answer_control_in_advance(self):
-        """The Bach tensor vanishes on Einstein metrics.  Naming the control
-        before building is what this stream learned to do the hard way."""
-        nxt = load()["next"]
-        self.assertIn("VANISHES on Einstein metrics", nxt)
-        self.assertIn("before it can be believed", nxt)
+    def test_the_wrong_grouping_is_recorded_rather_than_quietly_fixed(self):
+        """Append-only: a mispredicted blocker is a finding, not an
+        embarrassment to edit away."""
+        n1 = load()["n1"]
+        self.assertIn("wrong blocker", " ".join(n1.keys()).replace("_", " "))
+        self.assertIn("WRONG for N1", n1["the_certificate_predicted_the_wrong_blocker"])
+        dne = " ".join(load()["does_not_establish"])
+        self.assertIn("should not have been", dne)
+
+
+class TestN1(unittest.TestCase):
+    def setUp(self):
+        self.n1 = load()["n1"]
+        self.claim = [c for c in load()["claims_upgraded"]
+                      if "N1" in c["claim"]][0]
+
+    def test_the_negative_control_is_named_as_the_load_bearing_one(self):
+        """nabla^a R_ab = (1/2) nabla_b R does not vanish, so the same
+        machinery on Ricci must come back nonzero.  Without it, a divergence
+        routine that returns zero for everything passes."""
+        ctl = self.claim["control"]
+        self.assertIn("NONZERO", ctl)
+        self.assertIn("Ricci", ctl)
+        self.assertIn("returns zero for everything", ctl)
+
+    def test_it_is_recorded_as_holding_over_a_SMALLER_family(self):
+        """The one overstatement N1 invites: it sits in a certificate whose
+        headline number is ten, and it is not ten."""
+        self.assertIn("NOT the full ten", self.claim["family"])
+        self.assertIn("strictly smaller", self.claim["family"].lower())
+        self.assertIn("not determined", self.claim["family"])
+        dne = " ".join(load()["does_not_establish"])
+        self.assertIn("N1 over the full family", dne)
+
+    def test_the_ceiling_is_a_budget_not_a_wall_and_says_so(self):
+        """Every other check in that gate demands the full family because a
+        PREDICTED cost nearly became a silent cap.  N1 is the one exception, so
+        it has to carry the distinction explicitly or it reads as the same
+        failure."""
+        c = self.n1["the_cost_ceiling_is_measured"]
+        self.assertIn("A BUDGET, NOT A WALL", c)
+        self.assertIn("RECORDED AS VERIFIED", c)
+
+    def test_the_undetermined_value_is_named_as_undetermined(self):
+        """A killed run is neither a pass nor a fail.  Letting np=5 read as a
+        limit would be exactly the fail-closed law inverted."""
+        c = self.n1["the_cost_ceiling_is_measured"]
+        self.assertIn("NOT\nDETERMINED", c.replace(" ", "\n"))
+        self.assertIn("neither", c)
+        self.assertIn("a pass nor a fail", c)
+
+    def test_the_disproportionate_search_is_recorded_as_a_defect(self):
+        """Not a correctness failure -- a proportion failure, which is the kind
+        most likely to repeat because nothing goes red."""
+        d = self.n1["the_search_for_the_ceiling_was_itself_disproportionate"]
+        self.assertIn("SHARED machine", d)
+        self.assertIn("never depended on the ceiling being maximal", d)
+        self.assertIn("edited\nmid-sweep", d.replace(" ", "\n"))
+
+    def test_only_the_constant_term_is_read_and_the_reason_is_the_chain(self):
+        r = self.n1["only_the_constant_term_is_read_and_that_is_derived"]
+        self.assertIn("truncation garbage", r)
+        self.assertIn("polynomial in the PARAMETERS", r)
+
+
+class TestTheEinsteinControlWasSubstitutedNotMet(unittest.TestCase):
+    """A control named in advance and then not built is the single easiest
+    thing in this programme to lose silently.  It must survive as a debt."""
+
+    def test_it_is_recorded_as_not_built(self):
+        s = load()["n1"]["a_control_named_in_advance_and_then_not_built"]
+        self.assertIn("NOT checked", s)
+        self.assertIn("SUBSTITUTION, not a discharge", s)
+
+    def test_the_substitutes_are_enumerated_rather_than_gestured_at(self):
+        s = load()["n1"]["a_control_named_in_advance_and_then_not_built"]
+        for known in ("traceless", "symmetric", "conformal weight -2",
+                      "two independent constructions"):
+            self.assertIn(known, s)
+
+    def test_it_appears_in_does_not_establish_not_only_in_prose(self):
+        dne = " ".join(load()["does_not_establish"])
+        self.assertIn("Einstein-metric known-answer control", dne)
+        self.assertIn("has NOT been built", dne)
+
+    def test_the_debt_is_carried_forward_into_next(self):
+        self.assertIn("Einstein metric with nonvanishing Weyl",
+                      load()["next"])
 
 
 class TestNoNewTensorCodeIsTheHeadline(unittest.TestCase):

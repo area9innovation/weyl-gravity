@@ -1,7 +1,7 @@
 # Symbolic metric families are cheap, and that changes what is provable here
 
 **Certificate** `REVERSE_PHYSICS_SYMBOLIC_FAMILY_V1`
-**Rail** Forge, `tango/forge/examples/curvature_symbolic_family_gate.forge` — 9/9, 49.78 s
+**Rail** Forge, `tango/forge/examples/curvature_symbolic_family_gate.forge` — 13/13, 106.17 s
 **Substrate** `tango/forge/lib/math/jetfield.forge`
 **Dependency tag** `LOCAL-ALGEBRAIC`
 
@@ -48,7 +48,8 @@ lower-triangular. `jet_inv` still traps on a non-unit, which is the correct fail
 | 8 – 9 | 15 |
 | **10 — the full symmetric family** | **15** |
 
-Whole sweep, all six identities: **49.78 s, 109 MB.**
+Whole sweep, all six identities: **49.78 s, 109 MB.** With `N1` (§4) the gate is
+**13/13, 106.17 s, 100 MB** — `N1` alone is the whole of that increase.
 
 **`LDLᵀ` is the general symmetric matrix.** Six strictly-lower entries of `L` plus four
 diagonal entries of `S` is ten — exactly the number of independent components of a symmetric
@@ -138,10 +139,75 @@ ring without becoming a metric component. Its constant term is 1, so it is a uni
 exists in the truncated ring — the second place a genuine division is avoided by staying
 inside the units.
 
+### The fourth: `N1`, the divergence of the Bach tensor
+
+```
+nabla^a B_ab = 0
+```
+
+This is the **gauge layer's own identity** — the Noether/diffeomorphism content of the Weyl
+action, and the reason it propagates only the modes it does.
+`REVERSE_PHYSICS_WEYL_GEOMETRY_DISCHARGE_V1` establishes it **against specific metrics**. It
+is now a polynomial identity over the family.
+
+**`bach_of` could not deliver it, and the reason is worth stating.** That routine returns Bach
+at a *point*, because it is built on `cv_cov_val` — and a point cannot be differentiated. `N1`
+needs Bach as a **function**, so the whole chain was rebuilt with the jet-level covariant
+derivative: `∇` on `C^a{}_{bcd}` twice, contract to `B_{ab}`, raise, `∇` once more, contract
+`ρ = e`. Three covariant derivatives, hence `XDIV = 5` outer degree, hence rank-6 jet arrays.
+
+**The certificate predicted the wrong blocker.** `REVERSE_PHYSICS_SYMBOLIC_FAMILY_V1` recorded
+`N1`, `N2` and the generator count as *"one job, not three — the Euler operator over this
+ring"*. That is right for `N2` and the generator count, which are about the **variation**.
+It is **wrong for `N1`**, which is about the **tensor**: `∇^a B_ab` needs only the covariant
+derivative, which already existed. One of the three was not blocked at all, and grouping them
+hid that for longer than it should have.
+
+**Two controls, and the negative one is what makes the zero mean anything.**
+
+- `bach-jet == bach_of` — the jet-level Bach must reproduce the value-level Bach at the base
+  point. Two independent constructions of one tensor. This is the shape of check that caught
+  the jet-level Weyl tensor being built from the *mixed* Riemann instead of the all-lower one,
+  in about ninety seconds.
+- `ricci-div-nonzero` — the **negative** control. `∇^a R_ab = ½∇_b R` does **not** vanish, so
+  the *same* divergence machinery applied to Ricci must come back **nonzero**. Without it,
+  "the divergence vanishes" is indistinguishable from a divergence routine that returns zero
+  for everything, which is the exact failure this stream has now hit three separate times.
+
+**Only the constant term in the coordinates is read, and that is derived rather than
+convenient.** Each covariant derivative costs one valid outer order: from `g` at degree 5,
+Riemann and `C` are trustworthy to 3, `∇∇C` to 1, `∇B` to **0**. Reading a higher order would
+be reading truncation garbage.
+
+**A control that was named in advance and then *not* built.** The certificate said Bach should
+be checked to **vanish on Einstein metrics**. It is not checked here — an Einstein metric with
+nonvanishing Weyl (Schwarzschild) is not a member of this `LDLᵀ` family, and constructing one
+as a jet is a separate job. What stands in its place is four structural known-answers already
+on the Bach tensor — traceless, symmetric, conformal weight `−2`, and now agreement between
+two independent constructions. That is a substitution, not a discharge, and it is recorded as
+one.
+
+**`N1` holds over a smaller sub-family than the other three.** See §5.
+
 ## 5. What this does **not** establish
 
-- **Three claims are upgraded, not the ledger.** Weyl tracelessness, `G1` and `G3` are done;
-  `N1` (`∇^a B_ab = 0`), the trace law `N2` and the Noether generator count are not.
+- **Four claims are upgraded, not the ledger.** Weyl tracelessness, `G1`, `G3` and `N1` are
+  done; the trace law `N2` and the Noether generator count are not, and both still wait on the
+  Euler operator over this ring.
+- **`N1` holds over a smaller sub-family, and the gate says which.** Three covariant
+  derivatives mean rank-6 jet arrays at outer degree 5, and the cost climbs in the parameter
+  count far faster than the undifferentiated identities do: twelve checks at the **full ten**
+  cost about 26 s, `N1` alone at **three** costs about 60 s. So `N1` is verified over
+  `N1NP = 3` parameters, not ten — a **strictly smaller** family than tracelessness, `G1` and
+  `G3`. `np = 4` passes in 359 s and is on the record; `np = 5` was **not determined**.
+- **That number is a budget, not a wall,** and the distinction is load-bearing. Every other
+  check here demands the full family precisely because a *predicted* cost nearly became a
+  silent cap. What makes `N1 = 3` different is that it is measured, the higher passing value
+  is recorded, and the undetermined one is named as undetermined rather than implied to be a
+  limit.
+- **The printed label is derived from that one constant.** A hardcoded `np=1` reported the
+  wrong number for a run at `np=2` before it was caught. A receipt whose number is typed
+  rather than computed is fiction.
 - **The family is now general in the metric, not in the coordinate dependence.** The
   unimodularity restriction is gone — ten parameters span every component of a symmetric
   `4×4`. What remains is that each slot carries a **fixed quadratic pattern** in `x` rather
@@ -167,7 +233,7 @@ family"*, the actual reverse-physics statement about the gauge algebra.
 
 ```bash
 cd tango/forge && export FORGE_LIB=$PWD/lib
-forge -run examples/curvature_symbolic_family_gate.forge   # 9/9, 49.78 s, 109 MB
+forge -run examples/curvature_symbolic_family_gate.forge   # 13/13, 106.17 s, 100 MB
 ```
 
 Exact rational arithmetic throughout. No floating point, no tolerance.
