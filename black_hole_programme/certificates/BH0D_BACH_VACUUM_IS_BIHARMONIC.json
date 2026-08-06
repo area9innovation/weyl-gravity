@@ -1,0 +1,39 @@
+{
+  "certificate": "BH0D_BACH_VACUUM_IS_BIHARMONIC",
+  "kind": "structural-identification",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "report": "black_hole_programme/reports/bh0d-biharmonic.md",
+  "builds_on": [
+    "BH0B_GENERAL_STATIC_SPHERICAL_COMPLETENESS",
+    "BH0C_TULLY_FISHER_SCALING"
+  ],
+  "establishes": "that in spherical symmetry the linear operator BH0B isolated IS the BIHARMONIC operator. With nabla^2 f = f'' + 2 f'/r, applying it twice to an UNSPECIFIED B gives nabla^4 B = B'''' + 4 B'''/r, which is exactly (1/r)(r B)'''' -- verified by two independent routes as an identity in B and its derivatives. So BH0B's L = 0 is the equation nabla^4 B = 0: the Bach vacuum condition in the conformal gauge says B IS BIHARMONIC. The forced solution space {1/r, 1, r, r^2} is the radial biharmonic kernel, and r^3 and r^(-2) -- its nearest neighbours -- are verified NOT to lie in it.",
+  "why_it_matters": "BH0B showed the linear potential gamma r survives as one of four coefficients of a linear fourth-order equation. This says WHY that equation is linear and fourth-order: it is the biharmonic equation, and gamma r is the operator's POINT-SOURCE RESPONSE. For nabla^2 the point-source potential is 1/r and its coefficient is the mass -- that is Newton, and it is where beta = G M / c^2 comes from. For nabla^4 the corresponding object is r, because nabla^2 r = 2/r is harmonic away from the origin. So the linear term is not a term that merely SURVIVES the equation; it is the term the equation PRODUCES for a localised source. That is a considerably better reason for it than surviving an ansatz.",
+  "the_tension_this_sharpens": "the coefficient of the point-source response scales with whatever the fourth-order source integrates to. BH0C established that the baryonic Tully-Fisher relation forces gamma to be UNIVERSAL, and that a gamma carrying a piece proportional to M gives v^4 proportional to M^2 -- the wrong slope. So there is a FORK: either the fourth-order source integral is NOT proportional to baryonic mass, which requires a specific matter coupling, or the Tully-Fisher slope comes out wrong. Exposing that fork rather than smoothing it over is the point of computing this.",
+  "what_is_computed_and_what_is_argued": "EVERY check is an exact symbolic identity over Q, computed in Forge with symbolic differentiation over unknown functions. The step from 'r is the biharmonic analogue of 1/r' to 'gamma is proportional to the total source' is an ARGUMENT about Green's functions and is NOT computed: the multipole integral is not evaluated, and no Green's function is constructed. And the further step from 'the total source' to 'the baryonic mass' is precisely the matter-coupling question, which remains open. The certificate claims the identification, not the sourcing.",
+  "checks": {
+    "gate": "tango/forge/examples/weyl_biharmonic_source_gate.forge, 9/9",
+    "unspecified_function_not_a_fixture": "B is an opaque function head throughout; nabla^4 B is computed as an identity in B and its derivatives, so it holds for every C^4 function rather than at sampled coefficients.",
+    "two_routes_to_one_operator": "nabla^4 B is built by applying the radial Laplacian twice, and (1/r)(r B)'''' is built directly; they are required to agree. That is what makes the identification a computation rather than a restatement.",
+    "the_operator_must_exclude_things": "r^3 and r^(-2), the kernel's nearest neighbours, are both required NOT biharmonic. Without them, 'the kernel is {1/r, 1, r, r^2}' would be satisfied by an operator that annihilates everything -- the vacuous-control failure this programme keeps finding.",
+    "the_laplacian_is_pinned_first": "1/r is required harmonic AND nabla^2 r is required to equal 2/r, so a wrong Laplacian is caught before anything downstream is believed, and an operator that annihilates everything is excluded at the first step."
+  },
+  "a_substrate_gap_this_exposed": "the first run scored 7/9, and the two failures were a finding rather than an error. Forge's canon gives a confluent STRUCTURAL normal form but does not distribute products over sums -- a documented 'not a CAS' boundary -- so sym_eq could not decide an identity whose two sides differ by distribution. sym_expand and sym_eq_expand were added to lib/math/symbolic.forge as a deliberate opt-in extension leaving canon byte-identical for existing callers (tango 475aa8753). This is the second substrate gap this physics line exposed; the first was the absence of symbolic differentiation altogether (tango 360dd3fbc).",
+  "does_not_establish": [
+    "that gamma is proportional to baryonic mass. The point-source response is linear in r and its coefficient tracks the total fourth-order source; whether that total is the baryonic mass is the MATTER-COUPLING question and is untouched. Conformal invariance forbids a mass scale, which is what makes it hard.",
+    "any Green's function. None is constructed and no multipole integral is evaluated. The sourcing statement is an argument in the report, explicitly separated from the computed identities.",
+    "novelty. That the static spherically symmetric conformal-gravity equation reduces to a fourth-order Poisson problem is Mannheim-Kazanas 1989. What is contributed is the identification computed for an UNSPECIFIED function in this repository, with the kernel and its non-members verified, rather than cited.",
+    "anything about rotation curves, MOND, dark matter, or observation. No phenomenology.",
+    "the general two-function ansatz. Same gauge assumption BH0B carries.",
+    "anything about the ghost, stability, or the quantum theory."
+  ],
+  "verification": {
+    "commands": [
+      "cd tango/forge && export FORGE_LIB=$PWD/lib",
+      "forge -run examples/weyl_biharmonic_source_gate.forge    # 9/9"
+    ]
+  },
+  "next": "the matter coupling, now posed as sharply as it can be: does the fourth-order source integrate to something proportional to baryonic mass? If yes, gamma is proportional to M and BH0C says the Tully-Fisher slope is wrong. If no, the specific conformal matter coupling that avoids it is the physical content and should be exhibited. Flanagan 2006 argues the Newtonian limit fails when matter is coupled conformally; that objection sits exactly on this fork. Either branch is a result."
+}
