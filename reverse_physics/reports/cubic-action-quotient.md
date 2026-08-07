@@ -88,6 +88,12 @@ The lesson is the one this programme keeps relearning, from the other direction:
 added for one claim can falsify a **different** one. Controls are worth adding even where the
 claim already looks settled.
 
+And a second lesson, learned the hard way in the same sitting: a control that does not pass is
+not the same as a control that fails. This one was recorded as *failing* - including the strong
+claim that it failed even for a constant conformal factor, which would have meant broken index
+algebra - when the honest reading was *inconclusive*. Treating a saturated comparison as a
+refutation is "a timeout is never a pass" run backwards.
+
 Two control bugs of mine surfaced alongside it, both recorded rather than quietly fixed. The
 pass condition tested `weyl3_live` where it meant `weyl3_ok`, so the gate reported 10/10 while
 its control was failing. And the defect was first compared over *whole jets* when only orders up
@@ -127,13 +133,23 @@ quadratic result sharp.
 
 ## 7. Next
 
-**Repair the conformal defect machinery, then read the subspace.** The restriction to the
-conformally invariant subspace is implemented but its result is **withheld**: the Weyl-cubic
-control fails, so the machinery is not validated at density weight `-2` and any count from it
-would be an artefact. The `C^2` control passes (density weight 0, no weight factor applied) and
-the cubic one fails (density weight `-2`, weight factor applied), which localises the fault to
-the **weight-factor handling** rather than to the tensors. The gate prints the subspace number
-only when both controls pass.
+**Raise the inner degree, then read the subspace.** The restriction to the conformally invariant
+subspace is implemented but its result is **withheld** - and the reason is *inconclusive*, not
+negative. At inner degree 80 the constant-conformal-factor scan reports **INCONCLUSIVE**: the
+inner jets are **saturated**, so the coefficients being compared are the truncation cap speaking
+rather than the object. A saturated exact-identity test is not a refutation.
+
+The gate never guarded the **inner** degree at all. The outer degree is guarded everywhere -
+Riemann costs two orders, so results are read below `xd - 2` - but the parameter degree was
+guarded nowhere, and a cubic stresses it harder than a quadratic because every metric inverse is
+a geometric series that reaches the cap. It is guarded now, and the scans distinguish three
+states rather than two: vacuous, inconclusive, and genuinely no exponent.
+
+Established separately while diagnosing, each on its own: `sqrt(-g)` is exactly conformally
+covariant; the mixed raise reproduces `C^2` exactly, validating the partial-raise routine and
+the pairing convention; `sqrt(-g) C^2` is exactly conformally invariant; and all four algebraic
+symmetries of Riemann hold on the shared library, including pair exchange - a suspect, now
+exonerated.
 
 Then the **weight-6** sector, which is cost rather than method: the metric at degree 6 holds 924
 terms per component.
