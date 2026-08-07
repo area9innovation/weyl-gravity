@@ -44,12 +44,13 @@ what the repository already has; this is the cheap way not to.)
 
 ## 3. The result
 
-At **every derivative order up to and including two**, with **curvature degree ≤ 1** in the
+At **every derivative order up to and including two**, with **curvature degree ≤ 2** in the
 coefficient, the only vector-parameter generator is the **diffeomorphism** one. Order one is
 computed, order zero is computed, and order two is **empty by index parity** — see §4b.
 
-With the scalar sector's single generator, the gauge algebra at this order is `Diff ⋉ Weyl`,
-with nothing hidden.
+The scalar sector is settled at the *same* curvature degree, so both halves of the claim now
+stand at the same degree rather than one half-claim beside another: the gauge algebra at these
+orders is `Diff ⋉ Weyl`, with nothing hidden.
 
 ## 4. The negatives are the result
 
@@ -88,6 +89,27 @@ generator there either.
 
 Order zero is also the cheap sector: its adjoint is `T_{μν}^ρ E^{μν}` with no integration by
 parts — a **contraction** rather than a divergence.
+
+## 4bb. Curvature degree two, and the candidate it would have been easy to omit
+
+The scalar sector was already settled at curvature degree ≤ 2 while the vector sector stopped
+at ≤ 1, so the joint claim was lopsided. Three structurally distinct candidates close it —
+**not** three variations on one:
+
+| candidate | what carries the indices |
+|---|---|
+| `\|Ric\|² δ^ρ_μ δ^σ_ν` | a degree-2 **scalar** times the known generator |
+| `Ric^ρ_μ Ric^σ_ν` | both free indices carried by **Ricci** |
+| `R^ρ{}_μ{}^σ{}_ν` | built from **Riemann** beyond its Ricci trace |
+
+All three come back **nonzero**. No generator hides at degree 2 either.
+
+**The Riemann-built one is the point**, and the scalar sector is why. Its inherited
+seven-tensor list was built from `g` and `Ric` alone, and the candidates it *omitted* were
+exactly the ones contracting against Riemann — an omission that was caught and cost a
+correction. `E^{μν}` here **is** the Bach tensor, which sees the full Weyl tensor and not only
+its traces, so a Riemann-built candidate is precisely the kind that could carry a second
+generator. Leaving it out would have repeated a known omission knowingly.
 
 ## 4c. Triviality is excluded by construction, not asserted
 
@@ -131,9 +153,10 @@ and the generator count is **two**.
 
 ## 7. What this does not establish
 
-- **Completeness at derivative order three or above**, or at higher curvature degree. Orders
-  zero, one and two are closed; three is the next order index parity permits, and is untouched.
-  The boundary is real; the claim is a *lower bound on completeness*.
+- **Completeness at derivative order three or above, or curvature degree three or above.**
+  Derivative orders zero, one and two are closed, and curvature degrees up to two. Derivative
+  order three is the next one index parity permits, and is untouched. The boundary is real; the
+  claim is a *lower bound on completeness*.
 - **That the algebra is forced.** It establishes that nothing else appears at this order, which
   is the *evidence* for forcing, not the statement of it.
 - **Anything about the Stückelberg entanglement** (gap 2). `RP-DIFF` independence remains
@@ -142,6 +165,7 @@ and the generator count is **two**.
 
 ## 8. Next
 
-Derivative order **three** — the next order index parity permits — and higher curvature degree
-at order one. Gap 2 is likely structural, and the honest outcome there may remain *"recorded,
+Derivative order **three** — the next order index parity permits, and an expensive one, since
+it needs three covariant derivatives of the Bach tensor where the whole gate currently needs
+one. Gap 2 is likely structural, and the honest outcome there may remain *"recorded,
 not resolved"*; gap 1, the degrees `(3,1)` and `(4,2)`, is untouched.
