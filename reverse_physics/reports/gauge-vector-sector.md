@@ -44,9 +44,10 @@ what the repository already has; this is the cheap way not to.)
 
 ## 3. The result
 
-At **every derivative order up to and including two**, with **curvature degree ≤ 2** in the
-coefficient, the only vector-parameter generator is the **diffeomorphism** one. Order one is
-computed, order zero is computed, and order two is **empty by index parity** — see §4b.
+At **every derivative order up to and including three**, the only vector-parameter generator is
+the **diffeomorphism** one — at curvature degree ≤ 2 in the coefficient for orders zero and one,
+and at degree zero for order three. Orders zero, one and three are computed; order two is **empty
+by index parity** (§4b), and so is order four.
 
 The scalar sector is settled at the *same* curvature degree, so both halves of the claim now
 stand at the same degree rather than one half-claim beside another: the gauge algebra at these
@@ -151,11 +152,11 @@ overcounts**.
 Concretely: the naive degree-zero kernel has **three** elements (`δδ`, `δδ` transposed, `gg`)
 and the generator count is **two**.
 
-## 6b. Order three: attempted, and deliberately not claimed
+## 6b. Order three, and the witness that settles it by failing
 
-Order three is the next order index parity permits, and it is affordable for a reason worth
-recording: a degree-zero coefficient is built from `g`, `g^{-1}` and `δ`, so it is **covariantly
-constant** and passes straight through the derivatives —
+Order three is affordable for a reason worth recording: a degree-zero coefficient is built from
+`g`, `g^{-1}` and `δ`, so it is **covariantly constant** and passes straight through the
+derivatives —
 
 ```
 ∇∇∇( S E )  =  S · ∇∇∇E
@@ -166,30 +167,44 @@ is a contraction of it. `∇³B` is seventh order in the metric, so the jets run
 
 **Three positive controls hold.** Whenever the *innermost* derivative contracts with an index of
 `B`, the innermost operation is `∇·B`, which N1 says is zero. All three such contractions vanish
-identically through a rank-5 object — N1 differentiated twice. The chain computes what it claims.
+identically through a rank-5 object — N1 differentiated twice.
 
-**And then the rank.** Each of the three surviving contractions is separately **nonzero**.
-Reading that as *"no further symmetries"* would have been a wrong claim — the same
-each-nonzero-is-not-independent confusion that already forced the cubic action count from 7 down
-to 5. So the rank was computed by exact rational elimination, and it came back **2 of 3**: some
-nontrivial combination of them also vanishes.
+**The interesting part is the other three.** Each is separately **nonzero**, but their
+base-point **rank is 2 of 3** — which looks like a fourth symmetry. So the vanishing combination
+is *exhibited*, by carrying an identity through the elimination (the technique the cubic
+quotient uses), and rebuilt on the **full jets**, where a real relation would have to be the zero
+polynomial at every outer order.
 
-A rank read at the base point is a **lower bound**, so the true rank is 2 or 3 and the kernel is
-4 or 3 — one more than the manifest three, or exactly them. **Not decided, and nothing is claimed
-either way.** Settling it needs the vanishing combination *exhibited* and verified identically
-zero, the way the cubic quotient exhibits its kernel witnesses.
+**It is not.** One witness at the base point, **zero** verified identically.
 
-Even then, a fourth kernel element would be a **symmetry**, and a symmetry need not be a new
-**generator**: `Diff` composed with a second-order operator on the parameter is a symmetry at this
-order and is only a reparametrisation.
+That decides it, in the **opposite direction** to what the rank suggested. The base-point kernel
+is one-dimensional, spanned by that witness. Any identically-vanishing combination would also
+vanish at the base point, hence be proportional to the witness — and the witness demonstrably
+does not vanish identically. So none does: the true rank is **exactly 3**, the kernel is
+**exactly 3**, and those three are the contractions that vanish *because of* N1 and N2 — the
+differential reparametrisations of `Diff` and `Weyl`.
+
+**Nothing new at order three**, and the reparametrisation span never needed enumerating: the
+kernel is already exactly the set that vanishes for N1/N2 reasons.
+
+### Why this is worth stating as a method, not just a result
+
+Both wrong readings were live.
+
+- Reading the base-point rank of 2 as exact would have **invented a symmetry that is not there**.
+  It was an apparent degeneracy at one point, not a relation.
+- Reading *"each of the three is nonzero"* as sufficient would have reached the **right answer for
+  the wrong reason** — the same confusion that forced the cubic action count from 7 down to 5.
+
+A rank is a floor in one direction; a witness is what closes it in the other. Here it closes it
+by **failing** to verify.
 
 ## 7. What this does not establish
 
-- **Anything at derivative order three.** It was attempted (§6b): the controls hold and the rank
-  is at least 2, and that is all. Whether a fourth symmetry exists there, and whether it would be
-  a new generator rather than a reparametrisation, is **open**.
-- **Completeness at curvature degree three or above.** Derivative orders zero, one and two are
-  closed, and curvature degrees up to two. The claim is a *lower bound on completeness*.
+- **Completeness at derivative order five or above**, or at curvature degree ≥ 1 *at order three*.
+  Orders zero through three are closed (two and four by index parity), but order three only at
+  curvature degree zero, where the covariant-constancy shortcut applies. The claim is a *lower
+  bound on completeness*.
 - **That the algebra is forced.** It establishes that nothing else appears at this order, which
   is the *evidence* for forcing, not the statement of it.
 - **Anything about the Stückelberg entanglement** (gap 2). `RP-DIFF` independence remains
@@ -198,8 +213,8 @@ order and is only a reparametrisation.
 
 ## 8. Next
 
-**Exhibit the order-three kernel** — extract the vanishing combination and verify it is the zero
-polynomial, converting the rank floor into an equality. Then enumerate the reparametrisation span
-at order three and ask whether the kernel is spanned by it; only then does order three say
-anything about generators. Gap 2 is likely structural, and the honest outcome there may remain *"recorded,
+**Curvature-weighted coefficients at order three**, where the covariant-constancy shortcut fails
+— the coefficient no longer passes through the derivatives, so `∇³E` can no longer be computed
+once and reused. Substantially more expensive than the degree-zero case settled here. Gap 2 is
+likely structural, and the honest outcome there may remain *"recorded,
 not resolved"*; gap 1, the degrees `(3,1)` and `(4,2)`, is untouched.
