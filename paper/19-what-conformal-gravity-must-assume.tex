@@ -35,7 +35,7 @@ the basis of a long-standing proposal to fit galactic rotation curves without
 dark matter.  We ask a reverse-physics question about it: not whether the
 fits succeed, but \emph{what must be assumed for them to mean anything}.
 
-Seven results, each an exact symbolic computation with machine-checked
+Eight results, each an exact symbolic computation with machine-checked
 controls.  (i) The linear term is not an ansatz: in the conformal gauge the
 Bach vacuum equation is exactly the \emph{biharmonic} equation
 \(\nabla^{4}B=0\), so \(\gamma r\) is the point-source response of the
@@ -71,14 +71,19 @@ conformal invariant while \(\gamma\) is not.  Two frames with the same mass
 carry different \(\gamma\), so \(\gamma\) is \emph{not a function of the
 mass}.
 
-The conclusion is therefore sharper than a coincidence in need of
-explanation.  Universality of \(\gamma\) is not in tension with the
-structure, because \(\gamma\) cannot depend on mass at all; it is the
-statement that one boundary datum on the symmetry-breaking sector is common
-to every galaxy while the mass varies freely.  That is consistent, it is not
-delivered by the gravitational theory, and it is the whole of what a
-conformal-gravity rotation-curve fit assumes.  We do not adjudicate it.  We
-locate it, and the location is one number.
+(viii) Constructing the Green's function of that biharmonic operator and
+evaluating both multipole integrals, \(\gamma\) is the \emph{zeroth} moment of
+the source and is therefore proportional to the total mass, while the
+Newtonian coefficient is the \emph{second} moment and tracks \(M\langle
+r^{2}\rangle\) rather than \(M\).
+
+Results (vii) and (viii) are not in conflict; they decompose \(\gamma\) into a
+boundary datum plus a sourced piece, \(\gamma=\gamma_{0}+\gamma_{*}(M)\).  The
+universality that (ii) requires is then neither automatic nor contradictory
+but an \emph{inequality}, \(\gamma_{*}(M)\ll\gamma_{0}\) across the sample.
+That is the sharpest form the assumption takes, and unlike everything before
+it the statement is checkable against data we do not hold.  We do not
+adjudicate.  We locate---and the location is one number and one inequality.
 \end{abstract}
 
 \section{The question}
@@ -461,6 +466,57 @@ universality is structurally natural rather than a fine-tuning of gravity.
 Unfavourably, the explanation of rotation curves is imported from the
 symmetry-breaking sector rather than produced by gravity.
 
+\section{What the source produces}
+\label{sec:moments}
+
+\S\ref{sec:transfer} works entirely in the vacuum.  Theorem~\ref{thm:biharm}
+identified the governing operator; the multipole integrals it invites were not
+evaluated there.
+
+\begin{theorem}[The two moments]
+\label{thm:moments}
+Write the sourced equation as \(\nabla^{4}B=f\), with \(f\) proportional to
+\(T^{0}{}_{0}-T^{r}{}_{r}\)---the combination Theorem~\ref{thm:trace} already
+uses.  From \(\nabla^{2}r=2/r\) the biharmonic Green's function is
+\(-|x-x'|/8\pi\), whose angular average over a shell is \(r+r'^{2}/3r\)
+outside and \(r'+r^{2}/3r'\) inside.  Hence for a compact spherically
+symmetric source, outside it,
+\[
+  \gamma \;=\; -\tfrac12\!\int\! f(r')\,r'^{2}\,\dd r',
+  \qquad
+  \beta \;=\; -\tfrac16\!\int\! f(r')\,r'^{4}\,\dd r'.
+\]
+\end{theorem}
+
+So \(\gamma\) is the \emph{zeroth} moment of the source and \(\beta\) the
+\emph{second}.  With \(f\) tracking the density, \(\gamma\propto M\) while the
+Newtonian coefficient tracks \(M\langle r^{2}\rangle\).  For a uniform ball,
+in closed form, \(\gamma=-M/8\pi\) and \(\beta/\gamma=R^{2}/5\); that the
+ratio is a length squared is what makes ``\(\beta\) is not a mass'' a
+computation rather than a reading of the integrand.  A shell and a ball of
+equal mass give the same \(\gamma\) and different \(\beta\).
+
+This resolves the fork left by Theorem~\ref{thm:biharm} on the branch
+Theorem~\ref{thm:tf} flags: \(\gamma\propto M\) gives \(v^{4}\propto M^{2}\).
+It does not end the programme, because Corollary~\ref{cor:notmass} supplies
+the other term.
+
+\begin{corollary}[The assumption is an inequality]
+\label{cor:inequality}
+\(\gamma=\gamma_{0}+\gamma_{*}(M)\), with \(\gamma_{0}\) the boundary datum of
+Corollary~\ref{cor:notmass} and \(\gamma_{*}\) the sourced piece of
+Theorem~\ref{thm:moments}.  Theorem~\ref{thm:tf} requires the total to be one
+constant across galaxies of widely differing mass, hence
+\(\gamma_{*}(M)\ll\gamma_{0}\) throughout the sample.
+\end{corollary}
+
+Unlike every statement before it, that one is checkable against observation.
+We do not check it: no galaxy data enters this paper.
+
+Separately, the second-moment result for \(\beta\) is the shape of Flanagan's
+objection~\cite{Flanagan2006} arrived at from the source side rather than the
+field side.  We exhibit it; we do not argue from it.
+
 \section{What this paper does not establish}
 
 \begin{itemize}\itemsep2pt
@@ -473,13 +529,20 @@ symmetry-breaking sector rather than produced by gravity.
   observational inputs are the \emph{shape} of the Tully--Fisher relation,
   used as a premise in Theorem~\ref{thm:tf}, and that galaxies are
   pressureless, used in \S\ref{sec:matter}.  Neither is our measurement.
-\item \textbf{No interior.}  Theorem~\ref{thm:admissible} closes the
-  \emph{exterior}: the pair is an exact solution of the coupled system in
-  vacuum.  What is not done is the interior, and the matching that would fix
-  \(C\) from a given configuration; that needs a matter model we do not have,
-  and it is what remains of ``forced versus sourced''.  Nor is it shown that a
-  cosmological boundary condition \emph{can} deliver a universal \(C\).  The
-  assumption is named, not discharged.
+\item \textbf{No interior solution, and no numbers.}
+  Theorem~\ref{thm:admissible} closes the exterior and
+  Theorem~\ref{thm:moments} gives the exterior coefficients as functionals of
+  the source, but the interior field and the scalar's profile inside matter
+  are not solved.  Nor is it shown that a cosmological boundary condition
+  \emph{can} deliver a universal \(\gamma_{0}\).  Above all,
+  Corollary~\ref{cor:inequality} is not evaluated: whether
+  \(\gamma_{*}\ll\gamma_{0}\) holds for real galaxies is observational and we
+  do not measure it.  The assumption is named and sharpened, not discharged.
+\item \textbf{Two matter descriptions, not reconciled.}
+  Theorem~\ref{thm:frame} takes a mass generated by a Yukawa coupling,
+  \(m=hS\); Theorems~\ref{thm:trace} and \ref{thm:moments} use a perfect
+  fluid.  Both are standard and both are entered as premises.  Whether they
+  are compatible is a matter-sector question we do not address.
 \item \textbf{No resolution of the Flanagan--Mannheim dispute}
   \cite{Flanagan2006,Mannheim2006} over the Newtonian limit under conformal
   matter coupling.  Theorem~\ref{thm:frame} narrows it to one premise and
@@ -515,13 +578,14 @@ Thm.~\ref{thm:vev}      & \cert{BH0F\_CONSTANT\_VEV\_FORCES\_GAMMA\_ZERO}       
 Thm.~\ref{thm:action}   & \cert{BH0H\_UNIVERSALITY\_TRANSFER}                   & 18 \\
 Thm.~\ref{thm:frame}    & \cert{BH0I\_WHICH\_FRAME\_MATTER\_FOLLOWS}            & 13 \\
 Thm.~\ref{thm:admissible} & \cert{BH0J\_THE\_ASSUMPTION\_NAMED}                 & 12 \\
+Thm.~\ref{thm:moments}  & \cert{BH0K\_THE\_SOURCE\_MOMENTS}                     & 22 \\
 \bottomrule
 \end{tabularx}
 \end{center}
 
 Theorems~\ref{thm:complete}, \ref{thm:vev}, \ref{thm:action},
-\ref{thm:frame} and \ref{thm:admissible}, and \S\ref{sec:gauge}, are computed
-in \textsc{sympy}; Theorems~\ref{thm:biharm} and \ref{thm:trace} are
+\ref{thm:frame}, \ref{thm:admissible} and \ref{thm:moments}, and
+\S\ref{sec:gauge}, are computed in \textsc{sympy}; Theorems~\ref{thm:biharm} and \ref{thm:trace} are
 computed in Forge over exact rationals with symbolic differentiation of
 unspecified functions.  Theorem~\ref{thm:complete}'s conclusion carries an
 independent Forge rail using a different arithmetic stack, representation and
