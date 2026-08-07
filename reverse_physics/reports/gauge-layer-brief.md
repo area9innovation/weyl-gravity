@@ -1,6 +1,8 @@
 # The gauge layer: what exists, and the one question nobody has asked
 
-**Status** brief — scoping, not a result
+**Status** brief — scoping. **The vector half of §3 is now a result**: see
+`gauge-vector-sector.md` and `REVERSE_PHYSICS_GAUGE_VECTOR_SECTOR_V1`. This file remains the
+scoping document for what is still open.
 **Dependency tag** `LOCAL-ALGEBRAIC` (the computation it specifies would be)
 
 > **First finding, and it is a correction.** The work item's `objective` says the gauge
@@ -49,6 +51,12 @@ the relevant work is spread across five directories that reverse physics has nev
 3. **The reverse-physics question has never been asked of the gauge structure.** For the
    action and the field equations the stream asked *"what is this equivalent to?"* For the
    gauge layer it asked only *"is `RP-DIFF` independent?"* — a strictly weaker question.
+   **PARTLY DISCHARGED.** Both sectors of the generator span are now computed at bounded
+   order: the **scalar** one by the generator count in `REVERSE_PHYSICS_SYMBOLIC_FAMILY_V1`
+   (exactly one generator, complete ten-element list), and the **vector** one by
+   `REVERSE_PHYSICS_GAUGE_VECTOR_SECTOR_V1` (only the diffeomorphism generator, with three
+   curvature-weighted negatives that all fail). What remains is higher order — see §8 of
+   `gauge-vector-sector.md`.
 
 ## 3. The question worth asking
 
@@ -78,7 +86,10 @@ with **constant** coefficients over metric-built tensors, impose the condition a
 metrics, and take the kernel over ℚ. That is the stream's standard rank idiom, and the
 Euler operator needed to apply it already exists and is now chart-audited (15/15).
 
-**The trap, and it would produce a wrong count.** The gauge symmetries form a **module over
+**The trap, and it would produce a wrong count** — and it is **worse than stated here**; the
+vector-sector computation found that the quotient must be by *differential* operators on the
+parameter, not merely by function multiplication, because `g_{μν}(∇·ξ)` is the Weyl generator
+with `σ = ∇·ξ`. See §6 of `gauge-vector-sector.md`. The gauge symmetries form a **module over
 functions of the fields**, not a vector space. `Δ_{μν} = g_{μν}σ` is the Weyl generator; but
 `Δ_{μν} = g_{μν} R σ` also satisfies the condition, and is **not a new symmetry** — it is
 the same generator with the parameter reparametrised, `σ ↦ Rσ`. A naive kernel dimension

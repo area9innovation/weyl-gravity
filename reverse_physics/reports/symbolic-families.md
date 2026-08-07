@@ -1,7 +1,8 @@
 # Symbolic metric families are cheap, and that changes what is provable here
 
 **Certificate** `REVERSE_PHYSICS_SYMBOLIC_FAMILY_V1`
-**Rail** Forge, `tango/forge/examples/curvature_symbolic_family_gate.forge` — 15/15, 89.53 s
+**Rail** Forge, `tango/forge/examples/curvature_symbolic_family_gate.forge` — 16/16 (15/15 when this
+report was written; check 16 `NOETHER-SPAN` was added later by `gauge-vector-sector.md`)
 **Substrate** `tango/forge/lib/math/jetfield.forge`
 **Dependency tag** `LOCAL-ALGEBRAIC`
 
@@ -49,7 +50,9 @@ lower-triangular. `jet_inv` still traps on a non-unit, which is the correct fail
 | **10 — the full symmetric family** | **15** |
 
 Whole sweep, all six identities: **49.78 s, 109 MB.** With `N1` (§4) the gate is
-**15/15, 89.53 s, 111 MB** — `N1` alone is nearly the whole of that increase.
+**15/15, 89.53 s, 111 MB** at the time of writing — `N1` alone is nearly the whole of that
+increase. The gate is now 16/16; the added check belongs to a different result and is not
+counted in the timings here.
 
 **`LDLᵀ` is the general symmetric matrix.** Six strictly-lower entries of `L` plus four
 diagonal entries of `S` is ten — exactly the number of independent components of a symmetric
@@ -525,7 +528,7 @@ family"*, the actual reverse-physics statement about the gauge algebra.
 
 ```bash
 cd tango/forge && export FORGE_LIB=$PWD/lib
-forge -run examples/curvature_symbolic_family_gate.forge   # 15/15, 89.53 s, 111 MB
+forge -run examples/curvature_symbolic_family_gate.forge   # 16/16 (15/15 as of this report)
 forge -run examples/curvature_symbolic_euler_gate.forge    # 9/9,   992.62 s, 111 MB
 ```
 
