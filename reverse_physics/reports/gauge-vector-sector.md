@@ -50,8 +50,8 @@ for order three, where the kernel is exactly the manifest N1/N2 combinations. Or
 are **empty by index parity** (§4b).
 
 At order three with curvature degree **one**, the R-weighted sub-family is enumerated exhaustively
-and **does contain a symmetry** (§6c) — expected to be a reparametrisation by the
-module-over-functions structure, but not yet verified as one.
+and **no symmetry is found** (§6c). An earlier claim that one existed there is retracted — it was
+an artefact of a one-parameter family.
 
 The scalar sector is settled at the *same* curvature degree, so both halves of the claim now
 stand at the same degree rather than one half-claim beside another: the gauge algebra at these
@@ -224,45 +224,47 @@ it does. A new pipeline is checked against the settled one before any new answer
 other two, so there are exactly **six** placements — and the seventh conceivable term
 `(tr B) g g` vanishes because the Bach tensor is traceless. Six *is* the list.
 
-All six adjoints are separately **nonzero** — which alone is the reading that would have said
-*"no symmetry here"*. The **rank** says otherwise: **2 of 6** at the base point, four candidate
-relations, and **one verifies identically** on the full jets.
+Over a **two-parameter** family the base-point rank is **3 of 6**, and none of the three
+candidate relations verifies on the full jets. **No symmetry is found in the sub-family.**
 
-**So a symmetry exists in the R-weighted sub-family at order three.** At degree zero the kernel
-was exactly the manifest N1/N2 combinations; here there is more.
+### A retraction, and how it was caught
 
-### Why that is expected rather than alarming
+> An earlier issue of this report claimed a symmetry *did* exist here — base-point rank 2 of 6
+> with one relation verifying identically. **That is withdrawn.** It was computed over a
+> **one-parameter** family, and it was an artefact of that family being too thin to separate six
+> placements.
 
-`gauge-layer-brief.md` already names the reason: the gauge symmetries are a **module over
-functions**, and **`R` is a function**. So
+What caught it was **printing the relation instead of only its existence**. The coefficients came
+back `(0, −1, 1, 0, 0, 0)` — placement 2 minus placement 1 — which is concrete enough to check by
+hand:
 
-- `Diff` with parameter `ζ = R × (second-order operator on ξ)`, and
-- `Weyl` with `σ = R × (third-order operator)`
+```
+placement 1   Y = R B_ρτ g_σλ    adjoint  ∇^a ∇_λ V_a
+placement 2   Y = R B_ρλ g_στ    adjoint  □ V_λ          V_τ = ∇^ρ(R B_ρτ)
+```
 
-are symmetries at this order and are **reparametrisations**, not new generators. Curvature in the
-coefficient is precisely where function-multiplication of the parameter first enters, so a kernel
-here is what the module trap predicts.
+Their difference is `∇^a(∇_λ V_a − ∇_a V_λ)` — the divergence of a **curl**, which is not
+identically zero unless `V` is a gradient. Computation and hand-derivation disagreed, so the
+family was widened, and at two parameters the relation is gone.
 
-**That reading is not verified.** It is the expected explanation, and confirming it needs the
-reparametrisation span enumerated. Until then neither reading is established.
+Two things worth keeping. *"A relation exists"* is unfalsifiable in a way that
+*"(0,−1,1,0,0,0)"* is not — printing the vector is what made the hand-check possible at all. And
+when a computed relation disagrees with a hand-derivation, **widen the family before believing
+either**: the thin family is the cheaper suspect.
 
-### The dimension is not pinned either
+### Two limitations, stated rather than glossed
 
-Only the **individual** base-point witnesses were tested against the full jets. A *combination*
-of them could vanish identically while none does alone, so "one verified" is a **lower bound**.
-The identically-vanishing space is at least 1-dimensional and at most the size of the base-point
-kernel. Pinning it needs a second rank taken over the full jets rather than at the base point.
-
-The Ric- and Riemann-weighted sub-families remain **samples**.
+- Only the **individual** witnesses are checked on the full jets. A *combination* of them could
+  vanish identically while none does alone, so "none verified" is strong evidence that the rank
+  is full, **not a proof** of it. Closing that needs a second rank over the full jets.
+- The **Ric- and Riemann-weighted** sub-families are sampled, not enumerated.
 
 ## 7. What this does not establish
 
-- **That the order-three degree-one symmetry is a reparametrisation** rather than a new
-  generator (§6c). It is *expected* to be one — the module is over functions and `R` is a
-  function — but the reparametrisation span has not been enumerated, so neither reading is
-  established. Its dimension is not pinned either.
-- **The Ric- and Riemann-weighted sub-families at order three**, which are sampled only, and
-  anything at derivative order five or above. The claim is a *lower bound on completeness*.
+- **An exhaustive result for the Ric- and Riemann-weighted sub-families at order three**, which
+  are sampled only; nor a *proof* (as opposed to strong evidence) that the R-weighted rank is
+  full, since witness combinations were not tested; nor anything at derivative order five or
+  above. The claim is a *lower bound on completeness*.
 - **That the algebra is forced.** It establishes that nothing else appears at this order, which
   is the *evidence* for forcing, not the statement of it.
 - **Anything about the Stückelberg entanglement** (gap 2). `RP-DIFF` independence remains
@@ -271,10 +273,7 @@ The Ric- and Riemann-weighted sub-families remain **samples**.
 
 ## 8. Next
 
-**Enumerate the reparametrisation span at order three, degree one** — `Diff` with
-`ζ = R × (second-order operator)` and `Weyl` with `σ = R × (third-order operator)` — and ask
-whether the surviving relation lies in it. That is what decides *reparametrisation* versus *new
-generator*, and it is now the sharpest open question in this stream. Alongside it: pin the
-dimension with a second rank over the full jets, and enumerate the Ric- and Riemann-weighted
-sub-families. Gap 2 is likely structural, and the honest outcome there may remain *"recorded,
+**Enumerate the Ric- and Riemann-weighted sub-families** at order three the way the R-weighted
+one now is, and **close the witness test** by taking a second rank over the full jets so
+combinations are covered rather than only individual witnesses. Gap 2 is likely structural, and the honest outcome there may remain *"recorded,
 not resolved"*; gap 1, the degrees `(3,1)` and `(4,2)`, is untouched.
