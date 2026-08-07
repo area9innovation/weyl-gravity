@@ -1,4 +1,4 @@
-# gamma is the zeroth moment. The Newtonian term is the second.
+# The source moments [title corrected: see the Correction below]
 
 **Certificate** `BH0K_THE_SOURCE_MOMENTS`
 **Verifier** `black_hole_programme/bh0k_the_source_moments.py` - 22 checks, all PASS
@@ -109,3 +109,24 @@ What remains is **observational rather than algebraic** - the inequality
 `gamma_*(M) << gamma_0` against a rotation-curve sample, and the second-moment Newtonian
 coefficient against solar-system and laboratory tests. Neither is this repository's measurement,
 and that is the right place for a reverse-physics line to stop.
+
+---
+
+## Correction
+
+A literature search that should have preceded this work was run afterwards, and it changes what
+may be claimed. See the `correction` field of the certificate for the full text. In short:
+
+- **Hobson & Lasenby**, *Conformal gravity does not predict flat galaxy rotation curves*,
+  Phys. Rev. D **104** (2021) 064014, arXiv:2103.13451, already establish that timelike
+  geodesics are not conformally invariant, that a scalar generating particle mass puts massive
+  particles on geodesics of the Schwarzschild-de Sitter metric, and that the resulting curves
+  have no flat region. That is a **stronger** conclusion than exhibiting both branches and
+  selecting neither.
+- **Mannheim & Kazanas**, Gen. Rel. Grav. **26** (1994) 337, already give the moment structure,
+  which is the substance of the standing objection to the Newtonian limit.
+- **Mannheim & O'Brien**, arXiv:1211.0188, already use the decomposition
+  `gamma = gamma_0 + gamma_*(M)` as the fitting parametrisation, retaining both terms.
+
+The computations and their controls stand. The novelty implied by their framing does not, and
+`BH0K`'s inequality conclusion is withdrawn outright.

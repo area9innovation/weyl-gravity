@@ -103,3 +103,24 @@ and match at the boundary, which would say whether `C` is fixed by the configura
 
 Until then `gamma` is **forced, admissible, and assumed universal** - and the assumption sits on
 one number.
+
+---
+
+## Correction
+
+A literature search that should have preceded this work was run afterwards, and it changes what
+may be claimed. See the `correction` field of the certificate for the full text. In short:
+
+- **Hobson & Lasenby**, *Conformal gravity does not predict flat galaxy rotation curves*,
+  Phys. Rev. D **104** (2021) 064014, arXiv:2103.13451, already establish that timelike
+  geodesics are not conformally invariant, that a scalar generating particle mass puts massive
+  particles on geodesics of the Schwarzschild-de Sitter metric, and that the resulting curves
+  have no flat region. That is a **stronger** conclusion than exhibiting both branches and
+  selecting neither.
+- **Mannheim & Kazanas**, Gen. Rel. Grav. **26** (1994) 337, already give the moment structure,
+  which is the substance of the standing objection to the Newtonian limit.
+- **Mannheim & O'Brien**, arXiv:1211.0188, already use the decomposition
+  `gamma = gamma_0 + gamma_*(M)` as the fitting parametrisation, retaining both terms.
+
+The computations and their controls stand. The novelty implied by their framing does not, and
+`BH0K`'s inequality conclusion is withdrawn outright.
