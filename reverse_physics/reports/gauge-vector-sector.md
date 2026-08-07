@@ -44,8 +44,9 @@ what the repository already has; this is the cheap way not to.)
 
 ## 3. The result
 
-At **derivative order one** in the parameter and **curvature degree ≤ 1** in the coefficient,
-the only vector-parameter generator is the **diffeomorphism** one.
+At **every derivative order up to and including two**, with **curvature degree ≤ 1** in the
+coefficient, the only vector-parameter generator is the **diffeomorphism** one. Order one is
+computed, order zero is computed, and order two is **empty by index parity** — see §4b.
 
 With the scalar sector's single generator, the gauge algebra at this order is `Diff ⋉ Weyl`,
 with nothing hidden.
@@ -70,6 +71,33 @@ curvature-weighted candidates **must fail**. Three were posed and all three do:
 
 **Liveness is checked before any of them**, because every test here is satisfied by the zero
 tensor. The Bach tensor must be nonzero over the family, and so must `R` and `B^{μν}Ric_{μν}`.
+
+## 4b. Order zero, and why order two costs nothing
+
+**Order two is empty by counting indices.** A coefficient at derivative order `k` in a vector
+parameter carries `2 + k + 1` indices. Every tensor built from the metric, its inverse, `δ` and
+**undifferentiated** curvature has **even** rank — `g` and `δ` are rank 2, Ricci 2, Riemann 4,
+the scalar 0. The odd-rank coefficient the even orders require cannot be built. **The next
+possible order after one is three, not two.**
+
+**That argument has a limit, and it is exactly why order zero was computed** rather than
+dismissed with it: *derivatives* of curvature have **odd** rank (`∇_aR` is rank 1, `∇_aR_{bc}`
+is rank 3). So order zero *is* reachable, with one derivative on the curvature. Two candidates
+were posed — `∇^ρR_{μν}` and `∇_μR δ^ρ_ν` symmetrised — and both come back **nonzero**. No
+generator there either.
+
+Order zero is also the cheap sector: its adjoint is `T_{μν}^ρ E^{μν}` with no integration by
+parts — a **contraction** rather than a divergence.
+
+## 4c. Triviality is excluded by construction, not asserted
+
+Every action has **trivial** gauge symmetries `Δ = M[E]` with `M` antisymmetric under exchange
+of its index pairs. They exist for any action whatsoever, are infinite in number, and must not
+be counted — a count that ignores them is meaningless.
+
+They are excluded here **by construction**: every coefficient enumerated is built from the
+metric and curvature and never from `E`, and the Bach tensor is fourth order in the metric, so
+no candidate at this degree can contain it.
 
 ## 5. One control is vacuous, and says so
 
@@ -103,8 +131,9 @@ and the generator count is **two**.
 
 ## 7. What this does not establish
 
-- **Completeness at higher order.** This is derivative order one and curvature degree ≤ 1. The
-  boundary is real; the claim is a *lower bound on completeness* at the order computed.
+- **Completeness at derivative order three or above**, or at higher curvature degree. Orders
+  zero, one and two are closed; three is the next order index parity permits, and is untouched.
+  The boundary is real; the claim is a *lower bound on completeness*.
 - **That the algebra is forced.** It establishes that nothing else appears at this order, which
   is the *evidence* for forcing, not the statement of it.
 - **Anything about the Stückelberg entanglement** (gap 2). `RP-DIFF` independence remains
@@ -113,7 +142,6 @@ and the generator count is **two**.
 
 ## 8. Next
 
-Extend the coefficient degree, and the parameter's derivative order to two. The order-zero
-sector `T_{μν}^ρ ξ_ρ` is also unenumerated, though at curvature degree ≤ 1 there is no natural
-rank-3 candidate built from `g` alone. Gap 2 is likely structural, and the honest outcome there
-may remain *"recorded, not resolved"*.
+Derivative order **three** — the next order index parity permits — and higher curvature degree
+at order one. Gap 2 is likely structural, and the honest outcome there may remain *"recorded,
+not resolved"*; gap 1, the degrees `(3,1)` and `(4,2)`, is untouched.
