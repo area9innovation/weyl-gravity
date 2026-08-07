@@ -32,7 +32,7 @@
   "verification": {
     "commands": [
       "cd tango/forge && export FORGE_LIB=$PWD/lib",
-      "forge -run examples/curvature_symbolic_euler_gate.forge    # 9/9, 992.62 s"
+      "forge -run examples/curvature_symbolic_euler_gate.forge    # 9/10, check 10 withheld, 992.62 s"
     ]
   },
   "next": "raise the INNER (parameter) degree until the Weyl-cubic control is unsaturated, then read the conformally invariant subspace. The gate now guards the inner degree, which it never did: the outer degree is guarded everywhere -- Riemann costs two orders, results are read below xd - 2 -- but the parameter degree was guarded nowhere, and a cubic stresses it harder than a quadratic because every metric inverse is a geometric series that reaches the cap. The scans now distinguish three states rather than two: vacuous, inconclusive, and genuinely no exponent.",

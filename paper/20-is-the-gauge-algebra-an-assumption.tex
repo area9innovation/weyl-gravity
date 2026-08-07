@@ -1,0 +1,360 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,booktabs,tabularx}
+\usepackage{microtype,xurl}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,
+            citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\dd}{\mathrm d}
+\newcommand{\cert}[1]{\nolinkurl{#1}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+
+\title{Is the Gauge Algebra of Conformal Gravity an Assumption?}
+\author{Claude Opus 5\thanks{Anthropic model; computations and drafting.}
+\and Asger Alstrup Palm\thanks{Programme orchestrator and corresponding human contact; Honorary Professor, DTU Compute, Technical University of Denmark. \texttt{asger@area9.dk}.}}
+\date{Working draft, 7 August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The Weyl action \(S=\alpha\int\!\sqrt{-g}\,C^{2}\) is invariant under
+diffeomorphisms and under local Weyl rescalings.  That much is a calculation.
+Whether \(\mathrm{Diff}\ltimes\mathrm{Weyl}\) is \emph{all} of its gauge
+algebra is a different question, and it is usually assumed rather than
+computed: one exhibits the symmetries one built the action to have, and stops.
+
+We compute it.  By Noether's second theorem gauge generators and Noether
+identities are the same data, so the question becomes whether the Bach
+tensor satisfies any local identity beyond \(\nabla^{a}B_{ab}=0\) and
+\(g^{ab}B_{ab}=0\).  Working over a metric family carrying symbolic
+parameters, so that a vanishing result is zero \emph{as a polynomial} rather
+than at sampled fixtures, we find no further generator at derivative order up
+to three in the gauge parameter.  Orders two and four are empty for a reason
+that needs no computation at all: index parity.
+
+Two features of the problem make a naive count wrong, and both bite.  Gauge
+symmetries form a module over \emph{functions}, so a generator multiplied by a
+scalar is not a second generator; we find the trap is worse than that, since
+\(g_{\mu\nu}(\nabla\!\cdot\!\xi)\) is the Weyl generator under a
+\emph{differential} reparametrisation of its parameter, so the quotient must
+be by differential operators and not merely by multiplication.  And every
+action has trivial symmetries proportional to its own equations of motion; we
+exclude these by construction rather than by assertion.
+
+The result is a lower bound on completeness at the order computed, and is
+reported as one.  We do not claim the algebra is closed at all orders.  We
+claim that nothing hides below the order we reached, and we say exactly where
+that order stops.
+\end{abstract}
+
+\section{The question}
+\label{sec:question}
+
+A gauge symmetry of an action is not a property one may simply declare.  The
+Weyl action was constructed to be invariant under
+\(g_{\mu\nu}\mapsto\Omega^{2}g_{\mu\nu}\) and under coordinate changes, and
+exhibiting those invariances is routine.  What is not routine is the converse:
+\emph{is there anything else?}
+
+The distinction matters for the same reason it matters anywhere in a
+reverse-physics ledger.  If \(\mathrm{Diff}\ltimes\mathrm{Weyl}\) is the whole
+algebra, then it is a \emph{consequence} of the action and not an independent
+entry in the list of things conformal gravity assumes.  If it is not, then
+conformal gravity has a local symmetry nobody has written down, which would be
+a considerably larger claim than the expected answer and would need
+correspondingly better evidence.
+
+Either way the question is decidable by computation, and it appears not to have
+been asked of this action.
+
+\paragraph{Conventions.}
+\(D=4\), signature \((-,+,+,+)\).  \(B_{\mu\nu}\) is the Bach tensor, and
+\(E^{\mu\nu}\) the Euler--Lagrange expression of \(S\), so that
+\(\delta S=\int\!E^{\mu\nu}\delta g_{\mu\nu}\); for the Weyl action these
+agree up to a constant.  All arithmetic is exact over \(\mathbb{Q}\).
+
+\section{Why it is computable}
+\label{sec:computable}
+
+Noether's second theorem identifies gauge generators with Noether identities.
+A local operator \(\Delta_{\mu\nu}[\varepsilon]\), linear in a parameter
+\(\varepsilon\), generates a gauge symmetry exactly when
+\(E^{\mu\nu}\Delta_{\mu\nu}[\varepsilon]\) is a total divergence for every
+metric --- equivalently when the \emph{adjoint} \(\Delta^{\dagger}[E]\)
+vanishes identically.  So the question of \S\ref{sec:question} becomes:
+
+\begin{quote}
+does \(B_{\mu\nu}\) satisfy any local identity beyond
+\(\nabla^{\mu}B_{\mu\nu}=0\) and \(g^{\mu\nu}B_{\mu\nu}=0\)?
+\end{quote}
+
+The two known identities are the Noether content of the two known generators:
+the divergence is the diffeomorphism identity, the trace is the Weyl identity.
+The question is whether the list is complete.
+
+The problem splits by the \emph{type} of the gauge parameter.  A scalar
+parameter \(\sigma\) gives candidates \(\Delta_{\mu\nu}=T_{\mu\nu}\sigma\); a
+vector parameter \(\xi_{\lambda}\) gives candidates carrying derivatives,
+\[
+  \Delta_{\mu\nu}[\xi] \;=\; S_{\mu\nu}{}^{\rho\sigma\tau\lambda}
+  \nabla_{\rho}\nabla_{\sigma}\nabla_{\tau}\xi_{\lambda}
+\]
+and its lower-order analogues.  These are computed separately and the results
+combined in \S\ref{sec:result}.
+
+\paragraph{What ``over a family'' means here.}
+Every identity below is evaluated on a metric family carrying symbolic
+parameters, so a result of zero is zero \emph{as a polynomial in those
+parameters} --- true for every member at once, not at sampled fixtures.  The
+family is general in the metric (ten parameters span every component of a
+symmetric \(4\times4\)) but each component carries a fixed polynomial pattern
+in the coordinates.  It is a generic family near flat space, not every metric,
+and \S\ref{sec:not} says so again.
+
+\section{Two ways to overcount, both of which bite}
+\label{sec:traps}
+
+\subsection{The module is over functions, and the trap is worse than that}
+
+Gauge symmetries form a module over functions of the fields, not a vector
+space.  If \(\Delta_{\mu\nu}=g_{\mu\nu}\sigma\) is the Weyl generator, then so
+is \(\Delta_{\mu\nu}=g_{\mu\nu}R\sigma\), and it is not a second symmetry ---
+it is the first with its parameter reparametrised, \(\sigma\mapsto R\sigma\).
+A kernel dimension that counts these separately overcounts, and any reported
+count that does not say how it handled this should not be believed.
+
+The vector sector shows the trap is strictly worse.  The degree-zero candidate
+\(S_{\mu\nu}{}^{\rho\sigma}=g_{\mu\nu}g^{\rho\sigma}\) gives
+\[
+  \Delta_{\mu\nu} \;=\; g_{\mu\nu}\,(\nabla\!\cdot\!\xi),
+\]
+which is the Weyl generator with \(\sigma=\nabla\!\cdot\!\xi\): a
+\emph{differential} reparametrisation of the parameter, not a functional one.
+So the quotient must be taken by differential operators acting on the
+parameter, and a count that quotients only by multiplication by functions
+\emph{still} overcounts.  Concretely, the naive degree-zero kernel in the
+vector sector has three elements and the generator count is two.
+
+\subsection{Trivial symmetries, excluded by construction}
+
+Every action, without exception, admits symmetries of the form
+\(\Delta_{\mu\nu}=M_{\mu\nu\alpha\beta}E^{\alpha\beta}\) with \(M\)
+antisymmetric under exchange of its index pairs.  They are infinite in number
+and carry no information; a count that includes them is meaningless.
+
+They are excluded here by construction rather than by assertion.  Every
+coefficient enumerated is built from the metric and the curvature and never
+from \(E\), and the Bach tensor is fourth order in the metric, so no candidate
+at the degrees considered can contain it.
+
+\section{The result}
+\label{sec:result}
+
+\begin{theorem}[Scalar sector]
+\label{thm:scalar}
+Among candidates \(\Delta_{\mu\nu}=T_{\mu\nu}\sigma\) with \(T\) built from the
+metric and curvature at curvature degree at most two, there is exactly
+\textbf{one} generator, the Weyl generator.  The kernel consists precisely of
+the multiples \(f\,g_{\mu\nu}\), which are reparametrisations of it; every
+candidate that is not such a multiple has nonvanishing adjoint.
+\end{theorem}
+
+The candidate list for Theorem~\ref{thm:scalar} has ten elements, not the seven
+of the list we inherited.  Degree two has seven members in full --- three
+scalars times \(g\), one scalar times \(\mathrm{Ric}\), and three carrying both
+free indices on curvature --- and with degrees zero and one that is ten.  The
+three that a \(g\)-and-\(\mathrm{Ric}\) list omits are exactly the ones
+contracting against the full Riemann tensor, which is the shape that could
+carry a second generator, since \(E^{\mu\nu}\) here is the Bach tensor and sees
+the whole Weyl tensor rather than only its traces.
+
+\begin{theorem}[Vector sector]
+\label{thm:vector}
+Among candidates with a vector parameter at derivative order \(k\le 3\), the
+only generator is the diffeomorphism generator.  Specifically:
+\begin{itemize}\itemsep2pt
+\item \(k=0\) and \(k=1\): no further generator, at curvature degree up to two
+  in the coefficient.
+\item \(k=2\) and \(k=4\): \textbf{empty by index parity}, with no computation
+  required.  A coefficient at order \(k\) carries \(2+k+1\) indices, and every
+  tensor built from \(g\), \(g^{-1}\), \(\delta\) and undifferentiated
+  curvature has even rank, so the odd-rank coefficient the even orders need
+  cannot be built.
+\item \(k=3\): at curvature degree zero the kernel is exactly the combinations
+  that vanish because of the two known identities.  At curvature degree one,
+  eight sub-families were enumerated over all placements and no relation
+  survives in any.
+\end{itemize}
+\end{theorem}
+
+\begin{remark}[The parity argument has a limit, which is why \(k=0\) was computed]
+Derivatives of curvature have \emph{odd} rank --- \(\nabla_{a}R\) is rank one,
+\(\nabla_{a}R_{bc}\) rank three --- so order zero is reachable after all, with
+one derivative on the curvature in the coefficient.  It was therefore
+enumerated rather than dismissed by the parity argument that disposes of orders
+two and four.  Order zero is also the cheap sector: its adjoint is a
+contraction rather than a divergence, with no integration by parts.
+\end{remark}
+
+\begin{corollary}
+At derivative order up to three and the curvature degrees stated, the gauge
+algebra of \(S=\alpha\int\!\sqrt{-g}\,C^{2}\) is
+\(\mathrm{Diff}\ltimes\mathrm{Weyl}\), with nothing hidden.
+\end{corollary}
+
+\section{The negatives are the result}
+\label{sec:negatives}
+
+The positive cases in Theorems~\ref{thm:scalar} and \ref{thm:vector} are
+already known and are recomputed only as premises: the diffeomorphism adjoint
+is \(\nabla^{\mu}E_{\mu\nu}\) and the Weyl adjoint is the trace.  What makes
+``exactly these'' evidence rather than an enumeration that never ran is that
+curvature-weighted candidates \emph{must fail}, and do.
+
+At order one, three such candidates fail: \(R\) weighting the diffeomorphism
+candidate, \(\mathrm{Ric}\) contracted into the trace slot --- which requires
+\(B^{\mu\nu}R_{\mu\nu}\equiv0\), and that is not an identity --- and
+\(\mathrm{Ric}\) as a mixed factor.  At order three and curvature degree one,
+all eight sub-families fail.
+
+Two structural controls carry more weight than the negatives, because they are
+known answers rather than expectations.  First, whenever the innermost
+derivative of a third-order candidate contracts with an index of \(B\), the
+innermost operation is \(\nabla\!\cdot\!B\), which is zero; those contractions
+must vanish identically, and do, through a rank-five object.  That is the
+diffeomorphism identity differentiated twice, and if it failed nothing else
+would mean anything.  Second, the contraction of Riemann's second index pair
+with a symmetric tensor is zero \emph{before any derivative is taken}, because
+Riemann is antisymmetric there and \(B\) is symmetric; that tests the
+construction rather than the adjoint machinery.
+
+\begin{remark}[One control is vacuous and is reported as such]
+The degree-zero Weyl candidate has adjoint \(\nabla^{\sigma}(\operatorname{tr}
+E)\).  The Bach tensor is traceless, so this vanishes \emph{for that reason}
+and not independently.  It reduces to the known trace identity; it is not a
+check, and a control evaluated where the thing it measures degenerates proves
+nothing.
+\end{remark}
+
+\section{Rank is a floor; a witness is what closes it}
+\label{sec:rank}
+
+The adjoint of a candidate is a linear combination of finitely many
+contractions, so the symmetries are that combination's kernel.  Two readings of
+such a computation are wrong and both were live here.
+
+Showing each contraction separately nonvanishing does \emph{not} show they are
+independent: a combination of nonvanishing objects can vanish, and that
+combination would be a symmetry.  Conversely, a rank read at a base point is
+only a \emph{lower} bound on the generic rank, so a rank deficit there is not a
+relation.  What settles it is exhibiting the candidate combination --- by
+carrying an identity through the elimination, so a row whose left half reduces
+to zero returns its own coefficients --- and then testing that combination on
+the full jets, where a genuine relation must be the zero polynomial at every
+order.
+
+At order three and curvature degree zero this procedure returns a base-point
+rank deficit whose witness \emph{fails} on the full jets.  That failure is what
+closes the question: the base-point kernel is one-dimensional, any identically
+vanishing combination would lie in it, and it does not vanish identically, so
+none does.  The rank is exactly full and the kernel is exactly the two known
+identities.  The conclusion follows from a witness failing, not from one
+succeeding.
+
+\begin{remark}[A width, not just an order]
+A relation may verify identically over a narrow family and still be false of
+the theory.  One did: over a one-parameter family a relation among the
+\(R\)-weighted order-three candidates verified at every order, and widening the
+family to two parameters removed it.  It was an artefact of a family too thin
+to separate the candidates.  The parameter count is a knob to vary, not to fix
+at the cheapest value that runs, and the computations reported here are at the
+wider setting.
+\end{remark}
+
+\section{What this paper does not establish}
+\label{sec:not}
+
+\begin{itemize}\itemsep2pt
+\item \textbf{Not all orders.}  The result is a lower bound on completeness at
+  the order computed.  Derivative order five and above is untouched; so is
+  curvature degree two and above at order three.  Nothing here forbids a
+  generator living above the ceiling we reached.
+\item \textbf{Not all metrics.}  The family is general in the metric but each
+  component carries a fixed polynomial pattern in the coordinates.  This is a
+  generic family near flat space.  An identity that fails only on metrics far
+  from this family would not be seen.
+\item \textbf{Not a proof that the ranks are full.}  Only individual witnesses
+  were tested against the full jets.  A \emph{combination} of witnesses could
+  vanish while none does alone, so ``no witness verified'' is strong evidence
+  for full rank rather than a proof of it.
+\item \textbf{No novelty in the symmetries themselves.}  That the Weyl action
+  is diffeomorphism and Weyl invariant is classical.  The contribution is the
+  converse direction --- that at bounded order there is nothing else --- which
+  is what converts an assumption into a consequence.
+\item \textbf{Nothing about the quantum theory.}  Everything here is a
+  classical local computation.  Whether these symmetries survive quantisation
+  is a separate question with its own obstructions, treated elsewhere in this
+  programme.
+\end{itemize}
+
+\section{Verification}
+\label{sec:verification}
+
+Each result is a fail-closed certificate with a deterministic verifier, computed
+in Forge over exact rationals with nested jets: the outer degree carries the
+coordinate dependence and the inner degree the family parameters.  Both
+truncation degrees are guarded, since a saturated jet compares truncation caps
+rather than objects and an exact-identity test between saturated jets is
+inconclusive rather than false.
+
+The euler gate stands at 9 of 10 by design: its tenth check extends the same
+machinery to the conformally invariant subspace, does not pass its own
+known-answer control, and is therefore withheld.  A gate that reported 10 of 10
+while that control failed would be the more worrying number.
+
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}lYl@{}}
+\toprule
+result & certificate & rail \\
+\midrule
+Thm.~\ref{thm:scalar} & \cert{REVERSE\_PHYSICS\_NOETHER\_IDENTITIES\_V1}   & euler gate, 9/10 \\
+Thm.~\ref{thm:vector} & \cert{REVERSE\_PHYSICS\_GAUGE\_VECTOR\_SECTOR\_V1} & family gate, 18/18 \\
+curvature inputs      & \cert{REVERSE\_PHYSICS\_SYMBOLIC\_FAMILY\_V1}      & family gate, 18/18 \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+The Riemann tensor these contractions are built from is pinned separately.  This
+tree carries two implementations of it, and nothing had compared them; a
+contraction built against the wrong one would be wrong in a way that every
+symmetry test on the other one would miss.  They agree componentwise, and both
+satisfy all four algebraic symmetries --- including pair exchange, which is a
+theorem rather than a manifest property of the definition and which no test in
+this tree had previously covered.
+
+\begin{thebibliography}{9}
+\bibitem{Noether1918} E.~Noether,
+  \emph{Invariante Variationsprobleme}, Nachr.\ Ges.\ Wiss.\ G\"ottingen,
+  Math.-Phys.\ Kl.\ (1918) 235.
+\bibitem{Bach1921} R.~Bach,
+  \emph{Zur Weylschen Relativit\"atstheorie und der Weylschen Erweiterung des
+  Kr\"ummungstensorbegriffs}, Math.\ Z.\ \textbf{9} (1921) 110.
+\bibitem{HenneauxTeitelboim} M.~Henneaux and C.~Teitelboim,
+  \emph{Quantization of Gauge Systems}, Princeton University Press (1992).
+\bibitem{BarnichBrandtHenneaux} G.~Barnich, F.~Brandt and M.~Henneaux,
+  \emph{Local BRST cohomology in gauge theories}, Phys.\ Rept.\ \textbf{338}
+  (2000) 439.
+\end{thebibliography}
+
+\end{document}
