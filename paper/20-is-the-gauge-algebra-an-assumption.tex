@@ -50,12 +50,13 @@ beyond \(\nabla^{a}B_{ab}=0\) and \(g^{ab}B_{ab}=0\)---a question about the
 rather than about deformations of the free theory.  Working over a metric family carrying symbolic
 parameters, so that a vanishing result is zero \emph{as a polynomial} rather
 than at sampled fixtures, we find no further generator at derivative order
-zero or one in the gauge parameter.  Orders two and four are empty for a
-reason that needs no computation at all: index parity.  Order three is
-\emph{attempted and unresolved}, for a reason we state rather than bury: the
-third covariant derivative of the Bach tensor is seventh order in the metric,
-and at the jet degree we can afford only the lowest orders are trustworthy ---
-too few to resolve the rank that the question turns on.
+zero, one or three in the gauge parameter, at the curvature degrees stated.
+Orders two and four are empty for a reason that needs no computation at all:
+index parity.  Order three is the delicate case, because the third covariant
+derivative of the Bach tensor is seventh order in the metric and most of an
+affordable jet is truncation artefact; we measure how much is usable rather
+than assume it, and settle the case by exhibiting a rank that does not move as
+the usable range triples.
 
 Two features of the problem make a naive count wrong, and both bite.  Gauge
 symmetries form a module over \emph{functions}, so a generator multiplied by a
@@ -232,15 +233,13 @@ only generator is the diffeomorphism generator.  Specifically:
   tensor built from \(g\), \(g^{-1}\), \(\delta\) and undifferentiated
   curvature has even rank, so the odd-rank coefficient the even orders need
   cannot be built.
-\item \(k=3\): \textbf{unresolved}, and the reason is a resolution limit rather
-  than a negative result.  \(\nabla^{3}B\) is seventh order in the metric, so
-  at jet degree seven only the lowest outer orders carry information; how many
-  is \emph{measured} against contractions that must vanish identically, and the
-  answer is three (orders zero through two).  Restricted to those, the rank of
-  the candidate contractions is not resolved.  What does hold at this order are
-  the controls of \S\ref{sec:negatives} and the separate nonvanishing of the
-  individual contractions; what does not is any statement about their
-  independence, and hence about completeness.  See Remark~\ref{rem:truncation}.
+\item \(k=3\), curvature degree zero: no further generator, established as
+  described in Remark~\ref{rem:truncation}---a rank stable under increasing
+  resolution, with the rank deficit accounted for by a coincidence rather than
+  a relation.  At curvature degree \emph{one} the analogous sweep is
+  \textbf{open}: its kernel numbers are not yet interpretable, because the
+  quotient by trivial relations is currently only by pairwise equality and a
+  scalar multiple is as much an artefact as a duplicate.
 \end{itemize}
 \end{theorem}
 
@@ -265,29 +264,37 @@ a}B^{a}{}_{\lambda}\)---are outside it.  At curvature degree one the result is
 consequently weaker than at degree zero, and is stated as such.
 \end{remark}
 
-\begin{remark}[Why order three is unresolved, and how we know]
+\begin{remark}[How order three is settled, and what nearly went wrong]
 \label{rem:truncation}
-A jet of degree \(d\) supports \(d-k\) trustworthy orders after \(k\)
-derivatives, and \(\nabla^{3}B\) costs seven.  Rather than trust that
-budget we measure it: the contractions whose innermost operation is
-\(\nabla\!\cdot\!B\) must vanish identically, and the highest order at which
-they still do is a direct read of how far the data is good.  The arithmetic
-predicted zero usable orders; the measurement found three.  The measurement is
-what the computation uses.
+\(\nabla^{3}B\) costs seven derivatives, so most of an affordable jet is
+truncation artefact.  Rather than trust a budget we \emph{measure} the usable
+range: the contractions whose innermost operation is \(\nabla\!\cdot\!B\)
+must vanish identically, and the highest order at which they still do says how
+far the data is good.  The arithmetic predicted no usable orders; the
+measurement found three at jet degree seven, and the range grows with the jet
+degree---orders \(0\ldots2,3,4,6\) at degrees \(7,8,9,10\).
 
-An earlier version of this work concluded that the order-three kernel is
-exactly the two known identities.  That conclusion came from a candidate
-relation which failed when compared over the \emph{whole} jet---and its
-failure lay entirely in the orders above the valid range.  Within the
-trustworthy range it vanished.  The conclusion is withdrawn.  We note also that
-the converse would not follow either: a kernel element need not be a
-generator, since two placements can yield the same adjoint and contribute a
-relation that is an artefact of the parametrisation.
+Two facts then settle the case.  The rank of the surviving contractions is
+\(2\) of \(3\) \emph{at every one of those degrees}: a number that does not
+move while the usable data triples is not a resolution artefact.  And the
+deficit is a \emph{coincidence}---exactly one pair among the three yields the
+same adjoint up to sign, three vectors with one coinciding pair have rank at
+most two, and the rank is two.  The coincidence accounts for the whole
+deficit, leaving nothing to be a symmetry.
+
+An earlier version reached this conclusion by a route that does not survive
+scrutiny: it exhibited a candidate relation and found it failed when compared
+over the \emph{whole} jet, but the failure lay entirely above the valid range.
+Right answer, invalid reason.  We record it because the failure mode is
+general---``testing on the full jets'' means nothing where the jet carries no
+information---and because the repair, measuring the usable range against a
+known answer before comparing anything, is the transferable part.
 \end{remark}
 
 \begin{corollary}
-At derivative orders zero and one, at the curvature degrees stated, the gauge
-algebra of \(S=\alpha\int\!\sqrt{-g}\,C^{2}\) is
+At derivative orders zero and one (curvature degree \(\le2\)) and at order
+three (curvature degree zero), the gauge algebra of
+\(S=\alpha\int\!\sqrt{-g}\,C^{2}\) is
 \(\mathrm{Diff}\ltimes\mathrm{Weyl}\); orders two and four are empty by
 parity.  This agrees with what \cite{BoulangerHenneaux2001} establishes by
 deformation theory, reached independently, over the range where our
@@ -367,10 +374,12 @@ wider setting.
 \label{sec:not}
 
 \begin{itemize}\itemsep2pt
-\item \textbf{Not all orders, and not order three.}  The result covers
-  derivative orders zero and one, with two and four empty by parity.  Order
-  three is unresolved (Remark~\ref{rem:truncation}) and order five and above
-  untouched.  Nothing here forbids a generator above the ceiling we reached.
+\item \textbf{Not all orders, and not order three at curvature degree one.}
+  The result covers derivative orders zero and one, order three at curvature
+  degree zero, and two and four by parity.  Order three at curvature degree
+  one is open---its kernel numbers are not yet interpretable, since the
+  quotient by trivial relations is only by pairwise equality.  Order five and
+  above is untouched.
 \item \textbf{Not all metrics.}  The family is general in the metric but each
   component carries a fixed polynomial pattern in the coordinates.  This is a
   generic family near flat space.  An identity that fails only on metrics far

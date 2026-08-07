@@ -44,30 +44,29 @@ what the repository already has; this is the cheap way not to.)
 
 ## 3. The result
 
-At derivative orders zero and one the only vector-parameter generator found is the
-**diffeomorphism** one — at curvature degree ≤ 2 for orders zero and one, and at degree **zero**
-for order three, where the kernel is exactly the manifest N1/N2 combinations. Orders two and four
-are **empty by index parity** (§4b).
+At derivative orders zero and one (curvature degree ≤ 2) and at order three (curvature degree
+zero), the only vector-parameter generator found is the **diffeomorphism** one. Orders two and
+four are **empty by index parity** (§4b).
 
-> **Retraction (order three).** Earlier issues concluded that at order three the kernel is exactly
-> the manifest N1/N2 combinations, and that no relation survives in any degree-one sub-family.
-> Both rested on comparisons over the **whole jet**. `∇³B` is *seventh* order in the metric and
-> the jets carry degree 7, so almost none of the jet is trustworthy: the contractions that must
-> vanish identically stop doing so above outer order 2 — now **measured**, where the budget
-> arithmetic had predicted 0 and the measurement found 2. The candidate relation whose *failure*
-> closed the earlier argument failed only above the valid range; within it, it vanished.
+> **Order three: resolved at curvature degree zero, open at degree one.** An earlier issue
+> reached the same degree-zero conclusion by an argument that does not survive scrutiny — it
+> exhibited a candidate relation and found it *failed* on the full jets, but `∇³B` is seventh
+> order in the metric and the failure lay entirely above the valid range. Right answer, invalid
+> reason.
 >
-> Restricted to the valid orders the ranks drop and kernels appear (2 of 3 at degree zero, 2 of 6
-> across the degree-one families). **That is not the opposite claim either**: a kernel element
-> need not be a symmetry, since two placements can give the same adjoint. Order three is
-> **unresolved at the available resolution**.
+> The sound argument is two facts. The usable outer range is **measured** against contractions
+> that must vanish identically, and grows `0..2, 0..3, 0..4, 0..6` at jet degree `7,8,9,10`. The
+> rank of the three surviving contractions is **2 of 3 at every one of those degrees** — a number
+> that does not move while the usable data triples is not a resolution artifact. And the deficit
+> is a **coincidence**: exactly one pair yields the same adjoint up to sign, and three vectors
+> with one coinciding pair have rank at most 2. The coincidence accounts for the whole deficit,
+> leaving nothing to be a symmetry.
 >
-> It was found by trying to *strengthen* the result: an exact full-jet rank reported rank 6 for a
-> tensor that is zero on construction, and a zero object cannot have rank 6.
->
-> Surviving at order three: the three positive controls (N1 differentiated twice, through a
-> rank-5 object) and the separate nonvanishing of the individual contractions. Not surviving: any
-> statement about their independence, hence about completeness.
+> **Degree one is open.** Its kernel numbers are not interpretable yet: the quotient by trivial
+> relations catches only placements that equal or negate an earlier one *exactly*, and a scalar
+> multiple is as much an artifact as a duplicate. Most families show a leftover of 2, which
+> cannot be told apart from a symmetry until the quotient is by the full span of trivial
+> relations.
 
 The scalar sector is settled at the *same* curvature degree, so both halves of the claim now
 stand at the same degree rather than one half-claim beside another: the gauge algebra at these
