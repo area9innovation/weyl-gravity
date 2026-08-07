@@ -3,7 +3,7 @@
 **Status** result
 **Dependency tag** `LOCAL-ALGEBRAIC`
 **Certificate** `REVERSE_PHYSICS_GAUGE_VECTOR_SECTOR_V1`
-**Gate** `tango/forge/examples/curvature_symbolic_family_gate.forge`, check 16, 16/16
+**Gate** `tango/forge/examples/curvature_symbolic_family_gate.forge`, checks 16-18, 18/18
 
 ---
 
@@ -199,12 +199,42 @@ Both wrong readings were live.
 A rank is a floor in one direction; a witness is what closes it in the other. Here it closes it
 by **failing** to verify.
 
+## 6c. Curvature in the coefficient at order three — sampled, not enumerated
+
+The covariant-constancy shortcut is **gone** here: `∇S ≠ 0`, so the derivatives act on the
+coefficient too and the adjoint must be taken of the *product*.
+
+The naive route was not attempted — `∇³` of the rank-4 product is `n⁷` jets at outer degree 7,
+gigabytes of exact rationals per candidate. Instead the divergence is taken **at every step**:
+each derivative index meets an index of the object it differentiates and the innermost contracts
+first, so
+
+```
+Y_{ρστλ}  --div ρ-->  A_{στλ}  --div σ-->  B_{τλ}  --div τ-->  C_λ
+```
+
+and the rank never exceeds `n⁵`. Same peak cost as degree zero; only the order of contraction
+changed.
+
+**The control is the degree-zero answer.** Run with the coefficient set to the constant `1`, this
+pipeline must reproduce what the covariantly-constant route already settled — the innermost
+divergence lands on `B`, that divergence is N1, the adjoint vanishes. It does. A new pipeline is
+checked against the settled one *before* any new answer is read off it.
+
+**Result:** three structurally distinct candidates — scalar-weighted, trace-weighted, and
+**Riemann-built** — are all **nonzero**, so none is a symmetry. The Riemann-built one is in the
+set precisely because it is the shape an inherited `g`-and-`Ric` list omits, an omission this
+programme has already been bitten by.
+
+**This is weaker than the degree-zero result, and is stated as such.** At degree zero every
+contraction pattern was enumerated, ranked, and closed with a witness. Here three candidates are
+**sampled**. *"These three fail"* is not *"the space is empty"*.
+
 ## 7. What this does not establish
 
-- **Completeness at derivative order five or above**, or at curvature degree ≥ 1 *at order three*.
-  Orders zero through three are closed (two and four by index parity), but order three only at
-  curvature degree zero, where the covariant-constancy shortcut applies. The claim is a *lower
-  bound on completeness*.
+- **An exhaustive result at curvature degree ≥ 1 at order three.** Three candidates were sampled
+  and all fail (§6c); the enumeration is not done. Nor anything at derivative order five or above
+  (four being empty by parity). The claim is a *lower bound on completeness*.
 - **That the algebra is forced.** It establishes that nothing else appears at this order, which
   is the *evidence* for forcing, not the statement of it.
 - **Anything about the Stückelberg entanglement** (gap 2). `RP-DIFF` independence remains
@@ -213,8 +243,8 @@ by **failing** to verify.
 
 ## 8. Next
 
-**Curvature-weighted coefficients at order three**, where the covariant-constancy shortcut fails
-— the coefficient no longer passes through the derivatives, so `∇³E` can no longer be computed
-once and reused. Substantially more expensive than the degree-zero case settled here. Gap 2 is
-likely structural, and the honest outcome there may remain *"recorded,
+**Enumerate curvature degree one at order three properly**, rather than sampling it. The
+contract-as-you-go pipeline and its degree-zero control already exist, so what remains is the
+candidate list itself plus a rank and witness over it — the same shape that closed degree zero.
+Gap 2 is likely structural, and the honest outcome there may remain *"recorded,
 not resolved"*; gap 1, the degrees `(3,1)` and `(4,2)`, is untouched.

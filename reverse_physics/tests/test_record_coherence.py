@@ -45,7 +45,7 @@ GATE_SCORES = {
     "curvature_invariants_d4_gate": "25/25",
     "curvature_gate": "18/18",
     "jet_mul_gate": "14/14",
-    "curvature_symbolic_family_gate": "16/16",
+    "curvature_symbolic_family_gate": "18/18",
     "curvature_symbolic_euler_gate": "9/9",
 }
 

@@ -70,13 +70,13 @@
     "ok": true,
     "passed": 8,
     "total": 8,
-    "gate": "curvature_symbolic_euler_gate 9/9, 992.62 s, peak RSS 111 MB; curvature_symbolic_family_gate 16/16 (was 15/15; check 16 NOETHER-SPAN added by REVERSE_PHYSICS_GAUGE_VECTOR_SECTOR_V1)"
+    "gate": "curvature_symbolic_euler_gate 9/9, 992.62 s, peak RSS 111 MB; curvature_symbolic_family_gate 18/18 (was 15/15; check 16 NOETHER-SPAN added by REVERSE_PHYSICS_GAUGE_VECTOR_SECTOR_V1)"
   },
   "verification": {
     "substrate": "Forge, in the tango repository (1f1e3c16a).",
     "commands": [
       "cd tango/forge && export FORGE_LIB=$PWD/lib",
-      "forge -run examples/curvature_symbolic_family_gate.forge   # 16/16 (15/15 when this certificate was issued)",
+      "forge -run examples/curvature_symbolic_family_gate.forge   # 18/18 (15/15 when this certificate was issued)",
       "forge -run examples/curvature_symbolic_euler_gate.forge    # 9/9, 992.62 s, 111 MB",
       "# derivative-order identity over the FULL family: set BOCHNP() to 10, expect a full pass in ~229 s",
       "# N1 at four parameters: set N1NP() to 4, expect a full pass in ~360 s",
