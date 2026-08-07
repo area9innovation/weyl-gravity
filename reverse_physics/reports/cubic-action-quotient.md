@@ -30,7 +30,7 @@ Over the eight standard cubic scalars - `R^3`, `R|Ric|^2`, `R|Riem|^2`, `Ric^3`,
 `Ric.Ric.Riem`, `Ric.Riem^2`, and the two `Riem^3` contractions:
 
 ```
-rank(VALUES) = 8          rank(EULER) = 7
+rank(VALUES) = 8          rank(EULER) = 5
 ```
 
 **Two ranks, not one, and the second alone would mislead.** A linear relation among the
@@ -45,8 +45,14 @@ Here `rank(VALUES) = 8` saturates, so the eight are genuinely independent as fun
 **every element of the Euler kernel is a real total derivative**, not an identity among the
 scalars.
 
-So there is **exactly one** total-derivative combination among the eight, and **exactly seven**
+So there are **exactly three** total-derivative combinations among the eight, and **exactly five**
 independent cubic actions. Both are equalities.
+
+> **Correction.** The first issue of this report said *seven* actions and *one* total derivative.
+> Both `Riem^3` members of the basis were **malformed contractions** - one summed a repeated
+> index over two *upper* slots, the other over two *down* slots. A contraction is covariant only
+> when each repeated index appears once up and once down, so neither was a scalar. Repaired, the
+> ranks move. Section 3b is how it was found, and it is the useful part.
 
 ## 3. Why these are exact, and why the point method had to go
 
@@ -68,6 +74,24 @@ point *also* gave rank 5. Both were **non-generic**: the true rank is 7.
 So two independent point evaluations agreed with each other and were both wrong, and the only
 reason that was visible was the identical-verification pass reporting 1 of 3. Chasing the bound
 with more points would not have converged. The object had to become exact.
+
+## 3b. How the error was found
+
+Not by re-reading the contractions. By a **known-answer control added for a different purpose.**
+
+Extending the gate to the conformally invariant subspace needed a control, and the natural one
+is that `sqrt(-g) C^2` - the Weyl action - is conformally invariant, so its defect must be
+exactly zero. **That control failed**, and diagnosing it surfaced the malformed contractions in
+a neighbouring, already-committed result.
+
+The lesson is the one this programme keeps relearning, from the other direction: a control
+added for one claim can falsify a **different** one. Controls are worth adding even where the
+claim already looks settled.
+
+Two control bugs of mine surfaced alongside it, both recorded rather than quietly fixed. The
+pass condition tested `weyl3_live` where it meant `weyl3_ok`, so the gate reported 10/10 while
+its control was failing. And the defect was first compared over *whole jets* when only orders up
+to `xd - 2` are valid - Riemann costs two derivatives - which made a true identity look false.
 
 ## 4. How the checks are built
 
@@ -103,9 +127,13 @@ quadratic result sharp.
 
 ## 7. Next
 
-**The conformally invariant subspace.** The quotient here is over the *full* cubic carrier, so
-it does not by itself convert the published cubic conformal counts into action counts;
-restricting the Euler map to the conformally invariant subspace is what would.
+**Repair the conformal defect machinery, then read the subspace.** The restriction to the
+conformally invariant subspace is implemented but its result is **withheld**: the Weyl-cubic
+control fails, so the machinery is not validated at density weight `-2` and any count from it
+would be an artefact. The `C^2` control passes (density weight 0, no weight factor applied) and
+the cubic one fails (density weight `-2`, weight factor applied), which localises the fault to
+the **weight-factor handling** rather than to the tensors. The gate prints the subspace number
+only when both controls pass.
 
 Then the **weight-6** sector, which is cost rather than method: the metric at degree 6 holds 924
 terms per component.
