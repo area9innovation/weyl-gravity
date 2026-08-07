@@ -755,18 +755,24 @@ stream's centre of gravity rather than one result among many:
   - And the standard repair fails in its simplest form: a **constant** scalar VEV pins `R`
     and thereby forces **`γ = 0`**
     ([`BH0F`](../../black_hole_programme/reports/bh0f-vev-forces-gamma-zero.md)).
-  - The result is a **trichotomy** — no scale / constant scale / field-dependent scale — and
-    **no branch delivers flat rotation curves on its own terms**. (A) decouples `γ` from mass,
-    (B1) removes `γ`, and (B2) splits: where particle masses *track* the breaking scalar,
-    `m = hS` puts trajectories on geodesics of the frame with `γ = 0`, so **`γ` sits in the
-    metric and does not act on orbits**; where they do not, `γ` acts but the mass scale comes
-    from a sector outside the symmetry breaking — an assumption the theory was introduced to
-    avoid.
-  - That conclusion is **not ours first**. Hobson & Lasenby (PRD 104, 064014, 2021) reach it by
-    a sharper route: a unique frame retains the Mannheim–Kazanas form because the scalar's
-    energy–momentum vanishes *despite the field being nonzero and radially dependent*, and even
-    there massive particles follow Schwarzschild–de Sitter geodesics. What the trichotomy adds
-    is **where the assumption sits** in each case, not that the cases fail.
+  - The result is a **trichotomy** — no scale / constant scale / field-dependent scale. (A)
+    decouples `γ` from mass; (B1) removes `γ`; and **(B2) splits on exactly the question the
+    field is currently arguing about**: *does the field that breaks the conformal symmetry also
+    generate particle masses?*
+  - If it does, `m = hS` puts trajectories on geodesics of the frame with `γ = 0`, so **`γ` sits
+    in the metric and does not act on orbits** — the position of Hobson & Lasenby (PRD 104,
+    064014, 2021), who exhibit a frame retaining the MK form (the scalar's energy–momentum
+    vanishing *despite* the field being nonzero and radially dependent) in which particles still
+    follow Schwarzschild–de Sitter geodesics.
+  - If it does not, `γ` acts and the fits stand — the position of Mannheim (Gen. Rel. Grav. 54
+    (2022) 41), who argues a long-range field with `m = hS` would give test particles masses of
+    the order of the galaxies they orbit, so mass generation must instead be by *microscopic*
+    expectation values that vary only inside particles and are therefore internal to them.
+  - **We do not adjudicate.** What the computation contributes is the *implication* — if the
+    mass-generating field is the macroscopic breaking field, then `γ` cannot act on orbits —
+    with the ansatz removed. So the disagreement is not about the geometry, the solution, or the
+    fits: it is about whether mass generation is macroscopic or microscopic. That is the
+    twenty-year Flanagan–Mannheim question, **located**.
   - The gauge that all of it uses is itself accounted for: Bach flatness is a **conformal-class**
     property, and reachability reduces to a first-order ODE
     ([`BH0G`](../../black_hole_programme/reports/bh0g-gauge-reduction.md)). Only global
