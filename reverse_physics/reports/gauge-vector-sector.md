@@ -44,14 +44,30 @@ what the repository already has; this is the cheap way not to.)
 
 ## 3. The result
 
-At derivative orders zero, one and three the only vector-parameter generator found is the
+At derivative orders zero and one the only vector-parameter generator found is the
 **diffeomorphism** one — at curvature degree ≤ 2 for orders zero and one, and at degree **zero**
 for order three, where the kernel is exactly the manifest N1/N2 combinations. Orders two and four
 are **empty by index parity** (§4b).
 
-At order three with curvature degree **one**, all eight sub-families are enumerated and **no
-symmetry is found** (§6c). An earlier claim that one existed is retracted — it was an artefact of
-a one-parameter family.
+> **Retraction (order three).** Earlier issues concluded that at order three the kernel is exactly
+> the manifest N1/N2 combinations, and that no relation survives in any degree-one sub-family.
+> Both rested on comparisons over the **whole jet**. `∇³B` is *seventh* order in the metric and
+> the jets carry degree 7, so almost none of the jet is trustworthy: the contractions that must
+> vanish identically stop doing so above outer order 2 — now **measured**, where the budget
+> arithmetic had predicted 0 and the measurement found 2. The candidate relation whose *failure*
+> closed the earlier argument failed only above the valid range; within it, it vanished.
+>
+> Restricted to the valid orders the ranks drop and kernels appear (2 of 3 at degree zero, 2 of 6
+> across the degree-one families). **That is not the opposite claim either**: a kernel element
+> need not be a symmetry, since two placements can give the same adjoint. Order three is
+> **unresolved at the available resolution**.
+>
+> It was found by trying to *strengthen* the result: an exact full-jet rank reported rank 6 for a
+> tensor that is zero on construction, and a zero object cannot have rank 6.
+>
+> Surviving at order three: the three positive controls (N1 differentiated twice, through a
+> rank-5 object) and the separate nonvanishing of the individual contractions. Not surviving: any
+> statement about their independence, hence about completeness.
 
 The scalar sector is settled at the *same* curvature degree, so both halves of the claim now
 stand at the same degree rather than one half-claim beside another: the gauge algebra at these

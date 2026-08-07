@@ -49,9 +49,13 @@ beyond \(\nabla^{a}B_{ab}=0\) and \(g^{ab}B_{ab}=0\)---a question about the
 \emph{full nonlinear} action, asked order by order in the gauge parameter,
 rather than about deformations of the free theory.  Working over a metric family carrying symbolic
 parameters, so that a vanishing result is zero \emph{as a polynomial} rather
-than at sampled fixtures, we find no further generator at derivative order up
-to three in the gauge parameter.  Orders two and four are empty for a reason
-that needs no computation at all: index parity.
+than at sampled fixtures, we find no further generator at derivative order
+zero or one in the gauge parameter.  Orders two and four are empty for a
+reason that needs no computation at all: index parity.  Order three is
+\emph{attempted and unresolved}, for a reason we state rather than bury: the
+third covariant derivative of the Bach tensor is seventh order in the metric,
+and at the jet degree we can afford only the lowest orders are trustworthy ---
+too few to resolve the rank that the question turns on.
 
 Two features of the problem make a naive count wrong, and both bite.  Gauge
 symmetries form a module over \emph{functions}, so a generator multiplied by a
@@ -228,11 +232,15 @@ only generator is the diffeomorphism generator.  Specifically:
   tensor built from \(g\), \(g^{-1}\), \(\delta\) and undifferentiated
   curvature has even rank, so the odd-rank coefficient the even orders need
   cannot be built.
-\item \(k=3\): at curvature degree zero the kernel is exactly the combinations
-  that vanish because of the two known identities, and that case \emph{is}
-  exhaustive.  At curvature degree one, eight sub-families were enumerated
-  over all placements and no relation survives in any---but see the scope
-  note below: that sweep is exhaustive in placement, not in shape.
+\item \(k=3\): \textbf{unresolved}, and the reason is a resolution limit rather
+  than a negative result.  \(\nabla^{3}B\) is seventh order in the metric, so
+  at jet degree seven only the lowest outer orders carry information; how many
+  is \emph{measured} against contractions that must vanish identically, and the
+  answer is three (orders zero through two).  Restricted to those, the rank of
+  the candidate contractions is not resolved.  What does hold at this order are
+  the controls of \S\ref{sec:negatives} and the separate nonvanishing of the
+  individual contractions; what does not is any statement about their
+  independence, and hence about completeness.  See Remark~\ref{rem:truncation}.
 \end{itemize}
 \end{theorem}
 
@@ -257,12 +265,33 @@ a}B^{a}{}_{\lambda}\)---are outside it.  At curvature degree one the result is
 consequently weaker than at degree zero, and is stated as such.
 \end{remark}
 
+\begin{remark}[Why order three is unresolved, and how we know]
+\label{rem:truncation}
+A jet of degree \(d\) supports \(d-k\) trustworthy orders after \(k\)
+derivatives, and \(\nabla^{3}B\) costs seven.  Rather than trust that
+budget we measure it: the contractions whose innermost operation is
+\(\nabla\!\cdot\!B\) must vanish identically, and the highest order at which
+they still do is a direct read of how far the data is good.  The arithmetic
+predicted zero usable orders; the measurement found three.  The measurement is
+what the computation uses.
+
+An earlier version of this work concluded that the order-three kernel is
+exactly the two known identities.  That conclusion came from a candidate
+relation which failed when compared over the \emph{whole} jet---and its
+failure lay entirely in the orders above the valid range.  Within the
+trustworthy range it vanished.  The conclusion is withdrawn.  We note also that
+the converse would not follow either: a kernel element need not be a
+generator, since two placements can yield the same adjoint and contribute a
+relation that is an artefact of the parametrisation.
+\end{remark}
+
 \begin{corollary}
-At derivative order up to three, and at the curvature degrees and shape classes
-stated above, the gauge algebra of \(S=\alpha\int\!\sqrt{-g}\,C^{2}\) is
-\(\mathrm{Diff}\ltimes\mathrm{Weyl}\).  This agrees with what
-\cite{BoulangerHenneaux2001} establishes by deformation theory, reached
-independently.
+At derivative orders zero and one, at the curvature degrees stated, the gauge
+algebra of \(S=\alpha\int\!\sqrt{-g}\,C^{2}\) is
+\(\mathrm{Diff}\ltimes\mathrm{Weyl}\); orders two and four are empty by
+parity.  This agrees with what \cite{BoulangerHenneaux2001} establishes by
+deformation theory, reached independently, over the range where our
+computation resolves.
 \end{corollary}
 
 \section{The negatives are the result}
@@ -299,7 +328,7 @@ check, and a control evaluated where the thing it measures degenerates proves
 nothing.
 \end{remark}
 
-\section{Rank is a floor; a witness is what closes it}
+\section{Rank is a floor, and the data has an edge}
 \label{sec:rank}
 
 The adjoint of a candidate is a linear combination of finitely many
@@ -316,13 +345,13 @@ to zero returns its own coefficients --- and then testing that combination on
 the full jets, where a genuine relation must be the zero polynomial at every
 order.
 
-At order three and curvature degree zero this procedure returns a base-point
-rank deficit whose witness \emph{fails} on the full jets.  That failure is what
-closes the question: the base-point kernel is one-dimensional, any identically
-vanishing combination would lie in it, and it does not vanish identically, so
-none does.  The rank is exactly full and the kernel is exactly the two known
-identities.  The conclusion follows from a witness failing, not from one
-succeeding.
+This procedure has an edge, and at order three we ran off it.  ``Testing on
+the full jets'' is only meaningful where the jet carries information, and after
+seven derivatives most of a degree-seven jet does not.  A witness that
+\emph{fails} above the valid range has not failed at all.  That is how the
+withdrawn conclusion of Remark~\ref{rem:truncation} arose, and the guard
+against it is to measure the usable range against a known answer before
+comparing anything---which is now done, and reported alongside the rank.
 
 \begin{remark}[A width, not just an order]
 A relation may verify identically over a narrow family and still be false of
@@ -338,10 +367,10 @@ wider setting.
 \label{sec:not}
 
 \begin{itemize}\itemsep2pt
-\item \textbf{Not all orders.}  The result is a lower bound on completeness at
-  the order computed.  Derivative order five and above is untouched; so is
-  curvature degree two and above at order three.  Nothing here forbids a
-  generator living above the ceiling we reached.
+\item \textbf{Not all orders, and not order three.}  The result covers
+  derivative orders zero and one, with two and four empty by parity.  Order
+  three is unresolved (Remark~\ref{rem:truncation}) and order five and above
+  untouched.  Nothing here forbids a generator above the ceiling we reached.
 \item \textbf{Not all metrics.}  The family is general in the metric but each
   component carries a fixed polynomial pattern in the coordinates.  This is a
   generic family near flat space.  An identity that fails only on metrics far
