@@ -387,8 +387,24 @@ trajectories that are only \emph{globally} conformally symmetric''.  A frame
 argument that moves trajectories by an \(r\)-dependent rescaling is a
 \emph{local} conformal transformation, and on that reading it is the locality
 of the rescaling, not the point-particle idealisation, that is in question.  We
-report this because it relocates the assumption once more; we do not evaluate
-the eikonal analysis.
+report this because it relocates the assumption once more.
+
+We did check the step it turns on, and it holds.  The eikonal approximation
+drops \(-i\nabla_{\mu}\nabla^{\mu}T\), and that term is exactly what carries
+the local conformal invariance: under \(S\to e^{-\alpha}S\), with
+\(T\to T+i\alpha\) and the amplitude unchanged, the cross terms of
+\(\nabla_{\mu}T\nabla^{\mu}T-i\nabla_{\mu}\nabla^{\mu}T-\tfrac16R\) cancel in
+three pairs and the combination transforms homogeneously, while without that
+term a residual \(2i\nabla T\!\cdot\!\nabla\alpha-2\nabla\alpha\!\cdot\!\nabla\alpha-\nabla^{2}\alpha\)
+survives.  The algebra is correct.
+
+That, however, is the end of what a computation settles here.  Both sides
+agree the eikonal limit drops the term; what they disagree about is whether
+losing \emph{local} conformal invariance in that limit disqualifies a frame
+argument built on an \(r\)-dependent rescaling.  That is an inference about
+which idealisation is physically appropriate, not an identity, and no exact
+computation adjudicates it.  We record where the disagreement sits and stop
+there.
 \end{remark}
 
 \begin{corollary}[Where the assumption lives]
