@@ -19,7 +19,8 @@
 \newcommand{\cert}[1]{\nolinkurl{#1}}
 \newcolumntype{Y}{>{\raggedright\arraybackslash}X}
 
-\title{Is the Gauge Algebra of Conformal Gravity an Assumption?}
+\title{The Gauge Algebra of Conformal Gravity\\
+\large A Direct Check on the Bach Noether Identities}
 \author{Claude Opus 5\thanks{Anthropic model; computations and drafting.}
 \and Asger Alstrup Palm\thanks{Programme orchestrator and corresponding human contact; Honorary Professor, DTU Compute, Technical University of Denmark. \texttt{asger@area9.dk}.}}
 \date{Working draft, 7 August 2026}
@@ -31,13 +32,22 @@
 The Weyl action \(S=\alpha\int\!\sqrt{-g}\,C^{2}\) is invariant under
 diffeomorphisms and under local Weyl rescalings.  That much is a calculation.
 Whether \(\mathrm{Diff}\ltimes\mathrm{Weyl}\) is \emph{all} of its gauge
-algebra is a different question, and it is usually assumed rather than
-computed: one exhibits the symmetries one built the action to have, and stops.
+algebra is a different question, and a harder one, since it asks about
+symmetries the action was not built to have.
 
-We compute it.  By Noether's second theorem gauge generators and Noether
-identities are the same data, so the question becomes whether the Bach
-tensor satisfies any local identity beyond \(\nabla^{a}B_{ab}=0\) and
-\(g^{ab}B_{ab}=0\).  Working over a metric family carrying symbolic
+This question has an answer, and it is not ours.  Boulanger and Henneaux
+\cite{BoulangerHenneaux2001} showed by cohomological deformation theory that
+the Weyl action is the only consistent deformation of linearized conformal
+gravity with no more than four derivatives of the metric, and---the part that
+bears on us---that diffeomorphism invariance \emph{follows from consistency}
+rather than being imposed.  On the question of principle we add nothing.
+
+What we add is a direct verification by an unrelated route.  By Noether's
+second theorem gauge generators and Noether identities are the same data, so
+the question becomes whether the Bach tensor satisfies any local identity
+beyond \(\nabla^{a}B_{ab}=0\) and \(g^{ab}B_{ab}=0\)---a question about the
+\emph{full nonlinear} action, asked order by order in the gauge parameter,
+rather than about deformations of the free theory.  Working over a metric family carrying symbolic
 parameters, so that a vanishing result is zero \emph{as a polynomial} rather
 than at sampled fixtures, we find no further generator at derivative order up
 to three in the gauge parameter.  Orders two and four are empty for a reason
@@ -75,8 +85,29 @@ conformal gravity has a local symmetry nobody has written down, which would be
 a considerably larger claim than the expected answer and would need
 correspondingly better evidence.
 
-Either way the question is decidable by computation, and it appears not to have
-been asked of this action.
+\paragraph{This has been answered, and the answer is not ours.}
+Boulanger and Henneaux \cite{BoulangerHenneaux2001} classified the consistent
+deformations of \emph{linearized} conformal gravity in \(D=4\) and found that
+with no more than four derivatives of the metric the only possibility is the
+Weyl action---and that diffeomorphism invariance is not an input but a
+consequence: ``No a priori requirement of invariance under diffeomorphisms is
+imposed: this follows automatically from consistency.''  On the question of
+principle raised above, that is the answer, and it predates this work by a
+quarter century.
+
+Two things nevertheless remain to be done, and they are what this paper does.
+Their argument bounds the \emph{action} by its derivative order and proceeds
+by deforming the free theory; ours bounds the \emph{gauge parameter} by its
+derivative order and interrogates the full nonlinear action directly, through
+its Noether identities.  The two routes share no machinery, so agreement
+between them is a genuine cross-check rather than a restatement.  And the
+order-by-order form makes explicit \emph{where} the ceiling sits, which a
+deformation argument does not report in those terms.
+
+The contribution is therefore a confirmation and a bound, not a discovery.  A
+reader who wants to know whether \(\mathrm{Diff}\ltimes\mathrm{Weyl}\) is
+forced should cite \cite{BoulangerHenneaux2001}; a reader who wants it checked
+against the nonlinear action by exact computation may cite this.
 
 \paragraph{Conventions.}
 \(D=4\), signature \((-,+,+,+)\).  \(B_{\mu\nu}\) is the Bach tensor, and
@@ -92,7 +123,13 @@ A local operator \(\Delta_{\mu\nu}[\varepsilon]\), linear in a parameter
 \(\varepsilon\), generates a gauge symmetry exactly when
 \(E^{\mu\nu}\Delta_{\mu\nu}[\varepsilon]\) is a total divergence for every
 metric --- equivalently when the \emph{adjoint} \(\Delta^{\dagger}[E]\)
-vanishes identically.  So the question of \S\ref{sec:question} becomes:
+vanishes identically.\footnote{The adjoint \emph{reverses} the order of the
+derivatives: the outermost derivative acting on the parameter in
+\(\Delta\) becomes the innermost acting on \(E\).  Since the derivatives do
+not commute, assigning a candidate to a generator before computing the adjoint
+is a reliable way to turn an ordering slip into a result.  We compute the
+contractions first and interpret afterwards.}  So the question of
+\S\ref{sec:question} becomes:
 
 \begin{quote}
 does \(B_{\mu\nu}\) satisfy any local identity beyond
@@ -192,9 +229,10 @@ only generator is the diffeomorphism generator.  Specifically:
   curvature has even rank, so the odd-rank coefficient the even orders need
   cannot be built.
 \item \(k=3\): at curvature degree zero the kernel is exactly the combinations
-  that vanish because of the two known identities.  At curvature degree one,
-  eight sub-families were enumerated over all placements and no relation
-  survives in any.
+  that vanish because of the two known identities, and that case \emph{is}
+  exhaustive.  At curvature degree one, eight sub-families were enumerated
+  over all placements and no relation survives in any---but see the scope
+  note below: that sweep is exhaustive in placement, not in shape.
 \end{itemize}
 \end{theorem}
 
@@ -207,10 +245,24 @@ two and four.  Order zero is also the cheap sector: its adjoint is a
 contraction rather than a divergence, with no integration by parts.
 \end{remark}
 
+\begin{remark}[Scope of the degree-one sweep]
+\label{rem:shape}
+Every candidate in that sweep has the form \(Y=F_{1}[\text{pair}]\times
+F_{2}[\text{pair}]\) with \emph{both factors of rank two}, and the enumeration
+is over which two of the four slots each factor occupies.  It is therefore
+complete in \emph{placement} within that shape class, and \emph{not} complete
+in shape: coefficients that do not factor into two rank-two pieces---for
+instance Riemann carrying three free indices, \(R_{\rho\sigma\tau
+a}B^{a}{}_{\lambda}\)---are outside it.  At curvature degree one the result is
+consequently weaker than at degree zero, and is stated as such.
+\end{remark}
+
 \begin{corollary}
-At derivative order up to three and the curvature degrees stated, the gauge
-algebra of \(S=\alpha\int\!\sqrt{-g}\,C^{2}\) is
-\(\mathrm{Diff}\ltimes\mathrm{Weyl}\), with nothing hidden.
+At derivative order up to three, and at the curvature degrees and shape classes
+stated above, the gauge algebra of \(S=\alpha\int\!\sqrt{-g}\,C^{2}\) is
+\(\mathrm{Diff}\ltimes\mathrm{Weyl}\).  This agrees with what
+\cite{BoulangerHenneaux2001} establishes by deformation theory, reached
+independently.
 \end{corollary}
 
 \section{The negatives are the result}
@@ -298,6 +350,21 @@ wider setting.
   were tested against the full jets.  A \emph{combination} of witnesses could
   vanish while none does alone, so ``no witness verified'' is strong evidence
   for full rank rather than a proof of it.
+\item \textbf{Not complete in shape at curvature degree one.}  See
+  Remark~\ref{rem:shape}: that sweep is exhaustive in placement within a
+  restricted shape class, not over all coefficients of that degree.
+\item \textbf{No principled stopping rule for the family width.}  The family
+  carries two parameters because one produced a spurious relation
+  (\S\ref{sec:rank}) and two did not.  That is a repair, not a criterion:
+  nothing here shows two is \emph{enough}, and we do not have an argument that
+  the family spans the jet directions the identities probe.  It does not.
+\item \textbf{One implementation.}  Unlike some results in this programme,
+  nothing here carries an independent second rail.  A systematic error in the
+  shared curvature layer would not be caught by these checks, though the
+  Riemann comparison in \S\ref{sec:verification} narrows that exposure.
+\item \textbf{\(D=4\) and one signature.}  Nothing is claimed in other
+  dimensions, where the counting arguments---index parity in particular---would
+  have to be redone.
 \item \textbf{No novelty in the symmetries themselves.}  That the Weyl action
   is diffeomorphism and Weyl invariant is classical.  The contribution is the
   converse direction --- that at bounded order there is nothing else --- which
@@ -355,6 +422,9 @@ this tree had previously covered.
 \bibitem{BarnichBrandtHenneaux} G.~Barnich, F.~Brandt and M.~Henneaux,
   \emph{Local BRST cohomology in gauge theories}, Phys.\ Rept.\ \textbf{338}
   (2000) 439.
+\bibitem{BoulangerHenneaux2001} N.~Boulanger and M.~Henneaux,
+  \emph{A derivation of Weyl gravity}, Annalen Phys.\ \textbf{10} (2001) 935,
+  \href{https://arxiv.org/abs/hep-th/0106065}{arXiv:hep-th/0106065}.
 \end{thebibliography}
 
 \end{document}
