@@ -44,10 +44,14 @@ what the repository already has; this is the cheap way not to.)
 
 ## 3. The result
 
-At **every derivative order up to and including three**, the only vector-parameter generator is
-the **diffeomorphism** one — at curvature degree ≤ 2 in the coefficient for orders zero and one,
-and at degree zero for order three. Orders zero, one and three are computed; order two is **empty
-by index parity** (§4b), and so is order four.
+At derivative orders zero, one and three the only vector-parameter generator found is the
+**diffeomorphism** one — at curvature degree ≤ 2 for orders zero and one, and at degree **zero**
+for order three, where the kernel is exactly the manifest N1/N2 combinations. Orders two and four
+are **empty by index parity** (§4b).
+
+At order three with curvature degree **one**, the R-weighted sub-family is enumerated exhaustively
+and **does contain a symmetry** (§6c) — expected to be a reparametrisation by the
+module-over-functions structure, but not yet verified as one.
 
 The scalar sector is settled at the *same* curvature degree, so both halves of the claim now
 stand at the same degree rather than one half-claim beside another: the gauge algebra at these
@@ -199,42 +203,66 @@ Both wrong readings were live.
 A rank is a floor in one direction; a witness is what closes it in the other. Here it closes it
 by **failing** to verify.
 
-## 6c. Curvature in the coefficient at order three — sampled, not enumerated
+## 6c. Curvature in the coefficient at order three — and the sub-family is not empty
 
-The covariant-constancy shortcut is **gone** here: `∇S ≠ 0`, so the derivatives act on the
-coefficient too and the adjoint must be taken of the *product*.
-
-The naive route was not attempted — `∇³` of the rank-4 product is `n⁷` jets at outer degree 7,
-gigabytes of exact rationals per candidate. Instead the divergence is taken **at every step**:
-each derivative index meets an index of the object it differentiates and the innermost contracts
-first, so
+The covariant-constancy shortcut is **gone**: `∇S ≠ 0`, so the derivatives act on the coefficient
+too and the adjoint is of the *product*. The naive route — `∇³` of the rank-4 product, `n⁷` jets
+at outer degree 7 — was not attempted. Instead the divergence is taken **at every step**:
 
 ```
 Y_{ρστλ}  --div ρ-->  A_{στλ}  --div σ-->  B_{τλ}  --div τ-->  C_λ
 ```
 
-and the rank never exceeds `n⁵`. Same peak cost as degree zero; only the order of contraction
-changed.
+so the rank never exceeds `n⁵` — the same peak cost as degree zero, with only the order of
+contraction changed. **The control is the degree-zero answer**: with the coefficient set to the
+constant `1` the pipeline must reproduce what the covariantly-constant route already settled, and
+it does. A new pipeline is checked against the settled one before any new answer is read off it.
 
-**The control is the degree-zero answer.** Run with the coefficient set to the constant `1`, this
-pipeline must reproduce what the covariantly-constant route already settled — the innermost
-divergence lands on `B`, that divergence is N1, the adjoint vanishes. It does. A new pipeline is
-checked against the settled one *before* any new answer is read off it.
+### The R-weighted sub-family is complete, not selected
 
-**Result:** three structurally distinct candidates — scalar-weighted, trace-weighted, and
-**Riemann-built** — are all **nonzero**, so none is a symmetry. The Riemann-built one is in the
-set precisely because it is the shape an inherited `g`-and-`Ric` list omits, an omission this
-programme has already been bitten by.
+`Y = R ×` (rank-4 built from one `B` and one `g`). `B` occupies two of the four slots and `g` the
+other two, so there are exactly **six** placements — and the seventh conceivable term
+`(tr B) g g` vanishes because the Bach tensor is traceless. Six *is* the list.
 
-**This is weaker than the degree-zero result, and is stated as such.** At degree zero every
-contraction pattern was enumerated, ranked, and closed with a witness. Here three candidates are
-**sampled**. *"These three fail"* is not *"the space is empty"*.
+All six adjoints are separately **nonzero** — which alone is the reading that would have said
+*"no symmetry here"*. The **rank** says otherwise: **2 of 6** at the base point, four candidate
+relations, and **one verifies identically** on the full jets.
+
+**So a symmetry exists in the R-weighted sub-family at order three.** At degree zero the kernel
+was exactly the manifest N1/N2 combinations; here there is more.
+
+### Why that is expected rather than alarming
+
+`gauge-layer-brief.md` already names the reason: the gauge symmetries are a **module over
+functions**, and **`R` is a function**. So
+
+- `Diff` with parameter `ζ = R × (second-order operator on ξ)`, and
+- `Weyl` with `σ = R × (third-order operator)`
+
+are symmetries at this order and are **reparametrisations**, not new generators. Curvature in the
+coefficient is precisely where function-multiplication of the parameter first enters, so a kernel
+here is what the module trap predicts.
+
+**That reading is not verified.** It is the expected explanation, and confirming it needs the
+reparametrisation span enumerated. Until then neither reading is established.
+
+### The dimension is not pinned either
+
+Only the **individual** base-point witnesses were tested against the full jets. A *combination*
+of them could vanish identically while none does alone, so "one verified" is a **lower bound**.
+The identically-vanishing space is at least 1-dimensional and at most the size of the base-point
+kernel. Pinning it needs a second rank taken over the full jets rather than at the base point.
+
+The Ric- and Riemann-weighted sub-families remain **samples**.
 
 ## 7. What this does not establish
 
-- **An exhaustive result at curvature degree ≥ 1 at order three.** Three candidates were sampled
-  and all fail (§6c); the enumeration is not done. Nor anything at derivative order five or above
-  (four being empty by parity). The claim is a *lower bound on completeness*.
+- **That the order-three degree-one symmetry is a reparametrisation** rather than a new
+  generator (§6c). It is *expected* to be one — the module is over functions and `R` is a
+  function — but the reparametrisation span has not been enumerated, so neither reading is
+  established. Its dimension is not pinned either.
+- **The Ric- and Riemann-weighted sub-families at order three**, which are sampled only, and
+  anything at derivative order five or above. The claim is a *lower bound on completeness*.
 - **That the algebra is forced.** It establishes that nothing else appears at this order, which
   is the *evidence* for forcing, not the statement of it.
 - **Anything about the Stückelberg entanglement** (gap 2). `RP-DIFF` independence remains
@@ -243,8 +271,10 @@ contraction pattern was enumerated, ranked, and closed with a witness. Here thre
 
 ## 8. Next
 
-**Enumerate curvature degree one at order three properly**, rather than sampling it. The
-contract-as-you-go pipeline and its degree-zero control already exist, so what remains is the
-candidate list itself plus a rank and witness over it — the same shape that closed degree zero.
-Gap 2 is likely structural, and the honest outcome there may remain *"recorded,
+**Enumerate the reparametrisation span at order three, degree one** — `Diff` with
+`ζ = R × (second-order operator)` and `Weyl` with `σ = R × (third-order operator)` — and ask
+whether the surviving relation lies in it. That is what decides *reparametrisation* versus *new
+generator*, and it is now the sharpest open question in this stream. Alongside it: pin the
+dimension with a second rank over the full jets, and enumerate the Ric- and Riemann-weighted
+sub-families. Gap 2 is likely structural, and the honest outcome there may remain *"recorded,
 not resolved"*; gap 1, the degrees `(3,1)` and `(4,2)`, is untouched.
