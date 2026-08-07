@@ -49,9 +49,9 @@ At derivative orders zero, one and three the only vector-parameter generator fou
 for order three, where the kernel is exactly the manifest N1/N2 combinations. Orders two and four
 are **empty by index parity** (§4b).
 
-At order three with curvature degree **one**, the R-weighted sub-family is enumerated exhaustively
-and **no symmetry is found** (§6c). An earlier claim that one existed there is retracted — it was
-an artefact of a one-parameter family.
+At order three with curvature degree **one**, all eight sub-families are enumerated and **no
+symmetry is found** (§6c). An earlier claim that one existed is retracted — it was an artefact of
+a one-parameter family.
 
 The scalar sector is settled at the *same* curvature degree, so both halves of the claim now
 stand at the same degree rather than one half-claim beside another: the gauge algebra at these
@@ -252,19 +252,44 @@ Two things worth keeping. *"A relation exists"* is unfalsifiable in a way that
 when a computed relation disagrees with a hand-derivation, **widen the family before believing
 either**: the thin family is the cheaper suspect.
 
-### Two limitations, stated rather than glossed
+### All eight sub-families, enumerated
 
-- Only the **individual** witnesses are checked on the full jets. A *combination* of them could
-  vanish identically while none does alone, so "none verified" is strong evidence that the rank
-  is full, **not a proof** of it. Closing that needs a second rank over the full jets.
-- The **Ric- and Riemann-weighted** sub-families are sampled, not enumerated.
+Every candidate is `Y = F1[pair1] × F2[pair2]`. The **sub-family** is the choice of `(F1, F2)`;
+the **placement** is which two slots `F1` takes. Eight were run — the constant-1 control,
+R-weighted, `Ric × B`, the `Ric:B` scalar contraction, `Ric.B` and its transpose `B.Ric` (which
+differ, since `Ric.B` isn't symmetric), the Riemann mixed contraction `R_{acbd}B^{cd}`, and the
+Riemann first-pair contraction `R_{abcd}B^{cd}` — each enumerated over its placements with its
+own rank and witness pass, over a two-parameter family.
+
+**No relation survives in any of them.** Ric- and Riemann-weighted are no longer sampled.
+
+Two controls hold: the constant-1 coefficient reproduces N1 at the placement where the innermost
+divergence lands on `B`; and the Riemann first-pair contraction is **zero on construction**,
+which tests the *construction* rather than the adjoint machinery.
+
+### Three defects, all found by controls or by printing
+
+- **The zero test compared whole jets.** `R_{abcd}B^{cd}` must vanish on construction and didn't:
+  at `xd = 7` Riemann is valid only to `xd − 2 = 5`, so orders 6–7 are truncation garbage. The
+  *same* error as the `C²` conformal defect earlier in this programme.
+- **Duplicate placements.** When both factors are the same tensor, a placement and its complement
+  build the identical `Y` — so `Ric:B` has three distinct candidates, not six, and its two
+  "surviving relations" were the duplicates cancelling.
+- **The control was too broad.** Only one placement is the N1 case; requiring the whole family to
+  vanish failed a control that was working.
+
+### One limitation that remains
+
+Only the **individual** witnesses are checked on the full jets. A *combination* could vanish
+while none does alone, so "none verified" is strong evidence that the ranks are full, **not a
+proof**. Closing it needs a second rank over the full jets.
 
 ## 7. What this does not establish
 
-- **An exhaustive result for the Ric- and Riemann-weighted sub-families at order three**, which
-  are sampled only; nor a *proof* (as opposed to strong evidence) that the R-weighted rank is
-  full, since witness combinations were not tested; nor anything at derivative order five or
-  above. The claim is a *lower bound on completeness*.
+- **A *proof* (as opposed to strong evidence) that the ranks are full**, since witness
+  combinations were not tested — only individual witnesses. Nor anything at curvature degree two
+  or above at order three, nor at derivative order five or above. The claim is a *lower bound on
+  completeness*.
 - **That the algebra is forced.** It establishes that nothing else appears at this order, which
   is the *evidence* for forcing, not the statement of it.
 - **Anything about the Stückelberg entanglement** (gap 2). `RP-DIFF` independence remains
@@ -273,7 +298,7 @@ either**: the thin family is the cheaper suspect.
 
 ## 8. Next
 
-**Enumerate the Ric- and Riemann-weighted sub-families** at order three the way the R-weighted
-one now is, and **close the witness test** by taking a second rank over the full jets so
-combinations are covered rather than only individual witnesses. Gap 2 is likely structural, and the honest outcome there may remain *"recorded,
+**Close the witness test** by taking a second rank over the full jets, so combinations are
+covered rather than only individual witnesses; then curvature degree two at order three. Gap 2 is
+likely structural, and the honest outcome there may remain *"recorded,
 not resolved"*; gap 1, the degrees `(3,1)` and `(4,2)`, is untouched.
