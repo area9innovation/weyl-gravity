@@ -151,12 +151,45 @@ overcounts**.
 Concretely: the naive degree-zero kernel has **three** elements (`δδ`, `δδ` transposed, `gg`)
 and the generator count is **two**.
 
+## 6b. Order three: attempted, and deliberately not claimed
+
+Order three is the next order index parity permits, and it is affordable for a reason worth
+recording: a degree-zero coefficient is built from `g`, `g^{-1}` and `δ`, so it is **covariantly
+constant** and passes straight through the derivatives —
+
+```
+∇∇∇( S E )  =  S · ∇∇∇E
+```
+
+— so one third covariant derivative of the Bach tensor is computed **once** and every candidate
+is a contraction of it. `∇³B` is seventh order in the metric, so the jets run at outer degree 7.
+
+**Three positive controls hold.** Whenever the *innermost* derivative contracts with an index of
+`B`, the innermost operation is `∇·B`, which N1 says is zero. All three such contractions vanish
+identically through a rank-5 object — N1 differentiated twice. The chain computes what it claims.
+
+**And then the rank.** Each of the three surviving contractions is separately **nonzero**.
+Reading that as *"no further symmetries"* would have been a wrong claim — the same
+each-nonzero-is-not-independent confusion that already forced the cubic action count from 7 down
+to 5. So the rank was computed by exact rational elimination, and it came back **2 of 3**: some
+nontrivial combination of them also vanishes.
+
+A rank read at the base point is a **lower bound**, so the true rank is 2 or 3 and the kernel is
+4 or 3 — one more than the manifest three, or exactly them. **Not decided, and nothing is claimed
+either way.** Settling it needs the vanishing combination *exhibited* and verified identically
+zero, the way the cubic quotient exhibits its kernel witnesses.
+
+Even then, a fourth kernel element would be a **symmetry**, and a symmetry need not be a new
+**generator**: `Diff` composed with a second-order operator on the parameter is a symmetry at this
+order and is only a reparametrisation.
+
 ## 7. What this does not establish
 
-- **Completeness at derivative order three or above, or curvature degree three or above.**
-  Derivative orders zero, one and two are closed, and curvature degrees up to two. Derivative
-  order three is the next one index parity permits, and is untouched. The boundary is real; the
-  claim is a *lower bound on completeness*.
+- **Anything at derivative order three.** It was attempted (§6b): the controls hold and the rank
+  is at least 2, and that is all. Whether a fourth symmetry exists there, and whether it would be
+  a new generator rather than a reparametrisation, is **open**.
+- **Completeness at curvature degree three or above.** Derivative orders zero, one and two are
+  closed, and curvature degrees up to two. The claim is a *lower bound on completeness*.
 - **That the algebra is forced.** It establishes that nothing else appears at this order, which
   is the *evidence* for forcing, not the statement of it.
 - **Anything about the Stückelberg entanglement** (gap 2). `RP-DIFF` independence remains
@@ -165,7 +198,8 @@ and the generator count is **two**.
 
 ## 8. Next
 
-Derivative order **three** — the next order index parity permits, and an expensive one, since
-it needs three covariant derivatives of the Bach tensor where the whole gate currently needs
-one. Gap 2 is likely structural, and the honest outcome there may remain *"recorded,
+**Exhibit the order-three kernel** — extract the vanishing combination and verify it is the zero
+polynomial, converting the rank floor into an equality. Then enumerate the reparametrisation span
+at order three and ask whether the kernel is spanned by it; only then does order three say
+anything about generators. Gap 2 is likely structural, and the honest outcome there may remain *"recorded,
 not resolved"*; gap 1, the degrees `(3,1)` and `(4,2)`, is untouched.
