@@ -35,7 +35,7 @@ the basis of a long-standing proposal to fit galactic rotation curves without
 dark matter.  We ask a reverse-physics question about it: not whether the
 fits succeed, but \emph{what must be assumed for them to mean anything}.
 
-Six results, each an exact symbolic computation with machine-checked
+Seven results, each an exact symbolic computation with machine-checked
 controls.  (i) The linear term is not an ansatz: in the conformal gauge the
 Bach vacuum equation is exactly the \emph{biharmonic} equation
 \(\nabla^{4}B=0\), so \(\gamma r\) is the point-source response of the
@@ -64,9 +64,21 @@ scale \emph{is} the conformal factor and such a particle follows geodesics of
 the frame where \(\gamma=0\).  A particle whose mass does not track the
 scalar follows the other frame, where \(\gamma\) acts.
 
-The conclusion is a trichotomy with one surviving branch, and on that branch a
-fork with two computed sides.  We do not adjudicate it.  We locate it, and the
-location is now an equation.
+(vii) That pair is an exact solution and not a relabelling---in the
+constant-scalar frame the Einstein condition and Bach flatness hold together,
+with the de Sitter term equal to the scalar potential---and \(u\) is a
+conformal invariant while \(\gamma\) is not.  Two frames with the same mass
+carry different \(\gamma\), so \(\gamma\) is \emph{not a function of the
+mass}.
+
+The conclusion is therefore sharper than a coincidence in need of
+explanation.  Universality of \(\gamma\) is not in tension with the
+structure, because \(\gamma\) cannot depend on mass at all; it is the
+statement that one boundary datum on the symmetry-breaking sector is common
+to every galaxy while the mass varies freely.  That is consistent, it is not
+delivered by the gravitational theory, and it is the whole of what a
+conformal-gravity rotation-curve fit assumes.  We do not adjudicate it.  We
+locate it, and the location is one number.
 \end{abstract}
 
 \section{The question}
@@ -408,6 +420,47 @@ masses independent of the breaking field is a question about that sector, and
 we do not answer it.  What is no longer available is leaving the choice
 implicit.
 
+\subsection*{The pair is a solution, and \(\gamma\) is independent of the mass}
+
+Theorem~\ref{thm:action} produces a profile from a transformation law, and a
+transformation law does not by itself say the result solves anything.
+
+\begin{theorem}[Admissibility]
+\label{thm:admissible}
+In the constant-scalar frame the conformally coupled action collapses to
+Einstein--Hilbert plus a cosmological term, so its stress tensor is a
+combination of \(G_{ab}\) and \(g_{ab}\).  The gravitational equation is
+\(\alpha B_{ab}=\tfrac12 T_{ab}\) and that frame's metric is a Bach vacuum,
+so consistency forces \(T_{ab}=0\)---for a constant scalar, the Einstein
+condition.  The metric \(1-u/r-\hat kr^{2}\) is Einstein, with
+\(R=12\hat k\); equating with Theorem~\ref{thm:vev}'s \(R=-24\lambda
+S_{0}^{2}\) gives \(\hat k=-2\lambda S_{0}^{2}\).  Bach flatness and the
+Einstein condition then hold together on the same metric.
+\end{theorem}
+
+The de Sitter term \emph{is} the scalar potential, and the exterior pair
+solves the coupled system with nothing left over.
+
+\begin{corollary}[\(\gamma\) is not a function of the mass]
+\label{cor:notmass}
+Theorem~\ref{thm:action} gives \(u\mapsto u\), so the Newtonian coefficient is
+a conformal invariant of the solution while \(\gamma\) is a coordinate on the
+class.  Two frames with the same \(u\) carry different \(\gamma\).  Hence
+\(\gamma\) requires a second, independent datum---namely \(C\)---and for any
+target \(\gamma\) and any \(u\) there is a \(C\) attaining it.
+\end{corollary}
+
+This changes the standing of Theorem~\ref{thm:tf}.  Requiring \(\gamma\) to be
+one constant across galaxies of widely differing mass looked like a
+coincidence in need of explanation; it is not one, because \(\gamma\) cannot
+depend on mass in any case.  What the requirement says is that a single
+boundary datum on the symmetry-breaking sector is common to every galaxy.
+
+Both readings of that are available and we prefer neither.  Favourably, the
+universality is structurally natural rather than a fine-tuning of gravity.
+Unfavourably, the explanation of rotation curves is imported from the
+symmetry-breaking sector rather than produced by gravity.
+
 \section{What this paper does not establish}
 
 \begin{itemize}\itemsep2pt
@@ -420,12 +473,13 @@ implicit.
   observational inputs are the \emph{shape} of the Tully--Fisher relation,
   used as a premise in Theorem~\ref{thm:tf}, and that galaxies are
   pressureless, used in \S\ref{sec:matter}.  Neither is our measurement.
-\item \textbf{No verdict on branch (B2).}  \S\ref{sec:transfer} makes the
-  branch explicit but does not close it.  Corollary~\ref{cor:transfer} gives
-  the profile that \emph{realises the frame change}; it does not show that
-  profile solves the coupled scalar-plus-Bach system with matter present,
-  which is the remaining half of ``forced versus sourced''.  Nor does it show
-  \(S'/S\) cannot be universal---only what universality requires.
+\item \textbf{No interior.}  Theorem~\ref{thm:admissible} closes the
+  \emph{exterior}: the pair is an exact solution of the coupled system in
+  vacuum.  What is not done is the interior, and the matching that would fix
+  \(C\) from a given configuration; that needs a matter model we do not have,
+  and it is what remains of ``forced versus sourced''.  Nor is it shown that a
+  cosmological boundary condition \emph{can} deliver a universal \(C\).  The
+  assumption is named, not discharged.
 \item \textbf{No resolution of the Flanagan--Mannheim dispute}
   \cite{Flanagan2006,Mannheim2006} over the Newtonian limit under conformal
   matter coupling.  Theorem~\ref{thm:frame} narrows it to one premise and
@@ -460,12 +514,14 @@ Thm.~\ref{thm:vev}      & \cert{BH0F\_CONSTANT\_VEV\_FORCES\_GAMMA\_ZERO}       
 \S\ref{sec:gauge}       & \cert{BH0G\_CONFORMAL\_CLASS\_INVARIANCE}             & 10 \\
 Thm.~\ref{thm:action}   & \cert{BH0H\_UNIVERSALITY\_TRANSFER}                   & 18 \\
 Thm.~\ref{thm:frame}    & \cert{BH0I\_WHICH\_FRAME\_MATTER\_FOLLOWS}            & 13 \\
+Thm.~\ref{thm:admissible} & \cert{BH0J\_THE\_ASSUMPTION\_NAMED}                 & 12 \\
 \bottomrule
 \end{tabularx}
 \end{center}
 
-Theorems~\ref{thm:complete}, \ref{thm:vev}, \ref{thm:action} and
-\ref{thm:frame}, and \S\ref{sec:gauge}, are computed in \textsc{sympy}; Theorems~\ref{thm:biharm} and \ref{thm:trace} are
+Theorems~\ref{thm:complete}, \ref{thm:vev}, \ref{thm:action},
+\ref{thm:frame} and \ref{thm:admissible}, and \S\ref{sec:gauge}, are computed
+in \textsc{sympy}; Theorems~\ref{thm:biharm} and \ref{thm:trace} are
 computed in Forge over exact rationals with symbolic differentiation of
 unspecified functions.  Theorem~\ref{thm:complete}'s conclusion carries an
 independent Forge rail using a different arithmetic stack, representation and

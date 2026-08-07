@@ -1,0 +1,43 @@
+{
+  "builds_on": [
+    "BH0B_GENERAL_STATIC_SPHERICAL_COMPLETENESS",
+    "BH0C_TULLY_FISHER_SCALING",
+    "BH0F_CONSTANT_VEV_FORCES_GAMMA_ZERO",
+    "BH0H_UNIVERSALITY_TRANSFER",
+    "BH0I_WHICH_FRAME_MATTER_FOLLOWS"
+  ],
+  "certificate": "BH0J_THE_ASSUMPTION_NAMED",
+  "checks": {
+    "consistency_with_BH0F": "R = 12 hat_k is verified independent of u, which is BH0F's own observation that the obstruction is specific to gamma and does not touch the Newtonian coefficient.",
+    "freeness_is_checked_and_not_assumed": "for any target gamma a C attaining it is solved for, and the required C must VARY with the target. A C independent of the target would mean gamma was derived after all.",
+    "non_vacuity_on_the_de_Sitter_term": "lambda = 0 must degenerate to R = 0, i.e. Schwarzschild. Without that check 'the metric is some Einstein space' would carry no information about the scalar.",
+    "self_contained": "BH0H's group action is re-derived from the map inside this file rather than imported, so the closure does not depend on another verifier having been run.",
+    "the_invariance_claim_is_two_sided": "u -> u is checked, and gamma is required to MOVE with C. Two explicit frames with the same u and different gamma are exhibited, so 'gamma is not a function of u' is a computed counterexample and not an inference from the formula's shape.",
+    "the_two_conditions_are_checked_together": "Bach-flatness and the Einstein condition are verified on the SAME metric with hat_k already fixed by lambda S_0^2, so the solution is exhibited rather than assembled from two separately satisfied requirements.",
+    "verifier": "black_hole_programme/bh0j_the_assumption_named.py, 12 checks, all PASS"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "does_not_establish": [
+    "the interior, or the matching that would fix C from a given configuration. That needs a matter model this repository does not have, and it is what remains of 'forced versus sourced' after this.",
+    "that a cosmological boundary condition can deliver a universal C. The assumption is named here, not discharged.",
+    "which frame matter follows. BH0I computes both branches; neither is selected.",
+    "the Yukawa form m = h S, the scalar action, or the conformal weights. All are premises, as in BH0F and BH0I.",
+    "anything numerical: no galaxy, no fit, no a0, no comparison with any published gamma.",
+    "anything outside the exterior Bach vacuum, or outside the gauge b = 1/B whose reachability BH0G reduced to an ODE rather than proved."
+  ],
+  "establishes": "two things, and together they close the vacuum side of this line. FIRST, that BH0H's profile is ADMISSIBLE and not merely a conformal relabelling. In the frame where the scalar is constant the conformally coupled action collapses to Einstein-Hilbert plus a cosmological term, so its stress tensor is a combination of G_ab and g_ab; the gravitational equation is alpha W_ab = (1/2) T_ab and the frame's metric is a Bach VACUUM, so consistency forces T_ab = 0, which for a constant scalar is exactly the EINSTEIN condition. The metric 1 - u/r - hat_k r^2 is computed here to be Einstein (trace-free Ricci vanishes identically), its Ricci scalar is 12 hat_k, and equating that with BH0F's R = -24 lambda S_0^2 gives hat_k = -2 lambda S_0^2: the de Sitter term IS the scalar potential. Bach-flatness and the Einstein condition are then verified together on the same metric, so the exterior pair solves the coupled system with nothing left over. SECOND, that u is a conformal INVARIANT of the solution while gamma is not -- BH0H's action reads u -> u -- so two frames with the same mass carry different gamma, and GAMMA IS NOT A FUNCTION OF THE MASS. It requires a second, independent datum, which BH0H identifies as C, the scalar's fractional gradient. For any target gamma and any u there is a C attaining it, and the required C varies with the target, so gamma is a free datum rather than a derived one.",
+  "kind": "closure-and-localisation",
+  "next": "the interior. Everything on the vacuum side of this question is now computed: the forced family, its biharmonic origin, the Tully-Fisher conditional, the trace obstruction, the constant-vev no-go, the conformal action, the frame fork, and the admissibility of the pair. What is left needs a matter model: solve the scalar with a Yukawa source inside a configuration and match at the boundary, which would say whether C is fixed by the configuration or free. Until that is done, gamma is forced, admissible, and assumed universal -- and the assumption sits on one number.",
+  "report": "black_hole_programme/reports/bh0j-the-assumption-named.md",
+  "verification": {
+    "commands": [
+      "cd black_hole_programme",
+      "python3 bh0j_the_assumption_named.py    # 12 checks, all PASS",
+      "# needs the mise interpreter: ~/.local/share/mise/installs/python/3.12.13/bin/python3"
+    ]
+  },
+  "what_it_does_and_does_not_refute": "It refutes nothing and it explains nothing away. It converts 'is this a coincidence?' into 'is this boundary datum universal?', which is a well-posed question about a different sector. Read one way that is favourable to the programme -- the universality BH0C demands is structurally natural rather than a fine-tuning of gravity. Read the other way it is the cost -- the explanation of rotation curves is imported from the symmetry-breaking sector rather than produced by gravity. Both readings are available and the certificate prefers neither.",
+  "why_it_matters": "It names the assumption. BH0C requires gamma to be one constant across galaxies whose masses differ by orders of magnitude, and that had the look of a coincidence needing explanation. It is not a coincidence and not a tension: gamma cannot depend on mass at all, because mass is a conformal invariant of the solution and gamma is a coordinate on the conformal class. So the universality requirement is exactly the statement that ONE BOUNDARY DATUM ON THE SYMMETRY-BREAKING SECTOR IS COMMON TO EVERY GALAXY, while the mass varies freely. That is consistent, it is not delivered by the gravitational theory, and it is the whole of what a conformal-gravity rotation-curve fit assumes."
+}
