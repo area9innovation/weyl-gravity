@@ -755,11 +755,18 @@ stream's centre of gravity rather than one result among many:
   - And the standard repair fails in its simplest form: a **constant** scalar VEV pins `R`
     and thereby forces **`γ = 0`**
     ([`BH0F`](../../black_hole_programme/reports/bh0f-vev-forces-gamma-zero.md)).
-  - The result is a **trichotomy** — no scale / constant scale / field-dependent scale — of
-    which exactly one branch survives. On it, *"is γ universal?"* becomes *"is the scalar
-    **profile** universal across galaxies?"*: a question about the matter sector, not gravity.
-    This **locates** the twenty-year Flanagan–Mannheim disagreement rather than adjudicating
-    it.
+  - The result is a **trichotomy** — no scale / constant scale / field-dependent scale — and
+    **no branch delivers flat rotation curves on its own terms**. (A) decouples `γ` from mass,
+    (B1) removes `γ`, and (B2) splits: where particle masses *track* the breaking scalar,
+    `m = hS` puts trajectories on geodesics of the frame with `γ = 0`, so **`γ` sits in the
+    metric and does not act on orbits**; where they do not, `γ` acts but the mass scale comes
+    from a sector outside the symmetry breaking — an assumption the theory was introduced to
+    avoid.
+  - That conclusion is **not ours first**. Hobson & Lasenby (PRD 104, 064014, 2021) reach it by
+    a sharper route: a unique frame retains the Mannheim–Kazanas form because the scalar's
+    energy–momentum vanishes *despite the field being nonzero and radially dependent*, and even
+    there massive particles follow Schwarzschild–de Sitter geodesics. What the trichotomy adds
+    is **where the assumption sits** in each case, not that the cases fail.
   - The gauge that all of it uses is itself accounted for: Bach flatness is a **conformal-class**
     property, and reachability reduces to a first-order ODE
     ([`BH0G`](../../black_hole_programme/reports/bh0g-gauge-reduction.md)). Only global
