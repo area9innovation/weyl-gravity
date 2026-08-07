@@ -152,3 +152,15 @@ versus sourced" is still missing.
 
 **(b) The frame half.** Compute the geodesics of both frames for a particle whose mass tracks
 `S`. That would make the Flanagan-Mannheim premise a computed object rather than a stated one.
+
+**Further prior art**, found on a second search: Keith Horne, *Conformal Gravity rotation curves
+with a conformal Higgs halo*, Mon. Not. Roy. Astron. Soc. **458** (2016) 4122, states it five
+years before Hobson & Lasenby and to the level of the exact formula:
+
+> Since particle rest masses scale with `S(r)/S_0`, their world lines do not follow time-like
+> geodesics of the MK metric `g_mu_nu`, as previously assumed, but rather those of the
+> Higgs-frame MK metric `Omega^2 g_mu_nu`, with the conformal factor `Omega(r) = S(r)/S_0`.
+
+That is `BH0H`'s conformal factor and `BH0I`'s geodesic statement together. The first correction
+named only Hobson & Lasenby; naming one prior source when there are two is the same failure at a
+smaller scale.
