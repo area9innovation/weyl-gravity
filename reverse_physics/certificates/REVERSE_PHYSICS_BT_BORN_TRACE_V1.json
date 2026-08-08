@@ -1,0 +1,85 @@
+{
+  "answer": "On the obstructed shell, yes: the Born trace is exactly positive, with the kappa-even part exceeding the kappa-odd part by a factor of about 26 in squared Frobenius norm. This is the finite-shell shadow of the capstone, not the capstone: their nullity is a charge selection rule and their trace is a continuum trace, neither of which this computation uses.",
+  "blocker_cleared": {
+    "resolution": "their embedding is Eqs. (18)-(21); one paper read",
+    "text": "the remaining BT-faithful step ... needs their embedding and is queued",
+    "where": "symbolic/verify_doubled_theory.py, DQ8"
+  },
+  "certificate": "REVERSE_PHYSICS_BT_BORN_TRACE_V1",
+  "checks": {
+    "detail": {
+      "born_trace_positive": true,
+      "control_artifact_differs_from_truth": true,
+      "control_artifact_gap_is_subnumeric": true,
+      "control_criterion_can_fail": true,
+      "control_hilbert_case_recovered": true,
+      "control_odd_part_nonzero": true,
+      "control_sign_survives_zeroing_repaired_entry": true,
+      "control_true_entry_is_quadratic_surd": true,
+      "identity_prob_equals_even_minus_odd": true,
+      "krein_self_adjoint": true,
+      "positivity_is_exact_not_numeric": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 11,
+    "total": 11
+  },
+  "dependency_tag": "LOCAL-ALGEBRAIC",
+  "does_not_establish": [
+    "the capstone: their nullity is a CHARGE statement and their trace is a continuum trace with delta^4(0) factors; this shell computation uses neither, so it is a necessary condition only",
+    "Paper 05's 'boundary Born-trace evaluation' remains OPEN",
+    "anything at loop level, on either side: they prove tree-level positivity and name collinear IR divergence as the obstacle, and the PT camp's cutting rules do not reach 1/k^4 at all",
+    "anything LORENTZIAN-CAUSAL"
+  ],
+  "exact_values": {
+    "T00": "-24029911*sqrt(5)/987148800 - 4203145033/142149427200",
+    "T11": "-13264093*sqrt(5)/987148800 - 2759177557/995045990400",
+    "T_in_out": "401*sqrt(6)/78848",
+    "T_out_in": "-401*sqrt(6)/78848",
+    "born_trace": "33800290689142511*sqrt(5)/22324055803822080000 + 439333411529238537401/99011652301111689216000",
+    "even_frobenius_sq": "33800290689142511*sqrt(5)/22324055803822080000 + 470064287210099385401/99011652301111689216000",
+    "odd_frobenius_sq": "482403/1554251776",
+    "positivity_witness": {
+      "a": "33800290689142511/22324055803822080000",
+      "a_positive": true,
+      "b": "439333411529238537401/99011652301111689216000",
+      "b_positive": true,
+      "form": "a*sqrt(5) + b with a, b rational"
+    }
+  },
+  "lifecycle_state": "CLASSIFIED",
+  "neighbours": {
+    "paper/05-interaction-obstructions.tex": "cprop:krein localises the obstruction in the kappa-odd block; cprop:embedding makes one-sidedness a boundary property; the Discussion names this calculation",
+    "reverse_physics/mannheim_cutting_rules.py": "the same scope reading for the PT/positive-metric camp; both published routes stop at the same order",
+    "symbolic/verify_doubled_theory.py": "DQ8 supplies the exact on-shell T and recorded the blocker this clears"
+  },
+  "question": "Does Paper 05's kappa-odd positive-metric obstruction land in the null C component of the Bateman-Turok decomposition, i.e. is it invisible to their Krein Born rule?",
+  "report": "reverse_physics/reports/bt-born-trace.md",
+  "source": {
+    "affiliations": "Higgs Centre for Theoretical Physics, Edinburgh; Perimeter Institute",
+    "arxiv": "2607.00096",
+    "authors": "S. Bateman and N. Turok",
+    "date": "30 June 2026",
+    "mechanism": "charge selection rule, not norm cancellation: R_t P R_t^dag = P^(OmegaUpsilon) + Q^(OmegaUpsilon) with P charge neutral AND even under ghost parity, Q strictly negatively charged, hence null in the trace since no positively charged operators appear",
+    "self_declared_limit": "positivity proven at TREE LEVEL; obstacle to higher orders is collinear infrared divergence of the massless theory",
+    "title": "Escape from Ostrogradsky via hidden ghost parity"
+  },
+  "the_fork": {
+    "consequence": "the obstruction cannot sit in B; it must sit in C, so C's nullity carries the whole reconciliation",
+    "hypothesis_C_needs": "one-sided charge",
+    "obstruction_parity": "ghost-parity ODD (Paper 05, cprop:krein)",
+    "repo_status_of_that": "Paper 05, cprop:embedding: one-sidedness of the regulated vacuum image is exact iff eps = 0; at split mass both charge signs appear. Their theory sits at eps = mu^2 = 0. The two results do not conflict; they sit at different points of one family.",
+    "their_B_parity": "ghost-parity EVEN by construction (their text)"
+  },
+  "upstream_repair": {
+    "agreement": "~2e-19 -- a float match, not an identity",
+    "claims_affected": "none -- every published DQ8 quantity is an off-diagonal element or a reality statement",
+    "defect": "sp.nsimplify wrapped around an already-exact expression in Tmat fabricated a closed form for T[1,1]",
+    "fabricated": "-2**(31/449)*3**(114/449)*5**(38/449)*7**(101/449)/75",
+    "file": "symbolic/verify_doubled_theory.py",
+    "status": "removed at source; DQ1-DQ9 all still pass; runtime 16 s instead of ~4 min",
+    "true": "-13264093*sqrt(5)/987148800 - 2759177557/995045990400",
+    "why_it_survived": "the DQ8 checks test only that the diagonal is REAL, never its value"
+  }
+}

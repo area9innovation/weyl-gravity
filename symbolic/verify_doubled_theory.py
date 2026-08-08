@@ -390,7 +390,16 @@ def Tmat(H3, H4):
                 if sp.simplify(E - En) == 0: continue
                 val += (sp.conjugate(vecs3d[i_].get(nkey, 0))
                         * vecs3[j_].get(nkey, 0))/(E - En)
-            T[i_, j_] = sp.radsimp(sp.simplify(sp.nsimplify(sp.expand(val))))
+            # NO nsimplify.  val is already exact; nsimplify FABRICATES a
+            # closed form by float matching, and on T[1,1] it silently
+            # replaced the true value with
+            #   -2^(31/449) 3^(114/449) 5^(38/449) 7^(101/449)/75,
+            # agreeing only to ~2e-19.  A 449th root cannot arise from
+            # rational matrix elements and quadratic-surd normalisations.
+            # The DQ8 checks never test the diagonal VALUES (only that they
+            # are real), which is why it survived.  True value:
+            #   T[1,1] = -13264093 sqrt(5)/987148800 - 2759177557/995045990400
+            T[i_, j_] = sp.radsimp(sp.simplify(sp.expand(val)))
     return T
 
 TA = Tmat(H3A, H4A)
