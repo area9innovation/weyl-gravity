@@ -53,9 +53,31 @@ class TestGate(unittest.TestCase):
 
     def test_boundary_says_this_is_not_the_capstone(self):
         joined = " ".join(self.cert["does_not_establish"]).lower()
-        self.assertIn("necessary condition only", joined)
+        self.assertIn("not a necessary condition for it", joined)
         self.assertIn("open", joined)
         self.assertIn("loop level", joined)
+
+    def test_boundary_disclaims_the_invisibility_reading(self):
+        """The first version of this claimed the obstruction was invisible.
+
+        It is not: it contributes 2c^2 to the shell trace.  That correction
+        must stay pinned, or the overclaim can quietly return.
+        """
+        joined = " ".join(self.cert["does_not_establish"]).lower()
+        self.assertIn("invisible", joined)
+        self.assertIn("it is not", joined)
+
+    def test_mechanism_is_credited_to_paper_05(self):
+        joined = " ".join(self.cert["does_not_establish"]).lower()
+        self.assertIn("lem:chargenull", joined)
+        self.assertIn("restated here, not claimed", joined)
+        self.assertIn("attribution", self.cert["the_fork"])
+
+    def test_charge_nullity_failure_is_recorded_with_its_size(self):
+        f = self.cert["charge_null_failure_on_the_shell"]
+        self.assertIn("0", f["lemma_predicts"])
+        self.assertIn("482403/1554251776", f["shell_gives"])
+        self.assertIn("transported", f["reading"].lower())
 
 
 class TestBornTrace(unittest.TestCase):
@@ -116,6 +138,20 @@ class TestControlsAreLive(unittest.TestCase):
     def test_odd_part_is_nonzero(self):
         _, Tm = self.m.split(self.m.shell_T())
         self.assertNotEqual(sp.simplify(self.m.frob2(Tm)), 0)
+
+    def test_shell_does_not_implement_charge_nullity(self):
+        """Paper 05's lem:chargenull sends the odd contribution to ZERO.
+
+        On this truncated shell it is exactly 2c^2.  That gap is the finding;
+        if it ever became zero the module would silently turn into support
+        for a claim it cannot support.
+        """
+        _, Tm = self.m.split(self.m.shell_T())
+        odd = self.m.frob2(Tm)
+        self.assertEqual(
+            sp.simplify(odd - sp.radsimp(sp.expand(2 * self.m.COBS**2))), 0)
+        self.assertEqual(odd, sp.Rational(482403, 1554251776))
+        self.assertNotEqual(odd, 0)
 
 
 class TestUpstreamRepair(unittest.TestCase):

@@ -1,11 +1,17 @@
 {
-  "answer": "On the obstructed shell, yes: the Born trace is exactly positive, with the kappa-even part exceeding the kappa-odd part by a factor of about 26 in squared Frobenius norm. This is the finite-shell shadow of the capstone, not the capstone: their nullity is a charge selection rule and their trace is a continuum trace, neither of which this computation uses.",
+  "answer": "Exactly positive -- but NOT because the obstruction is null. The kappa-odd part contributes 2c^2 = 482403/1554251776 to the trace, precisely the quantity Paper 05's charge-null lemma sends to zero; a truncated two-dimensional shell carries no boost action, so that lemma's hypothesis is absent and its conclusion fails by that amount. The trace stays positive because the kappa-even part outweighs the odd one about 26 to 1. This is therefore a DIAGNOSTIC of why a fixed-shell evaluation cannot be the capstone, not a step toward it.",
   "blocker_cleared": {
     "resolution": "their embedding is Eqs. (18)-(21); one paper read",
     "text": "the remaining BT-faithful step ... needs their embedding and is queued",
     "where": "symbolic/verify_doubled_theory.py, DQ8"
   },
   "certificate": "REVERSE_PHYSICS_BT_BORN_TRACE_V1",
+  "charge_null_failure_on_the_shell": {
+    "lemma_predicts": "0  (Paper 05, lem:chargenull: tau(C^dag C) = 0)",
+    "reading": "this quantifies why the capstone needs the process operator TRANSPORTED along the family m_L=4s, m_H=6s, |k_out|=3s, mu^2=26s^2, eps*g=100s^4, s -> 0, rather than held fixed -- which is exactly what Paper 05 instructs and what this computation does not do",
+    "shell_gives": "2 c^2 = 482403/1554251776",
+    "why": "a truncated two-dimensional shell carries no boost action, so the lemma's hypothesis is absent"
+  },
   "checks": {
     "detail": {
       "born_trace_positive": true,
@@ -18,17 +24,20 @@
       "control_true_entry_is_quadratic_surd": true,
       "identity_prob_equals_even_minus_odd": true,
       "krein_self_adjoint": true,
-      "positivity_is_exact_not_numeric": true
+      "positivity_is_exact_not_numeric": true,
+      "shell_fails_charge_nullity_by_exactly_2c_squared": true
     },
     "failures": [],
     "ok": true,
-    "passed": 11,
-    "total": 11
+    "passed": 12,
+    "total": 12
   },
   "dependency_tag": "LOCAL-ALGEBRAIC",
   "does_not_establish": [
-    "the capstone: their nullity is a CHARGE statement and their trace is a continuum trace with delta^4(0) factors; this shell computation uses neither, so it is a necessary condition only",
-    "Paper 05's 'boundary Born-trace evaluation' remains OPEN",
+    "ANY step toward the capstone. This is not a shadow of it and not a necessary condition for it: the shell does not implement the charge-nullity mechanism, so a negative value would have refuted nothing and the positive value supports nothing",
+    "that the obstruction is invisible to the Krein Born rule -- it is not; it contributes 2c^2 to the shell trace",
+    "Paper 05's 'boundary Born-trace evaluation' remains OPEN and untouched: it needs the neutral component's blindness to the obstruction coefficient, in the limit along the named family, with the process operator transported",
+    "any novelty in the charge-null mechanism or the eps = 0 one-sidedness -- both are Paper 05's (lem:chargenull, cprop:embedding) and are restated here, not claimed",
     "anything at loop level, on either side: they prove tree-level positivity and name collinear IR divergence as the obstacle, and the PT camp's cutting rules do not reach 1/k^4 at all",
     "anything LORENTZIAN-CAUSAL"
   ],
@@ -54,7 +63,7 @@
     "reverse_physics/mannheim_cutting_rules.py": "the same scope reading for the PT/positive-metric camp; both published routes stop at the same order",
     "symbolic/verify_doubled_theory.py": "DQ8 supplies the exact on-shell T and recorded the blocker this clears"
   },
-  "question": "Does Paper 05's kappa-odd positive-metric obstruction land in the null C component of the Bateman-Turok decomposition, i.e. is it invisible to their Krein Born rule?",
+  "question": "What does the Bateman-Turok Born formula give when evaluated on Paper 05's obstructed shell with the process operator held fixed at the split-mass rational point?",
   "report": "reverse_physics/reports/bt-born-trace.md",
   "source": {
     "affiliations": "Higgs Centre for Theoretical Physics, Edinburgh; Perimeter Institute",
@@ -65,11 +74,13 @@
     "self_declared_limit": "positivity proven at TREE LEVEL; obstacle to higher orders is collinear infrared divergence of the massless theory",
     "title": "Escape from Ostrogradsky via hidden ghost parity"
   },
+  "supersedes": "an earlier framing in this same certificate called the result a 'finite-shell shadow' and a 'necessary condition', and said the obstruction was 'invisible to the Krein Born rule'. All three were wrong: the obstruction enters the shell trace, the shell does not implement the charge-nullity mechanism, and a negative value here would have refuted nothing.",
   "the_fork": {
+    "attribution": "ALL of the following is Paper 05's, not this module's. It is restated because reading arXiv:2607.00096 independently confirms the attribution is correct.",
     "consequence": "the obstruction cannot sit in B; it must sit in C, so C's nullity carries the whole reconciliation",
     "hypothesis_C_needs": "one-sided charge",
     "obstruction_parity": "ghost-parity ODD (Paper 05, cprop:krein)",
-    "repo_status_of_that": "Paper 05, cprop:embedding: one-sidedness of the regulated vacuum image is exact iff eps = 0; at split mass both charge signs appear. Their theory sits at eps = mu^2 = 0. The two results do not conflict; they sit at different points of one family.",
+    "repo_status_of_that": "Paper 05, lem:chargenull states and PROVES the charge-null mechanism by boost invariance; cprop:embedding computes one-sidedness to be exact iff eps = 0. Their theory sits at eps = mu^2 = 0. The two results do not conflict; they sit at different points of one family.",
     "their_B_parity": "ghost-parity EVEN by construction (their text)"
   },
   "upstream_repair": {

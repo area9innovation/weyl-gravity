@@ -806,6 +806,61 @@ $\operatorname{cond}(N)/e^{r}\to1$; this serves as a regression check of
 the exact law, not as the proof.)
 \end{theorem}
 
+\begin{remark}[The same boundary, conceded at loop level]
+\label{rem:mannheimloop}
+Theorem~\ref{thm:term} is a statement about the free-theory metric:
+the similarity transformation degenerates at $c_1=0$ and only the Krein
+real form continues.  The corresponding statement one level up is
+\emph{granted by the $PT$ programme itself}.  In the one paper of that
+programme addressed to loop diagrams rather than free-field norms,
+Mannheim~\cite{Mannheim2018loops} treats the equal-frequency limit and
+concludes: ``since non-stationary states are involved in the
+$\epsilon=0$ Jordan-block case, the standard cutting rules would not
+apply.''  That same paper nevertheless offers conformal gravity --- a
+pure $1/k^4$, i.e.\ coincident-pole, theory --- as ``a fully consistent
+and renormalizable quantum theory of gravity''.  The two statements are
+reconciled there by Eqs.~(85)--(86), which build $1/k^4$ as
+$\lim_{M^2\to0}\partial_{M^2}[1/(k^2-M^2+i\epsilon)]$ and determine the
+cutting rules before the limit.
+
+That step is an assumption rather than a corollary, and the reason is
+the same degeneration this theorem records.  The partial fractions of
+the massless propagator (their Eq.~(84)) contain, at the $E=+\omega$
+pole, exactly their equal-frequency Jordan-block Green function
+(their Eq.~(76)) --- verified here as an identity in $\mathbb{Q}[E,\omega]$
+rather than sampled, both sides reducing to $-4\omega^3$ after clearing
+$4\omega^3(E-\omega)^2(E+\omega)^2$.  So the object declared viable is
+the object the cutting rules were withdrawn from.  Moreover
+$\partial_{M^2}$ is precisely the operation carrying $\delta(s-M^2)$ to
+$-\delta'(s-M^2)$: writing the fourth-order line by partial fractions
+with $m_i=M_i^2$, the weight a cut integrates against is
+$W[f]=(f(m_1)-f(m_2))/(m_1-m_2)$, which on the monomial ladder is the
+complete homogeneous symmetric polynomial $h_{n-1}(m_1,m_2)$ with
+$W_0=0$, $W_1=1$, and coincidence limit $W[f]\to f'(m)$.  Total mass
+zero with unit first moment is not a positive measure and not a measure
+of any sign, so no positive-norm intermediate-state resolution exists
+for it.  The step that renders the \emph{propagator}'s limit
+non-singular is the step that destroys the \emph{cut weight}'s
+positivity; the propagator's limit was never in doubt.  Independently,
+the one-particle normalization whose positivity is that paper's theorem
+carries a factor $[2(M_1^2-M_2^2)(\mathbf k^2+M_i^2)^{1/2}]^{-1}$
+(their Appendix~A), so the states in question acquire vanishing norm
+linearly in the separation: negative norm is traded for \emph{zero}
+norm, which is the order-versus-sign reading this series reaches from
+the symplectic side.
+
+This does not show that pure Weyl gravity is non-unitary.  It shows
+that the cited theorem does not reach it, by its own Section~VI, and
+that constructing a cutting rule \emph{directly} on the Jordan-block
+state space --- rather than as a limit of the non-degenerate one ---
+is an open problem.  Machine-checked in
+\texttt{REVERSE\_PHYSICS\_MANNHEIM\_CUTTING\_RULES\_V1} (exact rational
+arithmetic, $14/14$; controls include a mutation of the
+Eq.~(84) identity, a second-order known answer, and a sum-of-poles
+comparison establishing that the obstruction is the fourth-order
+\emph{product} structure and not the act of coalescing poles).
+\end{remark}
+
 \section{The master theorem}\label{sec:master}
 
 \begin{theorem}[Classification]\label{thm:master}
@@ -1009,6 +1064,13 @@ Phys.\ Rev.\ D \textbf{78} (2008) 025022, arXiv:0804.4190.
 P.~D.~Mannheim,
 \emph{Solution to the ghost problem in higher-derivative gravity},
 arXiv:2109.12743.
+
+\bibitem{Mannheim2018loops}
+P.~D.~Mannheim,
+\emph{Unitarity of loop diagrams for the ghost-like
+$1/(k^2-M_1^2)-1/(k^2-M_2^2)$ propagator},
+Phys.\ Rev.\ D \textbf{98} (2018) 045014,
+\href{https://arxiv.org/abs/1801.03220}{arXiv:1801.03220}.
 
 \bibitem{BT2026}
 S.~Bateman and N.~Turok,

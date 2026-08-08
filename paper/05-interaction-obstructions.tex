@@ -219,7 +219,10 @@ computational proposition at the rational point
 (Proposition~\ref{cprop:krein}); one-sidedness of the regulated vacuum
 image --- computational proposition, exact iff $\epsilon=0$ in the
 stated charge frame (Proposition~\ref{cprop:embedding}); the boundary
-Born-trace evaluation --- open.
+Born-trace evaluation --- open, and the fixed-shell route to it is
+excluded rather than merely unattempted: on a truncated shell the
+charge-null lemma's hypothesis is absent and its conclusion fails by
+exactly the obstruction squared (Section~\ref{sec:discussion}).
 
 \paragraph{Bookkeeping.}
 The deformation order is counted by a formal parameter $\zeta$:
@@ -973,6 +976,44 @@ $\mu^2=26s^2$, $\epsilon g=100s^4$, followed by $s\to0$; the process
 operator must be transported along this family rather than held fixed
 while only the embedding is varied.
 Lemma~\ref{lem:chargenull} makes that step self-contained.
+
+That the transport is essential, rather than a technical scruple, can be
+quantified.  Evaluating the generalized Born trace of \cite{BT2026}
+directly on the two-dimensional shell of
+Proposition~\ref{cprop:krein}, with the process operator held fixed at
+the split-mass rational point, gives
+$\tau(T^{\dg}T)=\|T_+\|^2-\|T_-\|^2$ --- the $\kappa$-graded components
+being orthogonal in the shell trace --- with
+\begin{equation}
+\|T_-\|^2=2\Big(\frac{401\sqrt6}{78848}\Big)^{2}
+=\frac{482403}{1554251776}\;\neq\;0 .
+\end{equation}
+Lemma~\ref{lem:chargenull} sends exactly this quantity to zero.  A
+truncated shell carries no boost action, so the lemma's hypothesis is
+absent and its conclusion fails by precisely the obstruction squared;
+the fixed-shell trace is nonetheless positive, but only because
+$\|T_+\|^2$ exceeds $\|T_-\|^2$ by a factor of about $26$, which is a
+statement about the relative size of two matrix elements and not about
+nullity.  A fixed-shell evaluation therefore cannot decide the
+obstruction-to-null theorem in either direction.  We record it because
+the positive sign is easy to mistake for confirmation.
+(Machine-checked in
+\texttt{REVERSE\_PHYSICS\_BT\_BORN\_TRACE\_V1}; the exact value of
+$\|T_+\|^2$ and the positivity witness are given there, and the same
+certificate repairs a floating-point contamination of the diagonal of
+$T$ in \texttt{verify\_doubled\_theory.py} which affected no published
+quantity, every such quantity being an off-diagonal element or a
+reality statement.)
+
+One structural simplification is worth recording alongside it: on a
+finite shell the weak ghost symmetry of \cite{BT2026} --- existence of a
+decomposition $A=B+C$ with $B$ ghost symmetric and $C$ null and
+orthogonal to $B$ --- is \emph{equivalent} to the single inequality
+$\|A_-\|\le\|A_+\|$, since the $\kappa$-eigenspaces are orthogonal in
+the shell trace and $\tau(A^{\dg}A)=\|A_+\|^2-\|A_-\|^2$.  There is
+nothing to search for.  This does not extend to the charge-graded
+trace, where Lemma~\ref{lem:chargenull} rather than a norm comparison
+carries the positivity.
 
 \paragraph{Open questions.}
 Whether the two pointed sectors admit parity vacua

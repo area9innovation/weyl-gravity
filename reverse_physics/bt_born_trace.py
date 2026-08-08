@@ -15,8 +15,13 @@ open, in its own status ledger, is "the boundary Born-trace evaluation", and
 That embedding is their Eqs. (18)-(21).  Reading it clears the blocker.  This is
 the third time in this repository that a recorded blocker cost one paper read.
 
-WHAT THEIR MECHANISM ACTUALLY IS, and it is not what the abstract suggests.
-Nullity is a CHARGE SELECTION RULE, not a norm cancellation:
+WHAT THEIR MECHANISM IS -- AND PAPER 05 ALREADY HAD IT.  Nullity is a CHARGE
+SELECTION RULE, not a norm cancellation.  This module claims no credit for that
+reading: Paper 05's Lemma (charge null) already states and PROVES it, by boost
+invariance of the trace (tau(A_q) = e^{q sigma} tau(A_q) for all sigma, hence
+tau(A_q) = 0 for q != 0), and cprop:embedding already computes the one-sidedness
+to be exact iff eps = 0.  What follows is recorded because reading their text
+independently confirms the attribution, not because it is new here:
 
     R_t P^(phi) R_t^dag  =  P^(OmegaUpsilon)  +  Q^(OmegaUpsilon)
 
@@ -72,8 +77,28 @@ THE RESULT.  Positive, and not marginally:
 positive by INSPECTION of the exact form -- a positive rational multiple of
 sqrt(5) plus a positive rational -- with no numerical evaluation anywhere.  The
 kappa-even part exceeds the kappa-odd part by a factor of about 26 in squared
-Frobenius norm.  So on this shell the positive-metric obstruction IS invisible
-to the Krein Born rule, which is the direction Paper 05's Discussion conjectured.
+Frobenius norm.
+
+WHAT THAT DOES *NOT* MEAN, and the first version of this module got it wrong.
+It does NOT say the obstruction is invisible to the Krein Born rule.  The
+obstruction ENTERS the shell trace, and by exactly
+
+    ||T_-||^2  =  2 c^2  =  482403/1554251776,
+
+which is precisely the quantity Paper 05's charge-null lemma sends to ZERO.  So
+the fixed shell does not implement the mechanism at all: a truncated
+two-dimensional shell carries no boost action, the lemma's hypothesis is absent,
+and its conclusion correspondingly fails by that amount.  The trace stays
+positive not because the odd part is null but because the even part outweighs it
+26 to 1.
+
+That is the honest content, and it is a DIAGNOSTIC rather than a step toward the
+capstone: it quantifies why a fixed-shell evaluation cannot BE the capstone.
+Paper 05 says so directly -- "the process operator must be transported along this
+family rather than held fixed while only the embedding is varied" -- naming the
+family m_L = 4s, m_H = 6s, |k_out| = 3s, mu^2 = 26 s^2, eps g = 100 s^4, s -> 0.
+Holding the operator fixed at the split-mass rational point, which is what is
+done here, is the move that instruction rules out.
 
 AND A DEFECT FOUND UPSTREAM, which is why the diagonal is stated here.
 `symbolic/verify_doubled_theory.py` built T with `sp.nsimplify` wrapped around
@@ -93,13 +118,15 @@ T[1,1] set to zero outright the trace is still positive.  That control is
 included below, because a result whose sign depends on a value one has just
 repaired is not a result.
 
-WHAT THIS DOES NOT ESTABLISH, and the gap is wide.  This is the FINITE-SHELL
-SHADOW of the capstone, not the capstone.  Their trace is over the continuum
-with delta^4(0) factors and their nullity is a charge statement; the shell
-computation uses neither.  It is a NECESSARY condition -- had it come out
-negative, their mechanism would have failed here outright -- and it came out
-positive, which is consistent with their claim without proving it.  Paper 05's
-"boundary Born-trace evaluation" stays OPEN.  Nothing here bears on loops: they
+WHAT THIS DOES NOT ESTABLISH, and the gap is wider than first recorded.  It is
+NOT a shadow, a step, or a necessary condition for the capstone.  A negative
+value here would NOT have refuted their mechanism, because the shell does not
+implement their mechanism; and the positive value obtained does not support it
+either.  The two computations answer different questions on different objects.
+Paper 05's "boundary Born-trace evaluation" stays OPEN and is untouched: it
+requires the neutral component's blindness to the obstruction coefficient, in
+the limit along the named family, with the process operator transported -- none
+of which is done here.  Nothing here bears on loops: they
 prove positivity at tree level and name their own obstacle ("like QCD, the
 massless theory has collinear infrared divergences which affect asymptotic
 states"), and the PT camp's cutting rules do not reach 1/k^4 at all.
@@ -228,6 +255,15 @@ def build():
     # would be empty.
     ctrl_odd_nonzero = sp.simplify(nm2) != 0
 
+    # CTRL-H -- the actual content.  Paper 05's charge-null lemma sends the
+    # odd contribution to ZERO.  On this truncated shell it is exactly 2c^2,
+    # so the shell demonstrably does NOT implement the mechanism.  That gap
+    # IS the finding; without this check the module would read as support for
+    # a claim it cannot support.
+    two_c_sq = sp.radsimp(sp.expand(2 * COBS**2))
+    ctrl_charge_nullity_fails = (sp.simplify(nm2 - two_c_sq) == 0
+                                 and sp.simplify(nm2) != 0)
+
     checks = {
         "born_trace_positive": pos,
         "positivity_is_exact_not_numeric": pos,
@@ -240,6 +276,8 @@ def build():
         "control_true_entry_is_quadratic_surd": ctrl_true_is_surd,
         "control_sign_survives_zeroing_repaired_entry": ctrl_margin,
         "control_odd_part_nonzero": ctrl_odd_nonzero,
+        "shell_fails_charge_nullity_by_exactly_2c_squared":
+            ctrl_charge_nullity_fails,
     }
     failures = [k for k, v in checks.items() if not v]
 
@@ -247,17 +285,26 @@ def build():
         "certificate": "REVERSE_PHYSICS_BT_BORN_TRACE_V1",
         "dependency_tag": "LOCAL-ALGEBRAIC",
         "lifecycle_state": "CLASSIFIED",
-        "question": "Does Paper 05's kappa-odd positive-metric obstruction "
-                    "land in the null C component of the Bateman-Turok "
-                    "decomposition, i.e. is it invisible to their Krein Born "
-                    "rule?",
-        "answer": "On the obstructed shell, yes: the Born trace is exactly "
-                  "positive, with the kappa-even part exceeding the kappa-odd "
-                  "part by a factor of about 26 in squared Frobenius norm. "
-                  "This is the finite-shell shadow of the capstone, not the "
-                  "capstone: their nullity is a charge selection rule and "
-                  "their trace is a continuum trace, neither of which this "
-                  "computation uses.",
+        "question": "What does the Bateman-Turok Born formula give when "
+                    "evaluated on Paper 05's obstructed shell with the process "
+                    "operator held fixed at the split-mass rational point?",
+        "answer": "Exactly positive -- but NOT because the obstruction is null. "
+                  "The kappa-odd part contributes 2c^2 = 482403/1554251776 to "
+                  "the trace, precisely the quantity Paper 05's charge-null "
+                  "lemma sends to zero; a truncated two-dimensional shell "
+                  "carries no boost action, so that lemma's hypothesis is "
+                  "absent and its conclusion fails by that amount. The trace "
+                  "stays positive because the kappa-even part outweighs the "
+                  "odd one about 26 to 1. This is therefore a DIAGNOSTIC of "
+                  "why a fixed-shell evaluation cannot be the capstone, not a "
+                  "step toward it.",
+        "supersedes": "an earlier framing in this same certificate called the "
+                      "result a 'finite-shell shadow' and a 'necessary "
+                      "condition', and said the obstruction was 'invisible to "
+                      "the Krein Born rule'. All three were wrong: the "
+                      "obstruction enters the shell trace, the shell does not "
+                      "implement the charge-nullity mechanism, and a negative "
+                      "value here would have refuted nothing.",
         "source": {
             "authors": "S. Bateman and N. Turok",
             "title": "Escape from Ostrogradsky via hidden ghost parity",
@@ -281,17 +328,34 @@ def build():
             "resolution": "their embedding is Eqs. (18)-(21); one paper read",
         },
         "the_fork": {
+            "attribution": "ALL of the following is Paper 05's, not this "
+                           "module's. It is restated because reading "
+                           "arXiv:2607.00096 independently confirms the "
+                           "attribution is correct.",
             "obstruction_parity": "ghost-parity ODD (Paper 05, cprop:krein)",
             "their_B_parity": "ghost-parity EVEN by construction (their text)",
             "consequence": "the obstruction cannot sit in B; it must sit in C, "
                            "so C's nullity carries the whole reconciliation",
             "hypothesis_C_needs": "one-sided charge",
-            "repo_status_of_that": "Paper 05, cprop:embedding: one-sidedness "
-                                   "of the regulated vacuum image is exact iff "
-                                   "eps = 0; at split mass both charge signs "
-                                   "appear. Their theory sits at eps = mu^2 = "
-                                   "0. The two results do not conflict; they "
-                                   "sit at different points of one family.",
+            "repo_status_of_that": "Paper 05, lem:chargenull states and PROVES "
+                                   "the charge-null mechanism by boost "
+                                   "invariance; cprop:embedding computes "
+                                   "one-sidedness to be exact iff eps = 0. "
+                                   "Their theory sits at eps = mu^2 = 0. The "
+                                   "two results do not conflict; they sit at "
+                                   "different points of one family.",
+        },
+        "charge_null_failure_on_the_shell": {
+            "lemma_predicts": "0  (Paper 05, lem:chargenull: tau(C^dag C) = 0)",
+            "shell_gives": "2 c^2 = 482403/1554251776",
+            "why": "a truncated two-dimensional shell carries no boost action, "
+                   "so the lemma's hypothesis is absent",
+            "reading": "this quantifies why the capstone needs the process "
+                       "operator TRANSPORTED along the family "
+                       "m_L=4s, m_H=6s, |k_out|=3s, mu^2=26s^2, eps*g=100s^4, "
+                       "s -> 0, rather than held fixed -- which is exactly "
+                       "what Paper 05 instructs and what this computation "
+                       "does not do",
         },
         "exact_values": {
             "T00": str(T00),
@@ -322,10 +386,19 @@ def build():
                                "off-diagonal element or a reality statement",
         },
         "does_not_establish": [
-            "the capstone: their nullity is a CHARGE statement and their trace "
-            "is a continuum trace with delta^4(0) factors; this shell "
-            "computation uses neither, so it is a necessary condition only",
-            "Paper 05's 'boundary Born-trace evaluation' remains OPEN",
+            "ANY step toward the capstone. This is not a shadow of it and not "
+            "a necessary condition for it: the shell does not implement the "
+            "charge-nullity mechanism, so a negative value would have refuted "
+            "nothing and the positive value supports nothing",
+            "that the obstruction is invisible to the Krein Born rule -- it "
+            "is not; it contributes 2c^2 to the shell trace",
+            "Paper 05's 'boundary Born-trace evaluation' remains OPEN and "
+            "untouched: it needs the neutral component's blindness to the "
+            "obstruction coefficient, in the limit along the named family, "
+            "with the process operator transported",
+            "any novelty in the charge-null mechanism or the eps = 0 "
+            "one-sidedness -- both are Paper 05's (lem:chargenull, "
+            "cprop:embedding) and are restated here, not claimed",
             "anything at loop level, on either side: they prove tree-level "
             "positivity and name collinear IR divergence as the obstacle, and "
             "the PT camp's cutting rules do not reach 1/k^4 at all",

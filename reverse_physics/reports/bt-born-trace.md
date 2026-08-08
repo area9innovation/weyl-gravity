@@ -40,7 +40,12 @@ negatively charged** operators. Then:
 > the negatively charged operators in Q cannot contribute to the trace, that is,
 > Q is null and orthogonal to P."*
 
-## 3. The fork
+## 3. The fork — and it is Paper 05's, not this report's
+
+Everything in this section is already in Paper 05. It is restated because
+reading arXiv:2607.00096 independently confirms the attribution is correct;
+`lem:chargenull` states **and proves** the charge-null mechanism, and
+`cprop:embedding` computes the one-sidedness.
 
 Paper 05's obstruction is ghost-parity **odd** (`cprop:krein`). Their `B` is
 ghost-parity **even** by construction. So the obstruction cannot sit in `B`; it
@@ -89,8 +94,31 @@ Prob  = 33800290689142511√5/22324055803822080000
 rational. No numerical evaluation enters the conclusion anywhere. The κ-even part
 exceeds the κ-odd part by a factor of about 26 in squared Frobenius norm.
 
-So on this shell the positive-metric obstruction **is** invisible to the Krein
-Born rule — the direction Paper 05's Discussion conjectured.
+### What that does *not* mean — the first version of this report got it wrong
+
+It does **not** say the obstruction is invisible to the Krein Born rule. The
+obstruction **enters** the shell trace, and by exactly
+
+```
+‖T₋‖² = 2c² = 482403/1554251776
+```
+
+which is precisely the quantity Paper 05's `lem:chargenull` sends to **zero**. A
+truncated two-dimensional shell carries no boost action, so that lemma's
+hypothesis — boost invariance of the trace, giving `τ(A_q) = e^{qσ}τ(A_q)` hence
+`τ(A_q) = 0` for `q ≠ 0` — is simply absent, and its conclusion fails by that
+amount. The trace stays positive not because the odd part is null but because the
+even part outweighs it 26 to 1.
+
+So this is a **diagnostic**, not a step: it quantifies why a fixed-shell
+evaluation cannot *be* the capstone. Paper 05 says so directly —
+
+> *"the process operator must be transported along this family rather than held
+> fixed while only the embedding is varied"*
+
+naming the family `m_L = 4s`, `m_H = 6s`, `|k_out| = 3s`, `μ² = 26s²`,
+`εg = 100s⁴`, `s → 0`. Holding the operator fixed at the split-mass rational
+point is the move that instruction rules out, and it is what was done here.
 
 ## 5. A defect found upstream, and why the conclusion does not rest on it
 
@@ -131,12 +159,17 @@ result whose sign turns on a value one has just corrected is not a result.
 
 ## 7. What this does not establish
 
-- **Not the capstone.** This is the finite-shell shadow. Their nullity is a
-  **charge** statement and their trace is a **continuum** trace with `δ⁴(0)`
-  factors; this computation uses neither. It is a **necessary condition** — had
-  it come out negative, their mechanism would have failed here outright — and it
-  came out positive, which is consistent with their claim without proving it.
-  Paper 05's *"boundary Born-trace evaluation"* stays **open**.
+- **Not a step toward the capstone, and not a necessary condition for it.** The
+  shell does not implement the charge-nullity mechanism, so a negative value here
+  would have refuted nothing and the positive value obtained supports nothing.
+  The two computations answer different questions about different objects. Paper
+  05's *"boundary Born-trace evaluation"* stays **open and untouched**: it
+  requires the neutral component's blindness to the obstruction coefficient, in
+  the limit along the named family, with the process operator transported.
+- **No novelty in the mechanism.** The charge-null rule and the ε = 0
+  one-sidedness are **Paper 05's** (`lem:chargenull`, proved there by boost
+  invariance; `cprop:embedding`). They are restated here because reading
+  arXiv:2607.00096 independently confirms the attribution is right — not claimed.
 - **Nothing at loop level, on either side.** They prove positivity at tree level
   and name their own obstacle: *"like QCD, the massless theory has collinear
   infrared divergences which affect asymptotic states. These need to be carefully
