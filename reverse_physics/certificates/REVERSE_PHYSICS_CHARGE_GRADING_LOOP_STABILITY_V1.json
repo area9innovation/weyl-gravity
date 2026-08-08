@@ -1,0 +1,249 @@
+{
+  "answer": "No. The vertex Omega^2 Upsilon^2 is charge neutral and the propagator is purely off-diagonal, so every Wick contraction pairs Omega with Upsilon and is neutral too. The charge of a process operator is therefore fixed by its external legs and is independent of loop order: loops dress an operator without moving it up the charge ladder. The one-sidedness hypothesis is loop-stable, and the obstacle to the loop extension is exactly the infrared one Bateman-Turok named, nothing else in the charge sector.",
+  "certificate": "REVERSE_PHYSICS_CHARGE_GRADING_LOOP_STABILITY_V1",
+  "checks": {
+    "detail": {
+      "charge_is_loop_order_invariant": true,
+      "control_charged_vertex_breaks_it": true,
+      "control_diagonal_propagator_breaks_it": true,
+      "control_enumeration_is_nonvacuous": true,
+      "control_two_regulators_are_distinguished": true,
+      "every_contraction_is_charge_neutral": true,
+      "propagator_is_purely_off_diagonal": true,
+      "vertex_is_charge_neutral": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 8,
+    "total": 8
+  },
+  "dependency_tag": "LOCAL-ALGEBRAIC",
+  "does_not_establish": [
+    "the loop extension itself -- no loop integral is computed, no infrared divergence is regulated, nothing is resummed",
+    "that the O(1,1) charge is non-anomalous; that is the successor question and it is open",
+    "anything about the tensor (gravitational) case: this is the Bateman-Turok SCALAR model",
+    "anything LORENTZIAN-CAUSAL, and nothing about g-2"
+  ],
+  "grading_table": [
+    {
+      "charge_in": 0,
+      "charges_out": [
+        0
+      ],
+      "external": "(none)",
+      "invariant": true,
+      "patterns": 1,
+      "vertices": 0
+    },
+    {
+      "charge_in": 0,
+      "charges_out": [
+        0
+      ],
+      "external": "(none)",
+      "invariant": true,
+      "patterns": 7,
+      "vertices": 1
+    },
+    {
+      "charge_in": 0,
+      "charges_out": [
+        0
+      ],
+      "external": "(none)",
+      "invariant": true,
+      "patterns": 209,
+      "vertices": 2
+    },
+    {
+      "charge_in": 1,
+      "charges_out": [
+        1
+      ],
+      "external": "O",
+      "invariant": true,
+      "patterns": 1,
+      "vertices": 0
+    },
+    {
+      "charge_in": 1,
+      "charges_out": [
+        1
+      ],
+      "external": "O",
+      "invariant": true,
+      "patterns": 13,
+      "vertices": 1
+    },
+    {
+      "charge_in": 1,
+      "charges_out": [
+        1
+      ],
+      "external": "O",
+      "invariant": true,
+      "patterns": 501,
+      "vertices": 2
+    },
+    {
+      "charge_in": -1,
+      "charges_out": [
+        -1
+      ],
+      "external": "U",
+      "invariant": true,
+      "patterns": 1,
+      "vertices": 0
+    },
+    {
+      "charge_in": -1,
+      "charges_out": [
+        -1
+      ],
+      "external": "U",
+      "invariant": true,
+      "patterns": 13,
+      "vertices": 1
+    },
+    {
+      "charge_in": -1,
+      "charges_out": [
+        -1
+      ],
+      "external": "U",
+      "invariant": true,
+      "patterns": 501,
+      "vertices": 2
+    },
+    {
+      "charge_in": 2,
+      "charges_out": [
+        2
+      ],
+      "external": "OO",
+      "invariant": true,
+      "patterns": 1,
+      "vertices": 0
+    },
+    {
+      "charge_in": 2,
+      "charges_out": [
+        2
+      ],
+      "external": "OO",
+      "invariant": true,
+      "patterns": 21,
+      "vertices": 1
+    },
+    {
+      "charge_in": 2,
+      "charges_out": [
+        2
+      ],
+      "external": "OO",
+      "invariant": true,
+      "patterns": 1045,
+      "vertices": 2
+    },
+    {
+      "charge_in": 0,
+      "charges_out": [
+        0
+      ],
+      "external": "OU",
+      "invariant": true,
+      "patterns": 2,
+      "vertices": 0
+    },
+    {
+      "charge_in": 0,
+      "charges_out": [
+        0
+      ],
+      "external": "OU",
+      "invariant": true,
+      "patterns": 34,
+      "vertices": 1
+    },
+    {
+      "charge_in": 0,
+      "charges_out": [
+        0
+      ],
+      "external": "OU",
+      "invariant": true,
+      "patterns": 1546,
+      "vertices": 2
+    },
+    {
+      "charge_in": -2,
+      "charges_out": [
+        -2
+      ],
+      "external": "UU",
+      "invariant": true,
+      "patterns": 1,
+      "vertices": 0
+    },
+    {
+      "charge_in": -2,
+      "charges_out": [
+        -2
+      ],
+      "external": "UU",
+      "invariant": true,
+      "patterns": 21,
+      "vertices": 1
+    },
+    {
+      "charge_in": -2,
+      "charges_out": [
+        -2
+      ],
+      "external": "UU",
+      "invariant": true,
+      "patterns": 1045,
+      "vertices": 2
+    }
+  ],
+  "imports": "none -- exact integer/rational bookkeeping, stdlib only",
+  "lifecycle_state": "CLASSIFIED",
+  "neighbours": {
+    "paper/05-interaction-obstructions.tex": "lem:chargenull, cprop:embedding, and the mass formula m_pm^2 = mu^2 +/- sqrt(eps g) imported above",
+    "reverse_physics/bt_born_trace.py": "the fixed-shell evaluation, and why it cannot decide this"
+  },
+  "question": "Can a loop generate positive charge, and so break the one-sidedness hypothesis that Bateman-Turok's null component relies on?",
+  "regulator_corollary": {
+    "imported_exactly": "Paper 05: m_pm^2 = mu^2 +/- sqrt(eps g)",
+    "reading": "mu^2 Omega Upsilon is a degeneracy-preserving AND grading-preserving infrared mass; (eps/2) Omega^2 destroys both, for the single reason that it carries charge +2. This names the regulator the loop extension should use.",
+    "rows": [
+      {
+        "charge": 0,
+        "poles_at_eps_zero": "m_+^2 = m_-^2 = mu^2  (coincident)",
+        "preserves_degeneracy": true,
+        "preserves_grading": true,
+        "term": "mu^2 * Omega * Upsilon"
+      },
+      {
+        "charge": 2,
+        "poles_at_eps_zero": "split by 2*sqrt(eps*g)",
+        "preserves_degeneracy": false,
+        "preserves_grading": false,
+        "term": "(eps/2) * Omega^2"
+      }
+    ]
+  },
+  "report": "reverse_physics/reports/charge-grading-loop-stability.md",
+  "structural_inputs": {
+    "charges": "q(Omega) = +1, q(Upsilon) = -1 under (Omega, Upsilon) -> (e^s Omega, e^-s Upsilon)",
+    "kinetic_form": "[[0,1],[1,0]], inverse [[0,1],[1,0]]",
+    "their_wightman": "W^{OmegaUpsilon} = W^{UpsilonOmega} = theta(p0) delta(p^2); W^{OmegaOmega} = W^{UpsilonUpsilon} = 0",
+    "vertex": "S_{1,1} = int [ dOmega.dUpsilon + (1/2) lambda^2 Omega^2 Upsilon^2 ]  (their Eq. (14)); q = 0"
+  },
+  "successor_question": {
+    "question": "Is the SO+(1,1) boost charge anomalous at one loop?",
+    "tractable_with": "the anomaly machinery already in quantum-weyl/",
+    "where_it_would_live": "the measure -- Bateman-Turok note the phi and (Omega, Upsilon) path integrals are inequivalent, 'the former integrates over Omega > 0 whereas the latter integrates over all Omega'",
+    "why_it_is_the_risk": "the grading argument is classical bookkeeping and assumes the charge survives quantization; it is a GLOBAL symmetry and global symmetries can be anomalous"
+  }
+}
