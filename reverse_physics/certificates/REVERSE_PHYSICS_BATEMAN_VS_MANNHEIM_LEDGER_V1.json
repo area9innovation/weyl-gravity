@@ -1,0 +1,125 @@
+{
+  "answer": "All three, at different levels, and the level axis is what makes that a result rather than an evasion. They are two REAL FORMS of one complex structure, differing in a single premise -- which involution is physical. OVERLAPPING at the free level, where they induce the same functional on the gauge-invariant algebra. ALTERNATIVE in the interacting theory, where they separate. COMPLEMENTARY in the sense that each has a regime where the other's premise is unsatisfiable. And at loop level at the coincident point -- the level that matters for Weyl gravity -- NEITHER has a result.",
+  "certificate": "REVERSE_PHYSICS_BATEMAN_VS_MANNHEIM_LEDGER_V1",
+  "checks": {
+    "detail": {
+      "a_both_stop_row_exists": true,
+      "both_programmes_survive_some_witness": true,
+      "cross_fertilization_is_graded_by_strength": true,
+      "each_witness_cites_a_source": true,
+      "every_level_cites_a_source": true,
+      "ledger_is_not_uniformly_one_direction": true,
+      "level_axis_is_forced_by_a_truth_value_flip": true,
+      "the_contested_slot_is_single": true,
+      "the_two_fillings_are_opposite": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 9,
+    "total": 9
+  },
+  "contested_slot": {
+    "bateman_turok": {
+      "filling": "indefinite (Krein)",
+      "keeps_field_real": true,
+      "price": "the Born rule is generalized to tr(A^dag A)",
+      "requires": "a charge grading with one-sided charge",
+      "requires_source": "paper/05-interaction-obstructions.tex, lem:chargenull and cprop:embedding"
+    },
+    "mannheim": {
+      "filling": "positive definite",
+      "keeps_field_real": false,
+      "price": "the field is rotated into the complex plane (Paper 06's quarter-turn; his own 'replace z by y = -iz')",
+      "requires": "diagonalizable AND real spectrum",
+      "requires_source": "reverse_physics/ghost_harmless.py"
+    },
+    "premise": "which involution is physical"
+  },
+  "cross_fertilization": [
+    {
+      "content": "the O(1,1) embedding replaces one fourth-order field by two second-order fields with an off-diagonal propagator, so poles are simple and cuts are ordinary delta functions. Mannheim's -delta'(s-m) pathology is a property of the fourth-order VARIABLE and is dissolved by the change of variables",
+      "direction": "BT -> Mannheim",
+      "strength": "concrete"
+    },
+    {
+      "content": "PT/C machinery constructs inner products where the naive one fails; whether that bears on an INFRARED rather than a signature problem is not established and is not claimed",
+      "direction": "Mannheim -> BT",
+      "strength": "speculative, flagged"
+    },
+    {
+      "content": "mu^2 Omega Upsilon is a charge- and degeneracy-preserving infrared mass -- the regulator their loop extension needs; (eps/2) Omega^2 breaks both because it carries charge +2",
+      "direction": "this repository -> BT",
+      "source": "REVERSE_PHYSICS_CHARGE_GRADING_LOOP_STABILITY_V1",
+      "strength": "concrete"
+    },
+    {
+      "content": "since the completions induce the same functional on the gauge-invariant algebra, any FREE-LEVEL dispute between the camps is about the involution, not about predictions",
+      "direction": "Paper 04 -> both",
+      "strength": "discipline"
+    }
+  ],
+  "dependency_tag": "LOCAL-ALGEBRAIC",
+  "does_not_establish": [
+    "any adjudication between the programmes; every row points at a result proved elsewhere or quoted from the sources",
+    "any new physics -- the contribution is the axis, the slot identification, and placing the two witnesses on one page",
+    "that the speculative Mannheim -> BT transfer works; it is flagged as unestablished",
+    "anything LORENTZIAN-CAUSAL"
+  ],
+  "independence_witnesses": [
+    {
+      "drop": "diagonalizable (Mannheim)",
+      "source": "paper/04-fourth-order-gravity.tex, thm:term",
+      "survivor": "bateman_turok",
+      "witness": "the coincident-pole point -- exactly where pure Weyl gravity's 1/k^4 sits"
+    },
+    {
+      "drop": "one-sided charge (Bateman-Turok)",
+      "source": "paper/05-interaction-obstructions.tex, cprop:embedding",
+      "survivor": "mannheim",
+      "witness": "split mass, eps != 0, where both charge signs appear"
+    }
+  ],
+  "levels": [
+    {
+      "claim": "same fourth-order action, same classical content; neither programme modifies the Lagrangian",
+      "direction": "SHARED",
+      "level": "L1",
+      "name": "action and classical field equations",
+      "source": "both, by construction"
+    },
+    {
+      "agree": true,
+      "claim": "the two completions induce the SAME complex quasifree functional on the gauge-invariant observable algebra; they differ in involution and completion only",
+      "direction": "SHARED",
+      "level": "L2",
+      "name": "free state space and observables",
+      "source": "paper/04-fourth-order-gravity.tex, thm:bridge4"
+    },
+    {
+      "claim": "the positive metric has no nondegenerate continuation through c1 = 0 and the similarity transformation is singular in the equal-frequency limit; only the Krein real form continues as a nondegenerate completion. Mannheim's own Sec. VI withdraws the cutting rules there",
+      "direction": "BT-OPENS",
+      "level": "L3",
+      "name": "the coincident-pole (Jordan) point",
+      "source": "paper/04-fourth-order-gravity.tex, thm:term and rem:mannheimloop; Mannheim PRD 98 045014 Sec. VI"
+    },
+    {
+      "agree": false,
+      "claim": "Krein pseudo-unitarity is exact on the same matrix elements on which every positive pointed metric is obstructed: the two real forms SEPARATE",
+      "direction": "BT-OPENS",
+      "level": "L4",
+      "name": "interacting theory, second order",
+      "source": "paper/05-interaction-obstructions.tex, cprop:krein"
+    },
+    {
+      "claim": "neither programme has a result. Mannheim's cutting rules are withdrawn at the Jordan block by his own Sec. VI; Bateman-Turok prove positivity at TREE level only and name collinear infrared divergence as the obstacle. The two failures are unrelated",
+      "commonly_misread": true,
+      "direction": "BOTH-STOP",
+      "level": "L5",
+      "name": "loops at the coincident point",
+      "source": "REVERSE_PHYSICS_MANNHEIM_CUTTING_RULES_V1; arXiv:2607.00096 conclusions"
+    }
+  ],
+  "lifecycle_state": "CLASSIFIED",
+  "question": "Are Bateman-Turok and Mannheim complementary, overlapping, or alternative reverse-physics options?",
+  "report": "reverse_physics/reports/bateman-vs-mannheim.md"
+}
