@@ -1,0 +1,267 @@
+{
+  "answer": "No, and the paper says so. Sec. VI: 'since non-stationary states are involved in the eps = 0 Jordan-block case, the standard cutting rules would not apply.' Sec. VII nonetheless concludes conformal gravity is 'fully consistent'. Eq. (84) shows the object of Sec. VII IS the object of Sec. VI. The reconciling step, Eq. (85)-(86), is therefore an assumption.",
+  "certificate": "REVERSE_PHYSICS_MANNHEIM_CUTTING_RULES_V1",
+  "checks": {
+    "detail": {
+      "coincidence_limit_is_derivative_functional": true,
+      "control_diagonalizable_off_coincidence": true,
+      "control_jordan_block_at_coincidence": true,
+      "control_residues_fail_closed": true,
+      "control_second_order_separates": true,
+      "control_sum_of_poles_stays_healthy": true,
+      "cut_weight_first_moment_one": true,
+      "cut_weight_ladder_equals_h": true,
+      "cut_weight_ladder_nonvacuous": true,
+      "cut_weight_total_mass_zero": true,
+      "eq76_is_positive_energy_half_of_eq84": true,
+      "eq84_check_detects_mutation": true,
+      "eq84_partial_fractions_exact": true,
+      "normalisation_has_simple_pole_in_separation": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 14,
+    "total": 14
+  },
+  "controls": {
+    "diagonalizable_off_coincidence": true,
+    "not_diagonalizable_at_coincidence": true,
+    "obstruction_is_specific_to_product_structure": true,
+    "pencil_rows": [
+      {
+        "algebraic_multiplicity": 1,
+        "diagonalizable": true,
+        "eigenvalue": "3",
+        "epsilon": "1",
+        "geometric_multiplicity": 1
+      },
+      {
+        "algebraic_multiplicity": 1,
+        "diagonalizable": true,
+        "eigenvalue": "5/2",
+        "epsilon": "1/2",
+        "geometric_multiplicity": 1
+      },
+      {
+        "algebraic_multiplicity": 1,
+        "diagonalizable": true,
+        "eigenvalue": "17/8",
+        "epsilon": "1/8",
+        "geometric_multiplicity": 1
+      },
+      {
+        "algebraic_multiplicity": 2,
+        "diagonalizable": false,
+        "eigenvalue": "2",
+        "epsilon": "0",
+        "geometric_multiplicity": 1
+      }
+    ],
+    "residues_refuse_coincident_poles": true,
+    "second_order_is_positive_measure": true,
+    "second_order_total_weight": "1",
+    "separates_from_fourth_order": true,
+    "sum_of_poles_diverges_at_coincidence": false,
+    "sum_of_poles_residues": [
+      "1",
+      "1"
+    ],
+    "sum_of_poles_total_weight": "2"
+  },
+  "cut_weight_ladder": {
+    "W0_is_zero_on_whole_family": true,
+    "W1_is_one_on_whole_family": true,
+    "coincidence_limit_is_derivative_evaluation": true,
+    "failures": [],
+    "family_size": 12,
+    "ladder_is_nonvacuous": true,
+    "ladder_matches_h": true,
+    "limit_mismatches": [],
+    "n_max": 8,
+    "reading": "total weight zero with unit first moment is not a positive measure and not a signed sum of point masses of bounded weight; no positive-norm intermediate-state resolution exists for it",
+    "relation": "W_n(m1,m2) = (m1^n - m2^n)/(m1 - m2) = h_{n-1}(m1,m2); W_0 = 0, W_1 = 1; at m1 = m2 = m, W_n -> n*m^(n-1), so W[f] -> f'(m), i.e. the weight is -delta'(s-m)"
+  },
+  "dependency_tag": "LOCAL-ALGEBRAIC",
+  "does_not_establish": [
+    "that pure Weyl gravity is non-unitary -- only that PRD 98, 045014 does not cover it, by its own Sec. VI",
+    "that no cutting rule exists on the Jordan-block state space; one may, and constructing it directly (not as a limit) is the open problem this names",
+    "any value, bound, or sign for a muon anomalous magnetic moment in Weyl gravity",
+    "anything LORENTZIAN-CAUSAL: no Lorentzian propagator, Hadamard state, renormalized time-ordered product, or QME theorem is claimed or used here"
+  ],
+  "eq76_inside_eq84": {
+    "all_match": true,
+    "meaning": "the massless 1/k^4 propagator's positive-energy pole structure IS the equal-frequency Jordan-block structure that Sec. VI excludes from the standard cutting rules",
+    "rows": [
+      {
+        "eq76_double_pole_coeff": "-1/4",
+        "eq76_simple_pole_coeff": "1/4",
+        "eq84_double_pole_coeff": "-1/4",
+        "eq84_simple_pole_coeff": "1/4",
+        "match": true,
+        "omega": "1"
+      },
+      {
+        "eq76_double_pole_coeff": "-1/16",
+        "eq76_simple_pole_coeff": "1/32",
+        "eq84_double_pole_coeff": "-1/16",
+        "eq84_simple_pole_coeff": "1/32",
+        "match": true,
+        "omega": "2"
+      },
+      {
+        "eq76_double_pole_coeff": "-1/36",
+        "eq76_simple_pole_coeff": "1/108",
+        "eq84_double_pole_coeff": "-1/36",
+        "eq84_simple_pole_coeff": "1/108",
+        "match": true,
+        "omega": "3"
+      },
+      {
+        "eq76_double_pole_coeff": "-1/100",
+        "eq76_simple_pole_coeff": "1/500",
+        "eq84_double_pole_coeff": "-1/100",
+        "eq84_simple_pole_coeff": "1/500",
+        "match": true,
+        "omega": "5"
+      },
+      {
+        "eq76_double_pole_coeff": "-1/196",
+        "eq76_simple_pole_coeff": "1/1372",
+        "eq84_double_pole_coeff": "-1/196",
+        "eq84_simple_pole_coeff": "1/1372",
+        "match": true,
+        "omega": "7"
+      },
+      {
+        "eq76_double_pole_coeff": "-1",
+        "eq76_simple_pole_coeff": "2",
+        "eq84_double_pole_coeff": "-1",
+        "eq84_simple_pole_coeff": "2",
+        "match": true,
+        "omega": "1/2"
+      },
+      {
+        "eq76_double_pole_coeff": "-4/9",
+        "eq76_simple_pole_coeff": "16/27",
+        "eq84_double_pole_coeff": "-4/9",
+        "eq84_simple_pole_coeff": "16/27",
+        "match": true,
+        "omega": "3/4"
+      },
+      {
+        "eq76_double_pole_coeff": "-25/484",
+        "eq76_simple_pole_coeff": "125/5324",
+        "eq84_double_pole_coeff": "-25/484",
+        "eq84_simple_pole_coeff": "125/5324",
+        "match": true,
+        "omega": "11/5"
+      }
+    ]
+  },
+  "eq84_identity": {
+    "cleared_denominator": "4*w^3*(E-w)^2*(E+w)^2",
+    "identity_holds": true,
+    "lhs_polynomial": "-4*w^3",
+    "mutation_detected": true,
+    "rhs_polynomial": "-4*w^3"
+  },
+  "imports": "none -- exact rational arithmetic, stdlib only",
+  "lifecycle_state": "CLASSIFIED",
+  "named_assumption": {
+    "content": "that continuity of the PROPAGATOR in M^2 transfers the cutting rules through the M^2 -> 0 limit",
+    "step": "Mannheim Eq. (85)-(86)",
+    "why_it_is_an_assumption": "d/dM^2 is exactly the operation carrying delta(s - M^2) to -delta'(s - M^2). The step that makes the propagator's limit non-singular is the step that destroys the positivity of the cut weight. The propagator's limit was never in doubt."
+  },
+  "neighbours": {
+    "note": "cited as context, not used as evidence; this module imports nothing",
+    "paper/05-interaction-obstructions.tex": "the positive-metric deformation is obstructed at second order in the INTERACTING theory; independent of this module",
+    "reverse_physics/ghost_harmless.py": "established that quasi-Hermiticity/PT -- the Bender-Mannheim route -- requires DIAGONALIZABLE AND REAL SPECTRUM. Imported as a statement, not re-derived; the pencil control shows which conjunct fails and exactly where",
+    "reverse_physics/ghost_signature.py": "'harmless' means a positive inner product exists, not that the ghost is gone"
+  },
+  "normalisation_pole": {
+    "rows": [
+      {
+        "R1": "1/2",
+        "rescaled_norm_scales_as": "2",
+        "separation": "2",
+        "separation_times_R1": "1"
+      },
+      {
+        "R1": "1",
+        "rescaled_norm_scales_as": "1",
+        "separation": "1",
+        "separation_times_R1": "1"
+      },
+      {
+        "R1": "2",
+        "rescaled_norm_scales_as": "1/2",
+        "separation": "1/2",
+        "separation_times_R1": "1"
+      },
+      {
+        "R1": "4",
+        "rescaled_norm_scales_as": "1/4",
+        "separation": "1/4",
+        "separation_times_R1": "1"
+      },
+      {
+        "R1": "8",
+        "rescaled_norm_scales_as": "1/8",
+        "separation": "1/8",
+        "separation_times_R1": "1"
+      },
+      {
+        "R1": "16",
+        "rescaled_norm_scales_as": "1/16",
+        "separation": "1/16",
+        "separation_times_R1": "1"
+      },
+      {
+        "R1": "32",
+        "rescaled_norm_scales_as": "1/32",
+        "separation": "1/32",
+        "separation_times_R1": "1"
+      },
+      {
+        "R1": "64",
+        "rescaled_norm_scales_as": "1/64",
+        "separation": "1/64",
+        "separation_times_R1": "1"
+      },
+      {
+        "R1": "128",
+        "rescaled_norm_scales_as": "1/128",
+        "separation": "1/128",
+        "separation_times_R1": "1"
+      },
+      {
+        "R1": "256",
+        "rescaled_norm_scales_as": "1/256",
+        "separation": "1/256",
+        "separation_times_R1": "1"
+      },
+      {
+        "R1": "512",
+        "rescaled_norm_scales_as": "1/512",
+        "separation": "1/512",
+        "separation_times_R1": "1"
+      }
+    ],
+    "simple_pole_in_separation": true,
+    "source": "Mannheim PRD 98, 045014 (2018), Appendix A, Eq. (A2)"
+  },
+  "question": "Do Mannheim's loop cutting rules survive the coincident-pole limit that pure Weyl gravity's 1/k^4 propagator sits at?",
+  "report": "reverse_physics/reports/mannheim-cutting-rules.md",
+  "source": {
+    "arxiv": "1801.03220",
+    "author": "P. D. Mannheim",
+    "journal": "Phys. Rev. D 98, 045014 (2018)",
+    "quoted_sections": {
+      "VI": "the standard cutting rules would not apply",
+      "VII_closing": "Conformal gravity is thus offered as a fully consistent and renormalizable quantum theory of gravity",
+      "VII_eq_85_86": "1/k^4 = lim_{M^2->0} d/dM^2 [1/(k^2-M^2)]; 'we can determine the cutting rules for the massless theory before we take the M_i^2 -> 0 limit'",
+      "appendix_A2": "[a_i, a_i^dag] = [2(M_1^2 - M_2^2)(k^2 + M_i^2)^(1/2)]^(-1) delta^3"
+    },
+    "title": "Unitarity of loop diagrams for the ghost-like 1/(k^2-M_1^2) - 1/(k^2-M_2^2) propagator"
+  }
+}
