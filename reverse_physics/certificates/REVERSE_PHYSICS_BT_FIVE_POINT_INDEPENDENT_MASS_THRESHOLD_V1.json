@@ -1,0 +1,192 @@
+{
+  "amplitude_reduction": {
+    "general_amplitude_delta_order": 2,
+    "general_leading_coefficient": "(-a0**2*a2**2 - a0**2*a2*a3 - a0**2*a2*a4 - a0**2*a2*tau - a0**2*a3**2 - a0**2*a3*a4 - a0**2*a3*tau - a0**2*a4**2 - a0**2*a4*tau - 3*a0**2*tau**2 + 2*a0*a1*a2**2 + 2*a0*a1*a2*a3 + 2*a0*a1*a2*a4 + 2*a0*a1*a2*tau + 2*a0*a1*a3**2 + 2*a0*a1*a3*a4 + 2*a0*a1*a3*tau + 2*a0*a1*a4**2 + 2*a0*a1*a4*tau + 2*a0*a2**2*tau + 2*a0*a2*a3*tau + 2*a0*a2*a4*tau + 2*a0*a3**2*tau + 2*a0*a3*a4*tau + 2*a0*a4**2*tau - a1**2*a2**2 - a1**2*a2*a3 - a1**2*a2*a4 - a1**2*a2*tau - a1**2*a3**2 - a1**2*a3*a4 - a1**2*a3*tau - a1**2*a4**2 - a1**2*a4*tau - 3*a1**2*tau**2 + 2*a1*a2**2*tau + 2*a1*a2*a3*tau + 2*a1*a2*a4*tau + 2*a1*a3**2*tau + 2*a1*a3*a4*tau + 2*a1*a4**2*tau - 3*a2**2*tau**2 - 3*a3**2*tau**2 - 3*a4**2*tau**2)/(4*tau**2)",
+    "general_leading_coefficient_length": 705,
+    "spectator_derivatives": [
+      "a2",
+      "a3",
+      "a4"
+    ],
+    "spectator_projected_square": "3*(a0-a1)^2*((a0-a1)^2-2*tau*(a0+a1))/(8*tau^3)"
+  },
+  "answer": "No. After the exact derivatives in the three spectator masses, the remaining two-mass threshold function contains -3/8*x0*x1*log(x1/x0). Its mixed slope diverges. A finite part requires a ratio-cutoff normalization and shifts by -3/8*log(c) when that normalization is rescaled by c.",
+  "candidate_theorem": {
+    "carrier": "The leading homogeneous collinear region of the complete PS five-point tree amplitude, differential in nonsingular outer phase-space variables and integrated over the pair invariant.",
+    "counterexample_strategy": "Assume a quadratic two-mass jet and evaluate its annihilating four-ray combination at r=0,1,4,9; the exact result is strictly negative.",
+    "finite_machine_boundary": "Leading collinear homogeneity, one selected final-state pair, three exact spectator derivatives, and the exact pair-threshold integral.",
+    "proof_obligations": [
+      "derive the arbitrary-mass amplitude coefficient from all 25 trees",
+      "take the exact three-spectator coefficient of the amplitude square",
+      "include the physical Kallen threshold and Jacobian",
+      "integrate the homogeneous threshold region exactly",
+      "prove failure of a joint quadratic jet without floating point",
+      "exhibit the finite-part rescaling ambiguity",
+      "keep the full physical projector and rate fail-closed"
+    ],
+    "statement": "On the declared reduced collinear carrier, the spectator-projected threshold integral has ray coefficient H(r) recorded below. Because H(r)=-5/16+r[-3/8 log r-1/8]+..., it has no ordinary joint quadratic jet at (x0,x1)=(0,0), and hence supplies no ordinary fivefold BT mass derivative."
+  },
+  "certificate": "REVERSE_PHYSICS_BT_FIVE_POINT_INDEPENDENT_MASS_THRESHOLD_V1",
+  "checks": {
+    "details": {
+      "atanh_log_bounds_are_ordered": true,
+      "finite_part_rescaling_shift_nonzero": true,
+      "four_ray_defect_strictly_negative": true,
+      "general_amplitude_starts_at_delta_two": true,
+      "general_coefficient_is_compact": true,
+      "mixed_distribution_stays_fail_closed": true,
+      "no_lorentzian_claim": true,
+      "ordinary_mixed_slope_diverges": true,
+      "predecessor_hash_pinned": true,
+      "small_ratio_contains_nonzero_log": true,
+      "three_spectator_derivatives_projected": true,
+      "threshold_integral_exact": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 12,
+    "total": 12
+  },
+  "dependency_tags": [
+    "REDUCED-MODE"
+  ],
+  "disposition": {
+    "beyond_tree_positivity": "NOT_ESTABLISHED",
+    "finite_part_on_reduced_carrier": "PRESCRIPTION_DEPENDENT",
+    "full_five_body_phase_space_projector": "NOT_CONSTRUCTED",
+    "ordinary_reduced_mixed_five_mass_derivative": "DOES_NOT_EXIST",
+    "physical_integrated_2to3_probability": "NOT_COMPUTED",
+    "real_virtual_cancellation": "NOT_COMPUTED"
+  },
+  "does_not_establish": [
+    "that Bateman--Turok theory is inconsistent or ambiguous after completion",
+    "a value for the physical mixed five-mass distribution",
+    "a completed five-body projector or physical 2->3 cross section",
+    "absence of a real-virtual cancellation",
+    "positivity or unitarity beyond tree level",
+    "a tensor or BRST gravitational lift",
+    "anything LORENTZIAN-CAUSAL",
+    "literature priority"
+  ],
+  "finite_part_ambiguity": {
+    "c_four_shift": "-3/4*log(2)",
+    "definition": "FP_c=lim_epsilon_to_0 [B_(c*epsilon)+3/8*log(epsilon)]",
+    "disposition": "REGULATOR_NORMALIZATION_DEPENDENT",
+    "reference_c_one": {
+      "denominator": 8,
+      "numerator": -1
+    },
+    "value": "FP_c=-1/8-3/8*log(c)"
+  },
+  "four_ray_nonpolynomial_witness": {
+    "annihilator_weights": [
+      -10,
+      15,
+      -6,
+      1
+    ],
+    "defect": "45/4-30*log(2)+135/16*log(3)",
+    "defect_bounds": [
+      {
+        "denominator": 47029248,
+        "numerator": -13144501
+      },
+      {
+        "denominator": 2612736,
+        "numerator": -716497
+      }
+    ],
+    "log2_bounds": [
+      {
+        "denominator": 76545,
+        "numerator": 53056
+      },
+      {
+        "denominator": 2755620,
+        "numerator": 1910051
+      }
+    ],
+    "log3_bounds": [
+      {
+        "denominator": 6720,
+        "numerator": 7379
+      },
+      {
+        "denominator": 30240,
+        "numerator": 33223
+      }
+    ],
+    "meaning": "No polynomial of degree at most two matches the ray function.",
+    "ray_values": [
+      "H(0)=-5/16",
+      "H(1)=0",
+      "H(4)=-93/16+5*log(2)",
+      "H(9)=-107/4+135/16*log(3)"
+    ],
+    "rays": [
+      0,
+      1,
+      4,
+      9
+    ],
+    "strict_sign": "NEGATIVE"
+  },
+  "interpretation": "The previous common-ray warning is now an exact independent-mass obstruction on the reduced collinear carrier. An extra distributional renormalization condition is necessary. The calculation does not decide whether the full real-plus-virtual observable fixes that condition.",
+  "lifecycle_state": "COEFFICIENT_COMPUTED",
+  "missing_object_ledger": [
+    "a physical renormalization condition fixing the threshold finite part",
+    "the complete angular and Dalitz dependence of the five-body projector",
+    "the common i-epsilon and collinear prescription",
+    "the renormalized four-leg one-loop interference jet",
+    "a proof that real-virtual combination cancels or fixes the scale ambiguity",
+    "scheme and field-redefinition invariance of the completed probability"
+  ],
+  "next_gate": "Compute the four-leg loop jet on the same external-mass prescription and test whether its logarithm cancels the reduced real threshold coefficient -3/8 or fixes the finite-part normalization.",
+  "ordinary_derivative_obstruction": {
+    "asymptotic": "B_epsilon=-3/8*log(epsilon)-1/8+O(epsilon*log(epsilon))",
+    "consequence": "NO_ORDINARY_JOINT_SECOND_JET_AFTER_SPECTATOR_PROJECTION",
+    "ordinary_limit": "DIVERGES_TO_POSITIVE_INFINITY",
+    "slope_quotient": "B_epsilon=(H(epsilon)-H(0))/epsilon"
+  },
+  "provenance": {
+    "inputs": [
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_FIVE_POINT_COLLINEAR_LAYER_V1.json",
+        "sha256": "8e9ec04038b6a02996407d557eecb0c3dbf8cbc5e2ff71d957d78a01c3bceafe"
+      }
+    ],
+    "interpreter": "/home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3",
+    "primary_source": "https://arxiv.org/abs/2607.00096v1",
+    "retrieval_date": "2026-08-09",
+    "source_commit": "25110186c1a371da8ca3394250e8d6a37856cc58",
+    "sympy_version": "1.14.0"
+  },
+  "question": "Does the reduced five-point collinear boundary admit an ordinary or regulator-independent five-mass mixed derivative at the massless corner?",
+  "report": "reverse_physics/reports/bt-five-point-independent-mass-threshold.md",
+  "result_kind": "independent-mass collinear-threshold obstruction",
+  "schema": "reverse_physics/schema/reverse-physics-bt-five-point-independent-mass-threshold-v1.schema.json",
+  "schema_version": "reverse-physics-bt-five-point-independent-mass-threshold-v1",
+  "threshold_result": {
+    "continuous_value_at_r_one": {
+      "denominator": 1,
+      "numerator": 0
+    },
+    "finite_slope_constant": {
+      "denominator": 8,
+      "numerator": -1
+    },
+    "logarithmic_slope_coefficient": {
+      "denominator": 8,
+      "numerator": -3
+    },
+    "ray_definition": "x0=epsilon, x1=r*epsilon, r=m^2",
+    "ray_function": "H(r)=(-5*r^3+3*r^2-3*r+5+6*r*(r+1)*log(r))/(16*(r-1))",
+    "small_ratio_expansion": "H(r)=-5/16+r*(-3/8*log(r)-1/8)+O(r^2*log(r))",
+    "threshold_u": "(1+m)^2"
+  },
+  "verification_commands": [
+    "/home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/bt_five_point_independent_mass_threshold.py --check",
+    "/home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/verify_bt_five_point_independent_mass_threshold.py",
+    "/home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 -m unittest -v reverse_physics.tests.test_bt_five_point_independent_mass_threshold"
+  ]
+}

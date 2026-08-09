@@ -1,0 +1,172 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-five-point-independent-mass-threshold-v1.schema.json",
+  "title": "BT independent-mass collinear-threshold obstruction",
+  "$defs": {
+    "string": {"type": "string", "minLength": 1},
+    "strings": {"type": "array", "items": {"$ref": "#/$defs/string"}},
+    "rational": {
+      "type": "object",
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      },
+      "additionalProperties": false
+    },
+    "rational_pair": {
+      "type": "array", "minItems": 2, "maxItems": 2,
+      "items": {"$ref": "#/$defs/rational"}
+    },
+    "input": {
+      "type": "object",
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {"$ref": "#/$defs/string"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      },
+      "additionalProperties": false
+    }
+  },
+  "type": "object",
+  "required": [
+    "certificate", "schema_version", "dependency_tags", "lifecycle_state",
+    "result_kind", "question", "answer", "candidate_theorem",
+    "amplitude_reduction", "threshold_result", "ordinary_derivative_obstruction",
+    "finite_part_ambiguity", "four_ray_nonpolynomial_witness", "disposition",
+    "interpretation", "missing_object_ledger", "next_gate", "does_not_establish",
+    "provenance", "verification_commands", "checks", "report", "schema"
+  ],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_FIVE_POINT_INDEPENDENT_MASS_THRESHOLD_V1"},
+    "schema_version": {"const": "reverse-physics-bt-five-point-independent-mass-threshold-v1"},
+    "dependency_tags": {"const": ["REDUCED-MODE"]},
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "result_kind": {"$ref": "#/$defs/string"},
+    "question": {"$ref": "#/$defs/string"},
+    "answer": {"$ref": "#/$defs/string"},
+    "candidate_theorem": {
+      "type": "object",
+      "required": ["statement", "carrier", "proof_obligations", "counterexample_strategy", "finite_machine_boundary"],
+      "properties": {
+        "statement": {"$ref": "#/$defs/string"},
+        "carrier": {"$ref": "#/$defs/string"},
+        "proof_obligations": {"type": "array", "minItems": 7, "items": {"$ref": "#/$defs/string"}},
+        "counterexample_strategy": {"$ref": "#/$defs/string"},
+        "finite_machine_boundary": {"$ref": "#/$defs/string"}
+      },
+      "additionalProperties": false
+    },
+    "amplitude_reduction": {
+      "type": "object",
+      "required": ["general_amplitude_delta_order", "general_leading_coefficient", "general_leading_coefficient_length", "spectator_projected_square", "spectator_derivatives"],
+      "properties": {
+        "general_amplitude_delta_order": {"const": 2},
+        "general_leading_coefficient": {"$ref": "#/$defs/string"},
+        "general_leading_coefficient_length": {"type": "integer", "minimum": 1, "maximum": 800},
+        "spectator_projected_square": {"const": "3*(a0-a1)^2*((a0-a1)^2-2*tau*(a0+a1))/(8*tau^3)"},
+        "spectator_derivatives": {"const": ["a2", "a3", "a4"]}
+      },
+      "additionalProperties": false
+    },
+    "threshold_result": {
+      "type": "object",
+      "required": ["ray_definition", "threshold_u", "ray_function", "continuous_value_at_r_one", "small_ratio_expansion", "logarithmic_slope_coefficient", "finite_slope_constant"],
+      "properties": {
+        "ray_definition": {"$ref": "#/$defs/string"},
+        "threshold_u": {"const": "(1+m)^2"},
+        "ray_function": {"const": "H(r)=(-5*r^3+3*r^2-3*r+5+6*r*(r+1)*log(r))/(16*(r-1))"},
+        "continuous_value_at_r_one": {"$ref": "#/$defs/rational"},
+        "small_ratio_expansion": {"$ref": "#/$defs/string"},
+        "logarithmic_slope_coefficient": {"$ref": "#/$defs/rational"},
+        "finite_slope_constant": {"$ref": "#/$defs/rational"}
+      },
+      "additionalProperties": false
+    },
+    "ordinary_derivative_obstruction": {
+      "type": "object",
+      "required": ["slope_quotient", "asymptotic", "ordinary_limit", "consequence"],
+      "properties": {
+        "slope_quotient": {"$ref": "#/$defs/string"},
+        "asymptotic": {"$ref": "#/$defs/string"},
+        "ordinary_limit": {"const": "DIVERGES_TO_POSITIVE_INFINITY"},
+        "consequence": {"const": "NO_ORDINARY_JOINT_SECOND_JET_AFTER_SPECTATOR_PROJECTION"}
+      },
+      "additionalProperties": false
+    },
+    "finite_part_ambiguity": {
+      "type": "object",
+      "required": ["definition", "value", "reference_c_one", "c_four_shift", "disposition"],
+      "properties": {
+        "definition": {"$ref": "#/$defs/string"},
+        "value": {"const": "FP_c=-1/8-3/8*log(c)"},
+        "reference_c_one": {"$ref": "#/$defs/rational"},
+        "c_four_shift": {"const": "-3/4*log(2)"},
+        "disposition": {"const": "REGULATOR_NORMALIZATION_DEPENDENT"}
+      },
+      "additionalProperties": false
+    },
+    "four_ray_nonpolynomial_witness": {
+      "type": "object",
+      "required": ["rays", "annihilator_weights", "ray_values", "defect", "log2_bounds", "log3_bounds", "defect_bounds", "strict_sign", "meaning"],
+      "properties": {
+        "rays": {"const": [0, 1, 4, 9]},
+        "annihilator_weights": {"const": [-10, 15, -6, 1]},
+        "ray_values": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/string"}},
+        "defect": {"const": "45/4-30*log(2)+135/16*log(3)"},
+        "log2_bounds": {"$ref": "#/$defs/rational_pair"},
+        "log3_bounds": {"$ref": "#/$defs/rational_pair"},
+        "defect_bounds": {"$ref": "#/$defs/rational_pair"},
+        "strict_sign": {"const": "NEGATIVE"},
+        "meaning": {"$ref": "#/$defs/string"}
+      },
+      "additionalProperties": false
+    },
+    "disposition": {
+      "type": "object",
+      "required": ["ordinary_reduced_mixed_five_mass_derivative", "finite_part_on_reduced_carrier", "full_five_body_phase_space_projector", "physical_integrated_2to3_probability", "real_virtual_cancellation", "beyond_tree_positivity"],
+      "properties": {
+        "ordinary_reduced_mixed_five_mass_derivative": {"const": "DOES_NOT_EXIST"},
+        "finite_part_on_reduced_carrier": {"const": "PRESCRIPTION_DEPENDENT"},
+        "full_five_body_phase_space_projector": {"const": "NOT_CONSTRUCTED"},
+        "physical_integrated_2to3_probability": {"const": "NOT_COMPUTED"},
+        "real_virtual_cancellation": {"const": "NOT_COMPUTED"},
+        "beyond_tree_positivity": {"const": "NOT_ESTABLISHED"}
+      },
+      "additionalProperties": false
+    },
+    "interpretation": {"$ref": "#/$defs/string"},
+    "missing_object_ledger": {"type": "array", "minItems": 6, "items": {"$ref": "#/$defs/string"}},
+    "next_gate": {"$ref": "#/$defs/string"},
+    "does_not_establish": {"type": "array", "minItems": 8, "items": {"$ref": "#/$defs/string"}},
+    "provenance": {
+      "type": "object",
+      "required": ["source_commit", "retrieval_date", "inputs", "primary_source", "interpreter", "sympy_version"],
+      "properties": {
+        "source_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "retrieval_date": {"const": "2026-08-09"},
+        "inputs": {"type": "array", "minItems": 1, "maxItems": 1, "items": {"$ref": "#/$defs/input"}},
+        "primary_source": {"$ref": "#/$defs/string"},
+        "interpreter": {"$ref": "#/$defs/string"},
+        "sympy_version": {"const": "1.14.0"}
+      },
+      "additionalProperties": false
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "items": {"$ref": "#/$defs/string"}},
+    "checks": {
+      "type": "object",
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"type": "integer", "minimum": 12},
+        "total": {"const": 12},
+        "failures": {"maxItems": 0},
+        "details": {"type": "object", "minProperties": 12, "additionalProperties": {"const": true}}
+      },
+      "additionalProperties": false
+    },
+    "report": {"const": "reverse_physics/reports/bt-five-point-independent-mass-threshold.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-five-point-independent-mass-threshold-v1.schema.json"}
+  },
+  "additionalProperties": false
+}

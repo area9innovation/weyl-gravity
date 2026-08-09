@@ -271,3 +271,15 @@ missing dependency for the physical `2->3` probability.
 EVIDENCE: `reverse_physics/certificates/REVERSE_PHYSICS_BT_FIVE_POINT_COLLINEAR_LAYER_V1.json`
 
 MISSING-DEP: distributional five-independent-mass phase-space prescription
+
+## Successor result
+
+[`REVERSE_PHYSICS_BT_FIVE_POINT_INDEPENDENT_MASS_THRESHOLD_V1`](../certificates/REVERSE_PHYSICS_BT_FIVE_POINT_INDEPENDENT_MASS_THRESHOLD_V1.json)
+performs the independent-mass blow-up.  After the exact three spectator
+derivatives, the remaining threshold function contains
+`-(3/8) x0 x1 log(x1/x0)`.  The ordinary mixed derivative therefore does not
+exist.  Subtracting the logarithm leaves a finite part that shifts by
+`-(3/8) log(c)` under a ratio-cutoff rescaling.  The next gate is no longer to
+define an arbitrary real finite part in isolation, but to compute the
+four-leg virtual jet on the same prescription and test cancellation or
+matching.
