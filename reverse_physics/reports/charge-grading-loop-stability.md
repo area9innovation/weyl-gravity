@@ -72,6 +72,13 @@ off-shell regulation, inclusive/KLN cancellation, or dressed asymptotic
 states. The concrete next test is whether the negative-charge trace radical is
 closed under the first collinear inclusive sum.
 
+That algebraic successor is now classified by
+[`BT_INCLUSIVE_RADICAL_CLOSURE`](bt-inclusive-radical-closure.md): finite
+Eq. (20) off-diagonal completeness sums do preserve the relative negative
+radical inside the one-sided nonpositive image. No
+physical real-plus-virtual process map or KLN cancellation was constructed, so
+the infrared gate itself remains open.
+
 Separately, the grading argument is classical bookkeeping. It assumes the
 `SO⁺(1,1)` charge survives quantization, so **is the boost charge anomalous at
 one loop?** remains an open measure question rather than the sole successor.

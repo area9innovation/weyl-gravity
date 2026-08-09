@@ -1,0 +1,336 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-inclusive-radical-closure-v1.schema.json",
+  "title": "BT finite inclusive radical-closure certificate",
+  "$defs": {
+    "nonempty_string": {"type": "string", "minLength": 1},
+    "rational": {
+      "type": "object",
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      },
+      "additionalProperties": false
+    },
+    "series_term": {
+      "type": "object",
+      "required": ["charge", "coefficient"],
+      "properties": {
+        "charge": {"type": "integer"},
+        "coefficient": {"$ref": "#/$defs/rational"}
+      },
+      "additionalProperties": false
+    },
+    "series": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/series_term"}
+    },
+    "string_list": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/nonempty_string"}
+    }
+  },
+  "type": "object",
+  "required": [
+    "certificate",
+    "schema_version",
+    "dependency_tags",
+    "lifecycle_state",
+    "result_kind",
+    "question",
+    "answer",
+    "candidate_theorem",
+    "carrier",
+    "eq20_completeness_kernel",
+    "born_trace_identity",
+    "sharp_counterexamples",
+    "criterion_exhaustion",
+    "disposition",
+    "missing_object_ledger",
+    "next_gate",
+    "does_not_establish",
+    "provenance",
+    "verification_commands",
+    "checks",
+    "report",
+    "schema"
+  ],
+  "properties": {
+    "certificate": {
+      "const": "REVERSE_PHYSICS_BT_INCLUSIVE_RADICAL_CLOSURE_V1"
+    },
+    "schema_version": {
+      "const": "reverse-physics-bt-inclusive-radical-closure-v1"
+    },
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "result_kind": {"$ref": "#/$defs/nonempty_string"},
+    "question": {"$ref": "#/$defs/nonempty_string"},
+    "answer": {"$ref": "#/$defs/nonempty_string"},
+    "candidate_theorem": {
+      "type": "object",
+      "required": [
+        "statement", "carrier", "proof_obligations",
+        "counterexample_strategy", "finite_machine_boundary"
+      ],
+      "properties": {
+        "statement": {"$ref": "#/$defs/nonempty_string"},
+        "carrier": {"$ref": "#/$defs/nonempty_string"},
+        "proof_obligations": {
+          "type": "array",
+          "minItems": 5,
+          "items": {"$ref": "#/$defs/nonempty_string"}
+        },
+        "counterexample_strategy": {"$ref": "#/$defs/nonempty_string"},
+        "finite_machine_boundary": {"$ref": "#/$defs/nonempty_string"}
+      },
+      "additionalProperties": false
+    },
+    "carrier": {
+      "type": "object",
+      "required": [
+        "algebra", "charge", "BT_adjoint", "trace", "negative_radical",
+        "populated_B_fixture", "populated_C_fixture"
+      ],
+      "properties": {
+        "algebra": {"$ref": "#/$defs/nonempty_string"},
+        "charge": {"$ref": "#/$defs/nonempty_string"},
+        "BT_adjoint": {"$ref": "#/$defs/nonempty_string"},
+        "trace": {"$ref": "#/$defs/nonempty_string"},
+        "negative_radical": {"$ref": "#/$defs/nonempty_string"},
+        "populated_B_fixture": {"$ref": "#/$defs/series"},
+        "populated_C_fixture": {"$ref": "#/$defs/series"}
+      },
+      "additionalProperties": false
+    },
+    "eq20_completeness_kernel": {
+      "type": "object",
+      "required": [
+        "source_equation", "nonzero_terms", "classification",
+        "tensor_power_rows", "finite_weight_fixture", "finite_weight_scale",
+        "finite_weight_image"
+      ],
+      "properties": {
+        "source_equation": {"const": "Bateman-Turok Eq. (20)"},
+        "nonzero_terms": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "object",
+            "required": [
+              "left_charge", "right_charge", "total_shift", "coefficient"
+            ],
+            "properties": {
+              "left_charge": {"type": "integer"},
+              "right_charge": {"type": "integer"},
+              "total_shift": {"type": "integer"},
+              "coefficient": {"$ref": "#/$defs/rational"}
+            },
+            "additionalProperties": false
+          }
+        },
+        "classification": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "required": [
+              "entry", "charges", "total_shift", "radical_closure",
+              "physical_status"
+            ],
+            "properties": {
+              "entry": {"$ref": "#/$defs/nonempty_string"},
+              "charges": {
+                "type": "array", "minItems": 2, "maxItems": 2,
+                "items": {"type": "integer"}
+              },
+              "total_shift": {"type": "integer"},
+              "radical_closure": {"type": "boolean"},
+              "physical_status": {"$ref": "#/$defs/nonempty_string"}
+            },
+            "additionalProperties": false
+          }
+        },
+        "tensor_power_rows": {
+          "type": "array",
+          "minItems": 6,
+          "maxItems": 6,
+          "items": {
+            "type": "object",
+            "required": [
+              "unresolved_multiplicity", "expanded_kernel_terms",
+              "total_shifts", "image_support", "image_scale", "closure"
+            ],
+            "properties": {
+              "unresolved_multiplicity": {
+                "type": "integer", "minimum": 0, "maximum": 5
+              },
+              "expanded_kernel_terms": {"type": "integer", "minimum": 1},
+              "total_shifts": {
+                "type": "array", "items": {"type": "integer"}
+              },
+              "image_support": {
+                "type": "array", "items": {"type": "integer"}
+              },
+              "image_scale": {"type": "integer", "minimum": 1},
+              "closure": {"const": true}
+            },
+            "additionalProperties": false
+          }
+        },
+        "finite_weight_fixture": {
+          "type": "array", "minItems": 6, "maxItems": 6,
+          "items": {"$ref": "#/$defs/rational"}
+        },
+        "finite_weight_scale": {"$ref": "#/$defs/rational"},
+        "finite_weight_image": {"$ref": "#/$defs/series"}
+      },
+      "additionalProperties": false
+    },
+    "born_trace_identity": {
+      "type": "object",
+      "required": [
+        "A", "BT_A_dagger_A", "BT_trace", "B_dagger_B_trace",
+        "Hilbert_mutation_trace", "negative_supports"
+      ],
+      "properties": {
+        "A": {"$ref": "#/$defs/series"},
+        "BT_A_dagger_A": {"$ref": "#/$defs/series"},
+        "BT_trace": {"$ref": "#/$defs/rational"},
+        "B_dagger_B_trace": {"$ref": "#/$defs/rational"},
+        "Hilbert_mutation_trace": {"$ref": "#/$defs/rational"},
+        "negative_supports": {
+          "type": "object",
+          "required": ["B_dagger_C", "C_dagger_B", "C_dagger_C"],
+          "properties": {
+            "B_dagger_C": {"type": "array", "items": {"type": "integer"}},
+            "C_dagger_B": {"type": "array", "items": {"type": "integer"}},
+            "C_dagger_C": {"type": "array", "items": {"type": "integer"}}
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "sharp_counterexamples": {
+      "type": "array",
+      "minItems": 2,
+      "items": {"type": "object", "minProperties": 4}
+    },
+    "criterion_exhaustion": {
+      "type": "object",
+      "required": [
+        "declared_pair_range", "declared_negative_input_range", "rows", "result"
+      ],
+      "properties": {
+        "declared_pair_range": {"const": [-3, 3]},
+        "declared_negative_input_range": {"const": [-6, -1]},
+        "rows": {
+          "type": "array",
+          "minItems": 49,
+          "maxItems": 49,
+          "items": {
+            "type": "object",
+            "required": [
+              "left_charge", "right_charge", "total_shift",
+              "closes_negative_carrier", "counterexample_input_charge",
+              "counterexample_trace"
+            ],
+            "properties": {
+              "left_charge": {"type": "integer", "minimum": -3, "maximum": 3},
+              "right_charge": {"type": "integer", "minimum": -3, "maximum": 3},
+              "total_shift": {"type": "integer", "minimum": -6, "maximum": 6},
+              "closes_negative_carrier": {"type": "boolean"},
+              "counterexample_input_charge": {
+                "type": ["integer", "null"]
+              },
+              "counterexample_trace": {"$ref": "#/$defs/rational"}
+            },
+            "additionalProperties": false
+          }
+        },
+        "result": {"$ref": "#/$defs/nonempty_string"}
+      },
+      "additionalProperties": false
+    },
+    "disposition": {
+      "type": "object",
+      "required": [
+        "radical_closure", "physical_inclusive_map", "real_virtual_cancellation",
+        "collinear_regulator", "resummed_asymptotic_states",
+        "beyond_tree_positivity"
+      ],
+      "properties": {
+        "radical_closure": {
+          "const": "PROVED_FOR_FINITE_EQ20_COMPLETENESS_KERNEL"
+        },
+        "physical_inclusive_map": {"const": "NOT_CONSTRUCTED"},
+        "real_virtual_cancellation": {"const": "NOT_COMPUTED"},
+        "collinear_regulator": {"const": "NOT_SELECTED"},
+        "resummed_asymptotic_states": {"const": "NOT_CONSTRUCTED"},
+        "beyond_tree_positivity": {"const": "NOT_ESTABLISHED"}
+      },
+      "additionalProperties": false
+    },
+    "missing_object_ledger": {
+      "type": "array", "minItems": 5,
+      "items": {"$ref": "#/$defs/nonempty_string"}
+    },
+    "next_gate": {"$ref": "#/$defs/nonempty_string"},
+    "does_not_establish": {
+      "type": "array", "minItems": 7,
+      "items": {"$ref": "#/$defs/nonempty_string"}
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["source_commit", "external_source", "inputs", "exact_arithmetic"],
+      "properties": {
+        "source_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "external_source": {"$ref": "#/$defs/nonempty_string"},
+        "inputs": {
+          "type": "array", "minItems": 4, "maxItems": 4,
+          "items": {
+            "type": "object",
+            "required": ["path", "sha256"],
+            "properties": {
+              "path": {"$ref": "#/$defs/nonempty_string"},
+              "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+            },
+            "additionalProperties": false
+          }
+        },
+        "exact_arithmetic": {"$ref": "#/$defs/nonempty_string"}
+      },
+      "additionalProperties": false
+    },
+    "verification_commands": {
+      "type": "array", "minItems": 3,
+      "items": {"$ref": "#/$defs/nonempty_string"}
+    },
+    "checks": {
+      "type": "object",
+      "required": ["detail", "total", "passed", "failures", "ok"],
+      "properties": {
+        "detail": {
+          "type": "object", "minProperties": 12,
+          "additionalProperties": {"const": true}
+        },
+        "total": {"type": "integer", "minimum": 12},
+        "passed": {"type": "integer", "minimum": 12},
+        "failures": {"type": "array", "maxItems": 0},
+        "ok": {"const": true}
+      },
+      "additionalProperties": false
+    },
+    "report": {
+      "const": "reverse_physics/reports/bt-inclusive-radical-closure.md"
+    },
+    "schema": {
+      "const": "reverse_physics/schema/reverse-physics-bt-inclusive-radical-closure-v1.schema.json"
+    }
+  },
+  "additionalProperties": false
+}
