@@ -317,3 +317,14 @@ computed; the Bateman loop-completion work item remains active at the
 distributional five-body phase-space and four-leg loop-jet gate.
 
 EVIDENCE: `reverse_physics/certificates/REVERSE_PHYSICS_BT_FIVE_POINT_TREE_JET_V1.json`
+
+## Successor result
+
+[`REVERSE_PHYSICS_BT_FIVE_POINT_COLLINEAR_LAYER_V1`](../certificates/REVERSE_PHYSICS_BT_FIVE_POINT_COLLINEAR_LAYER_V1.json)
+constructs the first regulated phase-space slice.  Its exact correlated
+scaling has `A5=delta^2 C(tau)+O(delta^3)` and `dt=delta d tau`, so the
+squared collinear boundary is strictly nonzero at total order `delta^5` on a
+declared physical ray.  The pointwise zero therefore cannot be passed through
+the moving phase-space boundary by the fixed-channel argument.  The successor
+still does not compute the mixed five-mass distribution: its next gate is the
+independent-mass distributional finite part.

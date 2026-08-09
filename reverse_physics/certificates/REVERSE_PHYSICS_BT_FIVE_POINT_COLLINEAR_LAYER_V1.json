@@ -1,0 +1,368 @@
+{
+  "amplitude_boundary": {
+    "delta_order": 2,
+    "exact_fixtures": [
+      {
+        "delta_valuation": 2,
+        "leading_coefficient": {
+          "denominator": 400,
+          "numerator": -140679
+        },
+        "tau": 10
+      },
+      {
+        "delta_valuation": 2,
+        "leading_coefficient": {
+          "denominator": 121,
+          "numerator": -46374
+        },
+        "tau": 11
+      },
+      {
+        "delta_valuation": 2,
+        "leading_coefficient": {
+          "denominator": 64,
+          "numerator": -26243
+        },
+        "tau": 12
+      }
+    ],
+    "leading_coefficient": {
+      "denominator_coefficients_descending": [
+        4,
+        0,
+        0
+      ],
+      "expression": "-3*(979*tau^2-5620*tau+5193)/(4*tau^2)",
+      "numerator_coefficients_descending": [
+        -2937,
+        16860,
+        -15579
+      ],
+      "variable": "tau"
+    },
+    "relative_sign_mutation": {
+      "delta_valuation": 0,
+      "leading_coefficient": {
+        "denominator": 75,
+        "numerator": 15848
+      },
+      "mutation": "+ cubic-quartic plus three-cubic",
+      "tau": 10
+    }
+  },
+  "answer": "No such exchange is justified by the pointwise jet. On a physical collinear limiting ray the normalized amplitude is delta^2 C(tau), while dt times the inner two-body density makes its squared boundary slice a strictly nonzero total-order-delta^5 contribution. This is the order of the fivefold projector, but it does not by itself compute the mixed five-mass distribution or a physical rate.",
+  "candidate_theorem": {
+    "carrier": "One compact two-particle collinear slice of massive three-body phase space, with exact rational ray data and algebraic Kallen density.",
+    "counterexample_strategy": "Flip the relative sign between topology families; the amplitude then jumps from delta order two to order zero at tau=10.",
+    "finite_machine_boundary": "One mass ray, one adjacent channel, one compact tau window, and one rational physical limiting fixture; no angular or full Dalitz integral.",
+    "proof_obligations": [
+      "derive A5 from all 10 cubic-quartic and 15 three-cubic trees",
+      "take the correlated channel and external-mass limit exactly",
+      "anchor the hard invariants to a real conserved limiting momentum fixture",
+      "factor the three-body phase space through the selected pair invariant",
+      "prove strict positivity on a compact above-threshold tau window",
+      "keep the mixed five-mass distribution and physical rate fail-closed"
+    ],
+    "statement": "For xi=ai*delta with a=(1,4,9,16,25), s0=delta*tau, and (s1,s2,s3,s4)=(32/3,-8,16,-8/3), A5=delta^2 C(tau)+O(delta^3), with the recorded nonzero C. On 10<=tau<=11, the normalized phase slice integral is delta^5 times a positive coefficient bounded below by the recorded rational number."
+  },
+  "certificate": "REVERSE_PHYSICS_BT_FIVE_POINT_COLLINEAR_LAYER_V1",
+  "checks": {
+    "details": {
+      "amplitude_magnitude_increases_on_window": true,
+      "claim_stays_reduced_mode": true,
+      "declared_window_is_above_threshold": true,
+      "kallen_threshold_roots_are_one_and_nine": true,
+      "phase_density_increases_on_window": true,
+      "physical_limiting_fixture_is_conserved": true,
+      "predecessor_hash_pinned": true,
+      "relative_sign_mutation_changes_order": true,
+      "strict_positive_lower_bound": true,
+      "symbolic_coefficient_present": true,
+      "tau10_leading_coefficient": true,
+      "three_exact_boundary_fixtures": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 12,
+    "total": 12
+  },
+  "conventions": {
+    "all_momenta": "incoming, k0+...+k4=0",
+    "cyclic_invariants": "si=(ki+k(i+1))^2",
+    "external_virtualities": "xi=ki^2=ai*delta",
+    "hard_invariants": [
+      {
+        "denominator": 3,
+        "numerator": 32
+      },
+      {
+        "denominator": 1,
+        "numerator": -8
+      },
+      {
+        "denominator": 1,
+        "numerator": 16
+      },
+      {
+        "denominator": 3,
+        "numerator": -8
+      }
+    ],
+    "mass_ray": [
+      1,
+      4,
+      9,
+      16,
+      25
+    ],
+    "normalized_amplitude": "A5=M5/(8 lambda^3)",
+    "relative_sign": "+ cubic-quartic minus three-cubic",
+    "selected_pair_channel": "t=s0=delta*tau"
+  },
+  "dependency_tags": [
+    "REDUCED-MODE"
+  ],
+  "disposition": {
+    "beyond_tree_positivity": "NOT_ESTABLISHED",
+    "collinear_boundary_total_order_five": "STRICTLY_NONZERO_ON_DECLARED_RAY",
+    "five_body_phase_space_projector": "PARTIAL_FACTORIZATION_ONLY",
+    "mass_derivative_integral_exchange": "NOT_JUSTIFIED",
+    "mixed_five_mass_distribution": "NOT_DEFINED_WITHOUT_PRESCRIPTION",
+    "physical_integrated_2to3_probability": "NOT_COMPUTED",
+    "pointwise_square_free_D5_away_from_boundary": "ZERO_IN_PREDECESSOR",
+    "real_virtual_cancellation": "NOT_COMPUTED"
+  },
+  "does_not_establish": [
+    "a nonzero mixed x0*x1*x2*x3*x4 coefficient",
+    "a completed five-body BT projector",
+    "a physical integrated 2->3 probability or cross section",
+    "a KLN cancellation, collinear resummation, or dressed-state construction",
+    "positivity beyond tree level",
+    "a tensor or BRST gravitational lift",
+    "anything LORENTZIAN-CAUSAL",
+    "literature priority"
+  ],
+  "interpretation": "The shrinking collinear window carries a nonzero contribution at the same total scaling order as five independent mass derivatives. Because a common ray does not isolate the square-free x0*x1*x2*x3*x4 coefficient, this is an obstruction to the interchange argument, not a claim that the BT mixed distribution is nonzero.",
+  "lifecycle_state": "COEFFICIENT_COMPUTED",
+  "missing_object_ledger": [
+    "a distributional definition of five independent mass-square derivatives at intersecting phase-space boundaries",
+    "the complete angular and Dalitz dependence of the regulated five-body projector",
+    "a common i-epsilon, external-mass, and collinear prescription",
+    "the renormalized four-leg one-loop interference jet",
+    "a real-virtual or dressed-state cancellation if the boundary term survives",
+    "scheme and field-redefinition invariance of the completed probability"
+  ],
+  "next_gate": "Resolve the independent-mass blow-up of the pair threshold and define its distributional finite part, or prove that no prescription-independent mixed five-mass derivative exists; then combine it with the loop jet.",
+  "phase_space_boundary": {
+    "factorization": "dPhi3(P;q0,q1,q2)=dt/(2*pi) dPhi2(P;Q,q2)dPhi2(Q;q0,q1), Q^2=t",
+    "inner_density_without_positive_constant": "sqrt(Kallen(t,x0,x1))/t",
+    "lower_bound_proof": [
+      "d(C_abs)/d_tau=(3/4)*(5620*tau-10386)/tau^3>0 on [10,11]",
+      "d(J^2)/d_tau=(10*tau-18)/tau^3>0 on [10,11]",
+      "therefore integral J*C^2 d_tau >= J(10)*C(10)^2"
+    ],
+    "normalized_integral": "lim_delta_to_0 delta^-5 integral_[10delta,11delta] dt sqrt(Kallen(t,delta,4delta))/t |A5|^2",
+    "scaled_inner_density": "sqrt((tau-9)*(tau-1))/tau",
+    "strict_lower_bound": {
+      "denominator": 1600000,
+      "numerator": 59371743123
+    },
+    "tau10_inner_density": {
+      "denominator": 10,
+      "numerator": 3
+    },
+    "threshold_tau": 9,
+    "window": [
+      10,
+      11
+    ]
+  },
+  "physical_limit_fixture": {
+    "cyclic_invariants": [
+      {
+        "denominator": 1,
+        "numerator": 0
+      },
+      {
+        "denominator": 3,
+        "numerator": 32
+      },
+      {
+        "denominator": 1,
+        "numerator": -8
+      },
+      {
+        "denominator": 1,
+        "numerator": 16
+      },
+      {
+        "denominator": 3,
+        "numerator": -8
+      }
+    ],
+    "external_squares": [
+      {
+        "denominator": 1,
+        "numerator": 0
+      },
+      {
+        "denominator": 1,
+        "numerator": 0
+      },
+      {
+        "denominator": 1,
+        "numerator": 0
+      },
+      {
+        "denominator": 1,
+        "numerator": 0
+      },
+      {
+        "denominator": 1,
+        "numerator": 0
+      }
+    ],
+    "interpretation": "all incoming: (-q0,-q1,-q2,p0,p1)",
+    "metric": "diag(+1,-1,-1,-1)",
+    "momenta": [
+      [
+        {
+          "denominator": 3,
+          "numerator": -2
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 3,
+          "numerator": -2
+        }
+      ],
+      [
+        {
+          "denominator": 3,
+          "numerator": -4
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 3,
+          "numerator": -4
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": -2
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 2
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 2
+        },
+        {
+          "denominator": 1,
+          "numerator": 2
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 2
+        },
+        {
+          "denominator": 1,
+          "numerator": -2
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ]
+    ],
+    "sum": [
+      {
+        "denominator": 1,
+        "numerator": 0
+      },
+      {
+        "denominator": 1,
+        "numerator": 0
+      },
+      {
+        "denominator": 1,
+        "numerator": 0
+      },
+      {
+        "denominator": 1,
+        "numerator": 0
+      }
+    ]
+  },
+  "provenance": {
+    "inputs": [
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_FIVE_POINT_TREE_JET_V1.json",
+        "sha256": "2ddecb1819a8cde12764dda5e097bab7c2ee9ffaacf66a3e4b1cd6567206b2c6"
+      },
+      {
+        "path": "notes/bateman-turok-embedding.md",
+        "sha256": "0dae9abf59ace0c71087a1d732e8ebdbe2737f2388a3b80175aa82cc5e5f6f27"
+      }
+    ],
+    "interpreter": "/home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3",
+    "phase_space_reference": "Particle Data Group, 2025 Review of Particle Physics, Kinematics review, Lorentz-invariant n-body phase space",
+    "primary_source": "https://arxiv.org/abs/2607.00096v1",
+    "retrieval_date": "2026-08-09",
+    "source_commit": "bf3439e190d6036f4e90d7745b728dbd3fc35d36",
+    "sympy_version": "1.14.0"
+  },
+  "question": "Can the pointwise zero of the BT fivefold amplitude-square jet be passed through the shrinking two-particle boundary of three-body phase space without an additional distributional prescription?",
+  "report": "reverse_physics/reports/bt-five-point-collinear-layer.md",
+  "result_kind": "five-point collinear phase-space boundary layer",
+  "schema": "reverse_physics/schema/reverse-physics-bt-five-point-collinear-layer-v1.schema.json",
+  "schema_version": "reverse-physics-bt-five-point-collinear-layer-v1",
+  "verification_commands": [
+    "/home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/bt_five_point_collinear_layer.py --check",
+    "/home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/bt_five_point_collinear_layer.py --check-full",
+    "/home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/verify_bt_five_point_collinear_layer.py",
+    "/home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 -m unittest -v reverse_physics.tests.test_bt_five_point_collinear_layer"
+  ]
+}

@@ -1,0 +1,193 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-five-point-collinear-layer-v1.schema.json",
+  "title": "BT five-point collinear boundary-layer certificate",
+  "$defs": {
+    "string": {"type": "string", "minLength": 1},
+    "strings": {"type": "array", "items": {"$ref": "#/$defs/string"}},
+    "rational": {
+      "type": "object",
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      },
+      "additionalProperties": false
+    },
+    "input": {
+      "type": "object",
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {"$ref": "#/$defs/string"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      },
+      "additionalProperties": false
+    }
+  },
+  "type": "object",
+  "required": [
+    "certificate", "schema_version", "dependency_tags", "lifecycle_state",
+    "result_kind", "question", "answer", "candidate_theorem", "conventions",
+    "physical_limit_fixture", "amplitude_boundary", "phase_space_boundary",
+    "disposition", "interpretation", "missing_object_ledger", "next_gate",
+    "does_not_establish", "provenance", "verification_commands", "checks",
+    "report", "schema"
+  ],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_FIVE_POINT_COLLINEAR_LAYER_V1"},
+    "schema_version": {"const": "reverse-physics-bt-five-point-collinear-layer-v1"},
+    "dependency_tags": {"const": ["REDUCED-MODE"]},
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "result_kind": {"$ref": "#/$defs/string"},
+    "question": {"$ref": "#/$defs/string"},
+    "answer": {"$ref": "#/$defs/string"},
+    "candidate_theorem": {
+      "type": "object",
+      "required": ["statement", "carrier", "proof_obligations", "counterexample_strategy", "finite_machine_boundary"],
+      "properties": {
+        "statement": {"$ref": "#/$defs/string"},
+        "carrier": {"$ref": "#/$defs/string"},
+        "proof_obligations": {"type": "array", "minItems": 6, "items": {"$ref": "#/$defs/string"}},
+        "counterexample_strategy": {"$ref": "#/$defs/string"},
+        "finite_machine_boundary": {"$ref": "#/$defs/string"}
+      },
+      "additionalProperties": false
+    },
+    "conventions": {
+      "type": "object",
+      "required": ["all_momenta", "external_virtualities", "cyclic_invariants", "selected_pair_channel", "mass_ray", "hard_invariants", "normalized_amplitude", "relative_sign"],
+      "properties": {
+        "all_momenta": {"$ref": "#/$defs/string"},
+        "external_virtualities": {"$ref": "#/$defs/string"},
+        "cyclic_invariants": {"$ref": "#/$defs/string"},
+        "selected_pair_channel": {"$ref": "#/$defs/string"},
+        "mass_ray": {"const": [1, 4, 9, 16, 25]},
+        "hard_invariants": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/rational"}},
+        "normalized_amplitude": {"$ref": "#/$defs/string"},
+        "relative_sign": {"$ref": "#/$defs/string"}
+      },
+      "additionalProperties": false
+    },
+    "physical_limit_fixture": {
+      "type": "object",
+      "required": ["metric", "interpretation", "momenta", "sum", "external_squares", "cyclic_invariants"],
+      "properties": {
+        "metric": {"const": "diag(+1,-1,-1,-1)"},
+        "interpretation": {"$ref": "#/$defs/string"},
+        "momenta": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/rational"}}},
+        "sum": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/rational"}},
+        "external_squares": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"$ref": "#/$defs/rational"}},
+        "cyclic_invariants": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"$ref": "#/$defs/rational"}}
+      },
+      "additionalProperties": false
+    },
+    "amplitude_boundary": {
+      "type": "object",
+      "required": ["delta_order", "leading_coefficient", "exact_fixtures", "relative_sign_mutation"],
+      "properties": {
+        "delta_order": {"const": 2},
+        "leading_coefficient": {
+          "type": "object",
+          "required": ["variable", "expression", "numerator_coefficients_descending", "denominator_coefficients_descending"],
+          "properties": {
+            "variable": {"const": "tau"},
+            "expression": {"const": "-3*(979*tau^2-5620*tau+5193)/(4*tau^2)"},
+            "numerator_coefficients_descending": {"const": [-2937, 16860, -15579]},
+            "denominator_coefficients_descending": {"const": [4, 0, 0]}
+          },
+          "additionalProperties": false
+        },
+        "exact_fixtures": {
+          "type": "array", "minItems": 3, "maxItems": 3,
+          "items": {
+            "type": "object",
+            "required": ["tau", "delta_valuation", "leading_coefficient"],
+            "properties": {
+              "tau": {"type": "integer", "minimum": 10, "maximum": 12},
+              "delta_valuation": {"const": 2},
+              "leading_coefficient": {"$ref": "#/$defs/rational"}
+            },
+            "additionalProperties": false
+          }
+        },
+        "relative_sign_mutation": {
+          "type": "object",
+          "required": ["mutation", "tau", "delta_valuation", "leading_coefficient"],
+          "properties": {
+            "mutation": {"$ref": "#/$defs/string"},
+            "tau": {"const": 10},
+            "delta_valuation": {"const": 0},
+            "leading_coefficient": {"$ref": "#/$defs/rational"}
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "phase_space_boundary": {
+      "type": "object",
+      "required": ["factorization", "inner_density_without_positive_constant", "scaled_inner_density", "threshold_tau", "window", "tau10_inner_density", "normalized_integral", "strict_lower_bound", "lower_bound_proof"],
+      "properties": {
+        "factorization": {"$ref": "#/$defs/string"},
+        "inner_density_without_positive_constant": {"$ref": "#/$defs/string"},
+        "scaled_inner_density": {"const": "sqrt((tau-9)*(tau-1))/tau"},
+        "threshold_tau": {"const": 9},
+        "window": {"const": [10, 11]},
+        "tau10_inner_density": {"$ref": "#/$defs/rational"},
+        "normalized_integral": {"$ref": "#/$defs/string"},
+        "strict_lower_bound": {"$ref": "#/$defs/rational"},
+        "lower_bound_proof": {"type": "array", "minItems": 3, "items": {"$ref": "#/$defs/string"}}
+      },
+      "additionalProperties": false
+    },
+    "disposition": {
+      "type": "object",
+      "required": ["pointwise_square_free_D5_away_from_boundary", "collinear_boundary_total_order_five", "five_body_phase_space_projector", "mixed_five_mass_distribution", "mass_derivative_integral_exchange", "physical_integrated_2to3_probability", "real_virtual_cancellation", "beyond_tree_positivity"],
+      "properties": {
+        "pointwise_square_free_D5_away_from_boundary": {"const": "ZERO_IN_PREDECESSOR"},
+        "collinear_boundary_total_order_five": {"const": "STRICTLY_NONZERO_ON_DECLARED_RAY"},
+        "five_body_phase_space_projector": {"const": "PARTIAL_FACTORIZATION_ONLY"},
+        "mixed_five_mass_distribution": {"const": "NOT_DEFINED_WITHOUT_PRESCRIPTION"},
+        "mass_derivative_integral_exchange": {"const": "NOT_JUSTIFIED"},
+        "physical_integrated_2to3_probability": {"const": "NOT_COMPUTED"},
+        "real_virtual_cancellation": {"const": "NOT_COMPUTED"},
+        "beyond_tree_positivity": {"const": "NOT_ESTABLISHED"}
+      },
+      "additionalProperties": false
+    },
+    "interpretation": {"$ref": "#/$defs/string"},
+    "missing_object_ledger": {"type": "array", "minItems": 6, "items": {"$ref": "#/$defs/string"}},
+    "next_gate": {"$ref": "#/$defs/string"},
+    "does_not_establish": {"type": "array", "minItems": 8, "items": {"$ref": "#/$defs/string"}},
+    "provenance": {
+      "type": "object",
+      "required": ["source_commit", "retrieval_date", "inputs", "primary_source", "phase_space_reference", "interpreter", "sympy_version"],
+      "properties": {
+        "source_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "retrieval_date": {"const": "2026-08-09"},
+        "inputs": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"$ref": "#/$defs/input"}},
+        "primary_source": {"$ref": "#/$defs/string"},
+        "phase_space_reference": {"$ref": "#/$defs/string"},
+        "interpreter": {"$ref": "#/$defs/string"},
+        "sympy_version": {"const": "1.14.0"}
+      },
+      "additionalProperties": false
+    },
+    "verification_commands": {"type": "array", "minItems": 4, "items": {"$ref": "#/$defs/string"}},
+    "checks": {
+      "type": "object",
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"type": "integer", "minimum": 1},
+        "total": {"type": "integer", "minimum": 1},
+        "failures": {"maxItems": 0},
+        "details": {"type": "object", "minProperties": 12, "additionalProperties": {"const": true}}
+      },
+      "additionalProperties": false
+    },
+    "report": {"const": "reverse_physics/reports/bt-five-point-collinear-layer.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-five-point-collinear-layer-v1.schema.json"}
+  },
+  "additionalProperties": false
+}
