@@ -1,5 +1,5 @@
 {
-  "answer": "No. The vertex Omega^2 Upsilon^2 is charge neutral and the propagator is purely off-diagonal, so every Wick contraction pairs Omega with Upsilon and is neutral too. The charge of a process operator is therefore fixed by its external legs and is independent of loop order: loops dress an operator without moving it up the charge ladder. The one-sidedness hypothesis is loop-stable, and the obstacle to the loop extension is exactly the infrared one Bateman-Turok named, nothing else in the charge sector.",
+  "answer": "No. The vertex Omega^2 Upsilon^2 is charge neutral and the propagator is purely off-diagonal, so every Wick contraction pairs Omega with Upsilon and is neutral too. The charge of a process operator is therefore fixed by its external legs and is independent of loop order: loops dress an operator without moving it up the charge ladder. The one-sidedness hypothesis is loop-stable in this ambient bookkeeping. This does not supply an infrared regulator or exclude a measure anomaly.",
   "certificate": "REVERSE_PHYSICS_CHARGE_GRADING_LOOP_STABILITY_V1",
   "checks": {
     "detail": {
@@ -20,6 +20,7 @@
   "dependency_tag": "LOCAL-ALGEBRAIC",
   "does_not_establish": [
     "the loop extension itself -- no loop integral is computed, no infrared divergence is regulated, nothing is resummed",
+    "a vacuum-compatible infrared mass; the neutral mass term fails the stationary-BT-vacuum test in the trilemma certificate",
     "that the O(1,1) charge is non-anomalous; that is the successor question and it is open",
     "anything about the tensor (gravitational) case: this is the Bateman-Turok SCALAR model",
     "anything LORENTZIAN-CAUSAL, and nothing about g-2"
@@ -212,27 +213,32 @@
     "paper/05-interaction-obstructions.tex": "lem:chargenull, cprop:embedding, and the mass formula m_pm^2 = mu^2 +/- sqrt(eps g) imported above",
     "reverse_physics/bt_born_trace.py": "the fixed-shell evaluation, and why it cannot decide this"
   },
-  "question": "Can a loop generate positive charge, and so break the one-sidedness hypothesis that Bateman-Turok's null component relies on?",
-  "regulator_corollary": {
+  "quadratic_regulator_preflight": {
     "imported_exactly": "Paper 05: m_pm^2 = mu^2 +/- sqrt(eps g)",
-    "reading": "mu^2 Omega Upsilon is a degeneracy-preserving AND grading-preserving infrared mass; (eps/2) Omega^2 destroys both, for the single reason that it carries charge +2. This names the regulator the loop extension should use.",
+    "reading": "mu^2 Omega Upsilon preserves charge and the formal double root at a held background, but it creates a tadpole there. These quadratic facts do not certify vacuum compatibility.",
     "rows": [
       {
         "charge": 0,
-        "poles_at_eps_zero": "m_+^2 = m_-^2 = mu^2  (coincident)",
-        "preserves_degeneracy": true,
+        "held_background_poles": "m_+^2 = m_-^2 = mu^2  (coincident)",
         "preserves_grading": true,
-        "term": "mu^2 * Omega * Upsilon"
+        "preserves_quadratic_degeneracy_at_held_background": true,
+        "term": "mu^2 * Omega * Upsilon",
+        "vacuum_compatible": false,
+        "vacuum_failure": "tadpole d_Upsilon V|(v,0) = v*mu^2 != 0"
       },
       {
         "charge": 2,
-        "poles_at_eps_zero": "split by 2*sqrt(eps*g)",
-        "preserves_degeneracy": false,
+        "held_background_poles": "split by 2*sqrt(eps*g)",
         "preserves_grading": false,
-        "term": "(eps/2) * Omega^2"
+        "preserves_quadratic_degeneracy_at_held_background": false,
+        "term": "(eps/2) * Omega^2",
+        "vacuum_compatible": false,
+        "vacuum_failure": "charge +2 explicitly breaks SO+(1,1)"
       }
-    ]
+    ],
+    "vacuum_compatibility": "REFUTED_BY_REVERSE_PHYSICS_BT_IR_REGULATOR_TRILEMMA_V1"
   },
+  "question": "Can a loop generate positive charge, and so break the one-sidedness hypothesis that Bateman-Turok's null component relies on?",
   "report": "reverse_physics/reports/charge-grading-loop-stability.md",
   "structural_inputs": {
     "charges": "q(Omega) = +1, q(Upsilon) = -1 under (Omega, Upsilon) -> (e^s Omega, e^-s Upsilon)",
@@ -241,9 +247,12 @@
     "vertex": "S_{1,1} = int [ dOmega.dUpsilon + (1/2) lambda^2 Omega^2 Upsilon^2 ]  (their Eq. (14)); q = 0"
   },
   "successor_question": {
-    "question": "Is the SO+(1,1) boost charge anomalous at one loop?",
-    "tractable_with": "the anomaly machinery already in quantum-weyl/",
-    "where_it_would_live": "the measure -- Bateman-Turok note the phi and (Omega, Upsilon) path integrals are inequivalent, 'the former integrates over Omega > 0 whereas the latter integrates over all Omega'",
-    "why_it_is_the_risk": "the grading argument is classical bookkeeping and assumes the charge survives quantization; it is a GLOBAL symmetry and global symmetries can be anomalous"
+    "candidate_architectures": [
+      "dimensional or off-shell regulation",
+      "inclusive/KLN cancellation",
+      "dressed asymptotic states"
+    ],
+    "question": "Which non-mass infrared architecture makes the first collinear inclusive sum well defined, and is the negative-charge trace radical closed under it?",
+    "separate_open_risk": "Is the SO+(1,1) boost charge anomalous at one loop? The measure is the candidate locus."
   }
 }

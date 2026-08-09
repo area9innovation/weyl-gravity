@@ -48,8 +48,10 @@ class TestGate(unittest.TestCase):
         self.assertIn("scalar", joined)
 
     def test_successor_question_is_recorded(self):
-        self.assertIn("anomalous",
+        self.assertIn("inclusive",
                       self.cert["successor_question"]["question"].lower())
+        self.assertIn("anomalous",
+                      self.cert["successor_question"]["separate_open_risk"].lower())
 
 
 class TestTheorem(unittest.TestCase):
@@ -105,26 +107,37 @@ class TestControlsAreLive(unittest.TestCase):
         self.assertLess(time.time() - t0, 5.0)
 
 
-class TestRegulatorCorollary(unittest.TestCase):
+class TestQuadraticRegulatorPreflight(unittest.TestCase):
     def setUp(self):
         with open(CERT) as fh:
             self.cert = json.load(fh)
 
     def test_the_two_regulators_are_separated(self):
         rows = {r["term"]: r for r in
-                self.cert["regulator_corollary"]["rows"]}
+                self.cert["quadratic_regulator_preflight"]["rows"]}
         mu = rows["mu^2 * Omega * Upsilon"]
         eps = rows["(eps/2) * Omega^2"]
         self.assertEqual(mu["charge"], 0)
         self.assertTrue(mu["preserves_grading"])
-        self.assertTrue(mu["preserves_degeneracy"])
+        self.assertTrue(
+            mu["preserves_quadratic_degeneracy_at_held_background"])
+        self.assertFalse(mu["vacuum_compatible"])
+        self.assertIn("tadpole", mu["vacuum_failure"])
         self.assertEqual(eps["charge"], 2)
         self.assertFalse(eps["preserves_grading"])
-        self.assertFalse(eps["preserves_degeneracy"])
+        self.assertFalse(
+            eps["preserves_quadratic_degeneracy_at_held_background"])
+        self.assertFalse(eps["vacuum_compatible"])
+
+    def test_preflight_defers_to_exact_vacuum_certificate(self):
+        self.assertEqual(
+            self.cert["quadratic_regulator_preflight"]["vacuum_compatibility"],
+            "REFUTED_BY_REVERSE_PHYSICS_BT_IR_REGULATOR_TRILEMMA_V1",
+        )
 
     def test_mass_formula_is_credited_to_paper_05(self):
         self.assertIn("Paper 05",
-                      self.cert["regulator_corollary"]["imported_exactly"])
+                      self.cert["quadratic_regulator_preflight"]["imported_exactly"])
 
 
 if __name__ == "__main__":

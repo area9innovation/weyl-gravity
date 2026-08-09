@@ -1,0 +1,314 @@
+{
+  "answer": "No. On the BT branch (Omega,Upsilon)=(v,0), stationarity forces F'(0)=0, while a nonzero coincident-pole mass is exactly F'(0). The proposed mu^2 Omega Upsilon deformation therefore creates a Upsilon tadpole at the held BT point. Moving to its true invariant stationary branch yields one massless and one massive simple root, not a massive double pole. A fixed-v tadpole subtraction retains the quadratic double root only by explicitly breaking the boost in that fixed vacuum sector (or by introducing a charge-carrying spurion).",
+  "assumptions": [
+    "local derivative-free regulator potential V=F(Omega*Upsilon)",
+    "twice differentiable F at the declared constant vacuum",
+    "connected SO+(1,1) boost invariance with q(Omega)=+1 and q(Upsilon)=-1",
+    "stationary constant background before defining its quadratic pole polynomial",
+    "v is nonzero on the Bateman-Turok broken branch"
+  ],
+  "candidate_theorem": {
+    "counterexample_strategy": "Drop each one of stationarity, invariance, coincidence, and the gap in turn and require an exact populated witness.",
+    "finite_machine_boundary": "exact Laurent-polynomial differentiation, substitution, 2x2 determinant identities, and four witness predicates",
+    "proof_obligations": [
+      "derive the vacuum gradient and Hessian from a generated two-jet of F",
+      "show stationarity on (v,0) forces f1=F'(0)=0",
+      "identify the coincident pole location with f1",
+      "move the mass-deformed theory to its true stationary branch and classify the two roots",
+      "classify the charge of the fixed-v tadpole subtraction"
+    ],
+    "statement": "No regulator in the declared carrier simultaneously has a stationary BT broken vacuum, exact SO+(1,1) invariance in the fixed theory, a nonzero infrared gap, and a coincident double pole."
+  },
+  "carrier": {
+    "BT_vacuum_branch": "Omega=v!=0, Upsilon=0",
+    "fields": [
+      "Omega",
+      "Upsilon"
+    ],
+    "invariant": "s = Omega*Upsilon",
+    "potential_ansatz": "V=F(s), represented by its exact two-jet",
+    "quadratic_symbol": "z; formal only, with cross kinetic entries shifted by -z"
+  },
+  "certificate": "REVERSE_PHYSICS_BT_IR_REGULATOR_TRILEMMA_V1",
+  "checks": {
+    "detail": {
+      "fixed_v_tadpole_subtraction_breaks_boost_weight": true,
+      "four_independence_witnesses_are_populated": true,
+      "generated_BT_gradient_matches_chain_rule": true,
+      "generated_BT_hessian_matches_chain_rule": true,
+      "generated_true_vacuum_pole_polynomial_splits": true,
+      "held_BT_pole_polynomial_is_negative_square": true,
+      "held_nonstationary_background_has_massive_double_root": true,
+      "mass_term_creates_BT_tadpole": true,
+      "mass_term_true_vacuum_has_zero_and_simple_massive_roots": true,
+      "stationary_BT_branch_forces_massless_double_root": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 10,
+    "total": 10
+  },
+  "correction_to_predecessor": {
+    "predecessor": "REVERSE_PHYSICS_CHARGE_GRADING_LOOP_STABILITY_V1",
+    "replacement": "It preserves charge and the quadratic double root only at a held nonstationary BT background. Vacuum compatibility creates the exact trilemma certified here.",
+    "retained": "Neutral vertices and off-diagonal contractions preserve ambient SO+(1,1) charge at every enumerated loop order.",
+    "withdrawn": "The earlier corollary that mu2*Omega*Upsilon is, without further qualification, the IR regulator the BT loop extension should use."
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "does_not_establish": [
+    "any refutation of Bateman-Turok; their paper asks for regulation and resummation of collinear asymptotic states and does not propose this mass term",
+    "that every derivative, nonlocal, finite-volume, dimensional, off-shell, inclusive, or dressed-state regulator fails",
+    "a loop calculation, anomaly coefficient, KLN theorem, resummed asymptotic state, or positivity theorem beyond tree level",
+    "anything about the tensor or BRST gravitational lift",
+    "anything LORENTZIAN-CAUSAL; z is only a formal quadratic symbol"
+  ],
+  "independence_witnesses": [
+    {
+      "drop": "stationarity",
+      "witness": "Hold (v,0) fixed after adding mu2*Omega*Upsilon: det K=-(z-mu2)^2, but d_Upsilon V=v*mu2 is nonzero."
+    },
+    {
+      "drop": "exact fixed-sector SO+(1,1) invariance",
+      "witness": "Add -mu2*v*Upsilon to cancel the tadpole: the source has charge -1 for fixed v; treating v as charge +1 changes it into a spurion statement."
+    },
+    {
+      "drop": "coincident pole",
+      "witness": "Move to s0=-mu2/lambda2: det K=-z*(z+2*mu2), one massless and one massive simple root."
+    },
+    {
+      "drop": "nonzero infrared gap",
+      "witness": "Use the original F=(lambda2/2)*s^2 on (v,0): it is stationary and has the massless double polynomial -z^2."
+    }
+  ],
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "Classify non-mass regulator architectures (dimensional/off-shell/inclusive/dressed) and test whether the negative-charge trace radical is closed under the first collinear inclusive sum.",
+  "polynomial_identities": {
+    "BT_branch_gradient": {
+      "components": [
+        [],
+        [
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "powers": {
+              "f1": 1,
+              "v": 1
+            }
+          }
+        ]
+      ],
+      "readable": "(d_Omega V, d_Upsilon V)|(v,0) = (0, v*f1)"
+    },
+    "BT_branch_hessian": {
+      "components": [
+        [
+          [],
+          [
+            {
+              "coefficient": {
+                "denominator": 1,
+                "numerator": 1
+              },
+              "powers": {
+                "f1": 1
+              }
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "coefficient": {
+                "denominator": 1,
+                "numerator": 1
+              },
+              "powers": {
+                "f1": 1
+              }
+            }
+          ],
+          [
+            {
+              "coefficient": {
+                "denominator": 1,
+                "numerator": 1
+              },
+              "powers": {
+                "f2": 1,
+                "v": 2
+              }
+            }
+          ]
+        ]
+      ],
+      "readable": "H|(v,0) = [[0,f1],[f1,v^2*f2]]"
+    },
+    "BT_branch_pole_polynomial": {
+      "readable": "det K(z)|(v,0) = -(z-f1)^2",
+      "terms": [
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": -1
+          },
+          "powers": {
+            "f1": 2
+          }
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 2
+          },
+          "powers": {
+            "f1": 1,
+            "z": 1
+          }
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": -1
+          },
+          "powers": {
+            "z": 2
+          }
+        }
+      ]
+    },
+    "mass_deformation_held_background": {
+      "gradient": [
+        [],
+        [
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "powers": {
+              "mu2": 1,
+              "v": 1
+            }
+          }
+        ]
+      ],
+      "pole_terms": [
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": -1
+          },
+          "powers": {
+            "mu2": 2
+          }
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 2
+          },
+          "powers": {
+            "mu2": 1,
+            "z": 1
+          }
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": -1
+          },
+          "powers": {
+            "z": 2
+          }
+        }
+      ],
+      "readable": "F=mu2*s+(lambda2/2)*s^2 at (v,0): tadpole=(0,v*mu2), det=-(z-mu2)^2"
+    },
+    "mass_deformation_true_vacuum": {
+      "pole_terms": [
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": -2
+          },
+          "powers": {
+            "mu2": 1,
+            "z": 1
+          }
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": -1
+          },
+          "powers": {
+            "z": 2
+          }
+        }
+      ],
+      "readable": "s0=-mu2/lambda2: det K(z)=-z*(z+2*mu2)"
+    },
+    "stationary_nonzero_branch_pole_polynomial": {
+      "readable": "F'(s0)=0 => det K(z) = z*(2*s0*f2-z)",
+      "terms": [
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 2
+          },
+          "powers": {
+            "f2": 1,
+            "s0": 1,
+            "z": 1
+          }
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": -1
+          },
+          "powers": {
+            "z": 2
+          }
+        }
+      ]
+    }
+  },
+  "provenance": {
+    "exact_arithmetic": "fractions.Fraction coefficients in a generated sparse Laurent-polynomial ring; no floating point",
+    "external_source": "S. Bateman and N. Turok, arXiv:2607.00096v1, Eqs. (14)-(15) and the broken branch Omega=lambda^-1, Upsilon=0",
+    "inputs": [
+      {
+        "path": "notes/bateman-turok-embedding.md",
+        "sha256": "0dae9abf59ace0c71087a1d732e8ebdbe2737f2388a3b80175aa82cc5e5f6f27"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_GHOST_PARITY_DOUBLE_POLE_V1.json",
+        "sha256": "6472608e92db1528d057b2d2c569ebc5637e412b1c8d66eb17cf42ea7889d5e0"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_CHARGE_GRADING_LOOP_STABILITY_V1.json",
+        "sha256": "962be17a99fc38b945eb1370a7c2b7074cd7d626b8e596634b5cda95cce9ce37"
+      },
+      {
+        "path": "paper/05-interaction-obstructions.tex",
+        "sha256": "06cd6794d8e270f2594d68b0ef71445bc00c5e0bb1650c58ad4d098d2b5bae01"
+      }
+    ],
+    "source_commit": "49d74b9229a2ada453a919899749488f8998161c"
+  },
+  "question": "Can a local SO+(1,1)-invariant potential give the stationary Bateman-Turok broken vacuum a nonzero coincident-pole infrared mass?",
+  "report": "reverse_physics/reports/bt-ir-regulator-trilemma.md",
+  "result_kind": "local potential regulator classification",
+  "schema": "reverse_physics/schema/reverse-physics-bt-ir-regulator-trilemma-v1.schema.json",
+  "schema_version": "reverse-physics-bt-ir-regulator-trilemma-v1",
+  "verification_commands": [
+    "python3 reverse_physics/bt_ir_regulator_trilemma.py --check",
+    "python3 reverse_physics/verify_bt_ir_regulator_trilemma.py",
+    "python3 -m unittest -v reverse_physics.tests.test_bt_ir_regulator_trilemma"
+  ]
+}

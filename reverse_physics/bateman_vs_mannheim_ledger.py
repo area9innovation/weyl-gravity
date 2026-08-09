@@ -79,10 +79,11 @@ CROSS-FERTILIZATION, and the first one is concrete rather than programmatic.
       machinery is about constructing inner products on sectors where the naive
       one fails.  Whether it applies to an infrared rather than a signature
       problem is not established and is not claimed here.
-  (3) THIS REPOSITORY -> BT.  The charge- and degeneracy-preserving infrared
-      mass mu^2 Omega Upsilon (CHARGE_GRADING_LOOP_STABILITY) is the regulator
-      their loop extension needs; (eps/2) Omega^2 breaks both, for the single
-      reason that it carries charge +2.
+  (3) THIS REPOSITORY -> BT, now an exact obstruction rather than a proposed
+      regulator.  The neutral mass mu^2 Omega Upsilon retains charge and a
+      formal double root only at a held nonstationary background.  At the true
+      stationary branch one root remains massless and the poles are simple.
+      The loop extension therefore needs a non-mass infrared architecture.
   (4) PAPER 04 -> BOTH, as discipline.  Because the two completions induce the
       same functional on the gauge-invariant algebra, ANY free-field-level
       dispute between the camps is about the involution and not about
@@ -225,11 +226,13 @@ CROSS = [
     },
     {
         "direction": "this repository -> BT",
-        "strength": "concrete",
-        "content": "mu^2 Omega Upsilon is a charge- and degeneracy-preserving "
-                   "infrared mass -- the regulator their loop extension needs; "
-                   "(eps/2) Omega^2 breaks both because it carries charge +2",
-        "source": "REVERSE_PHYSICS_CHARGE_GRADING_LOOP_STABILITY_V1",
+        "strength": "exact obstruction",
+        "content": "mu^2 Omega Upsilon preserves charge and a formal double "
+                   "root only at the held nonstationary BT background, where "
+                   "d_Upsilon V=v*mu^2. On the true stationary branch the "
+                   "roots are 0 and -2*mu^2, so a non-mass infrared "
+                   "architecture is required",
+        "source": "REVERSE_PHYSICS_BT_IR_REGULATOR_TRILEMMA_V1",
     },
     {
         "direction": "Paper 04 -> both",
@@ -267,8 +270,9 @@ def build():
             != SLOT["bateman_turok"]["keeps_field_real"]),
         "a_both_stop_row_exists": "BOTH-STOP" in directions,
         "cross_fertilization_is_graded_by_strength": (
-            {c["strength"] for c in CROSS} >= {"concrete", "speculative, "
-                                               "flagged"}),
+            {c["strength"] for c in CROSS} >= {
+                "concrete", "exact obstruction", "speculative, flagged"
+            }),
     }
     failures = [k for k, v in checks.items() if not v]
 

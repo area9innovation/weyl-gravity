@@ -1,0 +1,281 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-ir-regulator-trilemma-v1.schema.json",
+  "title": "BT local-potential IR-regulator trilemma certificate",
+  "$defs": {
+    "coefficient": {
+      "type": "object",
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      },
+      "additionalProperties": false
+    },
+    "term": {
+      "type": "object",
+      "required": ["coefficient", "powers"],
+      "properties": {
+        "coefficient": {"$ref": "#/$defs/coefficient"},
+        "powers": {
+          "type": "object",
+          "propertyNames": {
+            "enum": [
+              "Omega", "Upsilon", "z", "v", "s0", "f0", "f1", "f2",
+              "mu2", "lambda2"
+            ]
+          },
+          "additionalProperties": {"type": "integer"}
+        }
+      },
+      "additionalProperties": false
+    },
+    "term_list": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/term"}
+    },
+    "readable": {"type": "string", "minLength": 1},
+    "readable_terms": {
+      "type": "object",
+      "required": ["readable", "terms"],
+      "properties": {
+        "readable": {"$ref": "#/$defs/readable"},
+        "terms": {"$ref": "#/$defs/term_list"}
+      },
+      "additionalProperties": false
+    }
+  },
+  "type": "object",
+  "required": [
+    "certificate",
+    "schema_version",
+    "dependency_tags",
+    "lifecycle_state",
+    "result_kind",
+    "question",
+    "answer",
+    "carrier",
+    "assumptions",
+    "candidate_theorem",
+    "polynomial_identities",
+    "independence_witnesses",
+    "correction_to_predecessor",
+    "next_gate",
+    "does_not_establish",
+    "provenance",
+    "verification_commands",
+    "checks",
+    "report",
+    "schema"
+  ],
+  "properties": {
+    "certificate": {
+      "const": "REVERSE_PHYSICS_BT_IR_REGULATOR_TRILEMMA_V1"
+    },
+    "schema_version": {
+      "const": "reverse-physics-bt-ir-regulator-trilemma-v1"
+    },
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC"]
+    },
+    "lifecycle_state": {
+      "const": "CLASSIFIED"
+    },
+    "result_kind": {"type": "string", "minLength": 1},
+    "question": {"type": "string", "minLength": 1},
+    "answer": {"type": "string", "minLength": 1},
+    "carrier": {
+      "type": "object",
+      "required": [
+        "fields", "invariant", "potential_ansatz", "BT_vacuum_branch",
+        "quadratic_symbol"
+      ],
+      "properties": {
+        "fields": {"const": ["Omega", "Upsilon"]},
+        "invariant": {"type": "string", "minLength": 1},
+        "potential_ansatz": {"type": "string", "minLength": 1},
+        "BT_vacuum_branch": {"type": "string", "minLength": 1},
+        "quadratic_symbol": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "assumptions": {
+      "type": "array",
+      "minItems": 5,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "candidate_theorem": {
+      "type": "object",
+      "required": [
+        "statement",
+        "proof_obligations",
+        "counterexample_strategy",
+        "finite_machine_boundary"
+      ],
+      "properties": {
+        "statement": {"type": "string", "minLength": 1},
+        "proof_obligations": {
+          "type": "array",
+          "minItems": 5,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "counterexample_strategy": {"type": "string", "minLength": 1},
+        "finite_machine_boundary": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "polynomial_identities": {
+      "type": "object",
+      "required": [
+        "BT_branch_gradient",
+        "BT_branch_hessian",
+        "BT_branch_pole_polynomial",
+        "stationary_nonzero_branch_pole_polynomial",
+        "mass_deformation_held_background",
+        "mass_deformation_true_vacuum"
+      ],
+      "properties": {
+        "BT_branch_gradient": {
+          "type": "object",
+          "required": ["readable", "components"],
+          "properties": {
+            "readable": {"$ref": "#/$defs/readable"},
+            "components": {
+              "type": "array", "minItems": 2, "maxItems": 2,
+              "items": {"$ref": "#/$defs/term_list"}
+            }
+          },
+          "additionalProperties": false
+        },
+        "BT_branch_hessian": {
+          "type": "object",
+          "required": ["readable", "components"],
+          "properties": {
+            "readable": {"$ref": "#/$defs/readable"},
+            "components": {
+              "type": "array", "minItems": 2, "maxItems": 2,
+              "items": {
+                "type": "array", "minItems": 2, "maxItems": 2,
+                "items": {"$ref": "#/$defs/term_list"}
+              }
+            }
+          },
+          "additionalProperties": false
+        },
+        "BT_branch_pole_polynomial": {
+          "$ref": "#/$defs/readable_terms"
+        },
+        "stationary_nonzero_branch_pole_polynomial": {
+          "$ref": "#/$defs/readable_terms"
+        },
+        "mass_deformation_held_background": {
+          "type": "object",
+          "required": ["readable", "gradient", "pole_terms"],
+          "properties": {
+            "readable": {"$ref": "#/$defs/readable"},
+            "gradient": {
+              "type": "array", "minItems": 2, "maxItems": 2,
+              "items": {"$ref": "#/$defs/term_list"}
+            },
+            "pole_terms": {"$ref": "#/$defs/term_list"}
+          },
+          "additionalProperties": false
+        },
+        "mass_deformation_true_vacuum": {
+          "type": "object",
+          "required": ["readable", "pole_terms"],
+          "properties": {
+            "readable": {"$ref": "#/$defs/readable"},
+            "pole_terms": {"$ref": "#/$defs/term_list"}
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "independence_witnesses": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {
+        "type": "object",
+        "required": ["drop", "witness"],
+        "properties": {
+          "drop": {"type": "string", "minLength": 1},
+          "witness": {"type": "string", "minLength": 1}
+        },
+        "additionalProperties": false
+      }
+    },
+    "correction_to_predecessor": {
+      "type": "object",
+      "required": ["predecessor", "retained", "withdrawn", "replacement"],
+      "properties": {
+        "predecessor": {
+          "const": "REVERSE_PHYSICS_CHARGE_GRADING_LOOP_STABILITY_V1"
+        },
+        "retained": {"type": "string", "minLength": 1},
+        "withdrawn": {"type": "string", "minLength": 1},
+        "replacement": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "next_gate": {"type": "string", "minLength": 1},
+    "does_not_establish": {
+      "type": "array",
+      "minItems": 5,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["source_commit", "external_source", "inputs", "exact_arithmetic"],
+      "properties": {
+        "source_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "external_source": {"type": "string", "minLength": 1},
+        "exact_arithmetic": {"type": "string", "minLength": 1},
+        "inputs": {
+          "type": "array",
+          "minItems": 4,
+          "items": {
+            "type": "object",
+            "required": ["path", "sha256"],
+            "properties": {
+              "path": {"type": "string", "minLength": 1},
+              "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "verification_commands": {
+      "type": "array",
+      "minItems": 3,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "checks": {
+      "type": "object",
+      "required": ["detail", "total", "passed", "failures", "ok"],
+      "properties": {
+        "detail": {
+          "type": "object",
+          "minProperties": 10,
+          "additionalProperties": {"type": "boolean"}
+        },
+        "total": {"type": "integer", "minimum": 10},
+        "passed": {"type": "integer", "minimum": 10},
+        "failures": {"type": "array", "maxItems": 0},
+        "ok": {"const": true}
+      },
+      "additionalProperties": false
+    },
+    "report": {
+      "const": "reverse_physics/reports/bt-ir-regulator-trilemma.md"
+    },
+    "schema": {
+      "const": "reverse_physics/schema/reverse-physics-bt-ir-regulator-trilemma-v1.schema.json"
+    }
+  },
+  "additionalProperties": false
+}

@@ -107,10 +107,13 @@ infrared divergence *"affecting asymptotic states"*; PT/C machinery constructs
 inner products where the naive one fails. Whether that bears on an *infrared*
 rather than a *signature* problem is not established, and is not claimed.
 
-**(3) This repository → BT — concrete.** `μ²ΩΥ` is a charge- **and**
-degeneracy-preserving infrared mass — the regulator their loop extension needs.
-`(ε/2)Ω²` destroys both, for the single reason that it carries charge +2
-([`charge-grading-loop-stability`](charge-grading-loop-stability.md)).
+**(3) This repository → BT — exact obstruction.** The charge grading is stable,
+but the obvious neutral mass is not the missing regulator. At the held broken
+background `μ²ΩΥ` preserves charge and a formal double root while creating the
+tadpole `vμ²`; at its true stationary branch the roots split into one massless
+and one massive simple root. Thus any successful extension must use a non-mass
+infrared architecture
+([`BT IR-regulator trilemma`](bt-ir-regulator-trilemma.md)).
 
 **(4) Paper 04 → both — discipline.** Because the completions induce the same
 functional on the gauge-invariant algebra, **any free-field-level dispute between
@@ -123,9 +126,10 @@ The decisive question is not "Mannheim or Bateman–Turok". At the point Weyl
 gravity actually occupies, **only one structure survives nondegenerately** (L3),
 and that structure's own gap is loops plus infrared (L5).
 
-So the live question is **BT's loop extension**, and the charge sector has already
-been cleared as an obstacle to it. What remains is the infrared, and — one step
-before that — whether the O(1,1) charge is anomalous at one loop.
+So the live question is **BT's loop extension**. Ambient charge bookkeeping has
+been cleared as an obstruction, while the simple invariant mass route has been
+ruled out at a stationary BT vacuum. What remains is a non-mass infrared
+architecture; the O(1,1) measure-anomaly question is a separate open gate.
 
 ## 7. What this does not establish
 

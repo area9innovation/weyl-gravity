@@ -46,33 +46,35 @@ Verified by direct enumeration of every partial matching for all external
 contents up to four legs and up to two vertex insertions — the surviving charge
 set is always exactly `{charge(external)}`.
 
-## Corollary: which regulator to use
+## Correction: quadratic preflight is not vacuum compatibility
 
-Paper 05 records `m±² = μ² ± √(εg)` for a regulated Lagrangian carrying an IR
-mass `μ²ΩΥ` and a regulator `(ε/2)Ω²`. One line of charge arithmetic separates
-them:
+Paper 05 records `m±² = μ² ± √(εg)` for a quadratic form carrying
+`μ²ΩΥ` and `(ε/2)Ω²`. One line of charge arithmetic separates them, but only at
+a held background:
 
-| term | charge | grading | degeneracy |
-|---|---|---|---|
-| `μ²ΩΥ` | **0** | preserved | preserved — at ε = 0 both poles sit at `μ²` |
-| `(ε/2)Ω²` | **+2** | broken (hence `cprop:embedding`'s *"exact iff ε = 0"*) | broken — splits by `2√(εg)` |
+| term | charge | grading | held-background degeneracy | vacuum compatibility |
+|---|---|---|---|---|
+| `μ²ΩΥ` | **0** | preserved | preserved — both formal poles sit at `μ²` | **fails:** `∂_ΥV|(v,0)=vμ²` |
+| `(ε/2)Ω²` | **+2** | broken (hence `cprop:embedding`'s *"exact iff ε = 0"*) | broken — splits by `2√(εg)` | fails exact boost invariance |
 
-One parameter, both damages, for one reason. So **`μ²ΩΥ` is a
-degeneracy-preserving, grading-preserving infrared mass** — the kind the loop
-extension needs, and which Bateman–Turok describe as not yet supplied.
+The earlier conclusion that `μ²ΩΥ` names the regulator the loop extension
+should use is withdrawn. The exact
+[`BT_IR_REGULATOR_TRILEMMA`](bt-ir-regulator-trilemma.md) shows that stationarity
+of an invariant `V=F(ΩΥ)` at `(v,0)` forces `F′(0)=0`, hence a massless double
+root. Moving the mass-deformed theory to its true stationary branch instead
+gives one massless and one massive simple root. The charge theorem above is
+unchanged; it never implied vacuum compatibility.
 
-## Where the risk moved
+## Where the work moved
 
-The grading argument is classical bookkeeping. It assumes the `SO⁺(1,1)` charge
-survives quantization — and that is a **global** symmetry, which can be
-anomalous. Bateman–Turok themselves flag that the `φ` and `(Ω,Υ)` path integrals
-are inequivalent, *"the former integrates over Ω > 0 whereas the latter
-integrates over all Ω"*, so the measure is exactly where such an anomaly would
-live.
+The primary infrared gate is now a non-mass architecture: dimensional or
+off-shell regulation, inclusive/KLN cancellation, or dressed asymptotic
+states. The concrete next test is whether the negative-charge trace radical is
+closed under the first collinear inclusive sum.
 
-**Is the O(1,1) boost charge anomalous at one loop?** That is the successor
-question. It is not answered here, and it is tractable with the anomaly
-machinery already in `quantum-weyl/`.
+Separately, the grading argument is classical bookkeeping. It assumes the
+`SO⁺(1,1)` charge survives quantization, so **is the boost charge anomalous at
+one loop?** remains an open measure question rather than the sole successor.
 
 ## Controls
 
@@ -84,6 +86,8 @@ movement when it is there. The enumeration is checked non-vacuous.
 
 - **Not the loop extension.** No loop integral is computed, no infrared
   divergence regulated, nothing resummed.
+- **Not a vacuum-compatible infrared mass.** The neutral candidate fails the
+  stationary-vacuum test in the trilemma certificate.
 - **Not** that the charge is non-anomalous — that is the open successor.
 - **Nothing about the tensor case.** This is the Bateman–Turok **scalar** model;
   Weyl gravity is the gauge-invariant tensor version.

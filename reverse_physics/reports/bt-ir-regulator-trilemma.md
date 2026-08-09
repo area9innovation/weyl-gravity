@@ -1,0 +1,214 @@
+# Bateman--Turok local-potential IR-regulator trilemma
+
+**Result:** `CLASSIFIED`
+
+**Dependency:** `LOCAL-ALGEBRAIC`
+
+**Certificate:**
+[`REVERSE_PHYSICS_BT_IR_REGULATOR_TRILEMMA_V1`](../certificates/REVERSE_PHYSICS_BT_IR_REGULATOR_TRILEMMA_V1.json)
+
+## Question and answer
+
+Can a local $SO^+(1,1)$-invariant potential give the stationary broken
+Bateman--Turok vacuum a nonzero coincident-pole infrared mass?
+
+No. In the declared carrier, four requirements cannot hold together:
+
+1. the Bateman--Turok broken vacuum $(\Omega,\Upsilon)=(v,0)$, $v\ne0$,
+   is stationary;
+2. the fixed theory retains the connected $SO^+(1,1)$ boost;
+3. the quadratic spectrum has a nonzero infrared gap; and
+4. its two poles remain coincident.
+
+This is an exact local-potential classification, not a no-go theorem for the
+Bateman--Turok programme. Bateman and Turok ask for regulation and resummation
+of collinear asymptotic states; they do not propose the mass deformation
+tested here.
+
+## Exact derivation
+
+The connected boost acts with
+
+\[
+q(\Omega)=+1,\qquad q(\Upsilon)=-1,
+\]
+
+so a derivative-free invariant potential has the form
+
+\[
+s=\Omega\Upsilon,\qquad V=F(s).
+\]
+
+At the broken branch $(v,0)$, direct differentiation gives
+
+\[
+\left.\nabla V\right|_{(v,0)}=(0,vF'(0)),\qquad
+\left.H_V\right|_{(v,0)}=
+\begin{pmatrix}
+0&F'(0)\\
+F'(0)&v^2F''(0)
+\end{pmatrix}.
+\]
+
+Writing $z$ only as the formal quadratic kinetic symbol, the determinant is
+
+\[
+\det K(z)=-\bigl(z-F'(0)\bigr)^2.
+\]
+
+Stationarity with $v\ne0$ forces $F'(0)=0$. The coincident pole is then
+massless. Conversely, a nonzero coincident-pole mass requires $F'(0)\ne0$
+and therefore creates a tadpole.
+
+The repository's earlier candidate illustrates the alternatives explicitly:
+
+\[
+F(s)=\mu^2s+\frac{\lambda^2}{2}s^2.
+\]
+
+If the old background is held fixed,
+
+\[
+\left.\partial_\Upsilon V\right|_{(v,0)}=v\mu^2,
+\qquad
+\det K(z)=-(z-\mu^2)^2.
+\]
+
+It has the desired formal double root but is not a vacuum. Moving to the true
+nonzero stationary branch $s_0=-\mu^2/\lambda^2$ instead gives
+
+\[
+\det K(z)=-z(z+2\mu^2),
+\]
+
+one massless and one massive simple root. Finally, a fixed-$v$ subtraction
+$-\mu^2v\Upsilon$ cancels the tadpole only by carrying charge $-1$. Calling
+$v$ a charge-$+1$ spurion is consistent bookkeeping, but changes the claim
+from invariance of a fixed vacuum sector to spurionic covariance.
+
+## Independence witnesses
+
+| Requirement dropped | Exact witness |
+|---|---|
+| stationarity | Hold $(v,0)$: $\det K=-(z-\mu^2)^2$, but the tadpole is $v\mu^2$ |
+| exact fixed-sector boost invariance | add $-\mu^2v\Upsilon$, whose fixed-$v$ charge is $-1$ |
+| coincident pole | move to $s_0=-\mu^2/\lambda^2$: $\det K=-z(z+2\mu^2)$ |
+| nonzero gap | retain $F=(\lambda^2/2)s^2$: stationary, invariant, and $\det K=-z^2$ |
+
+These populated witnesses make the four-way compatibility obstruction
+non-vacuous rather than an artifact of requiring too much without testing the
+neighboring cases.
+
+## Correction to the preceding result
+
+The charge-grading theorem in
+[`REVERSE_PHYSICS_CHARGE_GRADING_LOOP_STABILITY_V1`](../certificates/REVERSE_PHYSICS_CHARGE_GRADING_LOOP_STABILITY_V1.json)
+is retained: neutral vertices and off-diagonal contractions preserve ambient
+$SO^+(1,1)$ charge at every enumerated loop order.
+
+Its regulator corollary is withdrawn. The neutral term
+$\mu^2\Omega\Upsilon$ preserves charge and the quadratic double root only at
+a held, nonstationary background. It is therefore not, without an additional
+architecture, the infrared regulator the loop extension should use.
+
+## Boundary and next gate
+
+This result does **not** establish:
+
+- failure of derivative, nonlocal, finite-volume, dimensional, off-shell,
+  inclusive, or dressed-state regulators;
+- a loop integral, anomaly coefficient, KLN theorem, resummation, or
+  beyond-tree positivity theorem;
+- anything about the tensor or BRST gravitational lift; or
+- anything `LORENTZIAN-CAUSAL`. The symbol $z$ is formal and no propagator
+  prescription, Hadamard state, or causal product is constructed.
+
+The next project gate is therefore not another potential ansatz. It is to
+classify non-mass regulator architectures and then test whether the
+negative-charge trace radical is closed under the first collinear inclusive
+sum. The boost-anomaly question remains a separate open gate.
+
+## Position among nearby scalar and gravity programmes
+
+This gate is deliberately placed where the nearby programmes do not yet
+overlap:
+
+- Bateman--Turok's [Krein-space construction](https://arxiv.org/abs/2607.00096)
+  states an all-orders optical-theorem framework but proves positivity of
+  transition probabilities at tree level; its named next difficulty is the
+  collinear infrared effect on asymptotic states. That is the gate pursued
+  here.
+- Holdom's four-derivative scalar papers
+  ([2023](https://arxiv.org/abs/2303.06723),
+  [2024](https://arxiv.org/abs/2402.09223)) compute running couplings, optical
+  theorem identities, and high-energy scattering behavior in a different
+  dimension-zero scalar model. They make excellent control calculations for
+  signs and inclusive observables, but do not by themselves prove closure of
+  Bateman--Turok's one-sided trace quotient.
+- Cline--Hell's [pathology analysis](https://arxiv.org/abs/2603.05683) supplies
+  adversarial pressure from classical instability, ordinary quantum
+  unitarity, and matter coupling. Its target claims and scalar interactions
+  differ, so it is a source of counterexample tests rather than a refutation
+  imported into this carrier.
+- Kubo--Kuntz's
+  [BRST analysis of conformal gravity](https://arxiv.org/abs/2202.08298) finds
+  an indefinite transverse spin-2 sector and scattering-unitarity violation
+  in its declared construction. It is a direct warning against promoting a
+  scalar quotient result to the full metric BV complex without the classical
+  import gate and a separate tensor certificate.
+
+Mannheim's positive-metric real form and its failure at the coincident-pole
+cut are compared separately in
+[`bateman-vs-mannheim`](bateman-vs-mannheim.md). No literature-priority claim
+is made for the local-potential obstruction certified here.
+
+## Provenance and receipts
+
+The external model input is Bateman--Turok,
+[arXiv:2607.00096v1](https://arxiv.org/abs/2607.00096), especially their
+Eqs. (14)--(15) and broken branch. The certificate records SHA-256 hashes for
+all repository inputs and uses only `fractions.Fraction` coefficients in a
+generated sparse Laurent-polynomial ring.
+
+Producer and independent verifier:
+
+```text
+python3 reverse_physics/bt_ir_regulator_trilemma.py --check
+python3 reverse_physics/verify_bt_ir_regulator_trilemma.py
+python3 -m unittest -v reverse_physics.tests.test_bt_ir_regulator_trilemma
+```
+
+Final scoped receipt (wall time measured with `/usr/bin/time`, 2026-08-09):
+
+| Tier | Command | Time | Result |
+|---|---|---:|---|
+| 0 | `python3 -m py_compile` on the four changed modules and three scoped tests | 0.04 s | PASS |
+| 0 | `python3 -m json.tool` on the new certificate, schema, and work item | 0.11 s | PASS |
+| 1 | `python3 reverse_physics/bt_ir_regulator_trilemma.py --check` | 0.04 s | PASS, 10/10 |
+| 1 independent | `python3 reverse_physics/verify_bt_ir_regulator_trilemma.py` | 0.14 s | PASS, 12/12 including Draft 2020-12 schema and input hashes |
+| 1 producer + direct consumers | `python3 -m unittest -v reverse_physics.tests.test_bt_ir_regulator_trilemma reverse_physics.tests.test_charge_grading_loop_stability reverse_physics.tests.test_bateman_vs_mannheim_ledger` | 0.36 s | PASS, 36/36 |
+
+The advisory command `env -u SF_PROGRAM ci/science-forge-shadow.sh` completed
+in 4.0 s with exit 0 but is **not** recorded as a pass: it reported a Forge
+stdlib/toolchain hash mismatch, a bridge audit resolving a stale
+`bp2transformer` verifier path whose environment lacks `sympy`, and corpus
+coverage drift (1488 certificates versus the 2026-07-19 baseline of 976).
+Those repository-wide advisory findings are outside this scoped certificate
+and do not promote any claim here.
+
+The independent rail also rejects a mutation from $-2\mu^2z$ to
+$-3\mu^2z$. `npx ajv` was unavailable in the environment and is not counted
+as a pass; the independent verifier instead validates the strict schema with
+`jsonschema.Draft202012Validator` before checking the mathematics.
+
+Tier 2 was not run because no shared mathematical input or operator changed;
+the modified predecessor certificates are direct consumers and were tested in
+the same change. Tier 3 was not run because no freeze, theorem promotion,
+shared-core change, or release is being made. A skipped higher tier is not
+reported as a pass.
+
+CLOSE-OUT: DONE -- local invariant potential regulators are classified at the
+stationary Bateman--Turok branch; the non-mass infrared architecture remains
+the next research gate.
+
+EVIDENCE: `reverse_physics/certificates/REVERSE_PHYSICS_BT_IR_REGULATOR_TRILEMMA_V1.json`

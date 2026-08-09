@@ -37,39 +37,36 @@ Vertices neutral and contractions neutral together give the grading theorem:
 
 Loops dress an operator; they cannot move it up the charge ladder.  So a
 tree-level image with charges <= 0 stays at charges <= 0 to all orders, and the
-one-sidedness hypothesis is loop-stable.  The obstacle to the loop extension is
-therefore EXACTLY the infrared one Bateman-Turok named, and nothing else in the
-charge sector.
+one-sidedness hypothesis is loop-stable in this ambient combinatorics.  This
+removes one cheap obstruction; it does not construct the infrared completion,
+prove closure of the trace quotient, or exclude a measure anomaly.
 
-WHAT THAT BUYS, ON THE REGULATOR QUESTION.  Paper 05 records the mass splitting
-of the regulated split theory as m_pm^2 = mu^2 +/- sqrt(eps g), for the
-regulated Lagrangian carrying an IR mass mu^2 Omega Upsilon and a regulator
-(eps/2) Omega^2.  Those two terms are not interchangeable, and the difference is
-visible in one line of charge arithmetic:
+WHAT THAT DOES NOT BUY, ON THE REGULATOR QUESTION.  Paper 05 records the formal
+mass splitting m_pm^2 = mu^2 +/- sqrt(eps g).  Charge arithmetic still
+distinguishes the neutral term mu^2 Omega Upsilon from the charged perturbation
+(eps/2) Omega^2, and at a HELD background the former retains a double root.
+But this was previously promoted too far: at the BT branch (v,0), the neutral
+mass term creates the tadpole d_Upsilon V = v mu^2.  It is not a compatible
+vacuum regulator merely because its quadratic matrix preserves degeneracy.
 
-    q(Omega Upsilon) =  0   -> preserves the grading; and at eps = 0 the two
-                               poles COINCIDE at mu^2, so the degeneracy that
-                               makes this a Jordan-block theory survives
+    q(Omega Upsilon) =  0   -> preserves the grading; at a held background the
+                               two formal poles coincide, but stationarity fails
     q(Omega^2)       = +2   -> breaks the grading, which is why cprop:embedding
                                finds one-sidedness "exact iff eps = 0"; and it
                                SPLITS the poles by 2 sqrt(eps g), destroying the
                                degeneracy as well
 
-One parameter, both damages, for one reason.  So mu^2 Omega Upsilon is a
-degeneracy-preserving, grading-preserving infrared mass -- which is the kind of
-regulator the loop extension needs and which Bateman-Turok describe as not yet
-supplied.  This module does not carry out that extension; it establishes that
-the charge sector does not stand in its way.
+The exact correction is certified by BT_IR_REGULATOR_TRILEMMA: stationarity of
+an invariant V=F(Omega Upsilon) at (v,0) forces F'(0)=0, hence a massless double
+root.  Moving the mass-deformed theory to its true stationary branch instead
+splits the polynomial into one massless and one massive simple root.  This
+module establishes only that ambient charge bookkeeping does not stand in the
+way; it does not supply a compatible infrared regulator.
 
-WHERE THE RISK ACTUALLY SITS, now that charge counting is cleared.  The grading
-argument is classical bookkeeping and assumes the SO+(1,1) charge survives
-quantization.  It is a GLOBAL symmetry, and global symmetries can be anomalous.
-Bateman-Turok themselves flag that the phi and (Omega, Upsilon) path integrals
-are inequivalent -- "the former integrates over Omega > 0 whereas the latter
-integrates over all Omega" -- so the measure is exactly where such an anomaly
-would live.  IS THE O(1,1) BOOST CHARGE ANOMALOUS AT ONE LOOP?  That is the
-successor question, it is not answered here, and it is answerable with the
-anomaly machinery this repository already has.
+TWO RISKS REMAIN.  The primary infrared gate is now a non-mass architecture:
+dimensional or off-shell regulation, inclusive/KLN cancellation, or dressed
+asymptotic states.  Separately, the classical SO+(1,1) bookkeeping assumes the
+global boost charge survives quantization; a measure anomaly remains open.
 
 Dependency tag: LOCAL-ALGEBRAIC.
 """
@@ -185,18 +182,22 @@ def build():
     _, npat_check = dress((OM, UP), 2)
     ctrl_nonvacuous = npat_check > 50
 
-    # --- the regulator corollary, pure charge arithmetic -------------------
+    # --- regulator preflight: charge facts, not vacuum compatibility -------
     q_mu_term = CHARGE[OM] + CHARGE[UP]          # mu^2 Omega Upsilon
     q_eps_term = 2 * CHARGE[OM]                  # (eps/2) Omega^2
     reg_rows = [
         {"term": "mu^2 * Omega * Upsilon", "charge": q_mu_term,
          "preserves_grading": q_mu_term == 0,
-         "poles_at_eps_zero": "m_+^2 = m_-^2 = mu^2  (coincident)",
-         "preserves_degeneracy": True},
+         "held_background_poles": "m_+^2 = m_-^2 = mu^2  (coincident)",
+         "preserves_quadratic_degeneracy_at_held_background": True,
+         "vacuum_compatible": False,
+         "vacuum_failure": "tadpole d_Upsilon V|(v,0) = v*mu^2 != 0"},
         {"term": "(eps/2) * Omega^2", "charge": q_eps_term,
          "preserves_grading": q_eps_term == 0,
-         "poles_at_eps_zero": "split by 2*sqrt(eps*g)",
-         "preserves_degeneracy": False},
+         "held_background_poles": "split by 2*sqrt(eps*g)",
+         "preserves_quadratic_degeneracy_at_held_background": False,
+         "vacuum_compatible": False,
+         "vacuum_failure": "charge +2 explicitly breaks SO+(1,1)"},
     ]
     ctrl_regulators_differ = q_mu_term == 0 and q_eps_term != 0
 
@@ -225,9 +226,9 @@ def build():
                   "The charge of a process operator is therefore fixed by its "
                   "external legs and is independent of loop order: loops dress "
                   "an operator without moving it up the charge ladder. The "
-                  "one-sidedness hypothesis is loop-stable, and the obstacle "
-                  "to the loop extension is exactly the infrared one "
-                  "Bateman-Turok named, nothing else in the charge sector.",
+                  "one-sidedness hypothesis is loop-stable in this ambient "
+                  "bookkeeping. This does not supply an infrared regulator or "
+                  "exclude a measure anomaly.",
         "structural_inputs": {
             "vertex": "S_{1,1} = int [ dOmega.dUpsilon + (1/2) lambda^2 "
                       "Omega^2 Upsilon^2 ]  (their Eq. (14)); q = 0",
@@ -239,31 +240,33 @@ def build():
                               "W^{OmegaOmega} = W^{UpsilonUpsilon} = 0",
         },
         "grading_table": rows,
-        "regulator_corollary": {
+        "quadratic_regulator_preflight": {
             "imported_exactly": "Paper 05: m_pm^2 = mu^2 +/- sqrt(eps g)",
             "rows": reg_rows,
-            "reading": "mu^2 Omega Upsilon is a degeneracy-preserving AND "
-                       "grading-preserving infrared mass; (eps/2) Omega^2 "
-                       "destroys both, for the single reason that it carries "
-                       "charge +2. This names the regulator the loop "
-                       "extension should use.",
+            "reading": "mu^2 Omega Upsilon preserves charge and the formal "
+                       "double root at a held background, but it creates a "
+                       "tadpole there. These quadratic facts do not certify "
+                       "vacuum compatibility.",
+            "vacuum_compatibility":
+                "REFUTED_BY_REVERSE_PHYSICS_BT_IR_REGULATOR_TRILEMMA_V1",
         },
         "successor_question": {
-            "question": "Is the SO+(1,1) boost charge anomalous at one loop?",
-            "why_it_is_the_risk": "the grading argument is classical "
-                                  "bookkeeping and assumes the charge survives "
-                                  "quantization; it is a GLOBAL symmetry and "
-                                  "global symmetries can be anomalous",
-            "where_it_would_live": "the measure -- Bateman-Turok note the phi "
-                                   "and (Omega, Upsilon) path integrals are "
-                                   "inequivalent, 'the former integrates over "
-                                   "Omega > 0 whereas the latter integrates "
-                                   "over all Omega'",
-            "tractable_with": "the anomaly machinery already in quantum-weyl/",
+            "question": "Which non-mass infrared architecture makes the first "
+                        "collinear inclusive sum well defined, and is the "
+                        "negative-charge trace radical closed under it?",
+            "candidate_architectures": [
+                "dimensional or off-shell regulation",
+                "inclusive/KLN cancellation",
+                "dressed asymptotic states",
+            ],
+            "separate_open_risk": "Is the SO+(1,1) boost charge anomalous at "
+                                  "one loop? The measure is the candidate locus.",
         },
         "does_not_establish": [
             "the loop extension itself -- no loop integral is computed, no "
             "infrared divergence is regulated, nothing is resummed",
+            "a vacuum-compatible infrared mass; the neutral mass term fails "
+            "the stationary-BT-vacuum test in the trilemma certificate",
             "that the O(1,1) charge is non-anomalous; that is the successor "
             "question and it is open",
             "anything about the tensor (gravitational) case: this is the "
@@ -312,11 +315,11 @@ def main(argv=None):
               % (r["external"], r["vertices"], r["charge_in"],
                  r["charges_out"], r["invariant"]))
     print()
-    print("  regulators:")
-    for r in cert["regulator_corollary"]["rows"]:
-        print("    %-24s q = %+d  grading %-5s  degeneracy %s"
+    print("  quadratic regulator preflight:")
+    for r in cert["quadratic_regulator_preflight"]["rows"]:
+        print("    %-24s q = %+d  grading %-5s  held degeneracy %s"
               % (r["term"], r["charge"], r["preserves_grading"],
-                 r["preserves_degeneracy"]))
+                 r["preserves_quadratic_degeneracy_at_held_background"]))
     print()
     print("  successor risk:", cert["successor_question"]["question"])
     print()

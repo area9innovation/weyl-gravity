@@ -1,0 +1,32 @@
+{
+  "id": "sf:program/work/reverse-physics-bateman-loop-completion",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "reverse-physics",
+    "state": "ACTIVE",
+    "objective": "Test whether the Bateman--Turok scalar positivity architecture can cross its stated collinear-infrared boundary without importing a positive Hilbert metric or promoting a reduced scalar calculation to Weyl gravity. The entry result REVERSE_PHYSICS_BT_IR_REGULATOR_TRILEMMA_V1 exactly rules out the obvious local invariant mass at the stationary broken vacuum while retaining REVERSE_PHYSICS_CHARGE_GRADING_LOOP_STABILITY_V1. Continue by classifying non-mass infrared architectures and computing the first inclusive closure test for the negative-charge trace radical.",
+    "depends_on": [
+      "S. Bateman and N. Turok, arXiv:2607.00096v1, including their tree-level positivity scope and collinear-asymptotic-state caveat",
+      "REVERSE_PHYSICS_CHARGE_GRADING_LOOP_STABILITY_V1",
+      "REVERSE_PHYSICS_BT_IR_REGULATOR_TRILEMMA_V1"
+    ],
+    "activates": [
+      "a first inclusive/KLN closure theorem or exact obstruction for the scalar negative-charge trace radical",
+      "a separately gated SO+(1,1) measure-anomaly calculation",
+      "only after scalar infrared closure, a declared tensor/BRST lift question importing certified classical data"
+    ],
+    "current_gate": "NON_MASS_IR_ARCHITECTURE (fail-closed): choose dimensional/off-shell, inclusive/KLN, or dressed-state regulation on an explicitly finite first carrier; derive the first collinear inclusive sum and test whether the negative-charge trace radical remains an ideal under that sum.",
+    "stop_condition": "EITHER construct one explicit non-mass scalar infrared architecture, compute its first nontrivial inclusive process map exactly or with certified analytic bounds, and independently prove closure and positivity of the quotient trace at that declared order; OR exhibit the first exact closure, charge, measure, or asymptotic-state obstruction on a complete declared finite carrier. In either case land a strict certificate/schema, method-distinct verifier, decisive mutations, receipt, report, assumptions, missing-object ledger, and a next-gate decision. A mass-potential scan alone cannot close the item.",
+    "forbid": "no claim that the local-potential trilemma refutes Bateman--Turok; no use of a held nonstationary background as a vacuum; no reduced scalar result promoted to tensor gravity, BRST cohomology, a complete Lorentzian propagator, Hadamard state, causal perturbative AQFT, quantum master equation, or all-orders unitarity; no assumption that ambient charge conservation proves quotient-trace closure; no anomaly claim without a measure/Jacobian calculation; no floating-point canonical forms, ranks, cocycle tests, or trivialization certificates",
+    "allowed_paths": [
+      "reverse_physics/",
+      "notes/bateman-turok-embedding.md",
+      "planning/work-items/reverse-physics-bateman-loop-completion.json",
+      "planning/events/"
+    ],
+    "resource_hint": "Proof-first contract. Candidate theorem: at the first explicitly declared collinear inclusive order, the nonpositive-charge image is closed under the inclusive process map and its strictly negative part remains in the trace radical. Carrier: Bateman--Turok's scalar O(1,1) model with fixed external multiplicity, one declared regulator/prescription, and a finite set of degenerate collinear channels; no tensor lift. Proof obligations: define regulated asymptotic/process objects, enumerate real and virtual terms, prove regulator cancellation, prove charge grading termwise, prove radical closure after the inclusive sum, and identify the positive quotient trace. Counterexample strategy: mutate the off-diagonal contraction, include the first omitted degenerate channel, vary the regulator/prescription, and search for a charge-zero product of negative representatives with nonzero trace. Finite machine boundary: exact combinatorics and rational/algebraic coefficients plus certified analytic bounds for any integrals; unresolved continuum or resummation steps remain explicit missing objects rather than passes.",
+    "input_commit": "49d74b9229a2ada453a919899749488f8998161c",
+    "stream": "reverse-physics"
+  }
+}

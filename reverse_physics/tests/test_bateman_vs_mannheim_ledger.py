@@ -108,8 +108,15 @@ class TestCrossFertilizationIsGraded(unittest.TestCase):
 
     def test_concrete_entries_exist_and_are_distinct(self):
         conc = [c for c in self.m.CROSS if c["strength"] == "concrete"]
-        self.assertGreaterEqual(len(conc), 2)
+        self.assertGreaterEqual(len(conc), 1)
         self.assertEqual(len({c["direction"] for c in conc}), len(conc))
+
+    def test_repository_transfer_is_an_exact_obstruction(self):
+        row = [c for c in self.m.CROSS
+               if c["direction"] == "this repository -> BT"][0]
+        self.assertEqual(row["strength"], "exact obstruction")
+        self.assertIn("nonstationary", row["content"])
+        self.assertIn("non-mass", row["content"])
 
     def test_the_bt_to_mannheim_transfer_names_the_mechanism(self):
         bt = [c for c in self.m.CROSS
