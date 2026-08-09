@@ -237,3 +237,13 @@ free, but published loop data do not determine its finite four-leg BT jet.
 EVIDENCE: `reverse_physics/certificates/REVERSE_PHYSICS_BT_PERFECT_SQUARE_RG_SEPARATRIX_V1.json`
 
 MISSING-DEP: finite independent-mass bubble, triangle, and box interference jet
+
+## Successor checkpoint
+
+The bubble logarithmic part of that dependency is now closed by
+[`REVERSE_PHYSICS_BT_FOUR_POINT_BUBBLE_LOG_JET_V1`](../certificates/REVERSE_PHYSICS_BT_FOUR_POINT_BUBBLE_LOG_JET_V1.json).
+The arbitrary-mass double-pole cut polynomial and its fixed-`(s,t)` four-mass
+interference jet are computed independently.  The bubble collinear expansion
+contains uncancelled `r^-2` and `r^-1` logarithms, so it cannot yet be matched
+to the reduced real threshold.  The immediate missing dependency is the
+triangle logarithmic jet; the box and finite parts remain behind it.

@@ -1,0 +1,188 @@
+{
+  "answer": "The arbitrary-mass double-pole cut is a compact quadratic polynomial. Combining its three crossed logarithms with the exact PS tree amplitude gives a nonzero closed four-mass interference jet. It is singular in the collinear limit, so triangle and box sectors must participate before any comparison with the real -3/8 threshold coefficient.",
+  "bubble_log_interference_jet": {
+    "definition": "J=[x1*x2*x3*x4](Mtree_red*(Ps*Ls+Pt*Lt+Pu*Lu(x)))",
+    "denominator": "s^2*t^2*(s+t)^2",
+    "nonzero": true,
+    "numerator_basis": "coefficient lists multiply s^(6-k)*t^k for k=0,...,6",
+    "numerator_coefficients": {
+      "Ls": [
+        7,
+        -13,
+        -49,
+        -19,
+        -13,
+        -1,
+        1
+      ],
+      "Lt": [
+        1,
+        -1,
+        -13,
+        -19,
+        -49,
+        -13,
+        7
+      ],
+      "Lu": [
+        7,
+        -1,
+        -43,
+        -67,
+        -43,
+        -1,
+        7
+      ],
+      "rational": [
+        0,
+        -28,
+        -59,
+        -63,
+        -59,
+        -28,
+        0
+      ]
+    },
+    "physical_normalization": "[x1*x2*x3*x4] 2*Re(Mtree^* Mloop_bubble_log)=lambda^6/(4*pi)^2*(16/3)*J"
+  },
+  "certificate": "REVERSE_PHYSICS_BT_FOUR_POINT_BUBBLE_LOG_JET_V1",
+  "checks": {
+    "details": {
+      "Ls_numerator_coefficients": true,
+      "Lt_numerator_coefficients": true,
+      "Lu_coefficients_are_s_t_symmetric": true,
+      "Lu_numerator_coefficients": true,
+      "bubble_is_not_full_one_loop_answer": true,
+      "collinear_expansion_coefficients": true,
+      "covariant_double_mass_derivative_gives_channel_polynomial": true,
+      "crossing_Ls_Lt_coefficients_reverse": true,
+      "jet_denominator_is_expected": true,
+      "no_lorentzian_claim": true,
+      "on_shell_channel_matches_holdom": true,
+      "physical_interference_prefactor_is_sixteen_thirds": true,
+      "ps_tree_amplitude_vanishes_on_shell": true,
+      "rational_coefficients_are_s_t_symmetric": true,
+      "rational_numerator_coefficients": true,
+      "real_virtual_matching_remains_open": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 16,
+    "total": 16
+  },
+  "collinear_expansion": {
+    "interpretation": "The bubble sector alone contains collinear logarithms enhanced by r^-2 and r^-1; it cannot be compared directly with the integrated real threshold.",
+    "physical_prefactor": "multiply by 16/3 and lambda^6/(4*pi)^2",
+    "reduced_J": "J=(15*L-ell)/r^2+(-45*L+3*ell-35)/r+(8*ell-30*L+31/2)+O(r)",
+    "variables": "r=t/s, L=log(mu^2/s), ell=log(-t/s); Lt=L-ell, Lu=L-log(1+r)"
+  },
+  "declared_carrier": {
+    "hard_region": "s*t*(s+t) is nonzero",
+    "jet_ring": "Q(s,t,Ls,Lt,Lu)[x1,x2,x3,x4]/(x1^2,x2^2,x3^2,x4^2)",
+    "kinematics": "four all-incoming external momenta; x_i=p_i^2 independent; s=(p1+p2)^2 and t=(p1+p3)^2 fixed; u=sum_i(x_i)-s-t",
+    "logarithms": [
+      "Ls=log(mu^2/s)",
+      "Lt=log(-mu^2/t)",
+      "Lu=log(mu^2/(s+t)) at x_i=0"
+    ],
+    "scope": "fixed-(s,t) amplitude/interference jet before external phase-space differentiation"
+  },
+  "dependency_tags": [
+    "REDUCED-MODE"
+  ],
+  "disposition": {
+    "arbitrary_mass_bubble_log_polynomial": "COMPUTED",
+    "beyond_tree_positivity": "NOT_ESTABLISHED",
+    "box_sector": "NOT_COMPUTED",
+    "bubble_finite_rational_part": "NOT_COMPUTED",
+    "external_phase_space_projector": "NOT_APPLIED",
+    "fixed_st_four_mass_bubble_interference_jet": "COMPUTED",
+    "real_virtual_collinear_cancellation": "NOT_COMPUTED",
+    "triangle_sector": "NOT_COMPUTED"
+  },
+  "does_not_establish": [
+    "the complete renormalized one-loop four-point PS amplitude",
+    "the finite bubble sector",
+    "the triangle or box contribution",
+    "cancellation of the bubble's collinear powers",
+    "a virtual coefficient opposite to the real reduced coefficient -3/8",
+    "a KLN cancellation, canonical finite part, or physical NLO probability",
+    "positivity or unitarity beyond tree level",
+    "a common regulator, resummation, or dressed asymptotic state",
+    "a tensor/BRST gravitational lift or anything LORENTZIAN-CAUSAL",
+    "literature priority for the off-shell bubble polynomial"
+  ],
+  "double_pole_cut": {
+    "channel_assignment": "(a,b)|(c,d), S=(a+b)^2=(c+d)^2, T=(a+c)^2, xj=pj^2",
+    "channel_polynomial": "P=7*S^2+S*T+T^2-(7*S+T)*(xa+xb+xc+xd)+xa*xb+xc*xd+7*(xa*xc+xa*xd+xb*xc+xb*xd)",
+    "construction": "Start with internal masses y,z, integrate the ordinary two-body angular polynomial, include sqrt(Kallen(S,y,z))/S, then apply d_y d_z at y=z=0.",
+    "cut_normalization": "d_y*d_z ordinary_cut = P/12 for physical S>0",
+    "holdom_log_calibration": "Gamma_bubble_log=lambda4^2/(4*pi)^2*(8/3)*sum_channels(P_channel*L_channel)",
+    "on_shell_control": "P|x=0=7*S^2+S*T+T^2",
+    "producer_canonical_polynomial": "7*S^2+S*T+T^2+xa*xb+7*xa*xc+7*xa*xd+7*xb*xc+7*xb*xd+xc*xd-(7*S+T)*(xa+xb+xc+xd)"
+  },
+  "lifecycle_state": "COEFFICIENT_COMPUTED",
+  "missing_object_ledger": [
+    "the two-cubic one-quartic triangle logarithmic and finite jet",
+    "the four-cubic box logarithmic and finite jet",
+    "the bubble finite rational and counterterm jet",
+    "wave-function and lower-point insertion contributions to the connected amplitude",
+    "one common non-mass infrared prescription across real and virtual terms",
+    "the differentiated external phase-space density and moving boundaries",
+    "the complete virtual coefficient in the real threshold normalization"
+  ],
+  "next_gate": "Compute the triangle logarithmic four-mass jet and test whether its r^-2 and r^-1 coefficients cancel the bubble values before attempting the finite box.",
+  "provenance": {
+    "inputs": [
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_PERFECT_SQUARE_RG_SEPARATRIX_V1.json",
+        "sha256": "5c2433142adbab422d8737ac0638a0f38aa0562bce178a08bd3b02361cbbc14f"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_FIVE_POINT_INDEPENDENT_MASS_THRESHOLD_V1.json",
+        "sha256": "e6b1872ca0fbcd6a51ccd8a44b018678678dc0121ede855911a8006b7af2a4a2"
+      }
+    ],
+    "primary_sources": [
+      {
+        "equations": [
+          "Eq. (2)",
+          "Eqs. (24)-(26)"
+        ],
+        "source": "Bateman--Turok arXiv:2607.00096v1",
+        "use": "PS action, cubic/quartic vertices, and tree graph signs"
+      },
+      {
+        "equations": [
+          "Eq. (22)"
+        ],
+        "source": "Holdom arXiv:2303.06723",
+        "use": "on-shell two-quartic logarithm and normalization control"
+      },
+      {
+        "equations": [
+          "Eqs. (8)-(12)"
+        ],
+        "source": "Holdom arXiv:2402.09223",
+        "use": "mass-derivative representation of double propagators and cuts"
+      }
+    ],
+    "retrieval_date": "2026-08-09",
+    "source_commit": "91ed8128a0ee1e98ecf0be7b6f4b63c4a0cddba7"
+  },
+  "ps_tree_amplitude": {
+    "on_shell_value": "0",
+    "physical_normalization": "Mtree=4*lambda^2*Mtree_red",
+    "reduced_definition": "Mtree_red=sum_channels[Kallen(S,xa,xb)*Kallen(S,xc,xd)/(4*S^2)]-Q4"
+  },
+  "question": "What four-external-mass logarithmic jet is supplied by the complete two-quartic bubble sector of the PS one-loop four-point amplitude?",
+  "report": "reverse_physics/reports/bt-four-point-bubble-log-jet.md",
+  "result_kind": "two-quartic one-loop logarithmic interference jet",
+  "schema": "reverse_physics/schema/reverse-physics-bt-four-point-bubble-log-jet-v1.schema.json",
+  "schema_version": "reverse-physics-bt-four-point-bubble-log-jet-v1",
+  "verification_commands": [
+    "python3 reverse_physics/bt_four_point_bubble_log_jet.py --check",
+    "python3 reverse_physics/verify_bt_four_point_bubble_log_jet.py",
+    "python3 -m unittest -v reverse_physics.tests.test_bt_four_point_bubble_log_jet"
+  ]
+}

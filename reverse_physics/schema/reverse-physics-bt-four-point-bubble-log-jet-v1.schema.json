@@ -1,0 +1,150 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-four-point-bubble-log-jet-v1.schema.json",
+  "title": "BT four-point two-quartic bubble logarithmic jet",
+  "$defs": {
+    "string": {"type": "string", "minLength": 1},
+    "strings": {"type": "array", "items": {"$ref": "#/$defs/string"}},
+    "input": {
+      "type": "object",
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {"$ref": "#/$defs/string"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      },
+      "additionalProperties": false
+    }
+  },
+  "type": "object",
+  "required": [
+    "certificate", "schema_version", "dependency_tags", "lifecycle_state",
+    "result_kind", "question", "answer", "declared_carrier", "double_pole_cut",
+    "ps_tree_amplitude", "bubble_log_interference_jet", "collinear_expansion",
+    "disposition", "missing_object_ledger", "next_gate", "does_not_establish",
+    "provenance", "verification_commands", "checks", "report", "schema"
+  ],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_FOUR_POINT_BUBBLE_LOG_JET_V1"},
+    "schema_version": {"const": "reverse-physics-bt-four-point-bubble-log-jet-v1"},
+    "dependency_tags": {"const": ["REDUCED-MODE"]},
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "result_kind": {"$ref": "#/$defs/string"},
+    "question": {"$ref": "#/$defs/string"},
+    "answer": {"$ref": "#/$defs/string"},
+    "declared_carrier": {
+      "type": "object",
+      "required": ["kinematics", "jet_ring", "logarithms", "hard_region", "scope"],
+      "properties": {
+        "kinematics": {"$ref": "#/$defs/string"},
+        "jet_ring": {"$ref": "#/$defs/string"},
+        "logarithms": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/string"}},
+        "hard_region": {"const": "s*t*(s+t) is nonzero"},
+        "scope": {"$ref": "#/$defs/string"}
+      },
+      "additionalProperties": false
+    },
+    "double_pole_cut": {
+      "type": "object",
+      "required": ["construction", "channel_assignment", "channel_polynomial", "producer_canonical_polynomial", "cut_normalization", "on_shell_control", "holdom_log_calibration"],
+      "properties": {
+        "construction": {"$ref": "#/$defs/string"},
+        "channel_assignment": {"$ref": "#/$defs/string"},
+        "channel_polynomial": {"const": "P=7*S^2+S*T+T^2-(7*S+T)*(xa+xb+xc+xd)+xa*xb+xc*xd+7*(xa*xc+xa*xd+xb*xc+xb*xd)"},
+        "producer_canonical_polynomial": {"$ref": "#/$defs/string"},
+        "cut_normalization": {"const": "d_y*d_z ordinary_cut = P/12 for physical S>0"},
+        "on_shell_control": {"const": "P|x=0=7*S^2+S*T+T^2"},
+        "holdom_log_calibration": {"$ref": "#/$defs/string"}
+      },
+      "additionalProperties": false
+    },
+    "ps_tree_amplitude": {
+      "type": "object",
+      "required": ["reduced_definition", "physical_normalization", "on_shell_value"],
+      "properties": {
+        "reduced_definition": {"$ref": "#/$defs/string"},
+        "physical_normalization": {"const": "Mtree=4*lambda^2*Mtree_red"},
+        "on_shell_value": {"const": "0"}
+      },
+      "additionalProperties": false
+    },
+    "bubble_log_interference_jet": {
+      "type": "object",
+      "required": ["definition", "denominator", "numerator_basis", "numerator_coefficients", "physical_normalization", "nonzero"],
+      "properties": {
+        "definition": {"$ref": "#/$defs/string"},
+        "denominator": {"const": "s^2*t^2*(s+t)^2"},
+        "numerator_basis": {"const": "coefficient lists multiply s^(6-k)*t^k for k=0,...,6"},
+        "numerator_coefficients": {
+          "type": "object",
+          "required": ["Ls", "Lt", "Lu", "rational"],
+          "properties": {
+            "Ls": {"const": [7, -13, -49, -19, -13, -1, 1]},
+            "Lt": {"const": [1, -1, -13, -19, -49, -13, 7]},
+            "Lu": {"const": [7, -1, -43, -67, -43, -1, 7]},
+            "rational": {"const": [0, -28, -59, -63, -59, -28, 0]}
+          },
+          "additionalProperties": false
+        },
+        "physical_normalization": {"const": "[x1*x2*x3*x4] 2*Re(Mtree^* Mloop_bubble_log)=lambda^6/(4*pi)^2*(16/3)*J"},
+        "nonzero": {"const": true}
+      },
+      "additionalProperties": false
+    },
+    "collinear_expansion": {
+      "type": "object",
+      "required": ["variables", "reduced_J", "physical_prefactor", "interpretation"],
+      "properties": {
+        "variables": {"$ref": "#/$defs/string"},
+        "reduced_J": {"const": "J=(15*L-ell)/r^2+(-45*L+3*ell-35)/r+(8*ell-30*L+31/2)+O(r)"},
+        "physical_prefactor": {"const": "multiply by 16/3 and lambda^6/(4*pi)^2"},
+        "interpretation": {"$ref": "#/$defs/string"}
+      },
+      "additionalProperties": false
+    },
+    "disposition": {
+      "type": "object",
+      "required": ["arbitrary_mass_bubble_log_polynomial", "fixed_st_four_mass_bubble_interference_jet", "bubble_finite_rational_part", "triangle_sector", "box_sector", "external_phase_space_projector", "real_virtual_collinear_cancellation", "beyond_tree_positivity"],
+      "properties": {
+        "arbitrary_mass_bubble_log_polynomial": {"const": "COMPUTED"},
+        "fixed_st_four_mass_bubble_interference_jet": {"const": "COMPUTED"},
+        "bubble_finite_rational_part": {"const": "NOT_COMPUTED"},
+        "triangle_sector": {"const": "NOT_COMPUTED"},
+        "box_sector": {"const": "NOT_COMPUTED"},
+        "external_phase_space_projector": {"const": "NOT_APPLIED"},
+        "real_virtual_collinear_cancellation": {"const": "NOT_COMPUTED"},
+        "beyond_tree_positivity": {"const": "NOT_ESTABLISHED"}
+      },
+      "additionalProperties": false
+    },
+    "missing_object_ledger": {"type": "array", "minItems": 7, "items": {"$ref": "#/$defs/string"}},
+    "next_gate": {"$ref": "#/$defs/string"},
+    "does_not_establish": {"type": "array", "minItems": 10, "items": {"$ref": "#/$defs/string"}},
+    "provenance": {
+      "type": "object",
+      "required": ["source_commit", "retrieval_date", "inputs", "primary_sources"],
+      "properties": {
+        "source_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "retrieval_date": {"const": "2026-08-09"},
+        "inputs": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"$ref": "#/$defs/input"}},
+        "primary_sources": {"type": "array", "minItems": 3, "maxItems": 3}
+      },
+      "additionalProperties": false
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "items": {"$ref": "#/$defs/string"}},
+    "checks": {
+      "type": "object",
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"const": 16},
+        "total": {"const": 16},
+        "failures": {"maxItems": 0},
+        "details": {"type": "object", "minProperties": 16, "maxProperties": 16, "additionalProperties": {"const": true}}
+      },
+      "additionalProperties": false
+    },
+    "report": {"const": "reverse_physics/reports/bt-four-point-bubble-log-jet.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-four-point-bubble-log-jet-v1.schema.json"}
+  },
+  "additionalProperties": false
+}
