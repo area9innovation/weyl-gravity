@@ -229,4 +229,12 @@ CLOSE-OUT: DONE -- the finite completeness-kernel radical-closure question is
 classified; the Bateman loop-completion project remains active at the
 regulated real-plus-virtual process-map gate.
 
+SUCCESSOR CHECKPOINT (2026-08-09):
+`REVERSE_PHYSICS_BT_OFFSHELL_JET_OBSTRUCTION_V1` proves that this process map
+cannot be reconstructed from on-shell amplitudes. The delta-prime Born rule
+requires a 16-slot four-leg virtuality jet and a 32-slot five-leg real-emission
+jet before any real--virtual cancellation can be asked. This refines
+“amplitudes missing” to an exact finite missing object; it does not alter the
+charge-radical theorem above.
+
 EVIDENCE: `reverse_physics/certificates/REVERSE_PHYSICS_BT_INCLUSIVE_RADICAL_CLOSURE_V1.json`

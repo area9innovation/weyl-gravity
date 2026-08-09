@@ -1,0 +1,252 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-offshell-jet-obstruction-v1.schema.json",
+  "title": "BT external-virtuality jet obstruction certificate",
+  "$defs": {
+    "string": {"type": "string", "minLength": 1},
+    "strings": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/string"}
+    },
+    "rational": {
+      "type": "object",
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      },
+      "additionalProperties": false
+    },
+    "witness": {
+      "type": "object",
+      "required": [
+        "external_legs", "jet_dimension", "parameter", "base_on_shell",
+        "mutated_on_shell", "base_projected_probability",
+        "mutated_projected_probability", "probability_shift",
+        "expected_shift", "mutation"
+      ],
+      "properties": {
+        "external_legs": {"type": "integer", "minimum": 1},
+        "jet_dimension": {"type": "integer", "minimum": 2},
+        "parameter": {"$ref": "#/$defs/rational"},
+        "base_on_shell": {"$ref": "#/$defs/rational"},
+        "mutated_on_shell": {"$ref": "#/$defs/rational"},
+        "base_projected_probability": {"$ref": "#/$defs/rational"},
+        "mutated_projected_probability": {"$ref": "#/$defs/rational"},
+        "probability_shift": {"$ref": "#/$defs/rational"},
+        "expected_shift": {"$ref": "#/$defs/rational"},
+        "mutation": {"$ref": "#/$defs/string"}
+      },
+      "additionalProperties": false
+    },
+    "complement": {
+      "type": "object",
+      "required": [
+        "mask", "complement_mask", "union_mask", "overlap_mask",
+        "projector_of_pair_squared"
+      ],
+      "properties": {
+        "mask": {"type": "integer", "minimum": 0},
+        "complement_mask": {"type": "integer", "minimum": 0},
+        "union_mask": {"type": "integer", "minimum": 0},
+        "overlap_mask": {"type": "integer", "minimum": 0},
+        "projector_of_pair_squared": {"$ref": "#/$defs/rational"}
+      },
+      "additionalProperties": false
+    },
+    "channel": {
+      "type": "object",
+      "required": ["external_legs", "required_object", "fixture"],
+      "properties": {
+        "external_legs": {"type": "integer", "minimum": 4, "maximum": 5},
+        "required_object": {"$ref": "#/$defs/string"},
+        "fixture": {"$ref": "#/$defs/witness"}
+      },
+      "additionalProperties": false
+    },
+    "input": {
+      "type": "object",
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {"$ref": "#/$defs/string"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      },
+      "additionalProperties": false
+    }
+  },
+  "type": "object",
+  "required": [
+    "certificate", "schema_version", "dependency_tags", "lifecycle_state",
+    "result_kind", "question", "answer", "candidate_theorem",
+    "jet_algebra", "first_nlo_pair", "literature_audit", "disposition",
+    "missing_object_ledger", "next_gate", "does_not_establish", "provenance",
+    "verification_commands", "checks", "report", "schema"
+  ],
+  "properties": {
+    "certificate": {
+      "const": "REVERSE_PHYSICS_BT_OFFSHELL_JET_OBSTRUCTION_V1"
+    },
+    "schema_version": {
+      "const": "reverse-physics-bt-offshell-jet-obstruction-v1"
+    },
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "result_kind": {"$ref": "#/$defs/string"},
+    "question": {"$ref": "#/$defs/string"},
+    "answer": {"$ref": "#/$defs/string"},
+    "candidate_theorem": {
+      "type": "object",
+      "required": [
+        "statement", "carrier", "proof_obligations",
+        "counterexample_strategy", "finite_machine_boundary"
+      ],
+      "properties": {
+        "statement": {"$ref": "#/$defs/string"},
+        "carrier": {"$ref": "#/$defs/string"},
+        "proof_obligations": {
+          "type": "array", "minItems": 5,
+          "items": {"$ref": "#/$defs/string"}
+        },
+        "counterexample_strategy": {"$ref": "#/$defs/string"},
+        "finite_machine_boundary": {"$ref": "#/$defs/string"}
+      },
+      "additionalProperties": false
+    },
+    "jet_algebra": {
+      "type": "object",
+      "required": [
+        "ring", "projector", "on_shell_map", "dimension",
+        "non_descent_identity", "kinematic_prefactor_extension",
+        "dimension_rows", "four_leg_complement_rows",
+        "five_leg_complement_rows"
+      ],
+      "properties": {
+        "ring": {"$ref": "#/$defs/string"},
+        "projector": {"$ref": "#/$defs/string"},
+        "on_shell_map": {"$ref": "#/$defs/string"},
+        "dimension": {"const": "2^n"},
+        "non_descent_identity": {"$ref": "#/$defs/string"},
+        "kinematic_prefactor_extension": {"$ref": "#/$defs/string"},
+        "dimension_rows": {
+          "type": "array", "minItems": 7, "maxItems": 7,
+          "items": {"$ref": "#/$defs/witness"}
+        },
+        "four_leg_complement_rows": {
+          "type": "array", "minItems": 16, "maxItems": 16,
+          "items": {"$ref": "#/$defs/complement"}
+        },
+        "five_leg_complement_rows": {
+          "type": "array", "minItems": 32, "maxItems": 32,
+          "items": {"$ref": "#/$defs/complement"}
+        }
+      },
+      "additionalProperties": false
+    },
+    "first_nlo_pair": {
+      "type": "object",
+      "required": [
+        "order_bookkeeping", "virtual_channel", "real_channel",
+        "combined_fixture_shift", "inference_boundary"
+      ],
+      "properties": {
+        "order_bookkeeping": {"$ref": "#/$defs/string"},
+        "virtual_channel": {"$ref": "#/$defs/channel"},
+        "real_channel": {"$ref": "#/$defs/channel"},
+        "combined_fixture_shift": {"$ref": "#/$defs/rational"},
+        "inference_boundary": {"$ref": "#/$defs/string"}
+      },
+      "additionalProperties": false
+    },
+    "literature_audit": {
+      "type": "array", "minItems": 4, "maxItems": 4,
+      "items": {
+        "type": "object",
+        "required": ["source", "supports", "status_on_2026_08_09"],
+        "properties": {
+          "source": {"$ref": "#/$defs/string"},
+          "supports": {"$ref": "#/$defs/string"},
+          "status_on_2026_08_09": {"$ref": "#/$defs/string"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "disposition": {
+      "type": "object",
+      "required": [
+        "offshell_jet_necessity", "descent_to_on_shell_amplitude_class",
+        "published_on_shell_data_define_first_nlo_probability", "four_leg_virtual_jet",
+        "five_leg_real_jet", "common_regulator", "real_virtual_cancellation",
+        "physical_nlo_process_map", "underlying_theory_ambiguous",
+        "beyond_tree_positivity"
+      ],
+      "properties": {
+        "offshell_jet_necessity": {"const": "PROVED"},
+        "descent_to_on_shell_amplitude_class": {"const": "DISPROVED"},
+        "published_on_shell_data_define_first_nlo_probability": {"const": "NO"},
+        "four_leg_virtual_jet": {"const": "NOT_COMPUTED"},
+        "five_leg_real_jet": {"const": "NOT_COMPUTED"},
+        "common_regulator": {"const": "NOT_SELECTED"},
+        "real_virtual_cancellation": {"const": "NOT_COMPUTED"},
+        "physical_nlo_process_map": {"const": "NOT_CONSTRUCTED"},
+        "underlying_theory_ambiguous": {"const": "NOT_ESTABLISHED"},
+        "beyond_tree_positivity": {"const": "NOT_ESTABLISHED"}
+      },
+      "additionalProperties": false
+    },
+    "missing_object_ledger": {
+      "type": "array", "minItems": 6,
+      "items": {"$ref": "#/$defs/string"}
+    },
+    "next_gate": {"$ref": "#/$defs/string"},
+    "does_not_establish": {
+      "type": "array", "minItems": 8,
+      "items": {"$ref": "#/$defs/string"}
+    },
+    "provenance": {
+      "type": "object",
+      "required": [
+        "source_commit", "retrieval_date", "inputs", "arxiv_sources"
+      ],
+      "properties": {
+        "source_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "retrieval_date": {"const": "2026-08-09"},
+        "inputs": {
+          "type": "array", "minItems": 3, "maxItems": 3,
+          "items": {"$ref": "#/$defs/input"}
+        },
+        "arxiv_sources": {
+          "type": "array", "minItems": 3, "maxItems": 3,
+          "items": {"type": "string", "format": "uri"}
+        }
+      },
+      "additionalProperties": false
+    },
+    "verification_commands": {
+      "type": "array", "minItems": 3,
+      "items": {"$ref": "#/$defs/string"}
+    },
+    "checks": {
+      "type": "object",
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"type": "integer", "minimum": 1},
+        "total": {"type": "integer", "minimum": 1},
+        "failures": {"const": []},
+        "details": {
+          "type": "object",
+          "minProperties": 10,
+          "additionalProperties": {"const": true}
+        }
+      },
+      "additionalProperties": false
+    },
+    "report": {
+      "const": "reverse_physics/reports/bt-offshell-jet-obstruction.md"
+    },
+    "schema": {
+      "const": "reverse_physics/schema/reverse-physics-bt-offshell-jet-obstruction-v1.schema.json"
+    }
+  },
+  "additionalProperties": false
+}

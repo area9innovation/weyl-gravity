@@ -1,0 +1,933 @@
+{
+  "answer": "No. The delta-prime projector requires a square-free off-shell virtuality jet. Amplitudes with identical on-shell values can give different projected probabilities. The public sources do not provide the required four-leg virtual and five-leg real jets.",
+  "candidate_theorem": {
+    "carrier": "Exact rational square-free virtuality jets; x_i denotes the independent external mass squared used for delta'(p_i^2).",
+    "counterexample_strategy": "Add a rational multiple of x_1...x_n. It vanishes on shell but shifts the projected squared amplitude by twice that multiple.",
+    "finite_machine_boundary": "Exact coefficients through n=7 and exhaustive complement pairing for the n=4 and n=5 NLO jets; no continuum integral.",
+    "proof_obligations": [
+      "derive the square-free jet from one derivative per external leg",
+      "show the top-coefficient projector equals the mixed derivative",
+      "construct equal-on-shell amplitudes with unequal probabilities",
+      "classify the first four-leg virtual and five-leg real requirements",
+      "keep kinematic integration and infrared cancellation fail-closed"
+    ],
+    "statement": "For n dipole external legs, D_n[K M^dagger M] is defined by the square-free jet Q[x_1,...,x_n]/(x_i^2), but does not descend to the on-shell quotient M -> M(0) whenever K(0) and M(0) are nonzero."
+  },
+  "certificate": "REVERSE_PHYSICS_BT_OFFSHELL_JET_OBSTRUCTION_V1",
+  "checks": {
+    "details": {
+      "all_on_shell_witnesses_agree": true,
+      "all_projector_shifts_are_twice_parameter": true,
+      "every_five_leg_slot_has_complement_pair": true,
+      "every_four_leg_slot_has_complement_pair": true,
+      "five_leg_real_witness_is_nonzero": true,
+      "four_leg_virtual_witness_is_nonzero": true,
+      "nlo_ambiguities_are_independent": true,
+      "no_lorentzian_claim": true,
+      "physical_nlo_map_remains_fail_closed": true,
+      "published_companions_remain_unavailable": true,
+      "square_free_dimensions_are_2_to_n": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 11,
+    "total": 11
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "disposition": {
+    "beyond_tree_positivity": "NOT_ESTABLISHED",
+    "common_regulator": "NOT_SELECTED",
+    "descent_to_on_shell_amplitude_class": "DISPROVED",
+    "five_leg_real_jet": "NOT_COMPUTED",
+    "four_leg_virtual_jet": "NOT_COMPUTED",
+    "offshell_jet_necessity": "PROVED",
+    "physical_nlo_process_map": "NOT_CONSTRUCTED",
+    "published_on_shell_data_define_first_nlo_probability": "NO",
+    "real_virtual_cancellation": "NOT_COMPUTED",
+    "underlying_theory_ambiguous": "NOT_ESTABLISHED"
+  },
+  "does_not_establish": [
+    "that the PS theory itself is ambiguous or inconsistent",
+    "that a full off-shell Feynman calculation cannot supply the missing jets",
+    "a loop amplitude, a tree 2->3 amplitude, or a KLN cancellation",
+    "scheme or field-redefinition dependence of a completed BT construction",
+    "a finite physical cross section or positivity beyond tree level",
+    "a regulator, resummation, Hadamard state, or causal perturbative construction",
+    "any tensor/BRST gravitational lift or anything LORENTZIAN-CAUSAL",
+    "literature priority for the elementary jet-algebra lemma"
+  ],
+  "first_nlo_pair": {
+    "combined_fixture_shift": {
+      "denominator": 77,
+      "numerator": 136
+    },
+    "inference_boundary": "The five-leg derivative count follows from BT Eq. (18), one delta-prime Wightman factor for each external leg; BT prints the explicit phase-space reduction only for 2->2.",
+    "order_bookkeeping": "For the PS interaction, tree 2->2 is order lambda^2, one-loop 2->2 interference and tree 2->3 squared are both order lambda^6 in probability.",
+    "real_channel": {
+      "external_legs": 5,
+      "fixture": {
+        "base_on_shell": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "base_projected_probability": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "expected_shift": {
+          "denominator": 11,
+          "numerator": 10
+        },
+        "external_legs": 5,
+        "jet_dimension": 32,
+        "mutated_on_shell": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "mutated_projected_probability": {
+          "denominator": 11,
+          "numerator": 10
+        },
+        "mutation": "Delta M = a x_1...x_n",
+        "parameter": {
+          "denominator": 11,
+          "numerator": 5
+        },
+        "probability_shift": {
+          "denominator": 11,
+          "numerator": 10
+        }
+      },
+      "required_object": "multi-affine jet of the regulated tree 2->3 squared amplitude, including its phase-space factor"
+    },
+    "virtual_channel": {
+      "external_legs": 4,
+      "fixture": {
+        "base_on_shell": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "base_projected_probability": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "expected_shift": {
+          "denominator": 7,
+          "numerator": 6
+        },
+        "external_legs": 4,
+        "jet_dimension": 16,
+        "mutated_on_shell": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "mutated_projected_probability": {
+          "denominator": 7,
+          "numerator": 6
+        },
+        "mutation": "Delta M = a x_1...x_n",
+        "parameter": {
+          "denominator": 7,
+          "numerator": 3
+        },
+        "probability_shift": {
+          "denominator": 7,
+          "numerator": 6
+        }
+      },
+      "required_object": "multi-affine jet of the regulated renormalized one-loop 2->2 interference, including its phase-space factor"
+    }
+  },
+  "jet_algebra": {
+    "dimension": "2^n",
+    "dimension_rows": [
+      {
+        "base_on_shell": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "base_projected_probability": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "expected_shift": {
+          "denominator": 3,
+          "numerator": 2
+        },
+        "external_legs": 1,
+        "jet_dimension": 2,
+        "mutated_on_shell": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "mutated_projected_probability": {
+          "denominator": 3,
+          "numerator": 2
+        },
+        "mutation": "Delta M = a x_1...x_n",
+        "parameter": {
+          "denominator": 3,
+          "numerator": 1
+        },
+        "probability_shift": {
+          "denominator": 3,
+          "numerator": 2
+        }
+      },
+      {
+        "base_on_shell": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "base_projected_probability": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "expected_shift": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "external_legs": 2,
+        "jet_dimension": 4,
+        "mutated_on_shell": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "mutated_projected_probability": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "mutation": "Delta M = a x_1...x_n",
+        "parameter": {
+          "denominator": 2,
+          "numerator": 1
+        },
+        "probability_shift": {
+          "denominator": 1,
+          "numerator": 1
+        }
+      },
+      {
+        "base_on_shell": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "base_projected_probability": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "expected_shift": {
+          "denominator": 5,
+          "numerator": 6
+        },
+        "external_legs": 3,
+        "jet_dimension": 8,
+        "mutated_on_shell": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "mutated_projected_probability": {
+          "denominator": 5,
+          "numerator": 6
+        },
+        "mutation": "Delta M = a x_1...x_n",
+        "parameter": {
+          "denominator": 5,
+          "numerator": 3
+        },
+        "probability_shift": {
+          "denominator": 5,
+          "numerator": 6
+        }
+      },
+      {
+        "base_on_shell": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "base_projected_probability": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "expected_shift": {
+          "denominator": 3,
+          "numerator": 4
+        },
+        "external_legs": 4,
+        "jet_dimension": 16,
+        "mutated_on_shell": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "mutated_projected_probability": {
+          "denominator": 3,
+          "numerator": 4
+        },
+        "mutation": "Delta M = a x_1...x_n",
+        "parameter": {
+          "denominator": 3,
+          "numerator": 2
+        },
+        "probability_shift": {
+          "denominator": 3,
+          "numerator": 4
+        }
+      },
+      {
+        "base_on_shell": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "base_projected_probability": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "expected_shift": {
+          "denominator": 7,
+          "numerator": 10
+        },
+        "external_legs": 5,
+        "jet_dimension": 32,
+        "mutated_on_shell": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "mutated_projected_probability": {
+          "denominator": 7,
+          "numerator": 10
+        },
+        "mutation": "Delta M = a x_1...x_n",
+        "parameter": {
+          "denominator": 7,
+          "numerator": 5
+        },
+        "probability_shift": {
+          "denominator": 7,
+          "numerator": 10
+        }
+      },
+      {
+        "base_on_shell": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "base_projected_probability": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "expected_shift": {
+          "denominator": 2,
+          "numerator": 3
+        },
+        "external_legs": 6,
+        "jet_dimension": 64,
+        "mutated_on_shell": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "mutated_projected_probability": {
+          "denominator": 2,
+          "numerator": 3
+        },
+        "mutation": "Delta M = a x_1...x_n",
+        "parameter": {
+          "denominator": 4,
+          "numerator": 3
+        },
+        "probability_shift": {
+          "denominator": 2,
+          "numerator": 3
+        }
+      },
+      {
+        "base_on_shell": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "base_projected_probability": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "expected_shift": {
+          "denominator": 9,
+          "numerator": 14
+        },
+        "external_legs": 7,
+        "jet_dimension": 128,
+        "mutated_on_shell": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "mutated_projected_probability": {
+          "denominator": 9,
+          "numerator": 14
+        },
+        "mutation": "Delta M = a x_1...x_n",
+        "parameter": {
+          "denominator": 9,
+          "numerator": 7
+        },
+        "probability_shift": {
+          "denominator": 9,
+          "numerator": 14
+        }
+      }
+    ],
+    "five_leg_complement_rows": [
+      {
+        "complement_mask": 31,
+        "mask": 0,
+        "overlap_mask": 0,
+        "projector_of_pair_squared": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "union_mask": 31
+      },
+      {
+        "complement_mask": 30,
+        "mask": 1,
+        "overlap_mask": 0,
+        "projector_of_pair_squared": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "union_mask": 31
+      },
+      {
+        "complement_mask": 29,
+        "mask": 2,
+        "overlap_mask": 0,
+        "projector_of_pair_squared": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "union_mask": 31
+      },
+      {
+        "complement_mask": 28,
+        "mask": 3,
+        "overlap_mask": 0,
+        "projector_of_pair_squared": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "union_mask": 31
+      },
+      {
+        "complement_mask": 27,
+        "mask": 4,
+        "overlap_mask": 0,
+        "projector_of_pair_squared": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "union_mask": 31
+      },
+      {
+        "complement_mask": 26,
+        "mask": 5,
+        "overlap_mask": 0,
+        "projector_of_pair_squared": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "union_mask": 31
+      },
+      {
+        "complement_mask": 25,
+        "mask": 6,
+        "overlap_mask": 0,
+        "projector_of_pair_squared": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "union_mask": 31
+      },
+      {
+        "complement_mask": 24,
+        "mask": 7,
+        "overlap_mask": 0,
+        "projector_of_pair_squared": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "union_mask": 31
+      },
+      {
+        "complement_mask": 23,
+        "mask": 8,
+        "overlap_mask": 0,
+        "projector_of_pair_squared": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "union_mask": 31
+      },
+      {
+        "complement_mask": 22,
+        "mask": 9,
+        "overlap_mask": 0,
+        "projector_of_pair_squared": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "union_mask": 31
+      },
+      {
+        "complement_mask": 21,
+        "mask": 10,
+        "overlap_mask": 0,
+        "projector_of_pair_squared": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "union_mask": 31
+      },
+      {
+        "complement_mask": 20,
+        "mask": 11,
+        "overlap_mask": 0,
+        "projector_of_pair_squared": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "union_mask": 31
+      },
+      {
+        "complement_mask": 19,
+        "mask": 12,
+        "overlap_mask": 0,
+        "projector_of_pair_squared": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "union_mask": 31
+      },
+      {
+        "complement_mask": 18,
+        "mask": 13,
+        "overlap_mask": 0,
+        "projector_of_pair_squared": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "union_mask": 31
+      },
+      {
+        "complement_mask": 17,
+        "mask": 14,
+        "overlap_mask": 0,
+        "projector_of_pair_squared": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "union_mask": 31
+      },
+      {
+        "complement_mask": 16,
+        "mask": 15,
+        "overlap_mask": 0,
+        "projector_of_pair_squared": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "union_mask": 31
+      },
+      {
+        "complement_mask": 15,
+        "mask": 16,
+        "overlap_mask": 0,
+        "projector_of_pair_squared": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "union_mask": 31
+      },
+      {
+        "complement_mask": 14,
+        "mask": 17,
+        "overlap_mask": 0,
+        "projector_of_pair_squared": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "union_mask": 31
+      },
+      {
+        "complement_mask": 13,
+        "mask": 18,
+        "overlap_mask": 0,
+        "projector_of_pair_squared": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "union_mask": 31
+      },
+      {
+        "complement_mask": 12,
+        "mask": 19,
+        "overlap_mask": 0,
+        "projector_of_pair_squared": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "union_mask": 31
+      },
+      {
+        "complement_mask": 11,
+        "mask": 20,
+        "overlap_mask": 0,
+        "projector_of_pair_squared": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "union_mask": 31
+      },
+      {
+        "complement_mask": 10,
+        "mask": 21,
+        "overlap_mask": 0,
+        "projector_of_pair_squared": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "union_mask": 31
+      },
+      {
+        "complement_mask": 9,
+        "mask": 22,
+        "overlap_mask": 0,
+        "projector_of_pair_squared": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "union_mask": 31
+      },
+      {
+        "complement_mask": 8,
+        "mask": 23,
+        "overlap_mask": 0,
+        "projector_of_pair_squared": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "union_mask": 31
+      },
+      {
+        "complement_mask": 7,
+        "mask": 24,
+        "overlap_mask": 0,
+        "projector_of_pair_squared": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "union_mask": 31
+      },
+      {
+        "complement_mask": 6,
+        "mask": 25,
+        "overlap_mask": 0,
+        "projector_of_pair_squared": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "union_mask": 31
+      },
+      {
+        "complement_mask": 5,
+        "mask": 26,
+        "overlap_mask": 0,
+        "projector_of_pair_squared": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "union_mask": 31
+      },
+      {
+        "complement_mask": 4,
+        "mask": 27,
+        "overlap_mask": 0,
+        "projector_of_pair_squared": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "union_mask": 31
+      },
+      {
+        "complement_mask": 3,
+        "mask": 28,
+        "overlap_mask": 0,
+        "projector_of_pair_squared": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "union_mask": 31
+      },
+      {
+        "complement_mask": 2,
+        "mask": 29,
+        "overlap_mask": 0,
+        "projector_of_pair_squared": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "union_mask": 31
+      },
+      {
+        "complement_mask": 1,
+        "mask": 30,
+        "overlap_mask": 0,
+        "projector_of_pair_squared": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "union_mask": 31
+      },
+      {
+        "complement_mask": 0,
+        "mask": 31,
+        "overlap_mask": 0,
+        "projector_of_pair_squared": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "union_mask": 31
+      }
+    ],
+    "four_leg_complement_rows": [
+      {
+        "complement_mask": 15,
+        "mask": 0,
+        "overlap_mask": 0,
+        "projector_of_pair_squared": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "union_mask": 15
+      },
+      {
+        "complement_mask": 14,
+        "mask": 1,
+        "overlap_mask": 0,
+        "projector_of_pair_squared": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "union_mask": 15
+      },
+      {
+        "complement_mask": 13,
+        "mask": 2,
+        "overlap_mask": 0,
+        "projector_of_pair_squared": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "union_mask": 15
+      },
+      {
+        "complement_mask": 12,
+        "mask": 3,
+        "overlap_mask": 0,
+        "projector_of_pair_squared": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "union_mask": 15
+      },
+      {
+        "complement_mask": 11,
+        "mask": 4,
+        "overlap_mask": 0,
+        "projector_of_pair_squared": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "union_mask": 15
+      },
+      {
+        "complement_mask": 10,
+        "mask": 5,
+        "overlap_mask": 0,
+        "projector_of_pair_squared": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "union_mask": 15
+      },
+      {
+        "complement_mask": 9,
+        "mask": 6,
+        "overlap_mask": 0,
+        "projector_of_pair_squared": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "union_mask": 15
+      },
+      {
+        "complement_mask": 8,
+        "mask": 7,
+        "overlap_mask": 0,
+        "projector_of_pair_squared": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "union_mask": 15
+      },
+      {
+        "complement_mask": 7,
+        "mask": 8,
+        "overlap_mask": 0,
+        "projector_of_pair_squared": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "union_mask": 15
+      },
+      {
+        "complement_mask": 6,
+        "mask": 9,
+        "overlap_mask": 0,
+        "projector_of_pair_squared": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "union_mask": 15
+      },
+      {
+        "complement_mask": 5,
+        "mask": 10,
+        "overlap_mask": 0,
+        "projector_of_pair_squared": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "union_mask": 15
+      },
+      {
+        "complement_mask": 4,
+        "mask": 11,
+        "overlap_mask": 0,
+        "projector_of_pair_squared": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "union_mask": 15
+      },
+      {
+        "complement_mask": 3,
+        "mask": 12,
+        "overlap_mask": 0,
+        "projector_of_pair_squared": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "union_mask": 15
+      },
+      {
+        "complement_mask": 2,
+        "mask": 13,
+        "overlap_mask": 0,
+        "projector_of_pair_squared": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "union_mask": 15
+      },
+      {
+        "complement_mask": 1,
+        "mask": 14,
+        "overlap_mask": 0,
+        "projector_of_pair_squared": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "union_mask": 15
+      },
+      {
+        "complement_mask": 0,
+        "mask": 15,
+        "overlap_mask": 0,
+        "projector_of_pair_squared": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "union_mask": 15
+      }
+    ],
+    "kinematic_prefactor_extension": "For analytic K, the same mutation shifts D_n[K|M|^2] by 2*K(0)*Re(M(0)^dagger*a); the rational fixture sets K(0)=M(0)=1 and a real.",
+    "non_descent_identity": "M_a=1+a*x_1...x_n: epsilon(M_a)=1 but D_n(M_a^dagger M_a)=2a",
+    "on_shell_map": "epsilon(F) = F(0,...,0)",
+    "projector": "D_n(F) = coefficient of x_1...x_n in F",
+    "ring": "Q[x_1,...,x_n]/(x_1^2,...,x_n^2)"
+  },
+  "lifecycle_state": "CLASSIFIED",
+  "literature_audit": [
+    {
+      "source": "Bateman--Turok arXiv:2607.00096v1",
+      "status_on_2026_08_09": "PUBLIC_V1",
+      "supports": "Eqs. (9)-(13) use an amputated off-shell amplitude and differentiate the squared amplitude before the on-shell limit; Eq. (18) gives general n-particle projections."
+    },
+    {
+      "source": "Holdom arXiv:2303.06723 and arXiv:2402.09223",
+      "status_on_2026_08_09": "PUBLIC",
+      "supports": "one-loop renormalization and selected two-body optical-theorem or differential-cross-section data, not the required NLO jets"
+    },
+    {
+      "source": "Anderson--Bateman--Herzog--Turok, Renormalization of a Four-Derivative Theory",
+      "status_on_2026_08_09": "TO_APPEAR_IN_BT_REFERENCE_25",
+      "supports": "claimed companion infrared/renormalization analysis"
+    },
+    {
+      "source": "Bateman--Turok, Unitarity and Positivity in Higher Derivative QFTs from Hidden Ghost Parity",
+      "status_on_2026_08_09": "TO_APPEAR_IN_BT_REFERENCE_19",
+      "supports": "deferred detailed projection and positivity proof"
+    }
+  ],
+  "missing_object_ledger": [
+    "regulated renormalized four-leg one-loop off-shell jet through multi-degree (1,1,1,1)",
+    "regulated five-leg tree real-emission off-shell jet through multi-degree (1,1,1,1,1)",
+    "one common soft/collinear regulator and phase-space prescription for both jets",
+    "proof that counterterms, interpolating fields, and projectors transform jointly so the projected probability is scheme/field-redefinition invariant",
+    "real--virtual cancellation or dressed-state/resummation construction",
+    "trace-class physical inclusive process operator after the regulator is removed"
+  ],
+  "next_gate": "Compute the multi-affine tree 2->3 jet directly from BT Feynman rules and classify its soft/collinear faces on a declared common regulator; in parallel specify the renormalized four-leg loop jet.",
+  "provenance": {
+    "arxiv_sources": [
+      "https://arxiv.org/abs/2607.00096v1",
+      "https://arxiv.org/abs/2303.06723",
+      "https://arxiv.org/abs/2402.09223"
+    ],
+    "inputs": [
+      {
+        "path": "notes/bateman-turok-embedding.md",
+        "sha256": "0dae9abf59ace0c71087a1d732e8ebdbe2737f2388a3b80175aa82cc5e5f6f27"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_INCLUSIVE_RADICAL_CLOSURE_V1.json",
+        "sha256": "03b9223c8adefa59b55e0e17ed260d25e8d0f13eefd234230b766ab2ad8f89f7"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_BORN_TRACE_V1.json",
+        "sha256": "b7d99d0a57020df6abd9dc4dceda9c284be066311be635edaf10c0ccdb8c241a"
+      }
+    ],
+    "retrieval_date": "2026-08-09",
+    "source_commit": "22c46b47bdab068a3a7116448d50c5e361cb7a5b"
+  },
+  "question": "Do the published on-shell amplitudes and optical-theorem data define the first Bateman--Turok real-plus-virtual probability?",
+  "report": "reverse_physics/reports/bt-offshell-jet-obstruction.md",
+  "result_kind": "external-virtuality jet necessity and public-data obstruction",
+  "schema": "reverse_physics/schema/reverse-physics-bt-offshell-jet-obstruction-v1.schema.json",
+  "schema_version": "reverse-physics-bt-offshell-jet-obstruction-v1",
+  "verification_commands": [
+    "python3 reverse_physics/bt_offshell_jet_obstruction.py --check",
+    "python3 reverse_physics/verify_bt_offshell_jet_obstruction.py",
+    "python3 -m unittest -v reverse_physics.tests.test_bt_offshell_jet_obstruction"
+  ]
+}
