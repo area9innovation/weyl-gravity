@@ -1,0 +1,141 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-perfect-square-rg-separatrix-v1.schema.json",
+  "title": "BT perfect-square one-loop RG separatrix",
+  "$defs": {
+    "string": {"type": "string", "minLength": 1},
+    "strings": {"type": "array", "items": {"$ref": "#/$defs/string"}},
+    "input": {
+      "type": "object",
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {"$ref": "#/$defs/string"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      },
+      "additionalProperties": false
+    }
+  },
+  "type": "object",
+  "required": [
+    "certificate", "schema_version", "dependency_tags", "lifecycle_state",
+    "result_kind", "question", "answer", "coupling_map",
+    "one_loop_beta_restriction", "counterterm_closure",
+    "four_point_one_loop_sectors", "on_shell_boundary",
+    "finite_jet_nonuniqueness", "real_threshold_matching", "disposition",
+    "missing_object_ledger", "next_gate", "does_not_establish", "provenance",
+    "verification_commands", "checks", "report", "schema"
+  ],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_PERFECT_SQUARE_RG_SEPARATRIX_V1"},
+    "schema_version": {"const": "reverse-physics-bt-perfect-square-rg-separatrix-v1"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "result_kind": {"$ref": "#/$defs/string"},
+    "question": {"$ref": "#/$defs/string"},
+    "answer": {"$ref": "#/$defs/string"},
+    "coupling_map": {
+      "type": "object",
+      "required": ["holdom_lagrangian", "bt_lagrangian", "lambda3", "lambda4", "defining_polynomial"],
+      "properties": {
+        "holdom_lagrangian": {"$ref": "#/$defs/string"},
+        "bt_lagrangian": {"$ref": "#/$defs/string"},
+        "lambda3": {"const": "-lambda"},
+        "lambda4": {"const": "-lambda^2/2"},
+        "defining_polynomial": {"const": "F=lambda3^2+2*lambda4"}
+      },
+      "additionalProperties": false
+    },
+    "one_loop_beta_restriction": {
+      "type": "object",
+      "required": ["common_factor", "beta3_over_K", "beta4_over_K", "lie_derivative_identity", "restricted_beta3_over_K", "restricted_beta_lambda", "integrated_running", "classification", "polynomial_points", "separatrix_samples", "monomial_parabola_classification"],
+      "properties": {
+        "common_factor": {"const": "K=5/(4*pi^2)"},
+        "beta3_over_K": {"const": "-(lambda4*lambda3+3/4*lambda3^3)"},
+        "beta4_over_K": {"const": "-(lambda4^2+lambda4*lambda3^2)"},
+        "lie_derivative_identity": {"const": "beta(F)/K=-F*(lambda4+3/2*lambda3^2)"},
+        "restricted_beta3_over_K": {"const": "-lambda3^3/4"},
+        "restricted_beta_lambda": {"const": "-5*lambda^3/(16*pi^2)"},
+        "integrated_running": {"const": "1/lambda(mu)^2=1/lambda(mu0)^2+5/(8*pi^2)*log(mu/mu0)"},
+        "classification": {"const": "ONE_LOOP_ASYMPTOTICALLY_FREE_RG_INVARIANT_LOCUS"},
+        "polynomial_points": {"type": "array", "minItems": 4, "maxItems": 4},
+        "separatrix_samples": {"type": "array", "minItems": 6, "maxItems": 6},
+        "monomial_parabola_classification": {
+          "type": "object",
+          "required": ["ansatz", "invariance_polynomial", "roots", "conclusion"],
+          "properties": {
+            "ansatz": {"const": "lambda4=c*lambda3^2"},
+            "invariance_polynomial": {"const": "c*(c+1/2)=0"},
+            "roots": {"type": "array", "minItems": 2, "maxItems": 2},
+            "conclusion": {"$ref": "#/$defs/string"}
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "counterterm_closure": {"type": "object", "required": ["one_loop_pole_parameter", "on_ps_locus", "derived", "conclusion"], "additionalProperties": true},
+    "four_point_one_loop_sectors": {"type": "object", "required": ["counting_equations", "scope", "rows", "published_uv_boundary"], "additionalProperties": true},
+    "on_shell_boundary": {"type": "object", "required": ["holdom_2024_forward_cut_factor", "value_on_ps_locus", "meaning"], "properties": {"holdom_2024_forward_cut_factor": {"$ref": "#/$defs/string"}, "value_on_ps_locus": {"const": "0"}, "meaning": {"$ref": "#/$defs/string"}}, "additionalProperties": false},
+    "finite_jet_nonuniqueness": {
+      "type": "object",
+      "required": ["required_carrier", "carrier_dimension", "top_slot", "crossing_symmetric_mutation", "hard_region_assumption", "properties", "inference_boundary", "conclusion"],
+      "properties": {
+        "required_carrier": {"$ref": "#/$defs/string"},
+        "carrier_dimension": {"const": 16},
+        "top_slot": {"const": "x1*x2*x3*x4"},
+        "crossing_symmetric_mutation": {"const": "Delta M_1=c*lambda^4*x1*x2*x3*x4/(s^2+t^2+u^2)"},
+        "hard_region_assumption": {"$ref": "#/$defs/string"},
+        "properties": {"type": "array", "minItems": 5, "items": {"$ref": "#/$defs/string"}},
+        "inference_boundary": {"$ref": "#/$defs/string"},
+        "conclusion": {"$ref": "#/$defs/string"}
+      },
+      "additionalProperties": false
+    },
+    "real_threshold_matching": {"type": "object", "required": ["predecessor_coefficient", "required_virtual_outcome", "status", "reason"], "properties": {"predecessor_coefficient": {"$ref": "#/$defs/string"}, "required_virtual_outcome": {"$ref": "#/$defs/string"}, "status": {"const": "NOT_COMPUTED"}, "reason": {"$ref": "#/$defs/string"}}, "additionalProperties": false},
+    "disposition": {
+      "type": "object",
+      "required": ["ps_one_loop_rg_closure", "ps_one_loop_asymptotic_freedom", "nonzero_quartic_monomial_separatrix_uniqueness", "one_loop_four_point_vertex_count_sectors", "published_data_determine_finite_four_leg_top_jet", "renormalized_four_leg_loop_jet", "real_virtual_collinear_cancellation", "beyond_tree_positivity"],
+      "properties": {
+        "ps_one_loop_rg_closure": {"const": "PROVED_FROM_PUBLISHED_BETA_FUNCTIONS"},
+        "ps_one_loop_asymptotic_freedom": {"const": "PROVED_FROM_PUBLISHED_BETA_FUNCTIONS"},
+        "nonzero_quartic_monomial_separatrix_uniqueness": {"const": "PROVED"},
+        "one_loop_four_point_vertex_count_sectors": {"const": "ENUMERATED"},
+        "published_data_determine_finite_four_leg_top_jet": {"const": "NO"},
+        "renormalized_four_leg_loop_jet": {"const": "NOT_COMPUTED"},
+        "real_virtual_collinear_cancellation": {"const": "NOT_COMPUTED"},
+        "beyond_tree_positivity": {"const": "NOT_ESTABLISHED"}
+      },
+      "additionalProperties": false
+    },
+    "missing_object_ledger": {"type": "array", "minItems": 7, "items": {"$ref": "#/$defs/string"}},
+    "next_gate": {"$ref": "#/$defs/string"},
+    "does_not_establish": {"type": "array", "minItems": 10, "items": {"$ref": "#/$defs/string"}},
+    "provenance": {
+      "type": "object",
+      "required": ["source_commit", "retrieval_date", "inputs", "primary_sources"],
+      "properties": {
+        "source_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "retrieval_date": {"const": "2026-08-09"},
+        "inputs": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"$ref": "#/$defs/input"}},
+        "primary_sources": {"type": "array", "minItems": 3, "maxItems": 3}
+      },
+      "additionalProperties": false
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "items": {"$ref": "#/$defs/string"}},
+    "checks": {
+      "type": "object",
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"const": 17},
+        "total": {"const": 17},
+        "failures": {"maxItems": 0},
+        "details": {"type": "object", "minProperties": 17, "maxProperties": 17, "additionalProperties": {"const": true}}
+      },
+      "additionalProperties": false
+    },
+    "report": {"const": "reverse_physics/reports/bt-perfect-square-rg-separatrix.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-perfect-square-rg-separatrix-v1.schema.json"}
+  },
+  "additionalProperties": false
+}

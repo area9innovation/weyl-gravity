@@ -235,3 +235,14 @@ four-leg virtual jet is the next object that can cancel or fix it.
 EVIDENCE: `reverse_physics/certificates/REVERSE_PHYSICS_BT_FIVE_POINT_INDEPENDENT_MASS_THRESHOLD_V1.json`
 
 MISSING-DEP: renormalized four-leg loop jet on the same mass prescription
+
+## Successor checkpoint
+
+The ultraviolet-algebraic part of that dependency is now closed by
+[`REVERSE_PHYSICS_BT_PERFECT_SQUARE_RG_SEPARATRIX_V1`](../certificates/REVERSE_PHYSICS_BT_PERFECT_SQUARE_RG_SEPARATRIX_V1.json):
+the PS coupling locus is exactly preserved by Holdom's published one-loop beta
+functions, and its counterterm closes on the PS action.  The successor also
+proves that those RG data and the published on-shell cuts do not determine the
+finite independent-external-mass top jet.  Thus the missing dependency is now
+the explicit finite bubble, triangle, and box interference jet, not UV
+renormalizability of the one-coupling locus.
