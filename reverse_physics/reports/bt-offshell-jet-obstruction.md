@@ -272,4 +272,13 @@ CLOSE-OUT: DONE -- the public-data/non-descent question is classified; the
 Bateman loop-completion project remains active at the explicit four-plus-five
 leg jet and common-regulator gate.
 
+SUCCESSOR CHECKPOINT (2026-08-09):
+`REVERSE_PHYSICS_BT_FIVE_POINT_TREE_JET_V1` constructs the complete 25-graph
+tree `2→3` amplitude jet. All degree-zero, one, and two virtuality slots vanish
+identically, so the pointwise fivefold projector of the squared amplitude is
+zero. The nonzero degree-three coefficients have simple soft/collinear poles;
+therefore the physical five-body phase-space distribution and the order of
+regulator removal remain open rather than being silently identified with this
+pointwise result.
+
 EVIDENCE: `reverse_physics/certificates/REVERSE_PHYSICS_BT_OFFSHELL_JET_OBSTRUCTION_V1.json`

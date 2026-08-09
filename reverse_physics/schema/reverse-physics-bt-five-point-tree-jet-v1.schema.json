@@ -1,0 +1,253 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-five-point-tree-jet-v1.schema.json",
+  "title": "BT five-point tree-amplitude jet certificate",
+  "$defs": {
+    "string": {"type": "string", "minLength": 1},
+    "strings": {"type": "array", "items": {"$ref": "#/$defs/string"}},
+    "rational": {
+      "type": "object",
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      },
+      "additionalProperties": false
+    },
+    "jet_row": {
+      "type": "object",
+      "required": ["mask", "subset", "degree", "coefficient"],
+      "properties": {
+        "mask": {"type": "integer", "minimum": 0, "maximum": 31},
+        "subset": {"type": "array", "items": {"type": "integer", "minimum": 1, "maximum": 5}},
+        "degree": {"type": "integer", "minimum": 0, "maximum": 5},
+        "coefficient": {"$ref": "#/$defs/rational"}
+      },
+      "additionalProperties": false
+    },
+    "hash_row": {
+      "type": "object",
+      "required": ["mask", "subset", "degree", "canonical_length", "sha256"],
+      "properties": {
+        "mask": {"type": "integer", "minimum": 0, "maximum": 31},
+        "subset": {"type": "array", "items": {"type": "integer", "minimum": 1, "maximum": 5}},
+        "degree": {"type": "integer", "minimum": 3, "maximum": 5},
+        "canonical_length": {"type": "integer", "minimum": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      },
+      "additionalProperties": false
+    },
+    "input": {
+      "type": "object",
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {"$ref": "#/$defs/string"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      },
+      "additionalProperties": false
+    }
+  },
+  "type": "object",
+  "required": [
+    "certificate", "schema_version", "dependency_tags", "lifecycle_state",
+    "result_kind", "question", "answer", "candidate_theorem", "conventions",
+    "topology", "symbolic_jet", "exact_fixtures", "soft_collinear_faces",
+    "disposition", "missing_object_ledger", "next_gate", "does_not_establish",
+    "provenance", "verification_commands", "checks", "report", "schema"
+  ],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_FIVE_POINT_TREE_JET_V1"},
+    "schema_version": {"const": "reverse-physics-bt-five-point-tree-jet-v1"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "result_kind": {"$ref": "#/$defs/string"},
+    "question": {"$ref": "#/$defs/string"},
+    "answer": {"$ref": "#/$defs/string"},
+    "candidate_theorem": {
+      "type": "object",
+      "required": ["statement", "carrier", "proof_obligations", "counterexample_strategy", "finite_machine_boundary"],
+      "properties": {
+        "statement": {"$ref": "#/$defs/string"},
+        "carrier": {"$ref": "#/$defs/string"},
+        "proof_obligations": {"type": "array", "minItems": 6, "items": {"$ref": "#/$defs/string"}},
+        "counterexample_strategy": {"$ref": "#/$defs/string"},
+        "finite_machine_boundary": {"$ref": "#/$defs/string"}
+      },
+      "additionalProperties": false
+    },
+    "conventions": {
+      "type": "object",
+      "required": ["all_momenta", "external_virtualities", "cyclic_invariants", "nonadjacent_identity", "cubic_rule", "quartic_rule", "propagator", "normalized_amplitude", "relative_sign"],
+      "additionalProperties": {"$ref": "#/$defs/string"}
+    },
+    "topology": {
+      "type": "object",
+      "required": ["cubic_quartic_count", "three_cubic_count", "total_count", "cubic_quartic_rows", "three_cubic_rows"],
+      "properties": {
+        "cubic_quartic_count": {"const": 10},
+        "three_cubic_count": {"const": 15},
+        "total_count": {"const": 25},
+        "cubic_quartic_rows": {
+          "type": "array", "minItems": 10, "maxItems": 10,
+          "items": {
+            "type": "object",
+            "required": ["cubic_external_pair", "quartic_external_triple"],
+            "properties": {
+              "cubic_external_pair": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "integer", "minimum": 0, "maximum": 4}},
+              "quartic_external_triple": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "integer", "minimum": 0, "maximum": 4}}
+            },
+            "additionalProperties": false
+          }
+        },
+        "three_cubic_rows": {
+          "type": "array", "minItems": 15, "maxItems": 15,
+          "items": {
+            "type": "object",
+            "required": ["central_external", "left_external_pair", "right_external_pair"],
+            "properties": {
+              "central_external": {"type": "integer", "minimum": 0, "maximum": 4},
+              "left_external_pair": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "integer", "minimum": 0, "maximum": 4}},
+              "right_external_pair": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "integer", "minimum": 0, "maximum": 4}}
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "symbolic_jet": {
+      "type": "object",
+      "required": ["ring", "slot_count", "zero_low_degree_rows", "nonzero_degree_counts", "coefficient_hashes", "canonical_serialization", "projected_square_zero", "identity"],
+      "properties": {
+        "ring": {"$ref": "#/$defs/string"},
+        "slot_count": {"const": 32},
+        "zero_low_degree_rows": {
+          "type": "array", "minItems": 16, "maxItems": 16,
+          "items": {
+            "type": "object",
+            "required": ["mask", "degree", "canonical_zero"],
+            "properties": {
+              "mask": {"type": "integer", "minimum": 0, "maximum": 31},
+              "degree": {"type": "integer", "minimum": 0, "maximum": 2},
+              "canonical_zero": {"const": true}
+            },
+            "additionalProperties": false
+          }
+        },
+        "nonzero_degree_counts": {
+          "const": {"3": 10, "4": 5, "5": 1}
+        },
+        "coefficient_hashes": {"type": "array", "minItems": 16, "maxItems": 16, "items": {"$ref": "#/$defs/hash_row"}},
+        "canonical_serialization": {"$ref": "#/$defs/string"},
+        "projected_square_zero": {"const": true},
+        "identity": {"$ref": "#/$defs/string"}
+      },
+      "additionalProperties": false
+    },
+    "exact_fixtures": {
+      "type": "array", "minItems": 3, "maxItems": 3,
+      "items": {
+        "type": "object",
+        "required": ["fixture", "cyclic_invariants", "jet_rows", "nonzero_masks", "minimum_nonzero_degree", "projected_square"],
+        "properties": {
+          "fixture": {"$ref": "#/$defs/string"},
+          "cyclic_invariants": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"$ref": "#/$defs/rational"}},
+          "jet_rows": {"type": "array", "minItems": 32, "maxItems": 32, "items": {"$ref": "#/$defs/jet_row"}},
+          "nonzero_masks": {"type": "array", "minItems": 16, "maxItems": 16, "items": {"type": "integer", "minimum": 0, "maximum": 31}},
+          "minimum_nonzero_degree": {"const": 3},
+          "projected_square": {"$ref": "#/$defs/rational"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "soft_collinear_faces": {
+      "type": "array", "minItems": 3, "maxItems": 3,
+      "items": {
+        "type": "object",
+        "required": ["face", "trajectory", "description", "coefficient_rows", "degree_ranges", "projected_square_zero_for_nonzero_epsilon"],
+        "properties": {
+          "face": {"$ref": "#/$defs/string"},
+          "trajectory": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"$ref": "#/$defs/string"}},
+          "description": {"$ref": "#/$defs/string"},
+          "coefficient_rows": {
+            "type": "array", "minItems": 16, "maxItems": 16,
+            "items": {
+              "type": "object",
+              "required": ["mask", "degree", "epsilon_valuation"],
+              "properties": {
+                "mask": {"type": "integer", "minimum": 0, "maximum": 31},
+                "degree": {"type": "integer", "minimum": 3, "maximum": 5},
+                "epsilon_valuation": {"type": "integer", "maximum": 0}
+              },
+              "additionalProperties": false
+            }
+          },
+          "degree_ranges": {
+            "type": "array", "minItems": 3, "maxItems": 3,
+            "items": {
+              "type": "object",
+              "required": ["degree", "minimum_valuation", "maximum_valuation"],
+              "properties": {
+                "degree": {"type": "integer", "minimum": 3, "maximum": 5},
+                "minimum_valuation": {"type": "integer", "maximum": 0},
+                "maximum_valuation": {"type": "integer", "maximum": 0}
+              },
+              "additionalProperties": false
+            }
+          },
+          "projected_square_zero_for_nonzero_epsilon": {"const": true}
+        },
+        "additionalProperties": false
+      }
+    },
+    "disposition": {
+      "type": "object",
+      "required": ["complete_five_point_tree_jet", "ordinary_on_shell_five_point_amplitude", "amplitude_virtuality_order", "pointwise_D5_amplitude_square", "leading_jet_soft_collinear_behavior", "five_body_phase_space_projector", "distributional_boundary_terms", "real_virtual_cancellation", "physical_nlo_process_map", "beyond_tree_positivity"],
+      "properties": {
+        "complete_five_point_tree_jet": {"const": "COMPUTED_AND_HASHED"},
+        "ordinary_on_shell_five_point_amplitude": {"const": "ZERO"},
+        "amplitude_virtuality_order": {"const": "AT_LEAST_THREE_EXACTLY_THREE_GENERIC"},
+        "pointwise_D5_amplitude_square": {"const": "ZERO"},
+        "leading_jet_soft_collinear_behavior": {"const": "SIMPLE_POLES_ON_DECLARED_FACES"},
+        "five_body_phase_space_projector": {"const": "NOT_CONSTRUCTED"},
+        "distributional_boundary_terms": {"const": "NOT_CLASSIFIED"},
+        "real_virtual_cancellation": {"const": "NOT_COMPUTED"},
+        "physical_nlo_process_map": {"const": "NOT_CONSTRUCTED"},
+        "beyond_tree_positivity": {"const": "NOT_ESTABLISHED"}
+      },
+      "additionalProperties": false
+    },
+    "missing_object_ledger": {"type": "array", "minItems": 6, "items": {"$ref": "#/$defs/string"}},
+    "next_gate": {"$ref": "#/$defs/string"},
+    "does_not_establish": {"type": "array", "minItems": 8, "items": {"$ref": "#/$defs/string"}},
+    "provenance": {
+      "type": "object",
+      "required": ["source_commit", "retrieval_date", "inputs", "primary_source", "interpreter", "sympy_version"],
+      "properties": {
+        "source_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "retrieval_date": {"const": "2026-08-09"},
+        "inputs": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"$ref": "#/$defs/input"}},
+        "primary_source": {"type": "string", "format": "uri"},
+        "interpreter": {"$ref": "#/$defs/string"},
+        "sympy_version": {"const": "1.14.0"}
+      },
+      "additionalProperties": false
+    },
+    "verification_commands": {"type": "array", "minItems": 4, "items": {"$ref": "#/$defs/string"}},
+    "checks": {
+      "type": "object",
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"type": "integer", "minimum": 1},
+        "total": {"type": "integer", "minimum": 1},
+        "failures": {"const": []},
+        "details": {"type": "object", "minProperties": 12, "additionalProperties": {"const": true}}
+      },
+      "additionalProperties": false
+    },
+    "report": {"const": "reverse_physics/reports/bt-five-point-tree-jet.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-five-point-tree-jet-v1.schema.json"}
+  },
+  "additionalProperties": false
+}

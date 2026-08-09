@@ -1,0 +1,2360 @@
+{
+  "answer": "The normalized amplitude M5/(8 lambda^3) has exactly the 16 degree-3, degree-4, and degree-5 square-free slots. All 16 slots of degree at most 2 vanish identically in Q(s0,...,s4). Consequently the top coefficient of |M5|^2 is exactly zero at nonexceptional kinematics, although individual leading jet coefficients have simple soft/collinear poles.",
+  "candidate_theorem": {
+    "carrier": "Q(s0,...,s4)[x1,...,x5]/(xi^2), with exact rational-function coefficients and all momenta incoming.",
+    "counterexample_strategy": "Flip the relative sign of the three-cubic family or omit one labeled tree; either mutation must populate a forbidden low-degree slot.",
+    "finite_machine_boundary": "Exact 32-slot square-free jet, 25 labeled trees, three exact rational kinematic fixtures, and three exact one-parameter faces.",
+    "proof_obligations": [
+      "enumerate every labeled tree exactly once",
+      "preserve the relative sign fixed by the published Feynman rules",
+      "prove all degree-zero, one, and two jet coefficients vanish canonically",
+      "construct and content-hash all remaining 16 coefficient functions",
+      "verify the squared top coefficient independently",
+      "separate pointwise amplitude algebra from phase-space distributions"
+    ],
+    "statement": "In the cyclic five-invariant chart and away from internal channel zeros, the complete PS five-point tree amplitude lies in the third power of the external-virtuality ideal; therefore D5|M5|^2=0 pointwise."
+  },
+  "certificate": "REVERSE_PHYSICS_BT_FIVE_POINT_TREE_JET_V1",
+  "checks": {
+    "details": {
+      "all_faces_keep_projected_square_zero": true,
+      "all_fixture_projected_squares_zero": true,
+      "all_fixtures_have_complete_32_slot_rows": true,
+      "all_fixtures_have_exact_degree_3_to_5_support": true,
+      "all_low_degree_symbolic_coefficients_zero": true,
+      "fifteen_three_cubic_trees": true,
+      "full_symbolic_projected_square_zero": true,
+      "full_symbolic_support_hashed": true,
+      "leading_face_poles_are_at_most_simple": true,
+      "no_lorentzian_claim": true,
+      "physical_phase_space_stays_fail_closed": true,
+      "ten_cubic_quartic_trees": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 12,
+    "total": 12
+  },
+  "conventions": {
+    "all_momenta": "incoming, k1+...+k5=0",
+    "cubic_rule": "-2 i lambda [p1^2 p2.p3 + p2^2 p1.p3 + p3^2 p1.p2]",
+    "cyclic_invariants": "si=(ki+k_{i+1})^2 with indices modulo 5",
+    "external_virtualities": "xi=ki^2",
+    "nonadjacent_identity": "(ki+k_{i+2})^2=s_{i+3}-s_i-s_{i+1}+x_i+x_{i+1}+x_{i+2}",
+    "normalized_amplitude": "A5=M5/(8 lambda^3)",
+    "propagator": "-i/(K^2+i epsilon)^2",
+    "quartic_rule": "-4 i lambda^2 [p1.p2 p3.p4 + p1.p3 p2.p4 + p1.p4 p2.p3]",
+    "relative_sign": "+ for cubic-quartic trees and - for three-cubic trees",
+    "tree_conjugation": "away from channel poles the tree coefficients are real rational functions, so dagger fixes A5"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "disposition": {
+    "amplitude_virtuality_order": "AT_LEAST_THREE_EXACTLY_THREE_GENERIC",
+    "beyond_tree_positivity": "NOT_ESTABLISHED",
+    "complete_five_point_tree_jet": "COMPUTED_AND_HASHED",
+    "distributional_boundary_terms": "NOT_CLASSIFIED",
+    "five_body_phase_space_projector": "NOT_CONSTRUCTED",
+    "leading_jet_soft_collinear_behavior": "SIMPLE_POLES_ON_DECLARED_FACES",
+    "ordinary_on_shell_five_point_amplitude": "ZERO",
+    "physical_nlo_process_map": "NOT_CONSTRUCTED",
+    "pointwise_D5_amplitude_square": "ZERO",
+    "real_virtual_cancellation": "NOT_COMPUTED"
+  },
+  "does_not_establish": [
+    "that physical 2->3 probability vanishes after phase-space integration",
+    "that differentiation commutes with the collinear regulator limit",
+    "absence of distributional boundary or pinch contributions",
+    "a real--virtual KLN cancellation or resummation",
+    "a finite NLO cross section or positivity beyond tree level",
+    "scheme or field-redefinition invariance of the completed construction",
+    "a tensor/BRST gravitational lift or anything LORENTZIAN-CAUSAL",
+    "literature priority for the five-point cancellation"
+  ],
+  "exact_fixtures": [
+    {
+      "cyclic_invariants": [
+        {
+          "denominator": 1,
+          "numerator": 2
+        },
+        {
+          "denominator": 1,
+          "numerator": 3
+        },
+        {
+          "denominator": 1,
+          "numerator": 5
+        },
+        {
+          "denominator": 1,
+          "numerator": 7
+        },
+        {
+          "denominator": 1,
+          "numerator": 11
+        }
+      ],
+      "fixture": "F1",
+      "jet_rows": [
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "degree": 0,
+          "mask": 0,
+          "subset": []
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "degree": 1,
+          "mask": 1,
+          "subset": [
+            1
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "degree": 1,
+          "mask": 2,
+          "subset": [
+            2
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "degree": 2,
+          "mask": 3,
+          "subset": [
+            1,
+            2
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "degree": 1,
+          "mask": 4,
+          "subset": [
+            3
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "degree": 2,
+          "mask": 5,
+          "subset": [
+            1,
+            3
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "degree": 2,
+          "mask": 6,
+          "subset": [
+            2,
+            3
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 880,
+            "numerator": 733
+          },
+          "degree": 3,
+          "mask": 7,
+          "subset": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "degree": 1,
+          "mask": 8,
+          "subset": [
+            4
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "degree": 2,
+          "mask": 9,
+          "subset": [
+            1,
+            4
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "degree": 2,
+          "mask": 10,
+          "subset": [
+            2,
+            4
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 6160,
+            "numerator": 5879
+          },
+          "degree": 3,
+          "mask": 11,
+          "subset": [
+            1,
+            2,
+            4
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "degree": 2,
+          "mask": 12,
+          "subset": [
+            3,
+            4
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 1540,
+            "numerator": 1489
+          },
+          "degree": 3,
+          "mask": 13,
+          "subset": [
+            1,
+            3,
+            4
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 560,
+            "numerator": 481
+          },
+          "degree": 3,
+          "mask": 14,
+          "subset": [
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 49280,
+            "numerator": 8983
+          },
+          "degree": 4,
+          "mask": 15,
+          "subset": [
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "degree": 1,
+          "mask": 16,
+          "subset": [
+            5
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "degree": 2,
+          "mask": 17,
+          "subset": [
+            1,
+            5
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "degree": 2,
+          "mask": 18,
+          "subset": [
+            2,
+            5
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 1232,
+            "numerator": 991
+          },
+          "degree": 3,
+          "mask": 19,
+          "subset": [
+            1,
+            2,
+            5
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "degree": 2,
+          "mask": 20,
+          "subset": [
+            3,
+            5
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 18480,
+            "numerator": 13633
+          },
+          "degree": 3,
+          "mask": 21,
+          "subset": [
+            1,
+            3,
+            5
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 18480,
+            "numerator": 17329
+          },
+          "degree": 3,
+          "mask": 22,
+          "subset": [
+            2,
+            3,
+            5
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 12196800,
+            "numerator": 2612069
+          },
+          "degree": 4,
+          "mask": 23,
+          "subset": [
+            1,
+            2,
+            3,
+            5
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "degree": 2,
+          "mask": 24,
+          "subset": [
+            4,
+            5
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 18480,
+            "numerator": 13633
+          },
+          "degree": 3,
+          "mask": 25,
+          "subset": [
+            1,
+            4,
+            5
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 6160,
+            "numerator": 4031
+          },
+          "degree": 3,
+          "mask": 26,
+          "subset": [
+            2,
+            4,
+            5
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 17075520,
+            "numerator": 4978991
+          },
+          "degree": 4,
+          "mask": 27,
+          "subset": [
+            1,
+            2,
+            4,
+            5
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 6160,
+            "numerator": 4031
+          },
+          "degree": 3,
+          "mask": 28,
+          "subset": [
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 170755200,
+            "numerator": 32340863
+          },
+          "degree": 4,
+          "mask": 29,
+          "subset": [
+            1,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 1724800,
+            "numerator": 323381
+          },
+          "degree": 4,
+          "mask": 30,
+          "subset": [
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 2049062400,
+            "numerator": -60848563
+          },
+          "degree": 5,
+          "mask": 31,
+          "subset": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        }
+      ],
+      "minimum_nonzero_degree": 3,
+      "nonzero_masks": [
+        7,
+        11,
+        13,
+        14,
+        15,
+        19,
+        21,
+        22,
+        23,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "projected_square": {
+        "denominator": 1,
+        "numerator": 0
+      }
+    },
+    {
+      "cyclic_invariants": [
+        {
+          "denominator": 1,
+          "numerator": 3
+        },
+        {
+          "denominator": 1,
+          "numerator": 5
+        },
+        {
+          "denominator": 1,
+          "numerator": 8
+        },
+        {
+          "denominator": 1,
+          "numerator": 13
+        },
+        {
+          "denominator": 1,
+          "numerator": 21
+        }
+      ],
+      "fixture": "F2",
+      "jet_rows": [
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "degree": 0,
+          "mask": 0,
+          "subset": []
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "degree": 1,
+          "mask": 1,
+          "subset": [
+            1
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "degree": 1,
+          "mask": 2,
+          "subset": [
+            2
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "degree": 2,
+          "mask": 3,
+          "subset": [
+            1,
+            2
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "degree": 1,
+          "mask": 4,
+          "subset": [
+            3
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "degree": 2,
+          "mask": 5,
+          "subset": [
+            1,
+            3
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "degree": 2,
+          "mask": 6,
+          "subset": [
+            2,
+            3
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 292320,
+            "numerator": 128389
+          },
+          "degree": 3,
+          "mask": 7,
+          "subset": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "degree": 1,
+          "mask": 8,
+          "subset": [
+            4
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "degree": 2,
+          "mask": 9,
+          "subset": [
+            1,
+            4
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "degree": 2,
+          "mask": 10,
+          "subset": [
+            2,
+            4
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 1266720,
+            "numerator": 640259
+          },
+          "degree": 3,
+          "mask": 11,
+          "subset": [
+            1,
+            2,
+            4
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "degree": 2,
+          "mask": 12,
+          "subset": [
+            3,
+            4
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 950040,
+            "numerator": 483493
+          },
+          "degree": 3,
+          "mask": 13,
+          "subset": [
+            1,
+            3,
+            4
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 542880,
+            "numerator": 246391
+          },
+          "degree": 3,
+          "mask": 14,
+          "subset": [
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 79347340800,
+            "numerator": 9486494429
+          },
+          "degree": 4,
+          "mask": 15,
+          "subset": [
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "degree": 1,
+          "mask": 16,
+          "subset": [
+            5
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "degree": 2,
+          "mask": 17,
+          "subset": [
+            1,
+            5
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "degree": 2,
+          "mask": 18,
+          "subset": [
+            2,
+            5
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 3800160,
+            "numerator": 1577707
+          },
+          "degree": 3,
+          "mask": 19,
+          "subset": [
+            1,
+            2,
+            5
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "degree": 2,
+          "mask": 20,
+          "subset": [
+            3,
+            5
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 3800160,
+            "numerator": 1577707
+          },
+          "degree": 3,
+          "mask": 21,
+          "subset": [
+            1,
+            3,
+            5
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 131040,
+            "numerator": 64853
+          },
+          "degree": 3,
+          "mask": 22,
+          "subset": [
+            2,
+            3,
+            5
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 277715692800,
+            "numerator": 32975187439
+          },
+          "degree": 4,
+          "mask": 23,
+          "subset": [
+            1,
+            2,
+            3,
+            5
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "degree": 2,
+          "mask": 24,
+          "subset": [
+            4,
+            5
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 3800160,
+            "numerator": 1435201
+          },
+          "degree": 3,
+          "mask": 25,
+          "subset": [
+            1,
+            4,
+            5
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 3800160,
+            "numerator": 1435201
+          },
+          "degree": 3,
+          "mask": 26,
+          "subset": [
+            2,
+            4,
+            5
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 3610304006400,
+            "numerator": 437212374307
+          },
+          "degree": 4,
+          "mask": 27,
+          "subset": [
+            1,
+            2,
+            4,
+            5
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 3800160,
+            "numerator": 1181857
+          },
+          "degree": 3,
+          "mask": 28,
+          "subset": [
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 7220608012800,
+            "numerator": 532650695539
+          },
+          "degree": 4,
+          "mask": 29,
+          "subset": [
+            1,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 206303086080,
+            "numerator": 17621659877
+          },
+          "degree": 4,
+          "mask": 30,
+          "subset": [
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 75383147653632000,
+            "numerator": 1316241965859871
+          },
+          "degree": 5,
+          "mask": 31,
+          "subset": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        }
+      ],
+      "minimum_nonzero_degree": 3,
+      "nonzero_masks": [
+        7,
+        11,
+        13,
+        14,
+        15,
+        19,
+        21,
+        22,
+        23,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "projected_square": {
+        "denominator": 1,
+        "numerator": 0
+      }
+    },
+    {
+      "cyclic_invariants": [
+        {
+          "denominator": 1,
+          "numerator": 5
+        },
+        {
+          "denominator": 1,
+          "numerator": -2
+        },
+        {
+          "denominator": 1,
+          "numerator": 7
+        },
+        {
+          "denominator": 1,
+          "numerator": 4
+        },
+        {
+          "denominator": 1,
+          "numerator": 11
+        }
+      ],
+      "fixture": "F3",
+      "jet_rows": [
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "degree": 0,
+          "mask": 0,
+          "subset": []
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "degree": 1,
+          "mask": 1,
+          "subset": [
+            1
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "degree": 1,
+          "mask": 2,
+          "subset": [
+            2
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "degree": 2,
+          "mask": 3,
+          "subset": [
+            1,
+            2
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "degree": 1,
+          "mask": 4,
+          "subset": [
+            3
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "degree": 2,
+          "mask": 5,
+          "subset": [
+            1,
+            3
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "degree": 2,
+          "mask": 6,
+          "subset": [
+            2,
+            3
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 235620,
+            "numerator": 89987
+          },
+          "degree": 3,
+          "mask": 7,
+          "subset": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "degree": 1,
+          "mask": 8,
+          "subset": [
+            4
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "degree": 2,
+          "mask": 9,
+          "subset": [
+            1,
+            4
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "degree": 2,
+          "mask": 10,
+          "subset": [
+            2,
+            4
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 471240,
+            "numerator": 278149
+          },
+          "degree": 3,
+          "mask": 11,
+          "subset": [
+            1,
+            2,
+            4
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "degree": 2,
+          "mask": 12,
+          "subset": [
+            3,
+            4
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 52360,
+            "numerator": 29451
+          },
+          "degree": 3,
+          "mask": 13,
+          "subset": [
+            1,
+            3,
+            4
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 42840,
+            "numerator": 19769
+          },
+          "degree": 3,
+          "mask": 14,
+          "subset": [
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 2523490200,
+            "numerator": -1725529931
+          },
+          "degree": 4,
+          "mask": 15,
+          "subset": [
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "degree": 1,
+          "mask": 16,
+          "subset": [
+            5
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "degree": 2,
+          "mask": 17,
+          "subset": [
+            1,
+            5
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "degree": 2,
+          "mask": 18,
+          "subset": [
+            2,
+            5
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 67320,
+            "numerator": 29317
+          },
+          "degree": 3,
+          "mask": 19,
+          "subset": [
+            1,
+            2,
+            5
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "degree": 2,
+          "mask": 20,
+          "subset": [
+            3,
+            5
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 471240,
+            "numerator": 199609
+          },
+          "degree": 3,
+          "mask": 21,
+          "subset": [
+            1,
+            3,
+            5
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 27720,
+            "numerator": 14867
+          },
+          "degree": 3,
+          "mask": 22,
+          "subset": [
+            2,
+            3,
+            5
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 991371150,
+            "numerator": -676256747
+          },
+          "degree": 4,
+          "mask": 23,
+          "subset": [
+            1,
+            2,
+            3,
+            5
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "degree": 2,
+          "mask": 24,
+          "subset": [
+            4,
+            5
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 471240,
+            "numerator": 356689
+          },
+          "degree": 3,
+          "mask": 25,
+          "subset": [
+            1,
+            4,
+            5
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 471240,
+            "numerator": 3259
+          },
+          "degree": 3,
+          "mask": 26,
+          "subset": [
+            2,
+            4,
+            5
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 15861938400,
+            "numerator": -4403638277
+          },
+          "degree": 4,
+          "mask": 27,
+          "subset": [
+            1,
+            2,
+            4,
+            5
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 94248,
+            "numerator": 38351
+          },
+          "degree": 3,
+          "mask": 28,
+          "subset": [
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 22206713760,
+            "numerator": -6553976843
+          },
+          "degree": 4,
+          "mask": 29,
+          "subset": [
+            1,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 2018792160,
+            "numerator": -376355233
+          },
+          "degree": 4,
+          "mask": 30,
+          "subset": [
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "coefficient": {
+            "denominator": 16988136026400,
+            "numerator": 7184195456861
+          },
+          "degree": 5,
+          "mask": 31,
+          "subset": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        }
+      ],
+      "minimum_nonzero_degree": 3,
+      "nonzero_masks": [
+        7,
+        11,
+        13,
+        14,
+        15,
+        19,
+        21,
+        22,
+        23,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "projected_square": {
+        "denominator": 1,
+        "numerator": 0
+      }
+    }
+  ],
+  "lifecycle_state": "COEFFICIENT_COMPUTED",
+  "missing_object_ledger": [
+    "a five-body phase-space parameterization derived from the BT projector rather than an arbitrary invariant chart",
+    "a common regulator specifying the order of mass differentiation, phase-space integration, and collinear limit",
+    "a proof or counterexample for distributional boundary terms at channel pinch surfaces",
+    "the regulated renormalized four-leg one-loop interference jet",
+    "a real--virtual or dressed-state cancellation theorem if a distributional real term survives",
+    "scheme/field-redefinition invariance of the combined off-shell amplitude and projector"
+  ],
+  "next_gate": "Derive the regulated five-body BT phase-space projector and test whether its distributional mass derivatives preserve the pointwise D5|M5|^2=0 result; separately compute the four-leg loop jet.",
+  "provenance": {
+    "inputs": [
+      {
+        "path": "notes/bateman-turok-embedding.md",
+        "sha256": "0dae9abf59ace0c71087a1d732e8ebdbe2737f2388a3b80175aa82cc5e5f6f27"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_OFFSHELL_JET_OBSTRUCTION_V1.json",
+        "sha256": "d242c9f7c9401438ed886c32cc5fa91f46e2661b4c2319e6b7034319b9b9e0d6"
+      }
+    ],
+    "interpreter": "/home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3",
+    "primary_source": "https://arxiv.org/abs/2607.00096v1",
+    "retrieval_date": "2026-08-09",
+    "source_commit": "527d578dccf72d18cb4e776b3857ec3715270199",
+    "sympy_version": "1.14.0"
+  },
+  "question": "What is the complete square-free five-point PS tree-amplitude jet, and does its amplitude-side BT fivefold probability projector contain a real-emission term?",
+  "report": "reverse_physics/reports/bt-five-point-tree-jet.md",
+  "result_kind": "five-point tree off-shell amplitude jet",
+  "schema": "reverse_physics/schema/reverse-physics-bt-five-point-tree-jet-v1.schema.json",
+  "schema_version": "reverse-physics-bt-five-point-tree-jet-v1",
+  "soft_collinear_faces": [
+    {
+      "coefficient_rows": [
+        {
+          "degree": 3,
+          "epsilon_valuation": -1,
+          "mask": 7
+        },
+        {
+          "degree": 3,
+          "epsilon_valuation": -1,
+          "mask": 11
+        },
+        {
+          "degree": 3,
+          "epsilon_valuation": -1,
+          "mask": 13
+        },
+        {
+          "degree": 3,
+          "epsilon_valuation": -1,
+          "mask": 14
+        },
+        {
+          "degree": 4,
+          "epsilon_valuation": -2,
+          "mask": 15
+        },
+        {
+          "degree": 3,
+          "epsilon_valuation": -1,
+          "mask": 19
+        },
+        {
+          "degree": 3,
+          "epsilon_valuation": -1,
+          "mask": 21
+        },
+        {
+          "degree": 3,
+          "epsilon_valuation": -1,
+          "mask": 22
+        },
+        {
+          "degree": 4,
+          "epsilon_valuation": -2,
+          "mask": 23
+        },
+        {
+          "degree": 3,
+          "epsilon_valuation": -1,
+          "mask": 25
+        },
+        {
+          "degree": 3,
+          "epsilon_valuation": -1,
+          "mask": 26
+        },
+        {
+          "degree": 4,
+          "epsilon_valuation": -2,
+          "mask": 27
+        },
+        {
+          "degree": 3,
+          "epsilon_valuation": 0,
+          "mask": 28
+        },
+        {
+          "degree": 4,
+          "epsilon_valuation": -1,
+          "mask": 29
+        },
+        {
+          "degree": 4,
+          "epsilon_valuation": -1,
+          "mask": 30
+        },
+        {
+          "degree": 5,
+          "epsilon_valuation": -2,
+          "mask": 31
+        }
+      ],
+      "degree_ranges": [
+        {
+          "degree": 3,
+          "maximum_valuation": 0,
+          "minimum_valuation": -1
+        },
+        {
+          "degree": 4,
+          "maximum_valuation": -1,
+          "minimum_valuation": -2
+        },
+        {
+          "degree": 5,
+          "maximum_valuation": -2,
+          "minimum_valuation": -2
+        }
+      ],
+      "description": "s0 -> 0 with every other pair channel nonzero at epsilon=0",
+      "face": "ADJACENT_COLLINEAR_s0",
+      "projected_square_zero_for_nonzero_epsilon": true,
+      "trajectory": [
+        "epsilon",
+        "3",
+        "5",
+        "7",
+        "11"
+      ]
+    },
+    {
+      "coefficient_rows": [
+        {
+          "degree": 3,
+          "epsilon_valuation": -1,
+          "mask": 7
+        },
+        {
+          "degree": 3,
+          "epsilon_valuation": -1,
+          "mask": 11
+        },
+        {
+          "degree": 3,
+          "epsilon_valuation": -1,
+          "mask": 13
+        },
+        {
+          "degree": 3,
+          "epsilon_valuation": -1,
+          "mask": 14
+        },
+        {
+          "degree": 4,
+          "epsilon_valuation": -2,
+          "mask": 15
+        },
+        {
+          "degree": 3,
+          "epsilon_valuation": -1,
+          "mask": 19
+        },
+        {
+          "degree": 3,
+          "epsilon_valuation": -1,
+          "mask": 21
+        },
+        {
+          "degree": 3,
+          "epsilon_valuation": -1,
+          "mask": 22
+        },
+        {
+          "degree": 4,
+          "epsilon_valuation": -2,
+          "mask": 23
+        },
+        {
+          "degree": 3,
+          "epsilon_valuation": -1,
+          "mask": 25
+        },
+        {
+          "degree": 3,
+          "epsilon_valuation": 0,
+          "mask": 26
+        },
+        {
+          "degree": 4,
+          "epsilon_valuation": -2,
+          "mask": 27
+        },
+        {
+          "degree": 3,
+          "epsilon_valuation": -1,
+          "mask": 28
+        },
+        {
+          "degree": 4,
+          "epsilon_valuation": -2,
+          "mask": 29
+        },
+        {
+          "degree": 4,
+          "epsilon_valuation": -2,
+          "mask": 30
+        },
+        {
+          "degree": 5,
+          "epsilon_valuation": -3,
+          "mask": 31
+        }
+      ],
+      "degree_ranges": [
+        {
+          "degree": 3,
+          "maximum_valuation": 0,
+          "minimum_valuation": -1
+        },
+        {
+          "degree": 4,
+          "maximum_valuation": -2,
+          "minimum_valuation": -2
+        },
+        {
+          "degree": 5,
+          "maximum_valuation": -3,
+          "minimum_valuation": -3
+        }
+      ],
+      "description": "z02=s3-s0-s1 -> 0 with other pair channels nonzero",
+      "face": "NONADJACENT_COLLINEAR_z02",
+      "projected_square_zero_for_nonzero_epsilon": true,
+      "trajectory": [
+        "2",
+        "3",
+        "7",
+        "epsilon + 5",
+        "11"
+      ]
+    },
+    {
+      "coefficient_rows": [
+        {
+          "degree": 3,
+          "epsilon_valuation": -1,
+          "mask": 7
+        },
+        {
+          "degree": 3,
+          "epsilon_valuation": -1,
+          "mask": 11
+        },
+        {
+          "degree": 3,
+          "epsilon_valuation": -1,
+          "mask": 13
+        },
+        {
+          "degree": 3,
+          "epsilon_valuation": -1,
+          "mask": 14
+        },
+        {
+          "degree": 4,
+          "epsilon_valuation": -2,
+          "mask": 15
+        },
+        {
+          "degree": 3,
+          "epsilon_valuation": -1,
+          "mask": 19
+        },
+        {
+          "degree": 3,
+          "epsilon_valuation": -1,
+          "mask": 21
+        },
+        {
+          "degree": 3,
+          "epsilon_valuation": -1,
+          "mask": 22
+        },
+        {
+          "degree": 4,
+          "epsilon_valuation": -2,
+          "mask": 23
+        },
+        {
+          "degree": 3,
+          "epsilon_valuation": -1,
+          "mask": 25
+        },
+        {
+          "degree": 3,
+          "epsilon_valuation": -1,
+          "mask": 26
+        },
+        {
+          "degree": 4,
+          "epsilon_valuation": -2,
+          "mask": 27
+        },
+        {
+          "degree": 3,
+          "epsilon_valuation": -1,
+          "mask": 28
+        },
+        {
+          "degree": 4,
+          "epsilon_valuation": -2,
+          "mask": 29
+        },
+        {
+          "degree": 4,
+          "epsilon_valuation": -2,
+          "mask": 30
+        },
+        {
+          "degree": 5,
+          "epsilon_valuation": -3,
+          "mask": 31
+        }
+      ],
+      "degree_ranges": [
+        {
+          "degree": 3,
+          "maximum_valuation": -1,
+          "minimum_valuation": -1
+        },
+        {
+          "degree": 4,
+          "maximum_valuation": -2,
+          "minimum_valuation": -2
+        },
+        {
+          "degree": 5,
+          "maximum_valuation": -3,
+          "minimum_valuation": -3
+        }
+      ],
+      "description": "all four pair invariants incident on external leg 5 scale as epsilon",
+      "face": "SOFT_LEG_5",
+      "projected_square_zero_for_nonzero_epsilon": true,
+      "trajectory": [
+        "2",
+        "3",
+        "5*epsilon + 2",
+        "7*epsilon",
+        "11*epsilon"
+      ]
+    }
+  ],
+  "symbolic_jet": {
+    "canonical_serialization": "str(FracElement) from SymPy 1.14 rational-function field over QQ",
+    "coefficient_hashes": [
+      {
+        "canonical_length": 6651,
+        "degree": 3,
+        "mask": 7,
+        "sha256": "4246d7a79bf339e1a313d63fd6d9f1dd204a2250ade4847759701032b7d39119",
+        "subset": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "canonical_length": 3893,
+        "degree": 3,
+        "mask": 11,
+        "sha256": "88fcffb76df3d49c9ed0c981d0a42498a7f216867d6b747cc0435f61e31def1d",
+        "subset": [
+          1,
+          2,
+          4
+        ]
+      },
+      {
+        "canonical_length": 3893,
+        "degree": 3,
+        "mask": 13,
+        "sha256": "8947e4c875df1ef1d57b9e22170576560d245c49cbb350654430495e1603ded7",
+        "subset": [
+          1,
+          3,
+          4
+        ]
+      },
+      {
+        "canonical_length": 6651,
+        "degree": 3,
+        "mask": 14,
+        "sha256": "b0b06e14ad2b4d29cab57d44285021c62e07230355c522a813f44ffc88c9fd3e",
+        "subset": [
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "canonical_length": 79258,
+        "degree": 4,
+        "mask": 15,
+        "sha256": "74d5a1c0de019f62569cf474e891a0d02cee18af5d85ccf47fec255add2c3ed2",
+        "subset": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "canonical_length": 6651,
+        "degree": 3,
+        "mask": 19,
+        "sha256": "d062d95d978662b07963baad679618641433347ec95cf776c82526279534235b",
+        "subset": [
+          1,
+          2,
+          5
+        ]
+      },
+      {
+        "canonical_length": 3893,
+        "degree": 3,
+        "mask": 21,
+        "sha256": "9491c62155c91a6754d4259f905718723083b20d25a837a3de890a682d6fa0cb",
+        "subset": [
+          1,
+          3,
+          5
+        ]
+      },
+      {
+        "canonical_length": 3893,
+        "degree": 3,
+        "mask": 22,
+        "sha256": "710d3c9dcdb2c0d2ae6aeb4d6556d20dd7cb80b6c76a46ae342bf71e5f73bde0",
+        "subset": [
+          2,
+          3,
+          5
+        ]
+      },
+      {
+        "canonical_length": 79258,
+        "degree": 4,
+        "mask": 23,
+        "sha256": "df9ecf867f898f2f4d30432f581b3b90993d5424cd9224b82dbd26c4bbd233f6",
+        "subset": [
+          1,
+          2,
+          3,
+          5
+        ]
+      },
+      {
+        "canonical_length": 6651,
+        "degree": 3,
+        "mask": 25,
+        "sha256": "0c9af7f30ce5f99b39c6bf6981e5849d63644dd92cbfd95ae485470e924ec1a0",
+        "subset": [
+          1,
+          4,
+          5
+        ]
+      },
+      {
+        "canonical_length": 3893,
+        "degree": 3,
+        "mask": 26,
+        "sha256": "aaa6f4c5b6697cb31d9e68bbc3e9f877b0ea807435794472f553a1441964a4a8",
+        "subset": [
+          2,
+          4,
+          5
+        ]
+      },
+      {
+        "canonical_length": 79258,
+        "degree": 4,
+        "mask": 27,
+        "sha256": "b54d76e51fc3629b1990b6f53646683619d1b9f3d5b9b838062384152782631b",
+        "subset": [
+          1,
+          2,
+          4,
+          5
+        ]
+      },
+      {
+        "canonical_length": 6651,
+        "degree": 3,
+        "mask": 28,
+        "sha256": "9f362739fa21836114e413326c88ed6590ea48cc8da658d2845ccc3514aa6909",
+        "subset": [
+          3,
+          4,
+          5
+        ]
+      },
+      {
+        "canonical_length": 79258,
+        "degree": 4,
+        "mask": 29,
+        "sha256": "deacb3040ba9f15970c44d74ad423495a867a001b86a534e8d4e9aedf7741d30",
+        "subset": [
+          1,
+          3,
+          4,
+          5
+        ]
+      },
+      {
+        "canonical_length": 79258,
+        "degree": 4,
+        "mask": 30,
+        "sha256": "27747a5fb35f7ecbd69bd05ab65ff3a745a5572aecc57fdfedf48c528e917e87",
+        "subset": [
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      {
+        "canonical_length": 332397,
+        "degree": 5,
+        "mask": 31,
+        "sha256": "c2f24609696b266043a630e04349776c3d1a7ece4f41296cb65ccc5bd78b5e73",
+        "subset": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      }
+    ],
+    "identity": "A5 in (x1,...,x5)^3 implies coefficient_[x1...x5](A5^2)=0",
+    "nonzero_degree_counts": {
+      "3": 10,
+      "4": 5,
+      "5": 1
+    },
+    "projected_square_zero": true,
+    "ring": "Q(s0,s1,s2,s3,s4)[x1,...,x5]/(xi^2)",
+    "slot_count": 32,
+    "zero_low_degree_rows": [
+      {
+        "canonical_zero": true,
+        "degree": 0,
+        "mask": 0
+      },
+      {
+        "canonical_zero": true,
+        "degree": 1,
+        "mask": 1
+      },
+      {
+        "canonical_zero": true,
+        "degree": 1,
+        "mask": 2
+      },
+      {
+        "canonical_zero": true,
+        "degree": 2,
+        "mask": 3
+      },
+      {
+        "canonical_zero": true,
+        "degree": 1,
+        "mask": 4
+      },
+      {
+        "canonical_zero": true,
+        "degree": 2,
+        "mask": 5
+      },
+      {
+        "canonical_zero": true,
+        "degree": 2,
+        "mask": 6
+      },
+      {
+        "canonical_zero": true,
+        "degree": 1,
+        "mask": 8
+      },
+      {
+        "canonical_zero": true,
+        "degree": 2,
+        "mask": 9
+      },
+      {
+        "canonical_zero": true,
+        "degree": 2,
+        "mask": 10
+      },
+      {
+        "canonical_zero": true,
+        "degree": 2,
+        "mask": 12
+      },
+      {
+        "canonical_zero": true,
+        "degree": 1,
+        "mask": 16
+      },
+      {
+        "canonical_zero": true,
+        "degree": 2,
+        "mask": 17
+      },
+      {
+        "canonical_zero": true,
+        "degree": 2,
+        "mask": 18
+      },
+      {
+        "canonical_zero": true,
+        "degree": 2,
+        "mask": 20
+      },
+      {
+        "canonical_zero": true,
+        "degree": 2,
+        "mask": 24
+      }
+    ]
+  },
+  "topology": {
+    "cubic_quartic_count": 10,
+    "cubic_quartic_rows": [
+      {
+        "cubic_external_pair": [
+          0,
+          1
+        ],
+        "quartic_external_triple": [
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "cubic_external_pair": [
+          0,
+          2
+        ],
+        "quartic_external_triple": [
+          1,
+          3,
+          4
+        ]
+      },
+      {
+        "cubic_external_pair": [
+          0,
+          3
+        ],
+        "quartic_external_triple": [
+          1,
+          2,
+          4
+        ]
+      },
+      {
+        "cubic_external_pair": [
+          0,
+          4
+        ],
+        "quartic_external_triple": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "cubic_external_pair": [
+          1,
+          2
+        ],
+        "quartic_external_triple": [
+          0,
+          3,
+          4
+        ]
+      },
+      {
+        "cubic_external_pair": [
+          1,
+          3
+        ],
+        "quartic_external_triple": [
+          0,
+          2,
+          4
+        ]
+      },
+      {
+        "cubic_external_pair": [
+          1,
+          4
+        ],
+        "quartic_external_triple": [
+          0,
+          2,
+          3
+        ]
+      },
+      {
+        "cubic_external_pair": [
+          2,
+          3
+        ],
+        "quartic_external_triple": [
+          0,
+          1,
+          4
+        ]
+      },
+      {
+        "cubic_external_pair": [
+          2,
+          4
+        ],
+        "quartic_external_triple": [
+          0,
+          1,
+          3
+        ]
+      },
+      {
+        "cubic_external_pair": [
+          3,
+          4
+        ],
+        "quartic_external_triple": [
+          0,
+          1,
+          2
+        ]
+      }
+    ],
+    "three_cubic_count": 15,
+    "three_cubic_rows": [
+      {
+        "central_external": 0,
+        "left_external_pair": [
+          1,
+          2
+        ],
+        "right_external_pair": [
+          3,
+          4
+        ]
+      },
+      {
+        "central_external": 0,
+        "left_external_pair": [
+          1,
+          3
+        ],
+        "right_external_pair": [
+          2,
+          4
+        ]
+      },
+      {
+        "central_external": 0,
+        "left_external_pair": [
+          1,
+          4
+        ],
+        "right_external_pair": [
+          2,
+          3
+        ]
+      },
+      {
+        "central_external": 1,
+        "left_external_pair": [
+          0,
+          2
+        ],
+        "right_external_pair": [
+          3,
+          4
+        ]
+      },
+      {
+        "central_external": 1,
+        "left_external_pair": [
+          0,
+          3
+        ],
+        "right_external_pair": [
+          2,
+          4
+        ]
+      },
+      {
+        "central_external": 1,
+        "left_external_pair": [
+          0,
+          4
+        ],
+        "right_external_pair": [
+          2,
+          3
+        ]
+      },
+      {
+        "central_external": 2,
+        "left_external_pair": [
+          0,
+          1
+        ],
+        "right_external_pair": [
+          3,
+          4
+        ]
+      },
+      {
+        "central_external": 2,
+        "left_external_pair": [
+          0,
+          3
+        ],
+        "right_external_pair": [
+          1,
+          4
+        ]
+      },
+      {
+        "central_external": 2,
+        "left_external_pair": [
+          0,
+          4
+        ],
+        "right_external_pair": [
+          1,
+          3
+        ]
+      },
+      {
+        "central_external": 3,
+        "left_external_pair": [
+          0,
+          1
+        ],
+        "right_external_pair": [
+          2,
+          4
+        ]
+      },
+      {
+        "central_external": 3,
+        "left_external_pair": [
+          0,
+          2
+        ],
+        "right_external_pair": [
+          1,
+          4
+        ]
+      },
+      {
+        "central_external": 3,
+        "left_external_pair": [
+          0,
+          4
+        ],
+        "right_external_pair": [
+          1,
+          2
+        ]
+      },
+      {
+        "central_external": 4,
+        "left_external_pair": [
+          0,
+          1
+        ],
+        "right_external_pair": [
+          2,
+          3
+        ]
+      },
+      {
+        "central_external": 4,
+        "left_external_pair": [
+          0,
+          2
+        ],
+        "right_external_pair": [
+          1,
+          3
+        ]
+      },
+      {
+        "central_external": 4,
+        "left_external_pair": [
+          0,
+          3
+        ],
+        "right_external_pair": [
+          1,
+          2
+        ]
+      }
+    ],
+    "total_count": 25
+  },
+  "verification_commands": [
+    "/home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/bt_five_point_tree_jet.py --check",
+    "/home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/bt_five_point_tree_jet.py --check-full",
+    "/home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/verify_bt_five_point_tree_jet.py",
+    "/home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 -m unittest -v reverse_physics.tests.test_bt_five_point_tree_jet"
+  ]
+}
