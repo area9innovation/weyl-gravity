@@ -1,0 +1,16 @@
+{
+  "id": "sf:program/work/reverse-physics-bateman-canonical-endpoint",
+  "kind": "work", "schema": "work-v0",
+  "body": {
+    "owner": "reverse-physics", "state": "ACTIVE",
+    "objective": "Fix the three BT endpoint-extension constants by imposing the exact oscillator CCR and transported-projector idempotence with perturbative Pi=1, then derive the continuum Gram and test 1/48 without fitting.",
+    "depends_on": ["REVERSE_PHYSICS_BT_PERTURBATIVE_COISOMETRY_RIGIDITY_V1", "REVERSE_PHYSICS_BT_ENDPOINT_EXTENSION_AMBIGUITY_V1", "REVERSE_PHYSICS_BT_RT_JORDAN_KERNEL_V1"],
+    "activates": ["unique continuum dressed projector", "real--virtual quotient trace", "complete probability"],
+    "current_gate": "CANONICAL_ENDPOINT: extend the order-lambda kernel on endpoint jets through degree two and solve c0,c1,c2 from CCR preservation, anti-Krein sharp, projector idempotence, exchange symmetry, and common incoming/outgoing regulation.",
+    "stop_condition": "Derive and verify unique c0,c1,c2 and the 1/48 Gram, or certify the first exact residual canonical ambiguity/mismatch after every listed identity is imposed.",
+    "forbid": "no fitted 1/48; no range defect on the formal branch; no arbitrary plus/cutoff choice; no omission of incoming sectors; no scalar-to-gravity or LORENTZIAN-CAUSAL promotion; exact arithmetic only",
+    "allowed_paths": ["reverse_physics/", "notes/bateman-turok-embedding.md", "paper/05-interaction-obstructions.tex", "paper/05-interaction-obstructions.pdf", "paper/06-einstein-weyl-interaction-obstructions.tex", "paper/06-einstein-weyl-interaction-obstructions.pdf", "planning/work-items/reverse-physics-bateman-canonical-endpoint.json", "planning/events/"],
+    "resource_hint": "Represent each endpoint extension by its action on 1,z(1-z),z^2(1-z)^2. Build the order-lambda canonical transformation and impose commutators before Gram contraction. Use decisive mutations of delta signs and one endpoint. Run sequentially under ulimit -v 500000.",
+    "input_commit": "d5381e21d4da27154f1a15bb077879e7017f2e93", "stream": "reverse-physics"
+  }
+}

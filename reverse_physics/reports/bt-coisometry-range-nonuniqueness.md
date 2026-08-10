@@ -2,7 +2,16 @@
 
 **Result:** `CLASSIFIED`
 
-The public right-unit identity does not determine the probability pushforward.
+**Scope correction:** `SCOPE_RESTRICTED_TO_NONPERTURBATIVE_OR_DISCONNECTED_BRANCHES`
+
+The later certificate
+`REVERSE_PHYSICS_BT_PERTURBATIVE_COISOMETRY_RIGIDITY_V1` proves that the
+published free cross-CCR fixes \(R_t^\dagger R_t=1\) at leading order and that
+projection idempotence forbids every formal perturbative defect.  The finite
+family below remains a correct theorem about arbitrary coisometries, but it is
+not a model of the analytic BT branch.
+
+The right-unit identity by itself does not determine the probability pushforward.
 For (Pi=R^sharp R) and (A=RPR^sharp), exact multiplication gives
 
 \[

@@ -1,0 +1,20 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/reverse-physics-bateman-coisometry-range-DONE-2fd7a381d952a6c0",
+  "kind": "event", "schema": "event-v0", "title": "work item transitioned",
+  "source": {"path": "tools/science-forge/program/events/reverse-physics-bateman-coisometry-range-DONE-2fd7a381d952a6c0.json", "span": null},
+  "body": {
+    "event_kind": "WORK_ITEM_TRANSITIONED", "actor": "reverse-physics",
+    "base_revision": "science-forge-ir-v0", "predecessors": [],
+    "predecessor": "sf:program/event/reverse-physics-bateman-coisometry-range-OBSTRUCTED-9c61a41c71a2c558",
+    "when": "2026-08-10", "seq": 2,
+    "payload": {
+      "target": "sf:program/work/reverse-physics-bateman-coisometry-range",
+      "to_state": "DONE",
+      "note": "The published free cross-CCR fixes Pi_0=1, and Pi^2=Pi forces Pi=1 to all formal perturbative orders. The earlier finite nonuniqueness witness is restricted to nonperturbative/disconnected branches. Evidence: REVERSE_PHYSICS_BT_PERTURBATIVE_COISOMETRY_RIGIDITY_V1.",
+      "evidence_basis": "reverse_physics/certificates/REVERSE_PHYSICS_BT_PERTURBATIVE_COISOMETRY_RIGIDITY_V1.json"
+    },
+    "native": {"authored_by": "manual event-v0 fallback under memory cap", "policy": "append-only; no coordinator pass claimed"}
+  },
+  "edges": [{"rel": "TRANSITIONS", "to": "sf:program/work/reverse-physics-bateman-coisometry-range"}]
+}

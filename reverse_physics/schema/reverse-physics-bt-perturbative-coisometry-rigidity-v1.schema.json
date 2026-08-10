@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-perturbative-coisometry-rigidity-v1.schema.json",
+  "$defs": {
+    "nonempty": {"type": "string", "minLength": 1},
+    "open_object": {"type": "object", "minProperties": 1}
+  },
+  "type": "object",
+  "required": [
+    "certificate", "schema_version", "dependency_tags", "lifecycle_state",
+    "result_kind", "question", "answer", "free_CCR_gate",
+    "formal_projection_rigidity", "supersession", "consequence_for_probability",
+    "assumptions", "disposition", "missing_object_ledger", "next_gate",
+    "does_not_establish", "provenance", "verification_commands", "checks",
+    "report", "schema"
+  ],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_PERTURBATIVE_COISOMETRY_RIGIDITY_V1"},
+    "schema_version": {"const": "reverse-physics-bt-perturbative-coisometry-rigidity-v1"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "result_kind": {"$ref": "#/$defs/nonempty"},
+    "question": {"$ref": "#/$defs/nonempty"},
+    "answer": {"$ref": "#/$defs/nonempty"},
+    "free_CCR_gate": {"$ref": "#/$defs/open_object"},
+    "formal_projection_rigidity": {"$ref": "#/$defs/open_object"},
+    "supersession": {
+      "type": "object",
+      "required": ["certificate", "status", "surviving_statement", "superseded_application"],
+      "properties": {
+        "certificate": {"const": "REVERSE_PHYSICS_BT_COISOMETRY_RANGE_NONUNIQUENESS_V1"},
+        "status": {"const": "SCOPE_RESTRICTED_TO_NONPERTURBATIVE_OR_DISCONNECTED_BRANCHES"},
+        "surviving_statement": {"$ref": "#/$defs/nonempty"},
+        "superseded_application": {"$ref": "#/$defs/nonempty"}
+      },
+      "additionalProperties": false
+    },
+    "consequence_for_probability": {"$ref": "#/$defs/open_object"},
+    "assumptions": {"type": "array", "minItems": 4, "items": {"$ref": "#/$defs/nonempty"}},
+    "disposition": {
+      "type": "object",
+      "required": ["free_range_projection", "formal_perturbative_range_projection", "formal_two_sided_inverse", "nonperturbative_range_defect", "canonical_endpoint_extension", "one_over_48", "full_nlo_quotient_trace", "physical_nlo_probability"],
+      "properties": {
+        "free_range_projection": {"const": "IDENTITY"},
+        "formal_perturbative_range_projection": {"const": "IDENTITY_TO_ALL_ORDERS"},
+        "formal_two_sided_inverse": {"const": "CLEARED"},
+        "nonperturbative_range_defect": {"const": "NOT_EXCLUDED"},
+        "canonical_endpoint_extension": {"const": "NOT_CONSTRUCTED"},
+        "one_over_48": {"const": "NOT_DERIVED"},
+        "full_nlo_quotient_trace": {"const": "NOT_COMPUTED"},
+        "physical_nlo_probability": {"const": "NOT_ESTABLISHED"}
+      },
+      "additionalProperties": false
+    },
+    "missing_object_ledger": {"type": "array", "minItems": 6},
+    "next_gate": {"$ref": "#/$defs/nonempty"},
+    "does_not_establish": {"type": "array", "minItems": 8},
+    "provenance": {"$ref": "#/$defs/open_object"},
+    "verification_commands": {"type": "array", "minItems": 3},
+    "checks": {
+      "type": "object",
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true}, "passed": {"const": 13},
+        "total": {"const": 13}, "failures": {"const": []},
+        "details": {"type": "object", "minProperties": 13, "additionalProperties": {"const": true}}
+      },
+      "additionalProperties": false
+    },
+    "report": {"const": "reverse_physics/reports/bt-perturbative-coisometry-rigidity.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-perturbative-coisometry-rigidity-v1.schema.json"}
+  },
+  "additionalProperties": false
+}
