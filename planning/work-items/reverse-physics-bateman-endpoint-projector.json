@@ -1,0 +1,38 @@
+{
+  "id": "sf:program/work/reverse-physics-bateman-endpoint-projector",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "reverse-physics",
+    "state": "ACTIVE",
+    "objective": "Construct the distributional z=0,1 endpoint extension of the dynamically derived Bateman--Turok order-lambda R_t kernel, including oscillatory creation and vacuum-squeeze sectors, on one incoming/outgoing resolution carrier. Evaluate the neutral transported-projector Gram without fitting and decide whether it equals 1/48 per unordered pair.",
+    "depends_on": [
+      "REVERSE_PHYSICS_BT_RT_JORDAN_KERNEL_V1",
+      "REVERSE_PHYSICS_BT_ASYMPTOTIC_GENERATOR_PREFLIGHT_V1",
+      "REVERSE_PHYSICS_BT_REAL_VIRTUAL_AXIS_GLUING_V1",
+      "REVERSE_PHYSICS_BT_INCLUSIVE_RADICAL_CLOSURE_V1",
+      "S. Bateman and N. Turok, arXiv:2607.00096v1, Eq. (16), Eq. (19), and Appendix C"
+    ],
+    "activates": [
+      "a dynamically normalized continuum coherent projector",
+      "a common incoming-plus-outgoing real--virtual cancellation test",
+      "the first complete renormalized NLO quotient trace and beyond-tree positivity test"
+    ],
+    "current_gate": "ENDPOINT_DISTRIBUTIONAL_PROJECTOR (fail-closed): extend the exact z^-3 and (1-z)^-3 Krein-Gram poles as distributions on a declared test-function domain. Derive all delta, delta-prime, and plus-subtraction terms from the full transported projector including oscillatory creation and Q_t vacuum-squeeze sectors; impose one resolution flow on incoming and outgoing channels; then compute rather than fit the dimensionless Gram and compare with 1/48.",
+    "stop_condition": "EITHER construct and independently verify the common endpoint distribution, full order-lambda transported neutral projector, pseudo-unitarity, incoming/outgoing equality, exact 1/48 Gram, and cancellation after Born normalization; OR exhibit the first exact mismatch in distributional consistency, test-function domain, oscillatory cancellation, vacuum charge, coefficient, incoming/outgoing equality, or resolution independence. Land a strict certificate/schema, method-distinct verifier, decisive mutation, report, assumptions, missing-object ledger, receipts, and next-gate decision.",
+    "forbid": "no Hadamard finite part, plus prescription, analytic continuation, or endpoint counterterm chosen to force 1/48; no omission of the oscillatory a1-dagger and Q_t squeeze sectors; no final-state-only cancellation promoted over incoming sectors; no ordinary divergent integral called a distribution; no strong R_t limit inferred from the time-independent two-annihilator coefficient; no global Hilbert metric imported into the Krein theory; no reduced scalar result promoted to tensor gravity, BRST cohomology, a Lorentzian BV propagator, Hadamard state, causal perturbative AQFT, quantum master equation, or all-orders unitarity; no floating-point canonical forms, ranks, cocycle tests, or trivialization certificates",
+    "allowed_paths": [
+      "reverse_physics/",
+      "notes/bateman-turok-embedding.md",
+      "paper/05-interaction-obstructions.tex",
+      "paper/05-interaction-obstructions.pdf",
+      "paper/06-einstein-weyl-interaction-obstructions.tex",
+      "paper/06-einstein-weyl-interaction-obstructions.pdf",
+      "planning/work-items/reverse-physics-bateman-endpoint-projector.json",
+      "planning/events/"
+    ],
+    "resource_hint": "Proof-first and memory-bounded. Start from REVERSE_PHYSICS_BT_RT_JORDAN_KERNEL_V1's exact carrier table and derive the distribution action on symbolic endpoint jets of a characteristic function. The cross Gram has cubic poles, so the minimal subtraction data can involve endpoint values through second derivatives; derive their coefficients from the omitted oscillatory and Q_t sectors or projector idempotence, never from the target. Test constant, linear, and quadratic endpoint jets, exchange z<->1-z, incoming/outgoing i0 reversal, BT off-diagonal sharp, and resolution reparametrization. Exact rational/Gaussian-rational arithmetic only, with every command sequential under a 500000 KB virtual-memory cap.",
+    "input_commit": "481505506ef804febc748bcd4e0521a89e16843a",
+    "stream": "reverse-physics"
+  }
+}

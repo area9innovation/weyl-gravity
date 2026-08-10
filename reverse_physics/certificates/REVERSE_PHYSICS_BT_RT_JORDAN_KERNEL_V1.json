@@ -1,0 +1,161 @@
+{
+  "answer": "Yes, after exposing a label inconsistency in the printed Appendix C. As printed, Eq. (31) cannot imply both Eqs. (32) and (33). Exchanging a1 and a2 in Eq. (31) repairs both. Expanding Eq. (16) then fixes the two-annihilator order-lambda kernel. Its t and t^2 terms cancel exactly after the repaired leading map is inverted onto the Omega/Upsilon carrier. The resulting fixed-splitting kernel is time independent and has a formal anti-Krein cubic lift, but its off-diagonal Gram has cubic endpoint poles. A distributional endpoint extension and full projector trace are still required.",
+  "appendix_c_consistency": {
+    "alternative_not_excluded": "equivalently exchange the labels in Eqs. (32)-(33); the public Letter alone does not identify which displayed equation is mistyped",
+    "eq32_requires": "growing oscillator a1 because Box phi selects it",
+    "eq33_requires": "ordinary a2 and growing a1",
+    "minimal_repair": "exchange a1 and a2 in Eq. (31)",
+    "printed_eq31": "ordinary a1 plus (1+2iEt) a2",
+    "status": "INTERNALLY_INCONSISTENT_AS_PRINTED_REPAIRED_FOR_DERIVATION"
+  },
+  "bt_carrier_kernel": {
+    "delta_b_Omega": {
+      "Omega_Omega": "E/(2*e1*e2)",
+      "Omega_Upsilon": "1/(8*e2^3)",
+      "Upsilon_Omega": "1/(8*e1^3)",
+      "Upsilon_Upsilon": "0"
+    },
+    "delta_b_Upsilon": {
+      "Omega_Omega": "0",
+      "Omega_Upsilon": "E*(e1-e2)/(2*e1*e2^2)",
+      "Upsilon_Omega": "E*(e2-e1)/(2*e1^2*e2)",
+      "Upsilon_Upsilon": "-E*(e1^2+e2^2)/(8*e1^3*e2^3)"
+    },
+    "incoming_outgoing": "the two-annihilator coefficient is the same at t->+infinity and t->-infinity; oscillatory creation sectors are not included",
+    "inverse_linear_map": "a1=b_Upsilon; a2=4*e^2*b_Omega-2*i*e*t*b_Upsilon on the two-annihilator sector",
+    "normalization": "after restoring D1*D2; E=e1+e2",
+    "secular_disposition": "ALL_T_AND_T2_TERMS_CANCEL_EXACTLY"
+  },
+  "certificate": "REVERSE_PHYSICS_BT_RT_JORDAN_KERNEL_V1",
+  "checks": {
+    "details": {
+      "all_bt_annihilator_secular_terms_cancel": true,
+      "endpoint_cross_gram_has_cubic_pole": true,
+      "fixed_split_determinant_exact": true,
+      "fixed_split_gram_is_symmetric": true,
+      "fixed_split_krein_gram_exact": true,
+      "formal_generator_is_anti_krein_by_completion": true,
+      "incoming_outgoing_annihilator_kernel_equal": true,
+      "input_hashes_pinned": true,
+      "no_lorentzian_claim": true,
+      "omega_a_kernel_exact": true,
+      "omega_bt_kernel_exact": true,
+      "omega_upsilonupsilon_entry_cancels": true,
+      "printed_eq31_fails_eq32": true,
+      "printed_eq31_fails_eq33": true,
+      "probability_gate_stays_closed": true,
+      "single_label_exchange_repairs_both": true,
+      "upsilon_a_kernel_exact": true,
+      "upsilon_bt_kernel_exact": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 18,
+    "total": 18
+  },
+  "composite_expansion": {
+    "Omega": "lambda^-1+phi+(lambda/2)*phi^2+O(lambda^2)",
+    "Upsilon": "Box(phi)+lambda*((partial phi)^2-phi*Box(phi))+O(lambda^2)",
+    "metric_convention": "Box=partial_t^2-nabla^2",
+    "resonance": "E=e1+e2 with collinear positive-energy daughters",
+    "symplectic_rule": "omega_res[P]=i*P'(t)+2*E*P(t)"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "disposition": {
+    "continuum_distributional_domain": "NOT_CONSTRUCTED",
+    "exact_gram_one_over_48": "NOT_DERIVED",
+    "formal_finite_mode_generator": "CONSTRUCTED",
+    "full_nlo_quotient_trace": "NOT_COMPUTED",
+    "incoming_creation_and_oscillatory_sectors": "NOT_CONSTRUCTED",
+    "jordan_secular_terms_on_bt_carrier": "CANCEL_EXACTLY",
+    "minimal_label_repair": "CONSTRUCTED",
+    "order_lambda_two_annihilator_kernel": "COEFFICIENT_COMPUTED",
+    "physical_nlo_probability": "NOT_ESTABLISHED",
+    "published_appendix_c_linear_system": "INCONSISTENT_AS_PRINTED"
+  },
+  "does_not_establish": [
+    "which Appendix C display contains the typographical label error",
+    "a strong or weak operator limit for the full R_t map",
+    "a continuum coherent or KLN projector",
+    "the coefficient 1/48 from BT dynamics",
+    "a complete NLO cross section or probability",
+    "positivity or unitarity beyond the BT tree theorem",
+    "a tensor or BRST gravitational lift",
+    "anything LORENTZIAN-CAUSAL",
+    "literature priority"
+  ],
+  "fixed_splitting_krein_gram": {
+    "G_OmegaOmega": "1/(8*e1^2*e2^2)",
+    "G_OmegaUpsilon": "-E^2*(e1^2+e2^2-e1*e2)/(2*e1^3*e2^3)",
+    "G_UpsilonUpsilon": "-2*E^2*(e1-e2)^2/(e1^2*e2^2)",
+    "determinant": "-E^2*(e1-e2)^2/(4*e1^4*e2^4)-E^4*(e1^2+e2^2-e1*e2)^2/(4*e1^6*e2^6)<0",
+    "disposition": "DISTRIBUTIONAL_ENDPOINT_EXTENSION_REQUIRED",
+    "endpoint": "with e1=z*E and e2=(1-z)*E, the cross Gram has z^-3 and (1-z)^-3 poles and is not an ordinary locally integrable density",
+    "metric": "ordered daughter slots with [b_Omega(e),b_Upsilon^dag(e)]=2e and diagonal entries zero; no Bose factor or phase-space measure"
+  },
+  "formal_generator": {
+    "definition": "K_down=(b_Upsilon^dag*delta_b_Omega+b_Omega^dag*delta_b_Upsilon)/(2*E); K=K_down-K_down^dag",
+    "property": "K^dag=-K; its parent number-lowering commutator is delta_b_i on a finite nonendpoint wave-packet carrier",
+    "status": "FORMAL_FINITE_MODE_LIFT_ONLY"
+  },
+  "lifecycle_state": "COEFFICIENT_COMPUTED",
+  "missing_object_ledger": [
+    "choose and independently justify a distributional extension of the cubic endpoint poles",
+    "include oscillatory creation/annihilation and vacuum-squeeze sectors in the transported projector",
+    "place initial- and final-state degenerate sectors on one resolution carrier",
+    "derive rather than fit the continuum Gram and compare it with 1/48 per unordered pair",
+    "combine that projector with renormalized virtual and complete real contributions",
+    "prove regulator cancellation, trace-class control, and positivity of the quotient trace"
+  ],
+  "next_gate": "Construct the plus/distributional extension of the z-endpoint kernel together with the oscillatory sectors, then evaluate the transported neutral projector Gram. The target remains 1/48 per unordered pair; the present result supplies its first dynamically derived kernel but does not yet supply the number.",
+  "provenance": {
+    "inputs": [
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_ASYMPTOTIC_GENERATOR_PREFLIGHT_V1.json",
+        "sha256": "95d11eaf4f529d7f02b4f8a8e6165ee893ea6aa623d26c96a2475e0bd0a8c2c1"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_REAL_VIRTUAL_AXIS_GLUING_V1.json",
+        "sha256": "c2ffad79666aaec1d17585f76e9c90403b3b410006e624df9626bcc1571d251a"
+      }
+    ],
+    "primary_source": {
+      "equations": [
+        "Eq. (16)",
+        "Appendix C Eqs. (31)-(33)"
+      ],
+      "source": "Bateman--Turok arXiv:2607.00096v1",
+      "url": "https://arxiv.org/abs/2607.00096"
+    },
+    "retrieval_date": "2026-08-10",
+    "source_commit": "481505506ef804febc748bcd4e0521a89e16843a"
+  },
+  "question": "Can Eq. (16) supply the omitted order-lambda R_t kernel, and does its Jordan secular growth survive on the BT carrier?",
+  "repaired_a_basis_kernel": {
+    "Omega": {
+      "a1_a1": "4*i*(e1^2+e2^2)*t-8*E*e1*e2*t^2",
+      "a1_a2": "2*e2+4*i*E*e1*t",
+      "a2_a1": "2*e1+4*i*E*e2*t",
+      "a2_a2": "2*E"
+    },
+    "Upsilon": {
+      "a1_a1": "-8*E*(e1^2+e2^2)",
+      "a1_a2": "8*E*e1*(e2-e1)",
+      "a2_a1": "8*E*e2*(e1-e2)",
+      "a2_a2": "0"
+    },
+    "normalization": "Bose-symmetrized functional kernel after removing lambda, D1*D2=(2e1)^-3(2e2)^-3, and momentum delta"
+  },
+  "report": "reverse_physics/reports/bt-rt-jordan-kernel.md",
+  "result_kind": "order-lambda resonant two-annihilator kernel and ordered-slot Krein diagnostic of the BT composite asymptotic map, before Bose phase space and continuum endpoint extension",
+  "schema": "reverse_physics/schema/reverse-physics-bt-rt-jordan-kernel-v1.schema.json",
+  "schema_version": "reverse-physics-bt-rt-jordan-kernel-v1",
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_rt_jordan_kernel.py --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_rt_jordan_kernel.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_rt_jordan_kernel"
+  ]
+}

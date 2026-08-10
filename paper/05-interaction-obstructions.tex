@@ -91,7 +91,11 @@ $1/48$ per pair, amplitude $\sqrt3/12$, and hard/collinear blocks
 $-1/16$ and $+1/16$; multiplying by the Born rate cancels the physical
 $3/512$ response.  The ordinary single-denominator cubic Fock generator is,
 however, exactly zero in the massless collinear limit.  The remaining gate is
-an order-$\lambda$ Jordan/distributional asymptotic map, not yet constructed.
+now narrower: expanding the published composite map gives the exact
+order-$\lambda$ two-annihilator kernel, and all of its apparent $t,t^2$
+Jordan growth cancels on the two-field carrier.  Its Krein Gram has cubic
+splitting-endpoint poles, however, so the distributional continuum projector
+and its dynamically derived $1/48$ coefficient are not yet constructed.
 Independently, the projected three-channel hard loop logarithm closes the
 Callan--Symanzik equation exactly with the Born rate and one-loop beta
 function.  This yields the positive leading-log nonforward prediction
@@ -309,10 +313,19 @@ dimensionless projector.  The correction is pinned by
 $\mathbb Q(\sqrt3)$ producer and method-distinct verifier reconstruct the
 Born normalization, projector equations, and cubic collinear scaling.  The
 certificate labels the Jordan asymptotic generator and continuum projector
-\texttt{NOT\_CONSTRUCTED}.
-The loop-informed hard scattering result is pinned by
+\texttt{NOT\_CONSTRUCTED}.  Its successor
+\texttt{REVERSE\_PHYSICS\_BT\_RT\_}
+\allowbreak\texttt{JORDAN\_KERNEL\_V1.json}
+crosses the first of those gates.  It detects an internal oscillator-label
+inconsistency in Appendix~C of Ref.~\cite{BT2026}, declares the minimal label
+repair used, derives the nonlinear coefficient directly from the published
+composite fields, and independently verifies exact secular cancellation.
+The same certificate fails closed at the nonintegrable endpoint Gram rather
+than promoting the formal finite-mode generator to a continuum projector.
+The hard result is pinned by
 \texttt{REVERSE\_PHYSICS\_BT\_UV\_HARD\_}\allowbreak
-\texttt{SCATTERING\_LAW\_V1.json}.  It imports the content-addressed Born,
+\texttt{SCATTERING\_}\allowbreak\texttt{LAW\_V1.json}.  It imports the
+content-addressed Born,
 beta-function, and projected-hard-log certificates, verifies their
 Callan--Symanzik identity by an independent rail, and keeps the full inclusive
 NLO probability \texttt{NOT\_ESTABLISHED}.
@@ -1192,11 +1205,31 @@ dressing ansatz.  For massless collinear daughters the published cubic vertex
 has $\mathcal M_3=-i\lambda t^2$, whereas
 $\Delta E=t/(2E)+O(t^2)$.  Hence the ordinary Dyson/Fock kernel
 $\mathcal M_3/\Delta E$ vanishes as $t\to0$ and its Gram cannot be $1/48$.
-A double-secular/Jordan denominator can remain finite, but the corresponding
-order-$\lambda$ part of the BT map $R_t$, its background charge bookkeeping,
-incoming sectors, continuum domain, and physical NLO probability are not
-constructed.  The bare broken-vacuum cubic has charge $-1$, so neutrality also
-cannot be inferred before that missing bookkeeping is supplied.
+Direct expansion of the published composite map now sharpens this statement.
+As printed, its Appendix~C mode expansion cannot imply both subsequent
+oscillator formulas; exchanging the ordinary and growing labels in that mode
+expansion repairs both.  With that declared repair the complete resonant
+two-annihilator order-$\lambda$ coefficient follows from
+$R^\dagger\Omega R=\lambda^{-1}e^{\lambda\phi}$ and
+$R^\dagger\Upsilon R=\lambda^{-1}e^{-2\lambda\phi}\Box e^{\lambda\phi}$.
+Although its intermediate $a$-basis entries contain $t$ and $t^2$, every such
+term cancels after inversion onto the $(\Omega,\Upsilon)$ carrier.  A formal
+finite-wave-packet anti-Krein cubic generator therefore exists without
+fitting its norm.
+
+This does not yet give the displayed $1/48$.  Contracting the ordered daughter
+slots of the derived kernel with the off-diagonal BT one-particle form, before
+Bose and phase-space factors, produces a cross Gram proportional to
+\[
+ -\frac{E^2(e_1^2+e_2^2-e_1e_2)}{2e_1^3e_2^3},
+ \qquad E=e_1+e_2,
+\]
+which has cubic poles at both splitting endpoints.  The continuum
+distributional extension, oscillatory creation and vacuum-squeeze sectors,
+background charge bookkeeping, complete incoming projector, and physical NLO
+probability remain unconstructed.  The bare broken-vacuum cubic has charge
+$-1$, so neutrality also cannot be inferred before that missing bookkeeping
+is supplied.
 \end{remark}
 
 \begin{remark}[Physical ultraviolet hard-scattering law]
@@ -1615,6 +1648,17 @@ ulimit -v 500000; python3 \
   reverse_physics/verify_bt_asymptotic_generator_preflight.py
 ulimit -v 500000; python3 -m unittest -v \
   reverse_physics.tests.test_bt_asymptotic_generator_preflight
+\end{verbatim}
+
+The dynamically derived order-$\lambda$ $R_t$ kernel, Appendix~C label
+consistency test, secular cancellation, and endpoint Gram are reproduced by
+\begin{verbatim}
+ulimit -v 500000; python3 \
+  reverse_physics/bt_rt_jordan_kernel.py --check
+ulimit -v 500000; python3 \
+  reverse_physics/verify_bt_rt_jordan_kernel.py
+ulimit -v 500000; python3 -m unittest -v \
+  reverse_physics.tests.test_bt_rt_jordan_kernel
 \end{verbatim}
 
 The physical ultraviolet hard/window law is reproduced by

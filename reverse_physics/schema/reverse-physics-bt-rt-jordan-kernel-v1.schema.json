@@ -1,0 +1,169 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-rt-jordan-kernel-v1.schema.json",
+  "title": "BT order-lambda R_t Jordan kernel",
+  "$defs": {
+    "nonempty": {"type": "string", "minLength": 1},
+    "string_list": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/nonempty"}
+    },
+    "open_object": {"type": "object", "minProperties": 1}
+  },
+  "type": "object",
+  "required": [
+    "certificate",
+    "schema_version",
+    "dependency_tags",
+    "lifecycle_state",
+    "result_kind",
+    "question",
+    "answer",
+    "appendix_c_consistency",
+    "composite_expansion",
+    "repaired_a_basis_kernel",
+    "bt_carrier_kernel",
+    "formal_generator",
+    "fixed_splitting_krein_gram",
+    "disposition",
+    "missing_object_ledger",
+    "next_gate",
+    "does_not_establish",
+    "provenance",
+    "verification_commands",
+    "checks",
+    "report",
+    "schema"
+  ],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_RT_JORDAN_KERNEL_V1"},
+    "schema_version": {"const": "reverse-physics-bt-rt-jordan-kernel-v1"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "result_kind": {"$ref": "#/$defs/nonempty"},
+    "question": {"$ref": "#/$defs/nonempty"},
+    "answer": {"$ref": "#/$defs/nonempty"},
+    "appendix_c_consistency": {
+      "type": "object",
+      "required": [
+        "printed_eq31", "eq32_requires", "eq33_requires", "minimal_repair",
+        "alternative_not_excluded", "status"
+      ],
+      "properties": {
+        "printed_eq31": {"const": "ordinary a1 plus (1+2iEt) a2"},
+        "eq32_requires": {"$ref": "#/$defs/nonempty"},
+        "eq33_requires": {"$ref": "#/$defs/nonempty"},
+        "minimal_repair": {"const": "exchange a1 and a2 in Eq. (31)"},
+        "alternative_not_excluded": {"$ref": "#/$defs/nonempty"},
+        "status": {"const": "INTERNALLY_INCONSISTENT_AS_PRINTED_REPAIRED_FOR_DERIVATION"}
+      },
+      "additionalProperties": false
+    },
+    "composite_expansion": {"$ref": "#/$defs/open_object"},
+    "repaired_a_basis_kernel": {"$ref": "#/$defs/open_object"},
+    "bt_carrier_kernel": {"$ref": "#/$defs/open_object"},
+    "formal_generator": {"$ref": "#/$defs/open_object"},
+    "fixed_splitting_krein_gram": {
+      "type": "object",
+      "required": [
+        "metric", "G_OmegaOmega", "G_UpsilonUpsilon",
+        "G_OmegaUpsilon", "determinant", "endpoint", "disposition"
+      ],
+      "properties": {
+        "metric": {"$ref": "#/$defs/nonempty"},
+        "G_OmegaOmega": {"const": "1/(8*e1^2*e2^2)"},
+        "G_UpsilonUpsilon": {"const": "-2*E^2*(e1-e2)^2/(e1^2*e2^2)"},
+        "G_OmegaUpsilon": {"const": "-E^2*(e1^2+e2^2-e1*e2)/(2*e1^3*e2^3)"},
+        "determinant": {"$ref": "#/$defs/nonempty"},
+        "endpoint": {"$ref": "#/$defs/nonempty"},
+        "disposition": {"const": "DISTRIBUTIONAL_ENDPOINT_EXTENSION_REQUIRED"}
+      },
+      "additionalProperties": false
+    },
+    "disposition": {
+      "type": "object",
+      "required": [
+        "published_appendix_c_linear_system", "minimal_label_repair",
+        "order_lambda_two_annihilator_kernel", "jordan_secular_terms_on_bt_carrier",
+        "formal_finite_mode_generator", "continuum_distributional_domain",
+        "exact_gram_one_over_48", "incoming_creation_and_oscillatory_sectors",
+        "full_nlo_quotient_trace", "physical_nlo_probability"
+      ],
+      "properties": {
+        "published_appendix_c_linear_system": {"const": "INCONSISTENT_AS_PRINTED"},
+        "minimal_label_repair": {"const": "CONSTRUCTED"},
+        "order_lambda_two_annihilator_kernel": {"const": "COEFFICIENT_COMPUTED"},
+        "jordan_secular_terms_on_bt_carrier": {"const": "CANCEL_EXACTLY"},
+        "formal_finite_mode_generator": {"const": "CONSTRUCTED"},
+        "continuum_distributional_domain": {"const": "NOT_CONSTRUCTED"},
+        "exact_gram_one_over_48": {"const": "NOT_DERIVED"},
+        "incoming_creation_and_oscillatory_sectors": {"const": "NOT_CONSTRUCTED"},
+        "full_nlo_quotient_trace": {"const": "NOT_COMPUTED"},
+        "physical_nlo_probability": {"const": "NOT_ESTABLISHED"}
+      },
+      "additionalProperties": false
+    },
+    "missing_object_ledger": {
+      "type": "array", "minItems": 6,
+      "items": {"$ref": "#/$defs/nonempty"}
+    },
+    "next_gate": {"$ref": "#/$defs/nonempty"},
+    "does_not_establish": {
+      "type": "array", "minItems": 9,
+      "items": {"$ref": "#/$defs/nonempty"}
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["source_commit", "retrieval_date", "inputs", "primary_source"],
+      "properties": {
+        "source_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "retrieval_date": {"const": "2026-08-10"},
+        "inputs": {
+          "type": "array", "minItems": 2, "maxItems": 2,
+          "items": {
+            "type": "object",
+            "required": ["path", "sha256"],
+            "properties": {
+              "path": {"$ref": "#/$defs/nonempty"},
+              "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+            },
+            "additionalProperties": false
+          }
+        },
+        "primary_source": {
+          "type": "object",
+          "required": ["source", "url", "equations"],
+          "properties": {
+            "source": {"$ref": "#/$defs/nonempty"},
+            "url": {"type": "string", "format": "uri"},
+            "equations": {"$ref": "#/$defs/string_list"}
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "verification_commands": {
+      "type": "array", "minItems": 3,
+      "items": {"$ref": "#/$defs/nonempty"}
+    },
+    "checks": {
+      "type": "object",
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"const": 18},
+        "total": {"const": 18},
+        "failures": {"const": []},
+        "details": {
+          "type": "object", "minProperties": 18,
+          "additionalProperties": {"const": true}
+        }
+      },
+      "additionalProperties": false
+    },
+    "report": {"const": "reverse_physics/reports/bt-rt-jordan-kernel.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-rt-jordan-kernel-v1.schema.json"}
+  },
+  "additionalProperties": false
+}

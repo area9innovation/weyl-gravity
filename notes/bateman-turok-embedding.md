@@ -120,6 +120,19 @@ $$\phi(x) = \int \frac{d_3\mathbf{p}}{(2|\mathbf{p}|)^3}\Big(e^{-ipx} a_1(\mathb
 
 with nonzero commutators $[a_1(\mathbf{p}), a_2^\dagger(\mathbf{q})] = [a_2(\mathbf{p}), a_1^\dagger(\mathbf{q})] = (2|\mathbf{p}|)^3\,\delta_3(\mathbf{p}-\mathbf{q})$. The $(1+2i|\mathbf{p}|t)$ factor is the secular/"growing" dipole mode of the degenerate double pole (their footnote 3: growing modes "appear to violate time translation invariance. However ... these cancel out of scattering cross sections").
 
+**Appendix C label consistency warning (repository calculation,
+2026-08-10).**  Equation (31) as printed assigns the ordinary mode to $a_1$
+and the growing mode to $a_2$, but this cannot imply the next two displayed
+equations.  Direct symplectic extraction makes $\Box\phi$ select the growing
+oscillator, so Eq. (32) requires that oscillator to be $a_1$; Eq. (33)
+likewise requires ordinary $a_2$ and growing $a_1$.  Exchanging
+$a_1\leftrightarrow a_2$ in Eq. (31) repairs both.  Because the commutator
+algebra is symmetric under the exchange, the Letter alone does not decide
+whether Eq. (31) or Eqs. (32)--(33) contain the typographical error.  The
+exact certificate
+`REVERSE_PHYSICS_BT_RT_JORDAN_KERNEL_V1` declares the repaired convention it
+uses rather than silently choosing one.
+
 With $\omega_t(f,g) = \int_{x^0=t} d^3\mathbf{x}\, f \overleftrightarrow{\partial_0} g$ (symplectic form on the slice $x^0 = t$) and $p = (|\mathbf{p}|, \mathbf{p})$, Eqs. (C4)–(C5):
 
 $$R_t^\dagger\, b_\Upsilon(\mathbf{p})\, R_t = \omega_t\!\left(i e^{ipx},\, R^\dagger \Upsilon R\right) \simeq a_1(\mathbf{p}) \tag{C4}$$
@@ -327,7 +340,7 @@ So the embedding, and everything built on $R$ (Eqs. (16)–(21)), is a statement
 ## 7. Odds and ends the team asked about
 
 - **Complex energies / conjugate pairs**: Not discussed. The only complex displacements are the Feynman $i\epsilon$'s: double poles at $p^0 = \pm(|\mathbf{p}| - i\epsilon)$. No complex-conjugate-pair energy eigenvalues, no discussion of PT-broken regimes.
-- **Jordan blocks**: never named, but structurally present as the degenerate double pole / dipole pair: propagator $-i/(p^2+i\epsilon)^2$; footnote 3's "growing modes"; the mode expansion (C3) with secular factor $(1 + 2i|\mathbf{p}|t)a_2(\mathbf{p})$; and the null cross-paired oscillator algebras $[a_1, a_2^\dagger] = [a_2, a_1^\dagger] \neq 0$ with $[a_i, a_i^\dagger] = 0$ (same pattern as $b_\Omega, b_\Upsilon$). The "dipole ghost" literature is cited ([2]: Flato–Fronsdal; Binegar et al.). Growing modes claimed to "cancel out of scattering cross sections" (footnote 3); mechanism visible in (C5): the charge selection rule kills the terms carrying $t$-dependence.
+- **Jordan blocks**: never named, but structurally present as the degenerate double pole / dipole pair: propagator $-i/(p^2+i\epsilon)^2$; footnote 3's "growing modes"; the printed mode expansion (C3) with secular factor $(1 + 2i|\mathbf{p}|t)a_2(\mathbf{p})$ (subject to the label inconsistency above); and the null cross-paired oscillator algebras $[a_1, a_2^\dagger] = [a_2, a_1^\dagger] \neq 0$ with $[a_i, a_i^\dagger] = 0$ (same pattern as $b_\Omega, b_\Upsilon$). The "dipole ghost" literature is cited ([2]: Flato–Fronsdal; Binegar et al.). Growing modes claimed to "cancel out of scattering cross sections" (footnote 3); the repository's exact order-$\lambda$ two-annihilator calculation now verifies a stronger local statement: after the repaired leading map is inverted onto the $(\Omega,\Upsilon)$ carrier, every $t$ and $t^2$ coefficient cancels.  The oscillatory creation and squeezed-vacuum sectors remain open.
 - **Massless / equal-frequency limit**: the theory is *intrinsically* at the degenerate point — massless $\square^2\phi = 0$ is the equal-frequency (resonant) Pais–Uhlenbeck limit. There is no unequal-frequency deformation anywhere in the paper; no mass terms are considered (they would break the shift symmetry / scale invariance and the dimension-zero structure). The paper's whole construction (δ′ Wightman function, dipole modes, off-shell states) is tailored to the degenerate case.
 - **Interactions beyond the perfect-square form**:
   - PS is a special case of Holdom's general shift-invariant renormalizable four-derivative scalars [21,22]; the paper's proof is stated for PS specifically.
@@ -351,7 +364,7 @@ Deferred to the companion papers or simply absent from the Letter:
 6. **The explicit $\kappa$ for the interacting theory.** $\kappa$ is defined abstractly (Eq. (1)) and identified with $\Omega\leftrightarrow\Upsilon$ / $\mathcal{X}\to-\mathcal{X}$ at the field level; the paper never writes $\kappa$ as an operator on the Fock/Krein space (e.g., its action on the $b_\Omega, b_\Upsilon$ or $a_1, a_2$ oscillators), nor which particular $\kappa$ (fundamental decomposition) makes $B^{(\Omega\Upsilon)}$ ghost symmetric — only that $P^{(\Omega\Upsilon)}_\chi$ is "even under ghost parity."
 7. **The Noether charge** of $SO^+(1,1)$: no explicit charge operator $\hat Q$ or its expression in oscillators; only charge assignments of $b_\Omega, b_\Upsilon$ (both creation and annihilation of a given field carry the same sign).
 8. **All-orders positivity**: open. Obstacle = collinear IR divergences affecting asymptotic states; resummation program only sketched (IR-finiteness of loops from [23] plus optical theorem). The repository has since established one-loop RG closure, the complete cut-constructible hard logarithmic four-mass jet, its external phase projection, and the separate nonanalytic external-mass boundary logarithm `3 lambda^6 sum_i L_i/(128 pi^4 s)` on the real fixture. The remaining logarithmic comparison requires a full real splitting-fraction integral and an explicit common regulator gluing between one virtual parent mass and two real daughter masses; it is no longer blocked on an unknown virtual boundary integral.
-9. **Higher orders of the Bogoliubov map**: (C4)–(C5) hold only up to $\mathcal{O}(\lambda)$; the interacting corrections to $R_t$'s action on oscillators are not given.
+9. **Higher orders of the Bogoliubov map**: (C4)–(C5) hold only up to $\mathcal{O}(\lambda)$; the interacting corrections to $R_t$'s action on oscillators are not given in the Letter.  The repository has now expanded Eq. (16) and computed the complete resonant two-annihilator order-$\lambda$ coefficient after the label repair (`REVERSE_PHYSICS_BT_RT_JORDAN_KERNEL_V1`).  Its apparent secular terms cancel on the BT carrier, but its fixed-splitting Krein Gram has cubic endpoint poles.  A distributional endpoint extension, oscillatory sectors, full transported projector, and the target `1/48` Gram remain unconstructed.
 10. **The second $\mathbb{Z}_2$** in $K_4 = \mathbb{Z}_2\times\mathbb{Z}_2$ is never identified explicitly (presumably $(\Omega,\Upsilon)\to(-\Omega,-\Upsilon)$), nor is any role assigned to it.
 11. **Whether/how the $\Omega > 0$ vs $\Omega \in \mathbb{R}$ domain mismatch feeds back into perturbation theory** (e.g., instanton/boundary contributions distinguishing the two path integrals): stated as inequivalence, not analyzed.
 12. **Uniqueness/scheme-dependence of the off-shell state construction** $\tilde\Psi(p)$ (Eq. (9) duality): the off-shell states are defined by the duality relation $\langle\tilde\Psi(p)|\tilde\Psi(q)\rangle\tilde W(q) = \delta_4(p-q)$; existence/uniqueness not discussed in the Letter.
