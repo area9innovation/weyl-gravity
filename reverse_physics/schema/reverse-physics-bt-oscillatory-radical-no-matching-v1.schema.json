@@ -1,0 +1,13 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema","$id":"reverse-physics-bt-oscillatory-radical-no-matching-v1.schema.json",
+  "$defs":{"s":{"type":"string","minLength":1},"o":{"type":"object","minProperties":1},"sl":{"type":"array","items":{"$ref":"#/$defs/s"}}},
+  "type":"object","required":["certificate","schema_version","dependency_tags","lifecycle_state","result_kind","question","answer","charge_ledger","exact_closure","endpoint_comparison","coisometry_gate","disposition","missing_object_ledger","next_gate","does_not_establish","provenance","verification_commands","checks","report","schema"],
+  "properties":{
+    "certificate":{"const":"REVERSE_PHYSICS_BT_OSCILLATORY_RADICAL_NO_MATCHING_V1"},"schema_version":{"const":"reverse-physics-bt-oscillatory-radical-no-matching-v1"},"dependency_tags":{"const":["LOCAL-ALGEBRAIC","REDUCED-MODE"]},"lifecycle_state":{"const":"CLASSIFIED"},
+    "result_kind":{"$ref":"#/$defs/s"},"question":{"$ref":"#/$defs/s"},"answer":{"$ref":"#/$defs/s"},"charge_ledger":{"$ref":"#/$defs/o"},"exact_closure":{"$ref":"#/$defs/o"},"endpoint_comparison":{"$ref":"#/$defs/o"},"coisometry_gate":{"$ref":"#/$defs/o"},
+    "disposition":{"type":"object","required":["oscillatory_endpoint_matching","Q_t_endpoint_matching","three_neutral_endpoint_constants","public_pushforward_projector","exact_gram_one_over_48","full_nlo_quotient_trace","physical_nlo_probability"],"properties":{"oscillatory_endpoint_matching":{"const":"EXACT_CHARGE_OBSTRUCTION"},"Q_t_endpoint_matching":{"const":"EXACT_CHARGE_OBSTRUCTION"},"three_neutral_endpoint_constants":{"const":"UNDETERMINED"},"public_pushforward_projector":{"const":"NOT_AVAILABLE_AT_ORDER_LAMBDA"},"exact_gram_one_over_48":{"const":"NOT_DERIVED"},"full_nlo_quotient_trace":{"const":"NOT_COMPUTED"},"physical_nlo_probability":{"const":"NOT_ESTABLISHED"}},"additionalProperties":false},
+    "missing_object_ledger":{"type":"array","minItems":6,"items":{"$ref":"#/$defs/s"}},"next_gate":{"$ref":"#/$defs/s"},"does_not_establish":{"type":"array","minItems":7,"items":{"$ref":"#/$defs/s"}},"provenance":{"$ref":"#/$defs/o"},"verification_commands":{"type":"array","minItems":3,"items":{"$ref":"#/$defs/s"}},
+    "checks":{"type":"object","required":["ok","passed","total","failures","details"],"properties":{"ok":{"const":true},"passed":{"const":13},"total":{"const":13},"failures":{"const":[]},"details":{"type":"object","minProperties":13,"additionalProperties":{"const":true}}},"additionalProperties":false},
+    "report":{"const":"reverse_physics/reports/bt-oscillatory-radical-no-matching.md"},"schema":{"const":"reverse_physics/schema/reverse-physics-bt-oscillatory-radical-no-matching-v1.schema.json"}
+  },"additionalProperties":false
+}
