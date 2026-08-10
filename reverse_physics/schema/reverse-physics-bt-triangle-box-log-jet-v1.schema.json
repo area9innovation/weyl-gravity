@@ -1,0 +1,205 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-triangle-box-log-jet-v1.schema.json",
+  "title": "BT triangle and box logarithmic four-mass jets",
+  "$defs": {
+    "string": {"type": "string", "minLength": 1},
+    "strings": {"type": "array", "items": {"$ref": "#/$defs/string"}},
+    "input": {
+      "type": "object",
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {"$ref": "#/$defs/string"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      },
+      "additionalProperties": false
+    },
+    "rows": {
+      "type": "object",
+      "required": ["Ls", "Lt", "Lu", "log_kinematic_rational"],
+      "properties": {
+        "Ls": {"type": "array", "minItems": 7, "maxItems": 7, "items": {"type": "integer"}},
+        "Lt": {"type": "array", "minItems": 7, "maxItems": 7, "items": {"type": "integer"}},
+        "Lu": {"type": "array", "minItems": 7, "maxItems": 7, "items": {"type": "integer"}},
+        "log_kinematic_rational": {"type": "array", "minItems": 7, "maxItems": 7, "items": {"type": "integer"}}
+      },
+      "additionalProperties": false
+    }
+  },
+  "type": "object",
+  "required": [
+    "certificate", "schema_version", "dependency_tags", "lifecycle_state",
+    "result_kind", "question", "answer", "declared_carrier",
+    "perfect_square_tree_identity", "channel_cut_decomposition",
+    "interference_jets", "collinear_expansion", "disposition",
+    "missing_object_ledger", "next_gate", "does_not_establish", "provenance",
+    "verification_commands", "checks", "report", "schema"
+  ],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_TRIANGLE_BOX_LOG_JET_V1"},
+    "schema_version": {"const": "reverse-physics-bt-triangle-box-log-jet-v1"},
+    "dependency_tags": {"const": ["REDUCED-MODE"]},
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "result_kind": {"$ref": "#/$defs/string"},
+    "question": {"$ref": "#/$defs/string"},
+    "answer": {"$ref": "#/$defs/string"},
+    "declared_carrier": {
+      "type": "object",
+      "required": ["kinematics", "jet_ring", "hard_region", "scope"],
+      "properties": {
+        "kinematics": {"$ref": "#/$defs/string"},
+        "jet_ring": {"const": "Q(s,t,Ls,Lt,Lu)[x1,x2,x3,x4]/(x_i^2)"},
+        "hard_region": {"const": "s*t*(s+t) is nonzero"},
+        "scope": {"$ref": "#/$defs/string"}
+      },
+      "additionalProperties": false
+    },
+    "perfect_square_tree_identity": {
+      "type": "object",
+      "required": ["decomposition", "degree_zero", "degree_one", "degree_two", "consequence"],
+      "properties": {
+        "decomposition": {"const": "Mtree_red=A=E-Q"},
+        "degree_zero": {"const": "0"},
+        "degree_one": {"const": "0"},
+        "degree_two": {"const": "A^(2)=1/2*sum_{i<j}x_i*x_j"},
+        "consequence": {"$ref": "#/$defs/string"}
+      },
+      "additionalProperties": false
+    },
+    "channel_cut_decomposition": {
+      "type": "object",
+      "required": [
+        "topologies", "repair_identity", "normalization", "bubble_polynomial",
+        "triangle_polynomial", "box_polynomial", "complete_polynomial", "on_shell_control",
+        "holdom_forward_control"
+      ],
+      "properties": {
+        "topologies": {"const": ["B=Q_L*Q_R", "T=-Q_L*E_R-E_L*Q_R", "X=E_L*E_R"]},
+        "repair_identity": {"const": "E=A+Q; therefore B+T+X=A_L*A_R"},
+        "normalization": {"const": "d_y*d_z ordinary_cut=P_topology/12"},
+        "bubble_polynomial": {"$ref": "#/$defs/string"},
+        "triangle_polynomial": {"const": "P_T=-(19*S^2+2*S*T+2*T^2-(25*S+2*T)*Sigma_x+3*xa*xb+3*xc*xd+32*Sigma_cross)"},
+        "box_polynomial": {"const": "P_X=12*S^2+S*T+T^2-(18*S+T)*Sigma_x+5*xa*xb+5*xc*xd+31*Sigma_cross"},
+        "complete_polynomial": {"const": "P_B+P_T+P_X=3*xa*xb+3*xc*xd+6*Sigma_cross"},
+        "on_shell_control": {"const": "P_B+P_T+P_X=0 when all x_i=0, channel by channel"},
+        "holdom_forward_control": {"const": "At T=0 the generic-coupling weights are 2*P_B=14, -P_T=19, P_X/2=6, reproducing 6*lambda3^4+19*lambda3^2*lambda4+14*lambda4^2."}
+      },
+      "additionalProperties": false
+    },
+    "interference_jets": {
+      "type": "object",
+      "required": [
+        "definition", "common_denominator", "numerator_basis", "triangle_rows",
+        "box_rows", "complete_rows", "complete_reduction", "physical_normalization",
+        "log_kinematic_rational_note"
+      ],
+      "properties": {
+        "definition": {"$ref": "#/$defs/string"},
+        "common_denominator": {"const": "s^2*t^2*(s+t)^2"},
+        "numerator_basis": {"const": "rows multiply s^(6-k)*t^k for k=0,...,6"},
+        "triangle_rows": {
+          "allOf": [
+            {"$ref": "#/$defs/rows"},
+            {"const": {
+              "Ls": [-19, 60, 154, 42, 28, 2, -2],
+              "Lt": [-2, 2, 28, 42, 154, 60, -19],
+              "Lu": [-19, -22, 53, 106, 53, -22, -19],
+              "log_kinematic_rational": [0, 76, 199, 248, 199, 76, 0]
+            }}
+          ]
+        },
+        "box_rows": {
+          "allOf": [
+            {"$ref": "#/$defs/rows"},
+            {"const": {
+              "Ls": [12, -47, -90, 7, 0, -1, 1],
+              "Lt": [1, -1, 0, 7, -90, -47, 12],
+              "Lu": [12, 23, 5, -9, 5, 23, 12],
+              "log_kinematic_rational": [0, -48, -140, -185, -140, -48, 0]
+            }}
+          ]
+        },
+        "complete_rows": {
+          "allOf": [
+            {"$ref": "#/$defs/rows"},
+            {"const": {
+              "Ls": [0, 0, 15, 30, 15, 0, 0],
+              "Lt": [0, 0, 15, 30, 15, 0, 0],
+              "Lu": [0, 0, 15, 30, 15, 0, 0],
+              "log_kinematic_rational": [0, 0, 0, 0, 0, 0, 0]
+            }}
+          ]
+        },
+        "complete_reduction": {"const": "J_B+J_T+J_X=15*(Ls+Lt+Lu)"},
+        "physical_normalization": {"const": "[x1*x2*x3*x4]2*Re(Mtree^*Mloop_top_log)=lambda^6/(4*pi)^2*(16/3)*J_top"},
+        "log_kinematic_rational_note": {"$ref": "#/$defs/string"}
+      },
+      "additionalProperties": false
+    },
+    "collinear_expansion": {
+      "type": "object",
+      "required": ["variables", "bubble", "triangle", "box", "complete", "conclusion"],
+      "properties": {
+        "variables": {"const": "r=t/s, L=log(mu^2/s), ell=log(-t/s)"},
+        "bubble": {"$ref": "#/$defs/string"},
+        "triangle": {"const": "J_T=(-40L+2ell)/r^2+(120L-6ell+95)/r+(35L-18ell+43/2)+O(r)"},
+        "box": {"const": "J_X=(25L-ell)/r^2+(-75L+3ell-60)/r+(40L-5ell-37)+O(r)"},
+        "complete": {"const": "J_log=45L-15ell+O(r)=15*(3L-ell)+O(r)"},
+        "conclusion": {"$ref": "#/$defs/string"}
+      },
+      "additionalProperties": false
+    },
+    "disposition": {
+      "type": "object",
+      "required": [
+        "triangle_logarithmic_jet", "box_logarithmic_jet",
+        "complete_topology_logarithmic_jet",
+        "triangle_cut_free_finite_rational_part", "box_cut_free_finite_rational_part",
+        "bubble_finite_rational_and_counterterm_part", "external_phase_space_projector",
+        "real_virtual_collinear_cancellation", "beyond_tree_positivity"
+      ],
+      "properties": {
+        "triangle_logarithmic_jet": {"const": "COMPUTED"},
+        "box_logarithmic_jet": {"const": "COMPUTED"},
+        "complete_topology_logarithmic_jet": {"const": "COMPUTED"},
+        "triangle_cut_free_finite_rational_part": {"const": "NOT_COMPUTED"},
+        "box_cut_free_finite_rational_part": {"const": "NOT_COMPUTED"},
+        "bubble_finite_rational_and_counterterm_part": {"const": "NOT_COMPUTED"},
+        "external_phase_space_projector": {"const": "NOT_APPLIED"},
+        "real_virtual_collinear_cancellation": {"const": "NOT_COMPUTED"},
+        "beyond_tree_positivity": {"const": "NOT_ESTABLISHED"}
+      },
+      "additionalProperties": false
+    },
+    "missing_object_ledger": {"type": "array", "minItems": 7, "items": {"$ref": "#/$defs/string"}},
+    "next_gate": {"$ref": "#/$defs/string"},
+    "does_not_establish": {"type": "array", "minItems": 11, "items": {"$ref": "#/$defs/string"}},
+    "provenance": {
+      "type": "object",
+      "required": ["source_commit", "retrieval_date", "inputs", "primary_sources"],
+      "properties": {
+        "source_commit": {"const": "69e2ed751f8e38222ea065093455baa4c785c297"},
+        "retrieval_date": {"const": "2026-08-10"},
+        "inputs": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"$ref": "#/$defs/input"}},
+        "primary_sources": {"type": "array", "minItems": 3, "maxItems": 3}
+      },
+      "additionalProperties": false
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "items": {"$ref": "#/$defs/string"}},
+    "checks": {
+      "type": "object",
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"const": 21},
+        "total": {"const": 21},
+        "failures": {"maxItems": 0},
+        "details": {"type": "object", "minProperties": 21, "maxProperties": 21, "additionalProperties": {"const": true}}
+      },
+      "additionalProperties": false
+    },
+    "report": {"const": "reverse_physics/reports/bt-triangle-box-log-jet.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-triangle-box-log-jet-v1.schema.json"}
+  },
+  "additionalProperties": false
+}

@@ -226,6 +226,32 @@ $$\frac{d\sigma}{d\Omega} = \frac{\partial^4}{\partial m_1^2\,\partial m_2^2\,\p
 
 using $\delta'(p^2) = -(\partial/\partial m^2)\delta(p^2 - m^2)|_{m^2=0}$ with **independent masses per external leg**. Their flagged novelty: "our construction does not put the amplitude $\mathcal{M}$ on-shell, but rather the squared amplitude $|\mathcal{M}|^2$ which is differentiated before being put on-shell... **only on-shell probabilities, not amplitudes, are physically meaningful**." Feynman rules (App. B): cubic vertex $-2i\lambda(p_1^2\, p_2\!\cdot\!p_3 + \mathrm{perm.})$ (B1), quartic vertex $-4i\lambda^2(p_1\!\cdot\!p_2\; p_3\!\cdot\!p_4 + \mathrm{perm.})$ (B2); tree $\mathcal{M}$ = contact + s + t + u exchange (B3); characteristic distribution $\chi(p^\mu) \simeq \delta_1(p^\mu)/L^\mu$ (B4), CoM-frame product (B5); the $\delta_4(0) = L^0L^1L^2L^3$ spacetime volume in (11) cancels against $\chi$'s denominators leaving the transverse Area of (12).
 
+### Repository extension beyond the Letter (2026-08-10)
+
+The loop-completion stream has now crossed two partial gates, without changing
+the tree-only positivity boundary above:
+
+1. `REVERSE_PHYSICS_BT_PERFECT_SQUARE_RG_SEPARATRIX_V1`
+   (`LOCAL-ALGEBRAIC`, `COEFFICIENT_COMPUTED`) proves from Holdom's published
+   beta functions that the PS coupling relation is one-loop RG invariant and
+   asymptotically free.  This establishes ultraviolet closure of the special
+   action, not an inclusive probability.
+2. `REVERSE_PHYSICS_BT_FOUR_POINT_BUBBLE_LOG_JET_V1` and
+   `REVERSE_PHYSICS_BT_TRIANGLE_BOX_LOG_JET_V1` (`REDUCED-MODE`,
+   `COEFFICIENT_COMPUTED`) compute the complete cut-constructible logarithmic
+   four-mass one-loop topology jet.  The separate bubble, triangle, and box
+   sectors contain `r^-2` and `r^-1` collinear terms, but they cancel exactly in
+   the topology sum:
+
+   $$J_B+J_T+J_X=15(L_s+L_t+L_u)=15(3L-\ell)+O(r).$$
+
+The remaining ratio logarithm has not been passed through the external
+four-mass phase-space projector or matched to the independently certified real
+five-point threshold, whose reduced mixed slope contains the coefficient
+`-3/8`.  Cut-free finite rational terms, a common real--virtual prescription,
+KLN cancellation, and positivity beyond tree level remain open.  None of these
+scalar results is a tensor/BRST or `LORENTZIAN-CAUSAL` gravity result.
+
 ---
 
 ## 6. The nonperturbative caveat (verbatim, Sec. IV)
@@ -262,7 +288,7 @@ Deferred to the companion papers or simply absent from the Letter:
 5. **Definition of $\dagger$ and $\mathrm{tr}$ in Krein space.** Our identification ($\dagger$ = Krein adjoint w.r.t. the indefinite inner product; trace via the indefinite pairing) is an inference from consistency of Eqs. (6)–(8), not an explicit definition in the paper. Also unaddressed: trace-class issues, whether $\mathrm{tr}(A^\dagger A)$ converges before the finite-volume regularization of App. B, and uniqueness of the $B + C$ splitting in Eq. (7).
 6. **The explicit $\kappa$ for the interacting theory.** $\kappa$ is defined abstractly (Eq. (1)) and identified with $\Omega\leftrightarrow\Upsilon$ / $\mathcal{X}\to-\mathcal{X}$ at the field level; the paper never writes $\kappa$ as an operator on the Fock/Krein space (e.g., its action on the $b_\Omega, b_\Upsilon$ or $a_1, a_2$ oscillators), nor which particular $\kappa$ (fundamental decomposition) makes $B^{(\Omega\Upsilon)}$ ghost symmetric — only that $P^{(\Omega\Upsilon)}_\chi$ is "even under ghost parity."
 7. **The Noether charge** of $SO^+(1,1)$: no explicit charge operator $\hat Q$ or its expression in oscillators; only charge assignments of $b_\Omega, b_\Upsilon$ (both creation and annihilation of a given field carry the same sign).
-8. **All-orders positivity**: open. Obstacle = collinear IR divergences affecting asymptotic states; resummation program only sketched (IR-finiteness of loops from [23] plus optical theorem).
+8. **All-orders positivity**: open. Obstacle = collinear IR divergences affecting asymptotic states; resummation program only sketched (IR-finiteness of loops from [23] plus optical theorem). The repository has since established one-loop RG closure and the complete cut-constructible bubble+triangle+box logarithmic four-mass jet, including cancellation of its inverse-power collinear pieces, but the surviving ratio logarithm has not yet been projected or matched to the real channel.
 9. **Higher orders of the Bogoliubov map**: (C4)–(C5) hold only up to $\mathcal{O}(\lambda)$; the interacting corrections to $R_t$'s action on oscillators are not given.
 10. **The second $\mathbb{Z}_2$** in $K_4 = \mathbb{Z}_2\times\mathbb{Z}_2$ is never identified explicitly (presumably $(\Omega,\Upsilon)\to(-\Omega,-\Upsilon)$), nor is any role assigned to it.
 11. **Whether/how the $\Omega > 0$ vs $\Omega \in \mathbb{R}$ domain mismatch feeds back into perturbation theory** (e.g., instanton/boundary contributions distinguishing the two path integrals): stated as inequivalence, not analyzed.

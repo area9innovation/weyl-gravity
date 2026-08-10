@@ -250,3 +250,12 @@ collinear powers require triangle and box completion before real matching.
 EVIDENCE: `reverse_physics/certificates/REVERSE_PHYSICS_BT_FOUR_POINT_BUBBLE_LOG_JET_V1.json`
 
 MISSING-DEP: triangle logarithmic four-mass jet
+
+## Successor checkpoint
+
+The triangle and box logarithmic dependency is now closed by
+[`REVERSE_PHYSICS_BT_TRIANGLE_BOX_LOG_JET_V1`](../certificates/REVERSE_PHYSICS_BT_TRIANGLE_BOX_LOG_JET_V1.json).
+The complete topology sum cancels every bubble `r^-2` and `r^-1` term and
+reduces exactly to `15*(Ls+Lt+Lu)`.  The surviving ratio logarithm has not yet
+been passed through the external four-mass phase-space projector, and cut-free
+finite rational terms remain outside the cut calculation.

@@ -1,0 +1,277 @@
+{
+  "answer": "The triangle and box logarithmic jets are computed exactly. Their individual r^-2 and r^-1 collinear terms cancel those of the bubble in the complete topology sum, leaving 15*(Ls+Lt+Lu) and hence only the ordinary ratio logarithm 15*(3L-ell). Cut-free finite rational terms and the external phase-space projector are not determined.",
+  "certificate": "REVERSE_PHYSICS_BT_TRIANGLE_BOX_LOG_JET_V1",
+  "channel_cut_decomposition": {
+    "box_polynomial": "P_X=12*S^2+S*T+T^2-(18*S+T)*Sigma_x+5*xa*xb+5*xc*xd+31*Sigma_cross",
+    "bubble_polynomial": "P_B=7*S^2+S*T+T^2-(7*S+T)*Sigma_x+xa*xb+xc*xd+7*Sigma_cross",
+    "complete_polynomial": "P_B+P_T+P_X=3*xa*xb+3*xc*xd+6*Sigma_cross",
+    "holdom_forward_control": "At T=0 the generic-coupling weights are 2*P_B=14, -P_T=19, P_X/2=6, reproducing 6*lambda3^4+19*lambda3^2*lambda4+14*lambda4^2.",
+    "normalization": "d_y*d_z ordinary_cut=P_topology/12",
+    "on_shell_control": "P_B+P_T+P_X=0 when all x_i=0, channel by channel",
+    "repair_identity": "E=A+Q; therefore B+T+X=A_L*A_R",
+    "topologies": [
+      "B=Q_L*Q_R",
+      "T=-Q_L*E_R-E_L*Q_R",
+      "X=E_L*E_R"
+    ],
+    "triangle_polynomial": "P_T=-(19*S^2+2*S*T+2*T^2-(25*S+2*T)*Sigma_x+3*xa*xb+3*xc*xd+32*Sigma_cross)"
+  },
+  "checks": {
+    "details": {
+      "box_collinear_coefficients": true,
+      "box_crossing": true,
+      "box_cut_polynomial_identity": true,
+      "box_rows": true,
+      "channel_topology_sum_is_full_cut": true,
+      "combined_log_jet_collapses": true,
+      "combined_rows": true,
+      "cross_cut_covariant_moment_identity": true,
+      "cut_free_finite_rational_terms_remain_open": true,
+      "external_phase_space_projector_remains_open": true,
+      "full_channel_cut_vanishes_on_shell": true,
+      "holdom_forward_topology_coefficients": true,
+      "inverse_power_collinear_terms_cancel": true,
+      "no_lorentzian_claim": true,
+      "physical_interference_prefactor_is_sixteen_thirds": true,
+      "tree_degree_two_is_universal_e2_over_two": true,
+      "tree_degree_zero_and_one_vanish": true,
+      "triangle_collinear_coefficients": true,
+      "triangle_crossing": true,
+      "triangle_cut_polynomial_identity": true,
+      "triangle_rows": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 21,
+    "total": 21
+  },
+  "collinear_expansion": {
+    "box": "J_X=(25L-ell)/r^2+(-75L+3ell-60)/r+(40L-5ell-37)+O(r)",
+    "bubble": "J_B=(15L-ell)/r^2+(-45L+3ell-35)/r+(-30L+8ell+31/2)+O(r)",
+    "complete": "J_log=45L-15ell+O(r)=15*(3L-ell)+O(r)",
+    "conclusion": "All r^-2 and r^-1 terms cancel exactly across the three topology families. A ratio logarithm remains and must be passed through the external phase-space projector before comparison with the real threshold.",
+    "triangle": "J_T=(-40L+2ell)/r^2+(120L-6ell+95)/r+(35L-18ell+43/2)+O(r)",
+    "variables": "r=t/s, L=log(mu^2/s), ell=log(-t/s)"
+  },
+  "declared_carrier": {
+    "hard_region": "s*t*(s+t) is nonzero",
+    "jet_ring": "Q(s,t,Ls,Lt,Lu)[x1,x2,x3,x4]/(x_i^2)",
+    "kinematics": "four all-incoming momenta; x_i=p_i^2 independent; fixed s=(p1+p2)^2 and t=(p1+p3)^2; u=sum_i(x_i)-s-t",
+    "scope": "cut-constructible logarithmic one-loop amplitude through loop virtuality degree two, sufficient for interference with the PS tree under the fixed-(s,t) fourfold projector"
+  },
+  "dependency_tags": [
+    "REDUCED-MODE"
+  ],
+  "disposition": {
+    "beyond_tree_positivity": "NOT_ESTABLISHED",
+    "box_cut_free_finite_rational_part": "NOT_COMPUTED",
+    "box_logarithmic_jet": "COMPUTED",
+    "bubble_finite_rational_and_counterterm_part": "NOT_COMPUTED",
+    "complete_topology_logarithmic_jet": "COMPUTED",
+    "external_phase_space_projector": "NOT_APPLIED",
+    "real_virtual_collinear_cancellation": "NOT_COMPUTED",
+    "triangle_cut_free_finite_rational_part": "NOT_COMPUTED",
+    "triangle_logarithmic_jet": "COMPUTED"
+  },
+  "does_not_establish": [
+    "the complete finite one-loop four-point amplitude",
+    "cut-free rational triangle or box terms",
+    "the finite renormalized bubble and counterterm contribution",
+    "scheme or field-redefinition invariance of the off-shell projector",
+    "real--virtual cancellation of the -3/8 threshold coefficient",
+    "a KLN theorem, dressed-state construction, or canonical finite part",
+    "a physical NLO cross section or probability",
+    "positivity or unitarity beyond the published BT tree result",
+    "a tensor, BRST, or gravitational lift",
+    "anything LORENTZIAN-CAUSAL",
+    "literature priority for the tree identity or topology polynomials"
+  ],
+  "interference_jets": {
+    "box_rows": {
+      "Ls": [
+        12,
+        -47,
+        -90,
+        7,
+        0,
+        -1,
+        1
+      ],
+      "Lt": [
+        1,
+        -1,
+        0,
+        7,
+        -90,
+        -47,
+        12
+      ],
+      "Lu": [
+        12,
+        23,
+        5,
+        -9,
+        5,
+        23,
+        12
+      ],
+      "log_kinematic_rational": [
+        0,
+        -48,
+        -140,
+        -185,
+        -140,
+        -48,
+        0
+      ]
+    },
+    "common_denominator": "s^2*t^2*(s+t)^2",
+    "complete_reduction": "J_B+J_T+J_X=15*(Ls+Lt+Lu)",
+    "complete_rows": {
+      "Ls": [
+        0,
+        0,
+        15,
+        30,
+        15,
+        0,
+        0
+      ],
+      "Lt": [
+        0,
+        0,
+        15,
+        30,
+        15,
+        0,
+        0
+      ],
+      "Lu": [
+        0,
+        0,
+        15,
+        30,
+        15,
+        0,
+        0
+      ],
+      "log_kinematic_rational": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "definition": "J_top=[x1*x2*x3*x4](Mtree_red*sum_channels(P_top*L_channel))",
+    "log_kinematic_rational_note": "The named rows come only from Taylor expanding Lu(x); they are not cut-free finite rational loop terms.",
+    "numerator_basis": "rows multiply s^(6-k)*t^k for k=0,...,6",
+    "physical_normalization": "[x1*x2*x3*x4]2*Re(Mtree^*Mloop_top_log)=lambda^6/(4*pi)^2*(16/3)*J_top",
+    "triangle_rows": {
+      "Ls": [
+        -19,
+        60,
+        154,
+        42,
+        28,
+        2,
+        -2
+      ],
+      "Lt": [
+        -2,
+        2,
+        28,
+        42,
+        154,
+        60,
+        -19
+      ],
+      "Lu": [
+        -19,
+        -22,
+        53,
+        106,
+        53,
+        -22,
+        -19
+      ],
+      "log_kinematic_rational": [
+        0,
+        76,
+        199,
+        248,
+        199,
+        76,
+        0
+      ]
+    }
+  },
+  "lifecycle_state": "COEFFICIENT_COMPUTED",
+  "missing_object_ledger": [
+    "cut-free finite rational triangle and box terms in the declared scheme",
+    "the renormalized finite bubble and counterterm jet",
+    "wave-function and lower-point insertion contributions",
+    "one common non-mass infrared prescription across real and virtual terms",
+    "the differentiated external four-body phase-space density and moving boundaries",
+    "normalization map between the surviving virtual ratio log and the real -3/8 threshold",
+    "a complete physical NLO probability and quotient-trace evaluation"
+  ],
+  "next_gate": "Apply the four-external-mass phase-space projector to the complete 15*(Ls+Lt+Lu) logarithmic jet under the same ratio prescription as the five-point real threshold; then determine whether the ratio logarithms cancel.",
+  "perfect_square_tree_identity": {
+    "consequence": "Only A^(2) is needed inside cut products because the external interference tree also starts at virtuality degree two.",
+    "decomposition": "Mtree_red=A=E-Q",
+    "degree_one": "0",
+    "degree_two": "A^(2)=1/2*sum_{i<j}x_i*x_j",
+    "degree_zero": "0"
+  },
+  "provenance": {
+    "inputs": [
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_FOUR_POINT_BUBBLE_LOG_JET_V1.json",
+        "sha256": "e10cdc0fd77628a0ddb615141e9664c1b27ac2a4562288f3b66794d93b3968db"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_FIVE_POINT_INDEPENDENT_MASS_THRESHOLD_V1.json",
+        "sha256": "e6b1872ca0fbcd6a51ccd8a44b018678678dc0121ede855911a8006b7af2a4a2"
+      }
+    ],
+    "primary_sources": [
+      {
+        "equations": [
+          "Eq. (2)",
+          "Appendix B"
+        ],
+        "source": "Bateman--Turok arXiv:2607.00096v1",
+        "use": "PS action and cubic/quartic tree rules"
+      },
+      {
+        "equations": [
+          "Eqs. (20)-(22)"
+        ],
+        "source": "Holdom arXiv:2303.06723v2",
+        "use": "one-loop normalization and on-shell bubble control"
+      },
+      {
+        "equations": [
+          "Eqs. (11)-(13)"
+        ],
+        "source": "Holdom arXiv:2402.09223v1",
+        "use": "mass-derivative cut representation and full forward control"
+      }
+    ],
+    "retrieval_date": "2026-08-10",
+    "source_commit": "69e2ed751f8e38222ea065093455baa4c785c297"
+  },
+  "question": "What do the complete two-cubic/one-quartic triangle and four-cubic box topology families contribute to the BT four-mass logarithmic jet?",
+  "report": "reverse_physics/reports/bt-triangle-box-log-jet.md",
+  "result_kind": "triangle and box cut-constructible logarithmic four-mass interference jets",
+  "schema": "reverse_physics/schema/reverse-physics-bt-triangle-box-log-jet-v1.schema.json",
+  "schema_version": "reverse-physics-bt-triangle-box-log-jet-v1",
+  "verification_commands": [
+    "python3 reverse_physics/bt_triangle_box_log_jet.py --check",
+    "python3 reverse_physics/verify_bt_triangle_box_log_jet.py",
+    "python3 -m unittest -v reverse_physics.tests.test_bt_triangle_box_log_jet"
+  ]
+}
