@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-endpoint-extension-ambiguity-v1.schema.json",
+  "$defs": {
+    "s": {"type": "string", "minLength": 1},
+    "r": {"type": "object", "required": ["numerator", "denominator"], "properties": {"numerator": {"type": "integer"}, "denominator": {"type": "integer", "minimum": 1}}, "additionalProperties": false},
+    "o": {"type": "object", "minProperties": 1},
+    "sl": {"type": "array", "items": {"$ref": "#/$defs/s"}}
+  },
+  "type": "object",
+  "required": ["certificate", "schema_version", "dependency_tags", "lifecycle_state", "result_kind", "question", "answer", "interior_kernel", "extension_classification", "target_test", "disposition", "missing_object_ledger", "next_gate", "does_not_establish", "provenance", "verification_commands", "checks", "report", "schema"],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_ENDPOINT_EXTENSION_AMBIGUITY_V1"},
+    "schema_version": {"const": "reverse-physics-bt-endpoint-extension-ambiguity-v1"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "result_kind": {"$ref": "#/$defs/s"}, "question": {"$ref": "#/$defs/s"}, "answer": {"$ref": "#/$defs/s"},
+    "interior_kernel": {"$ref": "#/$defs/o"},
+    "extension_classification": {"type": "object", "required": ["scaling_degree", "left_ambiguity", "reflection_even_ambiguity", "jet_action_matrix", "jet_matrix_determinant", "triple_plus_on_one", "symmetric_cutoff_fp_on_one", "difference_is_allowed_endpoint_distribution"], "properties": {"scaling_degree": {"const": 3}, "left_ambiguity": {"$ref": "#/$defs/s"}, "reflection_even_ambiguity": {"$ref": "#/$defs/s"}, "jet_action_matrix": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/r"}}}, "jet_matrix_determinant": {"$ref": "#/$defs/r"}, "triple_plus_on_one": {"const": {"numerator": 0, "denominator": 1}}, "symmetric_cutoff_fp_on_one": {"const": {"numerator": 1, "denominator": 2}}, "difference_is_allowed_endpoint_distribution": {"const": true}}, "additionalProperties": false},
+    "target_test": {"type": "object", "required": ["required_gram", "constant_ambiguity_action", "coefficient_that_fits_target_from_plus_base", "disposition"], "properties": {"required_gram": {"const": {"numerator": 1, "denominator": 48}}, "constant_ambiguity_action": {"const": {"numerator": 2, "denominator": 1}}, "coefficient_that_fits_target_from_plus_base": {"const": {"numerator": 1, "denominator": 96}}, "disposition": {"const": "ONE_OVER_48_IS_NOT_DERIVED_BY_THE_INTERIOR_KERNEL_OR_EXTENSION_AXIOMS"}}, "additionalProperties": false},
+    "disposition": {"type": "object", "required": ["interior_partial_fraction", "reflection_even_extension_space", "ordinary_unique_endpoint_extension", "one_over_48_from_current_data", "oscillatory_and_vacuum_matching_condition", "full_transported_projector", "full_nlo_quotient_trace", "physical_nlo_probability"], "properties": {"interior_partial_fraction": {"const": "COEFFICIENT_COMPUTED"}, "reflection_even_extension_space": {"const": "CLASSIFIED"}, "ordinary_unique_endpoint_extension": {"const": "EXACT_OBSTRUCTION"}, "one_over_48_from_current_data": {"const": "UNDERDETERMINED"}, "oscillatory_and_vacuum_matching_condition": {"const": "NOT_COMPUTED"}, "full_transported_projector": {"const": "NOT_CONSTRUCTED"}, "full_nlo_quotient_trace": {"const": "NOT_COMPUTED"}, "physical_nlo_probability": {"const": "NOT_ESTABLISHED"}}, "additionalProperties": false},
+    "missing_object_ledger": {"type": "array", "minItems": 6, "items": {"$ref": "#/$defs/s"}}, "next_gate": {"$ref": "#/$defs/s"}, "does_not_establish": {"type": "array", "minItems": 8, "items": {"$ref": "#/$defs/s"}},
+    "provenance": {"$ref": "#/$defs/o"}, "verification_commands": {"type": "array", "minItems": 3, "items": {"$ref": "#/$defs/s"}},
+    "checks": {"type": "object", "required": ["ok", "passed", "total", "failures", "details"], "properties": {"ok": {"const": true}, "passed": {"const": 13}, "total": {"const": 13}, "failures": {"const": []}, "details": {"type": "object", "minProperties": 13, "additionalProperties": {"const": true}}}, "additionalProperties": false},
+    "report": {"const": "reverse_physics/reports/bt-endpoint-extension-ambiguity.md"}, "schema": {"const": "reverse_physics/schema/reverse-physics-bt-endpoint-extension-ambiguity-v1.schema.json"}
+  },
+  "additionalProperties": false
+}

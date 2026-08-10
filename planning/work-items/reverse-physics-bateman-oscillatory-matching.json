@@ -1,0 +1,17 @@
+{
+  "id": "sf:program/work/reverse-physics-bateman-oscillatory-matching",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "reverse-physics", "state": "ACTIVE",
+    "objective": "Derive the three endpoint matching constants of the BT transported projector from the oscillatory creation terms and Q_t squeezed vacuum, then test the resulting incoming/outgoing Gram against 1/48 without fitting.",
+    "depends_on": ["REVERSE_PHYSICS_BT_ENDPOINT_EXTENSION_AMBIGUITY_V1", "REVERSE_PHYSICS_BT_RT_JORDAN_KERNEL_V1", "Bateman--Turok arXiv:2607.00096v1 Appendix C"],
+    "activates": ["a unique continuum BT projector", "the complete real--virtual quotient trace", "the physical NLO probability test"],
+    "current_gate": "OSCILLATORY_ENDPOINT_MATCHING: transport the a1-dagger term in Eq. (33) and Q_t of Eq. (34) through the order-lambda projector, extract their delta/delta-prime/delta-double-prime endpoint action, and prove incoming/outgoing equality and idempotence on one test-function domain.",
+    "stop_condition": "Construct and verify all three endpoint constants and the exact 1/48 Gram, or certify the first exact mismatch in oscillatory weak limits, squeeze contractions, projector identities, charge, coefficient, or incoming/outgoing equality.",
+    "forbid": "no endpoint constant fitted to 1/48; no omission of Q_t or creation sectors; no plus or cutoff prescription called physical without dynamical matching; no final-only result; no Hilbert metric substitution; no scalar-to-gravity or LORENTZIAN-CAUSAL promotion; exact arithmetic only",
+    "allowed_paths": ["reverse_physics/", "notes/bateman-turok-embedding.md", "paper/05-interaction-obstructions.tex", "paper/05-interaction-obstructions.pdf", "paper/06-einstein-weyl-interaction-obstructions.tex", "paper/06-einstein-weyl-interaction-obstructions.pdf", "planning/work-items/reverse-physics-bateman-oscillatory-matching.json", "planning/events/"],
+    "resource_hint": "Use endpoint jets through degree two. Keep e^(2iEt) as a regulated distribution before taking limits; include Q_t contractions with the off-diagonal null oscillator algebra. Compare plus and cutoff bases only after matching coefficients are derived. Run sequentially under ulimit -v 500000.",
+    "input_commit": "c452d77d9a5620a694adb53bfa80f88012593b5f", "stream": "reverse-physics"
+  }
+}

@@ -1,0 +1,174 @@
+{
+  "answer": "No. The dimensionless cross-Gram shape is exactly -(1/2)*(z^-3+(1-z)^-3). Reflection-even extensions differ by three independent endpoint distributions. Two explicit exact extensions give different values on the inclusive constant test: the triple-plus extension gives 0 and the symmetric cutoff finite part gives 1/2. Adding c0*(delta_0+delta_1) changes that value by 2*c0; c0=1/96 reproduces 1/48 but is a fit, not a prediction.",
+  "certificate": "REVERSE_PHYSICS_BT_ENDPOINT_EXTENSION_AMBIGUITY_V1",
+  "checks": {
+    "details": {
+      "constant_sees_only_delta_zero_order": true,
+      "cross_gram_partial_fraction_identity": true,
+      "cutoff_fp_constant_is_one_half": true,
+      "fitting_one_over_48_requires_c0_one_over_96": true,
+      "input_hashes_pinned": true,
+      "no_lorentzian_claim": true,
+      "oscillatory_matching_stays_open": true,
+      "plus_extension_annihilates_constant": true,
+      "plus_extension_is_reflection_even": true,
+      "probability_stays_open": true,
+      "symmetric_ambiguity_has_three_independent_jets": true,
+      "target_not_fixed_by_distribution_axioms": true,
+      "two_valid_extensions_disagree": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 13,
+    "total": 13
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "disposition": {
+    "full_nlo_quotient_trace": "NOT_COMPUTED",
+    "full_transported_projector": "NOT_CONSTRUCTED",
+    "interior_partial_fraction": "COEFFICIENT_COMPUTED",
+    "one_over_48_from_current_data": "UNDERDETERMINED",
+    "ordinary_unique_endpoint_extension": "EXACT_OBSTRUCTION",
+    "oscillatory_and_vacuum_matching_condition": "NOT_COMPUTED",
+    "physical_nlo_probability": "NOT_ESTABLISHED",
+    "reflection_even_extension_space": "CLASSIFIED"
+  },
+  "does_not_establish": [
+    "that the physical BT prescription chooses the triple-plus extension",
+    "that the physical BT prescription chooses the cutoff finite part",
+    "that 1/48 is impossible after full dynamical matching",
+    "a continuum transported projector or KLN theorem",
+    "a complete NLO probability or beyond-tree positivity",
+    "a tensor or BRST gravitational lift",
+    "anything LORENTZIAN-CAUSAL",
+    "literature priority"
+  ],
+  "extension_classification": {
+    "difference_is_allowed_endpoint_distribution": true,
+    "jet_action_matrix": [
+      [
+        {
+          "denominator": 1,
+          "numerator": 2
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": -2
+        },
+        {
+          "denominator": 1,
+          "numerator": -4
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 4
+        }
+      ]
+    ],
+    "jet_matrix_determinant": {
+      "denominator": 1,
+      "numerator": -16
+    },
+    "left_ambiguity": "c0*delta_0+c1*delta_0_prime+c2*delta_0_double_prime",
+    "reflection_even_ambiguity": "sum_n=0^2 c_n*(delta_0^(n)+(-1)^n*delta_1^(n))",
+    "scaling_degree": 3,
+    "symmetric_cutoff_fp_on_one": {
+      "denominator": 2,
+      "numerator": 1
+    },
+    "triple_plus_on_one": {
+      "denominator": 1,
+      "numerator": 0
+    }
+  },
+  "interior_kernel": {
+    "partial_fraction": "h(z)=-(1/2)*(z^-3+(1-z)^-3)",
+    "scope": "ordered slots before Bose factors, phase space, oscillatory sectors, and E^-2 carrier factor",
+    "shape": "h(z)=-(1-3*z+3*z^2)/(2*z^3*(1-z)^3)"
+  },
+  "lifecycle_state": "CLASSIFIED",
+  "missing_object_ledger": [
+    "derive endpoint delta, delta-prime, and delta-double-prime coefficients from the oscillatory creation and Q_t squeeze sectors",
+    "enforce projector idempotence and pseudo-unitarity on the same endpoint test-function domain",
+    "include incoming and outgoing resolution flows and test their equality",
+    "restore Bose factors, phase space, and the complete neutral quotient trace",
+    "show the resulting coefficient is regulator independent rather than fitted to 1/48",
+    "combine the completed projector with the renormalized virtual and complete real NLO terms"
+  ],
+  "next_gate": "Compute the omitted oscillatory creation and Q_t vacuum-squeeze contributions as endpoint distributions. Only a dynamical matching condition from those sectors can fix the three symmetric endpoint constants; the interior kernel and reflection symmetry cannot.",
+  "provenance": {
+    "inputs": [
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_RT_JORDAN_KERNEL_V1.json",
+        "sha256": "13e7372f7d7bb28a408e56a8744244e7580d60d64fc47b5ae261bb4e2e22f356"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_ASYMPTOTIC_GENERATOR_PREFLIGHT_V1.json",
+        "sha256": "95d11eaf4f529d7f02b4f8a8e6165ee893ea6aa623d26c96a2475e0bd0a8c2c1"
+      }
+    ],
+    "primary_source": {
+      "equations": [
+        "Eq. (16)",
+        "Eq. (19)",
+        "Appendix C"
+      ],
+      "source": "Bateman--Turok arXiv:2607.00096v1",
+      "url": "https://arxiv.org/abs/2607.00096"
+    },
+    "retrieval_date": "2026-08-10",
+    "source_commit": "c452d77d9a5620a694adb53bfa80f88012593b5f"
+  },
+  "question": "Do reflection symmetry, finite scaling degree, and the interior R_t kernel uniquely determine the inclusive endpoint Gram?",
+  "report": "reverse_physics/reports/bt-endpoint-extension-ambiguity.md",
+  "result_kind": "distribution-extension classification of the ordered-slot BT endpoint Gram",
+  "schema": "reverse_physics/schema/reverse-physics-bt-endpoint-extension-ambiguity-v1.schema.json",
+  "schema_version": "reverse-physics-bt-endpoint-extension-ambiguity-v1",
+  "target_test": {
+    "coefficient_that_fits_target_from_plus_base": {
+      "denominator": 96,
+      "numerator": 1
+    },
+    "constant_ambiguity_action": {
+      "denominator": 1,
+      "numerator": 2
+    },
+    "disposition": "ONE_OVER_48_IS_NOT_DERIVED_BY_THE_INTERIOR_KERNEL_OR_EXTENSION_AXIOMS",
+    "required_gram": {
+      "denominator": 48,
+      "numerator": 1
+    }
+  },
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_endpoint_extension_ambiguity.py --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_endpoint_extension_ambiguity.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_endpoint_extension_ambiguity"
+  ]
+}
