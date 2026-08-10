@@ -1,0 +1,353 @@
+{
+  "answer": "No. Treating the three independently classified reflection-even endpoint jets as formal carrier directions, every coefficient vector u gives a skew generator K(u)=[[0,-u^T],[u,0]]. Its conjugation preserves canonical commutators, and P=exp(epsilon K)P0 exp(-epsilon K) is idempotent and trace preserving. At order epsilon^2 the hard block is -u^T u and the endpoint trace is +u^T u. Thus the listed algebraic identities alone admit a three-parameter family and cannot select 1/48. This is an underdetermination witness, not a derivation of the actual BT continuum transport.",
+  "assumptions": [
+    "the endpoint-extension certificate supplies three independent reflection-even jet directions",
+    "the displayed four-channel neutral carrier is used only as a countermodel to uniqueness under the listed algebraic identities",
+    "canonical transformations act by similarity on the carrier projector",
+    "no claim is made that an arbitrary u is realized by the missing BT continuum transport"
+  ],
+  "canonical_family": {
+    "basis": [
+      "hard",
+      "endpoint_c0",
+      "endpoint_c1",
+      "endpoint_c2"
+    ],
+    "generator": "K(u)=[[0,-u^T],[u,0_3]]",
+    "projector": "P(epsilon)=exp(epsilon K)P0 exp(-epsilon K)",
+    "rows": [
+      {
+        "endpoint_trace_P2": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "hard_P2": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "identity": true,
+        "norm_square": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "u": [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ]
+      },
+      {
+        "endpoint_trace_P2": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "hard_P2": {
+          "denominator": 1,
+          "numerator": -1
+        },
+        "identity": true,
+        "norm_square": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "u": [
+          {
+            "denominator": 1,
+            "numerator": 1
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ]
+      },
+      {
+        "endpoint_trace_P2": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "hard_P2": {
+          "denominator": 1,
+          "numerator": -1
+        },
+        "identity": true,
+        "norm_square": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "u": [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 1
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ]
+      },
+      {
+        "endpoint_trace_P2": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "hard_P2": {
+          "denominator": 1,
+          "numerator": -1
+        },
+        "identity": true,
+        "norm_square": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "u": [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 1
+          }
+        ]
+      },
+      {
+        "endpoint_trace_P2": {
+          "denominator": 1,
+          "numerator": 4
+        },
+        "hard_P2": {
+          "denominator": 1,
+          "numerator": -4
+        },
+        "identity": true,
+        "norm_square": {
+          "denominator": 1,
+          "numerator": 4
+        },
+        "u": [
+          {
+            "denominator": 1,
+            "numerator": 2
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ]
+      },
+      {
+        "endpoint_trace_P2": {
+          "denominator": 1,
+          "numerator": 14
+        },
+        "hard_P2": {
+          "denominator": 1,
+          "numerator": -14
+        },
+        "identity": true,
+        "norm_square": {
+          "denominator": 1,
+          "numerator": 14
+        },
+        "u": [
+          {
+            "denominator": 1,
+            "numerator": 1
+          },
+          {
+            "denominator": 1,
+            "numerator": 2
+          },
+          {
+            "denominator": 1,
+            "numerator": 3
+          }
+        ]
+      },
+      {
+        "endpoint_trace_P2": {
+          "denominator": 900,
+          "numerator": 469
+        },
+        "hard_P2": {
+          "denominator": 900,
+          "numerator": -469
+        },
+        "identity": true,
+        "norm_square": {
+          "denominator": 900,
+          "numerator": 469
+        },
+        "u": [
+          {
+            "denominator": 2,
+            "numerator": 1
+          },
+          {
+            "denominator": 3,
+            "numerator": -1
+          },
+          {
+            "denominator": 5,
+            "numerator": 2
+          }
+        ]
+      }
+    ],
+    "symbolic_checks": {
+      "hard_compensation": true,
+      "idempotence_order_one": true,
+      "idempotence_order_two": true,
+      "skew": true,
+      "trace_order_one": true,
+      "trace_order_two": true
+    },
+    "universal_order_two": "P2_hard=-u^T u; trace(P2_endpoint)=+u^T u"
+  },
+  "certificate": "REVERSE_PHYSICS_BT_CANONICAL_ENDPOINT_AMBIGUITY_V1",
+  "checks": {
+    "details": {
+      "all_generators_skew": true,
+      "arbitrary_rational_norms_survive": true,
+      "canonical_CCR_preserved_by_conjugation": true,
+      "hard_real_compensation_all_parameters": true,
+      "input_hashes_pinned": true,
+      "no_lorentzian_claim": true,
+      "one_over_48_compatible": true,
+      "one_over_48_not_selected": true,
+      "probability_stays_open": true,
+      "projector_order_one_all_parameters": true,
+      "projector_order_two_all_parameters": true,
+      "three_independent_endpoint_directions": true,
+      "trace_preserved_all_parameters": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 13,
+    "total": 13
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "disposition": {
+    "CCR_and_projector_identities": "INSUFFICIENT_TO_FIX_ENDPOINT_CONSTANTS",
+    "canonical_endpoint_family": "THREE_PARAMETER_UNDERDETERMINATION_WITNESS",
+    "full_nlo_quotient_trace": "NOT_COMPUTED",
+    "one_over_48": "COMPATIBLE_BUT_NOT_DERIVED",
+    "physical_nlo_probability": "NOT_ESTABLISHED",
+    "unique_continuum_projector": "NOT_CONSTRUCTED"
+  },
+  "does_not_establish": [
+    "that every u is realized by the actual BT continuum transport",
+    "that no physical condition can select 1/48",
+    "that the BT companion construction fails",
+    "a complete NLO probability",
+    "beyond-tree positivity",
+    "a gravitational lift",
+    "anything LORENTZIAN-CAUSAL",
+    "literature priority"
+  ],
+  "endpoint_basis": [
+    "delta_0+delta_1",
+    "delta_0_prime-delta_1_prime",
+    "delta_0_double_prime+delta_1_double_prime"
+  ],
+  "identity_classification": {
+    "CCR": "similarity by exp(epsilon K) preserves commutators for every u",
+    "Pi": "identity on the formal perturbative branch",
+    "anti_Krein_sharp": "K^sharp=-K for the displayed positive neutral carrier; this supplies an insufficiency witness, not the missing BT continuum Gram",
+    "exchange": "already built into the three reflection-even endpoint basis elements",
+    "idempotence": "conjugation preserves P^2=P for every u",
+    "trace": "hard loss and endpoint gain cancel for every u"
+  },
+  "lifecycle_state": "CLASSIFIED",
+  "missing_object_ledger": [
+    "a dynamical endpoint renormalization/matching condition beyond canonical algebra",
+    "the deferred BT Eq. (19) continuum construction or equivalent physical resolution prescription",
+    "a proof that the chosen condition fixes u independently of regulator coordinates",
+    "incoming/outgoing equality under that condition",
+    "complete finite virtual one-loop terms and counterterms",
+    "the complete real--virtual quotient trace and positivity test"
+  ],
+  "next_gate": "The listed canonical algebra is exhausted and leaves an exact countermodel to uniqueness. A complete probability now requires new external/dynamical input: the deferred BT continuum projector, an explicit physical detector/resolution prescription, or a renormalization condition independently justified rather than fitted to 1/48.",
+  "provenance": {
+    "inputs": [
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_PERTURBATIVE_COISOMETRY_RIGIDITY_V1.json",
+        "sha256": "53ed72d9038ebc8884d3c822a0651dc6b36b089b17aa603fed42d9c0d2ec3edb"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_ENDPOINT_EXTENSION_AMBIGUITY_V1.json",
+        "sha256": "093459f40a173ba792fcae37eb4f3fa5dec06737963fe69aef9a7d35eac0f0c7"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_ASYMPTOTIC_GENERATOR_PREFLIGHT_V1.json",
+        "sha256": "95d11eaf4f529d7f02b4f8a8e6165ee893ea6aa623d26c96a2475e0bd0a8c2c1"
+      }
+    ],
+    "primary_source": {
+      "equations": [
+        "Eq. (19)",
+        "Appendix C"
+      ],
+      "source": "Bateman--Turok arXiv:2607.00096v1",
+      "url": "https://arxiv.org/abs/2607.00096"
+    },
+    "retrieval_date": "2026-08-10",
+    "source_commit": "797fec62ae6c01abddd3bfa4ca8b1d5e18aa60dc"
+  },
+  "question": "Do skewness, CCR preservation, exchange symmetry, Pi=1, projector idempotence, and trace preservation alone fix the three endpoint constants?",
+  "report": "reverse_physics/reports/bt-canonical-endpoint-ambiguity.md",
+  "result_kind": "exact canonical-algebra underdetermination witness for the endpoint carrier",
+  "schema": "reverse_physics/schema/reverse-physics-bt-canonical-endpoint-ambiguity-v1.schema.json",
+  "schema_version": "reverse-physics-bt-canonical-endpoint-ambiguity-v1",
+  "target_comparison": {
+    "exact_compatibility_witness": {
+      "coefficient_field": "Q(sqrt(3))",
+      "norm_square": "3/144=1/48",
+      "u": [
+        "sqrt(3)/12",
+        "0",
+        "0"
+      ]
+    },
+    "required_norm_square": {
+      "denominator": 48,
+      "numerator": 1
+    },
+    "status": "COMPATIBLE_NOT_SELECTED",
+    "warning": "choosing u^T u=1/48 is exactly the fitted finite projector unless a further dynamical normalization condition fixes u"
+  },
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_canonical_endpoint_ambiguity.py --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_canonical_endpoint_ambiguity.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_canonical_endpoint_ambiguity"
+  ]
+}

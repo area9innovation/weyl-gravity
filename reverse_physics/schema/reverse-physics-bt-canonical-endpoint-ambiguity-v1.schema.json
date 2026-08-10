@@ -1,0 +1,174 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-canonical-endpoint-ambiguity-v1.schema.json",
+  "$defs": {
+    "nonempty": {"type": "string", "minLength": 1},
+    "fraction": {
+      "type": "object",
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      },
+      "additionalProperties": false
+    },
+    "parameter_row": {
+      "type": "object",
+      "required": ["u", "norm_square", "hard_P2", "endpoint_trace_P2", "identity"],
+      "properties": {
+        "u": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/fraction"}},
+        "norm_square": {"$ref": "#/$defs/fraction"},
+        "hard_P2": {"$ref": "#/$defs/fraction"},
+        "endpoint_trace_P2": {"$ref": "#/$defs/fraction"},
+        "identity": {"const": true}
+      },
+      "additionalProperties": false
+    }
+  },
+  "type": "object",
+  "required": [
+    "certificate", "schema_version", "dependency_tags", "lifecycle_state",
+    "result_kind", "question", "answer", "endpoint_basis", "canonical_family",
+    "identity_classification", "target_comparison", "assumptions", "disposition",
+    "missing_object_ledger", "next_gate", "does_not_establish", "provenance",
+    "verification_commands", "checks", "report", "schema"
+  ],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_CANONICAL_ENDPOINT_AMBIGUITY_V1"},
+    "schema_version": {"const": "reverse-physics-bt-canonical-endpoint-ambiguity-v1"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "result_kind": {"$ref": "#/$defs/nonempty"},
+    "question": {"$ref": "#/$defs/nonempty"},
+    "answer": {"$ref": "#/$defs/nonempty"},
+    "endpoint_basis": {
+      "const": [
+        "delta_0+delta_1",
+        "delta_0_prime-delta_1_prime",
+        "delta_0_double_prime+delta_1_double_prime"
+      ]
+    },
+    "canonical_family": {
+      "type": "object",
+      "required": ["basis", "generator", "projector", "symbolic_checks", "rows", "universal_order_two"],
+      "properties": {
+        "basis": {"const": ["hard", "endpoint_c0", "endpoint_c1", "endpoint_c2"]},
+        "generator": {"const": "K(u)=[[0,-u^T],[u,0_3]]"},
+        "projector": {"const": "P(epsilon)=exp(epsilon K)P0 exp(-epsilon K)"},
+        "symbolic_checks": {
+          "type": "object",
+          "required": ["skew", "idempotence_order_one", "idempotence_order_two", "trace_order_one", "trace_order_two", "hard_compensation"],
+          "properties": {
+            "skew": {"const": true},
+            "idempotence_order_one": {"const": true},
+            "idempotence_order_two": {"const": true},
+            "trace_order_one": {"const": true},
+            "trace_order_two": {"const": true},
+            "hard_compensation": {"const": true}
+          },
+          "additionalProperties": false
+        },
+        "rows": {"type": "array", "minItems": 7, "maxItems": 7, "items": {"$ref": "#/$defs/parameter_row"}},
+        "universal_order_two": {"const": "P2_hard=-u^T u; trace(P2_endpoint)=+u^T u"}
+      },
+      "additionalProperties": false
+    },
+    "identity_classification": {
+      "type": "object",
+      "required": ["Pi", "anti_Krein_sharp", "CCR", "idempotence", "trace", "exchange"],
+      "properties": {
+        "Pi": {"const": "identity on the formal perturbative branch"},
+        "anti_Krein_sharp": {"$ref": "#/$defs/nonempty"},
+        "CCR": {"$ref": "#/$defs/nonempty"},
+        "idempotence": {"$ref": "#/$defs/nonempty"},
+        "trace": {"$ref": "#/$defs/nonempty"},
+        "exchange": {"$ref": "#/$defs/nonempty"}
+      },
+      "additionalProperties": false
+    },
+    "target_comparison": {
+      "type": "object",
+      "required": ["required_norm_square", "exact_compatibility_witness", "status", "warning"],
+      "properties": {
+        "required_norm_square": {
+          "type": "object",
+          "required": ["numerator", "denominator"],
+          "properties": {"numerator": {"const": 1}, "denominator": {"const": 48}},
+          "additionalProperties": false
+        },
+        "exact_compatibility_witness": {
+          "type": "object",
+          "required": ["coefficient_field", "u", "norm_square"],
+          "properties": {
+            "coefficient_field": {"const": "Q(sqrt(3))"},
+            "u": {"const": ["sqrt(3)/12", "0", "0"]},
+            "norm_square": {"const": "3/144=1/48"}
+          },
+          "additionalProperties": false
+        },
+        "status": {"const": "COMPATIBLE_NOT_SELECTED"},
+        "warning": {"$ref": "#/$defs/nonempty"}
+      },
+      "additionalProperties": false
+    },
+    "assumptions": {"type": "array", "minItems": 4, "items": {"$ref": "#/$defs/nonempty"}},
+    "disposition": {
+      "type": "object",
+      "required": ["canonical_endpoint_family", "CCR_and_projector_identities", "one_over_48", "unique_continuum_projector", "full_nlo_quotient_trace", "physical_nlo_probability"],
+      "properties": {
+        "canonical_endpoint_family": {"const": "THREE_PARAMETER_UNDERDETERMINATION_WITNESS"},
+        "CCR_and_projector_identities": {"const": "INSUFFICIENT_TO_FIX_ENDPOINT_CONSTANTS"},
+        "one_over_48": {"const": "COMPATIBLE_BUT_NOT_DERIVED"},
+        "unique_continuum_projector": {"const": "NOT_CONSTRUCTED"},
+        "full_nlo_quotient_trace": {"const": "NOT_COMPUTED"},
+        "physical_nlo_probability": {"const": "NOT_ESTABLISHED"}
+      },
+      "additionalProperties": false
+    },
+    "missing_object_ledger": {"type": "array", "minItems": 6, "items": {"$ref": "#/$defs/nonempty"}},
+    "next_gate": {"$ref": "#/$defs/nonempty"},
+    "does_not_establish": {"type": "array", "minItems": 8, "items": {"$ref": "#/$defs/nonempty"}},
+    "provenance": {
+      "type": "object",
+      "required": ["source_commit", "retrieval_date", "inputs", "primary_source"],
+      "properties": {
+        "source_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "retrieval_date": {"const": "2026-08-10"},
+        "inputs": {
+          "type": "array", "minItems": 3, "maxItems": 3,
+          "items": {
+            "type": "object", "required": ["path", "sha256"],
+            "properties": {"path": {"$ref": "#/$defs/nonempty"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}},
+            "additionalProperties": false
+          }
+        },
+        "primary_source": {
+          "type": "object", "required": ["source", "url", "equations"],
+          "properties": {
+            "source": {"$ref": "#/$defs/nonempty"},
+            "url": {"const": "https://arxiv.org/abs/2607.00096"},
+            "equations": {"const": ["Eq. (19)", "Appendix C"]}
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "items": {"$ref": "#/$defs/nonempty"}},
+    "checks": {
+      "type": "object",
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"const": 13},
+        "total": {"const": 13},
+        "failures": {"const": []},
+        "details": {"type": "object", "minProperties": 13, "maxProperties": 13, "additionalProperties": {"const": true}}
+      },
+      "additionalProperties": false
+    },
+    "report": {"const": "reverse_physics/reports/bt-canonical-endpoint-ambiguity.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-canonical-endpoint-ambiguity-v1.schema.json"}
+  },
+  "additionalProperties": false
+}

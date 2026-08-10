@@ -1,0 +1,35 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/reverse-physics-bateman-canonical-endpoint-OBSTRUCTED-1e3bdd72a149d089",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work item transitioned",
+  "source": {
+    "path": "tools/science-forge/program/events/reverse-physics-bateman-canonical-endpoint-OBSTRUCTED-1e3bdd72a149d089.json",
+    "span": null
+  },
+  "body": {
+    "event_kind": "WORK_ITEM_TRANSITIONED",
+    "actor": "reverse-physics",
+    "base_revision": "science-forge-ir-v0",
+    "predecessors": [],
+    "when": "2026-08-10",
+    "seq": 1,
+    "payload": {
+      "target": "sf:program/work/reverse-physics-bateman-canonical-endpoint",
+      "to_state": "OBSTRUCTED",
+      "note": "Exact polynomial and independent degree-two-grid checks exhibit a three-parameter endpoint-carrier family preserving skewness, CCR similarity, projector idempotence, trace, and exchange symmetry. The listed canonical identities therefore do not select 1/48; the deferred BT continuum transport or an independently justified physical endpoint condition is required. Evidence: REVERSE_PHYSICS_BT_CANONICAL_ENDPOINT_AMBIGUITY_V1.",
+      "evidence_basis": "reverse_physics/certificates/REVERSE_PHYSICS_BT_CANONICAL_ENDPOINT_AMBIGUITY_V1.json"
+    },
+    "native": {
+      "authored_by": "manual event-v0 fallback under the mandatory memory cap",
+      "policy": "append-only; no coordinator pass claimed"
+    }
+  },
+  "edges": [
+    {
+      "rel": "TRANSITIONS",
+      "to": "sf:program/work/reverse-physics-bateman-canonical-endpoint"
+    }
+  ]
+}

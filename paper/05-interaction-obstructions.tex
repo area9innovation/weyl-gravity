@@ -95,7 +95,12 @@ now narrower: expanding the published composite map gives the exact
 order-$\lambda$ two-annihilator kernel, and all of its apparent $t,t^2$
 Jordan growth cancels on the two-field carrier.  Its Krein Gram has cubic
 splitting-endpoint poles, however, so the distributional continuum projector
-and its dynamically derived $1/48$ coefficient are not yet constructed.
+and its dynamically derived $1/48$ coefficient are not yet constructed.  An
+exact canonical-algebra countermodel further shows that CCR preservation,
+projector idempotence, trace preservation, and exchange symmetry alone retain
+three endpoint parameters.  Thus $1/48$ is compatible but not selected without
+the deferred continuum transport or another independently justified physical
+endpoint condition.
 Independently, the projected three-channel hard loop logarithm closes the
 Callan--Symanzik equation exactly with the Born rate and one-loop beta
 function.  This yields the positive leading-log nonforward prediction
@@ -1253,8 +1258,21 @@ $[A_\Upsilon,A_\Omega^\dagger]=(2E)^3/(4E^2)=2E$, while the homomorphism gives
 the same commutator as $2E\Pi$, $\Pi=R_t^\dagger R_t$; hence $\Pi_0=1$.
 Expanding $\Pi^2=\Pi$ then forces every positive-order coefficient of $\Pi-1$
 to vanish recursively.  Formal inversion of $R_t$ is therefore cleared, and
-the remaining problem is to impose the oscillator CCR and projector
-idempotence directly on the three endpoint distributions.
+the support projection cannot supply the missing coefficient.  The exact
+certificate
+\texttt{REVERSE\_PHYSICS\_BT\_CANONICAL\_}
+\allowbreak\texttt{ENDPOINT\_AMBIGUITY\_V1}
+then tests the remaining algebraic conditions directly.  On a carrier with
+one hard and three reflection-even endpoint directions, every
+$K(u)=\bigl(\begin{smallmatrix}0&-u^T\\u&0_3\end{smallmatrix}\bigr)$ is skew,
+and $e^{\epsilon K}P_0e^{-\epsilon K}$ preserves the CCR, idempotence, and
+trace for arbitrary $u$.  Its order-$\epsilon^2$ hard and endpoint traces are
+$-u^Tu$ and $+u^Tu$.  Hence the listed canonical identities admit a
+three-parameter countermodel to uniqueness.  The choice
+$u=(\sqrt3/12,0,0)$ is compatible with $1/48$, but selecting it would be a fit
+until the deferred continuum map or an independent physical endpoint
+condition fixes $u$.  This insufficiency witness does not claim that every
+$u$ is realized by the BT dynamics.
 \end{remark}
 
 \begin{remark}[Physical ultraviolet hard-scattering law]
