@@ -1,0 +1,190 @@
+{
+  "answer": "No. For every coisometry R and projector P, A=R P R-dagger obeys A^2-A=-R P(1-Pi)P R-dagger with Pi=R-dagger R, and tr(A)=tr(P Pi). An exact Krein family with fixed R R-dagger=1 varies tr(A) through 1,16/25,9/25,0 by changing only the unreported range overlap. The value 1/48 is algebraically allowed but is not selected by the right-unit identity.",
+  "certificate": "REVERSE_PHYSICS_BT_COISOMETRY_RANGE_NONUNIQUENESS_V1",
+  "checks": {
+    "details": {
+      "defect_projection_idempotent": true,
+      "family_projectors_and_defect_identity": true,
+      "input_hashes_pinned": true,
+      "krein_metrics_nondegenerate": true,
+      "no_lorentzian_claim": true,
+      "probability_stays_open": true,
+      "pullback_not_unitarily_inverted": true,
+      "pushforward_trace_varies": true,
+      "range_defect_complementary": true,
+      "range_projection_idempotent": true,
+      "right_unit": true,
+      "target_overlap_algebraically_allowed": true,
+      "target_requires_unpublished_overlap": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 13,
+    "total": 13
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "disposition": {
+    "full_nlo_quotient_trace": "NOT_COMPUTED",
+    "neutral_pushforward_projector": "NOT_CONSTRUCTED",
+    "one_over_48": "COMPATIBLE_BUT_NOT_DERIVED",
+    "physical_nlo_probability": "NOT_ESTABLISHED",
+    "projector_range_overlap": "UNDETERMINED",
+    "range_projection": "NOT_PUBLISHED",
+    "right_unit_identity": "INSUFFICIENT"
+  },
+  "does_not_establish": [
+    "that BT cannot choose a valid range projection",
+    "that 1/48 is inconsistent",
+    "a complete NLO probability",
+    "beyond-tree positivity",
+    "a gravitational lift",
+    "anything LORENTZIAN-CAUSAL",
+    "literature priority"
+  ],
+  "finite_krein_model": {
+    "coisometry": "R=[[1,0,0],[0,1,0]]",
+    "defect_projection": "D=diag(0,0,1)",
+    "input_metric": "G=diag(1,-1,1)",
+    "krein_adjoint": "R_sharp=G^-1*R^T*J=R^T",
+    "output_metric": "J=diag(1,-1)",
+    "projector_family": "v_t=((1-t^2)/(1+t^2),0,2t/(1+t^2)); P_t=v_t v_t^sharp",
+    "range_projection": "Pi=diag(1,1,0)",
+    "rows": [
+      {
+        "defect_amplitude": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "identity": true,
+        "pushforward_trace": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "range_amplitude": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "t": {
+          "denominator": 1,
+          "numerator": 0
+        }
+      },
+      {
+        "defect_amplitude": {
+          "denominator": 5,
+          "numerator": 3
+        },
+        "identity": true,
+        "pushforward_trace": {
+          "denominator": 25,
+          "numerator": 16
+        },
+        "range_amplitude": {
+          "denominator": 5,
+          "numerator": 4
+        },
+        "t": {
+          "denominator": 3,
+          "numerator": 1
+        }
+      },
+      {
+        "defect_amplitude": {
+          "denominator": 5,
+          "numerator": 4
+        },
+        "identity": true,
+        "pushforward_trace": {
+          "denominator": 25,
+          "numerator": 9
+        },
+        "range_amplitude": {
+          "denominator": 5,
+          "numerator": 3
+        },
+        "t": {
+          "denominator": 2,
+          "numerator": 1
+        }
+      },
+      {
+        "defect_amplitude": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "identity": true,
+        "pushforward_trace": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "range_amplitude": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "t": {
+          "denominator": 1,
+          "numerator": 1
+        }
+      }
+    ]
+  },
+  "lifecycle_state": "CLASSIFIED",
+  "missing_object_ledger": [
+    "Pi=R_t-dagger R_t on the covariant n-particle projector domain",
+    "the defect overlap P_chi(1-Pi)P_chi including its Krein-null part",
+    "the deferred proof of Eq. (19) at order lambda",
+    "a unique neutral endpoint matching condition for c0,c1,c2",
+    "incoming/outgoing equality and trace-class control",
+    "the complete renormalized NLO quotient trace"
+  ],
+  "next_gate": "The public Letter is insufficient to select 1/48. Obtain or reconstruct the deferred Eq. (19) pushforward/range theorem, including Pi or the exact defect overlap; do not infer it from RR-dagger=1 or the negative-charge radical.",
+  "provenance": {
+    "inputs": [
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_OSCILLATORY_RADICAL_NO_MATCHING_V1.json",
+        "sha256": "1fe211c29c63a525507a767cefc07614711a209cd91bec138b379a2179810ccb"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_ENDPOINT_EXTENSION_AMBIGUITY_V1.json",
+        "sha256": "093459f40a173ba792fcae37eb4f3fa5dec06737963fe69aef9a7d35eac0f0c7"
+      }
+    ],
+    "primary_source": {
+      "equations": [
+        "Eq. (19)",
+        "Appendix C after Eq. (33)"
+      ],
+      "source": "Bateman--Turok arXiv:2607.00096v1",
+      "url": "https://arxiv.org/abs/2607.00096"
+    },
+    "retrieval_date": "2026-08-10",
+    "source_commit": "d5b537ba5aa4f6a395e73fc2fe36922136530928"
+  },
+  "question": "Do RR-dagger=1 and the published pullback data determine the pushforward projector trace without Pi=R-dagger R?",
+  "report": "reverse_physics/reports/bt-coisometry-range-nonuniqueness.md",
+  "result_kind": "exact finite Krein coisometry range-overlap nonuniqueness theorem",
+  "schema": "reverse_physics/schema/reverse-physics-bt-coisometry-range-nonuniqueness-v1.schema.json",
+  "schema_version": "reverse-physics-bt-coisometry-range-nonuniqueness-v1",
+  "target_witness": {
+    "compatible_projector": "P_target has diagonal (1/48,0,47/48) and off-diagonal sqrt(47)/48 in the positive range-defect plane",
+    "field": "Q(sqrt(47))",
+    "status": "COMPATIBLE_NOT_SELECTED",
+    "target": {
+      "denominator": 48,
+      "numerator": 1
+    }
+  },
+  "universal_identities": {
+    "hilbert_special_case": "idempotence forces defect-to-range mixing to vanish; a Krein-null defect may be nonzero and requires separate control",
+    "idempotence_defect": "(R P R_sharp)^2-R P R_sharp=-R P (1-Pi) P R_sharp",
+    "trace_overlap": "tr(R P R_sharp)=tr(P Pi)"
+  },
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_coisometry_range_nonuniqueness.py --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_coisometry_range_nonuniqueness.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_coisometry_range_nonuniqueness"
+  ]
+}

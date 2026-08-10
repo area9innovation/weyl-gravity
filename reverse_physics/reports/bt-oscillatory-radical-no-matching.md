@@ -30,8 +30,8 @@ therefore remains at strictly negative charge and has zero invariant trace.
 It cannot change the charge-zero coefficients multiplying
 
 \[
-\delta_0+\delta_1,qquad
-\delta'_0-\delta'_1,qquad
+\delta_0+\delta_1,\qquad
+\delta'_0-\delta'_1,\qquad
 \delta''_0+\delta''_1.
 \]
 
