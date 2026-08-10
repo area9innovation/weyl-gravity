@@ -1,0 +1,1969 @@
+{
+  "answer": "No on the ordinary wave-packet carrier. The full off-resonant map is exactly derivable and contains channels lost on the resonant slice, but its parent-diagonal K-sharp-K composition retains an angle-independent cubic soft Gram. The restored d^3p radial Jacobian reduces this to a logarithmic dr/r divergence and hence one local soft constant, rather than the three endpoint jets of the flat collinear slice. A common cutoff rescaling changes the finite part by +(1/2) log(c) in the normalized soft chart. Thus the full ordinary composition is not trace class and does not select 1/48; a renormalized soft-collinear asymptotic Hamiltonian or independent matching condition is still required.",
+  "certificate": "REVERSE_PHYSICS_BT_FULL_OFF_RESONANT_PROJECTOR_V1",
+  "checks": {
+    "details": {
+      "all_explicit_secular_terms_cancel_off_resonance": true,
+      "common_cutoff_rescaling_response_is_half_log_c": true,
+      "full_measure_local_ambiguity_is_one_dimensional": true,
+      "full_radial_measure_is_logarithmic": true,
+      "gram_is_symmetric": true,
+      "input_hashes_pinned": true,
+      "no_lorentzian_claim": true,
+      "off_resonant_Omega_UpsilonUpsilon_is_nonzero": true,
+      "off_resonant_Upsilon_OmegaOmega_is_nonzero": true,
+      "omega_resonance_matches_predecessor": true,
+      "one_over_48_not_derived": true,
+      "ordinary_composition_not_trace_class": true,
+      "soft_cross_leading_power_is_cubic": true,
+      "soft_cross_leading_residue_is_angle_independent": true,
+      "upsilon_resonance_matches_predecessor": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 15,
+    "total": 15
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "disposition": {
+    "flat_collinear_three_jet_ambiguity": "REDUCED_TO_ONE_SOFT_NORMALIZATION_ON_DECLARED_FULL_MEASURE_CHART",
+    "full_off_resonant_kernel": "DERIVED",
+    "one_over_48": "NOT_DERIVED",
+    "ordinary_parent_projector_composition": "LOGARITHMICALLY_NON_TRACE_CLASS",
+    "physical_nlo_probability": "NOT_ESTABLISHED",
+    "resonant_slice": "RECOVERED",
+    "unique_endpoint_normalization": "NOT_SELECTED"
+  },
+  "does_not_establish": [
+    "that the three flat-slice endpoint constants vanish globally",
+    "that no renormalized asymptotic Hamiltonian exists",
+    "that BT cannot produce 1/48",
+    "a complete NLO probability",
+    "beyond-tree positivity",
+    "a tensor or BRST gravitational lift",
+    "anything LORENTZIAN-CAUSAL",
+    "literature priority"
+  ],
+  "kinematics": {
+    "box_product": "P_double_prime-2*i*(e1+e2)*P_prime+(E_parent^2-(e1+e2)^2)*P",
+    "deficit": "d=e1+e2-E_parent",
+    "parent_energy": "E_parent=e1+e2-d",
+    "phase": "exp(-i*d*t)",
+    "symplectic_extractor": "exp(-i*d*t)*(i*P_prime+(E_parent+e1+e2)*P)"
+  },
+  "lifecycle_state": "CLASSIFIED",
+  "missing_object_ledger": [
+    "a renormalized soft-collinear BT asymptotic Hamiltonian or equivalent factorization operator",
+    "a proof that its kernel is universal and independent of the hard process",
+    "common incoming/outgoing evolution and regulator flow",
+    "cancellation of the certified logarithmic soft response between asymptotic and hard factors",
+    "the finite matched hard coefficient and cut-free virtual terms",
+    "the complete quotient trace and positivity test"
+  ],
+  "next_gate": "Construct a BT soft-collinear asymptotic Hamiltonian and hard S-matrix on this off-resonant carrier. Its anti-Krein evolution must cancel the +(1/2) log(c) cutoff response between asymptotic and hard factors, reproduce the independently certified real coefficient after Born normalization, and be regulator-family independent before 1/48 can be claimed.",
+  "off_resonant_kernel": {
+    "delta_b_Omega": {
+      "Omega_Omega": [
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 4,
+              "numerator": -1
+            }
+          },
+          "powers": [
+            -1,
+            -1,
+            1,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 2,
+              "numerator": 1
+            }
+          },
+          "powers": [
+            -1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 2,
+              "numerator": 1
+            }
+          },
+          "powers": [
+            0,
+            -1,
+            0,
+            0
+          ]
+        }
+      ],
+      "Omega_Upsilon": [
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 16,
+              "numerator": -1
+            }
+          },
+          "powers": [
+            -1,
+            -3,
+            1,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 8,
+              "numerator": 1
+            }
+          },
+          "powers": [
+            0,
+            -3,
+            0,
+            0
+          ]
+        }
+      ],
+      "Upsilon_Omega": [
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 16,
+              "numerator": -1
+            }
+          },
+          "powers": [
+            -3,
+            -1,
+            1,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 8,
+              "numerator": 1
+            }
+          },
+          "powers": [
+            -3,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "Upsilon_Upsilon": [
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 64,
+              "numerator": -1
+            }
+          },
+          "powers": [
+            -3,
+            -3,
+            1,
+            0
+          ]
+        }
+      ]
+    },
+    "delta_b_Upsilon": {
+      "Omega_Omega": [
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 4,
+              "numerator": -1
+            }
+          },
+          "powers": [
+            -1,
+            -1,
+            3,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 1,
+              "numerator": 1
+            }
+          },
+          "powers": [
+            -1,
+            0,
+            2,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 1,
+              "numerator": -1
+            }
+          },
+          "powers": [
+            -1,
+            1,
+            1,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 1,
+              "numerator": 1
+            }
+          },
+          "powers": [
+            0,
+            -1,
+            2,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 1,
+              "numerator": -2
+            }
+          },
+          "powers": [
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 1,
+              "numerator": -1
+            }
+          },
+          "powers": [
+            1,
+            -1,
+            1,
+            0
+          ]
+        }
+      ],
+      "Omega_Upsilon": [
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 16,
+              "numerator": -1
+            }
+          },
+          "powers": [
+            -1,
+            -3,
+            3,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 8,
+              "numerator": 1
+            }
+          },
+          "powers": [
+            -1,
+            -2,
+            2,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 4,
+              "numerator": 1
+            }
+          },
+          "powers": [
+            -1,
+            -1,
+            1,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 2,
+              "numerator": -1
+            }
+          },
+          "powers": [
+            -1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 4,
+              "numerator": 1
+            }
+          },
+          "powers": [
+            0,
+            -3,
+            2,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 2,
+              "numerator": -1
+            }
+          },
+          "powers": [
+            0,
+            -2,
+            1,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 4,
+              "numerator": -1
+            }
+          },
+          "powers": [
+            1,
+            -3,
+            1,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 2,
+              "numerator": 1
+            }
+          },
+          "powers": [
+            1,
+            -2,
+            0,
+            0
+          ]
+        }
+      ],
+      "Upsilon_Omega": [
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 16,
+              "numerator": -1
+            }
+          },
+          "powers": [
+            -3,
+            -1,
+            3,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 4,
+              "numerator": 1
+            }
+          },
+          "powers": [
+            -3,
+            0,
+            2,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 4,
+              "numerator": -1
+            }
+          },
+          "powers": [
+            -3,
+            1,
+            1,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 8,
+              "numerator": 1
+            }
+          },
+          "powers": [
+            -2,
+            -1,
+            2,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 2,
+              "numerator": -1
+            }
+          },
+          "powers": [
+            -2,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 2,
+              "numerator": 1
+            }
+          },
+          "powers": [
+            -2,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 4,
+              "numerator": 1
+            }
+          },
+          "powers": [
+            -1,
+            -1,
+            1,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 2,
+              "numerator": -1
+            }
+          },
+          "powers": [
+            0,
+            -1,
+            0,
+            0
+          ]
+        }
+      ],
+      "Upsilon_Upsilon": [
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 64,
+              "numerator": -1
+            }
+          },
+          "powers": [
+            -3,
+            -3,
+            3,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 32,
+              "numerator": 1
+            }
+          },
+          "powers": [
+            -3,
+            -2,
+            2,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 16,
+              "numerator": 1
+            }
+          },
+          "powers": [
+            -3,
+            -1,
+            1,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 8,
+              "numerator": -1
+            }
+          },
+          "powers": [
+            -3,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 32,
+              "numerator": 1
+            }
+          },
+          "powers": [
+            -2,
+            -3,
+            2,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 8,
+              "numerator": -1
+            }
+          },
+          "powers": [
+            -2,
+            -1,
+            0,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 16,
+              "numerator": 1
+            }
+          },
+          "powers": [
+            -1,
+            -3,
+            1,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 8,
+              "numerator": -1
+            }
+          },
+          "powers": [
+            -1,
+            -2,
+            0,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 8,
+              "numerator": -1
+            }
+          },
+          "powers": [
+            0,
+            -3,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    "normalization": "lambda and exp(-i*d*t) suppressed; D1*D2=(2e1)^-3(2e2)^-3 restored; entries are Bose-symmetrized functional kernels",
+    "resonant_restriction": "exactly REVERSE_PHYSICS_BT_RT_JORDAN_KERNEL_V1",
+    "samples": [
+      {
+        "deficit": {
+          "denominator": 3,
+          "numerator": 1
+        },
+        "delta_b_Omega_UpsilonUpsilon": {
+          "imag": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "real": {
+            "denominator": 1536,
+            "numerator": -1
+          }
+        },
+        "delta_b_Upsilon_OmegaOmega": {
+          "imag": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "real": {
+            "denominator": 216,
+            "numerator": -289
+          }
+        },
+        "e1": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "e2": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "gram_cross": {
+          "imag": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "real": {
+            "denominator": 10368,
+            "numerator": -15929
+          }
+        }
+      },
+      {
+        "deficit": {
+          "denominator": 2,
+          "numerator": 1
+        },
+        "delta_b_Omega_UpsilonUpsilon": {
+          "imag": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "real": {
+            "denominator": 27648,
+            "numerator": -1
+          }
+        },
+        "delta_b_Upsilon_OmegaOmega": {
+          "imag": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "real": {
+            "denominator": 192,
+            "numerator": -361
+          }
+        },
+        "e1": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "e2": {
+          "denominator": 1,
+          "numerator": 3
+        },
+        "gram_cross": {
+          "imag": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "real": {
+            "denominator": 55296,
+            "numerator": -20767
+          }
+        }
+      },
+      {
+        "deficit": {
+          "denominator": 3,
+          "numerator": 2
+        },
+        "delta_b_Omega_UpsilonUpsilon": {
+          "imag": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "real": {
+            "denominator": 324000,
+            "numerator": -1
+          }
+        },
+        "delta_b_Upsilon_OmegaOmega": {
+          "imag": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "real": {
+            "denominator": 405,
+            "numerator": -1058
+          }
+        },
+        "e1": {
+          "denominator": 1,
+          "numerator": 3
+        },
+        "e2": {
+          "denominator": 1,
+          "numerator": 5
+        },
+        "gram_cross": {
+          "imag": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "real": {
+            "denominator": 273375,
+            "numerator": -46253
+          }
+        }
+      }
+    ]
+  },
+  "operator_composition": {
+    "bose_factor": "the symmetric quadratic map contributes 1/2 times the ordered-slot Gram after the two daughter contractions",
+    "generator": "K_down=int d3P (b_Upsilon^dag*delta_b_Omega+b_Omega^dag*delta_b_Upsilon)/(2E_parent), with K=K_down-K_down^dag",
+    "gram": {
+      "Omega_Omega": [
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 16,
+              "numerator": 1
+            }
+          },
+          "powers": [
+            -3,
+            -3,
+            2,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 8,
+              "numerator": -1
+            }
+          },
+          "powers": [
+            -3,
+            -2,
+            1,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 8,
+              "numerator": -1
+            }
+          },
+          "powers": [
+            -2,
+            -3,
+            1,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 8,
+              "numerator": 1
+            }
+          },
+          "powers": [
+            -2,
+            -2,
+            0,
+            0
+          ]
+        }
+      ],
+      "Omega_Upsilon": [
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 16,
+              "numerator": 1
+            }
+          },
+          "powers": [
+            -3,
+            -3,
+            4,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 4,
+              "numerator": -1
+            }
+          },
+          "powers": [
+            -3,
+            -2,
+            3,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 8,
+              "numerator": 1
+            }
+          },
+          "powers": [
+            -3,
+            -1,
+            2,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 2,
+              "numerator": 1
+            }
+          },
+          "powers": [
+            -3,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 2,
+              "numerator": -1
+            }
+          },
+          "powers": [
+            -3,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 4,
+              "numerator": -1
+            }
+          },
+          "powers": [
+            -2,
+            -3,
+            3,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 4,
+              "numerator": 3
+            }
+          },
+          "powers": [
+            -2,
+            -2,
+            2,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 4,
+              "numerator": -1
+            }
+          },
+          "powers": [
+            -2,
+            -1,
+            1,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 2,
+              "numerator": -1
+            }
+          },
+          "powers": [
+            -2,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 8,
+              "numerator": 1
+            }
+          },
+          "powers": [
+            -1,
+            -3,
+            2,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 4,
+              "numerator": -1
+            }
+          },
+          "powers": [
+            -1,
+            -2,
+            1,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 2,
+              "numerator": 1
+            }
+          },
+          "powers": [
+            0,
+            -3,
+            1,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 2,
+              "numerator": -1
+            }
+          },
+          "powers": [
+            0,
+            -2,
+            0,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 2,
+              "numerator": -1
+            }
+          },
+          "powers": [
+            1,
+            -3,
+            0,
+            0
+          ]
+        }
+      ],
+      "Upsilon_Omega": [
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 16,
+              "numerator": 1
+            }
+          },
+          "powers": [
+            -3,
+            -3,
+            4,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 4,
+              "numerator": -1
+            }
+          },
+          "powers": [
+            -3,
+            -2,
+            3,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 8,
+              "numerator": 1
+            }
+          },
+          "powers": [
+            -3,
+            -1,
+            2,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 2,
+              "numerator": 1
+            }
+          },
+          "powers": [
+            -3,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 2,
+              "numerator": -1
+            }
+          },
+          "powers": [
+            -3,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 4,
+              "numerator": -1
+            }
+          },
+          "powers": [
+            -2,
+            -3,
+            3,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 4,
+              "numerator": 3
+            }
+          },
+          "powers": [
+            -2,
+            -2,
+            2,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 4,
+              "numerator": -1
+            }
+          },
+          "powers": [
+            -2,
+            -1,
+            1,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 2,
+              "numerator": -1
+            }
+          },
+          "powers": [
+            -2,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 8,
+              "numerator": 1
+            }
+          },
+          "powers": [
+            -1,
+            -3,
+            2,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 4,
+              "numerator": -1
+            }
+          },
+          "powers": [
+            -1,
+            -2,
+            1,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 2,
+              "numerator": 1
+            }
+          },
+          "powers": [
+            0,
+            -3,
+            1,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 2,
+              "numerator": -1
+            }
+          },
+          "powers": [
+            0,
+            -2,
+            0,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 2,
+              "numerator": -1
+            }
+          },
+          "powers": [
+            1,
+            -3,
+            0,
+            0
+          ]
+        }
+      ],
+      "Upsilon_Upsilon": [
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 16,
+              "numerator": 1
+            }
+          },
+          "powers": [
+            -3,
+            -3,
+            6,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 8,
+              "numerator": -3
+            }
+          },
+          "powers": [
+            -3,
+            -2,
+            5,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 2,
+              "numerator": 1
+            }
+          },
+          "powers": [
+            -3,
+            -1,
+            4,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 1,
+              "numerator": 1
+            }
+          },
+          "powers": [
+            -3,
+            0,
+            3,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 1,
+              "numerator": -3
+            }
+          },
+          "powers": [
+            -3,
+            1,
+            2,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 1,
+              "numerator": 2
+            }
+          },
+          "powers": [
+            -3,
+            2,
+            1,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 8,
+              "numerator": -3
+            }
+          },
+          "powers": [
+            -2,
+            -3,
+            5,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 8,
+              "numerator": 15
+            }
+          },
+          "powers": [
+            -2,
+            -2,
+            4,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 1,
+              "numerator": -2
+            }
+          },
+          "powers": [
+            -2,
+            -1,
+            3,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 1,
+              "numerator": -3
+            }
+          },
+          "powers": [
+            -2,
+            0,
+            2,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 1,
+              "numerator": 6
+            }
+          },
+          "powers": [
+            -2,
+            1,
+            1,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 1,
+              "numerator": -2
+            }
+          },
+          "powers": [
+            -2,
+            2,
+            0,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 2,
+              "numerator": 1
+            }
+          },
+          "powers": [
+            -1,
+            -3,
+            4,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 1,
+              "numerator": -2
+            }
+          },
+          "powers": [
+            -1,
+            -2,
+            3,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 1,
+              "numerator": 2
+            }
+          },
+          "powers": [
+            -1,
+            -1,
+            2,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 1,
+              "numerator": 1
+            }
+          },
+          "powers": [
+            0,
+            -3,
+            3,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 1,
+              "numerator": -3
+            }
+          },
+          "powers": [
+            0,
+            -2,
+            2,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 1,
+              "numerator": 4
+            }
+          },
+          "powers": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 1,
+              "numerator": -3
+            }
+          },
+          "powers": [
+            1,
+            -3,
+            2,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 1,
+              "numerator": 6
+            }
+          },
+          "powers": [
+            1,
+            -2,
+            1,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 1,
+              "numerator": 2
+            }
+          },
+          "powers": [
+            2,
+            -3,
+            1,
+            0
+          ]
+        },
+        {
+          "coefficient": {
+            "imag": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "real": {
+              "denominator": 1,
+              "numerator": -2
+            }
+          },
+          "powers": [
+            2,
+            -2,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    "parent_diagonalization": "the two spatial momentum delta functions in K-sharp-K give delta_3(P-P_prime), leaving one daughter integral",
+    "parent_factor": "each generator contributes 1/(2E_parent); these factors do not change the soft scaling classification",
+    "remaining_measure": "d3p1=d^3p1/(2pi)^3=r^2 dr dOmega/(2pi)^3 after p2=P-p1"
+  },
+  "provenance": {
+    "inputs": [
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_RT_JORDAN_KERNEL_V1.json",
+        "sha256": "13e7372f7d7bb28a408e56a8744244e7580d60d64fc47b5ae261bb4e2e22f356"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_ENDPOINT_EXTENSION_AMBIGUITY_V1.json",
+        "sha256": "093459f40a173ba792fcae37eb4f3fa5dec06737963fe69aef9a7d35eac0f0c7"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_CANONICAL_ENDPOINT_AMBIGUITY_V1.json",
+        "sha256": "ffb969c48ecc062baba7b52b3f108b6bc3f5cddb6db88cdd7ccd39ea929477dc"
+      }
+    ],
+    "primary_source": {
+      "equations": [
+        "Eq. (16)",
+        "Eq. (19)",
+        "Appendix C"
+      ],
+      "source": "Bateman--Turok arXiv:2607.00096v1",
+      "url": "https://arxiv.org/abs/2607.00096"
+    },
+    "retrieval_date": "2026-08-10",
+    "source_commit": "ece5386eb2b9b6983e233805ba1f98dd0e02a6f1"
+  },
+  "question": "Does composing the full Delta-E-dependent BT quadratic carrier before the exactly collinear restriction uniquely fix the endpoint normalization and derive 1/48?",
+  "report": "reverse_physics/reports/bt-full-off-resonant-projector.md",
+  "result_kind": "exact off-resonant carrier and full-measure soft composition obstruction",
+  "schema": "reverse_physics/schema/reverse-physics-bt-full-off-resonant-projector-v1.schema.json",
+  "schema_version": "reverse-physics-bt-full-off-resonant-projector-v1",
+  "soft_blowup": {
+    "chart": "e1=r, e2=1, d=alpha*r; physical soft rays have alpha=1-cos(theta)+O(r)",
+    "cutoff_family": "I_epsilon=int_epsilon^r0 -(1/2) dr/r",
+    "homogeneous_restoration": "-E_parent/(2*r^3) before Bose, parent, and (2pi) factors",
+    "measured_leading": "-(1/2) dr/r in the normalized e2=1 ordered chart",
+    "ordered_cross_gram_leading": "-1/(2*r^3), independent of alpha",
+    "radial_measure": "r^2 dr",
+    "reflection_even_local_freedom": "singular order zero: one rotationally invariant delta^3(p_soft) normalization, common to the two daughter faces by exact exchange symmetry on this chart",
+    "rescaling": "I_(c*epsilon)-I_epsilon=+(1/2) log(c)",
+    "scaling_degree": 1
+  },
+  "target_comparison": {
+    "reason": "the ordinary full-measure composition is logarithmically non-trace-class and its finite part shifts under a common cutoff rescaling before a soft-collinear matching theorem is supplied",
+    "status": "NOT_DERIVED",
+    "target": "1/48 per unordered pair after Born normalization"
+  },
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_full_off_resonant_projector.py --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_full_off_resonant_projector.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_full_off_resonant_projector"
+  ]
+}

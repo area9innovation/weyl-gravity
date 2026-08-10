@@ -1,0 +1,197 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-full-off-resonant-projector-v1.schema.json",
+  "$defs": {
+    "nonempty": {"type": "string", "minLength": 1},
+    "fraction": {
+      "type": "object",
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      },
+      "additionalProperties": false
+    },
+    "complex_fraction": {
+      "type": "object",
+      "required": ["real", "imag"],
+      "properties": {
+        "real": {"$ref": "#/$defs/fraction"},
+        "imag": {"$ref": "#/$defs/fraction"}
+      },
+      "additionalProperties": false
+    },
+    "term": {
+      "type": "object",
+      "required": ["powers", "coefficient"],
+      "properties": {
+        "powers": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "integer"}},
+        "coefficient": {"$ref": "#/$defs/complex_fraction"}
+      },
+      "additionalProperties": false
+    },
+    "term_array": {"type": "array", "items": {"$ref": "#/$defs/term"}},
+    "kernel_table": {
+      "type": "object",
+      "required": ["Omega_Omega", "Omega_Upsilon", "Upsilon_Omega", "Upsilon_Upsilon"],
+      "properties": {
+        "Omega_Omega": {"$ref": "#/$defs/term_array"},
+        "Omega_Upsilon": {"$ref": "#/$defs/term_array"},
+        "Upsilon_Omega": {"$ref": "#/$defs/term_array"},
+        "Upsilon_Upsilon": {"$ref": "#/$defs/term_array"}
+      },
+      "additionalProperties": false
+    },
+    "open_object": {"type": "object", "minProperties": 1},
+    "sample": {
+      "type": "object",
+      "required": ["e1", "e2", "deficit", "delta_b_Omega_UpsilonUpsilon", "delta_b_Upsilon_OmegaOmega", "gram_cross"],
+      "properties": {
+        "e1": {"$ref": "#/$defs/fraction"},
+        "e2": {"$ref": "#/$defs/fraction"},
+        "deficit": {"$ref": "#/$defs/fraction"},
+        "delta_b_Omega_UpsilonUpsilon": {"$ref": "#/$defs/complex_fraction"},
+        "delta_b_Upsilon_OmegaOmega": {"$ref": "#/$defs/complex_fraction"},
+        "gram_cross": {"$ref": "#/$defs/complex_fraction"}
+      },
+      "additionalProperties": false
+    }
+  },
+  "type": "object",
+  "required": [
+    "certificate", "schema_version", "dependency_tags", "lifecycle_state",
+    "result_kind", "question", "answer", "kinematics", "off_resonant_kernel",
+    "operator_composition", "soft_blowup", "target_comparison", "disposition",
+    "next_gate", "missing_object_ledger", "does_not_establish", "provenance",
+    "verification_commands", "checks", "report", "schema"
+  ],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_FULL_OFF_RESONANT_PROJECTOR_V1"},
+    "schema_version": {"const": "reverse-physics-bt-full-off-resonant-projector-v1"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "result_kind": {"$ref": "#/$defs/nonempty"},
+    "question": {"$ref": "#/$defs/nonempty"},
+    "answer": {"$ref": "#/$defs/nonempty"},
+    "kinematics": {
+      "type": "object",
+      "required": ["deficit", "parent_energy", "phase", "symplectic_extractor", "box_product"],
+      "properties": {
+        "deficit": {"const": "d=e1+e2-E_parent"},
+        "parent_energy": {"const": "E_parent=e1+e2-d"},
+        "phase": {"const": "exp(-i*d*t)"},
+        "symplectic_extractor": {"$ref": "#/$defs/nonempty"},
+        "box_product": {"$ref": "#/$defs/nonempty"}
+      },
+      "additionalProperties": false
+    },
+    "off_resonant_kernel": {
+      "type": "object",
+      "required": ["normalization", "delta_b_Omega", "delta_b_Upsilon", "samples", "resonant_restriction"],
+      "properties": {
+        "normalization": {"$ref": "#/$defs/nonempty"},
+        "delta_b_Omega": {"$ref": "#/$defs/kernel_table"},
+        "delta_b_Upsilon": {"$ref": "#/$defs/kernel_table"},
+        "samples": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/sample"}},
+        "resonant_restriction": {"const": "exactly REVERSE_PHYSICS_BT_RT_JORDAN_KERNEL_V1"}
+      },
+      "additionalProperties": false
+    },
+    "operator_composition": {
+      "type": "object",
+      "required": ["generator", "parent_diagonalization", "remaining_measure", "bose_factor", "parent_factor", "gram"],
+      "properties": {
+        "generator": {"$ref": "#/$defs/nonempty"},
+        "parent_diagonalization": {"$ref": "#/$defs/nonempty"},
+        "remaining_measure": {"const": "d3p1=d^3p1/(2pi)^3=r^2 dr dOmega/(2pi)^3 after p2=P-p1"},
+        "bose_factor": {"$ref": "#/$defs/nonempty"},
+        "parent_factor": {"$ref": "#/$defs/nonempty"},
+        "gram": {"$ref": "#/$defs/kernel_table"}
+      },
+      "additionalProperties": false
+    },
+    "soft_blowup": {
+      "type": "object",
+      "required": ["chart", "ordered_cross_gram_leading", "homogeneous_restoration", "radial_measure", "measured_leading", "scaling_degree", "reflection_even_local_freedom", "cutoff_family", "rescaling"],
+      "properties": {
+        "chart": {"$ref": "#/$defs/nonempty"},
+        "ordered_cross_gram_leading": {"const": "-1/(2*r^3), independent of alpha"},
+        "homogeneous_restoration": {"$ref": "#/$defs/nonempty"},
+        "radial_measure": {"const": "r^2 dr"},
+        "measured_leading": {"const": "-(1/2) dr/r in the normalized e2=1 ordered chart"},
+        "scaling_degree": {"const": 1},
+        "reflection_even_local_freedom": {"$ref": "#/$defs/nonempty"},
+        "cutoff_family": {"const": "I_epsilon=int_epsilon^r0 -(1/2) dr/r"},
+        "rescaling": {"const": "I_(c*epsilon)-I_epsilon=+(1/2) log(c)"}
+      },
+      "additionalProperties": false
+    },
+    "target_comparison": {
+      "type": "object",
+      "required": ["target", "status", "reason"],
+      "properties": {
+        "target": {"const": "1/48 per unordered pair after Born normalization"},
+        "status": {"const": "NOT_DERIVED"},
+        "reason": {"$ref": "#/$defs/nonempty"}
+      },
+      "additionalProperties": false
+    },
+    "disposition": {
+      "type": "object",
+      "required": ["full_off_resonant_kernel", "resonant_slice", "ordinary_parent_projector_composition", "flat_collinear_three_jet_ambiguity", "unique_endpoint_normalization", "one_over_48", "physical_nlo_probability"],
+      "properties": {
+        "full_off_resonant_kernel": {"const": "DERIVED"},
+        "resonant_slice": {"const": "RECOVERED"},
+        "ordinary_parent_projector_composition": {"const": "LOGARITHMICALLY_NON_TRACE_CLASS"},
+        "flat_collinear_three_jet_ambiguity": {"const": "REDUCED_TO_ONE_SOFT_NORMALIZATION_ON_DECLARED_FULL_MEASURE_CHART"},
+        "unique_endpoint_normalization": {"const": "NOT_SELECTED"},
+        "one_over_48": {"const": "NOT_DERIVED"},
+        "physical_nlo_probability": {"const": "NOT_ESTABLISHED"}
+      },
+      "additionalProperties": false
+    },
+    "next_gate": {"$ref": "#/$defs/nonempty"},
+    "missing_object_ledger": {"type": "array", "minItems": 6, "items": {"$ref": "#/$defs/nonempty"}},
+    "does_not_establish": {"type": "array", "minItems": 8, "items": {"$ref": "#/$defs/nonempty"}},
+    "provenance": {
+      "type": "object",
+      "required": ["source_commit", "retrieval_date", "inputs", "primary_source"],
+      "properties": {
+        "source_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "retrieval_date": {"const": "2026-08-10"},
+        "inputs": {
+          "type": "array", "minItems": 3, "maxItems": 3,
+          "items": {
+            "type": "object", "required": ["path", "sha256"],
+            "properties": {"path": {"$ref": "#/$defs/nonempty"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}},
+            "additionalProperties": false
+          }
+        },
+        "primary_source": {
+          "type": "object", "required": ["source", "url", "equations"],
+          "properties": {
+            "source": {"$ref": "#/$defs/nonempty"},
+            "url": {"const": "https://arxiv.org/abs/2607.00096"},
+            "equations": {"const": ["Eq. (16)", "Eq. (19)", "Appendix C"]}
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "items": {"$ref": "#/$defs/nonempty"}},
+    "checks": {
+      "type": "object",
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true}, "passed": {"const": 15}, "total": {"const": 15},
+        "failures": {"const": []},
+        "details": {"type": "object", "minProperties": 15, "maxProperties": 15, "additionalProperties": {"const": true}}
+      },
+      "additionalProperties": false
+    },
+    "report": {"const": "reverse_physics/reports/bt-full-off-resonant-projector.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-full-off-resonant-projector-v1.schema.json"}
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,19 @@
+{
+  "id": "sf:program/work/reverse-physics-bateman-full-off-resonant-projector",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "reverse-physics",
+    "state": "ACTIVE",
+    "objective": "Retain the BT parent--daughter energy deficit through the complete order-lambda quadratic carrier, form K-sharp K with the full daughter momentum measure, and determine whether ordinary off-resonant composition uniquely fixes the endpoint normalization and 1/48 without fitting.",
+    "depends_on": ["REVERSE_PHYSICS_BT_RT_JORDAN_KERNEL_V1", "REVERSE_PHYSICS_BT_ENDPOINT_EXTENSION_AMBIGUITY_V1", "REVERSE_PHYSICS_BT_CANONICAL_ENDPOINT_AMBIGUITY_V1"],
+    "activates": ["off-resonant neutral continuum projector", "soft-collinear asymptotic matching", "complete probability"],
+    "current_gate": "FULL_OFF_RESONANT_PROJECTOR: derive the exact deficit-dependent carrier, restore both spatial delta functions and the radial daughter measure in K-sharp K, classify the joint soft-collinear scaling degree, and test whether the finite part is regulator independent and equals 1/48.",
+    "stop_condition": "Derive and verify a unique finite continuum projector with coefficient 1/48, or certify the first exact residual soft normalization/trace-class obstruction after the full measure and off-resonant channels are retained.",
+    "forbid": "no exactly-collinear slice promoted to a full phase-space result; no fitted 1/48; no arbitrary plus/cutoff choice; no omission of Bose, parent, or daughter measure factors; no scalar-to-gravity or LORENTZIAN-CAUSAL promotion; exact arithmetic only",
+    "allowed_paths": ["reverse_physics/", "notes/bateman-turok-embedding.md", "paper/05-interaction-obstructions.tex", "paper/05-interaction-obstructions.pdf", "paper/06-einstein-weyl-interaction-obstructions.tex", "paper/06-einstein-weyl-interaction-obstructions.pdf", "planning/work-items/reverse-physics-bateman-full-off-resonant-projector.json", "planning/work-items/reverse-physics-bateman-soft-collinear-hard-smatrix.json", "planning/events/"],
+    "resource_hint": "Use exact Laurent arithmetic in e1,e2,d with d=e1+e2-E_parent. Form the method-distinct verifier over Gaussian rationals, mutate a sample and the universal soft residue, and run sequentially under ulimit -v 500000.",
+    "input_commit": "ece5386eb2b9b6983e233805ba1f98dd0e02a6f1",
+    "stream": "reverse-physics"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "id": "sf:program/work/reverse-physics-bateman-soft-collinear-hard-smatrix",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "reverse-physics",
+    "state": "ACTIVE",
+    "objective": "Construct the BT soft-collinear anti-Krein asymptotic Hamiltonian and finite hard S matrix whose regulator responses cancel on the certified off-resonant carrier, then compare the Born-normalized finite coefficient with 1/48 without fitting.",
+    "depends_on": ["REVERSE_PHYSICS_BT_FULL_OFF_RESONANT_PROJECTOR_V1", "REVERSE_PHYSICS_BT_REAL_VIRTUAL_AXIS_GLUING_V1", "REVERSE_PHYSICS_BT_PERTURBATIVE_COISOMETRY_RIGIDITY_V1"],
+    "activates": ["regulator-independent BT hard S matrix", "complete neutral continuum projector", "complete probability"],
+    "current_gate": "SOFT_COLLINEAR_HARD_SMATRIX: derive an anti-Krein asymptotic generator on the full off-resonant carrier, compute its response under at least two regulator families, and test exact cancellation of the certified +(1/2) log c composition response against the hard factor before extracting a finite Born-normalized coefficient.",
+    "stop_condition": "Construct and independently verify regulator-family-independent response cancellation and a finite coefficient, or certify the first exact algebraic, domain, charge, or matching obstruction.",
+    "forbid": "no fitted 1/48; no assignment of an arbitrary finite part before response cancellation; no reduced-mode result used as LORENTZIAN-CAUSAL evidence; no scalar-to-gravity transfer; no unverified complete probability; exact arithmetic for algebraic certificates",
+    "allowed_paths": ["reverse_physics/", "notes/bateman-turok-embedding.md", "paper/05-interaction-obstructions.tex", "paper/05-interaction-obstructions.pdf", "paper/06-einstein-weyl-interaction-obstructions.tex", "paper/06-einstein-weyl-interaction-obstructions.pdf", "planning/work-items/reverse-physics-bateman-soft-collinear-hard-smatrix.json", "planning/events/"],
+    "resource_hint": "Start from the certified universal measured residue rather than the resonant splitting shape. Keep virtual/hard and real/asymptotic responses as separate exact objects, use at least sharp and smooth resolution families, and run sequentially under ulimit -v 500000.",
+    "input_commit": "ece5386eb2b9b6983e233805ba1f98dd0e02a6f1",
+    "stream": "reverse-physics"
+  }
+}
