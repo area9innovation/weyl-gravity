@@ -280,7 +280,7 @@ as a pass.  The repository's explicit-path manual fallback was used: the
 scoped diff, path list, structured files, and exact staged content are audited
 before commit without touching the unrelated shared-tree edits.
 
-CLOSE-OUT: EXACT OBSTRUCTION -- the ordinary independent-mass,
+CLOSE-OUT: OBSTRUCTED -- the ordinary independent-mass,
 axis-compatible regulator architecture does not cancel its first complete
 final-state collinear logarithmic response.
 
