@@ -288,3 +288,30 @@ EVIDENCE: `reverse_physics/certificates/REVERSE_PHYSICS_BT_REAL_VIRTUAL_AXIS_GLU
 
 NEXT: change infrared architecture before attempting the quotient-trace
 positivity test.
+
+## Paper adoption (2026-08-10)
+
+The result is now incorporated into the programme papers without enlarging its
+claim boundary:
+
+- Paper 05 records the coefficient and gluing obstruction as a
+  certificate-backed successor remark, replaces the stale statement that the
+  scalar loop question is merely deferred, and points the next scalar step to
+  a changed infrared/asymptotic-state architecture.
+- Paper 06 records only the non-transfer boundary: the scalar result changes
+  none of its Einstein--Weyl tree theorems, but any gravitational
+  Bateman--Turok completion must construct and verify its own infrared gluing
+  on the BRST quotient.
+
+Both PDFs were rebuilt through at least two passes under the 500,000 KB
+virtual-memory cap.  The
+final Paper 05 pass took 0.38 s and 50,572 KB; the final Paper 06 pass took
+0.45 s and 50,772 KB.  Neither log contains undefined references or rerun
+warnings.  Paper 06 has no overfull boxes; Paper 05 retains only three small
+pre-existing overfull boxes (at most 4.21 pt).  The focused certificate suite
+passed 10/10 in 21.62 s at 74,580 KB.  PDF text extraction independently
+confirmed the coefficient, dependency tag, axis-compatible scope, and
+non-transfer language in the rendered artifacts.
+
+Paper 19 was not changed: it already contains unrelated uncommitted work and
+the scalar quantum result is not part of its galactic-rotation theorem chain.

@@ -28,7 +28,7 @@
 and Doubled Jordan Symmetry in Fourth-Order Theories}
 \author{GPT-5.6.sol\thanks{OpenAI model and principal programme author.}
 \and Asger Alstrup Palm\thanks{Programme orchestrator and corresponding human contact; Honorary Professor, DTU Compute, Technical University of Denmark. \texttt{asger@area9.dk}.}}
-\date{Open-repository preprint, July 2026}
+\date{Open-repository preprint, August 2026}
 
 \begin{document}
 \maketitle
@@ -77,6 +77,14 @@ resonance hierarchy to order six: the $5{:}3$ and $7{:}1$ loci vanish through
 orders two--five and obstruct at order six on exactly the predicted conversion
 monomials.  Those two instances are imported here as externally reproduced
 exact evidence; the all-coprime hierarchy remains a conjecture.
+A separate exact \texttt{REDUCED-MODE} continuation of the scalar loop
+programme now completes the final-state collinear logarithmic response.  It
+finds that the real finite-part normalization changes by
+$3\lambda^6\log c/(512\pi^4s)$, whereas every continuous axis-compatible
+parent/daughter regulator gluing, including the physical pair threshold, has
+zero constant virtual response.  This obstructs the ordinary independent-mass
+infrared prescription on that carrier; it is not a full NLO probability,
+failure of dressed-state or resummed constructions, or a gravitational result.
 \end{abstract}
 
 \section*{AI authorship and computational accountability}
@@ -187,7 +195,13 @@ remains exactly pseudo-unitary on the verified matrix elements
 (Proposition~\ref{cprop:krein}).  The stronger one-sided-charge
 condition entering the Bateman--Turok Born rule is instead a boundary
 property (Proposition~\ref{cprop:embedding}); its explicit Born-trace
-evaluation is the remaining capstone calculation.
+evaluation on a fixed split-mass shell has since been completed and shown not
+to test the charge-null mechanism, because the truncated shell carries no
+boost action.  The first complete final-state collinear logarithmic audit is
+instead obstructed by the ordinary axis-compatible independent-mass
+prescription (Remark~\ref{rem:btaxis}).  A beyond-tree
+quotient trace therefore requires a new infrared/asymptotic-state
+architecture, not another fixed-shell evaluation.
 
 \paragraph{Strength of the statements.}
 Throughout we distinguish (a) \emph{analytic metric obstruction} ---
@@ -219,10 +233,14 @@ computational proposition at the rational point
 (Proposition~\ref{cprop:krein}); one-sidedness of the regulated vacuum
 image --- computational proposition, exact iff $\epsilon=0$ in the
 stated charge frame (Proposition~\ref{cprop:embedding}); the boundary
-Born-trace evaluation --- open, and the fixed-shell route to it is
-excluded rather than merely unattempted: on a truncated shell the
-charge-null lemma's hypothesis is absent and its conclusion fails by
-exactly the obstruction squared (Section~\ref{sec:discussion}).
+Born-trace evaluation --- open, with the fixed-shell route excluded rather
+than merely unattempted because the charge-null lemma's hypothesis is absent
+there (Section~\ref{sec:discussion}); the complete final-state collinear
+logarithmic response on the ordinary axis-compatible independent-mass
+regulator class --- exact \texttt{REDUCED-MODE} obstruction
+(Remark~\ref{rem:btaxis}); a full NLO quotient trace,
+dressed-state or resummed completion, and gravitational lift of that infrared
+statement --- open.
 
 \paragraph{Bookkeeping.}
 The deformation order is counted by a formal parameter $\zeta$:
@@ -253,6 +271,16 @@ recording that the upstream certificate was emitted by a dirty development
 toolchain.  A second run built the compiler from a clean \texttt{git archive}
 of that commit and reproduced all 31 checks and all three SymPy golden
 comparisons; the clean replay receipt is part of the import.
+The scalar real--virtual continuation is pinned under
+\path{reverse_physics/certificates/} by certificate
+\texttt{REVERSE\_PHYSICS\_BT\_REAL\_}\allowbreak
+\texttt{VIRTUAL\_AXIS\_GLUING\_V1.json}
+at standalone-repository commit
+\path{0daa9ed5507b983322b6e04cccf78907edf482b5}.  Its producer and
+method-distinct invariant-K\"all\'en verifier use exact arithmetic and run
+sequentially under a 500,000 KB virtual-memory cap; the certificate preserves
+the \texttt{REDUCED-MODE} dependency boundary and explicitly leaves the full
+NLO quotient trace uncomputed.
 
 \paragraph{Conventions.}
 Oscillator conventions follow \cite{paperI,paperII}: normalized
@@ -1043,6 +1071,59 @@ name collinear infrared divergence of the massless theory as the obstacle to
 higher orders.  The two limitations are unrelated in origin and coincide in
 location.
 
+That scalar limitation can now be sharpened on one complete declared
+carrier.
+
+\begin{remark}[Axis-compatible collinear normalization obstruction]
+\label{rem:btaxis}
+At order $\lambda^6$, on the complete final-state collinear logarithmic
+normalization carrier, differential in the nonsingular outer two-body solid
+angle, the three identical real-emission pair boundaries respond to a common
+daughter mass-ratio normalization $r\mapsto cr$ as
+\begin{equation}\label{eq:btrealresponse}
+ \Delta_c\frac{d\sigma_{\mathrm{real}}}{d\Omega}
+ =\frac{3\lambda^6}{512\pi^4s}\log c.
+\end{equation}
+Let the recombined virtual parent regulator be
+$G(x,y)=xg(y/x)$, with $g$ continuous at zero and
+$0<|g(0)|<\infty$, while the spectator regulators are held fixed.  Then the
+complete virtual external-mass logarithmic response is zero at constant
+order.  Hence the real and virtual normalization responses do not cancel on
+this axis-compatible class.  The statement has dependency tag
+\texttt{REDUCED-MODE}; it is not a complete NLO probability or a theorem
+against distributional, dressed-state, enlarged-degenerate-state, or
+resummed constructions.
+\end{remark}
+
+\paragraph{Certificate summary.}
+For $x_i=\delta a_i$ and pair invariant $t=\delta\tau$, the exact
+three-spectator square-free jet of the complete 25-graph tree gives
+\begin{equation}
+ [a_2a_3a_4]C^2=
+ \frac{3(a_0-a_1)^2
+ \bigl((a_0-a_1)^2-2\tau(a_0+a_1)\bigr)}{8\tau^3},
+ \qquad A_5=\frac{M_5}{8\lambda^3}=\delta^2C+O(\delta^3).
+\end{equation}
+The splitting fraction and outer scattering ratio cancel identically, so the
+inner solid angle contributes $4\pi$.  The exact threshold finite part shifts
+by $-(3/8)\log c$.  Restoring the five-delta-prime sign $(-1)^5$, the
+$1/(2!3!)$ projector weight, factorized three-body phase space, and
+$|M_5|^2=64\lambda^6A_5^2$ gives
+$\lambda^6\log c/(512\pi^4s)$ per unordered pair and therefore
+\eqref{eq:btrealresponse}.  The certified virtual boundary rate is
+\begin{equation}
+ \frac{d\sigma_{\mathrm{virt,boundary}}}{d\Omega}
+ =\frac{3\lambda^6}{128\pi^4s}
+ \sum_{i=1}^{4}\log\frac{-\mu^2}{X_i}.
+\end{equation}
+For an axis-compatible parent,
+$G(x,cy)/G(x,y)=g(cr)/g(r)\to1$ as $r=y/x\to0$; its logarithm therefore
+has zero constant response.  The hard Mandelstam-ratio logarithm also has
+zero daughter-ratio response, while continuous cut-free terms and local
+analytic counterterms cannot supply one.  Both the dot-product graph producer
+and a method-distinct invariant-K\"all\'en verifier establish these identities
+exactly in the axis-gluing certificate cited above.
+
 \paragraph{Where the double pole goes.}
 One structural remark, since it bears on which route is the likelier to extend.
 The obstruction that withdraws the cutting rules at coincident poles is that
@@ -1075,16 +1156,19 @@ hierarchy conjecture's $5{:}1$ prediction is confirmed at fourth order
 (Proposition~\ref{cprop:fiveone}), and its $5{:}3$ and $7{:}1$ instances are
 confirmed at sixth order (Proposition~\ref{cprop:ordersix}); higher coprime
 loci and the mechanism excluding even mode-2 transfers remain open.
-These scalar questions are deferred rather than placed in the active
-queue.  After the boundary Born-trace calculation, the next target is
-the gravitational extension --- the cubic Einstein--Weyl vertices
-against the covariant real forms of \cite{paperIV}.  The natural first
-test is the physical-helicity decay $M\to h+h$: apply the uniform
-massive-spin-$2$ quarter-turn and project
-$v_3^{\dg}-v_3$ onto its real decay shell, with the Ward/BRST identities
-checked before drawing a completion-level conclusion.  No CPT claim is made: the
-exchange is a linear sector map, not a constructed antiunitary CPT
-operator.
+The ordinary scalar independent-mass route is no longer merely deferred:
+Remark~\ref{rem:btaxis} supplies its first complete
+collinear logarithmic obstruction.  Its successor must change infrared
+architecture explicitly by deriving a distributional extension from the
+generalized Born rule, including degenerate incoming or dressed states, or
+resumming the collinear sector before evaluating the quotient trace.  The
+gravitational extension has meanwhile been carried out at tree level in the
+sequel: the exact Einstein--Weyl cubic and quartic vertices, physical
+helicities, and Ward/BRST checks produce a second-order metric obstruction.
+That result does not import the scalar infrared proposition; any
+Bateman--Turok-type gravitational completion would need its own
+parent/daughter and asymptotic-state construction.  No CPT claim is made: the
+exchange is a linear sector map, not a constructed antiunitary CPT operator.
 
 \begin{thebibliography}{12}
 
@@ -1371,6 +1455,7 @@ FO1--FO9 & Comp.\ Prop.~\ref{cprop:fiveone},
 Conj.~\ref{conj:hierarchy} & exact symbolic\\
 ON1--ON4 & Lemma~\ref{lem:chargenull},
 Comp.\ Prop.~\ref{cprop:embedding} & exact symbolic + numeric\\
+BT-RV & Remark~\ref{rem:btaxis} & exact symbolic/rational\\
 \hline
 \end{tabular}
 \end{center}
@@ -1386,5 +1471,16 @@ Scripts, in \texttt{symbolic/}, each printing \texttt{ALL PASS}:\\
 \texttt{verify\_doubled\_theory.py} \quad
 \texttt{verify\_51\_order4.py}\\
 \texttt{verify\_obstruction\_null.py}
+
+The scalar real--virtual extension is reproduced independently from the
+repository root by
+\begin{verbatim}
+ulimit -v 500000; python3 \
+  reverse_physics/bt_real_virtual_axis_gluing.py --check
+ulimit -v 500000; python3 \
+  reverse_physics/verify_bt_real_virtual_axis_gluing.py
+ulimit -v 500000; python3 -m unittest -v \
+  reverse_physics.tests.test_bt_real_virtual_axis_gluing
+\end{verbatim}
 
 \end{document}
