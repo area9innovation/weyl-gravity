@@ -247,3 +247,13 @@ interference jet are computed independently.  The bubble collinear expansion
 contains uncancelled `r^-2` and `r^-1` logarithms, so it cannot yet be matched
 to the reduced real threshold.  The immediate missing dependency is the
 triangle logarithmic jet; the box and finite parts remain behind it.
+
+## Physical successor checkpoint (2026-08-10)
+
+[`REVERSE_PHYSICS_BT_UV_HARD_SCATTERING_LAW_V1`](../certificates/REVERSE_PHYSICS_BT_UV_HARD_SCATTERING_LAW_V1.json)
+combines this beta function with the subsequently completed projected hard
+logarithm and the BT Born rate.  Their Callan--Symanzik residual vanishes
+exactly, yielding the positive leading-log nonforward law
+`d_sigma_hard/dOmega=24*pi^2/[25*s*log(s/Lambda^2)^2]`.  This advances the UV
+hard coefficient to a physical baseline; it does not close the inclusive
+collinear probability left open here.

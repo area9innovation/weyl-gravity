@@ -239,3 +239,13 @@ boundary-log calculation on the real threshold's hard fixture.  The remaining
 gate is the full real splitting-fraction integral and a declared regulator map
 between one recombined virtual mass and two real daughter masses; cancellation
 is still not claimed.
+
+## Physical hard-log successor (2026-08-10)
+
+[`REVERSE_PHYSICS_BT_UV_HARD_SCATTERING_LAW_V1`](../certificates/REVERSE_PHYSICS_BT_UV_HARD_SCATTERING_LAW_V1.json)
+uses a different response of the same projected logarithm: common hard-energy
+dilation at fixed nonforward angle.  Its three channel logs cancel the
+beta-function scale derivative of the Born rate exactly and resum to the
+positive `1/[s*log(s)^2]` hard law.  This does not alter the mass-ratio carrier
+mismatch or supply the missing inclusive endpoint cancellation proved open in
+this report.

@@ -198,3 +198,13 @@ its page-summary virtual address space before executing.  The cap was not
 relaxed.  A manually emitted event of the documented `event-v0` byte shape is
 explicitly labelled as that fallback; the failed coordinator launch is not a
 pass.
+
+## Parallel physical baseline (2026-08-10)
+
+While the Jordan endpoint gate remains open,
+[`REVERSE_PHYSICS_BT_UV_HARD_SCATTERING_LAW_V1`](../certificates/REVERSE_PHYSICS_BT_UV_HARD_SCATTERING_LAW_V1.json)
+establishes the positive leading-log hard rate in every fixed nonforward
+angular window.  The new result uses this preflight's corrected Born
+normalization but neither constructs nor bypasses the missing `R_t` dressing.
+It is the UV baseline against which an eventual inclusive completion must be
+tested.

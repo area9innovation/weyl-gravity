@@ -1,0 +1,224 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-uv-hard-scattering-law-v1.schema.json",
+  "title": "BT UV hard scattering law certificate v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "certificate", "schema_version", "dependency_tags", "lifecycle_state",
+    "result_kind", "question", "answer", "certified_inputs",
+    "callan_symanzik_certificate", "leading_log_hard_rate",
+    "universal_uv_law", "detector_window", "physical_interpretation",
+    "disposition", "does_not_establish", "missing_object_ledger", "next_gate",
+    "provenance", "verification_commands", "checks", "report", "schema"
+  ],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_UV_HARD_SCATTERING_LAW_V1"},
+    "schema_version": {"const": "reverse-physics-bt-uv-hard-scattering-law-v1"},
+    "dependency_tags": {
+      "type": "array", "prefixItems": [
+        {"const": "LOCAL-ALGEBRAIC"}, {"const": "REDUCED-MODE"}
+      ], "items": false, "minItems": 2, "maxItems": 2
+    },
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "result_kind": {"$ref": "#/$defs/nonempty"},
+    "question": {"$ref": "#/$defs/nonempty"},
+    "answer": {"$ref": "#/$defs/nonempty"},
+    "certified_inputs": {
+      "type": "object", "additionalProperties": false,
+      "required": ["born_rate", "one_loop_beta", "projected_hard_log", "fixed_angle_identity"],
+      "properties": {
+        "born_rate": {"$ref": "#/$defs/nonempty"},
+        "one_loop_beta": {"$ref": "#/$defs/nonempty"},
+        "projected_hard_log": {"$ref": "#/$defs/nonempty"},
+        "fixed_angle_identity": {"$ref": "#/$defs/nonempty"}
+      }
+    },
+    "callan_symanzik_certificate": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "coefficient_convention", "born_coefficient", "beta_coefficient",
+        "virtual_per_channel_log", "channel_log_count",
+        "beta_on_born_scale_derivative", "explicit_loop_scale_derivative",
+        "residual", "identity", "meaning", "mutations"
+      ],
+      "properties": {
+        "coefficient_convention": {"$ref": "#/$defs/nonempty"},
+        "born_coefficient": {"$ref": "#/$defs/rational"},
+        "beta_coefficient": {"$ref": "#/$defs/rational"},
+        "virtual_per_channel_log": {"$ref": "#/$defs/rational"},
+        "channel_log_count": {"const": 3},
+        "beta_on_born_scale_derivative": {"$ref": "#/$defs/rational"},
+        "explicit_loop_scale_derivative": {"$ref": "#/$defs/rational"},
+        "residual": {"$ref": "#/$defs/rational"},
+        "identity": {"$ref": "#/$defs/nonempty"},
+        "meaning": {"$ref": "#/$defs/nonempty"},
+        "mutations": {
+          "type": "object", "additionalProperties": false,
+          "required": ["two_channel_logs_residual", "flipped_virtual_sign_residual"],
+          "properties": {
+            "two_channel_logs_residual": {"$ref": "#/$defs/rational"},
+            "flipped_virtual_sign_residual": {"$ref": "#/$defs/rational"}
+          }
+        }
+      }
+    },
+    "leading_log_hard_rate": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "reference_data", "running_denominator", "running_coupling",
+        "fixed_angle_rate", "nlo_expansion",
+        "nlo_relative_coefficient_without_pi", "nlo_absolute_coefficient_without_pi",
+        "all_leading_log_coefficients", "effective_log_slope", "positivity_domain"
+      ],
+      "properties": {
+        "reference_data": {"$ref": "#/$defs/nonempty"},
+        "running_denominator": {"$ref": "#/$defs/nonempty"},
+        "running_coupling": {"$ref": "#/$defs/nonempty"},
+        "fixed_angle_rate": {"$ref": "#/$defs/nonempty"},
+        "nlo_expansion": {"$ref": "#/$defs/nonempty"},
+        "nlo_relative_coefficient_without_pi": {"$ref": "#/$defs/rational"},
+        "nlo_absolute_coefficient_without_pi": {"$ref": "#/$defs/rational"},
+        "all_leading_log_coefficients": {
+          "type": "array", "minItems": 7, "maxItems": 7,
+          "items": {"$ref": "#/$defs/llrow"}
+        },
+        "effective_log_slope": {"$ref": "#/$defs/nonempty"},
+        "positivity_domain": {"$ref": "#/$defs/nonempty"}
+      }
+    },
+    "universal_uv_law": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "lambda_scale_definition", "fixed_angle_form", "fixed_angle_limit",
+        "fixed_angle_constant_without_pi2", "scheme_statement"
+      ],
+      "properties": {
+        "lambda_scale_definition": {"$ref": "#/$defs/nonempty"},
+        "fixed_angle_form": {"$ref": "#/$defs/nonempty"},
+        "fixed_angle_limit": {"$ref": "#/$defs/nonempty"},
+        "fixed_angle_constant_without_pi2": {"$ref": "#/$defs/rational"},
+        "scheme_statement": {"$ref": "#/$defs/nonempty"}
+      }
+    },
+    "detector_window": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "definition", "solid_angle", "collinear_control", "leading_log_rate",
+        "universal_limit", "constant_without_pi3_cos_theta0"
+      ],
+      "properties": {
+        "definition": {"$ref": "#/$defs/nonempty"},
+        "solid_angle": {"$ref": "#/$defs/nonempty"},
+        "collinear_control": {"$ref": "#/$defs/nonempty"},
+        "leading_log_rate": {"$ref": "#/$defs/nonempty"},
+        "universal_limit": {"$ref": "#/$defs/nonempty"},
+        "constant_without_pi3_cos_theta0": {"$ref": "#/$defs/rational"}
+      }
+    },
+    "physical_interpretation": {
+      "type": "object", "additionalProperties": false,
+      "required": ["observable", "prediction", "why_hard_log_matters"],
+      "properties": {
+        "observable": {"$ref": "#/$defs/nonempty"},
+        "prediction": {"$ref": "#/$defs/nonempty"},
+        "why_hard_log_matters": {"$ref": "#/$defs/nonempty"}
+      }
+    },
+    "disposition": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "projected_nlo_uv_hard_log", "callan_symanzik_hard_log_closure",
+        "leading_log_hard_rate", "nonforward_window_uv_scaling",
+        "leading_log_positivity", "full_inclusive_nlo_probability",
+        "collinear_endpoint_resummation", "jordan_asymptotic_generator",
+        "beyond_leading_log_scheme_independence"
+      ],
+      "properties": {
+        "projected_nlo_uv_hard_log": {"const": "COEFFICIENT_COMPUTED"},
+        "callan_symanzik_hard_log_closure": {"const": "PROVED"},
+        "leading_log_hard_rate": {"const": "RESUMMED"},
+        "nonforward_window_uv_scaling": {"const": "PHYSICAL_HARD_RESULT"},
+        "leading_log_positivity": {"const": "PROVED_ON_UV_BRANCH"},
+        "full_inclusive_nlo_probability": {"const": "NOT_ESTABLISHED"},
+        "collinear_endpoint_resummation": {"const": "NOT_CONSTRUCTED"},
+        "jordan_asymptotic_generator": {"const": "NOT_CONSTRUCTED"},
+        "beyond_leading_log_scheme_independence": {"const": "NOT_ESTABLISHED"}
+      }
+    },
+    "does_not_establish": {"type": "array", "minItems": 9, "items": {"$ref": "#/$defs/nonempty"}},
+    "missing_object_ledger": {"type": "array", "minItems": 5, "items": {"$ref": "#/$defs/nonempty"}},
+    "next_gate": {"$ref": "#/$defs/nonempty"},
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_commit", "retrieval_date", "inputs", "primary_sources"],
+      "properties": {
+        "source_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "retrieval_date": {"type": "string", "format": "date"},
+        "inputs": {
+          "type": "array", "minItems": 3, "maxItems": 3,
+          "items": {"$ref": "#/$defs/input"}
+        },
+        "primary_sources": {
+          "type": "array", "minItems": 2, "maxItems": 2,
+          "items": {"$ref": "#/$defs/source"}
+        }
+      }
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "items": {"$ref": "#/$defs/nonempty"}},
+    "checks": {
+      "type": "object", "additionalProperties": false,
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"const": 21},
+        "total": {"const": 21},
+        "failures": {"type": "array", "maxItems": 0},
+        "details": {
+          "type": "object", "minProperties": 21, "maxProperties": 21,
+          "additionalProperties": {"const": true}
+        }
+      }
+    },
+    "report": {"const": "reverse_physics/reports/bt-uv-hard-scattering-law.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-uv-hard-scattering-law-v1.schema.json"}
+  },
+  "$defs": {
+    "nonempty": {"type": "string", "minLength": 1},
+    "rational": {
+      "type": "object", "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      }
+    },
+    "llrow": {
+      "type": "object", "additionalProperties": false,
+      "required": ["order", "coefficient_without_pi", "term"],
+      "properties": {
+        "order": {"type": "integer", "minimum": 0, "maximum": 6},
+        "coefficient_without_pi": {"$ref": "#/$defs/rational"},
+        "term": {"$ref": "#/$defs/nonempty"}
+      }
+    },
+    "input": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {"$ref": "#/$defs/nonempty"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "source": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source", "equations", "use", "url"],
+      "properties": {
+        "source": {"$ref": "#/$defs/nonempty"},
+        "equations": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/nonempty"}},
+        "use": {"$ref": "#/$defs/nonempty"},
+        "url": {"type": "string", "pattern": "^https://arxiv\\.org/abs/"}
+      }
+    }
+  }
+}

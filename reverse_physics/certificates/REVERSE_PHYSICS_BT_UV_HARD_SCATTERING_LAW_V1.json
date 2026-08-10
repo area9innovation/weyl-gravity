@@ -1,0 +1,150 @@
+{
+  "answer": "At fixed nonforward angle, the complete projected hard logarithm satisfies the one-loop Callan--Symanzik equation exactly. The leading UV logs resum to d_sigma_hard_LL/dOmega=3/[32*pi^2*s*D(s)^2], D(s)=lambda0^-2+5*log(s/s0)/(16*pi^2). Hence s*log(s/Lambda^2)^2*d_sigma/dOmega tends to 24*pi^2/25. This is a positive physical hard/window observable, not a completed inclusive NLO probability.",
+  "callan_symanzik_certificate": {
+    "beta_coefficient": {"denominator": 16, "numerator": 5},
+    "beta_on_born_scale_derivative": {"denominator": 128, "numerator": -15},
+    "born_coefficient": {"denominator": 32, "numerator": 3},
+    "channel_log_count": 3,
+    "coefficient_convention": "powers pi^-2 in Born/beta and pi^-4 in loop are stripped",
+    "explicit_loop_scale_derivative": {"denominator": 128, "numerator": 15},
+    "identity": "-4*(5/16)*(3/32)+2*3*(5/256)=0",
+    "meaning": "the independently projected hard loop logarithm has exactly the coefficient required by the independently certified beta function",
+    "mutations": {
+      "flipped_virtual_sign_residual": {"denominator": 64, "numerator": -15},
+      "two_channel_logs_residual": {"denominator": 128, "numerator": -5}
+    },
+    "residual": {"denominator": 1, "numerator": 0},
+    "virtual_per_channel_log": {"denominator": 256, "numerator": 5}
+  },
+  "certificate": "REVERSE_PHYSICS_BT_UV_HARD_SCATTERING_LAW_V1",
+  "certified_inputs": {
+    "born_rate": "3*lambda^4/(32*pi^2*s)",
+    "fixed_angle_identity": "Ls+Lt+Lu=3*log(mu^2/s)-log(z*(1-z)), z=-t/s=(1-cos(theta))/2",
+    "one_loop_beta": "d_lambda/d_log(mu)=-5*lambda^3/(16*pi^2)",
+    "projected_hard_log": "5*lambda^6*(Ls+Lt+Lu)/(256*pi^4*s)"
+  },
+  "checks": {
+    "details": {
+      "beta_coefficient_is_five_over_16": true,
+      "beta_scale_derivative_is_minus_fifteen_over_128": true,
+      "born_coefficient_is_three_over_32": true,
+      "callan_symanzik_residual_vanishes": true,
+      "explicit_and_rg_uv_logs_match": true,
+      "fixed_angle_uv_constant_is_twenty_four_over_25": true,
+      "fixed_window_excludes_collinear_endpoints": true,
+      "full_inclusive_nlo_stays_open": true,
+      "hard_log_per_channel_is_five_over_256": true,
+      "input_hashes_are_pinned": true,
+      "jordan_dressing_gate_stays_open": true,
+      "leading_log_rows_are_exact": true,
+      "loop_scale_derivative_is_plus_fifteen_over_128": true,
+      "nlo_absolute_uv_log_is_minus_fifteen_over_256": true,
+      "nlo_relative_uv_log_is_minus_five_over_eight": true,
+      "no_lorentzian_claim": true,
+      "running_denominator_square_is_positive_in_uv": true,
+      "sign_flip_mutation_is_rejected": true,
+      "three_hard_channel_logs_are_present": true,
+      "two_channel_mutation_is_rejected": true,
+      "window_uv_constant_is_ninety_six_over_25": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 21,
+    "total": 21
+  },
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "detector_window": {
+    "collinear_control": "z is bounded away from 0 and 1, so -log(z*(1-z)) is bounded",
+    "constant_without_pi3_cos_theta0": {"denominator": 25, "numerator": 96},
+    "definition": "theta0<=theta<=pi-theta0 with 0<theta0<pi/2",
+    "leading_log_rate": "sigma_window_LL=3*cos(theta0)/(8*pi*s*D(s)^2)",
+    "solid_angle": "DeltaOmega=4*pi*cos(theta0)",
+    "universal_limit": "lim s*log(s/Lambda^2)^2*sigma_window_LL=96*pi^3*cos(theta0)/25"
+  },
+  "disposition": {
+    "beyond_leading_log_scheme_independence": "NOT_ESTABLISHED",
+    "callan_symanzik_hard_log_closure": "PROVED",
+    "collinear_endpoint_resummation": "NOT_CONSTRUCTED",
+    "full_inclusive_nlo_probability": "NOT_ESTABLISHED",
+    "jordan_asymptotic_generator": "NOT_CONSTRUCTED",
+    "leading_log_hard_rate": "RESUMMED",
+    "leading_log_positivity": "PROVED_ON_UV_BRANCH",
+    "nonforward_window_uv_scaling": "PHYSICAL_HARD_RESULT",
+    "projected_nlo_uv_hard_log": "COEFFICIENT_COMPUTED"
+  },
+  "does_not_establish": [
+    "a complete inclusive NLO probability or quotient trace",
+    "cancellation of real and virtual collinear endpoint terms",
+    "the order-lambda Jordan/R_t asymptotic generator",
+    "positivity beyond the leading-log hard/window observable",
+    "next-to-leading-log or finite one-loop scheme independence",
+    "uniform control as theta0 tends to zero",
+    "a tensor/BRST gravitational lift",
+    "anything LORENTZIAN-CAUSAL",
+    "literature priority for RG improvement as a general method"
+  ],
+  "leading_log_hard_rate": {
+    "all_leading_log_coefficients": [
+      {"coefficient_without_pi": {"denominator": 1, "numerator": 1}, "order": 0, "term": "coefficient*(lambda0^2*log(s/s0)/pi^2)^0"},
+      {"coefficient_without_pi": {"denominator": 8, "numerator": -5}, "order": 1, "term": "coefficient*(lambda0^2*log(s/s0)/pi^2)^1"},
+      {"coefficient_without_pi": {"denominator": 256, "numerator": 75}, "order": 2, "term": "coefficient*(lambda0^2*log(s/s0)/pi^2)^2"},
+      {"coefficient_without_pi": {"denominator": 1024, "numerator": -125}, "order": 3, "term": "coefficient*(lambda0^2*log(s/s0)/pi^2)^3"},
+      {"coefficient_without_pi": {"denominator": 65536, "numerator": 3125}, "order": 4, "term": "coefficient*(lambda0^2*log(s/s0)/pi^2)^4"},
+      {"coefficient_without_pi": {"denominator": 524288, "numerator": -9375}, "order": 5, "term": "coefficient*(lambda0^2*log(s/s0)/pi^2)^5"},
+      {"coefficient_without_pi": {"denominator": 16777216, "numerator": 109375}, "order": 6, "term": "coefficient*(lambda0^2*log(s/s0)/pi^2)^6"}
+    ],
+    "effective_log_slope": "d_log(d_sigma_hard_LL/dOmega)/d_log(s)=-1-5*lambda(sqrt(s))^2/(8*pi^2)",
+    "fixed_angle_rate": "d_sigma_hard_LL/dOmega=3/(32*pi^2*s*D(s)^2)",
+    "nlo_absolute_coefficient_without_pi": {"denominator": 256, "numerator": -15},
+    "nlo_expansion": "3*lambda0^4/(32*pi^2*s)*[1-5*lambda0^2*log(s/s0)/(8*pi^2)+O(lambda0^4*log(s/s0)^2)]",
+    "nlo_relative_coefficient_without_pi": {"denominator": 8, "numerator": -5},
+    "positivity_domain": "D(s)>0; in particular the asymptotically-free UV branch s>max(s0,Lambda^2)",
+    "reference_data": "lambda0=lambda(sqrt(s0))",
+    "running_coupling": "lambda(sqrt(s))^2=1/D(s)",
+    "running_denominator": "D(s)=1/lambda0^2+5/(16*pi^2)*log(s/s0)"
+  },
+  "lifecycle_state": "COEFFICIENT_COMPUTED",
+  "missing_object_ledger": [
+    "the common-regulator inclusive real--virtual collinear map",
+    "the order-lambda Jordan/R_t distributional asymptotic generator",
+    "incoming degenerate sectors and endpoint resummation",
+    "cut-free finite one-loop terms for next-to-leading-log accuracy",
+    "a full beyond-tree generalized-Born quotient probability"
+  ],
+  "next_gate": "Keep the UV hard law as the physical baseline. Independently derive the Jordan/R_t collinear dressing and test whether the completed inclusive rate approaches this baseline for every fixed theta0>0.",
+  "physical_interpretation": {
+    "observable": "the hard two-to-two event rate recorded in a fixed detector angular acceptance away from collinear beam directions",
+    "prediction": "the rate is positive and falls as 1/[s*log(s)^2], with an exact leading coefficient fixed by the Born normalization and beta function",
+    "why_hard_log_matters": "its independently computed coefficient verifies the RG equation rather than assuming that running-coupling substitution applies"
+  },
+  "provenance": {
+    "inputs": [
+      {"path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_PERFECT_SQUARE_RG_SEPARATRIX_V1.json", "sha256": "5c2433142adbab422d8737ac0638a0f38aa0562bce178a08bd3b02361cbbc14f"},
+      {"path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EXTERNAL_PROJECTOR_CARRIER_MISMATCH_V1.json", "sha256": "d3fdf83a77556906259acc798abd9b07958d2f328c7f422d31465f5f7c45562b"},
+      {"path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_ASYMPTOTIC_GENERATOR_PREFLIGHT_V1.json", "sha256": "95d11eaf4f529d7f02b4f8a8e6165ee893ea6aa623d26c96a2475e0bd0a8c2c1"}
+    ],
+    "primary_sources": [
+      {"equations": ["Eq. (13)"], "source": "Bateman--Turok arXiv:2607.00096v1", "url": "https://arxiv.org/abs/2607.00096", "use": "physical four-external-mass differential Born rate"},
+      {"equations": ["Eqs. (14)-(19)"], "source": "Holdom arXiv:2303.06723v2", "url": "https://arxiv.org/abs/2303.06723", "use": "one-loop beta functions and counterterm normalization"}
+    ],
+    "retrieval_date": "2026-08-10",
+    "source_commit": "9f013a3ad6b09102c6ffe0b94d441fa6812c94c3"
+  },
+  "question": "What physical high-energy scattering law follows when the certified BT Born rate, PS beta function, and projected hard loop logarithm are placed in one Callan--Symanzik equation?",
+  "report": "reverse_physics/reports/bt-uv-hard-scattering-law.md",
+  "result_kind": "RG-improved leading-log physical hard differential and nonforward-window scattering rate",
+  "schema": "reverse_physics/schema/reverse-physics-bt-uv-hard-scattering-law-v1.schema.json",
+  "schema_version": "reverse-physics-bt-uv-hard-scattering-law-v1",
+  "universal_uv_law": {
+    "fixed_angle_constant_without_pi2": {"denominator": 25, "numerator": 24},
+    "fixed_angle_form": "d_sigma_hard_LL/dOmega=24*pi^2/[25*s*log(s/Lambda^2)^2]",
+    "fixed_angle_limit": "lim_{s->infinity} s*log(s/Lambda^2)^2*d_sigma_hard_LL/dOmega=24*pi^2/25",
+    "lambda_scale_definition": "Lambda^2=s0*exp[-16*pi^2/(5*lambda0^2)]",
+    "scheme_statement": "the leading 1/log(s)^2 coefficient is unchanged by analytic lambda'=lambda+O(lambda^3) reparameterizations; Lambda shifts only subleading inverse-log terms"
+  },
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_uv_hard_scattering_law.py --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_uv_hard_scattering_law.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_uv_hard_scattering_law"
+  ]
+}

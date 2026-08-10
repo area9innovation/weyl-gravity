@@ -92,6 +92,12 @@ $-1/16$ and $+1/16$; multiplying by the Born rate cancels the physical
 $3/512$ response.  The ordinary single-denominator cubic Fock generator is,
 however, exactly zero in the massless collinear limit.  The remaining gate is
 an order-$\lambda$ Jordan/distributional asymptotic map, not yet constructed.
+Independently, the projected three-channel hard loop logarithm closes the
+Callan--Symanzik equation exactly with the Born rate and one-loop beta
+function.  This yields the positive leading-log nonforward prediction
+$d\sigma_{\rm hard}/d\Omega=24\pi^2/[25s\log^2(s/\Lambda^2)]$.
+It is a physical hard/window baseline, not a completed inclusive NLO
+probability; the collinear endpoint construction remains open.
 \end{abstract}
 
 \section*{AI authorship and computational accountability}
@@ -304,6 +310,12 @@ $\mathbb Q(\sqrt3)$ producer and method-distinct verifier reconstruct the
 Born normalization, projector equations, and cubic collinear scaling.  The
 certificate labels the Jordan asymptotic generator and continuum projector
 \texttt{NOT\_CONSTRUCTED}.
+The loop-informed hard scattering result is pinned by
+\texttt{REVERSE\_PHYSICS\_BT\_UV\_HARD\_}\allowbreak
+\texttt{SCATTERING\_LAW\_V1.json}.  It imports the content-addressed Born,
+beta-function, and projected-hard-log certificates, verifies their
+Callan--Symanzik identity by an independent rail, and keeps the full inclusive
+NLO probability \texttt{NOT\_ESTABLISHED}.
 
 \paragraph{Conventions.}
 Oscillator conventions follow \cite{paperI,paperII}: normalized
@@ -1187,6 +1199,51 @@ constructed.  The bare broken-vacuum cubic has charge $-1$, so neutrality also
 cannot be inferred before that missing bookkeeping is supplied.
 \end{remark}
 
+\begin{remark}[Physical ultraviolet hard-scattering law]
+\label{rem:btuvhard}
+The Born rate, perfect-square beta function, and projected virtual hard log are
+\[
+ \frac{d\sigma_{\rm Born}}{d\Omega}
+ =\frac{3\lambda^4}{32\pi^2s},\qquad
+ \beta_\lambda=-\frac{5\lambda^3}{16\pi^2},\qquad
+ \frac{d\sigma_{\rm virt,log}}{d\Omega}
+ =\frac{5\lambda^6}{256\pi^4s}(L_s+L_t+L_u).
+\]
+At fixed nonforward angle, all three channel invariants scale with $s$.
+The exact scale-derivative identity is therefore
+\[
+ -4\left(\frac5{16}\right)\left(\frac3{32}\right)
+ +2\cdot3\left(\frac5{256}\right)=0.
+\]
+Thus the explicitly computed hard logarithm supplies precisely the coefficient
+required by the independently computed running of the Born rate.  With
+\[
+ D(s)=\lambda_0^{-2}+\frac5{16\pi^2}\log\frac{s}{s_0},
+ \qquad \lambda_0=\lambda(\sqrt{s_0}),
+\]
+the leading ultraviolet logarithms resum to
+\[
+ \frac{d\sigma_{\rm hard}^{\rm LL}}{d\Omega}
+ =\frac{3}{32\pi^2sD(s)^2}
+ =\frac{24\pi^2}{25s\log^2(s/\Lambda^2)},
+ \qquad
+ \Lambda^2=s_0e^{-16\pi^2/(5\lambda_0^2)}.
+\]
+For a fixed detector acceptance
+$\theta_0\leq\theta\leq\pi-\theta_0$, $0<\theta_0<\pi/2$, this gives
+\[
+ \lim_{s\to\infty}s\log^2(s/\Lambda^2)\,
+ \sigma_{\rm window}^{\rm LL}
+ =\frac{96\pi^3}{25}\cos\theta_0.
+\]
+The result is positive on the asymptotically-free UV branch, and its leading
+$1/\log^2s$ coefficient is invariant under analytic coupling-scheme changes.
+It is the physical short-distance baseline for a nonforward acceptance, not an
+infrared-complete exclusive particle-number probability.  Real--virtual
+endpoint cancellation, the Jordan/$R_t$ dressing, incoming degenerate sectors,
+and next-to-leading-log finite terms remain unconstructed.
+\end{remark}
+
 \paragraph{Where the double pole goes.}
 One structural remark, since it bears on which route is the likelier to extend.
 The obstruction that withdraws the cutting rules at coincident poles is that
@@ -1521,6 +1578,7 @@ ON1--ON4 & Lemma~\ref{lem:chargenull},
 Comp.\ Prop.~\ref{cprop:embedding} & exact symbolic + numeric\\
 BT-RV & Remark~\ref{rem:btaxis} & exact symbolic/rational\\
 BT-AG & Remark~\ref{rem:bttransport} & exact rational/algebraic\\
+BT-UV & Remark~\ref{rem:btuvhard} & exact rational/RG consistency\\
 \hline
 \end{tabular}
 \end{center}
@@ -1557,6 +1615,16 @@ ulimit -v 500000; python3 \
   reverse_physics/verify_bt_asymptotic_generator_preflight.py
 ulimit -v 500000; python3 -m unittest -v \
   reverse_physics.tests.test_bt_asymptotic_generator_preflight
+\end{verbatim}
+
+The physical ultraviolet hard/window law is reproduced by
+\begin{verbatim}
+ulimit -v 500000; python3 \
+  reverse_physics/bt_uv_hard_scattering_law.py --check
+ulimit -v 500000; python3 \
+  reverse_physics/verify_bt_uv_hard_scattering_law.py
+ulimit -v 500000; python3 -m unittest -v \
+  reverse_physics.tests.test_bt_uv_hard_scattering_law
 \end{verbatim}
 
 \end{document}
