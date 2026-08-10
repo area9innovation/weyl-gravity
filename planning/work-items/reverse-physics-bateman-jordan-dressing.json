@@ -1,0 +1,37 @@
+{
+  "id": "sf:program/work/reverse-physics-bateman-jordan-dressing",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "reverse-physics",
+    "state": "ACTIVE",
+    "objective": "Construct the order-lambda Jordan/double-secular part of the Bateman--Turok asymptotic map R_t, or find its first exact obstruction. Place incoming and outgoing degenerate sectors on one regulated carrier, include the broken-vacuum background in the SO+(1,1) charge bookkeeping, and test whether the generator Gram equals the corrected dimensionless coefficient 1/48 per unordered final pair.",
+    "depends_on": [
+      "REVERSE_PHYSICS_BT_REAL_VIRTUAL_AXIS_GLUING_V1",
+      "REVERSE_PHYSICS_BT_ASYMPTOTIC_GENERATOR_PREFLIGHT_V1",
+      "REVERSE_PHYSICS_CHARGE_GRADING_LOOP_STABILITY_V1",
+      "S. Bateman and N. Turok, arXiv:2607.00096v1, especially the cubic vertex and the O(lambda)-open asymptotic map R_t"
+    ],
+    "activates": [
+      "a continuum coherent/dressed projector with dynamically derived normalization",
+      "a common incoming-plus-outgoing degenerate-state real--virtual cancellation test",
+      "only after that cancellation, the first complete renormalized NLO quotient trace and beyond-tree positivity test"
+    ],
+    "current_gate": "JORDAN_ASYMPTOTIC_GENERATOR (fail-closed): derive the order-lambda distributional kernel omitted by the published leading R_t formula. Fix its regulated domain, double-secular prescription, background/spurion charge, incoming and outgoing channel measure, and sharp operation; then prove or disprove that K_BT^sharp K_BT has coefficient 1/48 per unordered final pair. The finite projector fixes a target but is not a dynamical derivation.",
+    "stop_condition": "EITHER construct and independently verify the regulated Jordan/R_t generator, its neutral total background charge, pseudo-unitarity, incoming/outgoing Gram, exact 1/48 coefficient, and cancellation after Born normalization; OR exhibit the first exact mismatch in distributional existence, coefficient, charge, domain, incoming/outgoing equality, or normalization. Land a strict certificate/schema, method-distinct verifier, decisive mutation, report, assumptions, missing-object ledger, receipts, and next-gate decision.",
+    "forbid": "no use of the superseded 1/512 dimensionless target; no fitting a generator norm to 1/48 and calling it a derivation; no promotion of a finite double-denominator power-counting limit to existence of a distribution; no final-state-only cancellation promoted over unresolved incoming collinear sectors; no neutrality inferred from the charge-minus-one bare cubic without background/R_t bookkeeping; no global Hilbert metric imported into the Krein theory; no reduced scalar result promoted to tensor gravity, BRST cohomology, a Lorentzian BV propagator, Hadamard state, causal perturbative AQFT, quantum master equation, or all-orders unitarity; no floating-point canonical forms, ranks, cocycle tests, or trivialization certificates",
+    "allowed_paths": [
+      "reverse_physics/",
+      "notes/bateman-turok-embedding.md",
+      "paper/05-interaction-obstructions.tex",
+      "paper/05-interaction-obstructions.pdf",
+      "paper/06-einstein-weyl-interaction-obstructions.tex",
+      "paper/06-einstein-weyl-interaction-obstructions.pdf",
+      "planning/work-items/reverse-physics-bateman-jordan-dressing.json",
+      "planning/events/"
+    ],
+    "resource_hint": "Proof-first contract. Start from the exact collinear facts M3=-i lambda t^2 and Delta E=t/(2E)+O(t^2): one energy denominator vanishes, while two can leave a finite kernel. Derive the second secular denominator from the Jordan time evolution or the order-lambda Moller map rather than inserting it. Carrier: one hard state, the final-pair splitting-fraction continuum, and first incoming degenerate sectors at order lambda^2 relative to the hard process. Proof obligations: distributional domain and regulator flow, all phase-space and identical-particle factors, broken-vacuum charge including the transforming background, pseudo-unitarity, exact Gram 1/48 per pair, and quotient-trace cancellation. Counterexamples: replace the double denominator by one, reverse the delta-prime sign, freeze the background charge, omit an incoming channel, or vary the resolution slicing. Exact rational/algebraic arithmetic and certified one-dimensional integrals only under a 500000 KB virtual-memory cap.",
+    "input_commit": "75d533eb8d70112778b265fa24801b414d50c103",
+    "stream": "reverse-physics"
+  }
+}

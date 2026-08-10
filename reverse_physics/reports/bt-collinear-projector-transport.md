@@ -1,5 +1,14 @@
 # Bateman--Turok coherent collinear projector transport
 
+> **SUPERSEDED NORMALIZATION (2026-08-10).**  This historical report inserted
+> the absolute real-rate coefficient `1/512` directly into a dimensionless
+> projector.  The corrected target is `1/48` per pair after division by the
+> Born rate, with amplitude `sqrt(3)/12`, hard block `-1/16`, and total
+> collinear block `+1/16`.  The projector architecture and idempotence argument
+> survive.  The correction and the ordinary-Fock-generator obstruction are
+> certified in
+> [`REVERSE_PHYSICS_BT_ASYMPTOTIC_GENERATOR_PREFLIGHT_V1`](../certificates/REVERSE_PHYSICS_BT_ASYMPTOTIC_GENERATOR_PREFLIGHT_V1.json).
+
 **Result:** `CLASSIFIED`
 
 **Dependencies:** `LOCAL-ALGEBRAIC`, `REDUCED-MODE`
@@ -9,7 +18,7 @@
 
 ## Result
 
-The ordinary mass-regulator obstruction can be bypassed at the finite exact
+The ordinary mass-regulator obstruction appeared to be bypassed at the finite exact
 carrier level by changing the measured object.  Instead of the bare
 block-diagonal sum of a hard two-particle projector and unresolved
 three-particle projectors, use one projector whose image is coherently rotated
@@ -188,11 +197,17 @@ not claimed for coherent/dressed asymptotic states as a general method.
 | full NLO quotient trace | `NOT_COMPUTED` |
 | physical NLO probability | `NOT_ESTABLISHED` |
 
-The architecture therefore survives its first exact falsification test.  The
-remaining gate is no longer “find an arbitrary `-3/512` term.”  It is:
+Subject to the superseding normalization notice above, the architecture
+survives its finite projector test.  The
+historical gate was no longer “find an arbitrary `-3/512` term.”  It was:
 
 > Derive the first-order splitting generator from the broken-vacuum BT/PS
 > dynamics and prove that its regulated Gram operator is `1/512` per pair.
+
+The superseding preflight shows that this target was dimensionally wrong and
+that the ordinary first-order single-denominator generator has zero collinear
+Gram.  The live gate is the order-`lambda` Jordan/`R_t` distributional
+generator with corrected target `1/48` per pair.
 
 If the dynamical Gram coefficient differs, the finite witness does not
 describe BT scattering.  The continuum calculation must also include incoming

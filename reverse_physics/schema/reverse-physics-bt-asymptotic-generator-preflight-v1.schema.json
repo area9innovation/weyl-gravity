@@ -1,0 +1,230 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-asymptotic-generator-preflight-v1.schema.json",
+  "title": "BT asymptotic-generator normalization preflight",
+  "$defs": {
+    "nonempty": {"type": "string", "minLength": 1},
+    "rational": {
+      "type": "object",
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      },
+      "additionalProperties": false
+    },
+    "algebraic": {
+      "type": "object",
+      "required": ["rational", "sqrt3"],
+      "properties": {
+        "rational": {"$ref": "#/$defs/rational"},
+        "sqrt3": {"$ref": "#/$defs/rational"}
+      },
+      "additionalProperties": false
+    },
+    "matrix_entry": {
+      "type": "object",
+      "required": ["row", "column", "value"],
+      "properties": {
+        "row": {"type": "integer", "minimum": 0, "maximum": 3},
+        "column": {"type": "integer", "minimum": 0, "maximum": 3},
+        "value": {"$ref": "#/$defs/algebraic"}
+      },
+      "additionalProperties": false
+    },
+    "matrix": {
+      "type": "array",
+      "maxItems": 16,
+      "items": {"$ref": "#/$defs/matrix_entry"}
+    },
+    "string_list": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/nonempty"}
+    },
+    "open_object": {"type": "object", "minProperties": 1}
+  },
+  "type": "object",
+  "required": [
+    "certificate",
+    "schema_version",
+    "dependency_tags",
+    "lifecycle_state",
+    "result_kind",
+    "question",
+    "answer",
+    "normalization_ledger",
+    "corrected_projector",
+    "v1_supersession",
+    "cubic_generator_preflight",
+    "charge_gate",
+    "disposition",
+    "missing_object_ledger",
+    "next_gate",
+    "does_not_establish",
+    "provenance",
+    "verification_commands",
+    "checks",
+    "report",
+    "schema"
+  ],
+  "properties": {
+    "certificate": {
+      "const": "REVERSE_PHYSICS_BT_ASYMPTOTIC_GENERATOR_PREFLIGHT_V1"
+    },
+    "schema_version": {
+      "const": "reverse-physics-bt-asymptotic-generator-preflight-v1"
+    },
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]
+    },
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "result_kind": {"$ref": "#/$defs/nonempty"},
+    "question": {"$ref": "#/$defs/nonempty"},
+    "answer": {"$ref": "#/$defs/nonempty"},
+    "normalization_ledger": {
+      "type": "object",
+      "required": [
+        "born_rate", "absolute_real_per_pair", "absolute_real_all_pairs",
+        "dimensionless_shell_parameter", "gram_per_pair", "gram_all_pairs",
+        "identity", "hard_rate_from_normalization", "combined_physical_response"
+      ],
+      "properties": {
+        "born_rate": {"$ref": "#/$defs/nonempty"},
+        "absolute_real_per_pair": {"$ref": "#/$defs/nonempty"},
+        "absolute_real_all_pairs": {"$ref": "#/$defs/nonempty"},
+        "dimensionless_shell_parameter": {"$ref": "#/$defs/nonempty"},
+        "gram_per_pair": {"$ref": "#/$defs/rational"},
+        "gram_all_pairs": {"$ref": "#/$defs/rational"},
+        "identity": {"const": "(1/512)/(3/32)=1/48"},
+        "hard_rate_from_normalization": {"$ref": "#/$defs/nonempty"},
+        "combined_physical_response": {"$ref": "#/$defs/nonempty"}
+      },
+      "additionalProperties": false
+    },
+    "corrected_projector": {
+      "type": "object",
+      "required": [
+        "basis", "field", "mixing_amplitude", "generator_K", "P0", "P1",
+        "P2", "hard_order_two", "real_trace_order_two", "idempotence", "trace"
+      ],
+      "properties": {
+        "basis": {"const": ["hard", "pair_12", "pair_13", "pair_23"]},
+        "field": {"const": "Q(sqrt(3))"},
+        "mixing_amplitude": {"$ref": "#/$defs/algebraic"},
+        "generator_K": {"$ref": "#/$defs/matrix"},
+        "P0": {"$ref": "#/$defs/matrix"},
+        "P1": {"$ref": "#/$defs/matrix"},
+        "P2": {"$ref": "#/$defs/matrix"},
+        "hard_order_two": {"$ref": "#/$defs/rational"},
+        "real_trace_order_two": {"$ref": "#/$defs/rational"},
+        "idempotence": {"$ref": "#/$defs/nonempty"},
+        "trace": {"$ref": "#/$defs/nonempty"}
+      },
+      "additionalProperties": false
+    },
+    "v1_supersession": {
+      "type": "object",
+      "required": [
+        "certificate", "status", "error", "v1_hard_rate_under_correct_shell_units",
+        "uncancelled_absolute_coefficient", "architecture_status"
+      ],
+      "properties": {
+        "certificate": {"const": "REVERSE_PHYSICS_BT_COLLINEAR_PROJECTOR_TRANSPORT_V1"},
+        "status": {"const": "SUPERSEDED_NORMALIZATION"},
+        "error": {"$ref": "#/$defs/nonempty"},
+        "v1_hard_rate_under_correct_shell_units": {"$ref": "#/$defs/rational"},
+        "uncancelled_absolute_coefficient": {"$ref": "#/$defs/rational"},
+        "architecture_status": {"$ref": "#/$defs/nonempty"}
+      },
+      "additionalProperties": false
+    },
+    "cubic_generator_preflight": {
+      "type": "object",
+      "required": [
+        "published_vertex", "massless_daughters", "collinear_energy_deficit",
+        "ordinary_dyson_kernel", "ordinary_gram_target", "required_gram_target",
+        "disposition", "jordan_control", "public_source_gap"
+      ],
+      "properties": {
+        "published_vertex": {"$ref": "#/$defs/nonempty"},
+        "massless_daughters": {"const": "Kallen(t,0,0)=t^2"},
+        "collinear_energy_deficit": {"$ref": "#/$defs/nonempty"},
+        "ordinary_dyson_kernel": {"$ref": "#/$defs/nonempty"},
+        "ordinary_gram_target": {"$ref": "#/$defs/rational"},
+        "required_gram_target": {"$ref": "#/$defs/rational"},
+        "disposition": {"const": "EXACT_OBSTRUCTION_FOR_SINGLE_DENOMINATOR_FOCK_GENERATOR"},
+        "jordan_control": {"$ref": "#/$defs/nonempty"},
+        "public_source_gap": {"$ref": "#/$defs/nonempty"}
+      },
+      "additionalProperties": false
+    },
+    "charge_gate": {"$ref": "#/$defs/open_object"},
+    "disposition": {"$ref": "#/$defs/open_object"},
+    "missing_object_ledger": {
+      "type": "array",
+      "minItems": 6,
+      "items": {"$ref": "#/$defs/nonempty"}
+    },
+    "next_gate": {"$ref": "#/$defs/nonempty"},
+    "does_not_establish": {
+      "type": "array",
+      "minItems": 8,
+      "items": {"$ref": "#/$defs/nonempty"}
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["source_commit", "retrieval_date", "inputs", "primary_source"],
+      "properties": {
+        "source_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "retrieval_date": {"const": "2026-08-10"},
+        "inputs": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "object",
+            "required": ["path", "sha256"],
+            "properties": {
+              "path": {"$ref": "#/$defs/nonempty"},
+              "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+            },
+            "additionalProperties": false
+          }
+        },
+        "primary_source": {
+          "type": "object",
+          "required": ["source", "url", "equations"],
+          "properties": {
+            "source": {"$ref": "#/$defs/nonempty"},
+            "url": {"type": "string", "format": "uri"},
+            "equations": {"$ref": "#/$defs/string_list"}
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "verification_commands": {
+      "type": "array", "minItems": 3,
+      "items": {"$ref": "#/$defs/nonempty"}
+    },
+    "checks": {
+      "type": "object",
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"const": 21},
+        "total": {"const": 21},
+        "failures": {"const": []},
+        "details": {
+          "type": "object", "minProperties": 20,
+          "additionalProperties": {"const": true}
+        }
+      },
+      "additionalProperties": false
+    },
+    "report": {"const": "reverse_physics/reports/bt-asymptotic-generator-preflight.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-asymptotic-generator-preflight-v1.schema.json"}
+  },
+  "additionalProperties": false
+}

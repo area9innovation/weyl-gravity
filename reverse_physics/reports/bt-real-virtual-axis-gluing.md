@@ -295,6 +295,16 @@ normalization obstruction while leaving the asymptotic-Hamiltonian derivation,
 continuum dressed projector, and physical NLO probability open.  It does not
 reopen or weaken the axis-compatible mass-regulator no-go proved here.
 
+CORRECTED SUCCESSOR CHECKPOINT (2026-08-10):
+[`REVERSE_PHYSICS_BT_ASYMPTOTIC_GENERATOR_PREFLIGHT_V1`](../certificates/REVERSE_PHYSICS_BT_ASYMPTOTIC_GENERATOR_PREFLIGHT_V1.json)
+preserves the absolute `1/512` real coefficient but corrects the dimensionless
+projector target to `1/48` per pair after division by the Born rate.  The
+normalized projector has hard/collinear blocks `-1/16` and `+1/16`; multiplying
+by the Born rate recovers the physical `-3/512` response.  It also proves that
+the ordinary single-energy-denominator cubic Fock generator vanishes in the
+massless collinear limit.  A Jordan/order-`lambda` `R_t` distributional
+generator is the next missing object.
+
 NEXT: change infrared architecture before attempting the quotient-trace
 positivity test.
 

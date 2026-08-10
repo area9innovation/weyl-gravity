@@ -1,0 +1,515 @@
+{
+  "answer": "The required dimensionless Gram coefficient is 1/48 per unordered final pair and 1/16 for all three, after dividing the absolute NLO response by the Born rate. A normalized finite projector then cancels the physical 3/512 response exactly. The ordinary cubic Fock generator cannot generate it: M3 is proportional to t^2 and one Dyson energy denominator is proportional to 1/t, so its collinear kernel vanishes. A Jordan/double-denominator or order-lambda R_t distributional generator is required and is not constructed here.",
+  "certificate": "REVERSE_PHYSICS_BT_ASYMPTOTIC_GENERATOR_PREFLIGHT_V1",
+  "charge_gate": {
+    "cubic_charge": "q(Omega)+2*q(Upsilon)=-1 around the broken vacuum",
+    "disposition": "NOT_CLEARED_BY_BARE_CUBIC_VERTEX",
+    "warning": "The bare cubic monomial is negatively charged because the chosen vacuum breaks SO+(1,1). A neutral projector transport cannot be inferred from that vertex alone; the background/R_t charge bookkeeping is part of the missing construction."
+  },
+  "checks": {
+    "details": {
+      "absolute_per_pair_is_one_over_512": true,
+      "amplitude_square_is_one_over_48": true,
+      "born_rate_is_three_over_32": true,
+      "dimensionless_gram_per_pair_is_one_over_48": true,
+      "dimensionless_three_pair_gram_is_one_over_16": true,
+      "double_denominator_can_be_finite": true,
+      "generator_is_skew": true,
+      "hard_block_is_minus_one_over_16": true,
+      "incoming_sector_stays_open": true,
+      "input_hashes_pinned": true,
+      "jordan_generator_stays_open": true,
+      "massless_cubic_is_quadratic_in_t": true,
+      "no_lorentzian_claim": true,
+      "ordinary_kernel_misses_nonzero_target": true,
+      "physical_rate_cancels": true,
+      "projector_order_one": true,
+      "projector_order_two": true,
+      "projector_trace_is_preserved": true,
+      "real_diagonal_is_plus_one_over_16": true,
+      "single_denominator_kernel_vanishes": true,
+      "v1_normalization_leaves_residual": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 21,
+    "total": 21
+  },
+  "corrected_projector": {
+    "P0": [
+      {
+        "column": 0,
+        "row": 0,
+        "value": {
+          "rational": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "sqrt3": {
+            "denominator": 1,
+            "numerator": 0
+          }
+        }
+      }
+    ],
+    "P1": [
+      {
+        "column": 1,
+        "row": 0,
+        "value": {
+          "rational": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "sqrt3": {
+            "denominator": 12,
+            "numerator": 1
+          }
+        }
+      },
+      {
+        "column": 2,
+        "row": 0,
+        "value": {
+          "rational": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "sqrt3": {
+            "denominator": 12,
+            "numerator": 1
+          }
+        }
+      },
+      {
+        "column": 3,
+        "row": 0,
+        "value": {
+          "rational": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "sqrt3": {
+            "denominator": 12,
+            "numerator": 1
+          }
+        }
+      },
+      {
+        "column": 0,
+        "row": 1,
+        "value": {
+          "rational": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "sqrt3": {
+            "denominator": 12,
+            "numerator": 1
+          }
+        }
+      },
+      {
+        "column": 0,
+        "row": 2,
+        "value": {
+          "rational": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "sqrt3": {
+            "denominator": 12,
+            "numerator": 1
+          }
+        }
+      },
+      {
+        "column": 0,
+        "row": 3,
+        "value": {
+          "rational": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "sqrt3": {
+            "denominator": 12,
+            "numerator": 1
+          }
+        }
+      }
+    ],
+    "P2": [
+      {
+        "column": 0,
+        "row": 0,
+        "value": {
+          "rational": {
+            "denominator": 16,
+            "numerator": -1
+          },
+          "sqrt3": {
+            "denominator": 1,
+            "numerator": 0
+          }
+        }
+      },
+      {
+        "column": 1,
+        "row": 1,
+        "value": {
+          "rational": {
+            "denominator": 48,
+            "numerator": 1
+          },
+          "sqrt3": {
+            "denominator": 1,
+            "numerator": 0
+          }
+        }
+      },
+      {
+        "column": 2,
+        "row": 1,
+        "value": {
+          "rational": {
+            "denominator": 48,
+            "numerator": 1
+          },
+          "sqrt3": {
+            "denominator": 1,
+            "numerator": 0
+          }
+        }
+      },
+      {
+        "column": 3,
+        "row": 1,
+        "value": {
+          "rational": {
+            "denominator": 48,
+            "numerator": 1
+          },
+          "sqrt3": {
+            "denominator": 1,
+            "numerator": 0
+          }
+        }
+      },
+      {
+        "column": 1,
+        "row": 2,
+        "value": {
+          "rational": {
+            "denominator": 48,
+            "numerator": 1
+          },
+          "sqrt3": {
+            "denominator": 1,
+            "numerator": 0
+          }
+        }
+      },
+      {
+        "column": 2,
+        "row": 2,
+        "value": {
+          "rational": {
+            "denominator": 48,
+            "numerator": 1
+          },
+          "sqrt3": {
+            "denominator": 1,
+            "numerator": 0
+          }
+        }
+      },
+      {
+        "column": 3,
+        "row": 2,
+        "value": {
+          "rational": {
+            "denominator": 48,
+            "numerator": 1
+          },
+          "sqrt3": {
+            "denominator": 1,
+            "numerator": 0
+          }
+        }
+      },
+      {
+        "column": 1,
+        "row": 3,
+        "value": {
+          "rational": {
+            "denominator": 48,
+            "numerator": 1
+          },
+          "sqrt3": {
+            "denominator": 1,
+            "numerator": 0
+          }
+        }
+      },
+      {
+        "column": 2,
+        "row": 3,
+        "value": {
+          "rational": {
+            "denominator": 48,
+            "numerator": 1
+          },
+          "sqrt3": {
+            "denominator": 1,
+            "numerator": 0
+          }
+        }
+      },
+      {
+        "column": 3,
+        "row": 3,
+        "value": {
+          "rational": {
+            "denominator": 48,
+            "numerator": 1
+          },
+          "sqrt3": {
+            "denominator": 1,
+            "numerator": 0
+          }
+        }
+      }
+    ],
+    "basis": [
+      "hard",
+      "pair_12",
+      "pair_13",
+      "pair_23"
+    ],
+    "field": "Q(sqrt(3))",
+    "generator_K": [
+      {
+        "column": 1,
+        "row": 0,
+        "value": {
+          "rational": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "sqrt3": {
+            "denominator": 12,
+            "numerator": -1
+          }
+        }
+      },
+      {
+        "column": 2,
+        "row": 0,
+        "value": {
+          "rational": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "sqrt3": {
+            "denominator": 12,
+            "numerator": -1
+          }
+        }
+      },
+      {
+        "column": 3,
+        "row": 0,
+        "value": {
+          "rational": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "sqrt3": {
+            "denominator": 12,
+            "numerator": -1
+          }
+        }
+      },
+      {
+        "column": 0,
+        "row": 1,
+        "value": {
+          "rational": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "sqrt3": {
+            "denominator": 12,
+            "numerator": 1
+          }
+        }
+      },
+      {
+        "column": 0,
+        "row": 2,
+        "value": {
+          "rational": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "sqrt3": {
+            "denominator": 12,
+            "numerator": 1
+          }
+        }
+      },
+      {
+        "column": 0,
+        "row": 3,
+        "value": {
+          "rational": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "sqrt3": {
+            "denominator": 12,
+            "numerator": 1
+          }
+        }
+      }
+    ],
+    "hard_order_two": {
+      "denominator": 16,
+      "numerator": -1
+    },
+    "idempotence": "P^2=P+O(epsilon^3)",
+    "mixing_amplitude": {
+      "rational": {
+        "denominator": 1,
+        "numerator": 0
+      },
+      "sqrt3": {
+        "denominator": 12,
+        "numerator": 1
+      }
+    },
+    "real_trace_order_two": {
+      "denominator": 16,
+      "numerator": 1
+    },
+    "trace": "tr(P)=1+O(epsilon^3)"
+  },
+  "cubic_generator_preflight": {
+    "collinear_energy_deficit": "DeltaE=t/(2E)+O(t^2)",
+    "disposition": "EXACT_OBSTRUCTION_FOR_SINGLE_DENOMINATOR_FOCK_GENERATOR",
+    "jordan_control": "M3/(DeltaE)^2 -> -4*i*lambda*E^2, so a double/secular denominator can survive; its normalization and domain are not derived",
+    "massless_daughters": "Kallen(t,0,0)=t^2",
+    "ordinary_dyson_kernel": "M3/DeltaE=-2*i*lambda*E*t+O(t^2) -> 0",
+    "ordinary_gram_target": {
+      "denominator": 1,
+      "numerator": 0
+    },
+    "public_source_gap": "Bateman--Turok Appendix C Eqs. (32)-(33) give R_t only up to O(lambda); the omitted order-lambda term is precisely the first cross-multiplicity kernel needed here",
+    "published_vertex": "M3=-i*lambda*Kallen(t,x,y)",
+    "required_gram_target": {
+      "denominator": 48,
+      "numerator": 1
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "disposition": {
+    "dimensionless_gram_target": "COEFFICIENT_COMPUTED",
+    "finite_corrected_projector": "EXACT_EXISTENCE_WITNESS",
+    "full_nlo_quotient_trace": "NOT_COMPUTED",
+    "incoming_degenerate_sectors": "NOT_CONSTRUCTED",
+    "jordan_distributional_generator": "NOT_CONSTRUCTED",
+    "order_lambda_R_t_kernel": "NOT_AVAILABLE_IN_PUBLIC_SOURCE",
+    "ordinary_single_denominator_fock_generator": "EXACT_OBSTRUCTION",
+    "physical_nlo_probability": "NOT_ESTABLISHED",
+    "v1_projector_normalization": "SUPERSEDED"
+  },
+  "does_not_establish": [
+    "a BT dressed-state or KLN theorem",
+    "existence or uniqueness of the required Jordan/distributional generator",
+    "that a double denominator has the correct 1/48 normalization",
+    "neutrality of the broken-vacuum cubic generator",
+    "a complete NLO probability or regulator-independent quotient trace",
+    "positivity or unitarity beyond the BT tree theorem",
+    "anything about the tensor/BRST gravitational lift",
+    "anything LORENTZIAN-CAUSAL",
+    "literature priority"
+  ],
+  "lifecycle_state": "CLASSIFIED",
+  "missing_object_ledger": [
+    "derive the omitted order-lambda term of the R_t homomorphism or an equivalent Jordan asymptotic generator",
+    "fix the double/secular energy denominator as a distribution with a declared domain and resolution flow",
+    "show that the resulting regulated Gram operator equals 1/48 per unordered final pair",
+    "restore neutral charge bookkeeping including the broken-vacuum background",
+    "include incoming as well as outgoing degenerate sectors",
+    "construct the continuum projector and prove existence and trace-class control",
+    "evaluate the complete renormalized NLO quotient trace"
+  ],
+  "next_gate": "Do not use an ordinary one-denominator Fock dressing. Derive the order-lambda R_t/Jordan kernel with its double secular denominator, then test its regulated Gram against 1/48 per pair and its total charge including the background.",
+  "normalization_ledger": {
+    "absolute_real_all_pairs": "+3*lambda^6*log(c)/(512*pi^4*s)",
+    "absolute_real_per_pair": "+lambda^6*log(c)/(512*pi^4*s)",
+    "born_rate": "B=3*lambda^4/(32*pi^2*s)",
+    "combined_physical_response": "(+3/512-3/512)*lambda^6*log(c)/(pi^4*s)=0",
+    "dimensionless_shell_parameter": "eta=lambda^2*log(c)/pi^2",
+    "gram_all_pairs": {
+      "denominator": 16,
+      "numerator": 1
+    },
+    "gram_per_pair": {
+      "denominator": 48,
+      "numerator": 1
+    },
+    "hard_rate_from_normalization": "B*(-eta/16)=-3*lambda^6*log(c)/(512*pi^4*s)",
+    "identity": "(1/512)/(3/32)=1/48"
+  },
+  "provenance": {
+    "inputs": [
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_REAL_VIRTUAL_AXIS_GLUING_V1.json",
+        "sha256": "c2ffad79666aaec1d17585f76e9c90403b3b410006e624df9626bcc1571d251a"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_COLLINEAR_PROJECTOR_TRANSPORT_V1.json",
+        "sha256": "f8540789a2452fc94a9f6d0b4502a81b8760f4031da851cf1358d70ca041917e"
+      }
+    ],
+    "primary_source": {
+      "equations": [
+        "Eq. (13)",
+        "Eq. (24)",
+        "Appendix C Eqs. (32)-(33)"
+      ],
+      "source": "Bateman--Turok arXiv:2607.00096v1",
+      "url": "https://arxiv.org/abs/2607.00096"
+    },
+    "retrieval_date": "2026-08-10",
+    "source_commit": "75d533eb8d70112778b265fa24801b414d50c103"
+  },
+  "question": "What Gram coefficient must a BT collinear dressing reproduce, and can the ordinary on-shell cubic Fock generator produce it?",
+  "report": "reverse_physics/reports/bt-asymptotic-generator-preflight.md",
+  "result_kind": "dimensionless collinear projector normalization and ordinary single-denominator asymptotic-generator obstruction",
+  "schema": "reverse_physics/schema/reverse-physics-bt-asymptotic-generator-preflight-v1.schema.json",
+  "schema_version": "reverse-physics-bt-asymptotic-generator-preflight-v1",
+  "v1_supersession": {
+    "architecture_status": "SURVIVES: idempotence still forces the compensating hard term after replacing 1/512 by the normalized 1/48 per pair",
+    "certificate": "REVERSE_PHYSICS_BT_COLLINEAR_PROJECTOR_TRANSPORT_V1",
+    "error": "V1 inserted the absolute rate coefficient 1/512 directly into a dimensionless projector. Projector normalization must first divide the NLO rate by the Born rate.",
+    "status": "SUPERSEDED_NORMALIZATION",
+    "uncancelled_absolute_coefficient": {
+      "denominator": 16384,
+      "numerator": 87
+    },
+    "v1_hard_rate_under_correct_shell_units": {
+      "denominator": 16384,
+      "numerator": 9
+    }
+  },
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_asymptotic_generator_preflight.py --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_asymptotic_generator_preflight.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_asymptotic_generator_preflight"
+  ]
+}
