@@ -1,0 +1,159 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-external-mass-boundary-log-jet-v1.schema.json",
+  "title": "BT complete external-mass boundary logarithmic jet",
+  "$defs": {
+    "string": {"type": "string", "minLength": 1},
+    "strings": {"type": "array", "items": {"$ref": "#/$defs/string"}},
+    "input": {
+      "type": "object",
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {"$ref": "#/$defs/string"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      },
+      "additionalProperties": false
+    }
+  },
+  "type": "object",
+  "required": [
+    "certificate", "schema_version", "dependency_tags", "lifecycle_state",
+    "result_kind", "question", "answer", "declared_carrier",
+    "unitarity_factorization", "boundary_cut_result",
+    "four_mass_interference", "regulator_response", "disposition",
+    "missing_object_ledger", "does_not_establish", "next_gate",
+    "provenance", "verification_commands", "checks", "report", "schema"
+  ],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_EXTERNAL_MASS_BOUNDARY_LOG_JET_V1"},
+    "schema_version": {"const": "reverse-physics-bt-external-mass-boundary-log-jet-v1"},
+    "dependency_tags": {"const": ["REDUCED-MODE"]},
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "result_kind": {"$ref": "#/$defs/string"},
+    "question": {"$ref": "#/$defs/string"},
+    "answer": {"$ref": "#/$defs/string"},
+    "declared_carrier": {
+      "type": "object",
+      "required": ["hard_fixture", "mass_scaling", "logarithms", "jet_ring", "scope", "physical_collinear_family"],
+      "properties": {
+        "hard_fixture": {"$ref": "#/$defs/string"},
+        "mass_scaling": {"$ref": "#/$defs/string"},
+        "logarithms": {"const": "Li=log(-mu^2/x_i) with analytic continuation fixed channel by channel"},
+        "jet_ring": {"const": "Q(L1,L2,L3,L4)[x1,x2,x3,x4]/(x_i^2)"},
+        "scope": {"$ref": "#/$defs/string"},
+        "physical_collinear_family": {"$ref": "#/$defs/string"}
+      },
+      "additionalProperties": false
+    },
+    "unitarity_factorization": {
+      "type": "object",
+      "required": [
+        "cut", "cubic_reduced", "two_body_density", "five_point_normalization",
+        "physical_cut_product", "cut_to_log_calibration", "loop_log_normalization"
+      ],
+      "properties": {
+        "cut": {"const": "external leg -> cubic splitting vertex times complete 25-graph five-point PS tree"},
+        "cubic_reduced": {"const": "Kallen(tau,a0,a1)/2"},
+        "two_body_density": {"const": "sqrt(Kallen(tau,a0,a1))/tau"},
+        "five_point_normalization": {"const": "A5=M5/(8*lambda^3)=delta^2*C+O(delta^3)"},
+        "physical_cut_product": {"const": "M3*M5=-16*lambda^4*(cubic_reduced*A5)"},
+        "cut_to_log_calibration": {"$ref": "#/$defs/string"},
+        "loop_log_normalization": {"const": "Mloop_boundary_log=lambda^4/(4*pi)^2*E_boundary"}
+      },
+      "additionalProperties": false
+    },
+    "boundary_cut_result": {
+      "type": "object",
+      "required": ["definition", "exact_polynomial", "square_free_polynomial", "crossed_leg_loop_term", "complete_loop_term", "angular_result"],
+      "properties": {
+        "definition": {"$ref": "#/$defs/string"},
+        "exact_polynomial": {"const": "D=-(5*a2^2+5*a2*a3+5*a2*a4-a2*tau+5*a3^2+5*a3*a4-a3*tau+5*a4^2-a4*tau)/4"},
+        "square_free_polynomial": {"const": "D_sf=(tau*(a2+a3+a4)-5*(a2*a3+a2*a4+a3*a4))/4"},
+        "crossed_leg_loop_term": {"const": "E_i=[-2*x_i*sum_(j!=i)x_j+10*sum_(j<k;j,k!=i)x_j*x_k]*Li"},
+        "complete_loop_term": {"const": "E_boundary=sum_i E_i"},
+        "angular_result": {"$ref": "#/$defs/string"}
+      },
+      "additionalProperties": false
+    },
+    "four_mass_interference": {
+      "type": "object",
+      "required": ["tree_input", "reduced_top_coefficient", "physical_amplitude_coefficient", "phase_value", "projected_rate", "phase_derivative_note"],
+      "properties": {
+        "tree_input": {"const": "Mtree_red^(2)=1/2*sum_(i<j)x_i*x_j"},
+        "reduced_top_coefficient": {"const": "[x1*x2*x3*x4](Mtree_red*E_boundary)=12*(L1+L2+L3+L4)"},
+        "physical_amplitude_coefficient": {"const": "[x1*x2*x3*x4]2*Re(Mtree^*Mloop_boundary_log)=lambda^6/(4*pi)^2*96*(L1+L2+L3+L4)"},
+        "phase_value": {"const": "1/(256*pi^2*s)"},
+        "projected_rate": {"const": "d_sigma_boundary_log/d_Omega=3*lambda^6*(L1+L2+L3+L4)/(128*pi^4*s)"},
+        "phase_derivative_note": {"$ref": "#/$defs/string"}
+      },
+      "additionalProperties": false
+    },
+    "regulator_response": {
+      "type": "object",
+      "required": ["independent_rescaling", "log_shift", "rate_shift", "common_rescaling", "real_threshold_response", "comparison_status", "reason"],
+      "properties": {
+        "independent_rescaling": {"const": "x_i -> c_i*x_i at fixed hard kinematics"},
+        "log_shift": {"const": "Li -> Li-log(c_i)"},
+        "rate_shift": {"const": "Delta[d_sigma/d_Omega]=-3*lambda^6*sum_i log(c_i)/(128*pi^4*s)"},
+        "common_rescaling": {"const": "for c_i=c, Delta[d_sigma/d_Omega]=-3*lambda^6*log(c)/(32*pi^4*s)"},
+        "real_threshold_response": {"const": "reduced real slice shifts by -(3/8)*log(c_pair)"},
+        "comparison_status": {"const": "NOT_COMPARABLE_WITHOUT_REGULATOR_GLUING_AND_FULL_REAL_PHASE_SPACE"},
+        "reason": {"$ref": "#/$defs/string"}
+      },
+      "additionalProperties": false
+    },
+    "disposition": {
+      "type": "object",
+      "required": [
+        "complete_external_mass_boundary_log_jet", "external_phase_projector_on_boundary_log",
+        "external_regulator_response", "physical_collinear_family_dependence",
+        "four_to_five_leg_regulator_gluing", "full_real_splitting_fraction_integral",
+        "cut_free_and_counterterm_terms", "real_virtual_cancellation",
+        "physical_nlo_probability", "beyond_tree_positivity"
+      ],
+      "properties": {
+        "complete_external_mass_boundary_log_jet": {"const": "COMPUTED"},
+        "external_phase_projector_on_boundary_log": {"const": "APPLIED"},
+        "external_regulator_response": {"const": "COMPUTED"},
+        "physical_collinear_family_dependence": {"const": "INDEPENDENT_OF_ZETA_AND_CHI"},
+        "four_to_five_leg_regulator_gluing": {"const": "NOT_COMPUTED"},
+        "full_real_splitting_fraction_integral": {"const": "NOT_COMPUTED"},
+        "cut_free_and_counterterm_terms": {"const": "NOT_COMPUTED"},
+        "real_virtual_cancellation": {"const": "NOT_COMPUTED"},
+        "physical_nlo_probability": {"const": "NOT_ESTABLISHED"},
+        "beyond_tree_positivity": {"const": "NOT_ESTABLISHED"}
+      },
+      "additionalProperties": false
+    },
+    "missing_object_ledger": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"$ref": "#/$defs/string"}},
+    "does_not_establish": {"type": "array", "minItems": 12, "maxItems": 12, "items": {"$ref": "#/$defs/string"}},
+    "next_gate": {"$ref": "#/$defs/string"},
+    "provenance": {
+      "type": "object",
+      "required": ["source_commit", "retrieval_date", "inputs", "primary_sources"],
+      "properties": {
+        "source_commit": {"const": "325ef54dc8e21285e959f1f25480aaf4f5844d42"},
+        "retrieval_date": {"const": "2026-08-10"},
+        "inputs": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/input"}},
+        "primary_sources": {"type": "array", "minItems": 2, "maxItems": 2}
+      },
+      "additionalProperties": false
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/string"}},
+    "checks": {
+      "type": "object",
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"const": 20},
+        "total": {"const": 20},
+        "failures": {"type": "array", "maxItems": 0},
+        "details": {"type": "object", "minProperties": 20, "maxProperties": 20, "additionalProperties": {"const": true}}
+      },
+      "additionalProperties": false
+    },
+    "report": {"const": "reverse_physics/reports/bt-external-mass-boundary-log-jet.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-external-mass-boundary-log-jet-v1.schema.json"}
+  },
+  "additionalProperties": false
+}

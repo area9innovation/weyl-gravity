@@ -260,13 +260,34 @@ the tree-only positivity boundary above:
    virtual logarithm by zero.  The current carriers therefore cannot decide
    cancellation; a nonanalytic virtual external-mass boundary layer is the
    missing object.
+4. `REVERSE_PHYSICS_BT_EXTERNAL_MASS_BOUNDARY_LOG_JET_V1`
+   (`REDUCED-MODE`, `COEFFICIENT_COMPUTED`) computes that missing nonanalytic
+   virtual carrier on the physical collinear family, with the real threshold's
+   fixed hard fixture retained as a control.  An external
+   cut factorizes into the cubic splitting vertex times the complete 25-graph
+   five-point tree, so it includes lower-point insertions and 1PI triangle/box
+   boundary pieces together.  A symbolic square-free jet proves that the cut
+   polynomial is independent of splitting fraction and outer scattering
+   ratio.  The result is
 
-The hard logarithm has now been passed through the external projector, but it
-is not the regulator-ratio carrier needed for comparison with the independently
-certified real five-point threshold.  The virtual external-mass boundary
-layer, cut-free finite rational terms, a common real--virtual prescription,
-KLN cancellation, and positivity beyond tree level remain open.  None of these
-scalar results is a tensor/BRST or `LORENTZIAN-CAUSAL` gravity result.
+   $$E_i=\left[-2x_i\sum_{j\ne i}x_j
+   +10\sum_{j<k;\,j,k\ne i}x_jx_k\right]\log(-\mu^2/x_i),$$
+
+   $$\frac{d\sigma_{\rm boundary,log}}{d\Omega}
+   =\frac{3\lambda^6}{128\pi^4s}\sum_{i=1}^4\log(-\mu^2/x_i).$$
+
+   The external regulator response is therefore nonzero and exact.  The
+   remaining comparison is no longer an unknown virtual integral: it is the
+   definition of a common regulator map from the virtual recombined parent
+   mass to the two real daughter masses, together with the full real
+   splitting-fraction/inner-angle integral and identical-particle sum.
+
+Both the hard logarithm and the nonanalytic virtual external-mass boundary
+layer have now been passed through the external projector.  The full real
+splitting kernel, four-to-five-leg regulator gluing, cut-free finite rational
+terms, common real--virtual prescription, KLN cancellation, and positivity
+beyond tree level remain open.  None of these scalar results is a tensor/BRST
+or `LORENTZIAN-CAUSAL` gravity result.
 
 ---
 
@@ -304,7 +325,7 @@ Deferred to the companion papers or simply absent from the Letter:
 5. **Definition of $\dagger$ and $\mathrm{tr}$ in Krein space.** Our identification ($\dagger$ = Krein adjoint w.r.t. the indefinite inner product; trace via the indefinite pairing) is an inference from consistency of Eqs. (6)–(8), not an explicit definition in the paper. Also unaddressed: trace-class issues, whether $\mathrm{tr}(A^\dagger A)$ converges before the finite-volume regularization of App. B, and uniqueness of the $B + C$ splitting in Eq. (7).
 6. **The explicit $\kappa$ for the interacting theory.** $\kappa$ is defined abstractly (Eq. (1)) and identified with $\Omega\leftrightarrow\Upsilon$ / $\mathcal{X}\to-\mathcal{X}$ at the field level; the paper never writes $\kappa$ as an operator on the Fock/Krein space (e.g., its action on the $b_\Omega, b_\Upsilon$ or $a_1, a_2$ oscillators), nor which particular $\kappa$ (fundamental decomposition) makes $B^{(\Omega\Upsilon)}$ ghost symmetric — only that $P^{(\Omega\Upsilon)}_\chi$ is "even under ghost parity."
 7. **The Noether charge** of $SO^+(1,1)$: no explicit charge operator $\hat Q$ or its expression in oscillators; only charge assignments of $b_\Omega, b_\Upsilon$ (both creation and annihilation of a given field carry the same sign).
-8. **All-orders positivity**: open. Obstacle = collinear IR divergences affecting asymptotic states; resummation program only sketched (IR-finiteness of loops from [23] plus optical theorem). The repository has since established one-loop RG closure, the complete cut-constructible bubble+triangle+box logarithmic four-mass jet, and its external hard-log phase projection. The surviving hard ratio $\log(-t/s)$ has zero response to the real threshold's external-mass-ratio rescaling, so the missing comparison object is now localized to a nonanalytic virtual external-mass boundary layer rather than another analytic phase projection.
+8. **All-orders positivity**: open. Obstacle = collinear IR divergences affecting asymptotic states; resummation program only sketched (IR-finiteness of loops from [23] plus optical theorem). The repository has since established one-loop RG closure, the complete cut-constructible hard logarithmic four-mass jet, its external phase projection, and the separate nonanalytic external-mass boundary logarithm `3 lambda^6 sum_i L_i/(128 pi^4 s)` on the real fixture. The remaining logarithmic comparison requires a full real splitting-fraction integral and an explicit common regulator gluing between one virtual parent mass and two real daughter masses; it is no longer blocked on an unknown virtual boundary integral.
 9. **Higher orders of the Bogoliubov map**: (C4)–(C5) hold only up to $\mathcal{O}(\lambda)$; the interacting corrections to $R_t$'s action on oscillators are not given.
 10. **The second $\mathbb{Z}_2$** in $K_4 = \mathbb{Z}_2\times\mathbb{Z}_2$ is never identified explicitly (presumably $(\Omega,\Upsilon)\to(-\Omega,-\Upsilon)$), nor is any role assigned to it.
 11. **Whether/how the $\Omega > 0$ vs $\Omega \in \mathbb{R}$ domain mismatch feeds back into perturbation theory** (e.g., instanton/boundary contributions distinguishing the two path integrals): stated as inequivalence, not analyzed.

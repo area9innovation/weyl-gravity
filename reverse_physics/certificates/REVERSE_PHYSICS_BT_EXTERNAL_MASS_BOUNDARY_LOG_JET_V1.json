@@ -1,0 +1,158 @@
+{
+  "answer": "The complete external cut is fixed by cubic splitting times the full five-point tree. Its square-free loop polynomial gives [x1*x2*x3*x4](Mtree_red*Mloop_boundary_red)=12*(L1+L2+L3+L4). After the BT phase projector, d_sigma_boundary_log/d_Omega=3*lambda^6*sum_i Li/(128*pi^4*s). The cut polynomial is exactly independent of splitting fraction and outer scattering ratio. This supplies the missing external-regulator response, but a common four-to-five-leg regulator gluing and the full real phase space are still required for cancellation.",
+  "boundary_cut_result": {
+    "angular_result": "D_sf is exactly independent of zeta and chi on the symbolic physical collinear family, so its normalized two-body angular average equals the displayed polynomial",
+    "complete_loop_term": "E_boundary=sum_i E_i",
+    "crossed_leg_loop_term": "E_i=[-2*x_i*sum_(j!=i)x_j+10*sum_(j<k;j,k!=i)x_j*x_k]*Li",
+    "definition": "D=partial_a0 partial_a1[Kallen(tau,a0,a1)^(3/2)*C/(2*tau)] at a0=a1=0",
+    "exact_polynomial": "D=-(5*a2^2+5*a2*a3+5*a2*a4-a2*tau+5*a3^2+5*a3*a4-a3*tau+5*a4^2-a4*tau)/4",
+    "square_free_polynomial": "D_sf=(tau*(a2+a3+a4)-5*(a2*a3+a2*a4+a3*a4))/4"
+  },
+  "certificate": "REVERSE_PHYSICS_BT_EXTERNAL_MASS_BOUNDARY_LOG_JET_V1",
+  "checks": {
+    "details": {
+      "analytic_phase_derivatives_decouple": true,
+      "boundary_cut_expected_polynomial": true,
+      "boundary_loop_polynomial_is_degree_two": true,
+      "cut_to_log_factor_is_one_half": true,
+      "double_pole_boundary_cut_identity": true,
+      "each_external_log_weight_is_twelve": true,
+      "five_point_leading_order_is_two": true,
+      "five_point_orders_zero_and_one_cancel": true,
+      "four_mass_interference_top": true,
+      "full_real_virtual_gluing_remains_open": true,
+      "holdom_three_point_cut_calibration": true,
+      "independent_rescaling_response_is_nonzero": true,
+      "no_beyond_tree_positivity_promotion": true,
+      "no_lorentzian_claim": true,
+      "outer_scattering_ratio_cancels_exactly": true,
+      "physical_cut_product_is_minus_sixteen": true,
+      "physical_rate_per_log_is_three_over_128": true,
+      "splitting_fraction_cancels_exactly": true,
+      "square_free_boundary_cut": true,
+      "symbolic_collinear_family_cut_identity": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 20,
+    "total": 20
+  },
+  "declared_carrier": {
+    "hard_fixture": "five cyclic invariants (s1,s2,s3,s4)=(32/3,-8,16,-8/3), with shrinking pair invariant s0=delta*tau",
+    "jet_ring": "Q(L1,L2,L3,L4)[x1,x2,x3,x4]/(x_i^2)",
+    "logarithms": "Li=log(-mu^2/x_i) with analytic continuation fixed channel by channel",
+    "mass_scaling": "cut masses y=delta*a0, z=delta*a1; spectator masses xj=delta*aj",
+    "physical_collinear_family": "unit hard scale with splitting fraction zeta and outer ratio chi=-T/S: (s1,s2,s3,s4)=(1-zeta,-chi,1,zeta*(chi-1))",
+    "scope": "the complete external-virtuality cut of the connected one-loop four-point amplitude through mass degree two"
+  },
+  "dependency_tags": [
+    "REDUCED-MODE"
+  ],
+  "disposition": {
+    "beyond_tree_positivity": "NOT_ESTABLISHED",
+    "complete_external_mass_boundary_log_jet": "COMPUTED",
+    "cut_free_and_counterterm_terms": "NOT_COMPUTED",
+    "external_phase_projector_on_boundary_log": "APPLIED",
+    "external_regulator_response": "COMPUTED",
+    "four_to_five_leg_regulator_gluing": "NOT_COMPUTED",
+    "full_real_splitting_fraction_integral": "NOT_COMPUTED",
+    "physical_collinear_family_dependence": "INDEPENDENT_OF_ZETA_AND_CHI",
+    "physical_nlo_probability": "NOT_ESTABLISHED",
+    "real_virtual_cancellation": "NOT_COMPUTED"
+  },
+  "does_not_establish": [
+    "real--virtual cancellation or noncancellation in the completed observable",
+    "universality away from the declared physical collinear family",
+    "the full five-point splitting-fraction or angular integral",
+    "a canonical four-to-five-leg independent-mass regulator map",
+    "the complete finite one-loop amplitude",
+    "a physical NLO cross section or probability",
+    "a KLN theorem, resummation, or dressed-state construction",
+    "scheme independence of the off-shell finite part",
+    "positivity or unitarity beyond the published tree result",
+    "a tensor, BRST, or gravitational lift",
+    "anything LORENTZIAN-CAUSAL",
+    "literature priority for the boundary coefficient"
+  ],
+  "four_mass_interference": {
+    "phase_derivative_note": "both tree and complete boundary loop terms begin at mass degree two, so analytic phase-density derivatives again decouple",
+    "phase_value": "1/(256*pi^2*s)",
+    "physical_amplitude_coefficient": "[x1*x2*x3*x4]2*Re(Mtree^*Mloop_boundary_log)=lambda^6/(4*pi)^2*96*(L1+L2+L3+L4)",
+    "projected_rate": "d_sigma_boundary_log/d_Omega=3*lambda^6*(L1+L2+L3+L4)/(128*pi^4*s)",
+    "reduced_top_coefficient": "[x1*x2*x3*x4](Mtree_red*E_boundary)=12*(L1+L2+L3+L4)",
+    "tree_input": "Mtree_red^(2)=1/2*sum_(i<j)x_i*x_j"
+  },
+  "lifecycle_state": "COEFFICIENT_COMPUTED",
+  "missing_object_ledger": [
+    "a common regulator map between the recombined virtual leg and two real daughter legs",
+    "the general splitting-fraction dependence and full inner-angle integral of the real threshold",
+    "all collinear pair boundaries with identical-particle combinatorics",
+    "renormalized cut-free rational, counterterm, and finite lower-point terms",
+    "a scheme-invariance or physical normalization condition for the inclusive finite part",
+    "the complete NLO quotient-trace and beyond-tree positivity evaluation"
+  ],
+  "next_gate": "Promote the fixed real threshold to a splitting-fraction-dependent kernel, integrate the complete inner two-body angle with identical-particle factors, and define one explicit regulator gluing to the recombined virtual external mass before comparing the two responses.",
+  "provenance": {
+    "inputs": [
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_FIVE_POINT_TREE_JET_V1.json",
+        "sha256": "2ddecb1819a8cde12764dda5e097bab7c2ee9ffaacf66a3e4b1cd6567206b2c6"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_FIVE_POINT_INDEPENDENT_MASS_THRESHOLD_V1.json",
+        "sha256": "e6b1872ca0fbcd6a51ccd8a44b018678678dc0121ede855911a8006b7af2a4a2"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EXTERNAL_PROJECTOR_CARRIER_MISMATCH_V1.json",
+        "sha256": "d3fdf83a77556906259acc798abd9b07958d2f328c7f422d31465f5f7c45562b"
+      }
+    ],
+    "primary_sources": [
+      {
+        "equations": [
+          "Eq. (13)",
+          "Appendix B Eqs. (B1)-(B3)"
+        ],
+        "source": "Bateman--Turok arXiv:2607.00096v1",
+        "use": "external projector and cubic/five-point normalizations"
+      },
+      {
+        "equations": [
+          "Eqs. (18)-(19)"
+        ],
+        "source": "Holdom arXiv:2303.06723v2",
+        "use": "off-shell three-point logarithm used only for cut normalization calibration"
+      }
+    ],
+    "retrieval_date": "2026-08-10",
+    "source_commit": "325ef54dc8e21285e959f1f25480aaf4f5844d42"
+  },
+  "question": "What nonanalytic external-mass logarithm is missed by the fixed-hard-channel bubble, triangle, and box cuts in the BT one-loop four-point rate?",
+  "regulator_response": {
+    "common_rescaling": "for c_i=c, Delta[d_sigma/d_Omega]=-3*lambda^6*log(c)/(32*pi^4*s)",
+    "comparison_status": "NOT_COMPARABLE_WITHOUT_REGULATOR_GLUING_AND_FULL_REAL_PHASE_SPACE",
+    "independent_rescaling": "x_i -> c_i*x_i at fixed hard kinematics",
+    "log_shift": "Li -> Li-log(c_i)",
+    "rate_shift": "Delta[d_sigma/d_Omega]=-3*lambda^6*sum_i log(c_i)/(128*pi^4*s)",
+    "real_threshold_response": "reduced real slice shifts by -(3/8)*log(c_pair)",
+    "reason": "the virtual carrier has one recombined external mass plus three spectator masses; the real carrier has two daughter masses plus three spectators, and the certified real result is a fixed hard slice rather than the integrated splitting-fraction carrier"
+  },
+  "report": "reverse_physics/reports/bt-external-mass-boundary-log-jet.md",
+  "result_kind": "complete one-loop external-mass boundary logarithmic four-leg interference jet",
+  "schema": "reverse_physics/schema/reverse-physics-bt-external-mass-boundary-log-jet-v1.schema.json",
+  "schema_version": "reverse-physics-bt-external-mass-boundary-log-jet-v1",
+  "unitarity_factorization": {
+    "cubic_reduced": "Kallen(tau,a0,a1)/2",
+    "cut": "external leg -> cubic splitting vertex times complete 25-graph five-point PS tree",
+    "cut_to_log_calibration": "Holdom Gamma3 gives R_bubble=-A_Holdom/3 and maps the physical cut coefficient to one half of that coefficient multiplying the log",
+    "five_point_normalization": "A5=M5/(8*lambda^3)=delta^2*C+O(delta^3)",
+    "loop_log_normalization": "Mloop_boundary_log=lambda^4/(4*pi)^2*E_boundary",
+    "physical_cut_product": "M3*M5=-16*lambda^4*(cubic_reduced*A5)",
+    "two_body_density": "sqrt(Kallen(tau,a0,a1))/tau"
+  },
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_external_mass_boundary_log_jet.py --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_external_mass_boundary_log_jet.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_external_mass_boundary_log_jet"
+  ]
+}

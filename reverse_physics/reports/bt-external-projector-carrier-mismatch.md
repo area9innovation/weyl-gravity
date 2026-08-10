@@ -228,3 +228,14 @@ EVIDENCE: `reverse_physics/certificates/REVERSE_PHYSICS_BT_EXTERNAL_PROJECTOR_CA
 
 MISSING-DEP: nonanalytic virtual external-mass boundary jet on the real
 threshold ratio prescription
+
+## Successor update (2026-08-10)
+
+[`REVERSE_PHYSICS_BT_EXTERNAL_MASS_BOUNDARY_LOG_JET_V1`](../certificates/REVERSE_PHYSICS_BT_EXTERNAL_MASS_BOUNDARY_LOG_JET_V1.json)
+has now computed the missing boundary carrier from an external unitarity cut.
+The projected result is
+`3*lambda^6*(L1+L2+L3+L4)/(128*pi^4*s)`.  This closes the virtual
+boundary-log calculation on the real threshold's hard fixture.  The remaining
+gate is the full real splitting-fraction integral and a declared regulator map
+between one recombined virtual mass and two real daughter masses; cancellation
+is still not claimed.
