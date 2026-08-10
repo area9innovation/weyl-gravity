@@ -1,0 +1,375 @@
+{
+  "answer": "The unprojected normalization matches exactly: after parent-index raising, Bose reduction, angular measure, and the 2!/3! outgoing-projector ratio, the response is 1/48 per unordered pair and 1/16 in total. However, every logarithmic contribution pairs a +1 generator sector with a -1 sector. Restricting the currently available oscillator map to the published one-sided nonpositive image removes the positive partner and makes the logarithmic residue zero. The unavailable broken-vacuum zero-mode/full pushforward may regrade these terms into the neutral component, but the public data do not decide that. The physical neutral 1/48 coefficient therefore remains fail-closed at an exact charge obstruction.",
+  "background_pushforward_trichotomy": {
+    "background_charges_needed_to_neutralize_log_rows": [
+      -1,
+      1
+    ],
+    "if_full_background_completion_neutralizes_both_signs": "PHYSICAL_RESPONSE_CANDIDATE_1_OVER_48_PER_PAIR",
+    "if_one_sided_nonpositive_projection_is_imposed_first": "LOGARITHMIC_RESPONSE_ZERO",
+    "if_positive_sector_survives_without_neutral_completion": "RELATIVE_RADICAL_POSITIVITY_ARGUMENT_NOT_APPLICABLE",
+    "public_background_zero_mode_operator": "NOT_AVAILABLE",
+    "public_order_lambda_pushforward_of_projector": "NOT_AVAILABLE",
+    "resolved_outcome": "UNDECIDED_FROM_PUBLIC_DATA"
+  },
+  "certificate": "REVERSE_PHYSICS_BT_SOFT_CHARGE_RESOLVED_FLOW_V1",
+  "checks": {
+    "details": {
+      "angular_measure_gives_minus_one_over_sixteen": true,
+      "bidirectional_background_completion_required": true,
+      "bose_factor_gives_minus_eighth": true,
+      "cutoff_response_is_plus_one_over_sixteen": true,
+      "each_logarithmic_row_has_minus_quarter": true,
+      "full_raw_residue_is_minus_half": true,
+      "hard_absolute_response_is_minus_three_over_512": true,
+      "hard_projector_response_is_minus_one_over_16": true,
+      "input_hashes_pinned": true,
+      "logarithmic_rows_are_plus_minus_one": true,
+      "one_sided_nonpositive_residue_is_zero": true,
+      "outgoing_factorial_ratio_is_one_third": true,
+      "parent_raise_gives_minus_quarter": true,
+      "per_pair_response_is_one_over_48": true,
+      "physical_neutral_coefficient_fails_closed": true,
+      "sharp_and_smooth_log_responses_agree": true,
+      "three_pair_response_is_one_over_16": true,
+      "two_logarithmic_charge_rows": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 18,
+    "total": 18
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "disposition": {
+    "background_completed_neutral_pushforward": "MISSING_OBJECT",
+    "complete_nlo_probability": "NOT_ESTABLISHED",
+    "finite_cutoff_anti_krein_flow": "FORMAL_CONSTRUCTION",
+    "finite_matching_constant": "NOT_SELECTED",
+    "one_sided_nonpositive_soft_residue": "ZERO",
+    "physical_neutral_one_over_48": "NOT_ESTABLISHED",
+    "sharp_smooth_response_universality": "PROVED_AT_LEADING_LOG",
+    "unprojected_soft_log_normalization": "MATCHES_1_OVER_48_PER_PAIR"
+  },
+  "does_not_establish": [
+    "that the full BT background completion cannot produce 1/48",
+    "that the deferred Eq. (19) construction is inconsistent",
+    "that a positive-charge term survives in the physical neutral pushforward",
+    "a finite matched hard S-matrix",
+    "a complete NLO probability or beyond-tree positivity",
+    "a tensor or BRST gravitational lift",
+    "anything LORENTZIAN-CAUSAL",
+    "literature priority"
+  ],
+  "finite_cutoff_flow": {
+    "C": "lambda^2/(16*pi^2) before the 2!/3! per-pair factor",
+    "H_as_first_order": "d*(exp(-i*d*t)*D+exp(+i*d*t)*D_sharp)",
+    "K_t": "exp(-i*d*t)*D-exp(+i*d*t)*D_sharp",
+    "common_rescaling_response": "I(c*epsilon)-I(epsilon)->+C*log(c)",
+    "finite_profile_shift": "I_a-I_sharp->+C*log(a)",
+    "sharp_cutoff": "I_sharp(epsilon)=-C*log(r0/epsilon)",
+    "sharp_properties": [
+      "K_t_sharp=-K_t",
+      "H_as_sharp=H_as"
+    ],
+    "smooth_cutoff": "I_a(epsilon)=-C*log((r0+a*epsilon)/(a*epsilon))",
+    "smooth_profile": "f_a(r/epsilon)=r/(r+a*epsilon)",
+    "zero_cutoff_limit": "NOT_TRACE_CLASS_ON_ORIGINAL_FOCK_KREIN_REPRESENTATION"
+  },
+  "fixed_vacuum_charge_decomposition": {
+    "adjoint_convention": "BT sharp/dagger preserves boost charge",
+    "disposition": "LOGARITHMIC_NEUTRAL_GRAM_REQUIRES_POSITIVE_NEGATIVE_PAIRING",
+    "full_raw_residue": {
+      "denominator": 2,
+      "numerator": -1
+    },
+    "logarithmic_charge_pairs": [
+      [
+        -1,
+        1
+      ],
+      [
+        1,
+        -1
+      ]
+    ],
+    "logarithmic_rows": [
+      {
+        "first_generator_charge": 1,
+        "leading_alpha_terms": [
+          {
+            "alpha_power": 0,
+            "coefficient": {
+              "denominator": 4,
+              "numerator": -1
+            }
+          }
+        ],
+        "leading_radial_power": -3,
+        "omega_pair": [
+          "Omega",
+          "Omega"
+        ],
+        "second_generator_charge": -1,
+        "total_charge": 0,
+        "upsilon_partner_pair": [
+          "Upsilon",
+          "Upsilon"
+        ]
+      },
+      {
+        "first_generator_charge": -1,
+        "leading_alpha_terms": [
+          {
+            "alpha_power": 0,
+            "coefficient": {
+              "denominator": 4,
+              "numerator": -1
+            }
+          }
+        ],
+        "leading_radial_power": -3,
+        "omega_pair": [
+          "Upsilon",
+          "Omega"
+        ],
+        "second_generator_charge": 1,
+        "total_charge": 0,
+        "upsilon_partner_pair": [
+          "Omega",
+          "Upsilon"
+        ]
+      }
+    ],
+    "one_sided_nonpositive_raw_residue": {
+      "denominator": 1,
+      "numerator": 0
+    },
+    "oscillator_charges": {
+      "Omega": 1,
+      "Upsilon": -1
+    },
+    "rows": [
+      {
+        "first_generator_charge": 1,
+        "leading_alpha_terms": [
+          {
+            "alpha_power": 0,
+            "coefficient": {
+              "denominator": 4,
+              "numerator": -1
+            }
+          }
+        ],
+        "leading_radial_power": -3,
+        "omega_pair": [
+          "Omega",
+          "Omega"
+        ],
+        "second_generator_charge": -1,
+        "total_charge": 0,
+        "upsilon_partner_pair": [
+          "Upsilon",
+          "Upsilon"
+        ]
+      },
+      {
+        "first_generator_charge": -1,
+        "leading_alpha_terms": [
+          {
+            "alpha_power": 0,
+            "coefficient": {
+              "denominator": 4,
+              "numerator": 1
+            }
+          },
+          {
+            "alpha_power": 1,
+            "coefficient": {
+              "denominator": 4,
+              "numerator": -1
+            }
+          },
+          {
+            "alpha_power": 2,
+            "coefficient": {
+              "denominator": 16,
+              "numerator": 1
+            }
+          }
+        ],
+        "leading_radial_power": -1,
+        "omega_pair": [
+          "Omega",
+          "Upsilon"
+        ],
+        "second_generator_charge": 1,
+        "total_charge": 0,
+        "upsilon_partner_pair": [
+          "Upsilon",
+          "Omega"
+        ]
+      },
+      {
+        "first_generator_charge": -1,
+        "leading_alpha_terms": [
+          {
+            "alpha_power": 0,
+            "coefficient": {
+              "denominator": 4,
+              "numerator": -1
+            }
+          }
+        ],
+        "leading_radial_power": -3,
+        "omega_pair": [
+          "Upsilon",
+          "Omega"
+        ],
+        "second_generator_charge": 1,
+        "total_charge": 0,
+        "upsilon_partner_pair": [
+          "Omega",
+          "Upsilon"
+        ]
+      },
+      {
+        "first_generator_charge": -3,
+        "leading_alpha_terms": [
+          {
+            "alpha_power": 2,
+            "coefficient": {
+              "denominator": 16,
+              "numerator": 1
+            }
+          }
+        ],
+        "leading_radial_power": -1,
+        "omega_pair": [
+          "Upsilon",
+          "Upsilon"
+        ],
+        "second_generator_charge": 3,
+        "total_charge": 0,
+        "upsilon_partner_pair": [
+          "Omega",
+          "Omega"
+        ]
+      }
+    ]
+  },
+  "lifecycle_state": "CLASSIFIED",
+  "missing_object_ledger": [
+    "the charged broken-vacuum zero-mode operator rather than a fixed c-number spurion",
+    "the complete order-lambda pushforward R_t P_2 R_t^dagger",
+    "a proof of the no-positive-charge property on that pushforward",
+    "the incoming-sector analogue on the same resolution carrier",
+    "the finite hard matching constant and cut-free virtual terms",
+    "the zero-cutoff relative hard S-matrix and complete quotient trace"
+  ],
+  "next_gate": "Construct the broken-vacuum zero-mode-resolved order-lambda pushforward R_t P_2 R_t^dagger from the deferred Eq. (19) data or an equivalent operator construction. Determine whether it neutralizes both charge signs, projects the logarithmic response to zero, or leaks positive charge before any complete probability claim.",
+  "normalization_ledger_before_charge_projection": {
+    "absolute_hard_response": {
+      "denominator": 512,
+      "numerator": -3
+    },
+    "after_bose": {
+      "denominator": 8,
+      "numerator": -1
+    },
+    "all_pairs": {
+      "denominator": 16,
+      "numerator": 1
+    },
+    "angular_measure": "integral dOmega/(2pi)^3=1/(2*pi^2)",
+    "born_coefficient": {
+      "denominator": 32,
+      "numerator": 3
+    },
+    "bose_factor": {
+      "denominator": 2,
+      "numerator": 1
+    },
+    "coefficient_of_lambda2_logc_over_pi2": {
+      "denominator": 16,
+      "numerator": 1
+    },
+    "coefficient_of_lambda2_over_pi2_dr_over_r": {
+      "denominator": 16,
+      "numerator": -1
+    },
+    "hard_projector_response": {
+      "denominator": 16,
+      "numerator": -1
+    },
+    "outgoing_projector_factorial_ratio": {
+      "denominator": 3,
+      "numerator": 1
+    },
+    "pair_count": 3,
+    "parent_inverse_metric_factor": {
+      "denominator": 2,
+      "numerator": 1
+    },
+    "parent_raised_residue": {
+      "denominator": 4,
+      "numerator": -1
+    },
+    "per_unordered_pair": {
+      "denominator": 48,
+      "numerator": 1
+    },
+    "raw_cross_residue": {
+      "denominator": 2,
+      "numerator": -1
+    }
+  },
+  "provenance": {
+    "inputs": [
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_FULL_OFF_RESONANT_PROJECTOR_V1.json",
+        "sha256": "7f9981e398b3971aa4fcfca7f874328ec326c83f6cb92bcf81f4a08eca85e6c0"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_ASYMPTOTIC_GENERATOR_PREFLIGHT_V1.json",
+        "sha256": "95d11eaf4f529d7f02b4f8a8e6165ee893ea6aa623d26c96a2475e0bd0a8c2c1"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_REAL_VIRTUAL_AXIS_GLUING_V1.json",
+        "sha256": "c2ffad79666aaec1d17585f76e9c90403b3b410006e624df9626bcc1571d251a"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_INCLUSIVE_RADICAL_CLOSURE_V1.json",
+        "sha256": "c2d69a212b69d8bd5c5d7fe3b3436cbf6a196d84b5479c94163c073a7b554d25"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_OSCILLATORY_RADICAL_NO_MATCHING_V1.json",
+        "sha256": "1fe211c29c63a525507a767cefc07614711a209cd91bec138b379a2179810ccb"
+      }
+    ],
+    "primary_source": {
+      "current_version_check": "Official arXiv metadata checked 2026-08-10: v1 only; exact-title searches for the deferred companion returned no arXiv record",
+      "equations": [
+        "Eq. (19)",
+        "Eq. (20)",
+        "Appendix C"
+      ],
+      "source": "Bateman--Turok arXiv:2607.00096v1",
+      "url": "https://arxiv.org/abs/2607.00096"
+    },
+    "retrieval_date": "2026-08-10",
+    "source_commit": "90af7c5e5f84acf35762bdc6fb1af7e3f689fe24"
+  },
+  "question": "Does the full off-resonant BT soft kernel produce the physical neutral 1/48 response while preserving the published one-sided nonpositive image?",
+  "report": "reverse_physics/reports/bt-soft-charge-resolved-flow.md",
+  "result_kind": "charge-resolved soft asymptotic-flow normalization obstruction",
+  "schema": "reverse_physics/schema/reverse-physics-bt-soft-charge-resolved-flow-v1.schema.json",
+  "schema_version": "reverse-physics-bt-soft-charge-resolved-flow-v1",
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_soft_charge_resolved_flow.py --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_soft_charge_resolved_flow.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_soft_charge_resolved_flow"
+  ]
+}

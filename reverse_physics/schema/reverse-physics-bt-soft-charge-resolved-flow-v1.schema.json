@@ -1,0 +1,167 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-soft-charge-resolved-flow-v1.schema.json",
+  "$defs": {
+    "nonempty": {"type": "string", "minLength": 1},
+    "fraction": {
+      "type": "object",
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      },
+      "additionalProperties": false
+    },
+    "row": {
+      "type": "object",
+      "required": ["omega_pair", "upsilon_partner_pair", "first_generator_charge", "second_generator_charge", "total_charge", "leading_radial_power", "leading_alpha_terms"],
+      "properties": {
+        "omega_pair": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"enum": ["Omega", "Upsilon"]}},
+        "upsilon_partner_pair": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"enum": ["Omega", "Upsilon"]}},
+        "first_generator_charge": {"type": "integer"},
+        "second_generator_charge": {"type": "integer"},
+        "total_charge": {"const": 0},
+        "leading_radial_power": {"type": "integer"},
+        "leading_alpha_terms": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["alpha_power", "coefficient"],
+            "properties": {
+              "alpha_power": {"type": "integer", "minimum": 0},
+              "coefficient": {"$ref": "#/$defs/fraction"}
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "type": "object",
+  "required": [
+    "certificate", "schema_version", "dependency_tags", "lifecycle_state",
+    "result_kind", "question", "answer", "fixed_vacuum_charge_decomposition",
+    "normalization_ledger_before_charge_projection", "finite_cutoff_flow",
+    "background_pushforward_trichotomy", "disposition", "next_gate",
+    "missing_object_ledger", "does_not_establish", "provenance",
+    "verification_commands", "checks", "report", "schema"
+  ],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_SOFT_CHARGE_RESOLVED_FLOW_V1"},
+    "schema_version": {"const": "reverse-physics-bt-soft-charge-resolved-flow-v1"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "result_kind": {"$ref": "#/$defs/nonempty"},
+    "question": {"$ref": "#/$defs/nonempty"},
+    "answer": {"$ref": "#/$defs/nonempty"},
+    "fixed_vacuum_charge_decomposition": {
+      "type": "object",
+      "required": ["oscillator_charges", "adjoint_convention", "rows", "logarithmic_rows", "logarithmic_charge_pairs", "full_raw_residue", "one_sided_nonpositive_raw_residue", "disposition"],
+      "properties": {
+        "oscillator_charges": {"const": {"Omega": 1, "Upsilon": -1}},
+        "adjoint_convention": {"const": "BT sharp/dagger preserves boost charge"},
+        "rows": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/row"}},
+        "logarithmic_rows": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"$ref": "#/$defs/row"}},
+        "logarithmic_charge_pairs": {"const": [[-1, 1], [1, -1]]},
+        "full_raw_residue": {"const": {"numerator": -1, "denominator": 2}},
+        "one_sided_nonpositive_raw_residue": {"const": {"numerator": 0, "denominator": 1}},
+        "disposition": {"const": "LOGARITHMIC_NEUTRAL_GRAM_REQUIRES_POSITIVE_NEGATIVE_PAIRING"}
+      },
+      "additionalProperties": false
+    },
+    "normalization_ledger_before_charge_projection": {
+      "type": "object",
+      "required": ["raw_cross_residue", "parent_inverse_metric_factor", "parent_raised_residue", "bose_factor", "after_bose", "angular_measure", "coefficient_of_lambda2_over_pi2_dr_over_r", "coefficient_of_lambda2_logc_over_pi2", "outgoing_projector_factorial_ratio", "per_unordered_pair", "pair_count", "all_pairs", "born_coefficient", "hard_projector_response", "absolute_hard_response"],
+      "properties": {
+        "raw_cross_residue": {"const": {"numerator": -1, "denominator": 2}},
+        "parent_inverse_metric_factor": {"const": {"numerator": 1, "denominator": 2}},
+        "parent_raised_residue": {"const": {"numerator": -1, "denominator": 4}},
+        "bose_factor": {"const": {"numerator": 1, "denominator": 2}},
+        "after_bose": {"const": {"numerator": -1, "denominator": 8}},
+        "angular_measure": {"$ref": "#/$defs/nonempty"},
+        "coefficient_of_lambda2_over_pi2_dr_over_r": {"const": {"numerator": -1, "denominator": 16}},
+        "coefficient_of_lambda2_logc_over_pi2": {"const": {"numerator": 1, "denominator": 16}},
+        "outgoing_projector_factorial_ratio": {"const": {"numerator": 1, "denominator": 3}},
+        "per_unordered_pair": {"const": {"numerator": 1, "denominator": 48}},
+        "pair_count": {"const": 3},
+        "all_pairs": {"const": {"numerator": 1, "denominator": 16}},
+        "born_coefficient": {"const": {"numerator": 3, "denominator": 32}},
+        "hard_projector_response": {"const": {"numerator": -1, "denominator": 16}},
+        "absolute_hard_response": {"const": {"numerator": -3, "denominator": 512}}
+      },
+      "additionalProperties": false
+    },
+    "finite_cutoff_flow": {"type": "object", "minProperties": 10},
+    "background_pushforward_trichotomy": {
+      "type": "object",
+      "required": ["background_charges_needed_to_neutralize_log_rows", "public_background_zero_mode_operator", "public_order_lambda_pushforward_of_projector", "if_full_background_completion_neutralizes_both_signs", "if_one_sided_nonpositive_projection_is_imposed_first", "if_positive_sector_survives_without_neutral_completion", "resolved_outcome"],
+      "properties": {
+        "background_charges_needed_to_neutralize_log_rows": {"const": [-1, 1]},
+        "public_background_zero_mode_operator": {"const": "NOT_AVAILABLE"},
+        "public_order_lambda_pushforward_of_projector": {"const": "NOT_AVAILABLE"},
+        "if_full_background_completion_neutralizes_both_signs": {"const": "PHYSICAL_RESPONSE_CANDIDATE_1_OVER_48_PER_PAIR"},
+        "if_one_sided_nonpositive_projection_is_imposed_first": {"const": "LOGARITHMIC_RESPONSE_ZERO"},
+        "if_positive_sector_survives_without_neutral_completion": {"const": "RELATIVE_RADICAL_POSITIVITY_ARGUMENT_NOT_APPLICABLE"},
+        "resolved_outcome": {"const": "UNDECIDED_FROM_PUBLIC_DATA"}
+      },
+      "additionalProperties": false
+    },
+    "disposition": {
+      "type": "object",
+      "required": ["unprojected_soft_log_normalization", "sharp_smooth_response_universality", "finite_cutoff_anti_krein_flow", "one_sided_nonpositive_soft_residue", "background_completed_neutral_pushforward", "physical_neutral_one_over_48", "finite_matching_constant", "complete_nlo_probability"],
+      "properties": {
+        "unprojected_soft_log_normalization": {"const": "MATCHES_1_OVER_48_PER_PAIR"},
+        "sharp_smooth_response_universality": {"const": "PROVED_AT_LEADING_LOG"},
+        "finite_cutoff_anti_krein_flow": {"const": "FORMAL_CONSTRUCTION"},
+        "one_sided_nonpositive_soft_residue": {"const": "ZERO"},
+        "background_completed_neutral_pushforward": {"const": "MISSING_OBJECT"},
+        "physical_neutral_one_over_48": {"const": "NOT_ESTABLISHED"},
+        "finite_matching_constant": {"const": "NOT_SELECTED"},
+        "complete_nlo_probability": {"const": "NOT_ESTABLISHED"}
+      },
+      "additionalProperties": false
+    },
+    "next_gate": {"$ref": "#/$defs/nonempty"},
+    "missing_object_ledger": {"type": "array", "minItems": 6, "items": {"$ref": "#/$defs/nonempty"}},
+    "does_not_establish": {"type": "array", "minItems": 8, "items": {"$ref": "#/$defs/nonempty"}},
+    "provenance": {
+      "type": "object",
+      "required": ["source_commit", "retrieval_date", "inputs", "primary_source"],
+      "properties": {
+        "source_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "retrieval_date": {"const": "2026-08-10"},
+        "inputs": {
+          "type": "array", "minItems": 5, "maxItems": 5,
+          "items": {
+            "type": "object", "required": ["path", "sha256"],
+            "properties": {
+              "path": {"$ref": "#/$defs/nonempty"},
+              "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+            },
+            "additionalProperties": false
+          }
+        },
+        "primary_source": {"type": "object", "minProperties": 3}
+      },
+      "additionalProperties": false
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "items": {"$ref": "#/$defs/nonempty"}},
+    "checks": {
+      "type": "object",
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"const": 18},
+        "total": {"const": 18},
+        "failures": {"const": []},
+        "details": {"type": "object", "minProperties": 18, "maxProperties": 18, "additionalProperties": {"const": true}}
+      },
+      "additionalProperties": false
+    },
+    "report": {"const": "reverse_physics/reports/bt-soft-charge-resolved-flow.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-soft-charge-resolved-flow-v1.schema.json"}
+  },
+  "additionalProperties": false
+}

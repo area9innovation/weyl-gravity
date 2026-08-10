@@ -1,0 +1,19 @@
+{
+  "id": "sf:program/work/reverse-physics-bateman-background-zero-mode-pushforward",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "reverse-physics",
+    "state": "BLOCKED",
+    "objective": "Construct the broken-vacuum zero-mode-resolved order-lambda BT pushforward R_t P_2 R_t-dagger and decide whether its neutral component retains the certified 1/48 soft response, projects it to zero, or leaks positive charge.",
+    "depends_on": ["REVERSE_PHYSICS_BT_SOFT_CHARGE_RESOLVED_FLOW_V1", "Bateman--Turok deferred Eq. (19) proof or equivalent background zero-mode operator data"],
+    "activates": ["physical neutral 1/48 coefficient", "finite hard S matrix", "complete BT quotient probability"],
+    "current_gate": "BACKGROUND_PUSHFORWARD: obtain or independently construct the charged vacuum zero-mode algebra and complete order-lambda pushforward, then project it through the off-diagonal Eq. (20) completeness kernel before taking the soft Gram.",
+    "stop_condition": "Certify exactly one of: neutral 1/48 per pair, trace-null zero, or positive-charge leakage invalidating the relative-radical preflight.",
+    "forbid": "no c-number spurion treated as an operator; no inversion of the pullback substituted for the missing pushforward; no fitted charge reassignment; no promotion of the unprojected 1/48 to a physical coefficient; no scalar-to-gravity or LORENTZIAN-CAUSAL transfer",
+    "allowed_paths": ["reverse_physics/", "notes/bateman-turok-embedding.md", "paper/05-interaction-obstructions.tex", "paper/05-interaction-obstructions.pdf", "paper/06-einstein-weyl-interaction-obstructions.tex", "paper/06-einstein-weyl-interaction-obstructions.pdf", "planning/work-items/reverse-physics-bateman-background-zero-mode-pushforward.json", "planning/events/"],
+    "resource_hint": "The two logarithmic rows have fixed-vacuum charge pairs (+1,-1) and (-1,+1). A valid completion must represent both compensating background shifts while preserving the claimed one-sided image. Run exact finite charge algebra first and all commands sequentially under ulimit -v 500000.",
+    "input_commit": "90af7c5e5f84acf35762bdc6fb1af7e3f689fe24",
+    "stream": "reverse-physics"
+  }
+}

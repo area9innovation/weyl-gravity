@@ -104,9 +104,14 @@ endpoint condition.  Retaining the parent--daughter energy deficit and the full
 radial daughter measure now reduces those three flat-slice jets to one soft
 normalization on the declared three-dimensional chart, but the measured
 cross-Gram is still $-(1/2)\,dr/r$.  Ordinary off-resonant composition is
-therefore logarithmically non-trace-class and does not select $1/48$; the next
-gate is a regulator-response-cancelling asymptotic Hamiltonian or hard matching
-operator.
+therefore logarithmically non-trace-class.  Restoring the parent inverse
+metric, Bose factor, angular measure, and outgoing $2!/3!$ projector ratio
+does fix its unprojected response to $1/48$ per pair.  However, its two
+logarithmic rows have generator charges $(+1,-1)$ and $(-1,+1)$ under the
+published fixed-vacuum oscillator grading; a prior one-sided nonpositive
+projection makes the residue zero.  The physical neutral coefficient remains
+undecided until the broken-vacuum zero-mode contribution to the full
+order-$\lambda$ pushforward is constructed.
 Independently, the projected three-channel hard loop logarithm closes the
 Callan--Symanzik equation exactly with the Born rate and one-loop beta
 function.  This yields the positive leading-log nonforward prediction
@@ -1293,11 +1298,35 @@ $-(1/2)dr/r$.  A common cutoff rescaling $\epsilon\mapsto c\epsilon$ shifts
 the finite part by $(1/2)\log c$.  Consequently the three local constants of
 the exactly collinear slice collapse to one soft normalization on this full
 chart, but ordinary composition remains logarithmically non-trace-class and
-still cannot predict $1/48$.  This exact
+has a universal leading response.  Raising the parent index gives $-1/4$,
+the Bose factor gives $-1/8$, and the angular measure gives
+$-\lambda^2dr/(16\pi^2r)$.  A cutoff rescaling therefore produces
+$+\lambda^2\log c/(16\pi^2)$; the outgoing-projector ratio $2!/3!=1/3$
+fixes $+1/48$ per unordered pair and $+1/16$ over three pairs.  Projector
+idempotence supplies the opposite hard block $-1/16$, or $-3/512$ after
+multiplication by the Born coefficient.
+
+This normalization is not yet the physical neutral answer.  With the
+published fixed-vacuum charges $q(\Omega)=+1$, $q(\Upsilon)=-1$ and the BT
+dagger preserving charge, the two logarithmic contractions have generator
+charges $(+1,-1)$ and $(-1,+1)$, each with residue $-1/4$.  Consequently no
+logarithmic row lies wholly in the one-sided nonpositive image; imposing that
+projection before the Gram makes the residue exactly zero.  A completed
+broken-vacuum pushforward might instead use background shifts of both signs to
+place the pair in its neutral component, but neither the required zero-mode
+operator nor $R_tP_2R_t^\dagger$ is available in the Letter.  Thus the exact
+alternatives are: the neutralized $1/48$, zero after one-sided projection, or
+positive-charge leakage outside the present radical argument.  This exact
 \texttt{LOCAL-ALGEBRAIC}, \texttt{REDUCED-MODE} classification is recorded by
+\texttt{REVERSE\_PHYSICS\_BT\_SOFT\_CHARGE\_}
+\allowbreak\texttt{RESOLVED\_FLOW\_V1}, downstream of
 \texttt{REVERSE\_PHYSICS\_BT\_FULL\_OFF\_}
-\allowbreak\texttt{RESONANT\_PROJECTOR\_V1}; it neither excludes a
-renormalized asymptotic Hamiltonian nor establishes a complete probability.
+\allowbreak\texttt{RESONANT\_PROJECTOR\_V1}.  Its finite-cutoff formal flow
+$K_t=e^{-idt}D-e^{idt}D^\sharp$ is anti-Krein and has
+$H_{\rm as}^{(1)}=d(e^{-idt}D+e^{idt}D^\sharp)$; sharp and smooth cutoffs have
+the same leading logarithmic response but retain a finite matching constant.
+It neither establishes the physical neutral coefficient nor a complete
+probability.
 \end{remark}
 
 \begin{remark}[Physical ultraviolet hard-scattering law]
