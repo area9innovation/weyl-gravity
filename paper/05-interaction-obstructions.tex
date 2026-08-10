@@ -85,6 +85,11 @@ parent/daughter regulator gluing, including the physical pair threshold, has
 zero constant virtual response.  This obstructs the ordinary independent-mass
 infrared prescription on that carrier; it is not a full NLO probability,
 failure of dressed-state or resummed constructions, or a gravitational result.
+An exact finite-carrier successor changes the measured object: coherent
+hard--collinear projector transport with amplitude $\sqrt{1/512}$ per pair
+forces a hard normalization $-3/512$ against the three-pair Gram response
+$+3/512$.  This removes the finite algebraic normalization barrier, while the
+dynamical asymptotic-Hamiltonian and continuum constructions remain open.
 \end{abstract}
 
 \section*{AI authorship and computational accountability}
@@ -238,9 +243,12 @@ than merely unattempted because the charge-null lemma's hypothesis is absent
 there (Section~\ref{sec:discussion}); the complete final-state collinear
 logarithmic response on the ordinary axis-compatible independent-mass
 regulator class --- exact \texttt{REDUCED-MODE} obstruction
-(Remark~\ref{rem:btaxis}); a full NLO quotient trace,
-dressed-state or resummed completion, and gravitational lift of that infrared
-statement --- open.
+(Remark~\ref{rem:btaxis}); existence of a normalized finite coherent
+cross-multiplicity projector at the residual coefficient --- exact
+\texttt{LOCAL-ALGEBRAIC} plus \texttt{REDUCED-MODE} classification
+(Remark~\ref{rem:bttransport}); derivation of that transport from BT dynamics,
+a continuum dressed projector, full NLO quotient trace, and gravitational lift
+of that infrared statement --- open.
 
 \paragraph{Bookkeeping.}
 The deformation order is counted by a formal parameter $\zeta$:
@@ -281,6 +289,13 @@ method-distinct invariant-K\"all\'en verifier use exact arithmetic and run
 sequentially under a 500,000 KB virtual-memory cap; the certificate preserves
 the \texttt{REDUCED-MODE} dependency boundary and explicitly leaves the full
 NLO quotient trace uncomputed.
+The finite coherent successor is pinned by
+\texttt{REVERSE\_PHYSICS\_BT\_COLLINEAR\_}
+\allowbreak\texttt{PROJECTOR\_TRANSPORT\_V1.json}.  Its producer works over
+$\mathbb Q(\sqrt2)$, and an independent verifier solves the order-two
+projector equation without importing that producer.  The certificate labels
+the asymptotic-Hamiltonian derivation and continuum projector
+\texttt{NOT\_CONSTRUCTED}.
 
 \paragraph{Conventions.}
 Oscillator conventions follow \cite{paperI,paperII}: normalized
@@ -1124,6 +1139,35 @@ analytic counterterms cannot supply one.  Both the dot-product graph producer
 and a method-distinct invariant-K\"all\'en verifier establish these identities
 exactly in the axis-gluing certificate cited above.
 
+\begin{remark}[Finite coherent collinear projector transport]
+\label{rem:bttransport}
+Suppress the common factor $\lambda^6\log c/(\pi^4s)$ and place one hard
+channel and the three unordered collinear-pair channels in the carrier
+$(h,r_{12},r_{13},r_{23})$.  Let
+\[
+ P_0=\operatorname{diag}(1,0,0,0),\qquad
+ K=\begin{pmatrix}
+ 0&-a&-a&-a\\ a&0&0&0\\ a&0&0&0\\ a&0&0&0
+ \end{pmatrix},\qquad a=\frac{\sqrt2}{32}.
+\]
+Then $K^T=-K$, and the exact formal transport
+$P(\epsilon)=e^{\epsilon K}P_0e^{-\epsilon K}$ obeys
+$P(\epsilon)^2=P(\epsilon)$ and $\operatorname{tr}P(\epsilon)=1$ through
+order two.  Its order-two diagonal response is
+\[
+ (P_2)_{hh}=-3a^2=-\frac3{512},\qquad
+ \sum_{r=1}^3(P_2)_{rr}=3a^2=\frac3{512}.
+\]
+More generally, if the order-one hard--collinear block is $A$, the equation
+$P^2=P$ uniquely forces $(P_2)_{hh}=-AA^T$ and
+$(P_2)_{cc}=A^TA$; the displayed negative term is therefore normalization,
+not an adjustable weight.  A neutral generator passes the finite one-sided BT
+relative-radical criterion, recomputed in the new independent rail.  This is an exact finite
+existence witness at the imported reduced-mode coefficient.  It neither
+derives $K$ from the BT/PS asymptotic Hamiltonian nor constructs a continuum
+dressed projector or physical NLO probability.
+\end{remark}
+
 \paragraph{Where the double pole goes.}
 One structural remark, since it bears on which route is the likelier to extend.
 The obstruction that withdraws the cutting rules at coincident poles is that
@@ -1157,11 +1201,12 @@ hierarchy conjecture's $5{:}1$ prediction is confirmed at fourth order
 confirmed at sixth order (Proposition~\ref{cprop:ordersix}); higher coprime
 loci and the mechanism excluding even mode-2 transfers remain open.
 The ordinary scalar independent-mass route is no longer merely deferred:
-Remark~\ref{rem:btaxis} supplies its first complete
-collinear logarithmic obstruction.  Its successor must change infrared
-architecture explicitly by deriving a distributional extension from the
-generalized Born rule, including degenerate incoming or dressed states, or
-resumming the collinear sector before evaluating the quotient trace.  The
+Remark~\ref{rem:btaxis} supplies its first complete collinear logarithmic
+obstruction.  Remark~\ref{rem:bttransport} shows that coherent projector
+transport passes the finite coefficient and charge preflights.  Its successor
+must now derive the splitting generator from the broken-vacuum BT/PS
+asymptotic Hamiltonian, construct the continuum and incoming degenerate
+sectors, and only then evaluate the quotient trace.  The
 gravitational extension has meanwhile been carried out at tree level in the
 sequel: the exact Einstein--Weyl cubic and quartic vertices, physical
 helicities, and Ward/BRST checks produce a second-order metric obstruction.
@@ -1481,6 +1526,16 @@ ulimit -v 500000; python3 \
   reverse_physics/verify_bt_real_virtual_axis_gluing.py
 ulimit -v 500000; python3 -m unittest -v \
   reverse_physics.tests.test_bt_real_virtual_axis_gluing
+\end{verbatim}
+
+The finite coherent-projector successor is reproduced by
+\begin{verbatim}
+ulimit -v 500000; python3 \
+  reverse_physics/bt_collinear_projector_transport.py --check
+ulimit -v 500000; python3 \
+  reverse_physics/verify_bt_collinear_projector_transport.py
+ulimit -v 500000; python3 -m unittest -v \
+  reverse_physics.tests.test_bt_collinear_projector_transport
 \end{verbatim}
 
 \end{document}

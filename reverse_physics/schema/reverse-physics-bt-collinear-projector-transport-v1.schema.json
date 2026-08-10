@@ -1,0 +1,265 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-collinear-projector-transport-v1.schema.json",
+  "title": "BT coherent collinear projector-transport certificate",
+  "$defs": {
+    "nonempty_string": {"type": "string", "minLength": 1},
+    "string_list": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/nonempty_string"}
+    },
+    "rational": {
+      "type": "object",
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      },
+      "additionalProperties": false
+    },
+    "algebraic": {
+      "type": "object",
+      "required": ["rational", "sqrt2"],
+      "properties": {
+        "rational": {"$ref": "#/$defs/rational"},
+        "sqrt2": {"$ref": "#/$defs/rational"}
+      },
+      "additionalProperties": false
+    },
+    "matrix_entry": {
+      "type": "object",
+      "required": ["row", "column", "value"],
+      "properties": {
+        "row": {"type": "integer", "minimum": 0, "maximum": 3},
+        "column": {"type": "integer", "minimum": 0, "maximum": 3},
+        "value": {"$ref": "#/$defs/algebraic"}
+      },
+      "additionalProperties": false
+    },
+    "matrix": {
+      "type": "array",
+      "maxItems": 16,
+      "items": {"$ref": "#/$defs/matrix_entry"}
+    },
+    "open_object": {"type": "object", "minProperties": 1}
+  },
+  "type": "object",
+  "required": [
+    "certificate",
+    "schema_version",
+    "dependency_tags",
+    "lifecycle_state",
+    "result_kind",
+    "question",
+    "answer",
+    "declared_carrier",
+    "projector_transport",
+    "forced_responses",
+    "uniqueness",
+    "bt_charge_gate",
+    "decisive_mutations",
+    "disposition",
+    "missing_object_ledger",
+    "next_gate",
+    "does_not_establish",
+    "literature_context",
+    "provenance",
+    "verification_commands",
+    "checks",
+    "report",
+    "schema"
+  ],
+  "properties": {
+    "certificate": {
+      "const": "REVERSE_PHYSICS_BT_COLLINEAR_PROJECTOR_TRANSPORT_V1"
+    },
+    "schema_version": {
+      "const": "reverse-physics-bt-collinear-projector-transport-v1"
+    },
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]
+    },
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "result_kind": {"$ref": "#/$defs/nonempty_string"},
+    "question": {"$ref": "#/$defs/nonempty_string"},
+    "answer": {"$ref": "#/$defs/nonempty_string"},
+    "declared_carrier": {
+      "type": "object",
+      "required": [
+        "basis", "coefficient_field", "formal_order",
+        "common_physical_factor", "projector", "metric", "scope"
+      ],
+      "properties": {
+        "basis": {
+          "const": ["hard", "pair_12", "pair_13", "pair_23"]
+        },
+        "coefficient_field": {"const": "Q(sqrt(2))"},
+        "formal_order": {"$ref": "#/$defs/nonempty_string"},
+        "common_physical_factor": {"$ref": "#/$defs/nonempty_string"},
+        "projector": {"$ref": "#/$defs/nonempty_string"},
+        "metric": {"$ref": "#/$defs/nonempty_string"},
+        "scope": {"$ref": "#/$defs/nonempty_string"}
+      },
+      "additionalProperties": false
+    },
+    "projector_transport": {
+      "type": "object",
+      "required": [
+        "mixing_amplitude", "per_pair_gram", "generator_K",
+        "P0", "P1", "P2", "relations"
+      ],
+      "properties": {
+        "mixing_amplitude": {"$ref": "#/$defs/algebraic"},
+        "per_pair_gram": {"$ref": "#/$defs/rational"},
+        "generator_K": {"$ref": "#/$defs/matrix"},
+        "P0": {"$ref": "#/$defs/matrix"},
+        "P1": {"$ref": "#/$defs/matrix"},
+        "P2": {"$ref": "#/$defs/matrix"},
+        "relations": {
+          "type": "object",
+          "required": [
+            "skew_generator", "orthogonal_transport", "idempotence", "trace"
+          ],
+          "properties": {
+            "skew_generator": {"$ref": "#/$defs/nonempty_string"},
+            "orthogonal_transport": {"$ref": "#/$defs/nonempty_string"},
+            "idempotence": {"$ref": "#/$defs/nonempty_string"},
+            "trace": {"$ref": "#/$defs/nonempty_string"}
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "forced_responses": {
+      "type": "object",
+      "required": [
+        "per_pair_real_diagonal", "three_pair_real_diagonal",
+        "hard_normalization_diagonal", "sum", "physical_units",
+        "interpretation"
+      ],
+      "properties": {
+        "per_pair_real_diagonal": {"$ref": "#/$defs/rational"},
+        "three_pair_real_diagonal": {"$ref": "#/$defs/rational"},
+        "hard_normalization_diagonal": {"$ref": "#/$defs/rational"},
+        "sum": {"$ref": "#/$defs/rational"},
+        "physical_units": {"$ref": "#/$defs/nonempty_string"},
+        "interpretation": {"$ref": "#/$defs/nonempty_string"}
+      },
+      "additionalProperties": false
+    },
+    "uniqueness": {
+      "type": "object",
+      "required": ["statement", "hard_block", "collinear_block", "free_block"],
+      "properties": {
+        "statement": {"$ref": "#/$defs/nonempty_string"},
+        "hard_block": {"$ref": "#/$defs/nonempty_string"},
+        "collinear_block": {"$ref": "#/$defs/nonempty_string"},
+        "free_block": {"$ref": "#/$defs/nonempty_string"}
+      },
+      "additionalProperties": false
+    },
+    "bt_charge_gate": {
+      "type": "object",
+      "required": ["generator_total_charge_shift", "result", "reason", "boundary"],
+      "properties": {
+        "generator_total_charge_shift": {"const": 0},
+        "result": {"const": "PRESERVES_ONE_SIDED_NEGATIVE_RELATIVE_RADICAL"},
+        "reason": {"$ref": "#/$defs/nonempty_string"},
+        "boundary": {"$ref": "#/$defs/nonempty_string"}
+      },
+      "additionalProperties": false
+    },
+    "decisive_mutations": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "object",
+        "required": ["mutation", "effect", "rejected"],
+        "properties": {
+          "mutation": {"$ref": "#/$defs/nonempty_string"},
+          "effect": {"$ref": "#/$defs/nonempty_string"},
+          "rejected": {"const": true}
+        },
+        "additionalProperties": false
+      }
+    },
+    "disposition": {"$ref": "#/$defs/open_object"},
+    "missing_object_ledger": {
+      "type": "array",
+      "minItems": 6,
+      "items": {"$ref": "#/$defs/nonempty_string"}
+    },
+    "next_gate": {"$ref": "#/$defs/nonempty_string"},
+    "does_not_establish": {
+      "type": "array",
+      "minItems": 8,
+      "items": {"$ref": "#/$defs/nonempty_string"}
+    },
+    "literature_context": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "object",
+        "required": ["source", "url", "use"],
+        "properties": {
+          "source": {"$ref": "#/$defs/nonempty_string"},
+          "url": {"type": "string", "format": "uri"},
+          "use": {"$ref": "#/$defs/nonempty_string"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["source_commit", "retrieval_date", "inputs"],
+      "properties": {
+        "source_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "retrieval_date": {"const": "2026-08-10"},
+        "inputs": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "object",
+            "required": ["path", "sha256"],
+            "properties": {
+              "path": {"$ref": "#/$defs/nonempty_string"},
+              "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "verification_commands": {
+      "type": "array",
+      "minItems": 3,
+      "items": {"$ref": "#/$defs/nonempty_string"}
+    },
+    "checks": {
+      "type": "object",
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"type": "integer", "minimum": 1},
+        "total": {"type": "integer", "minimum": 1},
+        "failures": {"const": []},
+        "details": {
+          "type": "object",
+          "minProperties": 15,
+          "additionalProperties": {"const": true}
+        }
+      },
+      "additionalProperties": false
+    },
+    "report": {
+      "const": "reverse_physics/reports/bt-collinear-projector-transport.md"
+    },
+    "schema": {
+      "const": "reverse_physics/schema/reverse-physics-bt-collinear-projector-transport-v1.schema.json"
+    }
+  },
+  "additionalProperties": false
+}

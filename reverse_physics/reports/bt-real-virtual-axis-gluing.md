@@ -286,6 +286,15 @@ final-state collinear logarithmic response.
 
 EVIDENCE: `reverse_physics/certificates/REVERSE_PHYSICS_BT_REAL_VIRTUAL_AXIS_GLUING_V1.json`
 
+SUCCESSOR CHECKPOINT (2026-08-10):
+[`REVERSE_PHYSICS_BT_COLLINEAR_PROJECTOR_TRANSPORT_V1`](../certificates/REVERSE_PHYSICS_BT_COLLINEAR_PROJECTOR_TRANSPORT_V1.json)
+changes architecture explicitly.  On a finite coherent hard--collinear carrier,
+projector idempotence forces a `-3/512` hard normalization against the three
+`+1/512` pair-channel Gram terms.  This removes the finite algebraic
+normalization obstruction while leaving the asymptotic-Hamiltonian derivation,
+continuum dressed projector, and physical NLO probability open.  It does not
+reopen or weaken the axis-compatible mass-regulator no-go proved here.
+
 NEXT: change infrared architecture before attempting the quotient-trace
 positivity test.
 
