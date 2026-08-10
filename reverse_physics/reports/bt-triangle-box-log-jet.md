@@ -342,3 +342,14 @@ EVIDENCE: `reverse_physics/certificates/REVERSE_PHYSICS_BT_TRIANGLE_BOX_LOG_JET_
 
 MISSING-DEP: common-prescription external four-mass phase-space projection of
 the surviving `15*(Ls+Lt+Lu)` ratio logarithm
+
+## Successor update (2026-08-10)
+
+[`REVERSE_PHYSICS_BT_EXTERNAL_PROJECTOR_CARRIER_MISMATCH_V1`](../certificates/REVERSE_PHYSICS_BT_EXTERNAL_PROJECTOR_CARRIER_MISMATCH_V1.json)
+has now applied the external projector.  It gives
+`d_sigma_virtual_log/d_Omega = 5*lambda^6*(Ls+Lt+Lu)/(256*pi^4*s)`.
+The surviving `ell=log(-t/s)` is a hard Mandelstam-ratio logarithm, not the
+real threshold's external-mass ratio `log(x1/x0)`.  The computed hard virtual
+term has zero response to rescaling `x1/x0`, so the next gate is a nonanalytic
+virtual external-mass boundary layer rather than another analytic phase-space
+projection.  Full real--virtual cancellation remains uncomputed.

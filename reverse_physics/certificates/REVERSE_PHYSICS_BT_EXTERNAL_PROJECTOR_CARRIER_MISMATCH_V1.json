@@ -1,0 +1,117 @@
+{
+  "answer": "The external projector is exact and gives 5*lambda^6*(Ls+Lt+Lu)/(256*pi^4*s). It does not decide the real--virtual cancellation: its logs depend on hard Mandelstam ratios and have zero response to rescaling x1/x0, while the real threshold shifts by -(3/8)*log(c). The missing object is a nonanalytic virtual external-mass boundary layer.",
+  "boundary_layer_diagnosis": {
+    "missing_virtual_region": "triangle and box loop momentum regions nonuniform as one or more external virtualities approach the collinear boundary",
+    "next_gate": "compute a region-resolved triangle/box external-mass boundary jet under the same ratio prescription as the real threshold, then assemble full real phase space and renormalized virtual terms",
+    "required_function_class": "nonanalytic external-mass terms, including possible x_i*x_j*log(x_i/x_j) contributions before the fourfold projector",
+    "why_predecessor_cannot_see_it": "the predecessor used an ordinary square-free Taylor jet in the hard region s*t*(s+t)!=0 and retained logs of channel invariants"
+  },
+  "carrier_response": {
+    "comparison": "NONCANCELLING_ON_CURRENT_CARRIERS",
+    "interpretation": "This is not evidence that the completed BT observable fails to cancel. It proves that the computed hard-region virtual jet is not the virtual carrier that could perform that cancellation.",
+    "real_finite_part_shift": "-(3/8)*log(c)",
+    "real_reduced_threshold_term": "-(3/8)*x0*x1*log(rho)",
+    "rescaling": "rho=x1/x0 -> c*rho with hard s,t,u,mu fixed",
+    "virtual_hard_log_response": "0"
+  },
+  "certificate": "REVERSE_PHYSICS_BT_EXTERNAL_PROJECTOR_CARRIER_MISMATCH_V1",
+  "checks": {
+    "details": {
+      "boundary_region_remains_missing": true,
+      "degree_four_projector_uses_only_phase_constant": true,
+      "external_projector_applied_only_to_hard_log_sector": true,
+      "hard_log_has_zero_mass_ratio_response": true,
+      "interference_weight_is_sixteen_thirds": true,
+      "lower_degree_mutation_activates_phase_derivative": true,
+      "massless_phase_denominator_is_256_pi2_s": true,
+      "no_lorentzian_claim": true,
+      "no_physical_nlo_promotion": true,
+      "physical_log_coefficient_is_five_over_256": true,
+      "predecessor_topology_coefficient_is_fifteen": true,
+      "real_threshold_response_is_minus_three_eighths": true,
+      "responses_do_not_cancel": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 13,
+    "total": 13
+  },
+  "declared_carriers": {
+    "comparison_map": "hold hard s,t,u and mu fixed while rescaling the regulator ratio rho=x1/x0 to c*rho",
+    "real_threshold": "pair masses x0=epsilon and x1=rho*epsilon at a shrinking two-particle threshold, after three spectator derivatives",
+    "virtual_hard": "fixed nonzero hard s,t,u with square-free external masses; Ls=log(mu^2/s), Lt=log(mu^2/(-t)), Lu=log(mu^2/(-u))"
+  },
+  "dependency_tags": [
+    "REDUCED-MODE"
+  ],
+  "disposition": {
+    "beyond_tree_positivity": "NOT_ESTABLISHED",
+    "cut_free_and_counterterm_terms": "NOT_COMPUTED",
+    "full_real_phase_space_normalization": "NOT_COMPUTED",
+    "hard_log_external_projector": "APPLIED",
+    "hard_log_physical_coefficient": "COMPUTED",
+    "hard_vs_real_carrier_comparison": "CLASSIFIED_MISMATCH",
+    "physical_nlo_probability": "NOT_ESTABLISHED",
+    "real_virtual_cancellation": "NOT_COMPUTED",
+    "virtual_external_mass_boundary_layer": "NOT_COMPUTED"
+  },
+  "does_not_establish": [
+    "real--virtual cancellation or noncancellation in the completed observable",
+    "a physical NLO cross section, probability, or asymptotic-state construction",
+    "the coefficient of a virtual external-mass ratio logarithm",
+    "a full five-point phase-space normalization",
+    "a KLN theorem, resummation, or dressed-state construction",
+    "scheme independence of the off-shell finite part",
+    "positivity or unitarity beyond the published tree result",
+    "a tensor, BRST, or gravitational lift",
+    "anything LORENTZIAN-CAUSAL",
+    "literature priority for the carrier distinction"
+  ],
+  "external_projector": {
+    "amplitude_interference": "lambda^6/(4*pi)^2*(16/3)*15*(Ls+Lt+Lu)",
+    "bt_rate_formula": "d_sigma/d_Omega=partial_x1...partial_x4[|p|*|M|^2/((16*pi)^2*|q|*s)] at x_i=0",
+    "degree_consequence": "their interference starts at degree 4, so derivatives of any analytic phase density or analytic mass-dependent kinematic pullback cannot contribute to the fourfold top slot",
+    "degree_input": "Mtree_red starts at mass degree 2 and the complete cut-constructible logarithmic loop amplitude starts at degree 2",
+    "hard_collinear_form": "5*lambda^6*(3*L-ell)/(256*pi^4*s)+O(t/s), where ell=log(-t/s)",
+    "massless_phase_value": "1/(256*pi^2*s)",
+    "projected_virtual_log_rate": "d_sigma_virtual_log/d_Omega=5*lambda^6*(Ls+Lt+Lu)/(256*pi^4*s)"
+  },
+  "lifecycle_state": "COEFFICIENT_COMPUTED",
+  "missing_object_ledger": [
+    "the nonanalytic external-mass boundary regions of the virtual triangle and box integrals",
+    "a common real--virtual regulator and subtraction prescription",
+    "the full five-point phase-space projector, including all collinear pair boundaries",
+    "renormalized cut-free rational, bubble, counterterm, and lower-point insertion terms",
+    "a scheme-invariance or physical normalization condition for the projected finite part",
+    "a complete inclusive NLO process map and quotient-trace evaluation"
+  ],
+  "provenance": {
+    "inputs": [
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_TRIANGLE_BOX_LOG_JET_V1.json",
+        "sha256": "4bfa9c3c0968e89c7f29de3ac74d0a197d419dfd50519757948fbf6467914e71"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_FIVE_POINT_INDEPENDENT_MASS_THRESHOLD_V1.json",
+        "sha256": "e6b1872ca0fbcd6a51ccd8a44b018678678dc0121ede855911a8006b7af2a4a2"
+      }
+    ],
+    "primary_source": {
+      "equation": "Eq. (13)",
+      "source": "Bateman--Turok arXiv:2607.00096v1",
+      "use": "four-external-mass differential cross-section projector"
+    },
+    "retrieval_date": "2026-08-10",
+    "source_commit": "8ad343172f01dbf055b9fce83900780dfe2266f0"
+  },
+  "question": "Does the external BT phase-space projector turn the complete hard-region virtual logarithm into the term needed to cancel the five-point independent-mass threshold ambiguity?",
+  "report": "reverse_physics/reports/bt-external-projector-carrier-mismatch.md",
+  "result_kind": "external four-mass projection and real--virtual infrared-carrier classification",
+  "schema": "reverse_physics/schema/reverse-physics-bt-external-projector-carrier-mismatch-v1.schema.json",
+  "schema_version": "reverse-physics-bt-external-projector-carrier-mismatch-v1",
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_external_projector_carrier_mismatch.py --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_external_projector_carrier_mismatch.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_external_projector_carrier_mismatch"
+  ]
+}

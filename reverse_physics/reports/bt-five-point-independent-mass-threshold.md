@@ -246,3 +246,15 @@ proves that those RG data and the published on-shell cuts do not determine the
 finite independent-external-mass top jet.  Thus the missing dependency is now
 the explicit finite bubble, triangle, and box interference jet, not UV
 renormalizability of the one-coupling locus.
+
+## External-projector successor update (2026-08-10)
+
+The complete cut-constructible hard-region loop jet has now been passed through
+Bateman--Turok's four-leg phase projector in
+[`REVERSE_PHYSICS_BT_EXTERNAL_PROJECTOR_CARRIER_MISMATCH_V1`](../certificates/REVERSE_PHYSICS_BT_EXTERNAL_PROJECTOR_CARRIER_MISMATCH_V1.json).
+Its logarithm is `log(-t/s)`, a hard Mandelstam ratio, and is invariant under
+the mass-ratio rescaling that shifts the real finite part by `-(3/8)log(c)`.
+It therefore cannot supply the missing cancellation on its current carrier.
+This does not establish noncancellation of the completed observable: the
+remaining virtual dependency is specifically the nonanalytic external-mass
+boundary layer of the triangle and box integrals.
