@@ -1,0 +1,146 @@
+{
+  "answer": "No on the declared class. The exact real kernel is independent of splitting fraction and outer angle. After the BT sign, inner angle, and all three identical final-pair regions, its finite-part shift is +3*lambda^6*log(c)/(512*pi^4*s). Every axis-compatible parent map, including the physical threshold, gives zero constant virtual response as one daughter regulator is removed. The logarithmic responses therefore do not cancel.",
+  "axis_compatibility_theorem": {
+    "analytic_example": "g(r)=1+r",
+    "decisive_mutation": "G_mut=x^(11/12)*y^(1/12) gives virtual shift -lambda^6*log(c)/(512*pi^4*s) per pair, but G_mut(x,0)=0; it engineers cancellation only by failing the axis gate.",
+    "physical_example": "g(r)=(1+sqrt(r))^2",
+    "statement": "For G=x*g(r) with g continuous at zero and finite nonzero g(0), fixed-c ratio rescaling has G(x,c*r*x)/G(x,r*x)->1. Hence every virtual log(G), every continuous cut-free term, and every local analytic counterterm has zero constant response, while the real finite part has the nonzero response recorded above."
+  },
+  "certificate": "REVERSE_PHYSICS_BT_REAL_VIRTUAL_AXIS_GLUING_V1",
+  "checks": {
+    "details": {
+      "all_pair_response_is_three_over_512": true,
+      "amplitude_leading_order_two_nonzero": true,
+      "amplitude_orders_zero_one_cancel": true,
+      "beyond_tree_positivity_stays_open": true,
+      "bt_five_leg_sign_is_negative": true,
+      "claim_stays_reduced_mode": true,
+      "engineered_cancellation_coefficient": true,
+      "engineered_map_rejected_by_axis_gate": true,
+      "inner_angle_gives_one_over_192": true,
+      "linear_axis_map_response_zero": true,
+      "no_lorentzian_claim": true,
+      "outer_ratio_cancels": true,
+      "per_pair_response_is_one_over_512": true,
+      "phase_before_inner_angle_is_one_over_768": true,
+      "physical_nlo_probability_stays_open": true,
+      "physical_threshold_map_axis_response_zero": true,
+      "predecessor_hashes_pinned": true,
+      "spectator_projected_kernel_identity": true,
+      "splitting_fraction_cancels": true,
+      "three_identical_final_pairs": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 20,
+    "total": 20
+  },
+  "declared_carrier": {
+    "mass_corner": "x0=x, x1=r*x with r->0 after three exact spectator derivatives",
+    "observable": "differential in the nonsingular outer two-body solid angle",
+    "order": "lambda^6 final-state collinear real plus one-loop virtual logarithmic response",
+    "real_regions": "all three unordered pairs of three identical final particles",
+    "regulator_class": "G(x,y)=x*g(y/x), with g continuous at zero and finite nonzero g(0); spectators fixed. Equivalently G(x,c*y)/G(x,y)->1 for every fixed c>0 as y/x->0.",
+    "scope": "the complete logarithmic normalization response on this final-state collinear carrier; not the full NLO quotient trace"
+  },
+  "dependency_tags": [
+    "REDUCED-MODE"
+  ],
+  "disposition": {
+    "axis_compatible_regulator_gluing": "CLASSIFIED",
+    "beyond_tree_positivity": "NOT_ESTABLISHED",
+    "full_nlo_quotient_trace": "NOT_COMPUTED",
+    "general_real_collinear_kernel": "COMPUTED",
+    "identical_final_pair_sum": "COMPUTED",
+    "inner_splitting_angle_integral": "COMPUTED",
+    "logarithmic_real_virtual_cancellation": "EXACT_OBSTRUCTION",
+    "ordinary_five_mass_bt_projector": "DOES_NOT_EXIST_ON_DECLARED_CARRIER",
+    "physical_nlo_probability": "NOT_ESTABLISHED"
+  },
+  "does_not_establish": [
+    "that every possible regulator or distributional extension fails",
+    "that dressed-state or enlarged-degenerate-state cancellation fails",
+    "a complete NLO cross section or probability",
+    "positivity or unitarity beyond Bateman--Turok's tree theorem",
+    "a contradiction in the generalized Born rule",
+    "a Lorentzian off-shell BV propagator or Hadamard state",
+    "a tensor, BRST, or Weyl-gravity theorem",
+    "anything LORENTZIAN-CAUSAL",
+    "literature priority for the coefficient or obstruction"
+  ],
+  "lifecycle_state": "COEFFICIENT_COMPUTED",
+  "missing_object_ledger": [
+    "a non-axis-compatible or distributional prescription with an independently justified physical normalization",
+    "initial-state degenerate sums or dressed incoming states",
+    "the renormalized complete NLO quotient trace in the O(1,1) image",
+    "a proof that the negative-charge radical remains null after that physical inclusive map",
+    "resummation of the collinear asymptotic-state sector",
+    "any tensor/BRST gravitational lift importing certified classical data"
+  ],
+  "next_gate": "The ordinary independent-mass, axis-compatible off-shell regulator line stops here. A successor must change architecture explicitly: construct a distributional normalization from the generalized Born rule, include degenerate incoming/dressed states, or resum the collinear sector before testing the quotient trace.",
+  "phase_and_combinatorics": {
+    "common_three_pair_shift": "+3*lambda^6*log(c)/(512*pi^4*s)",
+    "delta_prime_sign": "(-1)^5=-1",
+    "factorization": "dPhi3=dt/(2*pi)*dPhi2_outer*dPhi2_inner",
+    "identical_weight": "1/(2!*3!)=1/12",
+    "inner_angle": "integral dOmega_inner=4*pi",
+    "per_labeled_pair_prefactor": "-lambda^6/(192*pi^4*s)",
+    "per_pair_finite_part_shift": "+lambda^6*log(c_pair)/(512*pi^4*s)",
+    "two_body_density": "dPhi2/dOmega=sqrt(Kallen)/(32*pi^2*P^2)",
+    "unordered_final_pairs": 3
+  },
+  "provenance": {
+    "inputs": [
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_FIVE_POINT_INDEPENDENT_MASS_THRESHOLD_V1.json",
+        "sha256": "e6b1872ca0fbcd6a51ccd8a44b018678678dc0121ede855911a8006b7af2a4a2"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EXTERNAL_PROJECTOR_CARRIER_MISMATCH_V1.json",
+        "sha256": "d3fdf83a77556906259acc798abd9b07958d2f328c7f422d31465f5f7c45562b"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EXTERNAL_MASS_BOUNDARY_LOG_JET_V1.json",
+        "sha256": "4c6cd4a385a01c93fc8166d55caf5d03603bd0ea24484f78824500024d0e648e"
+      }
+    ],
+    "primary_source": {
+      "equations": [
+        "Eq. (13)",
+        "Eq. (18)",
+        "Appendix B Eqs. (B1)-(B3)"
+      ],
+      "source": "Bateman--Turok arXiv:2607.00096v1",
+      "use": "delta-prime sign, n-particle factorial, and PS vertices"
+    },
+    "retrieval_date": "2026-08-10",
+    "source_commit": "81f39db6ad02a19d96922f28b3611b14f91ed5f6"
+  },
+  "question": "Does the complete real final-pair mass-ratio response cancel the one-loop virtual external-mass logarithm under a physical parent/daughter regulator gluing?",
+  "real_kernel": {
+    "five_point_normalization": "A5=M5/(8*lambda^3)=delta^2*C+O(delta^3)",
+    "outer_ratio": "chi=-T/S cancels identically",
+    "reduced_finite_part": "FP_c=-1/8-(3/8)*log(c)",
+    "spectator_projection": "[a2*a3*a4]C^2=3*(a0-a1)^2*((a0-a1)^2-2*tau*(a0+a1))/(8*tau^3)",
+    "splitting_fraction": "zeta cancels identically",
+    "threshold_function": "H(r)=(-5*r^3+3*r^2-3*r+5+6*r*(r+1)*log(r))/(16*(r-1))"
+  },
+  "report": "reverse_physics/reports/bt-real-virtual-axis-gluing.md",
+  "result_kind": "complete final-state collinear logarithmic response on the axis-compatible parent/daughter regulator class",
+  "schema": "reverse_physics/schema/reverse-physics-bt-real-virtual-axis-gluing-v1.schema.json",
+  "schema_version": "reverse-physics-bt-real-virtual-axis-gluing-v1",
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_real_virtual_axis_gluing.py --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_real_virtual_axis_gluing.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_real_virtual_axis_gluing"
+  ],
+  "virtual_comparison": {
+    "axis_compatible_parent_response": "lim_(r->0) log(G(x,c*r*x)/G(x,r*x))=0",
+    "combined_response": "+3*lambda^6*log(c)/(512*pi^4*s)",
+    "disposition": "DOES_NOT_CANCEL_ON_AXIS_COMPATIBLE_GLUINGS",
+    "external_boundary_rate": "d_sigma_virtual_boundary/dOmega=3*lambda^6*sum_i log(-mu^2/X_i)/(128*pi^4*s)",
+    "hard_log_response": "zero under daughter mass-ratio rescaling",
+    "physical_threshold_map": "G_thr(x,y)=(sqrt(x)+sqrt(y))^2",
+    "physical_threshold_ratio": "G_thr(x,c*y)/G_thr(x,y)=(1+sqrt(c*r))^2/(1+sqrt(r))^2 -> 1"
+  }
+}

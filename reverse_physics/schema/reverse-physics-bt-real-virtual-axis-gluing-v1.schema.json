@@ -1,0 +1,158 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-real-virtual-axis-gluing-v1.schema.json",
+  "title": "BT real kernel and axis-compatible regulator gluing",
+  "$defs": {
+    "string": {"type": "string", "minLength": 1},
+    "strings": {"type": "array", "items": {"$ref": "#/$defs/string"}},
+    "input": {
+      "type": "object",
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {"$ref": "#/$defs/string"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      },
+      "additionalProperties": false
+    }
+  },
+  "type": "object",
+  "required": [
+    "certificate", "schema_version", "dependency_tags", "lifecycle_state",
+    "result_kind", "question", "answer", "declared_carrier", "real_kernel",
+    "phase_and_combinatorics", "virtual_comparison",
+    "axis_compatibility_theorem", "disposition", "missing_object_ledger",
+    "does_not_establish", "next_gate", "provenance", "verification_commands",
+    "checks", "report", "schema"
+  ],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_REAL_VIRTUAL_AXIS_GLUING_V1"},
+    "schema_version": {"const": "reverse-physics-bt-real-virtual-axis-gluing-v1"},
+    "dependency_tags": {"const": ["REDUCED-MODE"]},
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "result_kind": {"$ref": "#/$defs/string"},
+    "question": {"$ref": "#/$defs/string"},
+    "answer": {"$ref": "#/$defs/string"},
+    "declared_carrier": {
+      "type": "object",
+      "required": ["order", "observable", "real_regions", "mass_corner", "regulator_class", "scope"],
+      "properties": {
+        "order": {"$ref": "#/$defs/string"},
+        "observable": {"$ref": "#/$defs/string"},
+        "real_regions": {"$ref": "#/$defs/string"},
+        "mass_corner": {"$ref": "#/$defs/string"},
+        "regulator_class": {"$ref": "#/$defs/string"},
+        "scope": {"$ref": "#/$defs/string"}
+      },
+      "additionalProperties": false
+    },
+    "real_kernel": {
+      "type": "object",
+      "required": ["five_point_normalization", "spectator_projection", "splitting_fraction", "outer_ratio", "threshold_function", "reduced_finite_part"],
+      "properties": {
+        "five_point_normalization": {"const": "A5=M5/(8*lambda^3)=delta^2*C+O(delta^3)"},
+        "spectator_projection": {"const": "[a2*a3*a4]C^2=3*(a0-a1)^2*((a0-a1)^2-2*tau*(a0+a1))/(8*tau^3)"},
+        "splitting_fraction": {"const": "zeta cancels identically"},
+        "outer_ratio": {"const": "chi=-T/S cancels identically"},
+        "threshold_function": {"$ref": "#/$defs/string"},
+        "reduced_finite_part": {"const": "FP_c=-1/8-(3/8)*log(c)"}
+      },
+      "additionalProperties": false
+    },
+    "phase_and_combinatorics": {
+      "type": "object",
+      "required": ["factorization", "two_body_density", "identical_weight", "delta_prime_sign", "inner_angle", "per_labeled_pair_prefactor", "unordered_final_pairs", "per_pair_finite_part_shift", "common_three_pair_shift"],
+      "properties": {
+        "factorization": {"const": "dPhi3=dt/(2*pi)*dPhi2_outer*dPhi2_inner"},
+        "two_body_density": {"const": "dPhi2/dOmega=sqrt(Kallen)/(32*pi^2*P^2)"},
+        "identical_weight": {"const": "1/(2!*3!)=1/12"},
+        "delta_prime_sign": {"const": "(-1)^5=-1"},
+        "inner_angle": {"const": "integral dOmega_inner=4*pi"},
+        "per_labeled_pair_prefactor": {"const": "-lambda^6/(192*pi^4*s)"},
+        "unordered_final_pairs": {"const": 3},
+        "per_pair_finite_part_shift": {"const": "+lambda^6*log(c_pair)/(512*pi^4*s)"},
+        "common_three_pair_shift": {"const": "+3*lambda^6*log(c)/(512*pi^4*s)"}
+      },
+      "additionalProperties": false
+    },
+    "virtual_comparison": {
+      "type": "object",
+      "required": ["external_boundary_rate", "hard_log_response", "axis_compatible_parent_response", "physical_threshold_map", "physical_threshold_ratio", "combined_response", "disposition"],
+      "properties": {
+        "external_boundary_rate": {"$ref": "#/$defs/string"},
+        "hard_log_response": {"const": "zero under daughter mass-ratio rescaling"},
+        "axis_compatible_parent_response": {"const": "lim_(r->0) log(G(x,c*r*x)/G(x,r*x))=0"},
+        "physical_threshold_map": {"const": "G_thr(x,y)=(sqrt(x)+sqrt(y))^2"},
+        "physical_threshold_ratio": {"$ref": "#/$defs/string"},
+        "combined_response": {"const": "+3*lambda^6*log(c)/(512*pi^4*s)"},
+        "disposition": {"const": "DOES_NOT_CANCEL_ON_AXIS_COMPATIBLE_GLUINGS"}
+      },
+      "additionalProperties": false
+    },
+    "axis_compatibility_theorem": {
+      "type": "object",
+      "required": ["statement", "physical_example", "analytic_example", "decisive_mutation"],
+      "properties": {
+        "statement": {"$ref": "#/$defs/string"},
+        "physical_example": {"const": "g(r)=(1+sqrt(r))^2"},
+        "analytic_example": {"const": "g(r)=1+r"},
+        "decisive_mutation": {"$ref": "#/$defs/string"}
+      },
+      "additionalProperties": false
+    },
+    "disposition": {
+      "type": "object",
+      "required": ["general_real_collinear_kernel", "inner_splitting_angle_integral", "identical_final_pair_sum", "axis_compatible_regulator_gluing", "logarithmic_real_virtual_cancellation", "ordinary_five_mass_bt_projector", "full_nlo_quotient_trace", "physical_nlo_probability", "beyond_tree_positivity"],
+      "properties": {
+        "general_real_collinear_kernel": {"const": "COMPUTED"},
+        "inner_splitting_angle_integral": {"const": "COMPUTED"},
+        "identical_final_pair_sum": {"const": "COMPUTED"},
+        "axis_compatible_regulator_gluing": {"const": "CLASSIFIED"},
+        "logarithmic_real_virtual_cancellation": {"const": "EXACT_OBSTRUCTION"},
+        "ordinary_five_mass_bt_projector": {"const": "DOES_NOT_EXIST_ON_DECLARED_CARRIER"},
+        "full_nlo_quotient_trace": {"const": "NOT_COMPUTED"},
+        "physical_nlo_probability": {"const": "NOT_ESTABLISHED"},
+        "beyond_tree_positivity": {"const": "NOT_ESTABLISHED"}
+      },
+      "additionalProperties": false
+    },
+    "missing_object_ledger": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"$ref": "#/$defs/string"}},
+    "does_not_establish": {"type": "array", "minItems": 9, "maxItems": 9, "items": {"$ref": "#/$defs/string"}},
+    "next_gate": {"$ref": "#/$defs/string"},
+    "provenance": {
+      "type": "object",
+      "required": ["source_commit", "retrieval_date", "inputs", "primary_source"],
+      "properties": {
+        "source_commit": {"const": "81f39db6ad02a19d96922f28b3611b14f91ed5f6"},
+        "retrieval_date": {"const": "2026-08-10"},
+        "inputs": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/input"}},
+        "primary_source": {
+          "type": "object",
+          "required": ["source", "equations", "use"],
+          "properties": {
+            "source": {"const": "Bateman--Turok arXiv:2607.00096v1"},
+            "equations": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/string"}},
+            "use": {"$ref": "#/$defs/string"}
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/string"}},
+    "checks": {
+      "type": "object",
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"const": 20},
+        "total": {"const": 20},
+        "failures": {"type": "array", "maxItems": 0},
+        "details": {"type": "object", "minProperties": 20, "maxProperties": 20, "additionalProperties": {"const": true}}
+      },
+      "additionalProperties": false
+    },
+    "report": {"const": "reverse_physics/reports/bt-real-virtual-axis-gluing.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-real-virtual-axis-gluing-v1.schema.json"}
+  },
+  "additionalProperties": false
+}

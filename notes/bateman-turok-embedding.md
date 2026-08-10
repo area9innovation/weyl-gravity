@@ -281,13 +281,38 @@ the tree-only positivity boundary above:
    definition of a common regulator map from the virtual recombined parent
    mass to the two real daughter masses, together with the full real
    splitting-fraction/inner-angle integral and identical-particle sum.
+5. `REVERSE_PHYSICS_BT_REAL_VIRTUAL_AXIS_GLUING_V1` (`REDUCED-MODE`,
+   `COEFFICIENT_COMPUTED`) performs that comparison on the ordinary
+   axis-compatible regulator class.  In the complete five-point square the
+   spectator-projected real kernel is exactly independent of both splitting
+   fraction and outer ratio, so the inner solid angle is `4*pi`.  Restoring
+   the five-delta-prime sign `(-1)^5`, the `1/(2!*3!)` projector weight,
+   factorized three-body phase space, and the three unordered final-pair
+   regions gives
 
-Both the hard logarithm and the nonanalytic virtual external-mass boundary
-layer have now been passed through the external projector.  The full real
-splitting kernel, four-to-five-leg regulator gluing, cut-free finite rational
-terms, common real--virtual prescription, KLN cancellation, and positivity
-beyond tree level remain open.  None of these scalar results is a tensor/BRST
-or `LORENTZIAN-CAUSAL` gravity result.
+   $$\Delta_c\frac{d\sigma_{\rm real}}{d\Omega}
+   =\frac{3\lambda^6}{512\pi^4s}\log c.$$
+
+   For every parent map `G(x,y)=x*g(y/x)` with `g` continuous at zero and finite nonzero `g(0)`, including
+   the physical threshold `G=(sqrt(x)+sqrt(y))^2`, one has
+   `G(x,c*y)/G(x,y) -> 1` as `y/x -> 0`.  The complete virtual external-mass
+   logarithm therefore has zero constant daughter-ratio response and cannot
+   cancel the displayed real shift.  A deliberately non-axis-compatible map
+   `x^(11/12)*y^(1/12)` can engineer per-pair cancellation, which makes the
+   scope sharp: the result stops the ordinary independent-mass prescription,
+   not distributional, dressed-state, enlarged-degenerate-state, or resummed
+   architectures.
+
+Both virtual logarithmic carriers and the complete real final-pair
+normalization response have now been passed through their external projectors.
+Their responses do not cancel under physical axis-compatible recombination.
+The remaining project is therefore architectural rather than another ordinary
+mass-regulated loop integral: define a distributional normalization from the
+generalized Born rule, include degenerate incoming/dressed states, or resum the
+collinear sector before testing the quotient trace.  The full NLO quotient
+trace, physical KLN construction, and positivity beyond tree level remain
+open.  None of these scalar results is a tensor/BRST or
+`LORENTZIAN-CAUSAL` gravity result.
 
 ---
 

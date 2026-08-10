@@ -346,3 +346,15 @@ EVIDENCE: `reverse_physics/certificates/REVERSE_PHYSICS_BT_EXTERNAL_MASS_BOUNDAR
 
 MISSING-DEP: splitting-fraction-dependent real kernel plus an explicit common
 parent/daughter regulator prescription
+
+## Successor close-out (2026-08-10)
+
+That gate is now resolved on the ordinary axis-compatible regulator class by
+[`REVERSE_PHYSICS_BT_REAL_VIRTUAL_AXIS_GLUING_V1`](../certificates/REVERSE_PHYSICS_BT_REAL_VIRTUAL_AXIS_GLUING_V1.json).
+The full real kernel is independent of splitting fraction and outer ratio;
+after its inner-angle and identical-pair sum, its normalization shifts by
+`+3*lambda^6*log(c)/(512*pi^4*s)`.  Every physical axis-compatible parent map,
+including the pair threshold, gives zero constant virtual response.  Thus the
+logarithmic terms do not cancel on that declared class.  Distributional,
+dressed-state, enlarged-degenerate-state, and resummed architectures remain
+open.

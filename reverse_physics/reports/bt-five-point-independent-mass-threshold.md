@@ -258,3 +258,16 @@ It therefore cannot supply the missing cancellation on its current carrier.
 This does not establish noncancellation of the completed observable: the
 remaining virtual dependency is specifically the nonanalytic external-mass
 boundary layer of the triangle and box integrals.
+
+## Real--virtual gluing close-out (2026-08-10)
+
+The nonanalytic virtual layer, full real splitting kernel, inner-angle factor,
+identical-pair sum, and physical regulator comparison are now combined in
+[`REVERSE_PHYSICS_BT_REAL_VIRTUAL_AXIS_GLUING_V1`](../certificates/REVERSE_PHYSICS_BT_REAL_VIRTUAL_AXIS_GLUING_V1.json).
+The real finite-part normalization response is
+`+3*lambda^6*log(c)/(512*pi^4*s)`, while every axis-compatible recombined
+parent mass—including the physical pair threshold—has zero constant response
+to the daughter-ratio rescaling.  The ordinary independent-mass prescription
+therefore has an exact scoped noncancellation obstruction.  This does not rule
+out distributional extensions, degenerate incoming/dressed states, or
+resummation.
