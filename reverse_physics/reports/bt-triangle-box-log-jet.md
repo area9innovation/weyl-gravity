@@ -213,7 +213,7 @@ The apparent denominator cancels, leaving exactly
 Restoring normalization, each topology contributes
 
 \[
- [x_1x_2x_3x_4],2\operatorname{Re}
+ [x_1x_2x_3x_4]\,2\operatorname{Re}
  (M_{\rm tree}^*M_{{\rm loop,top,log}})
  =\frac{\lambda^6}{(4\pi)^2}\frac{16}{3}J_{\rm top}.
 \]
