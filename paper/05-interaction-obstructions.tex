@@ -2114,9 +2114,41 @@ the physical pair Gram has rank two.  Certificate
 \allowbreak\texttt{PHYSICAL\_INTERTWINER\_V1}
 \par\noindent
 records the independent polar, translation, rate, and rank checks.  It
-physically affiliates the first three edge marks only.  The 72 higher marks
-still lack nested continuum columns, so the next physical gate is the
-six-point nested direct integral rather than a scalar fourth-rate calculation.
+physically affiliates the first three edge marks.  At six points the positive
+quotient eigenvalue supplies the next physical measure rather than merely a
+rate.  With $r=a_1/a_0$, $w=\tau_1/a_0$,
+$\Delta_r=\sqrt{\lambda(w,1,r)}$, and
+\[
+ q=\frac{2w(1+r)-(1-r)^2}{2w^2},
+ \qquad \lambda_6=a_2q,
+\]
+define
+\[
+ d\sigma_r=\frac{\lambda_6}{a_2(1+r)}d\mu_r
+ =\frac{q\Delta_r}{(1+r)w}\,dw.
+\]
+This density is positive above threshold, invariant under daughter exchange,
+and tends to $d\log w$ at infinity.  An exact rationalized primitive proves
+that $\sigma_r$ maps the threshold ray bijectively onto $\mathbb R_+$.  If
+$E_6=N_+/\sqrt{6qv}$ is the normalized image of the four-component
+parent/profile quotient, then
+\[
+ (B_rf)(w)=
+ \sqrt{\frac{\lambda_6}{a_2(1+r)}}E_6(r,w)f(\sigma_r(w))
+\]
+is unitary onto its physical direct integral.  Composing it with the first
+Abel column gives an isometry from the ordered two-noise carrier and affiliates
+all twelve second-level edge marks.  The exact rates obey
+$q_0q_1=(1/48)(5/64)=5/3072$; the ordered simplex and twelve histories give
+$5a^2/512$.  Certificate
+\par\noindent
+\texttt{REVERSE\_PHYSICS\_BT\_SIX\_POINT\_NESTED\_}
+\allowbreak\texttt{CONTINUUM\_INTERTWINER\_V1}
+\par\noindent
+records the quotient, primitive, exchange, dense-domain, shift, and channel
+checks.  Together the two continuum constructions physically affiliate marks
+$0$ through $14$.  The sixty third-level marks still require the analogous
+seven-point nested column.
 Resolution locality is not spacetime locality.
 \end{remark}
 

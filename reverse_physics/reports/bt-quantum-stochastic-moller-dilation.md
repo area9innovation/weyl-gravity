@@ -263,8 +263,10 @@ a pass.
 The successor certificate
 `REVERSE_PHYSICS_BT_ABEL_FOCK_PHYSICAL_INTERTWINER_V1` constructs the exact
 first-emission physical range intertwiner into the correctly typed correlated
-system--noise sector.  It also proves that only marks 0, 1, and 2 presently
-have physical continuum columns.  The next physical gate is therefore the
-nested six-point direct-integral column for the 12 second-level edges, before
-an eight-point fourth-rate calculation.  Neither result by itself is evidence
-for Eq. (19) or a Lorentzian S matrix.
+system--noise sector.  The subsequent certificate
+`REVERSE_PHYSICS_BT_SIX_POINT_NESTED_CONTINUUM_INTERTWINER_V1` constructs the
+physical cumulative Källén coordinate and ordered two-noise range for marks 3
+through 14.  Marks 0 through 14 therefore have physical continuum columns;
+the next gate is the seven-point nested direct integral for the remaining 60
+marks.  None of these results by itself is evidence for Eq. (19) or a
+Lorentzian S matrix.

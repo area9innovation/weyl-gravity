@@ -311,14 +311,12 @@ release, shared-core change, lifecycle promotion beyond `CLASSIFIED`, complete
 probability, Eq. (19), gravitational transfer, or Lorentzian theorem is
 asserted.  No skipped or advisory rail is counted as a pass.
 
-## Next gate
+## Successor gate
 
-Construct the nested six-point physical direct-integral column before
-computing a fourth scalar rate.  Retain both ordered resolution variables, the
-four-component parent/profile carrier, exact threshold measures, and the
-collapse-invisible kernel before the final scalar trace.  Its normalized polar
-range must map each of the 12 second-level insertion edges into the correlated
-system--two-noise sector and intertwine ordered shifts.  A pass extends physical
-continuum affiliation from 3 to 15 marks and makes the seven-point 60-edge
-construction well posed; a failure isolates the first multi-emission continuum
-domain obstruction.
+`REVERSE_PHYSICS_BT_SIX_POINT_NESTED_CONTINUUM_INTERTWINER_V1` constructs the
+requested four-component quotient range and uses its positive Gram times the
+exact Källén measure to define a common cumulative resolution coordinate.  It
+intertwines the ordered two-noise sector and physically affiliates all 12
+second-level edges.  Across the two certificates, marks 0 through 14 therefore
+have physical continuum ranges.  The next gate is the corresponding
+seven-point nested column for the remaining 60 marks.

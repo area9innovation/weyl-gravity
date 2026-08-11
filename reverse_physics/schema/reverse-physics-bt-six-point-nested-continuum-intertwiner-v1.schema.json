@@ -1,0 +1,168 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-six-point-nested-continuum-intertwiner-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "certificate", "schema_version", "dependency_tags", "lifecycle_state",
+    "result_kind", "question", "answer", "six_point_positive_quotient_range",
+    "physical_cumulative_resolution", "conditional_direct_integral_isometry",
+    "ordered_two_noise_intertwiner", "finite_hierarchy_dense_domain",
+    "rate_and_channel_affiliation", "seventy_five_mark_boundary", "disposition",
+    "assumptions", "does_not_establish", "missing_object_ledger", "next_gate",
+    "provenance", "verification_commands", "checks", "report", "schema"
+  ],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_SIX_POINT_NESTED_CONTINUUM_INTERTWINER_V1"},
+    "schema_version": {"const": "reverse-physics-bt-six-point-nested-continuum-intertwiner-v1"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "result_kind": {"type": "string", "minLength": 150},
+    "question": {"type": "string", "minLength": 180},
+    "answer": {"type": "string", "minLength": 1800},
+    "six_point_positive_quotient_range": {
+      "type": "object", "additionalProperties": false,
+      "required": ["parent_profile_metric", "u_equals_q", "v", "nonzero_raised_eigenvalue", "image_basis_N_plus", "kernel_basis_N_minus", "image_raw_gram", "image_hilbertized_gram", "normalized_embedding", "collapse_on_image", "collapse_on_kernel", "pointwise_amplitude_identity", "threshold_positivity"],
+      "properties": {
+        "parent_profile_metric": {"type": "array", "minItems": 4, "maxItems": 4},
+        "u_equals_q": {"type": "string", "minLength": 25},
+        "v": {"const": "a2/2"},
+        "nonzero_raised_eigenvalue": {"type": "string", "minLength": 25},
+        "image_basis_N_plus": {"type": "array", "minItems": 4, "maxItems": 4},
+        "kernel_basis_N_minus": {"type": "array", "minItems": 4, "maxItems": 4},
+        "image_raw_gram": {"type": "array", "minItems": 2, "maxItems": 2},
+        "image_hilbertized_gram": {"type": "array", "minItems": 2, "maxItems": 2},
+        "normalized_embedding": {"type": "string", "minLength": 80},
+        "collapse_on_image": {"type": "array", "minItems": 2, "maxItems": 2},
+        "collapse_on_kernel": {"const": "R*D*N_minus=0"},
+        "pointwise_amplitude_identity": {"const": "(RDX)^T K(RDX)=(2*q*v)(PX)^T eta(PX) for every four-component X"},
+        "threshold_positivity": {"type": "string", "minLength": 150}
+      }
+    },
+    "physical_cumulative_resolution": {
+      "type": "object", "additionalProperties": false,
+      "required": ["inner_domain", "kallen_measure", "conditional_gram", "asymptotic_scale", "definition", "density", "log_density", "unit_log_asymptote", "threshold_origin", "daughter_exchange", "bijection", "rationalization", "primitive_F_m", "primitive_threshold", "sigma_from_primitive", "equal_mass_primitive", "equal_mass_extension"],
+      "properties": {
+        "inner_domain": {"type": "string", "minLength": 55},
+        "kallen_measure": {"const": "dmu_r(w)=sqrt(Kallen(w,1,r))*dw/w"},
+        "conditional_gram": {"const": "lambda6(r,w,a2)=2*q*v=a2*q"},
+        "asymptotic_scale": {"const": "a2*(r + 1)"},
+        "definition": {"const": "d sigma_r=lambda6/[a2*(1+r)] dmu_r=q*sqrt(Kallen(w,1,r))*dw/[(1+r)*w]"},
+        "density": {"type": "string", "minLength": 80},
+        "log_density": {"type": "string", "minLength": 80},
+        "unit_log_asymptote": {"const": "lim_(w->infinity) d sigma_r/d log(w)=1"},
+        "threshold_origin": {"const": "sigma_r((1+sqrt(r))^2)=0"},
+        "daughter_exchange": {"const": "sigma_(1/r)(w/r)=sigma_r(w)"},
+        "bijection": {"type": "string", "minLength": 80},
+        "rationalization": {"type": "string", "minLength": 60},
+        "primitive_F_m": {"type": "string", "minLength": 200},
+        "primitive_threshold": {"const": "-5/4"},
+        "sigma_from_primitive": {"const": "sigma_r(w)=F_m(z(w))-F_m(1)"},
+        "equal_mass_primitive": {"const": "-log(z) - 4/(z + 1)"},
+        "equal_mass_extension": {"type": "string", "minLength": 60}
+      }
+    },
+    "conditional_direct_integral_isometry": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source", "target", "map", "adjoint", "identity", "proof", "raw_rate_separation"],
+      "properties": {
+        "source": {"const": "L2(R_+,d sigma) tensor C2_species"},
+        "target": {"type": "string", "minLength": 55},
+        "map": {"type": "string", "minLength": 60},
+        "adjoint": {"type": "string", "minLength": 65},
+        "identity": {"type": "string", "minLength": 70},
+        "proof": {"type": "string", "minLength": 55},
+        "raw_rate_separation": {"type": "string", "minLength": 170}
+      }
+    },
+    "ordered_two_noise_intertwiner": {
+      "type": "object", "additionalProperties": false,
+      "required": ["hp_carrier", "physical_carrier", "gap_coordinate", "map", "isometry", "translation", "semigroup", "edge_marks", "four_children_per_parent"],
+      "properties": {
+        "hp_carrier": {"type": "string", "minLength": 65},
+        "physical_carrier": {"type": "string", "minLength": 160},
+        "gap_coordinate": {"const": "d=t2-t1=sigma_r(w)"},
+        "map": {"type": "string", "minLength": 170},
+        "isometry": {"type": "string", "minLength": 70},
+        "translation": {"type": "string", "minLength": 220},
+        "semigroup": {"type": "string", "minLength": 100},
+        "edge_marks": {"const": [3,4,5,6,7,8,9,10,11,12,13,14]},
+        "four_children_per_parent": {
+          "const": {"0,1|2": 4, "0,2|1": 4, "1,2|0": 4}
+        }
+      }
+    },
+    "finite_hierarchy_dense_domain": {
+      "type": "object", "additionalProperties": false,
+      "required": ["exact_outer_threshold", "upper_endpoint", "exhaustion", "dense_core", "outer_column_limit", "endpoint_boundary"],
+      "properties": {
+        "exact_outer_threshold": {"const": "after scaling a2=1, w<=(sqrt(U)-1)^2/epsilon"},
+        "upper_endpoint": {"const": "(sqrt(U) - 1)**2/epsilon"},
+        "exhaustion": {"type": "string", "minLength": 130},
+        "dense_core": {"type": "string", "minLength": 150},
+        "outer_column_limit": {"type": "string", "minLength": 120},
+        "endpoint_boundary": {"type": "string", "minLength": 150}
+      }
+    },
+    "rate_and_channel_affiliation": {
+      "const": {
+        "first_rate_q0": {"numerator": 1, "denominator": 48},
+        "conditional_second_rate_q1": {"numerator": 5, "denominator": 64},
+        "selected_history_before_simplex": {"numerator": 5, "denominator": 3072},
+        "selected_history_ordered_interval_coefficient": {"numerator": 5, "denominator": 6144},
+        "second_level_edge_count": 12,
+        "aggregate_two_count_coefficient": {"numerator": 5, "denominator": 512},
+        "level_one_hard_drift": {"numerator": 5, "denominator": 32},
+        "status": "EXACT_PHYSICAL_CONTINUUM_AFFILIATION_OF_ALL_TWELVE_SECOND_LEVEL_EDGES"
+      }
+    },
+    "seventy_five_mark_boundary": {
+      "type": "object", "additionalProperties": false,
+      "required": ["total_edge_marks", "physically_intertwined_edge_marks", "remaining_quotient_only_edge_marks", "physical_continuum_edge_count", "remaining_edge_count", "consequence"],
+      "properties": {
+        "total_edge_marks": {"const": 75},
+        "physically_intertwined_edge_marks": {"type": "array", "minItems": 15, "maxItems": 15, "items": {"type": "integer", "minimum": 0, "maximum": 14}},
+        "remaining_quotient_only_edge_marks": {"type": "array", "minItems": 60, "maxItems": 60, "items": {"type": "integer", "minimum": 15, "maximum": 74}},
+        "physical_continuum_edge_count": {"const": 15},
+        "remaining_edge_count": {"const": 60},
+        "consequence": {"type": "string", "minLength": 160}
+      }
+    },
+    "disposition": {
+      "const": {
+        "six_point_cumulative_physical_resolution": "CONSTRUCTED_EXACTLY",
+        "six_point_normalized_quotient_range_field": "CONSTRUCTED_EXACTLY",
+        "ordered_two_noise_physical_intertwiner": "CONSTRUCTED_EXACTLY",
+        "second_level_edge_marks_3_through_14": "PHYSICALLY_CONTINUUM_AFFILIATED",
+        "physical_continuum_edge_marks_0_through_14": "EXACT",
+        "remaining_sixty_edge_continuum_affiliation": "NOT_CONSTRUCTED",
+        "full_seventy_five_mark_physical_intertwiner": "NOT_CONSTRUCTED",
+        "strong_massless_endpoint_derivative": "EXACTLY_OBSTRUCTED_AND_NOT_USED",
+        "fourth_jump": "NOT_COMPUTED",
+        "complete_BT_probability": "NOT_CONSTRUCTED",
+        "spacetime_Moller_LSZ_S_operator": "NOT_CONSTRUCTED",
+        "public_Rt_identification": "NOT_ESTABLISHED",
+        "Eq19_all_orders": "NOT_PROVED"
+      }
+    },
+    "assumptions": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"type": "string", "minLength": 150}},
+    "does_not_establish": {"type": "array", "minItems": 15, "maxItems": 15, "items": {"type": "string"}},
+    "missing_object_ledger": {"type": "array", "minItems": 7, "maxItems": 7, "items": {"type": "string", "minLength": 50}},
+    "next_gate": {"type": "string", "minLength": 600},
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_commit", "retrieval_date", "inputs", "producer_method", "primary_source"],
+      "properties": {
+        "source_commit": {"const": "a5bb88b4ae7b95068aaf419d1bf3c730cea9ec56"},
+        "retrieval_date": {"const": "2026-08-11"},
+        "inputs": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"type": "object", "additionalProperties": false, "required": ["path", "sha256"], "properties": {"path": {"type": "string", "minLength": 20}, "sha256": {"pattern": "^[0-9a-f]{64}$"}}}},
+        "producer_method": {"type": "string", "minLength": 250},
+        "primary_source": {"type": "object", "additionalProperties": false, "required": ["source", "url", "equations"], "properties": {"source": {"const": "Bateman--Turok arXiv:2607.00096v1"}, "url": {"const": "https://arxiv.org/abs/2607.00096v1"}, "equations": {"const": ["Eq. (13)", "Eq. (18)", "Eq. (19)", "Appendix B Eqs. (24)-(25)"]}}}
+      }
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "string", "minLength": 100}},
+    "checks": {"type": "object", "additionalProperties": false, "required": ["ok", "passed", "total", "failures", "details"], "properties": {"ok": {"const": true}, "passed": {"const": 40}, "total": {"const": 40}, "failures": {"const": []}, "details": {"type": "object", "minProperties": 40, "maxProperties": 40}}},
+    "report": {"const": "reverse_physics/reports/bt-six-point-nested-continuum-intertwiner.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-six-point-nested-continuum-intertwiner-v1.schema.json"}
+  }
+}
