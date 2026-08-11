@@ -29,59 +29,61 @@
 \maketitle
 
 \begin{abstract}
-Conformal (Weyl) gravity admits a static spherically symmetric vacuum
-solution whose metric function carries a term linear in \(r\).  That term is
-the basis of a long-standing proposal to fit galactic rotation curves without
-dark matter.  We ask a reverse-physics question about it, in the sense
-of~\cite{CarcassiAidala2022}: not whether the fits succeed, but \emph{what
-must be assumed for them to mean anything}.
+Conformal (Weyl) gravity's static spherically symmetric vacuum solution
+carries a term linear in \(r\), and that term is the basis of a long-standing
+proposal to fit galactic rotation curves without dark matter.  We ask a
+reverse-physics question about it, in the sense of Carcassi and
+Aidala~\cite{CarcassiAidala2022,AoP}: not whether the fits succeed, but
+\emph{what must be assumed for them to mean anything}.
 
-Eight results, each an exact symbolic computation with machine-checked
-controls.  (i) The linear term is not an ansatz: in the conformal gauge the
-Bach vacuum equation is exactly the \emph{biharmonic} equation
-\(\nabla^{4}B=0\), so \(\gamma r\) is the point-source response of the
-governing operator, on the same footing as the Newtonian \(1/r\).  (ii) If
-the baryonic Tully--Fisher relation holds, \(\gamma\) is forced to be a
-universal constant and is identified with the MOND acceleration scale,
-\(\gamma=a_{0}/2c^{2}\); a \(\gamma\) carrying a mass-proportional piece
-gives the wrong slope.  (iii) Conformal invariance forces the source to be
-trace-free, so a perfect fluid must satisfy \(p=\rho/3\) and pressureless
-baryons are excluded outright.  (iv) The standard repair---breaking the
-symmetry with a conformally coupled scalar---fails in its simplest form: a
-\emph{constant} vacuum expectation value pins the Ricci scalar and thereby
-forces \(\gamma=0\), removing the very term at issue.
+\textbf{None of the physics below is new, and we name the owner of each piece
+where it appears.}  The Mannheim--Kazanas solution, its reduction to a
+fourth-order Poisson problem, and the trace-free condition on conformal matter
+are classical.  The moment structure of the source is Mannheim and
+Kazanas'~\cite{MK1994}.  That particle rest masses scale with the conformal
+factor, so world lines follow geodesics of a rescaled metric, is
+Horne's~\cite{Horne2016}.  That this puts massive particles on
+Schwarzschild--de~Sitter geodesics and leaves no flat region at all is Hobson
+and Lasenby's~\cite{HobsonLasenby2021,HobsonLasenby2022}---a stronger
+conclusion than any we draw.  The reverse-physics stance is Carcassi and
+Aidala's.  What is ours is the execution: every statement recomputed with the
+ansatz removed and the premises isolated, as fail-closed machine-checked
+certificates whose controls are built to fail when a claim is vacuous.
+Several did fail during development and are recorded.  We have not found that
+combination in the literature, which is a statement about our search rather
+than a claim.
 
-Four further results concern the surviving branch, and \emph{none of them is
-new physics}; they are computed here with the ansatz removed, and the
-literature that already contains them is identified in
-\S\ref{sec:notestablished}.  (v) \(\gamma\) is not a conformal invariant: the
-conformal group acts on the four parameters of the general solution through a
-single M\"obius map of the radius, and shifts \(\gamma\).  (vi) The frame in
-which the scalar is constant is reached by exactly that map, and a mass
-\emph{generated} by the scalar makes the scalar the conformal factor of the
-metric the particle moves in, so such a particle follows geodesics of the
-frame with \(\gamma=0\).  (vii) In that frame the pair is an exact solution:
-Bach flatness and the Einstein condition hold together, the geometry is
-Schwarzschild--de~Sitter, and \(u\) is a conformal invariant while \(\gamma\)
-is not.  (viii) Constructing the Green's function of the biharmonic operator,
-\(\gamma\) is the second moment of the source---the total mass---while the
-Newtonian coefficient is the fourth moment, tracking \(M\langle
-r^{2}\rangle\).
+The chain runs as follows.  The linear term is forced rather than chosen: in
+the conformal gauge the Bach vacuum equation is exactly the biharmonic
+equation \(\nabla^{4}B=0\), so \(\gamma r\) is the point-source response of
+the governing operator, on the same footing as the Newtonian \(1/r\).  If the
+baryonic Tully--Fisher relation holds, \(\gamma\) is forced to be a universal
+constant and is identified with \(a_{0}/2c^{2}\).  Conformal invariance forces
+the source to be trace-free, so pressureless baryons are excluded outright.
+The standard repair---a conformally coupled scalar acquiring a vacuum
+expectation value---fails in its simplest form, since a \emph{constant} value
+pins the Ricci scalar and forces \(\gamma=0\).  On the surviving branch
+\(\gamma\) is not a conformal invariant at all: the conformal group acts on
+the four parameters of the general solution through a single M\"obius map of
+the radius, the frame in which the scalar is constant is reached by exactly
+that map, and in that frame the geometry is Schwarzschild--de~Sitter with no
+linear term.  From the source side, \(\gamma\) is the second moment of the
+source---the total mass---while the Newtonian coefficient is the fourth,
+tracking \(M\langle r^{2}\rangle\).
 
-Results (vi) and (vii) are Hobson and Lasenby's~\cite{HobsonLasenby2021}, who
-reach the stronger conclusion that the resulting rotation curves have no flat
-region at all; result (viii) is Mannheim and Kazanas'~\cite{MK1994} and is the
-substance of the standing objection to the Newtonian limit.  We reproduce them
-under machine-checked controls and do not claim them.
-
-What the assembly gives is a map of the assumption rather than a new result.
-The linear coefficient decomposes as \(\gamma=\gamma_{0}+\gamma_{*}(M)\)---a
-boundary datum plus a sourced piece---which is the parametrisation the
-rotation-curve fits already use~\cite{MannheimOBrien2012}.  Our result (ii)
-says a mass-proportional piece moves the Tully--Fisher slope, while those fits
-keep both terms and succeed; we record that as an unresolved tension between a
-premise we adopt and a fit we do not evaluate, not as a refutation of either.
-We do not adjudicate.  We locate.
+What the assembly gives is a map of the assumption rather than a result.  The
+linear coefficient decomposes as \(\gamma=\gamma_{0}+\gamma_{*}(M)\), a
+boundary datum plus a sourced piece, which is the parametrisation the
+rotation-curve fits already use~\cite{MannheimOBrien2012}.  That sits awkwardly
+with our own Tully--Fisher conditional, which says a mass-proportional piece
+moves the slope, whereas those fits retain both terms and report success over
+a large sample.  We record it as an unresolved tension between a premise we
+adopt and a fit we do not evaluate.  The underlying dispute is live and more
+than a decade old~\cite{Horne2016,HobsonLasenby2021,Mannheim2022,%
+HobsonLasenby2022}, and its crux is not algebraic: both sides agree on the
+transformation law and disagree over whether the mass-generating scalar is
+macroscopic or microscopic.  Exact computation takes such premises as input.
+It cannot settle this one, and we do not pretend otherwise.
 \end{abstract}
 
 \section{The question}
@@ -738,6 +740,21 @@ exhibit it; we do not argue from it.
   published \(\gamma\) is compared; \(\gamma=a_{0}/2c^{2}\) is an algebraic
   consequence of a premise, not a numerical agreement.
 \end{itemize}
+
+\paragraph{Prior art, and how hard we looked.}
+Four claims in this line were withdrawn after the fact, each found by a search
+that should have preceded the work: the novelty of the frame and moment
+results, the novelty of the reverse-physics framing, and an earlier correction
+that named one prior source where there were two.  All are recorded in the
+certificates as appended events rather than edits.  What we searched for:
+conformal transformations of the Mannheim--Kazanas parameters, the Newtonian
+limit and its moment structure, the frame dependence of massive-particle
+trajectories under a mass-generating scalar, the status of the resulting
+dispute, and prior use of ``reverse physics'' as a programme.  Every one
+returned prior work, and each is now cited at the point of use.  We have not
+found the combination of that stance with fail-closed machine-checked
+certification, which is a statement about our search and not a claim about the
+literature.
 
 \section{Verification}
 \label{sec:verification}
