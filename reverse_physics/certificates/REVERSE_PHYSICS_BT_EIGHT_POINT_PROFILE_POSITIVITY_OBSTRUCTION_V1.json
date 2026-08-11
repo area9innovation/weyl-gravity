@@ -1,0 +1,282 @@
+{
+  "answer": "No as an ordinary positive diagonal jump on the declared two-point hard-profile algebra. After all four fixed-invariant threshold functionals the two evaluation coefficients are -6699/128 and -7149/128. The eight external delta-prime derivatives contribute the even sign +1, the inherited first-three scale is +6, the lower selected-history chain is +9/81920, and every remaining counting, simplex, phase-space, squared-amplitude, and Born-division normalization is positive. Hence the sign cannot be repaired by physical normalization: every faithful positive profile trace is a convex combination of two negative numbers, and the conditional fourth effect is strictly negative. It therefore cannot equal J^dagger J for an ordinary completely positive or Hudson-Parthasarathy jump. An exact indefinite lift nevertheless exists. Over the two hard idempotents take one copy of the forced cross-Krein fibre G_missing(rho) per point. Its canonical second basis vector has norm -2. Mapping the two profile basis vectors to sqrt(6699)/16 and sqrt(7149)/16 times those negative directions gives B^sharp B=diag(-6699/128,-7149/128). The associated off-diagonal block generator is exactly Krein-skew and the lift has the minimal two negative directions required by the rank-two negative profile effect. This is an algebraic reduced-mode Krein jet, not a positive probability, a charge-compatible BT-derived operator, Eq. (19), or a spacetime S matrix.",
+  "assumptions": [
+    "The declared direct profile carrier keeps the h=33 and h=34 evaluation idempotents orthogonal and introduces no uncomputed off-diagonal channel interference.",
+    "The inherited fourth-event orientation has no sign beyond the eight external delta-prime factor: the common squared amplitude phase, physical Kallen measures, Born divisor, history count, and ordered simplex carry their standard positive orientations.",
+    "Only the sign of the fourth leading effect is classified; its overall positive magnitude normalization is not assembled.",
+    "A positive profile trace means a nonzero positive functional on the two evaluation idempotents; a non-faithful zero functional is not a normalized event."
+  ],
+  "certificate": "REVERSE_PHYSICS_BT_EIGHT_POINT_PROFILE_POSITIVITY_OBSTRUCTION_V1",
+  "checks": {
+    "details": {
+      "HP_predecessor_requires_positive_jump_effects": true,
+      "all_predecessor_certificates_pass": true,
+      "canonical_second_fibre_vector_has_norm_minus_two": true,
+      "combined_generator_is_exactly_krein_skew": true,
+      "cross_krein_fibre_has_one_negative_direction": true,
+      "eight_external_derivative_orientation_is_positive": true,
+      "every_positive_profile_average_is_negative": true,
+      "exact_krein_pullback_reconstructs_profile_effect": true,
+      "final_profile_coefficients_replayed": true,
+      "first_three_threshold_scale_is_positive": true,
+      "forced_cross_krein_gram_is_replayed": true,
+      "forced_rho_is_replayed": true,
+      "fourth_history_count_and_simplex_are_positive": true,
+      "hard_born_divisor_is_positive": true,
+      "lower_selected_history_chain_is_positive": true,
+      "ordinary_CP_effect_is_impossible": true,
+      "profile_effect_has_rank_two": true,
+      "profile_effect_is_strictly_negative": true,
+      "profile_lift_has_minimal_rank_two": true,
+      "two_point_fibre_module_has_two_negative_directions": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 20,
+    "total": 20
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "disposition": {
+    "BT_charge_compatible_history_operator": "NOT_CONSTRUCTED",
+    "Eq19_all_orders": "NOT_PROVED",
+    "minimal_fibrewise_Krein_lift": "CONSTRUCTED_ALGEBRAICALLY",
+    "ordinary_CP_HP_extension": "EXACTLY_OBSTRUCTED_AT_FOURTH_LEADING_EFFECT",
+    "physical_fourth_probability": "NOT_ESTABLISHED",
+    "positive_diagonal_profile_fourth_jump": "EXACTLY_OBSTRUCTED_ON_TWO_FIXTURES",
+    "spacetime_Moller_LSZ_S_operator": "NOT_CONSTRUCTED"
+  },
+  "does_not_establish": [
+    "a negative complete finite-resolution probability",
+    "a no-go for a larger channel recombination or dynamical quotient that changes the physical pullback by additional derived terms",
+    "a no-go for an indefinite generalized-Born trace satisfying Eq. (19)",
+    "the normalized magnitude of either fourth-event coefficient",
+    "a BT derivation or charge-compatible realization of the Krein lift",
+    "a complete 2->6 probability",
+    "a spacetime Moller, LSZ, or S operator",
+    "the all-order Eq. (19)",
+    "a gravitational or BRST lift",
+    "anything LORENTZIAN-CAUSAL",
+    "literature priority"
+  ],
+  "fibrewise_krein_lift": {
+    "block_generator": "K_profile=[[0,-B^sharp],[B,0]]",
+    "canonical_negative_line": "span(f_2), with f_2^T G_missing(rho) f_2=-2",
+    "forward_amplitudes": [
+      "sqrt(6699)/16",
+      "sqrt(7149)/16"
+    ],
+    "forward_block_B": [
+      [
+        "0",
+        "0"
+      ],
+      [
+        "sqrt(6699)/16",
+        "0"
+      ],
+      [
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "sqrt(7149)/16"
+      ]
+    ],
+    "generator_metric": "diag(I_2,G_missing(rho),G_missing(rho))",
+    "krein_skew_identity": "K_profile^T*eta_total+eta_total*K_profile=0",
+    "minimality": "The negative profile effect has rank and negative index two, so any injective pullback needs at least two target negative directions; one fibre copy has only one, while the two-point fibre module has exactly two.",
+    "pullback": [
+      [
+        "-6699/128",
+        "0"
+      ],
+      [
+        "0",
+        "-7149/128"
+      ]
+    ],
+    "pullback_identity": "B^sharp B=diag(-6699/128,-7149/128)",
+    "rho": {
+      "denominator": 4000,
+      "numerator": 819
+    },
+    "single_fibre_gram": [
+      [
+        "0",
+        "-819/4000"
+      ],
+      [
+        "-819/4000",
+        "-2"
+      ]
+    ],
+    "single_fibre_inertia": {
+      "negative": 1,
+      "positive": 1,
+      "zero": 0
+    },
+    "status": "EXACT_ALGEBRAIC_KREIN_JET_NOT_BT_DERIVED",
+    "two_point_module": "(Q*e_33 direct_sum Q*e_34) tensor E_rho",
+    "two_point_module_gram": [
+      [
+        "0",
+        "-819/4000",
+        "0",
+        "0"
+      ],
+      [
+        "-819/4000",
+        "-2",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "-819/4000"
+      ],
+      [
+        "0",
+        "0",
+        "-819/4000",
+        "-2"
+      ]
+    ],
+    "two_point_module_inertia": {
+      "negative": 2,
+      "positive": 2,
+      "zero": 0
+    }
+  },
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "The ordinary positive stochastic continuation is now closed on the evaluation-diagonal profile carrier. To advance Eq. (19), derive the displayed fibrewise Krein-skew block from the zero-mode-completed R_t projector or prove that BT charge support forbids it. To advance the physical route without Eq. (19), derive additional channel or trace terms before the physical pullback so that the certified kernels occur as pre-trace components rather than negative Hilbert-space expectations. Off-diagonal entries alone cannot make an effect with these fixed negative diagonal expectations positive.",
+  "orientation_audit": {
+    "eight_external_delta_prime_sign": 1,
+    "first_three_threshold_scale": {
+      "denominator": 1,
+      "numerator": 6
+    },
+    "fourth_magnitude": "NOT_NORMALIZED",
+    "fourth_sign": "STRICTLY_NEGATIVE_ON_BOTH_DECLARED_HARD_EVALUATIONS",
+    "hard_coordinates": [
+      33,
+      34
+    ],
+    "lower_conditional_rates": [
+      {
+        "denominator": 48,
+        "numerator": 1
+      },
+      {
+        "denominator": 64,
+        "numerator": 5
+      },
+      {
+        "denominator": 400,
+        "numerator": 27
+      }
+    ],
+    "lower_selected_history_chain": {
+      "denominator": 81920,
+      "numerator": 9
+    },
+    "profile_coefficients": [
+      {
+        "denominator": 128,
+        "numerator": -6699
+      },
+      {
+        "denominator": 128,
+        "numerator": -7149
+      }
+    ],
+    "remaining_normalization_signs": {
+      "Born_divisor": {
+        "denominator": 32,
+        "numerator": 3
+      },
+      "Kallen_phase_space_orientation": 1,
+      "labeled_fourth_histories": 360,
+      "ordered_four_simplex": {
+        "denominator": 24,
+        "numerator": 1
+      },
+      "squared_amplitude_phase_sign": 1
+    }
+  },
+  "positive_profile_test": {
+    "closed_weight_interval": [
+      {
+        "denominator": 128,
+        "numerator": -7149
+      },
+      {
+        "denominator": 128,
+        "numerator": -6699
+      }
+    ],
+    "conclusion": "EVERY_NONZERO_POSITIVE_PROFILE_AVERAGE_IS_NEGATIVE",
+    "convex_trace": "3*(150*w - 2383)/128",
+    "effect_inertia": {
+      "negative": 2,
+      "positive": 0,
+      "zero": 0
+    },
+    "effect_matrix": [
+      [
+        "-6699/128",
+        "0"
+      ],
+      [
+        "0",
+        "-7149/128"
+      ]
+    ],
+    "effect_rank": 2,
+    "faithful_state": "omega_w(x)=w*x_33+(1-w)*x_34 with 0<w<1",
+    "ordinary_CP_or_HP_jump": "EXACTLY_OBSTRUCTED_ON_DECLARED_DIAGONAL_PROFILE_CARRIER",
+    "profile_algebra": "Q*e_33 direct_sum Q*e_34 with orthogonal evaluation idempotents"
+  },
+  "provenance": {
+    "external_state": "arXiv:2607.00096 remains v1 submitted 2026-06-30; the cited companion proof was not found on arXiv on 2026-08-11",
+    "inputs": [
+      {
+        "path": "planning/work-items/reverse-physics-bateman-eight-point-profile-positivity.json",
+        "sha256": "2234cdc9d051ff22ee7561901c9f09f3aee03bed822c0085810f4a0d1c464d2a"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EIGHT_POINT_INNER_THRESHOLD_OBSTRUCTION_V1.json",
+        "sha256": "6d6aaef8d83327d4de4ae37ee2b0de7987ca70db274530bf82c8ec839ba4d9d4"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_COMPLEMENT_HARD_PROFILE_SEPARATION_V1.json",
+        "sha256": "012113f16ed7fe279dff1aefd5415b3beb98524842b03c0dcb755fa536d149b7"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_FINITE_PHYSICAL_MOLLER_COLUMN_V1.json",
+        "sha256": "5bda31d257bebbe89a32553636286bf92e845b316988f1edd1a640b2c8e6c8ed"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_QUANTUM_STOCHASTIC_MOLLER_DILATION_V1.json",
+        "sha256": "6bc4ec6c6831835acaf5848c07375701a3df5aa4413c5ccd42a074691e489e9c"
+      }
+    ],
+    "retrieval_date": "2026-08-11",
+    "source_commit": "464901df"
+  },
+  "question": "Can the exact two-fixture eight-point profile kernel extend the certified positive Hudson-Parthasarathy Moller column as an ordinary fourth jump, and if not what is its minimal Krein lift?",
+  "report": "reverse_physics/reports/bt-eight-point-profile-positivity-obstruction.md",
+  "result_kind": "exact positive-cone obstruction for the two-fixture BT fourth profile and minimal fibrewise Krein-skew lift",
+  "schema": "reverse_physics/schema/reverse-physics-bt-eight-point-profile-positivity-obstruction-v1.schema.json",
+  "schema_version": "reverse-physics-bt-eight-point-profile-positivity-obstruction-v1",
+  "verification_commands": [
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/bt_eight_point_profile_positivity_obstruction.py --check",
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/verify_bt_eight_point_profile_positivity_obstruction.py",
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 -m unittest -v reverse_physics.tests.test_bt_eight_point_profile_positivity_obstruction"
+  ]
+}

@@ -1,0 +1,288 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-eight-point-profile-positivity-obstruction-v1.schema.json",
+  "title": "BT eight-point profile positivity obstruction certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "certificate",
+    "schema_version",
+    "lifecycle_state",
+    "dependency_tags",
+    "result_kind",
+    "question",
+    "answer",
+    "assumptions",
+    "orientation_audit",
+    "positive_profile_test",
+    "fibrewise_krein_lift",
+    "disposition",
+    "does_not_establish",
+    "next_gate",
+    "provenance",
+    "verification_commands",
+    "checks",
+    "report",
+    "schema"
+  ],
+  "properties": {
+    "certificate": {
+      "const": "REVERSE_PHYSICS_BT_EIGHT_POINT_PROFILE_POSITIVITY_OBSTRUCTION_V1"
+    },
+    "schema_version": {
+      "const": "reverse-physics-bt-eight-point-profile-positivity-obstruction-v1"
+    },
+    "lifecycle_state": {
+      "const": "CLASSIFIED"
+    },
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]
+    },
+    "result_kind": {"type": "string", "minLength": 1},
+    "question": {"type": "string", "minLength": 1},
+    "answer": {"type": "string", "minLength": 1},
+    "assumptions": {
+      "type": "array",
+      "minItems": 4,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "orientation_audit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "hard_coordinates",
+        "profile_coefficients",
+        "eight_external_delta_prime_sign",
+        "first_three_threshold_scale",
+        "lower_conditional_rates",
+        "lower_selected_history_chain",
+        "remaining_normalization_signs",
+        "fourth_magnitude",
+        "fourth_sign"
+      ],
+      "properties": {
+        "hard_coordinates": {"const": [33, 34]},
+        "profile_coefficients": {
+          "type": "array",
+          "prefixItems": [
+            {"$ref": "#/$defs/rational"},
+            {"$ref": "#/$defs/rational"}
+          ],
+          "items": false
+        },
+        "eight_external_delta_prime_sign": {"const": 1},
+        "first_three_threshold_scale": {"$ref": "#/$defs/rational"},
+        "lower_conditional_rates": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {"$ref": "#/$defs/rational"}
+        },
+        "lower_selected_history_chain": {"$ref": "#/$defs/rational"},
+        "remaining_normalization_signs": {
+          "type": "object",
+          "minProperties": 5,
+          "maxProperties": 5
+        },
+        "fourth_magnitude": {"const": "NOT_NORMALIZED"},
+        "fourth_sign": {
+          "const": "STRICTLY_NEGATIVE_ON_BOTH_DECLARED_HARD_EVALUATIONS"
+        }
+      }
+    },
+    "positive_profile_test": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "profile_algebra",
+        "effect_matrix",
+        "effect_rank",
+        "effect_inertia",
+        "faithful_state",
+        "convex_trace",
+        "closed_weight_interval",
+        "conclusion",
+        "ordinary_CP_or_HP_jump"
+      ],
+      "properties": {
+        "profile_algebra": {"type": "string"},
+        "effect_matrix": {"$ref": "#/$defs/string_matrix"},
+        "effect_rank": {"const": 2},
+        "effect_inertia": {
+          "const": {"positive": 0, "negative": 2, "zero": 0}
+        },
+        "faithful_state": {"type": "string"},
+        "convex_trace": {"type": "string"},
+        "closed_weight_interval": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {"$ref": "#/$defs/rational"}
+        },
+        "conclusion": {
+          "const": "EVERY_NONZERO_POSITIVE_PROFILE_AVERAGE_IS_NEGATIVE"
+        },
+        "ordinary_CP_or_HP_jump": {
+          "const": "EXACTLY_OBSTRUCTED_ON_DECLARED_DIAGONAL_PROFILE_CARRIER"
+        }
+      }
+    },
+    "fibrewise_krein_lift": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "rho",
+        "single_fibre_gram",
+        "single_fibre_inertia",
+        "two_point_module",
+        "two_point_module_gram",
+        "two_point_module_inertia",
+        "canonical_negative_line",
+        "forward_block_B",
+        "forward_amplitudes",
+        "pullback",
+        "pullback_identity",
+        "block_generator",
+        "generator_metric",
+        "krein_skew_identity",
+        "minimality",
+        "status"
+      ],
+      "properties": {
+        "rho": {"$ref": "#/$defs/rational"},
+        "single_fibre_gram": {"$ref": "#/$defs/string_matrix"},
+        "single_fibre_inertia": {
+          "const": {"positive": 1, "negative": 1, "zero": 0}
+        },
+        "two_point_module": {"type": "string"},
+        "two_point_module_gram": {"$ref": "#/$defs/string_matrix"},
+        "two_point_module_inertia": {
+          "const": {"positive": 2, "negative": 2, "zero": 0}
+        },
+        "canonical_negative_line": {"type": "string"},
+        "forward_block_B": {"$ref": "#/$defs/string_matrix"},
+        "forward_amplitudes": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {"type": "string"}
+        },
+        "pullback": {"$ref": "#/$defs/string_matrix"},
+        "pullback_identity": {
+          "const": "B^sharp B=diag(-6699/128,-7149/128)"
+        },
+        "block_generator": {"type": "string"},
+        "generator_metric": {"type": "string"},
+        "krein_skew_identity": {"type": "string"},
+        "minimality": {"type": "string"},
+        "status": {"const": "EXACT_ALGEBRAIC_KREIN_JET_NOT_BT_DERIVED"}
+      }
+    },
+    "disposition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "positive_diagonal_profile_fourth_jump",
+        "ordinary_CP_HP_extension",
+        "minimal_fibrewise_Krein_lift",
+        "BT_charge_compatible_history_operator",
+        "physical_fourth_probability",
+        "Eq19_all_orders",
+        "spacetime_Moller_LSZ_S_operator"
+      ],
+      "properties": {
+        "positive_diagonal_profile_fourth_jump": {
+          "const": "EXACTLY_OBSTRUCTED_ON_TWO_FIXTURES"
+        },
+        "ordinary_CP_HP_extension": {
+          "const": "EXACTLY_OBSTRUCTED_AT_FOURTH_LEADING_EFFECT"
+        },
+        "minimal_fibrewise_Krein_lift": {
+          "const": "CONSTRUCTED_ALGEBRAICALLY"
+        },
+        "BT_charge_compatible_history_operator": {"const": "NOT_CONSTRUCTED"},
+        "physical_fourth_probability": {"const": "NOT_ESTABLISHED"},
+        "Eq19_all_orders": {"const": "NOT_PROVED"},
+        "spacetime_Moller_LSZ_S_operator": {"const": "NOT_CONSTRUCTED"}
+      }
+    },
+    "does_not_establish": {
+      "type": "array",
+      "minItems": 10,
+      "items": {"type": "string"}
+    },
+    "next_gate": {"type": "string", "minLength": 1},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_commit", "retrieval_date", "external_state", "inputs"],
+      "properties": {
+        "source_commit": {"const": "464901df"},
+        "retrieval_date": {"const": "2026-08-11"},
+        "external_state": {"type": "string", "minLength": 1},
+        "inputs": {
+          "type": "array",
+          "minItems": 5,
+          "maxItems": 5,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["path", "sha256"],
+            "properties": {
+              "path": {"type": "string", "minLength": 1},
+              "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+            }
+          }
+        }
+      }
+    },
+    "verification_commands": {
+      "type": "array",
+      "minItems": 3,
+      "items": {"type": "string"}
+    },
+    "checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"const": 20},
+        "total": {"const": 20},
+        "failures": {"const": []},
+        "details": {
+          "type": "object",
+          "minProperties": 20,
+          "maxProperties": 20,
+          "additionalProperties": {"const": true}
+        }
+      }
+    },
+    "report": {
+      "const": "reverse_physics/reports/bt-eight-point-profile-positivity-obstruction.md"
+    },
+    "schema": {
+      "const": "reverse_physics/schema/reverse-physics-bt-eight-point-profile-positivity-obstruction-v1.schema.json"
+    }
+  },
+  "$defs": {
+    "rational": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      }
+    },
+    "string_matrix": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "array",
+        "minItems": 1,
+        "items": {"type": "string"}
+      }
+    }
+  }
+}

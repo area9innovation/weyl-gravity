@@ -1,0 +1,38 @@
+{
+  "id": "sf:program/work/reverse-physics-bateman-eight-point-profile-positivity",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "reverse-physics",
+    "state": "ACTIVE",
+    "objective": "Determine whether the exact two-fixture eight-point profile kernel can extend the certified positive stochastic Moller column as an ordinary positive fourth jump, and classify the smallest Krein lift if it cannot.",
+    "depends_on": [
+      "REVERSE_PHYSICS_BT_EIGHT_POINT_INNER_THRESHOLD_OBSTRUCTION_V1",
+      "REVERSE_PHYSICS_BT_COMPLEMENT_HARD_PROFILE_SEPARATION_V1",
+      "REVERSE_PHYSICS_BT_FINITE_PHYSICAL_MOLLER_COLUMN_V1",
+      "REVERSE_PHYSICS_BT_QUANTUM_STOCHASTIC_MOLLER_DILATION_V1"
+    ],
+    "activates": [
+      "an exact sign and positive-cone test for the profile-valued fourth kernel",
+      "a completely-positive and Hudson-Parthasarathy extension test",
+      "a minimal fibrewise Krein-skew factorization over the two-point hard base",
+      "a sharper decision between an ordinary physical jump and an Eq. 19-type indefinite trace"
+    ],
+    "current_gate": "EIGHT_POINT_PROFILE_POSITIVITY: retain the two hard evaluation idempotents, apply the fixed eight-external-delta-prime orientation, test every faithful positive profile trace, and factor the resulting profile Gram through the certified cross-Krein fibre if possible.",
+    "stop_condition": "Land an exact certificate with an independent verifier that either constructs a positive fourth jump or proves its scoped obstruction, classifies the minimal Krein alternative, and does not call an indefinite jet a probability, Eq. 19, a complete S operator, gravity, or Lorentzian physics.",
+    "forbid": "no fitted interpolation in h; no unspecified sign normalization; no negative Krein norm called a positive probability; no algebraic Krein factorization called a BT-derived charge-compatible operator; no reduced-mode result called Eq. 19, complete scattering, gravity/BRST, or LORENTZIAN-CAUSAL",
+    "allowed_paths": [
+      "reverse_physics/",
+      "notes/bateman-turok-embedding.md",
+      "paper/05-interaction-obstructions.tex",
+      "paper/05-interaction-obstructions.pdf",
+      "paper/06-einstein-weyl-interaction-obstructions.tex",
+      "paper/06-einstein-weyl-interaction-obstructions.pdf",
+      "planning/work-items/reverse-physics-bateman-eight-point-profile-positivity.json",
+      "planning/events/"
+    ],
+    "resource_hint": "Use the exact final coefficients -6699/128 and -7149/128, the even eight-leg external derivative sign, the positive lower selected-history chain 9/81920, and the forced fibre Gram G_missing(rho). On the two-point profile algebra, faithful positive traces are convex combinations. For a Krein lift, use one copy of G_missing per hard idempotent and test the canonical second fibre basis vector, whose norm is -2.",
+    "input_commit": "464901df",
+    "stream": "reverse-physics"
+  }
+}
