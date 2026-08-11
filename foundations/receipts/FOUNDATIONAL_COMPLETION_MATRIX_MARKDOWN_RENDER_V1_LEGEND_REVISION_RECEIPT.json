@@ -1,0 +1,31 @@
+{
+  "receipt_id":"FOUNDATIONAL_COMPLETION_MATRIX_MARKDOWN_RENDER_V1_LEGEND_REVISION_RECEIPT",
+  "schema_version":"foundational-tier-receipt-v0",
+  "created":"2026-08-11",
+  "result_id":"FOUNDATIONAL_COMPLETION_MATRIX_MARKDOWN_RENDER_V1",
+  "dependency_tags":["LOCAL-ALGEBRAIC","REDUCED-MODE","LORENTZIAN-CAUSAL"],
+  "base_commit":"b216fe66ade93018041c3aebe5d569b59fd7f195",
+  "supersedes_presentation_receipt":"FOUNDATIONAL_COMPLETION_MATRIX_MARKDOWN_RENDER_V1_TIER_RECEIPT",
+  "reason":"Replace abbreviation-only coverage cells and unexplained lifecycle/provenance terms with plain-language definitions, non-implications, and examples for readers outside the programme.",
+  "tiers":{
+    "tier_0":{"status":"PASS","command":"parse structured data and Python; git diff --check -- foundations"},
+    "tier_1_render":{"status":"PASS","command":"python3 foundations/render_completion_matrix_md.py --check","result":"157 lines, 3731 words, 28288 bytes; sha256 2871df9266f80506d545193202c75e2b65f2621fe9eebb46d3f50a398967fd83"},
+    "tier_1_verifier":{"status":"PASS","command":"python3 foundations/verify_completion_matrix_markdown.py","result":"plain-language axis questions, five coverage judgments, six completion statuses, three provenance statuses, input pins, deterministic render, dimensions, boundaries, and report tokens pass"},
+    "tier_1_suite":{"status":"PASS","elapsed_seconds":"0.39","command":"python3 -m unittest discover -s foundations/tests -t .","result":"142/142 tests pass, including four new legend regression/mutation tests"},
+    "tier_1_schema":{"status":"PASS","command":"Draft202012Validator.check_schema and validate"},
+    "tier_2":{"status":"NOT_RUN","criterion":"No source ledger, mathematical input, coverage classification, opportunity status, or certificate conclusion changed; this is a presentation clarification."},
+    "tier_3":{"status":"NOT_RUN","criterion":"No freeze, release, theorem promotion, shared algebra change, or Lorentzian lifecycle promotion."}
+  },
+  "auxiliary_rails":[{"name":"science_forge_work_drafts","status":"NOT_RERUN","reason":"Known Tango sanitize_thread build failure; no pass inferred."}],
+  "content_hashes":{
+    "foundations/render_completion_matrix_md.py":"3b7e379ac86b64eebf5f7b1f0a9c575c93f4c115ddaea5617563b2316b7c081a",
+    "foundations/reports/completion-matrix.md":"2871df9266f80506d545193202c75e2b65f2621fe9eebb46d3f50a398967fd83",
+    "foundations/results/FOUNDATIONAL_COMPLETION_MATRIX_MARKDOWN_RENDER_V1.json":"c93ed3edf535c543f395052d501d215ebc03e895e77422882920c4b819fd879d",
+    "foundations/schema/foundational-completion-matrix-markdown-render-v1.schema.json":"34f4f082b98f82fff78cdfbc82022f572958a2d436676b9cb56329b39dc96373",
+    "foundations/tests/test_render_completion_matrix_md.py":"a5af053a021e83bc8d404e6bfa1e99d0284f1ae9161add85f7fbe67f074b25b2",
+    "foundations/tests/test_completion_matrix_markdown_certificate.py":"6c3431327553e8bc59d3d7f59dd3749b3dc6e71337d6df73fa2e5d6a48059890",
+    "foundations/verify_completion_matrix_markdown.py":"ab1253257d5992b8a22b02de10331977169746be8444a1688c535a2070ae83b5"
+  },
+  "scope_receipt":{"changed_scope":"generated foundations completion-matrix presentation only"},
+  "claim_boundary":"The revision changes explanations and cell labels only. It creates no new classification, literature conclusion, theorem, deeper-programme closure, or Lorentzian claim."
+}

@@ -17,36 +17,70 @@
 | Opportunity closure | **9 rows**, **8 certificates** | Ranked first artifacts, evidence, status, and open gates |
 | Literature corpus | **25 records** | Imported proposition plus transfer boundary |
 
-Coverage-cell distribution: 51 `DIRECT`, 20 `PARTIAL`, 9 `ADJACENT`, 11 `ABSENT`, 5 `UNKNOWN`.
+Coverage-cell distribution: 51 **direct**, 20 **partial**, 9 **adjacent**, 11 **not addressed**, 5 **not yet classified**.
 
 Literature provenance: 19 `CONTENT_PINNED`, 2 `GIT_BLOB_PINNED`, 4 `METADATA_ONLY`; source kinds: 1 `AUTHORITATIVE_MONOGRAPH`, 2 `LOCAL_CERTIFIED_REPORT`, 22 `PRIMARY_RESEARCH`.
 
 ## Assumption coverage: 16 × 6
 
-`D` = direct, `P` = partial, `A` = adjacent, `-` = absent, and `?` = unknown. A direct cell says the programme deliberately changes or classifies the axis; it does not assert completeness.
+This is a map of **what each programme explicitly investigates**, not a grade for correctness, importance, or quality. Each row is a research programme. Each of the six middle columns is a different question about that programme. The final column names the important connection that is still missing.
+
+### What the six columns ask
+
+| Column | Plain-language question |
+|---|---|
+| Logic | Does the programme deliberately change or analyse the permitted rules of reasoning—for example classical versus intuitionistic logic? |
+| Set/existence | Does it analyse what kinds of mathematical objects may be asserted to exist, including Choice, comprehension, or constructive existence requirements? |
+| Infinity | Does it deliberately distinguish finite, potentially infinite, countably infinite, or completed infinite structures? |
+| Carrier | Does it change or analyse the mathematical space carrying states and observables—for example Hilbert, Krein, C*-algebraic, localic, or finite-field structures? |
+| Physical postulates | Does it begin from, vary, or derive explicit physical principles such as locality, continuity, purification, causality, or probability rules? |
+| Target claims | Does it clearly state the theorem or physical conclusion whose assumptions are being assessed? |
+
+### What a cell says
+
+| Cell text | Meaning | What it does **not** mean | Example from this matrix |
+|---|---|---|---|
+| **Direct** | The axis is a central, explicit object of the programme: it is changed, derived, or formally classified. | It does not mean the programme completely solves that axis or that its conclusions transfer to Weyl gravity. | Hilbert spaces in ZF directly study set/existence assumptions. |
+| **Partial** | The programme treats a real part of the axis, but leaves substantial parts fixed, implicit, or outside its scope. | It does not mean weak evidence or a partly correct theorem. It describes limited scope. | Separable C*-algebras in ZF partially touch physical postulates through the algebra-first motivation, but do not reconstruct physics. |
+| **Adjacent** | The programme supplies a nearby result or changes something that bears on the axis indirectly, without analysing that axis itself. | It is not evidence for a direct implication. An additional bridge theorem is required. | Reverse physics is adjacent to infinity because laws may involve infinite structures, but it does not classify infinity principles. |
+| **Not addressed** | The reviewed sources for that programme do not substantially discuss this axis. | It does not mean the programme is incompatible with the axis or that no such work exists anywhere. | The reviewed operational reconstructions do not address classical versus intuitionistic logic. |
+| **Not yet classified** | The axis may be relevant, but this audit does not yet have enough evidence to label the relationship. | It is not the same as 'not addressed'; it marks an open audit question. | The set/existence strength of the operational reconstruction proofs is not yet classified. |
+
+The full words are printed in every cell so the table can be read without memorizing abbreviations.
 
 | Programme | Logic | Set/existence | Infinity | Carrier | Physical postulates | Target claims | Unresolved intersection |
 |---|:---:|:---:|:---:|:---:|:---:|:---:|---|
-| Reverse physics | - | - | A | P | D | D | It does not yet say which logical, choice, comprehension, or infinity principles the displayed mathematics requires. |
-| Reverse mathematics and foundational analysis | P | D | P | P | - | D | Very little of relativistic gauge theory or QFT has been translated into this theorem-by-theorem calibration. |
-| Reverse mathematics of separable functional analysis | A | D | P | D | - | D | Physics papers often use a functional or separator without declaring which theorem form or whether an explicit finite witness avoids it. |
-| Computable and Weihrauch analysis | P | D | P | D | - | D | Repository certificates compute witnesses, but their relationship to uniform computability classes has not been stated. |
-| Hilbert spaces in ZF without countable Choice | A | D | D | D | - | D | Concrete physics spaces with explicit countable mode labels may avoid pathologies, but that avoidance has to be proved rather than presumed. |
-| Separable C*-algebras in ZF | A | D | D | D | P | D | The net, state, GNS, dynamics, and local-normality chain for an actual AQFT has not been audited in ZF. |
-| Bishop-style constructive quantum mechanics | D | P | P | D | P | D | There is no constructive BV-BFV, gauge-QFT, renormalized time-ordering, or Weyl-gravity chain in the reviewed sources. |
-| Constructive and localic Gelfand duality | D | P | P | D | A | D | Noncommutative local algebras, dynamics, fields, states, and renormalization remain beyond this commutative bridge. |
-| Topos algebraic quantum theory | D | P | A | D | P | D | No reviewed work carries the full local BV complex and its anomaly/QME hierarchy into this internal logic. |
-| Synthetic differential geometry and intuitionistic general relativity | D | D | P | D | P | D | The route has little visible contact with gauge fixing, BV cohomology, propagators, quantum states, or Weyl gravity. |
-| Operational-probabilistic reconstruction of quantum theory | - | ? | D | D | D | D | No reviewed reconstruction simultaneously derives its mathematical carrier and proves the weakest logical/set-existence base of the derivation. |
-| Finite-field discrete quantum phase space | - | - | D | D | P | D | There is no continuum-limit theorem connecting this kinematics to the repository's Lorentzian or conformal field theory. |
-| Krein and ghost-parity quantum architectures | - | ? | P | D | D | D | The literature and repository have extensive Krein work but almost no explicit weak-choice audit of the chosen fundamental symmetry or completion. |
-| Exact finite classical BV-BFV certificates | ? | A | D | D | P | D | No certificate states the weakest arithmetic/logic needed to check its exact witness or separates producer computation from a minimal checker at that foundational level. |
-| Lorentzian Green-hyperbolic and causal BV architecture | ? | ? | D | D | D | D | This is scientifically central and deeply underexposed, but a full reversal is expensive because even the ordinary analytic construction is incomplete in the open auxiliary blocks. |
-| Regularity of sets of reals in ZF plus dependent choice | A | D | D | A | - | D | Physics uses selected measurable structures, not arbitrary subsets of reals; the precise bridge to observables must be stated before drawing physical conclusions. |
+| Reverse physics | Not addressed | Not addressed | Adjacent | Partial | Direct | Direct | It does not yet say which logical, choice, comprehension, or infinity principles the displayed mathematics requires. |
+| Reverse mathematics and foundational analysis | Partial | Direct | Partial | Partial | Not addressed | Direct | Very little of relativistic gauge theory or QFT has been translated into this theorem-by-theorem calibration. |
+| Reverse mathematics of separable functional analysis | Adjacent | Direct | Partial | Direct | Not addressed | Direct | Physics papers often use a functional or separator without declaring which theorem form or whether an explicit finite witness avoids it. |
+| Computable and Weihrauch analysis | Partial | Direct | Partial | Direct | Not addressed | Direct | Repository certificates compute witnesses, but their relationship to uniform computability classes has not been stated. |
+| Hilbert spaces in ZF without countable Choice | Adjacent | Direct | Direct | Direct | Not addressed | Direct | Concrete physics spaces with explicit countable mode labels may avoid pathologies, but that avoidance has to be proved rather than presumed. |
+| Separable C*-algebras in ZF | Adjacent | Direct | Direct | Direct | Partial | Direct | The net, state, GNS, dynamics, and local-normality chain for an actual AQFT has not been audited in ZF. |
+| Bishop-style constructive quantum mechanics | Direct | Partial | Partial | Direct | Partial | Direct | There is no constructive BV-BFV, gauge-QFT, renormalized time-ordering, or Weyl-gravity chain in the reviewed sources. |
+| Constructive and localic Gelfand duality | Direct | Partial | Partial | Direct | Adjacent | Direct | Noncommutative local algebras, dynamics, fields, states, and renormalization remain beyond this commutative bridge. |
+| Topos algebraic quantum theory | Direct | Partial | Adjacent | Direct | Partial | Direct | No reviewed work carries the full local BV complex and its anomaly/QME hierarchy into this internal logic. |
+| Synthetic differential geometry and intuitionistic general relativity | Direct | Direct | Partial | Direct | Partial | Direct | The route has little visible contact with gauge fixing, BV cohomology, propagators, quantum states, or Weyl gravity. |
+| Operational-probabilistic reconstruction of quantum theory | Not addressed | Not yet classified | Direct | Direct | Direct | Direct | No reviewed reconstruction simultaneously derives its mathematical carrier and proves the weakest logical/set-existence base of the derivation. |
+| Finite-field discrete quantum phase space | Not addressed | Not addressed | Direct | Direct | Partial | Direct | There is no continuum-limit theorem connecting this kinematics to the repository's Lorentzian or conformal field theory. |
+| Krein and ghost-parity quantum architectures | Not addressed | Not yet classified | Partial | Direct | Direct | Direct | The literature and repository have extensive Krein work but almost no explicit weak-choice audit of the chosen fundamental symmetry or completion. |
+| Exact finite classical BV-BFV certificates | Not yet classified | Adjacent | Direct | Direct | Partial | Direct | No certificate states the weakest arithmetic/logic needed to check its exact witness or separates producer computation from a minimal checker at that foundational level. |
+| Lorentzian Green-hyperbolic and causal BV architecture | Not yet classified | Not yet classified | Direct | Direct | Direct | Direct | This is scientifically central and deeply underexposed, but a full reversal is expensive because even the ordinary analytic construction is incomplete in the open auxiliary blocks. |
+| Regularity of sets of reals in ZF plus dependent choice | Adjacent | Direct | Direct | Adjacent | Not addressed | Direct | Physics uses selected measurable structures, not arbitrary subsets of reals; the precise bridge to observables must be stated before drawing physical conclusions. |
 
 ## Ranked opportunity completion: 9 rows
 
-`COMPLETE` means only that the source ranking's bounded first artifact exists and passes its verifier. It does not mean the deeper programme is complete.
+The numeric **score** is a work-priority heuristic: scientific leverage + repository readiness + boundedness + literature underexposure − dependency cost. It ranks tractable next steps; it is not a measure of truth, importance, or literature quality.
+
+The status terms have deliberately narrow meanings:
+
+| Status | Plain-language meaning |
+|---|---|
+| `COMPLETE` | The bounded first deliverable named in the original ranking exists and passes its verifier. The larger research problem remains open. |
+| `SUFFICIENCY_PROVED` | A stated mathematical base is strong enough for the displayed construction. Necessity or weakest possible strength has not been proved unless separately stated. |
+| `SEPARATED` | Previously conflated assumptions or conclusions have been distinguished and pinned to different stages. This need not be a new theorem. |
+| `AVOIDANCE_PROVED_FOR_DISPLAYED_CERTIFICATE` | This particular finite derivation uses an explicit witness and therefore avoids the named general theorem. It says nothing universal about other derivations. |
+| `DEPENDENCY_CUT_COMPLETE` | The assumptions used by the selected theorem have been divided into explicit layers. The layers have not all been reconstructed over weak foundations. |
+| `LITERATURE_SCOPED` | Sources, terminology, and obstacles have been mapped, but no formal construction or theorem has been claimed. |
 
 | Rank | Score | Opportunity | Artifact | Status | Evidence | Deeper gate |
 |---:|---:|---|---|---|---|---|
@@ -65,6 +99,8 @@ Ranks 1 and 3 deliberately share the finite BV certificate: it proves a weak-bas
 ## Literature points: 25 records
 
 Each row reports only the proposition imported into this programme. The boundary column prevents transfer from a source theorem to a stronger physics or foundations claim.
+
+The **Pin** column reports provenance, not scientific quality: `CONTENT_PINNED` means the consulted full-text bytes have a recorded hash; `GIT_BLOB_PINNED` means a local repository document is fixed by a Git object; `METADATA_ONLY` means only the bibliographic record is currently pinned, so that source blocks a content freeze.
 
 | Year | Source | Pin | Point imported | Boundary |
 |---:|---|---|---|---|

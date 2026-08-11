@@ -27,7 +27,13 @@ AXES = (
     ("PHYSICAL_POSTULATES", "Physical postulates"),
     ("TARGET_CLAIMS", "Target claims"),
 )
-STATUS_SYMBOL = {"DIRECT": "D", "PARTIAL": "P", "ADJACENT": "A", "ABSENT": "-", "UNKNOWN": "?"}
+STATUS_LABEL = {
+    "DIRECT": "Direct",
+    "PARTIAL": "Partial",
+    "ADJACENT": "Adjacent",
+    "ABSENT": "Not addressed",
+    "UNKNOWN": "Not yet classified",
+}
 
 
 def load(path: Path) -> dict[str, Any]:
@@ -94,7 +100,7 @@ def render(*, output: Path = DEFAULT_OUTPUT) -> str:
         f"| Literature corpus | **{len(literature)} records** | Imported proposition plus transfer boundary |",
         "",
         "Coverage-cell distribution: "
-        + ", ".join(f"{coverage_counts[name]} `{name}`" for name in ("DIRECT", "PARTIAL", "ADJACENT", "ABSENT", "UNKNOWN"))
+        + ", ".join(f"{coverage_counts[name]} **{STATUS_LABEL[name].lower()}**" for name in ("DIRECT", "PARTIAL", "ADJACENT", "ABSENT", "UNKNOWN"))
         + ".",
         "",
         "Literature provenance: "
@@ -105,13 +111,36 @@ def render(*, output: Path = DEFAULT_OUTPUT) -> str:
         "",
         "## Assumption coverage: 16 × 6",
         "",
-        "`D` = direct, `P` = partial, `A` = adjacent, `-` = absent, and `?` = unknown. A direct cell says the programme deliberately changes or classifies the axis; it does not assert completeness.",
+        "This is a map of **what each programme explicitly investigates**, not a grade for correctness, importance, or quality. Each row is a research programme. Each of the six middle columns is a different question about that programme. The final column names the important connection that is still missing.",
+        "",
+        "### What the six columns ask",
+        "",
+        "| Column | Plain-language question |",
+        "|---|---|",
+        "| Logic | Does the programme deliberately change or analyse the permitted rules of reasoning—for example classical versus intuitionistic logic? |",
+        "| Set/existence | Does it analyse what kinds of mathematical objects may be asserted to exist, including Choice, comprehension, or constructive existence requirements? |",
+        "| Infinity | Does it deliberately distinguish finite, potentially infinite, countably infinite, or completed infinite structures? |",
+        "| Carrier | Does it change or analyse the mathematical space carrying states and observables—for example Hilbert, Krein, C*-algebraic, localic, or finite-field structures? |",
+        "| Physical postulates | Does it begin from, vary, or derive explicit physical principles such as locality, continuity, purification, causality, or probability rules? |",
+        "| Target claims | Does it clearly state the theorem or physical conclusion whose assumptions are being assessed? |",
+        "",
+        "### What a cell says",
+        "",
+        "| Cell text | Meaning | What it does **not** mean | Example from this matrix |",
+        "|---|---|---|---|",
+        "| **Direct** | The axis is a central, explicit object of the programme: it is changed, derived, or formally classified. | It does not mean the programme completely solves that axis or that its conclusions transfer to Weyl gravity. | Hilbert spaces in ZF directly study set/existence assumptions. |",
+        "| **Partial** | The programme treats a real part of the axis, but leaves substantial parts fixed, implicit, or outside its scope. | It does not mean weak evidence or a partly correct theorem. It describes limited scope. | Separable C*-algebras in ZF partially touch physical postulates through the algebra-first motivation, but do not reconstruct physics. |",
+        "| **Adjacent** | The programme supplies a nearby result or changes something that bears on the axis indirectly, without analysing that axis itself. | It is not evidence for a direct implication. An additional bridge theorem is required. | Reverse physics is adjacent to infinity because laws may involve infinite structures, but it does not classify infinity principles. |",
+        "| **Not addressed** | The reviewed sources for that programme do not substantially discuss this axis. | It does not mean the programme is incompatible with the axis or that no such work exists anywhere. | The reviewed operational reconstructions do not address classical versus intuitionistic logic. |",
+        "| **Not yet classified** | The axis may be relevant, but this audit does not yet have enough evidence to label the relationship. | It is not the same as 'not addressed'; it marks an open audit question. | The set/existence strength of the operational reconstruction proofs is not yet classified. |",
+        "",
+        "The full words are printed in every cell so the table can be read without memorizing abbreviations.",
         "",
         "| Programme | " + " | ".join(label for _, label in AXES) + " | Unresolved intersection |",
         "|---|" + "|".join(":---:" for _ in AXES) + "|---|",
     ]
     for attempt in attempts:
-        marks = [STATUS_SYMBOL[attempt["coverage"][key]["status"]] for key, _ in AXES]
+        marks = [STATUS_LABEL[attempt["coverage"][key]["status"]] for key, _ in AXES]
         lines.append(
             f"| {cell(attempt['programme'])} | "
             + " | ".join(marks)
@@ -122,7 +151,18 @@ def render(*, output: Path = DEFAULT_OUTPUT) -> str:
         "",
         "## Ranked opportunity completion: 9 rows",
         "",
-        "`COMPLETE` means only that the source ranking's bounded first artifact exists and passes its verifier. It does not mean the deeper programme is complete.",
+        "The numeric **score** is a work-priority heuristic: scientific leverage + repository readiness + boundedness + literature underexposure − dependency cost. It ranks tractable next steps; it is not a measure of truth, importance, or literature quality.",
+        "",
+        "The status terms have deliberately narrow meanings:",
+        "",
+        "| Status | Plain-language meaning |",
+        "|---|---|",
+        "| `COMPLETE` | The bounded first deliverable named in the original ranking exists and passes its verifier. The larger research problem remains open. |",
+        "| `SUFFICIENCY_PROVED` | A stated mathematical base is strong enough for the displayed construction. Necessity or weakest possible strength has not been proved unless separately stated. |",
+        "| `SEPARATED` | Previously conflated assumptions or conclusions have been distinguished and pinned to different stages. This need not be a new theorem. |",
+        "| `AVOIDANCE_PROVED_FOR_DISPLAYED_CERTIFICATE` | This particular finite derivation uses an explicit witness and therefore avoids the named general theorem. It says nothing universal about other derivations. |",
+        "| `DEPENDENCY_CUT_COMPLETE` | The assumptions used by the selected theorem have been divided into explicit layers. The layers have not all been reconstructed over weak foundations. |",
+        "| `LITERATURE_SCOPED` | Sources, terminology, and obstacles have been mapped, but no formal construction or theorem has been claimed. |",
         "",
         "| Rank | Score | Opportunity | Artifact | Status | Evidence | Deeper gate |",
         "|---:|---:|---|---|---|---|---|",
@@ -143,6 +183,8 @@ def render(*, output: Path = DEFAULT_OUTPUT) -> str:
         "## Literature points: 25 records",
         "",
         "Each row reports only the proposition imported into this programme. The boundary column prevents transfer from a source theorem to a stronger physics or foundations claim.",
+        "",
+        "The **Pin** column reports provenance, not scientific quality: `CONTENT_PINNED` means the consulted full-text bytes have a recorded hash; `GIT_BLOB_PINNED` means a local repository document is fixed by a Git object; `METADATA_ONLY` means only the bibliographic record is currently pinned, so that source blocks a content freeze.",
         "",
         "| Year | Source | Pin | Point imported | Boundary |",
         "|---:|---|---|---|---|",

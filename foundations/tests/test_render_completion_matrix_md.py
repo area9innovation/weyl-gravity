@@ -19,6 +19,25 @@ class CompletionMatrixMarkdownTests(unittest.TestCase):
         self.assertIn("**9 rows**, **8 certificates**", text)
         self.assertIn("**25 records**", text)
 
+    def test_coverage_legend_is_plain_language(self):
+        text = render()
+        for label in ("**Direct**", "**Partial**", "**Adjacent**", "**Not addressed**", "**Not yet classified**"):
+            self.assertIn(label, text)
+        self.assertIn("It does not mean", text)
+        self.assertIn("The full words are printed in every cell", text)
+        self.assertNotIn("`D` = direct", text)
+
+    def test_axes_are_explained_as_questions(self):
+        text = render()
+        self.assertIn("What the six columns ask", text)
+        self.assertIn("permitted rules of reasoning", text)
+        self.assertIn("Choice, comprehension, or constructive existence", text)
+
+    def test_lifecycle_and_pin_terms_are_explained(self):
+        text = render()
+        self.assertIn("The status terms have deliberately narrow meanings", text)
+        self.assertIn("The **Pin** column reports provenance, not scientific quality", text)
+
     def test_all_opportunities_are_present(self):
         text = render()
         self.assertEqual(text.count("| `OP-"), 9)
