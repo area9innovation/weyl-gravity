@@ -11,7 +11,7 @@
 
 The 6 × 6 × 6 cube has **108 distinct products of two dimensions**: 36 mathematical-regime × carrier pairs, 36 mathematical-regime × obligation pairs, and 36 carrier × obligation pairs. Each pair is inspected across the six values of the remaining dimension.
 
-The current assessed cube yields **26 bridgeable pair frontiers**, **25 important but unseeded pair gaps**, and **26 assessed open three-axis cells**. Unmapped cells are not counted as gaps.
+The current assessed cube yields **25 bridgeable pair frontiers**, **24 important but unseeded pair gaps**, and **25 assessed open three-axis cells**. Unmapped cells are not counted as gaps.
 
 The strongest immediate pattern is to reuse a theorem, construction, or literature result already present at one value of the third dimension and test exactly which additional value fails. This turns an enormous foundational question into a bounded comparison or dependency audit.
 
@@ -34,17 +34,17 @@ The minimum is the key: a pair ranks well only when evidence and open work occur
 | 2 | **Smooth/PDE/distributional × Dynamics/propagation** | Mathematical regime | 17 | Classical standard (local result); Topos/internal (literature result) | Weak formal base (priority gap); ZF with weakened Choice (priority gap); Constructive/computable (priority gap) |
 | 3 | **Topos/internal × Localic/synthetic/internal** | Physical obligation | 14 | Kinematics/observables (literature result); States/probability (pieces only) | States/probability (pieces only); Dynamics/propagation (priority gap); Gauge/BV/cohomology (priority gap); Interactions/renormalization/QME (priority gap); Reconstruction/limits (priority gap) |
 | 4 | **Classical standard × Smooth/PDE/distributional** | Physical obligation | 13 | Dynamics/propagation (local result); Gauge/BV/cohomology (pieces only) | Gauge/BV/cohomology (pieces only); Interactions/renormalization/QME (priority gap) |
-| 5 | **ZF with weakened Choice × Dynamics/propagation** | Carrier/analysis | 10 | Hilbert/operator (local result) | Algebraic C*-system (priority gap); Smooth/PDE/distributional (priority gap) |
-| 6 | **Finite/discrete restriction × Reconstruction/limits** | Carrier/analysis | 9 | Finite exact algebra (local result); Hilbert/operator (local result) | Smooth/PDE/distributional (priority gap) |
-| 7 | **Weak formal base × Gauge/BV/cohomology** | Carrier/analysis | 9 | Finite exact algebra (local result) | Smooth/PDE/distributional (priority gap) |
-| 8 | **ZF with weakened Choice × Algebraic C*-system** | Physical obligation | 9 | Kinematics/observables (local result); States/probability (local result) | Dynamics/propagation (priority gap) |
-| 9 | **Smooth/PDE/distributional × Gauge/BV/cohomology** | Mathematical regime | 8 | Classical standard (pieces only) | Classical standard (pieces only); Weak formal base (priority gap); ZF with weakened Choice (priority gap); Constructive/computable (priority gap); Topos/internal (priority gap) |
-| 10 | **Topos/internal × Smooth/PDE/distributional** | Physical obligation | 8 | Dynamics/propagation (literature result) | Gauge/BV/cohomology (priority gap); Interactions/renormalization/QME (priority gap) |
-| 11 | **Topos/internal × Dynamics/propagation** | Carrier/analysis | 7 | Smooth/PDE/distributional (literature result) | Localic/synthetic/internal (priority gap) |
-| 12 | **Algebraic C*-system × States/probability** | Mathematical regime | 6 | Classical standard (local result); ZF with weakened Choice (local result); Constructive/computable (pieces only) | Constructive/computable (pieces only) |
-| 13 | **Finite exact algebra × Gauge/BV/cohomology** | Mathematical regime | 6 | Classical standard (local result); Weak formal base (local result); Finite/discrete restriction (local result); Constructive/computable (pieces only) | Constructive/computable (pieces only) |
-| 14 | **Hilbert/operator × Kinematics/observables** | Mathematical regime | 6 | Classical standard (literature result); ZF with weakened Choice (literature result); Constructive/computable (literature result); Finite/discrete restriction (literature result); Weak formal base (pieces only) | Weak formal base (pieces only) |
-| 15 | **Hilbert/operator × Reconstruction/limits** | Mathematical regime | 6 | Finite/discrete restriction (local result); Constructive/computable (pieces only) | Constructive/computable (pieces only) |
+| 5 | **Finite/discrete restriction × Reconstruction/limits** | Carrier/analysis | 9 | Finite exact algebra (local result); Hilbert/operator (local result) | Smooth/PDE/distributional (priority gap) |
+| 6 | **Weak formal base × Gauge/BV/cohomology** | Carrier/analysis | 9 | Finite exact algebra (local result) | Smooth/PDE/distributional (priority gap) |
+| 7 | **ZF with weakened Choice × Dynamics/propagation** | Carrier/analysis | 9 | Hilbert/operator (local result); Krein/indefinite (local result); Algebraic C*-system (local result) | Smooth/PDE/distributional (priority gap) |
+| 8 | **Smooth/PDE/distributional × Gauge/BV/cohomology** | Mathematical regime | 8 | Classical standard (pieces only) | Classical standard (pieces only); Weak formal base (priority gap); ZF with weakened Choice (priority gap); Constructive/computable (priority gap); Topos/internal (priority gap) |
+| 9 | **Topos/internal × Smooth/PDE/distributional** | Physical obligation | 8 | Dynamics/propagation (literature result) | Gauge/BV/cohomology (priority gap); Interactions/renormalization/QME (priority gap) |
+| 10 | **Topos/internal × Dynamics/propagation** | Carrier/analysis | 7 | Smooth/PDE/distributional (literature result) | Localic/synthetic/internal (priority gap) |
+| 11 | **Algebraic C*-system × States/probability** | Mathematical regime | 6 | Classical standard (local result); ZF with weakened Choice (local result); Constructive/computable (pieces only) | Constructive/computable (pieces only) |
+| 12 | **Finite exact algebra × Gauge/BV/cohomology** | Mathematical regime | 6 | Classical standard (local result); Weak formal base (local result); Finite/discrete restriction (local result); Constructive/computable (pieces only) | Constructive/computable (pieces only) |
+| 13 | **Hilbert/operator × Kinematics/observables** | Mathematical regime | 6 | Classical standard (literature result); ZF with weakened Choice (literature result); Constructive/computable (literature result); Finite/discrete restriction (literature result); Weak formal base (pieces only) | Weak formal base (pieces only) |
+| 14 | **Hilbert/operator × Reconstruction/limits** | Mathematical regime | 6 | Finite/discrete restriction (local result); Constructive/computable (pieces only) | Constructive/computable (pieces only) |
+| 15 | **Classical standard × Gauge/BV/cohomology** | Carrier/analysis | 6 | Finite exact algebra (local result); Smooth/PDE/distributional (pieces only) | Smooth/PDE/distributional (pieces only) |
 
 A promising row does not say that the open cell follows from the seeded cell. It says that the fixed pair gives a controlled comparison: one can isolate what changes when only the third coordinate changes.
 
@@ -54,21 +54,21 @@ The cell score adds the bridge scores of its three containing pairs. It therefor
 
 | Rank | Mathematical regime | Carrier/analysis | Physical obligation | Current status | Combined pair support | Precise boundary to attack |
 |---:|---|---|---|---|---:|---|
-| 1 | ZF with weakened Choice | Smooth/PDE/distributional | Dynamics/propagation | Priority gap | 27 | No choice-free continuum PDE theorem is claimed. |
-| 2 | Classical standard | Smooth/PDE/distributional | Gauge/BV/cohomology | Pieces only | 27 | Finite residual data are not the continuum off-shell complex. |
+| 1 | Classical standard | Smooth/PDE/distributional | Gauge/BV/cohomology | Pieces only | 27 | Finite residual data are not the continuum off-shell complex. |
+| 2 | ZF with weakened Choice | Smooth/PDE/distributional | Dynamics/propagation | Priority gap | 26 | No choice-free continuum PDE theorem is claimed. |
 | 3 | Topos/internal | Localic/synthetic/internal | States/probability | Pieces only | 22 | Logical truth values and physical probabilities must not be conflated. |
 | 4 | Topos/internal | Localic/synthetic/internal | Dynamics/propagation | Priority gap | 21 | A localic spectrum is not causal evolution. |
-| 5 | ZF with weakened Choice | Algebraic C*-system | Dynamics/propagation | Priority gap | 19 | Algebraic functional calculus is not dynamics. |
-| 6 | Finite/discrete restriction | Finite exact algebra | Dynamics/propagation | Priority gap | 18 | Finite kinematics alone supplies no dynamics. |
-| 7 | Finite/discrete restriction | Finite exact algebra | Interactions/renormalization/QME | Priority gap | 18 | Finite algebra does not remove renormalization obligations. |
-| 8 | Constructive/computable | Algebraic C*-system | States/probability | Pieces only | 18 | No physical state-selection chain joins them. |
-| 9 | Constructive/computable | Smooth/PDE/distributional | Dynamics/propagation | Priority gap | 17 | Classical rigorous PDE is not automatically constructive PDE. |
-| 10 | Weak formal base | Smooth/PDE/distributional | Dynamics/propagation | Priority gap | 17 | No reverse-mathematical PDE theorem has been proved. |
-| 11 | Weak formal base | Smooth/PDE/distributional | Gauge/BV/cohomology | Priority gap | 17 | Finite certificates do not fill this cell. |
-| 12 | Topos/internal | Smooth/PDE/distributional | Gauge/BV/cohomology | Priority gap | 16 | Classical synthetic GR is not gauge-fixed Weyl BV. |
-| 13 | Constructive/computable | Hilbert/operator | Reconstruction/limits | Pieces only | 16 | A computability classification is not a reverse-mathematical or physical implication. |
-| 14 | Weak formal base | Hilbert/operator | Kinematics/observables | Pieces only | 16 | No relativistic gauge theory is encoded in the cited reversals. |
-| 15 | Constructive/computable | Finite exact algebra | Gauge/BV/cohomology | Pieces only | 15 | PRA verifiability is not identical to Bishop constructivity or computability. |
+| 5 | Finite/discrete restriction | Finite exact algebra | Dynamics/propagation | Priority gap | 18 | Finite kinematics alone supplies no dynamics. |
+| 6 | Finite/discrete restriction | Finite exact algebra | Interactions/renormalization/QME | Priority gap | 18 | Finite algebra does not remove renormalization obligations. |
+| 7 | Constructive/computable | Algebraic C*-system | States/probability | Pieces only | 18 | No physical state-selection chain joins them. |
+| 8 | Constructive/computable | Smooth/PDE/distributional | Dynamics/propagation | Priority gap | 17 | Classical rigorous PDE is not automatically constructive PDE. |
+| 9 | Weak formal base | Smooth/PDE/distributional | Dynamics/propagation | Priority gap | 17 | No reverse-mathematical PDE theorem has been proved. |
+| 10 | Weak formal base | Smooth/PDE/distributional | Gauge/BV/cohomology | Priority gap | 17 | Finite certificates do not fill this cell. |
+| 11 | Topos/internal | Smooth/PDE/distributional | Gauge/BV/cohomology | Priority gap | 16 | Classical synthetic GR is not gauge-fixed Weyl BV. |
+| 12 | Constructive/computable | Hilbert/operator | Reconstruction/limits | Pieces only | 16 | A computability classification is not a reverse-mathematical or physical implication. |
+| 13 | Weak formal base | Hilbert/operator | Kinematics/observables | Pieces only | 16 | No relativistic gauge theory is encoded in the cited reversals. |
+| 14 | Constructive/computable | Finite exact algebra | Gauge/BV/cohomology | Pieces only | 15 | PRA verifiability is not identical to Bishop constructivity or computability. |
+| 15 | Topos/internal | Localic/synthetic/internal | Gauge/BV/cohomology | Priority gap | 14 | Only a glossary and obstruction DAG exist. |
 
 ## Pairwise overview
 
@@ -82,7 +82,7 @@ Each cell scans all six values of **physical obligation**.
 |---|:---:|:---:|:---:|:---:|:---:|:---:|
 | **Classical standard** | 0 — no assessed bridge | 0 — no assessed bridge | 0 — no assessed bridge | 0 — no assessed bridge | 13 — near-term local bridge | 0 — no assessed bridge |
 | **Weak formal base** | 0 — no assessed bridge | 4 — pieces-only synthesis frontier | 0 — no assessed bridge | 0 — no assessed bridge | 0 — important but unseeded | 0 — no assessed bridge |
-| **ZF with weakened Choice** | 0 — no assessed bridge | 0 — no assessed bridge | 0 — no assessed bridge | 9 — near-term local bridge | 0 — important but unseeded | 0 — no assessed bridge |
+| **ZF with weakened Choice** | 0 — no assessed bridge | 0 — no assessed bridge | 0 — no assessed bridge | 0 — no assessed bridge | 0 — important but unseeded | 0 — no assessed bridge |
 | **Constructive/computable** | 4 — pieces-only synthesis frontier | 6 — near-term literature bridge | 0 — no assessed bridge | 6 — near-term literature bridge | 0 — important but unseeded | 0 — no assessed bridge |
 | **Topos/internal** | 0 — no assessed bridge | 0 — no assessed bridge | 0 — no assessed bridge | 0 — no assessed bridge | 8 — near-term literature bridge | 14 — near-term literature bridge |
 | **Finite/discrete restriction** | 18 — near-term local bridge | 0 — no assessed bridge | 0 — no assessed bridge | 0 — no assessed bridge | 0 — important but unseeded | 0 — no assessed bridge |
@@ -95,7 +95,7 @@ Each cell scans all six values of **carrier/analysis**.
 |---|:---:|:---:|:---:|:---:|:---:|:---:|
 | **Classical standard** | 0 — no assessed bridge | 0 — no assessed bridge | 0 — no assessed bridge | 6 — near-term local bridge | 0 — important but unseeded | 0 — no assessed bridge |
 | **Weak formal base** | 6 — near-term local bridge | 0 — no assessed bridge | 0 — important but unseeded | 9 — near-term local bridge | 0 — important but unseeded | 0 — no assessed bridge |
-| **ZF with weakened Choice** | 0 — no assessed bridge | 0 — no assessed bridge | 10 — near-term local bridge | 0 — important but unseeded | 0 — important but unseeded | 0 — no assessed bridge |
+| **ZF with weakened Choice** | 0 — no assessed bridge | 0 — no assessed bridge | 9 — near-term local bridge | 0 — important but unseeded | 0 — important but unseeded | 0 — no assessed bridge |
 | **Constructive/computable** | 0 — no assessed bridge | 6 — near-term literature bridge | 0 — important but unseeded | 5 — pieces-only synthesis frontier | 0 — important but unseeded | 4 — pieces-only synthesis frontier |
 | **Topos/internal** | 0 — no assessed bridge | 4 — pieces-only synthesis frontier | 7 — near-term literature bridge | 0 — important but unseeded | 0 — important but unseeded | 0 — important but unseeded |
 | **Finite/discrete restriction** | 0 — no assessed bridge | 0 — no assessed bridge | 0 — important but unseeded | 0 — no assessed bridge | 0 — important but unseeded | 9 — near-term local bridge |
@@ -109,7 +109,7 @@ Each cell scans all six values of **mathematical regime**.
 | **Finite exact algebra** | 0 — no assessed bridge | 0 — no assessed bridge | 0 — important but unseeded | 6 — near-term local bridge | 0 — important but unseeded | 0 — no assessed bridge |
 | **Hilbert/operator** | 6 — near-term literature bridge | 0 — no assessed bridge | 0 — no assessed bridge | 0 — no assessed bridge | 0 — no assessed bridge | 6 — near-term local bridge |
 | **Krein/indefinite** | 0 — no assessed bridge | 0 — no assessed bridge | 0 — no assessed bridge | 0 — no assessed bridge | 0 — no assessed bridge | 0 — no assessed bridge |
-| **Algebraic C*-system** | 0 — no assessed bridge | 6 — near-term local bridge | 0 — important but unseeded | 0 — no assessed bridge | 0 — no assessed bridge | 0 — no assessed bridge |
+| **Algebraic C*-system** | 0 — no assessed bridge | 6 — near-term local bridge | 0 — no assessed bridge | 0 — no assessed bridge | 0 — no assessed bridge | 0 — no assessed bridge |
 | **Smooth/PDE/distributional** | 0 — no assessed bridge | 0 — no assessed bridge | 17 — near-term local bridge | 8 — pieces-only synthesis frontier | 0 — important but unseeded | 0 — important but unseeded |
 | **Localic/synthetic/internal** | 0 — no assessed bridge | 4 — pieces-only synthesis frontier | 0 — important but unseeded | 0 — important but unseeded | 0 — important but unseeded | 0 — important but unseeded |
 
@@ -125,7 +125,6 @@ These pairs contain an explicit priority gap but no local result, literature res
 | **ZF with weakened Choice × Smooth/PDE/distributional** | Physical obligation | Dynamics/propagation (priority gap); Gauge/BV/cohomology (priority gap); Interactions/renormalization/QME (priority gap) | 3 |
 | **Topos/internal × Gauge/BV/cohomology** | Carrier/analysis | Smooth/PDE/distributional (priority gap); Localic/synthetic/internal (priority gap) | 4 |
 | **Topos/internal × Interactions/renormalization/QME** | Carrier/analysis | Smooth/PDE/distributional (priority gap); Localic/synthetic/internal (priority gap) | 4 |
-| **Algebraic C*-system × Dynamics/propagation** | Mathematical regime | ZF with weakened Choice (priority gap) | 5 |
 | **Finite exact algebra × Dynamics/propagation** | Mathematical regime | Finite/discrete restriction (priority gap) | 5 |
 | **Finite exact algebra × Interactions/renormalization/QME** | Mathematical regime | Finite/discrete restriction (priority gap) | 5 |
 | **Localic/synthetic/internal × Dynamics/propagation** | Mathematical regime | Topos/internal (priority gap) | 5 |

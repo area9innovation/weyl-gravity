@@ -41,7 +41,7 @@ class CompletionMatrixMarkdownTests(unittest.TestCase):
 
     def test_cube_overview_and_missing_faces_are_visible(self):
         text = render()
-        self.assertIn("Only **56 of 216 cells (25.9%)**", text)
+        self.assertIn("Only **59 of 216 cells (27.3%)**", text)
         self.assertIn("The six cube slices", text)
         self.assertIn("The five missing faces to investigate thoroughly", text)
         self.assertIn("constructive/internal gauge-QFT face", text)

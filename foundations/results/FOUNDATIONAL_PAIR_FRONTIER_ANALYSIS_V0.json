@@ -9,7 +9,7 @@
     "LORENTZIAN-CAUSAL"
   ],
   "created": "2026-08-11",
-  "repository_base_commit": "c676bde482341c627de41d0cc162b21f50bd91a3",
+  "repository_base_commit": "dafb2345163d389e32416a019a3be38cc014f33f",
   "purpose": "Find products of two cube dimensions that already have an evidence foothold and a nearby assessed open obligation, while keeping unassessed cells and unseeded gaps distinct.",
   "method": {
     "projection_rule": "Fix one key on each of two axes and inspect all six keys on the remaining axis.",
@@ -32,15 +32,15 @@
     "projections": 108,
     "cells_per_projection": 6,
     "classification_counts": {
-      "NEAR_TERM_LOCAL_BRIDGE": 12,
+      "NEAR_TERM_LOCAL_BRIDGE": 11,
       "NEAR_TERM_LITERATURE_BRIDGE": 7,
       "PIECES_ONLY_FRONTIER": 7,
-      "UNSEEDED_IMPORTANT_GAP": 25,
-      "NO_FRONTIER": 57
+      "UNSEEDED_IMPORTANT_GAP": 24,
+      "NO_FRONTIER": 59
     },
-    "ranked_bridge_frontiers": 26,
-    "unseeded_important_gaps": 25,
-    "assessed_open_cells": 26
+    "ranked_bridge_frontiers": 25,
+    "unseeded_important_gaps": 24,
+    "assessed_open_cells": 25
   },
   "pair_families": [
     {
@@ -348,13 +348,13 @@
       ],
       "scan_axis": "OBLIGATION",
       "counts": {
-        "LOCAL_RESULT": 1,
+        "LOCAL_RESULT": 2,
         "LITERATURE_RESULT": 1,
         "PIECES_ONLY": 0,
         "PRIORITY_GAP": 0,
-        "NOT_MAPPED": 4
+        "NOT_MAPPED": 3
       },
-      "seed_strength": 7,
+      "seed_strength": 11,
       "open_demand": 0,
       "bridge_score": 0,
       "classification": "NO_FRONTIER",
@@ -383,16 +383,22 @@
           ],
           "summary": "Explicit sign-normalized coordinate and Fock states exist, and a scoped density-state selection obstruction is proved.",
           "boundary": "State existence and a conditional nonselection theorem do not supply a physical Weyl state or generalized Born rule."
-        }
-      ],
-      "candidate_cells": [],
-      "not_mapped_cells": [
+        },
         {
           "foundation": "CLASSICAL_STANDARD",
           "carrier": "KREIN_INDEFINITE",
           "obligation": "DYNAMICS_PROPAGATION",
-          "status": "NOT_MAPPED"
-        },
+          "status": "LOCAL_RESULT",
+          "evidence": [
+            "FOUNDATIONAL_EXPLICIT_ENERGY_SPECTRAL_FRAGMENT_ZF_V1",
+            "FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1"
+          ],
+          "summary": "The explicit cylinder energy generates a strongly continuous Hilbert-unitary and J-unitary free-mode group.",
+          "boundary": "No other conformal generator, interaction, causal propagation, or nonlinear Bateman-Turok dynamics is exponentiated."
+        }
+      ],
+      "candidate_cells": [],
+      "not_mapped_cells": [
         {
           "foundation": "CLASSICAL_STANDARD",
           "carrier": "KREIN_INDEFINITE",
@@ -427,13 +433,13 @@
       ],
       "scan_axis": "OBLIGATION",
       "counts": {
-        "LOCAL_RESULT": 1,
+        "LOCAL_RESULT": 2,
         "LITERATURE_RESULT": 1,
         "PIECES_ONLY": 0,
         "PRIORITY_GAP": 0,
-        "NOT_MAPPED": 4
+        "NOT_MAPPED": 3
       },
-      "seed_strength": 7,
+      "seed_strength": 11,
       "open_demand": 0,
       "bridge_score": 0,
       "classification": "NO_FRONTIER",
@@ -461,16 +467,21 @@
           ],
           "summary": "The explicit separable detector algebra has bounded local state and GNS constructions, separated from physical selection.",
           "boundary": "A mathematical state/GNS result does not select a physical Weyl or thermodynamic state."
-        }
-      ],
-      "candidate_cells": [],
-      "not_mapped_cells": [
+        },
         {
           "foundation": "CLASSICAL_STANDARD",
           "carrier": "ALGEBRAIC_CSTAR",
           "obligation": "DYNAMICS_PROPAGATION",
-          "status": "NOT_MAPPED"
-        },
+          "status": "LOCAL_RESULT",
+          "evidence": [
+            "FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1"
+          ],
+          "summary": "Energy conjugation defines a point-norm continuous free automorphism group on the unitized compact-operator algebra.",
+          "boundary": "This compact-cylinder C*-dynamics is not an interacting AQFT net or full-orbit dynamics."
+        }
+      ],
+      "candidate_cells": [],
+      "not_mapped_cells": [
         {
           "foundation": "CLASSICAL_STANDARD",
           "carrier": "ALGEBRAIC_CSTAR",
@@ -1218,13 +1229,13 @@
       ],
       "scan_axis": "OBLIGATION",
       "counts": {
-        "LOCAL_RESULT": 2,
+        "LOCAL_RESULT": 3,
         "LITERATURE_RESULT": 0,
         "PIECES_ONLY": 0,
         "PRIORITY_GAP": 0,
-        "NOT_MAPPED": 4
+        "NOT_MAPPED": 3
       },
-      "seed_strength": 8,
+      "seed_strength": 12,
       "open_demand": 0,
       "bridge_score": 0,
       "classification": "NO_FRONTIER",
@@ -1251,16 +1262,22 @@
           ],
           "summary": "Named Krein and Fock coordinates define positive normalized rank-one states in ZF without a choice operation.",
           "boundary": "The carrier does not select a unique physical state; singular states and dynamically selected Born functionals remain open."
-        }
-      ],
-      "candidate_cells": [],
-      "not_mapped_cells": [
+        },
         {
           "foundation": "WEAK_CHOICE_ZF",
           "carrier": "KREIN_INDEFINITE",
           "obligation": "DYNAMICS_PROPAGATION",
-          "status": "NOT_MAPPED"
-        },
+          "status": "LOCAL_RESULT",
+          "evidence": [
+            "FOUNDATIONAL_EXPLICIT_ENERGY_SPECTRAL_FRAGMENT_ZF_V1",
+            "FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1"
+          ],
+          "summary": "The coordinate energy phases give a strongly continuous J-unitary free-mode group in ZF without Choice.",
+          "boundary": "This proves no interacting, nonlinear, or Lorentzian-causal dynamics."
+        }
+      ],
+      "candidate_cells": [],
+      "not_mapped_cells": [
         {
           "foundation": "WEAK_CHOICE_ZF",
           "carrier": "KREIN_INDEFINITE",
@@ -1295,16 +1312,16 @@
       ],
       "scan_axis": "OBLIGATION",
       "counts": {
-        "LOCAL_RESULT": 2,
+        "LOCAL_RESULT": 3,
         "LITERATURE_RESULT": 0,
         "PIECES_ONLY": 0,
-        "PRIORITY_GAP": 1,
+        "PRIORITY_GAP": 0,
         "NOT_MAPPED": 3
       },
-      "seed_strength": 8,
-      "open_demand": 4,
-      "bridge_score": 9,
-      "classification": "NEAR_TERM_LOCAL_BRIDGE",
+      "seed_strength": 12,
+      "open_demand": 0,
+      "bridge_score": 0,
+      "classification": "NO_FRONTIER",
       "evidence_cells": [
         {
           "foundation": "WEAK_CHOICE_ZF",
@@ -1328,21 +1345,21 @@
           ],
           "summary": "Explicit vector and corner states and a corner GNS construction exist in ZF.",
           "boundary": "No thermodynamic or dynamically selected physical state is proved."
-        }
-      ],
-      "candidate_cells": [
+        },
         {
           "foundation": "WEAK_CHOICE_ZF",
           "carrier": "ALGEBRAIC_CSTAR",
           "obligation": "DYNAMICS_PROPAGATION",
-          "status": "PRIORITY_GAP",
+          "status": "LOCAL_RESULT",
           "evidence": [
-            "FOUNDATIONAL_BT_SEPARABLE_STATE_CHAIN_ZF_V1"
+            "FOUNDATIONAL_BT_SEPARABLE_STATE_CHAIN_ZF_V1",
+            "FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1"
           ],
-          "summary": "The nonlinear/full-orbit dynamics and local-normality chain remains open.",
-          "boundary": "Algebraic functional calculus is not dynamics."
+          "summary": "A point-norm continuous free automorphism group exists on the explicit unitized compact algebra in ZF.",
+          "boundary": "Nonlinear/full-orbit Bateman-Turok dynamics, local normality, and interacting evolution remain open."
         }
       ],
+      "candidate_cells": [],
       "not_mapped_cells": [
         {
           "foundation": "WEAK_CHOICE_ZF",
@@ -3008,13 +3025,13 @@
       ],
       "scan_axis": "CARRIER",
       "counts": {
-        "LOCAL_RESULT": 2,
+        "LOCAL_RESULT": 4,
         "LITERATURE_RESULT": 0,
         "PIECES_ONLY": 0,
         "PRIORITY_GAP": 0,
-        "NOT_MAPPED": 4
+        "NOT_MAPPED": 2
       },
-      "seed_strength": 8,
+      "seed_strength": 16,
       "open_demand": 0,
       "bridge_score": 0,
       "classification": "NO_FRONTIER",
@@ -3029,6 +3046,29 @@
           ],
           "summary": "The explicit cylinder energy spectrum and domains are classified.",
           "boundary": "No general spectral measure, determinant, or interacting dynamics."
+        },
+        {
+          "foundation": "CLASSICAL_STANDARD",
+          "carrier": "KREIN_INDEFINITE",
+          "obligation": "DYNAMICS_PROPAGATION",
+          "status": "LOCAL_RESULT",
+          "evidence": [
+            "FOUNDATIONAL_EXPLICIT_ENERGY_SPECTRAL_FRAGMENT_ZF_V1",
+            "FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1"
+          ],
+          "summary": "The explicit cylinder energy generates a strongly continuous Hilbert-unitary and J-unitary free-mode group.",
+          "boundary": "No other conformal generator, interaction, causal propagation, or nonlinear Bateman-Turok dynamics is exponentiated."
+        },
+        {
+          "foundation": "CLASSICAL_STANDARD",
+          "carrier": "ALGEBRAIC_CSTAR",
+          "obligation": "DYNAMICS_PROPAGATION",
+          "status": "LOCAL_RESULT",
+          "evidence": [
+            "FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1"
+          ],
+          "summary": "Energy conjugation defines a point-norm continuous free automorphism group on the unitized compact-operator algebra.",
+          "boundary": "This compact-cylinder C*-dynamics is not an interacting AQFT net or full-orbit dynamics."
         },
         {
           "foundation": "CLASSICAL_STANDARD",
@@ -3047,18 +3087,6 @@
         {
           "foundation": "CLASSICAL_STANDARD",
           "carrier": "FINITE_EXACT",
-          "obligation": "DYNAMICS_PROPAGATION",
-          "status": "NOT_MAPPED"
-        },
-        {
-          "foundation": "CLASSICAL_STANDARD",
-          "carrier": "KREIN_INDEFINITE",
-          "obligation": "DYNAMICS_PROPAGATION",
-          "status": "NOT_MAPPED"
-        },
-        {
-          "foundation": "CLASSICAL_STANDARD",
-          "carrier": "ALGEBRAIC_CSTAR",
           "obligation": "DYNAMICS_PROPAGATION",
           "status": "NOT_MAPPED"
         },
@@ -3884,15 +3912,15 @@
       ],
       "scan_axis": "CARRIER",
       "counts": {
-        "LOCAL_RESULT": 1,
+        "LOCAL_RESULT": 3,
         "LITERATURE_RESULT": 0,
         "PIECES_ONLY": 0,
-        "PRIORITY_GAP": 2,
-        "NOT_MAPPED": 3
+        "PRIORITY_GAP": 1,
+        "NOT_MAPPED": 2
       },
-      "seed_strength": 4,
-      "open_demand": 8,
-      "bridge_score": 10,
+      "seed_strength": 12,
+      "open_demand": 4,
+      "bridge_score": 9,
       "classification": "NEAR_TERM_LOCAL_BRIDGE",
       "evidence_cells": [
         {
@@ -3905,20 +3933,33 @@
           ],
           "summary": "The displayed diagonal energy operator and Fock lift have an explicit ZF route.",
           "boundary": "General spectral measures and interacting dynamics remain open."
-        }
-      ],
-      "candidate_cells": [
+        },
+        {
+          "foundation": "WEAK_CHOICE_ZF",
+          "carrier": "KREIN_INDEFINITE",
+          "obligation": "DYNAMICS_PROPAGATION",
+          "status": "LOCAL_RESULT",
+          "evidence": [
+            "FOUNDATIONAL_EXPLICIT_ENERGY_SPECTRAL_FRAGMENT_ZF_V1",
+            "FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1"
+          ],
+          "summary": "The coordinate energy phases give a strongly continuous J-unitary free-mode group in ZF without Choice.",
+          "boundary": "This proves no interacting, nonlinear, or Lorentzian-causal dynamics."
+        },
         {
           "foundation": "WEAK_CHOICE_ZF",
           "carrier": "ALGEBRAIC_CSTAR",
           "obligation": "DYNAMICS_PROPAGATION",
-          "status": "PRIORITY_GAP",
+          "status": "LOCAL_RESULT",
           "evidence": [
-            "FOUNDATIONAL_BT_SEPARABLE_STATE_CHAIN_ZF_V1"
+            "FOUNDATIONAL_BT_SEPARABLE_STATE_CHAIN_ZF_V1",
+            "FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1"
           ],
-          "summary": "The nonlinear/full-orbit dynamics and local-normality chain remains open.",
-          "boundary": "Algebraic functional calculus is not dynamics."
-        },
+          "summary": "A point-norm continuous free automorphism group exists on the explicit unitized compact algebra in ZF.",
+          "boundary": "Nonlinear/full-orbit Bateman-Turok dynamics, local normality, and interacting evolution remain open."
+        }
+      ],
+      "candidate_cells": [
         {
           "foundation": "WEAK_CHOICE_ZF",
           "carrier": "SMOOTH_DISTRIBUTIONAL",
@@ -3935,12 +3976,6 @@
         {
           "foundation": "WEAK_CHOICE_ZF",
           "carrier": "FINITE_EXACT",
-          "obligation": "DYNAMICS_PROPAGATION",
-          "status": "NOT_MAPPED"
-        },
-        {
-          "foundation": "WEAK_CHOICE_ZF",
-          "carrier": "KREIN_INDEFINITE",
           "obligation": "DYNAMICS_PROPAGATION",
           "status": "NOT_MAPPED"
         },
@@ -6562,33 +6597,46 @@
       ],
       "scan_axis": "FOUNDATION",
       "counts": {
-        "LOCAL_RESULT": 0,
+        "LOCAL_RESULT": 2,
         "LITERATURE_RESULT": 0,
         "PIECES_ONLY": 0,
         "PRIORITY_GAP": 0,
-        "NOT_MAPPED": 6
+        "NOT_MAPPED": 4
       },
-      "seed_strength": 0,
+      "seed_strength": 8,
       "open_demand": 0,
       "bridge_score": 0,
       "classification": "NO_FRONTIER",
-      "evidence_cells": [],
-      "candidate_cells": [],
-      "not_mapped_cells": [
+      "evidence_cells": [
         {
           "foundation": "CLASSICAL_STANDARD",
           "carrier": "KREIN_INDEFINITE",
           "obligation": "DYNAMICS_PROPAGATION",
-          "status": "NOT_MAPPED"
-        },
-        {
-          "foundation": "WEAK_ARITHMETIC",
-          "carrier": "KREIN_INDEFINITE",
-          "obligation": "DYNAMICS_PROPAGATION",
-          "status": "NOT_MAPPED"
+          "status": "LOCAL_RESULT",
+          "evidence": [
+            "FOUNDATIONAL_EXPLICIT_ENERGY_SPECTRAL_FRAGMENT_ZF_V1",
+            "FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1"
+          ],
+          "summary": "The explicit cylinder energy generates a strongly continuous Hilbert-unitary and J-unitary free-mode group.",
+          "boundary": "No other conformal generator, interaction, causal propagation, or nonlinear Bateman-Turok dynamics is exponentiated."
         },
         {
           "foundation": "WEAK_CHOICE_ZF",
+          "carrier": "KREIN_INDEFINITE",
+          "obligation": "DYNAMICS_PROPAGATION",
+          "status": "LOCAL_RESULT",
+          "evidence": [
+            "FOUNDATIONAL_EXPLICIT_ENERGY_SPECTRAL_FRAGMENT_ZF_V1",
+            "FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1"
+          ],
+          "summary": "The coordinate energy phases give a strongly continuous J-unitary free-mode group in ZF without Choice.",
+          "boundary": "This proves no interacting, nonlinear, or Lorentzian-causal dynamics."
+        }
+      ],
+      "candidate_cells": [],
+      "not_mapped_cells": [
+        {
+          "foundation": "WEAK_ARITHMETIC",
           "carrier": "KREIN_INDEFINITE",
           "obligation": "DYNAMICS_PROPAGATION",
           "status": "NOT_MAPPED"
@@ -6990,37 +7038,43 @@
       ],
       "scan_axis": "FOUNDATION",
       "counts": {
-        "LOCAL_RESULT": 0,
+        "LOCAL_RESULT": 2,
         "LITERATURE_RESULT": 0,
         "PIECES_ONLY": 0,
-        "PRIORITY_GAP": 1,
-        "NOT_MAPPED": 5
+        "PRIORITY_GAP": 0,
+        "NOT_MAPPED": 4
       },
-      "seed_strength": 0,
-      "open_demand": 4,
+      "seed_strength": 8,
+      "open_demand": 0,
       "bridge_score": 0,
-      "classification": "UNSEEDED_IMPORTANT_GAP",
-      "evidence_cells": [],
-      "candidate_cells": [
-        {
-          "foundation": "WEAK_CHOICE_ZF",
-          "carrier": "ALGEBRAIC_CSTAR",
-          "obligation": "DYNAMICS_PROPAGATION",
-          "status": "PRIORITY_GAP",
-          "evidence": [
-            "FOUNDATIONAL_BT_SEPARABLE_STATE_CHAIN_ZF_V1"
-          ],
-          "summary": "The nonlinear/full-orbit dynamics and local-normality chain remains open.",
-          "boundary": "Algebraic functional calculus is not dynamics."
-        }
-      ],
-      "not_mapped_cells": [
+      "classification": "NO_FRONTIER",
+      "evidence_cells": [
         {
           "foundation": "CLASSICAL_STANDARD",
           "carrier": "ALGEBRAIC_CSTAR",
           "obligation": "DYNAMICS_PROPAGATION",
-          "status": "NOT_MAPPED"
+          "status": "LOCAL_RESULT",
+          "evidence": [
+            "FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1"
+          ],
+          "summary": "Energy conjugation defines a point-norm continuous free automorphism group on the unitized compact-operator algebra.",
+          "boundary": "This compact-cylinder C*-dynamics is not an interacting AQFT net or full-orbit dynamics."
         },
+        {
+          "foundation": "WEAK_CHOICE_ZF",
+          "carrier": "ALGEBRAIC_CSTAR",
+          "obligation": "DYNAMICS_PROPAGATION",
+          "status": "LOCAL_RESULT",
+          "evidence": [
+            "FOUNDATIONAL_BT_SEPARABLE_STATE_CHAIN_ZF_V1",
+            "FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1"
+          ],
+          "summary": "A point-norm continuous free automorphism group exists on the explicit unitized compact algebra in ZF.",
+          "boundary": "Nonlinear/full-orbit Bateman-Turok dynamics, local normality, and interacting evolution remain open."
+        }
+      ],
+      "candidate_cells": [],
+      "not_mapped_cells": [
         {
           "foundation": "WEAK_ARITHMETIC",
           "carrier": "ALGEBRAIC_CSTAR",
@@ -8135,10 +8189,9 @@
     "PAIR-CARRIER-SMOOTH_DISTRIBUTIONAL-OBLIGATION-DYNAMICS_PROPAGATION",
     "PAIR-FOUNDATION-TOPOS_INTERNAL-CARRIER-LOCALIC_SYNTHETIC",
     "PAIR-FOUNDATION-CLASSICAL_STANDARD-CARRIER-SMOOTH_DISTRIBUTIONAL",
-    "PAIR-FOUNDATION-WEAK_CHOICE_ZF-OBLIGATION-DYNAMICS_PROPAGATION",
     "PAIR-FOUNDATION-FINITE_DISCRETE-OBLIGATION-RECONSTRUCTION_LIMITS",
     "PAIR-FOUNDATION-WEAK_ARITHMETIC-OBLIGATION-GAUGE_BV_COHOMOLOGY",
-    "PAIR-FOUNDATION-WEAK_CHOICE_ZF-CARRIER-ALGEBRAIC_CSTAR",
+    "PAIR-FOUNDATION-WEAK_CHOICE_ZF-OBLIGATION-DYNAMICS_PROPAGATION",
     "PAIR-CARRIER-SMOOTH_DISTRIBUTIONAL-OBLIGATION-GAUGE_BV_COHOMOLOGY",
     "PAIR-FOUNDATION-TOPOS_INTERNAL-CARRIER-SMOOTH_DISTRIBUTIONAL",
     "PAIR-FOUNDATION-TOPOS_INTERNAL-OBLIGATION-DYNAMICS_PROPAGATION",
@@ -8165,7 +8218,6 @@
     "PAIR-FOUNDATION-WEAK_CHOICE_ZF-CARRIER-SMOOTH_DISTRIBUTIONAL",
     "PAIR-FOUNDATION-TOPOS_INTERNAL-OBLIGATION-GAUGE_BV_COHOMOLOGY",
     "PAIR-FOUNDATION-TOPOS_INTERNAL-OBLIGATION-INTERACTION_RENORMALIZATION_QME",
-    "PAIR-CARRIER-ALGEBRAIC_CSTAR-OBLIGATION-DYNAMICS_PROPAGATION",
     "PAIR-CARRIER-FINITE_EXACT-OBLIGATION-DYNAMICS_PROPAGATION",
     "PAIR-CARRIER-FINITE_EXACT-OBLIGATION-INTERACTION_RENORMALIZATION_QME",
     "PAIR-CARRIER-LOCALIC_SYNTHETIC-OBLIGATION-DYNAMICS_PROPAGATION",
@@ -8187,22 +8239,6 @@
   ],
   "recommended_cells": [
     {
-      "foundation": "WEAK_CHOICE_ZF",
-      "carrier": "SMOOTH_DISTRIBUTIONAL",
-      "obligation": "DYNAMICS_PROPAGATION",
-      "status": "PRIORITY_GAP",
-      "aggregate_bridge_score": 27,
-      "supporting_pair_ids": [
-        "PAIR-CARRIER-SMOOTH_DISTRIBUTIONAL-OBLIGATION-DYNAMICS_PROPAGATION",
-        "PAIR-FOUNDATION-WEAK_CHOICE_ZF-OBLIGATION-DYNAMICS_PROPAGATION"
-      ],
-      "evidence": [
-        "FOUNDATIONAL_TYPED_BIWAVE_GREEN_DEPENDENCY_AUDIT_V1"
-      ],
-      "summary": "Choice strength of normally hyperbolic existence, Sobolev completion, and causal Green theory is unknown.",
-      "boundary": "No choice-free continuum PDE theorem is claimed."
-    },
-    {
       "foundation": "CLASSICAL_STANDARD",
       "carrier": "SMOOTH_DISTRIBUTIONAL",
       "obligation": "GAUGE_BV_COHOMOLOGY",
@@ -8219,6 +8255,22 @@
       ],
       "summary": "Classical BV data and finite exact residual witnesses exist, but their full continuum foundational profile is not classified.",
       "boundary": "Finite residual data are not the continuum off-shell complex."
+    },
+    {
+      "foundation": "WEAK_CHOICE_ZF",
+      "carrier": "SMOOTH_DISTRIBUTIONAL",
+      "obligation": "DYNAMICS_PROPAGATION",
+      "status": "PRIORITY_GAP",
+      "aggregate_bridge_score": 26,
+      "supporting_pair_ids": [
+        "PAIR-CARRIER-SMOOTH_DISTRIBUTIONAL-OBLIGATION-DYNAMICS_PROPAGATION",
+        "PAIR-FOUNDATION-WEAK_CHOICE_ZF-OBLIGATION-DYNAMICS_PROPAGATION"
+      ],
+      "evidence": [
+        "FOUNDATIONAL_TYPED_BIWAVE_GREEN_DEPENDENCY_AUDIT_V1"
+      ],
+      "summary": "Choice strength of normally hyperbolic existence, Sobolev completion, and causal Green theory is unknown.",
+      "boundary": "No choice-free continuum PDE theorem is claimed."
     },
     {
       "foundation": "TOPOS_INTERNAL",
@@ -8253,22 +8305,6 @@
       ],
       "summary": "Internal dynamics, support, and Green propagation have not been constructed.",
       "boundary": "A localic spectrum is not causal evolution."
-    },
-    {
-      "foundation": "WEAK_CHOICE_ZF",
-      "carrier": "ALGEBRAIC_CSTAR",
-      "obligation": "DYNAMICS_PROPAGATION",
-      "status": "PRIORITY_GAP",
-      "aggregate_bridge_score": 19,
-      "supporting_pair_ids": [
-        "PAIR-FOUNDATION-WEAK_CHOICE_ZF-CARRIER-ALGEBRAIC_CSTAR",
-        "PAIR-FOUNDATION-WEAK_CHOICE_ZF-OBLIGATION-DYNAMICS_PROPAGATION"
-      ],
-      "evidence": [
-        "FOUNDATIONAL_BT_SEPARABLE_STATE_CHAIN_ZF_V1"
-      ],
-      "summary": "The nonlinear/full-orbit dynamics and local-normality chain remains open.",
-      "boundary": "Algebraic functional calculus is not dynamics."
     },
     {
       "foundation": "FINITE_DISCRETE",
@@ -8592,7 +8628,7 @@
     "inputs": [
       {
         "path": "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V0.json",
-        "sha256": "74e81327c461b4aef0fdbccf8b58c79f522a026c72fcbbde9077c264b4d9a7d1"
+        "sha256": "9403275c134610eebc1357090aede30b200f7a815aacf38a593d34fc668ff4f3"
       }
     ],
     "producer": "foundations/analyze_pair_frontiers.py"
@@ -8607,7 +8643,7 @@
       "recommended open cells are assessed and never NOT_MAPPED",
       "canonical digest"
     ],
-    "expected_digest": "01cfde3e4e5bc1542a4791d3f81cff503a5051171447ab854dac2c64dcffda29"
+    "expected_digest": "288922f2e4ed6c863ea8b8ef7c6107114296f6740a5378fbeb235df839b61066"
   },
   "claim_flags": {
     "all_108_pair_projections_computed": true,

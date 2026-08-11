@@ -269,7 +269,7 @@ def build(cube: dict[str, Any]) -> dict[str, Any]:
         "lifecycle": "LITERATURE_SCOPED",
         "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
         "created": "2026-08-11",
-        "repository_base_commit": "c676bde482341c627de41d0cc162b21f50bd91a3",
+        "repository_base_commit": "dafb2345163d389e32416a019a3be38cc014f33f",
         "purpose": "Find products of two cube dimensions that already have an evidence foothold and a nearby assessed open obligation, while keeping unassessed cells and unseeded gaps distinct.",
         "method": {
             "projection_rule": "Fix one key on each of two axes and inspect all six keys on the remaining axis.",

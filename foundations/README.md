@@ -77,6 +77,19 @@ python3 foundations/verify_explicit_energy_spectral_fragment.py
 python3 -m unittest foundations.tests.test_explicit_energy_spectral_fragment
 ```
 
+The energy result now exponentiates directly to
+[`explicit free-mode Krein and C*-dynamics in ZF`](reports/explicit-mode-dynamics-zf.md).
+The coordinate unitary group is strongly continuous and J-unitary, while its
+conjugation action is point-norm continuous on the unitized compact algebra.
+The exact rail uses Laurent degrees rather than numerical time samples and
+fills four dynamics cells without claiming interactions or causal propagation:
+
+```bash
+python3 foundations/check_explicit_mode_dynamics.py
+python3 foundations/verify_explicit_mode_dynamics_zf.py
+python3 -m unittest foundations.tests.test_explicit_mode_dynamics_zf
+```
+
 The first state-level Krein bridge is
 [`Krein state existence versus physical selection in ZF`](reports/krein-state-selection-zf.md).
 It constructs explicit positive normalized coordinate and Fock states without

@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9innovation.github.io/weyl-gravity/foundations/schema/foundational-explicit-mode-dynamics-zf-v1.schema.json",
+  "title": "Explicit reduced-mode Krein and C*-dynamics in ZF",
+  "type": "object",
+  "required": [
+    "schema_version", "result_id", "result_kind", "lifecycle", "dependency_tags",
+    "created", "repository_base_commit", "question", "answer",
+    "coordinate_unitary_group", "cstar_dynamics", "fock_lift",
+    "continuity_and_foundations", "finite_exact_witness", "cube_promotions",
+    "proof_dependency_dag", "independent_checker", "provenance", "claim_flags",
+    "assumptions", "does_not_establish", "next_gate", "human_report"
+  ],
+  "properties": {
+    "schema_version": {"const": "foundational-explicit-mode-dynamics-zf-v1"},
+    "result_id": {"const": "FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1"},
+    "result_kind": {"const": "FOUNDATIONAL_DEPENDENCY_CERTIFICATE"},
+    "lifecycle": {"const": "SUFFICIENCY_PROVED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "repository_base_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "coordinate_unitary_group": {"type": "object", "required": ["carrier", "energy", "formula", "group_law", "hilbert_unitarity", "krein_unitarity", "strong_continuity_proof", "generator", "domain_invariance", "foundation", "choice_status", "theorem_avoidance"], "properties": {"strong_continuity_proof": {"type": "array", "minItems": 3}}},
+    "cstar_dynamics": {"type": "object", "required": ["algebra", "formula", "matrix_unit_formula", "automorphism_properties", "point_norm_continuity_proof", "finite_rank_generator", "fixed_point_fragment", "nontriviality_witness", "foundation", "choice_status"], "properties": {"automorphism_properties": {"type": "array", "minItems": 6}}},
+    "fock_lift": {"type": "object", "required": ["carrier", "formula", "generator", "properties", "boundary"]},
+    "continuity_and_foundations": {"type": "object", "required": ["sufficient_base", "choice_principle_added", "weakest_base_status", "exact_numeric_boundary", "physical_input"]},
+    "finite_exact_witness": {"type": "object", "required": ["maximum_energy", "representative_modes", "matrix_units", "star_degree_checks", "matrix_unit_composition_checks", "derivation_leibniz_checks", "formal_time_pair_checks", "energy_representative_multiplicity", "fixed_energy_matrix_units", "nontrivial_degree_matrix_units", "nontrivial_example", "arithmetic"]},
+    "cube_promotions": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "object", "required": ["foundation", "carrier", "obligation", "old_status", "new_status", "basis"], "properties": {"new_status": {"const": "LOCAL_RESULT"}}}},
+    "proof_dependency_dag": {"type": "object", "required": ["nodes", "edges"], "properties": {"nodes": {"type": "array", "minItems": 10}, "edges": {"type": "array", "minItems": 13}}},
+    "independent_checker": {"type": "object", "required": ["path", "arithmetic", "checks", "expected_digest"], "properties": {"expected_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}},
+    "provenance": {"type": "object", "required": ["inputs", "verification_boundary"], "properties": {"inputs": {"type": "array", "minItems": 2, "maxItems": 2}}},
+    "claim_flags": {"type": "object"},
+    "assumptions": {"type": "array", "minItems": 3},
+    "does_not_establish": {"type": "array", "minItems": 9},
+    "next_gate": {"type": "string", "minLength": 1},
+    "human_report": {"const": "foundations/reports/explicit-mode-dynamics-zf.md"}
+  }
+}

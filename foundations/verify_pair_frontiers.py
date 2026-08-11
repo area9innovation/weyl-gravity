@@ -60,7 +60,7 @@ def verify(
         errors.append("identity/lifecycle/dependency tags")
     checker_errors, summary = check(result, cube)
     errors.extend("checker " + item for item in checker_errors)
-    if summary.get("projections") != 108 or summary.get("assessed_open_cells") != 26:
+    if summary.get("projections") != 108 or summary.get("assessed_open_cells") != 25:
         errors.append("expected projection/open-cell counts")
     checks.append("independent 108-projection reconstruction and score audit")
 
@@ -93,12 +93,12 @@ def verify(
 
     report_tokens = (
         "108 distinct products of two dimensions",
-        "26 bridgeable pair frontiers",
-        "25 important but unseeded pair gaps",
+        "25 bridgeable pair frontiers",
+        "24 important but unseeded pair gaps",
         "Not-mapped cells contribute nothing",
         "Highest-scoring pair frontiers",
         "Finite/discrete restriction × Finite exact algebra",
-        "ZF with weakened Choice × Algebraic C*-system",
+        "Smooth/PDE/distributional × Dynamics/propagation",
         "Recommended open cells",
         "Pairwise overview",
         "0 — important but unseeded",

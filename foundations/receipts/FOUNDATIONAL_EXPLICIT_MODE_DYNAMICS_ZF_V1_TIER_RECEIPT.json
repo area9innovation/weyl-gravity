@@ -1,0 +1,70 @@
+{
+  "receipt_id": "FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1_TIER_RECEIPT",
+  "schema_version": "foundational-tier-receipt-v0",
+  "created": "2026-08-11",
+  "result_id": "FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "base_commit": "dafb2345163d389e32416a019a3be38cc014f33f",
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "command": "parse and Draft202012Validator-check the mode-dynamics, intersection-cube, pair-frontier, and Markdown-render schema/result chains; py_compile changed Python; git diff --check -- foundations",
+      "result": "four schema chains validate, changed Python compiles, and the scoped foundations diff has no whitespace errors"
+    },
+    "tier_1_checker": {
+      "status": "PASS",
+      "command": "python3 foundations/check_explicit_mode_dynamics.py",
+      "result": "324 adjoint-degree checks, 5832 product-degree identities, 5832 derivation Leibniz identities, 15876 formal two-time identities, exact fixed/nontrivial counts, four-cell promotion manifest, and digest 90cbd84f025f4d564d5bc876bca835f6cda04a7b2003d979e44d727afca5f4a7 pass"
+    },
+    "tier_1_verifier": {
+      "status": "PASS",
+      "command": "python3 foundations/verify_explicit_mode_dynamics_zf.py",
+      "result": "schema, source hashes, coordinate group, J-unitarity, domain invariance, strong continuity proof, C*-automorphism properties, point-norm continuity, exact rail, proof DAG, claim boundaries, report, and four applied cube promotions pass"
+    },
+    "tier_2_affected_chain": {
+      "status": "PASS",
+      "elapsed_seconds": "1.31",
+      "command": "run the new checker/verifier; intersection cube checker/verifier; pair generator --check, checker, verifier; completion Markdown generator --check and verifier; python3 -m unittest discover -s foundations/tests -t .",
+      "result": "191/191 foundations tests pass; cube counts are 21 local, 13 literature, 6 pieces-only, 19 priority-gap, 157 not-mapped across 59 assessed cells; pair analysis has 25 assessed open cells, 25 bridge frontiers, and 24 important unseeded gaps"
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No classical/quantum freeze, release, shared core algebra change, paper theorem promotion, or Lorentzian lifecycle promotion."
+    }
+  },
+  "auxiliary_rails": [
+    {
+      "name": "science_forge_native_conformance",
+      "status": "NOT_RERUN",
+      "reason": "No Forge request or native IR node changed. The previously recorded Tango sfc build failure remains an external non-pass; no native conformance result is inferred."
+    }
+  ],
+  "content_hashes": {
+    "foundations/README.md": "4fa3e96d788fddfa2c1be945426b3d07daf78d16b653fe36b03d7e5223c93d7d",
+    "foundations/analyze_pair_frontiers.py": "66cca9f18a22ffc3310b5cb9aaad5327aafaa068c3fcd9cfc50f0544b6a70a29",
+    "foundations/check_explicit_mode_dynamics.py": "0b9cb291a006fe842205624e20af94cba5fdb055bbc1b0e47a3534a6598ae49d",
+    "foundations/reports/completion-matrix.md": "4820958a7d8933e4ea6f7c2415b62f092ae578c8b4cb5676b1216172c573d5c3",
+    "foundations/reports/explicit-mode-dynamics-zf.md": "13c43e442d62376a4929368dd363ebd626278f5298da1cad428e50834eee24f5",
+    "foundations/reports/pair-frontier-analysis.md": "0b9874e4b95bf3c878e2fb1e9d02cc815d57b4ae5e0a7604dd5bcdbd2499b412",
+    "foundations/results/FOUNDATIONAL_COMPLETION_MATRIX_MARKDOWN_RENDER_V1.json": "0c855c0f93a92ef181342f81cf3c9748699a1b78e4d31c4bf6afddbc367ee277",
+    "foundations/results/FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1.json": "0880db47af0c27a0f99c2929ed6e4d42789ef03e67ff4fe6a55f1f49ba92d2f7",
+    "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V0.json": "9403275c134610eebc1357090aede30b200f7a815aacf38a593d34fc668ff4f3",
+    "foundations/results/FOUNDATIONAL_PAIR_FRONTIER_ANALYSIS_V0.json": "57da54b894a54ca30b1bf6d47d34152c806c247cac9a51afd09bbc4fef7ead77",
+    "foundations/schema/foundational-explicit-mode-dynamics-zf-v1.schema.json": "9200a9e9e4691c0907f861d1c57fce0b4849855103a0f07a7633527a08d309bf",
+    "foundations/schema/foundational-intersection-cube-v0.schema.json": "3237209a828159dbac03fc13cb020626785ab755671a19744171a2eb5c7766b7",
+    "foundations/tests/test_explicit_mode_dynamics_zf.py": "746f515383105363749fdbc7644af6d5dc29afedec4f30e2632dfb68ae78fcee",
+    "foundations/tests/test_render_completion_matrix_md.py": "629b8c0bdfd2d94613e1e55ac1bfa5dccd43a921c71c1dd2a9f039cf01d1e0e9",
+    "foundations/verify_completion_matrix_markdown.py": "731371e90ec602d8ac83ede4bc1005308dec663e5c2795998b342c13a6ed4980",
+    "foundations/verify_explicit_mode_dynamics_zf.py": "877e10cdcdb449c044107fa71e1189886d9f152323aa0f57bfcee96ec72809e8",
+    "foundations/verify_intersection_cube.py": "5fe5d04b55e25e64093f8fe84150191d3853ba853198f7aebc180e986f9c4c7f",
+    "foundations/verify_pair_frontiers.py": "43b5f1115b58d7038ad01c38f2f2b50c5e13ed54ea4d2cd79c9a6fd9f2288a05"
+  },
+  "scope_receipt": {
+    "changed_scope": "one exact reduced-mode free-dynamics theorem, four cube-cell fillings, and deterministic propagation through the cube, pair frontier, and Markdown views",
+    "unrelated_worktree_changes_included": false
+  },
+  "claim_boundary": "The certificate constructs the explicit strongly continuous energy-phase group, its J-unitarity, Fock lift, and point-norm compact-operator automorphism group in ZF. It does not exponentiate other conformal generators, construct nonlinear Bateman-Turok or interacting Weyl dynamics, prove causal propagation, select a physical/KMS state, establish thermodynamic implementability, or make any LORENTZIAN-CAUSAL claim."
+}

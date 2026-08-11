@@ -81,21 +81,21 @@ A result label marks the strongest bounded evidence currently attached to that c
 
 | Cube classification | Cells | Share of all 216 cells |
 |---|---:|---:|
-| Local result | 17 | 7.9% |
+| Local result | 21 | 9.7% |
 | Literature result | 13 | 6.0% |
 | Pieces only | 6 | 2.8% |
-| Priority gap | 20 | 9.3% |
-| Not mapped | 160 | 74.1% |
+| Priority gap | 19 | 8.8% |
+| Not mapped | 157 | 72.7% |
 
-Only **56 of 216 cells (25.9%)** have been deliberately assessed. This is the clearest overview result: the present programme has several sharp local islands, but most of the Cartesian product is still uncharted.
+Only **59 of 216 cells (27.3%)** have been deliberately assessed. This is the clearest overview result: the present programme has several sharp local islands, but most of the Cartesian product is still uncharted.
 
 Coverage by mathematical regime:
 
 | Mathematical regime | Local results | Literature results | Pieces only | Priority gaps | Not mapped |
 |---|---:|---:|---:|---:|---:|
-| Classical standard | 5 | 4 | 1 | 1 | 25 |
+| Classical standard | 7 | 4 | 1 | 1 | 23 |
 | Weak formal base | 3 | 0 | 1 | 3 | 29 |
-| ZF with weakened Choice | 5 | 1 | 0 | 4 | 26 |
+| ZF with weakened Choice | 7 | 1 | 0 | 3 | 25 |
 | Constructive/computable | 0 | 3 | 3 | 3 | 27 |
 | Topos/internal | 0 | 2 | 1 | 6 | 27 |
 | Finite/discrete restriction | 4 | 3 | 0 | 3 | 26 |
@@ -112,8 +112,8 @@ Classical logic with ordinary ZFC-style analysis as the reference regime.
 |---|:---:|:---:|:---:|:---:|:---:|:---:|
 | **Finite exact algebra** | Not mapped | Not mapped | Not mapped | Local result | Not mapped | Not mapped |
 | **Hilbert/operator** | Literature result | Literature result | Local result | Not mapped | Not mapped | Not mapped |
-| **Krein/indefinite** | Literature result | Local result | Not mapped | Not mapped | Not mapped | Not mapped |
-| **Algebraic C*-system** | Literature result | Local result | Not mapped | Not mapped | Not mapped | Not mapped |
+| **Krein/indefinite** | Literature result | Local result | Local result | Not mapped | Not mapped | Not mapped |
+| **Algebraic C*-system** | Literature result | Local result | Local result | Not mapped | Not mapped | Not mapped |
 | **Smooth/PDE/distributional** | Not mapped | Not mapped | Local result | Pieces only | Priority gap | Not mapped |
 | **Localic/synthetic/internal** | Not mapped | Not mapped | Not mapped | Not mapped | Not mapped | Not mapped |
 
@@ -138,8 +138,8 @@ Classical set theory in which full Choice or Countable Choice is absent or isola
 |---|:---:|:---:|:---:|:---:|:---:|:---:|
 | **Finite exact algebra** | Not mapped | Not mapped | Not mapped | Not mapped | Not mapped | Not mapped |
 | **Hilbert/operator** | Literature result | Not mapped | Local result | Not mapped | Not mapped | Not mapped |
-| **Krein/indefinite** | Local result | Local result | Not mapped | Not mapped | Not mapped | Not mapped |
-| **Algebraic C*-system** | Local result | Local result | Priority gap | Not mapped | Not mapped | Not mapped |
+| **Krein/indefinite** | Local result | Local result | Local result | Not mapped | Not mapped | Not mapped |
+| **Algebraic C*-system** | Local result | Local result | Local result | Not mapped | Not mapped | Not mapped |
 | **Smooth/PDE/distributional** | Not mapped | Not mapped | Priority gap | Priority gap | Priority gap | Not mapped |
 | **Localic/synthetic/internal** | Not mapped | Not mapped | Not mapped | Not mapped | Not mapped | Not mapped |
 
