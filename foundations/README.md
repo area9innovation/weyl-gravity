@@ -112,6 +112,18 @@ python3 foundations/verify_finite_field_finite_mode.py
 python3 -m unittest foundations.tests.test_finite_field_finite_mode
 ```
 
+The first continuum-PDE dependency cut is
+[`the typed biwave Green theorem audit`](reports/typed-biwave-green-foundational-dependencies.md).
+It separates fixed exact resolvent identities from normally-hyperbolic Green
+existence, Sobolev completion, energy estimates, Volterra convergence,
+uniqueness, causal support, and adjoint duality:
+
+```bash
+python3 foundations/check_typed_biwave_green_dependencies.py
+python3 foundations/verify_typed_biwave_green_dependencies.py
+python3 -m unittest foundations.tests.test_typed_biwave_green_dependencies
+```
+
 ## Lifecycle
 
 This stream uses a literature/research lifecycle, not the quantum lifecycle:
