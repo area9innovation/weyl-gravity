@@ -1,0 +1,36 @@
+{
+  "id": "sf:program/work/reverse-physics-bateman-semifinite-relative-born-weight",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "reverse-physics",
+    "state": "ACTIVE",
+    "objective": "Test the first surviving branch of REVERSE_PHYSICS_BT_CROSS_KREIN_TRACE_LIMIT_V1: construct the canonical semifinite trace on the completed BT orbit carrier, replace finite identity normalization by conditioning on a finite-trace incoming projector, and prove or refute exact Born normalization for finite weakly ghost-symmetric output partitions.",
+    "depends_on": [
+      "REVERSE_PHYSICS_BT_CROSS_KREIN_TRACE_LIMIT_V1",
+      "REVERSE_PHYSICS_BT_ZERO_MODE_EQ19_TRILEMMA_V1",
+      "Bateman--Turok generalized Born rule and Eq. (19) weak ghost decomposition"
+    ],
+    "activates": [
+      "a semifinite relative generalized-Born architecture on the finite detector ideal",
+      "a precise domain question for the zero-mode-completed nonlinear Eq. (19) pushforward",
+      "a non-normal local thermodynamic-state gate if the finite relative construction succeeds"
+    ],
+    "current_gate": "SEMIFINITE_RELATIVE_BORN_WEIGHT: distinguish the canonical semifinite trace from a normalized trace state, prove conditional normalization without assigning finite weight to the identity, verify positivity under the exact weak-ghost hypotheses, and exhibit the smallest traciality defect showing why the resulting conditional state does not contradict the preceding no-go.",
+    "stop_condition": "Certify the semifinite trace and finite-input conditional Born theorem with an independently checked exact fixture and explicit thermodynamic boundary, or certify the first exact obstruction to one of cyclicity, positivity, or normalization on the declared finite detector ideal.",
+    "forbid": "no finite-window conditional state called a trace; no finite-rank or semifinite result promoted to a normal thermodynamic state; no arbitrary cross-Krein process assigned a positive weight without the weak ghost decomposition; no claim that the unbounded squeeze preserves the full trace ideal; no Eq. (19), physical 1/48, complete NLO probability, gravity, BRST, or LORENTZIAN-CAUSAL promotion",
+    "allowed_paths": [
+      "reverse_physics/",
+      "notes/bateman-turok-embedding.md",
+      "paper/05-interaction-obstructions.tex",
+      "paper/05-interaction-obstructions.pdf",
+      "paper/06-einstein-weyl-interaction-obstructions.tex",
+      "paper/06-einstein-weyl-interaction-obstructions.pdf",
+      "planning/work-items/reverse-physics-bateman-semifinite-relative-born-weight.json",
+      "planning/events/"
+    ],
+    "resource_hint": "Use exact rational matrix units. The canonical trace on B(ell^2(Z)) is allowed to take tau(1)=infinity; condition only on finite-trace incoming projections. Separate cyclicity of the semifinite trace from nontraciality of the normalized corner state. Use finite weakly ghost-symmetric partitions for positivity and normalization. Run producer, independent verifier, and tests sequentially under ulimit -v 500000.",
+    "input_commit": "049e62b36b7721018f100be2a2208e07d8f11a50",
+    "stream": "reverse-physics"
+  }
+}

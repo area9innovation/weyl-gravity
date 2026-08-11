@@ -1,0 +1,842 @@
+{
+  "answer": "Yes on the finite detector ideal, under the same weak ghost-symmetry hypothesis required by Bateman and Turok. The canonical trace is faithful, normal and semifinite, assigns every localized orbit projector weight one, and assigns the identity infinite weight. Conditioning on a finite-trace incoming projection gives nonnegative weights summing to one for every finite exhaustive weakly ghost-symmetric output partition. The normalized corner functional is not cyclic; an exact two-matrix-unit witness proves this, so the construction does not contradict the normalized-trace no-go. It does not construct a thermodynamic normal state, control the unbounded squeeze on the full trace ideal, reproduce Eq. (19), or establish 1/48.",
+  "certificate": "REVERSE_PHYSICS_BT_SEMIFINITE_RELATIVE_BORN_WEIGHT_V1",
+  "checks": {
+    "details": {
+      "conditional_state_detects_local_projection": true,
+      "conditional_state_is_not_tracial": true,
+      "conditional_weights_are_nonnegative": true,
+      "conditional_weights_sum_to_one": true,
+      "finite_input_normalization_does_not_require_trace_of_identity": true,
+      "finite_projection_trace_is_rank": true,
+      "first_weight_is_nine_over_twenty_five": true,
+      "incoming_projection_has_finite_trace_one": true,
+      "input_hashes_pinned": true,
+      "localized_cell_weight_tends_toward_zero": true,
+      "negative_spectator_weight_is_zero": true,
+      "nine_laurent_rows": true,
+      "nine_orbit_windows": true,
+      "output_partition_is_complete": true,
+      "physical_claim_fails_closed": true,
+      "rational_fixture_is_J_unitary": true,
+      "rational_fixture_is_ghost_symmetric": true,
+      "relative_cell_partition_sums_to_one": true,
+      "relative_window_is_normalized": true,
+      "second_weight_is_sixteen_over_twenty_five": true,
+      "semifinite_identity_is_not_assigned_finite_weight": true,
+      "thermodynamic_normal_state_not_constructed": true,
+      "three_conditional_weights": true,
+      "weak_cross_terms_are_trace_orthogonal": true,
+      "weak_decomposition_preserves_Born_weight": true,
+      "weak_remainder_is_Krein_self_adjoint": true,
+      "weak_remainder_is_nonzero": true,
+      "weak_remainder_is_trace_null": true,
+      "window_state_equals_coefficient_trace_on_laurent_fixture": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 29,
+    "total": 29
+  },
+  "conditional_Born_theorem": {
+    "conditional_weights": "p_i=Tr_fin(A_i^dagger A_i)/r",
+    "disposition": "PROVED_ON_FINITE_DETECTOR_IDEAL_UNDER_WEAK_GHOST_HYPOTHESES",
+    "hypotheses": [
+      "P_in is a finite-rank J-even Krein-self-adjoint projection with r=Tau(P_in)>0",
+      "S is cross-Krein isometric on Ran(P_in) and all displayed products preserve the paired core",
+      "the finite output projections P_i are Krein-self-adjoint, orthogonal, and exhaustive on S Ran(P_in)",
+      "each A_i=P_i S P_in has a weak ghost decomposition A_i=B_i+C_i",
+      "B_i commutes with J and Tr(C_i^dagger C_i)=Tr(B_i^dagger C_i)=Tr(C_i^dagger B_i)=0"
+    ],
+    "identity_trace_requirement": "NONE; Tau(1)=INFINITY is compatible with the theorem",
+    "normalization_proof": "sum_i Tr(P_in S^dagger P_i S P_in)=Tr(P_in S^dagger S P_in)=Tr(P_in)=r",
+    "positivity_proof": "weak ghost orthogonality gives Tr(A_i^dagger A_i)=Tr(B_i^star B_i)>=0",
+    "rational_partition_fixture": {
+      "cross_Krein_isometry": [
+        [
+          {
+            "denominator": 5,
+            "numerator": 3
+          },
+          {
+            "denominator": 5,
+            "numerator": -4
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        [
+          {
+            "denominator": 5,
+            "numerator": 4
+          },
+          {
+            "denominator": 5,
+            "numerator": 3
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 1
+          }
+        ]
+      ],
+      "fundamental_symmetry": [
+        [
+          {
+            "denominator": 1,
+            "numerator": 1
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 1
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": -1
+          }
+        ]
+      ],
+      "incoming_projection": [
+        [
+          {
+            "denominator": 1,
+            "numerator": 1
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ]
+      ],
+      "output_projections": [
+        [
+          [
+            {
+              "denominator": 1,
+              "numerator": 1
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 1
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 1
+            }
+          ]
+        ]
+      ],
+      "process_weights": [
+        {
+          "denominator": 25,
+          "numerator": 9
+        },
+        {
+          "denominator": 25,
+          "numerator": 16
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      "weight_sum": {
+        "denominator": 1,
+        "numerator": 1
+      }
+    },
+    "weak_null_fixture": {
+      "A_equals_B_plus_C": [
+        [
+          {
+            "denominator": 5,
+            "numerator": 3
+          },
+          {
+            "denominator": 5,
+            "numerator": 4
+          }
+        ],
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 5,
+            "numerator": 3
+          }
+        ]
+      ],
+      "B": [
+        [
+          {
+            "denominator": 5,
+            "numerator": 3
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 5,
+            "numerator": 3
+          }
+        ]
+      ],
+      "C": [
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 5,
+            "numerator": 4
+          }
+        ],
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ]
+      ],
+      "Tr_Adagger_A": {
+        "denominator": 25,
+        "numerator": 18
+      },
+      "Tr_Bdagger_B": {
+        "denominator": 25,
+        "numerator": 18
+      },
+      "Tr_Bdagger_C": {
+        "denominator": 1,
+        "numerator": 0
+      },
+      "Tr_Cdagger_B": {
+        "denominator": 1,
+        "numerator": 0
+      },
+      "Tr_Cdagger_C": {
+        "denominator": 1,
+        "numerator": 0
+      },
+      "fundamental_symmetry": [
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 1
+          }
+        ],
+        [
+          {
+            "denominator": 1,
+            "numerator": 1
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ]
+      ]
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "disposition": {
+    "Eq19_in_continuum": "NOT_REPRODUCED",
+    "canonical_semifinite_orbit_trace": "CONSTRUCTED",
+    "conditional_Born_normalization": "PROVED_UNDER_WEAK_GHOST_HYPOTHESES",
+    "conditional_state_cyclicity": "REFUTED_BY_EXACT_MATRIX_UNIT_WITNESS",
+    "finite_input_relative_normalization": "CONSTRUCTED",
+    "finite_normalized_trace_on_full_orbit_algebra": "REMAINS_OBSTRUCTED",
+    "full_nonlinear_R_t": "NOT_CONSTRUCTED",
+    "physical_neutral_one_over_48": "NOT_ESTABLISHED",
+    "thermodynamic_normal_state": "NOT_CONSTRUCTED",
+    "unbounded_squeeze_trace_ideal_control": "NOT_CONSTRUCTED"
+  },
+  "does_not_establish": [
+    "that a normalized corner state is cyclic",
+    "a finite trace of the identity",
+    "positivity for arbitrary cross-Krein processes without weak ghost symmetry",
+    "that the unbounded squeeze preserves the full semifinite trace ideal",
+    "a normal or trace-class thermodynamic limit",
+    "the full nonlinear R_t or Eq. (19)",
+    "the physical neutral 1/48 or a complete NLO probability",
+    "a gravitational or BRST lift",
+    "anything LORENTZIAN-CAUSAL",
+    "literature priority"
+  ],
+  "lifecycle_state": "CLASSIFIED",
+  "missing_object_ledger": [
+    "a proof that the zero-mode-completed nonlinear R_t maps physical finite detector projections into the Tau-finite paired ideal",
+    "the weak ghost decomposition of Eq. (19) on that same domain",
+    "control of the unbounded squeeze under the required products and regulator removal",
+    "a local non-normal thermodynamic state or relative weight with regulator-independent continuum limits",
+    "incoming and outgoing continuum projector normalization on the physical collinear carrier"
+  ],
+  "next_gate": "Compute the zero-mode-completed order-lambda pushforward of one finite two-particle detector projection and test whether its neutral and radical pieces remain Tau-finite under the explicit weighted squeeze.",
+  "provenance": {
+    "inputs": [
+      {
+        "path": "planning/work-items/reverse-physics-bateman-semifinite-relative-born-weight.json",
+        "sha256": "87496af0d988616245003bee6a3acf5c5bdcb17c8cc4ac452388bb12a0314367"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_CROSS_KREIN_TRACE_LIMIT_V1.json",
+        "sha256": "e9dab0edb6ac2d611f2818c9117886516599eec8300e42d7020f641cbdc59996"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_ZERO_MODE_EQ19_TRILEMMA_V1.json",
+        "sha256": "31c5d45987bb484711912af5d51da1831f5632ef34278c755265fd190963edd6"
+      },
+      {
+        "path": "notes/bateman-turok-embedding.md",
+        "sha256": "7a6d946b28e720b46be101e26dcc6a07c3715ef056ef5661000300848a909533"
+      }
+    ],
+    "primary_source": {
+      "citation": "Bateman and Turok, Escape from Ostrogradsky via Hidden Ghost Parity, arXiv:2607.00096v1",
+      "use": "generalized Born trace and weak ghost decomposition only; the semifinite construction is a repository result"
+    },
+    "retrieval_date": "2026-08-11",
+    "source_commit": "049e62b36b7721018f100be2a2208e07d8f11a50"
+  },
+  "question": "Can the BT cross-Krein carrier evade the finite-normalized-trace no-go honestly by using a semifinite trace and conditioning on a finite-trace incoming detector projection?",
+  "relative_detector_state": {
+    "disposition": "CONSTRUCTED_ON_FINITE_TRACE_CORNERS",
+    "formula": "omega_P(T)=Tau(P T P)/Tau(P) for 0<Tau(P)<infinity",
+    "ghost_even_window": "J_0 P_N J_0=P_N",
+    "laurent_restriction": "omega_N(Z^k)=delta_(k,0) on the recorded Laurent fixture",
+    "localized_limit": "omega_N(E_0)=1/(2N+1) tends to zero",
+    "status": "NORMAL_STATE_FOR_EACH_FINITE_TRACE_P_BUT_NOT_A_TRACE_IN_GENERAL",
+    "symmetric_window_formula": "omega_N(T)=Tau(P_N T P_N)/(2N+1)",
+    "traciality_counterexample": {
+      "P": "E_00",
+      "X": "E_01",
+      "Y": "E_10",
+      "conclusion": "omega_P is not cyclic even though Tau is cyclic on its trace ideal",
+      "omega_XY": {
+        "denominator": 1,
+        "numerator": 1
+      },
+      "omega_YX": {
+        "denominator": 1,
+        "numerator": 0
+      }
+    },
+    "translation_covariance": "omega_(ZPZ^-1)(T)=omega_P(Z^-1 T Z)"
+  },
+  "report": "reverse_physics/reports/bt-semifinite-relative-born-weight.md",
+  "result_kind": "exact semifinite orbit trace and finite-input conditional generalized-Born theorem",
+  "schema": "reverse_physics/schema/reverse-physics-bt-semifinite-relative-born-weight-v1.schema.json",
+  "schema_version": "reverse-physics-bt-semifinite-relative-born-weight-v1",
+  "semifinite_orbit_trace": {
+    "carrier": "B(ell^2(Z)) with matrix units E_mn=|e_m><e_n|",
+    "classification": "faithful normal semifinite Hilbert trace; its finite-rank restriction is Tr_fin",
+    "definition": "Tau(T)=sum_n <e_n,T e_n>_H for T>=0, with value +infinity allowed",
+    "disposition": "CONSTRUCTED",
+    "finite_symmetric_window": "P_N=sum_(n=-N)^N E_n with Tau(P_N)=2N+1",
+    "identity_weight": "Tau(1)=INFINITY",
+    "laurent_window_rows": [
+      {
+        "coefficient_trace": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "normalized_window_expectation": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "power": -4
+      },
+      {
+        "coefficient_trace": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "normalized_window_expectation": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "power": -3
+      },
+      {
+        "coefficient_trace": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "normalized_window_expectation": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "power": -2
+      },
+      {
+        "coefficient_trace": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "normalized_window_expectation": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "power": -1
+      },
+      {
+        "coefficient_trace": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "normalized_window_expectation": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "power": 0
+      },
+      {
+        "coefficient_trace": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "normalized_window_expectation": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "power": 1
+      },
+      {
+        "coefficient_trace": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "normalized_window_expectation": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "power": 2
+      },
+      {
+        "coefficient_trace": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "normalized_window_expectation": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "power": 3
+      },
+      {
+        "coefficient_trace": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "normalized_window_expectation": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "power": 4
+      }
+    ],
+    "localized_projection_weight": "Tau(E_n)=1",
+    "orbit_windows": [
+      {
+        "cutoff": 0,
+        "finite_projection_trace": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "relative_central_cell_weight": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "relative_identity_weight": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "sum_of_cell_weights": {
+          "denominator": 1,
+          "numerator": 1
+        }
+      },
+      {
+        "cutoff": 1,
+        "finite_projection_trace": {
+          "denominator": 1,
+          "numerator": 3
+        },
+        "relative_central_cell_weight": {
+          "denominator": 3,
+          "numerator": 1
+        },
+        "relative_identity_weight": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "sum_of_cell_weights": {
+          "denominator": 1,
+          "numerator": 1
+        }
+      },
+      {
+        "cutoff": 2,
+        "finite_projection_trace": {
+          "denominator": 1,
+          "numerator": 5
+        },
+        "relative_central_cell_weight": {
+          "denominator": 5,
+          "numerator": 1
+        },
+        "relative_identity_weight": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "sum_of_cell_weights": {
+          "denominator": 1,
+          "numerator": 1
+        }
+      },
+      {
+        "cutoff": 3,
+        "finite_projection_trace": {
+          "denominator": 1,
+          "numerator": 7
+        },
+        "relative_central_cell_weight": {
+          "denominator": 7,
+          "numerator": 1
+        },
+        "relative_identity_weight": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "sum_of_cell_weights": {
+          "denominator": 1,
+          "numerator": 1
+        }
+      },
+      {
+        "cutoff": 4,
+        "finite_projection_trace": {
+          "denominator": 1,
+          "numerator": 9
+        },
+        "relative_central_cell_weight": {
+          "denominator": 9,
+          "numerator": 1
+        },
+        "relative_identity_weight": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "sum_of_cell_weights": {
+          "denominator": 1,
+          "numerator": 1
+        }
+      },
+      {
+        "cutoff": 5,
+        "finite_projection_trace": {
+          "denominator": 1,
+          "numerator": 11
+        },
+        "relative_central_cell_weight": {
+          "denominator": 11,
+          "numerator": 1
+        },
+        "relative_identity_weight": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "sum_of_cell_weights": {
+          "denominator": 1,
+          "numerator": 1
+        }
+      },
+      {
+        "cutoff": 6,
+        "finite_projection_trace": {
+          "denominator": 1,
+          "numerator": 13
+        },
+        "relative_central_cell_weight": {
+          "denominator": 13,
+          "numerator": 1
+        },
+        "relative_identity_weight": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "sum_of_cell_weights": {
+          "denominator": 1,
+          "numerator": 1
+        }
+      },
+      {
+        "cutoff": 7,
+        "finite_projection_trace": {
+          "denominator": 1,
+          "numerator": 15
+        },
+        "relative_central_cell_weight": {
+          "denominator": 15,
+          "numerator": 1
+        },
+        "relative_identity_weight": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "sum_of_cell_weights": {
+          "denominator": 1,
+          "numerator": 1
+        }
+      },
+      {
+        "cutoff": 8,
+        "finite_projection_trace": {
+          "denominator": 1,
+          "numerator": 17
+        },
+        "relative_central_cell_weight": {
+          "denominator": 17,
+          "numerator": 1
+        },
+        "relative_identity_weight": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "sum_of_cell_weights": {
+          "denominator": 1,
+          "numerator": 1
+        }
+      }
+    ],
+    "translation_invariance": "Tau(Z T Z^-1)=Tau(T) on the positive/trace ideal"
+  },
+  "thermodynamic_boundary": {
+    "Eq19": "NOT_REPRODUCED",
+    "disposition": "FINITE_RELATIVE_CONSTRUCTION_ONLY",
+    "finite_window_family": "the normalized windows converge on Laurent shifts to the coefficient trace while every fixed localized orbit projector has weight zero",
+    "full_nonlinear_R_t": "NOT_CONSTRUCTED",
+    "meaning": "uniform orbit averaging and localized conditional probabilities are different limits and cannot be one invariant normal state",
+    "non_normal_local_state": "NOT_CONSTRUCTED",
+    "physical_one_over_48": "NOT_ESTABLISHED",
+    "unbounded_squeeze": "no proof that the full cross-Krein squeeze normalizes the semifinite trace ideal"
+  },
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_semifinite_relative_born_weight.py --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_semifinite_relative_born_weight.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_semifinite_relative_born_weight"
+  ]
+}

@@ -126,6 +126,10 @@ is inequivalent.  Its covariant squeeze does admit a cross-Krein core
 implementation and cyclic finite-rank trace, but a finite normalized orbit
 trace kills localized projectors and the transported vacuum projector has
 exponentially growing trace norm.  No normal thermodynamic Born trace follows.
+A semifinite scalar construction nevertheless gives normalized finite-detector
+weights under the weak ghost hypothesis by conditioning on a finite incoming
+projection; its normalized corner functional is noncyclic and supplies neither
+a thermodynamic state nor Eq.~(19).
 This is again not a gravitational state construction.
 \end{abstract}
 
@@ -1563,6 +1567,27 @@ Thus no normal thermodynamic Born trace follows.  This remains solely a scalar
 carrier classification.  Its dependency tags are \texttt{LOCAL-ALGEBRAIC}
 and \texttt{REDUCED-MODE}; it does not construct a graviton, BRST, or causal
 state space.
+A scalar semifinite construction retains localized orbit projectors without
+assigning finite weight to the identity.  Its canonical trace satisfies
+$\operatorname{Tr}_{\!\infty}(E_n)=1$ and
+$\operatorname{Tr}_{\!\infty}(1)=+\infty$.  For a finite incoming Krein
+projection and a finite exhaustive output partition, the relative weights
+\[
+ p_i=\frac{\operatorname{Tr}_{\rm fin}(A_i^\dagger A_i)}
+ {\operatorname{Tr}_{\rm fin}(P_{\rm in})}
+\]
+are nonnegative and sum to one whenever each process $A_i$ satisfies the BT
+weak ghost decomposition.  The normalized corner functional is not a trace:
+$P=E_{00}$, $X=E_{01}$, $Y=E_{10}$ give
+$\omega_P(XY)=1$ and $\omega_P(YX)=0$.  Hence this result preserves the
+finite-normalized-trace no-go while constructing a finite-detector conditional
+calculus.  The exact scalar certificate
+\texttt{REVERSE\_PHYSICS\_BT\_SEMIFINITE\_}
+\allowbreak\texttt{RELATIVE\_BORN\_WEIGHT\_V1} carries dependency tags
+\texttt{LOCAL-ALGEBRAIC} and \texttt{REDUCED-MODE}.  It does not control the
+unbounded squeeze on the full trace ideal, construct a thermodynamic state,
+reproduce Eq.~(19), transfer to the metric BV complex, or establish any
+\texttt{LORENTZIAN-CAUSAL} statement.
 There is nevertheless a genuine scalar hard-scattering baseline.  The
 certificate
 \texttt{REVERSE\_PHYSICS\_BT\_UV\_HARD\_}\allowbreak

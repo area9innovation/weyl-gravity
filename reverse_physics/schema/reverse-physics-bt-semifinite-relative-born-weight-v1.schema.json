@@ -1,0 +1,303 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-semifinite-relative-born-weight-v1.schema.json",
+  "title": "BT semifinite relative Born-weight certificate",
+  "type": "object",
+  "required": [
+    "certificate",
+    "schema_version",
+    "dependency_tags",
+    "lifecycle_state",
+    "result_kind",
+    "question",
+    "answer",
+    "semifinite_orbit_trace",
+    "relative_detector_state",
+    "conditional_Born_theorem",
+    "thermodynamic_boundary",
+    "disposition",
+    "missing_object_ledger",
+    "does_not_establish",
+    "next_gate",
+    "provenance",
+    "verification_commands",
+    "checks",
+    "report",
+    "schema"
+  ],
+  "properties": {
+    "certificate": {
+      "const": "REVERSE_PHYSICS_BT_SEMIFINITE_RELATIVE_BORN_WEIGHT_V1"
+    },
+    "schema_version": {
+      "const": "reverse-physics-bt-semifinite-relative-born-weight-v1"
+    },
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]
+    },
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "result_kind": {"$ref": "#/$defs/nonempty"},
+    "question": {"$ref": "#/$defs/nonempty"},
+    "answer": {"$ref": "#/$defs/nonempty"},
+    "semifinite_orbit_trace": {
+      "type": "object",
+      "required": [
+        "carrier",
+        "definition",
+        "classification",
+        "translation_invariance",
+        "localized_projection_weight",
+        "identity_weight",
+        "finite_symmetric_window",
+        "orbit_windows",
+        "laurent_window_rows",
+        "disposition"
+      ],
+      "properties": {
+        "carrier": {"$ref": "#/$defs/nonempty"},
+        "definition": {"$ref": "#/$defs/nonempty"},
+        "classification": {"$ref": "#/$defs/nonempty"},
+        "translation_invariance": {"$ref": "#/$defs/nonempty"},
+        "localized_projection_weight": {"const": "Tau(E_n)=1"},
+        "identity_weight": {"const": "Tau(1)=INFINITY"},
+        "finite_symmetric_window": {"$ref": "#/$defs/nonempty"},
+        "orbit_windows": {
+          "type": "array",
+          "minItems": 9,
+          "maxItems": 9,
+          "items": {"$ref": "#/$defs/window"}
+        },
+        "laurent_window_rows": {
+          "type": "array",
+          "minItems": 9,
+          "maxItems": 9,
+          "items": {"$ref": "#/$defs/laurent"}
+        },
+        "disposition": {"const": "CONSTRUCTED"}
+      },
+      "additionalProperties": false
+    },
+    "relative_detector_state": {
+      "type": "object",
+      "required": [
+        "formula",
+        "status",
+        "symmetric_window_formula",
+        "ghost_even_window",
+        "translation_covariance",
+        "laurent_restriction",
+        "localized_limit",
+        "traciality_counterexample",
+        "disposition"
+      ],
+      "properties": {
+        "formula": {"$ref": "#/$defs/nonempty"},
+        "status": {"const": "NORMAL_STATE_FOR_EACH_FINITE_TRACE_P_BUT_NOT_A_TRACE_IN_GENERAL"},
+        "symmetric_window_formula": {"$ref": "#/$defs/nonempty"},
+        "ghost_even_window": {"$ref": "#/$defs/nonempty"},
+        "translation_covariance": {"$ref": "#/$defs/nonempty"},
+        "laurent_restriction": {"$ref": "#/$defs/nonempty"},
+        "localized_limit": {"$ref": "#/$defs/nonempty"},
+        "traciality_counterexample": {
+          "type": "object",
+          "required": ["P", "X", "Y", "omega_XY", "omega_YX", "conclusion"],
+          "properties": {
+            "P": {"const": "E_00"},
+            "X": {"const": "E_01"},
+            "Y": {"const": "E_10"},
+            "omega_XY": {"$ref": "#/$defs/rational"},
+            "omega_YX": {"$ref": "#/$defs/rational"},
+            "conclusion": {"$ref": "#/$defs/nonempty"}
+          },
+          "additionalProperties": false
+        },
+        "disposition": {"const": "CONSTRUCTED_ON_FINITE_TRACE_CORNERS"}
+      },
+      "additionalProperties": false
+    },
+    "conditional_Born_theorem": {
+      "type": "object",
+      "required": [
+        "hypotheses",
+        "conditional_weights",
+        "positivity_proof",
+        "normalization_proof",
+        "identity_trace_requirement",
+        "rational_partition_fixture",
+        "weak_null_fixture",
+        "disposition"
+      ],
+      "properties": {
+        "hypotheses": {"$ref": "#/$defs/string_array"},
+        "conditional_weights": {"$ref": "#/$defs/nonempty"},
+        "positivity_proof": {"$ref": "#/$defs/nonempty"},
+        "normalization_proof": {"$ref": "#/$defs/nonempty"},
+        "identity_trace_requirement": {"const": "NONE; Tau(1)=INFINITY is compatible with the theorem"},
+        "rational_partition_fixture": {
+          "type": "object",
+          "required": [
+            "fundamental_symmetry",
+            "cross_Krein_isometry",
+            "incoming_projection",
+            "output_projections",
+            "process_weights",
+            "weight_sum"
+          ],
+          "properties": {
+            "fundamental_symmetry": {"$ref": "#/$defs/matrix"},
+            "cross_Krein_isometry": {"$ref": "#/$defs/matrix"},
+            "incoming_projection": {"$ref": "#/$defs/matrix"},
+            "output_projections": {
+              "type": "array",
+              "minItems": 3,
+              "maxItems": 3,
+              "items": {"$ref": "#/$defs/matrix"}
+            },
+            "process_weights": {
+              "type": "array",
+              "minItems": 3,
+              "maxItems": 3,
+              "items": {"$ref": "#/$defs/rational"}
+            },
+            "weight_sum": {"$ref": "#/$defs/rational"}
+          },
+          "additionalProperties": false
+        },
+        "weak_null_fixture": {
+          "type": "object",
+          "required": [
+            "fundamental_symmetry",
+            "B",
+            "C",
+            "A_equals_B_plus_C",
+            "Tr_Cdagger_C",
+            "Tr_Bdagger_C",
+            "Tr_Cdagger_B",
+            "Tr_Bdagger_B",
+            "Tr_Adagger_A"
+          ],
+          "properties": {
+            "fundamental_symmetry": {"$ref": "#/$defs/matrix"},
+            "B": {"$ref": "#/$defs/matrix"},
+            "C": {"$ref": "#/$defs/matrix"},
+            "A_equals_B_plus_C": {"$ref": "#/$defs/matrix"},
+            "Tr_Cdagger_C": {"$ref": "#/$defs/rational"},
+            "Tr_Bdagger_C": {"$ref": "#/$defs/rational"},
+            "Tr_Cdagger_B": {"$ref": "#/$defs/rational"},
+            "Tr_Bdagger_B": {"$ref": "#/$defs/rational"},
+            "Tr_Adagger_A": {"$ref": "#/$defs/rational"}
+          },
+          "additionalProperties": false
+        },
+        "disposition": {"const": "PROVED_ON_FINITE_DETECTOR_IDEAL_UNDER_WEAK_GHOST_HYPOTHESES"}
+      },
+      "additionalProperties": false
+    },
+    "thermodynamic_boundary": {"$ref": "#/$defs/nonempty_object"},
+    "disposition": {"$ref": "#/$defs/nonempty_object"},
+    "missing_object_ledger": {"$ref": "#/$defs/string_array"},
+    "does_not_establish": {"$ref": "#/$defs/string_array"},
+    "next_gate": {"$ref": "#/$defs/nonempty"},
+    "provenance": {
+      "type": "object",
+      "required": ["source_commit", "retrieval_date", "inputs", "primary_source"],
+      "properties": {
+        "source_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "retrieval_date": {"const": "2026-08-11"},
+        "inputs": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {"$ref": "#/$defs/input"}
+        },
+        "primary_source": {"$ref": "#/$defs/nonempty_object"}
+      },
+      "additionalProperties": false
+    },
+    "verification_commands": {"$ref": "#/$defs/string_array"},
+    "checks": {
+      "type": "object",
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"const": 29},
+        "total": {"const": 29},
+        "failures": {"const": []},
+        "details": {
+          "type": "object",
+          "minProperties": 29,
+          "maxProperties": 29,
+          "additionalProperties": {"const": true}
+        }
+      },
+      "additionalProperties": false
+    },
+    "report": {"const": "reverse_physics/reports/bt-semifinite-relative-born-weight.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-semifinite-relative-born-weight-v1.schema.json"}
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "nonempty": {"type": "string", "minLength": 1},
+    "nonempty_object": {"type": "object", "minProperties": 1},
+    "string_array": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/nonempty"}
+    },
+    "rational": {
+      "type": "object",
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      },
+      "additionalProperties": false
+    },
+    "matrix": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "array",
+        "minItems": 1,
+        "items": {"$ref": "#/$defs/rational"}
+      }
+    },
+    "window": {
+      "type": "object",
+      "required": [
+        "cutoff",
+        "finite_projection_trace",
+        "relative_identity_weight",
+        "relative_central_cell_weight",
+        "sum_of_cell_weights"
+      ],
+      "properties": {
+        "cutoff": {"type": "integer", "minimum": 0},
+        "finite_projection_trace": {"$ref": "#/$defs/rational"},
+        "relative_identity_weight": {"$ref": "#/$defs/rational"},
+        "relative_central_cell_weight": {"$ref": "#/$defs/rational"},
+        "sum_of_cell_weights": {"$ref": "#/$defs/rational"}
+      },
+      "additionalProperties": false
+    },
+    "laurent": {
+      "type": "object",
+      "required": ["power", "normalized_window_expectation", "coefficient_trace"],
+      "properties": {
+        "power": {"type": "integer"},
+        "normalized_window_expectation": {"$ref": "#/$defs/rational"},
+        "coefficient_trace": {"$ref": "#/$defs/rational"}
+      },
+      "additionalProperties": false
+    },
+    "input": {
+      "type": "object",
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {"$ref": "#/$defs/nonempty"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      },
+      "additionalProperties": false
+    }
+  }
+}

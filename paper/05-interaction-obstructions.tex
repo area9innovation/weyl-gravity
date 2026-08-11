@@ -137,6 +137,12 @@ cores and supplies a cyclic finite-rank trace.  However, any finite normalized
 cyclic trace positive on the ghost-even orbit cone kills localized rank-one
 projectors, while the finite-rank trace has infinite identity weight.  The
 transported vacuum projector also has exponentially growing trace norm.
+A semifinite finite-detector construction survives this obstruction.  Its
+canonical trace gives localized orbit projectors weight one and the identity
+infinite weight; conditioning on a finite incoming projection gives
+nonnegative normalized weights for finite weakly ghost-symmetric output
+partitions.  The normalized corner functional is explicitly noncyclic, and no
+normal thermodynamic state or Eq.~(19) transport follows.
 Independently, the projected three-channel hard loop logarithm closes the
 Callan--Symanzik equation exactly with the Born rate and one-loop beta
 function.  This yields the positive leading-log nonforward prediction
@@ -1451,9 +1457,34 @@ explicit weight above,
 \]
 The certificate
 \texttt{REVERSE\_PHYSICS\_BT\_CROSS\_KREIN\_TRACE\_}
-\allowbreak\texttt{LIMIT\_V1} therefore moves the open problem to an explicit
+\allowbreak\texttt{LIMIT\_V1} therefore isolates the open problem as an explicit
 semifinite, relative, or non-normal Born weight and the full nonlinear
 Eq.~(19) transport.  It does not establish the physical $1/48$.
+
+The semifinite branch has an exact finite-detector realization.  On
+$B(\ell^2(\mathbb Z))$, the canonical faithful normal semifinite trace satisfies
+$\operatorname{Tr}_{\!\infty}(E_n)=1$ and
+$\operatorname{Tr}_{\!\infty}(1)=+\infty$.  Let $P_{\rm in}$ be a finite-rank
+$J$-even Krein projection, let $S$ be cross-Krein isometric on its range, and
+let $P_i$ be a finite exhaustive output partition there.  If every
+$A_i=P_iSP_{\rm in}=B_i+C_i$ has the weak ghost decomposition, then
+\[
+ p_i=\frac{\operatorname{Tr}_{\rm fin}(A_i^\dagger A_i)}
+ {\operatorname{Tr}_{\rm fin}(P_{\rm in})}\geq0,
+ \qquad \sum_i p_i=1.
+\]
+The proof uses weak-ghost trace orthogonality for positivity and
+$S^\dagger S=1$ for normalization; it never uses a finite trace of the
+identity.  This does not contradict the preceding no-go because the normalized
+corner functional is not cyclic.  The exact matrix-unit witness
+$P=E_{00}$, $X=E_{01}$, $Y=E_{10}$ gives
+$\omega_P(XY)=1$ and $\omega_P(YX)=0$.  The certificate
+\texttt{REVERSE\_PHYSICS\_BT\_SEMIFINITE\_}
+\allowbreak\texttt{RELATIVE\_BORN\_WEIGHT\_V1} records the construction with
+dependency tags \texttt{LOCAL-ALGEBRAIC} and \texttt{REDUCED-MODE}.  It does
+not prove that the unbounded squeeze preserves the required trace ideal,
+construct a non-normal thermodynamic state, reproduce Eq.~(19), or establish
+the physical $1/48$.
 \end{remark}
 
 \begin{remark}[Physical ultraviolet hard-scattering law]
