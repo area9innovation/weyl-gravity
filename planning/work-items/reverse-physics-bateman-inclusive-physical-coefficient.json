@@ -1,0 +1,19 @@
+{
+  "id": "sf:program/work/reverse-physics-bateman-inclusive-physical-coefficient",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "reverse-physics",
+    "state": "ACTIVE",
+    "objective": "Determine the physical leading real-collinear generalized-Born coefficient for every orthogonal inclusive detector characteristic function from the complete public order-lambda BT map, including squeeze, zero-mode normalization, regulator removal, and independence from unknown higher composite orders.",
+    "depends_on": ["REVERSE_PHYSICS_BT_FULL_SIGNED_QUADRATIC_CLOSURE_V1", "REVERSE_PHYSICS_BT_SQUEEZED_DETECTOR_SIMILARITY_V1", "REVERSE_PHYSICS_BT_CYLINDER_BORN_LIMIT_V1", "REVERSE_PHYSICS_BT_ZERO_MODE_EQ19_TRILEMMA_V1"],
+    "activates": ["the physical disposition of the claimed 1/48 real-collinear coefficient", "continuum order-lambda Eq. (19) for orthogonal detectors", "the residual virtual/hard complete-NLO problem"],
+    "current_gate": "INCLUSIVE_ORTHOGONAL_PROBABILITY: prove that Pout Pin=0 makes the order-lambda-squared Born coefficient depend only on Pout K Pin; contract the complete signed kernel before endpoint removal; transfer exact zero through simple detector nets and normalized orbit factors.",
+    "stop_condition": "Certify the leading physical real-collinear coefficient for arbitrary declared inclusive detector characteristic functions, or isolate an explicit surviving public-data term or endpoint anomaly.",
+    "forbid": "no survival amplitude confused with an orthogonal transition; no resonant truncation; no endpoint delta added outside the regulated complete-kernel sequence; no real coefficient called a complete NLO probability; no order-lambda theorem called all-order Eq. (19); no gravity, BRST, or LORENTZIAN-CAUSAL promotion",
+    "allowed_paths": ["reverse_physics/", "notes/bateman-turok-embedding.md", "paper/05-interaction-obstructions.tex", "paper/05-interaction-obstructions.pdf", "paper/06-einstein-weyl-interaction-obstructions.tex", "paper/06-einstein-weyl-interaction-obstructions.pdf", "planning/work-items/reverse-physics-bateman-inclusive-physical-coefficient.json", "planning/events/"],
+    "resource_hint": "Use exact rational perturbative block algebra. For U=1+lambda K+lambda^2 L and Pout Pin=0, A=Pout U Pin has A0=0 and the lambda^2 coefficient of A^dagger A is (Pout K Pin)^dagger(Pout K Pin), independent of L. Verify the complete signed parent trace is pointwise zero on all sign sectors, then show every finite cell sum and its directed scalar limit are zero.",
+    "input_commit": "31dc7e95",
+    "stream": "reverse-physics"
+  }
+}

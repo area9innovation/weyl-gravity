@@ -1,0 +1,2651 @@
+{
+  "answer": "It is zero. For an orthogonal detector Pout Pin=0, the process A=Pout(1+lambda K+lambda^2 L+...)Pin starts at order lambda, so the order-lambda-squared coefficient of A^dagger A is exactly (Pout K Pin)^dagger(Pout K Pin); every unknown L or higher amplitude drops out. The complete signed public K has pointwise zero parent-raised Krein trace in all annihilator/creator sectors. The covariant squeeze preserves it by similarity, and the neutral zero-mode factor cancels in the normalized conditional ratio. Every symmetry-preserving finite regulator therefore gives zero before endpoint removal; every finite detector-cell characteristic function has zero coefficient, and the directed simple-function limit is zero for arbitrary measurable declared detector support. Thus the claimed physical real-collinear 1/48 is not reproduced: the public BT map predicts zero for this leading orthogonal transition coefficient. This does not compute the virtual/hard terms of a complete NLO probability and does not prove all-order Eq. (19).",
+  "certificate": "REVERSE_PHYSICS_BT_INCLUSIVE_PHYSICAL_COEFFICIENT_V1",
+  "checks": {
+    "details": {
+      "Pout_Pin_zero_in_all_fixtures": true,
+      "all_order_Eq19_not_claimed": true,
+      "arbitrary_characteristic_function_zero_by_simple_function_limit": true,
+      "complete_NLO_probability_not_claimed": true,
+      "complete_kernel_contracted_before_endpoint_limit": true,
+      "complete_parent_trace_pointwise_zero": true,
+      "directed_scalar_limit_zero": true,
+      "every_finite_detector_cell_sum_zero": true,
+      "four_orthogonal_block_fixtures": true,
+      "gravity_and_causal_claims_absent": true,
+      "higher_composite_orders_do_not_enter_leading_orthogonal_probability": true,
+      "input_hashes_pinned": true,
+      "neutral_zero_mode_factor_cancels_in_normalized_ratio": true,
+      "no_endpoint_delta_in_the_declared_regulated_sequence": true,
+      "one_over_48_not_reproduced": true,
+      "physical_real_collinear_coefficient_zero": true,
+      "sixteen_signed_energy_kernel_rows": true,
+      "sixty_four_detector_masks": true,
+      "squeeze_similarity_adds_zero": true,
+      "unknown_order_two_amplitude_drops_out": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 20,
+    "total": 20
+  },
+  "complete_signed_kernel": {
+    "fixtures": [
+      {
+        "e1": 1,
+        "e2": 1,
+        "parent_gram": [
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 2
+            }
+          ]
+        ],
+        "raised_trace": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "signs": [
+          1,
+          1
+        ]
+      },
+      {
+        "e1": 2,
+        "e2": 1,
+        "parent_gram": [
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 2
+            }
+          ]
+        ],
+        "raised_trace": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "signs": [
+          1,
+          1
+        ]
+      },
+      {
+        "e1": 3,
+        "e2": 2,
+        "parent_gram": [
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 2
+            }
+          ]
+        ],
+        "raised_trace": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "signs": [
+          1,
+          1
+        ]
+      },
+      {
+        "e1": 5,
+        "e2": 3,
+        "parent_gram": [
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 2
+            }
+          ]
+        ],
+        "raised_trace": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "signs": [
+          1,
+          1
+        ]
+      },
+      {
+        "e1": 1,
+        "e2": 1,
+        "parent_gram": [
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": -2
+            }
+          ]
+        ],
+        "raised_trace": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "signs": [
+          1,
+          -1
+        ]
+      },
+      {
+        "e1": 2,
+        "e2": 1,
+        "parent_gram": [
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": -2
+            }
+          ]
+        ],
+        "raised_trace": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "signs": [
+          1,
+          -1
+        ]
+      },
+      {
+        "e1": 3,
+        "e2": 2,
+        "parent_gram": [
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": -2
+            }
+          ]
+        ],
+        "raised_trace": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "signs": [
+          1,
+          -1
+        ]
+      },
+      {
+        "e1": 5,
+        "e2": 3,
+        "parent_gram": [
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": -2
+            }
+          ]
+        ],
+        "raised_trace": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "signs": [
+          1,
+          -1
+        ]
+      },
+      {
+        "e1": 1,
+        "e2": 1,
+        "parent_gram": [
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": -2
+            }
+          ]
+        ],
+        "raised_trace": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "signs": [
+          -1,
+          1
+        ]
+      },
+      {
+        "e1": 2,
+        "e2": 1,
+        "parent_gram": [
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": -2
+            }
+          ]
+        ],
+        "raised_trace": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "signs": [
+          -1,
+          1
+        ]
+      },
+      {
+        "e1": 3,
+        "e2": 2,
+        "parent_gram": [
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": -2
+            }
+          ]
+        ],
+        "raised_trace": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "signs": [
+          -1,
+          1
+        ]
+      },
+      {
+        "e1": 5,
+        "e2": 3,
+        "parent_gram": [
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": -2
+            }
+          ]
+        ],
+        "raised_trace": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "signs": [
+          -1,
+          1
+        ]
+      },
+      {
+        "e1": 1,
+        "e2": 1,
+        "parent_gram": [
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 2
+            }
+          ]
+        ],
+        "raised_trace": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "signs": [
+          -1,
+          -1
+        ]
+      },
+      {
+        "e1": 2,
+        "e2": 1,
+        "parent_gram": [
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 2
+            }
+          ]
+        ],
+        "raised_trace": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "signs": [
+          -1,
+          -1
+        ]
+      },
+      {
+        "e1": 3,
+        "e2": 2,
+        "parent_gram": [
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 2
+            }
+          ]
+        ],
+        "raised_trace": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "signs": [
+          -1,
+          -1
+        ]
+      },
+      {
+        "e1": 5,
+        "e2": 3,
+        "parent_gram": [
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 2
+            }
+          ]
+        ],
+        "raised_trace": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "signs": [
+          -1,
+          -1
+        ]
+      }
+    ],
+    "pointwise_parent_trace": {
+      "denominator": 1,
+      "numerator": 0
+    },
+    "squeeze_correction": {
+      "denominator": 1,
+      "numerator": 0
+    },
+    "zero_mode_normalized_factor": {
+      "denominator": 1,
+      "numerator": 1
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "disposition": {
+    "Eq19_all_orders": "NOT_PROVED",
+    "complete_NLO_probability": "NOT_ESTABLISHED",
+    "continuum_detector_coefficient": "ZERO",
+    "orthogonal_detector_order_lambda_squared_probability": "COMPUTED",
+    "physical_real_collinear_coefficient": "ZERO",
+    "zero_mode_dependence": "CANCELS_IN_NORMALIZED_NEUTRAL_RATIO"
+  },
+  "does_not_establish": [
+    "the virtual and hard coefficients of the complete NLO probability",
+    "all-order Eq. (19)",
+    "the full nonlinear R_t on every particle sector",
+    "positivity outside the BT weak-ghost process cone",
+    "a gravitational or BRST lift",
+    "anything LORENTZIAN-CAUSAL",
+    "literature priority"
+  ],
+  "inclusive_detector_limit": {
+    "arbitrary_characteristic_function_coefficient": {
+      "denominator": 1,
+      "numerator": 0
+    },
+    "endpoint_limit": {
+      "denominator": 1,
+      "numerator": 0
+    },
+    "finite_cell_masks": [
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "mask": "000000"
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "mask": "000001"
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "mask": "000010"
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "mask": "000011"
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "mask": "000100"
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "mask": "000101"
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "mask": "000110"
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "mask": "000111"
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "mask": "001000"
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "mask": "001001"
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "mask": "001010"
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "mask": "001011"
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "mask": "001100"
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "mask": "001101"
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "mask": "001110"
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "mask": "001111"
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "mask": "010000"
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "mask": "010001"
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "mask": "010010"
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "mask": "010011"
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "mask": "010100"
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "mask": "010101"
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "mask": "010110"
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "mask": "010111"
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "mask": "011000"
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "mask": "011001"
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "mask": "011010"
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "mask": "011011"
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "mask": "011100"
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "mask": "011101"
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "mask": "011110"
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "mask": "011111"
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "mask": "100000"
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "mask": "100001"
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "mask": "100010"
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "mask": "100011"
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "mask": "100100"
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "mask": "100101"
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "mask": "100110"
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "mask": "100111"
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "mask": "101000"
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "mask": "101001"
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "mask": "101010"
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "mask": "101011"
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "mask": "101100"
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "mask": "101101"
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "mask": "101110"
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "mask": "101111"
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "mask": "110000"
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "mask": "110001"
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "mask": "110010"
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "mask": "110011"
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "mask": "110100"
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "mask": "110101"
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "mask": "110110"
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "mask": "110111"
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "mask": "111000"
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "mask": "111001"
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "mask": "111010"
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "mask": "111011"
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "mask": "111100"
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "mask": "111101"
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "mask": "111110"
+      },
+      {
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "mask": "111111"
+      }
+    ],
+    "prescription": "sum the complete signed species kernel at each finite regulator before removing the endpoint cutoff; the regulated sequence is identically zero",
+    "regulated_coefficient": {
+      "denominator": 1,
+      "numerator": 0
+    }
+  },
+  "lifecycle_state": "COEFFICIENT_COMPUTED",
+  "next_gate": "Combine this zero real-collinear coefficient with the already certified virtual/hard scalar terms in one inclusive NLO ledger, or extend the neutral projector decomposition beyond order lambda. No public-data real-collinear 1/48 term remains.",
+  "orthogonal_detector_lemma": {
+    "fixtures": [
+      {
+        "A0": [
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ]
+        ],
+        "A1": [
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 3,
+              "numerator": -1
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 3,
+              "numerator": 1
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ]
+        ],
+        "A1daggerA1": [
+          [
+            {
+              "denominator": 9,
+              "numerator": 2
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ]
+        ],
+        "A2": [
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 4,
+              "numerator": 1
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 4,
+              "numerator": 3
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 4,
+              "numerator": 5
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ]
+        ],
+        "Born_order_two": [
+          [
+            {
+              "denominator": 9,
+              "numerator": 2
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ]
+        ],
+        "Pout_Pin_zero": true,
+        "coefficient_trace": {
+          "denominator": 9,
+          "numerator": 2
+        },
+        "independent_of_L": true,
+        "seed": 1
+      },
+      {
+        "A0": [
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ]
+        ],
+        "A1": [
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 4,
+              "numerator": 1
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 4,
+              "numerator": 3
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 4,
+              "numerator": 5
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ]
+        ],
+        "A1daggerA1": [
+          [
+            {
+              "denominator": 16,
+              "numerator": 35
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ]
+        ],
+        "A2": [
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 5,
+              "numerator": -1
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 5,
+              "numerator": 1
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 5,
+              "numerator": 3
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ]
+        ],
+        "Born_order_two": [
+          [
+            {
+              "denominator": 16,
+              "numerator": 35
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ]
+        ],
+        "Pout_Pin_zero": true,
+        "coefficient_trace": {
+          "denominator": 16,
+          "numerator": 35
+        },
+        "independent_of_L": true,
+        "seed": 2
+      },
+      {
+        "A0": [
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ]
+        ],
+        "A1": [
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 5,
+              "numerator": 3
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 5,
+              "numerator": 6
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 5,
+              "numerator": 9
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ]
+        ],
+        "A1daggerA1": [
+          [
+            {
+              "denominator": 25,
+              "numerator": 126
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ]
+        ],
+        "A2": [
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 2,
+              "numerator": -1
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 6,
+              "numerator": -1
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 6,
+              "numerator": 1
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ]
+        ],
+        "Born_order_two": [
+          [
+            {
+              "denominator": 25,
+              "numerator": 126
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ]
+        ],
+        "Pout_Pin_zero": true,
+        "coefficient_trace": {
+          "denominator": 25,
+          "numerator": 126
+        },
+        "independent_of_L": true,
+        "seed": 3
+      },
+      {
+        "A0": [
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ]
+        ],
+        "A1": [
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 1,
+              "numerator": 1
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 7,
+              "numerator": 12
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 7,
+              "numerator": 17
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ]
+        ],
+        "A1daggerA1": [
+          [
+            {
+              "denominator": 49,
+              "numerator": 482
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ]
+        ],
+        "A2": [
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 8,
+              "numerator": -7
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 8,
+              "numerator": -5
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 8,
+              "numerator": -3
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ]
+        ],
+        "Born_order_two": [
+          [
+            {
+              "denominator": 49,
+              "numerator": 482
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ]
+        ],
+        "Pout_Pin_zero": true,
+        "coefficient_trace": {
+          "denominator": 49,
+          "numerator": 482
+        },
+        "independent_of_L": true,
+        "seed": 5
+      }
+    ],
+    "higher_order_disposition": "DOES_NOT_ENTER_THE_LEADING_NONZERO_ORTHOGONAL_TRANSITION_PROBABILITY",
+    "statement": "if A(lambda)=Pout U(lambda) Pin, U=1+lambda K+lambda^2 L+..., and Pout Pin=0, then [A^dagger A]_(lambda^2)=(Pout K Pin)^dagger(Pout K Pin)"
+  },
+  "physical_coefficient": {
+    "claimed_one_over_48": "NOT_REPRODUCED",
+    "complete_NLO_probability": "NOT_COMPUTED",
+    "leading_real_collinear_generalized_Born_coefficient": {
+      "denominator": 1,
+      "numerator": 0
+    },
+    "status": "PHYSICAL_REAL_COLLINEAR_COEFFICIENT_COMPUTED"
+  },
+  "provenance": {
+    "inputs": [
+      {
+        "path": "planning/work-items/reverse-physics-bateman-inclusive-physical-coefficient.json",
+        "sha256": "8d734a7b409fc9f9a26dd02a6ce724b9f044da7ed47f2469f5b20c60deb6abda"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_FULL_SIGNED_QUADRATIC_CLOSURE_V1.json",
+        "sha256": "5859aad65cf0dcbc1ceb9d2c3381a9a61c2d3df6457e8b77903c8a6931aa081b"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_SQUEEZED_DETECTOR_SIMILARITY_V1.json",
+        "sha256": "3e8b5c7947b51c18f0ab366c5cba9c0947e6cba7a6e0bbd17a312fef26b4f23a"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_CYLINDER_BORN_LIMIT_V1.json",
+        "sha256": "6899226ddc60685ca83d75b7551e4848c4bfd5081d19be5b0fcce0d12ca7e77f"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_ZERO_MODE_EQ19_TRILEMMA_V1.json",
+        "sha256": "31c5d45987bb484711912af5d51da1831f5632ef34278c755265fd190963edd6"
+      },
+      {
+        "path": "notes/bateman-turok-embedding.md",
+        "sha256": "513f2a3dc35f3c444fcf173b520952a33ed5a03dd9bffc308340152378feb236"
+      }
+    ],
+    "retrieval_date": "2026-08-11",
+    "source_commit": "31dc7e95"
+  },
+  "question": "What is the leading real-collinear generalized-Born coefficient for an arbitrary orthogonal inclusive detector when the complete public signed BT map, covariant squeeze, zero-mode normalization, and regulator limit are treated together?",
+  "report": "reverse_physics/reports/bt-inclusive-physical-coefficient.md",
+  "result_kind": "physical leading real-collinear generalized-Born coefficient for orthogonal inclusive BT detectors",
+  "schema": "reverse_physics/schema/reverse-physics-bt-inclusive-physical-coefficient-v1.schema.json",
+  "schema_version": "reverse-physics-bt-inclusive-physical-coefficient-v1",
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_inclusive_physical_coefficient.py --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_inclusive_physical_coefficient.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_inclusive_physical_coefficient"
+  ]
+}

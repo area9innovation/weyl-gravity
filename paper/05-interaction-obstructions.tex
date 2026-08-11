@@ -165,6 +165,15 @@ so weak-ghost weights are volume independent even while their positive trace
 norm diverges.  The zero quadratic coefficient survives this directed limit.
 Affiliation of an inclusive LSZ detector and the dynamical zero mode remain
 unproved.
+For an orthogonal inclusive detector, however, the leading probability is
+fixed without higher map data: if $U=1+\lambda K+\lambda^2L+\cdots$, its
+order-$\lambda^2$ transition weight contains only
+$(P_{\rm out}KP_{\rm in})^\dagger(P_{\rm out}KP_{\rm in})$.  The complete
+signed kernel makes this integrand pointwise zero.  Squeeze similarity,
+neutral zero-mode normalization, and every detector characteristic-function
+limit preserve zero.  Thus the physical leading real-collinear generalized-
+Born coefficient is zero rather than $1/48$; the full virtual/hard NLO sum and
+all-order Eq.~(19) are separate open problems.
 Independently, the projected three-channel hard loop logarithm closes the
 Callan--Symanzik equation exactly with the Born rate and one-loop beta
 function.  This yields the positive leading-log nonforward prediction
@@ -1596,6 +1605,14 @@ while the positive trace norm grows as $(4/3)^N$.  Hence the pointwise zero
 quadratic coefficient has a regulator-independent cylinder limit.  Certificate
 \texttt{REVERSE\_PHYSICS\_BT\_CYLINDER\_BORN\_LIMIT\_V1} does not identify
 this pair-cylinder algebra with an inclusive LSZ or spacetime-local detector.
+Orthogonality nevertheless suffices for the leading real transition.  The
+order-$\lambda^2$ Born weight is determined only by the complete order-
+$\lambda$ kernel, independently of unknown higher amplitudes.  Its signed
+parent trace vanishes before endpoint removal, and therefore for every
+inclusive detector characteristic function.  Certificate
+\texttt{REVERSE\_PHYSICS\_BT\_INCLUSIVE\_PHYSICAL\_COEFFICIENT\_V1}
+records the physical real-collinear coefficient as zero, while leaving the
+complete virtual/hard NLO probability and all-order Eq.~(19) open.
 \end{remark}
 
 \begin{remark}[Physical ultraviolet hard-scattering law]
