@@ -134,7 +134,9 @@ def verify(path):
         and fraction(pair.get("ordered_Hilbert_Schmidt_coefficient", {})) == hs
         and fraction(pair.get("density_coefficient_times_pi_minus_two", {})) == hs_density
         and "density itself" in pair.get("volume_boundary", "")
-        and pair.get("disposition") == "NOT_HILBERT_SCHMIDT_IN_THE_MASSLESS_IR_LIMIT"
+        and "comparison only" in pair.get("criterion", "")
+        and pair.get("disposition")
+        == "PAIR_KERNEL_NOT_HILBERT_SCHMIDT_IN_THE_MASSLESS_IR_LIMIT"
     )
 
     topology = certificate.get("topology_boundary", {})
@@ -153,7 +155,7 @@ def verify(path):
         and disposition.get("massless_infinite_volume_positive_topology_vector")
         == "OBSTRUCTED_ON_ORDINARY_FOCK_KREIN_CARRIER"
         and disposition.get("ordinary_Fock_Bogoliubov_implementer")
-        == "OBSTRUCTED_BY_NON_HILBERT_SCHMIDT_PAIR_BLOCK"
+        == "POSITIVE_FOCK_VECTOR_OBSTRUCTED_STANDARD_SHALE_THEOREM_NOT_DIRECTLY_APPLICABLE"
         and disposition.get("local_operator_algebra_homomorphism") == "NOT_REFUTED"
         and disposition.get("Eq19_in_extended_representation") == "NOT_DECIDED"
         and disposition.get("physical_neutral_one_over_48") == "NOT_ESTABLISHED"

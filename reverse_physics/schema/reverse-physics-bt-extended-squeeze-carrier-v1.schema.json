@@ -1,0 +1,244 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-extended-squeeze-carrier-v1.schema.json",
+  "$defs": {
+    "nonempty": {"type": "string", "minLength": 1},
+    "fraction": {
+      "type": "object",
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      },
+      "additionalProperties": false
+    },
+    "string_array": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/nonempty"}},
+    "hash_input": {
+      "type": "object",
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {"$ref": "#/$defs/nonempty"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      },
+      "additionalProperties": false
+    }
+  },
+  "type": "object",
+  "required": ["certificate", "schema_version", "dependency_tags", "lifecycle_state", "result_kind", "question", "answer", "full_pair_exponential", "ordinary_topology_obstruction", "power_weight_classification", "explicit_weighted_candidate", "inequivalence_and_volume_boundary", "positive_adjoint_audit", "extended_implementation_import_gate", "carrier_trilemma", "disposition", "missing_object_ledger", "does_not_establish", "next_gate", "provenance", "verification_commands", "checks", "report", "schema"],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_EXTENDED_SQUEEZE_CARRIER_V1"},
+    "schema_version": {"const": "reverse-physics-bt-extended-squeeze-carrier-v1"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "result_kind": {"$ref": "#/$defs/nonempty"},
+    "question": {"$ref": "#/$defs/nonempty"},
+    "answer": {"$ref": "#/$defs/nonempty"},
+    "full_pair_exponential": {
+      "type": "object",
+      "required": ["ordered_creation_coefficient", "unordered_creation_coefficient", "positive_normalized_creator", "pair_amplitude", "single_pair_state", "single_pair_norm_squared", "full_norm_squared", "existence_conditions", "factorial_witnesses", "geometric_witnesses"],
+      "properties": {
+        "ordered_creation_coefficient": {"const": {"numerator": 1, "denominator": 8}},
+        "unordered_creation_coefficient": {"const": {"numerator": 1, "denominator": 4}},
+        "positive_normalized_creator": {"$ref": "#/$defs/nonempty"},
+        "pair_amplitude": {"const": "z(p)=rho(p)/(4p^2)"},
+        "single_pair_state": {"$ref": "#/$defs/nonempty"},
+        "single_pair_norm_squared": {"$ref": "#/$defs/nonempty"},
+        "full_norm_squared": {"$ref": "#/$defs/nonempty"},
+        "existence_conditions": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"$ref": "#/$defs/nonempty"}},
+        "factorial_witnesses": {
+          "type": "array", "minItems": 9, "maxItems": 9,
+          "items": {
+            "type": "object",
+            "required": ["n", "exponential_denominator", "two_mode_creation_norm_factor", "normalized_basis_amplitude_factor"],
+            "properties": {
+              "n": {"type": "integer", "minimum": 0, "maximum": 8},
+              "exponential_denominator": {"type": "integer", "minimum": 1},
+              "two_mode_creation_norm_factor": {"type": "integer", "minimum": 1},
+              "normalized_basis_amplitude_factor": {"const": {"numerator": 1, "denominator": 1}}
+            },
+            "additionalProperties": false
+          }
+        },
+        "geometric_witnesses": {
+          "type": "array", "minItems": 5, "maxItems": 5,
+          "items": {
+            "type": "object",
+            "required": ["z", "cutoff", "direct_partial_norm", "closed_partial_norm", "agree"],
+            "properties": {
+              "z": {"const": {"numerator": 1, "denominator": 2}},
+              "cutoff": {"enum": [0, 1, 2, 4, 8]},
+              "direct_partial_norm": {"$ref": "#/$defs/fraction"},
+              "closed_partial_norm": {"$ref": "#/$defs/fraction"},
+              "agree": {"const": true}
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "ordinary_topology_obstruction": {
+      "type": "object",
+      "required": ["uniform_equivalence", "lowest_momentum", "lowest_pair_amplitude_bound", "contraction_failure_threshold", "conclusion", "scope"],
+      "properties": {
+        "uniform_equivalence": {"const": "0<m<=rho(p)<=M<infinity"},
+        "lowest_momentum": {"const": "p_min=2pi/L"},
+        "lowest_pair_amplitude_bound": {"const": "|z(p_min)|>=m L^2/(16pi^2)"},
+        "contraction_failure_threshold": {"const": "L>=4pi/sqrt(m)"},
+        "conclusion": {"const": "FULL_EXPONENTIAL_FAILS_MODEWISE_BEFORE_THE_MASSLESS_THERMODYNAMIC_LIMIT"},
+        "scope": {"$ref": "#/$defs/nonempty"}
+      },
+      "additionalProperties": false
+    },
+    "power_weight_classification": {
+      "type": "object",
+      "required": ["ansatz", "square_sum_radial_integrand", "square_sum_condition", "modewise_contraction_condition", "combined_condition", "uniform_equivalence"],
+      "properties": {
+        "ansatz": {"$ref": "#/$defs/nonempty"},
+        "square_sum_radial_integrand": {"const": "p^(2alpha-2)"},
+        "square_sum_condition": {"const": "alpha>1/2"},
+        "modewise_contraction_condition": {"const": "alpha>2, or alpha=2 with limiting coefficient below four"},
+        "combined_condition": {"$ref": "#/$defs/nonempty"},
+        "uniform_equivalence": {"$ref": "#/$defs/nonempty"}
+      },
+      "additionalProperties": false
+    },
+    "explicit_weighted_candidate": {
+      "type": "object",
+      "required": ["parameters", "rho_mu", "pair_amplitude", "supremum", "unordered_square_sum_density", "density_coefficient_times_pi_inverse", "integral_identity", "log_norm_density_bounds", "exact_gamma_half_fixtures", "carrier_disposition"],
+      "properties": {
+        "parameters": {"const": "mu>0 and 0<gamma<1"},
+        "rho_mu": {"const": "4 gamma mu^2 p^2/(p^2+mu^2)"},
+        "pair_amplitude": {"const": "z_mu(p)=gamma mu^2/(p^2+mu^2)"},
+        "supremum": {"const": "gamma<1"},
+        "unordered_square_sum_density": {"const": "gamma^2 mu^3/(16pi)"},
+        "density_coefficient_times_pi_inverse": {"const": {"numerator": 1, "denominator": 16}},
+        "integral_identity": {"const": "integral_0^infinity x^2/(1+x^2)^2 dx=pi/4"},
+        "log_norm_density_bounds": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"$ref": "#/$defs/nonempty"}},
+        "exact_gamma_half_fixtures": {
+          "type": "array", "minItems": 5, "maxItems": 5,
+          "items": {
+            "type": "object",
+            "required": ["p_squared_over_mu_squared", "rho_over_mu_squared", "pair_amplitude_z", "amplitude_below_one"],
+            "properties": {
+              "p_squared_over_mu_squared": {"$ref": "#/$defs/fraction"},
+              "rho_over_mu_squared": {"$ref": "#/$defs/fraction"},
+              "pair_amplitude_z": {"$ref": "#/$defs/fraction"},
+              "amplitude_below_one": {"const": true}
+            },
+            "additionalProperties": false
+          }
+        },
+        "carrier_disposition": {"const": "FINITE_BOX_VECTOR_AND_FINITE_IR_NORM_DENSITY"}
+      },
+      "additionalProperties": false
+    },
+    "inequivalence_and_volume_boundary": {
+      "type": "object",
+      "required": ["infrared_inverse", "fundamental_symmetry_status", "total_log_norm", "normalized_vacuum_overlap", "thermodynamic_status"],
+      "properties": {
+        "infrared_inverse": {"$ref": "#/$defs/nonempty"},
+        "fundamental_symmetry_status": {"$ref": "#/$defs/nonempty"},
+        "total_log_norm": {"$ref": "#/$defs/nonempty"},
+        "normalized_vacuum_overlap": {"$ref": "#/$defs/nonempty"},
+        "thermodynamic_status": {"$ref": "#/$defs/nonempty"}
+      },
+      "additionalProperties": false
+    },
+    "positive_adjoint_audit": {
+      "type": "object",
+      "required": ["normalized_cross_modes", "BT_generator", "Hilbert_adjoint", "raw_positive_Bogoliubov_fixture", "normalized_positive_repair_fixture", "conclusion", "repair_cost"],
+      "properties": {
+        "normalized_cross_modes": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"$ref": "#/$defs/nonempty"}},
+        "BT_generator": {"$ref": "#/$defs/nonempty"},
+        "Hilbert_adjoint": {"$ref": "#/$defs/nonempty"},
+        "raw_positive_Bogoliubov_fixture": {
+          "type": "object", "required": ["z", "u_squared", "v_squared", "u_squared_minus_v_squared", "required"],
+          "properties": {
+            "z": {"const": {"numerator": 1, "denominator": 2}},
+            "u_squared": {"const": {"numerator": 1, "denominator": 1}},
+            "v_squared": {"const": {"numerator": 1, "denominator": 4}},
+            "u_squared_minus_v_squared": {"const": {"numerator": 3, "denominator": 4}},
+            "required": {"const": {"numerator": 1, "denominator": 1}}
+          }, "additionalProperties": false
+        },
+        "normalized_positive_repair_fixture": {
+          "type": "object", "required": ["z_ratio", "u_squared", "v_squared", "u_squared_minus_v_squared"],
+          "properties": {
+            "z_ratio": {"const": {"numerator": 1, "denominator": 2}},
+            "u_squared": {"const": {"numerator": 4, "denominator": 3}},
+            "v_squared": {"const": {"numerator": 1, "denominator": 3}},
+            "u_squared_minus_v_squared": {"const": {"numerator": 1, "denominator": 1}}
+          }, "additionalProperties": false
+        },
+        "conclusion": {"const": "BT_CROSS_KREIN_SHEAR_IS_NOT_A_POSITIVE_HILBERT_BOGOLIUBOV_TRANSFORMATION"},
+        "repair_cost": {"$ref": "#/$defs/nonempty"}
+      },
+      "additionalProperties": false
+    },
+    "extended_implementation_import_gate": {
+      "type": "object",
+      "required": ["reference_architecture", "reference_scope", "extended_space_scope", "not_supplied_by_reference", "import_disposition"],
+      "properties": {
+        "reference_architecture": {"const": "Lill arXiv:2208.03487v2"},
+        "reference_scope": {"$ref": "#/$defs/nonempty"},
+        "extended_space_scope": {"$ref": "#/$defs/nonempty"},
+        "not_supplied_by_reference": {"type": "array", "minItems": 4, "items": {"$ref": "#/$defs/nonempty"}},
+        "import_disposition": {"const": "ARCHITECTURE_RELEVANT_THEOREM_NOT_DIRECTLY_APPLICABLE"}
+      },
+      "additionalProperties": false
+    },
+    "carrier_trilemma": {
+      "type": "object",
+      "required": ["ordinary_BT_topology", "weighted_inequivalent_topology", "formal_extended_implementation", "resolved_outcome"],
+      "properties": {
+        "ordinary_BT_topology": {"$ref": "#/$defs/nonempty"},
+        "weighted_inequivalent_topology": {"$ref": "#/$defs/nonempty"},
+        "formal_extended_implementation": {"$ref": "#/$defs/nonempty"},
+        "resolved_outcome": {"const": "EXPLICIT_INEQUIVALENT_VACUUM_CARRIER_CONSTRUCTED_BORN_TRACE_STILL_OBSTRUCTED"}
+      },
+      "additionalProperties": false
+    },
+    "disposition": {
+      "type": "object",
+      "required": ["full_ordinary_Fock_Krein_vacuum", "explicit_IR_weighted_vacuum_carrier", "BT_cross_Krein_operator_map_on_candidate", "positive_cyclic_generalized_Born_trace", "Eq19_in_extended_representation", "physical_neutral_one_over_48", "complete_nlo_probability"],
+      "properties": {
+        "full_ordinary_Fock_Krein_vacuum": {"const": "OBSTRUCTED"},
+        "explicit_IR_weighted_vacuum_carrier": {"const": "CONSTRUCTED_AS_INEQUIVALENT_REDUCED_MODE_CANDIDATE"},
+        "BT_cross_Krein_operator_map_on_candidate": {"const": "NOT_CONSTRUCTED"},
+        "positive_cyclic_generalized_Born_trace": {"const": "NOT_CONSTRUCTED"},
+        "Eq19_in_extended_representation": {"const": "NOT_REPRODUCED"},
+        "physical_neutral_one_over_48": {"const": "NOT_ESTABLISHED"},
+        "complete_nlo_probability": {"const": "NOT_ESTABLISHED"}
+      },
+      "additionalProperties": false
+    },
+    "missing_object_ledger": {"type": "array", "minItems": 7, "items": {"$ref": "#/$defs/nonempty"}},
+    "does_not_establish": {"type": "array", "minItems": 9, "items": {"$ref": "#/$defs/nonempty"}},
+    "next_gate": {"$ref": "#/$defs/nonempty"},
+    "provenance": {
+      "type": "object",
+      "required": ["source_commit", "retrieval_date", "inputs", "primary_source", "extended_architecture_source"],
+      "properties": {
+        "source_commit": {"const": "579c97f36d10eef2092e851426d889bdc88ebbe6"},
+        "retrieval_date": {"const": "2026-08-11"},
+        "inputs": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/hash_input"}},
+        "primary_source": {"type": "object", "required": ["source", "url", "equations", "current_version_check"], "properties": {"source": {"$ref": "#/$defs/nonempty"}, "url": {"const": "https://arxiv.org/abs/2607.00096"}, "equations": {"$ref": "#/$defs/string_array"}, "current_version_check": {"$ref": "#/$defs/nonempty"}}, "additionalProperties": false},
+        "extended_architecture_source": {"type": "object", "required": ["source", "url", "retrieval_check", "use"], "properties": {"source": {"$ref": "#/$defs/nonempty"}, "url": {"const": "https://arxiv.org/abs/2208.03487"}, "retrieval_check": {"$ref": "#/$defs/nonempty"}, "use": {"const": "architecture and import-boundary audit only"}}, "additionalProperties": false}
+      },
+      "additionalProperties": false
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/nonempty"}},
+    "checks": {
+      "type": "object", "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true}, "passed": {"const": 26}, "total": {"const": 26}, "failures": {"const": []},
+        "details": {"type": "object", "minProperties": 26, "maxProperties": 26, "additionalProperties": {"const": true}}
+      },
+      "additionalProperties": false
+    },
+    "report": {"const": "reverse_physics/reports/bt-extended-squeeze-carrier.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-extended-squeeze-carrier-v1.schema.json"}
+  },
+  "additionalProperties": false
+}

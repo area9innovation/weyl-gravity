@@ -126,6 +126,12 @@ positive topology.  The associated pair block is likewise non-Hilbert--Schmidt.
 Thus indefinite nullity does not produce an ordinary Fock--Krein vector;
 an extended or inequivalent non-Fock realization remains open and would need
 its domains and trace specified.
+The full exponential strengthens the condition to
+$\sup_p|\rho(p)/(4p^2)|<1$.  An explicit infrared weight satisfies this and
+has finite norm density, but its inverse metric is unbounded and its
+thermodynamic sector is inequivalent.  The raw BT shear is also cross-Krein
+canonical rather than a positive-Hilbert Bogoliubov map, so existing extended
+positive-boson implementations do not supply the missing BT trace.
 Independently, the projected three-channel hard loop logarithm closes the
 Callan--Symanzik equation exactly with the Born rate and one-loop beta
 function.  This yields the positive leading-log nonforward prediction
@@ -1386,6 +1392,27 @@ $\rho^{-1}$ is unbounded and the topology is inequivalent.  This exact
 \texttt{LOCAL-ALGEBRAIC}, \texttt{REDUCED-MODE} obstruction neither refutes
 the algebraic map nor excludes a rigorously defined extended/non-Fock
 representation of Eq.~(19).
+
+The full exponential sharpens this carrier test.  For an unordered momentum
+pair its exact normalized amplitude is
+$z(p)=\rho(p)/(4p^2)$, so a vector requires both
+$\sup_p|z(p)|<1$ and square summability.  Any uniformly equivalent
+$\rho\geq m>0$ violates the first condition once
+$L\geq4\pi/\sqrt m$.  An explicit inequivalent repair is
+\[
+ \rho_\mu(p)=\frac{4\gamma\mu^2p^2}{p^2+\mu^2},\qquad
+ z_\mu(p)=\frac{\gamma\mu^2}{p^2+\mu^2},\qquad0<\gamma<1,
+\]
+whose unordered square-sum density is $\gamma^2\mu^3/(16\pi)$.  Its inverse
+metric is unbounded at the origin and its thermodynamic vacuum leaves the
+ordinary Fock sector.  Moreover, the raw BT shear has positive-Hilbert
+coefficients $u=1,v=z$ and hence $u^2-v^2=1-z^2\ne1$: it is cross-Krein
+canonical, not a positive-Hilbert Bogoliubov transformation.  Generic extended
+positive-boson implementation theorems therefore do not apply verbatim and do
+not provide the missing cyclic BT trace.  The certificate
+\texttt{REVERSE\_PHYSICS\_BT\_EXTENDED\_SQUEEZE\_}
+\allowbreak\texttt{CARRIER\_V1} records this constructive but inequivalent
+vacuum carrier and the remaining trace obstruction.
 \end{remark}
 
 \begin{remark}[Physical ultraviolet hard-scattering law]

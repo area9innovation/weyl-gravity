@@ -76,7 +76,7 @@
     "finite_box_cutoff_squeezed_state": "DEFINED_ORDER_BY_ORDER",
     "local_operator_algebra_homomorphism": "NOT_REFUTED",
     "massless_infinite_volume_positive_topology_vector": "OBSTRUCTED_ON_ORDINARY_FOCK_KREIN_CARRIER",
-    "ordinary_Fock_Bogoliubov_implementer": "OBSTRUCTED_BY_NON_HILBERT_SCHMIDT_PAIR_BLOCK",
+    "ordinary_Fock_Bogoliubov_implementer": "POSITIVE_FOCK_VECTOR_OBSTRUCTED_STANDARD_SHALE_THEOREM_NOT_DIRECTLY_APPLICABLE",
     "physical_neutral_one_over_48": "NOT_ESTABLISHED"
   },
   "does_not_establish": [
@@ -238,12 +238,12 @@
     },
     "commutator": "[c_Omega,p,Q_plus]=exp(2i|p|t)/(4|p|^2)c_Upsilon,-p^dagger",
     "constant_rho_density": "rho^2/(32pi^2)(epsilon^-1-Lambda^-1)",
-    "criterion": "ordinary bosonic Fock implementability requires a Hilbert--Schmidt pair block",
+    "criterion": "Hilbert--Schmidt summability is a necessary first-sector condition for the positive-Fock pair exponential; the standard Shale--Stinespring theorem is comparison only because the BT map is cross-Krein canonical rather than Hilbert-star canonical",
     "density_coefficient_times_pi_minus_two": {
       "denominator": 32,
       "numerator": 1
     },
-    "disposition": "NOT_HILBERT_SCHMIDT_IN_THE_MASSLESS_IR_LIMIT",
+    "disposition": "PAIR_KERNEL_NOT_HILBERT_SCHMIDT_IN_THE_MASSLESS_IR_LIMIT",
     "ordered_Hilbert_Schmidt_coefficient": {
       "denominator": 16,
       "numerator": 1
@@ -256,20 +256,20 @@
     "implementability_reference": {
       "source": "Lill, Implementing Bogoliubov Transformations Beyond the Shale--Stinespring Condition",
       "url": "https://arxiv.org/abs/2204.13407",
-      "use": "supporting statement of the ordinary bosonic Fock Hilbert--Schmidt criterion and existence of extended alternatives; the direct sector-norm proof is primary"
+      "use": "comparison source for positive-Hilbert Bogoliubov transformations and extended alternatives; not imported as a theorem for the cross-Krein-canonical BT shear, whose direct sector-norm proof is primary"
     },
     "inputs": [
       {
         "path": "notes/bateman-turok-embedding.md",
-        "sha256": "202090443cf7764cdc7eb784192ccab034ecc776bb9eb520d70526b078aa505d"
+        "sha256": "6f9742933169d9881457f7ee6f9868fef15ca0c141d0e86fa843e7fcb52a8853"
       },
       {
         "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_ZERO_MODE_EQ19_TRILEMMA_V1.json",
-        "sha256": "dfc134f2eb556574f42484dae531920a12ed58b4c24c3da5b7f6794de562ede1"
+        "sha256": "5627e72b5d67218127acd8df86870fb1e7302c60c7c60ebff42b77e8ddcd1d51"
       },
       {
         "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_OSCILLATORY_RADICAL_NO_MATCHING_V1.json",
-        "sha256": "20b97a39cd4cafca2a02d5140eedd26ecb9e8c9fd7cd027f08b7ff51fd983e2b"
+        "sha256": "b6d3e675a5cab16a49fc5d1699addb52388bfc9a1ba95ff81f7f06936aa2e675"
       },
       {
         "path": "planning/work-items/reverse-physics-bateman-squeezed-vacuum-implementability.json",

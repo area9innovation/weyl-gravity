@@ -196,9 +196,9 @@ def build():
             "constant_rho_density": "rho^2/(32pi^2)(epsilon^-1-Lambda^-1)",
             "density_coefficient_times_pi_minus_two": rat(hs_density_coefficient),
             "relation_to_direct_norm": "Hilbert--Schmidt sum equals twice ||Q_plus|0>||_kappa^2",
-            "criterion": "ordinary bosonic Fock implementability requires a Hilbert--Schmidt pair block",
+            "criterion": "Hilbert--Schmidt summability is a necessary first-sector condition for the positive-Fock pair exponential; the standard Shale--Stinespring theorem is comparison only because the BT map is cross-Krein canonical rather than Hilbert-star canonical",
             "volume_boundary": "the translation-invariant infinite-volume block also has the usual extensive volume divergence; here the Hilbert--Schmidt density itself has the stronger epsilon^-1 infrared divergence",
-            "disposition": "NOT_HILBERT_SCHMIDT_IN_THE_MASSLESS_IR_LIMIT",
+            "disposition": "PAIR_KERNEL_NOT_HILBERT_SCHMIDT_IN_THE_MASSLESS_IR_LIMIT",
         },
         "topology_boundary": {
             "bounded_equivalent_rho": "cannot remove the divergence because rho(p)>=m>0",
@@ -221,7 +221,7 @@ def build():
         "disposition": {
             "finite_box_cutoff_squeezed_state": "DEFINED_ORDER_BY_ORDER",
             "massless_infinite_volume_positive_topology_vector": "OBSTRUCTED_ON_ORDINARY_FOCK_KREIN_CARRIER",
-            "ordinary_Fock_Bogoliubov_implementer": "OBSTRUCTED_BY_NON_HILBERT_SCHMIDT_PAIR_BLOCK",
+            "ordinary_Fock_Bogoliubov_implementer": "POSITIVE_FOCK_VECTOR_OBSTRUCTED_STANDARD_SHALE_THEOREM_NOT_DIRECTLY_APPLICABLE",
             "local_operator_algebra_homomorphism": "NOT_REFUTED",
             "Eq19_in_extended_representation": "NOT_DECIDED",
             "physical_neutral_one_over_48": "NOT_ESTABLISHED",
@@ -265,7 +265,7 @@ def build():
             "implementability_reference": {
                 "source": "Lill, Implementing Bogoliubov Transformations Beyond the Shale--Stinespring Condition",
                 "url": "https://arxiv.org/abs/2204.13407",
-                "use": "supporting statement of the ordinary bosonic Fock Hilbert--Schmidt criterion and existence of extended alternatives; the direct sector-norm proof is primary",
+                "use": "comparison source for positive-Hilbert Bogoliubov transformations and extended alternatives; not imported as a theorem for the cross-Krein-canonical BT shear, whose direct sector-norm proof is primary",
             },
         },
         "verification_commands": [
