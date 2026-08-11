@@ -1,0 +1,204 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-eight-point-inner-threshold-obstruction-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "certificate",
+    "schema_version",
+    "dependency_tags",
+    "lifecycle_state",
+    "result_kind",
+    "question",
+    "answer",
+    "profile_analysis",
+    "inner_threshold",
+    "disposition",
+    "does_not_establish",
+    "next_gate",
+    "provenance",
+    "verification_commands",
+    "checks",
+    "report",
+    "schema"
+  ],
+  "properties": {
+    "certificate": {
+      "const": "REVERSE_PHYSICS_BT_EIGHT_POINT_INNER_THRESHOLD_OBSTRUCTION_V1"
+    },
+    "schema_version": {
+      "const": "reverse-physics-bt-eight-point-inner-threshold-obstruction-v1"
+    },
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "result_kind": {"type": "string", "minLength": 140},
+    "question": {"type": "string", "minLength": 140},
+    "answer": {"type": "string", "minLength": 1200},
+    "profile_analysis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "normalization",
+        "soft_fixture",
+        "hard_fixtures",
+        "first_three_evaluation",
+        "rows",
+        "difference",
+        "difference_sha256",
+        "fixed_inner_fixture_raw_difference",
+        "fixed_inner_fixture_after_first_three"
+      ],
+      "properties": {
+        "normalization": {
+          "const": {
+            "a0": {"numerator": 1, "denominator": 1},
+            "a1": "r=a1/a0",
+            "tau1": "u=tau1/a0",
+            "homogeneity_status": "OVERALL_A0_SCALE_FIXED_RATIO_RETAINED"
+          }
+        },
+        "soft_fixture": {"const": [1, 4, 3, 2, 1, 10, 7, 5, 3]},
+        "hard_fixtures": {"type": "array", "minItems": 2, "maxItems": 2},
+        "first_three_evaluation": {
+          "const": {
+            "tau2": {"numerator": 3, "denominator": 1},
+            "tau3": {"numerator": 2, "denominator": 1},
+            "tau4": {"numerator": 1, "denominator": 1},
+            "scale": {"numerator": 6, "denominator": 1}
+          }
+        },
+        "rows": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "inner_profile",
+              "inner_profile_length",
+              "inner_profile_sha256",
+              "hierarchy_valuations",
+              "leading_order",
+              "leading_masks"
+            ],
+            "properties": {
+              "inner_profile": {"type": "string", "minLength": 200},
+              "inner_profile_length": {"type": "integer", "minimum": 200},
+              "inner_profile_sha256": {"pattern": "^[0-9a-f]{64}$"},
+              "hierarchy_valuations": {"const": [["e1", 0], ["e2", 0], ["e3", -1]]},
+              "leading_order": {"const": 2},
+              "leading_masks": {"const": [0, 1, 2, 3, 4, 5, 6, 7]}
+            }
+          }
+        },
+        "difference": {
+          "const": "3*(9*r**2 - 18*r*tau1 - 18*r + 34*tau1**2 - 18*tau1 + 9)/(128*tau1**2)"
+        },
+        "difference_sha256": {"pattern": "^[0-9a-f]{64}$"},
+        "fixed_inner_fixture_raw_difference": {
+          "const": {"numerator": 7743, "denominator": 12800}
+        },
+        "fixed_inner_fixture_after_first_three": {
+          "const": {"numerator": 23229, "denominator": 6400}
+        }
+      }
+    },
+    "inner_threshold": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "rationalization",
+        "physical_cutoff",
+        "first_three_scale",
+        "fixture_residues",
+        "difference_residue",
+        "fixture_r_log_r_coefficients",
+        "hard_difference_r_log_r_coefficient",
+        "local_subtraction_invariance"
+      ],
+      "properties": {
+        "rationalization": {"const": "r=m^2; u=1+m^2+m*(z+z^-1)"},
+        "physical_cutoff": {"type": "string", "minLength": 35},
+        "first_three_scale": {"const": {"numerator": 6, "denominator": 1}},
+        "fixture_residues": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {"$ref": "#/$defs/residue"}
+        },
+        "difference_residue": {"$ref": "#/$defs/residue"},
+        "fixture_r_log_r_coefficients": {
+          "const": [
+            {"numerator": -6699, "denominator": 128},
+            {"numerator": -7149, "denominator": 128}
+          ]
+        },
+        "hard_difference_r_log_r_coefficient": {
+          "const": {"numerator": 225, "denominator": 64}
+        },
+        "local_subtraction_invariance": {"type": "string", "minLength": 180}
+      }
+    },
+    "disposition": {
+      "const": {
+        "complete_independent_mass_inner_profiles": "COMPUTED_ON_TWO_EXACT_HARD_FIXTURES",
+        "all_four_threshold_functionals": "COMPUTED",
+        "hard_independent_scalar_fourth_jump": "OBSTRUCTED_ON_DECLARED_TWO_FIXTURE_CARRIER",
+        "profile_or_channel_valued_successor": "REQUIRED_BUT_NOT_CONSTRUCTED",
+        "physical_fourth_probability_normalization": "NOT_ASSEMBLED",
+        "two_atom_Cox_completion": "NOT_DECIDED_WITHOUT_A_UNIVERSAL_SCALAR_MOMENT",
+        "complete_BT_probability": "NOT_CONSTRUCTED",
+        "Eq19_all_orders": "NOT_PROVED"
+      }
+    },
+    "does_not_establish": {"type": "array", "minItems": 12, "maxItems": 12},
+    "next_gate": {"type": "string", "minLength": 420},
+    "provenance": {
+      "type": "object",
+      "required": ["source_commit", "retrieval_date", "inputs"],
+      "properties": {
+        "source_commit": {"pattern": "^[0-9a-f]{7,40}$"},
+        "retrieval_date": {"const": "2026-08-11"},
+        "inputs": {"type": "array", "minItems": 4, "maxItems": 4}
+      }
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "maxItems": 3},
+    "checks": {
+      "type": "object",
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"const": 15},
+        "total": {"const": 15},
+        "failures": {"const": []},
+        "details": {"type": "object", "minProperties": 15, "maxProperties": 15}
+      }
+    },
+    "report": {"const": "reverse_physics/reports/bt-eight-point-inner-threshold-obstruction.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-eight-point-inner-threshold-obstruction-v1.schema.json"}
+  },
+  "$defs": {
+    "residue": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "residue_at_z_zero",
+        "residue_at_z_minus_m",
+        "physical_log_m_coefficient",
+        "small_m_series",
+        "r_log_r_coefficient"
+      ],
+      "properties": {
+        "residue_at_z_zero": {"type": "string", "minLength": 10},
+        "residue_at_z_minus_m": {"type": "string", "minLength": 20},
+        "physical_log_m_coefficient": {"type": "string", "minLength": 20},
+        "small_m_series": {"type": "string", "minLength": 20},
+        "r_log_r_coefficient": {
+          "type": "object",
+          "required": ["numerator", "denominator"]
+        }
+      }
+    }
+  }
+}

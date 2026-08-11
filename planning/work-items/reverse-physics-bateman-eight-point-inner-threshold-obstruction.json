@@ -1,0 +1,35 @@
+{
+  "id": "sf:program/work/reverse-physics-bateman-eight-point-inner-threshold-obstruction",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "reverse-physics",
+    "state": "ACTIVE",
+    "objective": "Retain the independent inner daughter-mass ratio and pair invariant through the complete eight-point tree, perform the fourth invariant-cutoff Kallen reduction, and decide whether a hard-independent scalar fourth jump exists on the declared two-fixture carrier.",
+    "depends_on": [
+      "REVERSE_PHYSICS_BT_EIGHT_POINT_TAU2_THRESHOLD_PROFILE_V1",
+      "REVERSE_PHYSICS_BT_FIVE_POINT_INDEPENDENT_MASS_THRESHOLD_V1"
+    ],
+    "activates": [
+      "the exact normalized independent-mass inner profiles after the first three threshold evaluations",
+      "the fourth and final nested threshold functional required by the scalar fourth-jump test",
+      "a channel/profile-valued fourth-carrier gate if scalar universality remains obstructed"
+    ],
+    "current_gate": "EIGHT_POINT_INNER_THRESHOLD_OBSTRUCTION: use homogeneity to set a0=1 while retaining r=a1/a0 and u=tau1/a0, evaluate tau2=a2, tau3=a3, tau4=a4, take all hierarchy valuations only after the complete spectator projector, and derive the invariant-cutoff r log r coefficient by method-distinct rationalized residues.",
+    "stop_condition": "Land an exact certificate with an independent verifier that either proves hard-independent scalar universality after all four thresholds or proves a scoped two-fixture obstruction and identifies the profile-valued successor, while keeping physical normalization, Cox selection, complete probability, Eq. 19, gravity, and Lorentzian claims fail-closed.",
+    "forbid": "no common inner-mass ray substituted for the independent ratio; no fixed r or u sample called an inner-threshold theorem; no nonzero difference called a normalized fourth probability; no two-fixture obstruction promoted to a global no-go for every profile quotient; no REDUCED-MODE result called complete scattering, all-order Eq. 19, gravity/BRST, or LORENTZIAN-CAUSAL",
+    "allowed_paths": [
+      "reverse_physics/",
+      "notes/bateman-turok-embedding.md",
+      "paper/05-interaction-obstructions.tex",
+      "paper/05-interaction-obstructions.pdf",
+      "paper/06-einstein-weyl-interaction-obstructions.tex",
+      "paper/06-einstein-weyl-interaction-obstructions.pdf",
+      "planning/work-items/reverse-physics-bateman-eight-point-inner-threshold-obstruction.json",
+      "planning/events/"
+    ],
+    "resource_hint": "Run the two complete profiles sequentially over Q(e1,e2,e3,r,tau1) under ulimit -v 500000, with a0=1, a1=r, tau2=a2, tau3=a3, tau4=a4. The first-three physical scale is a2*a3=6. Rationalize u=1+m^2+m(z+z^-1), r=m^2, and derive the log coefficient from the z=0 and z=-m residues at fixed physical invariant cutoff. Preserve the individual coefficients and their difference.",
+    "input_commit": "9f3e8e0c",
+    "stream": "reverse-physics"
+  }
+}
