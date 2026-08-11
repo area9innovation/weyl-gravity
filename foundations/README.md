@@ -88,6 +88,18 @@ python3 foundations/verify_bt_separable_state_chain.py
 python3 -m unittest foundations.tests.test_bt_separable_state_chain
 ```
 
+The first operational-reconstruction proof audit is
+[`Hardy's continuity exclusion of K=N`](reports/hardy-continuity-kn-foundational-audit.md).
+It distinguishes pointwise continuity from a path supplied with an explicit
+uniform modulus and proves an `RCA_0` sufficiency upper bound only for the
+latter encoding:
+
+```bash
+python3 foundations/check_hardy_continuity_kn.py
+python3 foundations/verify_hardy_continuity_kn.py
+python3 -m unittest foundations.tests.test_hardy_continuity_kn
+```
+
 ## Lifecycle
 
 This stream uses a literature/research lifecycle, not the quantum lifecycle:
