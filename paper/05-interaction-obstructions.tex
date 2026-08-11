@@ -1999,11 +1999,15 @@ $B^\sharp B=K_4$ and a Krein-skew block generator.  This is not a positive
 fourth probability or a charge-compatible BT derivation: it makes an
 Eq.~(19)-type trace or a derived off-diagonal channel recombination necessary
 on this carrier.
-The lift is not the purely negative-charge remainder in Eq.~(19).  The null
+The lift is not the purely negative-charge remainder in Eq.~(19).  The
+certified leg
+$C=\left(\begin{smallmatrix}-\rho&-1\\0&1\end{smallmatrix}\right)$ obeys
+$C^TJC=G_{\rm miss}$ and transports the actual target charge action.  The null
 charge basis of $G_{\rm miss}$ is
 $n_+=(1,0)^T$, $n_-=(1,-\rho)^T$, and its transported charge generator is
 \[
- H_G=\begin{pmatrix}1&2/\rho\\0&-1\end{pmatrix},
+ H_G=C^{-1}\operatorname{diag}(1,-1)C
+ =\begin{pmatrix}1&2/\rho\\0&-1\end{pmatrix},
  \qquad H_G^2=I,\qquad H_G^TG_{\rm miss}+G_{\rm miss}H_G=0.
 \]
 For the norm-$-2$ vector $f_2$, both $\Pi_+f_2$ and $\Pi_-f_2$ are null and

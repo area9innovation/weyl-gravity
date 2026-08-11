@@ -27,6 +27,7 @@ INPUTS = [
     "reverse_physics/certificates/REVERSE_PHYSICS_BT_EIGHT_POINT_PROFILE_POSITIVITY_OBSTRUCTION_V1.json",
     "reverse_physics/certificates/REVERSE_PHYSICS_BT_FULL_SIGNED_QUADRATIC_CLOSURE_V1.json",
     "reverse_physics/certificates/REVERSE_PHYSICS_BT_ZERO_MODE_EQ19_TRILEMMA_V1.json",
+    "reverse_physics/certificates/REVERSE_PHYSICS_BT_FINITE_PHYSICAL_MOLLER_COLUMN_V1.json",
 ]
 
 
@@ -62,12 +63,14 @@ def build():
     profile = load(INPUTS[1])
     eq19 = load(INPUTS[2])
     zero_mode = load(INPUTS[3])
+    moller = load(INPUTS[4])
     lift = profile["fibrewise_krein_lift"]
     rho_q = frac(lift["rho"])
     rho = sp.Rational(rho_q.numerator, rho_q.denominator)
     G = sp.Matrix([[0, -rho], [-rho, -2]])
     J = sp.Matrix([[0, 1], [1, 0]])
     S = sp.Matrix([[1, 1], [0, -rho]])
+    C = sp.Matrix([[-rho, -1], [0, 1]])
     H0 = sp.diag(1, -1)
     H = sp.simplify(S * H0 * S.inv())
     Pplus = sp.simplify((sp.eye(2) + H) / 2)
@@ -101,7 +104,7 @@ def build():
 
     checks = {
         "all_predecessor_certificates_pass": all(
-            value["checks"]["ok"] for value in (profile, eq19, zero_mode)
+            value["checks"]["ok"] for value in (profile, eq19, zero_mode, moller)
         ),
         "rho_and_gram_replayed": (
             rho_q == Fraction(819, 4000)
@@ -109,6 +112,14 @@ def build():
         ),
         "charge_basis_is_invertible": S.det() == -rho != 0,
         "charge_basis_is_null_cross": sp.simplify(S.T * G * S) == rho**2 * J,
+        "certified_missing_leg_reconstructs_gram": (
+            moller["minimal_public_Rt_compression"]["missing_leg_C"]
+            == [["-rho", "-1"], ["0", "1"]]
+            and sp.simplify(C.T * J * C) == G
+        ),
+        "charge_generator_is_transport_through_missing_leg": (
+            sp.simplify(C.inv() * H0 * C) == H
+        ),
         "transported_charge_generator_is_involutive": H**2 == sp.eye(2),
         "charge_generator_preserves_gram": sp.simplify(H.T * G + G * H)
         == sp.zeros(2),
@@ -166,9 +177,9 @@ def build():
         "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
         "result_kind": "exact charge localization of the minimal eight-point profile Krein lift and scoped Eq. 19 Q-remainder obstruction",
         "question": "Can the minimal fibrewise Krein lift of the negative eight-point profile effect be the purely negatively charged, trace-null Q remainder in Bateman-Turok Eq. (19)?",
-        "answer": "No on the declared forced cross-Krein fibre. The invariant charge basis consists of the two null lines n_plus=(1,0) and n_minus=(1,-rho), with S^T G_missing S=rho^2 J. Transporting diag(1,-1) gives H_G=[[1,2/rho],[0,-1]], an involutive G-skew charge generator. The canonical norm-minus-two vector f2 used by both profile amplitudes decomposes as Pi_plus f2=(1/rho,0) and Pi_minus f2=(-1/rho,1). Each one-sided component is null; their mutual pairing is -1, so the full norm -2 is entirely the sum of the two cross-charge pairings. Applying these projectors to the complete two-fixture forward block gives B_plus^sharp B_plus=0 and B_minus^sharp B_minus=0, while B_plus^sharp B_minus=B_minus^sharp B_plus=K4/2 and their sum is the exact rank-two negative profile effect. Therefore the lift cannot be the one-sided negatively charged null Q remainder: that projection has zero pullback. The nonzero effect localizes in charge-zero positive/negative interference and would require a neutral-sector completion or additional dynamical trace. This is a fibre-level reduced-mode obstruction, not a construction or refutation of the all-order Eq. (19) projector identity.",
+        "answer": "No on the declared forced cross-Krein fibre. The certified missing leg C=[[-rho,-1],[0,1]] obeys C^T J C=G_missing and transports the actual O(1,1) target charge generator by H_G=C^-1 diag(1,-1) C=[[1,2/rho],[0,-1]]. Equivalently, the invariant charge basis consists of the two null lines n_plus=(1,0) and n_minus=(1,-rho), with S^T G_missing S=rho^2 J. The canonical norm-minus-two vector f2 used by both profile amplitudes decomposes as Pi_plus f2=(1/rho,0) and Pi_minus f2=(-1/rho,1). Each one-sided component is null; their mutual pairing is -1, so the full norm -2 is entirely the sum of the two cross-charge pairings. Applying these projectors to the complete two-fixture forward block gives B_plus^sharp B_plus=0 and B_minus^sharp B_minus=0, while B_plus^sharp B_minus=B_minus^sharp B_plus=K4/2 and their sum is the exact rank-two negative profile effect. Therefore the lift cannot be the one-sided negatively charged null Q remainder: that projection has zero pullback. The nonzero effect localizes in charge-zero positive/negative interference and would require a neutral-sector completion or additional dynamical trace. This is a fibre-level reduced-mode obstruction, not a construction or refutation of the all-order Eq. (19) projector identity.",
         "assumptions": [
-            "The O(1,1) charge action on the two-dimensional complement fibre is the invariant boost action whose eigenlines are null and have charges plus and minus one.",
+            "The O(1,1) target charge action is transported to the pullback fibre through the exact certified missing leg C; its eigenlines are null and have charges plus and minus one.",
             "The profile lift and its two hard evaluation idempotents are exactly those certified in the predecessor; no additional pre-trace channel terms are inserted.",
             "Identification with the Eq. (19) Q remainder requires one-sided negative charge and null self-pullback on this declared fibre.",
             "The calculation classifies fibre charge support only; operator domains, zero-mode dynamics, and the generalized-Born trace remain external gates."
@@ -176,12 +187,16 @@ def build():
         "charge_fibre": {
             "rho": rat(rho_q),
             "gram": rows(G),
+            "certified_missing_leg_C": rows(C),
+            "target_metric_J": rows(J),
+            "missing_leg_pullback_identity": "C^T*J*C=G",
             "null_charge_basis_S": rows(S),
             "charge_basis_gram": rows(sp.simplify(S.T * G * S)),
             "charge_basis_gram_identity": "S^T*G*S=rho^2*J",
             "diagonal_charge_generator": rows(H0),
             "transported_charge_generator": rows(H),
             "transported_charge_generator_identity": "H_G=S*diag(1,-1)*S^-1",
+            "physical_transport_identity": "H_G=C^-1*diag(1,-1)*C",
             "involution": "H_G^2=I",
             "gram_invariance": "H_G^T*G+G*H_G=0",
             "positive_projector": rows(Pplus),
@@ -280,10 +295,10 @@ def fast_check(path):
         == "REVERSE_PHYSICS_BT_EIGHT_POINT_KREIN_CHARGE_LOCALIZATION_V1"
         and value.get("checks", {}).get("passed")
         == value.get("checks", {}).get("total")
-        == 20
+        == 22
         and value.get("checks", {}).get("failures") == []
         and all(value.get("checks", {}).get("details", {}).values())
-        and len(inputs) == 4
+        and len(inputs) == 5
         and all(row.get("sha256") == sha256(row.get("path", "")) for row in inputs)
         and value.get("disposition", {}).get("Eq19_all_orders") == "NOT_PROVED"
     )

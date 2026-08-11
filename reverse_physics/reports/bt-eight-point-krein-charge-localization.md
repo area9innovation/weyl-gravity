@@ -59,6 +59,14 @@ Transporting the diagonal charge generator
  \end{pmatrix}.
 \]
 
+This transport is fixed by the certified missing physical leg, not selected
+afterward.  With target metric \(J\),
+
+\[
+ C=\begin{pmatrix}-\rho&-1\\0&1\end{pmatrix},\qquad
+ C^TJC=G,\qquad H_G=C^{-1}H_0C.
+\]
+
 It satisfies both exact charge identities
 
 \[
@@ -191,22 +199,22 @@ Python 3.12.13 from
 `/home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3`.
 
 - Tier 0 Python compilation passed for the producer, verifier, and mutation
-  tests (`0.02 s`, peak `14640 KiB`).
+  tests (`0.04 s`, peak `14888 KiB`).
 - Tier 0 JSON parsing passed for the work item, certificate, and schema
-  (`0.10 s`, peak `14720 KiB`).
+  (`0.14 s`, peak `14708 KiB`).
 - `python3 reverse_physics/bt_eight_point_krein_charge_localization.py
-  --check` passed `20/20` exact checks (`0.36 s`, peak `68072 KiB`).
+  --check` passed `22/22` exact checks (`0.40 s`, peak `68392 KiB`).
 - `python3
   reverse_physics/verify_bt_eight_point_krein_charge_localization.py` passed
-  `20/20` independent checks (`0.43 s`, peak `72184 KiB`).
+  `22/22` independent checks (`0.38 s`, peak `72188 KiB`).
 - `python3
   reverse_physics/tests/test_bt_eight_point_krein_charge_localization.py`
-  passed `20/20` falsification tests (`7.98 s`, peak `72556 KiB`).
-- Two-pass `pdflatex` builds of Paper V passed (`0.45 s`, `0.45 s`; peak
-  `50768 KiB`, `50788 KiB`), retaining exactly its four pre-existing overfull
+  passed `20/20` falsification tests (`7.01 s`, peak `72520 KiB`).
+- Two-pass `pdflatex` builds of Paper V passed (`0.44 s`, `0.45 s`; peak
+  `50884 KiB`, `50608 KiB`), retaining exactly its four pre-existing overfull
   boxes and introducing no new one.
-- Two-pass `pdflatex` builds of Paper VI passed (`0.47 s`, `0.48 s`; peak
-  `50672 KiB`, `50524 KiB`) with no overfull box or undefined reference.
+- Two-pass `pdflatex` builds of Paper VI passed (`0.47 s`, `0.47 s`; peak
+  `50660 KiB`, `50620 KiB`) with no overfull box or undefined reference.
 
 The producer imports all mathematical predecessors by content hash.  Its exact
 charge decomposition plus the independent matrix verifier is the affected Tier

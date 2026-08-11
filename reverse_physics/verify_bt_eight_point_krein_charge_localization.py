@@ -58,6 +58,7 @@ def verify(certificate):
     profile = load(os.path.join(ROOT, inputs[1]["path"]))
     eq19 = load(os.path.join(ROOT, inputs[2]["path"]))
     zero_mode = load(os.path.join(ROOT, inputs[3]["path"]))
+    moller = load(os.path.join(ROOT, inputs[4]["path"]))
     fibre = certificate["charge_fibre"]
     line = certificate["canonical_negative_line"]
     decomposition = certificate["profile_charge_decomposition"]
@@ -68,6 +69,7 @@ def verify(certificate):
     G = sp.Matrix([[0, -rho], [-rho, -2]])
     J = sp.Matrix([[0, 1], [1, 0]])
     S = sp.Matrix([[1, 1], [0, -rho]])
+    C = sp.Matrix([[-rho, -1], [0, 1]])
     H0 = sp.diag(1, -1)
     H = sp.simplify(S * H0 * S.inv())
     Pplus = sp.simplify((sp.eye(2) + H) / 2)
@@ -103,7 +105,7 @@ def verify(certificate):
             row["sha256"] == sha256(row["path"]) for row in inputs
         ),
         "all_predecessor_checks_pass": all(
-            value["checks"]["ok"] for value in (profile, eq19, zero_mode)
+            value["checks"]["ok"] for value in (profile, eq19, zero_mode, moller)
         ),
         "rho_and_gram_reconstruction": (
             rho_q == frac(fibre["rho"]) == Fraction(819, 4000)
@@ -113,6 +115,18 @@ def verify(certificate):
             matrix(fibre["null_charge_basis_S"]) == S
             and S.det() == -rho
             and matrix(fibre["charge_basis_gram"]) == S.T * G * S == rho**2 * J
+        ),
+        "certified_missing_leg_reconstruction": (
+            moller["minimal_public_Rt_compression"]["missing_leg_C"]
+            == [["-rho", "-1"], ["0", "1"]]
+            and matrix(fibre["certified_missing_leg_C"]) == C
+            and matrix(fibre["target_metric_J"]) == J
+            and C.T * J * C == G
+        ),
+        "physical_charge_transport_through_missing_leg": (
+            C.inv() * H0 * C == H
+            and fibre["physical_transport_identity"]
+            == "H_G=C^-1*diag(1,-1)*C"
         ),
         "charge_generator_reconstruction": (
             matrix(fibre["diagonal_charge_generator"]) == H0

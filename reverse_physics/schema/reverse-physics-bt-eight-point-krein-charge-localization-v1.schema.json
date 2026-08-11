@@ -50,12 +50,16 @@
       "required": [
         "rho",
         "gram",
+        "certified_missing_leg_C",
+        "target_metric_J",
+        "missing_leg_pullback_identity",
         "null_charge_basis_S",
         "charge_basis_gram",
         "charge_basis_gram_identity",
         "diagonal_charge_generator",
         "transported_charge_generator",
         "transported_charge_generator_identity",
+        "physical_transport_identity",
         "involution",
         "gram_invariance",
         "positive_projector",
@@ -65,6 +69,9 @@
       "properties": {
         "rho": {"$ref": "#/$defs/rational"},
         "gram": {"$ref": "#/$defs/string_matrix"},
+        "certified_missing_leg_C": {"$ref": "#/$defs/string_matrix"},
+        "target_metric_J": {"$ref": "#/$defs/string_matrix"},
+        "missing_leg_pullback_identity": {"const": "C^T*J*C=G"},
         "null_charge_basis_S": {"$ref": "#/$defs/string_matrix"},
         "charge_basis_gram": {"$ref": "#/$defs/string_matrix"},
         "charge_basis_gram_identity": {"const": "S^T*G*S=rho^2*J"},
@@ -72,6 +79,9 @@
         "transported_charge_generator": {"$ref": "#/$defs/string_matrix"},
         "transported_charge_generator_identity": {
           "const": "H_G=S*diag(1,-1)*S^-1"
+        },
+        "physical_transport_identity": {
+          "const": "H_G=C^-1*diag(1,-1)*C"
         },
         "involution": {"const": "H_G^2=I"},
         "gram_invariance": {"const": "H_G^T*G+G*H_G=0"},
@@ -188,8 +198,8 @@
         "retrieval_date": {"const": "2026-08-12"},
         "inputs": {
           "type": "array",
-          "minItems": 4,
-          "maxItems": 4,
+          "minItems": 5,
+          "maxItems": 5,
           "items": {
             "type": "object",
             "required": ["path", "sha256"],
@@ -213,13 +223,13 @@
       "additionalProperties": false,
       "properties": {
         "ok": {"const": true},
-        "passed": {"const": 20},
-        "total": {"const": 20},
+        "passed": {"const": 22},
+        "total": {"const": 22},
         "failures": {"const": []},
         "details": {
           "type": "object",
-          "minProperties": 20,
-          "maxProperties": 20,
+          "minProperties": 22,
+          "maxProperties": 22,
           "additionalProperties": {"const": true}
         }
       }
