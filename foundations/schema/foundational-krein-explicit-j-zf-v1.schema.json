@@ -1,0 +1,113 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9innovation.github.io/weyl-gravity/foundations/schema/foundational-krein-explicit-j-zf-v1.schema.json",
+  "title": "Explicit Krein symmetry in ZF certificate",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "result_id",
+    "result_kind",
+    "lifecycle",
+    "dependency_tags",
+    "repository_base_commit",
+    "programme_context",
+    "target",
+    "layer_classification",
+    "avoidance_classification",
+    "mode_witness",
+    "one_particle_construction",
+    "fock_construction",
+    "first_new_commitments",
+    "proof_dependency_dag",
+    "independent_checker",
+    "literature_dependency",
+    "provenance",
+    "claim_flags",
+    "does_not_establish",
+    "next_gate",
+    "human_report"
+  ],
+  "properties": {
+    "schema_version": {"const": "foundational-krein-explicit-j-zf-v1"},
+    "result_id": {"const": "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1"},
+    "result_kind": {"const": "FOUNDATIONAL_DEPENDENCY_CERTIFICATE"},
+    "lifecycle": {"const": "SUFFICIENCY_PROVED"},
+    "dependency_tags": {
+      "type": "array",
+      "prefixItems": [
+        {"const": "LOCAL-ALGEBRAIC"},
+        {"const": "REDUCED-MODE"}
+      ],
+      "items": false,
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "repository_base_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "layer_classification": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "required": ["id", "object", "base_theory", "relation", "status", "statement", "choice_status"],
+        "properties": {"relation": {"const": "SUFFICIENT_OVER_BASE"}}
+      }
+    },
+    "avoidance_classification": {
+      "type": "object",
+      "required": ["relation", "status", "apparent_dependencies_avoided", "replacement", "precise_boundary"],
+      "properties": {
+        "relation": {"const": "AVOIDED_BY_REFORMULATION"},
+        "status": {"const": "PROVED_FOR_DISPLAYED_CARRIERS"},
+        "apparent_dependencies_avoided": {"type": "array", "minItems": 6}
+      }
+    },
+    "mode_witness": {
+      "type": "object",
+      "required": ["families", "chiralities", "branch_minimum", "block_dimensions", "form_sign", "mode_index", "primitive_injection", "regression_cutoff", "regression"]
+    },
+    "proof_dependency_dag": {
+      "type": "object",
+      "required": ["nodes", "edges"],
+      "properties": {
+        "nodes": {"type": "array", "minItems": 10},
+        "edges": {"type": "array", "minItems": 10}
+      }
+    },
+    "independent_checker": {
+      "type": "object",
+      "required": ["path", "permitted_runtime_modules", "forbidden_operations", "checks", "expected_cutoff_digest"],
+      "properties": {
+        "expected_cutoff_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "literature_dependency": {
+      "type": "object",
+      "required": ["source_id", "local_ledger", "local_ledger_sha256", "pinned_pdf_sha256", "theorems_used", "boundary"],
+      "properties": {
+        "source_id": {"const": "blackadar-farah-karagila-2026"},
+        "local_ledger_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "pinned_pdf_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["inputs", "verification_boundary"],
+      "properties": {
+        "inputs": {
+          "type": "array",
+          "minItems": 7,
+          "items": {
+            "type": "object",
+            "required": ["path", "sha256", "role"],
+            "properties": {"sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+          }
+        }
+      }
+    },
+    "claim_flags": {"type": "object"},
+    "does_not_establish": {"type": "array", "minItems": 7},
+    "next_gate": {"type": "string", "minLength": 1},
+    "human_report": {"const": "foundations/reports/krein-explicit-j-zf-audit.md"}
+  }
+}

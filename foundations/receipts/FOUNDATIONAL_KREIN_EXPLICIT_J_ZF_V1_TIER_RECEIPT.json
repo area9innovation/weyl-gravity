@@ -1,0 +1,99 @@
+{
+  "receipt_id": "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1_TIER_RECEIPT",
+  "schema_version": "foundational-tier-receipt-v0",
+  "created": "2026-08-11",
+  "result_id": "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "base_commit": "a001450803da77225f764807a5d0116281066fbd",
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "elapsed_seconds": "0.04",
+      "command": "parse all changed JSON; compile foundations/check_krein_explicit_j.py, foundations/verify_krein_explicit_j_zf.py, and foundations/tests/test_krein_explicit_j_zf.py; git diff --check on the eight scoped paths",
+      "checks": [
+        "all changed structured-data files parse",
+        "changed Python source compiles",
+        "git diff --check passes on the scoped paths"
+      ]
+    },
+    "tier_1_integer_checker": {
+      "status": "PASS",
+      "elapsed_seconds": "0.02",
+      "command": "python3 foundations/check_krein_explicit_j.py",
+      "result": "The exact cutoff-12 expansion has 1540 positive, 2200 negative, and 3740 total coordinate modes; all mode codes are distinct, J signs pass the involution/self-adjoint/norm controls, the two-mode symmetric-square signs are [1,-1,1], and the digest is df7cbe8ea3017f6b0ea5e2069107530705c601bca4d5b99d5932ab3b3fbd9ca6."
+    },
+    "tier_1_verifier": {
+      "status": "PASS",
+      "elapsed_seconds": "0.03",
+      "command": "python3 foundations/verify_krein_explicit_j_zf.py",
+      "result": "13/13 identity, layer, avoidance, exact-checker, independence, source-certificate, content-pin, theorem-pin, DAG, tag, flag, and report checks passed."
+    },
+    "tier_1_foundations_suite": {
+      "status": "PASS",
+      "elapsed_seconds": "0.17",
+      "command": "python3 -m unittest discover -s foundations/tests -p 'test_*.py'",
+      "result": "41/41 foundation tests passed, including 13 new mutation tests for sign, branch, digest, Choice, weakest-base, source, Fock, hash, literature, DAG, Lorentzian, and report drift."
+    },
+    "tier_1_json_schema": {
+      "status": "PASS",
+      "elapsed_seconds": "0.09",
+      "command": "validate foundations/results/FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1.json with Draft202012Validator against foundations/schema/foundational-krein-explicit-j-zf-v1.schema.json",
+      "result": "The foundational dependency certificate validates."
+    },
+    "tier_1_upstream_reproduction": {
+      "status": "PASS",
+      "elapsed_seconds": "28.07",
+      "command": "/home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 symbolic/verify_conformal_energy_mode_krein.py",
+      "result": "CONFORMAL ENERGY-MODE KREIN FOUNDATION: ALL PASS; the one-particle and Fock source certificates retained their pinned byte hashes.",
+      "boundary": "This reproduces the existing producer. It is not the independent verification rail; that role is served by the exact dependency-minimal checker above."
+    },
+    "tier_1_remote_artifact_pin": {
+      "status": "PASS",
+      "elapsed_seconds": "0.20",
+      "command": "download https://arxiv.org/pdf/2304.09602 and compute SHA-256",
+      "result": "The 504656-byte PDF hashes to 954597e0dddc7d8e1398da2993e6e79d11f8db350be829c943f347f5a50bd55e, matching the literature ledger."
+    },
+    "tier_2": {
+      "status": "NOT_RUN",
+      "criterion": "No classical mathematical input, shared operator, established source certificate, or generated artifact changed. The source certificates and their producer were content-checked and directly reproduced."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "This promotes a bounded LOCAL-ALGEBRAIC and REDUCED-MODE foundational sufficiency result. It is not a classical or quantum freeze, release, shared-core algebra change, or Lorentzian physical theorem promotion."
+    }
+  },
+  "auxiliary_rails": [
+    {
+      "name": "science_forge_work_drafts",
+      "status": "FAIL",
+      "elapsed_seconds": "0.30",
+      "command": "SF_PROGRAM=/home/alstrup/area9/weyl-gravity s-f work-drafts",
+      "failure": "The shared tango/forge sfc source does not compile: forge/lib/alloc/arena.forge:401:16 reports that sanitize_thread is not a compile-time name.",
+      "effect": "No Science Forge conformance pass is claimed and no coordinator transition is emitted. The scientific certificate and its independent rails remain available."
+    }
+  ],
+  "content_hashes": {
+    "foundations/README.md": "42aa99580b91ae88c4fb1c1f98e97c513f0446bd8189c1a87686312c8e9c81d0",
+    "foundations/check_krein_explicit_j.py": "10c1fa5dbdab08eaa4c259861fc447b10bfa5ca3b0535ffa30ee9f356ac18c54",
+    "foundations/reports/krein-explicit-j-zf-audit.md": "541a5368b6f9dc17acf4d8ca6644f0a04ee91765beabcc25e23e9bc60eb1a705",
+    "foundations/results/FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1.json": "bd71c8609cd6ff5d83d5f67aa86f46216f5301b377e6a437a74d197b577d9b2a",
+    "foundations/schema/foundational-krein-explicit-j-zf-v1.schema.json": "f9281be2be3f8a6e0a7c0041e9e2a722f71d3814f32008555dae5dc6e9ffcbca",
+    "foundations/tests/test_krein_explicit_j_zf.py": "696a01dc8f96311fc0c4f70b20c6accafcf16f83b282b1e4304b9eb8b3b13fc2",
+    "foundations/verify_krein_explicit_j_zf.py": "fffbc0d8d72ff7d9af5b88801210a36ecbb8e4b184b9494f65a11f5250f3d21c"
+  },
+  "upstream_content_hashes": {
+    "analytic_completion/certificates/one_particle_krein.json": "c52f8b2fcee6573e55e72402008779fd706311b77e2463a774b9eb16ce12b374",
+    "analytic_completion/certificates/fock_fundamental_symmetry.json": "6b40128129cfe9469b5c1adcb4b4b1a44c416c37b6e53c8e58f963e99b65a9a3",
+    "symbolic/verify_conformal_energy_mode_krein.py": "2cba1dd1c3141516d3c1a4ec3c6be71460e4dfe82298c094c748defda9d9579d",
+    "foundations/literature-ledger.json": "93aa76fc9042f81be11d716664593afe78f91b9c83fa3c04a03cb6aeae558596",
+    "blackadar-farah-karagila-2304.09602.pdf": "954597e0dddc7d8e1398da2993e6e79d11f8db350be829c943f347f5a50bd55e"
+  },
+  "scope_receipt": {
+    "changed_scope": "foundations/ only",
+    "concurrent_unrelated_commits_excluded": [
+      "a001450803da77225f764807a5d0116281066fbd Construct BT six-point nested continuum intertwiner",
+      "49d33dd0 Seal BT six-point continuum closeout"
+    ]
+  },
+  "claim_boundary": "This receipt certifies finite PRA checking, ZF sufficiency without Countable Choice for the explicitly indexed one-particle and occupation Fock carriers, and explicit fundamental symmetries. It does not certify weakest-base necessity, arbitrary Krein spaces, states, traces, probability, interacting dynamics, a classical or quantum freeze, or any LORENTZIAN-CAUSAL result."
+}

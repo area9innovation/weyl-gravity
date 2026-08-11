@@ -53,6 +53,19 @@ python3 foundations/verify_free_bv_energy2_weak_base.py
 python3 -m unittest foundations.tests.test_free_bv_energy2_weak_base
 ```
 
+The next theorem-level audit is
+[`reports/krein-explicit-j-zf-audit.md`](reports/krein-explicit-j-zf-audit.md).
+It proves that the repository's explicitly labeled one-particle Krein
+symmetry and occupation-number Fock lift are constructible in ZF without
+Countable Choice.  Finite cutoffs remain PRA-checkable; actual infinity and
+Hilbert completion, rather than Choice, are the first stronger commitments:
+
+```bash
+python3 foundations/check_krein_explicit_j.py
+python3 foundations/verify_krein_explicit_j_zf.py
+python3 -m unittest foundations.tests.test_krein_explicit_j_zf
+```
+
 ## Lifecycle
 
 This stream uses a literature/research lifecycle, not the quantum lifecycle:
