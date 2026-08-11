@@ -1,0 +1,326 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-covariant-formal-eq19-charge-support-v1.schema.json",
+  "title": "BT covariant formal Eq. 19 charge-support certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "certificate",
+    "schema_version",
+    "dependency_tags",
+    "lifecycle_state",
+    "result_kind",
+    "question",
+    "answer",
+    "assumptions",
+    "covariant_formal_algebras",
+    "exact_Eq16_equivariance",
+    "formal_inverse_and_projector_consequence",
+    "fixed_vacuum_and_asymptotic_boundary",
+    "typed_object_separation",
+    "Eq19_boundary",
+    "disposition",
+    "does_not_establish",
+    "next_gate",
+    "provenance",
+    "verification_commands",
+    "checks",
+    "report",
+    "schema"
+  ],
+  "properties": {
+    "certificate": {
+      "const": "REVERSE_PHYSICS_BT_COVARIANT_FORMAL_EQ19_CHARGE_SUPPORT_V1"
+    },
+    "schema_version": {
+      "const": "reverse-physics-bt-covariant-formal-eq19-charge-support-v1"
+    },
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]
+    },
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "result_kind": {"type": "string", "minLength": 1},
+    "question": {"type": "string", "minLength": 1},
+    "answer": {"type": "string", "minLength": 1},
+    "assumptions": {
+      "type": "array",
+      "minItems": 6,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "covariant_formal_algebras": {
+      "const": {
+        "coupling_ring": "Q((lambda))",
+        "source": "Q((lambda))[Z,Z^-1] tensor A_nz",
+        "source_derivation": "delta_phi(Z^n X)=n Z^n X for delta_phi(X)=0",
+        "target": "formal O(1,1) field-star algebra",
+        "target_derivation": "delta_11(Omega)=Omega; delta_11(Upsilon)=-Upsilon",
+        "adjoint_charge_convention": "boost charge is preserved by the Krein adjoint",
+        "input_projector_domain": "finite nonzero-mode shift-invariant projectors"
+      }
+    },
+    "exact_Eq16_equivariance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "Omega_pullback",
+        "Upsilon_pullback",
+        "Omega_general_coefficient",
+        "Upsilon_general_coefficient",
+        "Omega_replay",
+        "Upsilon_replay",
+        "replay_max_order",
+        "word_census",
+        "word_census_max_length",
+        "intertwining_identity",
+        "time_translated_intertwining",
+        "time_translation_reason",
+        "proof"
+      ],
+      "properties": {
+        "Omega_pullback": {"const": "alpha(Omega)=lambda^-1 Z exp(lambda varphi)"},
+        "Upsilon_pullback": {"const": "alpha(Upsilon)=Z^-1 exp(-lambda varphi)(Box varphi+lambda(d varphi)^2)"},
+        "Omega_general_coefficient": {"type": "string", "minLength": 1},
+        "Upsilon_general_coefficient": {"type": "string", "minLength": 1},
+        "Omega_replay": {
+          "type": "array",
+          "minItems": 14,
+          "maxItems": 14,
+          "items": {"$ref": "#/$defs/omega_coefficient"}
+        },
+        "Upsilon_replay": {
+          "type": "array",
+          "minItems": 13,
+          "maxItems": 13,
+          "items": {"$ref": "#/$defs/upsilon_coefficient"}
+        },
+        "replay_max_order": {"const": 12},
+        "word_census": {
+          "type": "array",
+          "minItems": 8,
+          "maxItems": 8,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["length", "word_count", "charge_multiplicities", "equivariance_failures"],
+            "properties": {
+              "length": {"type": "integer", "minimum": 0, "maximum": 7},
+              "word_count": {"type": "integer", "minimum": 1},
+              "charge_multiplicities": {
+                "type": "object",
+                "additionalProperties": {"type": "integer", "minimum": 0}
+              },
+              "equivariance_failures": {"const": 0}
+            }
+          }
+        },
+        "word_census_max_length": {"const": 7},
+        "intertwining_identity": {"const": "delta_phi o alpha = alpha o delta_11"},
+        "time_translated_intertwining": {"const": "delta_phi o alpha_t = alpha_t o delta_11"},
+        "time_translation_reason": {"type": "string", "minLength": 1},
+        "proof": {"type": "string", "minLength": 1}
+      }
+    },
+    "formal_inverse_and_projector_consequence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "formal_two_sidedness",
+        "inverse_pushforward",
+        "inverse_intertwining_identity",
+        "inverse_proof",
+        "neutral_projector_hypothesis",
+        "pushed_projector_identity",
+        "charge_decomposition",
+        "Eq19_charge_support",
+        "finite_fixture"
+      ],
+      "properties": {
+        "formal_two_sidedness": {"const": "R^dagger R=1 and R R^dagger=1 coefficient by coefficient"},
+        "inverse_pushforward": {"const": "beta(P)=R P R^dagger=alpha^-1(P)"},
+        "inverse_intertwining_identity": {"const": "delta_11 o beta = beta o delta_phi"},
+        "inverse_proof": {"type": "string", "minLength": 1},
+        "neutral_projector_hypothesis": {"const": "P^2=P=P^dagger and delta_phi(P)=0"},
+        "pushed_projector_identity": {"const": "A=beta(P); A^2=A=A^dagger; delta_11(A)=0"},
+        "charge_decomposition": {"const": "A_0=A and A_q=0 for every q!=0"},
+        "Eq19_charge_support": {"const": "P_neutral=A; Q_negative=0 TO_ALL_FORMAL_ORDERS"},
+        "finite_fixture": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["charge_generator", "input_projector", "neutral_similarity", "output_projector"],
+          "properties": {
+            "charge_generator": {"$ref": "#/$defs/string_matrix"},
+            "input_projector": {"$ref": "#/$defs/string_matrix"},
+            "neutral_similarity": {"$ref": "#/$defs/string_matrix"},
+            "output_projector": {"$ref": "#/$defs/string_matrix"}
+          }
+        }
+      }
+    },
+    "fixed_vacuum_and_asymptotic_boundary": {
+      "const": {
+        "fixed_vacuum_ideal": "I=(Z-1)",
+        "derivation_test": "delta_phi(Z-1)=Z congruent 1 mod I",
+        "remainder_mod_I": 1,
+        "charge_theorem_descends_to_Z_equals_1": "NO",
+        "finite_t_formal_charge_support": "PROVED",
+        "ghost_parity_of_A": "NOT_PROVED",
+        "time_independence_of_A_t": "NOT_PROVED",
+        "asymptotic_R_plus_minus_infinity_limits": "NOT_CONSTRUCTED",
+        "specific_continuum_P_chi_OmegaUpsilon_identification": "NOT_CONSTRUCTED",
+        "generalized_Born_trace": "NOT_CONSTRUCTED"
+      }
+    },
+    "typed_object_separation": {
+      "const": {
+        "Eq19_object": "R_t P_chi^(phi) R_t^dagger",
+        "physical_scattering_object": "P_out(S_phi-1)P_in",
+        "eight_point_K4_and_graph_slope": "PHYSICAL_RESPONSE_LEDGER",
+        "formal_charge_support_result": "EQ19_PROJECTOR_PUSHFORWARD_LEDGER",
+        "typing_rule": "NEITHER OBJECT IS ADDED TO OR IDENTIFIED WITH THE OTHER WITHOUT AN EXPLICIT INTERTWINER",
+        "consequence_for_graph_T": "The public Fock graph remains a candidate carrier for the physical response or for an explicitly constructed projector intertwiner. This theorem neither requires nor permits fitting T as an Rt coefficient."
+      }
+    },
+    "Eq19_boundary": {
+      "const": {
+        "covariant_formal_charge_support": "PROVED_TO_ALL_FORMAL_ORDERS",
+        "strict_negative_Q_on_covariant_formal_algebra": "ZERO",
+        "projector_idempotence_on_formal_algebra": "PROVED",
+        "ghost_even_neutral_component": "NOT_PROVED",
+        "neutral_component_time_independence": "NOT_PROVED",
+        "fixed_vacuum_charge_decomposition": "NOT_WELL_DEFINED_BY_DESCENT",
+        "asymptotic_limits": "NOT_CONSTRUCTED",
+        "continuum_trace": "NOT_CONSTRUCTED",
+        "full_Eq19": "NOT_PROVED"
+      }
+    },
+    "disposition": {
+      "const": {
+        "all_order_formal_pullback_equivariance": "PROVED",
+        "all_order_formal_inverse_equivariance": "PROVED",
+        "neutral_projector_formal_pushforward": "CHARGE_ZERO_WITH_Q_ZERO",
+        "order_lambda_predecessor": "RECOVERED",
+        "fixed_vacuum_descent": "EXACTLY_OBSTRUCTED",
+        "ghost_parity": "NOT_ESTABLISHED",
+        "time_independence": "NOT_ESTABLISHED",
+        "physical_probability": "NOT_ESTABLISHED",
+        "Eq19_all_requirements": "NOT_PROVED"
+      }
+    },
+    "does_not_establish": {
+      "type": "array",
+      "minItems": 15,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "next_gate": {"type": "string", "minLength": 1},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_commit", "retrieval_date", "inputs"],
+      "properties": {
+        "source_commit": {"const": "f10083f74c3980efbf6c3bd28f3bc5e4ecaa7552"},
+        "retrieval_date": {"const": "2026-08-12"},
+        "inputs": {
+          "type": "array",
+          "minItems": 7,
+          "maxItems": 7,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["path", "sha256"],
+            "properties": {
+              "path": {"type": "string", "minLength": 1},
+              "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+            }
+          }
+        }
+      }
+    },
+    "verification_commands": {
+      "type": "array",
+      "minItems": 3,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"const": 29},
+        "total": {"const": 29},
+        "failures": {"const": []},
+        "details": {
+          "type": "object",
+          "minProperties": 29,
+          "maxProperties": 29,
+          "additionalProperties": {"const": true}
+        }
+      }
+    },
+    "report": {"const": "reverse_physics/reports/bt-covariant-formal-eq19-charge-support.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-covariant-formal-eq19-charge-support-v1.schema.json"}
+  },
+  "$defs": {
+    "rational": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      }
+    },
+    "omega_coefficient": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["coupling_order", "varphi_power", "coefficient", "orbit_power", "charge"],
+      "properties": {
+        "coupling_order": {"type": "integer", "minimum": -1},
+        "varphi_power": {"type": "integer", "minimum": 0},
+        "coefficient": {"$ref": "#/$defs/rational"},
+        "orbit_power": {"const": 1},
+        "charge": {"const": 1}
+      }
+    },
+    "upsilon_term": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "varphi_power", "coefficient"],
+      "properties": {
+        "kind": {
+          "enum": [
+            "varphi_power_times_Box_varphi",
+            "varphi_power_times_gradient_square"
+          ]
+        },
+        "varphi_power": {"type": "integer", "minimum": 0},
+        "coefficient": {"$ref": "#/$defs/rational"}
+      }
+    },
+    "upsilon_coefficient": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["coupling_order", "terms", "orbit_power", "charge"],
+      "properties": {
+        "coupling_order": {"type": "integer", "minimum": 0},
+        "terms": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 2,
+          "items": {"$ref": "#/$defs/upsilon_term"}
+        },
+        "orbit_power": {"const": -1},
+        "charge": {"const": -1}
+      }
+    },
+    "string_matrix": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "array",
+        "minItems": 1,
+        "items": {"type": "string"}
+      }
+    }
+  }
+}

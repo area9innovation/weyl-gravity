@@ -2105,10 +2105,42 @@ Certificate
 therefore realizes the graph's odd source as an explicit public neutral Fock
 subspace and gives its exact ghost-even metric affiliation to the composite.
 This removes the carrier-existence obstruction, but not the dynamical one:
-the induced isometry is not the graph slope $T$, and no calculation yet shows
-that the physical $\phi$ projector or nonlinear $R_t$ excites this sector with
-the two required eight-point amplitudes.  Equation~(19), its continuum trace,
+the induced isometry is not the graph slope $T$.  Moreover $T$ belongs to the
+physical eight-point response ledger, whereas $R_tP_\chi R_t^\dagger$ is a
+projector pushforward.  Identifying this particular graph with the
+Eq.~(19) projector would require an explicit intertwiner; fitting $T$ as an
+$R_t$ coefficient is not authorized.  Equation~(19), its continuum trace,
 and a physical fourth probability remain unproved.
+The charge-support part of Eq.~(19) can instead be settled formally without
+that identification.  Retain the orbit operator
+$Z=e^{\lambda\phi_0}$ and put $\phi=\phi_0+\varphi$.  The exact pullback is
+\[
+ \alpha(\Omega)=\lambda^{-1}Ze^{\lambda\varphi},\qquad
+ \alpha(\Upsilon)=Z^{-1}e^{-\lambda\varphi}
+ [\Box\varphi+\lambda(\partial\varphi)^2].
+\]
+Every coupling coefficient has orbit power equal to its target boost charge,
+so $\delta_\phi\alpha=\alpha\delta_{1,1}$ to all formal orders.
+The two free Hamiltonians used in $R_t$ are charge neutral, so the same
+intertwining holds after time translation.
+Perturbative two-sidedness transfers this identity to
+$\beta=\alpha^{-1}$.  Hence for any finite nonzero-mode projector with
+$\delta_\phi P=0$,
+\[
+ A=\beta(P),\qquad A^2=A=A^\dagger,\qquad
+ \delta_{1,1}A=0.
+\]
+Certificate
+\par\noindent
+\texttt{REVERSE\_PHYSICS\_BT\_COVARIANT\_FORMAL\_}
+\allowbreak\texttt{EQ19\_CHARGE\_SUPPORT\_V1}
+\par\noindent
+therefore proves the formal charge decomposition with
+$P_{\rm neutral}=A$ and $Q_{\rm negative}=0$ to every order.  This does not
+prove ghost evenness or time independence, and it does not descend to the
+fixed-vacuum quotient: for $I=(Z-1)$,
+$\delta_\phi(Z-1)=Z\equiv1\pmod I$.  The asymptotic limits, continuum
+projector and generalized-Born trace remain unconstructed.
 Resolving the labels gives a different, channel-faithful lift.
 The ordered histories are rooted combs with dimensions $3$, $12$, and $60$;
 canonical one-leaf insertion has respectively $3$, $4$, and $5$ children.

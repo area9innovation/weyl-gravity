@@ -1,0 +1,39 @@
+{
+  "id": "sf:program/work/reverse-physics-bateman-covariant-formal-eq19-charge-support",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "reverse-physics",
+    "state": "ACTIVE",
+    "objective": "Decide the all-order formal charge-support part of Bateman--Turok Eq. (19) on the covariant zero-mode Laurent--Fock algebra, without conflating the projector pushforward with the physical scattering response.",
+    "depends_on": [
+      "REVERSE_PHYSICS_BT_ZERO_MODE_EQ19_TRILEMMA_V1",
+      "REVERSE_PHYSICS_BT_PERTURBATIVE_COISOMETRY_RIGIDITY_V1",
+      "REVERSE_PHYSICS_BT_FULL_SIGNED_QUADRATIC_CLOSURE_V1",
+      "REVERSE_PHYSICS_BT_INCLUSIVE_NLO_OBJECT_LEDGER_V1",
+      "REVERSE_PHYSICS_BT_PUBLIC_FOCK_ODD_SOURCE_AFFILIATION_V1"
+    ],
+    "activates": [
+      "an exact all-order equivariance theorem for the Eq. (16) field homomorphism",
+      "formal projector idempotence and neutral charge support with Q=0",
+      "a typed separation of the Eq. (19) and physical S-matrix ledgers",
+      "fail-closed ghost-parity, time-limit and fixed-vacuum descent gates"
+    ],
+    "current_gate": "COVARIANT_FORMAL_EQ19_CHARGE_SUPPORT: combine the exact Laurent zero-mode factorization with formal two-sidedness, prove or obstruct charge-equivariance of the inverse pushforward to every formal order, and test the result on neutral nonzero-mode projectors.",
+    "stop_condition": "Land an exact certificate with an independent verifier that decides all-order formal charge support, preserves the fixed-vacuum quotient obstruction, and does not promote ghost symmetry, time independence, asymptotic limits, a generalized-Born trace, or physical positivity.",
+    "forbid": "no tautological renaming of an arbitrary operator as the published neutral projector without stating the scope; no charge-neutral result called ghost even; no finite-time formal automorphism called an asymptotic Rt limit; no covariant Laurent theorem descended through Z=1; no Eq. 19 pushforward added to the physical scattering ledger; no full Eq. 19, probability, gravity, or LORENTZIAN-CAUSAL promotion",
+    "allowed_paths": [
+      "reverse_physics/",
+      "notes/bateman-turok-embedding.md",
+      "paper/05-interaction-obstructions.tex",
+      "paper/05-interaction-obstructions.pdf",
+      "paper/06-einstein-weyl-interaction-obstructions.tex",
+      "paper/06-einstein-weyl-interaction-obstructions.pdf",
+      "planning/work-items/reverse-physics-bateman-covariant-formal-eq19-charge-support.json",
+      "planning/events/"
+    ],
+    "resource_hint": "On A_phi=Q((lambda))[Z,Z^-1] tensor A_nz use delta_phi(Z)=Z and delta_phi(varphi)=0. Eq. (16) factors as alpha(Omega)=lambda^-1 Z exp(lambda varphi), alpha(Upsilon)=Z^-1 exp(-lambda varphi)(Box varphi+lambda(d varphi)^2), so every coefficient has charge +1 or -1 respectively. Formal two-sidedness makes alpha invertible, hence its inverse beta intertwines the derivations. For delta_phi(P)=0, beta(P) is an idempotent self-adjoint charge-zero projector and its strict negative component is zero. Then test failure of this theorem to descend through (Z-1), and keep kappa invariance and t-independence open.",
+    "input_commit": "f10083f7",
+    "stream": "reverse-physics"
+  }
+}

@@ -1,0 +1,788 @@
+{
+  "Eq19_boundary": {
+    "asymptotic_limits": "NOT_CONSTRUCTED",
+    "continuum_trace": "NOT_CONSTRUCTED",
+    "covariant_formal_charge_support": "PROVED_TO_ALL_FORMAL_ORDERS",
+    "fixed_vacuum_charge_decomposition": "NOT_WELL_DEFINED_BY_DESCENT",
+    "full_Eq19": "NOT_PROVED",
+    "ghost_even_neutral_component": "NOT_PROVED",
+    "neutral_component_time_independence": "NOT_PROVED",
+    "projector_idempotence_on_formal_algebra": "PROVED",
+    "strict_negative_Q_on_covariant_formal_algebra": "ZERO"
+  },
+  "answer": "Yes on the declared covariant formal Laurent--Fock algebra. Let delta_phi(Z)=Z and delta_phi(varphi)=0, while delta_11(Omega)=Omega and delta_11(Upsilon)=-Upsilon. The exact Eq. (16) pullback alpha has alpha(Omega)=lambda^-1 Z exp(lambda varphi) and alpha(Upsilon)=Z^-1 exp(-lambda varphi)(Box varphi+lambda(d varphi)^2). Every coupling coefficient of the first expression has orbit power +1 and every coefficient of the second has orbit power -1, so delta_phi alpha=alpha delta_11 on generators and hence on the complete formal algebra. The certified perturbative identity R^dagger R=RR^dagger=1 makes alpha formally invertible; its inverse beta therefore also intertwines the derivations. For every finite nonzero-mode projector P with delta_phi(P)=0, A=beta(P)=R P R^dagger is idempotent, self-adjoint and exactly charge zero to all formal orders. Its strict negative component is zero, so the charge-support portion of Eq. (19) holds formally with P_neutral=A and Q_negative=0. This does not prove that A is ghost even or time independent, construct the t->plus/minus infinity limits, descend through the non-invariant fixed-vacuum quotient Z=1, supply the generalized-Born trace, or prove the full Eq. (19) or physical positivity.",
+  "assumptions": [
+    "The coefficient ring is the formal Laurent coupling field Q((lambda)); no convergence in lambda is claimed.",
+    "The source algebra is the covariant Laurent--Fock algebra Q((lambda))[Z,Z^-1] tensor A_nz with finite nonzero-mode support.",
+    "The target algebra is generated formally by the O(1,1) fields and their derivatives or modes, with boost charges +1 for Omega and -1 for Upsilon; the Krein adjoint preserves this boost charge convention.",
+    "The Eq. (16) homomorphism is used exactly on its formal perturbative image, and the certified coisometry rigidity supplies its two-sided inverse order by order.",
+    "The input projector is built from nonzero modes and is invariant under the constant shift orbit, delta_phi(P)=0.",
+    "The statement P_neutral=A names the unique charge-zero component of the actual pushforward; it does not identify A with an independently prescribed continuum kernel beyond the formal algebra."
+  ],
+  "certificate": "REVERSE_PHYSICS_BT_COVARIANT_FORMAL_EQ19_CHARGE_SUPPORT_V1",
+  "checks": {
+    "details": {
+      "Eq19_and_scattering_objects_are_distinct": true,
+      "Omega_coefficients_have_orbit_power_plus_one": true,
+      "Omega_coefficients_replayed_through_order_12": true,
+      "Omega_first_four_coefficients_exact": true,
+      "Upsilon_coefficients_have_orbit_power_minus_one": true,
+      "Upsilon_coefficients_replayed_through_order_12": true,
+      "Upsilon_order_one_exact": true,
+      "Upsilon_order_three_exact": true,
+      "Upsilon_order_zero_exact": true,
+      "all_enumerated_target_words_preserve_charge": true,
+      "equivariant_fixture_pushforward_has_zero_charge": true,
+      "equivariant_fixture_pushforward_is_projector": true,
+      "exact_Eq16_factorization_imported": true,
+      "fixed_vacuum_ideal_is_not_derivation_stable": true,
+      "formal_neutral_projector_has_no_strict_negative_component": true,
+      "formal_two_sided_inverse_imported": true,
+      "free_time_evolutions_preserve_charge": true,
+      "graph_slope_not_promoted_to_Rt_coefficient": true,
+      "input_hashes_pinned": true,
+      "inverse_equivariance_follows_from_bijectivity": true,
+      "neutral_projector_fixture_has_zero_charge": true,
+      "neutral_projector_fixture_is_idempotent": true,
+      "neutral_projector_fixture_is_selfadjoint": true,
+      "order_lambda_Q1_zero_is_recovered": true,
+      "predecessor_certificates_pass": true,
+      "pullback_derivation_intertwining_extends_by_Leibniz": true,
+      "pullback_derivation_intertwining_holds_on_generators": true,
+      "word_census_is_nontrivial": true,
+      "zero_mode_Laurent_algebra_imported": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 29,
+    "total": 29
+  },
+  "covariant_formal_algebras": {
+    "adjoint_charge_convention": "boost charge is preserved by the Krein adjoint",
+    "coupling_ring": "Q((lambda))",
+    "input_projector_domain": "finite nonzero-mode shift-invariant projectors",
+    "source": "Q((lambda))[Z,Z^-1] tensor A_nz",
+    "source_derivation": "delta_phi(Z^n X)=n Z^n X for delta_phi(X)=0",
+    "target": "formal O(1,1) field-star algebra",
+    "target_derivation": "delta_11(Omega)=Omega; delta_11(Upsilon)=-Upsilon"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "disposition": {
+    "Eq19_all_requirements": "NOT_PROVED",
+    "all_order_formal_inverse_equivariance": "PROVED",
+    "all_order_formal_pullback_equivariance": "PROVED",
+    "fixed_vacuum_descent": "EXACTLY_OBSTRUCTED",
+    "ghost_parity": "NOT_ESTABLISHED",
+    "neutral_projector_formal_pushforward": "CHARGE_ZERO_WITH_Q_ZERO",
+    "order_lambda_predecessor": "RECOVERED",
+    "physical_probability": "NOT_ESTABLISHED",
+    "time_independence": "NOT_ESTABLISHED"
+  },
+  "does_not_establish": [
+    "ghost-evenness of the neutral pushed projector",
+    "time independence of the neutral component",
+    "existence of R_plus_infinity or R_minus_infinity",
+    "the specific continuum projection kernel and its domains",
+    "descent of boost charge through the fixed-vacuum quotient Z=1",
+    "a cyclic, semifinite, local or thermodynamic generalized-Born trace for the full pushforward",
+    "the full Bateman--Turok Eq. (19) statement",
+    "weak ghost symmetry of a complete scattering process",
+    "identification of the Eq. (19) projector pushforward with the physical S-matrix transition block",
+    "the eight-point graph slope as an Rt coefficient",
+    "a normalized fourth event or complete probability",
+    "a spacetime Moller, LSZ or S operator",
+    "a gravity or BRST lift",
+    "anything LORENTZIAN-CAUSAL",
+    "literature priority"
+  ],
+  "exact_Eq16_equivariance": {
+    "Omega_general_coefficient": "[lambda^(n-1)] alpha(Omega)=Z varphi^n/n!",
+    "Omega_pullback": "alpha(Omega)=lambda^-1 Z exp(lambda varphi)",
+    "Omega_replay": [
+      {
+        "charge": 1,
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "coupling_order": -1,
+        "orbit_power": 1,
+        "varphi_power": 0
+      },
+      {
+        "charge": 1,
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "coupling_order": 0,
+        "orbit_power": 1,
+        "varphi_power": 1
+      },
+      {
+        "charge": 1,
+        "coefficient": {
+          "denominator": 2,
+          "numerator": 1
+        },
+        "coupling_order": 1,
+        "orbit_power": 1,
+        "varphi_power": 2
+      },
+      {
+        "charge": 1,
+        "coefficient": {
+          "denominator": 6,
+          "numerator": 1
+        },
+        "coupling_order": 2,
+        "orbit_power": 1,
+        "varphi_power": 3
+      },
+      {
+        "charge": 1,
+        "coefficient": {
+          "denominator": 24,
+          "numerator": 1
+        },
+        "coupling_order": 3,
+        "orbit_power": 1,
+        "varphi_power": 4
+      },
+      {
+        "charge": 1,
+        "coefficient": {
+          "denominator": 120,
+          "numerator": 1
+        },
+        "coupling_order": 4,
+        "orbit_power": 1,
+        "varphi_power": 5
+      },
+      {
+        "charge": 1,
+        "coefficient": {
+          "denominator": 720,
+          "numerator": 1
+        },
+        "coupling_order": 5,
+        "orbit_power": 1,
+        "varphi_power": 6
+      },
+      {
+        "charge": 1,
+        "coefficient": {
+          "denominator": 5040,
+          "numerator": 1
+        },
+        "coupling_order": 6,
+        "orbit_power": 1,
+        "varphi_power": 7
+      },
+      {
+        "charge": 1,
+        "coefficient": {
+          "denominator": 40320,
+          "numerator": 1
+        },
+        "coupling_order": 7,
+        "orbit_power": 1,
+        "varphi_power": 8
+      },
+      {
+        "charge": 1,
+        "coefficient": {
+          "denominator": 362880,
+          "numerator": 1
+        },
+        "coupling_order": 8,
+        "orbit_power": 1,
+        "varphi_power": 9
+      },
+      {
+        "charge": 1,
+        "coefficient": {
+          "denominator": 3628800,
+          "numerator": 1
+        },
+        "coupling_order": 9,
+        "orbit_power": 1,
+        "varphi_power": 10
+      },
+      {
+        "charge": 1,
+        "coefficient": {
+          "denominator": 39916800,
+          "numerator": 1
+        },
+        "coupling_order": 10,
+        "orbit_power": 1,
+        "varphi_power": 11
+      },
+      {
+        "charge": 1,
+        "coefficient": {
+          "denominator": 479001600,
+          "numerator": 1
+        },
+        "coupling_order": 11,
+        "orbit_power": 1,
+        "varphi_power": 12
+      },
+      {
+        "charge": 1,
+        "coefficient": {
+          "denominator": 6227020800,
+          "numerator": 1
+        },
+        "coupling_order": 12,
+        "orbit_power": 1,
+        "varphi_power": 13
+      }
+    ],
+    "Upsilon_general_coefficient": "[lambda^n] alpha(Upsilon)=Z^-1[(-1)^n varphi^n Box(varphi)/n! + 1_(n>=1)(-1)^(n-1)varphi^(n-1)(dvarphi)^2/(n-1)!]",
+    "Upsilon_pullback": "alpha(Upsilon)=Z^-1 exp(-lambda varphi)(Box varphi+lambda(d varphi)^2)",
+    "Upsilon_replay": [
+      {
+        "charge": -1,
+        "coupling_order": 0,
+        "orbit_power": -1,
+        "terms": [
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "kind": "varphi_power_times_Box_varphi",
+            "varphi_power": 0
+          }
+        ]
+      },
+      {
+        "charge": -1,
+        "coupling_order": 1,
+        "orbit_power": -1,
+        "terms": [
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": -1
+            },
+            "kind": "varphi_power_times_Box_varphi",
+            "varphi_power": 1
+          },
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "kind": "varphi_power_times_gradient_square",
+            "varphi_power": 0
+          }
+        ]
+      },
+      {
+        "charge": -1,
+        "coupling_order": 2,
+        "orbit_power": -1,
+        "terms": [
+          {
+            "coefficient": {
+              "denominator": 2,
+              "numerator": 1
+            },
+            "kind": "varphi_power_times_Box_varphi",
+            "varphi_power": 2
+          },
+          {
+            "coefficient": {
+              "denominator": 1,
+              "numerator": -1
+            },
+            "kind": "varphi_power_times_gradient_square",
+            "varphi_power": 1
+          }
+        ]
+      },
+      {
+        "charge": -1,
+        "coupling_order": 3,
+        "orbit_power": -1,
+        "terms": [
+          {
+            "coefficient": {
+              "denominator": 6,
+              "numerator": -1
+            },
+            "kind": "varphi_power_times_Box_varphi",
+            "varphi_power": 3
+          },
+          {
+            "coefficient": {
+              "denominator": 2,
+              "numerator": 1
+            },
+            "kind": "varphi_power_times_gradient_square",
+            "varphi_power": 2
+          }
+        ]
+      },
+      {
+        "charge": -1,
+        "coupling_order": 4,
+        "orbit_power": -1,
+        "terms": [
+          {
+            "coefficient": {
+              "denominator": 24,
+              "numerator": 1
+            },
+            "kind": "varphi_power_times_Box_varphi",
+            "varphi_power": 4
+          },
+          {
+            "coefficient": {
+              "denominator": 6,
+              "numerator": -1
+            },
+            "kind": "varphi_power_times_gradient_square",
+            "varphi_power": 3
+          }
+        ]
+      },
+      {
+        "charge": -1,
+        "coupling_order": 5,
+        "orbit_power": -1,
+        "terms": [
+          {
+            "coefficient": {
+              "denominator": 120,
+              "numerator": -1
+            },
+            "kind": "varphi_power_times_Box_varphi",
+            "varphi_power": 5
+          },
+          {
+            "coefficient": {
+              "denominator": 24,
+              "numerator": 1
+            },
+            "kind": "varphi_power_times_gradient_square",
+            "varphi_power": 4
+          }
+        ]
+      },
+      {
+        "charge": -1,
+        "coupling_order": 6,
+        "orbit_power": -1,
+        "terms": [
+          {
+            "coefficient": {
+              "denominator": 720,
+              "numerator": 1
+            },
+            "kind": "varphi_power_times_Box_varphi",
+            "varphi_power": 6
+          },
+          {
+            "coefficient": {
+              "denominator": 120,
+              "numerator": -1
+            },
+            "kind": "varphi_power_times_gradient_square",
+            "varphi_power": 5
+          }
+        ]
+      },
+      {
+        "charge": -1,
+        "coupling_order": 7,
+        "orbit_power": -1,
+        "terms": [
+          {
+            "coefficient": {
+              "denominator": 5040,
+              "numerator": -1
+            },
+            "kind": "varphi_power_times_Box_varphi",
+            "varphi_power": 7
+          },
+          {
+            "coefficient": {
+              "denominator": 720,
+              "numerator": 1
+            },
+            "kind": "varphi_power_times_gradient_square",
+            "varphi_power": 6
+          }
+        ]
+      },
+      {
+        "charge": -1,
+        "coupling_order": 8,
+        "orbit_power": -1,
+        "terms": [
+          {
+            "coefficient": {
+              "denominator": 40320,
+              "numerator": 1
+            },
+            "kind": "varphi_power_times_Box_varphi",
+            "varphi_power": 8
+          },
+          {
+            "coefficient": {
+              "denominator": 5040,
+              "numerator": -1
+            },
+            "kind": "varphi_power_times_gradient_square",
+            "varphi_power": 7
+          }
+        ]
+      },
+      {
+        "charge": -1,
+        "coupling_order": 9,
+        "orbit_power": -1,
+        "terms": [
+          {
+            "coefficient": {
+              "denominator": 362880,
+              "numerator": -1
+            },
+            "kind": "varphi_power_times_Box_varphi",
+            "varphi_power": 9
+          },
+          {
+            "coefficient": {
+              "denominator": 40320,
+              "numerator": 1
+            },
+            "kind": "varphi_power_times_gradient_square",
+            "varphi_power": 8
+          }
+        ]
+      },
+      {
+        "charge": -1,
+        "coupling_order": 10,
+        "orbit_power": -1,
+        "terms": [
+          {
+            "coefficient": {
+              "denominator": 3628800,
+              "numerator": 1
+            },
+            "kind": "varphi_power_times_Box_varphi",
+            "varphi_power": 10
+          },
+          {
+            "coefficient": {
+              "denominator": 362880,
+              "numerator": -1
+            },
+            "kind": "varphi_power_times_gradient_square",
+            "varphi_power": 9
+          }
+        ]
+      },
+      {
+        "charge": -1,
+        "coupling_order": 11,
+        "orbit_power": -1,
+        "terms": [
+          {
+            "coefficient": {
+              "denominator": 39916800,
+              "numerator": -1
+            },
+            "kind": "varphi_power_times_Box_varphi",
+            "varphi_power": 11
+          },
+          {
+            "coefficient": {
+              "denominator": 3628800,
+              "numerator": 1
+            },
+            "kind": "varphi_power_times_gradient_square",
+            "varphi_power": 10
+          }
+        ]
+      },
+      {
+        "charge": -1,
+        "coupling_order": 12,
+        "orbit_power": -1,
+        "terms": [
+          {
+            "coefficient": {
+              "denominator": 479001600,
+              "numerator": 1
+            },
+            "kind": "varphi_power_times_Box_varphi",
+            "varphi_power": 12
+          },
+          {
+            "coefficient": {
+              "denominator": 39916800,
+              "numerator": -1
+            },
+            "kind": "varphi_power_times_gradient_square",
+            "varphi_power": 11
+          }
+        ]
+      }
+    ],
+    "intertwining_identity": "delta_phi o alpha = alpha o delta_11",
+    "proof": "Both generator images are homogeneous with orbit power equal to target charge at every coupling order. Multiplicativity and the Leibniz rule extend the identity to all formal words, derivatives and finite sums.",
+    "replay_max_order": 12,
+    "time_translated_intertwining": "delta_phi o alpha_t = alpha_t o delta_11",
+    "time_translation_reason": "The free phi Hamiltonian is independent of the constant shift orbit and the free O(1,1) Hamiltonian is built from total-charge-zero cross bilinears, so both free adjoint evolutions commute with their charge derivations.",
+    "word_census": [
+      {
+        "charge_multiplicities": {
+          "0": 1
+        },
+        "equivariance_failures": 0,
+        "length": 0,
+        "word_count": 1
+      },
+      {
+        "charge_multiplicities": {
+          "-1": 1,
+          "1": 1
+        },
+        "equivariance_failures": 0,
+        "length": 1,
+        "word_count": 2
+      },
+      {
+        "charge_multiplicities": {
+          "-2": 1,
+          "0": 2,
+          "2": 1
+        },
+        "equivariance_failures": 0,
+        "length": 2,
+        "word_count": 4
+      },
+      {
+        "charge_multiplicities": {
+          "-1": 3,
+          "-3": 1,
+          "1": 3,
+          "3": 1
+        },
+        "equivariance_failures": 0,
+        "length": 3,
+        "word_count": 8
+      },
+      {
+        "charge_multiplicities": {
+          "-2": 4,
+          "-4": 1,
+          "0": 6,
+          "2": 4,
+          "4": 1
+        },
+        "equivariance_failures": 0,
+        "length": 4,
+        "word_count": 16
+      },
+      {
+        "charge_multiplicities": {
+          "-1": 10,
+          "-3": 5,
+          "-5": 1,
+          "1": 10,
+          "3": 5,
+          "5": 1
+        },
+        "equivariance_failures": 0,
+        "length": 5,
+        "word_count": 32
+      },
+      {
+        "charge_multiplicities": {
+          "-2": 15,
+          "-4": 6,
+          "-6": 1,
+          "0": 20,
+          "2": 15,
+          "4": 6,
+          "6": 1
+        },
+        "equivariance_failures": 0,
+        "length": 6,
+        "word_count": 64
+      },
+      {
+        "charge_multiplicities": {
+          "-1": 35,
+          "-3": 21,
+          "-5": 7,
+          "-7": 1,
+          "1": 35,
+          "3": 21,
+          "5": 7,
+          "7": 1
+        },
+        "equivariance_failures": 0,
+        "length": 7,
+        "word_count": 128
+      }
+    ],
+    "word_census_max_length": 7
+  },
+  "fixed_vacuum_and_asymptotic_boundary": {
+    "asymptotic_R_plus_minus_infinity_limits": "NOT_CONSTRUCTED",
+    "charge_theorem_descends_to_Z_equals_1": "NO",
+    "derivation_test": "delta_phi(Z-1)=Z congruent 1 mod I",
+    "finite_t_formal_charge_support": "PROVED",
+    "fixed_vacuum_ideal": "I=(Z-1)",
+    "generalized_Born_trace": "NOT_CONSTRUCTED",
+    "ghost_parity_of_A": "NOT_PROVED",
+    "remainder_mod_I": 1,
+    "specific_continuum_P_chi_OmegaUpsilon_identification": "NOT_CONSTRUCTED",
+    "time_independence_of_A_t": "NOT_PROVED"
+  },
+  "formal_inverse_and_projector_consequence": {
+    "Eq19_charge_support": "P_neutral=A; Q_negative=0 TO_ALL_FORMAL_ORDERS",
+    "charge_decomposition": "A_0=A and A_q=0 for every q!=0",
+    "finite_fixture": {
+      "charge_generator": [
+        [
+          "-1",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "1"
+        ]
+      ],
+      "input_projector": [
+        [
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0"
+        ]
+      ],
+      "neutral_similarity": [
+        [
+          "2",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "3",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "5"
+        ]
+      ],
+      "output_projector": [
+        [
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0"
+        ]
+      ]
+    },
+    "formal_two_sidedness": "R^dagger R=1 and R R^dagger=1 coefficient by coefficient",
+    "inverse_intertwining_identity": "delta_11 o beta = beta o delta_phi",
+    "inverse_proof": "Apply alpha^-1 on the left and right of delta_phi alpha=alpha delta_11; bijectivity is the only additional input.",
+    "inverse_pushforward": "beta(P)=R P R^dagger=alpha^-1(P)",
+    "neutral_projector_hypothesis": "P^2=P=P^dagger and delta_phi(P)=0",
+    "pushed_projector_identity": "A=beta(P); A^2=A=A^dagger; delta_11(A)=0"
+  },
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "Test the missing ghost-parity identity on the actual neutral pushforward rather than inferring it from charge zero. Construct the induced hidden-parity automorphism on the covariant Laurent--Fock algebra and decide whether beta(P_chi) is kappa invariant for the declared nonzero-mode projectors. Separately test whether its finite-time neutral coefficients commute with the free O(1,1) Hamiltonian; only both results, followed by a fixed-vacuum or semifinite trace representation and asymptotic-domain construction, can promote the formal charge theorem toward the full Eq. (19).",
+  "provenance": {
+    "inputs": [
+      {
+        "path": "planning/work-items/reverse-physics-bateman-covariant-formal-eq19-charge-support.json",
+        "sha256": "396d7532445f134f685a1a208c5677d2527e8cf2345933ffece430cdc9074107"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_ZERO_MODE_EQ19_TRILEMMA_V1.json",
+        "sha256": "31c5d45987bb484711912af5d51da1831f5632ef34278c755265fd190963edd6"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_PERTURBATIVE_COISOMETRY_RIGIDITY_V1.json",
+        "sha256": "53ed72d9038ebc8884d3c822a0651dc6b36b089b17aa603fed42d9c0d2ec3edb"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_FULL_SIGNED_QUADRATIC_CLOSURE_V1.json",
+        "sha256": "5859aad65cf0dcbc1ceb9d2c3381a9a61c2d3df6457e8b77903c8a6931aa081b"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_INCLUSIVE_NLO_OBJECT_LEDGER_V1.json",
+        "sha256": "389a3441ac32159e57f32b2b50552823ec770879b579be54bbdabc7e78e59d47"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_PUBLIC_FOCK_ODD_SOURCE_AFFILIATION_V1.json",
+        "sha256": "e53ea00cb67c53957faa7b970a7abf93a2fbb83a0df03c86897192fb636c4045"
+      },
+      {
+        "path": "planning/events/reverse-physics-bateman-covariant-formal-eq19-charge-support-DONE-f10083f7.json",
+        "sha256": "788213cf0adc4589c105c89e78a15df275a3a26ca1eaffbfc240463a1b2aad72"
+      }
+    ],
+    "retrieval_date": "2026-08-12",
+    "source_commit": "f10083f74c3980efbf6c3bd28f3bc5e4ecaa7552"
+  },
+  "question": "Does the exact Eq. (16) homomorphism, after retaining the boost-orbit operator Z and using the certified formal two-sided inverse, force the Eq. (19) pushforward of a neutral finite nonzero-mode projector to have no positive or negative charge at every formal order?",
+  "report": "reverse_physics/reports/bt-covariant-formal-eq19-charge-support.md",
+  "result_kind": "all-order formal charge-equivariance and neutral-projector support theorem for the covariant zero-mode-completed BT Eq. (19) pushforward",
+  "schema": "reverse_physics/schema/reverse-physics-bt-covariant-formal-eq19-charge-support-v1.schema.json",
+  "schema_version": "reverse-physics-bt-covariant-formal-eq19-charge-support-v1",
+  "typed_object_separation": {
+    "Eq19_object": "R_t P_chi^(phi) R_t^dagger",
+    "consequence_for_graph_T": "The public Fock graph remains a candidate carrier for the physical response or for an explicitly constructed projector intertwiner. This theorem neither requires nor permits fitting T as an Rt coefficient.",
+    "eight_point_K4_and_graph_slope": "PHYSICAL_RESPONSE_LEDGER",
+    "formal_charge_support_result": "EQ19_PROJECTOR_PUSHFORWARD_LEDGER",
+    "physical_scattering_object": "P_out(S_phi-1)P_in",
+    "typing_rule": "NEITHER OBJECT IS ADDED TO OR IDENTIFIED WITH THE OTHER WITHOUT AN EXPLICIT INTERTWINER"
+  },
+  "verification_commands": [
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/bt_covariant_formal_eq19_charge_support.py --check",
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/verify_bt_covariant_formal_eq19_charge_support.py",
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 -m unittest -v reverse_physics.tests.test_bt_covariant_formal_eq19_charge_support"
+  ]
+}
