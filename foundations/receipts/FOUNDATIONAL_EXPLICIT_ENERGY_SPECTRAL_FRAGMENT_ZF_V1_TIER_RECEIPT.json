@@ -1,0 +1,29 @@
+{
+  "receipt_id":"FOUNDATIONAL_EXPLICIT_ENERGY_SPECTRAL_FRAGMENT_ZF_V1_TIER_RECEIPT",
+  "schema_version":"foundational-tier-receipt-v0",
+  "created":"2026-08-11",
+  "result_id":"FOUNDATIONAL_EXPLICIT_ENERGY_SPECTRAL_FRAGMENT_ZF_V1",
+  "dependency_tags":["LOCAL-ALGEBRAIC","REDUCED-MODE"],
+  "base_commit":"e7964d0e21bc623b9e2435e6c177dc6a3e17976a",
+  "tiers":{
+    "tier_0":{"status":"PASS","command":"parse three changed JSON files; compile three changed Python files; git diff --check on eight scoped foundations paths","checks":["JSON parses","Python compiles","scoped whitespace check passes"]},
+    "tier_1_checker":{"status":"PASS","elapsed_seconds":"0.03","command":"python3 foundations/check_explicit_energy_spectral_fragment.py","result":"3740 exact coordinates, cutoff-12 Fock dimensions, projection laws, polynomial calculus, and digest eb29d48354ea392f694658e730299c88a4dc73ee5dcd83071b25fd2eae6ca5a9 pass."},
+    "tier_1_verifier":{"status":"PASS","elapsed_seconds":"0.03","command":"python3 foundations/verify_explicit_energy_spectral_fragment.py","result":"10/10 classification, source, provenance, DAG, and boundary checks pass."},
+    "tier_1_foundations_suite":{"status":"PASS","elapsed_seconds":"0.27","command":"python3 -m unittest discover -s foundations/tests -p 'test_*.py'","result":"53/53 tests pass, including 12 new mutation tests."},
+    "tier_1_schema":{"status":"PASS","command":"Draft202012Validator over the result and new schema","result":"certificate validates"},
+    "tier_2":{"status":"NOT_RUN","criterion":"No source input, operator, or generated certificate changed; every imported input is content-pinned."},
+    "tier_3":{"status":"NOT_RUN","criterion":"No freeze, release, shared-core change, or Lorentzian theorem promotion."}
+  },
+  "auxiliary_rails":[{"name":"science_forge_work_drafts","status":"NOT_RERUN","reason":"The same-session Tango sfc build already failed at forge/lib/alloc/arena.forge:401:16 because sanitize_thread is not a compile-time name; no pass is inferred."}],
+  "content_hashes":{
+    "foundations/README.md":"73fc4c896b6d4b058e03a0771eb4ceb5be1e18ef298d565ddbaf3e43b93c427b",
+    "foundations/check_explicit_energy_spectral_fragment.py":"eaf5bc31118c9a95da9cb44b2f3939a6615e3ef6e882aa7b25495a2f2b707114",
+    "foundations/reports/explicit-energy-spectral-fragment-audit.md":"7ac4a0aec375f7cfbf503d6ecaee284cff5a0a5ef7f4c5a607b9693bf801dde5",
+    "foundations/results/FOUNDATIONAL_EXPLICIT_ENERGY_SPECTRAL_FRAGMENT_ZF_V1.json":"0691b281e30ed16b1181be123116950cbd57fafffd43e0b528abcfab332c921c",
+    "foundations/schema/foundational-explicit-energy-spectral-fragment-zf-v1.schema.json":"5a7c9a1ac22f208f11f30322d5452a203408ccfe81a18cd5fd4f20f488320450",
+    "foundations/tests/test_explicit_energy_spectral_fragment.py":"8bf7a123fab30bddd1044f9e4ad1925fdcf56c38346c9038f2e76706ca800006",
+    "foundations/verify_explicit_energy_spectral_fragment.py":"0ee2e84acea75fdf2535616e6ac075dd3d2668735a776764bf5d80b7ed420c7c"
+  },
+  "scope_receipt":{"changed_scope":"foundations/ only","concurrent_unrelated_paths_excluded":["notes/bateman-turok-embedding.md","paper/05-interaction-obstructions.pdf","paper/05-interaction-obstructions.tex","paper/06-einstein-weyl-interaction-obstructions.pdf","paper/06-einstein-weyl-interaction-obstructions.tex","planning/work-items/reverse-physics-bateman-seven-point-nested-continuum-intertwiner.json","reverse_physics/bt_seven_point_nested_continuum_intertwiner.py","reverse_physics/certificates/REVERSE_PHYSICS_BT_SEVEN_POINT_NESTED_CONTINUUM_INTERTWINER_V1.json","reverse_physics/reports/bt-abel-fock-physical-intertwiner.md","reverse_physics/reports/bt-quantum-stochastic-moller-dilation.md","reverse_physics/reports/bt-seven-point-nested-continuum-intertwiner.md","reverse_physics/reports/bt-seven-point-profile-quotient-affiliation.md","reverse_physics/reports/bt-six-point-nested-continuum-intertwiner.md","reverse_physics/schema/reverse-physics-bt-seven-point-nested-continuum-intertwiner-v1.schema.json","reverse_physics/tests/test_bt_seven_point_nested_continuum_intertwiner.py","reverse_physics/verify_bt_seven_point_nested_continuum_intertwiner.py"]},
+  "claim_boundary":"This receipt classifies the explicit reduced-mode energy operator and occupation Fock lift. It proves neither a weakest base nor any Euclidean determinant, state, trace, interacting, or LORENTZIAN-CAUSAL result."
+}

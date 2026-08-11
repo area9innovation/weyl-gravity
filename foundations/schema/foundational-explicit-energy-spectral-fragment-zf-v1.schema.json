@@ -1,0 +1,22 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://area9innovation.github.io/weyl-gravity/foundations/schema/foundational-explicit-energy-spectral-fragment-zf-v1.schema.json",
+  "type":"object",
+  "required":["schema_version","result_id","result_kind","lifecycle","dependency_tags","repository_base_commit","programme_context","target","fragment_classification","avoidance_classification","coordinate_proof","fock_proof","independent_checker","proof_dependency_dag","provenance","claim_flags","does_not_establish","next_gate","human_report"],
+  "properties":{
+    "schema_version":{"const":"foundational-explicit-energy-spectral-fragment-zf-v1"},
+    "result_id":{"const":"FOUNDATIONAL_EXPLICIT_ENERGY_SPECTRAL_FRAGMENT_ZF_V1"},
+    "result_kind":{"const":"FOUNDATIONAL_DEPENDENCY_CERTIFICATE"},
+    "lifecycle":{"const":"SUFFICIENCY_PROVED"},
+    "dependency_tags":{"const":["LOCAL-ALGEBRAIC","REDUCED-MODE"]},
+    "repository_base_commit":{"type":"string","pattern":"^[0-9a-f]{40}$"},
+    "fragment_classification":{"type":"array","minItems":8,"maxItems":8,"items":{"type":"object","required":["id","fragment","base_theory","relation","status","proof_route"]}},
+    "avoidance_classification":{"type":"object","required":["relation","status","avoided","replacement","boundary"],"properties":{"relation":{"const":"AVOIDED_BY_REFORMULATION"}}},
+    "fock_proof":{"type":"object","required":["carrier","operator","fixed_energy_reason","regression_maximum_energy","matter_fixed_energy_dimensions"]},
+    "independent_checker":{"type":"object","required":["path","permitted_runtime_modules","checks","expected_digest"],"properties":{"expected_digest":{"type":"string","pattern":"^[0-9a-f]{64}$"}}},
+    "proof_dependency_dag":{"type":"object","required":["nodes","edges"]},
+    "provenance":{"type":"object","required":["inputs"],"properties":{"inputs":{"type":"array","minItems":6,"items":{"type":"object","required":["path","sha256"],"properties":{"sha256":{"type":"string","pattern":"^[0-9a-f]{64}$"}}}}}},
+    "does_not_establish":{"type":"array","minItems":7},
+    "human_report":{"const":"foundations/reports/explicit-energy-spectral-fragment-audit.md"}
+  }
+}

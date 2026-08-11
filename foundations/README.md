@@ -66,6 +66,17 @@ python3 foundations/verify_krein_explicit_j_zf.py
 python3 -m unittest foundations.tests.test_krein_explicit_j_zf
 ```
 
+The companion spectral-fragment audit is
+[`reports/explicit-energy-spectral-fragment-audit.md`](reports/explicit-energy-spectral-fragment-audit.md).
+It shows that the cylinder energy operator and its Fock lift use an explicit
+diagonal-domain proof, not an abstract spectral theorem:
+
+```bash
+python3 foundations/check_explicit_energy_spectral_fragment.py
+python3 foundations/verify_explicit_energy_spectral_fragment.py
+python3 -m unittest foundations.tests.test_explicit_energy_spectral_fragment
+```
+
 ## Lifecycle
 
 This stream uses a literature/research lifecycle, not the quantum lifecycle:
