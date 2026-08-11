@@ -1,0 +1,18 @@
+{
+  "id": "sf:forge-request/foundations-scope-frontier-importer",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "physics-programme",
+    "state": "REQUESTED",
+    "objective": "Add a generic Science Forge importer and generated-view layer for finite Cartesian research maps with typed Scope coordinates. The first consumers are foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V0.json and foundations/results/FOUNDATIONAL_PAIR_FRONTIER_ANALYSIS_V0.json. Import assessed local evidence, literature interpretations, partial crosswalks and open questions without turning unassessed coordinates into claims; then derive cube slices, pair projections, bridgeable-frontier queries and candidate WorkItems from the evidence graph while retaining provenance and claim boundaries.",
+    "depends_on": [],
+    "stop_condition": "Provide a versioned generic vocabulary/import schema for named finite axes and keys; encode the 3 axes and 18 keys of FOUNDATIONAL_INTERSECTION_CUBE_V0 as typed Scope coordinates; map a local result to Claim plus Certificate references, a literature result to a literature import plus reviewed interpretation, pieces-only to a reviewed QUALIFIES or CROSSWALKS relation, and a priority gap to Question plus optional Gate/WorkItem. Generate all six cube slices and all 108 pair projections, reproduce the local pair-frontier counts and integer scores exactly on a content-pinned fixture, propagate source staleness, and provide an independent comparison rail against foundations/analyze_pair_frontiers.py. The importer and view must refuse malformed coordinates, unknown statuses, duplicate cells, stale inputs and unsupported relation composition.",
+    "forbid": "No node or absence claim for an unassessed coordinate; no automatic inference that pairwise compatibility implies a valid three-axis theory; no ranking score represented as evidence, probability, theorem strength or expected scientific value; no AI-generated literature judgment labeled human-reviewed; no loss of source quotations, interpretations, boundaries or content hashes; no physics-specific foundation/carrier/obligation identifiers hard-coded into Forge core; no silent exact/numeric coercion; no local, reduced-mode or Euclidean evidence promoted to a Lorentzian-causal claim; no producer replay called independent verification.",
+    "notes": [
+      "This is a nice-to-have substrate adoption request; the local deterministic analyzer is usable and independently checkable, so no physics work item is blocked.",
+      "The intended Forge distinction is structural: assessed gaps become Questions, whereas NOT_MAPPED remains the absence of an entity rather than a negative literature claim.",
+      "The first fixture is finite and qualitative. ClaimLang should only be used for exact predicates it can type; reviewed scope and literature judgments must retain their distinct evidence class."
+    ]
+  }
+}

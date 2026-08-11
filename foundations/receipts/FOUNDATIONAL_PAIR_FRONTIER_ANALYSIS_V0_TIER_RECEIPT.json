@@ -1,0 +1,73 @@
+{
+  "receipt_id": "FOUNDATIONAL_PAIR_FRONTIER_ANALYSIS_V0_TIER_RECEIPT",
+  "schema_version": "foundational-tier-receipt-v0",
+  "created": "2026-08-11",
+  "result_id": "FOUNDATIONAL_PAIR_FRONTIER_ANALYSIS_V0",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "base_commit": "30ca3c87adb93301794fca6348dec7c50449f231",
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "command": "parse result/schema/request JSON; Draft202012Validator.check_schema and validate; py_compile changed Python; git diff --check on the nine scoped source/report/result/request paths",
+      "result": "structured artifacts parse, the result validates, changed Python compiles, and the scoped diff has no whitespace errors"
+    },
+    "tier_1_generator": {
+      "status": "PASS",
+      "command": "python3 foundations/analyze_pair_frontiers.py --check",
+      "result": "generated result and Markdown report are byte-current"
+    },
+    "tier_1_checker": {
+      "status": "PASS",
+      "command": "python3 foundations/check_pair_frontiers.py",
+      "result": "108 unique pair projections; 32 bridgeable frontiers; 25 important but unseeded gaps; 29 assessed open cells; canonical digest 5d11c0964aad25d061bcd1efbd8ffd3ed3c7e541bd03b20e79a57ab83a41dab4"
+    },
+    "tier_1_verifier": {
+      "status": "PASS",
+      "command": "python3 foundations/verify_pair_frontiers.py",
+      "result": "schema, independent projection reconstruction, score audit, cube hash, claim boundaries, report language, and Forge request contract pass"
+    },
+    "tier_1_suite": {
+      "status": "PASS",
+      "elapsed_seconds": "0.73",
+      "command": "python3 foundations/analyze_pair_frontiers.py --check && python3 foundations/check_pair_frontiers.py && python3 foundations/verify_pair_frontiers.py && python3 -m unittest discover -s foundations/tests -t .",
+      "result": "166/166 foundations tests pass, including 12 pair-frontier and mutation tests"
+    },
+    "tier_2": {
+      "status": "NOT_RUN",
+      "criterion": "The analyzer derives a navigation view from an unchanged content-addressed cube; it changes no mathematical input, operator, schema consumed by theorem certificates, or lifecycle state."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No freeze, release, theorem promotion, shared algebra change, or Lorentzian lifecycle promotion."
+    }
+  },
+  "auxiliary_rails": [
+    {
+      "name": "science_forge_request_conformance",
+      "status": "NOT_RUN",
+      "command": "/home/alstrup/area9/tango/forge/tools/science-forge/s-f conform <temporary-directory-containing-foundations-scope-frontier-importer.json>",
+      "reason": "The Science Forge launcher failed before conformance: forge/lib/alloc/arena.forge:401:16 reports that sanitize_thread is not a compile-time name. This is not counted as a pass; the local JSON/request-contract verifier is a separate rail."
+    }
+  ],
+  "content_hashes": {
+    "foundations/README.md": "600432ef50cc13fa39f1ba72182e682190262a1803bfd20747cc4f3adf3ecd2c",
+    "foundations/analyze_pair_frontiers.py": "2b4d5b59cc05be66bdce9a6249c0127a12c1f7b8455b047b10e9cc67935671b9",
+    "foundations/check_pair_frontiers.py": "51a51632e272cf7632cd3c4b3fbfe32d6c97514a557ccaea9276181c450b4a45",
+    "foundations/reports/pair-frontier-analysis.md": "0565dc61e93cd51c01913097b247d0beda6f3fb2cc637775c2dae328b519183b",
+    "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V0.json": "2f2f20e918a8000d25284323231d2629df4a241038b77e0dbf50ef5f60bb4ef3",
+    "foundations/results/FOUNDATIONAL_PAIR_FRONTIER_ANALYSIS_V0.json": "622f10923b6cfec05a93817d04fe26ab5fc2df687d324c527050bd986f1e4b8d",
+    "foundations/schema/foundational-pair-frontier-analysis-v0.schema.json": "dc3ca41a686725f0a5d28ee657b65859c54ec9f5d3449525c534f3eb8c94694e",
+    "foundations/tests/test_pair_frontiers.py": "216ada75b198b06f82bd95f1835c1cbba3ece670a8661d670054d3a8fab54039",
+    "foundations/verify_pair_frontiers.py": "8e6df41bb92f6916500870abf5731af8592c6d8c09a4566aa9ef73f9e1c604a9",
+    "planning/forge-requests/foundations-scope-frontier-importer.json": "963697097846691dbe7a74bbedbf340756afd6e0d8d03ae01f87013cc52ed5cb"
+  },
+  "scope_receipt": {
+    "changed_scope": "foundations navigation analysis plus one nice-to-have Science Forge capability request",
+    "unrelated_worktree_changes_included": false
+  },
+  "claim_boundary": "The pair score is a transparent deterministic triage heuristic over current cube classifications. It is not scientific evidence, theorem strength, a probability of success, or an assertion that a bridge exists. NOT_MAPPED cells remain unassessed and are never treated as gaps. No Forge entities were registered and no new mathematical, physical, quantum, or Lorentzian claim is made."
+}

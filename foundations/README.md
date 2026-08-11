@@ -169,6 +169,26 @@ python3 foundations/verify_intersection_cube.py
 python3 -m unittest foundations.tests.test_intersection_cube
 ```
 
+The generated
+[`pair-frontier analysis`](reports/pair-frontier-analysis.md) projects the cube
+onto all 108 products of two dimensions. It ranks pairs only when an assessed
+evidence foothold and assessed open work coexist, keeps important-but-unseeded
+gaps separate, and never treats an unmapped cell as a literature-absence claim:
+
+```bash
+python3 foundations/analyze_pair_frontiers.py
+python3 foundations/analyze_pair_frontiers.py --check
+python3 foundations/check_pair_frontiers.py
+python3 foundations/verify_pair_frontiers.py
+python3 -m unittest foundations.tests.test_pair_frontiers
+```
+
+Native typed Scope/Question/WorkItem import is not yet available in the local
+Science Forge adoption.  The exact integration boundary and first consumer are
+filed in
+[`foundations-scope-frontier-importer.json`](../planning/forge-requests/foundations-scope-frontier-importer.json);
+the local analyzer remains the independent comparison rail.
+
 ## Lifecycle
 
 This stream uses a literature/research lifecycle, not the quantum lifecycle:

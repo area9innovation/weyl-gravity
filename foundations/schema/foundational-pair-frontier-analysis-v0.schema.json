@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema_version", "result_id", "result_kind", "lifecycle",
+    "dependency_tags", "created", "repository_base_commit", "purpose",
+    "method", "summary", "pair_families", "projections",
+    "ranked_frontier_ids", "unseeded_gap_ids", "recommended_cells",
+    "forge_projection", "provenance", "independent_checker", "claim_flags",
+    "does_not_establish", "human_report"
+  ],
+  "properties": {
+    "schema_version": {"const": "foundational-pair-frontier-analysis-v0"},
+    "result_id": {"const": "FOUNDATIONAL_PAIR_FRONTIER_ANALYSIS_V0"},
+    "result_kind": {"const": "FOUNDATIONAL_NAVIGATION_ANALYSIS"},
+    "lifecycle": {"const": "LITERATURE_SCOPED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]},
+    "method": {
+      "type": "object",
+      "required": ["projection_rule", "seed_strength", "open_demand", "bridge_score", "why_minimum", "ranking_boundary", "not_mapped_rule", "classification_rules"]
+    },
+    "summary": {
+      "type": "object",
+      "required": ["pair_families", "projections", "cells_per_projection", "classification_counts", "ranked_bridge_frontiers", "unseeded_important_gaps", "assessed_open_cells"],
+      "properties": {
+        "pair_families": {"const": 3},
+        "projections": {"const": 108},
+        "cells_per_projection": {"const": 6}
+      }
+    },
+    "pair_families": {"type": "array", "minItems": 3, "maxItems": 3},
+    "projections": {
+      "type": "array",
+      "minItems": 108,
+      "maxItems": 108,
+      "items": {
+        "type": "object",
+        "required": ["id", "fixed_axes", "scan_axis", "counts", "seed_strength", "open_demand", "bridge_score", "classification", "evidence_cells", "candidate_cells", "not_mapped_cells"],
+        "properties": {
+          "fixed_axes": {"type": "array", "minItems": 2, "maxItems": 2},
+          "scan_axis": {"enum": ["FOUNDATION", "CARRIER", "OBLIGATION"]},
+          "seed_strength": {"type": "integer", "minimum": 0},
+          "open_demand": {"type": "integer", "minimum": 0},
+          "bridge_score": {"type": "integer", "minimum": 0},
+          "classification": {"enum": ["NEAR_TERM_LOCAL_BRIDGE", "NEAR_TERM_LITERATURE_BRIDGE", "PIECES_ONLY_FRONTIER", "UNSEEDED_IMPORTANT_GAP", "NO_FRONTIER"]}
+        }
+      }
+    },
+    "ranked_frontier_ids": {"type": "array", "uniqueItems": true},
+    "unseeded_gap_ids": {"type": "array", "uniqueItems": true},
+    "recommended_cells": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["foundation", "carrier", "obligation", "status", "aggregate_bridge_score", "supporting_pair_ids", "evidence", "summary", "boundary"],
+        "properties": {
+          "status": {"enum": ["PIECES_ONLY", "PRIORITY_GAP"]},
+          "aggregate_bridge_score": {"type": "integer", "minimum": 0}
+        }
+      }
+    },
+    "forge_projection": {
+      "type": "object",
+      "required": ["state", "reason", "requested_capability", "intended_types"],
+      "properties": {"state": {"const": "NOT_REGISTERED"}}
+    },
+    "provenance": {"type": "object", "required": ["inputs", "producer"]},
+    "independent_checker": {"type": "object", "required": ["path", "checks", "expected_digest"]},
+    "claim_flags": {"type": "object"},
+    "does_not_establish": {"type": "array", "minItems": 9},
+    "human_report": {"const": "foundations/reports/pair-frontier-analysis.md"}
+  }
+}
