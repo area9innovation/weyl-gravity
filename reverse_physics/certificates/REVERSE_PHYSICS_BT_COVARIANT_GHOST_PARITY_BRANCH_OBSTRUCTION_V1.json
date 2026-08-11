@@ -1,0 +1,1196 @@
+{
+  "answer": "The public covariant branch is stationary but not ghost even already at order lambda. Its nonzero rank-four correction has Laurent support Z^-1, while ghost parity sends it to the independent Z branch. Since the whole pushforward is neutral and Q=0, the Eq. (19) charge formula still holds trivially but its required ghost-even neutral term does not. The canonical odd remainder has relative norm -7/288, not zero, so the published weak-ghost-symmetry mechanism fails on this branch. Adding the kappa-conjugate orbit branch is the unique minimal support repair: its symmetric generator exponentiates to an exact neutral, stationary, ghost-even finite projector. The added branch is not supplied by the public Rt map, so this is an architecture, not a proof of Bateman--Turok's unpublished completion.",
+  "assumptions": [
+    "formal Laurent zero-mode algebra with linearly independent powers of Z",
+    "kappa Z kappa=Z^-1 and kappa exchanges Omega with Upsilon",
+    "Krein adjoint fixes Z and uses the cross-Fock Gram on species",
+    "complete public order-lambda signed quadratic kernel",
+    "finite resonant nonendpoint modes e1=1, e2=2 for the explicit witness",
+    "the one-particle projector includes both parent species and no daughter states"
+  ],
+  "certificate": "REVERSE_PHYSICS_BT_COVARIANT_GHOST_PARITY_BRANCH_OBSTRUCTION_V1",
+  "checks": {
+    "items": {
+      "Eq19_charge_formula_still_holds_with_Q_zero": true,
+      "Eq19_ghost_even_neutral_term_fails_on_declared_public_branch": true,
+      "all_order_neutrality_forces_Q_zero": true,
+      "canonical_even_and_odd_parts_are_trace_orthogonal": true,
+      "canonical_even_part_has_opposite_positive_norm": true,
+      "canonical_odd_remainder_is_not_null": true,
+      "cross_fock_gram_is_involutive": true,
+      "ghost_defect_has_two_disjoint_nonzero_Laurent_coefficients": true,
+      "ghost_parity_inverts_the_orbit_power": true,
+      "ghost_parity_is_involutive": true,
+      "ghost_parity_reverses_species_charge": true,
+      "hidden_source_parity_is_only_involutive_modulo_EOM": true,
+      "hidden_source_parity_requires_log_of_nonunit_F": true,
+      "input_hashes_pinned": true,
+      "input_projector_is_Krein_selfadjoint": true,
+      "input_projector_is_charge_neutral": true,
+      "input_projector_is_ghost_even": true,
+      "input_projector_is_nonzero_idempotent": true,
+      "order_lambda_defect_cannot_be_canceled_at_higher_formal_order": true,
+      "predecessor_certificates_pass": true,
+      "public_Laurent_generator_is_neutral": true,
+      "public_first_correction_is_Krein_selfadjoint": true,
+      "public_first_correction_is_charge_neutral": true,
+      "public_first_correction_is_nonzero_rank_four": true,
+      "public_first_correction_is_not_ghost_even": true,
+      "public_first_correction_is_projector_tangent": true,
+      "public_first_correction_is_stationary": true,
+      "public_kernel_formula_imported": true,
+      "public_species_generator_has_charge_plus_one": true,
+      "public_species_generator_is_Krein_skew": true,
+      "published_charge_nullity_argument_cannot_remove_neutral_odd_remainder": true,
+      "repair_first_coefficient_is_two_branch_and_nonzero": true,
+      "repair_generator_is_Krein_skew": true,
+      "repair_generator_is_charge_neutral": true,
+      "repair_generator_is_ghost_even": true,
+      "repair_generator_is_stationary": true,
+      "repair_is_not_public_Rt_affiliated": true,
+      "repair_projector_series_ghost_even_through_order_eight": true,
+      "repair_projector_series_idempotent_through_order_eight": true,
+      "repair_projector_series_neutral_through_order_eight": true,
+      "repair_projector_series_selfadjoint_through_order_eight": true,
+      "repair_projector_series_stationary_through_order_eight": true,
+      "unique_public_orbit_power_is_minus_one": true,
+      "unsplit_one_branch_tangent_is_relative_trace_null": true
+    },
+    "ok": true,
+    "passed": 44,
+    "total": 44
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "disposition": {
+    "Eq19_charge_formula_on_declared_covariant_public_branch": "PROVED_WITH_Q_ZERO",
+    "Eq19_ghost_even_neutral_term_on_declared_public_branch": "REFUTED",
+    "canonical_weak_ghost_remainder": "ORTHOGONAL_BUT_NON_NULL_WITH_NORM_MINUS_7_OVER_288",
+    "minimal_two_orbit_finite_repair": "CONSTRUCTED_TO_ALL_FORMAL_ORDERS",
+    "physical_probability": "NOT_ESTABLISHED",
+    "public_covariant_ghost_evenness": "OBSTRUCTED_AT_ORDER_LAMBDA",
+    "public_covariant_order_lambda_stationarity": "PROVED",
+    "repair_source_affiliation": "OPEN"
+  },
+  "does_not_establish": [
+    "a refutation of an unpublished enlarged Bateman--Turok completion",
+    "failure of the fixed-vacuum oscillator grading",
+    "an asymptotic or continuum no-go theorem",
+    "a generalized-Born trace or transition probability",
+    "a Weyl-gravity, BRST, or LORENTZIAN-CAUSAL result",
+    "literature priority"
+  ],
+  "finite_resonant_block": {
+    "K_plus": [
+      [
+        "0",
+        "0",
+        "0",
+        "-1/24",
+        "-1/12",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "1/8"
+      ],
+      [
+        "-1/8",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1/12",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1/24",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    ],
+    "P0": [
+      [
+        "1",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    ],
+    "basis": [
+      "Omega_parent",
+      "Upsilon_parent",
+      "OmegaOmega",
+      "OmegaUpsilon",
+      "UpsilonOmega",
+      "UpsilonUpsilon"
+    ],
+    "commutator_K_plus_P0": [
+      [
+        "0",
+        "0",
+        "0",
+        "1/24",
+        "1/12",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "-1/8"
+      ],
+      [
+        "-1/8",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1/12",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1/24",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    ],
+    "commutator_rank": 4,
+    "daughter_to_parent_map": [
+      [
+        "0",
+        "-1/24",
+        "-1/12",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "1/8"
+      ]
+    ],
+    "energies": {
+      "e1": "1",
+      "e2": "2",
+      "parent": "3"
+    },
+    "free_hamiltonian": [
+      [
+        "3",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "3",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "3",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "3",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "3",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "3"
+      ]
+    ],
+    "ghost_parity": [
+      [
+        "0",
+        "1",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "1",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1",
+        "0",
+        "0",
+        "0"
+      ]
+    ],
+    "gram": [
+      [
+        "0",
+        "1",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "1",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1",
+        "0",
+        "0",
+        "0"
+      ]
+    ],
+    "species_charge": [
+      [
+        "1",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "-1",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "2",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "-2"
+      ]
+    ]
+  },
+  "hidden_source_parity_domain": {
+    "F": "Box(phi)+lambda*(d phi)^2",
+    "augmentation_of_F_at_the_Fock_vacuum": 0,
+    "consequence": "log(F) is absent from the perturbative Laurent--Fock algebra around F=0",
+    "formal_power_series_unit_test": "FAIL: F has no nonzero constant coefficient",
+    "formal_rule": "h(phi)=-phi+lambda^-1 log(F), up to a constant normalization",
+    "involution_boundary": "h(F)=F and h^2(phi)=phi only after using the PS field equation",
+    "localized_alternative": "adjoin F^-1 and log(F), which excludes the free F=0 vacuum chart"
+  },
+  "lifecycle_state": "CLASSIFIED",
+  "minimal_two_branch_repair": {
+    "affiliation": "NOT_SUPPLIED_BY_THE_PUBLIC_RT_MAP",
+    "all_order_proof": {
+      "Krein_selfadjoint": "K_even^sharp=-K_even implies exp(K_even)^sharp=exp(-K_even)",
+      "charge_neutral": "delta(K_even)=delta(P0)=0",
+      "ghost_even": "[kappa,K_even]=[kappa,P0]=0",
+      "idempotent": "conjugation preserves P0^2=P0",
+      "stationary": "[H0,K_even]=[H0,P0]=0"
+    },
+    "coefficient_replay_order": 8,
+    "exact_projector": "P_even(lambda)=exp(lambda K_even) P0 exp(-lambda K_even)",
+    "first_projector_coefficient": {
+      "-1": [
+        [
+          "0",
+          "0",
+          "0",
+          "1/48",
+          "1/24",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "-1/16"
+        ],
+        [
+          "-1/16",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "1/24",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "1/48",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ]
+      ],
+      "1": [
+        [
+          "0",
+          "0",
+          "-1/16",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "1/24",
+          "1/48",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "1/48",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "1/24",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "-1/16",
+          "0",
+          "0",
+          "0",
+          "0"
+        ]
+      ]
+    },
+    "generator": "K_even=(Z^-1 K_plus+Z kappa K_plus kappa)/2",
+    "generator_coefficients": {
+      "-1": [
+        [
+          "0",
+          "0",
+          "0",
+          "-1/48",
+          "-1/24",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "1/16"
+        ],
+        [
+          "-1/16",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "1/24",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "1/48",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ]
+      ],
+      "1": [
+        [
+          "0",
+          "0",
+          "1/16",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "-1/24",
+          "-1/48",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "1/48",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "1/24",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "-1/16",
+          "0",
+          "0",
+          "0",
+          "0"
+        ]
+      ]
+    },
+    "support_minimality": "A nonzero kappa-invariant Laurent polynomial containing power -1 must contain its kappa image at power +1; one added branch is minimal."
+  },
+  "missing_object_ledger": [
+    "a source-affiliated kappa-conjugate Z branch or a replacement projector",
+    "an all-order public-Rt stationarity theorem",
+    "R_plus/minus_infinity on a controlled continuum domain",
+    "the specific continuum P_chi kernel and generalized-Born trace",
+    "a proof that the repaired branch is selected by PS dynamics",
+    "a physical complete probability and gravity/BRST lift"
+  ],
+  "provenance": {
+    "external_source": {
+      "arxiv": "2607.00096v1",
+      "authors": "Sam Bateman and Neil Turok",
+      "equations": [
+        "15",
+        "16",
+        "19",
+        "Appendix C"
+      ],
+      "title": "Escape from Ostrogradsky via Hidden Ghost Parity"
+    },
+    "generated_by": "reverse_physics/bt_covariant_ghost_parity_branch_obstruction.py",
+    "independent_verifier": "reverse_physics/verify_bt_covariant_ghost_parity_branch_obstruction.py",
+    "input_hashes": {
+      "planning/events/reverse-physics-bateman-covariant-ghost-parity-branch-obstruction-DONE-654759d8.json": "992997b1a5064e1a8b52a381fe2c27d607662721d2fd8b325719c680c3090c24",
+      "planning/work-items/reverse-physics-bateman-covariant-ghost-parity-branch-obstruction.json": "af73be09a37841e304a85772689df7b140eba377e805628c6adf022bbed949ef",
+      "reverse_physics/certificates/REVERSE_PHYSICS_BT_COVARIANT_FORMAL_EQ19_CHARGE_SUPPORT_V1.json": "cc863395b767e7924579f0d30a26282981cb7ed6b7add58194db1a6acdde97f2",
+      "reverse_physics/certificates/REVERSE_PHYSICS_BT_FULL_SIGNED_QUADRATIC_CLOSURE_V1.json": "5859aad65cf0dcbc1ceb9d2c3381a9a61c2d3df6457e8b77903c8a6931aa081b",
+      "reverse_physics/certificates/REVERSE_PHYSICS_BT_ZERO_MODE_EQ19_TRILEMMA_V1.json": "31c5d45987bb484711912af5d51da1831f5632ef34278c755265fd190963edd6"
+    },
+    "source_commit": "654759d8f3aa1961c0d17737a6bac21d46704e94"
+  },
+  "public_branch_obstruction": {
+    "Eq19_consequence": "All-order charge support gives Q_negative=0. Uniqueness of Laurent charge decomposition then makes the whole public pushforward the neutral term, but its order-lambda coefficient is not kappa even. Thus the Eq. (19) charge formula holds with Q=0 while the claimed ghost-even neutral-term and weak-ghost-symmetry package fail on this declared covariant public branch.",
+    "canonical_parity_split": {
+      "B1_even": {
+        "-1": [
+          [
+            "0",
+            "0",
+            "0",
+            "1/48",
+            "1/24",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "-1/16"
+          ],
+          [
+            "-1/16",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "1/24",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "1/48",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "1": [
+          [
+            "0",
+            "0",
+            "-1/16",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "1/24",
+            "1/48",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "1/48",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "1/24",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "-1/16",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        ]
+      },
+      "C1_odd": {
+        "-1": [
+          [
+            "0",
+            "0",
+            "0",
+            "1/48",
+            "1/24",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "-1/16"
+          ],
+          [
+            "-1/16",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "1/24",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "1/48",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        ],
+        "1": [
+          [
+            "0",
+            "0",
+            "1/16",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "-1/24",
+            "-1/48",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "-1/48",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "-1/24",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "1/16",
+            "0",
+            "0",
+            "0",
+            "0"
+          ]
+        ]
+      },
+      "consequence": "the forced ghost-odd remainder is orthogonal but not null",
+      "relative_trace_definition": "tau_0(X)=tr_species([Z^0]X)",
+      "tau_0_B1sharp_B1": "7/288",
+      "tau_0_B1sharp_C1": "0",
+      "tau_0_C1sharp_C1": "-7/288",
+      "tau_0_P1sharp_P1": "0"
+    },
+    "formal_consequence": "A nonzero order-lambda defect cannot be canceled by coefficients of order lambda^2 or higher.",
+    "ghost_conjugate_first_coefficient": {
+      "1": [
+        [
+          "0",
+          "0",
+          "-1/8",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "1/12",
+          "1/24",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "1/24",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "1/12",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "-1/8",
+          "0",
+          "0",
+          "0",
+          "0"
+        ]
+      ]
+    },
+    "ghost_defect": {
+      "-1": [
+        [
+          "0",
+          "0",
+          "0",
+          "-1/24",
+          "-1/12",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "1/8"
+        ],
+        [
+          "1/8",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "-1/12",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "-1/24",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ]
+      ],
+      "1": [
+        [
+          "0",
+          "0",
+          "-1/8",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "1/12",
+          "1/24",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "1/24",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "1/12",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "-1/8",
+          "0",
+          "0",
+          "0",
+          "0"
+        ]
+      ]
+    },
+    "ghost_defect_Laurent_support": [
+      -1,
+      1
+    ],
+    "public_first_coefficient": {
+      "-1": [
+        [
+          "0",
+          "0",
+          "0",
+          "1/24",
+          "1/12",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "-1/8"
+        ],
+        [
+          "-1/8",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "1/12",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "1/24",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ]
+      ]
+    },
+    "public_first_projector_coefficient": "P1=Z^-1[K_plus,P0]",
+    "public_generator": "K_public=Z^-1 K_plus",
+    "rank_at_each_support_power": {
+      "-1": 4,
+      "1": 4
+    }
+  },
+  "public_kernel_import": {
+    "all_order_charge_result": {
+      "Eq19_all_requirements": "NOT_PROVED",
+      "all_order_formal_inverse_equivariance": "PROVED",
+      "all_order_formal_pullback_equivariance": "PROVED",
+      "fixed_vacuum_descent": "EXACTLY_OBSTRUCTED",
+      "ghost_parity": "NOT_ESTABLISHED",
+      "neutral_projector_formal_pushforward": "CHARGE_ZERO_WITH_Q_ZERO",
+      "order_lambda_predecessor": "RECOVERED",
+      "physical_probability": "NOT_ESTABLISHED",
+      "time_independence": "NOT_ESTABLISHED"
+    },
+    "formula": {
+      "all_other_rows": "0",
+      "delta_b_Omega_OmegaOmega": "(s1*e1+s2*e2)/(2*e1*e2)",
+      "delta_b_Upsilon_OmegaUpsilon": "-s2/(2*e1)",
+      "delta_b_Upsilon_UpsilonOmega": "-s1/(2*e2)"
+    },
+    "time_dependence": "ALL_T_AND_T2_TERMS_CANCEL_AFTER_FULL_PREIMAGE_SUM",
+    "zero_mode_exponents": {
+      "Omega_from_OmegaOmega": -1,
+      "Upsilon_from_OmegaUpsilon": -1,
+      "Upsilon_from_UpsilonOmega": -1
+    }
+  },
+  "question": "After covariant all-order charge support forces Q=0, is the public Bateman--Turok projector pushforward ghost even and stationary, and what is the smallest exact parity repair?",
+  "report": "reverse_physics/reports/bt-covariant-ghost-parity-branch-obstruction.md",
+  "result_kind": "scoped algebraic obstruction with constructive finite repair",
+  "schema": "reverse_physics/schema/reverse-physics-bt-covariant-ghost-parity-branch-obstruction-v1.schema.json",
+  "schema_version": 1,
+  "stationarity": {
+    "all_orders": "NOT_PROVED_FOR_THE_PUBLIC_RT_PUSHFORWARD",
+    "order_lambda": "PROVED_ON_THE_RESONANT_FINITE_BLOCK",
+    "reason": "[H0,K_plus]=[H0,P0]=0 because parent and daughters have equal total energy"
+  },
+  "verification_commands": [
+    "python3 reverse_physics/bt_covariant_ghost_parity_branch_obstruction.py --check",
+    "python3 reverse_physics/verify_bt_covariant_ghost_parity_branch_obstruction.py",
+    "python3 -m unittest reverse_physics.tests.test_bt_covariant_ghost_parity_branch_obstruction"
+  ]
+}

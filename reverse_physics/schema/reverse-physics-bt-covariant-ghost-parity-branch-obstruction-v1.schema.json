@@ -1,0 +1,297 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-covariant-ghost-parity-branch-obstruction-v1.schema.json",
+  "title": "BT covariant ghost-parity branch obstruction certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "schema_version",
+    "certificate",
+    "question",
+    "answer",
+    "result_kind",
+    "lifecycle_state",
+    "dependency_tags",
+    "assumptions",
+    "provenance",
+    "public_kernel_import",
+    "finite_resonant_block",
+    "public_branch_obstruction",
+    "stationarity",
+    "hidden_source_parity_domain",
+    "minimal_two_branch_repair",
+    "disposition",
+    "missing_object_ledger",
+    "does_not_establish",
+    "checks",
+    "verification_commands",
+    "report"
+  ],
+  "properties": {
+    "schema": {
+      "const": "reverse_physics/schema/reverse-physics-bt-covariant-ghost-parity-branch-obstruction-v1.schema.json"
+    },
+    "schema_version": {"const": 1},
+    "certificate": {
+      "const": "REVERSE_PHYSICS_BT_COVARIANT_GHOST_PARITY_BRANCH_OBSTRUCTION_V1"
+    },
+    "question": {"type": "string", "minLength": 1},
+    "answer": {"type": "string", "minLength": 1},
+    "result_kind": {"const": "scoped algebraic obstruction with constructive finite repair"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {
+      "type": "array",
+      "prefixItems": [
+        {"const": "LOCAL-ALGEBRAIC"},
+        {"const": "REDUCED-MODE"}
+      ],
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "assumptions": {
+      "type": "array",
+      "minItems": 6,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "provenance": {
+      "type": "object",
+      "required": [
+        "source_commit",
+        "input_hashes",
+        "external_source",
+        "generated_by",
+        "independent_verifier"
+      ],
+      "properties": {
+        "source_commit": {"pattern": "^[0-9a-f]{40}$"},
+        "input_hashes": {
+          "type": "object",
+          "minProperties": 5,
+          "additionalProperties": {"pattern": "^[0-9a-f]{64}$"}
+        },
+        "external_source": {
+          "type": "object",
+          "required": ["title", "authors", "arxiv", "equations"]
+        },
+        "generated_by": {
+          "const": "reverse_physics/bt_covariant_ghost_parity_branch_obstruction.py"
+        },
+        "independent_verifier": {
+          "const": "reverse_physics/verify_bt_covariant_ghost_parity_branch_obstruction.py"
+        }
+      }
+    },
+    "public_kernel_import": {
+      "type": "object",
+      "required": ["formula", "zero_mode_exponents", "time_dependence", "all_order_charge_result"]
+    },
+    "finite_resonant_block": {
+      "type": "object",
+      "required": [
+        "basis",
+        "energies",
+        "gram",
+        "ghost_parity",
+        "species_charge",
+        "free_hamiltonian",
+        "daughter_to_parent_map",
+        "K_plus",
+        "P0",
+        "commutator_K_plus_P0",
+        "commutator_rank"
+      ],
+      "properties": {
+        "basis": {"type": "array", "minItems": 6, "maxItems": 6},
+        "energies": {
+          "const": {"e1": "1", "e2": "2", "parent": "3"}
+        },
+        "gram": {"$ref": "#/$defs/matrix6"},
+        "ghost_parity": {"$ref": "#/$defs/matrix6"},
+        "species_charge": {"$ref": "#/$defs/matrix6"},
+        "free_hamiltonian": {"$ref": "#/$defs/matrix6"},
+        "daughter_to_parent_map": {"$ref": "#/$defs/matrix2x4"},
+        "K_plus": {"$ref": "#/$defs/matrix6"},
+        "P0": {"$ref": "#/$defs/matrix6"},
+        "commutator_K_plus_P0": {"$ref": "#/$defs/matrix6"},
+        "commutator_rank": {"const": 4}
+      }
+    },
+    "public_branch_obstruction": {
+      "type": "object",
+      "required": [
+        "public_generator",
+        "public_first_projector_coefficient",
+        "public_first_coefficient",
+        "ghost_conjugate_first_coefficient",
+        "ghost_defect",
+        "ghost_defect_Laurent_support",
+        "rank_at_each_support_power",
+        "formal_consequence",
+        "Eq19_consequence",
+        "canonical_parity_split"
+      ],
+      "properties": {
+        "public_generator": {"const": "K_public=Z^-1 K_plus"},
+        "public_first_projector_coefficient": {"const": "P1=Z^-1[K_plus,P0]"},
+        "public_first_coefficient": {"$ref": "#/$defs/laurentMatrix"},
+        "ghost_conjugate_first_coefficient": {"$ref": "#/$defs/laurentMatrix"},
+        "ghost_defect": {"$ref": "#/$defs/laurentMatrix"},
+        "ghost_defect_Laurent_support": {"const": [-1, 1]},
+        "rank_at_each_support_power": {"const": {"-1": 4, "1": 4}},
+        "formal_consequence": {"type": "string", "minLength": 1},
+        "Eq19_consequence": {"type": "string", "minLength": 1},
+        "canonical_parity_split": {
+          "type": "object",
+          "required": [
+            "B1_even",
+            "C1_odd",
+            "relative_trace_definition",
+            "tau_0_B1sharp_C1",
+            "tau_0_B1sharp_B1",
+            "tau_0_C1sharp_C1",
+            "tau_0_P1sharp_P1",
+            "consequence"
+          ],
+          "properties": {
+            "B1_even": {"$ref": "#/$defs/laurentMatrix"},
+            "C1_odd": {"$ref": "#/$defs/laurentMatrix"},
+            "relative_trace_definition": {"const": "tau_0(X)=tr_species([Z^0]X)"},
+            "tau_0_B1sharp_C1": {"const": "0"},
+            "tau_0_B1sharp_B1": {"const": "7/288"},
+            "tau_0_C1sharp_C1": {"const": "-7/288"},
+            "tau_0_P1sharp_P1": {"const": "0"},
+            "consequence": {"const": "the forced ghost-odd remainder is orthogonal but not null"}
+          }
+        }
+      }
+    },
+    "stationarity": {
+      "type": "object",
+      "required": ["order_lambda", "reason", "all_orders"],
+      "properties": {
+        "order_lambda": {"const": "PROVED_ON_THE_RESONANT_FINITE_BLOCK"},
+        "reason": {"type": "string", "minLength": 1},
+        "all_orders": {"const": "NOT_PROVED_FOR_THE_PUBLIC_RT_PUSHFORWARD"}
+      }
+    },
+    "hidden_source_parity_domain": {
+      "type": "object",
+      "required": [
+        "F",
+        "formal_rule",
+        "augmentation_of_F_at_the_Fock_vacuum",
+        "formal_power_series_unit_test",
+        "consequence",
+        "localized_alternative",
+        "involution_boundary"
+      ],
+      "properties": {
+        "F": {"const": "Box(phi)+lambda*(d phi)^2"},
+        "formal_rule": {"type": "string", "minLength": 1},
+        "augmentation_of_F_at_the_Fock_vacuum": {"const": 0},
+        "formal_power_series_unit_test": {"const": "FAIL: F has no nonzero constant coefficient"},
+        "consequence": {"type": "string", "minLength": 1},
+        "localized_alternative": {"type": "string", "minLength": 1},
+        "involution_boundary": {"type": "string", "minLength": 1}
+      }
+    },
+    "minimal_two_branch_repair": {
+      "type": "object",
+      "required": [
+        "generator",
+        "generator_coefficients",
+        "first_projector_coefficient",
+        "support_minimality",
+        "exact_projector",
+        "all_order_proof",
+        "coefficient_replay_order",
+        "affiliation"
+      ],
+      "properties": {
+        "generator": {"const": "K_even=(Z^-1 K_plus+Z kappa K_plus kappa)/2"},
+        "generator_coefficients": {"$ref": "#/$defs/laurentMatrix"},
+        "first_projector_coefficient": {"$ref": "#/$defs/laurentMatrix"},
+        "support_minimality": {"type": "string", "minLength": 1},
+        "exact_projector": {"type": "string", "minLength": 1},
+        "all_order_proof": {
+          "type": "object",
+          "required": ["idempotent", "Krein_selfadjoint", "ghost_even", "charge_neutral", "stationary"]
+        },
+        "coefficient_replay_order": {"const": 8},
+        "affiliation": {"const": "NOT_SUPPLIED_BY_THE_PUBLIC_RT_MAP"}
+      }
+    },
+    "disposition": {
+      "const": {
+        "public_covariant_ghost_evenness": "OBSTRUCTED_AT_ORDER_LAMBDA",
+        "public_covariant_order_lambda_stationarity": "PROVED",
+        "Eq19_charge_formula_on_declared_covariant_public_branch": "PROVED_WITH_Q_ZERO",
+        "Eq19_ghost_even_neutral_term_on_declared_public_branch": "REFUTED",
+        "canonical_weak_ghost_remainder": "ORTHOGONAL_BUT_NON_NULL_WITH_NORM_MINUS_7_OVER_288",
+        "minimal_two_orbit_finite_repair": "CONSTRUCTED_TO_ALL_FORMAL_ORDERS",
+        "repair_source_affiliation": "OPEN",
+        "physical_probability": "NOT_ESTABLISHED"
+      }
+    },
+    "missing_object_ledger": {
+      "type": "array",
+      "minItems": 6,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "does_not_establish": {
+      "type": "array",
+      "minItems": 6,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "checks": {
+      "type": "object",
+      "required": ["total", "passed", "ok", "items"],
+      "properties": {
+        "total": {"type": "integer", "minimum": 1},
+        "passed": {"type": "integer", "minimum": 1},
+        "ok": {"const": true},
+        "items": {
+          "type": "object",
+          "minProperties": 30,
+          "additionalProperties": {"const": true}
+        }
+      }
+    },
+    "verification_commands": {
+      "type": "array",
+      "minItems": 3,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "report": {"const": "reverse_physics/reports/bt-covariant-ghost-parity-branch-obstruction.md"}
+  },
+  "$defs": {
+    "matrix6": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {
+        "type": "array",
+        "minItems": 6,
+        "maxItems": 6,
+        "items": {"type": "string"}
+      }
+    },
+    "matrix2x4": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {
+        "type": "array",
+        "minItems": 4,
+        "maxItems": 4,
+        "items": {"type": "string"}
+      }
+    },
+    "laurentMatrix": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {"$ref": "#/$defs/matrix6"}
+    }
+  }
+}
