@@ -1,0 +1,27 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/reverse-physics-bateman-quantum-stochastic-moller-dilation-DONE-2fbf9e9ae37f1db0",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work item transitioned",
+  "source": {"path": "tools/science-forge/program/events/reverse-physics-bateman-quantum-stochastic-moller-dilation-DONE-2fbf9e9ae37f1db0.json", "span": null},
+  "body": {
+    "event_kind": "WORK_ITEM_TRANSITIONED",
+    "actor": "reverse-physics",
+    "base_revision": "science-forge-ir-v0",
+    "predecessors": ["sf:program/event/reverse-physics-bateman-quantum-stochastic-moller-dilation-COMMIT-2fbf9e9ae37f1db0"],
+    "when": "2026-08-11T16:00:33Z",
+    "seq": 2,
+    "payload": {
+      "target": "sf:program/work/reverse-physics-bateman-quantum-stochastic-moller-dilation",
+      "to_state": "DONE",
+      "note": "the finite three-jump square-root jet has an independently verified strongly continuous additive-resolution unitary HP dilation whose vacuum reduction and ordered-noise sectors reproduce all certified coefficients; the fourth jump, continuum Moller/LSZ/S operator, complete probability, Eq. 19, gravity, and Lorentzian claims remain open",
+      "evidence_basis": "reverse_physics/certificates/REVERSE_PHYSICS_BT_QUANTUM_STOCHASTIC_MOLLER_DILATION_V1.json"
+    },
+    "native": {
+      "authored_by": "sfc close-out",
+      "policy": "append-only (SPEC 4.5); one content-addressed file per event; the work-item file is never rewritten — the effective state is the fold of these events over the base state."
+    }
+  },
+  "edges": [{"rel": "TRANSITIONS", "to": "sf:program/work/reverse-physics-bateman-quantum-stochastic-moller-dilation"}]
+}
