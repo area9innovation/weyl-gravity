@@ -1,0 +1,341 @@
+{
+  "Eq19_boundary": {
+    "Q_remainder_identification": "EXACTLY_REFUTED_ON_DECLARED_FIBRE",
+    "finite_mode_order_lambda_sector": "PROVED_WITH_Q1_ZERO_IN_PREDECESSOR",
+    "reason": "The pure negative-charge projection is null and has zero pullback, whereas the certified profile effect has rank two and is nonzero.",
+    "relation_to_order_lambda": "COMPATIBLE_BUT_NOT_DERIVED; THE FOURTH_PROFILE_BLOCK IS HIGHER_COMPOSITE_DATA",
+    "required_successor": "A neutral-sector higher-composite contribution or additional zero-mode/dynamical trace that produces the cross-charge term while satisfying the complete projector identity."
+  },
+  "answer": "No on the declared forced cross-Krein fibre. The invariant charge basis consists of the two null lines n_plus=(1,0) and n_minus=(1,-rho), with S^T G_missing S=rho^2 J. Transporting diag(1,-1) gives H_G=[[1,2/rho],[0,-1]], an involutive G-skew charge generator. The canonical norm-minus-two vector f2 used by both profile amplitudes decomposes as Pi_plus f2=(1/rho,0) and Pi_minus f2=(-1/rho,1). Each one-sided component is null; their mutual pairing is -1, so the full norm -2 is entirely the sum of the two cross-charge pairings. Applying these projectors to the complete two-fixture forward block gives B_plus^sharp B_plus=0 and B_minus^sharp B_minus=0, while B_plus^sharp B_minus=B_minus^sharp B_plus=K4/2 and their sum is the exact rank-two negative profile effect. Therefore the lift cannot be the one-sided negatively charged null Q remainder: that projection has zero pullback. The nonzero effect localizes in charge-zero positive/negative interference and would require a neutral-sector completion or additional dynamical trace. This is a fibre-level reduced-mode obstruction, not a construction or refutation of the all-order Eq. (19) projector identity.",
+  "assumptions": [
+    "The O(1,1) charge action on the two-dimensional complement fibre is the invariant boost action whose eigenlines are null and have charges plus and minus one.",
+    "The profile lift and its two hard evaluation idempotents are exactly those certified in the predecessor; no additional pre-trace channel terms are inserted.",
+    "Identification with the Eq. (19) Q remainder requires one-sided negative charge and null self-pullback on this declared fibre.",
+    "The calculation classifies fibre charge support only; operator domains, zero-mode dynamics, and the generalized-Born trace remain external gates."
+  ],
+  "canonical_negative_line": {
+    "f2": [
+      [
+        "0"
+      ],
+      [
+        "1"
+      ]
+    ],
+    "full_pairing": {
+      "denominator": 1,
+      "numerator": -2
+    },
+    "localization": "FULL_NEGATIVE_NORM_IS_ENTIRELY_CROSS_CHARGE",
+    "negative_component": [
+      [
+        "-4000/819"
+      ],
+      [
+        "1"
+      ]
+    ],
+    "negative_positive_pairing": {
+      "denominator": 1,
+      "numerator": -1
+    },
+    "negative_self_pairing": {
+      "denominator": 1,
+      "numerator": 0
+    },
+    "positive_component": [
+      [
+        "4000/819"
+      ],
+      [
+        "0"
+      ]
+    ],
+    "positive_negative_pairing": {
+      "denominator": 1,
+      "numerator": -1
+    },
+    "positive_self_pairing": {
+      "denominator": 1,
+      "numerator": 0
+    }
+  },
+  "certificate": "REVERSE_PHYSICS_BT_EIGHT_POINT_KREIN_CHARGE_LOCALIZATION_V1",
+  "charge_fibre": {
+    "charge_basis_gram": [
+      [
+        "0",
+        "670761/16000000"
+      ],
+      [
+        "670761/16000000",
+        "0"
+      ]
+    ],
+    "charge_basis_gram_identity": "S^T*G*S=rho^2*J",
+    "diagonal_charge_generator": [
+      [
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "-1"
+      ]
+    ],
+    "gram": [
+      [
+        "0",
+        "-819/4000"
+      ],
+      [
+        "-819/4000",
+        "-2"
+      ]
+    ],
+    "gram_invariance": "H_G^T*G+G*H_G=0",
+    "involution": "H_G^2=I",
+    "negative_projector": [
+      [
+        "0",
+        "-4000/819"
+      ],
+      [
+        "0",
+        "1"
+      ]
+    ],
+    "null_charge_basis_S": [
+      [
+        "1",
+        "1"
+      ],
+      [
+        "0",
+        "-819/4000"
+      ]
+    ],
+    "positive_projector": [
+      [
+        "1",
+        "4000/819"
+      ],
+      [
+        "0",
+        "0"
+      ]
+    ],
+    "rho": {
+      "denominator": 4000,
+      "numerator": 819
+    },
+    "transported_charge_generator": [
+      [
+        "1",
+        "8000/819"
+      ],
+      [
+        "0",
+        "-1"
+      ]
+    ],
+    "transported_charge_generator_identity": "H_G=S*diag(1,-1)*S^-1"
+  },
+  "checks": {
+    "details": {
+      "all_predecessor_certificates_pass": true,
+      "canonical_negative_line_splits_into_both_charges": true,
+      "charge_basis_is_invertible": true,
+      "charge_basis_is_null_cross": true,
+      "charge_generator_preserves_gram": true,
+      "charge_projectors_are_complementary": true,
+      "cross_charge_pairing_is_minus_one": true,
+      "cross_terms_reconstruct_full_profile_effect": true,
+      "finite_order_lambda_Q1_boundary_replayed": true,
+      "full_negative_norm_is_cross_interference": true,
+      "negative_Q_identification_is_refuted": true,
+      "negative_charge_component_is_null": true,
+      "one_sided_negative_pullback_is_zero": true,
+      "one_sided_positive_pullback_is_zero": true,
+      "positive_charge_component_is_null": true,
+      "profile_charge_components_are_eigenblocks": true,
+      "profile_forward_block_replayed": true,
+      "rho_and_gram_replayed": true,
+      "transported_charge_generator_is_involutive": true,
+      "zero_mode_charge_warning_replayed": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 20,
+    "total": 20
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "disposition": {
+    "Eq19_all_orders": "NOT_PROVED",
+    "charge_generator_on_forced_fibre": "CONSTRUCTED_EXACTLY",
+    "fourth_profile_effect_charge_support": "CROSS_CHARGE_TOTAL_ZERO",
+    "generalized_Born_trace": "NOT_CONSTRUCTED",
+    "neutral_higher_composite_operator": "NOT_CONSTRUCTED",
+    "one_sided_charge_lines": "NULL",
+    "physical_fourth_probability": "NOT_ESTABLISHED",
+    "profile_lift_equals_negative_Q_remainder": "EXACTLY_FALSE_ON_DECLARED_FIBRE"
+  },
+  "does_not_establish": [
+    "failure of the full Bateman-Turok Eq. (19)",
+    "nonexistence of a neutral higher-composite completion",
+    "nonexistence of additional zero-mode or vacuum trace terms",
+    "a charge-compatible all-order projector pushforward",
+    "a normalized fourth-event probability",
+    "a complete 2->6 probability",
+    "a spacetime Moller, LSZ, or S operator",
+    "a gravitational or BRST lift",
+    "anything LORENTZIAN-CAUSAL",
+    "literature priority"
+  ],
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "Compute the first neutral higher-composite or zero-mode projector block capable of producing the certified plus/minus cross term. It must reproduce both hard-profile amplitudes, preserve the exact charge generator and cross-CCR, reduce to Q1=0 in the certified order-lambda sector, and pass the finite-projector idempotence and generalized-Born trace tests. A purely negative-charge candidate is now excluded on this fibre before any continuum calculation.",
+  "profile_charge_decomposition": {
+    "full_forward_block": [
+      [
+        "0",
+        "0"
+      ],
+      [
+        "sqrt(6699)/16",
+        "0"
+      ],
+      [
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "sqrt(7149)/16"
+      ]
+    ],
+    "full_profile_effect": [
+      [
+        "-6699/128",
+        "0"
+      ],
+      [
+        "0",
+        "-7149/128"
+      ]
+    ],
+    "negative_charge_block": [
+      [
+        "-250*sqrt(6699)/819",
+        "0"
+      ],
+      [
+        "sqrt(6699)/16",
+        "0"
+      ],
+      [
+        "0",
+        "-250*sqrt(7149)/819"
+      ],
+      [
+        "0",
+        "sqrt(7149)/16"
+      ]
+    ],
+    "negative_positive_pullback": [
+      [
+        "-6699/256",
+        "0"
+      ],
+      [
+        "0",
+        "-7149/256"
+      ]
+    ],
+    "negative_self_pullback": [
+      [
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0"
+      ]
+    ],
+    "nonzero_effect_charge": "ZERO_FROM_PLUS_MINUS_CROSS_PAIRING",
+    "one_sided_negative_Q_pullback": "ZERO",
+    "positive_charge_block": [
+      [
+        "250*sqrt(6699)/819",
+        "0"
+      ],
+      [
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "250*sqrt(7149)/819"
+      ],
+      [
+        "0",
+        "0"
+      ]
+    ],
+    "positive_negative_pullback": [
+      [
+        "-6699/256",
+        "0"
+      ],
+      [
+        "0",
+        "-7149/256"
+      ]
+    ],
+    "positive_self_pullback": [
+      [
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0"
+      ]
+    ],
+    "reconstruction": "B_plus^sharp*B_minus+B_minus^sharp*B_plus=K4"
+  },
+  "provenance": {
+    "inputs": [
+      {
+        "path": "planning/work-items/reverse-physics-bateman-eight-point-krein-charge-localization.json",
+        "sha256": "9a5eb8fed9dde0729b51c5c6097ebbda014339e2a17532d9c3a5fe6126387709"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EIGHT_POINT_PROFILE_POSITIVITY_OBSTRUCTION_V1.json",
+        "sha256": "b95d74a42e9d0d0cca945a8cf24407dfa272edb861b1ceff8657e3f0464c800e"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_FULL_SIGNED_QUADRATIC_CLOSURE_V1.json",
+        "sha256": "5859aad65cf0dcbc1ceb9d2c3381a9a61c2d3df6457e8b77903c8a6931aa081b"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_ZERO_MODE_EQ19_TRILEMMA_V1.json",
+        "sha256": "31c5d45987bb484711912af5d51da1831f5632ef34278c755265fd190963edd6"
+      }
+    ],
+    "retrieval_date": "2026-08-12",
+    "source_commit": "f9841cb4"
+  },
+  "question": "Can the minimal fibrewise Krein lift of the negative eight-point profile effect be the purely negatively charged, trace-null Q remainder in Bateman-Turok Eq. (19)?",
+  "report": "reverse_physics/reports/bt-eight-point-krein-charge-localization.md",
+  "result_kind": "exact charge localization of the minimal eight-point profile Krein lift and scoped Eq. 19 Q-remainder obstruction",
+  "schema": "reverse_physics/schema/reverse-physics-bt-eight-point-krein-charge-localization-v1.schema.json",
+  "schema_version": "reverse-physics-bt-eight-point-krein-charge-localization-v1",
+  "verification_commands": [
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/bt_eight_point_krein_charge_localization.py --check",
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/verify_bt_eight_point_krein_charge_localization.py",
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 -m unittest -v reverse_physics.tests.test_bt_eight_point_krein_charge_localization"
+  ]
+}

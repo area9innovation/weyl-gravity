@@ -1,0 +1,37 @@
+{
+  "id": "sf:program/work/reverse-physics-bateman-eight-point-krein-charge-localization",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "reverse-physics",
+    "state": "ACTIVE",
+    "objective": "Determine whether the exact minimal Krein lift of the eight-point profile can be identified with the purely negatively charged, trace-null Q remainder in Bateman-Turok Eq. 19.",
+    "depends_on": [
+      "REVERSE_PHYSICS_BT_EIGHT_POINT_PROFILE_POSITIVITY_OBSTRUCTION_V1",
+      "REVERSE_PHYSICS_BT_FULL_SIGNED_QUADRATIC_CLOSURE_V1",
+      "REVERSE_PHYSICS_BT_ZERO_MODE_EQ19_TRILEMMA_V1"
+    ],
+    "activates": [
+      "an exact charge generator on the forced cross-Krein fibre",
+      "null positive- and negative-charge projectors",
+      "a charge decomposition of the fourth-profile forward block",
+      "a fail-closed Eq. 19 Q-remainder identification test"
+    ],
+    "current_gate": "KREIN_CHARGE_LOCALIZATION: diagonalize the invariant charge action of G_missing(rho), project the canonical negative line used by the fourth-profile lift, and determine which charge sectors generate its nonzero pullback.",
+    "stop_condition": "Land an exact certificate with an independent verifier that proves or refutes identification with the one-sided negative-charge radical, preserves the finite order-lambda Eq. 19 boundary, and does not call fibre charge algebra a full operator theorem.",
+    "forbid": "no basis-dependent charge claim without conjugating the generator; no nonzero negative norm assigned to a one-sided null charge line; no algebraic fibre result called an all-order projector pushforward, generalized-Born trace, probability, gravity/BRST lift, or LORENTZIAN-CAUSAL theorem",
+    "allowed_paths": [
+      "reverse_physics/",
+      "notes/bateman-turok-embedding.md",
+      "paper/05-interaction-obstructions.tex",
+      "paper/05-interaction-obstructions.pdf",
+      "paper/06-einstein-weyl-interaction-obstructions.tex",
+      "paper/06-einstein-weyl-interaction-obstructions.pdf",
+      "planning/work-items/reverse-physics-bateman-eight-point-krein-charge-localization.json",
+      "planning/events/"
+    ],
+    "resource_hint": "For G=[[0,-rho],[-rho,-2]], use null charge columns n_plus=(1,0) and n_minus=(1,-rho). Their matrix S gives S^T G S=rho^2 J and transports diag(1,-1) to H_G. Project f2=(0,1), then test the self- and cross-pairings of Pi_plus f2 and Pi_minus f2. Apply the same projectors to both hard-profile amplitudes.",
+    "input_commit": "f9841cb4",
+    "stream": "reverse-physics"
+  }
+}
