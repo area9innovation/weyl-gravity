@@ -1,0 +1,256 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-finite-detector-pushforward-v1.schema.json",
+  "title": "BT finite detector pushforward certificate v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "certificate",
+    "schema_version",
+    "dependency_tags",
+    "lifecycle_state",
+    "result_kind",
+    "question",
+    "answer",
+    "finite_detector_model",
+    "zero_mode_and_charge",
+    "weighted_squeeze_test",
+    "trace_ideal_obstruction",
+    "disposition",
+    "assumptions",
+    "missing_object_ledger",
+    "does_not_establish",
+    "next_gate",
+    "provenance",
+    "verification_commands",
+    "checks",
+    "report",
+    "schema"
+  ],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_FINITE_DETECTOR_PUSHFORWARD_V1"},
+    "schema_version": {"const": "reverse-physics-bt-finite-detector-pushforward-v1"},
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]
+    },
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "result_kind": {"type": "string", "minLength": 20},
+    "question": {"type": "string", "minLength": 40},
+    "answer": {"type": "string", "minLength": 200},
+    "finite_detector_model": {"$ref": "#/$defs/detectorModel"},
+    "zero_mode_and_charge": {"$ref": "#/$defs/charge"},
+    "weighted_squeeze_test": {"$ref": "#/$defs/squeeze"},
+    "trace_ideal_obstruction": {"$ref": "#/$defs/obstruction"},
+    "disposition": {"$ref": "#/$defs/disposition"},
+    "assumptions": {"type": "array", "minItems": 4, "items": {"type": "string"}},
+    "missing_object_ledger": {"type": "array", "minItems": 5, "items": {"type": "string"}},
+    "does_not_establish": {"type": "array", "minItems": 7, "items": {"type": "string"}},
+    "next_gate": {"type": "string", "minLength": 100},
+    "provenance": {"$ref": "#/$defs/provenance"},
+    "verification_commands": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {"type": "string", "pattern": "^ulimit -v 500000; "}
+    },
+    "checks": {"$ref": "#/$defs/checks"},
+    "report": {"const": "reverse_physics/reports/bt-finite-detector-pushforward.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-finite-detector-pushforward-v1.schema.json"}
+  },
+  "$defs": {
+    "rat": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      }
+    },
+    "quad": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["rational", "sqrt3"],
+      "properties": {
+        "rational": {"$ref": "#/$defs/rat"},
+        "sqrt3": {"$ref": "#/$defs/rat"}
+      }
+    },
+    "matrix": {
+      "type": "array",
+      "items": {
+        "type": "array",
+        "items": {"$ref": "#/$defs/quad"}
+      }
+    },
+    "row": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "log_cells", "daughter_norm_squared", "P1_trace",
+        "P1_trace_norm_squared", "P2_hard_block_trace",
+        "P2_soft_block_trace", "P2_total_trace", "P2_trace_norm",
+        "K_is_skew", "idempotence_order_zero", "idempotence_order_one",
+        "idempotence_order_two"
+      ],
+      "properties": {
+        "log_cells": {"type": "integer", "minimum": 1},
+        "daughter_norm_squared": {"$ref": "#/$defs/rat"},
+        "P1_trace": {"$ref": "#/$defs/quad"},
+        "P1_trace_norm_squared": {"$ref": "#/$defs/rat"},
+        "P2_hard_block_trace": {"$ref": "#/$defs/rat"},
+        "P2_soft_block_trace": {"$ref": "#/$defs/rat"},
+        "P2_total_trace": {"$ref": "#/$defs/quad"},
+        "P2_trace_norm": {"$ref": "#/$defs/rat"},
+        "K_is_skew": {"const": true},
+        "idempotence_order_zero": {"const": true},
+        "idempotence_order_one": {"const": true},
+        "idempotence_order_two": {"const": true}
+      }
+    },
+    "detectorModel": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "basis", "per_cell_amplitude", "per_cell_amplitude_squared",
+        "generator", "transport", "order_one_triangle", "order_two_box",
+        "fixture_log_cells", "fixture_generator", "fixture_P0", "fixture_P1",
+        "fixture_P2", "exact_rows", "disposition"
+      ],
+      "properties": {
+        "basis": {"type": "string"},
+        "per_cell_amplitude": {"const": "a=sqrt(3)/12"},
+        "per_cell_amplitude_squared": {"$ref": "#/$defs/rat"},
+        "generator": {"type": "string"},
+        "transport": {"type": "string"},
+        "order_one_triangle": {"type": "string"},
+        "order_two_box": {"type": "string"},
+        "fixture_log_cells": {"const": 3},
+        "fixture_generator": {"$ref": "#/$defs/matrix"},
+        "fixture_P0": {"$ref": "#/$defs/matrix"},
+        "fixture_P1": {"$ref": "#/$defs/matrix"},
+        "fixture_P2": {"$ref": "#/$defs/matrix"},
+        "exact_rows": {"type": "array", "minItems": 8, "maxItems": 8, "items": {"$ref": "#/$defs/row"}},
+        "disposition": {"const": "CONSTRUCTED_THROUGH_PROJECTOR_ORDER_LAMBDA_SQUARED_ON_EACH_FINITE_LOG_CELL_CARRIER"}
+      }
+    },
+    "charge": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "logarithmic_fixed_vacuum_generator_charge_pairs",
+        "unique_restoring_Z_exponent_pairs", "completed_generator_charge_pairs",
+        "Gram_Z_exponent", "neutral_piece", "strictly_negative_radical_piece",
+        "reason", "scope"
+      ],
+      "properties": {
+        "logarithmic_fixed_vacuum_generator_charge_pairs": {"const": [[1, -1], [-1, 1]]},
+        "unique_restoring_Z_exponent_pairs": {"const": [[-1, 1], [1, -1]]},
+        "completed_generator_charge_pairs": {"const": [[0, 0], [0, 0]]},
+        "Gram_Z_exponent": {"const": 0},
+        "neutral_piece": {"type": "string"},
+        "strictly_negative_radical_piece": {"const": "ZERO_IN_THIS_CERTIFIED_SECTOR"},
+        "reason": {"type": "string"},
+        "scope": {"type": "string"}
+      }
+    },
+    "squeeze": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "generator_source", "domain", "finite_rank_statement", "fixture_z",
+        "fixture_x_equals_z_squared", "vacuum_positive_norm_squared",
+        "one_pair_excited_positive_norm_squared", "derivation",
+        "one_cell_P1_trace_norm_squared", "one_cell_P2_trace_norm",
+        "finite_cutoff_disposition", "uniform_soft_disposition"
+      ],
+      "properties": {
+        "generator_source": {"const": "REVERSE_PHYSICS_BT_CROSS_KREIN_TRACE_LIMIT_V1"},
+        "domain": {"type": "string"},
+        "finite_rank_statement": {"type": "string"},
+        "fixture_z": {"$ref": "#/$defs/rat"},
+        "fixture_x_equals_z_squared": {"$ref": "#/$defs/rat"},
+        "vacuum_positive_norm_squared": {"$ref": "#/$defs/rat"},
+        "one_pair_excited_positive_norm_squared": {"$ref": "#/$defs/rat"},
+        "derivation": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "string"}},
+        "one_cell_P1_trace_norm_squared": {"$ref": "#/$defs/rat"},
+        "one_cell_P2_trace_norm": {"$ref": "#/$defs/rat"},
+        "finite_cutoff_disposition": {"const": "IN_SEMIFINITE_PAIRED_IDEAL"},
+        "uniform_soft_disposition": {"const": "NOT_IN_L1_IN_THE_N_TO_INFINITY_LOG_CELL_LIMIT"}
+      }
+    },
+    "obstruction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["log_cell_interpretation", "algebraic_trace", "order_one_positive_size", "order_two_positive_size", "hard_soft_cancellation", "obstruction", "what_could_remove_it", "disposition"],
+      "properties": {
+        "log_cell_interpretation": {"type": "string"},
+        "algebraic_trace": {"type": "string"},
+        "order_one_positive_size": {"const": "||P1||_1^2=4 N a^2=N/12"},
+        "order_two_positive_size": {"const": "||P2||_1=2 N a^2=N/24"},
+        "hard_soft_cancellation": {"type": "string"},
+        "obstruction": {"type": "string"},
+        "what_could_remove_it": {"type": "string"},
+        "disposition": {"const": "FIRST_EXACT_SOFT_TRACE_IDEAL_OBSTRUCTION_AFTER_FINITE_DETECTOR_CONSTRUCTION"}
+      }
+    },
+    "disposition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["finite_detector_pushforward_sector", "finite_cutoff_semifinite_ideal_membership", "sector_neutrality", "sector_negative_radical", "weighted_squeeze_finite_core_transport", "uniform_soft_trace_class_limit", "local_non_normal_thermodynamic_weight", "full_order_lambda_R_t_projector_pushforward", "Eq19", "physical_neutral_one_over_48"],
+      "properties": {
+        "finite_detector_pushforward_sector": {"const": "CONSTRUCTED"},
+        "finite_cutoff_semifinite_ideal_membership": {"const": "ESTABLISHED"},
+        "sector_neutrality": {"const": "ESTABLISHED_AFTER_ZERO_MODE_COMPLETION"},
+        "sector_negative_radical": {"const": "ZERO"},
+        "weighted_squeeze_finite_core_transport": {"const": "ESTABLISHED"},
+        "uniform_soft_trace_class_limit": {"const": "OBSTRUCTED_IN_THIS_SECTOR"},
+        "local_non_normal_thermodynamic_weight": {"const": "NOT_CONSTRUCTED"},
+        "full_order_lambda_R_t_projector_pushforward": {"const": "NOT_CONSTRUCTED"},
+        "Eq19": {"const": "NOT_REPRODUCED"},
+        "physical_neutral_one_over_48": {"const": "NOT_ESTABLISHED"}
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_commit", "retrieval_date", "inputs", "primary_source"],
+      "properties": {
+        "source_commit": {"pattern": "^[0-9a-f]{40}$"},
+        "retrieval_date": {"const": "2026-08-11"},
+        "inputs": {
+          "type": "array", "minItems": 7, "maxItems": 7,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["path", "sha256"],
+            "properties": {"path": {"type": "string"}, "sha256": {"pattern": "^[0-9a-f]{64}$"}}
+          }
+        },
+        "primary_source": {
+          "type": "object", "additionalProperties": false,
+          "required": ["source", "url", "equations", "use"],
+          "properties": {
+            "source": {"type": "string"}, "url": {"type": "string"},
+            "equations": {"type": "array", "minItems": 2, "items": {"type": "string"}},
+            "use": {"type": "string"}
+          }
+        }
+      }
+    },
+    "checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"const": 25},
+        "total": {"const": 25},
+        "failures": {"const": []},
+        "details": {
+          "type": "object", "minProperties": 25, "maxProperties": 25,
+          "additionalProperties": {"const": true}
+        }
+      }
+    }
+  }
+}

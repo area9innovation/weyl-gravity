@@ -1485,6 +1485,36 @@ dependency tags \texttt{LOCAL-ALGEBRAIC} and \texttt{REDUCED-MODE}.  It does
 not prove that the unbounded squeeze preserves the required trace ideal,
 construct a non-normal thermodynamic state, reproduce Eq.~(19), or establish
 the physical $1/48$.
+
+The available zero-mode-completed logarithmic detector sector admits a sharper
+domain test.  For $N$ orthogonal logarithmic cells, the conditional amplitude
+$a=\sqrt3/12$ defines the skew finite-carrier generator
+$Kh=a\sum_i d_i$, $Kd_i=-ah$.  The transported rank-one projection has
+\[
+ P_1=a\sum_i\bigl(|d_i\rangle\langle h|+|h\rangle\langle d_i|\bigr),
+ \qquad
+ P_2=a^2\sum_{i,j}|d_i\rangle\langle d_j|-Na^2|h\rangle\langle h|,
+\]
+and satisfies projector idempotence through order $\lambda^2$.  The unique
+orbit dressing makes this certified sector neutral, with no strictly negative
+radical.  Each finite-$N$ coefficient remains finite rank on the weighted
+squeeze core.  Nevertheless,
+\[
+ \operatorname{Tr} P_1=\operatorname{Tr} P_2=0,
+ \qquad
+ \|P_1\|_1^2=\frac{N}{12},
+ \qquad
+ \|P_2\|_1=\frac{N}{24}.
+\]
+The signed hard/soft box trace $-N/48+N/48$ cancels while its absolute trace
+weight grows.  Hence the finite detector lies in the semifinite paired ideal,
+but the logarithmic soft-cutoff limit is not uniformly trace class in this
+sector.  This exact distinction is recorded by
+\texttt{REVERSE\_PHYSICS\_BT\_FINITE\_DETECTOR\_}
+\allowbreak\texttt{PUSHFORWARD\_V1}.  It leaves open an operator-level
+cancellation from omitted pushforward sectors, a hard matching construction,
+or a local non-normal renormalized weight, and does not prove Eq.~(19) or the
+physical $1/48$.
 \end{remark}
 
 \begin{remark}[Physical ultraviolet hard-scattering law]
