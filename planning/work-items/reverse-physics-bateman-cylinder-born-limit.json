@@ -1,0 +1,19 @@
+{
+  "id": "sf:program/work/reverse-physics-bateman-cylinder-born-limit",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "reverse-physics",
+    "state": "ACTIVE",
+    "objective": "Construct the thermodynamic conditional generalized-Born functional on the inductive algebra of finitely supported BT paired detector processes, prove spectator stability, weak-ghost positivity and normalization, and determine whether the completed zero quadratic coefficient survives this directed limit.",
+    "depends_on": ["REVERSE_PHYSICS_BT_SEMIFINITE_RELATIVE_BORN_WEIGHT_V1", "REVERSE_PHYSICS_BT_CROSS_KREIN_TRACE_LIMIT_V1", "REVERSE_PHYSICS_BT_SQUEEZED_DETECTOR_SIMILARITY_V1"],
+    "activates": ["a non-normal thermodynamic conditional Born functional", "the continuum disposition of the public order-lambda quadratic coefficient", "the remaining dynamical-zero-mode and LSZ detector gates"],
+    "current_gate": "CYLINDER_BORN_LIMIT: tensor each finite local process with squeezed spectator projections of Krein trace one; prove the relative weights are independent of the spectator volume even though positive trace norm diverges.",
+    "stop_condition": "Certify a consistent positive normalized directed-limit functional on the weak-ghost process cone and transfer the exact zero quadratic trace through it, or isolate the first exact consistency failure.",
+    "forbid": "no cylinder algebra called a spacetime-local AQFT algebra; no weak-cone positivity called positivity on the full operator algebra; no scalar directed limit called the full LSZ/inclusive probability; no omission of dynamical p=0 or higher orders; no gravity, BRST, or LORENTZIAN-CAUSAL promotion",
+    "allowed_paths": ["reverse_physics/", "notes/bateman-turok-embedding.md", "paper/05-interaction-obstructions.tex", "paper/05-interaction-obstructions.pdf", "paper/06-einstein-weyl-interaction-obstructions.tex", "paper/06-einstein-weyl-interaction-obstructions.pdf", "planning/work-items/reverse-physics-bateman-cylinder-born-limit.json", "planning/events/"],
+    "resource_hint": "Use exact rational Kronecker products for the 9/25,16/25,0 weak-ghost fixture. Tensor with rank-one Krein projections of trace one and verify that Tr((A tensor P)^dagger(A tensor P)) factorizes while the imported z=1/2 positive trace norm grows as (4/3)^N. Treat the resulting functional as an algebraic cylinder limit, not a normal state.",
+    "input_commit": "a2a915b8cba86a4856f570a7be19b21fa796eecf",
+    "stream": "reverse-physics"
+  }
+}

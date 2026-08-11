@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-cylinder-born-limit-v1.schema.json",
+  "type": "object",
+  "required": ["certificate", "schema_version", "dependency_tags", "lifecycle_state", "result_kind", "question", "answer", "finite_local_process", "spectator_extension", "directed_limit", "quadratic_zero_transfer", "disposition", "does_not_establish", "next_gate", "provenance", "verification_commands", "checks", "report", "schema"],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_CYLINDER_BORN_LIMIT_V1"},
+    "schema_version": {"const": "reverse-physics-bt-cylinder-born-limit-v1"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "result_kind": {"type": "string", "minLength": 50}, "question": {"type": "string", "minLength": 120}, "answer": {"type": "string", "minLength": 700},
+    "finite_local_process": {"type": "object", "required": ["metric", "transport", "incoming_projection", "output_rows"], "properties": {"output_rows": {"type": "array", "minItems": 3, "maxItems": 3}}},
+    "spectator_extension": {"type": "object", "required": ["metric", "projection", "projection_trace", "one_spectator_rows", "identity"], "properties": {"projection_trace": {"const": {"numerator": 1, "denominator": 1}}, "one_spectator_rows": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "object", "properties": {"unchanged": {"const": true}}, "required": ["output", "base_weight", "one_spectator_weight", "unchanged"]}}}},
+    "directed_limit": {"type": "object", "required": ["volume_rows", "functional", "normalization", "positivity_domain", "traciality", "normality"], "properties": {"volume_rows": {"type": "array", "minItems": 9, "maxItems": 9}, "traciality": {"const": "NOT_TRACIAL_AS_A_CONDITIONAL_CORNER_FUNCTIONAL"}, "normality": {"const": "NO_TRACE_NORM_DENSITY_IN_THE_REFERENCE_POSITIVE_HILBERT_REPRESENTATION"}}},
+    "quadratic_zero_transfer": {"const": {"finite_support_coefficient": {"numerator": 0, "denominator": 1}, "directed_limit_coefficient": {"numerator": 0, "denominator": 1}, "reason": "the complete signed parent-raised trace vanishes pointwise before integration and spectator extension multiplies it by one", "disposition": "ZERO_ON_THE_PAIRED_CYLINDER_THERMODYNAMIC_FUNCTIONAL"}},
+    "disposition": {"const": {"thermodynamic_pair_cylinder_functional": "CONSTRUCTED", "weak_ghost_probability_cone": "POSITIVE_AND_NORMALIZED", "trace_norm_density_operator": "DOES_NOT_EXIST_ON_THE_CERTIFIED_SQUEEZE_SEQUENCE", "order_lambda_quadratic_cylinder_coefficient": "ZERO", "inclusive_LSZ_or_spacetime_local_probability": "NOT_CONSTRUCTED", "physical_full_probability": "NOT_ESTABLISHED", "Eq19_all_orders": "NOT_PROVED"}},
+    "does_not_establish": {"type": "array", "minItems": 10}, "next_gate": {"type": "string", "minLength": 250},
+    "provenance": {"type": "object", "required": ["source_commit", "retrieval_date", "inputs"], "properties": {"source_commit": {"pattern": "^[0-9a-f]{40}$"}, "retrieval_date": {"const": "2026-08-11"}, "inputs": {"type": "array", "minItems": 6, "maxItems": 6}}},
+    "verification_commands": {"type": "array", "minItems": 3, "maxItems": 3},
+    "checks": {"type": "object", "required": ["ok", "passed", "total", "failures", "details"], "properties": {"ok": {"const": true}, "passed": {"const": 21}, "total": {"const": 21}, "failures": {"const": []}, "details": {"type": "object", "minProperties": 21, "maxProperties": 21}}},
+    "report": {"const": "reverse_physics/reports/bt-cylinder-born-limit.md"}, "schema": {"const": "reverse_physics/schema/reverse-physics-bt-cylinder-born-limit-v1.schema.json"}
+  },
+  "additionalProperties": false
+}

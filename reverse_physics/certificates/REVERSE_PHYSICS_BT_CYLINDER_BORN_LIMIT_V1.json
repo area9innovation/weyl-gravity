@@ -1,0 +1,804 @@
+{
+  "answer": "Yes on the inductive cylinder algebra of processes supported on finitely many paired detector cells. Tensoring a local incoming corner and every local process with any number of squeezed spectator projections multiplies both relevant Krein traces by one. The exact weak-ghost weights 9/25, 16/25, and 0 are therefore independent of spectator volume, remain nonnegative, and sum to one, while the positive trace norm of the representing corner grows as (4/3)^N. This constructs a normalized nontracial algebraic thermodynamic conditional functional on the weak-ghost process cone without a trace-norm density operator. Since the completed signed quadratic parent trace is zero pointwise for every finite detector support, its directed cylinder coefficient is exactly zero and regulator independent on this net. This is not yet the full physical probability: finite pair-cylinder support is not a spacetime-local AQFT or inclusive LSZ detector algebra, and the dynamical p=0 module and higher composite orders remain absent.",
+  "certificate": "REVERSE_PHYSICS_BT_CYLINDER_BORN_LIMIT_V1",
+  "checks": {
+    "details": {
+      "all_directed_weights_constant": true,
+      "all_directed_weights_normalized": true,
+      "cylinder_functional_is_nontracial": true,
+      "cylinder_limit_exists_without_trace_norm_limit": true,
+      "directed_zero_is_regulator_independent_on_cylinder_net": true,
+      "dynamical_zero_mode_not_constructed": true,
+      "exact_local_weights_are_9_25_16_25_0": true,
+      "higher_orders_not_constructed": true,
+      "inclusive_LSZ_projector_not_constructed": true,
+      "input_hashes_pinned": true,
+      "local_weights_nonnegative_and_normalized": true,
+      "nine_volume_rows": true,
+      "not_spacetime_local_AQFT": true,
+      "one_spectator_factorization_exact": true,
+      "physical_full_probability_fails_closed": true,
+      "pointwise_zero_quadratic_coefficient_transfers": true,
+      "positive_trace_norm_grows_as_four_thirds_power_N": true,
+      "science_forge_event_FNV_id_reproduces": true,
+      "spectator_is_Krein_projection_of_trace_one": true,
+      "three_local_outputs": true,
+      "weak_ghost_cone_positivity_survives_limit": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 21,
+    "total": 21
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "directed_limit": {
+    "functional": "omega(T_F)=Tr_fin(P_Lambda (T_F tensor 1) P_Lambda)/Tr_fin(P_Lambda), independent of Lambda containing F",
+    "normality": "NO_TRACE_NORM_DENSITY_IN_THE_REFERENCE_POSITIVE_HILBERT_REPRESENTATION",
+    "normalization": "omega(1)=1 on every cylinder algebra",
+    "positivity_domain": "nonnegative on A^dagger A for the BT weak-ghost process cone",
+    "traciality": "NOT_TRACIAL_AS_A_CONDITIONAL_CORNER_FUNCTIONAL",
+    "volume_rows": [
+      {
+        "Krein_corner_trace": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "positive_trace_norm": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "spectator_pairs": 0,
+        "weight_sum": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "weights": [
+          {
+            "denominator": 25,
+            "numerator": 9
+          },
+          {
+            "denominator": 25,
+            "numerator": 16
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ]
+      },
+      {
+        "Krein_corner_trace": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "positive_trace_norm": {
+          "denominator": 3,
+          "numerator": 4
+        },
+        "spectator_pairs": 1,
+        "weight_sum": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "weights": [
+          {
+            "denominator": 25,
+            "numerator": 9
+          },
+          {
+            "denominator": 25,
+            "numerator": 16
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ]
+      },
+      {
+        "Krein_corner_trace": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "positive_trace_norm": {
+          "denominator": 9,
+          "numerator": 16
+        },
+        "spectator_pairs": 2,
+        "weight_sum": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "weights": [
+          {
+            "denominator": 25,
+            "numerator": 9
+          },
+          {
+            "denominator": 25,
+            "numerator": 16
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ]
+      },
+      {
+        "Krein_corner_trace": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "positive_trace_norm": {
+          "denominator": 27,
+          "numerator": 64
+        },
+        "spectator_pairs": 3,
+        "weight_sum": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "weights": [
+          {
+            "denominator": 25,
+            "numerator": 9
+          },
+          {
+            "denominator": 25,
+            "numerator": 16
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ]
+      },
+      {
+        "Krein_corner_trace": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "positive_trace_norm": {
+          "denominator": 81,
+          "numerator": 256
+        },
+        "spectator_pairs": 4,
+        "weight_sum": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "weights": [
+          {
+            "denominator": 25,
+            "numerator": 9
+          },
+          {
+            "denominator": 25,
+            "numerator": 16
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ]
+      },
+      {
+        "Krein_corner_trace": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "positive_trace_norm": {
+          "denominator": 243,
+          "numerator": 1024
+        },
+        "spectator_pairs": 5,
+        "weight_sum": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "weights": [
+          {
+            "denominator": 25,
+            "numerator": 9
+          },
+          {
+            "denominator": 25,
+            "numerator": 16
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ]
+      },
+      {
+        "Krein_corner_trace": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "positive_trace_norm": {
+          "denominator": 729,
+          "numerator": 4096
+        },
+        "spectator_pairs": 6,
+        "weight_sum": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "weights": [
+          {
+            "denominator": 25,
+            "numerator": 9
+          },
+          {
+            "denominator": 25,
+            "numerator": 16
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ]
+      },
+      {
+        "Krein_corner_trace": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "positive_trace_norm": {
+          "denominator": 2187,
+          "numerator": 16384
+        },
+        "spectator_pairs": 7,
+        "weight_sum": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "weights": [
+          {
+            "denominator": 25,
+            "numerator": 9
+          },
+          {
+            "denominator": 25,
+            "numerator": 16
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ]
+      },
+      {
+        "Krein_corner_trace": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "positive_trace_norm": {
+          "denominator": 6561,
+          "numerator": 65536
+        },
+        "spectator_pairs": 8,
+        "weight_sum": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "weights": [
+          {
+            "denominator": 25,
+            "numerator": 9
+          },
+          {
+            "denominator": 25,
+            "numerator": 16
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ]
+      }
+    ]
+  },
+  "disposition": {
+    "Eq19_all_orders": "NOT_PROVED",
+    "inclusive_LSZ_or_spacetime_local_probability": "NOT_CONSTRUCTED",
+    "order_lambda_quadratic_cylinder_coefficient": "ZERO",
+    "physical_full_probability": "NOT_ESTABLISHED",
+    "thermodynamic_pair_cylinder_functional": "CONSTRUCTED",
+    "trace_norm_density_operator": "DOES_NOT_EXIST_ON_THE_CERTIFIED_SQUEEZE_SEQUENCE",
+    "weak_ghost_probability_cone": "POSITIVE_AND_NORMALIZED"
+  },
+  "does_not_establish": [
+    "a positive state on the full operator algebra",
+    "a tracial conditional state",
+    "a spacetime-local AQFT functional",
+    "an inclusive LSZ momentum-window projector",
+    "the dynamical p=0 sector",
+    "higher nonlinear composite orders",
+    "the complete physical NLO probability",
+    "a gravitational or BRST lift",
+    "anything LORENTZIAN-CAUSAL",
+    "literature priority"
+  ],
+  "finite_local_process": {
+    "incoming_projection": [
+      [
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ]
+    ],
+    "metric": [
+      [
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": -1
+        }
+      ]
+    ],
+    "output_rows": [
+      {
+        "output": 0,
+        "process": [
+          [
+            {
+              "denominator": 5,
+              "numerator": 3
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ]
+        ],
+        "weight": {
+          "denominator": 25,
+          "numerator": 9
+        }
+      },
+      {
+        "output": 1,
+        "process": [
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 5,
+              "numerator": 4
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ]
+        ],
+        "weight": {
+          "denominator": 25,
+          "numerator": 16
+        }
+      },
+      {
+        "output": 2,
+        "process": [
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ]
+        ],
+        "weight": {
+          "denominator": 1,
+          "numerator": 0
+        }
+      }
+    ],
+    "transport": [
+      [
+        {
+          "denominator": 5,
+          "numerator": 3
+        },
+        {
+          "denominator": 5,
+          "numerator": -4
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      [
+        {
+          "denominator": 5,
+          "numerator": 4
+        },
+        {
+          "denominator": 5,
+          "numerator": 3
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        }
+      ]
+    ]
+  },
+  "lifecycle_state": "COEFFICIENT_COMPUTED",
+  "next_gate": "Prove that the physical inclusive detector projector is affiliated with a completion of this pair-cylinder net and that its scalar zero is continuous in the chosen topology, or construct the full dynamical p=0 and higher-order pushforward. The thermodynamic spectator normalization itself is no longer missing.",
+  "provenance": {
+    "inputs": [
+      {
+        "path": "planning/work-items/reverse-physics-bateman-cylinder-born-limit.json",
+        "sha256": "989864fa1862528a9dc8d9ade183095473897483392d37179da5683b4be2fad3"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_SEMIFINITE_RELATIVE_BORN_WEIGHT_V1.json",
+        "sha256": "bed18646e76f92dc8af1f0b9935d5c71f060fabd283325b26443b524395c4e9c"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_CROSS_KREIN_TRACE_LIMIT_V1.json",
+        "sha256": "e9dab0edb6ac2d611f2818c9117886516599eec8300e42d7020f641cbdc59996"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_SQUEEZED_DETECTOR_SIMILARITY_V1.json",
+        "sha256": "3e8b5c7947b51c18f0ab366c5cba9c0947e6cba7a6e0bbd17a312fef26b4f23a"
+      },
+      {
+        "path": "notes/bateman-turok-embedding.md",
+        "sha256": "d9295ae40f3dc74046616c8d13a92214144699734245565a3d76019413db1acc"
+      },
+      {
+        "path": "planning/events/reverse-physics-bateman-cylinder-born-limit-DONE-84130d3ebf4c49d6.json",
+        "sha256": "ef9042292ef84fcd6d48efd60befbac61faef500b5095e27cc7fd0365356ade2"
+      }
+    ],
+    "retrieval_date": "2026-08-11",
+    "source_commit": "a2a915b8cba86a4856f570a7be19b21fa796eecf"
+  },
+  "quadratic_zero_transfer": {
+    "directed_limit_coefficient": {
+      "denominator": 1,
+      "numerator": 0
+    },
+    "disposition": "ZERO_ON_THE_PAIRED_CYLINDER_THERMODYNAMIC_FUNCTIONAL",
+    "finite_support_coefficient": {
+      "denominator": 1,
+      "numerator": 0
+    },
+    "reason": "the complete signed parent-raised trace vanishes pointwise before integration and spectator extension multiplies it by one"
+  },
+  "question": "Can finite-volume squeezed conditional Born weights have a consistent thermodynamic limit even though their representing Krein projectors have exponentially divergent positive trace norm, and does the completed zero quadratic coefficient survive?",
+  "report": "reverse_physics/reports/bt-cylinder-born-limit.md",
+  "result_kind": "thermodynamic cylinder functional for finite paired BT detector processes",
+  "schema": "reverse_physics/schema/reverse-physics-bt-cylinder-born-limit-v1.schema.json",
+  "schema_version": "reverse-physics-bt-cylinder-born-limit-v1",
+  "spectator_extension": {
+    "identity": "Tr((A tensor P)^dagger(A tensor P))=Tr(A^dagger A) Tr(P)=Tr(A^dagger A)",
+    "metric": [
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ]
+    ],
+    "one_spectator_rows": [
+      {
+        "base_weight": {
+          "denominator": 25,
+          "numerator": 9
+        },
+        "one_spectator_weight": {
+          "denominator": 25,
+          "numerator": 9
+        },
+        "output": 0,
+        "unchanged": true
+      },
+      {
+        "base_weight": {
+          "denominator": 25,
+          "numerator": 16
+        },
+        "one_spectator_weight": {
+          "denominator": 25,
+          "numerator": 16
+        },
+        "output": 1,
+        "unchanged": true
+      },
+      {
+        "base_weight": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "one_spectator_weight": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "output": 2,
+        "unchanged": true
+      }
+    ],
+    "projection": [
+      [
+        {
+          "denominator": 3,
+          "numerator": 1
+        },
+        {
+          "denominator": 3,
+          "numerator": 1
+        },
+        {
+          "denominator": 3,
+          "numerator": 1
+        }
+      ],
+      [
+        {
+          "denominator": 3,
+          "numerator": 1
+        },
+        {
+          "denominator": 3,
+          "numerator": 1
+        },
+        {
+          "denominator": 3,
+          "numerator": 1
+        }
+      ],
+      [
+        {
+          "denominator": 3,
+          "numerator": 1
+        },
+        {
+          "denominator": 3,
+          "numerator": 1
+        },
+        {
+          "denominator": 3,
+          "numerator": 1
+        }
+      ]
+    ],
+    "projection_trace": {
+      "denominator": 1,
+      "numerator": 1
+    }
+  },
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_cylinder_born_limit.py --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_cylinder_born_limit.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_cylinder_born_limit"
+  ]
+}
