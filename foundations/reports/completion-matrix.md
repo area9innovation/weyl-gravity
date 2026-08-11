@@ -5,6 +5,8 @@
 
 **Completion result:** `FOUNDATIONAL_RANKED_OPPORTUNITY_COMPLETION_MATRIX_V1`
 
+**Cube result:** `FOUNDATIONAL_INTERSECTION_CUBE_V0`
+
 **Lifecycle:** `SEPARATED`
 
 **Dependencies:** `LOCAL-ALGEBRAIC`, `REDUCED-MODE`, `LORENTZIAN-CAUSAL`
@@ -14,12 +16,185 @@
 | Layer | Size | Meaning |
 |---|---:|---|
 | Assumption coverage | 16 programmes × 6 axes = **96 cells** | Six independent assumption/claim axes |
+| Intersection cube | 6 mathematical regimes × 6 carriers × 6 physical obligations = **216 cells** | Simplified three-dimensional overview rendered as six slices |
 | Opportunity closure | **9 rows**, **8 certificates** | Ranked first artifacts, evidence, status, and open gates |
 | Literature corpus | **25 records** | Imported proposition plus transfer boundary |
 
 Coverage-cell distribution: 51 **direct**, 20 **partial**, 9 **adjacent**, 11 **not addressed**, 5 **not yet classified**.
 
 Literature provenance: 19 `CONTENT_PINNED`, 2 `GIT_BLOB_PINNED`, 4 `METADATA_ONLY`; source kinds: 1 `AUTHORITATIVE_MONOGRAPH`, 2 `LOCAL_CERTIFIED_REPORT`, 22 `PRIMARY_RESEARCH`.
+
+## Simplified three-dimensional overview
+
+The detailed 16-by-6 table below asks six separate questions about each research programme. That is useful for auditing, but difficult to hold in one's head. This cube compresses those questions into three practical dimensions:
+
+1. **Mathematical regime:** what rules of logic, existence, Choice, and infinity are allowed?
+2. **Carrier/analysis:** what kind of mathematical object carries the theory?
+3. **Physical obligation:** what job must that framework actually perform?
+
+The 6 x 6 x 6 cube is a navigation grid, not a claim that all 216 combinations are coherent, equally important, or mutually exclusive. A cell records the strongest evidence found for that intersection; it never means the entire cell is solved.
+
+### The keys on each dimension
+
+| Dimension | Question | Six keys |
+|---|---|---|
+| Mathematical regime | Under which rules may the mathematics reason and assert that objects exist? | **Classical standard**; **Weak formal base**; **ZF with weakened Choice**; **Constructive/computable**; **Topos/internal**; **Finite/discrete restriction** |
+| Carrier/analysis | What mathematical object carries states, observables, fields, and evolution? | **Finite exact algebra**; **Hilbert/operator**; **Krein/indefinite**; **Algebraic C*-system**; **Smooth/PDE/distributional**; **Localic/synthetic/internal** |
+| Physical obligation | Which physical or theorem-level job must the framework actually perform? | **Kinematics/observables**; **States/probability**; **Dynamics/propagation**; **Gauge/BV/cohomology**; **Interactions/renormalization/QME**; **Reconstruction/limits** |
+
+The grouped keys mean:
+
+| Dimension | Key | Included ideas |
+|---|---|---|
+| Mathematical regime | **Classical standard** | Classical logic with ordinary ZFC-style analysis as the reference regime. Includes: ordinary classical proofs; standard completed real/complex analysis; unrestricted background Choice when not audited. |
+| Mathematical regime | **Weak formal base** | Explicit weak arithmetic or second-order systems used to calibrate proof strength. Includes: PRA; RCA_0; WKL_0; ACA_0; stronger comprehension when required. |
+| Mathematical regime | **ZF with weakened Choice** | Classical set theory in which full Choice or Countable Choice is absent or isolated. Includes: ZF; ZF + DC; no Countable Choice; ultrafilter/Boolean-prime-ideal fragments. |
+| Mathematical regime | **Constructive/computable** | Existence requires constructive or computational content rather than classical existence alone. Includes: Bishop constructivism; computable analysis; Weihrauch analysis; constructive reformulations. |
+| Mathematical regime | **Topos/internal** | Objects and truth are interpreted internally in a selected topos, often with intuitionistic logic. Includes: Heyting logic; locales; internal algebraic quantum theory; synthetic differential geometry. |
+| Mathematical regime | **Finite/discrete restriction** | A finite carrier, finite truncation, or finitist proposal replaces or regulates an infinite structure. Includes: finite fields; finite modes; finite-dimensional systems; potential-infinity/finitist proposals. Warning: A finite regulator, finite carrier, and foundational rejection of actual infinity are distinct and must not be conflated. |
+| Carrier/analysis | **Finite exact algebra** | Finite matrices, rational/integer complexes, or explicitly finite-dimensional algebraic data. |
+| Carrier/analysis | **Hilbert/operator** | Positive Hilbert spaces, operator domains, spectral data, and their completions. |
+| Carrier/analysis | **Krein/indefinite** | Indefinite inner products, fundamental symmetries, and positive companion topologies. |
+| Carrier/analysis | **Algebraic C*-system** | Observable algebras, states, GNS representations, nets, and algebra-first formulations. |
+| Carrier/analysis | **Smooth/PDE/distributional** | Manifolds, bundles, sections, Sobolev or distribution spaces, differential operators, and Green theory. |
+| Carrier/analysis | **Localic/synthetic/internal** | Locales, internal algebra objects, formal manifolds, and synthetic smooth structures. |
+| Physical obligation | **Kinematics/observables** | Define degrees of freedom, observables, commutation/phase-space structure, and allowed configurations. |
+| Physical obligation | **States/probability** | Construct states, representations, positivity, normalization, Born probabilities, or physical selection rules. |
+| Physical obligation | **Dynamics/propagation** | Supply evolution, spectra, operator domains, equations of motion, causal propagation, or Green operators. |
+| Physical obligation | **Gauge/BV/cohomology** | Handle gauge symmetry, BRST/BV complexes, residual cohomology, pairings, and gauge independence. |
+| Physical obligation | **Interactions/renormalization/QME** | Construct interacting products, classify counterterms/anomalies, renormalize, and restore the quantum master equation. |
+| Physical obligation | **Reconstruction/limits** | Derive the formalism from physical postulates or prove comparison, continuum-limit, empirical, or interpretation theorems. |
+
+### What a cube cell says
+
+| Cell text | Meaning |
+|---|---|
+| **Local result** | A bounded repository result or dependency audit occupies this intersection. The surrounding cell remains broader than the result. |
+| **Literature result** | A reviewed source directly treats this intersection within its declared scope, but it has not been transferred to the Weyl programme. |
+| **Pieces only** | Relevant ingredients exist on two or three axes, but the reviewed work does not compose them into one result. |
+| **Priority gap** | The intersection is meaningful and important to this programme, but no adequate result is present in the reviewed corpus or repository. |
+| **Not mapped** | This pass has not assessed the intersection; it is not a claim that the combination is impossible or uninteresting. |
+
+A result label marks the strongest bounded evidence currently attached to that coordinate. It never means that every problem in the cell is solved. Conversely, **Not mapped** means 'not assessed by this pass,' while **Priority gap** means 'assessed, meaningful, and presently missing.'
+
+### Coverage at a glance
+
+| Cube classification | Cells | Share of all 216 cells |
+|---|---:|---:|
+| Local result | 14 | 6.5% |
+| Literature result | 13 | 6.0% |
+| Pieces only | 8 | 3.7% |
+| Priority gap | 21 | 9.7% |
+| Not mapped | 160 | 74.1% |
+
+Only **56 of 216 cells (25.9%)** have been deliberately assessed. This is the clearest overview result: the present programme has several sharp local islands, but most of the Cartesian product is still uncharted.
+
+Coverage by mathematical regime:
+
+| Mathematical regime | Local results | Literature results | Pieces only | Priority gaps | Not mapped |
+|---|---:|---:|---:|---:|---:|
+| Classical standard | 3 | 4 | 3 | 1 | 25 |
+| Weak formal base | 3 | 0 | 1 | 3 | 29 |
+| ZF with weakened Choice | 4 | 1 | 0 | 5 | 26 |
+| Constructive/computable | 0 | 3 | 3 | 3 | 27 |
+| Topos/internal | 0 | 2 | 1 | 6 | 27 |
+| Finite/discrete restriction | 4 | 3 | 0 | 3 | 26 |
+
+### The six cube slices
+
+Each slice fixes one mathematical regime. Rows choose the carrier; columns choose the physical obligation. The table prints full status words rather than color or unexplained symbols.
+
+#### Classical standard
+
+Classical logic with ordinary ZFC-style analysis as the reference regime.
+
+| Carrier ↓ / obligation → | Kinematics/observables | States/probability | Dynamics/propagation | Gauge/BV/cohomology | Interactions/renormalization/QME | Reconstruction/limits |
+|---|:---:|:---:|:---:|:---:|:---:|:---:|
+| **Finite exact algebra** | Not mapped | Not mapped | Not mapped | Local result | Not mapped | Not mapped |
+| **Hilbert/operator** | Literature result | Literature result | Local result | Not mapped | Not mapped | Not mapped |
+| **Krein/indefinite** | Literature result | Pieces only | Not mapped | Not mapped | Not mapped | Not mapped |
+| **Algebraic C*-system** | Literature result | Pieces only | Not mapped | Not mapped | Not mapped | Not mapped |
+| **Smooth/PDE/distributional** | Not mapped | Not mapped | Local result | Pieces only | Priority gap | Not mapped |
+| **Localic/synthetic/internal** | Not mapped | Not mapped | Not mapped | Not mapped | Not mapped | Not mapped |
+
+#### Weak formal base
+
+Explicit weak arithmetic or second-order systems used to calibrate proof strength.
+
+| Carrier ↓ / obligation → | Kinematics/observables | States/probability | Dynamics/propagation | Gauge/BV/cohomology | Interactions/renormalization/QME | Reconstruction/limits |
+|---|:---:|:---:|:---:|:---:|:---:|:---:|
+| **Finite exact algebra** | Not mapped | Not mapped | Not mapped | Local result | Not mapped | Local result |
+| **Hilbert/operator** | Pieces only | Not mapped | Not mapped | Not mapped | Not mapped | Not mapped |
+| **Krein/indefinite** | Local result | Not mapped | Not mapped | Not mapped | Not mapped | Not mapped |
+| **Algebraic C*-system** | Not mapped | Not mapped | Not mapped | Not mapped | Not mapped | Not mapped |
+| **Smooth/PDE/distributional** | Not mapped | Not mapped | Priority gap | Priority gap | Priority gap | Not mapped |
+| **Localic/synthetic/internal** | Not mapped | Not mapped | Not mapped | Not mapped | Not mapped | Not mapped |
+
+#### ZF with weakened Choice
+
+Classical set theory in which full Choice or Countable Choice is absent or isolated.
+
+| Carrier ↓ / obligation → | Kinematics/observables | States/probability | Dynamics/propagation | Gauge/BV/cohomology | Interactions/renormalization/QME | Reconstruction/limits |
+|---|:---:|:---:|:---:|:---:|:---:|:---:|
+| **Finite exact algebra** | Not mapped | Not mapped | Not mapped | Not mapped | Not mapped | Not mapped |
+| **Hilbert/operator** | Literature result | Not mapped | Local result | Not mapped | Not mapped | Not mapped |
+| **Krein/indefinite** | Local result | Priority gap | Not mapped | Not mapped | Not mapped | Not mapped |
+| **Algebraic C*-system** | Local result | Local result | Priority gap | Not mapped | Not mapped | Not mapped |
+| **Smooth/PDE/distributional** | Not mapped | Not mapped | Priority gap | Priority gap | Priority gap | Not mapped |
+| **Localic/synthetic/internal** | Not mapped | Not mapped | Not mapped | Not mapped | Not mapped | Not mapped |
+
+#### Constructive/computable
+
+Existence requires constructive or computational content rather than classical existence alone.
+
+| Carrier ↓ / obligation → | Kinematics/observables | States/probability | Dynamics/propagation | Gauge/BV/cohomology | Interactions/renormalization/QME | Reconstruction/limits |
+|---|:---:|:---:|:---:|:---:|:---:|:---:|
+| **Finite exact algebra** | Not mapped | Not mapped | Not mapped | Pieces only | Not mapped | Not mapped |
+| **Hilbert/operator** | Literature result | Literature result | Not mapped | Not mapped | Not mapped | Pieces only |
+| **Krein/indefinite** | Not mapped | Not mapped | Not mapped | Not mapped | Not mapped | Not mapped |
+| **Algebraic C*-system** | Literature result | Pieces only | Not mapped | Not mapped | Not mapped | Not mapped |
+| **Smooth/PDE/distributional** | Not mapped | Not mapped | Priority gap | Priority gap | Priority gap | Not mapped |
+| **Localic/synthetic/internal** | Not mapped | Not mapped | Not mapped | Not mapped | Not mapped | Not mapped |
+
+#### Topos/internal
+
+Objects and truth are interpreted internally in a selected topos, often with intuitionistic logic.
+
+| Carrier ↓ / obligation → | Kinematics/observables | States/probability | Dynamics/propagation | Gauge/BV/cohomology | Interactions/renormalization/QME | Reconstruction/limits |
+|---|:---:|:---:|:---:|:---:|:---:|:---:|
+| **Finite exact algebra** | Not mapped | Not mapped | Not mapped | Not mapped | Not mapped | Not mapped |
+| **Hilbert/operator** | Not mapped | Not mapped | Not mapped | Not mapped | Not mapped | Not mapped |
+| **Krein/indefinite** | Not mapped | Not mapped | Not mapped | Not mapped | Not mapped | Not mapped |
+| **Algebraic C*-system** | Not mapped | Not mapped | Not mapped | Not mapped | Not mapped | Not mapped |
+| **Smooth/PDE/distributional** | Not mapped | Not mapped | Literature result | Priority gap | Priority gap | Not mapped |
+| **Localic/synthetic/internal** | Literature result | Pieces only | Priority gap | Priority gap | Priority gap | Priority gap |
+
+#### Finite/discrete restriction
+
+A finite carrier, finite truncation, or finitist proposal replaces or regulates an infinite structure.
+
+| Carrier ↓ / obligation → | Kinematics/observables | States/probability | Dynamics/propagation | Gauge/BV/cohomology | Interactions/renormalization/QME | Reconstruction/limits |
+|---|:---:|:---:|:---:|:---:|:---:|:---:|
+| **Finite exact algebra** | Literature result | Literature result | Priority gap | Local result | Priority gap | Local result |
+| **Hilbert/operator** | Literature result | Not mapped | Not mapped | Not mapped | Not mapped | Local result |
+| **Krein/indefinite** | Local result | Not mapped | Not mapped | Not mapped | Not mapped | Not mapped |
+| **Algebraic C*-system** | Not mapped | Not mapped | Not mapped | Not mapped | Not mapped | Not mapped |
+| **Smooth/PDE/distributional** | Not mapped | Not mapped | Not mapped | Not mapped | Not mapped | Priority gap |
+| **Localic/synthetic/internal** | Not mapped | Not mapped | Not mapped | Not mapped | Not mapped | Not mapped |
+
+### The five missing faces to investigate thoroughly
+
+These are groups of related cube cells, not single projects. They show where multiple missing intersections share the same underlying machinery.
+
+| Missing face | Mathematical regimes | Carriers | Physical obligations | Why it matters |
+|---|---|---|---|---|
+| **Weak foundations x continuum analysis** | Weak formal base, ZF with weakened Choice | Smooth/PDE/distributional | Dynamics/propagation, Gauge/BV/cohomology, Interactions/renormalization/QME | This face contains Green existence, distribution theory, continuum BV, microlocal renormalization, and QME strength. It is the largest foundational blind spot with direct physical leverage. |
+| **Nonstandard carriers x physical probability** | ZF with weakened Choice, Constructive/computable, Topos/internal | Krein/indefinite, Algebraic C*-system, Localic/synthetic/internal | States/probability | Carrier existence, positivity, GNS, internal valuations, and physical state selection are repeatedly conflated; the cube shows where only pieces exist. |
+| **Constructive/internal mathematics x gauge quantum field theory** | Constructive/computable, Topos/internal | Smooth/PDE/distributional, Localic/synthetic/internal | Gauge/BV/cohomology, Interactions/renormalization/QME | Constructive QM, localic spectra, and synthetic GR exist separately, while BV, distributions, anomalies, renormalization, and QME at their intersection are missing. |
+| **Finite/discrete x continuum comparison** | Finite/discrete restriction | Finite exact algebra, Hilbert/operator, Smooth/PDE/distributional | Dynamics/propagation, Reconstruction/limits | Finite kinematics and exact cutoffs exist, but controlled comparison maps, error bounds, and continuum dynamics do not. |
+| **Physical postulates x foundational reversals** | Weak formal base, ZF with weakened Choice, Constructive/computable, Topos/internal | Finite exact algebra, Hilbert/operator, Algebraic C*-system | Reconstruction/limits | A physical-looking axiom has not yet been encoded over a common base and reversed to a mathematical existence principle. |
+
+The most important structural absence is the **constructive/internal gauge-QFT face**: constructive Hilbert results, localic spectra, and synthetic classical gravity exist, but their intersection with BV cohomology, causal distributions, anomalies, renormalization, and the QME is almost entirely a priority gap. The most approachable high-leverage face is **nonstandard carriers × physical probability**, because explicit Krein and separable C*-objects already exist while state selection remains sharply isolated.
 
 ## Assumption coverage: 16 × 6
 

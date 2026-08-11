@@ -148,14 +148,25 @@ python3 foundations/verify_ranked_opportunity_completion.py
 python3 -m unittest foundations.tests.test_ranked_opportunity_completion
 ```
 
-A generated, source-by-source Markdown projection combines the 16-by-6
-coverage atlas, nine completion rows, and all 25 literature points in
+A generated Markdown projection combines a 6-by-6-by-6 intersection cube,
+the detailed 16-by-6 coverage atlas, nine completion rows, and all 25
+literature points in
 [`completion-matrix.md`](reports/completion-matrix.md):
 
 ```bash
 python3 foundations/render_completion_matrix_md.py
 python3 foundations/render_completion_matrix_md.py --check
 python3 -m unittest foundations.tests.test_render_completion_matrix_md
+```
+
+The cube is independently checkable. It uses mathematical regime,
+carrier/analysis, and physical obligation as its three dimensions, and renders
+all six foundation slices with explicit unmapped-versus-priority-gap status:
+
+```bash
+python3 foundations/check_intersection_cube.py
+python3 foundations/verify_intersection_cube.py
+python3 -m unittest foundations.tests.test_intersection_cube
 ```
 
 ## Lifecycle

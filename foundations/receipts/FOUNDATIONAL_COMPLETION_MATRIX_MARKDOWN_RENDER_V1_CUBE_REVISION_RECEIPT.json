@@ -1,0 +1,31 @@
+{
+  "receipt_id":"FOUNDATIONAL_COMPLETION_MATRIX_MARKDOWN_RENDER_V1_CUBE_REVISION_RECEIPT",
+  "schema_version":"foundational-tier-receipt-v0",
+  "created":"2026-08-11",
+  "result_id":"FOUNDATIONAL_COMPLETION_MATRIX_MARKDOWN_RENDER_V1",
+  "dependency_tags":["LOCAL-ALGEBRAIC","REDUCED-MODE","LORENTZIAN-CAUSAL"],
+  "base_commit":"802cba1fc71960a53c6940eebc29841394a4112b",
+  "supersedes_presentation_receipt":"FOUNDATIONAL_COMPLETION_MATRIX_MARKDOWN_RENDER_V1_LEGEND_REVISION_RECEIPT",
+  "reason":"Add the independently checked three-dimensional overview, six slice tables, coverage counts, and five grouped missing faces to the generated completion report.",
+  "tiers":{
+    "tier_0":{"status":"PASS","command":"parse structured data and Python; git diff --check -- foundations"},
+    "tier_1_render":{"status":"PASS","command":"python3 foundations/render_completion_matrix_md.py --check","result":"332 lines, 6111 words, 44581 bytes; sha256 d3442d5bf27131ce7fe16e4c550c0e216d5175bcbca5d711f941458e4b632177"},
+    "tier_1_verifier":{"status":"PASS","command":"python3 foundations/verify_completion_matrix_markdown.py","result":"five pinned inputs, deterministic render, 96 detailed cells, 216 cube cells, 9 completions, 25 sources, legends, boundaries, and report tokens pass"},
+    "tier_1_suite":{"status":"PASS","elapsed_seconds":"0.43","command":"python3 -m unittest discover -s foundations/tests -t .","result":"154/154 tests pass"},
+    "tier_1_schema":{"status":"PASS","command":"Draft202012Validator.check_schema and validate"},
+    "tier_2":{"status":"NOT_RUN","criterion":"The renderer consumes unchanged mathematical and literature inputs plus the new navigation cube; it changes no theorem input."},
+    "tier_3":{"status":"NOT_RUN","criterion":"No freeze, release, theorem promotion, shared algebra change, or Lorentzian lifecycle promotion."}
+  },
+  "auxiliary_rails":[{"name":"science_forge_work_drafts","status":"NOT_RERUN","reason":"Known Tango sanitize_thread build failure; no pass inferred."}],
+  "content_hashes":{
+    "foundations/render_completion_matrix_md.py":"61ffe94aa5b33eb634991159c6d9a4dc0eca148aabf1b9c864f5e4f54d48828a",
+    "foundations/reports/completion-matrix.md":"d3442d5bf27131ce7fe16e4c550c0e216d5175bcbca5d711f941458e4b632177",
+    "foundations/results/FOUNDATIONAL_COMPLETION_MATRIX_MARKDOWN_RENDER_V1.json":"b6131e7fcb2d228da5fa6f622e30cdb5d18c9d10a751323c47bf7f0fc1bd322b",
+    "foundations/schema/foundational-completion-matrix-markdown-render-v1.schema.json":"066d4a98a90adee2ede971bde872081fefbf06e6380da43cdbf2ad822a89494a",
+    "foundations/tests/test_render_completion_matrix_md.py":"0400982fe26837717c23f8801a96ac639c8131e13e5446f336e6c2e7a8d591bf",
+    "foundations/tests/test_completion_matrix_markdown_certificate.py":"af47d404ce3efe6275f8a050a53c66176040bc358c19e623482e4b5e908723a1",
+    "foundations/verify_completion_matrix_markdown.py":"2af788dd735d3611a6e729b2cd648ce75805ee93c001045548c0d0d8c2e33633"
+  },
+  "scope_receipt":{"changed_scope":"generated foundations completion-matrix presentation only"},
+  "claim_boundary":"The cube render exposes grouped coverage and missing intersections without promoting any cell to a complete programme, claiming that all 216 cells are coherent, or inferring literature absence from an unmapped cell."
+}

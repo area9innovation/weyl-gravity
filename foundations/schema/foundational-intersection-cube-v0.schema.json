@@ -1,0 +1,18 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "type":"object",
+  "required":["schema_version","result_id","result_kind","lifecycle","dependency_tags","repository_base_commit","purpose","cartesian_product_warning","axes","cell_statuses","cells","missing_faces","provenance","independent_checker","claim_flags","does_not_establish","human_report"],
+  "properties":{
+    "schema_version":{"const":"foundational-intersection-cube-v0"},
+    "result_id":{"const":"FOUNDATIONAL_INTERSECTION_CUBE_V0"},
+    "lifecycle":{"const":"LITERATURE_SCOPED"},
+    "dependency_tags":{"const":["LOCAL-ALGEBRAIC","REDUCED-MODE","LORENTZIAN-CAUSAL"]},
+    "axes":{"type":"array","minItems":3,"maxItems":3,"items":{"type":"object","required":["id","question","keys"],"properties":{"keys":{"type":"array","minItems":6,"maxItems":6}}}},
+    "cell_statuses":{"type":"array","minItems":5,"maxItems":5},
+    "cells":{"type":"array","minItems":56,"maxItems":56},
+    "missing_faces":{"type":"array","minItems":5,"maxItems":5},
+    "provenance":{"type":"object","required":["inputs"]},
+    "does_not_establish":{"type":"array","minItems":8},
+    "human_report":{"const":"foundations/reports/completion-matrix.md"}
+  }
+}

@@ -16,6 +16,7 @@ class CompletionMatrixMarkdownTests(unittest.TestCase):
     def test_dimensions_are_visible(self):
         text = render()
         self.assertIn("16 programmes × 6 axes = **96 cells**", text)
+        self.assertIn("6 mathematical regimes × 6 carriers × 6 physical obligations = **216 cells**", text)
         self.assertIn("**9 rows**, **8 certificates**", text)
         self.assertIn("**25 records**", text)
 
@@ -37,6 +38,14 @@ class CompletionMatrixMarkdownTests(unittest.TestCase):
         text = render()
         self.assertIn("The status terms have deliberately narrow meanings", text)
         self.assertIn("The **Pin** column reports provenance, not scientific quality", text)
+
+    def test_cube_overview_and_missing_faces_are_visible(self):
+        text = render()
+        self.assertIn("Only **56 of 216 cells (25.9%)**", text)
+        self.assertIn("The six cube slices", text)
+        self.assertIn("The five missing faces to investigate thoroughly", text)
+        self.assertIn("constructive/internal gauge-QFT face", text)
+        self.assertIn("nonstandard carriers × physical probability", text)
 
     def test_all_opportunities_are_present(self):
         text = render()
