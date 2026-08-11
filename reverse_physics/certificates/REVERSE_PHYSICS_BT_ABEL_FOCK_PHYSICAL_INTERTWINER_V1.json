@@ -1,0 +1,315 @@
+{
+  "abel_physical_range_intertwiner": {
+    "abel_density": "p_s(y)=sech(y-s)^2/2",
+    "adjoint": "(A^sharp psi)_i(s)=integral dy sqrt(p_s(y))*E_y^sharp*psi_i(s,y)",
+    "direction_requested": "J_phys_to_HP=A^sharp restricted to Ran(A), followed by the canonical embedding into edge marks 0,1,2 and the correlated level-one system child",
+    "hp_correlated_one_particle_carrier": "H_HP,1^phys=L2(R_+,ds) tensor C3_pair tensor C2_species, canonically embedded in K_system tensor Fock^(1)(L2(R_+) tensor C75_edge)",
+    "identities": [
+      "A^sharp A=I",
+      "A A^sharp=P_Ran(A)",
+      "A^sharp is a coisometry from Ran(A) onto H_HP,1^phys"
+    ],
+    "interval_image": "A[1_I(s)e_i tensor h]=1_I(s)sqrt(p_s(y))E_y h; this is the Abel purified shell with the complete normalized physical collinear shape attached",
+    "isometry": "(A f)_i(s,y)=sqrt(p_s(y))*E_y*f_i(s)",
+    "physical_abel_carrier": "K_Ab^phys=integral_(s in R_+, y in R)^direct_sum direct_sum_(i=1)^3 Ran(E_y) ds dy, using the daughter-exchange continuation away from the measure-zero equal-mass point"
+  },
+  "answer": "Exactly at first emission, after making two necessary distinctions. The raw fixed-regulator columns V_r cannot be carried into one another by an isometric resolution translation because V_r^sharp V_r=I(r)I2 and I(r) is nonconstant: I(1/16)-I(1/4)=11 log(2)/80-57/2048>419/10240. The canonical repair is visible rather than fitted. For R=-log r, normalize the positive physical range by E_R=V_r/sqrt(I(r)), so E_R^sharp E_R=I2, and transport ranges by C_b(R)=E_(R+b)E_R^sharp. These partial unitaries obey the exact cocycle law on the two-dimensional physical ranges. Let p_s(y)=sech(y-s)^2/2. On H_HP,1^phys=L2(ds) tensor C3_pair tensor C2_species define (A f)_i(s,y)=sqrt(p_s(y)) E_y f_i(s) in the Abel direct integral of the normalized physical ranges. Since integral p_s(y)dy=1, A^sharp A=I and A^sharp is a coisometry on Ran(A). Joint Abel translation, supplemented by the canonical polar transport E_y E_(y-b)^sharp, satisfies T_b A=A S_b exactly. For a resolution interval of length a, multiplying by sqrt(q0), q0=1/48, gives norm a/48 per pair and a/16 across three pairs, with hard HP drift 1/32. This is the full pointwise physical collinear shape and rank-two species carried into the first stochastic jump, not merely its scalar probability. The correctly typed target is the correlated system--noise sector: one pinned noise mark per pair has rank at most one if used alone, whereas the physical Gram has rank two; the unchanged system species supplies the missing factor and gives dimension 3 times 2. Thus a channel-faithful noise-only isometry is exactly obstructed, while the system--Fock intertwiner passes. Only HP edge marks 0,1,2 have a certified physical collinear direct-integral range. The remaining 72 marks have amplitude-affiliated finite quotient fibres but no certified measurable continuum columns or common nested LSZ domain, so a full 75-mark physical operator intertwiner is not constructed. This advances the physical route but is not a spacetime Moller/LSZ/S operator, complete probability, fourth jump, all-order Hamiltonian, or Eq. (19).",
+  "assumptions": [
+    "The direct-integral column V_r, its cross-Krein adjoint, exact threshold Gram I(r), and common real five-to-four-point phase are imported only on the certified physical external-mass jet cylinder.",
+    "The extension across daughter ordering uses identical-field exchange and the displayed exact r to 1/r scaling identities; the equal-mass point where I(1)=0 is ignored only as a measure-zero null fibre, and the Abel coordinate s is restricted to the positive half-line relative to a finite resolution origin.",
+    "The r-dependent polar normalization is part of the construction and is never identified with the raw physical amplitude normalization; the scalar one-over-48 intensity is imported independently from the relative generalized-Born certificate.",
+    "Translation covariance refers to the auxiliary Abel resolution coordinate and its transported two-dimensional physical ranges, not Minkowski time, spacetime translations, or an LSZ wave operator.",
+    "Higher edge marks retain only their certified finite quotient affiliation until separate measurable nested direct-integral columns and domains are constructed."
+  ],
+  "certificate": "REVERSE_PHYSICS_BT_ABEL_FOCK_PHYSICAL_INTERTWINER_V1",
+  "checks": {
+    "details": {
+      "abel_density_normalized": true,
+      "abel_joint_translation_identity": true,
+      "abel_physical_map_isometry": true,
+      "adjoint_is_coisometry_on_range": true,
+      "correlated_system_noise_dimension": true,
+      "daughter_exchange_extension": true,
+      "eq19_stays_open": true,
+      "first_edge_marks_exact": true,
+      "first_interval_norms": true,
+      "first_jump_branching_gram": true,
+      "full_seventy_five_mark_continuum_stays_open": true,
+      "hard_drift_matches_hp": true,
+      "higher_continuum_domains_not_imported": true,
+      "higher_edge_marks_exact": true,
+      "higher_quotient_affiliation_retained": true,
+      "input_hashes_pinned": true,
+      "massless_and_equal_mass_limits": true,
+      "no_lorentzian_claim": true,
+      "noise_only_rank_obstruction": true,
+      "normalized_polar_shape_gram": true,
+      "only_first_three_marks_promoted": true,
+      "physical_rate_exact": true,
+      "pointwise_physical_gram": true,
+      "polar_transport_cocycle": true,
+      "predecessor_checks": true,
+      "public_Rt_obstruction_retained": true,
+      "raw_column_gram_is_nonconstant": true,
+      "raw_covariance_exact_positive_witness": true,
+      "threshold_gram_formula_imported_exactly": true,
+      "translation_intertwining": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 30,
+    "total": 30
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "disposition": {
+    "Eq19_all_orders": "NOT_PROVED",
+    "abel_to_correlated_system_fock_first_emission_intertwiner": "CONSTRUCTED_EXACTLY",
+    "complete_BT_probability": "NOT_CONSTRUCTED",
+    "first_three_edge_physical_continuum_affiliation": "EXACT",
+    "fourth_jump": "NOT_COMPUTED",
+    "full_seventy_five_mark_physical_intertwiner": "NOT_CONSTRUCTED",
+    "noise_only_channel_faithful_intertwiner": "EXACTLY_OBSTRUCTED_BY_SPECIES_RANK",
+    "normalized_physical_polar_range_transport": "CONSTRUCTED",
+    "raw_fixed_regulator_column_translation": "EXACTLY_OBSTRUCTED_BY_NONCONSTANT_GRAM",
+    "remaining_seventy_two_edge_continuum_affiliation": "NOT_CONSTRUCTED",
+    "spacetime_Moller_LSZ_S_operator": "NOT_CONSTRUCTED"
+  },
+  "does_not_establish": [
+    "a raw fixed-regulator physical column related by unitary resolution translations",
+    "a noise-only encoding of the physical rank-two species",
+    "physical continuum affiliation of the 72 higher edge marks",
+    "a physical fourth jump",
+    "a unique all-order HP or branching law",
+    "complete incoming and outgoing degenerate sectors",
+    "a complete physical 2->n probability",
+    "a spacetime-local Moller, LSZ, AQFT, or unitary S operator",
+    "identification with the public R_t field-map operator",
+    "the all-order Eq. (19)",
+    "a gravitational or BRST lift",
+    "a new spacetime or physical dimension",
+    "anything LORENTZIAN-CAUSAL",
+    "literature priority"
+  ],
+  "first_emission_hp_affiliation": {
+    "correlated_vacuum_column": "sqrt(q0) sum_(i=1)^3 |child_i,sigma>_system tensor 1_I(s)|e_i>_noise maps to sqrt(q0)1_I(s)sqrt(p_s(y))E_y|sigma> in each physical pair range",
+    "finite_interval_per_pair_norm": "a/48",
+    "finite_interval_three_pair_norm": "a/16",
+    "first_edge_noise_indices": [
+      0,
+      1,
+      2
+    ],
+    "hard_hp_drift": "1/32",
+    "physical_rate_per_pair": {
+      "denominator": 48,
+      "numerator": 1
+    },
+    "status": "EXACT_PHYSICAL_RANGE_AFFILIATION_OF_FIRST_STOCHASTIC_JUMP"
+  },
+  "lifecycle_state": "CLASSIFIED",
+  "missing_object_ledger": [
+    "measurable nested six-point direct-integral columns for all 12 second-level edges",
+    "measurable nested seven-point direct-integral columns for all 60 third-level edges",
+    "one common ordered-resolution measure and dense domain carrying their polar transports",
+    "the eight-point pre-trace quotient, fourth rate, and its additional edge channels",
+    "complete physical incoming and outgoing degenerate trace sectors",
+    "a spacetime asymptotic algebra and Moller/LSZ affiliation",
+    "identification or replacement of the public R_t map and the nonlinear Eq. (19) pushforward"
+  ],
+  "next_gate": "Construct the nested six-point physical direct-integral column before computing a fourth scalar rate. Retain the two ordered resolution variables, the four-component parent/profile carrier, the exact threshold measures, and the collapse-invisible kernel before the final scalar trace. Its normalized polar range must map each of the 12 second-level insertion edges into the correlated system--two-noise sector and intertwine ordered shifts. A pass extends the physical continuum affiliation from 3 to 15 edge marks and makes the analogous seven-point 60-edge construction well posed; a failure identifies the first genuine multi-emission continuum-domain obstruction. The eight-point fourth jump and Eq. (19) remain separate subsequent gates.",
+  "noise_only_rank_obstruction": {
+    "contradiction": "No channel-faithful isometry can put the two physical species into the single pinned noise mark while leaving the system out.",
+    "disposition": "NOISE_ONLY_FAILS; CORRELATED_SYSTEM_NOISE_PASSES",
+    "physical_pair_gram": "q0*I2 has rank two",
+    "pinned_noise_mark_per_pair": "C*e_i has dimension one and any channel-faithful map C2_species->C*e_i has rank at most one",
+    "repair": "Retain C2_species in the level-one system child. Then each correlated child--noise subspace has dimension two and the three-pair space has dimension six.",
+    "unrelated_mark_warning": "Encoding species into higher-level noise marks would violate the pinned edge grading and would not intertwine the certified HP jump maps."
+  },
+  "physical_polar_ranges": {
+    "cocycle": "C_c(R+b) C_b(R)=C_(b+c)(R)",
+    "daughter_exchange_extension": {
+      "I(1/r)/I(r)": "r**(-2)",
+      "L(1/r,u/r)/L(r,u)": "1/r",
+      "Q(1/r,u/r)/Q(r,u)": "1",
+      "dmu_(1/r)(u/r)/dmu_r(u)": "1/r",
+      "rho(1/r,u/r)/rho(r,u)": "1/r"
+    },
+    "normalized_column": "E_R=V_exp(-R)/sqrt(I(exp(-R))) for I>0; the equal-mass null point is measure zero",
+    "normalized_gram": "E_R^sharp E_R=I2",
+    "polar_transport": "C_b(R)=E_(R+b) E_R^sharp: Ran(P_R)->Ran(P_(R+b))",
+    "range_projection": "P_R=E_R E_R^sharp",
+    "scope": "The normalization is explicit and r-dependent. It preserves the complete physical range shape and phase but replaces the nonstationary raw norm by the separately certified relative local intensity.",
+    "transport_adjoint_identities": "C_b(R)^sharp C_b(R)=P_R and C_b(R) C_b(R)^sharp=P_(R+b)"
+  },
+  "provenance": {
+    "inputs": [
+      {
+        "path": "planning/work-items/reverse-physics-bateman-abel-fock-physical-intertwiner.json",
+        "sha256": "1bfc20fb115a015758db29d1940dbdc7e4ccb9e1b32736a504895e6201390410"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_PHYSICAL_COLLINEAR_OPERATOR_FACTORIZATION_V1.json",
+        "sha256": "d0f8786c62e24e37c198f4a286aa2e3b718f13decf5352d811cf554d485ed79e"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_RIGGED_RESOLUTION_JORDAN_MOLLER_V1.json",
+        "sha256": "26eaa3ff93e14e49bea7315ab1120a032956ab19f127fbc8ad82da98a09a2214"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_ABEL_NAIMARK_ASYMPTOTIC_DILATION_V1.json",
+        "sha256": "07087513f7602afb24aa60a7ce1bb3878be6d17cfbb6170d5a3d71c69756d101"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_RESOLUTION_LOCAL_COHERENT_BORN_PROCESS_V1.json",
+        "sha256": "c0c9d783cb02e4837f266830ff232c41ca5a8cc81068f83bb8e5bba1d65971f9"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_QUANTUM_STOCHASTIC_MOLLER_DILATION_V1.json",
+        "sha256": "6bc4ec6c6831835acaf5848c07375701a3df5aa4413c5ccd42a074691e489e9c"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_CHANNEL_RESOLVED_BRANCHING_INSTRUMENT_V1.json",
+        "sha256": "7108111b1e215e6adac71c79980dd97fc818edd9323e91956dc4c0bd69a2763a"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_SIX_POINT_PROFILE_QUOTIENT_COMPLETION_V1.json",
+        "sha256": "fc98bc7f779a9b62325f153c8e09b411e1aeeaad1f0871be411c4485be25d3c8"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_SEVEN_POINT_PROFILE_QUOTIENT_AFFILIATION_V1.json",
+        "sha256": "6f09fb591012c9b3cd22b013900af5882d0c6ee4211e4872f2be88302adbcf16"
+      }
+    ],
+    "primary_source": {
+      "equations": [
+        "Eq. (18)",
+        "Eq. (19)",
+        "Appendix B Eqs. (24)-(25)"
+      ],
+      "source": "Bateman--Turok arXiv:2607.00096v1",
+      "url": "https://arxiv.org/abs/2607.00096v1"
+    },
+    "producer_method": "exact threshold-Gram comparison, daughter-exchange scaling, pointwise cross-Krein polar normalization, Abel kernel isometry, transported-range covariance, interval-rate matching, and channel/species rank audit",
+    "retrieval_date": "2026-08-11",
+    "source_commit": "2f0e81d97f12c8842244f16503a7b2e524db3c4f"
+  },
+  "question": "Does the certified Abel-regularized physical collinear direct-integral column embed translation-covariantly into the 75-edge HP resolution cocycle without discarding its two physical species, and how much of the full stochastic carrier is thereby physically affiliated?",
+  "raw_column_covariance_obstruction": {
+    "I": "(5*r**3 - 6*r**2*log(r) - 3*r**2 - 6*r*log(r) + 3*r - 5)/(24*(r - 1))",
+    "disposition": "EXACT_NO_RAW_COLUMN_ISOMETRIC_RESOLUTION_TRANSLATION",
+    "fixtures": {
+      "I(1/16)": "439/2048 - 17*log(2)/240",
+      "I(1/4)": "31/128 - 5*log(2)/24",
+      "difference": "-57/2048 + 11*log(2)/80",
+      "strict_lower_bound_using_log2_gt_1_over_2": "419/10240"
+    },
+    "gram": "V_r^sharp V_r=I(r)I2",
+    "physical_column": "(V_r h)(u)=T(r,u)h in L2(dmu_r) tensor C_cross^2",
+    "theorem": "If isometries Z_b(R) obey Z_b(R)V_exp(-R)=V_exp(-(R+b)), then their adjoint Grams are equal. The displayed positive difference contradicts this already for b=log(4)."
+  },
+  "report": "reverse_physics/reports/bt-abel-fock-physical-intertwiner.md",
+  "result_kind": "exact polar-range and Abel isometric affiliation of the physical first-emission collinear direct integral with the correlated system--Fock sector, plus raw-column and noise-only obstructions",
+  "schema": "reverse_physics/schema/reverse-physics-bt-abel-fock-physical-intertwiner-v1.schema.json",
+  "schema_version": "reverse-physics-bt-abel-fock-physical-intertwiner-v1",
+  "seventy_five_mark_boundary": {
+    "consequence": "The first-emission continuum gate passes, but the full 75-mark physical continuum intertwiner remains fail-closed. The eight-point fourth rate alone would not fill the already missing 72 continuum domains.",
+    "missing_for_operator_affiliation": "For each of the remaining 72 edges: a measurable nested physical direct-integral column, its positive range pairing, a common ordered-resolution measure, and compatibility with the correlated system--Fock shift.",
+    "physically_intertwined_edge_marks": [
+      0,
+      1,
+      2
+    ],
+    "quotient_affiliation": "The 12 second-level and 60 third-level marks retain their certified six- and seven-point amplitude quotient affiliation and exact rates.",
+    "quotient_only_edge_marks": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74
+    ],
+    "total_edge_marks": 75
+  },
+  "translation_intertwiner": {
+    "abel_identity": "p_(s-b)(y-b)=p_s(y)",
+    "composition": "T_c T_b=T_(b+c) on the transported physical range",
+    "hp_shift": "(S_b f)(s)=f(s-b), with the standard zero extension on the additive half-line",
+    "intertwining": "T_b A=A S_b and A^sharp T_b=S_b A^sharp on Ran(A)",
+    "meaning": "This is auxiliary resolution covariance on the Abel dilation, not physical time evolution or spacetime translation.",
+    "physical_shift": "(T_b psi)(s,y)=E_y E_(y-b)^sharp psi(s-b,y-b), with the same zero extension"
+  },
+  "verification_commands": [
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/bt_abel_fock_physical_intertwiner.py --write --check",
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/verify_bt_abel_fock_physical_intertwiner.py",
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 -m unittest -v reverse_physics.tests.test_bt_abel_fock_physical_intertwiner"
+  ]
+}

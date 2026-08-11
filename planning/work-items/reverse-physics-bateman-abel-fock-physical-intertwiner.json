@@ -1,0 +1,38 @@
+{
+  "id": "sf:program/work/reverse-physics-bateman-abel-fock-physical-intertwiner",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "reverse-physics",
+    "state": "ACTIVE",
+    "objective": "Determine whether the Abel-regularized physical collinear direct-integral column has an exact translation-covariant operator affiliation with the 75-edge Hudson--Parthasarathy resolution cocycle, with the physical rank-two species and channel marks retained rather than collapsed to probabilities.",
+    "depends_on": [
+      "REVERSE_PHYSICS_BT_PHYSICAL_COLLINEAR_OPERATOR_FACTORIZATION_V1",
+      "REVERSE_PHYSICS_BT_RIGGED_RESOLUTION_JORDAN_MOLLER_V1",
+      "REVERSE_PHYSICS_BT_ABEL_NAIMARK_ASYMPTOTIC_DILATION_V1",
+      "REVERSE_PHYSICS_BT_RESOLUTION_LOCAL_COHERENT_BORN_PROCESS_V1",
+      "REVERSE_PHYSICS_BT_QUANTUM_STOCHASTIC_MOLLER_DILATION_V1"
+    ],
+    "activates": [
+      "a physical continuum range affiliation for the first BT stochastic jump",
+      "an exact decision between raw-column covariance and normalized polar-range covariance",
+      "the correctly typed system--noise target for any future continuum Moller construction"
+    ],
+    "current_gate": "Let V_r be the certified physical collinear direct-integral column with V_r^sharp V_r=I(r)I2. Test whether the raw columns can intertwine additive resolution translations. If their nonconstant Gram obstructs this, normalize the positive ranges by E_R=V_exp(-R)/sqrt(I(exp(-R))) and combine their polar transports with the Abel isometry f(s)->sqrt(p_s(y))f(s). Construct the adjoint map from the resulting physical Abel direct integral into the correlated first-emission sector of system tensor Fock noise, prove exact isometry/coisometry, interval inclusion and translation covariance, and match the one-over-48 pair rate and one-over-16 total drift. Prove whether a channel-faithful noise-only target loses the two physical species. State exactly which of the 75 edge marks have a certified physical continuum range and which remain quotient-only.",
+    "stop_condition": "Land a strict exact certificate with a method-distinct verifier that either constructs the correctly typed physical Abel-to-system--Fock intertwiner or isolates the first exact domain, covariance, Gram, or rank obstruction. Do not promote quotient-only six- and seven-point affiliation to a full continuum operator. Keep the fourth jump, complete 75-edge physical continuum domain, spacetime Moller/LSZ/S operator, Eq. (19), gravity, and Lorentzian claims fail-closed.",
+    "forbid": "no raw V_r column called translation covariant if its Gram changes; no r-dependent polar normalization hidden; no physical rank-two species encoded into unrelated noise marks; no system--noise intertwiner called a noise-only isometry; no first-emission range result called a full 75-edge continuum affiliation, complete probability, Eq. 19 proof, new dimension, gravitational/BRST lift, or LORENTZIAN-CAUSAL theorem",
+    "allowed_paths": [
+      "reverse_physics/",
+      "notes/bateman-turok-embedding.md",
+      "paper/05-interaction-obstructions.tex",
+      "paper/05-interaction-obstructions.pdf",
+      "paper/06-einstein-weyl-interaction-obstructions.tex",
+      "paper/06-einstein-weyl-interaction-obstructions.pdf",
+      "planning/work-items/reverse-physics-bateman-abel-fock-physical-intertwiner.json",
+      "planning/events/"
+    ],
+    "resource_hint": "Use I(r)=(5r^3-6r^2 log r-3r^2-6r log r+3r-5)/(24(r-1)), E_R=V_exp(-R)/sqrt(I(exp(-R))), p_s(y)=sech(y-s)^2/2, and (Af)_i(s,y)=sqrt(p_s(y))E_y f_i(s). Its adjoint integrates sqrt(p_s(y))E_y^sharp over y. The raw covariance no-go follows from I(1/16)-I(1/4)=11 log(2)/80-57/2048>0. The channel-faithful noise-only target has rank at most one per pair, whereas the physical Gram has rank two; retaining the system species repairs the typing. Only edge marks 0,1,2 presently have a certified physical collinear direct-integral column.",
+    "input_commit": "2f0e81d9",
+    "stream": "reverse-physics"
+  }
+}

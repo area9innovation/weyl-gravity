@@ -260,10 +260,11 @@ a pass.
 
 ## Next gate
 
-Compute the complete eight-point pre-trace quotient to determine the fourth
-amplitude-affiliated jump and test local finiteness of the growing noise
-multiplicity.  In parallel, construct an operator intertwiner from the
-Abel-regularized physical collinear direct integral into the 75-mark Fock
-noise.  Both are required before the finite reduced-mode cocycle can be
-promoted toward a continuum asymptotic Møller construction.  Neither alone is
-evidence for Eq. (19) or a Lorentzian S matrix.
+The successor certificate
+`REVERSE_PHYSICS_BT_ABEL_FOCK_PHYSICAL_INTERTWINER_V1` constructs the exact
+first-emission physical range intertwiner into the correctly typed correlated
+system--noise sector.  It also proves that only marks 0, 1, and 2 presently
+have physical continuum columns.  The next physical gate is therefore the
+nested six-point direct-integral column for the 12 second-level edges, before
+an eight-point fourth-rate calculation.  Neither result by itself is evidence
+for Eq. (19) or a Lorentzian S matrix.

@@ -2087,6 +2087,36 @@ restoring ordinary strong differentiability.  The noise coordinate remains
 auxiliary resolution history, not a spacetime dimension.  A physical fourth
 jump, continuum M\o ller/LSZ/S operator, complete probability, and Eq.~(19)
 remain open, as do the non-strongly-ordered many-body probabilities.
+The first of those continuum-affiliation gates can be sharpened.  For the
+physical direct-integral column $V_r$,
+$V_r^\sharp V_r=I(r)I_2$ with nonconstant $I$; in particular
+\[
+ I(1/16)-I(1/4)=\frac{11}{80}\log2-\frac{57}{2048}
+ >\frac{419}{10240}.
+\]
+Hence the raw columns are not related by isometric resolution translations.
+After the explicit polar normalization
+$E_R=V_{e^{-R}}/\sqrt{I(e^{-R})}$, however,
+$E_R^\sharp E_R=I_2$ and
+$C_b(R)=E_{R+b}E_R^\sharp$ transports their positive ranges.  With
+$p_s(y)=\tfrac12\operatorname{sech}^2(y-s)$,
+\[
+ (Af)_i(s,y)=\sqrt{p_s(y)}E_yf_i(s)
+\]
+is an isometry from the three-pair, two-species HP one-particle carrier onto
+the corresponding Abel-regularized physical range and exactly intertwines
+resolution shifts.  Multiplication by $\sqrt{q_0}$ gives $a/48$ per pair and
+$a/16$ in total on an interval of length $a$.  The target must retain both the
+system and noise: a single pinned pair-noise mark has rank at most one, while
+the physical pair Gram has rank two.  Certificate
+\par\noindent
+\texttt{REVERSE\_PHYSICS\_BT\_ABEL\_FOCK\_}
+\allowbreak\texttt{PHYSICAL\_INTERTWINER\_V1}
+\par\noindent
+records the independent polar, translation, rate, and rank checks.  It
+physically affiliates the first three edge marks only.  The 72 higher marks
+still lack nested continuum columns, so the next physical gate is the
+six-point nested direct integral rather than a scalar fourth-rate calculation.
 Resolution locality is not spacetime locality.
 \end{remark}
 

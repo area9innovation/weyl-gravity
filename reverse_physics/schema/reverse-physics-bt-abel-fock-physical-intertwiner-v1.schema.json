@@ -1,0 +1,150 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-abel-fock-physical-intertwiner-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["certificate", "schema_version", "dependency_tags", "lifecycle_state", "result_kind", "question", "answer", "raw_column_covariance_obstruction", "physical_polar_ranges", "abel_physical_range_intertwiner", "translation_intertwiner", "first_emission_hp_affiliation", "noise_only_rank_obstruction", "seventy_five_mark_boundary", "disposition", "assumptions", "does_not_establish", "missing_object_ledger", "next_gate", "provenance", "verification_commands", "checks", "report", "schema"],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_ABEL_FOCK_PHYSICAL_INTERTWINER_V1"},
+    "schema_version": {"const": "reverse-physics-bt-abel-fock-physical-intertwiner-v1"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "result_kind": {"type": "string", "minLength": 150},
+    "question": {"type": "string", "minLength": 180},
+    "answer": {"type": "string", "minLength": 1800},
+    "raw_column_covariance_obstruction": {
+      "type": "object", "additionalProperties": false,
+      "required": ["physical_column", "gram", "I", "fixtures", "theorem", "disposition"],
+      "properties": {
+        "physical_column": {"type": "string", "minLength": 45},
+        "gram": {"const": "V_r^sharp V_r=I(r)I2"},
+        "I": {"type": "string", "minLength": 65},
+        "fixtures": {
+          "type": "object", "additionalProperties": false,
+          "required": ["I(1/4)", "I(1/16)", "difference", "strict_lower_bound_using_log2_gt_1_over_2"],
+          "properties": {
+            "I(1/4)": {"const": "31/128 - 5*log(2)/24"},
+            "I(1/16)": {"const": "439/2048 - 17*log(2)/240"},
+            "difference": {"const": "-57/2048 + 11*log(2)/80"},
+            "strict_lower_bound_using_log2_gt_1_over_2": {"const": "419/10240"}
+          }
+        },
+        "theorem": {"type": "string", "minLength": 140},
+        "disposition": {"const": "EXACT_NO_RAW_COLUMN_ISOMETRIC_RESOLUTION_TRANSLATION"}
+      }
+    },
+    "physical_polar_ranges": {
+      "type": "object", "additionalProperties": false,
+      "required": ["normalized_column", "normalized_gram", "range_projection", "polar_transport", "transport_adjoint_identities", "cocycle", "daughter_exchange_extension", "scope"],
+      "properties": {
+        "normalized_column": {"type": "string", "minLength": 75},
+        "normalized_gram": {"const": "E_R^sharp E_R=I2"},
+        "range_projection": {"const": "P_R=E_R E_R^sharp"},
+        "polar_transport": {"type": "string", "minLength": 45},
+        "transport_adjoint_identities": {"type": "string", "minLength": 55},
+        "cocycle": {"const": "C_c(R+b) C_b(R)=C_(b+c)(R)"},
+        "daughter_exchange_extension": {
+          "const": {"I(1/r)/I(r)": "r**(-2)", "Q(1/r,u/r)/Q(r,u)": "1", "L(1/r,u/r)/L(r,u)": "1/r", "rho(1/r,u/r)/rho(r,u)": "1/r", "dmu_(1/r)(u/r)/dmu_r(u)": "1/r"}
+        },
+        "scope": {"type": "string", "minLength": 190}
+      }
+    },
+    "abel_physical_range_intertwiner": {
+      "type": "object", "additionalProperties": false,
+      "required": ["hp_correlated_one_particle_carrier", "physical_abel_carrier", "abel_density", "isometry", "adjoint", "identities", "interval_image", "direction_requested"],
+      "properties": {
+        "hp_correlated_one_particle_carrier": {"type": "string", "minLength": 120},
+        "physical_abel_carrier": {"type": "string", "minLength": 150},
+        "abel_density": {"const": "p_s(y)=sech(y-s)^2/2"},
+        "isometry": {"const": "(A f)_i(s,y)=sqrt(p_s(y))*E_y*f_i(s)"},
+        "adjoint": {"type": "string", "minLength": 60},
+        "identities": {"const": ["A^sharp A=I", "A A^sharp=P_Ran(A)", "A^sharp is a coisometry from Ran(A) onto H_HP,1^phys"]},
+        "interval_image": {"type": "string", "minLength": 125},
+        "direction_requested": {"type": "string", "minLength": 125}
+      }
+    },
+    "translation_intertwiner": {
+      "type": "object", "additionalProperties": false,
+      "required": ["hp_shift", "physical_shift", "abel_identity", "intertwining", "composition", "meaning"],
+      "properties": {
+        "hp_shift": {"type": "string", "minLength": 70},
+        "physical_shift": {"type": "string", "minLength": 70},
+        "abel_identity": {"const": "p_(s-b)(y-b)=p_s(y)"},
+        "intertwining": {"const": "T_b A=A S_b and A^sharp T_b=S_b A^sharp on Ran(A)"},
+        "composition": {"const": "T_c T_b=T_(b+c) on the transported physical range"},
+        "meaning": {"type": "string", "minLength": 100}
+      }
+    },
+    "first_emission_hp_affiliation": {
+      "type": "object", "additionalProperties": false,
+      "required": ["physical_rate_per_pair", "first_edge_noise_indices", "finite_interval_per_pair_norm", "finite_interval_three_pair_norm", "hard_hp_drift", "correlated_vacuum_column", "status"],
+      "properties": {
+        "physical_rate_per_pair": {"const": {"denominator": 48, "numerator": 1}},
+        "first_edge_noise_indices": {"const": [0, 1, 2]},
+        "finite_interval_per_pair_norm": {"const": "a/48"},
+        "finite_interval_three_pair_norm": {"const": "a/16"},
+        "hard_hp_drift": {"const": "1/32"},
+        "correlated_vacuum_column": {"type": "string", "minLength": 140},
+        "status": {"const": "EXACT_PHYSICAL_RANGE_AFFILIATION_OF_FIRST_STOCHASTIC_JUMP"}
+      }
+    },
+    "noise_only_rank_obstruction": {
+      "type": "object", "additionalProperties": false,
+      "required": ["physical_pair_gram", "pinned_noise_mark_per_pair", "contradiction", "repair", "unrelated_mark_warning", "disposition"],
+      "properties": {
+        "physical_pair_gram": {"const": "q0*I2 has rank two"},
+        "pinned_noise_mark_per_pair": {"type": "string", "minLength": 85},
+        "contradiction": {"type": "string", "minLength": 120},
+        "repair": {"type": "string", "minLength": 150},
+        "unrelated_mark_warning": {"type": "string", "minLength": 120},
+        "disposition": {"const": "NOISE_ONLY_FAILS; CORRELATED_SYSTEM_NOISE_PASSES"}
+      }
+    },
+    "seventy_five_mark_boundary": {
+      "type": "object", "additionalProperties": false,
+      "required": ["total_edge_marks", "physically_intertwined_edge_marks", "quotient_only_edge_marks", "quotient_affiliation", "missing_for_operator_affiliation", "consequence"],
+      "properties": {
+        "total_edge_marks": {"const": 75},
+        "physically_intertwined_edge_marks": {"const": [0, 1, 2]},
+        "quotient_only_edge_marks": {"type": "array", "minItems": 72, "maxItems": 72, "items": {"type": "integer", "minimum": 3, "maximum": 74}},
+        "quotient_affiliation": {"type": "string", "minLength": 120},
+        "missing_for_operator_affiliation": {"type": "string", "minLength": 190},
+        "consequence": {"type": "string", "minLength": 200}
+      }
+    },
+    "disposition": {
+      "const": {
+        "raw_fixed_regulator_column_translation": "EXACTLY_OBSTRUCTED_BY_NONCONSTANT_GRAM",
+        "normalized_physical_polar_range_transport": "CONSTRUCTED",
+        "abel_to_correlated_system_fock_first_emission_intertwiner": "CONSTRUCTED_EXACTLY",
+        "noise_only_channel_faithful_intertwiner": "EXACTLY_OBSTRUCTED_BY_SPECIES_RANK",
+        "first_three_edge_physical_continuum_affiliation": "EXACT",
+        "remaining_seventy_two_edge_continuum_affiliation": "NOT_CONSTRUCTED",
+        "full_seventy_five_mark_physical_intertwiner": "NOT_CONSTRUCTED",
+        "fourth_jump": "NOT_COMPUTED",
+        "complete_BT_probability": "NOT_CONSTRUCTED",
+        "spacetime_Moller_LSZ_S_operator": "NOT_CONSTRUCTED",
+        "Eq19_all_orders": "NOT_PROVED"
+      }
+    },
+    "assumptions": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"type": "string", "minLength": 150}},
+    "does_not_establish": {"type": "array", "minItems": 14, "maxItems": 14, "items": {"type": "string"}},
+    "missing_object_ledger": {"type": "array", "minItems": 7, "maxItems": 7, "items": {"type": "string", "minLength": 55}},
+    "next_gate": {"type": "string", "minLength": 600},
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_commit", "retrieval_date", "inputs", "producer_method", "primary_source"],
+      "properties": {
+        "source_commit": {"const": "2f0e81d97f12c8842244f16503a7b2e524db3c4f"},
+        "retrieval_date": {"const": "2026-08-11"},
+        "inputs": {"type": "array", "minItems": 9, "maxItems": 9, "items": {"type": "object", "additionalProperties": false, "required": ["path", "sha256"], "properties": {"path": {"type": "string", "minLength": 20}, "sha256": {"pattern": "^[0-9a-f]{64}$"}}}},
+        "producer_method": {"type": "string", "minLength": 180},
+        "primary_source": {"type": "object", "additionalProperties": false, "required": ["source", "url", "equations"], "properties": {"source": {"const": "Bateman--Turok arXiv:2607.00096v1"}, "url": {"const": "https://arxiv.org/abs/2607.00096v1"}, "equations": {"const": ["Eq. (18)", "Eq. (19)", "Appendix B Eqs. (24)-(25)"]}}}
+      }
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "string", "minLength": 100}},
+    "checks": {"type": "object", "additionalProperties": false, "required": ["ok", "passed", "total", "failures", "details"], "properties": {"ok": {"const": true}, "passed": {"const": 30}, "total": {"const": 30}, "failures": {"const": []}, "details": {"type": "object", "minProperties": 30, "maxProperties": 30}}},
+    "report": {"const": "reverse_physics/reports/bt-abel-fock-physical-intertwiner.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-abel-fock-physical-intertwiner-v1.schema.json"}
+  }
+}
