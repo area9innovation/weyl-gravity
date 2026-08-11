@@ -1,0 +1,38 @@
+{
+  "id": "sf:program/work/reverse-physics-bateman-physical-collinear-operator-factorization",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "reverse-physics",
+    "state": "ACTIVE",
+    "objective": "Factor the certified physical five-point collinear amplitude through the four-point Bateman--Turok external-mass jet, reconstruct the resulting cross-Krein splitting operator including its normalization and phase, and compare its similarity invariants with the completed public order-lambda R_t quadratic map.",
+    "depends_on": [
+      "REVERSE_PHYSICS_BT_FIVE_POINT_INDEPENDENT_MASS_THRESHOLD_V1",
+      "REVERSE_PHYSICS_BT_REAL_VIRTUAL_AXIS_GLUING_V1",
+      "REVERSE_PHYSICS_BT_FULL_SIGNED_QUADRATIC_CLOSURE_V1",
+      "REVERSE_PHYSICS_BT_ABEL_NAIMARK_ASYMPTOTIC_DILATION_V1",
+      "REVERSE_PHYSICS_BT_PERTURBATIVE_COISOMETRY_RIGIDITY_V1"
+    ],
+    "activates": [
+      "an amplitude-level physical collinear splitting operator on the declared two-component external jet fibre",
+      "an exact phase and normalization comparison with the physical one-over-48 response",
+      "a basis-invariant rank and Jordan test against the completed public R_t quadratic map"
+    ],
+    "current_gate": "PHYSICAL_COLLINEAR_OPERATOR: extract the singleton and complementary-pair coefficients of the exact five-point jet, derive the corresponding four-point parent jet, form the cross-Krein adjoint Gram, and decide whether any metric-compatible basis, scalar Abel factor, phase, or zero-mode dressing can identify it with the public quadratic R_t kernel.",
+    "stop_condition": "Certify either a metric-compatible physical/public operator identification on the declared jet cylinder or a basis-invariant exact obstruction, while preserving the distinction between amplitude S-matrix data and the Eq. (19) projector pushforward.",
+    "forbid": "no reduced external-jet factorization called a complete Moller operator, full S-matrix, finite NLO probability, beyond-tree positivity, continuum Eq. (19), gravitational/BRST lift, new spacetime dimension, or LORENTZIAN-CAUSAL theorem",
+    "allowed_paths": [
+      "reverse_physics/",
+      "notes/bateman-turok-embedding.md",
+      "paper/05-interaction-obstructions.tex",
+      "paper/05-interaction-obstructions.pdf",
+      "paper/06-einstein-weyl-interaction-obstructions.tex",
+      "paper/06-einstein-weyl-interaction-obstructions.pdf",
+      "planning/work-items/reverse-physics-bateman-physical-collinear-operator-factorization.json",
+      "planning/events/"
+    ],
+    "resource_hint": "On the spectator square-free quotient write C=L(a2+a3+a4)+Q(a2a3+a2a4+a3a4)+irrelevant terms, with L=-(a0-a1)^2/(4 tau) and Q=(2 tau(a0+a1)-(a0-a1)^2)/(4 tau^2). The four-point parent jet has coefficient 1/2 in both corresponding components. With cross metric J, T=diag(2Q,2L) and -T-sharp T=rho I. Compare this full-rank scalar Gram with the raised public Gram J diag(0,2), which is rank-one nilpotent.",
+    "input_commit": "cd531a03",
+    "stream": "reverse-physics"
+  }
+}

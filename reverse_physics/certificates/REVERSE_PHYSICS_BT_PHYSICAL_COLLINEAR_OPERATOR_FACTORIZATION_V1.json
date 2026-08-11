@@ -1,0 +1,365 @@
+{
+  "amplitude_factorization": {
+    "C_relevant": "L*(a2+a3+a4)+Q*(a2*a3+a2*a4+a3*a4)",
+    "C_squarefree_top": "[a2*a3*a4]C^2=-3*rho/2",
+    "H": "(p^2+a2^2+a3^2+a4^2+p*a2+p*a3+p*a4+a2*a3+a2*a4+a3*a4)/2",
+    "H_squarefree_top": "[p*a2*a3*a4]H^2=3/2",
+    "L": "-(a0-a1)^2/(4*tau)",
+    "Q": "(2*tau*(a0+a1)-(a0-a1)^2)/(4*tau^2)",
+    "exact_fixtures": [
+      {
+        "a0": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "a1": {
+          "denominator": 1,
+          "numerator": 4
+        },
+        "physical_gram": [
+          [
+            {
+              "denominator": 4000,
+              "numerator": 819
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 4000,
+              "numerator": 819
+            }
+          ]
+        ],
+        "rho": {
+          "denominator": 4000,
+          "numerator": 819
+        },
+        "tau": {
+          "denominator": 1,
+          "numerator": 10
+        },
+        "twice_L": {
+          "denominator": 20,
+          "numerator": -9
+        },
+        "twice_Q": {
+          "denominator": 200,
+          "numerator": 91
+        }
+      },
+      {
+        "a0": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "a1": {
+          "denominator": 1,
+          "numerator": 9
+        },
+        "physical_gram": [
+          [
+            {
+              "denominator": 4913,
+              "numerator": 4416
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 4913,
+              "numerator": 4416
+            }
+          ]
+        ],
+        "rho": {
+          "denominator": 4913,
+          "numerator": 4416
+        },
+        "tau": {
+          "denominator": 1,
+          "numerator": 17
+        },
+        "twice_L": {
+          "denominator": 17,
+          "numerator": -32
+        },
+        "twice_Q": {
+          "denominator": 289,
+          "numerator": 138
+        }
+      },
+      {
+        "a0": {
+          "denominator": 1,
+          "numerator": 4
+        },
+        "a1": {
+          "denominator": 1,
+          "numerator": 9
+        },
+        "physical_gram": [
+          [
+            {
+              "denominator": 70304,
+              "numerator": 16275
+            },
+            {
+              "denominator": 1,
+              "numerator": 0
+            }
+          ],
+          [
+            {
+              "denominator": 1,
+              "numerator": 0
+            },
+            {
+              "denominator": 70304,
+              "numerator": 16275
+            }
+          ]
+        ],
+        "rho": {
+          "denominator": 70304,
+          "numerator": 16275
+        },
+        "tau": {
+          "denominator": 1,
+          "numerator": 26
+        },
+        "twice_L": {
+          "denominator": 52,
+          "numerator": -25
+        },
+        "twice_Q": {
+          "denominator": 1352,
+          "numerator": 651
+        }
+      }
+    ],
+    "krein_adjoint": "T_sharp=J*T^T*J=diag(2*L,2*Q)",
+    "phase": "real: the common global i phase of the four- and five-point tree graphs cancels in their ratio",
+    "physical_gram": "-T_sharp*T=rho*I2",
+    "rho": "(a0-a1)^2*(2*tau*(a0+a1)-(a0-a1)^2)/(4*tau^3)",
+    "splitting_map": "T=diag(2*Q,2*L)"
+  },
+  "answer": "The complete five-point tree fixes both null components of a two-dimensional parent external-mass jet. On the square-free spectator quotient its singleton coefficient is L=-(a0-a1)^2/(4 tau) and its complementary-pair coefficient is Q=(2 tau(a0+a1)-(a0-a1)^2)/(4 tau^2). The four-point parent tree has coefficient 1/2 in each corresponding component. Therefore the physical splitting map is T=diag(2Q,2L) in the declared cross-Krein basis. Its extra fifth delta-prime sign gives -T_sharp T=rho I, where rho=(a0-a1)^2(2 tau(a0+a1)-(a0-a1)^2)/(4 tau^3), positive and full rank above unequal-mass threshold. The common tree Feynman phase cancels in the five-to-four-point ratio, so T is real in the declared convention. The integrated rho response is 1/4 log(c); the exact phase-space, graph-normalization, factorial and angular ratio is 1/12, hence the physical response is 1/48 log(c) per unordered pair. The completed public same-sign R_t quadratic map instead has covariant Gram diag(0,2); raising with the same cross metric gives the nonzero nilpotent [[0,2],[0,0]], of rank one and square zero. Rank and Jordan type survive every metric-compatible basis change, nonzero scalar normalization, channel rephasing, zero-mode similarity, and Abel scalar multiplier. Thus the public order-lambda R_t quadratic map is not the physical collinear splitting operator on this external-jet cylinder. This is an exact operator obstruction and a separate construction of the physical leading map; it is not a full Moller/S operator, a complete NLO probability, or an all-order proof of Eq. (19).",
+  "assumptions": [
+    "The factorization is asserted only on the square-free three-spectator quotient of the certified external mass-jet algebra, with unequal positive daughter masses and tau strictly above their two-body threshold.",
+    "The cross matrix J is the certified one-leg delta-prime pairing in the ordered parent constant/linear jet basis; the fifth external delta-prime supplies the displayed overall minus sign in the physical Gram.",
+    "The public comparison uses the completed same-sign finite-nonendpoint order-lambda quadratic R_t kernel and its complete parent Gram, not omitted dynamical p=0, vacuum, higher-composite, or continuum-domain data.",
+    "Only the common perturbative tree Feynman phase is cancelled; no phase convention is used to promote the reduced amplitude map to a complete asymptotic physical S-matrix operator."
+  ],
+  "certificate": "REVERSE_PHYSICS_BT_PHYSICAL_COLLINEAR_OPERATOR_FACTORIZATION_V1",
+  "checks": {
+    "details": {
+      "abel_scalar_cannot_change_rank_or_jordan_type": true,
+      "eq19_all_orders_stays_open": true,
+      "five_point_orders_zero_one_cancel": true,
+      "five_point_pair_components_are_Q": true,
+      "five_point_singleton_components_are_L": true,
+      "five_point_squarefree_square_is_minus_three_rho_over_two": true,
+      "four_point_orders_zero_one_cancel": true,
+      "four_point_parent_jet_is_H": true,
+      "four_point_squarefree_top_coefficient_is_three_over_two": true,
+      "full_physical_moller_stays_open": true,
+      "input_hashes_pinned": true,
+      "no_lorentzian_claim": true,
+      "phase_space_and_projector_ratio_is_one_over_twelve": true,
+      "physical_fixture_grams_are_positive_scalar": true,
+      "physical_gram_is_rank_two_above_threshold": true,
+      "physical_per_pair_response_is_one_over_48": true,
+      "public_raised_gram_is_nonzero_nilpotent": true,
+      "public_raised_gram_is_rank_one": true,
+      "rank_and_jordan_type_obstruct_similarity": true,
+      "rho_integrated_response_is_one_quarter": true,
+      "tree_phase_ratio_is_real": true,
+      "zero_mode_similarity_cannot_change_rank_or_jordan_type": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 22,
+    "total": 22
+  },
+  "declared_carrier": {
+    "five_point_jet": "A5=M5/(8*lambda^3)=delta^2*C+O(delta^3), x_i=delta*a_i and t_pair=delta*tau",
+    "four_point_jet": "A4=M4/(4*lambda^2)=delta^2*H+O(delta^3), with recombined parent coefficient p",
+    "kinematic_domain": "a0>0, a1>0, a0!=a1, tau>(sqrt(a0)+sqrt(a1))^2",
+    "parent_cross_metric": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "parent_fibre_basis": [
+      "parent_constant_component",
+      "parent_linear_component"
+    ],
+    "spectator_quotient": "retain singleton and complementary-pair monomials in a2,a3,a4 relevant to [a2*a3*a4]C^2"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "disposition": {
+    "Abel_detector_automorphism": "RETAINED_WITHOUT_OPERATOR_IDENTIFICATION",
+    "Eq19_all_orders": "NOT_PROVED",
+    "beyond_tree_positivity": "NOT_ESTABLISHED",
+    "complete_incoming_outgoing_sectors": "NOT_CONSTRUCTED",
+    "finite_complete_NLO_probability": "NOT_ESTABLISHED",
+    "full_physical_Moller_operator": "NOT_CONSTRUCTED",
+    "physical_leading_collinear_operator": "FACTORIZED_ON_DECLARED_EXTERNAL_JET_CYLINDER",
+    "physical_operator_gram": "POSITIVE_SCALAR_FULL_RANK_ABOVE_UNEQUAL_MASS_THRESHOLD",
+    "physical_per_pair_log_response": "ONE_OVER_48",
+    "public_D_equals_physical_splitting": "EXACT_RANK_JORDAN_OBSTRUCTION",
+    "public_D_raised_gram": "RANK_ONE_NONZERO_NILPOTENT"
+  },
+  "does_not_establish": [
+    "a complete physical Moller or S operator",
+    "complete incoming and outgoing sectors",
+    "a finite complete NLO probability",
+    "positivity beyond tree level",
+    "the continuum all-order Eq. (19)",
+    "that missing dynamical p=0 or vacuum terms vanish",
+    "an identification outside the declared external mass-jet cylinder",
+    "a gravitational or BRST lift",
+    "anything LORENTZIAN-CAUSAL",
+    "a new physical or spacetime dimension",
+    "literature priority"
+  ],
+  "lifecycle_state": "COEFFICIENT_COMPUTED",
+  "missing_object_ledger": [
+    "the complete regulated physical Moller operator whose tree jet restricts to the certified two-component splitting map",
+    "the dynamical p=0 and vacuum modules and higher-composite terms absent from the public finite-nonendpoint R_t comparison",
+    "a common continuum domain and local non-normal generalized-Born weight for complete inclusive scattering sectors",
+    "the finite NLO constant and a beyond-tree positivity or pseudo-unitarity theorem",
+    "the higher-order continuum induction required for the complete nonlinear Eq. (19) statement"
+  ],
+  "next_gate": "Use the newly fixed physical map T as boundary data rather than attempting to normalize the public D kernel into it. The constructive alternative is to determine which omitted dynamical zero-mode, vacuum, or higher-composite block would have to add a second independent Gram direction to the R_t image, and then test that candidate against the exact cross-CCR and Eq. (19) charge constraints. Independently, affiliate the reduced T map with an LSZ/dressed detector domain before calling it a physical Moller operator.",
+  "normalization_ledger": {
+    "amplitude_square_normalization_ratio": {
+      "denominator": 1,
+      "numerator": 4
+    },
+    "certified_five_point_finite_part_shift": "-3*log(c)/8",
+    "combined_ratio": {
+      "denominator": 12,
+      "numerator": 1
+    },
+    "phase_space_and_inner_angle_ratio": {
+      "denominator": 16,
+      "numerator": 1
+    },
+    "physical_per_pair_Born_normalized_response": {
+      "denominator": 48,
+      "numerator": 1
+    },
+    "projector_factorial_ratio": {
+      "denominator": 3,
+      "numerator": 1
+    },
+    "rho_response": "log(c)/4"
+  },
+  "provenance": {
+    "inputs": [
+      {
+        "path": "planning/work-items/reverse-physics-bateman-physical-collinear-operator-factorization.json",
+        "sha256": "4673358d064556f091459c5b72756821e3e0d02993518d788353170f4ac1d240"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_FIVE_POINT_INDEPENDENT_MASS_THRESHOLD_V1.json",
+        "sha256": "e6b1872ca0fbcd6a51ccd8a44b018678678dc0121ede855911a8006b7af2a4a2"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_REAL_VIRTUAL_AXIS_GLUING_V1.json",
+        "sha256": "c2ffad79666aaec1d17585f76e9c90403b3b410006e624df9626bcc1571d251a"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_FULL_SIGNED_QUADRATIC_CLOSURE_V1.json",
+        "sha256": "5859aad65cf0dcbc1ceb9d2c3381a9a61c2d3df6457e8b77903c8a6931aa081b"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_ABEL_NAIMARK_ASYMPTOTIC_DILATION_V1.json",
+        "sha256": "07087513f7602afb24aa60a7ce1bb3878be6d17cfbb6170d5a3d71c69756d101"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_PERTURBATIVE_COISOMETRY_RIGIDITY_V1.json",
+        "sha256": "53ed72d9038ebc8884d3c822a0651dc6b36b089b17aa603fed42d9c0d2ec3edb"
+      }
+    ],
+    "retrieval_date": "2026-08-11",
+    "source_commit": "cd531a03912ff75ef5026e39522e90b8b2c86ea8"
+  },
+  "public_Rt_comparison": {
+    "complete_covariant_parent_gram": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        2
+      ]
+    ],
+    "minimal_polynomial": "x^2",
+    "obstruction": "NO_METRIC_COMPATIBLE_SIMILARITY_OR_NONZERO_SCALAR_IDENTIFICATION",
+    "physical_gram_determinant": "rho^2>0",
+    "physical_gram_rank": 2,
+    "physical_minimal_polynomial": "x-rho",
+    "raised_gram": [
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        0
+      ]
+    ],
+    "raised_gram_determinant": 0,
+    "raised_gram_rank": 1,
+    "raised_gram_square": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ]
+    ],
+    "same_sign_kernel": [
+      "delta_b_Omega=(e1+e2)*b_Omega*b_Omega/(2*e1*e2)",
+      "delta_b_Upsilon=-b_Omega*b_Upsilon/(2*e1)-b_Upsilon*b_Omega/(2*e2)"
+    ]
+  },
+  "question": "What operator, rather than only what squared coefficient, is fixed by the certified Bateman--Turok five-point collinear amplitude on its external mass-jet cylinder, and can that operator be identified with the completed public order-lambda quadratic R_t composite map?",
+  "report": "reverse_physics/reports/bt-physical-collinear-operator-factorization.md",
+  "result_kind": "amplitude-level physical collinear operator factorization and exact public-R_t rank/Jordan obstruction",
+  "schema": "reverse_physics/schema/reverse-physics-bt-physical-collinear-operator-factorization-v1.schema.json",
+  "schema_version": "reverse-physics-bt-physical-collinear-operator-factorization-v1",
+  "verification_commands": [
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/bt_physical_collinear_operator_factorization.py --check",
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/verify_bt_physical_collinear_operator_factorization.py --exhaustive",
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 -m unittest -v reverse_physics.tests.test_bt_physical_collinear_operator_factorization"
+  ]
+}
