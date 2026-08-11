@@ -1,0 +1,161 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-eight-point-hard-profile-obstruction-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "certificate",
+    "schema_version",
+    "dependency_tags",
+    "lifecycle_state",
+    "result_kind",
+    "question",
+    "answer",
+    "topology",
+    "correlated_boundary",
+    "disposition",
+    "does_not_establish",
+    "next_gate",
+    "provenance",
+    "verification_commands",
+    "checks",
+    "report",
+    "schema"
+  ],
+  "properties": {
+    "certificate": {
+      "const": "REVERSE_PHYSICS_BT_EIGHT_POINT_HARD_PROFILE_OBSTRUCTION_V1"
+    },
+    "schema_version": {
+      "const": "reverse-physics-bt-eight-point-hard-profile-obstruction-v1"
+    },
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]
+    },
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "result_kind": {"type": "string", "minLength": 100},
+    "question": {"type": "string", "minLength": 100},
+    "answer": {"type": "string", "minLength": 900},
+    "topology": {
+      "const": {
+        "V3_sixth": 10395,
+        "V3_fourth_V4": 17325,
+        "V3_squared_V4_squared": 6300,
+        "V4_cubed": 280,
+        "total": 34300
+      }
+    },
+    "correlated_boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scaling",
+        "cyclic_chart",
+        "soft_fixture",
+        "hard_fixtures",
+        "rows",
+        "finite_value_difference",
+        "strong_residue_difference"
+      ],
+      "properties": {
+        "scaling": {"type": "string", "minLength": 150},
+        "cyclic_chart": {"type": "string", "minLength": 80},
+        "soft_fixture": {"const": [1, 4, 3, 2, 1, 10, 7, 5, 3]},
+        "hard_fixtures": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "rows": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "object",
+            "required": [
+              "finite_evaluation_point",
+              "finite_projected_value",
+              "hierarchy_valuations",
+              "leading_masks",
+              "leading_order",
+              "projected_length",
+              "projected_sha256",
+              "strong_order",
+              "strong_order_sha256"
+            ],
+            "properties": {
+              "hierarchy_valuations": {
+                "const": [["e1", 0], ["e2", 0], ["e3", -1]]
+              },
+              "leading_masks": {"const": [0, 1, 2, 3, 4, 5, 6, 7]},
+              "leading_order": {"const": 2},
+              "projected_sha256": {"pattern": "^[0-9a-f]{64}$"},
+              "strong_order_sha256": {"pattern": "^[0-9a-f]{64}$"}
+            }
+          }
+        },
+        "finite_value_difference": {
+          "const": {
+            "numerator": 204441102626227759,
+            "denominator": 550777115935200000
+          }
+        },
+        "strong_residue_difference": {
+          "const": {"numerator": 257, "denominator": 1568}
+        }
+      }
+    },
+    "disposition": {
+      "const": {
+        "complete_eight_point_tree_recursion": "COMPUTED_ON_TWO_EXACT_HARD_FIXTURES",
+        "bare_quadruple_strong_hierarchy": "SINGULAR_WITH_VALUATION_MINUS_ONE_AT_OUTERMOST_DECLARED_LIMIT",
+        "hard_independent_scalar_fourth_jump": "OBSTRUCTED_ON_BARE_HIERARCHY_CARRIER",
+        "threshold_integrated_fourth_moment": "NOT_COMPUTED",
+        "two_atom_Cox_completion": "NOT_DECIDED_AT_FOURTH_MOMENT",
+        "complete_BT_probability": "NOT_CONSTRUCTED",
+        "Eq19_all_orders": "NOT_PROVED"
+      }
+    },
+    "does_not_establish": {
+      "type": "array",
+      "minItems": 10,
+      "maxItems": 10
+    },
+    "next_gate": {"type": "string", "minLength": 300},
+    "provenance": {
+      "type": "object",
+      "required": ["source_commit", "retrieval_date", "inputs", "primary_source"],
+      "properties": {
+        "source_commit": {"pattern": "^[0-9a-f]{7,40}$"},
+        "retrieval_date": {"const": "2026-08-11"},
+        "inputs": {"type": "array", "minItems": 4, "maxItems": 4}
+      }
+    },
+    "verification_commands": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3
+    },
+    "checks": {
+      "type": "object",
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"const": 12},
+        "total": {"const": 12},
+        "failures": {"const": []},
+        "details": {
+          "type": "object",
+          "minProperties": 12,
+          "maxProperties": 12
+        }
+      }
+    },
+    "report": {
+      "const": "reverse_physics/reports/bt-eight-point-hard-profile-obstruction.md"
+    },
+    "schema": {
+      "const": "reverse_physics/schema/reverse-physics-bt-eight-point-hard-profile-obstruction-v1.schema.json"
+    }
+  }
+}

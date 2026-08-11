@@ -1,0 +1,247 @@
+{
+  "answer": "No on the bare hierarchy carrier. The complete 34,300-tree amplitude starts at common external-mass order two and contains every square-free spectator mask on both exact fixtures. The fixtures use identical soft data and differ only by changing one hard adjacent invariant from 33 to 34. Their complete projected squares have the same ordered hierarchy valuation (0,0,-1), but the leading residues differ by exactly 257/1568; their values at the same finite rational hierarchy point also differ. An independent rational-series implementation using the invariant triangle cubic vertex reproduces both finite values. Therefore the hard-independent scalar extraction used at six and seven points does not directly define a fourth jump at eight points. This does not prove that the threshold-integrated fourth moment fails to exist: an outer Kallen reduction, hard-profile quotient, or channel-resolved recombination may remove the dependence. Until that calculation is performed, the provisional coefficient 629 and the claimed exclusion of the two-atom Cox completion are withdrawn.",
+  "certificate": "REVERSE_PHYSICS_BT_EIGHT_POINT_HARD_PROFILE_OBSTRUCTION_V1",
+  "checks": {
+    "details": {
+      "all_spectator_masks_present": true,
+      "amplitudes_start_at_delta_two": true,
+      "claim_boundary_is_fail_closed": true,
+      "finite_projected_values_differ": true,
+      "hard_fixtures_differ_in_one_adjacent_invariant": true,
+      "input_hashes_pinned": true,
+      "residue_difference_is_257_over_1568": true,
+      "same_ordered_hierarchy_valuation": true,
+      "same_soft_fixture": true,
+      "strong_residues_differ": true,
+      "topology_counts_10395_17325_6300_280": true,
+      "total_tree_count_34300": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 12,
+    "total": 12
+  },
+  "correlated_boundary": {
+    "cyclic_chart": "eight adjacent pair squares, eight adjacent triple squares, and four complementary adjacent quartet squares",
+    "finite_value_difference": {
+      "denominator": 550777115935200000,
+      "numerator": 204441102626227759
+    },
+    "hard_fixtures": [
+      [
+        [
+          4,
+          6,
+          9,
+          14,
+          18,
+          25,
+          33
+        ],
+        [
+          35,
+          39,
+          45,
+          52,
+          61,
+          67
+        ],
+        [
+          71,
+          79,
+          83
+        ]
+      ],
+      [
+        [
+          4,
+          6,
+          9,
+          14,
+          18,
+          25,
+          34
+        ],
+        [
+          35,
+          39,
+          45,
+          52,
+          61,
+          67
+        ],
+        [
+          71,
+          79,
+          83
+        ]
+      ]
+    ],
+    "rows": [
+      {
+        "finite_evaluation_point": {
+          "e1": "1/5",
+          "e2": "2/7",
+          "e3": "3/11"
+        },
+        "finite_projected_value": "520471052635202957/31004982162000000",
+        "hierarchy_valuations": [
+          [
+            "e1",
+            0
+          ],
+          [
+            "e2",
+            0
+          ],
+          [
+            "e3",
+            -1
+          ]
+        ],
+        "leading_masks": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "leading_order": 2,
+        "projected_length": 5448,
+        "projected_sha256": "d07f96aae2be633770b4ebfd482aaa9a811a177d6b69356c3c1ad808c6b2fb8a",
+        "strong_order": "628651753/1317120000",
+        "strong_order_sha256": "2b3972a04abfe74b89055abf394ad3dd946f11d51974c13b8a4ada2e27ee0c06"
+      },
+      {
+        "finite_evaluation_point": {
+          "e1": "1/5",
+          "e2": "2/7",
+          "e3": "3/11"
+        },
+        "finite_projected_value": "511691474216301555234829/31171230876352644000000",
+        "hierarchy_valuations": [
+          [
+            "e1",
+            0
+          ],
+          [
+            "e2",
+            0
+          ],
+          [
+            "e3",
+            -1
+          ]
+        ],
+        "leading_masks": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "leading_order": 2,
+        "projected_length": 12700,
+        "projected_sha256": "684bcdb98d94c924c19832ee3afe19f80d0e1eaa1fffae68e797073bcec1b4ac",
+        "strong_order": "412771753/1317120000",
+        "strong_order_sha256": "9c086386d72f7ed4fe68370c2a4eaff033844cbd47307ca6e305346fd58d515e"
+      }
+    ],
+    "scaling": "x0,x1,s01=delta*e1*e2*e3*(a0,a1,tau1); x2,s012=delta*e2*e3*(a2,tau2); x3,s0123=delta*e3*(a3,tau3); x4,s01234=delta*(a4,tau4); x5,x6,x7=delta*(three square-free spectator jets); take delta->0, then ordered leading valuations in e1,e2,e3",
+    "soft_fixture": [
+      1,
+      4,
+      3,
+      2,
+      1,
+      10,
+      7,
+      5,
+      3
+    ],
+    "strong_residue_difference": {
+      "denominator": 1568,
+      "numerator": 257
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "disposition": {
+    "Eq19_all_orders": "NOT_PROVED",
+    "bare_quadruple_strong_hierarchy": "SINGULAR_WITH_VALUATION_MINUS_ONE_AT_OUTERMOST_DECLARED_LIMIT",
+    "complete_BT_probability": "NOT_CONSTRUCTED",
+    "complete_eight_point_tree_recursion": "COMPUTED_ON_TWO_EXACT_HARD_FIXTURES",
+    "hard_independent_scalar_fourth_jump": "OBSTRUCTED_ON_BARE_HIERARCHY_CARRIER",
+    "threshold_integrated_fourth_moment": "NOT_COMPUTED",
+    "two_atom_Cox_completion": "NOT_DECIDED_AT_FOURTH_MOMENT"
+  },
+  "does_not_establish": [
+    "nonexistence of a fourth physical factorial moment after the outer threshold integration",
+    "failure of every hard-profile or channel-resolved quotient",
+    "exclusion of the two-atom Cox completion",
+    "a complete physical 2->6 probability",
+    "universal behavior outside the two exact hard fixtures",
+    "a spacetime-local Moller or LSZ operator",
+    "the all-order Eq. (19)",
+    "anything LORENTZIAN-CAUSAL",
+    "a gravitational or BRST lift",
+    "literature priority"
+  ],
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "Retain the outer hierarchy parameter through the complete projected square and perform the outer fixed-physical-invariant Kallen threshold reduction before taking e3 to zero. Resolve the resulting hard-profile coefficient on the pre-trace quotient. Only if that reduction becomes hard independent may it be normalized as the physical fourth jump and compared with the two-atom Cox prediction P4=73/786432.",
+  "provenance": {
+    "inputs": [
+      {
+        "path": "planning/work-items/reverse-physics-bateman-eight-point-hard-profile-obstruction.json",
+        "sha256": "0769223675463b3c166ee0eb8112a6f0ee8c014696bbeba845394fedb0a357c3"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_SEVEN_POINT_COX_SELECTION_V1.json",
+        "sha256": "0530c61bac5d1178e84fa735c9cf7d7e43f53a24521c44d80a9ef634313e9136"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_SEVEN_POINT_PROFILE_QUOTIENT_AFFILIATION_V1.json",
+        "sha256": "6f09fb591012c9b3cd22b013900af5882d0c6ee4211e4872f2be88302adbcf16"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_FINITE_PHYSICAL_MOLLER_COLUMN_V1.json",
+        "sha256": "5bda31d257bebbe89a32553636286bf92e845b316988f1edd1a640b2c8e6c8ed"
+      }
+    ],
+    "primary_source": {
+      "equations": [
+        "Appendix B Eqs. (24)-(25)",
+        "Eq. (18)"
+      ],
+      "source": "Bateman--Turok arXiv:2607.00096v1",
+      "url": "https://arxiv.org/abs/2607.00096v1"
+    },
+    "retrieval_date": "2026-08-11",
+    "source_commit": "b216fe66"
+  },
+  "question": "Does the complete BT eight-point tree admit the same hard-independent bare strong-hierarchy scalar reduction that fixed the second and third ordered moments at six and seven points?",
+  "report": "reverse_physics/reports/bt-eight-point-hard-profile-obstruction.md",
+  "result_kind": "complete eight-point quadruple-ordered external-mass tree preflight and exact hard-profile obstruction to the direct scalar fourth-jump extraction",
+  "schema": "reverse_physics/schema/reverse-physics-bt-eight-point-hard-profile-obstruction-v1.schema.json",
+  "schema_version": "reverse-physics-bt-eight-point-hard-profile-obstruction-v1",
+  "topology": {
+    "V3_fourth_V4": 17325,
+    "V3_sixth": 10395,
+    "V3_squared_V4_squared": 6300,
+    "V4_cubed": 280,
+    "total": 34300
+  },
+  "verification_commands": [
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/bt_eight_point_fourth_moment.py --check",
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/verify_bt_eight_point_fourth_moment.py",
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 -m unittest -v reverse_physics.tests.test_bt_eight_point_hard_profile_obstruction"
+  ]
+}
