@@ -18,6 +18,7 @@ CUBE = ROOT / "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V0.json"
 LEDGERS = (
     ROOT / "foundations/literature-ledger.json",
     ROOT / "foundations/literature-supplement-known-attempts-v1.json",
+    ROOT / "foundations/literature-expansion-v2.json",
 )
 DEFAULT_OUTPUT = ROOT / "foundations/reports/completion-matrix.md"
 AXES = (
@@ -74,7 +75,7 @@ def render(*, output: Path = DEFAULT_OUTPUT) -> str:
     attempts = coverage["attempts"]
     opportunities = {item["id"]: item for item in coverage["opportunities"]}
     completed = completion["entries"]
-    if len(attempts) != 16 or len(completed) != 9 or len(literature) != 25:
+    if len(attempts) != 16 or len(completed) != 9 or len(literature) < 25:
         raise ValueError("unexpected matrix dimensions")
     if {item["opportunity_id"] for item in completed} != set(opportunities):
         raise ValueError("completion rows do not match ranked opportunities")
@@ -184,7 +185,7 @@ def render(*, output: Path = DEFAULT_OUTPUT) -> str:
         lines.append(f"| {cube_status[status_id]['label']} | {count} | {100 * count / 216:.1f}% |")
     lines += [
         "",
-        f"Only **{len(cube['cells'])} of 216 cells ({100 * len(cube['cells']) / 216:.1f}%)** have been deliberately assessed. This is the clearest overview result: the present programme has several sharp local islands, but most of the Cartesian product is still uncharted.",
+        f"**{len(cube['cells'])} of 216 cells ({100 * len(cube['cells']) / 216:.1f}%)** have now been deliberately assessed. The remaining not-mapped cells are unreviewed coordinates, not evidence of impossibility or absence from the literature.",
         "",
         "Coverage by mathematical regime:",
         "",
@@ -312,7 +313,7 @@ def render(*, output: Path = DEFAULT_OUTPUT) -> str:
         "",
         "Ranks 1 and 3 deliberately share the finite BV certificate: it proves a weak-base sufficiency upper bound and retains the explicit witness that avoids a general separation theorem for that displayed derivation.",
         "",
-        "## Literature points: 25 records",
+        f"## Literature points: {len(literature)} records",
         "",
         "Each row reports only the proposition imported into this programme. The boundary column prevents transfer from a source theorem to a stronger physics or foundations claim.",
         "",

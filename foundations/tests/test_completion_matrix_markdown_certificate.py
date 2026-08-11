@@ -25,6 +25,6 @@ class CompletionMatrixMarkdownCertificateTests(unittest.TestCase):
         r=copy.deepcopy(self.r);r["claim_flags"]["intersection_cube_rendered"]=False;self.assertTrue(self.v(r))
     def test_cube_count_inflated(self):
         r=copy.deepcopy(self.r);r["dimensions"]["cube_assessed_cells"]=216;self.assertTrue(self.v(r))
-    def test_stale_report(self):self.assertTrue(self.v(report=self.t.replace("25 records","24 records",1)))
+    def test_stale_report(self):self.assertTrue(self.v(report=self.t.replace("45 records","44 records",1)))
 
 if __name__=="__main__":unittest.main()

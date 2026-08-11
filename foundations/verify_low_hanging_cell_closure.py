@@ -21,6 +21,7 @@ RESULT = ROOT / "foundations/results/FOUNDATIONAL_LOW_HANGING_CELL_CLOSURE_AUDIT
 SCHEMA = ROOT / "foundations/schema/foundational-low-hanging-cell-closure-audit-v1.schema.json"
 REPORT = ROOT / "foundations/reports/low-hanging-cell-closure-audit.md"
 CUBE = ROOT / "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V0.json"
+EXPANSION = ROOT / "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_EXPANSION_V1.json"
 CHECKER = ROOT / "foundations/check_low_hanging_cell_closure.py"
 MODE = ROOT / "foundations/results/FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1.json"
 H04 = ROOT / "quantum-weyl/local_bv/cohomology/H04_GAUGE_FIXED_BV_RESULT.json"
@@ -170,14 +171,19 @@ def verify(
         (item.get("foundation"), item.get("carrier"), item.get("obligation"), item.get("status"))
         for item in result.get("remaining_assessed_open_cells", [])
     }
+    later_additions = {
+        (item.get("foundation"), item.get("carrier"), item.get("obligation"))
+        for item in load(EXPANSION).get("cell_additions", [])
+    }
     actual_remaining = {
         (cell.get("foundation"), cell.get("carrier"), cell.get("obligation"), cell.get("status"))
         for cell in cube.get("cells", [])
         if cell.get("status") in {"PIECES_ONLY", "PRIORITY_GAP"}
+        and (cell.get("foundation"), cell.get("carrier"), cell.get("obligation")) not in later_additions
     }
     if declared_remaining != actual_remaining:
         errors.append("remaining open-cell ledger is not exhaustive")
-    checks.append("three applied promotions and exhaustive post-promotion open ledger")
+    checks.append("three applied promotions and exhaustive post-promotion open ledger in the original 59-cell audit universe")
 
     claim_flags = result.get("claim_flags", {})
     for key in (

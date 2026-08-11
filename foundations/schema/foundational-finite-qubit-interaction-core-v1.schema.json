@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "result_id", "result_kind", "lifecycle", "dependency_tags", "created", "repository_base_commit", "scope", "mathematical_base", "physical_data", "independent_checker", "cube_support", "claim_flags", "does_not_establish", "human_report"],
+  "properties": {
+    "schema_version": {"const": "foundational-finite-qubit-interaction-core-v1"},
+    "result_id": {"const": "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1"},
+    "result_kind": {"const": "EXACT_FINITE_INTERACTION_WITNESS"},
+    "lifecycle": {"const": "VERIFIED_BOUNDED_MODEL"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "created": {"type": "string", "format": "date"},
+    "repository_base_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "scope": {"type": "string", "minLength": 1},
+    "mathematical_base": {"type": "object", "required": ["scalar_field", "carrier", "reasoning_used", "sufficiency_claim"]},
+    "physical_data": {"type": "object", "required": ["subsystem_observables", "interaction_hamiltonian", "dynamics", "states", "probabilities", "interaction_witness", "krein_companion"]},
+    "independent_checker": {"type": "object", "required": ["path", "arithmetic", "expected_digest", "checks"], "properties": {"expected_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}},
+    "cube_support": {"type": "object", "required": ["direct_obligations", "direct_carriers", "adjacent_carriers", "boundary"]},
+    "claim_flags": {"type": "object"},
+    "does_not_establish": {"type": "array", "minItems": 8, "items": {"type": "string", "minLength": 1}},
+    "human_report": {"const": "foundations/reports/finite-qubit-interaction-core.md"}
+  }
+}

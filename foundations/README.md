@@ -175,7 +175,7 @@ python3 -m unittest foundations.tests.test_ranked_opportunity_completion
 ```
 
 A generated Markdown projection combines a 6-by-6-by-6 intersection cube,
-the detailed 16-by-6 coverage atlas, nine completion rows, and all 25
+the detailed 16-by-6 coverage atlas, nine completion rows, and all 45
 literature points in
 [`completion-matrix.md`](reports/completion-matrix.md):
 
@@ -195,6 +195,25 @@ python3 foundations/verify_intersection_cube.py
 python3 -m unittest foundations.tests.test_intersection_cube
 ```
 
+The targeted primary-source expansion and exact finite-interaction rail raise
+the deliberately assessed portion from 59 to 162 cells (75%).  The expansion
+keeps direct literature results, bounded local results, non-composable pieces,
+and reviewed gaps as different statuses.  Its 20-source ledger has 18
+content-pinned PDFs and two fail-closed metadata-only records:
+
+```bash
+python3 foundations/check_finite_qubit_interaction_core.py
+python3 foundations/verify_finite_qubit_interaction_core.py
+python3 foundations/expand_intersection_cube.py --check
+python3 foundations/verify_intersection_cube_expansion.py
+python3 -m unittest foundations.tests.test_finite_qubit_interaction_core \
+  foundations.tests.test_intersection_cube_expansion
+```
+
+Use `python3 foundations/expand_intersection_cube.py --rebuild --write` only
+when deliberately regenerating the reviewed 103-cell crosswalk and cube.  A
+normal no-option run is read-only and reports its current counts and digest.
+
 The generated
 [`pair-frontier analysis`](reports/pair-frontier-analysis.md) projects the cube
 onto all 108 products of two dimensions. It ranks pairs only when an assessed
@@ -212,9 +231,9 @@ python3 -m unittest foundations.tests.test_pair_frontiers
 The bounded
 [`low-hanging cell closure audit`](reports/low-hanging-cell-closure-audit.md)
 imports the already-certified local BV cohomology and finite-cutoff dynamics,
-corrects three stale open-cell labels, and gives every one of the 22 remaining
-assessed open cells a typed missing gate.  Its exhaustion statement excludes
-all 157 not-mapped cells and preserves the failed broader classical freeze
+corrects three stale open-cell labels, and gives every one of the then-22
+assessed open cells in that bounded audit a typed missing gate.  Its exhaustion statement excludes
+all currently not-mapped cells and preserves the failed broader classical freeze
 gate:
 
 ```bash

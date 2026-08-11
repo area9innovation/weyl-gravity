@@ -18,11 +18,11 @@
 | Assumption coverage | 16 programmes × 6 axes = **96 cells** | Six independent assumption/claim axes |
 | Intersection cube | 6 mathematical regimes × 6 carriers × 6 physical obligations = **216 cells** | Simplified three-dimensional overview rendered as six slices |
 | Opportunity closure | **9 rows**, **8 certificates** | Ranked first artifacts, evidence, status, and open gates |
-| Literature corpus | **25 records** | Imported proposition plus transfer boundary |
+| Literature corpus | **45 records** | Imported proposition plus transfer boundary |
 
 Coverage-cell distribution: 51 **direct**, 20 **partial**, 9 **adjacent**, 11 **not addressed**, 5 **not yet classified**.
 
-Literature provenance: 19 `CONTENT_PINNED`, 2 `GIT_BLOB_PINNED`, 4 `METADATA_ONLY`; source kinds: 1 `AUTHORITATIVE_MONOGRAPH`, 2 `LOCAL_CERTIFIED_REPORT`, 22 `PRIMARY_RESEARCH`.
+Literature provenance: 37 `CONTENT_PINNED`, 2 `GIT_BLOB_PINNED`, 6 `METADATA_ONLY`; source kinds: 1 `AUTHORITATIVE_MONOGRAPH`, 2 `LOCAL_CERTIFIED_REPORT`, 42 `PRIMARY_RESEARCH`.
 
 ## Simplified three-dimensional overview
 
@@ -81,24 +81,24 @@ A result label marks the strongest bounded evidence currently attached to that c
 
 | Cube classification | Cells | Share of all 216 cells |
 |---|---:|---:|
-| Local result | 24 | 11.1% |
-| Literature result | 13 | 6.0% |
-| Pieces only | 5 | 2.3% |
+| Local result | 43 | 19.9% |
+| Literature result | 55 | 25.5% |
+| Pieces only | 47 | 21.8% |
 | Priority gap | 17 | 7.9% |
-| Not mapped | 157 | 72.7% |
+| Not mapped | 54 | 25.0% |
 
-Only **59 of 216 cells (27.3%)** have been deliberately assessed. This is the clearest overview result: the present programme has several sharp local islands, but most of the Cartesian product is still uncharted.
+**162 of 216 cells (75.0%)** have now been deliberately assessed. The remaining not-mapped cells are unreviewed coordinates, not evidence of impossibility or absence from the literature.
 
 Coverage by mathematical regime:
 
 | Mathematical regime | Local results | Literature results | Pieces only | Priority gaps | Not mapped |
 |---|---:|---:|---:|---:|---:|
-| Classical standard | 9 | 4 | 0 | 0 | 23 |
-| Weak formal base | 3 | 0 | 1 | 3 | 29 |
-| ZF with weakened Choice | 7 | 1 | 0 | 3 | 25 |
-| Constructive/computable | 0 | 3 | 3 | 3 | 27 |
-| Topos/internal | 0 | 2 | 1 | 6 | 27 |
-| Finite/discrete restriction | 5 | 3 | 0 | 2 | 26 |
+| Classical standard | 13 | 16 | 6 | 0 | 1 |
+| Weak formal base | 7 | 1 | 4 | 3 | 21 |
+| ZF with weakened Choice | 11 | 3 | 9 | 3 | 10 |
+| Constructive/computable | 4 | 9 | 10 | 3 | 10 |
+| Topos/internal | 0 | 10 | 10 | 6 | 10 |
+| Finite/discrete restriction | 8 | 16 | 8 | 2 | 2 |
 
 ### The six cube slices
 
@@ -110,12 +110,12 @@ Classical logic with ordinary ZFC-style analysis as the reference regime.
 
 | Carrier ↓ / obligation → | Kinematics/observables | States/probability | Dynamics/propagation | Gauge/BV/cohomology | Interactions/renormalization/QME | Reconstruction/limits |
 |---|:---:|:---:|:---:|:---:|:---:|:---:|
-| **Finite exact algebra** | Not mapped | Not mapped | Not mapped | Local result | Not mapped | Not mapped |
-| **Hilbert/operator** | Literature result | Literature result | Local result | Not mapped | Not mapped | Not mapped |
-| **Krein/indefinite** | Literature result | Local result | Local result | Not mapped | Not mapped | Not mapped |
-| **Algebraic C*-system** | Literature result | Local result | Local result | Not mapped | Not mapped | Not mapped |
-| **Smooth/PDE/distributional** | Not mapped | Not mapped | Local result | Local result | Local result | Not mapped |
-| **Localic/synthetic/internal** | Not mapped | Not mapped | Not mapped | Not mapped | Not mapped | Not mapped |
+| **Finite exact algebra** | Local result | Local result | Local result | Local result | Local result | Not mapped |
+| **Hilbert/operator** | Literature result | Literature result | Local result | Pieces only | Pieces only | Literature result |
+| **Krein/indefinite** | Literature result | Local result | Local result | Pieces only | Pieces only | Literature result |
+| **Algebraic C*-system** | Literature result | Local result | Local result | Literature result | Literature result | Literature result |
+| **Smooth/PDE/distributional** | Literature result | Literature result | Local result | Local result | Local result | Literature result |
+| **Localic/synthetic/internal** | Literature result | Literature result | Literature result | Pieces only | Pieces only | Literature result |
 
 #### Weak formal base
 
@@ -123,10 +123,10 @@ Explicit weak arithmetic or second-order systems used to calibrate proof strengt
 
 | Carrier ↓ / obligation → | Kinematics/observables | States/probability | Dynamics/propagation | Gauge/BV/cohomology | Interactions/renormalization/QME | Reconstruction/limits |
 |---|:---:|:---:|:---:|:---:|:---:|:---:|
-| **Finite exact algebra** | Not mapped | Not mapped | Not mapped | Local result | Not mapped | Local result |
-| **Hilbert/operator** | Pieces only | Not mapped | Not mapped | Not mapped | Not mapped | Not mapped |
-| **Krein/indefinite** | Local result | Not mapped | Not mapped | Not mapped | Not mapped | Not mapped |
-| **Algebraic C*-system** | Not mapped | Not mapped | Not mapped | Not mapped | Not mapped | Not mapped |
+| **Finite exact algebra** | Local result | Local result | Local result | Local result | Local result | Local result |
+| **Hilbert/operator** | Pieces only | Not mapped | Pieces only | Not mapped | Not mapped | Literature result |
+| **Krein/indefinite** | Local result | Not mapped | Pieces only | Not mapped | Not mapped | Not mapped |
+| **Algebraic C*-system** | Not mapped | Not mapped | Pieces only | Not mapped | Not mapped | Not mapped |
 | **Smooth/PDE/distributional** | Not mapped | Not mapped | Priority gap | Priority gap | Priority gap | Not mapped |
 | **Localic/synthetic/internal** | Not mapped | Not mapped | Not mapped | Not mapped | Not mapped | Not mapped |
 
@@ -136,12 +136,12 @@ Classical set theory in which full Choice or Countable Choice is absent or isola
 
 | Carrier ↓ / obligation → | Kinematics/observables | States/probability | Dynamics/propagation | Gauge/BV/cohomology | Interactions/renormalization/QME | Reconstruction/limits |
 |---|:---:|:---:|:---:|:---:|:---:|:---:|
-| **Finite exact algebra** | Not mapped | Not mapped | Not mapped | Not mapped | Not mapped | Not mapped |
-| **Hilbert/operator** | Literature result | Not mapped | Local result | Not mapped | Not mapped | Not mapped |
-| **Krein/indefinite** | Local result | Local result | Local result | Not mapped | Not mapped | Not mapped |
-| **Algebraic C*-system** | Local result | Local result | Local result | Not mapped | Not mapped | Not mapped |
+| **Finite exact algebra** | Local result | Local result | Local result | Pieces only | Local result | Not mapped |
+| **Hilbert/operator** | Literature result | Pieces only | Local result | Pieces only | Pieces only | Literature result |
+| **Krein/indefinite** | Local result | Local result | Local result | Pieces only | Pieces only | Not mapped |
+| **Algebraic C*-system** | Local result | Local result | Local result | Pieces only | Pieces only | Literature result |
 | **Smooth/PDE/distributional** | Not mapped | Not mapped | Priority gap | Priority gap | Priority gap | Not mapped |
-| **Localic/synthetic/internal** | Not mapped | Not mapped | Not mapped | Not mapped | Not mapped | Not mapped |
+| **Localic/synthetic/internal** | Not mapped | Pieces only | Not mapped | Not mapped | Not mapped | Not mapped |
 
 #### Constructive/computable
 
@@ -149,12 +149,12 @@ Existence requires constructive or computational content rather than classical e
 
 | Carrier ↓ / obligation → | Kinematics/observables | States/probability | Dynamics/propagation | Gauge/BV/cohomology | Interactions/renormalization/QME | Reconstruction/limits |
 |---|:---:|:---:|:---:|:---:|:---:|:---:|
-| **Finite exact algebra** | Not mapped | Not mapped | Not mapped | Pieces only | Not mapped | Not mapped |
-| **Hilbert/operator** | Literature result | Literature result | Not mapped | Not mapped | Not mapped | Pieces only |
-| **Krein/indefinite** | Not mapped | Not mapped | Not mapped | Not mapped | Not mapped | Not mapped |
-| **Algebraic C*-system** | Literature result | Pieces only | Not mapped | Not mapped | Not mapped | Not mapped |
+| **Finite exact algebra** | Local result | Local result | Local result | Pieces only | Local result | Not mapped |
+| **Hilbert/operator** | Literature result | Literature result | Literature result | Pieces only | Pieces only | Pieces only |
+| **Krein/indefinite** | Not mapped | Pieces only | Pieces only | Not mapped | Not mapped | Not mapped |
+| **Algebraic C*-system** | Literature result | Pieces only | Pieces only | Not mapped | Not mapped | Literature result |
 | **Smooth/PDE/distributional** | Not mapped | Not mapped | Priority gap | Priority gap | Priority gap | Not mapped |
-| **Localic/synthetic/internal** | Not mapped | Not mapped | Not mapped | Not mapped | Not mapped | Not mapped |
+| **Localic/synthetic/internal** | Literature result | Literature result | Literature result | Pieces only | Pieces only | Literature result |
 
 #### Topos/internal
 
@@ -162,11 +162,11 @@ Objects and truth are interpreted internally in a selected topos, often with int
 
 | Carrier ↓ / obligation → | Kinematics/observables | States/probability | Dynamics/propagation | Gauge/BV/cohomology | Interactions/renormalization/QME | Reconstruction/limits |
 |---|:---:|:---:|:---:|:---:|:---:|:---:|
-| **Finite exact algebra** | Not mapped | Not mapped | Not mapped | Not mapped | Not mapped | Not mapped |
-| **Hilbert/operator** | Not mapped | Not mapped | Not mapped | Not mapped | Not mapped | Not mapped |
-| **Krein/indefinite** | Not mapped | Not mapped | Not mapped | Not mapped | Not mapped | Not mapped |
-| **Algebraic C*-system** | Not mapped | Not mapped | Not mapped | Not mapped | Not mapped | Not mapped |
-| **Smooth/PDE/distributional** | Not mapped | Not mapped | Literature result | Priority gap | Priority gap | Not mapped |
+| **Finite exact algebra** | Not mapped | Literature result | Pieces only | Not mapped | Pieces only | Literature result |
+| **Hilbert/operator** | Not mapped | Pieces only | Pieces only | Not mapped | Not mapped | Not mapped |
+| **Krein/indefinite** | Not mapped | Pieces only | Pieces only | Not mapped | Not mapped | Not mapped |
+| **Algebraic C*-system** | Literature result | Literature result | Literature result | Pieces only | Pieces only | Literature result |
+| **Smooth/PDE/distributional** | Literature result | Pieces only | Literature result | Priority gap | Priority gap | Literature result |
 | **Localic/synthetic/internal** | Literature result | Pieces only | Priority gap | Priority gap | Priority gap | Priority gap |
 
 #### Finite/discrete restriction
@@ -176,11 +176,11 @@ A finite carrier, finite truncation, or finitist proposal replaces or regulates 
 | Carrier ↓ / obligation → | Kinematics/observables | States/probability | Dynamics/propagation | Gauge/BV/cohomology | Interactions/renormalization/QME | Reconstruction/limits |
 |---|:---:|:---:|:---:|:---:|:---:|:---:|
 | **Finite exact algebra** | Literature result | Literature result | Local result | Local result | Priority gap | Local result |
-| **Hilbert/operator** | Literature result | Not mapped | Not mapped | Not mapped | Not mapped | Local result |
-| **Krein/indefinite** | Local result | Not mapped | Not mapped | Not mapped | Not mapped | Not mapped |
-| **Algebraic C*-system** | Not mapped | Not mapped | Not mapped | Not mapped | Not mapped | Not mapped |
-| **Smooth/PDE/distributional** | Not mapped | Not mapped | Not mapped | Not mapped | Not mapped | Priority gap |
-| **Localic/synthetic/internal** | Not mapped | Not mapped | Not mapped | Not mapped | Not mapped | Not mapped |
+| **Hilbert/operator** | Literature result | Literature result | Literature result | Pieces only | Pieces only | Local result |
+| **Krein/indefinite** | Local result | Local result | Local result | Pieces only | Local result | Not mapped |
+| **Algebraic C*-system** | Literature result | Literature result | Literature result | Pieces only | Literature result | Not mapped |
+| **Smooth/PDE/distributional** | Literature result | Pieces only | Literature result | Literature result | Pieces only | Priority gap |
+| **Localic/synthetic/internal** | Literature result | Literature result | Literature result | Pieces only | Pieces only | Literature result |
 
 ### The five missing faces to investigate thoroughly
 
@@ -271,7 +271,7 @@ The status terms have deliberately narrow meanings:
 
 Ranks 1 and 3 deliberately share the finite BV certificate: it proves a weak-base sufficiency upper bound and retains the explicit witness that avoids a general separation theorem for that displayed derivation.
 
-## Literature points: 25 records
+## Literature points: 45 records
 
 Each row reports only the proposition imported into this programme. The boundary column prevents transfer from a source theorem to a stronger physics or foundations claim.
 
@@ -281,23 +281,43 @@ The **Pin** column reports provenance, not scientific quality: `CONTENT_PINNED` 
 |---:|---|---|---|---|
 | 1964 | [haag-kastler-1964](https://doi.org/10.1063/1.1704187) | `METADATA_ONLY` | Local quantum field theory can be axiomatized algebra-first in terms of observables and locality rather than beginning with a preferred global Hilbert-space realization. | Algebra-first formulation moves but does not erase representation, state-existence, topology, infinity, or set-existence questions. |
 | 1970 | [solovay-1970](https://doi.org/10.2307/1970696) | `CONTENT_PINNED` | Relative to an inaccessible-cardinal assumption, there is a model of ZF with dependent choice in which every set of reals is Lebesgue measurable. | Dropping Choice alone does not imply that every set of reals is measurable; this is a relative-consistency construction with additional strength in the metatheory. |
+| 1975 | [kogut-susskind-1975](https://doi.org/10.1103/PhysRevD.11.395) | `METADATA_ONLY` | Wilson lattice gauge theory admits a Hamiltonian formulation with gauge constraints and a continuum-limit programme. | The historical formulation is not finite in every mathematical sense and does not supply a controlled Weyl-gravity continuum or BV-QME certificate. |
+| 1981 | [pour-el-richards-1981](https://doi.org/10.1016/0001-8708(81)90001-3) | `METADATA_ONLY` | Computable initial data for a wave equation can have a unique solution whose values fail to be computable under the paper's representations. | This is a representation-sensitive negative computability result, not a no-go theorem for constructive hyperbolic PDE or a result about Weyl-gravity Green operators. |
 | 1986 | [brown-simpson-1986](https://doi.org/10.1016/0168-0072(86)90066-7) | `METADATA_ONLY` | Over RCA_0, the separable Hahn-Banach theorem studied in the paper is equivalent to WKL_0. | This is a reverse-mathematical result for a coded separable theorem, not the ZF choice strength of unrestricted Hahn-Banach and not proof that a concrete physics calculation invokes it. |
 | 1996 | [grinkevich-1996](https://arxiv.org/abs/gr-qc/9608013) | `CONTENT_PINNED` | Synthetic differential geometry in a suitable topos supports intuitionistic models of Riemannian geometry and Einstein equations on formal manifolds. | This is a classical-gravity reformulation route; it does not supply a constructive quantum Weyl theory or an external equivalence theorem for every classical spacetime. |
 | 1996 | [humphreys-simpson-1996](https://doi.org/10.1090/S0002-9947-96-01742-6) | `CONTENT_PINNED` | Some weak-star closure existence statements for separable Banach-space duals require Pi^1_1 comprehension, so separability alone does not guarantee uniformly weak foundational strength. | This does not make every theorem about a separable Banach space strong; the coded target and its representation determine the reversal. |
+| 1998 | [bender-boettcher-1998](https://arxiv.org/abs/physics/9712001) | `CONTENT_PINNED` | Families of non-Hermitian PT-symmetric Hamiltonians can have real positive spectra in an unbroken-symmetry regime. | PT symmetry is not identical to Krein self-adjointness, and real spectrum alone does not supply a positive physical inner product, unitary dynamics, or a gauge-QFT state space. |
 | 1999 | [humphreys-simpson-1999](https://doi.org/10.2307/2586763) | `CONTENT_PINNED` | Over RCA_0, separation for open convex sets is equivalent to WKL_0, while separation for separably closed convex sets is equivalent to ACA_0. The representation of a closed convex set changes the logical strength of an apparently similar separation claim. | The result calibrates two precise separable Banach-space statements; it does not assign one strength to every use of geometric separation. |
 | 1999 | [richman-bridges-1999](https://doi.org/10.1006/jfan.1998.3372) | `METADATA_ONLY` | Gleason's theorem has a constructive proof after its hypotheses and conclusion are given an appropriate constructive formulation. | This is a reformulation and proof of a specific probability-representation theorem; it is not a constructive derivation of all quantum mechanics. |
+| 2000 | [barnich-brandt-henneaux-2000](https://arxiv.org/abs/hep-th/0002245) | `CONTENT_PINNED` | Local BRST cohomology classifies the anomaly consistency condition, counterterms, and classical deformations for broad classes of gauge theories. | This is a classical-standard local cohomology framework. It does not compute Weyl-gravity coefficients, restore this repository's QME, or calibrate weak, constructive, or choice-free foundations. |
 | 2000 | [bridges-svozil-2000](https://doi.org/10.1023/A:1003613131948) | `CONTENT_PINNED` | Bishop-style constructive mathematics can isolate constructive properties of Hilbert subspaces and projections and formulate a constructive quantum-logical axiom system. | The paper is an attempt at constructive quantum foundations, not a complete constructive dynamics, continuum QFT, or gravity construction. |
+| 2001 | [brunetti-fredenhagen-verch-2001](https://arxiv.org/abs/math-ph/0112041) | `CONTENT_PINNED` | Locally covariant QFT is formulated as a functor from globally hyperbolic spacetimes to star-algebras, with admissible state spaces and relative Cauchy evolution. | The framework supplies architecture, not a Weyl-gravity model, a preferred state, a weak-foundation audit, or the missing full metric-BV Hadamard construction. |
 | 2001 | [hardy-2001](https://arxiv.org/abs/quant-ph/0101012) | `CONTENT_PINNED` | Finite-dimensional quantum formalism can be reconstructed from operational axioms, with continuity doing explicit work in separating the quantum and classical cases in this framework. | Finite-dimensional reconstruction under its stated framework; it does not establish the foundations of infinite-dimensional QFT or the set-theoretic strength of the reconstruction proof. |
+| 2001 | [mostafazadeh-2001](https://arxiv.org/abs/math-ph/0107001) | `CONTENT_PINNED` | Pseudo-Hermiticity is introduced and shown to be a necessary structural condition for Hamiltonians with real spectrum in the setting studied. | The result assumes analytic and spectral hypotheses and does not by itself define physical probabilities, interacting QFT, or a weakest foundational base. |
+| 2004 | [abramsky-coecke-2004](https://arxiv.org/abs/quant-ph/0402130) | `CONTENT_PINNED` | Compact closed categories with biproducts express finite quantum protocols compositionally, with scalars and a Born-rule-like probabilistic interpretation emerging from the categorical structure. | Categorical semantics is not itself a selected topos, a continuum field carrier, a constructive metatheory, or a derivation of physical Hilbert space from Weyl gravity. |
 | 2004 | [gibbons-hoffman-wootters-2004](https://doi.org/10.1103/PhysRevA.70.062101) | `CONTENT_PINNED` | For finite-dimensional quantum systems of prime-power dimension, finite-field phase space supports discrete Wigner functions and mutually unbiased line-associated bases. | A finite kinematics for selected dimensions is not a finite replacement for continuum dynamics, Lorentzian QFT, or a convergence theorem. |
+| 2004 | [gottschalk-2004](https://arxiv.org/abs/math-ph/0408048) | `CONTENT_PINNED` | Relativistic local fields on Krein space admit analytic-vector and modular-theoretic results under stated axioms, extending a Bisognano-Wichmann-type characterization. | This is an indefinite-metric QFT result under strong axioms, not a construction of the full Weyl metric BV theory, positive Born probabilities, or choice-free analysis. |
 | 2008 | [brattka-2008](https://arxiv.org/abs/0808.1663) | `CONTENT_PINNED` | The separable Hahn-Banach theorem also admits a uniform computability analysis, connecting its reverse-mathematical WKL calibration to computable analysis. | A Weihrauch or computability classification is not automatically the same relation as implication over RCA_0 or derivability in constructive set theory. |
+| 2008 | [doring-2008](https://arxiv.org/abs/0809.4847) | `CONTENT_PINNED` | Normal states on a von Neumann algebra are related to measures on the spectral presheaf in the topos approach to quantum theory. | A state-measure representation is not a physical state-selection rule, a Born-rule derivation, or an internal interacting field theory. |
+| 2009 | [bahr-dittrich-2009](https://arxiv.org/abs/0909.5688) | `CONTENT_PINNED` | Discretization can break diffeomorphism symmetry and coarse-graining or perfect-action methods can be used to study its restoration. | The analysis does not give a Weyl-BV cohomology certificate, establish quantum anomaly cancellation, or prove a continuum limit for this repository. |
 | 2009 | [coquand-spitters-2009](https://doi.org/10.1017/S0305004109002515) | `CONTENT_PINNED` | Commutative Gelfand duality admits a constructive formulation in which spectra are handled point-free. | Constructive commutative duality is not a complete constructive formulation of interacting quantum field theory. |
 | 2009 | [heunen-landsman-spitters-2009](https://arxiv.org/abs/0709.4364) | `CONTENT_PINNED` | An algebraic quantum system can be represented internally in a topos with an intuitionistic Heyting logic and a localic spectrum. | A reformulation of algebraic quantum theory; it does not establish empirical superiority, eliminate all external classical reasoning, or construct Weyl QFT. |
 | 2009 | [rossi-2009](https://arxiv.org/abs/0911.0332) | `CONTENT_PINNED` | Over ZF, the full Banach-Alaoglu compactness statement and Tychonoff compactness for compact Hausdorff spaces have the Boolean-prime-ideal or ultrafilter strength described in the paper, strictly below full Choice. | A theorem about general compactness principles; it does not show that every concrete PDE or quantum construction uses that full generality. |
 | 2009 | [simpson-2009](https://doi.org/10.1017/CBO9780511581007) | `CONTENT_PINNED` | Reverse mathematics classifies the set-existence axioms needed for theorems of ordinary mathematics over explicit weak base theories. Complete separable metric spaces belong to the intended scope of ordinary countable mathematics even though their point sets may be uncountable. | The standard second-order-arithmetic programme is not by itself a formalization of a physical theory or of arbitrary set-sized functional analysis. |
 | 2011 | [chiribella-dariano-perinotti-2011](https://doi.org/10.1103/PhysRevA.84.012311) | `CONTENT_PINNED` | Within an operational-probabilistic framework, five informational axioms define a broad class and purification selects quantum theory without taking Hilbert space as the starting postulate. | A reconstruction result in its declared operational framework; its proof has not yet been audited for logical or choice strength here. |
+| 2011 | [fewster-verch-2011](https://arxiv.org/abs/1109.6732) | `CONTENT_PINNED` | Dynamical locality compares kinematic and dynamically defined local content and is established for classical and quantized scalar models, with explicit exceptional cases. | The scalar examples are not a theorem for gauge theories or Weyl gravity; the paper itself identifies gauge-theoretic complications. |
+| 2011 | [flori-2011](https://arxiv.org/abs/1110.1650) | `CONTENT_PINNED` | Group transformations can be represented in topos quantum theory while addressing continuity problems caused by the context-category action. | This gives a symmetry/dynamics ingredient, not a causal propagator, interacting QFT, or internal Weyl BV complex. |
+| 2011 | [fredenhagen-rejzner-2011](https://arxiv.org/abs/1110.5232) | `CONTENT_PINNED` | The BV formalism can be combined with perturbative AQFT, including renormalized time-ordered products and the anomalous master Ward identity. | This does not instantiate the full Weyl metric complex or certify its Lorentzian QME, and it contains no reverse-mathematical or constructive strength analysis. |
+| 2012 | [brenna-flori-2012](https://arxiv.org/abs/1206.0809) | `CONTENT_PINNED` | The topos approach admits an internal treatment of one-parameter groups and a counterpart of Stone's theorem. | An internal Stone theorem is not spacetime propagation, Green-hyperbolicity, renormalization, or an empirical equivalence theorem. |
+| 2012 | [dittrich-2012](https://arxiv.org/abs/1205.6127) | `CONTENT_PINNED` | Cylindrical consistency, embedding maps, and coarse graining provide explicit obligations for connecting discrete dynamics to a continuum theory. | This is a continuum-construction framework, not a completed continuum theorem for Weyl gravity or a foundational rejection of actual infinity. |
+| 2013 | [brunetti-fredenhagen-rejzner-2013](https://arxiv.org/abs/1306.1058) | `CONTENT_PINNED` | Perturbative quantum gravity can be formulated as an effective locally covariant theory using renormalized BV methods and relational observables. | This does not establish perturbative renormalizability, the Weyl-gravity QME, a nonperturbative theory, or a weak/constructive foundational calibration. |
 | 2014 | [henry-2014](https://arxiv.org/abs/1412.2009) | `CONTENT_PINNED` | Constructive, localic Gelfand duality extends to non-unital commutative C*-algebras and locally compact locales. | Commutative localic duality does not by itself construct noncommutative interacting QFT or its states and dynamics. |
+| 2014 | [zohar-burrello-2014](https://arxiv.org/abs/1409.3085) | `CONTENT_PINNED` | Hamiltonian lattice gauge models can encode local gauge invariance and Gauss-law constraints for finite, compact, and truncated gauge groups. | A simulator-oriented lattice Hamiltonian is not a finite Weyl-gravity BV complex, a regulator-independent continuum limit, or a QME certificate. |
 | 2015 | [esmeral-ferrer-wagner-2015](https://doi.org/10.15352/bjma/09-1-1) | `CONTENT_PINNED` | A Krein space has an indefinite product together with a fundamental symmetry whose associated positive product supplies a Hilbert-space topology. | A mathematical structural fact; it neither validates a generalized Born rule nor removes set-theoretic assumptions from infinite-dimensional analysis. |
 | 2018 | [eastaugh-2018](https://arxiv.org/abs/1807.10022) | `CONTENT_PINNED` | Foundational analysis uses reverse mathematics to compare what different foundational programmes can justify. The choice of entailment and model class can itself exceed the resources of the foundation being assessed. | A methodological analysis, not a physics application or a theorem that one reverse-mathematical framework fits every target. |
+| 2018 | [neumann-pape-streicher-2018](https://arxiv.org/abs/1610.09209) | `CONTENT_PINNED` | For separable infinite-dimensional Hilbert spaces, states and observables can be represented by measures and valuations so that an effective spectral-theorem analysis becomes possible. | Computable representations are not equivalent to a Bishop-constructive proof or an RCA_0 reversal, and the result does not supply interacting QFT. |
+| 2019 | [harding-heunen-2019](https://arxiv.org/abs/1903.01897) | `CONTENT_PINNED` | A smaller context poset yields a different topos while retaining core results on Kochen-Specker obstruction, spectral representation, state measures, and dynamics. | Changing the context poset changes internal logic; preservation of these core results is not a general invariance theorem for field theory, BV, or empirical predictions. |
+| 2020 | [constantin-doring-2020](https://arxiv.org/abs/2006.03139) | `CONTENT_PINNED` | For finite-dimensional systems of dimension at least three, contextual entropy determines the density matrix and the paper gives an explicit reconstruction algorithm. | This is finite-dimensional mathematical state reconstruction, not physical state selection, field dynamics, or an internal renormalized gauge theory. |
 | 2022 | [carcassi-aidala-2022](https://doi.org/10.1007/s10701-022-00555-z) | `METADATA_ONLY` | Reverse physics asks which physical assumptions are sufficient or necessary for physical laws, by analogy with reverse mathematics. | Defines the reverse-physics programme; it does not classify the logical or set-theoretic strength of the mathematics used by a physical theory. |
 | 2026 | [bateman-turok-2026](https://arxiv.org/abs/2607.00096) | `CONTENT_PINNED` | The Bateman-Turok proposal changes the state-space metric and adjoint/probability structure by using a Krein carrier and a fundamental ghost parity. | The paper's tree-level positivity and deferred operator claims retain the boundaries audited in the repository; no foundational-strength result follows from this citation. |
 | 2026 | [blackadar-farah-2026](https://arxiv.org/abs/2602.15812) | `CONTENT_PINNED` | A substantial theory of separable C*-algebras, including representation, polynomial spectral mapping, and continuous functional calculus for commuting normal elements, can be developed in ZF. Without Choice, nonseparable examples can break familiar state-space and commutative representation conclusions. | Does not automatically remove Choice from AQFT, interacting QFT, state selection, or nonseparable operator-algebra arguments. |
@@ -317,6 +337,11 @@ The **Pin** column reports provenance, not scientific quality: `CONTENT_PINNED` 
 - `literature-supplement-known-attempts-v1.json`: No source found here performs a joint reverse-mathematical audit of a Lorentzian gauge QFT, BV-BFV complex, or Krein-Fock completion.
 - `literature-supplement-known-attempts-v1.json`: The reverse-mathematical strength of spectral measures, Green-hyperbolic complexes, Hadamard-state selection, microlocal renormalization, and BRST-compatible indefinite completions remains unclassified in this corpus.
 - `literature-supplement-known-attempts-v1.json`: Constructive quantum field theory in the established Glimm-Jaffe sense means rigorous model construction and must not be silently counted as intuitionistic or choice-free QFT.
+- `literature-expansion-v2.json`: The Pour-El-Richards and Kogut-Susskind entries remain metadata-only and block a source freeze.
+- `literature-expansion-v2.json`: No reviewed source jointly calibrates Lorentzian gauge-field BV, Green-hyperbolicity, microlocal renormalization, and the QME over a weak or constructive base.
+- `literature-expansion-v2.json`: Topos dynamics sources concern internal group actions and spectral/context structures, not spacetime support or causal propagation.
+- `literature-expansion-v2.json`: Finite lattice and finite-dimensional sources do not remove the need for explicit comparison maps, error estimates, and regulator-independent continuum limits.
+- `literature-expansion-v2.json`: The ledger is a targeted expansion and makes no literature-completeness claim.
 
 ## Closure boundary
 

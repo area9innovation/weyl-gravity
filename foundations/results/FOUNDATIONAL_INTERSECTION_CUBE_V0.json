@@ -1,139 +1,2336 @@
 {
-  "schema_version":"foundational-intersection-cube-v0",
-  "result_id":"FOUNDATIONAL_INTERSECTION_CUBE_V0",
-  "result_kind":"FOUNDATIONAL_NAVIGATION_CUBE",
-  "lifecycle":"LITERATURE_SCOPED",
-  "dependency_tags":["LOCAL-ALGEBRAIC","REDUCED-MODE","LORENTZIAN-CAUSAL"],
-  "created":"2026-08-11",
-  "repository_base_commit":"dafb2345163d389e32416a019a3be38cc014f33f",
-  "purpose":"Compress the six-axis assumption ledger into three independent questions that can be viewed as a Cartesian product: which mathematical regime, which carrier/analytic architecture, and which physical obligation.",
-  "cartesian_product_warning":"The 6 x 6 x 6 cube is a navigation grid, not a claim that all 216 combinations are coherent, equally important, or mutually exclusive. A cell records the strongest evidence found for that intersection; it never means the entire cell is solved.",
-  "axes":[
+  "schema_version": "foundational-intersection-cube-v0",
+  "result_id": "FOUNDATIONAL_INTERSECTION_CUBE_V0",
+  "result_kind": "FOUNDATIONAL_NAVIGATION_CUBE",
+  "lifecycle": "LITERATURE_SCOPED",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "created": "2026-08-11",
+  "repository_base_commit": "a002680d8fafc7f3bc23e704625894c23aee22c6",
+  "purpose": "Compress the six-axis assumption ledger into three independent questions that can be viewed as a Cartesian product: which mathematical regime, which carrier/analytic architecture, and which physical obligation.",
+  "cartesian_product_warning": "The 6 x 6 x 6 cube is a navigation grid, not a claim that all 216 combinations are coherent, equally important, or mutually exclusive. A cell records the strongest evidence found for that intersection; it never means the entire cell is solved.",
+  "axes": [
     {
-      "id":"FOUNDATION","question":"Under which rules may the mathematics reason and assert that objects exist?",
-      "keys":[
-        {"id":"CLASSICAL_STANDARD","label":"Classical standard","meaning":"Classical logic with ordinary ZFC-style analysis as the reference regime.","includes":["ordinary classical proofs","standard completed real/complex analysis","unrestricted background Choice when not audited"]},
-        {"id":"WEAK_ARITHMETIC","label":"Weak formal base","meaning":"Explicit weak arithmetic or second-order systems used to calibrate proof strength.","includes":["PRA","RCA_0","WKL_0","ACA_0","stronger comprehension when required"]},
-        {"id":"WEAK_CHOICE_ZF","label":"ZF with weakened Choice","meaning":"Classical set theory in which full Choice or Countable Choice is absent or isolated.","includes":["ZF","ZF + DC","no Countable Choice","ultrafilter/Boolean-prime-ideal fragments"]},
-        {"id":"CONSTRUCTIVE_COMPUTABLE","label":"Constructive/computable","meaning":"Existence requires constructive or computational content rather than classical existence alone.","includes":["Bishop constructivism","computable analysis","Weihrauch analysis","constructive reformulations"]},
-        {"id":"TOPOS_INTERNAL","label":"Topos/internal","meaning":"Objects and truth are interpreted internally in a selected topos, often with intuitionistic logic.","includes":["Heyting logic","locales","internal algebraic quantum theory","synthetic differential geometry"]},
-        {"id":"FINITE_DISCRETE","label":"Finite/discrete restriction","meaning":"A finite carrier, finite truncation, or finitist proposal replaces or regulates an infinite structure.","includes":["finite fields","finite modes","finite-dimensional systems","potential-infinity/finitist proposals"],"warning":"A finite regulator, finite carrier, and foundational rejection of actual infinity are distinct and must not be conflated."}
+      "id": "FOUNDATION",
+      "question": "Under which rules may the mathematics reason and assert that objects exist?",
+      "keys": [
+        {
+          "id": "CLASSICAL_STANDARD",
+          "label": "Classical standard",
+          "meaning": "Classical logic with ordinary ZFC-style analysis as the reference regime.",
+          "includes": [
+            "ordinary classical proofs",
+            "standard completed real/complex analysis",
+            "unrestricted background Choice when not audited"
+          ]
+        },
+        {
+          "id": "WEAK_ARITHMETIC",
+          "label": "Weak formal base",
+          "meaning": "Explicit weak arithmetic or second-order systems used to calibrate proof strength.",
+          "includes": [
+            "PRA",
+            "RCA_0",
+            "WKL_0",
+            "ACA_0",
+            "stronger comprehension when required"
+          ]
+        },
+        {
+          "id": "WEAK_CHOICE_ZF",
+          "label": "ZF with weakened Choice",
+          "meaning": "Classical set theory in which full Choice or Countable Choice is absent or isolated.",
+          "includes": [
+            "ZF",
+            "ZF + DC",
+            "no Countable Choice",
+            "ultrafilter/Boolean-prime-ideal fragments"
+          ]
+        },
+        {
+          "id": "CONSTRUCTIVE_COMPUTABLE",
+          "label": "Constructive/computable",
+          "meaning": "Existence requires constructive or computational content rather than classical existence alone.",
+          "includes": [
+            "Bishop constructivism",
+            "computable analysis",
+            "Weihrauch analysis",
+            "constructive reformulations"
+          ]
+        },
+        {
+          "id": "TOPOS_INTERNAL",
+          "label": "Topos/internal",
+          "meaning": "Objects and truth are interpreted internally in a selected topos, often with intuitionistic logic.",
+          "includes": [
+            "Heyting logic",
+            "locales",
+            "internal algebraic quantum theory",
+            "synthetic differential geometry"
+          ]
+        },
+        {
+          "id": "FINITE_DISCRETE",
+          "label": "Finite/discrete restriction",
+          "meaning": "A finite carrier, finite truncation, or finitist proposal replaces or regulates an infinite structure.",
+          "includes": [
+            "finite fields",
+            "finite modes",
+            "finite-dimensional systems",
+            "potential-infinity/finitist proposals"
+          ],
+          "warning": "A finite regulator, finite carrier, and foundational rejection of actual infinity are distinct and must not be conflated."
+        }
       ]
     },
     {
-      "id":"CARRIER","question":"What mathematical object carries states, observables, fields, and evolution?",
-      "keys":[
-        {"id":"FINITE_EXACT","label":"Finite exact algebra","meaning":"Finite matrices, rational/integer complexes, or explicitly finite-dimensional algebraic data."},
-        {"id":"HILBERT_OPERATOR","label":"Hilbert/operator","meaning":"Positive Hilbert spaces, operator domains, spectral data, and their completions."},
-        {"id":"KREIN_INDEFINITE","label":"Krein/indefinite","meaning":"Indefinite inner products, fundamental symmetries, and positive companion topologies."},
-        {"id":"ALGEBRAIC_CSTAR","label":"Algebraic C*-system","meaning":"Observable algebras, states, GNS representations, nets, and algebra-first formulations."},
-        {"id":"SMOOTH_DISTRIBUTIONAL","label":"Smooth/PDE/distributional","meaning":"Manifolds, bundles, sections, Sobolev or distribution spaces, differential operators, and Green theory."},
-        {"id":"LOCALIC_SYNTHETIC","label":"Localic/synthetic/internal","meaning":"Locales, internal algebra objects, formal manifolds, and synthetic smooth structures."}
+      "id": "CARRIER",
+      "question": "What mathematical object carries states, observables, fields, and evolution?",
+      "keys": [
+        {
+          "id": "FINITE_EXACT",
+          "label": "Finite exact algebra",
+          "meaning": "Finite matrices, rational/integer complexes, or explicitly finite-dimensional algebraic data."
+        },
+        {
+          "id": "HILBERT_OPERATOR",
+          "label": "Hilbert/operator",
+          "meaning": "Positive Hilbert spaces, operator domains, spectral data, and their completions."
+        },
+        {
+          "id": "KREIN_INDEFINITE",
+          "label": "Krein/indefinite",
+          "meaning": "Indefinite inner products, fundamental symmetries, and positive companion topologies."
+        },
+        {
+          "id": "ALGEBRAIC_CSTAR",
+          "label": "Algebraic C*-system",
+          "meaning": "Observable algebras, states, GNS representations, nets, and algebra-first formulations."
+        },
+        {
+          "id": "SMOOTH_DISTRIBUTIONAL",
+          "label": "Smooth/PDE/distributional",
+          "meaning": "Manifolds, bundles, sections, Sobolev or distribution spaces, differential operators, and Green theory."
+        },
+        {
+          "id": "LOCALIC_SYNTHETIC",
+          "label": "Localic/synthetic/internal",
+          "meaning": "Locales, internal algebra objects, formal manifolds, and synthetic smooth structures."
+        }
       ]
     },
     {
-      "id":"OBLIGATION","question":"Which physical or theorem-level job must the framework actually perform?",
-      "keys":[
-        {"id":"KINEMATICS_OBSERVABLES","label":"Kinematics/observables","meaning":"Define degrees of freedom, observables, commutation/phase-space structure, and allowed configurations."},
-        {"id":"STATES_PROBABILITY","label":"States/probability","meaning":"Construct states, representations, positivity, normalization, Born probabilities, or physical selection rules."},
-        {"id":"DYNAMICS_PROPAGATION","label":"Dynamics/propagation","meaning":"Supply evolution, spectra, operator domains, equations of motion, causal propagation, or Green operators."},
-        {"id":"GAUGE_BV_COHOMOLOGY","label":"Gauge/BV/cohomology","meaning":"Handle gauge symmetry, BRST/BV complexes, residual cohomology, pairings, and gauge independence."},
-        {"id":"INTERACTION_RENORMALIZATION_QME","label":"Interactions/renormalization/QME","meaning":"Construct interacting products, classify counterterms/anomalies, renormalize, and restore the quantum master equation."},
-        {"id":"RECONSTRUCTION_LIMITS","label":"Reconstruction/limits","meaning":"Derive the formalism from physical postulates or prove comparison, continuum-limit, empirical, or interpretation theorems."}
+      "id": "OBLIGATION",
+      "question": "Which physical or theorem-level job must the framework actually perform?",
+      "keys": [
+        {
+          "id": "KINEMATICS_OBSERVABLES",
+          "label": "Kinematics/observables",
+          "meaning": "Define degrees of freedom, observables, commutation/phase-space structure, and allowed configurations."
+        },
+        {
+          "id": "STATES_PROBABILITY",
+          "label": "States/probability",
+          "meaning": "Construct states, representations, positivity, normalization, Born probabilities, or physical selection rules."
+        },
+        {
+          "id": "DYNAMICS_PROPAGATION",
+          "label": "Dynamics/propagation",
+          "meaning": "Supply evolution, spectra, operator domains, equations of motion, causal propagation, or Green operators."
+        },
+        {
+          "id": "GAUGE_BV_COHOMOLOGY",
+          "label": "Gauge/BV/cohomology",
+          "meaning": "Handle gauge symmetry, BRST/BV complexes, residual cohomology, pairings, and gauge independence."
+        },
+        {
+          "id": "INTERACTION_RENORMALIZATION_QME",
+          "label": "Interactions/renormalization/QME",
+          "meaning": "Construct interacting products, classify counterterms/anomalies, renormalize, and restore the quantum master equation."
+        },
+        {
+          "id": "RECONSTRUCTION_LIMITS",
+          "label": "Reconstruction/limits",
+          "meaning": "Derive the formalism from physical postulates or prove comparison, continuum-limit, empirical, or interpretation theorems."
+        }
       ]
     }
   ],
-  "cell_statuses":[
-    {"id":"LOCAL_RESULT","label":"Local result","meaning":"A bounded repository result or dependency audit occupies this intersection. The surrounding cell remains broader than the result."},
-    {"id":"LITERATURE_RESULT","label":"Literature result","meaning":"A reviewed source directly treats this intersection within its declared scope, but it has not been transferred to the Weyl programme."},
-    {"id":"PIECES_ONLY","label":"Pieces only","meaning":"Relevant ingredients exist on two or three axes, but the reviewed work does not compose them into one result."},
-    {"id":"PRIORITY_GAP","label":"Priority gap","meaning":"The intersection is meaningful and important to this programme, but no adequate result is present in the reviewed corpus or repository."},
-    {"id":"NOT_MAPPED","label":"Not mapped","meaning":"This pass has not assessed the intersection; it is not a claim that the combination is impossible or uninteresting."}
+  "cell_statuses": [
+    {
+      "id": "LOCAL_RESULT",
+      "label": "Local result",
+      "meaning": "A bounded repository result or dependency audit occupies this intersection. The surrounding cell remains broader than the result."
+    },
+    {
+      "id": "LITERATURE_RESULT",
+      "label": "Literature result",
+      "meaning": "A reviewed source directly treats this intersection within its declared scope, but it has not been transferred to the Weyl programme."
+    },
+    {
+      "id": "PIECES_ONLY",
+      "label": "Pieces only",
+      "meaning": "Relevant ingredients exist on two or three axes, but the reviewed work does not compose them into one result."
+    },
+    {
+      "id": "PRIORITY_GAP",
+      "label": "Priority gap",
+      "meaning": "The intersection is meaningful and important to this programme, but no adequate result is present in the reviewed corpus or repository."
+    },
+    {
+      "id": "NOT_MAPPED",
+      "label": "Not mapped",
+      "meaning": "This pass has not assessed the intersection; it is not a claim that the combination is impossible or uninteresting."
+    }
   ],
-  "cells":[
-    {"foundation":"CLASSICAL_STANDARD","carrier":"FINITE_EXACT","obligation":"GAUGE_BV_COHOMOLOGY","status":"LOCAL_RESULT","evidence":["FOUNDATIONAL_FREE_BV_ENERGY2_PRA_SDR_V1"],"summary":"A fixed exact BV contraction and cohomology witness exists.","boundary":"Only one finite energy block; not the continuum complex."},
-    {"foundation":"CLASSICAL_STANDARD","carrier":"HILBERT_OPERATOR","obligation":"KINEMATICS_OBSERVABLES","status":"LITERATURE_RESULT","evidence":["hardy-2001","chiribella-dariano-perinotti-2011"],"summary":"Finite-dimensional quantum carriers are reconstructed from operational postulates.","boundary":"No infinite-dimensional QFT or foundational-strength classification."},
-    {"foundation":"CLASSICAL_STANDARD","carrier":"HILBERT_OPERATOR","obligation":"STATES_PROBABILITY","status":"LITERATURE_RESULT","evidence":["hardy-2001","chiribella-dariano-perinotti-2011"],"summary":"Operational frameworks include state and probability structures.","boundary":"Physical state selection in Weyl QFT is not supplied."},
-    {"foundation":"CLASSICAL_STANDARD","carrier":"HILBERT_OPERATOR","obligation":"DYNAMICS_PROPAGATION","status":"LOCAL_RESULT","evidence":["FOUNDATIONAL_EXPLICIT_ENERGY_SPECTRAL_FRAGMENT_ZF_V1"],"summary":"The explicit cylinder energy spectrum and domains are classified.","boundary":"No general spectral measure, determinant, or interacting dynamics."},
-    {"foundation":"CLASSICAL_STANDARD","carrier":"KREIN_INDEFINITE","obligation":"KINEMATICS_OBSERVABLES","status":"LITERATURE_RESULT","evidence":["esmeral-ferrer-wagner-2015","bateman-turok-2026"],"summary":"Krein geometry and ghost parity provide an indefinite carrier architecture.","boundary":"State selection and operator-domain completion remain open."},
-    {"foundation":"CLASSICAL_STANDARD","carrier":"KREIN_INDEFINITE","obligation":"STATES_PROBABILITY","status":"LOCAL_RESULT","evidence":["bateman-turok-2026","FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1","FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1"],"summary":"Explicit sign-normalized coordinate and Fock states exist, and a scoped density-state selection obstruction is proved.","boundary":"State existence and a conditional nonselection theorem do not supply a physical Weyl state or generalized Born rule."},
-    {"foundation":"CLASSICAL_STANDARD","carrier":"KREIN_INDEFINITE","obligation":"DYNAMICS_PROPAGATION","status":"LOCAL_RESULT","evidence":["FOUNDATIONAL_EXPLICIT_ENERGY_SPECTRAL_FRAGMENT_ZF_V1","FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1"],"summary":"The explicit cylinder energy generates a strongly continuous Hilbert-unitary and J-unitary free-mode group.","boundary":"No other conformal generator, interaction, causal propagation, or nonlinear Bateman-Turok dynamics is exponentiated."},
-    {"foundation":"CLASSICAL_STANDARD","carrier":"ALGEBRAIC_CSTAR","obligation":"KINEMATICS_OBSERVABLES","status":"LITERATURE_RESULT","evidence":["haag-kastler-1964"],"summary":"Algebra-first local observables provide a kinematic formulation of QFT.","boundary":"Representation, states, topology, and dynamics remain additional obligations."},
-    {"foundation":"CLASSICAL_STANDARD","carrier":"ALGEBRAIC_CSTAR","obligation":"STATES_PROBABILITY","status":"LOCAL_RESULT","evidence":["haag-kastler-1964","FOUNDATIONAL_BT_SEPARABLE_STATE_CHAIN_ZF_V1","FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1"],"summary":"The explicit separable detector algebra has bounded local state and GNS constructions, separated from physical selection.","boundary":"A mathematical state/GNS result does not select a physical Weyl or thermodynamic state."},
-    {"foundation":"CLASSICAL_STANDARD","carrier":"ALGEBRAIC_CSTAR","obligation":"DYNAMICS_PROPAGATION","status":"LOCAL_RESULT","evidence":["FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1"],"summary":"Energy conjugation defines a point-norm continuous free automorphism group on the unitized compact-operator algebra.","boundary":"This compact-cylinder C*-dynamics is not an interacting AQFT net or full-orbit dynamics."},
-    {"foundation":"CLASSICAL_STANDARD","carrier":"SMOOTH_DISTRIBUTIONAL","obligation":"DYNAMICS_PROPAGATION","status":"LOCAL_RESULT","evidence":["FOUNDATIONAL_TYPED_BIWAVE_GREEN_DEPENDENCY_AUDIT_V1"],"summary":"One conditional typed biwave Green theorem has a complete dependency cut.","boundary":"The exact checker proves no PDE existence and no full BV propagator."},
-    {"foundation":"CLASSICAL_STANDARD","carrier":"SMOOTH_DISTRIBUTIONAL","obligation":"GAUGE_BV_COHOMOLOGY","status":"LOCAL_RESULT","evidence":["FOUNDATIONAL_LOW_HANGING_CELL_CLOSURE_AUDIT_V1"],"summary":"Gauge-fixed local BV cohomology H^{0,4}(s|d) and H^{1,4}(s|d) is complete on the regular Bach locus.","boundary":"This local jet/BV result is not a complete global smooth or distributional off-shell complex, classical freeze gate, propagator, or residual-state theorem."},
-    {"foundation":"CLASSICAL_STANDARD","carrier":"SMOOTH_DISTRIBUTIONAL","obligation":"INTERACTION_RENORMALIZATION_QME","status":"LOCAL_RESULT","evidence":["FOUNDATIONAL_LOW_HANGING_CELL_CLOSURE_AUDIT_V1"],"summary":"The bounded local counterterm and anomaly cohomology is classified by the exact H^{0,4}(s|d) and H^{1,4}(s|d) results.","boundary":"No coefficient, regulated breaking, renormalized product, QME restoration, residual transfer, or Lorentzian quantum construction follows."},
-
-    {"foundation":"WEAK_ARITHMETIC","carrier":"FINITE_EXACT","obligation":"GAUGE_BV_COHOMOLOGY","status":"LOCAL_RESULT","evidence":["FOUNDATIONAL_FREE_BV_ENERGY2_PRA_SDR_V1"],"summary":"PRA suffices to check the displayed finite BV contraction and explicit nontriviality witness.","boundary":"Sufficiency only; no weakest-base reversal."},
-    {"foundation":"WEAK_ARITHMETIC","carrier":"FINITE_EXACT","obligation":"RECONSTRUCTION_LIMITS","status":"LOCAL_RESULT","evidence":["FOUNDATIONAL_HARDY_CONTINUITY_KN_AUDIT_V1"],"summary":"One Hardy continuity step has an RCA_0 sufficiency route when an explicit modulus is supplied.","boundary":"No full reconstruction audit or physical-to-mathematical reversal."},
-    {"foundation":"WEAK_ARITHMETIC","carrier":"HILBERT_OPERATOR","obligation":"KINEMATICS_OBSERVABLES","status":"PIECES_ONLY","evidence":["brown-simpson-1986","humphreys-simpson-1999"],"summary":"Reverse functional analysis calibrates separation principles used around Hilbert/Banach carriers.","boundary":"No relativistic gauge theory is encoded in the cited reversals."},
-    {"foundation":"WEAK_ARITHMETIC","carrier":"KREIN_INDEFINITE","obligation":"KINEMATICS_OBSERVABLES","status":"LOCAL_RESULT","evidence":["FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1"],"summary":"Every fixed Krein mode cutoff reduces to finite exact sign and positivity checks.","boundary":"The infinite completion is not classified over weak arithmetic."},
-    {"foundation":"WEAK_ARITHMETIC","carrier":"SMOOTH_DISTRIBUTIONAL","obligation":"DYNAMICS_PROPAGATION","status":"PRIORITY_GAP","evidence":["FOUNDATIONAL_TYPED_BIWAVE_GREEN_DEPENDENCY_AUDIT_V1"],"summary":"Energy estimates, completion, uniqueness, duality, and causal support need weak-base calibration.","boundary":"No reverse-mathematical PDE theorem has been proved."},
-    {"foundation":"WEAK_ARITHMETIC","carrier":"SMOOTH_DISTRIBUTIONAL","obligation":"GAUGE_BV_COHOMOLOGY","status":"PRIORITY_GAP","evidence":[],"summary":"The continuum BV complex has not been encoded over a weak base.","boundary":"Finite certificates do not fill this cell."},
-    {"foundation":"WEAK_ARITHMETIC","carrier":"SMOOTH_DISTRIBUTIONAL","obligation":"INTERACTION_RENORMALIZATION_QME","status":"PRIORITY_GAP","evidence":[],"summary":"Microlocal renormalization and the QME have no weak-base audit.","boundary":"This is likely a high-cost programme."},
-
-    {"foundation":"WEAK_CHOICE_ZF","carrier":"HILBERT_OPERATOR","obligation":"KINEMATICS_OBSERVABLES","status":"LITERATURE_RESULT","evidence":["blackadar-farah-karagila-2026"],"summary":"Substantial Hilbert and operator theory can be developed in ZF without Countable Choice.","boundary":"Arbitrary-space pathologies must not be transferred to explicit carriers without proof."},
-    {"foundation":"WEAK_CHOICE_ZF","carrier":"HILBERT_OPERATOR","obligation":"DYNAMICS_PROPAGATION","status":"LOCAL_RESULT","evidence":["FOUNDATIONAL_EXPLICIT_ENERGY_SPECTRAL_FRAGMENT_ZF_V1"],"summary":"The displayed diagonal energy operator and Fock lift have an explicit ZF route.","boundary":"General spectral measures and interacting dynamics remain open."},
-    {"foundation":"WEAK_CHOICE_ZF","carrier":"KREIN_INDEFINITE","obligation":"KINEMATICS_OBSERVABLES","status":"LOCAL_RESULT","evidence":["FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1"],"summary":"The explicitly labelled Krein symmetry and Fock lift are constructible in ZF without Countable Choice.","boundary":"This does not classify arbitrary Krein spaces."},
-    {"foundation":"WEAK_CHOICE_ZF","carrier":"KREIN_INDEFINITE","obligation":"STATES_PROBABILITY","status":"LOCAL_RESULT","evidence":["FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1","FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1"],"summary":"Named Krein and Fock coordinates define positive normalized rank-one states in ZF without a choice operation.","boundary":"The carrier does not select a unique physical state; singular states and dynamically selected Born functionals remain open."},
-    {"foundation":"WEAK_CHOICE_ZF","carrier":"KREIN_INDEFINITE","obligation":"DYNAMICS_PROPAGATION","status":"LOCAL_RESULT","evidence":["FOUNDATIONAL_EXPLICIT_ENERGY_SPECTRAL_FRAGMENT_ZF_V1","FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1"],"summary":"The coordinate energy phases give a strongly continuous J-unitary free-mode group in ZF without Choice.","boundary":"This proves no interacting, nonlinear, or Lorentzian-causal dynamics."},
-    {"foundation":"WEAK_CHOICE_ZF","carrier":"ALGEBRAIC_CSTAR","obligation":"KINEMATICS_OBSERVABLES","status":"LOCAL_RESULT","evidence":["blackadar-farah-2026","FOUNDATIONAL_BT_SEPARABLE_STATE_CHAIN_ZF_V1"],"summary":"A separable detector algebra and robust ZF algebraic operations are available.","boundary":"The full orbit algebra and AQFT net are not certified."},
-    {"foundation":"WEAK_CHOICE_ZF","carrier":"ALGEBRAIC_CSTAR","obligation":"STATES_PROBABILITY","status":"LOCAL_RESULT","evidence":["FOUNDATIONAL_BT_SEPARABLE_STATE_CHAIN_ZF_V1"],"summary":"Explicit vector and corner states and a corner GNS construction exist in ZF.","boundary":"No thermodynamic or dynamically selected physical state is proved."},
-    {"foundation":"WEAK_CHOICE_ZF","carrier":"ALGEBRAIC_CSTAR","obligation":"DYNAMICS_PROPAGATION","status":"LOCAL_RESULT","evidence":["FOUNDATIONAL_BT_SEPARABLE_STATE_CHAIN_ZF_V1","FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1"],"summary":"A point-norm continuous free automorphism group exists on the explicit unitized compact algebra in ZF.","boundary":"Nonlinear/full-orbit Bateman-Turok dynamics, local normality, and interacting evolution remain open."},
-    {"foundation":"WEAK_CHOICE_ZF","carrier":"SMOOTH_DISTRIBUTIONAL","obligation":"DYNAMICS_PROPAGATION","status":"PRIORITY_GAP","evidence":["FOUNDATIONAL_TYPED_BIWAVE_GREEN_DEPENDENCY_AUDIT_V1"],"summary":"Choice strength of normally hyperbolic existence, Sobolev completion, and causal Green theory is unknown.","boundary":"No choice-free continuum PDE theorem is claimed."},
-    {"foundation":"WEAK_CHOICE_ZF","carrier":"SMOOTH_DISTRIBUTIONAL","obligation":"GAUGE_BV_COHOMOLOGY","status":"PRIORITY_GAP","evidence":[],"summary":"No full continuum BV/BRST complex has been rebuilt in ZF without Choice.","boundary":"Finite ZF carriers do not establish this cell."},
-    {"foundation":"WEAK_CHOICE_ZF","carrier":"SMOOTH_DISTRIBUTIONAL","obligation":"INTERACTION_RENORMALIZATION_QME","status":"PRIORITY_GAP","evidence":[],"summary":"No weak-choice construction of microlocal renormalization or the QME is present.","boundary":"No Lorentzian quantum conclusion."},
-
-    {"foundation":"CONSTRUCTIVE_COMPUTABLE","carrier":"FINITE_EXACT","obligation":"GAUGE_BV_COHOMOLOGY","status":"PIECES_ONLY","evidence":["FOUNDATIONAL_FREE_BV_ENERGY2_PRA_SDR_V1"],"summary":"The finite checker is computationally explicit, but no constructive internal proof object has been produced.","boundary":"PRA verifiability is not identical to Bishop constructivity or computability."},
-    {"foundation":"CONSTRUCTIVE_COMPUTABLE","carrier":"HILBERT_OPERATOR","obligation":"KINEMATICS_OBSERVABLES","status":"LITERATURE_RESULT","evidence":["bridges-svozil-2000"],"summary":"Constructive Hilbert subspaces, projections, and quantum logic have been studied.","boundary":"No constructive dynamics or QFT."},
-    {"foundation":"CONSTRUCTIVE_COMPUTABLE","carrier":"HILBERT_OPERATOR","obligation":"STATES_PROBABILITY","status":"LITERATURE_RESULT","evidence":["richman-bridges-1999"],"summary":"A constructive formulation and proof of Gleason's theorem exists.","boundary":"This is not a constructive derivation of all quantum probability or state selection."},
-    {"foundation":"CONSTRUCTIVE_COMPUTABLE","carrier":"ALGEBRAIC_CSTAR","obligation":"KINEMATICS_OBSERVABLES","status":"LITERATURE_RESULT","evidence":["coquand-spitters-2009","henry-2014"],"summary":"Constructive localic Gelfand duality covers commutative unital and non-unital cases.","boundary":"No noncommutative interacting field algebra is constructed."},
-    {"foundation":"CONSTRUCTIVE_COMPUTABLE","carrier":"ALGEBRAIC_CSTAR","obligation":"STATES_PROBABILITY","status":"PIECES_ONLY","evidence":["coquand-spitters-2009","richman-bridges-1999"],"summary":"Constructive spectral and probability-representation ingredients exist separately.","boundary":"No physical state-selection chain joins them."},
-    {"foundation":"CONSTRUCTIVE_COMPUTABLE","carrier":"SMOOTH_DISTRIBUTIONAL","obligation":"DYNAMICS_PROPAGATION","status":"PRIORITY_GAP","evidence":[],"summary":"Constructive distribution spaces, energy estimates, and Green operators are not present in the reviewed corpus.","boundary":"Classical rigorous PDE is not automatically constructive PDE."},
-    {"foundation":"CONSTRUCTIVE_COMPUTABLE","carrier":"SMOOTH_DISTRIBUTIONAL","obligation":"GAUGE_BV_COHOMOLOGY","status":"PRIORITY_GAP","evidence":[],"summary":"No constructive BV-BFV gauge-field complex is present.","boundary":"Constructive Hilbert propositions do not supply gauge cohomology."},
-    {"foundation":"CONSTRUCTIVE_COMPUTABLE","carrier":"SMOOTH_DISTRIBUTIONAL","obligation":"INTERACTION_RENORMALIZATION_QME","status":"PRIORITY_GAP","evidence":[],"summary":"No constructive microlocal renormalization/QME chain is present.","boundary":"This is a missing programme, not a no-go theorem."},
-    {"foundation":"CONSTRUCTIVE_COMPUTABLE","carrier":"HILBERT_OPERATOR","obligation":"RECONSTRUCTION_LIMITS","status":"PIECES_ONLY","evidence":["hardy-2001","chiribella-dariano-perinotti-2011","brattka-2008"],"summary":"Operational and computability ingredients exist, but no shared constructive reversal joins them.","boundary":"A computability classification is not a reverse-mathematical or physical implication."},
-
-    {"foundation":"TOPOS_INTERNAL","carrier":"LOCALIC_SYNTHETIC","obligation":"KINEMATICS_OBSERVABLES","status":"LITERATURE_RESULT","evidence":["heunen-landsman-spitters-2009"],"summary":"An algebraic quantum system can be represented internally with Heyting logic and a localic spectrum.","boundary":"No Weyl field theory or empirical superiority follows."},
-    {"foundation":"TOPOS_INTERNAL","carrier":"LOCALIC_SYNTHETIC","obligation":"STATES_PROBABILITY","status":"PIECES_ONLY","evidence":["heunen-landsman-spitters-2009","FOUNDATIONAL_TOPOS_WEYL_BV_OBSTRUCTION_LEDGER_V0"],"summary":"Internal state/valuation concepts are adjacent to probability, but no physical Weyl state is selected.","boundary":"Logical truth values and physical probabilities must not be conflated."},
-    {"foundation":"TOPOS_INTERNAL","carrier":"LOCALIC_SYNTHETIC","obligation":"DYNAMICS_PROPAGATION","status":"PRIORITY_GAP","evidence":["FOUNDATIONAL_TOPOS_WEYL_BV_OBSTRUCTION_LEDGER_V0"],"summary":"Internal dynamics, support, and Green propagation have not been constructed.","boundary":"A localic spectrum is not causal evolution."},
-    {"foundation":"TOPOS_INTERNAL","carrier":"LOCALIC_SYNTHETIC","obligation":"GAUGE_BV_COHOMOLOGY","status":"PRIORITY_GAP","evidence":["FOUNDATIONAL_TOPOS_WEYL_BV_OBSTRUCTION_LEDGER_V0"],"summary":"No internal Weyl BV complex or external/internal cohomology comparison exists.","boundary":"Only a glossary and obstruction DAG exist."},
-    {"foundation":"TOPOS_INTERNAL","carrier":"LOCALIC_SYNTHETIC","obligation":"INTERACTION_RENORMALIZATION_QME","status":"PRIORITY_GAP","evidence":["FOUNDATIONAL_TOPOS_WEYL_BV_OBSTRUCTION_LEDGER_V0"],"summary":"Internal anomaly classification, renormalized products, and QME restoration are absent.","boundary":"This is the deepest missing corner."},
-    {"foundation":"TOPOS_INTERNAL","carrier":"LOCALIC_SYNTHETIC","obligation":"RECONSTRUCTION_LIMITS","status":"PRIORITY_GAP","evidence":["FOUNDATIONAL_TOPOS_WEYL_BV_OBSTRUCTION_LEDGER_V0"],"summary":"No external comparison theorem states which physical predictions an internal construction preserves.","boundary":"Internal reformulation is not empirical equivalence."},
-    {"foundation":"TOPOS_INTERNAL","carrier":"SMOOTH_DISTRIBUTIONAL","obligation":"DYNAMICS_PROPAGATION","status":"LITERATURE_RESULT","evidence":["grinkevich-1996"],"summary":"Synthetic differential geometry supports formal manifolds and intuitionistic classical Einstein equations.","boundary":"No distributional causal QFT or Green-operator theorem is supplied."},
-    {"foundation":"TOPOS_INTERNAL","carrier":"SMOOTH_DISTRIBUTIONAL","obligation":"GAUGE_BV_COHOMOLOGY","status":"PRIORITY_GAP","evidence":["FOUNDATIONAL_TOPOS_WEYL_BV_OBSTRUCTION_LEDGER_V0"],"summary":"Synthetic smooth geometry has not been joined to internal BV/BRST machinery.","boundary":"Classical synthetic GR is not gauge-fixed Weyl BV."},
-    {"foundation":"TOPOS_INTERNAL","carrier":"SMOOTH_DISTRIBUTIONAL","obligation":"INTERACTION_RENORMALIZATION_QME","status":"PRIORITY_GAP","evidence":["FOUNDATIONAL_TOPOS_WEYL_BV_OBSTRUCTION_LEDGER_V0"],"summary":"Distributional/microlocal renormalization in the selected internal logic is missing.","boundary":"No formal construction is claimed."},
-
-    {"foundation":"FINITE_DISCRETE","carrier":"FINITE_EXACT","obligation":"KINEMATICS_OBSERVABLES","status":"LITERATURE_RESULT","evidence":["gibbons-hoffman-wootters-2004"],"summary":"Prime-power finite-field phase spaces support discrete Wigner kinematics.","boundary":"The quantum carrier remains complex and no continuum theory follows."},
-    {"foundation":"FINITE_DISCRETE","carrier":"FINITE_EXACT","obligation":"STATES_PROBABILITY","status":"LITERATURE_RESULT","evidence":["gibbons-hoffman-wootters-2004"],"summary":"Line-associated bases and discrete Wigner functions organize finite quantum states.","boundary":"This is not a general physical state-selection theorem."},
-    {"foundation":"FINITE_DISCRETE","carrier":"FINITE_EXACT","obligation":"DYNAMICS_PROPAGATION","status":"LOCAL_RESULT","evidence":["FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1","FOUNDATIONAL_LOW_HANGING_CELL_CLOSURE_AUDIT_V1"],"summary":"Every displayed finite energy cutoff inherits exact diagonal unitary dynamics and a finite-core matrix-unit derivation.","boundary":"No finite-field dynamics, continuum convergence, regulator independence, causal propagation, or reconstruction theorem is proved."},
-    {"foundation":"FINITE_DISCRETE","carrier":"FINITE_EXACT","obligation":"GAUGE_BV_COHOMOLOGY","status":"LOCAL_RESULT","evidence":["FOUNDATIONAL_FREE_BV_ENERGY2_PRA_SDR_V1"],"summary":"A finite energy-cutoff BV contraction is exact and independently checked.","boundary":"A regulator at fixed cutoff is not a finite fundamental theory."},
-    {"foundation":"FINITE_DISCRETE","carrier":"FINITE_EXACT","obligation":"INTERACTION_RENORMALIZATION_QME","status":"PRIORITY_GAP","evidence":[],"summary":"No finite interaction/QME system with a certified continuum comparison is present.","boundary":"Finite algebra does not remove renormalization obligations."},
-    {"foundation":"FINITE_DISCRETE","carrier":"FINITE_EXACT","obligation":"RECONSTRUCTION_LIMITS","status":"LOCAL_RESULT","evidence":["FOUNDATIONAL_FINITE_FIELD_FINITE_MODE_NON_EQUIVALENCE_V1"],"summary":"Finite field, finite mode, finite Hilbert dimension, and finitism are proved non-equivalent by type, and bridge obligations are listed.","boundary":"No continuum bridge is constructed."},
-    {"foundation":"FINITE_DISCRETE","carrier":"HILBERT_OPERATOR","obligation":"KINEMATICS_OBSERVABLES","status":"LITERATURE_RESULT","evidence":["hardy-2001","chiribella-dariano-perinotti-2011"],"summary":"Finite-dimensional Hilbert kinematics is reconstructed operationally.","boundary":"The complex scalar continuum remains and infinite QFT is outside scope."},
-    {"foundation":"FINITE_DISCRETE","carrier":"HILBERT_OPERATOR","obligation":"RECONSTRUCTION_LIMITS","status":"LOCAL_RESULT","evidence":["FOUNDATIONAL_HARDY_CONTINUITY_KN_AUDIT_V1"],"summary":"One finite-dimensional reconstruction step has a representation-sensitive logical audit.","boundary":"No full reconstruction or continuum limit."},
-    {"foundation":"FINITE_DISCRETE","carrier":"KREIN_INDEFINITE","obligation":"KINEMATICS_OBSERVABLES","status":"LOCAL_RESULT","evidence":["FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1"],"summary":"Finite Krein truncations have explicit sign, involution, and positivity witnesses.","boundary":"The completed infinite carrier and physical state remain separate."},
-    {"foundation":"FINITE_DISCRETE","carrier":"SMOOTH_DISTRIBUTIONAL","obligation":"RECONSTRUCTION_LIMITS","status":"PRIORITY_GAP","evidence":["FOUNDATIONAL_FINITE_FIELD_FINITE_MODE_NON_EQUIVALENCE_V1"],"summary":"No topology, comparison maps, error bounds, or regulator-independent continuum theorem joins finite models to smooth Weyl fields.","boundary":"Cardinality resemblance is not convergence."}
+  "cells": [
+    {
+      "foundation": "CLASSICAL_STANDARD",
+      "carrier": "ALGEBRAIC_CSTAR",
+      "obligation": "DYNAMICS_PROPAGATION",
+      "status": "LOCAL_RESULT",
+      "evidence": [
+        "FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1"
+      ],
+      "summary": "Energy conjugation defines a point-norm continuous free automorphism group on the unitized compact-operator algebra.",
+      "boundary": "This compact-cylinder C*-dynamics is not an interacting AQFT net or full-orbit dynamics."
+    },
+    {
+      "foundation": "CLASSICAL_STANDARD",
+      "carrier": "ALGEBRAIC_CSTAR",
+      "obligation": "GAUGE_BV_COHOMOLOGY",
+      "status": "LITERATURE_RESULT",
+      "evidence": [
+        "brunetti-fredenhagen-verch-2001",
+        "fewster-verch-2011",
+        "fredenhagen-rejzner-2011"
+      ],
+      "summary": "Locally covariant AQFT and perturbative BV jointly address algebraic kinematics, states, dynamics, gauge structure, interactions, and comparison principles. For this obligation, the evidence directly treats gauge constraints, BRST/BV structure, or symmetry restoration.",
+      "boundary": "The source works in ordinary classical mathematics and is not a foundational-strength audit. An algebraic architecture does not by itself select representations or physical states. Still open here: the certified full metric BV complex and its residual transfer."
+    },
+    {
+      "foundation": "CLASSICAL_STANDARD",
+      "carrier": "ALGEBRAIC_CSTAR",
+      "obligation": "INTERACTION_RENORMALIZATION_QME",
+      "status": "LITERATURE_RESULT",
+      "evidence": [
+        "brunetti-fredenhagen-verch-2001",
+        "fewster-verch-2011",
+        "fredenhagen-rejzner-2011"
+      ],
+      "summary": "Locally covariant AQFT and perturbative BV jointly address algebraic kinematics, states, dynamics, gauge structure, interactions, and comparison principles. For this obligation, the evidence directly treats an interaction, counterterm/anomaly, renormalized product, or master-equation ingredient.",
+      "boundary": "The source works in ordinary classical mathematics and is not a foundational-strength audit. An algebraic architecture does not by itself select representations or physical states. Still open here: Weyl counterterm coefficients, QME restoration, and residual transfer."
+    },
+    {
+      "foundation": "CLASSICAL_STANDARD",
+      "carrier": "ALGEBRAIC_CSTAR",
+      "obligation": "KINEMATICS_OBSERVABLES",
+      "status": "LITERATURE_RESULT",
+      "evidence": [
+        "haag-kastler-1964"
+      ],
+      "summary": "Algebra-first local observables provide a kinematic formulation of QFT.",
+      "boundary": "Representation, states, topology, and dynamics remain additional obligations."
+    },
+    {
+      "foundation": "CLASSICAL_STANDARD",
+      "carrier": "ALGEBRAIC_CSTAR",
+      "obligation": "RECONSTRUCTION_LIMITS",
+      "status": "LITERATURE_RESULT",
+      "evidence": [
+        "brunetti-fredenhagen-verch-2001",
+        "fewster-verch-2011",
+        "fredenhagen-rejzner-2011"
+      ],
+      "summary": "Locally covariant AQFT and perturbative BV jointly address algebraic kinematics, states, dynamics, gauge structure, interactions, and comparison principles. For this obligation, the evidence directly supplies reconstruction, comparison, covariance, or continuum-limit obligations.",
+      "boundary": "The source works in ordinary classical mathematics and is not a foundational-strength audit. An algebraic architecture does not by itself select representations or physical states. Still open here: a prediction-preserving comparison or controlled continuum theorem."
+    },
+    {
+      "foundation": "CLASSICAL_STANDARD",
+      "carrier": "ALGEBRAIC_CSTAR",
+      "obligation": "STATES_PROBABILITY",
+      "status": "LOCAL_RESULT",
+      "evidence": [
+        "haag-kastler-1964",
+        "FOUNDATIONAL_BT_SEPARABLE_STATE_CHAIN_ZF_V1",
+        "FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1"
+      ],
+      "summary": "The explicit separable detector algebra has bounded local state and GNS constructions, separated from physical selection.",
+      "boundary": "A mathematical state/GNS result does not select a physical Weyl or thermodynamic state."
+    },
+    {
+      "foundation": "CLASSICAL_STANDARD",
+      "carrier": "FINITE_EXACT",
+      "obligation": "DYNAMICS_PROPAGATION",
+      "status": "LOCAL_RESULT",
+      "evidence": [
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1"
+      ],
+      "summary": "An exact two-qubit matrix model provides observables, density states, a star derivation, and an entangling interaction. For this obligation, the evidence directly supplies an evolution, spectral, or propagation result.",
+      "boundary": "The source works in ordinary classical mathematics and is not a foundational-strength audit. The evidence is bounded finite algebra, not a completed infinite carrier. Still open here: full interacting Lorentzian-causal propagation."
+    },
+    {
+      "foundation": "CLASSICAL_STANDARD",
+      "carrier": "FINITE_EXACT",
+      "obligation": "GAUGE_BV_COHOMOLOGY",
+      "status": "LOCAL_RESULT",
+      "evidence": [
+        "FOUNDATIONAL_FREE_BV_ENERGY2_PRA_SDR_V1"
+      ],
+      "summary": "A fixed exact BV contraction and cohomology witness exists.",
+      "boundary": "Only one finite energy block; not the continuum complex."
+    },
+    {
+      "foundation": "CLASSICAL_STANDARD",
+      "carrier": "FINITE_EXACT",
+      "obligation": "INTERACTION_RENORMALIZATION_QME",
+      "status": "LOCAL_RESULT",
+      "evidence": [
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1"
+      ],
+      "summary": "An exact two-qubit matrix model provides observables, density states, a star derivation, and an entangling interaction. For this obligation, the evidence directly treats an interaction, counterterm/anomaly, renormalized product, or master-equation ingredient.",
+      "boundary": "The source works in ordinary classical mathematics and is not a foundational-strength audit. The evidence is bounded finite algebra, not a completed infinite carrier. Still open here: Weyl counterterm coefficients, QME restoration, and residual transfer."
+    },
+    {
+      "foundation": "CLASSICAL_STANDARD",
+      "carrier": "FINITE_EXACT",
+      "obligation": "KINEMATICS_OBSERVABLES",
+      "status": "LOCAL_RESULT",
+      "evidence": [
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1"
+      ],
+      "summary": "An exact two-qubit matrix model provides observables, density states, a star derivation, and an entangling interaction. For this obligation, the evidence directly defines observables, configurations, or the carrier's algebraic structure.",
+      "boundary": "The source works in ordinary classical mathematics and is not a foundational-strength audit. The evidence is bounded finite algebra, not a completed infinite carrier. Still open here: a full Weyl observable algebra and its domains."
+    },
+    {
+      "foundation": "CLASSICAL_STANDARD",
+      "carrier": "FINITE_EXACT",
+      "obligation": "STATES_PROBABILITY",
+      "status": "LOCAL_RESULT",
+      "evidence": [
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1"
+      ],
+      "summary": "An exact two-qubit matrix model provides observables, density states, a star derivation, and an entangling interaction. For this obligation, the evidence directly constructs or represents states and probability data.",
+      "boundary": "The source works in ordinary classical mathematics and is not a foundational-strength audit. The evidence is bounded finite algebra, not a completed infinite carrier. Still open here: a physically selected Weyl state and probability interpretation."
+    },
+    {
+      "foundation": "CLASSICAL_STANDARD",
+      "carrier": "HILBERT_OPERATOR",
+      "obligation": "DYNAMICS_PROPAGATION",
+      "status": "LOCAL_RESULT",
+      "evidence": [
+        "FOUNDATIONAL_EXPLICIT_ENERGY_SPECTRAL_FRAGMENT_ZF_V1"
+      ],
+      "summary": "The explicit cylinder energy spectrum and domains are classified.",
+      "boundary": "No general spectral measure, determinant, or interacting dynamics."
+    },
+    {
+      "foundation": "CLASSICAL_STANDARD",
+      "carrier": "HILBERT_OPERATOR",
+      "obligation": "GAUGE_BV_COHOMOLOGY",
+      "status": "PIECES_ONLY",
+      "evidence": [
+        "neumann-pape-streicher-2018",
+        "abramsky-coecke-2004"
+      ],
+      "summary": "Spectral and compositional quantum results cover standard Hilbert kinematics, states, dynamics, and finite reconstruction. For this obligation, the evidence contains ingredients relevant to, but does not compose a result that treats gauge constraints, BRST/BV structure, or symmetry restoration.",
+      "boundary": "The source works in ordinary classical mathematics and is not a foundational-strength audit. Domain, completion, and spectral-measure hypotheses remain part of the result. Still open here: the certified full metric BV complex and its residual transfer."
+    },
+    {
+      "foundation": "CLASSICAL_STANDARD",
+      "carrier": "HILBERT_OPERATOR",
+      "obligation": "INTERACTION_RENORMALIZATION_QME",
+      "status": "PIECES_ONLY",
+      "evidence": [
+        "neumann-pape-streicher-2018",
+        "abramsky-coecke-2004"
+      ],
+      "summary": "Spectral and compositional quantum results cover standard Hilbert kinematics, states, dynamics, and finite reconstruction. For this obligation, the evidence contains ingredients relevant to, but does not compose a result that treats an interaction, counterterm/anomaly, renormalized product, or master-equation ingredient.",
+      "boundary": "The source works in ordinary classical mathematics and is not a foundational-strength audit. Domain, completion, and spectral-measure hypotheses remain part of the result. Still open here: Weyl counterterm coefficients, QME restoration, and residual transfer."
+    },
+    {
+      "foundation": "CLASSICAL_STANDARD",
+      "carrier": "HILBERT_OPERATOR",
+      "obligation": "KINEMATICS_OBSERVABLES",
+      "status": "LITERATURE_RESULT",
+      "evidence": [
+        "hardy-2001",
+        "chiribella-dariano-perinotti-2011"
+      ],
+      "summary": "Finite-dimensional quantum carriers are reconstructed from operational postulates.",
+      "boundary": "No infinite-dimensional QFT or foundational-strength classification."
+    },
+    {
+      "foundation": "CLASSICAL_STANDARD",
+      "carrier": "HILBERT_OPERATOR",
+      "obligation": "RECONSTRUCTION_LIMITS",
+      "status": "LITERATURE_RESULT",
+      "evidence": [
+        "neumann-pape-streicher-2018",
+        "abramsky-coecke-2004"
+      ],
+      "summary": "Spectral and compositional quantum results cover standard Hilbert kinematics, states, dynamics, and finite reconstruction. For this obligation, the evidence directly supplies reconstruction, comparison, covariance, or continuum-limit obligations.",
+      "boundary": "The source works in ordinary classical mathematics and is not a foundational-strength audit. Domain, completion, and spectral-measure hypotheses remain part of the result. Still open here: a prediction-preserving comparison or controlled continuum theorem."
+    },
+    {
+      "foundation": "CLASSICAL_STANDARD",
+      "carrier": "HILBERT_OPERATOR",
+      "obligation": "STATES_PROBABILITY",
+      "status": "LITERATURE_RESULT",
+      "evidence": [
+        "hardy-2001",
+        "chiribella-dariano-perinotti-2011"
+      ],
+      "summary": "Operational frameworks include state and probability structures.",
+      "boundary": "Physical state selection in Weyl QFT is not supplied."
+    },
+    {
+      "foundation": "CLASSICAL_STANDARD",
+      "carrier": "KREIN_INDEFINITE",
+      "obligation": "DYNAMICS_PROPAGATION",
+      "status": "LOCAL_RESULT",
+      "evidence": [
+        "FOUNDATIONAL_EXPLICIT_ENERGY_SPECTRAL_FRAGMENT_ZF_V1",
+        "FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1"
+      ],
+      "summary": "The explicit cylinder energy generates a strongly continuous Hilbert-unitary and J-unitary free-mode group.",
+      "boundary": "No other conformal generator, interaction, causal propagation, or nonlinear Bateman-Turok dynamics is exponentiated."
+    },
+    {
+      "foundation": "CLASSICAL_STANDARD",
+      "carrier": "KREIN_INDEFINITE",
+      "obligation": "GAUGE_BV_COHOMOLOGY",
+      "status": "PIECES_ONLY",
+      "evidence": [
+        "bender-boettcher-1998",
+        "mostafazadeh-2001",
+        "gottschalk-2004"
+      ],
+      "summary": "Pseudo-Hermitian and Krein-QFT work supplies spectral, dynamical, and relativistic indefinite-metric results under explicit hypotheses. For this obligation, the evidence contains ingredients relevant to, but does not compose a result that treats gauge constraints, BRST/BV structure, or symmetry restoration.",
+      "boundary": "The source works in ordinary classical mathematics and is not a foundational-strength audit. Real spectrum or J-unitarity alone does not produce a positive physical state space. Still open here: the certified full metric BV complex and its residual transfer."
+    },
+    {
+      "foundation": "CLASSICAL_STANDARD",
+      "carrier": "KREIN_INDEFINITE",
+      "obligation": "INTERACTION_RENORMALIZATION_QME",
+      "status": "PIECES_ONLY",
+      "evidence": [
+        "bender-boettcher-1998",
+        "mostafazadeh-2001",
+        "gottschalk-2004"
+      ],
+      "summary": "Pseudo-Hermitian and Krein-QFT work supplies spectral, dynamical, and relativistic indefinite-metric results under explicit hypotheses. For this obligation, the evidence contains ingredients relevant to, but does not compose a result that treats an interaction, counterterm/anomaly, renormalized product, or master-equation ingredient.",
+      "boundary": "The source works in ordinary classical mathematics and is not a foundational-strength audit. Real spectrum or J-unitarity alone does not produce a positive physical state space. Still open here: Weyl counterterm coefficients, QME restoration, and residual transfer."
+    },
+    {
+      "foundation": "CLASSICAL_STANDARD",
+      "carrier": "KREIN_INDEFINITE",
+      "obligation": "KINEMATICS_OBSERVABLES",
+      "status": "LITERATURE_RESULT",
+      "evidence": [
+        "esmeral-ferrer-wagner-2015",
+        "bateman-turok-2026"
+      ],
+      "summary": "Krein geometry and ghost parity provide an indefinite carrier architecture.",
+      "boundary": "State selection and operator-domain completion remain open."
+    },
+    {
+      "foundation": "CLASSICAL_STANDARD",
+      "carrier": "KREIN_INDEFINITE",
+      "obligation": "RECONSTRUCTION_LIMITS",
+      "status": "LITERATURE_RESULT",
+      "evidence": [
+        "bender-boettcher-1998",
+        "mostafazadeh-2001",
+        "gottschalk-2004"
+      ],
+      "summary": "Pseudo-Hermitian and Krein-QFT work supplies spectral, dynamical, and relativistic indefinite-metric results under explicit hypotheses. For this obligation, the evidence directly supplies reconstruction, comparison, covariance, or continuum-limit obligations.",
+      "boundary": "The source works in ordinary classical mathematics and is not a foundational-strength audit. Real spectrum or J-unitarity alone does not produce a positive physical state space. Still open here: a prediction-preserving comparison or controlled continuum theorem."
+    },
+    {
+      "foundation": "CLASSICAL_STANDARD",
+      "carrier": "KREIN_INDEFINITE",
+      "obligation": "STATES_PROBABILITY",
+      "status": "LOCAL_RESULT",
+      "evidence": [
+        "bateman-turok-2026",
+        "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1",
+        "FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1"
+      ],
+      "summary": "Explicit sign-normalized coordinate and Fock states exist, and a scoped density-state selection obstruction is proved.",
+      "boundary": "State existence and a conditional nonselection theorem do not supply a physical Weyl state or generalized Born rule."
+    },
+    {
+      "foundation": "CLASSICAL_STANDARD",
+      "carrier": "LOCALIC_SYNTHETIC",
+      "obligation": "DYNAMICS_PROPAGATION",
+      "status": "LITERATURE_RESULT",
+      "evidence": [
+        "heunen-landsman-spitters-2009",
+        "doring-2008",
+        "brenna-flori-2012",
+        "harding-heunen-2019"
+      ],
+      "summary": "Topos quantum theory supplies localic spectra, state measures, internal group dynamics, and comparisons between context topoi. For this obligation, the evidence directly supplies an evolution, spectral, or propagation result.",
+      "boundary": "The source works in ordinary classical mathematics and is not a foundational-strength audit. Internal/localic reformulation does not by itself establish external empirical equivalence. Still open here: full interacting Lorentzian-causal propagation."
+    },
+    {
+      "foundation": "CLASSICAL_STANDARD",
+      "carrier": "LOCALIC_SYNTHETIC",
+      "obligation": "GAUGE_BV_COHOMOLOGY",
+      "status": "PIECES_ONLY",
+      "evidence": [
+        "heunen-landsman-spitters-2009",
+        "doring-2008",
+        "brenna-flori-2012",
+        "harding-heunen-2019"
+      ],
+      "summary": "Topos quantum theory supplies localic spectra, state measures, internal group dynamics, and comparisons between context topoi. For this obligation, the evidence contains ingredients relevant to, but does not compose a result that treats gauge constraints, BRST/BV structure, or symmetry restoration.",
+      "boundary": "The source works in ordinary classical mathematics and is not a foundational-strength audit. Internal/localic reformulation does not by itself establish external empirical equivalence. Still open here: the certified full metric BV complex and its residual transfer."
+    },
+    {
+      "foundation": "CLASSICAL_STANDARD",
+      "carrier": "LOCALIC_SYNTHETIC",
+      "obligation": "INTERACTION_RENORMALIZATION_QME",
+      "status": "PIECES_ONLY",
+      "evidence": [
+        "heunen-landsman-spitters-2009",
+        "doring-2008",
+        "brenna-flori-2012",
+        "harding-heunen-2019"
+      ],
+      "summary": "Topos quantum theory supplies localic spectra, state measures, internal group dynamics, and comparisons between context topoi. For this obligation, the evidence contains ingredients relevant to, but does not compose a result that treats an interaction, counterterm/anomaly, renormalized product, or master-equation ingredient.",
+      "boundary": "The source works in ordinary classical mathematics and is not a foundational-strength audit. Internal/localic reformulation does not by itself establish external empirical equivalence. Still open here: Weyl counterterm coefficients, QME restoration, and residual transfer."
+    },
+    {
+      "foundation": "CLASSICAL_STANDARD",
+      "carrier": "LOCALIC_SYNTHETIC",
+      "obligation": "KINEMATICS_OBSERVABLES",
+      "status": "LITERATURE_RESULT",
+      "evidence": [
+        "heunen-landsman-spitters-2009",
+        "doring-2008",
+        "brenna-flori-2012",
+        "harding-heunen-2019"
+      ],
+      "summary": "Topos quantum theory supplies localic spectra, state measures, internal group dynamics, and comparisons between context topoi. For this obligation, the evidence directly defines observables, configurations, or the carrier's algebraic structure.",
+      "boundary": "The source works in ordinary classical mathematics and is not a foundational-strength audit. Internal/localic reformulation does not by itself establish external empirical equivalence. Still open here: a full Weyl observable algebra and its domains."
+    },
+    {
+      "foundation": "CLASSICAL_STANDARD",
+      "carrier": "LOCALIC_SYNTHETIC",
+      "obligation": "RECONSTRUCTION_LIMITS",
+      "status": "LITERATURE_RESULT",
+      "evidence": [
+        "heunen-landsman-spitters-2009",
+        "doring-2008",
+        "brenna-flori-2012",
+        "harding-heunen-2019"
+      ],
+      "summary": "Topos quantum theory supplies localic spectra, state measures, internal group dynamics, and comparisons between context topoi. For this obligation, the evidence directly supplies reconstruction, comparison, covariance, or continuum-limit obligations.",
+      "boundary": "The source works in ordinary classical mathematics and is not a foundational-strength audit. Internal/localic reformulation does not by itself establish external empirical equivalence. Still open here: a prediction-preserving comparison or controlled continuum theorem."
+    },
+    {
+      "foundation": "CLASSICAL_STANDARD",
+      "carrier": "LOCALIC_SYNTHETIC",
+      "obligation": "STATES_PROBABILITY",
+      "status": "LITERATURE_RESULT",
+      "evidence": [
+        "heunen-landsman-spitters-2009",
+        "doring-2008",
+        "brenna-flori-2012",
+        "harding-heunen-2019"
+      ],
+      "summary": "Topos quantum theory supplies localic spectra, state measures, internal group dynamics, and comparisons between context topoi. For this obligation, the evidence directly constructs or represents states and probability data.",
+      "boundary": "The source works in ordinary classical mathematics and is not a foundational-strength audit. Internal/localic reformulation does not by itself establish external empirical equivalence. Still open here: a physically selected Weyl state and probability interpretation."
+    },
+    {
+      "foundation": "CLASSICAL_STANDARD",
+      "carrier": "SMOOTH_DISTRIBUTIONAL",
+      "obligation": "DYNAMICS_PROPAGATION",
+      "status": "LOCAL_RESULT",
+      "evidence": [
+        "FOUNDATIONAL_TYPED_BIWAVE_GREEN_DEPENDENCY_AUDIT_V1"
+      ],
+      "summary": "One conditional typed biwave Green theorem has a complete dependency cut.",
+      "boundary": "The exact checker proves no PDE existence and no full BV propagator."
+    },
+    {
+      "foundation": "CLASSICAL_STANDARD",
+      "carrier": "SMOOTH_DISTRIBUTIONAL",
+      "obligation": "GAUGE_BV_COHOMOLOGY",
+      "status": "LOCAL_RESULT",
+      "evidence": [
+        "FOUNDATIONAL_LOW_HANGING_CELL_CLOSURE_AUDIT_V1"
+      ],
+      "summary": "Gauge-fixed local BV cohomology H^{0,4}(s|d) and H^{1,4}(s|d) is complete on the regular Bach locus.",
+      "boundary": "This local jet/BV result is not a complete global smooth or distributional off-shell complex, classical freeze gate, propagator, or residual-state theorem."
+    },
+    {
+      "foundation": "CLASSICAL_STANDARD",
+      "carrier": "SMOOTH_DISTRIBUTIONAL",
+      "obligation": "INTERACTION_RENORMALIZATION_QME",
+      "status": "LOCAL_RESULT",
+      "evidence": [
+        "FOUNDATIONAL_LOW_HANGING_CELL_CLOSURE_AUDIT_V1"
+      ],
+      "summary": "The bounded local counterterm and anomaly cohomology is classified by the exact H^{0,4}(s|d) and H^{1,4}(s|d) results.",
+      "boundary": "No coefficient, regulated breaking, renormalized product, QME restoration, residual transfer, or Lorentzian quantum construction follows."
+    },
+    {
+      "foundation": "CLASSICAL_STANDARD",
+      "carrier": "SMOOTH_DISTRIBUTIONAL",
+      "obligation": "KINEMATICS_OBSERVABLES",
+      "status": "LITERATURE_RESULT",
+      "evidence": [
+        "barnich-brandt-henneaux-2000",
+        "brunetti-fredenhagen-verch-2001",
+        "fredenhagen-rejzner-2011",
+        "brunetti-fredenhagen-rejzner-2013"
+      ],
+      "summary": "Local BRST, locally covariant QFT, and perturbative BV give a standard smooth/distributional architecture across all six obligations. For this obligation, the evidence directly defines observables, configurations, or the carrier's algebraic structure.",
+      "boundary": "The source works in ordinary classical mathematics and is not a foundational-strength audit. Local/formal PDE data do not imply global existence, support, or microlocal renormalization. Still open here: a full Weyl observable algebra and its domains."
+    },
+    {
+      "foundation": "CLASSICAL_STANDARD",
+      "carrier": "SMOOTH_DISTRIBUTIONAL",
+      "obligation": "RECONSTRUCTION_LIMITS",
+      "status": "LITERATURE_RESULT",
+      "evidence": [
+        "barnich-brandt-henneaux-2000",
+        "brunetti-fredenhagen-verch-2001",
+        "fredenhagen-rejzner-2011",
+        "brunetti-fredenhagen-rejzner-2013"
+      ],
+      "summary": "Local BRST, locally covariant QFT, and perturbative BV give a standard smooth/distributional architecture across all six obligations. For this obligation, the evidence directly supplies reconstruction, comparison, covariance, or continuum-limit obligations.",
+      "boundary": "The source works in ordinary classical mathematics and is not a foundational-strength audit. Local/formal PDE data do not imply global existence, support, or microlocal renormalization. Still open here: a prediction-preserving comparison or controlled continuum theorem."
+    },
+    {
+      "foundation": "CLASSICAL_STANDARD",
+      "carrier": "SMOOTH_DISTRIBUTIONAL",
+      "obligation": "STATES_PROBABILITY",
+      "status": "LITERATURE_RESULT",
+      "evidence": [
+        "barnich-brandt-henneaux-2000",
+        "brunetti-fredenhagen-verch-2001",
+        "fredenhagen-rejzner-2011",
+        "brunetti-fredenhagen-rejzner-2013"
+      ],
+      "summary": "Local BRST, locally covariant QFT, and perturbative BV give a standard smooth/distributional architecture across all six obligations. For this obligation, the evidence directly constructs or represents states and probability data.",
+      "boundary": "The source works in ordinary classical mathematics and is not a foundational-strength audit. Local/formal PDE data do not imply global existence, support, or microlocal renormalization. Still open here: a physically selected Weyl state and probability interpretation."
+    },
+    {
+      "foundation": "CONSTRUCTIVE_COMPUTABLE",
+      "carrier": "ALGEBRAIC_CSTAR",
+      "obligation": "DYNAMICS_PROPAGATION",
+      "status": "PIECES_ONLY",
+      "evidence": [
+        "coquand-spitters-2009",
+        "henry-2014",
+        "neumann-pape-streicher-2018"
+      ],
+      "summary": "Constructive localic Gelfand duality and computable spectral representations cover commutative kinematics and state-adjacent structure. For this obligation, the evidence contains ingredients relevant to, but does not compose a result that supplies an evolution, spectral, or propagation result.",
+      "boundary": "Computable, Bishop-constructive, intuitionistic, and reverse-mathematical results remain distinct types. An algebraic architecture does not by itself select representations or physical states. Still open here: full interacting Lorentzian-causal propagation."
+    },
+    {
+      "foundation": "CONSTRUCTIVE_COMPUTABLE",
+      "carrier": "ALGEBRAIC_CSTAR",
+      "obligation": "KINEMATICS_OBSERVABLES",
+      "status": "LITERATURE_RESULT",
+      "evidence": [
+        "coquand-spitters-2009",
+        "henry-2014"
+      ],
+      "summary": "Constructive localic Gelfand duality covers commutative unital and non-unital cases.",
+      "boundary": "No noncommutative interacting field algebra is constructed."
+    },
+    {
+      "foundation": "CONSTRUCTIVE_COMPUTABLE",
+      "carrier": "ALGEBRAIC_CSTAR",
+      "obligation": "RECONSTRUCTION_LIMITS",
+      "status": "LITERATURE_RESULT",
+      "evidence": [
+        "coquand-spitters-2009",
+        "henry-2014",
+        "neumann-pape-streicher-2018"
+      ],
+      "summary": "Constructive localic Gelfand duality and computable spectral representations cover commutative kinematics and state-adjacent structure. For this obligation, the evidence directly supplies reconstruction, comparison, covariance, or continuum-limit obligations.",
+      "boundary": "Computable, Bishop-constructive, intuitionistic, and reverse-mathematical results remain distinct types. An algebraic architecture does not by itself select representations or physical states. Still open here: a prediction-preserving comparison or controlled continuum theorem."
+    },
+    {
+      "foundation": "CONSTRUCTIVE_COMPUTABLE",
+      "carrier": "ALGEBRAIC_CSTAR",
+      "obligation": "STATES_PROBABILITY",
+      "status": "PIECES_ONLY",
+      "evidence": [
+        "coquand-spitters-2009",
+        "richman-bridges-1999"
+      ],
+      "summary": "Constructive spectral and probability-representation ingredients exist separately.",
+      "boundary": "No physical state-selection chain joins them."
+    },
+    {
+      "foundation": "CONSTRUCTIVE_COMPUTABLE",
+      "carrier": "FINITE_EXACT",
+      "obligation": "DYNAMICS_PROPAGATION",
+      "status": "LOCAL_RESULT",
+      "evidence": [
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1",
+        "FOUNDATIONAL_FREE_BV_ENERGY2_PRA_SDR_V1"
+      ],
+      "summary": "The explicit Gaussian-rational interaction is executable using finite data, while the finite BV result remains a separate proof artifact. For this obligation, the evidence directly supplies an evolution, spectral, or propagation result.",
+      "boundary": "Computable, Bishop-constructive, intuitionistic, and reverse-mathematical results remain distinct types. The evidence is bounded finite algebra, not a completed infinite carrier. Still open here: full interacting Lorentzian-causal propagation."
+    },
+    {
+      "foundation": "CONSTRUCTIVE_COMPUTABLE",
+      "carrier": "FINITE_EXACT",
+      "obligation": "GAUGE_BV_COHOMOLOGY",
+      "status": "PIECES_ONLY",
+      "evidence": [
+        "FOUNDATIONAL_FREE_BV_ENERGY2_PRA_SDR_V1"
+      ],
+      "summary": "The finite checker is computationally explicit, but no constructive internal proof object has been produced.",
+      "boundary": "PRA verifiability is not identical to Bishop constructivity or computability."
+    },
+    {
+      "foundation": "CONSTRUCTIVE_COMPUTABLE",
+      "carrier": "FINITE_EXACT",
+      "obligation": "INTERACTION_RENORMALIZATION_QME",
+      "status": "LOCAL_RESULT",
+      "evidence": [
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1",
+        "FOUNDATIONAL_FREE_BV_ENERGY2_PRA_SDR_V1"
+      ],
+      "summary": "The explicit Gaussian-rational interaction is executable using finite data, while the finite BV result remains a separate proof artifact. For this obligation, the evidence directly treats an interaction, counterterm/anomaly, renormalized product, or master-equation ingredient.",
+      "boundary": "Computable, Bishop-constructive, intuitionistic, and reverse-mathematical results remain distinct types. The evidence is bounded finite algebra, not a completed infinite carrier. Still open here: Weyl counterterm coefficients, QME restoration, and residual transfer."
+    },
+    {
+      "foundation": "CONSTRUCTIVE_COMPUTABLE",
+      "carrier": "FINITE_EXACT",
+      "obligation": "KINEMATICS_OBSERVABLES",
+      "status": "LOCAL_RESULT",
+      "evidence": [
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1",
+        "FOUNDATIONAL_FREE_BV_ENERGY2_PRA_SDR_V1"
+      ],
+      "summary": "The explicit Gaussian-rational interaction is executable using finite data, while the finite BV result remains a separate proof artifact. For this obligation, the evidence directly defines observables, configurations, or the carrier's algebraic structure.",
+      "boundary": "Computable, Bishop-constructive, intuitionistic, and reverse-mathematical results remain distinct types. The evidence is bounded finite algebra, not a completed infinite carrier. Still open here: a full Weyl observable algebra and its domains."
+    },
+    {
+      "foundation": "CONSTRUCTIVE_COMPUTABLE",
+      "carrier": "FINITE_EXACT",
+      "obligation": "STATES_PROBABILITY",
+      "status": "LOCAL_RESULT",
+      "evidence": [
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1",
+        "FOUNDATIONAL_FREE_BV_ENERGY2_PRA_SDR_V1"
+      ],
+      "summary": "The explicit Gaussian-rational interaction is executable using finite data, while the finite BV result remains a separate proof artifact. For this obligation, the evidence directly constructs or represents states and probability data.",
+      "boundary": "Computable, Bishop-constructive, intuitionistic, and reverse-mathematical results remain distinct types. The evidence is bounded finite algebra, not a completed infinite carrier. Still open here: a physically selected Weyl state and probability interpretation."
+    },
+    {
+      "foundation": "CONSTRUCTIVE_COMPUTABLE",
+      "carrier": "HILBERT_OPERATOR",
+      "obligation": "DYNAMICS_PROPAGATION",
+      "status": "LITERATURE_RESULT",
+      "evidence": [
+        "neumann-pape-streicher-2018",
+        "pour-el-richards-1981",
+        "bridges-svozil-2000",
+        "richman-bridges-1999"
+      ],
+      "summary": "Constructive quantum logic, constructive Gleason, effective spectral analysis, and a wave-equation counterexample delimit computable Hilbert physics. For this obligation, the evidence directly supplies an evolution, spectral, or propagation result.",
+      "boundary": "Computable, Bishop-constructive, intuitionistic, and reverse-mathematical results remain distinct types. Domain, completion, and spectral-measure hypotheses remain part of the result. Still open here: full interacting Lorentzian-causal propagation."
+    },
+    {
+      "foundation": "CONSTRUCTIVE_COMPUTABLE",
+      "carrier": "HILBERT_OPERATOR",
+      "obligation": "GAUGE_BV_COHOMOLOGY",
+      "status": "PIECES_ONLY",
+      "evidence": [
+        "neumann-pape-streicher-2018",
+        "pour-el-richards-1981",
+        "bridges-svozil-2000",
+        "richman-bridges-1999"
+      ],
+      "summary": "Constructive quantum logic, constructive Gleason, effective spectral analysis, and a wave-equation counterexample delimit computable Hilbert physics. For this obligation, the evidence contains ingredients relevant to, but does not compose a result that treats gauge constraints, BRST/BV structure, or symmetry restoration.",
+      "boundary": "Computable, Bishop-constructive, intuitionistic, and reverse-mathematical results remain distinct types. Domain, completion, and spectral-measure hypotheses remain part of the result. Still open here: the certified full metric BV complex and its residual transfer."
+    },
+    {
+      "foundation": "CONSTRUCTIVE_COMPUTABLE",
+      "carrier": "HILBERT_OPERATOR",
+      "obligation": "INTERACTION_RENORMALIZATION_QME",
+      "status": "PIECES_ONLY",
+      "evidence": [
+        "neumann-pape-streicher-2018",
+        "pour-el-richards-1981",
+        "bridges-svozil-2000",
+        "richman-bridges-1999"
+      ],
+      "summary": "Constructive quantum logic, constructive Gleason, effective spectral analysis, and a wave-equation counterexample delimit computable Hilbert physics. For this obligation, the evidence contains ingredients relevant to, but does not compose a result that treats an interaction, counterterm/anomaly, renormalized product, or master-equation ingredient.",
+      "boundary": "Computable, Bishop-constructive, intuitionistic, and reverse-mathematical results remain distinct types. Domain, completion, and spectral-measure hypotheses remain part of the result. Still open here: Weyl counterterm coefficients, QME restoration, and residual transfer."
+    },
+    {
+      "foundation": "CONSTRUCTIVE_COMPUTABLE",
+      "carrier": "HILBERT_OPERATOR",
+      "obligation": "KINEMATICS_OBSERVABLES",
+      "status": "LITERATURE_RESULT",
+      "evidence": [
+        "bridges-svozil-2000"
+      ],
+      "summary": "Constructive Hilbert subspaces, projections, and quantum logic have been studied.",
+      "boundary": "No constructive dynamics or QFT."
+    },
+    {
+      "foundation": "CONSTRUCTIVE_COMPUTABLE",
+      "carrier": "HILBERT_OPERATOR",
+      "obligation": "RECONSTRUCTION_LIMITS",
+      "status": "PIECES_ONLY",
+      "evidence": [
+        "hardy-2001",
+        "chiribella-dariano-perinotti-2011",
+        "brattka-2008"
+      ],
+      "summary": "Operational and computability ingredients exist, but no shared constructive reversal joins them.",
+      "boundary": "A computability classification is not a reverse-mathematical or physical implication."
+    },
+    {
+      "foundation": "CONSTRUCTIVE_COMPUTABLE",
+      "carrier": "HILBERT_OPERATOR",
+      "obligation": "STATES_PROBABILITY",
+      "status": "LITERATURE_RESULT",
+      "evidence": [
+        "richman-bridges-1999"
+      ],
+      "summary": "A constructive formulation and proof of Gleason's theorem exists.",
+      "boundary": "This is not a constructive derivation of all quantum probability or state selection."
+    },
+    {
+      "foundation": "CONSTRUCTIVE_COMPUTABLE",
+      "carrier": "KREIN_INDEFINITE",
+      "obligation": "DYNAMICS_PROPAGATION",
+      "status": "PIECES_ONLY",
+      "evidence": [
+        "bender-boettcher-1998",
+        "mostafazadeh-2001"
+      ],
+      "summary": "Pseudo-Hermitian spectral ingredients are explicit but have not been reformulated constructively with physical state selection. For this obligation, the evidence contains ingredients relevant to, but does not compose a result that supplies an evolution, spectral, or propagation result.",
+      "boundary": "Computable, Bishop-constructive, intuitionistic, and reverse-mathematical results remain distinct types. Real spectrum or J-unitarity alone does not produce a positive physical state space. Still open here: full interacting Lorentzian-causal propagation."
+    },
+    {
+      "foundation": "CONSTRUCTIVE_COMPUTABLE",
+      "carrier": "KREIN_INDEFINITE",
+      "obligation": "STATES_PROBABILITY",
+      "status": "PIECES_ONLY",
+      "evidence": [
+        "bender-boettcher-1998",
+        "mostafazadeh-2001"
+      ],
+      "summary": "Pseudo-Hermitian spectral ingredients are explicit but have not been reformulated constructively with physical state selection. For this obligation, the evidence contains ingredients relevant to, but does not compose a result that constructs or represents states and probability data.",
+      "boundary": "Computable, Bishop-constructive, intuitionistic, and reverse-mathematical results remain distinct types. Real spectrum or J-unitarity alone does not produce a positive physical state space. Still open here: a physically selected Weyl state and probability interpretation."
+    },
+    {
+      "foundation": "CONSTRUCTIVE_COMPUTABLE",
+      "carrier": "LOCALIC_SYNTHETIC",
+      "obligation": "DYNAMICS_PROPAGATION",
+      "status": "LITERATURE_RESULT",
+      "evidence": [
+        "coquand-spitters-2009",
+        "heunen-landsman-spitters-2009",
+        "brenna-flori-2012"
+      ],
+      "summary": "Constructive localic spectra, valuations, and internal one-parameter dynamics form a coherent non-point-set quantum fragment. For this obligation, the evidence directly supplies an evolution, spectral, or propagation result.",
+      "boundary": "Computable, Bishop-constructive, intuitionistic, and reverse-mathematical results remain distinct types. Internal/localic reformulation does not by itself establish external empirical equivalence. Still open here: full interacting Lorentzian-causal propagation."
+    },
+    {
+      "foundation": "CONSTRUCTIVE_COMPUTABLE",
+      "carrier": "LOCALIC_SYNTHETIC",
+      "obligation": "GAUGE_BV_COHOMOLOGY",
+      "status": "PIECES_ONLY",
+      "evidence": [
+        "coquand-spitters-2009",
+        "heunen-landsman-spitters-2009",
+        "brenna-flori-2012"
+      ],
+      "summary": "Constructive localic spectra, valuations, and internal one-parameter dynamics form a coherent non-point-set quantum fragment. For this obligation, the evidence contains ingredients relevant to, but does not compose a result that treats gauge constraints, BRST/BV structure, or symmetry restoration.",
+      "boundary": "Computable, Bishop-constructive, intuitionistic, and reverse-mathematical results remain distinct types. Internal/localic reformulation does not by itself establish external empirical equivalence. Still open here: the certified full metric BV complex and its residual transfer."
+    },
+    {
+      "foundation": "CONSTRUCTIVE_COMPUTABLE",
+      "carrier": "LOCALIC_SYNTHETIC",
+      "obligation": "INTERACTION_RENORMALIZATION_QME",
+      "status": "PIECES_ONLY",
+      "evidence": [
+        "coquand-spitters-2009",
+        "heunen-landsman-spitters-2009",
+        "brenna-flori-2012"
+      ],
+      "summary": "Constructive localic spectra, valuations, and internal one-parameter dynamics form a coherent non-point-set quantum fragment. For this obligation, the evidence contains ingredients relevant to, but does not compose a result that treats an interaction, counterterm/anomaly, renormalized product, or master-equation ingredient.",
+      "boundary": "Computable, Bishop-constructive, intuitionistic, and reverse-mathematical results remain distinct types. Internal/localic reformulation does not by itself establish external empirical equivalence. Still open here: Weyl counterterm coefficients, QME restoration, and residual transfer."
+    },
+    {
+      "foundation": "CONSTRUCTIVE_COMPUTABLE",
+      "carrier": "LOCALIC_SYNTHETIC",
+      "obligation": "KINEMATICS_OBSERVABLES",
+      "status": "LITERATURE_RESULT",
+      "evidence": [
+        "coquand-spitters-2009",
+        "heunen-landsman-spitters-2009",
+        "brenna-flori-2012"
+      ],
+      "summary": "Constructive localic spectra, valuations, and internal one-parameter dynamics form a coherent non-point-set quantum fragment. For this obligation, the evidence directly defines observables, configurations, or the carrier's algebraic structure.",
+      "boundary": "Computable, Bishop-constructive, intuitionistic, and reverse-mathematical results remain distinct types. Internal/localic reformulation does not by itself establish external empirical equivalence. Still open here: a full Weyl observable algebra and its domains."
+    },
+    {
+      "foundation": "CONSTRUCTIVE_COMPUTABLE",
+      "carrier": "LOCALIC_SYNTHETIC",
+      "obligation": "RECONSTRUCTION_LIMITS",
+      "status": "LITERATURE_RESULT",
+      "evidence": [
+        "coquand-spitters-2009",
+        "heunen-landsman-spitters-2009",
+        "brenna-flori-2012"
+      ],
+      "summary": "Constructive localic spectra, valuations, and internal one-parameter dynamics form a coherent non-point-set quantum fragment. For this obligation, the evidence directly supplies reconstruction, comparison, covariance, or continuum-limit obligations.",
+      "boundary": "Computable, Bishop-constructive, intuitionistic, and reverse-mathematical results remain distinct types. Internal/localic reformulation does not by itself establish external empirical equivalence. Still open here: a prediction-preserving comparison or controlled continuum theorem."
+    },
+    {
+      "foundation": "CONSTRUCTIVE_COMPUTABLE",
+      "carrier": "LOCALIC_SYNTHETIC",
+      "obligation": "STATES_PROBABILITY",
+      "status": "LITERATURE_RESULT",
+      "evidence": [
+        "coquand-spitters-2009",
+        "heunen-landsman-spitters-2009",
+        "brenna-flori-2012"
+      ],
+      "summary": "Constructive localic spectra, valuations, and internal one-parameter dynamics form a coherent non-point-set quantum fragment. For this obligation, the evidence directly constructs or represents states and probability data.",
+      "boundary": "Computable, Bishop-constructive, intuitionistic, and reverse-mathematical results remain distinct types. Internal/localic reformulation does not by itself establish external empirical equivalence. Still open here: a physically selected Weyl state and probability interpretation."
+    },
+    {
+      "foundation": "CONSTRUCTIVE_COMPUTABLE",
+      "carrier": "SMOOTH_DISTRIBUTIONAL",
+      "obligation": "DYNAMICS_PROPAGATION",
+      "status": "PRIORITY_GAP",
+      "evidence": [],
+      "summary": "Constructive distribution spaces, energy estimates, and Green operators are not present in the reviewed corpus.",
+      "boundary": "Classical rigorous PDE is not automatically constructive PDE."
+    },
+    {
+      "foundation": "CONSTRUCTIVE_COMPUTABLE",
+      "carrier": "SMOOTH_DISTRIBUTIONAL",
+      "obligation": "GAUGE_BV_COHOMOLOGY",
+      "status": "PRIORITY_GAP",
+      "evidence": [],
+      "summary": "No constructive BV-BFV gauge-field complex is present.",
+      "boundary": "Constructive Hilbert propositions do not supply gauge cohomology."
+    },
+    {
+      "foundation": "CONSTRUCTIVE_COMPUTABLE",
+      "carrier": "SMOOTH_DISTRIBUTIONAL",
+      "obligation": "INTERACTION_RENORMALIZATION_QME",
+      "status": "PRIORITY_GAP",
+      "evidence": [],
+      "summary": "No constructive microlocal renormalization/QME chain is present.",
+      "boundary": "This is a missing programme, not a no-go theorem."
+    },
+    {
+      "foundation": "FINITE_DISCRETE",
+      "carrier": "ALGEBRAIC_CSTAR",
+      "obligation": "DYNAMICS_PROPAGATION",
+      "status": "LITERATURE_RESULT",
+      "evidence": [
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1",
+        "zohar-burrello-2014"
+      ],
+      "summary": "The finite matrix algebra is a concrete C*-system, while lattice gauge work adds local constraints and truncation architecture. For this obligation, the evidence directly supplies an evolution, spectral, or propagation result.",
+      "boundary": "Finite dimension, lattice regularization, finite field, and finitism remain distinct; a continuum bridge is never automatic. An algebraic architecture does not by itself select representations or physical states. Still open here: full interacting Lorentzian-causal propagation."
+    },
+    {
+      "foundation": "FINITE_DISCRETE",
+      "carrier": "ALGEBRAIC_CSTAR",
+      "obligation": "GAUGE_BV_COHOMOLOGY",
+      "status": "PIECES_ONLY",
+      "evidence": [
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1",
+        "zohar-burrello-2014"
+      ],
+      "summary": "The finite matrix algebra is a concrete C*-system, while lattice gauge work adds local constraints and truncation architecture. For this obligation, the evidence contains ingredients relevant to, but does not compose a result that treats gauge constraints, BRST/BV structure, or symmetry restoration.",
+      "boundary": "Finite dimension, lattice regularization, finite field, and finitism remain distinct; a continuum bridge is never automatic. An algebraic architecture does not by itself select representations or physical states. Still open here: the certified full metric BV complex and its residual transfer."
+    },
+    {
+      "foundation": "FINITE_DISCRETE",
+      "carrier": "ALGEBRAIC_CSTAR",
+      "obligation": "INTERACTION_RENORMALIZATION_QME",
+      "status": "LITERATURE_RESULT",
+      "evidence": [
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1",
+        "zohar-burrello-2014"
+      ],
+      "summary": "The finite matrix algebra is a concrete C*-system, while lattice gauge work adds local constraints and truncation architecture. For this obligation, the evidence directly treats an interaction, counterterm/anomaly, renormalized product, or master-equation ingredient.",
+      "boundary": "Finite dimension, lattice regularization, finite field, and finitism remain distinct; a continuum bridge is never automatic. An algebraic architecture does not by itself select representations or physical states. Still open here: Weyl counterterm coefficients, QME restoration, and residual transfer."
+    },
+    {
+      "foundation": "FINITE_DISCRETE",
+      "carrier": "ALGEBRAIC_CSTAR",
+      "obligation": "KINEMATICS_OBSERVABLES",
+      "status": "LITERATURE_RESULT",
+      "evidence": [
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1",
+        "zohar-burrello-2014"
+      ],
+      "summary": "The finite matrix algebra is a concrete C*-system, while lattice gauge work adds local constraints and truncation architecture. For this obligation, the evidence directly defines observables, configurations, or the carrier's algebraic structure.",
+      "boundary": "Finite dimension, lattice regularization, finite field, and finitism remain distinct; a continuum bridge is never automatic. An algebraic architecture does not by itself select representations or physical states. Still open here: a full Weyl observable algebra and its domains."
+    },
+    {
+      "foundation": "FINITE_DISCRETE",
+      "carrier": "ALGEBRAIC_CSTAR",
+      "obligation": "STATES_PROBABILITY",
+      "status": "LITERATURE_RESULT",
+      "evidence": [
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1",
+        "zohar-burrello-2014"
+      ],
+      "summary": "The finite matrix algebra is a concrete C*-system, while lattice gauge work adds local constraints and truncation architecture. For this obligation, the evidence directly constructs or represents states and probability data.",
+      "boundary": "Finite dimension, lattice regularization, finite field, and finitism remain distinct; a continuum bridge is never automatic. An algebraic architecture does not by itself select representations or physical states. Still open here: a physically selected Weyl state and probability interpretation."
+    },
+    {
+      "foundation": "FINITE_DISCRETE",
+      "carrier": "FINITE_EXACT",
+      "obligation": "DYNAMICS_PROPAGATION",
+      "status": "LOCAL_RESULT",
+      "evidence": [
+        "FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1",
+        "FOUNDATIONAL_LOW_HANGING_CELL_CLOSURE_AUDIT_V1"
+      ],
+      "summary": "Every displayed finite energy cutoff inherits exact diagonal unitary dynamics and a finite-core matrix-unit derivation.",
+      "boundary": "No finite-field dynamics, continuum convergence, regulator independence, causal propagation, or reconstruction theorem is proved."
+    },
+    {
+      "foundation": "FINITE_DISCRETE",
+      "carrier": "FINITE_EXACT",
+      "obligation": "GAUGE_BV_COHOMOLOGY",
+      "status": "LOCAL_RESULT",
+      "evidence": [
+        "FOUNDATIONAL_FREE_BV_ENERGY2_PRA_SDR_V1"
+      ],
+      "summary": "A finite energy-cutoff BV contraction is exact and independently checked.",
+      "boundary": "A regulator at fixed cutoff is not a finite fundamental theory."
+    },
+    {
+      "foundation": "FINITE_DISCRETE",
+      "carrier": "FINITE_EXACT",
+      "obligation": "INTERACTION_RENORMALIZATION_QME",
+      "status": "PRIORITY_GAP",
+      "evidence": [],
+      "summary": "No finite interaction/QME system with a certified continuum comparison is present.",
+      "boundary": "Finite algebra does not remove renormalization obligations."
+    },
+    {
+      "foundation": "FINITE_DISCRETE",
+      "carrier": "FINITE_EXACT",
+      "obligation": "KINEMATICS_OBSERVABLES",
+      "status": "LITERATURE_RESULT",
+      "evidence": [
+        "gibbons-hoffman-wootters-2004"
+      ],
+      "summary": "Prime-power finite-field phase spaces support discrete Wigner kinematics.",
+      "boundary": "The quantum carrier remains complex and no continuum theory follows."
+    },
+    {
+      "foundation": "FINITE_DISCRETE",
+      "carrier": "FINITE_EXACT",
+      "obligation": "RECONSTRUCTION_LIMITS",
+      "status": "LOCAL_RESULT",
+      "evidence": [
+        "FOUNDATIONAL_FINITE_FIELD_FINITE_MODE_NON_EQUIVALENCE_V1"
+      ],
+      "summary": "Finite field, finite mode, finite Hilbert dimension, and finitism are proved non-equivalent by type, and bridge obligations are listed.",
+      "boundary": "No continuum bridge is constructed."
+    },
+    {
+      "foundation": "FINITE_DISCRETE",
+      "carrier": "FINITE_EXACT",
+      "obligation": "STATES_PROBABILITY",
+      "status": "LITERATURE_RESULT",
+      "evidence": [
+        "gibbons-hoffman-wootters-2004"
+      ],
+      "summary": "Line-associated bases and discrete Wigner functions organize finite quantum states.",
+      "boundary": "This is not a general physical state-selection theorem."
+    },
+    {
+      "foundation": "FINITE_DISCRETE",
+      "carrier": "HILBERT_OPERATOR",
+      "obligation": "DYNAMICS_PROPAGATION",
+      "status": "LITERATURE_RESULT",
+      "evidence": [
+        "gibbons-hoffman-wootters-2004",
+        "abramsky-coecke-2004",
+        "constantin-doring-2020"
+      ],
+      "summary": "Finite-dimensional phase space, categorical protocols, and contextual entropy cover Hilbert kinematics, states, operations, and reconstruction. For this obligation, the evidence directly supplies an evolution, spectral, or propagation result.",
+      "boundary": "Finite dimension, lattice regularization, finite field, and finitism remain distinct; a continuum bridge is never automatic. Domain, completion, and spectral-measure hypotheses remain part of the result. Still open here: full interacting Lorentzian-causal propagation."
+    },
+    {
+      "foundation": "FINITE_DISCRETE",
+      "carrier": "HILBERT_OPERATOR",
+      "obligation": "GAUGE_BV_COHOMOLOGY",
+      "status": "PIECES_ONLY",
+      "evidence": [
+        "gibbons-hoffman-wootters-2004",
+        "abramsky-coecke-2004",
+        "constantin-doring-2020"
+      ],
+      "summary": "Finite-dimensional phase space, categorical protocols, and contextual entropy cover Hilbert kinematics, states, operations, and reconstruction. For this obligation, the evidence contains ingredients relevant to, but does not compose a result that treats gauge constraints, BRST/BV structure, or symmetry restoration.",
+      "boundary": "Finite dimension, lattice regularization, finite field, and finitism remain distinct; a continuum bridge is never automatic. Domain, completion, and spectral-measure hypotheses remain part of the result. Still open here: the certified full metric BV complex and its residual transfer."
+    },
+    {
+      "foundation": "FINITE_DISCRETE",
+      "carrier": "HILBERT_OPERATOR",
+      "obligation": "INTERACTION_RENORMALIZATION_QME",
+      "status": "PIECES_ONLY",
+      "evidence": [
+        "gibbons-hoffman-wootters-2004",
+        "abramsky-coecke-2004",
+        "constantin-doring-2020"
+      ],
+      "summary": "Finite-dimensional phase space, categorical protocols, and contextual entropy cover Hilbert kinematics, states, operations, and reconstruction. For this obligation, the evidence contains ingredients relevant to, but does not compose a result that treats an interaction, counterterm/anomaly, renormalized product, or master-equation ingredient.",
+      "boundary": "Finite dimension, lattice regularization, finite field, and finitism remain distinct; a continuum bridge is never automatic. Domain, completion, and spectral-measure hypotheses remain part of the result. Still open here: Weyl counterterm coefficients, QME restoration, and residual transfer."
+    },
+    {
+      "foundation": "FINITE_DISCRETE",
+      "carrier": "HILBERT_OPERATOR",
+      "obligation": "KINEMATICS_OBSERVABLES",
+      "status": "LITERATURE_RESULT",
+      "evidence": [
+        "hardy-2001",
+        "chiribella-dariano-perinotti-2011"
+      ],
+      "summary": "Finite-dimensional Hilbert kinematics is reconstructed operationally.",
+      "boundary": "The complex scalar continuum remains and infinite QFT is outside scope."
+    },
+    {
+      "foundation": "FINITE_DISCRETE",
+      "carrier": "HILBERT_OPERATOR",
+      "obligation": "RECONSTRUCTION_LIMITS",
+      "status": "LOCAL_RESULT",
+      "evidence": [
+        "FOUNDATIONAL_HARDY_CONTINUITY_KN_AUDIT_V1"
+      ],
+      "summary": "One finite-dimensional reconstruction step has a representation-sensitive logical audit.",
+      "boundary": "No full reconstruction or continuum limit."
+    },
+    {
+      "foundation": "FINITE_DISCRETE",
+      "carrier": "HILBERT_OPERATOR",
+      "obligation": "STATES_PROBABILITY",
+      "status": "LITERATURE_RESULT",
+      "evidence": [
+        "gibbons-hoffman-wootters-2004",
+        "abramsky-coecke-2004",
+        "constantin-doring-2020"
+      ],
+      "summary": "Finite-dimensional phase space, categorical protocols, and contextual entropy cover Hilbert kinematics, states, operations, and reconstruction. For this obligation, the evidence directly constructs or represents states and probability data.",
+      "boundary": "Finite dimension, lattice regularization, finite field, and finitism remain distinct; a continuum bridge is never automatic. Domain, completion, and spectral-measure hypotheses remain part of the result. Still open here: a physically selected Weyl state and probability interpretation."
+    },
+    {
+      "foundation": "FINITE_DISCRETE",
+      "carrier": "KREIN_INDEFINITE",
+      "obligation": "DYNAMICS_PROPAGATION",
+      "status": "LOCAL_RESULT",
+      "evidence": [
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1",
+        "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1"
+      ],
+      "summary": "Explicit finite Krein matrices give sign, state-adjacent, J-unitary, and interacting witnesses at fixed dimension. For this obligation, the evidence directly supplies an evolution, spectral, or propagation result.",
+      "boundary": "Finite dimension, lattice regularization, finite field, and finitism remain distinct; a continuum bridge is never automatic. Real spectrum or J-unitarity alone does not produce a positive physical state space. Still open here: full interacting Lorentzian-causal propagation."
+    },
+    {
+      "foundation": "FINITE_DISCRETE",
+      "carrier": "KREIN_INDEFINITE",
+      "obligation": "GAUGE_BV_COHOMOLOGY",
+      "status": "PIECES_ONLY",
+      "evidence": [
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1",
+        "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1"
+      ],
+      "summary": "Explicit finite Krein matrices give sign, state-adjacent, J-unitary, and interacting witnesses at fixed dimension. For this obligation, the evidence contains ingredients relevant to, but does not compose a result that treats gauge constraints, BRST/BV structure, or symmetry restoration.",
+      "boundary": "Finite dimension, lattice regularization, finite field, and finitism remain distinct; a continuum bridge is never automatic. Real spectrum or J-unitarity alone does not produce a positive physical state space. Still open here: the certified full metric BV complex and its residual transfer."
+    },
+    {
+      "foundation": "FINITE_DISCRETE",
+      "carrier": "KREIN_INDEFINITE",
+      "obligation": "INTERACTION_RENORMALIZATION_QME",
+      "status": "LOCAL_RESULT",
+      "evidence": [
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1",
+        "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1"
+      ],
+      "summary": "Explicit finite Krein matrices give sign, state-adjacent, J-unitary, and interacting witnesses at fixed dimension. For this obligation, the evidence directly treats an interaction, counterterm/anomaly, renormalized product, or master-equation ingredient.",
+      "boundary": "Finite dimension, lattice regularization, finite field, and finitism remain distinct; a continuum bridge is never automatic. Real spectrum or J-unitarity alone does not produce a positive physical state space. Still open here: Weyl counterterm coefficients, QME restoration, and residual transfer."
+    },
+    {
+      "foundation": "FINITE_DISCRETE",
+      "carrier": "KREIN_INDEFINITE",
+      "obligation": "KINEMATICS_OBSERVABLES",
+      "status": "LOCAL_RESULT",
+      "evidence": [
+        "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1"
+      ],
+      "summary": "Finite Krein truncations have explicit sign, involution, and positivity witnesses.",
+      "boundary": "The completed infinite carrier and physical state remain separate."
+    },
+    {
+      "foundation": "FINITE_DISCRETE",
+      "carrier": "KREIN_INDEFINITE",
+      "obligation": "STATES_PROBABILITY",
+      "status": "LOCAL_RESULT",
+      "evidence": [
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1",
+        "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1"
+      ],
+      "summary": "Explicit finite Krein matrices give sign, state-adjacent, J-unitary, and interacting witnesses at fixed dimension. For this obligation, the evidence directly constructs or represents states and probability data.",
+      "boundary": "Finite dimension, lattice regularization, finite field, and finitism remain distinct; a continuum bridge is never automatic. Real spectrum or J-unitarity alone does not produce a positive physical state space. Still open here: a physically selected Weyl state and probability interpretation."
+    },
+    {
+      "foundation": "FINITE_DISCRETE",
+      "carrier": "LOCALIC_SYNTHETIC",
+      "obligation": "DYNAMICS_PROPAGATION",
+      "status": "LITERATURE_RESULT",
+      "evidence": [
+        "harding-heunen-2019",
+        "constantin-doring-2020",
+        "abramsky-coecke-2004"
+      ],
+      "summary": "Short-poset topoi, finite contextual entropy, and categorical protocols give finite internal/contextual kinematics, states, dynamics, and reconstruction. For this obligation, the evidence directly supplies an evolution, spectral, or propagation result.",
+      "boundary": "Finite dimension, lattice regularization, finite field, and finitism remain distinct; a continuum bridge is never automatic. Internal/localic reformulation does not by itself establish external empirical equivalence. Still open here: full interacting Lorentzian-causal propagation."
+    },
+    {
+      "foundation": "FINITE_DISCRETE",
+      "carrier": "LOCALIC_SYNTHETIC",
+      "obligation": "GAUGE_BV_COHOMOLOGY",
+      "status": "PIECES_ONLY",
+      "evidence": [
+        "harding-heunen-2019",
+        "constantin-doring-2020",
+        "abramsky-coecke-2004"
+      ],
+      "summary": "Short-poset topoi, finite contextual entropy, and categorical protocols give finite internal/contextual kinematics, states, dynamics, and reconstruction. For this obligation, the evidence contains ingredients relevant to, but does not compose a result that treats gauge constraints, BRST/BV structure, or symmetry restoration.",
+      "boundary": "Finite dimension, lattice regularization, finite field, and finitism remain distinct; a continuum bridge is never automatic. Internal/localic reformulation does not by itself establish external empirical equivalence. Still open here: the certified full metric BV complex and its residual transfer."
+    },
+    {
+      "foundation": "FINITE_DISCRETE",
+      "carrier": "LOCALIC_SYNTHETIC",
+      "obligation": "INTERACTION_RENORMALIZATION_QME",
+      "status": "PIECES_ONLY",
+      "evidence": [
+        "harding-heunen-2019",
+        "constantin-doring-2020",
+        "abramsky-coecke-2004"
+      ],
+      "summary": "Short-poset topoi, finite contextual entropy, and categorical protocols give finite internal/contextual kinematics, states, dynamics, and reconstruction. For this obligation, the evidence contains ingredients relevant to, but does not compose a result that treats an interaction, counterterm/anomaly, renormalized product, or master-equation ingredient.",
+      "boundary": "Finite dimension, lattice regularization, finite field, and finitism remain distinct; a continuum bridge is never automatic. Internal/localic reformulation does not by itself establish external empirical equivalence. Still open here: Weyl counterterm coefficients, QME restoration, and residual transfer."
+    },
+    {
+      "foundation": "FINITE_DISCRETE",
+      "carrier": "LOCALIC_SYNTHETIC",
+      "obligation": "KINEMATICS_OBSERVABLES",
+      "status": "LITERATURE_RESULT",
+      "evidence": [
+        "harding-heunen-2019",
+        "constantin-doring-2020",
+        "abramsky-coecke-2004"
+      ],
+      "summary": "Short-poset topoi, finite contextual entropy, and categorical protocols give finite internal/contextual kinematics, states, dynamics, and reconstruction. For this obligation, the evidence directly defines observables, configurations, or the carrier's algebraic structure.",
+      "boundary": "Finite dimension, lattice regularization, finite field, and finitism remain distinct; a continuum bridge is never automatic. Internal/localic reformulation does not by itself establish external empirical equivalence. Still open here: a full Weyl observable algebra and its domains."
+    },
+    {
+      "foundation": "FINITE_DISCRETE",
+      "carrier": "LOCALIC_SYNTHETIC",
+      "obligation": "RECONSTRUCTION_LIMITS",
+      "status": "LITERATURE_RESULT",
+      "evidence": [
+        "harding-heunen-2019",
+        "constantin-doring-2020",
+        "abramsky-coecke-2004"
+      ],
+      "summary": "Short-poset topoi, finite contextual entropy, and categorical protocols give finite internal/contextual kinematics, states, dynamics, and reconstruction. For this obligation, the evidence directly supplies reconstruction, comparison, covariance, or continuum-limit obligations.",
+      "boundary": "Finite dimension, lattice regularization, finite field, and finitism remain distinct; a continuum bridge is never automatic. Internal/localic reformulation does not by itself establish external empirical equivalence. Still open here: a prediction-preserving comparison or controlled continuum theorem."
+    },
+    {
+      "foundation": "FINITE_DISCRETE",
+      "carrier": "LOCALIC_SYNTHETIC",
+      "obligation": "STATES_PROBABILITY",
+      "status": "LITERATURE_RESULT",
+      "evidence": [
+        "harding-heunen-2019",
+        "constantin-doring-2020",
+        "abramsky-coecke-2004"
+      ],
+      "summary": "Short-poset topoi, finite contextual entropy, and categorical protocols give finite internal/contextual kinematics, states, dynamics, and reconstruction. For this obligation, the evidence directly constructs or represents states and probability data.",
+      "boundary": "Finite dimension, lattice regularization, finite field, and finitism remain distinct; a continuum bridge is never automatic. Internal/localic reformulation does not by itself establish external empirical equivalence. Still open here: a physically selected Weyl state and probability interpretation."
+    },
+    {
+      "foundation": "FINITE_DISCRETE",
+      "carrier": "SMOOTH_DISTRIBUTIONAL",
+      "obligation": "DYNAMICS_PROPAGATION",
+      "status": "LITERATURE_RESULT",
+      "evidence": [
+        "kogut-susskind-1975",
+        "zohar-burrello-2014",
+        "bahr-dittrich-2009",
+        "dittrich-2012"
+      ],
+      "summary": "Lattice gauge and discrete-gravity work supplies dynamics, constraints, symmetry-restoration, and explicit continuum-comparison obligations. For this obligation, the evidence directly supplies an evolution, spectral, or propagation result.",
+      "boundary": "Finite dimension, lattice regularization, finite field, and finitism remain distinct; a continuum bridge is never automatic. Local/formal PDE data do not imply global existence, support, or microlocal renormalization. Still open here: full interacting Lorentzian-causal propagation."
+    },
+    {
+      "foundation": "FINITE_DISCRETE",
+      "carrier": "SMOOTH_DISTRIBUTIONAL",
+      "obligation": "GAUGE_BV_COHOMOLOGY",
+      "status": "LITERATURE_RESULT",
+      "evidence": [
+        "kogut-susskind-1975",
+        "zohar-burrello-2014",
+        "bahr-dittrich-2009",
+        "dittrich-2012"
+      ],
+      "summary": "Lattice gauge and discrete-gravity work supplies dynamics, constraints, symmetry-restoration, and explicit continuum-comparison obligations. For this obligation, the evidence directly treats gauge constraints, BRST/BV structure, or symmetry restoration.",
+      "boundary": "Finite dimension, lattice regularization, finite field, and finitism remain distinct; a continuum bridge is never automatic. Local/formal PDE data do not imply global existence, support, or microlocal renormalization. Still open here: the certified full metric BV complex and its residual transfer."
+    },
+    {
+      "foundation": "FINITE_DISCRETE",
+      "carrier": "SMOOTH_DISTRIBUTIONAL",
+      "obligation": "INTERACTION_RENORMALIZATION_QME",
+      "status": "PIECES_ONLY",
+      "evidence": [
+        "kogut-susskind-1975",
+        "zohar-burrello-2014",
+        "bahr-dittrich-2009",
+        "dittrich-2012"
+      ],
+      "summary": "Lattice gauge and discrete-gravity work supplies dynamics, constraints, symmetry-restoration, and explicit continuum-comparison obligations. For this obligation, the evidence contains ingredients relevant to, but does not compose a result that treats an interaction, counterterm/anomaly, renormalized product, or master-equation ingredient.",
+      "boundary": "Finite dimension, lattice regularization, finite field, and finitism remain distinct; a continuum bridge is never automatic. Local/formal PDE data do not imply global existence, support, or microlocal renormalization. Still open here: Weyl counterterm coefficients, QME restoration, and residual transfer."
+    },
+    {
+      "foundation": "FINITE_DISCRETE",
+      "carrier": "SMOOTH_DISTRIBUTIONAL",
+      "obligation": "KINEMATICS_OBSERVABLES",
+      "status": "LITERATURE_RESULT",
+      "evidence": [
+        "kogut-susskind-1975",
+        "zohar-burrello-2014",
+        "bahr-dittrich-2009",
+        "dittrich-2012"
+      ],
+      "summary": "Lattice gauge and discrete-gravity work supplies dynamics, constraints, symmetry-restoration, and explicit continuum-comparison obligations. For this obligation, the evidence directly defines observables, configurations, or the carrier's algebraic structure.",
+      "boundary": "Finite dimension, lattice regularization, finite field, and finitism remain distinct; a continuum bridge is never automatic. Local/formal PDE data do not imply global existence, support, or microlocal renormalization. Still open here: a full Weyl observable algebra and its domains."
+    },
+    {
+      "foundation": "FINITE_DISCRETE",
+      "carrier": "SMOOTH_DISTRIBUTIONAL",
+      "obligation": "RECONSTRUCTION_LIMITS",
+      "status": "PRIORITY_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FINITE_FIELD_FINITE_MODE_NON_EQUIVALENCE_V1"
+      ],
+      "summary": "No topology, comparison maps, error bounds, or regulator-independent continuum theorem joins finite models to smooth Weyl fields.",
+      "boundary": "Cardinality resemblance is not convergence."
+    },
+    {
+      "foundation": "FINITE_DISCRETE",
+      "carrier": "SMOOTH_DISTRIBUTIONAL",
+      "obligation": "STATES_PROBABILITY",
+      "status": "PIECES_ONLY",
+      "evidence": [
+        "kogut-susskind-1975",
+        "zohar-burrello-2014",
+        "bahr-dittrich-2009",
+        "dittrich-2012"
+      ],
+      "summary": "Lattice gauge and discrete-gravity work supplies dynamics, constraints, symmetry-restoration, and explicit continuum-comparison obligations. For this obligation, the evidence contains ingredients relevant to, but does not compose a result that constructs or represents states and probability data.",
+      "boundary": "Finite dimension, lattice regularization, finite field, and finitism remain distinct; a continuum bridge is never automatic. Local/formal PDE data do not imply global existence, support, or microlocal renormalization. Still open here: a physically selected Weyl state and probability interpretation."
+    },
+    {
+      "foundation": "TOPOS_INTERNAL",
+      "carrier": "ALGEBRAIC_CSTAR",
+      "obligation": "DYNAMICS_PROPAGATION",
+      "status": "LITERATURE_RESULT",
+      "evidence": [
+        "heunen-landsman-spitters-2009",
+        "doring-2008",
+        "brenna-flori-2012",
+        "harding-heunen-2019"
+      ],
+      "summary": "Contextual topos methods internalize commutative algebra, spectra, state measures, and one-parameter dynamics from operator-algebraic input. For this obligation, the evidence directly supplies an evolution, spectral, or propagation result.",
+      "boundary": "External Hilbert/C*-input and internal topos objects are not silently identified, and the ambient topos matters. An algebraic architecture does not by itself select representations or physical states. Still open here: full interacting Lorentzian-causal propagation."
+    },
+    {
+      "foundation": "TOPOS_INTERNAL",
+      "carrier": "ALGEBRAIC_CSTAR",
+      "obligation": "GAUGE_BV_COHOMOLOGY",
+      "status": "PIECES_ONLY",
+      "evidence": [
+        "heunen-landsman-spitters-2009",
+        "doring-2008",
+        "brenna-flori-2012",
+        "harding-heunen-2019"
+      ],
+      "summary": "Contextual topos methods internalize commutative algebra, spectra, state measures, and one-parameter dynamics from operator-algebraic input. For this obligation, the evidence contains ingredients relevant to, but does not compose a result that treats gauge constraints, BRST/BV structure, or symmetry restoration.",
+      "boundary": "External Hilbert/C*-input and internal topos objects are not silently identified, and the ambient topos matters. An algebraic architecture does not by itself select representations or physical states. Still open here: the certified full metric BV complex and its residual transfer."
+    },
+    {
+      "foundation": "TOPOS_INTERNAL",
+      "carrier": "ALGEBRAIC_CSTAR",
+      "obligation": "INTERACTION_RENORMALIZATION_QME",
+      "status": "PIECES_ONLY",
+      "evidence": [
+        "heunen-landsman-spitters-2009",
+        "doring-2008",
+        "brenna-flori-2012",
+        "harding-heunen-2019"
+      ],
+      "summary": "Contextual topos methods internalize commutative algebra, spectra, state measures, and one-parameter dynamics from operator-algebraic input. For this obligation, the evidence contains ingredients relevant to, but does not compose a result that treats an interaction, counterterm/anomaly, renormalized product, or master-equation ingredient.",
+      "boundary": "External Hilbert/C*-input and internal topos objects are not silently identified, and the ambient topos matters. An algebraic architecture does not by itself select representations or physical states. Still open here: Weyl counterterm coefficients, QME restoration, and residual transfer."
+    },
+    {
+      "foundation": "TOPOS_INTERNAL",
+      "carrier": "ALGEBRAIC_CSTAR",
+      "obligation": "KINEMATICS_OBSERVABLES",
+      "status": "LITERATURE_RESULT",
+      "evidence": [
+        "heunen-landsman-spitters-2009",
+        "doring-2008",
+        "brenna-flori-2012",
+        "harding-heunen-2019"
+      ],
+      "summary": "Contextual topos methods internalize commutative algebra, spectra, state measures, and one-parameter dynamics from operator-algebraic input. For this obligation, the evidence directly defines observables, configurations, or the carrier's algebraic structure.",
+      "boundary": "External Hilbert/C*-input and internal topos objects are not silently identified, and the ambient topos matters. An algebraic architecture does not by itself select representations or physical states. Still open here: a full Weyl observable algebra and its domains."
+    },
+    {
+      "foundation": "TOPOS_INTERNAL",
+      "carrier": "ALGEBRAIC_CSTAR",
+      "obligation": "RECONSTRUCTION_LIMITS",
+      "status": "LITERATURE_RESULT",
+      "evidence": [
+        "heunen-landsman-spitters-2009",
+        "doring-2008",
+        "brenna-flori-2012",
+        "harding-heunen-2019"
+      ],
+      "summary": "Contextual topos methods internalize commutative algebra, spectra, state measures, and one-parameter dynamics from operator-algebraic input. For this obligation, the evidence directly supplies reconstruction, comparison, covariance, or continuum-limit obligations.",
+      "boundary": "External Hilbert/C*-input and internal topos objects are not silently identified, and the ambient topos matters. An algebraic architecture does not by itself select representations or physical states. Still open here: a prediction-preserving comparison or controlled continuum theorem."
+    },
+    {
+      "foundation": "TOPOS_INTERNAL",
+      "carrier": "ALGEBRAIC_CSTAR",
+      "obligation": "STATES_PROBABILITY",
+      "status": "LITERATURE_RESULT",
+      "evidence": [
+        "heunen-landsman-spitters-2009",
+        "doring-2008",
+        "brenna-flori-2012",
+        "harding-heunen-2019"
+      ],
+      "summary": "Contextual topos methods internalize commutative algebra, spectra, state measures, and one-parameter dynamics from operator-algebraic input. For this obligation, the evidence directly constructs or represents states and probability data.",
+      "boundary": "External Hilbert/C*-input and internal topos objects are not silently identified, and the ambient topos matters. An algebraic architecture does not by itself select representations or physical states. Still open here: a physically selected Weyl state and probability interpretation."
+    },
+    {
+      "foundation": "TOPOS_INTERNAL",
+      "carrier": "FINITE_EXACT",
+      "obligation": "DYNAMICS_PROPAGATION",
+      "status": "PIECES_ONLY",
+      "evidence": [
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1",
+        "constantin-doring-2020",
+        "abramsky-coecke-2004"
+      ],
+      "summary": "Finite categorical and contextual-entropy constructions coexist with the exact matrix witness, but their internalization is not automatic. For this obligation, the evidence contains ingredients relevant to, but does not compose a result that supplies an evolution, spectral, or propagation result.",
+      "boundary": "External Hilbert/C*-input and internal topos objects are not silently identified, and the ambient topos matters. The evidence is bounded finite algebra, not a completed infinite carrier. Still open here: full interacting Lorentzian-causal propagation."
+    },
+    {
+      "foundation": "TOPOS_INTERNAL",
+      "carrier": "FINITE_EXACT",
+      "obligation": "INTERACTION_RENORMALIZATION_QME",
+      "status": "PIECES_ONLY",
+      "evidence": [
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1",
+        "constantin-doring-2020",
+        "abramsky-coecke-2004"
+      ],
+      "summary": "Finite categorical and contextual-entropy constructions coexist with the exact matrix witness, but their internalization is not automatic. For this obligation, the evidence contains ingredients relevant to, but does not compose a result that treats an interaction, counterterm/anomaly, renormalized product, or master-equation ingredient.",
+      "boundary": "External Hilbert/C*-input and internal topos objects are not silently identified, and the ambient topos matters. The evidence is bounded finite algebra, not a completed infinite carrier. Still open here: Weyl counterterm coefficients, QME restoration, and residual transfer."
+    },
+    {
+      "foundation": "TOPOS_INTERNAL",
+      "carrier": "FINITE_EXACT",
+      "obligation": "RECONSTRUCTION_LIMITS",
+      "status": "LITERATURE_RESULT",
+      "evidence": [
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1",
+        "constantin-doring-2020",
+        "abramsky-coecke-2004"
+      ],
+      "summary": "Finite categorical and contextual-entropy constructions coexist with the exact matrix witness, but their internalization is not automatic. For this obligation, the evidence directly supplies reconstruction, comparison, covariance, or continuum-limit obligations.",
+      "boundary": "External Hilbert/C*-input and internal topos objects are not silently identified, and the ambient topos matters. The evidence is bounded finite algebra, not a completed infinite carrier. Still open here: a prediction-preserving comparison or controlled continuum theorem."
+    },
+    {
+      "foundation": "TOPOS_INTERNAL",
+      "carrier": "FINITE_EXACT",
+      "obligation": "STATES_PROBABILITY",
+      "status": "LITERATURE_RESULT",
+      "evidence": [
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1",
+        "constantin-doring-2020",
+        "abramsky-coecke-2004"
+      ],
+      "summary": "Finite categorical and contextual-entropy constructions coexist with the exact matrix witness, but their internalization is not automatic. For this obligation, the evidence directly constructs or represents states and probability data.",
+      "boundary": "External Hilbert/C*-input and internal topos objects are not silently identified, and the ambient topos matters. The evidence is bounded finite algebra, not a completed infinite carrier. Still open here: a physically selected Weyl state and probability interpretation."
+    },
+    {
+      "foundation": "TOPOS_INTERNAL",
+      "carrier": "HILBERT_OPERATOR",
+      "obligation": "DYNAMICS_PROPAGATION",
+      "status": "PIECES_ONLY",
+      "evidence": [
+        "doring-2008",
+        "brenna-flori-2012",
+        "harding-heunen-2019"
+      ],
+      "summary": "The topos constructions use external Hilbert/operator input to build internal spectra, measures, and dynamics. For this obligation, the evidence contains ingredients relevant to, but does not compose a result that supplies an evolution, spectral, or propagation result.",
+      "boundary": "External Hilbert/C*-input and internal topos objects are not silently identified, and the ambient topos matters. Domain, completion, and spectral-measure hypotheses remain part of the result. Still open here: full interacting Lorentzian-causal propagation."
+    },
+    {
+      "foundation": "TOPOS_INTERNAL",
+      "carrier": "HILBERT_OPERATOR",
+      "obligation": "STATES_PROBABILITY",
+      "status": "PIECES_ONLY",
+      "evidence": [
+        "doring-2008",
+        "brenna-flori-2012",
+        "harding-heunen-2019"
+      ],
+      "summary": "The topos constructions use external Hilbert/operator input to build internal spectra, measures, and dynamics. For this obligation, the evidence contains ingredients relevant to, but does not compose a result that constructs or represents states and probability data.",
+      "boundary": "External Hilbert/C*-input and internal topos objects are not silently identified, and the ambient topos matters. Domain, completion, and spectral-measure hypotheses remain part of the result. Still open here: a physically selected Weyl state and probability interpretation."
+    },
+    {
+      "foundation": "TOPOS_INTERNAL",
+      "carrier": "KREIN_INDEFINITE",
+      "obligation": "DYNAMICS_PROPAGATION",
+      "status": "PIECES_ONLY",
+      "evidence": [
+        "gottschalk-2004",
+        "harding-heunen-2019"
+      ],
+      "summary": "Krein QFT and topos quantum dynamics exist separately; no reviewed source constructs an internal indefinite carrier. For this obligation, the evidence contains ingredients relevant to, but does not compose a result that supplies an evolution, spectral, or propagation result.",
+      "boundary": "External Hilbert/C*-input and internal topos objects are not silently identified, and the ambient topos matters. Real spectrum or J-unitarity alone does not produce a positive physical state space. Still open here: full interacting Lorentzian-causal propagation."
+    },
+    {
+      "foundation": "TOPOS_INTERNAL",
+      "carrier": "KREIN_INDEFINITE",
+      "obligation": "STATES_PROBABILITY",
+      "status": "PIECES_ONLY",
+      "evidence": [
+        "gottschalk-2004",
+        "harding-heunen-2019"
+      ],
+      "summary": "Krein QFT and topos quantum dynamics exist separately; no reviewed source constructs an internal indefinite carrier. For this obligation, the evidence contains ingredients relevant to, but does not compose a result that constructs or represents states and probability data.",
+      "boundary": "External Hilbert/C*-input and internal topos objects are not silently identified, and the ambient topos matters. Real spectrum or J-unitarity alone does not produce a positive physical state space. Still open here: a physically selected Weyl state and probability interpretation."
+    },
+    {
+      "foundation": "TOPOS_INTERNAL",
+      "carrier": "LOCALIC_SYNTHETIC",
+      "obligation": "DYNAMICS_PROPAGATION",
+      "status": "PRIORITY_GAP",
+      "evidence": [
+        "FOUNDATIONAL_TOPOS_WEYL_BV_OBSTRUCTION_LEDGER_V0"
+      ],
+      "summary": "Internal dynamics, support, and Green propagation have not been constructed.",
+      "boundary": "A localic spectrum is not causal evolution."
+    },
+    {
+      "foundation": "TOPOS_INTERNAL",
+      "carrier": "LOCALIC_SYNTHETIC",
+      "obligation": "GAUGE_BV_COHOMOLOGY",
+      "status": "PRIORITY_GAP",
+      "evidence": [
+        "FOUNDATIONAL_TOPOS_WEYL_BV_OBSTRUCTION_LEDGER_V0"
+      ],
+      "summary": "No internal Weyl BV complex or external/internal cohomology comparison exists.",
+      "boundary": "Only a glossary and obstruction DAG exist."
+    },
+    {
+      "foundation": "TOPOS_INTERNAL",
+      "carrier": "LOCALIC_SYNTHETIC",
+      "obligation": "INTERACTION_RENORMALIZATION_QME",
+      "status": "PRIORITY_GAP",
+      "evidence": [
+        "FOUNDATIONAL_TOPOS_WEYL_BV_OBSTRUCTION_LEDGER_V0"
+      ],
+      "summary": "Internal anomaly classification, renormalized products, and QME restoration are absent.",
+      "boundary": "This is the deepest missing corner."
+    },
+    {
+      "foundation": "TOPOS_INTERNAL",
+      "carrier": "LOCALIC_SYNTHETIC",
+      "obligation": "KINEMATICS_OBSERVABLES",
+      "status": "LITERATURE_RESULT",
+      "evidence": [
+        "heunen-landsman-spitters-2009"
+      ],
+      "summary": "An algebraic quantum system can be represented internally with Heyting logic and a localic spectrum.",
+      "boundary": "No Weyl field theory or empirical superiority follows."
+    },
+    {
+      "foundation": "TOPOS_INTERNAL",
+      "carrier": "LOCALIC_SYNTHETIC",
+      "obligation": "RECONSTRUCTION_LIMITS",
+      "status": "PRIORITY_GAP",
+      "evidence": [
+        "FOUNDATIONAL_TOPOS_WEYL_BV_OBSTRUCTION_LEDGER_V0"
+      ],
+      "summary": "No external comparison theorem states which physical predictions an internal construction preserves.",
+      "boundary": "Internal reformulation is not empirical equivalence."
+    },
+    {
+      "foundation": "TOPOS_INTERNAL",
+      "carrier": "LOCALIC_SYNTHETIC",
+      "obligation": "STATES_PROBABILITY",
+      "status": "PIECES_ONLY",
+      "evidence": [
+        "heunen-landsman-spitters-2009",
+        "FOUNDATIONAL_TOPOS_WEYL_BV_OBSTRUCTION_LEDGER_V0"
+      ],
+      "summary": "Internal state/valuation concepts are adjacent to probability, but no physical Weyl state is selected.",
+      "boundary": "Logical truth values and physical probabilities must not be conflated."
+    },
+    {
+      "foundation": "TOPOS_INTERNAL",
+      "carrier": "SMOOTH_DISTRIBUTIONAL",
+      "obligation": "DYNAMICS_PROPAGATION",
+      "status": "LITERATURE_RESULT",
+      "evidence": [
+        "grinkevich-1996"
+      ],
+      "summary": "Synthetic differential geometry supports formal manifolds and intuitionistic classical Einstein equations.",
+      "boundary": "No distributional causal QFT or Green-operator theorem is supplied."
+    },
+    {
+      "foundation": "TOPOS_INTERNAL",
+      "carrier": "SMOOTH_DISTRIBUTIONAL",
+      "obligation": "GAUGE_BV_COHOMOLOGY",
+      "status": "PRIORITY_GAP",
+      "evidence": [
+        "FOUNDATIONAL_TOPOS_WEYL_BV_OBSTRUCTION_LEDGER_V0"
+      ],
+      "summary": "Synthetic smooth geometry has not been joined to internal BV/BRST machinery.",
+      "boundary": "Classical synthetic GR is not gauge-fixed Weyl BV."
+    },
+    {
+      "foundation": "TOPOS_INTERNAL",
+      "carrier": "SMOOTH_DISTRIBUTIONAL",
+      "obligation": "INTERACTION_RENORMALIZATION_QME",
+      "status": "PRIORITY_GAP",
+      "evidence": [
+        "FOUNDATIONAL_TOPOS_WEYL_BV_OBSTRUCTION_LEDGER_V0"
+      ],
+      "summary": "Distributional/microlocal renormalization in the selected internal logic is missing.",
+      "boundary": "No formal construction is claimed."
+    },
+    {
+      "foundation": "TOPOS_INTERNAL",
+      "carrier": "SMOOTH_DISTRIBUTIONAL",
+      "obligation": "KINEMATICS_OBSERVABLES",
+      "status": "LITERATURE_RESULT",
+      "evidence": [
+        "grinkevich-1996",
+        "barnich-brandt-henneaux-2000"
+      ],
+      "summary": "Synthetic general relativity supplies formal smooth geometry, while probability and BV/renormalization remain separate classical ingredients. For this obligation, the evidence directly defines observables, configurations, or the carrier's algebraic structure.",
+      "boundary": "External Hilbert/C*-input and internal topos objects are not silently identified, and the ambient topos matters. Local/formal PDE data do not imply global existence, support, or microlocal renormalization. Still open here: a full Weyl observable algebra and its domains."
+    },
+    {
+      "foundation": "TOPOS_INTERNAL",
+      "carrier": "SMOOTH_DISTRIBUTIONAL",
+      "obligation": "RECONSTRUCTION_LIMITS",
+      "status": "LITERATURE_RESULT",
+      "evidence": [
+        "grinkevich-1996",
+        "barnich-brandt-henneaux-2000"
+      ],
+      "summary": "Synthetic general relativity supplies formal smooth geometry, while probability and BV/renormalization remain separate classical ingredients. For this obligation, the evidence directly supplies reconstruction, comparison, covariance, or continuum-limit obligations.",
+      "boundary": "External Hilbert/C*-input and internal topos objects are not silently identified, and the ambient topos matters. Local/formal PDE data do not imply global existence, support, or microlocal renormalization. Still open here: a prediction-preserving comparison or controlled continuum theorem."
+    },
+    {
+      "foundation": "TOPOS_INTERNAL",
+      "carrier": "SMOOTH_DISTRIBUTIONAL",
+      "obligation": "STATES_PROBABILITY",
+      "status": "PIECES_ONLY",
+      "evidence": [
+        "grinkevich-1996",
+        "barnich-brandt-henneaux-2000"
+      ],
+      "summary": "Synthetic general relativity supplies formal smooth geometry, while probability and BV/renormalization remain separate classical ingredients. For this obligation, the evidence contains ingredients relevant to, but does not compose a result that constructs or represents states and probability data.",
+      "boundary": "External Hilbert/C*-input and internal topos objects are not silently identified, and the ambient topos matters. Local/formal PDE data do not imply global existence, support, or microlocal renormalization. Still open here: a physically selected Weyl state and probability interpretation."
+    },
+    {
+      "foundation": "WEAK_ARITHMETIC",
+      "carrier": "ALGEBRAIC_CSTAR",
+      "obligation": "DYNAMICS_PROPAGATION",
+      "status": "PIECES_ONLY",
+      "evidence": [
+        "brown-simpson-1986",
+        "blackadar-farah-2026",
+        "brunetti-fredenhagen-verch-2001"
+      ],
+      "summary": "Separation-strength and algebraic-QFT ingredients expose likely dependencies, but no common weak-base formalization is reviewed. For this obligation, the evidence contains ingredients relevant to, but does not compose a result that supplies an evolution, spectral, or propagation result.",
+      "boundary": "No reverse implication over a fixed weak base is inferred unless the cited source states one. An algebraic architecture does not by itself select representations or physical states. Still open here: full interacting Lorentzian-causal propagation."
+    },
+    {
+      "foundation": "WEAK_ARITHMETIC",
+      "carrier": "FINITE_EXACT",
+      "obligation": "DYNAMICS_PROPAGATION",
+      "status": "LOCAL_RESULT",
+      "evidence": [
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1"
+      ],
+      "summary": "Every displayed operation is a finite loop over reduced rational pairs, providing a primitive-recursive sufficiency witness. For this obligation, the evidence directly supplies an evolution, spectral, or propagation result.",
+      "boundary": "No reverse implication over a fixed weak base is inferred unless the cited source states one. The evidence is bounded finite algebra, not a completed infinite carrier. Still open here: full interacting Lorentzian-causal propagation."
+    },
+    {
+      "foundation": "WEAK_ARITHMETIC",
+      "carrier": "FINITE_EXACT",
+      "obligation": "GAUGE_BV_COHOMOLOGY",
+      "status": "LOCAL_RESULT",
+      "evidence": [
+        "FOUNDATIONAL_FREE_BV_ENERGY2_PRA_SDR_V1"
+      ],
+      "summary": "PRA suffices to check the displayed finite BV contraction and explicit nontriviality witness.",
+      "boundary": "Sufficiency only; no weakest-base reversal."
+    },
+    {
+      "foundation": "WEAK_ARITHMETIC",
+      "carrier": "FINITE_EXACT",
+      "obligation": "INTERACTION_RENORMALIZATION_QME",
+      "status": "LOCAL_RESULT",
+      "evidence": [
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1"
+      ],
+      "summary": "Every displayed operation is a finite loop over reduced rational pairs, providing a primitive-recursive sufficiency witness. For this obligation, the evidence directly treats an interaction, counterterm/anomaly, renormalized product, or master-equation ingredient.",
+      "boundary": "No reverse implication over a fixed weak base is inferred unless the cited source states one. The evidence is bounded finite algebra, not a completed infinite carrier. Still open here: Weyl counterterm coefficients, QME restoration, and residual transfer."
+    },
+    {
+      "foundation": "WEAK_ARITHMETIC",
+      "carrier": "FINITE_EXACT",
+      "obligation": "KINEMATICS_OBSERVABLES",
+      "status": "LOCAL_RESULT",
+      "evidence": [
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1"
+      ],
+      "summary": "Every displayed operation is a finite loop over reduced rational pairs, providing a primitive-recursive sufficiency witness. For this obligation, the evidence directly defines observables, configurations, or the carrier's algebraic structure.",
+      "boundary": "No reverse implication over a fixed weak base is inferred unless the cited source states one. The evidence is bounded finite algebra, not a completed infinite carrier. Still open here: a full Weyl observable algebra and its domains."
+    },
+    {
+      "foundation": "WEAK_ARITHMETIC",
+      "carrier": "FINITE_EXACT",
+      "obligation": "RECONSTRUCTION_LIMITS",
+      "status": "LOCAL_RESULT",
+      "evidence": [
+        "FOUNDATIONAL_HARDY_CONTINUITY_KN_AUDIT_V1"
+      ],
+      "summary": "One Hardy continuity step has an RCA_0 sufficiency route when an explicit modulus is supplied.",
+      "boundary": "No full reconstruction audit or physical-to-mathematical reversal."
+    },
+    {
+      "foundation": "WEAK_ARITHMETIC",
+      "carrier": "FINITE_EXACT",
+      "obligation": "STATES_PROBABILITY",
+      "status": "LOCAL_RESULT",
+      "evidence": [
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1"
+      ],
+      "summary": "Every displayed operation is a finite loop over reduced rational pairs, providing a primitive-recursive sufficiency witness. For this obligation, the evidence directly constructs or represents states and probability data.",
+      "boundary": "No reverse implication over a fixed weak base is inferred unless the cited source states one. The evidence is bounded finite algebra, not a completed infinite carrier. Still open here: a physically selected Weyl state and probability interpretation."
+    },
+    {
+      "foundation": "WEAK_ARITHMETIC",
+      "carrier": "HILBERT_OPERATOR",
+      "obligation": "DYNAMICS_PROPAGATION",
+      "status": "PIECES_ONLY",
+      "evidence": [
+        "brown-simpson-1986",
+        "humphreys-simpson-1999",
+        "humphreys-simpson-1996",
+        "brattka-2008"
+      ],
+      "summary": "Reverse mathematics calibrates specific separable Hahn-Banach, separation, and weak-star closure statements, with representation-sensitive strength. For this obligation, the evidence contains ingredients relevant to, but does not compose a result that supplies an evolution, spectral, or propagation result.",
+      "boundary": "No reverse implication over a fixed weak base is inferred unless the cited source states one. Domain, completion, and spectral-measure hypotheses remain part of the result. Still open here: full interacting Lorentzian-causal propagation."
+    },
+    {
+      "foundation": "WEAK_ARITHMETIC",
+      "carrier": "HILBERT_OPERATOR",
+      "obligation": "KINEMATICS_OBSERVABLES",
+      "status": "PIECES_ONLY",
+      "evidence": [
+        "brown-simpson-1986",
+        "humphreys-simpson-1999"
+      ],
+      "summary": "Reverse functional analysis calibrates separation principles used around Hilbert/Banach carriers.",
+      "boundary": "No relativistic gauge theory is encoded in the cited reversals."
+    },
+    {
+      "foundation": "WEAK_ARITHMETIC",
+      "carrier": "HILBERT_OPERATOR",
+      "obligation": "RECONSTRUCTION_LIMITS",
+      "status": "LITERATURE_RESULT",
+      "evidence": [
+        "brown-simpson-1986",
+        "humphreys-simpson-1999",
+        "humphreys-simpson-1996",
+        "brattka-2008"
+      ],
+      "summary": "Reverse mathematics calibrates specific separable Hahn-Banach, separation, and weak-star closure statements, with representation-sensitive strength. For this obligation, the evidence directly supplies reconstruction, comparison, covariance, or continuum-limit obligations.",
+      "boundary": "No reverse implication over a fixed weak base is inferred unless the cited source states one. Domain, completion, and spectral-measure hypotheses remain part of the result. Still open here: a prediction-preserving comparison or controlled continuum theorem."
+    },
+    {
+      "foundation": "WEAK_ARITHMETIC",
+      "carrier": "KREIN_INDEFINITE",
+      "obligation": "DYNAMICS_PROPAGATION",
+      "status": "PIECES_ONLY",
+      "evidence": [
+        "mostafazadeh-2001",
+        "gottschalk-2004"
+      ],
+      "summary": "Indefinite spectral and QFT ingredients exist classically, but their coding and proof strength over weak arithmetic are unaudited. For this obligation, the evidence contains ingredients relevant to, but does not compose a result that supplies an evolution, spectral, or propagation result.",
+      "boundary": "No reverse implication over a fixed weak base is inferred unless the cited source states one. Real spectrum or J-unitarity alone does not produce a positive physical state space. Still open here: full interacting Lorentzian-causal propagation."
+    },
+    {
+      "foundation": "WEAK_ARITHMETIC",
+      "carrier": "KREIN_INDEFINITE",
+      "obligation": "KINEMATICS_OBSERVABLES",
+      "status": "LOCAL_RESULT",
+      "evidence": [
+        "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1"
+      ],
+      "summary": "Every fixed Krein mode cutoff reduces to finite exact sign and positivity checks.",
+      "boundary": "The infinite completion is not classified over weak arithmetic."
+    },
+    {
+      "foundation": "WEAK_ARITHMETIC",
+      "carrier": "SMOOTH_DISTRIBUTIONAL",
+      "obligation": "DYNAMICS_PROPAGATION",
+      "status": "PRIORITY_GAP",
+      "evidence": [
+        "FOUNDATIONAL_TYPED_BIWAVE_GREEN_DEPENDENCY_AUDIT_V1"
+      ],
+      "summary": "Energy estimates, completion, uniqueness, duality, and causal support need weak-base calibration.",
+      "boundary": "No reverse-mathematical PDE theorem has been proved."
+    },
+    {
+      "foundation": "WEAK_ARITHMETIC",
+      "carrier": "SMOOTH_DISTRIBUTIONAL",
+      "obligation": "GAUGE_BV_COHOMOLOGY",
+      "status": "PRIORITY_GAP",
+      "evidence": [],
+      "summary": "The continuum BV complex has not been encoded over a weak base.",
+      "boundary": "Finite certificates do not fill this cell."
+    },
+    {
+      "foundation": "WEAK_ARITHMETIC",
+      "carrier": "SMOOTH_DISTRIBUTIONAL",
+      "obligation": "INTERACTION_RENORMALIZATION_QME",
+      "status": "PRIORITY_GAP",
+      "evidence": [],
+      "summary": "Microlocal renormalization and the QME have no weak-base audit.",
+      "boundary": "This is likely a high-cost programme."
+    },
+    {
+      "foundation": "WEAK_CHOICE_ZF",
+      "carrier": "ALGEBRAIC_CSTAR",
+      "obligation": "DYNAMICS_PROPAGATION",
+      "status": "LOCAL_RESULT",
+      "evidence": [
+        "FOUNDATIONAL_BT_SEPARABLE_STATE_CHAIN_ZF_V1",
+        "FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1"
+      ],
+      "summary": "A point-norm continuous free automorphism group exists on the explicit unitized compact algebra in ZF.",
+      "boundary": "Nonlinear/full-orbit Bateman-Turok dynamics, local normality, and interacting evolution remain open."
+    },
+    {
+      "foundation": "WEAK_CHOICE_ZF",
+      "carrier": "ALGEBRAIC_CSTAR",
+      "obligation": "GAUGE_BV_COHOMOLOGY",
+      "status": "PIECES_ONLY",
+      "evidence": [
+        "blackadar-farah-2026",
+        "FOUNDATIONAL_BT_SEPARABLE_STATE_CHAIN_ZF_V1",
+        "fredenhagen-rejzner-2011"
+      ],
+      "summary": "Robust separable C*-theory and an explicit state/GNS chain exist in ZF; perturbative BV remains an external classical ingredient. For this obligation, the evidence contains ingredients relevant to, but does not compose a result that treats gauge constraints, BRST/BV structure, or symmetry restoration.",
+      "boundary": "An explicit finite or separable construction avoids a choice step only in its stated scope; arbitrary-family existence is not inferred. An algebraic architecture does not by itself select representations or physical states. Still open here: the certified full metric BV complex and its residual transfer."
+    },
+    {
+      "foundation": "WEAK_CHOICE_ZF",
+      "carrier": "ALGEBRAIC_CSTAR",
+      "obligation": "INTERACTION_RENORMALIZATION_QME",
+      "status": "PIECES_ONLY",
+      "evidence": [
+        "blackadar-farah-2026",
+        "FOUNDATIONAL_BT_SEPARABLE_STATE_CHAIN_ZF_V1",
+        "fredenhagen-rejzner-2011"
+      ],
+      "summary": "Robust separable C*-theory and an explicit state/GNS chain exist in ZF; perturbative BV remains an external classical ingredient. For this obligation, the evidence contains ingredients relevant to, but does not compose a result that treats an interaction, counterterm/anomaly, renormalized product, or master-equation ingredient.",
+      "boundary": "An explicit finite or separable construction avoids a choice step only in its stated scope; arbitrary-family existence is not inferred. An algebraic architecture does not by itself select representations or physical states. Still open here: Weyl counterterm coefficients, QME restoration, and residual transfer."
+    },
+    {
+      "foundation": "WEAK_CHOICE_ZF",
+      "carrier": "ALGEBRAIC_CSTAR",
+      "obligation": "KINEMATICS_OBSERVABLES",
+      "status": "LOCAL_RESULT",
+      "evidence": [
+        "blackadar-farah-2026",
+        "FOUNDATIONAL_BT_SEPARABLE_STATE_CHAIN_ZF_V1"
+      ],
+      "summary": "A separable detector algebra and robust ZF algebraic operations are available.",
+      "boundary": "The full orbit algebra and AQFT net are not certified."
+    },
+    {
+      "foundation": "WEAK_CHOICE_ZF",
+      "carrier": "ALGEBRAIC_CSTAR",
+      "obligation": "RECONSTRUCTION_LIMITS",
+      "status": "LITERATURE_RESULT",
+      "evidence": [
+        "blackadar-farah-2026",
+        "FOUNDATIONAL_BT_SEPARABLE_STATE_CHAIN_ZF_V1",
+        "fredenhagen-rejzner-2011"
+      ],
+      "summary": "Robust separable C*-theory and an explicit state/GNS chain exist in ZF; perturbative BV remains an external classical ingredient. For this obligation, the evidence directly supplies reconstruction, comparison, covariance, or continuum-limit obligations.",
+      "boundary": "An explicit finite or separable construction avoids a choice step only in its stated scope; arbitrary-family existence is not inferred. An algebraic architecture does not by itself select representations or physical states. Still open here: a prediction-preserving comparison or controlled continuum theorem."
+    },
+    {
+      "foundation": "WEAK_CHOICE_ZF",
+      "carrier": "ALGEBRAIC_CSTAR",
+      "obligation": "STATES_PROBABILITY",
+      "status": "LOCAL_RESULT",
+      "evidence": [
+        "FOUNDATIONAL_BT_SEPARABLE_STATE_CHAIN_ZF_V1"
+      ],
+      "summary": "Explicit vector and corner states and a corner GNS construction exist in ZF.",
+      "boundary": "No thermodynamic or dynamically selected physical state is proved."
+    },
+    {
+      "foundation": "WEAK_CHOICE_ZF",
+      "carrier": "FINITE_EXACT",
+      "obligation": "DYNAMICS_PROPAGATION",
+      "status": "LOCAL_RESULT",
+      "evidence": [
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1",
+        "FOUNDATIONAL_FREE_BV_ENERGY2_PRA_SDR_V1"
+      ],
+      "summary": "Named finite matrices and finite BV arrays are constructed without selecting from arbitrary families. For this obligation, the evidence directly supplies an evolution, spectral, or propagation result.",
+      "boundary": "An explicit finite or separable construction avoids a choice step only in its stated scope; arbitrary-family existence is not inferred. The evidence is bounded finite algebra, not a completed infinite carrier. Still open here: full interacting Lorentzian-causal propagation."
+    },
+    {
+      "foundation": "WEAK_CHOICE_ZF",
+      "carrier": "FINITE_EXACT",
+      "obligation": "GAUGE_BV_COHOMOLOGY",
+      "status": "PIECES_ONLY",
+      "evidence": [
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1",
+        "FOUNDATIONAL_FREE_BV_ENERGY2_PRA_SDR_V1"
+      ],
+      "summary": "Named finite matrices and finite BV arrays are constructed without selecting from arbitrary families. For this obligation, the evidence contains ingredients relevant to, but does not compose a result that treats gauge constraints, BRST/BV structure, or symmetry restoration.",
+      "boundary": "An explicit finite or separable construction avoids a choice step only in its stated scope; arbitrary-family existence is not inferred. The evidence is bounded finite algebra, not a completed infinite carrier. Still open here: the certified full metric BV complex and its residual transfer."
+    },
+    {
+      "foundation": "WEAK_CHOICE_ZF",
+      "carrier": "FINITE_EXACT",
+      "obligation": "INTERACTION_RENORMALIZATION_QME",
+      "status": "LOCAL_RESULT",
+      "evidence": [
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1",
+        "FOUNDATIONAL_FREE_BV_ENERGY2_PRA_SDR_V1"
+      ],
+      "summary": "Named finite matrices and finite BV arrays are constructed without selecting from arbitrary families. For this obligation, the evidence directly treats an interaction, counterterm/anomaly, renormalized product, or master-equation ingredient.",
+      "boundary": "An explicit finite or separable construction avoids a choice step only in its stated scope; arbitrary-family existence is not inferred. The evidence is bounded finite algebra, not a completed infinite carrier. Still open here: Weyl counterterm coefficients, QME restoration, and residual transfer."
+    },
+    {
+      "foundation": "WEAK_CHOICE_ZF",
+      "carrier": "FINITE_EXACT",
+      "obligation": "KINEMATICS_OBSERVABLES",
+      "status": "LOCAL_RESULT",
+      "evidence": [
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1",
+        "FOUNDATIONAL_FREE_BV_ENERGY2_PRA_SDR_V1"
+      ],
+      "summary": "Named finite matrices and finite BV arrays are constructed without selecting from arbitrary families. For this obligation, the evidence directly defines observables, configurations, or the carrier's algebraic structure.",
+      "boundary": "An explicit finite or separable construction avoids a choice step only in its stated scope; arbitrary-family existence is not inferred. The evidence is bounded finite algebra, not a completed infinite carrier. Still open here: a full Weyl observable algebra and its domains."
+    },
+    {
+      "foundation": "WEAK_CHOICE_ZF",
+      "carrier": "FINITE_EXACT",
+      "obligation": "STATES_PROBABILITY",
+      "status": "LOCAL_RESULT",
+      "evidence": [
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1",
+        "FOUNDATIONAL_FREE_BV_ENERGY2_PRA_SDR_V1"
+      ],
+      "summary": "Named finite matrices and finite BV arrays are constructed without selecting from arbitrary families. For this obligation, the evidence directly constructs or represents states and probability data.",
+      "boundary": "An explicit finite or separable construction avoids a choice step only in its stated scope; arbitrary-family existence is not inferred. The evidence is bounded finite algebra, not a completed infinite carrier. Still open here: a physically selected Weyl state and probability interpretation."
+    },
+    {
+      "foundation": "WEAK_CHOICE_ZF",
+      "carrier": "HILBERT_OPERATOR",
+      "obligation": "DYNAMICS_PROPAGATION",
+      "status": "LOCAL_RESULT",
+      "evidence": [
+        "FOUNDATIONAL_EXPLICIT_ENERGY_SPECTRAL_FRAGMENT_ZF_V1"
+      ],
+      "summary": "The displayed diagonal energy operator and Fock lift have an explicit ZF route.",
+      "boundary": "General spectral measures and interacting dynamics remain open."
+    },
+    {
+      "foundation": "WEAK_CHOICE_ZF",
+      "carrier": "HILBERT_OPERATOR",
+      "obligation": "GAUGE_BV_COHOMOLOGY",
+      "status": "PIECES_ONLY",
+      "evidence": [
+        "blackadar-farah-karagila-2026",
+        "blackadar-farah-2026",
+        "neumann-pape-streicher-2018"
+      ],
+      "summary": "ZF operator theory and explicit separable representations cover substantial kinematics while isolating arbitrary-space pathologies. For this obligation, the evidence contains ingredients relevant to, but does not compose a result that treats gauge constraints, BRST/BV structure, or symmetry restoration.",
+      "boundary": "An explicit finite or separable construction avoids a choice step only in its stated scope; arbitrary-family existence is not inferred. Domain, completion, and spectral-measure hypotheses remain part of the result. Still open here: the certified full metric BV complex and its residual transfer."
+    },
+    {
+      "foundation": "WEAK_CHOICE_ZF",
+      "carrier": "HILBERT_OPERATOR",
+      "obligation": "INTERACTION_RENORMALIZATION_QME",
+      "status": "PIECES_ONLY",
+      "evidence": [
+        "blackadar-farah-karagila-2026",
+        "blackadar-farah-2026",
+        "neumann-pape-streicher-2018"
+      ],
+      "summary": "ZF operator theory and explicit separable representations cover substantial kinematics while isolating arbitrary-space pathologies. For this obligation, the evidence contains ingredients relevant to, but does not compose a result that treats an interaction, counterterm/anomaly, renormalized product, or master-equation ingredient.",
+      "boundary": "An explicit finite or separable construction avoids a choice step only in its stated scope; arbitrary-family existence is not inferred. Domain, completion, and spectral-measure hypotheses remain part of the result. Still open here: Weyl counterterm coefficients, QME restoration, and residual transfer."
+    },
+    {
+      "foundation": "WEAK_CHOICE_ZF",
+      "carrier": "HILBERT_OPERATOR",
+      "obligation": "KINEMATICS_OBSERVABLES",
+      "status": "LITERATURE_RESULT",
+      "evidence": [
+        "blackadar-farah-karagila-2026"
+      ],
+      "summary": "Substantial Hilbert and operator theory can be developed in ZF without Countable Choice.",
+      "boundary": "Arbitrary-space pathologies must not be transferred to explicit carriers without proof."
+    },
+    {
+      "foundation": "WEAK_CHOICE_ZF",
+      "carrier": "HILBERT_OPERATOR",
+      "obligation": "RECONSTRUCTION_LIMITS",
+      "status": "LITERATURE_RESULT",
+      "evidence": [
+        "blackadar-farah-karagila-2026",
+        "blackadar-farah-2026",
+        "neumann-pape-streicher-2018"
+      ],
+      "summary": "ZF operator theory and explicit separable representations cover substantial kinematics while isolating arbitrary-space pathologies. For this obligation, the evidence directly supplies reconstruction, comparison, covariance, or continuum-limit obligations.",
+      "boundary": "An explicit finite or separable construction avoids a choice step only in its stated scope; arbitrary-family existence is not inferred. Domain, completion, and spectral-measure hypotheses remain part of the result. Still open here: a prediction-preserving comparison or controlled continuum theorem."
+    },
+    {
+      "foundation": "WEAK_CHOICE_ZF",
+      "carrier": "HILBERT_OPERATOR",
+      "obligation": "STATES_PROBABILITY",
+      "status": "PIECES_ONLY",
+      "evidence": [
+        "blackadar-farah-karagila-2026",
+        "blackadar-farah-2026",
+        "neumann-pape-streicher-2018"
+      ],
+      "summary": "ZF operator theory and explicit separable representations cover substantial kinematics while isolating arbitrary-space pathologies. For this obligation, the evidence contains ingredients relevant to, but does not compose a result that constructs or represents states and probability data.",
+      "boundary": "An explicit finite or separable construction avoids a choice step only in its stated scope; arbitrary-family existence is not inferred. Domain, completion, and spectral-measure hypotheses remain part of the result. Still open here: a physically selected Weyl state and probability interpretation."
+    },
+    {
+      "foundation": "WEAK_CHOICE_ZF",
+      "carrier": "KREIN_INDEFINITE",
+      "obligation": "DYNAMICS_PROPAGATION",
+      "status": "LOCAL_RESULT",
+      "evidence": [
+        "FOUNDATIONAL_EXPLICIT_ENERGY_SPECTRAL_FRAGMENT_ZF_V1",
+        "FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1"
+      ],
+      "summary": "The coordinate energy phases give a strongly continuous J-unitary free-mode group in ZF without Choice.",
+      "boundary": "This proves no interacting, nonlinear, or Lorentzian-causal dynamics."
+    },
+    {
+      "foundation": "WEAK_CHOICE_ZF",
+      "carrier": "KREIN_INDEFINITE",
+      "obligation": "GAUGE_BV_COHOMOLOGY",
+      "status": "PIECES_ONLY",
+      "evidence": [
+        "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1",
+        "mostafazadeh-2001",
+        "gottschalk-2004"
+      ],
+      "summary": "The repository constructs the named free Krein carrier in ZF; classical sources add interaction-adjacent and relativistic ingredients only. For this obligation, the evidence contains ingredients relevant to, but does not compose a result that treats gauge constraints, BRST/BV structure, or symmetry restoration.",
+      "boundary": "An explicit finite or separable construction avoids a choice step only in its stated scope; arbitrary-family existence is not inferred. Real spectrum or J-unitarity alone does not produce a positive physical state space. Still open here: the certified full metric BV complex and its residual transfer."
+    },
+    {
+      "foundation": "WEAK_CHOICE_ZF",
+      "carrier": "KREIN_INDEFINITE",
+      "obligation": "INTERACTION_RENORMALIZATION_QME",
+      "status": "PIECES_ONLY",
+      "evidence": [
+        "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1",
+        "mostafazadeh-2001",
+        "gottschalk-2004"
+      ],
+      "summary": "The repository constructs the named free Krein carrier in ZF; classical sources add interaction-adjacent and relativistic ingredients only. For this obligation, the evidence contains ingredients relevant to, but does not compose a result that treats an interaction, counterterm/anomaly, renormalized product, or master-equation ingredient.",
+      "boundary": "An explicit finite or separable construction avoids a choice step only in its stated scope; arbitrary-family existence is not inferred. Real spectrum or J-unitarity alone does not produce a positive physical state space. Still open here: Weyl counterterm coefficients, QME restoration, and residual transfer."
+    },
+    {
+      "foundation": "WEAK_CHOICE_ZF",
+      "carrier": "KREIN_INDEFINITE",
+      "obligation": "KINEMATICS_OBSERVABLES",
+      "status": "LOCAL_RESULT",
+      "evidence": [
+        "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1"
+      ],
+      "summary": "The explicitly labelled Krein symmetry and Fock lift are constructible in ZF without Countable Choice.",
+      "boundary": "This does not classify arbitrary Krein spaces."
+    },
+    {
+      "foundation": "WEAK_CHOICE_ZF",
+      "carrier": "KREIN_INDEFINITE",
+      "obligation": "STATES_PROBABILITY",
+      "status": "LOCAL_RESULT",
+      "evidence": [
+        "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1",
+        "FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1"
+      ],
+      "summary": "Named Krein and Fock coordinates define positive normalized rank-one states in ZF without a choice operation.",
+      "boundary": "The carrier does not select a unique physical state; singular states and dynamically selected Born functionals remain open."
+    },
+    {
+      "foundation": "WEAK_CHOICE_ZF",
+      "carrier": "LOCALIC_SYNTHETIC",
+      "obligation": "STATES_PROBABILITY",
+      "status": "PIECES_ONLY",
+      "evidence": [
+        "heunen-landsman-spitters-2009",
+        "coquand-spitters-2009"
+      ],
+      "summary": "Localic constructions avoid point-selection in specific commutative settings, but no general ZF-without-Choice transfer is established. For this obligation, the evidence contains ingredients relevant to, but does not compose a result that constructs or represents states and probability data.",
+      "boundary": "An explicit finite or separable construction avoids a choice step only in its stated scope; arbitrary-family existence is not inferred. Internal/localic reformulation does not by itself establish external empirical equivalence. Still open here: a physically selected Weyl state and probability interpretation."
+    },
+    {
+      "foundation": "WEAK_CHOICE_ZF",
+      "carrier": "SMOOTH_DISTRIBUTIONAL",
+      "obligation": "DYNAMICS_PROPAGATION",
+      "status": "PRIORITY_GAP",
+      "evidence": [
+        "FOUNDATIONAL_TYPED_BIWAVE_GREEN_DEPENDENCY_AUDIT_V1"
+      ],
+      "summary": "Choice strength of normally hyperbolic existence, Sobolev completion, and causal Green theory is unknown.",
+      "boundary": "No choice-free continuum PDE theorem is claimed."
+    },
+    {
+      "foundation": "WEAK_CHOICE_ZF",
+      "carrier": "SMOOTH_DISTRIBUTIONAL",
+      "obligation": "GAUGE_BV_COHOMOLOGY",
+      "status": "PRIORITY_GAP",
+      "evidence": [],
+      "summary": "No full continuum BV/BRST complex has been rebuilt in ZF without Choice.",
+      "boundary": "Finite ZF carriers do not establish this cell."
+    },
+    {
+      "foundation": "WEAK_CHOICE_ZF",
+      "carrier": "SMOOTH_DISTRIBUTIONAL",
+      "obligation": "INTERACTION_RENORMALIZATION_QME",
+      "status": "PRIORITY_GAP",
+      "evidence": [],
+      "summary": "No weak-choice construction of microlocal renormalization or the QME is present.",
+      "boundary": "No Lorentzian quantum conclusion."
+    }
   ],
-  "missing_faces":[
-    {"id":"FACE-WEAK-ANALYTIC","label":"Weak foundations x continuum analysis","coordinates":{"foundations":["WEAK_ARITHMETIC","WEAK_CHOICE_ZF"],"carriers":["SMOOTH_DISTRIBUTIONAL"],"obligations":["DYNAMICS_PROPAGATION","GAUGE_BV_COHOMOLOGY","INTERACTION_RENORMALIZATION_QME"]},"why":"This face contains Green existence, distribution theory, continuum BV, microlocal renormalization, and QME strength. It is the largest foundational blind spot with direct physical leverage."},
-    {"id":"FACE-CARRIER-PROBABILITY","label":"Nonstandard carriers x physical probability","coordinates":{"foundations":["WEAK_CHOICE_ZF","CONSTRUCTIVE_COMPUTABLE","TOPOS_INTERNAL"],"carriers":["KREIN_INDEFINITE","ALGEBRAIC_CSTAR","LOCALIC_SYNTHETIC"],"obligations":["STATES_PROBABILITY"]},"why":"Carrier existence, positivity, GNS, internal valuations, and physical state selection are repeatedly conflated; the cube shows where only pieces exist."},
-    {"id":"FACE-CONSTRUCTIVE-GAUGE","label":"Constructive/internal mathematics x gauge quantum field theory","coordinates":{"foundations":["CONSTRUCTIVE_COMPUTABLE","TOPOS_INTERNAL"],"carriers":["SMOOTH_DISTRIBUTIONAL","LOCALIC_SYNTHETIC"],"obligations":["GAUGE_BV_COHOMOLOGY","INTERACTION_RENORMALIZATION_QME"]},"why":"Constructive QM, localic spectra, and synthetic GR exist separately, while BV, distributions, anomalies, renormalization, and QME at their intersection are missing."},
-    {"id":"FACE-FINITE-CONTINUUM","label":"Finite/discrete x continuum comparison","coordinates":{"foundations":["FINITE_DISCRETE"],"carriers":["FINITE_EXACT","HILBERT_OPERATOR","SMOOTH_DISTRIBUTIONAL"],"obligations":["DYNAMICS_PROPAGATION","RECONSTRUCTION_LIMITS"]},"why":"Finite kinematics and exact cutoffs exist, but controlled comparison maps, error bounds, and continuum dynamics do not."},
-    {"id":"FACE-PHYSICAL-REVERSAL","label":"Physical postulates x foundational reversals","coordinates":{"foundations":["WEAK_ARITHMETIC","WEAK_CHOICE_ZF","CONSTRUCTIVE_COMPUTABLE","TOPOS_INTERNAL"],"carriers":["FINITE_EXACT","HILBERT_OPERATOR","ALGEBRAIC_CSTAR"],"obligations":["RECONSTRUCTION_LIMITS"]},"why":"A physical-looking axiom has not yet been encoded over a common base and reversed to a mathematical existence principle."}
+  "missing_faces": [
+    {
+      "id": "FACE-WEAK-ANALYTIC",
+      "label": "Weak foundations x continuum analysis",
+      "coordinates": {
+        "foundations": [
+          "WEAK_ARITHMETIC",
+          "WEAK_CHOICE_ZF"
+        ],
+        "carriers": [
+          "SMOOTH_DISTRIBUTIONAL"
+        ],
+        "obligations": [
+          "DYNAMICS_PROPAGATION",
+          "GAUGE_BV_COHOMOLOGY",
+          "INTERACTION_RENORMALIZATION_QME"
+        ]
+      },
+      "why": "This face contains Green existence, distribution theory, continuum BV, microlocal renormalization, and QME strength. It is the largest foundational blind spot with direct physical leverage."
+    },
+    {
+      "id": "FACE-CARRIER-PROBABILITY",
+      "label": "Nonstandard carriers x physical probability",
+      "coordinates": {
+        "foundations": [
+          "WEAK_CHOICE_ZF",
+          "CONSTRUCTIVE_COMPUTABLE",
+          "TOPOS_INTERNAL"
+        ],
+        "carriers": [
+          "KREIN_INDEFINITE",
+          "ALGEBRAIC_CSTAR",
+          "LOCALIC_SYNTHETIC"
+        ],
+        "obligations": [
+          "STATES_PROBABILITY"
+        ]
+      },
+      "why": "Carrier existence, positivity, GNS, internal valuations, and physical state selection are repeatedly conflated; the cube shows where only pieces exist."
+    },
+    {
+      "id": "FACE-CONSTRUCTIVE-GAUGE",
+      "label": "Constructive/internal mathematics x gauge quantum field theory",
+      "coordinates": {
+        "foundations": [
+          "CONSTRUCTIVE_COMPUTABLE",
+          "TOPOS_INTERNAL"
+        ],
+        "carriers": [
+          "SMOOTH_DISTRIBUTIONAL",
+          "LOCALIC_SYNTHETIC"
+        ],
+        "obligations": [
+          "GAUGE_BV_COHOMOLOGY",
+          "INTERACTION_RENORMALIZATION_QME"
+        ]
+      },
+      "why": "Constructive QM, localic spectra, and synthetic GR exist separately, while BV, distributions, anomalies, renormalization, and QME at their intersection are missing."
+    },
+    {
+      "id": "FACE-FINITE-CONTINUUM",
+      "label": "Finite/discrete x continuum comparison",
+      "coordinates": {
+        "foundations": [
+          "FINITE_DISCRETE"
+        ],
+        "carriers": [
+          "FINITE_EXACT",
+          "HILBERT_OPERATOR",
+          "SMOOTH_DISTRIBUTIONAL"
+        ],
+        "obligations": [
+          "DYNAMICS_PROPAGATION",
+          "RECONSTRUCTION_LIMITS"
+        ]
+      },
+      "why": "Finite kinematics and exact cutoffs exist, but controlled comparison maps, error bounds, and continuum dynamics do not."
+    },
+    {
+      "id": "FACE-PHYSICAL-REVERSAL",
+      "label": "Physical postulates x foundational reversals",
+      "coordinates": {
+        "foundations": [
+          "WEAK_ARITHMETIC",
+          "WEAK_CHOICE_ZF",
+          "CONSTRUCTIVE_COMPUTABLE",
+          "TOPOS_INTERNAL"
+        ],
+        "carriers": [
+          "FINITE_EXACT",
+          "HILBERT_OPERATOR",
+          "ALGEBRAIC_CSTAR"
+        ],
+        "obligations": [
+          "RECONSTRUCTION_LIMITS"
+        ]
+      },
+      "why": "A physical-looking axiom has not yet been encoded over a common base and reversed to a mathematical existence principle."
+    }
   ],
-  "provenance":{"inputs":[
-    {"path":"foundations/results/FOUNDATIONAL_COVERAGE_MATRIX_V0.json","sha256":"0f1a30aaf1e3a4f1fdba76952ef44d5f43372dc9c7323ff2000f7fcc31b95fe9"},
-    {"path":"foundations/results/FOUNDATIONAL_RANKED_OPPORTUNITY_COMPLETION_MATRIX_V1.json","sha256":"bf897b1c8ab2e38f52ae66c52822f72cf5f0f1b2e5a88882a3ab54e730bcb1c7"},
-    {"path":"foundations/literature-ledger.json","sha256":"93aa76fc9042f81be11d716664593afe78f91b9c83fa3c04a03cb6aeae558596"},
-    {"path":"foundations/literature-supplement-known-attempts-v1.json","sha256":"3f4a836af7c815e9628f0c0b1ee10bc5de7d8ecceba9df8d0757f766a0394dc7"},
-    {"path":"foundations/results/FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1.json","sha256":"d1593c67e67a99c8b14b12dae5ac1364e26f34631c86b12cefaffd9ade9fd3ff"},
-    {"path":"foundations/results/FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1.json","sha256":"0880db47af0c27a0f99c2929ed6e4d42789ef03e67ff4fe6a55f1f49ba92d2f7"},
-    {"path":"foundations/results/FOUNDATIONAL_LOW_HANGING_CELL_CLOSURE_AUDIT_V1.json","sha256":"b045541be48cd2210d8aa26d4e6a7df44456c8e7e6d481334165b96661ed3309"}
-  ]},
-  "independent_checker":{"path":"foundations/check_intersection_cube.py","checks":["three axes with six unique keys each","unique and closed cell coordinates","declared status vocabulary","evidence identifier syntax","missing-face coordinate closure","canonical digest"],"expected_digest":"bf924cfffac2636160adc4e5c32b7445ea6ebd01065b25eca543a6f20092587a"},
-  "claim_flags":{"three_axis_product_defined":true,"fifty_nine_cells_deliberately_assessed":true,"three_low_hanging_state_cells_promoted":true,"four_low_hanging_dynamics_cells_filled":true,"three_stale_open_cells_closed_by_scope_audit":true,"twenty_two_assessed_open_cells_remain":true,"all_216_cells_claimed_assessed":false,"cell_status_means_complete_solution":false,"literature_complete":false,"new_physical_theorem":false,"new_lorentzian_claim":false},
-  "does_not_establish":["that the three grouped axes replace the detailed six-axis ledger","that all 216 combinations are mathematically coherent","that an unmapped cell is empty in the world literature","that a literature result transfers to Weyl gravity","that a local result solves its whole cube cell","literature completeness","a new mathematical theorem","a new Lorentzian or quantum claim"],
-  "human_report":"foundations/reports/completion-matrix.md"
+  "provenance": {
+    "inputs": [
+      {
+        "path": "foundations/results/FOUNDATIONAL_COVERAGE_MATRIX_V0.json",
+        "sha256": "0f1a30aaf1e3a4f1fdba76952ef44d5f43372dc9c7323ff2000f7fcc31b95fe9"
+      },
+      {
+        "path": "foundations/results/FOUNDATIONAL_RANKED_OPPORTUNITY_COMPLETION_MATRIX_V1.json",
+        "sha256": "bf897b1c8ab2e38f52ae66c52822f72cf5f0f1b2e5a88882a3ab54e730bcb1c7"
+      },
+      {
+        "path": "foundations/literature-ledger.json",
+        "sha256": "93aa76fc9042f81be11d716664593afe78f91b9c83fa3c04a03cb6aeae558596"
+      },
+      {
+        "path": "foundations/literature-supplement-known-attempts-v1.json",
+        "sha256": "3f4a836af7c815e9628f0c0b1ee10bc5de7d8ecceba9df8d0757f766a0394dc7"
+      },
+      {
+        "path": "foundations/results/FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1.json",
+        "sha256": "d1593c67e67a99c8b14b12dae5ac1364e26f34631c86b12cefaffd9ade9fd3ff"
+      },
+      {
+        "path": "foundations/results/FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1.json",
+        "sha256": "0880db47af0c27a0f99c2929ed6e4d42789ef03e67ff4fe6a55f1f49ba92d2f7"
+      },
+      {
+        "path": "foundations/results/FOUNDATIONAL_LOW_HANGING_CELL_CLOSURE_AUDIT_V1.json",
+        "sha256": "b045541be48cd2210d8aa26d4e6a7df44456c8e7e6d481334165b96661ed3309"
+      },
+      {
+        "path": "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_EXPANSION_V1.json",
+        "sha256": "2598d6aab8df6ed6e446518f9af33150e45e6b11cf5ffbfc3d44b2900c9200a6"
+      }
+    ]
+  },
+  "independent_checker": {
+    "path": "foundations/check_intersection_cube.py",
+    "checks": [
+      "three axes with six unique keys each",
+      "unique and closed cell coordinates",
+      "declared status vocabulary",
+      "evidence identifier syntax",
+      "missing-face coordinate closure",
+      "canonical digest"
+    ],
+    "expected_digest": "a29ba93ccfde745deb0a54cf11c60ffa01480ef64e5728d0d3df9bba03c941d2"
+  },
+  "claim_flags": {
+    "three_axis_product_defined": true,
+    "fifty_nine_cells_deliberately_assessed": false,
+    "three_low_hanging_state_cells_promoted": true,
+    "four_low_hanging_dynamics_cells_filled": true,
+    "three_stale_open_cells_closed_by_scope_audit": true,
+    "twenty_two_assessed_open_cells_remain": true,
+    "all_216_cells_claimed_assessed": false,
+    "cell_status_means_complete_solution": false,
+    "literature_complete": false,
+    "new_physical_theorem": false,
+    "new_lorentzian_claim": false,
+    "one_hundred_sixty_two_cells_deliberately_assessed": true,
+    "seventy_five_percent_assessed": true
+  },
+  "does_not_establish": [
+    "that the three grouped axes replace the detailed six-axis ledger",
+    "that all 216 combinations are mathematically coherent",
+    "that an unmapped cell is empty in the world literature",
+    "that a literature result transfers to Weyl gravity",
+    "that a local result solves its whole cube cell",
+    "literature completeness",
+    "a new mathematical theorem",
+    "a new Lorentzian or quantum claim"
+  ],
+  "human_report": "foundations/reports/completion-matrix.md"
 }

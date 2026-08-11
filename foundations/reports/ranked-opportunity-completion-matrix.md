@@ -16,7 +16,7 @@ a deeper research gate, and no continuum quantum or Lorentzian lifecycle claim
 is promoted.
 
 The full generated Markdown projection—including the 16-by-6 assumption
-matrix, nine completion rows, and all 25 literature points and boundaries—is
+matrix, nine completion rows, and all 45 literature points and boundaries—is
 [`completion-matrix.md`](completion-matrix.md).
 
 | Rank | Opportunity | First artifact | Scientific status | Main open gate |

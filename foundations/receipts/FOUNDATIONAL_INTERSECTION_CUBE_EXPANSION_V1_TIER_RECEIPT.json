@@ -1,0 +1,51 @@
+{
+  "schema_version": "science-forge-tier-receipt-v1",
+  "receipt_id": "FOUNDATIONAL_INTERSECTION_CUBE_EXPANSION_V1_TIER_RECEIPT",
+  "created": "2026-08-11",
+  "repository_base_commit": "a002680d8fafc7f3bc23e704625894c23aee22c6",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
+  "scope": "Twenty-source targeted literature expansion, exact finite qubit/Krein interaction witness, deterministic 103-cell crosswalk, 162-cell cube, pair-frontier regeneration, and Markdown overview regeneration.",
+  "tiers": {
+    "tier_0_compile": {"status": "PASS", "command": "python3 -m py_compile foundations/check_finite_qubit_interaction_core.py foundations/expand_intersection_cube.py foundations/render_completion_matrix_md.py foundations/verify_finite_qubit_interaction_core.py foundations/verify_intersection_cube_expansion.py foundations/verify_completion_matrix_markdown.py foundations/verify_intersection_cube.py foundations/verify_low_hanging_cell_closure.py foundations/verify_pair_frontiers.py foundations/analyze_pair_frontiers.py", "elapsed_seconds": 0.07},
+    "tier_0_json": {"status": "PASS", "command": "parse every foundations/**/*.json with json.loads", "elapsed_seconds": 0.03, "result": "all foundations JSON parse"},
+    "tier_0_diff_check": {"status": "PASS", "command": "git diff --check -- foundations", "elapsed_seconds": 0.02},
+    "tier_1_finite_witness": {"status": "PASS", "command": "python3 foundations/verify_finite_qubit_interaction_core.py", "elapsed_seconds": 0.09, "result": "Exact Q(i) arithmetic, star derivation, Born probabilities, entanglement, and finite Krein checks pass."},
+    "tier_1_expansion": {"status": "PASS", "command": "python3 foundations/verify_intersection_cube_expansion.py", "elapsed_seconds": 0.10, "result": "103 unique deterministic additions; 19 local, 42 literature, 42 pieces-only; 162 resulting assessed cells."},
+    "tier_2_cube": {"status": "PASS", "command": "python3 foundations/verify_intersection_cube.py", "elapsed_seconds": 0.03, "result": "6 x 6 x 6 closure; 43 local, 55 literature, 47 pieces-only, 17 priority-gap, 54 not-mapped."},
+    "tier_2_pair": {"status": "PASS", "command": "python3 foundations/verify_pair_frontiers.py", "elapsed_seconds": 0.10, "result": "108 pair projections; 79 bridgeable frontiers, 3 unseeded important gaps, 64 assessed open cells."},
+    "tier_2_markdown": {"status": "PASS", "command": "python3 foundations/verify_completion_matrix_markdown.py", "elapsed_seconds": 0.03, "result": "Deterministic 357-line overview with 216 cube coordinates and 45 literature records."},
+    "tier_2_foundations_tests": {"status": "PASS", "command": "python3 -m unittest discover -s foundations/tests -t .", "elapsed_seconds": 0.96, "result": "211/211 tests pass."},
+    "tier_3": {"status": "NOT_RUN", "criterion": "No classical/quantum freeze, paper-theorem promotion, shared core-algebra change, or release was requested. The affected foundations certificate chain was run."}
+  },
+  "generation_checks": [
+    {"status": "PASS", "command": "python3 foundations/expand_intersection_cube.py --rebuild --write", "elapsed_seconds": 0.05},
+    {"status": "PASS", "command": "python3 foundations/expand_intersection_cube.py --check", "elapsed_seconds": 0.04},
+    {"status": "PASS", "command": "python3 foundations/render_completion_matrix_md.py --check", "elapsed_seconds": 0.05},
+    {"status": "PASS", "command": "python3 foundations/analyze_pair_frontiers.py --check", "elapsed_seconds": 0.05}
+  ],
+  "literature_provenance": {
+    "records_added": 20,
+    "content_pinned": 18,
+    "metadata_only": 2,
+    "metadata_only_ids": ["pour-el-richards-1981", "kogut-susskind-1975"],
+    "boundary": "The two metadata-only records block a source freeze. PDF hashes identify consulted bytes but do not independently verify the source theorems."
+  },
+  "artifact_hashes": {
+    "foundations/literature-expansion-v2.json": "d242e4a978acd268a2b463b7246dc6a712f98ab00bcc9955791f1d61771ed8bc",
+    "foundations/results/FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1.json": "8c92b0482802a4c54a6876f46fc78ff9a571a1298a5c5649014116e79872512e",
+    "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_EXPANSION_V1.json": "2598d6aab8df6ed6e446518f9af33150e45e6b11cf5ffbfc3d44b2900c9200a6",
+    "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V0.json": "4a16777a481edeafe1809fc95ffb91ca8ec22972d60eaa8592e1fa68676c193c",
+    "foundations/results/FOUNDATIONAL_PAIR_FRONTIER_ANALYSIS_V0.json": "595e6083c1abe56e4bd87d9b33863a96e3f7381e93ab5823cf524ebc0bd622fa",
+    "foundations/results/FOUNDATIONAL_COMPLETION_MATRIX_MARKDOWN_RENDER_V1.json": "c624693382901e9ca3b6e87f50bf2c776ec5bb4f7baea26f400b793743eff174",
+    "foundations/reports/completion-matrix.md": "659be0aebf97c757deb1f3b20f824f88af85ebcb8a509d02d084eb46e4cf0510",
+    "foundations/reports/pair-frontier-analysis.md": "b4f8d647444fff591b2f1c13450dabf00d92d5d3954a2ca02d753f50766f675c"
+  },
+  "unresolved": [
+    "Fifty-four coordinates remain not mapped.",
+    "Weak arithmetic remains the sparsest foundation slice, with 21 not-mapped coordinates.",
+    "No common weak-base encoding joins continuum Green theory, BV cohomology, microlocal renormalization, and QME restoration.",
+    "Internal topos group dynamics does not establish spacetime causal propagation.",
+    "Finite interaction witnesses do not establish renormalization, QME restoration, or a controlled continuum limit."
+  ],
+  "claim_boundary": "The receipt certifies a literature-scoped navigation expansion and one bounded exact finite model. It establishes no literature completeness, weakest base, constructive interacting Weyl QFT, continuum limit, renormalization theorem, QME restoration, physical state selection, or new LORENTZIAN-CAUSAL claim."
+}

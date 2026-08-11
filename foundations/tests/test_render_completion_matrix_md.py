@@ -18,7 +18,7 @@ class CompletionMatrixMarkdownTests(unittest.TestCase):
         self.assertIn("16 programmes × 6 axes = **96 cells**", text)
         self.assertIn("6 mathematical regimes × 6 carriers × 6 physical obligations = **216 cells**", text)
         self.assertIn("**9 rows**, **8 certificates**", text)
-        self.assertIn("**25 records**", text)
+        self.assertIn("**45 records**", text)
 
     def test_coverage_legend_is_plain_language(self):
         text = render()
@@ -41,7 +41,7 @@ class CompletionMatrixMarkdownTests(unittest.TestCase):
 
     def test_cube_overview_and_missing_faces_are_visible(self):
         text = render()
-        self.assertIn("Only **59 of 216 cells (27.3%)**", text)
+        self.assertIn("**162 of 216 cells (75.0%)**", text)
         self.assertIn("The six cube slices", text)
         self.assertIn("The five missing faces to investigate thoroughly", text)
         self.assertIn("constructive/internal gauge-QFT face", text)
