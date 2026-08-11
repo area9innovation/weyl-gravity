@@ -214,7 +214,7 @@ def partitions(mask, count):
         subset = (subset-1)&rest
 
 
-def exact_tree_kernel(parameters, hard_fixture):
+def exact_tree_kernel(parameters, hard_fixture, return_leading=False):
     """Enumerate all 2,485 rooted tree values at one exact parameter point."""
     a0, a1, a2, a3, e1, e2, tau1, tau2, tau3 = map(Fraction, parameters)
     adjacent_hard, triple_hard = hard_fixture
@@ -337,6 +337,8 @@ def exact_tree_kernel(parameters, hard_fixture):
     leading_order = min(amplitude.coefficients)
     leading = amplitude.coefficient(leading_order)
     projected = (leading*leading).coefficients.get(7, Fraction(0))
+    if return_leading:
+        return leading_order, len(trees), projected, leading
     return leading_order, len(trees), projected
 
 

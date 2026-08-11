@@ -72,7 +72,7 @@ def text_sha256(value):
     return hashlib.sha256(value.encode("utf-8")).hexdigest()
 
 
-def correlated_seven_point(hard_fixture):
+def correlated_seven_point(hard_fixture, include_amplitude_components=False):
     """Return the exact leading triple-ordered seven-point spectator kernel."""
     import sympy as sp
     from sympy.polys.domains import QQ
@@ -228,7 +228,7 @@ def correlated_seven_point(hard_fixture):
     symbols = {symbol.name: symbol for symbol in expression.free_symbols}
     after_inner = sp.cancel(expression.subs(symbols["e1"], 0))
     strong = sp.factor(after_inner.subs(symbols["e2"], 0))
-    return {
+    result = {
         "leading_order": leading_order,
         "leading_masks": sorted(leading.coefficients),
         "projected": str(expression),
@@ -238,6 +238,20 @@ def correlated_seven_point(hard_fixture):
         "strong_order": str(strong),
         "strong_order_length": len(str(strong)),
     }
+    if include_amplitude_components:
+        result["leading_components"] = {
+            str(mask): str(value)
+            for mask, value in sorted(leading.coefficients.items())
+        }
+        result["strong_order_components"] = {
+            str(mask): str(
+                sp.factor(
+                    value.as_expr().subs(symbols["e1"], 0).subs(symbols["e2"], 0)
+                )
+            )
+            for mask, value in sorted(leading.coefficients.items())
+        }
+    return result
 
 
 def threshold_analysis():

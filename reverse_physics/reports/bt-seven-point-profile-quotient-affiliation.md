@@ -1,0 +1,316 @@
+# BT seven-point signed profile quotient and third-jump affiliation
+
+## Result
+
+The complete 2,485-tree Bateman--Turok seven-point amplitude preserves the
+four-component parent-jet times spectator-profile carrier selected at six
+points.  Before the final scalar trace, its leading square-free spectator jet
+has seven components: one scalar component, three equal singleton components,
+and three equal complementary-pair components.  The singleton and pair
+coefficients factor uniquely through the constant and linear profiles of the
+recombined six-point parent.
+
+The two factorization coefficients have opposite signs on the entire declared
+nested physical threshold domain.  The sign from seven external delta-prime
+distributions reverses the raw Krein pullback, leaving a positive nonzero
+physical quotient eigenvalue.  An exact arbitrary-vector identity reconstructs
+the complete pre-trace scalar amplitude on this quotient.  Consequently the
+conditional third history rate
+
+\[
+q_2=\frac{9/81920}{5/3072}=\frac{27}{400}
+\]
+
+is amplitude-affiliated rather than merely inserted into a positive finite
+instrument.
+
+This is a `LOCAL-ALGEBRAIC`, `REDUCED-MODE`, `COEFFICIENT_COMPUTED` result.  It
+does not construct a fourth jump, a complete probability, a common
+asymptotic Hamiltonian, Eq. (19), a gravitational/BRST lift, or anything
+`LORENTZIAN-CAUSAL`.
+
+## Complete pre-trace component tensor
+
+Use the triple nested scaling
+
+\[
+\begin{aligned}
+(x_0,x_1,s_{01})&=\delta\epsilon_1\epsilon_2
+ (a_0,a_1,\tau_1),\\
+(x_2,s_{012})&=\delta\epsilon_2(a_2,\tau_2),\\
+(x_3,s_{0123})&=\delta(a_3,\tau_3),
+\end{aligned}
+\]
+
+and retain the three square-free external-mass spectators (a_4,a_5,a_6).
+The exact subset recursion sums 945 (V_3^5), 1,260 (V_3^3V_4), and 280
+(V_3V_4^2) trees.  The amplitude begins at order (delta^2).  Its strong
+hierarchy limit has support on masks (0,ldots,6), with
+
+\[
+C_1=C_2=C_4=F_1,
+\qquad
+C_3=C_5=C_6=F_2,
+\]
+
+and no cubic spectator mask in the amplitude itself.  Define
+
+\[
+\begin{aligned}
+A&=(a_0-a_1)^2-2\tau_1(a_0+a_1)+2\tau_1^2,\\
+B&=a_2A+2\tau_2(-A+3\tau_1^2),\\
+C&=a_2B+2\tau_2^2(A+\tau_1^2),\\
+D&=a_3C+2\tau_3(-C+3\tau_2^2A).
+\end{aligned}
+\]
+
+Then
+
+\[
+F_1=-\frac{a_3^2C}{16\tau_1^2\tau_2^2\tau_3},
+\qquad
+F_2=-\frac{a_3D}{16\tau_1^2\tau_2^2\tau_3^2}.
+\]
+
+The final square-free scalar trace is therefore
+
+\[
+6F_1F_2
+=\frac{3a_3^3CD}{128\tau_1^4\tau_2^4\tau_3^3},
+\]
+
+which is exactly the previously certified seven-point scalar kernel.  The new
+calculation retains the information on both sides of that product.
+
+## Recombined parent profiles
+
+Recombine the certified finite-(epsilon) six-point singleton and pair
+components by substituting its inner parent variable with (p), its next
+daughter with (a_2), and its outer daughter with (a_3).  Differentiating
+with respect to (p) before taking the outer hierarchy limit gives
+
+\[
+\begin{aligned}
+H_{0,1}&=\frac{a_3^2(a_3^2-2a_3\tau_3+2\tau_3^2)}{8\tau_3^3},\\
+H_{1,1}&=-\frac{a_3^2(a_3+\tau_3)}{4\tau_3^3},\\
+H_{0,2}&=\frac{a_3(a_3^3-4a_3^2\tau_3+6a_3\tau_3^2+2\tau_3^3)}
+ {8\tau_3^4},\\
+H_{1,2}&=-\frac{a_3(a_3-2\tau_3)(a_3+\tau_3)}{4\tau_3^4}.
+\end{aligned}
+\]
+
+The determinant of the two-by-two profile matrix is
+
+\[
+\det H=\frac{3a_3^3(a_3+\tau_3)}{16\tau_3^4}>0.
+\]
+
+Thus the representation
+
+\[
+F_1S_1+F_2S_2=uH_0+vH_1,
+\qquad
+S_1=a_4+a_5+a_6,
+\quad
+S_2=a_4a_5+a_4a_6+a_5a_6,
+\]
+
+is unique, with
+
+\[
+u=-\frac{A}{2\tau_1^2}
+\]
+
+and
+
+\[
+v=\frac{C\tau_3^2
+-A\tau_2^2(a_3^2-2a_3\tau_3+2\tau_3^2)}
+{4\tau_1^2\tau_2^2(\tau_3+a_3)}.
+\]
+
+## Threshold signs
+
+The physical domain is
+
+\[
+a_i>0,
+\qquad
+\tau_1>(\sqrt{a_0}+\sqrt{a_1})^2,
+\qquad
+\tau_2>a_2,
+\qquad
+\tau_3>a_3.
+\]
+
+At the inner threshold, (A=\tau_1^2), and (A) increases above threshold,
+so (A>0).  Moreover
+
+\[
+2\tau_1^2-A=2(a_0+a_1)\tau_1-(a_0-a_1)^2>0,
+\]
+
+giving (0<A<2\tau_1^2) and hence (u<0).
+
+For (r=a_2/\tau_2) and (s=a_3/\tau_3), both (r,s\in(0,1)).  With
+(g(x)=(x-1)^2+1\in(1,2)), the numerator determining (v) rewrites as a
+positive prefactor times
+
+\[
+A\{g(r)-g(s)\}+2\tau_1^2(3r+1)
+>-A+2\tau_1^2>0.
+\]
+
+Therefore (u<0<v) everywhere on the declared open domain.  This is an exact
+inequality proof, not a sampled sign test; the three rational fixtures are
+additional falsification checks only.
+
+## Signed Krein quotient
+
+Order the carrier as
+
+\[
+(H_0S_1,H_0S_2,H_1S_1,H_1S_2),
+\]
+
+and set
+
+\[
+J=\begin{pmatrix}0&1\\1&0\end{pmatrix},
+\quad K=3J,
+\quad \eta=J\otimes3J,
+\quad R=\begin{pmatrix}I_2&I_2\end{pmatrix},
+\quad D=\operatorname{diag}(u,u,v,v).
+\]
+
+The raw raised pullback is
+
+\[
+A_4=\eta^{-1}D^TR^TKRD,
+\qquad A_4^2=2uvA_4.
+\]
+
+The seven-leg delta-prime sign is (-1), so the physical raised pullback is
+(-A_4), whose characteristic polynomial is
+
+\[
+z^2(z+2uv)^2.
+\]
+
+Because (uv<0), its nonzero quotient eigenvalue (-2uv) is strictly
+positive.  The projector
+
+\[
+P=\frac{A_4}{2uv}
+\]
+
+is idempotent and Krein self-adjoint.  Its kernel is generated by
+
+\[
+(v,0,-u,0)^T,
+\qquad
+(0,v,0,-u)^T,
+\]
+
+is nondegenerate, is orthogonal to the image, and is annihilated exactly by
+(RD).  The image is generated by the corresponding plus-sign vectors.  Its
+raw Gram is (6uvJ), with negative orientation because (uv<0); the profile
+fundamental symmetry (-J) gives the positive Gram (-6uvI_2).
+
+For every four-component vector (X),
+
+\[
+-(RDX)^TK(RDX)=(-2uv)(PX)^T\eta(PX).
+\]
+
+This signed identity proves that the quotient reconstructs the complete
+pre-trace amplitude pointwise.  It is not a fit to the already integrated
+(9/81920) coefficient.
+
+## Branching interpretation
+
+Every tree has the topology-independent global phase
+
+\[
+(-i)^V i^{V-1}=-i,
+\]
+
+so the ratio between successive real quotient coefficients carries no hidden
+topology phase.  The 60 rooted-comb histories are external-label permutations
+of the canonical block.  Importing the independently certified selected
+history weights gives
+
+\[
+q_2=\frac{9/81920}{5/3072}=\frac{27}{400}.
+\]
+
+The finite branching instrument's three available rates (1/48), (5/64),
+and (27/400) are now all amplitude-affiliated through the complete available
+five-, six-, and seven-point tree orders.  This does not make the artificial
+level-three absorbing boundary dynamical, and it does not predict a fourth
+jump.
+
+## Independent verification
+
+The producer uses cached subset currents over exact symbolic Laurent and
+square-free jet algebras.  The independent verifier instead explicitly keeps
+all 2,485 rooted tree values, evaluates cubic vertices using the invariant
+triangle polynomial, and runs at exact rational kinematics not used by the
+producer.  It compares all seven amplitude-mask coefficients, not only their
+scalar square.  It then independently rebuilds the parent profiles from the
+pinned six-point finite-hierarchy certificate, resolves the quotient matrices,
+replays three rational fixtures, and imports the history rates from their
+source certificates.
+
+All Python and TeX research jobs run sequentially under `ulimit -v 500000`.
+
+## Verification receipt
+
+| tier | command or check | result | elapsed | peak RSS |
+|---|---|---:|---:|---:|
+| 0 | Python compile and JSON/schema parse on scoped artifacts | PASS | final audit | below cap |
+| 0 | `git diff --check` on scoped paths | PASS | final audit | negligible |
+| 1 | exact 2,485-tree producer and quotient construction | PASS, 41/41 | 20.15 s | 87,968 KB |
+| 1 | independent explicit-tree/component verifier | PASS, 29/29 | 4.68 s | 96,580 KB |
+| 1 | producer/verifier plus eleven falsifying mutations | PASS, 13/13 | 30.45 s | 97,044 KB |
+| 2 | predecessor seven-point producer | PASS, 18/18 | 43.37 s | 90,016 KB |
+| 2 | predecessor seven-point independent verifier | PASS, 17/17 | 27.71 s | 122,592 KB |
+| 2 | predecessor producer/verifier plus thirteen mutations | PASS, 15/15 | 48.69 s | 122,924 KB |
+| 1 | Paper V two-pass PDF build | PASS; no new overfull box | 0.57 / 0.55 s | 50,988 KB |
+| 1 | Paper VI two-pass PDF build | PASS; no overfull box | 0.54 / 0.54 s | 50,908 KB |
+| advisory | Science Forge programme import | 1,395 nodes; 0 invalid items; 0 malformed events | 5.41 s | not recorded |
+
+Tier 2 is required only for the directly affected seven-point component chain:
+the predecessor seven-point suite is rerun because its producer and explicit
+tree helper gained optional component-return interfaces.  Content-addressed
+five- and six-point mathematical inputs are unchanged.  Tier 3 is unnecessary:
+there is no freeze, release, shared-core algebra change, complete-probability
+promotion, Eq. (19), gravitational transfer, or Lorentzian theorem.  No
+skipped rail is counted as a pass.
+
+The Science Forge shadow rail exited zero in advisory mode but did not pass its
+bridge audit: it reported the pre-existing Forge binary/stdlib mismatch,
+compiler diagnostic E9118, and corpus drift from the 976-certificate baseline
+to 1,534 certificates.  These findings are recorded as advisory findings, not
+as successful verification.  The paper prose shadow rail likewise remains
+non-certifying; it reported repository-wide abstract and parenthetical budget
+findings but no excess-vocabulary marker.
+
+The capped Tier-0 Python compile and JSON/schema audit passed in 0.03 seconds
+at 16,416 KB.  A `git diff --check` launched in the same 500 MB shell could not
+create Git's threaded `lstat` worker and is not counted as a pass.  It was
+rerun immediately without that virtual-memory cap and passed; all scientific
+Python and TeX processes remained capped.
+
+## Next gate
+
+Construct the reverse quotient blocks for the three amplitude-affiliated
+jumps and test whether they close a single finite Krein-skew asymptotic
+generator on the zero/one/two/three-emission history carrier without using the
+absorbing closure as dynamics.  A pass would produce the first finite-order
+physical Møller column.  A failure would locate the remaining obstruction in
+dynamics rather than amplitude norm affiliation.  In parallel, the complete
+eight-point pre-trace tensor is the independent test of a fourth jump.
+
+CLOSE-OUT: DONE — the complete seven-point pre-trace tensor has an independently verified canonical signed quotient and affiliates the exact third rate 27/400 while every higher claim remains fail-closed
+EVIDENCE: reverse_physics/certificates/REVERSE_PHYSICS_BT_SEVEN_POINT_PROFILE_QUOTIENT_AFFILIATION_V1.json

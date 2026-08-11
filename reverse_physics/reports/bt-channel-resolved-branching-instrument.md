@@ -26,10 +26,12 @@ state through the three-emission truncation without imposing the scalar Cox
 architecture.
 
 This is stronger physical affiliation than the preceding total-count state,
-but it is not yet the BT asymptotic Hamiltonian or a spacetime S-matrix.  The
-six- and seven-point calculations determine scalar squared norms; they do not
-yet determine the higher species matrices or amplitude phases.  The finite
-level-three absorbing closure is a normalization device and makes no
+but it is not yet the BT asymptotic Hamiltonian or a spacetime S-matrix.  In
+this certificate alone, the six- and seven-point inputs determine scalar
+squared norms but not the higher species matrices or amplitude phases.  The
+subsequent six- and seven-point pre-trace quotient certificates affiliate the
+second and third rates on a grading-faithful four-component carrier.  They do
+not make the finite level-three absorbing closure dynamical or supply a
 four-emission prediction.
 
 ## Labeled histories are rooted combs
@@ -304,10 +306,15 @@ is \(2uvI_2>0\).  Certificate
 `REVERSE_PHYSICS_BT_SIX_POINT_PROFILE_QUOTIENT_COMPLETION_V1` proves the
 pointwise quotient identity for the complete six-point amplitude, replays the
 five-point physical prefix, and thereby affiliates the conditional second
-rate \(5/64\) with the quotient species fibre.  The third \(27/400\) identity
-lift remains a positive construction pending the seven-point species/profile
-tensor.  The eight-point scalar tree separately determines \(q_3\) and tests
-continuation beyond the absorbing closure.
+rate \(5/64\) with the quotient species fibre.  The complete seven-point
+pre-trace certificate
+`REVERSE_PHYSICS_BT_SEVEN_POINT_PROFILE_QUOTIENT_AFFILIATION_V1` now resolves
+the singleton/complementary-pair tensor on the same four-component carrier.
+After the seven-leg delta-prime sign its quotient eigenvalue is positive, and
+the arbitrary-vector identity affiliates the third rate \(27/400\).  Thus all
+three available jumps are amplitude-affiliated.  The level-three absorbing
+closure remains a construction; the eight-point pre-trace tensor separately
+determines a possible \(q_3\) and tests continuation.
 
 This certificate does not establish a complete physical \(2\to n\)
 probability, incoming degenerate sectors, a BT asymptotic Hamiltonian, a

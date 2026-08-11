@@ -199,7 +199,7 @@ At five points, the hard parent profiles are pure:
 \[
  X_5=(0,\tfrac12,\tfrac12,0)^T,
  \qquad
- u_5=2Q,quad v_5=2L.
+ u_5=2Q,\qquad v_5=2L.
 \]
 
 The same construction gives
@@ -248,15 +248,19 @@ provide the reverse block or a common all-order asymptotic generator.
 ## Claim boundary and next gate
 
 This is a reduced-mode amplitude quotient, not a complete probability or
-spacetime S operator.  The third positive jump (27/400) remains an abstract
-completion because the seven-point species/profile tensor has not been
-computed before its scalar trace.
+spacetime S operator.  The subsequent seven-point calculation in
+`REVERSE_PHYSICS_BT_SEVEN_POINT_PROFILE_QUOTIENT_AFFILIATION_V1` resolves the
+declared next gate: all seven pre-trace spectator components factor through
+this same parent/profile carrier, and the seven-leg signed quotient has
+positive physical eigenvalue.  It thereby affiliates the third conditional
+rate (27/400).
 
-The next gate is therefore sharply defined: resolve each seven-point rooted-
-comb history on the quotient architecture selected here.  A canonical
-collapse-invisible kernel with positive scalar image and conditional rate
-(27/400) would affiliate the complete available three-jump instrument.  Its
-failure would be the third-jump obstruction.
+The remaining dynamical gate is not another identity-species lift.  It is to
+construct reverse blocks for all three affiliated quotient jumps and test
+whether they close a single finite Krein-skew asymptotic generator without
+treating the absorbing level-three closure as dynamics.  Independently, the
+complete eight-point pre-trace tensor would determine whether a fourth jump
+continues the pattern.
 
 ## Verification
 

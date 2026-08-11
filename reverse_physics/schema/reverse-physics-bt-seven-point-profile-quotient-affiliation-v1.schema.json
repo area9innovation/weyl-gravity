@@ -1,0 +1,230 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-seven-point-profile-quotient-affiliation-v1.schema.json",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "certificate",
+    "schema_version",
+    "dependency_tags",
+    "lifecycle_state",
+    "result_kind",
+    "question",
+    "answer",
+    "declared_carrier",
+    "amplitude_components",
+    "recombined_six_point_parent",
+    "unique_factorization",
+    "physical_quotient",
+    "branching_affiliation",
+    "disposition",
+    "assumptions",
+    "does_not_establish",
+    "missing_object_ledger",
+    "next_gate",
+    "provenance",
+    "verification_commands",
+    "checks",
+    "report",
+    "schema"
+  ],
+  "properties": {
+    "certificate": {
+      "const": "REVERSE_PHYSICS_BT_SEVEN_POINT_PROFILE_QUOTIENT_AFFILIATION_V1"
+    },
+    "schema_version": {
+      "const": "reverse-physics-bt-seven-point-profile-quotient-affiliation-v1"
+    },
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]
+    },
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "declared_carrier": {
+      "type": "object",
+      "required": [
+        "seven_point_scaling",
+        "four_component_ordering",
+        "tensor_metric_eta",
+        "physical_collapse_R",
+        "spectator_profiles",
+        "history_count",
+        "history_equivalence"
+      ],
+      "properties": {
+        "four_component_ordering": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4
+        },
+        "history_count": {"const": 60},
+        "spectator_profiles": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2
+        }
+      }
+    },
+    "amplitude_components": {
+      "type": "object",
+      "required": [
+        "producer_hard_fixture",
+        "finite_hierarchy_components",
+        "strong_order_components",
+        "recursive_polynomials",
+        "F1_singleton",
+        "F2_complementary_pair",
+        "scalar_squarefree_top",
+        "selected_history_relative_to_Born"
+      ],
+      "properties": {
+        "finite_hierarchy_components": {
+          "type": "object",
+          "required": ["0", "1", "2", "3", "4", "5", "6"]
+        },
+        "strong_order_components": {
+          "type": "object",
+          "required": ["0", "1", "2", "3", "4", "5", "6"]
+        }
+      }
+    },
+    "recombined_six_point_parent": {
+      "type": "object",
+      "required": [
+        "H0_singleton",
+        "H1_singleton",
+        "H0_pair",
+        "H1_pair",
+        "determinant"
+      ]
+    },
+    "unique_factorization": {
+      "type": "object",
+      "required": ["statement", "u", "v", "v_ratio_form", "domain", "sign_proof"],
+      "properties": {
+        "statement": {"const": "C7_rel=F1*S1+F2*S2=u*H0+v*H1"},
+        "sign_proof": {"type": "array", "minItems": 5, "maxItems": 5}
+      }
+    },
+    "physical_quotient": {
+      "type": "object",
+      "required": [
+        "seven_external_delta_prime_sign",
+        "D_generic",
+        "physical_raised_pullback_generic",
+        "characteristic_polynomial",
+        "minimal_polynomial",
+        "projector_generic",
+        "kernel_basis_columns",
+        "image_basis_columns",
+        "kernel_disposition",
+        "image_raw_gram",
+        "image_fundamental_symmetry",
+        "hilbertized_image_gram",
+        "physical_image_raised_endomorphism",
+        "signed_pointwise_identity",
+        "exact_fixtures"
+      ],
+      "properties": {
+        "seven_external_delta_prime_sign": {"const": -1},
+        "minimal_polynomial": {"const": "z*(z+2*u*v)"},
+        "kernel_disposition": {
+          "const": "NONDEGENERATE_ORTHOGONAL_AND_EXACTLY_COLLAPSE_INVISIBLE"
+        },
+        "image_fundamental_symmetry": {"const": "-J_profile"},
+        "physical_image_raised_endomorphism": {"const": "-2*u*v*I2>0"},
+        "exact_fixtures": {"type": "array", "minItems": 3, "maxItems": 3}
+      }
+    },
+    "branching_affiliation": {
+      "type": "object",
+      "required": [
+        "first_jump_rate",
+        "second_jump_rate",
+        "third_selected_history",
+        "second_selected_history",
+        "conditional_third_rate",
+        "normalization_identity",
+        "phase",
+        "first_jump",
+        "second_jump",
+        "third_jump",
+        "finite_instrument_status"
+      ],
+      "properties": {
+        "third_jump": {
+          "const": "AMPLITUDE_AFFILIATED_ON_SEVEN_POINT_SIGNED_PROFILE_QUOTIENT"
+        },
+        "finite_instrument_status": {
+          "const": "ALL_THREE_AVAILABLE_JUMPS_AMPLITUDE_AFFILIATED; LEVEL_THREE_ABSORBING_CLOSURE_REMAINS_A_CONSTRUCTION"
+        }
+      }
+    },
+    "disposition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "complete_2485_tree_pretrace_components",
+        "recombined_six_point_parent_profiles",
+        "seven_point_factorization",
+        "canonical_signed_profile_quotient",
+        "third_positive_scalar_species_jump",
+        "conditional_third_rate",
+        "finite_three_jump_branching_instrument",
+        "fourth_jump",
+        "complete_BT_probability",
+        "spacetime_local_physical_S_matrix",
+        "Eq19_all_orders"
+      ],
+      "properties": {
+        "complete_2485_tree_pretrace_components": {"const": "COMPUTED"},
+        "recombined_six_point_parent_profiles": {"const": "COMPUTED"},
+        "seven_point_factorization": {"const": "UNIQUE_WITH_PROVED_THRESHOLD_SIGNS"},
+        "canonical_signed_profile_quotient": {"const": "CONSTRUCTED"},
+        "third_positive_scalar_species_jump": {
+          "const": "AMPLITUDE_AFFILIATED_ON_QUOTIENT"
+        },
+        "conditional_third_rate": {"const": "EXACT_TWENTY_SEVEN_OVER_FOUR_HUNDRED"},
+        "finite_three_jump_branching_instrument": {
+          "const": "AMPLITUDE_AFFILIATED_THROUGH_AVAILABLE_TREE_ORDER"
+        },
+        "fourth_jump": {"const": "NOT_COMPUTED"},
+        "complete_BT_probability": {"const": "NOT_CONSTRUCTED"},
+        "spacetime_local_physical_S_matrix": {"const": "NOT_CONSTRUCTED"},
+        "Eq19_all_orders": {"const": "NOT_PROVED"}
+      }
+    },
+    "assumptions": {"type": "array", "minItems": 5},
+    "does_not_establish": {"type": "array", "minItems": 12},
+    "missing_object_ledger": {"type": "array", "minItems": 6},
+    "provenance": {
+      "type": "object",
+      "required": [
+        "source_commit",
+        "retrieval_date",
+        "inputs",
+        "producer_method",
+        "primary_source"
+      ],
+      "properties": {
+        "inputs": {"type": "array", "minItems": 5, "maxItems": 5}
+      }
+    },
+    "verification_commands": {"type": "array", "minItems": 3},
+    "checks": {
+      "type": "object",
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"const": 41},
+        "total": {"const": 41},
+        "failures": {"const": []}
+      }
+    },
+    "report": {
+      "const": "reverse_physics/reports/bt-seven-point-profile-quotient-affiliation.md"
+    },
+    "schema": {
+      "const": "reverse_physics/schema/reverse-physics-bt-seven-point-profile-quotient-affiliation-v1.schema.json"
+    }
+  }
+}

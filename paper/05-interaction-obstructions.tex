@@ -1729,7 +1729,7 @@ recombined four-point parent tree has components $(1/2,1/2)$.  In the
 one-leg delta-prime cross basis this fixes
 \[
  T=\operatorname{diag}(2Q,2L),\qquad
- -T^\sharp T=\rho I_2,qquad
+ -T^\sharp T=\rho I_2,\qquad
  \rho=\frac{(a_0-a_1)^2
  [2\tau(a_0+a_1)-(a_0-a_1)^2]}{4\tau^3}>0
 \]
@@ -1925,11 +1925,11 @@ GKSL completion, but refutes its amplitude affiliation above the first jump
 on the declared two-species carrier.
 
 The grading-faithful enlargement resolves this scoped obstruction.  Retain
-the constant/linear parent jet and singleton/pair spectator profile as the
+the constant and linear parent jet and singleton and pair spectator profile as the
 four-component tensor carrier with
 \[
- \eta=J\otimes 3J,qquad
- D=\operatorname{diag}(u,u,v,v),qquad
+ \eta=J\otimes 3J,\qquad
+ D=\operatorname{diag}(u,u,v,v),\qquad
  R=\begin{pmatrix}I_2&I_2\end{pmatrix}.
 \]
 The complete physical pullback
@@ -1957,12 +1957,68 @@ and
 \[
  q_1=\frac{5/3072}{1/48}=\frac5{64}
 \]
-is amplitude-affiliated on the canonical quotient fibre.  Certificate
-\texttt{REVERSE\_PHYSICS\_BT\_SIX\_POINT\_}
-\allowbreak\texttt{PROFILE\_QUOTIENT\_COMPLETION\_V1}
+is amplitude-affiliated on the canonical quotient fibre.  The certificate
+\par\noindent
+\texttt{REVERSE\_PHYSICS\_BT\_}\allowbreak
+\texttt{SIX\_POINT\_}\allowbreak
+\texttt{PROFILE\_QUOTIENT\_COMPLETION\_V1}
+\par\noindent
 records the arbitrary-vector identity, exact kernel/image Grams, prefix
-replay, and independent fixtures.  The third $27/400$ identity lift remains
-a positive construction pending the seven-point species/profile tensor.
+replay, and independent fixtures.
+
+The complete seven-point amplitude closes that next pre-trace gate on the
+same carrier.  For the three spectator jets set
+$S_1=a_4+a_5+a_6$ and
+$S_2=a_4a_5+a_4a_6+a_5a_6$.  Its leading amplitude has one scalar, three
+equal singleton, and three equal complementary-pair components.  Defining
+\[
+ A=(a_0-a_1)^2-2\tau_1(a_0+a_1)+2\tau_1^2,
+ \qquad
+ C=a_2\{a_2A+2\tau_2(-A+3\tau_1^2)\}
+   +2\tau_2^2(A+\tau_1^2),
+\]
+the two relevant coefficients factor uniquely through the recombined
+six-point constant/linear parent profiles as
+\[
+ C_{7,{\rm rel}}=F_1S_1+F_2S_2=uH_0+vH_1,
+ \qquad
+ u=-\frac{A}{2\tau_1^2},
+\]
+\[
+ v=\frac{C\tau_3^2
+ -A\tau_2^2(a_3^2-2a_3\tau_3+2\tau_3^2)}
+ {4\tau_1^2\tau_2^2(\tau_3+a_3)}.
+\]
+The parent profile determinant is
+$3a_3^3(a_3+\tau_3)/(16\tau_3^4)$, so this factorization is unique.  On the
+nested physical domain, $0<A<2\tau_1^2$.  Writing
+$r=a_2/\tau_2$, $s=a_3/\tau_3$, and $g(x)=(x-1)^2+1$, the numerator controlling
+$v$ is proportional to
+$A\{g(r)-g(s)\}+2\tau_1^2(3r+1)>-A+2\tau_1^2>0$.
+Thus $u<0<v$.  The seven-external-leg delta-prime sign reverses the raw
+pullback, and its nonzero physical quotient eigenvalue is therefore
+$-2uv>0$.  With the same Krein-selfadjoint projector $P$, the exact identity
+\[
+ -(RDX)^T(3J)(RDX)=(-2uv)(PX)^T\eta(PX)
+\]
+holds for every profile vector $X$; the negative raw image orientation is
+Hilbertized by the profile fundamental symmetry $-J$.  An independent rail
+enumerates all $2485$ trees at separate exact kinematics and matches all seven
+pre-trace components.  Hence
+\[
+ q_2=\frac{9/81920}{5/3072}=\frac{27}{400}
+\]
+is amplitude-affiliated on the signed quotient.  The certificate
+\par\noindent
+\texttt{REVERSE\_PHYSICS\_BT\_}\allowbreak
+\texttt{SEVEN\_POINT\_}\allowbreak
+\texttt{PROFILE\_QUOTIENT\_AFFILIATION\_V1}
+\par\noindent
+records the component tensor, threshold sign proof, quotient identity, and
+independent tree replay.  All three available jumps are now affiliated with
+the five-, six-, and seven-point amplitudes; the absorbing level-three
+closure, a fourth jump, and a common reverse asymptotic generator remain
+constructions.
 Resolution locality is not spacetime locality; the complete physical
 S-matrix, non-strongly-ordered many-body probabilities, and Eq.~(19) remain
 open.
