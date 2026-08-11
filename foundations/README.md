@@ -100,6 +100,18 @@ python3 foundations/verify_hardy_continuity_kn.py
 python3 -m unittest foundations.tests.test_hardy_continuity_kn
 ```
 
+The finite-objects comparison is
+[`finite field versus finite mode`](reports/finite-field-versus-finite-mode.md).
+It records pairwise witnesses showing that finite-field phase space, an
+energy-mode regulator, finite-dimensional complex Hilbert space, and
+foundational finitism are not interchangeable:
+
+```bash
+python3 foundations/check_finite_field_finite_mode.py
+python3 foundations/verify_finite_field_finite_mode.py
+python3 -m unittest foundations.tests.test_finite_field_finite_mode
+```
+
 ## Lifecycle
 
 This stream uses a literature/research lifecycle, not the quantum lifecycle:
