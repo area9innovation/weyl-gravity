@@ -151,29 +151,34 @@ obeys the cross-CCR Ward identity, and has identically zero parent cross-Gram.
 Consequently its finite-mode, zero-mode-completed projector obeys Eq.~(19)
 through order $\lambda$ with $Q_1=0$.  The conditional $1/48$ and the
 associated finite-cell trace growth are not coefficients of this completed
-quadratic map.  This does not prove a physical zero: the squeezed-vacuum and
-dynamical-zero-mode projector trace, the continuum domain, and higher orders
-remain open.
+quadratic map.  This does not determine a physical response because the
+S-matrix transition block is a distinct operator.  The squeezed-vacuum and
+dynamical-zero-mode projector trace, continuum domain, and higher orders
+remain open within Eq.~(19).
 On every finite paired core the covariant squeeze conjugates this Born
 operator and the detector together, so cyclicity preserves the zero trace; a
 nonzero bare squeezed-vacuum pair occupation is a fixed-detector comparison,
 not an additional Eq.~(19) term.  The squeeze's non-trace-class thermodynamic
-limit prevents promotion of this finite-regulator zero to a physical zero.
+limit prevents a thermodynamic pushforward statement, while object typing
+independently prevents promotion of the pushforward zero to an S-matrix zero.
 Nevertheless, finite paired-process probabilities have a non-normal
 thermodynamic cylinder limit: squeezed spectator corners have Krein trace one,
 so weak-ghost weights are volume independent even while their positive trace
 norm diverges.  The zero quadratic coefficient survives this directed limit.
 Affiliation of an inclusive LSZ detector and the dynamical zero mode remain
 unproved.
-For an orthogonal inclusive detector, however, the leading probability is
-fixed without higher map data: if $U=1+\lambda K+\lambda^2L+\cdots$, its
-order-$\lambda^2$ transition weight contains only
-$(P_{\rm out}KP_{\rm in})^\dagger(P_{\rm out}KP_{\rm in})$.  The complete
-signed kernel makes this integrand pointwise zero.  Squeeze similarity,
-neutral zero-mode normalization, and every detector characteristic-function
-limit preserve zero.  Thus the physical leading real-collinear generalized-
-Born coefficient is zero rather than $1/48$; the full virtual/hard NLO sum and
-all-order Eq.~(19) are separate open problems.
+For an orthogonal inclusive detector, the leading block identity is exact: if
+$U=1+\lambda K+\lambda^2L+\cdots$, its order-$\lambda^2$ transition weight
+contains only $(P_{\rm out}KP_{\rm in})^\dagger
+(P_{\rm out}KP_{\rm in})$.  Its use requires the physical scattering kernel.
+The zero complete signed kernel instead belongs to the distinct Eq.~(19)
+pushforward $R_tP R_t^\dagger$.  The independently computed five-point
+S-matrix response remains $+1/512$ per pair and $+3/512$ over three pairs,
+or $1/48$ and $1/16$ after Born normalization.  The axis-compatible physical
+virtual response is zero, leaving $+3/512$ uncancelled.  The distinct $R_t$
+response is also zero but is not an S-matrix summand.  A physical hard/dressed
+response $-3/512$, the complete NLO probability, and all-order Eq.~(19) remain
+open.
 Independently, the projected three-channel hard loop logarithm closes the
 Callan--Symanzik equation exactly with the Born rate and one-loop beta
 function.  This yields the positive leading-log nonforward prediction
@@ -1578,9 +1583,11 @@ certificate
 contributions and 48 exact Ward fixtures with dependency tags
 \texttt{LOCAL-ALGEBRAIC} and \texttt{REDUCED-MODE}.  The logarithmic
 normalization is a conditional theorem for the resonant truncation; it does
-not survive the complete public quadratic map.  No conclusion about the
-physical coefficient follows without the squeezed-vacuum/dynamical-zero-mode
-projector trace, its continuum domain, and higher composite orders.
+not survive the complete public quadratic map.  No physical coefficient
+follows from this projector-pushforward kernel: the S-matrix transition block
+is a distinct object.  The squeezed-vacuum and dynamical-zero-mode projector
+trace, continuum domain, and higher composite orders remain open within
+Eq.~(19).
 The Appendix-C squeeze does not supply another additive coefficient on this
 finite paired core.  Writing the finite-regulator map as
 $R(\lambda)=S(1+\lambda K+O(\lambda^2))$, cross-Krein isometry gives
@@ -1594,9 +1601,10 @@ holds a $b$-Fock detector fixed and is not an Eq.~(19) pushforward probability.
 This distinction is certified by
 \texttt{REVERSE\_PHYSICS\_BT\_SQUEEZED\_}
 \allowbreak\texttt{DETECTOR\_SIMILARITY\_V1}.  Its
-\texttt{LOCAL-ALGEBRAIC}, \texttt{REDUCED-MODE} zero is finite-regulator only:
-the non-trace-class thermodynamic limit, dynamical zero mode, and higher
-orders still block a physical zero.
+\texttt{LOCAL-ALGEBRAIC}, \texttt{REDUCED-MODE} zero is a finite-regulator
+pushforward result.  The non-trace-class thermodynamic limit, dynamical zero
+mode, and higher orders remain open for Eq.~(19), and the distinct S-matrix
+kernel must be evaluated for a physical response.
 The finite paired-process algebra does admit a thermodynamic conditional
 functional without trace-norm convergence.  Tensoring by squeezed spectator
 projections of Krein trace one leaves all local weak-ghost Born weights
@@ -1605,14 +1613,17 @@ while the positive trace norm grows as $(4/3)^N$.  Hence the pointwise zero
 quadratic coefficient has a regulator-independent cylinder limit.  Certificate
 \texttt{REVERSE\_PHYSICS\_BT\_CYLINDER\_BORN\_LIMIT\_V1} does not identify
 this pair-cylinder algebra with an inclusive LSZ or spacetime-local detector.
-Orthogonality nevertheless suffices for the leading real transition.  The
-order-$\lambda^2$ Born weight is determined only by the complete order-
-$\lambda$ kernel, independently of unknown higher amplitudes.  Its signed
-parent trace vanishes before endpoint removal, and therefore for every
-inclusive detector characteristic function.  Certificate
-\texttt{REVERSE\_PHYSICS\_BT\_INCLUSIVE\_PHYSICAL\_COEFFICIENT\_V1}
-records the physical real-collinear coefficient as zero, while leaving the
-complete virtual/hard NLO probability and all-order Eq.~(19) open.
+The orthogonal-block lemma does not identify its input kernel.  The complete
+signed kernel above is the $R_tP R_t^\dagger$ projector pushforward, whereas
+the physical real process is $P_{\rm out}(S-1)P_{\rm in}$.  Certificate
+\texttt{REVERSE\_PHYSICS\_BT\_INCLUSIVE\_NLO\_OBJECT\_LEDGER\_V1}
+keeps the exact zero pushforward trace but assigns the five-point process its
+independently computed response: $+1/512$ per pair, $+3/512$ in total, and
+$1/48$ per pair after Born normalization.  The axis-compatible physical
+virtual response vanishes, leaving $+3/512$ uncancelled.  The public $R_t$
+response also vanishes but is a distinct Eq.~(19) object, not a physical
+summand; an independently normalized hard/dressed term $-3/512$ is missing.
+The complete NLO probability and all-order Eq.~(19) remain open.
 \end{remark}
 
 \begin{remark}[Physical ultraviolet hard-scattering law]

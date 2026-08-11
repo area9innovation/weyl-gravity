@@ -1,0 +1,111 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-inclusive-nlo-object-ledger-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["certificate", "schema_version", "dependency_tags", "lifecycle_state", "result_kind", "question", "answer", "object_types", "combined_ledger", "correction", "disposition", "does_not_establish", "next_gate", "provenance", "verification_commands", "checks", "report", "schema"],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_INCLUSIVE_NLO_OBJECT_LEDGER_V1"},
+    "schema_version": {"const": "reverse-physics-bt-inclusive-nlo-object-ledger-v1"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "result_kind": {"type": "string", "minLength": 80},
+    "question": {"type": "string", "minLength": 180},
+    "answer": {"type": "string", "minLength": 900},
+    "object_types": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["projector_pushforward", "physical_process", "virtual_boundary", "hard_UV"],
+      "properties": {
+        "projector_pushforward": {
+          "const": {
+            "symbol": "R_t P R_t^dagger",
+            "complete_signed_response": {"denominator": 1, "numerator": 0},
+            "meaning": "Eq. (19) field/projector transport; not the interaction S-matrix"
+          }
+        },
+        "physical_process": {
+          "const": {
+            "symbol": "Pout(S-1)Pin",
+            "real_pair_absolute_response": {"denominator": 512, "numerator": 1},
+            "real_three_pair_absolute_response": {"denominator": 512, "numerator": 3},
+            "real_pair_Born_normalized": {"denominator": 48, "numerator": 1},
+            "real_total_Born_normalized": {"denominator": 16, "numerator": 1}
+          }
+        },
+        "virtual_boundary": {"const": {"axis_compatible_ratio_response": {"denominator": 1, "numerator": 0}}},
+        "hard_UV": {"type": "object", "required": ["meaning"], "properties": {"meaning": {"type": "string", "minLength": 90}}}
+      }
+    },
+    "combined_ledger": {
+      "const": {
+        "Born_coefficient_without_common_factors": {"denominator": 32, "numerator": 3},
+        "physical_real_response": {"denominator": 512, "numerator": 3},
+        "physical_virtual_ratio_response": {"denominator": 1, "numerator": 0},
+        "available_physical_real_plus_virtual_response": {"denominator": 512, "numerator": 3},
+        "required_unconstructed_physical_matching_response": {"denominator": 512, "numerator": -3},
+        "nonphysical_Rt_comparison_response": {"denominator": 1, "numerator": 0},
+        "typing_rule": "THE_RT_PUSHFORWARD_RESPONSE_IS_NOT_ADDED_TO_THE_PHYSICAL_SMATRIX_LEDGER",
+        "cancellation": "FAILS_ON_AVAILABLE_PHYSICAL_OBJECTS"
+      }
+    },
+    "correction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["predecessor", "status", "invalid_claim", "retained_exact_results", "physical_disposition"],
+      "properties": {
+        "predecessor": {"const": "REVERSE_PHYSICS_BT_INCLUSIVE_PHYSICAL_COEFFICIENT_V1"},
+        "status": {"const": "SUPERSEDED_OBJECT_IDENTIFICATION"},
+        "invalid_claim": {"const": "K_Rt was identified with the physical scattering transition kernel"},
+        "retained_exact_results": {"type": "array", "minItems": 4, "maxItems": 4},
+        "physical_disposition": {"const": "REAL_RESPONSE_REMAINS_3_OVER_512_ABSOLUTE_AND_1_OVER_48_PER_PAIR_BORN_NORMALIZED"}
+      }
+    },
+    "disposition": {
+      "const": {
+        "physical_real_emission_response": "NONZERO",
+        "public_Rt_compensating_response": "ZERO_BUT_NOT_A_PHYSICAL_SUMMAND",
+        "available_real_virtual_cancellation": "EXACT_OBSTRUCTION",
+        "physical_inclusive_NLO_probability": "NOT_ESTABLISHED",
+        "Eq19_all_orders": "NOT_PROVED"
+      }
+    },
+    "does_not_establish": {"type": "array", "minItems": 7},
+    "next_gate": {"type": "string", "minLength": 200},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_commit", "retrieval_date", "inputs"],
+      "properties": {
+        "source_commit": {"const": "fc0407c5"},
+        "retrieval_date": {"const": "2026-08-11"},
+        "inputs": {
+          "type": "array",
+          "minItems": 7,
+          "maxItems": 7,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["path", "sha256"],
+            "properties": {"path": {"type": "string"}, "sha256": {"pattern": "^[0-9a-f]{64}$"}}
+          }
+        }
+      }
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "maxItems": 3},
+    "checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"const": 16},
+        "total": {"const": 16},
+        "failures": {"const": []},
+        "details": {"type": "object", "minProperties": 16, "maxProperties": 16}
+      }
+    },
+    "report": {"const": "reverse_physics/reports/bt-inclusive-nlo-object-ledger.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-inclusive-nlo-object-ledger-v1.schema.json"}
+  }
+}

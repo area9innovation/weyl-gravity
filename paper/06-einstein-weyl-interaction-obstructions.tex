@@ -147,22 +147,32 @@ is zero.  Its mixed-sign rows satisfy the cross-CCR Ward identity, while the
 unique zero-mode dressing makes the finite-mode generator neutral.  Hence the
 finite-mode quadratic carrier obeys Eq.~(19) through order $\lambda$ with
 $Q_1=0$.  The conditional $1/48$ is absent from the completed public quadratic
-map, but a physical zero is not established without the squeezed-vacuum and
-dynamical-zero-mode projector trace, continuum domains, and higher orders.
+map.  This does not determine the physical scalar response because the
+S-matrix transition block is a distinct operator.  The squeezed-vacuum and
+dynamical-zero-mode projector trace, continuum domains, and higher orders
+remain open within Eq.~(19).
 This remains solely a scalar \texttt{LOCAL-ALGEBRAIC},
 \texttt{REDUCED-MODE} result.
 The covariant Appendix-C squeeze conjugates the finite-core scalar detector
 and Born operator together, so finite-rank cyclicity preserves this zero; bare
 squeezed-vacuum pair occupation is not an additive Eq.~(19) contribution.
-The missing thermodynamic trace domain still forbids a physical-zero claim.
+The missing thermodynamic trace domain still limits Eq.~(19), while the
+operator distinction independently forbids reading its zero as an S-matrix
+coefficient.
 Finite paired scalar processes nevertheless have a spectator-stable
 non-normal cylinder functional, on which the zero coefficient survives; this
 is not an inclusive LSZ or gravitational construction.
-For the scalar orthogonal inclusive detector, higher composite amplitudes do
-not enter the leading transition weight, so the complete signed kernel fixes
-the physical real-collinear coefficient at zero.  This coefficient and its
-proof do not transfer to gravity or complete the scalar NLO probability.
-This is again not a gravitational state construction.
+For a scalar orthogonal inclusive detector, higher composite amplitudes do not
+enter the leading transition weight, but the input kernel must still be the
+physical S-matrix block.  The complete signed zero belongs instead to the
+distinct scalar Eq.~(19) pushforward.  The scalar five-point S-matrix response
+is $+1/512$ per pair and $+3/512$ in total, or $1/48$ per pair after Born
+normalization.  The axis-compatible physical virtual response is zero, leaving
+$+3/512$ uncancelled.  The public $R_t$ response is also zero but is a distinct
+Eq.~(19) object, not a physical summand.  An independently normalized
+hard/dressed response $-3/512$ is still missing.  This scalar object ledger
+neither completes its NLO probability nor transfers a coefficient or state
+construction to gravity.
 \end{abstract}
 
 \section*{AI authorship and computational accountability}
@@ -1642,8 +1652,9 @@ $R_tP_0R_t^\dagger=P_0+\lambda[K,P_0]+O(\lambda^2)$ with $Q_1=0$ in the
 Eq.~(19) decomposition.  The certificate
 \texttt{REVERSE\_PHYSICS\_BT\_FULL\_SIGNED\_}
 \allowbreak\texttt{QUADRATIC\_CLOSURE\_V1} has dependency tags
-\texttt{LOCAL-ALGEBRAIC} and \texttt{REDUCED-MODE}.  It establishes neither a
-physical zero nor any metric-BV or \texttt{LORENTZIAN-CAUSAL} statement; the
+\texttt{LOCAL-ALGEBRAIC} and \texttt{REDUCED-MODE}.  This Eq.~(19)
+pushforward is not the scalar S-matrix transition block and establishes no
+metric-BV or \texttt{LORENTZIAN-CAUSAL} statement; its
 squeezed-vacuum/dynamical-zero-mode projector trace, continuum domain, and
 higher orders remain open.
 On the finite paired core, cross-Krein isometry gives
@@ -1657,6 +1668,16 @@ not a further Eq.~(19) term.  The scalar certificate
 \texttt{LOCAL-ALGEBRAIC}, \texttt{REDUCED-MODE} distinction without promoting
 it through the non-trace-class thermodynamic limit or into the metric BV
 complex.
+For the physical scalar process, the independently computed five-point
+response remains $+1/512$ per pair and $+3/512$ over three pairs, equivalently
+$1/48$ and $1/16$ after Born normalization.  The axis-compatible physical
+virtual daughter-ratio response is zero, leaving $+3/512$ uncancelled.  The
+public $R_t$ response is also zero but is not an S-matrix summand.  The
+object-typed certificate
+\texttt{REVERSE\_PHYSICS\_BT\_INCLUSIVE\_NLO\_}
+\allowbreak\texttt{OBJECT\_LEDGER\_V1} therefore requires a separate
+hard/dressed response $-3/512$ and leaves the complete scalar NLO probability
+unestablished.  None of this scalar ledger transfers to the metric BV complex.
 There is nevertheless a genuine scalar hard-scattering baseline.  The
 certificate
 \texttt{REVERSE\_PHYSICS\_BT\_UV\_HARD\_}\allowbreak

@@ -1,4 +1,10 @@
-# BT inclusive physical real-collinear coefficient
+# BT \(R_t\) pushforward coefficient
+
+**Correction:** the physical object identification in this predecessor is
+superseded by `REVERSE_PHYSICS_BT_INCLUSIVE_NLO_OBJECT_LEDGER_V1`.  The exact
+block lemma and the zero \(R_t P R_t^\dagger\) trace below remain valid.  The
+kernel used here is not \(P_{\rm out}(S-1)P_{\rm in}\), so it does not erase
+the independently certified \(+1/512\) real response per pair.
 
 **Result:** `COEFFICIENT_COMPUTED`
 
@@ -28,16 +34,18 @@ before the endpoint is removed.  Sixty-four exact detector-cell masks all give
 zero, and the simple-function limit gives zero for arbitrary declared
 measurable detector support.
 
-Hence
+Hence, for the declared public \(R_t\) pushforward,
 
 \[
- \boxed{\Delta P_{\rm real,collinear}^{\rm BT}=0}.
+ \boxed{\Delta_{R_t P R_t^\dagger}=0}.
 \]
 
-The public map does not reproduce the claimed \(1/48\).  This is a physical
-statement about the leading real-collinear generalized-Born coefficient.  It
-is not the complete NLO probability: the virtual/hard ledger remains to be
-combined, and all-order Eq. (19) is not proved.
+The public map does not reproduce \(1/48\) because it is a different object.
+The physical five-point response remains \(+1/512\) per pair and \(+3/512\)
+over three pairs, equivalently \(1/48\) and \(1/16\) after Born
+normalization.  The physical virtual response does not cancel it; the
+\(R_t\) zero is a distinct Eq. (19) result, not a physical summand.  The
+complete NLO probability and all-order Eq. (19) are not established.
 
 Verification uses exact rational producer and independent block/kernel rails,
 plus seven tests with five decisive mutations.  All commands ran sequentially

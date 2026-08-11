@@ -1,0 +1,172 @@
+{
+  "answer": "No. R_t P R_t^dagger is the field/projector pushforward used in Eq. (19), whereas Pout(S-1)Pin is the physical scattering process. The exact orthogonal-block lemma in the predecessor is valid, but it was applied to K_Rt and then mislabeled as the physical S-matrix transition kernel. The physical five-point calculation remains +1/512 per pair and +3/512 over three pairs in absolute lambda^6 log(c)/(pi^4 s) units, equivalently 1/48 per pair and 1/16 total after division by the Born coefficient 3/32. The axis-compatible physical virtual ratio response is zero, so the available physical real-plus-virtual response remains +3/512. The completed R_t pushforward and squeeze responses are also zero, but they are distinct Eq. (19) objects and are not summands in that physical S-matrix ledger. A separate hard/dressed physical matching response -3/512 is still required; the public R_t map cannot be counted as that term. The prior physical-zero certificate is superseded only in its object identification; its exact perturbative block lemma, complete R_t trace zero, and detector-limit algebra remain valid. No regulator-independent complete NLO probability is established.",
+  "certificate": "REVERSE_PHYSICS_BT_INCLUSIVE_NLO_OBJECT_LEDGER_V1",
+  "checks": {
+    "details": {
+      "Rt_and_Smatrix_are_distinct_objects": true,
+      "axis_virtual_ratio_response_zero": true,
+      "born_is_3_32": true,
+      "complete_probability_not_established": true,
+      "full_signed_Rt_pushforward_response_zero": true,
+      "input_hashes_pinned": true,
+      "one_over_48_real_normalization_retained": true,
+      "physical_real_plus_virtual_nonzero": true,
+      "physical_zero_predecessor_object_identification_invalid": true,
+      "predecessor_exact_block_algebra_retained": true,
+      "real_pair_absolute_is_1_512": true,
+      "real_pair_normalized_is_1_48": true,
+      "real_total_normalized_is_1_16": true,
+      "required_matching_is_minus_3_512": true,
+      "three_pair_absolute_is_3_512": true,
+      "typed_ledger_does_not_add_Rt_to_physical_sum": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 16,
+    "total": 16
+  },
+  "combined_ledger": {
+    "Born_coefficient_without_common_factors": {
+      "denominator": 32,
+      "numerator": 3
+    },
+    "available_physical_real_plus_virtual_response": {
+      "denominator": 512,
+      "numerator": 3
+    },
+    "cancellation": "FAILS_ON_AVAILABLE_PHYSICAL_OBJECTS",
+    "nonphysical_Rt_comparison_response": {
+      "denominator": 1,
+      "numerator": 0
+    },
+    "physical_real_response": {
+      "denominator": 512,
+      "numerator": 3
+    },
+    "physical_virtual_ratio_response": {
+      "denominator": 1,
+      "numerator": 0
+    },
+    "required_unconstructed_physical_matching_response": {
+      "denominator": 512,
+      "numerator": -3
+    },
+    "typing_rule": "THE_RT_PUSHFORWARD_RESPONSE_IS_NOT_ADDED_TO_THE_PHYSICAL_SMATRIX_LEDGER"
+  },
+  "correction": {
+    "invalid_claim": "K_Rt was identified with the physical scattering transition kernel",
+    "physical_disposition": "REAL_RESPONSE_REMAINS_3_OVER_512_ABSOLUTE_AND_1_OVER_48_PER_PAIR_BORN_NORMALIZED",
+    "predecessor": "REVERSE_PHYSICS_BT_INCLUSIVE_PHYSICAL_COEFFICIENT_V1",
+    "retained_exact_results": [
+      "orthogonal-detector perturbative block lemma",
+      "complete signed R_t parent trace zero",
+      "squeeze similarity invariance",
+      "finite detector and cylinder zero for the R_t pushforward coefficient"
+    ],
+    "status": "SUPERSEDED_OBJECT_IDENTIFICATION"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "disposition": {
+    "Eq19_all_orders": "NOT_PROVED",
+    "available_real_virtual_cancellation": "EXACT_OBSTRUCTION",
+    "physical_inclusive_NLO_probability": "NOT_ESTABLISHED",
+    "physical_real_emission_response": "NONZERO",
+    "public_Rt_compensating_response": "ZERO_BUT_NOT_A_PHYSICAL_SUMMAND"
+  },
+  "does_not_establish": [
+    "that no dressed or distributional hard matching exists",
+    "a complete finite NLO constant",
+    "incoming degenerate-sector completion",
+    "all-order Eq. (19)",
+    "a gravitational or BRST lift",
+    "anything LORENTZIAN-CAUSAL",
+    "literature priority"
+  ],
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "Construct an independently normalized physical hard/dressed endpoint response of -3/512 in the same regulator variable, or prove that no such response exists under a declared enlarged asymptotic architecture. The complete public R_t pushforward is a distinct Eq. (19) object and cannot be counted as that physical term.",
+  "object_types": {
+    "hard_UV": {
+      "meaning": "Callan-Symanzik scale logarithm; zero daughter mass-ratio response and not a substitute for endpoint matching"
+    },
+    "physical_process": {
+      "real_pair_Born_normalized": {
+        "denominator": 48,
+        "numerator": 1
+      },
+      "real_pair_absolute_response": {
+        "denominator": 512,
+        "numerator": 1
+      },
+      "real_three_pair_absolute_response": {
+        "denominator": 512,
+        "numerator": 3
+      },
+      "real_total_Born_normalized": {
+        "denominator": 16,
+        "numerator": 1
+      },
+      "symbol": "Pout(S-1)Pin"
+    },
+    "projector_pushforward": {
+      "complete_signed_response": {
+        "denominator": 1,
+        "numerator": 0
+      },
+      "meaning": "Eq. (19) field/projector transport; not the interaction S-matrix",
+      "symbol": "R_t P R_t^dagger"
+    },
+    "virtual_boundary": {
+      "axis_compatible_ratio_response": {
+        "denominator": 1,
+        "numerator": 0
+      }
+    }
+  },
+  "provenance": {
+    "inputs": [
+      {
+        "path": "planning/work-items/reverse-physics-bateman-inclusive-nlo-object-ledger.json",
+        "sha256": "fc1e48df5359d144d3a89b3c275916d0c3c450ed523dce1e1743826a83134cc3"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_REAL_VIRTUAL_AXIS_GLUING_V1.json",
+        "sha256": "c2ffad79666aaec1d17585f76e9c90403b3b410006e624df9626bcc1571d251a"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_ASYMPTOTIC_GENERATOR_PREFLIGHT_V1.json",
+        "sha256": "95d11eaf4f529d7f02b4f8a8e6165ee893ea6aa623d26c96a2475e0bd0a8c2c1"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_UV_HARD_SCATTERING_LAW_V1.json",
+        "sha256": "8ce6d81e672fa876b19696e228654d79989a21dc72c9ef099bdef0e97743ce05"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_FULL_SIGNED_QUADRATIC_CLOSURE_V1.json",
+        "sha256": "5859aad65cf0dcbc1ceb9d2c3381a9a61c2d3df6457e8b77903c8a6931aa081b"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_INCLUSIVE_PHYSICAL_COEFFICIENT_V1.json",
+        "sha256": "016eed6d38c094f015a5825bd44e7bf3da2738756326ac16e54eba3ca71ca5bf"
+      },
+      {
+        "path": "notes/bateman-turok-embedding.md",
+        "sha256": "c3a1761e84d80124fd20c024afa3247324e722534b05f57213589f0757f2aa2b"
+      }
+    ],
+    "retrieval_date": "2026-08-11",
+    "source_commit": "fc0407c5"
+  },
+  "question": "Does the zero trace of the complete public order-lambda R_t projector-pushforward kernel replace the independently certified physical five-point real-emission response, and do the available terms form a regulator-independent inclusive NLO probability?",
+  "report": "reverse_physics/reports/bt-inclusive-nlo-object-ledger.md",
+  "result_kind": "object-typed inclusive NLO regulator-response ledger and correction of an R_t versus S-matrix conflation",
+  "schema": "reverse_physics/schema/reverse-physics-bt-inclusive-nlo-object-ledger-v1.schema.json",
+  "schema_version": "reverse-physics-bt-inclusive-nlo-object-ledger-v1",
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_inclusive_nlo_object_ledger.py --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_inclusive_nlo_object_ledger.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_inclusive_nlo_object_ledger"
+  ]
+}
