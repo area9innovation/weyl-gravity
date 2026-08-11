@@ -1,0 +1,27 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/reverse-physics-bateman-abel-fock-physical-intertwiner-DONE-eb94b6f30e35413f",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work item transitioned",
+  "source": {"path": "tools/science-forge/program/events/reverse-physics-bateman-abel-fock-physical-intertwiner-DONE-eb94b6f30e35413f.json", "span": null},
+  "body": {
+    "event_kind": "WORK_ITEM_TRANSITIONED",
+    "actor": "reverse-physics",
+    "base_revision": "science-forge-ir-v0",
+    "predecessors": ["sf:program/event/reverse-physics-bateman-abel-fock-physical-intertwiner-COMMIT-eb94b6f30e35413f"],
+    "when": "2026-08-11T16:34:30Z",
+    "seq": 2,
+    "payload": {
+      "target": "sf:program/work/reverse-physics-bateman-abel-fock-physical-intertwiner",
+      "to_state": "DONE",
+      "note": "the first three HP edge marks have an independently verified physical Abel direct-integral range intertwiner in the correctly typed correlated system--noise sector; the raw-column covariance and noise-only formulations are exactly obstructed, while the remaining 72 continuum columns, full Moller/LSZ/S operator, Eq. 19, gravity, and Lorentzian claims remain open",
+      "evidence_basis": "reverse_physics/certificates/REVERSE_PHYSICS_BT_ABEL_FOCK_PHYSICAL_INTERTWINER_V1.json"
+    },
+    "native": {
+      "authored_by": "sfc close-out",
+      "policy": "append-only (SPEC 4.5); one content-addressed file per event; the work-item file is never rewritten -- the effective state is the fold of these events over the base state."
+    }
+  },
+  "edges": [{"rel": "TRANSITIONS", "to": "sf:program/work/reverse-physics-bateman-abel-fock-physical-intertwiner"}]
+}
