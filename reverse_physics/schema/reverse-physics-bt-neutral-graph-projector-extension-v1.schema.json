@@ -1,0 +1,232 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-neutral-graph-projector-extension-v1.schema.json",
+  "title": "BT neutral graph projector extension certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "certificate",
+    "schema_version",
+    "dependency_tags",
+    "lifecycle_state",
+    "result_kind",
+    "question",
+    "answer",
+    "assumptions",
+    "minimal_odd_source_extension",
+    "neutral_graph_projector",
+    "positive_source_affiliation",
+    "Eq19_boundary",
+    "disposition",
+    "does_not_establish",
+    "next_gate",
+    "provenance",
+    "verification_commands",
+    "checks",
+    "report",
+    "schema"
+  ],
+  "properties": {
+    "certificate": {
+      "const": "REVERSE_PHYSICS_BT_NEUTRAL_GRAPH_PROJECTOR_EXTENSION_V1"
+    },
+    "schema_version": {
+      "const": "reverse-physics-bt-neutral-graph-projector-extension-v1"
+    },
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]
+    },
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "result_kind": {"type": "string", "minLength": 1},
+    "question": {"type": "string", "minLength": 1},
+    "answer": {"type": "string", "minLength": 1},
+    "assumptions": {
+      "type": "array",
+      "minItems": 5,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "minimal_odd_source_extension": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "original_profile_metric",
+        "original_profile_ghost_parity",
+        "odd_partner_metric",
+        "odd_partner_ghost_parity",
+        "composite_negative_metric",
+        "composite_ghost_parity",
+        "slope_T",
+        "slope_covariant_pullback",
+        "required_rank",
+        "partner_dimension",
+        "minimality"
+      ],
+      "properties": {
+        "original_profile_metric": {"const": [["1", "0"], ["0", "1"]]},
+        "original_profile_ghost_parity": {"const": [["1", "0"], ["0", "1"]]},
+        "odd_partner_metric": {"const": [["-1", "0"], ["0", "-1"]]},
+        "odd_partner_ghost_parity": {"const": [["-1", "0"], ["0", "-1"]]},
+        "composite_negative_metric": {"const": [["-2", "0"], ["0", "-2"]]},
+        "composite_ghost_parity": {"const": [["-1", "0"], ["0", "-1"]]},
+        "slope_T": {
+          "const": [["sqrt(6699)/16", "0"], ["0", "sqrt(7149)/16"]]
+        },
+        "slope_covariant_pullback": {
+          "const": [["-6699/128", "0"], ["0", "-7149/128"]]
+        },
+        "required_rank": {"const": 2},
+        "partner_dimension": {"const": 2},
+        "minimality": {"type": "string", "minLength": 1}
+      }
+    },
+    "neutral_graph_projector": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "carrier_metric",
+        "carrier_ghost_parity",
+        "graph_embedding_L",
+        "positive_M",
+        "range_gram",
+        "projector",
+        "projector_identity",
+        "charge_identity",
+        "ghost_identity",
+        "rank",
+        "trace",
+        "finite_algebraic_generalized_Born_trace",
+        "kernel_embedding",
+        "kernel_gram",
+        "range_kernel_pairing"
+      ],
+      "properties": {
+        "carrier_metric": {"$ref": "#/$defs/string_matrix"},
+        "carrier_ghost_parity": {"$ref": "#/$defs/string_matrix"},
+        "graph_embedding_L": {"$ref": "#/$defs/string_matrix"},
+        "positive_M": {"const": [["6827/128", "0"], ["0", "7277/128"]]},
+        "range_gram": {"const": [["-6827/128", "0"], ["0", "-7277/128"]]},
+        "projector": {"$ref": "#/$defs/string_matrix"},
+        "projector_identity": {"const": "P^2=P=P^sharp"},
+        "charge_identity": {"const": "[H_total,P]=0"},
+        "ghost_identity": {"const": "[kappa_total,P]=0"},
+        "rank": {"const": 2},
+        "trace": {"const": 2},
+        "finite_algebraic_generalized_Born_trace": {"const": 2},
+        "kernel_embedding": {"$ref": "#/$defs/string_matrix"},
+        "kernel_gram": {"const": [["-6827/64", "0"], ["0", "-7277/64"]]},
+        "range_kernel_pairing": {"const": [["0", "0"], ["0", "0"]]}
+      }
+    },
+    "positive_source_affiliation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ghost_even_equation",
+        "coefficient_rank",
+        "only_solution",
+        "graph_pullback_for_general_A",
+        "norm_preserving_positive_source_map",
+        "reason",
+        "remaining_escape"
+      ],
+      "properties": {
+        "ghost_even_equation": {"const": "(-I2)F=F(+I2)"},
+        "coefficient_rank": {"const": 4},
+        "only_solution": {"const": "F=0"},
+        "graph_pullback_for_general_A": {"const": "(LA)^T eta (LA)=-A^T M A"},
+        "norm_preserving_positive_source_map": {
+          "const": "EXACTLY_OBSTRUCTED_ON_MINIMAL GRAPH"
+        },
+        "reason": {"type": "string", "minLength": 1},
+        "remaining_escape": {"type": "string", "minLength": 1}
+      }
+    },
+    "Eq19_boundary": {
+      "const": {
+        "finite_neutral_ghost_even_projector_candidate": "CONSTRUCTED_ON_AUGMENTED ODD SOURCE",
+        "finite_algebraic_trace": "COMPUTED_EQUAL_TO_TWO",
+        "original_positive_source_affiliation": "EXACTLY_OBSTRUCTED_ON_MINIMAL CARRIER",
+        "finite_mode_order_lambda_sector": "UNCHANGED_PROVED_WITH_Q1_ZERO",
+        "BT_Rt_derivation": "NOT_CONSTRUCTED",
+        "all_order_projector_identity": "NOT_PROVED"
+      }
+    },
+    "disposition": {
+      "const": {
+        "minimal_ghost_odd_source_partner_dimension": "TWO",
+        "neutral_graph_projector": "CONSTRUCTED_EXACTLY",
+        "projector_idempotence_and_Krein_selfadjointness": "PROVED",
+        "projector_charge_and_ghost_compatibility": "PROVED",
+        "finite_algebraic_generalized_Born_trace": "COMPUTED_EQUAL_TO_TWO",
+        "positive_profile_source_affiliation": "EXACTLY_OBSTRUCTED_ON_MINIMAL CARRIER",
+        "BT_dynamical_derivation": "NOT_CONSTRUCTED",
+        "physical_fourth_probability": "NOT_ESTABLISHED",
+        "Eq19_all_orders": "NOT_PROVED"
+      }
+    },
+    "does_not_establish": {
+      "type": "array",
+      "minItems": 10,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "next_gate": {"type": "string", "minLength": 1},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_commit", "retrieval_date", "inputs"],
+      "properties": {
+        "source_commit": {"const": "0ef68ed1d5e1da1eae57d0c134cf05f86c91ce6e"},
+        "retrieval_date": {"const": "2026-08-12"},
+        "inputs": {
+          "type": "array",
+          "minItems": 5,
+          "maxItems": 5,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["path", "sha256"],
+            "properties": {
+              "path": {"type": "string", "minLength": 1},
+              "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+            }
+          }
+        }
+      }
+    },
+    "verification_commands": {
+      "type": "array",
+      "minItems": 3,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"const": 26},
+        "total": {"const": 26},
+        "failures": {"const": []},
+        "details": {
+          "type": "object",
+          "minProperties": 26,
+          "maxProperties": 26,
+          "additionalProperties": {"const": true}
+        }
+      }
+    },
+    "report": {"const": "reverse_physics/reports/bt-neutral-graph-projector-extension.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-neutral-graph-projector-extension-v1.schema.json"}
+  },
+  "$defs": {
+    "string_matrix": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "array",
+        "minItems": 1,
+        "items": {"type": "string"}
+      }
+    }
+  }
+}

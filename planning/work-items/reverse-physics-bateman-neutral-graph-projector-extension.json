@@ -1,0 +1,37 @@
+{
+  "id": "sf:program/work/reverse-physics-bateman-neutral-graph-projector-extension",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "reverse-physics",
+    "state": "ACTIVE",
+    "objective": "Construct the smallest ghost-even neutral projector containing the certified degree-four negative BT profile block, and decide whether it can be affiliated to the original positive profile source.",
+    "depends_on": [
+      "REVERSE_PHYSICS_BT_NEUTRAL_BOSONIC_COMPOSITE_LIFT_V1",
+      "REVERSE_PHYSICS_BT_EIGHT_POINT_PROFILE_POSITIVITY_OBSTRUCTION_V1",
+      "REVERSE_PHYSICS_BT_FULL_SIGNED_QUADRATIC_CLOSURE_V1"
+    ],
+    "activates": [
+      "a minimal ghost-odd source partner",
+      "an exact neutral graph projector",
+      "finite idempotence, Krein-adjoint, charge, ghost-parity and Born-trace tests",
+      "a fail-closed affiliation test back to the positive profile source"
+    ],
+    "current_gate": "NEUTRAL_GRAPH_PROJECTOR: adjoin the minimum odd source rank required by K4, form the Krein-orthogonal graph projector of the degree-four slope, and test whether any nonzero ghost-even or norm-preserving affiliation from the positive source exists.",
+    "stop_condition": "Land an exact certificate with an independent verifier that constructs or obstructs the projector, proves partner minimality, computes the finite trace, and preserves the distinction between an algebraic candidate and the BT Rt pushforward in Eq. 19.",
+    "forbid": "no non-idempotent graph called a projector; no ordinary transpose used as the Krein adjoint; no negative-definite graph called the positive physical source; no finite rank trace called the continuum generalized-Born trace; no algebraic candidate called Eq. 19, a complete probability, gravity, or LORENTZIAN-CAUSAL",
+    "allowed_paths": [
+      "reverse_physics/",
+      "notes/bateman-turok-embedding.md",
+      "paper/05-interaction-obstructions.tex",
+      "paper/05-interaction-obstructions.pdf",
+      "paper/06-einstein-weyl-interaction-obstructions.tex",
+      "paper/06-einstein-weyl-interaction-obstructions.pdf",
+      "planning/work-items/reverse-physics-bateman-neutral-graph-projector-extension.json",
+      "planning/events/"
+    ],
+    "resource_hint": "Use odd source metric -I2, selected composite metric -2I2, and T=diag(sqrt(6699)/16,sqrt(7149)/16). For L=(I,T)^T and eta=diag(-I,-2I), set P=L(L^T eta L)^-1 L^T eta. Verify P^2=P=P^sharp, [P,H]=0, [P,kappa]=0, rank and trace two, and T^T(-2I)T=K4. Then test parity and metric affiliation from the original +I2 source.",
+    "input_commit": "0ef68ed1",
+    "stream": "reverse-physics"
+  }
+}

@@ -2054,6 +2054,32 @@ neutral $P$ term asserted in Eq.~(19).  In fact any ghost-even forward block
 $D$ obeys $D^\sharp D=D^T(G_4\kappa)D\succeq0$ and cannot equal negative
 $K_4$.  A ghost-odd source partner, a larger
 complete projector, or an additional dynamical trace remains unconstructed.
+The minimal odd-source extension is itself exactly solvable.  Give the added
+two-dimensional source metric $-I_2$, retain the selected composite metric
+$-2I_2$, and put
+\[
+ T=\operatorname{diag}(\sqrt{6699}/16,\sqrt{7149}/16),\quad
+ L=\binom{I_2}{T},\quad
+ \eta=\operatorname{diag}(-I_2,-2I_2).
+\]
+Then $T^T(-2I_2)T=K_4$, and the Krein-orthogonal graph projector
+\[
+ P=L(L^T\eta L)^{-1}L^T\eta
+\]
+has rank two and obeys
+$P^2=P=P^\sharp$, $[P,H]=[P,\kappa]=0$, and
+$\operatorname{tr}(P^\sharp P)=2$.  Certificate
+\par\noindent
+\texttt{REVERSE\_PHYSICS\_BT\_NEUTRAL\_}\allowbreak
+\texttt{GRAPH\_PROJECTOR\_EXTENSION\_V1}
+\par\noindent
+therefore constructs a finite neutral ghost-even projector candidate, but
+only on the added odd sector.  Direct affiliation to the original even
+positive source is exactly obstructed: parity gives $-F=F$ and hence $F=0$,
+while every graph pullback is $-A^TMA\preceq0$ for
+$M=\operatorname{diag}(6827/128,7277/128)>0$.  The finite trace is a rank
+weight, not the BT continuum trace or a fourth probability; a larger
+signature-balanced $R_t$ projector remains unconstructed.
 Resolving the labels gives a different, channel-faithful lift.
 The ordered histories are rooted combs with dimensions $3$, $12$, and $60$;
 canonical one-leaf insertion has respectively $3$, $4$, and $5$ children.
