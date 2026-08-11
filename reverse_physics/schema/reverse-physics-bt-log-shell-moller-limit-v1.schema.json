@@ -1,0 +1,133 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-log-shell-moller-limit-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["certificate", "schema_version", "dependency_tags", "lifecycle_state", "result_kind", "question", "answer", "continuum_model", "strong_limit_obstruction", "weak_limit", "dressed_boundary_bundle", "disposition", "does_not_establish", "next_gate", "provenance", "verification_commands", "checks", "report", "schema"],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_LOG_SHELL_MOLLER_LIMIT_V1"},
+    "schema_version": {"const": "reverse-physics-bt-log-shell-moller-limit-v1"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "result_kind": {"type": "string", "minLength": 100},
+    "question": {"type": "string", "minLength": 250},
+    "answer": {"type": "string", "minLength": 1000},
+    "continuum_model": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["coordinate", "ordinary_carrier", "shell_width", "shell_vector", "endpoint_limit", "pair_channels", "shell_fixtures"],
+      "properties": {
+        "coordinate": {"const": "y=-log r"},
+        "ordinary_carrier": {"const": "C hard direct_sum L2((0,infinity),dy) tensor C^3"},
+        "shell_width": {"const": "ell=log(c)>0"},
+        "shell_vector": {"const": "u_(n,i)=1_[2n ell,(2n+1)ell]/sqrt(ell) in channel i"},
+        "endpoint_limit": {"const": "n->infinity corresponds to r->0"},
+        "pair_channels": {"const": ["12", "13", "23"]},
+        "shell_fixtures": {"type": "array", "minItems": 6, "maxItems": 6}
+      }
+    },
+    "strong_limit_obstruction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["real_column_norm_square", "distinct_shell_column_distance_square", "noncauchy_fixtures", "theorem", "all_order_shell_image", "all_order_distinct_shell_distance_square", "all_order_condition", "disposition"],
+      "properties": {
+        "real_column_norm_square": {"const": {"denominator": 16, "numerator": 1}},
+        "distinct_shell_column_distance_square": {"const": {"denominator": 8, "numerator": 1}},
+        "noncauchy_fixtures": {"type": "array", "minItems": 5, "maxItems": 5},
+        "theorem": {"type": "string", "minLength": 70},
+        "all_order_shell_image": {"const": "exp(x A_n)h=cos(x/4)h+sin(x/4)v_n with v_n=4 A_n h"},
+        "all_order_distinct_shell_distance_square": {"const": "2 sin(x/4)^2"},
+        "all_order_condition": {"type": "string", "minLength": 100},
+        "disposition": {"const": "NO_STRONG_MOLLER_LIMIT_ON_ORDINARY_LOG_SHELL_CARRIER"}
+      }
+    },
+    "weak_limit": {
+      "const": {
+        "local_core_fixtures": [
+          {"probe_shells": [0], "escaping_shell": 1, "all_A_matrix_elements_zero": true, "all_continuum_B_matrix_elements_zero": true},
+          {"probe_shells": [0, 1], "escaping_shell": 2, "all_A_matrix_elements_zero": true, "all_continuum_B_matrix_elements_zero": true},
+          {"probe_shells": [0, 1, 2], "escaping_shell": 3, "all_A_matrix_elements_zero": true, "all_continuum_B_matrix_elements_zero": true},
+          {"probe_shells": [0, 1, 2, 3], "escaping_shell": 4, "all_A_matrix_elements_zero": true, "all_continuum_B_matrix_elements_zero": true}
+        ],
+        "A_weak": "0",
+        "B_weak": "-(1/32)|h><h|",
+        "S_weak_through_x2": "1-(x^2/32)|h><h|",
+        "pseudounitarity_defect_through_x2": "-(x^2/16)|h><h|",
+        "S_weak_all_order": "1+(cos(x/4)-1)|h><h|",
+        "pseudounitarity_defect_all_order": "-sin(x/4)^2|h><h|",
+        "meaning": "the real probability escapes to the endpoint and is absent from the ordinary local weak limit",
+        "disposition": "CONTRACTION_NOT_ISOMETRY"
+      }
+    },
+    "dressed_boundary_bundle": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["abstract_fibre_basis", "embedding", "pullback_A", "pullback_B", "intertwining", "hard_survival_response", "real_total_response", "inclusive_response", "hard_probability_all_order", "endpoint_probability_all_order", "inclusive_probability_all_order", "state"],
+      "properties": {
+        "abstract_fibre_basis": {"const": ["hard", "endpoint_12", "endpoint_13", "endpoint_23"]},
+        "embedding": {"const": "J_n hard=hard and J_n endpoint_i=u_(n,i)"},
+        "pullback_A": {"type": "array", "minItems": 6, "maxItems": 6},
+        "pullback_B": {"type": "array", "minItems": 10, "maxItems": 10},
+        "intertwining": {"const": "S_n J_n=J_n exp(x A_*) on the four-dimensional shell fibre"},
+        "hard_survival_response": {"const": {"denominator": 16, "numerator": -1}},
+        "real_total_response": {"const": {"denominator": 16, "numerator": 1}},
+        "inclusive_response": {"const": {"denominator": 1, "numerator": 0}},
+        "hard_probability_all_order": {"const": "cos(x/4)^2"},
+        "endpoint_probability_all_order": {"const": "sin(x/4)^2"},
+        "inclusive_probability_all_order": {"const": "1"},
+        "state": {"const": "LEADING_LOG_REDUCED_MODE_BUNDLE_CONSTRUCTED"}
+      }
+    },
+    "disposition": {
+      "const": {
+        "finite_regulated_physical_shell_isometries": "CONSTRUCTED",
+        "ordinary_L2_strong_Moller_limit": "EXACT_OBSTRUCTION",
+        "ordinary_weak_limit": "CONTRACTION_WITH_MINUS_1_OVER_16_DEFECT",
+        "dressed_boundary_fibre": "CONSTRUCTED_AT_LEADING_LOG_REDUCED_MODE",
+        "inclusive_shell_probability_cylinder": "REGULATOR_INDEPENDENT_FOR_EXACT_FINITE_SHELL_EXPONENTIAL",
+        "local_LSZ_or_AQFT_affiliation": "NOT_ESTABLISHED",
+        "full_dynamical_dressed_S_matrix": "NOT_CONSTRUCTED",
+        "complete_NLO_probability": "NOT_ESTABLISHED",
+        "beyond_tree_positivity": "NOT_ESTABLISHED",
+        "Eq19_all_orders": "NOT_PROVED"
+      }
+    },
+    "does_not_establish": {"type": "array", "minItems": 12, "maxItems": 12},
+    "next_gate": {"type": "string", "minLength": 350},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_commit", "retrieval_date", "inputs"],
+      "properties": {
+        "source_commit": {"const": "53d275c8"},
+        "retrieval_date": {"const": "2026-08-11"},
+        "inputs": {
+          "type": "array",
+          "minItems": 5,
+          "maxItems": 5,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["path", "sha256"],
+            "properties": {"path": {"type": "string"}, "sha256": {"pattern": "^[0-9a-f]{64}$"}}
+          }
+        }
+      }
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "maxItems": 3},
+    "checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"const": 22},
+        "total": {"const": 22},
+        "failures": {"const": []},
+        "details": {"type": "object", "minProperties": 22, "maxProperties": 22}
+      }
+    },
+    "report": {"const": "reverse_physics/reports/bt-log-shell-moller-limit.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-log-shell-moller-limit-v1.schema.json"}
+  }
+}

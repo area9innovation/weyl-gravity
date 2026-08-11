@@ -1,0 +1,867 @@
+{
+  "answer": "There is no ordinary strong Moller limit, already at the first shell coefficient. In y=-log r, take normalized shell vectors u_(n,i) supported on disjoint intervals [2n ell,(2n+1)ell]. The physical generator satisfies A_n h=(sqrt(3)/12) sum_i u_(n,i), so ||A_n h||^2=1/16 but ||A_n h-A_m h||^2=1/8 for n not equal to m. The hard column is therefore not Cauchy and no strong coefficient limit exists on the ordinary carrier. The shell vectors converge weakly to zero. Consequently the weak operator limit retains B_hh=-1/32 but loses the real column, producing a pseudo-unitarity defect -1/16 at order x^2; it cannot be called a physical unitary limit. There is an exact dressed alternative: let J_n map a fixed abstract boundary fibre (hard,e_12,e_13,e_23) isometrically to (hard,u_(n,12),u_(n,13),u_(n,23)). Then J_n^dagger A_n J_n=A_* and J_n^dagger B_n J_n=A_*^2/2 for every n, so the pulled-back isometry exp(x A_*) and its hard-plus-real probability are regulator independent. This constructs a leading-log dressed shell bundle and an inclusive cylinder weight, not a local LSZ or AQFT affiliation, not the full dynamical S-matrix, and not beyond-tree positivity.",
+  "certificate": "REVERSE_PHYSICS_BT_LOG_SHELL_MOLLER_LIMIT_V1",
+  "checks": {
+    "details": {
+      "A_star_is_skew": true,
+      "B_star_is_A2_over_2": true,
+      "all_order_endpoint_weight_is_retained_by_bundle": true,
+      "all_order_rotation_frequency_is_1_4": true,
+      "all_order_weak_limit_is_contraction": true,
+      "bundle_probability_cancels_through_x2": true,
+      "bundle_pullback_is_n_independent": true,
+      "complete_physical_S_not_established": true,
+      "distinct_Ah_distance_square_is_1_8": true,
+      "finite_shell_pseudounitarity_closes": true,
+      "input_hashes_pinned": true,
+      "local_affiliation_not_established": true,
+      "local_shell_matrix_elements_eventually_zero": true,
+      "normalized_real_direction_has_unit_norm": true,
+      "ordinary_strong_coefficient_limit_fails": true,
+      "per_pair_amplitude_square_is_1_48": true,
+      "real_column_norm_is_1_16": true,
+      "shell_vectors_are_orthonormal": true,
+      "shells_are_pairwise_disjoint": true,
+      "shells_have_unit_log_length": true,
+      "weak_hard_B_is_minus_1_32": true,
+      "weak_limit_unitarity_defect_is_minus_1_16": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 22,
+    "total": 22
+  },
+  "continuum_model": {
+    "coordinate": "y=-log r",
+    "endpoint_limit": "n->infinity corresponds to r->0",
+    "ordinary_carrier": "C hard direct_sum L2((0,infinity),dy) tensor C^3",
+    "pair_channels": [
+      "12",
+      "13",
+      "23"
+    ],
+    "shell_fixtures": [
+      {
+        "inner_products": [
+          {
+            "inner_product": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "other": 0
+          },
+          {
+            "inner_product": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "other": 1
+          },
+          {
+            "inner_product": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "other": 2
+          },
+          {
+            "inner_product": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "other": 3
+          },
+          {
+            "inner_product": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "other": 4
+          },
+          {
+            "inner_product": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "other": 5
+          }
+        ],
+        "n": 0,
+        "norm_square_each_channel": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "real_column_norm_square": {
+          "denominator": 16,
+          "numerator": 1
+        },
+        "y_interval_in_units_of_ell": [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 1
+          }
+        ]
+      },
+      {
+        "inner_products": [
+          {
+            "inner_product": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "other": 0
+          },
+          {
+            "inner_product": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "other": 1
+          },
+          {
+            "inner_product": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "other": 2
+          },
+          {
+            "inner_product": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "other": 3
+          },
+          {
+            "inner_product": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "other": 4
+          },
+          {
+            "inner_product": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "other": 5
+          }
+        ],
+        "n": 1,
+        "norm_square_each_channel": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "real_column_norm_square": {
+          "denominator": 16,
+          "numerator": 1
+        },
+        "y_interval_in_units_of_ell": [
+          {
+            "denominator": 1,
+            "numerator": 2
+          },
+          {
+            "denominator": 1,
+            "numerator": 3
+          }
+        ]
+      },
+      {
+        "inner_products": [
+          {
+            "inner_product": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "other": 0
+          },
+          {
+            "inner_product": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "other": 1
+          },
+          {
+            "inner_product": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "other": 2
+          },
+          {
+            "inner_product": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "other": 3
+          },
+          {
+            "inner_product": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "other": 4
+          },
+          {
+            "inner_product": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "other": 5
+          }
+        ],
+        "n": 2,
+        "norm_square_each_channel": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "real_column_norm_square": {
+          "denominator": 16,
+          "numerator": 1
+        },
+        "y_interval_in_units_of_ell": [
+          {
+            "denominator": 1,
+            "numerator": 4
+          },
+          {
+            "denominator": 1,
+            "numerator": 5
+          }
+        ]
+      },
+      {
+        "inner_products": [
+          {
+            "inner_product": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "other": 0
+          },
+          {
+            "inner_product": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "other": 1
+          },
+          {
+            "inner_product": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "other": 2
+          },
+          {
+            "inner_product": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "other": 3
+          },
+          {
+            "inner_product": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "other": 4
+          },
+          {
+            "inner_product": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "other": 5
+          }
+        ],
+        "n": 3,
+        "norm_square_each_channel": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "real_column_norm_square": {
+          "denominator": 16,
+          "numerator": 1
+        },
+        "y_interval_in_units_of_ell": [
+          {
+            "denominator": 1,
+            "numerator": 6
+          },
+          {
+            "denominator": 1,
+            "numerator": 7
+          }
+        ]
+      },
+      {
+        "inner_products": [
+          {
+            "inner_product": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "other": 0
+          },
+          {
+            "inner_product": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "other": 1
+          },
+          {
+            "inner_product": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "other": 2
+          },
+          {
+            "inner_product": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "other": 3
+          },
+          {
+            "inner_product": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "other": 4
+          },
+          {
+            "inner_product": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "other": 5
+          }
+        ],
+        "n": 4,
+        "norm_square_each_channel": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "real_column_norm_square": {
+          "denominator": 16,
+          "numerator": 1
+        },
+        "y_interval_in_units_of_ell": [
+          {
+            "denominator": 1,
+            "numerator": 8
+          },
+          {
+            "denominator": 1,
+            "numerator": 9
+          }
+        ]
+      },
+      {
+        "inner_products": [
+          {
+            "inner_product": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "other": 0
+          },
+          {
+            "inner_product": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "other": 1
+          },
+          {
+            "inner_product": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "other": 2
+          },
+          {
+            "inner_product": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "other": 3
+          },
+          {
+            "inner_product": {
+              "denominator": 1,
+              "numerator": 0
+            },
+            "other": 4
+          },
+          {
+            "inner_product": {
+              "denominator": 1,
+              "numerator": 1
+            },
+            "other": 5
+          }
+        ],
+        "n": 5,
+        "norm_square_each_channel": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "real_column_norm_square": {
+          "denominator": 16,
+          "numerator": 1
+        },
+        "y_interval_in_units_of_ell": [
+          {
+            "denominator": 1,
+            "numerator": 10
+          },
+          {
+            "denominator": 1,
+            "numerator": 11
+          }
+        ]
+      }
+    ],
+    "shell_vector": "u_(n,i)=1_[2n ell,(2n+1)ell]/sqrt(ell) in channel i",
+    "shell_width": "ell=log(c)>0"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "disposition": {
+    "Eq19_all_orders": "NOT_PROVED",
+    "beyond_tree_positivity": "NOT_ESTABLISHED",
+    "complete_NLO_probability": "NOT_ESTABLISHED",
+    "dressed_boundary_fibre": "CONSTRUCTED_AT_LEADING_LOG_REDUCED_MODE",
+    "finite_regulated_physical_shell_isometries": "CONSTRUCTED",
+    "full_dynamical_dressed_S_matrix": "NOT_CONSTRUCTED",
+    "inclusive_shell_probability_cylinder": "REGULATOR_INDEPENDENT_FOR_EXACT_FINITE_SHELL_EXPONENTIAL",
+    "local_LSZ_or_AQFT_affiliation": "NOT_ESTABLISHED",
+    "ordinary_L2_strong_Moller_limit": "EXACT_OBSTRUCTION",
+    "ordinary_weak_limit": "CONTRACTION_WITH_MINUS_1_OVER_16_DEFECT"
+  },
+  "does_not_establish": [
+    "a strong Moller operator on the ordinary logarithmic L2 carrier",
+    "a canonical local meaning for the abstract endpoint fibre",
+    "affiliation with an inclusive LSZ or spacetime-local detector algebra",
+    "incoming degenerate-sector completeness",
+    "the full BT Hamiltonian generation of the shell bundle",
+    "a continuum trace-class or local non-normal S-matrix domain",
+    "the finite NLO constant",
+    "positivity beyond tree level",
+    "all-order Eq. (19)",
+    "a gravitational or BRST lift",
+    "anything LORENTZIAN-CAUSAL",
+    "literature priority"
+  ],
+  "dressed_boundary_bundle": {
+    "abstract_fibre_basis": [
+      "hard",
+      "endpoint_12",
+      "endpoint_13",
+      "endpoint_23"
+    ],
+    "embedding": "J_n hard=hard and J_n endpoint_i=u_(n,i)",
+    "endpoint_probability_all_order": "sin(x/4)^2",
+    "hard_probability_all_order": "cos(x/4)^2",
+    "hard_survival_response": {
+      "denominator": 16,
+      "numerator": -1
+    },
+    "inclusive_probability_all_order": "1",
+    "inclusive_response": {
+      "denominator": 1,
+      "numerator": 0
+    },
+    "intertwining": "S_n J_n=J_n exp(x A_*) on the four-dimensional shell fibre",
+    "pullback_A": [
+      {
+        "column": 1,
+        "row": 0,
+        "value": {
+          "rational": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "sqrt3": {
+            "denominator": 12,
+            "numerator": -1
+          }
+        }
+      },
+      {
+        "column": 2,
+        "row": 0,
+        "value": {
+          "rational": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "sqrt3": {
+            "denominator": 12,
+            "numerator": -1
+          }
+        }
+      },
+      {
+        "column": 3,
+        "row": 0,
+        "value": {
+          "rational": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "sqrt3": {
+            "denominator": 12,
+            "numerator": -1
+          }
+        }
+      },
+      {
+        "column": 0,
+        "row": 1,
+        "value": {
+          "rational": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "sqrt3": {
+            "denominator": 12,
+            "numerator": 1
+          }
+        }
+      },
+      {
+        "column": 0,
+        "row": 2,
+        "value": {
+          "rational": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "sqrt3": {
+            "denominator": 12,
+            "numerator": 1
+          }
+        }
+      },
+      {
+        "column": 0,
+        "row": 3,
+        "value": {
+          "rational": {
+            "denominator": 1,
+            "numerator": 0
+          },
+          "sqrt3": {
+            "denominator": 12,
+            "numerator": 1
+          }
+        }
+      }
+    ],
+    "pullback_B": [
+      {
+        "column": 0,
+        "row": 0,
+        "value": {
+          "rational": {
+            "denominator": 32,
+            "numerator": -1
+          },
+          "sqrt3": {
+            "denominator": 1,
+            "numerator": 0
+          }
+        }
+      },
+      {
+        "column": 1,
+        "row": 1,
+        "value": {
+          "rational": {
+            "denominator": 96,
+            "numerator": -1
+          },
+          "sqrt3": {
+            "denominator": 1,
+            "numerator": 0
+          }
+        }
+      },
+      {
+        "column": 2,
+        "row": 1,
+        "value": {
+          "rational": {
+            "denominator": 96,
+            "numerator": -1
+          },
+          "sqrt3": {
+            "denominator": 1,
+            "numerator": 0
+          }
+        }
+      },
+      {
+        "column": 3,
+        "row": 1,
+        "value": {
+          "rational": {
+            "denominator": 96,
+            "numerator": -1
+          },
+          "sqrt3": {
+            "denominator": 1,
+            "numerator": 0
+          }
+        }
+      },
+      {
+        "column": 1,
+        "row": 2,
+        "value": {
+          "rational": {
+            "denominator": 96,
+            "numerator": -1
+          },
+          "sqrt3": {
+            "denominator": 1,
+            "numerator": 0
+          }
+        }
+      },
+      {
+        "column": 2,
+        "row": 2,
+        "value": {
+          "rational": {
+            "denominator": 96,
+            "numerator": -1
+          },
+          "sqrt3": {
+            "denominator": 1,
+            "numerator": 0
+          }
+        }
+      },
+      {
+        "column": 3,
+        "row": 2,
+        "value": {
+          "rational": {
+            "denominator": 96,
+            "numerator": -1
+          },
+          "sqrt3": {
+            "denominator": 1,
+            "numerator": 0
+          }
+        }
+      },
+      {
+        "column": 1,
+        "row": 3,
+        "value": {
+          "rational": {
+            "denominator": 96,
+            "numerator": -1
+          },
+          "sqrt3": {
+            "denominator": 1,
+            "numerator": 0
+          }
+        }
+      },
+      {
+        "column": 2,
+        "row": 3,
+        "value": {
+          "rational": {
+            "denominator": 96,
+            "numerator": -1
+          },
+          "sqrt3": {
+            "denominator": 1,
+            "numerator": 0
+          }
+        }
+      },
+      {
+        "column": 3,
+        "row": 3,
+        "value": {
+          "rational": {
+            "denominator": 96,
+            "numerator": -1
+          },
+          "sqrt3": {
+            "denominator": 1,
+            "numerator": 0
+          }
+        }
+      }
+    ],
+    "real_total_response": {
+      "denominator": 16,
+      "numerator": 1
+    },
+    "state": "LEADING_LOG_REDUCED_MODE_BUNDLE_CONSTRUCTED"
+  },
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "Give the abstract endpoint fibre a physical affiliation by deriving the logarithmic translation/dressing maps from the BT asymptotic Hamiltonian on complete incoming and outgoing degenerate sectors, and prove that the resulting cylinder weight equals the generalized-Born trace on a local detector algebra. Without that affiliation the bundle is an exact reduced-mode completion, not the physical S-matrix.",
+  "provenance": {
+    "inputs": [
+      {
+        "path": "planning/work-items/reverse-physics-bateman-log-shell-moller-limit.json",
+        "sha256": "80d1422a5bf3261879454e8992e0fd722d055faed53a2ad194686e34ce806804"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_PHYSICAL_SHELL_PSEUDOUNITARY_COMPLETION_V1.json",
+        "sha256": "8709d3fdb0c38ec90a9e0c517dda49bc55734b6c257fd9c2add39e65365715da"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_INCLUSIVE_NLO_OBJECT_LEDGER_V1.json",
+        "sha256": "389a3441ac32159e57f32b2b50552823ec770879b579be54bbdabc7e78e59d47"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_REAL_VIRTUAL_AXIS_GLUING_V1.json",
+        "sha256": "c2ffad79666aaec1d17585f76e9c90403b3b410006e624df9626bcc1571d251a"
+      },
+      {
+        "path": "notes/bateman-turok-embedding.md",
+        "sha256": "008b593036b125996afb309260682a4cc44b9af215b62230af50f0e234ba8a15"
+      }
+    ],
+    "retrieval_date": "2026-08-11",
+    "source_commit": "53d275c8"
+  },
+  "question": "Do the regulated physical hard-plus-collinear shell isometries whose real column has norm 1/16 converge to an isometric Moller operator on the ordinary L2((0,1),dr/r) carrier as the shell moves to r=0, and if not, is there an exact regulator-pulled-back boundary-channel completion?",
+  "report": "reverse_physics/reports/bt-log-shell-moller-limit.md",
+  "result_kind": "ordinary logarithmic-shell Moller strong-limit obstruction and leading-log dressed boundary-fibre construction",
+  "schema": "reverse_physics/schema/reverse-physics-bt-log-shell-moller-limit-v1.schema.json",
+  "schema_version": "reverse-physics-bt-log-shell-moller-limit-v1",
+  "strong_limit_obstruction": {
+    "all_order_condition": "no strong limit whenever sin(x/4) is nonzero; in particular for every sufficiently small nonzero perturbative x",
+    "all_order_distinct_shell_distance_square": "2 sin(x/4)^2",
+    "all_order_shell_image": "exp(x A_n)h=cos(x/4)h+sin(x/4)v_n with v_n=4 A_n h",
+    "disposition": "NO_STRONG_MOLLER_LIMIT_ON_ORDINARY_LOG_SHELL_CARRIER",
+    "distinct_shell_column_distance_square": {
+      "denominator": 8,
+      "numerator": 1
+    },
+    "noncauchy_fixtures": [
+      {
+        "distance_square_Ah": {
+          "denominator": 8,
+          "numerator": 1
+        },
+        "m": 1,
+        "n": 0
+      },
+      {
+        "distance_square_Ah": {
+          "denominator": 8,
+          "numerator": 1
+        },
+        "m": 2,
+        "n": 1
+      },
+      {
+        "distance_square_Ah": {
+          "denominator": 8,
+          "numerator": 1
+        },
+        "m": 3,
+        "n": 2
+      },
+      {
+        "distance_square_Ah": {
+          "denominator": 8,
+          "numerator": 1
+        },
+        "m": 4,
+        "n": 3
+      },
+      {
+        "distance_square_Ah": {
+          "denominator": 8,
+          "numerator": 1
+        },
+        "m": 5,
+        "n": 4
+      }
+    ],
+    "real_column_norm_square": {
+      "denominator": 16,
+      "numerator": 1
+    },
+    "theorem": "a strong operator limit would make A_n h Cauchy; the exact distance 1/8 forbids it"
+  },
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_log_shell_moller_limit.py --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_log_shell_moller_limit.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_log_shell_moller_limit"
+  ],
+  "weak_limit": {
+    "A_weak": "0",
+    "B_weak": "-(1/32)|h><h|",
+    "S_weak_all_order": "1+(cos(x/4)-1)|h><h|",
+    "S_weak_through_x2": "1-(x^2/32)|h><h|",
+    "disposition": "CONTRACTION_NOT_ISOMETRY",
+    "local_core_fixtures": [
+      {
+        "all_A_matrix_elements_zero": true,
+        "all_continuum_B_matrix_elements_zero": true,
+        "escaping_shell": 1,
+        "probe_shells": [
+          0
+        ]
+      },
+      {
+        "all_A_matrix_elements_zero": true,
+        "all_continuum_B_matrix_elements_zero": true,
+        "escaping_shell": 2,
+        "probe_shells": [
+          0,
+          1
+        ]
+      },
+      {
+        "all_A_matrix_elements_zero": true,
+        "all_continuum_B_matrix_elements_zero": true,
+        "escaping_shell": 3,
+        "probe_shells": [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "all_A_matrix_elements_zero": true,
+        "all_continuum_B_matrix_elements_zero": true,
+        "escaping_shell": 4,
+        "probe_shells": [
+          0,
+          1,
+          2,
+          3
+        ]
+      }
+    ],
+    "meaning": "the real probability escapes to the endpoint and is absent from the ordinary local weak limit",
+    "pseudounitarity_defect_all_order": "-sin(x/4)^2|h><h|",
+    "pseudounitarity_defect_through_x2": "-(x^2/16)|h><h|"
+  }
+}

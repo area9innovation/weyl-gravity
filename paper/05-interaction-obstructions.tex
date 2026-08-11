@@ -187,6 +187,12 @@ norm squared $1/16$, hence $2\operatorname{Re}B_{hh}=-1/16$ and the Born-rate
 hard response is exactly $-3/512$.  This is phase independent and has an exact
 finite isometric witness, but remains conditional on a continuum
 incoming-plus-outgoing dressed S-matrix and its trace domain.
+The ordinary logarithmic carrier cannot supply that limit: disjoint shells
+approaching the endpoint have fixed real-column norm and mutual distance
+squared $1/8$.  Their exact shell isometries likewise remain separated by
+$2\sin^2(x/4)$.  A fixed abstract endpoint fibre pulls the family back to one
+isometry and preserves the conditional cancellation, but its local detector
+affiliation and dynamical origin remain open.
 Independently, the projected three-channel hard loop logarithm closes the
 Callan--Symanzik equation exactly with the Born rate and one-loop beta
 function.  This yields the positive leading-log nonforward prediction
@@ -1646,6 +1652,20 @@ or $-3/512$ after multiplication by the Born coefficient.  Certificate
 $\mathbb Q(\sqrt3)$ isometric witness and proves independence from phases and
 anti-Hermitian second-order freedom.  It does not construct the continuum
 dressed S-matrix, its degenerate trace domain, or beyond-tree positivity.
+The ordinary continuum limit is nevertheless decidable.  In logarithmic
+coordinate $y=-\log r$, choose normalized disjoint shell vectors $u_{n,i}$
+moving to the endpoint.  Then
+\[
+ \|A_nh-A_mh\|^2=\frac18\quad(n\ne m),\qquad
+ \|e^{xA_n}h-e^{xA_m}h\|^2=2\sin^2(x/4).
+\]
+Thus no strong Møller limit exists on the ordinary logarithmic $L^2$ carrier.
+The weak limit is a contraction with order-$x^2$ defect $-1/16$.  Certificate
+\texttt{REVERSE\_PHYSICS\_BT\_LOG\_SHELL\_MOLLER\_LIMIT\_V1}
+constructs instead a fixed endpoint fibre with embeddings $J_ne_i=u_{n,i}$;
+the pulled-back shell isometry and its $-1/16+1/16=0$ probability ledger are
+independent of $n$.  This leading-log dressed bundle is not affiliated with a
+local LSZ/AQFT detector and is not derived from the full BT Hamiltonian.
 \end{remark}
 
 \begin{remark}[Physical ultraviolet hard-scattering law]
