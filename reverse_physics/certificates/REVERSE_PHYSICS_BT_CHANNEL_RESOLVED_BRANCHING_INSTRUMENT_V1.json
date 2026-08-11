@@ -1,0 +1,539 @@
+{
+  "answer": "Yes, through three emissions on the declared reduced carrier. The labeled nested histories are rooted combs with 3, 12, and 60 elements and uniform per-history factorial Grams 1/48, 5/3072, and 9/81920. Canonical one-leaf insertion has 3, 4, and 5 children, so the unique balanced Markov extension rates are q0=1/48, q1=5/64, and q2=27/400, with total exit rates 1/16, 5/16, and 27/80. The associated finite GKSL jump family is completely positive and trace preserving; its first channel Gram is exactly (1/48) I2 on each of the three physical pair channels, and its level probabilities reproduce P1=a/16, P2=5a^2/512, and P3=9a^3/8192 at leading order. This is a channel-faithful normalized inclusive instrument and a stronger physical affiliation than the scalar total-count Cox state. The diagonal higher-species lift and absorbing level-three closure are constructions, not derived BT amplitude phases or an all-order asymptotic Hamiltonian.",
+  "assumptions": [
+    "Permutation symmetry makes every labeled rooted-comb history at fixed emission number carry the selected-history coefficient already used in the certified history sums.",
+    "The balanced Markov lift assigns the same nonnegative extension rate to every canonical child of a fixed level.",
+    "The two physical parent-jet species are lifted by I2 above the first jump; six- and seven-point scalar squared amplitudes do not determine a more general species tensor or its phases.",
+    "Level three is made absorbing solely to obtain a finite normalized semigroup; this closure makes no prediction for four or more emissions."
+  ],
+  "branching_instrument": {
+    "all_column_sums_zero": true,
+    "classical_history_dimension": 76,
+    "closed_level_probabilities": {
+      "p0": "exp(-a/16)",
+      "p1": "(exp(-a/16)-exp(-5*a/16))/4",
+      "p2": "25*exp(-a/16)/88-25*exp(-5*a/16)/8+125*exp(-27*a/80)/44",
+      "p3": "1-p0-p1-p2"
+    },
+    "complete_positivity": "FINITE_DIMENSIONAL_GKSL_FORM",
+    "generator_entry_sha256": "d5410264c4a2015ddbfa7c018771b96089f2eae6c5b9df15bf513c0da7fe33c5",
+    "jump_operators": "L_(h->c)=sqrt(q_k)|c><h| tensor I_2 for every insertion edge; sum_c L^dagger L=Lambda_k |h><h| tensor I_2",
+    "level_population_taylor_coefficients": [
+      [
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 16,
+          "numerator": -1
+        },
+        {
+          "denominator": 512,
+          "numerator": 1
+        },
+        {
+          "denominator": 24576,
+          "numerator": -1
+        },
+        {
+          "denominator": 1572864,
+          "numerator": 1
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 16,
+          "numerator": 1
+        },
+        {
+          "denominator": 256,
+          "numerator": -3
+        },
+        {
+          "denominator": 24576,
+          "numerator": 31
+        },
+        {
+          "denominator": 131072,
+          "numerator": -13
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 512,
+          "numerator": 5
+        },
+        {
+          "denominator": 8192,
+          "numerator": -19
+        },
+        {
+          "denominator": 3932160,
+          "numerator": 1157
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 8192,
+          "numerator": 9
+        },
+        {
+          "denominator": 2621440,
+          "numerator": -513
+        }
+      ]
+    ],
+    "level_three_is_absorbing": true,
+    "lindblad_generator": "L(rho)=sum_e J_e rho J_e^dagger-1/2*{J_e^dagger J_e,rho}",
+    "nonzero_generator_entries": 91,
+    "normalization_and_positivity": "For a>=0, the finite Metzler generator with zero column sums exponentiates to a stochastic matrix; its GKSL lift is CPTP.",
+    "off_diagonal_entries_are_nonnegative": true,
+    "physical_species_dimension": 2,
+    "population_series_sum": [
+      {
+        "denominator": 1,
+        "numerator": 1
+      },
+      {
+        "denominator": 1,
+        "numerator": 0
+      },
+      {
+        "denominator": 1,
+        "numerator": 0
+      },
+      {
+        "denominator": 1,
+        "numerator": 0
+      },
+      {
+        "denominator": 1,
+        "numerator": 0
+      }
+    ],
+    "reduced_quantum_carrier_dimension": 152,
+    "trace_preservation": "EXACT_FROM_ZERO_COLUMN_SUMS_AND_GKSL_ANTICOMMUTATOR"
+  },
+  "certificate": "REVERSE_PHYSICS_BT_CHANNEL_RESOLVED_BRANCHING_INSTRUMENT_V1",
+  "channel_factorial_grams": {
+    "form": "G_k=w_k I_(H_k) tensor I_2 with normalized species trace Tr_2/2",
+    "positivity": "STRICTLY_POSITIVE_DIAGONAL_THROUGH_LEVEL_THREE",
+    "rows": [
+      {
+        "emissions": 1,
+        "history_dimension": 3,
+        "per_history_coefficient": {
+          "denominator": 48,
+          "numerator": 1
+        },
+        "rank_including_species": 6,
+        "summed_factorial_moment": {
+          "denominator": 16,
+          "numerator": 1
+        }
+      },
+      {
+        "emissions": 2,
+        "history_dimension": 12,
+        "per_history_coefficient": {
+          "denominator": 3072,
+          "numerator": 5
+        },
+        "rank_including_species": 24,
+        "summed_factorial_moment": {
+          "denominator": 256,
+          "numerator": 5
+        }
+      },
+      {
+        "emissions": 3,
+        "history_dimension": 60,
+        "per_history_coefficient": {
+          "denominator": 81920,
+          "numerator": 9
+        },
+        "rank_including_species": 120,
+        "summed_factorial_moment": {
+          "denominator": 4096,
+          "numerator": 27
+        }
+      }
+    ]
+  },
+  "checks": {
+    "details": {
+      "all_extension_rates_are_positive": true,
+      "certified_selected_histories_are_reproduced": true,
+      "channel_grams_are_positive_full_rank": true,
+      "children_per_history_are_3_4_5": true,
+      "claim_boundary_is_fail_closed": true,
+      "comb_formula_is_factorial_over_two": true,
+      "extension_rates_are_1_over_48_5_over_64_27_over_400": true,
+      "first_jump_is_physical_one_over_48_per_pair": true,
+      "first_jump_preserves_two_physical_species": true,
+      "fixed_three_mark_words_are_too_small": true,
+      "generator_is_conservative_Metzler": true,
+      "gksl_lift_is_trace_preserving": true,
+      "history_counts_are_1_3_12_60": true,
+      "input_hashes_are_pinned": true,
+      "insertion_fibres_partition_next_levels": true,
+      "predecessors_are_certified": true,
+      "probabilities_normalize_through_fourth_series_order": true,
+      "total_rates_are_1_over_16_5_over_16_27_over_80": true,
+      "tree_leading_probabilities_are_reproduced": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 19,
+    "total": 19
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "disposition": {
+    "Eq19_all_orders": "NOT_PROVED",
+    "complete_BT_probability": "NOT_CONSTRUCTED",
+    "fixed_three_mark_Cox_lift": "NOT_CHANNEL_FAITHFUL_WITHOUT_ENLARGEMENT",
+    "higher_point_species_and_phase_affiliation": "NOT_DERIVED",
+    "labeled_history_channel_tensor_through_three_emissions": "CONSTRUCTED",
+    "physical_rank_two_first_jump_affiliation": "EXACT_ONE_OVER_48_I2_PER_PAIR",
+    "positive_normalized_reduced_mode_instrument": "CONSTRUCTED_WITH_LEVEL_THREE_ABSORBING_CLOSURE",
+    "spacetime_local_physical_S_matrix": "NOT_CONSTRUCTED",
+    "unique_all_order_branching_law": "NOT_SELECTED"
+  },
+  "does_not_establish": [
+    "the six- or seven-point amplitude phase and off-diagonal species tensor",
+    "that balanced comb insertion is generated by the unpublished BT asymptotic Hamiltonian",
+    "a unique channel-resolved process beyond three emissions",
+    "the eight-point fourth transition rate",
+    "a complete physical 2-to-n probability",
+    "incoming degenerate-sector completion",
+    "a spacetime-local Moller, LSZ, or unitary S operator",
+    "the all-order Eq. (19)",
+    "anything LORENTZIAN-CAUSAL",
+    "a gravitational or BRST lift",
+    "literature priority"
+  ],
+  "history_carrier": {
+    "definition": "H_k is the set of labeled rooted combs on k+2 leaves, represented by a permutation modulo exchange of the first cherry",
+    "history_checks": {
+      "level_1_children_are_all_combs": true,
+      "level_1_fibres_are_disjoint": true,
+      "level_2_children_are_all_combs": true,
+      "level_2_fibres_are_disjoint": true,
+      "level_3_children_are_all_combs": true,
+      "level_3_fibres_are_disjoint": true
+    },
+    "insertion_rule": "For a comb ({a,b},tail), insert new leaf x into either cherry leg or any ordered-tail gap; deleting x is the inverse and gives k+3 disjoint children per level-k history",
+    "levels": [
+      {
+        "children_per_history": 3,
+        "edge_count": 3,
+        "edge_list_sha256": "4a4d810760cbfedd19da4b4bc8a5d702e7c9d43b738af0cffed57e1ea96ee8c0",
+        "emissions": 0,
+        "history_count": 1,
+        "history_list": [
+          "0,1|"
+        ],
+        "history_list_sha256": "f83751a2494225a875ec30a8212fb71cd9b824c2b8aa0df500d44a467668062c",
+        "outgoing_leaves": 2
+      },
+      {
+        "children_per_history": 4,
+        "edge_count": 12,
+        "edge_list_sha256": "883beb69d84806be89aaa6e400f36316efa68237178e441214dced9d8ef5d66d",
+        "emissions": 1,
+        "history_count": 3,
+        "history_list": [
+          "0,1|2",
+          "0,2|1",
+          "1,2|0"
+        ],
+        "history_list_sha256": "5dc2f7e0c5a8906efc65aaa2c4f46f5d7400cf3b5bec71c69d4ed98bf62591b2",
+        "outgoing_leaves": 3
+      },
+      {
+        "children_per_history": 5,
+        "edge_count": 60,
+        "edge_list_sha256": "57fb15f31b29cd1692c2a737addbde0af562795dffc44143e35cbd2d3d2d8697",
+        "emissions": 2,
+        "history_count": 12,
+        "history_list": [
+          "0,1|2,3",
+          "0,1|3,2",
+          "0,2|1,3",
+          "0,2|3,1",
+          "0,3|1,2",
+          "0,3|2,1",
+          "1,2|0,3",
+          "1,2|3,0",
+          "1,3|0,2",
+          "1,3|2,0",
+          "2,3|0,1",
+          "2,3|1,0"
+        ],
+        "history_list_sha256": "432f519456f36454bd93d55ec1146c83bbacadc3d2e13ec0a41315f1c917d1d3",
+        "outgoing_leaves": 4
+      },
+      {
+        "emissions": 3,
+        "history_count": 60,
+        "history_list": [
+          "0,1|2,3,4",
+          "0,1|2,4,3",
+          "0,1|3,2,4",
+          "0,1|3,4,2",
+          "0,1|4,2,3",
+          "0,1|4,3,2",
+          "0,2|1,3,4",
+          "0,2|1,4,3",
+          "0,2|3,1,4",
+          "0,2|3,4,1",
+          "0,2|4,1,3",
+          "0,2|4,3,1",
+          "0,3|1,2,4",
+          "0,3|1,4,2",
+          "0,3|2,1,4",
+          "0,3|2,4,1",
+          "0,3|4,1,2",
+          "0,3|4,2,1",
+          "0,4|1,2,3",
+          "0,4|1,3,2",
+          "0,4|2,1,3",
+          "0,4|2,3,1",
+          "0,4|3,1,2",
+          "0,4|3,2,1",
+          "1,2|0,3,4",
+          "1,2|0,4,3",
+          "1,2|3,0,4",
+          "1,2|3,4,0",
+          "1,2|4,0,3",
+          "1,2|4,3,0",
+          "1,3|0,2,4",
+          "1,3|0,4,2",
+          "1,3|2,0,4",
+          "1,3|2,4,0",
+          "1,3|4,0,2",
+          "1,3|4,2,0",
+          "1,4|0,2,3",
+          "1,4|0,3,2",
+          "1,4|2,0,3",
+          "1,4|2,3,0",
+          "1,4|3,0,2",
+          "1,4|3,2,0",
+          "2,3|0,1,4",
+          "2,3|0,4,1",
+          "2,3|1,0,4",
+          "2,3|1,4,0",
+          "2,3|4,0,1",
+          "2,3|4,1,0",
+          "2,4|0,1,3",
+          "2,4|0,3,1",
+          "2,4|1,0,3",
+          "2,4|1,3,0",
+          "2,4|3,0,1",
+          "2,4|3,1,0",
+          "3,4|0,1,2",
+          "3,4|0,2,1",
+          "3,4|1,0,2",
+          "3,4|1,2,0",
+          "3,4|2,0,1",
+          "3,4|2,1,0"
+        ],
+        "history_list_sha256": "2c5a5c9ba4ba67ff1db4c8f283501176e4eb61ff2cd3dfd70caf503f4c17aef1",
+        "outgoing_leaves": 5
+      }
+    ]
+  },
+  "lifecycle_state": "CLASSIFIED",
+  "missing_object_ledger": [
+    "a species-resolved six- and seven-point external-jet Gram rather than only its scalar square-free trace",
+    "the amplitude phases needed to identify the higher jump operators rather than only their positive norms",
+    "a derivation of the comb insertion generator from the BT soft-collinear asymptotic Hamiltonian",
+    "incoming degenerate sectors and a common incoming/outgoing detector algebra",
+    "the eight-point coefficient that determines q3 and tests continuation beyond the absorbing closure",
+    "spacetime localization and a complete physical quotient probability"
+  ],
+  "next_gate": "Compute the species-resolved six- and seven-point parent-jet matrices before taking the normalized trace. The decisive test is whether their history blocks are positive scalar multiples of I2 with the certified norms 5/3072 and 9/81920, or whether off-diagonal species interference obstructs the minimal jump lift. In parallel, the complete eight-point ordered tree fixes q3. Only after the species matrices and phases are known can the finite GKSL instrument be affiliated with a BT asymptotic Hamiltonian rather than retained as a positive reduced-mode completion.",
+  "physical_affiliation": {
+    "first_pair_channels": 3,
+    "first_per_channel_gram": {
+      "denominator": 48,
+      "numerator": 1
+    },
+    "first_species_endomorphism": "(1/48) I_2",
+    "higher_species_map": "MINIMAL_IDENTITY_LIFT_NOT_DERIVED_FROM_SIX_OR_SEVEN_POINT_AMPLITUDE_PHASES",
+    "physical_predecessor_status": "FACTORIZED_ON_DECLARED_EXTERNAL_JET_CYLINDER",
+    "relation_to_Cox_state": "The two-atom Cox state and this branching instrument have the same total leading moments through degree three, but only the branching carrier retains all 3,12,60 labeled comb histories. A fixed three-mark word space has only 3,9,27 words and is not channel-faithful without enlargement.",
+    "stinespring_statement": "The finite CPTP semigroup has a Hilbert-space Stinespring dilation for every bounded resolution interval."
+  },
+  "provenance": {
+    "inputs": [
+      {
+        "path": "planning/work-items/reverse-physics-bateman-channel-resolved-branching-instrument.json",
+        "sha256": "cf26d08f667a57bee462eb836621cd370c9076f6e5b90c0b576e76ad27ed07b3"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_PHYSICAL_COLLINEAR_OPERATOR_FACTORIZATION_V1.json",
+        "sha256": "d0f8786c62e24e37c198f4a286aa2e3b718f13decf5352d811cf554d485ed79e"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_SIX_POINT_STRONGLY_ORDERED_TREE_V1.json",
+        "sha256": "92793513ecd3491e0f1da56800c0962b4f38a836545e9470943bc754388f3c0d"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_SEVEN_POINT_COX_SELECTION_V1.json",
+        "sha256": "0530c61bac5d1178e84fa735c9cf7d7e43f53a24521c44d80a9ef634313e9136"
+      }
+    ],
+    "retrieval_date": "2026-08-11",
+    "source_commit": "0d8fb4edf077a56620b706997212257d73919661"
+  },
+  "question": "Do the certified BT one-, two-, and three-emission coefficients admit a positive channel-resolved lift on the growing labeled collinear-history carrier, and does its first jump agree with the physical rank-two pair operator?",
+  "rate_factorization": {
+    "children_per_parent": [
+      3,
+      4,
+      5
+    ],
+    "derivation": "w_k=P_k*k!/H_k and q_(k-1)=w_k/w_(k-1); Lambda_(k-1)=(k+2)*q_(k-1)",
+    "extension_rate_squares": [
+      {
+        "denominator": 48,
+        "numerator": 1
+      },
+      {
+        "denominator": 64,
+        "numerator": 5
+      },
+      {
+        "denominator": 400,
+        "numerator": 27
+      }
+    ],
+    "history_counts": [
+      3,
+      12,
+      60
+    ],
+    "leading_count_coefficients": [
+      {
+        "denominator": 16,
+        "numerator": 1
+      },
+      {
+        "denominator": 512,
+        "numerator": 5
+      },
+      {
+        "denominator": 8192,
+        "numerator": 9
+      }
+    ],
+    "ordered_simplex_factors": [
+      {
+        "denominator": 1,
+        "numerator": 1
+      },
+      {
+        "denominator": 2,
+        "numerator": 1
+      },
+      {
+        "denominator": 6,
+        "numerator": 1
+      }
+    ],
+    "per_history_factorial_grams": [
+      {
+        "denominator": 48,
+        "numerator": 1
+      },
+      {
+        "denominator": 3072,
+        "numerator": 5
+      },
+      {
+        "denominator": 81920,
+        "numerator": 9
+      }
+    ],
+    "predecessor_selected_history_coefficients": [
+      {
+        "denominator": 48,
+        "numerator": 1
+      },
+      {
+        "denominator": 3072,
+        "numerator": 5
+      },
+      {
+        "denominator": 81920,
+        "numerator": 9
+      }
+    ],
+    "reconstructed_leading_count_coefficients": [
+      {
+        "denominator": 16,
+        "numerator": 1
+      },
+      {
+        "denominator": 512,
+        "numerator": 5
+      },
+      {
+        "denominator": 8192,
+        "numerator": 9
+      }
+    ],
+    "total_exit_rates": [
+      {
+        "denominator": 16,
+        "numerator": 1
+      },
+      {
+        "denominator": 16,
+        "numerator": 5
+      },
+      {
+        "denominator": 80,
+        "numerator": 27
+      }
+    ]
+  },
+  "report": "reverse_physics/reports/bt-channel-resolved-branching-instrument.md",
+  "result_kind": "exact labeled-comb channel Gram and positive normalized reduced-mode branching instrument through three BT emissions",
+  "schema": "reverse_physics/schema/reverse-physics-bt-channel-resolved-branching-instrument-v1.schema.json",
+  "schema_version": "reverse-physics-bt-channel-resolved-branching-instrument-v1",
+  "verification_commands": [
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/bt_channel_resolved_branching_instrument.py --check",
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/verify_bt_channel_resolved_branching_instrument.py",
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 -m unittest -v reverse_physics.tests.test_bt_channel_resolved_branching_instrument"
+  ]
+}

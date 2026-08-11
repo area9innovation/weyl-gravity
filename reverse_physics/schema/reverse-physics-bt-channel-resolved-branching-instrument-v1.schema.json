@@ -1,0 +1,151 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-channel-resolved-branching-instrument-v1.schema.json",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "certificate", "schema_version", "dependency_tags", "lifecycle_state",
+    "result_kind", "question", "answer", "history_carrier",
+    "channel_factorial_grams", "rate_factorization", "branching_instrument",
+    "physical_affiliation", "disposition", "assumptions",
+    "does_not_establish", "missing_object_ledger", "next_gate",
+    "provenance", "verification_commands", "checks", "report", "schema"
+  ],
+  "properties": {
+    "certificate": {
+      "const": "REVERSE_PHYSICS_BT_CHANNEL_RESOLVED_BRANCHING_INSTRUMENT_V1"
+    },
+    "schema_version": {
+      "const": "reverse-physics-bt-channel-resolved-branching-instrument-v1"
+    },
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "history_carrier": {
+      "type": "object",
+      "required": ["definition", "insertion_rule", "levels", "history_checks"],
+      "properties": {
+        "levels": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "required": [
+              "emissions", "outgoing_leaves", "history_count",
+              "history_list_sha256", "history_list"
+            ]
+          }
+        }
+      }
+    },
+    "channel_factorial_grams": {
+      "type": "object",
+      "required": ["form", "rows", "positivity"],
+      "properties": {
+        "positivity": {"const": "STRICTLY_POSITIVE_DIAGONAL_THROUGH_LEVEL_THREE"},
+        "rows": {"type": "array", "minItems": 3, "maxItems": 3}
+      }
+    },
+    "rate_factorization": {
+      "type": "object",
+      "required": [
+        "leading_count_coefficients", "history_counts",
+        "ordered_simplex_factors", "per_history_factorial_grams",
+        "predecessor_selected_history_coefficients", "extension_rate_squares",
+        "children_per_parent", "total_exit_rates",
+        "reconstructed_leading_count_coefficients", "derivation"
+      ]
+    },
+    "branching_instrument": {
+      "type": "object",
+      "required": [
+        "classical_history_dimension", "physical_species_dimension",
+        "reduced_quantum_carrier_dimension", "nonzero_generator_entries",
+        "generator_entry_sha256", "off_diagonal_entries_are_nonnegative",
+        "all_column_sums_zero", "level_three_is_absorbing", "jump_operators",
+        "lindblad_generator", "complete_positivity", "trace_preservation",
+        "level_population_taylor_coefficients", "population_series_sum",
+        "closed_level_probabilities", "normalization_and_positivity"
+      ],
+      "properties": {
+        "classical_history_dimension": {"const": 76},
+        "physical_species_dimension": {"const": 2},
+        "reduced_quantum_carrier_dimension": {"const": 152},
+        "off_diagonal_entries_are_nonnegative": {"const": true},
+        "all_column_sums_zero": {"const": true},
+        "level_three_is_absorbing": {"const": true},
+        "complete_positivity": {"const": "FINITE_DIMENSIONAL_GKSL_FORM"}
+      }
+    },
+    "physical_affiliation": {
+      "type": "object",
+      "required": [
+        "first_pair_channels", "first_per_channel_gram",
+        "first_species_endomorphism", "physical_predecessor_status",
+        "higher_species_map", "stinespring_statement", "relation_to_Cox_state"
+      ]
+    },
+    "disposition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "labeled_history_channel_tensor_through_three_emissions",
+        "positive_normalized_reduced_mode_instrument",
+        "physical_rank_two_first_jump_affiliation",
+        "higher_point_species_and_phase_affiliation",
+        "fixed_three_mark_Cox_lift", "unique_all_order_branching_law",
+        "complete_BT_probability", "spacetime_local_physical_S_matrix",
+        "Eq19_all_orders"
+      ],
+      "properties": {
+        "labeled_history_channel_tensor_through_three_emissions": {"const": "CONSTRUCTED"},
+        "positive_normalized_reduced_mode_instrument": {"const": "CONSTRUCTED_WITH_LEVEL_THREE_ABSORBING_CLOSURE"},
+        "physical_rank_two_first_jump_affiliation": {"const": "EXACT_ONE_OVER_48_I2_PER_PAIR"},
+        "higher_point_species_and_phase_affiliation": {"const": "NOT_DERIVED"},
+        "fixed_three_mark_Cox_lift": {"const": "NOT_CHANNEL_FAITHFUL_WITHOUT_ENLARGEMENT"},
+        "unique_all_order_branching_law": {"const": "NOT_SELECTED"},
+        "complete_BT_probability": {"const": "NOT_CONSTRUCTED"},
+        "spacetime_local_physical_S_matrix": {"const": "NOT_CONSTRUCTED"},
+        "Eq19_all_orders": {"const": "NOT_PROVED"}
+      }
+    },
+    "does_not_establish": {
+      "type": "array", "minItems": 11, "items": {"type": "string"}
+    },
+    "missing_object_ledger": {
+      "type": "array", "minItems": 6, "items": {"type": "string"}
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["source_commit", "retrieval_date", "inputs"],
+      "properties": {
+        "inputs": {
+          "type": "array", "minItems": 4, "maxItems": 4,
+          "items": {
+            "type": "object", "required": ["path", "sha256"],
+            "properties": {
+              "path": {"type": "string"},
+              "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+            }
+          }
+        }
+      }
+    },
+    "verification_commands": {
+      "type": "array", "minItems": 3, "maxItems": 3,
+      "items": {"type": "string"}
+    },
+    "checks": {
+      "type": "object",
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"const": 19},
+        "total": {"const": 19},
+        "failures": {"const": []}
+      }
+    },
+    "report": {"const": "reverse_physics/reports/bt-channel-resolved-branching-instrument.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-channel-resolved-branching-instrument-v1.schema.json"}
+  }
+}
