@@ -317,6 +317,9 @@ asserted.  No skipped or advisory rail is counted as a pass.
 requested four-component quotient range and uses its positive Gram times the
 exact Källén measure to define a common cumulative resolution coordinate.  It
 intertwines the ordered two-noise sector and physically affiliates all 12
-second-level edges.  Across the two certificates, marks 0 through 14 therefore
-have physical continuum ranges.  The next gate is the corresponding
-seven-point nested column for the remaining 60 marks.
+second-level edges.  The further certificate
+`REVERSE_PHYSICS_BT_SEVEN_POINT_NESTED_CONTINUUM_INTERTWINER_V1` constructs the
+signed middle-threshold coordinate and ordered three-noise column for the 60
+third-level edges.  Across the three certificates, all 75 marks in the
+available finite hierarchy therefore have physical continuum ranges.  A
+fourth jump and an all-order inductive column remain open.

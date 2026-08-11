@@ -304,7 +304,17 @@ Python and TeX processes remained capped.
 
 ## Successor gate
 
-The reverse-block gate is closed by
+The continuum-range successor is closed by
+`REVERSE_PHYSICS_BT_SEVEN_POINT_NESTED_CONTINUUM_INTERTWINER_V1`.  In
+coordinates (alpha=A/tau1^2), (s=a3/tau3), and (w=tau2/a2), the positive
+eigenvalue is a quadratic polynomial in (1/w).  After multiplication by the
+massless-hierarchy middle Källén measure, its asymptotically normalized
+cumulative coordinate is positive and maps the threshold ray onto
+(mathbb R_+).  Composing the normalized signed range with the two-emission
+column gives physical continuum affiliation to all 60 third-level marks and
+therefore all 75 marks in the available finite hierarchy.
+
+The reverse-block gate is independently closed by
 `REVERSE_PHYSICS_BT_THREE_JUMP_KREIN_MOLLER_JET_V1`.  The three affiliated
 jumps form a single exact finite Krein-skew coupling jet with nonzero reverse
 blocks and reproduce the physical column through order three.  The same

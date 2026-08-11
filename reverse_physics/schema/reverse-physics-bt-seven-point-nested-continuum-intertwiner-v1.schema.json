@@ -1,0 +1,165 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-seven-point-nested-continuum-intertwiner-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "certificate", "schema_version", "dependency_tags", "lifecycle_state",
+    "result_kind", "question", "answer", "seven_point_positive_quotient_range",
+    "physical_cumulative_resolution", "conditional_direct_integral_isometry",
+    "ordered_three_noise_intertwiner", "finite_hierarchy_dense_domain",
+    "rate_and_channel_affiliation", "seventy_five_mark_completion", "disposition",
+    "assumptions", "does_not_establish", "missing_object_ledger", "next_gate",
+    "provenance", "verification_commands", "checks", "report", "schema"
+  ],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_SEVEN_POINT_NESTED_CONTINUUM_INTERTWINER_V1"},
+    "schema_version": {"const": "reverse-physics-bt-seven-point-nested-continuum-intertwiner-v1"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "result_kind": {"type": "string", "minLength": 150},
+    "question": {"type": "string", "minLength": 140},
+    "answer": {"type": "string", "minLength": 1500},
+    "seven_point_positive_quotient_range": {
+      "type": "object", "additionalProperties": false,
+      "required": ["domain", "coordinates", "u", "v", "H0", "H", "nonzero_physical_eigenvalue", "image_basis_N_plus", "kernel_basis_N_minus", "image_raw_gram", "image_hilbertized_gram", "normalized_embedding", "collapse_on_image", "collapse_on_kernel", "positivity"],
+      "properties": {
+        "domain": {"const": "1<=alpha<2, 0<s<1, w>1, tau3>0"},
+        "coordinates": {"const": "alpha=A/tau1^2=2*(1-q_inner), s=a3/tau3, w=tau2/a2"},
+        "u": {"const": "-alpha/2"},
+        "v": {"type": "string", "minLength": 80},
+        "H0": {"type": "string", "minLength": 15},
+        "H": {"type": "string", "minLength": 40},
+        "nonzero_physical_eigenvalue": {"type": "string", "minLength": 80},
+        "image_basis_N_plus": {"type": "array", "minItems": 4, "maxItems": 4},
+        "kernel_basis_N_minus": {"type": "array", "minItems": 4, "maxItems": 4},
+        "image_raw_gram": {"type": "array", "minItems": 2, "maxItems": 2},
+        "image_hilbertized_gram": {"type": "array", "minItems": 2, "maxItems": 2},
+        "normalized_embedding": {"type": "string", "minLength": 100},
+        "collapse_on_image": {"type": "array", "minItems": 2, "maxItems": 2},
+        "collapse_on_kernel": {"const": "R*D*N_minus=0"},
+        "positivity": {"type": "string", "minLength": 100}
+      }
+    },
+    "physical_cumulative_resolution": {
+      "type": "object", "additionalProperties": false,
+      "required": ["middle_hierarchy_domain", "massless_kallen_measure", "conditional_gram", "asymptotic_scale", "definition", "density", "B", "C", "primitive_F", "primitive_threshold", "chi_from_primitive", "threshold_origin", "unit_linear_asymptote", "bijection", "permutation_compatibility"],
+      "properties": {
+        "middle_hierarchy_domain": {"type": "string", "minLength": 80},
+        "massless_kallen_measure": {"const": "dnu0(w)=sqrt(Kallen(w,1,0))*dw/w=(w-1)*dw/w"},
+        "conditional_gram": {"const": "lambda7(alpha,s,w,tau3)=-2*u*v=tau3*alpha*H(w)/[4*(1+s)]"},
+        "asymptotic_scale": {"type": "string", "minLength": 45},
+        "definition": {"const": "dchi_(alpha,s)=[lambda7/S7]dnu0=[H(w)/H0]*(w-1)*dw/w"},
+        "density": {"type": "string", "minLength": 100},
+        "B": {"type": "string", "minLength": 25},
+        "C": {"type": "string", "minLength": 20},
+        "primitive_F": {"type": "string", "minLength": 150},
+        "primitive_threshold": {"type": "string", "minLength": 25},
+        "chi_from_primitive": {"type": "string", "minLength": 180},
+        "threshold_origin": {"const": "chi_(alpha,s)(1)=0"},
+        "unit_linear_asymptote": {"const": "lim_(w->infinity) dchi/dw=1"},
+        "bijection": {"type": "string", "minLength": 70},
+        "permutation_compatibility": {"type": "string", "minLength": 220}
+      }
+    },
+    "conditional_direct_integral_isometry": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source", "target", "map", "adjoint", "identity", "proof", "shift_transport"],
+      "properties": {
+        "source": {"const": "L2(R_+,dchi) tensor C2_species"},
+        "target": {"type": "string", "minLength": 60},
+        "map": {"type": "string", "minLength": 70},
+        "adjoint": {"type": "string", "minLength": 40},
+        "identity": {"type": "string", "minLength": 65},
+        "proof": {"type": "string", "minLength": 40},
+        "shift_transport": {"type": "string", "minLength": 130}
+      }
+    },
+    "ordered_three_noise_intertwiner": {
+      "type": "object", "additionalProperties": false,
+      "required": ["hp_carrier", "gap_coordinate", "map", "isometry", "joint_translation", "edge_marks", "five_children_per_parent"],
+      "properties": {
+        "hp_carrier": {"type": "string", "minLength": 65},
+        "gap_coordinate": {"const": "t3-t2=chi_(alpha,s)(w)"},
+        "map": {"type": "string", "minLength": 120},
+        "isometry": {"type": "string", "minLength": 85},
+        "joint_translation": {"type": "string", "minLength": 130},
+        "edge_marks": {"type": "array", "minItems": 60, "maxItems": 60, "items": {"type": "integer", "minimum": 15, "maximum": 74}},
+        "five_children_per_parent": {"type": "object", "minProperties": 12, "maxProperties": 12, "additionalProperties": {"const": 5}}
+      }
+    },
+    "finite_hierarchy_dense_domain": {
+      "type": "object", "additionalProperties": false,
+      "required": ["lower_endpoint", "upper_endpoint", "endpoint_limits", "dense_core", "exhaustion", "endpoint_boundary"],
+      "properties": {
+        "lower_endpoint": {"type": "string", "minLength": 35},
+        "upper_endpoint": {"const": "(sqrt(tau3)-sqrt(a3))^2/(epsilon2*a2)"},
+        "endpoint_limits": {"type": "string", "minLength": 80},
+        "dense_core": {"type": "string", "minLength": 180},
+        "exhaustion": {"type": "string", "minLength": 130},
+        "endpoint_boundary": {"type": "string", "minLength": 130}
+      }
+    },
+    "rate_and_channel_affiliation": {
+      "const": {
+        "first_rate_q0": {"numerator": 1, "denominator": 48},
+        "conditional_second_rate_q1": {"numerator": 5, "denominator": 64},
+        "conditional_third_rate_q2": {"numerator": 27, "denominator": 400},
+        "selected_history_before_simplex": {"numerator": 9, "denominator": 81920},
+        "selected_history_ordered_interval_coefficient": {"numerator": 3, "denominator": 163840},
+        "third_level_edge_count": 60,
+        "aggregate_three_count_coefficient": {"numerator": 9, "denominator": 8192},
+        "level_two_hard_drift": {"numerator": 27, "denominator": 160},
+        "status": "EXACT_PHYSICAL_CONTINUUM_AFFILIATION_OF_ALL_SIXTY_THIRD_LEVEL_EDGES"
+      }
+    },
+    "seventy_five_mark_completion": {
+      "type": "object", "additionalProperties": false,
+      "required": ["total_edge_marks", "physically_intertwined_edge_marks", "physical_continuum_edge_count", "remaining_quotient_only_edge_marks", "available_hierarchy", "direct_sum", "boundary"],
+      "properties": {
+        "total_edge_marks": {"const": 75},
+        "physically_intertwined_edge_marks": {"type": "array", "minItems": 75, "maxItems": 75, "items": {"type": "integer", "minimum": 0, "maximum": 74}},
+        "physical_continuum_edge_count": {"const": 75},
+        "remaining_quotient_only_edge_marks": {"const": []},
+        "available_hierarchy": {"type": "string", "minLength": 60},
+        "direct_sum": {"type": "string", "minLength": 120},
+        "boundary": {"type": "string", "minLength": 150}
+      }
+    },
+    "disposition": {
+      "const": {
+        "seven_point_cumulative_physical_resolution": "CONSTRUCTED_EXACTLY_IN_THE_MASSLESS_HIERARCHY_LIMIT",
+        "seven_point_normalized_signed_quotient_range_field": "CONSTRUCTED_EXACTLY",
+        "ordered_three_noise_physical_intertwiner": "CONSTRUCTED_EXACTLY",
+        "third_level_edge_marks_15_through_74": "PHYSICALLY_CONTINUUM_AFFILIATED",
+        "all_seventy_five_available_edge_marks": "PHYSICALLY_CONTINUUM_AFFILIATED",
+        "finite_available_hierarchy_direct_sum": "CONSTRUCTED",
+        "all_order_inductive_intertwiner": "NOT_CONSTRUCTED",
+        "fourth_jump": "NOT_COMPUTED",
+        "complete_BT_probability": "NOT_CONSTRUCTED",
+        "spacetime_Moller_LSZ_S_operator": "NOT_CONSTRUCTED",
+        "public_Rt_identification": "NOT_ESTABLISHED",
+        "Eq19_all_orders": "NOT_PROVED"
+      }
+    },
+    "assumptions": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"type": "string", "minLength": 140}},
+    "does_not_establish": {"type": "array", "minItems": 14, "maxItems": 14, "items": {"type": "string"}},
+    "missing_object_ledger": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"type": "string", "minLength": 55}},
+    "next_gate": {"type": "string", "minLength": 500},
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_commit", "retrieval_date", "inputs", "producer_method", "primary_source"],
+      "properties": {
+        "source_commit": {"const": "49d33dd0794df29e359989cd8acf9d57f088fce2"},
+        "retrieval_date": {"const": "2026-08-11"},
+        "inputs": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"type": "object", "additionalProperties": false, "required": ["path", "sha256"], "properties": {"path": {"type": "string", "minLength": 20}, "sha256": {"pattern": "^[0-9a-f]{64}$"}}}},
+        "producer_method": {"type": "string", "minLength": 220},
+        "primary_source": {"type": "object", "additionalProperties": false, "required": ["source", "url", "equations"], "properties": {"source": {"const": "Bateman--Turok arXiv:2607.00096v1"}, "url": {"const": "https://arxiv.org/abs/2607.00096v1"}, "equations": {"const": ["Eq. (13)", "Eq. (18)", "Eq. (19)", "Appendix B Eqs. (24)-(25)"]}}}
+      }
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "string", "minLength": 100}},
+    "checks": {"type": "object", "additionalProperties": false, "required": ["ok", "passed", "total", "failures", "details"], "properties": {"ok": {"const": true}, "passed": {"const": 43}, "total": {"const": 43}, "failures": {"const": []}, "details": {"type": "object", "minProperties": 43, "maxProperties": 43}}},
+    "report": {"const": "reverse_physics/reports/bt-seven-point-nested-continuum-intertwiner.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-seven-point-nested-continuum-intertwiner-v1.schema.json"}
+  }
+}

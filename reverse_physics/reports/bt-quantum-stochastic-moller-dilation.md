@@ -266,7 +266,10 @@ first-emission physical range intertwiner into the correctly typed correlated
 system--noise sector.  The subsequent certificate
 `REVERSE_PHYSICS_BT_SIX_POINT_NESTED_CONTINUUM_INTERTWINER_V1` constructs the
 physical cumulative Källén coordinate and ordered two-noise range for marks 3
-through 14.  Marks 0 through 14 therefore have physical continuum columns;
-the next gate is the seven-point nested direct integral for the remaining 60
-marks.  None of these results by itself is evidence for Eq. (19) or a
-Lorentzian S matrix.
+through 14.  The further certificate
+`REVERSE_PHYSICS_BT_SEVEN_POINT_NESTED_CONTINUUM_INTERTWINER_V1` constructs the
+signed middle-threshold coordinate and ordered three-noise range for marks 15
+through 74.  All 75 marks in the available finite hierarchy therefore have
+physical continuum columns.  This does not add a fourth jump or an all-order
+inductive carrier, and none of these results by itself is evidence for
+Eq. (19) or a Lorentzian S matrix.

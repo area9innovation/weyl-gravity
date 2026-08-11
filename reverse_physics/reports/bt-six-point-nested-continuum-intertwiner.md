@@ -393,13 +393,12 @@ the bridge audit failed closed with `E9118`, and the corpus census found 1,538
 certificates against a baseline of 976.  Those drift findings are retained as
 advisory diagnostics and are not promoted to a passing verification rail.
 
-## Next gate
+## Successor gate
 
-Construct the analogous seven-point cumulative physical resolution and
-nested direct-integral column for edge marks 15 through 74.  The signed
-seven-point quotient already has (u<0<v) and positive physical eigenvalue
-(-2uv).  The decisive calculation is whether that eigenvalue times the
-third Källén measure again defines a positive, exchange-compatible cumulative
-coordinate onto (mathbb R_+).  A pass would physically affiliate all 75
-currently available edge marks; a failure would isolate the first continuum
-obstruction beyond six points.
+`REVERSE_PHYSICS_BT_SEVEN_POINT_NESTED_CONTINUUM_INTERTWINER_V1` reduces the
+positive signed eigenvalue to a quadratic polynomial in the inverse middle
+invariant.  Its product with the massless-hierarchy Källén measure defines an
+elementary positive cumulative coordinate onto (mathbb R_+).  The resulting
+ordered three-noise column physically affiliates marks 15 through 74, so all
+75 marks in the available finite hierarchy now have continuum ranges.  The
+fourth jump and an all-order inductive intertwiner remain open.
