@@ -27,6 +27,11 @@ class IntersectionCubeTests(unittest.TestCase):
         cell=next(x for x in r["cells"] if x["foundation"]=="WEAK_CHOICE_ZF" and x["carrier"]=="KREIN_INDEFINITE" and x["obligation"]=="STATES_PROBABILITY")
         cell["status"]="PRIORITY_GAP"
         self.assertTrue(self.v(r))
+    def test_closure_cell_promotion_removal(self):
+        r=copy.deepcopy(self.r)
+        cell=next(x for x in r["cells"] if x["foundation"]=="FINITE_DISCRETE" and x["carrier"]=="FINITE_EXACT" and x["obligation"]=="DYNAMICS_PROPAGATION")
+        cell["status"]="PRIORITY_GAP"
+        self.assertTrue(self.v(r))
     def test_report_gap_removed(self):self.assertTrue(self.v(report=self.t.replace("Priority gap","Unknown gap")))
 
 if __name__=="__main__":unittest.main()

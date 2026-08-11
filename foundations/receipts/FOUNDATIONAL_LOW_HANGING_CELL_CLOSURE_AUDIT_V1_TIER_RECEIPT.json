@@ -1,0 +1,67 @@
+{
+  "receipt_id": "FOUNDATIONAL_LOW_HANGING_CELL_CLOSURE_AUDIT_V1_TIER_RECEIPT",
+  "schema_version": "foundational-tier-receipt-v0",
+  "created": "2026-08-11",
+  "result_id": "FOUNDATIONAL_LOW_HANGING_CELL_CLOSURE_AUDIT_V1",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "base_commit": "f64191a1e2e3fc1fb5a06bb1b86e941bb88480bf",
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "command": "py_compile the six changed Python modules/tests; Draft202012Validator-check the closure-audit, intersection-cube, pair-frontier, and Markdown-render schema/result chains; git diff --check -- foundations",
+      "result": "changed Python compiles, four structured-data chains validate, and the scoped foundations diff has no whitespace errors"
+    },
+    "tier_1_checker": {
+      "status": "PASS",
+      "command": "python3 foundations/check_low_hanging_cell_closure.py",
+      "result": "three-cell promotion set, exact H04/H14 data, failed classical freeze preservation, finite Laurent witness, exhaustive 22-cell open ledger, and digest cdf5f659fc2eaba5af071f6cba4679fed29fba5762f7844af7be0f5a332904ab pass"
+    },
+    "tier_1_verifier": {
+      "status": "PASS",
+      "command": "python3 foundations/verify_low_hanging_cell_closure.py",
+      "result": "schema, six source hashes, local-BV completion and boundaries, failed import gate, finite dynamics witness, independent rail, applied cube promotions, exhaustive open ledger, claim flags, and report pass"
+    },
+    "tier_2_affected_chain": {
+      "status": "PASS",
+      "elapsed_seconds": "0.66",
+      "command": "run the closure checker/verifier; intersection cube checker/verifier; pair generator --check, checker, verifier; completion Markdown generator --check and verifier; python3 -m unittest discover -s foundations/tests -t .",
+      "result": "202/202 foundations tests pass; cube counts are 24 local, 13 literature, 5 pieces-only, 17 priority-gap, and 157 not-mapped across 59 assessed cells; pair analysis has 22 assessed open cells, 24 bridge frontiers, and 20 important unseeded gaps"
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No classical or quantum freeze, release, shared core algebra change, paper theorem promotion, or Lorentzian lifecycle promotion. The imported local-BV and mode-dynamics inputs are unchanged and were checked by their pinned hashes rather than rebuilt."
+    }
+  },
+  "auxiliary_rails": [
+    {
+      "name": "science_forge_native_conformance",
+      "status": "NOT_RERUN",
+      "reason": "No Forge-native IR node or request changed; this result remains a local independent audit and does not claim native registration."
+    }
+  ],
+  "content_hashes": {
+    "foundations/README.md": "a936213f62cc582d516a3318c5b9819b546aad994842fd0c06d8d7611faf1516",
+    "foundations/check_low_hanging_cell_closure.py": "31ffe448901dc2310ec2a64f375f95f00af43ea1fe9e739880fa0d205610125f",
+    "foundations/reports/completion-matrix.md": "46fa4b9001bbe6db709e8f8dd1b56f852fa1f8c9a5aeefcf56168810de677f54",
+    "foundations/reports/low-hanging-cell-closure-audit.md": "62c5d318865bdffa655eb3e6d099f099f66029e1341a9012560b332974f584a4",
+    "foundations/reports/pair-frontier-analysis.md": "a9e1580ff9d32a09cd5f1102aa47e9642f262b77f39bafc0962f4fdacf6e13ae",
+    "foundations/results/FOUNDATIONAL_COMPLETION_MATRIX_MARKDOWN_RENDER_V1.json": "1b9abb906b561bb7cad802b9677d9db41c23bbf52c9ce8c5de679c0015aa7602",
+    "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V0.json": "bb203fc1a3551a6ee7687cfa8de717e13e321a00f758e3bcd3161b118f869be4",
+    "foundations/results/FOUNDATIONAL_LOW_HANGING_CELL_CLOSURE_AUDIT_V1.json": "b045541be48cd2210d8aa26d4e6a7df44456c8e7e6d481334165b96661ed3309",
+    "foundations/results/FOUNDATIONAL_PAIR_FRONTIER_ANALYSIS_V0.json": "56916cdb4a616d33e8248b6dd9d900fa218b59db39a3fe2a4f40b08c02b47f32",
+    "foundations/schema/foundational-low-hanging-cell-closure-audit-v1.schema.json": "c9f23aaf4131a004888f55b50f7718979ff6e4a897fef5c074e50f65403b377c",
+    "foundations/tests/test_intersection_cube.py": "8af6735db9751bf1ab53919ee18bff44de45c67964c982078bc14ceb962f42bb",
+    "foundations/tests/test_low_hanging_cell_closure.py": "08de852a65ac05d15b6cd1561fe9225b9313a647ef9f373cb223af38a6554dfc",
+    "foundations/verify_intersection_cube.py": "2647b16bc44dfbe4fe6a4ea1239586d3a162abaa76b197e624a66c45e3a856d4",
+    "foundations/verify_low_hanging_cell_closure.py": "5111b8ae20bc5d0d5b8691cad3fea53e21c28da74f61165ee1aa559323d435b7",
+    "foundations/verify_pair_frontiers.py": "5ef5ab89a0174fa6be2204c5dfe28a72a61b5a9e0d01e46ee69767550e004fc3"
+  },
+  "scope_receipt": {
+    "changed_scope": "one bounded scope audit, three cube-cell promotions, exhaustive typed triage of the 22 remaining assessed openings, and deterministic propagation through the cube, pair-frontier, and Markdown views",
+    "unrelated_worktree_changes_included": false
+  },
+  "claim_boundary": "The audit imports completed LOCAL-ALGEBRAIC H04/H14 results on the regular Bach locus and finite reduced-mode dynamics. It preserves the failed broader classical freeze gate and establishes no coefficient, renormalized product, QME restoration, residual transfer, continuum limit, causal propagator, LORENTZIAN-CAUSAL theorem, or assessment of the 157 NOT_MAPPED cells."
+}

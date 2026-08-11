@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9innovation.github.io/weyl-gravity/foundations/schema/foundational-low-hanging-cell-closure-audit-v1.schema.json",
+  "title": "Low-hanging foundations cube cell closure audit",
+  "type": "object",
+  "required": [
+    "schema_version", "result_id", "result_kind", "lifecycle", "dependency_tags",
+    "created", "repository_base_commit", "question", "decision_rule", "promotions",
+    "local_bv_evidence", "finite_dynamics_evidence", "remaining_assessed_open_cells",
+    "audit_summary", "independent_checker", "provenance", "claim_flags",
+    "does_not_establish", "next_gate", "human_report"
+  ],
+  "properties": {
+    "schema_version": {"const": "foundational-low-hanging-cell-closure-audit-v1"},
+    "result_id": {"const": "FOUNDATIONAL_LOW_HANGING_CELL_CLOSURE_AUDIT_V1"},
+    "result_kind": {"const": "FOUNDATIONAL_SCOPE_AUDIT"},
+    "lifecycle": {"const": "SEPARATED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "repository_base_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "decision_rule": {"type": "object", "required": ["low_hanging", "not_low_hanging", "status_semantics", "audit_universe"]},
+    "promotions": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "object", "required": ["foundation", "carrier", "obligation", "old_status", "new_status", "basis", "boundary"], "properties": {"new_status": {"const": "LOCAL_RESULT"}}}},
+    "local_bv_evidence": {"type": "object", "required": ["regularity_scope", "h04", "h14", "contraction_state", "classical_import_gate", "separation"]},
+    "finite_dynamics_evidence": {"type": "object", "required": ["source_result", "maximum_energy", "representative_modes", "matrix_units", "star_degree_checks", "matrix_unit_composition_checks", "derivation_leibniz_checks", "formal_time_pair_checks", "arithmetic", "axis_separation"]},
+    "remaining_assessed_open_cells": {"type": "array", "minItems": 22, "maxItems": 22, "items": {"type": "object", "required": ["foundation", "carrier", "obligation", "status", "missing_gate"]}},
+    "audit_summary": {"type": "object", "required": ["assessed_open_before", "promoted_local_results", "assessed_open_after", "pieces_only_after", "priority_gaps_after", "not_mapped_outside_audit", "bounded_exhaustion_status"]},
+    "independent_checker": {"type": "object", "required": ["path", "arithmetic", "checks", "expected_digest"], "properties": {"expected_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}},
+    "provenance": {"type": "object", "required": ["inputs"], "properties": {"inputs": {"type": "array", "minItems": 6, "maxItems": 6}}},
+    "claim_flags": {"type": "object"},
+    "does_not_establish": {"type": "array", "minItems": 10},
+    "human_report": {"const": "foundations/reports/low-hanging-cell-closure-audit.md"}
+  }
+}

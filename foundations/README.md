@@ -209,6 +209,20 @@ python3 foundations/verify_pair_frontiers.py
 python3 -m unittest foundations.tests.test_pair_frontiers
 ```
 
+The bounded
+[`low-hanging cell closure audit`](reports/low-hanging-cell-closure-audit.md)
+imports the already-certified local BV cohomology and finite-cutoff dynamics,
+corrects three stale open-cell labels, and gives every one of the 22 remaining
+assessed open cells a typed missing gate.  Its exhaustion statement excludes
+all 157 not-mapped cells and preserves the failed broader classical freeze
+gate:
+
+```bash
+python3 foundations/check_low_hanging_cell_closure.py
+python3 foundations/verify_low_hanging_cell_closure.py
+python3 -m unittest foundations.tests.test_low_hanging_cell_closure
+```
+
 Native typed Scope/Question/WorkItem import is not yet available in the local
 Science Forge adoption.  The exact integration boundary and first consumer are
 filed in

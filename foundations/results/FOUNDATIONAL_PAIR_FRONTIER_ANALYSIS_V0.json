@@ -34,13 +34,13 @@
     "classification_counts": {
       "NEAR_TERM_LOCAL_BRIDGE": 11,
       "NEAR_TERM_LITERATURE_BRIDGE": 7,
-      "PIECES_ONLY_FRONTIER": 7,
-      "UNSEEDED_IMPORTANT_GAP": 24,
-      "NO_FRONTIER": 59
+      "PIECES_ONLY_FRONTIER": 6,
+      "UNSEEDED_IMPORTANT_GAP": 20,
+      "NO_FRONTIER": 64
     },
-    "ranked_bridge_frontiers": 25,
-    "unseeded_important_gaps": 24,
-    "assessed_open_cells": 25
+    "ranked_bridge_frontiers": 24,
+    "unseeded_important_gaps": 20,
+    "assessed_open_cells": 22
   },
   "pair_families": [
     {
@@ -516,16 +516,16 @@
       ],
       "scan_axis": "OBLIGATION",
       "counts": {
-        "LOCAL_RESULT": 1,
+        "LOCAL_RESULT": 3,
         "LITERATURE_RESULT": 0,
-        "PIECES_ONLY": 1,
-        "PRIORITY_GAP": 1,
+        "PIECES_ONLY": 0,
+        "PRIORITY_GAP": 0,
         "NOT_MAPPED": 3
       },
-      "seed_strength": 5,
-      "open_demand": 6,
-      "bridge_score": 13,
-      "classification": "NEAR_TERM_LOCAL_BRIDGE",
+      "seed_strength": 12,
+      "open_demand": 0,
+      "bridge_score": 0,
+      "classification": "NO_FRONTIER",
       "evidence_cells": [
         {
           "foundation": "CLASSICAL_STANDARD",
@@ -537,31 +537,31 @@
           ],
           "summary": "One conditional typed biwave Green theorem has a complete dependency cut.",
           "boundary": "The exact checker proves no PDE existence and no full BV propagator."
-        }
-      ],
-      "candidate_cells": [
+        },
         {
           "foundation": "CLASSICAL_STANDARD",
           "carrier": "SMOOTH_DISTRIBUTIONAL",
           "obligation": "GAUGE_BV_COHOMOLOGY",
-          "status": "PIECES_ONLY",
+          "status": "LOCAL_RESULT",
           "evidence": [
-            "repo-physics-vs-math",
-            "FOUNDATIONAL_FREE_BV_ENERGY2_PRA_SDR_V1"
+            "FOUNDATIONAL_LOW_HANGING_CELL_CLOSURE_AUDIT_V1"
           ],
-          "summary": "Classical BV data and finite exact residual witnesses exist, but their full continuum foundational profile is not classified.",
-          "boundary": "Finite residual data are not the continuum off-shell complex."
+          "summary": "Gauge-fixed local BV cohomology H^{0,4}(s|d) and H^{1,4}(s|d) is complete on the regular Bach locus.",
+          "boundary": "This local jet/BV result is not a complete global smooth or distributional off-shell complex, classical freeze gate, propagator, or residual-state theorem."
         },
         {
           "foundation": "CLASSICAL_STANDARD",
           "carrier": "SMOOTH_DISTRIBUTIONAL",
           "obligation": "INTERACTION_RENORMALIZATION_QME",
-          "status": "PRIORITY_GAP",
-          "evidence": [],
-          "summary": "The local anomaly, counterterm, renormalized-product, and QME chain is the major quantum gap.",
-          "boundary": "No Lorentzian QME theorem exists."
+          "status": "LOCAL_RESULT",
+          "evidence": [
+            "FOUNDATIONAL_LOW_HANGING_CELL_CLOSURE_AUDIT_V1"
+          ],
+          "summary": "The bounded local counterterm and anomaly cohomology is classified by the exact H^{0,4}(s|d) and H^{1,4}(s|d) results.",
+          "boundary": "No coefficient, regulated breaking, renormalized product, QME restoration, residual transfer, or Lorentzian quantum construction follows."
         }
       ],
+      "candidate_cells": [],
       "not_mapped_cells": [
         {
           "foundation": "CLASSICAL_STANDARD",
@@ -2415,15 +2415,15 @@
       ],
       "scan_axis": "OBLIGATION",
       "counts": {
-        "LOCAL_RESULT": 2,
+        "LOCAL_RESULT": 3,
         "LITERATURE_RESULT": 2,
         "PIECES_ONLY": 0,
-        "PRIORITY_GAP": 2,
+        "PRIORITY_GAP": 1,
         "NOT_MAPPED": 0
       },
-      "seed_strength": 14,
-      "open_demand": 8,
-      "bridge_score": 18,
+      "seed_strength": 18,
+      "open_demand": 4,
+      "bridge_score": 9,
       "classification": "NEAR_TERM_LOCAL_BRIDGE",
       "evidence_cells": [
         {
@@ -2451,6 +2451,18 @@
         {
           "foundation": "FINITE_DISCRETE",
           "carrier": "FINITE_EXACT",
+          "obligation": "DYNAMICS_PROPAGATION",
+          "status": "LOCAL_RESULT",
+          "evidence": [
+            "FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1",
+            "FOUNDATIONAL_LOW_HANGING_CELL_CLOSURE_AUDIT_V1"
+          ],
+          "summary": "Every displayed finite energy cutoff inherits exact diagonal unitary dynamics and a finite-core matrix-unit derivation.",
+          "boundary": "No finite-field dynamics, continuum convergence, regulator independence, causal propagation, or reconstruction theorem is proved."
+        },
+        {
+          "foundation": "FINITE_DISCRETE",
+          "carrier": "FINITE_EXACT",
           "obligation": "GAUGE_BV_COHOMOLOGY",
           "status": "LOCAL_RESULT",
           "evidence": [
@@ -2472,15 +2484,6 @@
         }
       ],
       "candidate_cells": [
-        {
-          "foundation": "FINITE_DISCRETE",
-          "carrier": "FINITE_EXACT",
-          "obligation": "DYNAMICS_PROPAGATION",
-          "status": "PRIORITY_GAP",
-          "evidence": [],
-          "summary": "No finite dynamics is connected to Weyl continuum propagation by controlled comparison maps.",
-          "boundary": "Finite kinematics alone supplies no dynamics."
-        },
         {
           "foundation": "FINITE_DISCRETE",
           "carrier": "FINITE_EXACT",
@@ -3112,16 +3115,16 @@
       ],
       "scan_axis": "CARRIER",
       "counts": {
-        "LOCAL_RESULT": 1,
+        "LOCAL_RESULT": 2,
         "LITERATURE_RESULT": 0,
-        "PIECES_ONLY": 1,
+        "PIECES_ONLY": 0,
         "PRIORITY_GAP": 0,
         "NOT_MAPPED": 4
       },
-      "seed_strength": 5,
-      "open_demand": 2,
-      "bridge_score": 6,
-      "classification": "NEAR_TERM_LOCAL_BRIDGE",
+      "seed_strength": 8,
+      "open_demand": 0,
+      "bridge_score": 0,
+      "classification": "NO_FRONTIER",
       "evidence_cells": [
         {
           "foundation": "CLASSICAL_STANDARD",
@@ -3133,22 +3136,20 @@
           ],
           "summary": "A fixed exact BV contraction and cohomology witness exists.",
           "boundary": "Only one finite energy block; not the continuum complex."
-        }
-      ],
-      "candidate_cells": [
+        },
         {
           "foundation": "CLASSICAL_STANDARD",
           "carrier": "SMOOTH_DISTRIBUTIONAL",
           "obligation": "GAUGE_BV_COHOMOLOGY",
-          "status": "PIECES_ONLY",
+          "status": "LOCAL_RESULT",
           "evidence": [
-            "repo-physics-vs-math",
-            "FOUNDATIONAL_FREE_BV_ENERGY2_PRA_SDR_V1"
+            "FOUNDATIONAL_LOW_HANGING_CELL_CLOSURE_AUDIT_V1"
           ],
-          "summary": "Classical BV data and finite exact residual witnesses exist, but their full continuum foundational profile is not classified.",
-          "boundary": "Finite residual data are not the continuum off-shell complex."
+          "summary": "Gauge-fixed local BV cohomology H^{0,4}(s|d) and H^{1,4}(s|d) is complete on the regular Bach locus.",
+          "boundary": "This local jet/BV result is not a complete global smooth or distributional off-shell complex, classical freeze gate, propagator, or residual-state theorem."
         }
       ],
+      "candidate_cells": [],
       "not_mapped_cells": [
         {
           "foundation": "CLASSICAL_STANDARD",
@@ -3190,28 +3191,30 @@
       ],
       "scan_axis": "CARRIER",
       "counts": {
-        "LOCAL_RESULT": 0,
+        "LOCAL_RESULT": 1,
         "LITERATURE_RESULT": 0,
         "PIECES_ONLY": 0,
-        "PRIORITY_GAP": 1,
+        "PRIORITY_GAP": 0,
         "NOT_MAPPED": 5
       },
-      "seed_strength": 0,
-      "open_demand": 4,
+      "seed_strength": 4,
+      "open_demand": 0,
       "bridge_score": 0,
-      "classification": "UNSEEDED_IMPORTANT_GAP",
-      "evidence_cells": [],
-      "candidate_cells": [
+      "classification": "NO_FRONTIER",
+      "evidence_cells": [
         {
           "foundation": "CLASSICAL_STANDARD",
           "carrier": "SMOOTH_DISTRIBUTIONAL",
           "obligation": "INTERACTION_RENORMALIZATION_QME",
-          "status": "PRIORITY_GAP",
-          "evidence": [],
-          "summary": "The local anomaly, counterterm, renormalized-product, and QME chain is the major quantum gap.",
-          "boundary": "No Lorentzian QME theorem exists."
+          "status": "LOCAL_RESULT",
+          "evidence": [
+            "FOUNDATIONAL_LOW_HANGING_CELL_CLOSURE_AUDIT_V1"
+          ],
+          "summary": "The bounded local counterterm and anomaly cohomology is classified by the exact H^{0,4}(s|d) and H^{1,4}(s|d) results.",
+          "boundary": "No coefficient, regulated breaking, renormalized product, QME restoration, residual transfer, or Lorentzian quantum construction follows."
         }
       ],
+      "candidate_cells": [],
       "not_mapped_cells": [
         {
           "foundation": "CLASSICAL_STANDARD",
@@ -5240,28 +5243,31 @@
       ],
       "scan_axis": "CARRIER",
       "counts": {
-        "LOCAL_RESULT": 0,
+        "LOCAL_RESULT": 1,
         "LITERATURE_RESULT": 0,
         "PIECES_ONLY": 0,
-        "PRIORITY_GAP": 1,
+        "PRIORITY_GAP": 0,
         "NOT_MAPPED": 5
       },
-      "seed_strength": 0,
-      "open_demand": 4,
+      "seed_strength": 4,
+      "open_demand": 0,
       "bridge_score": 0,
-      "classification": "UNSEEDED_IMPORTANT_GAP",
-      "evidence_cells": [],
-      "candidate_cells": [
+      "classification": "NO_FRONTIER",
+      "evidence_cells": [
         {
           "foundation": "FINITE_DISCRETE",
           "carrier": "FINITE_EXACT",
           "obligation": "DYNAMICS_PROPAGATION",
-          "status": "PRIORITY_GAP",
-          "evidence": [],
-          "summary": "No finite dynamics is connected to Weyl continuum propagation by controlled comparison maps.",
-          "boundary": "Finite kinematics alone supplies no dynamics."
+          "status": "LOCAL_RESULT",
+          "evidence": [
+            "FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1",
+            "FOUNDATIONAL_LOW_HANGING_CELL_CLOSURE_AUDIT_V1"
+          ],
+          "summary": "Every displayed finite energy cutoff inherits exact diagonal unitary dynamics and a finite-core matrix-unit derivation.",
+          "boundary": "No finite-field dynamics, continuum convergence, regulator independence, causal propagation, or reconstruction theorem is proved."
         }
       ],
+      "candidate_cells": [],
       "not_mapped_cells": [
         {
           "foundation": "FINITE_DISCRETE",
@@ -5673,28 +5679,31 @@
       ],
       "scan_axis": "FOUNDATION",
       "counts": {
-        "LOCAL_RESULT": 0,
+        "LOCAL_RESULT": 1,
         "LITERATURE_RESULT": 0,
         "PIECES_ONLY": 0,
-        "PRIORITY_GAP": 1,
+        "PRIORITY_GAP": 0,
         "NOT_MAPPED": 5
       },
-      "seed_strength": 0,
-      "open_demand": 4,
+      "seed_strength": 4,
+      "open_demand": 0,
       "bridge_score": 0,
-      "classification": "UNSEEDED_IMPORTANT_GAP",
-      "evidence_cells": [],
-      "candidate_cells": [
+      "classification": "NO_FRONTIER",
+      "evidence_cells": [
         {
           "foundation": "FINITE_DISCRETE",
           "carrier": "FINITE_EXACT",
           "obligation": "DYNAMICS_PROPAGATION",
-          "status": "PRIORITY_GAP",
-          "evidence": [],
-          "summary": "No finite dynamics is connected to Weyl continuum propagation by controlled comparison maps.",
-          "boundary": "Finite kinematics alone supplies no dynamics."
+          "status": "LOCAL_RESULT",
+          "evidence": [
+            "FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1",
+            "FOUNDATIONAL_LOW_HANGING_CELL_CLOSURE_AUDIT_V1"
+          ],
+          "summary": "Every displayed finite energy cutoff inherits exact diagonal unitary dynamics and a finite-core matrix-unit derivation.",
+          "boundary": "No finite-field dynamics, continuum convergence, regulator independence, causal propagation, or reconstruction theorem is proved."
         }
       ],
+      "candidate_cells": [],
       "not_mapped_cells": [
         {
           "foundation": "CLASSICAL_STANDARD",
@@ -7530,30 +7539,30 @@
       ],
       "scan_axis": "FOUNDATION",
       "counts": {
-        "LOCAL_RESULT": 0,
+        "LOCAL_RESULT": 1,
         "LITERATURE_RESULT": 0,
-        "PIECES_ONLY": 1,
+        "PIECES_ONLY": 0,
         "PRIORITY_GAP": 4,
         "NOT_MAPPED": 1
       },
-      "seed_strength": 1,
-      "open_demand": 18,
-      "bridge_score": 8,
-      "classification": "PIECES_ONLY_FRONTIER",
-      "evidence_cells": [],
-      "candidate_cells": [
+      "seed_strength": 4,
+      "open_demand": 16,
+      "bridge_score": 12,
+      "classification": "NEAR_TERM_LOCAL_BRIDGE",
+      "evidence_cells": [
         {
           "foundation": "CLASSICAL_STANDARD",
           "carrier": "SMOOTH_DISTRIBUTIONAL",
           "obligation": "GAUGE_BV_COHOMOLOGY",
-          "status": "PIECES_ONLY",
+          "status": "LOCAL_RESULT",
           "evidence": [
-            "repo-physics-vs-math",
-            "FOUNDATIONAL_FREE_BV_ENERGY2_PRA_SDR_V1"
+            "FOUNDATIONAL_LOW_HANGING_CELL_CLOSURE_AUDIT_V1"
           ],
-          "summary": "Classical BV data and finite exact residual witnesses exist, but their full continuum foundational profile is not classified.",
-          "boundary": "Finite residual data are not the continuum off-shell complex."
-        },
+          "summary": "Gauge-fixed local BV cohomology H^{0,4}(s|d) and H^{1,4}(s|d) is complete on the regular Bach locus.",
+          "boundary": "This local jet/BV result is not a complete global smooth or distributional off-shell complex, classical freeze gate, propagator, or residual-state theorem."
+        }
+      ],
+      "candidate_cells": [
         {
           "foundation": "WEAK_ARITHMETIC",
           "carrier": "SMOOTH_DISTRIBUTIONAL",
@@ -7616,27 +7625,30 @@
       ],
       "scan_axis": "FOUNDATION",
       "counts": {
-        "LOCAL_RESULT": 0,
+        "LOCAL_RESULT": 1,
         "LITERATURE_RESULT": 0,
         "PIECES_ONLY": 0,
-        "PRIORITY_GAP": 5,
+        "PRIORITY_GAP": 4,
         "NOT_MAPPED": 1
       },
-      "seed_strength": 0,
-      "open_demand": 20,
-      "bridge_score": 0,
-      "classification": "UNSEEDED_IMPORTANT_GAP",
-      "evidence_cells": [],
-      "candidate_cells": [
+      "seed_strength": 4,
+      "open_demand": 16,
+      "bridge_score": 12,
+      "classification": "NEAR_TERM_LOCAL_BRIDGE",
+      "evidence_cells": [
         {
           "foundation": "CLASSICAL_STANDARD",
           "carrier": "SMOOTH_DISTRIBUTIONAL",
           "obligation": "INTERACTION_RENORMALIZATION_QME",
-          "status": "PRIORITY_GAP",
-          "evidence": [],
-          "summary": "The local anomaly, counterterm, renormalized-product, and QME chain is the major quantum gap.",
-          "boundary": "No Lorentzian QME theorem exists."
-        },
+          "status": "LOCAL_RESULT",
+          "evidence": [
+            "FOUNDATIONAL_LOW_HANGING_CELL_CLOSURE_AUDIT_V1"
+          ],
+          "summary": "The bounded local counterterm and anomaly cohomology is classified by the exact H^{0,4}(s|d) and H^{1,4}(s|d) results.",
+          "boundary": "No coefficient, regulated breaking, renormalized product, QME restoration, residual transfer, or Lorentzian quantum construction follows."
+        }
+      ],
+      "candidate_cells": [
         {
           "foundation": "WEAK_ARITHMETIC",
           "carrier": "SMOOTH_DISTRIBUTIONAL",
@@ -8185,21 +8197,20 @@
     }
   ],
   "ranked_frontier_ids": [
-    "PAIR-FOUNDATION-FINITE_DISCRETE-CARRIER-FINITE_EXACT",
     "PAIR-CARRIER-SMOOTH_DISTRIBUTIONAL-OBLIGATION-DYNAMICS_PROPAGATION",
     "PAIR-FOUNDATION-TOPOS_INTERNAL-CARRIER-LOCALIC_SYNTHETIC",
-    "PAIR-FOUNDATION-CLASSICAL_STANDARD-CARRIER-SMOOTH_DISTRIBUTIONAL",
+    "PAIR-CARRIER-SMOOTH_DISTRIBUTIONAL-OBLIGATION-GAUGE_BV_COHOMOLOGY",
+    "PAIR-CARRIER-SMOOTH_DISTRIBUTIONAL-OBLIGATION-INTERACTION_RENORMALIZATION_QME",
+    "PAIR-FOUNDATION-FINITE_DISCRETE-CARRIER-FINITE_EXACT",
     "PAIR-FOUNDATION-FINITE_DISCRETE-OBLIGATION-RECONSTRUCTION_LIMITS",
     "PAIR-FOUNDATION-WEAK_ARITHMETIC-OBLIGATION-GAUGE_BV_COHOMOLOGY",
     "PAIR-FOUNDATION-WEAK_CHOICE_ZF-OBLIGATION-DYNAMICS_PROPAGATION",
-    "PAIR-CARRIER-SMOOTH_DISTRIBUTIONAL-OBLIGATION-GAUGE_BV_COHOMOLOGY",
     "PAIR-FOUNDATION-TOPOS_INTERNAL-CARRIER-SMOOTH_DISTRIBUTIONAL",
     "PAIR-FOUNDATION-TOPOS_INTERNAL-OBLIGATION-DYNAMICS_PROPAGATION",
     "PAIR-CARRIER-ALGEBRAIC_CSTAR-OBLIGATION-STATES_PROBABILITY",
     "PAIR-CARRIER-FINITE_EXACT-OBLIGATION-GAUGE_BV_COHOMOLOGY",
     "PAIR-CARRIER-HILBERT_OPERATOR-OBLIGATION-KINEMATICS_OBSERVABLES",
     "PAIR-CARRIER-HILBERT_OPERATOR-OBLIGATION-RECONSTRUCTION_LIMITS",
-    "PAIR-FOUNDATION-CLASSICAL_STANDARD-OBLIGATION-GAUGE_BV_COHOMOLOGY",
     "PAIR-FOUNDATION-CONSTRUCTIVE_COMPUTABLE-CARRIER-ALGEBRAIC_CSTAR",
     "PAIR-FOUNDATION-CONSTRUCTIVE_COMPUTABLE-CARRIER-HILBERT_OPERATOR",
     "PAIR-FOUNDATION-CONSTRUCTIVE_COMPUTABLE-OBLIGATION-STATES_PROBABILITY",
@@ -8212,24 +8223,20 @@
     "PAIR-FOUNDATION-WEAK_ARITHMETIC-CARRIER-HILBERT_OPERATOR"
   ],
   "unseeded_gap_ids": [
-    "PAIR-CARRIER-SMOOTH_DISTRIBUTIONAL-OBLIGATION-INTERACTION_RENORMALIZATION_QME",
     "PAIR-FOUNDATION-CONSTRUCTIVE_COMPUTABLE-CARRIER-SMOOTH_DISTRIBUTIONAL",
     "PAIR-FOUNDATION-WEAK_ARITHMETIC-CARRIER-SMOOTH_DISTRIBUTIONAL",
     "PAIR-FOUNDATION-WEAK_CHOICE_ZF-CARRIER-SMOOTH_DISTRIBUTIONAL",
     "PAIR-FOUNDATION-TOPOS_INTERNAL-OBLIGATION-GAUGE_BV_COHOMOLOGY",
     "PAIR-FOUNDATION-TOPOS_INTERNAL-OBLIGATION-INTERACTION_RENORMALIZATION_QME",
-    "PAIR-CARRIER-FINITE_EXACT-OBLIGATION-DYNAMICS_PROPAGATION",
     "PAIR-CARRIER-FINITE_EXACT-OBLIGATION-INTERACTION_RENORMALIZATION_QME",
     "PAIR-CARRIER-LOCALIC_SYNTHETIC-OBLIGATION-DYNAMICS_PROPAGATION",
     "PAIR-CARRIER-LOCALIC_SYNTHETIC-OBLIGATION-GAUGE_BV_COHOMOLOGY",
     "PAIR-CARRIER-LOCALIC_SYNTHETIC-OBLIGATION-INTERACTION_RENORMALIZATION_QME",
     "PAIR-CARRIER-LOCALIC_SYNTHETIC-OBLIGATION-RECONSTRUCTION_LIMITS",
     "PAIR-CARRIER-SMOOTH_DISTRIBUTIONAL-OBLIGATION-RECONSTRUCTION_LIMITS",
-    "PAIR-FOUNDATION-CLASSICAL_STANDARD-OBLIGATION-INTERACTION_RENORMALIZATION_QME",
     "PAIR-FOUNDATION-CONSTRUCTIVE_COMPUTABLE-OBLIGATION-DYNAMICS_PROPAGATION",
     "PAIR-FOUNDATION-CONSTRUCTIVE_COMPUTABLE-OBLIGATION-INTERACTION_RENORMALIZATION_QME",
     "PAIR-FOUNDATION-FINITE_DISCRETE-CARRIER-SMOOTH_DISTRIBUTIONAL",
-    "PAIR-FOUNDATION-FINITE_DISCRETE-OBLIGATION-DYNAMICS_PROPAGATION",
     "PAIR-FOUNDATION-FINITE_DISCRETE-OBLIGATION-INTERACTION_RENORMALIZATION_QME",
     "PAIR-FOUNDATION-TOPOS_INTERNAL-OBLIGATION-RECONSTRUCTION_LIMITS",
     "PAIR-FOUNDATION-WEAK_ARITHMETIC-OBLIGATION-DYNAMICS_PROPAGATION",
@@ -8238,24 +8245,6 @@
     "PAIR-FOUNDATION-WEAK_CHOICE_ZF-OBLIGATION-INTERACTION_RENORMALIZATION_QME"
   ],
   "recommended_cells": [
-    {
-      "foundation": "CLASSICAL_STANDARD",
-      "carrier": "SMOOTH_DISTRIBUTIONAL",
-      "obligation": "GAUGE_BV_COHOMOLOGY",
-      "status": "PIECES_ONLY",
-      "aggregate_bridge_score": 27,
-      "supporting_pair_ids": [
-        "PAIR-CARRIER-SMOOTH_DISTRIBUTIONAL-OBLIGATION-GAUGE_BV_COHOMOLOGY",
-        "PAIR-FOUNDATION-CLASSICAL_STANDARD-CARRIER-SMOOTH_DISTRIBUTIONAL",
-        "PAIR-FOUNDATION-CLASSICAL_STANDARD-OBLIGATION-GAUGE_BV_COHOMOLOGY"
-      ],
-      "evidence": [
-        "repo-physics-vs-math",
-        "FOUNDATIONAL_FREE_BV_ENERGY2_PRA_SDR_V1"
-      ],
-      "summary": "Classical BV data and finite exact residual witnesses exist, but their full continuum foundational profile is not classified.",
-      "boundary": "Finite residual data are not the continuum off-shell complex."
-    },
     {
       "foundation": "WEAK_CHOICE_ZF",
       "carrier": "SMOOTH_DISTRIBUTIONAL",
@@ -8307,30 +8296,50 @@
       "boundary": "A localic spectrum is not causal evolution."
     },
     {
-      "foundation": "FINITE_DISCRETE",
-      "carrier": "FINITE_EXACT",
-      "obligation": "DYNAMICS_PROPAGATION",
+      "foundation": "WEAK_ARITHMETIC",
+      "carrier": "SMOOTH_DISTRIBUTIONAL",
+      "obligation": "GAUGE_BV_COHOMOLOGY",
       "status": "PRIORITY_GAP",
-      "aggregate_bridge_score": 18,
+      "aggregate_bridge_score": 21,
       "supporting_pair_ids": [
-        "PAIR-FOUNDATION-FINITE_DISCRETE-CARRIER-FINITE_EXACT"
+        "PAIR-CARRIER-SMOOTH_DISTRIBUTIONAL-OBLIGATION-GAUGE_BV_COHOMOLOGY",
+        "PAIR-FOUNDATION-WEAK_ARITHMETIC-OBLIGATION-GAUGE_BV_COHOMOLOGY"
       ],
       "evidence": [],
-      "summary": "No finite dynamics is connected to Weyl continuum propagation by controlled comparison maps.",
-      "boundary": "Finite kinematics alone supplies no dynamics."
+      "summary": "The continuum BV complex has not been encoded over a weak base.",
+      "boundary": "Finite certificates do not fill this cell."
     },
     {
-      "foundation": "FINITE_DISCRETE",
-      "carrier": "FINITE_EXACT",
+      "foundation": "TOPOS_INTERNAL",
+      "carrier": "SMOOTH_DISTRIBUTIONAL",
+      "obligation": "GAUGE_BV_COHOMOLOGY",
+      "status": "PRIORITY_GAP",
+      "aggregate_bridge_score": 20,
+      "supporting_pair_ids": [
+        "PAIR-CARRIER-SMOOTH_DISTRIBUTIONAL-OBLIGATION-GAUGE_BV_COHOMOLOGY",
+        "PAIR-FOUNDATION-TOPOS_INTERNAL-CARRIER-SMOOTH_DISTRIBUTIONAL"
+      ],
+      "evidence": [
+        "FOUNDATIONAL_TOPOS_WEYL_BV_OBSTRUCTION_LEDGER_V0"
+      ],
+      "summary": "Synthetic smooth geometry has not been joined to internal BV/BRST machinery.",
+      "boundary": "Classical synthetic GR is not gauge-fixed Weyl BV."
+    },
+    {
+      "foundation": "TOPOS_INTERNAL",
+      "carrier": "SMOOTH_DISTRIBUTIONAL",
       "obligation": "INTERACTION_RENORMALIZATION_QME",
       "status": "PRIORITY_GAP",
-      "aggregate_bridge_score": 18,
+      "aggregate_bridge_score": 20,
       "supporting_pair_ids": [
-        "PAIR-FOUNDATION-FINITE_DISCRETE-CARRIER-FINITE_EXACT"
+        "PAIR-CARRIER-SMOOTH_DISTRIBUTIONAL-OBLIGATION-INTERACTION_RENORMALIZATION_QME",
+        "PAIR-FOUNDATION-TOPOS_INTERNAL-CARRIER-SMOOTH_DISTRIBUTIONAL"
       ],
-      "evidence": [],
-      "summary": "No finite interaction/QME system with a certified continuum comparison is present.",
-      "boundary": "Finite algebra does not remove renormalization obligations."
+      "evidence": [
+        "FOUNDATIONAL_TOPOS_WEYL_BV_OBSTRUCTION_LEDGER_V0"
+      ],
+      "summary": "Distributional/microlocal renormalization in the selected internal logic is missing.",
+      "boundary": "No formal construction is claimed."
     },
     {
       "foundation": "CONSTRUCTIVE_COMPUTABLE",
@@ -8364,6 +8373,20 @@
       "boundary": "Classical rigorous PDE is not automatically constructive PDE."
     },
     {
+      "foundation": "CONSTRUCTIVE_COMPUTABLE",
+      "carrier": "SMOOTH_DISTRIBUTIONAL",
+      "obligation": "GAUGE_BV_COHOMOLOGY",
+      "status": "PRIORITY_GAP",
+      "aggregate_bridge_score": 17,
+      "supporting_pair_ids": [
+        "PAIR-CARRIER-SMOOTH_DISTRIBUTIONAL-OBLIGATION-GAUGE_BV_COHOMOLOGY",
+        "PAIR-FOUNDATION-CONSTRUCTIVE_COMPUTABLE-OBLIGATION-GAUGE_BV_COHOMOLOGY"
+      ],
+      "evidence": [],
+      "summary": "No constructive BV-BFV gauge-field complex is present.",
+      "boundary": "Constructive Hilbert propositions do not supply gauge cohomology."
+    },
+    {
       "foundation": "WEAK_ARITHMETIC",
       "carrier": "SMOOTH_DISTRIBUTIONAL",
       "obligation": "DYNAMICS_PROPAGATION",
@@ -8377,36 +8400,6 @@
       ],
       "summary": "Energy estimates, completion, uniqueness, duality, and causal support need weak-base calibration.",
       "boundary": "No reverse-mathematical PDE theorem has been proved."
-    },
-    {
-      "foundation": "WEAK_ARITHMETIC",
-      "carrier": "SMOOTH_DISTRIBUTIONAL",
-      "obligation": "GAUGE_BV_COHOMOLOGY",
-      "status": "PRIORITY_GAP",
-      "aggregate_bridge_score": 17,
-      "supporting_pair_ids": [
-        "PAIR-CARRIER-SMOOTH_DISTRIBUTIONAL-OBLIGATION-GAUGE_BV_COHOMOLOGY",
-        "PAIR-FOUNDATION-WEAK_ARITHMETIC-OBLIGATION-GAUGE_BV_COHOMOLOGY"
-      ],
-      "evidence": [],
-      "summary": "The continuum BV complex has not been encoded over a weak base.",
-      "boundary": "Finite certificates do not fill this cell."
-    },
-    {
-      "foundation": "TOPOS_INTERNAL",
-      "carrier": "SMOOTH_DISTRIBUTIONAL",
-      "obligation": "GAUGE_BV_COHOMOLOGY",
-      "status": "PRIORITY_GAP",
-      "aggregate_bridge_score": 16,
-      "supporting_pair_ids": [
-        "PAIR-CARRIER-SMOOTH_DISTRIBUTIONAL-OBLIGATION-GAUGE_BV_COHOMOLOGY",
-        "PAIR-FOUNDATION-TOPOS_INTERNAL-CARRIER-SMOOTH_DISTRIBUTIONAL"
-      ],
-      "evidence": [
-        "FOUNDATIONAL_TOPOS_WEYL_BV_OBSTRUCTION_LEDGER_V0"
-      ],
-      "summary": "Synthetic smooth geometry has not been joined to internal BV/BRST machinery.",
-      "boundary": "Classical synthetic GR is not gauge-fixed Weyl BV."
     },
     {
       "foundation": "CONSTRUCTIVE_COMPUTABLE",
@@ -8508,31 +8501,69 @@
       "boundary": "Internal reformulation is not empirical equivalence."
     },
     {
-      "foundation": "CLASSICAL_STANDARD",
+      "foundation": "CONSTRUCTIVE_COMPUTABLE",
       "carrier": "SMOOTH_DISTRIBUTIONAL",
       "obligation": "INTERACTION_RENORMALIZATION_QME",
       "status": "PRIORITY_GAP",
-      "aggregate_bridge_score": 13,
+      "aggregate_bridge_score": 12,
       "supporting_pair_ids": [
-        "PAIR-FOUNDATION-CLASSICAL_STANDARD-CARRIER-SMOOTH_DISTRIBUTIONAL"
+        "PAIR-CARRIER-SMOOTH_DISTRIBUTIONAL-OBLIGATION-INTERACTION_RENORMALIZATION_QME"
       ],
       "evidence": [],
-      "summary": "The local anomaly, counterterm, renormalized-product, and QME chain is the major quantum gap.",
-      "boundary": "No Lorentzian QME theorem exists."
+      "summary": "No constructive microlocal renormalization/QME chain is present.",
+      "boundary": "This is a missing programme, not a no-go theorem."
     },
     {
-      "foundation": "CONSTRUCTIVE_COMPUTABLE",
+      "foundation": "WEAK_ARITHMETIC",
+      "carrier": "SMOOTH_DISTRIBUTIONAL",
+      "obligation": "INTERACTION_RENORMALIZATION_QME",
+      "status": "PRIORITY_GAP",
+      "aggregate_bridge_score": 12,
+      "supporting_pair_ids": [
+        "PAIR-CARRIER-SMOOTH_DISTRIBUTIONAL-OBLIGATION-INTERACTION_RENORMALIZATION_QME"
+      ],
+      "evidence": [],
+      "summary": "Microlocal renormalization and the QME have no weak-base audit.",
+      "boundary": "This is likely a high-cost programme."
+    },
+    {
+      "foundation": "WEAK_CHOICE_ZF",
       "carrier": "SMOOTH_DISTRIBUTIONAL",
       "obligation": "GAUGE_BV_COHOMOLOGY",
       "status": "PRIORITY_GAP",
-      "aggregate_bridge_score": 13,
+      "aggregate_bridge_score": 12,
       "supporting_pair_ids": [
-        "PAIR-CARRIER-SMOOTH_DISTRIBUTIONAL-OBLIGATION-GAUGE_BV_COHOMOLOGY",
-        "PAIR-FOUNDATION-CONSTRUCTIVE_COMPUTABLE-OBLIGATION-GAUGE_BV_COHOMOLOGY"
+        "PAIR-CARRIER-SMOOTH_DISTRIBUTIONAL-OBLIGATION-GAUGE_BV_COHOMOLOGY"
       ],
       "evidence": [],
-      "summary": "No constructive BV-BFV gauge-field complex is present.",
-      "boundary": "Constructive Hilbert propositions do not supply gauge cohomology."
+      "summary": "No full continuum BV/BRST complex has been rebuilt in ZF without Choice.",
+      "boundary": "Finite ZF carriers do not establish this cell."
+    },
+    {
+      "foundation": "WEAK_CHOICE_ZF",
+      "carrier": "SMOOTH_DISTRIBUTIONAL",
+      "obligation": "INTERACTION_RENORMALIZATION_QME",
+      "status": "PRIORITY_GAP",
+      "aggregate_bridge_score": 12,
+      "supporting_pair_ids": [
+        "PAIR-CARRIER-SMOOTH_DISTRIBUTIONAL-OBLIGATION-INTERACTION_RENORMALIZATION_QME"
+      ],
+      "evidence": [],
+      "summary": "No weak-choice construction of microlocal renormalization or the QME is present.",
+      "boundary": "No Lorentzian quantum conclusion."
+    },
+    {
+      "foundation": "FINITE_DISCRETE",
+      "carrier": "FINITE_EXACT",
+      "obligation": "INTERACTION_RENORMALIZATION_QME",
+      "status": "PRIORITY_GAP",
+      "aggregate_bridge_score": 9,
+      "supporting_pair_ids": [
+        "PAIR-FOUNDATION-FINITE_DISCRETE-CARRIER-FINITE_EXACT"
+      ],
+      "evidence": [],
+      "summary": "No finite interaction/QME system with a certified continuum comparison is present.",
+      "boundary": "Finite algebra does not remove renormalization obligations."
     },
     {
       "foundation": "FINITE_DISCRETE",
@@ -8548,67 +8579,6 @@
       ],
       "summary": "No topology, comparison maps, error bounds, or regulator-independent continuum theorem joins finite models to smooth Weyl fields.",
       "boundary": "Cardinality resemblance is not convergence."
-    },
-    {
-      "foundation": "TOPOS_INTERNAL",
-      "carrier": "SMOOTH_DISTRIBUTIONAL",
-      "obligation": "INTERACTION_RENORMALIZATION_QME",
-      "status": "PRIORITY_GAP",
-      "aggregate_bridge_score": 8,
-      "supporting_pair_ids": [
-        "PAIR-FOUNDATION-TOPOS_INTERNAL-CARRIER-SMOOTH_DISTRIBUTIONAL"
-      ],
-      "evidence": [
-        "FOUNDATIONAL_TOPOS_WEYL_BV_OBSTRUCTION_LEDGER_V0"
-      ],
-      "summary": "Distributional/microlocal renormalization in the selected internal logic is missing.",
-      "boundary": "No formal construction is claimed."
-    },
-    {
-      "foundation": "WEAK_CHOICE_ZF",
-      "carrier": "SMOOTH_DISTRIBUTIONAL",
-      "obligation": "GAUGE_BV_COHOMOLOGY",
-      "status": "PRIORITY_GAP",
-      "aggregate_bridge_score": 8,
-      "supporting_pair_ids": [
-        "PAIR-CARRIER-SMOOTH_DISTRIBUTIONAL-OBLIGATION-GAUGE_BV_COHOMOLOGY"
-      ],
-      "evidence": [],
-      "summary": "No full continuum BV/BRST complex has been rebuilt in ZF without Choice.",
-      "boundary": "Finite ZF carriers do not establish this cell."
-    },
-    {
-      "foundation": "CONSTRUCTIVE_COMPUTABLE",
-      "carrier": "SMOOTH_DISTRIBUTIONAL",
-      "obligation": "INTERACTION_RENORMALIZATION_QME",
-      "status": "PRIORITY_GAP",
-      "aggregate_bridge_score": 0,
-      "supporting_pair_ids": [],
-      "evidence": [],
-      "summary": "No constructive microlocal renormalization/QME chain is present.",
-      "boundary": "This is a missing programme, not a no-go theorem."
-    },
-    {
-      "foundation": "WEAK_ARITHMETIC",
-      "carrier": "SMOOTH_DISTRIBUTIONAL",
-      "obligation": "INTERACTION_RENORMALIZATION_QME",
-      "status": "PRIORITY_GAP",
-      "aggregate_bridge_score": 0,
-      "supporting_pair_ids": [],
-      "evidence": [],
-      "summary": "Microlocal renormalization and the QME have no weak-base audit.",
-      "boundary": "This is likely a high-cost programme."
-    },
-    {
-      "foundation": "WEAK_CHOICE_ZF",
-      "carrier": "SMOOTH_DISTRIBUTIONAL",
-      "obligation": "INTERACTION_RENORMALIZATION_QME",
-      "status": "PRIORITY_GAP",
-      "aggregate_bridge_score": 0,
-      "supporting_pair_ids": [],
-      "evidence": [],
-      "summary": "No weak-choice construction of microlocal renormalization or the QME is present.",
-      "boundary": "No Lorentzian quantum conclusion."
     }
   ],
   "forge_projection": {
@@ -8628,7 +8598,7 @@
     "inputs": [
       {
         "path": "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V0.json",
-        "sha256": "9403275c134610eebc1357090aede30b200f7a815aacf38a593d34fc668ff4f3"
+        "sha256": "bb203fc1a3551a6ee7687cfa8de717e13e321a00f758e3bcd3161b118f869be4"
       }
     ],
     "producer": "foundations/analyze_pair_frontiers.py"
@@ -8643,7 +8613,7 @@
       "recommended open cells are assessed and never NOT_MAPPED",
       "canonical digest"
     ],
-    "expected_digest": "288922f2e4ed6c863ea8b8ef7c6107114296f6740a5378fbeb235df839b61066"
+    "expected_digest": "bffa782a04075016ea24e0f820fb679df68e6b2a3f3a7c370bf6b32afa32f66f"
   },
   "claim_flags": {
     "all_108_pair_projections_computed": true,

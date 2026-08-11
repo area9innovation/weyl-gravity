@@ -10,13 +10,13 @@
   "inputs":[
     {"path":"foundations/results/FOUNDATIONAL_COVERAGE_MATRIX_V0.json","sha256":"0f1a30aaf1e3a4f1fdba76952ef44d5f43372dc9c7323ff2000f7fcc31b95fe9"},
     {"path":"foundations/results/FOUNDATIONAL_RANKED_OPPORTUNITY_COMPLETION_MATRIX_V1.json","sha256":"bf897b1c8ab2e38f52ae66c52822f72cf5f0f1b2e5a88882a3ab54e730bcb1c7"},
-    {"path":"foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V0.json","sha256":"9403275c134610eebc1357090aede30b200f7a815aacf38a593d34fc668ff4f3"},
+    {"path":"foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V0.json","sha256":"bb203fc1a3551a6ee7687cfa8de717e13e321a00f758e3bcd3161b118f869be4"},
     {"path":"foundations/literature-ledger.json","sha256":"93aa76fc9042f81be11d716664593afe78f91b9c83fa3c04a03cb6aeae558596"},
     {"path":"foundations/literature-supplement-known-attempts-v1.json","sha256":"3f4a836af7c815e9628f0c0b1ee10bc5de7d8ecceba9df8d0757f766a0394dc7"}
   ],
   "generator":{"path":"foundations/render_completion_matrix_md.py","sha256":"61ffe94aa5b33eb634991159c6d9a4dc0eca148aabf1b9c864f5e4f54d48828a","write_command":"python3 foundations/render_completion_matrix_md.py","check_command":"python3 foundations/render_completion_matrix_md.py --check"},
-  "generated_report":{"path":"foundations/reports/completion-matrix.md","sha256":"4820958a7d8933e4ea6f7c2415b62f092ae578c8b4cb5676b1216172c573d5c3","line_count":332,"word_count":6111,"byte_count":44589},
-  "dimensions":{"programmes":16,"axes":6,"coverage_cells":96,"coverage_status_counts":{"DIRECT":51,"PARTIAL":20,"ADJACENT":9,"ABSENT":11,"UNKNOWN":5},"cube_axis_sizes":[6,6,6],"cube_total_cells":216,"cube_assessed_cells":59,"cube_status_counts":{"LOCAL_RESULT":21,"LITERATURE_RESULT":13,"PIECES_ONLY":6,"PRIORITY_GAP":19,"NOT_MAPPED":157},"ranked_opportunities":9,"distinct_completion_certificates":8,"literature_records":25,"literature_pin_counts":{"CONTENT_PINNED":19,"GIT_BLOB_PINNED":2,"METADATA_ONLY":4}},
+  "generated_report":{"path":"foundations/reports/completion-matrix.md","sha256":"46fa4b9001bbe6db709e8f8dd1b56f852fa1f8c9a5aeefcf56168810de677f54","line_count":332,"word_count":6111,"byte_count":44591},
+  "dimensions":{"programmes":16,"axes":6,"coverage_cells":96,"coverage_status_counts":{"DIRECT":51,"PARTIAL":20,"ADJACENT":9,"ABSENT":11,"UNKNOWN":5},"cube_axis_sizes":[6,6,6],"cube_total_cells":216,"cube_assessed_cells":59,"cube_status_counts":{"LOCAL_RESULT":24,"LITERATURE_RESULT":13,"PIECES_ONLY":5,"PRIORITY_GAP":17,"NOT_MAPPED":157},"ranked_opportunities":9,"distinct_completion_certificates":8,"literature_records":25,"literature_pin_counts":{"CONTENT_PINNED":19,"GIT_BLOB_PINNED":2,"METADATA_ONLY":4}},
   "claim_flags":{"markdown_matches_current_inputs":true,"plain_language_legend_rendered":true,"intersection_cube_rendered":true,"all_coverage_cells_rendered":true,"all_completion_rows_rendered":true,"all_literature_points_and_boundaries_rendered":true,"literature_complete":false,"deeper_programmes_complete":false,"new_lorentzian_claim":false},
   "does_not_establish":["literature completeness","correctness of the cited literature","a new mathematical or physical theorem","a weakest-base classification","completion of the deeper research gates","a full Lorentzian BV propagator","a Hadamard state or renormalized products","a Lorentzian QME theorem"],
   "human_report":"foundations/reports/completion-matrix.md"

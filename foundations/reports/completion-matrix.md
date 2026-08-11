@@ -81,10 +81,10 @@ A result label marks the strongest bounded evidence currently attached to that c
 
 | Cube classification | Cells | Share of all 216 cells |
 |---|---:|---:|
-| Local result | 21 | 9.7% |
+| Local result | 24 | 11.1% |
 | Literature result | 13 | 6.0% |
-| Pieces only | 6 | 2.8% |
-| Priority gap | 19 | 8.8% |
+| Pieces only | 5 | 2.3% |
+| Priority gap | 17 | 7.9% |
 | Not mapped | 157 | 72.7% |
 
 Only **59 of 216 cells (27.3%)** have been deliberately assessed. This is the clearest overview result: the present programme has several sharp local islands, but most of the Cartesian product is still uncharted.
@@ -93,12 +93,12 @@ Coverage by mathematical regime:
 
 | Mathematical regime | Local results | Literature results | Pieces only | Priority gaps | Not mapped |
 |---|---:|---:|---:|---:|---:|
-| Classical standard | 7 | 4 | 1 | 1 | 23 |
+| Classical standard | 9 | 4 | 0 | 0 | 23 |
 | Weak formal base | 3 | 0 | 1 | 3 | 29 |
 | ZF with weakened Choice | 7 | 1 | 0 | 3 | 25 |
 | Constructive/computable | 0 | 3 | 3 | 3 | 27 |
 | Topos/internal | 0 | 2 | 1 | 6 | 27 |
-| Finite/discrete restriction | 4 | 3 | 0 | 3 | 26 |
+| Finite/discrete restriction | 5 | 3 | 0 | 2 | 26 |
 
 ### The six cube slices
 
@@ -114,7 +114,7 @@ Classical logic with ordinary ZFC-style analysis as the reference regime.
 | **Hilbert/operator** | Literature result | Literature result | Local result | Not mapped | Not mapped | Not mapped |
 | **Krein/indefinite** | Literature result | Local result | Local result | Not mapped | Not mapped | Not mapped |
 | **Algebraic C*-system** | Literature result | Local result | Local result | Not mapped | Not mapped | Not mapped |
-| **Smooth/PDE/distributional** | Not mapped | Not mapped | Local result | Pieces only | Priority gap | Not mapped |
+| **Smooth/PDE/distributional** | Not mapped | Not mapped | Local result | Local result | Local result | Not mapped |
 | **Localic/synthetic/internal** | Not mapped | Not mapped | Not mapped | Not mapped | Not mapped | Not mapped |
 
 #### Weak formal base
@@ -175,7 +175,7 @@ A finite carrier, finite truncation, or finitist proposal replaces or regulates 
 
 | Carrier ↓ / obligation → | Kinematics/observables | States/probability | Dynamics/propagation | Gauge/BV/cohomology | Interactions/renormalization/QME | Reconstruction/limits |
 |---|:---:|:---:|:---:|:---:|:---:|:---:|
-| **Finite exact algebra** | Literature result | Literature result | Priority gap | Local result | Priority gap | Local result |
+| **Finite exact algebra** | Literature result | Literature result | Local result | Local result | Priority gap | Local result |
 | **Hilbert/operator** | Literature result | Not mapped | Not mapped | Not mapped | Not mapped | Local result |
 | **Krein/indefinite** | Local result | Not mapped | Not mapped | Not mapped | Not mapped | Not mapped |
 | **Algebraic C*-system** | Not mapped | Not mapped | Not mapped | Not mapped | Not mapped | Not mapped |
