@@ -302,15 +302,17 @@ create Git's threaded `lstat` worker and is not counted as a pass.  It was
 rerun immediately without that virtual-memory cap and passed; all scientific
 Python and TeX processes remained capped.
 
-## Next gate
+## Successor gate
 
-Construct the reverse quotient blocks for the three amplitude-affiliated
-jumps and test whether they close a single finite Krein-skew asymptotic
-generator on the zero/one/two/three-emission history carrier without using the
-absorbing closure as dynamics.  A pass would produce the first finite-order
-physical Møller column.  A failure would locate the remaining obstruction in
-dynamics rather than amplitude norm affiliation.  In parallel, the complete
-eight-point pre-trace tensor is the independent test of a fourth jump.
+The reverse-block gate is closed by
+`REVERSE_PHYSICS_BT_THREE_JUMP_KREIN_MOLLER_JET_V1`.  The three affiliated
+jumps form a single exact finite Krein-skew coupling jet with nonzero reverse
+blocks and reproduce the physical column through order three.  The same
+certificate proves that its natural parameter is the square root of additive
+resolution, so no bounded strongly differentiable additive-resolution
+generator on a fixed finite carrier can realize it.  The next gate is a
+quantum-stochastic or rigged continuation.  Independently, the complete
+eight-point pre-trace tensor remains the test of a fourth jump.
 
 CLOSE-OUT: DONE — the complete seven-point pre-trace tensor has an independently verified canonical signed quotient and affiliates the exact third rate 27/400 while every higher claim remains fail-closed
 EVIDENCE: reverse_physics/certificates/REVERSE_PHYSICS_BT_SEVEN_POINT_PROFILE_QUOTIENT_AFFILIATION_V1.json

@@ -1,0 +1,143 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-three-jump-krein-moller-jet-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["certificate", "schema_version", "dependency_tags", "lifecycle_state", "result_kind", "question", "answer", "history_carrier", "unique_ladder_factorization", "krein_skew_generator", "radial_reduction", "physical_moller_column", "additive_resolution_obstruction", "disposition", "assumptions", "does_not_establish", "missing_object_ledger", "next_gate", "provenance", "verification_commands", "checks", "report", "schema"],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_THREE_JUMP_KREIN_MOLLER_JET_V1"},
+    "schema_version": {"const": "reverse-physics-bt-three-jump-krein-moller-jet-v1"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "result_kind": {"type": "string", "minLength": 100},
+    "question": {"type": "string", "minLength": 100},
+    "answer": {"type": "string", "minLength": 1000},
+    "history_carrier": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["history_counts", "children_per_parent", "history_dimension", "quotient_species_dimension", "total_dimension", "incidence_shapes", "incidence_identity", "history_level_hashes", "edge_level_hashes"],
+      "properties": {
+        "history_counts": {"const": [1, 3, 12, 60]},
+        "children_per_parent": {"const": [3, 4, 5]},
+        "history_dimension": {"const": 76},
+        "quotient_species_dimension": {"const": 2},
+        "total_dimension": {"const": 152},
+        "incidence_shapes": {"const": [[3, 1], [12, 3], [60, 12]]},
+        "incidence_identity": {"const": "B_k^T*B_k=(k+3)*I"},
+        "history_level_hashes": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"pattern": "^[0-9a-f]{64}$"}},
+        "edge_level_hashes": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"pattern": "^[0-9a-f]{64}$"}}
+      }
+    },
+    "unique_ladder_factorization": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["extension_rate_squares", "derivation", "edge_amplitudes", "edge_amplitude_squares", "minimal_polynomials", "uniqueness_scope"],
+      "properties": {
+        "extension_rate_squares": {"const": [{"denominator": 48, "numerator": 1}, {"denominator": 64, "numerator": 5}, {"denominator": 400, "numerator": 27}]},
+        "derivation": {"type": "string", "minLength": 180},
+        "edge_amplitudes": {"const": ["sqrt(3)/12", "sqrt(10)/8", "9/20"]},
+        "edge_amplitude_squares": {"const": [{"denominator": 48, "numerator": 1}, {"denominator": 32, "numerator": 5}, {"denominator": 400, "numerator": 81}]},
+        "minimal_polynomials": {"const": ["48*y^2-1", "32*y^2-5", "20*y-9"]},
+        "uniqueness_scope": {"type": "string", "minLength": 100}
+      }
+    },
+    "krein_skew_generator": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["definition", "quotient_metric", "sparse_nonzero_entries", "sparse_entry_sha256", "skew_adjointness", "rank", "kernel_dimension", "kernel_disposition", "reverse_blocks", "minimal_level_three_boundary", "future_extension_invariance"],
+      "properties": {
+        "definition": {"const": "F_k=alpha_k*B_k tensor I2; F=sum_k F_k; K=F-F^dagger"},
+        "quotient_metric": {"type": "string", "minLength": 100},
+        "sparse_nonzero_entries": {"const": 300},
+        "sparse_entry_sha256": {"pattern": "^[0-9a-f]{64}$"},
+        "skew_adjointness": {"const": "K^dagger=-K"},
+        "rank": {"const": 52},
+        "kernel_dimension": {"const": 100},
+        "kernel_disposition": {"const": "NONDEGENERATE_DARK_HISTORY_COMBINATIONS_ON_THE_POSITIVE_QUOTIENT"},
+        "reverse_blocks": {"type": "string", "minLength": 50},
+        "minimal_level_three_boundary": {"type": "string", "minLength": 100},
+        "future_extension_invariance": {"type": "string", "minLength": 120}
+      }
+    },
+    "radial_reduction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["statement", "radial_edge_couplings", "K_radial", "characteristic_polynomial", "frequency_squares", "stability"],
+      "properties": {
+        "statement": {"type": "string", "minLength": 100},
+        "radial_edge_couplings": {"const": ["1/4", "sqrt(10)/4", "9*sqrt(5)/20"]},
+        "K_radial": {"const": [["0", "-1/4", "0", "0"], ["1/4", "0", "-sqrt(10)/4", "0"], ["0", "sqrt(10)/4", "0", "-9*sqrt(5)/20"], ["0", "0", "9*sqrt(5)/20", "0"]]},
+        "characteristic_polynomial": {"const": "(1280*z**4 + 2176*z**2 + 81)/1280"},
+        "frequency_squares": {"const": ["-(-68 + sqrt(4219))/80", "(sqrt(4219) + 68)/80"]},
+        "stability": {"const": "BOTH_FREQUENCY_SQUARES_STRICTLY_POSITIVE; FINITE_RADIAL_EVOLUTION_IS_OSCILLATORY"}
+      }
+    },
+    "physical_moller_column": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["parameter_relation", "definition", "selected_history_leading_amplitudes", "selected_history_leading_probabilities", "aggregate_leading_probabilities", "hard_amplitude_x2_coefficient", "hard_probability_a_coefficient", "first_jump_prefix", "common_phase", "certified_order", "all_x_interpretation"],
+      "properties": {
+        "parameter_relation": {"const": "x^2=a, where a is the additive ordered-resolution length"},
+        "definition": {"type": "string", "minLength": 100},
+        "selected_history_leading_amplitudes": {"const": ["sqrt(3)/12", "sqrt(30)/192", "sqrt(30)/1280"]},
+        "selected_history_leading_probabilities": {"const": [{"denominator": 48, "numerator": 1}, {"denominator": 6144, "numerator": 5}, {"denominator": 163840, "numerator": 3}]},
+        "aggregate_leading_probabilities": {"const": [{"denominator": 16, "numerator": 1}, {"denominator": 512, "numerator": 5}, {"denominator": 8192, "numerator": 9}]},
+        "hard_amplitude_x2_coefficient": {"const": "-1/32"},
+        "hard_probability_a_coefficient": {"const": "-1/16"},
+        "first_jump_prefix": {"const": "EXACTLY_THE_CERTIFIED_sqrt(3)/12_PHYSICAL_SHELL_PSEUDOUNITARY_WITNESS"},
+        "common_phase": {"type": "string", "minLength": 100},
+        "certified_order": {"const": "PROJECTIONS_THROUGH_LEVEL_THREE_AT_ORDERS_x_x2_x3_ONLY"},
+        "all_x_interpretation": {"const": "FINITE_UNITARY_WITNESS_NOT_BT_DYNAMICS"}
+      }
+    },
+    "additive_resolution_obstruction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["physical_first_transition", "bounded_strong_generator_prediction", "contradiction", "difference_quotient", "semigroup_failure", "disposition", "required_continuations"],
+      "properties": {
+        "physical_first_transition": {"const": "norm(P_perp*U_sqrt(a)*e0)^2=a/16+O(a^2)"},
+        "bounded_strong_generator_prediction": {"type": "string", "minLength": 80},
+        "contradiction": {"type": "string", "minLength": 100},
+        "difference_quotient": {"type": "string", "minLength": 60},
+        "semigroup_failure": {"type": "string", "minLength": 80},
+        "disposition": {"const": "EXACTLY_OBSTRUCTED_ON_ANY_FIXED_FINITE_BOUNDED_CARRIER"},
+        "required_continuations": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "string", "minLength": 70}}
+      }
+    },
+    "disposition": {
+      "const": {
+        "common_finite_krein_skew_coupling_generator": "CONSTRUCTED",
+        "unique_equal_edge_ladder_weights": "COMPUTED",
+        "physical_moller_column_through_three_emissions": "CONSTRUCTED_AS_TAYLOR_JET_ON_REDUCED_QUOTIENT",
+        "first_jump_pseudounitary_prefix": "EXACT",
+        "level_three_absorbing_closure": "NOT_USED_AS_DYNAMICS",
+        "additive_resolution_strong_generator": "EXACTLY_OBSTRUCTED_ON_ANY_FIXED_FINITE_BOUNDED_CARRIER",
+        "rigged_or_quantum_stochastic_continuation": "REQUIRED_NOT_CONSTRUCTED",
+        "fourth_jump": "NOT_COMPUTED",
+        "all_order_BT_asymptotic_hamiltonian": "NOT_CONSTRUCTED",
+        "complete_BT_probability": "NOT_CONSTRUCTED",
+        "Eq19_all_orders": "NOT_PROVED"
+      }
+    },
+    "assumptions": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"type": "string", "minLength": 100}},
+    "does_not_establish": {"type": "array", "minItems": 14, "maxItems": 14, "items": {"type": "string"}},
+    "missing_object_ledger": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"type": "string", "minLength": 35}},
+    "next_gate": {"type": "string", "minLength": 350},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_commit", "retrieval_date", "inputs", "producer_method", "primary_source"],
+      "properties": {
+        "source_commit": {"const": "c7d4d13ea331c5bc44103a0eb0fa6e35b8c6619f"},
+        "retrieval_date": {"const": "2026-08-11"},
+        "inputs": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"type": "object", "additionalProperties": false, "required": ["path", "sha256"], "properties": {"path": {"type": "string"}, "sha256": {"pattern": "^[0-9a-f]{64}$"}}}},
+        "producer_method": {"type": "string", "minLength": 100},
+        "primary_source": {"type": "object", "additionalProperties": false, "required": ["source", "url", "equations"], "properties": {"source": {"const": "Bateman--Turok arXiv:2607.00096v1"}, "url": {"const": "https://arxiv.org/abs/2607.00096v1"}, "equations": {"const": ["Eq. (18)", "Eq. (19)", "Appendix B Eqs. (24)-(25)"]}}}
+      }
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "maxItems": 3},
+    "checks": {"type": "object", "additionalProperties": false, "required": ["ok", "passed", "total", "failures", "details"], "properties": {"ok": {"const": true}, "passed": {"const": 34}, "total": {"const": 34}, "failures": {"const": []}, "details": {"type": "object", "minProperties": 34, "maxProperties": 34}}},
+    "report": {"const": "reverse_physics/reports/bt-three-jump-krein-moller-jet.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-three-jump-krein-moller-jet-v1.schema.json"}
+  }
+}
