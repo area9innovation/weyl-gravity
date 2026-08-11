@@ -1683,7 +1683,8 @@ $1/48$ and $1/16$ after Born normalization.  The axis-compatible physical
 virtual daughter-ratio response is zero, leaving $+3/512$ uncancelled.  The
 public $R_t$ response is also zero but is not an S-matrix summand.  The
 object-typed certificate
-\texttt{REVERSE\_PHYSICS\_BT\_INCLUSIVE\_NLO\_}
+\texttt{REVERSE\_PHYSICS\_}
+\allowbreak\texttt{BT\_INCLUSIVE\_NLO\_}
 \allowbreak\texttt{OBJECT\_LEDGER\_V1} therefore requires a separate
 hard/dressed response $-3/512$ and leaves the complete scalar NLO probability
 unestablished.  None of this scalar ledger transfers to the metric BV complex.
@@ -1702,9 +1703,22 @@ shells have $\|A_nh-A_mh\|^2=1/8$, and their exact isometries have hard-column
 distance squared $2\sin^2(x/4)$, excluding an ordinary strong Møller limit.
 The weak limit loses the real channel and is not pseudo-unitary.  The exact
 fixed endpoint-fibre pullback certified in
-\texttt{REVERSE\_PHYSICS\_BT\_LOG\_SHELL\_MOLLER\_LIMIT\_V1}
+\texttt{REVERSE\_PHYSICS\_BT\_LOG\_SHELL\_}
+\allowbreak\texttt{MOLLER\_LIMIT\_V1}
 preserves the leading-log scalar probability cylinder but supplies neither a
 local detector affiliation nor a metric-BV construction.
+The scalar endpoint fibre is now affiliated with an asymptotic
+mass-resolution detector algebra: for a monotone profile $q_R(y)=q(y-R)$,
+the positive difference $d_{R,a}=q_{R+a}-q_R$ has exact trace $a$, and its
+normalized square root is translation covariant.  Sharp and $C^1$ cubic
+profiles therefore give the same $+1/16$ real and $-1/16$ hard response.
+Certificate
+\texttt{REVERSE\_PHYSICS\_BT\_DETECTOR\_}
+\allowbreak\texttt{RESOLUTION\_DILATION\_V1}
+establishes this physical scalar leading-log resolution response only on its
+declared final-pair cylinder.  Resolution dilation is not time evolution, and
+the scalar detector trace, cancellation, and coefficient do not transfer to
+the metric BV complex or establish a \texttt{LORENTZIAN-CAUSAL} result.
 There is nevertheless a genuine scalar hard-scattering baseline.  The
 certificate
 \texttt{REVERSE\_PHYSICS\_BT\_UV\_HARD\_}\allowbreak

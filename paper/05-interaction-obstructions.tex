@@ -1559,7 +1559,7 @@ squeeze core.  Nevertheless,
 The signed hard/soft box trace $-N/48+N/48$ cancels while its absolute trace
 weight grows.  Hence the finite detector lies in the semifinite paired ideal,
 but the logarithmic soft-cutoff limit is not uniformly trace class in this
-sector.  This exact distinction is recorded by
+sector.\par\noindent This exact distinction is recorded by
 \texttt{REVERSE\_PHYSICS\_BT\_}\allowbreak
 \texttt{FINITE\_DETECTOR\_}\allowbreak\texttt{PUSHFORWARD\_V1}.  It leaves
 open an operator-level
@@ -1646,11 +1646,14 @@ $S_{\rm phys}(x)=1+xA+x^2B+O(x^3)$,
 \]
 The certified real column gives $\|Ah\|^2=1/16$, so
 $\operatorname{Re}B_{hh}=-1/32$ and the hard survival response is $-1/16$,
-or $-3/512$ after multiplication by the Born coefficient.  Certificate
-\texttt{REVERSE\_PHYSICS\_BT\_PHYSICAL\_SHELL\_}
-\allowbreak\texttt{PSEUDOUNITARY\_COMPLETION\_V1} supplies an exact finite
-$\mathbb Q(\sqrt3)$ isometric witness and proves independence from phases and
-anti-Hermitian second-order freedom.  It does not construct the continuum
+or $-3/512$ after multiplication by the Born coefficient.\par\noindent
+Certificate
+\texttt{REVERSE\_PHYSICS\_}
+\allowbreak\texttt{BT\_PHYSICAL\_SHELL\_}
+\allowbreak\texttt{PSEUDOUNITARY\_}
+\allowbreak\texttt{COMPLETION\_V1} supplies an exact finite
+$\mathbb Q(\sqrt3)$ isometric witness.  Phases and skew second-order freedom
+do not affect the result.  It does not construct the continuum
 dressed S-matrix, its degenerate trace domain, or beyond-tree positivity.
 The ordinary continuum limit is nevertheless decidable.  In logarithmic
 coordinate $y=-\log r$, choose normalized disjoint shell vectors $u_{n,i}$
@@ -1661,11 +1664,32 @@ moving to the endpoint.  Then
 \]
 Thus no strong Møller limit exists on the ordinary logarithmic $L^2$ carrier.
 The weak limit is a contraction with order-$x^2$ defect $-1/16$.  Certificate
-\texttt{REVERSE\_PHYSICS\_BT\_LOG\_SHELL\_MOLLER\_LIMIT\_V1}
+\texttt{REVERSE\_PHYSICS\_BT\_LOG\_SHELL\_}
+\allowbreak\texttt{MOLLER\_LIMIT\_V1}
 constructs instead a fixed endpoint fibre with embeddings $J_ne_i=u_{n,i}$;
 the pulled-back shell isometry and its $-1/16+1/16=0$ probability ledger are
 independent of $n$.  This leading-log dressed bundle is not affiliated with a
 local LSZ/AQFT detector and is not derived from the full BT Hamiltonian.
+It does have a canonical asymptotic resolution affiliation.  For
+$q_R(y)=q(y-R)$ with unit endpoint jump, the positive detector cell
+$d_{R,a}=q_{R+a}-q_R$ satisfies
+\[
+ \int_{\mathbb R}d_{R,a}(y)\,dy=a,\qquad
+ u_{R,a}=\sqrt{d_{R,a}/a},\qquad
+ u_{R+b,a}=T_bu_{R,a}.
+\]
+Hence $J_{R,a}e_i=u_{R,a}$ is the cutoff-dilation cocycle of the asymptotic
+momentum-resolution algebra, rather than a fitted endpoint identification.
+Certificate
+\texttt{REVERSE\_PHYSICS\_BT\_DETECTOR\_}
+\allowbreak\texttt{RESOLUTION\_DILATION\_V1}
+checks a sharp step and a $C^1$ cubic smoothstep exactly.  Both give the same
+generalized-Born response: $+1/48$ per pair and $+1/16$ in total, while
+pseudo-unitarity gives the hard response $-1/16$.  Thus the physical NLO
+leading-log resolution response vanishes on the declared final-pair cylinder
+for every admissible monotone profile.  This
+\texttt{LOCAL-ALGEBRAIC}, \texttt{REDUCED-MODE} result is not time evolution,
+a spacetime-local detector, the finite NLO probability, or Eq.~(19).
 \end{remark}
 
 \begin{remark}[Physical ultraviolet hard-scattering law]
@@ -2047,6 +2071,7 @@ ON1--ON4 & Lemma~\ref{lem:chargenull},
 Comp.\ Prop.~\ref{cprop:embedding} & exact symbolic + numeric\\
 BT-RV & Remark~\ref{rem:btaxis} & exact symbolic/rational\\
 BT-AG & Remark~\ref{rem:bttransport} & exact rational/algebraic\\
+BT-DR & Remark~\ref{rem:bttransport} & exact rational/semifinite trace\\
 BT-UV & Remark~\ref{rem:btuvhard} & exact rational/RG consistency\\
 \hline
 \end{tabular}

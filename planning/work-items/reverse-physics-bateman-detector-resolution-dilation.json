@@ -1,0 +1,37 @@
+{
+  "id": "sf:program/work/reverse-physics-bateman-detector-resolution-dilation",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "reverse-physics",
+    "state": "ACTIVE",
+    "objective": "Affilitate the BT logarithmic endpoint shell with an explicit asymptotic detector-resolution algebra, derive its translation maps from cutoff dilation, and decide whether the physical leading-log response is independent of sharp versus smooth regulator profile.",
+    "depends_on": [
+      "REVERSE_PHYSICS_BT_LOG_SHELL_MOLLER_LIMIT_V1",
+      "REVERSE_PHYSICS_BT_PHYSICAL_SHELL_PSEUDOUNITARY_COMPLETION_V1",
+      "REVERSE_PHYSICS_BT_REAL_VIRTUAL_AXIS_GLUING_V1",
+      "REVERSE_PHYSICS_BT_INCLUSIVE_NLO_OBJECT_LEDGER_V1"
+    ],
+    "activates": [
+      "a detector-algebra affiliation of the reduced endpoint fibre",
+      "a regulator-family-independent physical NLO leading-log response",
+      "the remaining time-asymptotic-Hamiltonian or all-order Eq. (19) gate"
+    ],
+    "current_gate": "DETECTOR_RESOLUTION_DILATION: represent sharp and smooth cutoff differences as positive elements of the logarithmic detector algebra, prove their semifinite trace and translation covariance exactly, and combine the certified real density with physical-shell pseudo-unitarity.",
+    "stop_condition": "Certify a profile-independent physical leading-log response on the declared detector cylinder, or the first exact failure of positivity, covariance, trace normalization, or pseudo-unitary cancellation.",
+    "forbid": "no resolution dilation called a time Moller evolution; no asymptotic momentum detector algebra called spacetime-local AQFT; no leading-log response called a finite complete NLO probability; no all-order Eq. (19), beyond-tree positivity, gravity, BRST, or LORENTZIAN-CAUSAL promotion",
+    "allowed_paths": [
+      "reverse_physics/",
+      "notes/bateman-turok-embedding.md",
+      "paper/05-interaction-obstructions.tex",
+      "paper/05-interaction-obstructions.pdf",
+      "paper/06-einstein-weyl-interaction-obstructions.tex",
+      "paper/06-einstein-weyl-interaction-obstructions.pdf",
+      "planning/work-items/reverse-physics-bateman-detector-resolution-dilation.json",
+      "planning/events/"
+    ],
+    "resource_hint": "Use y=-log r and q_R(y)=q(y-R). For every monotone profile with q(-infinity)=1 and q(+infinity)=0, d_(R,a)=q_(R+a)-q_R is positive and integral d_(R,a) dy=a. Check both a sharp step and the cubic smoothstep exactly. Its square root gives the normalized shell and translation covariance derives the J_R pullback from detector-scale dilation rather than fitting it.",
+    "input_commit": "556c3ea6400f3e4e8fdf196ca7b220acafcc807d",
+    "stream": "reverse-physics"
+  }
+}

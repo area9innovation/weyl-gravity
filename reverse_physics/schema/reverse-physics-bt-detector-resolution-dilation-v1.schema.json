@@ -1,0 +1,193 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-detector-resolution-dilation-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "certificate",
+    "schema_version",
+    "dependency_tags",
+    "lifecycle_state",
+    "result_kind",
+    "question",
+    "answer",
+    "assumptions",
+    "detector_algebra",
+    "profile_fixtures",
+    "dilation_cocycle",
+    "physical_response",
+    "disposition",
+    "does_not_establish",
+    "missing_object_ledger",
+    "next_gate",
+    "provenance",
+    "verification_commands",
+    "checks",
+    "report",
+    "schema"
+  ],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_DETECTOR_RESOLUTION_DILATION_V1"},
+    "schema_version": {"const": "reverse-physics-bt-detector-resolution-dilation-v1"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "result_kind": {"type": "string", "minLength": 100},
+    "question": {"type": "string", "minLength": 200},
+    "answer": {"type": "string", "minLength": 1200},
+    "assumptions": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "string", "minLength": 80}},
+    "detector_algebra": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["coordinate", "algebra", "semifinite_trace", "profile", "cutoff_difference", "positivity", "trace_theorem", "trace_proof", "generalized_born_affiliation", "scope"],
+      "properties": {
+        "coordinate": {"const": "y=-log r on the full real line"},
+        "algebra": {"type": "string", "minLength": 70},
+        "semifinite_trace": {"type": "string", "minLength": 60},
+        "profile": {"type": "string", "minLength": 55},
+        "cutoff_difference": {"const": "d_(R,a)=q_(R+a)-q_R for a>0"},
+        "positivity": {"const": "d_(R,a)>=0"},
+        "trace_theorem": {"const": "integral_R d_(R,a)(y) dy=a"},
+        "trace_proof": {"type": "string", "minLength": 140},
+        "generalized_born_affiliation": {"type": "string", "minLength": 100},
+        "scope": {"const": "asymptotic momentum-resolution detector algebra, not spacetime-local AQFT"}
+      }
+    },
+    "profile_fixtures": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sharp", "cubic_smoothstep"],
+      "properties": {
+        "sharp": {"$ref": "#/$defs/profile"},
+        "cubic_smoothstep": {"$ref": "#/$defs/profile"}
+      }
+    },
+    "dilation_cocycle": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["translation", "cutoff_covariance", "normalized_shell", "unit_norm", "shell_covariance", "three_channel_embedding", "pullback", "meaning"],
+      "properties": {
+        "translation": {"const": "(T_b f)(y)=f(y-b)"},
+        "cutoff_covariance": {"const": "d_(R+b,a)=T_b d_(R,a)"},
+        "normalized_shell": {"const": "u_(R,a)=sqrt(d_(R,a)/a)"},
+        "unit_norm": {"const": "integral |u_(R,a)|^2 dy=1"},
+        "shell_covariance": {"const": "u_(R+b,a)=T_b u_(R,a)"},
+        "three_channel_embedding": {"type": "string", "minLength": 50},
+        "pullback": {"type": "string", "minLength": 45},
+        "meaning": {"type": "string", "minLength": 70}
+      }
+    },
+    "physical_response": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["resolution_increment", "coupling_factor", "born_coefficient", "real_per_pair_born_normalized_per_unit_a", "pair_count", "real_total_born_normalized_per_unit_a", "hard_amplitude_real_part_per_unit_a", "hard_survival_born_normalized_per_unit_a", "inclusive_born_normalized_per_unit_a", "absolute_real_coefficient", "absolute_hard_coefficient", "absolute_inclusive_coefficient", "common_units", "pseudo_unitarity_identity", "profile_disposition", "state"],
+      "properties": {
+        "resolution_increment": {"const": "a=log c"},
+        "coupling_factor": {"const": "g^2=lambda^2/pi^2"},
+        "born_coefficient": {"const": {"denominator": 32, "numerator": 3}},
+        "real_per_pair_born_normalized_per_unit_a": {"const": {"denominator": 48, "numerator": 1}},
+        "pair_count": {"const": 3},
+        "real_total_born_normalized_per_unit_a": {"const": {"denominator": 16, "numerator": 1}},
+        "hard_amplitude_real_part_per_unit_a": {"const": {"denominator": 32, "numerator": -1}},
+        "hard_survival_born_normalized_per_unit_a": {"const": {"denominator": 16, "numerator": -1}},
+        "inclusive_born_normalized_per_unit_a": {"const": {"denominator": 1, "numerator": 0}},
+        "absolute_real_coefficient": {"const": {"denominator": 512, "numerator": 3}},
+        "absolute_hard_coefficient": {"const": {"denominator": 512, "numerator": -3}},
+        "absolute_inclusive_coefficient": {"const": {"denominator": 1, "numerator": 0}},
+        "common_units": {"const": "lambda^6*log(c)/(pi^4*s)"},
+        "pseudo_unitarity_identity": {"const": "2 Re B_hh=-||A h||^2=-1/16"},
+        "profile_disposition": {"const": "SHARP_SMOOTH_AND_ALL_ADMISSIBLE_MONOTONE_PROFILES_AGREE"},
+        "state": {"const": "PHYSICAL_NLO_LEADING_LOG_RESOLUTION_RESPONSE_COMPUTED_ON_DECLARED_FINAL_PAIR_CYLINDER"}
+      }
+    },
+    "disposition": {
+      "const": {
+        "detector_resolution_trace": "CONSTRUCTED",
+        "detector_dilation_cocycle": "CONSTRUCTED",
+        "abstract_boundary_fibre_affiliation": "AFFILIATED_TO_ASYMPTOTIC_MOMENTUM_RESOLUTION_ALGEBRA",
+        "sharp_vs_smooth_regulator_response": "EXACTLY_EQUAL",
+        "physical_final_pair_leading_log_response": "ZERO_AFTER_PSEUDOUNITARY_HARD_COMPLETION",
+        "ordinary_strong_Moller_limit": "EXACT_OBSTRUCTION_RETAINED",
+        "time_asymptotic_Hamiltonian": "NOT_CONSTRUCTED",
+        "incoming_degenerate_sector_completion": "NOT_CONSTRUCTED",
+        "spacetime_local_LSZ_or_AQFT_affiliation": "NOT_ESTABLISHED",
+        "finite_complete_NLO_probability": "NOT_ESTABLISHED",
+        "beyond_tree_positivity": "NOT_ESTABLISHED",
+        "Eq19_all_orders": "NOT_PROVED"
+      }
+    },
+    "does_not_establish": {"type": "array", "minItems": 13, "maxItems": 13, "items": {"type": "string", "minLength": 15}},
+    "missing_object_ledger": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"type": "string", "minLength": 65}},
+    "next_gate": {"type": "string", "minLength": 500},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_commit", "retrieval_date", "inputs", "primary_source"],
+      "properties": {
+        "source_commit": {"const": "556c3ea6400f3e4e8fdf196ca7b220acafcc807d"},
+        "retrieval_date": {"const": "2026-08-11"},
+        "inputs": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"$ref": "#/$defs/input"}},
+        "primary_source": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["source", "url", "equations", "use"],
+          "properties": {
+            "source": {"const": "Bateman--Turok arXiv:2607.00096v1"},
+            "url": {"const": "https://arxiv.org/abs/2607.00096"},
+            "equations": {"const": ["Eq. (6)", "Eq. (17)", "Appendix B"]},
+            "use": {"type": "string", "minLength": 120}
+          }
+        }
+      }
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "string"}},
+    "checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"const": 24},
+        "total": {"const": 24},
+        "failures": {"const": []},
+        "details": {"type": "object", "minProperties": 24, "maxProperties": 24, "additionalProperties": {"const": true}}
+      }
+    },
+    "report": {"const": "reverse_physics/reports/bt-detector-resolution-dilation.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-detector-resolution-dilation-v1.schema.json"}
+  },
+  "$defs": {
+    "rational": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {"numerator": {"type": "integer"}, "denominator": {"type": "integer", "minimum": 1}}
+    },
+    "piece": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["interval", "density_coefficients_ascending", "integral", "positivity_witness"],
+      "properties": {
+        "interval": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"$ref": "#/$defs/rational"}},
+        "density_coefficients_ascending": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/rational"}},
+        "integral": {"$ref": "#/$defs/rational"},
+        "positivity_witness": {"type": "string", "minLength": 1}
+      }
+    },
+    "profile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["base_profile", "unit_shift_density", "trace"],
+      "properties": {
+        "base_profile": {"type": "string", "minLength": 30},
+        "unit_shift_density": {"type": "array", "minItems": 1, "maxItems": 2, "items": {"$ref": "#/$defs/piece"}},
+        "trace": {"const": {"denominator": 1, "numerator": 1}}
+      }
+    },
+    "input": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {"path": {"type": "string", "minLength": 20}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+    }
+  }
+}
