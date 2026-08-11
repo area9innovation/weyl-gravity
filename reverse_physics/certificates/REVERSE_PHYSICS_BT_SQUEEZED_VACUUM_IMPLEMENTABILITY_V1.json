@@ -1,0 +1,321 @@
+{
+  "Krein_nullity_audit": {
+    "conclusion": "KREIN_NULL_DOES_NOT_IMPLY_A_VECTOR_IN_THE_POSITIVE_FOCK_TOPOLOGY",
+    "indefinite_norm": "zero because same-species Upsilon contractions vanish",
+    "positive_kappa_norm": "strictly positive at finite cutoff and infrared divergent after cutoff removal"
+  },
+  "answer": "No on the ordinary Fock--Krein carrier. In a finite box the creation part of Q_t has ordered coefficient 1/(8|p|^2). Every compatible uniformly equivalent positive fundamental symmetry assigns the Upsilon one-particle direction a norm bounded below, so the first created two-particle sector has norm density proportional to integral_epsilon^Lambda dp/p^2. It diverges as 1/epsilon, while the corresponding pair block fails the same Hilbert--Schmidt test. The vanishing indefinite Krein norm of this null-species sector does not imply positive-topology normalizability. This obstructs an ordinary Fock implementer only; an explicitly extended, rigged, or inequivalent non-Fock representation remains open.",
+  "certificate": "REVERSE_PHYSICS_BT_SQUEEZED_VACUUM_IMPLEMENTABILITY_V1",
+  "checks": {
+    "details": {
+      "HS_density_coefficient_is_one_over_32": true,
+      "HS_sum_is_twice_vacuum_norm": true,
+      "Krein_nullity_is_not_positive_norm_finiteness": true,
+      "Upsilon_norm_is_rho": true,
+      "all_fixture_Hilbert_metrics_are_positive": true,
+      "all_fixtures_are_J_self_adjoint": true,
+      "all_fixtures_are_involutions": true,
+      "bounded_rho_cannot_change_IR_power": true,
+      "commutator_beta_coefficient_is_one_quarter": true,
+      "finite_box_ordered_Q_coefficient_is_one_eighth": true,
+      "four_exact_symmetry_fixtures": true,
+      "input_hashes_pinned": true,
+      "lowest_shell_density_bound_is_linear_in_L": true,
+      "lowest_shell_has_six_ordered_momenta": true,
+      "lowest_shell_total_bound_is_three_over_256": true,
+      "norm_IR_primitive_diverges_as_inverse_epsilon": true,
+      "norm_UV_tail_is_integrable": true,
+      "norm_density_coefficient_is_one_over_64": true,
+      "norm_radial_power_is_minus_two": true,
+      "ordered_HS_coefficient_is_one_over_16": true,
+      "ordered_vacuum_norm_coefficient_is_one_over_32": true,
+      "ordinary_Fock_claim_fails_closed": true,
+      "rho_power_cure_requires_alpha_gt_one_half": true,
+      "sphere_measure_is_one_half_pi_minus_two": true,
+      "such_a_cure_breaks_uniform_equivalence": true,
+      "unordered_pair_amplitude_is_one_quarter": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 26,
+    "total": 26
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "direct_vacuum_norm": {
+    "constant_rho_density": "rho^2/(64pi^2)(epsilon^-1-Lambda^-1)",
+    "density_coefficient_times_pi_minus_two": {
+      "denominator": 64,
+      "numerator": 1
+    },
+    "infrared_disposition": "DIVERGES_AS_EPSILON_INVERSE",
+    "lowest_shell": {
+      "coefficient_times_pi_minus_four": {
+        "denominator": 256,
+        "numerator": 3
+      },
+      "density_lower_bound": "3m^2 L/(256pi^4)",
+      "ordered_momentum_count": 6,
+      "p_min": "2pi/L",
+      "total_norm_lower_bound": "3m^2 L^4/(256pi^4)"
+    },
+    "ordered_sum": "sum_(p!=0) rho(p)^2/(32|p|^4)",
+    "ordered_sum_coefficient": {
+      "denominator": 32,
+      "numerator": 1
+    },
+    "radial_integrand_power": -2,
+    "sector": "the two-particle component Q_plus|0>; orthogonal particle sectors cannot cancel it",
+    "ultraviolet_disposition": "CONVERGES_AS_LAMBDA_TO_INFINITY"
+  },
+  "disposition": {
+    "Eq19_in_extended_representation": "NOT_DECIDED",
+    "complete_nlo_probability": "NOT_ESTABLISHED",
+    "finite_box_cutoff_squeezed_state": "DEFINED_ORDER_BY_ORDER",
+    "local_operator_algebra_homomorphism": "NOT_REFUTED",
+    "massless_infinite_volume_positive_topology_vector": "OBSTRUCTED_ON_ORDINARY_FOCK_KREIN_CARRIER",
+    "ordinary_Fock_Bogoliubov_implementer": "OBSTRUCTED_BY_NON_HILBERT_SCHMIDT_PAIR_BLOCK",
+    "physical_neutral_one_over_48": "NOT_ESTABLISHED"
+  },
+  "does_not_establish": [
+    "that the Appendix-C algebraic canonical transformation is false",
+    "that Eq. (19) is false in an extended or non-Fock representation",
+    "that a finite-volume or infrared-cutoff squeezed state does not exist",
+    "that every inequivalent fundamental-symmetry topology fails",
+    "the physical neutral 1/48 coefficient",
+    "a complete NLO probability or beyond-tree positivity",
+    "a gravitational or BRST lift",
+    "anything LORENTZIAN-CAUSAL",
+    "literature priority"
+  ],
+  "finite_box_carrier": {
+    "geometry": "cubic periodic box of side L and volume V=L^3",
+    "momenta": "p=(2pi/L)n for n in Z^3, p not equal to zero",
+    "normalized_CCR": "[c_Omega,p,c_Upsilon,q^dagger]=[c_Upsilon,p,c_Omega,q^dagger]=delta_pq",
+    "one_particle_Krein_Gram": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "ordered_Q_coefficient": {
+      "denominator": 8,
+      "numerator": 1
+    },
+    "ordered_Q_plus": "sum_(p!=0) exp(2i|p|t)/(8|p|^2)c_Upsilon,p^dagger c_Upsilon,-p^dagger",
+    "unordered_pair_amplitude": {
+      "denominator": 4,
+      "numerator": 1
+    }
+  },
+  "fundamental_symmetry_family": {
+    "J": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "Upsilon_one_particle_norm_squared": "rho(p)",
+    "classification_assumptions": "translation invariant on each {Omega,Upsilon} momentum fiber, charge exchanging, J-self-adjoint, involutive, and positive",
+    "classification_derivation": "charge exchange forces zero diagonal; kappa^2=1 forces the off-diagonal product to one; positivity fixes both signs positive",
+    "exact_fixtures": [
+      {
+        "J_self_adjoint": true,
+        "Omega_norm_squared": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "Upsilon_norm_squared": {
+          "denominator": 2,
+          "numerator": 1
+        },
+        "involution": true,
+        "positive_diagonal": true,
+        "rho": {
+          "denominator": 2,
+          "numerator": 1
+        }
+      },
+      {
+        "J_self_adjoint": true,
+        "Omega_norm_squared": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "Upsilon_norm_squared": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "involution": true,
+        "positive_diagonal": true,
+        "rho": {
+          "denominator": 1,
+          "numerator": 1
+        }
+      },
+      {
+        "J_self_adjoint": true,
+        "Omega_norm_squared": {
+          "denominator": 2,
+          "numerator": 1
+        },
+        "Upsilon_norm_squared": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "involution": true,
+        "positive_diagonal": true,
+        "rho": {
+          "denominator": 1,
+          "numerator": 2
+        }
+      },
+      {
+        "J_self_adjoint": true,
+        "Omega_norm_squared": {
+          "denominator": 3,
+          "numerator": 1
+        },
+        "Upsilon_norm_squared": {
+          "denominator": 1,
+          "numerator": 3
+        },
+        "involution": true,
+        "positive_diagonal": true,
+        "rho": {
+          "denominator": 1,
+          "numerator": 3
+        }
+      }
+    ],
+    "kappa_rho": [
+      [
+        "0",
+        "rho"
+      ],
+      [
+        "rho^-1",
+        "0"
+      ]
+    ],
+    "parameter_domain": "rho(p)>0",
+    "positive_Hilbert_metric_J_kappa": [
+      [
+        "rho^-1",
+        "0"
+      ],
+      [
+        "0",
+        "rho"
+      ]
+    ],
+    "uniform_equivalence_condition": "there exist constants 0<m<=rho(p)<=M<infinity"
+  },
+  "lifecycle_state": "CLASSIFIED",
+  "missing_object_ledger": [
+    "an explicit extended, rigged, or inequivalent non-Fock representation carrying the infrared-singular Bogoliubov map",
+    "a dense invariant domain for Q_t, exp(Q_t), and the zero-mode-completed R_t map",
+    "a positive topology and generalized Born trace on that extended carrier",
+    "cyclicity and completeness of the Eq. (20) trace on the same carrier",
+    "the full order-lambda pushforward R_t P_2 R_t^dagger with regulator removal",
+    "a proof that neutral squeeze and soft terms do or do not change the conditional 1/48"
+  ],
+  "next_gate": "Construct an explicit extended Bogoliubov representation for the |p|^-2 pair kernel, including its positive topology, dense domain, zero-mode module, and cyclic generalized-Born trace; then re-evaluate Eq. (19) without identifying indefinite nullity with Hilbert-topology normalizability.",
+  "pair_block_cross_check": {
+    "beta_coefficient": {
+      "denominator": 4,
+      "numerator": 1
+    },
+    "commutator": "[c_Omega,p,Q_plus]=exp(2i|p|t)/(4|p|^2)c_Upsilon,-p^dagger",
+    "constant_rho_density": "rho^2/(32pi^2)(epsilon^-1-Lambda^-1)",
+    "criterion": "ordinary bosonic Fock implementability requires a Hilbert--Schmidt pair block",
+    "density_coefficient_times_pi_minus_two": {
+      "denominator": 32,
+      "numerator": 1
+    },
+    "disposition": "NOT_HILBERT_SCHMIDT_IN_THE_MASSLESS_IR_LIMIT",
+    "ordered_Hilbert_Schmidt_coefficient": {
+      "denominator": 16,
+      "numerator": 1
+    },
+    "ordered_Hilbert_Schmidt_sum": "sum_(p!=0) rho(p)^2/(16|p|^4)",
+    "relation_to_direct_norm": "Hilbert--Schmidt sum equals twice ||Q_plus|0>||_kappa^2",
+    "volume_boundary": "the translation-invariant infinite-volume block also has the usual extensive volume divergence; here the Hilbert--Schmidt density itself has the stronger epsilon^-1 infrared divergence"
+  },
+  "provenance": {
+    "implementability_reference": {
+      "source": "Lill, Implementing Bogoliubov Transformations Beyond the Shale--Stinespring Condition",
+      "url": "https://arxiv.org/abs/2204.13407",
+      "use": "supporting statement of the ordinary bosonic Fock Hilbert--Schmidt criterion and existence of extended alternatives; the direct sector-norm proof is primary"
+    },
+    "inputs": [
+      {
+        "path": "notes/bateman-turok-embedding.md",
+        "sha256": "202090443cf7764cdc7eb784192ccab034ecc776bb9eb520d70526b078aa505d"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_ZERO_MODE_EQ19_TRILEMMA_V1.json",
+        "sha256": "dfc134f2eb556574f42484dae531920a12ed58b4c24c3da5b7f6794de562ede1"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_OSCILLATORY_RADICAL_NO_MATCHING_V1.json",
+        "sha256": "20b97a39cd4cafca2a02d5140eedd26ecb9e8c9fd7cd027f08b7ff51fd983e2b"
+      },
+      {
+        "path": "planning/work-items/reverse-physics-bateman-squeezed-vacuum-implementability.json",
+        "sha256": "199dcd6a1a86cfae4fc4d472408ed0527d7338ec00cfca438bbaa9cb64b52a16"
+      }
+    ],
+    "primary_source": {
+      "current_version_check": "Official arXiv record checked 2026-08-11: v1 only",
+      "equations": [
+        "Appendix C Eqs. (31)--(34)"
+      ],
+      "source": "Bateman--Turok arXiv:2607.00096v1",
+      "url": "https://arxiv.org/abs/2607.00096"
+    },
+    "retrieval_date": "2026-08-11",
+    "source_commit": "e9942e8b889fcf7238a4568132e02f759aeddddf"
+  },
+  "question": "Does the Appendix-C relation R_t Psi_0^phi=exp(Q_t) Psi_0^(Omega,Upsilon) define a vector and an implementable Bogoliubov transformation in the positive topology of the stated massless Fock--Krein space after infrared-cutoff removal?",
+  "report": "reverse_physics/reports/bt-squeezed-vacuum-implementability.md",
+  "result_kind": "exact ordinary-Fock--Krein implementability obstruction for the BT Appendix-C squeeze",
+  "schema": "reverse_physics/schema/reverse-physics-bt-squeezed-vacuum-implementability-v1.schema.json",
+  "schema_version": "reverse-physics-bt-squeezed-vacuum-implementability-v1",
+  "source_conventions": {
+    "Appendix_C_generator": "Q_t=(1/2) integral d^3p/((2pi)^3(2|p|)^3) [exp(2i|p|t)b_Upsilon^dagger(p)b_Upsilon^dagger(-p)-h.c.]",
+    "cross_CCR": "[b_Omega(p),b_Upsilon^dagger(q)]=[b_Upsilon(p),b_Omega^dagger(q)]=2|p|(2pi)^3 delta^3(p-q)",
+    "finite_box_replacement": "integral d^3p/(2pi)^3 -> V^-1 sum_p",
+    "normalized_discrete_modes": "b_X(p)=sqrt(2|p|V)c_X,p",
+    "same_species_CCR": "zero",
+    "zero_mode": "excluded before the epsilon=2pi/L infrared limit"
+  },
+  "topology_boundary": {
+    "bounded_equivalent_rho": "cannot remove the divergence because rho(p)>=m>0",
+    "formal_power_weight": "rho(p) proportional to |p|^alpha makes the radial norm integral proportional to integral dp p^(2alpha-2)",
+    "integrability_condition": "alpha>1/2",
+    "normalization_scale_caveat": "rho carries the relative one-particle normalization; coefficients are exact in the displayed normalized box convention, while convergence is invariant under bounded equivalent choices",
+    "why_not_a_repair_here": "rho(p)->0 makes rho^-1 unbounded, so this topology is not uniformly equivalent to the declared ordinary Fock--Krein topology"
+  },
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_squeezed_vacuum_implementability.py --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_squeezed_vacuum_implementability.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_squeezed_vacuum_implementability"
+  ],
+  "zero_mode_completion": {
+    "candidate_orbit_rule": "kappa Z kappa=Z^-1 with Z^dagger=Z makes Z isometric in the candidate orbit Hilbertization",
+    "caveat": "a different unbounded zero-mode representation would require new domain and trace data and is not analyzed",
+    "disposition": "DOES_NOT_CURE_THE_RADIAL_DIVERGENCE_ON_THAT_CANDIDATE_MODULE",
+    "effect_on_squeeze": "multiplication by Z^2 changes charge bookkeeping but not the |p|^-2 pair amplitude"
+  }
+}

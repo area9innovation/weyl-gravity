@@ -116,6 +116,16 @@ also turns the Appendix-C squeeze from apparent charge $-2$ into neutral
 $Z^2(b_\Upsilon^\dagger)^2$.  Fixing $Z=1$ restores the negative grading but
 destroys the charge derivation on that quotient.  The missing full zero-mode
 module and trace in the deferred Eq.~(19) proof are therefore still required.
+Moreover, the displayed Appendix-C squeezed vacuum fails a prior carrier
+test: in normalized finite-box modes its creation kernel is
+$1/(8|\mathbf p|^2)$, and its first two-particle positive-norm density is
+$\rho^2(\epsilon^{-1}-\Lambda^{-1})/(64\pi^2)$ for any constant member of
+the compatible fundamental-symmetry family.  A six-mode lower bound shows
+that this density grows linearly with box size for every uniformly equivalent
+positive topology.  The associated pair block is likewise non-Hilbert--Schmidt.
+Thus indefinite nullity does not produce an ordinary Fock--Krein vector;
+an extended or inequivalent non-Fock realization remains open and would need
+its domains and trace specified.
 Independently, the projected three-channel hard loop logarithm closes the
 Callan--Symanzik equation exactly with the Born rate and one-loop beta
 function.  This yields the positive leading-log nonforward prediction
@@ -1353,6 +1363,29 @@ grading and covariant zero-mode completion do not commute.  The certificate
 does not replace the missing full dynamical zero-mode module, invariant
 generalized-Born trace, or nonlinear pushforward, and therefore does not prove
 Eq.~(19), the physical $1/48$, or its negation.
+
+There is also a topology obstruction before that missing trace can be used on
+the ordinary Fock carrier.  The certificate
+\texttt{REVERSE\_PHYSICS\_BT\_SQUEEZED\_}
+\allowbreak\texttt{VACUUM\_IMPLEMENTABILITY\_V1} normalizes the Appendix-C
+creation generator in a periodic box and classifies the compatible
+charge-exchanging fundamental symmetries.  If the positive metric weights the
+$\Upsilon$ direction by $\rho(\mathbf p)$, uniform equivalence requires
+$0<m\leq\rho\leq M$.  Direct Wick contraction then gives
+\[
+ \frac1V\|Q_+|0\rangle\|_\kappa^2
+ =\frac{\rho^2}{64\pi^2}
+ \left(\epsilon^{-1}-\Lambda^{-1}\right)
+\]
+for constant $\rho$, and the six lowest box modes give a lower-bound density
+$3m^2L/(256\pi^4)$.  The pair-creation block has twice this divergent norm.
+The squeeze is therefore Krein-null but not a vector, nor ordinarily
+Bogoliubov-implementable, in the massless positive Fock topology.  A weight
+$\rho(p)\sim p^\alpha$ could soften the integral only for $\alpha>1/2$, when
+$\rho^{-1}$ is unbounded and the topology is inequivalent.  This exact
+\texttt{LOCAL-ALGEBRAIC}, \texttt{REDUCED-MODE} obstruction neither refutes
+the algebraic map nor excludes a rigorously defined extended/non-Fock
+representation of Eq.~(19).
 \end{remark}
 
 \begin{remark}[Physical ultraviolet hard-scattering law]

@@ -1,0 +1,238 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-squeezed-vacuum-implementability-v1.schema.json",
+  "$defs": {
+    "nonempty": {"type": "string", "minLength": 1},
+    "fraction": {
+      "type": "object",
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      },
+      "additionalProperties": false
+    },
+    "string_array": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/nonempty"}
+    },
+    "fixture": {
+      "type": "object",
+      "required": ["rho", "involution", "J_self_adjoint", "positive_diagonal", "Omega_norm_squared", "Upsilon_norm_squared"],
+      "properties": {
+        "rho": {"$ref": "#/$defs/fraction"},
+        "involution": {"const": true},
+        "J_self_adjoint": {"const": true},
+        "positive_diagonal": {"const": true},
+        "Omega_norm_squared": {"$ref": "#/$defs/fraction"},
+        "Upsilon_norm_squared": {"$ref": "#/$defs/fraction"}
+      },
+      "additionalProperties": false
+    },
+    "hash_input": {
+      "type": "object",
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {"$ref": "#/$defs/nonempty"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      },
+      "additionalProperties": false
+    }
+  },
+  "type": "object",
+  "required": ["certificate", "schema_version", "dependency_tags", "lifecycle_state", "result_kind", "question", "answer", "source_conventions", "finite_box_carrier", "fundamental_symmetry_family", "direct_vacuum_norm", "pair_block_cross_check", "topology_boundary", "Krein_nullity_audit", "zero_mode_completion", "disposition", "missing_object_ledger", "does_not_establish", "next_gate", "provenance", "verification_commands", "checks", "report", "schema"],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_SQUEEZED_VACUUM_IMPLEMENTABILITY_V1"},
+    "schema_version": {"const": "reverse-physics-bt-squeezed-vacuum-implementability-v1"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "result_kind": {"$ref": "#/$defs/nonempty"},
+    "question": {"$ref": "#/$defs/nonempty"},
+    "answer": {"$ref": "#/$defs/nonempty"},
+    "source_conventions": {
+      "type": "object",
+      "required": ["cross_CCR", "same_species_CCR", "Appendix_C_generator", "finite_box_replacement", "normalized_discrete_modes", "zero_mode"],
+      "properties": {
+        "cross_CCR": {"$ref": "#/$defs/nonempty"},
+        "same_species_CCR": {"const": "zero"},
+        "Appendix_C_generator": {"$ref": "#/$defs/nonempty"},
+        "finite_box_replacement": {"const": "integral d^3p/(2pi)^3 -> V^-1 sum_p"},
+        "normalized_discrete_modes": {"const": "b_X(p)=sqrt(2|p|V)c_X,p"},
+        "zero_mode": {"$ref": "#/$defs/nonempty"}
+      },
+      "additionalProperties": false
+    },
+    "finite_box_carrier": {
+      "type": "object",
+      "required": ["geometry", "momenta", "normalized_CCR", "one_particle_Krein_Gram", "ordered_Q_plus", "ordered_Q_coefficient", "unordered_pair_amplitude"],
+      "properties": {
+        "geometry": {"$ref": "#/$defs/nonempty"},
+        "momenta": {"$ref": "#/$defs/nonempty"},
+        "normalized_CCR": {"$ref": "#/$defs/nonempty"},
+        "one_particle_Krein_Gram": {"const": [[0, 1], [1, 0]]},
+        "ordered_Q_plus": {"$ref": "#/$defs/nonempty"},
+        "ordered_Q_coefficient": {"const": {"numerator": 1, "denominator": 8}},
+        "unordered_pair_amplitude": {"const": {"numerator": 1, "denominator": 4}}
+      },
+      "additionalProperties": false
+    },
+    "fundamental_symmetry_family": {
+      "type": "object",
+      "required": ["classification_assumptions", "J", "kappa_rho", "parameter_domain", "positive_Hilbert_metric_J_kappa", "Upsilon_one_particle_norm_squared", "uniform_equivalence_condition", "exact_fixtures", "classification_derivation"],
+      "properties": {
+        "classification_assumptions": {"$ref": "#/$defs/nonempty"},
+        "J": {"const": [[0, 1], [1, 0]]},
+        "kappa_rho": {"const": [["0", "rho"], ["rho^-1", "0"]]},
+        "parameter_domain": {"const": "rho(p)>0"},
+        "positive_Hilbert_metric_J_kappa": {"const": [["rho^-1", "0"], ["0", "rho"]]},
+        "Upsilon_one_particle_norm_squared": {"const": "rho(p)"},
+        "uniform_equivalence_condition": {"const": "there exist constants 0<m<=rho(p)<=M<infinity"},
+        "exact_fixtures": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/fixture"}},
+        "classification_derivation": {"$ref": "#/$defs/nonempty"}
+      },
+      "additionalProperties": false
+    },
+    "direct_vacuum_norm": {
+      "type": "object",
+      "required": ["sector", "ordered_sum", "ordered_sum_coefficient", "constant_rho_density", "density_coefficient_times_pi_minus_two", "radial_integrand_power", "infrared_disposition", "ultraviolet_disposition", "lowest_shell"],
+      "properties": {
+        "sector": {"$ref": "#/$defs/nonempty"},
+        "ordered_sum": {"const": "sum_(p!=0) rho(p)^2/(32|p|^4)"},
+        "ordered_sum_coefficient": {"const": {"numerator": 1, "denominator": 32}},
+        "constant_rho_density": {"const": "rho^2/(64pi^2)(epsilon^-1-Lambda^-1)"},
+        "density_coefficient_times_pi_minus_two": {"const": {"numerator": 1, "denominator": 64}},
+        "radial_integrand_power": {"const": -2},
+        "infrared_disposition": {"const": "DIVERGES_AS_EPSILON_INVERSE"},
+        "ultraviolet_disposition": {"const": "CONVERGES_AS_LAMBDA_TO_INFINITY"},
+        "lowest_shell": {
+          "type": "object",
+          "required": ["ordered_momentum_count", "p_min", "total_norm_lower_bound", "density_lower_bound", "coefficient_times_pi_minus_four"],
+          "properties": {
+            "ordered_momentum_count": {"const": 6},
+            "p_min": {"const": "2pi/L"},
+            "total_norm_lower_bound": {"const": "3m^2 L^4/(256pi^4)"},
+            "density_lower_bound": {"const": "3m^2 L/(256pi^4)"},
+            "coefficient_times_pi_minus_four": {"const": {"numerator": 3, "denominator": 256}}
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "pair_block_cross_check": {
+      "type": "object",
+      "required": ["commutator", "beta_coefficient", "ordered_Hilbert_Schmidt_sum", "ordered_Hilbert_Schmidt_coefficient", "constant_rho_density", "density_coefficient_times_pi_minus_two", "relation_to_direct_norm", "criterion", "volume_boundary", "disposition"],
+      "properties": {
+        "commutator": {"$ref": "#/$defs/nonempty"},
+        "beta_coefficient": {"const": {"numerator": 1, "denominator": 4}},
+        "ordered_Hilbert_Schmidt_sum": {"const": "sum_(p!=0) rho(p)^2/(16|p|^4)"},
+        "ordered_Hilbert_Schmidt_coefficient": {"const": {"numerator": 1, "denominator": 16}},
+        "constant_rho_density": {"const": "rho^2/(32pi^2)(epsilon^-1-Lambda^-1)"},
+        "density_coefficient_times_pi_minus_two": {"const": {"numerator": 1, "denominator": 32}},
+        "relation_to_direct_norm": {"$ref": "#/$defs/nonempty"},
+        "criterion": {"$ref": "#/$defs/nonempty"},
+        "volume_boundary": {"$ref": "#/$defs/nonempty"},
+        "disposition": {"const": "NOT_HILBERT_SCHMIDT_IN_THE_MASSLESS_IR_LIMIT"}
+      },
+      "additionalProperties": false
+    },
+    "topology_boundary": {
+      "type": "object",
+      "required": ["bounded_equivalent_rho", "formal_power_weight", "integrability_condition", "why_not_a_repair_here", "normalization_scale_caveat"],
+      "properties": {
+        "bounded_equivalent_rho": {"$ref": "#/$defs/nonempty"},
+        "formal_power_weight": {"$ref": "#/$defs/nonempty"},
+        "integrability_condition": {"const": "alpha>1/2"},
+        "why_not_a_repair_here": {"$ref": "#/$defs/nonempty"},
+        "normalization_scale_caveat": {"$ref": "#/$defs/nonempty"}
+      },
+      "additionalProperties": false
+    },
+    "Krein_nullity_audit": {
+      "type": "object",
+      "required": ["indefinite_norm", "positive_kappa_norm", "conclusion"],
+      "properties": {
+        "indefinite_norm": {"$ref": "#/$defs/nonempty"},
+        "positive_kappa_norm": {"$ref": "#/$defs/nonempty"},
+        "conclusion": {"const": "KREIN_NULL_DOES_NOT_IMPLY_A_VECTOR_IN_THE_POSITIVE_FOCK_TOPOLOGY"}
+      },
+      "additionalProperties": false
+    },
+    "zero_mode_completion": {
+      "type": "object",
+      "required": ["candidate_orbit_rule", "effect_on_squeeze", "disposition", "caveat"],
+      "properties": {
+        "candidate_orbit_rule": {"$ref": "#/$defs/nonempty"},
+        "effect_on_squeeze": {"$ref": "#/$defs/nonempty"},
+        "disposition": {"const": "DOES_NOT_CURE_THE_RADIAL_DIVERGENCE_ON_THAT_CANDIDATE_MODULE"},
+        "caveat": {"$ref": "#/$defs/nonempty"}
+      },
+      "additionalProperties": false
+    },
+    "disposition": {
+      "type": "object",
+      "required": ["finite_box_cutoff_squeezed_state", "massless_infinite_volume_positive_topology_vector", "ordinary_Fock_Bogoliubov_implementer", "local_operator_algebra_homomorphism", "Eq19_in_extended_representation", "physical_neutral_one_over_48", "complete_nlo_probability"],
+      "properties": {
+        "finite_box_cutoff_squeezed_state": {"const": "DEFINED_ORDER_BY_ORDER"},
+        "massless_infinite_volume_positive_topology_vector": {"const": "OBSTRUCTED_ON_ORDINARY_FOCK_KREIN_CARRIER"},
+        "ordinary_Fock_Bogoliubov_implementer": {"const": "OBSTRUCTED_BY_NON_HILBERT_SCHMIDT_PAIR_BLOCK"},
+        "local_operator_algebra_homomorphism": {"const": "NOT_REFUTED"},
+        "Eq19_in_extended_representation": {"const": "NOT_DECIDED"},
+        "physical_neutral_one_over_48": {"const": "NOT_ESTABLISHED"},
+        "complete_nlo_probability": {"const": "NOT_ESTABLISHED"}
+      },
+      "additionalProperties": false
+    },
+    "missing_object_ledger": {"type": "array", "minItems": 6, "items": {"$ref": "#/$defs/nonempty"}},
+    "does_not_establish": {"type": "array", "minItems": 9, "items": {"$ref": "#/$defs/nonempty"}},
+    "next_gate": {"$ref": "#/$defs/nonempty"},
+    "provenance": {
+      "type": "object",
+      "required": ["source_commit", "retrieval_date", "inputs", "primary_source", "implementability_reference"],
+      "properties": {
+        "source_commit": {"const": "e9942e8b889fcf7238a4568132e02f759aeddddf"},
+        "retrieval_date": {"const": "2026-08-11"},
+        "inputs": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/hash_input"}},
+        "primary_source": {
+          "type": "object",
+          "required": ["source", "url", "equations", "current_version_check"],
+          "properties": {
+            "source": {"$ref": "#/$defs/nonempty"},
+            "url": {"const": "https://arxiv.org/abs/2607.00096"},
+            "equations": {"$ref": "#/$defs/string_array"},
+            "current_version_check": {"$ref": "#/$defs/nonempty"}
+          },
+          "additionalProperties": false
+        },
+        "implementability_reference": {
+          "type": "object",
+          "required": ["source", "url", "use"],
+          "properties": {
+            "source": {"$ref": "#/$defs/nonempty"},
+            "url": {"const": "https://arxiv.org/abs/2204.13407"},
+            "use": {"$ref": "#/$defs/nonempty"}
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/nonempty"}},
+    "checks": {
+      "type": "object",
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"const": 26},
+        "total": {"const": 26},
+        "failures": {"const": []},
+        "details": {"type": "object", "minProperties": 26, "maxProperties": 26, "additionalProperties": {"const": true}}
+      },
+      "additionalProperties": false
+    },
+    "report": {"const": "reverse_physics/reports/bt-squeezed-vacuum-implementability.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-squeezed-vacuum-implementability-v1.schema.json"}
+  },
+  "additionalProperties": false
+}
