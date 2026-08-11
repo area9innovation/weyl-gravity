@@ -2235,6 +2235,42 @@ typing checks.  The complement's algebraic form is fixed but is not derived
 from BT zero-mode or higher-composite dynamics.  The result is a vacuum column
 of the pinned finite resolution model, not a two-sided spacetime S operator,
 a complete NLO theorem, or an all-order proof of Eq.~(19).
+
+The classified endpoint freedom does not supply this complement by one fixed
+prescription on the minimal two-profile probe lift.  Take
+$v=(1,z(1-z))$ and parameterize a reflection-even extension relative to the
+symmetric triple-plus reference by $(c_0,c_1,c_2)$.  The reference acts on
+$1,z(1-z),z^2(1-z)^2$ by $(0,0,3/2)$, while the three endpoint jets have
+action matrix
+\[
+ \begin{pmatrix}2&0&0\\0&-2&-4\\0&0&4\end{pmatrix}.
+\]
+Consequently its induced Gram is
+\[
+ K(c)=\begin{pmatrix}
+ 2c_0&-2c_1-4c_2\\
+ -2c_1-4c_2&3/2+4c_2
+ \end{pmatrix}.
+\]
+The equation
+$K(c)=\left(\begin{smallmatrix}0&-\rho\\-\rho&-2\end{smallmatrix}\right)$
+has the unique solution
+\[
+ c_0=0,\qquad c_1=\frac74+\frac\rho2,\qquad c_2=-\frac78.
+\]
+Three exact physical fixtures have distinct $\rho$, so one
+$\rho$-independent coefficient triple cannot match even those three fibres.
+Changing the fixed affine reference changes the intercept but leaves
+$dc_1/d\rho=1/2$.  Certificate
+\par\noindent
+\texttt{REVERSE\_PHYSICS\_BT\_ENDPOINT\_COMPLEMENT\_}
+\allowbreak\texttt{MATCHING\_V1}
+\par\noindent
+records the exact endpoint actions, affine matching law, physical fixtures,
+and subtraction witness.  A spectator-dependent coefficient or a different
+dynamical profile remains possible; neither is derived from the public
+order-$\lambda$ map.  The statement is therefore a fixed-profile endpoint
+obstruction, not an all-local-counterterm no-go or a proof of Eq.~(19).
 Resolution locality is not spacetime locality.
 \end{remark}
 

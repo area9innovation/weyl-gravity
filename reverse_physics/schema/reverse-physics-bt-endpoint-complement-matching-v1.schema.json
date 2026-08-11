@@ -1,0 +1,170 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-endpoint-complement-matching-v1.schema.json",
+  "$defs": {
+    "rational": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      }
+    }
+  },
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "certificate", "schema_version", "dependency_tags", "lifecycle_state",
+    "result_kind", "question", "answer", "declared_lift",
+    "endpoint_extension", "matching_theorem", "physical_fixtures",
+    "universality_obstruction", "disposition", "assumptions",
+    "does_not_establish", "missing_object_ledger", "next_gate",
+    "provenance", "verification_commands", "checks", "report", "schema"
+  ],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_ENDPOINT_COMPLEMENT_MATCHING_V1"},
+    "schema_version": {"const": "reverse-physics-bt-endpoint-complement-matching-v1"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "result_kind": {"type": "string", "minLength": 100},
+    "question": {"type": "string", "minLength": 200},
+    "answer": {"type": "string", "minLength": 1200},
+    "declared_lift": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["endpoint_variable", "profiles", "product_probes", "interpretation"],
+      "properties": {
+        "endpoint_variable": {"const": "z in (0,1)"},
+        "profiles": {"const": ["v0(z)=1", "v1(z)=z*(1-z)"]},
+        "product_probes": {"const": ["f00=1", "f01=z*(1-z)", "f11=z^2*(1-z)^2"]},
+        "interpretation": {"type": "string", "minLength": 180}
+      }
+    },
+    "endpoint_extension": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["interior_shape", "reference", "endpoint_basis", "jet_action_matrix", "jet_matrix_determinant", "reference_actions_on_product_probes", "induced_gram"],
+      "properties": {
+        "interior_shape": {"const": "h(z)=-(1/2)*(z^-3+(1-z)^-3)"},
+        "reference": {"const": "H_plus=-(1/2)*([z^-3]_+++[(1-z)^-3]_+++)"},
+        "endpoint_basis": {"const": ["E0=delta_0+delta_1", "E1=delta_0_prime-delta_1_prime", "E2=delta_0_double_prime+delta_1_double_prime"]},
+        "jet_action_matrix": {
+          "const": [
+            [{"numerator": 2, "denominator": 1}, {"numerator": 0, "denominator": 1}, {"numerator": 0, "denominator": 1}],
+            [{"numerator": 0, "denominator": 1}, {"numerator": -2, "denominator": 1}, {"numerator": -4, "denominator": 1}],
+            [{"numerator": 0, "denominator": 1}, {"numerator": 0, "denominator": 1}, {"numerator": 4, "denominator": 1}]
+          ]
+        },
+        "jet_matrix_determinant": {"const": {"numerator": -16, "denominator": 1}},
+        "reference_actions_on_product_probes": {"const": [{"numerator": 0, "denominator": 1}, {"numerator": 0, "denominator": 1}, {"numerator": 3, "denominator": 2}]},
+        "induced_gram": {"const": "K(c)=[[2*c0,-2*c1-4*c2],[-2*c1-4*c2,3/2+4*c2]]"}
+      }
+    },
+    "matching_theorem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["target_gram", "unique_coefficients", "coefficient_derivative_with_respect_to_rho", "generic_fixed_reference_law", "reference_invariant_statement", "pointwise_status", "universal_status"],
+      "properties": {
+        "target_gram": {"const": "G_missing(rho)=[[0,-rho],[-rho,-2]]"},
+        "unique_coefficients": {"const": ["c0=0", "c1=7/4+rho/2", "c2=-7/8"]},
+        "coefficient_derivative_with_respect_to_rho": {"const": ["0", "1/2", "0"]},
+        "generic_fixed_reference_law": {"const": ["c0=-beta00/2", "c1=(rho+beta01+beta11+2)/2", "c2=(-2-beta11)/4"]},
+        "reference_invariant_statement": {"type": "string", "minLength": 150},
+        "pointwise_status": {"const": "UNIQUE_ALGEBRAIC_MATCH_EXISTS_FOR_EACH_FIXED_RHO"},
+        "universal_status": {"const": "NO_SINGLE_RHO_INDEPENDENT_COEFFICIENT_TRIPLE_MATCHES_DISTINCT_PHYSICAL_RHOS"}
+      }
+    },
+    "physical_fixtures": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["fixture_index", "rho", "coefficients", "matched_gram"],
+        "properties": {
+          "fixture_index": {"type": "integer", "minimum": 0, "maximum": 2},
+          "rho": {"$ref": "#/$defs/rational"},
+          "coefficients": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/rational"}},
+          "matched_gram": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"$ref": "#/$defs/rational"}}}
+        }
+      }
+    },
+    "universality_obstruction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["proof", "varying_coordinate", "scope"],
+      "properties": {
+        "proof": {"type": "string", "minLength": 250},
+        "varying_coordinate": {"type": "string", "minLength": 100},
+        "scope": {"type": "string", "minLength": 180}
+      }
+    },
+    "disposition": {
+      "const": {
+        "fixed_profile_endpoint_matching_system": "SOLVED_EXACTLY",
+        "pointwise_endpoint_match": "EXISTS_UNIQUELY_BUT_IS_NOT_DERIVED_FROM_BT_DYNAMICS",
+        "fixed_universal_endpoint_extension": "EXACTLY_OBSTRUCTED_ON_DISTINCT_PHYSICAL_RHO_FIXTURES",
+        "spectator_dependent_or_dynamical_extension": "NOT_CLASSIFIED",
+        "BT_derived_missing_complement": "NOT_CONSTRUCTED",
+        "Eq19_all_orders": "NOT_PROVED",
+        "complete_BT_probability": "NOT_CONSTRUCTED",
+        "physical_two_sided_S_operator": "NOT_CONSTRUCTED"
+      }
+    },
+    "assumptions": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "string", "minLength": 120}},
+    "does_not_establish": {"type": "array", "minItems": 10, "maxItems": 10, "items": {"type": "string", "minLength": 15}},
+    "missing_object_ledger": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"type": "string", "minLength": 90}},
+    "next_gate": {"type": "string", "minLength": 650},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_commit", "retrieval_date", "inputs", "producer_method", "primary_source"],
+      "properties": {
+        "source_commit": {"const": "523a9fa799a3f5eda93849fdb4d0e9221ff7b74b"},
+        "retrieval_date": {"const": "2026-08-11"},
+        "inputs": {
+          "type": "array",
+          "minItems": 6,
+          "maxItems": 6,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["path", "sha256"],
+            "properties": {
+              "path": {"type": "string", "minLength": 25},
+              "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+            }
+          }
+        },
+        "producer_method": {"type": "string", "minLength": 180},
+        "primary_source": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["source", "url", "equations"],
+          "properties": {
+            "source": {"const": "Bateman--Turok arXiv:2607.00096v1"},
+            "url": {"const": "https://arxiv.org/abs/2607.00096v1"},
+            "equations": {"const": ["Eq. (16)", "Eq. (19)", "Appendix C"]}
+          }
+        }
+      }
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "string", "minLength": 100}},
+    "checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"const": 25},
+        "total": {"const": 25},
+        "failures": {"const": []},
+        "details": {"type": "object", "minProperties": 25, "maxProperties": 25}
+      }
+    },
+    "report": {"const": "reverse_physics/reports/bt-endpoint-complement-matching.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-endpoint-complement-matching-v1.schema.json"}
+  }
+}

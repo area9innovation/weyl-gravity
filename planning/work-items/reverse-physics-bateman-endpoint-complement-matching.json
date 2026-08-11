@@ -1,0 +1,38 @@
+{
+  "id": "sf:program/work/reverse-physics-bateman-endpoint-complement-matching",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "reverse-physics",
+    "state": "ACTIVE",
+    "objective": "Test whether the already classified fixed reflection-even endpoint-extension freedom of the public Bateman--Turok Jordan kernel can supply the forced two-dimensional cross-Krein complement needed to place the public R_t leg and the physical first-emission map in one dilation, and classify the exact kinematic dependence required if a pointwise match remains possible.",
+    "depends_on": [
+      "REVERSE_PHYSICS_BT_ENDPOINT_EXTENSION_AMBIGUITY_V1",
+      "REVERSE_PHYSICS_BT_FINITE_PHYSICAL_MOLLER_COLUMN_V1",
+      "REVERSE_PHYSICS_BT_PHYSICAL_COLLINEAR_OPERATOR_FACTORIZATION_V1",
+      "REVERSE_PHYSICS_BT_FULL_SIGNED_QUADRATIC_CLOSURE_V1",
+      "REVERSE_PHYSICS_BT_ZERO_MODE_EQ19_TRILEMMA_V1"
+    ],
+    "activates": [
+      "an exact matching law between endpoint jets and the missing public-to-physical Krein complement",
+      "a universality test over distinct exact physical external-jet fixtures",
+      "the next search for a genuinely dynamical zero-mode or higher-composite complement"
+    ],
+    "current_gate": "On the fixed two-profile probe lift v=(1,z(1-z)), reconstruct the triple-plus reference extension and the three reflection-even endpoint jets E_n=delta_0^(n)+(-1)^n delta_1^(n). Form the induced symmetric Gram K_ab=(H_plus+sum_n c_n E_n)[v_a v_b]. Solve K=G_missing(rho), where G_missing=[[0,-rho],[-rho,-2]], and determine whether one rho-independent coefficient triple can match every exact physical rho fixture. Separate a fixed universal local extension from a pointwise kinematics-dependent fit and keep the latter underived unless BT dynamics supplies it.",
+    "stop_condition": "Land a strict exact certificate with a method-distinct verifier that reconstructs the endpoint actions, solves the affine matching system, checks every imported physical rho fixture, and either proves a fixed extension works universally or records the first exact nonuniversality obstruction together with the necessary pointwise coefficient law. Keep all claims outside the declared fixed-profile lift, all-order Eq. 19, complete BT scattering, gravity, and Lorentzian physics fail-closed.",
+    "forbid": "no counterterm-only coefficient formula that drops the affine reference extension; no fixed-profile obstruction promoted to a no-go for every spectator-dependent or dynamically generated endpoint sector; no pointwise fitted coefficient called BT-derived; no endpoint matching called all-order Eq. 19, complete probability, a physical S matrix, gravity, a new dimension, or a LORENTZIAN-CAUSAL theorem",
+    "allowed_paths": [
+      "reverse_physics/",
+      "notes/bateman-turok-embedding.md",
+      "paper/05-interaction-obstructions.tex",
+      "paper/05-interaction-obstructions.pdf",
+      "paper/06-einstein-weyl-interaction-obstructions.tex",
+      "paper/06-einstein-weyl-interaction-obstructions.pdf",
+      "planning/work-items/reverse-physics-bateman-endpoint-complement-matching.json",
+      "planning/events/"
+    ],
+    "resource_hint": "For v_0=1 and v_1=z(1-z), the three products are the certified probes f_0=1, f_1=z(1-z), f_2=z^2(1-z)^2. The endpoint-jet action matrix is [[2,0,0],[0,-2,-4],[0,0,4]], while the triple-plus reference acts by (0,0,3/2). Therefore K=[[2c0,-2c1-4c2],[-2c1-4c2,3/2+4c2]]. Exact matching to [[0,-rho],[-rho,-2]] should be checked rather than assumed; compare the resulting coefficient triple on all imported physical rho fixtures and prove which coefficient must vary.",
+    "input_commit": "523a9fa799a3f5eda93849fdb4d0e9221ff7b74b",
+    "stream": "reverse-physics"
+  }
+}
