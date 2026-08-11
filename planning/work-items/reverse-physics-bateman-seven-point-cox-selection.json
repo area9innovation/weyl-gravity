@@ -1,0 +1,35 @@
+{
+  "id": "sf:program/work/reverse-physics-bateman-seven-point-cox-selection",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "reverse-physics",
+    "state": "ACTIVE",
+    "objective": "Construct positive non-Gaussian resolution-local Cox completions matching the certified BT one- and two-emission factorial data, then compute the complete seven-point triple-strongly-ordered tree to determine the third factorial moment and select or exclude those completions.",
+    "depends_on": [
+      "REVERSE_PHYSICS_BT_RESOLUTION_LOCAL_COHERENT_BORN_PROCESS_V1",
+      "REVERSE_PHYSICS_BT_SIX_POINT_STRONGLY_ORDERED_TREE_V1"
+    ],
+    "activates": [
+      "the first positive non-Gaussian resolution-local state matched to nonlinear BT tree data",
+      "an exact third factorial cumulant from all 2485 seven-point cubic/quartic trees",
+      "a Stieltjes moment-positivity test capable of excluding the entire scalar Cox class"
+    ],
+    "current_gate": "SEVEN_POINT_COX_SELECTION: classify the nonnegative intensity moment cone fixed by m1=1/16 and m2=5/256; compute the complete seven-point nested four-daughter external-mass jet with three ordered invariant scales; reduce all three physical Kallen thresholds at fixed invariant cutoff; restore graph, phase-space, identical-particle, history, external-delta-prime, and ordered-simplex factors; and compare the resulting third moment with the Cox cone and explicit gamma and atomic candidates.",
+    "stop_condition": "Land an exact certificate with an independent verifier that either computes a Cox-admissible third moment and constructs a positive locally normal dilation realizing the first three BT moments, or proves the seven-point coefficient violates the Stieltjes positivity bound and thereby rules out the scalar Cox architecture, while keeping complete-probability, all-order, hard-angle-universality, spacetime-Moller, Eq. 19, gravity, and Lorentzian claims fail-closed.",
+    "forbid": "no pole-history subset substituted for the full 2485-tree jet; no numerical fit substituted for exact hard-fixture and threshold identities; no fixed rationalization-coordinate cutoff substituted for a physical invariant cutoff; no first-three-moment completion called unique without an explicit architecture; no reduced-mode coefficient called a complete probability, all-order count law, spacetime-local S-matrix, Eq. 19 theorem, gravitational/BRST lift, or LORENTZIAN-CAUSAL result",
+    "allowed_paths": [
+      "reverse_physics/",
+      "notes/bateman-turok-embedding.md",
+      "paper/05-interaction-obstructions.tex",
+      "paper/05-interaction-obstructions.pdf",
+      "paper/06-einstein-weyl-interaction-obstructions.tex",
+      "paper/06-einstein-weyl-interaction-obstructions.pdf",
+      "planning/work-items/reverse-physics-bateman-seven-point-cox-selection.json",
+      "planning/events/"
+    ],
+    "resource_hint": "Reuse only the certified six-point Laurent and square-free spectator algebra. For seven cyclic legs use seven adjacent pair squares and seven adjacent triple squares; the soft quartet invariant is the complementary triple. Scale x0,x1,s01 by delta*epsilon1*epsilon2; x2,t012 by delta*epsilon2; x3,t456 by delta; retain x4,x5,x6 as square-free hard spectator jets. Truncate the common delta Laurent algebra to [-6,4], which preserves the leading order-two amplitude while keeping each exact fixture below the 500000 kB cap. Run all symbolic jobs sequentially.",
+    "input_commit": "05e08af1",
+    "stream": "reverse-physics"
+  }
+}

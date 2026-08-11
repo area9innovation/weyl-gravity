@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-seven-point-cox-selection-v1.schema.json",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "certificate", "schema_version", "dependency_tags", "lifecycle_state",
+    "result_kind", "question", "answer", "topology", "correlated_boundary",
+    "threshold_analysis", "cox_completion", "disposition", "assumptions",
+    "does_not_establish", "missing_object_ledger", "next_gate", "provenance",
+    "verification_commands", "checks", "report", "schema"
+  ],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_SEVEN_POINT_COX_SELECTION_V1"},
+    "schema_version": {"const": "reverse-physics-bt-seven-point-cox-selection-v1"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "topology": {
+      "type": "object",
+      "required": ["V3_fifth", "V3_cubed_V4", "V3_V4_squared", "total", "relative_signs"],
+      "properties": {
+        "V3_fifth": {"const": 945},
+        "V3_cubed_V4": {"const": 1260},
+        "V3_V4_squared": {"const": 280},
+        "total": {"const": 2485}
+      }
+    },
+    "correlated_boundary": {
+      "type": "object",
+      "required": ["scaling", "cyclic_chart", "producer_hard_fixtures", "independent_verifier_hard_fixture", "rows", "projected_expression", "projected_expression_sha256"],
+      "properties": {
+        "rows": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "object",
+            "required": ["leading_order", "leading_masks", "projected_length", "projected_sha256", "after_inner_hierarchy_length", "strong_order", "strong_order_length"],
+            "properties": {
+              "leading_order": {"const": 2},
+              "leading_masks": {"const": [0, 1, 2, 3, 4, 5, 6]},
+              "projected_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+            }
+          }
+        },
+        "projected_expression_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "threshold_analysis": {
+      "type": "object",
+      "required": ["recursive_kernel", "outer_reduction", "middle_reduction", "inner_reduction", "normalization", "factorial_data"]
+    },
+    "cox_completion": {
+      "type": "object",
+      "required": ["cox_moment_cone", "gamma_cox_candidate", "minimal_two_atom_cox_candidate", "channel_boundary", "state_checks"]
+    },
+    "does_not_establish": {"type": "array", "minItems": 10, "items": {"type": "string"}},
+    "missing_object_ledger": {"type": "array", "minItems": 5, "items": {"type": "string"}},
+    "provenance": {
+      "type": "object",
+      "required": ["source_commit", "retrieval_date", "inputs", "primary_source"],
+      "properties": {
+        "inputs": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "type": "object",
+            "required": ["path", "sha256"],
+            "properties": {
+              "path": {"type": "string"},
+              "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+            }
+          }
+        }
+      }
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "string"}},
+    "checks": {
+      "type": "object",
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"type": "integer", "minimum": 18},
+        "total": {"type": "integer", "minimum": 18},
+        "failures": {"const": []}
+      }
+    },
+    "report": {"const": "reverse_physics/reports/bt-seven-point-cox-selection.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-seven-point-cox-selection-v1.schema.json"}
+  }
+}
