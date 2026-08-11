@@ -1787,6 +1787,41 @@ records the exact threshold integration and the independent rapidity rail.
 The rigged coordinate is resolution data, not spacetime; a generalized-Born
 functional on this rigging, a physical Hamiltonian affiliation, the complete
 M\o ller/S operator, and Eq.~(19) remain open.
+There is a canonical positive realization of the relative functional on the
+resolution-local CCR net.  The physical response endomorphism is
+$\gamma I_2$, $\gamma=1/48$, so its minimal Kolmogorov factor retains both
+jet species:
+\[
+ k_s(y)=\sqrt{\gamma p_s(y)}I_2,
+ \qquad \operatorname{tr}_{\rm sp}(X)=\tfrac12\operatorname{Tr}_2(X).
+\]
+For a bounded resolution interval $I$ and three unordered pairs, set
+\[
+ F_I(i;s,y)=\mathbf1_I(s)k_s(y),
+ \qquad
+ \|F_I\|^2=3\gamma|I|=\frac{|I|}{16}.
+\]
+The local Weyl displacement $W(F_I)$ is unitary, compatible under interval
+inclusion, translation covariant, and factors over disjoint intervals.  Its
+coherent Born state gives the exact all-count law
+\[
+ P_n(a)=e^{-a/16}\frac{(a/16)^n}{n!},
+ \qquad \sum_{n\ge0}P_n(a)=1,
+\]
+with three independent pair means $a/48$ and hard no-emission probability
+$e^{-a/16}$.  Thus the certified $-a/16+a/16$ response is the tangent of a
+positive normalized local process, not merely a signed truncation.  The
+global amplitude has $\|F_{[0,L]}\|^2=L/16$, so no global Fock vector or
+inner Weyl implementer exists; the coherent state is locally normal and
+non-Fock at infinity.  Certificate
+\texttt{REVERSE\_PHYSICS\_BT\_RESOLUTION\_}
+\allowbreak\texttt{LOCAL\_COHERENT\_BORN\_}
+\allowbreak\texttt{PROCESS\_V1}
+records this resolution-local leading-log M\o ller automorphism.  The Poisson
+law is uniquely forced only under the declared stationary independent-
+increment coherent completion.  The nonlinear BT six-point amplitude has not
+yet tested that assumption, and resolution locality is not spacetime
+locality; the complete physical S-matrix and Eq.~(19) remain open.
 \end{remark}
 
 \begin{remark}[Physical ultraviolet hard-scattering law]
@@ -2172,6 +2207,7 @@ BT-DR & Remark~\ref{rem:bttransport} & exact rational/semifinite trace\\
 BT-AN & Remark~\ref{rem:bttransport} & exact rational/Abel--Naimark\\
 BT-PC & Remark~\ref{rem:bttransport} & exact symbolic/rank--Jordan\\
 BT-RJ & Remark~\ref{rem:bttransport} & exact threshold/rigged--Jordan\\
+BT-LC & Remark~\ref{rem:bttransport} & exact local coherent/Poisson\\
 BT-UV & Remark~\ref{rem:btuvhard} & exact rational/RG consistency\\
 \hline
 \end{tabular}

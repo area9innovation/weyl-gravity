@@ -1,0 +1,40 @@
+{
+  "id": "sf:program/work/reverse-physics-bateman-resolution-local-coherent-born-process",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "reverse-physics",
+    "state": "ACTIVE",
+    "objective": "Construct the positive normalized generalized-Born functional suggested by the rigged resolution cocycle, retaining both physical jet species, and decide whether it yields a resolution-local algebraic Moller process even though no global Fock wave operator exists.",
+    "depends_on": [
+      "REVERSE_PHYSICS_BT_RIGGED_RESOLUTION_JORDAN_MOLLER_V1",
+      "REVERSE_PHYSICS_BT_PHYSICAL_COLLINEAR_OPERATOR_FACTORIZATION_V1",
+      "REVERSE_PHYSICS_BT_ABEL_NAIMARK_ASYMPTOTIC_DILATION_V1",
+      "REVERSE_PHYSICS_BT_DETECTOR_RESOLUTION_DILATION_V1",
+      "REVERSE_PHYSICS_BT_PHYSICAL_SHELL_PSEUDOUNITARY_COMPLETION_V1",
+      "REVERSE_PHYSICS_BT_SEMIFINITE_RELATIVE_BORN_WEIGHT_V1",
+      "REVERSE_PHYSICS_BT_LOG_SHELL_MOLLER_LIMIT_V1"
+    ],
+    "activates": [
+      "a translation-covariant relative detector weight without an endpoint origin",
+      "a rank-two GNS purification of the physical one-over-48 Gram per pair",
+      "a locally normal coherent leading-log process with exactly normalized multiple-emission probabilities"
+    ],
+    "current_gate": "LOCAL_COHERENT_BORN: classify locally normal translation-invariant positive resolution functionals, form the minimal rank-two Kolmogorov/GNS factor of the physical Gram, build compatible finite-interval Weyl implementers, and test local probability normalization, independent increments, global implementability, and agreement with the hard response.",
+    "stop_condition": "Either construct a positive normalized translation-covariant generalized-Born state on the resolution-local observable net with the exact one-over-48 single-pair response, or prove that positivity, normalization, translation covariance, and the full-rank physical species Gram are mutually incompatible.",
+    "forbid": "no coherent independent-increment completion called the unique nonlinear BT dynamics; no resolution-local CCR automorphism called a spacetime-local LSZ S-matrix, finite NLO theorem, beyond-tree theorem, all-order Eq. 19, gravitational/BRST lift, or LORENTZIAN-CAUSAL result",
+    "allowed_paths": [
+      "reverse_physics/",
+      "notes/bateman-turok-embedding.md",
+      "paper/05-interaction-obstructions.tex",
+      "paper/05-interaction-obstructions.pdf",
+      "paper/06-einstein-weyl-interaction-obstructions.tex",
+      "paper/06-einstein-weyl-interaction-obstructions.pdf",
+      "planning/work-items/reverse-physics-bateman-resolution-local-coherent-born-process.json",
+      "planning/events/"
+    ],
+    "resource_hint": "Use the Abel purification p_s(y)=sech(y-s)^2/2 and gamma=1/48. The physical response endomorphism is gamma I2, so its minimal Kolmogorov factor is k_s(y)=sqrt(gamma p_s(y)) I2 with normalized Hilbert-Schmidt trace tr2/2. For interval I, sum over three pairs: ||F_I||^2=3 gamma |I|=|I|/16. The local Weyl displacement gives vacuum probability exp(-|I|/16) and a Poisson count of mean |I|/16. Disjoint s-intervals are orthogonal and factor. The global amplitude is locally L2 but has infinite norm, so it defines a locally inner coherent automorphism/state on the quasi-local CCR net but no global Fock implementer.",
+    "input_commit": "41e16bc2",
+    "stream": "reverse-physics"
+  }
+}
