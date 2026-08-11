@@ -1,0 +1,75 @@
+{
+  "receipt_id": "FOUNDATIONAL_ASSUMPTION_ATLAS_V0_TIER_RECEIPT",
+  "schema_version": "foundational-tier-receipt-v0",
+  "created": "2026-08-11",
+  "result_id": "FOUNDATIONAL_ASSUMPTION_ATLAS_V0",
+  "dependency_tags": ["LOCAL-ALGEBRAIC"],
+  "base_commit": "911f9d080f84cfcc6e228c0f0f646118bc2c455f",
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "elapsed_seconds": "0.02",
+      "command": "python3 -c 'parse the four changed JSON files and compile the verifier and test source strings'",
+      "checks": [
+        "all changed structured-data files parse",
+        "changed Python source compiles without emitting bytecode",
+        "git diff --check passes on the scoped paths"
+      ]
+    },
+    "tier_1_verifier": {
+      "status": "PASS",
+      "elapsed_seconds": "0.06",
+      "command": "python3 foundations/verify_foundational_assumption_atlas.py",
+      "result": "18/18 structural, provenance, boundary, tag, and negative-control checks passed"
+    },
+    "tier_1_mutation_tests": {
+      "status": "PASS",
+      "elapsed_seconds": "0.16",
+      "command": "python3 -m unittest foundations.tests.test_foundational_assumption_atlas",
+      "result": "7/7 tests passed, including unknown-source, Lorentzian-promotion, missing-boundary, claim-promotion, and report-drift mutations"
+    },
+    "tier_1_json_schema": {
+      "status": "PASS",
+      "elapsed_seconds": "0.12",
+      "command": "python3 -c 'validate foundations/literature-ledger.json with Draft202012Validator against foundations/schema/foundational-literature-ledger-v1.schema.json'",
+      "result": "ledger validates"
+    },
+    "tier_2": {
+      "status": "NOT_RUN",
+      "criterion": "No mathematical input, shared operator, existing schema, generated artifact, or claim consumed by an established certificate chain changed. This is a new LITERATURE_SCOPED research atlas."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No freeze, release, theorem promotion, lifecycle promotion, or shared core algebra change."
+    }
+  },
+  "auxiliary_rails": [
+    {
+      "name": "science_forge_work_drafts",
+      "status": "FAIL",
+      "elapsed_seconds": "0.24",
+      "command": "SF_PROGRAM=/home/alstrup/area9/weyl-gravity/planning/work-items s-f work-drafts",
+      "failure": "The shared tango/forge sfc source does not compile: forge/lib/alloc/arena.forge:401:16 reports that sanitize_thread is not a compile-time name.",
+      "effect": "No Science Forge conformance pass is claimed. The work item remains a directly JSON-validated ACTIVE definition and must pass the repaired coordinator rail before lifecycle promotion."
+    }
+  ],
+  "content_hashes": {
+    "foundations/README.md": "b47db7a603af49d8bdfa353ac81a7b8761e75778c630d0c954d1cef4943146ae",
+    "foundations/literature-ledger.json": "93aa76fc9042f81be11d716664593afe78f91b9c83fa3c04a03cb6aeae558596",
+    "foundations/reports/foundational-assumption-atlas.md": "4ed17a74d1a74850422de75e4bcb7985f284ecf398a26777fa1f417762dce9f5",
+    "foundations/results/FOUNDATIONAL_ASSUMPTION_ATLAS_V0.json": "2966f800f57dc614fcdb4d1b9f4b69cf7f5d62464ef76c2e21b17e9eb908f576",
+    "foundations/schema/foundational-literature-ledger-v1.schema.json": "cddf04c080eb9131688721002e048754e709c2480be7137373978889683a2005",
+    "foundations/verify_foundational_assumption_atlas.py": "61f091133c4374cae95a447ffa62c1feeadf7fa5b39527142c5bfc44b4b58053",
+    "foundations/tests/__init__.py": "72f2dc95400234b7a60e2efc6b3a67d6232fb76074fcdc542b95752c6e438c80",
+    "foundations/tests/test_foundational_assumption_atlas.py": "d20d8d4aaad25afa2af5cd4b5df00cacbd85e2a5599ae6ca80825483dcd5cc39",
+    "planning/work-items/reverse-foundations-assumption-atlas.json": "983d4824e36a8762289f366e8716ff0e02b6e6329c3ea628930606408de8bb7a"
+  },
+  "external_source_pinning": {
+    "status": "PARTIAL_FAIL_CLOSED",
+    "content_pinned_remote_sources": 12,
+    "git_blob_pinned_local_sources": 2,
+    "metadata_only_sources": 1,
+    "missing_object": "Carcassi-Aidala full text is not content-pinned; this is recorded in the literature ledger and blocks a source freeze, but not the present literature-scoped checkpoint."
+  },
+  "claim_boundary": "This receipt validates the internal structure and provenance of a literature-scoped atlas. It independently verifies no cited theorem and promotes no physical, quantum, constructive, choice-free, or Lorentzian claim."
+}

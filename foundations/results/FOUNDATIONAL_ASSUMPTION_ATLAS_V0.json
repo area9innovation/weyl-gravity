@@ -1,0 +1,170 @@
+{
+  "schema_version": "foundational-assumption-atlas-v0",
+  "result_id": "FOUNDATIONAL_ASSUMPTION_ATLAS_V0",
+  "result_kind": "RESEARCH_ATLAS",
+  "lifecycle": "LITERATURE_SCOPED",
+  "dependency_tags": ["LOCAL-ALGEBRAIC"],
+  "created": "2026-08-11",
+  "repository_base_commit": "911f9d080f84cfcc6e228c0f0f646118bc2c455f",
+  "question": "For a stated physical conclusion, which physical postulates, mathematical carriers, set-existence principles, infinity commitments, and background logic are sufficient, necessary, or eliminable by reformulation?",
+  "formal_template": {
+    "derivability": "L + S + M + Enc(P) |- O",
+    "symbols": {
+      "L": "background logic",
+      "S": "set, type, or existence theory",
+      "M": "mathematical carrier and analytic theorems",
+      "P": "physical or operational postulates",
+      "Enc(P)": "a declared mathematical encoding of the physical postulates",
+      "O": "a level-specific observable, law, existence statement, or no-go claim"
+    },
+    "reverse_target": "Over a fixed weak base B, classify the least pairs (M,P) proving O, prove reversals only when O derives the tested assumption over B, and retain reformulations that avoid an apparent dependency."
+  },
+  "axes": [
+    {
+      "id": "LOGIC",
+      "examples": ["classical", "intuitionistic", "topos-internal Heyting"],
+      "warning": "Quantum logic as a lattice of experimental propositions is not automatically the metatheory's logic."
+    },
+    {
+      "id": "SET_EXISTENCE",
+      "examples": ["ZFC", "ZF+DC", "ZF", "IZF", "CZF", "dependent type theory", "reverse-mathematical subsystems"],
+      "warning": "Without Choice is not one foundation, and constructive is not synonymous with ZF without Choice."
+    },
+    {
+      "id": "INFINITY",
+      "examples": ["finite", "potentially infinite", "countable or separable", "arbitrary set-sized", "continuum"],
+      "warning": "Rejecting arbitrary choice, rejecting actual infinity, and imposing a physical cutoff are distinct moves."
+    },
+    {
+      "id": "CARRIER_GEOMETRY",
+      "examples": ["Hilbert", "Krein or Pontryagin", "rigged Hilbert", "C*-algebraic", "locally convex or nuclear", "locale or topos", "finite operational-probabilistic"],
+      "warning": "Equivalent presentations can move an assumption between primitive structure and derived representation."
+    },
+    {
+      "id": "PHYSICAL_POSTULATES",
+      "examples": ["causality", "locality", "composition", "reversibility", "positivity", "spectral condition", "continuity", "purification"],
+      "warning": "A physical word becomes testable only after its encoding and level of description are fixed."
+    },
+    {
+      "id": "TARGET_CLAIMS",
+      "examples": ["finite prediction", "state existence", "spectral representation", "PDE solution", "Born probability", "scattering", "renormalized QME"],
+      "warning": "The dependency of one theorem or proof does not transfer automatically to a stronger physical theory claim."
+    }
+  ],
+  "edge_relations": [
+    "USED_BY_DISPLAYED_PROOF",
+    "SUFFICIENT_OVER_BASE",
+    "NECESSARY_OVER_BASE",
+    "EQUIVALENT_OVER_BASE",
+    "AVOIDED_BY_REFORMULATION",
+    "INDEPENDENT_OVER_BASE",
+    "UNKNOWN"
+  ],
+  "seed_findings": [
+    {
+      "id": "F01",
+      "status": "LITERATURE_SCOPED",
+      "statement": "Dropping full Choice is underdetermined: ZF, ZF+DC, constructive set theories, type theories, and topos-internal mathematics preserve different fragments of analysis.",
+      "evidence_sources": ["simpson-2009", "solovay-1970", "eastaugh-2018"],
+      "does_not_establish": "No preferred foundation is selected and no physical prediction is changed."
+    },
+    {
+      "id": "F02",
+      "status": "LITERATURE_SCOPED",
+      "statement": "Krein geometry replaces positive definiteness by an indefinite product but normally retains a Hilbert topology through a fundamental symmetry; it is not, by itself, a rejection of Hilbert topology, Choice, or infinity.",
+      "evidence_sources": ["esmeral-ferrer-wagner-2015", "bateman-turok-2026"],
+      "does_not_establish": "No Bateman-Turok positivity, trace-class, implementability, or Weyl-gravity claim is promoted."
+    },
+    {
+      "id": "F03",
+      "status": "LITERATURE_SCOPED",
+      "statement": "Hilbert-space mathematics has no single Choice cost: finite, separable, arbitrary, basis, compactness, and operator-algebra statements must be audited separately.",
+      "evidence_sources": ["rossi-2009", "blackadar-farah-karagila-2026", "blackadar-farah-2026"],
+      "does_not_establish": "A standard proof's use of Zorn or compactness is not yet a necessity result for a concrete physical construction."
+    },
+    {
+      "id": "F04",
+      "status": "LITERATURE_SCOPED",
+      "statement": "Hilbert space can be a derived representation rather than a primitive physical postulate: operational reconstructions and algebra-first formulations make different assumptions primary.",
+      "evidence_sources": ["hardy-2001", "chiribella-dariano-perinotti-2011", "blackadar-farah-2026"],
+      "does_not_establish": "The logical strength of those reconstruction proofs and their extension to QFT remain unclassified."
+    },
+    {
+      "id": "F05",
+      "status": "LITERATURE_SCOPED",
+      "statement": "Changing to intuitionistic internal logic can preserve a reformulated algebraic quantum theory with localic spectra; it is a different operation from merely deleting Choice from classical ZF.",
+      "evidence_sources": ["coquand-spitters-2009", "heunen-landsman-spitters-2009"],
+      "does_not_establish": "No equivalence to ordinary external classical quantum theory is asserted beyond the cited constructions."
+    },
+    {
+      "id": "F06",
+      "status": "PROGRAMME_RULE",
+      "statement": "A physical postulate does not imply a set-theoretic axiom until both are formalized over a shared weak base and a reversal is proved; empirical success cannot by itself establish full Choice for arbitrary sets.",
+      "evidence_sources": ["carcassi-aidala-2022", "simpson-2009", "repo-weakenable-base"],
+      "does_not_establish": "This methodological rule is not a proof that no carefully encoded physical principle can imply a choice fragment."
+    },
+    {
+      "id": "F07",
+      "status": "PROGRAMME_RULE",
+      "statement": "Finite or reduced-mode success tests an infinity commitment only when a limit or equivalence theorem connects the finite family to the target continuum claim.",
+      "evidence_sources": ["simpson-2009", "hardy-2001", "repo-physics-vs-math"],
+      "does_not_establish": "Finite-dimensional quantum reconstruction is not evidence for a full continuum, interacting, or Lorentzian QFT."
+    }
+  ],
+  "first_case_studies": [
+    {
+      "id": "CASE-KREIN-HILBERTIZATION",
+      "target": "Separate the indefinite physical pairing, chosen fundamental symmetry, induced positive topology, adjoints, and basis or completeness claims in the Bateman-Turok carrier.",
+      "candidate_dependencies": ["existence or choice of a fundamental decomposition", "separability", "completion", "trace-class assumptions"],
+      "current_status": "QUESTION_FORMED"
+    },
+    {
+      "id": "CASE-SEPARABLE-CSTAR",
+      "target": "Audit whether the observable algebra, continuous functional calculus, state existence, GNS representation, and state selection used by a quantum claim survive in ZF separately.",
+      "candidate_dependencies": ["ZF-absoluteness results", "Hahn-Banach fragments", "countable Choice", "Boolean prime ideal theorem"],
+      "current_status": "QUESTION_FORMED"
+    },
+    {
+      "id": "CASE-WEYL-BV",
+      "target": "Trace one certified Weyl result from finite exact local algebra through residual transfer and analytic completion, labelling the first theorem whose proof needs an infinity or choice principle.",
+      "candidate_dependencies": ["finite exact algebra", "formal power series", "distribution theory", "Green operators", "state selection", "renormalization"],
+      "current_status": "QUESTION_FORMED"
+    },
+    {
+      "id": "CASE-OPERATIONAL-RECONSTRUCTION",
+      "target": "Classify which physical axioms derive real, complex, or Jordan/Hilbert structure and then audit the logical strength of that derivation.",
+      "candidate_dependencies": ["continuity", "purification", "local tomography", "finite dimensionality", "compactness"],
+      "current_status": "QUESTION_FORMED"
+    }
+  ],
+  "claim_flags": {
+    "foundations_programme_started": true,
+    "literature_seed_reproducibly_pinned": true,
+    "literature_review_complete": false,
+    "formal_reverse_mathematics_result": false,
+    "physical_postulate_implies_choice": false,
+    "choice_free_weyl_theory": false,
+    "constructive_weyl_qft": false,
+    "lorentzian_claim": false
+  },
+  "assumptions": [
+    "The cited source metadata and pinned bytes correspond to the works named in the literature ledger.",
+    "The six-axis decomposition is a research organization device until a formal language and weak base are fixed for a case study.",
+    "Local repository reports are imported only at their stated claim boundaries."
+  ],
+  "does_not_establish": [
+    "A complete survey of foundations of mathematics in physics.",
+    "That Choice is true, false, physically necessary, or physically dispensable.",
+    "That any physical assumption entails a logical or set-theoretic axiom.",
+    "That Krein space eliminates Hilbert-space, completeness, topology, or Choice assumptions.",
+    "A constructive, finite, Euclidean, reduced-mode, or Lorentzian formulation of Weyl gravity.",
+    "Any coefficient, anomaly, quantum master equation, residual transfer, particle interpretation, or scattering theorem."
+  ],
+  "next_gates": [
+    "Choose one repository theorem and write its exact proof-dependency DAG down to named choice or comprehension principles.",
+    "Give at least one avoidance proof showing that a standard use of Choice disappears under a narrower separable or constructive formulation, or certify the first obstruction.",
+    "Formalize one reversal over an explicit weak base; proof-use audits alone remain sufficiency upper bounds.",
+    "Add finite/predicative and rigged-Hilbert or locally convex QFT sources before any corpus-completeness claim."
+  ],
+  "source_ledger": "foundations/literature-ledger.json"
+}
