@@ -136,6 +136,18 @@ python3 foundations/verify_topos_weyl_bv_obstructions.py
 python3 -m unittest foundations.tests.test_topos_weyl_bv_obstructions
 ```
 
+The closure audit is the
+[`ranked opportunity completion matrix`](reports/ranked-opportunity-completion-matrix.md).
+It maps all nine source-ranked first artifacts to eight content-pinned results
+(ranks 1 and 3 deliberately share the finite BV witness), reruns every child
+verifier, and keeps all deeper-programme flags open:
+
+```bash
+python3 foundations/check_ranked_opportunity_completion.py
+python3 foundations/verify_ranked_opportunity_completion.py
+python3 -m unittest foundations.tests.test_ranked_opportunity_completion
+```
+
 ## Lifecycle
 
 This stream uses a literature/research lifecycle, not the quantum lifecycle:

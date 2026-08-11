@@ -1,0 +1,29 @@
+{
+  "receipt_id":"FOUNDATIONAL_RANKED_OPPORTUNITY_COMPLETION_MATRIX_V1_TIER_RECEIPT",
+  "schema_version":"foundational-tier-receipt-v0",
+  "created":"2026-08-11",
+  "result_id":"FOUNDATIONAL_RANKED_OPPORTUNITY_COMPLETION_MATRIX_V1",
+  "dependency_tags":["LOCAL-ALGEBRAIC","REDUCED-MODE","LORENTZIAN-CAUSAL"],
+  "base_commit":"30840b7ba7e4498c17a666601b6694cfcec4f4ab",
+  "tiers":{
+    "tier_0":{"status":"PASS","command":"parse JSON, compile/import Python, scoped git diff --check"},
+    "tier_1_checker":{"status":"PASS","command":"python3 foundations/check_ranked_opportunity_completion.py","result":"9/9 ranked opportunities, 8 distinct pinned artifacts, permitted rank 1/3 sharing only; digest 646ced8e9bbf4c05e36920e998ed8be734095c46bea5f6bd431f6194ad4d9335"},
+    "tier_1_verifier":{"status":"PASS","command":"python3 foundations/verify_ranked_opportunity_completion.py","result":"source ranking pin, exact row mapping, 8/8 artifact hashes, 8/8 child verifiers, fail-closed completion boundary, and report pass"},
+    "tier_1_suite":{"status":"PASS","elapsed_seconds":"0.46","command":"python3 -m unittest discover -s foundations/tests -t .","result":"123/123 tests pass, including 12 new closure mutations"},
+    "tier_1_schema":{"status":"PASS","command":"Draft202012Validator.check_schema and validate"},
+    "tier_2":{"status":"NOT_RUN","criterion":"This closure matrix changes no mathematical input, operator, schema consumed outside foundations, or underlying certificate; all eight child verifiers are rerun."},
+    "tier_3":{"status":"NOT_RUN","criterion":"This is closure of bounded first artifacts, not a classical/quantum freeze, paper-theorem promotion, release, or Lorentzian lifecycle promotion."}
+  },
+  "auxiliary_rails":[{"name":"science_forge_work_drafts","status":"NOT_RERUN","reason":"Known Tango sanitize_thread build failure; no pass inferred."}],
+  "content_hashes":{
+    "foundations/README.md":"8262e1cafe55b2042e1077942490ab51d29051ab6533178734546bec63236771",
+    "foundations/check_ranked_opportunity_completion.py":"e0d7af539c7e65c38407d4039edd9f1bfa5b729b9ce880878f27fe8b0604f4dc",
+    "foundations/reports/ranked-opportunity-completion-matrix.md":"bca73b3c554f131d8f5676fa951c1a175169a3f65938eb47f7197288276f90bd",
+    "foundations/results/FOUNDATIONAL_RANKED_OPPORTUNITY_COMPLETION_MATRIX_V1.json":"bf897b1c8ab2e38f52ae66c52822f72cf5f0f1b2e5a88882a3ab54e730bcb1c7",
+    "foundations/schema/foundational-ranked-opportunity-completion-matrix-v1.schema.json":"da48cd8242bcc8a7e94e7eda1253b22977fabdab6600b87f838d51b32b692a11",
+    "foundations/tests/test_ranked_opportunity_completion.py":"9c99095702eeb15f3ec8a5ab31199ef6f115da62b7be55d13feb3f05e9849304",
+    "foundations/verify_ranked_opportunity_completion.py":"f361a4220488b1397ddd7de291612a5833abde4f7924c3d2b0e57569c1730143"
+  },
+  "scope_receipt":{"changed_scope":"foundations/ only"},
+  "claim_boundary":"ALL_RANKED_FIRST_ARTIFACTS_COMPLETE closes only the nine bounded deliverables in FOUNDATIONAL_COVERAGE_MATRIX_V0. All deeper programmes remain open; no weakest-base survey, literature completeness, constructive Weyl QFT, full Lorentzian BV propagator, Hadamard state, renormalized Lorentzian products, or Lorentzian QME is established."
+}

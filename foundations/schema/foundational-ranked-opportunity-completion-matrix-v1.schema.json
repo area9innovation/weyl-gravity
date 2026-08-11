@@ -1,0 +1,15 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "type":"object",
+  "required":["schema_version","result_id","result_kind","lifecycle","dependency_tags","repository_base_commit","source_ranking","completion_meaning","entries","aggregate","independent_checker","claim_flags","does_not_establish","next_gate","human_report"],
+  "properties":{
+    "schema_version":{"const":"foundational-ranked-opportunity-completion-matrix-v1"},
+    "result_id":{"const":"FOUNDATIONAL_RANKED_OPPORTUNITY_COMPLETION_MATRIX_V1"},
+    "lifecycle":{"const":"SEPARATED"},
+    "dependency_tags":{"const":["LOCAL-ALGEBRAIC","REDUCED-MODE","LORENTZIAN-CAUSAL"]},
+    "entries":{"type":"array","minItems":9,"maxItems":9,"items":{"type":"object","required":["rank","opportunity_id","title","first_artifact","first_artifact_status","scientific_status","artifact","evidence","deeper_gate"]}},
+    "aggregate":{"type":"object","required":["ranked_opportunity_count","complete_first_artifact_count","distinct_artifact_count","deeper_programmes_open","closure"]},
+    "does_not_establish":{"type":"array","minItems":10},
+    "human_report":{"const":"foundations/reports/ranked-opportunity-completion-matrix.md"}
+  }
+}
