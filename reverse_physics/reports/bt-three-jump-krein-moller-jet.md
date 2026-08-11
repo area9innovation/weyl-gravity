@@ -216,3 +216,6 @@ annihilation terms.  Verify its vacuum Itô table against the certified
 branching instrument and compare its domain with the existing rigged
 Jordan/Abel carrier.  A pass would supply an additive-resolution Møller
 cocycle; a failure would isolate the remaining domain or trace obstruction.
+
+CLOSE-OUT: DONE — the three amplitude-affiliated jumps close into an independently verified finite reversible coupling jet, while an ordinary bounded additive-resolution generator is exactly obstructed and every higher claim remains fail-closed
+EVIDENCE: reverse_physics/certificates/REVERSE_PHYSICS_BT_THREE_JUMP_KREIN_MOLLER_JET_V1.json
