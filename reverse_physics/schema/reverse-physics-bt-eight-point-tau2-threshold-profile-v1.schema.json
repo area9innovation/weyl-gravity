@@ -1,0 +1,183 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-eight-point-tau2-threshold-profile-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "certificate",
+    "schema_version",
+    "dependency_tags",
+    "lifecycle_state",
+    "result_kind",
+    "question",
+    "answer",
+    "profile_analysis",
+    "threshold_chain",
+    "disposition",
+    "does_not_establish",
+    "next_gate",
+    "provenance",
+    "verification_commands",
+    "checks",
+    "report",
+    "schema"
+  ],
+  "properties": {
+    "certificate": {
+      "const": "REVERSE_PHYSICS_BT_EIGHT_POINT_TAU2_THRESHOLD_PROFILE_V1"
+    },
+    "schema_version": {
+      "const": "reverse-physics-bt-eight-point-tau2-threshold-profile-v1"
+    },
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "result_kind": {"type": "string", "minLength": 120},
+    "question": {"type": "string", "minLength": 120},
+    "answer": {"type": "string", "minLength": 1000},
+    "profile_analysis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "soft_fixture",
+        "hard_fixtures",
+        "first_two_evaluation",
+        "rows",
+        "difference",
+        "difference_sha256",
+        "tau2_seven_raw_difference",
+        "tau2_seven_after_first_two_functionals"
+      ],
+      "properties": {
+        "soft_fixture": {"const": [1, 4, 3, 2, 1, 10, 7, 5, 3]},
+        "hard_fixtures": {"type": "array", "minItems": 2, "maxItems": 2},
+        "first_two_evaluation": {
+          "const": {
+            "tau3": {"numerator": 2, "denominator": 1},
+            "tau4": {"numerator": 1, "denominator": 1}
+          }
+        },
+        "rows": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "tau2_profile",
+              "tau2_profile_length",
+              "tau2_profile_sha256",
+              "hierarchy_valuations",
+              "leading_order",
+              "leading_masks"
+            ],
+            "properties": {
+              "tau2_profile": {"type": "string", "minLength": 90},
+              "tau2_profile_length": {"type": "integer", "minimum": 90},
+              "tau2_profile_sha256": {"pattern": "^[0-9a-f]{64}$"},
+              "hierarchy_valuations": {"const": [["e1", 0], ["e2", 0], ["e3", -1]]},
+              "leading_order": {"const": 2},
+              "leading_masks": {"const": [0, 1, 2, 3, 4, 5, 6, 7]}
+            }
+          }
+        },
+        "difference": {
+          "const": "3*(2090*tau2**2 + 1146*tau2 + 981)/(12800*tau2**2)"
+        },
+        "difference_sha256": {"pattern": "^[0-9a-f]{64}$"},
+        "tau2_seven_raw_difference": {
+          "const": {"numerator": 334239, "denominator": 627200}
+        },
+        "tau2_seven_after_first_two_functionals": {
+          "const": {"numerator": 334239, "denominator": 313600}
+        }
+      }
+    },
+    "threshold_chain": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "first_two_measure_scale",
+        "after_first_two_functionals",
+        "after_first_two_functionals_sha256",
+        "tau2_mass",
+        "tau2_profile_to_moments",
+        "tau2_moment_r_log_r_coefficients",
+        "third_threshold_profile_functional_difference",
+        "physical_normalization_ledger"
+      ],
+      "properties": {
+        "first_two_measure_scale": {
+          "const": {"numerator": 2, "denominator": 1}
+        },
+        "after_first_two_functionals": {"type": "string", "minLength": 45},
+        "after_first_two_functionals_sha256": {"pattern": "^[0-9a-f]{64}$"},
+        "tau2_mass": {"const": {"numerator": 3, "denominator": 1}},
+        "tau2_profile_to_moments": {
+          "const": {
+            "1": "a2*J1",
+            "tau2^-1": "J2",
+            "tau2^-2": "a2^-1*J3"
+          }
+        },
+        "tau2_moment_r_log_r_coefficients": {
+          "const": {
+            "J1": {"numerator": 1, "denominator": 1},
+            "J2": {"numerator": 1, "denominator": 1},
+            "J3": {"numerator": 1, "denominator": 1}
+          }
+        },
+        "third_threshold_profile_functional_difference": {
+          "const": {"numerator": 23229, "denominator": 6400}
+        },
+        "physical_normalization_ledger": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["status", "reason"],
+          "properties": {
+            "status": {"const": "NOT_ASSEMBLED"},
+            "reason": {"type": "string", "minLength": 200}
+          }
+        }
+      }
+    },
+    "disposition": {
+      "const": {
+        "complete_tau2_profiles": "COMPUTED_ON_TWO_EXACT_HARD_FIXTURES",
+        "first_three_threshold_reductions": "COMPUTED",
+        "three_threshold_scalar_universality": "EXACTLY_OBSTRUCTED",
+        "remaining_independent_mass_tau1_reduction": "NOT_COMPUTED",
+        "physical_normalization": "NOT_ASSEMBLED",
+        "threshold_integrated_fourth_moment": "NOT_COMPUTED",
+        "two_atom_Cox_completion": "NOT_DECIDED_AT_FOURTH_MOMENT",
+        "complete_BT_probability": "NOT_CONSTRUCTED",
+        "Eq19_all_orders": "NOT_PROVED"
+      }
+    },
+    "does_not_establish": {"type": "array", "minItems": 12, "maxItems": 12},
+    "next_gate": {"type": "string", "minLength": 320},
+    "provenance": {
+      "type": "object",
+      "required": ["source_commit", "retrieval_date", "inputs"],
+      "properties": {
+        "source_commit": {"pattern": "^[0-9a-f]{7,40}$"},
+        "retrieval_date": {"const": "2026-08-11"},
+        "inputs": {"type": "array", "minItems": 2, "maxItems": 2}
+      }
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "maxItems": 3},
+    "checks": {
+      "type": "object",
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"const": 13},
+        "total": {"const": 13},
+        "failures": {"const": []},
+        "details": {"type": "object", "minProperties": 13, "maxProperties": 13}
+      }
+    },
+    "report": {"const": "reverse_physics/reports/bt-eight-point-tau2-threshold-profile.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-eight-point-tau2-threshold-profile-v1.schema.json"}
+  }
+}

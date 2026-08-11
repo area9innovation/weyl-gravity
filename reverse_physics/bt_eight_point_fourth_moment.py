@@ -80,14 +80,21 @@ def _correlated_eight_point_fixture(
     soft_fixture,
     include_outer_profile=False,
     include_middle_profile=False,
+    include_tau2_profile=False,
 ):
     """One exact square-free spectator fixture with hierarchy-first limits."""
     import sympy as sp
     from sympy.polys.domains import QQ
     from sympy.polys.fields import field
 
+    if sum(
+        (include_outer_profile, include_middle_profile, include_tau2_profile)
+    ) > 1:
+        raise ValueError("select at most one retained threshold profile")
     if include_middle_profile:
         field_names = "e1,e2,e3,tau3,tau4"
+    elif include_tau2_profile:
+        field_names = "e1,e2,e3,tau2"
     elif include_outer_profile:
         field_names = "e1,e2,e3,tau4"
     else:
@@ -96,10 +103,18 @@ def _correlated_eight_point_fixture(
     base = values[0]
     e1, e2, e3 = values[1:4]
     soft_values = [base(value) for value in soft_fixture]
-    a0, a1, a2, a3, a4, tau1, tau2 = soft_values[:7]
+    a0, a1, a2, a3, a4, tau1 = soft_values[:6]
     if include_middle_profile:
+        tau2 = soft_values[6]
         tau3, tau4 = values[4:6]
+    elif include_tau2_profile:
+        tau2 = values[4]
+        # The first two fixed-invariant nonanalytic functionals are scaled
+        # evaluations at tau4=a4 and tau3=a3.  Their nonzero overall scale
+        # factors are applied by the dedicated threshold producer.
+        tau3, tau4 = a3, a4
     else:
+        tau2 = soft_values[6]
         tau3 = soft_values[7]
         tau4 = values[4] if include_outer_profile else soft_values[8]
     ring = SpectatorRing(base)
@@ -300,15 +315,16 @@ def _correlated_eight_point_fixture(
         base.zero,
     )
     projected_expression = projected_field.as_expr()
-    if include_outer_profile or include_middle_profile:
+    if include_outer_profile or include_middle_profile or include_tau2_profile:
         outer_expression = projected_expression
         outer_symbols = {
             symbol.name: symbol for symbol in outer_expression.free_symbols
         }
         outer_valuations = []
-        hierarchy_names = ("e1", "e2", "e3") if include_middle_profile else (
-            "e1",
-            "e2",
+        hierarchy_names = (
+            ("e1", "e2", "e3")
+            if include_middle_profile or include_tau2_profile
+            else ("e1", "e2")
         )
         for name in hierarchy_names:
             valuation, outer_expression = leading_at_zero(
@@ -374,6 +390,13 @@ def middle_profile_eight_point(hard_fixture, soft_fixture):
     """Retain the final two parent invariants after all hierarchy valuations."""
     return _correlated_eight_point_fixture(
         hard_fixture, soft_fixture, include_middle_profile=True
+    )
+
+
+def tau2_profile_eight_point(hard_fixture, soft_fixture):
+    """Retain tau2 after evaluating the first two threshold functionals."""
+    return _correlated_eight_point_fixture(
+        hard_fixture, soft_fixture, include_tau2_profile=True
     )
 
 
@@ -526,6 +549,7 @@ def main(argv=None):
     parser.add_argument("--fixture", type=int, default=0)
     parser.add_argument("--outer-profile", action="store_true")
     parser.add_argument("--middle-profile", action="store_true")
+    parser.add_argument("--tau2-profile", action="store_true")
     parser.add_argument("--write", action="store_true")
     parser.add_argument("--check", action="store_true")
     parser.add_argument("--fast-check", action="store_true")
@@ -534,7 +558,13 @@ def main(argv=None):
     if args.fast_check:
         return fast_check(args.output)
     if not args.write and not args.check:
-        if args.middle_profile:
+        if sum((args.outer_profile, args.middle_profile, args.tau2_profile)) > 1:
+            parser.error("select at most one profile mode")
+        if args.tau2_profile:
+            row = tau2_profile_eight_point(
+                HARD_FIXTURES[args.fixture], SOFT_FIXTURE
+            )
+        elif args.middle_profile:
             row = middle_profile_eight_point(
                 HARD_FIXTURES[args.fixture], SOFT_FIXTURE
             )

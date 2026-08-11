@@ -1,0 +1,264 @@
+{
+  "answer": "Yes on the declared complete two-fixture profile. Evaluating the already certified unit-J tau4 and tau3 functionals at tau4=a4=1 and tau3=a3=2 before the hierarchy limits reduces the exact recursion to Q(e1,e2,e3,tau2) without sampling tau2. Both 34,300-tree profiles begin at delta^2, contain all eight spectator masks, and have ordered valuations (0,0,-1). Their difference is 3*(2090*tau2^2+1146*tau2+981)/(12800*tau2^2). At tau2=7, multiplying by the middle measure scale a3=2 exactly reproduces 334239/313600 from the predecessor certificate. The remaining constant, tau2^-1, and tau2^-2 rows map at tau2=a2*u, a2=3, to a2*J1, J2, and a2^-1*J3. An independent pole calculation gives unit r*log(r) coefficient for all three, leaving the strictly nonzero third-threshold profile-functional difference 23229/6400. The nonzero r-prefactors from the nested physical expansion are recorded but not folded into a final normalization. Thus the hard distinction survives three of four thresholds, while the independent-a0,a1 tau1 reduction and the physical fourth moment remain open.",
+  "certificate": "REVERSE_PHYSICS_BT_EIGHT_POINT_TAU2_THRESHOLD_PROFILE_V1",
+  "checks": {
+    "details": {
+      "all_spectator_masks_present": true,
+      "claim_boundary_is_fail_closed": true,
+      "complete_profiles_start_at_delta_two": true,
+      "difference_has_only_J1_J2_J3_rows": true,
+      "individual_profiles_replay_middle_certificate": true,
+      "input_hashes_pinned": true,
+      "ordered_valuations_are_zero_zero_minus_one": true,
+      "physical_prefactors_are_ledgered_not_normalized": true,
+      "symbolic_profile_difference_identity": true,
+      "tau2_J1_J2_J3_coefficients_are_one": true,
+      "tau2_seven_replays_middle_difference": true,
+      "third_threshold_difference_is_23229_over_6400": true,
+      "three_threshold_reductions_do_not_collapse_difference": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 13,
+    "total": 13
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "disposition": {
+    "Eq19_all_orders": "NOT_PROVED",
+    "complete_BT_probability": "NOT_CONSTRUCTED",
+    "complete_tau2_profiles": "COMPUTED_ON_TWO_EXACT_HARD_FIXTURES",
+    "first_three_threshold_reductions": "COMPUTED",
+    "physical_normalization": "NOT_ASSEMBLED",
+    "remaining_independent_mass_tau1_reduction": "NOT_COMPUTED",
+    "three_threshold_scalar_universality": "EXACTLY_OBSTRUCTED",
+    "threshold_integrated_fourth_moment": "NOT_COMPUTED",
+    "two_atom_Cox_completion": "NOT_DECIDED_AT_FOURTH_MOMENT"
+  },
+  "does_not_establish": [
+    "nonexistence of a fourth physical factorial moment after the independent-mass tau1 reduction",
+    "failure of every pre-trace collapse or channel-resolved quotient",
+    "a globally derived hard-profile carrier",
+    "a fully normalized physical three-threshold coefficient",
+    "exclusion of the two-atom Cox completion",
+    "a complete physical 2->6 probability",
+    "universal behavior outside the two exact hard fixtures",
+    "a spacetime-local Moller or LSZ operator",
+    "the all-order Eq. (19)",
+    "anything LORENTZIAN-CAUSAL",
+    "a gravitational or BRST lift",
+    "literature priority"
+  ],
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "Retain independent a0 and a1 through the tau1 inner kernel after the first three coefficient functionals, derive the physical-cutoff logarithmic residues without setting a0/a1 to a fixed ratio, and assemble every daughter-mass-ratio and measure prefactor. Only then may the two hard fixtures be compared as a physical fourth factorial moment or used to decide the two-atom Cox completion.",
+  "profile_analysis": {
+    "difference": "3*(2090*tau2**2 + 1146*tau2 + 981)/(12800*tau2**2)",
+    "difference_sha256": "8edd32d4a74dad99ec401c0b58c6326e19e7be1fb07eb98504322413816d9cfa",
+    "first_two_evaluation": {
+      "tau3": {
+        "denominator": 1,
+        "numerator": 2
+      },
+      "tau4": {
+        "denominator": 1,
+        "numerator": 1
+      }
+    },
+    "hard_fixtures": [
+      [
+        [
+          4,
+          6,
+          9,
+          14,
+          18,
+          25,
+          33
+        ],
+        [
+          35,
+          39,
+          45,
+          52,
+          61,
+          67
+        ],
+        [
+          71,
+          79,
+          83
+        ]
+      ],
+      [
+        [
+          4,
+          6,
+          9,
+          14,
+          18,
+          25,
+          34
+        ],
+        [
+          35,
+          39,
+          45,
+          52,
+          61,
+          67
+        ],
+        [
+          71,
+          79,
+          83
+        ]
+      ]
+    ],
+    "rows": [
+      {
+        "hierarchy_valuations": [
+          [
+            "e1",
+            0
+          ],
+          [
+            "e2",
+            0
+          ],
+          [
+            "e3",
+            -1
+          ]
+        ],
+        "leading_masks": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "leading_order": 2,
+        "tau2_profile": "-(4914140*tau2**4 + 33538836*tau2**3 + 48409686*tau2**2 + 33726780*tau2 + 14435415)/(2560000*tau2**4)",
+        "tau2_profile_length": 101,
+        "tau2_profile_sha256": "1d84cdc110f980522f2e361efa877458a39200faa740a272a666c0377ac87ce5"
+      },
+      {
+        "hierarchy_valuations": [
+          [
+            "e1",
+            0
+          ],
+          [
+            "e2",
+            0
+          ],
+          [
+            "e3",
+            -1
+          ]
+        ],
+        "leading_masks": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "leading_order": 2,
+        "tau2_profile": "-(6168140*tau2**4 + 34226436*tau2**3 + 48998286*tau2**2 + 33726780*tau2 + 14435415)/(2560000*tau2**4)",
+        "tau2_profile_length": 101,
+        "tau2_profile_sha256": "0b03cbfa7c6ba4536af2a2421e99aa63e635991186cdd943e989f91b811b53f0"
+      }
+    ],
+    "soft_fixture": [
+      1,
+      4,
+      3,
+      2,
+      1,
+      10,
+      7,
+      5,
+      3
+    ],
+    "tau2_seven_after_first_two_functionals": {
+      "denominator": 313600,
+      "numerator": 334239
+    },
+    "tau2_seven_raw_difference": {
+      "denominator": 627200,
+      "numerator": 334239
+    }
+  },
+  "provenance": {
+    "inputs": [
+      {
+        "path": "planning/work-items/reverse-physics-bateman-eight-point-tau2-threshold-profile.json",
+        "sha256": "da8cafed85d53274f8c17e663a6c5b05cb20106707a92001b32b7db05f5f21f5"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EIGHT_POINT_MIDDLE_THRESHOLD_PROFILE_V1.json",
+        "sha256": "00939207454bf504d3ba81b200cfac57afd79e8f34dda560725117995bcdb445"
+      }
+    ],
+    "retrieval_date": "2026-08-11",
+    "source_commit": "a002680d"
+  },
+  "question": "Does the complete two-fixture hard-profile difference survive the third physical fixed-invariant Kallen coefficient functional when tau2 is retained symbolically?",
+  "report": "reverse_physics/reports/bt-eight-point-tau2-threshold-profile.md",
+  "result_kind": "complete tau2-dependent eight-point hard-profile difference after two threshold evaluations and exact third fixed-invariant Kallen reduction",
+  "schema": "reverse_physics/schema/reverse-physics-bt-eight-point-tau2-threshold-profile-v1.schema.json",
+  "schema_version": "reverse-physics-bt-eight-point-tau2-threshold-profile-v1",
+  "threshold_chain": {
+    "after_first_two_functionals": "3*(2090*tau2**2 + 1146*tau2 + 981)/(6400*tau2**2)",
+    "after_first_two_functionals_sha256": "0ed858e43ab1d362ac12a40ed278881952a0499386b5fb50f0d8bb47b12e0122",
+    "first_two_measure_scale": {
+      "denominator": 1,
+      "numerator": 2
+    },
+    "physical_normalization_ledger": {
+      "reason": "Each extracted r*log(r) term also contributes its nonzero daughter-mass-ratio prefactor. These factors preserve non-collapse but must be combined with the independent-mass tau1 residue and external distribution normalization before a physical fourth moment is named.",
+      "status": "NOT_ASSEMBLED"
+    },
+    "tau2_mass": {
+      "denominator": 1,
+      "numerator": 3
+    },
+    "tau2_moment_r_log_r_coefficients": {
+      "J1": {
+        "denominator": 1,
+        "numerator": 1
+      },
+      "J2": {
+        "denominator": 1,
+        "numerator": 1
+      },
+      "J3": {
+        "denominator": 1,
+        "numerator": 1
+      }
+    },
+    "tau2_profile_to_moments": {
+      "1": "a2*J1",
+      "tau2^-1": "J2",
+      "tau2^-2": "a2^-1*J3"
+    },
+    "third_threshold_profile_functional_difference": {
+      "denominator": 6400,
+      "numerator": 23229
+    }
+  },
+  "verification_commands": [
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/bt_eight_point_tau2_threshold_profile.py --check",
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/verify_bt_eight_point_tau2_threshold_profile.py",
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 -m unittest -v reverse_physics.tests.test_bt_eight_point_tau2_threshold_profile"
+  ]
+}

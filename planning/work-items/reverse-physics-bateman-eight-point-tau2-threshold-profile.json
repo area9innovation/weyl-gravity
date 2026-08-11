@@ -1,0 +1,34 @@
+{
+  "id": "sf:program/work/reverse-physics-bateman-eight-point-tau2-threshold-profile",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "reverse-physics",
+    "state": "ACTIVE",
+    "objective": "Retain tau2 in the complete eight-point hard-profile difference after evaluating the first two fixed-invariant Kallen functionals, and decide whether the third threshold collapses the obstruction before the independent-mass inner reduction.",
+    "depends_on": [
+      "REVERSE_PHYSICS_BT_EIGHT_POINT_MIDDLE_THRESHOLD_PROFILE_V1"
+    ],
+    "activates": [
+      "the exact tau2 hard-profile difference after all 34300 trees",
+      "the third of four nested threshold reductions required for the fourth jump",
+      "a single remaining independent-mass inner-threshold gate"
+    ],
+    "current_gate": "EIGHT_POINT_TAU2_THRESHOLD_PROFILE: evaluate the certified tau4 and tau3 coefficient-sum functionals at tau4=a4 and tau3=a3, retain tau2 through the complete two-fixture recursion, take the e1,e2,e3 valuations only after the full spectator projector, and apply the physical J1,J2,J3 functional at a2=3.",
+    "stop_condition": "Land an exact certificate with an independent verifier that proves whether the two-fixture hard difference survives or collapses after the first three nested thresholds, while leaving the independent-a0,a1 tau1 reduction, fourth moment, Cox decision, complete probability, Eq. 19, gravity, and Lorentzian claims fail-closed.",
+    "forbid": "no sampled tau2 interpolation substituted for a symbolic profile; no fixed-tau2 result called a third-threshold theorem; no three-threshold profile coefficient called the final fourth moment; no omitted mass-ratio prefactor hidden in a physical normalization claim; no REDUCED-MODE result called complete scattering, all-order Eq. 19, gravity/BRST, or LORENTZIAN-CAUSAL",
+    "allowed_paths": [
+      "reverse_physics/",
+      "notes/bateman-turok-embedding.md",
+      "paper/05-interaction-obstructions.tex",
+      "paper/05-interaction-obstructions.pdf",
+      "paper/06-einstein-weyl-interaction-obstructions.tex",
+      "paper/06-einstein-weyl-interaction-obstructions.pdf",
+      "planning/work-items/reverse-physics-bateman-eight-point-tau2-threshold-profile.json",
+      "planning/events/"
+    ],
+    "resource_hint": "Use the complete recursion over Q(e1,e2,e3,tau2), with tau4=a4=1 and tau3=a3=2 implementing the first two unit-J coefficient-sum functionals. Run fixtures sequentially under ulimit -v 500000. Multiply the raw difference by a3, then use tau2=a2*u: the constant, tau2^-1, and tau2^-2 rows map to a2*J1, J2, and a2^-1*J3. Keep the omitted nonzero r-prefactors in an explicit normalization ledger for the final inner calculation.",
+    "input_commit": "a002680d",
+    "stream": "reverse-physics"
+  }
+}
