@@ -1,0 +1,266 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-public-fock-odd-source-affiliation-v1.schema.json",
+  "title": "BT public Fock odd-source affiliation certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "certificate",
+    "schema_version",
+    "dependency_tags",
+    "lifecycle_state",
+    "result_kind",
+    "question",
+    "answer",
+    "assumptions",
+    "public_neutral_degree_four_sector",
+    "complement_to_public_symmetric_power",
+    "graph_source_realization",
+    "Eq19_boundary",
+    "disposition",
+    "does_not_establish",
+    "next_gate",
+    "provenance",
+    "verification_commands",
+    "checks",
+    "report",
+    "schema"
+  ],
+  "properties": {
+    "certificate": {
+      "const": "REVERSE_PHYSICS_BT_PUBLIC_FOCK_ODD_SOURCE_AFFILIATION_V1"
+    },
+    "schema_version": {
+      "const": "reverse-physics-bt-public-fock-odd-source-affiliation-v1"
+    },
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]
+    },
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "result_kind": {"type": "string", "minLength": 1},
+    "question": {"type": "string", "minLength": 1},
+    "answer": {"type": "string", "minLength": 1},
+    "assumptions": {
+      "type": "array",
+      "minItems": 5,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "public_neutral_degree_four_sector": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "one_particle_metric_J",
+        "occupation_types",
+        "basis",
+        "dimension",
+        "gram",
+        "ghost_parity",
+        "positive_fundamental_metric",
+        "inertia",
+        "all_basis_vectors_total_charge",
+        "selected_raw_columns",
+        "selected_normalized_columns",
+        "selected_gram",
+        "selected_total_charge",
+        "selected_ghost_parity",
+        "selected_basis_names"
+      ],
+      "properties": {
+        "one_particle_metric_J": {"const": [["0", "1"], ["1", "0"]]},
+        "occupation_types": {"const": [[2, 0], [1, 1], [0, 2]]},
+        "basis": {
+          "type": "array",
+          "minItems": 9,
+          "maxItems": 9,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "dimension": {"const": 9},
+        "gram": {"$ref": "#/$defs/string_matrix"},
+        "ghost_parity": {"$ref": "#/$defs/string_matrix"},
+        "positive_fundamental_metric": {"$ref": "#/$defs/string_matrix"},
+        "inertia": {"const": [6, 3]},
+        "all_basis_vectors_total_charge": {"const": 0},
+        "selected_raw_columns": {"$ref": "#/$defs/string_matrix"},
+        "selected_normalized_columns": {"$ref": "#/$defs/string_matrix"},
+        "selected_gram": {"const": [["-1", "0"], ["0", "-1"]]},
+        "selected_total_charge": {"const": [0, 0]},
+        "selected_ghost_parity": {"const": [["-1", "0"], ["0", "-1"]]},
+        "selected_basis_names": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "complement_to_public_symmetric_power": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "rho",
+        "missing_leg_C",
+        "complement_charge_basis_S",
+        "one_particle_map_C_times_S",
+        "one_particle_identity",
+        "complement_degree_four_gram",
+        "complement_selected_normalized_columns",
+        "complement_selected_gram",
+        "Sym4_C_in_charge_basis",
+        "full_metric_identity",
+        "selected_forward_matrix_U_to_W",
+        "selected_forward_identity",
+        "selected_inverse_matrix_W_to_U",
+        "selected_inverse_metric_identity",
+        "selected_map_total_charge",
+        "selected_map_ghost_parity"
+      ],
+      "properties": {
+        "rho": {
+          "const": {"numerator": 819, "denominator": 4000}
+        },
+        "missing_leg_C": {
+          "const": [["-819/4000", "-1"], ["0", "1"]]
+        },
+        "complement_charge_basis_S": {
+          "const": [["1", "1"], ["0", "-819/4000"]]
+        },
+        "one_particle_map_C_times_S": {
+          "const": [["-819/4000", "0"], ["0", "-819/4000"]]
+        },
+        "one_particle_identity": {"const": "C*S=-rho*I2"},
+        "complement_degree_four_gram": {"$ref": "#/$defs/string_matrix"},
+        "complement_selected_normalized_columns": {"$ref": "#/$defs/string_matrix"},
+        "complement_selected_gram": {"const": [["-2", "0"], ["0", "-2"]]},
+        "Sym4_C_in_charge_basis": {"$ref": "#/$defs/string_matrix"},
+        "full_metric_identity": {"type": "string", "minLength": 1},
+        "selected_forward_matrix_U_to_W": {
+          "const": [["sqrt(2)", "0"], ["0", "sqrt(2)"]]
+        },
+        "selected_forward_identity": {"const": "Sym4(C)u_i=sqrt(2)w_i"},
+        "selected_inverse_matrix_W_to_U": {
+          "const": [["sqrt(2)/2", "0"], ["0", "sqrt(2)/2"]]
+        },
+        "selected_inverse_metric_identity": {"const": "A^T*(-2I2)*A=-I2"},
+        "selected_map_total_charge": {"const": 0},
+        "selected_map_ghost_parity": {"const": "EVEN"}
+      }
+    },
+    "graph_source_realization": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "abstract_graph_odd_source_metric",
+        "public_selected_metric",
+        "public_source_type_realization",
+        "carrier_identification",
+        "canonical_complement_affiliation",
+        "graph_slope_T",
+        "graph_slope_status",
+        "original_scalar_positive_source_status",
+        "meaning"
+      ],
+      "properties": {
+        "abstract_graph_odd_source_metric": {"const": [["-1", "0"], ["0", "-1"]]},
+        "public_selected_metric": {"const": [["-1", "0"], ["0", "-1"]]},
+        "public_source_type_realization": {"const": "CONSTRUCTED_CANONICALLY"},
+        "carrier_identification": {"type": "string", "minLength": 1},
+        "canonical_complement_affiliation": {"type": "string", "minLength": 1},
+        "graph_slope_T": {
+          "const": [["sqrt(6699)/16", "0"], ["0", "sqrt(7149)/16"]]
+        },
+        "graph_slope_status": {"const": "NOT_DERIVED_BY_SYM4_C"},
+        "original_scalar_positive_source_status": {"const": "DIRECT_AFFILIATION_REMAINS_EXACTLY_OBSTRUCTED"},
+        "meaning": {"type": "string", "minLength": 1}
+      }
+    },
+    "Eq19_boundary": {
+      "const": {
+        "public_ghost_odd_source_carrier": "CONSTRUCTED_CANONICALLY",
+        "public_to_complement_selected_isometry": "PROVED_EXACTLY",
+        "abstract_odd_source_adjunction": "REPLACED_BY_EXPLICIT_PUBLIC_FOCK_SUBSPACE",
+        "original_positive_scalar_profile_affiliation": "REMAINS_OBSTRUCTED",
+        "graph_slope_from_public_Rt": "NOT_DERIVED",
+        "nonlinear_Rt_excitation_of_degree_four_sector": "NOT_COMPUTED",
+        "finite_mode_order_lambda_sector": "UNCHANGED_PROVED_WITH_Q1_ZERO",
+        "all_order_projector_identity": "NOT_PROVED"
+      }
+    },
+    "disposition": {
+      "const": {
+        "public_neutral_degree_four_sector": "CONSTRUCTED_EXACTLY",
+        "public_sector_inertia": "SIX_POSITIVE_THREE_NEGATIVE",
+        "public_odd_source_dimension": "TWO",
+        "Sym4_C_full_metric_affiliation": "PROVED",
+        "selected_charge_and_ghost_affiliation": "PROVED",
+        "graph_odd_source_public_realization": "PROVED",
+        "graph_slope_dynamical_derivation": "NOT_CONSTRUCTED",
+        "physical_fourth_probability": "NOT_ESTABLISHED",
+        "Eq19_all_orders": "NOT_PROVED"
+      }
+    },
+    "does_not_establish": {
+      "type": "array",
+      "minItems": 12,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "next_gate": {"type": "string", "minLength": 1},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_commit", "retrieval_date", "inputs"],
+      "properties": {
+        "source_commit": {"const": "a8a80bb713ab9840c6b311637421c676ce73eb92"},
+        "retrieval_date": {"const": "2026-08-12"},
+        "inputs": {
+          "type": "array",
+          "minItems": 7,
+          "maxItems": 7,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["path", "sha256"],
+            "properties": {
+              "path": {"type": "string", "minLength": 1},
+              "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+            }
+          }
+        }
+      }
+    },
+    "verification_commands": {
+      "type": "array",
+      "minItems": 3,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"const": 31},
+        "total": {"const": 31},
+        "failures": {"const": []},
+        "details": {
+          "type": "object",
+          "minProperties": 31,
+          "maxProperties": 31,
+          "additionalProperties": {"const": true}
+        }
+      }
+    },
+    "report": {"const": "reverse_physics/reports/bt-public-fock-odd-source-affiliation.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-public-fock-odd-source-affiliation-v1.schema.json"}
+  },
+  "$defs": {
+    "string_matrix": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "array",
+        "minItems": 1,
+        "items": {"type": "string"}
+      }
+    }
+  }
+}

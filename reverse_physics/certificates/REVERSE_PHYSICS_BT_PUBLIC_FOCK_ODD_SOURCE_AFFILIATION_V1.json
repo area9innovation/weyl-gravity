@@ -1,0 +1,935 @@
+{
+  "Eq19_boundary": {
+    "abstract_odd_source_adjunction": "REPLACED_BY_EXPLICIT_PUBLIC_FOCK_SUBSPACE",
+    "all_order_projector_identity": "NOT_PROVED",
+    "finite_mode_order_lambda_sector": "UNCHANGED_PROVED_WITH_Q1_ZERO",
+    "graph_slope_from_public_Rt": "NOT_DERIVED",
+    "nonlinear_Rt_excitation_of_degree_four_sector": "NOT_COMPUTED",
+    "original_positive_scalar_profile_affiliation": "REMAINS_OBSTRUCTED",
+    "public_ghost_odd_source_carrier": "CONSTRUCTED_CANONICALLY",
+    "public_to_complement_selected_isometry": "PROVED_EXACTLY"
+  },
+  "answer": "It is already present as a canonical public Fock subspace. The public two-profile neutral degree-four sector has dimension nine and inertia (6,3). The normalized occupation-antisymmetric vectors w1=(e_(20,11)-e_(11,20))/2 and w2=(e_(11,02)-e_(02,11))/2 have Gram -I2, total charge zero and ghost parity -I2, exactly matching the odd source type of the graph projector. In the complement charge basis n_plus=(1,0), n_minus=(1,-rho), the certified missing leg obeys C*S=-rho I2. Hence Sym^4(C)=rho^4 I9 on the degree-four neutral sector. It sends the normalized complement vectors u_i to sqrt(2) w_i and is a full metric isometry. Its selected inverse A=(1/sqrt(2))I2 maps the public odd sector to the complement composite and obeys A^T(-2I2)A=-I2 while commuting with charge and ghost parity. Thus the odd source carrier need not be adjoined abstractly: it is realized inside the public J-Fock carrier. This does not derive the graph slope T, show that the phi projection or nonlinear Rt pushforward excites the sector, prove Eq. (19), or construct a physical fourth probability.",
+  "assumptions": [
+    "The public O(1,1) one-particle charge fibre uses the cross-Krein metric J certified by the finite physical Moller and charge-localization predecessors.",
+    "The two hard-profile labels define orthogonal copies of that public charge fibre and of its complement pullback.",
+    "Both degree-four sectors use the canonical symmetric-boson contraction, including occupation factorials.",
+    "Ghost parity on a neutral occupation basis exchanges the plus and minus occupation multi-indices.",
+    "Carrier affiliation means an explicit charge- and parity-intertwining metric isometry between the selected public and complement Fock subspaces; it does not mean dynamical production by Rt."
+  ],
+  "certificate": "REVERSE_PHYSICS_BT_PUBLIC_FOCK_ODD_SOURCE_AFFILIATION_V1",
+  "checks": {
+    "details": {
+      "Sym4_C_commutes_with_ghost_parity": true,
+      "Sym4_C_is_full_degree_four_isometry": true,
+      "Sym4_C_is_rho4_identity_in_charge_basis": true,
+      "complement_full_gram_is_rho8_public_gram": true,
+      "graph_odd_source_metric_matches_public_selected_metric": true,
+      "graph_slope_remains_distinct_from_carrier_isometry": true,
+      "input_hashes_pinned": true,
+      "missing_leg_C_replayed": true,
+      "occupation_swap_is_involutive": true,
+      "occupation_swap_preserves_public_gram": true,
+      "one_particle_charge_map_is_minus_rho_identity": true,
+      "order_lambda_boundary_preserved": true,
+      "predecessor_certificates_pass": true,
+      "public_fundamental_metric_is_positive": true,
+      "public_neutral_degree_four_dimension_is_nine": true,
+      "public_neutral_degree_four_gram_is_nondegenerate": true,
+      "public_neutral_degree_four_gram_is_symmetric": true,
+      "public_neutral_inertia_is_six_three": true,
+      "public_one_particle_metric_is_cross_Krein_J": true,
+      "rho_replayed_exactly": true,
+      "selected_affiliation_is_charge_zero_and_ghost_even": true,
+      "selected_complement_vectors_are_ghost_odd": true,
+      "selected_complement_vectors_have_gram_minus_2I2": true,
+      "selected_forward_map_is_metric_isometry": true,
+      "selected_forward_matrix_is_sqrt2_identity": true,
+      "selected_inverse_map_is_metric_isometry": true,
+      "selected_inverse_matrix_is_one_over_sqrt2_identity": true,
+      "selected_public_vectors_are_ghost_odd": true,
+      "selected_public_vectors_are_total_charge_zero": true,
+      "selected_public_vectors_have_gram_minus_I2": true,
+      "transported_charge_basis_replayed": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 31,
+    "total": 31
+  },
+  "complement_to_public_symmetric_power": {
+    "Sym4_C_in_charge_basis": [
+      [
+        "449920319121/256000000000000",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "449920319121/256000000000000",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "449920319121/256000000000000",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "449920319121/256000000000000",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "449920319121/256000000000000",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "449920319121/256000000000000",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "449920319121/256000000000000",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "449920319121/256000000000000",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "449920319121/256000000000000"
+      ]
+    ],
+    "complement_charge_basis_S": [
+      [
+        "1",
+        "1"
+      ],
+      [
+        "0",
+        "-819/4000"
+      ]
+    ],
+    "complement_degree_four_gram": [
+      [
+        "202428293557942478212641/16384000000000000000000000000",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "202428293557942478212641/32768000000000000000000000000",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "202428293557942478212641/16384000000000000000000000000",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "202428293557942478212641/32768000000000000000000000000",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "202428293557942478212641/65536000000000000000000000000",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "202428293557942478212641/32768000000000000000000000000",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "202428293557942478212641/16384000000000000000000000000",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "202428293557942478212641/32768000000000000000000000000",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "202428293557942478212641/16384000000000000000000000000"
+      ]
+    ],
+    "complement_selected_gram": [
+      [
+        "-2",
+        "0"
+      ],
+      [
+        "0",
+        "-2"
+      ]
+    ],
+    "complement_selected_normalized_columns": [
+      [
+        "0",
+        "0"
+      ],
+      [
+        "128000000000000*sqrt(2)/449920319121",
+        "0"
+      ],
+      [
+        "0",
+        "0"
+      ],
+      [
+        "-128000000000000*sqrt(2)/449920319121",
+        "0"
+      ],
+      [
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "128000000000000*sqrt(2)/449920319121"
+      ],
+      [
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "-128000000000000*sqrt(2)/449920319121"
+      ],
+      [
+        "0",
+        "0"
+      ]
+    ],
+    "full_metric_identity": "Sym4(C)^T*W_public*Sym4(C)=G_complement=rho^8*W_public",
+    "missing_leg_C": [
+      [
+        "-819/4000",
+        "-1"
+      ],
+      [
+        "0",
+        "1"
+      ]
+    ],
+    "one_particle_identity": "C*S=-rho*I2",
+    "one_particle_map_C_times_S": [
+      [
+        "-819/4000",
+        "0"
+      ],
+      [
+        "0",
+        "-819/4000"
+      ]
+    ],
+    "rho": {
+      "denominator": 4000,
+      "numerator": 819
+    },
+    "selected_forward_identity": "Sym4(C)u_i=sqrt(2)w_i",
+    "selected_forward_matrix_U_to_W": [
+      [
+        "sqrt(2)",
+        "0"
+      ],
+      [
+        "0",
+        "sqrt(2)"
+      ]
+    ],
+    "selected_inverse_matrix_W_to_U": [
+      [
+        "sqrt(2)/2",
+        "0"
+      ],
+      [
+        "0",
+        "sqrt(2)/2"
+      ]
+    ],
+    "selected_inverse_metric_identity": "A^T*(-2I2)*A=-I2",
+    "selected_map_ghost_parity": "EVEN",
+    "selected_map_total_charge": 0
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "disposition": {
+    "Eq19_all_orders": "NOT_PROVED",
+    "Sym4_C_full_metric_affiliation": "PROVED",
+    "graph_odd_source_public_realization": "PROVED",
+    "graph_slope_dynamical_derivation": "NOT_CONSTRUCTED",
+    "physical_fourth_probability": "NOT_ESTABLISHED",
+    "public_neutral_degree_four_sector": "CONSTRUCTED_EXACTLY",
+    "public_odd_source_dimension": "TWO",
+    "public_sector_inertia": "SIX_POSITIVE_THREE_NEGATIVE",
+    "selected_charge_and_ghost_affiliation": "PROVED"
+  },
+  "does_not_establish": [
+    "that the original positive scalar hard-profile source is the selected public Fock sector",
+    "that the phi-theory projection has a nonzero component in the selected public odd sector",
+    "that the nonlinear Rt pushforward produces the selected degree-four sector",
+    "the graph slope T or its two eight-point coefficients from public Rt dynamics",
+    "the all-order Bateman-Turok Eq. (19) projector identity",
+    "the continuum or thermodynamic generalized-Born trace",
+    "weak ghost symmetry of a complete scattering process",
+    "a normalized fourth event or complete 2->6 probability",
+    "a spacetime Moller, LSZ, or S operator",
+    "a gravity or BRST lift",
+    "anything LORENTZIAN-CAUSAL",
+    "literature priority"
+  ],
+  "graph_source_realization": {
+    "abstract_graph_odd_source_metric": [
+      [
+        "-1",
+        "0"
+      ],
+      [
+        "0",
+        "-1"
+      ]
+    ],
+    "canonical_complement_affiliation": "A=(1/sqrt(2))I2 maps O isometrically to span(u1,u2) and is charge zero and ghost even.",
+    "carrier_identification": "Identify the graph source O with span(w1,w2) inside the public two-profile neutral degree-four J-Fock sector.",
+    "graph_slope_T": [
+      [
+        "sqrt(6699)/16",
+        "0"
+      ],
+      [
+        "0",
+        "sqrt(7149)/16"
+      ]
+    ],
+    "graph_slope_status": "NOT_DERIVED_BY_SYM4_C",
+    "meaning": "The carrier-existence objection is removed on the full public Fock space, but the public phi projector and nonlinear Rt dynamics have not been shown to select the graph of T.",
+    "original_scalar_positive_source_status": "DIRECT_AFFILIATION_REMAINS_EXACTLY_OBSTRUCTED",
+    "public_selected_metric": [
+      [
+        "-1",
+        "0"
+      ],
+      [
+        "0",
+        "-1"
+      ]
+    ],
+    "public_source_type_realization": "CONSTRUCTED_CANONICALLY"
+  },
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "Compute the first nonlinear public Rt contribution capable of mapping the physical phi projection into the selected neutral degree-four public Fock sector. Project that contribution onto span(w1,w2), test whether its graph coefficient equals T=diag(sqrt(6699)/16,sqrt(7149)/16), and enforce projector idempotence with the certified order-lambda Q1=0 corner. A mismatch is a scoped dynamical obstruction; a match would still require the continuum trace and asymptotic domain before Eq. (19) or physical positivity can be promoted.",
+  "provenance": {
+    "inputs": [
+      {
+        "path": "planning/work-items/reverse-physics-bateman-public-fock-odd-source-affiliation.json",
+        "sha256": "ab46d4e19385a46b3e801dfe1389f79510fa94be91e063b285dfbb8c58b5a311"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_FINITE_PHYSICAL_MOLLER_COLUMN_V1.json",
+        "sha256": "5bda31d257bebbe89a32553636286bf92e845b316988f1edd1a640b2c8e6c8ed"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EIGHT_POINT_KREIN_CHARGE_LOCALIZATION_V1.json",
+        "sha256": "4f149b936eacb8d25b094454d798a3bbddc4933c2a5086f5aa88ad1fcf898572"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_NEUTRAL_BOSONIC_COMPOSITE_LIFT_V1.json",
+        "sha256": "b69f35d8854db7874ab8b7837237ab0168a8245f1af47d66cfc799e2f9967923"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_NEUTRAL_GRAPH_PROJECTOR_EXTENSION_V1.json",
+        "sha256": "da577d06636fcfc3950fdfa1ca9130f716144b4a1e38fed31fbf60a25559e5c8"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_FULL_SIGNED_QUADRATIC_CLOSURE_V1.json",
+        "sha256": "5859aad65cf0dcbc1ceb9d2c3381a9a61c2d3df6457e8b77903c8a6931aa081b"
+      },
+      {
+        "path": "planning/events/reverse-physics-bateman-public-fock-odd-source-affiliation-DONE-a8a80bb7.json",
+        "sha256": "7a997ab2d7048a4fa95b8314036f02e7980940443cff79e70729bf2bb05aa20a"
+      }
+    ],
+    "retrieval_date": "2026-08-12",
+    "source_commit": "a8a80bb713ab9840c6b311637421c676ce73eb92"
+  },
+  "public_neutral_degree_four_sector": {
+    "all_basis_vectors_total_charge": 0,
+    "basis": [
+      "p20_m20",
+      "p20_m11",
+      "p20_m02",
+      "p11_m20",
+      "p11_m11",
+      "p11_m02",
+      "p02_m20",
+      "p02_m11",
+      "p02_m02"
+    ],
+    "dimension": 9,
+    "ghost_parity": [
+      [
+        "1",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "1",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "1",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "1",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "1"
+      ]
+    ],
+    "gram": [
+      [
+        "4",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "2",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "4",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "2",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "1",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "2",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "4",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "2",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "4"
+      ]
+    ],
+    "inertia": [
+      6,
+      3
+    ],
+    "occupation_types": [
+      [
+        2,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        0,
+        2
+      ]
+    ],
+    "one_particle_metric_J": [
+      [
+        "0",
+        "1"
+      ],
+      [
+        "1",
+        "0"
+      ]
+    ],
+    "positive_fundamental_metric": [
+      [
+        "4",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "2",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "4",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "2",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "1",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "2",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "4",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "2",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "4"
+      ]
+    ],
+    "selected_basis_names": [
+      "w1=(e_(20,11)-e_(11,20))/2",
+      "w2=(e_(11,02)-e_(02,11))/2"
+    ],
+    "selected_ghost_parity": [
+      [
+        "-1",
+        "0"
+      ],
+      [
+        "0",
+        "-1"
+      ]
+    ],
+    "selected_gram": [
+      [
+        "-1",
+        "0"
+      ],
+      [
+        "0",
+        "-1"
+      ]
+    ],
+    "selected_normalized_columns": [
+      [
+        "0",
+        "0"
+      ],
+      [
+        "1/2",
+        "0"
+      ],
+      [
+        "0",
+        "0"
+      ],
+      [
+        "-1/2",
+        "0"
+      ],
+      [
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1/2"
+      ],
+      [
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "-1/2"
+      ],
+      [
+        "0",
+        "0"
+      ]
+    ],
+    "selected_raw_columns": [
+      [
+        "0",
+        "0"
+      ],
+      [
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0"
+      ],
+      [
+        "-1",
+        "0"
+      ],
+      [
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1"
+      ],
+      [
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "-1"
+      ],
+      [
+        "0",
+        "0"
+      ]
+    ],
+    "selected_total_charge": [
+      0,
+      0
+    ]
+  },
+  "question": "Is the two-dimensional ghost-odd source partner used by the neutral graph projector an artificial summand, or does the public two-profile O(1,1) J-Fock carrier already contain it with a canonical exact affiliation to the complement composite?",
+  "report": "reverse_physics/reports/bt-public-fock-odd-source-affiliation.md",
+  "result_kind": "exact public two-profile neutral degree-four Fock realization of the ghost-odd source type required by the finite BT graph projector",
+  "schema": "reverse_physics/schema/reverse-physics-bt-public-fock-odd-source-affiliation-v1.schema.json",
+  "schema_version": "reverse-physics-bt-public-fock-odd-source-affiliation-v1",
+  "verification_commands": [
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/bt_public_fock_odd_source_affiliation.py --check",
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/verify_bt_public_fock_odd_source_affiliation.py",
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 -m unittest -v reverse_physics.tests.test_bt_public_fock_odd_source_affiliation"
+  ]
+}

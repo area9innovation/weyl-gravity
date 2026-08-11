@@ -1,0 +1,39 @@
+{
+  "id": "sf:program/work/reverse-physics-bateman-public-fock-odd-source-affiliation",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "reverse-physics",
+    "state": "ACTIVE",
+    "objective": "Determine whether the minimal ghost-odd source partner required by the certified neutral BT graph projector is already present canonically in the public two-profile O(1,1) Fock carrier.",
+    "depends_on": [
+      "REVERSE_PHYSICS_BT_FINITE_PHYSICAL_MOLLER_COLUMN_V1",
+      "REVERSE_PHYSICS_BT_EIGHT_POINT_KREIN_CHARGE_LOCALIZATION_V1",
+      "REVERSE_PHYSICS_BT_NEUTRAL_BOSONIC_COMPOSITE_LIFT_V1",
+      "REVERSE_PHYSICS_BT_NEUTRAL_GRAPH_PROJECTOR_EXTENSION_V1",
+      "REVERSE_PHYSICS_BT_FULL_SIGNED_QUADRATIC_CLOSURE_V1"
+    ],
+    "activates": [
+      "the public two-profile neutral degree-four Fock sector",
+      "an exact negative ghost-odd occupation basis",
+      "the induced fourth symmetric power of the certified complement map",
+      "a fail-closed separation between carrier realization and nonlinear Rt dynamics"
+    ],
+    "current_gate": "PUBLIC_FOCK_ODD_SOURCE: construct the public J-Fock neutral degree-four sector, compute Sym^4(C) in the transported charge basis, and test exact metric, charge and ghost-parity affiliation to the selected complement composite and graph-projector source.",
+    "stop_condition": "Land an exact certificate with an independent verifier that proves or obstructs public-carrier realization of the odd source type, while leaving the graph slope, nonlinear Rt coefficient, Eq. 19, continuum trace and physical probability fail-closed.",
+    "forbid": "no abstract odd summand called public without an explicit occupation basis; no scalar profile source identified with the public Fock sector; no carrier isometry called an Rt derivation; no graph slope inferred from Sym^4(C); no finite algebra called Eq. 19, a complete probability, gravity, or LORENTZIAN-CAUSAL",
+    "allowed_paths": [
+      "reverse_physics/",
+      "notes/bateman-turok-embedding.md",
+      "paper/05-interaction-obstructions.tex",
+      "paper/05-interaction-obstructions.pdf",
+      "paper/06-einstein-weyl-interaction-obstructions.tex",
+      "paper/06-einstein-weyl-interaction-obstructions.pdf",
+      "planning/work-items/reverse-physics-bateman-public-fock-odd-source-affiliation.json",
+      "planning/events/"
+    ],
+    "resource_hint": "Use C=[[-rho,-1],[0,1]], S=[[(1,0),(1,-rho)]] so C*S=-rho I2. On two profiles the degree-four neutral public J-Fock Gram is the occupation-transpose matrix W and the complement Gram is rho^8 W. Normalize w1=(e_20,11-e_11,20)/2 and w2=(e_11,02-e_02,11)/2, while u_i use 1/(sqrt(2)rho^4). Verify Sym^4(C)u_i=sqrt(2)w_i and its inverse selected matrix (1/sqrt(2))I2 is a charge-zero ghost-even isometry from metric -I2 to -2I2.",
+    "input_commit": "a8a80bb7",
+    "stream": "reverse-physics"
+  }
+}
