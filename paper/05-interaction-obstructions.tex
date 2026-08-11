@@ -179,6 +179,14 @@ virtual response is zero, leaving $+3/512$ uncancelled.  The distinct $R_t$
 response is also zero but is not an S-matrix summand.  A physical hard/dressed
 response $-3/512$, the complete NLO probability, and all-order Eq.~(19) remain
 open.
+Physical-shell pseudo-unitarity fixes the coefficient conditionally.  With
+$x^2=\lambda^2\log(c)/\pi^2$ and
+$S_{\rm phys}=1+xA+x^2B+\cdots$, one has
+$A^\dagger=-A$ and $B+B^\dagger+A^\dagger A=0$.  The measured real column has
+norm squared $1/16$, hence $2\operatorname{Re}B_{hh}=-1/16$ and the Born-rate
+hard response is exactly $-3/512$.  This is phase independent and has an exact
+finite isometric witness, but remains conditional on a continuum
+incoming-plus-outgoing dressed S-matrix and its trace domain.
 Independently, the projected three-channel hard loop logarithm closes the
 Callan--Symanzik equation exactly with the Born rate and one-loop beta
 function.  This yields the positive leading-log nonforward prediction
@@ -1624,6 +1632,20 @@ virtual response vanishes, leaving $+3/512$ uncancelled.  The public $R_t$
 response also vanishes but is a distinct Eq.~(19) object, not a physical
 summand; an independently normalized hard/dressed term $-3/512$ is missing.
 The complete NLO probability and all-order Eq.~(19) remain open.
+The missing coefficient is nevertheless universal under a correctly typed
+physical-shell pseudo-unitarity assumption.  For
+$S_{\rm phys}(x)=1+xA+x^2B+O(x^3)$,
+\[
+ A^\dagger=-A,\qquad B+B^\dagger+A^\dagger A=0.
+\]
+The certified real column gives $\|Ah\|^2=1/16$, so
+$\operatorname{Re}B_{hh}=-1/32$ and the hard survival response is $-1/16$,
+or $-3/512$ after multiplication by the Born coefficient.  Certificate
+\texttt{REVERSE\_PHYSICS\_BT\_PHYSICAL\_SHELL\_}
+\allowbreak\texttt{PSEUDOUNITARY\_COMPLETION\_V1} supplies an exact finite
+$\mathbb Q(\sqrt3)$ isometric witness and proves independence from phases and
+anti-Hermitian second-order freedom.  It does not construct the continuum
+dressed S-matrix, its degenerate trace domain, or beyond-tree positivity.
 \end{remark}
 
 \begin{remark}[Physical ultraviolet hard-scattering law]
