@@ -8,9 +8,10 @@
 
 ## Result
 
-The oscillatory and squeezed-vacuum sectors cannot fix the three neutral
-endpoint constants.  In Bateman--Turok's charge convention, creation and
-annihilation operators of the same field carry the same boost charge:
+On the published **fixed-vacuum oscillator grading**, the oscillatory and
+squeezed-vacuum sectors cannot fix the three neutral endpoint constants.  In
+Bateman--Turok's charge convention, creation and annihilation operators of the
+same field carry the same boost charge:
 
 \[
 q(b_\Omega)=+1,
@@ -38,6 +39,15 @@ It cannot change the charge-zero coefficients multiplying
 This closes the proposed oscillatory matching route by an exact charge
 obstruction.  It does not rule out a neutral contribution from the full
 pushforward projector.
+
+The successor certificate
+`REVERSE_PHYSICS_BT_ZERO_MODE_EQ19_TRILEMMA_V1` sharpens that last boundary.
+On the covariant broken-vacuum orbit carrier, the oscillatory term carries the
+required factor $Z^2$ and the squeeze $Z^2(b_\Upsilon^\dagger)^2$ has total
+charge zero.  Hence the theorem above remains valid on its declared
+fixed-vacuum grading, but it cannot be used to discard the zero-mode-completed
+neutral squeeze.  Conversely, setting $Z=1$ is not an invariant charge
+quotient.  The full zero-mode trace remains missing.
 
 ## The actual missing object
 

@@ -110,8 +110,12 @@ does fix its unprojected response to $1/48$ per pair.  However, its two
 logarithmic rows have generator charges $(+1,-1)$ and $(-1,+1)$ under the
 published fixed-vacuum oscillator grading; a prior one-sided nonpositive
 projection makes the residue zero.  The physical neutral coefficient remains
-undecided until the broken-vacuum zero-mode contribution to the full
-order-$\lambda$ pushforward is constructed.
+undecided.  An exact vacuum-orbit completion with
+$Z=e^{\lambda\phi_0}$ makes both soft rows neutral and preserves $1/48$, but
+also turns the Appendix-C squeeze from apparent charge $-2$ into neutral
+$Z^2(b_\Upsilon^\dagger)^2$.  Fixing $Z=1$ restores the negative grading but
+destroys the charge derivation on that quotient.  The missing full zero-mode
+module and trace in the deferred Eq.~(19) proof are therefore still required.
 Independently, the projected three-channel hard loop logarithm closes the
 Callan--Symanzik equation exactly with the Born rate and one-loop beta
 function.  This yields the positive leading-log nonforward prediction
@@ -1258,11 +1262,13 @@ reproduce $1/48$, but only by fitting it.  The omitted oscillatory and squeezed
 sectors must dynamically fix the endpoint constants before the finite
 projector becomes a prediction.
 
-Charge selection now excludes that last proposed source.  The oscillatory
-$a_1^\dagger$ term maps to $b_\Upsilon^\dagger$ with charge $-1$, while every
-term in $Q_t$ has charge $-2$; the BT dagger preserves these charges and the
-certified inclusive kernel preserves the strictly negative trace radical.
-They cannot shift neutral endpoint constants.  The apparent coisometric range
+On the published fixed-vacuum oscillator grading, charge selection excludes
+that last proposed source: the oscillatory $a_1^\dagger$ term maps to
+$b_\Upsilon^\dagger$ with charge $-1$, while every term in $Q_t$ has charge
+$-2$; the BT dagger preserves these charges and the certified inclusive kernel
+preserves the strictly negative trace radical.  This statement is conditional
+on that grading and does not transfer to the covariant broken-vacuum carrier
+constructed below.  The apparent coisometric range
 gap is, however, absent on the formal perturbative branch.  The published free
 cross-CCR gives
 $[A_\Upsilon,A_\Omega^\dagger]=(2E)^3/(4E^2)=2E$, while the homomorphism gives
@@ -1327,6 +1333,26 @@ $H_{\rm as}^{(1)}=d(e^{-idt}D+e^{idt}D^\sharp)$; sharp and smooth cutoffs have
 the same leading logarithmic response but retain a finite matching constant.
 It neither establishes the physical neutral coefficient nor a complete
 probability.
+
+The global broken-vacuum orbit can now be added exactly without a c-number
+spurion.  Set $\phi=\phi_0+\varphi$ and $Z=e^{\lambda\phi_0}$.  Then Eq.~(16)
+factorizes as $\Omega=Z\widehat\Omega$ and
+$\Upsilon=Z^{-1}\widehat\Upsilon$ on
+$\mathbb Q[Z,Z^{-1}]$, with $\delta Z^n=nZ^n$.  Covariance uniquely dresses a
+quadratic coefficient by $Z^{q_p-q_{d_1}-q_{d_2}}$.  All eight
+number-lowering rows are consequently neutral, and the two logarithmic orbit
+powers cancel in their Gram, preserving the conditional $1/48$ response.
+However, the repaired Appendix-C pullback implies
+$A_1=Zb_\Upsilon$; its squeeze is therefore
+$Z^2(b_\Upsilon^\dagger)^2$, of total charge zero rather than $-2$.
+Conversely the fixed-vacuum ideal $I=(Z-1)$ is not stable under the charge
+derivation, since $\delta(Z-1)=Z\equiv1\pmod I$.  Thus fixed-vacuum negative
+grading and covariant zero-mode completion do not commute.  The certificate
+\texttt{REVERSE\_PHYSICS\_BT\_ZERO\_MODE\_}
+\allowbreak\texttt{EQ19\_TRILEMMA\_V1} records this exact obstruction.  It
+does not replace the missing full dynamical zero-mode module, invariant
+generalized-Born trace, or nonlinear pushforward, and therefore does not prove
+Eq.~(19), the physical $1/48$, or its negation.
 \end{remark}
 
 \begin{remark}[Physical ultraviolet hard-scattering law]

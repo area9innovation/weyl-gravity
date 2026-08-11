@@ -1,0 +1,193 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-zero-mode-eq19-trilemma-v1.schema.json",
+  "$defs": {
+    "nonempty": {"type": "string", "minLength": 1},
+    "fraction": {
+      "type": "object",
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      },
+      "additionalProperties": false
+    },
+    "kernel_row": {
+      "type": "object",
+      "required": ["parent", "conjugate_parent_in_K_down", "daughters", "fixed_vacuum_coefficient_charge", "required_Z_exponent", "dressed_output_charge", "K_down_component_charge"],
+      "properties": {
+        "parent": {"enum": ["Omega", "Upsilon"]},
+        "conjugate_parent_in_K_down": {"enum": ["Omega", "Upsilon"]},
+        "daughters": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {"enum": ["Omega", "Upsilon"]}
+        },
+        "fixed_vacuum_coefficient_charge": {"const": 0},
+        "required_Z_exponent": {"type": "integer"},
+        "dressed_output_charge": {"enum": [-1, 1]},
+        "K_down_component_charge": {"const": 0}
+      },
+      "additionalProperties": false
+    },
+    "log_row": {
+      "type": "object",
+      "required": ["omega_pair", "upsilon_partner_pair", "fixed_vacuum_generator_charges", "restoring_Z_exponents", "completed_generator_charges", "Gram_Z_exponent", "residue"],
+      "properties": {
+        "omega_pair": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"enum": ["Omega", "Upsilon"]}},
+        "upsilon_partner_pair": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"enum": ["Omega", "Upsilon"]}},
+        "fixed_vacuum_generator_charges": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"enum": [-1, 1]}},
+        "restoring_Z_exponents": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"enum": [-1, 1]}},
+        "completed_generator_charges": {"const": [0, 0]},
+        "Gram_Z_exponent": {"const": 0},
+        "residue": {"const": {"numerator": -1, "denominator": 4}}
+      },
+      "additionalProperties": false
+    }
+  },
+  "type": "object",
+  "required": ["certificate", "schema_version", "dependency_tags", "lifecycle_state", "result_kind", "question", "answer", "zero_mode_orbit_algebra", "exact_Eq16_factorization", "dressed_quadratic_kernel", "neutral_soft_block", "appendix_C_zero_mode_completion", "fixed_vacuum_quotient_obstruction", "trilemma", "disposition", "supersession_scope", "missing_object_ledger", "does_not_establish", "next_gate", "provenance", "verification_commands", "checks", "report", "schema"],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_ZERO_MODE_EQ19_TRILEMMA_V1"},
+    "schema_version": {"const": "reverse-physics-bt-zero-mode-eq19-trilemma-v1"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "result_kind": {"$ref": "#/$defs/nonempty"},
+    "question": {"$ref": "#/$defs/nonempty"},
+    "answer": {"$ref": "#/$defs/nonempty"},
+    "zero_mode_orbit_algebra": {
+      "type": "object",
+      "required": ["operator", "algebra", "charge_derivation", "dagger", "ghost_parity", "invariant_pairing", "fixed_vacuum_character", "not_a_c_number_spurion"],
+      "properties": {
+        "operator": {"const": "Z=exp(lambda*phi_0)"},
+        "algebra": {"const": "Q[Z,Z^-1] on finite Laurent supports"},
+        "charge_derivation": {"const": "delta(Z^n)=n*Z^n"},
+        "dagger": {"const": "Z^dagger=Z (BT dagger preserves boost charge)"},
+        "ghost_parity": {"const": "kappa Z kappa=Z^-1"},
+        "invariant_pairing": {"const": "<Z^m,Z^n>=delta_(m+n,0)"},
+        "fixed_vacuum_character": {"const": "ev_1(Z^n)=1"},
+        "not_a_c_number_spurion": {"const": true}
+      },
+      "additionalProperties": false
+    },
+    "exact_Eq16_factorization": {
+      "type": "object",
+      "required": ["split", "Z", "Omega", "Upsilon", "action_check", "scope"],
+      "properties": {
+        "split": {"$ref": "#/$defs/nonempty"},
+        "Z": {"const": "exp(lambda*phi_0)"},
+        "Omega": {"const": "lambda^-1*Z*exp(lambda*varphi)"},
+        "Upsilon": {"const": "Z^-1*exp(-lambda*varphi)*(Box(varphi)+lambda*(partial varphi)^2)"},
+        "action_check": {"$ref": "#/$defs/nonempty"},
+        "scope": {"$ref": "#/$defs/nonempty"}
+      },
+      "additionalProperties": false
+    },
+    "dressed_quadratic_kernel": {
+      "type": "object",
+      "required": ["rule", "uniqueness", "rows", "fixed_vacuum_evaluation"],
+      "properties": {
+        "rule": {"const": "C[parent<-d1,d2] -> Z^(q_parent-q_d1-q_d2)*C[parent<-d1,d2]"},
+        "uniqueness": {"$ref": "#/$defs/nonempty"},
+        "rows": {"type": "array", "minItems": 8, "maxItems": 8, "items": {"$ref": "#/$defs/kernel_row"}},
+        "fixed_vacuum_evaluation": {"$ref": "#/$defs/nonempty"}
+      },
+      "additionalProperties": false
+    },
+    "neutral_soft_block": {
+      "type": "object",
+      "required": ["logarithmic_rows", "raw_residue", "per_unordered_pair", "all_three_pairs", "status"],
+      "properties": {
+        "logarithmic_rows": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"$ref": "#/$defs/log_row"}},
+        "raw_residue": {"const": {"numerator": -1, "denominator": 2}},
+        "per_unordered_pair": {"const": {"numerator": 1, "denominator": 48}},
+        "all_three_pairs": {"const": {"numerator": 1, "denominator": 16}},
+        "status": {"const": "NEUTRAL_LEADING_LOG_COEFFICIENT_COMPUTED_BEFORE_ZERO_MODE_TRACE_COMPLETION"}
+      },
+      "additionalProperties": false
+    },
+    "appendix_C_zero_mode_completion": {
+      "type": "object",
+      "required": ["repaired_pullback", "inverse_linear_relation", "oscillatory_term_in_b_variables", "oscillatory_total_charge", "covariant_squeeze_monomial", "covariant_squeeze_charge", "published_fixed_vacuum_squeeze_charge"],
+      "properties": {
+        "repaired_pullback": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"$ref": "#/$defs/nonempty"}},
+        "inverse_linear_relation": {"const": "A1=Z*b_Upsilon"},
+        "oscillatory_term_in_b_variables": {"const": "Z^2*exp(2iEt)*b_Upsilon^dagger"},
+        "oscillatory_total_charge": {"const": 1},
+        "covariant_squeeze_monomial": {"const": "Z^2*b_Upsilon^dagger*b_Upsilon^dagger"},
+        "covariant_squeeze_charge": {"const": 0},
+        "published_fixed_vacuum_squeeze_charge": {"const": -2}
+      },
+      "additionalProperties": false
+    },
+    "fixed_vacuum_quotient_obstruction": {
+      "type": "object",
+      "required": ["vacuum_ideal", "derivation_of_generator", "remainder_mod_I", "conclusion"],
+      "properties": {
+        "vacuum_ideal": {"const": "I=(Z-1)"},
+        "derivation_of_generator": {"const": "delta(Z-1)=Z"},
+        "remainder_mod_I": {"const": {"numerator": 1, "denominator": 1}},
+        "conclusion": {"const": "THE_BOOST_CHARGE_DERIVATION_DOES_NOT_DESCEND_TO_Z_EQUALS_ONE"}
+      },
+      "additionalProperties": false
+    },
+    "trilemma": {
+      "type": "object",
+      "required": ["charge_covariant_zero_mode", "fixed_vacuum_negative_grading", "missing_completion", "resolved_outcome"],
+      "properties": {
+        "charge_covariant_zero_mode": {"$ref": "#/$defs/nonempty"},
+        "fixed_vacuum_negative_grading": {"$ref": "#/$defs/nonempty"},
+        "missing_completion": {"$ref": "#/$defs/nonempty"},
+        "resolved_outcome": {"const": "EXACT_EQ19_ZERO_MODE_TRACE_OBSTRUCTION"}
+      },
+      "additionalProperties": false
+    },
+    "disposition": {
+      "type": "object",
+      "required": ["genuine_zero_mode_operator", "soft_number_lowering_charge", "neutral_soft_one_over_48", "fixed_vacuum_charge_selection", "published_negative_squeeze_nullity", "Eq19_order_lambda_pushforward", "physical_neutral_one_over_48", "complete_nlo_probability"],
+      "properties": {
+        "genuine_zero_mode_operator": {"const": "CONSTRUCTED_LOCAL_ALGEBRAICALLY"},
+        "soft_number_lowering_charge": {"const": "NEUTRAL_AFTER_UNIQUE_Z_COMPLETION"},
+        "neutral_soft_one_over_48": {"const": "COEFFICIENT_COMPUTED_CONDITIONALLY_ON_COVARIANT_ORBIT_ALGEBRA"},
+        "fixed_vacuum_charge_selection": {"const": "NOT_WELL_DEFINED_AS_AN_INVARIANT_QUOTIENT"},
+        "published_negative_squeeze_nullity": {"const": "NOT_TRANSFERABLE_TO_COVARIANT_ZERO_MODE_COMPLETION"},
+        "Eq19_order_lambda_pushforward": {"const": "NOT_REPRODUCED_FROM_PUBLIC_DATA"},
+        "physical_neutral_one_over_48": {"const": "NOT_ESTABLISHED"},
+        "complete_nlo_probability": {"const": "NOT_ESTABLISHED"}
+      },
+      "additionalProperties": false
+    },
+    "supersession_scope": {"type": "object", "required": ["predecessor", "status", "superseded_use"], "additionalProperties": {"$ref": "#/$defs/nonempty"}},
+    "missing_object_ledger": {"type": "array", "minItems": 6, "items": {"$ref": "#/$defs/nonempty"}},
+    "does_not_establish": {"type": "array", "minItems": 8, "items": {"$ref": "#/$defs/nonempty"}},
+    "next_gate": {"$ref": "#/$defs/nonempty"},
+    "provenance": {
+      "type": "object",
+      "required": ["source_commit", "retrieval_date", "inputs", "primary_source"],
+      "properties": {
+        "source_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "retrieval_date": {"const": "2026-08-11"},
+        "inputs": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"type": "object", "required": ["path", "sha256"], "properties": {"path": {"$ref": "#/$defs/nonempty"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}, "additionalProperties": false}},
+        "primary_source": {"type": "object", "minProperties": 4}
+      },
+      "additionalProperties": false
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "items": {"$ref": "#/$defs/nonempty"}},
+    "checks": {
+      "type": "object",
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"const": 21},
+        "total": {"const": 21},
+        "failures": {"const": []},
+        "details": {"type": "object", "minProperties": 21, "maxProperties": 21, "additionalProperties": {"const": true}}
+      },
+      "additionalProperties": false
+    },
+    "report": {"const": "reverse_physics/reports/bt-zero-mode-eq19-trilemma.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-zero-mode-eq19-trilemma-v1.schema.json"}
+  },
+  "additionalProperties": false
+}
