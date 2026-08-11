@@ -316,6 +316,13 @@ three available jumps are amplitude-affiliated.  The level-three absorbing
 closure remains a construction; the eight-point pre-trace tensor separately
 determines a possible \(q_3\) and tests continuation.
 
+The successor certificate
+`REVERSE_PHYSICS_BT_QUANTUM_STOCHASTIC_MOLLER_DILATION_V1` dilates this pinned
+instrument to a strongly continuous unitary additive-resolution cocycle with
+one Boson noise channel per insertion edge.  It reproduces this report's exact
+generator hash under vacuum reduction.  Its global reverse annihilation terms
+do not promote the reduced level-three closure to a physical terminal sector.
+
 This certificate does not establish a complete physical \(2\to n\)
 probability, incoming degenerate sectors, a BT asymptotic Hamiltonian, a
 spacetime-local Møller/LSZ or unitary S operator, Eq. (19), anything

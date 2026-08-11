@@ -148,10 +148,13 @@ which diverges as \(a\to0^+\).  Moreover \(U_{\sqrt{a+b}}\) is not
 \(U_{\sqrt a}U_{\sqrt b}\).  The exact finite coupling jet is consequently
 not an additive-resolution Hamiltonian or semigroup.
 
-The next constructive alternatives are a quantum-stochastic unitary dilation,
-where an Itô isometry naturally converts amplitudes of order \(\sqrt a\) to
-probabilities of order \(a\), or an unbounded rigged/Jordan implementation.
-Neither continuation is constructed here.
+The successor certificate
+`REVERSE_PHYSICS_BT_QUANTUM_STOCHASTIC_MOLLER_DILATION_V1` now constructs the
+first alternative exactly.  Its 75 edge-noise channels form a strongly
+continuous additive-resolution unitary cocycle whose vacuum reduction is the
+branching instrument and whose first three ordered-noise sectors compress to
+this finite jet.  The ordinary strong-generator obstruction in this report is
+unchanged.
 
 ## Independent verification
 
@@ -210,12 +213,11 @@ verification of this result.
 
 ## Next gate
 
-Construct the minimal quantum-stochastic Krein-unitary dilation of the three
-quotient jump blocks in additive resolution, with both creation and reverse
-annihilation terms.  Verify its vacuum Itô table against the certified
-branching instrument and compare its domain with the existing rigged
-Jordan/Abel carrier.  A pass would supply an additive-resolution Møller
-cocycle; a failure would isolate the remaining domain or trace obstruction.
+The quantum-stochastic successor gate passed.  The next gate is the complete
+eight-point pre-trace quotient, which determines a possible fourth jump, plus
+an operator intertwiner from the Abel-regularized physical collinear direct
+integral into the 75-mark Fock-noise carrier.  The finite cocycle cannot be
+promoted to a continuum Møller/LSZ construction without both.
 
 CLOSE-OUT: DONE — the three amplitude-affiliated jumps close into an independently verified finite reversible coupling jet, while an ordinary bounded additive-resolution generator is exactly obstructed and every higher claim remains fail-closed
 EVIDENCE: reverse_physics/certificates/REVERSE_PHYSICS_BT_THREE_JUMP_KREIN_MOLLER_JET_V1.json

@@ -2049,12 +2049,45 @@ It also exposes the remaining barrier exactly.  The first transition has
 $\|P_\perp U_{\sqrt a}e_0\|^2=a/16+O(a^2)$, whereas every bounded strongly
 differentiable family $V(a)=I+aG+o(a)$ on a fixed finite carrier has
 off-diagonal probability $O(a^2)$.  Hence the jet is not an
-additive-resolution Hamiltonian or semigroup.  A quantum-stochastic noise
-dilation or an unbounded rigged continuation is still required; a fourth
-jump remains open.
-Resolution locality is not spacetime locality; the complete physical
-S-matrix, non-strongly-ordered many-body probabilities, and Eq.~(19) remain
-open.
+additive-resolution Hamiltonian or semigroup.  The required
+quantum-stochastic continuation can nevertheless be constructed on the same
+finite quotient.  Put one Boson noise channel on each of the $75$ rooted-comb
+insertion edges and
+\[
+ J_e=\sqrt{q_k}|c\rangle\langle h|\otimes I_2,
+ \qquad
+ D=\frac12\sum_eJ_e^\dagger J_e .
+\]
+The Hudson--Parthasarathy equation \cite{HudsonParthasarathy1984}
+\[
+ dU_a=\left(\sum_eJ_e\,dA_e^\dagger
+ -\sum_eJ_e^\dagger dA_e-D\,da\right)U_a
+\]
+obeys both exact It\^o structure identities and defines a strongly continuous
+unitary additive-resolution cocycle on
+$\Gamma_s(L^2(\mathbb R_+,da)\otimes\mathbb C^{75})$.  Its vacuum reduction
+is exactly the certified branching semigroup.  For a selected $k$-emission
+history, the ordered time simplex gives leading amplitude
+\[
+ a^{k/2}\sqrt{\frac{\prod_{j<k}q_j}{k!}}
+ =x^k\frac{\prod_{j<k}\alpha_j}{k!},\qquad x=\sqrt a,
+\]
+so its first three Fock sectors reproduce the finite M\o ller jet exactly.
+The $75$ edge channels are minimal for the pinned channel-resolved completely
+positive map: their vectorized Kraus Gram is diagonal and has rank $75$.
+Certificate
+\par\noindent
+\texttt{REVERSE\_PHYSICS\_BT\_QUANTUM\_}
+\allowbreak\texttt{STOCHASTIC\_MOLLER\_DILATION\_V1}
+\par\noindent
+records an independent reconstruction of both unitarity identities, Kraus
+rank, population resolvents, and all three amplitude coefficients.  This
+breaks the finite additive-resolution barrier by white-noise scaling, not by
+restoring ordinary strong differentiability.  The noise coordinate remains
+auxiliary resolution history, not a spacetime dimension.  A physical fourth
+jump, continuum M\o ller/LSZ/S operator, complete probability, and Eq.~(19)
+remain open, as do the non-strongly-ordered many-body probabilities.
+Resolution locality is not spacetime locality.
 \end{remark}
 
 \begin{remark}[Physical ultraviolet hard-scattering law]
@@ -2174,6 +2207,12 @@ Phys.\ Rev.\ D \textbf{98} (2018) 045014, arXiv:1801.03220.
 S.~Bateman and N.~Turok,
 \emph{Escape from Ostrogradsky via hidden ghost parity},
 arXiv:2607.00096.
+
+\bibitem{HudsonParthasarathy1984}
+R.~L.~Hudson and K.~R.~Parthasarathy,
+\emph{Quantum It\^o's formula and stochastic evolutions},
+Commun.\ Math.\ Phys.\ \textbf{93} (1984) 301--323,
+\href{https://doi.org/10.1007/BF01258530}{doi:10.1007/BF01258530}.
 
 \bibitem{Mostafazadeh2005}
 A.~Mostafazadeh,

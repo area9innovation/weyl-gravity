@@ -1,0 +1,255 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-quantum-stochastic-moller-dilation-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["certificate", "schema_version", "dependency_tags", "lifecycle_state", "result_kind", "question", "answer", "system_and_noise_carrier", "minimal_kraus_theorem", "hudson_parthasarathy_cocycle", "vacuum_reduction", "ordered_noise_trajectory", "finite_jet_intertwiner", "resolution_carrier_affiliation", "level_three_boundary", "disposition", "assumptions", "does_not_establish", "missing_object_ledger", "next_gate", "provenance", "verification_commands", "checks", "report", "schema"],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_QUANTUM_STOCHASTIC_MOLLER_DILATION_V1"},
+    "schema_version": {"const": "reverse-physics-bt-quantum-stochastic-moller-dilation-v1"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "result_kind": {"type": "string", "minLength": 100},
+    "question": {"type": "string", "minLength": 150},
+    "answer": {"type": "string", "minLength": 1500},
+    "system_and_noise_carrier": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["system", "history_counts", "system_dimension", "edge_counts", "noise_multiplicity", "one_particle_noise", "fock_noise", "operator_coefficient_block_dimension", "underlying_system_times_coefficient_dimension", "noise_channel_sha256", "noise_channels"],
+      "properties": {
+        "system": {"type": "string", "minLength": 80},
+        "history_counts": {"const": [1, 3, 12, 60]},
+        "system_dimension": {"const": 152},
+        "edge_counts": {"const": [3, 12, 60]},
+        "noise_multiplicity": {"const": 75},
+        "one_particle_noise": {"const": "L2(R_+,da) tensor C^75_edge"},
+        "fock_noise": {"const": "Gamma_s(L2(R_+,da) tensor C^75_edge)"},
+        "operator_coefficient_block_dimension": {"const": 76},
+        "underlying_system_times_coefficient_dimension": {"const": 11552},
+        "noise_channel_sha256": {"pattern": "^[0-9a-f]{64}$"},
+        "noise_channels": {
+          "type": "array", "minItems": 75, "maxItems": 75,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["noise_index", "label", "level", "parent", "child"],
+            "properties": {
+              "noise_index": {"type": "integer", "minimum": 0, "maximum": 74},
+              "label": {"type": "string", "minLength": 15},
+              "level": {"type": "integer", "minimum": 0, "maximum": 2},
+              "parent": {"type": "string", "minLength": 4},
+              "child": {"type": "string", "minLength": 5}
+            }
+          }
+        }
+      }
+    },
+    "minimal_kraus_theorem": {
+      "type": "object", "additionalProperties": false,
+      "required": ["jump_maps", "vectorized_gram", "diagonal_values_by_level", "rank", "minimal_noise_multiplicity_for_pinned_GKSL_map", "proof"],
+      "properties": {
+        "jump_maps": {"type": "string", "minLength": 70},
+        "vectorized_gram": {"const": "Tr(J_e^dagger J_f)=2*q_level(e)*delta_(e,f)"},
+        "diagonal_values_by_level": {"const": [{"denominator": 24, "numerator": 1}, {"denominator": 32, "numerator": 5}, {"denominator": 200, "numerator": 27}]},
+        "rank": {"const": 75},
+        "minimal_noise_multiplicity_for_pinned_GKSL_map": {"const": 75},
+        "proof": {"type": "string", "minLength": 250}
+      }
+    },
+    "hudson_parthasarathy_cocycle": {
+      "type": "object", "additionalProperties": false,
+      "required": ["equation", "ito_table", "drift", "drift_eigenvalues_by_level", "drift_rank", "structure_matrix", "isometry_identity", "coisometry_identity", "solution", "additive_cocycle_law", "ordinary_derivative", "reverse_terms"],
+      "properties": {
+        "equation": {"type": "string", "minLength": 60},
+        "ito_table": {"type": "string", "minLength": 80},
+        "drift": {"const": "D=(1/2)sum_e J_e^dagger J_e"},
+        "drift_eigenvalues_by_level": {"const": ["1/32", "5/32", "27/160", "0"]},
+        "drift_rank": {"const": 32},
+        "structure_matrix": {"const": "G=[[-D,-L^dagger],[L,0]], Delta=diag(0,I_75)"},
+        "isometry_identity": {"const": "G+G^dagger+G^dagger*Delta*G=0"},
+        "coisometry_identity": {"const": "G+G^dagger+G*Delta*G^dagger=0"},
+        "solution": {"const": "UNIQUE_BOUNDED_STRONGLY_CONTINUOUS_ADAPTED_UNITARY_COCYCLE"},
+        "additive_cocycle_law": {"type": "string", "minLength": 90},
+        "ordinary_derivative": {"const": "DOES_NOT_EXIST_ON_THE_HARD_VACUUM_COLUMN; STOCHASTIC_DIFFERENTIAL_ONLY"},
+        "reverse_terms": {"type": "string", "minLength": 100}
+      }
+    },
+    "vacuum_reduction": {
+      "type": "object", "additionalProperties": false,
+      "required": ["state_generator", "relation", "pinned_classical_generator_sha256", "population_laplace_rows", "population_taylor_coefficients", "normalization", "hard_vacuum_amplitude", "hard_survival_probability"],
+      "properties": {
+        "state_generator": {"type": "string", "minLength": 60},
+        "relation": {"type": "string", "minLength": 60},
+        "pinned_classical_generator_sha256": {"const": "d5410264c4a2015ddbfa7c018771b96089f2eae6c5b9df15bf513c0da7fe33c5"},
+        "population_laplace_rows": {
+          "type": "array", "minItems": 4, "maxItems": 4,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["level", "aggregate_transform", "time_probability"],
+            "properties": {
+              "level": {"type": "integer", "minimum": 0, "maximum": 3},
+              "aggregate_transform": {"type": "string", "minLength": 10},
+              "time_probability": {"type": "string", "minLength": 10}
+            }
+          }
+        },
+        "population_taylor_coefficients": {
+          "type": "array", "minItems": 4, "maxItems": 4,
+          "items": {
+            "type": "array", "minItems": 5, "maxItems": 5,
+            "items": {
+              "type": "object", "additionalProperties": false,
+              "required": ["numerator", "denominator"],
+              "properties": {
+                "numerator": {"type": "integer"},
+                "denominator": {"type": "integer", "minimum": 1}
+              }
+            }
+          }
+        },
+        "normalization": {"type": "string", "minLength": 80},
+        "hard_vacuum_amplitude": {"const": "<h,Omega|U_a|h,Omega>=exp(-a/32)"},
+        "hard_survival_probability": {"const": "exp(-a/16)"}
+      }
+    },
+    "ordered_noise_trajectory": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path_kernel", "leading_ito_isometry", "rows"],
+      "properties": {
+        "path_kernel": {"type": "string", "minLength": 120},
+        "leading_ito_isometry": {"const": "norm(psi_path)^2=a^k*prod_j(q_j)/k!+O(a^(k+1))"},
+        "rows": {
+          "type": "array", "minItems": 3, "maxItems": 3,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["emissions", "ordered_simplex_volume", "selected_leading_amplitude", "selected_leading_probability", "aggregate_leading_probability"],
+            "properties": {
+              "emissions": {"type": "integer", "minimum": 1, "maximum": 3},
+              "ordered_simplex_volume": {
+                "type": "object", "additionalProperties": false,
+                "required": ["numerator", "denominator"],
+                "properties": {"numerator": {"const": 1}, "denominator": {"enum": [1, 2, 6]}}
+              },
+              "selected_leading_amplitude": {"enum": ["sqrt(3)/12", "sqrt(30)/192", "sqrt(30)/1280"]},
+              "selected_leading_probability": {
+                "type": "object", "additionalProperties": false,
+                "required": ["numerator", "denominator"],
+                "properties": {"numerator": {"type": "integer"}, "denominator": {"type": "integer", "minimum": 1}}
+              },
+              "aggregate_leading_probability": {
+                "type": "object", "additionalProperties": false,
+                "required": ["numerator", "denominator"],
+                "properties": {"numerator": {"type": "integer"}, "denominator": {"type": "integer", "minimum": 1}}
+              }
+            }
+          }
+        }
+      }
+    },
+    "finite_jet_intertwiner": {
+      "type": "object", "additionalProperties": false,
+      "required": ["parameter", "finite_edge_weights", "factorial_identity", "normalized_simplex_compressed_amplitudes", "interpretation", "barrier_disposition"],
+      "properties": {
+        "parameter": {"const": "x=sqrt(a)"},
+        "finite_edge_weights": {"const": ["sqrt(3)/12", "sqrt(10)/8", "9/20"]},
+        "factorial_identity": {"type": "string", "minLength": 60},
+        "normalized_simplex_compressed_amplitudes": {"const": ["sqrt(3)/12", "sqrt(30)/192", "sqrt(30)/1280"]},
+        "interpretation": {"type": "string", "minLength": 140},
+        "barrier_disposition": {"const": "BROKEN_BY_STRONGLY_CONTINUOUS_QUANTUM_STOCHASTIC_COCYCLE_NOT_BY_STRONG_DIFFERENTIABILITY"}
+      }
+    },
+    "resolution_carrier_affiliation": {
+      "type": "object", "additionalProperties": false,
+      "required": ["abel_density", "isometric_embedding", "mark_enlargement", "coordinate_meaning", "rigged_comparison"],
+      "properties": {
+        "abel_density": {"type": "string", "minLength": 40},
+        "isometric_embedding": {"type": "string", "minLength": 80},
+        "mark_enlargement": {"type": "string", "minLength": 150},
+        "coordinate_meaning": {"const": "s or a is auxiliary detector-resolution/noise history, not a spacetime coordinate or physical dimension"},
+        "rigged_comparison": {"type": "string", "minLength": 180}
+      }
+    },
+    "level_three_boundary": {
+      "type": "object", "additionalProperties": false,
+      "required": ["global", "vacuum_reduced_truncation", "physical_terminal_claim", "future_extension_invariance", "large_a_limit"],
+      "properties": {
+        "global": {"const": "UNITARY_AND_REVERSIBLE_WITH_NONZERO_ANNIHILATION_TERMS"},
+        "vacuum_reduced_truncation": {"type": "string", "minLength": 65},
+        "physical_terminal_claim": {"const": "NOT_ASSERTED"},
+        "future_extension_invariance": {"type": "string", "minLength": 180},
+        "large_a_limit": {"const": "NOT_INTERPRETED_PHYSICALLY_BECAUSE_TERMINATION_AFTER_THREE_JUMPS_IS_A_TRUNCATION_ARTIFACT"}
+      }
+    },
+    "disposition": {
+      "const": {
+        "additive_resolution_quantum_stochastic_unitary_cocycle": "CONSTRUCTED_ON_FINITE_REDUCED_QUOTIENT",
+        "vacuum_reduced_branching_instrument": "EXACTLY_REPRODUCED",
+        "finite_moller_jet_as_noise_compression": "EXACT_THROUGH_THREE_EMISSIONS",
+        "minimal_edge_noise_multiplicity": "PROVED_EQUAL_TO_75_FOR_PINNED_GKSL_MAP",
+        "ordinary_additive_strong_generator": "REMAINS_EXACTLY_OBSTRUCTED",
+        "physical_level_three_absorption": "NOT_ASSERTED",
+        "fourth_jump": "NOT_COMPUTED",
+        "all_order_BT_asymptotic_hamiltonian": "NOT_CONSTRUCTED",
+        "complete_BT_probability": "NOT_CONSTRUCTED",
+        "spacetime_Moller_LSZ_S_operator": "NOT_CONSTRUCTED",
+        "Eq19_all_orders": "NOT_PROVED"
+      }
+    },
+    "assumptions": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"type": "string", "minLength": 100}},
+    "does_not_establish": {"type": "array", "minItems": 13, "maxItems": 13, "items": {"type": "string"}},
+    "missing_object_ledger": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"type": "string", "minLength": 40}},
+    "next_gate": {"type": "string", "minLength": 400},
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_commit", "retrieval_date", "inputs", "producer_method", "primary_source", "mathematical_framework"],
+      "properties": {
+        "source_commit": {"const": "911f9d080f84cfcc6e228c0f0f646118bc2c455f"},
+        "retrieval_date": {"const": "2026-08-11"},
+        "inputs": {
+          "type": "array", "minItems": 8, "maxItems": 8,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["path", "sha256"],
+            "properties": {
+              "path": {"type": "string", "minLength": 20},
+              "sha256": {"pattern": "^[0-9a-f]{64}$"}
+            }
+          }
+        },
+        "producer_method": {"type": "string", "minLength": 150},
+        "primary_source": {
+          "type": "object", "additionalProperties": false,
+          "required": ["source", "url", "equations"],
+          "properties": {
+            "source": {"const": "Bateman--Turok arXiv:2607.00096v1"},
+            "url": {"const": "https://arxiv.org/abs/2607.00096v1"},
+            "equations": {"const": ["Eq. (18)", "Eq. (19)", "Appendix B Eqs. (24)-(25)"]}
+          }
+        },
+        "mathematical_framework": {
+          "type": "object", "additionalProperties": false,
+          "required": ["source", "doi", "url", "use"],
+          "properties": {
+            "source": {"type": "string", "minLength": 100},
+            "doi": {"const": "10.1007/BF01258530"},
+            "url": {"const": "https://doi.org/10.1007/BF01258530"},
+            "use": {"type": "string", "minLength": 150}
+          }
+        }
+      }
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "string", "minLength": 100}},
+    "checks": {
+      "type": "object", "additionalProperties": false,
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"const": 38},
+        "total": {"const": 38},
+        "failures": {"const": []},
+        "details": {"type": "object", "minProperties": 38, "maxProperties": 38}
+      }
+    },
+    "report": {"const": "reverse_physics/reports/bt-quantum-stochastic-moller-dilation.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-quantum-stochastic-moller-dilation-v1.schema.json"}
+  }
+}
