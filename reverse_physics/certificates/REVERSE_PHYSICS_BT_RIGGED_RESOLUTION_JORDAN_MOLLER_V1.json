@@ -1,0 +1,276 @@
+{
+  "answer": "For every fixed daughter mass ratio r in (0,1), the pointwise physical map T(r,u) is square-integrable against the exact two-body measure dmu_r=sqrt(Kallen(u,1,r))*du/u. Its fifth-sign adjoint Gram integrates to V_r^sharp V_r=I(r)I2, with I(r)=-2H(r)/3. Thus a finite-regulator collinear column and its finite-rank pseudo-unitary block exponential exist without fitting. The massless-axis limit is finite, I(0)=5/24, but it is not differentiable: I(r)=5/24+r[(1/4)log r+1/12]+O(r^2 log r), so I'(0+)=-infinity. If V_r were strongly differentiable from a two-dimensional parent fibre into any fixed Krein carrier with bounded fundamental symmetry, every entry of V_r^sharp V_r would be differentiable. Therefore no such ordinary C1 Moller column can implement the delta-prime external derivative. This is stronger and more targeted than the earlier moving-shell non-Cauchy result: fixed-regulator existence and even continuity do not solve the derivative gate. The divided germ D(r)=[I(r)-I(0)]/r has no endpoint value, but its finite scale difference is canonical: D(cr)-D(r) tends to log(c)/4, or log(c)/48 per physical unordered pair after the exact 1/12 normalization. With R=-log r, resolution translation R to R+a shifts the asymptotic germ by -a/4. This affine law is linearized by the nilpotent Jordan generator N=[[0,-1/4],[0,0]], and by N/12 physically. The invariant span of the constant and coordinate distributions lies in the tempered dual S'(R_s) of the Abel--Naimark resolution carrier, while neither distribution is an L2 vector. Hence a minimal rigged resolution-Jordan cocycle is constructed, but it supplies finite relative resolution changes rather than an endpoint state. It does not identify public R_t D with the physical map, construct a complete physical Moller/S operator, establish the finite NLO probability, or prove all-order Eq. (19).",
+  "assumptions": [
+    "The direct-integral statement is restricted to the certified final-pair mass-ray chart a0=1, a1=r, tau=u with 0<r<1 and u above the exact two-body threshold; crossing supplies the opposite chart.",
+    "The physical sharp on the daughter block includes the certified fifth delta-prime sign, so the pointwise raised Gram is rho I2 and the integrated two-column Gram is I(r)I2.",
+    "The differentiability no-go assumes a fixed carrier with bounded fundamental symmetry and strong differentiability of the two finite-dimensional input columns; it does not cover an unbounded metric, rigged distributional derivative, or regulator-dependent topology.",
+    "The rigged lift uses only the resolution translation representation on the Schwartz triple and the exact scale cocycle; it is not assumed to be a spacetime-local asymptotic Hamiltonian or a complete scattering representation."
+  ],
+  "certificate": "REVERSE_PHYSICS_BT_RIGGED_RESOLUTION_JORDAN_MOLLER_V1",
+  "checks": {
+    "details": {
+      "abel_resolution_orientation_is_fixed": true,
+      "affine_moments_are_not_L2_vectors": true,
+      "affine_moments_are_tempered_distributions": true,
+      "axis_derivative_diverges_negative": true,
+      "axis_gram_limit_is_five_over_twenty_four": true,
+      "divided_germ_finite_constant_is_one_twelfth": true,
+      "divided_germ_has_quarter_log": true,
+      "eq19_all_orders_stays_open": true,
+      "fixed_regulator_direct_integral_column_exists": true,
+      "fixed_regulator_pseudounitary_exponential_exists": true,
+      "full_physical_moller_stays_open": true,
+      "input_hashes_pinned": true,
+      "integrated_gram_is_minus_two_thirds_H": true,
+      "mass_scale_cocycle_is_quarter_logc": true,
+      "no_lorentzian_claim": true,
+      "physical_per_pair_cocycle_is_one_over_48": true,
+      "physical_resolution_generator_is_nilpotent": true,
+      "public_Rt_D_is_not_reintroduced": true,
+      "resolution_jordan_generator_is_nilpotent": true,
+      "rigged_translation_lift_does_not_create_endpoint_vector": true,
+      "source_pointwise_physical_gram_is_pinned": true,
+      "source_threshold_function_is_pinned": true,
+      "strong_C1_fixed_bounded_pairing_column_is_impossible": true,
+      "three_pair_cocycle_is_one_over_16": true,
+      "translation_group_law": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 25,
+    "total": 25
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "differentiability_obstruction": {
+    "axis_derivative": "I'(0+)=-infinity",
+    "contradiction": "V_r^sharp*V_r=I(r)*I2 but I'(0+) does not exist finitely",
+    "disposition": "NO_ORDINARY_STRONGLY_C1_FIXED_BOUNDED_PAIRING_MOLLER_COLUMN",
+    "does_not_exclude": [
+      "a rigged distributional derivative",
+      "an unbounded or regulator-dependent fundamental symmetry",
+      "a non-normal local weight",
+      "a resummed or nonperturbative massless-axis construction"
+    ],
+    "lemma": "If V_r:C^2->K is strongly differentiable at r=0 and K has a fixed bounded fundamental symmetry, then each entry of V_r^sharp*V_r is differentiable with derivative V_0'^sharp*V_0+V_0^sharp*V_0'."
+  },
+  "disposition": {
+    "Eq19_all_orders": "NOT_PROVED",
+    "beyond_tree_positivity": "NOT_ESTABLISHED",
+    "finite_complete_NLO_probability": "NOT_ESTABLISHED",
+    "fixed_mass_ratio_physical_collinear_column": "CONSTRUCTED",
+    "fixed_mass_ratio_pseudounitary_block": "CONSTRUCTED",
+    "full_physical_Moller_operator": "NOT_CONSTRUCTED",
+    "massless_axis_gram_limit": "FINITE",
+    "ordinary_L2_resolution_Jordan_vector": "DOES_NOT_EXIST",
+    "ordinary_strong_C1_mass_axis_Moller_column": "EXACT_OBSTRUCTION",
+    "public_Rt_equals_physical_S_operator": "EXACT_OBSTRUCTION_RETAINED",
+    "relative_scale_cocycle": "ONE_OVER_48_PER_PAIR",
+    "rigged_resolution_Jordan_lift": "CONSTRUCTED_WITHOUT_ENDPOINT_VECTOR"
+  },
+  "does_not_establish": [
+    "a complete physical Moller or S operator",
+    "an ordinary differentiable Hilbert or Krein mass-axis column",
+    "a finite complete NLO probability",
+    "positivity beyond tree level",
+    "the all-order continuum Eq. (19)",
+    "a spacetime-local LSZ or AQFT detector affiliation",
+    "that unbounded or regulator-dependent metric completions fail",
+    "that a rigged endpoint trace exists",
+    "an identification of public R_t D with physical T",
+    "a gravitational or BRST lift",
+    "anything LORENTZIAN-CAUSAL",
+    "a new spacetime dimension",
+    "literature priority"
+  ],
+  "lifecycle_state": "CLASSIFIED",
+  "missing_object_ledger": [
+    "a continuous generalized-Born functional on the rigged affine resolution sector that turns relative cocycles into normalized physical detector probabilities",
+    "a spacetime-local asymptotic Hamiltonian whose wave operators act on the same rigged external-state domain and restrict to the certified T column",
+    "complete incoming and outgoing degenerate sectors and their hard matching block beyond the leading logarithmic response",
+    "the finite NLO constant together with a regulated and continuum beyond-tree pseudo-unitarity or generalized-Born positivity theorem",
+    "the full nonlinear zero-mode representation, higher-composite induction, and common invariant domain required for the all-order continuum Eq. (19)"
+  ],
+  "next_gate": "Construct the generalized-Born functional on the Schwartz rigging rather than seeking an ordinary mass derivative. The decisive test is whether the affine moment cocycle can be paired with compact resolution detector differences so that the resulting non-normal functional is positive, normalized on finite incoming corners, and agrees with the certified one-over-48 trace without a chosen endpoint origin. Require translation covariance, independence of the smooth compact detector profile, and compatibility with the two null species of the physical T map. If that succeeds, affiliate its translation generator with the physical soft-collinear asymptotic Hamiltonian on complete incoming and outgoing sectors; if it fails, isolate the exact continuity, positivity, or domain obstruction and retain the relative cocycle without promoting an endpoint state.",
+  "object_typing": {
+    "constructed_common_object": "the relative resolution translation cocycle on a rigged affine moment sector",
+    "formal_time_input": "only the previously certified Abel translation of the resolution coordinate, not the public quadratic R_t D species map",
+    "not_constructed": "a spacetime-local Hamiltonian affiliation or complete physical Moller/S operator",
+    "physical_input": "the S-matrix five-point/four-point external mass-jet map T and its generalized-Born threshold Gram"
+  },
+  "provenance": {
+    "inputs": [
+      {
+        "path": "planning/work-items/reverse-physics-bateman-rigged-resolution-jordan-moller.json",
+        "sha256": "0cc3cde4a686978c4a8b8b5f0adaf8e363b9c5f94b11701a4bbde9ce27724215"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_PHYSICAL_COLLINEAR_OPERATOR_FACTORIZATION_V1.json",
+        "sha256": "d0f8786c62e24e37c198f4a286aa2e3b718f13decf5352d811cf554d485ed79e"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_FIVE_POINT_INDEPENDENT_MASS_THRESHOLD_V1.json",
+        "sha256": "e6b1872ca0fbcd6a51ccd8a44b018678678dc0121ede855911a8006b7af2a4a2"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_REAL_VIRTUAL_AXIS_GLUING_V1.json",
+        "sha256": "c2ffad79666aaec1d17585f76e9c90403b3b410006e624df9626bcc1571d251a"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_LOG_SHELL_MOLLER_LIMIT_V1.json",
+        "sha256": "836d6b478b4fb1bccee038ecf6f0c1d1f6e56ec02eeb436273249a083be2b5e2"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_ABEL_NAIMARK_ASYMPTOTIC_DILATION_V1.json",
+        "sha256": "07087513f7602afb24aa60a7ce1bb3878be6d17cfbb6170d5a3d71c69756d101"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_PHYSICAL_SHELL_PSEUDOUNITARY_COMPLETION_V1.json",
+        "sha256": "8709d3fdb0c38ec90a9e0c517dda49bc55734b6c257fd9c2add39e65365715da"
+      }
+    ],
+    "retrieval_date": "2026-08-11",
+    "source_commit": "822ee84995f23888de13b47b5d254d0bb43b9646"
+  },
+  "question": "Can the newly certified amplitude-level physical collinear map be integrated into an ordinary strongly differentiable mass-regulated Moller column whose derivative realizes the Bateman--Turok delta-prime Born rule at the massless axis, and if not what smallest Abel-compatible enlargement carries its finite resolution changes?",
+  "regulated_direct_integral": {
+    "column": "(V_r h)(u)=T(r,u)h in L2(dmu_r) tensor C_cross^2",
+    "fixed_regulator_exponential": "A_r=[[0,-V_r^sharp],[V_r,0]]; exp(x*A_r) is sharp-unitary on parent plus ran(V_r)",
+    "integrated_gram": "V_r^sharp*V_r=I(r)*I2",
+    "measure": "dmu_r(u)=sqrt((u-(1+sqrt(r))^2)*(u-(1-sqrt(r))^2))*du/u",
+    "pointwise_gram": "T(r,u)^sharp_phys*T(r,u)=rho(r,u)*I2",
+    "pointwise_map": "T(r,u)=diag((2*u*(1+r)-(1-r)^2)/(2*u^2),-(1-r)^2/(2*u))",
+    "ray": "a0=1, a1=r, tau=u, 0<r<1",
+    "rho": "(1-r)^2*(2*u*(1+r)-(1-r)^2)/(4*u^3)",
+    "state": "CONSTRUCTED_FOR_EVERY_FIXED_MASS_RATIO",
+    "threshold": "u_min=(1+sqrt(r))^2"
+  },
+  "report": "reverse_physics/reports/bt-rigged-resolution-jordan-moller.md",
+  "result_kind": "exact regulated physical collinear direct-integral Gram, fixed-carrier C1 Moller obstruction, and rigged affine resolution-Jordan cocycle",
+  "rigged_resolution_jordan": {
+    "L2_boundary": "the constant and coordinate distributions are not vectors of L2(R_s,ds)",
+    "abel_affiliation": "inverse-Abel resolution translation acts on span{1,s}; its orientation-reversed defect has magnitude a/48 per physical pair",
+    "asymptotic_germ": "D(exp(-R))=-R/4+1/12+o(1)",
+    "generator": "N=[[0,-1/4],[0,0]], N^2=0",
+    "invariant_affine_sector": "span{1,s} inside Schwartz'(R_s)",
+    "jordan_group": "U_a=[[1,-a/4],[0,1]]=exp(a*N)",
+    "physical_generator_per_pair": "N_phys=N/12=[[0,-1/48],[0,0]]",
+    "resolution_coordinate": "R=-log(r)",
+    "rigged_carrier": "Schwartz(R_s) subset L2(R_s,ds) subset Schwartz'(R_s)",
+    "state": "RIGGED_RELATIVE_RESOLUTION_COCYCLE_CONSTRUCTED_WITHOUT_ENDPOINT_VECTOR",
+    "translation_cocycle": "D(exp(-(R+a)))-D(exp(-R))->-a/4"
+  },
+  "schema": "reverse_physics/schema/reverse-physics-bt-rigged-resolution-jordan-moller-v1.schema.json",
+  "schema_version": "reverse-physics-bt-rigged-resolution-jordan-moller-v1",
+  "threshold_gram": {
+    "axis_expansion": "I(r)=5/24+r*((1/4)*log(r)+1/12)+O(r^2*log(r))",
+    "axis_value": {
+      "denominator": 24,
+      "numerator": 5
+    },
+    "divided_germ": "D(r)=(I(r)-5/24)/r",
+    "divided_germ_expansion": "D(r)=(1/4)*log(r)+1/12+O(r*log(r))",
+    "equal_mass_value": {
+      "denominator": 1,
+      "numerator": 0
+    },
+    "exact_fixtures": [
+      {
+        "D": {
+          "log_coefficient": {
+            "denominator": 6,
+            "numerator": -5
+          },
+          "log_symbol": "log(2)",
+          "rational": {
+            "denominator": 96,
+            "numerator": 13
+          }
+        },
+        "I": {
+          "log_coefficient": {
+            "denominator": 24,
+            "numerator": -5
+          },
+          "log_symbol": "log(2)",
+          "rational": {
+            "denominator": 128,
+            "numerator": 31
+          }
+        },
+        "r": {
+          "denominator": 4,
+          "numerator": 1
+        }
+      },
+      {
+        "D": {
+          "log_coefficient": {
+            "denominator": 8,
+            "numerator": -5
+          },
+          "log_symbol": "log(3)",
+          "rational": {
+            "denominator": 216,
+            "numerator": 23
+          }
+        },
+        "I": {
+          "log_coefficient": {
+            "denominator": 72,
+            "numerator": -5
+          },
+          "log_symbol": "log(3)",
+          "rational": {
+            "denominator": 486,
+            "numerator": 107
+          }
+        },
+        "r": {
+          "denominator": 9,
+          "numerator": 1
+        }
+      },
+      {
+        "D": {
+          "log_coefficient": {
+            "denominator": 15,
+            "numerator": -17
+          },
+          "log_symbol": "log(2)",
+          "rational": {
+            "denominator": 384,
+            "numerator": 37
+          }
+        },
+        "I": {
+          "log_coefficient": {
+            "denominator": 240,
+            "numerator": -17
+          },
+          "log_symbol": "log(2)",
+          "rational": {
+            "denominator": 2048,
+            "numerator": 439
+          }
+        },
+        "r": {
+          "denominator": 16,
+          "numerator": 1
+        }
+      }
+    ],
+    "exact_function": "I(r)=(5*r^3-6*r^2*log(r)-3*r^2-6*r*log(r)+3*r-5)/(24*(r-1))",
+    "mass_scale_cocycle": "lim_(r->0)[D(c*r)-D(r)]=log(c)/4",
+    "physical_per_pair_cocycle": "log(c)/48",
+    "relation_to_certified_threshold": "I(r)=-2*H(r)/3",
+    "three_pair_cocycle": "log(c)/16"
+  },
+  "verification_commands": [
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/bt_rigged_resolution_jordan_moller.py --check",
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/verify_bt_rigged_resolution_jordan_moller.py --exhaustive",
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 -m unittest -v reverse_physics.tests.test_bt_rigged_resolution_jordan_moller"
+  ]
+}

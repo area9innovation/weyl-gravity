@@ -1749,6 +1749,44 @@ records the method-distinct graph derivations.  It factors the physical
 leading map on this reduced jet cylinder and proves an obstruction to the
 public-$D$ identification; it does not construct the full physical
 M\o ller/S operator or prove Eq.~(19).
+The exact pointwise map nevertheless has a regulated direct-integral
+realization.  On $a_0=1$, $a_1=r$, $\tau=u$, set
+\[
+ d\mu_r(u)=\frac{\sqrt{\lambda(u,1,r)}}u\,du,
+ \qquad (V_rh)(u)=T(r,u)h .
+\]
+Then $V_r^\sharp V_r=I(r)I_2$, where
+\[
+ \begin{aligned}
+ I(r)&=-\frac23H(r)\\
+ &=\frac{5r^3-6r^2\log r-3r^2-6r\log r+3r-5}{24(r-1)}\\
+ &=\frac5{24}+r\left(\frac14\log r+\frac1{12}\right)
+ +O(r^2\log r).
+ \end{aligned}
+\]
+Thus a finite-regulator pseudo-unitary block exists and the massless Gram
+limit is finite, but no strongly $C^1$ column into a fixed Krein carrier with
+bounded fundamental symmetry can realize the delta-prime derivative:
+strong differentiability of $V_r$ would make $V_r^\sharp V_r$
+differentiable, whereas $I'(0+)=-\infty$.  The divided germ
+$D(r)=[I(r)-I(0)]/r$ still has the exact relative cocycle
+\[
+ \lim_{r\to0}[D(cr)-D(r)]=\frac14\log c,
+\]
+or $\log(c)/48$ per pair after physical normalization.  On $R=-\log r$
+this affine law is linearized by
+$N=\left(\begin{smallmatrix}0&-1/4\\0&0\end{smallmatrix}\right)$ on
+$\operatorname{span}\{1,s\}\subset\mathcal S'(\mathbb R_s)$.
+The constant and coordinate distributions are not $L^2$ vectors, so the
+Abel--Naimark translation supplies a rigged relative-resolution cocycle but
+not an endpoint state.  Certificate
+\texttt{REVERSE\_PHYSICS\_BT\_RIGGED\_}
+\allowbreak\texttt{RESOLUTION\_JORDAN\_}
+\allowbreak\texttt{MOLLER\_V1}
+records the exact threshold integration and the independent rapidity rail.
+The rigged coordinate is resolution data, not spacetime; a generalized-Born
+functional on this rigging, a physical Hamiltonian affiliation, the complete
+M\o ller/S operator, and Eq.~(19) remain open.
 \end{remark}
 
 \begin{remark}[Physical ultraviolet hard-scattering law]
@@ -2133,6 +2171,7 @@ BT-AG & Remark~\ref{rem:bttransport} & exact rational/algebraic\\
 BT-DR & Remark~\ref{rem:bttransport} & exact rational/semifinite trace\\
 BT-AN & Remark~\ref{rem:bttransport} & exact rational/Abel--Naimark\\
 BT-PC & Remark~\ref{rem:bttransport} & exact symbolic/rank--Jordan\\
+BT-RJ & Remark~\ref{rem:bttransport} & exact threshold/rigged--Jordan\\
 BT-UV & Remark~\ref{rem:btuvhard} & exact rational/RG consistency\\
 \hline
 \end{tabular}

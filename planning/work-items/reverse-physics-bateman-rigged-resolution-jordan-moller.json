@@ -1,0 +1,39 @@
+{
+  "id": "sf:program/work/reverse-physics-bateman-rigged-resolution-jordan-moller",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "reverse-physics",
+    "state": "ACTIVE",
+    "objective": "Promote the certified physical collinear jet map to the strongest honest regulated Moller column, test differentiability at the massless delta-prime axis on every fixed bounded-pairing carrier, and construct the minimal Abel-compatible rigged resolution extension if an ordinary derivative fails.",
+    "depends_on": [
+      "REVERSE_PHYSICS_BT_PHYSICAL_COLLINEAR_OPERATOR_FACTORIZATION_V1",
+      "REVERSE_PHYSICS_BT_FIVE_POINT_INDEPENDENT_MASS_THRESHOLD_V1",
+      "REVERSE_PHYSICS_BT_REAL_VIRTUAL_AXIS_GLUING_V1",
+      "REVERSE_PHYSICS_BT_LOG_SHELL_MOLLER_LIMIT_V1",
+      "REVERSE_PHYSICS_BT_ABEL_NAIMARK_ASYMPTOTIC_DILATION_V1",
+      "REVERSE_PHYSICS_BT_PHYSICAL_SHELL_PSEUDOUNITARY_COMPLETION_V1"
+    ],
+    "activates": [
+      "a direct-integral regulated physical collinear column with the exact amplitude-level species map",
+      "a fixed-carrier differentiability test at the delta-prime massless axis",
+      "a rigged affine/Jordan representation of the finite resolution cocycle"
+    ],
+    "current_gate": "RIGGED_RESOLUTION_JORDAN: integrate the pointwise physical Gram rho over the exact two-body threshold measure, determine whether its mass-ratio germ can be the quadratic form of a strongly differentiable fixed-carrier Moller column, and, if not, linearize its finite scale differences on the smallest translation-invariant rigged resolution sector.",
+    "stop_condition": "Either construct a strongly differentiable physical mass-axis Moller column whose delta-prime quadratic form gives the certified one-over-48 response, or prove the exact fixed-carrier obstruction and exhibit the minimal rigged resolution cocycle that any distributional completion must realize.",
+    "forbid": "no fixed-regulator column or rigged affine cocycle called a complete physical S-matrix, finite NLO probability, ordinary Hilbert Moller limit, all-order Eq. 19, new spacetime dimension, gravitational/BRST lift, or LORENTZIAN-CAUSAL theorem",
+    "allowed_paths": [
+      "reverse_physics/",
+      "notes/bateman-turok-embedding.md",
+      "paper/05-interaction-obstructions.tex",
+      "paper/05-interaction-obstructions.pdf",
+      "paper/06-einstein-weyl-interaction-obstructions.tex",
+      "paper/06-einstein-weyl-interaction-obstructions.pdf",
+      "planning/work-items/reverse-physics-bateman-rigged-resolution-jordan-moller.json",
+      "planning/events/"
+    ],
+    "resource_hint": "For a0=1, a1=r and tau=u, integrate rho against dmu_r=sqrt(Kallen(u,1,r))*du/u. The exact Gram is I(r)=-2H(r)/3=5/24+r[(1/4)log r+1/12]+O(r^2 log r). Any strongly differentiable column on a fixed Krein carrier with bounded pairing would make its Gram differentiable, so I'(0+)=-infinity is an obstruction. The divided germ D=(I-I(0))/r has finite scale cocycle D(cr)-D(r)->log(c)/4. On R=-log r, translation gives -a/4; linearize it on span{1,s} inside S'(R_s), not L2(R_s).",
+    "input_commit": "822ee849",
+    "stream": "reverse-physics"
+  }
+}
