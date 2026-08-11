@@ -8,14 +8,14 @@
 
 ## Result
 
-The scalar six-point selected-history coefficient (5/3072) does not lift to
+The scalar six-point selected-history coefficient \(5/3072\) does not lift to
 the constructed positive scalar second species jump on the same two parent
 external-mass jets used at five points.  The complete 220-tree amplitude has
 nonzero interference between the constant/linear parent jets and the two
 spectator-complement profiles.  Its normalized raised two-species
 endomorphism has nonzero off-diagonal entries and a strictly negative
 characteristic discriminant throughout the physical outer-threshold region.
-It therefore cannot be similar to a positive scalar multiple of (I_2).
+It therefore cannot be similar to a positive scalar multiple of \(I_2\).
 
 This is the first exact amplitude-level obstruction to the higher identity-
 species lift in the channel-resolved branching instrument.  The scalar tree
@@ -44,14 +44,14 @@ Let
  S_2=a_3a_4+a_3a_5+a_4a_5.
 \]
 
-After taking the leading (delta) coefficient and then
-(epsilon\to0), the six-point amplitude is
+After taking the leading \(\delta\) coefficient and then
+\(\epsilon\to0\), the six-point amplitude is
 
 \[
  C_6=F_0+F_1S_1+F_2S_2,
 \]
 
-with no (a_3a_4a_5) component at amplitude level.  Put
+with no \(a_3a_4a_5\) component at amplitude level.  Put
 
 \[
  A=(a_0-a_1)^2-2\tau_1(a_0+a_1)+2\tau_1^2.
@@ -68,8 +68,8 @@ The two components relevant to the scalar square are
  {8\tau_1^2\tau_2^2}.
 \]
 
-The three singleton masks have the same (F_1), and the three complementary-
-pair masks have the same (F_2).  Consequently
+The three singleton masks have the same \(F_1\), and the three complementary-
+pair masks have the same \(F_2\).  Consequently
 
 \[
  [a_3a_4a_5]C_6^2=6F_1F_2,
@@ -77,11 +77,11 @@ pair masks have the same (F_2).  Consequently
 
 which is exactly the strongly ordered scalar kernel used in the predecessor
 threshold calculation.  Thus resolving the species does not alter the
-(5/3072) scalar history weight.
+\(5/3072\) scalar history weight.
 
 ## Unique parent-jet factorization
 
-Recombine the inner daughter pair into the parent mass jet (p).  The outer
+Recombine the inner daughter pair into the parent mass jet \(p\).  The outer
 five-point amplitude has
 
 \[
@@ -126,14 +126,14 @@ reduction gives
 \]
 
 At five points the corresponding second coefficient is
-(2L_{\rm inner}=-(a_0-a_1)^2/(2\tau_1)).  At six points it has been replaced
-by an outer-history variable: (partial v/partial a_2=1/2).  Thus even the
+\(2L_{\rm inner}=-(a_0-a_1)^2/(2\tau_1)\).  At six points it has been replaced
+by an outer-history variable: \(\partial v/\partial a_2=1/2\).  Thus even the
 amplitude factorization is no longer an inner-local repetition of the
 five-point splitting operator.
 
 ## The interference obstruction
 
-For profiles (f=lS_1+qS_2) and (g=l'S_1+q'S_2), define the exact
+For profiles \(f=lS_1+qS_2\) and \(g=l'S_1+q'S_2\), define the exact
 square-free complement pairing
 
 \[
@@ -163,8 +163,8 @@ self-pairings are nonzero.  The child covariant species Gram is
  \end{pmatrix}.
 \]
 
-Away from (B_{01}=0), normalize by the parent hard cross component and raise
-with (J=\left(\begin{smallmatrix}0&1\\1&0\end{smallmatrix}\right)).  The
+Away from \(B_{01}=0\), normalize by the parent hard cross component and raise
+with \(J=\left(\begin{smallmatrix}0&1\\1&0\end{smallmatrix}\right)\).  The
 result is
 
 \[
@@ -182,14 +182,14 @@ Its characteristic discriminant is
  {(\tau_2-2a_2)^2}.
 \]
 
-For the physical outer domain (	au_2>a_2>0), this is strictly negative
-whenever (	au_2\ne2a_2).  Hence (N) has a non-real conjugate eigenpair.
-An allowed parent-fibre basis change acts on (N) by similarity and cannot
+For the physical outer domain \(\tau_2>a_2>0\), this is strictly negative
+whenever \(\tau_2\ne2a_2\).  Hence \(N\) has a non-real conjugate eigenpair.
+An allowed parent-fibre basis change acts on \(N\) by similarity and cannot
 change that characteristic polynomial.  A common tree phase, delta-prime
 sign, or nonzero real normalization only multiplies both eigenvalues and does
-not turn (N) into a positive scalar matrix.
+not turn \(N\) into a positive scalar matrix.
 
-At (	au_2=2a_2), (B_{01}=0): the parent hard cross normalization vanishes.
+At \(\tau_2=2a_2\), \(B_{01}=0\): the parent hard cross normalization vanishes.
 This surface is fail-closed and is not a scalar-jump limit.  The unnormalized
 profile pairing itself remains nondegenerate, since
 
@@ -201,16 +201,23 @@ profile pairing itself remains nondegenerate, since
 
 The earlier finite GKSL instrument remains a valid positive process matching
 the first three scalar history probabilities.  Its first jump is still the
-certified physical ((1/48)I_2) map.  The new result changes the status of the
-second jump: the chosen (sqrt{5/64},I_2) species factor is a positive
+certified physical \((1/48)I_2\) map.  The result changes the status of the
+second jump: the chosen \(\sqrt{5/64}\,I_2\) species factor is a positive
 completion, but it is not the amplitude-derived BT species map on this
 carrier.  The seven-point species tensor is not needed to falsify that
 minimal identity lift because the obstruction already occurs at six points.
 
-The next construction should retain both gradings instead of tracing one of
-them: constant/linear parent jet tensored with singleton/pair spectator
-profile.  This suggests a minimal four-component signed carrier.  Whether it
-has a positive quotient or Naimark dilation is not decided here.
+Retaining both gradings instead of tracing one of them gives the minimal
+four-component parent-jet times spectator-profile carrier.  Its physical
+pullback has a nondegenerate collapse-invisible kernel and a
+Krein-orthogonal two-dimensional image with positive scalar raised Gram.
+Certificate
+`REVERSE_PHYSICS_BT_SIX_POINT_PROFILE_QUOTIENT_COMPLETION_V1` proves that its
+projector reproduces the complete scalar amplitude pointwise and affiliates
+the conditional \(5/64\) second rate on the quotient fibre.  Thus the present
+obstruction is exact on the premature two-species restriction and is resolved,
+not contradicted, by the grading-faithful enlargement.  The seven-point
+species/profile tensor remains open.
 
 ## Verification
 
@@ -218,7 +225,7 @@ The producer reuses the exact cached Berends--Giele subset recursion but emits
 all seven amplitude mask components before squaring.  The independent rail
 uses invariant triangle vertices and explicitly enumerates all 220 trees.  At
 three exact kinematic points crossed with three unrelated hard fixtures it
-recovers every finite-(epsilon) mask coefficient, then independently rebuilds
+recovers every finite-\(\epsilon\) mask coefficient, then independently rebuilds
 the strong limit, parent factorization, complement pairing, raised matrix,
 and characteristic discriminant.
 

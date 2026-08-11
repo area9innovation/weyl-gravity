@@ -297,9 +297,16 @@ Certificate
 \(5/3072\) history weight and this finite CPTP completion, but refutes its
 amplitude affiliation above the first jump on the declared two-species
 carrier.  The next physical gate is the minimal four-component parent-jet
-times spectator-profile carrier; the seven-point species tensor is useful
-only if that enlarged six-point carrier admits a positive quotient or
-dilation.  The eight-point scalar tree separately determines \(q_3\) and tests
+times spectator-profile carrier.  On that grading-faithful carrier the exact
+pullback has spectrum \(\{0,2uv\}\), a nondegenerate collapse-invisible
+kernel, and a Krein-orthogonal two-dimensional image on which the raised Gram
+is \(2uvI_2>0\).  Certificate
+`REVERSE_PHYSICS_BT_SIX_POINT_PROFILE_QUOTIENT_COMPLETION_V1` proves the
+pointwise quotient identity for the complete six-point amplitude, replays the
+five-point physical prefix, and thereby affiliates the conditional second
+rate \(5/64\) with the quotient species fibre.  The third \(27/400\) identity
+lift remains a positive construction pending the seven-point species/profile
+tensor.  The eight-point scalar tree separately determines \(q_3\) and tests
 continuation beyond the absorbing closure.
 
 This certificate does not establish a complete physical \(2\to n\)

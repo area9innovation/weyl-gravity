@@ -1,0 +1,253 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-six-point-profile-quotient-completion-v1.schema.json",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "certificate",
+    "schema_version",
+    "dependency_tags",
+    "lifecycle_state",
+    "result_kind",
+    "question",
+    "answer",
+    "declared_carrier",
+    "physical_pullback",
+    "canonical_quotient",
+    "prefix_compatibility",
+    "branching_affiliation",
+    "disposition",
+    "assumptions",
+    "does_not_establish",
+    "missing_object_ledger",
+    "next_gate",
+    "provenance",
+    "verification_commands",
+    "checks",
+    "report",
+    "schema"
+  ],
+  "properties": {
+    "certificate": {
+      "const": "REVERSE_PHYSICS_BT_SIX_POINT_PROFILE_QUOTIENT_COMPLETION_V1"
+    },
+    "schema_version": {
+      "const": "reverse-physics-bt-six-point-profile-quotient-completion-v1"
+    },
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]
+    },
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "declared_carrier": {
+      "type": "object",
+      "required": [
+        "ordering",
+        "dimension",
+        "parent_metric_J",
+        "profile_pairing_K",
+        "tensor_metric_eta",
+        "signature",
+        "minimality_scope"
+      ],
+      "properties": {
+        "dimension": {"const": 4},
+        "signature": {"const": [2, 2]},
+        "ordering": {"type": "array", "minItems": 4, "maxItems": 4}
+      }
+    },
+    "physical_pullback": {
+      "type": "object",
+      "required": [
+        "u",
+        "v",
+        "D_generic",
+        "coherent_collapse_R",
+        "covariant_G_generic",
+        "raised_A_generic",
+        "rank",
+        "characteristic_polynomial",
+        "minimal_polynomial",
+        "nonzero_quotient_eigenvalue",
+        "physical_domain",
+        "phase"
+      ],
+      "properties": {
+        "rank": {"const": 2},
+        "minimal_polynomial": {"const": "z*(z-2*u*v)"}
+      }
+    },
+    "canonical_quotient": {
+      "type": "object",
+      "required": [
+        "projector_P_generic",
+        "kernel_basis_columns",
+        "image_basis_columns",
+        "kernel_gram",
+        "image_gram",
+        "kernel_image_pairing",
+        "kernel_disposition",
+        "image_disposition",
+        "image_raised_endomorphism",
+        "profile_fundamental_symmetry",
+        "hilbertized_image_gram",
+        "collapse_on_kernel",
+        "collapse_on_image_basis",
+        "pointwise_reconstruction_identity",
+        "outer_degenerate_surface",
+        "exact_fixtures"
+      ],
+      "properties": {
+        "kernel_disposition": {
+          "const": "NONDEGENERATE_AND_EXACTLY_PHYSICAL_COLLAPSE_INVISIBLE"
+        },
+        "image_disposition": {
+          "const": "TWO_DIMENSIONAL_POSITIVE_ORIENTATION_CROSS_KREIN_QUOTIENT"
+        },
+        "image_raised_endomorphism": {"const": "2*u*v*I2"},
+        "outer_degenerate_surface": {
+          "const": "RESOLVED_WITHOUT_DIVIDING_BY_B01; P HAS_NO_TAU2_DEPENDENCE"
+        },
+        "exact_fixtures": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3
+        }
+      }
+    },
+    "prefix_compatibility": {
+      "type": "object",
+      "required": [
+        "five_point_hard_vector",
+        "five_point_split_coefficients",
+        "hard_norm",
+        "physical_collapse",
+        "child_contraction",
+        "projected_norm",
+        "fifth_delta_prime_signed_ratio",
+        "rho_identification",
+        "disposition"
+      ],
+      "properties": {
+        "disposition": {
+          "const": "RECOVERS_CERTIFIED_FIVE_POINT_PHYSICAL_GRAM_AFTER_PROFILE_COMPLEMENT_IDENTIFICATION"
+        }
+      }
+    },
+    "branching_affiliation": {
+      "type": "object",
+      "required": [
+        "first_selected_history",
+        "second_selected_history",
+        "conditional_second_rate",
+        "derivation",
+        "species_fibre",
+        "first_jump_status",
+        "second_jump_status",
+        "third_jump_status"
+      ],
+      "properties": {
+        "first_jump_status": {"const": "CERTIFIED_PHYSICAL_AND_PREFIX_COMPATIBLE"},
+        "second_jump_status": {
+          "const": "AMPLITUDE_AFFILIATED_ON_CANONICAL_PROFILE_QUOTIENT"
+        },
+        "third_jump_status": {
+          "const": "POSITIVE_CONSTRUCTION_ONLY; SEVEN_POINT SPECIES/PROFILE TENSOR NOT YET COMPUTED"
+        }
+      }
+    },
+    "disposition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "four_component_grading_faithful_carrier",
+        "canonical_krein_orthogonal_quotient",
+        "physical_collapse_reconstruction",
+        "six_point_interference_obstruction",
+        "second_positive_scalar_species_jump",
+        "conditional_second_rate",
+        "third_jump_species_affiliation",
+        "complete_BT_probability",
+        "spacetime_local_physical_S_matrix",
+        "Eq19_all_orders"
+      ],
+      "properties": {
+        "four_component_grading_faithful_carrier": {"const": "CONSTRUCTED"},
+        "canonical_krein_orthogonal_quotient": {"const": "CONSTRUCTED"},
+        "physical_collapse_reconstruction": {"const": "EXACT_POINTWISE_IDENTITY"},
+        "six_point_interference_obstruction": {
+          "const": "RESOLVED_BY_MINIMAL_GRADING_FAITHFUL_ENLARGEMENT"
+        },
+        "second_positive_scalar_species_jump": {
+          "const": "AMPLITUDE_AFFILIATED_ON_QUOTIENT"
+        },
+        "conditional_second_rate": {"const": "EXACT_FIVE_OVER_SIXTY_FOUR"},
+        "third_jump_species_affiliation": {"const": "NOT_COMPUTED"},
+        "complete_BT_probability": {"const": "NOT_CONSTRUCTED"},
+        "spacetime_local_physical_S_matrix": {"const": "NOT_CONSTRUCTED"},
+        "Eq19_all_orders": {"const": "NOT_PROVED"}
+      }
+    },
+    "assumptions": {
+      "type": "array",
+      "minItems": 5,
+      "items": {"type": "string"}
+    },
+    "does_not_establish": {
+      "type": "array",
+      "minItems": 12,
+      "items": {"type": "string"}
+    },
+    "missing_object_ledger": {
+      "type": "array",
+      "minItems": 6,
+      "items": {"type": "string"}
+    },
+    "provenance": {
+      "type": "object",
+      "required": [
+        "source_commit",
+        "retrieval_date",
+        "inputs",
+        "producer_method",
+        "primary_source"
+      ],
+      "properties": {
+        "inputs": {
+          "type": "array",
+          "minItems": 5,
+          "maxItems": 5,
+          "items": {
+            "type": "object",
+            "required": ["path", "sha256"],
+            "properties": {
+              "path": {"type": "string"},
+              "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+            }
+          }
+        }
+      }
+    },
+    "verification_commands": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {"type": "string"}
+    },
+    "checks": {
+      "type": "object",
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"const": 42},
+        "total": {"const": 42},
+        "failures": {"const": []}
+      }
+    },
+    "report": {
+      "const": "reverse_physics/reports/bt-six-point-profile-quotient-completion.md"
+    },
+    "schema": {
+      "const": "reverse_physics/schema/reverse-physics-bt-six-point-profile-quotient-completion-v1.schema.json"
+    }
+  }
+}
