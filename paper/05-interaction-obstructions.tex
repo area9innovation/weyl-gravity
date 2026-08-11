@@ -154,6 +154,11 @@ associated finite-cell trace growth are not coefficients of this completed
 quadratic map.  This does not prove a physical zero: the squeezed-vacuum and
 dynamical-zero-mode projector trace, the continuum domain, and higher orders
 remain open.
+On every finite paired core the covariant squeeze conjugates this Born
+operator and the detector together, so cyclicity preserves the zero trace; a
+nonzero bare squeezed-vacuum pair occupation is a fixed-detector comparison,
+not an additional Eq.~(19) term.  The squeeze's non-trace-class thermodynamic
+limit prevents promotion of this finite-regulator zero to a physical zero.
 Independently, the projected three-channel hard loop logarithm closes the
 Callan--Symanzik equation exactly with the Born rate and one-loop beta
 function.  This yields the positive leading-log nonforward prediction
@@ -1561,6 +1566,22 @@ normalization is a conditional theorem for the resonant truncation; it does
 not survive the complete public quadratic map.  No conclusion about the
 physical coefficient follows without the squeezed-vacuum/dynamical-zero-mode
 projector trace, its continuum domain, and higher composite orders.
+The Appendix-C squeeze does not supply another additive coefficient on this
+finite paired core.  Writing the finite-regulator map as
+$R(\lambda)=S(1+\lambda K+O(\lambda^2))$, cross-Krein isometry gives
+\[
+ (SKS^{-1})^\dagger(SKS^{-1})=S(K^\dagger K)S^{-1}.
+\]
+Transporting the detector by the same similarity and using the finite-rank
+cyclic trace leaves the completed quadratic coefficient at zero.  The exact
+$3/16$ bare one-pair occupation of the normalized $z=1/2$ squeezed vacuum
+holds a $b$-Fock detector fixed and is not an Eq.~(19) pushforward probability.
+This distinction is certified by
+\texttt{REVERSE\_PHYSICS\_BT\_SQUEEZED\_}
+\allowbreak\texttt{DETECTOR\_SIMILARITY\_V1}.  Its
+\texttt{LOCAL-ALGEBRAIC}, \texttt{REDUCED-MODE} zero is finite-regulator only:
+the non-trace-class thermodynamic limit, dynamical zero mode, and higher
+orders still block a physical zero.
 \end{remark}
 
 \begin{remark}[Physical ultraviolet hard-scattering law]

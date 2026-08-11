@@ -1,0 +1,36 @@
+{
+  "id": "sf:program/work/reverse-physics-bateman-squeezed-detector-similarity",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "reverse-physics",
+    "state": "ACTIVE",
+    "objective": "Determine whether the covariant Appendix-C squeeze can restore a nonzero finite-regulator order-lambda quadratic Born coefficient after the complete signed BT kernel has zero parent trace, by transporting the same detector projector and trace domain rather than comparing inequivalent bare detectors.",
+    "depends_on": [
+      "REVERSE_PHYSICS_BT_FULL_SIGNED_QUADRATIC_CLOSURE_V1",
+      "REVERSE_PHYSICS_BT_CROSS_KREIN_TRACE_LIMIT_V1",
+      "REVERSE_PHYSICS_BT_SEMIFINITE_RELATIVE_BORN_WEIGHT_V1"
+    ],
+    "activates": [
+      "the complete public finite-regulator order-lambda quadratic coefficient",
+      "a separation between covariant detector transport and bare Fock occupation",
+      "the remaining continuum, dynamical-zero-mode, and higher-order gates"
+    ],
+    "current_gate": "SQUEEZED_DETECTOR_SIMILARITY: use S^dagger=S^-1 on the paired core and transport the detector, generator, and Born operator together; verify exact trace and projector identities and retain the thermodynamic trace-norm boundary.",
+    "stop_condition": "Certify whether the squeeze changes the completed quadratic coefficient on every finite paired core, while distinguishing that result from a physical continuum coefficient, or certify the first exact domain failure.",
+    "forbid": "no bare b-Fock occupation called an Eq. (19) detector probability; no finite-rank cyclic trace result promoted through the non-trace-class thermodynamic limit; no physical zero, all-order Eq. (19), gravity, BRST, or LORENTZIAN-CAUSAL promotion",
+    "allowed_paths": [
+      "reverse_physics/",
+      "notes/bateman-turok-embedding.md",
+      "paper/05-interaction-obstructions.tex",
+      "paper/05-interaction-obstructions.pdf",
+      "paper/06-einstein-weyl-interaction-obstructions.tex",
+      "paper/06-einstein-weyl-interaction-obstructions.pdf",
+      "planning/work-items/reverse-physics-bateman-squeezed-detector-similarity.json",
+      "planning/events/"
+    ],
+    "resource_hint": "Use exact rational matrices and the finite-rank identity (S K S^-1)^dagger(S K S^-1)=S(K^dagger K)S^-1. Recompute the complete signed-kernel parent trace on exact sign/energy fixtures. Contrast covariantly transported projectors with a bare squeezed-vacuum number projection without identifying the latter as Eq. (19). Run sequentially under ulimit -v 500000.",
+    "input_commit": "2c1b0869a69227f95323971017aedd9c5313dbd3",
+    "stream": "reverse-physics"
+  }
+}

@@ -1,0 +1,2323 @@
+{
+  "answer": "No at finite regulator on the certified paired core. The squeeze transports the generator, detector projector, and Born operator by one cross-Krein similarity; it is not an additive projector sector. Since S^dagger=S^-1, K_S^dagger K_S=S(K^dagger K)S^-1, and the finite-rank cyclic trace is invariant. The completed signed kernel's zero parent trace therefore remains exactly zero after the squeeze. A bare b-Fock pair occupation, equal to 3/16 in the z=1/2 fixture, keeps the detector fixed while changing the vacuum and is not the covariantly transported Eq. (19) observable. This completes the public finite-regulator order-lambda quadratic coefficient at zero. It does not establish a physical zero because the squeeze has no trace-norm thermodynamic limit on the certified carrier, the dynamical p=0 module is absent, and higher composite orders are unknown.",
+  "bare_detector_mismatch": {
+    "bare_one_pair_probability": "(1-x)x",
+    "disposition": "NONZERO_BARE_OCCUPATION_IS_A_FIXED_DETECTOR_COMPARISON_NOT_THE_COVARIANT_EQ19_PUSHFORWARD",
+    "fixture_probability": {
+      "denominator": 16,
+      "numerator": 3
+    },
+    "fixture_z": {
+      "denominator": 2,
+      "numerator": 1
+    },
+    "normalized_squeezed_vacuum": "sqrt(1-x) sum_(n>=0) z^n |n,n>, x=|z|^2"
+  },
+  "certificate": "REVERSE_PHYSICS_BT_SQUEEZED_DETECTOR_SIMILARITY_V1",
+  "checks": {
+    "details": {
+      "Born_operator_similarity_identity": true,
+      "all_completed_parent_traces_zero_before_and_after": true,
+      "all_fixture_isometries_preserve_metrics": true,
+      "bare_pair_population_at_z_half_is_three_over_sixteen": true,
+      "bare_pair_population_is_not_covariant_detector_probability": true,
+      "dynamical_zero_mode_still_missing": true,
+      "eight_exact_kernel_similarity_fixtures": true,
+      "finite_rank_cyclic_trace_preserves_zero_coefficient": true,
+      "finite_regulator_public_quadratic_coefficient_is_zero": true,
+      "higher_orders_still_missing": true,
+      "input_hashes_pinned": true,
+      "order_lambda_commutator_trace_preserved_at_zero": true,
+      "physical_zero_still_fails_closed": true,
+      "positive_trace_norm_thermodynamic_barrier_retained": true,
+      "projector_idempotence_preserved": true,
+      "projector_similarity_is_Krein_isometric": true,
+      "projector_trace_preserved": true,
+      "science_forge_event_FNV_id_reproduces": true,
+      "squeeze_is_not_an_additive_projector_sector": true,
+      "zero_mode_completed_squeeze_is_neutral": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 20,
+    "total": 20
+  },
+  "coefficient_disposition": {
+    "completed_public_finite_regulator_order_lambda_quadratic_coefficient": {
+      "denominator": 1,
+      "numerator": 0
+    },
+    "physical_zero": "NOT_ESTABLISHED",
+    "reason_physical_fails_closed": "no trace-norm thermodynamic limit, full dynamical p=0 trace, or higher-order composite map",
+    "squeeze_additive_correction": {
+      "denominator": 1,
+      "numerator": 0
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "disposition": {
+    "continuum_Eq19": "NOT_PROVED",
+    "finite_mode_order_lambda_Eq19": "PROVED_WITH_Q1_ZERO",
+    "finite_paired_core_squeeze_transport": "CONSTRUCTED",
+    "finite_regulator_quadratic_Born_trace": "ZERO",
+    "physical_zero": "NOT_ESTABLISHED"
+  },
+  "does_not_establish": [
+    "a trace-class or local non-normal thermodynamic limit",
+    "the full dynamical p=0 module and invariant trace",
+    "higher-order terms in the nonlinear composite map",
+    "the physical replacement of 1/48 by zero",
+    "a complete NLO probability",
+    "a gravitational or BRST lift",
+    "anything LORENTZIAN-CAUSAL",
+    "literature priority"
+  ],
+  "finite_projector_similarity_fixture": {
+    "commutator_coefficient": [
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 3,
+          "numerator": 1
+        },
+        {
+          "denominator": 3,
+          "numerator": 2
+        }
+      ],
+      [
+        {
+          "denominator": 3,
+          "numerator": -1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 3,
+          "numerator": 1
+        }
+      ],
+      [
+        {
+          "denominator": 3,
+          "numerator": -2
+        },
+        {
+          "denominator": 3,
+          "numerator": -1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ]
+    ],
+    "commutator_trace_before_and_after": [
+      {
+        "denominator": 1,
+        "numerator": 0
+      },
+      {
+        "denominator": 1,
+        "numerator": 0
+      }
+    ],
+    "metric": [
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ]
+    ],
+    "projector": [
+      [
+        {
+          "denominator": 3,
+          "numerator": 1
+        },
+        {
+          "denominator": 3,
+          "numerator": 1
+        },
+        {
+          "denominator": 3,
+          "numerator": 1
+        }
+      ],
+      [
+        {
+          "denominator": 3,
+          "numerator": 1
+        },
+        {
+          "denominator": 3,
+          "numerator": 1
+        },
+        {
+          "denominator": 3,
+          "numerator": 1
+        }
+      ],
+      [
+        {
+          "denominator": 3,
+          "numerator": 1
+        },
+        {
+          "denominator": 3,
+          "numerator": 1
+        },
+        {
+          "denominator": 3,
+          "numerator": 1
+        }
+      ]
+    ],
+    "projector_idempotent_before_and_after": true,
+    "projector_trace_before_and_after": [
+      {
+        "denominator": 1,
+        "numerator": 1
+      },
+      {
+        "denominator": 1,
+        "numerator": 1
+      }
+    ],
+    "similarity": [
+      [
+        {
+          "denominator": 1,
+          "numerator": 2
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 2,
+          "numerator": 1
+        }
+      ]
+    ],
+    "similarity_is_Krein_isometric": true,
+    "transported_commutator_coefficient": [
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 3,
+          "numerator": 2
+        },
+        {
+          "denominator": 3,
+          "numerator": 8
+        }
+      ],
+      [
+        {
+          "denominator": 6,
+          "numerator": -1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 3,
+          "numerator": 2
+        }
+      ],
+      [
+        {
+          "denominator": 6,
+          "numerator": -1
+        },
+        {
+          "denominator": 6,
+          "numerator": -1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ]
+    ],
+    "transported_projector": [
+      [
+        {
+          "denominator": 3,
+          "numerator": 1
+        },
+        {
+          "denominator": 3,
+          "numerator": 2
+        },
+        {
+          "denominator": 3,
+          "numerator": 4
+        }
+      ],
+      [
+        {
+          "denominator": 6,
+          "numerator": 1
+        },
+        {
+          "denominator": 3,
+          "numerator": 1
+        },
+        {
+          "denominator": 3,
+          "numerator": 2
+        }
+      ],
+      [
+        {
+          "denominator": 12,
+          "numerator": 1
+        },
+        {
+          "denominator": 6,
+          "numerator": 1
+        },
+        {
+          "denominator": 3,
+          "numerator": 1
+        }
+      ]
+    ]
+  },
+  "lifecycle_state": "COEFFICIENT_COMPUTED",
+  "next_gate": "Construct a local non-normal thermodynamic weight for the simultaneously transported detector and squeeze, or derive the dynamical p=0 and higher-order composite sectors. No further finite-regulator Appendix-C squeeze coefficient remains to be added to the completed quadratic trace.",
+  "operator_identity": {
+    "Born_similarity": "K_S^dagger K_S=S(K^dagger K)S^-1",
+    "consequence": "a zero completed quadratic trace cannot become nonzero through covariant squeeze transport",
+    "factorization": "R(lambda)=S U(lambda) on the paired core, with U(lambda)=1+lambda K+O(lambda^2)",
+    "finite_rank_trace": "Tr_fin(S T S^-1)=Tr_fin(T)",
+    "projector_similarity": "R P R^dagger=S(U P U^dagger)S^-1",
+    "squeeze_adjoint": "S^dagger=S^-1",
+    "transported_generator": "K_S=S K S^-1"
+  },
+  "provenance": {
+    "inputs": [
+      {
+        "path": "planning/work-items/reverse-physics-bateman-squeezed-detector-similarity.json",
+        "sha256": "d52702eba463899556bf0637cdd42f277ae6ae41f825120e9322b17e666cd159"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_FULL_SIGNED_QUADRATIC_CLOSURE_V1.json",
+        "sha256": "5859aad65cf0dcbc1ceb9d2c3381a9a61c2d3df6457e8b77903c8a6931aa081b"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_CROSS_KREIN_TRACE_LIMIT_V1.json",
+        "sha256": "e9dab0edb6ac2d611f2818c9117886516599eec8300e42d7020f641cbdc59996"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_SEMIFINITE_RELATIVE_BORN_WEIGHT_V1.json",
+        "sha256": "bed18646e76f92dc8af1f0b9935d5c71f060fabd283325b26443b524395c4e9c"
+      },
+      {
+        "path": "notes/bateman-turok-embedding.md",
+        "sha256": "a41079b24eb281f279fe3edcf789268ca2abcb18ce88095efbd68e0a7ecd4bbd"
+      },
+      {
+        "path": "planning/events/reverse-physics-bateman-squeezed-detector-similarity-DONE-a908fc9b3503ce6f.json",
+        "sha256": "a1b441a920c46fa58734e5f3e0a50330437a35114da938877e6a745bc9faf220"
+      }
+    ],
+    "retrieval_date": "2026-08-11",
+    "source_commit": "2c1b0869a69227f95323971017aedd9c5313dbd3"
+  },
+  "question": "Can the neutral Appendix-C squeeze restore a nonzero quadratic soft coefficient after the complete signed public order-lambda kernel has zero parent-raised trace?",
+  "report": "reverse_physics/reports/bt-squeezed-detector-similarity.md",
+  "result_kind": "finite-paired-core squeeze transport of the completed BT quadratic Born operator",
+  "schema": "reverse_physics/schema/reverse-physics-bt-squeezed-detector-similarity-v1.schema.json",
+  "schema_version": "reverse-physics-bt-squeezed-detector-similarity-v1",
+  "signed_kernel_similarity_fixtures": [
+    {
+      "daughter_isometry": [
+        [
+          {
+            "denominator": 1,
+            "numerator": 4
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 1
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 1
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 4,
+            "numerator": 1
+          }
+        ]
+      ],
+      "e1": 2,
+      "e2": 1,
+      "isometries_preserve_metrics": true,
+      "kernel": [
+        [
+          {
+            "denominator": 4,
+            "numerator": 3
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 4,
+            "numerator": -1
+          },
+          {
+            "denominator": 2,
+            "numerator": -1
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ]
+      ],
+      "parent_gram": [
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 2
+          }
+        ]
+      ],
+      "parent_isometry": [
+        [
+          {
+            "denominator": 1,
+            "numerator": 2
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 2,
+            "numerator": 1
+          }
+        ]
+      ],
+      "parent_trace": {
+        "denominator": 1,
+        "numerator": 0
+      },
+      "scale_r": {
+        "denominator": 1,
+        "numerator": 2
+      },
+      "target_signs": [
+        1,
+        1
+      ],
+      "trace_is_zero_before_and_after": true,
+      "transformed_kernel": [
+        [
+          {
+            "denominator": 8,
+            "numerator": 3
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 8,
+            "numerator": -1
+          },
+          {
+            "denominator": 4,
+            "numerator": -1
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ]
+      ],
+      "transformed_parent_gram": [
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 2,
+            "numerator": 1
+          }
+        ]
+      ],
+      "transformed_parent_trace": {
+        "denominator": 1,
+        "numerator": 0
+      }
+    },
+    {
+      "daughter_isometry": [
+        [
+          {
+            "denominator": 4,
+            "numerator": 9
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 1
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 1
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 9,
+            "numerator": 4
+          }
+        ]
+      ],
+      "e1": 3,
+      "e2": 2,
+      "isometries_preserve_metrics": true,
+      "kernel": [
+        [
+          {
+            "denominator": 12,
+            "numerator": 5
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 6,
+            "numerator": -1
+          },
+          {
+            "denominator": 4,
+            "numerator": -1
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ]
+      ],
+      "parent_gram": [
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 2
+          }
+        ]
+      ],
+      "parent_isometry": [
+        [
+          {
+            "denominator": 2,
+            "numerator": 3
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 3,
+            "numerator": 2
+          }
+        ]
+      ],
+      "parent_trace": {
+        "denominator": 1,
+        "numerator": 0
+      },
+      "scale_r": {
+        "denominator": 2,
+        "numerator": 3
+      },
+      "target_signs": [
+        1,
+        1
+      ],
+      "trace_is_zero_before_and_after": true,
+      "transformed_kernel": [
+        [
+          {
+            "denominator": 18,
+            "numerator": 5
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 9,
+            "numerator": -1
+          },
+          {
+            "denominator": 6,
+            "numerator": -1
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ]
+      ],
+      "transformed_parent_gram": [
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 9,
+            "numerator": 8
+          }
+        ]
+      ],
+      "transformed_parent_trace": {
+        "denominator": 1,
+        "numerator": 0
+      }
+    },
+    {
+      "daughter_isometry": [
+        [
+          {
+            "denominator": 1,
+            "numerator": 4
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 1
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 1
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 4,
+            "numerator": 1
+          }
+        ]
+      ],
+      "e1": 2,
+      "e2": 1,
+      "isometries_preserve_metrics": true,
+      "kernel": [
+        [
+          {
+            "denominator": 4,
+            "numerator": 1
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 4,
+            "numerator": 1
+          },
+          {
+            "denominator": 2,
+            "numerator": -1
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ]
+      ],
+      "parent_gram": [
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": -2
+          }
+        ]
+      ],
+      "parent_isometry": [
+        [
+          {
+            "denominator": 1,
+            "numerator": 2
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 2,
+            "numerator": 1
+          }
+        ]
+      ],
+      "parent_trace": {
+        "denominator": 1,
+        "numerator": 0
+      },
+      "scale_r": {
+        "denominator": 1,
+        "numerator": 2
+      },
+      "target_signs": [
+        1,
+        -1
+      ],
+      "trace_is_zero_before_and_after": true,
+      "transformed_kernel": [
+        [
+          {
+            "denominator": 8,
+            "numerator": 1
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 8,
+            "numerator": 1
+          },
+          {
+            "denominator": 4,
+            "numerator": -1
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ]
+      ],
+      "transformed_parent_gram": [
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 2,
+            "numerator": -1
+          }
+        ]
+      ],
+      "transformed_parent_trace": {
+        "denominator": 1,
+        "numerator": 0
+      }
+    },
+    {
+      "daughter_isometry": [
+        [
+          {
+            "denominator": 4,
+            "numerator": 9
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 1
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 1
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 9,
+            "numerator": 4
+          }
+        ]
+      ],
+      "e1": 3,
+      "e2": 2,
+      "isometries_preserve_metrics": true,
+      "kernel": [
+        [
+          {
+            "denominator": 12,
+            "numerator": 1
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 6,
+            "numerator": 1
+          },
+          {
+            "denominator": 4,
+            "numerator": -1
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ]
+      ],
+      "parent_gram": [
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": -2
+          }
+        ]
+      ],
+      "parent_isometry": [
+        [
+          {
+            "denominator": 2,
+            "numerator": 3
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 3,
+            "numerator": 2
+          }
+        ]
+      ],
+      "parent_trace": {
+        "denominator": 1,
+        "numerator": 0
+      },
+      "scale_r": {
+        "denominator": 2,
+        "numerator": 3
+      },
+      "target_signs": [
+        1,
+        -1
+      ],
+      "trace_is_zero_before_and_after": true,
+      "transformed_kernel": [
+        [
+          {
+            "denominator": 18,
+            "numerator": 1
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 9,
+            "numerator": 1
+          },
+          {
+            "denominator": 6,
+            "numerator": -1
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ]
+      ],
+      "transformed_parent_gram": [
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 9,
+            "numerator": -8
+          }
+        ]
+      ],
+      "transformed_parent_trace": {
+        "denominator": 1,
+        "numerator": 0
+      }
+    },
+    {
+      "daughter_isometry": [
+        [
+          {
+            "denominator": 1,
+            "numerator": 4
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 1
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 1
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 4,
+            "numerator": 1
+          }
+        ]
+      ],
+      "e1": 2,
+      "e2": 1,
+      "isometries_preserve_metrics": true,
+      "kernel": [
+        [
+          {
+            "denominator": 4,
+            "numerator": -1
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 4,
+            "numerator": -1
+          },
+          {
+            "denominator": 2,
+            "numerator": 1
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ]
+      ],
+      "parent_gram": [
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": -2
+          }
+        ]
+      ],
+      "parent_isometry": [
+        [
+          {
+            "denominator": 1,
+            "numerator": 2
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 2,
+            "numerator": 1
+          }
+        ]
+      ],
+      "parent_trace": {
+        "denominator": 1,
+        "numerator": 0
+      },
+      "scale_r": {
+        "denominator": 1,
+        "numerator": 2
+      },
+      "target_signs": [
+        -1,
+        1
+      ],
+      "trace_is_zero_before_and_after": true,
+      "transformed_kernel": [
+        [
+          {
+            "denominator": 8,
+            "numerator": -1
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 8,
+            "numerator": -1
+          },
+          {
+            "denominator": 4,
+            "numerator": 1
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ]
+      ],
+      "transformed_parent_gram": [
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 2,
+            "numerator": -1
+          }
+        ]
+      ],
+      "transformed_parent_trace": {
+        "denominator": 1,
+        "numerator": 0
+      }
+    },
+    {
+      "daughter_isometry": [
+        [
+          {
+            "denominator": 4,
+            "numerator": 9
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 1
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 1
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 9,
+            "numerator": 4
+          }
+        ]
+      ],
+      "e1": 3,
+      "e2": 2,
+      "isometries_preserve_metrics": true,
+      "kernel": [
+        [
+          {
+            "denominator": 12,
+            "numerator": -1
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 6,
+            "numerator": -1
+          },
+          {
+            "denominator": 4,
+            "numerator": 1
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ]
+      ],
+      "parent_gram": [
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": -2
+          }
+        ]
+      ],
+      "parent_isometry": [
+        [
+          {
+            "denominator": 2,
+            "numerator": 3
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 3,
+            "numerator": 2
+          }
+        ]
+      ],
+      "parent_trace": {
+        "denominator": 1,
+        "numerator": 0
+      },
+      "scale_r": {
+        "denominator": 2,
+        "numerator": 3
+      },
+      "target_signs": [
+        -1,
+        1
+      ],
+      "trace_is_zero_before_and_after": true,
+      "transformed_kernel": [
+        [
+          {
+            "denominator": 18,
+            "numerator": -1
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 9,
+            "numerator": -1
+          },
+          {
+            "denominator": 6,
+            "numerator": 1
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ]
+      ],
+      "transformed_parent_gram": [
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 9,
+            "numerator": -8
+          }
+        ]
+      ],
+      "transformed_parent_trace": {
+        "denominator": 1,
+        "numerator": 0
+      }
+    },
+    {
+      "daughter_isometry": [
+        [
+          {
+            "denominator": 1,
+            "numerator": 4
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 1
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 1
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 4,
+            "numerator": 1
+          }
+        ]
+      ],
+      "e1": 2,
+      "e2": 1,
+      "isometries_preserve_metrics": true,
+      "kernel": [
+        [
+          {
+            "denominator": 4,
+            "numerator": -3
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 4,
+            "numerator": 1
+          },
+          {
+            "denominator": 2,
+            "numerator": 1
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ]
+      ],
+      "parent_gram": [
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 2
+          }
+        ]
+      ],
+      "parent_isometry": [
+        [
+          {
+            "denominator": 1,
+            "numerator": 2
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 2,
+            "numerator": 1
+          }
+        ]
+      ],
+      "parent_trace": {
+        "denominator": 1,
+        "numerator": 0
+      },
+      "scale_r": {
+        "denominator": 1,
+        "numerator": 2
+      },
+      "target_signs": [
+        -1,
+        -1
+      ],
+      "trace_is_zero_before_and_after": true,
+      "transformed_kernel": [
+        [
+          {
+            "denominator": 8,
+            "numerator": -3
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 8,
+            "numerator": 1
+          },
+          {
+            "denominator": 4,
+            "numerator": 1
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ]
+      ],
+      "transformed_parent_gram": [
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 2,
+            "numerator": 1
+          }
+        ]
+      ],
+      "transformed_parent_trace": {
+        "denominator": 1,
+        "numerator": 0
+      }
+    },
+    {
+      "daughter_isometry": [
+        [
+          {
+            "denominator": 4,
+            "numerator": 9
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 1
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 1
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 9,
+            "numerator": 4
+          }
+        ]
+      ],
+      "e1": 3,
+      "e2": 2,
+      "isometries_preserve_metrics": true,
+      "kernel": [
+        [
+          {
+            "denominator": 12,
+            "numerator": -5
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 6,
+            "numerator": 1
+          },
+          {
+            "denominator": 4,
+            "numerator": 1
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ]
+      ],
+      "parent_gram": [
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 2
+          }
+        ]
+      ],
+      "parent_isometry": [
+        [
+          {
+            "denominator": 2,
+            "numerator": 3
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 3,
+            "numerator": 2
+          }
+        ]
+      ],
+      "parent_trace": {
+        "denominator": 1,
+        "numerator": 0
+      },
+      "scale_r": {
+        "denominator": 2,
+        "numerator": 3
+      },
+      "target_signs": [
+        -1,
+        -1
+      ],
+      "trace_is_zero_before_and_after": true,
+      "transformed_kernel": [
+        [
+          {
+            "denominator": 18,
+            "numerator": -5
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 9,
+            "numerator": 1
+          },
+          {
+            "denominator": 6,
+            "numerator": 1
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ]
+      ],
+      "transformed_parent_gram": [
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ],
+        [
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 9,
+            "numerator": 8
+          }
+        ]
+      ],
+      "transformed_parent_trace": {
+        "denominator": 1,
+        "numerator": 0
+      }
+    }
+  ],
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_squeezed_detector_similarity.py --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_squeezed_detector_similarity.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_squeezed_detector_similarity"
+  ]
+}
