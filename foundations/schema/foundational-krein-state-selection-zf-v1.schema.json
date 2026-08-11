@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9innovation.github.io/weyl-gravity/foundations/schema/foundational-krein-state-selection-zf-v1.schema.json",
+  "title": "Explicit Krein state existence and selection separation in ZF",
+  "type": "object",
+  "required": [
+    "schema_version", "result_id", "result_kind", "lifecycle",
+    "dependency_tags", "created", "repository_base_commit", "question", "answer",
+    "typed_products", "state_construction", "fock_state_construction",
+    "selection_obstruction", "finite_exact_witness", "cstar_crosswalk",
+    "cube_promotions", "proof_dependency_dag", "independent_checker",
+    "provenance", "claim_flags", "assumptions", "does_not_establish",
+    "next_gate", "human_report"
+  ],
+  "properties": {
+    "schema_version": {"const": "foundational-krein-state-selection-zf-v1"},
+    "result_id": {"const": "FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1"},
+    "result_kind": {"const": "FOUNDATIONAL_DEPENDENCY_CERTIFICATE"},
+    "lifecycle": {"const": "SUFFICIENCY_PROVED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "repository_base_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "typed_products": {"type": "object", "required": ["krein_product", "hilbert_companion", "operator_involution_used_for_state_positivity", "krein_adjoint", "typing_boundary"]},
+    "state_construction": {"type": "object", "required": ["carrier", "foundation", "choice_status", "named_positive_mode", "named_negative_mode", "formula", "normalization_proof", "positivity_proof", "density_operator", "boundedness", "algebras"]},
+    "fock_state_construction": {"type": "object", "required": ["carrier", "vacuum", "negative_one_particle", "nonuniqueness_witness", "extra_structure_warning"]},
+    "selection_obstruction": {"type": "object", "required": ["theorem", "scope", "proof", "relation", "interpretation", "does_not_rule_out"], "properties": {"relation": {"const": "NOT_IMPLIED_BY_CARRIER"}, "proof": {"type": "array", "minItems": 4}, "does_not_rule_out": {"type": "array", "minItems": 5}}},
+    "finite_exact_witness": {"type": "object", "required": ["model", "state_formulas", "distinguishing_projection", "integer_matrix_range", "integer_matrix_count", "positivity_identity_checked", "permutation_controls", "control_boundary"], "properties": {"integer_matrix_count": {"const": 625}, "permutation_controls": {"type": "array", "minItems": 12, "maxItems": 12}}},
+    "cube_promotions": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "object", "required": ["foundation", "carrier", "obligation", "old_status", "new_status", "basis"], "properties": {"new_status": {"const": "LOCAL_RESULT"}}}},
+    "proof_dependency_dag": {"type": "object", "required": ["nodes", "edges"], "properties": {"nodes": {"type": "array", "minItems": 10}, "edges": {"type": "array", "minItems": 10}}},
+    "independent_checker": {"type": "object", "required": ["path", "arithmetic", "checks", "expected_finite_digest"], "properties": {"expected_finite_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}},
+    "provenance": {
+      "type": "object",
+      "required": ["inputs", "verification_boundary"],
+      "properties": {
+        "inputs": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "type": "object",
+            "required": ["path", "sha256", "role"],
+            "properties": {
+              "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+            }
+          }
+        }
+      }
+    },
+    "claim_flags": {"type": "object"},
+    "assumptions": {"type": "array", "minItems": 3},
+    "does_not_establish": {"type": "array", "minItems": 9},
+    "next_gate": {"type": "string", "minLength": 1},
+    "human_report": {"const": "foundations/reports/krein-state-selection-zf.md"}
+  }
+}

@@ -22,6 +22,11 @@ class IntersectionCubeTests(unittest.TestCase):
         r=copy.deepcopy(self.r);r["claim_flags"]["all_216_cells_claimed_assessed"]=True;self.assertTrue(self.v(r))
     def test_cell_completion_promotion(self):
         r=copy.deepcopy(self.r);r["claim_flags"]["cell_status_means_complete_solution"]=True;self.assertTrue(self.v(r))
+    def test_state_cell_promotion_removal(self):
+        r=copy.deepcopy(self.r)
+        cell=next(x for x in r["cells"] if x["foundation"]=="WEAK_CHOICE_ZF" and x["carrier"]=="KREIN_INDEFINITE" and x["obligation"]=="STATES_PROBABILITY")
+        cell["status"]="PRIORITY_GAP"
+        self.assertTrue(self.v(r))
     def test_report_gap_removed(self):self.assertTrue(self.v(report=self.t.replace("Priority gap","Unknown gap")))
 
 if __name__=="__main__":unittest.main()

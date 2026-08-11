@@ -77,6 +77,19 @@ python3 foundations/verify_explicit_energy_spectral_fragment.py
 python3 -m unittest foundations.tests.test_explicit_energy_spectral_fragment
 ```
 
+The first state-level Krein bridge is
+[`Krein state existence versus physical selection in ZF`](reports/krein-state-selection-zf.md).
+It constructs explicit positive normalized coordinate and Fock states without
+Choice, proves a scoped density-state symmetry obstruction, and promotes three
+cube cells while keeping physical state selection, generalized Born
+probability, singular states, and Lorentzian claims open:
+
+```bash
+python3 foundations/check_krein_state_selection.py
+python3 foundations/verify_krein_state_selection_zf.py
+python3 -m unittest foundations.tests.test_krein_state_selection_zf
+```
+
 The first Phase C audit is the
 [`BT separable C*-algebra/state chain`](reports/bt-separable-cstar-state-chain.md).
 It separates the compact detector algebra, explicit ZF states and GNS,

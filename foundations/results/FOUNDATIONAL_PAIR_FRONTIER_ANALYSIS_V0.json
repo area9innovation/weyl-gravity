@@ -9,7 +9,7 @@
     "LORENTZIAN-CAUSAL"
   ],
   "created": "2026-08-11",
-  "repository_base_commit": "30ca3c87adb93301794fca6348dec7c50449f231",
+  "repository_base_commit": "c676bde482341c627de41d0cc162b21f50bd91a3",
   "purpose": "Find products of two cube dimensions that already have an evidence foothold and a nearby assessed open obligation, while keeping unassessed cells and unseeded gaps distinct.",
   "method": {
     "projection_rule": "Fix one key on each of two axes and inspect all six keys on the remaining axis.",
@@ -32,15 +32,15 @@
     "projections": 108,
     "cells_per_projection": 6,
     "classification_counts": {
-      "NEAR_TERM_LOCAL_BRIDGE": 14,
-      "NEAR_TERM_LITERATURE_BRIDGE": 10,
-      "PIECES_ONLY_FRONTIER": 8,
+      "NEAR_TERM_LOCAL_BRIDGE": 12,
+      "NEAR_TERM_LITERATURE_BRIDGE": 7,
+      "PIECES_ONLY_FRONTIER": 7,
       "UNSEEDED_IMPORTANT_GAP": 25,
-      "NO_FRONTIER": 51
+      "NO_FRONTIER": 57
     },
-    "ranked_bridge_frontiers": 32,
+    "ranked_bridge_frontiers": 26,
     "unseeded_important_gaps": 25,
-    "assessed_open_cells": 29
+    "assessed_open_cells": 26
   },
   "pair_families": [
     {
@@ -348,16 +348,16 @@
       ],
       "scan_axis": "OBLIGATION",
       "counts": {
-        "LOCAL_RESULT": 0,
+        "LOCAL_RESULT": 1,
         "LITERATURE_RESULT": 1,
-        "PIECES_ONLY": 1,
+        "PIECES_ONLY": 0,
         "PRIORITY_GAP": 0,
         "NOT_MAPPED": 4
       },
-      "seed_strength": 4,
-      "open_demand": 2,
-      "bridge_score": 6,
-      "classification": "NEAR_TERM_LITERATURE_BRIDGE",
+      "seed_strength": 7,
+      "open_demand": 0,
+      "bridge_score": 0,
+      "classification": "NO_FRONTIER",
       "evidence_cells": [
         {
           "foundation": "CLASSICAL_STANDARD",
@@ -370,22 +370,22 @@
           ],
           "summary": "Krein geometry and ghost parity provide an indefinite carrier architecture.",
           "boundary": "State selection and operator-domain completion remain open."
-        }
-      ],
-      "candidate_cells": [
+        },
         {
           "foundation": "CLASSICAL_STANDARD",
           "carrier": "KREIN_INDEFINITE",
           "obligation": "STATES_PROBABILITY",
-          "status": "PIECES_ONLY",
+          "status": "LOCAL_RESULT",
           "evidence": [
             "bateman-turok-2026",
-            "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1"
+            "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1",
+            "FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1"
           ],
-          "summary": "Metric and adjoint ingredients exist, but no complete physical probability construction does.",
-          "boundary": "Tree-level positivity is not a full Born/state theorem."
+          "summary": "Explicit sign-normalized coordinate and Fock states exist, and a scoped density-state selection obstruction is proved.",
+          "boundary": "State existence and a conditional nonselection theorem do not supply a physical Weyl state or generalized Born rule."
         }
       ],
+      "candidate_cells": [],
       "not_mapped_cells": [
         {
           "foundation": "CLASSICAL_STANDARD",
@@ -427,16 +427,16 @@
       ],
       "scan_axis": "OBLIGATION",
       "counts": {
-        "LOCAL_RESULT": 0,
+        "LOCAL_RESULT": 1,
         "LITERATURE_RESULT": 1,
-        "PIECES_ONLY": 1,
+        "PIECES_ONLY": 0,
         "PRIORITY_GAP": 0,
         "NOT_MAPPED": 4
       },
-      "seed_strength": 4,
-      "open_demand": 2,
-      "bridge_score": 6,
-      "classification": "NEAR_TERM_LITERATURE_BRIDGE",
+      "seed_strength": 7,
+      "open_demand": 0,
+      "bridge_score": 0,
+      "classification": "NO_FRONTIER",
       "evidence_cells": [
         {
           "foundation": "CLASSICAL_STANDARD",
@@ -448,22 +448,22 @@
           ],
           "summary": "Algebra-first local observables provide a kinematic formulation of QFT.",
           "boundary": "Representation, states, topology, and dynamics remain additional obligations."
-        }
-      ],
-      "candidate_cells": [
+        },
         {
           "foundation": "CLASSICAL_STANDARD",
           "carrier": "ALGEBRAIC_CSTAR",
           "obligation": "STATES_PROBABILITY",
-          "status": "PIECES_ONLY",
+          "status": "LOCAL_RESULT",
           "evidence": [
             "haag-kastler-1964",
-            "FOUNDATIONAL_BT_SEPARABLE_STATE_CHAIN_ZF_V1"
+            "FOUNDATIONAL_BT_SEPARABLE_STATE_CHAIN_ZF_V1",
+            "FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1"
           ],
-          "summary": "State and GNS ingredients are separated from physical selection.",
-          "boundary": "No physical Weyl state is selected."
+          "summary": "The explicit separable detector algebra has bounded local state and GNS constructions, separated from physical selection.",
+          "boundary": "A mathematical state/GNS result does not select a physical Weyl or thermodynamic state."
         }
       ],
+      "candidate_cells": [],
       "not_mapped_cells": [
         {
           "foundation": "CLASSICAL_STANDARD",
@@ -1218,16 +1218,16 @@
       ],
       "scan_axis": "OBLIGATION",
       "counts": {
-        "LOCAL_RESULT": 1,
+        "LOCAL_RESULT": 2,
         "LITERATURE_RESULT": 0,
         "PIECES_ONLY": 0,
-        "PRIORITY_GAP": 1,
+        "PRIORITY_GAP": 0,
         "NOT_MAPPED": 4
       },
-      "seed_strength": 4,
-      "open_demand": 4,
-      "bridge_score": 9,
-      "classification": "NEAR_TERM_LOCAL_BRIDGE",
+      "seed_strength": 8,
+      "open_demand": 0,
+      "bridge_score": 0,
+      "classification": "NO_FRONTIER",
       "evidence_cells": [
         {
           "foundation": "WEAK_CHOICE_ZF",
@@ -1239,21 +1239,21 @@
           ],
           "summary": "The explicitly labelled Krein symmetry and Fock lift are constructible in ZF without Countable Choice.",
           "boundary": "This does not classify arbitrary Krein spaces."
-        }
-      ],
-      "candidate_cells": [
+        },
         {
           "foundation": "WEAK_CHOICE_ZF",
           "carrier": "KREIN_INDEFINITE",
           "obligation": "STATES_PROBABILITY",
-          "status": "PRIORITY_GAP",
+          "status": "LOCAL_RESULT",
           "evidence": [
-            "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1"
+            "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1",
+            "FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1"
           ],
-          "summary": "A physical trace/Born/state construction has not been obtained from the choice-free carrier.",
-          "boundary": "Explicit J is not physical probability."
+          "summary": "Named Krein and Fock coordinates define positive normalized rank-one states in ZF without a choice operation.",
+          "boundary": "The carrier does not select a unique physical state; singular states and dynamically selected Born functionals remain open."
         }
       ],
+      "candidate_cells": [],
       "not_mapped_cells": [
         {
           "foundation": "WEAK_CHOICE_ZF",
@@ -2922,16 +2922,16 @@
       ],
       "scan_axis": "CARRIER",
       "counts": {
-        "LOCAL_RESULT": 0,
+        "LOCAL_RESULT": 2,
         "LITERATURE_RESULT": 1,
-        "PIECES_ONLY": 2,
+        "PIECES_ONLY": 0,
         "PRIORITY_GAP": 0,
         "NOT_MAPPED": 3
       },
-      "seed_strength": 5,
-      "open_demand": 4,
-      "bridge_score": 12,
-      "classification": "NEAR_TERM_LITERATURE_BRIDGE",
+      "seed_strength": 11,
+      "open_demand": 0,
+      "bridge_score": 0,
+      "classification": "NO_FRONTIER",
       "evidence_cells": [
         {
           "foundation": "CLASSICAL_STANDARD",
@@ -2944,34 +2944,35 @@
           ],
           "summary": "Operational frameworks include state and probability structures.",
           "boundary": "Physical state selection in Weyl QFT is not supplied."
-        }
-      ],
-      "candidate_cells": [
+        },
         {
           "foundation": "CLASSICAL_STANDARD",
           "carrier": "KREIN_INDEFINITE",
           "obligation": "STATES_PROBABILITY",
-          "status": "PIECES_ONLY",
+          "status": "LOCAL_RESULT",
           "evidence": [
             "bateman-turok-2026",
-            "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1"
+            "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1",
+            "FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1"
           ],
-          "summary": "Metric and adjoint ingredients exist, but no complete physical probability construction does.",
-          "boundary": "Tree-level positivity is not a full Born/state theorem."
+          "summary": "Explicit sign-normalized coordinate and Fock states exist, and a scoped density-state selection obstruction is proved.",
+          "boundary": "State existence and a conditional nonselection theorem do not supply a physical Weyl state or generalized Born rule."
         },
         {
           "foundation": "CLASSICAL_STANDARD",
           "carrier": "ALGEBRAIC_CSTAR",
           "obligation": "STATES_PROBABILITY",
-          "status": "PIECES_ONLY",
+          "status": "LOCAL_RESULT",
           "evidence": [
             "haag-kastler-1964",
-            "FOUNDATIONAL_BT_SEPARABLE_STATE_CHAIN_ZF_V1"
+            "FOUNDATIONAL_BT_SEPARABLE_STATE_CHAIN_ZF_V1",
+            "FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1"
           ],
-          "summary": "State and GNS ingredients are separated from physical selection.",
-          "boundary": "No physical Weyl state is selected."
+          "summary": "The explicit separable detector algebra has bounded local state and GNS constructions, separated from physical selection.",
+          "boundary": "A mathematical state/GNS result does not select a physical Weyl or thermodynamic state."
         }
       ],
+      "candidate_cells": [],
       "not_mapped_cells": [
         {
           "foundation": "CLASSICAL_STANDARD",
@@ -3806,17 +3807,29 @@
       ],
       "scan_axis": "CARRIER",
       "counts": {
-        "LOCAL_RESULT": 1,
+        "LOCAL_RESULT": 2,
         "LITERATURE_RESULT": 0,
         "PIECES_ONLY": 0,
-        "PRIORITY_GAP": 1,
+        "PRIORITY_GAP": 0,
         "NOT_MAPPED": 4
       },
-      "seed_strength": 4,
-      "open_demand": 4,
-      "bridge_score": 9,
-      "classification": "NEAR_TERM_LOCAL_BRIDGE",
+      "seed_strength": 8,
+      "open_demand": 0,
+      "bridge_score": 0,
+      "classification": "NO_FRONTIER",
       "evidence_cells": [
+        {
+          "foundation": "WEAK_CHOICE_ZF",
+          "carrier": "KREIN_INDEFINITE",
+          "obligation": "STATES_PROBABILITY",
+          "status": "LOCAL_RESULT",
+          "evidence": [
+            "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1",
+            "FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1"
+          ],
+          "summary": "Named Krein and Fock coordinates define positive normalized rank-one states in ZF without a choice operation.",
+          "boundary": "The carrier does not select a unique physical state; singular states and dynamically selected Born functionals remain open."
+        },
         {
           "foundation": "WEAK_CHOICE_ZF",
           "carrier": "ALGEBRAIC_CSTAR",
@@ -3829,19 +3842,7 @@
           "boundary": "No thermodynamic or dynamically selected physical state is proved."
         }
       ],
-      "candidate_cells": [
-        {
-          "foundation": "WEAK_CHOICE_ZF",
-          "carrier": "KREIN_INDEFINITE",
-          "obligation": "STATES_PROBABILITY",
-          "status": "PRIORITY_GAP",
-          "evidence": [
-            "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1"
-          ],
-          "summary": "A physical trace/Born/state construction has not been obtained from the choice-free carrier.",
-          "boundary": "Explicit J is not physical probability."
-        }
-      ],
+      "candidate_cells": [],
       "not_mapped_cells": [
         {
           "foundation": "WEAK_CHOICE_ZF",
@@ -6482,42 +6483,44 @@
       ],
       "scan_axis": "FOUNDATION",
       "counts": {
-        "LOCAL_RESULT": 0,
+        "LOCAL_RESULT": 2,
         "LITERATURE_RESULT": 0,
-        "PIECES_ONLY": 1,
-        "PRIORITY_GAP": 1,
+        "PIECES_ONLY": 0,
+        "PRIORITY_GAP": 0,
         "NOT_MAPPED": 4
       },
-      "seed_strength": 1,
-      "open_demand": 6,
-      "bridge_score": 5,
-      "classification": "PIECES_ONLY_FRONTIER",
-      "evidence_cells": [],
-      "candidate_cells": [
+      "seed_strength": 8,
+      "open_demand": 0,
+      "bridge_score": 0,
+      "classification": "NO_FRONTIER",
+      "evidence_cells": [
         {
           "foundation": "CLASSICAL_STANDARD",
           "carrier": "KREIN_INDEFINITE",
           "obligation": "STATES_PROBABILITY",
-          "status": "PIECES_ONLY",
+          "status": "LOCAL_RESULT",
           "evidence": [
             "bateman-turok-2026",
-            "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1"
+            "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1",
+            "FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1"
           ],
-          "summary": "Metric and adjoint ingredients exist, but no complete physical probability construction does.",
-          "boundary": "Tree-level positivity is not a full Born/state theorem."
+          "summary": "Explicit sign-normalized coordinate and Fock states exist, and a scoped density-state selection obstruction is proved.",
+          "boundary": "State existence and a conditional nonselection theorem do not supply a physical Weyl state or generalized Born rule."
         },
         {
           "foundation": "WEAK_CHOICE_ZF",
           "carrier": "KREIN_INDEFINITE",
           "obligation": "STATES_PROBABILITY",
-          "status": "PRIORITY_GAP",
+          "status": "LOCAL_RESULT",
           "evidence": [
-            "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1"
+            "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1",
+            "FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1"
           ],
-          "summary": "A physical trace/Born/state construction has not been obtained from the choice-free carrier.",
-          "boundary": "Explicit J is not physical probability."
+          "summary": "Named Krein and Fock coordinates define positive normalized rank-one states in ZF without a choice operation.",
+          "boundary": "The carrier does not select a unique physical state; singular states and dynamically selected Born functionals remain open."
         }
       ],
+      "candidate_cells": [],
       "not_mapped_cells": [
         {
           "foundation": "WEAK_ARITHMETIC",
@@ -6902,17 +6905,30 @@
       ],
       "scan_axis": "FOUNDATION",
       "counts": {
-        "LOCAL_RESULT": 1,
+        "LOCAL_RESULT": 2,
         "LITERATURE_RESULT": 0,
-        "PIECES_ONLY": 2,
+        "PIECES_ONLY": 1,
         "PRIORITY_GAP": 0,
         "NOT_MAPPED": 3
       },
-      "seed_strength": 6,
-      "open_demand": 4,
-      "bridge_score": 12,
+      "seed_strength": 9,
+      "open_demand": 2,
+      "bridge_score": 6,
       "classification": "NEAR_TERM_LOCAL_BRIDGE",
       "evidence_cells": [
+        {
+          "foundation": "CLASSICAL_STANDARD",
+          "carrier": "ALGEBRAIC_CSTAR",
+          "obligation": "STATES_PROBABILITY",
+          "status": "LOCAL_RESULT",
+          "evidence": [
+            "haag-kastler-1964",
+            "FOUNDATIONAL_BT_SEPARABLE_STATE_CHAIN_ZF_V1",
+            "FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1"
+          ],
+          "summary": "The explicit separable detector algebra has bounded local state and GNS constructions, separated from physical selection.",
+          "boundary": "A mathematical state/GNS result does not select a physical Weyl or thermodynamic state."
+        },
         {
           "foundation": "WEAK_CHOICE_ZF",
           "carrier": "ALGEBRAIC_CSTAR",
@@ -6926,18 +6942,6 @@
         }
       ],
       "candidate_cells": [
-        {
-          "foundation": "CLASSICAL_STANDARD",
-          "carrier": "ALGEBRAIC_CSTAR",
-          "obligation": "STATES_PROBABILITY",
-          "status": "PIECES_ONLY",
-          "evidence": [
-            "haag-kastler-1964",
-            "FOUNDATIONAL_BT_SEPARABLE_STATE_CHAIN_ZF_V1"
-          ],
-          "summary": "State and GNS ingredients are separated from physical selection.",
-          "boundary": "No physical Weyl state is selected."
-        },
         {
           "foundation": "CONSTRUCTIVE_COMPUTABLE",
           "carrier": "ALGEBRAIC_CSTAR",
@@ -8131,28 +8135,22 @@
     "PAIR-CARRIER-SMOOTH_DISTRIBUTIONAL-OBLIGATION-DYNAMICS_PROPAGATION",
     "PAIR-FOUNDATION-TOPOS_INTERNAL-CARRIER-LOCALIC_SYNTHETIC",
     "PAIR-FOUNDATION-CLASSICAL_STANDARD-CARRIER-SMOOTH_DISTRIBUTIONAL",
-    "PAIR-CARRIER-ALGEBRAIC_CSTAR-OBLIGATION-STATES_PROBABILITY",
-    "PAIR-FOUNDATION-CLASSICAL_STANDARD-OBLIGATION-STATES_PROBABILITY",
     "PAIR-FOUNDATION-WEAK_CHOICE_ZF-OBLIGATION-DYNAMICS_PROPAGATION",
     "PAIR-FOUNDATION-FINITE_DISCRETE-OBLIGATION-RECONSTRUCTION_LIMITS",
     "PAIR-FOUNDATION-WEAK_ARITHMETIC-OBLIGATION-GAUGE_BV_COHOMOLOGY",
     "PAIR-FOUNDATION-WEAK_CHOICE_ZF-CARRIER-ALGEBRAIC_CSTAR",
-    "PAIR-FOUNDATION-WEAK_CHOICE_ZF-CARRIER-KREIN_INDEFINITE",
-    "PAIR-FOUNDATION-WEAK_CHOICE_ZF-OBLIGATION-STATES_PROBABILITY",
     "PAIR-CARRIER-SMOOTH_DISTRIBUTIONAL-OBLIGATION-GAUGE_BV_COHOMOLOGY",
     "PAIR-FOUNDATION-TOPOS_INTERNAL-CARRIER-SMOOTH_DISTRIBUTIONAL",
     "PAIR-FOUNDATION-TOPOS_INTERNAL-OBLIGATION-DYNAMICS_PROPAGATION",
+    "PAIR-CARRIER-ALGEBRAIC_CSTAR-OBLIGATION-STATES_PROBABILITY",
     "PAIR-CARRIER-FINITE_EXACT-OBLIGATION-GAUGE_BV_COHOMOLOGY",
     "PAIR-CARRIER-HILBERT_OPERATOR-OBLIGATION-KINEMATICS_OBSERVABLES",
     "PAIR-CARRIER-HILBERT_OPERATOR-OBLIGATION-RECONSTRUCTION_LIMITS",
-    "PAIR-FOUNDATION-CLASSICAL_STANDARD-CARRIER-ALGEBRAIC_CSTAR",
-    "PAIR-FOUNDATION-CLASSICAL_STANDARD-CARRIER-KREIN_INDEFINITE",
     "PAIR-FOUNDATION-CLASSICAL_STANDARD-OBLIGATION-GAUGE_BV_COHOMOLOGY",
     "PAIR-FOUNDATION-CONSTRUCTIVE_COMPUTABLE-CARRIER-ALGEBRAIC_CSTAR",
     "PAIR-FOUNDATION-CONSTRUCTIVE_COMPUTABLE-CARRIER-HILBERT_OPERATOR",
     "PAIR-FOUNDATION-CONSTRUCTIVE_COMPUTABLE-OBLIGATION-STATES_PROBABILITY",
     "PAIR-FOUNDATION-WEAK_ARITHMETIC-OBLIGATION-KINEMATICS_OBSERVABLES",
-    "PAIR-CARRIER-KREIN_INDEFINITE-OBLIGATION-STATES_PROBABILITY",
     "PAIR-FOUNDATION-CONSTRUCTIVE_COMPUTABLE-OBLIGATION-GAUGE_BV_COHOMOLOGY",
     "PAIR-CARRIER-LOCALIC_SYNTHETIC-OBLIGATION-STATES_PROBABILITY",
     "PAIR-FOUNDATION-CONSTRUCTIVE_COMPUTABLE-CARRIER-FINITE_EXACT",
@@ -8189,24 +8187,6 @@
   ],
   "recommended_cells": [
     {
-      "foundation": "CLASSICAL_STANDARD",
-      "carrier": "ALGEBRAIC_CSTAR",
-      "obligation": "STATES_PROBABILITY",
-      "status": "PIECES_ONLY",
-      "aggregate_bridge_score": 30,
-      "supporting_pair_ids": [
-        "PAIR-CARRIER-ALGEBRAIC_CSTAR-OBLIGATION-STATES_PROBABILITY",
-        "PAIR-FOUNDATION-CLASSICAL_STANDARD-CARRIER-ALGEBRAIC_CSTAR",
-        "PAIR-FOUNDATION-CLASSICAL_STANDARD-OBLIGATION-STATES_PROBABILITY"
-      ],
-      "evidence": [
-        "haag-kastler-1964",
-        "FOUNDATIONAL_BT_SEPARABLE_STATE_CHAIN_ZF_V1"
-      ],
-      "summary": "State and GNS ingredients are separated from physical selection.",
-      "boundary": "No physical Weyl state is selected."
-    },
-    {
       "foundation": "WEAK_CHOICE_ZF",
       "carrier": "SMOOTH_DISTRIBUTIONAL",
       "obligation": "DYNAMICS_PROPAGATION",
@@ -8239,59 +8219,6 @@
       ],
       "summary": "Classical BV data and finite exact residual witnesses exist, but their full continuum foundational profile is not classified.",
       "boundary": "Finite residual data are not the continuum off-shell complex."
-    },
-    {
-      "foundation": "CONSTRUCTIVE_COMPUTABLE",
-      "carrier": "ALGEBRAIC_CSTAR",
-      "obligation": "STATES_PROBABILITY",
-      "status": "PIECES_ONLY",
-      "aggregate_bridge_score": 24,
-      "supporting_pair_ids": [
-        "PAIR-CARRIER-ALGEBRAIC_CSTAR-OBLIGATION-STATES_PROBABILITY",
-        "PAIR-FOUNDATION-CONSTRUCTIVE_COMPUTABLE-CARRIER-ALGEBRAIC_CSTAR",
-        "PAIR-FOUNDATION-CONSTRUCTIVE_COMPUTABLE-OBLIGATION-STATES_PROBABILITY"
-      ],
-      "evidence": [
-        "coquand-spitters-2009",
-        "richman-bridges-1999"
-      ],
-      "summary": "Constructive spectral and probability-representation ingredients exist separately.",
-      "boundary": "No physical state-selection chain joins them."
-    },
-    {
-      "foundation": "WEAK_CHOICE_ZF",
-      "carrier": "KREIN_INDEFINITE",
-      "obligation": "STATES_PROBABILITY",
-      "status": "PRIORITY_GAP",
-      "aggregate_bridge_score": 23,
-      "supporting_pair_ids": [
-        "PAIR-CARRIER-KREIN_INDEFINITE-OBLIGATION-STATES_PROBABILITY",
-        "PAIR-FOUNDATION-WEAK_CHOICE_ZF-CARRIER-KREIN_INDEFINITE",
-        "PAIR-FOUNDATION-WEAK_CHOICE_ZF-OBLIGATION-STATES_PROBABILITY"
-      ],
-      "evidence": [
-        "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1"
-      ],
-      "summary": "A physical trace/Born/state construction has not been obtained from the choice-free carrier.",
-      "boundary": "Explicit J is not physical probability."
-    },
-    {
-      "foundation": "CLASSICAL_STANDARD",
-      "carrier": "KREIN_INDEFINITE",
-      "obligation": "STATES_PROBABILITY",
-      "status": "PIECES_ONLY",
-      "aggregate_bridge_score": 23,
-      "supporting_pair_ids": [
-        "PAIR-CARRIER-KREIN_INDEFINITE-OBLIGATION-STATES_PROBABILITY",
-        "PAIR-FOUNDATION-CLASSICAL_STANDARD-CARRIER-KREIN_INDEFINITE",
-        "PAIR-FOUNDATION-CLASSICAL_STANDARD-OBLIGATION-STATES_PROBABILITY"
-      ],
-      "evidence": [
-        "bateman-turok-2026",
-        "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1"
-      ],
-      "summary": "Metric and adjoint ingredients exist, but no complete physical probability construction does.",
-      "boundary": "Tree-level positivity is not a full Born/state theorem."
     },
     {
       "foundation": "TOPOS_INTERNAL",
@@ -8368,6 +8295,24 @@
       "evidence": [],
       "summary": "No finite interaction/QME system with a certified continuum comparison is present.",
       "boundary": "Finite algebra does not remove renormalization obligations."
+    },
+    {
+      "foundation": "CONSTRUCTIVE_COMPUTABLE",
+      "carrier": "ALGEBRAIC_CSTAR",
+      "obligation": "STATES_PROBABILITY",
+      "status": "PIECES_ONLY",
+      "aggregate_bridge_score": 18,
+      "supporting_pair_ids": [
+        "PAIR-CARRIER-ALGEBRAIC_CSTAR-OBLIGATION-STATES_PROBABILITY",
+        "PAIR-FOUNDATION-CONSTRUCTIVE_COMPUTABLE-CARRIER-ALGEBRAIC_CSTAR",
+        "PAIR-FOUNDATION-CONSTRUCTIVE_COMPUTABLE-OBLIGATION-STATES_PROBABILITY"
+      ],
+      "evidence": [
+        "coquand-spitters-2009",
+        "richman-bridges-1999"
+      ],
+      "summary": "Constructive spectral and probability-representation ingredients exist separately.",
+      "boundary": "No physical state-selection chain joins them."
     },
     {
       "foundation": "CONSTRUCTIVE_COMPUTABLE",
@@ -8647,7 +8592,7 @@
     "inputs": [
       {
         "path": "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V0.json",
-        "sha256": "2f2f20e918a8000d25284323231d2629df4a241038b77e0dbf50ef5f60bb4ef3"
+        "sha256": "74e81327c461b4aef0fdbccf8b58c79f522a026c72fcbbde9077c264b4d9a7d1"
       }
     ],
     "producer": "foundations/analyze_pair_frontiers.py"
@@ -8662,7 +8607,7 @@
       "recommended open cells are assessed and never NOT_MAPPED",
       "canonical digest"
     ],
-    "expected_digest": "5d11c0964aad25d061bcd1efbd8ffd3ed3c7e541bd03b20e79a57ab83a41dab4"
+    "expected_digest": "01cfde3e4e5bc1542a4791d3f81cff503a5051171447ab854dac2c64dcffda29"
   },
   "claim_flags": {
     "all_108_pair_projections_computed": true,

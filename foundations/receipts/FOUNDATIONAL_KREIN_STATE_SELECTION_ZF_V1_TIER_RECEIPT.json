@@ -1,0 +1,68 @@
+{
+  "receipt_id": "FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1_TIER_RECEIPT",
+  "schema_version": "foundational-tier-receipt-v0",
+  "created": "2026-08-11",
+  "result_id": "FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "base_commit": "c676bde482341c627de41d0cc162b21f50bd91a3",
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "command": "parse and Draft202012Validator-check the Krein-state, intersection-cube, pair-frontier, and Markdown-render schema/result chains; py_compile changed Python; git diff --check -- foundations",
+      "result": "four schema chains validate, changed Python compiles, and the scoped foundations diff has no whitespace errors"
+    },
+    "tier_1_checker": {
+      "status": "PASS",
+      "command": "python3 foundations/check_krein_state_selection.py",
+      "result": "625 exact integer 2x2 positivity identities, two normalized sign sectors, a distinguishing projection, 12 rational permutation-cutoff controls, exact promotion manifest, and digest 872d38d8c7b0fb28bbd16c3e4c3626cdba3da3482389997597491c10e3c14043 pass"
+    },
+    "tier_1_verifier": {
+      "status": "PASS",
+      "command": "python3 foundations/verify_krein_state_selection_zf.py",
+      "result": "schema, content pins, typed Hilbert-versus-Krein adjoints, state proof, density-state symmetry obstruction, singular-state boundary, proof DAG, claim flags, report, and three applied cube promotions pass"
+    },
+    "tier_2_affected_chain": {
+      "status": "PASS",
+      "elapsed_seconds": "1.34",
+      "command": "run the new checker/verifier; intersection cube checker/verifier; pair generator --check, checker, verifier; completion Markdown generator --check and verifier; python3 -m unittest discover -s foundations/tests -t .",
+      "result": "180/180 foundations tests pass; cube counts are 17 local, 13 literature, 6 pieces-only, 20 priority-gap, 160 not-mapped; pair analysis has 26 assessed open cells and 26 bridge frontiers"
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No classical/quantum freeze, release, shared core algebra change, paper theorem promotion, or Lorentzian lifecycle promotion."
+    }
+  },
+  "auxiliary_rails": [
+    {
+      "name": "science_forge_native_conformance",
+      "status": "NOT_RERUN",
+      "reason": "No Forge request or native IR node changed in this closure. The previously recorded Tango sfc build failure at sanitize_thread remains an external non-pass; no conformance result is inferred."
+    }
+  ],
+  "content_hashes": {
+    "foundations/README.md": "dd7fcc7511e16479cbf6049b3f299c729521fcd2dc2cef89dc0e6bbff6c340d2",
+    "foundations/analyze_pair_frontiers.py": "de551bc68ad3742d33eba4a0c6c8decc1f18a3f62f32a933239040bc9ab802ad",
+    "foundations/check_krein_state_selection.py": "d81cfae180072908d1418b9f66d62064f16fa78ae94affe925af0e4bf2f9769a",
+    "foundations/reports/completion-matrix.md": "b4886b31d23ea682c4bee3e02b61e3fdeb5fd5e14b8f04aacc5c1dbd1a05dfc4",
+    "foundations/reports/krein-state-selection-zf.md": "8607989b1c0f455bea00c7e237f079b6671110a5cd7c42cd9f262002ae6127d4",
+    "foundations/reports/pair-frontier-analysis.md": "abd1b6d36ba7c48e8922739fbfe5bc3a59a7938a75046eb8ef56aa8954704b92",
+    "foundations/results/FOUNDATIONAL_COMPLETION_MATRIX_MARKDOWN_RENDER_V1.json": "f14e878caef92f3b413339fdb554261b5abc1f9626c9f29da6591948723b1762",
+    "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V0.json": "74e81327c461b4aef0fdbccf8b58c79f522a026c72fcbbde9077c264b4d9a7d1",
+    "foundations/results/FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1.json": "d1593c67e67a99c8b14b12dae5ac1364e26f34631c86b12cefaffd9ade9fd3ff",
+    "foundations/results/FOUNDATIONAL_PAIR_FRONTIER_ANALYSIS_V0.json": "70327850c6c9f760fdbf817ec7df975b49c4a5ec344ca36360aab87f33566f70",
+    "foundations/schema/foundational-krein-state-selection-zf-v1.schema.json": "d813f658c4de1c425e363aa64fca295af8289d6e55dc059f81fc27fd7189bab0",
+    "foundations/tests/test_intersection_cube.py": "35b6fb137d6fbec83cd553c813436acab4923665f718dadf24817a354e2f8e5a",
+    "foundations/tests/test_krein_state_selection_zf.py": "35e48545886f1391789b0f1b95a014cc512bc0f0757c29eeffed5b723bba5979",
+    "foundations/verify_intersection_cube.py": "f6e6d58d3e017f3966d3b6f58f2dda30c3fcd0c07a36c5074c2152051edd9f9d",
+    "foundations/verify_krein_state_selection_zf.py": "419e1b66cbcb14a07707d32597d735e2b5e4cbb282602472b5ccb7abb80930c7",
+    "foundations/verify_pair_frontiers.py": "707d2f3ace6f07d2f93eba61612a1be3e60caaeedbcf85b4370e1313f41e0dc9"
+  },
+  "scope_receipt": {
+    "changed_scope": "one exact reduced-mode Krein state theorem, three cube-cell promotions, and deterministic propagation through the cube, pair frontier, and Markdown views",
+    "unrelated_worktree_changes_included": false
+  },
+  "claim_boundary": "The certificate constructs explicit positive normalized coordinate and Fock states in ZF and proves nonexistence only for trace-one density operators invariant under the full sign-preserving finite-coordinate permutation group. It does not rule out singular states, require that symmetry physically, select a physical Weyl/Bateman-Turok state, derive a generalized Born rule, prove an interacting or thermodynamic state, or establish anything LORENTZIAN-CAUSAL."
+}
