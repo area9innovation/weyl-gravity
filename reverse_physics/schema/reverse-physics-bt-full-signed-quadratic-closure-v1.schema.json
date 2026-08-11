@@ -1,0 +1,241 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-full-signed-quadratic-closure-v1.schema.json",
+  "title": "BT full signed quadratic closure certificate v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "certificate", "schema_version", "dependency_tags", "lifecycle_state",
+    "result_kind", "question", "answer", "inverse_preimage_rule",
+    "completed_signed_kernel", "endpoint_cancellation", "canonicality",
+    "finite_mode_Eq19", "coefficient_disposition", "disposition",
+    "assumptions", "missing_object_ledger", "does_not_establish", "next_gate",
+    "provenance", "verification_commands", "checks", "report", "schema"
+  ],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_FULL_SIGNED_QUADRATIC_CLOSURE_V1"},
+    "schema_version": {"const": "reverse-physics-bt-full-signed-quadratic-closure-v1"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "result_kind": {"type": "string", "minLength": 40},
+    "question": {"type": "string", "minLength": 60},
+    "answer": {"type": "string", "minLength": 300},
+    "inverse_preimage_rule": {"$ref": "#/$defs/preimages"},
+    "completed_signed_kernel": {"$ref": "#/$defs/kernel"},
+    "endpoint_cancellation": {"$ref": "#/$defs/endpoint"},
+    "canonicality": {"$ref": "#/$defs/canonicality"},
+    "finite_mode_Eq19": {"$ref": "#/$defs/eq19"},
+    "coefficient_disposition": {"$ref": "#/$defs/coefficientDisposition"},
+    "disposition": {"$ref": "#/$defs/disposition"},
+    "assumptions": {"type": "array", "minItems": 4, "items": {"type": "string"}},
+    "missing_object_ledger": {"type": "array", "minItems": 5, "items": {"type": "string"}},
+    "does_not_establish": {"type": "array", "minItems": 7, "items": {"type": "string"}},
+    "next_gate": {"type": "string", "minLength": 150},
+    "provenance": {"$ref": "#/$defs/provenance"},
+    "verification_commands": {
+      "type": "array", "minItems": 3, "maxItems": 3,
+      "items": {"type": "string", "pattern": "^ulimit -v 500000; "}
+    },
+    "checks": {"$ref": "#/$defs/checks"},
+    "report": {"const": "reverse_physics/reports/bt-full-signed-quadratic-closure.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-full-signed-quadratic-closure-v1.schema.json"}
+  },
+  "$defs": {
+    "rat": {
+      "type": "object", "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      }
+    },
+    "complex": {
+      "type": "object", "additionalProperties": false,
+      "required": ["real", "imag"],
+      "properties": {"real": {"$ref": "#/$defs/rat"}, "imag": {"$ref": "#/$defs/rat"}}
+    },
+    "term": {
+      "type": "object", "additionalProperties": false,
+      "required": ["powers", "coefficient"],
+      "properties": {
+        "powers": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "integer"}},
+        "coefficient": {"$ref": "#/$defs/complex"}
+      }
+    },
+    "contribution": {
+      "type": "object", "additionalProperties": false,
+      "required": ["target_signs", "parent", "daughters", "left_preimage", "right_preimage", "total_phase", "terms"],
+      "properties": {
+        "target_signs": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"enum": [-1, 1]}},
+        "parent": {"enum": ["Omega", "Upsilon"]},
+        "daughters": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"enum": ["Omega", "Upsilon"]}},
+        "left_preimage": {"enum": ["a1_same", "a2_same", "a2_cross"]},
+        "right_preimage": {"enum": ["a1_same", "a2_same", "a2_cross"]},
+        "total_phase": {"const": [0, 0]},
+        "terms": {"type": "array", "items": {"$ref": "#/$defs/term"}}
+      }
+    },
+    "preimages": {
+      "type": "object", "additionalProperties": false,
+      "required": ["target_Omega", "target_Upsilon", "off_resonant_symplectic_phase", "phase_identity", "preimage_contribution_count", "all_contributions"],
+      "properties": {
+        "target_Omega": {"type": "string"},
+        "target_Upsilon": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "string"}},
+        "off_resonant_symplectic_phase": {"type": "string"},
+        "phase_identity": {"type": "string"},
+        "preimage_contribution_count": {"const": 128},
+        "all_contributions": {"type": "array", "minItems": 128, "maxItems": 128, "items": {"$ref": "#/$defs/contribution"}}
+      }
+    },
+    "kernelRow": {
+      "type": "object", "additionalProperties": false,
+      "required": ["target_signs", "parent", "daughters", "terms"],
+      "properties": {
+        "target_signs": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"enum": [-1, 1]}},
+        "parent": {"enum": ["Omega", "Upsilon"]},
+        "daughters": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"enum": ["Omega", "Upsilon"]}},
+        "terms": {"type": "array", "items": {"$ref": "#/$defs/term"}}
+      }
+    },
+    "kernel": {
+      "type": "object", "additionalProperties": false,
+      "required": ["formula", "target_sign_convention", "exact_rows", "secular_disposition", "disposition"],
+      "properties": {
+        "formula": {
+          "type": "object", "additionalProperties": false,
+          "required": ["delta_b_Omega_OmegaOmega", "delta_b_Upsilon_OmegaUpsilon", "delta_b_Upsilon_UpsilonOmega", "all_other_rows"],
+          "properties": {
+            "delta_b_Omega_OmegaOmega": {"const": "(s1*e1+s2*e2)/(2*e1*e2)"},
+            "delta_b_Upsilon_OmegaUpsilon": {"const": "-s2/(2*e1)"},
+            "delta_b_Upsilon_UpsilonOmega": {"const": "-s1/(2*e2)"},
+            "all_other_rows": {"const": "0"}
+          }
+        },
+        "target_sign_convention": {"type": "string"},
+        "exact_rows": {"type": "array", "minItems": 32, "maxItems": 32, "items": {"$ref": "#/$defs/kernelRow"}},
+        "secular_disposition": {"const": "ALL_T_AND_T2_TERMS_CANCEL_AFTER_FULL_PREIMAGE_SUM"},
+        "disposition": {"const": "COMPLETE_FOR_THE_PUBLIC_ORDER_LAMBDA_QUADRATIC_COMPOSITE_MAP_ON_FINITE_NONENDPOINT_MODES"}
+      }
+    },
+    "endpoint": {
+      "type": "object", "additionalProperties": false,
+      "required": ["resonant_only_rows", "full_preimage_value_of_each", "mechanism", "complete_parent_gram", "parent_inverse_metric_trace", "raw_soft_residue", "normalized_per_pair_log_response", "disposition"],
+      "properties": {
+        "resonant_only_rows": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "string"}},
+        "full_preimage_value_of_each": {"const": "0"},
+        "mechanism": {"type": "string"},
+        "complete_parent_gram": {
+          "type": "object", "additionalProperties": false,
+          "required": ["G_OmegaOmega", "G_OmegaUpsilon", "G_UpsilonOmega", "G_UpsilonUpsilon"],
+          "properties": {
+            "G_OmegaOmega": {"const": "0"}, "G_OmegaUpsilon": {"const": "0"},
+            "G_UpsilonOmega": {"const": "0"}, "G_UpsilonUpsilon": {"const": "2*s1*s2"}
+          }
+        },
+        "parent_inverse_metric_trace": {"type": "string"},
+        "raw_soft_residue": {"$ref": "#/$defs/rat"},
+        "normalized_per_pair_log_response": {"$ref": "#/$defs/rat"},
+        "disposition": {"const": "NO_LOGARITHMIC_ENDPOINT_DISTRIBUTION_IN_THE_COMPLETED_QUADRATIC_PARENT_TRACE"}
+      }
+    },
+    "wardRow": {
+      "type": "object", "additionalProperties": false,
+      "required": ["x", "y", "parent", "output", "spectator", "AA_coefficient", "mixed_coefficient", "CCR_defect"],
+      "properties": {
+        "x": {"$ref": "#/$defs/rat"}, "y": {"$ref": "#/$defs/rat"},
+        "parent": {"enum": ["Omega", "Upsilon"]},
+        "output": {"enum": ["Omega", "Upsilon"]},
+        "spectator": {"enum": ["Omega", "Upsilon"]},
+        "AA_coefficient": {"$ref": "#/$defs/rat"},
+        "mixed_coefficient": {"$ref": "#/$defs/rat"},
+        "CCR_defect": {"$ref": "#/$defs/rat"}
+      }
+    },
+    "canonicality": {
+      "type": "object", "additionalProperties": false,
+      "required": ["identity", "meaning", "exact_fixture_rows", "disposition"],
+      "properties": {
+        "identity": {"type": "string"}, "meaning": {"type": "string"},
+        "exact_fixture_rows": {"type": "array", "minItems": 48, "maxItems": 48, "items": {"$ref": "#/$defs/wardRow"}},
+        "disposition": {"const": "CROSS_CCR_PRESERVED_AT_ORDER_LAMBDA_ON_THE_COMPLETE_SIGNED_QUADRATIC_CARRIER"}
+      }
+    },
+    "eq19": {
+      "type": "object", "additionalProperties": false,
+      "required": ["zero_mode_exponents_of_surviving_AA_rows", "generator_charge_after_Z_dressing", "squeeze_generator_charge_after_Z_dressing", "projection_statement", "decomposition_through_order_lambda", "disposition", "does_not_cover"],
+      "properties": {
+        "zero_mode_exponents_of_surviving_AA_rows": {
+          "type": "object", "additionalProperties": false,
+          "required": ["Omega_from_OmegaOmega", "Upsilon_from_OmegaUpsilon", "Upsilon_from_UpsilonOmega"],
+          "properties": {"Omega_from_OmegaOmega": {"const": -1}, "Upsilon_from_OmegaUpsilon": {"const": -1}, "Upsilon_from_UpsilonOmega": {"const": -1}}
+        },
+        "generator_charge_after_Z_dressing": {"const": 0},
+        "squeeze_generator_charge_after_Z_dressing": {"const": 0},
+        "projection_statement": {"type": "string"},
+        "decomposition_through_order_lambda": {"type": "string"},
+        "disposition": {"const": "EQ19_PROVED_THROUGH_ORDER_LAMBDA_FOR_THE_FINITE_MODE_QUADRATIC_ZERO_MODE_COMPLETED_SECTOR"},
+        "does_not_cover": {"type": "string"}
+      }
+    },
+    "coefficientDisposition": {
+      "type": "object", "additionalProperties": false,
+      "required": ["resonant_only_conditional_one_over_48", "completed_public_quadratic_map_soft_log_per_pair", "finite_detector_predecessor", "physical_one_over_48", "physical_zero"],
+      "properties": {
+        "resonant_only_conditional_one_over_48": {"const": "CANCELLED_BY_FULL_INVERSE_PREIMAGE_CLOSURE"},
+        "completed_public_quadratic_map_soft_log_per_pair": {"$ref": "#/$defs/rat"},
+        "finite_detector_predecessor": {"type": "string"},
+        "physical_one_over_48": {"const": "NOT_REPRODUCED"},
+        "physical_zero": {"const": "NOT_ESTABLISHED_WITHOUT_THE_REMAINING_PROJECTOR_TRACE"}
+      }
+    },
+    "disposition": {
+      "type": "object", "additionalProperties": false,
+      "required": ["full_signed_order_lambda_quadratic_kernel", "off_resonant_oscillatory_preimage_closure", "order_lambda_cross_CCR", "quadratic_parent_soft_log", "finite_mode_order_lambda_Eq19", "continuum_all_order_Eq19", "squeezed_vacuum_dynamical_zero_mode_trace", "physical_one_over_48", "physical_zero"],
+      "properties": {
+        "full_signed_order_lambda_quadratic_kernel": {"const": "COEFFICIENT_COMPUTED"},
+        "off_resonant_oscillatory_preimage_closure": {"const": "CONSTRUCTED"},
+        "order_lambda_cross_CCR": {"const": "PRESERVED"},
+        "quadratic_parent_soft_log": {"const": "ZERO"},
+        "finite_mode_order_lambda_Eq19": {"const": "PROVED_WITH_Q1_ZERO"},
+        "continuum_all_order_Eq19": {"const": "NOT_PROVED"},
+        "squeezed_vacuum_dynamical_zero_mode_trace": {"const": "NOT_COMPUTED"},
+        "physical_one_over_48": {"const": "NOT_ESTABLISHED"},
+        "physical_zero": {"const": "NOT_ESTABLISHED"}
+      }
+    },
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_commit", "retrieval_date", "inputs", "primary_source"],
+      "properties": {
+        "source_commit": {"pattern": "^[0-9a-f]{40}$"},
+        "retrieval_date": {"const": "2026-08-11"},
+        "inputs": {
+          "type": "array", "minItems": 8, "maxItems": 8,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["path", "sha256"],
+            "properties": {"path": {"type": "string"}, "sha256": {"pattern": "^[0-9a-f]{64}$"}}
+          }
+        },
+        "primary_source": {
+          "type": "object", "additionalProperties": false,
+          "required": ["source", "url", "equations", "use"],
+          "properties": {
+            "source": {"type": "string"}, "url": {"type": "string"},
+            "equations": {"type": "array", "minItems": 3, "items": {"type": "string"}},
+            "use": {"type": "string"}
+          }
+        }
+      }
+    },
+    "checks": {
+      "type": "object", "additionalProperties": false,
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true}, "passed": {"const": 20}, "total": {"const": 20},
+        "failures": {"const": []},
+        "details": {"type": "object", "minProperties": 20, "maxProperties": 20, "additionalProperties": {"const": true}}
+      }
+    }
+  }
+}

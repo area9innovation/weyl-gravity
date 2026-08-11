@@ -143,6 +143,17 @@ infinite weight; conditioning on a finite incoming projection gives
 nonnegative normalized weights for finite weakly ghost-symmetric output
 partitions.  The normalized corner functional is explicitly noncyclic, and no
 normal thermodynamic state or Eq.~(19) transport follows.
+Closing the order-$\lambda$ scalar quadratic map over every leading
+Appendix-C inverse image removes the logarithmic carrier itself.  The
+off-resonant symplectic phase of the opposite-sign preimage cancels its
+oscillatory inverse phase; the complete signed kernel is time independent,
+obeys the cross-CCR Ward identity, and has identically zero parent cross-Gram.
+Consequently its finite-mode, zero-mode-completed projector obeys Eq.~(19)
+through order $\lambda$ with $Q_1=0$.  The conditional $1/48$ and the
+associated finite-cell trace growth are not coefficients of this completed
+quadratic map.  This does not prove a physical zero: the squeezed-vacuum and
+dynamical-zero-mode projector trace, the continuum domain, and higher orders
+remain open.
 Independently, the projected three-channel hard loop logarithm closes the
 Callan--Symanzik equation exactly with the Born rate and one-loop beta
 function.  This yields the positive leading-log nonforward prediction
@@ -1510,11 +1521,46 @@ The signed hard/soft box trace $-N/48+N/48$ cancels while its absolute trace
 weight grows.  Hence the finite detector lies in the semifinite paired ideal,
 but the logarithmic soft-cutoff limit is not uniformly trace class in this
 sector.  This exact distinction is recorded by
-\texttt{REVERSE\_PHYSICS\_BT\_FINITE\_DETECTOR\_}
-\allowbreak\texttt{PUSHFORWARD\_V1}.  It leaves open an operator-level
+\texttt{REVERSE\_PHYSICS\_BT\_}\allowbreak
+\texttt{FINITE\_DETECTOR\_}\allowbreak\texttt{PUSHFORWARD\_V1}.  It leaves
+open an operator-level
 cancellation from omitted pushforward sectors, a hard matching construction,
 or a local non-normal renormalized weight, and does not prove Eq.~(19) or the
 physical $1/48$.
+
+The complete signed quadratic composition supplies that operator-level
+cancellation at order $\lambda$.  A target $b_\Upsilon(s,p)$ has, at leading
+order, the three inverse images $a_1(s,p)$, the secular part of $a_2(s,p)$,
+and the oscillatory part of $a_2(-s,-p)$.  Symplectic extraction multiplies
+the last image by the inverse of its Appendix-C oscillatory phase.  Summing all
+sign sectors gives
+\[
+ \delta b_\Omega=
+ \frac{s_1e_1+s_2e_2}{2e_1e_2}
+ b_\Omega^{(s_1)}b_\Omega^{(s_2)},
+\]
+\[
+ \delta b_\Upsilon=-\frac{s_2}{2e_1}
+ b_\Omega^{(s_1)}b_\Upsilon^{(s_2)}
+ -\frac{s_1}{2e_2}
+ b_\Upsilon^{(s_1)}b_\Omega^{(s_2)},
+\]
+with every other row zero.  The daughter Krein contraction has
+$G_{\Omega\Upsilon}=G_{\Upsilon\Omega}=0$; because the parent inverse metric
+is off diagonal, the quadratic parent trace has no $dr/r$ term.  The mixed-sign
+rows close the order-$\lambda$ cross-CCR Ward identity, and the unique $Z$
+dressing makes the associated finite-mode cubic generator neutral.  Thus
+$R_tP_0R_t^\dagger=P_0+\lambda[K,P_0]+O(\lambda^2)$ has the Eq.~(19)
+decomposition with $Q_1=0$ on the finite-mode quadratic carrier.  The
+certificate
+\texttt{REVERSE\_PHYSICS\_BT\_FULL\_SIGNED\_}
+\allowbreak\texttt{QUADRATIC\_CLOSURE\_V1} records 128 exact preimage
+contributions and 48 exact Ward fixtures with dependency tags
+\texttt{LOCAL-ALGEBRAIC} and \texttt{REDUCED-MODE}.  The logarithmic
+normalization is a conditional theorem for the resonant truncation; it does
+not survive the complete public quadratic map.  No conclusion about the
+physical coefficient follows without the squeezed-vacuum/dynamical-zero-mode
+projector trace, its continuum domain, and higher composite orders.
 \end{remark}
 
 \begin{remark}[Physical ultraviolet hard-scattering law]
