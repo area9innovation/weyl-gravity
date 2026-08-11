@@ -1,0 +1,17 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "type":"object",
+  "required":["schema_version","result_id","result_kind","lifecycle","dependency_tags","repository_base_commit","programme_context","ambient_choices_required","glossary","obstructions","lowest_risk_candidate","source_dependencies","provenance","independent_checker","claim_flags","does_not_establish","next_gate","human_report"],
+  "properties":{
+    "schema_version":{"const":"foundational-topos-weyl-bv-obstruction-ledger-v0"},
+    "result_id":{"const":"FOUNDATIONAL_TOPOS_WEYL_BV_OBSTRUCTION_LEDGER_V0"},
+    "lifecycle":{"const":"LITERATURE_SCOPED"},
+    "dependency_tags":{"const":["LOCAL-ALGEBRAIC"]},
+    "glossary":{"type":"array","minItems":15,"maxItems":15},
+    "obstructions":{"type":"array","minItems":12,"maxItems":12},
+    "source_dependencies":{"type":"array","minItems":4,"maxItems":4},
+    "independent_checker":{"type":"object","required":["expected_digest"],"properties":{"expected_digest":{"type":"string","pattern":"^[0-9a-f]{64}$"}}},
+    "does_not_establish":{"type":"array","minItems":10},
+    "human_report":{"const":"foundations/reports/topos-weyl-bv-obstruction-ledger.md"}
+  }
+}

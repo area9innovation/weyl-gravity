@@ -1,0 +1,29 @@
+{
+  "receipt_id":"FOUNDATIONAL_TOPOS_WEYL_BV_OBSTRUCTION_LEDGER_V0_TIER_RECEIPT",
+  "schema_version":"foundational-tier-receipt-v0",
+  "created":"2026-08-11",
+  "result_id":"FOUNDATIONAL_TOPOS_WEYL_BV_OBSTRUCTION_LEDGER_V0",
+  "dependency_tags":["LOCAL-ALGEBRAIC"],
+  "base_commit":"74c7cb58aceb6b5dc8cce4b3c27399e8306730dd",
+  "tiers":{
+    "tier_0":{"status":"PASS","command":"parse JSON, compile/import Python, scoped git diff --check"},
+    "tier_1_checker":{"status":"PASS","command":"python3 foundations/check_topos_weyl_bv_obstructions.py","result":"15 glossary entries, 12/12 acyclic obstruction nodes; digest 8da7aa90307edb8db1487e7d171212213e6f30fb696f9174af1a83593890125d"},
+    "tier_1_verifier":{"status":"PASS","command":"python3 foundations/verify_topos_weyl_bv_obstructions.py","result":"scope, DAG, provenance, source pins, fail-closed flags, and report pass"},
+    "tier_1_suite":{"status":"PASS","elapsed_seconds":"0.29","command":"python3 -m unittest discover -s foundations/tests -t .","result":"111/111 tests pass, including 12 new mutations"},
+    "tier_1_schema":{"status":"PASS","command":"Draft202012Validator.check_schema and validate"},
+    "tier_2":{"status":"NOT_RUN","criterion":"The pinned literature and local certificates are unchanged; this ledger constructs no internal mathematical input used by another certificate chain."},
+    "tier_3":{"status":"NOT_RUN","criterion":"No freeze, theorem promotion, shared algebra change, release, causal claim, or QME lifecycle promotion."}
+  },
+  "auxiliary_rails":[{"name":"science_forge_work_drafts","status":"NOT_RERUN","reason":"Known Tango sanitize_thread build failure; no pass inferred."}],
+  "content_hashes":{
+    "foundations/README.md":"55149ca31c22a1048712bc2f857c2889a9308fa8a4beb431fbabc1d3a17401a0",
+    "foundations/check_topos_weyl_bv_obstructions.py":"b3bff1a247fba6db8a0f6c95fd019f778ac482f18547fba6cdd7a4960631a0f9",
+    "foundations/reports/topos-weyl-bv-obstruction-ledger.md":"3d6ebf6f706b535352fce1e2e4c969730fdaf92527a038d3ae27125b270cb401",
+    "foundations/results/FOUNDATIONAL_TOPOS_WEYL_BV_OBSTRUCTION_LEDGER_V0.json":"e1cb211b884575b74cf90e5f2195eb3a32494f49c3c3e89af7a88390c5f39e24",
+    "foundations/schema/foundational-topos-weyl-bv-obstruction-ledger-v0.schema.json":"e124c1120b9c7e0184f66033d5950ec27478c7c87ab0a875d8761f4158e1801a",
+    "foundations/tests/test_topos_weyl_bv_obstructions.py":"fc22d45b49c5288b0c24e44542f2f2f97b1441da72a10183c6ea508035a26bb1",
+    "foundations/verify_topos_weyl_bv_obstructions.py":"904f348d3da832ebdb7205d95a9edbf7a4aa243ba306065a401d116a5f9f4ac4"
+  },
+  "scope_receipt":{"changed_scope":"foundations/ only"},
+  "claim_boundary":"A literature-scoped glossary and obstruction DAG only. No ambient topos is selected and no internal Weyl BV complex, continuum functional analysis, causal Green operator, Krein completion, state, renormalized product, QME, external equivalence, or LORENTZIAN-CAUSAL claim is established."
+}

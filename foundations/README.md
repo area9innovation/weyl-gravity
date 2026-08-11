@@ -124,6 +124,18 @@ python3 foundations/verify_typed_biwave_green_dependencies.py
 python3 -m unittest foundations.tests.test_typed_biwave_green_dependencies
 ```
 
+The first topos/Weyl-BV artifact is the
+[`glossary and obstruction ledger`](reports/topos-weyl-bv-obstruction-ledger.md).
+It maps ordinary objects to candidate internal objects and checks the
+prerequisite DAG, while keeping every continuum, causal, state, renormalization,
+and QME construction flag false:
+
+```bash
+python3 foundations/check_topos_weyl_bv_obstructions.py
+python3 foundations/verify_topos_weyl_bv_obstructions.py
+python3 -m unittest foundations.tests.test_topos_weyl_bv_obstructions
+```
+
 ## Lifecycle
 
 This stream uses a literature/research lifecycle, not the quantum lifecycle:
