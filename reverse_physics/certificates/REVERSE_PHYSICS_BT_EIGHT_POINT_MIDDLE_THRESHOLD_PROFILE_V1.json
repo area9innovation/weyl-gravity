@@ -1,0 +1,245 @@
+{
+  "answer": "No on the declared complete two-fixture profile. Retaining tau3 and tau4 symbolically through all 34,300 trees and only then taking the ordered e1,e2,e3 valuations gives an exact profile difference 3*(27213*tau3^2-13462*tau3+29485)/(156800*tau3^2*tau4). It reproduces both the independently sampled tau3=4 coefficient 246627/501760 and the outer certificate's tau3=5 coefficient 771/1568. The outer J2 functional removes the single tau4^-1 factor. For the next split tau3=a3*u with a3=2, the constant, tau3^-1, and tau3^-2 rows map respectively to a3*J1, J2, and a3^-1*J3. An independent pole calculation gives unit r*log(r) coefficient for all three moments. The resulting second-threshold hard difference is 334239/313600, strictly nonzero. Thus neither of the first two physical threshold reductions restores a universal scalar fourth jump. This is still not the fourth factorial moment: the tau2 and tau1 threshold reductions, the fully symbolic inner mass dependence, and any pre-trace collapse quotient remain open.",
+  "certificate": "REVERSE_PHYSICS_BT_EIGHT_POINT_MIDDLE_THRESHOLD_PROFILE_V1",
+  "checks": {
+    "details": {
+      "all_spectator_masks_present": true,
+      "claim_boundary_is_fail_closed": true,
+      "complete_profiles_start_at_delta_two": true,
+      "input_hashes_pinned": true,
+      "middle_J1_J2_J3_coefficients_are_one": true,
+      "middle_threshold_difference_is_334239_over_313600": true,
+      "ordered_valuations_are_zero_zero_minus_one": true,
+      "outer_reduction_removes_only_tau4_profile": true,
+      "symbolic_profile_difference_identity": true,
+      "tau3_five_replays_outer_certificate": true,
+      "tau3_four_replays_independent_sample": true,
+      "two_threshold_reductions_do_not_collapse_difference": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 12,
+    "total": 12
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "disposition": {
+    "Eq19_all_orders": "NOT_PROVED",
+    "complete_BT_probability": "NOT_CONSTRUCTED",
+    "complete_two_invariant_profiles": "COMPUTED_ON_TWO_EXACT_HARD_FIXTURES",
+    "middle_threshold_reduction": "COMPUTED",
+    "outer_threshold_reduction": "COMPUTED",
+    "remaining_tau2_tau1_reductions": "NOT_COMPUTED",
+    "threshold_integrated_fourth_moment": "NOT_COMPUTED",
+    "two_atom_Cox_completion": "NOT_DECIDED_AT_FOURTH_MOMENT",
+    "two_threshold_scalar_universality": "EXACTLY_OBSTRUCTED"
+  },
+  "does_not_establish": [
+    "nonexistence of a fourth physical factorial moment after the final tau2 and tau1 reductions",
+    "failure of every pre-trace collapse or channel-resolved quotient",
+    "a globally derived hard-profile carrier",
+    "exclusion of the two-atom Cox completion",
+    "a complete physical 2->6 probability",
+    "universal behavior outside the two exact hard fixtures",
+    "a spacetime-local Moller or LSZ operator",
+    "the all-order Eq. (19)",
+    "anything LORENTZIAN-CAUSAL",
+    "a gravitational or BRST lift",
+    "literature priority"
+  ],
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "Retain tau2 together with tau3 and tau4, or derive the exact tau2 profile difference by a bounded interpolation theorem with certified degree and pole bounds, then perform the third fixed-invariant Kallen reduction. The final tau1 reduction must retain independent a0 and a1 before any fourth factorial moment or Cox comparison is made.",
+  "profile_analysis": {
+    "difference": "3*(27213*tau3**2 - 13462*tau3 + 29485)/(156800*tau3**2*tau4)",
+    "difference_sha256": "cd44dfd61af016e787268df9074fa77f0fc2f53e22e64b3addcfb3a930e48b39",
+    "hard_fixtures": [
+      [
+        [
+          4,
+          6,
+          9,
+          14,
+          18,
+          25,
+          33
+        ],
+        [
+          35,
+          39,
+          45,
+          52,
+          61,
+          67
+        ],
+        [
+          71,
+          79,
+          83
+        ]
+      ],
+      [
+        [
+          4,
+          6,
+          9,
+          14,
+          18,
+          25,
+          34
+        ],
+        [
+          35,
+          39,
+          45,
+          52,
+          61,
+          67
+        ],
+        [
+          71,
+          79,
+          83
+        ]
+      ]
+    ],
+    "rows": [
+      {
+        "hierarchy_valuations": [
+          [
+            "e1",
+            0
+          ],
+          [
+            "e2",
+            0
+          ],
+          [
+            "e3",
+            -1
+          ]
+        ],
+        "leading_masks": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "leading_order": 2,
+        "middle_profile": "(4768873746*tau3**2*tau4**2 - 3523064835*tau3**2*tau4 - 14559009426*tau3**2 - 720324696*tau3*tau4**2 - 13852936480*tau3*tau4 + 7202196924*tau3 + 1577683380*tau4**2 + 30341244400*tau4 - 15774533970)/(3073280000*tau3**2*tau4**2)",
+        "middle_profile_length": 226,
+        "middle_profile_sha256": "1c5a7b0b7863e711561e9f9aa9786ba32ec712fd256e0de34ea7e4e45d58f1ca"
+      },
+      {
+        "hierarchy_valuations": [
+          [
+            "e1",
+            0
+          ],
+          [
+            "e2",
+            0
+          ],
+          [
+            "e3",
+            -1
+          ]
+        ],
+        "leading_masks": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "leading_order": 2,
+        "middle_profile": "(4768873746*tau3**2*tau4**2 - 5123189235*tau3**2*tau4 - 14559009426*tau3**2 - 720324696*tau3*tau4**2 - 13061370880*tau3*tau4 + 7202196924*tau3 + 1577683380*tau4**2 + 28607526400*tau4 - 15774533970)/(3073280000*tau3**2*tau4**2)",
+        "middle_profile_length": 226,
+        "middle_profile_sha256": "dedc9f316dbbaa307c58f4f3ec09e4b469a440d1e78a8432d531761a461712b9"
+      }
+    ],
+    "soft_fixture": [
+      1,
+      4,
+      3,
+      2,
+      1,
+      10,
+      7,
+      5,
+      3
+    ],
+    "tau3_five_outer_coefficient": {
+      "denominator": 1568,
+      "numerator": 771
+    },
+    "tau3_four_outer_coefficient": {
+      "denominator": 501760,
+      "numerator": 246627
+    }
+  },
+  "provenance": {
+    "inputs": [
+      {
+        "path": "planning/work-items/reverse-physics-bateman-eight-point-middle-threshold-profile.json",
+        "sha256": "4a7c54320e47f3ad3c765524a72560626036177d14424d2df54e099db816eb53"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EIGHT_POINT_OUTER_THRESHOLD_PROFILE_V1.json",
+        "sha256": "72ea232513952b6aaf2ee07e9f21db74818c91ff0f4ffc6a1e3a564527a86163"
+      }
+    ],
+    "retrieval_date": "2026-08-11",
+    "source_commit": "c676bde4"
+  },
+  "question": "Does the hard-profile difference that survives the outer eight-point threshold lie in a collapse direction of the next physical Kallen reduction?",
+  "report": "reverse_physics/reports/bt-eight-point-middle-threshold-profile.md",
+  "result_kind": "complete two-invariant eight-point hard-profile difference and exact second fixed-invariant Kallen threshold reduction",
+  "schema": "reverse_physics/schema/reverse-physics-bt-eight-point-middle-threshold-profile-v1.schema.json",
+  "schema_version": "reverse-physics-bt-eight-point-middle-threshold-profile-v1",
+  "threshold_chain": {
+    "after_outer_functional": "3*(27213*tau3**2 - 13462*tau3 + 29485)/(156800*tau3**2)",
+    "after_outer_functional_sha256": "135253d14cea30f9bd846119ee659cb8af87f2e4cf7c431344fc5e3eb59cb118",
+    "middle_mass": {
+      "denominator": 1,
+      "numerator": 2
+    },
+    "middle_moment_r_log_r_coefficients": {
+      "J1": {
+        "denominator": 1,
+        "numerator": 1
+      },
+      "J2": {
+        "denominator": 1,
+        "numerator": 1
+      },
+      "J3": {
+        "denominator": 1,
+        "numerator": 1
+      }
+    },
+    "middle_profile_to_moments": {
+      "1": "a3*J1",
+      "tau3^-1": "J2",
+      "tau3^-2": "a3^-1*J3"
+    },
+    "middle_threshold_difference": {
+      "denominator": 313600,
+      "numerator": 334239
+    },
+    "outer_profile_channel": "PURE_J2_IN_TAU4"
+  },
+  "verification_commands": [
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/bt_eight_point_middle_threshold_profile.py --check",
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/verify_bt_eight_point_middle_threshold_profile.py",
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 -m unittest -v reverse_physics.tests.test_bt_eight_point_middle_threshold_profile"
+  ]
+}

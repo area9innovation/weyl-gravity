@@ -1886,7 +1886,47 @@ therefore withdraws the provisional hard-independent coefficient $629$ and
 leaves the two-atom Cox prediction undecided.  It does not prove that a
 physical fourth moment is absent: the outer fixed-invariant K\"all\'en
 reduction or a hard-profile quotient could still remove the dependence.
-Resolving that reduction is required before a fourth jump is normalized.
+Retaining the outer invariant $u=\tau_4$ resolves the first possibility.  The
+two complete profiles have leading difference
+\[
+ e_3(F_{33}-F_{34})\big|_{e_3=0}=\frac{771}{1568u}.
+\]
+The outer measure sends $1,u^{-1},u^{-2},u^{-3}$ to
+$J_1,J_2,J_3,J_4$, whose fixed-invariant $r\log r$ coefficients are all
+one.  Hence the difference is a pure $J_2$ row and survives the threshold
+functional with coefficient $771/(1568e_3)$; evaluation at the earlier
+$u=3$ gives exactly $257/(1568e_3)$.  With
+$r=e_3\tau_3/a_4=5e_3$, the actual leading outer logarithms differ by
+$3855/1568$.  Certificate
+\par\noindent
+\texttt{REVERSE\_PHYSICS\_BT\_EIGHT\_}\allowbreak
+\texttt{POINT\_OUTER\_THRESHOLD\_}\allowbreak
+\texttt{PROFILE\_V1}
+\par\noindent
+records the complete profiles and an independent pole-derivative
+reconstruction of the four moment coefficients.  The remaining three
+threshold reductions may still collapse or retain this profile.  Restoring
+$\tau_3$ symbolically closes the next one.  The complete profile difference is
+\[
+ \frac{3(27213\tau_3^2-13462\tau_3+29485)}
+ {156800\tau_3^2\tau_4}.
+\]
+After the outer $J_2$ functional, the rows
+$1,\tau_3^{-1},\tau_3^{-2}$ map at $a_3=2$ to
+$a_3J_1,J_2,a_3^{-1}J_3$.  Their unit nonanalytic coefficients give the
+strictly nonzero second-threshold difference
+\[
+ \frac{334239}{313600}.
+\]
+Certificate
+\par\noindent
+\texttt{REVERSE\_PHYSICS\_BT\_EIGHT\_}\allowbreak
+\texttt{POINT\_MIDDLE\_THRESHOLD\_}\allowbreak
+\texttt{PROFILE\_V1}
+\par\noindent
+records the two symbolic profiles and a separate exact $\tau_3=4$ replay.
+The final $\tau_2$ and independent-mass $\tau_1$ reductions remain required
+before a fourth jump is normalized.
 Resolving the labels gives a different, channel-faithful lift.
 The ordered histories are rooted combs with dimensions $3$, $12$, and $60$;
 canonical one-leaf insertion has respectively $3$, $4$, and $5$ children.

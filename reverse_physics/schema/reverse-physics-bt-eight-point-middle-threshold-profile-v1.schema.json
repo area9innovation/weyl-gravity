@@ -1,0 +1,161 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-eight-point-middle-threshold-profile-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "certificate",
+    "schema_version",
+    "dependency_tags",
+    "lifecycle_state",
+    "result_kind",
+    "question",
+    "answer",
+    "profile_analysis",
+    "threshold_chain",
+    "disposition",
+    "does_not_establish",
+    "next_gate",
+    "provenance",
+    "verification_commands",
+    "checks",
+    "report",
+    "schema"
+  ],
+  "properties": {
+    "certificate": {
+      "const": "REVERSE_PHYSICS_BT_EIGHT_POINT_MIDDLE_THRESHOLD_PROFILE_V1"
+    },
+    "schema_version": {
+      "const": "reverse-physics-bt-eight-point-middle-threshold-profile-v1"
+    },
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "result_kind": {"type": "string", "minLength": 100},
+    "question": {"type": "string", "minLength": 100},
+    "answer": {"type": "string", "minLength": 900},
+    "profile_analysis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "soft_fixture",
+        "hard_fixtures",
+        "rows",
+        "difference",
+        "difference_sha256",
+        "tau3_four_outer_coefficient",
+        "tau3_five_outer_coefficient"
+      ],
+      "properties": {
+        "soft_fixture": {"const": [1, 4, 3, 2, 1, 10, 7, 5, 3]},
+        "hard_fixtures": {"type": "array", "minItems": 2, "maxItems": 2},
+        "rows": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "object",
+            "required": [
+              "middle_profile",
+              "middle_profile_length",
+              "middle_profile_sha256",
+              "hierarchy_valuations",
+              "leading_order",
+              "leading_masks"
+            ],
+            "properties": {
+              "middle_profile_sha256": {"pattern": "^[0-9a-f]{64}$"},
+              "hierarchy_valuations": {"const": [["e1", 0], ["e2", 0], ["e3", -1]]},
+              "leading_order": {"const": 2},
+              "leading_masks": {"const": [0, 1, 2, 3, 4, 5, 6, 7]}
+            }
+          }
+        },
+        "difference": {
+          "const": "3*(27213*tau3**2 - 13462*tau3 + 29485)/(156800*tau3**2*tau4)"
+        },
+        "difference_sha256": {"pattern": "^[0-9a-f]{64}$"},
+        "tau3_four_outer_coefficient": {
+          "const": {"numerator": 246627, "denominator": 501760}
+        },
+        "tau3_five_outer_coefficient": {
+          "const": {"numerator": 771, "denominator": 1568}
+        }
+      }
+    },
+    "threshold_chain": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "outer_profile_channel",
+        "after_outer_functional",
+        "after_outer_functional_sha256",
+        "middle_mass",
+        "middle_profile_to_moments",
+        "middle_moment_r_log_r_coefficients",
+        "middle_threshold_difference"
+      ],
+      "properties": {
+        "outer_profile_channel": {"const": "PURE_J2_IN_TAU4"},
+        "after_outer_functional": {"type": "string", "minLength": 50},
+        "after_outer_functional_sha256": {"pattern": "^[0-9a-f]{64}$"},
+        "middle_mass": {"const": {"numerator": 2, "denominator": 1}},
+        "middle_profile_to_moments": {
+          "const": {
+            "1": "a3*J1",
+            "tau3^-1": "J2",
+            "tau3^-2": "a3^-1*J3"
+          }
+        },
+        "middle_moment_r_log_r_coefficients": {
+          "const": {
+            "J1": {"numerator": 1, "denominator": 1},
+            "J2": {"numerator": 1, "denominator": 1},
+            "J3": {"numerator": 1, "denominator": 1}
+          }
+        },
+        "middle_threshold_difference": {
+          "const": {"numerator": 334239, "denominator": 313600}
+        }
+      }
+    },
+    "disposition": {
+      "const": {
+        "complete_two_invariant_profiles": "COMPUTED_ON_TWO_EXACT_HARD_FIXTURES",
+        "outer_threshold_reduction": "COMPUTED",
+        "middle_threshold_reduction": "COMPUTED",
+        "two_threshold_scalar_universality": "EXACTLY_OBSTRUCTED",
+        "remaining_tau2_tau1_reductions": "NOT_COMPUTED",
+        "threshold_integrated_fourth_moment": "NOT_COMPUTED",
+        "two_atom_Cox_completion": "NOT_DECIDED_AT_FOURTH_MOMENT",
+        "complete_BT_probability": "NOT_CONSTRUCTED",
+        "Eq19_all_orders": "NOT_PROVED"
+      }
+    },
+    "does_not_establish": {"type": "array", "minItems": 11, "maxItems": 11},
+    "next_gate": {"type": "string", "minLength": 280},
+    "provenance": {
+      "type": "object",
+      "required": ["source_commit", "retrieval_date", "inputs"],
+      "properties": {
+        "source_commit": {"pattern": "^[0-9a-f]{7,40}$"},
+        "retrieval_date": {"const": "2026-08-11"},
+        "inputs": {"type": "array", "minItems": 2, "maxItems": 2}
+      }
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "maxItems": 3},
+    "checks": {
+      "type": "object",
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"const": 12},
+        "total": {"const": 12},
+        "failures": {"const": []},
+        "details": {"type": "object", "minProperties": 12, "maxProperties": 12}
+      }
+    },
+    "report": {"const": "reverse_physics/reports/bt-eight-point-middle-threshold-profile.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-eight-point-middle-threshold-profile-v1.schema.json"}
+  }
+}

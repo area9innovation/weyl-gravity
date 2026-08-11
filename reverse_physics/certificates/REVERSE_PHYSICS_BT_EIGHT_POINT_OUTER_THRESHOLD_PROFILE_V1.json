@@ -1,0 +1,253 @@
+{
+  "answer": "No at the outer-threshold stage. After the first two ordered hierarchy limits, each complete 34,300-tree projected square is a Laurent polynomial in the outer invariant u=tau4 with powers u^0 through u^-3. Multiplication by sqrt(Kallen(u,1,r))/u maps those four rows to J1 through J4. Their fixed-physical-invariant r*log(r) coefficients are all exactly one, so the outer nonanalytic functional is evaluation of the Laurent coefficient sum at u=1. The two exact hard fixtures have e3-leading profile difference 771/(1568*u), a pure J2 direction. The old fixed-u=3 difference 257/1568 is exactly its evaluation at u=3; the Kallen reduction instead returns 771/1568, so it amplifies rather than cancels the obstruction. With r=e3*tau3/a4=5*e3 on the declared soft fixture, the actual leading outer log coefficients differ by 3855/1568. A universal scalar fourth jump is therefore not selected after the outer reduction. This does not yet compute the physical fourth moment: the remaining tau3, tau2, and tau1 threshold reductions, their scale Jacobians, and a possible hard-profile quotient remain open.",
+  "certificate": "REVERSE_PHYSICS_BT_EIGHT_POINT_OUTER_THRESHOLD_PROFILE_V1",
+  "checks": {
+    "details": {
+      "all_J1_through_J4_nonanalytic_coefficients_are_one": true,
+      "all_spectator_masks_present": true,
+      "claim_boundary_is_fail_closed": true,
+      "complete_profiles_start_at_delta_two": true,
+      "fixed_u_three_replays_predecessor_difference": true,
+      "inner_hierarchy_valuations_are_zero": true,
+      "input_hashes_pinned": true,
+      "outer_profiles_are_distinct": true,
+      "outer_threshold_does_not_restore_scalar_universality": true,
+      "physical_outer_log_difference_is_3855_over_1568": true,
+      "profile_difference_is_pure_J2_direction": true,
+      "threshold_pole_difference_is_771_over_1568": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 12,
+    "total": 12
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "disposition": {
+    "Eq19_all_orders": "NOT_PROVED",
+    "complete_BT_probability": "NOT_CONSTRUCTED",
+    "complete_outer_profiles": "COMPUTED_ON_TWO_EXACT_HARD_FIXTURES",
+    "minimal_difference_moment_channel": "J2",
+    "outer_fixed_invariant_Kallen_reduction": "COMPUTED",
+    "outer_threshold_scalar_universality": "EXACTLY_OBSTRUCTED",
+    "remaining_three_threshold_reductions": "NOT_COMPUTED",
+    "threshold_integrated_fourth_moment": "NOT_COMPUTED",
+    "two_atom_Cox_completion": "NOT_DECIDED_AT_FOURTH_MOMENT"
+  },
+  "does_not_establish": [
+    "nonexistence of a fourth physical factorial moment after all four nested threshold reductions",
+    "failure of every hard-profile or channel-resolved quotient",
+    "a globally derived hard-profile carrier rather than the exact two-fixture difference direction",
+    "exclusion of the two-atom Cox completion",
+    "a complete physical 2->6 probability",
+    "universal behavior outside the two exact hard fixtures",
+    "a spacetime-local Moller or LSZ operator",
+    "the all-order Eq. (19)",
+    "anything LORENTZIAN-CAUSAL",
+    "a gravitational or BRST lift",
+    "literature priority"
+  ],
+  "hard_profile_analysis": {
+    "fixed_u_three_difference": {
+      "denominator": 1568,
+      "numerator": 257
+    },
+    "hard_fixtures": [
+      [
+        [
+          4,
+          6,
+          9,
+          14,
+          18,
+          25,
+          33
+        ],
+        [
+          35,
+          39,
+          45,
+          52,
+          61,
+          67
+        ],
+        [
+          71,
+          79,
+          83
+        ]
+      ],
+      [
+        [
+          4,
+          6,
+          9,
+          14,
+          18,
+          25,
+          34
+        ],
+        [
+          35,
+          39,
+          45,
+          52,
+          61,
+          67
+        ],
+        [
+          71,
+          79,
+          83
+        ]
+      ]
+    ],
+    "leading_profile_difference": "771/(1568*tau4)",
+    "leading_profile_difference_sha256": "754d888d9a2e2a87a9624f215dd0b8871cc82b22bf73d061920c17f17ff3a46c",
+    "moment_channel": "PURE_J2",
+    "physical_outer_log_difference": {
+      "denominator": 1568,
+      "numerator": 3855
+    },
+    "rows": [
+      {
+        "inner_hierarchy_valuations": [
+          [
+            "e1",
+            0
+          ],
+          [
+            "e2",
+            0
+          ]
+        ],
+        "leading_e3_profile": "(4687916142*tau4**2 - 5080002355*tau4 - 13749551400)/(3073280000*tau4**2)",
+        "leading_e3_profile_sha256": "b31dae9cdd3e44b6f82b5df694824faa5961f1e2f523bfc709d007ef213a77ab",
+        "leading_masks": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "leading_order": 2,
+        "outer_profile": "-(23297811264*e3**5*tau4 - 142185094848*e3**5 + 3285605232*e3**4*tau4**2 + 2472263088*e3**4*tau4 + 7291342368*e3**4 - 89565971040*e3**3*tau4**3 + 1419660340*e3**3*tau4**2 + 4507341696*e3**3*tau4 - 67233389772*e3**3 - 32833792992*e3**2*tau4**3 + 5110022330*e3**2*tau4**2 + 58984227686*e3**2*tau4 + 1721488800*e3**2 - 22504586377*e3*tau4**3 - 1015994086*e3*tau4**2 - 1709121982*e3*tau4 - 7925880000*e3 - 4687916142*tau4**3 + 5080002355*tau4**2 + 13749551400*tau4)/(3073280000*e3*tau4**3)",
+        "outer_profile_length": 485,
+        "outer_profile_sha256": "ab7ca491b88406da8c1d93b0fc15d35048b0b8f880736633f140c2aec203ab67",
+        "threshold_coefficient_function": "(118887283584*e3**5 - 13049210688*e3**4 + 150872358776*e3**3 - 32981945824*e3**2 + 33155582445*e3 - 14141637613)/(3073280000*e3)",
+        "threshold_coefficient_function_sha256": "a45d21a18e7d2eb557701a3c914c15c29143a7817a9e85f6cb47bb06988f2066",
+        "threshold_e3_pole": "-14141637613/3073280000"
+      },
+      {
+        "inner_hierarchy_valuations": [
+          [
+            "e1",
+            0
+          ],
+          [
+            "e2",
+            0
+          ]
+        ],
+        "leading_e3_profile": "(4687916142*tau4**2 - 6591162355*tau4 - 13749551400)/(3073280000*tau4**2)",
+        "leading_e3_profile_sha256": "45c3cdf2538093fd544e97f5d6e29d2deee92a72df19e8c6fca35c705fd1392a",
+        "leading_masks": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "leading_order": 2,
+        "outer_profile": "-(93191245056*e3**7*tau4 - 568740379392*e3**7 + 13142420928*e3**6*tau4**2 + 103080297408*e3**6*tau4 - 539575009920*e3**6 - 358263884160*e3**5*tau4**3 + 18821062288*e3**5*tau4**2 + 51216230400*e3**5*tau4 - 381953284464*e3**5 - 489599056128*e3**4*tau4**3 + 29404335912*e3**4*tau4**2 + 275640033416*e3**4*tau4 - 254756261520*e3**4 - 329797110916*e3**3*tau4**3 + 39705182516*e3**3*tau4**2 + 245916427312*e3**3*tau4 - 92050954572*e3**3 - 148945100668*e3**2*tau4**3 + 28191794606*e3**2*tau4**2 + 111351203758*e3**2*tau4 - 29982031200*e3**2 - 41387345545*e3*tau4**3 + 25314198534*e3*tau4**2 + 56311403618*e3*tau4 - 7925880000*e3 - 4687916142*tau4**3 + 6591162355*tau4**2 + 13749551400*tau4)/(3073280000*e3*tau4**3*(2*e3 + 1)**2)",
+        "outer_profile_length": 721,
+        "outer_profile_sha256": "99306d8b63c26882885306fc65cd9455055365cdf12a6c54cf558613c05c3ae3",
+        "threshold_coefficient_function": "(475549134336*e3**7 + 423352291584*e3**6 + 670179875936*e3**5 + 439310948320*e3**4 + 136226455660*e3**3 + 39384133504*e3**2 - 32312376607*e3 - 15652797613)/(3073280000*e3*(2*e3 + 1)**2)",
+        "threshold_coefficient_function_sha256": "faa48c421490fabfdaa5b1cedb1213b97de18b96e20408c2d6f90612c4f81f38",
+        "threshold_e3_pole": "-15652797613/3073280000"
+      }
+    ],
+    "soft_fixture": [
+      1,
+      4,
+      3,
+      2,
+      1,
+      10,
+      7,
+      5,
+      3
+    ],
+    "threshold_e3_pole_difference": {
+      "denominator": 1568,
+      "numerator": 771
+    }
+  },
+  "lifecycle_state": "CLASSIFIED",
+  "moment_operator": {
+    "definition": "J_n(r)=FP_(Lambda->infinity) integral_((1+sqrt(r))^2)^Lambda du sqrt(Kallen(u,1,r))/u^n at fixed physical u=Lambda",
+    "functional": "For F(u,e3)=sum_(n=0)^3 c_n(e3)u^-n, the outer r*log(r) coefficient is sum_n c_n(e3)=F(1,e3).",
+    "outer_mass_ratio": "r=e3*tau3/a4=5*e3 on the declared soft fixture",
+    "profile_to_moment_map": {
+      "u^-1": "J2",
+      "u^-2": "J3",
+      "u^-3": "J4",
+      "u^0": "J1"
+    },
+    "r_log_r_coefficients": {
+      "J1": {
+        "denominator": 1,
+        "numerator": 1
+      },
+      "J2": {
+        "denominator": 1,
+        "numerator": 1
+      },
+      "J3": {
+        "denominator": 1,
+        "numerator": 1
+      },
+      "J4": {
+        "denominator": 1,
+        "numerator": 1
+      }
+    }
+  },
+  "next_gate": "Retain tau3 symbolically in the difference profile and perform the next fixed-invariant Kallen reduction, including the e3 scale Jacobian, before taking the remaining hierarchy limit. Determine whether the pure outer J2 difference lies in a collapse kernel of the middle pre-trace quotient or survives as a genuine hard-profile-valued fourth jump. Only a final scalar coefficient after all remaining reductions may be compared with the two-atom Cox prediction P4=73/786432.",
+  "provenance": {
+    "inputs": [
+      {
+        "path": "planning/work-items/reverse-physics-bateman-eight-point-outer-threshold-profile.json",
+        "sha256": "435b17d8ff93177128ab3d01d5e625f5989a8bdf63c70a80b1f3cbf8643e225a"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EIGHT_POINT_HARD_PROFILE_OBSTRUCTION_V1.json",
+        "sha256": "d6213c9c416d32cd63e876086e665e3f75e1d21c0f7236dc5f8896a10268ce79"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_SEVEN_POINT_COX_SELECTION_V1.json",
+        "sha256": "0530c61bac5d1178e84fa735c9cf7d7e43f53a24521c44d80a9ef634313e9136"
+      }
+    ],
+    "retrieval_date": "2026-08-11",
+    "source_commit": "c676bde4"
+  },
+  "question": "Does the correct outer fixed-invariant Kallen threshold integration cancel the eight-point bare hard-profile dependence and restore a universal scalar fourth jump?",
+  "report": "reverse_physics/reports/bt-eight-point-outer-threshold-profile.md",
+  "result_kind": "exact fixed-invariant outer Kallen reduction of the complete eight-point projected tree and minimal hard-profile moment-channel obstruction",
+  "schema": "reverse_physics/schema/reverse-physics-bt-eight-point-outer-threshold-profile-v1.schema.json",
+  "schema_version": "reverse-physics-bt-eight-point-outer-threshold-profile-v1",
+  "verification_commands": [
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/bt_eight_point_outer_threshold_profile.py --check",
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/verify_bt_eight_point_outer_threshold_profile.py",
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 -m unittest -v reverse_physics.tests.test_bt_eight_point_outer_threshold_profile"
+  ]
+}

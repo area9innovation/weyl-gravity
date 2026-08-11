@@ -75,18 +75,33 @@ def text_sha256(value):
     return hashlib.sha256(value.encode("utf-8")).hexdigest()
 
 
-def _correlated_eight_point_fixture(hard_fixture, soft_fixture):
+def _correlated_eight_point_fixture(
+    hard_fixture,
+    soft_fixture,
+    include_outer_profile=False,
+    include_middle_profile=False,
+):
     """One exact square-free spectator fixture with hierarchy-first limits."""
     import sympy as sp
     from sympy.polys.domains import QQ
     from sympy.polys.fields import field
 
-    values = field("e1,e2,e3", QQ)
+    if include_middle_profile:
+        field_names = "e1,e2,e3,tau3,tau4"
+    elif include_outer_profile:
+        field_names = "e1,e2,e3,tau4"
+    else:
+        field_names = "e1,e2,e3"
+    values = field(field_names, QQ)
     base = values[0]
-    e1, e2, e3 = values[1:]
-    a0, a1, a2, a3, a4, tau1, tau2, tau3, tau4 = [
-        base(value) for value in soft_fixture
-    ]
+    e1, e2, e3 = values[1:4]
+    soft_values = [base(value) for value in soft_fixture]
+    a0, a1, a2, a3, a4, tau1, tau2 = soft_values[:7]
+    if include_middle_profile:
+        tau3, tau4 = values[4:6]
+    else:
+        tau3 = soft_values[7]
+        tau4 = values[4] if include_outer_profile else soft_values[8]
     ring = SpectatorRing(base)
 
     def linear(value):
@@ -285,6 +300,30 @@ def _correlated_eight_point_fixture(hard_fixture, soft_fixture):
         base.zero,
     )
     projected_expression = projected_field.as_expr()
+    if include_outer_profile or include_middle_profile:
+        outer_expression = projected_expression
+        outer_symbols = {
+            symbol.name: symbol for symbol in outer_expression.free_symbols
+        }
+        outer_valuations = []
+        hierarchy_names = ("e1", "e2", "e3") if include_middle_profile else (
+            "e1",
+            "e2",
+        )
+        for name in hierarchy_names:
+            valuation, outer_expression = leading_at_zero(
+                outer_expression, outer_symbols[name]
+            )
+            outer_valuations.append((name, valuation))
+        outer_expression = sp.factor(outer_expression)
+        return {
+            "leading_order": leading_order,
+            "leading_masks": sorted(leading.coefficients),
+            "inner_hierarchy_valuations": outer_valuations,
+            "outer_profile": str(outer_expression),
+            "outer_profile_length": len(str(outer_expression)),
+            "outer_profile_sha256": text_sha256(str(outer_expression)),
+        }
     finite_point = {
         "e1": sp.Rational(1, 5),
         "e2": sp.Rational(2, 7),
@@ -322,6 +361,20 @@ def correlated_eight_point(hard_fixture, soft_fixture):
     row = _correlated_eight_point_fixture(hard_fixture, soft_fixture)
     row["strong_order_sha256"] = text_sha256(row["strong_order"])
     return row
+
+
+def outer_profile_eight_point(hard_fixture, soft_fixture):
+    """Retain the outer parent invariant after the first two hierarchy limits."""
+    return _correlated_eight_point_fixture(
+        hard_fixture, soft_fixture, include_outer_profile=True
+    )
+
+
+def middle_profile_eight_point(hard_fixture, soft_fixture):
+    """Retain the final two parent invariants after all hierarchy valuations."""
+    return _correlated_eight_point_fixture(
+        hard_fixture, soft_fixture, include_middle_profile=True
+    )
 
 
 def build():
@@ -471,6 +524,8 @@ def fast_check(path):
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--fixture", type=int, default=0)
+    parser.add_argument("--outer-profile", action="store_true")
+    parser.add_argument("--middle-profile", action="store_true")
     parser.add_argument("--write", action="store_true")
     parser.add_argument("--check", action="store_true")
     parser.add_argument("--fast-check", action="store_true")
@@ -479,7 +534,16 @@ def main(argv=None):
     if args.fast_check:
         return fast_check(args.output)
     if not args.write and not args.check:
-        row = correlated_eight_point(HARD_FIXTURES[args.fixture], SOFT_FIXTURE)
+        if args.middle_profile:
+            row = middle_profile_eight_point(
+                HARD_FIXTURES[args.fixture], SOFT_FIXTURE
+            )
+        elif args.outer_profile:
+            row = outer_profile_eight_point(
+                HARD_FIXTURES[args.fixture], SOFT_FIXTURE
+            )
+        else:
+            row = correlated_eight_point(HARD_FIXTURES[args.fixture], SOFT_FIXTURE)
         print(json.dumps(row, indent=2, sort_keys=True))
         return 0
     value = build()

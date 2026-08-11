@@ -1,0 +1,170 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-eight-point-outer-threshold-profile-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "certificate",
+    "schema_version",
+    "dependency_tags",
+    "lifecycle_state",
+    "result_kind",
+    "question",
+    "answer",
+    "moment_operator",
+    "hard_profile_analysis",
+    "disposition",
+    "does_not_establish",
+    "next_gate",
+    "provenance",
+    "verification_commands",
+    "checks",
+    "report",
+    "schema"
+  ],
+  "properties": {
+    "certificate": {
+      "const": "REVERSE_PHYSICS_BT_EIGHT_POINT_OUTER_THRESHOLD_PROFILE_V1"
+    },
+    "schema_version": {
+      "const": "reverse-physics-bt-eight-point-outer-threshold-profile-v1"
+    },
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]
+    },
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "result_kind": {"type": "string", "minLength": 100},
+    "question": {"type": "string", "minLength": 100},
+    "answer": {"type": "string", "minLength": 900},
+    "moment_operator": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "definition",
+        "profile_to_moment_map",
+        "r_log_r_coefficients",
+        "functional",
+        "outer_mass_ratio"
+      ],
+      "properties": {
+        "definition": {"type": "string", "minLength": 100},
+        "profile_to_moment_map": {
+          "const": {
+            "u^0": "J1",
+            "u^-1": "J2",
+            "u^-2": "J3",
+            "u^-3": "J4"
+          }
+        },
+        "r_log_r_coefficients": {
+          "const": {
+            "J1": {"numerator": 1, "denominator": 1},
+            "J2": {"numerator": 1, "denominator": 1},
+            "J3": {"numerator": 1, "denominator": 1},
+            "J4": {"numerator": 1, "denominator": 1}
+          }
+        },
+        "functional": {"type": "string", "minLength": 90},
+        "outer_mass_ratio": {"const": "r=e3*tau3/a4=5*e3 on the declared soft fixture"}
+      }
+    },
+    "hard_profile_analysis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "soft_fixture",
+        "hard_fixtures",
+        "rows",
+        "leading_profile_difference",
+        "leading_profile_difference_sha256",
+        "moment_channel",
+        "fixed_u_three_difference",
+        "threshold_e3_pole_difference",
+        "physical_outer_log_difference"
+      ],
+      "properties": {
+        "soft_fixture": {"const": [1, 4, 3, 2, 1, 10, 7, 5, 3]},
+        "hard_fixtures": {"type": "array", "minItems": 2, "maxItems": 2},
+        "rows": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "object",
+            "required": [
+              "outer_profile",
+              "outer_profile_length",
+              "outer_profile_sha256",
+              "leading_e3_profile",
+              "leading_e3_profile_sha256",
+              "threshold_coefficient_function",
+              "threshold_coefficient_function_sha256",
+              "threshold_e3_pole",
+              "inner_hierarchy_valuations",
+              "leading_order",
+              "leading_masks"
+            ],
+            "properties": {
+              "outer_profile_sha256": {"pattern": "^[0-9a-f]{64}$"},
+              "leading_e3_profile_sha256": {"pattern": "^[0-9a-f]{64}$"},
+              "threshold_coefficient_function_sha256": {"pattern": "^[0-9a-f]{64}$"},
+              "inner_hierarchy_valuations": {"const": [["e1", 0], ["e2", 0]]},
+              "leading_order": {"const": 2},
+              "leading_masks": {"const": [0, 1, 2, 3, 4, 5, 6, 7]}
+            }
+          }
+        },
+        "leading_profile_difference": {"const": "771/(1568*tau4)"},
+        "leading_profile_difference_sha256": {"pattern": "^[0-9a-f]{64}$"},
+        "moment_channel": {"const": "PURE_J2"},
+        "fixed_u_three_difference": {
+          "const": {"numerator": 257, "denominator": 1568}
+        },
+        "threshold_e3_pole_difference": {
+          "const": {"numerator": 771, "denominator": 1568}
+        },
+        "physical_outer_log_difference": {
+          "const": {"numerator": 3855, "denominator": 1568}
+        }
+      }
+    },
+    "disposition": {
+      "const": {
+        "complete_outer_profiles": "COMPUTED_ON_TWO_EXACT_HARD_FIXTURES",
+        "outer_fixed_invariant_Kallen_reduction": "COMPUTED",
+        "outer_threshold_scalar_universality": "EXACTLY_OBSTRUCTED",
+        "minimal_difference_moment_channel": "J2",
+        "remaining_three_threshold_reductions": "NOT_COMPUTED",
+        "threshold_integrated_fourth_moment": "NOT_COMPUTED",
+        "two_atom_Cox_completion": "NOT_DECIDED_AT_FOURTH_MOMENT",
+        "complete_BT_probability": "NOT_CONSTRUCTED",
+        "Eq19_all_orders": "NOT_PROVED"
+      }
+    },
+    "does_not_establish": {"type": "array", "minItems": 11, "maxItems": 11},
+    "next_gate": {"type": "string", "minLength": 300},
+    "provenance": {
+      "type": "object",
+      "required": ["source_commit", "retrieval_date", "inputs"],
+      "properties": {
+        "source_commit": {"pattern": "^[0-9a-f]{7,40}$"},
+        "retrieval_date": {"const": "2026-08-11"},
+        "inputs": {"type": "array", "minItems": 3, "maxItems": 3}
+      }
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "maxItems": 3},
+    "checks": {
+      "type": "object",
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"const": 12},
+        "total": {"const": 12},
+        "failures": {"const": []},
+        "details": {"type": "object", "minProperties": 12, "maxProperties": 12}
+      }
+    },
+    "report": {"const": "reverse_physics/reports/bt-eight-point-outer-threshold-profile.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-eight-point-outer-threshold-profile-v1.schema.json"}
+  }
+}

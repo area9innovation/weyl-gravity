@@ -1,0 +1,34 @@
+{
+  "id": "sf:program/work/reverse-physics-bateman-eight-point-middle-threshold-profile",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "reverse-physics",
+    "state": "ACTIVE",
+    "objective": "Retain tau3 and tau4 symbolically in the complete eight-point hard-profile difference and decide whether the second fixed-invariant Kallen threshold reduction collapses that difference before a fourth physical moment is assigned.",
+    "depends_on": [
+      "REVERSE_PHYSICS_BT_EIGHT_POINT_OUTER_THRESHOLD_PROFILE_V1"
+    ],
+    "activates": [
+      "the exact two-invariant hard-profile difference after all ordered hierarchy valuations",
+      "the second of four nested threshold reductions required for the fourth jump",
+      "a sharpened final two-threshold gate for the physical count law"
+    ],
+    "current_gate": "EIGHT_POINT_MIDDLE_THRESHOLD_PROFILE: retain tau3,tau4 through the complete two-fixture recursion, take the exact e1,e2,e3 valuations only after forming the full spectator projector, apply the outer J2 functional, and then reduce the resulting tau3 Laurent profile through the physical J1,J2,J3 moments at a3=2.",
+    "stop_condition": "Land an exact certificate with an independent verifier that proves whether the two-fixture hard difference survives or collapses after the first two nested threshold reductions, while leaving the final tau2/tau1 reductions, fourth moment, Cox decision, complete probability, Eq. 19, gravity, and Lorentzian claims fail-closed.",
+    "forbid": "no sampled tau3 interpolation substituted for the symbolic profile; no fixed-tau3 result called a middle-threshold theorem; no two-threshold coefficient called the final fourth moment; no fitted profile direction called BT dynamics; no REDUCED-MODE result called complete scattering, all-order Eq. 19, gravity/BRST, or LORENTZIAN-CAUSAL",
+    "allowed_paths": [
+      "reverse_physics/",
+      "notes/bateman-turok-embedding.md",
+      "paper/05-interaction-obstructions.tex",
+      "paper/05-interaction-obstructions.pdf",
+      "paper/06-einstein-weyl-interaction-obstructions.tex",
+      "paper/06-einstein-weyl-interaction-obstructions.pdf",
+      "planning/work-items/reverse-physics-bateman-eight-point-middle-threshold-profile.json",
+      "planning/events/"
+    ],
+    "resource_hint": "Use the complete eight-point recursion over Q(e1,e2,e3,tau3,tau4), with the delta Laurent rail [-8,4] and the three-bit spectator projector. Run fixtures sequentially under ulimit -v 500000. After the exact profile difference, use tau3=a3*u and sqrt(Kallen(tau3,a3,b))/tau3 dtau3=a3*sqrt(Kallen(u,1,r))/u du; the constant, tau3^-1, tau3^-2 rows map to a3*J1, J2, a3^-1*J3.",
+    "input_commit": "c676bde4",
+    "stream": "reverse-physics"
+  }
+}
