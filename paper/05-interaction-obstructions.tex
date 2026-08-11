@@ -131,7 +131,12 @@ $\sup_p|\rho(p)/(4p^2)|<1$.  An explicit infrared weight satisfies this and
 has finite norm density, but its inverse metric is unbounded and its
 thermodynamic sector is inequivalent.  The raw BT shear is also cross-Krein
 canonical rather than a positive-Hilbert Bogoliubov map, so existing extended
-positive-boson implementations do not supply the missing BT trace.
+positive-boson implementations do not supply the missing BT trace.  A direct
+cross-Krein construction now implements the covariant squeeze on paired
+cores and supplies a cyclic finite-rank trace.  However, any finite normalized
+cyclic trace positive on the ghost-even orbit cone kills localized rank-one
+projectors, while the finite-rank trace has infinite identity weight.  The
+transported vacuum projector also has exponentially growing trace norm.
 Independently, the projected three-channel hard loop logarithm closes the
 Callan--Symanzik equation exactly with the Born rate and one-loop beta
 function.  This yields the positive leading-log nonforward prediction
@@ -1413,6 +1418,38 @@ not provide the missing cyclic BT trace.  The certificate
 \texttt{REVERSE\_PHYSICS\_BT\_EXTENDED\_SQUEEZE\_}
 \allowbreak\texttt{CARRIER\_V1} records this constructive but inequivalent
 vacuum carrier and the remaining trace obstruction.
+
+The cross-Krein construction can nevertheless be completed at finite
+regulator.  Complete the orbit on $\ell^2(\mathbb Z)$ with
+$[e_m,e_n]=\delta_{m+n,0}$ and $J_0e_n=e_{-n}$.  Then $Z$ is the bilateral
+shift and $Z^\dagger=Z$.  On the weighted oscillator carrier,
+\[
+ Q=\sum_{\{p,-p\}}\left(
+ z_pZ^2A_p^*A_{-p}^*-\bar z_pZ^2D_pD_{-p}\right)
+\]
+obeys $Q^\dagger=-Q$ and defines a densely defined closable squeeze on paired
+polynomial/Gaussian cores.  The finite-rank trace
+$\operatorname{Tr}_{\rm fin}\Theta_{x,y}=[y,x]$ is cyclic and invariant under
+this transport.
+
+This finite construction has an exact extension obstruction.  For
+$E_n=Z^nE_0Z^{-n}$, cyclicity gives $\tau(E_n)=c$.  If $\tau(1)=1$ and
+$\tau$ is positive on the $J_0$-even projection cone, then
+$P_N=\sum_{n=-N}^NE_n$ gives $(2N+1)c\leq1$ for every $N$, hence $c=0$.
+The finite-rank trace instead has $\operatorname{Tr}_{\rm fin}(E_0)=1$ but
+infinite identity weight.  There is also no normal trace-norm limit: for the
+explicit weight above,
+\[
+ \frac1V\log\|P_V\|_1
+ \longrightarrow
+ \ell(\gamma,\mu)=\frac{\mu^3}{12\pi}\left[
+ (1+\gamma)^{3/2}+(1-\gamma)^{3/2}-2\right]>0.
+\]
+The certificate
+\texttt{REVERSE\_PHYSICS\_BT\_CROSS\_KREIN\_TRACE\_}
+\allowbreak\texttt{LIMIT\_V1} therefore moves the open problem to an explicit
+semifinite, relative, or non-normal Born weight and the full nonlinear
+Eq.~(19) transport.  It does not establish the physical $1/48$.
 \end{remark}
 
 \begin{remark}[Physical ultraviolet hard-scattering law]

@@ -122,7 +122,10 @@ neither transfers to the metric BV complex nor excludes an explicitly
 extended/non-Fock scalar representation.
 The full scalar exponential admits an explicit infrared-weighted vacuum
 carrier, but its inverse metric is unbounded, its thermodynamic representation
-is inequivalent, and no cross-Krein implementer or cyclic Born trace follows.
+is inequivalent.  Its covariant squeeze does admit a cross-Krein core
+implementation and cyclic finite-rank trace, but a finite normalized orbit
+trace kills localized projectors and the transported vacuum projector has
+exponentially growing trace norm.  No normal thermodynamic Born trace follows.
 This is again not a gravitational state construction.
 \end{abstract}
 
@@ -1545,8 +1548,21 @@ $\rho_\mu(p)=4\gamma\mu^2p^2/(p^2+\mu^2)$, $0<\gamma<1$, but its inverse
 is unbounded and the thermodynamic vacuum is inequivalent to the ordinary
 Fock sector.  The raw scalar shear also fails the positive-Hilbert Bogoliubov
 relation, so generic extended positive-boson implementation theorems do not
-supply its cross-Krein map or cyclic Born trace.  This remains solely a scalar
-\texttt{LOCAL-ALGEBRAIC}, \texttt{REDUCED-MODE} carrier classification.
+supply its cross-Krein map or cyclic Born trace.  A direct scalar construction
+does implement the covariant squeeze on paired cores and preserves the
+finite-rank trace.  It also proves the limiting obstruction: a finite
+normalized cyclic orbit trace positive on the ghost-even cone assigns zero to
+localized rank-one projectors, whereas the finite-rank trace has infinite
+identity weight, and the transported vacuum projector's trace norm grows as
+$\exp(V\ell)$ with
+\[
+ \ell=\frac{\mu^3}{12\pi}\left[
+ (1+\gamma)^{3/2}+(1-\gamma)^{3/2}-2\right]>0.
+\]
+Thus no normal thermodynamic Born trace follows.  This remains solely a scalar
+carrier classification.  Its dependency tags are \texttt{LOCAL-ALGEBRAIC}
+and \texttt{REDUCED-MODE}; it does not construct a graviton, BRST, or causal
+state space.
 There is nevertheless now a genuine scalar hard-scattering baseline.  The
 certificate
 \texttt{REVERSE\_PHYSICS\_BT\_UV\_HARD\_}\allowbreak

@@ -1,0 +1,579 @@
+{
+  "answer": "The zero-mode orbit and squeeze factor can be constructed exactly, and the algebraic finite-rank trace is cyclic and transport-invariant on a common Gaussian core. This removes the finite-regulator squeeze and trace barriers. Two exact obstructions remain. A finite normalized cyclic trace that is positive on the ghost-even cone must assign zero weight to every orbit-localized rank-one projection. Conversely, the canonical finite-rank trace assigns that projection weight one but has infinite identity weight. Moreover, the transported vacuum projector has positive trace norm growing as exp(V ell), with an exact ell>0. Hence no ordinary normal trace-class thermodynamic limit follows. A semifinite, relative, or non-normal Born weight must be supplied before Eq. (19) can be completed.",
+  "certificate": "REVERSE_PHYSICS_BT_CROSS_KREIN_TRACE_LIMIT_V1",
+  "checks": {
+    "details": {
+      "BCH_shear_truncates_after_first_commutator": true,
+      "Krein_adjoint_swaps_A_and_D": true,
+      "covariant_squeeze_generator_is_Krein_anti_self_adjoint": true,
+      "cross_CCR_shear_cancellation_is_exact": true,
+      "finite_rank_trace_is_cyclic": true,
+      "finite_rank_transport_preserves_trace": true,
+      "gamma_half_density_is_strictly_positive_by_rational_radical_bounds": true,
+      "gamma_half_minimal_polynomial": true,
+      "gamma_half_radical_representation": true,
+      "gamma_half_shifted_y": true,
+      "input_hashes_pinned": true,
+      "nine_orbit_rows": true,
+      "nine_translate_bounds": true,
+      "normalized_finite_trace_kills_orbit_rank_one_projection": true,
+      "one_pair_Krein_norm_is_one": true,
+      "one_pair_positive_norm_is_four_thirds": true,
+      "orbit_J_is_involutive": true,
+      "orbit_boost_generator_is_Krein_anti_self_adjoint": true,
+      "orbit_positive_metric_is_identity": true,
+      "orbit_shift_is_Krein_self_adjoint": true,
+      "physical_claim_fails_closed": true,
+      "positive_normalization_collapses_Krein_norm": true,
+      "small_gamma_density_matches_square_sum_coefficient": true,
+      "thermodynamic_trace_norm_diverges_exponentially": true,
+      "translate_bound_tends_to_zero": true,
+      "transported_projector_trace_norm_equals_positive_vacuum_norm": true,
+      "two_pair_positive_norm_is_three_halves": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 27,
+    "total": 27
+  },
+  "cross_Krein_squeeze_core": {
+    "CCR_check": "the two off-diagonal commutator contributions cancel exactly as 1-1=0",
+    "Krein_adjoint": "Q^dagger=-Q",
+    "Krein_inverse": "S^dagger=S^-1=exp(-Q) on the paired cores",
+    "domain": "Laurent finite-support tensor finite-particle polynomial core",
+    "exact_fixtures": {
+      "one_pair_Krein_norm": {
+        "denominator": 1,
+        "numerator": 1
+      },
+      "one_pair_positive_norm_squared": {
+        "denominator": 3,
+        "numerator": 4
+      },
+      "one_pair_z": {
+        "denominator": 2,
+        "numerator": 1
+      },
+      "two_pair_Krein_norm": {
+        "denominator": 1,
+        "numerator": 1
+      },
+      "two_pair_positive_norm_squared": {
+        "denominator": 2,
+        "numerator": 3
+      },
+      "two_pair_z_values": [
+        {
+          "denominator": 2,
+          "numerator": 1
+        },
+        {
+          "denominator": 3,
+          "numerator": 1
+        }
+      ]
+    },
+    "factorization": "S=exp(Q)=exp(Z^2 C_A^star) exp(-Z^2 C_D)",
+    "generator": "Q=sum_unordered [z_p Z^2 A_p^star A_-p^star-conj(z_p) Z^2 D_p D_-p]",
+    "implemented_shears": [
+      "S^-1 A_p S=A_p+z_p Z^2 A_-p^star",
+      "S^-1 D_p^star S=D_p^star+conj(z_p) Z^2 D_-p"
+    ],
+    "normalized_modes": [
+      "[A_p,A_q^star]=delta_pq",
+      "[D_p,D_q^star]=delta_pq",
+      "J_F A_p J_F=D_p and J_F A_p^star J_F=D_p^star"
+    ],
+    "operator_status": "DENSELY_DEFINED_CLOSABLE_WITH_KREIN_INVERSE_ON_ITS_GAUSSIAN_IMAGE_CORE",
+    "scope": "the covariant Appendix-C squeeze factor only, not the full nonlinear R_t",
+    "weighted_nonzero_mode_condition": [
+      "sup_p |z(p)|<1",
+      "sum over unordered momentum pairs |z(p)|^2<infinity"
+    ]
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "disposition": {
+    "Eq19_in_continuum": "NOT_REPRODUCED",
+    "finite_normalized_trace_on_full_orbit_operator_algebra": "OBSTRUCTED_IF_ORBIT_RANK_ONE_WEIGHT_IS_NONZERO",
+    "finite_rank_cyclic_Born_trace": "CONSTRUCTED",
+    "full_nonlinear_R_t": "NOT_CONSTRUCTED",
+    "normal_trace_class_thermodynamic_limit": "OBSTRUCTED",
+    "physical_neutral_one_over_48": "NOT_ESTABLISHED",
+    "semifinite_relative_or_non_normal_weight": "NOT_CONSTRUCTED",
+    "weighted_cross_Krein_squeeze_factor": "CONSTRUCTED_ON_PAIRED_CORES",
+    "zero_mode_Krein_completion": "CONSTRUCTED"
+  },
+  "does_not_establish": [
+    "a bounded or positive-Hilbert-unitary implementation of the BT shear",
+    "the full nonlinear R_t rather than its covariant squeeze factor",
+    "a trace on the identity and continuum projectors from the finite-rank trace",
+    "that every possible semifinite or non-normal Born weight is obstructed",
+    "Eq. (19), its negation, or the physical neutral 1/48",
+    "a complete NLO probability or beyond-tree positivity",
+    "a gravitational or BRST lift",
+    "anything LORENTZIAN-CAUSAL",
+    "literature priority"
+  ],
+  "finite_rank_Born_trace": {
+    "cyclicity": "Tr_fin(FG)=Tr_fin(GF) whenever one factor is finite rank and both products preserve the paired cores",
+    "disposition": "CONSTRUCTED_ON_FINITE_RANK_CORE_IDEAL",
+    "does_not_extend_automatically_to": [
+      "the identity on the infinite carrier",
+      "continuum momentum-window projectors",
+      "arbitrary trace-class operators under the unbounded similarity S"
+    ],
+    "projection_transport": "Krein-self-adjoint finite-rank projections remain idempotent and Krein-self-adjoint",
+    "rank_one_operator": "Theta_(x,y) u=x [y,u]",
+    "trace": "Tr_fin Theta_(x,y)=[y,x]",
+    "transport": "S Theta_(x,y) S^-1=Theta_(Sx,Sy)",
+    "transported_trace": "Tr_fin Theta_(Sx,Sy)=[Sy,Sx]=[y,x]"
+  },
+  "lifecycle_state": "CLASSIFIED",
+  "missing_object_ledger": [
+    "a declared choice between a semifinite trace, relative detector weight, and non-normal thermodynamic functional",
+    "a normalization rule for continuum projectors compatible with that choice",
+    "proof of cyclicity on the chosen unbounded-operator domain",
+    "control of the unbounded squeeze similarity on the chosen trace ideal",
+    "the full nonlinear zero-mode-completed R_t pushforward",
+    "the Eq. (19) neutral-plus-negative decomposition on the same carrier",
+    "a regulator-independent continuum limit for the physical process operator"
+  ],
+  "next_gate": "Choose and construct a non-normalization architecture explicitly: either a semifinite trace with relative detector normalization, a local algebraic weight whose thermodynamic limit is proved, or a non-normal functional. Then transport the full zero-mode-completed nonlinear Eq. (19) projector on that same domain.",
+  "normalized_trace_extension_no_go": {
+    "coefficient_trace_branch": "tau_0(1)=1 extends to the shift algebra but any finite positive cyclic extension kills E_0",
+    "cyclic_consequence": "tau(E_n)=tau(E_0)=c for every integer n",
+    "disposition": "NO_FINITE_NORMALIZED_POSITIVE_CYCLIC_TRACE_WITH_NONZERO_ORBIT_RANK_ONE_WEIGHT",
+    "finite_rank_trace_branch": "Tr_fin(E_0)=1 but Tr_fin(1)=infinity and the shifts are outside its trace-class domain",
+    "hypotheses": [
+      "tau is cyclic on an algebra containing Z,Z^-1,E_0 and finite symmetric sums",
+      "tau(1)=1 is finite",
+      "tau is positive on the J_0-even projection cone"
+    ],
+    "matrix_units": "E_n=|e_n><e_n| on ell^2(Z)",
+    "positivity_bound": "0<=(2N+1)c<=1 for every N",
+    "symmetric_projection": "P_N=sum_(n=-N)^N E_n is J_0-even and has tau(P_N)=(2N+1)c",
+    "theorem": "c=0; every orbit-localized rank-one projection is trace-null",
+    "translate_bounds": [
+      {
+        "common_rank_one_weight_upper_bound_if_tau_identity_is_one": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "cutoff": 0,
+        "symmetric_projection_rank": 1
+      },
+      {
+        "common_rank_one_weight_upper_bound_if_tau_identity_is_one": {
+          "denominator": 3,
+          "numerator": 1
+        },
+        "cutoff": 1,
+        "symmetric_projection_rank": 3
+      },
+      {
+        "common_rank_one_weight_upper_bound_if_tau_identity_is_one": {
+          "denominator": 5,
+          "numerator": 1
+        },
+        "cutoff": 2,
+        "symmetric_projection_rank": 5
+      },
+      {
+        "common_rank_one_weight_upper_bound_if_tau_identity_is_one": {
+          "denominator": 7,
+          "numerator": 1
+        },
+        "cutoff": 3,
+        "symmetric_projection_rank": 7
+      },
+      {
+        "common_rank_one_weight_upper_bound_if_tau_identity_is_one": {
+          "denominator": 9,
+          "numerator": 1
+        },
+        "cutoff": 4,
+        "symmetric_projection_rank": 9
+      },
+      {
+        "common_rank_one_weight_upper_bound_if_tau_identity_is_one": {
+          "denominator": 11,
+          "numerator": 1
+        },
+        "cutoff": 5,
+        "symmetric_projection_rank": 11
+      },
+      {
+        "common_rank_one_weight_upper_bound_if_tau_identity_is_one": {
+          "denominator": 13,
+          "numerator": 1
+        },
+        "cutoff": 6,
+        "symmetric_projection_rank": 13
+      },
+      {
+        "common_rank_one_weight_upper_bound_if_tau_identity_is_one": {
+          "denominator": 15,
+          "numerator": 1
+        },
+        "cutoff": 7,
+        "symmetric_projection_rank": 15
+      },
+      {
+        "common_rank_one_weight_upper_bound_if_tau_identity_is_one": {
+          "denominator": 17,
+          "numerator": 1
+        },
+        "cutoff": 8,
+        "symmetric_projection_rank": 17
+      }
+    ],
+    "translation": "E_n=Z^n E_0 Z^-n"
+  },
+  "orbit_Krein_completion": {
+    "Hilbert_adjoint_of_Z": "Z^star=Z^-1",
+    "Hilbert_space": "ell^2(Z) with orthonormal basis e_n",
+    "Krein_adjoint_of_Z": "Z^dagger=Z",
+    "Laurent_core": "finite span of e_n identified with Q[Z,Z^-1]",
+    "boost_generator": "N e_n=n e_n with N^dagger=-N on the Laurent core",
+    "coefficient_functional": "tau_0(Z^n)=delta_(n,0) defines the pairing but is not the finite-rank operator trace",
+    "exact_rows": [
+      {
+        "J_image_index": 4,
+        "boost_test_m": 4,
+        "left_boost_pairing": {
+          "denominator": 1,
+          "numerator": 4
+        },
+        "left_shift_pairing": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "n": -4,
+        "positive_norm_squared": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "right_anti_boost_pairing": {
+          "denominator": 1,
+          "numerator": 4
+        },
+        "right_shift_pairing": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "shift_test_m": 3
+      },
+      {
+        "J_image_index": 3,
+        "boost_test_m": 3,
+        "left_boost_pairing": {
+          "denominator": 1,
+          "numerator": 3
+        },
+        "left_shift_pairing": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "n": -3,
+        "positive_norm_squared": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "right_anti_boost_pairing": {
+          "denominator": 1,
+          "numerator": 3
+        },
+        "right_shift_pairing": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "shift_test_m": 2
+      },
+      {
+        "J_image_index": 2,
+        "boost_test_m": 2,
+        "left_boost_pairing": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "left_shift_pairing": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "n": -2,
+        "positive_norm_squared": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "right_anti_boost_pairing": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "right_shift_pairing": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "shift_test_m": 1
+      },
+      {
+        "J_image_index": 1,
+        "boost_test_m": 1,
+        "left_boost_pairing": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "left_shift_pairing": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "n": -1,
+        "positive_norm_squared": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "right_anti_boost_pairing": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "right_shift_pairing": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "shift_test_m": 0
+      },
+      {
+        "J_image_index": 0,
+        "boost_test_m": 0,
+        "left_boost_pairing": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "left_shift_pairing": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "n": 0,
+        "positive_norm_squared": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "right_anti_boost_pairing": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "right_shift_pairing": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "shift_test_m": -1
+      },
+      {
+        "J_image_index": -1,
+        "boost_test_m": -1,
+        "left_boost_pairing": {
+          "denominator": 1,
+          "numerator": -1
+        },
+        "left_shift_pairing": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "n": 1,
+        "positive_norm_squared": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "right_anti_boost_pairing": {
+          "denominator": 1,
+          "numerator": -1
+        },
+        "right_shift_pairing": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "shift_test_m": -2
+      },
+      {
+        "J_image_index": -2,
+        "boost_test_m": -2,
+        "left_boost_pairing": {
+          "denominator": 1,
+          "numerator": -2
+        },
+        "left_shift_pairing": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "n": 2,
+        "positive_norm_squared": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "right_anti_boost_pairing": {
+          "denominator": 1,
+          "numerator": -2
+        },
+        "right_shift_pairing": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "shift_test_m": -3
+      },
+      {
+        "J_image_index": -3,
+        "boost_test_m": -3,
+        "left_boost_pairing": {
+          "denominator": 1,
+          "numerator": -3
+        },
+        "left_shift_pairing": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "n": 3,
+        "positive_norm_squared": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "right_anti_boost_pairing": {
+          "denominator": 1,
+          "numerator": -3
+        },
+        "right_shift_pairing": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "shift_test_m": -4
+      },
+      {
+        "J_image_index": -4,
+        "boost_test_m": -4,
+        "left_boost_pairing": {
+          "denominator": 1,
+          "numerator": -4
+        },
+        "left_shift_pairing": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "n": 4,
+        "positive_norm_squared": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "right_anti_boost_pairing": {
+          "denominator": 1,
+          "numerator": -4
+        },
+        "right_shift_pairing": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "shift_test_m": -5
+      }
+    ],
+    "fundamental_symmetry": "J_0 e_n=e_-n",
+    "indefinite_pairing": "[e_m,e_n]=delta_(m+n,0)",
+    "orbit_shift": "Z e_n=e_(n+1)",
+    "positive_product": "[e_m,J_0 e_n]=delta_(m,n)"
+  },
+  "provenance": {
+    "architecture_source": {
+      "source": "Lill arXiv:2208.03487v2",
+      "url": "https://arxiv.org/abs/2208.03487",
+      "use": "comparison boundary only; this certificate constructs a cross-Krein core directly"
+    },
+    "inputs": [
+      {
+        "path": "notes/bateman-turok-embedding.md",
+        "sha256": "af414aa3fc1346c025142ce0ce11288ed63326b5043f28b70fbfbaad4d4ec071"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EXTENDED_SQUEEZE_CARRIER_V1.json",
+        "sha256": "7726a654e959c69bf3a4f8096186fb2425208b5ceadea6b84869831c59601fae"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_ZERO_MODE_EQ19_TRILEMMA_V1.json",
+        "sha256": "31c5d45987bb484711912af5d51da1831f5632ef34278c755265fd190963edd6"
+      },
+      {
+        "path": "planning/work-items/reverse-physics-bateman-cross-krein-trace-limit.json",
+        "sha256": "173780a2417c20a99421f398f049852f43087607a6231e14575332abb5a9e2f3"
+      }
+    ],
+    "primary_source": {
+      "current_version_check": "Official arXiv API checked 2026-08-11: v1 only",
+      "equations": [
+        "Eqs. (19)--(20)",
+        "Appendix C Eqs. (31)--(34)"
+      ],
+      "source": "Bateman--Turok arXiv:2607.00096v1",
+      "url": "https://arxiv.org/abs/2607.00096"
+    },
+    "retrieval_date": "2026-08-11",
+    "source_commit": "3619f1d512dcdb5f57ec33ff340d2eb1a139cd4b"
+  },
+  "question": "Does the explicit infrared-weighted BT carrier support the covariant Appendix-C squeeze and a cyclic generalized-Born trace, and can that trace be continued normally to the thermodynamic representation?",
+  "report": "reverse_physics/reports/bt-cross-krein-trace-limit.md",
+  "result_kind": "exact weighted cross-Krein squeeze construction and normal-trace thermodynamic obstruction",
+  "schema": "reverse_physics/schema/reverse-physics-bt-cross-krein-trace-limit-v1.schema.json",
+  "schema_version": "reverse-physics-bt-cross-krein-trace-limit-v1",
+  "thermodynamic_trace_norm_barrier": {
+    "Krein_norm": "[Psi_V,Psi_V]=1",
+    "asymptotic_trace_norm": "||P_V||_1=exp(V ell+o(V)) diverges exponentially",
+    "candidate_pair_amplitude": "z_mu(p)=gamma mu^2/(p^2+mu^2), 0<gamma<1",
+    "derivative_witness": "d/dgamma integral_0^infinity x^2[-log(1-gamma^2/(1+x^2)^2)] dx=(pi/2)[sqrt(1+gamma)-sqrt(1-gamma)]",
+    "disposition": "NO_TRACE_NORM_THERMODYNAMIC_LIMIT_OF_THE_BT_NORMALIZED_KREIN_PROJECTION",
+    "exact_log_trace_norm_density": "ell(gamma,mu)=mu^3/(12pi)[(1+gamma)^(3/2)+(1-gamma)^(3/2)-2]",
+    "finite_rank_trace": "Tr_fin(P_V)=1",
+    "gamma_half_coefficient_times_mu_cubed_over_pi": {
+      "basis": [
+        "1",
+        "sqrt(2)",
+        "sqrt(3)",
+        "sqrt(6)"
+      ],
+      "coefficients": [
+        {
+          "denominator": 6,
+          "numerator": -1
+        },
+        {
+          "denominator": 48,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 16,
+          "numerator": 1
+        }
+      ]
+    },
+    "gamma_half_radical": "(3sqrt(6)+sqrt(2)-8)/48",
+    "gamma_half_rational_bounds": "1/80 < ell*pi/mu^3 < 1/48",
+    "gamma_half_shifted_y": "y=48 ell*pi/mu^3+8=3sqrt(6)+sqrt(2)",
+    "gamma_half_y_minimal_polynomial": "y^4-112y^2+2704=0",
+    "idempotence_cost": "dividing by [Psi_hat,Psi_hat] to restore a Krein projector returns P_V and its divergent trace norm",
+    "positive_norm_squared": "N_V=product_unordered_p (1-|z_p|^2)^-1",
+    "positive_normalization_cost": "for Psi_hat=Psi_V/sqrt(N_V), [Psi_hat,Psi_hat]=1/N_V and the unrenormalized rank-one trace tends to zero",
+    "positive_trace_norm": "||P_V||_1=||Psi_V||_H^2=N_V",
+    "positivity": "ell(gamma,mu)>0 for mu>0 and 0<gamma<1",
+    "transported_Krein_projection": "P_V=Theta_(Psi_V,Psi_V)",
+    "two_pair_normalized_Krein_norm_fixture": {
+      "denominator": 3,
+      "numerator": 2
+    },
+    "vacuum": "Psi_V=S_V(e_0 tensor |0>)"
+  },
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_cross_krein_trace_limit.py --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_cross_krein_trace_limit.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_cross_krein_trace_limit"
+  ]
+}

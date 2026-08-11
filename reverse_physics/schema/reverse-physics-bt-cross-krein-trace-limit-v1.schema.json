@@ -1,0 +1,264 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-cross-krein-trace-limit-v1.schema.json",
+  "title": "BT cross-Krein trace-limit certificate",
+  "type": "object",
+  "required": [
+    "certificate",
+    "schema_version",
+    "dependency_tags",
+    "lifecycle_state",
+    "result_kind",
+    "question",
+    "answer",
+    "orbit_Krein_completion",
+    "cross_Krein_squeeze_core",
+    "finite_rank_Born_trace",
+    "normalized_trace_extension_no_go",
+    "thermodynamic_trace_norm_barrier",
+    "disposition",
+    "missing_object_ledger",
+    "does_not_establish",
+    "next_gate",
+    "provenance",
+    "verification_commands",
+    "checks",
+    "report",
+    "schema"
+  ],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_CROSS_KREIN_TRACE_LIMIT_V1"},
+    "schema_version": {"const": "reverse-physics-bt-cross-krein-trace-limit-v1"},
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]
+    },
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "result_kind": {"$ref": "#/$defs/nonempty"},
+    "question": {"$ref": "#/$defs/nonempty"},
+    "answer": {"$ref": "#/$defs/nonempty"},
+    "orbit_Krein_completion": {
+      "type": "object",
+      "required": ["Hilbert_space", "Laurent_core", "indefinite_pairing", "fundamental_symmetry", "positive_product", "orbit_shift", "Hilbert_adjoint_of_Z", "Krein_adjoint_of_Z", "boost_generator", "coefficient_functional", "exact_rows"],
+      "properties": {
+        "Hilbert_space": {"$ref": "#/$defs/nonempty"},
+        "Laurent_core": {"$ref": "#/$defs/nonempty"},
+        "indefinite_pairing": {"$ref": "#/$defs/nonempty"},
+        "fundamental_symmetry": {"const": "J_0 e_n=e_-n"},
+        "positive_product": {"$ref": "#/$defs/nonempty"},
+        "orbit_shift": {"const": "Z e_n=e_(n+1)"},
+        "Hilbert_adjoint_of_Z": {"const": "Z^star=Z^-1"},
+        "Krein_adjoint_of_Z": {"const": "Z^dagger=Z"},
+        "boost_generator": {"$ref": "#/$defs/nonempty"},
+        "coefficient_functional": {"$ref": "#/$defs/nonempty"},
+        "exact_rows": {
+          "type": "array",
+          "minItems": 9,
+          "maxItems": 9,
+          "items": {"$ref": "#/$defs/orbit_row"}
+        }
+      },
+      "additionalProperties": false
+    },
+    "cross_Krein_squeeze_core": {
+      "type": "object",
+      "required": ["weighted_nonzero_mode_condition", "normalized_modes", "generator", "Krein_adjoint", "factorization", "domain", "operator_status", "Krein_inverse", "implemented_shears", "CCR_check", "scope", "exact_fixtures"],
+      "properties": {
+        "weighted_nonzero_mode_condition": {"$ref": "#/$defs/string_array"},
+        "normalized_modes": {"$ref": "#/$defs/string_array"},
+        "generator": {"$ref": "#/$defs/nonempty"},
+        "Krein_adjoint": {"const": "Q^dagger=-Q"},
+        "factorization": {"$ref": "#/$defs/nonempty"},
+        "domain": {"$ref": "#/$defs/nonempty"},
+        "operator_status": {"const": "DENSELY_DEFINED_CLOSABLE_WITH_KREIN_INVERSE_ON_ITS_GAUSSIAN_IMAGE_CORE"},
+        "Krein_inverse": {"$ref": "#/$defs/nonempty"},
+        "implemented_shears": {"$ref": "#/$defs/string_array"},
+        "CCR_check": {"$ref": "#/$defs/nonempty"},
+        "scope": {"$ref": "#/$defs/nonempty"},
+        "exact_fixtures": {
+          "type": "object",
+          "required": ["one_pair_z", "one_pair_positive_norm_squared", "one_pair_Krein_norm", "two_pair_z_values", "two_pair_positive_norm_squared", "two_pair_Krein_norm"],
+          "properties": {
+            "one_pair_z": {"$ref": "#/$defs/rational"},
+            "one_pair_positive_norm_squared": {"$ref": "#/$defs/rational"},
+            "one_pair_Krein_norm": {"$ref": "#/$defs/rational"},
+            "two_pair_z_values": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"$ref": "#/$defs/rational"}},
+            "two_pair_positive_norm_squared": {"$ref": "#/$defs/rational"},
+            "two_pair_Krein_norm": {"$ref": "#/$defs/rational"}
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "finite_rank_Born_trace": {
+      "type": "object",
+      "required": ["rank_one_operator", "trace", "cyclicity", "transport", "transported_trace", "projection_transport", "disposition", "does_not_extend_automatically_to"],
+      "properties": {
+        "rank_one_operator": {"$ref": "#/$defs/nonempty"},
+        "trace": {"$ref": "#/$defs/nonempty"},
+        "cyclicity": {"$ref": "#/$defs/nonempty"},
+        "transport": {"$ref": "#/$defs/nonempty"},
+        "transported_trace": {"$ref": "#/$defs/nonempty"},
+        "projection_transport": {"$ref": "#/$defs/nonempty"},
+        "disposition": {"const": "CONSTRUCTED_ON_FINITE_RANK_CORE_IDEAL"},
+        "does_not_extend_automatically_to": {"$ref": "#/$defs/string_array"}
+      },
+      "additionalProperties": false
+    },
+    "normalized_trace_extension_no_go": {
+      "type": "object",
+      "required": ["matrix_units", "translation", "hypotheses", "cyclic_consequence", "symmetric_projection", "positivity_bound", "theorem", "translate_bounds", "coefficient_trace_branch", "finite_rank_trace_branch", "disposition"],
+      "properties": {
+        "matrix_units": {"$ref": "#/$defs/nonempty"},
+        "translation": {"$ref": "#/$defs/nonempty"},
+        "hypotheses": {"$ref": "#/$defs/string_array"},
+        "cyclic_consequence": {"$ref": "#/$defs/nonempty"},
+        "symmetric_projection": {"$ref": "#/$defs/nonempty"},
+        "positivity_bound": {"$ref": "#/$defs/nonempty"},
+        "theorem": {"$ref": "#/$defs/nonempty"},
+        "translate_bounds": {"type": "array", "minItems": 9, "maxItems": 9, "items": {"$ref": "#/$defs/translate_row"}},
+        "coefficient_trace_branch": {"$ref": "#/$defs/nonempty"},
+        "finite_rank_trace_branch": {"$ref": "#/$defs/nonempty"},
+        "disposition": {"const": "NO_FINITE_NORMALIZED_POSITIVE_CYCLIC_TRACE_WITH_NONZERO_ORBIT_RANK_ONE_WEIGHT"}
+      },
+      "additionalProperties": false
+    },
+    "thermodynamic_trace_norm_barrier": {
+      "type": "object",
+      "required": ["vacuum", "Krein_norm", "positive_norm_squared", "transported_Krein_projection", "finite_rank_trace", "positive_trace_norm", "candidate_pair_amplitude", "exact_log_trace_norm_density", "derivative_witness", "positivity", "gamma_half_coefficient_times_mu_cubed_over_pi", "gamma_half_radical", "gamma_half_shifted_y", "gamma_half_y_minimal_polynomial", "gamma_half_rational_bounds", "asymptotic_trace_norm", "positive_normalization_cost", "idempotence_cost", "two_pair_normalized_Krein_norm_fixture", "disposition"],
+      "properties": {
+        "vacuum": {"$ref": "#/$defs/nonempty"},
+        "Krein_norm": {"const": "[Psi_V,Psi_V]=1"},
+        "positive_norm_squared": {"$ref": "#/$defs/nonempty"},
+        "transported_Krein_projection": {"$ref": "#/$defs/nonempty"},
+        "finite_rank_trace": {"const": "Tr_fin(P_V)=1"},
+        "positive_trace_norm": {"$ref": "#/$defs/nonempty"},
+        "candidate_pair_amplitude": {"$ref": "#/$defs/nonempty"},
+        "exact_log_trace_norm_density": {"$ref": "#/$defs/nonempty"},
+        "derivative_witness": {"$ref": "#/$defs/nonempty"},
+        "positivity": {"$ref": "#/$defs/nonempty"},
+        "gamma_half_coefficient_times_mu_cubed_over_pi": {"$ref": "#/$defs/algebraic"},
+        "gamma_half_radical": {"const": "(3sqrt(6)+sqrt(2)-8)/48"},
+        "gamma_half_shifted_y": {"$ref": "#/$defs/nonempty"},
+        "gamma_half_y_minimal_polynomial": {"const": "y^4-112y^2+2704=0"},
+        "gamma_half_rational_bounds": {"const": "1/80 < ell*pi/mu^3 < 1/48"},
+        "asymptotic_trace_norm": {"$ref": "#/$defs/nonempty"},
+        "positive_normalization_cost": {"$ref": "#/$defs/nonempty"},
+        "idempotence_cost": {"$ref": "#/$defs/nonempty"},
+        "two_pair_normalized_Krein_norm_fixture": {"$ref": "#/$defs/rational"},
+        "disposition": {"const": "NO_TRACE_NORM_THERMODYNAMIC_LIMIT_OF_THE_BT_NORMALIZED_KREIN_PROJECTION"}
+      },
+      "additionalProperties": false
+    },
+    "disposition": {
+      "type": "object",
+      "required": ["zero_mode_Krein_completion", "weighted_cross_Krein_squeeze_factor", "finite_rank_cyclic_Born_trace", "finite_normalized_trace_on_full_orbit_operator_algebra", "normal_trace_class_thermodynamic_limit", "semifinite_relative_or_non_normal_weight", "full_nonlinear_R_t", "Eq19_in_continuum", "physical_neutral_one_over_48"],
+      "properties": {
+        "zero_mode_Krein_completion": {"const": "CONSTRUCTED"},
+        "weighted_cross_Krein_squeeze_factor": {"const": "CONSTRUCTED_ON_PAIRED_CORES"},
+        "finite_rank_cyclic_Born_trace": {"const": "CONSTRUCTED"},
+        "finite_normalized_trace_on_full_orbit_operator_algebra": {"const": "OBSTRUCTED_IF_ORBIT_RANK_ONE_WEIGHT_IS_NONZERO"},
+        "normal_trace_class_thermodynamic_limit": {"const": "OBSTRUCTED"},
+        "semifinite_relative_or_non_normal_weight": {"const": "NOT_CONSTRUCTED"},
+        "full_nonlinear_R_t": {"const": "NOT_CONSTRUCTED"},
+        "Eq19_in_continuum": {"const": "NOT_REPRODUCED"},
+        "physical_neutral_one_over_48": {"const": "NOT_ESTABLISHED"}
+      },
+      "additionalProperties": false
+    },
+    "missing_object_ledger": {"$ref": "#/$defs/string_array"},
+    "does_not_establish": {"$ref": "#/$defs/string_array"},
+    "next_gate": {"$ref": "#/$defs/nonempty"},
+    "provenance": {
+      "type": "object",
+      "required": ["source_commit", "retrieval_date", "inputs", "primary_source", "architecture_source"],
+      "properties": {
+        "source_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "retrieval_date": {"const": "2026-08-11"},
+        "inputs": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/input"}},
+        "primary_source": {"$ref": "#/$defs/source"},
+        "architecture_source": {"$ref": "#/$defs/architecture_source"}
+      },
+      "additionalProperties": false
+    },
+    "verification_commands": {"$ref": "#/$defs/string_array"},
+    "checks": {
+      "type": "object",
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"const": 27},
+        "total": {"const": 27},
+        "failures": {"const": []},
+        "details": {"type": "object", "minProperties": 27, "maxProperties": 27, "additionalProperties": {"const": true}}
+      },
+      "additionalProperties": false
+    },
+    "report": {"const": "reverse_physics/reports/bt-cross-krein-trace-limit.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-cross-krein-trace-limit-v1.schema.json"}
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "nonempty": {"type": "string", "minLength": 1},
+    "string_array": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/nonempty"}},
+    "rational": {
+      "type": "object",
+      "required": ["numerator", "denominator"],
+      "properties": {"numerator": {"type": "integer"}, "denominator": {"type": "integer", "minimum": 1}},
+      "additionalProperties": false
+    },
+    "algebraic": {
+      "type": "object",
+      "required": ["basis", "coefficients"],
+      "properties": {
+        "basis": {"const": ["1", "sqrt(2)", "sqrt(3)", "sqrt(6)"]},
+        "coefficients": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/rational"}}
+      },
+      "additionalProperties": false
+    },
+    "orbit_row": {
+      "type": "object",
+      "required": ["n", "J_image_index", "positive_norm_squared", "shift_test_m", "left_shift_pairing", "right_shift_pairing", "boost_test_m", "left_boost_pairing", "right_anti_boost_pairing"],
+      "properties": {
+        "n": {"type": "integer"},
+        "J_image_index": {"type": "integer"},
+        "positive_norm_squared": {"$ref": "#/$defs/rational"},
+        "shift_test_m": {"type": "integer"},
+        "left_shift_pairing": {"$ref": "#/$defs/rational"},
+        "right_shift_pairing": {"$ref": "#/$defs/rational"},
+        "boost_test_m": {"type": "integer"},
+        "left_boost_pairing": {"$ref": "#/$defs/rational"},
+        "right_anti_boost_pairing": {"$ref": "#/$defs/rational"}
+      },
+      "additionalProperties": false
+    },
+    "translate_row": {
+      "type": "object",
+      "required": ["cutoff", "symmetric_projection_rank", "common_rank_one_weight_upper_bound_if_tau_identity_is_one"],
+      "properties": {
+        "cutoff": {"type": "integer", "minimum": 0},
+        "symmetric_projection_rank": {"type": "integer", "minimum": 1},
+        "common_rank_one_weight_upper_bound_if_tau_identity_is_one": {"$ref": "#/$defs/rational"}
+      },
+      "additionalProperties": false
+    },
+    "input": {
+      "type": "object",
+      "required": ["path", "sha256"],
+      "properties": {"path": {"$ref": "#/$defs/nonempty"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}},
+      "additionalProperties": false
+    },
+    "source": {
+      "type": "object",
+      "required": ["source", "url", "equations", "current_version_check"],
+      "properties": {"source": {"$ref": "#/$defs/nonempty"}, "url": {"format": "uri"}, "equations": {"$ref": "#/$defs/string_array"}, "current_version_check": {"$ref": "#/$defs/nonempty"}},
+      "additionalProperties": false
+    },
+    "architecture_source": {
+      "type": "object",
+      "required": ["source", "url", "use"],
+      "properties": {"source": {"$ref": "#/$defs/nonempty"}, "url": {"format": "uri"}, "use": {"$ref": "#/$defs/nonempty"}},
+      "additionalProperties": false
+    }
+  }
+}

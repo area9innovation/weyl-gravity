@@ -1,0 +1,19 @@
+{
+  "id": "sf:program/work/reverse-physics-bateman-cross-krein-trace-limit",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "reverse-physics",
+    "state": "ACTIVE",
+    "objective": "Construct the zero-mode-completed weighted BT squeeze on an explicit Krein carrier, determine the largest canonical cyclic Born-trace domain it supports, and classify whether that trace survives the thermodynamic limit.",
+    "depends_on": ["REVERSE_PHYSICS_BT_EXTENDED_SQUEEZE_CARRIER_V1", "REVERSE_PHYSICS_BT_ZERO_MODE_EQ19_TRILEMMA_V1", "Bateman--Turok Appendix C and Eqs. (19)--(20)"],
+    "activates": ["cross-Krein realization of the Appendix-C squeeze", "zero-mode-completed generalized-Born trace", "Eq. (19) continuum projector transport", "physical neutral 1/48 coefficient"],
+    "current_gate": "CROSS_KREIN_TRACE_LIMIT: complete the Laurent orbit to a genuine Krein space, build the weighted squeeze on a common core, construct the finite-rank cyclic trace, and test normalized trace extension and trace-norm convergence as volume tends to infinity.",
+    "stop_condition": "Certify an explicit cross-Krein squeeze implementation and cyclic trace through the thermodynamic limit, or prove the first exact trace-extension or normal-limit obstruction while retaining the strongest finite-regulator construction.",
+    "forbid": "no finite-rank trace promoted to a trace on the full operator algebra; no finite-volume identity promoted to a thermodynamic limit; no positive normalization allowed to silently change Krein idempotence; no squeeze-factor construction called the full nonlinear R_t; no scalar-to-gravity, BRST, or LORENTZIAN-CAUSAL transfer",
+    "allowed_paths": ["reverse_physics/", "notes/bateman-turok-embedding.md", "paper/05-interaction-obstructions.tex", "paper/05-interaction-obstructions.pdf", "paper/06-einstein-weyl-interaction-obstructions.tex", "paper/06-einstein-weyl-interaction-obstructions.pdf", "planning/work-items/reverse-physics-bateman-cross-krein-trace-limit.json", "planning/events/"],
+    "resource_hint": "Use the exact orbit completion ell^2(Z) with J e_n=e_-n and the rho_mu weighted oscillator Fock space. Separate algebraic finite-rank cyclicity, finite normalized trace extension, and positive trace-norm convergence. Run sequentially under ulimit -v 500000.",
+    "input_commit": "3619f1d512dcdb5f57ec33ff340d2eb1a139cd4b",
+    "stream": "reverse-physics"
+  }
+}
