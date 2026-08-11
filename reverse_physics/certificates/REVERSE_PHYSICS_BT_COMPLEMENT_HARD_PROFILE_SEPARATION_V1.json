@@ -1,0 +1,184 @@
+{
+  "answer": "No on the exact shared fixture. The two complete eight-point hard fixtures have identical soft and inner data, including (a0,a1,tau1)=(1,4,10), and differ only in one adjacent hard invariant h=33 versus h=34. The certified first-emission formula therefore gives the same rho=819/4000 on both. The forced public-to-physical complement has the same rank-two cross-Krein Gram [[0,-rho],[-rho,-2]] and the unique endpoint law gives the same c1=7/4+rho/2=14819/8000. Nevertheless the complete all-threshold eight-point coefficients are -6699/128 and -7149/128, differing by 225/64. Hence the fourth-jump hard dependence is not a function of rho alone and cannot be identified with the rho-dependent complement parameter. The two obstructions are compatible only in a richer architecture: a rank-two cross-Krein fibre controlled by rho over a base that retains at least one additional hard-profile coordinate h, with the fourth jump allowed to vary in that coordinate. This exact equal-rho/non-equal-response square is a parameter-separation witness, not a global dimension theorem or a dynamically derived BT bundle. The profile-valued jump map, pairing with the complement, physical normalization, Eq. (19), complete probability, gravity, and Lorentzian causality remain open.",
+  "certificate": "REVERSE_PHYSICS_BT_COMPLEMENT_HARD_PROFILE_SEPARATION_V1",
+  "checks": {
+    "details": {
+      "additional_hard_profile_coordinate_is_required": true,
+      "all_predecessor_certificates_pass": true,
+      "combined_architecture_is_not_claimed_dynamic": true,
+      "final_inner_coefficients_are_distinct": true,
+      "forced_complement_is_rank_two": true,
+      "hard_coordinate_is_absent_from_rho_law": true,
+      "hard_fixtures_differ_only_in_final_adjacent_invariant": true,
+      "inner_difference_is_225_over_64": true,
+      "input_hashes_pinned": true,
+      "rho_formula_imported_and_recomputed": true,
+      "rho_only_identification_is_refuted": true,
+      "same_forced_cross_krein_gram": true,
+      "same_rho_for_both_hard_fixtures": true,
+      "same_unique_endpoint_coefficient": true,
+      "shared_inner_data_are_one_four_ten": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 15,
+    "total": 15
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "disposition": {
+    "BT_derived_profile_jump": "NOT_CONSTRUCTED",
+    "Eq19_all_orders": "NOT_PROVED",
+    "combined_profile_cross_Krein_architecture": "TYPE_FIXED_NOT_CONSTRUCTED",
+    "complement_and_hard_profile_parameter_separation": "PROVED_ON_SHARED_FIXTURE",
+    "physical_fourth_probability": "NOT_NORMALIZED",
+    "rho_only_unification": "EXACTLY_REFUTED_ON_SHARED_FIXTURE"
+  },
+  "does_not_establish": [
+    "a global dimension theorem for every BT kinematic base",
+    "a unique hard-profile coordinate away from the two exact fixtures",
+    "a dynamically derived profile-valued fourth jump",
+    "a BT derivation of the cross-Krein complement",
+    "a normalized fourth-event probability or Cox decision",
+    "a complete physical 2->6 probability",
+    "a spacetime Moller, LSZ, or S operator",
+    "the all-order Eq. (19)",
+    "a gravitational or BRST lift",
+    "anything LORENTZIAN-CAUSAL",
+    "literature priority"
+  ],
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "Construct a history-resolved profile section over a base retaining rho and the witnessed hard coordinate, valued in or paired with the certified rank-two cross-Krein complement. The first falsifiable test is whether a single exact map reproduces both all-threshold coefficients at fixed rho while preserving G_missing(rho), the charge grading, the endpoint law, and the existing one-through-three-emission column. Algebraic compatibility is insufficient: the map must be derived from a declared BT zero-mode, higher-composite, or eight-point quotient operator before it can advance Eq. (19).",
+  "provenance": {
+    "inputs": [
+      {
+        "path": "planning/work-items/reverse-physics-bateman-complement-hard-profile-separation.json",
+        "sha256": "2dcabbfa154469b31bc35751606376686e0874cb30083a9dcde7332a9e0b1ea2"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EIGHT_POINT_INNER_THRESHOLD_OBSTRUCTION_V1.json",
+        "sha256": "6d6aaef8d83327d4de4ae37ee2b0de7987ca70db274530bf82c8ec839ba4d9d4"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_PHYSICAL_COLLINEAR_OPERATOR_FACTORIZATION_V1.json",
+        "sha256": "d0f8786c62e24e37c198f4a286aa2e3b718f13decf5352d811cf554d485ed79e"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_FINITE_PHYSICAL_MOLLER_COLUMN_V1.json",
+        "sha256": "5bda31d257bebbe89a32553636286bf92e845b316988f1edd1a640b2c8e6c8ed"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_ENDPOINT_COMPLEMENT_MATCHING_V1.json",
+        "sha256": "24c949591129a585c15100b7c2d58b38bbf6d94c31d3476e4ceb3f52afdbfc93"
+      }
+    ],
+    "retrieval_date": "2026-08-11",
+    "source_commit": "4da7c887"
+  },
+  "question": "Can the hard-profile dependence that survives all four eight-point thresholds be identified with the single rho dependence of the cross-Krein complement required by the finite physical Moller compression?",
+  "report": "reverse_physics/reports/bt-complement-hard-profile-separation.md",
+  "result_kind": "exact shared-fixture parameter-separation theorem between the rho-dependent cross-Krein complement and the all-threshold BT eight-point hard-profile coefficient",
+  "schema": "reverse_physics/schema/reverse-physics-bt-complement-hard-profile-separation-v1.schema.json",
+  "schema_version": "reverse-physics-bt-complement-hard-profile-separation-v1",
+  "separation_theorem": {
+    "conclusion": "THE_ALL_THRESHOLD_HARD_PROFILE_IS_NOT_RHO_ONLY",
+    "equal_complement_gram": "G_missing(33)=G_missing(34)",
+    "equal_complement_parameter": "rho(33)=rho(34)=819/4000",
+    "equal_endpoint_coefficient": "c1(33)=c1(34)=14819/8000",
+    "smallest_justified_architecture": {
+      "base_data": [
+        "rho",
+        "at_least_one_additional_hard_profile_coordinate_h"
+      ],
+      "fibre": "rank_two_cross_Krein_complement_with_G_missing(rho)",
+      "fourth_jump": "profile_section_allowed_to_depend_on_h",
+      "status": "ALGEBRAIC_PREFLIGHT_NOT_DERIVED_FROM_BT_DYNAMICS"
+    },
+    "unequal_fourth_response": "kappa4(33)-kappa4(34)=225/64"
+  },
+  "shared_fixture": {
+    "all_other_hard_entries_equal": true,
+    "endpoint_c1": {
+      "denominator": 8000,
+      "numerator": 14819
+    },
+    "forced_missing_gram": [
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 4000,
+          "numerator": -819
+        }
+      ],
+      [
+        {
+          "denominator": 4000,
+          "numerator": -819
+        },
+        {
+          "denominator": 1,
+          "numerator": -2
+        }
+      ]
+    ],
+    "forced_missing_gram_determinant": {
+      "denominator": 16000000,
+      "numerator": -670761
+    },
+    "forced_missing_gram_rank": 2,
+    "hard_coordinate_name": "final_adjacent_invariant_h",
+    "hard_coordinate_values": [
+      {
+        "denominator": 1,
+        "numerator": 33
+      },
+      {
+        "denominator": 1,
+        "numerator": 34
+      }
+    ],
+    "inner_coefficient_difference": {
+      "denominator": 64,
+      "numerator": 225
+    },
+    "inner_coefficients": [
+      {
+        "denominator": 128,
+        "numerator": -6699
+      },
+      {
+        "denominator": 128,
+        "numerator": -7149
+      }
+    ],
+    "inner_data": {
+      "a0": {
+        "denominator": 1,
+        "numerator": 1
+      },
+      "a1": {
+        "denominator": 1,
+        "numerator": 4
+      },
+      "tau1": {
+        "denominator": 1,
+        "numerator": 10
+      }
+    },
+    "rho": {
+      "denominator": 4000,
+      "numerator": 819
+    },
+    "rho_formula": "-(a0 - a1)**2*(a0**2 - 2*a0*a1 - 2*a0*tau + a1**2 - 2*a1*tau)/(4*tau**3)"
+  },
+  "verification_commands": [
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/bt_complement_hard_profile_separation.py --check",
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/verify_bt_complement_hard_profile_separation.py",
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 -m unittest -v reverse_physics.tests.test_bt_complement_hard_profile_separation"
+  ]
+}

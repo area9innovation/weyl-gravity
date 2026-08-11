@@ -1,0 +1,165 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-complement-hard-profile-separation-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "certificate",
+    "schema_version",
+    "dependency_tags",
+    "lifecycle_state",
+    "result_kind",
+    "question",
+    "answer",
+    "shared_fixture",
+    "separation_theorem",
+    "disposition",
+    "does_not_establish",
+    "next_gate",
+    "provenance",
+    "verification_commands",
+    "checks",
+    "report",
+    "schema"
+  ],
+  "properties": {
+    "certificate": {
+      "const": "REVERSE_PHYSICS_BT_COMPLEMENT_HARD_PROFILE_SEPARATION_V1"
+    },
+    "schema_version": {
+      "const": "reverse-physics-bt-complement-hard-profile-separation-v1"
+    },
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "result_kind": {"type": "string", "minLength": 140},
+    "question": {"type": "string", "minLength": 150},
+    "answer": {"type": "string", "minLength": 1100},
+    "shared_fixture": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "inner_data",
+        "hard_coordinate_name",
+        "hard_coordinate_values",
+        "all_other_hard_entries_equal",
+        "rho_formula",
+        "rho",
+        "endpoint_c1",
+        "forced_missing_gram",
+        "forced_missing_gram_rank",
+        "forced_missing_gram_determinant",
+        "inner_coefficients",
+        "inner_coefficient_difference"
+      ],
+      "properties": {
+        "inner_data": {
+          "const": {
+            "a0": {"numerator": 1, "denominator": 1},
+            "a1": {"numerator": 4, "denominator": 1},
+            "tau1": {"numerator": 10, "denominator": 1}
+          }
+        },
+        "hard_coordinate_name": {"const": "final_adjacent_invariant_h"},
+        "hard_coordinate_values": {
+          "const": [
+            {"numerator": 33, "denominator": 1},
+            {"numerator": 34, "denominator": 1}
+          ]
+        },
+        "all_other_hard_entries_equal": {"const": true},
+        "rho_formula": {
+          "const": "-(a0 - a1)**2*(a0**2 - 2*a0*a1 - 2*a0*tau + a1**2 - 2*a1*tau)/(4*tau**3)"
+        },
+        "rho": {"const": {"numerator": 819, "denominator": 4000}},
+        "endpoint_c1": {"const": {"numerator": 14819, "denominator": 8000}},
+        "forced_missing_gram": {
+          "const": [
+            [
+              {"numerator": 0, "denominator": 1},
+              {"numerator": -819, "denominator": 4000}
+            ],
+            [
+              {"numerator": -819, "denominator": 4000},
+              {"numerator": -2, "denominator": 1}
+            ]
+          ]
+        },
+        "forced_missing_gram_rank": {"const": 2},
+        "forced_missing_gram_determinant": {
+          "const": {"numerator": -670761, "denominator": 16000000}
+        },
+        "inner_coefficients": {
+          "const": [
+            {"numerator": -6699, "denominator": 128},
+            {"numerator": -7149, "denominator": 128}
+          ]
+        },
+        "inner_coefficient_difference": {
+          "const": {"numerator": 225, "denominator": 64}
+        }
+      }
+    },
+    "separation_theorem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "equal_complement_parameter",
+        "equal_complement_gram",
+        "equal_endpoint_coefficient",
+        "unequal_fourth_response",
+        "conclusion",
+        "smallest_justified_architecture"
+      ],
+      "properties": {
+        "equal_complement_parameter": {"const": "rho(33)=rho(34)=819/4000"},
+        "equal_complement_gram": {"const": "G_missing(33)=G_missing(34)"},
+        "equal_endpoint_coefficient": {"const": "c1(33)=c1(34)=14819/8000"},
+        "unequal_fourth_response": {"const": "kappa4(33)-kappa4(34)=225/64"},
+        "conclusion": {"const": "THE_ALL_THRESHOLD_HARD_PROFILE_IS_NOT_RHO_ONLY"},
+        "smallest_justified_architecture": {
+          "const": {
+            "base_data": ["rho", "at_least_one_additional_hard_profile_coordinate_h"],
+            "fibre": "rank_two_cross_Krein_complement_with_G_missing(rho)",
+            "fourth_jump": "profile_section_allowed_to_depend_on_h",
+            "status": "ALGEBRAIC_PREFLIGHT_NOT_DERIVED_FROM_BT_DYNAMICS"
+          }
+        }
+      }
+    },
+    "disposition": {
+      "const": {
+        "rho_only_unification": "EXACTLY_REFUTED_ON_SHARED_FIXTURE",
+        "complement_and_hard_profile_parameter_separation": "PROVED_ON_SHARED_FIXTURE",
+        "combined_profile_cross_Krein_architecture": "TYPE_FIXED_NOT_CONSTRUCTED",
+        "BT_derived_profile_jump": "NOT_CONSTRUCTED",
+        "physical_fourth_probability": "NOT_NORMALIZED",
+        "Eq19_all_orders": "NOT_PROVED"
+      }
+    },
+    "does_not_establish": {"type": "array", "minItems": 11, "maxItems": 11},
+    "next_gate": {"type": "string", "minLength": 450},
+    "provenance": {
+      "type": "object",
+      "required": ["source_commit", "retrieval_date", "inputs"],
+      "properties": {
+        "source_commit": {"pattern": "^[0-9a-f]{7,40}$"},
+        "retrieval_date": {"const": "2026-08-11"},
+        "inputs": {"type": "array", "minItems": 5, "maxItems": 5}
+      }
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "maxItems": 3},
+    "checks": {
+      "type": "object",
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"const": 15},
+        "total": {"const": 15},
+        "failures": {"const": []},
+        "details": {"type": "object", "minProperties": 15, "maxProperties": 15}
+      }
+    },
+    "report": {"const": "reverse_physics/reports/bt-complement-hard-profile-separation.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-complement-hard-profile-separation-v1.schema.json"}
+  }
+}
