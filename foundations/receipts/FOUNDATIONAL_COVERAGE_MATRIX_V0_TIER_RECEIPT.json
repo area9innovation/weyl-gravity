@@ -1,0 +1,94 @@
+{
+  "receipt_id": "FOUNDATIONAL_COVERAGE_MATRIX_V0_TIER_RECEIPT",
+  "schema_version": "foundational-tier-receipt-v0",
+  "created": "2026-08-11",
+  "result_id": "FOUNDATIONAL_COVERAGE_MATRIX_V0",
+  "dependency_tags": ["LOCAL-ALGEBRAIC"],
+  "base_commit": "8eb1012623d21a9958955f872bda0105b42dc16d",
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "elapsed_seconds": "0.20",
+      "command": "parse the two changed data JSON files and the schema; compile the verifier and tests from source; git diff --check on the eight scoped paths",
+      "checks": [
+        "all changed structured-data files parse",
+        "changed Python source compiles without emitting bytecode",
+        "git diff --check passes on the scoped paths"
+      ]
+    },
+    "tier_1_verifier": {
+      "status": "PASS",
+      "elapsed_seconds": "0.02",
+      "command": "python3 foundations/verify_foundational_coverage_matrix.py",
+      "result": "14/14 structural, provenance, source-link, coverage, score, ordering, hotspot-boundary, dependency-tag, and negative-control checks passed"
+    },
+    "tier_1_mutation_tests": {
+      "status": "PASS",
+      "elapsed_seconds": "0.05",
+      "command": "python3 -m unittest -v foundations.tests.test_foundational_coverage_matrix",
+      "result": "10/10 tests passed, including unknown-source, six-axis promotion, score drift, choice-free promotion, missing unresolved-source control, missing stop condition, Lorentzian promotion, and report-boundary mutations"
+    },
+    "tier_1_json_schema": {
+      "status": "PASS",
+      "elapsed_seconds": "0.09",
+      "command": "validate foundations/results/FOUNDATIONAL_COVERAGE_MATRIX_V0.json with Draft202012Validator against foundations/schema/foundational-coverage-matrix-v0.schema.json",
+      "result": "coverage matrix validates"
+    },
+    "tier_1_remote_source_pins": {
+      "status": "PASS",
+      "elapsed_seconds": "1.65",
+      "command": "stream the seven CONTENT_PINNED supplement locators through sha256sum and compare with the recorded digests",
+      "result": "7/7 retrieved byte streams matched"
+    },
+    "tier_2": {
+      "status": "NOT_RUN",
+      "criterion": "No mathematical input, shared operator, existing schema, generated artifact, theorem, or lifecycle state consumed by an established certificate chain changed. This is a new LITERATURE_SCOPED coverage and triage result."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No freeze, release, theorem promotion, lifecycle promotion, or shared core algebra change."
+    }
+  },
+  "auxiliary_rails": [
+    {
+      "name": "science_forge_work_drafts",
+      "status": "FAIL",
+      "elapsed_seconds": "0.22",
+      "command": "SF_PROGRAM=/home/alstrup/area9/weyl-gravity/planning/work-items s-f work-drafts",
+      "failure": "The shared tango/forge sfc source still does not compile: forge/lib/alloc/arena.forge:401:16 reports that sanitize_thread is not a compile-time name.",
+      "effect": "No Science Forge conformance pass is claimed. This failure is external to the scoped foundations files and remains fail-closed."
+    }
+  ],
+  "content_hashes": {
+    "foundations/README.md": "4aca6db0fa9ba12b3d3ab24200d00f0eca75d3c903dc2d61fcd03b1c3d3464e3",
+    "foundations/literature-supplement-known-attempts-v1.json": "3f4a836af7c815e9628f0c0b1ee10bc5de7d8ecceba9df8d0757f766a0394dc7",
+    "foundations/results/FOUNDATIONAL_COVERAGE_MATRIX_V0.json": "0f1a30aaf1e3a4f1fdba76952ef44d5f43372dc9c7323ff2000f7fcc31b95fe9",
+    "foundations/schema/foundational-coverage-matrix-v0.schema.json": "08e39ca4fde2984c3546971b8f1b40dce0214656699fd13dd6f0580756f2815e",
+    "foundations/reports/foundational-coverage-and-low-hanging-fruit.md": "a4cb3963cabd879759d0f9a03195b3851cd81519325eaf27d8725ecc6db5e11d",
+    "foundations/verify_foundational_coverage_matrix.py": "d0983e9675327a3233cd8a6fe9e87cab8ed3387f3867b59049990abe62ed17c7",
+    "foundations/tests/test_foundational_coverage_matrix.py": "c414403ccc6391e5298b004c867100e29279863539ef072a5a70e8b4da58b3c8"
+  },
+  "external_source_pinning": {
+    "status": "PARTIAL_FAIL_CLOSED",
+    "content_pinned_remote_sources": 7,
+    "metadata_only_sources": 3,
+    "missing_objects": [
+      "Brown-Simpson separable Hahn-Banach full text",
+      "Richman-Bridges constructive Gleason full text",
+      "Haag-Kastler algebraic QFT full text"
+    ],
+    "effect": "The missing full-text pins block a source or corpus freeze, but do not block this representative literature-scoped checkpoint."
+  },
+  "scope_receipt": {
+    "pre_existing_unrelated_paths_excluded": [
+      "planning/work-items/reverse-physics-bateman-abel-fock-physical-intertwiner.json",
+      "reverse_physics/bt_abel_fock_physical_intertwiner.py",
+      "reverse_physics/certificates/REVERSE_PHYSICS_BT_ABEL_FOCK_PHYSICAL_INTERTWINER_V1.json",
+      "reverse_physics/schema/reverse-physics-bt-abel-fock-physical-intertwiner-v1.schema.json",
+      "reverse_physics/tests/test_bt_abel_fock_physical_intertwiner.py",
+      "reverse_physics/verify_bt_abel_fock_physical_intertwiner.py"
+    ],
+    "changed_scope": "foundations/ only"
+  },
+  "claim_boundary": "This receipt checks a representative coverage matrix and heuristic work ordering. It independently verifies no cited theorem, proves no weakest base or reversal, and promotes no constructive, choice-free, finite-physics, quantum, or Lorentzian claim."
+}

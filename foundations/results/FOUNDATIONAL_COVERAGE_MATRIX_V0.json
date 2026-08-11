@@ -1,0 +1,489 @@
+{
+  "schema_version": "foundational-coverage-matrix-v0",
+  "result_id": "FOUNDATIONAL_COVERAGE_MATRIX_V0",
+  "result_kind": "LITERATURE_COVERAGE_AND_TRIAGE",
+  "lifecycle": "LITERATURE_SCOPED",
+  "dependency_tags": ["LOCAL-ALGEBRAIC"],
+  "created": "2026-08-11",
+  "repository_base_commit": "8eb1012623d21a9958955f872bda0105b42dc16d",
+  "question": "Which established programmes vary which foundational axes, where are the intersections sparse, and which bounded repository case studies can most cheaply turn an unlabeled dependency into a theorem-level relation?",
+  "method": {
+    "coverage_statuses": {
+      "DIRECT": "The representative work deliberately varies or classifies this axis.",
+      "PARTIAL": "The axis is constrained or used centrally but is not itself fully classified.",
+      "ADJACENT": "The work changes a nearby structure while leaving this axis fixed or implicit.",
+      "ABSENT": "The work expressly does not address this axis at its stated scope.",
+      "UNKNOWN": "The present corpus is insufficient to classify the axis."
+    },
+    "axis_order": ["LOGIC", "SET_EXISTENCE", "INFINITY", "CARRIER_GEOMETRY", "PHYSICAL_POSTULATES", "TARGET_CLAIMS"],
+    "scoring": {
+      "status": "HEURISTIC_PRIORITY_NOT_EVIDENCE",
+      "dimensions": {
+        "scientific_leverage": "1 low to 5 high",
+        "repository_readiness": "1 low to 5 high",
+        "scope_boundedness": "1 diffuse to 5 one sharply testable package",
+        "literature_underexposure": "1 crowded to 5 sparse in the reviewed intersections",
+        "dependency_cost": "1 low to 5 high"
+      },
+      "formula": "scientific_leverage + repository_readiness + scope_boundedness + literature_underexposure - dependency_cost",
+      "warning": "Scores order work; they do not measure truth, importance in nature, or global literature volume."
+    }
+  },
+  "attempts": [
+    {
+      "id": "ATTEMPT-REVERSE-PHYSICS",
+      "programme": "Reverse physics",
+      "representative_sources": ["carcassi-aidala-2022", "repo-physics-vs-math", "repo-weakenable-base"],
+      "target_level": "physical laws and their sufficient or necessary physical assumptions",
+      "contribution": "Reverses from a law toward physical assumptions and supplies the outer methodology for the combined programme.",
+      "coverage": {
+        "LOGIC": {"status": "ABSENT", "note": "Metalogic is not the classified target."},
+        "SET_EXISTENCE": {"status": "ABSENT", "note": "No weak set-existence base or reversal is supplied."},
+        "INFINITY": {"status": "ADJACENT", "note": "Carrier constraints can mention finiteness, but infinity principles are not calibrated."},
+        "CARRIER_GEOMETRY": {"status": "PARTIAL", "note": "Mathematical structures are separated from physical assumptions in the local ledgers."},
+        "PHYSICAL_POSTULATES": {"status": "DIRECT", "note": "This is the programme's central reversed axis."},
+        "TARGET_CLAIMS": {"status": "DIRECT", "note": "Targets are level-specific physical laws or conclusions."}
+      },
+      "unresolved_intersection": "It does not yet say which logical, choice, comprehension, or infinity principles the displayed mathematics requires.",
+      "boundary": "Methodology, not a formal reversal in this repository."
+    },
+    {
+      "id": "ATTEMPT-SECOND-ORDER-RM",
+      "programme": "Reverse mathematics and foundational analysis",
+      "representative_sources": ["simpson-2009", "eastaugh-2018"],
+      "target_level": "theorems of countable ordinary mathematics over explicit subsystems of second-order arithmetic",
+      "contribution": "Provides the base-theory, sufficiency, reversal, and equivalence discipline needed to make foundational dependencies precise.",
+      "coverage": {
+        "LOGIC": {"status": "PARTIAL", "note": "Usually classical logic is held fixed while comprehension strength varies."},
+        "SET_EXISTENCE": {"status": "DIRECT", "note": "This is the primary classified axis."},
+        "INFINITY": {"status": "PARTIAL", "note": "Countable codes represent separable analysis, but arbitrary set-sized mathematics is outside the usual target."},
+        "CARRIER_GEOMETRY": {"status": "PARTIAL", "note": "Many analytic carriers are coded theorem by theorem."},
+        "PHYSICAL_POSTULATES": {"status": "ABSENT", "note": "Established physical postulates are not normally reversed."},
+        "TARGET_CLAIMS": {"status": "DIRECT", "note": "Precise theorem statements are classified over a base."}
+      },
+      "unresolved_intersection": "Very little of relativistic gauge theory or QFT has been translated into this theorem-by-theorem calibration.",
+      "boundary": "The Big Five do not predetermine the answer for a newly encoded physics theorem."
+    },
+    {
+      "id": "ATTEMPT-RM-BANACH-SEPARATION",
+      "programme": "Reverse mathematics of separable functional analysis",
+      "representative_sources": ["brown-simpson-1986", "humphreys-simpson-1999", "humphreys-simpson-1996"],
+      "target_level": "Hahn-Banach, convex separation, and weak-star closure statements",
+      "contribution": "Shows that nearby functional-analysis statements range from WKL_0 to ACA_0 and Pi^1_1 comprehension depending on the target and representation.",
+      "coverage": {
+        "LOGIC": {"status": "ADJACENT", "note": "Classical logic remains fixed."},
+        "SET_EXISTENCE": {"status": "DIRECT", "note": "Precise comprehension or compactness strength is reversed."},
+        "INFINITY": {"status": "PARTIAL", "note": "Separable coding is central, but does not collapse all analytic strength."},
+        "CARRIER_GEOMETRY": {"status": "DIRECT", "note": "Banach duals, convex sets, and their representations are explicit."},
+        "PHYSICAL_POSTULATES": {"status": "ABSENT", "note": "No physical axiom is part of the reversal."},
+        "TARGET_CLAIMS": {"status": "DIRECT", "note": "Each theorem form is a distinct calibrated target."}
+      },
+      "unresolved_intersection": "Physics papers often use a functional or separator without declaring which theorem form or whether an explicit finite witness avoids it.",
+      "boundary": "One cannot label all duality arguments WKL_0 or all separable analysis weak."
+    },
+    {
+      "id": "ATTEMPT-COMPUTABLE-FUNCTIONAL-ANALYSIS",
+      "programme": "Computable and Weihrauch analysis",
+      "representative_sources": ["brattka-2008"],
+      "target_level": "uniform computational content of separable functional-analysis theorems",
+      "contribution": "Refines mere provability by asking what computational operation realizes a theorem uniformly.",
+      "coverage": {
+        "LOGIC": {"status": "PARTIAL", "note": "Computability semantics constrains acceptable realizers."},
+        "SET_EXISTENCE": {"status": "DIRECT", "note": "The result is compared with reverse-mathematical compactness strength."},
+        "INFINITY": {"status": "PARTIAL", "note": "Represented separable spaces and infinite information are explicit."},
+        "CARRIER_GEOMETRY": {"status": "DIRECT", "note": "The separable Banach-space operation is the target."},
+        "PHYSICAL_POSTULATES": {"status": "ABSENT", "note": "No physical assumptions are encoded."},
+        "TARGET_CLAIMS": {"status": "DIRECT", "note": "Uniform extension is classified as an operation."}
+      },
+      "unresolved_intersection": "Repository certificates compute witnesses, but their relationship to uniform computability classes has not been stated.",
+      "boundary": "Weihrauch degree, reverse-mathematical equivalence, and constructive derivability are different relations."
+    },
+    {
+      "id": "ATTEMPT-ZF-HILBERT",
+      "programme": "Hilbert spaces in ZF without countable Choice",
+      "representative_sources": ["blackadar-farah-karagila-2026"],
+      "target_level": "Hilbert spaces and operator theory in ZF",
+      "contribution": "Exposes which familiar basis and operator facts cease to be definition-level certainties without countable Choice.",
+      "coverage": {
+        "LOGIC": {"status": "ADJACENT", "note": "Classical logic is retained."},
+        "SET_EXISTENCE": {"status": "DIRECT", "note": "ZF is contrasted with countable Choice."},
+        "INFINITY": {"status": "DIRECT", "note": "Nonseparable and weakly Loeb or pathological infinite carriers are central."},
+        "CARRIER_GEOMETRY": {"status": "DIRECT", "note": "Hilbert-space structure is the object of study."},
+        "PHYSICAL_POSTULATES": {"status": "ABSENT", "note": "No physical state or observable principle selects the examples."},
+        "TARGET_CLAIMS": {"status": "DIRECT", "note": "Named Hilbert and operator statements are separated."}
+      },
+      "unresolved_intersection": "Concrete physics spaces with explicit countable mode labels may avoid pathologies, but that avoidance has to be proved rather than presumed.",
+      "boundary": "Pathological ZF Hilbert spaces are not evidence that the repository's explicit energy-mode space is pathological."
+    },
+    {
+      "id": "ATTEMPT-ZF-SEPARABLE-CSTAR",
+      "programme": "Separable C*-algebras in ZF",
+      "representative_sources": ["blackadar-farah-2026", "haag-kastler-1964"],
+      "target_level": "separable observable algebras, representations, spectra, and functional calculus without countable Choice",
+      "contribution": "Gives a recent algebra-first route for separating robust separable C*-facts from nonseparable state-space failures.",
+      "coverage": {
+        "LOGIC": {"status": "ADJACENT", "note": "The metatheory remains classical."},
+        "SET_EXISTENCE": {"status": "DIRECT", "note": "ZF without countable Choice is explicit."},
+        "INFINITY": {"status": "DIRECT", "note": "Separable versus nonseparable is a decisive boundary."},
+        "CARRIER_GEOMETRY": {"status": "DIRECT", "note": "C*-algebraic versus represented Hilbert formulations are separated."},
+        "PHYSICAL_POSTULATES": {"status": "PARTIAL", "note": "Observable locality motivates algebra-first QFT, but the ZF paper is not a physical reconstruction."},
+        "TARGET_CLAIMS": {"status": "DIRECT", "note": "Representation, spectrum, functional calculus, and state claims are distinguished."}
+      },
+      "unresolved_intersection": "The net, state, GNS, dynamics, and local-normality chain for an actual AQFT has not been audited in ZF.",
+      "boundary": "Separable algebra results do not certify a separable net representation or a physical state."
+    },
+    {
+      "id": "ATTEMPT-BISHOP-QM",
+      "programme": "Bishop-style constructive quantum mechanics",
+      "representative_sources": ["bridges-svozil-2000", "richman-bridges-1999"],
+      "target_level": "constructive Hilbert subspaces, projections, quantum logic, and Gleason representation",
+      "contribution": "Demonstrates that selected Hilbert/probability results can survive intuitionistic proof standards after careful reformulation.",
+      "coverage": {
+        "LOGIC": {"status": "DIRECT", "note": "Intuitionistic logic and constructive existence are central."},
+        "SET_EXISTENCE": {"status": "PARTIAL", "note": "Bishop constructivism constrains existence but is not merely ZF minus Choice."},
+        "INFINITY": {"status": "PARTIAL", "note": "Hilbert-space constructions appear, but continuum QFT is not supplied."},
+        "CARRIER_GEOMETRY": {"status": "DIRECT", "note": "Subspaces, projections, and measures on Hilbert carriers are reformulated."},
+        "PHYSICAL_POSTULATES": {"status": "PARTIAL", "note": "Quantum probability and proposition structure motivate the targets."},
+        "TARGET_CLAIMS": {"status": "DIRECT", "note": "Specific constructive theorem forms are proved."}
+      },
+      "unresolved_intersection": "There is no constructive BV-BFV, gauge-QFT, renormalized time-ordering, or Weyl-gravity chain in the reviewed sources.",
+      "boundary": "Constructive Gleason is not constructive QFT."
+    },
+    {
+      "id": "ATTEMPT-CONSTRUCTIVE-GELFAND",
+      "programme": "Constructive and localic Gelfand duality",
+      "representative_sources": ["coquand-spitters-2009", "henry-2014"],
+      "target_level": "commutative C*-algebras and point-free spectra",
+      "contribution": "Shows that a point-set spectrum can be replaced by a locale so that commutative duality survives constructively, including a non-unital extension.",
+      "coverage": {
+        "LOGIC": {"status": "DIRECT", "note": "Constructive validity is the point."},
+        "SET_EXISTENCE": {"status": "PARTIAL", "note": "Point-free reformulation avoids some point-existence commitments."},
+        "INFINITY": {"status": "PARTIAL", "note": "Infinite algebras remain, but arbitrary actual infinity is not eliminated."},
+        "CARRIER_GEOMETRY": {"status": "DIRECT", "note": "Locale replaces point-set spectrum."},
+        "PHYSICAL_POSTULATES": {"status": "ADJACENT", "note": "Classical contexts motivate quantum use, but no physical derivation is made."},
+        "TARGET_CLAIMS": {"status": "DIRECT", "note": "A precise duality theorem is reformulated."}
+      },
+      "unresolved_intersection": "Noncommutative local algebras, dynamics, fields, states, and renormalization remain beyond this commutative bridge.",
+      "boundary": "A localic spectrum is not a finite spectrum and does not select an interpretation of quantum theory."
+    },
+    {
+      "id": "ATTEMPT-TOPOS-AQT",
+      "programme": "Topos algebraic quantum theory",
+      "representative_sources": ["heunen-landsman-spitters-2009"],
+      "target_level": "an algebraic quantum system represented internally in a topos",
+      "contribution": "Jointly changes internal logic and spectral geometry while retaining an algebraic quantum starting point.",
+      "coverage": {
+        "LOGIC": {"status": "DIRECT", "note": "The internal logic is intuitionistic Heyting logic."},
+        "SET_EXISTENCE": {"status": "PARTIAL", "note": "Internal/external foundations are distinguished but not reduced to one ZF-choice calibration."},
+        "INFINITY": {"status": "ADJACENT", "note": "The construction is not a finitist replacement."},
+        "CARRIER_GEOMETRY": {"status": "DIRECT", "note": "Localic spectra and contextual commutative carriers replace a single classical spectrum."},
+        "PHYSICAL_POSTULATES": {"status": "PARTIAL", "note": "The algebraic quantum structure is input rather than fully operationally derived."},
+        "TARGET_CLAIMS": {"status": "DIRECT", "note": "State/proposition reformulation is explicit."}
+      },
+      "unresolved_intersection": "No reviewed work carries the full local BV complex and its anomaly/QME hierarchy into this internal logic.",
+      "boundary": "Internal intuitionistic reformulation does not mean every external proof is constructive."
+    },
+    {
+      "id": "ATTEMPT-SDG-GR",
+      "programme": "Synthetic differential geometry and intuitionistic general relativity",
+      "representative_sources": ["grinkevich-1996"],
+      "target_level": "Riemannian geometry and Einstein equations on formal manifolds in a topos",
+      "contribution": "Provides a rare direct bridge between changed logic/geometry and a relativistic field equation.",
+      "coverage": {
+        "LOGIC": {"status": "DIRECT", "note": "Topos-internal intuitionistic logic is explicit."},
+        "SET_EXISTENCE": {"status": "DIRECT", "note": "The ambient topos and smooth infinitesimals replace ordinary set-based smooth analysis."},
+        "INFINITY": {"status": "PARTIAL", "note": "Infinitesimals are changed; infinity is not eliminated."},
+        "CARRIER_GEOMETRY": {"status": "DIRECT", "note": "Formal manifolds and synthetic differential geometry are the carriers."},
+        "PHYSICAL_POSTULATES": {"status": "PARTIAL", "note": "Einstein geometry is represented, not reconstructed from operational axioms."},
+        "TARGET_CLAIMS": {"status": "DIRECT", "note": "Classical Einstein equations are the field-theory target."}
+      },
+      "unresolved_intersection": "The route has little visible contact with gauge fixing, BV cohomology, propagators, quantum states, or Weyl gravity.",
+      "boundary": "An intuitionistic model of classical GR does not certify a choice-free or constructive quantum gravity."
+    },
+    {
+      "id": "ATTEMPT-OPERATIONAL-QM",
+      "programme": "Operational-probabilistic reconstruction of quantum theory",
+      "representative_sources": ["hardy-2001", "chiribella-dariano-perinotti-2011"],
+      "target_level": "finite-dimensional quantum formalism derived from operational or informational axioms",
+      "contribution": "Makes Hilbert structure derived rather than primitive and identifies continuity or purification as physics-facing inputs.",
+      "coverage": {
+        "LOGIC": {"status": "ABSENT", "note": "Proof logic is not varied."},
+        "SET_EXISTENCE": {"status": "UNKNOWN", "note": "The logical strength of reconstruction proofs is not classified here."},
+        "INFINITY": {"status": "DIRECT", "note": "The principal reconstructions are finite-dimensional, with continuity still doing work."},
+        "CARRIER_GEOMETRY": {"status": "DIRECT", "note": "Quantum linear/Hilbert structure is reconstructed."},
+        "PHYSICAL_POSTULATES": {"status": "DIRECT", "note": "Operational or informational principles are explicit inputs."},
+        "TARGET_CLAIMS": {"status": "DIRECT", "note": "Finite-dimensional quantum theory is the reconstruction target."}
+      },
+      "unresolved_intersection": "No reviewed reconstruction simultaneously derives its mathematical carrier and proves the weakest logical/set-existence base of the derivation.",
+      "boundary": "Finite operational reconstruction is not continuum interacting QFT."
+    },
+    {
+      "id": "ATTEMPT-FINITE-FIELD-QM",
+      "programme": "Finite-field discrete quantum phase space",
+      "representative_sources": ["gibbons-hoffman-wootters-2004"],
+      "target_level": "finite-dimensional Wigner kinematics and mutually unbiased bases",
+      "contribution": "Changes continuum phase-space geometry to finite fields while retaining an exact quantum kinematics for prime-power dimensions.",
+      "coverage": {
+        "LOGIC": {"status": "ABSENT", "note": "Classical proof logic is unchanged."},
+        "SET_EXISTENCE": {"status": "ABSENT", "note": "No weak-foundation calibration is attempted."},
+        "INFINITY": {"status": "DIRECT", "note": "The system and phase space are finite."},
+        "CARRIER_GEOMETRY": {"status": "DIRECT", "note": "Finite fields replace real phase-space axes."},
+        "PHYSICAL_POSTULATES": {"status": "PARTIAL", "note": "Quantum covariance and measurement structure guide the construction."},
+        "TARGET_CLAIMS": {"status": "DIRECT", "note": "Discrete Wigner and basis properties are exact finite targets."}
+      },
+      "unresolved_intersection": "There is no continuum-limit theorem connecting this kinematics to the repository's Lorentzian or conformal field theory.",
+      "boundary": "Finite-dimensional exactness does not establish finite fundamental physics."
+    },
+    {
+      "id": "ATTEMPT-KREIN-QUANTUM",
+      "programme": "Krein and ghost-parity quantum architectures",
+      "representative_sources": ["esmeral-ferrer-wagner-2015", "bateman-turok-2026", "repo-physics-vs-math"],
+      "target_level": "indefinite pairing, positive Hilbert majorant, adjoint, probability, and implementability",
+      "contribution": "Changes positivity geometry and makes the fundamental symmetry part of the physical/mathematical architecture.",
+      "coverage": {
+        "LOGIC": {"status": "ABSENT", "note": "The metatheory normally remains classical."},
+        "SET_EXISTENCE": {"status": "UNKNOWN", "note": "Existence versus explicit choice of fundamental decompositions is not classified."},
+        "INFINITY": {"status": "PARTIAL", "note": "Finite regulators, infinite-index completions, and inequivalent Fock carriers are distinguished."},
+        "CARRIER_GEOMETRY": {"status": "DIRECT", "note": "Indefinite product plus Hilbert majorant is central."},
+        "PHYSICAL_POSTULATES": {"status": "DIRECT", "note": "Ghost parity, adjoint, and probability prescriptions are proposed physical structure."},
+        "TARGET_CLAIMS": {"status": "DIRECT", "note": "Positivity, trace, implementability, and transition coefficients are separated."}
+      },
+      "unresolved_intersection": "The literature and repository have extensive Krein work but almost no explicit weak-choice audit of the chosen fundamental symmetry or completion.",
+      "boundary": "Krein is not non-Hilbert, non-choice, constructive, or finite by definition."
+    },
+    {
+      "id": "ATTEMPT-REPO-EXACT-BV",
+      "programme": "Exact finite classical BV-BFV certificates",
+      "representative_sources": ["repo-physics-vs-math", "repo-weakenable-base"],
+      "target_level": "finite rational nilpotency, contraction, cohomology, pairing, and local-algebraic witnesses",
+      "contribution": "Already replaces many existence arguments with explicit finite matrices and retained witnesses, making a weak-base upper-bound audit unusually tractable.",
+      "coverage": {
+        "LOGIC": {"status": "UNKNOWN", "note": "The code uses decidable exact identities, but no formal weak logic has been declared."},
+        "SET_EXISTENCE": {"status": "ADJACENT", "note": "Explicit finite witnesses plausibly avoid choice, but that is not yet a certified relation."},
+        "INFINITY": {"status": "DIRECT", "note": "Finite local algebra is carefully separated from analytic completion."},
+        "CARRIER_GEOMETRY": {"status": "DIRECT", "note": "Finite complexes and pairings are explicit."},
+        "PHYSICAL_POSTULATES": {"status": "PARTIAL", "note": "Physical and geometric imports are already ledgered."},
+        "TARGET_CLAIMS": {"status": "DIRECT", "note": "Each certificate has a precise claim boundary."}
+      },
+      "unresolved_intersection": "No certificate states the weakest arithmetic/logic needed to check its exact witness or separates producer computation from a minimal checker at that foundational level.",
+      "boundary": "Finite exact implementation is evidence of tractability, not yet a constructive or reverse-mathematical theorem."
+    },
+    {
+      "id": "ATTEMPT-REPO-GREEN",
+      "programme": "Lorentzian Green-hyperbolic and causal BV architecture",
+      "representative_sources": ["repo-physics-vs-math"],
+      "target_level": "advanced/retarded Green operators, causal support, formal duals, and BV-compatible homotopies",
+      "contribution": "The repository already decomposes exact symbol algebra from the analytic existence claims and records explicit open Green-operator gates.",
+      "coverage": {
+        "LOGIC": {"status": "UNKNOWN", "note": "No intuitionistic or reverse-mathematical PDE foundation is fixed."},
+        "SET_EXISTENCE": {"status": "UNKNOWN", "note": "The proof strength of Green-operator existence and support arguments is unaudited."},
+        "INFINITY": {"status": "DIRECT", "note": "Distributional sections, support spaces, and continuum spacetime are unavoidable at the target level."},
+        "CARRIER_GEOMETRY": {"status": "DIRECT", "note": "Bundles, complexes, Sobolev/distributional carriers, and formal duals are explicit."},
+        "PHYSICAL_POSTULATES": {"status": "DIRECT", "note": "Causality and locality determine the required support properties."},
+        "TARGET_CLAIMS": {"status": "DIRECT", "note": "Green existence, compatibility, and full Lorentzian certification are separated."}
+      },
+      "unresolved_intersection": "This is scientifically central and deeply underexposed, but a full reversal is expensive because even the ordinary analytic construction is incomplete in the open auxiliary blocks.",
+      "boundary": "A principal-symbol or finite-mode certificate cannot establish a Lorentzian Green operator."
+    },
+    {
+      "id": "ATTEMPT-SOLOVAY-MEASURABILITY",
+      "programme": "Regularity of sets of reals in ZF plus dependent choice",
+      "representative_sources": ["solovay-1970"],
+      "target_level": "relative-consistency model with universal Lebesgue measurability",
+      "contribution": "Shows that weakening Choice can radically alter continuum regularity, while also showing that 'drop Choice' is not a uniquely specified foundation.",
+      "coverage": {
+        "LOGIC": {"status": "ADJACENT", "note": "Classical logic is retained."},
+        "SET_EXISTENCE": {"status": "DIRECT", "note": "ZF, dependent choice, and a stronger metatheoretic consistency assumption are explicit."},
+        "INFINITY": {"status": "DIRECT", "note": "All sets of reals and measure are central."},
+        "CARRIER_GEOMETRY": {"status": "ADJACENT", "note": "Measure-space regularity changes, not quantum carrier geometry directly."},
+        "PHYSICAL_POSTULATES": {"status": "ABSENT", "note": "No empirical measurability postulate is encoded."},
+        "TARGET_CLAIMS": {"status": "DIRECT", "note": "A precise relative consistency target is established."}
+      },
+      "unresolved_intersection": "Physics uses selected measurable structures, not arbitrary subsets of reals; the precise bridge to observables must be stated before drawing physical conclusions.",
+      "boundary": "Dropping Choice does not alone make every set measurable."
+    }
+  ],
+  "repository_hotspots": {
+    "scope": "case-insensitive file counts outside foundations/ and __pycache__; counts are navigation evidence, not theorem evidence",
+    "command_template": "rg -l -i --glob '!foundations/**' --glob '!**/__pycache__/**' PATTERN . | wc -l",
+    "counts": [
+      {"topic": "Krein or fundamental symmetry", "pattern": "Krein|fundamental symmetry", "files": 689},
+      {"topic": "Green operator or Green function", "pattern": "Green operator|Green function", "files": 296},
+      {"topic": "spectral theorem or functional calculus", "pattern": "spectral theorem|functional calculus", "files": 45},
+      {"topic": "compactness or separability", "pattern": "compactness|separab", "files": 52},
+      {"topic": "Hahn-Banach, Zorn, or axiom of choice", "pattern": "Hahn[- ]Banach|Zorn|axiom of choice", "files": 1}
+    ],
+    "interpretation": "The carrier and analytic machinery is pervasive, while explicit foundational dependency vocabulary is nearly absent. This supports an audit opportunity, not a claim that every matching file hides a use of Choice."
+  },
+  "opportunities": [
+    {
+      "rank": 1,
+      "id": "OP-EXACT-BV-WEAK-BASELINE",
+      "title": "Weak-base audit of one finite exact BV certificate",
+      "scores": {"scientific_leverage": 5, "repository_readiness": 5, "scope_boundedness": 5, "literature_underexposure": 5, "dependency_cost": 1, "priority_score": 19},
+      "why_low_hanging": "The certified matrices, rational arithmetic, cocycle witnesses, and negative controls already exist; the new work is to expose the checker-level proof obligations and name a weak base.",
+      "first_artifact": "Choose one small nilpotency/contraction/cohomology certificate, emit a proof-dependency DAG, and write an independent checker using only finite integer or rational identities.",
+      "candidate_relation": "SUFFICIENT_OVER_BASE",
+      "stop_condition": "Do not claim constructivity until the chosen base, encoding, induction, equality decisions, and checker correctness statement are explicit."
+    },
+    {
+      "rank": 2,
+      "id": "OP-KREIN-EXPLICIT-J-AUDIT",
+      "title": "Choice audit of the explicit energy-mode Krein fundamental symmetry",
+      "scores": {"scientific_leverage": 5, "repository_readiness": 5, "scope_boundedness": 5, "literature_underexposure": 5, "dependency_cost": 2, "priority_score": 18},
+      "why_low_hanging": "The repository defines J directly as +1 on E and -1 on A,L. This may avoid any existential selection of maximal positive and negative subspaces at the finite-block layer.",
+      "first_artifact": "Separate explicit mode labels, finite truncations, the countable l2 direct sum, density, completion, and Fock second quantization; classify each dependency independently.",
+      "candidate_relation": "AVOIDED_BY_REFORMULATION",
+      "stop_condition": "Do not infer that the infinite completion, an arbitrary Krein space, or the physical Born/trace construction is choice-free from the explicit finite J formula."
+    },
+    {
+      "rank": 3,
+      "id": "OP-SEPARATION-WITNESS-CROSSWALK",
+      "title": "Hahn-Banach versus explicit-witness crosswalk",
+      "scores": {"scientific_leverage": 5, "repository_readiness": 5, "scope_boundedness": 5, "literature_underexposure": 4, "dependency_cost": 2, "priority_score": 17},
+      "why_low_hanging": "Reverse mathematics supplies sharp WKL_0 and ACA_0 controls, while repository certificates usually solve finite rational systems and retain explicit separating or left-null witnesses.",
+      "first_artifact": "For one no-go or cohomology certificate, show whether the conclusion uses an explicit finite dual witness and therefore avoids an appeal to a general separable separation theorem.",
+      "candidate_relation": "AVOIDED_BY_REFORMULATION",
+      "stop_condition": "An absence of the words Hahn-Banach or Zorn is not an avoidance proof; the displayed derivation must be traced."
+    },
+    {
+      "rank": 4,
+      "id": "OP-SEPARABLE-CSTAR-STATE-CHAIN",
+      "title": "ZF audit of the separable C*-algebra to physical-state chain",
+      "scores": {"scientific_leverage": 5, "repository_readiness": 3, "scope_boundedness": 4, "literature_underexposure": 5, "dependency_cost": 3, "priority_score": 14},
+      "why_low_hanging": "Recent ZF results provide a ready theorem ledger, and algebra-first quantum formulations let state existence, GNS representation, state selection, and dynamics be split instead of bundled.",
+      "first_artifact": "Build a five-link table for one separable observable algebra: algebra construction, positive functional existence, GNS, chosen physical state, and local-normality or dynamics.",
+      "candidate_relation": "UNKNOWN",
+      "stop_condition": "Do not promote algebraic functional calculus to existence of the physical state or AQFT representation."
+    },
+    {
+      "rank": 5,
+      "id": "OP-SPECTRAL-FRAGMENT-AUDIT",
+      "title": "Fragment the spectral theorem actually used",
+      "scores": {"scientific_leverage": 5, "repository_readiness": 4, "scope_boundedness": 3, "literature_underexposure": 5, "dependency_cost": 3, "priority_score": 14},
+      "why_low_hanging": "Many repository uses are finite diagonalization, polynomial spectral mapping, or an explicitly given grading rather than the full spectral-measure theorem.",
+      "first_artifact": "Classify one spectral claim as finite characteristic-polynomial algebra, bounded continuous functional calculus, compact self-adjoint decomposition, or projection-valued measure construction.",
+      "candidate_relation": "USED_BY_DISPLAYED_PROOF",
+      "stop_condition": "Do not assign the strength of a full spectral theorem to a finite exact diagonalization, or conversely."
+    },
+    {
+      "rank": 6,
+      "id": "OP-OPERATIONAL-RECONSTRUCTION-STRENGTH",
+      "title": "Logical-strength audit of one operational reconstruction",
+      "scores": {"scientific_leverage": 4, "repository_readiness": 2, "scope_boundedness": 4, "literature_underexposure": 4, "dependency_cost": 3, "priority_score": 11},
+      "why_low_hanging": "The physical postulates are already explicit, so a proof audit could reveal which continuity, compactness, and separation principles are silently mathematical rather than operational.",
+      "first_artifact": "Select one finite-dimensional reconstruction lemma and classify its use of continuity, extrema, compactness, and real-number completeness.",
+      "candidate_relation": "USED_BY_DISPLAYED_PROOF",
+      "stop_condition": "Do not claim that an operational axiom physically implies a set-existence axiom without a formal reversal over a shared base."
+    },
+    {
+      "rank": 7,
+      "id": "OP-GREEN-OPERATOR-FOUNDATIONS",
+      "title": "Foundational audit of one Green-operator existence step",
+      "scores": {"scientific_leverage": 5, "repository_readiness": 4, "scope_boundedness": 2, "literature_underexposure": 5, "dependency_cost": 5, "priority_score": 11},
+      "why_low_hanging": "The repository has an unusually explicit analytic gate and exact support requirements, but the target still depends on nontrivial continuum PDE existence and duality.",
+      "first_artifact": "Audit a completed normally-hyperbolic scalar or finite-rank bundle theorem before touching the open full BV witness; list energy estimate, completion, uniqueness, duality, and support dependencies.",
+      "candidate_relation": "USED_BY_DISPLAYED_PROOF",
+      "stop_condition": "This is a high-value second wave, not the first theorem: no finite-symbol computation may be promoted to LORENTZIAN-CAUSAL."
+    },
+    {
+      "rank": 8,
+      "id": "OP-FINITE-FIELD-WEYL-BRIDGE",
+      "title": "Finite-field versus finite-mode Weyl comparison",
+      "scores": {"scientific_leverage": 3, "repository_readiness": 2, "scope_boundedness": 4, "literature_underexposure": 3, "dependency_cost": 3, "priority_score": 9},
+      "why_low_hanging": "Both sides have exact finite algebra, but they discretize different things and no bridge is present.",
+      "first_artifact": "Write a non-equivalence ledger comparing finite mode cutoff, finite field phase space, finite-dimensional Hilbert space, and continuum limit obligations.",
+      "candidate_relation": "UNKNOWN",
+      "stop_condition": "Do not treat a regulator, a finite carrier, and a fundamental rejection of actual infinity as interchangeable."
+    },
+    {
+      "rank": 9,
+      "id": "OP-TOPOS-WEYL-BV",
+      "title": "Topos-internal Weyl BV reformulation",
+      "scores": {"scientific_leverage": 4, "repository_readiness": 1, "scope_boundedness": 2, "literature_underexposure": 5, "dependency_cost": 5, "priority_score": 7},
+      "why_low_hanging": "The intersection is genuinely sparse, but it requires rebuilding substantial differential, homological, distributional, and quantum machinery.",
+      "first_artifact": "Only a glossary and obstruction ledger should be attempted before any formal construction.",
+      "candidate_relation": "UNKNOWN",
+      "stop_condition": "Do not start here while finite exact and explicit-Krein audits can yield sharper results at a fraction of the cost."
+    }
+  ],
+  "recommended_sequence": [
+    {
+      "phase": "A",
+      "opportunities": ["OP-EXACT-BV-WEAK-BASELINE", "OP-SEPARATION-WITNESS-CROSSWALK"],
+      "reason": "Establish one positive sufficiency upper bound and one avoidance control using finite exact data."
+    },
+    {
+      "phase": "B",
+      "opportunities": ["OP-KREIN-EXPLICIT-J-AUDIT", "OP-SPECTRAL-FRAGMENT-AUDIT"],
+      "reason": "Move one layer outward into countable completion without conflating explicit grading with arbitrary basis selection."
+    },
+    {
+      "phase": "C",
+      "opportunities": ["OP-SEPARABLE-CSTAR-STATE-CHAIN", "OP-GREEN-OPERATOR-FOUNDATIONS"],
+      "reason": "Audit the first genuinely analytic and state-existence bridges after the method has controls."
+    }
+  ],
+  "coverage_findings": [
+    {
+      "id": "CF01",
+      "statement": "No representative attempt in this matrix is DIRECT on all six axes.",
+      "status": "CORPUS_OBSERVATION",
+      "does_not_establish": "No theorem says a six-axis programme is impossible or absent from the entire literature."
+    },
+    {
+      "id": "CF02",
+      "statement": "Operational reconstructions directly vary physical postulates and carrier geometry but leave proof-theoretic and choice strength unclassified in the reviewed corpus.",
+      "status": "CORPUS_OBSERVATION",
+      "does_not_establish": "Their proofs are not thereby strong, nonconstructive, or Choice-dependent."
+    },
+    {
+      "id": "CF03",
+      "statement": "Reverse functional analysis gives theorem-level calibrations, but physical postulates are absent from those reversals.",
+      "status": "CORPUS_OBSERVATION",
+      "does_not_establish": "The cited calibrations transfer automatically to physics uses of similar vocabulary."
+    },
+    {
+      "id": "CF04",
+      "statement": "The reviewed Krein work directly varies carrier geometry while leaving weak-choice strength unknown, despite this repository having unusually explicit fundamental symmetries and finite blocks.",
+      "status": "CORPUS_OBSERVATION",
+      "does_not_establish": "The infinite Krein-Fock construction is choice-free."
+    },
+    {
+      "id": "CF05",
+      "statement": "The easiest rigorous entry point is the finite exact certificate layer, not a global foundational reconstruction of continuum QFT.",
+      "status": "HEURISTIC_TRIAGE",
+      "does_not_establish": "The easiest package is the most physically fundamental one."
+    }
+  ],
+  "claim_flags": {
+    "coverage_matrix_populated": true,
+    "priority_triage_recorded": true,
+    "literature_review_complete": false,
+    "formal_reverse_mathematics_result": false,
+    "constructive_certificate_proved": false,
+    "choice_free_krein_completion": false,
+    "physical_postulate_implies_choice": false,
+    "finite_physics_established": false,
+    "lorentzian_claim": false
+  },
+  "assumptions": [
+    "The representative sources are correctly identified by the two ledgers and support only the bounded statements recorded there.",
+    "Coverage statuses describe the selected sources, not entire fields or all versions of a programme.",
+    "Repository keyword counts were made at the stated base commit with the displayed patterns and exclusions.",
+    "Priority scores are reproducible arithmetic over subjective ordinal inputs and are used only for sequencing."
+  ],
+  "does_not_establish": [
+    "An exhaustive or bibliometrically representative literature review.",
+    "A theorem that no earlier combined reverse-physics and reverse-mathematics programme exists.",
+    "A weakest foundation for any Weyl, Bateman-Turok, Krein, BV-BFV, spectral, C*-algebraic, or Lorentzian result.",
+    "That an explicit finite computation is automatically constructive or formalizable in RCA_0.",
+    "That Choice is physically necessary or dispensable.",
+    "Any QME restoration, residual quantum transfer, state construction, coefficient, scattering, or LORENTZIAN-CAUSAL result."
+  ],
+  "source_ledgers": [
+    "foundations/literature-ledger.json",
+    "foundations/literature-supplement-known-attempts-v1.json"
+  ],
+  "human_report": "foundations/reports/foundational-coverage-and-low-hanging-fruit.md"
+}

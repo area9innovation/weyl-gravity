@@ -27,6 +27,20 @@ python3 foundations/verify_foundational_assumption_atlas.py
 python3 -m unittest foundations.tests.test_foundational_assumption_atlas
 ```
 
+The first populated comparison is
+[`reports/foundational-coverage-and-low-hanging-fruit.md`](reports/foundational-coverage-and-low-hanging-fruit.md).
+It compares sixteen representative programmes across the six axes and ranks
+nine bounded case studies without promoting the literature map to a theorem.
+Its machine result and source supplement are
+[`results/FOUNDATIONAL_COVERAGE_MATRIX_V0.json`](results/FOUNDATIONAL_COVERAGE_MATRIX_V0.json)
+and
+[`literature-supplement-known-attempts-v1.json`](literature-supplement-known-attempts-v1.json).
+
+```bash
+python3 foundations/verify_foundational_coverage_matrix.py
+python3 -m unittest foundations.tests.test_foundational_coverage_matrix
+```
+
 ## Lifecycle
 
 This stream uses a literature/research lifecycle, not the quantum lifecycle:

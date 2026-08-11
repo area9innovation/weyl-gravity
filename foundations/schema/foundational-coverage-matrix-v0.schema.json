@@ -1,0 +1,151 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9innovation.github.io/weyl-gravity/foundations/schema/foundational-coverage-matrix-v0.schema.json",
+  "title": "Foundational coverage matrix v0",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "result_id",
+    "result_kind",
+    "lifecycle",
+    "dependency_tags",
+    "repository_base_commit",
+    "method",
+    "attempts",
+    "repository_hotspots",
+    "opportunities",
+    "recommended_sequence",
+    "coverage_findings",
+    "claim_flags",
+    "does_not_establish",
+    "source_ledgers",
+    "human_report"
+  ],
+  "properties": {
+    "schema_version": {"const": "foundational-coverage-matrix-v0"},
+    "result_id": {"const": "FOUNDATIONAL_COVERAGE_MATRIX_V0"},
+    "result_kind": {"const": "LITERATURE_COVERAGE_AND_TRIAGE"},
+    "lifecycle": {"const": "LITERATURE_SCOPED"},
+    "dependency_tags": {
+      "type": "array",
+      "prefixItems": [{"const": "LOCAL-ALGEBRAIC"}],
+      "items": false,
+      "minItems": 1,
+      "maxItems": 1
+    },
+    "repository_base_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "method": {
+      "type": "object",
+      "required": ["coverage_statuses", "axis_order", "scoring"]
+    },
+    "attempts": {
+      "type": "array",
+      "minItems": 12,
+      "items": {"$ref": "#/$defs/attempt"}
+    },
+    "repository_hotspots": {
+      "type": "object",
+      "required": ["scope", "command_template", "counts", "interpretation"],
+      "properties": {
+        "counts": {
+          "type": "array",
+          "minItems": 5,
+          "items": {
+            "type": "object",
+            "required": ["topic", "pattern", "files"],
+            "properties": {
+              "files": {"type": "integer", "minimum": 0}
+            }
+          }
+        }
+      }
+    },
+    "opportunities": {
+      "type": "array",
+      "minItems": 6,
+      "items": {"$ref": "#/$defs/opportunity"}
+    },
+    "recommended_sequence": {"type": "array", "minItems": 3},
+    "coverage_findings": {
+      "type": "array",
+      "minItems": 4,
+      "items": {
+        "type": "object",
+        "required": ["id", "statement", "status", "does_not_establish"]
+      }
+    },
+    "claim_flags": {"type": "object"},
+    "does_not_establish": {"type": "array", "minItems": 5},
+    "source_ledgers": {
+      "type": "array",
+      "minItems": 2,
+      "uniqueItems": true,
+      "items": {"type": "string"}
+    },
+    "human_report": {"type": "string"}
+  },
+  "$defs": {
+    "coverage_cell": {
+      "type": "object",
+      "required": ["status", "note"],
+      "properties": {
+        "status": {"enum": ["DIRECT", "PARTIAL", "ADJACENT", "ABSENT", "UNKNOWN"]},
+        "note": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "attempt": {
+      "type": "object",
+      "required": [
+        "id",
+        "programme",
+        "representative_sources",
+        "target_level",
+        "contribution",
+        "coverage",
+        "unresolved_intersection",
+        "boundary"
+      ],
+      "properties": {
+        "id": {"type": "string", "pattern": "^ATTEMPT-"},
+        "representative_sources": {"type": "array", "minItems": 1, "uniqueItems": true},
+        "coverage": {
+          "type": "object",
+          "required": ["LOGIC", "SET_EXISTENCE", "INFINITY", "CARRIER_GEOMETRY", "PHYSICAL_POSTULATES", "TARGET_CLAIMS"],
+          "properties": {
+            "LOGIC": {"$ref": "#/$defs/coverage_cell"},
+            "SET_EXISTENCE": {"$ref": "#/$defs/coverage_cell"},
+            "INFINITY": {"$ref": "#/$defs/coverage_cell"},
+            "CARRIER_GEOMETRY": {"$ref": "#/$defs/coverage_cell"},
+            "PHYSICAL_POSTULATES": {"$ref": "#/$defs/coverage_cell"},
+            "TARGET_CLAIMS": {"$ref": "#/$defs/coverage_cell"}
+          },
+          "additionalProperties": false
+        }
+      }
+    },
+    "opportunity": {
+      "type": "object",
+      "required": ["rank", "id", "title", "scores", "why_low_hanging", "first_artifact", "candidate_relation", "stop_condition"],
+      "properties": {
+        "rank": {"type": "integer", "minimum": 1},
+        "id": {"type": "string", "pattern": "^OP-"},
+        "scores": {
+          "type": "object",
+          "required": ["scientific_leverage", "repository_readiness", "scope_boundedness", "literature_underexposure", "dependency_cost", "priority_score"],
+          "properties": {
+            "scientific_leverage": {"type": "integer", "minimum": 1, "maximum": 5},
+            "repository_readiness": {"type": "integer", "minimum": 1, "maximum": 5},
+            "scope_boundedness": {"type": "integer", "minimum": 1, "maximum": 5},
+            "literature_underexposure": {"type": "integer", "minimum": 1, "maximum": 5},
+            "dependency_cost": {"type": "integer", "minimum": 1, "maximum": 5},
+            "priority_score": {"type": "integer", "minimum": -1, "maximum": 19}
+          }
+        },
+        "candidate_relation": {
+          "enum": ["USED_BY_DISPLAYED_PROOF", "SUFFICIENT_OVER_BASE", "NECESSARY_OVER_BASE", "EQUIVALENT_OVER_BASE", "AVOIDED_BY_REFORMULATION", "INDEPENDENT_OVER_BASE", "UNKNOWN"]
+        }
+      }
+    }
+  }
+}
