@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-six-point-strongly-ordered-tree-v1.schema.json",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "certificate", "schema_version", "dependency_tags", "lifecycle_state",
+    "result_kind", "question", "answer", "topology", "correlated_boundary",
+    "threshold_and_factorial_analysis", "disposition", "does_not_establish",
+    "missing_object_ledger", "next_gate", "provenance", "verification_commands",
+    "checks", "report", "schema"
+  ],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_SIX_POINT_STRONGLY_ORDERED_TREE_V1"},
+    "schema_version": {"const": "reverse-physics-bt-six-point-strongly-ordered-tree-v1"},
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]
+    },
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "topology": {
+      "type": "object",
+      "required": ["V4_squared", "V3_squared_V4", "V3_fourth", "total", "relative_signs"],
+      "properties": {
+        "V4_squared": {"const": 10},
+        "V3_squared_V4": {"const": 105},
+        "V3_fourth": {"const": 105},
+        "total": {"const": 220}
+      }
+    },
+    "correlated_boundary": {
+      "type": "object",
+      "required": ["scaling", "cyclic_chart", "hard_fixtures", "rows"],
+      "properties": {
+        "rows": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "type": "object",
+            "required": ["leading_order", "leading_masks", "projected", "projected_length", "factored", "factored_length", "strong_order", "strong_order_length"],
+            "properties": {
+              "leading_order": {"const": 2},
+              "leading_masks": {"const": [0, 1, 2, 3, 4, 5, 6]}
+            }
+          }
+        }
+      }
+    },
+    "threshold_and_factorial_analysis": {
+      "type": "object",
+      "required": ["outer_moments", "inner_physical_cutoff_finite_part", "double_cocycle", "normalization", "factorial_cumulant"]
+    },
+    "does_not_establish": {
+      "type": "array", "minItems": 8, "items": {"type": "string"}
+    },
+    "missing_object_ledger": {
+      "type": "array", "minItems": 5, "items": {"type": "string"}
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["source_commit", "retrieval_date", "inputs", "primary_source"],
+      "properties": {
+        "inputs": {
+          "type": "array", "minItems": 5, "maxItems": 5,
+          "items": {
+            "type": "object", "required": ["path", "sha256"],
+            "properties": {
+              "path": {"type": "string"},
+              "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+            }
+          }
+        }
+      }
+    },
+    "verification_commands": {
+      "type": "array", "minItems": 3, "maxItems": 3,
+      "items": {"type": "string"}
+    },
+    "checks": {
+      "type": "object", "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"type": "integer", "minimum": 1},
+        "total": {"type": "integer", "minimum": 1},
+        "failures": {"const": []}
+      }
+    },
+    "report": {"const": "reverse_physics/reports/bt-six-point-strongly-ordered-tree.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-six-point-strongly-ordered-tree-v1.schema.json"}
+  }
+}

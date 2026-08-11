@@ -1,0 +1,37 @@
+{
+  "id": "sf:program/work/reverse-physics-bateman-six-point-strongly-ordered-tree",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "reverse-physics",
+    "state": "ACTIVE",
+    "objective": "Compute the complete Bateman--Turok six-point tree external-mass jet in the nested strongly ordered double-collinear region and decide whether its leading two-emission factorial coefficient agrees with the resolution-local coherent Poisson completion.",
+    "depends_on": [
+      "REVERSE_PHYSICS_BT_FIVE_POINT_TREE_JET_V1",
+      "REVERSE_PHYSICS_BT_FIVE_POINT_INDEPENDENT_MASS_THRESHOLD_V1",
+      "REVERSE_PHYSICS_BT_PHYSICAL_COLLINEAR_OPERATOR_FACTORIZATION_V1",
+      "REVERSE_PHYSICS_BT_RESOLUTION_LOCAL_COHERENT_BORN_PROCESS_V1"
+    ],
+    "activates": [
+      "the first nonlinear tree-level test of stationary independent resolution increments",
+      "an exact second factorial cumulant if the Poisson coefficient fails",
+      "a six-point external-mass-jet recursion reusable for higher multiplicity"
+    ],
+    "current_gate": "SIX_POINT_ORDERED_TREE: enumerate all 220 labeled cubic/quartic trees with exact signs, retain the two nested collinear invariants and six external mass jets before the ordered limit, integrate the two Kallen threshold kernels, and compare the 12-history ordered-simplex coefficient with one half the square of the certified one-emission rate.",
+    "stop_condition": "Land an exact complete-tree certificate with an independently implemented verifier that either proves the leading nested two-emission coefficient equals (a/16)^2/2 or computes a nonzero second factorial cumulant, while keeping non-strongly-ordered, finite, loop, spacetime-Moller, and Eq. 19 claims fail-closed.",
+    "forbid": "no pole-residue-only argument substituted for the full 220-tree external-mass jet; no symbolic expansion above the declared memory cap; no leading strongly ordered agreement called a full six-body probability, all-order Poisson theorem, spacetime-local S-matrix, finite NLO theorem, beyond-tree positivity theorem, Eq. 19 proof, gravitational/BRST lift, or LORENTZIAN-CAUSAL result",
+    "allowed_paths": [
+      "reverse_physics/",
+      "notes/bateman-turok-embedding.md",
+      "paper/05-interaction-obstructions.tex",
+      "paper/05-interaction-obstructions.pdf",
+      "paper/06-einstein-weyl-interaction-obstructions.tex",
+      "paper/06-einstein-weyl-interaction-obstructions.pdf",
+      "planning/work-items/reverse-physics-bateman-six-point-strongly-ordered-tree.json",
+      "planning/events/"
+    ],
+    "resource_hint": "Use a subset-current recursion in a three-bit spectator jet over a truncated common-scale Laurent algebra. The cyclic six-point chart has six adjacent pair squares and three complementary adjacent triple squares. For a nested history use x0,x1,s01 at delta*epsilon and x2,x3,x4,x5,s012 at delta, take delta to zero before epsilon, and verify hard-fixture independence. Run every Python and TeX process sequentially under ulimit -v 500000.",
+    "input_commit": "277d2469",
+    "stream": "reverse-physics"
+  }
+}
