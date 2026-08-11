@@ -1,0 +1,94 @@
+{
+  "receipt_id": "FOUNDATIONAL_FREE_BV_ENERGY2_PRA_SDR_V1_TIER_RECEIPT",
+  "schema_version": "foundational-tier-receipt-v0",
+  "created": "2026-08-11",
+  "result_id": "FOUNDATIONAL_FREE_BV_ENERGY2_PRA_SDR_V1",
+  "dependency_tags": ["LOCAL-ALGEBRAIC"],
+  "base_commit": "a5bb88b4ae7b95068aaf419d1bf3c730cea9ec56",
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "elapsed_seconds": "0.11",
+      "command": "parse the result, receipt, and schema JSON; compile the checker, verifier, and tests from source; git diff --check on the eight scoped paths",
+      "checks": [
+        "all changed structured-data files parse",
+        "changed Python source compiles without emitting bytecode",
+        "git diff --check passes on the scoped paths"
+      ]
+    },
+    "tier_1_primitive_checker": {
+      "status": "PASS",
+      "elapsed_seconds": "0.03",
+      "command": "python3 foundations/check_free_bv_energy2_primitive.py",
+      "result": "8/8 integer SDR identities passed; q and h have 110 nonzero entries each, j and p have 10 each, cohomology rank is 10, and the expanded matrix digest is cfab94dad9444a71614c2361d8863c1bf56155e340838931f39aa854cf6d0049"
+    },
+    "tier_1_verifier": {
+      "status": "PASS",
+      "elapsed_seconds": "0.03",
+      "command": "python3 foundations/verify_free_bv_energy2_weak_base.py",
+      "result": "12/12 identity, weak-base, avoidance, independence, source-metadata, provenance, DAG, tag, and negative-control checks passed"
+    },
+    "tier_1_mutation_tests": {
+      "status": "PASS",
+      "elapsed_seconds": "0.09",
+      "command": "python3 -m unittest -v foundations.tests.test_free_bv_energy2_weak_base",
+      "result": "11/11 tests passed, including nonunit-pair, overlap, source-hash, necessity, weakest-base, avoidance-relation, matrix-digest, source-dimension, Lorentzian, and report-drift mutations"
+    },
+    "tier_1_json_schema": {
+      "status": "PASS",
+      "elapsed_seconds": "0.11",
+      "command": "validate foundations/results/FOUNDATIONAL_FREE_BV_ENERGY2_PRA_SDR_V1.json with Draft202012Validator against foundations/schema/foundational-free-bv-energy2-pra-sdr-v1.schema.json",
+      "result": "dependency certificate validates"
+    },
+    "tier_1_upstream_reproduction": {
+      "status": "PASS",
+      "elapsed_seconds": "1.08",
+      "command": "/home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 symbolic/verify_conformal_free_bv_complex.py --max-energy 6",
+      "result": "The existing producer passed its CKV, energy 2 through 6 nilpotency, contraction, nonminimal-pair, cohomology-dimension, and characteristic-zero Sym^2 checks.",
+      "boundary": "This reproduces the source producer. It is not the independent verification rail; that role is served by the dependency-minimal checker above."
+    },
+    "tier_2": {
+      "status": "NOT_RUN",
+      "criterion": "No classical source input, shared operator, existing schema, generated artifact, or established certificate changed. Content-pinned inputs were checked by hash and the direct source producer was reproduced."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "This promotes only a fixed LOCAL-ALGEBRAIC foundational dependency relation. It is not a classical or quantum freeze, release, shared-core change, or physical theorem promotion."
+    }
+  },
+  "auxiliary_rails": [
+    {
+      "name": "science_forge_work_drafts",
+      "status": "FAIL",
+      "elapsed_seconds": "0.30",
+      "command": "SF_PROGRAM=/home/alstrup/area9/weyl-gravity/planning/work-items s-f work-drafts",
+      "failure": "The shared tango/forge sfc source still does not compile: forge/lib/alloc/arena.forge:401:16 reports that sanitize_thread is not a compile-time name.",
+      "effect": "No Science Forge conformance pass is claimed. The work-item stop-condition relation is recorded by the foundations certificate, but no coordinator transition is emitted while this rail is unavailable."
+    }
+  ],
+  "content_hashes": {
+    "foundations/README.md": "a1a042cb34d891116a4e34c664c3f21d0f9f5eb26d69d2b7d32846d017a2f36d",
+    "foundations/check_free_bv_energy2_primitive.py": "986e391b6c6416e17bbbd3c7bf948d7ebe6c87e41db056f8ae461a3437a97ca9",
+    "foundations/reports/free-bv-energy2-pra-sdr.md": "22024bb530835dc6f56879b883747ec0e31f1ca623dbf304070b3391385542dd",
+    "foundations/results/FOUNDATIONAL_FREE_BV_ENERGY2_PRA_SDR_V1.json": "d0943e804f386155ac635f027101912b6d0c0385d1c10a6c6e0daf1c3399a3e5",
+    "foundations/schema/foundational-free-bv-energy2-pra-sdr-v1.schema.json": "531851ae8b9041b854cb71a0ef0a63cf3d56a99e430916a910e5a01815df8755",
+    "foundations/tests/test_free_bv_energy2_weak_base.py": "830913fe6a9e9b598cf86508dcad94c17a05c2573d98e9c0e0c4ac88efba09ff",
+    "foundations/verify_free_bv_energy2_weak_base.py": "4662d9bba7f02fa5ddf87c6f0e5e4c6f0b8565eab172497ca8a14e187a93a880"
+  },
+  "upstream_content_hashes": {
+    "bridge/certificates/free_bv_complex.json": "015d829312c2d4337d6dc4a2212e4ab81a5ec699a1e8c79c76c3fe5128ce4bde",
+    "bridge/bv_complex/free_block.py": "1885e11d42000f0e3e1dfda5e87ba409dc275decc67936c1cb89972699cb8cba",
+    "symbolic/verify_conformal_free_bv_complex.py": "482a6998ce35fb0ef56ce574cba107c51e00505243722930a78bd2949b4b20e8",
+    "symbolic/conformal-paper-verification.sha256": "0c4a35c1094a591eee9cab33e79d60d29deb79618f60de260014fe924472b3a6"
+  },
+  "scope_receipt": {
+    "changed_scope": "foundations/ only",
+    "concurrent_unrelated_paths_excluded": [
+      "planning/work-items/reverse-physics-bateman-six-point-nested-continuum-intertwiner.json",
+      "reverse_physics/bt_six_point_nested_continuum_intertwiner.py",
+      "reverse_physics/certificates/REVERSE_PHYSICS_BT_SIX_POINT_NESTED_CONTINUUM_INTERTWINER_V1.json",
+      "reverse_physics/schema/reverse-physics-bt-six-point-nested-continuum-intertwiner-v1.schema.json"
+    ]
+  },
+  "claim_boundary": "This receipt certifies one fixed integral energy-2 SDR, PRA sufficiency for its closed checker, and explicit avoidance of general separation/complement machinery. It does not certify a weakest base, reversal, all-energy result, classical import freeze, infinite completion, quantum theory, or Lorentzian claim."
+}

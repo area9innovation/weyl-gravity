@@ -1,0 +1,153 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9innovation.github.io/weyl-gravity/foundations/schema/foundational-free-bv-energy2-pra-sdr-v1.schema.json",
+  "title": "Foundational free-BV energy-2 PRA SDR certificate",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "result_id",
+    "result_kind",
+    "lifecycle",
+    "dependency_tags",
+    "repository_base_commit",
+    "target",
+    "foundational_classification",
+    "avoidance_classification",
+    "module",
+    "proof_dependency_dag",
+    "independent_checker",
+    "provenance",
+    "claim_flags",
+    "does_not_establish",
+    "next_gate",
+    "human_report"
+  ],
+  "properties": {
+    "schema_version": {"const": "foundational-free-bv-energy2-pra-sdr-v1"},
+    "result_id": {"const": "FOUNDATIONAL_FREE_BV_ENERGY2_PRA_SDR_V1"},
+    "result_kind": {"const": "FOUNDATIONAL_DEPENDENCY_CERTIFICATE"},
+    "lifecycle": {"const": "SUFFICIENCY_PROVED"},
+    "dependency_tags": {
+      "type": "array",
+      "prefixItems": [{"const": "LOCAL-ALGEBRAIC"}],
+      "items": false,
+      "minItems": 1,
+      "maxItems": 1
+    },
+    "repository_base_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "target": {
+      "type": "object",
+      "required": ["source_claim", "source_scope", "formal_statement", "target_level", "energy"],
+      "properties": {"energy": {"const": 2}}
+    },
+    "foundational_classification": {
+      "type": "object",
+      "required": ["base_theory", "encoding", "relation", "status", "statement", "why_pra_is_sufficient", "minimality_status", "necessity_status", "formal_proof_assistant_encoding"],
+      "properties": {
+        "base_theory": {"const": "PRA"},
+        "relation": {"const": "SUFFICIENT_OVER_BASE"},
+        "status": {"const": "PROVED_FOR_FIXED_WITNESS"},
+        "why_pra_is_sufficient": {"type": "array", "minItems": 4},
+        "minimality_status": {"const": "NOT_CLAIMED"},
+        "necessity_status": {"const": "NOT_PROVED"},
+        "formal_proof_assistant_encoding": {"const": "NOT_SUPPLIED"}
+      }
+    },
+    "avoidance_classification": {
+      "type": "object",
+      "required": ["relation", "status", "apparent_dependencies_avoided", "replacement", "precise_boundary"],
+      "properties": {
+        "relation": {"const": "AVOIDED_BY_REFORMULATION"},
+        "status": {"const": "PROVED_FOR_DISPLAYED_CERTIFICATE"},
+        "apparent_dependencies_avoided": {"type": "array", "minItems": 5}
+      }
+    },
+    "module": {
+      "type": "object",
+      "required": ["coefficient_ring", "full_dimension", "reduced_dimension", "basis_indexing", "field_slices", "contractible_pairs", "physical_slice", "partition_counts"],
+      "properties": {
+        "full_dimension": {"const": 230},
+        "reduced_dimension": {"const": 10},
+        "field_slices": {
+          "type": "array",
+          "minItems": 10,
+          "maxItems": 10,
+          "items": {"$ref": "#/$defs/slice"}
+        },
+        "contractible_pairs": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {"$ref": "#/$defs/pair"}
+        },
+        "physical_slice": {
+          "type": "object",
+          "required": ["name", "full_start", "full_stop", "reduced_start", "reduced_stop"]
+        },
+        "partition_counts": {
+          "type": "object",
+          "required": ["contractible_sources", "contractible_targets", "physical", "total"],
+          "properties": {
+            "contractible_sources": {"const": 110},
+            "contractible_targets": {"const": 110},
+            "physical": {"const": 10},
+            "total": {"const": 230}
+          }
+        }
+      }
+    },
+    "proof_dependency_dag": {
+      "type": "object",
+      "required": ["nodes", "edges"],
+      "properties": {
+        "nodes": {"type": "array", "minItems": 8},
+        "edges": {"type": "array", "minItems": 8}
+      }
+    },
+    "independent_checker": {
+      "type": "object",
+      "required": ["path", "permitted_runtime_modules", "forbidden_operations", "checks", "expected_matrix_digest"],
+      "properties": {
+        "expected_matrix_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["source_programme", "inputs", "source_certificate_last_change", "source_implementation_last_change", "import_boundary"],
+      "properties": {
+        "inputs": {
+          "type": "array",
+          "minItems": 4,
+          "items": {
+            "type": "object",
+            "required": ["path", "sha256", "role"],
+            "properties": {"sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+          }
+        }
+      }
+    },
+    "claim_flags": {"type": "object"},
+    "does_not_establish": {"type": "array", "minItems": 6},
+    "next_gate": {"type": "string", "minLength": 1},
+    "human_report": {"const": "foundations/reports/free-bv-energy2-pra-sdr.md"}
+  },
+  "$defs": {
+    "slice": {
+      "type": "object",
+      "required": ["name", "start", "stop", "dimension"],
+      "properties": {
+        "start": {"type": "integer", "minimum": 0, "maximum": 230},
+        "stop": {"type": "integer", "minimum": 0, "maximum": 230},
+        "dimension": {"type": "integer", "minimum": 0, "maximum": 230}
+      }
+    },
+    "pair": {
+      "type": "object",
+      "required": ["name", "source_start", "source_stop", "target_start", "target_stop", "q_coefficient", "h_coefficient"],
+      "properties": {
+        "q_coefficient": {"const": 1},
+        "h_coefficient": {"const": 1}
+      }
+    }
+  }
+}

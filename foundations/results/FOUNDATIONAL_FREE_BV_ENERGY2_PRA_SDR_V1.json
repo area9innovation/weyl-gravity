@@ -1,0 +1,156 @@
+{
+  "schema_version": "foundational-free-bv-energy2-pra-sdr-v1",
+  "result_id": "FOUNDATIONAL_FREE_BV_ENERGY2_PRA_SDR_V1",
+  "result_kind": "FOUNDATIONAL_DEPENDENCY_CERTIFICATE",
+  "lifecycle": "SUFFICIENCY_PROVED",
+  "dependency_tags": ["LOCAL-ALGEBRAIC"],
+  "created": "2026-08-11",
+  "repository_base_commit": "a5bb88b4ae7b95068aaf419d1bf3c730cea9ec56",
+  "programme_context": {
+    "coverage_matrix": "FOUNDATIONAL_COVERAGE_MATRIX_V0",
+    "opportunities_realized": ["OP-EXACT-BV-WEAK-BASELINE", "OP-SEPARATION-WITNESS-CROSSWALK"],
+    "disposition": "FIRST_BOUNDED_CASE_COMPLETED"
+  },
+  "target": {
+    "source_claim": "At cylinder energy two, the split free pure-Weyl BV block has an explicit strong deformation retract onto a ten-dimensional zero-differential physical block.",
+    "source_scope": "The algebraic D-finite SO(4)-finite split fixture in bridge/certificates/free_bv_complex.json, not the complete field-derived gauge-fixed BV domain and not a quantum classical-import freeze.",
+    "formal_statement": "For the displayed finite free Z-modules C=Z^230 and H=Z^10, the matrices q:C->C, h:C->C, j:H->C, and p:C->H satisfy q^2=0, pj=1_H, jp=1_C-qh-hq, h^2=0, hj=0, ph=0, qj=0, and pq=0. Consequently j and p induce mutually inverse cohomology isomorphisms H(C,q)=H, and scalar extension gives the same SDR over every nonzero unital commutative ring.",
+    "target_level": "one fixed finite exact classical BV block",
+    "energy": 2
+  },
+  "foundational_classification": {
+    "base_theory": "PRA",
+    "base_theory_name": "Primitive Recursive Arithmetic",
+    "encoding": "Fixed finite sequences of natural-number indices and integer coefficients encoded by primitive-recursive pairing; negative coefficients occur only when comparing I-qh-hq and can be normalized as differences of natural matrices.",
+    "relation": "SUFFICIENT_OVER_BASE",
+    "status": "PROVED_FOR_FIXED_WITNESS",
+    "statement": "PRA suffices to verify the closed bounded case split and all integer matrix equalities in this certificate. No comprehension axiom or infinite-set existence principle is used by the displayed proof.",
+    "why_pra_is_sufficient": [
+      "All dimensions and interval endpoints are fixed numerals no larger than 230.",
+      "Expansion of the four interval maps, sparse composition, and equality are primitive-recursive bounded computations.",
+      "The mathematical proof is a finite case split: every basis coordinate is exactly one contractible source, contractible target, or physical coordinate.",
+      "The cohomology conclusion follows from the displayed SDR equations by equational module algebra; no kernel basis, complement, maximal principle, or limiting argument is invoked."
+    ],
+    "minimality_status": "NOT_CLAIMED",
+    "necessity_status": "NOT_PROVED",
+    "formal_proof_assistant_encoding": "NOT_SUPPLIED"
+  },
+  "avoidance_classification": {
+    "relation": "AVOIDED_BY_REFORMULATION",
+    "status": "PROVED_FOR_DISPLAYED_CERTIFICATE",
+    "apparent_dependencies_avoided": [
+      "Hahn-Banach theorem",
+      "geometric separation theorem",
+      "Zorn lemma",
+      "extension of a linearly independent set to a basis",
+      "existential choice of a complement",
+      "rank or nullspace computation"
+    ],
+    "replacement": "The coordinate projection p, inclusion j, and contracting homotopy h are retained explicitly and checked directly.",
+    "precise_boundary": "This proves avoidance for the displayed energy-2 split normal form. It neither proves that every presentation of its source construction avoids these principles nor classifies infinite-dimensional BV cohomology."
+  },
+  "module": {
+    "coefficient_ring": "Z, followed by scalar extension to any nonzero unital commutative ring",
+    "full_dimension": 230,
+    "reduced_dimension": 10,
+    "basis_indexing": "zero-based half-open intervals",
+    "field_slices": [
+      {"name": "diff_ghost", "start": 0, "stop": 80, "dimension": 80},
+      {"name": "weyl_ghost", "start": 80, "stop": 90, "dimension": 10},
+      {"name": "metric_trace", "start": 90, "stop": 100, "dimension": 10},
+      {"name": "metric_tf", "start": 100, "stop": 190, "dimension": 90},
+      {"name": "metric_antifield", "start": 190, "stop": 190, "dimension": 0},
+      {"name": "diff_ghost_antifield", "start": 190, "stop": 190, "dimension": 0},
+      {"name": "trace_antifield", "start": 190, "stop": 200, "dimension": 10},
+      {"name": "weyl_ghost_antifield", "start": 200, "stop": 210, "dimension": 10},
+      {"name": "antighost", "start": 210, "stop": 220, "dimension": 10},
+      {"name": "multiplier", "start": 220, "stop": 230, "dimension": 10}
+    ],
+    "contractible_pairs": [
+      {"name": "diff_gauge", "source_start": 0, "source_stop": 80, "target_start": 100, "target_stop": 180, "q_coefficient": 1, "h_coefficient": 1},
+      {"name": "weyl_trace", "source_start": 80, "source_stop": 90, "target_start": 90, "target_stop": 100, "q_coefficient": 1, "h_coefficient": 1},
+      {"name": "trace_antifield_dual", "source_start": 190, "source_stop": 200, "target_start": 200, "target_stop": 210, "q_coefficient": 1, "h_coefficient": 1},
+      {"name": "nonminimal", "source_start": 210, "source_stop": 220, "target_start": 220, "target_stop": 230, "q_coefficient": 1, "h_coefficient": 1}
+    ],
+    "physical_slice": {"name": "W_plus_direct_sum_W_minus", "full_start": 180, "full_stop": 190, "reduced_start": 0, "reduced_stop": 10},
+    "partition_counts": {"contractible_sources": 110, "contractible_targets": 110, "physical": 10, "total": 230}
+  },
+  "proof_dependency_dag": {
+    "nodes": [
+      {"id": "D0", "kind": "DECLARED_DATA", "statement": "Ten contiguous field slices partition the 230 full coordinates."},
+      {"id": "D1", "kind": "DECLARED_DATA", "statement": "Four equal-length source-target interval pairs define q forward and h backward with coefficient one."},
+      {"id": "D2", "kind": "DECLARED_DATA", "statement": "The remaining interval [180,190) defines j and p as coordinate inclusion and projection."},
+      {"id": "P0", "kind": "PRIMITIVE_RECURSIVE_CHECK", "statement": "Sources, targets, and physical coordinates are pairwise disjoint and exhaust [0,230)."},
+      {"id": "P1", "kind": "INTEGER_MATRIX_IDENTITY", "statement": "q^2=0, h^2=0, qj=0, pq=0, hj=0, and ph=0."},
+      {"id": "P2", "kind": "INTEGER_MATRIX_IDENTITY", "statement": "pj=1_H and jp=1_C-qh-hq."},
+      {"id": "C0", "kind": "COHOMOLOGY_CONSEQUENCE", "statement": "j and p induce mutually inverse maps H(C,q)<->H with H carrying zero differential."},
+      {"id": "C1", "kind": "SCALAR_EXTENSION", "statement": "Because the identities have integer coefficients and no division, tensoring with any nonzero unital commutative ring preserves the SDR."},
+      {"id": "A0", "kind": "AVOIDANCE_CONSEQUENCE", "statement": "The cohomology result uses the explicit SDR rather than an existential complement, rank/nullspace, Hahn-Banach, or separation argument."}
+    ],
+    "edges": [
+      {"from": "D0", "to": "P0"},
+      {"from": "D1", "to": "P0"},
+      {"from": "D2", "to": "P0"},
+      {"from": "P0", "to": "P1"},
+      {"from": "P0", "to": "P2"},
+      {"from": "P1", "to": "C0"},
+      {"from": "P2", "to": "C0"},
+      {"from": "C0", "to": "C1"},
+      {"from": "C0", "to": "A0"}
+    ]
+  },
+  "independent_checker": {
+    "path": "foundations/check_free_bv_energy2_primitive.py",
+    "permitted_runtime_modules": ["hashlib", "json", "pathlib", "sys", "typing"],
+    "forbidden_operations": ["sympy", "numpy", "floating point", "rank", "nullspace", "eigendecomposition", "linear solver", "theorem prover", "network access"],
+    "checks": [
+      "field slices and proof partition",
+      "sparse dimensions and coefficients",
+      "q^2=0 and h^2=0",
+      "pj=1_H and jp=1_C-qh-hq",
+      "qj=pq=hj=ph=0",
+      "canonical digest of expanded q,h,j,p"
+    ],
+    "expected_matrix_digest": "cfab94dad9444a71614c2361d8863c1bf56155e340838931f39aa854cf6d0049"
+  },
+  "provenance": {
+    "source_programme": "classical split free pure-Weyl BV fixture",
+    "inputs": [
+      {"path": "bridge/certificates/free_bv_complex.json", "sha256": "015d829312c2d4337d6dc4a2212e4ab81a5ec699a1e8c79c76c3fe5128ce4bde", "role": "published source dimensions and cohomology claim"},
+      {"path": "bridge/bv_complex/free_block.py", "sha256": "1885e11d42000f0e3e1dfda5e87ba409dc275decc67936c1cb89972699cb8cba", "role": "source construction of q,h,j,p"},
+      {"path": "symbolic/verify_conformal_free_bv_complex.py", "sha256": "482a6998ce35fb0ef56ce574cba107c51e00505243722930a78bd2949b4b20e8", "role": "source producer/verifier"},
+      {"path": "symbolic/conformal-paper-verification.sha256", "sha256": "0c4a35c1094a591eee9cab33e79d60d29deb79618f60de260014fe924472b3a6", "role": "pre-existing content ledger for the source certificate and verifier"}
+    ],
+    "source_certificate_last_change": "8b1ea82e8bf3b41c166ad79829329c8c4a8543ca",
+    "source_implementation_last_change": "99663a1b87f629420571461eac62188cc3343712",
+    "import_boundary": "The independent checker does not import or execute bridge code. A separate verifier compares the compact witness with the source certificate metadata and content hashes. This is independent verification of the emitted finite witness, not a proof that the entire producer implementation is correct."
+  },
+  "claim_flags": {
+    "fixed_energy2_integer_sdr_verified": true,
+    "pra_sufficiency_for_fixed_checker": true,
+    "hahn_banach_avoided_for_displayed_certificate": true,
+    "weakest_base_proved": false,
+    "necessity_or_reversal_proved": false,
+    "all_energy_bv_classified": false,
+    "classical_import_freeze": false,
+    "choice_free_infinite_completion": false,
+    "constructive_weyl_qft": false,
+    "lorentzian_claim": false
+  },
+  "assumptions": [
+    "The interval witness is the intended energy-2 split normal form of the content-pinned source implementation.",
+    "PRA is interpreted with a conventional primitive-recursive coding of finite sequences and bounded loops.",
+    "Scalar extension is applied only after the integer SDR identities are established."
+  ],
+  "does_not_establish": [
+    "That PRA is the weakest possible base theory.",
+    "A reversal or necessity theorem for any comprehension or choice principle.",
+    "That the source producer, all energy levels, the Fock lift, or the complete field-derived BV complex is independently verified.",
+    "That arbitrary finite-dimensional linear algebra avoids Choice without an explicit presentation and witness.",
+    "A choice-free countable or infinite-dimensional Hilbert, Krein, spectral, Green-operator, state, or renormalization construction.",
+    "A complete classical import freeze or any publishable quantum promotion.",
+    "Any EUCLIDEAN-SPECTRAL, REDUCED-MODE, or LORENTZIAN-CAUSAL claim."
+  ],
+  "next_gate": "Apply the same explicit-versus-existential audit to the energy-mode Krein fundamental symmetry: first finite truncations over Z, then identify the first additional principle required by the countable l2 completion and bosonic Fock construction.",
+  "human_report": "foundations/reports/free-bv-energy2-pra-sdr.md"
+}

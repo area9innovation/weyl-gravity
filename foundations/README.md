@@ -41,6 +41,18 @@ python3 foundations/verify_foundational_coverage_matrix.py
 python3 -m unittest foundations.tests.test_foundational_coverage_matrix
 ```
 
+The first bounded theorem-level case is
+[`reports/free-bv-energy2-pra-sdr.md`](reports/free-bv-energy2-pra-sdr.md).
+It proves that Primitive Recursive Arithmetic suffices to check the fixed
+energy-2 integral BV contraction and that its retained `p,j,h` witness avoids
+general separation, complement-selection, rank, and nullspace machinery:
+
+```bash
+python3 foundations/check_free_bv_energy2_primitive.py
+python3 foundations/verify_free_bv_energy2_weak_base.py
+python3 -m unittest foundations.tests.test_free_bv_energy2_weak_base
+```
+
 ## Lifecycle
 
 This stream uses a literature/research lifecycle, not the quantum lifecycle:
