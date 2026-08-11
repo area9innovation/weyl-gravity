@@ -1,0 +1,225 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-six-point-parent-jet-interference-v1.schema.json",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "certificate",
+    "schema_version",
+    "dependency_tags",
+    "lifecycle_state",
+    "result_kind",
+    "question",
+    "answer",
+    "declared_carrier",
+    "amplitude_components",
+    "parent_jet_factorization",
+    "species_interference",
+    "disposition",
+    "assumptions",
+    "does_not_establish",
+    "missing_object_ledger",
+    "next_gate",
+    "provenance",
+    "verification_commands",
+    "checks",
+    "report",
+    "schema"
+  ],
+  "properties": {
+    "certificate": {
+      "const": "REVERSE_PHYSICS_BT_SIX_POINT_PARENT_JET_INTERFERENCE_V1"
+    },
+    "schema_version": {
+      "const": "reverse-physics-bt-six-point-parent-jet-interference-v1"
+    },
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]
+    },
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "declared_carrier": {
+      "type": "object",
+      "required": [
+        "nested_scaling",
+        "spectator_profiles",
+        "parent_fibre_basis",
+        "parent_cross_metric",
+        "physical_domain"
+      ]
+    },
+    "amplitude_components": {
+      "type": "object",
+      "required": [
+        "finite_e_leading_components",
+        "strong_order_components",
+        "hard_fixture_independence",
+        "compact_formulas",
+        "scalar_squarefree_top",
+        "scalar_selected_history_relative_to_Born"
+      ],
+      "properties": {
+        "finite_e_leading_components": {
+          "type": "object",
+          "minProperties": 7,
+          "maxProperties": 7
+        },
+        "strong_order_components": {
+          "type": "object",
+          "minProperties": 7,
+          "maxProperties": 7
+        }
+      }
+    },
+    "parent_jet_factorization": {
+      "type": "object",
+      "required": [
+        "outer_parent_profiles",
+        "profile_coefficients",
+        "profile_matrix_determinant",
+        "unique_factorization",
+        "u",
+        "v",
+        "five_point_universal_coefficients",
+        "outer_history_derivative",
+        "locality_disposition"
+      ],
+      "properties": {
+        "locality_disposition": {
+          "const": "THE_CONSTANT_PARENT_COEFFICIENT_PERSISTS_BUT_THE_LINEAR_PARENT_COEFFICIENT_IS_NOT_AN_INNER_LOCAL_SPLITTING_COEFFICIENT"
+        }
+      }
+    },
+    "species_interference": {
+      "type": "object",
+      "required": [
+        "profile_pairing_components",
+        "normalization",
+        "raised_profile_normalized_endomorphism",
+        "characteristic_polynomial",
+        "characteristic_discriminant",
+        "physical_domain_sign",
+        "degenerate_surface",
+        "basis_invariance",
+        "exact_fixtures"
+      ],
+      "properties": {
+        "raised_profile_normalized_endomorphism": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {"type": "array", "minItems": 2, "maxItems": 2}
+        },
+        "physical_domain_sign": {
+          "const": "strictly negative for tau2>a2>0 and tau2!=2*a2"
+        },
+        "exact_fixtures": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3
+        }
+      }
+    },
+    "disposition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "six_point_amplitude_species_resolution",
+        "scalar_five_over_3072_history_weight",
+        "second_positive_scalar_I2_species_jump",
+        "channel_resolved_CPTP_instrument",
+        "amplitude_affiliation_above_first_jump",
+        "minimal_enlarged_profile_carrier",
+        "seven_point_species_tensor",
+        "complete_BT_probability",
+        "spacetime_local_physical_S_matrix",
+        "Eq19_all_orders"
+      ],
+      "properties": {
+        "six_point_amplitude_species_resolution": {
+          "const": "COMPUTED_BEFORE_SCALAR_TRACE"
+        },
+        "scalar_five_over_3072_history_weight": {"const": "RETAINED"},
+        "second_positive_scalar_I2_species_jump": {
+          "const": "EXACTLY_OBSTRUCTED_ON_DECLARED_CARRIER"
+        },
+        "channel_resolved_CPTP_instrument": {
+          "const": "RETAINED_AS_ABSTRACT_POSITIVE_COMPLETION"
+        },
+        "amplitude_affiliation_above_first_jump": {
+          "const": "REFUTED_FOR_IDENTITY_SPECIES_LIFT"
+        },
+        "minimal_enlarged_profile_carrier": {
+          "const": "NOT_YET_CONSTRUCTED"
+        },
+        "seven_point_species_tensor": {
+          "const": "NOT_REQUIRED_TO_FALSIFY_MINIMAL_I2_LIFT_AND_NOT_COMPUTED"
+        },
+        "complete_BT_probability": {"const": "NOT_CONSTRUCTED"},
+        "spacetime_local_physical_S_matrix": {"const": "NOT_CONSTRUCTED"},
+        "Eq19_all_orders": {"const": "NOT_PROVED"}
+      }
+    },
+    "assumptions": {
+      "type": "array",
+      "minItems": 4,
+      "items": {"type": "string"}
+    },
+    "does_not_establish": {
+      "type": "array",
+      "minItems": 12,
+      "items": {"type": "string"}
+    },
+    "missing_object_ledger": {
+      "type": "array",
+      "minItems": 6,
+      "items": {"type": "string"}
+    },
+    "provenance": {
+      "type": "object",
+      "required": [
+        "source_commit",
+        "retrieval_date",
+        "inputs",
+        "producer_method",
+        "primary_source"
+      ],
+      "properties": {
+        "inputs": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "required": ["path", "sha256"],
+            "properties": {
+              "path": {"type": "string"},
+              "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+            }
+          }
+        }
+      }
+    },
+    "verification_commands": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {"type": "string"}
+    },
+    "checks": {
+      "type": "object",
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"const": 29},
+        "total": {"const": 29},
+        "failures": {"const": []}
+      }
+    },
+    "report": {
+      "const": "reverse_physics/reports/bt-six-point-parent-jet-interference.md"
+    },
+    "schema": {
+      "const": "reverse_physics/schema/reverse-physics-bt-six-point-parent-jet-interference-v1.schema.json"
+    }
+  }
+}

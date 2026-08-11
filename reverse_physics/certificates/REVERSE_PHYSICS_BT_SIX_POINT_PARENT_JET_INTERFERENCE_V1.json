@@ -1,0 +1,399 @@
+{
+  "amplitude_components": {
+    "compact_formulas": {
+      "A": "a0**2 - 2*a0*a1 - 2*a0*tau1 + a1**2 - 2*a1*tau1 + 2*tau1**2",
+      "F0": "3*a2**2*(a0**2 - 2*a0*a1 - 2*a0*tau1 + a1**2 - 2*a1*tau1 + 4*tau1**2)/(8*tau1**2)",
+      "F1": "a2**2*(a0**2 - 2*a0*a1 - 2*a0*tau1 + a1**2 - 2*a1*tau1 + 2*tau1**2)/(8*tau1**2*tau2)",
+      "F2": "a2*(a0**2*a2 - 2*a0**2*tau2 - 2*a0*a1*a2 + 4*a0*a1*tau2 - 2*a0*a2*tau1 + 4*a0*tau1*tau2 + a1**2*a2 - 2*a1**2*tau2 - 2*a1*a2*tau1 + 4*a1*tau1*tau2 + 2*a2*tau1**2 + 2*tau1**2*tau2)/(8*tau1**2*tau2**2)"
+    },
+    "finite_e_leading_components": {
+      "0": "(3*a0**2*a2**2 + 12*a0**2*e**2*tau1**2 - 6*a0*a1*a2**2 - 6*a0*a2**2*tau1 + 3*a1**2*a2**2 + 12*a1**2*e**2*tau1**2 - 6*a1*a2**2*tau1 + 12*a2**2*tau1**2)/(8*tau1**2)",
+      "1": "(a0**2*a2**2 - 2*a0**2*a2*e*tau1 + 2*a0**2*e**2*tau1**2 - 2*a0*a1*a2**2 + 4*a0*a1*a2*e*tau1 + 2*a0*a1*e**2*tau1**2 - 2*a0*a2**2*tau1 + 2*a0*a2*e*tau1**2 + a1**2*a2**2 - 2*a1**2*a2*e*tau1 + 2*a1**2*e**2*tau1**2 - 2*a1*a2**2*tau1 + 2*a1*a2*e*tau1**2 + 2*a2**2*tau1**2)/(8*tau1**2*tau2)",
+      "2": "(a0**2*a2**2 - 2*a0**2*a2*e*tau1 + 2*a0**2*e**2*tau1**2 - 2*a0*a1*a2**2 + 4*a0*a1*a2*e*tau1 + 2*a0*a1*e**2*tau1**2 - 2*a0*a2**2*tau1 + 2*a0*a2*e*tau1**2 + a1**2*a2**2 - 2*a1**2*a2*e*tau1 + 2*a1**2*e**2*tau1**2 - 2*a1*a2**2*tau1 + 2*a1*a2*e*tau1**2 + 2*a2**2*tau1**2)/(8*tau1**2*tau2)",
+      "3": "(a0**2*a2**2 - 2*a0**2*a2*e*tau1 - 2*a0**2*a2*tau2 + 2*a0**2*e**2*tau1**2 - 2*a0**2*e*tau1*tau2 - 2*a0*a1*a2**2 + 4*a0*a1*a2*e*tau1 + 4*a0*a1*a2*tau2 + 2*a0*a1*e**2*tau1**2 + 4*a0*a1*e*tau1*tau2 - 2*a0*a2**2*tau1 + 2*a0*a2*e*tau1**2 + 4*a0*a2*tau1*tau2 + 2*a0*e*tau1**2*tau2 + a1**2*a2**2 - 2*a1**2*a2*e*tau1 - 2*a1**2*a2*tau2 + 2*a1**2*e**2*tau1**2 - 2*a1**2*e*tau1*tau2 - 2*a1*a2**2*tau1 + 2*a1*a2*e*tau1**2 + 4*a1*a2*tau1*tau2 + 2*a1*e*tau1**2*tau2 + 2*a2**2*tau1**2 + 2*a2*tau1**2*tau2)/(8*tau1**2*tau2**2)",
+      "4": "(a0**2*a2**2 - 2*a0**2*a2*e*tau1 + 2*a0**2*e**2*tau1**2 - 2*a0*a1*a2**2 + 4*a0*a1*a2*e*tau1 + 2*a0*a1*e**2*tau1**2 - 2*a0*a2**2*tau1 + 2*a0*a2*e*tau1**2 + a1**2*a2**2 - 2*a1**2*a2*e*tau1 + 2*a1**2*e**2*tau1**2 - 2*a1*a2**2*tau1 + 2*a1*a2*e*tau1**2 + 2*a2**2*tau1**2)/(8*tau1**2*tau2)",
+      "5": "(a0**2*a2**2 - 2*a0**2*a2*e*tau1 - 2*a0**2*a2*tau2 + 2*a0**2*e**2*tau1**2 - 2*a0**2*e*tau1*tau2 - 2*a0*a1*a2**2 + 4*a0*a1*a2*e*tau1 + 4*a0*a1*a2*tau2 + 2*a0*a1*e**2*tau1**2 + 4*a0*a1*e*tau1*tau2 - 2*a0*a2**2*tau1 + 2*a0*a2*e*tau1**2 + 4*a0*a2*tau1*tau2 + 2*a0*e*tau1**2*tau2 + a1**2*a2**2 - 2*a1**2*a2*e*tau1 - 2*a1**2*a2*tau2 + 2*a1**2*e**2*tau1**2 - 2*a1**2*e*tau1*tau2 - 2*a1*a2**2*tau1 + 2*a1*a2*e*tau1**2 + 4*a1*a2*tau1*tau2 + 2*a1*e*tau1**2*tau2 + 2*a2**2*tau1**2 + 2*a2*tau1**2*tau2)/(8*tau1**2*tau2**2)",
+      "6": "(a0**2*a2**2 - 2*a0**2*a2*e*tau1 - 2*a0**2*a2*tau2 + 2*a0**2*e**2*tau1**2 - 2*a0**2*e*tau1*tau2 - 2*a0*a1*a2**2 + 4*a0*a1*a2*e*tau1 + 4*a0*a1*a2*tau2 + 2*a0*a1*e**2*tau1**2 + 4*a0*a1*e*tau1*tau2 - 2*a0*a2**2*tau1 + 2*a0*a2*e*tau1**2 + 4*a0*a2*tau1*tau2 + 2*a0*e*tau1**2*tau2 + a1**2*a2**2 - 2*a1**2*a2*e*tau1 - 2*a1**2*a2*tau2 + 2*a1**2*e**2*tau1**2 - 2*a1**2*e*tau1*tau2 - 2*a1*a2**2*tau1 + 2*a1*a2*e*tau1**2 + 4*a1*a2*tau1*tau2 + 2*a1*e*tau1**2*tau2 + 2*a2**2*tau1**2 + 2*a2*tau1**2*tau2)/(8*tau1**2*tau2**2)"
+    },
+    "hard_fixture_independence": "all seven finite-e leading mask components and their e->0 limits agree at the three certified unrelated hard fixtures",
+    "scalar_selected_history_relative_to_Born": {
+      "denominator": 3072,
+      "numerator": 5
+    },
+    "scalar_squarefree_top": "3*a2**3*(a0**2 - 2*a0*a1 - 2*a0*tau1 + a1**2 - 2*a1*tau1 + 2*tau1**2)*(a0**2*a2 - 2*a0**2*tau2 - 2*a0*a1*a2 + 4*a0*a1*tau2 - 2*a0*a2*tau1 + 4*a0*tau1*tau2 + a1**2*a2 - 2*a1**2*tau2 - 2*a1*a2*tau1 + 4*a1*tau1*tau2 + 2*a2*tau1**2 + 2*tau1**2*tau2)/(32*tau1**4*tau2**3)",
+    "strong_order_components": {
+      "0": "3*a2**2*(a0**2 - 2*a0*a1 - 2*a0*tau1 + a1**2 - 2*a1*tau1 + 4*tau1**2)/(8*tau1**2)",
+      "1": "a2**2*(a0**2 - 2*a0*a1 - 2*a0*tau1 + a1**2 - 2*a1*tau1 + 2*tau1**2)/(8*tau1**2*tau2)",
+      "2": "a2**2*(a0**2 - 2*a0*a1 - 2*a0*tau1 + a1**2 - 2*a1*tau1 + 2*tau1**2)/(8*tau1**2*tau2)",
+      "3": "a2*(a0**2*a2 - 2*a0**2*tau2 - 2*a0*a1*a2 + 4*a0*a1*tau2 - 2*a0*a2*tau1 + 4*a0*tau1*tau2 + a1**2*a2 - 2*a1**2*tau2 - 2*a1*a2*tau1 + 4*a1*tau1*tau2 + 2*a2*tau1**2 + 2*tau1**2*tau2)/(8*tau1**2*tau2**2)",
+      "4": "a2**2*(a0**2 - 2*a0*a1 - 2*a0*tau1 + a1**2 - 2*a1*tau1 + 2*tau1**2)/(8*tau1**2*tau2)",
+      "5": "a2*(a0**2*a2 - 2*a0**2*tau2 - 2*a0*a1*a2 + 4*a0*a1*tau2 - 2*a0*a2*tau1 + 4*a0*tau1*tau2 + a1**2*a2 - 2*a1**2*tau2 - 2*a1*a2*tau1 + 4*a1*tau1*tau2 + 2*a2*tau1**2 + 2*tau1**2*tau2)/(8*tau1**2*tau2**2)",
+      "6": "a2*(a0**2*a2 - 2*a0**2*tau2 - 2*a0*a1*a2 + 4*a0*a1*tau2 - 2*a0*a2*tau1 + 4*a0*tau1*tau2 + a1**2*a2 - 2*a1**2*tau2 - 2*a1*a2*tau1 + 4*a1*tau1*tau2 + 2*a2*tau1**2 + 2*tau1**2*tau2)/(8*tau1**2*tau2**2)"
+    }
+  },
+  "answer": "No on the declared square-free nested external-mass jet cylinder. Before squaring, the six-point amplitude has one common singleton coefficient F1 and one common complementary-pair coefficient F2. The recombined outer five-point parent profiles H0=L0*S1+Q0*S2 and H1=L1*S1+Q1*S2 are linearly independent, so the relevant quotient C_rel=F1*S1+F2*S2 has the unique factorization C_rel=u*H0+v*H1 with u=2*Q_inner but v=a2/2, not 2*L_inner. Thus the linear parent coefficient depends on the outer daughter history. More decisively, both H0 and H1 contain both spectator profiles, so their self-complement pairings do not vanish. After normalization by the nonzero parent cross component B01 and raising with the parent cross metric J, the two-species endomorphism has nonzero off-diagonal entries. Its characteristic discriminant is -4*u^2*a2^2*(tau2+a2)*(2*tau2-a2)/(tau2-2*a2)^2, strictly negative for tau2>a2>0 away from tau2=2*a2. It therefore has a non-real conjugate eigenpair and cannot be similar to any positive scalar multiple of I2. At tau2=2*a2 the parent cross normalization itself vanishes, so that surface does not provide a completion. The scalar contraction, threshold calculation, and selected-history weight 5/3072 remain exact. The finite CPTP branching instrument remains a positive mathematical completion of the scalar history probabilities, but its second I2 jump is now exactly obstructed from amplitude-level BT affiliation on this carrier. This is not a complete six-body probability, a no-go for enlarged species/profile carriers, an all-order S-matrix theorem, Eq. (19), or a gravitational or Lorentzian result.",
+  "assumptions": [
+    "The obstruction is restricted to the certified nested strongly ordered square-free external-mass jet cylinder and its constant/linear recombined-parent basis.",
+    "The complement pairing is the coefficient of the product of the three hard spectator jets, exactly the functional used by the six-point scalar certificate before threshold integration.",
+    "The parent hard normalization uses its nonzero constant/linear cross component; tau2=2*a2 is excluded because that component vanishes.",
+    "A common real phase, external delta-prime sign, or nonzero scalar normalization cannot change the nonzero off-diagonal entries or the sign of the characteristic discriminant up to a positive square."
+  ],
+  "certificate": "REVERSE_PHYSICS_BT_SIX_POINT_PARENT_JET_INTERFERENCE_V1",
+  "checks": {
+    "details": {
+      "B00_formula": true,
+      "B01_formula": true,
+      "B11_formula": true,
+      "abstract_CPTP_completion_remains_mathematically_valid": true,
+      "characteristic_discriminant_identity": true,
+      "exact_fixtures_have_negative_characteristic_discriminant": true,
+      "higher_identity_species_affiliation_is_obstructed": true,
+      "input_hashes_pinned": true,
+      "leading_masks_are_zero_through_six": true,
+      "linear_parent_coefficient_has_outer_history_derivative_one_half": true,
+      "linear_parent_coefficient_is_not_twice_inner_L": true,
+      "no_complete_probability_claim": true,
+      "no_lorentzian_claim": true,
+      "no_squarefree_cubic_amplitude_component": true,
+      "outer_parent_profile_matrix_is_invertible": true,
+      "profile_pairing_is_nondegenerate": true,
+      "raised_diagonal_entries_agree": true,
+      "raised_lower_offdiagonal_is_nonzero": true,
+      "raised_upper_offdiagonal_is_nonzero": true,
+      "scalar_square_is_contraction_of_species_covariant_gram": true,
+      "scalar_square_top_is_six_F1_F2": true,
+      "second_scalar_history_weight_is_retained": true,
+      "strong_constant_component": true,
+      "three_hard_fixtures_have_identical_finite_amplitude_components": true,
+      "three_hard_fixtures_have_identical_strong_components": true,
+      "three_pair_components_are_F2": true,
+      "three_singleton_components_are_F1": true,
+      "unique_constant_parent_coefficient_is_twice_inner_Q": true,
+      "unique_linear_parent_coefficient_is_outer_a2_over_two": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 29,
+    "total": 29
+  },
+  "declared_carrier": {
+    "nested_scaling": "x0=delta*e*a0, x1=delta*e*a1, s01=delta*e*tau1; x2=delta*a2, x3..x5=delta*a3..a5, s012=delta*tau2; delta->0 before e->0",
+    "parent_cross_metric": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "parent_fibre_basis": [
+      "parent_constant_jet",
+      "parent_linear_jet"
+    ],
+    "physical_domain": "a0,a1,a2>0; tau1>(sqrt(a0)+sqrt(a1))^2; tau2>a2; the normalized endomorphism additionally requires tau2!=2*a2",
+    "spectator_profiles": {
+      "S1": "a3+a4+a5",
+      "S2": "a3*a4+a3*a5+a4*a5",
+      "pairing": "B(l*S1+q*S2,l'*S1+q'*S2)=[a3*a4*a5](...)(...)=3*(l*q'+q*l')"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "disposition": {
+    "Eq19_all_orders": "NOT_PROVED",
+    "amplitude_affiliation_above_first_jump": "REFUTED_FOR_IDENTITY_SPECIES_LIFT",
+    "channel_resolved_CPTP_instrument": "RETAINED_AS_ABSTRACT_POSITIVE_COMPLETION",
+    "complete_BT_probability": "NOT_CONSTRUCTED",
+    "minimal_enlarged_profile_carrier": "NOT_YET_CONSTRUCTED",
+    "scalar_five_over_3072_history_weight": "RETAINED",
+    "second_positive_scalar_I2_species_jump": "EXACTLY_OBSTRUCTED_ON_DECLARED_CARRIER",
+    "seven_point_species_tensor": "NOT_REQUIRED_TO_FALSIFY_MINIMAL_I2_LIFT_AND_NOT_COMPUTED",
+    "six_point_amplitude_species_resolution": "COMPUTED_BEFORE_SCALAR_TRACE",
+    "spacetime_local_physical_S_matrix": "NOT_CONSTRUCTED"
+  },
+  "does_not_establish": [
+    "that the scalar 5/3072 selected-history coefficient is wrong",
+    "that the finite channel-history GKSL construction is mathematically inconsistent",
+    "that no enlarged parent-jet times spectator-profile carrier can have a positive quotient or dilation",
+    "the seven-point amplitude species tensor",
+    "a complete physical 2->4 probability",
+    "a complete BT Moller or LSZ operator",
+    "an all-order BT count law or asymptotic Hamiltonian",
+    "the all-order Eq. (19)",
+    "a gravitational or BRST lift",
+    "a new spacetime or physical dimension",
+    "anything LORENTZIAN-CAUSAL",
+    "literature priority"
+  ],
+  "lifecycle_state": "CLASSIFIED",
+  "missing_object_ledger": [
+    "a four-component parent-jet times spectator-profile carrier retaining the S1/S2 mixing instead of tracing it",
+    "a positive quotient or Naimark dilation of that enlarged signed profile pairing, or an exact no-go theorem for it",
+    "the amplitude phases and reverse blocks needed for a nonlinear asymptotic Hamiltonian affiliation",
+    "the seven-point species/profile tensor if an enlarged six-point carrier passes",
+    "non-strongly-ordered six-body phase space and finite terms",
+    "a complete spacetime-local physical S-matrix construction"
+  ],
+  "next_gate": "Replace the false identity-species lift by the minimal bi-graded carrier parent jet (constant/linear) tensor spectator profile (S1/S2). Compute its complete signed complement pairing and quotient: either construct a positive normalized four-component history jump whose scalar contraction is 5/3072, or prove that positivity still fails. Only if that six-point enlarged carrier passes should the seven-point species/profile tensor be computed.",
+  "parent_jet_factorization": {
+    "five_point_universal_coefficients": [
+      "-(a0**2 - 2*a0*a1 - 2*a0*tau1 + a1**2 - 2*a1*tau1)/(2*tau1**2)",
+      "-(a0 - a1)**2/(2*tau1)"
+    ],
+    "locality_disposition": "THE_CONSTANT_PARENT_COEFFICIENT_PERSISTS_BUT_THE_LINEAR_PARENT_COEFFICIENT_IS_NOT_AN_INNER_LOCAL_SPLITTING_COEFFICIENT",
+    "outer_history_derivative": "d v/d a2=1/2 while d u/d a2=0",
+    "outer_parent_profiles": "H0=L0*S1+Q0*S2; H1=L1*S1+Q1*S2",
+    "profile_coefficients": {
+      "L0": "-a2**2/(4*tau2)",
+      "L1": "a2/(2*tau2)",
+      "Q0": "-a2*(a2 - 2*tau2)/(4*tau2**2)",
+      "Q1": "(a2 + tau2)/(2*tau2**2)"
+    },
+    "profile_matrix_determinant": "-3*a2**2/(8*tau2**2)",
+    "u": "-(a0**2 - 2*a0*a1 - 2*a0*tau1 + a1**2 - 2*a1*tau1)/(2*tau1**2)",
+    "unique_factorization": "C_rel=F1*S1+F2*S2=u*H0+v*H1 on the square-free spectator quotient relevant to [a3*a4*a5]C^2",
+    "v": "a2/2"
+  },
+  "provenance": {
+    "inputs": [
+      {
+        "path": "planning/work-items/reverse-physics-bateman-six-point-parent-jet-interference.json",
+        "sha256": "f653c42f06fa57c29ca8cd949738366f3a4a845ca3d3d57fa82f1fead2d204ce"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_PHYSICAL_COLLINEAR_OPERATOR_FACTORIZATION_V1.json",
+        "sha256": "d0f8786c62e24e37c198f4a286aa2e3b718f13decf5352d811cf554d485ed79e"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_SIX_POINT_STRONGLY_ORDERED_TREE_V1.json",
+        "sha256": "92793513ecd3491e0f1da56800c0962b4f38a836545e9470943bc754388f3c0d"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_CHANNEL_RESOLVED_BRANCHING_INSTRUMENT_V1.json",
+        "sha256": "7108111b1e215e6adac71c79980dd97fc818edd9323e91956dc4c0bd69a2763a"
+      }
+    ],
+    "primary_source": {
+      "equations": [
+        "Appendix B Eqs. (24)-(25)",
+        "Eq. (18)"
+      ],
+      "source": "Bateman--Turok arXiv:2607.00096v1",
+      "url": "https://arxiv.org/abs/2607.00096v1"
+    },
+    "producer_method": "cached Berends-Giele subset recursion in an exact truncated Laurent and square-free spectator algebra",
+    "retrieval_date": "2026-08-11",
+    "source_commit": "a1e7048bbce1bd68e838a7b1cdda95272f8646b2"
+  },
+  "question": "Does the complete BT six-point strongly ordered amplitude dynamically lift the positive scalar 5/3072 selected-history weight to a positive scalar endomorphism on the same two constant/linear parent-jet species that occur at five points?",
+  "report": "reverse_physics/reports/bt-six-point-parent-jet-interference.md",
+  "result_kind": "exact six-point parent-jet spectator-profile interference obstruction to the second identity-species branching jump",
+  "schema": "reverse_physics/schema/reverse-physics-bt-six-point-parent-jet-interference-v1.schema.json",
+  "schema_version": "reverse-physics-bt-six-point-parent-jet-interference-v1",
+  "species_interference": {
+    "basis_invariance": "simultaneous parent-fibre basis changes transform the raised endomorphism by similarity, preserving its characteristic polynomial and non-real eigenpair",
+    "characteristic_discriminant": "a2**2*(a2 - 2*tau2)*(a2 + tau2)*(a0**2 - 2*a0*a1 - 2*a0*tau1 + a1**2 - 2*a1*tau1)**2/(tau1**4*(2*a2 - tau2)**2)",
+    "characteristic_polynomial": "(9*a0**4*a2**2*tau2**2 - 36*a0**3*a1*a2**2*tau2**2 - 36*a0**3*a2**2*tau1*tau2**2 + 54*a0**2*a1**2*a2**2*tau2**2 + 36*a0**2*a1*a2**2*tau1*tau2**2 + 32*a0**2*a2**3*tau1**2*z + 36*a0**2*a2**2*tau1**2*tau2**2 - 32*a0**2*a2**2*tau1**2*tau2*z + 8*a0**2*a2*tau1**2*tau2**2*z - 36*a0*a1**3*a2**2*tau2**2 + 36*a0*a1**2*a2**2*tau1*tau2**2 - 64*a0*a1*a2**3*tau1**2*z + 72*a0*a1*a2**2*tau1**2*tau2**2 + 64*a0*a1*a2**2*tau1**2*tau2*z - 16*a0*a1*a2*tau1**2*tau2**2*z - 64*a0*a2**3*tau1**3*z + 64*a0*a2**2*tau1**3*tau2*z - 16*a0*a2*tau1**3*tau2**2*z + 9*a1**4*a2**2*tau2**2 - 36*a1**3*a2**2*tau1*tau2**2 + 32*a1**2*a2**3*tau1**2*z + 36*a1**2*a2**2*tau1**2*tau2**2 - 32*a1**2*a2**2*tau1**2*tau2*z + 8*a1**2*a2*tau1**2*tau2**2*z - 64*a1*a2**3*tau1**3*z + 64*a1*a2**2*tau1**3*tau2*z - 16*a1*a2*tau1**3*tau2**2*z + 64*a2**2*tau1**4*z**2 - 64*a2*tau1**4*tau2*z**2 + 16*tau1**4*tau2**2*z**2)/(16*tau1**4*(2*a2 - tau2)**2)",
+    "degenerate_surface": "B01=0 at tau2=2*a2, so the parent hard cross normalization vanishes; this is fail-closed, not a scalar-jump limit",
+    "exact_fixtures": [
+      {
+        "a0": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "a1": {
+          "denominator": 1,
+          "numerator": 4
+        },
+        "a2": {
+          "denominator": 1,
+          "numerator": 3
+        },
+        "characteristic_discriminant": {
+          "denominator": 40000,
+          "numerator": -10657647
+        },
+        "discriminant_is_negative": true,
+        "raised_profile_normalized_endomorphism": [
+          [
+            {
+              "denominator": 400,
+              "numerator": 273
+            },
+            {
+              "denominator": 2,
+              "numerator": 33
+            }
+          ],
+          [
+            {
+              "denominator": 80000,
+              "numerator": -322959
+            },
+            {
+              "denominator": 400,
+              "numerator": 273
+            }
+          ]
+        ],
+        "tau1": {
+          "denominator": 1,
+          "numerator": 10
+        },
+        "tau2": {
+          "denominator": 1,
+          "numerator": 8
+        },
+        "u": {
+          "denominator": 200,
+          "numerator": 91
+        },
+        "v": {
+          "denominator": 2,
+          "numerator": 3
+        }
+      },
+      {
+        "a0": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "a1": {
+          "denominator": 1,
+          "numerator": 7
+        },
+        "a2": {
+          "denominator": 1,
+          "numerator": 5
+        },
+        "characteristic_discriminant": {
+          "denominator": 28561,
+          "numerator": -45865050
+        },
+        "discriminant_is_negative": true,
+        "raised_profile_normalized_endomorphism": [
+          [
+            {
+              "denominator": 676,
+              "numerator": 1045
+            },
+            {
+              "denominator": 1,
+              "numerator": 30
+            }
+          ],
+          [
+            {
+              "denominator": 114244,
+              "numerator": -1528835
+            },
+            {
+              "denominator": 676,
+              "numerator": 1045
+            }
+          ]
+        ],
+        "tau1": {
+          "denominator": 1,
+          "numerator": 13
+        },
+        "tau2": {
+          "denominator": 1,
+          "numerator": 13
+        },
+        "u": {
+          "denominator": 338,
+          "numerator": 209
+        },
+        "v": {
+          "denominator": 2,
+          "numerator": 5
+        }
+      },
+      {
+        "a0": {
+          "denominator": 1,
+          "numerator": 4
+        },
+        "a1": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "a2": {
+          "denominator": 1,
+          "numerator": 7
+        },
+        "characteristic_discriminant": {
+          "denominator": 1172889,
+          "numerator": -208687570
+        },
+        "discriminant_is_negative": true,
+        "raised_profile_normalized_endomorphism": [
+          [
+            {
+              "denominator": 1444,
+              "numerator": 1267
+            },
+            {
+              "denominator": 3,
+              "numerator": 70
+            }
+          ],
+          [
+            {
+              "denominator": 1563852,
+              "numerator": -2981251
+            },
+            {
+              "denominator": 1444,
+              "numerator": 1267
+            }
+          ]
+        ],
+        "tau1": {
+          "denominator": 1,
+          "numerator": 19
+        },
+        "tau2": {
+          "denominator": 1,
+          "numerator": 23
+        },
+        "u": {
+          "denominator": 722,
+          "numerator": 181
+        },
+        "v": {
+          "denominator": 2,
+          "numerator": 7
+        }
+      }
+    ],
+    "normalization": "divide the child covariant profile Gram by the parent hard cross component B01 and raise the parent index with J; any omitted common real sign or nonzero scalar leaves scalarity and the characteristic-discriminant obstruction unchanged",
+    "physical_domain_sign": "strictly negative for tau2>a2>0 and tau2!=2*a2",
+    "profile_pairing_components": {
+      "B00": "3*a2**3*(a2 - 2*tau2)/(8*tau2**3)",
+      "B01": "-3*a2**2*(2*a2 - tau2)/(8*tau2**3)",
+      "B11": "3*a2*(a2 + tau2)/(2*tau2**3)",
+      "determinant": "-81*a2^4/(64*tau2^4)"
+    },
+    "raised_profile_normalized_endomorphism": [
+      [
+        "-a2*(a0**2 - 2*a0*a1 - 2*a0*tau1 + a1**2 - 2*a1*tau1)/(4*tau1**2)",
+        "-a2*(a2 + tau2)/(2*a2 - tau2)"
+      ],
+      [
+        "-a2*(a2 - 2*tau2)*(a0**2 - 2*a0*a1 - 2*a0*tau1 + a1**2 - 2*a1*tau1)**2/(4*tau1**4*(2*a2 - tau2))",
+        "-a2*(a0**2 - 2*a0*a1 - 2*a0*tau1 + a1**2 - 2*a1*tau1)/(4*tau1**2)"
+      ]
+    ]
+  },
+  "verification_commands": [
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/bt_six_point_parent_jet_interference.py --write --check",
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/verify_bt_six_point_parent_jet_interference.py",
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 -m unittest -v reverse_physics.tests.test_bt_six_point_parent_jet_interference"
+  ]
+}

@@ -280,27 +280,27 @@ three unordered pair channels and each jump Gram is the certified
 \((1/48)I_2\).  The construction therefore retains both physical jet species
 and the correct per-pair normalization.
 
-At levels two and three, the tree calculations certified only a scalar
-square-free trace for each history.  Taking
+The scalar six- and seven-point tree calculations certify only a square-free
+trace for each history.  Taking
 \(w_kI_{\mathcal H_k}\otimes I_2\) is the minimal positive symmetry-compatible
 lift.  It does not derive the off-diagonal species matrix or amplitude phase.
 Likewise, making level three absorbing creates an exactly normalized finite
 instrument but is not a statement that BT dynamics forbids a fourth emission.
 
-The next physical calculation is therefore sharper than another total count:
-retain the constant/linear parent-jet species at six and seven points before
-taking the normalized trace.  Their history blocks must be tested against
-
-\[
- \frac5{3072}I_2,
- \qquad
- \frac9{81920}I_2.
-\]
-
-Agreement, including phases, would affiliate the higher jumps with the
-physical pair carrier.  Failure of positivity or scalarity would identify the
-first exact obstruction to this instrument.  The eight-point tree separately
-determines \(q_3\) and tests continuation beyond the absorbing closure.
+Resolving the six-point constant/linear parent jets before this trace gives
+the first exact obstruction.  The unique amplitude coefficients are
+\((2Q_{\rm inner},a_2/2)\), and the pulled-back spectator-profile endomorphism
+has a strictly negative characteristic discriminant above outer threshold.
+It is therefore not similar to a positive scalar multiple of \(I_2\).
+Certificate
+`REVERSE_PHYSICS_BT_SIX_POINT_PARENT_JET_INTERFERENCE_V1` retains the scalar
+\(5/3072\) history weight and this finite CPTP completion, but refutes its
+amplitude affiliation above the first jump on the declared two-species
+carrier.  The next physical gate is the minimal four-component parent-jet
+times spectator-profile carrier; the seven-point species tensor is useful
+only if that enlarged six-point carrier admits a positive quotient or
+dilation.  The eight-point scalar tree separately determines \(q_3\) and tests
+continuation beyond the absorbing closure.
 
 This certificate does not establish a complete physical \(2\to n\)
 probability, incoming degenerate sectors, a BT asymptotic Hamiltonian, a

@@ -197,7 +197,7 @@ def partitions(mask, count):
         subset = (subset-1)&rest
 
 
-def exact_tree_kernel(parameters, hard_fixture):
+def exact_tree_kernel(parameters, hard_fixture, return_leading=False):
     """Enumerate, rather than recursively sum, all 220 tree values."""
     a0, a1, a2, epsilon, tau1, tau2 = map(Fraction, parameters)
     adjacent_hard, triple_hard = hard_fixture
@@ -293,6 +293,8 @@ def exact_tree_kernel(parameters, hard_fixture):
     leading_order = min(amplitude.coefficients)
     leading = amplitude.coefficient(leading_order)
     projected = (leading*leading).coefficients.get(7, Fraction(0))
+    if return_leading:
+        return leading_order, len(trees), projected, leading
     return leading_order, len(trees), projected
 
 

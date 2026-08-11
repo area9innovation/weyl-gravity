@@ -301,7 +301,7 @@ HARD_FIXTURES = [
 ]
 
 
-def correlated_six_point(hard_fixture):
+def correlated_six_point(hard_fixture, include_amplitude_components=False):
     """Return the exact delta-leading nested boundary spectator kernel."""
     import sympy as sp
     from sympy.polys.domains import QQ
@@ -448,7 +448,7 @@ def correlated_six_point(hard_fixture):
     symbols = {symbol.name: symbol for symbol in projected.as_expr().free_symbols}
     factored = sp.factor(projected.as_expr())
     strong = sp.factor(projected.as_expr().subs(symbols["e"], 0))
-    return {
+    result = {
         "leading_order": leading_order,
         "leading_masks": sorted(leading.coefficients),
         "projected": str(projected),
@@ -458,6 +458,16 @@ def correlated_six_point(hard_fixture):
         "strong_order": str(strong),
         "strong_order_length": len(str(strong)),
     }
+    if include_amplitude_components:
+        result["leading_components"] = {
+            str(mask): str(value)
+            for mask, value in sorted(leading.coefficients.items())
+        }
+        result["strong_order_components"] = {
+            str(mask): str(sp.factor(value.as_expr().subs(symbols["e"], 0)))
+            for mask, value in sorted(leading.coefficients.items())
+        }
+    return result
 
 
 def threshold_and_factorial_analysis():
