@@ -1,0 +1,17 @@
+{
+  "receipt_id":"FOUNDATIONAL_BT_SEPARABLE_STATE_CHAIN_ZF_V1_TIER_RECEIPT","schema_version":"foundational-tier-receipt-v0","created":"2026-08-11","result_id":"FOUNDATIONAL_BT_SEPARABLE_STATE_CHAIN_ZF_V1","dependency_tags":["LOCAL-ALGEBRAIC","REDUCED-MODE"],"base_commit":"d61c744e3ce3ee6ccc5118d3dab9c69f1d12fd35",
+  "tiers":{
+    "tier_0":{"status":"PASS","command":"parse changed JSON, compile changed Python, and run git diff --check on eight foundations paths"},
+    "tier_1_checker":{"status":"PASS","command":"python3 foundations/check_bt_separable_state_chain.py","result":"49 matrix units, rank-7 corner GNS control, exact faithful weights, window traces, nontracial witness, factor-five dynamic mismatch, digest 8a0d323974ca02fa8ed77baefeed07d4038e9b9f71660a77ed138089a52997a2"},
+    "tier_1_verifier":{"status":"PASS","command":"python3 foundations/verify_bt_separable_state_chain.py","result":"8/8 object, chain, source, literature, DAG, flag, and report checks pass"},
+    "tier_1_foundations_suite":{"status":"PASS","elapsed_seconds":"0.32","command":"python3 -m unittest discover -s foundations/tests -p 'test_*.py'","result":"65/65 tests pass, including 12 new mutations"},
+    "tier_1_schema":{"status":"PASS","command":"Draft202012Validator over result and schema"},
+    "tier_1_literature_pin":{"status":"PASS","command":"download arXiv:2602.15812 and compute SHA-256","result":"PDF hash 0eaa3c5e0b2e32c5c9267902f2330eb220848a0d22c13ce75093640304382158 matches ledger"},
+    "tier_2":{"status":"NOT_RUN","criterion":"All four source certificates are unchanged and content-pinned; no source operator or generated artifact changed."},
+    "tier_3":{"status":"NOT_RUN","criterion":"This is a foundational separation audit, not a freeze, release, shared-core change, or Lorentzian promotion."}
+  },
+  "auxiliary_rails":[{"name":"science_forge_work_drafts","status":"NOT_RERUN","reason":"Same-session Tango sfc compiler failure at arena.forge:401:16 (sanitize_thread); no conformance pass inferred."}],
+  "content_hashes":{"foundations/README.md":"69dffc3ba34ec0cc3e4415391b03e3f1bfe3203c253f57ed0871ed08b66a8d32","foundations/check_bt_separable_state_chain.py":"157a84ce1c3f79e48460d8b6048dae943acc4cf186691f7512416a2f0ea0cc90","foundations/reports/bt-separable-cstar-state-chain.md":"3d140b64b84e3abdb5fd545b8ff1448a4c38618e9999fc24d1f316dfad29b456","foundations/results/FOUNDATIONAL_BT_SEPARABLE_STATE_CHAIN_ZF_V1.json":"08389e96d349766e29a34cde8109d4b1271288b59d44f3b29fcb456065641998","foundations/schema/foundational-bt-separable-state-chain-zf-v1.schema.json":"ff7950a512aeae5ff5f721b10567edacfeedb70d19a1806720bb8984ec40fcca","foundations/tests/test_bt_separable_state_chain.py":"9cb38e42869f5297fc2d6fcff70fea8b343c51b5efa313b20ab07d72f5f35b29","foundations/verify_bt_separable_state_chain.py":"76ccecc7f36b1075556076d55860f536ab321cd8f3ed8bb07fea8b334602d6dc"},
+  "scope_receipt":{"changed_scope":"foundations/ only","unrelated_concurrent_work":"All visible Bateman seven-point, paper, note, and reverse_physics edits remain excluded."},
+  "claim_boundary":"The receipt proves a ZF separable detector algebra, explicit states, and an explicit GNS representation, and separates them from the semifinite full-orbit weight and physical dynamics. It does not select a thermodynamic physical state or establish a LORENTZIAN-CAUSAL claim."
+}

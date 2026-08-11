@@ -77,6 +77,17 @@ python3 foundations/verify_explicit_energy_spectral_fragment.py
 python3 -m unittest foundations.tests.test_explicit_energy_spectral_fragment
 ```
 
+The first Phase C audit is the
+[`BT separable C*-algebra/state chain`](reports/bt-separable-cstar-state-chain.md).
+It separates the compact detector algebra, explicit ZF states and GNS,
+semifinite weight, physical state selection, and nonlinear dynamics:
+
+```bash
+python3 foundations/check_bt_separable_state_chain.py
+python3 foundations/verify_bt_separable_state_chain.py
+python3 -m unittest foundations.tests.test_bt_separable_state_chain
+```
+
 ## Lifecycle
 
 This stream uses a literature/research lifecycle, not the quantum lifecycle:
