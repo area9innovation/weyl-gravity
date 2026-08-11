@@ -1,0 +1,27 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/reverse-physics-bateman-finite-physical-moller-column-DONE-f4362f0f255a5367",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work item transitioned",
+  "source": {"path": "tools/science-forge/program/events/reverse-physics-bateman-finite-physical-moller-column-DONE-f4362f0f255a5367.json", "span": null},
+  "body": {
+    "event_kind": "WORK_ITEM_TRANSITIONED",
+    "actor": "reverse-physics",
+    "base_revision": "science-forge-ir-v0",
+    "predecessors": ["sf:program/event/reverse-physics-bateman-finite-physical-moller-column-COMMIT-f4362f0f255a5367"],
+    "when": "2026-08-11T18:06:16Z",
+    "seq": 2,
+    "payload": {
+      "target": "sf:program/work/reverse-physics-bateman-finite-physical-moller-column",
+      "to_state": "DONE",
+      "note": "the 75-channel physical direct-sum isometry composed with the HP vacuum evolution gives an exact normalized finite physical continuum Moller column for every resolution length; in the pinned model its hard -3/512 and physical real +3/512 responses cancel on the same column without using the public R_t response, while the public rank-one leg admits a physical compression only through a forced non-null two-dimensional cross-Krein complement with determinant -rho^2 and raised trace -2rho; the complement is not derived from BT dynamics, and a fourth jump, complete BT probability, two-sided spacetime S operator, all-order Eq. 19, gravity, and Lorentzian claims remain open",
+      "evidence_basis": "reverse_physics/certificates/REVERSE_PHYSICS_BT_FINITE_PHYSICAL_MOLLER_COLUMN_V1.json"
+    },
+    "native": {
+      "authored_by": "manual close-out after scoped verification",
+      "policy": "append-only (SPEC 4.5); one content-addressed file per event; the work-item file is never rewritten -- the effective state is the fold of these events over the base state."
+    }
+  },
+  "edges": [{"rel": "TRANSITIONS", "to": "sf:program/work/reverse-physics-bateman-finite-physical-moller-column"}]
+}
