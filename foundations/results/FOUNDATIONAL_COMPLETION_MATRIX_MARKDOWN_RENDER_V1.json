@@ -1,0 +1,22 @@
+{
+  "schema_version":"foundational-completion-matrix-markdown-render-v1",
+  "result_id":"FOUNDATIONAL_COMPLETION_MATRIX_MARKDOWN_RENDER_V1",
+  "result_kind":"GENERATED_DOCUMENT_CERTIFICATE",
+  "lifecycle":"SEPARATED",
+  "dependency_tags":["LOCAL-ALGEBRAIC","REDUCED-MODE","LORENTZIAN-CAUSAL"],
+  "created":"2026-08-11",
+  "repository_base_commit":"c15be6c8d2e5feefd6d6234a35e3f57ce3ab5071",
+  "purpose":"Deterministically project the assumption coverage, ranked completion, and source-specific literature points and boundaries into one updateable Markdown document.",
+  "inputs":[
+    {"path":"foundations/results/FOUNDATIONAL_COVERAGE_MATRIX_V0.json","sha256":"0f1a30aaf1e3a4f1fdba76952ef44d5f43372dc9c7323ff2000f7fcc31b95fe9"},
+    {"path":"foundations/results/FOUNDATIONAL_RANKED_OPPORTUNITY_COMPLETION_MATRIX_V1.json","sha256":"bf897b1c8ab2e38f52ae66c52822f72cf5f0f1b2e5a88882a3ab54e730bcb1c7"},
+    {"path":"foundations/literature-ledger.json","sha256":"93aa76fc9042f81be11d716664593afe78f91b9c83fa3c04a03cb6aeae558596"},
+    {"path":"foundations/literature-supplement-known-attempts-v1.json","sha256":"3f4a836af7c815e9628f0c0b1ee10bc5de7d8ecceba9df8d0757f766a0394dc7"}
+  ],
+  "generator":{"path":"foundations/render_completion_matrix_md.py","sha256":"39c77d84e28e4e16a3e4196da823f427d999a8ebf49b0bebace86133f1ced2e1","write_command":"python3 foundations/render_completion_matrix_md.py","check_command":"python3 foundations/render_completion_matrix_md.py --check"},
+  "generated_report":{"path":"foundations/reports/completion-matrix.md","sha256":"f4e45ea92310f286cc1a4ff42bd4f648478246dbda4435655251f0b80332b6b6","line_count":121,"word_count":3025,"byte_count":23106},
+  "dimensions":{"programmes":16,"axes":6,"coverage_cells":96,"coverage_status_counts":{"DIRECT":51,"PARTIAL":20,"ADJACENT":9,"ABSENT":11,"UNKNOWN":5},"ranked_opportunities":9,"distinct_completion_certificates":8,"literature_records":25,"literature_pin_counts":{"CONTENT_PINNED":19,"GIT_BLOB_PINNED":2,"METADATA_ONLY":4}},
+  "claim_flags":{"markdown_matches_current_inputs":true,"all_coverage_cells_rendered":true,"all_completion_rows_rendered":true,"all_literature_points_and_boundaries_rendered":true,"literature_complete":false,"deeper_programmes_complete":false,"new_lorentzian_claim":false},
+  "does_not_establish":["literature completeness","correctness of the cited literature","a new mathematical or physical theorem","a weakest-base classification","completion of the deeper research gates","a full Lorentzian BV propagator","a Hadamard state or renormalized products","a Lorentzian QME theorem"],
+  "human_report":"foundations/reports/completion-matrix.md"
+}

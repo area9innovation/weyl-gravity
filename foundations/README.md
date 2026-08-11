@@ -148,6 +148,16 @@ python3 foundations/verify_ranked_opportunity_completion.py
 python3 -m unittest foundations.tests.test_ranked_opportunity_completion
 ```
 
+A generated, source-by-source Markdown projection combines the 16-by-6
+coverage atlas, nine completion rows, and all 25 literature points in
+[`completion-matrix.md`](reports/completion-matrix.md):
+
+```bash
+python3 foundations/render_completion_matrix_md.py
+python3 foundations/render_completion_matrix_md.py --check
+python3 -m unittest foundations.tests.test_render_completion_matrix_md
+```
+
 ## Lifecycle
 
 This stream uses a literature/research lifecycle, not the quantum lifecycle:

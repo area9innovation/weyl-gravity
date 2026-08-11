@@ -15,6 +15,10 @@ does **not** close the broader reverse-foundations programme: every row retains
 a deeper research gate, and no continuum quantum or Lorentzian lifecycle claim
 is promoted.
 
+The full generated Markdown projection—including the 16-by-6 assumption
+matrix, nine completion rows, and all 25 literature points and boundaries—is
+[`completion-matrix.md`](completion-matrix.md).
+
 | Rank | Opportunity | First artifact | Scientific status | Main open gate |
 |---:|---|---|---|---|
 | 1 | `OP-EXACT-BV-WEAK-BASELINE` | complete | `SUFFICIENCY_PROVED` | weakest base/reversal and other energies |
@@ -64,5 +68,7 @@ Lorentzian QME theorem.
 ```bash
 python3 foundations/check_ranked_opportunity_completion.py
 python3 foundations/verify_ranked_opportunity_completion.py
+python3 foundations/render_completion_matrix_md.py --check
 python3 -m unittest foundations.tests.test_ranked_opportunity_completion
+python3 -m unittest foundations.tests.test_render_completion_matrix_md
 ```

@@ -1,0 +1,16 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "type":"object",
+  "required":["schema_version","result_id","result_kind","lifecycle","dependency_tags","repository_base_commit","purpose","inputs","generator","generated_report","dimensions","claim_flags","does_not_establish","human_report"],
+  "properties":{
+    "schema_version":{"const":"foundational-completion-matrix-markdown-render-v1"},
+    "result_id":{"const":"FOUNDATIONAL_COMPLETION_MATRIX_MARKDOWN_RENDER_V1"},
+    "lifecycle":{"const":"SEPARATED"},
+    "dependency_tags":{"const":["LOCAL-ALGEBRAIC","REDUCED-MODE","LORENTZIAN-CAUSAL"]},
+    "inputs":{"type":"array","minItems":4,"maxItems":4},
+    "generated_report":{"type":"object","required":["path","sha256","line_count","word_count","byte_count"]},
+    "dimensions":{"type":"object","required":["programmes","axes","coverage_cells","coverage_status_counts","ranked_opportunities","distinct_completion_certificates","literature_records","literature_pin_counts"]},
+    "does_not_establish":{"type":"array","minItems":8},
+    "human_report":{"const":"foundations/reports/completion-matrix.md"}
+  }
+}

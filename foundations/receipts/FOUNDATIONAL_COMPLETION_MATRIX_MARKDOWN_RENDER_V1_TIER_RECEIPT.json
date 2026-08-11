@@ -1,0 +1,31 @@
+{
+  "receipt_id":"FOUNDATIONAL_COMPLETION_MATRIX_MARKDOWN_RENDER_V1_TIER_RECEIPT",
+  "schema_version":"foundational-tier-receipt-v0",
+  "created":"2026-08-11",
+  "result_id":"FOUNDATIONAL_COMPLETION_MATRIX_MARKDOWN_RENDER_V1",
+  "dependency_tags":["LOCAL-ALGEBRAIC","REDUCED-MODE","LORENTZIAN-CAUSAL"],
+  "base_commit":"c15be6c8d2e5feefd6d6234a35e3f57ce3ab5071",
+  "tiers":{
+    "tier_0":{"status":"PASS","command":"parse structured data and Python; git diff --check -- foundations"},
+    "tier_1_render":{"status":"PASS","command":"python3 foundations/render_completion_matrix_md.py --check","result":"121 lines, 3025 words, 23106 bytes; sha256 f4e45ea92310f286cc1a4ff42bd4f648478246dbda4435655251f0b80332b6b6"},
+    "tier_1_verifier":{"status":"PASS","command":"python3 foundations/verify_completion_matrix_markdown.py","result":"input/generator pins, deterministic render, 96 cells, 9 completions, 25 literature records, boundaries, and report tokens pass"},
+    "tier_1_suite":{"status":"PASS","elapsed_seconds":"0.38","command":"python3 -m unittest discover -s foundations/tests -t .","result":"138/138 tests pass, including 15 new renderer/certificate tests"},
+    "tier_1_schema":{"status":"PASS","command":"Draft202012Validator.check_schema and validate"},
+    "tier_2":{"status":"NOT_RUN","criterion":"The source coverage, completion, literature, and mathematical certificates are unchanged; this is a deterministic presentation artifact."},
+    "tier_3":{"status":"NOT_RUN","criterion":"No freeze, release, theorem promotion, shared algebra change, or Lorentzian lifecycle promotion."}
+  },
+  "auxiliary_rails":[{"name":"science_forge_work_drafts","status":"NOT_RERUN","reason":"Known Tango sanitize_thread build failure; no pass inferred."}],
+  "content_hashes":{
+    "foundations/README.md":"2a7ce076f0386ba6e0d7811af4a4b579e2525ab3cdb7ce2f015014b3c88e44fb",
+    "foundations/render_completion_matrix_md.py":"39c77d84e28e4e16a3e4196da823f427d999a8ebf49b0bebace86133f1ced2e1",
+    "foundations/reports/completion-matrix.md":"f4e45ea92310f286cc1a4ff42bd4f648478246dbda4435655251f0b80332b6b6",
+    "foundations/reports/ranked-opportunity-completion-matrix.md":"2b613b606eedb28ab6c9dc6f9b7a027eb01712f58a4c70e04dab14fe7e5e5cab",
+    "foundations/results/FOUNDATIONAL_COMPLETION_MATRIX_MARKDOWN_RENDER_V1.json":"e5cca7b47a5342fc8eeec3a12adcda2066dc5fdea792056b9a4049ab754b39a4",
+    "foundations/schema/foundational-completion-matrix-markdown-render-v1.schema.json":"34f4f082b98f82fff78cdfbc82022f572958a2d436676b9cb56329b39dc96373",
+    "foundations/tests/test_render_completion_matrix_md.py":"a9adc0379d5aab34f8fd4171b0bfdd0decd1cd805ed9df06165a633abd4ac997",
+    "foundations/tests/test_completion_matrix_markdown_certificate.py":"b55ff7fa18dcf6b8cae0fd5acb95bc818b27e8b0dd1e0dfcedf599574d1ac24d",
+    "foundations/verify_completion_matrix_markdown.py":"d8aaaf5ccace860b9044c0f772880dc4696409ad9a710845f6096d7f2b1b3374"
+  },
+  "scope_receipt":{"changed_scope":"foundations/ only"},
+  "claim_boundary":"The generated Markdown is a deterministic projection of existing ledgers and certificates. It creates no new theorem, literature-completeness result, weakest-base classification, deeper-programme closure, or Lorentzian claim."
+}
