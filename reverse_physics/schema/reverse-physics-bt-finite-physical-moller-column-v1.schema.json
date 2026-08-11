@@ -1,0 +1,141 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-finite-physical-moller-column-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "certificate", "schema_version", "dependency_tags", "lifecycle_state",
+    "result_kind", "question", "answer", "declared_carriers",
+    "physical_vacuum_moller_column", "finite_model_inclusive_response",
+    "minimal_public_Rt_compression", "typed_Eq19_boundary", "disposition",
+    "assumptions", "does_not_establish", "missing_object_ledger", "next_gate",
+    "provenance", "verification_commands", "checks", "report", "schema"
+  ],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_FINITE_PHYSICAL_MOLLER_COLUMN_V1"},
+    "schema_version": {"const": "reverse-physics-bt-finite-physical-moller-column-v1"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "result_kind": {"type": "string", "minLength": 100},
+    "question": {"type": "string", "minLength": 200},
+    "answer": {"type": "string", "minLength": 1700},
+    "declared_carriers": {
+      "type": "object", "additionalProperties": false,
+      "required": ["incoming", "hp_output", "physical_output", "dense_domain", "parameter"],
+      "properties": {
+        "incoming": {"type": "string", "minLength": 55},
+        "hp_output": {"type": "string", "minLength": 130},
+        "physical_output": {"type": "string", "minLength": 100},
+        "dense_domain": {"type": "string", "minLength": 180},
+        "parameter": {"type": "string", "minLength": 75}
+      }
+    },
+    "physical_vacuum_moller_column": {
+      "type": "object", "additionalProperties": false,
+      "required": ["definition", "isometry", "range_projection", "history_counts", "edge_counts", "physical_edge_marks", "conditional_rates", "amplitude_drifts", "ordered_history_kernel", "sector_probabilities", "normalization", "positivity", "leading_coefficients", "status"],
+      "properties": {
+        "definition": {"const": "M_a=A_<=3 U_a I_Omega"},
+        "isometry": {"type": "string", "minLength": 100},
+        "range_projection": {"type": "string", "minLength": 85},
+        "history_counts": {"const": [1, 3, 12, 60]},
+        "edge_counts": {"const": [3, 12, 60]},
+        "physical_edge_marks": {"type": "array", "minItems": 75, "maxItems": 75, "items": {"type": "integer", "minimum": 0, "maximum": 74}},
+        "conditional_rates": {"const": [{"numerator": 1, "denominator": 48}, {"numerator": 5, "denominator": 64}, {"numerator": 27, "denominator": 400}]},
+        "amplitude_drifts": {"const": ["1/32", "5/32", "27/160", "0"]},
+        "ordered_history_kernel": {"type": "string", "minLength": 130},
+        "sector_probabilities": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "string", "minLength": 10}},
+        "normalization": {"const": "sum_(k=0)^3 p_k(a)=1 for every a>=0"},
+        "positivity": {"type": "string", "minLength": 80},
+        "leading_coefficients": {"const": [{"numerator": 1, "denominator": 1}, {"numerator": 1, "denominator": 16}, {"numerator": 5, "denominator": 512}, {"numerator": 9, "denominator": 8192}]},
+        "status": {"const": "EXACT_PHYSICAL_CONTINUUM_VACUUM_COLUMN_ON_THE_AVAILABLE_FINITE_HIERARCHY"}
+      }
+    },
+    "finite_model_inclusive_response": {
+      "type": "object", "additionalProperties": false,
+      "required": ["hard_survival_probability", "hard_normalized_linear_response", "real_normalized_linear_response", "Born_coefficient", "hard_absolute_response", "real_absolute_response", "inclusive_absolute_response", "typing", "boundary"],
+      "properties": {
+        "hard_survival_probability": {"const": "exp(-a/16)"},
+        "hard_normalized_linear_response": {"const": {"numerator": -1, "denominator": 16}},
+        "real_normalized_linear_response": {"const": {"numerator": 1, "denominator": 16}},
+        "Born_coefficient": {"const": {"numerator": 3, "denominator": 32}},
+        "hard_absolute_response": {"const": {"numerator": -3, "denominator": 512}},
+        "real_absolute_response": {"const": {"numerator": 3, "denominator": 512}},
+        "inclusive_absolute_response": {"const": {"numerator": 0, "denominator": 1}},
+        "typing": {"type": "string", "minLength": 150},
+        "boundary": {"type": "string", "minLength": 170}
+      }
+    },
+    "minimal_public_Rt_compression": {
+      "type": "object", "additionalProperties": false,
+      "required": ["domain_metric_J", "public_leg_D", "public_covariant_gram", "public_raised_gram", "physical_leg_T", "physical_relation", "missing_leg_C", "missing_covariant_gram", "missing_raised_gram", "common_leg_F", "target_metric", "bridge_W", "commuting_square", "isometry", "minimality", "positive_auxiliary_obstruction", "null_remainder_obstruction", "uniqueness", "continuum_domain"],
+      "properties": {
+        "domain_metric_J": {"const": [["0", "1"], ["1", "0"]]},
+        "public_leg_D": {"const": [["0", "1"], ["0", "1"]]},
+        "public_covariant_gram": {"const": [["0", "0"], ["0", "2"]]},
+        "public_raised_gram": {"const": [["0", "2"], ["0", "0"]]},
+        "physical_leg_T": {"const": [["2*Q", "0"], ["0", "2*L"]]},
+        "physical_relation": {"const": "rho=-4*L*Q>0 and T^T J T=-rho J"},
+        "missing_leg_C": {"const": [["-rho", "-1"], ["0", "1"]]},
+        "missing_covariant_gram": {"const": [["0", "-rho"], ["-rho", "-2"]]},
+        "missing_raised_gram": {"const": [["-rho", "-2"], ["0", "-rho"]]},
+        "common_leg_F": {"const": [["0", "1"], ["0", "1"], ["-rho", "-1"], ["0", "1"]]},
+        "target_metric": {"const": "eta=J direct_sum J"},
+        "bridge_W": {"type": "array", "minItems": 4, "maxItems": 4},
+        "commuting_square": {"const": "W*T=F=(D,C), hence projection_public*W*T=D"},
+        "isometry": {"const": "after rho=-4*L*Q, W^T eta W=J"},
+        "minimality": {"type": "string", "minLength": 130},
+        "positive_auxiliary_obstruction": {"type": "string", "minLength": 85},
+        "null_remainder_obstruction": {"type": "string", "minLength": 105},
+        "uniqueness": {"type": "string", "minLength": 150},
+        "continuum_domain": {"type": "string", "minLength": 160}
+      }
+    },
+    "typed_Eq19_boundary": {
+      "type": "object", "additionalProperties": false,
+      "required": ["public_object", "physical_object", "nonidentification", "finite_order_import", "new_exact_condition", "missing_dynamical_statement", "Eq19_all_orders"],
+      "properties": {
+        "public_object": {"type": "string", "minLength": 55},
+        "physical_object": {"type": "string", "minLength": 75},
+        "nonidentification": {"type": "string", "minLength": 150},
+        "finite_order_import": {"type": "string", "minLength": 110},
+        "new_exact_condition": {"type": "string", "minLength": 160},
+        "missing_dynamical_statement": {"type": "string", "minLength": 135},
+        "Eq19_all_orders": {"const": "NOT_PROVED"}
+      }
+    },
+    "disposition": {
+      "const": {
+        "finite_physical_continuum_vacuum_Moller_column": "CONSTRUCTED_EXACTLY",
+        "finite_hierarchy_probability": "POSITIVE_AND_NORMALIZED_FOR_EVERY_RESOLUTION_LENGTH",
+        "hard_dressed_response_in_pinned_finite_model": "CONSTRUCTED_AND_CANCELS_THE_REAL_LINEAR_RESPONSE",
+        "minimal_public_Rt_compression_architecture": "CONSTRUCTED_EXACTLY",
+        "missing_public_Rt_complement": "ALGEBRAIC_FORM_AND_MINIMAL_INERTIA_FIXED_BUT_NOT_DERIVED_FROM_BT_DYNAMICS",
+        "public_Rt_equals_physical_splitting": "EXACTLY_FALSE",
+        "full_two_sided_physical_S_operator": "NOT_CONSTRUCTED",
+        "fourth_jump": "NOT_COMPUTED",
+        "complete_BT_probability": "NOT_CONSTRUCTED",
+        "Eq19_all_orders": "NOT_PROVED",
+        "spacetime_Moller_LSZ_S_operator": "NOT_CONSTRUCTED"
+      }
+    },
+    "assumptions": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"type": "string", "minLength": 95}},
+    "does_not_establish": {"type": "array", "minItems": 13, "maxItems": 13, "items": {"type": "string", "minLength": 15}},
+    "missing_object_ledger": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"type": "string", "minLength": 45}},
+    "next_gate": {"type": "string", "minLength": 650},
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_commit", "retrieval_date", "inputs", "producer_method", "primary_source"],
+      "properties": {
+        "source_commit": {"const": "4ac684c16a5d5acea2150c35dee380b1360ff2c2"},
+        "retrieval_date": {"const": "2026-08-11"},
+        "inputs": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"type": "object", "additionalProperties": false, "required": ["path", "sha256"], "properties": {"path": {"type": "string", "minLength": 20}, "sha256": {"pattern": "^[0-9a-f]{64}$"}}}},
+        "producer_method": {"type": "string", "minLength": 200},
+        "primary_source": {"type": "object", "additionalProperties": false, "required": ["source", "url", "equations"], "properties": {"source": {"const": "Bateman--Turok arXiv:2607.00096v1"}, "url": {"const": "https://arxiv.org/abs/2607.00096v1"}, "equations": {"const": ["Eq. (19)", "Eq. (21)", "Appendix C"]}}}
+      }
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "string", "minLength": 100}},
+    "checks": {"type": "object", "additionalProperties": false, "required": ["ok", "passed", "total", "failures", "details"], "properties": {"ok": {"const": true}, "passed": {"const": 33}, "total": {"const": 33}, "failures": {"const": []}, "details": {"type": "object", "minProperties": 33, "maxProperties": 33}}},
+    "report": {"const": "reverse_physics/reports/bt-finite-physical-moller-column.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-finite-physical-moller-column-v1.schema.json"}
+  }
+}

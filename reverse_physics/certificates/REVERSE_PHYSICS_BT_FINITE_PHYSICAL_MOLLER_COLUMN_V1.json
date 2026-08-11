@@ -1,0 +1,457 @@
+{
+  "answer": "Yes on the certified finite reduced-mode hierarchy. Let I_Omega include the incoming hard two-species state with vacuum noise, let U_a be the exact 75-channel HP unitary, and let A_<=3 be the direct sum of the certified physical continuum isometries through three emissions. Then M_a=A_<=3 U_a I_Omega is an isometry into the hard plus physical one-, two-, and three-emission continuum ranges. Its exact ordered-history kernels contain the HP survival factors, integrate to nonnegative p_0,...,p_3, and sum to one for every a>=0. Their first allowed coefficients are 1, 1/16, 5/512, and 9/8192. In this pinned finite resolution model the physical hard response -1/16 is therefore on the same column as the physical real response +1/16; multiplying by the Born factor 3/32 gives -3/512+3/512=0 without using the public R_t pushforward as a scattering summand. At the first-emission fibre, the public rank-one leg D has D^T J D=diag(0,2), while the physical map T has T^T J T=-rho J. They cannot be equal, but there is a unique pullback requirement for an orthogonal complement: C^T J C=-rho J-diag(0,2). The explicit minimal solution C=[[-rho,-1],[0,1]] is two-dimensional and cross-Krein. With F=(D,C), W=F T^-1 obeys W^T(J direct_sum J)W=J and W T=F, so projection onto the first target leg gives D. The missing Gram has determinant -rho^2 and raised trace -2rho. Hence neither a positive auxiliary/noise fibre nor a trace-null Eq. (19) remainder alone can repair the public-to-physical rank defect. A non-null two-direction complement is necessary. This constructs the finite physical column and the minimal algebraic bridge architecture; it does not derive that complement from BT dynamics, produce a two-sided spacetime S operator, or prove Eq. (19) all orders.",
+  "assumptions": [
+    "The stochastic dynamics is the pinned finite 75-channel HP completion, not a derivation from the unpublished all-order BT asymptotic Hamiltonian.",
+    "Only the vacuum input column is physically continuum affiliated. The full HP unitary on arbitrary incoming noise is not transported to a two-sided physical scattering operator.",
+    "Level three has no outgoing edge because the amplitude data stop at seven points; this is not interpreted as physical termination.",
+    "The physical continuum maps use the massless nested hierarchy limits on their certified compact dense core.",
+    "The public compression calculation is pointwise above unequal-mass threshold and uses the same cross metric as the certified rank/Jordan comparison."
+  ],
+  "certificate": "REVERSE_PHYSICS_BT_FINITE_PHYSICAL_MOLLER_COLUMN_V1",
+  "checks": {
+    "details": {
+      "all_available_output_sectors_are_physical": true,
+      "all_seventy_five_marks_physical": true,
+      "bridge_is_krein_isometry": true,
+      "common_pullback_equals_physical": true,
+      "compression_square": true,
+      "edge_counts_match": true,
+      "eq19_all_orders_stays_open": true,
+      "eq19_only_finite_order_imported": true,
+      "finite_model_hard_real_cancellation": true,
+      "finite_physical_vacuum_column_isometry": true,
+      "history_counts_match": true,
+      "hp_drifts_match": true,
+      "hp_unitary_imported": true,
+      "input_hashes_pinned": true,
+      "integrated_kernels_match_serialized_probabilities": true,
+      "leading_tree_coefficients": true,
+      "minimal_complement_dimension_is_two": true,
+      "missing_block_is_not_trace_null": true,
+      "missing_covariant_gram": true,
+      "missing_fibre_is_nondegenerate": true,
+      "missing_fibre_signature_is_cross_krein": true,
+      "missing_raised_gram": true,
+      "no_positive_auxiliary_gram": true,
+      "physical_direct_sum_isometry_imported": true,
+      "population_initial_condition": true,
+      "population_ode": true,
+      "positive_or_null_only_repair_is_excluded": true,
+      "predecessor_checks": true,
+      "probability_normalization": true,
+      "public_and_physical_objects_remain_distinct": true,
+      "public_covariant_gram": true,
+      "public_raised_nilpotent": true,
+      "public_rt_not_used_as_hard_term": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 33,
+    "total": 33
+  },
+  "declared_carriers": {
+    "dense_domain": "compactly supported sections in t1, the six-point gap sigma, the seven-point gap chi, alpha in [1,2), s in (0,1), and the inherited Abel coordinates, uniformly bounded away from every finite-hierarchy endpoint",
+    "hp_output": "direct sum of ordered zero-, one-, two-, and three-noise vacuum-output sectors of the 152-dimensional system and 75-mark Fock carrier",
+    "incoming": "C2_species hard history tensored with the HP noise vacuum",
+    "parameter": "a>=0 is additive detector resolution, not Minkowski time or a spacetime coordinate",
+    "physical_output": "direct sum of the hard range and all certified five-, six-, and seven-point nested physical continuum ranges"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "disposition": {
+    "Eq19_all_orders": "NOT_PROVED",
+    "complete_BT_probability": "NOT_CONSTRUCTED",
+    "finite_hierarchy_probability": "POSITIVE_AND_NORMALIZED_FOR_EVERY_RESOLUTION_LENGTH",
+    "finite_physical_continuum_vacuum_Moller_column": "CONSTRUCTED_EXACTLY",
+    "fourth_jump": "NOT_COMPUTED",
+    "full_two_sided_physical_S_operator": "NOT_CONSTRUCTED",
+    "hard_dressed_response_in_pinned_finite_model": "CONSTRUCTED_AND_CANCELS_THE_REAL_LINEAR_RESPONSE",
+    "minimal_public_Rt_compression_architecture": "CONSTRUCTED_EXACTLY",
+    "missing_public_Rt_complement": "ALGEBRAIC_FORM_AND_MINIMAL_INERTIA_FIXED_BUT_NOT_DERIVED_FROM_BT_DYNAMICS",
+    "public_Rt_equals_physical_splitting": "EXACTLY_FALSE",
+    "spacetime_Moller_LSZ_S_operator": "NOT_CONSTRUCTED"
+  },
+  "does_not_establish": [
+    "that the pinned finite HP completion is the unique or dynamically selected nonlinear BT evolution",
+    "a two-sided physical unitary on arbitrary incoming continuum/noise sectors",
+    "a fourth jump, an eight-point quotient, or an all-order inductive carrier",
+    "complete BT two-to-n probability",
+    "a full finite NLO inclusive probability or finite constant",
+    "that BT zero-mode, vacuum, or higher-composite dynamics produces the displayed missing complement",
+    "identification of the public R_t map with the physical splitting or Moller operator",
+    "Bateman--Turok Eq. (19) beyond its imported finite-mode order-lambda sector",
+    "a spacetime-local Moller, LSZ, S, detector, or AQFT construction",
+    "a metric or BRST lift to pure Weyl gravity",
+    "a new physical or spacetime dimension",
+    "anything LORENTZIAN-CAUSAL",
+    "literature priority"
+  ],
+  "finite_model_inclusive_response": {
+    "Born_coefficient": {
+      "denominator": 32,
+      "numerator": 3
+    },
+    "boundary": "This is exact for the pinned finite HP completion. It is not a derivation of the hard/dressed term from the full BT loop or asymptotic Hamiltonian and is not a complete NLO theorem.",
+    "hard_absolute_response": {
+      "denominator": 512,
+      "numerator": -3
+    },
+    "hard_normalized_linear_response": {
+      "denominator": 16,
+      "numerator": -1
+    },
+    "hard_survival_probability": "exp(-a/16)",
+    "inclusive_absolute_response": {
+      "denominator": 1,
+      "numerator": 0
+    },
+    "real_absolute_response": {
+      "denominator": 512,
+      "numerator": 3
+    },
+    "real_normalized_linear_response": {
+      "denominator": 16,
+      "numerator": 1
+    },
+    "typing": "The hard drift and physical real continuum sectors are two components of M_a. The zero public R_t projector-pushforward response is not added to this ledger."
+  },
+  "lifecycle_state": "CLASSIFIED",
+  "minimal_public_Rt_compression": {
+    "bridge_W": [
+      [
+        "0",
+        "1/(2*L)"
+      ],
+      [
+        "0",
+        "1/(2*L)"
+      ],
+      [
+        "-rho/(2*Q)",
+        "-1/(2*L)"
+      ],
+      [
+        "0",
+        "1/(2*L)"
+      ]
+    ],
+    "common_leg_F": [
+      [
+        "0",
+        "1"
+      ],
+      [
+        "0",
+        "1"
+      ],
+      [
+        "-rho",
+        "-1"
+      ],
+      [
+        "0",
+        "1"
+      ]
+    ],
+    "commuting_square": "W*T=F=(D,C), hence projection_public*W*T=D",
+    "continuum_domain": "rho>0 above unequal-mass threshold; the pointwise bridge is measurable on the same compact physical core and is not extended through the measure-zero degenerate threshold",
+    "domain_metric_J": [
+      [
+        "0",
+        "1"
+      ],
+      [
+        "1",
+        "0"
+      ]
+    ],
+    "isometry": "after rho=-4*L*Q, W^T eta W=J",
+    "minimality": "det(C^T J C)=-rho^2 is nonzero, so the missing pullback has rank two and every realizing auxiliary target has dimension at least two",
+    "missing_covariant_gram": [
+      [
+        "0",
+        "-rho"
+      ],
+      [
+        "-rho",
+        "-2"
+      ]
+    ],
+    "missing_leg_C": [
+      [
+        "-rho",
+        "-1"
+      ],
+      [
+        "0",
+        "1"
+      ]
+    ],
+    "missing_raised_gram": [
+      [
+        "-rho",
+        "-2"
+      ],
+      [
+        "0",
+        "-rho"
+      ]
+    ],
+    "null_remainder_obstruction": "Tr(C^sharp C)=-2rho is nonzero, so a trace-null Q remainder alone cannot supply the missing physical response",
+    "physical_leg_T": [
+      [
+        "2*Q",
+        "0"
+      ],
+      [
+        "0",
+        "2*L"
+      ]
+    ],
+    "physical_relation": "rho=-4*L*Q>0 and T^T J T=-rho J",
+    "positive_auxiliary_obstruction": "det(C^T J C)<0, so no positive-Hilbert auxiliary Gram realizes the required complement",
+    "public_covariant_gram": [
+      [
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "2"
+      ]
+    ],
+    "public_leg_D": [
+      [
+        "0",
+        "1"
+      ],
+      [
+        "0",
+        "1"
+      ]
+    ],
+    "public_raised_gram": [
+      [
+        "0",
+        "2"
+      ],
+      [
+        "0",
+        "0"
+      ]
+    ],
+    "target_metric": "eta=J direct_sum J",
+    "uniqueness": "the missing pullback Gram is forced; its minimal realizations are unique up to a target Krein isometry, while the displayed C is one exact representative"
+  },
+  "missing_object_ledger": [
+    "a BT-derived non-null two-direction complement with the certified pullback Gram, charge grading, and zero-mode trace domain",
+    "the fourth physical jump and eight-point pre-trace quotient needed to test induction",
+    "a physical affiliation of arbitrary incoming-noise sectors and the reverse column",
+    "complete non-strongly-ordered and degenerate asymptotic sectors",
+    "a spacetime-local physical Moller/LSZ/S operator",
+    "the all-order R_t projector pushforward and Eq. (19) charge-support theorem"
+  ],
+  "next_gate": "The finite physical vacuum column is complete on every currently available channel, and the old rank/Jordan mismatch is now a constructive minimal-completion condition rather than an untyped impasse. The Eq. (19)-direct route is to derive or obstruct a BT zero-mode/vacuum/higher-composite block whose pointwise pullback is C^T J C=-rho J-diag(0,2), with nonzero raised trace -2rho, while preserving the public cross-CCR and charge support. The independent all-order discriminator remains the complete eight-point fourth quotient. The missing-complement calculation is the nearer Eq. (19) gate because the eight-point scalar alone cannot supply the public-to-physical bridge.",
+  "physical_vacuum_moller_column": {
+    "amplitude_drifts": [
+      "1/32",
+      "5/32",
+      "27/160",
+      "0"
+    ],
+    "conditional_rates": [
+      {
+        "denominator": 48,
+        "numerator": 1
+      },
+      {
+        "denominator": 64,
+        "numerator": 5
+      },
+      {
+        "denominator": 400,
+        "numerator": 27
+      }
+    ],
+    "definition": "M_a=A_<=3 U_a I_Omega",
+    "edge_counts": [
+      3,
+      12,
+      60
+    ],
+    "history_counts": [
+      1,
+      3,
+      12,
+      60
+    ],
+    "isometry": "M_a^* M_a=I2 on the incoming hard species because I_Omega and A_<=3 are isometries and U_a is unitary",
+    "leading_coefficients": [
+      {
+        "denominator": 1,
+        "numerator": 1
+      },
+      {
+        "denominator": 16,
+        "numerator": 1
+      },
+      {
+        "denominator": 512,
+        "numerator": 5
+      },
+      {
+        "denominator": 8192,
+        "numerator": 9
+      }
+    ],
+    "normalization": "sum_(k=0)^3 p_k(a)=1 for every a>=0",
+    "ordered_history_kernel": "psi_k(t1,...,tk;a)=sqrt(product_(j<k)q_j)*exp[-d0*t1-sum_(j=1)^(k-1)d_j*(t_(j+1)-t_j)-d_k*(a-t_k)] on 0<t1<...<tk<a; psi_0=exp(-d0*a)",
+    "physical_edge_marks": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74
+    ],
+    "positivity": "each p_k is a history count times the integral of |psi_k|^2 over its ordered simplex",
+    "range_projection": "P_a=M_a M_a^* is an orthogonal projection on the finite physical continuum output range",
+    "sector_probabilities": [
+      "exp(-a/16)",
+      "(exp(a/4) - 1)*exp(-5*a/16)/4",
+      "25*(exp(47*a/80) - 11*exp(27*a/80) + 10*exp(5*a/16))*exp(-13*a/20)/88",
+      "-(135*exp(47*a/80) - 297*exp(27*a/80) - 88*exp(13*a/20) + 250*exp(5*a/16))*exp(-13*a/20)/88"
+    ],
+    "status": "EXACT_PHYSICAL_CONTINUUM_VACUUM_COLUMN_ON_THE_AVAILABLE_FINITE_HIERARCHY"
+  },
+  "provenance": {
+    "inputs": [
+      {
+        "path": "planning/work-items/reverse-physics-bateman-finite-physical-moller-column.json",
+        "sha256": "ff22b7081ba122625a5ebea4725f4cac467c1f4b6371cd2984ab6708c1aebb6e"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_QUANTUM_STOCHASTIC_MOLLER_DILATION_V1.json",
+        "sha256": "6bc4ec6c6831835acaf5848c07375701a3df5aa4413c5ccd42a074691e489e9c"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_SEVEN_POINT_NESTED_CONTINUUM_INTERTWINER_V1.json",
+        "sha256": "eabe5cdc08fdb4083d04e18a45354d76114c14e09f979eadb80488b07a7eeb78"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_PHYSICAL_COLLINEAR_OPERATOR_FACTORIZATION_V1.json",
+        "sha256": "d0f8786c62e24e37c198f4a286aa2e3b718f13decf5352d811cf554d485ed79e"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_INCLUSIVE_NLO_OBJECT_LEDGER_V1.json",
+        "sha256": "389a3441ac32159e57f32b2b50552823ec770879b579be54bbdabc7e78e59d47"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_FULL_SIGNED_QUADRATIC_CLOSURE_V1.json",
+        "sha256": "5859aad65cf0dcbc1ceb9d2c3381a9a61c2d3df6457e8b77903c8a6931aa081b"
+      }
+    ],
+    "primary_source": {
+      "equations": [
+        "Eq. (19)",
+        "Eq. (21)",
+        "Appendix C"
+      ],
+      "source": "Bateman--Turok arXiv:2607.00096v1",
+      "url": "https://arxiv.org/abs/2607.00096v1"
+    },
+    "producer_method": "Exact SymPy ordered-simplex integration of the HP vacuum trajectory kernels, exact population ODE and Taylor checks, exact rational Born-response ledger, and symbolic cross-Krein congruence/compression algebra. No floating-point arithmetic is used.",
+    "retrieval_date": "2026-08-11",
+    "source_commit": "4ac684c16a5d5acea2150c35dee380b1360ff2c2"
+  },
+  "question": "Does the completed 75-mark continuum affiliation turn the finite HP evolution into a normalized physical transition column, and what is the smallest extra fibre needed for the inequivalent public R_t quadratic leg to occur as its compression?",
+  "report": "reverse_physics/reports/bt-finite-physical-moller-column.md",
+  "result_kind": "exact finite-hierarchy physical continuum vacuum Moller column and minimal typed public-R_t compression completion",
+  "schema": "reverse_physics/schema/reverse-physics-bt-finite-physical-moller-column-v1.schema.json",
+  "schema_version": "reverse-physics-bt-finite-physical-moller-column-v1",
+  "typed_Eq19_boundary": {
+    "Eq19_all_orders": "NOT_PROVED",
+    "finite_order_import": "The public finite-mode zero-mode-completed quadratic sector satisfies the Eq. (19) form through order lambda with Q1=0.",
+    "missing_dynamical_statement": "BT dynamics must produce that complement on the same zero-mode, charge, trace, and continuum domain; algebraic existence does not prove that it does.",
+    "new_exact_condition": "Any common first-emission dilation matching the physical Gram while retaining the public D compression needs the displayed non-null two-dimensional cross-Krein complement.",
+    "nonidentification": "The compression square retains the public D leg but does not identify D, R_t, or its zero trace with the physical splitting operator or hard response.",
+    "physical_object": "M_a is the vacuum transition column of a pinned resolution-stochastic completion",
+    "public_object": "R_t P_chi^(phi) R_t^dagger is a field/projector pushforward"
+  },
+  "verification_commands": [
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/bt_finite_physical_moller_column.py --write --check",
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/verify_bt_finite_physical_moller_column.py",
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 -m unittest reverse_physics.tests.test_bt_finite_physical_moller_column"
+  ]
+}

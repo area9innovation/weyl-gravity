@@ -1,0 +1,38 @@
+{
+  "id": "sf:program/work/reverse-physics-bateman-finite-physical-moller-column",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "reverse-physics",
+    "state": "ACTIVE",
+    "objective": "Compose the certified 75-mark physical continuum isometry with the finite Hudson--Parthasarathy vacuum evolution, determine whether this gives an exactly normalized physical continuum Moller column on the available hierarchy, and isolate the minimal extra fibre required for the public R_t quadratic leg to occur as a compression without identifying it with the physical splitting operator.",
+    "depends_on": [
+      "REVERSE_PHYSICS_BT_QUANTUM_STOCHASTIC_MOLLER_DILATION_V1",
+      "REVERSE_PHYSICS_BT_SEVEN_POINT_NESTED_CONTINUUM_INTERTWINER_V1",
+      "REVERSE_PHYSICS_BT_PHYSICAL_COLLINEAR_OPERATOR_FACTORIZATION_V1",
+      "REVERSE_PHYSICS_BT_INCLUSIVE_NLO_OBJECT_LEDGER_V1",
+      "REVERSE_PHYSICS_BT_FULL_SIGNED_QUADRATIC_CLOSURE_V1"
+    ],
+    "activates": [
+      "an exact finite-hierarchy physical continuum vacuum Moller column",
+      "a typed public-R_t compression square with a minimal missing-fibre theorem",
+      "the next dynamical test for the missing R_t complement or the fourth BT jump"
+    ],
+    "current_gate": "Let I_Omega be the vacuum inclusion, U_a the certified 75-noise HP unitary, and A_<=3 the direct sum of the one-, two-, and three-emission physical continuum isometries. Prove that M_a=A_<=3 U_a I_Omega is an isometry on the hard two-species input and that its exact ordered history kernels give nonnegative sector probabilities summing to one for every a>=0. At the first physical boundary, retain J=[[0,1],[1,0]], the public rank-one leg D with D^T J D=diag(0,2), and the physical T with T^T J T=-rho J. Solve exactly for the smallest orthogonal complement C such that (D,C)^T(J direct_sum J)(D,C)=-rho J, prove minimality, and decide whether a positive or trace-null-only complement can work.",
+    "stop_condition": "Land a strict exact certificate with a method-distinct verifier that either constructs the normalized finite physical continuum Moller column and the minimal typed R_t compression square, or records the first exact isometry, probability, rank, signature, trace, or domain obstruction. Keep a full two-sided physical S operator, a fourth jump, complete BT probability, derivation of the missing complement from BT dynamics, all-order Eq. 19, gravity, and Lorentzian claims fail-closed.",
+    "forbid": "no vacuum column called a two-sided unitary S matrix; no absorbing level-three truncation called physical termination; no public R_t projector pushforward added to the physical scattering ledger; no algebraically constructed complement called a dynamically derived R_t block; no finite hierarchy called complete BT probability, all-order Eq. 19, a gravitational/BRST lift, a new dimension, or a LORENTZIAN-CAUSAL theorem",
+    "allowed_paths": [
+      "reverse_physics/",
+      "notes/bateman-turok-embedding.md",
+      "paper/05-interaction-obstructions.tex",
+      "paper/05-interaction-obstructions.pdf",
+      "paper/06-einstein-weyl-interaction-obstructions.tex",
+      "paper/06-einstein-weyl-interaction-obstructions.pdf",
+      "planning/work-items/reverse-physics-bateman-finite-physical-moller-column.json",
+      "planning/events/"
+    ],
+    "resource_hint": "The vacuum history kernel on 0<t1<...<tk<a is sqrt(product_(j<k)q_j) times exp[-d0*t1-sum_(j=1)^(k-1)d_j*(t_(j+1)-t_j)-d_k*(a-t_k)], with q=(1/48,5/64,27/400) and amplitude drifts d=(1/32,5/32,27/160,0). For the compression square take D=[[0,1],[0,1]], C_rho=[[-rho,-1],[0,1]], F=(D stacked over C_rho), eta=J direct_sum J, and W=F*T^-1. Check F^T eta F=T^T J T=-rho J, det(C_rho^T J C_rho)=-rho^2, and Tr(C_rho^sharp C_rho)=-2rho.",
+    "input_commit": "4ac684c16a5d5acea2150c35dee380b1360ff2c2",
+    "stream": "reverse-physics"
+  }
+}
