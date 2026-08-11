@@ -1,0 +1,598 @@
+{
+  "Eq19_boundary": {
+    "charge_compatible_finite_generator": "CONSTRUCTED_ALGEBRAICALLY",
+    "finite_mode_order_lambda_sector": "UNCHANGED_PROVED_WITH_Q1_ZERO",
+    "ghost_even_neutral_P_identification": "EXACTLY_REFUTED_FOR_THIS MINIMAL BLOCK WITH GHOST_EVEN PROFILE SOURCE",
+    "neutral_higher_composite_carrier": "CONSTRUCTED_MINIMALLY_AT_BOSONIC_DEGREE_FOUR",
+    "reason": "All negative directions of the neutral occupation-transpose Gram are ghost-parity odd. A ghost-even forward block D from the positive profile source has D^sharp D=D^T(G4 kappa)D positive semidefinite and cannot equal negative K4; the exact rank-two lift therefore maps the ghost-even source into the odd sector.",
+    "required_successor": "Derive from BT dynamics either a ghost-odd source partner paired with this neutral degree-four sector or a larger projector/zero-mode trace whose complete ghost-even block contains additional terms and reproduces the profile response."
+  },
+  "answer": "The first carrier large enough is the charge-zero degree-four symmetric bosonic sector. For total degree 2k over two hard-profile modes, the neutral sector is indexed by a pair of k-particle occupation types and its Gram is the positively weighted transpose pairing. Its inertia is ((k+1)(k+2)/2, k(k+1)/2). Degree two therefore has inertia (3,1) and cannot realize the rank-two negative K4. Degree four has inertia (6,3). In its occupation basis alpha,beta in {(2,0),(1,1),(0,2)}, the two normalized antisymmetric vectors u1=[e_(20,11)-e_(11,20)]/(sqrt(2)rho^4) and u2=[e_(11,02)-e_(02,11)]/(sqrt(2)rho^4) are orthogonal, charge zero, and have Gram -2 I2. Multiplying them by sqrt(6699)/16 and sqrt(7149)/16 gives an exact rank-two forward block with B4^sharp B4=diag(-6699/128,-7149/128), and the associated finite block generator is charge neutral and Krein skew. However occupation swap is the induced ghost parity and sends both u_i to -u_i. Any ghost-even forward block D from the positive profile source obeys kappa D=D and therefore D^sharp D=D^T(G4 kappa)D is positive semidefinite because G4 kappa is positive; it cannot equal negative K4. The constructed generator is ghost odd, not by itself the ghost-even neutral P term asserted in Eq. (19). Thus a minimal neutral higher-composite carrier exists and the degree barrier is broken algebraically, but a BT-derived ghost-even projector still requires a ghost-odd source partner, a larger dynamical completion, or an additional trace mechanism.",
+  "assumptions": [
+    "The two hard evaluation idempotents are orthogonal profile modes carrying identical copies of the certified cross-Krein charge fibre.",
+    "The bosonic composite metric is the canonical symmetric-Fock contraction induced by <p_i,m_j>=rho^2 delta_ij, with all other one-particle charge pairings zero.",
+    "Total charge is additive, so degree-four neutrality means two plus and two minus quanta.",
+    "The induced ghost parity exchanges plus and minus occupations, while the positive two-point profile source is ghost even.",
+    "The construction is a finite reduced-mode carrier and generator; no claim is made that BT dynamics supplies its coefficients or domain."
+  ],
+  "bosonic_neutral_census": {
+    "general_formula": "at degree 2k: d=k+1 occupation types per sign; neutral dimension d^2; inertia (d(d+1)/2,d(d-1)/2)",
+    "minimal_total_degree": 4,
+    "odd_degree_charge_zero_sector": "ABSENT",
+    "rank_required": 2,
+    "rows": [
+      {
+        "negative_index": 0,
+        "neutral_dimension": 1,
+        "positive_index": 1,
+        "single_sign_occupation_dimension": 1,
+        "total_degree": 0
+      },
+      {
+        "negative_index": 1,
+        "neutral_dimension": 4,
+        "positive_index": 3,
+        "single_sign_occupation_dimension": 2,
+        "total_degree": 2
+      },
+      {
+        "negative_index": 3,
+        "neutral_dimension": 9,
+        "positive_index": 6,
+        "single_sign_occupation_dimension": 3,
+        "total_degree": 4
+      }
+    ]
+  },
+  "certificate": "REVERSE_PHYSICS_BT_NEUTRAL_BOSONIC_COMPOSITE_LIFT_V1",
+  "checks": {
+    "details": {
+      "Eq19_and_physical_claims_stay_open": true,
+      "block_generator_is_charge_neutral": true,
+      "block_generator_is_ghost_odd": true,
+      "block_generator_is_krein_skew": true,
+      "degree_four_basis_has_nine_bosonic_occupations": true,
+      "degree_four_gram_is_symmetric_nondegenerate": true,
+      "degree_four_inertia_is_six_three": true,
+      "degree_four_is_minimal_for_negative_rank_two": true,
+      "degree_two_cannot_carry_rank_two_effect": true,
+      "degree_two_negative_index_is_one": true,
+      "every_degree_four_basis_vector_has_total_charge_zero": true,
+      "forward_block_has_rank_two": true,
+      "forward_block_reconstructs_K4": true,
+      "fundamental_metric_is_positive_diagonal": true,
+      "input_hashes_pinned": true,
+      "normalized_negative_pair_is_minus_two_identity": true,
+      "occupation_swap_is_involutive": true,
+      "occupation_swap_preserves_gram": true,
+      "odd_degrees_have_no_charge_zero_sector": true,
+      "order_lambda_boundary_is_preserved": true,
+      "predecessor_certificates_pass": true,
+      "profile_effect_replayed": true,
+      "rho_replayed": true,
+      "selected_raw_vectors_are_orthogonal": true,
+      "selected_vectors_are_charge_neutral": true,
+      "selected_vectors_are_ghost_odd": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 26,
+    "total": 26
+  },
+  "degree_four_neutral_sector": {
+    "all_basis_vectors_total_charge": 0,
+    "basis": [
+      "p20_m20",
+      "p20_m11",
+      "p20_m02",
+      "p11_m20",
+      "p11_m11",
+      "p11_m02",
+      "p02_m20",
+      "p02_m11",
+      "p02_m02"
+    ],
+    "ghost_parity_occupation_swap": [
+      [
+        "1",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "1",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "1",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "1",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "1"
+      ]
+    ],
+    "gram_identity": "G4=rho^8*W, where W_(alpha,beta),(gamma,delta)=alpha!*beta!*delta_(alpha,delta)*delta_(beta,gamma)",
+    "gram_over_rho_power_eight": [
+      [
+        "4",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "2",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "4",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "2",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "1",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "2",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "4",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "2",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "4"
+      ]
+    ],
+    "inertia": {
+      "negative": 3,
+      "positive": 6,
+      "zero": 0
+    },
+    "occupation_types": [
+      "20",
+      "11",
+      "02"
+    ],
+    "positive_fundamental_metric_over_rho_power_eight": [
+      [
+        "4",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "2",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "4",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "2",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "1",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "2",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "4",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "2",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "4"
+      ]
+    ],
+    "profile_modes": [
+      "h33",
+      "h34"
+    ],
+    "rho": {
+      "denominator": 4000,
+      "numerator": 819
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "disposition": {
+    "BT_dynamical_derivation": "NOT_CONSTRUCTED",
+    "Eq19_all_orders": "NOT_PROVED",
+    "charge_compatible_finite_generator": "CONSTRUCTED_EXACTLY",
+    "degree_two_neutral_completion": "EXACTLY_OBSTRUCTED_BY_NEGATIVE_INDEX_ONE",
+    "generalized_Born_trace": "NOT_CONSTRUCTED",
+    "ghost_even_Eq19_P_term": "NOT_CONSTRUCTED",
+    "minimal_neutral_bosonic_degree": "FOUR",
+    "neutral_higher_composite_Krein_lift": "CONSTRUCTED_EXACTLY",
+    "physical_fourth_probability": "NOT_ESTABLISHED"
+  },
+  "does_not_establish": [
+    "the all-order Bateman-Turok Eq. (19) projector identity",
+    "that the public BT homomorphism generates the degree-four block",
+    "ghost symmetry or weak ghost symmetry of a complete scattering process",
+    "a generalized-Born trace on the composite carrier",
+    "a normalized fourth event or complete 2->6 probability",
+    "a spacetime Moller, LSZ, or S operator",
+    "a continuum or arbitrary-incoming-state construction",
+    "a gravity or BRST lift",
+    "anything LORENTZIAN-CAUSAL",
+    "literature priority"
+  ],
+  "lifecycle_state": "CLASSIFIED",
+  "minimal_neutral_lift": {
+    "amplitudes": [
+      "sqrt(6699)/16",
+      "sqrt(7149)/16"
+    ],
+    "block_generator": "K4_comp=[[0,-B4^sharp],[B4,0]]",
+    "charge": "ZERO",
+    "charge_identity": "[H_total,K4_comp]=0",
+    "forward_block_B4": [
+      [
+        "0",
+        "0"
+      ],
+      [
+        "8000000000000*sqrt(13398)/449920319121",
+        "0"
+      ],
+      [
+        "0",
+        "0"
+      ],
+      [
+        "-8000000000000*sqrt(13398)/449920319121",
+        "0"
+      ],
+      [
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "8000000000000*sqrt(14298)/449920319121"
+      ],
+      [
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "-8000000000000*sqrt(14298)/449920319121"
+      ],
+      [
+        "0",
+        "0"
+      ]
+    ],
+    "generator_metric": "diag(I2,G4)",
+    "ghost_identity": "kappa_total*K4_comp*kappa_total=-K4_comp",
+    "ghost_parity": "ODD",
+    "krein_skew_identity": "K4_comp^T*eta+eta*K4_comp=0",
+    "normalization": "1/(sqrt(2)*rho^4)",
+    "normalized_embedding_U": [
+      [
+        "0",
+        "0"
+      ],
+      [
+        "128000000000000*sqrt(2)/449920319121",
+        "0"
+      ],
+      [
+        "0",
+        "0"
+      ],
+      [
+        "-128000000000000*sqrt(2)/449920319121",
+        "0"
+      ],
+      [
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "128000000000000*sqrt(2)/449920319121"
+      ],
+      [
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "-128000000000000*sqrt(2)/449920319121"
+      ],
+      [
+        "0",
+        "0"
+      ]
+    ],
+    "normalized_gram": [
+      [
+        "-2",
+        "0"
+      ],
+      [
+        "0",
+        "-2"
+      ]
+    ],
+    "pullback": [
+      [
+        "-6699/128",
+        "0"
+      ],
+      [
+        "0",
+        "-7149/128"
+      ]
+    ],
+    "pullback_identity": "B4^sharp*B4=K4",
+    "raw_negative_vectors": [
+      "e_(20,11)-e_(11,20)",
+      "e_(11,02)-e_(02,11)"
+    ]
+  },
+  "next_gate": "Construct the smallest enlarged source/projector complex containing a ghost-odd source partner for the two occupation-antisymmetric neutral degree-four directions. Enforce projector idempotence, Krein self-adjointness, total charge zero, ghost-evenness of the complete P block, reduction to Q1=0 at order lambda, and the exact K4 hard-profile pullback. If no such finite extension exists under the certified public Rt compression, the result becomes a scoped Eq. (19) obstruction; if it exists, compute its generalized-Born trace before calling it physical.",
+  "provenance": {
+    "inputs": [
+      {
+        "path": "planning/work-items/reverse-physics-bateman-neutral-bosonic-composite-lift.json",
+        "sha256": "438b274bfe63c2c44416a1fc5dccd9667a18ecc9f4a28b41d40e7221e879dab6"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EIGHT_POINT_KREIN_CHARGE_LOCALIZATION_V1.json",
+        "sha256": "4f149b936eacb8d25b094454d798a3bbddc4933c2a5086f5aa88ad1fcf898572"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EIGHT_POINT_PROFILE_POSITIVITY_OBSTRUCTION_V1.json",
+        "sha256": "b95d74a42e9d0d0cca945a8cf24407dfa272edb861b1ceff8657e3f0464c800e"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_FULL_SIGNED_QUADRATIC_CLOSURE_V1.json",
+        "sha256": "5859aad65cf0dcbc1ceb9d2c3381a9a61c2d3df6457e8b77903c8a6931aa081b"
+      },
+      {
+        "path": "planning/events/reverse-physics-bateman-neutral-bosonic-composite-lift-DONE-932c93106aeacc83.json",
+        "sha256": "880184b5fda942d6dd9a92b369975d3b14ae151edae8d01fdd55683670c3480f"
+      }
+    ],
+    "retrieval_date": "2026-08-12",
+    "source_commit": "932c93106aeacc83d08e6f5dfade16924a1916f9"
+  },
+  "question": "What is the smallest symmetric bosonic composite of the two certified hard-profile charge fibres that can carry the rank-two negative fourth-profile block while remaining total-charge zero, and can that block be the ghost-even neutral term of Bateman-Turok Eq. (19)?",
+  "report": "reverse_physics/reports/bt-neutral-bosonic-composite-lift.md",
+  "result_kind": "exact minimal charge-neutral symmetric-bosonic higher-composite Krein lift of the rank-two BT fourth-profile block, with ghost-parity obstruction",
+  "schema": "reverse_physics/schema/reverse-physics-bt-neutral-bosonic-composite-lift-v1.schema.json",
+  "schema_version": "reverse-physics-bt-neutral-bosonic-composite-lift-v1",
+  "verification_commands": [
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/bt_neutral_bosonic_composite_lift.py --check",
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/verify_bt_neutral_bosonic_composite_lift.py",
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 -m unittest -v reverse_physics.tests.test_bt_neutral_bosonic_composite_lift"
+  ]
+}

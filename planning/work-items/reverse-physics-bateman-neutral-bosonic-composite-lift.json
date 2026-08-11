@@ -1,0 +1,37 @@
+{
+  "id": "sf:program/work/reverse-physics-bateman-neutral-bosonic-composite-lift",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "reverse-physics",
+    "state": "ACTIVE",
+    "objective": "Determine the minimal bosonic charge-neutral higher-composite carrier capable of realizing the rank-two negative BT eight-point profile block, and test its ghost-parity compatibility with the neutral term in Eq. 19.",
+    "depends_on": [
+      "REVERSE_PHYSICS_BT_EIGHT_POINT_KREIN_CHARGE_LOCALIZATION_V1",
+      "REVERSE_PHYSICS_BT_EIGHT_POINT_PROFILE_POSITIVITY_OBSTRUCTION_V1",
+      "REVERSE_PHYSICS_BT_FULL_SIGNED_QUADRATIC_CLOSURE_V1"
+    ],
+    "activates": [
+      "an exact charged symmetric-Fock metric over the two hard-profile fibres",
+      "a degree-by-degree neutral-sector inertia census",
+      "a minimal charge-neutral rank-two lift of the fourth-profile block",
+      "a ghost-parity test against the Eq. 19 neutral operator"
+    ],
+    "current_gate": "NEUTRAL_BOSONIC_COMPOSITE: construct the symmetric bosonic powers of the two certified cross-Krein charge fibres, locate the first neutral sector with negative index at least two, reproduce K4 there, and determine whether the resulting block is ghost even.",
+    "stop_condition": "Land an exact certificate with an independent verifier that proves minimal tensor degree, reconstructs both hard-profile amplitudes, records charge and ghost parity, and does not call an algebraic composite lift the BT projector, generalized-Born trace, probability, gravity, or Lorentzian physics.",
+    "forbid": "no unsymmetrized tensor called bosonic; no charge-zero label without the total generator; no negative-index count inferred numerically; no ghost-odd block called the ghost-even P term of Eq. 19; no algebraic lift called BT-derived, probabilistic, gravitational, or LORENTZIAN-CAUSAL",
+    "allowed_paths": [
+      "reverse_physics/",
+      "notes/bateman-turok-embedding.md",
+      "paper/05-interaction-obstructions.tex",
+      "paper/05-interaction-obstructions.pdf",
+      "paper/06-einstein-weyl-interaction-obstructions.tex",
+      "paper/06-einstein-weyl-interaction-obstructions.pdf",
+      "planning/work-items/reverse-physics-bateman-neutral-bosonic-composite-lift.json",
+      "planning/events/"
+    ],
+    "resource_hint": "In the two-profile charge fibre let p_i and m_i have charges plus/minus one and pair by <p_i,m_j>=rho^2 delta_ij. The degree-2 neutral sector is the 2x2 transpose pairing and has negative index one. At degree 4, use plus and minus occupation types (2,0),(1,1),(0,2); the induced pairing swaps the two occupation labels and has inertia (6,3). Antisymmetric occupation pairs give three exact negative directions. Test the two equal-norm pairs (20,11) and (11,02) against K4.",
+    "input_commit": "932c9310",
+    "stream": "reverse-physics"
+  }
+}

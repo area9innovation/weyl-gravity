@@ -1,0 +1,34 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/reverse-physics-bateman-neutral-bosonic-composite-lift-DONE-932c93106aeacc83",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work item transitioned",
+  "source": {
+    "path": "tools/science-forge/program/events/reverse-physics-bateman-neutral-bosonic-composite-lift-DONE-932c93106aeacc83.json",
+    "span": null
+  },
+  "body": {
+    "event_kind": "WORK_ITEM_TRANSITIONED",
+    "actor": "reverse-physics",
+    "base_revision": "science-forge-ir-v0",
+    "predecessors": [],
+    "when": "2026-08-12",
+    "seq": 1,
+    "payload": {
+      "target": "sf:program/work/reverse-physics-bateman-neutral-bosonic-composite-lift",
+      "to_state": "DONE",
+      "note": "The two-profile symmetric bosonic neutral sector first has enough negative index at degree four: degree two has inertia (3,1), while degree four has inertia (6,3). Two orthogonal charge-zero degree-four occupation-antisymmetric vectors reproduce the exact rank-two K4 block and give a charge-neutral Krein-skew generator. They are ghost-parity odd, so the lift is not by itself the ghost-even neutral P term of Eq. 19; a ghost-odd source partner or a larger dynamical projector/trace remains required. Evidence: REVERSE_PHYSICS_BT_NEUTRAL_BOSONIC_COMPOSITE_LIFT_V1."
+    },
+    "native": {
+      "authored_by": "manual close-out after scoped exact calculation",
+      "policy": "append-only; one content-addressed file per event; the work-item file is never rewritten and the effective state is the fold of events over the base state"
+    }
+  },
+  "edges": [
+    {
+      "rel": "TRANSITIONS",
+      "to": "sf:program/work/reverse-physics-bateman-neutral-bosonic-composite-lift"
+    }
+  ]
+}

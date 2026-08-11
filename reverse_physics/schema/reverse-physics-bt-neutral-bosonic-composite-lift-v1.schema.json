@@ -1,0 +1,283 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-neutral-bosonic-composite-lift-v1.schema.json",
+  "title": "BT neutral bosonic composite lift certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "certificate",
+    "schema_version",
+    "dependency_tags",
+    "lifecycle_state",
+    "result_kind",
+    "question",
+    "answer",
+    "assumptions",
+    "bosonic_neutral_census",
+    "degree_four_neutral_sector",
+    "minimal_neutral_lift",
+    "Eq19_boundary",
+    "disposition",
+    "does_not_establish",
+    "next_gate",
+    "provenance",
+    "verification_commands",
+    "checks",
+    "report",
+    "schema"
+  ],
+  "properties": {
+    "certificate": {
+      "const": "REVERSE_PHYSICS_BT_NEUTRAL_BOSONIC_COMPOSITE_LIFT_V1"
+    },
+    "schema_version": {
+      "const": "reverse-physics-bt-neutral-bosonic-composite-lift-v1"
+    },
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]
+    },
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "result_kind": {"type": "string", "minLength": 1},
+    "question": {"type": "string", "minLength": 1},
+    "answer": {"type": "string", "minLength": 1},
+    "assumptions": {
+      "type": "array",
+      "minItems": 5,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "bosonic_neutral_census": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "general_formula",
+        "rows",
+        "rank_required",
+        "minimal_total_degree",
+        "odd_degree_charge_zero_sector"
+      ],
+      "properties": {
+        "general_formula": {"type": "string", "minLength": 1},
+        "rows": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "total_degree",
+              "single_sign_occupation_dimension",
+              "neutral_dimension",
+              "positive_index",
+              "negative_index"
+            ],
+            "properties": {
+              "total_degree": {"type": "integer", "minimum": 0},
+              "single_sign_occupation_dimension": {"type": "integer", "minimum": 1},
+              "neutral_dimension": {"type": "integer", "minimum": 1},
+              "positive_index": {"type": "integer", "minimum": 1},
+              "negative_index": {"type": "integer", "minimum": 0}
+            }
+          }
+        },
+        "rank_required": {"const": 2},
+        "minimal_total_degree": {"const": 4},
+        "odd_degree_charge_zero_sector": {"const": "ABSENT"}
+      }
+    },
+    "degree_four_neutral_sector": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "rho",
+        "profile_modes",
+        "occupation_types",
+        "basis",
+        "gram_identity",
+        "gram_over_rho_power_eight",
+        "ghost_parity_occupation_swap",
+        "positive_fundamental_metric_over_rho_power_eight",
+        "inertia",
+        "all_basis_vectors_total_charge"
+      ],
+      "properties": {
+        "rho": {"$ref": "#/$defs/rational"},
+        "profile_modes": {"const": ["h33", "h34"]},
+        "occupation_types": {"const": ["20", "11", "02"]},
+        "basis": {
+          "type": "array",
+          "minItems": 9,
+          "maxItems": 9,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "gram_identity": {"type": "string", "minLength": 1},
+        "gram_over_rho_power_eight": {"$ref": "#/$defs/string_matrix"},
+        "ghost_parity_occupation_swap": {"$ref": "#/$defs/string_matrix"},
+        "positive_fundamental_metric_over_rho_power_eight": {"$ref": "#/$defs/string_matrix"},
+        "inertia": {
+          "const": {"positive": 6, "negative": 3, "zero": 0}
+        },
+        "all_basis_vectors_total_charge": {"const": 0}
+      }
+    },
+    "minimal_neutral_lift": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "raw_negative_vectors",
+        "normalization",
+        "normalized_embedding_U",
+        "normalized_gram",
+        "amplitudes",
+        "forward_block_B4",
+        "pullback",
+        "pullback_identity",
+        "charge",
+        "ghost_parity",
+        "block_generator",
+        "generator_metric",
+        "krein_skew_identity",
+        "charge_identity",
+        "ghost_identity"
+      ],
+      "properties": {
+        "raw_negative_vectors": {
+          "const": [
+            "e_(20,11)-e_(11,20)",
+            "e_(11,02)-e_(02,11)"
+          ]
+        },
+        "normalization": {"const": "1/(sqrt(2)*rho^4)"},
+        "normalized_embedding_U": {"$ref": "#/$defs/string_matrix"},
+        "normalized_gram": {"const": [["-2", "0"], ["0", "-2"]]},
+        "amplitudes": {"const": ["sqrt(6699)/16", "sqrt(7149)/16"]},
+        "forward_block_B4": {"$ref": "#/$defs/string_matrix"},
+        "pullback": {
+          "const": [["-6699/128", "0"], ["0", "-7149/128"]]
+        },
+        "pullback_identity": {"const": "B4^sharp*B4=K4"},
+        "charge": {"const": "ZERO"},
+        "ghost_parity": {"const": "ODD"},
+        "block_generator": {"const": "K4_comp=[[0,-B4^sharp],[B4,0]]"},
+        "generator_metric": {"const": "diag(I2,G4)"},
+        "krein_skew_identity": {"const": "K4_comp^T*eta+eta*K4_comp=0"},
+        "charge_identity": {"const": "[H_total,K4_comp]=0"},
+        "ghost_identity": {"const": "kappa_total*K4_comp*kappa_total=-K4_comp"}
+      }
+    },
+    "Eq19_boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "neutral_higher_composite_carrier",
+        "charge_compatible_finite_generator",
+        "ghost_even_neutral_P_identification",
+        "reason",
+        "finite_mode_order_lambda_sector",
+        "required_successor"
+      ],
+      "properties": {
+        "neutral_higher_composite_carrier": {
+          "const": "CONSTRUCTED_MINIMALLY_AT_BOSONIC_DEGREE_FOUR"
+        },
+        "charge_compatible_finite_generator": {
+          "const": "CONSTRUCTED_ALGEBRAICALLY"
+        },
+        "ghost_even_neutral_P_identification": {
+          "const": "EXACTLY_REFUTED_FOR_THIS MINIMAL BLOCK WITH GHOST_EVEN PROFILE SOURCE"
+        },
+        "reason": {"type": "string", "minLength": 1},
+        "finite_mode_order_lambda_sector": {
+          "const": "UNCHANGED_PROVED_WITH_Q1_ZERO"
+        },
+        "required_successor": {"type": "string", "minLength": 1}
+      }
+    },
+    "disposition": {
+      "const": {
+        "minimal_neutral_bosonic_degree": "FOUR",
+        "degree_two_neutral_completion": "EXACTLY_OBSTRUCTED_BY_NEGATIVE_INDEX_ONE",
+        "neutral_higher_composite_Krein_lift": "CONSTRUCTED_EXACTLY",
+        "charge_compatible_finite_generator": "CONSTRUCTED_EXACTLY",
+        "ghost_even_Eq19_P_term": "NOT_CONSTRUCTED",
+        "BT_dynamical_derivation": "NOT_CONSTRUCTED",
+        "generalized_Born_trace": "NOT_CONSTRUCTED",
+        "physical_fourth_probability": "NOT_ESTABLISHED",
+        "Eq19_all_orders": "NOT_PROVED"
+      }
+    },
+    "does_not_establish": {
+      "type": "array",
+      "minItems": 10,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "next_gate": {"type": "string", "minLength": 1},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_commit", "retrieval_date", "inputs"],
+      "properties": {
+        "source_commit": {"const": "932c93106aeacc83d08e6f5dfade16924a1916f9"},
+        "retrieval_date": {"const": "2026-08-12"},
+        "inputs": {
+          "type": "array",
+          "minItems": 5,
+          "maxItems": 5,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["path", "sha256"],
+            "properties": {
+              "path": {"type": "string", "minLength": 1},
+              "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+            }
+          }
+        }
+      }
+    },
+    "verification_commands": {
+      "type": "array",
+      "minItems": 3,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"const": 26},
+        "total": {"const": 26},
+        "failures": {"const": []},
+        "details": {
+          "type": "object",
+          "minProperties": 26,
+          "maxProperties": 26,
+          "additionalProperties": {"const": true}
+        }
+      }
+    },
+    "report": {"const": "reverse_physics/reports/bt-neutral-bosonic-composite-lift.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-neutral-bosonic-composite-lift-v1.schema.json"}
+  },
+  "$defs": {
+    "rational": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      }
+    },
+    "string_matrix": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "array",
+        "minItems": 1,
+        "items": {"type": "string"}
+      }
+    }
+  }
+}
