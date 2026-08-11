@@ -1,0 +1,37 @@
+{
+  "id": "sf:program/work/reverse-physics-bateman-abel-naimark-asymptotic-dilation",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "reverse-physics",
+    "state": "ACTIVE",
+    "objective": "Derive the BT logarithmic detector dilation from Abel-regularized large-time soft flow, classify the coherent wave-column limit, and construct the smallest explicit probability dilation whose orthogonal resolution increments reproduce the physical five-point coefficient without fitting.",
+    "depends_on": [
+      "REVERSE_PHYSICS_BT_SOFT_CHARGE_RESOLVED_FLOW_V1",
+      "REVERSE_PHYSICS_BT_DETECTOR_RESOLUTION_DILATION_V1",
+      "REVERSE_PHYSICS_BT_PHYSICAL_SHELL_PSEUDOUNITARY_COMPLETION_V1",
+      "REVERSE_PHYSICS_BT_LOG_SHELL_MOLLER_LIMIT_V1"
+    ],
+    "activates": [
+      "a time-to-resolution intertwiner for the BT leading soft flow",
+      "a canonical orthogonal-increment enlargement of the physical detector cylinder",
+      "the remaining local-Hamiltonian operator-identification and complete in/out gate"
+    ],
+    "current_gate": "ABEL_NAIMARK_DILATION: integrate the formal d*exp(+-idt) soft Hamiltonian with Abel damping, prove its exact logistic resolution profile and non-Cauchy coherent distance, then purify the positive profile derivative on an enlarged resolution carrier and test the physical 1/48 Gram and hard response.",
+    "stop_condition": "Certify the strongest honest dynamical affiliation: either a strong ordinary wave-column limit, or its exact obstruction together with a translation-covariant orthogonal-increment dilation reproducing the physical leading-log probability.",
+    "forbid": "no public R_t pushforward kernel identified with the physical S-matrix operator; no detector marginal called a local BT interaction Hamiltonian; no NLO leading-log dilation called a complete Moller operator, finite NLO probability, beyond-tree positivity, Eq. 19, gravity, BRST, or LORENTZIAN-CAUSAL theorem",
+    "allowed_paths": [
+      "reverse_physics/",
+      "notes/bateman-turok-embedding.md",
+      "paper/05-interaction-obstructions.tex",
+      "paper/05-interaction-obstructions.pdf",
+      "paper/06-einstein-weyl-interaction-obstructions.tex",
+      "paper/06-einstein-weyl-interaction-obstructions.pdf",
+      "planning/work-items/reverse-physics-bateman-abel-naimark-asymptotic-dilation.json",
+      "planning/events/"
+    ],
+    "resource_hint": "For H_as(t)=d(exp(-idt)D+exp(idt)D_sharp), Abel integration gives coefficient A_epsilon(d)=-i*d/(epsilon+i*d), with modulus squared d^2/(epsilon^2+d^2). On d=alpha*r and y=-log r this is the logistic q_R(y), R=log(alpha/epsilon). Its profile derivative p_s(y)=sech(y-s)^2/2 has unit y-integral. Purify d_(R,a)=integral_R^(R+a) p_s ds on L2(ds dy); disjoint s intervals are orthogonal and the y marginal is the detector shell.",
+    "input_commit": "4f4d29da",
+    "stream": "reverse-physics"
+  }
+}

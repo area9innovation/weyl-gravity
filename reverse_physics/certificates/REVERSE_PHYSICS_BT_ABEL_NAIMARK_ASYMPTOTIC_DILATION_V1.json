@@ -1,0 +1,484 @@
+{
+  "abel_time_intertwiner": {
+    "abel_definition": "K_epsilon=-i*integral_0^infinity exp(-epsilon*t)*H_as(t) dt",
+    "anti_sharp": "K_epsilon_sharp=-K_epsilon",
+    "coefficient_fixtures": [
+      {
+        "anti_sharp_relation": true,
+        "deficit": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "epsilon": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "logistic_profile_value": {
+          "denominator": 2,
+          "numerator": 1
+        },
+        "lowering_coefficient": {
+          "imaginary": {
+            "denominator": 2,
+            "numerator": -1
+          },
+          "real": {
+            "denominator": 2,
+            "numerator": -1
+          }
+        },
+        "lowering_norm_square": {
+          "denominator": 2,
+          "numerator": 1
+        },
+        "raising_coefficient": {
+          "imaginary": {
+            "denominator": 2,
+            "numerator": -1
+          },
+          "real": {
+            "denominator": 2,
+            "numerator": 1
+          }
+        }
+      },
+      {
+        "anti_sharp_relation": true,
+        "deficit": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "epsilon": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "logistic_profile_value": {
+          "denominator": 5,
+          "numerator": 4
+        },
+        "lowering_coefficient": {
+          "imaginary": {
+            "denominator": 5,
+            "numerator": -2
+          },
+          "real": {
+            "denominator": 5,
+            "numerator": -4
+          }
+        },
+        "lowering_norm_square": {
+          "denominator": 5,
+          "numerator": 4
+        },
+        "raising_coefficient": {
+          "imaginary": {
+            "denominator": 5,
+            "numerator": -2
+          },
+          "real": {
+            "denominator": 5,
+            "numerator": 4
+          }
+        }
+      },
+      {
+        "anti_sharp_relation": true,
+        "deficit": {
+          "denominator": 1,
+          "numerator": 3
+        },
+        "epsilon": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "logistic_profile_value": {
+          "denominator": 13,
+          "numerator": 9
+        },
+        "lowering_coefficient": {
+          "imaginary": {
+            "denominator": 13,
+            "numerator": -6
+          },
+          "real": {
+            "denominator": 13,
+            "numerator": -9
+          }
+        },
+        "lowering_norm_square": {
+          "denominator": 13,
+          "numerator": 9
+        },
+        "raising_coefficient": {
+          "imaginary": {
+            "denominator": 13,
+            "numerator": -6
+          },
+          "real": {
+            "denominator": 13,
+            "numerator": 9
+          }
+        }
+      },
+      {
+        "anti_sharp_relation": true,
+        "deficit": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "epsilon": {
+          "denominator": 1,
+          "numerator": 3
+        },
+        "logistic_profile_value": {
+          "denominator": 10,
+          "numerator": 1
+        },
+        "lowering_coefficient": {
+          "imaginary": {
+            "denominator": 10,
+            "numerator": -3
+          },
+          "real": {
+            "denominator": 10,
+            "numerator": -1
+          }
+        },
+        "lowering_norm_square": {
+          "denominator": 10,
+          "numerator": 1
+        },
+        "raising_coefficient": {
+          "imaginary": {
+            "denominator": 10,
+            "numerator": -3
+          },
+          "real": {
+            "denominator": 10,
+            "numerator": 1
+          }
+        }
+      }
+    ],
+    "formal_hamiltonian": "H_as(t)=d*(exp(-i*d*t)*D+exp(+i*d*t)*D_sharp)",
+    "lowering_coefficient": "A_epsilon(d)=-i*d/(epsilon+i*d)",
+    "raising_coefficient": "B_epsilon(d)=-i*d/(epsilon-i*d)=-conjugate(A_epsilon(d))"
+  },
+  "answer": "Abel integration of the certified formal leading soft Hamiltonian H_as(t)=d(exp(-idt)D+exp(idt)D_sharp) gives the anti-sharp coefficient A_epsilon(d)=-i*d/(epsilon+i*d). Its modulus squared is d^2/(epsilon^2+d^2). On every nonzero physical soft ray d=alpha*r, y=-log r, this is exactly the logistic detector profile q_R(y)=1/(1+exp(2(y-R))) with R=log(alpha/epsilon). Thus inverse Abel time translates the detector resolution. On a fixed soft chart the cumulative response tends to log(c) under epsilon -> epsilon/c, with an explicit vanishing boundary correction. The coherent Abel columns still have no ordinary strong limit: columns separated by a fixed scale ratio c have limiting distance squared log(c)*(c-1)/(c+1). Moreover this coherent distance is not the positive detector response log(c), so the detector shell is not the literal difference of two time columns. There is a canonical orthogonal-increment repair. The profile derivative p_s(y)=sech(y-s)^2/2 is positive and integrates to one. On the enlarged carrier L2(ds dy), the purified shell supported on s in [R,R+a] has unit norm, disjoint resolution intervals are orthogonal, and its y marginal is exactly (q_(R+a)-q_R)/a. Coupling three such channels with the measured density 1/48 gives physical real +a/16 and pseudo-unitary hard -a/16 without fitting. This constructs a leading-log reduced-mode probability dilation and a genuine time-to-resolution mechanism. It does not identify the public R_t operator D with the physical S-matrix splitting operator, construct complete incoming sectors or a full Moller operator, or prove Eq. (19).",
+  "assumptions": [
+    "the formal leading soft Hamiltonian and deficit phase are imported only on the exact off-resonant R_t carrier on which they were certified",
+    "physical soft rays have d=alpha*r with alpha positive almost everywhere; the alpha-zero angular set is measure zero and no uniform statement there is used",
+    "the physical five-point generalized-Born response fixes the positive Gram density but not the operator phase of the physical splitting map",
+    "pseudo-unitarity is used only on the finite regulated positive hard-plus-collinear quotient through NLO leading-log order"
+  ],
+  "certificate": "REVERSE_PHYSICS_BT_ABEL_NAIMARK_ASYMPTOTIC_DILATION_V1",
+  "checks": {
+    "details": {
+      "abel_norm_is_logistic": true,
+      "abel_profile_is_scale_translate": true,
+      "abel_rows_are_anti_sharp": true,
+      "coherent_distance_differs_from_detector_response": true,
+      "complete_incoming_sector_stays_open": true,
+      "disjoint_resolution_intervals_are_orthogonal": true,
+      "eq19_stays_open": true,
+      "finite_chart_error_bounds_decrease": true,
+      "finite_soft_chart_response_tends_to_logc": true,
+      "full_moller_operator_stays_open": true,
+      "input_hashes_pinned": true,
+      "joint_translation_covariance_is_exact": true,
+      "local_BT_operator_identification_stays_open": true,
+      "logistic_profile_derivative_integrates_to_one": true,
+      "logistic_profile_derivative_is_positive": true,
+      "naimark_density_is_unit_normalized": true,
+      "naimark_shell_has_unit_norm": true,
+      "naimark_y_marginal_is_detector_shell": true,
+      "no_lorentzian_claim": true,
+      "ordinary_abel_columns_are_not_cauchy": true,
+      "physical_absolute_terms_are_plus_minus_three_over_512": true,
+      "physical_hard_response_is_minus_one_over_16": true,
+      "physical_per_pair_density_is_one_over_48": true,
+      "physical_three_pair_response_is_one_over_16": true,
+      "public_Rt_and_physical_S_objects_stay_distinct": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 25,
+    "total": 25
+  },
+  "coherent_limit_obstruction": {
+    "amplitude_profile": "A_R(y)=-i*exp(R-y)/(1+i*exp(R-y))",
+    "disposition": "NO_ORDINARY_STRONG_ABEL_WAVE_COLUMN_LIMIT",
+    "distance_integral": "integral_R |A_(R+a)(y)-A_R(y)|^2 dy -> a*tanh(a/2)",
+    "equivalent_formula": "log(c)*(c-1)/(c+1)",
+    "meaning": "time dilation derives the moving profile but does not make the ordinary coherent columns Cauchy",
+    "scale_fixtures": [
+      {
+        "a": "log(c)",
+        "c": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "coherent_coefficient_of_logc": {
+          "denominator": 3,
+          "numerator": 1
+        },
+        "coherent_distance_square": "(1/3)*log(c)",
+        "detector_response_coefficient_of_logc": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "missing_orthogonal_increment_coefficient": {
+          "denominator": 3,
+          "numerator": 2
+        }
+      },
+      {
+        "a": "log(c)",
+        "c": {
+          "denominator": 1,
+          "numerator": 3
+        },
+        "coherent_coefficient_of_logc": {
+          "denominator": 2,
+          "numerator": 1
+        },
+        "coherent_distance_square": "(1/2)*log(c)",
+        "detector_response_coefficient_of_logc": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "missing_orthogonal_increment_coefficient": {
+          "denominator": 2,
+          "numerator": 1
+        }
+      },
+      {
+        "a": "log(c)",
+        "c": {
+          "denominator": 1,
+          "numerator": 5
+        },
+        "coherent_coefficient_of_logc": {
+          "denominator": 3,
+          "numerator": 2
+        },
+        "coherent_distance_square": "(2/3)*log(c)",
+        "detector_response_coefficient_of_logc": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "missing_orthogonal_increment_coefficient": {
+          "denominator": 3,
+          "numerator": 1
+        }
+      }
+    ],
+    "scale_ratio": "c=exp(a)>1"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "disposition": {
+    "Abel_time_to_resolution_intertwiner": "CONSTRUCTED",
+    "Eq19_all_orders": "NOT_PROVED",
+    "beyond_tree_positivity": "NOT_ESTABLISHED",
+    "complete_incoming_outgoing_sectors": "NOT_CONSTRUCTED",
+    "finite_complete_NLO_probability": "NOT_ESTABLISHED",
+    "full_dressed_Moller_operator": "NOT_CONSTRUCTED",
+    "local_BT_asymptotic_Hamiltonian_affiliation": "NOT_ESTABLISHED",
+    "logistic_detector_profile": "DERIVED_FROM_FORMAL_SOFT_TIME_FLOW",
+    "ordinary_strong_Abel_wave_column_limit": "EXACT_OBSTRUCTION",
+    "orthogonal_increment_probability_dilation": "CONSTRUCTED",
+    "physical_final_pair_leading_log_probability": "REAL_PLUS_HARD_RESPONSE_ZERO",
+    "public_Rt_equals_physical_S_operator": "NOT_ESTABLISHED"
+  },
+  "does_not_establish": [
+    "that the public R_t field-map generator is the physical S-matrix asymptotic Hamiltonian",
+    "a strong Moller limit on the ordinary unextended carrier",
+    "that the Naimark resolution coordinate is a new spacetime or physical dimension",
+    "a local LSZ or AQFT construction of the enlarged detector carrier",
+    "complete incoming and outgoing degenerate sectors",
+    "multiple-emission or all-order leading-log resummation",
+    "a full continuum dressed S-matrix or Moller operator",
+    "the regulator-independent finite NLO constant",
+    "a complete NLO probability outside the declared final-pair cylinder",
+    "positivity beyond the BT tree theorem",
+    "all-order Eq. (19)",
+    "a gravitational or BRST lift",
+    "anything LORENTZIAN-CAUSAL",
+    "literature priority"
+  ],
+  "lifecycle_state": "CLASSIFIED",
+  "missing_object_ledger": [
+    "an operator-level collinear factorization theorem identifying the physical five-point splitting phase with the Abel soft generator",
+    "complete incoming and outgoing degenerate sectors on one enlarged asymptotic trace domain",
+    "a local or asymptotic-field derivation of the Naimark resolution/noise carrier from the BT interaction Hamiltonian",
+    "controlled multiple-emission composition or quantum-stochastic evolution on the orthogonal resolution increments",
+    "the finite NLO matching constant and full all-order Eq. (19) pushforward/range theorem"
+  ],
+  "naimark_probability_dilation": {
+    "absolute_hard_coefficient": {
+      "denominator": 512,
+      "numerator": -3
+    },
+    "absolute_real_coefficient": {
+      "denominator": 512,
+      "numerator": 3
+    },
+    "density": "p_s(y)=sech(y-s)^2/2",
+    "detector_marginal": "integral_R^(R+a) p_s(y) ds / a=(q_(R+a)(y)-q_R(y))/a",
+    "enlarged_one_particle_carrier": "K_N=L2(R_s x R_y, ds dy) tensor C^3",
+    "hard_survival_response": {
+      "denominator": 16,
+      "numerator": -1
+    },
+    "inclusive_response": {
+      "denominator": 1,
+      "numerator": 0
+    },
+    "interpretation": "the extra s label is an auxiliary resolution/noise coordinate, not a spacetime dimension",
+    "orthogonality": "Xi_I is orthogonal to Xi_J for disjoint resolution intervals I,J",
+    "physical_generator": "G_(R,a)h=sqrt(a/48)*sum_i Xi_(R,a,i), with the reverse block fixed skew",
+    "purified_unit_shell": "Xi_(R,a)(s,y)=1_[R,R+a](s)*sqrt(p_s(y)/a)",
+    "real_norm_square": {
+      "denominator": 16,
+      "numerator": 1
+    },
+    "state": "LEADING_LOG_REDUCED_MODE_ORTHOGONAL_INCREMENT_DILATION_CONSTRUCTED",
+    "translation": "(s,y)->(s+b,y+b) maps Xi_(R,a) to Xi_(R+b,a)",
+    "unit_norm": "integral ds dy |Xi_(R,a)|^2=1"
+  },
+  "next_gate": "Compute the amplitude-level physical collinear factorization of the complete BT five-point process, including its Krein species and phase, and compare its number-changing operator with the Abel-regularized off-resonant D after the zero-mode completion. Equality would identify the constructed orthogonal-increment dilation with the physical BT asymptotic Hamiltonian on the outgoing cylinder. A mismatch would certify the first exact operator obstruction. Complete incoming sectors and multiple-emission composition remain subsequent gates.",
+  "object_typing": {
+    "identified_common_object": "the detector-resolution automorphism and its positive logistic profile",
+    "not_identified": "the public R_t number-lowering operator D is not proved equal to the physical S-matrix splitting operator",
+    "physical_probability_input": "the 1/48 Gram density is imported independently from the physical five-point S-matrix process",
+    "public_formal_flow": "the Abel profile is derived from the certified off-resonant R_t/field-map soft Hamiltonian"
+  },
+  "provenance": {
+    "inputs": [
+      {
+        "path": "planning/work-items/reverse-physics-bateman-abel-naimark-asymptotic-dilation.json",
+        "sha256": "23a21a797a343c0d918fc14e673e460e4adcde95c4c3a1a1d3ebf73988d98d30"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_SOFT_CHARGE_RESOLVED_FLOW_V1.json",
+        "sha256": "19f38d4f041518eeb3a70b79ae2998e6da804147c7240d5a3063988541845f8f"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_DETECTOR_RESOLUTION_DILATION_V1.json",
+        "sha256": "6824a556532b833c3b25d21f17fe29013e2d79bbfaf1bddf5b54c35dc8a6d661"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_PHYSICAL_SHELL_PSEUDOUNITARY_COMPLETION_V1.json",
+        "sha256": "8709d3fdb0c38ec90a9e0c517dda49bc55734b6c257fd9c2add39e65365715da"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_LOG_SHELL_MOLLER_LIMIT_V1.json",
+        "sha256": "836d6b478b4fb1bccee038ecf6f0c1d1f6e56ec02eeb436273249a083be2b5e2"
+      }
+    ],
+    "retrieval_date": "2026-08-11",
+    "source_commit": "4f4d29da660f5064ae87da408e7383f2ac5799d4"
+  },
+  "question": "Does Abel-regularized BT leading soft evolution generate the same logarithmic detector translation as the physical resolution theorem, do its coherent columns possess an ordinary strong limit, and if not what explicit enlarged carrier realizes the positive physical increments?",
+  "report": "reverse_physics/reports/bt-abel-naimark-asymptotic-dilation.md",
+  "result_kind": "exact Abel time-to-resolution intertwiner, coherent strong-limit obstruction, and canonical orthogonal-increment probability dilation",
+  "schema": "reverse_physics/schema/reverse-physics-bt-abel-naimark-asymptotic-dilation-v1.schema.json",
+  "schema_version": "reverse-physics-bt-abel-naimark-asymptotic-dilation-v1",
+  "time_resolution_map": {
+    "abel_time": "T=1/epsilon",
+    "coordinate": "y=-log r",
+    "finite_soft_chart": {
+      "cumulative_norm": "I_R=(1/2)*log(1+exp(2*(R-y0)))",
+      "exact_rows_for_c_equals_2": [
+        {
+          "argument_divided_by_c_squared": {
+            "denominator": 8,
+            "numerator": 5
+          },
+          "twice_response_log_argument": {
+            "denominator": 2,
+            "numerator": 5
+          },
+          "upper_bound_on_logc_minus_response": {
+            "denominator": 10,
+            "numerator": 3
+          },
+          "x_equals_(alpha_r0_over_epsilon)_squared": {
+            "denominator": 1,
+            "numerator": 1
+          }
+        },
+        {
+          "argument_divided_by_c_squared": {
+            "denominator": 20,
+            "numerator": 17
+          },
+          "twice_response_log_argument": {
+            "denominator": 5,
+            "numerator": 17
+          },
+          "upper_bound_on_logc_minus_response": {
+            "denominator": 34,
+            "numerator": 3
+          },
+          "x_equals_(alpha_r0_over_epsilon)_squared": {
+            "denominator": 1,
+            "numerator": 4
+          }
+        },
+        {
+          "argument_divided_by_c_squared": {
+            "denominator": 68,
+            "numerator": 65
+          },
+          "twice_response_log_argument": {
+            "denominator": 17,
+            "numerator": 65
+          },
+          "upper_bound_on_logc_minus_response": {
+            "denominator": 130,
+            "numerator": 3
+          },
+          "x_equals_(alpha_r0_over_epsilon)_squared": {
+            "denominator": 1,
+            "numerator": 16
+          }
+        },
+        {
+          "argument_divided_by_c_squared": {
+            "denominator": 260,
+            "numerator": 257
+          },
+          "twice_response_log_argument": {
+            "denominator": 65,
+            "numerator": 257
+          },
+          "upper_bound_on_logc_minus_response": {
+            "denominator": 514,
+            "numerator": 3
+          },
+          "x_equals_(alpha_r0_over_epsilon)_squared": {
+            "denominator": 1,
+            "numerator": 64
+          }
+        }
+      ],
+      "lower_y_boundary": "y0=-log(r0)",
+      "scale_response": "I_(R+log(c))-I_R -> log(c)"
+    },
+    "normalization_substitution": "z=exp(2*(y-R)); integral p_R dy=integral_0^infinity dz/(1+z)^2=1",
+    "profile": "q_R(y)=|A_epsilon(alpha*exp(-y))|^2=1/(1+exp(2*(y-R)))",
+    "profile_derivative": "p_R(y)=partial_R q_R(y)=sech(y-R)^2/2",
+    "resolution_origin": "R=log(alpha/epsilon)=log(alpha*T)",
+    "soft_ray": "d=alpha*r with alpha>0 almost everywhere",
+    "translation": "q_(R+b)(y)=q_R(y-b) and p_(R+b)(y)=p_R(y-b)"
+  },
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_abel_naimark_asymptotic_dilation.py --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_abel_naimark_asymptotic_dilation.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_abel_naimark_asymptotic_dilation"
+  ]
+}

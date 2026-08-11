@@ -1,0 +1,228 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-abel-naimark-asymptotic-dilation-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "certificate",
+    "schema_version",
+    "dependency_tags",
+    "lifecycle_state",
+    "result_kind",
+    "question",
+    "answer",
+    "assumptions",
+    "abel_time_intertwiner",
+    "time_resolution_map",
+    "coherent_limit_obstruction",
+    "naimark_probability_dilation",
+    "object_typing",
+    "disposition",
+    "does_not_establish",
+    "missing_object_ledger",
+    "next_gate",
+    "provenance",
+    "verification_commands",
+    "checks",
+    "report",
+    "schema"
+  ],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_ABEL_NAIMARK_ASYMPTOTIC_DILATION_V1"},
+    "schema_version": {"const": "reverse-physics-bt-abel-naimark-asymptotic-dilation-v1"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "result_kind": {"type": "string", "minLength": 100},
+    "question": {"type": "string", "minLength": 250},
+    "answer": {"type": "string", "minLength": 1500},
+    "assumptions": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "string", "minLength": 100}},
+    "abel_time_intertwiner": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["formal_hamiltonian", "abel_definition", "lowering_coefficient", "raising_coefficient", "anti_sharp", "coefficient_fixtures"],
+      "properties": {
+        "formal_hamiltonian": {"const": "H_as(t)=d*(exp(-i*d*t)*D+exp(+i*d*t)*D_sharp)"},
+        "abel_definition": {"const": "K_epsilon=-i*integral_0^infinity exp(-epsilon*t)*H_as(t) dt"},
+        "lowering_coefficient": {"const": "A_epsilon(d)=-i*d/(epsilon+i*d)"},
+        "raising_coefficient": {"const": "B_epsilon(d)=-i*d/(epsilon-i*d)=-conjugate(A_epsilon(d))"},
+        "anti_sharp": {"const": "K_epsilon_sharp=-K_epsilon"},
+        "coefficient_fixtures": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/coefficientRow"}}
+      }
+    },
+    "time_resolution_map": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["soft_ray", "coordinate", "abel_time", "resolution_origin", "profile", "profile_derivative", "normalization_substitution", "translation", "finite_soft_chart"],
+      "properties": {
+        "soft_ray": {"const": "d=alpha*r with alpha>0 almost everywhere"},
+        "coordinate": {"const": "y=-log r"},
+        "abel_time": {"const": "T=1/epsilon"},
+        "resolution_origin": {"const": "R=log(alpha/epsilon)=log(alpha*T)"},
+        "profile": {"const": "q_R(y)=|A_epsilon(alpha*exp(-y))|^2=1/(1+exp(2*(y-R)))"},
+        "profile_derivative": {"const": "p_R(y)=partial_R q_R(y)=sech(y-R)^2/2"},
+        "normalization_substitution": {"const": "z=exp(2*(y-R)); integral p_R dy=integral_0^infinity dz/(1+z)^2=1"},
+        "translation": {"const": "q_(R+b)(y)=q_R(y-b) and p_(R+b)(y)=p_R(y-b)"},
+        "finite_soft_chart": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["lower_y_boundary", "cumulative_norm", "scale_response", "exact_rows_for_c_equals_2"],
+          "properties": {
+            "lower_y_boundary": {"const": "y0=-log(r0)"},
+            "cumulative_norm": {"const": "I_R=(1/2)*log(1+exp(2*(R-y0)))"},
+            "scale_response": {"const": "I_(R+log(c))-I_R -> log(c)"},
+            "exact_rows_for_c_equals_2": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/chartRow"}}
+          }
+        }
+      }
+    },
+    "coherent_limit_obstruction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["amplitude_profile", "scale_ratio", "distance_integral", "equivalent_formula", "scale_fixtures", "disposition", "meaning"],
+      "properties": {
+        "amplitude_profile": {"const": "A_R(y)=-i*exp(R-y)/(1+i*exp(R-y))"},
+        "scale_ratio": {"const": "c=exp(a)>1"},
+        "distance_integral": {"const": "integral_R |A_(R+a)(y)-A_R(y)|^2 dy -> a*tanh(a/2)"},
+        "equivalent_formula": {"const": "log(c)*(c-1)/(c+1)"},
+        "scale_fixtures": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/scaleRow"}},
+        "disposition": {"const": "NO_ORDINARY_STRONG_ABEL_WAVE_COLUMN_LIMIT"},
+        "meaning": {"type": "string", "minLength": 80}
+      }
+    },
+    "naimark_probability_dilation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["enlarged_one_particle_carrier", "density", "purified_unit_shell", "unit_norm", "detector_marginal", "orthogonality", "translation", "interpretation", "physical_generator", "real_norm_square", "hard_survival_response", "inclusive_response", "absolute_real_coefficient", "absolute_hard_coefficient", "state"],
+      "properties": {
+        "enlarged_one_particle_carrier": {"const": "K_N=L2(R_s x R_y, ds dy) tensor C^3"},
+        "density": {"const": "p_s(y)=sech(y-s)^2/2"},
+        "purified_unit_shell": {"const": "Xi_(R,a)(s,y)=1_[R,R+a](s)*sqrt(p_s(y)/a)"},
+        "unit_norm": {"const": "integral ds dy |Xi_(R,a)|^2=1"},
+        "detector_marginal": {"const": "integral_R^(R+a) p_s(y) ds / a=(q_(R+a)(y)-q_R(y))/a"},
+        "orthogonality": {"const": "Xi_I is orthogonal to Xi_J for disjoint resolution intervals I,J"},
+        "translation": {"const": "(s,y)->(s+b,y+b) maps Xi_(R,a) to Xi_(R+b,a)"},
+        "interpretation": {"const": "the extra s label is an auxiliary resolution/noise coordinate, not a spacetime dimension"},
+        "physical_generator": {"const": "G_(R,a)h=sqrt(a/48)*sum_i Xi_(R,a,i), with the reverse block fixed skew"},
+        "real_norm_square": {"const": {"denominator": 16, "numerator": 1}},
+        "hard_survival_response": {"const": {"denominator": 16, "numerator": -1}},
+        "inclusive_response": {"const": {"denominator": 1, "numerator": 0}},
+        "absolute_real_coefficient": {"const": {"denominator": 512, "numerator": 3}},
+        "absolute_hard_coefficient": {"const": {"denominator": 512, "numerator": -3}},
+        "state": {"const": "LEADING_LOG_REDUCED_MODE_ORTHOGONAL_INCREMENT_DILATION_CONSTRUCTED"}
+      }
+    },
+    "object_typing": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["public_formal_flow", "physical_probability_input", "identified_common_object", "not_identified"],
+      "properties": {
+        "public_formal_flow": {"const": "the Abel profile is derived from the certified off-resonant R_t/field-map soft Hamiltonian"},
+        "physical_probability_input": {"const": "the 1/48 Gram density is imported independently from the physical five-point S-matrix process"},
+        "identified_common_object": {"const": "the detector-resolution automorphism and its positive logistic profile"},
+        "not_identified": {"const": "the public R_t number-lowering operator D is not proved equal to the physical S-matrix splitting operator"}
+      }
+    },
+    "disposition": {
+      "const": {
+        "Abel_time_to_resolution_intertwiner": "CONSTRUCTED",
+        "logistic_detector_profile": "DERIVED_FROM_FORMAL_SOFT_TIME_FLOW",
+        "ordinary_strong_Abel_wave_column_limit": "EXACT_OBSTRUCTION",
+        "orthogonal_increment_probability_dilation": "CONSTRUCTED",
+        "physical_final_pair_leading_log_probability": "REAL_PLUS_HARD_RESPONSE_ZERO",
+        "public_Rt_equals_physical_S_operator": "NOT_ESTABLISHED",
+        "local_BT_asymptotic_Hamiltonian_affiliation": "NOT_ESTABLISHED",
+        "complete_incoming_outgoing_sectors": "NOT_CONSTRUCTED",
+        "full_dressed_Moller_operator": "NOT_CONSTRUCTED",
+        "finite_complete_NLO_probability": "NOT_ESTABLISHED",
+        "beyond_tree_positivity": "NOT_ESTABLISHED",
+        "Eq19_all_orders": "NOT_PROVED"
+      }
+    },
+    "does_not_establish": {"type": "array", "minItems": 14, "maxItems": 14, "items": {"type": "string", "minLength": 15}},
+    "missing_object_ledger": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"type": "string", "minLength": 80}},
+    "next_gate": {"type": "string", "minLength": 500},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_commit", "retrieval_date", "inputs"],
+      "properties": {
+        "source_commit": {"const": "4f4d29da660f5064ae87da408e7383f2ac5799d4"},
+        "retrieval_date": {"const": "2026-08-11"},
+        "inputs": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"$ref": "#/$defs/input"}}
+      }
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "string", "minLength": 50}},
+    "checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"const": 25},
+        "total": {"const": 25},
+        "failures": {"const": []},
+        "details": {"type": "object", "minProperties": 25, "maxProperties": 25, "additionalProperties": {"const": true}}
+      }
+    },
+    "report": {"const": "reverse_physics/reports/bt-abel-naimark-asymptotic-dilation.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-abel-naimark-asymptotic-dilation-v1.schema.json"}
+  },
+  "$defs": {
+    "rational": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {"numerator": {"type": "integer"}, "denominator": {"type": "integer", "minimum": 1}}
+    },
+    "gaussian": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["real", "imaginary"],
+      "properties": {"real": {"$ref": "#/$defs/rational"}, "imaginary": {"$ref": "#/$defs/rational"}}
+    },
+    "coefficientRow": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["epsilon", "deficit", "lowering_coefficient", "raising_coefficient", "lowering_norm_square", "logistic_profile_value", "anti_sharp_relation"],
+      "properties": {
+        "epsilon": {"$ref": "#/$defs/rational"},
+        "deficit": {"$ref": "#/$defs/rational"},
+        "lowering_coefficient": {"$ref": "#/$defs/gaussian"},
+        "raising_coefficient": {"$ref": "#/$defs/gaussian"},
+        "lowering_norm_square": {"$ref": "#/$defs/rational"},
+        "logistic_profile_value": {"$ref": "#/$defs/rational"},
+        "anti_sharp_relation": {"const": true}
+      }
+    },
+    "chartRow": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["x_equals_(alpha_r0_over_epsilon)_squared", "twice_response_log_argument", "argument_divided_by_c_squared", "upper_bound_on_logc_minus_response"],
+      "properties": {
+        "x_equals_(alpha_r0_over_epsilon)_squared": {"$ref": "#/$defs/rational"},
+        "twice_response_log_argument": {"$ref": "#/$defs/rational"},
+        "argument_divided_by_c_squared": {"$ref": "#/$defs/rational"},
+        "upper_bound_on_logc_minus_response": {"$ref": "#/$defs/rational"}
+      }
+    },
+    "scaleRow": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["c", "a", "coherent_distance_square", "coherent_coefficient_of_logc", "detector_response_coefficient_of_logc", "missing_orthogonal_increment_coefficient"],
+      "properties": {
+        "c": {"$ref": "#/$defs/rational"},
+        "a": {"const": "log(c)"},
+        "coherent_distance_square": {"type": "string", "pattern": "^\\([0-9]+/[0-9]+\\)\\*log\\(c\\)$"},
+        "coherent_coefficient_of_logc": {"$ref": "#/$defs/rational"},
+        "detector_response_coefficient_of_logc": {"const": {"denominator": 1, "numerator": 1}},
+        "missing_orthogonal_increment_coefficient": {"$ref": "#/$defs/rational"}
+      }
+    },
+    "input": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {"path": {"type": "string", "minLength": 20}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+    }
+  }
+}

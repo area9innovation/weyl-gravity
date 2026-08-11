@@ -1716,9 +1716,22 @@ Certificate
 \texttt{REVERSE\_PHYSICS\_BT\_DETECTOR\_}
 \allowbreak\texttt{RESOLUTION\_DILATION\_V1}
 establishes this physical scalar leading-log resolution response only on its
-declared final-pair cylinder.  Resolution dilation is not time evolution, and
-the scalar detector trace, cancellation, and coefficient do not transfer to
-the metric BV complex or establish a \texttt{LORENTZIAN-CAUSAL} result.
+declared final-pair cylinder.  Abel integration of the formal scalar soft
+Hamiltonian gives coefficient $-id/(\epsilon+id)$ and logistic norm profile
+$q_R(y)=(1+e^{2(y-R)})^{-1}$ with $R=\log(\alpha/\epsilon)$.  Thus inverse
+Abel time implements the same resolution translation.  The coherent columns
+have fixed-ratio squared distance
+$\log(c)(c-1)/(c+1)>0$; the resulting orthogonal-increment Naimark carrier is
+certified in
+\texttt{REVERSE\_PHYSICS\_}
+\allowbreak\texttt{BT\_ABEL\_NAIMARK\_}
+\allowbreak\texttt{ASYMPTOTIC\_}
+\allowbreak\texttt{DILATION\_V1}.
+This identifies a scalar detector automorphism, not the formal $R_t$ lowering
+operator with the physical S-matrix splitting operator.  Its auxiliary
+resolution coordinate, scalar detector trace, cancellation, and coefficient
+do not transfer to the metric BV complex or establish a
+\texttt{LORENTZIAN-CAUSAL} result.
 There is nevertheless a genuine scalar hard-scattering baseline.  The
 certificate
 \texttt{REVERSE\_PHYSICS\_BT\_UV\_HARD\_}\allowbreak
