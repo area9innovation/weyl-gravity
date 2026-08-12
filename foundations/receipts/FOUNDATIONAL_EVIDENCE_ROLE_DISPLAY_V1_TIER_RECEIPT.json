@@ -1,0 +1,307 @@
+{
+  "schema_version": "science-forge-tier-receipt-v1",
+  "receipt_id": "FOUNDATIONAL_EVIDENCE_ROLE_DISPLAY_V1_TIER_RECEIPT",
+  "created": "2026-08-12",
+  "repository_base_commit": "f6ef6966298f14642e39ffdcaec2db3fc9e33416",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "scope": "Carry a per-record evidence role through cube v1-v4 and render a compound cell mark in the static explorer: upper case for a certified direct grade, lower case for a supporting ingredient of that kind. A coordinate supported directly by both kinds stops collapsing to the higher-ranked letter, and pieces-only cells stop hiding their ingredient mix. Additive metadata only; no status, count, or coverage value changes.",
+  "tiers": {
+    "tier_0_compile": {
+      "status": "PASS",
+      "command": "python3 -m py_compile on the eleven changed foundations modules",
+      "elapsed_seconds": 0.06
+    },
+    "tier_0_json": {
+      "status": "PASS",
+      "command": "parse every foundations JSON with json.loads",
+      "result": "174 files parsed."
+    },
+    "tier_0_assets": {
+      "status": "PASS",
+      "command": "bun build foundations/matrix_site_assets/app.js; brace-balance foundations/matrix_site_assets/styles.css",
+      "result": "app.js parses; 216 balanced CSS blocks."
+    },
+    "tier_0_diff_check": {
+      "status": "PASS",
+      "command": "git diff --check -- foundations paper"
+    },
+    "tier_1_generator_chain": {
+      "status": "PASS",
+      "command": "python3 foundations/refine_intersection_cube{,_v2,_v3,_v4}.py --check && python3 foundations/build_matrix_site_v2.py --check",
+      "elapsed_seconds": 0.32,
+      "result": "All five generated chains byte-current after regeneration."
+    },
+    "tier_1_independent_checkers": {
+      "status": "PASS",
+      "command": "python3 foundations/check_refined_intersection_cube{,_v2,_v3,_v4}.py && python3 foundations/check_matrix_site_v2.py",
+      "result": "Role closure, role vocabulary, role/status agreement, role-kind-versus-registry agreement, and dual-count declarations all pass."
+    },
+    "tier_1_headless_render": {
+      "status": "PASS",
+      "command": "boot foundations/site/app.js under a DOM stub in bun and inspect the rendered grid, filters, and inspector",
+      "result": "576 cells render with the compound mark histogram {'\u00b7': 205, 'R': 90, 'L': 76, 'Pl': 75, 'Pr': 51, 'G': 30, 'P': 20, 'Plr': 14, 'LR': 7, 'Lr': 5, 'Rl': 3}, matching the generated counts and the checker's independent recomputation. All seven LR cells carry data-dual and the two-colour gradient. Status filters return 88 LOCAL_RESULT (L 76 + LR 7 + Lr 5), 100 LITERATURE_RESULT (R 90 + LR 7 + Rl 3), and 160 PIECES_ONLY (Pl 75 + Pr 51 + Plr 14 + P 20), so a lower-case ingredient letter never moves a cell between families. The dual-cell inspector renders three role badges, the direct-grades sentence, and two status pills."
+    },
+    "tier_2_affected_chain": {
+      "status": "PASS",
+      "command": "python3 foundations/verify_refined_intersection_cube{,_v2,_v3,_v4}.py && python3 foundations/verify_matrix_site_v2.py && python3 foundations/verify_theory_viability.py && python3 foundations/verify_intersection_migration_audit.py",
+      "elapsed_seconds": 0.96
+    },
+    "tier_2_foundations_tests": {
+      "status": "PASS",
+      "command": "python3 -m unittest discover -s foundations/tests -p 'test_*.py'",
+      "elapsed_seconds": 2.89,
+      "result": "278/278 tests pass."
+    },
+    "tier_2_paper_regeneration": {
+      "status": "PASS",
+      "command": "python3 paper/generate_21_reverse_foundations_appendices.py then generate_21_reverse_foundations_claim_map.py, both with --check. The claim map hashes the appendix, so the appendix must be generated first.",
+      "result": "Both re-pinned to the new site data hash and canonical digest. The regenerated diff contains only content hashes; no count, table row, or claim text changed."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No freeze, tag, theorem promotion, lifecycle promotion, or shared core-algebra change applies. The change is additive display metadata whose full affected certificate chain and complete foundations suite were run."
+    },
+    "tier_1_invariant_negative_test": {
+      "status": "PASS",
+      "command": "inject a DIRECT_LOCAL role onto a PIECES_ONLY cell and re-run foundations/check_refined_intersection_cube_v4.py",
+      "result": "The checker reports 'role/status agreement CLASSICAL_STANDARD|ALGEBRAIC_CSTAR|CAUSAL_PROPAGATION_GREEN'. Role and status are written by different passes, so v3 and v4 now assert their agreement rather than assuming it."
+    }
+  },
+  "claim_preservation": {
+    "rule": "The cube canonical digests project coordinate, status, migration, and evidence fields only, so an unchanged digest proves no claim moved while the additive role field was introduced.",
+    "cube_v1_digest_before": "37e04717bec0e78aaa9c6187a39fe6edb7dd512cdf8d9597455dc526d637fa9d",
+    "cube_v1_digest_after": "37e04717bec0e78aaa9c6187a39fe6edb7dd512cdf8d9597455dc526d637fa9d",
+    "cube_v2_digest_before": "34996392dc7b7d4548f7bbf76cf1b6f8b50402da16e1789a637661a96f8fddc3",
+    "cube_v2_digest_after": "34996392dc7b7d4548f7bbf76cf1b6f8b50402da16e1789a637661a96f8fddc3",
+    "cube_v3_digest_before": "157a88c2580d6d66ae34cddb8b6ca626649deb2111079e84e21fa2b8fd4b7209",
+    "cube_v3_digest_after": "157a88c2580d6d66ae34cddb8b6ca626649deb2111079e84e21fa2b8fd4b7209",
+    "cube_v4_digest_before": "b9de7709da88279abf0a47a93aad38047ab4a6b0c2c85e99c421c9bd36aff7c9",
+    "cube_v4_digest_after": "b9de7709da88279abf0a47a93aad38047ab4a6b0c2c85e99c421c9bd36aff7c9",
+    "site_data_digest_before": "378a9806111aec5b00bb9b9d71e8b9bbeaad573feb163684e967aa8cc34de625",
+    "site_data_digest_after": "2b862d2274aa796e0d87c68672313245b2b8317487d0e49e91fbbf0af5585016",
+    "site_digest_change_reason": "The site canonical digest projects the cell array, which now carries the additive evidence_roles field. Status counts, coverage counts, evidence-record count, and every displayed number are unchanged.",
+    "status_counts_unchanged": true
+  },
+  "evidence_role_results": {
+    "vocabulary": [
+      "DIRECT_LOCAL",
+      "DIRECT_LITERATURE",
+      "SUPPORTING",
+      "UNREVIEWED"
+    ],
+    "role_counts_emitted": {
+      "DIRECT_LITERATURE": 84,
+      "DIRECT_LOCAL": 76,
+      "SUPPORTING": 267,
+      "UNREVIEWED": 191
+    },
+    "dual_direct_cells": 7,
+    "dual_direct_coordinates": [
+      "CLASSICAL_STANDARD|KREIN_INDEFINITE|STATE_EXISTENCE",
+      "CLASSICAL_STANDARD|ALGEBRAIC_CSTAR|STATE_EXISTENCE",
+      "TOPOS_INTERNAL|FINITE_EXACT|STATE_REPRESENTATION",
+      "TOPOS_INTERNAL|FINITE_EXACT|PROBABILITY_RULE",
+      "FINITE_DISCRETE|ALGEBRAIC_CSTAR|GENERATOR_SPECTRAL_DYNAMICS",
+      "FINITE_DISCRETE|ALGEBRAIC_CSTAR|EVOLUTION_WELLPOSEDNESS",
+      "FINITE_DISCRETE|ALGEBRAIC_CSTAR|INTERACTION_CONSTRUCTION"
+    ],
+    "derivation_sources": [
+      "the v1 evidence-capability registry, for split children",
+      "eleven explicit per-overlay role declarations in the v1 producer"
+    ],
+    "fail_closed_unreviewed": [
+      "records attached at an unsplit one-to-one obligation",
+      "records added by the v3 normally-hyperbolic atlas",
+      "records added by the v4 coded-wave frontier"
+    ],
+    "mixed_evidence_single_marked_by_registry_judgement": 19,
+    "review_backlog": [
+      {
+        "coordinate": "WEAK_CHOICE_ZF|ALGEBRAIC_CSTAR|KINEMATICS_OBSERVABLES",
+        "status": "LOCAL_RESULT",
+        "unreviewed_kind": "LITERATURE",
+        "records": [
+          "blackadar-farah-2026"
+        ]
+      },
+      {
+        "coordinate": "FINITE_DISCRETE|ALGEBRAIC_CSTAR|KINEMATICS_OBSERVABLES",
+        "status": "LITERATURE_RESULT",
+        "unreviewed_kind": "LITERATURE",
+        "records": [
+          "zohar-burrello-2014"
+        ]
+      },
+      {
+        "coordinate": "CLASSICAL_STANDARD|SMOOTH_DISTRIBUTIONAL|EVOLUTION_WELLPOSEDNESS",
+        "status": "LOCAL_RESULT",
+        "unreviewed_kind": "LITERATURE",
+        "records": [
+          "baer-2015"
+        ]
+      },
+      {
+        "coordinate": "WEAK_ARITHMETIC|HILBERT_OPERATOR|EVOLUTION_WELLPOSEDNESS",
+        "status": "LOCAL_RESULT",
+        "unreviewed_kind": "LITERATURE",
+        "records": [
+          "pischke-2025-semigroups"
+        ]
+      },
+      {
+        "coordinate": "WEAK_ARITHMETIC|SMOOTH_DISTRIBUTIONAL|EVOLUTION_WELLPOSEDNESS",
+        "status": "PIECES_ONLY",
+        "unreviewed_kind": "LITERATURE",
+        "records": [
+          "simpson-1984-ode"
+        ]
+      },
+      {
+        "coordinate": "CLASSICAL_STANDARD|SMOOTH_DISTRIBUTIONAL|CAUSAL_PROPAGATION_GREEN",
+        "status": "LOCAL_RESULT",
+        "unreviewed_kind": "LITERATURE",
+        "records": [
+          "baer-2015",
+          "muehlhoff-2010"
+        ]
+      },
+      {
+        "coordinate": "WEAK_CHOICE_ZF|HILBERT_OPERATOR|CAUSAL_PROPAGATION_GREEN",
+        "status": "PIECES_ONLY",
+        "unreviewed_kind": "LITERATURE",
+        "records": [
+          "blackadar-farah-karagila-2026"
+        ]
+      },
+      {
+        "coordinate": "CONSTRUCTIVE_COMPUTABLE|SMOOTH_DISTRIBUTIONAL|CAUSAL_PROPAGATION_GREEN",
+        "status": "PIECES_ONLY",
+        "unreviewed_kind": "LITERATURE",
+        "records": [
+          "selivanova-selivanov-2013",
+          "zhong-weihrauch-2003-distributions",
+          "weihrauch-zhong-2006-fundamental"
+        ]
+      },
+      {
+        "coordinate": "FINITE_DISCRETE|ALGEBRAIC_CSTAR|CAUSAL_PROPAGATION_GREEN",
+        "status": "PIECES_ONLY",
+        "unreviewed_kind": "LITERATURE",
+        "records": [
+          "nachtergaele-raz-schlein-sims-2007"
+        ]
+      },
+      {
+        "coordinate": "WEAK_CHOICE_ZF|KREIN_INDEFINITE|GAUGE_BV_COHOMOLOGY",
+        "status": "PIECES_ONLY",
+        "unreviewed_kind": "LITERATURE",
+        "records": [
+          "mostafazadeh-2001",
+          "gottschalk-2004"
+        ]
+      },
+      {
+        "coordinate": "WEAK_CHOICE_ZF|ALGEBRAIC_CSTAR|GAUGE_BV_COHOMOLOGY",
+        "status": "PIECES_ONLY",
+        "unreviewed_kind": "LITERATURE",
+        "records": [
+          "blackadar-farah-2026",
+          "fredenhagen-rejzner-2011"
+        ]
+      },
+      {
+        "coordinate": "FINITE_DISCRETE|ALGEBRAIC_CSTAR|GAUGE_BV_COHOMOLOGY",
+        "status": "PIECES_ONLY",
+        "unreviewed_kind": "LITERATURE",
+        "records": [
+          "zohar-burrello-2014"
+        ]
+      },
+      {
+        "coordinate": "WEAK_CHOICE_ZF|ALGEBRAIC_CSTAR|RECONSTRUCTION_LIMITS",
+        "status": "LITERATURE_RESULT",
+        "unreviewed_kind": "LITERATURE",
+        "records": [
+          "blackadar-farah-2026",
+          "fredenhagen-rejzner-2011"
+        ]
+      },
+      {
+        "coordinate": "TOPOS_INTERNAL|FINITE_EXACT|RECONSTRUCTION_LIMITS",
+        "status": "LITERATURE_RESULT",
+        "unreviewed_kind": "LITERATURE",
+        "records": [
+          "constantin-doring-2020",
+          "abramsky-coecke-2004"
+        ]
+      }
+    ],
+    "mark_scheme": {
+      "rule": "Upper case is a certified direct grade; lower case is a supporting ingredient of that kind. A lower-case letter is suppressed when its kind already appears as an upper-case grade, and an UNREVIEWED record contributes no letter.",
+      "mark_counts": {
+        "G": 30,
+        "L": 76,
+        "LR": 7,
+        "Lr": 5,
+        "P": 20,
+        "Pl": 75,
+        "Plr": 14,
+        "Pr": 51,
+        "R": 90,
+        "Rl": 3,
+        "\u00b7": 205
+      },
+      "pieces_only_ingredient_mix": {
+        "local_only": 75,
+        "literature_only": 51,
+        "both_kinds": 14,
+        "no_reviewed_ingredient": 20
+      },
+      "result_cells_with_other_kind_ingredients": {
+        "Lr": 5,
+        "Rl": 3
+      },
+      "invariant": "The upper-case part of every mark equals the cell's scalar status family, verified per cell in check_matrix_site_v2.py."
+    }
+  },
+  "artifact_hashes": {
+    "foundations/build_matrix_site_v2.py": "34d9e670d5ed10b0a962234b5281a3026b1a9a5c6775b33e7d61adcef9e40052",
+    "foundations/check_matrix_site_v2.py": "44031c1b5fc51de73f572f573923f4c3a57ad17328a575b19e1ae9eed847e5ad",
+    "foundations/check_refined_intersection_cube.py": "f8af76e8a2d016ce5e0c2f6731a33559b4a6cb260b5450511f93e4b134cfbe1f",
+    "foundations/check_refined_intersection_cube_v2.py": "c0c816447b6be949939f14e59c06477829710f681f54511903697cf441868a5d",
+    "foundations/check_refined_intersection_cube_v3.py": "5148f2175855babcf82bb56c31b2030417ce11797b94d5673d94ad85139931ca",
+    "foundations/check_refined_intersection_cube_v4.py": "8d4308540869212ce236a4c881d5240b8bec2f5dfb2bc0562b4adcd32a494afa",
+    "foundations/matrix_site_assets/app.js": "f81f4e979967e9b95ddd1c0abbae7dff7caea905f39462a47d4bb35ac06292a4",
+    "foundations/matrix_site_assets/styles.css": "e773230b36499af4967d66ba075934553c89cafa04b2da7986b667bc9dd039bb",
+    "foundations/refine_intersection_cube.py": "68053ba892e484380a4e274003dfbc9ed971e9bb23dc632b758cbc6c38646951",
+    "foundations/refine_intersection_cube_v2.py": "f857aeb3a8029e868179de68b2a86d5cd2461eac90d8e5dccaa29d02d72b3266",
+    "foundations/refine_intersection_cube_v3.py": "c8fde34fdfde1194d1b93f82c3c7ee95214587eb69d92eb5231654d6297cc6ea",
+    "foundations/refine_intersection_cube_v4.py": "2e2672ff276568f97e4c583b999b87f3a559917cf1dc78be51598d51ef8eea51",
+    "foundations/reports/evidence-role-display-v1.md": "10398500bba2eed067c41707badab164897b3507740ac983f9faf2acd5335766",
+    "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_MIGRATION_AUDIT_V2.json": "d2de82197a0fdc216881523c4911d0a0aef504ee93e6ccc6f1a870fa9af6cd8d",
+    "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V1.json": "569a0774265f26799a7fab59fa644e87ec49b2feb54c8c5deb4a4fb762aa3e4a",
+    "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V2.json": "b5bb061044fa085157aa4d07f92a7025f4c7b91d1db258743eeb9fdfa85af15a",
+    "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V3.json": "41f08c8f40dc36659cc5262998c12f59b993b7ca21922c8d068d914f955b21f5",
+    "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V4.json": "b2a215058daab9de9631a9c7dd42d32bf8a609c13b321ddf7e891b2ff6a1685a",
+    "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json": "d302b1ee28117e1e749e3640fa1876ce6e6d5acd474b346a607c75e3c36db1df",
+    "foundations/schema/foundational-intersection-cube-v1.schema.json": "22197fd20d5b3965836587d328ad0f07f68d8546666d8f2879027b2e983fa8e7",
+    "foundations/schema/foundational-intersection-cube-v2.schema.json": "8b5218d75d2225d6343311596afcd4cf57af50350128e3328c02d6f10501a6db",
+    "foundations/site/data.json": "0995ae3f4566426b55417bd2cddac72f2b6d2a3012cafcfc1fc10f8152bb5bd4",
+    "foundations/site/manifest.json": "58b839e72200668c1a70714b3860c3b0952cff161dc4113db9b75f73f0b119a4"
+  },
+  "claim_boundary": "This change makes existing distinctions visible. It adds no evidence, no coverage, no status promotion, and no literature review. An UNREVIEWED role is not a finding that a record fails to support its cell; a dual LR mark does not compose its two records into a stronger result; and a lower-case ingredient letter is neither a grade nor a promotion. No new Lorentzian-causal claim is made.",
+  "does_not_establish": [
+    "that an UNREVIEWED evidence role is an absence of direct support",
+    "that a dual LR mark composes its two records into a stronger result",
+    "that a lower-case ingredient letter is a result, a grade, or a promotion",
+    "a directness review for records the capability registry does not cover",
+    "literature completeness",
+    "any new coverage or status promotion",
+    "a new Lorentzian-causal result"
+  ],
+  "human_report": "foundations/reports/evidence-role-display-v1.md"
+}

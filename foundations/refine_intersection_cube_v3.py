@@ -41,10 +41,16 @@ def build() -> dict[str, Any]:
             cell["summary"] = action["basis"]
             cell["boundary"] = "This classification is restricted to the cited object and foundational framework; it does not transfer to stronger causal, continuum, choice-free, or reverse-mathematical claims."
             cell["research_revision"] = {"atlas": atlas["result_id"], "kind": "STATUS_CHANGE", "previous_status": action["old"]}
+            # New atlas evidence carries no per-obligation directness review, so it
+            # stays UNREVIEWED rather than inheriting the cell's grade.
+            cell["evidence_roles"] = {**{e: "UNREVIEWED" for e in cell["evidence"]}, **cell["evidence_roles"]}
         elif overlay:
             cell["evidence"] = list(dict.fromkeys([*cell["evidence"], *overlay["evidence"]]))
             cell["summary"] = cell["summary"] + " New atlas evidence: " + overlay["basis"]
             cell["research_revision"] = {"atlas": atlas["result_id"], "kind": "EVIDENCE_OVERLAY", "previous_status": cell["status"]}
+            # New atlas evidence carries no per-obligation directness review, so it
+            # stays UNREVIEWED rather than inheriting the cell's grade.
+            cell["evidence_roles"] = {**{e: "UNREVIEWED" for e in cell["evidence"]}, **cell["evidence_roles"]}
         cells.append(cell)
     if actions or overlays: raise ValueError("unused atlas coordinates")
     counts, migrations = Counter(x["status"] for x in cells), Counter(x["migration_status"] for x in cells)
@@ -56,7 +62,8 @@ def build() -> dict[str, Any]:
         "purpose": "Apply the bounded normally-hyperbolic factor atlas while retaining the complete v2 migration history.",
         "compatibility": {"v0_unchanged": True, "v1_unchanged": True, "v2_unchanged": True, "axes_preserved_from_v2": True, "coordinates_preserved_from_v2": True, "migration_fields_preserved_from_v2": True, "research_atlas": atlas["result_id"], "rule": "New child-specific evidence may classify a cell even when the old parent evidence had a REVIEWED_NO_TRANSFER decision; the migration decision remains historical and unchanged."},
         "axes": v2["axes"], "cell_statuses": v2["cell_statuses"], "migration_statuses": v2["migration_statuses"],
-        "dimensions": {"axis_sizes": [6, 6, 16], "cartesian_total": 576, "emitted_cells": len(cells), "coverage_classified_cells": len(cells) - counts["NOT_MAPPED"], "migration_reviewed_cells": len(cells), "migration_pending_cells": 0, "reviewed_no_transfer_cells": migrations["REVIEWED_NO_TRANSFER"], "reviewed_no_transfer_unmapped_cells": reviewed_no_transfer_unmapped, "research_status_changes": len(atlas["cell_actions"]), "research_evidence_overlays": len(atlas["evidence_overlays"]), "status_counts": dict(sorted(counts.items())), "migration_status_counts": dict(sorted(migrations.items()))},
+        "evidence_role_vocabulary": v2["evidence_role_vocabulary"], "evidence_role_rule": v2["evidence_role_rule"],
+        "dimensions": {"axis_sizes": [6, 6, 16], "cartesian_total": 576, "emitted_cells": len(cells), "coverage_classified_cells": len(cells) - counts["NOT_MAPPED"], "migration_reviewed_cells": len(cells), "migration_pending_cells": 0, "reviewed_no_transfer_cells": migrations["REVIEWED_NO_TRANSFER"], "reviewed_no_transfer_unmapped_cells": reviewed_no_transfer_unmapped, "research_status_changes": len(atlas["cell_actions"]), "research_evidence_overlays": len(atlas["evidence_overlays"]), "status_counts": dict(sorted(counts.items())), "migration_status_counts": dict(sorted(migrations.items())), "evidence_role_counts": dict(sorted(Counter(role for x in cells for role in x["evidence_roles"].values()).items())), "dual_direct_cells": sum({"DIRECT_LOCAL", "DIRECT_LITERATURE"} <= set(x["evidence_roles"].values()) for x in cells)},
         "cells": cells,
         "provenance": {"inputs": [{"path": str(x.relative_to(ROOT)), "sha256": sha(x)} for x in (V2, ATLAS)]},
         "independent_checker": {"path": "foundations/check_refined_intersection_cube_v3.py", "checks": ["v2 coordinate and migration preservation", "nine status changes", "five evidence overlays", "evidence closure", "status counts", "canonical digest"], "expected_digest": digest(cells)},

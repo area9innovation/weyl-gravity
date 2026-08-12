@@ -76,6 +76,59 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
         errors.append("reviewed no-transfer separation")
 
     evidence = data.get("evidence", {})
+
+    # Evidence roles: closure, and agreement between the declared role kind and
+    # the kind the evidence registry independently resolved for that record.
+    vocabulary = {x.get("id") for x in data.get("evidence_role_vocabulary", [])}
+    if vocabulary != {"DIRECT_LOCAL", "DIRECT_LITERATURE", "SUPPORTING", "UNREVIEWED"} or not data.get("evidence_role_rule"):
+        errors.append("evidence-role vocabulary")
+    role_kind = {"DIRECT_LOCAL": "LOCAL_RESULT", "DIRECT_LITERATURE": "LITERATURE"}
+    dual = 0
+    for cell in cells:
+        roles = cell.get("evidence_roles")
+        if not isinstance(roles, dict) or sorted(roles) != sorted(cell.get("evidence") or []):
+            errors.append("evidence-role closure")
+            break
+        if set(roles.values()) - vocabulary:
+            errors.append("evidence-role vocabulary closure")
+            break
+        if any(role in role_kind and evidence.get(item, {}).get("kind") != role_kind[role] for item, role in roles.items()):
+            errors.append("evidence-role kind disagrees with the resolved evidence record")
+            break
+        if {"DIRECT_LOCAL", "DIRECT_LITERATURE"} <= set(roles.values()):
+            dual += 1
+    if any(x.get("evidence_roles") for x in synthetic):
+        errors.append("synthetic cells carry evidence roles")
+    if dual != cube["dimensions"]["dual_direct_cells"] or data.get("counts", {}).get("dual_direct") != dual:
+        errors.append("dual-direct cell count")
+
+    # Recompute the displayed mark independently of the generator: upper case is a
+    # certified direct grade, lower case a supporting ingredient of that kind, and
+    # a lower-case letter is suppressed when its kind already shows as a grade.
+    status_mark = {"LOCAL_RESULT": "L", "LITERATURE_RESULT": "R", "PIECES_ONLY": "P", "PRIORITY_GAP": "G", "NOT_MAPPED": "\u00b7"}
+    upper_of = {"DIRECT_LOCAL": "L", "DIRECT_LITERATURE": "R"}
+    lower_of = {"LOCAL_RESULT": "l", "LITERATURE": "r"}
+    marks: Counter = Counter()
+    cell_marks: list[str] = []
+    for cell in cells:
+        roles = cell.get("evidence_roles") or {}
+        direct = {upper_of[role] for role in roles.values() if role in upper_of}
+        upper = "".join(x for x in "LR" if x in direct) or status_mark[cell["status"]]
+        support = {lower_of[evidence[item]["kind"]] for item, role in roles.items() if role == "SUPPORTING"}
+        cell_marks.append(upper + "".join(x for x in "lr" if x in support and x.upper() not in upper))
+        marks[cell_marks[-1]] += 1
+    if data.get("counts", {}).get("mark_counts") != dict(sorted(marks.items())):
+        errors.append("declared mark counts")
+    # A lower-case letter must never move a cell out of its status family: the
+    # upper-case part of every mark has to agree with the cell's scalar status.
+    family_status = {"L": "LOCAL_RESULT", "LR": "LOCAL_RESULT", "R": "LITERATURE_RESULT",
+                     "P": "PIECES_ONLY", "G": "PRIORITY_GAP", "\u00b7": "NOT_MAPPED"}
+    for cell, mark in zip(cells, cell_marks):
+        family = mark.rstrip("lr")
+        if family_status.get(family) != cell.get("status"):
+            errors.append("mark family disagrees with status")
+            break
+
     used = {item for cell in emitted for field in ("evidence", "migration_evidence") for item in cell.get(field, [])}
     if set(evidence) != used or len(evidence) != 69:
         errors.append("coverage and migration evidence resolution")
@@ -118,7 +171,7 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
     app = (SITE / "app.js").read_text() + (SITE / "migration-review.js").read_text()
     if "https://" in html or "http://" in html or '<script src="data.js"></script>' not in html or '<script src="viability.js"></script>' not in html or '<script src="migration-review.js"></script>' not in html:
         errors.append("offline/no-remote-code shell")
-    for token in ("matrixGroups", "viabilityView", "Theory profiles", "Coverage readiness map", "Coverage envelope, not a composed theory", "No complete observationally validated theory is certified", "paretoProfiles", "guideView", "dimensionGuide", "Regime × carrier × obligation", "graphView", "GRAPH_PATHWAYS", "Relation ledger", "graph-edge-hit", "No direct certificate yet", "ladderView", "evidenceView", "compareDialog", "exportJson", "exportCsv", "downloadBrief", "column-label", "Migration review", "migration_evidence", "112-decision audit JSON"):
+    for token in ("matrixGroups", "viabilityView", "Theory profiles", "Coverage readiness map", "Coverage envelope, not a composed theory", "No complete observationally validated theory is certified", "paretoProfiles", "guideView", "dimensionGuide", "Regime × carrier × obligation", "graphView", "GRAPH_PATHWAYS", "Relation ledger", "graph-edge-hit", "No direct certificate yet", "ladderView", "evidenceView", "compareDialog", "exportJson", "exportCsv", "downloadBrief", "column-label", "Migration review", "migration_evidence", "112-decision audit JSON", "data-dual", "directKinds", "role-badge", "Local + literature result", "Directness unreviewed", "Why some cells are marked", "is not a finding that the record fails to support the cell", "data-marklen", "supportingKinds", "legend-note", "Upper case is a certified direct grade", "An ingredient is not a result", "Ingredients never promote a cell"):
         if token not in html + app:
             errors.append("interface token " + token)
     if "No stronger interpretation is licensed" in app:
@@ -147,6 +200,8 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
         "theory_profiles": len(viability.get("profiles", [])),
         "carrier_envelopes": len(viability.get("carrier_envelopes", [])),
         "pareto_profiles": sum(item.get("pareto_default") is True for item in viability.get("profiles", [])),
+        "dual_direct_cells": dual,
+        "mark_counts": dict(sorted(marks.items())),
     }
     return errors, summary
 

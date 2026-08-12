@@ -40,10 +40,10 @@ def check(result: dict[str, Any] | None = None) -> tuple[list[str], dict[str, An
             audit_key = "|".join(coordinate)
             decision = decisions.get(audit_key, {})
             applied += 1
-            if cell.get("status") != decision.get("resulting_coverage_status") or cell.get("migration_status") != decision.get("decision") or cell.get("evidence") != [] or cell.get("migration_evidence") != decision.get("parent_evidence"):
+            if cell.get("status") != decision.get("resulting_coverage_status") or cell.get("migration_status") != decision.get("decision") or cell.get("evidence") != [] or cell.get("evidence_roles") != {} or cell.get("migration_evidence") != decision.get("parent_evidence"):
                 errors.append("audit application " + audit_key)
         else:
-            for field in ("foundation", "carrier", "obligation", "status", "evidence", "parent_obligation", "migration_relation", "summary", "boundary"):
+            for field in ("foundation", "carrier", "obligation", "status", "evidence", "evidence_roles", "parent_obligation", "migration_relation", "summary", "boundary"):
                 if cell.get(field) != original.get(field):
                     errors.append("nonpending preservation " + "|".join(coordinate))
                     break
@@ -62,10 +62,16 @@ def check(result: dict[str, Any] | None = None) -> tuple[list[str], dict[str, An
         errors.append("migration counts")
     if dimensions.get("migration_pending_cells") != 0 or dimensions.get("migration_reviewed_cells") != 452 or dimensions.get("coverage_classified_cells") != 364:
         errors.append("review dimensions")
+    role_counts = Counter(role for x in cells for role in (x.get("evidence_roles") or {}).values())
+    dual_direct = sum({"DIRECT_LOCAL", "DIRECT_LITERATURE"} <= set((x.get("evidence_roles") or {}).values()) for x in cells)
+    if dimensions.get("evidence_role_counts") != dict(sorted(role_counts.items())) or dimensions.get("dual_direct_cells") != dual_direct:
+        errors.append("evidence-role counts")
+    if any(sorted(x.get("evidence_roles") or {}) != sorted(x.get("evidence") or []) for x in cells):
+        errors.append("evidence-role closure")
     calculated = digest(cells)
     if calculated != result.get("independent_checker", {}).get("expected_digest"):
         errors.append("canonical digest")
-    return errors, {"digest": calculated, "cells": len(cells), "audit_decisions_applied": applied, "coverage_classified": dimensions.get("coverage_classified_cells"), "reviewed_no_transfer": migrations["REVIEWED_NO_TRANSFER"], "reviewed_child_gap": migrations["REVIEWED_CHILD_GAP"], "migration_pending": dimensions.get("migration_pending_cells")}
+    return errors, {"digest": calculated, "cells": len(cells), "audit_decisions_applied": applied, "coverage_classified": dimensions.get("coverage_classified_cells"), "reviewed_no_transfer": migrations["REVIEWED_NO_TRANSFER"], "reviewed_child_gap": migrations["REVIEWED_CHILD_GAP"], "migration_pending": dimensions.get("migration_pending_cells"), "role_counts": dict(sorted(role_counts.items())), "dual_direct_cells": dual_direct}
 
 
 def main() -> int:

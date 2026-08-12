@@ -57,6 +57,8 @@ This site does not establish:
 - literature completeness
 - coverage for the 81 still-unmapped reviewed-no-transfer coordinates
 - that NOT_MAPPED means no literature exists
+- that an UNREVIEWED evidence role is an absence of direct support
+- that a dual LR mark composes its two records into a stronger result
 - that the 124 synthetic coordinates are coherent
 - a weakest mathematical base
 - a theorem ranking from interface order, Pareto membership, or neighbor counts

@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "additionalProperties": false,
-  "required": ["schema_version", "result_id", "result_kind", "lifecycle", "created", "repository_base_commit", "dependency_tags", "purpose", "compatibility", "axes", "cell_statuses", "migration_statuses", "dimensions", "cells", "provenance", "independent_checker", "claim_flags", "does_not_establish", "human_report"],
+  "required": ["schema_version", "result_id", "result_kind", "lifecycle", "created", "repository_base_commit", "dependency_tags", "purpose", "compatibility", "axes", "cell_statuses", "migration_statuses", "evidence_role_vocabulary", "evidence_role_rule", "dimensions", "cells", "provenance", "independent_checker", "claim_flags", "does_not_establish", "human_report"],
   "properties": {
     "schema_version": {"const": "foundational-intersection-cube-v2"},
     "result_id": {"const": "FOUNDATIONAL_INTERSECTION_CUBE_V2"},
@@ -16,6 +16,8 @@
     "axes": {"type": "array", "minItems": 3, "maxItems": 3},
     "cell_statuses": {"type": "array", "minItems": 5, "maxItems": 5},
     "migration_statuses": {"type": "array", "minItems": 5, "maxItems": 5},
+    "evidence_role_vocabulary": {"type": "array", "minItems": 4, "maxItems": 4},
+    "evidence_role_rule": {"type": "string", "minLength": 1},
     "dimensions": {
       "type": "object",
       "required": ["axis_sizes", "cartesian_total", "emitted_cells", "coverage_classified_cells", "migration_reviewed_cells", "migration_pending_cells", "reviewed_no_transfer_cells", "status_counts", "migration_status_counts"],
@@ -38,13 +40,14 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["foundation", "carrier", "obligation", "status", "evidence", "parent_obligation", "migration_relation", "summary", "boundary", "migration_status", "migration_evidence", "migration_rationale"],
+        "required": ["foundation", "carrier", "obligation", "status", "evidence", "evidence_roles", "parent_obligation", "migration_relation", "summary", "boundary", "migration_status", "migration_evidence", "migration_rationale"],
         "properties": {
           "foundation": {"type": "string", "minLength": 1},
           "carrier": {"type": "string", "minLength": 1},
           "obligation": {"type": "string", "minLength": 1},
           "status": {"enum": ["LITERATURE_RESULT", "LOCAL_RESULT", "PIECES_ONLY", "PRIORITY_GAP", "NOT_MAPPED"]},
           "evidence": {"type": "array", "items": {"type": "string", "minLength": 1}, "uniqueItems": true},
+          "evidence_roles": {"type": "object", "additionalProperties": {"enum": ["DIRECT_LITERATURE", "DIRECT_LOCAL", "SUPPORTING", "UNREVIEWED"]}},
           "parent_obligation": {"type": "string", "minLength": 1},
           "migration_relation": {"enum": ["EXACT_ONE_TO_ONE", "CAPABILITY_QUALIFIED", "NO_REGISTERED_DESCENT", "REVIEWED_V1_OVERLAY"]},
           "summary": {"type": "string", "minLength": 1},

@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+from collections import Counter
 import json
 from pathlib import Path
 import sys
@@ -126,6 +127,7 @@ def complete_surface(cube: dict[str, Any]) -> list[dict[str, Any]]:
                         "obligation": obligation,
                         "status": "NOT_MAPPED",
                         "evidence": [],
+                        "evidence_roles": {},
                         "parent_obligation": None,
                         "migration_relation": "NOT_EMITTED",
                         "migration_status": "NOT_REVIEWED",
@@ -136,6 +138,20 @@ def complete_surface(cube: dict[str, Any]) -> list[dict[str, Any]]:
                         "emitted": False,
                     })
     return cells
+
+
+STATUS_MARK = {"LOCAL_RESULT": "L", "LITERATURE_RESULT": "R", "PIECES_ONLY": "P", "PRIORITY_GAP": "G", "NOT_MAPPED": "\u00b7"}
+KIND_UPPER = {"DIRECT_LOCAL": "L", "DIRECT_LITERATURE": "R"}
+KIND_LOWER = {"LOCAL_RESULT": "l", "LITERATURE": "r"}
+
+
+def cell_mark(cell: dict[str, Any], evidence: dict[str, dict[str, Any]]) -> str:
+    """Upper case names a certified direct grade, lower case a supporting ingredient."""
+    roles = cell["evidence_roles"]
+    direct = {KIND_UPPER[role] for role in roles.values() if role in KIND_UPPER}
+    upper = "".join(x for x in "LR" if x in direct) or STATUS_MARK[cell["status"]]
+    support = {KIND_LOWER[evidence[item]["kind"]] for item, role in roles.items() if role == "SUPPORTING"}
+    return upper + "".join(x for x in "lr" if x in support and x.upper() not in upper)
 
 
 def build_dataset() -> dict[str, Any]:
@@ -155,6 +171,8 @@ def build_dataset() -> dict[str, Any]:
         "axes": guided_axes(cube["axes"]),
         "groups": v1.GROUPS,
         "statuses": cube["cell_statuses"],
+        "evidence_role_vocabulary": cube["evidence_role_vocabulary"],
+        "evidence_role_rule": cube["evidence_role_rule"],
         "migration_statuses": cube["migration_statuses"] + [{"id": "NOT_REVIEWED", "meaning": "The coordinate was not emitted by cube v2, so no migration review was required."}],
         "counts": {
             "cartesian_total": cube["dimensions"]["cartesian_total"],
@@ -166,6 +184,9 @@ def build_dataset() -> dict[str, Any]:
             "migration_unresolved": cube["dimensions"]["migration_pending_cells"],
             "reviewed_no_transfer": cube["dimensions"]["reviewed_no_transfer_cells"],
             "not_mapped": status_counts["NOT_MAPPED"],
+            "dual_direct": sum({"DIRECT_LOCAL", "DIRECT_LITERATURE"} <= set(cell["evidence_roles"].values()) for cell in cells),
+            "mark_counts": dict(sorted(Counter(cell_mark(cell, evidence) for cell in cells).items())),
+            "evidence_role_counts": dict(sorted({role: sum(list(cell["evidence_roles"].values()).count(role) for cell in cells) for role in ("DIRECT_LITERATURE", "DIRECT_LOCAL", "SUPPORTING", "UNREVIEWED")}.items())),
             "synthetic_not_mapped": sum(not cell["emitted"] for cell in cells),
             "status_counts": dict(sorted(status_counts.items())),
             "migration_status_counts": dict(sorted(migration_counts.items())),
@@ -184,6 +205,8 @@ def build_dataset() -> dict[str, Any]:
                 "REVIEWED_NO_TRANSFER and NOT_MAPPED are not literature-absence claims.",
                 "The 124 synthetic coordinates have not received the migration review applied to the 452 emitted coordinates.",
                 "Neighbor counts and candidate views are navigation aids, not theorem rankings.",
+                "An UNREVIEWED evidence role means the record has not been reviewed for directness at that obligation; it is not a finding that the record fails to support the cell.",
+                "The LR mark reports two certified direct evidence kinds at one coordinate. It does not merge them into a stronger single result.",
             ],
         },
         "source_links": {
@@ -366,11 +389,11 @@ def generated() -> dict[Path, bytes]:
         "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
         "scope": "Deterministic static exploration surface over the migration-reviewed foundations cube and cylinder implication ladder.",
         "counts": dataset["counts"],
-        "features": ["sixteen 6x6 heatmaps", "plain-language guide for all 28 axis options", "separate coverage and migration-review states", "migration evidence inspector", "multi-select filters", "full-text search", "cell inspector", "one-axis neighbors", "two-cell comparison", "URL permalinks", "filtered JSON and CSV export", "research-brief export", "three-pathway typed argument map with linked relation ledger", "strength ladder", "evidence catalogue", "theory-profile readiness map", "researcher-selectable obligation gates", "multi-carrier coverage-envelope composer", "non-scalar Pareto navigation", "separate composition and empirical-agreement rails"],
+        "features": ["sixteen 6x6 heatmaps", "dual local+literature cell marks", "per-evidence directness roles", "plain-language guide for all 28 axis options", "separate coverage and migration-review states", "migration evidence inspector", "multi-select filters", "full-text search", "cell inspector", "one-axis neighbors", "two-cell comparison", "URL permalinks", "filtered JSON and CSV export", "research-brief export", "three-pathway typed argument map with linked relation ledger", "strength ladder", "evidence catalogue", "theory-profile readiness map", "researcher-selectable obligation gates", "multi-carrier coverage-envelope composer", "non-scalar Pareto navigation", "separate composition and empirical-agreement rails"],
         "provenance": {"manifest": rel(SITE / "manifest.json"), "manifest_sha256": v1.sha_bytes(manifest_bytes), "canonical_data_digest": dataset["canonical_digest"], "viability_digest": viability["canonical_digest"]},
         "independent_checker": {"path": "foundations/check_matrix_site_v2.py", "expected_cells": 576, "expected_emitted": 452, "expected_synthetic_not_mapped": 124, "expected_total_not_mapped": 205, "expected_evidence_records": 69, "expected_digest": dataset["canonical_digest"], "expected_viability_digest": viability["canonical_digest"]},
         "claim_flags": {"static_site_generated": True, "all_cartesian_coordinates_visible": True, "all_emitted_migrations_reviewed": True, "coverage_and_migration_separated": True, "all_used_evidence_resolved": True, "theory_profiles_generated": True, "composition_and_observation_rails_separated": True, "scientific_claims_duplicated_by_hand": False, "literature_complete": False, "unmapped_means_absent": False, "reviewed_no_transfer_means_absent": False, "priority_score_is_theorem": False, "complete_observationally_valid_theory_identified": False, "new_lorentzian_claim": False},
-        "does_not_establish": ["literature completeness", "coverage for the 81 still-unmapped reviewed-no-transfer coordinates", "that NOT_MAPPED means no literature exists", "that the 124 synthetic coordinates are coherent", "a weakest mathematical base", "a theorem ranking from interface order, Pareto membership, or neighbor counts", "cross-cell or cross-carrier composability", "agreement with observations", "a complete observationally validated theory", "a new Lorentzian-causal result"],
+        "does_not_establish": ["literature completeness", "coverage for the 81 still-unmapped reviewed-no-transfer coordinates", "that NOT_MAPPED means no literature exists", "that an UNREVIEWED evidence role is an absence of direct support", "that a dual LR mark composes its two records into a stronger result", "that the 124 synthetic coordinates are coherent", "a weakest mathematical base", "a theorem ranking from interface order, Pareto membership, or neighbor counts", "cross-cell or cross-carrier composability", "agreement with observations", "a complete observationally validated theory", "a new Lorentzian-causal result"],
         "human_report": "foundations/reports/matrix-explorer-site-v2.md",
     }
     outputs[RESULT] = (json.dumps(result, indent=2) + "\n").encode()
