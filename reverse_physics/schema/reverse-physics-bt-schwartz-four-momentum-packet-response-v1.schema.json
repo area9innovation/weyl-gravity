@@ -1,0 +1,119 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-schwartz-four-momentum-packet-response-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "schema_version", "certificate", "question", "answer",
+    "result_kind", "lifecycle_state", "dependency_tags", "assumptions",
+    "provenance", "Schwartz_local_vertex", "concentration_bound",
+    "spectral_separation", "leading_packet_instrument", "disposition",
+    "does_not_establish", "next_gate", "checks", "verification_commands",
+    "report"
+  ],
+  "properties": {
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-schwartz-four-momentum-packet-response-v1.schema.json"},
+    "schema_version": {"const": 1},
+    "certificate": {"const": "REVERSE_PHYSICS_BT_SCHWARTZ_FOUR_MOMENTUM_PACKET_RESPONSE_V1"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE"]},
+    "assumptions": {"type": "array", "minItems": 8, "maxItems": 8, "items": {"$ref": "#/$defs/text"}},
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_commit", "retrieval_date", "inputs", "generated_by", "independent_verifier", "method"],
+      "properties": {
+        "source_commit": {"const": "553634c65d93b5e507cb81b709d424d3b0c5a320"},
+        "retrieval_date": {"const": "2026-08-13"},
+        "inputs": {
+          "type": "array", "minItems": 5, "maxItems": 5,
+          "items": {"type": "object", "additionalProperties": false, "required": ["path", "sha256"], "properties": {"path": {"$ref": "#/$defs/text"}, "sha256": {"$ref": "#/$defs/hash"}}}
+        },
+        "generated_by": {"const": "reverse_physics/bt_schwartz_four_momentum_packet_response.py"},
+        "independent_verifier": {"const": "reverse_physics/verify_bt_schwartz_four_momentum_packet_response.py"},
+        "method": {"$ref": "#/$defs/text"}
+      }
+    },
+    "Schwartz_local_vertex": {
+      "type": "object", "additionalProperties": false,
+      "required": ["target_P0_COM_over_kappa", "epsilon", "sigma_over_M0", "sigma_over_kappa", "squared_Fourier_envelope", "spacetime_switching", "support_status", "local_density_order", "pair_response", "status"],
+      "properties": {
+        "target_P0_COM_over_kappa": {"const": ["8/5", "0", "0", "0"]},
+        "epsilon": {"const": "1/10000"},
+        "sigma_over_M0": {"const": "1/50000"},
+        "sigma_over_kappa": {"const": "1/31250"},
+        "squared_Fourier_envelope": {"const": "exp(-||P-P0||_E^2/sigma^2)"},
+        "spacetime_switching": {"$ref": "#/$defs/text"},
+        "support_status": {"const": "SCHWARTZ_NONCOMPACT_IN_SPACETIME_AND_NONZERO_ON_AN_OPEN_FOUR_MOMENTUM_SET"},
+        "local_density_order": {"const": 38},
+        "pair_response": {"$ref": "#/$defs/text"},
+        "status": {"const": "SPACETIME_LOCAL_DENSITY_WITH_SQUARE_INTEGRABLE_FOUR_MOMENTUM_PAIR_RESPONSE"}
+      }
+    },
+    "concentration_bound": {
+      "type": "object", "additionalProperties": false,
+      "required": ["core_radius_over_M0", "core_radius_in_sigma", "coefficient_l1_bound", "phase_derivative_l1_bound", "gradient_bound", "gamma_minus_one_bound", "filter_sup_difference_bound", "core_angular_leakage_fraction", "tail_decay_coefficient", "tail_exponential_partial_sum_terms", "unit_ball_e_partial_sum_terms", "four_momentum_tail_fraction_upper", "complete_leakage_fraction_upper", "bound", "normalizability", "status"],
+      "properties": {
+        "core_radius_over_M0": {"const": "1/10000"},
+        "core_radius_in_sigma": {"const": 5},
+        "coefficient_l1_bound": {"$ref": "#/$defs/text"},
+        "phase_derivative_l1_bound": {"$ref": "#/$defs/text"},
+        "gradient_bound": {"$ref": "#/$defs/text"},
+        "gamma_minus_one_bound": {"$ref": "#/$defs/text"},
+        "filter_sup_difference_bound": {"$ref": "#/$defs/text"},
+        "core_angular_leakage_fraction": {"$ref": "#/$defs/ratio_receipt"},
+        "tail_decay_coefficient": {"$ref": "#/$defs/text"},
+        "tail_exponential_partial_sum_terms": {"const": 75},
+        "unit_ball_e_partial_sum_terms": {"const": 20},
+        "four_momentum_tail_fraction_upper": {"$ref": "#/$defs/fraction_receipt"},
+        "complete_leakage_fraction_upper": {"$ref": "#/$defs/fraction_receipt"},
+        "bound": {"const": "eta_complete<883/1000000<1/1000"},
+        "normalizability": {"$ref": "#/$defs/text"},
+        "status": {"const": "NORMALIZABLE_PAIR_RESPONSE_WITH_SUB_PER_MILLE_COMBINED_SOLID_ANGLE_AND_FOUR_MOMENTUM_LEAKAGE"}
+      }
+    },
+    "spectral_separation": {
+      "type": "object", "additionalProperties": false,
+      "required": ["pair_annihilation_transfer", "number_scattering_transfer", "number_cone_distance_squared_over_M0_squared", "number_squared_envelope_bound", "wrong_sign_pair_argument", "wrong_sign_distance_squared_over_M0_squared", "wrong_sign_squared_envelope_bound", "meaning", "status"],
+      "properties": {
+        "pair_annihilation_transfer": {"$ref": "#/$defs/text"},
+        "number_scattering_transfer": {"const": "q=k_in-k_out obeys q^2=-2*k_in dot k_out<=0"},
+        "number_cone_distance_squared_over_M0_squared": {"const": "1/2"},
+        "number_squared_envelope_bound": {"const": "exp(-1250000000)<10^(-1000000)"},
+        "wrong_sign_pair_argument": {"$ref": "#/$defs/text"},
+        "wrong_sign_distance_squared_over_M0_squared": {"const": "1"},
+        "wrong_sign_squared_envelope_bound": {"const": "exp(-2500000000)<10^(-1000000)"},
+        "meaning": {"$ref": "#/$defs/text"},
+        "status": {"const": "EXACT_TIMELIKE_PAIR_SUM_VERSUS_NONTIMELIKE_NUMBER_DIFFERENCE_SPECTRAL_GAP"}
+      }
+    },
+    "leading_packet_instrument": {
+      "type": "object", "additionalProperties": false,
+      "required": ["normalized_mode", "leading_absorption_map", "strength", "click_effect", "no_click_effect", "positivity_domain", "selected_packet_capture", "status"],
+      "properties": {
+        "normalized_mode": {"const": "v=w/||w|| in the two-particle Hilbert direct integral"},
+        "leading_absorption_map": {"$ref": "#/$defs/text"},
+        "strength": {"const": "zeta=g^2*||w||^2"},
+        "click_effect": {"const": "E_click=zeta*|v><v|"},
+        "no_click_effect": {"const": "E_no=I-E_click"},
+        "positivity_domain": {"const": "0<=zeta<=1"},
+        "selected_packet_capture": {"$ref": "#/$defs/text"},
+        "status": {"const": "POSITIVE_NORMALIZED_LEADING_SWITCHED_VERTEX_INSTRUMENT_NOT_FULL_DYSON_EVOLUTION"}
+      }
+    },
+    "disposition": {"type": "object", "minProperties": 12, "maxProperties": 12, "additionalProperties": {"$ref": "#/$defs/text"}},
+    "does_not_establish": {"type": "array", "minItems": 15, "maxItems": 15, "items": {"$ref": "#/$defs/text"}},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "checks": {"type": "object", "additionalProperties": false, "required": ["total", "passed", "ok", "failures", "details"], "properties": {"total": {"type": "integer", "minimum": 34}, "passed": {"type": "integer", "minimum": 34}, "ok": {"const": true}, "failures": {"const": []}, "details": {"type": "object", "minProperties": 34, "additionalProperties": {"const": true}}}},
+    "verification_commands": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/text"}},
+    "report": {"const": "reverse_physics/reports/bt-schwartz-four-momentum-packet-response.md"}
+  },
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "fraction_receipt": {"type": "object", "additionalProperties": false, "required": ["exact", "decimal", "canonical_sha256"], "properties": {"exact": {"$ref": "#/$defs/text"}, "decimal": {"$ref": "#/$defs/text"}, "canonical_sha256": {"$ref": "#/$defs/hash"}}},
+    "ratio_receipt": {"type": "object", "additionalProperties": false, "required": ["numerator_coefficients", "denominator_coefficients", "lower_bound", "upper_bound", "upper_decimal", "canonical_sha256"], "properties": {"numerator_coefficients": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/text"}}, "denominator_coefficients": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/text"}}, "lower_bound": {"$ref": "#/$defs/text"}, "upper_bound": {"$ref": "#/$defs/text"}, "upper_decimal": {"$ref": "#/$defs/text"}, "canonical_sha256": {"$ref": "#/$defs/hash"}}}
+  }
+}

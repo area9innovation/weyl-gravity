@@ -1,0 +1,33 @@
+{
+  "id": "sf:program/work/reverse-physics-bateman-schwartz-four-momentum-packet-response",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "reverse-physics",
+    "state": "ACTIVE",
+    "objective": "Give the invariant fixed-P local BT sphere detector genuine four-momentum thickness by a single Schwartz-switched spacetime-local density, bound its complete pair-response leakage, and separate pair absorption spectrally from number scattering and the wrong-sign pair channel.",
+    "depends_on": [
+      "REVERSE_PHYSICS_BT_FIXED_P_TWO_SPHERE_PACKET_DETECTOR_V1",
+      "REVERSE_PHYSICS_BT_TWO_ANGLE_LOCAL_DETECTOR_COMPRESSION_V1"
+    ],
+    "activates": [
+      "a square-integrable pair-annihilation response over an open four-momentum neighborhood",
+      "a rigorous combined angular and total-momentum leakage bound",
+      "the exact distance from the target timelike pair sum to the number-difference cone",
+      "a normalized positive leading packet effect with strength fixed by the switched local vertex"
+    ],
+    "current_gate": "Work in the target centre-of-momentum apparatus frame, take the degree-38 local polynomial from the full-sphere certificate, and multiply its local density by a complex Gaussian switching whose squared Fourier envelope is exp(-||P-P0||_E^2/sigma^2), with epsilon=1/10000 and sigma=epsilon M0/5. Prove a uniform angular distortion bound on ||P-P0||<=epsilon M0 and a Gaussian polynomial tail bound outside it. Then compute the Euclidean distance from P0 to q^2<=0 and to the past causal cone.",
+    "stop_condition": "Land a COEFFICIENT_COMPUTED certificate with exact combined pair leakage below 883/1000000, a method-distinct verifier, mutations and report. The result must call the Gaussian a noncompact Schwartz switching and the effect a leading switched-vertex instrument, not an exact full Dyson or time-independent local-Hamiltonian evolution.",
+    "forbid": "no compact-spacetime-support claim for a Gaussian; no exact all-order Rabi evolution after energy thickening; no number-scattering operator-norm claim from pointwise cone suppression; no absolute q8, Eq. 19, gravity, QME or LORENTZIAN-CAUSAL promotion",
+    "allowed_paths": [
+      "reverse_physics/",
+      "paper/05-interaction-obstructions.tex",
+      "paper/05-interaction-obstructions.pdf",
+      "paper/06-einstein-weyl-interaction-obstructions.tex",
+      "paper/06-einstein-weyl-interaction-obstructions.pdf",
+      "planning/work-items/reverse-physics-bateman-schwartz-four-momentum-packet-response.json",
+      "planning/events/"
+    ],
+    "resource_hint": "For the fixed local polynomial F and a nearby total momentum P, rotationless COM coordinates give the spatial relative vector (M/2)L_v n with singular values (1,1,gamma). Bound gamma-1 by epsilon^2/[2(1-2epsilon)]. The Fejer coefficient l1 bounds are A0=2/(1-rho), A1=(2/(1-rho))*133/10. Outside the five-sigma ball, (1+sR)^76<=exp((76 epsilon/25)R^2), so the four-dimensional Gaussian tail is elementary."
+  }
+}

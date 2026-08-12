@@ -273,7 +273,12 @@ finite solid-angle packets capture all but less than $83/125000$ of its exact
 phase-space norm, and exponentiating the residual-retaining star Hamiltonian
 gives bright-packet absorption efficiency above $124917/125000$ at a half
 pulse.  This is a fixed-$P$ rotating-wave result; momentum bandwidth and the
-remaining local-Hamiltonian sectors are open.
+remaining local-Hamiltonian sectors are open.  A Gaussian-switched version of
+the same local density has a square-integrable response on an open
+four-momentum set and retains more than $999117/10^6$ of its norm in the two
+packets and their momentum core.  The target timelike pair sum is separated
+exactly from the non-timelike number-scattering transfer cone.  This is a
+leading switched-vertex result, not complete time-ordered evolution.
 Independently, the projected three-channel hard loop logarithm closes the
 Callan--Symanzik equation exactly with the Born rate and one-loop beta
 function.  This yields the positive leading-log nonforward prediction
@@ -4037,6 +4042,102 @@ support or deleting the residual.  Finite invariant-mass and total-momentum
 thickness, number-scattering and counter-rotating terms, public-BT selection,
 transfer of the earlier equal-weight relative-$q_8$ formula to these
 unequal-norm packet modes, Eq.~(19), gravity and Lorentzian causality remain
+open.
+
+The fixed-$P$ distribution can be thickened without replacing its local
+density.  Work in the target centre-of-momentum apparatus frame,
+\[
+ P_0=(M_0,0,0,0),\qquad M_0={8\kappa\over5},
+\]
+and smear the same degree-38 pointwise quadratic density with a complex
+Gaussian modulation satisfying
+\[
+ |\widehat h(P)|^2
+ =\exp[-\|P-P_0\|_E^2/\sigma^2],\qquad
+ {\sigma\over M_0}={1\over50000}.
+\]
+Two real detector quadratures realize this complex transition switching and
+its adjoint.  The density remains spacetime local, but the Gaussian switching
+is Schwartz rather than compactly supported.
+
+On the core
+\[
+ \|P-P_0\|_E\leq {M_0\over10000}=5\sigma,
+\]
+rotationless centre-of-momentum coordinates map the angular direction by a
+spatial boost with singular values $1,1,\gamma$.  The exact bound
+\[
+ \gamma-1\leq {\epsilon^2\over2(1-2\epsilon)},
+ \qquad \epsilon={1\over10000},
+\]
+combines with the Fej\'er coefficient estimates
+\[
+ |F|\leq A_0R^{38},\qquad
+ |\nabla F|\leq(38A_0+A_1)R^{37},
+\]
+where
+\[
+ A_0={2\over1-\rho},\qquad
+ A_1={2\over1-\rho}{133\over10}.
+\]
+Throughout the core, the resulting worst-case angular complement obeys
+\[
+ \eta_{\rm core}<0.000882012816932776710\ldots .
+\]
+
+Outside the five-sigma ball, the squared degree-38 response is bounded by
+$A_0^2(1+sR)^{76}$ with $s=\sigma/M_0$ and
+$R=\|P-P_0\|_E/\sigma$.  Since
+\[
+ (1+sR)^{76}\leq
+ \exp[(76\epsilon/25)R^2],\qquad R\geq5,
+\]
+the complete four-dimensional radial tail is bounded by an elementary
+Gaussian integral.  Finite rational lower sums for the required exponentials
+give
+\[
+ \eta_{P,\mathrm{tail}}
+ <0.000000586640212958096882\ldots
+\]
+and hence
+\[
+ \boxed{\eta_{\rm complete}
+ <0.000882599457145734807\ldots
+ <{883\over10^6}<10^{-3}.}
+\]
+Thus the switched pair-annihilation response is nonzero and square integrable
+on a genuine open four-momentum set.  Normalizing it as $v=w/\|w\|$ gives the
+leading positive effects
+\[
+ E_{\rm click}=\zeta|v\rangle\langle v|,
+ \qquad E_{\rm no}=I-E_{\rm click},
+ \qquad0\leq\zeta=g^2\|w\|^2\leq1.
+\]
+
+The same switching exposes a useful kinematic separation.  A number term
+transfers $q=k_{\rm in}-k_{\rm out}$ and therefore obeys
+$q^2=-2k_{\rm in}\cdot k_{\rm out}\leq0$.  Completing the Euclidean square
+in the apparatus frame gives
+\[
+ \operatorname{dist}_E(P_0,\{q:q^2\leq0\})^2={M_0^2\over2}.
+\]
+The wrong-sign future-pair argument lies in the past causal cone, whose
+distance squared from $P_0$ is $M_0^2$.  Their squared Fourier envelopes are
+therefore bounded pointwise by
+\[
+ e^{-1,250,000,000},\qquad e^{-2,500,000,000},
+\]
+respectively.  Certificate
+\par\noindent
+\texttt{REVERSE\_PHYSICS\_BT\_SCHWARTZ\_FOUR\_MOMENTUM\_}
+\allowbreak\texttt{PACKET\_RESPONSE\_V1}
+\par\noindent
+proves this normalizable leading response and spectral gap.  It does not
+promote the pointwise number bound to an operator estimate: unrestricted mean
+momentum and the derivative weights still require a Schur or
+Hilbert--Schmidt argument.  Nor does a spacetime switching define the exact
+time-independent star Hamiltonian used at fixed energy.  Complete time
+ordering, absolute $q_8$, Eq.~(19), gravity and Lorentzian causality remain
 open.
 
 The auxiliary preparation nevertheless has an exact scalar preimage on the
