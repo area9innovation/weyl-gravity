@@ -253,7 +253,11 @@ tree bracket obeys $W(c,T)\geq13T/24>0$ for every
 $-1<c<1$ and $T>0$.  The six finite-time loop gaps are uniformly separated
 from zero on compact interior angle intervals, giving a bounded fibrewise
 $q_6$ coefficient and uniform small-coupling positivity.  The angle remains
-a classical record; its coherent erasure and both forward endpoints are open.
+a classical record at this fibrewise stage.  For two orthogonal equal-weight
+hard modes, an off-diagonal positive detector erases that record without
+changing $q_4$ or $q_6$; its first known difference is an order-$\lambda^8$
+angle variance.  Continuum coherence, dynamical detector selection and both
+forward endpoints remain open.
 Independently, the projected three-channel hard loop logarithm closes the
 Callan--Symanzik equation exactly with the Born rate and one-loop beta
 function.  This yields the positive leading-log nonforward prediction
@@ -3747,10 +3751,59 @@ $\lambda^2M_R<1$.  Certificate
 \allowbreak\texttt{FAMILY\_V1}
 \par\noindent
 proves this fixed-energy continuous theorem and transports it to all nine
-spectator labels.  The angle is still an orthogonal classical record:
-off-diagonal two-angle coherence, the endpoints $c=\mathord\pm1$, arbitrary
+spectator labels.  This fibrewise theorem itself retains the angle as an
+orthogonal classical record.  The endpoints $c=\mathord\pm1$, arbitrary
 energy/shape kinematics, real--virtual completion, all orders and Eq.~(19)
 remain open.
+
+For two distinct angle modes the record can nevertheless be erased by an
+explicit positive effect.  On their record space let
+\[
+ P_+={1\over2}\begin{pmatrix}1&1\\1&1\end{pmatrix},
+ \qquad P_-=I_2-P_+,
+ \qquad E_\epsilon=P_++(1-\epsilon)P_-,
+ \quad0<\epsilon\leq1.
+\]
+The effect has off-diagonal entries $\epsilon/2$, spectrum
+$\{1,1-\epsilon\}$ and positive complement
+$I-E_\epsilon=\epsilon P_-$.  At $\epsilon=1$ the click is the pure
+symmetric angle mode and contains no label identifying either angle.  The
+fixed-$s$ four-point density is angle independent, so after aligning the
+common tree phase its leading vector is
+$X_2=x_2(1,1)^T$ and
+\[
+ E_\epsilon X_2=X_2.
+\]
+For the arbitrary complete order-$\lambda^4$ output $X_4$, this gives
+\[
+ \langle X_2,E_\epsilon X_4\rangle
+ =\langle X_2,X_4\rangle.
+\]
+Thus the complete coherent probability through the known order is
+\[
+ q_\epsilon(c_1,c_2;f,T)
+ =2q_4\left\{1+\lambda^2
+ {R_6(c_1;f,T,\mu)+R_6(c_2;f,T,\mu)\over2}\right\}
+ +O(\lambda^8),
+\]
+independently of $\epsilon$.  Exact rational modes $c_1=0$ and $c_2=3/5$
+have null conserved momenta on one common integer lattice after scaling by
+$25$.  Detector dependence first becomes possible in the known
+order-$\lambda^4$ amplitude norm:
+\[
+ \langle Y_4,E_\epsilon Y_4\rangle-\|Y_4\|^2
+ =-{\epsilon\over2}\|Y_4(c_1)-Y_4(c_2)\|^2.
+\]
+Certificate
+\par\noindent
+\texttt{REVERSE\_PHYSICS\_BT\_TWO\_ANGLE\_COHERENT\_}
+\allowbreak\texttt{Q6\_DETECTOR\_V1}
+\par\noindent
+therefore closes the two-mode operational coherence gate through
+$\lambda^6$ and localizes the first known distinction at $\lambda^8$.  It
+does not compute the full $q_8$ ledger, continuum-angle coherence, or an
+apparatus coupling that dynamically selects $\epsilon$ and the relative
+phase.  It supplies no endpoint, all-order or Eq.~(19) completion.
 
 The auxiliary preparation nevertheless has an exact scalar preimage on the
 finite covariant detector ideal.  Put

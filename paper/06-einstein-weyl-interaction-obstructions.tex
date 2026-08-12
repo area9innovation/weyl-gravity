@@ -233,6 +233,12 @@ an exact continuous fixed-energy hard-angle family, with tree bound
 $W(c,T)\geq13T/24>0$ and uniform compact-angle loop control.  This is a
 fibrewise \texttt{REDUCED-MODE} scalar result, not a metric, BRST, QME or
 Lorentzian claim.
+On two orthogonal equal-normalization hard modes, the positive off-diagonal
+effect $E_\epsilon=P_++(1-\epsilon)P_-$ fixes the common leading scalar
+amplitude.  Recorded and coherent probabilities therefore agree through
+$\lambda^6$; their first known difference is the order-$\lambda^8$ term
+$-\epsilon\|Y_4(c_1)-Y_4(c_2)\|^2/2$.  The full $q_8$ coefficient and
+dynamical detector selection remain open, and no part transfers to gravity.
 \end{abstract}
 
 \section*{AI authorship and computational accountability}
@@ -3067,6 +3073,30 @@ $R_6(c;f,T,\mu)$.  Its dependency tags are
 It does not construct an off-diagonal two-angle detector, either forward
 endpoint, a scalar all-order scattering operator, a metric BV--BRST transfer,
 a gravitational coefficient or Lorentzian causality.
+An operational two-angle detector can be supplied separately.  With
+$P_+=\frac12\left(\begin{smallmatrix}1&1\\1&1\end{smallmatrix}\right)$,
+$P_-=I-P_+$ and
+$E_\epsilon=P_++(1-\epsilon)P_-$, the click effect has nonzero off-diagonal
+entries, eigenvalues $1,1-\epsilon$, and positive complement
+$\epsilon P_-$.  Because the fixed-$s$ leading scalar output is proportional
+to $(1,1)$, $E_\epsilon$ fixes it and hence leaves both its norm and its cross
+with the complete order-$\lambda^4$ output unchanged.  Certificate
+\par\noindent
+\texttt{REVERSE\_PHYSICS\_BT\_TWO\_ANGLE\_COHERENT\_}
+\allowbreak\texttt{Q6\_DETECTOR\_V1}
+\par\noindent
+therefore gives
+\[
+ q_\epsilon(c_1,c_2)
+ =2q_4\left\{1+\lambda^2{R_6(c_1)+R_6(c_2)\over2}\right\}
+ +O(\lambda^8)
+\]
+for every $0<\epsilon\leq1$.  At $\epsilon=1$ the click is the pure
+symmetric angle mode.  The first known detector-sensitive term is
+$-\epsilon\|Y_4(c_1)-Y_4(c_2)\|^2/2$ at order $\lambda^8$, whose complete
+ledger is not computed.  This is an operational
+\texttt{LOCAL-ALGEBRAIC}, \texttt{REDUCED-MODE} scalar effect, not a detector
+selected by BT dynamics and not a gravitational result.
 There is nevertheless a genuine scalar hard-scattering baseline.  The
 certificate
 \par\noindent

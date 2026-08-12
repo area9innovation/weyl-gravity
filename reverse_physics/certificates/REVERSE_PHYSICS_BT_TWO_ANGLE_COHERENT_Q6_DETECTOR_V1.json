@@ -1,0 +1,321 @@
+{
+  "answer": "Yes for two orthogonal equal-normalization hard output modes and an explicitly declared operational detector. After aligning the common fixed-s leading tree phase, the leading angle vector is proportional to (1,1). With P_plus=J/2, P_minus=I-P_plus and E_epsilon=P_plus+(1-epsilon)P_minus for 0<epsilon<=1, the click effect has off-diagonal entries epsilon/2, eigenvalues 1 and 1-epsilon, and positive complement epsilon P_minus. Since E_epsilon fixes the leading vector, both its q4 norm and its cross with the arbitrary complete order-lambda4 output equal their recorded I2 values. Therefore q_epsilon(c1,c2)=2*q4*{1+lambda^2*[R6(c1)+R6(c2)]/2}+O(lambda^8), independently of epsilon. At epsilon=1 the click is the purely coherent symmetric-angle projection and the angle label is absent. The first possible distinction is order lambda8: the known order-lambda4 output-norm term changes from the recorded value by -epsilon*||Y4(c1)-Y4(c2)||^2/2. The full q8 coefficient is not computed. The effect is a positive operational detector choice, not a detector dynamically selected by the public BT Hamiltonian.",
+  "assumptions": [
+    "two orthogonal normalized hard nonforward output modes are centered at distinct c1,c2 in (-1,1) and have equal leading normalization q4",
+    "the active invariant s, spectator packet, duration, renormalization scheme, detector area and local mode normalization are transported identically between the two modes",
+    "external angle-ket phases are chosen so the public common fixed-s leading four-point tree has the same phase in both cells",
+    "the complete fibrewise R6(c) coefficients are those of REVERSE_PHYSICS_BT_CONTINUOUS_ANGLE_Q6_FAMILY_V1",
+    "epsilon lies in 0<epsilon<=1; epsilon=1 is the pure coherent symmetric-mode detector and epsilon approaching zero recovers the recorded identity effect",
+    "the detector effect is declared operationally and is not asserted to arise uniquely from BT time evolution",
+    "the order-lambda8 variance formula concerns only the known squared order-lambda4 output term, not the uncomputed full q8 ledger"
+  ],
+  "certificate": "REVERSE_PHYSICS_BT_TWO_ANGLE_COHERENT_Q6_DETECTOR_V1",
+  "checks": {
+    "details": {
+      "BT_dynamical_selection_is_not_claimed": true,
+      "all_nine_label_transports_are_imported": true,
+      "arbitrary_q6_cross_is_epsilon_independent": true,
+      "coherent_and_recorded_q6_polynomials_match": true,
+      "compact_R6_bound_is_imported": true,
+      "complement_is_epsilon_Pminus": true,
+      "complex_fixture_coherent_norm_is_fifty_eight_fifths": true,
+      "complex_fixture_recorded_norm_is_fifteen": true,
+      "complex_fixture_shift_is_minus_seventeen_fifths": true,
+      "continuous_q6_formula_is_imported": true,
+      "done_event_targets_this_item": true,
+      "effect_and_complement_sum_to_identity": true,
+      "effect_decomposes_spectrally": true,
+      "effect_eigenvalue_one_minus_epsilon_on_antisymmetric_mode": true,
+      "effect_eigenvalue_one_on_symmetric_mode": true,
+      "effect_has_off_diagonal_epsilon_over_two": true,
+      "endpoints_all_orders_gravity_and_causality_remain_open": true,
+      "five_predecessors_pass": true,
+      "general_Eq19_is_not_claimed": true,
+      "inputs_are_content_pinned": true,
+      "known_q8_norm_shift_is_exact_variance": true,
+      "leading_density_is_isotropic_at_fixed_s": true,
+      "leading_output_is_symmetric": true,
+      "leading_probability_is_epsilon_independent": true,
+      "prior_coherent_detector_architecture_is_operational": true,
+      "projectors_are_complete": true,
+      "projectors_are_orthogonal": true,
+      "q6_average_is_exact": true,
+      "q8_variance_is_nonpositive_for_epsilon_nonnegative": true,
+      "q8_variance_vanishes_only_for_equal_corrections_or_zero_epsilon": true,
+      "rational_mode_conservation_is_exact": true,
+      "rational_mode_invariants_are_exact": true,
+      "rational_mode_momenta_are_null": true,
+      "symmetric_and_antisymmetric_are_projectors": true,
+      "two_rational_angle_modes_are_distinct_and_hard": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 35,
+    "total": 35
+  },
+  "coherent_probability_through_lambda6": {
+    "cross_invariance": "2*Re<X2,E_epsilon X4>=2*Re<X2,X4> because E_epsilon X2=X2",
+    "epsilon_dependence": "NONE_THROUGH_LAMBDA6",
+    "leading_invariance": "<X2,E_epsilon X2>=<X2,X2>=2*q4",
+    "probability": "q_epsilon(c1,c2;f,T)=2*q4*{1+lambda^2*R6_pair}+O(lambda^8)",
+    "relative_coefficient": "R6_pair=[R6(c1;f,T,mu)+R6(c2;f,T,mu)]/2",
+    "small_coupling_positivity": "lambda^2*M_R<1 implies positive truncated click probability for every 0<epsilon<=1",
+    "status": "RECORDED_AND_COHERENT_TWO_ANGLE_PROBABILITIES_IDENTICAL_THROUGH_LAMBDA6",
+    "uniform_bound": "|R6_pair|<=M_R on any common compact hard interval"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL",
+    "REDUCED-MODE"
+  ],
+  "disposition": {
+    "BT_dynamical_detector_selection": "NOT_ESTABLISHED",
+    "Lorentzian_causal_claim": "NOT_ESTABLISHED",
+    "all_order_or_all_time_probability": "NOT_CONSTRUCTED",
+    "angle_record_in_coherent_click_at_epsilon_one": "ERASED",
+    "complete_probability_through_lambda6": "COEFFICIENT_COMPUTED",
+    "detector_dependence_through_lambda6": "EXACTLY_ABSENT",
+    "forward_and_backward_endpoints": "NOT_INCLUDED",
+    "full_q8_probability": "NOT_COMPUTED",
+    "general_Eq19": "NOT_PROVED_AND_NOT_USED",
+    "gravity_or_metric_BV_BRST_transfer": "NOT_CONSTRUCTED",
+    "known_q8_variance_target": "COMPUTED",
+    "off_diagonal_two_angle_effect": "CONSTRUCTED",
+    "positive_binary_detector": "CONSTRUCTED"
+  },
+  "does_not_establish": [
+    "that the off-diagonal effect is uniquely selected by the public BT Hamiltonian",
+    "equality of recorded and coherent probabilities at order lambda8 or beyond",
+    "the full order-lambda8 probability coefficient",
+    "coherence over a continuum of angles or arbitrary unequal detector cells",
+    "either forward or exchanged-forward endpoint",
+    "real-virtual, survival, collinear or KLN completion",
+    "an all-order probability or all-time Moller, LSZ or S operator",
+    "the standard scalar projector or general Bateman--Turok Eq. (19)",
+    "gravity or metric BV--BRST transfer",
+    "a restored gravitational quantum master equation or residual transfer",
+    "anything LORENTZIAN-CAUSAL",
+    "literature priority"
+  ],
+  "first_detector_sensitive_order": {
+    "coherent_value": "recorded_value-(epsilon/2)*||Y4(c1)-Y4(c2)||^2",
+    "difference": "-(epsilon/2)*||Y4(c1)-Y4(c2)||^2<=0",
+    "fixture": {
+      "Y4_c1": "1+2*i",
+      "Y4_c2": "-3+i",
+      "coherent_norm": "58/5",
+      "difference": "-17/5",
+      "epsilon": "2/5",
+      "recorded_norm": "15"
+    },
+    "full_q8_status": "NOT_COMPUTED",
+    "known_term": "the squared norm of the complete order-lambda4 output Y4=(Y4(c1),Y4(c2))",
+    "meaning": "the coherent detector suppresses the antisymmetric angle component of the known Y4 norm; other q8 amplitudes and crosses remain in the missing ledger",
+    "order": "lambda8",
+    "recorded_value": "||Y4(c1)||^2+||Y4(c2)||^2",
+    "status": "FIRST_POSSIBLE_COHERENCE_DIFFERENCE_LOCALIZED_AT_LAMBDA8"
+  },
+  "label_transport": {
+    "rule": "tensor the same two-angle effect with any one of the nine certified spectator-label record blocks",
+    "status": "AVAILABLE_ON_ALL_NINE_SPECTATOR_CYLINDERS"
+  },
+  "lifecycle_state": "COEFFICIENT_COMPUTED",
+  "missing_object_ledger": [
+    {
+      "object": "complete order-lambda8 tagged output ledger on the two-angle carrier",
+      "required_value": "all Y4-norm, X2-X6 and any allowed intermediate-order contributions with the same detector effect",
+      "status": "MISSING"
+    },
+    {
+      "object": "BT dynamical detector selection",
+      "required_value": "a coupling of a finite apparatus to the angle carrier that derives epsilon and the relative phase rather than declaring them",
+      "status": "MISSING"
+    },
+    {
+      "object": "endpoint completion",
+      "required_value": "real, virtual, survival and collinear sectors at c=+/-1",
+      "status": "MISSING"
+    },
+    {
+      "object": "metric gravity transfer",
+      "required_value": "classical BV import, physical metric cohomology and pairing, restored QME and causal state",
+      "status": "MISSING"
+    }
+  ],
+  "next_gate": "Compute the complete order-lambda8 tagged amplitude ledger on the same two-angle carrier. The known Y4 norm predicts a negative coherence variance -epsilon*||Y4(c1)-Y4(c2)||^2/2; the remaining X2-X6 and any allowed intermediate contributions decide the full q8 coefficient. In parallel, an apparatus coupling is required to dynamically select epsilon and the relative angle phase.",
+  "off_diagonal_effect": {
+    "E_epsilon": [
+      [
+        "-(epsilon - 2)/2",
+        "epsilon/2"
+      ],
+      [
+        "epsilon/2",
+        "-(epsilon - 2)/2"
+      ]
+    ],
+    "E_no": [
+      [
+        "epsilon/2",
+        "-epsilon/2"
+      ],
+      [
+        "-epsilon/2",
+        "epsilon/2"
+      ]
+    ],
+    "P_minus": [
+      [
+        "1/2",
+        "-1/2"
+      ],
+      [
+        "-1/2",
+        "1/2"
+      ]
+    ],
+    "P_plus": [
+      [
+        "1/2",
+        "1/2"
+      ],
+      [
+        "1/2",
+        "1/2"
+      ]
+    ],
+    "completeness": "E_epsilon+E_no=I_2",
+    "domain": "0<epsilon<=1",
+    "off_diagonal_entry": "epsilon/2",
+    "pure_coherent_endpoint": "epsilon=1 gives E_click=P_plus and E_no=P_minus",
+    "spectral_form": "E_epsilon=P_plus+(1-epsilon)*P_minus",
+    "spectrum": [
+      "1",
+      "1-epsilon"
+    ],
+    "status": "POSITIVE_NORMALIZED_GENUINELY_OFF_DIAGONAL_ANGLE_EFFECT"
+  },
+  "provenance": {
+    "generated_by": "reverse_physics/bt_two_angle_coherent_q6_detector.py",
+    "independent_verifier": "reverse_physics/verify_bt_two_angle_coherent_q6_detector.py",
+    "inputs": [
+      {
+        "path": "planning/work-items/reverse-physics-bateman-two-angle-coherent-q6-detector.json",
+        "sha256": "3f4e41066a1c5f6b4d1ba838a0b8d2e897340ad2898be95291c1480f429d21f9"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_CONTINUOUS_ANGLE_Q6_FAMILY_V1.json",
+        "sha256": "b2a144a500727aefa8f6a8b6e682dc92a2f9678ee7df57bc5df4ed80562712f2"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_COMPLETE_TAGGED_Q6_PHYSICAL_PROBABILITY_V1.json",
+        "sha256": "c322615c4bd6e5a9b0aa63fd5e62da9d8f3771da2f222ac4d13a986f90abbdd7"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_TAGGED_SPECTATOR_PHYSICAL_PACKET_PROBABILITY_V1.json",
+        "sha256": "f1742448de34c8cc462c9a3a096bd3c1cd1241d7506b8abc1e687d751bff9779"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_COHERENT_COMPACT_WAVEPACKET_DETECTOR_DILATION_V1.json",
+        "sha256": "355d94a089d1989a69dfa786901b367b051efdcd71ca134bb76c3b630d438ce1"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_NINE_CYLINDER_RECORDED_Q6_INSTRUMENT_V1.json",
+        "sha256": "7470b81f753c43befc14badb41176cf5a14590edfc26b2e222f553c033a22c77"
+      },
+      {
+        "path": "planning/events/reverse-physics-bateman-two-angle-coherent-q6-detector-DONE-d1e234b0.json",
+        "sha256": "9c75c9bf1f7b68d2505e2b800cfeb8e0b04d9c9d1e47d96d064f24b54ba230b4"
+      }
+    ],
+    "method": "Exact symbolic two-angle projector calculus, arbitrary complex order-lambda4 correction split into real and imaginary parts, perturbative coefficient comparison, and exact rational complex fixture. No floating-point arithmetic is used.",
+    "retrieval_date": "2026-08-12",
+    "source_commit": "d1e234b016767b7b9127e9fb22b1461d2a6ad044"
+  },
+  "question": "Can one erase the record of two distinct hard BT scattering-angle modes with a genuinely off-diagonal positive detector while retaining the complete probability through lambda6?",
+  "rational_two_mode_fixture": {
+    "c_values": [
+      "0",
+      "3/5"
+    ],
+    "common_incoming": {
+      "p0_equals_k0": [
+        "6/5",
+        "6/5",
+        "0",
+        "0"
+      ],
+      "p1": [
+        "1",
+        "-3/5",
+        "4/5",
+        "0"
+      ],
+      "p2": [
+        "1",
+        "-3/5",
+        "-4/5",
+        "0"
+      ]
+    },
+    "finite_box_compatibility": "after one common scale by 25, every spatial component lies on one integer momentum lattice",
+    "outgoing": [
+      {
+        "c": "0",
+        "k1": [
+          "1",
+          "-3/5",
+          "0",
+          "4/5"
+        ],
+        "k2": [
+          "1",
+          "-3/5",
+          "0",
+          "-4/5"
+        ],
+        "t": "-32/25",
+        "u": "-32/25"
+      },
+      {
+        "c": "3/5",
+        "k1": [
+          "1",
+          "-3/5",
+          "12/25",
+          "16/25"
+        ],
+        "k2": [
+          "1",
+          "-3/5",
+          "-12/25",
+          "-16/25"
+        ],
+        "t": "-64/125",
+        "u": "-256/125"
+      }
+    ],
+    "status": "EXACT_DISTINCT_RATIONAL_HARD_TWO_MODE_FIXTURE"
+  },
+  "report": "reverse_physics/reports/bt-two-angle-coherent-q6-detector.md",
+  "result_kind": "positive off-diagonal two-angle BT detector effect and complete coherent probability coefficient through lambda6",
+  "schema": "reverse_physics/schema/reverse-physics-bt-two-angle-coherent-q6-detector-v1.schema.json",
+  "schema_version": 1,
+  "two_angle_carrier": {
+    "cell_probability": "q_tag(c;f,T)=q4*{1+lambda^2*R6(c;f,T,mu)}+O(lambda^8)",
+    "domain": "-1<c1<c2<1 with orthogonal equal-normalization hard output modes",
+    "leading_angle_vector": "X2=x2*(1,1)",
+    "leading_reason": "the fixed-s four-point BT density is angle independent and the two external ket phases are aligned",
+    "recorded_effect": "I_2",
+    "records": [
+      "c1",
+      "c2"
+    ],
+    "status": "TWO_ORTHOGONAL_HARD_ANGLE_MODES_WITH_COMMON_LEADING_AMPLITUDE"
+  },
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_two_angle_coherent_q6_detector.py --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_two_angle_coherent_q6_detector.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_two_angle_coherent_q6_detector"
+  ]
+}

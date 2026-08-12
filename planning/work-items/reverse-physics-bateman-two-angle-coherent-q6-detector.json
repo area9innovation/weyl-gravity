@@ -1,0 +1,35 @@
+{
+  "id": "sf:program/work/reverse-physics-bateman-two-angle-coherent-q6-detector",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "reverse-physics",
+    "state": "ACTIVE",
+    "objective": "Construct an explicit positive detector with a genuinely off-diagonal kernel between two disjoint hard-angle BT output cells, determine its complete probability through lambda6, and locate the first order at which coherent angle erasure can differ from the recorded detector.",
+    "depends_on": [
+      "REVERSE_PHYSICS_BT_CONTINUOUS_ANGLE_Q6_FAMILY_V1",
+      "REVERSE_PHYSICS_BT_COMPLETE_TAGGED_Q6_PHYSICAL_PROBABILITY_V1",
+      "REVERSE_PHYSICS_BT_TAGGED_SPECTATOR_PHYSICAL_PACKET_PROBABILITY_V1",
+      "REVERSE_PHYSICS_BT_COHERENT_COMPACT_WAVEPACKET_DETECTOR_DILATION_V1",
+      "REVERSE_PHYSICS_BT_NINE_CYLINDER_RECORDED_Q6_INSTRUMENT_V1"
+    ],
+    "activates": [
+      "a positive normalized off-diagonal two-angle detector effect",
+      "a decision whether angle coherence changes the known q4 or q6 coefficients",
+      "an exact q8 variance target for the next BT amplitude calculation"
+    ],
+    "current_gate": "Take two orthogonal equal-normalization hard output modes centered at distinct c1,c2 in (-1,1), align the public common leading tree phase, and let P_plus and P_minus be the symmetric and antisymmetric angle-record projections. For 0<epsilon<=1 form E_epsilon=P_plus+(1-epsilon)P_minus. Prove 0<=E_epsilon<=I, show that the fixed-s isotropic leading BT amplitude lies in ran(P_plus), assemble its cross with the complete order-lambda4 output, and compare the known quadratic order-lambda8 term with the recorded identity effect.",
+    "stop_condition": "Land an exact COEFFICIENT_COMPUTED certificate, method-distinct verifier, mutation tests, report and Papers 05/06 update. The result must preserve all endpoint, all-order, Eq. 19, gravity and Lorentzian boundaries, and must not call an operational detector effect a dynamically selected BT measurement.",
+    "forbid": "no diagonal direct sum called coherent; no off-diagonal effect called BT dynamics; no equality through lambda6 promoted to equality at lambda8; no reduced scalar detector promoted to gravity, BRST, QME or LORENTZIAN-CAUSAL physics",
+    "allowed_paths": [
+      "reverse_physics/",
+      "paper/05-interaction-obstructions.tex",
+      "paper/05-interaction-obstructions.pdf",
+      "paper/06-einstein-weyl-interaction-obstructions.tex",
+      "paper/06-einstein-weyl-interaction-obstructions.pdf",
+      "planning/work-items/reverse-physics-bateman-two-angle-coherent-q6-detector.json",
+      "planning/events/"
+    ],
+    "resource_hint": "On the two-angle record space, P_plus=J/2 and P_minus=I-J/2. The effect E_epsilon=P_plus+(1-epsilon)P_minus has eigenvalues 1 and 1-epsilon and off-diagonal entries epsilon/2. The fixed-s four-point output is proportional to (1,1), hence E_epsilon x2=x2. Therefore both <x2,E x2> and 2 Re<x2,E x4> equal their recorded I2 values for arbitrary x4: q_epsilon=2 q4[1+lambda2(R6(c1)+R6(c2))/2]+O(lambda8). The known x4-norm contribution changes by -epsilon ||x4(c1)-x4(c2)||^2/2 at lambda8. The exact rational modes c1=0,c2=3/5 lie on one common finite-box momentum lattice after scaling by 25."
+  }
+}

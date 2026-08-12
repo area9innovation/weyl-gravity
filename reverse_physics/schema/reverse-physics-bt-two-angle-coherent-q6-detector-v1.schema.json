@@ -1,0 +1,193 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-two-angle-coherent-q6-detector-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "schema_version", "certificate", "question", "answer",
+    "result_kind", "lifecycle_state", "dependency_tags", "assumptions",
+    "provenance", "two_angle_carrier", "rational_two_mode_fixture",
+    "off_diagonal_effect", "coherent_probability_through_lambda6",
+    "first_detector_sensitive_order", "label_transport", "disposition",
+    "missing_object_ledger", "does_not_establish", "next_gate", "checks",
+    "verification_commands", "report"
+  ],
+  "properties": {
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-two-angle-coherent-q6-detector-v1.schema.json"},
+    "schema_version": {"const": 1},
+    "certificate": {"const": "REVERSE_PHYSICS_BT_TWO_ANGLE_COHERENT_Q6_DETECTOR_V1"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE"]},
+    "assumptions": {"type": "array", "minItems": 7, "maxItems": 7, "items": {"$ref": "#/$defs/text"}},
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_commit", "retrieval_date", "inputs", "generated_by", "independent_verifier", "method"],
+      "properties": {
+        "source_commit": {"const": "d1e234b016767b7b9127e9fb22b1461d2a6ad044"},
+        "retrieval_date": {"const": "2026-08-12"},
+        "inputs": {
+          "type": "array", "minItems": 7, "maxItems": 7,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["path", "sha256"],
+            "properties": {
+              "path": {"$ref": "#/$defs/text"},
+              "sha256": {"$ref": "#/$defs/hash"}
+            }
+          }
+        },
+        "generated_by": {"const": "reverse_physics/bt_two_angle_coherent_q6_detector.py"},
+        "independent_verifier": {"const": "reverse_physics/verify_bt_two_angle_coherent_q6_detector.py"},
+        "method": {"$ref": "#/$defs/text"}
+      }
+    },
+    "two_angle_carrier": {
+      "type": "object", "additionalProperties": false,
+      "required": ["records", "domain", "recorded_effect", "leading_angle_vector", "leading_reason", "cell_probability", "status"],
+      "properties": {
+        "records": {"const": ["c1", "c2"]},
+        "domain": {"$ref": "#/$defs/text"},
+        "recorded_effect": {"const": "I_2"},
+        "leading_angle_vector": {"const": "X2=x2*(1,1)"},
+        "leading_reason": {"$ref": "#/$defs/text"},
+        "cell_probability": {"$ref": "#/$defs/text"},
+        "status": {"const": "TWO_ORTHOGONAL_HARD_ANGLE_MODES_WITH_COMMON_LEADING_AMPLITUDE"}
+      }
+    },
+    "rational_two_mode_fixture": {
+      "type": "object", "additionalProperties": false,
+      "required": ["c_values", "common_incoming", "outgoing", "finite_box_compatibility", "status"],
+      "properties": {
+        "c_values": {"const": ["0", "3/5"]},
+        "common_incoming": {
+          "type": "object", "additionalProperties": false,
+          "required": ["p0_equals_k0", "p1", "p2"],
+          "properties": {
+            "p0_equals_k0": {"$ref": "#/$defs/four_text"},
+            "p1": {"$ref": "#/$defs/four_text"},
+            "p2": {"$ref": "#/$defs/four_text"}
+          }
+        },
+        "outgoing": {
+          "type": "array", "minItems": 2, "maxItems": 2,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["c", "k1", "k2", "t", "u"],
+            "properties": {
+              "c": {"$ref": "#/$defs/text"},
+              "k1": {"$ref": "#/$defs/four_text"},
+              "k2": {"$ref": "#/$defs/four_text"},
+              "t": {"$ref": "#/$defs/text"},
+              "u": {"$ref": "#/$defs/text"}
+            }
+          }
+        },
+        "finite_box_compatibility": {"$ref": "#/$defs/text"},
+        "status": {"const": "EXACT_DISTINCT_RATIONAL_HARD_TWO_MODE_FIXTURE"}
+      }
+    },
+    "off_diagonal_effect": {
+      "type": "object", "additionalProperties": false,
+      "required": ["P_plus", "P_minus", "E_epsilon", "E_no", "spectral_form", "spectrum", "domain", "off_diagonal_entry", "completeness", "pure_coherent_endpoint", "status"],
+      "properties": {
+        "P_plus": {"$ref": "#/$defs/two_matrix"},
+        "P_minus": {"$ref": "#/$defs/two_matrix"},
+        "E_epsilon": {"$ref": "#/$defs/two_matrix"},
+        "E_no": {"$ref": "#/$defs/two_matrix"},
+        "spectral_form": {"const": "E_epsilon=P_plus+(1-epsilon)*P_minus"},
+        "spectrum": {"const": ["1", "1-epsilon"]},
+        "domain": {"const": "0<epsilon<=1"},
+        "off_diagonal_entry": {"const": "epsilon/2"},
+        "completeness": {"const": "E_epsilon+E_no=I_2"},
+        "pure_coherent_endpoint": {"$ref": "#/$defs/text"},
+        "status": {"const": "POSITIVE_NORMALIZED_GENUINELY_OFF_DIAGONAL_ANGLE_EFFECT"}
+      }
+    },
+    "coherent_probability_through_lambda6": {
+      "type": "object", "additionalProperties": false,
+      "required": ["leading_invariance", "cross_invariance", "relative_coefficient", "probability", "epsilon_dependence", "uniform_bound", "small_coupling_positivity", "status"],
+      "properties": {
+        "leading_invariance": {"$ref": "#/$defs/text"},
+        "cross_invariance": {"$ref": "#/$defs/text"},
+        "relative_coefficient": {"const": "R6_pair=[R6(c1;f,T,mu)+R6(c2;f,T,mu)]/2"},
+        "probability": {"const": "q_epsilon(c1,c2;f,T)=2*q4*{1+lambda^2*R6_pair}+O(lambda^8)"},
+        "epsilon_dependence": {"const": "NONE_THROUGH_LAMBDA6"},
+        "uniform_bound": {"$ref": "#/$defs/text"},
+        "small_coupling_positivity": {"$ref": "#/$defs/text"},
+        "status": {"const": "RECORDED_AND_COHERENT_TWO_ANGLE_PROBABILITIES_IDENTICAL_THROUGH_LAMBDA6"}
+      }
+    },
+    "first_detector_sensitive_order": {
+      "type": "object", "additionalProperties": false,
+      "required": ["order", "known_term", "recorded_value", "coherent_value", "difference", "fixture", "full_q8_status", "meaning", "status"],
+      "properties": {
+        "order": {"const": "lambda8"},
+        "known_term": {"$ref": "#/$defs/text"},
+        "recorded_value": {"$ref": "#/$defs/text"},
+        "coherent_value": {"$ref": "#/$defs/text"},
+        "difference": {"const": "-(epsilon/2)*||Y4(c1)-Y4(c2)||^2<=0"},
+        "fixture": {
+          "type": "object", "additionalProperties": false,
+          "required": ["epsilon", "Y4_c1", "Y4_c2", "recorded_norm", "coherent_norm", "difference"],
+          "properties": {
+            "epsilon": {"const": "2/5"},
+            "Y4_c1": {"const": "1+2*i"},
+            "Y4_c2": {"const": "-3+i"},
+            "recorded_norm": {"const": "15"},
+            "coherent_norm": {"const": "58/5"},
+            "difference": {"const": "-17/5"}
+          }
+        },
+        "full_q8_status": {"const": "NOT_COMPUTED"},
+        "meaning": {"$ref": "#/$defs/text"},
+        "status": {"const": "FIRST_POSSIBLE_COHERENCE_DIFFERENCE_LOCALIZED_AT_LAMBDA8"}
+      }
+    },
+    "label_transport": {
+      "type": "object", "additionalProperties": false,
+      "required": ["rule", "status"],
+      "properties": {
+        "rule": {"$ref": "#/$defs/text"},
+        "status": {"const": "AVAILABLE_ON_ALL_NINE_SPECTATOR_CYLINDERS"}
+      }
+    },
+    "disposition": {"type": "object", "minProperties": 13, "maxProperties": 13, "additionalProperties": {"$ref": "#/$defs/text"}},
+    "missing_object_ledger": {
+      "type": "array", "minItems": 4, "maxItems": 4,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["object", "status", "required_value"],
+        "properties": {
+          "object": {"$ref": "#/$defs/text"},
+          "status": {"const": "MISSING"},
+          "required_value": {"$ref": "#/$defs/text"}
+        }
+      }
+    },
+    "does_not_establish": {"type": "array", "minItems": 12, "maxItems": 12, "items": {"$ref": "#/$defs/text"}},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "checks": {
+      "type": "object", "additionalProperties": false,
+      "required": ["total", "passed", "ok", "failures", "details"],
+      "properties": {
+        "total": {"type": "integer", "minimum": 30},
+        "passed": {"type": "integer", "minimum": 30},
+        "ok": {"const": true},
+        "failures": {"const": []},
+        "details": {"type": "object", "minProperties": 30, "additionalProperties": {"const": true}}
+      }
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/text"}},
+    "report": {"const": "reverse_physics/reports/bt-two-angle-coherent-q6-detector.md"}
+  },
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "four_text": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/text"}},
+    "two_row": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"$ref": "#/$defs/text"}},
+    "two_matrix": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"$ref": "#/$defs/two_row"}}
+  }
+}
