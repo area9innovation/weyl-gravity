@@ -1,0 +1,26 @@
+{
+  "record": "BATEMAN_TUROK_CHARACTERISTIC_FUNCTION_SOURCE_V1",
+  "source": {
+    "authors": "Sam Bateman and Neil Turok",
+    "title": "Escape from Ostrogradsky via Hidden Ghost Parity",
+    "arxiv": "2607.00096v1",
+    "url": "https://arxiv.org/abs/2607.00096",
+    "retrieved": "2026-08-12",
+    "source_archive_sha256": "6681e48614eac27e7ce766563b336c3296bbb94dd00286611672a7a1f15ec0db",
+    "main_tex_sha256": "6d8b81a36faa89c33d26e88941170a95d0e287539c3b29ed01eebbc72d80c82e"
+  },
+  "conventions": {
+    "momentum_measure": "d_n p=d^n p/(2*pi)^n",
+    "delta_normalization": "delta_n(p)=(2*pi)^n delta^n(p)",
+    "finite_volume_symbol": "L^mu=delta_1(0)=integral dx^mu",
+    "point_characteristic": "chi(x)=delta_1(x)/L with chi^2=chi in finite volume",
+    "spacetime_volume": "delta_4(0)=L0*Lx*Ly*Lz"
+  },
+  "public_formulas": {
+    "n_particle_projector": "P_chi^(phi)=1/n!*integral (d4p)^n chi(p) product_i W(p_i) |Psi(p)><Psi(p)|",
+    "two_to_two_trace_prefactor": "1/(2!*2!)=1/4",
+    "two_beam_characteristic_denominator": "L0*Lx^2*Ly^2*Lz",
+    "two_beam_volume_remainder": "delta_4(0)/(L0*Lx^2*Ly^2*Lz)=1/(Lx*Ly)=1/Area",
+    "scope": "The source gives the finite-volume characteristic explicitly only for the two-particle center-of-mass example; the three-particle cell below is a new declared generalization."
+  }
+}

@@ -2358,6 +2358,28 @@ normalization needed to turn it into a probability.  Certificate
 \allowbreak\texttt{NORMALIZATION\_V1}
 therefore fixes the scalar coupling coefficient while leaving the generalized-
 Born detector normalization open; neither part transfers to gravity.
+That local detector normalization can now be closed after declaring the
+finite-volume incoming cell explicitly.  At the exact three-beam fixture
+scaled by $\kappa$, eight spatial point characteristics together with the
+total-energy characteristic have on-shell Jacobian one.  Cancelling
+$\delta_4(0)$ leaves
+\[
+ N_{\rm in}=\frac{5}{48\kappa^3L_xL_y^2L_z^2}.
+\]
+The six incoming and six outgoing label orbits cancel the two $3!$ projector
+factors, giving the dimensionless local rate density
+\[
+ \Gamma_\Xi=\frac{9\lambda^8}
+ {1024\pi^4\kappa^4L_xL_y^2L_z^2}.
+\]
+Certificate
+\texttt{REVERSE\_PHYSICS\_BT\_THREE\_PARTICLE\_}
+\allowbreak\texttt{CHARACTERISTIC\_CELL\_V1}
+establishes $q_\Xi(T)=\Gamma_\Xi T\Delta\Xi+O(1)$ for the declared symmetric
+local detector.  It simultaneously rules out calling this a universal
+three-body cross section: a second idempotent coordinate cell changes the
+normalization by $5/3$.  Compact wave-packet convergence, ten-channel gluing,
+Eq.~(19), and transfer to metric BV or Lorentzian causal gravity remain open.
 There is nevertheless a genuine scalar hard-scattering baseline.  The
 certificate
 \par\noindent

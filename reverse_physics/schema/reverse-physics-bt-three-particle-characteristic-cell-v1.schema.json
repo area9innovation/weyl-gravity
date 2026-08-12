@@ -1,0 +1,113 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-three-particle-characteristic-cell-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["certificate", "schema_version", "dependency_tags", "lifecycle_state", "result_kind", "question", "answer", "public_two_particle_reconstruction", "declared_incoming_cell", "factorial_and_orbit_audit", "physical_shell_probability", "detector_dependence", "interpretation", "assumptions", "does_not_establish", "next_gate", "provenance", "verification_commands", "checks", "report", "schema"],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_THREE_PARTICLE_CHARACTERISTIC_CELL_V1"},
+    "schema_version": {"const": "reverse-physics-bt-three-particle-characteristic-cell-v1"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"type": "string", "minLength": 1500},
+    "public_two_particle_reconstruction": {
+      "type": "object", "additionalProperties": false,
+      "required": ["characteristic_denominator_exponents", "delta4_zero_exponents", "uncancelled_exponents", "remainder", "status"],
+      "properties": {
+        "characteristic_denominator_exponents": {"const": {"L0": 1, "Lx": 2, "Ly": 2, "Lz": 1}},
+        "delta4_zero_exponents": {"const": {"L0": 1, "Lx": 1, "Ly": 1, "Lz": 1}},
+        "uncancelled_exponents": {"const": {"L0": 0, "Lx": 1, "Ly": 1, "Lz": 0}},
+        "remainder": {"const": "1/(Lx*Ly)=1/Area"},
+        "status": {"const": "PUBLIC_APPENDIX_B_AREA_MECHANISM_RECONSTRUCTED"}
+      }
+    },
+    "declared_incoming_cell": {
+      "type": "object", "additionalProperties": false,
+      "required": ["fixture", "constraints", "finite_volume_denominator", "constraint_jacobian_determinant", "energy_product", "one_ordered_cell_weight", "external_volume", "incoming_weight", "incoming_weight_mass_dimension", "idempotence", "status"],
+      "properties": {
+        "fixture": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/text"}},
+        "constraints": {"$ref": "#/$defs/text"},
+        "finite_volume_denominator": {"const": "L0*Lx^2*Ly^3*Lz^3"},
+        "constraint_jacobian_determinant": {"const": "1"},
+        "energy_product": {"const": "E0*E1*E2=6*kappa^3/5"},
+        "one_ordered_cell_weight": {"const": "5/[48*kappa^3*L0*Lx^2*Ly^3*Lz^3]"},
+        "external_volume": {"const": "delta4(0)=L0*Lx*Ly*Lz"},
+        "incoming_weight": {"const": "N_in=5/[48*kappa^3*Lx*Ly^2*Lz^2]"},
+        "incoming_weight_mass_dimension": {"const": 2},
+        "idempotence": {"$ref": "#/$defs/text"},
+        "status": {"const": "DECLARED_PERMUTATION_SYMMETRIC_THREE_PARTICLE_PROJECTOR_CELL"}
+      }
+    },
+    "factorial_and_orbit_audit": {
+      "const": {
+        "consequence": "the labeled outgoing shell coefficient is used once for the physical unordered local cell; the ordinary isolated 1/3! preflight is not the generalized-Born trace",
+        "generalized_born_prefactor": "1/(3!*3!)=1/36",
+        "incoming_S3_orbit_multiplicity": 6,
+        "net_factor": "6*6/(3!*3!)=1",
+        "outgoing_S3_orbit_multiplicity": 6
+      }
+    },
+    "physical_shell_probability": {
+      "type": "object", "additionalProperties": false,
+      "required": ["scaled_labeled_shell_probability", "declared_rate_density", "declared_probability", "survival", "mass_dimension_of_rate", "mass_dimension_of_probability", "compact_transverse_window", "compact_window_rate_limit", "status"],
+      "properties": {
+        "scaled_labeled_shell_probability": {"const": "27*lambda^8*T/[320*pi^4*kappa] per unit tangential chart volume"},
+        "declared_rate_density": {"const": "Gamma_Xi=9*lambda^8/[1024*pi^4*kappa^4*Lx*Ly^2*Lz^2]"},
+        "declared_probability": {"$ref": "#/$defs/text"},
+        "survival": {"$ref": "#/$defs/text"},
+        "mass_dimension_of_rate": {"const": 1},
+        "mass_dimension_of_probability": {"const": 0},
+        "compact_transverse_window": {"$ref": "#/$defs/text"},
+        "compact_window_rate_limit": {"const": "pi/kappa"},
+        "status": {"const": "DIMENSIONLESS_DECLARED_DETECTOR_SHELL_PROBABILITY_COEFFICIENT_COMPUTED"}
+      }
+    },
+    "detector_dependence": {
+      "type": "object", "additionalProperties": false,
+      "required": ["alternative_cell", "reference_absolute_jacobian", "alternative_absolute_jacobian", "alternative_to_reference_weight_ratio", "theorem", "consequence"],
+      "properties": {
+        "alternative_cell": {"$ref": "#/$defs/text"},
+        "reference_absolute_jacobian": {"const": "1"},
+        "alternative_absolute_jacobian": {"const": "3/5"},
+        "alternative_to_reference_weight_ratio": {"const": "5/3"},
+        "theorem": {"$ref": "#/$defs/text"},
+        "consequence": {"$ref": "#/$defs/text"}
+      }
+    },
+    "interpretation": {
+      "const": {
+        "Eq19_all_orders": "NOT_PROVED",
+        "declared_three_particle_incoming_projector_cell": "CONSTRUCTED",
+        "detector_independent_three_body_cross_section": "NOT_DEFINED",
+        "dimensionless_local_detector_shell_probability": "COEFFICIENT_COMPUTED",
+        "generalized_born_factorial_trace": "COMPUTED",
+        "public_two_beam_area_mechanism": "RECONSTRUCTED",
+        "ten_channel_global_probability": "NOT_CONSTRUCTED"
+      }
+    },
+    "assumptions": {"type": "array", "minItems": 6, "items": {"$ref": "#/$defs/text"}},
+    "does_not_establish": {"type": "array", "minItems": 10, "items": {"$ref": "#/$defs/text"}},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_commit", "retrieval_date", "inputs", "public_source_archive_sha256", "method"],
+      "properties": {
+        "source_commit": {"const": "7f6f5b1f88272373345fde8e872f30208bd389c0"},
+        "retrieval_date": {"const": "2026-08-12"},
+        "inputs": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "object", "additionalProperties": false, "required": ["path", "sha256"], "properties": {"path": {"$ref": "#/$defs/text"}, "sha256": {"$ref": "#/$defs/hash"}}}},
+        "public_source_archive_sha256": {"const": "6681e48614eac27e7ce766563b336c3296bbb94dd00286611672a7a1f15ec0db"},
+        "method": {"$ref": "#/$defs/text"}
+      }
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/text"}},
+    "checks": {"type": "object", "additionalProperties": false, "required": ["ok", "passed", "total", "failures", "details"], "properties": {"ok": {"const": true}, "passed": {"const": 27}, "total": {"const": 27}, "failures": {"const": []}, "details": {"type": "object", "minProperties": 27, "maxProperties": 27, "additionalProperties": {"const": true}}}},
+    "report": {"const": "reverse_physics/reports/bt-three-particle-characteristic-cell.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-three-particle-characteristic-cell-v1.schema.json"}
+  },
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

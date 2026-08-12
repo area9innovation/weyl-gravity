@@ -1,0 +1,175 @@
+{
+  "answer": "Yes for a declared finite-volume detector, but not as a detector-independent three-body cross section. On the positive massless incoming fixture kappa*(6/5,6/5,0,0), kappa*(1,-3/5,4/5,0), kappa*(1,-3/5,-4/5,0), impose eight spatial point characteristics and replace the p0x constraint by the total-energy characteristic E0+E1+E2=16*kappa/5. The exact nine-dimensional on-shell constraint Jacobian has determinant one. In the public delta and finite-volume conventions one ordered cell therefore has weight 5/[48*kappa^3*L0*Lx^2*Ly^3*Lz^3]. Multiplication by the external delta4(0)=L0*Lx*Ly*Lz leaves N_in=5/[48*kappa^3*Lx*Ly^2*Lz^2], of mass dimension +2. The incoming characteristic is the disjoint union of its six S3 label orbits, and a physical local outgoing detector is likewise the union of six label orbits. Those two orbit multiplicities cancel the two 3! factors in the generalized-Born trace; neither factorial may be inserted separately. Multiplying N_in by the certified labeled shell rate 27*lambda^8/[320*pi^4*kappa] gives Gamma_Xi=9*lambda^8/[1024*pi^4*kappa^4*Lx*Ly^2*Lz^2] per unit dimensionless tangential chart volume. Hence a cell DeltaXi has q_Xi(T)=Gamma_Xi*T*DeltaXi+O(1) in the isolated-shell long-time expansion, with survival 1-q_Xi in the perturbative domain. This is a dimensionless BT finite-volume detector probability coefficient and completes the previously missing normalization for this declared cell. It is not universal: replacing p1x rather than p0x by the energy characteristic changes the Jacobian from 1 to 3/5 and the normalized point-cell weight by 5/3. The public Letter therefore permits physical detector probabilities after chi is declared, but does not select a canonical three-particle flux, box geometry, or cell coordinates.",
+  "assumptions": [
+    "a rectangular finite-volume regulator commensurate with the three rational beam momenta",
+    "positive-energy mass shells and the public delta_n and L^mu conventions",
+    "the certified squared six-point amplitude starts at total external-mass degree six, so all six delta-prime mass derivatives in this leading coefficient act on the amplitude and leave the ordinary on-shell input measure",
+    "the six incoming and six outgoing label-orbit cells are disjoint",
+    "the outgoing characteristic equals one on a compact transverse tube around the isolated channel-11 shell and on a compact tangential cell around the fixture",
+    "the displayed rate is the leading duration-growing isolated-shell term; smooth connected interference is O(1)",
+    "the external spacetime-volume time factor canceled by the incoming energy characteristic is distinct from the internal sequential-shell duration"
+  ],
+  "certificate": "REVERSE_PHYSICS_BT_THREE_PARTICLE_CHARACTERISTIC_CELL_V1",
+  "checks": {
+    "details": {
+      "alternative_cell_changes_weight_by_five_thirds": true,
+      "alternative_cell_jacobian_is_three_fifths": true,
+      "compact_shell_norm_has_exact_boundary_derivative": true,
+      "compact_shell_window_has_same_long_time_rate": true,
+      "compact_window_remainder_is_uniformly_subleading": true,
+      "constraint_jacobian_determinant_is_one": true,
+      "constraint_jacobian_is_nine_by_nine": true,
+      "declared_cell_probability_is_exact": true,
+      "declared_detector_probability_is_dimensionless": true,
+      "declared_detector_rate_density_is_exact": true,
+      "detector_independence_is_not_claimed": true,
+      "external_delta_volume_cancels_once_per_direction": true,
+      "fixture_is_massless": true,
+      "fixture_total_energy_is_sixteen_kappa_over_five": true,
+      "global_eq19_gravity_and_lorentzian_claims_remain_open": true,
+      "incoming_energy_product_is_six_kappa_cubed_over_five": true,
+      "incoming_orbit_has_six_disjoint_cells": true,
+      "incoming_weight_has_mass_dimension_plus_two": true,
+      "inputs_are_content_pinned": true,
+      "labeled_shell_rate_is_scaled_exactly": true,
+      "ordered_cell_weight_is_exact": true,
+      "outgoing_orbit_has_six_disjoint_cells": true,
+      "predecessor_shell_and_tree_certificates_pass": true,
+      "public_source_archive_is_content_pinned": true,
+      "public_two_beam_area_remainder_is_reconstructed": true,
+      "sine_integral_limit_is_exact": true,
+      "two_projector_factorials_cancel_only_after_both_orbits": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 27,
+    "total": 27
+  },
+  "declared_incoming_cell": {
+    "constraint_jacobian_determinant": "1",
+    "constraints": "eight spatial components other than p0x fixed at the fixture; p0x replaced by E0+E1+E2=16*kappa/5",
+    "energy_product": "E0*E1*E2=6*kappa^3/5",
+    "external_volume": "delta4(0)=L0*Lx*Ly*Lz",
+    "finite_volume_denominator": "L0*Lx^2*Ly^3*Lz^3",
+    "fixture": [
+      "kappa*(6/5,6/5,0,0)",
+      "kappa*(1,-3/5,4/5,0)",
+      "kappa*(1,-3/5,-4/5,0)"
+    ],
+    "idempotence": "the finite-volume point cells are mutually disjoint idempotents; their S3 orbit sum is idempotent",
+    "incoming_weight": "N_in=5/[48*kappa^3*Lx*Ly^2*Lz^2]",
+    "incoming_weight_mass_dimension": 2,
+    "one_ordered_cell_weight": "5/[48*kappa^3*L0*Lx^2*Ly^3*Lz^3]",
+    "status": "DECLARED_PERMUTATION_SYMMETRIC_THREE_PARTICLE_PROJECTOR_CELL"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "detector_dependence": {
+    "alternative_absolute_jacobian": "3/5",
+    "alternative_cell": "replace p1x rather than p0x by the total-energy characteristic while fixing the other eight spatial components",
+    "alternative_to_reference_weight_ratio": "5/3",
+    "consequence": "chi, the box geometry, and the coordinate cell are experiment data; Gamma_Xi is physical only after they are declared",
+    "reference_absolute_jacobian": "1",
+    "theorem": "idempotence and the public finite-volume prescription do not select a coordinate-independent three-particle point-cell normalization"
+  },
+  "does_not_establish": [
+    "a detector-independent three-to-three cross section or flux",
+    "uniqueness under a change of incoming characteristic coordinates",
+    "a normalized compact wave packet independent of finite-volume point-cell regularization",
+    "global gluing of the ten factorization channels or their intersections",
+    "the complete connected O(1) interference term",
+    "a global Moller, LSZ, or S operator",
+    "Eq. (19) or its deferred weak-ghost-symmetry proof",
+    "loop or all-order positivity",
+    "gravity or BRST transfer",
+    "anything LORENTZIAN-CAUSAL",
+    "literature priority"
+  ],
+  "factorial_and_orbit_audit": {
+    "consequence": "the labeled outgoing shell coefficient is used once for the physical unordered local cell; the ordinary isolated 1/3! preflight is not the generalized-Born trace",
+    "generalized_born_prefactor": "1/(3!*3!)=1/36",
+    "incoming_S3_orbit_multiplicity": 6,
+    "net_factor": "6*6/(3!*3!)=1",
+    "outgoing_S3_orbit_multiplicity": 6
+  },
+  "interpretation": {
+    "Eq19_all_orders": "NOT_PROVED",
+    "declared_three_particle_incoming_projector_cell": "CONSTRUCTED",
+    "detector_independent_three_body_cross_section": "NOT_DEFINED",
+    "dimensionless_local_detector_shell_probability": "COEFFICIENT_COMPUTED",
+    "generalized_born_factorial_trace": "COMPUTED",
+    "public_two_beam_area_mechanism": "RECONSTRUCTED",
+    "ten_channel_global_probability": "NOT_CONSTRUCTED"
+  },
+  "lifecycle_state": "COEFFICIENT_COMPUTED",
+  "next_gate": "Replace the point-characteristic box cell by a compact normalized three-particle wave packet, prove convergence of its generalized-Born trace to the certified cell rate, and glue the ten finite-time channel tubes with an explicit positive detector partition. In parallel, Eq. (19) still requires the unpublished continuum pushforward, ghost-parity, stationarity, and trace-domain proof.",
+  "physical_shell_probability": {
+    "compact_transverse_window": "integral_-S^S |alpha_T,kappa(s)|^2 ds=2*T/kappa*Si(S*T/(2*kappa))-8*sin^2(S*T/(4*kappa))/S",
+    "compact_window_rate_limit": "pi/kappa",
+    "declared_probability": "q_Xi(T)=Gamma_Xi*T*DeltaXi+O(1) for a symmetric compact tangential cell in the isolated-shell long-time expansion",
+    "declared_rate_density": "Gamma_Xi=9*lambda^8/[1024*pi^4*kappa^4*Lx*Ly^2*Lz^2]",
+    "mass_dimension_of_probability": 0,
+    "mass_dimension_of_rate": 1,
+    "scaled_labeled_shell_probability": "27*lambda^8*T/[320*pi^4*kappa] per unit tangential chart volume",
+    "status": "DIMENSIONLESS_DECLARED_DETECTOR_SHELL_PROBABILITY_COEFFICIENT_COMPUTED",
+    "survival": "1-q_Xi(T) at the certified leading order when 0<=q_Xi<=1"
+  },
+  "provenance": {
+    "inputs": [
+      {
+        "path": "planning/work-items/reverse-physics-bateman-three-particle-characteristic-cell.json",
+        "sha256": "3249e99ade3cd4b840d4eec50f484890abdfb09a017e01bdab8607af2fab2b98"
+      },
+      {
+        "path": "reverse_physics/data/bateman_turok_characteristic_function_source_v1.json",
+        "sha256": "42b3a1253e3496bb329d4f33b8db3db52266f79515d034c56e0b9e37e10b8732"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_SIX_POINT_FINITE_TIME_SHELL_COLUMN_V1.json",
+        "sha256": "622c05ec24bbf9e1e439ccde84d2766d8f4ba4434c1027cad87178ad908a8cf2"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_SIX_POINT_SHELL_TREE_NORMALIZATION_V1.json",
+        "sha256": "ec49420424f8bb2ced2d7b70ea42b29c8601137ba35a8c943d95d8592f90e61e"
+      }
+    ],
+    "method": "Exact on-shell constraint-Jacobian evaluation, finite-volume delta counting in the public normalization, exact S3 orbit/factorial enumeration, exact multiplication by the certified BT shell coefficient, and a second coordinate-cell counterexample to detector-independent normalization.",
+    "public_source_archive_sha256": "6681e48614eac27e7ce766563b336c3296bbb94dd00286611672a7a1f15ec0db",
+    "retrieval_date": "2026-08-12",
+    "source_commit": "7f6f5b1f88272373345fde8e872f30208bd389c0"
+  },
+  "public_two_particle_reconstruction": {
+    "characteristic_denominator_exponents": {
+      "L0": 1,
+      "Lx": 2,
+      "Ly": 2,
+      "Lz": 1
+    },
+    "delta4_zero_exponents": {
+      "L0": 1,
+      "Lx": 1,
+      "Ly": 1,
+      "Lz": 1
+    },
+    "remainder": "1/(Lx*Ly)=1/Area",
+    "status": "PUBLIC_APPENDIX_B_AREA_MECHANISM_RECONSTRUCTED",
+    "uncancelled_exponents": {
+      "L0": 0,
+      "Lx": 1,
+      "Ly": 1,
+      "Lz": 0
+    }
+  },
+  "question": "Can the public BT finite-volume characteristic-function prescription be generalized to the exact non-collinear three-beam fixture so that the certified six-point shell coefficient becomes a dimensionless detector probability?",
+  "report": "reverse_physics/reports/bt-three-particle-characteristic-cell.md",
+  "result_kind": "exact declared finite-volume three-particle generalized-Born characteristic cell and local six-point shell probability-rate coefficient",
+  "schema": "reverse_physics/schema/reverse-physics-bt-three-particle-characteristic-cell-v1.schema.json",
+  "schema_version": "reverse-physics-bt-three-particle-characteristic-cell-v1",
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_three_particle_characteristic_cell.py --write --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_three_particle_characteristic_cell.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_three_particle_characteristic_cell"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "id": "sf:program/work/reverse-physics-bateman-three-particle-characteristic-cell",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "reverse-physics",
+    "state": "ACTIVE",
+    "objective": "Generalize the public Bateman--Turok finite-volume characteristic-function construction to the certified non-collinear three-particle incoming fixture and derive the complete local six-point generalized-Born detector rate.",
+    "depends_on": ["REVERSE_PHYSICS_BT_SIX_POINT_SHELL_TREE_NORMALIZATION_V1", "REVERSE_PHYSICS_BT_SIX_POINT_FINITE_TIME_SHELL_COLUMN_V1", "Bateman--Turok arXiv:2607.00096v1 Eqs. (11), (18), and Appendix B"],
+    "activates": ["a declared dimensionless finite-volume three-to-three shell probability", "a precise detector-dependence theorem for the three-particle normalization", "the ten-channel compact wave-packet gluing gate"],
+    "current_gate": "Construct a permutation-symmetric finite-volume incoming characteristic cell at the exact three-beam fixture, evaluate its on-shell Jacobian and delta4(0) cancellation, carry both 3! projector factors through a symmetric outgoing cell, and combine the resulting dimension-two weight with the certified finite-time shell coefficient.",
+    "stop_condition": "Land an exact certificate and independent verifier that reconstruct the public two-beam Area mechanism, prove idempotence and permutation counting for the declared three-beam cell, compute its regulator-dependent incoming weight and the resulting dimensionless local shell probability/rate, and keep detector independence, global channel gluing, Eq. 19, gravity, and Lorentzian causality fail-closed.",
+    "forbid": "no coordinate-cell result called a universal three-body flux or cross section; no unsymmetrized labeled cell used as an identical-particle projector; no 3! inserted or removed without the orbit count; no finite-time shell rate called a complete S matrix; no Eq. 19, gravity, or LORENTZIAN-CAUSAL promotion",
+    "allowed_paths": ["reverse_physics/", "notes/bateman-turok-embedding.md", "paper/05-interaction-obstructions.tex", "paper/05-interaction-obstructions.pdf", "paper/06-einstein-weyl-interaction-obstructions.tex", "paper/06-einstein-weyl-interaction-obstructions.pdf", "planning/work-items/reverse-physics-bateman-three-particle-characteristic-cell.json", "planning/events/"],
+    "resource_hint": "Use the exact incoming momenta kappa*(6/5,6/5,0,0), kappa*(1,-3/5,4/5,0), kappa*(1,-3/5,-4/5,0). Replace the p0x point constraint by total energy 16*kappa/5; the nine-by-nine constraint Jacobian has absolute determinant one. One ordered cell has on-shell weight 1/[8 E0 E1 E2 L0 Lx^2 Ly^3 Lz^3]. Multiplication by delta4(0)=L0 Lx Ly Lz gives 5/[48 kappa^3 Lx Ly^2 Lz^2]. Symmetric incoming and outgoing S3 orbits cancel the two 3! factors in Eq. (18).",
+    "input_commit": "7f6f5b1f88272373345fde8e872f30208bd389c0",
+    "stream": "reverse-physics"
+  }
+}

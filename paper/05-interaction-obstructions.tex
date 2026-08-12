@@ -3001,6 +3001,40 @@ must therefore be declared and derived through the full generalized-Born
 trace.  The tree coupling is no longer missing, but a universal scalar $g$
 still is not defined.
 
+For a declared finite-volume detector, that last local normalization can be
+completed without postulating a universal three-body flux.  Scale the exact
+three-beam fixture by $\kappa$, fix eight spatial momentum components, and
+replace the $p_{0x}$ constraint by
+$E_0+E_1+E_2=16\kappa/5$.  The on-shell constraint Jacobian is one.  In the
+finite-volume conventions of Appendix~B of Bateman--Turok, one ordered cell
+therefore has weight
+\[
+ \frac{5}{48\kappa^3L_0L_x^2L_y^3L_z^3}.
+\]
+The external $\delta_4(0)=L_0L_xL_yL_z$ leaves
+\[
+ N_{\rm in}=\frac{5}{48\kappa^3L_xL_y^2L_z^2},
+\]
+which has the required mass dimension two.  The permutation-symmetric
+incoming cell and physical outgoing cell each contain six disjoint label
+orbits, cancelling the two $3!$ factors in the generalized-Born trace.  Hence
+the local shell rate per unit dimensionless tangential volume is
+\[
+ \Gamma_\Xi=\frac{9\lambda^8}
+ {1024\pi^4\kappa^4L_xL_y^2L_z^2},
+ \qquad q_\Xi(T)=\Gamma_\Xi T\,\Delta\Xi+O(1).
+\]
+Certificate
+\texttt{REVERSE\_PHYSICS\_BT\_THREE\_PARTICLE\_}
+\allowbreak\texttt{CHARACTERISTIC\_CELL\_V1}
+proves this coefficient and its factorial audit.  It also proves that the
+normalization is detector data: replacing $p_{1x}$ rather than $p_{0x}$ by
+the energy characteristic changes the Jacobian to $3/5$ and the point-cell
+weight by $5/3$.  Thus a dimensionless probability coefficient exists for
+the declared cell, but no detector-independent $3\to3$ cross section,
+compact wave-packet limit, ten-channel gluing, or global scattering operator
+has been inferred.
+
 The classified endpoint freedom does not supply this complement by one fixed
 prescription on the minimal two-profile probe lift.  Take
 $v=(1,z(1-z))$ and parameterize a reflection-even extension relative to the
