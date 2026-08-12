@@ -1,0 +1,476 @@
+{
+  "answer": "No in the factorized strongly ordered quotient supplied by the certified tree data. Ordinary momentum crossing p->-p fixes the external virtuality x=p^2 and therefore acts as the identity on the constant/linear dual-number jet. The two real tree orientations consequently carry the same rank-two fixed-sharp species Gram -6*q_x*v*I2, up to a common relative phase. Their orientation Gram is positive semidefinite of rank one, so the complete factorized detector Gram is its tensor product with the negative species block and has only negative nonzero directions. Every positive detector recombination remains nonpositive; interference cannot manufacture the missing sign. The coherent collapse is nevertheless classifiable. For R_t=[I2,t I2] its only nonzero raised eigenvalue is -2*q_x*t*v. Among real unit-modulus relative signs, positivity uniquely forces t=-1. Then R_minus=[I2,-I2] kills the former negative image, selects the previously complementary N_minus quotient, and gives fixed-Hilbertized Gram +6*q_x*v*I2. This repair is induced by epsilon->-epsilon on the parent external-virtuality dual number. It is not ordinary momentum crossing: p->-p leaves p^2 and its nilpotent jet fixed, while epsilon parity is anti-Krein, S^T J S=-J. The regular same-chart hidden-parity route is already independently obstructed on the public BT perturbative vacuum. Therefore standard crossing orientations do not break the barrier. The exact missing datum is now an internal dipole-jet parity or an equivalent nonfactorizing crossed detector term derived from BT dynamics. The present theorem does not exclude the latter because the complete crossed 3->3 amplitude outside the factorized strongly ordered quotient has not been computed.",
+  "assumptions": [
+    "The orientation no-go is restricted to the certified factorized strongly ordered quotient, where both scalar crossing orientations have the same real tree species block up to a relative phase.",
+    "Detector recombination is positive: its two-orientation matrix is positive semidefinite. An indefinite signed detector weight would change the generalized-Born observable and is not admitted silently.",
+    "External virtuality is the Lorentz scalar p^2. Standard momentum crossing p->-p leaves its constant/linear dual-number jet fixed.",
+    "The coherent-collapse classification restricts to species-uniform real relative coefficients R_t=[I2,tI2]. More general species mixing or nonfactorizing crossed terms require new amplitude data.",
+    "The t=-1 repair is recorded as algebraic and conditional. The anti-Krein epsilon parity is not identified with BT ghost parity, R_t, or a physical adjoint without an additional derivation."
+  ],
+  "certificate": "REVERSE_PHYSICS_BT_CROSSED_DETECTOR_ORIENTATION_NO_GO_V1",
+  "checks": {
+    "details": {
+      "R_minus_image_has_positive_fixed_hilbertization": true,
+      "R_minus_kills_N_plus": true,
+      "R_minus_reconstructs_positive_eigenvalue": true,
+      "R_minus_selects_N_minus": true,
+      "R_plus_kills_N_minus": true,
+      "R_plus_reconstructs_negative_eigenvalue": true,
+      "R_plus_selects_N_plus": true,
+      "all_positive_detector_vectors_remain_nonpositive": true,
+      "all_twelve_one_branch_blocks_are_input": true,
+      "combined_nonzero_inertia_is_negative_rank_two": true,
+      "combined_orientation_species_gram_is_tensor_product": true,
+      "crossed_fixed_species_gram_is_negative": true,
+      "epsilon_parity_changes_coherent_collapse_sign": true,
+      "epsilon_parity_is_anti_krein": true,
+      "general_coherent_collapse_eigenvalue": true,
+      "input_hashes_pinned": true,
+      "nonfactorizing_crossed_terms_remain_uncomputed": true,
+      "ordinary_crossing_is_krein_unitary_on_jet": true,
+      "ordinary_momentum_crossing_fixes_virtuality_jet": true,
+      "orientation_gram_eigenvalues_are_zero_two": true,
+      "orientation_gram_is_positive_rank_one": true,
+      "positive_crossed_eigenvalue_requires_t_negative": true,
+      "predecessors_pass": true,
+      "real_unit_modulus_unique_repair_is_t_minus_one": true,
+      "regular_public_hidden_parity_remains_obstructed": true,
+      "relative_phase_does_not_change_orientation_positivity": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 26,
+    "total": 26
+  },
+  "coherent_collapse_classification": {
+    "R_minus_eigenvalue": "+2*q_x*v",
+    "R_minus_fixed_hilbertized_gram": "+6*q_x*v*I2",
+    "R_minus_projector": [
+      [
+        "1/2",
+        "0",
+        "v/(2*q_x)",
+        "0"
+      ],
+      [
+        "0",
+        "1/2",
+        "0",
+        "v/(2*q_x)"
+      ],
+      [
+        "q_x/(2*v)",
+        "0",
+        "1/2",
+        "0"
+      ],
+      [
+        "0",
+        "q_x/(2*v)",
+        "0",
+        "1/2"
+      ]
+    ],
+    "R_minus_raised_pullback": [
+      [
+        "q_x*v",
+        "0",
+        "v**2",
+        "0"
+      ],
+      [
+        "0",
+        "q_x*v",
+        "0",
+        "v**2"
+      ],
+      [
+        "q_x**2",
+        "0",
+        "q_x*v",
+        "0"
+      ],
+      [
+        "0",
+        "q_x**2",
+        "0",
+        "q_x*v"
+      ]
+    ],
+    "R_minus_selected_image": [
+      [
+        "v",
+        "0"
+      ],
+      [
+        "0",
+        "v"
+      ],
+      [
+        "q_x",
+        "0"
+      ],
+      [
+        "0",
+        "q_x"
+      ]
+    ],
+    "R_plus_eigenvalue": "-2*q_x*v",
+    "R_plus_projector": [
+      [
+        "1/2",
+        "0",
+        "-v/(2*q_x)",
+        "0"
+      ],
+      [
+        "0",
+        "1/2",
+        "0",
+        "-v/(2*q_x)"
+      ],
+      [
+        "-q_x/(2*v)",
+        "0",
+        "1/2",
+        "0"
+      ],
+      [
+        "0",
+        "-q_x/(2*v)",
+        "0",
+        "1/2"
+      ]
+    ],
+    "R_plus_raised_pullback": [
+      [
+        "-q_x*v",
+        "0",
+        "v**2",
+        "0"
+      ],
+      [
+        "0",
+        "-q_x*v",
+        "0",
+        "v**2"
+      ],
+      [
+        "q_x**2",
+        "0",
+        "-q_x*v",
+        "0"
+      ],
+      [
+        "0",
+        "q_x**2",
+        "0",
+        "-q_x*v"
+      ]
+    ],
+    "R_plus_selected_image": [
+      [
+        "v",
+        "0"
+      ],
+      [
+        "0",
+        "v"
+      ],
+      [
+        "-q_x",
+        "0"
+      ],
+      [
+        "0",
+        "-q_x"
+      ]
+    ],
+    "complement_exchange": "R_minus kills N_plus and selects N_minus; it does not turn the same negative quotient positive by an absolute value.",
+    "continued_amplitude_D": [
+      [
+        "-q_x",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "-q_x",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "v",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "v"
+      ]
+    ],
+    "family": "R_t=[I2,t I2], real t nonzero",
+    "metric_eta": [
+      [
+        "0",
+        "0",
+        "0",
+        "3"
+      ],
+      [
+        "0",
+        "0",
+        "3",
+        "0"
+      ],
+      [
+        "0",
+        "3",
+        "0",
+        "0"
+      ],
+      [
+        "3",
+        "0",
+        "0",
+        "0"
+      ]
+    ],
+    "nonzero_eigenvalue": "-2*q_x*t*v",
+    "outgoing_style_collapse_R_plus": [
+      [
+        "1",
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "0",
+        "1"
+      ]
+    ],
+    "positivity_condition": "-2*q_x*t*v>0, hence t<0",
+    "raised_characteristic_polynomial": "z**2*(2*q_x*t*v + z)**2",
+    "repaired_collapse_R_minus": [
+      [
+        "1",
+        "0",
+        "-1",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "0",
+        "-1"
+      ]
+    ],
+    "unit_modulus_condition": "For a pure relative sign |t|=1 with real tree coefficients, positivity uniquely gives t=-1."
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "disposition": {
+    "Eq19_all_orders": "NOT_PROVED",
+    "complete_crossed_probability": "NOT_COMPUTED",
+    "internal_jet_parity_BT_affiliation": "NOT_DERIVED",
+    "internal_jet_parity_metric_type": "ANTI_KREIN",
+    "nonfactorizing_crossed_detector_terms": "NOT_COMPUTED",
+    "positive_two_orientation_detector_recombination": "EXACTLY_OBSTRUCTED_ON_FACTORIZED_QUOTIENT",
+    "repaired_complementary_quotient": "CONSTRUCTED_ALGEBRAICALLY",
+    "spacetime_Moller_LSZ_S_operator": "NOT_CONSTRUCTED",
+    "standard_momentum_crossing_on_virtuality_jet": "IDENTITY",
+    "twelve_reversed_physical_intertwiners": "NOT_CONSTRUCTED",
+    "unique_real_unit_modulus_collapse_repair": "R_MINUS_EQUALS_I_COMMA_MINUS_I"
+  },
+  "does_not_establish": [
+    "the complete non-strongly-ordered crossed 3->3 amplitude",
+    "absence of a nonfactorizing crossed pre-trace term that repairs the sign",
+    "physical derivation of epsilon->-epsilon on the external virtuality jet",
+    "an implementation of hidden ghost parity on a singular, localized, doubled or nonlocal BT carrier",
+    "a positive crossed six-point probability",
+    "the twelve reversed physical intertwiners",
+    "the 300 crossed seven-point sheets or spectator sectors",
+    "a complete incoming/outgoing Moller, LSZ, or S operator",
+    "Bateman--Turok Eq. (19)",
+    "positivity beyond tree level or a KLN theorem",
+    "a metric or BRST lift to Weyl gravity",
+    "anything LORENTZIAN-CAUSAL",
+    "a new physical or spacetime dimension",
+    "literature priority"
+  ],
+  "history_disposition": {
+    "conditional_repair_status": "POSITIVE_COMPLEMENTARY_QUOTIENT_IF_INTERNAL_JET_PARITY_IS_DERIVED",
+    "reversed_history_count": 12,
+    "standard_two_orientation_status": "NO_POSITIVE_FIXED_SHARP_INTERTWINER_ON_FACTORIZED_STRONGLY_ORDERED_QUOTIENT",
+    "uniformity": "The orientation tensor and coherent-collapse classification are independent of the external labels, so the same result holds for all twelve reversed histories."
+  },
+  "internal_parity_boundary": {
+    "collapse_relation": "R_minus=R_plus*diag(I2,-I2)",
+    "internal_jet_parity": [
+      [
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "-1"
+      ]
+    ],
+    "internal_parity_metric_law": "S_epsilon^T*J*S_epsilon=-J",
+    "interpretation": "The repair reverses the relative constant/linear or singleton/pair jet orientation. It is an anti-Krein internal operation, not the kinematic p->-p crossing of a scalar external leg.",
+    "ordinary_crossing": [
+      [
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "1"
+      ]
+    ],
+    "ordinary_crossing_metric_law": "I2^T*J*I2=J",
+    "parent_dual_metric": [
+      [
+        "0",
+        "1"
+      ],
+      [
+        "1",
+        "0"
+      ]
+    ],
+    "public_BT_boundary": "The regular same-chart hidden ghost-parity automorphism is independently obstructed because the two target fields have different unit status on the perturbative vacuum chart. Singular, localized, doubled or nonlocal implementations remain open.",
+    "required_affiliation": "Derive S_epsilon, or an equivalent sign in the complete crossed detector collapse, from the regulated BT asymptotic Hamiltonian and generalized-Born sharp."
+  },
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "Derive or obstruct the internal dual-number parity S_epsilon=diag(1,-1) from the regulated BT asymptotic dynamics. The cheapest exact route is to compute the crossed five-to-four parent-jet amplitude ratio before squaring, including the incoming Wightman dual and the physical adjoint: if it produces R_minus, compose it with the already constructed bilateral Kallen range to affiliate all twelve reversed chambers. If it produces R_plus or no regular map, compute the first nonfactorizing crossed 3->3 pre-trace term; only that can evade the tensor-product detector no-go. Eq. (19), spectators and spacetime LSZ remain later gates.",
+  "provenance": {
+    "inputs": [
+      {
+        "path": "planning/work-items/reverse-physics-bateman-crossed-detector-orientation-no-go.json",
+        "sha256": "6b34488b11f0884a7821f53a6c79af2bc92d0a45349ad19a9223d6fd3db82dcb"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_CROSSED_SIX_POINT_KALLEN_OBSTRUCTION_V1.json",
+        "sha256": "5bd45432639aac028fc34fcf7ece5f94213c7c0e1cb633dbb44020f459cff232"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_SIX_POINT_PROFILE_QUOTIENT_COMPLETION_V1.json",
+        "sha256": "fc98bc7f779a9b62325f153c8e09b411e1aeeaad1f0871be411c4485be25d3c8"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_PERTURBATIVE_GHOST_PARITY_UNIT_OBSTRUCTION_V1.json",
+        "sha256": "ec50a99c058632ab3252e9f9bcbab9626f714f791291499c42827ec46f8e4f81"
+      }
+    ],
+    "primary_source": {
+      "equations": [
+        "Eq. (6)",
+        "Eq. (13)",
+        "Eq. (18)",
+        "Eq. (19)",
+        "Appendix B Eqs. (24)-(25)"
+      ],
+      "source": "Bateman--Turok arXiv:2607.00096v1",
+      "url": "https://arxiv.org/abs/2607.00096v1"
+    },
+    "producer_method": "Exact SymPy classification of two-orientation positive detector Grams, all species-uniform real coherent collapses R_t, their Krein projectors and complementary images, followed by an exact dual-number metric comparison of ordinary momentum crossing with epsilon parity. No floating-point arithmetic is used.",
+    "retrieval_date": "2026-08-12",
+    "source_commit": "0a5fc914ca94cd1435df5d6905108ea4557322ce"
+  },
+  "question": "Can the two standard momentum-crossing orientations and their detector interference repair the negative crossed six-point species Gram, or what additional internal operation is exactly required?",
+  "report": "reverse_physics/reports/bt-crossed-detector-orientation-no-go.md",
+  "result_kind": "exact two-orientation positive-detector no-go and classification of the unique internal dual-number sign repair for the crossed six-point quotient",
+  "schema": "reverse_physics/schema/reverse-physics-bt-crossed-detector-orientation-no-go-v1.schema.json",
+  "schema_version": "reverse-physics-bt-crossed-detector-orientation-no-go-v1",
+  "standard_orientation_no_go": {
+    "combined_gram": [
+      [
+        "-6*q_x*v",
+        "0",
+        "-6*q_x*v*exp(-I*theta)",
+        "0"
+      ],
+      [
+        "0",
+        "-6*q_x*v",
+        "0",
+        "-6*q_x*v*exp(-I*theta)"
+      ],
+      [
+        "-6*q_x*v*exp(I*theta)",
+        "0",
+        "-6*q_x*v",
+        "0"
+      ],
+      [
+        "0",
+        "-6*q_x*v*exp(I*theta)",
+        "0",
+        "-6*q_x*v"
+      ]
+    ],
+    "combined_nonzero_inertia": [
+      0,
+      2,
+      2
+    ],
+    "dual_number_statement": "On Q[epsilon]/(epsilon^2), epsilon represents the external virtuality p^2. Standard momentum crossing acts as I2 on the constant/linear coefficient jet.",
+    "factorization_boundary": "The theorem assumes the two orientations restrict to the same certified strongly ordered species block up to phase. A new nonfactorizing crossed pre-trace term is outside the certificate.",
+    "fixed_species_gram": [
+      [
+        "-6*q_x*v",
+        "0"
+      ],
+      [
+        "0",
+        "-6*q_x*v"
+      ]
+    ],
+    "momentum_crossing": "p -> -p with p^2 fixed",
+    "ordinary_crossing_matrix": [
+      [
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "1"
+      ]
+    ],
+    "orientation_amplitudes": [
+      "1",
+      "exp(i*theta)"
+    ],
+    "orientation_gram": [
+      [
+        "1",
+        "exp(-I*theta)"
+      ],
+      [
+        "exp(I*theta)",
+        "1"
+      ]
+    ],
+    "orientation_gram_inertia": [
+      1,
+      0,
+      1
+    ],
+    "phase_boundary": "A relative tree phase changes the positive orientation Gram but not its sign. Positive detector interference cannot implement an indefinite orientation weight.",
+    "positive_detector_theorem": "For any positive detector density M on the two orientations, M tensor (-6*q_x*v*I2) is negative semidefinite. Its negative rank is 2*rank(M), and it has no positive direction."
+  },
+  "verification_commands": [
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/bt_crossed_detector_orientation_no_go.py --write --check",
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/verify_bt_crossed_detector_orientation_no_go.py",
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 -m unittest reverse_physics.tests.test_bt_crossed_detector_orientation_no_go"
+  ]
+}

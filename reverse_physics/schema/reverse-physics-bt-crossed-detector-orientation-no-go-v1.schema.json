@@ -1,0 +1,250 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-crossed-detector-orientation-no-go-v1.schema.json",
+  "title": "BT crossed detector orientation no-go certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "certificate",
+    "schema_version",
+    "dependency_tags",
+    "lifecycle_state",
+    "result_kind",
+    "question",
+    "answer",
+    "standard_orientation_no_go",
+    "coherent_collapse_classification",
+    "internal_parity_boundary",
+    "history_disposition",
+    "disposition",
+    "assumptions",
+    "does_not_establish",
+    "next_gate",
+    "provenance",
+    "verification_commands",
+    "checks",
+    "report",
+    "schema"
+  ],
+  "properties": {
+    "certificate": {
+      "const": "REVERSE_PHYSICS_BT_CROSSED_DETECTOR_ORIENTATION_NO_GO_V1"
+    },
+    "schema_version": {
+      "const": "reverse-physics-bt-crossed-detector-orientation-no-go-v1"
+    },
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]
+    },
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "result_kind": {"type": "string", "minLength": 1},
+    "question": {"type": "string", "minLength": 1},
+    "answer": {"type": "string", "minLength": 1},
+    "standard_orientation_no_go": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "momentum_crossing",
+        "dual_number_statement",
+        "ordinary_crossing_matrix",
+        "fixed_species_gram",
+        "orientation_amplitudes",
+        "orientation_gram",
+        "orientation_gram_inertia",
+        "combined_gram",
+        "combined_nonzero_inertia",
+        "positive_detector_theorem",
+        "phase_boundary",
+        "factorization_boundary"
+      ],
+      "properties": {
+        "momentum_crossing": {"const": "p -> -p with p^2 fixed"},
+        "dual_number_statement": {"type": "string", "minLength": 1},
+        "ordinary_crossing_matrix": {"$ref": "#/$defs/string_matrix"},
+        "fixed_species_gram": {"$ref": "#/$defs/string_matrix"},
+        "orientation_amplitudes": {"const": ["1", "exp(i*theta)"]},
+        "orientation_gram": {"$ref": "#/$defs/string_matrix"},
+        "orientation_gram_inertia": {"const": [1, 0, 1]},
+        "combined_gram": {"$ref": "#/$defs/string_matrix"},
+        "combined_nonzero_inertia": {"const": [0, 2, 2]},
+        "positive_detector_theorem": {"type": "string", "minLength": 1},
+        "phase_boundary": {"type": "string", "minLength": 1},
+        "factorization_boundary": {"type": "string", "minLength": 1}
+      }
+    },
+    "coherent_collapse_classification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "metric_eta",
+        "continued_amplitude_D",
+        "family",
+        "raised_characteristic_polynomial",
+        "nonzero_eigenvalue",
+        "positivity_condition",
+        "unit_modulus_condition",
+        "outgoing_style_collapse_R_plus",
+        "R_plus_raised_pullback",
+        "R_plus_projector",
+        "R_plus_selected_image",
+        "R_plus_eigenvalue",
+        "repaired_collapse_R_minus",
+        "R_minus_raised_pullback",
+        "R_minus_projector",
+        "R_minus_selected_image",
+        "R_minus_eigenvalue",
+        "R_minus_fixed_hilbertized_gram",
+        "complement_exchange"
+      ],
+      "properties": {
+        "metric_eta": {"$ref": "#/$defs/string_matrix"},
+        "continued_amplitude_D": {"$ref": "#/$defs/string_matrix"},
+        "family": {"const": "R_t=[I2,t I2], real t nonzero"},
+        "raised_characteristic_polynomial": {"type": "string", "minLength": 1},
+        "nonzero_eigenvalue": {"const": "-2*q_x*t*v"},
+        "positivity_condition": {"type": "string", "minLength": 1},
+        "unit_modulus_condition": {"type": "string", "minLength": 1},
+        "outgoing_style_collapse_R_plus": {"$ref": "#/$defs/string_matrix"},
+        "R_plus_raised_pullback": {"$ref": "#/$defs/string_matrix"},
+        "R_plus_projector": {"$ref": "#/$defs/string_matrix"},
+        "R_plus_selected_image": {"$ref": "#/$defs/string_matrix"},
+        "R_plus_eigenvalue": {"const": "-2*q_x*v"},
+        "repaired_collapse_R_minus": {"$ref": "#/$defs/string_matrix"},
+        "R_minus_raised_pullback": {"$ref": "#/$defs/string_matrix"},
+        "R_minus_projector": {"$ref": "#/$defs/string_matrix"},
+        "R_minus_selected_image": {"$ref": "#/$defs/string_matrix"},
+        "R_minus_eigenvalue": {"const": "+2*q_x*v"},
+        "R_minus_fixed_hilbertized_gram": {"const": "+6*q_x*v*I2"},
+        "complement_exchange": {"type": "string", "minLength": 1}
+      }
+    },
+    "internal_parity_boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "parent_dual_metric",
+        "ordinary_crossing",
+        "internal_jet_parity",
+        "ordinary_crossing_metric_law",
+        "internal_parity_metric_law",
+        "collapse_relation",
+        "interpretation",
+        "public_BT_boundary",
+        "required_affiliation"
+      ],
+      "properties": {
+        "parent_dual_metric": {"$ref": "#/$defs/string_matrix"},
+        "ordinary_crossing": {"$ref": "#/$defs/string_matrix"},
+        "internal_jet_parity": {"$ref": "#/$defs/string_matrix"},
+        "ordinary_crossing_metric_law": {"const": "I2^T*J*I2=J"},
+        "internal_parity_metric_law": {"const": "S_epsilon^T*J*S_epsilon=-J"},
+        "collapse_relation": {"const": "R_minus=R_plus*diag(I2,-I2)"},
+        "interpretation": {"type": "string", "minLength": 1},
+        "public_BT_boundary": {"type": "string", "minLength": 1},
+        "required_affiliation": {"type": "string", "minLength": 1}
+      }
+    },
+    "history_disposition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "reversed_history_count",
+        "standard_two_orientation_status",
+        "conditional_repair_status",
+        "uniformity"
+      ],
+      "properties": {
+        "reversed_history_count": {"const": 12},
+        "standard_two_orientation_status": {
+          "const": "NO_POSITIVE_FIXED_SHARP_INTERTWINER_ON_FACTORIZED_STRONGLY_ORDERED_QUOTIENT"
+        },
+        "conditional_repair_status": {
+          "const": "POSITIVE_COMPLEMENTARY_QUOTIENT_IF_INTERNAL_JET_PARITY_IS_DERIVED"
+        },
+        "uniformity": {"type": "string", "minLength": 1}
+      }
+    },
+    "disposition": {
+      "const": {
+        "standard_momentum_crossing_on_virtuality_jet": "IDENTITY",
+        "positive_two_orientation_detector_recombination": "EXACTLY_OBSTRUCTED_ON_FACTORIZED_QUOTIENT",
+        "unique_real_unit_modulus_collapse_repair": "R_MINUS_EQUALS_I_COMMA_MINUS_I",
+        "repaired_complementary_quotient": "CONSTRUCTED_ALGEBRAICALLY",
+        "internal_jet_parity_metric_type": "ANTI_KREIN",
+        "internal_jet_parity_BT_affiliation": "NOT_DERIVED",
+        "nonfactorizing_crossed_detector_terms": "NOT_COMPUTED",
+        "twelve_reversed_physical_intertwiners": "NOT_CONSTRUCTED",
+        "complete_crossed_probability": "NOT_COMPUTED",
+        "Eq19_all_orders": "NOT_PROVED",
+        "spacetime_Moller_LSZ_S_operator": "NOT_CONSTRUCTED"
+      }
+    },
+    "assumptions": {
+      "type": "array",
+      "minItems": 5,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "does_not_establish": {
+      "type": "array",
+      "minItems": 14,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "next_gate": {"type": "string", "minLength": 1},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_commit", "retrieval_date", "inputs", "producer_method", "primary_source"],
+      "properties": {
+        "source_commit": {"const": "0a5fc914ca94cd1435df5d6905108ea4557322ce"},
+        "retrieval_date": {"const": "2026-08-12"},
+        "inputs": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["path", "sha256"],
+            "properties": {
+              "path": {"type": "string", "minLength": 1},
+              "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+            }
+          }
+        },
+        "producer_method": {"type": "string", "minLength": 1},
+        "primary_source": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["source", "url", "equations"],
+          "properties": {
+            "source": {"type": "string", "minLength": 1},
+            "url": {"type": "string", "minLength": 1},
+            "equations": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}}
+          }
+        }
+      }
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "items": {"type": "string", "minLength": 1}},
+    "checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"const": 26},
+        "total": {"const": 26},
+        "failures": {"const": []},
+        "details": {"type": "object", "minProperties": 26, "maxProperties": 26, "additionalProperties": {"const": true}}
+      }
+    },
+    "report": {"const": "reverse_physics/reports/bt-crossed-detector-orientation-no-go.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-crossed-detector-orientation-no-go-v1.schema.json"}
+  },
+  "$defs": {
+    "string_matrix": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "array", "minItems": 1, "items": {"type": "string"}}
+    }
+  }
+}
