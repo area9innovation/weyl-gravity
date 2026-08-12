@@ -1,0 +1,388 @@
+{
+  "schema_version": "foundational-normal-hyperbolic-factor-atlas-v1",
+  "result_id": "FOUNDATIONAL_NORMAL_HYPERBOLIC_FACTOR_ATLAS_V1",
+  "result_kind": "LITERATURE_AND_FOUNDATIONAL_DEPENDENCY_ATLAS",
+  "lifecycle": "LITERATURE_SCOPED",
+  "created": "2026-08-12",
+  "repository_base_commit": "1ec0ae4b25c0cb53859263613a8dc6a56fb85709",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "target": "One scalar or finite-rank normally-hyperbolic factor on a globally hyperbolic spacetime, with existence, uniqueness, continuity, advanced/retarded maps, and causal support kept separate.",
+  "answer": "Classical existence and strict causal support are directly established in the reviewed smooth and metric-graph literature. Computable solution operators are directly established for represented symmetric-hyperbolic systems, but the reviewed computability papers do not construct globally hyperbolic advanced/retarded Green maps. No direct second-order-arithmetic reversal or Bishop-style global Green theorem was located in the bounded search. Choice-sensitive Hilbert-space results show that the ambient operator theory cannot be treated as automatically choice-free. Exact finite graph-step Green kernels are separately certified locally.",
+  "dependency_chain": [
+    {
+      "id": "CODED_GEOMETRY",
+      "object": "globally hyperbolic spacetime, Cauchy surface, finite-rank bundle and causal relation",
+      "classical": "USED",
+      "computable": "MANIFOLD_VERSION_NOT_FOUND",
+      "reverse_math": "NOT_FORMALIZED",
+      "choice": "NOT_CLASSIFIED"
+    },
+    {
+      "id": "OPERATOR_DATA",
+      "object": "normally/symmetric-hyperbolic operator with domains and coefficient representation",
+      "classical": "EXPLICIT",
+      "computable": "DIRECT_FOR_CUBE_SYSTEMS",
+      "reverse_math": "NOT_FORMALIZED",
+      "choice": "ZF_HILBERT_ADJACENT_ONLY"
+    },
+    {
+      "id": "ENERGY_ESTIMATE",
+      "object": "local and finite-slab energy estimate",
+      "classical": "DIRECT",
+      "computable": "EFFECTIVE_ESTIMATES_IN_REPRESENTED_SYSTEM",
+      "reverse_math": "NO_SUBSYSTEM_BOUND",
+      "choice": "NOT_CLASSIFIED"
+    },
+    {
+      "id": "CAUCHY_EXISTENCE",
+      "object": "global solution for compactly supported Cauchy data",
+      "classical": "DIRECT",
+      "computable": "DIRECT_FOR_CUBE_SYSTEMS",
+      "reverse_math": "NO_SUBSYSTEM_BOUND",
+      "choice": "NOT_CLASSIFIED"
+    },
+    {
+      "id": "UNIQUENESS",
+      "object": "Cauchy uniqueness",
+      "classical": "DIRECT",
+      "computable": "USED_AND_EFFECTIVE_IN_SCOPE",
+      "reverse_math": "NO_SUBSYSTEM_BOUND",
+      "choice": "NOT_CLASSIFIED"
+    },
+    {
+      "id": "CONTINUITY",
+      "object": "continuous dependence in declared topologies",
+      "classical": "DIRECT",
+      "computable": "DIRECT_IN_TTE_REPRESENTATIONS",
+      "reverse_math": "REPRESENTATION_NOT_CODED",
+      "choice": "COMPLETION_DEPENDENCE_OPEN"
+    },
+    {
+      "id": "FINITE_PROPAGATION",
+      "object": "strict support inside the causal cone",
+      "classical": "DIRECT",
+      "computable": "NOT_A_STATED_OUTPUT_OF_REVIEWED_TTE_THEOREM",
+      "reverse_math": "NOT_FORMALIZED",
+      "choice": "NOT_CLASSIFIED"
+    },
+    {
+      "id": "GREEN_MAPS",
+      "object": "advanced and retarded right/left inverses on test sections",
+      "classical": "DIRECT",
+      "computable": "NOT_LOCATED",
+      "reverse_math": "NOT_FORMALIZED",
+      "choice": "NOT_CLASSIFIED"
+    },
+    {
+      "id": "DISTRIBUTIONAL_EXTENSION",
+      "object": "continuous extension and formal-adjoint reversal",
+      "classical": "DIRECT",
+      "computable": "NOT_LOCATED",
+      "reverse_math": "NOT_FORMALIZED",
+      "choice": "DUALITY_AND_COMPLETION_OPEN"
+    }
+  ],
+  "framework_findings": [
+    {
+      "framework": "CLASSICAL_STANDARD",
+      "status": "DIRECT_RESULT",
+      "evidence": [
+        "baer-2015",
+        "muehlhoff-2010"
+      ],
+      "establishes": [
+        "Cauchy existence",
+        "uniqueness",
+        "continuous dependence for symmetric hyperbolic systems",
+        "advanced/retarded Green maps for normally/prenormally hyperbolic operators",
+        "strict causal support"
+      ],
+      "does_not_establish": [
+        "weakest base",
+        "choice avoidance",
+        "full Weyl BV propagator"
+      ]
+    },
+    {
+      "framework": "COMPUTABLE_TTE",
+      "status": "DIRECT_UPPER_BOUND_IN_REPRESENTATION",
+      "evidence": [
+        "weihrauch-zhong-2002",
+        "selivanova-selivanov-2013",
+        "selivanova-selivanov-2018"
+      ],
+      "establishes": [
+        "computable wave or symmetric-hyperbolic solution operators under specified representations and regularity",
+        "effective finite-difference convergence in the stated cube systems"
+      ],
+      "does_not_establish": [
+        "Bishop constructive derivability",
+        "RCA_0 proof",
+        "advanced/retarded maps on globally hyperbolic manifolds",
+        "strict causal-support computability"
+      ]
+    },
+    {
+      "framework": "BISHOP_CONSTRUCTIVE",
+      "status": "BOUNDED_SEARCH_NO_DIRECT_THEOREM",
+      "evidence": [],
+      "establishes": [],
+      "does_not_establish": [
+        "literature absence",
+        "impossibility",
+        "a constructive no-go"
+      ]
+    },
+    {
+      "framework": "REVERSE_MATHEMATICS",
+      "status": "BOUNDED_SEARCH_NO_DIRECT_REVERSAL",
+      "evidence": [
+        "brown-simpson-1986",
+        "humphreys-simpson-1996",
+        "humphreys-simpson-1999",
+        "brattka-2008"
+      ],
+      "establishes": [
+        "nearby Banach/Hilbert principles have representation-sensitive strengths ranging from WKL_0 to stronger comprehension"
+      ],
+      "does_not_establish": [
+        "an RCA_0 upper bound",
+        "a WKL_0 or ACA_0 lower bound for hyperbolic PDE"
+      ]
+    },
+    {
+      "framework": "ZF_WITHOUT_COUNTABLE_CHOICE",
+      "status": "ADJACENT_OPERATOR_THEORY_ONLY",
+      "evidence": [
+        "blackadar-farah-karagila-2026"
+      ],
+      "establishes": [
+        "substantial Hilbert/operator theory can be developed in ZF and familiar basis behavior can fail without countable Choice"
+      ],
+      "does_not_establish": [
+        "ZF construction of Sobolev spaces and Green maps",
+        "choice-free hyperbolic PDE"
+      ]
+    },
+    {
+      "framework": "FINITE_OR_DISCRETE",
+      "status": "THREE_DISTINCT_RESULTS",
+      "evidence": [
+        "FOUNDATIONAL_FINITE_GRAPH_WAVE_CAUSALITY_V1",
+        "kostrykin-potthoff-schrader-2011",
+        "nachtergaele-raz-schlein-sims-2007"
+      ],
+      "establishes": [
+        "exact graph-step support for the local finite recurrence",
+        "strict finite propagation for specified metric-graph waves",
+        "exponential Lieb-Robinson cones for specified lattice systems"
+      ],
+      "does_not_establish": [
+        "that these three support notions are equivalent",
+        "a continuum limit",
+        "Lorentzian Green support from a Lieb-Robinson tail"
+      ]
+    }
+  ],
+  "bounded_search": {
+    "date": "2026-08-12",
+    "queries": [
+      "reverse mathematics wave equation",
+      "reverse mathematics partial differential equations",
+      "constructive mathematics hyperbolic partial differential equations existence",
+      "computable symmetric hyperbolic systems",
+      "Choice Hilbert spaces operator theory",
+      "finite propagation discrete wave equation graph"
+    ],
+    "screened_primary_records": 13,
+    "included_new_records": 6,
+    "negative_finding_rule": "NO_DIRECT_THEOREM means none was identified among the screened results; it never means that no such literature exists."
+  },
+  "cell_actions": [
+    {
+      "coordinate": "CLASSICAL_STANDARD|HILBERT_OPERATOR|CAUSAL_PROPAGATION_GREEN",
+      "old": "NOT_MAPPED",
+      "new": "LITERATURE_RESULT",
+      "evidence": [
+        "kostrykin-potthoff-schrader-2011"
+      ],
+      "basis": "Self-adjoint Hilbert-space Laplacians on metric graphs have well-posed wave evolution and strict finite propagation."
+    },
+    {
+      "coordinate": "FINITE_DISCRETE|HILBERT_OPERATOR|EVOLUTION_WELLPOSEDNESS",
+      "old": "NOT_MAPPED",
+      "new": "LITERATURE_RESULT",
+      "evidence": [
+        "kostrykin-potthoff-schrader-2011"
+      ],
+      "basis": "The metric-graph theorem proves existence and uniqueness for the specified finite/network geometry."
+    },
+    {
+      "coordinate": "FINITE_DISCRETE|HILBERT_OPERATOR|CAUSAL_PROPAGATION_GREEN",
+      "old": "NOT_MAPPED",
+      "new": "LITERATURE_RESULT",
+      "evidence": [
+        "kostrykin-potthoff-schrader-2011"
+      ],
+      "basis": "The same theorem proves strict finite propagation under its local boundary conditions."
+    },
+    {
+      "coordinate": "WEAK_ARITHMETIC|HILBERT_OPERATOR|GENERATOR_SPECTRAL_DYNAMICS",
+      "old": "NOT_MAPPED",
+      "new": "PIECES_ONLY",
+      "evidence": [
+        "FOUNDATIONAL_NORMAL_HYPERBOLIC_FACTOR_ATLAS_V1"
+      ],
+      "basis": "Effective evolution and reverse functional-analysis ingredients exist, but no coded generator theorem or subsystem calibration was located."
+    },
+    {
+      "coordinate": "WEAK_ARITHMETIC|HILBERT_OPERATOR|EVOLUTION_WELLPOSEDNESS",
+      "old": "NOT_MAPPED",
+      "new": "PIECES_ONLY",
+      "evidence": [
+        "FOUNDATIONAL_NORMAL_HYPERBOLIC_FACTOR_ATLAS_V1"
+      ],
+      "basis": "Computable solution operators are adjacent, but no second-order-arithmetic upper bound or reversal was located."
+    },
+    {
+      "coordinate": "WEAK_ARITHMETIC|HILBERT_OPERATOR|CAUSAL_PROPAGATION_GREEN",
+      "old": "NOT_MAPPED",
+      "new": "PIECES_ONLY",
+      "evidence": [
+        "FOUNDATIONAL_NORMAL_HYPERBOLIC_FACTOR_ATLAS_V1"
+      ],
+      "basis": "Classical support and effective evolution exist separately; their combination has not been formalized over a weak subsystem."
+    },
+    {
+      "coordinate": "CONSTRUCTIVE_COMPUTABLE|SMOOTH_DISTRIBUTIONAL|GENERATOR_SPECTRAL_DYNAMICS",
+      "old": "PRIORITY_GAP",
+      "new": "PIECES_ONLY",
+      "evidence": [
+        "selivanova-selivanov-2013",
+        "selivanova-selivanov-2018"
+      ],
+      "basis": "A represented symmetric-hyperbolic solution operator is computable, but an explicit computable generator/domain/spectral theorem is still missing."
+    },
+    {
+      "coordinate": "WEAK_CHOICE_ZF|HILBERT_OPERATOR|CAUSAL_PROPAGATION_GREEN",
+      "old": "NOT_MAPPED",
+      "new": "PIECES_ONLY",
+      "evidence": [
+        "FOUNDATIONAL_NORMAL_HYPERBOLIC_FACTOR_ATLAS_V1",
+        "blackadar-farah-karagila-2026"
+      ],
+      "basis": "ZF Hilbert theory and classical causal PDE are known separately; the Sobolev/Green construction has not been proved choice-free."
+    },
+    {
+      "coordinate": "FINITE_DISCRETE|FINITE_EXACT|CAUSAL_PROPAGATION_GREEN",
+      "old": "PIECES_ONLY",
+      "new": "LOCAL_RESULT",
+      "evidence": [
+        "FOUNDATIONAL_FINITE_GRAPH_WAVE_CAUSALITY_V1"
+      ],
+      "basis": "Exact rational retarded/advanced kernels have a certified graph-step support cone on the displayed finite fixtures."
+    }
+  ],
+  "evidence_overlays": [
+    {
+      "coordinate": "CLASSICAL_STANDARD|SMOOTH_DISTRIBUTIONAL|EVOLUTION_WELLPOSEDNESS",
+      "evidence": [
+        "baer-2015"
+      ],
+      "basis": "The symmetric-hyperbolic Cauchy theorem gives existence, uniqueness and continuous dependence."
+    },
+    {
+      "coordinate": "CLASSICAL_STANDARD|SMOOTH_DISTRIBUTIONAL|CAUSAL_PROPAGATION_GREEN",
+      "evidence": [
+        "baer-2015",
+        "muehlhoff-2010"
+      ],
+      "basis": "The normally- and prenormally-hyperbolic theorems give advanced/retarded Green maps with causal support."
+    },
+    {
+      "coordinate": "CONSTRUCTIVE_COMPUTABLE|SMOOTH_DISTRIBUTIONAL|EVOLUTION_WELLPOSEDNESS",
+      "evidence": [
+        "selivanova-selivanov-2013",
+        "selivanova-selivanov-2018"
+      ],
+      "basis": "The represented symmetric-hyperbolic solution operator is computable with effective approximation and complexity bounds in the papers' scope."
+    },
+    {
+      "coordinate": "CONSTRUCTIVE_COMPUTABLE|SMOOTH_DISTRIBUTIONAL|CAUSAL_PROPAGATION_GREEN",
+      "evidence": [
+        "selivanova-selivanov-2013"
+      ],
+      "basis": "Computable evolution is direct evidence for one ingredient, while strict globally-hyperbolic Green support remains outside the theorem."
+    },
+    {
+      "coordinate": "FINITE_DISCRETE|ALGEBRAIC_CSTAR|CAUSAL_PROPAGATION_GREEN",
+      "evidence": [
+        "nachtergaele-raz-schlein-sims-2007"
+      ],
+      "basis": "Lieb-Robinson decay supplies an effective lattice cone, explicitly distinguished from strict support."
+    }
+  ],
+  "provenance": {
+    "inputs": [
+      {
+        "path": "foundations/literature-ledger.json",
+        "sha256": "93aa76fc9042f81be11d716664593afe78f91b9c83fa3c04a03cb6aeae558596"
+      },
+      {
+        "path": "foundations/literature-supplement-known-attempts-v1.json",
+        "sha256": "3f4a836af7c815e9628f0c0b1ee10bc5de7d8ecceba9df8d0757f766a0394dc7"
+      },
+      {
+        "path": "foundations/literature-expansion-v2.json",
+        "sha256": "d242e4a978acd268a2b463b7246dc6a712f98ab00bcc9955791f1d61771ed8bc"
+      },
+      {
+        "path": "foundations/results/FOUNDATIONAL_TYPED_BIWAVE_GREEN_DEPENDENCY_AUDIT_V1.json",
+        "sha256": "f00e642c25fec883441346884467a7251c4ee61b4980b0370f124845b9cba8d6"
+      },
+      {
+        "path": "foundations/results/FOUNDATIONAL_FINITE_GRAPH_WAVE_CAUSALITY_V1.json",
+        "sha256": "2790e43f566c86e07f7b452fdfac516c59d319df4fd2e410664e7ff130396e79"
+      }
+    ]
+  },
+  "independent_checker": {
+    "path": "foundations/check_normal_hyperbolic_factor_atlas.py",
+    "checks": [
+      "source ID closure",
+      "content-pin closure",
+      "dependency-stage closure",
+      "framework boundary closure",
+      "nine status-changing cell actions",
+      "five evidence overlays",
+      "canonical digest"
+    ],
+    "expected_digest": "5b5a403cb0276f7aeb6358a859abca910a2bbcb79ba8ad9af32874916117d70c"
+  },
+  "claim_flags": {
+    "classical_factor_theorem_identified": true,
+    "computable_upper_bound_identified": true,
+    "finite_exact_support_constructed": true,
+    "reverse_math_strength_proved": false,
+    "bishop_constructive_green_theorem_identified": false,
+    "choice_free_green_theorem_proved": false,
+    "full_biwave_reversal_proved": false,
+    "new_weyl_bv_propagator": false
+  },
+  "does_not_establish": [
+    "literature completeness",
+    "a weakest subsystem",
+    "an RCA_0, WKL_0 or ACA_0 equivalence",
+    "a Bishop-constructive globally hyperbolic Green theorem",
+    "Choice avoidance for Sobolev/distribution theory",
+    "a continuum limit from finite graphs",
+    "a full off-shell Weyl metric BV propagator",
+    "a BRST-compatible Hadamard state",
+    "renormalized Lorentzian products or a Lorentzian QME"
+  ],
+  "human_report": "foundations/reports/normal-hyperbolic-factor-foundations.md"
+}

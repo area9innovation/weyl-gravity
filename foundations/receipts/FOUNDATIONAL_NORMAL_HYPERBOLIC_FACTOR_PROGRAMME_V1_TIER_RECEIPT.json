@@ -1,0 +1,99 @@
+{
+  "schema_version": "science-forge-tier-receipt-v1",
+  "receipt_id": "FOUNDATIONAL_NORMAL_HYPERBOLIC_FACTOR_PROGRAMME_V1_TIER_RECEIPT",
+  "created": "2026-08-12",
+  "repository_base_commit": "1ec0ae4b25c0cb53859263613a8dc6a56fb85709",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
+  "scope": "Bounded primary-literature atlas, dependency decomposition, exact finite-graph support certificate, research-refined cube v3, and regeneration of the existing static explorer.",
+  "tiers": {
+    "tier_0_compile": {
+      "status": "PASS",
+      "command": "python3 -m py_compile foundations/{build,check,verify}_finite_graph_wave_causality.py foundations/{build,check,verify}_normal_hyperbolic_factor_atlas.py foundations/refine_intersection_cube_v3.py foundations/check_refined_intersection_cube_v3.py foundations/verify_refined_intersection_cube_v3.py foundations/build_matrix_site.py foundations/build_matrix_site_v2.py foundations/check_matrix_site_v2.py foundations/verify_matrix_site_v2.py and four scoped test modules",
+      "elapsed_seconds": 0.05
+    },
+    "tier_0_json": {
+      "status": "PASS",
+      "command": "parse every foundations/**/*.json with json.loads",
+      "elapsed_seconds": 0.04,
+      "result": "112 JSON files parsed before this receipt was added; the receipt was parsed separately afterward."
+    },
+    "tier_0_diff_check": {
+      "status": "PASS",
+      "command": "git diff --check -- foundations",
+      "elapsed_seconds": 0.01
+    },
+    "tier_1_exact_finite_graph": {
+      "status": "PASS",
+      "command": "python3 foundations/verify_finite_graph_wave_causality.py",
+      "elapsed_seconds": 0.08,
+      "result": "Three exact rational fixtures; 491 recurrence-entry checks; 663 adjoint-entry checks; zero graph-step support violations; digest f340e3da3e89a151e1bff57a421b274d285b6733a218f323bfd41089477caaf7."
+    },
+    "tier_1_literature_atlas": {
+      "status": "PASS",
+      "command": "python3 foundations/verify_normal_hyperbolic_factor_atlas.py",
+      "elapsed_seconds": 0.11,
+      "result": "Six content-pinned primary sources, nine dependency stages, six framework findings, nine status-changing actions and five evidence overlays; digest 5b5a403cb0276f7aeb6358a859abca910a2bbcb79ba8ad9af32874916117d70c."
+    },
+    "tier_1_cube_v3": {
+      "status": "PASS",
+      "command": "python3 foundations/verify_refined_intersection_cube_v3.py",
+      "elapsed_seconds": 0.10,
+      "result": "All 452 v2 coordinates and migration fields preserved; coverage classified for 371; nine status changes; five evidence overlays; 81 reviewed-no-transfer cells remain unmapped; digest 157a88c2580d6d66ae34cddb8b6ca626649deb2111079e84e21fa2b8fd4b7209."
+    },
+    "tier_1_existing_site": {
+      "status": "PASS",
+      "command": "python3 foundations/verify_matrix_site_v2.py",
+      "elapsed_seconds": 0.15,
+      "result": "The existing foundations/site surface contains 576 coordinates, 371 classified emitted cells, 205 total not-mapped cells, 59 resolved evidence records, and a current content-addressed manifest; digest 461dac5c6ba241f33b2cf2117585ba1bef1c5d2137b373cf866a419243316d6f."
+    },
+    "tier_1_browser_smoke": {
+      "status": "PASS",
+      "command": "serve foundations/site on localhost; load the newly classified CLASSICAL_STANDARD|HILBERT_OPERATOR|CAUSAL_PROPAGATION_GREEN permalink in headless Google Chrome at 1600x1100; inspect DOM and screenshot",
+      "elapsed_seconds": 1.8,
+      "result": "The explorer rendered 371/452 classified coverage, 205 not mapped, 59 evidence records, the metric-graph literature result, its claim boundary, and the preserved REVIEWED_NO_TRANSFER migration history."
+    },
+    "tier_2_affected_chain": {
+      "status": "PASS",
+      "command": "all four generators --check plus all four independent checkers",
+      "elapsed_seconds": 0.39,
+      "result": "Every generated artifact is byte-current and all independent structural or exact checks pass."
+    },
+    "tier_2_foundations_tests": {
+      "status": "PASS",
+      "command": "python3 -m unittest discover -s foundations/tests -t .",
+      "elapsed_seconds": 1.99,
+      "result": "253/253 tests pass."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No freeze/tag, paper-theorem lifecycle promotion, shared classical core-algebra change, release preparation, or explicit full-repository suite request applies. The complete foundations suite and affected certificate chain were run."
+    }
+  },
+  "literature_method": {
+    "screened_primary_records": 13,
+    "included_new_records": 6,
+    "pdf_pinning": "Six openly retrievable arXiv PDF byte streams were SHA-256 hashed without vendoring.",
+    "negative_result_boundary": "No direct reverse-mathematical subsystem theorem or Bishop-style globally hyperbolic Green theorem was identified in the bounded search. This is not a literature-absence or impossibility claim."
+  },
+  "artifact_hashes": {
+    "foundations/results/FOUNDATIONAL_FINITE_GRAPH_WAVE_CAUSALITY_V1.json": "2790e43f566c86e07f7b452fdfac516c59d319df4fd2e410664e7ff130396e79",
+    "foundations/literature-causal-green-atlas-v1.json": "3d332cfb759819581dae7ec6a01f2a2776df8f27184723f53688056609024c58",
+    "foundations/results/FOUNDATIONAL_NORMAL_HYPERBOLIC_FACTOR_ATLAS_V1.json": "40836e986d2ba7b957cc51298c1bd724ace32ef59f846a7abc63b8980143a6c4",
+    "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V3.json": "3caf7391133cffdf11b811464848ca3540b6a016022e4c5f493c74b192c85e02",
+    "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json": "c6f1d38a31270151a330452589a7bf867e9b5e8856388e4f9512ff9615c06864",
+    "foundations/site/data.json": "635aaca29a865bf0d660841bd781b97693a67b05598b41979a83ba7dd5cb9b51",
+    "foundations/site/manifest.json": "dd32c39c3fd2e68baea317eb1de99f5a14f49b226276de0900570c9e70dc4dfe",
+    "foundations/reports/finite-graph-wave-causality.md": "8240b3bfa71b85cb6b67827cd3f92225ab72ccae9a94dd3d64db6a3fca84df9c",
+    "foundations/reports/normal-hyperbolic-factor-foundations.md": "0152e3dd389fec9f580577121c033beab3a6fab9727b19af0bb1ab185db97e3d",
+    "foundations/reports/refined-intersection-cube-v3.md": "617d3944552e936a6d7c21e6f274ce11f9f88085dd023829f9d7338938ae504c"
+  },
+  "unresolved": [
+    "No second-order-arithmetic coding, upper bound, or reversal for the normally-hyperbolic Cauchy/Green theorem has been proved.",
+    "No Bishop-constructive globally hyperbolic Green theorem was identified by the bounded search.",
+    "ZF Hilbert/operator results do not establish a choice-free Sobolev and distributional PDE construction.",
+    "Exact graph-step support, metric-graph strict propagation, and Lieb-Robinson decay are three distinct result types; no continuum limit was proved.",
+    "The 81 still-unmapped reviewed-no-transfer coordinates and 124 synthetic coordinates remain fail-closed research territory.",
+    "No full off-shell Weyl metric BV propagator, Hadamard state, causal perturbative AQFT construction, or Lorentzian QME was promoted."
+  ],
+  "claim_boundary": "This receipt certifies a bounded literature and dependency atlas, an exact LOCAL-ALGEBRAIC finite recurrence result, a research navigation update, and a static projection. It does not certify a weakest base, Choice elimination, constructive continuum PDE theorem, continuum limit, full biwave reversal, or new LORENTZIAN-CAUSAL Weyl result."
+}

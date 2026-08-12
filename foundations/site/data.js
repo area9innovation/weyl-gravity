@@ -303,20 +303,20 @@ window.MATRIX_EXPLORER_DATA = {
   "counts": {
     "cartesian_total": 576,
     "emitted": 452,
-    "coverage_classified": 364,
-    "qualified": 364,
+    "coverage_classified": 371,
+    "qualified": 371,
     "migration_reviewed": 452,
     "migration_pending": 0,
     "migration_unresolved": 0,
     "reviewed_no_transfer": 88,
-    "not_mapped": 212,
+    "not_mapped": 205,
     "synthetic_not_mapped": 124,
     "status_counts": {
-      "LITERATURE_RESULT": 90,
-      "LOCAL_RESULT": 85,
-      "NOT_MAPPED": 212,
-      "PIECES_ONLY": 158,
-      "PRIORITY_GAP": 31
+      "LITERATURE_RESULT": 93,
+      "LOCAL_RESULT": 86,
+      "NOT_MAPPED": 205,
+      "PIECES_ONLY": 162,
+      "PRIORITY_GAP": 30
     },
     "migration_status_counts": {
       "CAPABILITY_QUALIFIED": 257,
@@ -326,7 +326,7 @@ window.MATRIX_EXPLORER_DATA = {
       "REVIEWED_NO_TRANSFER": 88,
       "REVIEWED_OVERLAY": 11
     },
-    "evidence_records": 51
+    "evidence_records": 59
   },
   "cells": [
     {
@@ -528,7 +528,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -543,7 +543,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -558,7 +558,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -653,7 +653,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -668,7 +668,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -723,7 +723,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -759,7 +759,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -797,7 +797,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -812,7 +812,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -827,7 +827,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -1182,7 +1182,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -1197,7 +1197,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -1212,7 +1212,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -1227,7 +1227,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -1242,7 +1242,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -1339,7 +1339,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -1455,7 +1455,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -1884,7 +1884,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -1899,7 +1899,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -1914,7 +1914,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -1929,7 +1929,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -1944,7 +1944,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -2041,7 +2041,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -2154,7 +2154,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -2590,7 +2590,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -2605,7 +2605,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -2620,7 +2620,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -2635,7 +2635,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -2650,7 +2650,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -2745,7 +2745,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -2858,7 +2858,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -3293,7 +3293,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -3308,7 +3308,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -3323,7 +3323,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -3338,7 +3338,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -3353,7 +3353,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -3446,7 +3446,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -3558,7 +3558,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -3977,12 +3977,14 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "WEAK_ARITHMETIC",
       "carrier": "HILBERT_OPERATOR",
       "obligation": "GENERATOR_SPECTRAL_DYNAMICS",
-      "status": "NOT_MAPPED",
-      "evidence": [],
+      "status": "PIECES_ONLY",
+      "evidence": [
+        "FOUNDATIONAL_NORMAL_HYPERBOLIC_FACTOR_ATLAS_V1"
+      ],
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: Logical-strength results for separation and Hahn-Banach principles do not construct a generator, well-posed evolution, or a causal Green operator. No reviewed record in the batch constructs the required generator or spectral dynamics in this refined coordinate.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "Effective evolution and reverse functional-analysis ingredients exist, but no coded generator theorem or subsystem calibration was located.",
+      "boundary": "This classification is restricted to the cited object and foundational framework; it does not transfer to stronger causal, continuum, choice-free, or reverse-mathematical claims.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "brown-simpson-1986",
@@ -3991,6 +3993,11 @@ window.MATRIX_EXPLORER_DATA = {
         "brattka-2008"
       ],
       "migration_rationale": "Logical-strength results for separation and Hahn-Banach principles do not construct a generator, well-posed evolution, or a causal Green operator. No reviewed record in the batch constructs the required generator or spectral dynamics in this refined coordinate.",
+      "research_revision": {
+        "atlas": "FOUNDATIONAL_NORMAL_HYPERBOLIC_FACTOR_ATLAS_V1",
+        "kind": "STATUS_CHANGE",
+        "previous_status": "NOT_MAPPED"
+      },
       "emitted": true
     },
     {
@@ -4064,7 +4071,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -4176,7 +4183,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -4263,15 +4270,23 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "CONSTRUCTIVE_COMPUTABLE",
       "carrier": "SMOOTH_DISTRIBUTIONAL",
       "obligation": "GENERATOR_SPECTRAL_DYNAMICS",
-      "status": "PRIORITY_GAP",
-      "evidence": [],
+      "status": "PIECES_ONLY",
+      "evidence": [
+        "selivanova-selivanov-2013",
+        "selivanova-selivanov-2018"
+      ],
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed child gap: The broad v0 priority gap is coherent at this child: the current corpus lacks a constructive smooth-wave generator with declared domains and representation.",
-      "boundary": "This is a reviewed programme gap in the current corpus, not proof of literature absence, impossibility, necessity, or a no-go theorem.",
+      "summary": "A represented symmetric-hyperbolic solution operator is computable, but an explicit computable generator/domain/spectral theorem is still missing.",
+      "boundary": "This classification is restricted to the cited object and foundational framework; it does not transfer to stronger causal, continuum, choice-free, or reverse-mathematical claims.",
       "migration_status": "REVIEWED_CHILD_GAP",
       "migration_evidence": [],
       "migration_rationale": "The broad v0 priority gap is coherent at this child: the current corpus lacks a constructive smooth-wave generator with declared domains and representation.",
+      "research_revision": {
+        "atlas": "FOUNDATIONAL_NORMAL_HYPERBOLIC_FACTOR_ATLAS_V1",
+        "kind": "STATUS_CHANGE",
+        "previous_status": "PRIORITY_GAP"
+      },
       "emitted": true
     },
     {
@@ -4625,17 +4640,23 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "EVOLUTION_WELLPOSEDNESS",
       "status": "LOCAL_RESULT",
       "evidence": [
-        "FOUNDATIONAL_TYPED_BIWAVE_GREEN_DEPENDENCY_AUDIT_V1"
+        "FOUNDATIONAL_TYPED_BIWAVE_GREEN_DEPENDENCY_AUDIT_V1",
+        "baer-2015"
       ],
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "CAPABILITY_QUALIFIED",
-      "summary": "Refined child 'Evolution/well-posedness': registered evidence supports this child.",
+      "summary": "Refined child 'Evolution/well-posedness': registered evidence supports this child. New atlas evidence: The symmetric-hyperbolic Cauchy theorem gives existence, uniqueness and continuous dependence.",
       "boundary": "The v0 parent status is not inherited by sibling obligations. The exact checker proves no PDE existence and no full BV propagator.",
       "migration_status": "CAPABILITY_QUALIFIED",
       "migration_evidence": [
         "FOUNDATIONAL_TYPED_BIWAVE_GREEN_DEPENDENCY_AUDIT_V1"
       ],
       "migration_rationale": "The explicit v1 evidence-capability registry licenses transfer to this child.",
+      "research_revision": {
+        "atlas": "FOUNDATIONAL_NORMAL_HYPERBOLIC_FACTOR_ATLAS_V1",
+        "kind": "EVIDENCE_OVERLAY",
+        "previous_status": "LOCAL_RESULT"
+      },
       "emitted": true
     },
     {
@@ -4682,12 +4703,14 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "WEAK_ARITHMETIC",
       "carrier": "HILBERT_OPERATOR",
       "obligation": "EVOLUTION_WELLPOSEDNESS",
-      "status": "NOT_MAPPED",
-      "evidence": [],
+      "status": "PIECES_ONLY",
+      "evidence": [
+        "FOUNDATIONAL_NORMAL_HYPERBOLIC_FACTOR_ATLAS_V1"
+      ],
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: Logical-strength results for separation and Hahn-Banach principles do not construct a generator, well-posed evolution, or a causal Green operator. No reviewed record in the batch proves existence, uniqueness, stability, or computability of the required evolution.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "Computable solution operators are adjacent, but no second-order-arithmetic upper bound or reversal was located.",
+      "boundary": "This classification is restricted to the cited object and foundational framework; it does not transfer to stronger causal, continuum, choice-free, or reverse-mathematical claims.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "brown-simpson-1986",
@@ -4696,6 +4719,11 @@ window.MATRIX_EXPLORER_DATA = {
         "brattka-2008"
       ],
       "migration_rationale": "Logical-strength results for separation and Hahn-Banach principles do not construct a generator, well-posed evolution, or a causal Green operator. No reviewed record in the batch proves existence, uniqueness, stability, or computability of the required evolution.",
+      "research_revision": {
+        "atlas": "FOUNDATIONAL_NORMAL_HYPERBOLIC_FACTOR_ATLAS_V1",
+        "kind": "STATUS_CHANGE",
+        "previous_status": "NOT_MAPPED"
+      },
       "emitted": true
     },
     {
@@ -4769,7 +4797,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -4881,7 +4909,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -4973,9 +5001,11 @@ window.MATRIX_EXPLORER_DATA = {
       "status": "LITERATURE_RESULT",
       "evidence": [
         "weihrauch-zhong-2002",
-        "FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V1"
+        "FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V1",
+        "selivanova-selivanov-2013",
+        "selivanova-selivanov-2018"
       ],
-      "summary": "Wave propagation is computable in the stated C1 and Sobolev representations reviewed by the ladder.",
+      "summary": "Wave propagation is computable in the stated C1 and Sobolev representations reviewed by the ladder. New atlas evidence: The represented symmetric-hyperbolic solution operator is computable with effective approximation and complexity bounds in the papers' scope.",
       "boundary": "TTE computability is representation-sensitive and is not a Bishop-constructive or reverse-mathematical theorem.",
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "REVIEWED_V1_OVERLAY",
@@ -4985,6 +5015,11 @@ window.MATRIX_EXPLORER_DATA = {
         "FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V1"
       ],
       "migration_rationale": "A child-specific v1 review overrides the mechanical migration.",
+      "research_revision": {
+        "atlas": "FOUNDATIONAL_NORMAL_HYPERBOLIC_FACTOR_ATLAS_V1",
+        "kind": "EVIDENCE_OVERLAY",
+        "previous_status": "LITERATURE_RESULT"
+      },
       "emitted": true
     },
     {
@@ -5147,12 +5182,14 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "FINITE_DISCRETE",
       "carrier": "HILBERT_OPERATOR",
       "obligation": "EVOLUTION_WELLPOSEDNESS",
-      "status": "NOT_MAPPED",
-      "evidence": [],
+      "status": "LITERATURE_RESULT",
+      "evidence": [
+        "kostrykin-potthoff-schrader-2011"
+      ],
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: Finite phase-space, categorical protocol, and state-reconstruction results do not establish evolution well-posedness, causal propagation, or quantum field consistency obligations. No reviewed record in the batch proves existence, uniqueness, stability, or computability of the required evolution.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "The metric-graph theorem proves existence and uniqueness for the specified finite/network geometry.",
+      "boundary": "This classification is restricted to the cited object and foundational framework; it does not transfer to stronger causal, continuum, choice-free, or reverse-mathematical claims.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "gibbons-hoffman-wootters-2004",
@@ -5160,6 +5197,11 @@ window.MATRIX_EXPLORER_DATA = {
         "constantin-doring-2020"
       ],
       "migration_rationale": "Finite phase-space, categorical protocol, and state-reconstruction results do not establish evolution well-posedness, causal propagation, or quantum field consistency obligations. No reviewed record in the batch proves existence, uniqueness, stability, or computability of the required evolution.",
+      "research_revision": {
+        "atlas": "FOUNDATIONAL_NORMAL_HYPERBOLIC_FACTOR_ATLAS_V1",
+        "kind": "STATUS_CHANGE",
+        "previous_status": "NOT_MAPPED"
+      },
       "emitted": true
     },
     {
@@ -5267,17 +5309,24 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "CLASSICAL_STANDARD",
       "carrier": "HILBERT_OPERATOR",
       "obligation": "CAUSAL_PROPAGATION_GREEN",
-      "status": "NOT_MAPPED",
-      "evidence": [],
+      "status": "LITERATURE_RESULT",
+      "evidence": [
+        "kostrykin-potthoff-schrader-2011"
+      ],
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: The exact energy spectrum is a reduced-mode spectral result and explicitly does not establish causal support or a Green operator. No reviewed record in the batch constructs advanced/retarded maps with causal support.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "Self-adjoint Hilbert-space Laplacians on metric graphs have well-posed wave evolution and strict finite propagation.",
+      "boundary": "This classification is restricted to the cited object and foundational framework; it does not transfer to stronger causal, continuum, choice-free, or reverse-mathematical claims.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "FOUNDATIONAL_EXPLICIT_ENERGY_SPECTRAL_FRAGMENT_ZF_V1"
       ],
       "migration_rationale": "The exact energy spectrum is a reduced-mode spectral result and explicitly does not establish causal support or a Green operator. No reviewed record in the batch constructs advanced/retarded maps with causal support.",
+      "research_revision": {
+        "atlas": "FOUNDATIONAL_NORMAL_HYPERBOLIC_FACTOR_ATLAS_V1",
+        "kind": "STATUS_CHANGE",
+        "previous_status": "NOT_MAPPED"
+      },
       "emitted": true
     },
     {
@@ -5324,17 +5373,24 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "CAUSAL_PROPAGATION_GREEN",
       "status": "LOCAL_RESULT",
       "evidence": [
-        "FOUNDATIONAL_TYPED_BIWAVE_GREEN_DEPENDENCY_AUDIT_V1"
+        "FOUNDATIONAL_TYPED_BIWAVE_GREEN_DEPENDENCY_AUDIT_V1",
+        "baer-2015",
+        "muehlhoff-2010"
       ],
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "CAPABILITY_QUALIFIED",
-      "summary": "Refined child 'Causal propagation/Green': registered evidence supports this child.",
+      "summary": "Refined child 'Causal propagation/Green': registered evidence supports this child. New atlas evidence: The normally- and prenormally-hyperbolic theorems give advanced/retarded Green maps with causal support.",
       "boundary": "The v0 parent status is not inherited by sibling obligations. The exact checker proves no PDE existence and no full BV propagator.",
       "migration_status": "CAPABILITY_QUALIFIED",
       "migration_evidence": [
         "FOUNDATIONAL_TYPED_BIWAVE_GREEN_DEPENDENCY_AUDIT_V1"
       ],
       "migration_rationale": "The explicit v1 evidence-capability registry licenses transfer to this child.",
+      "research_revision": {
+        "atlas": "FOUNDATIONAL_NORMAL_HYPERBOLIC_FACTOR_ATLAS_V1",
+        "kind": "EVIDENCE_OVERLAY",
+        "previous_status": "LOCAL_RESULT"
+      },
       "emitted": true
     },
     {
@@ -5380,12 +5436,14 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "WEAK_ARITHMETIC",
       "carrier": "HILBERT_OPERATOR",
       "obligation": "CAUSAL_PROPAGATION_GREEN",
-      "status": "NOT_MAPPED",
-      "evidence": [],
+      "status": "PIECES_ONLY",
+      "evidence": [
+        "FOUNDATIONAL_NORMAL_HYPERBOLIC_FACTOR_ATLAS_V1"
+      ],
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: Logical-strength results for separation and Hahn-Banach principles do not construct a generator, well-posed evolution, or a causal Green operator. No reviewed record in the batch constructs advanced/retarded maps with causal support.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "Classical support and effective evolution exist separately; their combination has not been formalized over a weak subsystem.",
+      "boundary": "This classification is restricted to the cited object and foundational framework; it does not transfer to stronger causal, continuum, choice-free, or reverse-mathematical claims.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "brown-simpson-1986",
@@ -5394,6 +5452,11 @@ window.MATRIX_EXPLORER_DATA = {
         "brattka-2008"
       ],
       "migration_rationale": "Logical-strength results for separation and Hahn-Banach principles do not construct a generator, well-posed evolution, or a causal Green operator. No reviewed record in the batch constructs advanced/retarded maps with causal support.",
+      "research_revision": {
+        "atlas": "FOUNDATIONAL_NORMAL_HYPERBOLIC_FACTOR_ATLAS_V1",
+        "kind": "STATUS_CHANGE",
+        "previous_status": "NOT_MAPPED"
+      },
       "emitted": true
     },
     {
@@ -5465,7 +5528,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -5493,17 +5556,25 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "WEAK_CHOICE_ZF",
       "carrier": "HILBERT_OPERATOR",
       "obligation": "CAUSAL_PROPAGATION_GREEN",
-      "status": "NOT_MAPPED",
-      "evidence": [],
+      "status": "PIECES_ONLY",
+      "evidence": [
+        "FOUNDATIONAL_NORMAL_HYPERBOLIC_FACTOR_ATLAS_V1",
+        "blackadar-farah-karagila-2026"
+      ],
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: The exact energy spectrum is a reduced-mode spectral result and explicitly does not establish causal support or a Green operator. No reviewed record in the batch constructs advanced/retarded maps with causal support.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "ZF Hilbert theory and classical causal PDE are known separately; the Sobolev/Green construction has not been proved choice-free.",
+      "boundary": "This classification is restricted to the cited object and foundational framework; it does not transfer to stronger causal, continuum, choice-free, or reverse-mathematical claims.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "FOUNDATIONAL_EXPLICIT_ENERGY_SPECTRAL_FRAGMENT_ZF_V1"
       ],
       "migration_rationale": "The exact energy spectrum is a reduced-mode spectral result and explicitly does not establish causal support or a Green operator. No reviewed record in the batch constructs advanced/retarded maps with causal support.",
+      "research_revision": {
+        "atlas": "FOUNDATIONAL_NORMAL_HYPERBOLIC_FACTOR_ATLAS_V1",
+        "kind": "STATUS_CHANGE",
+        "previous_status": "NOT_MAPPED"
+      },
       "emitted": true
     },
     {
@@ -5573,7 +5644,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -5661,9 +5732,10 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "pour-el-richards-1981",
         "weihrauch-zhong-2002",
-        "FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V1"
+        "FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V1",
+        "selivanova-selivanov-2013"
       ],
-      "summary": "Positive and negative computability results expose the representation and localization dependencies of wave propagation.",
+      "summary": "Positive and negative computability results expose the representation and localization dependencies of wave propagation. New atlas evidence: Computable evolution is direct evidence for one ingredient, while strict globally-hyperbolic Green support remains outside the theorem.",
       "boundary": "Neither source constructs a constructive causal Green operator for Weyl gravity.",
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "REVIEWED_V1_OVERLAY",
@@ -5674,6 +5746,11 @@ window.MATRIX_EXPLORER_DATA = {
         "FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V1"
       ],
       "migration_rationale": "A child-specific v1 review overrides the mechanical migration.",
+      "research_revision": {
+        "atlas": "FOUNDATIONAL_NORMAL_HYPERBOLIC_FACTOR_ATLAS_V1",
+        "kind": "EVIDENCE_OVERLAY",
+        "previous_status": "PIECES_ONLY"
+      },
       "emitted": true
     },
     {
@@ -5812,31 +5889,39 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "FINITE_DISCRETE",
       "carrier": "FINITE_EXACT",
       "obligation": "CAUSAL_PROPAGATION_GREEN",
-      "status": "PIECES_ONLY",
+      "status": "LOCAL_RESULT",
       "evidence": [
-        "FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1"
+        "FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1",
+        "FOUNDATIONAL_FINITE_GRAPH_WAVE_CAUSALITY_V1"
       ],
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "CAPABILITY_QUALIFIED",
-      "summary": "Refined child 'Causal propagation/Green': registered evidence supports this child.",
-      "boundary": "The v0 parent status is not inherited by sibling obligations. No finite-field dynamics, continuum convergence, regulator independence, causal propagation, or reconstruction theorem is proved.",
+      "summary": "Exact rational retarded/advanced kernels have a certified graph-step support cone on the displayed finite fixtures.",
+      "boundary": "This classification is restricted to the cited object and foundational framework; it does not transfer to stronger causal, continuum, choice-free, or reverse-mathematical claims.",
       "migration_status": "CAPABILITY_QUALIFIED",
       "migration_evidence": [
         "FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1"
       ],
       "migration_rationale": "The explicit v1 evidence-capability registry licenses transfer to this child.",
+      "research_revision": {
+        "atlas": "FOUNDATIONAL_NORMAL_HYPERBOLIC_FACTOR_ATLAS_V1",
+        "kind": "STATUS_CHANGE",
+        "previous_status": "PIECES_ONLY"
+      },
       "emitted": true
     },
     {
       "foundation": "FINITE_DISCRETE",
       "carrier": "HILBERT_OPERATOR",
       "obligation": "CAUSAL_PROPAGATION_GREEN",
-      "status": "NOT_MAPPED",
-      "evidence": [],
+      "status": "LITERATURE_RESULT",
+      "evidence": [
+        "kostrykin-potthoff-schrader-2011"
+      ],
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: Finite phase-space, categorical protocol, and state-reconstruction results do not establish evolution well-posedness, causal propagation, or quantum field consistency obligations. No reviewed record in the batch constructs advanced/retarded maps with causal support.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "The same theorem proves strict finite propagation under its local boundary conditions.",
+      "boundary": "This classification is restricted to the cited object and foundational framework; it does not transfer to stronger causal, continuum, choice-free, or reverse-mathematical claims.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "gibbons-hoffman-wootters-2004",
@@ -5844,6 +5929,11 @@ window.MATRIX_EXPLORER_DATA = {
         "constantin-doring-2020"
       ],
       "migration_rationale": "Finite phase-space, categorical protocol, and state-reconstruction results do not establish evolution well-posedness, causal propagation, or quantum field consistency obligations. No reviewed record in the batch constructs advanced/retarded maps with causal support.",
+      "research_revision": {
+        "atlas": "FOUNDATIONAL_NORMAL_HYPERBOLIC_FACTOR_ATLAS_V1",
+        "kind": "STATUS_CHANGE",
+        "previous_status": "NOT_MAPPED"
+      },
       "emitted": true
     },
     {
@@ -5872,11 +5962,12 @@ window.MATRIX_EXPLORER_DATA = {
       "status": "PIECES_ONLY",
       "evidence": [
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1",
-        "zohar-burrello-2014"
+        "zohar-burrello-2014",
+        "nachtergaele-raz-schlein-sims-2007"
       ],
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "CAPABILITY_QUALIFIED",
-      "summary": "Refined child 'Causal propagation/Green': registered evidence supports this child.",
+      "summary": "Refined child 'Causal propagation/Green': registered evidence supports this child. New atlas evidence: Lieb-Robinson decay supplies an effective lattice cone, explicitly distinguished from strict support.",
       "boundary": "The v0 parent status is not inherited by sibling obligations. Finite dimension, lattice regularization, finite field, and finitism remain distinct; a continuum bridge is never automatic. An algebraic architecture does not by itself select representations or physical states. Still open here: full interacting Lorentzian-causal propagation.",
       "migration_status": "CAPABILITY_QUALIFIED",
       "migration_evidence": [
@@ -5884,6 +5975,11 @@ window.MATRIX_EXPLORER_DATA = {
         "zohar-burrello-2014"
       ],
       "migration_rationale": "The explicit v1 evidence-capability registry licenses transfer to this child.",
+      "research_revision": {
+        "atlas": "FOUNDATIONAL_NORMAL_HYPERBOLIC_FACTOR_ATLAS_V1",
+        "kind": "EVIDENCE_OVERLAY",
+        "previous_status": "PIECES_ONLY"
+      },
       "emitted": true
     },
     {
@@ -6085,7 +6181,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -6100,7 +6196,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -6115,7 +6211,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -6145,7 +6241,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -6265,7 +6361,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -6324,7 +6420,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -6339,7 +6435,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -6392,7 +6488,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -6407,7 +6503,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -6422,7 +6518,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -6767,7 +6863,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -6782,7 +6878,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -6797,7 +6893,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -6827,7 +6923,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -6933,7 +7029,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -6987,7 +7083,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -7002,7 +7098,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -7070,7 +7166,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -7085,7 +7181,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -7413,7 +7509,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -7428,7 +7524,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -7443,7 +7539,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -7473,7 +7569,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -7581,7 +7677,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -7637,7 +7733,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -7652,7 +7748,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -7720,7 +7816,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -7735,7 +7831,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -8057,7 +8153,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -8072,7 +8168,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -8087,7 +8183,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -8117,7 +8213,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -8225,7 +8321,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -8281,7 +8377,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -8296,7 +8392,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -8364,7 +8460,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -8379,7 +8475,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -8701,7 +8797,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -8716,7 +8812,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -8731,7 +8827,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -8761,7 +8857,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -8867,7 +8963,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -8921,7 +9017,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -8936,7 +9032,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -9004,7 +9100,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -9019,7 +9115,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -9341,7 +9437,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -9356,7 +9452,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -9371,7 +9467,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -9401,7 +9497,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -9509,7 +9605,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -9565,7 +9661,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -9580,7 +9676,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -9648,7 +9744,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -9663,7 +9759,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -9985,7 +10081,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -10000,7 +10096,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -10015,7 +10111,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -10045,7 +10141,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -10153,7 +10249,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -10209,7 +10305,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -10224,7 +10320,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -10292,7 +10388,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -10307,7 +10403,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -10498,7 +10594,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -10674,7 +10770,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -10689,7 +10785,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -10704,7 +10800,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -10719,7 +10815,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -10734,7 +10830,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -10772,7 +10868,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -10810,7 +10906,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -10825,7 +10921,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -10840,7 +10936,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -10878,7 +10974,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -10916,7 +11012,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -10977,7 +11073,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -10992,7 +11088,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -11110,7 +11206,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -11125,7 +11221,7 @@ window.MATRIX_EXPLORER_DATA = {
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
       "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by cube v2, so no parent-evidence migration decision exists.",
+      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
       "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
       "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
       "emitted": false
@@ -11355,6 +11451,37 @@ window.MATRIX_EXPLORER_DATA = {
       "report_link": "sources/foundations/reports/finite-field-versus-finite-mode.md",
       "sha256": "032680510c343485a3a786660435441b5c03defd1cecaac12ffc92553fc088af"
     },
+    "FOUNDATIONAL_FINITE_GRAPH_WAVE_CAUSALITY_V1": {
+      "id": "FOUNDATIONAL_FINITE_GRAPH_WAVE_CAUSALITY_V1",
+      "kind": "LOCAL_RESULT",
+      "result_kind": "EXACT_FINITE_DISCRETE_CAUSAL_GREEN_KERNEL",
+      "lifecycle": "CERTIFIED",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE"
+      ],
+      "claim_flags": {
+        "finite_exact_retarded_kernel_constructed": true,
+        "finite_exact_advanced_kernel_constructed": true,
+        "graph_step_support_certified": true,
+        "continuum_green_operator_constructed": false,
+        "lorentzian_causal_claim": false,
+        "continuum_limit_proved": false
+      },
+      "does_not_establish": [
+        "continuum finite propagation",
+        "a Lorentzian advanced or retarded Green operator",
+        "CFL stability or convergence under refinement",
+        "a regulator-independent continuum limit",
+        "a Weyl metric BV propagator",
+        "a reverse-mathematical classification of continuum PDE"
+      ],
+      "result_path": "foundations/results/FOUNDATIONAL_FINITE_GRAPH_WAVE_CAUSALITY_V1.json",
+      "result_link": "sources/foundations/results/FOUNDATIONAL_FINITE_GRAPH_WAVE_CAUSALITY_V1.json",
+      "report_path": "foundations/reports/finite-graph-wave-causality.md",
+      "report_link": "sources/foundations/reports/finite-graph-wave-causality.md",
+      "sha256": "2790e43f566c86e07f7b452fdfac516c59d319df4fd2e410664e7ff130396e79"
+    },
     "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": {
       "id": "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1",
       "kind": "LOCAL_RESULT",
@@ -11577,6 +11704,43 @@ window.MATRIX_EXPLORER_DATA = {
       "report_link": "sources/foundations/reports/low-hanging-cell-closure-audit.md",
       "sha256": "b045541be48cd2210d8aa26d4e6a7df44456c8e7e6d481334165b96661ed3309"
     },
+    "FOUNDATIONAL_NORMAL_HYPERBOLIC_FACTOR_ATLAS_V1": {
+      "id": "FOUNDATIONAL_NORMAL_HYPERBOLIC_FACTOR_ATLAS_V1",
+      "kind": "LOCAL_RESULT",
+      "result_kind": "LITERATURE_AND_FOUNDATIONAL_DEPENDENCY_ATLAS",
+      "lifecycle": "LITERATURE_SCOPED",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "claim_flags": {
+        "classical_factor_theorem_identified": true,
+        "computable_upper_bound_identified": true,
+        "finite_exact_support_constructed": true,
+        "reverse_math_strength_proved": false,
+        "bishop_constructive_green_theorem_identified": false,
+        "choice_free_green_theorem_proved": false,
+        "full_biwave_reversal_proved": false,
+        "new_weyl_bv_propagator": false
+      },
+      "does_not_establish": [
+        "literature completeness",
+        "a weakest subsystem",
+        "an RCA_0, WKL_0 or ACA_0 equivalence",
+        "a Bishop-constructive globally hyperbolic Green theorem",
+        "Choice avoidance for Sobolev/distribution theory",
+        "a continuum limit from finite graphs",
+        "a full off-shell Weyl metric BV propagator",
+        "a BRST-compatible Hadamard state",
+        "renormalized Lorentzian products or a Lorentzian QME"
+      ],
+      "result_path": "foundations/results/FOUNDATIONAL_NORMAL_HYPERBOLIC_FACTOR_ATLAS_V1.json",
+      "result_link": "sources/foundations/results/FOUNDATIONAL_NORMAL_HYPERBOLIC_FACTOR_ATLAS_V1.json",
+      "report_path": "foundations/reports/normal-hyperbolic-factor-foundations.md",
+      "report_link": "sources/foundations/reports/normal-hyperbolic-factor-foundations.md",
+      "sha256": "40836e986d2ba7b957cc51298c1bd724ace32ef59f846a7abc63b8980143a6c4"
+    },
     "FOUNDATIONAL_TOPOS_WEYL_BV_OBSTRUCTION_LEDGER_V0": {
       "id": "FOUNDATIONAL_TOPOS_WEYL_BV_OBSTRUCTION_LEDGER_V0",
       "kind": "LOCAL_RESULT",
@@ -11667,6 +11831,23 @@ window.MATRIX_EXPLORER_DATA = {
       "boundary": "Categorical semantics is not itself a selected topos, a continuum field carrier, a constructive metatheory, or a derivation of physical Hilbert space from Weyl gravity.",
       "ledger": "foundations/literature-expansion-v2.json",
       "ledger_link": "sources/foundations/literature-expansion-v2.json"
+    },
+    "baer-2015": {
+      "id": "baer-2015",
+      "kind": "LITERATURE",
+      "citation": "Christian Bär, Green-hyperbolic operators on globally hyperbolic spacetimes, Communications in Mathematical Physics 333 (2015), 1585-1615.",
+      "year": 2015,
+      "source_kind": "PRIMARY_RESEARCH",
+      "stable_url": "https://arxiv.org/abs/1310.0738",
+      "artifact_status": "CONTENT_PINNED",
+      "artifact_sha256": "879948318de8b4a5a74b52179f78120d074bc7773734b82495b6db4c363f4c99",
+      "supported_statements": [
+        "Normally hyperbolic wave operators are Green-hyperbolic on globally hyperbolic spacetimes; advanced and retarded maps have the declared support and extend continuously to several support classes.",
+        "For symmetric hyperbolic systems the paper proves Cauchy uniqueness, existence, finite propagation and continuous dependence."
+      ],
+      "boundary": "This is a classical smooth/distributional theorem. It does not code the proof in second-order arithmetic, eliminate Choice, give a Bishop-constructive proof, or construct the Weyl metric BV propagator.",
+      "ledger": "foundations/literature-causal-green-atlas-v1.json",
+      "ledger_link": "sources/foundations/literature-causal-green-atlas-v1.json"
     },
     "bahr-dittrich-2009": {
       "id": "bahr-dittrich-2009",
@@ -12167,6 +12348,22 @@ window.MATRIX_EXPLORER_DATA = {
       "ledger": "foundations/literature-expansion-v2.json",
       "ledger_link": "sources/foundations/literature-expansion-v2.json"
     },
+    "kostrykin-potthoff-schrader-2011": {
+      "id": "kostrykin-potthoff-schrader-2011",
+      "kind": "LITERATURE",
+      "citation": "Vadim Kostrykin, Jürgen Potthoff, and Robert Schrader, Finite propagation speed for solutions of the wave equation on metric graphs, 2011.",
+      "year": 2011,
+      "source_kind": "PRIMARY_RESEARCH",
+      "stable_url": "https://arxiv.org/abs/1106.0817",
+      "artifact_status": "CONTENT_PINNED",
+      "artifact_sha256": "53c5f52ca32e7b9a0839287c154109d3bc04650f1eb11ceecea195fca5d33f47",
+      "supported_statements": [
+        "A class of self-adjoint Laplace operators on metric graphs has existence and uniqueness for the wave equation and strict finite propagation, proved by localized energy methods."
+      ],
+      "boundary": "Metric graphs retain continuous edges and Hilbert/Sobolev analysis. They are not finite exact algebra, a continuum-limit theorem, or a choice-free construction.",
+      "ledger": "foundations/literature-causal-green-atlas-v1.json",
+      "ledger_link": "sources/foundations/literature-causal-green-atlas-v1.json"
+    },
     "mostafazadeh-2001": {
       "id": "mostafazadeh-2001",
       "kind": "LITERATURE",
@@ -12182,6 +12379,38 @@ window.MATRIX_EXPLORER_DATA = {
       "boundary": "The result assumes analytic and spectral hypotheses and does not by itself define physical probabilities, interacting QFT, or a weakest foundational base.",
       "ledger": "foundations/literature-expansion-v2.json",
       "ledger_link": "sources/foundations/literature-expansion-v2.json"
+    },
+    "muehlhoff-2010": {
+      "id": "muehlhoff-2010",
+      "kind": "LITERATURE",
+      "citation": "Rainer Mühlhoff, Cauchy Problem and Green's Functions for First Order Differential Operators and Algebraic Quantization, Journal of Mathematical Physics 52 (2011), 022303.",
+      "year": 2011,
+      "source_kind": "PRIMARY_RESEARCH",
+      "stable_url": "https://arxiv.org/abs/1001.4091",
+      "artifact_status": "CONTENT_PINNED",
+      "artifact_sha256": "5854613e375d64cfddf98ced287f12a8819a21a48db4bf89f24fa8ed0040cda7",
+      "supported_statements": [
+        "Prenormally hyperbolic first-order operators have unique advanced and retarded Green functions and a globally well-posed Cauchy problem under the stated globally hyperbolic hypotheses."
+      ],
+      "boundary": "The reduction imports the normally-hyperbolic second-order theorem and remains classical; it is not a foundational-strength or Weyl-BV result.",
+      "ledger": "foundations/literature-causal-green-atlas-v1.json",
+      "ledger_link": "sources/foundations/literature-causal-green-atlas-v1.json"
+    },
+    "nachtergaele-raz-schlein-sims-2007": {
+      "id": "nachtergaele-raz-schlein-sims-2007",
+      "kind": "LITERATURE",
+      "citation": "Bruno Nachtergaele, Hillel Raz, Benjamin Schlein, and Robert Sims, Lieb-Robinson Bounds for Harmonic and Anharmonic Lattice Systems, Communications in Mathematical Physics 286 (2009), 1073-1098.",
+      "year": 2009,
+      "source_kind": "PRIMARY_RESEARCH",
+      "stable_url": "https://arxiv.org/abs/0712.3820",
+      "artifact_status": "CONTENT_PINNED",
+      "artifact_sha256": "613ff5cc8af3f7b9734a2ca1912f33624b59050204e108071c4d200285179114",
+      "supported_statements": [
+        "Harmonic and specified anharmonic lattice systems satisfy Lieb-Robinson bounds, including exponentially small commutators outside an effective cone for Weyl observables."
+      ],
+      "boundary": "An exponentially small tail is not strict support and is not an advanced/retarded Green operator. The result must not be promoted to continuum Lorentzian causality.",
+      "ledger": "foundations/literature-causal-green-atlas-v1.json",
+      "ledger_link": "sources/foundations/literature-causal-green-atlas-v1.json"
     },
     "neumann-pape-streicher-2018": {
       "id": "neumann-pape-streicher-2018",
@@ -12230,6 +12459,39 @@ window.MATRIX_EXPLORER_DATA = {
       "boundary": "This is a reformulation and proof of a specific probability-representation theorem; it is not a constructive derivation of all quantum mechanics.",
       "ledger": "foundations/literature-supplement-known-attempts-v1.json",
       "ledger_link": "sources/foundations/literature-supplement-known-attempts-v1.json"
+    },
+    "selivanova-selivanov-2013": {
+      "id": "selivanova-selivanov-2013",
+      "kind": "LITERATURE",
+      "citation": "Svetlana Selivanova and Victor Selivanov, Computing Solution Operators of Boundary-value Problems for Some Linear Hyperbolic Systems of PDEs, Logical Methods in Computer Science 13(4:13) (2017).",
+      "year": 2017,
+      "source_kind": "PRIMARY_RESEARCH",
+      "stable_url": "https://arxiv.org/abs/1305.2494",
+      "artifact_status": "CONTENT_PINNED",
+      "artifact_sha256": "71a4628b9e151eeb444f4db3c2d87cd2ad2f7d86e404bea9b3662da570f568be",
+      "supported_statements": [
+        "For symmetric hyperbolic systems on a cube with computable coefficients, the Cauchy solution operator is computable in the stated TTE representations; dissipative boundary-value problems are also treated under additional hypotheses.",
+        "The proof uses rational finite-difference approximants with effective error estimates rather than an explicit solution formula."
+      ],
+      "boundary": "A TTE computability theorem is not a Bishop-constructive derivation, an RCA_0 upper bound or reversal, or a theorem for globally hyperbolic manifolds and advanced/retarded Green support.",
+      "ledger": "foundations/literature-causal-green-atlas-v1.json",
+      "ledger_link": "sources/foundations/literature-causal-green-atlas-v1.json"
+    },
+    "selivanova-selivanov-2018": {
+      "id": "selivanova-selivanov-2018",
+      "kind": "LITERATURE",
+      "citation": "Svetlana Selivanova and Victor Selivanov, Bit Complexity of Computing Solutions for Symmetric Hyperbolic Systems of PDEs with Guaranteed Precision, 2020.",
+      "year": 2020,
+      "source_kind": "PRIMARY_RESEARCH",
+      "stable_url": "https://arxiv.org/abs/1807.03140",
+      "artifact_status": "CONTENT_PINNED",
+      "artifact_sha256": "9943569bd492d28d2ad8c70b30e4f85a852fe0e5c9fc7b7e034186691fd5893c",
+      "supported_statements": [
+        "The symmetric-hyperbolic computability programme admits explicit bit-complexity upper bounds under the paper's representations and coefficient hypotheses."
+      ],
+      "boundary": "Complexity of represented solution operators neither supplies strict causal Green support nor calibrates a subsystem of second-order arithmetic.",
+      "ledger": "foundations/literature-causal-green-atlas-v1.json",
+      "ledger_link": "sources/foundations/literature-causal-green-atlas-v1.json"
     },
     "weihrauch-zhong-2002": {
       "id": "weihrauch-zhong-2002",
@@ -12519,11 +12781,13 @@ window.MATRIX_EXPLORER_DATA = {
   "boundaries": {
     "cube": [
       "literature completeness",
-      "coverage for the 88 reviewed-no-transfer coordinates",
+      "coverage for the 81 still-unmapped reviewed-no-transfer coordinates",
       "that NOT_MAPPED means no literature exists",
-      "that every Cartesian coordinate is coherent",
       "a weakest mathematical base",
-      "a new Lorentzian-causal result"
+      "a reverse-mathematical classification of hyperbolic PDE",
+      "a choice-free Green theorem",
+      "a continuum limit from finite graphs",
+      "a new Lorentzian-causal Weyl result"
     ],
     "migration_audit": [
       "literature completeness",
@@ -12553,12 +12817,12 @@ window.MATRIX_EXPLORER_DATA = {
     ]
   },
   "source_links": {
-    "cube": "sources/foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V2.json",
+    "cube": "sources/foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V3.json",
     "migration_audit": "sources/foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_MIGRATION_AUDIT_V2.json",
     "ladder": "sources/foundations/results/FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V1.json",
-    "cube_report": "sources/foundations/reports/refined-intersection-cube-v2.md",
+    "cube_report": "sources/foundations/reports/refined-intersection-cube-v3.md",
     "migration_audit_report": "sources/foundations/reports/intersection-cube-migration-audit-v2.md",
     "ladder_report": "sources/foundations/reports/cylinder-wave-strength-ladder.md"
   },
-  "canonical_digest": "0751634f730ed623e985209fbd78f51261a3a7e68c6463191bd014fc6849b5e4"
+  "canonical_digest": "461dac5c6ba241f33b2cf2117585ba1bef1c5d2137b373cf866a419243316d6f"
 };

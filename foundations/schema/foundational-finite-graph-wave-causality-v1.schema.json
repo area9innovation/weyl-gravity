@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["schema_version", "result_id", "result_kind", "lifecycle", "dependency_tags", "fixtures", "summary", "independent_checker", "claim_flags", "does_not_establish"],
+  "properties": {
+    "schema_version": {"const": "foundational-finite-graph-wave-causality-v1"},
+    "result_id": {"const": "FOUNDATIONAL_FINITE_GRAPH_WAVE_CAUSALITY_V1"},
+    "dependency_tags": {"type": "array", "contains": {"const": "LOCAL-ALGEBRAIC"}},
+    "fixtures": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "object", "required": ["id", "vertices", "edges", "kappa", "steps", "update_matrix", "retarded_kernels", "advanced_kernels", "support_violations"]}},
+    "summary": {"type": "object", "required": ["fixtures", "support_violations", "recurrence_entry_checks", "adjoint_entry_checks"]},
+    "independent_checker": {"type": "object", "required": ["path", "expected_digest", "checks"]},
+    "claim_flags": {"type": "object"},
+    "does_not_establish": {"type": "array", "minItems": 1}
+  }
+}

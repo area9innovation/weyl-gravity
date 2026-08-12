@@ -14,20 +14,20 @@
   "counts": {
     "cartesian_total": 576,
     "emitted": 452,
-    "coverage_classified": 364,
-    "qualified": 364,
+    "coverage_classified": 371,
+    "qualified": 371,
     "migration_reviewed": 452,
     "migration_pending": 0,
     "migration_unresolved": 0,
     "reviewed_no_transfer": 88,
-    "not_mapped": 212,
+    "not_mapped": 205,
     "synthetic_not_mapped": 124,
     "status_counts": {
-      "LITERATURE_RESULT": 90,
-      "LOCAL_RESULT": 85,
-      "NOT_MAPPED": 212,
-      "PIECES_ONLY": 158,
-      "PRIORITY_GAP": 31
+      "LITERATURE_RESULT": 93,
+      "LOCAL_RESULT": 86,
+      "NOT_MAPPED": 205,
+      "PIECES_ONLY": 162,
+      "PRIORITY_GAP": 30
     },
     "migration_status_counts": {
       "CAPABILITY_QUALIFIED": 257,
@@ -37,7 +37,7 @@
       "REVIEWED_NO_TRANSFER": 88,
       "REVIEWED_OVERLAY": 11
     },
-    "evidence_records": 51
+    "evidence_records": 59
   },
   "features": [
     "sixteen 6x6 heatmaps",
@@ -57,17 +57,17 @@
   ],
   "provenance": {
     "manifest": "foundations/site/manifest.json",
-    "manifest_sha256": "cd6929bf14b43f063332299b062e52561a6c78e9332d2d892aa1be5999845c26",
-    "canonical_data_digest": "0751634f730ed623e985209fbd78f51261a3a7e68c6463191bd014fc6849b5e4"
+    "manifest_sha256": "dd32c39c3fd2e68baea317eb1de99f5a14f49b226276de0900570c9e70dc4dfe",
+    "canonical_data_digest": "461dac5c6ba241f33b2cf2117585ba1bef1c5d2137b373cf866a419243316d6f"
   },
   "independent_checker": {
     "path": "foundations/check_matrix_site_v2.py",
     "expected_cells": 576,
     "expected_emitted": 452,
     "expected_synthetic_not_mapped": 124,
-    "expected_total_not_mapped": 212,
-    "expected_evidence_records": 51,
-    "expected_digest": "0751634f730ed623e985209fbd78f51261a3a7e68c6463191bd014fc6849b5e4"
+    "expected_total_not_mapped": 205,
+    "expected_evidence_records": 59,
+    "expected_digest": "461dac5c6ba241f33b2cf2117585ba1bef1c5d2137b373cf866a419243316d6f"
   },
   "claim_flags": {
     "static_site_generated": true,
@@ -84,7 +84,7 @@
   },
   "does_not_establish": [
     "literature completeness",
-    "coverage for the 88 reviewed-no-transfer coordinates",
+    "coverage for the 81 still-unmapped reviewed-no-transfer coordinates",
     "that NOT_MAPPED means no literature exists",
     "that the 124 synthetic coordinates are coherent",
     "a weakest mathematical base",

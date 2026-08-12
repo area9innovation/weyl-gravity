@@ -70,9 +70,18 @@ BRST-compatible Hadamard state, renormalized Lorentzian products, or a
 Lorentzian QME.  It does not promote a finite-symbol or reduced-mode result to
 `LORENTZIAN-CAUSAL` evidence.
 
-## Next gate
+## Follow-up atlas and next gate
 
-The right foundational base case is one normally-hyperbolic scalar or
-finite-rank bundle factor with coded Sobolev spaces and energy estimates.
-Only after that theorem has an upper bound or reversal should the biwave
-Volterra wrapper receive a subsystem classification.
+The [normally-hyperbolic factor atlas](normal-hyperbolic-factor-foundations.md)
+now supplies the bounded literature and dependency pass for this base case.
+It finds direct classical Green and finite-propagation theorems, direct
+represented-computability upper bounds for symmetric-hyperbolic evolution,
+and an exact local finite-graph support certificate. It does **not** find or
+prove a reverse-mathematical subsystem classification, a Bishop-style global
+Green theorem, or Choice avoidance for the Sobolev/distributional construction.
+
+The next gate is therefore formal rather than bibliographic: choose a coded
+scalar fixture, state the representation of the geometry, Sobolev data and
+solution operator, and prove the weakest licensed upper bound for its finite-slab
+energy and Cauchy theorem. No `RCA_0`, `WKL_0`, or `ACA_0` label should be attached
+until that coding and proof have an independently checked certificate.

@@ -13,7 +13,7 @@ SITE = ROOT / "foundations/site"
 DATA = SITE / "data.json"
 MANIFEST = SITE / "manifest.json"
 RESULT = ROOT / "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json"
-CUBE = ROOT / "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V2.json"
+CUBE = ROOT / "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V3.json"
 LADDER = ROOT / "foundations/results/FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V1.json"
 STATUSES = {"LOCAL_RESULT", "LITERATURE_RESULT", "PIECES_ONLY", "PRIORITY_GAP", "NOT_MAPPED"}
 MIGRATIONS = {"EXACT_PARENT_TRANSFER", "CAPABILITY_QUALIFIED", "REVIEWED_OVERLAY", "REVIEWED_NO_TRANSFER", "REVIEWED_CHILD_GAP", "NOT_REVIEWED"}
@@ -67,12 +67,14 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
     if migration_counts.get("REVIEWED_NO_TRANSFER") != 88 or migration_counts.get("REVIEWED_CHILD_GAP") != 24 or "NOT_REVIEWED" in migration_counts:
         errors.append("emitted migration review closure")
     no_transfer = [x for x in emitted if x.get("migration_status") == "REVIEWED_NO_TRANSFER"]
-    if any(x.get("status") != "NOT_MAPPED" or x.get("evidence") or not x.get("migration_evidence") for x in no_transfer):
+    still_unmapped = [x for x in no_transfer if x.get("status") == "NOT_MAPPED"]
+    newly_covered = [x for x in no_transfer if x.get("status") != "NOT_MAPPED"]
+    if len(still_unmapped) != 81 or len(newly_covered) != 7 or any(x.get("evidence") or not x.get("migration_evidence") for x in still_unmapped) or any(not x.get("evidence") or not x.get("migration_evidence") for x in newly_covered):
         errors.append("reviewed no-transfer separation")
 
     evidence = data.get("evidence", {})
     used = {item for cell in emitted for field in ("evidence", "migration_evidence") for item in cell.get(field, [])}
-    if set(evidence) != used or len(evidence) != 51:
+    if set(evidence) != used or len(evidence) != 59:
         errors.append("coverage and migration evidence resolution")
     for item in evidence.values():
         for field in ("result_link", "report_link", "ledger_link"):
@@ -118,7 +120,7 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
     counts = data.get("counts", {})
     if counts.get("status_counts") != dict(sorted(status_counts.items())) or counts.get("migration_status_counts") != dict(sorted(all_migrations.items())):
         errors.append("coverage/migration counts")
-    if counts.get("coverage_classified") != 364 or counts.get("migration_reviewed") != 452 or counts.get("migration_pending") != 0 or counts.get("not_mapped") != 212:
+    if counts.get("coverage_classified") != 371 or counts.get("migration_reviewed") != 452 or counts.get("migration_pending") != 0 or counts.get("not_mapped") != 205:
         errors.append("review count summary")
     summary = {
         "digest": calculated_digest,

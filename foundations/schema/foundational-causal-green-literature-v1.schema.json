@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["schema_version", "ledger_id", "method", "entries", "unresolved"],
+  "properties": {
+    "schema_version": {"const": "foundational-causal-green-literature-v1"},
+    "ledger_id": {"const": "FOUNDATIONAL_CAUSAL_GREEN_LITERATURE_V1"},
+    "entries": {
+      "type": "array", "minItems": 6, "maxItems": 6,
+      "items": {
+        "type": "object",
+        "required": ["id", "source_kind", "citation", "stable_url", "artifact", "supported_statements", "boundary"],
+        "properties": {
+          "source_kind": {"const": "PRIMARY_RESEARCH"},
+          "artifact": {
+            "type": "object",
+            "required": ["status", "locator", "sha256"],
+            "properties": {
+              "status": {"const": "CONTENT_PINNED"},
+              "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+            }
+          }
+        }
+      }
+    },
+    "unresolved": {"type": "array", "minItems": 1}
+  }
+}

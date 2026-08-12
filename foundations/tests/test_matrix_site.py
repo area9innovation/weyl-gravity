@@ -16,7 +16,7 @@ class MatrixSiteTests(unittest.TestCase):
     def test_dataset_separates_coverage_and_migration(self):
         data = build_dataset()
         self.assertEqual(len(data["cells"]), 576)
-        self.assertEqual(data["counts"]["coverage_classified"], 364)
+        self.assertEqual(data["counts"]["coverage_classified"], 371)
         self.assertEqual(data["counts"]["migration_reviewed"], 452)
         self.assertEqual(data["counts"]["migration_pending"], 0)
         self.assertEqual(data["counts"]["reviewed_no_transfer"], 88)
@@ -26,7 +26,9 @@ class MatrixSiteTests(unittest.TestCase):
         reviewed = [x for x in data["cells"] if x["migration_status"] == "REVIEWED_NO_TRANSFER"]
         synthetic = [x for x in data["cells"] if not x["emitted"]]
         self.assertEqual((len(reviewed), len(synthetic)), (88, 124))
-        self.assertTrue(all(x["status"] == "NOT_MAPPED" and not x["evidence"] and x["migration_evidence"] for x in reviewed))
+        self.assertEqual(sum(x["status"] == "NOT_MAPPED" for x in reviewed), 81)
+        self.assertTrue(all(not x["evidence"] and x["migration_evidence"] for x in reviewed if x["status"] == "NOT_MAPPED"))
+        self.assertTrue(all(x["evidence"] and x["migration_evidence"] for x in reviewed if x["status"] != "NOT_MAPPED"))
         self.assertTrue(all(x["status"] == "NOT_MAPPED" and x["migration_status"] == "NOT_REVIEWED" for x in synthetic))
 
     def test_generated_outputs_are_current(self):
@@ -37,7 +39,7 @@ class MatrixSiteTests(unittest.TestCase):
     def test_independent_checker(self):
         errors, summary = check()
         self.assertEqual(errors, [])
-        self.assertEqual(summary["total_not_mapped"], 212)
+        self.assertEqual(summary["total_not_mapped"], 205)
 
     def test_verifier(self):
         self.assertEqual(verify()[0], [])
@@ -63,7 +65,7 @@ class MatrixSiteTests(unittest.TestCase):
         self.assertIn("grid-template-columns: 12rem minmax(0, 1fr)", css)
         manifest = json.loads((ROOT / "foundations/site/manifest.json").read_text())
         self.assertGreaterEqual(len(manifest["outputs"]), 38)
-        self.assertTrue((ROOT / "foundations/site/sources/foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V2.json").is_file())
+        self.assertTrue((ROOT / "foundations/site/sources/foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V3.json").is_file())
         self.assertTrue((ROOT / "foundations/site/sources/foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_MIGRATION_AUDIT_V2.json").is_file())
 
 

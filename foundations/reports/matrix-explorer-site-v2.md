@@ -12,11 +12,13 @@
 The **452** cube-emitted coordinates now have separate coverage and migration
 review fields: **452 reviewed**, **0 pending**.
 Of those, **88** parent-evidence reviews found no
-licensed transfer to the refined child. Their coverage is `NOT_MAPPED`, which
-is not a literature-absence claim. The remaining **124**
+licensed transfer to the refined child. Seven now have independent child-specific
+coverage; **81 remain `NOT_MAPPED`**, which is not a literature-absence claim.
+The remaining **124**
 coordinates are browser-visible complements that have not been assessed.
 
-Coverage is classified for **364** emitted cells.
+Coverage is classified for **371** emitted cells after
+nine status changes and five evidence overlays from the normally-hyperbolic atlas.
 The cell inspector exposes coverage evidence separately from migration-review
 evidence and links to the explicit 112-decision audit ledger.
 
@@ -30,7 +32,7 @@ python3 foundations/verify_matrix_site_v2.py
 python3 -m unittest foundations.tests.test_matrix_site_v2
 ```
 
-The v1 cube and v1 site remain unchanged as historical artifacts. The v2 build
+Earlier cubes remain unchanged as historical artifacts. The existing-site build
 fails closed on unresolved evidence IDs and projects scientific text from the
 cube, migration audit, strength ladder, local results, and literature ledgers.
 
@@ -44,7 +46,7 @@ All source links resolve inside the standalone directory; no remote code is used
 This site does not establish:
 
 - literature completeness
-- coverage for the 88 reviewed-no-transfer coordinates
+- coverage for the 81 still-unmapped reviewed-no-transfer coordinates
 - that NOT_MAPPED means no literature exists
 - that the 124 synthetic coordinates are coherent
 - a weakest mathematical base

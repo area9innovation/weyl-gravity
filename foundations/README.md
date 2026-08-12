@@ -260,9 +260,10 @@ python3 -m unittest foundations.tests.test_cylinder_wave_strength_ladder
 The generated
 [`static matrix explorer`](site/index.html) turns the complete refined surface
 into a browser-based research instrument. It displays all 576 coordinates as
-sixteen coordinated heatmaps. Coverage is classified for 364 emitted cells;
-all 452 emitted cells have completed migration review, including 88
-`REVIEWED_NO_TRANSFER` cells. The other 124 Cartesian coordinates remain
+sixteen coordinated heatmaps. Coverage is classified for 371 emitted cells;
+all 452 emitted cells have completed migration review. Of the 88 historical
+`REVIEWED_NO_TRANSFER` decisions, seven now have independent child-specific
+coverage and 81 remain `NOT_MAPPED`. The other 124 Cartesian coordinates remain
 unassessed. Both kinds of `NOT_MAPPED` forbid an interpretation as literature
 absence. The inspector separates positive coverage evidence from evidence
 reviewed only for migration. The bundle also provides multi-select filters,
@@ -283,6 +284,26 @@ The generator fails closed on dangling evidence IDs and records every source
 and output hash in [`site/manifest.json`](site/manifest.json). Browser claims
 are projections of the authoritative JSON artifacts, not a separately edited
 scientific catalogue.
+
+The
+[`normally-hyperbolic factor atlas`](reports/normal-hyperbolic-factor-foundations.md)
+is the first focused research pass over the causal PDE frontier. It separates
+classical Green theorems, represented computability upper bounds, adjacent ZF
+operator theory, reverse-mathematical non-classification, strict finite support,
+and Lieb–Robinson decay. Six primary sources are content-pinned in a dedicated
+ledger. An independent exact certificate constructs finite graph-step retarded
+and advanced kernels. The research-refined
+[`cube v3`](reports/refined-intersection-cube-v3.md) applies nine status changes
+and five evidence overlays without rewriting the v2 migration history:
+
+```bash
+python3 foundations/build_finite_graph_wave_causality.py --check
+python3 foundations/verify_finite_graph_wave_causality.py
+python3 foundations/build_normal_hyperbolic_factor_atlas.py --check
+python3 foundations/verify_normal_hyperbolic_factor_atlas.py
+python3 foundations/refine_intersection_cube_v3.py --check
+python3 foundations/verify_refined_intersection_cube_v3.py
+```
 
 The append-only
 [`migration-reviewed cube v2`](reports/refined-intersection-cube-v2.md) clears
