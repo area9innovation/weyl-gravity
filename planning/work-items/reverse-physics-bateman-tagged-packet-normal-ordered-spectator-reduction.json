@@ -1,0 +1,19 @@
+{
+  "id": "sf:program/work/reverse-physics-bateman-tagged-packet-normal-ordered-spectator-reduction",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "reverse-physics",
+    "state": "ACTIVE",
+    "objective": "Determine whether the order-lambda2 spectator self-energy in the complete tagged q6 ledger survives on a legitimate fixed auxiliary BT carrier, and eliminate it only if an explicit local renormalization condition supplies an operator-level certificate.",
+    "depends_on": ["BATEMAN_TUROK_HAMILTONIAN_SOURCE_V1", "REVERSE_PHYSICS_BT_TAGGED_PACKET_LAMBDA6_OBJECT_LEDGER_V1", "REVERSE_PHYSICS_CHARGE_GRADING_LOOP_STABILITY_V1", "REVERSE_PHYSICS_BT_PERFECT_SQUARE_RG_SEPARATRIX_V1"],
+    "activates": ["an exhaustive auxiliary two-point graph classification through order lambda2", "a complete local counterterm basis on the selected auxiliary carrier", "a conditional two-term tagged q6 ledger if the spectator block vanishes"],
+    "current_gate": "Use the quartic auxiliary interaction to enumerate every connected two-point graph at coupling degree two, classify all neutral ghost-even local counterterms of dimension at most four, and test the massless unit-residue normal-ordering condition on the exact finite-time packet operator rather than only on an asymptotic amplitude.",
+    "stop_condition": "Land a strict coefficient certificate and independent verifier that either proves S2_spectator=0 on a fully declared auxiliary renormalization scheme or retains it as missing; distinguish a selected scheme from a convention forced by the public Letter and preserve all Eq. 19, gravity and Lorentzian boundaries.",
+    "forbid": "no tadpole discarded without a declared normal-ordering/mass condition; no phi-frame wave-function pole inserted again after a complete auxiliary similarity pullback; no selected scheme called uniquely public or scheme independent; no active loop called computed; no scalar result called gravity or LORENTZIAN-CAUSAL physics",
+    "allowed_paths": ["reverse_physics/", "paper/05-interaction-obstructions.tex", "paper/05-interaction-obstructions.pdf", "paper/06-einstein-weyl-interaction-obstructions.tex", "paper/06-einstein-weyl-interaction-obstructions.pdf", "planning/work-items/reverse-physics-bateman-tagged-packet-normal-ordered-spectator-reduction.json", "planning/events/"],
+    "resource_hint": "In the fixed O(1,1) auxiliary frame each Omega^2 Upsilon^2 vertex has degree lambda2. For E=2, 4V=E+2I and L=I-V+1, so degree two has uniquely V=1,I=1,L=1: a tadpole. Cross-only contractions make it a momentum-independent Omega-Upsilon mass term. Normal ordering removes the self-contraction; massless and unit-residue conditions fix the two allowed local two-point counterterms. If this is certified, S2_s tensor A2 vanishes and only the active one-loop cross remains missing at q6.",
+    "input_commit": "3ec25272",
+    "stream": "reverse-physics"
+  }
+}

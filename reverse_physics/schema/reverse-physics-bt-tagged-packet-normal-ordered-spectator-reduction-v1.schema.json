@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-tagged-packet-normal-ordered-spectator-reduction-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["certificate", "schema_version", "dependency_tags", "lifecycle_state", "result_kind", "question", "answer", "auxiliary_graph_classification", "species_and_counterterm_ledger", "reduced_probability_ledger", "frame_boundary", "interpretation", "assumptions", "does_not_establish", "next_gate", "provenance", "verification_commands", "checks", "report", "schema"],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_TAGGED_PACKET_NORMAL_ORDERED_SPECTATOR_REDUCTION_V1"},
+    "schema_version": {"const": "reverse-physics-bt-tagged-packet-normal-ordered-spectator-reduction-v1"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "auxiliary_graph_classification": {
+      "type": "object", "additionalProperties": false,
+      "required": ["interaction", "coupling_degree_per_vertex", "connected_two_point_identities", "order_lambda2_solution", "other_order_lambda2_two_point_topologies", "next_two_point_order", "status"],
+      "properties": {
+        "interaction": {"const": "(lambda^2/2)*Omega^2*Upsilon^2"},
+        "coupling_degree_per_vertex": {"const": 2},
+        "connected_two_point_identities": {"const": "4V=2+2I, L=I-V+1, d_lambda=2V"},
+        "order_lambda2_solution": {"const": {"vertices": 1, "internal_lines": 1, "loops": 1, "topology": "ONE_VERTEX_TADPOLE"}},
+        "other_order_lambda2_two_point_topologies": {"const": "NONE"},
+        "next_two_point_order": {"const": "lambda^4 from V=2, I=3, L=2"},
+        "status": {"const": "EXHAUSTIVE_THROUGH_ORDER_LAMBDA2"}
+      }
+    },
+    "species_and_counterterm_ledger": {
+      "type": "object", "additionalProperties": false,
+      "required": ["free_contraction", "unrenormalized_tadpole_species_matrix", "external_momentum_degree", "complete_local_invariant_basis_dimension_at_most_four", "two_point_basis", "divergent_order_lambda2_structure", "normal_ordering", "mass_condition", "residue_condition", "renormalized_order_lambda2_two_point_block", "status"],
+      "properties": {
+        "free_contraction": {"$ref": "#/$defs/text"},
+        "unrenormalized_tadpole_species_matrix": {"const": [["0", "4*I_tad"], ["4*I_tad", "0"]]},
+        "external_momentum_degree": {"const": 0},
+        "complete_local_invariant_basis_dimension_at_most_four": {"const": ["1", "Omega*Upsilon", "partial_Omega*partial_Upsilon", "Omega^2*Upsilon^2"]},
+        "two_point_basis": {"const": ["Omega*Upsilon", "partial_Omega*partial_Upsilon"]},
+        "divergent_order_lambda2_structure": {"$ref": "#/$defs/text"},
+        "normal_ordering": {"$ref": "#/$defs/text"},
+        "mass_condition": {"$ref": "#/$defs/text"},
+        "residue_condition": {"$ref": "#/$defs/text"},
+        "renormalized_order_lambda2_two_point_block": {"const": "S2_spectator=0"},
+        "status": {"const": "COUNTERTERM_BASIS_CLASSIFIED_AND_ORDER_LAMBDA2_BLOCK_FIXED"}
+      }
+    },
+    "reduced_probability_ledger": {
+      "type": "object", "additionalProperties": false,
+      "required": ["generic_order_four_block", "declared_scheme_condition", "reduced_order_four_block", "q6_formula", "connected_tree_cross", "spectator_cross", "active_loop_cross", "complete_q6", "status"],
+      "properties": {
+        "generic_order_four_block": {"const": "T4=C4_tree+I_spectator tensor L4_active_loop+S2_spectator tensor A2_active_tree"},
+        "declared_scheme_condition": {"const": "S2_spectator=0"},
+        "reduced_order_four_block": {"const": "T4=C4_tree+I_spectator tensor L4_active_loop"},
+        "q6_formula": {"const": "q_tag^(6)=2*Re<T2,C4_tree>+2*Re<T2,I_spectator tensor L4_active_loop>"},
+        "connected_tree_cross": {"const": "COEFFICIENT_COMPUTED_AS_COMPACT_PACKET_FUNCTIONAL"},
+        "spectator_cross": {"const": "ZERO_BY_DECLARED_NORMAL_ORDERED_MASSLESS_UNIT_RESIDUE_CONDITION"},
+        "active_loop_cross": {"const": "MISSING_ON_THE_COMMON_FINITE_TIME_COMPACT_PACKET_CARRIER"},
+        "complete_q6": {"const": "NOT_COMPUTED"},
+        "status": {"const": "ONE_OF_TWO_PREVIOUSLY_MISSING_CROSSES_ELIMINATED"}
+      }
+    },
+    "frame_boundary": {
+      "type": "object", "additionalProperties": false,
+      "required": ["fixed_frame", "scalar_frame", "phi_frame_warning", "scheme_warning", "status"],
+      "properties": {
+        "fixed_frame": {"$ref": "#/$defs/text"}, "scalar_frame": {"$ref": "#/$defs/text"},
+        "phi_frame_warning": {"$ref": "#/$defs/text"}, "scheme_warning": {"$ref": "#/$defs/text"},
+        "status": {"const": "SELECTED_AUXILIARY_SCHEME_ONLY"}
+      }
+    },
+    "interpretation": {
+      "const": {
+        "spectator_order_lambda2_packet_kernel": "ZERO_IN_DECLARED_SCHEME",
+        "active_four_point_one_loop_packet_kernel": "MISSING",
+        "complete_order_lambda6_probability": "NOT_COMPUTED",
+        "general_Eq19": "NOT_PROVED",
+        "gravity_or_BV_BRST_transfer": "NOT_CONSTRUCTED",
+        "Lorentzian_causal_claim": "NOT_ESTABLISHED"
+      }
+    },
+    "assumptions": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"$ref": "#/$defs/text"}},
+    "does_not_establish": {"type": "array", "minItems": 12, "maxItems": 12, "items": {"$ref": "#/$defs/text"}},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "provenance": {"type": "object", "additionalProperties": false, "required": ["source_commit", "retrieval_date", "inputs", "method"], "properties": {"source_commit": {"const": "3ec25272"}, "retrieval_date": {"const": "2026-08-12"}, "inputs": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"type": "object", "additionalProperties": false, "required": ["path", "sha256"], "properties": {"path": {"$ref": "#/$defs/text"}, "sha256": {"$ref": "#/$defs/hash"}}}}, "method": {"$ref": "#/$defs/text"}}},
+    "verification_commands": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/text"}},
+    "checks": {"type": "object", "additionalProperties": false, "required": ["ok", "passed", "total", "failures", "details"], "properties": {"ok": {"const": true}, "passed": {"const": 24}, "total": {"const": 24}, "failures": {"const": []}, "details": {"type": "object", "minProperties": 24, "maxProperties": 24, "additionalProperties": {"const": true}}}},
+    "report": {"const": "reverse_physics/reports/bt-tagged-packet-normal-ordered-spectator-reduction.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-tagged-packet-normal-ordered-spectator-reduction-v1.schema.json"}
+  },
+  "$defs": {"text": {"type": "string", "minLength": 1}, "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+}
