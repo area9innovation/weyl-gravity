@@ -1,0 +1,19 @@
+{
+  "id": "sf:program/work/reverse-physics-bateman-six-point-history-incidence-isometry",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "reverse-physics",
+    "state": "ACTIVE",
+    "objective": "Construct the correctly typed positive history carrier for the ten-channel six-point factorization residue, separate final species assignments from intermediate channels, and decide whether it supports an exactly normalized finite channel-label instrument with survival.",
+    "depends_on": ["REVERSE_PHYSICS_BT_SIX_POINT_SEQUENTIAL_HISTORY_CARRIER_V1", "REVERSE_PHYSICS_BT_PHYSICAL_MOLLER_DEFECT_COMPLETION_V1"],
+    "activates": ["a canonical factorization-subspace isometry", "a normalized history-sector detector POVM", "a finite channel-label instrument with survival", "a typed restriction of the Moller defect gate"],
+    "current_gate": "Lift the ten-by-ten J-I residue incidence to the ninety allowed histories (S,A), prove the normalized lift is isometric and symmetry-equivariant, reconstruct the physical residue by coherent collapse, normalize the detector effect, and close a finite skew-rotation instrument with survival.",
+    "stop_condition": "Land an exact certificate for the ninety-history lift, its uniqueness in the nonnegative equal-edge symmetry class, its coherent-collapse and detector identities, an exactly normalized finite channel-label instrument, and the remaining momentum-time/defect embedding needed for a physical result.",
+    "forbid": "no same-space Gram factorization conflating species and channel labels; no history-sector instrument called a BT-derived spacetime instrument; no finite channel isometry called a complete defect unitary; no Eq. 19, full inclusive probability, gravity or LORENTZIAN-CAUSAL promotion",
+    "allowed_paths": ["reverse_physics/", "notes/bateman-turok-embedding.md", "paper/05-interaction-obstructions.tex", "paper/05-interaction-obstructions.pdf", "paper/06-einstein-weyl-interaction-obstructions.tex", "paper/06-einstein-weyl-interaction-obstructions.pdf", "planning/work-items/reverse-physics-bateman-six-point-history-incidence-isometry.json", "planning/events/"],
+    "resource_hint": "Use histories H={(S,A):S!=A}, B_(S,A),B=delta_(A,B)/4, and C_S',(S,A)=delta_S',S. Then CB=(J-I)/4, B^T B=9I/16, and W_hist=4B/3 is an isometry. Normalize P=C^T C/9, use P_mu=[(1-mu)I+mu C^T C]/9 as a history effect, and close survival with the skew block K=[[0,-W^T],[W,0]].",
+    "input_commit": "ace5e592",
+    "stream": "reverse-physics"
+  }
+}

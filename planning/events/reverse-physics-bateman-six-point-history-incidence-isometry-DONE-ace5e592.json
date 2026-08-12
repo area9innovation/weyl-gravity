@@ -1,0 +1,21 @@
+{
+  "schema": "event-v0",
+  "id": "sf:program/event/reverse-physics-bateman-six-point-history-incidence-isometry-DONE-ace5e592",
+  "kind": "event",
+  "source": {"path": "tools/science-forge/program/events/reverse-physics-bateman-six-point-history-incidence-isometry-DONE-ace5e592.json", "span": null},
+  "body": {
+    "event_kind": "WORK_ITEM_TRANSITIONED",
+    "actor": "reverse-physics",
+    "base_revision": "science-forge-ir-v0",
+    "predecessors": [],
+    "when": "2026-08-12",
+    "seq": 1,
+    "payload": {
+      "target": "sf:program/work/reverse-physics-bateman-six-point-history-incidence-isometry",
+      "to_state": "DONE",
+      "note": "Separating final species assignments S from intermediate channels A gives ninety allowed histories S!=A. Their normalized equal-edge incidence lift is a unique nonnegative permutation-equivariant isometry and coherent collapse reconstructs (J-I)/4. The signed J-I interference is a difference of positive detector weights. A normalized history POVM and exact skew rotation give a three-outcome finite channel-label instrument with survival. BT time/momentum affiliation and the global defect unitary remain open. Evidence: REVERSE_PHYSICS_BT_SIX_POINT_HISTORY_INCIDENCE_ISOMETRY_V1."
+    },
+    "native": {"authored_by": "manual close-out after exact typed incidence and independent instrument verification", "policy": "append-only; one content-addressed file per event; the work-item file is never rewritten and the effective state is the fold of events over the base state"}
+  },
+  "edges": [{"rel": "TRANSITIONS", "to": "sf:program/work/reverse-physics-bateman-six-point-history-incidence-isometry"}]
+}

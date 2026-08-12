@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-six-point-history-incidence-isometry-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["certificate", "schema_version", "dependency_tags", "lifecycle_state", "result_kind", "question", "answer", "typed_history_carrier", "symmetry_and_uniqueness", "detector_resolution_gram", "normalized_history_detector", "finite_channel_instrument", "moller_defect_relation", "interpretation", "does_not_establish", "next_gate", "provenance", "verification_commands", "checks", "report", "schema"],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_SIX_POINT_HISTORY_INCIDENCE_ISOMETRY_V1"},
+    "schema_version": {"const": "reverse-physics-bt-six-point-history-incidence-isometry-v1"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "typed_history_carrier": {
+      "type": "object", "additionalProperties": false,
+      "required": ["species_assignment_count", "intermediate_channel_count", "allowed_history_count", "allowed_history_rule", "allowed_histories", "allowed_histories_sha256", "lift_formula", "collapse_formula", "residue_identity", "lift_gram", "normalized_history_isometry", "isometry_identity", "normalized_collapse", "coisometry_identity", "normalized_coherent_compression", "history_range_kernel_intersection"],
+      "properties": {
+        "species_assignment_count": {"const": 10}, "intermediate_channel_count": {"const": 10}, "allowed_history_count": {"const": 90},
+        "allowed_history_rule": {"const": "(S,A) with S!=A"},
+        "allowed_histories": {"type": "array", "minItems": 90, "maxItems": 90, "items": {"type": "object", "additionalProperties": false, "required": ["species_assignment", "intermediate_channel"], "properties": {"species_assignment": {"type": "integer", "minimum": 0, "maximum": 9}, "intermediate_channel": {"type": "integer", "minimum": 0, "maximum": 9}}}},
+        "allowed_histories_sha256": {"$ref": "#/$defs/hash"},
+        "lift_formula": {"const": "B_(S,A),Bchannel=delta_(A,Bchannel)/4 for S!=A"},
+        "collapse_formula": {"const": "C_Sprime,(S,A)=delta_(Sprime,S)"},
+        "residue_identity": {"const": "C*B=(J-I)/4"}, "lift_gram": {"const": "B^T*B=(9/16)*I10"},
+        "normalized_history_isometry": {"const": "W_hist=(4/3)*B"}, "isometry_identity": {"const": "W_hist^T*W_hist=I10"},
+        "normalized_collapse": {"const": "C_bar=C/3"}, "coisometry_identity": {"const": "C_bar*C_bar^T=I10"},
+        "normalized_coherent_compression": {"const": "C_bar*W_hist=(J-I)/9"},
+        "history_range_kernel_intersection": {"const": "range(W_hist) intersect kernel(C)={0}"}
+      }
+    },
+    "symmetry_and_uniqueness": {
+      "type": "object", "additionalProperties": false,
+      "required": ["combinatorial_symmetry", "physical_crossing_subgroup", "equivariance", "support", "isometry_equation", "unique_nonnegative_weight", "phase_freedom"],
+      "properties": {
+        "combinatorial_symmetry": {"const": "simultaneous permutations of the ten S and A labels"},
+        "physical_crossing_subgroup": {"const": "the induced S6 action on unordered three-particle channels"},
+        "equivariance": {"const": "Q_sigma*W_hist=W_hist*P_sigma and P_sigma*C=C*Q_sigma"},
+        "support": {"const": "zero on forbidden diagonal histories S=A and constant nonnegative weight w on every allowed edge"},
+        "isometry_equation": {"const": "9*w^2=1"}, "unique_nonnegative_weight": {"const": "w=1/3"},
+        "phase_freedom": {"$ref": "#/$defs/text"}
+      }
+    },
+    "detector_resolution_gram": {
+      "type": "object", "additionalProperties": false,
+      "required": ["resolved_history_weight", "coherent_species_weight", "common_reduced_Born_factor", "resolved_pullback", "coherent_pullback", "signed_interference", "interpolating_weight", "interpolating_pullback", "pullback_spectrum", "positivity_interval", "status"],
+      "properties": {
+        "resolved_history_weight": {"const": "E_res=2*I90"}, "coherent_species_weight": {"const": "E_coh=2*C^T*C"},
+        "common_reduced_Born_factor": {"const": "2"}, "resolved_pullback": {"const": "B^T*E_res*B=(9/8)*I10"},
+        "coherent_pullback": {"const": "B^T*E_coh*B=J+I/8"}, "signed_interference": {"const": "B^T*(E_coh-E_res)*B=J-I"},
+        "interpolating_weight": {"const": "E_mu=2*[(1-mu)*I90+mu*C^T*C], 0<=mu<=1"},
+        "interpolating_pullback": {"const": "G_mu=(9/8)*I10+mu*(J-I)"},
+        "pullback_spectrum": {"const": {"singlet": "9/8+9*mu", "standard_multiplicity_9": "9/8-mu"}},
+        "positivity_interval": {"const": "0<=mu<=1"},
+        "status": {"const": "POSITIVE_QUADRATIC_FORM_FAMILY_NOT_A_NORMALIZED_POVM_OR_SCATTERING_INSTRUMENT"}
+      }
+    },
+    "normalized_history_detector": {
+      "type": "object", "additionalProperties": false,
+      "required": ["coherent_projection", "coherent_projection_rank", "effect", "effect_spectrum", "complement", "generalized_Born_weight_relation", "source_pullback", "source_pullback_spectrum", "status"],
+      "properties": {
+        "coherent_projection": {"const": "P_coh=C^T*C/9"}, "coherent_projection_rank": {"const": 10},
+        "effect": {"const": "P_mu=[(1-mu)*I90+mu*C^T*C]/9, 0<=mu<=1"},
+        "effect_spectrum": {"const": {"coherent_rank_10": "(1+8*mu)/9", "orthogonal_rank_80": "(1-mu)/9"}},
+        "complement": {"const": "I90-P_mu"}, "generalized_Born_weight_relation": {"const": "E_mu=18*P_mu"},
+        "source_pullback": {"const": "W_hist^T*P_mu*W_hist=[(9-8*mu)*I10+8*mu*J]/81"},
+        "source_pullback_spectrum": {"const": {"singlet": "(1+8*mu)/9", "standard_multiplicity_9": "(9-8*mu)/81"}},
+        "status": {"const": "NORMALIZED_TWO_OUTCOME_POVM_ON_THE_FINITE_HISTORY_LABEL_SPACE"}
+      }
+    },
+    "finite_channel_instrument": {
+      "type": "object", "additionalProperties": false,
+      "required": ["skew_generator", "minimal_polynomial_identity", "rotation", "source_column", "survival_effect", "detected_effect", "unresolved_effect", "completeness", "parameter_domain", "status"],
+      "properties": {
+        "skew_generator": {"const": "K=[[0,-W_hist^T],[W_hist,0]] on R^10 direct_sum R^90"},
+        "minimal_polynomial_identity": {"const": "K^3=-K"},
+        "rotation": {"const": "U_theta=I+sin(theta)*K+(1-cos(theta))*K^2"},
+        "source_column": {"const": "U_theta*I_source=(cos(theta)*I10,sin(theta)*W_hist)^T"},
+        "survival_effect": {"const": "E_surv=cos(theta)^2*I10"},
+        "detected_effect": {"const": "E_det=sin(theta)^2*W_hist^T*P_mu*W_hist"},
+        "unresolved_effect": {"const": "E_unres=sin(theta)^2*W_hist^T*(I90-P_mu)*W_hist"},
+        "completeness": {"const": "E_surv+E_det+E_unres=I10"},
+        "parameter_domain": {"const": "theta real, 0<=mu<=1"},
+        "status": {"const": "EXACT_NORMALIZED_FINITE_CHANNEL_LABEL_INSTRUMENT_NOT_BT_TIME_AFFILIATED"}
+      }
+    },
+    "moller_defect_relation": {"type": "object", "additionalProperties": false, "required": ["constructed", "removes", "still_missing", "global_status"], "properties": {"constructed": {"$ref": "#/$defs/text"}, "removes": {"$ref": "#/$defs/text"}, "still_missing": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"$ref": "#/$defs/text"}}, "global_status": {"const": "NOT_FIXED"}}},
+    "interpretation": {
+      "const": {
+        "positive_history_incidence_carrier": "EXACTLY_CONSTRUCTED", "channel_label_isometry": "EXACTLY_CONSTRUCTED", "coherent_detector_collapse": "EXACTLY_CONSTRUCTED", "positive_resolution_gram_family": "EXACTLY_CONSTRUCTED", "normalized_history_sector_POVM": "EXACTLY_CONSTRUCTED", "normalized_finite_channel_instrument_with_survival": "EXACTLY_CONSTRUCTED", "BT_affiliated_spacetime_detector_instrument": "NOT_CONSTRUCTED", "BT_dynamical_Moller_affiliation": "NOT_CONSTRUCTED", "global_defect_partial_unitary": "NOT_FIXED", "finite_inclusive_probability": "NOT_CONSTRUCTED", "Eq19_all_orders": "NOT_PROVED"
+      }
+    },
+    "does_not_establish": {"type": "array", "minItems": 13, "items": {"$ref": "#/$defs/text"}},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "provenance": {"type": "object", "additionalProperties": false, "required": ["source_commit", "retrieval_date", "inputs", "method"], "properties": {"source_commit": {"const": "ace5e592"}, "retrieval_date": {"const": "2026-08-12"}, "inputs": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "object", "additionalProperties": false, "required": ["path", "sha256"], "properties": {"path": {"$ref": "#/$defs/text"}, "sha256": {"$ref": "#/$defs/hash"}}}}, "method": {"$ref": "#/$defs/text"}}},
+    "verification_commands": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/text"}},
+    "checks": {"type": "object", "additionalProperties": false, "required": ["ok", "passed", "total", "failures", "details"], "properties": {"ok": {"const": true}, "passed": {"const": 25}, "total": {"const": 25}, "failures": {"const": []}, "details": {"type": "object", "minProperties": 25, "maxProperties": 25, "additionalProperties": {"const": true}}}},
+    "report": {"const": "reverse_physics/reports/bt-six-point-history-incidence-isometry.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-six-point-history-incidence-isometry-v1.schema.json"}
+  },
+  "$defs": {"text": {"type": "string", "minLength": 1}, "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+}

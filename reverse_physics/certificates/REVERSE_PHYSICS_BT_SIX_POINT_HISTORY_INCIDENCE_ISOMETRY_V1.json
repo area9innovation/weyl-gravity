@@ -1,0 +1,549 @@
+{
+  "answer": "Yes. Keep the final three-Omega/three-Upsilon assignment S distinct from the intermediate 3|3 channel A. The auxiliary quartic tree allows exactly the ninety histories (S,A) with S!=A. The lift B from ten channel labels to this history space has B_(S,A),B=delta_(A,B)/4, so B^T B=(9/16)I and W_hist=(4/3)B is an isometry. The coherent collapse C sums histories with the same S and satisfies CB=(J-I)/4, exactly reconstructing the certified residue. With the common reduced Born factor two, the resolved history Gram pulls back to (9/8)I, while coherent collapse pulls back to J+I/8. Their difference is J-I, the signed interference matrix; it is a difference of positive detector quadratic forms, not a standalone probability effect. The convex Gram family 2[(1-mu)I+mu C^T C] is positive for 0<=mu<=1 and pulls back to (9/8)I+mu(J-I). Moreover P_mu=[(1-mu)I+mu C^T C]/9 is a genuine history-sector effect with positive complement. The skew block K=[[0,-W_hist^T],[W_hist,0]] obeys K^T=-K and K^3=-K, so its exact rotation has source column (cos(theta)I,sin(theta)W_hist). Combining survival, P_mu and I-P_mu gives three positive effects summing to I on the ten-channel source. Thus the channel-label part of a finite probability-conserving instrument is exact. The nonnegative equal-edge permutation-equivariant isometry weight 1/3 is unique. This does not derive theta or the time-energy kernel from the BT Hamiltonian, embed momentum wave packets into the asymptotic defect spaces, or fix the global defect partial unitary.",
+  "certificate": "REVERSE_PHYSICS_BT_SIX_POINT_HISTORY_INCIDENCE_ISOMETRY_V1",
+  "checks": {
+    "details": {
+      "all_inputs_are_content_pinned": true,
+      "coherent_collapse_reconstructs_residue": true,
+      "coherent_pullback_is_complete_gram": true,
+      "coherent_species_operator_is_projection": true,
+      "defect_partial_unitary_remains_globally_underdetermined": true,
+      "each_channel_has_nine_history_edges": true,
+      "each_species_assignment_has_nine_history_edges": true,
+      "eq19_probability_gravity_and_causality_remain_open": true,
+      "finite_Moller_column_remains_one_sided": true,
+      "finite_channel_instrument_has_exact_completeness": true,
+      "history_range_is_transverse_to_collapse_kernel": true,
+      "history_range_operator_is_projection": true,
+      "interference_is_difference_not_positive_weight": true,
+      "interpolation_stays_positive_for_zero_to_one": true,
+      "lift_columns_are_orthogonal": true,
+      "ninety_and_only_allowed_histories": true,
+      "nonnegative_equal_edge_isometry_weight_is_unique": true,
+      "normalized_collapse_is_coisometric": true,
+      "normalized_detector_effect_and_complement_are_positive": true,
+      "normalized_detector_effect_pullback_replays": true,
+      "normalized_history_lift_is_isometric": true,
+      "positive_detector_gram_interpolation_replays": true,
+      "predecessor_has_ten_channel_residue": true,
+      "resolved_pullback_is_sequential_gram": true,
+      "skew_rotation_generator_is_exact": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 25,
+    "total": 25
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "detector_resolution_gram": {
+    "coherent_pullback": "B^T*E_coh*B=J+I/8",
+    "coherent_species_weight": "E_coh=2*C^T*C",
+    "common_reduced_Born_factor": "2",
+    "interpolating_pullback": "G_mu=(9/8)*I10+mu*(J-I)",
+    "interpolating_weight": "E_mu=2*[(1-mu)*I90+mu*C^T*C], 0<=mu<=1",
+    "positivity_interval": "0<=mu<=1",
+    "pullback_spectrum": {
+      "singlet": "9/8+9*mu",
+      "standard_multiplicity_9": "9/8-mu"
+    },
+    "resolved_history_weight": "E_res=2*I90",
+    "resolved_pullback": "B^T*E_res*B=(9/8)*I10",
+    "signed_interference": "B^T*(E_coh-E_res)*B=J-I",
+    "status": "POSITIVE_QUADRATIC_FORM_FAMILY_NOT_A_NORMALIZED_POVM_OR_SCATTERING_INSTRUMENT"
+  },
+  "does_not_establish": [
+    "physical orthogonality of unresolved channels",
+    "a BT-affiliated spacetime POVM or detector instrument",
+    "a BT-derived survival or virtual term",
+    "a finite-time BT Hamiltonian derivation",
+    "the momentum-wave-packet defect embedding",
+    "the global defect partial unitary",
+    "a finite inclusive BT probability",
+    "a complete Moller/LSZ/S operator",
+    "Eq. (19)",
+    "loops",
+    "gravity/BRST",
+    "anything LORENTZIAN-CAUSAL",
+    "literature priority"
+  ],
+  "finite_channel_instrument": {
+    "completeness": "E_surv+E_det+E_unres=I10",
+    "detected_effect": "E_det=sin(theta)^2*W_hist^T*P_mu*W_hist",
+    "minimal_polynomial_identity": "K^3=-K",
+    "parameter_domain": "theta real, 0<=mu<=1",
+    "rotation": "U_theta=I+sin(theta)*K+(1-cos(theta))*K^2",
+    "skew_generator": "K=[[0,-W_hist^T],[W_hist,0]] on R^10 direct_sum R^90",
+    "source_column": "U_theta*I_source=(cos(theta)*I10,sin(theta)*W_hist)^T",
+    "status": "EXACT_NORMALIZED_FINITE_CHANNEL_LABEL_INSTRUMENT_NOT_BT_TIME_AFFILIATED",
+    "survival_effect": "E_surv=cos(theta)^2*I10",
+    "unresolved_effect": "E_unres=sin(theta)^2*W_hist^T*(I90-P_mu)*W_hist"
+  },
+  "interpretation": {
+    "BT_affiliated_spacetime_detector_instrument": "NOT_CONSTRUCTED",
+    "BT_dynamical_Moller_affiliation": "NOT_CONSTRUCTED",
+    "Eq19_all_orders": "NOT_PROVED",
+    "channel_label_isometry": "EXACTLY_CONSTRUCTED",
+    "coherent_detector_collapse": "EXACTLY_CONSTRUCTED",
+    "finite_inclusive_probability": "NOT_CONSTRUCTED",
+    "global_defect_partial_unitary": "NOT_FIXED",
+    "normalized_finite_channel_instrument_with_survival": "EXACTLY_CONSTRUCTED",
+    "normalized_history_sector_POVM": "EXACTLY_CONSTRUCTED",
+    "positive_history_incidence_carrier": "EXACTLY_CONSTRUCTED",
+    "positive_resolution_gram_family": "EXACTLY_CONSTRUCTED"
+  },
+  "lifecycle_state": "COEFFICIENT_COMPUTED",
+  "moller_defect_relation": {
+    "constructed": "canonical finite channel-label isometry W_hist from the ten factorization labels into ninety allowed histories",
+    "global_status": "NOT_FIXED",
+    "removes": "finite equal-edge nonnegative incidence ambiguity on the declared factorization labels",
+    "still_missing": [
+      "embedding of the momentum-wave-packet factorization continuum into the incoming and outgoing defect spaces",
+      "BT Hamiltonian derivation of theta and the finite-time phase/energy kernel",
+      "physical calibration of detector coherence mu",
+      "crossing-compatible extension away from the factorization subspace",
+      "global two-sided defect partial unitary"
+    ]
+  },
+  "next_gate": "Derive theta, the finite-time phase/energy kernel and the detector coherence mu from the auxiliary BT quartic Hamiltonian on wave packets, then embed W_hist into the actual incoming/outgoing Moller defect continua. Only that calculation can promote the normalized finite label instrument to a BT physical inclusive probability or fix the defect partial unitary dynamically.",
+  "normalized_history_detector": {
+    "coherent_projection": "P_coh=C^T*C/9",
+    "coherent_projection_rank": 10,
+    "complement": "I90-P_mu",
+    "effect": "P_mu=[(1-mu)*I90+mu*C^T*C]/9, 0<=mu<=1",
+    "effect_spectrum": {
+      "coherent_rank_10": "(1+8*mu)/9",
+      "orthogonal_rank_80": "(1-mu)/9"
+    },
+    "generalized_Born_weight_relation": "E_mu=18*P_mu",
+    "source_pullback": "W_hist^T*P_mu*W_hist=[(9-8*mu)*I10+8*mu*J]/81",
+    "source_pullback_spectrum": {
+      "singlet": "(1+8*mu)/9",
+      "standard_multiplicity_9": "(9-8*mu)/81"
+    },
+    "status": "NORMALIZED_TWO_OUTCOME_POVM_ON_THE_FINITE_HISTORY_LABEL_SPACE"
+  },
+  "provenance": {
+    "inputs": [
+      {
+        "path": "planning/work-items/reverse-physics-bateman-six-point-history-incidence-isometry.json",
+        "sha256": "842d0e69dfe33ccd22d91f425b33156233a76e30a0eb78630dd09993551e43d7"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_SIX_POINT_SEQUENTIAL_HISTORY_CARRIER_V1.json",
+        "sha256": "cb4abbebcff1e255063af7e5a0021a3929ee7f8ed03567b5e54f56833e5e46d6"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_FINITE_PHYSICAL_MOLLER_COLUMN_V1.json",
+        "sha256": "5bda31d257bebbe89a32553636286bf92e845b316988f1edd1a640b2c8e6c8ed"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_PHYSICAL_MOLLER_DEFECT_COMPLETION_V1.json",
+        "sha256": "31298fc3dd4aafbfc6ce08b3741f4fcb93bc4bb5022d906f1dee1709a9b4dc51"
+      }
+    ],
+    "method": "Exact sparse rational incidence algebra on the ninety allowed typed histories, symmetry-generator equivariance, positive Gram interpolation, and fail-closed imports of the sequential carrier and Moller scope certificates.",
+    "retrieval_date": "2026-08-12",
+    "source_commit": "ace5e592"
+  },
+  "question": "Does the ten-channel six-point residue admit a correctly typed positive history lift, and how does its signed channel interference arise from detector resolution?",
+  "report": "reverse_physics/reports/bt-six-point-history-incidence-isometry.md",
+  "result_kind": "exact positive ninety-history incidence isometry, coherent detector collapse, and resolution-Gram interpolation",
+  "schema": "reverse_physics/schema/reverse-physics-bt-six-point-history-incidence-isometry-v1.schema.json",
+  "schema_version": "reverse-physics-bt-six-point-history-incidence-isometry-v1",
+  "symmetry_and_uniqueness": {
+    "combinatorial_symmetry": "simultaneous permutations of the ten S and A labels",
+    "equivariance": "Q_sigma*W_hist=W_hist*P_sigma and P_sigma*C=C*Q_sigma",
+    "isometry_equation": "9*w^2=1",
+    "phase_freedom": "not classified outside the nonnegative equal-edge permutation-equivariant class",
+    "physical_crossing_subgroup": "the induced S6 action on unordered three-particle channels",
+    "support": "zero on forbidden diagonal histories S=A and constant nonnegative weight w on every allowed edge",
+    "unique_nonnegative_weight": "w=1/3"
+  },
+  "typed_history_carrier": {
+    "allowed_histories": [
+      {
+        "intermediate_channel": 1,
+        "species_assignment": 0
+      },
+      {
+        "intermediate_channel": 2,
+        "species_assignment": 0
+      },
+      {
+        "intermediate_channel": 3,
+        "species_assignment": 0
+      },
+      {
+        "intermediate_channel": 4,
+        "species_assignment": 0
+      },
+      {
+        "intermediate_channel": 5,
+        "species_assignment": 0
+      },
+      {
+        "intermediate_channel": 6,
+        "species_assignment": 0
+      },
+      {
+        "intermediate_channel": 7,
+        "species_assignment": 0
+      },
+      {
+        "intermediate_channel": 8,
+        "species_assignment": 0
+      },
+      {
+        "intermediate_channel": 9,
+        "species_assignment": 0
+      },
+      {
+        "intermediate_channel": 0,
+        "species_assignment": 1
+      },
+      {
+        "intermediate_channel": 2,
+        "species_assignment": 1
+      },
+      {
+        "intermediate_channel": 3,
+        "species_assignment": 1
+      },
+      {
+        "intermediate_channel": 4,
+        "species_assignment": 1
+      },
+      {
+        "intermediate_channel": 5,
+        "species_assignment": 1
+      },
+      {
+        "intermediate_channel": 6,
+        "species_assignment": 1
+      },
+      {
+        "intermediate_channel": 7,
+        "species_assignment": 1
+      },
+      {
+        "intermediate_channel": 8,
+        "species_assignment": 1
+      },
+      {
+        "intermediate_channel": 9,
+        "species_assignment": 1
+      },
+      {
+        "intermediate_channel": 0,
+        "species_assignment": 2
+      },
+      {
+        "intermediate_channel": 1,
+        "species_assignment": 2
+      },
+      {
+        "intermediate_channel": 3,
+        "species_assignment": 2
+      },
+      {
+        "intermediate_channel": 4,
+        "species_assignment": 2
+      },
+      {
+        "intermediate_channel": 5,
+        "species_assignment": 2
+      },
+      {
+        "intermediate_channel": 6,
+        "species_assignment": 2
+      },
+      {
+        "intermediate_channel": 7,
+        "species_assignment": 2
+      },
+      {
+        "intermediate_channel": 8,
+        "species_assignment": 2
+      },
+      {
+        "intermediate_channel": 9,
+        "species_assignment": 2
+      },
+      {
+        "intermediate_channel": 0,
+        "species_assignment": 3
+      },
+      {
+        "intermediate_channel": 1,
+        "species_assignment": 3
+      },
+      {
+        "intermediate_channel": 2,
+        "species_assignment": 3
+      },
+      {
+        "intermediate_channel": 4,
+        "species_assignment": 3
+      },
+      {
+        "intermediate_channel": 5,
+        "species_assignment": 3
+      },
+      {
+        "intermediate_channel": 6,
+        "species_assignment": 3
+      },
+      {
+        "intermediate_channel": 7,
+        "species_assignment": 3
+      },
+      {
+        "intermediate_channel": 8,
+        "species_assignment": 3
+      },
+      {
+        "intermediate_channel": 9,
+        "species_assignment": 3
+      },
+      {
+        "intermediate_channel": 0,
+        "species_assignment": 4
+      },
+      {
+        "intermediate_channel": 1,
+        "species_assignment": 4
+      },
+      {
+        "intermediate_channel": 2,
+        "species_assignment": 4
+      },
+      {
+        "intermediate_channel": 3,
+        "species_assignment": 4
+      },
+      {
+        "intermediate_channel": 5,
+        "species_assignment": 4
+      },
+      {
+        "intermediate_channel": 6,
+        "species_assignment": 4
+      },
+      {
+        "intermediate_channel": 7,
+        "species_assignment": 4
+      },
+      {
+        "intermediate_channel": 8,
+        "species_assignment": 4
+      },
+      {
+        "intermediate_channel": 9,
+        "species_assignment": 4
+      },
+      {
+        "intermediate_channel": 0,
+        "species_assignment": 5
+      },
+      {
+        "intermediate_channel": 1,
+        "species_assignment": 5
+      },
+      {
+        "intermediate_channel": 2,
+        "species_assignment": 5
+      },
+      {
+        "intermediate_channel": 3,
+        "species_assignment": 5
+      },
+      {
+        "intermediate_channel": 4,
+        "species_assignment": 5
+      },
+      {
+        "intermediate_channel": 6,
+        "species_assignment": 5
+      },
+      {
+        "intermediate_channel": 7,
+        "species_assignment": 5
+      },
+      {
+        "intermediate_channel": 8,
+        "species_assignment": 5
+      },
+      {
+        "intermediate_channel": 9,
+        "species_assignment": 5
+      },
+      {
+        "intermediate_channel": 0,
+        "species_assignment": 6
+      },
+      {
+        "intermediate_channel": 1,
+        "species_assignment": 6
+      },
+      {
+        "intermediate_channel": 2,
+        "species_assignment": 6
+      },
+      {
+        "intermediate_channel": 3,
+        "species_assignment": 6
+      },
+      {
+        "intermediate_channel": 4,
+        "species_assignment": 6
+      },
+      {
+        "intermediate_channel": 5,
+        "species_assignment": 6
+      },
+      {
+        "intermediate_channel": 7,
+        "species_assignment": 6
+      },
+      {
+        "intermediate_channel": 8,
+        "species_assignment": 6
+      },
+      {
+        "intermediate_channel": 9,
+        "species_assignment": 6
+      },
+      {
+        "intermediate_channel": 0,
+        "species_assignment": 7
+      },
+      {
+        "intermediate_channel": 1,
+        "species_assignment": 7
+      },
+      {
+        "intermediate_channel": 2,
+        "species_assignment": 7
+      },
+      {
+        "intermediate_channel": 3,
+        "species_assignment": 7
+      },
+      {
+        "intermediate_channel": 4,
+        "species_assignment": 7
+      },
+      {
+        "intermediate_channel": 5,
+        "species_assignment": 7
+      },
+      {
+        "intermediate_channel": 6,
+        "species_assignment": 7
+      },
+      {
+        "intermediate_channel": 8,
+        "species_assignment": 7
+      },
+      {
+        "intermediate_channel": 9,
+        "species_assignment": 7
+      },
+      {
+        "intermediate_channel": 0,
+        "species_assignment": 8
+      },
+      {
+        "intermediate_channel": 1,
+        "species_assignment": 8
+      },
+      {
+        "intermediate_channel": 2,
+        "species_assignment": 8
+      },
+      {
+        "intermediate_channel": 3,
+        "species_assignment": 8
+      },
+      {
+        "intermediate_channel": 4,
+        "species_assignment": 8
+      },
+      {
+        "intermediate_channel": 5,
+        "species_assignment": 8
+      },
+      {
+        "intermediate_channel": 6,
+        "species_assignment": 8
+      },
+      {
+        "intermediate_channel": 7,
+        "species_assignment": 8
+      },
+      {
+        "intermediate_channel": 9,
+        "species_assignment": 8
+      },
+      {
+        "intermediate_channel": 0,
+        "species_assignment": 9
+      },
+      {
+        "intermediate_channel": 1,
+        "species_assignment": 9
+      },
+      {
+        "intermediate_channel": 2,
+        "species_assignment": 9
+      },
+      {
+        "intermediate_channel": 3,
+        "species_assignment": 9
+      },
+      {
+        "intermediate_channel": 4,
+        "species_assignment": 9
+      },
+      {
+        "intermediate_channel": 5,
+        "species_assignment": 9
+      },
+      {
+        "intermediate_channel": 6,
+        "species_assignment": 9
+      },
+      {
+        "intermediate_channel": 7,
+        "species_assignment": 9
+      },
+      {
+        "intermediate_channel": 8,
+        "species_assignment": 9
+      }
+    ],
+    "allowed_histories_sha256": "dcd4f746ddb438b9d4ee007f2f78bcee14c83421e4cc136765fc47ddb4e98aa8",
+    "allowed_history_count": 90,
+    "allowed_history_rule": "(S,A) with S!=A",
+    "coisometry_identity": "C_bar*C_bar^T=I10",
+    "collapse_formula": "C_Sprime,(S,A)=delta_(Sprime,S)",
+    "history_range_kernel_intersection": "range(W_hist) intersect kernel(C)={0}",
+    "intermediate_channel_count": 10,
+    "isometry_identity": "W_hist^T*W_hist=I10",
+    "lift_formula": "B_(S,A),Bchannel=delta_(A,Bchannel)/4 for S!=A",
+    "lift_gram": "B^T*B=(9/16)*I10",
+    "normalized_coherent_compression": "C_bar*W_hist=(J-I)/9",
+    "normalized_collapse": "C_bar=C/3",
+    "normalized_history_isometry": "W_hist=(4/3)*B",
+    "residue_identity": "C*B=(J-I)/4",
+    "species_assignment_count": 10
+  },
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_six_point_history_incidence_isometry.py --write --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_six_point_history_incidence_isometry.py",
+    "ulimit -v 500000; python3 -m unittest reverse_physics.tests.test_bt_six_point_history_incidence_isometry"
+  ]
+}

@@ -2924,6 +2924,31 @@ constructs this reduced carrier and coefficient.  It does not derive the
 finite-time block from the BT Hamiltonian, prescribe the signed interference,
 or provide the matching survival term.
 
+The channel labels themselves admit a normalized finite completion once the
+final species assignment $S$ and intermediate channel $A$ are kept as distinct
+types.  The auxiliary quartic vertex allows the ninety histories $(S,A)$ with
+$S\ne A$.  The lift
+$B_{(S,A),B'}=\delta_{AB'}/4$ obeys $B^TB=9I/16$, so
+$W_{\rm hist}=4B/3$ is an isometry, while coherent collapse
+$C_{S',(S,A)}=\delta_{S'S}$ gives $CB=(J-I)/4$.  The resolved and coherent
+positive weights pull back to $9I/8$ and $J+I/8$; their difference, rather
+than a negative outcome, is the signed interference $J-I$.  Moreover
+
+\[
+ P_\mu=\frac{(1-\mu)I+\mu C^TC}{9},\qquad0\le\mu\le1,
+\]
+
+is a genuine history-sector effect with positive complement.  The skew block
+$K=\left(\begin{smallmatrix}0&-W_{\rm hist}^T\\
+W_{\rm hist}&0\end{smallmatrix}\right)$ obeys $K^3=-K$; its exact rotation,
+followed by $\{P_\mu,I-P_\mu\}$, gives survival, detected and unresolved
+effects whose sum is $I_{10}$.  Certificate
+\texttt{REVERSE\_PHYSICS\_BT\_SIX\_POINT\_HISTORY\_}
+\allowbreak\texttt{INCIDENCE\_ISOMETRY\_V1}
+therefore fixes the finite equal-edge channel-label part of the Møller defect
+action.  The rotation angle, detector coherence, finite-time energy kernel and
+momentum-wave-packet defect embedding remain unaffiliated with BT dynamics.
+
 The classified endpoint freedom does not supply this complement by one fixed
 prescription on the minimal two-profile probe lift.  Take
 $v=(1,z(1-z))$ and parameterize a reflection-even extension relative to the
