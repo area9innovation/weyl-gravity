@@ -1,0 +1,19 @@
+{
+  "id": "sf:program/work/reverse-physics-bateman-six-point-positive-distribution-completion",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "reverse-physics",
+    "state": "ACTIVE",
+    "objective": "Decide whether the transverse positive six-point factorization pole can be completed as a positive local distribution using the existing virtual, detector, or finite Moller data.",
+    "depends_on": ["REVERSE_PHYSICS_BT_SIX_POINT_PHASE_SPACE_POLE_OBSTRUCTION_V1", "REVERSE_PHYSICS_BT_INCLUSIVE_NLO_OBJECT_LEDGER_V1", "REVERSE_PHYSICS_BT_PHYSICAL_MOLLER_DEFECT_COMPLETION_V1"],
+    "activates": ["a positive-distribution extension theorem", "the exact sequential-history Moller input gate"],
+    "current_gate": "Classify extensions of the positive 9/(8s^2) pole, test local finiteness and positivity, and compare its perturbative order, singular support, and operator type with every existing candidate cancellation object.",
+    "stop_condition": "Land an exact certificate constructing a positive locally finite distributional completion or proving that no such exclusive completion exists and identifying the minimal enlarged sequential-history input needed for a physical result.",
+    "forbid": "no Hadamard finite part called a positive measure; no five-point external-collinear response used as a six-point internal-factorization cancellation; no abstract defect unitary called BT-derived; no Eq. 19, gravity, or LORENTZIAN-CAUSAL promotion",
+    "allowed_paths": ["reverse_physics/", "notes/bateman-turok-embedding.md", "paper/05-interaction-obstructions.tex", "paper/05-interaction-obstructions.pdf", "paper/06-einstein-weyl-interaction-obstructions.tex", "paper/06-einstein-weyl-interaction-obstructions.pdf", "planning/work-items/reverse-physics-bateman-six-point-positive-distribution-completion.json", "planning/events/"],
+    "resource_hint": "Use positivity implies Radon measure and the exact punctured-neighborhood mass 9/4(1/epsilon-1/L). Classify scaling-degree-two extensions by delta and delta-prime ambiguity. Type-check the NLO ledger and Moller defect certificate rather than inferring cancellation.",
+    "input_commit": "99f2b6e5",
+    "stream": "reverse-physics"
+  }
+}

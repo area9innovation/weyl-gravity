@@ -1,0 +1,128 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-six-point-positive-distribution-completion-no-go-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["certificate", "schema_version", "dependency_tags", "lifecycle_state", "result_kind", "question", "answer", "exact_distribution_theorem", "symmetric_feynman_modulus_preflight", "typed_candidate_audit", "minimal_missing_physical_input", "interpretation", "does_not_establish", "next_gate", "provenance", "verification_commands", "checks", "report", "schema"],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_SIX_POINT_POSITIVE_DISTRIBUTION_COMPLETION_NO_GO_V1"},
+    "schema_version": {"const": "reverse-physics-bt-six-point-positive-distribution-completion-no-go-v1"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "exact_distribution_theorem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["leading_density", "punctured_interval", "punctured_mass", "punctured_mass_limit", "positive_distribution_fact", "conclusion", "scaling_degree", "scaling_degree_preserving_ambiguity", "reflection_even_ambiguity"],
+      "properties": {
+        "leading_density": {"const": "9/(8*s^2)"},
+        "punctured_interval": {"const": "epsilon<|s|<L"},
+        "punctured_mass": {"const": "-9*(epsilon - length)/(4*epsilon*length)"},
+        "punctured_mass_limit": {"const": "+infinity"},
+        "positive_distribution_fact": {"const": "every positive distribution is a locally finite Radon measure"},
+        "conclusion": {"const": "NO_LOCALLY_FINITE_POSITIVE_EXTENSION"},
+        "scaling_degree": {"const": 2},
+        "scaling_degree_preserving_ambiguity": {"const": "c0*delta(s)+c1*delta_prime(s)"},
+        "reflection_even_ambiguity": {"const": "c0*delta(s)"}
+      }
+    },
+    "symmetric_feynman_modulus_preflight": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["regulated_kernel", "constant_test_on_minus_L_to_L", "divergent_supported_term", "finite_constant_test_remainder", "interpretation"],
+      "properties": {
+        "regulated_kernel": {"const": "9/[8*(s^2+epsilon^2)]"},
+        "constant_test_on_minus_L_to_L": {"const": "9*atan(length/epsilon)/(4*epsilon)"},
+        "divergent_supported_term": {"const": "9*pi/(8*epsilon)"},
+        "finite_constant_test_remainder": {"const": "-9/(4*L)"},
+        "interpretation": {"$ref": "#/$defs/text"}
+      }
+    },
+    "typed_candidate_audit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["perturbative_orders", "new_singular_support", "existing_NLO_support", "existing_NLO_cancellation", "public_Rt_role", "finite_Moller_scope", "two_sided_completion", "completion_selected_by_public_data"],
+      "properties": {
+        "perturbative_orders": {
+          "const": {
+            "six_point_tree_amplitude": "lambda^4",
+            "six_point_tree_density": "lambda^8",
+            "available_five_point_NLO_response": "lambda^6*log(c)/(pi^4*s_hard)"
+          }
+        },
+        "new_singular_support": {"const": "internal massless 3|3 factorization hypersurface in six-point physical phase space"},
+        "existing_NLO_support": {"const": "external daughter-collinear five-point boundary"},
+        "existing_NLO_cancellation": {"const": "EXACT_OBSTRUCTION"},
+        "public_Rt_role": {"const": "PROJECTOR_PUSHFORWARD_NOT_PHYSICAL_SMATRIX_SUMMAND"},
+        "finite_Moller_scope": {"const": "ISOMETRIC_VACUUM_INPUT_COLUMN_ONLY"},
+        "two_sided_completion": {"const": "PARAMETERIZED_BY_DEFECT_PARTIAL_UNITARIES"},
+        "completion_selected_by_public_data": {"const": "EXACTLY_UNDERDETERMINED"}
+      }
+    },
+    "minimal_missing_physical_input": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["object", "required_features", "relation_to_existing_defect_theorem", "status"],
+      "properties": {
+        "object": {"const": "BT-derived action of the two-sided Moller/LSZ operator on the incoming on-shell four-point factorization continuum"},
+        "required_features": {"type": "array", "minItems": 5, "maxItems": 5, "uniqueItems": true, "items": {"$ref": "#/$defs/text"}},
+        "relation_to_existing_defect_theorem": {"$ref": "#/$defs/text"},
+        "status": {"const": "NOT_CONSTRUCTED"}
+      }
+    },
+    "interpretation": {
+      "const": {
+        "positive_exclusive_distributional_completion": "EXACT_NO_GO",
+        "linear_finite_part_extension": "EXISTS_BUT_IS_NOT_POSITIVE_AND_HAS_LOCAL_AMBIGUITY",
+        "existing_virtual_or_detector_cancellation": "TYPE_AND_ORDER_MISMATCH",
+        "abstract_unitary_completion": "EXISTS_BUT_IS_NOT_BT_AFFILIATED",
+        "finite_inclusive_probability": "NOT_CONSTRUCTED",
+        "Eq19_all_orders": "NOT_PROVED"
+      }
+    },
+    "does_not_establish": {"type": "array", "minItems": 10, "items": {"$ref": "#/$defs/text"}},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_commit", "retrieval_date", "inputs", "method"],
+      "properties": {
+        "source_commit": {"const": "99f2b6e5"},
+        "retrieval_date": {"const": "2026-08-12"},
+        "inputs": {
+          "type": "array",
+          "minItems": 5,
+          "maxItems": 5,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["path", "sha256"],
+            "properties": {"path": {"$ref": "#/$defs/text"}, "sha256": {"$ref": "#/$defs/hash"}}
+          }
+        },
+        "method": {"$ref": "#/$defs/text"}
+      }
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/text"}},
+    "checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"const": 15},
+        "total": {"const": 15},
+        "failures": {"const": []},
+        "details": {"type": "object", "minProperties": 15, "maxProperties": 15, "additionalProperties": {"const": true}}
+      }
+    },
+    "report": {"const": "reverse_physics/reports/bt-six-point-positive-distribution-completion-no-go.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-six-point-positive-distribution-completion-no-go-v1.schema.json"}
+  },
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

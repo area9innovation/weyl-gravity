@@ -1,0 +1,134 @@
+{
+  "answer": "No. A positive distribution is a locally finite Radon measure. Agreement with 9/(8s^2) away from zero would assign the punctured compact interval epsilon<|s|<L the exact mass (9/4)(1/epsilon-1/L), which diverges as epsilon tends to zero. Hence no locally finite positive extension exists, regardless of delta-supported counterterms. Scaling-degree-preserving linear extensions form an affine family differing by c0*delta+c1*delta_prime; reflection symmetry removes c1 for the leading pole but leaves c0, and every finite-part member loses positivity. The symmetric Feynman-modulus regulator carries the divergence 9*pi*delta(s)/(8*epsilon). The existing five-point NLO ledger is order lambda^6 on an external collinear boundary, whereas this is an order-lambda^8 internal 3|3 sequential factorization. The public R_t zero is not a scattering summand, and the finite physical Moller result fixes only a vacuum input column. Its own completion theorem leaves an infinite-dimensional incoming defect partial unitary unselected. Therefore a physical answer requires an enlarged finite-time/wave-packet or stochastic Moller construction that treats the on-shell sequential four-point histories as separate outcomes and derives their subtraction/resummation from BT dynamics.",
+  "certificate": "REVERSE_PHYSICS_BT_SIX_POINT_POSITIVE_DISTRIBUTION_COMPLETION_NO_GO_V1",
+  "checks": {
+    "details": {
+      "BT_asymptotic_hamiltonian_affiliation_is_missing": true,
+      "all_inputs_are_content_pinned": true,
+      "eq19_gravity_and_causality_remain_open": true,
+      "existing_NLO_ledger_is_a_five_point_lambda6_response": true,
+      "existing_NLO_objects_fail_cancellation": true,
+      "feynman_modulus_regulator_has_delta_over_epsilon_divergence": true,
+      "finite_Moller_result_is_only_an_input_column": true,
+      "no_positive_locally_finite_extension_exists": true,
+      "positive_distribution_would_have_to_be_locally_finite_measure": true,
+      "predecessor_has_positive_transverse_double_pole": true,
+      "public_Rt_zero_is_not_a_physical_summand": true,
+      "punctured_compact_mass_diverges": true,
+      "reflection_even_leading_pole_removes_delta_prime_but_not_delta": true,
+      "scaling_degree_two_extension_ambiguity_is_delta_and_delta_prime": true,
+      "two_sided_completion_is_defect_underdetermined": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 15,
+    "total": 15
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "nonexistence of a finite wave-packet probability",
+    "nonexistence of an inclusive sequential-history resummation",
+    "a preferred finite-part constant",
+    "a BT-derived defect partial unitary",
+    "a complete two-sided Moller/LSZ/S operator",
+    "Eq. (19)",
+    "loops beyond the typed mismatch",
+    "gravity/BRST",
+    "anything LORENTZIAN-CAUSAL",
+    "literature priority"
+  ],
+  "exact_distribution_theorem": {
+    "conclusion": "NO_LOCALLY_FINITE_POSITIVE_EXTENSION",
+    "leading_density": "9/(8*s^2)",
+    "positive_distribution_fact": "every positive distribution is a locally finite Radon measure",
+    "punctured_interval": "epsilon<|s|<L",
+    "punctured_mass": "-9*(epsilon - length)/(4*epsilon*length)",
+    "punctured_mass_limit": "+infinity",
+    "reflection_even_ambiguity": "c0*delta(s)",
+    "scaling_degree": 2,
+    "scaling_degree_preserving_ambiguity": "c0*delta(s)+c1*delta_prime(s)"
+  },
+  "interpretation": {
+    "Eq19_all_orders": "NOT_PROVED",
+    "abstract_unitary_completion": "EXISTS_BUT_IS_NOT_BT_AFFILIATED",
+    "existing_virtual_or_detector_cancellation": "TYPE_AND_ORDER_MISMATCH",
+    "finite_inclusive_probability": "NOT_CONSTRUCTED",
+    "linear_finite_part_extension": "EXISTS_BUT_IS_NOT_POSITIVE_AND_HAS_LOCAL_AMBIGUITY",
+    "positive_exclusive_distributional_completion": "EXACT_NO_GO"
+  },
+  "lifecycle_state": "CLASSIFIED",
+  "minimal_missing_physical_input": {
+    "object": "BT-derived action of the two-sided Moller/LSZ operator on the incoming on-shell four-point factorization continuum",
+    "relation_to_existing_defect_theorem": "this is the previously arbitrary infinite-dimensional W restricted first to the physical factorization subspace",
+    "required_features": [
+      "finite-time or wave-packet control of delta(s)^2",
+      "separation of sequential histories from the connected six-point outcome",
+      "crossing-compatible defect partial unitary",
+      "common generalized-Born trace and detector normalization",
+      "resummation or survival term preserving total probability"
+    ],
+    "status": "NOT_CONSTRUCTED"
+  },
+  "next_gate": "Construct the on-shell factorization subspace inside the incoming defect continuum and derive its finite-time Dyson or HP history kernel from the BT four-point amplitude. The leading 9*pi/(8*epsilon) delta term must become the norm of a separately counted sequential outcome, while the remaining connected six-point distribution must share one detector normalization. Only then can a finite inclusive probability be tested.",
+  "provenance": {
+    "inputs": [
+      {
+        "path": "planning/work-items/reverse-physics-bateman-six-point-positive-distribution-completion.json",
+        "sha256": "5e0e575c0317b71ce8976f4613c924788b6725c0910d6c910b779beda42be04d"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_SIX_POINT_PHASE_SPACE_POLE_OBSTRUCTION_V1.json",
+        "sha256": "b10843d48d879ad9f60548ac8a01a5b4986099b6455ed12e97d233f7845072b0"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_INCLUSIVE_NLO_OBJECT_LEDGER_V1.json",
+        "sha256": "389a3441ac32159e57f32b2b50552823ec770879b579be54bbdabc7e78e59d47"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_FINITE_PHYSICAL_MOLLER_COLUMN_V1.json",
+        "sha256": "5bda31d257bebbe89a32553636286bf92e845b316988f1edd1a640b2c8e6c8ed"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_PHYSICAL_MOLLER_DEFECT_COMPLETION_V1.json",
+        "sha256": "31298fc3dd4aafbfc6ce08b3741f4fcb93bc4bb5022d906f1dee1709a9b4dc51"
+      }
+    ],
+    "method": "Exact rational/symbolic punctured-measure and regulator limits plus fail-closed typed import of the NLO and Moller certificates.",
+    "retrieval_date": "2026-08-12",
+    "source_commit": "99f2b6e5"
+  },
+  "question": "Can the exact positive 9/(8s_B^2) six-point factorization pole be extended across s_B=0 as a locally finite positive exclusive probability distribution using any existing BT virtual, detector, R_t, or finite-column result?",
+  "report": "reverse_physics/reports/bt-six-point-positive-distribution-completion-no-go.md",
+  "result_kind": "positive-distribution no-go for the exclusive six-point factorization pole and typed sequential-history completion gate",
+  "schema": "reverse_physics/schema/reverse-physics-bt-six-point-positive-distribution-completion-no-go-v1.schema.json",
+  "schema_version": "reverse-physics-bt-six-point-positive-distribution-completion-no-go-v1",
+  "symmetric_feynman_modulus_preflight": {
+    "constant_test_on_minus_L_to_L": "9*atan(length/epsilon)/(4*epsilon)",
+    "divergent_supported_term": "9*pi/(8*epsilon)",
+    "finite_constant_test_remainder": "-9/(4*L)",
+    "interpretation": "the 1/epsilon delta term is the unresolved on-shell sequential history; subtracting it produces a finite-part distribution, not a positive measure",
+    "regulated_kernel": "9/[8*(s^2+epsilon^2)]"
+  },
+  "typed_candidate_audit": {
+    "completion_selected_by_public_data": "EXACTLY_UNDERDETERMINED",
+    "existing_NLO_cancellation": "EXACT_OBSTRUCTION",
+    "existing_NLO_support": "external daughter-collinear five-point boundary",
+    "finite_Moller_scope": "ISOMETRIC_VACUUM_INPUT_COLUMN_ONLY",
+    "new_singular_support": "internal massless 3|3 factorization hypersurface in six-point physical phase space",
+    "perturbative_orders": {
+      "available_five_point_NLO_response": "lambda^6*log(c)/(pi^4*s_hard)",
+      "six_point_tree_amplitude": "lambda^4",
+      "six_point_tree_density": "lambda^8"
+    },
+    "public_Rt_role": "PROJECTOR_PUSHFORWARD_NOT_PHYSICAL_SMATRIX_SUMMAND",
+    "two_sided_completion": "PARAMETERIZED_BY_DEFECT_PARTIAL_UNITARIES"
+  },
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_six_point_positive_distribution_completion.py --write --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_six_point_positive_distribution_completion.py",
+    "ulimit -v 500000; python3 -m unittest reverse_physics.tests.test_bt_six_point_positive_distribution_completion"
+  ]
+}
