@@ -16,6 +16,9 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "paper/21-reverse-foundations-of-physics-claim-map.json"
 PAPER = "paper/21-reverse-foundations-of-physics.tex"
+APPENDIX = "paper/21-reverse-foundations-of-physics-appendices.tex"
+APPENDIX_GENERATOR = "paper/generate_21_reverse_foundations_appendices.py"
+ATLAS_DATA = "foundations/site/data.json"
 
 AUTHORITY_PATHS = {
     "intersection_cube": "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V4.json",
@@ -61,6 +64,7 @@ def build() -> dict:
 
     cube = loaded["intersection_cube"]
     site = loaded["explorer_snapshot"]
+    atlas_data = json.loads((ROOT / ATLAS_DATA).read_text())
     dimensions = cube["dimensions"]
     payload = {
         "schema_version": "paper-21-reverse-foundations-claim-map-v1",
@@ -73,7 +77,19 @@ def build() -> dict:
             "REDUCED-MODE",
             "LORENTZIAN-CAUSAL",
         ],
-        "paper": {"path": PAPER, "sha256": sha256(ROOT / PAPER)},
+        "paper": {
+            "path": PAPER,
+            "sha256": sha256(ROOT / PAPER),
+            "appendix": {
+                "path": APPENDIX,
+                "sha256": sha256(ROOT / APPENDIX),
+                "source_path": ATLAS_DATA,
+                "source_sha256": sha256(ROOT / ATLAS_DATA),
+                "source_canonical_digest": atlas_data["canonical_digest"],
+                "generator_path": APPENDIX_GENERATOR,
+                "generator_sha256": sha256(ROOT / APPENDIX_GENERATOR),
+            },
+        },
         "formal_object": {
             "judgement": "L + S + M + Enc(P) |-[_R] O",
             "coordinates": {
@@ -104,6 +120,10 @@ def build() -> dict:
             "synthetic_complements": dimensions["cartesian_total"] - dimensions["emitted_cells"],
             "total_not_mapped_in_explorer": site["counts"]["not_mapped"],
             "evidence_records": site["counts"]["evidence_records"],
+            "axis_options": sum(len(axis["keys"]) for axis in atlas_data["axes"]),
+            "implication_nodes": len(atlas_data["graph"]["nodes"]),
+            "implication_edges": len(atlas_data["graph"]["edges"]),
+            "strength_ladder_levels": len(atlas_data["ladder"]),
             "literature_complete": cube["claim_flags"]["literature_complete"],
             "all_cells_assessed": cube["claim_flags"]["all_576_cells_assessed"],
         },
@@ -183,6 +203,7 @@ def build() -> dict:
             "programme_definition_supplied": True,
             "typed_relations_supplied": True,
             "case_study_authorities_pinned": True,
+            "static_atlas_appendix_generated": True,
             "weakest_foundation_proved": False,
             "global_physics_implies_choice_theorem": False,
             "axes_independent_proved": False,
@@ -210,6 +231,7 @@ def build() -> dict:
                 "authority content hashes",
                 "authority result identities and dependency tags",
                 "atlas counts against source artifacts",
+                "generated appendix hash and normalized atlas source",
                 "claim-to-authority dependency boundaries",
                 "required paper language and bibliography keys",
                 "canonical claim-map digest",

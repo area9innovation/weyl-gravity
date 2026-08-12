@@ -887,10 +887,12 @@ and status counts, checks the exact dependency tags of every local case study,
 and records the paper's nonclaims.  The reproduction commands are:
 
 \begin{verbatim}
+python3 paper/generate_21_reverse_foundations_appendices.py --check
 python3 paper/generate_21_reverse_foundations_claim_map.py --check
 python3 paper/verify_21_reverse_foundations_claim_map.py
+cd paper
 pdflatex -interaction=nonstopmode -halt-on-error \
-  paper/21-reverse-foundations-of-physics.tex
+  21-reverse-foundations-of-physics.tex
 \end{verbatim}
 
 The principal machine-readable authorities are
@@ -901,7 +903,8 @@ The principal machine-readable authorities are
 \cert{FOUNDATIONAL_BT_SEPARABLE_STATE_CHAIN_ZF_V1},
 \cert{FOUNDATIONAL_CODED_POLYGONAL_WAVE_RCA0_V1},
 \cert{FOUNDATIONAL_FINITE_GRAPH_WAVE_CAUSALITY_V1}, and
-\cert{FOUNDATIONAL_FREE_BV_ENERGY2_PRA_SDR_V1}.
+\cert{FOUNDATIONAL_FREE_BV_ENERGY2_PRA_SDR_V1}.  The static atlas appendices
+are generated from \cert{foundations/site/data.json}.
 
 \section{Conclusion}
 \label{sec:conclusion}
@@ -935,6 +938,11 @@ an encoding, a proof ledger, and an independently checkable result.  Filling
 those cells one theorem at a time offers a realistic route toward understanding
 not only which physics follows from which physical assumptions, but which
 mathematics the physics truly needs.
+
+\appendix
+\IfFileExists{21-reverse-foundations-of-physics-appendices.tex}
+  {\input{21-reverse-foundations-of-physics-appendices.tex}}
+  {\input{paper/21-reverse-foundations-of-physics-appendices.tex}}
 
 \begin{thebibliography}{99}
 

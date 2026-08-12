@@ -1,6 +1,7 @@
 {
   "atlas_snapshot": {
     "all_cells_assessed": false,
+    "axis_options": 28,
     "axis_sizes": [
       6,
       6,
@@ -17,8 +18,11 @@
       "PRIORITY_GAP": 30
     },
     "evidence_records": 69,
+    "implication_edges": 10,
+    "implication_nodes": 12,
     "literature_complete": false,
     "migration_pending_cells": 0,
+    "strength_ladder_levels": 6,
     "synthetic_complements": 124,
     "total_not_mapped_in_explorer": 205
   },
@@ -105,7 +109,7 @@
       "sha256": "08389e96d349766e29a34cde8109d4b1271288b59d44f3b29fcb456065641998"
     }
   },
-  "canonical_digest": "e421f8bba8b9740f6f06cf2eb42b60cc29d3d1c92d7f9ab3995d33b91b40ac33",
+  "canonical_digest": "41a4ceece79d41b4d9a6fa23a24d37bf32e2a88085380221feb42f1474ea5856",
   "claim_flags": {
     "atlas_exhaustive": false,
     "axes_independent_proved": false,
@@ -115,6 +119,7 @@
     "new_lorentzian_claim": false,
     "programme_definition_supplied": true,
     "quantum_lifecycle_promoted": false,
+    "static_atlas_appendix_generated": true,
     "typed_relations_supplied": true,
     "weakest_foundation_proved": false
   },
@@ -259,6 +264,7 @@
       "authority content hashes",
       "authority result identities and dependency tags",
       "atlas counts against source artifacts",
+      "generated appendix hash and normalized atlas source",
       "claim-to-authority dependency boundaries",
       "required paper language and bibliography keys",
       "canonical claim-map digest"
@@ -329,8 +335,17 @@
     }
   ],
   "paper": {
+    "appendix": {
+      "generator_path": "paper/generate_21_reverse_foundations_appendices.py",
+      "generator_sha256": "c2b1a24d64a11eb6788e95887c8f6936dfa657857861c433a4e82e718a470964",
+      "path": "paper/21-reverse-foundations-of-physics-appendices.tex",
+      "sha256": "1cd6447694c33f78f98fc4c9e8f759691d844755b1bc007c569eb3384251fcb5",
+      "source_canonical_digest": "378a9806111aec5b00bb9b9d71e8b9bbeaad573feb163684e967aa8cc34de625",
+      "source_path": "foundations/site/data.json",
+      "source_sha256": "5e15943033608c792f6d979048401f12df77b1b081c8bb8b744d9e1bb8fa00e2"
+    },
     "path": "paper/21-reverse-foundations-of-physics.tex",
-    "sha256": "f4cfc00fe0ead95e0db5ec6ec0467d91c996adabc59595fe1cd4c48593e611d4"
+    "sha256": "d96f10d3b1ab513bb146be093ad90327d14c6ed518593152f3e662c842fd4103"
   },
   "result_id": "PAPER21_REVERSE_FOUNDATIONS_INTRODUCTION_V1",
   "result_kind": "PROGRAMME_SYNTHESIS_AND_TYPED_CASE_STUDY_MAP",

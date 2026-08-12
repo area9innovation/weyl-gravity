@@ -1,0 +1,156 @@
+{
+  "schema_version": "science-forge-tier-receipt-v1",
+  "receipt_id": "PAPER21_REVERSE_FOUNDATIONS_ATLAS_APPENDICES_V1_TIER_RECEIPT",
+  "result_id": "PAPER21_REVERSE_FOUNDATIONS_INTRODUCTION_V1",
+  "created": "2026-08-12",
+  "source_base_commit": "99f2b6e549c19d0f380e798543004e2892e792de",
+  "prior_receipt": "foundations/receipts/PAPER21_REVERSE_FOUNDATIONS_INTRODUCTION_V1_TIER_RECEIPT.json",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "scope": "Generated static print appendices for the matrix, dimensions guide, typed implications, cylinder-wave strength ladder, and evidence catalogue. The appendices reproduce existing normalized atlas evidence and do not promote a scientific lifecycle.",
+  "input": {
+    "path": "foundations/site/data.json",
+    "sha256": "5e15943033608c792f6d979048401f12df77b1b081c8bb8b744d9e1bb8fa00e2",
+    "canonical_digest": "378a9806111aec5b00bb9b9d71e8b9bbeaad573feb163684e967aa8cc34de625",
+    "role": "authoritative normalized website dataset; unchanged by this revision"
+  },
+  "artifacts": [
+    {
+      "path": "paper/21-reverse-foundations-of-physics.tex",
+      "sha256": "d96f10d3b1ab513bb146be093ad90327d14c6ed518593152f3e662c842fd4103",
+      "role": "manuscript source with generated appendix import"
+    },
+    {
+      "path": "paper/21-reverse-foundations-of-physics-appendices.tex",
+      "sha256": "1cd6447694c33f78f98fc4c9e8f759691d844755b1bc007c569eb3384251fcb5",
+      "role": "generated static atlas companion"
+    },
+    {
+      "path": "paper/21-reverse-foundations-of-physics.pdf",
+      "sha256": "0a9141e2081bb017e3d119846184724c9cdce007bd0d180a12b31b7bd99a4f42",
+      "role": "compiled 21-page manuscript"
+    },
+    {
+      "path": "paper/21-reverse-foundations-of-physics-claim-map.json",
+      "sha256": "754cf40f72f58759bebc01652dc478e4416c8ffb5f1822c786b50eab8e88d9db",
+      "role": "updated machine-readable claim and appendix provenance map"
+    },
+    {
+      "path": "paper/generate_21_reverse_foundations_appendices.py",
+      "sha256": "c2b1a24d64a11eb6788e95887c8f6936dfa657857861c433a4e82e718a470964",
+      "role": "deterministic website-to-paper appendix generator"
+    },
+    {
+      "path": "paper/generate_21_reverse_foundations_claim_map.py",
+      "sha256": "b4777d150f8a853b0e640dfac4a6e6fa7dffde658891af07d72ab7a671561332",
+      "role": "updated deterministic claim-map generator"
+    },
+    {
+      "path": "paper/verify_21_reverse_foundations_claim_map.py",
+      "sha256": "61493d3b8c7717a5633bc45c70ffda744913e14b304fd5af78dc95d9fbd641dd",
+      "role": "independent appendix structure, count, edge, ladder, evidence, and boundary checker"
+    }
+  ],
+  "appendix_snapshot": {
+    "website_views_represented": 5,
+    "axis_options": 28,
+    "cartesian_coordinates": 576,
+    "implication_nodes": 12,
+    "implication_edges": 10,
+    "strength_ladder_levels": 6,
+    "evidence_records": 69,
+    "local_evidence_records": 18,
+    "literature_evidence_records": 51,
+    "metadata_only_records": 12
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "python3 -W error::SyntaxWarning -m py_compile paper/generate_21_reverse_foundations_appendices.py paper/generate_21_reverse_foundations_claim_map.py paper/verify_21_reverse_foundations_claim_map.py",
+          "elapsed_seconds": 0.05,
+          "status": "PASS"
+        },
+        {
+          "command": "cd paper && pdflatex -interaction=nonstopmode -halt-on-error 21-reverse-foundations-of-physics.tex && pdflatex -interaction=nonstopmode -halt-on-error 21-reverse-foundations-of-physics.tex",
+          "elapsed_seconds": 1.40,
+          "status": "PASS",
+          "output": "21 pages; no undefined citations, overfull boxes, or LaTeX warnings on the final pass; appendix pages visually inspected"
+        },
+        {
+          "command": "git diff --cached --check -- foundations/receipts/PAPER21_REVERSE_FOUNDATIONS_ATLAS_APPENDICES_V1_TIER_RECEIPT.json paper/21-reverse-foundations-of-physics.tex paper/21-reverse-foundations-of-physics-appendices.tex paper/21-reverse-foundations-of-physics.pdf paper/21-reverse-foundations-of-physics-claim-map.json paper/generate_21_reverse_foundations_appendices.py paper/generate_21_reverse_foundations_claim_map.py paper/verify_21_reverse_foundations_claim_map.py",
+          "elapsed_seconds": 0.01,
+          "status": "PASS"
+        }
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "python3 paper/generate_21_reverse_foundations_appendices.py --check",
+          "elapsed_seconds": 0.06,
+          "status": "PASS"
+        },
+        {
+          "command": "python3 paper/generate_21_reverse_foundations_claim_map.py --check",
+          "elapsed_seconds": 0.06,
+          "status": "PASS"
+        },
+        {
+          "command": "python3 paper/verify_21_reverse_foundations_claim_map.py",
+          "elapsed_seconds": 0.04,
+          "status": "PASS",
+          "output": "authority hashes, atlas source digest, all 28 option labels, all 10 implication assertions, all six ladder levels, linked evidence, coverage totals, and fail-closed boundaries verified"
+        }
+      ]
+    },
+    "tier_2": {
+      "status": "NOT_RUN",
+      "criterion": "No mathematical input, shared operator, source certificate, schema, or scientific result changed. The appendices are a generated publication view over an unchanged content-addressed atlas dataset."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "This remains a working-draft synthesis and does not freeze a classical or quantum snapshot, promote a theorem lifecycle, change shared core algebra, or prepare a release."
+    }
+  },
+  "claim_flags": {
+    "five_website_views_represented": true,
+    "appendices_generated_from_normalized_data": true,
+    "claim_map_current": true,
+    "appendix_structure_independently_checked": true,
+    "paper_compiles": true,
+    "literature_complete": false,
+    "weakest_foundation_proved": false,
+    "new_lorentzian_claim": false,
+    "quantum_lifecycle_promoted": false
+  },
+  "preexisting_unrelated_work_preserved": [
+    "notes/bateman-turok-embedding.md",
+    "paper/05-interaction-obstructions.tex",
+    "paper/05-interaction-obstructions.pdf",
+    "paper/06-einstein-weyl-interaction-obstructions.tex",
+    "paper/06-einstein-weyl-interaction-obstructions.pdf",
+    "planning/events/reverse-physics-bateman-six-point-positive-distribution-completion-DONE-99f2b6e5.json",
+    "planning/work-items/reverse-physics-bateman-six-point-positive-distribution-completion.json",
+    "reverse_physics/bt_six_point_positive_distribution_completion.py",
+    "reverse_physics/certificates/REVERSE_PHYSICS_BT_SIX_POINT_FULL_PHASE_SPACE_BORN_POSITIVITY_V1.json",
+    "reverse_physics/certificates/REVERSE_PHYSICS_BT_SIX_POINT_PHASE_SPACE_POLE_OBSTRUCTION_V1.json",
+    "reverse_physics/certificates/REVERSE_PHYSICS_BT_SIX_POINT_POSITIVE_DISTRIBUTION_COMPLETION_NO_GO_V1.json",
+    "reverse_physics/reports/bt-six-point-positive-distribution-completion-no-go.md",
+    "reverse_physics/schema/reverse-physics-bateman-six-point-positive-distribution-completion-no-go-v1.schema.json",
+    "reverse_physics/tests/test_bt_six_point_positive_distribution_completion.py",
+    "reverse_physics/verify_bt_six_point_positive_distribution_completion.py"
+  ],
+  "does_not_establish": [
+    "literature completeness or absence theorems for unmapped cells",
+    "that all 576 synthetic coordinates are coherent",
+    "a weakest mathematical base or reversal",
+    "a new LORENTZIAN-CAUSAL result",
+    "a quantum lifecycle promotion"
+  ]
+}

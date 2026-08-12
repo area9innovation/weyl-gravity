@@ -77,6 +77,7 @@ def main() -> int:
     ]}, "claim set drift")
 
     flags = data["claim_flags"]
+    require(flags["static_atlas_appendix_generated"] is True, "static atlas appendix flag is not certified")
     for false_flag in [
         "weakest_foundation_proved",
         "global_physics_implies_choice_theorem",
@@ -90,6 +91,40 @@ def main() -> int:
 
     paper_path = ROOT / data["paper"]["path"]
     require(sha256(paper_path) == data["paper"]["sha256"], "paper source hash drift")
+    appendix_record = data["paper"]["appendix"]
+    appendix_path = ROOT / appendix_record["path"]
+    atlas_data_path = ROOT / appendix_record["source_path"]
+    appendix_generator_path = ROOT / appendix_record["generator_path"]
+    require(appendix_path.is_file(), "generated paper appendix is missing")
+    require(sha256(appendix_path) == appendix_record["sha256"], "generated appendix hash drift")
+    require(sha256(atlas_data_path) == appendix_record["source_sha256"], "appendix atlas-source hash drift")
+    require(sha256(appendix_generator_path) == appendix_record["generator_sha256"], "appendix generator hash drift")
+    atlas_data = json.loads(atlas_data_path.read_text())
+    require(atlas_data["canonical_digest"] == appendix_record["source_canonical_digest"], "appendix atlas-source digest drift")
+    require(atlas["axis_options"] == sum(len(axis["keys"]) for axis in atlas_data["axes"]) == 28, "appendix axis-option mismatch")
+    require(atlas["implication_nodes"] == len(atlas_data["graph"]["nodes"]) == 12, "appendix implication-node mismatch")
+    require(atlas["implication_edges"] == len(atlas_data["graph"]["edges"]) == 10, "appendix implication-edge mismatch")
+    require(atlas["strength_ladder_levels"] == len(atlas_data["ladder"]) == 6, "appendix ladder-level mismatch")
+
+    appendix = appendix_path.read_text()
+    require(r"All obligations & 88 & 93 & 160 & 30 & 205 & 576" in appendix, "appendix coverage totals drift")
+    require("contains 69 evidence records: 18 local result records and 51 literature records" in appendix, "appendix evidence summary drift")
+    for axis in atlas_data["axes"]:
+        for option in axis["keys"]:
+            require(option["label"] in appendix, f"axis option missing from appendix: {option['id']}")
+    for edge in atlas_data["graph"]["edges"]:
+        fragment = edge["meaning"].replace("_", r"\_").replace("&", r"\&").replace("%", r"\%")
+        require(fragment in appendix, f"implication edge missing from appendix: {edge['from']} -> {edge['to']}")
+    for step in atlas_data["ladder"]:
+        require(rf"\cert{{{step['level']}}}" in appendix, f"ladder gate missing from appendix: {step['level']}")
+    linked_evidence = {
+        evidence_id
+        for edge in atlas_data["graph"]["edges"]
+        for evidence_id in edge.get("evidence", [])
+    } | {step["source"] for step in atlas_data["ladder"] if step.get("source")}
+    for evidence_id in linked_evidence:
+        require(rf"\cert{{{evidence_id}}}" in appendix, f"linked evidence missing from appendix: {evidence_id}")
+
     paper = paper_path.read_text()
     prose = " ".join(paper.split())
     for phrase in [
@@ -99,6 +134,7 @@ def main() -> int:
         r"Weak wave evolution is not causal Green theory",
         r"Exact finite causality is not continuum causality",
         r"none of the case studies constructs a complete Lorentzian off-shell",
+        r"reverse-foundations-of-physics-appendices.tex",
     ]:
         require(phrase in prose, f"required boundary missing from paper: {phrase}")
     for citation in [
