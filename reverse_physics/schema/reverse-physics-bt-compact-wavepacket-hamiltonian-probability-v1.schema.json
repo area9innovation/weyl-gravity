@@ -1,0 +1,119 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-compact-wavepacket-hamiltonian-probability-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["certificate", "schema_version", "dependency_tags", "lifecycle_state", "result_kind", "question", "answer", "full_phase_space_measure", "compact_shell_geometry", "Hamiltonian_packet_operator", "positive_packet_probability", "scalar_affiliation", "interpretation", "assumptions", "does_not_establish", "next_gate", "provenance", "verification_commands", "checks", "report", "schema"],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_COMPACT_WAVEPACKET_HAMILTONIAN_PROBABILITY_V1"},
+    "schema_version": {"const": "reverse-physics-bt-compact-wavepacket-hamiltonian-probability-v1"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "full_phase_space_measure": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["chart", "energies", "energy_Jacobian", "ZXZ_Haar_coordinate_density", "coarea_to_energy_Haar_factor", "density_without_two_pi", "measure", "old_fixture", "status"],
+      "properties": {
+        "chart": {"$ref": "#/$defs/text"},
+        "energies": {"const": ["E0=8*(1+a*b)/(5*a*b)", "E1=8*(1+a^2)/[5*a*(a-b)]", "E2=8*(1+b^2)/[5*b*(b-a)]"]},
+        "energy_Jacobian": {"const": "det[d(E0,E1)/d(a,b)]=-128*(1+a*b)/[25*a^2*b^2*(a-b)^2]"},
+        "ZXZ_Haar_coordinate_density": {"const": "16*abs(u)/[(1+t^2)*(1+u^2)^2*(1+v^2)]"},
+        "coarea_to_energy_Haar_factor": {"const": "1/8"},
+        "density_without_two_pi": {"const": "rho=256*abs[(1+a*b)*u]/[25*a^2*b^2*(a-b)^2*(1+t^2)*(1+u^2)^2*(1+v^2)]"},
+        "measure": {"const": "dmu=rho*da*db*dt*du*dv/(2*pi)^5"},
+        "old_fixture": {"const": "rho(2,-2,3/5,1/2,1/3)=54/2125"},
+        "status": {"const": "FULL_FIVE_DIMENSIONAL_PHASE_DENSITY_COMPUTED"}
+      }
+    },
+    "compact_shell_geometry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["incoming_center", "outgoing_center", "common_rotation", "channel", "intermediate_momentum", "intermediate_mass_square", "intermediate_energy", "other_nine_channels", "neighborhood", "status"],
+      "properties": {
+        "incoming_center": {"const": ["2", "-2", "0", "15/16", "0"]},
+        "outgoing_center": {"const": ["2", "-2", "105/73", "2", "1/3"]},
+        "common_rotation": {"const": "Rx with stereographic parameter 15/16"},
+        "channel": {"const": 11},
+        "intermediate_momentum": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/rational"}},
+        "intermediate_mass_square": {"const": "0"},
+        "intermediate_energy": {"const": "1"},
+        "other_nine_channels": {"const": "NONZERO_AT_THE_CENTER"},
+        "neighborhood": {"$ref": "#/$defs/text"},
+        "status": {"const": "NONEMPTY_REGULAR_COMPACT_ISOLATED_SHELL_NEIGHBORHOOD"}
+      }
+    },
+    "Hamiltonian_packet_operator": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["input_output_spaces", "time_window", "exact_factorization", "kernel", "integral_operator", "tree_species_amplitude", "pointwise_bound", "Hilbert_Schmidt_bound", "status"],
+      "properties": {
+        "input_output_spaces": {"$ref": "#/$defs/text"},
+        "time_window": {"const": "F_T(delta)=integral_0^T exp(i*delta*tau)d_tau"},
+        "exact_factorization": {"const": "s_B=q_B^2=delta_B*D_B with delta_B=q_B^0-|q_B| and D_B=q_B^0+|q_B|"},
+        "kernel": {"const": "beta_B,T(y,x)=chi(y,x)*F_T(delta_B(y,x))/D_B(y,x)"},
+        "integral_operator": {"const": "(K_B,T F)(y)=integral_X beta_B,T(y,x) F(x)dmu(x)"},
+        "tree_species_amplitude": {"const": "A_B,T=16*lambda^4*K_B,T tensor R_plus"},
+        "pointwise_bound": {"const": "|beta_B,T|<=T/d0"},
+        "Hilbert_Schmidt_bound": {"const": "||K_B,T||_HS^2<=T^2*mu(X)*mu(Y)/d0^2"},
+        "status": {"const": "BT_HAMILTONIAN_COMPACT_PACKET_OPERATOR_CONSTRUCTED"}
+      }
+    },
+    "positive_packet_probability": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["click_effect", "no_click_effect", "species_effect", "species_spectrum", "sufficient_positive_domain", "completeness", "declared_source", "declared_source_click", "declared_source_no_click", "strict_nontriviality", "status"],
+      "properties": {
+        "click_effect": {"const": "E_click=A_B,T^* A_B,T=256*lambda^8*K_B,T^*K_B,T tensor G"},
+        "no_click_effect": {"const": "E_no=I-E_click"},
+        "species_effect": {"const": "G=R_plus^T R_plus"},
+        "species_spectrum": {"const": ["0", "1/16", "(2-sqrt(3))/8", "(2+sqrt(3))/8"]},
+        "sufficient_positive_domain": {"const": "32*(2+sqrt(3))*lambda^8*T^2*mu(X)*mu(Y)/d0^2<=1"},
+        "completeness": {"const": "E_click+E_no=I"},
+        "declared_source": {"$ref": "#/$defs/text"},
+        "declared_source_click": {"const": "q_click=16*lambda^8*||K_B,T F||^2"},
+        "declared_source_no_click": {"const": "q_no=1-q_click"},
+        "strict_nontriviality": {"$ref": "#/$defs/text"},
+        "status": {"const": "LEADING_FINITE_TIME_COMPACT_PACKET_TWO_OUTCOME_PROBABILITY"}
+      }
+    },
+    "scalar_affiliation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source", "effects", "leading_order", "result", "status"],
+      "properties": {
+        "source": {"$ref": "#/$defs/text"},
+        "effects": {"$ref": "#/$defs/text"},
+        "leading_order": {"const": "A starts at lambda^4, so unknown O(lambda) source corrections first change probability at lambda^9"},
+        "result": {"$ref": "#/$defs/text"},
+        "status": {"const": "SELECTED_COMPACT_PHYSICAL_SCALAR_PACKET_PROBABILITY_AFFILIATED"}
+      }
+    },
+    "interpretation": {"const": {"full_five_dimensional_phase_density": "COMPUTED", "compact_packet_BT_Hamiltonian_strength": "CONSTRUCTED_AS_EXPLICIT_INTEGRAL_OPERATOR", "positive_compact_packet_probability": "CONSTRUCTED_AT_LEADING_FINITE_TIME_ORDER", "selected_dressed_scalar_packet_probability": "CONSTRUCTED_AT_ORDER_LAMBDA8", "finite_volume_point_cell_needed": "NO_FOR_THIS_NORMALIZED_PACKET_FORMULATION", "ten_channel_global_probability": "NOT_CONSTRUCTED", "general_Eq19": "NOT_PROVED", "all_time_scattering": "NOT_CONSTRUCTED"}},
+    "assumptions": {"type": "array", "minItems": 7, "maxItems": 7, "items": {"$ref": "#/$defs/text"}},
+    "does_not_establish": {"type": "array", "minItems": 13, "items": {"$ref": "#/$defs/text"}},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_commit", "retrieval_date", "inputs", "method"],
+      "properties": {
+        "source_commit": {"const": "70d2b5a5b82affe3f782a076572984e62ece017d"},
+        "retrieval_date": {"const": "2026-08-12"},
+        "inputs": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"type": "object", "additionalProperties": false, "required": ["path", "sha256"], "properties": {"path": {"$ref": "#/$defs/text"}, "sha256": {"$ref": "#/$defs/hash"}}}},
+        "method": {"$ref": "#/$defs/text"}
+      }
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/text"}},
+    "checks": {"type": "object", "additionalProperties": false, "required": ["ok", "passed", "total", "failures", "details"], "properties": {"ok": {"const": true}, "passed": {"const": 27}, "total": {"const": 27}, "failures": {"const": []}, "details": {"type": "object", "minProperties": 27, "maxProperties": 27, "additionalProperties": {"const": true}}}},
+    "report": {"const": "reverse_physics/reports/bt-compact-wavepacket-hamiltonian-probability.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-compact-wavepacket-hamiltonian-probability-v1.schema.json"}
+  },
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "rational": {"type": "string", "pattern": "^-?[0-9]+(/[1-9][0-9]*)?$"}
+  }
+}

@@ -2550,8 +2550,45 @@ Certificate
 \allowbreak\texttt{WAVEPACKET\_V1}
 \par\noindent
 therefore constructs a compact continuum source/effect carrier.  The
-packet-dependent Hamiltonian strength, zero-gap limit, general Eq.~(19), and
-all metric-BV or Lorentzian claims remain open.
+packet-dependent Hamiltonian strength is also fixed for one finite-time,
+isolated-channel experiment.  In the exact five-coordinate three-body chart,
+the labeled phase density is
+\[
+ \rho(a,b,t,u,v)=
+ \frac{256|(1+ab)u|}
+ {25a^2b^2(a-b)^2(1+t^2)(1+u^2)^2(1+v^2)}.
+\]
+For compact incoming and outgoing regions crossing only channel $B=11$, put
+$\delta_B=q_B^0-|\mathbf q_B|$, $D_B=q_B^0+|\mathbf q_B|\geq d_0>0$, and take
+a detector kernel $|\chi|\leq1$.  The public two-quartic Hamiltonian then gives
+the Hilbert--Schmidt packet operator
+\[
+ (K_{B,T}F)(y)=\int_X
+ \chi(y,x)\frac{F_T(\delta_B(y,x))}{D_B(y,x)}F(x)\,d\mu(x),
+ \qquad
+ \|K_{B,T}\|_{\rm HS}^2
+ \leq\frac{T^2\mu(X)\mu(Y)}{d_0^2}.
+\]
+With $A_{B,T}=16\lambda^4K_{B,T}\otimes R_+$, the effects
+$E_{\rm click}=A_{B,T}^*A_{B,T}$ and
+$E_{\rm no}=I-E_{\rm click}$ are positive and complete whenever
+\[
+ 32(2+\sqrt3)\lambda^8
+ \frac{T^2\mu(X)\mu(Y)}{d_0^2}\leq1.
+\]
+The normalized dressed source therefore has the explicit leading probability
+\[
+ q_{\rm click}=16\lambda^8\|K_{B,T}F\|^2.
+\]
+Certificate
+\par\noindent
+\texttt{REVERSE\_PHYSICS\_BT\_COMPACT\_WAVEPACKET\_}
+\allowbreak\texttt{HAMILTONIAN\_PROBABILITY\_V1}
+\par\noindent
+replaces the fitted packet strength by a BT-Hamiltonian integral.  It remains
+a selected scalar, finite-time, single-channel result: ten-channel gluing, the
+zero-gap limit, general Eq.~(19), and every metric-BV or Lorentzian claim remain
+open.
 There is nevertheless a genuine scalar hard-scattering baseline.  The
 certificate
 \par\noindent

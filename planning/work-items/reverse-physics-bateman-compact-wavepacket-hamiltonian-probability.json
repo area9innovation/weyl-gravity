@@ -1,0 +1,19 @@
+{
+  "id": "sf:program/work/reverse-physics-bateman-compact-wavepacket-hamiltonian-probability",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "reverse-physics",
+    "state": "ACTIVE",
+    "objective": "Replace the fixed detector-strength placeholder in the compact dressed scalar source by the explicit finite-time Bateman--Turok two-quartic Hamiltonian integral on normalized compact three-body packets, including the full five-dimensional phase-space density and a positive click/no-click operator bound.",
+    "depends_on": ["REVERSE_PHYSICS_BT_SCALAR_DRESSED_SOURCE_COMPACT_WAVEPACKET_V1", "REVERSE_PHYSICS_BT_SIX_POINT_FULL_PHASE_SPACE_BORN_POSITIVITY_V1", "REVERSE_PHYSICS_BT_FINITE_TIME_HAMILTONIAN_CUT_AFFILIATION_V1", "REVERSE_PHYSICS_BT_SIX_POINT_SHELL_TREE_NORMALIZATION_V1", "REVERSE_PHYSICS_BT_SIX_POINT_POSITIVE_SECTOR_PHYSICAL_DETECTOR_EFFECT_V1"],
+    "activates": ["a box-independent finite-time compact-packet transition operator", "a BT-Hamiltonian-derived positive packet probability functional", "a selected leading physical-scalar packet probability without general Eq. 19"],
+    "current_gate": "Derive the exact full-chart Lorentz-invariant three-body phase density, define the spectral finite-time replacement F_T(delta)/(q0+|q|) on compact incoming/outgoing chart neighborhoods crossing one isolated channel shell, prove the resulting kernel is Hilbert--Schmidt, and form the positive effects A^*A and I-A^*A with an explicit small-coupling bound.",
+    "stop_condition": "Land an exact certificate and independent verifier for the full coarea density, a regular compact shell witness, Hamiltonian kernel, Hilbert--Schmidt/operator bound, positive normalized effects, scalar pullback and all claim boundaries. The answer must be an explicit packet integral rather than a fitted scalar zeta.",
+    "forbid": "no frozen point density used as a full packet measure; no delta-normalized input called a packet; no Feynman 1/s squared without the finite-time spectral kernel; no pseudo-unitarity alone used as positivity; no operational leading effect called a global Moller/S operator; no general Eq. 19, loop, gravity, BRST or LORENTZIAN-CAUSAL promotion",
+    "allowed_paths": ["reverse_physics/", "notes/bateman-turok-embedding.md", "paper/05-interaction-obstructions.tex", "paper/05-interaction-obstructions.pdf", "paper/06-einstein-weyl-interaction-obstructions.tex", "paper/06-einstein-weyl-interaction-obstructions.pdf", "planning/work-items/reverse-physics-bateman-compact-wavepacket-hamiltonian-probability.json", "planning/events/"],
+    "resource_hint": "For the stereographic chart, E0=8(1+ab)/(5ab), E1=8(1+a^2)/[5a(a-b)], E2=8(1+b^2)/[5b(b-a)]. The energy Jacobian times the ZXZ Haar density gives rho=256*abs((1+ab)u)/[25*a^2*b^2*(a-b)^2*(1+t^2)*(1+u^2)^2*(1+v^2)]. For q_B, set delta=q0-|q| and D=q0+|q|, so q_B^2=delta D and the finite-time spectral kernel is F_T(delta)/D. For a detector cutoff |chi|<=1 and compact support D>=d0, its magnitude is at most T/d0. Use A=16 lambda^4 K tensor R_plus and ||R_plus||_HS=3/4.",
+    "input_commit": "70d2b5a5b82affe3f782a076572984e62ece017d",
+    "stream": "reverse-physics"
+  }
+}
