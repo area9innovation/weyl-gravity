@@ -1,0 +1,331 @@
+{
+  "answer": "Yes at fixed timelike total momentum in the declared rotating-wave scalar sector. The massless two-body shell is S2 with invariant measure proportional to dOmega. The previous equal-lab-energy family is its equator and has natural measure dphi, not dc. The N=20 filter has equatorial leakage below 331/500000. Homogenizing every Laurent mode gives the antipodally even degree-38 polynomial F(n)=(1-n_x^2)^19 p(phi), so no derivative order is added. On the two azimuthal bins and latitude band |n_x|<=1/2, exact Q(pi,sqrt(2)) integration gives full-sphere leakage eta<83/125000<1/1000. Retaining that complement in the star Hamiltonian gives half-pulse absorption above 124917/125000. Energy and total-momentum bandwidth, the non-rotating-wave terms, absolute q8, Eq. 19 and gravity remain open.",
+  "assumptions": [
+    "the total pair momentum is fixed at P/kappa=(2,-6/5,0,0), with P^2/kappa^2=64/25",
+    "the outgoing particles are massless and future directed, so the fixed-P shell is the two-body sphere modulo exchange",
+    "the invariant two-body phase-space density is a common constant times dOmega and common constants cancel from leakage ratios",
+    "constant-coefficient apparatus derivatives are normalized in the centre-of-momentum frame selected by P",
+    "the compact spacetime smearing coefficient at P is nonzero and absorbed into the coupling G",
+    "the detector gap is resonant and the Hamiltonian retains only the pair-annihilation/creation rotating-wave star sector",
+    "the packet regions use phi in [0,pi) and the symmetric latitude band |n_x|<=1/2",
+    "energy spread, total-momentum spread, number-scattering and counter-rotating terms are outside this coefficient"
+  ],
+  "certificate": "REVERSE_PHYSICS_BT_FIXED_P_TWO_SPHERE_PACKET_DETECTOR_V1",
+  "checks": {
+    "details": {
+      "Fejer_order_and_degree_are_twenty_and_thirty_eight": true,
+      "all_sphere_norms_are_positive": true,
+      "all_time_outside_population_below_one_over_375": true,
+      "azimuthal_bins_are_disjoint_almost_everywhere": true,
+      "centre_of_momentum_energy_is_eight_over_five": true,
+      "continuous_family_uses_same_timelike_total_momentum": true,
+      "done_event_targets_this_work_item": true,
+      "equal_lab_energy_is_exactly_equator": true,
+      "equatorial_decomposition_is_exact": true,
+      "equatorial_leakage_below_331_over_500000": true,
+      "equatorial_leakage_is_positive": true,
+      "filter_interpolates_target_weights": true,
+      "filter_is_Hermitian": true,
+      "fixed_P_rotating_wave_and_gravity_boundaries_are_preserved": true,
+      "fixed_total_momentum_has_mass_sixty_four_over_twenty_five": true,
+      "half_pulse_absorption_exceeds_124917_over_125000": true,
+      "half_pulse_outside_population_below_83_over_125000": true,
+      "homogeneous_lift_has_constant_degree_thirty_eight": true,
+      "homogeneous_lift_is_antipodally_even": true,
+      "homogeneous_lift_restricts_to_equatorial_filter": true,
+      "inputs_are_content_pinned": true,
+      "invariant_two_body_measure_is_solid_angle_up_to_common_constant": true,
+      "lab_boost_is_beta_minus_three_fifths_gamma_five_fourths": true,
+      "latitude_leakage_below_three_per_million": true,
+      "latitude_leakage_is_positive": true,
+      "latitude_norm_decomposition_is_exact": true,
+      "pi_bounds_are_strict": true,
+      "predecessor_passes_but_uses_declared_dc_measure": true,
+      "relative_q8_transfer_remains_forbidden": true,
+      "residual_mode_is_not_deleted": true,
+      "selected_packets_have_unequal_norms": true,
+      "sphere_decomposition_is_exact": true,
+      "sphere_leakage_below_83_over_125000": true,
+      "sphere_leakage_below_one_per_mille": true,
+      "sqrt_two_bounds_are_exact": true,
+      "target_one_is_above_pi_over_four": true,
+      "target_one_is_below_three_pi_over_eight": true,
+      "target_zero_is_inside_second_bin": true,
+      "unordered_antipodal_quotient_cancels_from_norm_ratios": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 39,
+    "total": 39
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL",
+    "REDUCED-MODE"
+  ],
+  "disposition": {
+    "Lorentzian_causal_claim": "NOT_ESTABLISHED",
+    "absolute_q8_probability": "NOT_COMPUTED",
+    "complete_local_scalar_detector_Hamiltonian": "NOT_CONSTRUCTED",
+    "energy_and_total_momentum_bandwidth": "NOT_CONSTRUCTED",
+    "finite_local_full_sphere_filter": "CONSTRUCTED",
+    "full_sphere_packet_leakage": "COMPUTED",
+    "general_Eq19": "NOT_PROVED_AND_NOT_USED",
+    "gravity_or_metric_BV_BRST_transfer": "NOT_CONSTRUCTED",
+    "invariant_equatorial_measure_correction": "COMPUTED",
+    "invariant_fixed_P_two_body_shell": "CONSTRUCTED",
+    "residual_retaining_fixed_P_evolution": "COMPUTED"
+  },
+  "does_not_establish": [
+    "a detector bound for a finite spread of total momentum or invariant mass",
+    "control of number-scattering, counter-rotating or other off-resonant pieces of the complete local quadratic Hamiltonian",
+    "that a degree-38 anisotropic apparatus is minimal or experimentally practical",
+    "selection of the filter, packet regions, coupling or pulse by the public closed BT dynamics",
+    "transfer of the equal-normalized two-mode detector or its relative q8 coefficient to these unequal packet norms",
+    "either absolute order-lambda8 probability coefficient",
+    "either forward endpoint or a real-virtual or KLN completion",
+    "an all-time Moller, LSZ or S operator",
+    "the standard scalar projector or general Bateman--Turok Eq. (19)",
+    "a complete positive physical Hilbert or Fock construction",
+    "gravity, metric BV--BRST, QME restoration or residual transfer",
+    "anything LORENTZIAN-CAUSAL",
+    "literature priority"
+  ],
+  "fixed_P_shell": {
+    "centre_of_momentum_mass_over_kappa": "8/5",
+    "exchange_quotient": "n~-n halves all invariant norms and cancels from leakage ratios",
+    "invariant_mass_squared_over_kappa_squared": "64/25",
+    "lab_boost": "beta_x=-3/5, gamma=5/4",
+    "lab_energy": "k1^0/kappa=1-(3/5)n_x and k2^0/kappa=1+(3/5)n_x",
+    "lab_total_momentum_over_kappa": [
+      "2",
+      "-6/5",
+      "0",
+      "0"
+    ],
+    "measure": "dPhi2=C(P^2)*dOmega with dOmega=d n_x dphi; C cancels from every norm ratio",
+    "ordered_shell": "k1*=(4*kappa/5)(1,n), k2*=(4*kappa/5)(1,-n), n in S2",
+    "previous_family": "n_x=0, n_y=cos(phi), n_z=sin(phi); equal individual lab energies select the equator",
+    "status": "INVARIANT_FIXED_TIMELIKE_P_MASSLESS_TWO_BODY_SPHERE"
+  },
+  "homogeneous_local_filter": {
+    "antipodal_property": "F(-n)=F(n), so the filter descends to the unordered pair shell",
+    "azimuthal_Laurent_support": [
+      -19,
+      19
+    ],
+    "equatorial_filter": "p(phi)=(K_20(phi-pi/2)-K_20(phi-arccos(3/5)))/(1-rho)",
+    "local_density_realization": "Replace n_y,n_z by the normalized constant-coefficient transverse Fourier multipliers on one field in a symmetrized quadratic density; every term has degree and derivative order 38.",
+    "maximum_derivative_order": 38,
+    "mode_polynomial": "for m>=0: (n_y^2+n_z^2)^(19-m)*(n_y+i*n_z)^(2m); for m<0 use n_y-i*n_z",
+    "order_N": 20,
+    "rho_exact": "5646762438667986757780624/9094947017729282379150390625",
+    "sphere_filter": "F(n)=(1-n_x^2)^19*p(phi)",
+    "status": "ANTIPODALLY_EVEN_DEGREE_38_LOCAL_POLYNOMIAL_ON_COMPLETE_FIXED_P_SPHERE",
+    "target_projective_phases": [
+      "-1",
+      "(-7+24*i)/25"
+    ]
+  },
+  "lifecycle_state": "COEFFICIENT_COMPUTED",
+  "next_gate": "Give the fixed-P packet finite invariant-mass and total-momentum thickness under compact spacetime smearing, and bound the number-scattering, counter-rotating and off-resonant sectors. Independently compute the unequal-packet absolute q8 Gram and X2-X6 interference.",
+  "provenance": {
+    "generated_by": "reverse_physics/bt_fixed_p_two_sphere_packet_detector.py",
+    "independent_verifier": "reverse_physics/verify_bt_fixed_p_two_sphere_packet_detector.py",
+    "inputs": [
+      {
+        "path": "planning/work-items/reverse-physics-bateman-fixed-p-two-sphere-packet-detector.json",
+        "sha256": "9f7af0184f8df80cd9bc8bdca30bb227bc26b42beab31e9ddc9d9e20cf1b2b52"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_TWO_ANGLE_FEJER_PACKET_DETECTOR_V1.json",
+        "sha256": "b7147013ce2681a104fdacea734b4eefeaf39d03f330bb24c0da86868698aadd"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_CONTINUOUS_ANGLE_Q6_FAMILY_V1.json",
+        "sha256": "b2a144a500727aefa8f6a8b6e682dc92a2f9678ee7df57bc5df4ed80562712f2"
+      },
+      {
+        "path": "planning/events/reverse-physics-bateman-fixed-p-two-sphere-packet-detector-DONE-8885e249.json",
+        "sha256": "a323b86997faec89ee28c5a96ba882d92812ec656846e25a9239d66395581197"
+      }
+    ],
+    "method": "Closed Fejer Fourier coefficients are convolved exactly over Gaussian rationals. Root-of-unity endpoints are integrated in Q(sqrt(2)) plus a rational multiple of pi; strict pi bounds follow from alternating Machin series and sqrt(2) bounds from integer square roots. Latitude integrals are rational binomial antiderivatives. No decimal decides a claim.",
+    "retrieval_date": "2026-08-13",
+    "source_commit": "8885e24944a6f9666eceb69bcf9ed5d28ae19980"
+  },
+  "question": "Can the reduced dc packet result be replaced by an invariant fixed-total-momentum two-body phase-space theorem, with one finite local filter controlling the complete outgoing sphere?",
+  "report": "reverse_physics/reports/bt-fixed-p-two-sphere-packet-detector.md",
+  "residual_retaining_evolution": {
+    "Hamiltonian": "H/G=|e><v|+|v><e| with v=sqrt(1-eta_sphere)B+sqrt(eta_sphere)R; D is dark",
+    "all_time_selected_input_bound": "the supremum over normalized span{e,B} inputs and all times is 4*eta_sphere*(1-eta_sphere)<1/375",
+    "basis": [
+      "|e,0_field>",
+      "|g,B>",
+      "|g,R>",
+      "|g,D>"
+    ],
+    "compressed_exponential_relation": "Pi*U*Pi is compressed only after exponentiating the residual-retaining H; it is not replaced by exp(-i*Pi*H*Pi*tau)",
+    "exact_exponential": "U=I+(cos(G*tau)-1)(H/G)^2-i*sin(G*tau)(H/G)",
+    "half_pulse": "absorption on B exceeds 124917/125000 and the field remainder is below 83/125000",
+    "outside_packet_population_from_B": "eta_sphere*(1-eta_sphere)*(1-cos(G*tau))^2",
+    "selected_absorption_effect": "E_absorb=(1-eta_sphere)*sin(G*tau)^2*P_B",
+    "selected_pass_effect": "E_pass=P_D+[1-(1-eta_sphere)*sin(G*tau)^2]*P_B",
+    "status": "EXACT_FIXED_P_ROTATING_WAVE_STAR_EVOLUTION_WITH_FULL_SPHERE_RESIDUAL_RETAINED"
+  },
+  "result_kind": "exact invariant fixed-P two-body sphere, degree-38 local polynomial packet filter, algebraically certified full-sphere leakage, and residual-retaining detector effect",
+  "schema": "reverse_physics/schema/reverse-physics-bt-fixed-p-two-sphere-packet-detector-v1.schema.json",
+  "schema_version": 1,
+  "sphere_packet_decomposition": {
+    "azimuthal_measure": "dphi on 0<=phi<pi",
+    "complete_direction": "v=sqrt(1-eta_sphere)B+sqrt(eta_sphere)R, with B the norm-weighted bright packet and R the normalized full-sphere complement",
+    "equatorial_leakage_fraction": {
+      "canonical_sha256": "179bef825fdaf57220f8864a66f06ffd9bb11e517b8b5db3d84738e24c6c0831",
+      "decimal": "0.000661284456502986486",
+      "denominator_coefficients": [
+        "9715698068487574413789858136806287802755832672119140625/146871785121468494163281950239067424724660642483351502224",
+        "0",
+        "0"
+      ],
+      "lower_bound": "28566561640787404774068094328167641535929731290609515550557301723651467771562444400592269192606447984700338810744878830925077113485395055474688427828759409252151391436173/43198598363937793184876832631909739056095135516896593714132987992636982643951485900472879158836366341839118684249024630904187202734375000000000000000000000000000000000000000",
+      "numerator_coefficients": [
+        "48578490342437872068949290684031439013779163360595703125/1174974280971747953306255601912539397797285139866812017792",
+        "-1375050554735937525409222073343345827064370045681840936817293952807/17674006326137857664844523313597780026136891252629006590670335029472",
+        "-2898327680531544395638208378495186685630507601978896231240572675/78901813955972578860913050507132946545253978806379493708349709953"
+      ],
+      "upper_bound": "892705051274606399985130690081766934137073682727287167738560315172150684980364635412530824062469195882768374951901677872724968445220299537016263860534468852728661406077/1349956198873056037026128215359456900485188331704774494106264830617981823122036841888472889839204524434260076582745871574104817352294921875000000000000000000000000000000000"
+    },
+    "equatorial_leakage_norm": {
+      "canonical_sha256": "c38b73b036383bec41ed71d44d32a6a212fe3a023b8a34311960f1aac3ea60df",
+      "coefficients": [
+        "48578490342437872068949290684031439013779163360595703125/1174974280971747953306255601912539397797285139866812017792",
+        "-1375050554735937525409222073343345827064370045681840936817293952807/17674006326137857664844523313597780026136891252629006590670335029472",
+        "-2898327680531544395638208378495186685630507601978896231240572675/78901813955972578860913050507132946545253978806379493708349709953"
+      ],
+      "decimal": "0.000137427556250036934",
+      "exact_basis": "pi,rational,sqrt2",
+      "lower_bound": "3174062404531933863785343814240849059547747921178835061173033524850163085729160488954696576956271998300037645638319870102786345942821672830520936425417712139127932381797/23096258793665923421634332061485770757776490323916714749355650001748756249241804977069734267408796804604836510915951746278972597113728400000000000000000000000000000000000000",
+      "upper_bound": "15628316228262922567621902454119622102853130770247144968375209032967747150441424964768313300930816965437726492041485230873496060034318368673802346957064282010620637/113720396801851174915261565663991754794640113156309868931851272964265991405949784664149135391689993195061540741498073014144728610112500000000000000000000000000000000000"
+    },
+    "equatorial_total_norm": {
+      "canonical_sha256": "3f8813e1a2a1eb649ff3f9a3477279a255a419aea927ee0689791b08d847882b",
+      "coefficients": [
+        "9715698068487574413789858136806287802755832672119140625/146871785121468494163281950239067424724660642483351502224",
+        "0",
+        "0"
+      ],
+      "decimal": "0.207819123674527627",
+      "exact_basis": "pi,rational,sqrt2",
+      "lower_bound": "13935031730302513930592291255323426069524524714371865745613056316056586561259735142074558862856304768353652403434796093668178759765625/67053654562255906707970641468829657038705939650080784756193822585722195562314917675363744647315861690788235031691472811777662378717276",
+      "upper_bound": "121978184295640079223100347343894593469367334867795059029002349829640030258211024306841783962952347173146079500305307270486328125/586943983493425418917479048588344540875561874355147710616006570138147052417805340202060053634528997135801500601280376847198599278"
+    },
+    "factorization": "1-eta_sphere=(1-eta_phi)*(1-eta_latitude)",
+    "latitude_band": [
+      "-1/2",
+      "1/2"
+    ],
+    "latitude_band_norm": {
+      "canonical_sha256": "695188551258652033e307c12f486f5470dc8a0860d1c729a9d6321c5b56af84",
+      "decimal": "0.284730211695641276",
+      "exact": "1427244363003748099499017053974999877681461429/5012620032500740517886839569385749496620646400"
+    },
+    "latitude_leakage_fraction": {
+      "canonical_sha256": "4bdb0149c488a692bb852b0bcc780c023efb6cd8e7325c9e1db86935e4a2ab51",
+      "decimal": "0.00000233295329801422291",
+      "exact": "3329702211781559268915474495258701285195/1427247692705959881058285969449495136382746624"
+    },
+    "latitude_total_norm": {
+      "canonical_sha256": "016a2dc6b6ca41d3f1f35be3e7615db253bdd01251676a7bbd878f98daebd907",
+      "decimal": "0.284730875959477392",
+      "exact": "18889465931478580854784/66341473743672640538025"
+    },
+    "leakage_bound": "0<eta_sphere<83/125000<1/1000",
+    "packet_modes": "f_j=1_(B_j)*F/||1_(B_j)*F|| on the two disjoint full-sphere regions",
+    "radical_bounds": {
+      "pi_lower": "42744875888664539666930921577096808737648083069456694431563745217711062177811642817916409291698068/13606116579061067758011808700434110517365128937204213834591438837448804568453662097454071044921875",
+      "pi_upper": "18708039026218264590505778752944597147977228379399803952602238633945592322799964841287973415304/5954953773157449868704945948265134765395007500395744925067592845647312095575034618377685546875",
+      "sqrt2_lower": "441941738241592202750527726315530649553/312500000000000000000000000000000000000",
+      "sqrt2_upper": "14142135623730950488016887242096980785697/10000000000000000000000000000000000000000"
+    },
+    "shared_boundary": "the bins meet only at phi=3*pi/8, a measure-zero set; their L2 packet modes are orthogonal",
+    "sphere_leakage_fraction": {
+      "canonical_sha256": "330673c1a9b2545f7af3263d9ad3b8e950fc991b2816ff00ef05ff6bfea35750",
+      "decimal": "0.000663615867055246985",
+      "denominator_coefficients": [
+        "11190509003977334675155540427168284672000000000000000000000000000000000000/594127480263550737054872866730670772767456134624135422041380843353240447809",
+        "0",
+        "0"
+      ],
+      "lower_bound": "40915302540731191578151953208999432760125203475963229211974695309112341013893319187606751326925276216053768301235033474202566231428746116833337994621141378369586166154331063664098300290845511019983436883153814871217/61655099843061668717578980030863209179257812749806742751418179653498634395855023786345345003774760979841720475312493759861861927830597294636509158745411078918346181810585600000000000000000000000000000000000000000000000",
+      "numerator_coefficients": [
+        "67642571031733903183060650648564958329437519345343415877295253079253878458985127508640289306640625/5746048408265499948054095101431799395451247705323668751947065969435965376292334445336429649903747072",
+        "-1962533153092043612955810361988528534876258495790150998516021042923973700068298972503039197384880653731916781203/88593078164943441605249949347191019648064632295543497666983174965874412693015474286113994293413786168947690700800",
+        "-3376834158511326369703071214071362191618872578745635244426470211343256095916408321474326974790592712558247/322861072029677265325254917446031412711605802826324699952562590983507334887082632238024760544510882539896832"
+      ],
+      "upper_bound": "1278603204397849737952629580580377649548059236409122395427767864429511958709023126278847486085951299102016853833870115857885970293356773212570955357391043401509341599149090733577447273430032664517186203571381704033/1926721870095677147422526518838832405229409601417804188216046925881990885521363874900699280980959032579267938884241777796931733987352840250083500257394038719214822359040000000000000000000000000000000000000000000000000"
+    },
+    "sphere_leakage_norm": {
+      "canonical_sha256": "e12da077133c28859e4f4fc1516993de31e22be2b02cb40bc719ea32a271f307",
+      "coefficients": [
+        "67642571031733903183060650648564958329437519345343415877295253079253878458985127508640289306640625/5746048408265499948054095101431799395451247705323668751947065969435965376292334445336429649903747072",
+        "-1962533153092043612955810361988528534876258495790150998516021042923973700068298972503039197384880653731916781203/88593078164943441605249949347191019648064632295543497666983174965874412693015474286113994293413786168947690700800",
+        "-3376834158511326369703071214071362191618872578745635244426470211343256095916408321474326974790592712558247/322861072029677265325254917446031412711605802826324699952562590983507334887082632238024760544510882539896832"
+      ],
+      "decimal": "0.0000392678239121980020",
+      "exact_basis": "pi,rational,sqrt2",
+      "lower_bound": "5845043220104455939735993315571347537160743353709032744567813615587477287699045598229535903846468030864824043033576210600366604489820873833333999231591625481369452307761580523442614327263644431426205269021973553031/148850703649222965062551262690706255769946982806678101229075130387717902657316283810579551932913915491432362856887429951223364167579475764752414327941486917411034586814792985477120000000000000000000000000000000000000000",
+      "upper_bound": "3197731143156881852190036640465922339164878657109150238535659550851980779420686228179397334695399237963563197507721993307154912487418370558165886845195895933968096794896774850323867062726574576068311638130039/81433877016127477778833125454466316990438598986514428378505240185154049439630501375686892699769959543902616188052243237613664505818501385628979670316896871012321752734760960000000000000000000000000000000000000000"
+    },
+    "sphere_target_one_norm": {
+      "canonical_sha256": "69b195cc0b600a20fd9b3e7bb22159f2b11b013c4c32e8f458a22cd7fd459468",
+      "coefficients": [
+        "13528463708190530654329467052630706753545987555936758772992974306915373847004957497119903564453125/5746048408265499948054095101431799395451247705323668751947065969435965376292334445336429649903747072",
+        "1962560009138567368353730146244510366814456361197387262632553310594527554999803697849492409984021385280018836829/88593078164943441605249949347191019648064632295543497666983174965874412693015474286113994293413786168947690700800",
+        "-40891406629131930862192964912409407666066048767243169542054775993620875676311997764254730296029226050903/110741347706179302006562436683988774560080790369429372083728968707343015866269342857642492866767232711184613376"
+      ],
+      "decimal": "0.0295485465108960236",
+      "exact_basis": "pi,rational,sqrt2",
+      "lower_bound": "30788253579710656761708718453266842218120753260029837371788198721750244034187761092330931137964610978224065942992501089774927557885297379777269369207584954379984203106696835397066619523962471421220937841037183108966631/1041954925544560755437858838834943790389628879646746708603525912714025318601213986674056863530397408440026539998212009658563549173056330353266900295590408421877242107703550898339840000000000000000000000000000000000000000",
+      "upper_bound": "16843768918015406309476804100515339916991751883841854353565440954878367368366037322078011845457178557609351973274234583180835903162826937151890944967704852719252857489005429946179540442616449936638865678534708439/570037139112892344451831878181264218933070192905600998649536681296078346077413509629808248898389716807318313316365702663295651540729509699402857692218278097086252269143326720000000000000000000000000000000000000000"
+    },
+    "sphere_target_zero_norm": {
+      "canonical_sha256": "8a473918fb5b48337c0df6c19bf2156f7725063041ddba88c2c3414982443b60",
+      "coefficients": [
+        "13528463708190530654329467052630706753545987555936758772992974306915373847004957497119903564453125/2873024204132749974027047550715899697725623852661834375973532984717982688146167222668214824951873536",
+        "-13253435752707285882955949271166887687426237787753975151463605205554693771313164905308668480472509681/43720607519615821584887254865255499133940912507312915793740642005794870517184860969505698579321491082444800",
+        "144786875972001759592376952423923705141617420069815016500977667158341307721875545782932300885433666204191203/13842668463272412750820304585498596820010098796178671510466121088417876983283667857205311608345904088898076672"
+      ],
+      "decimal": "0.0295847067901709956",
+      "exact_basis": "pi,rational,sqrt2",
+      "lower_bound": "1973996603535494413693261923435373675490467402214694634838369010074619143154046012071047662709206819998119882331384572911693221929756541925249051823533394529005243664754661772702392273266138792017897883960753150721/66723547998499023785723542445885232478844062477378759516106936008838711488294953040090731527305161913423830686360912503750227277987726072827029988190984145868163557101917962240000000000000000000000000000000000000000",
+      "upper_bound": "1183465376853532251029766567380182085371627894851216686142155262535967750086027626761741887775960270734215055651798393645060512610605221926242053671080182176809738026989548930244536189863602989735205026528774677/40002606253536304873812763381141348697057557396884280606985030266391462882625509447705842027957173109285495671323908958827765020402070856098446153839879164707807176781987840000000000000000000000000000000000000000"
+    },
+    "sphere_total_norm": {
+      "canonical_sha256": "17ace3398250cb69929a231a4abd46e451e7543e3875e6826a0238fdc31fb83a",
+      "coefficients": [
+        "11190509003977334675155540427168284672000000000000000000000000000000000000/594127480263550737054872866730670772767456134624135422041380843353240447809",
+        "0",
+        "0"
+      ],
+      "decimal": "0.0591725211249792172",
+      "exact_basis": "pi,rational,sqrt2",
+      "lower_bound": "64201294420395696734757639997675123298257200146299351345590039255880889294370073821683364762417989349759672536073208358761265422811480025202688000000000/1084984942331511073169461021650003225416220289456480092982405038288441423137772635503309813935049337871706471806849000248195920743782896135019818984878639",
+      "upper_bound": "15396610468667617320602089364689369241999049399636813630866629836347214748977614427749408784649990445519974768497280204223806418048484638720000000/260198655996897495216106021907832573970281373248396300998722260169278103736474011190210690436535309177059722009694153278607541535544204320657402583"
+    },
+    "squared_latitude_weight": "(1-n_x^2)^38",
+    "status": "INVARIANT_FIXED_P_TWO_PACKET_DECOMPOSITION_WITH_CERTIFIED_FULL_SPHERE_LEAKAGE",
+    "target_one_phi_interval": [
+      "pi/4",
+      "3*pi/8"
+    ],
+    "target_zero_phi_interval": [
+      "3*pi/8",
+      "5*pi/8"
+    ]
+  },
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_fixed_p_two_sphere_packet_detector.py --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_fixed_p_two_sphere_packet_detector.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_fixed_p_two_sphere_packet_detector"
+  ]
+}

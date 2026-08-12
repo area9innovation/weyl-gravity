@@ -1,0 +1,34 @@
+{
+  "id": "sf:program/work/reverse-physics-bateman-fixed-p-two-sphere-packet-detector",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "reverse-physics",
+    "state": "ACTIVE",
+    "objective": "Replace the operational dc leakage coefficient by the invariant fixed-total-momentum two-body phase-space measure, and lift the finite local BT packet filter from its equal-energy equator to the complete outgoing two-sphere.",
+    "depends_on": [
+      "REVERSE_PHYSICS_BT_TWO_ANGLE_FEJER_PACKET_DETECTOR_V1",
+      "REVERSE_PHYSICS_BT_CONTINUOUS_ANGLE_Q6_FAMILY_V1"
+    ],
+    "activates": [
+      "the exact fixed-P massless two-body sphere and invariant angular measure",
+      "an exact dtheta audit of the equatorial packet leakage",
+      "a degree-38 antipodally even polynomial lift of the projective Fejer filter",
+      "two normalizable full-sphere packet regions with an exact sub-per-mille leakage bound",
+      "full residual-mode evolution for the invariant fixed-P rotating-wave star sector"
+    ],
+    "current_gate": "Write the fixed-P shell in its centre-of-momentum frame as k1=(M/2)(1,n), k2=(M/2)(1,-n), n in S2, and prove that the previous equal-lab-energy family is n_x=0. Recompute the N=20 azimuthal filter with dphi, homogenize every Laurent mode to F(n)=(1-n_x^2)^19 p(phi), integrate |F|^2 over dOmega=d n_x dphi, and retain the exact complement in the apparatus Hamiltonian.",
+    "stop_condition": "Land a COEFFICIENT_COMPUTED invariant fixed-P sphere certificate, method-distinct verifier, mutation tests and report. Require exact algebraic/interval evidence for total leakage below 1/1000 and preserve the fixed-P, rotating-wave, non-gravitational and non-causal boundaries.",
+    "forbid": "no use of dc as invariant two-body phase measure; no promotion from fixed P to energy or total-momentum bandwidth; no deletion of the residual mode; no transfer of the unequal packet result to the equal-mode relative q8 coefficient; no complete local Hamiltonian, Eq. 19, gravity, QME or LORENTZIAN-CAUSAL claim",
+    "allowed_paths": [
+      "reverse_physics/",
+      "paper/05-interaction-obstructions.tex",
+      "paper/05-interaction-obstructions.pdf",
+      "paper/06-einstein-weyl-interaction-obstructions.tex",
+      "paper/06-einstein-weyl-interaction-obstructions.pdf",
+      "planning/work-items/reverse-physics-bateman-fixed-p-two-sphere-packet-detector.json",
+      "planning/events/"
+    ],
+    "resource_hint": "On the fixed-P sphere use n=(x,sqrt(1-x^2)cos(phi),sqrt(1-x^2)sin(phi)). For Laurent support |m|<=19, the homogeneous lift (1-x^2)^19 exp(2im phi) is the degree-38 polynomial (n_y^2+n_z^2)^(19-|m|)(n_y+sign(m)i n_z)^(2|m|). Its squared norm factorizes into an azimuthal dphi integral and the rational latitude integral of (1-x^2)^38."
+  }
+}

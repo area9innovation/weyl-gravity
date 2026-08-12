@@ -1,0 +1,32 @@
+{
+  "schema": "event-v0",
+  "id": "sf:program/event/reverse-physics-bateman-fixed-p-two-sphere-packet-detector-DONE-8885e249",
+  "kind": "event",
+  "source": {
+    "path": "tools/science-forge/program/events/reverse-physics-bateman-fixed-p-two-sphere-packet-detector-DONE-8885e249.json",
+    "span": null
+  },
+  "body": {
+    "event_kind": "WORK_ITEM_TRANSITIONED",
+    "actor": "reverse-physics",
+    "base_revision": "science-forge-ir-v0",
+    "predecessors": [],
+    "when": "2026-08-13",
+    "seq": 1,
+    "payload": {
+      "target": "sf:program/work/reverse-physics-bateman-fixed-p-two-sphere-packet-detector",
+      "to_state": "DONE",
+      "note": "The fixed timelike total momentum P has an invariant massless two-body shell S2 with dPhi2 proportional to dOmega, and the previous equal-lab-energy family is its n_x=0 equator. Exact dphi integration gives equatorial leakage below 331/500000. Homogenizing the N=20 projective filter as F(n)=(1-n_x^2)^19 p(phi) realizes it by one antipodally even degree-38 local polynomial on the full sphere. The two azimuthal bins with |n_x|<=1/2 have combined invariant leakage below 83/125000, so residual-retaining half-pulse absorption exceeds 124917/125000. This remains fixed-P rotating-wave scalar phase-space physics, not energy bandwidth, a complete local Hamiltonian, absolute q8, Eq. 19, gravity or Lorentzian causality. Evidence: REVERSE_PHYSICS_BT_FIXED_P_TWO_SPHERE_PACKET_DETECTOR_V1."
+    },
+    "native": {
+      "authored_by": "manual close-out after exact invariant phase-space integration",
+      "policy": "append-only; DONE applies only to the declared fixed-P two-sphere packet work item"
+    }
+  },
+  "edges": [
+    {
+      "rel": "TRANSITIONS",
+      "to": "sf:program/work/reverse-physics-bateman-fixed-p-two-sphere-packet-detector"
+    }
+  ]
+}

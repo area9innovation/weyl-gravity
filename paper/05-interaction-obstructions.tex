@@ -267,10 +267,13 @@ that Hamiltonian on the two selected modes, but no nonzero finite-derivative
 local density can isolate exactly those two zero-width angles in the
 continuum.  The selected compression is therefore exact while its leakage
 into other angles must be retained.  An order-20 projective Fej\'er filter
-with at most 38 transverse derivatives and two finite rational angular packets
-does so explicitly: its exact reduced-continuum leakage is below $10^{-3}$,
-and exponentiating the residual-retaining star Hamiltonian gives bright-packet
-absorption efficiency above $999/1000$ at a half pulse.
+with at most 38 transverse derivatives admits an antipodally even homogeneous
+lift to the complete invariant fixed-total-momentum two-body sphere.  Two
+finite solid-angle packets capture all but less than $83/125000$ of its exact
+phase-space norm, and exponentiating the residual-retaining star Hamiltonian
+gives bright-packet absorption efficiency above $124917/125000$ at a half
+pulse.  This is a fixed-$P$ rotating-wave result; momentum bandwidth and the
+remaining local-Hamiltonian sectors are open.
 Independently, the projected three-channel hard loop logarithm closes the
 Callan--Symanzik equation exactly with the Born rate and one-loop beta
 function.  This yields the positive leading-log nonforward prediction
@@ -3941,39 +3944,73 @@ must therefore retain the complement before exponentiation.  The interaction rem
 additional anisotropic scalar apparatus physics; it is neither selected by
 the public BT Hamiltonian nor a Lorentzian or gravitational detector.
 
-That packet calculation can be completed on the certified one-dimensional
-fixed-energy pair family.  With $\zeta=e^{2i\theta}$ and normalized projective
-Fej\'er kernels of order $N=20$ centered at the two target pair lines, set
+At the selected fixed total momentum the packet calculation has an invariant
+full-sphere completion.  In the centre-of-momentum frame,
 \[
- p(\theta)={K_{20,0}(\theta)-K_{20,1}(\theta)\over1-\rho},
- \qquad \rho=K_{20,0}(\theta_1)<10^{-3}.
+ {P\over\kappa}=(2,-6/5,0,0),\qquad {P^2\over\kappa^2}={64\over25},
 \]
-Then $p(\theta_0)=1$ and $p(\theta_1)=-1$ exactly.  Its Laurent support is
-$-19,\ldots,19$, and after the shell normalization
-$5(k_y+ik_z)/(4\kappa)$ each mode $e^{2im\theta}$ is the pair symbol of a
-local constant-coefficient bilinear with $2m$ transverse derivatives.  Thus the
-filter is a Hermitian local density of finite maximum order $38$.
+and every outgoing massless pair is
+\[
+ k_1^*={4\kappa\over5}(1,n),\qquad
+ k_2^*={4\kappa\over5}(1,-n),\qquad n\in S^2.
+\]
+The lab boost has $\beta_x=-3/5$, $\gamma=5/4$.  Writing
+$n=(x,\sqrt{1-x^2}\cos\varphi,\sqrt{1-x^2}\sin\varphi)$ gives
+$k_{1,2}^0/\kappa=1\mp3x/5$, so the earlier equal-lab-energy family is
+exactly the equator $x=0$.  The invariant two-body measure is a common
+$P^2$-dependent factor times $d\Omega=dx\,d\varphi$; its equatorial angular
+factor is $d\varphi$, not $dc$ for $c=\cos\varphi$.  Exchange $n\sim-n$
+halves every norm and cancels from their ratios.
 
-In the reduced two-body measure $dc$, take the disjoint packets
+With $\zeta=e^{2i\varphi}$ and normalized projective Fej\'er kernels of order
+$N=20$ centered at the two target pair lines, set
 \[
- B_0=[-7/25,7/25],\qquad B_1=[5/13,20/29].
+ p(\varphi)={K_{20,0}(\varphi)-K_{20,1}(\varphi)\over1-\rho},
+ \qquad \rho=K_{20,0}(\varphi_1)<10^{-3}.
 \]
-All endpoint sines are rational, so the Fourier integrals are exact.  Writing
+Then $p(\pi/2)=1$ and $p(\arccos(3/5))=-1$ exactly, with Laurent support
+$-19,\ldots,19$.  Its invariant equatorial leakage into the complement of
 \[
- \eta={\int_{(-1,1)\setminus(B_0\cup B_1)}|p(c)|^2dc
- \over\int_{-1}^{1}|p(c)|^2dc},
+ B_1^\varphi=[\pi/4,3\pi/8],\qquad
+ B_0^\varphi=[3\pi/8,5\pi/8]
 \]
-the exact rational comparison gives
+is an exact element of $\mathbb Q(\pi,\sqrt2)$ satisfying
 \[
- \boxed{\eta=0.000760242003438472779\ldots<10^{-3}.}
+ \eta_\varphi=0.000661284456502986486\ldots<{331\over500000}.
 \]
-The decimal is only a display; the certificate retains canonical exact
-fraction hashes and strict rational enclosures.
+
+The entire Laurent polynomial has one local homogeneous lift.  For $m\geq0$,
+\[
+ (1-x^2)^{19}e^{2im\varphi}
+ =(n_y^2+n_z^2)^{19-m}(n_y+in_z)^{2m},
+\]
+and the negative modes use $n_y-in_z$.  Every term has degree $38$, so
+\[
+ \boxed{F(n)=(1-x^2)^{19}p(\varphi)}
+\]
+is the symbol of one finite constant-coefficient local quadratic density of
+maximum derivative order $38$.  It is antipodally even and descends to the
+unordered pair sphere.  On the two azimuthal bins above and the common
+latitude band $|x|\leq1/2$, the squared latitude factor is
+$(1-x^2)^{38}$.  Its exact rational integral factorizes from the azimuthal
+integral, giving
+\[
+ 1-\eta_{S^2}=(1-\eta_\varphi)(1-\eta_x),\qquad
+ \eta_x=0.00000233295329801422291\ldots,
+\]
+and the exact algebraic interval certificate proves
+\[
+ \boxed{0<\eta_{S^2}
+ =0.000663615867055246985\ldots
+ <{83\over125000}<10^{-3}.}
+\]
+Strict rational square bounds for $\sqrt2$ and alternating Machin-series
+bounds for $\pi$ decide the inequalities; the decimals are displays only.
 
 Let $B$ be the normalized selected bright packet, $D$ its selected dark
 partner and $R$ the normalized complement.  The complete coupled direction is
 \[
- v=\sqrt{1-\eta}\,B+\sqrt\eta\,R.
+ v=\sqrt{1-\eta_{S^2}}\,B+\sqrt{\eta_{S^2}}\,R.
 \]
 Retaining $R$ gives the exact resonant rotating-wave star Hamiltonian
 $H/G=|e\rangle\langle v|+|v\rangle\langle e|$ and hence
@@ -3982,25 +4019,25 @@ $H/G=|e\rangle\langle v|+|v\rangle\langle e|$ and hence
 \]
 Its selected packet effect is
 \[
- E_{\rm absorb}=(1-\eta)\sin^2(G\tau)P_B,
+ E_{\rm absorb}=(1-\eta_{S^2})\sin^2(G\tau)P_B,
  \qquad E_{\rm pass}=P_D+
- [1-(1-\eta)\sin^2(G\tau)]P_B.
+ [1-(1-\eta_{S^2})\sin^2(G\tau)]P_B.
 \]
-At $G\tau=\pi/2$ the absorption efficiency is above $999/1000$ and the total
-field remainder is below $1/1000$.  At arbitrary time the outside-packet
+At $G\tau=\pi/2$ the absorption efficiency is above $124917/125000$ and the
+total field remainder is below $83/125000$.  At arbitrary time the outside-packet
 population, maximized over the selected detector/bright input plane, is
-$4\eta(1-\eta)<1/250$.  Certificate
+$4\eta_{S^2}(1-\eta_{S^2})<1/375$.  Certificate
 \par\noindent
-\texttt{REVERSE\_PHYSICS\_BT\_TWO\_ANGLE\_FEJER\_PACKET\_}
+\texttt{REVERSE\_PHYSICS\_BT\_FIXED\_P\_TWO\_SPHERE\_PACKET\_}
 \allowbreak\texttt{DETECTOR\_V1}
 \par\noindent
-therefore constructs a leakage-controlled local packet detector without
-asserting exact angle support or deleting the residual.  It is still restricted
-to one fixed-energy meridian and the pair rotating-wave sector.  The full
-solid angle, energy thickness, number-scattering and counter-rotating terms,
-public-BT selection, transfer of the earlier equal-weight relative-$q_8$
-formula to these unequal-norm packet modes, Eq.~(19), gravity and Lorentzian
-causality remain open.
+therefore constructs a leakage-controlled local packet detector on the
+complete invariant angular shell at fixed $P$, without asserting exact angle
+support or deleting the residual.  Finite invariant-mass and total-momentum
+thickness, number-scattering and counter-rotating terms, public-BT selection,
+transfer of the earlier equal-weight relative-$q_8$ formula to these
+unequal-norm packet modes, Eq.~(19), gravity and Lorentzian causality remain
+open.
 
 The auxiliary preparation nevertheless has an exact scalar preimage on the
 finite covariant detector ideal.  Put

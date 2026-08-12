@@ -1,0 +1,169 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-fixed-p-two-sphere-packet-detector-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "schema_version", "certificate", "question", "answer",
+    "result_kind", "lifecycle_state", "dependency_tags", "assumptions",
+    "provenance", "fixed_P_shell", "homogeneous_local_filter",
+    "sphere_packet_decomposition", "residual_retaining_evolution",
+    "disposition", "does_not_establish", "next_gate", "checks",
+    "verification_commands", "report"
+  ],
+  "properties": {
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-fixed-p-two-sphere-packet-detector-v1.schema.json"},
+    "schema_version": {"const": 1},
+    "certificate": {"const": "REVERSE_PHYSICS_BT_FIXED_P_TWO_SPHERE_PACKET_DETECTOR_V1"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE"]},
+    "assumptions": {"type": "array", "minItems": 8, "maxItems": 8, "items": {"$ref": "#/$defs/text"}},
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_commit", "retrieval_date", "inputs", "generated_by", "independent_verifier", "method"],
+      "properties": {
+        "source_commit": {"const": "8885e24944a6f9666eceb69bcf9ed5d28ae19980"},
+        "retrieval_date": {"const": "2026-08-13"},
+        "inputs": {
+          "type": "array", "minItems": 4, "maxItems": 4,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["path", "sha256"],
+            "properties": {"path": {"$ref": "#/$defs/text"}, "sha256": {"$ref": "#/$defs/hash"}}
+          }
+        },
+        "generated_by": {"const": "reverse_physics/bt_fixed_p_two_sphere_packet_detector.py"},
+        "independent_verifier": {"const": "reverse_physics/verify_bt_fixed_p_two_sphere_packet_detector.py"},
+        "method": {"$ref": "#/$defs/text"}
+      }
+    },
+    "fixed_P_shell": {
+      "type": "object", "additionalProperties": false,
+      "required": ["lab_total_momentum_over_kappa", "invariant_mass_squared_over_kappa_squared", "centre_of_momentum_mass_over_kappa", "lab_boost", "ordered_shell", "lab_energy", "previous_family", "measure", "exchange_quotient", "status"],
+      "properties": {
+        "lab_total_momentum_over_kappa": {"const": ["2", "-6/5", "0", "0"]},
+        "invariant_mass_squared_over_kappa_squared": {"const": "64/25"},
+        "centre_of_momentum_mass_over_kappa": {"const": "8/5"},
+        "lab_boost": {"const": "beta_x=-3/5, gamma=5/4"},
+        "ordered_shell": {"$ref": "#/$defs/text"},
+        "lab_energy": {"$ref": "#/$defs/text"},
+        "previous_family": {"$ref": "#/$defs/text"},
+        "measure": {"$ref": "#/$defs/text"},
+        "exchange_quotient": {"$ref": "#/$defs/text"},
+        "status": {"const": "INVARIANT_FIXED_TIMELIKE_P_MASSLESS_TWO_BODY_SPHERE"}
+      }
+    },
+    "homogeneous_local_filter": {
+      "type": "object", "additionalProperties": false,
+      "required": ["order_N", "azimuthal_Laurent_support", "maximum_derivative_order", "target_projective_phases", "rho_exact", "equatorial_filter", "sphere_filter", "mode_polynomial", "local_density_realization", "antipodal_property", "status"],
+      "properties": {
+        "order_N": {"const": 20},
+        "azimuthal_Laurent_support": {"const": [-19, 19]},
+        "maximum_derivative_order": {"const": 38},
+        "target_projective_phases": {"const": ["-1", "(-7+24*i)/25"]},
+        "rho_exact": {"const": "5646762438667986757780624/9094947017729282379150390625"},
+        "equatorial_filter": {"$ref": "#/$defs/text"},
+        "sphere_filter": {"const": "F(n)=(1-n_x^2)^19*p(phi)"},
+        "mode_polynomial": {"$ref": "#/$defs/text"},
+        "local_density_realization": {"$ref": "#/$defs/text"},
+        "antipodal_property": {"$ref": "#/$defs/text"},
+        "status": {"const": "ANTIPODALLY_EVEN_DEGREE_38_LOCAL_POLYNOMIAL_ON_COMPLETE_FIXED_P_SPHERE"}
+      }
+    },
+    "sphere_packet_decomposition": {
+      "type": "object", "additionalProperties": false,
+      "required": ["azimuthal_measure", "target_one_phi_interval", "target_zero_phi_interval", "shared_boundary", "latitude_band", "squared_latitude_weight", "radical_bounds", "equatorial_total_norm", "equatorial_leakage_norm", "equatorial_leakage_fraction", "latitude_total_norm", "latitude_band_norm", "latitude_leakage_fraction", "sphere_total_norm", "sphere_target_zero_norm", "sphere_target_one_norm", "sphere_leakage_norm", "sphere_leakage_fraction", "factorization", "leakage_bound", "packet_modes", "complete_direction", "status"],
+      "properties": {
+        "azimuthal_measure": {"const": "dphi on 0<=phi<pi"},
+        "target_one_phi_interval": {"const": ["pi/4", "3*pi/8"]},
+        "target_zero_phi_interval": {"const": ["3*pi/8", "5*pi/8"]},
+        "shared_boundary": {"$ref": "#/$defs/text"},
+        "latitude_band": {"const": ["-1/2", "1/2"]},
+        "squared_latitude_weight": {"const": "(1-n_x^2)^38"},
+        "radical_bounds": {
+          "type": "object", "additionalProperties": false,
+          "required": ["sqrt2_lower", "sqrt2_upper", "pi_lower", "pi_upper"],
+          "properties": {"sqrt2_lower": {"$ref": "#/$defs/text"}, "sqrt2_upper": {"$ref": "#/$defs/text"}, "pi_lower": {"$ref": "#/$defs/text"}, "pi_upper": {"$ref": "#/$defs/text"}}
+        },
+        "equatorial_total_norm": {"$ref": "#/$defs/linear_receipt"},
+        "equatorial_leakage_norm": {"$ref": "#/$defs/linear_receipt"},
+        "equatorial_leakage_fraction": {"$ref": "#/$defs/ratio_receipt"},
+        "latitude_total_norm": {"$ref": "#/$defs/fraction_receipt"},
+        "latitude_band_norm": {"$ref": "#/$defs/fraction_receipt"},
+        "latitude_leakage_fraction": {"$ref": "#/$defs/fraction_receipt"},
+        "sphere_total_norm": {"$ref": "#/$defs/linear_receipt"},
+        "sphere_target_zero_norm": {"$ref": "#/$defs/linear_receipt"},
+        "sphere_target_one_norm": {"$ref": "#/$defs/linear_receipt"},
+        "sphere_leakage_norm": {"$ref": "#/$defs/linear_receipt"},
+        "sphere_leakage_fraction": {"$ref": "#/$defs/ratio_receipt"},
+        "factorization": {"const": "1-eta_sphere=(1-eta_phi)*(1-eta_latitude)"},
+        "leakage_bound": {"const": "0<eta_sphere<83/125000<1/1000"},
+        "packet_modes": {"$ref": "#/$defs/text"},
+        "complete_direction": {"$ref": "#/$defs/text"},
+        "status": {"const": "INVARIANT_FIXED_P_TWO_PACKET_DECOMPOSITION_WITH_CERTIFIED_FULL_SPHERE_LEAKAGE"}
+      }
+    },
+    "residual_retaining_evolution": {
+      "type": "object", "additionalProperties": false,
+      "required": ["basis", "Hamiltonian", "exact_exponential", "selected_absorption_effect", "selected_pass_effect", "half_pulse", "outside_packet_population_from_B", "all_time_selected_input_bound", "compressed_exponential_relation", "status"],
+      "properties": {
+        "basis": {"const": ["|e,0_field>", "|g,B>", "|g,R>", "|g,D>"]},
+        "Hamiltonian": {"$ref": "#/$defs/text"},
+        "exact_exponential": {"$ref": "#/$defs/text"},
+        "selected_absorption_effect": {"const": "E_absorb=(1-eta_sphere)*sin(G*tau)^2*P_B"},
+        "selected_pass_effect": {"const": "E_pass=P_D+[1-(1-eta_sphere)*sin(G*tau)^2]*P_B"},
+        "half_pulse": {"$ref": "#/$defs/text"},
+        "outside_packet_population_from_B": {"const": "eta_sphere*(1-eta_sphere)*(1-cos(G*tau))^2"},
+        "all_time_selected_input_bound": {"$ref": "#/$defs/text"},
+        "compressed_exponential_relation": {"$ref": "#/$defs/text"},
+        "status": {"const": "EXACT_FIXED_P_ROTATING_WAVE_STAR_EVOLUTION_WITH_FULL_SPHERE_RESIDUAL_RETAINED"}
+      }
+    },
+    "disposition": {"type": "object", "minProperties": 11, "maxProperties": 11, "additionalProperties": {"$ref": "#/$defs/text"}},
+    "does_not_establish": {"type": "array", "minItems": 13, "maxItems": 13, "items": {"$ref": "#/$defs/text"}},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "checks": {
+      "type": "object", "additionalProperties": false,
+      "required": ["total", "passed", "ok", "failures", "details"],
+      "properties": {
+        "total": {"type": "integer", "minimum": 38},
+        "passed": {"type": "integer", "minimum": 38},
+        "ok": {"const": true},
+        "failures": {"const": []},
+        "details": {"type": "object", "minProperties": 38, "additionalProperties": {"const": true}}
+      }
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/text"}},
+    "report": {"const": "reverse_physics/reports/bt-fixed-p-two-sphere-packet-detector.md"}
+  },
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "linear_receipt": {
+      "type": "object", "additionalProperties": false,
+      "required": ["exact_basis", "coefficients", "decimal", "lower_bound", "upper_bound", "canonical_sha256"],
+      "properties": {
+        "exact_basis": {"const": "pi,rational,sqrt2"},
+        "coefficients": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/text"}},
+        "decimal": {"$ref": "#/$defs/text"}, "lower_bound": {"$ref": "#/$defs/text"}, "upper_bound": {"$ref": "#/$defs/text"}, "canonical_sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "ratio_receipt": {
+      "type": "object", "additionalProperties": false,
+      "required": ["numerator_coefficients", "denominator_coefficients", "decimal", "lower_bound", "upper_bound", "canonical_sha256"],
+      "properties": {
+        "numerator_coefficients": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/text"}},
+        "denominator_coefficients": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/text"}},
+        "decimal": {"$ref": "#/$defs/text"}, "lower_bound": {"$ref": "#/$defs/text"}, "upper_bound": {"$ref": "#/$defs/text"}, "canonical_sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "fraction_receipt": {
+      "type": "object", "additionalProperties": false,
+      "required": ["exact", "decimal", "canonical_sha256"],
+      "properties": {"exact": {"$ref": "#/$defs/text"}, "decimal": {"$ref": "#/$defs/text"}, "canonical_sha256": {"$ref": "#/$defs/hash"}}
+    }
+  }
+}
