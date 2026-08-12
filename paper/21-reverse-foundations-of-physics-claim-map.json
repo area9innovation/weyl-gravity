@@ -1,0 +1,338 @@
+{
+  "atlas_snapshot": {
+    "all_cells_assessed": false,
+    "axis_sizes": [
+      6,
+      6,
+      16
+    ],
+    "cartesian_total": 576,
+    "coverage_classified_cells": 371,
+    "emitted_cells": 452,
+    "emitted_status_counts": {
+      "LITERATURE_RESULT": 93,
+      "LOCAL_RESULT": 88,
+      "NOT_MAPPED": 81,
+      "PIECES_ONLY": 160,
+      "PRIORITY_GAP": 30
+    },
+    "evidence_records": 69,
+    "literature_complete": false,
+    "migration_pending_cells": 0,
+    "synthetic_complements": 124,
+    "total_not_mapped_in_explorer": 205
+  },
+  "authorities": {
+    "coded_wave": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE"
+      ],
+      "lifecycle": "CERTIFIED",
+      "path": "foundations/results/FOUNDATIONAL_CODED_POLYGONAL_WAVE_RCA0_V1.json",
+      "result_id": "FOUNDATIONAL_CODED_POLYGONAL_WAVE_RCA0_V1",
+      "sha256": "4138c860c53fe85ba4fa1f2ece93cc5b6c0fce9468c7e5dfa69e314663b56ac7"
+    },
+    "explicit_krein": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE"
+      ],
+      "lifecycle": "SUFFICIENCY_PROVED",
+      "path": "foundations/results/FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1.json",
+      "result_id": "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1",
+      "sha256": "bd71c8609cd6ff5d83d5f67aa86f46216f5301b377e6a437a74d197b577d9b2a"
+    },
+    "explorer_snapshot": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "lifecycle": "VERIFIED_NAVIGATION_ARTIFACT",
+      "path": "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json",
+      "result_id": "FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2",
+      "sha256": "3c852d2645f6bec17f1d729906610af48d95f94a403bbeb32a207fde1101f2fb"
+    },
+    "finite_bv": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC"
+      ],
+      "lifecycle": "SUFFICIENCY_PROVED",
+      "path": "foundations/results/FOUNDATIONAL_FREE_BV_ENERGY2_PRA_SDR_V1.json",
+      "result_id": "FOUNDATIONAL_FREE_BV_ENERGY2_PRA_SDR_V1",
+      "sha256": "d0943e804f386155ac635f027101912b6d0c0385d1c10a6c6e0daf1c3399a3e5"
+    },
+    "finite_graph_causality": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE"
+      ],
+      "lifecycle": "CERTIFIED",
+      "path": "foundations/results/FOUNDATIONAL_FINITE_GRAPH_WAVE_CAUSALITY_V1.json",
+      "result_id": "FOUNDATIONAL_FINITE_GRAPH_WAVE_CAUSALITY_V1",
+      "sha256": "2790e43f566c86e07f7b452fdfac516c59d319df4fd2e410664e7ff130396e79"
+    },
+    "intersection_cube": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "lifecycle": "L2_UPPER_BOUND_CERTIFIED",
+      "path": "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V4.json",
+      "result_id": "FOUNDATIONAL_INTERSECTION_CUBE_V4",
+      "sha256": "daa6ff464520e6975e46009009908583d63dc2d1fc6f60a99118b026223965a8"
+    },
+    "krein_state_selection": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE"
+      ],
+      "lifecycle": "SUFFICIENCY_PROVED",
+      "path": "foundations/results/FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1.json",
+      "result_id": "FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1",
+      "sha256": "d1593c67e67a99c8b14b12dae5ac1364e26f34631c86b12cefaffd9ade9fd3ff"
+    },
+    "separable_cstar_state_chain": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE"
+      ],
+      "lifecycle": "SEPARATED",
+      "path": "foundations/results/FOUNDATIONAL_BT_SEPARABLE_STATE_CHAIN_ZF_V1.json",
+      "result_id": "FOUNDATIONAL_BT_SEPARABLE_STATE_CHAIN_ZF_V1",
+      "sha256": "08389e96d349766e29a34cde8109d4b1271288b59d44f3b29fcb456065641998"
+    }
+  },
+  "canonical_digest": "e421f8bba8b9740f6f06cf2eb42b60cc29d3d1c92d7f9ab3995d33b91b40ac33",
+  "claim_flags": {
+    "atlas_exhaustive": false,
+    "axes_independent_proved": false,
+    "case_study_authorities_pinned": true,
+    "global_physics_implies_choice_theorem": false,
+    "literature_complete": false,
+    "new_lorentzian_claim": false,
+    "programme_definition_supplied": true,
+    "quantum_lifecycle_promoted": false,
+    "typed_relations_supplied": true,
+    "weakest_foundation_proved": false
+  },
+  "claims": [
+    {
+      "authorities": [],
+      "claim_id": "RF-01-TYPED-JUDGEMENT",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC"
+      ],
+      "statement": "Physical, mathematical, foundational, and representational assumptions must be typed before implication strength is assigned.",
+      "status": "PROGRAMME_DEFINITION"
+    },
+    {
+      "authorities": [
+        "intersection_cube",
+        "explorer_snapshot"
+      ],
+      "claim_id": "RF-02-NAVIGATIONAL-ATLAS",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "statement": "The current 6 x 6 x 16 atlas is a navigational projection with 576 coordinates, not an ontology or an independence theorem.",
+      "status": "CORPUS_SYNTHESIS"
+    },
+    {
+      "authorities": [
+        "explicit_krein"
+      ],
+      "claim_id": "RF-03-EXPLICIT-KREIN-ZF",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE"
+      ],
+      "statement": "The displayed named reduced-mode Krein carrier and Fock lift are constructible in ZF without a Countable Choice operation; finite cutoffs are PRA-checkable.",
+      "status": "SUFFICIENT_OVER_BASE"
+    },
+    {
+      "authorities": [
+        "krein_state_selection",
+        "separable_cstar_state_chain"
+      ],
+      "claim_id": "RF-04-STATE-SELECTION-SPLIT",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE"
+      ],
+      "statement": "Explicit normalized states exist in the displayed ZF carrier, but the fundamental symmetry does not select a unique physical state; the normal permutation-invariant density-state obstruction is scoped to its stated symmetry class.",
+      "status": "SUFFICIENCY_AND_SCOPED_OBSTRUCTION"
+    },
+    {
+      "authorities": [
+        "coded_wave"
+      ],
+      "claim_id": "RF-05-CODED-WAVE-RCA0",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE"
+      ],
+      "statement": "RCA_0 suffices for the represented coded-circle wave evolution, uniqueness, group law, and energy conservation with supplied fast Cauchy rates.",
+      "status": "SUFFICIENT_OVER_BASE"
+    },
+    {
+      "authorities": [
+        "coded_wave"
+      ],
+      "claim_id": "RF-06-EVOLUTION-CAUSALITY-SPLIT",
+      "dependency_tags": [
+        "REDUCED-MODE",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "statement": "The coded evolution result does not construct advanced or retarded Green maps or prove continuum causal support.",
+      "status": "DOES_NOT_ESTABLISH"
+    },
+    {
+      "authorities": [
+        "finite_graph_causality"
+      ],
+      "claim_id": "RF-07-FINITE-CONTINUUM-SPLIT",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "statement": "Exact graph-step causal support is certified for a finite rational recurrence and is not a continuum Lorentzian causal theorem.",
+      "status": "LOCAL_RESULT_WITH_BOUNDARY"
+    },
+    {
+      "authorities": [
+        "finite_bv"
+      ],
+      "claim_id": "RF-08-FINITE-BV-BOUNDARY",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC"
+      ],
+      "statement": "One explicitly presented finite energy-two BV contraction is PRA-checkable; this does not establish an infinite classical freeze or a quantum promotion.",
+      "status": "SUFFICIENT_OVER_BASE"
+    }
+  ],
+  "created": "2026-08-12",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "does_not_establish": [
+    "a universal weakest foundation for physics or Weyl gravity",
+    "that physical evidence implies the Axiom of Choice or its negation",
+    "that the atlas axes are independent or every coordinate is coherent",
+    "literature completeness or absence theorems for unmapped cells",
+    "representation invariance of the RCA_0 coded-wave upper bound",
+    "a complete Lorentzian off-shell BV propagator",
+    "a BRST-compatible Hadamard state for the full metric BV complex",
+    "renormalized Lorentzian time-ordered products or causal perturbative AQFT",
+    "restoration of a Lorentzian quantum master equation",
+    "promotion of any quantum lifecycle state"
+  ],
+  "formal_object": {
+    "coordinates": {
+      "Enc(P)": "physical postulates under an explicit encoding",
+      "L": "logic and inference rules",
+      "M": "mathematical carrier and analytic machinery",
+      "O": "one declared theorem-level physical obligation",
+      "R": "representation of inputs and outputs",
+      "S": "set, type, or existence theory"
+    },
+    "judgement": "L + S + M + Enc(P) |-[_R] O",
+    "relation_types": [
+      "USED_BY_DISPLAYED_PROOF",
+      "SUFFICIENT_OVER_BASE",
+      "NECESSARY_OVER_BASE",
+      "EQUIVALENT_OVER_BASE",
+      "AVOIDED_BY_REFORMULATION",
+      "INDEPENDENT_OVER_BASE",
+      "UNKNOWN"
+    ]
+  },
+  "independent_checker": {
+    "checks": [
+      "authority content hashes",
+      "authority result identities and dependency tags",
+      "atlas counts against source artifacts",
+      "claim-to-authority dependency boundaries",
+      "required paper language and bibliography keys",
+      "canonical claim-map digest"
+    ],
+    "path": "paper/verify_21_reverse_foundations_claim_map.py"
+  },
+  "lifecycle": "WORKING_DRAFT",
+  "literature_scope": [
+    {
+      "role": "reverse mathematics and subsystem calibration",
+      "source_id": "simpson-2009",
+      "url": "https://doi.org/10.1017/CBO9780511581007"
+    },
+    {
+      "role": "reverse physics",
+      "source_id": "carcassi-aidala-2022",
+      "url": "https://doi.org/10.1007/s10701-022-00555-z"
+    },
+    {
+      "role": "operational reconstruction and continuity",
+      "source_id": "hardy-2001",
+      "url": "https://arxiv.org/abs/quant-ph/0101012"
+    },
+    {
+      "role": "informational reconstruction and purification",
+      "source_id": "chiribella-dariano-perinotti-2011",
+      "url": "https://doi.org/10.1103/PhysRevA.84.012311"
+    },
+    {
+      "role": "Hilbert spaces in ZF without Countable Choice",
+      "source_id": "blackadar-farah-karagila-2023",
+      "url": "https://arxiv.org/abs/2304.09602"
+    },
+    {
+      "role": "separable C*-algebras in ZF",
+      "source_id": "blackadar-farah-2026",
+      "url": "https://arxiv.org/abs/2602.15812"
+    },
+    {
+      "role": "constructive Gelfand duality",
+      "source_id": "coquand-spitters-2009",
+      "url": "https://doi.org/10.1017/S0305004109002515"
+    },
+    {
+      "role": "topos algebraic quantum theory",
+      "source_id": "heunen-landsman-spitters-2009",
+      "url": "https://arxiv.org/abs/0709.4364"
+    },
+    {
+      "role": "finite-field phase-space construction",
+      "source_id": "gibbons-hoffman-wootters-2004",
+      "url": "https://arxiv.org/abs/quant-ph/0401155"
+    },
+    {
+      "role": "classical Green-hyperbolic theory",
+      "source_id": "baer-2015",
+      "url": "https://arxiv.org/abs/1310.0738"
+    },
+    {
+      "role": "computable fundamental solutions",
+      "source_id": "weihrauch-zhong-2006",
+      "url": "https://doi.org/10.1137/S0097539704446360"
+    },
+    {
+      "role": "proof mining for nonlinear semigroups",
+      "source_id": "pischke-2025",
+      "url": "https://arxiv.org/abs/2304.01723"
+    }
+  ],
+  "paper": {
+    "path": "paper/21-reverse-foundations-of-physics.tex",
+    "sha256": "f4cfc00fe0ead95e0db5ec6ec0467d91c996adabc59595fe1cd4c48593e611d4"
+  },
+  "result_id": "PAPER21_REVERSE_FOUNDATIONS_INTRODUCTION_V1",
+  "result_kind": "PROGRAMME_SYNTHESIS_AND_TYPED_CASE_STUDY_MAP",
+  "schema_version": "paper-21-reverse-foundations-claim-map-v1"
+}

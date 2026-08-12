@@ -1,0 +1,114 @@
+{
+  "schema_version": "science-forge-tier-receipt-v1",
+  "receipt_id": "PAPER21_REVERSE_FOUNDATIONS_INTRODUCTION_V1_TIER_RECEIPT",
+  "result_id": "PAPER21_REVERSE_FOUNDATIONS_INTRODUCTION_V1",
+  "created": "2026-08-12",
+  "source_base_commit": "0bf144a605b47aed120abe95ba08967df7510c42",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "scope": "Standalone programme-introduction paper, generated claim map, and independent structural verifier. No mathematical source certificate or quantum lifecycle state changed.",
+  "artifacts": [
+    {
+      "path": "paper/21-reverse-foundations-of-physics.tex",
+      "sha256": "f4cfc00fe0ead95e0db5ec6ec0467d91c996adabc59595fe1cd4c48593e611d4",
+      "role": "human-readable manuscript source"
+    },
+    {
+      "path": "paper/21-reverse-foundations-of-physics.pdf",
+      "sha256": "312da726487c597c1a73af44a51272a9a5ad6315f7bf323b8804ab35dfd4b7e4",
+      "role": "compiled 16-page manuscript"
+    },
+    {
+      "path": "paper/21-reverse-foundations-of-physics-claim-map.json",
+      "sha256": "aebdddd4bc41b751920540874acd969f95a8fa82456b8392735b8f65e14a781f",
+      "role": "machine-readable claims, boundaries, atlas snapshot, and content-addressed authorities"
+    },
+    {
+      "path": "paper/generate_21_reverse_foundations_claim_map.py",
+      "sha256": "2e9c76af3eae52f5e2b8a8ca3d6eec74a16e7988ad30742a3a35985caf503990",
+      "role": "deterministic claim-map generator"
+    },
+    {
+      "path": "paper/verify_21_reverse_foundations_claim_map.py",
+      "sha256": "30d898bed0313e214db864d51fd815e4f24d82d754be9871a178b42c2bee195b",
+      "role": "independent structural and dependency-boundary checker"
+    }
+  ],
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "python3 -m py_compile paper/generate_21_reverse_foundations_claim_map.py paper/verify_21_reverse_foundations_claim_map.py",
+          "elapsed_seconds": 0.03,
+          "status": "PASS"
+        },
+        {
+          "command": "cd paper && pdflatex -interaction=nonstopmode -halt-on-error 21-reverse-foundations-of-physics.tex && pdflatex -interaction=nonstopmode -halt-on-error 21-reverse-foundations-of-physics.tex",
+          "elapsed_seconds": 1.10,
+          "status": "PASS",
+          "output": "16 pages; no undefined citations, overfull boxes, underfull boxes, or LaTeX warnings on the final pass"
+        },
+        {
+          "command": "git diff --check -- paper/21-reverse-foundations-of-physics.tex paper/21-reverse-foundations-of-physics-claim-map.json paper/generate_21_reverse_foundations_claim_map.py paper/verify_21_reverse_foundations_claim_map.py foundations/receipts/PAPER21_REVERSE_FOUNDATIONS_INTRODUCTION_V1_TIER_RECEIPT.json",
+          "elapsed_seconds": 0.01,
+          "status": "PASS"
+        }
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "python3 paper/generate_21_reverse_foundations_claim_map.py --check",
+          "elapsed_seconds": 0.04,
+          "status": "PASS"
+        },
+        {
+          "command": "python3 paper/verify_21_reverse_foundations_claim_map.py",
+          "elapsed_seconds": 0.03,
+          "status": "PASS",
+          "output": "authority hashes, result identities, dependency tags, atlas counts, paper boundaries, bibliography keys, and canonical digest verified"
+        }
+      ]
+    },
+    "tier_2": {
+      "status": "NOT_RUN",
+      "criterion": "No mathematical input, shared operator, source certificate, schema, or generated scientific artifact used by a certificate chain changed. The paper imports unchanged content-addressed authorities."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "This is a working-draft synthesis and does not freeze a classical or quantum snapshot, promote a theorem lifecycle, change shared core algebra, or prepare a release."
+    }
+  },
+  "claim_flags": {
+    "paper_compiles": true,
+    "claim_map_current": true,
+    "authority_hashes_verified": true,
+    "literature_complete": false,
+    "weakest_foundation_proved": false,
+    "new_lorentzian_claim": false,
+    "quantum_lifecycle_promoted": false
+  },
+  "preexisting_unrelated_work_preserved": [
+    "reverse_physics/verify_bt_six_point_planar_physical_born_density.py",
+    "planning/work-items/reverse-physics-bateman-six-point-full-phase-space-born-positivity.json",
+    "reverse_physics/bt_six_point_full_phase_space_born_positivity.py",
+    "reverse_physics/bt_six_point_three_angle_modular_preflight.py",
+    "reverse_physics/bt_sparse_rational.py",
+    "reverse_physics/certificates/REVERSE_PHYSICS_BT_SIX_POINT_FULL_PHASE_SPACE_BORN_POSITIVITY_V1.json",
+    "reverse_physics/reports/bt-six-point-full-phase-space-born-positivity.md",
+    "reverse_physics/schema/reverse-physics-bt-six-point-full-phase-space-born-positivity-v1.schema.json",
+    "reverse_physics/tests/test_bt_six_point_full_phase_space_born_positivity.py",
+    "reverse_physics/verify_bt_six_point_full_phase_space_born_positivity.py"
+  ],
+  "does_not_establish": [
+    "a universal weakest foundation for physics or Weyl gravity",
+    "literature completeness or absence theorems for unmapped cells",
+    "a new LORENTZIAN-CAUSAL result",
+    "a quantum lifecycle promotion"
+  ]
+}

@@ -1,0 +1,1029 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,booktabs,tabularx,longtable}
+\usepackage{microtype,xurl}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,
+            citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+
+\newtheorem{proposition}{Proposition}[section]
+\theoremstyle{definition}
+\newtheorem{definition}[proposition]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[proposition]{Remark}
+
+\newcommand{\RCA}{\mathsf{RCA}_{0}}
+\newcommand{\WKL}{\mathsf{WKL}_{0}}
+\newcommand{\ACA}{\mathsf{ACA}_{0}}
+\newcommand{\PRA}{\mathsf{PRA}}
+\newcommand{\ZF}{\mathsf{ZF}}
+\newcommand{\ZFC}{\mathsf{ZFC}}
+\newcommand{\Enc}{\operatorname{Enc}}
+\newcommand{\cert}[1]{\nolinkurl{#1}}
+\newcommand{\rtype}[1]{\nolinkurl{#1}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcolumntype{Z}{>{\raggedright\arraybackslash}p{0.25\textwidth}}
+
+\title{Reverse Foundations of Physics\\
+\large Separating Physical Postulates, Mathematical Carriers, and Logical Strength}
+\author{OpenAI Codex\thanks{Literature synthesis, formal organization, and drafting.}
+\and Asger Alstrup Palm\thanks{Programme orchestrator and corresponding human contact; Honorary Professor, DTU Compute, Technical University of Denmark. \texttt{asger@area9.dk}.}}
+\date{Working draft, 12 August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+What part of a physical theory is physics, what part is mathematics, and what
+part is inherited from the logic and existence principles in which the
+mathematics is developed?  Familiar foundational programmes usually vary one
+of these coordinates while holding the others fixed.  Reverse mathematics
+calibrates the axioms needed for a theorem.  Reverse physics seeks physical
+postulates sufficient to recover a law.  Operational reconstructions recover
+quantum structure from informational principles.  Constructive, computable,
+choice-free, topos-theoretic, and finite approaches each replace selected
+pieces of the mathematical architecture.  None of those methods alone answers
+the combined question.
+
+We formulate a programme of \emph{reverse foundations of physics} around the
+typed derivability judgement
+\[
+       L+S+M+\Enc(P)\ \vdash\ O .
+\]
+Here \(L\) is the logic, \(S\) the set, type, or existence theory, \(M\) the
+mathematical carrier and analytic machinery, \(P\) the physical postulates
+after an explicit encoding, and \(O\) one sharply delimited obligation.  The
+programme asks which ingredients are sufficient, necessary, equivalent,
+independent, or avoidable by reformulation.  Its practical research atlas has
+three coarse axes---six foundational regimes, six carrier families, and
+sixteen physical obligations---giving 576 navigational coordinates.  The cube
+is not an ontology and its coordinates are not presumed independent.
+
+Five case studies show why the typing matters.  An explicit mode labelling can
+avoid basis-selection uses of Choice without making physics ``imply ZF.''  A
+Krein fundamental symmetry permits explicit normalized states but does not
+select a physical state.  A represented scalar wave evolution is formalizable
+over \(\RCA\), while causal Green support remains a distinct theorem.  Exact
+finite graph causality is not continuum Lorentzian causality.  And a bounded
+finite BV contraction can be checked in \(\PRA\) without lowering any
+infinite-dimensional quantum claim.  These are sufficiency and separation
+results, not a universal weakest-foundation theorem.  We close with a
+certificate-oriented research protocol and a set of tractable open problems
+at the interfaces between logic, analysis, and physics.
+\end{abstract}
+
+\section{The missing question}
+\label{sec:introduction}
+
+A physical theory is normally presented as if its assumptions came in one
+list.  In practice that list mixes several kinds of commitment.  A symmetry
+principle, a causal condition, and a composition rule are physical
+postulates.  A Hilbert space, a distribution space, a Krein product, or a
+\(C^*\)-algebra is a mathematical carrier.  Completeness, compactness,
+selection of bases, spectral resolution, and existence of Green operators are
+mathematical theorems.  Classical logic, set existence, actual infinity, and
+forms of Choice live one level further down.  A calculation can use all four
+layers without saying where one ends and another begins.
+
+This creates two opposite errors.  The first is to treat the conventional
+mathematical formulation as physical content: quantum mechanics is said to
+\emph{assume Hilbert space}, even when an operational reconstruction derives a
+Hilbert representation from other principles.  The second is to treat the
+entire standard mathematical background as unavoidable: a proof uses a basis
+or compactness theorem, and one concludes that the physical law requires the
+Axiom of Choice.  In both directions the inference skips the representation
+and the base theory.
+
+Reverse mathematics supplies the right discipline for the mathematical side.
+Its central question is which set-existence axioms are needed to prove a
+theorem of ordinary mathematics \cite{Simpson2009}.  Reverse physics applies a
+parallel strategy to physical laws: begin with accepted laws or theory
+structure and seek physical starting assumptions sufficient to recover them
+\cite{CarcassiAidala2022}.  Operational reconstructions of quantum theory do
+something closely related inside a chosen formal arena
+\cite{Hardy2001,Chiribella2011}.  Yet the results do not compose
+automatically.  A reconstruction may derive finite-dimensional complex
+Hilbert structure while relying on classical real analysis.  A reverse-
+mathematical result may calibrate an abstract differential equation while
+saying nothing about which physical representation should encode its data.
+Computable analysis may construct an operator under a representation without
+classifying its proof-theoretic strength.  A topos formulation may change the
+internal logic while leaving the bridge to experimental probabilities open.
+
+The question of this paper is therefore not merely
+``which physical assumptions imply a theory?'' nor merely ``which axioms prove
+its mathematics?''  It is:
+
+\begin{quote}
+For a precisely represented physical obligation, which combination of
+physical postulates, carrier structure, existence principles, and logic is
+sufficient; which parts can be recovered from the obligation; and which can
+be removed by changing representation?
+\end{quote}
+
+We use \emph{reverse foundations of physics} as a working name for this
+combined programme.  The phrase is descriptive, not a priority claim.  The
+adjacent literatures are extensive, and the present literature survey is
+scoped rather than exhaustive.  Our claim is narrower: the sources reviewed
+here do not provide a single typed atlas in which physical obligations,
+carrier choices, and logical or set-theoretic strength are all varied and
+audited together.
+
+The programme grew from conformal gravity because that theory is a demanding
+stress test.  Gauge symmetry, indefinite pairings, fourth-order evolution,
+Green operators, local BRST cohomology, state selection, renormalized products,
+and the quantum master equation all occur, but they occur at different
+dependency levels.  The method is not specific to Weyl gravity.  Its natural
+domain includes classical PDE, quantum mechanics, algebraic quantum theory,
+lattice systems, operational reconstructions, and any theory in which a
+change of mathematical foundations may change what ``existence'' or
+``state'' means.
+
+\paragraph{Contributions.}
+This paper makes four contributions.  First, it gives a typed formal object
+for the combined analysis.  Second, it organizes a three-axis research atlas
+and explains what its coverage counts do and do not mean.  Third, it presents
+five independently checkable case studies in which familiar foundational
+inferences split into distinct claims.  Fourth, it proposes an evidence and
+certificate protocol designed to turn a suggestive matrix cell into a result
+that can survive changes of proof, representation, and implementation.
+
+\section{A typed derivability problem}
+\label{sec:formalism}
+
+\subsection{Profiles, obligations, and encodings}
+
+The basic object is not a theory name but a derivability profile.
+
+\begin{definition}[Assumption profile]
+An assumption profile is a tuple
+\[
+       \mathcal A=(L,S,M,\Enc(P),R),
+\]
+where \(L\) specifies the logic and inference rules, \(S\) specifies the
+existence theory, \(M\) specifies the mathematical carrier and theorems made
+available over \(L+S\), \(P\) is a list of physical postulates, \(\Enc\) is a
+formal encoding of those postulates, and \(R\) records the representation of
+inputs and outputs.
+\end{definition}
+
+The representation \(R\) deserves its own coordinate.  A real number may be a
+Dedekind cut, a rapidly converging Cauchy name, or a point of an internal real
+object.  A field may be a smooth section, a distribution, a Sobolev class, a
+finite lattice function, or a compatible family of finite data.  Those
+representations can change both the content of an existence claim and the
+strength of its proof.  We display \(R\) inside the profile but often absorb
+it into \(M\) and \(\Enc\), giving the compact judgement
+\begin{equation}
+       L+S+M+\Enc(P)\ \vdash_R\ O .
+       \label{eq:judgement}
+\end{equation}
+
+\begin{definition}[Obligation]
+An obligation \(O\) is one theorem-level job with a declared result kind and
+scope: for example, construction of one normalized algebraic state; uniqueness
+of an energy solution in a represented carrier; existence of retarded and
+advanced Green maps with a support theorem; classification of local
+counterterms; or restoration of a local quantum master equation.
+\end{definition}
+
+The obligation must be smaller than a theory.  ``Construct quantum field
+theory'' is not an obligation.  ``Construct a BRST-compatible Hadamard state
+for the full metric BV complex'' is an obligation, albeit a very difficult
+one.  This granularity prevents a finite-mode calculation from being promoted
+to a continuum field theorem and prevents state existence from being promoted
+to a state-selection principle.
+
+\subsection{Seven relations, not one arrow}
+
+An unlabelled implication arrow hides too much.  We use the following relation
+types.
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{}Z Y@{}}
+\toprule
+Relation & Meaning \\
+\midrule
+\rtype{USED_BY_DISPLAYED_PROOF} & One inspected proof invokes the item.  This is neither necessity nor an optimal upper bound. \\
+\rtype{SUFFICIENT_OVER_BASE} & A derivation of the obligation is available over the declared base, encoding, and representation. \\
+\rtype{NECESSARY_OVER_BASE} & A reversal, separating model, or counterexample proves that the item cannot be omitted over the declared base. \\
+\rtype{EQUIVALENT_OVER_BASE} & Both sufficiency and necessity have been proved over the same base and encoding. \\
+\rtype{AVOIDED_BY_REFORMULATION} & Another explicit representation reaches the same declared obligation without the item. \\
+\rtype{INDEPENDENT_OVER_BASE} & Models or realizations on both sides establish independence over the named base. \\
+\rtype{UNKNOWN} & No stronger relation is certified. \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+These types separate three questions that are often collapsed:
+
+\begin{enumerate}
+\item Did a proof use a principle?
+\item Is the principle sufficient or necessary for the theorem over a named
+base?
+\item Does the physical obligation require the theorem in that representation
+and generality?
+\end{enumerate}
+
+Only the second question is a reverse-mathematical calibration.  The third is
+where reverse mathematics and reverse physics meet.
+
+\subsection{Why physical assumptions do not simply imply Choice}
+
+The phrase ``physical assumption \(P\) implies the Axiom of Choice'' is
+usually ill-typed.  A physical postulate and a set-theoretic sentence do not
+even inhabit a shared formal language until an encoding and base theory have
+been fixed.
+
+\begin{proposition}[Encoding discipline]
+Let \(P\) be a physical postulate stated in an experimental or operational
+vocabulary and let \(C\) be a choice principle stated in a foundational
+language.  A claim \(P\Rightarrow C\) has no formal derivability content until
+one supplies a common theory \(L+S\), an encoding \(\Enc(P)\), and a target
+translation of \(C\).  Any proved implication then belongs to that encoding
+and base; it is not automatically an implication from an experiment to an
+unrestricted assertion about all sets.
+\end{proposition}
+
+This does not make such reversals impossible.  A physical principle may be
+encoded as a totality, selection, compactness, or continuity statement, and
+that statement may turn out to be equivalent to a familiar subsystem or
+choice fragment.  The proposition says what must be provided before the claim
+is meaningful.
+
+Physical structure can nevertheless reduce mathematical commitments in a
+more direct way.  If the physics supplies a canonical grading and explicit
+mode labels, a proof need not choose a basis.  If it supplies a preferred
+state or boundary condition, a selection problem may disappear.  The correct
+relation in such cases is often \rtype{AVOIDED_BY_REFORMULATION}, not
+``physics proves Choice'' or ``physics disproves Choice.''
+
+\section{The research atlas}
+\label{sec:atlas}
+
+The formal profile has many coordinates.  For navigation we project it onto
+three axes: foundational regime, carrier, and physical obligation.  The
+current projection has \(6\times6\times16=576\) coordinates.  This number is
+large enough to expose blind spots and small enough to inspect.  It is not a
+claim that the underlying space of theories is finite, that the three axes are
+independent, or that every coordinate is coherent.
+
+\subsection{Six foundational regimes}
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{}Z Y@{}}
+\toprule
+Regime & Intended question \\
+\midrule
+Classical standard & What is known in ordinary classical ZFC-style analysis,
+where background Choice is often not audited? \\
+Weak arithmetic & How much proof-theoretic strength is needed in systems such
+as \(\PRA\), \(\RCA\), \(\WKL\), or \(\ACA\)? \\
+ZF with weakened Choice & Which constructions survive in classical set theory
+when full Choice or Countable Choice is absent or isolated? \\
+Constructive/computable & What witnesses, algorithms, moduli, or represented
+operators can be constructed without treating classical existence as enough? \\
+Topos/internal & What becomes of the theory when objects and truth are
+interpreted internally, often with Heyting rather than Boolean logic? \\
+Finite/discrete restriction & What survives on finite carriers, exact finite
+algebras, lattices, or proposals that restrict actual infinity? \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+These regimes overlap but are not synonyms.  ZF without Choice retains
+classical logic and actual infinity.  Bishop-style constructive mathematics
+changes the meaning of existence.  Computable analysis fixes representations
+and algorithms but is not by itself a subsystem classification.  A topos has
+an internal logic relative to a selected category.  A finite cutoff inside
+ZFC is not finitism.
+
+\subsection{Six carrier families}
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{}Z Y@{}}
+\toprule
+Carrier & What it is meant to track \\
+\midrule
+Finite exact algebra & Finite matrices, integer or rational complexes, and
+explicit finite-dimensional algebraic data. \\
+Hilbert/operator & Positive Hilbert spaces, completions, operator domains,
+spectral data, and one-parameter groups. \\
+Krein/indefinite & Indefinite pairings, fundamental symmetries, positive
+companion topologies, and their operator theory. \\
+Algebraic \(C^*\)-system & Observable algebras, states, GNS representations,
+nets, and algebra-first dynamics. \\
+Smooth/PDE/\linebreak distributional & Manifolds, sections, Sobolev and distribution
+spaces, differential operators, and Green theory. \\
+Localic/synthetic/\linebreak internal & Locales, internal algebra objects, formal
+manifolds, and synthetic smooth structures. \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+The rows are deliberately not mutually exclusive descriptions of a complete
+theory.  A Krein space normally carries a positive companion Hilbert topology;
+an algebraic quantum theory may be represented on a Hilbert space; and a PDE
+may be encoded in a finite exact approximation.  The axis asks which carrier
+is doing the work in the obligation under inspection.
+
+\subsection{Sixteen obligations in four groups}
+
+The obligation axis is the most important because it blocks silent promotion.
+For readability the sixteen values fall into four groups.
+
+\begin{center}
+\small
+\begin{tabularx}{\textwidth}{@{}Z Y@{}}
+\toprule
+Group & Obligations \\
+\midrule
+Kinematics and states & kinematics/observables; state existence; state
+representation; probability rule; physical state selection. \\
+Dynamics and causality & generator/spectral dynamics; evolution and
+well-posedness; causal propagation and advanced/retarded Green maps. \\
+Gauge and interaction & gauge/BV/cohomology; interaction construction;
+counterterm classification; anomaly classification. \\
+Quantum completion and comparison & renormalized products; QME restoration;
+residual quantum transfer; reconstruction and continuum or empirical limits. \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+This ordering encodes no claim that every theory must pass through the stages
+linearly.  It does show why ``we have a state'' does not answer which state is
+physical, why a unitary group does not supply a retarded propagator, and why a
+local anomaly classification does not restore a quantum master equation.
+
+\subsection{Coverage is metadata, not truth}
+
+In the current evidence snapshot, 452 of the 576 coordinates are emitted for
+inspection.  Among those, 93 are marked as literature results, 88 as local
+results, 160 as having only pieces, 30 as priority gaps, and 81 as reviewed but
+not mapped.  The remaining 124 are synthetic complements not yet emitted as
+coherent coordinates.  Thus 205 positions lack substantive coverage in the
+current explorer.  The evidence interface contains 69 source or certificate
+records.
+
+Those numbers measure the state of a corpus and classification scheme.  They
+do not measure how much humanity knows, and an unfilled cell is not evidence
+of impossibility.  A literature-result label says that a source establishes a
+claim with a recorded boundary; it does not say the entire cell is solved.  A
+local-result label says that a repository certificate reaches the declared
+obligation; it does not make the result representation-independent.  A
+priority gap is an invitation to research, not a no-go theorem.
+
+The counts are reproducible from
+\cert{FOUNDATIONAL_INTERSECTION_CUBE_V4} and
+\cert{FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2}.  The cube explicitly records that
+it is not literature complete, does not assess all 576 coordinates, proves no
+weakest base or reversal for the coded wave result, and establishes no new
+Lorentzian Weyl claim.
+
+\section{How adjacent programmes fit---and fail to collapse}
+\label{sec:literature}
+
+\subsection{Reverse mathematics}
+
+Reverse mathematics most directly calibrates the \(L+S\vdash T\) part of
+Eq.~\eqref{eq:judgement}.  Its strength is the insistence on a named weak base
+and, in a full reversal, proofs in both directions.  Simpson's analysis of the
+Cauchy--Peano theorem is an instructive physics-adjacent example: over
+\(\RCA\), the theorem is equivalent to \(\WKL\), while the Ascoli lemma and
+Osgood's maximum-solution theorem have the strength of \(\ACA\)
+\cite{Simpson1984}.  ``Differential equations require analysis'' is thereby
+replaced with several exact statements whose strength depends on the theorem.
+
+The limitation for our purpose is equally clear.  Reverse mathematics begins
+after a statement and its representation have been selected.  It does not by
+itself decide whether the physical problem requires Cauchy--Peano in that
+generality, whether a canonical physical flow avoids the compactness step, or
+whether a different carrier expresses the same observable content.
+
+\subsection{Reverse physics and operational reconstruction}
+
+Reverse physics begins from laws and seeks physical assumptions sufficient to
+rederive them \cite{CarcassiAidala2022}.  This is the closest methodological
+relative of the present programme.  Our additional demand is to audit the
+mathematical and logical substrate of every displayed derivation.
+
+Quantum reconstructions show why this matters.  In Hardy's five-axiom
+derivation, continuous reversible transformations are load-bearing: deleting
+continuity yields classical probability theory within the stated framework
+\cite{Hardy2001}.  Chiribella, D'Ariano, and Perinotti define a broad
+operational-probabilistic class using five axioms and use purification to
+single out quantum theory \cite{Chiribella2011}.  These works turn some
+textbook mathematical postulates into derived representation theorems.  They
+do not, without a separate audit, classify the proof-theoretic cost of the
+continuum, compactness, convex separation, or infinite-dimensional limit.
+
+Accordingly, ``Hilbert space is derived'' and ``Hilbert-space quantum field
+theory is constructible over a weak or choice-free base'' are very different
+claims.  The former can be a finite-dimensional operational theorem; the
+latter includes completion, unbounded operators, distribution theory,
+locality, states, and renormalization.
+
+\subsection{Choice-free functional analysis}
+
+It is common to summarize the situation as ``functional analysis needs
+Choice.''  Recent results make that too coarse.  Blackadar, Farah, and
+Karagila study Hilbert spaces and operators in ZF without Countable Choice,
+showing both robust canonical constructions and unfamiliar pathologies
+\cite{BlackadarFarahKaragila2023}.  Blackadar and Farah develop substantial
+separable \(C^*\)-algebra theory in ZF, including representation theorems,
+spectral mapping for polynomials, and continuous functional calculus for
+commuting normal elements, while also exhibiting failures outside protected
+settings \cite{BlackadarFarah2026}.
+
+The lesson is not that Choice is irrelevant.  It is that the cost is attached
+to a theorem, a class of objects, and a presentation.  Canonically presented
+separable structures may avoid selections that arise for arbitrary families.
+The right unit of analysis is therefore not ``Hilbert space'' or
+``\(C^*\)-algebra'' but the exact construction used in a physical obligation.
+
+\subsection{Constructive, computable, and proof-mined analysis}
+
+Constructive analysis requires existence statements to carry witness content
+\cite{BishopBridges1985}.  Computable analysis makes that demand relative to
+explicit representations of spaces and operators \cite{Weihrauch2000}.
+Weihrauch and Zhong, for example, give an algorithm for distributional
+fundamental solutions of constant-coefficient differential operators under
+canonical representations \cite{WeihrauchZhong2006}.  That result is highly
+relevant to the carrier and computability axes, but a fundamental solution is
+not automatically a retarded or advanced solution and the theorem does not by
+itself supply Lorentzian causal support.
+
+Proof mining asks a different question again: what quantitative or
+computational information can be extracted from an apparently nonconstructive
+proof?  Pischke's metatheorem for nonlinear semigroups generated by accretive
+operators illustrates its reach into PDE and evolution, including extracted
+rates \cite{Pischke2025}.  Proof mining should not be relabelled as a Big-Five
+reverse-mathematical classification, nor should a computable realizer be
+silently treated as a constructive proof in every foundational system.  The
+three methodologies can inform one another only after their input and output
+types are recorded.
+
+\subsection{Topos and localic reformulations}
+
+Constructive Gelfand duality replaces point-set spectra with point-free
+spectra in a form valid constructively \cite{CoquandSpitters2009}.
+Heunen, Landsman, and Spitters place a noncommutative algebra in a topos of its
+commutative contexts, where the internal algebra is commutative, its spectrum
+is a locale, and the internal propositional logic is intuitionistic
+\cite{HeunenLandsmanSpitters2009}.  This is a genuine change of mathematical
+architecture, not merely deletion of Choice from a classical proof.
+
+It also illustrates a recurring boundary.  Internal state objects, locale
+valuations, and internal dynamics do not automatically supply a physical
+state-selection rule, a Lorentzian Green operator, an interacting BV complex,
+or empirical equivalence with the external formulation.  Object logic and
+metalogic must be recorded separately.  A non-Boolean algebra of quantum
+propositions is not, just by itself, an intuitionistic metatheory.
+
+\subsection{Finite mathematics and finite physics}
+
+Finite structures offer exact computation and sometimes eliminate analytic
+existence questions.  But ``finite'' has several types.  Gibbons, Hoffman, and
+Wootters use a finite field to label a discrete phase space when the quantum
+state-space dimension is a prime power \cite{GibbonsHoffmanWootters2004}.
+The carrier of state vectors remains an \(N\)-dimensional complex Hilbert
+space.  A finite field phase space is therefore not the same thing as a
+finite-field amplitude theory, a finite-mode truncation, or a rejection of
+actual infinity.
+
+The distinctions become decisive when a finite regulator is used to motivate
+a continuum claim.  Exact solvability at each finite size supplies a family
+of finite theorems.  A continuum limit requires its own representation,
+uniform estimates, convergence theorem, and physical comparison.  Finitism
+is a foundational proposal; a lattice cutoff inside ordinary mathematics is
+an approximation scheme.
+
+\section{Five certified separations}
+\label{sec:cases}
+
+The following examples are not offered as a complete theory.  They are small
+enough to verify independently and together show what the combined programme
+changes in practice.
+
+\subsection{Krein structure changes the pairing, not all Hilbert mathematics}
+
+A Krein space carries a nondegenerate indefinite product together with a
+fundamental decomposition or fundamental symmetry.  If \(J=J^*=J^{-1}\), the
+companion product
+\[
+              (x,y)_J=[x,Jy]
+\]
+is positive and supplies Hilbert topology.  Replacing a positive physical
+pairing by a Krein pairing therefore does not remove completion, topology, or
+operator-domain questions.  It redistributes them.
+
+In the reduced conformal-gravity mode carrier audited in
+\cert{FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1}, energy, family, chirality, and a
+finite multiplicity coordinate name every mode.  The fundamental symmetry is
+coordinate multiplication by the sign of the family.  At every fixed cutoff,
+the list and the involution are primitive-recursive finite data; \(\PRA\)
+suffices to verify self-adjointness and \(J^2=1\).  At the complete one-particle
+level, the carrier is an explicitly indexed \(\ell^2(I)\), and the occupation
+number Fock carrier is \(\ell^2(\operatorname{Occ}(I))\).  The certificate uses
+ZF results for those canonical completions and no Countable Choice.
+
+The foundational work is done by the representation.  Named modes replace an
+unspecified basis search and a choice of bases across arbitrary families.  The
+certified relation is \rtype{AVOIDED_BY_REFORMULATION} for those particular
+selection steps and \rtype{SUFFICIENT_OVER_BASE} for ZF.  It is not a proof
+that arbitrary Krein spaces have choice-free fundamental decompositions or
+that ZF is the weakest possible base.
+
+This case also corrects the slogan ``Krein throws out Hilbert space.''  The
+distinguished physical pairing becomes indefinite, but a positive companion
+Hilbert topology remains part of the displayed structure.  What changes are
+the adjoint relations, positivity problem, null directions, and physical
+interpretation; what survives must still be audited theorem by theorem.
+
+\subsection{State existence is not state selection}
+
+Once the coordinate Krein carrier is available, constructing \emph{a} state
+is easy.  A named \(J\)-eigenvector \(e_i\) defines an explicit normalized
+vector state on the companion Hilbert algebra,
+\[
+              \omega_i(A)=(e_i,Ae_i)_J,
+\]
+and the rank-one density operator \(\lvert e_i\rangle\langle e_i\rvert\) is explicit.
+No choice principle is required for this witness.  The same holds for named
+occupation vectors in the Fock carrier.  These constructions are certified by
+\cert{FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1} with dependency tags
+\rtype{LOCAL-ALGEBRAIC} and \rtype{REDUCED-MODE}.
+
+But \(J\) does not choose a unique coordinate.  Indeed, the certificate proves
+a scoped no-selection result: no density operator is invariant under the full
+group of sign-preserving finite-coordinate permutations on the infinite
+positive and negative sectors.  The reason is elementary.  Invariance makes
+all diagonal weights within an infinite sector equal; trace-class
+normalization then forces each equal weight to vanish, contradicting unit
+trace.  This excludes normal density states with that full invariance.  It
+does not exclude singular states, and it does not prove that the permutation
+group is a required physical symmetry.
+
+Thus three cells that are often merged must be separate:
+\[
+ \text{state existence}
+ \quad\not\Rightarrow\quad
+ \text{canonical state selection}
+ \quad\not\Rightarrow\quad
+ \text{Born interpretation}.
+\]
+Extra physical information---dynamics, boundary conditions, thermality,
+Hadamard regularity, detector preparation, or an incoming condition---must do
+the selecting.  The algebra and its set-theoretic foundation cannot supply
+that information merely by existing.
+
+A related audit,
+\cert{FOUNDATIONAL_BT_SEPARABLE_STATE_CHAIN_ZF_V1}, reaches the same boundary
+from an algebra-first direction.  An explicitly presented separable compact-
+operator unitization, concrete states, and a corner GNS representation can be
+constructed in ZF.  A semifinite trace is not a normalized state, and
+conditioning on a detector projection imports that projection as additional
+physical data.  Algebra, state existence, representation, and physical
+selection are four obligations.
+
+\subsection{Weak wave evolution is not causal Green theory}
+
+The certificate
+\cert{FOUNDATIONAL_CODED_POLYGONAL_WAVE_RCA0_V1} treats a mean-zero scalar
+wave on a coded circle.  Dense states are pairs of rational periodic step
+functions whose polygonal primitives encode left- and right-moving profiles.
+Completed states and real times are supplied as fast Cauchy names with fixed
+rates.  Rational translation is exact and preserves the energy metric.  A
+finite-code time modulus and a primitive-recursive diagonal construction
+extend the translation group to named real times.
+
+For this representation, \(\RCA\) suffices for existence, uniqueness, the
+group law, and energy conservation of the continuous isometric extension.
+Finite rational-code identities are already checkable in \(\PRA\).  This is a
+genuine weak-base upper bound, and it demonstrates how much can be obtained
+when convergence rates are data rather than objects to be extracted from bare
+convergence.
+
+The boundary is as important as the theorem.  The result proves neither that
+\(\RCA\) is necessary nor that the upper bound is representation-invariant.
+It constructs no spacetime distribution, no advanced or retarded Green map,
+and no finite-propagation theorem.  A unitary or isometric evolution group
+solves a Cauchy obligation; causal support is a separate spacetime theorem.
+
+The literature makes the missing bridge visible.  Normally hyperbolic
+operators on globally hyperbolic spacetimes have advanced and retarded Green
+operators with support control in classical analysis \cite{Baer2015}.  Under
+represented hypotheses, parts of PDE and fundamental-solution theory are
+computable \cite{WeihrauchZhong2006}.  The current audit has not found a direct
+reverse-mathematical reversal, a Bishop-style global Green theorem, or a
+choice-free ZF audit for the full variable-coefficient Lorentzian
+construction.  ``Classically known,'' ``computably represented,'' and
+``calibrated over a weak base'' are three different statuses.
+
+\subsection{Exact finite causality is not continuum causality}
+
+On a finite nearest-neighbour graph, a discrete wave recurrence can be solved
+by exact rational arithmetic.  The retarded response at time step \(n\) is a
+polynomial in the finite propagation operator of degree at most \(n\).
+Consequently its matrix entry vanishes when graph distance exceeds \(n\).
+The advanced kernel follows by time reversal.  The construction and graph-step
+support theorem are certified in
+\cert{FOUNDATIONAL_FINITE_GRAPH_WAVE_CAUSALITY_V1}.
+
+This is a clean causal theorem, but its type is
+\rtype{LOCAL-ALGEBRAIC}/\rtype{REDUCED-MODE}, not
+\rtype{LORENTZIAN-CAUSAL}.  It does not provide a continuum Green operator,
+a light-cone support theorem, stability under refinement, a regulator-
+independent limit, or a metric BV propagator.  Each of those requires new
+mathematical data.
+
+The example gives a useful rule for finite programmes:
+\[
+\begin{gathered}
+ \text{exact finite identity}+\text{uniform estimate}\\
+ {}+\text{represented convergence}+\text{limit identification}\\
+ \Longrightarrow\ \text{candidate continuum theorem}.
+\end{gathered}
+\]
+Only the first term is supplied by exact finite causality.  This does not make
+the finite theorem unimportant.  It tells us exactly which part of continuum
+causality is algebraic and which part is analytic.
+
+\subsection{A finite BV contraction does not freeze the quantum theory}
+
+The energy-two free BV block provides another finite exact case.  The
+certificate \cert{FOUNDATIONAL_FREE_BV_ENERGY2_PRA_SDR_V1} verifies integer
+matrices for a strong deformation retract and checks the required identities
+in \(\PRA\).  Because the contraction and projection are supplied explicitly,
+no Hahn--Banach extension or abstract complement selection is needed for this
+fixture.
+
+The result is intentionally small.  It does not verify all energies, the
+field-derived infinite complex, the Fock lift, a Green operator, a state, or a
+renormalization construction.  It does not pass the classical import freeze
+gate for the quantum programme.  The dependency tag is exactly
+\rtype{LOCAL-ALGEBRAIC}.  A bounded exact certificate can remove foundational
+ambiguity from one algebraic step while leaving every analytic and causal
+obligation open.
+
+This is the intended interaction with the Weyl BV--BFV programme.  The
+classical complex is authoritative, but its import into quantum work must be
+checked object by object.  Local counterterm and anomaly classification must
+precede coefficient calculations; restoration of the local quantum master
+equation must precede residual transfer.  No reduced-mode or Euclidean result
+may be used as evidence for a Lorentzian causal claim.  The reverse-
+foundational atlas makes these dependency cuts visible before a calculation
+is promoted.
+
+\section{What the case studies teach}
+\label{sec:lessons}
+
+The examples support several general lessons.  They are methodological
+conclusions from the displayed certificates, not universal theorems about all
+physical theories.
+
+\subsection{The first cost of infinity is often completion, not Choice}
+
+In explicit separable carriers, countable infinity can enter through a named
+index set and canonical completion without any selection from an arbitrary
+family.  The finite-to-infinite boundary still adds real mathematical content:
+summability, completion, operator domains, and limits.  It simply need not add
+Countable Choice in the same step.  ``Infinite'' and ``choice-dependent'' are
+not synonyms.
+
+\subsection{Physical input often acts as data, not as a foundational axiom}
+
+A mode grading, detector projection, boundary condition, or convergence
+modulus can remove an existential search.  The physical postulate does not
+thereby become a set-theoretic axiom.  It supplies a witness inside the chosen
+foundation.  This is one of the most promising ways physics can lower the
+mathematical strength of a formulation: replace arbitrary existence with
+canonical physical data.
+
+\subsection{Representation sensitivity is scientific content}
+
+The \(\RCA\) wave theorem works because fast Cauchy rates and rational
+polygonal dense data are part of the representation.  That is not a defect to
+hide.  It tells us precisely which information makes the evolution effective
+and weakly formalizable.  A later theorem may show that another natural
+representation is equivalent over the same base, or it may expose a genuine
+difference.  Until then, representation invariance is an open obligation.
+
+\subsection{Positive structure migrates rather than disappears}
+
+Krein geometry removes positive definiteness from the distinguished pairing
+but restores a positive companion topology through a fundamental symmetry.
+Algebra-first formulations remove state vectors from the primitive vocabulary
+but recover Hilbert representations through GNS.  Operational
+reconstructions remove Hilbert space from the primitive postulates but recover
+it from continuity, composition, and informational principles.  In each case
+the assumption load moves.  An honest analysis follows it.
+
+\subsection{The difficult cells are interfaces}
+
+Finite algebra, explicit coordinate carriers, and named states are relatively
+tractable.  The sparse region begins where several interfaces must be crossed
+at once: weak or constructive analysis plus variable-coefficient Lorentzian
+PDE; internal topos structure plus external experimental probability; gauge
+cohomology plus microlocal renormalization; or an operational reconstruction
+plus infinite-dimensional continuum limits.  These gaps are not random.  They
+mark where entire mathematical toolchains must be retyped.
+
+\section{A research protocol}
+\label{sec:protocol}
+
+The matrix becomes scientifically useful only if filling a cell means more
+than attaching a citation.  We propose the following protocol.
+
+\subsection{Declare the target before auditing the proof}
+
+Every project begins with one obligation, one carrier, one representation,
+and one dependency boundary.  ``Wave existence'' should say whether the
+solution is a Cauchy name, a Sobolev function, a distribution, or a smooth
+field.  ``State'' should say algebraic state, normal density state, KMS state,
+Hadamard state, or physical selector.  ``Causality'' should say graph-step
+support, finite propagation, or advanced/retarded Green support.
+
+\subsection{Build a proof ledger}
+
+The displayed proof is factored into individual dependencies: finite algebra,
+completion, compactness, extension, subsequence selection, spectral calculus,
+operator-domain closure, Green existence, support, duality, and so on.  Each
+dependency gets one of the seven relation types.  A proof use is never
+promoted to necessity.
+
+\subsection{Search for avoidance before proving a lower bound}
+
+Before attempting a reversal, ask whether the physical representation supplies
+a witness or canonical enumeration.  An explicit diagonal operator may avoid
+a general spectral theorem.  A named mode basis may avoid a basis-selection
+principle.  Chiral coordinates may turn a PDE evolution into translation.
+This often produces a useful upper bound quickly and exposes the precise
+residue for a later lower bound.
+
+\subsection{Separate producer and checker}
+
+Exact finite claims should carry machine-readable witnesses and an independent
+checker that does not merely rerun the producer.  Analytic claims should pin
+the theorem statement, hypotheses, representation, and source.  Every result
+records what would falsify it, what was not checked, and which stronger claim
+it does not establish.  Exact and numerical evidence remain distinct types.
+
+\subsection{Promote only through typed gates}
+
+For quantum Weyl work, the dependency tags
+\begin{center}
+\rtype{LOCAL-ALGEBRAIC}, \quad
+\rtype{EUCLIDEAN-SPECTRAL}, \quad
+\rtype{REDUCED-MODE}, \quad
+\rtype{LORENTZIAN-CAUSAL}
+\end{center}
+are noninterchangeable.  Likewise the lifecycle states
+\begin{center}
+\rtype{CLASSIFIED},
+\rtype{COEFFICIENT_COMPUTED},
+\rtype{QME_RESTORED},
+\rtype{RESIDUAL_TRANSFERRED},
+\rtype{LORENTZIAN_CERTIFIED}
+\end{center}
+must not be collapsed.  The atlas should show missing typed edges, not draw an
+unlabelled arrow around them.
+
+\section{Near-term research programme}
+\label{sec:agenda}
+
+The most valuable next problems are not simply the emptiest cells.  They are
+cells for which one can isolate a small theorem that connects two mature
+literatures.
+
+\subsection{Weak localized wave identities}
+
+The represented Cauchy evolution over \(\RCA\) is established, while
+spacetime localization is not.  A tractable next target is a weak integrated
+wave identity for compactly supported rational polygonal tests, followed by a
+support statement for a carefully coded (1+1)-dimensional model.  This would
+test exactly where the move from energy evolution to spacetime distributions
+adds strength, without beginning with the full metric BV propagator.
+
+\subsection{A ZF audit of one Green construction}
+
+Choose one normally hyperbolic scalar operator on an explicitly presented
+globally hyperbolic spacetime.  Factor the classical proof into Sobolev
+completion, energy estimate, local solution, exhaustion, uniqueness, duality,
+and support.  For each step determine whether the standard proof merely uses
+Choice, whether a separable canonical formulation avoids it, or whether a
+choice fragment is genuinely needed.  The first deliverable should be a
+dependency ledger, not a claim about all hyperbolic PDE.
+
+\subsection{Proof strength of an operational reconstruction}
+
+Select one finite-dimensional reconstruction, preferably the continuity
+branch in Hardy or the purification branch of Chiribella--D'Ariano--Perinotti.
+Formalize the exact real-algebraic and compactness principles used.  Then
+separate the finite theorem from any proposed countable or field-theoretic
+extension.  This is a promising place to obtain an actual equivalence or
+avoidance theorem because the physical postulates are already explicit.
+
+\subsection{Internal BV and the external probability bridge}
+
+The topos literature supplies internal commutative algebra, locale spectra,
+state representations, and versions of dynamics.  A useful Weyl target is
+smaller than ``construct QFT in a topos'': internalize a finite local BRST
+complex and verify nilpotency and a finite contraction, then state precisely
+what additional structure would be required for integration modulo boundary
+terms, anomaly classification, and external probabilities.  Even an
+obstruction ledger would convert a vague gap into typed missing morphisms.
+
+\subsection{Physical selectors on explicit state spaces}
+
+The state-existence problem is already easy in several explicit ZF carriers.
+The next scientific question is which physical assumptions select a state.
+Candidate selectors include a Hamiltonian ground condition, KMS condition,
+incoming detector preparation, residual symmetry, or a local Hadamard
+condition.  Each should be tested independently for existence, uniqueness,
+foundational strength, and compatibility with gauge structure.  A no-selection
+theorem is valuable only when its symmetry and state class are physically
+justified.
+
+\section{Limits of the present paper}
+\label{sec:limits}
+
+This paper introduces a programme and reports bounded examples.  It does not
+establish a global metatheorem relating physical postulates to set-theoretic
+strength.  It does not prove that the three atlas axes form a literal
+Cartesian product of coherent theories.  It does not prove that the six
+regimes, six carriers, or sixteen obligations are canonical or exhaustive.
+
+The literature survey is a structured seed corpus, not a systematic review of
+all mathematical physics.  ``No reviewed source'' means no source in the
+declared corpus, not that no result exists.  The 576-cell count and coverage
+statistics describe a versioned research instrument.  They are not novelty
+counts, evidence weights, or probabilities that a theorem is true.
+
+The local foundational results are upper bounds unless a reversal is stated.
+The \(\RCA\) coded-wave theorem does not show \(\RCA\) is weakest.  ZF
+sufficiency for the explicit Krein and separable \(C^*\) carriers is not a
+necessity theorem.  Exact finite certificates do not settle infinite
+completions.  Computable or constructive results are not automatically
+reverse-mathematical classifications.
+
+Finally, none of the case studies constructs a complete Lorentzian off-shell
+BV propagator, a BRST-compatible Hadamard state for the full metric complex,
+renormalized Lorentzian time-ordered products, a causal perturbative AQFT, or a
+Lorentzian quantum-master-equation theorem.  The certificates carrying
+\rtype{REDUCED-MODE} or \rtype{LOCAL-ALGEBRAIC} tags provide no evidence for
+those \rtype{LORENTZIAN-CAUSAL} obligations.
+
+\section{Reproducibility}
+\label{sec:reproducibility}
+
+The paper has a machine-readable claim map generated from current certificate
+inputs.  It pins the source paths and hashes, extracts the atlas dimensions
+and status counts, checks the exact dependency tags of every local case study,
+and records the paper's nonclaims.  The reproduction commands are:
+
+\begin{verbatim}
+python3 paper/generate_21_reverse_foundations_claim_map.py --check
+python3 paper/verify_21_reverse_foundations_claim_map.py
+pdflatex -interaction=nonstopmode -halt-on-error \
+  paper/21-reverse-foundations-of-physics.tex
+\end{verbatim}
+
+The principal machine-readable authorities are
+\cert{FOUNDATIONAL_INTERSECTION_CUBE_V4},
+\cert{FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2},
+\cert{FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1},
+\cert{FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1},
+\cert{FOUNDATIONAL_BT_SEPARABLE_STATE_CHAIN_ZF_V1},
+\cert{FOUNDATIONAL_CODED_POLYGONAL_WAVE_RCA0_V1},
+\cert{FOUNDATIONAL_FINITE_GRAPH_WAVE_CAUSALITY_V1}, and
+\cert{FOUNDATIONAL_FREE_BV_ENERGY2_PRA_SDR_V1}.
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+The mathematical assumptions of a physical theory are neither inert notation
+nor a single hidden axiom.  They are a structured dependency layer.  Changing
+the carrier can move positivity, completion, and representation obligations.
+Changing the foundation can alter what counts as existence.  Physical
+postulates can supply canonical data that avoid otherwise arbitrary choices.
+And the same physical slogan can have different strength under different
+encodings.
+
+The practical response is to replace undifferentiated questions---``does
+physics need Choice?'', ``can Krein replace Hilbert space?'', ``can finite
+mathematics recover the continuum?''---with typed judgements of the form
+
+\[
+       L+S+M+\Enc(P)\ \vdash_R\ O,
+\]
+
+where every symbol is explicit and every arrow has a relation type.  The first
+case studies already change the picture.  Explicit infinity need not introduce
+Choice at its first step.  State existence does not select a physical state.
+Evolution does not establish causal support.  Exact finite causality does not
+establish a continuum light cone.  And a finite algebraic BV certificate does
+not promote an analytic quantum theory.
+
+The resulting atlas is useful precisely because it contains holes.  A blank
+cell is not an absence theorem; it is a request for a well-typed obligation,
+an encoding, a proof ledger, and an independently checkable result.  Filling
+those cells one theorem at a time offers a realistic route toward understanding
+not only which physics follows from which physical assumptions, but which
+mathematics the physics truly needs.
+
+\begin{thebibliography}{99}
+
+\bibitem{Baer2015}
+C.~Bär,
+``Green-hyperbolic operators on globally hyperbolic spacetimes,''
+\emph{Communications in Mathematical Physics} \textbf{333} (2015), 1585--1615.
+\url{https://arxiv.org/abs/1310.0738}.
+
+\bibitem{BishopBridges1985}
+E.~Bishop and D.~Bridges,
+\emph{Constructive Analysis}, Springer, 1985.
+
+\bibitem{BlackadarFarah2026}
+B.~Blackadar and I.~Farah,
+``Separable \(C^*\)-algebras without the Countable Axiom of Choice,'' 2026.
+\url{https://arxiv.org/abs/2602.15812}.
+
+\bibitem{BlackadarFarahKaragila2023}
+B.~Blackadar, I.~Farah, and A.~Karagila,
+``Hilbert spaces without Countable AC,'' 2023.
+\url{https://arxiv.org/abs/2304.09602}.
+
+\bibitem{CarcassiAidala2022}
+G.~Carcassi and C.~A.~Aidala,
+``Reverse physics: from laws to physical assumptions,''
+\emph{Foundations of Physics} \textbf{52} (2022), 40.
+\url{https://doi.org/10.1007/s10701-022-00555-z}.
+
+\bibitem{Chiribella2011}
+G.~Chiribella, G.~M.~D'Ariano, and P.~Perinotti,
+``Informational derivation of quantum theory,''
+\emph{Physical Review A} \textbf{84} (2011), 012311.
+\url{https://doi.org/10.1103/PhysRevA.84.012311}.
+
+\bibitem{CoquandSpitters2009}
+T.~Coquand and B.~Spitters,
+``Constructive Gelfand duality for \(C^*\)-algebras,''
+\emph{Mathematical Proceedings of the Cambridge Philosophical Society}
+\textbf{147} (2009), 339--344.
+\url{https://doi.org/10.1017/S0305004109002515}.
+
+\bibitem{GibbonsHoffmanWootters2004}
+K.~S.~Gibbons, M.~J.~Hoffman, and W.~K.~Wootters,
+``Discrete phase space based on finite fields,''
+\emph{Physical Review A} \textbf{70} (2004), 062101.
+\url{https://arxiv.org/abs/quant-ph/0401155}.
+
+\bibitem{Hardy2001}
+L.~Hardy,
+``Quantum theory from five reasonable axioms,'' 2001.
+\url{https://arxiv.org/abs/quant-ph/0101012}.
+
+\bibitem{HeunenLandsmanSpitters2009}
+C.~Heunen, N.~P.~Landsman, and B.~Spitters,
+``A topos for algebraic quantum theory,''
+\emph{Communications in Mathematical Physics} \textbf{291} (2009), 63--110.
+\url{https://arxiv.org/abs/0709.4364}.
+
+\bibitem{Pischke2025}
+N.~Pischke,
+``A proof-theoretic metatheorem for nonlinear semigroups generated by an
+accretive operator and applications,''
+\emph{Selecta Mathematica} \textbf{31} (2025), 32.
+\url{https://arxiv.org/abs/2304.01723}.
+
+\bibitem{Simpson1984}
+S.~G.~Simpson,
+``Which set existence axioms are needed to prove the Cauchy/Peano theorem for
+ordinary differential equations?,''
+\emph{Journal of Symbolic Logic} \textbf{49} (1984), 783--802.
+\url{https://doi.org/10.2307/2274131}.
+
+\bibitem{Simpson2009}
+S.~G.~Simpson,
+\emph{Subsystems of Second Order Arithmetic}, 2nd ed., Cambridge University
+Press, 2009.
+\url{https://doi.org/10.1017/CBO9780511581007}.
+
+\bibitem{Weihrauch2000}
+K.~Weihrauch,
+\emph{Computable Analysis: An Introduction}, Springer, 2000.
+
+\bibitem{WeihrauchZhong2006}
+K.~Weihrauch and N.~Zhong,
+``An algorithm for computing fundamental solutions,''
+\emph{SIAM Journal on Computing} \textbf{35} (2006), 1283--1294.
+\url{https://doi.org/10.1137/S0097539704446360}.
+
+\end{thebibliography}
+
+\end{document}
