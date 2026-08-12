@@ -1,0 +1,32 @@
+{
+  "schema": "event-v0",
+  "id": "sf:program/event/reverse-physics-bateman-tagged-packet-lambda5-parity-selection-DONE-addbe9ff",
+  "kind": "event",
+  "source": {
+    "path": "tools/science-forge/program/events/reverse-physics-bateman-tagged-packet-lambda5-parity-selection-DONE-addbe9ff.json",
+    "span": null
+  },
+  "body": {
+    "event_kind": "WORK_ITEM_TRANSITIONED",
+    "actor": "reverse-physics",
+    "base_revision": "science-forge-ir-v0",
+    "predecessors": [],
+    "when": "2026-08-12",
+    "seq": 1,
+    "payload": {
+      "target": "sf:program/work/reverse-physics-bateman-tagged-packet-lambda5-parity-selection",
+      "to_state": "DONE",
+      "note": "The exact coupling/field-sign covariance S_lambda[phi]=S_-lambda[-phi] and its BT-composite counterpart imply total-Fock-parity grade (-1)^n for every order-n evolution and covariantly dressed projector coefficient. The leading three-particle source and tagged order-lambda2 output are Fock-odd; the complete order-lambda3 output, including dynamical, source and detector corrections, is Fock-even. The public cross-Krein form is block diagonal in total particle-number parity, so q_tag^(5)=2 Re<y2,y3>_K=0. This is total Fock parity, not BT ghost parity or O(1,1) charge. The first unresolved correction is therefore lambda6, whose tree, loop, second-order source/detector and survival terms remain unassembled. Evidence: REVERSE_PHYSICS_BT_TAGGED_PACKET_LAMBDA5_PARITY_SELECTION_V1."
+    },
+    "native": {
+      "authored_by": "manual close-out after exact coupling/Fock-parity selection",
+      "policy": "append-only; one content-addressed file per event; the work-item base state is not rewritten"
+    }
+  },
+  "edges": [
+    {
+      "rel": "TRANSITIONS",
+      "to": "sf:program/work/reverse-physics-bateman-tagged-packet-lambda5-parity-selection"
+    }
+  ]
+}

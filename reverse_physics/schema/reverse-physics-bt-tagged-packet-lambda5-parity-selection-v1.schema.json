@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-tagged-packet-lambda5-parity-selection-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["certificate", "schema_version", "dependency_tags", "lifecycle_state", "result_kind", "question", "answer", "exact_covariance", "vertex_and_graph_selection", "tagged_output_selection", "finite_Krein_witness", "interpretation", "assumptions", "does_not_establish", "missing_object_ledger", "next_gate", "provenance", "verification_commands", "checks", "report", "schema"],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_TAGGED_PACKET_LAMBDA5_PARITY_SELECTION_V1"},
+    "schema_version": {"const": "reverse-physics-bt-tagged-packet-lambda5-parity-selection-v1"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "exact_covariance": {
+      "const": {
+        "total_Fock_parity": "Pi_F=(-1)^N on scalar or BT fluctuation particle number",
+        "distinction": "Pi_F is not BT ghost parity kappa and is not the SO+(1,1) charge",
+        "action": "S_lambda[phi]=S_-lambda[-phi] for S=-1/2*integral(Box phi+lambda*(partial phi)^2)^2",
+        "BT_composites": "(Omega,Upsilon)_lambda[phi]=-(Omega,Upsilon)_-lambda[-phi], including the transformed 1/lambda background",
+        "evolution_coefficients": "Pi_F U_n Pi_F=(-1)^n U_n",
+        "dressed_projector_coefficients": "Pi_F P_n Pi_F=(-1)^n P_n for covariantly transported source and detector projectors",
+        "probability": "q(lambda)=q(-lambda)",
+        "status": "EXACT_COUPLING_FOCK_PARITY_COVARIANCE"
+      }
+    },
+    "vertex_and_graph_selection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["cubic", "quartic", "graph_identity", "enumerated_fixture_count", "enumerated_range", "all_fixture_rows_pass", "status"],
+      "properties": {
+        "cubic": {"const": "H_1 has three fluctuation fields, coupling degree one and odd Pi_F parity"},
+        "quartic": {"const": "H_2 has four fluctuation fields, coupling degree two and even Pi_F parity"},
+        "graph_identity": {"const": "3*V3+4*V4=2*I+E and d_lambda=V3+2*V4 imply E congruent d_lambda mod 2"},
+        "enumerated_fixture_count": {"type": "integer", "minimum": 1},
+        "enumerated_range": {"const": "0<=V3<=6, 0<=V4<=4, 0<=I<=8 with E>=0"},
+        "all_fixture_rows_pass": {"const": true},
+        "status": {"const": "COUPLING_ORDER_EQUALS_PARTICLE_PARITY_CHANGE"}
+      }
+    },
+    "tagged_output_selection": {
+      "const": {
+        "source_series": "psi=lambda^0*psi0+lambda*psi1+O(lambda^2)",
+        "source_parities": "Pi_F psi0=-psi0 and Pi_F psi1=+psi1",
+        "tagged_output_series": "Y=lambda^2*y2+lambda^3*y3+lambda^4*y4+...",
+        "leading_output": "y2 contains A2 psi0 and is Pi_F-odd",
+        "complete_next_output": "y3 contains A3 psi0, A2 psi1 and first detector correction and is Pi_F-even",
+        "Krein_orthogonality": "Pi_F^sharp=Pi_F and [Pi_F,G_K]=0 imply <odd,even>_K=0",
+        "lambda5_coefficient": "q_tag^(5)=2*Re<y2,y3>_K=0",
+        "probability_series": "q_tag=lambda^4*q4+0*lambda^5+lambda^6*q6+O(lambda^8), with all odd coefficients zero for the covariant family",
+        "leading_q4": "q4=3*DeltaOmega/(32*pi^2*s*Area) on the certified tagged packet",
+        "status": "COMPLETE_PROBABILITY_ORDER_LAMBDA5_COEFFICIENT_ZERO"
+      }
+    },
+    "finite_Krein_witness": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["metric", "parity", "y2", "y3", "cross", "parity_breaking_cross", "purpose"],
+      "properties": {
+        "metric": {"const": [["0", "1", "0", "0"], ["1", "0", "0", "0"], ["0", "0", "0", "1"], ["0", "0", "1", "0"]]},
+        "parity": {"const": [["-1", "0", "0", "0"], ["0", "-1", "0", "0"], ["0", "0", "1", "0"], ["0", "0", "0", "1"]]},
+        "y2": {"const": ["2", "-3", "0", "0"]},
+        "y3": {"const": ["0", "0", "5", "7"]},
+        "cross": {"const": "0"},
+        "parity_breaking_cross": {"const": "20"},
+        "purpose": {"$ref": "#/$defs/text"}
+      }
+    },
+    "interpretation": {
+      "const": {
+        "probability_order_lambda5": "EXACTLY_ZERO",
+        "tagged_probability_remainder_after_lambda4": "BEGINS_AT_LAMBDA6",
+        "compact_packet_tree_cross_at_lambda6": "NONZERO_FUNCTIONAL",
+        "complete_order_lambda6_probability": "NOT_COMPUTED",
+        "general_Eq19": "NOT_PROVED",
+        "gravity_or_BV_BRST_transfer": "NOT_CONSTRUCTED",
+        "Lorentzian_causal_claim": "NOT_ESTABLISHED"
+      }
+    },
+    "assumptions": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"$ref": "#/$defs/text"}},
+    "does_not_establish": {"type": "array", "minItems": 13, "maxItems": 13, "items": {"$ref": "#/$defs/text"}},
+    "missing_object_ledger": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "object", "additionalProperties": false, "required": ["object", "status", "required_value"], "properties": {"object": {"$ref": "#/$defs/text"}, "status": {"const": "MISSING"}, "required_value": {"$ref": "#/$defs/text"}}}},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "provenance": {"type": "object", "additionalProperties": false, "required": ["source_commit", "retrieval_date", "inputs", "method"], "properties": {"source_commit": {"const": "addbe9ff"}, "retrieval_date": {"const": "2026-08-12"}, "inputs": {"type": "array", "minItems": 7, "maxItems": 7, "items": {"type": "object", "additionalProperties": false, "required": ["path", "sha256"], "properties": {"path": {"$ref": "#/$defs/text"}, "sha256": {"$ref": "#/$defs/hash"}}}}, "method": {"$ref": "#/$defs/text"}}},
+    "verification_commands": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/text"}},
+    "checks": {"type": "object", "additionalProperties": false, "required": ["ok", "passed", "total", "failures", "details"], "properties": {"ok": {"const": true}, "passed": {"const": 26}, "total": {"const": 26}, "failures": {"const": []}, "details": {"type": "object", "minProperties": 26, "maxProperties": 26, "additionalProperties": {"const": true}}}},
+    "report": {"const": "reverse_physics/reports/bt-tagged-packet-lambda5-parity-selection.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-tagged-packet-lambda5-parity-selection-v1.schema.json"}
+  },
+  "$defs": {"text": {"type": "string", "minLength": 1}, "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+}
