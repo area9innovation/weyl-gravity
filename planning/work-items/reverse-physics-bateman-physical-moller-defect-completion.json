@@ -1,0 +1,36 @@
+{
+  "id": "sf:program/work/reverse-physics-bateman-physical-moller-defect-completion",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "reverse-physics",
+    "state": "ACTIVE",
+    "objective": "Determine whether the certified finite physical BT vacuum Moller column admits a two-sided unitary completion, classify all such completions, and identify the exact additional incoming data they require.",
+    "depends_on": [
+      "REVERSE_PHYSICS_BT_FINITE_PHYSICAL_MOLLER_COLUMN_V1",
+      "REVERSE_PHYSICS_BT_SEVEN_POINT_NESTED_CONTINUUM_INTERTWINER_V1"
+    ],
+    "activates": [
+      "an exact same-space unitary-extension theorem for an isometric physical column",
+      "a minimal incoming-defect theorem",
+      "an exact nonuniqueness family invisible to the vacuum column",
+      "a fail-closed distinction between operator completion and BT dynamical affiliation"
+    ],
+    "current_gate": "PHYSICAL_MOLLER_DEFECT_COMPLETION: extend M_a from the hard incoming species subspace to the complete finite-hierarchy physical continuum output, parameterize the defect action, and test whether the published amplitudes select it.",
+    "stop_condition": "Land an exact certificate with an independent verifier proving existence, minimality and nonuniqueness of the unitary completion while retaining the missing BT asymptotic-domain and spacetime-locality boundaries.",
+    "forbid": "no abstract unitary extension called the BT S-matrix; no finite outcome compression substituted for the continuum theorem; no arbitrary defect action called dynamical; no REDUCED-MODE construction promoted to LORENTZIAN-CAUSAL",
+    "allowed_paths": [
+      "reverse_physics/",
+      "notes/bateman-turok-embedding.md",
+      "paper/05-interaction-obstructions.tex",
+      "paper/05-interaction-obstructions.pdf",
+      "paper/06-einstein-weyl-interaction-obstructions.tex",
+      "paper/06-einstein-weyl-interaction-obstructions.pdf",
+      "planning/work-items/reverse-physics-bateman-physical-moller-defect-completion.json",
+      "planning/events/"
+    ],
+    "resource_hint": "For isometries I,M:H->K, every same-space unitary S with SI=M is S=M I^*+W(1-II^*), where W is a partial unitary from the incoming defect to the outgoing defect. Use a four-outcome two-species rational compression and an exact Householder witness, then retain the infinite continuum defect as a separate theorem.",
+    "input_commit": "0c45c05b",
+    "stream": "reverse-physics"
+  }
+}

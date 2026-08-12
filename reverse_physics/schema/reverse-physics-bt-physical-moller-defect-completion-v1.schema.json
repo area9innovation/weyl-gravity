@@ -1,0 +1,247 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-physical-moller-defect-completion-v1.schema.json",
+  "title": "BT physical Moller defect-completion certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "certificate",
+    "schema_version",
+    "dependency_tags",
+    "lifecycle_state",
+    "result_kind",
+    "question",
+    "answer",
+    "assumptions",
+    "universal_completion_theorem",
+    "finite_exact_witness",
+    "continuum_consequence",
+    "disposition",
+    "does_not_establish",
+    "next_gate",
+    "provenance",
+    "verification_commands",
+    "checks",
+    "report",
+    "schema"
+  ],
+  "properties": {
+    "certificate": {
+      "const": "REVERSE_PHYSICS_BT_PHYSICAL_MOLLER_DEFECT_COMPLETION_V1"
+    },
+    "schema_version": {
+      "const": "reverse-physics-bt-physical-moller-defect-completion-v1"
+    },
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]
+    },
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "result_kind": {"type": "string", "minLength": 1},
+    "question": {"type": "string", "minLength": 1},
+    "answer": {"type": "string", "minLength": 1},
+    "assumptions": {
+      "type": "array",
+      "minItems": 4,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "universal_completion_theorem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "incoming_isometry",
+        "physical_column",
+        "incoming_projection",
+        "outgoing_projection",
+        "incoming_defect",
+        "outgoing_defect",
+        "defect_condition",
+        "all_completions",
+        "unitarity",
+        "column_identity",
+        "converse",
+        "minimality",
+        "julia_alternative"
+      ],
+      "properties": {
+        "incoming_isometry": {"const": "I:H_hard->K_phys"},
+        "physical_column": {"const": "M_a:H_hard->K_phys with M_a^*M_a=I_H"},
+        "incoming_projection": {"const": "P_in=I I^*"},
+        "outgoing_projection": {"const": "P_out=M_a M_a^*"},
+        "incoming_defect": {"const": "D_in=1-P_in"},
+        "outgoing_defect": {"const": "D_out=1-P_out"},
+        "defect_condition": {"const": "W^*W=D_in and WW^*=D_out"},
+        "all_completions": {"const": "S_W=M_a I^*+W D_in"},
+        "unitarity": {"const": "S_W^*S_W=S_WS_W^*=1"},
+        "column_identity": {"const": "S_W I=M_a"},
+        "converse": {"type": "string", "minLength": 1},
+        "minimality": {"type": "string", "minLength": 1},
+        "julia_alternative": {"type": "string", "minLength": 1}
+      }
+    },
+    "finite_exact_witness": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "outcome_probabilities",
+        "outcome_amplitude_column",
+        "species_dimension",
+        "compressed_output_dimension",
+        "incoming_rank",
+        "outgoing_rank",
+        "incoming_defect_rank",
+        "outgoing_defect_rank",
+        "householder_outcome_matrix",
+        "defect_rotation_outcome_matrix",
+        "first_unitary_sha256",
+        "second_unitary_sha256",
+        "same_column",
+        "distinct_defect_action",
+        "julia_dimension",
+        "purpose"
+      ],
+      "properties": {
+        "outcome_probabilities": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {"$ref": "#/$defs/rational"}
+        },
+        "outcome_amplitude_column": {"$ref": "#/$defs/string_matrix"},
+        "species_dimension": {"const": 2},
+        "compressed_output_dimension": {"const": 8},
+        "incoming_rank": {"const": 2},
+        "outgoing_rank": {"const": 2},
+        "incoming_defect_rank": {"const": 6},
+        "outgoing_defect_rank": {"const": 6},
+        "householder_outcome_matrix": {"$ref": "#/$defs/string_matrix"},
+        "defect_rotation_outcome_matrix": {"$ref": "#/$defs/string_matrix"},
+        "first_unitary_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "second_unitary_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "same_column": {"const": "S0*I=S1*I=M"},
+        "distinct_defect_action": {"const": "S0*(1-P_in) != S1*(1-P_in)"},
+        "julia_dimension": {"const": 10},
+        "purpose": {"type": "string", "minLength": 1}
+      }
+    },
+    "continuum_consequence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "available_physical_marks",
+        "physical_output",
+        "dense_core",
+        "defect_dimension",
+        "reason",
+        "minimal_new_input",
+        "nonuniqueness",
+        "interpretation"
+      ],
+      "properties": {
+        "available_physical_marks": {"const": 75},
+        "physical_output": {"type": "string", "minLength": 1},
+        "dense_core": {"type": "string", "minLength": 1},
+        "defect_dimension": {"const": "COUNTABLY_INFINITE_FOR_EVERY_a>0"},
+        "reason": {"type": "string", "minLength": 1},
+        "minimal_new_input": {"type": "string", "minLength": 1},
+        "nonuniqueness": {"type": "string", "minLength": 1},
+        "interpretation": {"type": "string", "minLength": 1}
+      }
+    },
+    "disposition": {
+      "const": {
+        "abstract_two_sided_unitary_completion": "PROVED_TO_EXIST",
+        "all_same_space_completions": "PARAMETERIZED_BY_DEFECT_PARTIAL_UNITARIES",
+        "finite_exact_distinct_completions": "TWO_CONSTRUCTED",
+        "minimal_incoming_defect": "INFINITE_DIMENSIONAL_ON_THE_PHYSICAL_CONTINUUM",
+        "completion_selected_by_public_amplitudes": "EXACTLY_UNDERDETERMINED",
+        "BT_asymptotic_hamiltonian_affiliation": "NOT_CONSTRUCTED",
+        "spacetime_Moller_LSZ_S_operator": "NOT_CONSTRUCTED",
+        "complete_BT_probability": "NOT_CONSTRUCTED",
+        "Eq19_all_orders": "NOT_PROVED"
+      }
+    },
+    "does_not_establish": {
+      "type": "array",
+      "minItems": 11,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "next_gate": {"type": "string", "minLength": 1},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_commit", "retrieval_date", "inputs", "public_source_audit"],
+      "properties": {
+        "source_commit": {"const": "0c45c05b"},
+        "retrieval_date": {"const": "2026-08-12"},
+        "inputs": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["path", "sha256"],
+            "properties": {
+              "path": {"type": "string", "minLength": 1},
+              "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+            }
+          }
+        },
+        "public_source_audit": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["source", "checked", "result"],
+          "properties": {
+            "source": {"const": "Bateman--Turok arXiv:2607.00096v1"},
+            "checked": {"const": "2026-08-12"},
+            "result": {"type": "string", "minLength": 1}
+          }
+        }
+      }
+    },
+    "verification_commands": {
+      "type": "array",
+      "minItems": 3,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"const": 28},
+        "total": {"const": 28},
+        "failures": {"const": []},
+        "details": {
+          "type": "object",
+          "minProperties": 28,
+          "maxProperties": 28,
+          "additionalProperties": {"const": true}
+        }
+      }
+    },
+    "report": {"const": "reverse_physics/reports/bt-physical-moller-defect-completion.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-physical-moller-defect-completion-v1.schema.json"}
+  },
+  "$defs": {
+    "rational": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      }
+    },
+    "string_matrix": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "array",
+        "minItems": 1,
+        "items": {"type": "string"}
+      }
+    }
+  }
+}
