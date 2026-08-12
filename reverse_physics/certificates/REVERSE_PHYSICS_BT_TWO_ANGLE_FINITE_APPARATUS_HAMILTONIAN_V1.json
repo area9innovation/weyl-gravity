@@ -1,0 +1,333 @@
+{
+  "answer": "Yes as an external finite detector coupled to the two equal-energy BT output modes. For phase z=exp(i phi), let P_minus(phi) project onto (|c1>-z|c2>)/sqrt(2), let the pointer be a degenerate qubit prepared in |0>, and use H_int=g P_minus(phi) tensor sigma_y for duration tau. Because P_minus is a projector, the exponential is exact. Pointer readout gives K_click=P_plus(phi)+cos(g tau)P_minus(phi) and K_no=sin(g tau)P_minus(phi), hence E_click=P_plus(phi)+cos(g tau)^2 P_minus(phi) and E_no=sin(g tau)^2 P_minus(phi). Thus epsilon=sin(g tau)^2 is selected by coupling-duration and phi by an explicit output-mode phase shifter. When phi matches the leading BT relative phase, the apparatus fixes X2, so the complete q4/q6 equality and relative-q8 variance theorem transfer unchanged. This closes the finite-device Hamiltonian realization, not the public closed-system BT dynamics, a spacetime-local detector model, Eq. (19), gravity or Lorentzian scattering.",
+  "apparatus_carrier": {
+    "BT_angle_basis": [
+      "|c1>",
+      "|c2>"
+    ],
+    "angle_dimension": 2,
+    "combined_dimension": 4,
+    "free_energy_condition": "the fixed-s angle modes have equal energy and the pointer doublet is degenerate, so [H_free,H_int]=0 on this reduced carrier",
+    "pointer_basis": [
+      "|0>_A",
+      "|1>_A"
+    ],
+    "pointer_dimension": 2,
+    "status": "FINITE_EQUAL_ENERGY_BT_OUTPUT_MODES_TENSOR_DEGENERATE_POINTER"
+  },
+  "assumptions": [
+    "the two hard outgoing BT angle modes are the orthogonal equal-normalization equal-energy modes certified by the q6 detector predecessor",
+    "the pointer is a degenerate two-level apparatus initialized in |0> and measured in the computational basis after a finite switched interaction",
+    "the apparatus can coherently address the two declared finite-box output modes and supply or absorb their spatial momentum difference",
+    "the phase shifter setting phi is an external apparatus control and is calibrated to the common leading BT relative phase when q4/q6 invariance is claimed",
+    "theta=g tau lies in [0,pi/2] for the one-to-one setting epsilon=sin(theta)^2 in [0,1]",
+    "the interaction is bounded on the finite two-mode carrier and no spacetime localization or continuum-angle limit is inferred",
+    "the public BT interaction Hamiltonian governs the scattering output but does not contain or predict this external pointer coupling"
+  ],
+  "certificate": "REVERSE_PHYSICS_BT_TWO_ANGLE_FINITE_APPARATUS_HAMILTONIAN_V1",
+  "checks": {
+    "details": {
+      "Hamiltonian_is_self_adjoint": true,
+      "Hamiltonian_square_is_projector": true,
+      "Kraus_effects_are_complete": true,
+      "arbitrary_q6_cross_is_preserved": true,
+      "calibrated_leading_mode_is_fixed": true,
+      "calibrated_leading_probability_is_two": true,
+      "click_Kraus_is_derived": true,
+      "click_effect_is_derived": true,
+      "complete_relative_q8_shift_is_phase_variance": true,
+      "done_event_targets_this_item": true,
+      "epsilon_is_b_squared": true,
+      "equal_energy_free_commutator_vanishes": true,
+      "exponential_spectral_formula_is_unitary": true,
+      "fixture_Kraus_completeness_is_exact": true,
+      "fixture_calibrated_probability_is_two": true,
+      "fixture_epsilon_is_sixteen_twenty_fifths": true,
+      "fixture_q8_shift_is_minus_eight_twenty_fifths": true,
+      "fixture_quarter_turn_mismatch_probability_is_thirty_four_twenty_fifths": true,
+      "fixture_unitary_is_exact": true,
+      "gravity_and_Lorentzian_boundaries_are_preserved": true,
+      "inputs_are_content_pinned": true,
+      "no_click_Kraus_is_derived": true,
+      "no_click_effect_is_derived": true,
+      "phase_mismatch_response_is_exact": true,
+      "phase_projectors_are_complete": true,
+      "phase_projectors_are_idempotent": true,
+      "phase_projectors_are_orthogonal": true,
+      "phase_shifter_selects_antisymmetric_mode": true,
+      "pointer_rotation_is_unitary": true,
+      "prior_Julia_dilation_boundary_is_imported": true,
+      "public_BT_boundary_is_preserved": true,
+      "q6_effect_family_is_imported": true,
+      "relative_q8_formula_is_imported": true,
+      "three_predecessors_pass": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 34,
+    "total": 34
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL",
+    "REDUCED-MODE"
+  ],
+  "derived_instrument": {
+    "E_click": "P_plus(phi)+cos(theta)^2*P_minus(phi)=I-epsilon*P_minus(phi)",
+    "E_no": "sin(theta)^2*P_minus(phi)=epsilon*P_minus(phi)",
+    "K_click": "P_plus(phi)+cos(theta)*P_minus(phi)",
+    "K_no": "sin(theta)*P_minus(phi)",
+    "click_readout": "|0>_A",
+    "completeness": "K_click^dagger K_click+K_no^dagger K_no=I",
+    "endpoints": "theta=0 gives identity click; theta=pi/2 gives the pure coherent P_plus(phi) click",
+    "epsilon_selection": "epsilon=sin(g*tau)^2",
+    "no_click_readout": "|1>_A",
+    "pointer_preparation": "|0>_A",
+    "status": "EXACT_NORMALIZED_TWO_OUTCOME_HAMILTONIAN_INSTRUMENT"
+  },
+  "does_not_establish": [
+    "that the public closed-system BT Hamiltonian contains or uniquely predicts the apparatus coupling g, duration tau or phase phi",
+    "a translation-invariant or spacetime-local field-apparatus interaction",
+    "coherent control of a continuum of scattering angles or unequal-energy modes",
+    "either absolute order-lambda8 probability coefficient",
+    "either forward or exchanged-forward endpoint",
+    "real-virtual, survival, collinear or KLN completion",
+    "an all-order probability or all-time Moller, LSZ or S operator",
+    "the standard scalar projector or general Bateman--Turok Eq. (19)",
+    "gravity or metric BV--BRST transfer",
+    "a restored gravitational quantum master equation or residual transfer",
+    "anything LORENTZIAN-CAUSAL",
+    "literature priority"
+  ],
+  "exact_fixture": {
+    "E_click": [
+      [
+        "17/25",
+        "-8*I/25"
+      ],
+      [
+        "8*I/25",
+        "17/25"
+      ]
+    ],
+    "E_no": [
+      [
+        "8/25",
+        "8*I/25"
+      ],
+      [
+        "-8*I/25",
+        "8/25"
+      ]
+    ],
+    "H_int_over_g": [
+      [
+        "0",
+        "-I/2",
+        "0",
+        "1/2"
+      ],
+      [
+        "I/2",
+        "0",
+        "-1/2",
+        "0"
+      ],
+      [
+        "0",
+        "-1/2",
+        "0",
+        "-I/2"
+      ],
+      [
+        "1/2",
+        "0",
+        "I/2",
+        "0"
+      ]
+    ],
+    "K_click": [
+      [
+        "4/5",
+        "-I/5"
+      ],
+      [
+        "I/5",
+        "4/5"
+      ]
+    ],
+    "K_no": [
+      [
+        "2/5",
+        "2*I/5"
+      ],
+      [
+        "-2*I/5",
+        "2/5"
+      ]
+    ],
+    "P_plus": [
+      [
+        "1/2",
+        "-I/2"
+      ],
+      [
+        "I/2",
+        "1/2"
+      ]
+    ],
+    "U_tau": [
+      [
+        "4/5",
+        "-2/5",
+        "-I/5",
+        "-2*I/5"
+      ],
+      [
+        "2/5",
+        "4/5",
+        "2*I/5",
+        "-I/5"
+      ],
+      [
+        "I/5",
+        "2*I/5",
+        "4/5",
+        "-2/5"
+      ],
+      [
+        "-2*I/5",
+        "I/5",
+        "2/5",
+        "4/5"
+      ]
+    ],
+    "calibrated_leading_probability_for_unit_x2": "2",
+    "cos_theta": "3/5",
+    "epsilon": "16/25",
+    "phase": "exp(i*phi)=i",
+    "q8_fixture_X4": [
+      "1+2*i",
+      "-3+i"
+    ],
+    "q8_shift": "-8/25",
+    "quarter_turn_mismatch_probability_for_unit_x2": "34/25",
+    "sin_theta": "4/5",
+    "status": "EXACT_RATIONAL_COMPLEX_HAMILTONIAN_FIXTURE"
+  },
+  "finite_Hamiltonian": {
+    "bounded_norm": "||H_int||=|g|",
+    "duration": "tau",
+    "interaction": "H_int=g*P_minus(phi) tensor sigma_y",
+    "self_adjoint": true,
+    "sigma_y": [
+      [
+        "0",
+        "-i"
+      ],
+      [
+        "i",
+        "0"
+      ]
+    ],
+    "spectral_square": "(H_int/g)^2=P_minus(phi) tensor I_A",
+    "status": "EXACT_BOUNDED_SELF_ADJOINT_FINITE_APPARATUS_EVOLUTION",
+    "theta": "theta=g*tau",
+    "unitary": "U_tau=P_plus(phi) tensor I_A+P_minus(phi) tensor [cos(theta)I_A-i sin(theta)sigma_y]"
+  },
+  "lifecycle_state": "COEFFICIENT_COMPUTED",
+  "next_gate": "Embed this finite mode-selective apparatus in a spatially localized detector coupling or derive its effective g, tau and phi from a declared microscopic detector model. Independently, compute the absolute q8 X4 Gram and X2-X6 interference. The public Eq. (19) route still requires the missing zero-mode representation and generalized Born trace.",
+  "phase_calibration": {
+    "calibrated_fixed_point": "E_click X2=X2",
+    "calibrated_setting": "phi=delta",
+    "leading_BT_vector": "X2=x2*(1,exp(i*delta))",
+    "leading_click_probability": "<X2,E_click X2>=2*|x2|^2*[1-epsilon*sin(Delta/2)^2]",
+    "meaning": "q4/q6 invariance requires phase calibration; a mismatched apparatus measurably suppresses the leading click",
+    "mismatch": "Delta=delta-phi",
+    "status": "PHASE_SETTING_HAS_EXACT_FALSIFIABLE_RESPONSE"
+  },
+  "phase_selection": {
+    "P_minus": [
+      [
+        "1/2",
+        "-(c_phi - I*s_phi)/2"
+      ],
+      [
+        "-(c_phi + I*s_phi)/2",
+        "1/2"
+      ]
+    ],
+    "P_plus": [
+      [
+        "1/2",
+        "(c_phi - I*s_phi)/2"
+      ],
+      [
+        "(c_phi + I*s_phi)/2",
+        "1/2"
+      ]
+    ],
+    "antisymmetric_mode": "|-_phi>=(|c1>-exp(i*phi)|c2>)/sqrt(2)",
+    "conjugation": "P_minus(phi)=S_phi P_minus(0) S_phi^dagger",
+    "meaning": "phi is a detector interferometer setting, not a BT prediction",
+    "phase_shifter": "S_phi=diag(1,exp(i*phi))",
+    "status": "RELATIVE_ANGLE_PHASE_SELECTED_BY_APPARATUS_CONTROL",
+    "symmetric_mode": "|+_phi>=(|c1>+exp(i*phi)|c2>)/sqrt(2)",
+    "z": "exp(i*phi)"
+  },
+  "physical_affiliation": {
+    "continuum_angle_limit": "NOT_CONSTRUCTED",
+    "coupling_to_certified_BT_output_modes": "CONSTRUCTED_ON_REDUCED_TWO_MODE_CARRIER",
+    "epsilon_and_phase_selected_by_apparatus_parameters": "CONSTRUCTED",
+    "finite_external_detector_Hamiltonian": "CONSTRUCTED",
+    "interpretation": "the effect is no longer an abstract operational declaration; it is the measured effect of an explicit finite external device, but the device itself is additional physical structure",
+    "public_closed_system_BT_Hamiltonian_prediction": "NOT_ESTABLISHED",
+    "spacetime_local_detector_coupling": "NOT_CONSTRUCTED"
+  },
+  "provenance": {
+    "generated_by": "reverse_physics/bt_two_angle_finite_apparatus_hamiltonian.py",
+    "independent_verifier": "reverse_physics/verify_bt_two_angle_finite_apparatus_hamiltonian.py",
+    "inputs": [
+      {
+        "path": "planning/work-items/reverse-physics-bateman-two-angle-finite-apparatus-hamiltonian.json",
+        "sha256": "457c86effb5028ea960ed6347c16088e48434a97b7618acd5996905f861ace91"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_TWO_ANGLE_COHERENT_Q6_DETECTOR_V1.json",
+        "sha256": "b06a7ea92b4794bed66523888a0efc9e0cceed03f89927f1ce4638966b100b82"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_TWO_ANGLE_Q8_COHERENCE_DIFFERENCE_V1.json",
+        "sha256": "a3fe4ab807dc538f364f5adc5013937d5f2d5bb493dc41314d7ad21b2dcb8407"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_COHERENT_COMPACT_WAVEPACKET_DETECTOR_DILATION_V1.json",
+        "sha256": "355d94a089d1989a69dfa786901b367b051efdcd71ca134bb76c3b630d438ce1"
+      },
+      {
+        "path": "planning/events/reverse-physics-bateman-two-angle-finite-apparatus-hamiltonian-DONE-d3b8acda.json",
+        "sha256": "8f938521e7bfc0a9b3fbe4a8efb5f36aff5d32caf6e490089f761a576949fced"
+      }
+    ],
+    "method": "Exact quotient-ring phase and trigonometric algebra, 4x4 Hamiltonian spectral exponentiation, exact pointer contraction, arbitrary complex q6/q8 pullback, and rational unit-circle fixture. No floating-point arithmetic is used.",
+    "retrieval_date": "2026-08-12",
+    "source_commit": "d3b8acda66af6b01cabfcf84986a71d61ebac418"
+  },
+  "question": "Can the certified two-angle BT effect be generated by an explicit finite self-adjoint apparatus Hamiltonian that selects both epsilon and the relative angle phase?",
+  "report": "reverse_physics/reports/bt-two-angle-finite-apparatus-hamiltonian.md",
+  "result_kind": "bounded finite apparatus Hamiltonian and exact two-outcome instrument for the coherent BT two-angle effect",
+  "schema": "reverse_physics/schema/reverse-physics-bt-two-angle-finite-apparatus-hamiltonian-v1.schema.json",
+  "schema_version": 1,
+  "transported_BT_coefficients": {
+    "absolute_q8_status": "NOT_COMPUTED",
+    "reason": "the Hamiltonian-derived E_click is exactly the predecessor effect in the phase-calibrated basis",
+    "relative_q8": "q8[apparatus]-q8[recorded]=-(epsilon/2)*||X4(c1)-exp(-i*phi)X4(c2)||^2",
+    "status": "Q6_AND_COMPLETE_RELATIVE_Q8_RESULTS_PHYSICALLY_REALIZED_ON_FINITE_DEVICE",
+    "through_q6": "at phi=delta, q_click=2*q4*{1+lambda^2*[R6(c1)+R6(c2)]/2}+O(lambda^8)"
+  },
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_two_angle_finite_apparatus_hamiltonian.py --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_two_angle_finite_apparatus_hamiltonian.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_two_angle_finite_apparatus_hamiltonian"
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "id": "sf:program/work/reverse-physics-bateman-two-angle-finite-apparatus-hamiltonian",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "reverse-physics",
+    "state": "ACTIVE",
+    "objective": "Replace the declared two-angle BT detector effect by an explicit finite pointer Hamiltonian whose interaction time selects epsilon and whose interferometric setting selects the relative angle phase.",
+    "depends_on": [
+      "REVERSE_PHYSICS_BT_TWO_ANGLE_COHERENT_Q6_DETECTOR_V1",
+      "REVERSE_PHYSICS_BT_TWO_ANGLE_Q8_COHERENCE_DIFFERENCE_V1",
+      "REVERSE_PHYSICS_BT_COHERENT_COMPACT_WAVEPACKET_DETECTOR_DILATION_V1"
+    ],
+    "activates": [
+      "a bounded self-adjoint apparatus interaction on the BT two-angle carrier and one pointer qubit",
+      "exact Hamiltonian selection epsilon=sin^2(g tau)",
+      "exact phase selection through a conjugated symmetric/antisymmetric angle basis",
+      "a physical finite-device realization of the q6 and relative-q8 detector effects"
+    ],
+    "current_gate": "For phase z=e^{i phi}, form P_minus(phi)=|c1-z c2><c1-z c2|/2 and H_int=g P_minus(phi) tensor sigma_y. Exponentiate it exactly for theta=g tau, prepare pointer |0>, and derive both Kraus operators. Prove their effects are E_click=P_plus(phi)+cos(theta)^2 P_minus(phi) and E_no=sin(theta)^2 P_minus(phi), including completeness, phase calibration and the q6/q8 pullback.",
+    "stop_condition": "Land an exact COEFFICIENT_COMPUTED finite-apparatus certificate, method-distinct verifier, mutation tests, report and Papers 05/06 update. State explicitly that this is an external finite detector coupled to the BT output modes, not a term derived from the public closed-system BT Hamiltonian or a spacetime-local detector model.",
+    "forbid": "no abstract Naimark existence theorem called a Hamiltonian derivation; no apparatus knob called a BT prediction; no finite two-mode interaction promoted to public BT evolution, LSZ, Eq. 19, gravity, QME or LORENTZIAN-CAUSAL physics",
+    "allowed_paths": [
+      "reverse_physics/",
+      "paper/05-interaction-obstructions.tex",
+      "paper/05-interaction-obstructions.pdf",
+      "paper/06-einstein-weyl-interaction-obstructions.tex",
+      "paper/06-einstein-weyl-interaction-obstructions.pdf",
+      "planning/work-items/reverse-physics-bateman-two-angle-finite-apparatus-hamiltonian.json",
+      "planning/events/"
+    ],
+    "resource_hint": "Because P_minus(phi) is a projector, exp[-i theta P_minus(phi) tensor sigma_y]=P_plus(phi) tensor I+P_minus(phi) tensor [cos(theta)I-i sin(theta)sigma_y]. With pointer |0>, K_click=P_plus+cos(theta)P_minus and K_no=sin(theta)P_minus. Thus E_click=I-sin(theta)^2 P_minus and E_no=sin(theta)^2 P_minus. At calibrated phase phi=delta of X2=x(1,e^{i delta}), E_click X2=X2. A mismatch Delta=delta-phi suppresses the leading probability by epsilon sin^2(Delta/2)."
+  }
+}

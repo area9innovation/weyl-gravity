@@ -259,8 +259,10 @@ changing $q_4$ or $q_6$; its first known difference is an order-$\lambda^8$
 angle variance.  Exhausting the order-$\lambda^8$ ledger shows that this is
 the complete coherent-minus-recorded coefficient: the unknown higher cross
 is common to both effects.  The two absolute $q_8$ coefficients, continuum
-coherence, dynamical detector selection and both forward endpoints remain
-open.
+coherence and both forward endpoints remain open.  On the two-mode carrier,
+an explicit finite pointer Hamiltonian now selects the detector strength and
+relative phase; it is added apparatus physics, not a prediction of the public
+closed-system BT Hamiltonian.
 Independently, the projected three-channel hard loop logarithm closes the
 Callan--Symanzik equation exactly with the Born rate and one-loop beta
 function.  This yields the positive leading-log nonforward prediction
@@ -3832,9 +3834,56 @@ Certificate
 \par\noindent
 computes this full difference, not either absolute $q_8$ coefficient.  The
 complete $X_4$ Gram data and $X_2$--$X_6$ interference, continuum-angle
-coherence, and an apparatus coupling that dynamically selects $\epsilon$ and
-the relative phase remain open.  No endpoint, all-order or Eq.~(19)
-completion follows.
+coherence, and selection by the public closed-system BT dynamics remain open.
+No endpoint, all-order or Eq.~(19) completion follows.
+
+The effect itself has a finite Hamiltonian realization.  For the phased
+antisymmetric angle projector
+\[
+ P_-(\phi)=|-_\phi\rangle\langle-_\phi|,qquad
+ |-_\phi\rangle={|c_1\rangle-e^{i\phi}|c_2\rangle\over\sqrt2},
+\]
+couple a degenerate pointer qubit by
+\[
+ H_{\rm int}=gP_-(\phi)\otimes\sigma_y.
+\]
+Since $P_-$ is a projector, its duration-$\tau$ evolution is exactly
+\[
+ U_\tau=P_+(\phi)\otimes I_A+P_-(\phi)\otimes
+ [\cos(g\tau)I_A-i\sin(g\tau)\sigma_y].
+\]
+Preparing the pointer in $|0\rangle_A$ and reading it in the computational
+basis gives
+\[
+ K_{\rm click}=P_+(\phi)+\cos(g\tau)P_-(\phi),\qquad
+ K_{\rm no}=\sin(g\tau)P_-(\phi),
+\]
+so the measured effects are precisely
+\[
+ E_{\rm click}=P_+(\phi)+[1-\epsilon]P_-(\phi),\qquad
+ E_{\rm no}=\epsilon P_-(\phi),\qquad
+ \epsilon=\sin^2(g\tau).
+\]
+The phase is selected by the physical shifter
+$S_\phi=\operatorname{diag}(1,e^{i\phi})$, for which
+$P_-(\phi)=S_\phi P_-(0)S_\phi^\dagger$.  If the leading BT phase is
+$\delta$, calibration means $\phi=\delta$.  A mismatch
+$\Delta=\delta-\phi$ gives the exact leading response
+\[
+ \langle X_2,E_{\rm click}X_2\rangle
+ =2|x_2|^2[1-\epsilon\sin^2(\Delta/2)].
+\]
+Certificate
+\par\noindent
+\texttt{REVERSE\_PHYSICS\_BT\_TWO\_ANGLE\_FINITE\_APPARATUS\_}
+\allowbreak\texttt{HAMILTONIAN\_V1}
+\par\noindent
+therefore replaces the abstract effect by a bounded finite detector
+interaction and selects both $\epsilon$ and the relative phase by apparatus
+parameters.  The device is additional physics coupled to the certified BT
+output modes.  Its coupling, duration and phase are not predicted by the
+public closed-system BT Hamiltonian, and no spacetime-local or
+continuum-angle detector has been constructed.
 
 The auxiliary preparation nevertheless has an exact scalar preimage on the
 finite covariant detector ideal.  Put

@@ -1,0 +1,199 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-two-angle-finite-apparatus-hamiltonian-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "schema_version", "certificate", "question", "answer",
+    "result_kind", "lifecycle_state", "dependency_tags", "assumptions",
+    "provenance", "apparatus_carrier", "phase_selection",
+    "finite_Hamiltonian", "derived_instrument", "phase_calibration",
+    "transported_BT_coefficients", "exact_fixture", "physical_affiliation",
+    "does_not_establish", "next_gate", "checks", "verification_commands",
+    "report"
+  ],
+  "properties": {
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-two-angle-finite-apparatus-hamiltonian-v1.schema.json"},
+    "schema_version": {"const": 1},
+    "certificate": {"const": "REVERSE_PHYSICS_BT_TWO_ANGLE_FINITE_APPARATUS_HAMILTONIAN_V1"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE"]},
+    "assumptions": {
+      "type": "array", "minItems": 7, "maxItems": 7,
+      "items": {"$ref": "#/$defs/text"}
+    },
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_commit", "retrieval_date", "inputs", "generated_by", "independent_verifier", "method"],
+      "properties": {
+        "source_commit": {"const": "d3b8acda66af6b01cabfcf84986a71d61ebac418"},
+        "retrieval_date": {"const": "2026-08-12"},
+        "inputs": {
+          "type": "array", "minItems": 5, "maxItems": 5,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["path", "sha256"],
+            "properties": {
+              "path": {"$ref": "#/$defs/text"},
+              "sha256": {"$ref": "#/$defs/hash"}
+            }
+          }
+        },
+        "generated_by": {"const": "reverse_physics/bt_two_angle_finite_apparatus_hamiltonian.py"},
+        "independent_verifier": {"const": "reverse_physics/verify_bt_two_angle_finite_apparatus_hamiltonian.py"},
+        "method": {"$ref": "#/$defs/text"}
+      }
+    },
+    "apparatus_carrier": {
+      "type": "object", "additionalProperties": false,
+      "required": ["BT_angle_basis", "pointer_basis", "angle_dimension", "pointer_dimension", "combined_dimension", "free_energy_condition", "status"],
+      "properties": {
+        "BT_angle_basis": {"const": ["|c1>", "|c2>"]},
+        "pointer_basis": {"const": ["|0>_A", "|1>_A"]},
+        "angle_dimension": {"const": 2},
+        "pointer_dimension": {"const": 2},
+        "combined_dimension": {"const": 4},
+        "free_energy_condition": {"$ref": "#/$defs/text"},
+        "status": {"const": "FINITE_EQUAL_ENERGY_BT_OUTPUT_MODES_TENSOR_DEGENERATE_POINTER"}
+      }
+    },
+    "phase_selection": {
+      "type": "object", "additionalProperties": false,
+      "required": ["z", "symmetric_mode", "antisymmetric_mode", "P_plus", "P_minus", "phase_shifter", "conjugation", "meaning", "status"],
+      "properties": {
+        "z": {"const": "exp(i*phi)"},
+        "symmetric_mode": {"$ref": "#/$defs/text"},
+        "antisymmetric_mode": {"$ref": "#/$defs/text"},
+        "P_plus": {"$ref": "#/$defs/two_matrix"},
+        "P_minus": {"$ref": "#/$defs/two_matrix"},
+        "phase_shifter": {"const": "S_phi=diag(1,exp(i*phi))"},
+        "conjugation": {"const": "P_minus(phi)=S_phi P_minus(0) S_phi^dagger"},
+        "meaning": {"$ref": "#/$defs/text"},
+        "status": {"const": "RELATIVE_ANGLE_PHASE_SELECTED_BY_APPARATUS_CONTROL"}
+      }
+    },
+    "finite_Hamiltonian": {
+      "type": "object", "additionalProperties": false,
+      "required": ["interaction", "sigma_y", "self_adjoint", "bounded_norm", "duration", "theta", "spectral_square", "unitary", "status"],
+      "properties": {
+        "interaction": {"const": "H_int=g*P_minus(phi) tensor sigma_y"},
+        "sigma_y": {"const": [["0", "-i"], ["i", "0"]]},
+        "self_adjoint": {"const": true},
+        "bounded_norm": {"const": "||H_int||=|g|"},
+        "duration": {"const": "tau"},
+        "theta": {"const": "theta=g*tau"},
+        "spectral_square": {"const": "(H_int/g)^2=P_minus(phi) tensor I_A"},
+        "unitary": {"$ref": "#/$defs/text"},
+        "status": {"const": "EXACT_BOUNDED_SELF_ADJOINT_FINITE_APPARATUS_EVOLUTION"}
+      }
+    },
+    "derived_instrument": {
+      "type": "object", "additionalProperties": false,
+      "required": ["pointer_preparation", "click_readout", "no_click_readout", "K_click", "K_no", "E_click", "E_no", "epsilon_selection", "completeness", "endpoints", "status"],
+      "properties": {
+        "pointer_preparation": {"const": "|0>_A"},
+        "click_readout": {"const": "|0>_A"},
+        "no_click_readout": {"const": "|1>_A"},
+        "K_click": {"const": "P_plus(phi)+cos(theta)*P_minus(phi)"},
+        "K_no": {"const": "sin(theta)*P_minus(phi)"},
+        "E_click": {"const": "P_plus(phi)+cos(theta)^2*P_minus(phi)=I-epsilon*P_minus(phi)"},
+        "E_no": {"const": "sin(theta)^2*P_minus(phi)=epsilon*P_minus(phi)"},
+        "epsilon_selection": {"const": "epsilon=sin(g*tau)^2"},
+        "completeness": {"const": "K_click^dagger K_click+K_no^dagger K_no=I"},
+        "endpoints": {"$ref": "#/$defs/text"},
+        "status": {"const": "EXACT_NORMALIZED_TWO_OUTCOME_HAMILTONIAN_INSTRUMENT"}
+      }
+    },
+    "phase_calibration": {
+      "type": "object", "additionalProperties": false,
+      "required": ["leading_BT_vector", "calibrated_setting", "calibrated_fixed_point", "mismatch", "leading_click_probability", "meaning", "status"],
+      "properties": {
+        "leading_BT_vector": {"const": "X2=x2*(1,exp(i*delta))"},
+        "calibrated_setting": {"const": "phi=delta"},
+        "calibrated_fixed_point": {"const": "E_click X2=X2"},
+        "mismatch": {"const": "Delta=delta-phi"},
+        "leading_click_probability": {"const": "<X2,E_click X2>=2*|x2|^2*[1-epsilon*sin(Delta/2)^2]"},
+        "meaning": {"$ref": "#/$defs/text"},
+        "status": {"const": "PHASE_SETTING_HAS_EXACT_FALSIFIABLE_RESPONSE"}
+      }
+    },
+    "transported_BT_coefficients": {
+      "type": "object", "additionalProperties": false,
+      "required": ["through_q6", "relative_q8", "reason", "absolute_q8_status", "status"],
+      "properties": {
+        "through_q6": {"$ref": "#/$defs/text"},
+        "relative_q8": {"const": "q8[apparatus]-q8[recorded]=-(epsilon/2)*||X4(c1)-exp(-i*phi)X4(c2)||^2"},
+        "reason": {"$ref": "#/$defs/text"},
+        "absolute_q8_status": {"const": "NOT_COMPUTED"},
+        "status": {"const": "Q6_AND_COMPLETE_RELATIVE_Q8_RESULTS_PHYSICALLY_REALIZED_ON_FINITE_DEVICE"}
+      }
+    },
+    "exact_fixture": {
+      "type": "object", "additionalProperties": false,
+      "required": ["phase", "cos_theta", "sin_theta", "epsilon", "P_plus", "H_int_over_g", "U_tau", "K_click", "K_no", "E_click", "E_no", "calibrated_leading_probability_for_unit_x2", "quarter_turn_mismatch_probability_for_unit_x2", "q8_fixture_X4", "q8_shift", "status"],
+      "properties": {
+        "phase": {"const": "exp(i*phi)=i"},
+        "cos_theta": {"const": "3/5"},
+        "sin_theta": {"const": "4/5"},
+        "epsilon": {"const": "16/25"},
+        "P_plus": {"$ref": "#/$defs/two_matrix"},
+        "H_int_over_g": {"$ref": "#/$defs/four_matrix"},
+        "U_tau": {"$ref": "#/$defs/four_matrix"},
+        "K_click": {"$ref": "#/$defs/two_matrix"},
+        "K_no": {"$ref": "#/$defs/two_matrix"},
+        "E_click": {"$ref": "#/$defs/two_matrix"},
+        "E_no": {"$ref": "#/$defs/two_matrix"},
+        "calibrated_leading_probability_for_unit_x2": {"const": "2"},
+        "quarter_turn_mismatch_probability_for_unit_x2": {"const": "34/25"},
+        "q8_fixture_X4": {"const": ["1+2*i", "-3+i"]},
+        "q8_shift": {"const": "-8/25"},
+        "status": {"const": "EXACT_RATIONAL_COMPLEX_HAMILTONIAN_FIXTURE"}
+      }
+    },
+    "physical_affiliation": {
+      "type": "object", "additionalProperties": false,
+      "required": ["finite_external_detector_Hamiltonian", "epsilon_and_phase_selected_by_apparatus_parameters", "coupling_to_certified_BT_output_modes", "public_closed_system_BT_Hamiltonian_prediction", "spacetime_local_detector_coupling", "continuum_angle_limit", "interpretation"],
+      "properties": {
+        "finite_external_detector_Hamiltonian": {"const": "CONSTRUCTED"},
+        "epsilon_and_phase_selected_by_apparatus_parameters": {"const": "CONSTRUCTED"},
+        "coupling_to_certified_BT_output_modes": {"const": "CONSTRUCTED_ON_REDUCED_TWO_MODE_CARRIER"},
+        "public_closed_system_BT_Hamiltonian_prediction": {"const": "NOT_ESTABLISHED"},
+        "spacetime_local_detector_coupling": {"const": "NOT_CONSTRUCTED"},
+        "continuum_angle_limit": {"const": "NOT_CONSTRUCTED"},
+        "interpretation": {"$ref": "#/$defs/text"}
+      }
+    },
+    "does_not_establish": {
+      "type": "array", "minItems": 12, "maxItems": 12,
+      "items": {"$ref": "#/$defs/text"}
+    },
+    "next_gate": {"$ref": "#/$defs/text"},
+    "checks": {
+      "type": "object", "additionalProperties": false,
+      "required": ["total", "passed", "ok", "failures", "details"],
+      "properties": {
+        "total": {"type": "integer", "minimum": 34},
+        "passed": {"type": "integer", "minimum": 34},
+        "ok": {"const": true},
+        "failures": {"const": []},
+        "details": {"type": "object", "minProperties": 34, "additionalProperties": {"const": true}}
+      }
+    },
+    "verification_commands": {
+      "type": "array", "minItems": 3, "maxItems": 3,
+      "items": {"$ref": "#/$defs/text"}
+    },
+    "report": {"const": "reverse_physics/reports/bt-two-angle-finite-apparatus-hamiltonian.md"}
+  },
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "two_row": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"$ref": "#/$defs/text"}},
+    "two_matrix": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"$ref": "#/$defs/two_row"}},
+    "four_row": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/text"}},
+    "four_matrix": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/four_row"}}
+  }
+}
