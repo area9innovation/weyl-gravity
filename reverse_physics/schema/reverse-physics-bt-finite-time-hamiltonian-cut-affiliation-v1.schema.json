@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-finite-time-hamiltonian-cut-affiliation-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["certificate", "schema_version", "dependency_tags", "lifecycle_state", "result_kind", "question", "answer", "hamiltonian_cut_kernel", "coefficient_match", "pseudo_unitary_survival_boundary", "interpretation", "assumptions", "does_not_establish", "next_gate", "provenance", "verification_commands", "checks", "report", "schema"],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_FINITE_TIME_HAMILTONIAN_CUT_AFFILIATION_V1"},
+    "schema_version": {"const": "reverse-physics-bt-finite-time-hamiltonian-cut-affiliation-v1"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"type": "string", "minLength": 1700},
+    "hamiltonian_cut_kernel": {
+      "type": "object", "additionalProperties": false,
+      "required": ["public_basis", "born_double_time", "relative_time_form", "exact_kernel", "external_internal_time_split", "status"],
+      "properties": {
+        "public_basis": {"$ref": "#/$defs/text"},
+        "born_double_time": {"const": "integral_0^T d_tau integral_0^T d_tau_prime exp(i*omega*(tau-tau_prime))"},
+        "relative_time_form": {"const": "integral_-T^T (T-|sigma|)*exp(i*omega*sigma) d_sigma"},
+        "exact_kernel": {"const": "|F_T(omega)|^2=4*sin^2(omega*T/2)/omega^2"},
+        "external_internal_time_split": {"$ref": "#/$defs/text"},
+        "status": {"const": "BT_INTERACTION_PICTURE_CUT_KERNEL_AFFILIATED"}
+      }
+    },
+    "coefficient_match": {
+      "const": {
+        "BT_cut_shell_norm": "288*pi*lambda^8*T/E",
+        "declared_detector_rate": "9*lambda^8/[1024*pi^4*kappa^4*Lx*Ly^2*Lz^2]",
+        "history_norm": "9/8",
+        "labeled_phase_coefficient": "27*lambda^8*T/(320*pi^4*E)",
+        "shell_norm": "integral_R |F_T(s/(2E))/(2E)|^2 ds=pi*T/E",
+        "status": "PREVIOUS_DETECTOR_RATE_REPRODUCED_WITHOUT_FITTED_TIME_REGULATOR",
+        "tree_density_multiplier": "256*lambda^8",
+        "window_norm": "integral_R |F_T(omega)|^2 d_omega=2*pi*T"
+      }
+    },
+    "pseudo_unitary_survival_boundary": {
+      "type": "object", "additionalProperties": false,
+      "required": ["Krein_metric", "J_unitary", "first_outcome", "complement", "conservation", "counterexample", "positive_history_dilation", "status"],
+      "properties": {
+        "Krein_metric": {"const": "J=diag(1,-1)"},
+        "J_unitary": {"$ref": "#/$defs/text"},
+        "first_outcome": {"const": "tr(U_r^sharp P U_r P)=cosh(r)^2"},
+        "complement": {"const": "tr(U_r^sharp (1-P) U_r P)=-sinh(r)^2"},
+        "conservation": {"const": "cosh(r)^2-sinh(r)^2=1"},
+        "counterexample": {"$ref": "#/$defs/text"},
+        "positive_history_dilation": {"$ref": "#/$defs/text"},
+        "status": {"const": "CUT_KERNEL_DERIVED_POSITIVE_SURVIVAL_REQUIRES_HISTORY_OR_EQ19_EMBEDDING"}
+      }
+    },
+    "interpretation": {
+      "const": {
+        "BT_Hamiltonian_positive_survival_embedding": "NOT_CONSTRUCTED",
+        "Eq19_all_orders": "NOT_PROVED",
+        "declared_detector_rate": "COEFFICIENT_COMPUTED",
+        "finite_time_shell_kernel_BT_affiliation": "DERIVED_AT_CUT_PROBABILITY_LEVEL",
+        "global_multichannel_probability": "NOT_CONSTRUCTED",
+        "positive_history_survival": "CONSTRUCTED_OPERATIONALLY"
+      }
+    },
+    "assumptions": {"type": "array", "minItems": 5, "items": {"$ref": "#/$defs/text"}},
+    "does_not_establish": {"type": "array", "minItems": 11, "items": {"$ref": "#/$defs/text"}},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_commit", "retrieval_date", "inputs", "public_source_archive_sha256", "method"],
+      "properties": {
+        "source_commit": {"const": "3a9682f7"},
+        "retrieval_date": {"const": "2026-08-12"},
+        "inputs": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "object", "additionalProperties": false, "required": ["path", "sha256"], "properties": {"path": {"$ref": "#/$defs/text"}, "sha256": {"$ref": "#/$defs/hash"}}}},
+        "public_source_archive_sha256": {"const": "6681e48614eac27e7ce766563b336c3296bbb94dd00286611672a7a1f15ec0db"},
+        "method": {"$ref": "#/$defs/text"}
+      }
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/text"}},
+    "checks": {"type": "object", "additionalProperties": false, "required": ["ok", "passed", "total", "failures", "details"], "properties": {"ok": {"const": true}, "passed": {"const": 26}, "total": {"const": 26}, "failures": {"const": []}, "details": {"type": "object", "minProperties": 26, "maxProperties": 26, "additionalProperties": {"const": true}}}},
+    "report": {"const": "reverse_physics/reports/bt-finite-time-hamiltonian-cut-affiliation.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-finite-time-hamiltonian-cut-affiliation-v1.schema.json"}
+  },
+  "$defs": {"text": {"type": "string", "minLength": 1}, "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+}

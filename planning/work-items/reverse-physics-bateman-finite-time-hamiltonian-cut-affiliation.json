@@ -1,0 +1,19 @@
+{
+  "id": "sf:program/work/reverse-physics-bateman-finite-time-hamiltonian-cut-affiliation",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "reverse-physics",
+    "state": "ACTIVE",
+    "objective": "Determine whether the finite-time sinc shell used in the physical six-point detector rate is forced by the public BT interaction-picture Hamiltonian and generalized Born trace rather than being only a kinematic regulator.",
+    "depends_on": ["REVERSE_PHYSICS_BT_THREE_PARTICLE_CHARACTERISTIC_CELL_V1", "REVERSE_PHYSICS_BT_SIX_POINT_HISTORY_INCIDENCE_ISOMETRY_V1", "Bateman--Turok arXiv:2607.00096v1 spectral Hamiltonian, generalized Born rule, and O(1,1) quartic action"],
+    "activates": ["a BT-affiliated finite-time local detector instrument", "Hamiltonian-fixed survival at the declared detector level", "the ten-channel wave-packet gluing gate"],
+    "current_gate": "Derive the amplitude-conjugate relative-time kernel after the external center-time volume is canceled by the incoming energy characteristic, match its exact Plancherel/coarea normalization to the six-point history residue, and distinguish finite-time pseudo-unitarity of a declared detector partition from a complete Moller or Eq. 19 theorem.",
+    "stop_condition": "Land an exact certificate and independent verifier that derive |F_T|^2 from the interaction-picture Born trace, recover pi*T/E and the detector rate without a fitted regulator, prove the complementary detector probability from pseudo-unitarity in the perturbative domain, and leave global domains, channel intersections, Eq. 19, gravity, and Lorentzian causal scattering fail-closed.",
+    "forbid": "no generic Fourier window called a BT derivation without the Hamiltonian/Born double-time identity; no local complement called the full virtual correction; no formal finite-time U called an asymptotic S or Moller operator; no Eq. 19, gravity, or LORENTZIAN-CAUSAL promotion",
+    "allowed_paths": ["reverse_physics/", "notes/bateman-turok-embedding.md", "paper/05-interaction-obstructions.tex", "paper/05-interaction-obstructions.pdf", "paper/06-einstein-weyl-interaction-obstructions.tex", "paper/06-einstein-weyl-interaction-obstructions.pdf", "planning/work-items/reverse-physics-bateman-finite-time-hamiltonian-cut-affiliation.json", "planning/events/"],
+    "resource_hint": "For a spectral intermediate state with omega=E_m-E_i, truncate the relative propagation duration on the amplitude and its conjugate to [0,T]. Their cut factor is integral_[0,T]^2 exp(i*omega*(tau-tau')) d_tau d_tau'=|F_T(omega)|^2=integral_[-T,T](T-|sigma|)exp(i*omega*sigma)d_sigma. The incoming energy characteristic already cancels the independent external center-time delta_1(0)=L0. Near s=2E*omega, division by (2E)^2 and ds=2E d_omega gives pi*T/E. Match the positive fixed-channel history norm 9/8 and tree density multiplier 256*lambda^8.",
+    "input_commit": "3a9682f7",
+    "stream": "reverse-physics"
+  }
+}
