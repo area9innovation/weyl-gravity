@@ -1,0 +1,168 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-tagged-connected-finite-time-interference-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "certificate", "schema_version", "dependency_tags", "lifecycle_state",
+    "result_kind", "question", "answer", "tagged_fixture_and_channels",
+    "common_positive_external_jet_carrier", "exact_tree_interference_kernel",
+    "interpretation", "assumptions", "does_not_establish",
+    "missing_object_ledger", "next_gate", "provenance",
+    "verification_commands", "checks", "report", "schema"
+  ],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_TAGGED_CONNECTED_FINITE_TIME_INTERFERENCE_V1"},
+    "schema_version": {"const": "reverse-physics-bt-tagged-connected-finite-time-interference-v1"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "tagged_fixture_and_channels": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "all_incoming_labels", "tagged_pair", "active_labels", "total_momentum",
+        "representative_masks", "channels", "R_tag_odd_masks", "N_tag_even_masks",
+        "resonant_masks", "nonresonant_classes", "status"
+      ],
+      "properties": {
+        "all_incoming_labels": {"const": ["p0", "p1", "p2", "-k0", "-k1", "-k2"]},
+        "tagged_pair": {"const": [0, 3]},
+        "active_labels": {"const": [1, 2, 4, 5]},
+        "total_momentum": {"const": ["16/5", "0", "0", "0"]},
+        "representative_masks": {"const": [7, 11, 19, 13, 21, 25, 14, 22, 26, 28]},
+        "channels": {
+          "type": "array", "minItems": 10, "maxItems": 10,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["mask", "subset", "labels", "carrier", "q", "q_squared", "delta", "D", "resonant"],
+            "properties": {
+              "mask": {"type": "integer"},
+              "subset": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "integer", "minimum": 0, "maximum": 5}},
+              "labels": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/text"}},
+              "carrier": {"enum": ["R_TAG_ODD", "N_TAG_EVEN"]},
+              "q": {"$ref": "#/$defs/fourvector"},
+              "q_squared": {"$ref": "#/$defs/text"},
+              "delta": {"$ref": "#/$defs/text"},
+              "D": {"$ref": "#/$defs/text"},
+              "resonant": {"type": "boolean"}
+            }
+          }
+        },
+        "R_tag_odd_masks": {"const": [7, 19, 21, 14, 26, 28]},
+        "N_tag_even_masks": {"const": [11, 13, 25, 22]},
+        "resonant_masks": {"const": [11, 13, 25, 22]},
+        "nonresonant_classes": {
+          "type": "array", "minItems": 3, "maxItems": 3,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["name", "masks", "delta", "D", "q_squared"],
+            "properties": {
+              "name": {"$ref": "#/$defs/text"},
+              "masks": {"type": "array", "minItems": 1, "items": {"type": "integer"}},
+              "delta": {"$ref": "#/$defs/text"},
+              "D": {"$ref": "#/$defs/text"},
+              "q_squared": {"$ref": "#/$defs/text"}
+            }
+          }
+        },
+        "status": {"const": "TEN_CHANNEL_TAGGED_FIXTURE_CLASSIFIED_EXACTLY"}
+      }
+    },
+    "common_positive_external_jet_carrier": {
+      "type": "object", "additionalProperties": false,
+      "required": ["positive_frame", "connected_coordinates", "tagged_embedding_rule", "tagged_embedding_vector", "tagged_norm", "isometry_statement", "incidence_pairing", "weight_reason", "status"],
+      "properties": {
+        "positive_frame": {"const": "U_plus=[I10;I10]/sqrt(2), with U_plus^T*eta*U_plus=I10"},
+        "connected_coordinates": {"const": "a_T=sqrt(2)*U_plus*c_T, c_T=(J-I)*beta_T/4"},
+        "tagged_embedding_rule": {"$ref": "#/$defs/text"},
+        "tagged_embedding_vector": {"const": [2, 0, 2, 0, 2, 0, 2, 0, 2, 2]},
+        "tagged_norm": {"const": "d^T*d=24"},
+        "isometry_statement": {"$ref": "#/$defs/text"},
+        "incidence_pairing": {"const": "<d,a_T>=sqrt(2)/2*(5*sum_(A in R)beta_A,T+6*sum_(A in N)beta_A,T)"},
+        "weight_reason": {"$ref": "#/$defs/text"},
+        "status": {"const": "COMMON_POSITIVE_CARRIER_AND_NORM_PRESERVING_TAGGED_EMBEDDING_CONSTRUCTED"}
+      }
+    },
+    "exact_tree_interference_kernel": {
+      "type": "object", "additionalProperties": false,
+      "required": ["finite_time_kernel", "real_kernel", "tree_phase", "four_point_coefficient", "six_point_coefficient", "reduced_pairing", "real_bracket", "restored_cross_kernel", "resonant_contribution", "strict_lower_bound", "lower_bound_proof", "small_time_slope", "large_time_limit", "classification", "status"],
+      "properties": {
+        "finite_time_kernel": {"const": "beta_A,T=F_T(delta_A)/D_A, F_T(delta)=integral_0^T exp(i*delta*tau)dt"},
+        "real_kernel": {"const": "Re(beta_A,T)=sin(delta_A*T)/(delta_A*D_A), with the continuous value T/D_A at delta_A=0"},
+        "tree_phase": {"const": "the four- and six-point trees are compared in the certified common-phase reduced-amplitude convention; that phase cancels, while M4/lambda^2=d and A6/lambda^4=16*a_T fix the displayed relative sign"},
+        "four_point_coefficient": {"const": "lambda^2*d"},
+        "six_point_coefficient": {"const": "16*lambda^4*a_T"},
+        "reduced_pairing": {"const": "<d,a_T>=sqrt(2)/2*(5*sum_R beta+6*sum_N beta)"},
+        "real_bracket": {"const": "W(T)=12*T+125*sin(16*T/5)/256+125*sin(8*T/5)/128+125*sin(2*(sqrt(17)-3)*T/5)/8"},
+        "restored_cross_kernel": {"const": "I_tree^(6)=2*Re<lambda^2*d,16*lambda^4*a_T>=16*sqrt(2)*lambda^6*W(T)"},
+        "resonant_contribution": {"const": "6*sum_(A in N)Re(beta_A,T)=12*T"},
+        "strict_lower_bound": {"const": "W(T)>=[221-50*sqrt(17)]*T/8>0 for every T>0"},
+        "lower_bound_proof": {"$ref": "#/$defs/text"},
+        "small_time_slope": {"const": "W'(0)=(-29+50*sqrt(17))/8>0"},
+        "large_time_limit": {"const": "lim_(T->infinity) W(T)/T=12"},
+        "classification": {"const": "FINITE_AT_EVERY_FINITE_T_STRICTLY_POSITIVE_AND_SECULAR"},
+        "status": {"const": "TAGGED_AND_CONNECTED_TREE_SECTORS_DO_NOT_DECOUPLE"}
+      }
+    },
+    "interpretation": {"const": {
+      "common_external_jet_carrier": "CONSTRUCTED",
+      "tagged_connected_tree_cross_kernel": "COEFFICIENT_COMPUTED",
+      "finite_time_value": "FINITE_AND_STRICTLY_POSITIVE_FOR_T_GT_ZERO",
+      "large_time_behavior": "SECULAR_WITH_COEFFICIENT_12_IN_W",
+      "tree_sector_decoupling": "FALSE",
+      "normalized_cross_stratum_packet_probability": "NOT_COMPUTED",
+      "complete_order_lambda6_probability": "NOT_COMPUTED",
+      "loop_and_survival_completion": "NOT_CONSTRUCTED",
+      "general_Eq19": "NOT_PROVED",
+      "gravity_or_BV_BRST_transfer": "NOT_CONSTRUCTED",
+      "Lorentzian_causal_claim": "NOT_ESTABLISHED"
+    }},
+    "assumptions": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"$ref": "#/$defs/text"}},
+    "does_not_establish": {"type": "array", "minItems": 13, "maxItems": 13, "items": {"$ref": "#/$defs/text"}},
+    "missing_object_ledger": {
+      "type": "array", "minItems": 4, "maxItems": 4,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["object", "status", "required_value"],
+        "properties": {"object": {"$ref": "#/$defs/text"}, "status": {"const": "MISSING"}, "required_value": {"$ref": "#/$defs/text"}}
+      }
+    },
+    "next_gate": {"$ref": "#/$defs/text"},
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_commit", "retrieval_date", "inputs", "method"],
+      "properties": {
+        "source_commit": {"const": "831031130b0f0e086ed5f4fa6ac62ff45ab45651"},
+        "retrieval_date": {"const": "2026-08-12"},
+        "inputs": {
+          "type": "array", "minItems": 9, "maxItems": 9,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["path", "sha256"],
+            "properties": {"path": {"$ref": "#/$defs/text"}, "sha256": {"$ref": "#/$defs/hash"}}
+          }
+        },
+        "method": {"$ref": "#/$defs/text"}
+      }
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/text"}},
+    "checks": {
+      "type": "object", "additionalProperties": false,
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true}, "passed": {"const": 40}, "total": {"const": 40}, "failures": {"const": []},
+        "details": {"type": "object", "minProperties": 40, "maxProperties": 40, "additionalProperties": {"const": true}}
+      }
+    },
+    "report": {"const": "reverse_physics/reports/bt-tagged-connected-finite-time-interference.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-tagged-connected-finite-time-interference-v1.schema.json"}
+  },
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "fourvector": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/text"}}
+  }
+}
