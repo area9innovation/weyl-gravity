@@ -3466,6 +3466,34 @@ therefore sharpens the tagged remainder to order $\lambda^6$ for the
 covariantly dressed packet family.  It does not determine that even-order
 coefficient: the tree cross, active loop, second-order source/detector and
 survival terms remain to be assembled.
+On the selected covariantly pulled experiment the order-$\lambda^6$ ledger is
+in fact smaller.  With fixed odd three-particle BT projectors, total Fock
+parity gives $P_{\rm out}T_3P_{\rm in}=0$.  Exhaustive tagged support then
+gives
+\[
+ T_4=C_{4,\rm tree}+I_s\otimes L_{4,\rm active\ loop}
+ +S_{2,s}\otimes A_{2,\rm active\ tree},
+\]
+and hence
+\[
+ q_{\rm tag}^{(6)}=2\Re\langle T_2,C_{4,\rm tree}\rangle_K
+ +2\Re\langle T_2,I_s\otimes L_{4,\rm active\ loop}\rangle_K
+ +2\Re\langle T_2,S_{2,s}\otimes A_{2,\rm active\ tree}\rangle_K.
+\]
+Certificate
+\par\noindent
+\texttt{REVERSE\_PHYSICS\_BT\_TAGGED\_PACKET\_}
+\allowbreak\texttt{LAMBDA6\_OBJECT\_LEDGER\_V1}
+\par\noindent
+classifies these as the only three summands.  The last term is the
+renormalized order-two spectator self-energy, including its counterterms,
+times the active tree.  Nonforward support removes pure survival but not this
+dressed-spectator transition.  Pulling source and effect together by the same coefficientwise
+two-sided $R_t$ leaves the finite trace invariant, so separate source and
+detector dressing terms would double count a similarity transformation.  The
+tree term is known; the renormalized active four-point one-loop and spectator
+two-point compact-packet kernels are missing.  The hard logarithm constrains
+the former's scale derivative but supplies neither finite-time packet kernel.
 
 The auxiliary preparation nevertheless has an exact scalar preimage on the
 finite covariant detector ideal.  Put

@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-tagged-packet-lambda6-object-ledger-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["certificate", "schema_version", "dependency_tags", "lifecycle_state", "result_kind", "question", "answer", "fixed_BT_expansion", "probability_ledger", "selected_scalar_transfer", "active_loop_boundary_condition", "interpretation", "assumptions", "does_not_establish", "missing_object_ledger", "next_gate", "provenance", "verification_commands", "checks", "report", "schema"],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_TAGGED_PACKET_LAMBDA6_OBJECT_LEDGER_V1"},
+    "schema_version": {"const": "reverse-physics-bt-tagged-packet-lambda6-object-ledger-v1"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "fixed_BT_expansion": {
+      "type": "object", "additionalProperties": false,
+      "required": ["block", "projectors", "order_three_parity", "order_three_block", "order_four_support", "C4_tree", "L4_active_loop", "S2_spectator_A2_active_tree", "other_order_four_support", "status"],
+      "properties": {
+        "block": {"$ref": "#/$defs/text"}, "projectors": {"$ref": "#/$defs/text"},
+        "order_three_parity": {"const": "Pi_F*T3*Pi_F=-T3"},
+        "order_three_block": {"const": "Pout*T3*Pin=0"},
+        "order_four_support": {"const": "T4=C4_tree+I_spectator tensor L4_active_loop+S2_spectator tensor A2_active_tree"},
+        "C4_tree": {"$ref": "#/$defs/text"}, "L4_active_loop": {"$ref": "#/$defs/text"},
+        "S2_spectator_A2_active_tree": {"$ref": "#/$defs/text"},
+        "other_order_four_support": {"$ref": "#/$defs/text"},
+        "status": {"const": "FIXED_BT_TAGGED_BLOCK_CLASSIFIED_THROUGH_AMPLITUDE_ORDER_LAMBDA4"}
+      }
+    },
+    "probability_ledger": {
+      "type": "object", "additionalProperties": false,
+      "required": ["q4", "q5", "q6_formula", "tree_cross_status", "tree_cross", "active_loop_status", "spectator_self_energy_status", "T3_norm_term", "survival_term", "source_detector_terms", "complete_q6_status"],
+      "properties": {
+        "q4": {"$ref": "#/$defs/text"}, "q5": {"const": "q_tag^(5)=0"},
+        "q6_formula": {"const": "q_tag^(6)=2*Re<T2,C4_tree>+2*Re<T2,I_spectator tensor L4_active_loop>+2*Re<T2,S2_spectator tensor A2_active_tree>"},
+        "tree_cross_status": {"const": "COEFFICIENT_COMPUTED_AS_COMPACT_PACKET_FUNCTIONAL"},
+        "tree_cross": {"$ref": "#/$defs/text"},
+        "active_loop_status": {"const": "MISSING_ON_THE_COMMON_FINITE_TIME_COMPACT_PACKET_CARRIER"},
+        "spectator_self_energy_status": {"const": "MISSING_ON_THE_COMMON_FINITE_TIME_COMPACT_PACKET_CARRIER"},
+        "T3_norm_term": {"const": "ABSENT because the fixed BT three-particle block T3 is zero"},
+        "survival_term": {"const": "PURE_FORWARD_TERM_ABSENT because Pout*Pin=0 in the active nonforward factor; spectator self-energy times active scattering remains"},
+        "source_detector_terms": {"const": "NOT_SEPARATE_SUMMANDS for the covariantly pulled selected scalar experiment"},
+        "complete_q6_status": {"const": "CLASSIFIED_NOT_COMPUTED"}
+      }
+    },
+    "selected_scalar_transfer": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source", "effect", "two_sided_identity", "trace_identity", "compact_extension", "consequence", "scope", "status"],
+      "properties": {
+        "source": {"$ref": "#/$defs/text"}, "effect": {"$ref": "#/$defs/text"},
+        "two_sided_identity": {"$ref": "#/$defs/text"}, "trace_identity": {"$ref": "#/$defs/text"},
+        "compact_extension": {"$ref": "#/$defs/text"}, "consequence": {"$ref": "#/$defs/text"},
+        "scope": {"$ref": "#/$defs/text"},
+        "status": {"const": "SELECTED_SCALAR_Q6_LEDGER_IDENTICAL_TO_FIXED_BT_LEDGER_FORMALLY"}
+      }
+    },
+    "active_loop_boundary_condition": {
+      "type": "object", "additionalProperties": false,
+      "required": ["known_object", "general_density", "tagged_invariants", "tagged_log_sum", "tagged_central_click_log", "use", "does_not_supply", "status"],
+      "properties": {
+        "known_object": {"$ref": "#/$defs/text"}, "general_density": {"$ref": "#/$defs/text"},
+        "tagged_invariants": {"$ref": "#/$defs/text"}, "tagged_log_sum": {"$ref": "#/$defs/text"},
+        "tagged_central_click_log": {"const": "125*lambda^6*DeltaOmega*log_sum/(16384*pi^4*kappa^2*Area)"},
+        "use": {"$ref": "#/$defs/text"}, "does_not_supply": {"$ref": "#/$defs/text"},
+        "status": {"const": "PARTIAL_BOUNDARY_DATA_ONLY"}
+      }
+    },
+    "interpretation": {
+      "const": {
+        "complete_lambda6_object_ledger": "CLASSIFIED", "compact_tree_cross": "COEFFICIENT_COMPUTED",
+        "active_four_point_one_loop_packet_kernel": "MISSING",
+        "spectator_self_energy_times_active_tree": "MISSING",
+        "independent_source_detector_q6_summands": "NO_FOR_THE_SELECTED_COVARIANT_PULLBACK",
+        "pure_survival_q6_summand": "ABSENT_ON_ACTIVE_NONFORWARD_SUPPORT",
+        "complete_order_lambda6_probability": "NOT_COMPUTED", "general_Eq19": "NOT_PROVED",
+        "gravity_or_BV_BRST_transfer": "NOT_CONSTRUCTED", "Lorentzian_causal_claim": "NOT_ESTABLISHED"
+      }
+    },
+    "assumptions": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"$ref": "#/$defs/text"}},
+    "does_not_establish": {"type": "array", "minItems": 14, "maxItems": 14, "items": {"$ref": "#/$defs/text"}},
+    "missing_object_ledger": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"type": "object", "additionalProperties": false, "required": ["object", "status", "required_value"], "properties": {"object": {"$ref": "#/$defs/text"}, "status": {"const": "MISSING"}, "required_value": {"$ref": "#/$defs/text"}}}},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "provenance": {"type": "object", "additionalProperties": false, "required": ["source_commit", "retrieval_date", "inputs", "method"], "properties": {"source_commit": {"const": "cb9ec7cb"}, "retrieval_date": {"const": "2026-08-12"}, "inputs": {"type": "array", "minItems": 8, "maxItems": 8, "items": {"type": "object", "additionalProperties": false, "required": ["path", "sha256"], "properties": {"path": {"$ref": "#/$defs/text"}, "sha256": {"$ref": "#/$defs/hash"}}}}, "method": {"$ref": "#/$defs/text"}}},
+    "verification_commands": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/text"}},
+    "checks": {"type": "object", "additionalProperties": false, "required": ["ok", "passed", "total", "failures", "details"], "properties": {"ok": {"const": true}, "passed": {"const": 26}, "total": {"const": 26}, "failures": {"const": []}, "details": {"type": "object", "minProperties": 26, "maxProperties": 26, "additionalProperties": {"const": true}}}},
+    "report": {"const": "reverse_physics/reports/bt-tagged-packet-lambda6-object-ledger.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-tagged-packet-lambda6-object-ledger-v1.schema.json"}
+  },
+  "$defs": {"text": {"type": "string", "minLength": 1}, "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+}
