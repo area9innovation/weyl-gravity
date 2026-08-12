@@ -1,0 +1,277 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-crossed-six-point-kallen-obstruction-v1.schema.json",
+  "title": "BT crossed six-point Kallen obstruction certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "certificate",
+    "schema_version",
+    "dependency_tags",
+    "lifecycle_state",
+    "result_kind",
+    "question",
+    "answer",
+    "analytic_spacelike_crossing",
+    "crossed_two_species_quotient",
+    "bilateral_kallen_resolution",
+    "history_disposition",
+    "disposition",
+    "assumptions",
+    "does_not_establish",
+    "next_gate",
+    "provenance",
+    "verification_commands",
+    "checks",
+    "report",
+    "schema"
+  ],
+  "properties": {
+    "certificate": {
+      "const": "REVERSE_PHYSICS_BT_CROSSED_SIX_POINT_KALLEN_OBSTRUCTION_V1"
+    },
+    "schema_version": {
+      "const": "reverse-physics-bt-crossed-six-point-kallen-obstruction-v1"
+    },
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]
+    },
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "result_kind": {"type": "string", "minLength": 1},
+    "question": {"type": "string", "minLength": 1},
+    "answer": {"type": "string", "minLength": 1},
+    "analytic_spacelike_crossing": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "continuation",
+        "physical_scope",
+        "kallen_polynomial",
+        "kallen_root",
+        "continued_q",
+        "positive_q_cross",
+        "continued_nonzero_quotient_eigenvalue",
+        "external_delta_prime_sign",
+        "sign_reason",
+        "first_crossed_pair_rho",
+        "first_pair_boundary"
+      ],
+      "properties": {
+        "continuation": {"const": "w=tau1/a0 -> -x with x>0"},
+        "physical_scope": {"type": "string", "minLength": 1},
+        "kallen_polynomial": {"type": "string", "minLength": 1},
+        "kallen_root": {"type": "string", "minLength": 1},
+        "continued_q": {"type": "string", "minLength": 1},
+        "positive_q_cross": {"type": "string", "minLength": 1},
+        "continued_nonzero_quotient_eigenvalue": {"type": "string", "minLength": 1},
+        "external_delta_prime_sign": {"const": 1},
+        "sign_reason": {"type": "string", "minLength": 1},
+        "first_crossed_pair_rho": {"type": "string", "minLength": 1},
+        "first_pair_boundary": {"type": "string", "minLength": 1}
+      }
+    },
+    "crossed_two_species_quotient": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "parent_profile_metric",
+        "image_basis",
+        "kernel_basis",
+        "image_raw_gram",
+        "kernel_raw_gram",
+        "kernel_image_pairing",
+        "fixed_profile_swap_hilbertized_gram",
+        "branch_flipped_hilbertized_gram",
+        "collapse_on_image",
+        "collapse_on_kernel",
+        "inertia_with_certified_sharp",
+        "inertia_after_branch_flip",
+        "no_isometry_theorem",
+        "branch_flip_boundary"
+      ],
+      "properties": {
+        "parent_profile_metric": {"$ref": "#/$defs/string_matrix"},
+        "image_basis": {"$ref": "#/$defs/string_matrix"},
+        "kernel_basis": {"$ref": "#/$defs/string_matrix"},
+        "image_raw_gram": {"$ref": "#/$defs/string_matrix"},
+        "kernel_raw_gram": {"$ref": "#/$defs/string_matrix"},
+        "kernel_image_pairing": {"const": "zero"},
+        "fixed_profile_swap_hilbertized_gram": {"$ref": "#/$defs/string_matrix"},
+        "branch_flipped_hilbertized_gram": {"$ref": "#/$defs/string_matrix"},
+        "collapse_on_image": {"$ref": "#/$defs/string_matrix"},
+        "collapse_on_kernel": {"const": "R*D*N_minus=0"},
+        "inertia_with_certified_sharp": {"const": [0, 2, 0]},
+        "inertia_after_branch_flip": {"const": [2, 0, 0]},
+        "no_isometry_theorem": {"type": "string", "minLength": 1},
+        "branch_flip_boundary": {"type": "string", "minLength": 1}
+      }
+    },
+    "bilateral_kallen_resolution": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "crossed_measure",
+        "absolute_conditional_gram",
+        "density",
+        "definition",
+        "exchange",
+        "exchange_fixed_reference",
+        "infinity_asymptote",
+        "unequal_zero_asymptote",
+        "equal_zero_asymptote",
+        "range",
+        "rationalization",
+        "primitive",
+        "primitive_identity",
+        "direct_integral_unitary_after_branch_flip",
+        "unilateral_embedding",
+        "dilation_boundary"
+      ],
+      "properties": {
+        "crossed_measure": {"const": "dmu_x=Delta_x*dx/x"},
+        "absolute_conditional_gram": {"const": "lambda_x=a2*q_x"},
+        "density": {"type": "string", "minLength": 1},
+        "definition": {"const": "d sigma_x=q_x*Delta_x*dx/[(1+r)*x]"},
+        "exchange": {"type": "string", "minLength": 1},
+        "exchange_fixed_reference": {"const": "x0=sqrt(r)"},
+        "infinity_asymptote": {"type": "string", "minLength": 1},
+        "unequal_zero_asymptote": {"type": "string", "minLength": 1},
+        "equal_zero_asymptote": {"type": "string", "minLength": 1},
+        "range": {"type": "string", "minLength": 1},
+        "rationalization": {"type": "string", "minLength": 1},
+        "primitive": {"type": "string", "minLength": 1},
+        "primitive_identity": {"type": "string", "minLength": 1},
+        "direct_integral_unitary_after_branch_flip": {"type": "string", "minLength": 1},
+        "unilateral_embedding": {"type": "string", "minLength": 1},
+        "dilation_boundary": {"type": "string", "minLength": 1}
+      }
+    },
+    "history_disposition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "edge_marks",
+        "reversed_history_count",
+        "uniformity",
+        "status",
+        "what_would_repair"
+      ],
+      "properties": {
+        "edge_marks": {"const": [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]},
+        "reversed_history_count": {"const": 12},
+        "uniformity": {"type": "string", "minLength": 1},
+        "status": {
+          "const": "ALL_TWELVE_ONE_BRANCH_CROSSED_INTERTWINERS_OBSTRUCTED_BY_THE_SAME_RANK_TWO_SIGN"
+        },
+        "what_would_repair": {"type": "string", "minLength": 1}
+      }
+    },
+    "disposition": {
+      "const": {
+        "spacelike_crossed_kallen_sheet": "CONSTRUCTED_EXACTLY",
+        "crossed_two_species_signed_quotient": "CONSTRUCTED_EXACTLY",
+        "positive_isometry_with_certified_sharp": "EXACTLY_OBSTRUCTED",
+        "twelve_reversed_HP_chambers_on_current_carrier": "NOT_PHYSICALLY_AFFILIATED",
+        "branch_flipped_bilateral_dilation": "CONSTRUCTED_CONDITIONALLY",
+        "crossed_branch_sign_from_BT_dynamics": "NOT_DERIVED",
+        "complete_crossed_six_point_probability": "NOT_COMPUTED",
+        "Eq19_all_orders": "NOT_PROVED",
+        "spacetime_Moller_LSZ_S_operator": "NOT_CONSTRUCTED"
+      }
+    },
+    "assumptions": {
+      "type": "array",
+      "minItems": 5,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "does_not_establish": {
+      "type": "array",
+      "minItems": 13,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "next_gate": {"type": "string", "minLength": 1},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_commit",
+        "retrieval_date",
+        "inputs",
+        "producer_method",
+        "primary_source"
+      ],
+      "properties": {
+        "source_commit": {"const": "ffe3f87ef1f913b401fdd046afd7e56086a516fd"},
+        "retrieval_date": {"const": "2026-08-12"},
+        "inputs": {
+          "type": "array",
+          "minItems": 5,
+          "maxItems": 5,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["path", "sha256"],
+            "properties": {
+              "path": {"type": "string", "minLength": 1},
+              "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+            }
+          }
+        },
+        "producer_method": {"type": "string", "minLength": 1},
+        "primary_source": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["source", "url", "equations"],
+          "properties": {
+            "source": {"type": "string", "minLength": 1},
+            "url": {"type": "string", "minLength": 1},
+            "equations": {
+              "type": "array",
+              "minItems": 1,
+              "items": {"type": "string", "minLength": 1}
+            }
+          }
+        }
+      }
+    },
+    "verification_commands": {
+      "type": "array",
+      "minItems": 3,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"const": 30},
+        "total": {"const": 30},
+        "failures": {"const": []},
+        "details": {
+          "type": "object",
+          "minProperties": 30,
+          "maxProperties": 30,
+          "additionalProperties": {"const": true}
+        }
+      }
+    },
+    "report": {
+      "const": "reverse_physics/reports/bt-crossed-six-point-kallen-obstruction.md"
+    },
+    "schema": {
+      "const": "reverse_physics/schema/reverse-physics-bt-crossed-six-point-kallen-obstruction-v1.schema.json"
+    }
+  },
+  "$defs": {
+    "string_matrix": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "array",
+        "minItems": 1,
+        "items": {"type": "string"}
+      }
+    }
+  }
+}

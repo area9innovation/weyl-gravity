@@ -1,0 +1,308 @@
+{
+  "analytic_spacelike_crossing": {
+    "continuation": "w=tau1/a0 -> -x with x>0",
+    "continued_nonzero_quotient_eigenvalue": "-a2*(r**2 + 2*r*x - 2*r + 2*x + 1)/(2*x**2)",
+    "continued_q": "-(r**2 + 2*r*x - 2*r + 2*x + 1)/(2*x**2)",
+    "external_delta_prime_sign": 1,
+    "first_crossed_pair_rho": "(r - 1)**2*(r**2 + 2*r*x - 2*r + 2*x + 1)/(4*x**3)",
+    "first_pair_boundary": "The unequal-regulator first crossed pair remains positive. The obstruction first appears in the second parent/profile quotient orientation.",
+    "kallen_polynomial": "r**2 + 2*r*x - 2*r + x**2 + 2*x + 1",
+    "kallen_root": "sqrt(r**2 + 2*r*x - 2*r + x**2 + 2*x + 1)",
+    "physical_scope": "massless crossed pair spacelike sheet; the timelike pseudothreshold sliver for unequal regulators is not included",
+    "positive_q_cross": "(r**2 + 2*r*x - 2*r + 2*x + 1)/(2*x**2)",
+    "sign_reason": "There remain six external delta-prime measures. Momentum crossing changes the analytic invariant sheet but does not change this even derivative count."
+  },
+  "answer": "No on the present one-branch positive carrier. Continue the inner invariant w=tau1/a0 to w=-x<0. Then Delta_x^2=x^2+2(1+r)x+(1-r)^2 and q becomes -q_x, where q_x=[2x(1+r)+(1-r)^2]/(2x^2)>0. The complete four-component quotient identities survive analytic continuation, but the nonzero raised eigenvalue becomes -a2*q_x and the certified profile-swap Hilbertization is -3*a2*q_x*I2: a rank-two negative form. The six external delta-prime parity remains even, so no sign is supplied by the already certified Born normalization. Hence no isometry from the positive HP reversed chamber can preserve this fixed sharp, uniformly for all twelve histories. Taking the opposite profile fundamental symmetry makes the form positive, but that is new crossed-branch data rather than a consequence of the vacuum map. Its absolute Kallen density q_x*Delta_x*dx/[(1+r)x] is positive, exchange invariant, behaves as dx/x at infinity, and has infinite length at x=0 as well. With the exchange-fixed reference x0=sqrt(r), its cumulative coordinate maps the whole spacelike ray bijectively to R. Thus the repaired translation carrier is bilateral L2(R), the minimal unitary dilation of a unilateral reversed-gap shift, rather than another vacuum half-line. This supplies an exact architecture if a crossed adjoint sign or conjugate detector branch is derived, but it does not supply that physical sign. The first crossed six-point gate is therefore obstructed on the current positive quotient and sharpened to one missing datum: a BT-derived incoming crossed branch whose sharp reverses the rank-two orientation, or a complete crossed detector recombination that cancels it.",
+  "assumptions": [
+    "The calculation uses standard scalar all-incoming analytic crossing of the certified rational six-point quotient to the massless spacelike sheet w=-x<0. It does not cover the positive timelike pseudothreshold sliver that exists only for unequal regulators.",
+    "The certified parent/profile metric and profile-swap fundamental symmetry are held fixed for the no-isometry theorem. A kinematic branch flip is recorded separately and is not silently called physical data.",
+    "The complete six-point external derivative count remains six. No extra sign is inserted merely because one momentum is analytically crossed.",
+    "External-label covariance is used only to propagate the same crossed algebra to twelve histories; it is not used to identify crossed chronology with the vacuum chamber.",
+    "The bilateral direct-integral statement concerns the absolute crossed Gram after a declared branch flip. It supplies an operator architecture, not a generalized-Born trace or BT asymptotic dynamics."
+  ],
+  "bilateral_kallen_resolution": {
+    "absolute_conditional_gram": "lambda_x=a2*q_x",
+    "crossed_measure": "dmu_x=Delta_x*dx/x",
+    "definition": "d sigma_x=q_x*Delta_x*dx/[(1+r)*x]",
+    "density": "(r**2 + 2*r*x - 2*r + 2*x + 1)*sqrt(r**2 + 2*r*x - 2*r + x**2 + 2*x + 1)/(2*x**3*(r + 1))",
+    "dilation_boundary": "The dilation is exact only after the unproved branch-sign repair. It is not itself the missing BT crossed intertwiner.",
+    "direct_integral_unitary_after_branch_flip": "B_x:L2(R,d sigma) tensor C2 -> integral_(x>0) Ran(E_x)dmu_x, (B_x f)(x)=sqrt[q_x/(1+r)] E_x f(sigma_x(x)), with E_x normalized using the branch-flipped positive form",
+    "equal_zero_asymptote": "lim_(x->0+) x^(3/2)*d sigma_1/dx=2",
+    "exchange": "sigma_(1/r)(x/r)=sigma_r(x) when both use x0=sqrt(r)",
+    "exchange_fixed_reference": "x0=sqrt(r)",
+    "infinity_asymptote": "lim_(x->infinity) x*d sigma_x/dx=1",
+    "primitive": "m**2*(m**2 - 1)/((-m + z)**2*(4*m**2 + 4)) + m*(3*m**2 + 2)/((-m + z)*(2*m**2 + 2)) - (m**2 - 1)/((4*m**2 + 4)*(m*z - 1)**2) - log(z) + (2*m**2 + 3)/((2*m**2 + 2)*(m*z - 1)) + (m**4 + m**2 + 1)*log((-m*z + 1)/(m - z))/((m**2 - 1)*(m**2 + 1))",
+    "primitive_identity": "dF_m/dz=(d sigma_x/dx)(dx/dz) exactly",
+    "range": "sigma_r maps x in (0,infinity) continuously and strictly increasingly onto the whole real line",
+    "rationalization": "r=m^2, x=m(z+z^-1)-(1+m^2), 0<z<m for 0<m<1",
+    "unequal_zero_asymptote": "lim_(x->0+) x^3*d sigma_x/dx=|1-r|^3/[2(1+r)]",
+    "unilateral_embedding": "Zero extension j:L2(R_+) -> L2(R) on sigma>=0 obeys T_b j=j S_b for b>=0. Bilateral translations T_b form the minimal unitary dilation because translates of jL2(R_+) span L2(R)."
+  },
+  "certificate": "REVERSE_PHYSICS_BT_CROSSED_SIX_POINT_KALLEN_OBSTRUCTION_V1",
+  "checks": {
+    "details": {
+      "absolute_density_diverges_at_equal_zero": true,
+      "absolute_density_diverges_at_unequal_zero": true,
+      "absolute_density_has_unit_log_infinity": true,
+      "all_twelve_reversed_histories_share_obstruction": true,
+      "analytic_continuation_has_q_minus_qcross": true,
+      "branch_flip_hilbertizes_positive": true,
+      "branch_flip_is_not_imported_as_physical_data": true,
+      "collapse_image_keeps_negative_scalar": true,
+      "collapse_kernel_remains_zero": true,
+      "continued_quotient_eigenvalue_is_negative": true,
+      "crossed_cumulative_range_is_bilateral": true,
+      "crossed_kallen_is_positive_sum": true,
+      "crossed_measure_is_positive": true,
+      "crossed_primitive_is_exact": true,
+      "crossed_q_is_strictly_positive": true,
+      "daughter_exchange_density_invariant": true,
+      "daughter_exchange_kallen_scaling": true,
+      "daughter_exchange_q_invariant": true,
+      "first_crossed_pair_is_positive_away_from_equal_regulators": true,
+      "fixed_hilbertization_is_negative_rank_two": true,
+      "fixed_probe_norm_is_negative": true,
+      "flipped_probe_norm_is_positive": true,
+      "geometric_reference_is_exchange_fixed": true,
+      "image_gram_has_negative_orientation": true,
+      "input_hashes_pinned": true,
+      "kernel_gram_has_opposite_orientation": true,
+      "kernel_image_remain_orthogonal": true,
+      "positive_hp_isometry_is_obstructed": true,
+      "predecessor_checks_pass": true,
+      "six_external_delta_prime_parity_stays_even": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 30,
+    "total": 30
+  },
+  "crossed_two_species_quotient": {
+    "branch_flip_boundary": "Replacing the profile fundamental symmetry J by -J changes the target norm to +3*a2*q_x*I2. This constructs a conditional positive branch but is not the certified physical sharp and is not derived from the public BT R_t or Eq. (19).",
+    "branch_flipped_hilbertized_gram": [
+      [
+        "3*a2*(r**2 + 2*r*x - 2*r + 2*x + 1)/(2*x**2)",
+        "0"
+      ],
+      [
+        "0",
+        "3*a2*(r**2 + 2*r*x - 2*r + 2*x + 1)/(2*x**2)"
+      ]
+    ],
+    "collapse_on_image": [
+      [
+        "-a2*(r**2 + 2*r*x - 2*r + 2*x + 1)/(2*x**2)",
+        "0"
+      ],
+      [
+        "0",
+        "-a2*(r**2 + 2*r*x - 2*r + 2*x + 1)/(2*x**2)"
+      ]
+    ],
+    "collapse_on_kernel": "R*D*N_minus=0",
+    "fixed_profile_swap_hilbertized_gram": [
+      [
+        "-3*a2*(r**2 + 2*r*x - 2*r + 2*x + 1)/(2*x**2)",
+        "0"
+      ],
+      [
+        "0",
+        "-3*a2*(r**2 + 2*r*x - 2*r + 2*x + 1)/(2*x**2)"
+      ]
+    ],
+    "image_basis": [
+      [
+        "a2/2",
+        "0"
+      ],
+      [
+        "0",
+        "a2/2"
+      ],
+      [
+        "-(r**2 + 2*r*x - 2*r + 2*x + 1)/(2*x**2)",
+        "0"
+      ],
+      [
+        "0",
+        "-(r**2 + 2*r*x - 2*r + 2*x + 1)/(2*x**2)"
+      ]
+    ],
+    "image_raw_gram": [
+      [
+        "0",
+        "-3*a2*(r**2 + 2*r*x - 2*r + 2*x + 1)/(2*x**2)"
+      ],
+      [
+        "-3*a2*(r**2 + 2*r*x - 2*r + 2*x + 1)/(2*x**2)",
+        "0"
+      ]
+    ],
+    "inertia_after_branch_flip": [
+      2,
+      0,
+      0
+    ],
+    "inertia_with_certified_sharp": [
+      0,
+      2,
+      0
+    ],
+    "kernel_basis": [
+      [
+        "a2/2",
+        "0"
+      ],
+      [
+        "0",
+        "a2/2"
+      ],
+      [
+        "(r**2 + 2*r*x - 2*r + 2*x + 1)/(2*x**2)",
+        "0"
+      ],
+      [
+        "0",
+        "(r**2 + 2*r*x - 2*r + 2*x + 1)/(2*x**2)"
+      ]
+    ],
+    "kernel_image_pairing": "zero",
+    "kernel_raw_gram": [
+      [
+        "0",
+        "3*a2*(r**2 + 2*r*x - 2*r + 2*x + 1)/(2*x**2)"
+      ],
+      [
+        "3*a2*(r**2 + 2*r*x - 2*r + 2*x + 1)/(2*x**2)",
+        "0"
+      ]
+    ],
+    "no_isometry_theorem": "For every nonzero two-species vector c, the fixed target norm is -3*a2*q_x*(c^*c)<0, whereas the HP reversed chamber norm is c^*c>0. Therefore B^sharp B=I has no solution into this rank-two image.",
+    "parent_profile_metric": [
+      [
+        "0",
+        "0",
+        "0",
+        "3"
+      ],
+      [
+        "0",
+        "0",
+        "3",
+        "0"
+      ],
+      [
+        "0",
+        "3",
+        "0",
+        "0"
+      ],
+      [
+        "3",
+        "0",
+        "0",
+        "0"
+      ]
+    ]
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "disposition": {
+    "Eq19_all_orders": "NOT_PROVED",
+    "branch_flipped_bilateral_dilation": "CONSTRUCTED_CONDITIONALLY",
+    "complete_crossed_six_point_probability": "NOT_COMPUTED",
+    "crossed_branch_sign_from_BT_dynamics": "NOT_DERIVED",
+    "crossed_two_species_signed_quotient": "CONSTRUCTED_EXACTLY",
+    "positive_isometry_with_certified_sharp": "EXACTLY_OBSTRUCTED",
+    "spacelike_crossed_kallen_sheet": "CONSTRUCTED_EXACTLY",
+    "spacetime_Moller_LSZ_S_operator": "NOT_CONSTRUCTED",
+    "twelve_reversed_HP_chambers_on_current_carrier": "NOT_PHYSICALLY_AFFILIATED"
+  },
+  "does_not_establish": [
+    "a positive physical crossed six-point probability",
+    "nonexistence of a crossed intertwiner after adding a conjugate detector branch or complete channel recombination",
+    "the timelike unequal-regulator pseudothreshold chart",
+    "physical derivation of the branch-flipped fundamental symmetry",
+    "affiliation of the twelve reversed chambers with the public R_t map",
+    "the 300 crossed seven-point sheets or spectator sectors",
+    "a complete incoming/outgoing Moller, LSZ, or S operator",
+    "Bateman--Turok Eq. (19)",
+    "positivity beyond tree level or a KLN theorem",
+    "a metric or BRST lift to Weyl gravity",
+    "anything LORENTZIAN-CAUSAL",
+    "a new physical or spacetime dimension",
+    "literature priority"
+  ],
+  "history_disposition": {
+    "edge_marks": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "reversed_history_count": 12,
+    "status": "ALL_TWELVE_ONE_BRANCH_CROSSED_INTERTWINERS_OBSTRUCTED_BY_THE_SAME_RANK_TWO_SIGN",
+    "uniformity": "External-label permutation gives the same analytically continued quotient and negative inertia on all twelve histories once the spacelike crossed chart is declared.",
+    "what_would_repair": "A BT-derived incoming crossed adjoint sign, a conjugate detector branch with the opposite profile sharp, or a complete crossed-channel recombination whose pre-trace Gram is positive."
+  },
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "Compute the complete crossed 3->3 detector block, not only the analytically continued nested subquotient. Retain both orientations of the crossed leg, the timelike pseudothreshold boundary before the regulator is removed, and every pre-trace interference term. The decisive test is whether the conjugate orientation supplies exactly the missing sign and yields a positive rank-two recombined Gram on the fixed BT sharp. A pass would instantiate the conditional bilateral Kallen dilation and physically affiliate the twelve reversed chambers; a failure would turn the present one-branch obstruction into a complete crossed-channel no-go. Eq. (19), spectators, seven-point crossed sheets and spacetime LSZ remain later gates.",
+  "provenance": {
+    "inputs": [
+      {
+        "path": "planning/work-items/reverse-physics-bateman-crossed-six-point-kallen-obstruction.json",
+        "sha256": "57f842e1f014718bb9e3c1bf0c88dc6133dc638ad1f0bf04ca69481b85c8bf16"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_PHYSICAL_COLLINEAR_OPERATOR_FACTORIZATION_V1.json",
+        "sha256": "d0f8786c62e24e37c198f4a286aa2e3b718f13decf5352d811cf554d485ed79e"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_SIX_POINT_PROFILE_QUOTIENT_COMPLETION_V1.json",
+        "sha256": "fc98bc7f779a9b62325f153c8e09b411e1aeeaad1f0871be411c4485be25d3c8"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_SIX_POINT_NESTED_CONTINUUM_INTERTWINER_V1.json",
+        "sha256": "52fd25da2188ce0546014fbfb88cb1ebdc40f4438f362b0669519ba931e5c3d8"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_CROSSED_ORDER_CHAMBER_COMPLETION_V1.json",
+        "sha256": "811231e02063afb03acd1d40f687f23c02f57fa58986bb1ce9f07122a46c6fe5"
+      }
+    ],
+    "primary_source": {
+      "equations": [
+        "Eq. (6)",
+        "Eq. (13)",
+        "Eq. (18)",
+        "Eq. (19)",
+        "Appendix B Eqs. (24)-(25)"
+      ],
+      "source": "Bateman--Turok arXiv:2607.00096v1",
+      "url": "https://arxiv.org/abs/2607.00096v1"
+    },
+    "producer_method": "Exact SymPy continuation of the certified four-component six-point quotient to w=-x, exact inertia and collapse identities, exact Kallen exchange and endpoint limits, and a hand-integrated rationalized primitive. No floating-point arithmetic and no absolute-value sign replacement enter the obstruction.",
+    "retrieval_date": "2026-08-12",
+    "source_commit": "ffe3f87ef1f913b401fdd046afd7e56086a516fd"
+  },
+  "question": "Does the standard spacelike analytic crossing of the certified six-point Kallen quotient give a physical isometry from each positive reversed HP chamber while retaining the certified two-species sharp, or what exact additional branch data are required?",
+  "report": "reverse_physics/reports/bt-crossed-six-point-kallen-obstruction.md",
+  "result_kind": "exact analytic spacelike crossing, signed quotient-inertia obstruction, and conditional bilateral Kallen dilation for the twelve reversed six-point HP chambers",
+  "schema": "reverse_physics/schema/reverse-physics-bt-crossed-six-point-kallen-obstruction-v1.schema.json",
+  "schema_version": "reverse-physics-bt-crossed-six-point-kallen-obstruction-v1",
+  "verification_commands": [
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/bt_crossed_six_point_kallen_obstruction.py --write --check",
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/verify_bt_crossed_six_point_kallen_obstruction.py",
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 -m unittest reverse_physics.tests.test_bt_crossed_six_point_kallen_obstruction"
+  ]
+}
