@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-six-point-positive-sector-physical-detector-effect-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["certificate", "schema_version", "dependency_tags", "lifecycle_state", "result_kind", "question", "answer", "positive_three_particle_source_sector", "fixed_shell_transition_effect", "detector_probability_jet", "pseudo_unitary_survival_coefficient", "relation_to_previous_rate", "interpretation", "assumptions", "does_not_establish", "next_gate", "provenance", "verification_commands", "checks", "report", "schema"],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_SIX_POINT_POSITIVE_SECTOR_PHYSICAL_DETECTOR_EFFECT_V1"},
+    "schema_version": {"const": "reverse-physics-bt-six-point-positive-sector-physical-detector-effect-v1"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "positive_three_particle_source_sector": {
+      "type": "object", "additionalProperties": false,
+      "required": ["basis", "ghost_parity", "Krein_Gram", "complete_Choi_reduction", "declared_source", "declared_source_norm", "status"],
+      "properties": {
+        "basis": {"const": "u_x=(|x>+|7-x>)/sqrt(2), x=0,1,2,3"},
+        "ghost_parity": {"const": "kappa3*u_x=u_x"},
+        "Krein_Gram": {"const": "U_plus^T*kappa3*U_plus=I4"},
+        "complete_Choi_reduction": {"const": "A_plus=U_plus^T*A*U_plus and cross-parity blocks vanish"},
+        "declared_source": {"const": "u_0=(|Upsilon Upsilon Upsilon>+|Omega Omega Omega>)/sqrt(2)"},
+        "declared_source_norm": {"const": "<u_0,u_0>_Krein=1"},
+        "status": {"const": "POSITIVE_GHOST_EVEN_PUBLIC_BT_AUXILIARY_PREPARATION"}
+      }
+    },
+    "fixed_shell_transition_effect": {
+      "type": "object", "additionalProperties": false,
+      "required": ["fixed_channel_index", "fixed_channel_mask", "R_plus", "effect", "characteristic_polynomial", "spectrum", "rank", "positive_trace", "negative_parity_trace", "full_trace", "status"],
+      "properties": {
+        "fixed_channel_index": {"const": 1}, "fixed_channel_mask": {"const": 11},
+        "R_plus": {"const": [["1/4", "0", "0", "0"], ["0", "1/4", "1/4", "0"], ["0", "1/4", "1/4", "1/4"], ["0", "1/4", "1/4", "1/4"]]},
+        "effect": {"const": "G=R_plus^T*R_plus"},
+        "characteristic_polynomial": {"const": "x*(x-1/16)*(x^2-x/2+1/64)"},
+        "spectrum": {"const": ["0", "1/16", "(2-sqrt(3))/8", "(2+sqrt(3))/8"]},
+        "rank": {"const": 3}, "positive_trace": {"const": "9/16"}, "negative_parity_trace": {"const": "9/16"}, "full_trace": {"const": "9/8"},
+        "status": {"const": "POSITIVE_PUBLIC_SECTOR_TRANSITION_EFFECT_COMPUTED"}
+      }
+    },
+    "detector_probability_jet": {
+      "type": "object", "additionalProperties": false,
+      "required": ["coefficient_norm_rate", "dimensionless_parameter", "click_effect", "no_click_effect", "completeness", "uniform_positive_interval", "declared_source_click", "declared_source_no_click", "declared_source_rate", "status"],
+      "properties": {
+        "coefficient_norm_rate": {"const": "gamma0=lambda^8/[128*pi^4*kappa^4*Lx*Ly^2*Lz^2]"},
+        "dimensionless_parameter": {"const": "zeta=gamma0*T*DeltaXi"},
+        "click_effect": {"const": "E_click=zeta*G"}, "no_click_effect": {"const": "E_no=I4-zeta*G"},
+        "completeness": {"const": "E_click+E_no=I4"},
+        "uniform_positive_interval": {"const": "0<=zeta<=16-8*sqrt(3)"},
+        "declared_source_click": {"const": "q_click=zeta/16"}, "declared_source_no_click": {"const": "q_no=1-zeta/16"},
+        "declared_source_rate": {"const": "lambda^8/[2048*pi^4*kappa^4*Lx*Ly^2*Lz^2]"},
+        "status": {"const": "LEADING_ISOLATED_SHELL_TWO_OUTCOME_PROBABILITY_JET"}
+      }
+    },
+    "pseudo_unitary_survival_coefficient": {
+      "type": "object", "additionalProperties": false,
+      "required": ["transition_amplitude_order", "skew_generator", "leading_virtual_amplitude_Hermitian_part", "leading_survival_probability_coefficient", "coefficient_identity", "anti_Hermitian_freedom", "status"],
+      "properties": {
+        "transition_amplitude_order": {"const": "sqrt(zeta)*R_plus"},
+        "skew_generator": {"const": "K=[[0,-R_plus^T],[R_plus,0]]"},
+        "leading_virtual_amplitude_Hermitian_part": {"const": "B_source=-G/2"},
+        "leading_survival_probability_coefficient": {"const": "2*B_source=-G"},
+        "coefficient_identity": {"const": "(-G)+R_plus^T*R_plus=0"},
+        "anti_Hermitian_freedom": {"$ref": "#/$defs/text"},
+        "status": {"const": "LEADING_NO_CLICK_COEFFICIENT_FIXED_BY_PSEUDO_UNITARITY"}
+      }
+    },
+    "relation_to_previous_rate": {
+      "type": "object", "additionalProperties": false,
+      "required": ["previous_full_rate", "full_residue_norm", "rate_per_unit_coefficient_norm", "parity_split", "reconstruction", "meaning"],
+      "properties": {
+        "previous_full_rate": {"const": "Gamma_Xi=9*lambda^8/[1024*pi^4*kappa^4*Lx*Ly^2*Lz^2]"},
+        "full_residue_norm": {"const": "9/8"}, "rate_per_unit_coefficient_norm": {"const": "Gamma_Xi/(9/8)=gamma0"},
+        "parity_split": {"const": "tr(G_plus)=tr(G_minus)=9/16"},
+        "reconstruction": {"const": "gamma0*(tr(G_plus)+tr(G_minus))=Gamma_Xi"},
+        "meaning": {"$ref": "#/$defs/text"}
+      }
+    },
+    "interpretation": {"const": {"positive_public_BT_auxiliary_source": "EXACTLY_CONSTRUCTED", "BT_affiliated_click_coefficient": "COEFFICIENT_COMPUTED", "leading_no_click_survival_coefficient": "FIXED_BY_PSEUDO_UNITARITY", "normalized_two_outcome_probability_jet": "CONSTRUCTED_ON_DECLARED_POSITIVE_INTERVAL", "transported_perfect_square_scalar_source": "NOT_CONSTRUCTED", "complete_finite_time_probability": "NOT_CONSTRUCTED", "global_ten_shell_probability": "NOT_CONSTRUCTED", "Eq19_all_orders": "NOT_PROVED"}},
+    "assumptions": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"$ref": "#/$defs/text"}},
+    "does_not_establish": {"type": "array", "minItems": 13, "items": {"$ref": "#/$defs/text"}},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "provenance": {"type": "object", "additionalProperties": false, "required": ["source_commit", "retrieval_date", "inputs", "method"], "properties": {"source_commit": {"const": "a8d75c5d"}, "retrieval_date": {"const": "2026-08-12"}, "inputs": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"type": "object", "additionalProperties": false, "required": ["path", "sha256"], "properties": {"path": {"$ref": "#/$defs/text"}, "sha256": {"$ref": "#/$defs/hash"}}}}, "method": {"$ref": "#/$defs/text"}}},
+    "verification_commands": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/text"}},
+    "checks": {"type": "object", "additionalProperties": false, "required": ["ok", "passed", "total", "failures", "details"], "properties": {"ok": {"const": true}, "passed": {"const": 32}, "total": {"const": 32}, "failures": {"const": []}, "details": {"type": "object", "minProperties": 32, "maxProperties": 32, "additionalProperties": {"const": true}}}},
+    "report": {"const": "reverse_physics/reports/bt-six-point-positive-sector-physical-detector-effect.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-six-point-positive-sector-physical-detector-effect-v1.schema.json"}
+  },
+  "$defs": {"text": {"type": "string", "minLength": 1}, "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+}

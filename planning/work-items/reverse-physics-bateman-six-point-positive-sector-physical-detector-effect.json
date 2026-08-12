@@ -1,0 +1,19 @@
+{
+  "id": "sf:program/work/reverse-physics-bateman-six-point-positive-sector-physical-detector-effect",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "reverse-physics",
+    "state": "ACTIVE",
+    "objective": "Bypass the obstructed regular Eq. 19 source route by restricting the BT six-point Choi transition to an explicitly positive public ghost-even three-particle source sector, then derive the leading click/no-click detector probability effect and survival coefficient from the BT cut and pseudo-unitarity.",
+    "depends_on": ["REVERSE_PHYSICS_BT_SIX_POINT_GHOST_EVEN_HISTORY_EMBEDDING_V1", "REVERSE_PHYSICS_BT_THREE_PARTICLE_CHARACTERISTIC_CELL_V1", "REVERSE_PHYSICS_BT_FINITE_TIME_HAMILTONIAN_CUT_AFFILIATION_V1", "REVERSE_PHYSICS_BT_COVARIANT_GHOST_PARITY_BRANCH_OBSTRUCTION_V1"],
+    "activates": ["a scoped physical BT auxiliary-sector detector probability", "a dynamically fixed leading no-click/survival coefficient", "a clean separation between a positive public O(1,1) preparation and the still-unproved physical-scalar Eq. 19 pushforward"],
+    "current_gate": "Restrict the exact 8x8 three-particle Choi coefficient to the kappa=+1 four-plane, compute the fixed-shell transition effect and exact contraction bound, normalize it with the certified detector rate, and use pseudo-unitarity to fix the leading complementary effect.",
+    "stop_condition": "Land an exact certificate and independent verifier for the positive-sector transition matrix, its effect spectrum, uniform click/no-click positivity interval, an explicit normalized positive source probability and leading survival coefficient, plus the exact relation to the previously certified full trace rate. Keep the result a finite-time reduced-mode probability jet; do not call it the scalar P_phi pushforward, a complete Moller operator, all-order Eq. 19, gravity, or Lorentzian causality.",
+    "forbid": "no positive auxiliary O(1,1) source called the transported perfect-square scalar source; no leading probability jet called an all-time probability; no abstract unitary witness called the full BT evolution; no global ten-shell gluing without the channel-record ancilla; no gravity or LORENTZIAN-CAUSAL promotion",
+    "allowed_paths": ["reverse_physics/", "notes/bateman-turok-embedding.md", "paper/05-interaction-obstructions.tex", "paper/05-interaction-obstructions.pdf", "paper/06-einstein-weyl-interaction-obstructions.tex", "paper/06-einstein-weyl-interaction-obstructions.pdf", "planning/work-items/reverse-physics-bateman-six-point-positive-sector-physical-detector-effect.json", "planning/events/"],
+    "resource_hint": "Use u_x=(|x>+|7-x>)/sqrt(2), x=0,1,2,3. At fixed channel B=1 the positive Choi residue is R_plus=[[1/4,0,0,0],[0,1/4,1/4,0],[0,1/4,1/4,1/4],[0,1/4,1/4,1/4]]. Its effect spectrum is {0,1/16,(2-sqrt(3))/8,(2+sqrt(3))/8}. Divide the full detector rate by the full residue norm 9/8 to obtain gamma0=lambda^8/[128*pi^4*kappa^4*Lx*Ly^2*Lz^2]. Then E_click=zeta R_plus^T R_plus, E_no=I-E_click with zeta=gamma0*T*DeltaXi and uniform positivity for zeta<=16-8sqrt(3). The source u_0 has q=zeta/16 and leading no-click probability 1-zeta/16.",
+    "input_commit": "a8d75c5d",
+    "stream": "reverse-physics"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "schema": "event-v0",
+  "id": "sf:program/event/reverse-physics-bateman-six-point-positive-sector-physical-detector-effect-DONE-a8d75c5d",
+  "kind": "event",
+  "source": {
+    "path": "tools/science-forge/program/events/reverse-physics-bateman-six-point-positive-sector-physical-detector-effect-DONE-a8d75c5d.json",
+    "span": null
+  },
+  "body": {
+    "event_kind": "WORK_ITEM_TRANSITIONED",
+    "actor": "reverse-physics",
+    "base_revision": "science-forge-ir-v0",
+    "predecessors": [],
+    "when": "2026-08-12",
+    "seq": 1,
+    "payload": {
+      "target": "sf:program/work/reverse-physics-bateman-six-point-positive-sector-physical-detector-effect",
+      "to_state": "DONE",
+      "note": "The public BT three-particle ghost-even four-plane is positive and invariant under the complete Choi transition. Its fixed-shell effect has spectrum {0,1/16,(2-sqrt(3))/8,(2+sqrt(3))/8}; E_click=zeta G and E_no=I-zeta G are positive for zeta<=16-8sqrt(3). The source (Upsilon^3+Omega^3)/sqrt(2) has click rate lambda^8/[2048*pi^4*kappa^4*Lx*Ly^2*Lz^2], and pseudo-unitarity fixes its leading no-click coefficient. This is an auxiliary-sector probability jet, not the scalar Eq. 19 pushforward. Evidence: REVERSE_PHYSICS_BT_SIX_POINT_POSITIVE_SECTOR_PHYSICAL_DETECTOR_EFFECT_V1."
+    },
+    "native": {
+      "authored_by": "manual close-out after exact parity restriction, effect spectrum, detector normalization, pseudo-unitarity, and independent fraction verification",
+      "policy": "append-only; one content-addressed file per event; the work-item file is never rewritten and the effective state is the fold of events over the base state"
+    }
+  },
+  "edges": [
+    {
+      "rel": "TRANSITIONS",
+      "to": "sf:program/work/reverse-physics-bateman-six-point-positive-sector-physical-detector-effect"
+    }
+  ]
+}
