@@ -262,7 +262,11 @@ is common to both effects.  The two absolute $q_8$ coefficients, continuum
 coherence and both forward endpoints remain open.  On the two-mode carrier,
 an explicit finite pointer Hamiltonian now selects the detector strength and
 relative phase; it is added apparatus physics, not a prediction of the public
-closed-system BT Hamiltonian.
+closed-system BT Hamiltonian.  A local quadratic scalar density reproduces
+that Hamiltonian on the two selected modes, but no nonzero finite-derivative
+local density can isolate exactly those two zero-width angles in the
+continuum.  The selected compression is therefore exact while its leakage
+into other angles remains to be bounded with finite angular wavepackets.
 Independently, the projected three-channel hard loop logarithm closes the
 Callan--Symanzik equation exactly with the Born rate and one-loop beta
 function.  This yields the positive leading-log nonforward prediction
@@ -3840,7 +3844,7 @@ No endpoint, all-order or Eq.~(19) completion follows.
 The effect itself has a finite Hamiltonian realization.  For the phased
 antisymmetric angle projector
 \[
- P_-(\phi)=|-_\phi\rangle\langle-_\phi|,qquad
+ P_-(\phi)=|-_\phi\rangle\langle-_\phi|,\qquad
  |-_\phi\rangle={|c_1\rangle-e^{i\phi}|c_2\rangle\over\sqrt2},
 \]
 couple a degenerate pointer qubit by
@@ -3884,6 +3888,54 @@ parameters.  The device is additional physics coupled to the certified BT
 output modes.  Its coupling, duration and phase are not predicted by the
 public closed-system BT Hamiltonian, and no spacetime-local or
 continuum-angle detector has been constructed.
+
+The finite effect does have an exact local quadratic vertex on the two
+rational modes.  Their common total four-momentum is
+$P=(2,-6/5,0,0)\kappa$.  On the vacuum-to-pair matrix elements the local
+densities
+\[
+ D_+=:\!\phi^2\!:,\qquad
+ D_-=:\!\phi^2\!:
+ -{625\over72\kappa^2}:\!(\partial_y\phi)^2\!:
+\]
+have respective weights $(1,1)$ and $(1,-1)$.  Therefore
+\[
+ \alpha={1-e^{-i\phi}\over2\sqrt2},\qquad
+ \beta={1+e^{-i\phi}\over2\sqrt2}
+\]
+synthesize the desired transition weights
+$(1,-e^{-i\phi})/\sqrt2$.  Because
+$\langle e|\sigma_x|g\rangle=1$ and
+$\langle e|\sigma_y|g\rangle=i$, two real Pauli quadratures give a Hermitian
+local interaction with this complex transition density.  In the selected
+basis
+$|g,+_\phi\rangle,|g,-_\phi\rangle,|e,0_{\rm field}\rangle$, its normalized
+compression is
+\[
+ {H_{\rm comp}\over G}=\begin{pmatrix}0&0&0\\0&0&1\\0&1&0\end{pmatrix},
+\]
+whose absorption/pass effects are exactly
+$\sin^2(G\tau)P_-(\phi)$ and
+$P_+(\phi)+\cos^2(G\tau)P_-(\phi)$.
+
+This exact compression cannot be promoted to an invariant local detector
+sector.  On the continuous fixed-energy family, compact smearing depends only
+on the common total momentum.  Any quadratic density with finitely many
+derivatives restricts along an angular orbit $z=e^{i\theta}$ to a finite
+Laurent polynomial $p(z)$.  Exact support at only two angles would make
+$p$ vanish on their open complement; multiplying by a power of $z$ gives
+an ordinary polynomial with infinitely many roots, hence the zero polynomial,
+contradicting its nonzero selected weights.  Certificate
+\par\noindent
+\texttt{REVERSE\_PHYSICS\_BT\_TWO\_ANGLE\_LOCAL\_DETECTOR\_}
+\allowbreak\texttt{COMPRESSION\_V1}
+\par\noindent
+therefore proves the selected local matrix elements and finite-derivative
+continuum selectivity no-go, not
+$\Pi e^{-iH\tau}\Pi=e^{-i\Pi H\Pi\tau}$.  Finite angular packets with a
+quantitative leakage matrix are the next local gate.  The interaction remains
+additional anisotropic scalar apparatus physics; it is neither selected by
+the public BT Hamiltonian nor a Lorentzian or gravitational detector.
 
 The auxiliary preparation nevertheless has an exact scalar preimage on the
 finite covariant detector ideal.  Put

@@ -1,0 +1,32 @@
+{
+  "schema": "event-v0",
+  "id": "sf:program/event/reverse-physics-bateman-two-angle-local-detector-compression-OBSTRUCTED-3a2973a9",
+  "kind": "event",
+  "source": {
+    "path": "tools/science-forge/program/events/reverse-physics-bateman-two-angle-local-detector-compression-OBSTRUCTED-3a2973a9.json",
+    "span": null
+  },
+  "body": {
+    "event_kind": "WORK_ITEM_TRANSITIONED",
+    "actor": "reverse-physics",
+    "base_revision": "science-forge-ir-v0",
+    "predecessors": [],
+    "when": "2026-08-12",
+    "seq": 1,
+    "payload": {
+      "target": "sf:program/work/reverse-physics-bateman-two-angle-local-detector-compression",
+      "to_state": "OBSTRUCTED",
+      "note": "The local density D_minus=:phi^2:-(625/[72 kappa^2]):(partial_y phi)^2: has exact pair-annihilation weights +1 and -1 on the rational c=0 and c=3/5 outgoing pairs. Together with D_plus=:phi^2: and two real detector quadratures it synthesizes arbitrary phase weights (1,-exp(-i phi))/sqrt(2), so the selected three-state compression is exactly the finite pair-absorption Hamiltonian underlying the prior effect. Full local invariance is obstructed: on the continuous fixed-energy family, compact smearing depends only on the common total momentum while every finite-derivative local density restricts to a finite Laurent polynomial in the angle. Such a polynomial cannot vanish on the open complement of two angles without vanishing identically. The local vertex therefore necessarily leaks to other angles; compressed and full exponentials are not identified. Evidence: REVERSE_PHYSICS_BT_TWO_ANGLE_LOCAL_DETECTOR_COMPRESSION_V1."
+    },
+    "native": {
+      "authored_by": "manual close-out after exact local matrix elements, quadrature synthesis and finite-Laurent selectivity no-go",
+      "policy": "append-only; obstruction records a scoped continuum-locality barrier, not a failure of the finite apparatus theorem"
+    }
+  },
+  "edges": [
+    {
+      "rel": "TRANSITIONS",
+      "to": "sf:program/work/reverse-physics-bateman-two-angle-local-detector-compression"
+    }
+  ]
+}

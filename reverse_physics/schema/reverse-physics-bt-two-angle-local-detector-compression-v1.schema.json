@@ -1,0 +1,148 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-two-angle-local-detector-compression-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "schema_version", "certificate", "question", "answer",
+    "result_kind", "lifecycle_state", "dependency_tags", "assumptions",
+    "provenance", "rational_pair_matrix_elements",
+    "phase_quadrature_synthesis", "selected_sector_compression",
+    "continuum_locality_no_go", "leakage_boundary", "disposition",
+    "does_not_establish", "next_gate", "checks", "verification_commands",
+    "report"
+  ],
+  "properties": {
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-two-angle-local-detector-compression-v1.schema.json"},
+    "schema_version": {"const": 1},
+    "certificate": {"const": "REVERSE_PHYSICS_BT_TWO_ANGLE_LOCAL_DETECTOR_COMPRESSION_V1"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE"]},
+    "assumptions": {"type": "array", "minItems": 7, "maxItems": 7, "items": {"$ref": "#/$defs/text"}},
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_commit", "retrieval_date", "inputs", "generated_by", "independent_verifier", "method"],
+      "properties": {
+        "source_commit": {"const": "3a2973a98a799d51403dabe61fdea16394541d74"},
+        "retrieval_date": {"const": "2026-08-12"},
+        "inputs": {
+          "type": "array", "minItems": 5, "maxItems": 5,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["path", "sha256"],
+            "properties": {"path": {"$ref": "#/$defs/text"}, "sha256": {"$ref": "#/$defs/hash"}}
+          }
+        },
+        "generated_by": {"const": "reverse_physics/bt_two_angle_local_detector_compression.py"},
+        "independent_verifier": {"const": "reverse_physics/verify_bt_two_angle_local_detector_compression.py"},
+        "method": {"$ref": "#/$defs/text"}
+      }
+    },
+    "rational_pair_matrix_elements": {
+      "type": "object", "additionalProperties": false,
+      "required": ["coordinates", "c_values", "common_total_four_momentum", "D_plus", "D_plus_weights", "derivative_density", "normalized_derivative_weights", "D_minus", "D_minus_weights", "common_smearing_factor", "status"],
+      "properties": {
+        "coordinates": {"$ref": "#/$defs/text"},
+        "c_values": {"const": ["0", "3/5"]},
+        "common_total_four_momentum": {"const": ["2", "-6/5", "0", "0"]},
+        "D_plus": {"const": ":phi^2:"},
+        "D_plus_weights": {"const": ["1", "1"]},
+        "derivative_density": {"const": ":(partial_y phi)^2:"},
+        "normalized_derivative_weights": {"const": ["0", "144/625"]},
+        "D_minus": {"const": ":phi^2:-(625/[72*kappa^2]):(partial_y phi)^2:"},
+        "D_minus_weights": {"const": ["1", "-1"]},
+        "common_smearing_factor": {"$ref": "#/$defs/text"},
+        "status": {"const": "EXACT_LOCAL_DERIVATIVE_CONTRAST_ON_TWO_RATIONAL_MODES"}
+      }
+    },
+    "phase_quadrature_synthesis": {
+      "type": "object", "additionalProperties": false,
+      "required": ["target_weights", "alpha", "beta", "complex_transition_density", "Hermitian_two_quadrature_interaction", "reason", "status"],
+      "properties": {
+        "target_weights": {"const": ["1/sqrt(2)", "-exp(-i*phi)/sqrt(2)"]},
+        "alpha": {"const": "[1-exp(-i*phi)]/[2*sqrt(2)]"},
+        "beta": {"const": "[1+exp(-i*phi)]/[2*sqrt(2)]"},
+        "complex_transition_density": {"$ref": "#/$defs/text"},
+        "Hermitian_two_quadrature_interaction": {"$ref": "#/$defs/text"},
+        "reason": {"$ref": "#/$defs/text"},
+        "status": {"const": "ARBITRARY_RELATIVE_PHASE_SYNTHESIZED_BY_REAL_LOCAL_QUADRATURES"}
+      }
+    },
+    "selected_sector_compression": {
+      "type": "object", "additionalProperties": false,
+      "required": ["basis", "Hamiltonian_over_G", "evolution", "K_pass", "K_absorb", "E_pass", "E_absorb", "relation_to_finite_apparatus", "status"],
+      "properties": {
+        "basis": {"const": ["|g,+_phi>", "|g,-_phi>", "|e,0_field>"]},
+        "Hamiltonian_over_G": {"const": [["0", "0", "0"], ["0", "0", "1"], ["0", "1", "0"]]},
+        "evolution": {"$ref": "#/$defs/text"},
+        "K_pass": {"const": "P_plus(phi)+cos(G*tau)P_minus(phi)"},
+        "K_absorb": {"const": "-i*sin(G*tau)|0_field><-_phi|"},
+        "E_pass": {"const": "P_plus(phi)+cos(G*tau)^2 P_minus(phi)"},
+        "E_absorb": {"const": "sin(G*tau)^2 P_minus(phi)"},
+        "relation_to_finite_apparatus": {"$ref": "#/$defs/text"},
+        "status": {"const": "EXACT_MICROSCOPIC_PAIR_ABSORPTION_COMPRESSION"}
+      }
+    },
+    "continuum_locality_no_go": {
+      "type": "object", "additionalProperties": false,
+      "required": ["fixed_energy_parameter", "smearing_fact", "finite_derivative_fact", "root_argument", "contradiction", "vandermonde_witnesses", "status"],
+      "properties": {
+        "fixed_energy_parameter": {"const": "z=exp(i*theta) on the interior hard-angle family"},
+        "smearing_fact": {"$ref": "#/$defs/text"},
+        "finite_derivative_fact": {"$ref": "#/$defs/text"},
+        "root_argument": {"$ref": "#/$defs/text"},
+        "contradiction": {"$ref": "#/$defs/text"},
+        "vandermonde_witnesses": {
+          "type": "array", "minItems": 7, "maxItems": 7,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["degree", "point_count", "rank", "determinant_nonzero"],
+            "properties": {
+              "degree": {"type": "integer", "minimum": 0, "maximum": 6},
+              "point_count": {"type": "integer", "minimum": 1},
+              "rank": {"type": "integer", "minimum": 1},
+              "determinant_nonzero": {"const": true}
+            }
+          }
+        },
+        "status": {"const": "EXACT_TWO_POINT_ANGLE_SUPPORT_IMPOSSIBLE_FOR_NONZERO_FINITE_DERIVATIVE_LOCAL_DENSITY"}
+      }
+    },
+    "leakage_boundary": {
+      "type": "object", "additionalProperties": false,
+      "required": ["local_vertex_on_selected_modes", "selected_Hamiltonian_compression", "selected_sector_invariance_under_full_local_Hamiltonian", "full_compressed_exponential_identity", "reason", "available_repairs", "status"],
+      "properties": {
+        "local_vertex_on_selected_modes": {"const": "COMPUTED"},
+        "selected_Hamiltonian_compression": {"const": "COMPUTED"},
+        "selected_sector_invariance_under_full_local_Hamiltonian": {"const": "NOT_ESTABLISHED_AND_GENERICALLY_FALSE_BY_CONTINUUM_NO_GO"},
+        "full_compressed_exponential_identity": {"const": "NOT_ESTABLISHED"},
+        "reason": {"$ref": "#/$defs/text"},
+        "available_repairs": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/text"}},
+        "status": {"const": "MICROSCOPIC_LOCALITY_BARRIER_LOCALIZED_TO_ANGLE_LEAKAGE"}
+      }
+    },
+    "disposition": {"type": "object", "minProperties": 9, "maxProperties": 9, "additionalProperties": {"$ref": "#/$defs/text"}},
+    "does_not_establish": {"type": "array", "minItems": 12, "maxItems": 12, "items": {"$ref": "#/$defs/text"}},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "checks": {
+      "type": "object", "additionalProperties": false,
+      "required": ["total", "passed", "ok", "failures", "details"],
+      "properties": {
+        "total": {"type": "integer", "minimum": 27},
+        "passed": {"type": "integer", "minimum": 27},
+        "ok": {"const": true},
+        "failures": {"const": []},
+        "details": {"type": "object", "minProperties": 27, "additionalProperties": {"const": true}}
+      }
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/text"}},
+    "report": {"const": "reverse_physics/reports/bt-two-angle-local-detector-compression.md"}
+  },
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

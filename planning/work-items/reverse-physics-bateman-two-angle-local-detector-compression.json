@@ -1,0 +1,34 @@
+{
+  "id": "sf:program/work/reverse-physics-bateman-two-angle-local-detector-compression",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "reverse-physics",
+    "state": "ACTIVE",
+    "objective": "Determine whether the exact finite two-angle apparatus Hamiltonian is the compression of a spatially local microscopic scalar detector coupling, and classify any unavoidable leakage to other angles.",
+    "depends_on": [
+      "REVERSE_PHYSICS_BT_TWO_ANGLE_FINITE_APPARATUS_HAMILTONIAN_V1",
+      "REVERSE_PHYSICS_BT_TWO_ANGLE_COHERENT_Q6_DETECTOR_V1",
+      "REVERSE_PHYSICS_BT_CONTINUOUS_ANGLE_Q6_FAMILY_V1"
+    ],
+    "activates": [
+      "an explicit local quadratic derivative density with opposite weights on the rational c=0 and c=3/5 pair modes",
+      "a Hermitian two-quadrature detector coupling for arbitrary relative phase",
+      "an exact selected-sector pair-absorption Hamiltonian compression",
+      "a decision whether finite-derivative locality can make the two-angle carrier invariant in the continuum"
+    ],
+    "current_gate": "Evaluate :phi^2: and :(partial_y phi)^2: between the vacuum and both exact pair modes. Construct D_minus=:phi^2:-(625/[72 kappa^2]):(partial_y phi)^2: and prove its relative weights are +1,-1. Combine D_plus=:phi^2: and D_minus in two real pointer quadratures to obtain phase weights (1,-exp(-i phi))/sqrt(2). Then prove or refute exact two-angle selectivity for any compactly smeared finite-derivative local quadratic density on the continuous fixed-energy angle family.",
+    "stop_condition": "Land an exact CLASSIFIED local-compression/no-go certificate, method-distinct verifier, mutation tests, report and Papers 05/06 update. Separate exact selected-sector compression from full microscopic evolution and state leakage as open unless invariance is proved.",
+    "forbid": "no equality of compressed Hamiltonians promoted to equality of full exponentials; no local vertex called an invariant detector sector; no finite-angle reduced result promoted to continuum locality, public BT evolution, Eq. 19, gravity, QME or LORENTZIAN-CAUSAL physics",
+    "allowed_paths": [
+      "reverse_physics/",
+      "paper/05-interaction-obstructions.tex",
+      "paper/05-interaction-obstructions.pdf",
+      "paper/06-einstein-weyl-interaction-obstructions.tex",
+      "paper/06-einstein-weyl-interaction-obstructions.pdf",
+      "planning/work-items/reverse-physics-bateman-two-angle-local-detector-compression.json",
+      "planning/events/"
+    ],
+    "resource_hint": "For the rational outgoing pairs, -k1_y k2_y/kappa^2 is 0 at c=0 and 144/625 at c=3/5. Hence D_minus has weights 1 and 1-(625/72)(144/625)=-1. With D_plus weights (1,1), alpha=(1-exp(-i phi))/(2 sqrt(2)) and beta=(1+exp(-i phi))/(2 sqrt(2)) give alpha D_plus+beta D_minus weights (1,-exp(-i phi))/sqrt(2). On the fixed-total-momentum continuum, compact smearing is common to all angles and a finite-derivative density restricts to a finite Laurent polynomial in exp(i theta); it cannot vanish on the open complement of two angles without vanishing identically."
+  }
+}
