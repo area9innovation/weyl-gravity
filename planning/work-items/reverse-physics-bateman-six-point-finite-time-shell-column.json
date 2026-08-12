@@ -1,0 +1,19 @@
+{
+  "id": "sf:program/work/reverse-physics-bateman-six-point-finite-time-shell-column",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "reverse-physics",
+    "state": "ACTIVE",
+    "objective": "Tensor the certified six-point history incidence with the exact finite-time energy window at the transverse physical pole and construct a normalized local survival-plus-sequential wave-packet column.",
+    "depends_on": ["REVERSE_PHYSICS_BT_SIX_POINT_PHASE_SPACE_POLE_OBSTRUCTION_V1", "REVERSE_PHYSICS_BT_SIX_POINT_SEQUENTIAL_HISTORY_CARRIER_V1", "REVERSE_PHYSICS_BT_SIX_POINT_HISTORY_INCIDENCE_ISOMETRY_V1"],
+    "activates": ["an exact square-integrable shell-history amplitude", "a finite-time local isometric column", "the multi-channel wave-packet gluing gate"],
+    "current_gate": "At the exact unique channel-11 pole, compute the on-shell intermediate energy and coarea phase-space density, normalize the finite-time shell kernel in L2(ds), combine it with the nine-history residue vector, and close the local column with its unique positive survival coefficient in the perturbative domain.",
+    "stop_condition": "Land an exact certificate matching the shell-history norm to 9*pi*T/(8E), computing the frozen labeled phase-space coefficient, constructing the normalized local column and its rank-one unitary dilation, and proving that isolated-channel interference is subleading in duration while the global physical embedding remains fail-closed.",
+    "forbid": "no unit transverse measure called the complete phase-space measure; no effective strength g identified with the full BT coupling normalization; no local one-channel column called a global Moller/S operator or inclusive BT probability; no Eq. 19, gravity or LORENTZIAN-CAUSAL promotion",
+    "allowed_paths": ["reverse_physics/", "notes/bateman-turok-embedding.md", "paper/05-interaction-obstructions.tex", "paper/05-interaction-obstructions.pdf", "paper/06-einstein-weyl-interaction-obstructions.tex", "paper/06-einstein-weyl-interaction-obstructions.pdf", "planning/work-items/reverse-physics-bateman-six-point-finite-time-shell-column.json", "planning/events/"],
+    "resource_hint": "Use alpha_T,E(s)=F_T(s/(2E))/(2E)=2 exp(i sT/(4E)) sin(sT/(4E))/s, integral |alpha|^2 ds=pi*T/E, and the fixed-channel reduced Born history norm 9/8. Then Q_T=9*pi*T/(8E), q=g^2 Q_T, and M=(sqrt(1-q),g A_T) is isometric for 0<=q<=1.",
+    "input_commit": "22ddd02f",
+    "stream": "reverse-physics"
+  }
+}

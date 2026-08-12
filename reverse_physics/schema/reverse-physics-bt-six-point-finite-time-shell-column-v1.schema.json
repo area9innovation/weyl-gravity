@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-six-point-finite-time-shell-column-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["certificate", "schema_version", "dependency_tags", "lifecycle_state", "result_kind", "question", "answer", "exact_physical_shell", "exact_phase_space_coarea", "finite_time_kernel", "local_history_column", "normalized_survival_completion", "isolated_channel_duration_hierarchy", "interpretation", "does_not_establish", "next_gate", "provenance", "verification_commands", "checks", "report", "schema"],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_SIX_POINT_FINITE_TIME_SHELL_COLUMN_V1"},
+    "schema_version": {"const": "reverse-physics-bt-six-point-finite-time-shell-column-v1"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "result_kind": {"$ref": "#/$defs/text"}, "question": {"$ref": "#/$defs/text"}, "answer": {"$ref": "#/$defs/text"},
+    "exact_physical_shell": {
+      "type": "object", "additionalProperties": false,
+      "required": ["chart_point", "channel_mask", "intermediate_momentum", "intermediate_mass_square", "intermediate_energy", "transverse_shell_coordinate", "measure"],
+      "properties": {
+        "chart_point": {"const": ["2", "-2", "3/5", "1/2", "1/3"]}, "channel_mask": {"const": 11},
+        "intermediate_momentum": {"const": ["1", "9/17", "-4/85", "-72/85"]}, "intermediate_mass_square": {"const": "0"}, "intermediate_energy": {"const": "1"},
+        "transverse_shell_coordinate": {"const": "s=q^2=2*E*omega+O(omega^2)"}, "measure": {"$ref": "#/$defs/text"}
+      }
+    },
+    "exact_phase_space_coarea": {
+      "type": "object", "additionalProperties": false,
+      "required": ["starting_measure", "coarea_formula", "chart_gram_determinant", "constraint_gram_determinant", "outgoing_energy_product", "chart_density", "transverse_derivative_ds_dt", "shell_density", "labeled_phase_weighted_sequential_rate", "ordinary_identical_final_state_preflight", "boundary"],
+      "properties": {
+        "starting_measure": {"const": "dPhi_3=(2*pi)^(-5)*delta^4(P-sum k_i)*product_i[d^3 k_i/(2 E_i)]"},
+        "coarea_formula": {"$ref": "#/$defs/text"}, "chart_gram_determinant": {"const": "13544423424/2822265625"},
+        "constraint_gram_determinant": {"const": "2016/25"}, "outgoing_energy_product": {"const": "6/5"},
+        "chart_density": {"const": "54/[2125*(2*pi)^5]"}, "transverse_derivative_ds_dt": {"const": "-1152/425"},
+        "shell_density": {"const": "3/[320*(2*pi)^5]"}, "labeled_phase_weighted_sequential_rate": {"const": "27*T/(81920*pi^4)"},
+        "ordinary_identical_final_state_preflight": {"const": "9*T/(163840*pi^4) after division by 3!"}, "boundary": {"$ref": "#/$defs/text"}
+      }
+    },
+    "finite_time_kernel": {
+      "type": "object", "additionalProperties": false,
+      "required": ["window", "shell_amplitude", "zero_value", "exact_window_norm", "exact_shell_norm", "approximate_identity", "status"],
+      "properties": {
+        "window": {"const": "F_T(omega)=integral_0^T exp(i*omega*t)dt"},
+        "shell_amplitude": {"const": "alpha_T,E(s)=F_T(s/(2E))/(2E)=2*exp(i*s*T/(4E))*sin(s*T/(4E))/s"},
+        "zero_value": {"const": "alpha_T,E(0)=T/(2E)"}, "exact_window_norm": {"const": "integral_R |F_T(omega)|^2 d_omega=2*pi*T"},
+        "exact_shell_norm": {"const": "integral_R |alpha_T,E(s)|^2 ds=pi*T/E"},
+        "approximate_identity": {"const": "|alpha_T,E(s)|^2/T -> (pi/E)*delta(s)"},
+        "status": {"const": "EXACT_FINITE_TIME_KINEMATIC_KERNEL_NOT_BT_HAMILTONIAN_DERIVATION"}
+      }
+    },
+    "local_history_column": {
+      "type": "object", "additionalProperties": false,
+      "required": ["fixed_channel_history_vector", "history_vector_norm_square", "amplitude", "gram", "Q_T", "exact_fixture_Q_T", "normalized_isometry", "status"],
+      "properties": {
+        "fixed_channel_history_vector": {"$ref": "#/$defs/text"}, "history_vector_norm_square": {"const": "h_B^*h_B=9/8"},
+        "amplitude": {"const": "A_T,E(s)=alpha_T,E(s)*h_B"}, "gram": {"const": "A_T,E^* A_T,E=Q_T I"},
+        "Q_T": {"const": "9*pi*T/(8*E)"}, "exact_fixture_Q_T": {"const": "9*pi*T/8"},
+        "normalized_isometry": {"const": "V_T,E=A_T,E/sqrt(Q_T)"}, "status": {"const": "EXACT_SINGLE_SHELL_HISTORY_ISOMETRY"}
+      }
+    },
+    "normalized_survival_completion": {
+      "type": "object", "additionalProperties": false,
+      "required": ["effective_strength", "dimensionless_history_probability", "perturbative_domain", "column", "completeness", "survival_probability", "leading_sequential_probability", "skew_generator", "minimal_polynomial_identity", "unitary_rotation", "status"],
+      "properties": {
+        "effective_strength": {"$ref": "#/$defs/text"}, "dimensionless_history_probability": {"const": "q=g^2*Q_T"},
+        "perturbative_domain": {"const": "0<=q<=1"}, "column": {"const": "M_g=(sqrt(1-q)*I,g*A_T,E)^T"},
+        "completeness": {"const": "M_g^*M_g=(1-q)*I+g^2*Q_T*I=I"}, "survival_probability": {"const": "1-q"},
+        "leading_sequential_probability": {"const": "q"}, "skew_generator": {"const": "K_T=[[0,-V_T,E^*],[V_T,E,0]]"},
+        "minimal_polynomial_identity": {"const": "K_T^3=-K_T"},
+        "unitary_rotation": {"const": "U_theta=I+sin(theta)*K_T+(1-cos(theta))*K_T^2 with sin(theta)=g*sqrt(Q_T)"},
+        "status": {"const": "NORMALIZED_LOCAL_SINGLE_SHELL_COLUMN_NOT_GLOBAL_BT_MOLLER_OPERATOR"}
+      }
+    },
+    "isolated_channel_duration_hierarchy": {
+      "type": "object", "additionalProperties": false,
+      "required": ["constant_regular_cross_integral", "long_time_cross_limit", "sequential_norm_growth", "cross_to_sequential_limit", "interpretation"],
+      "properties": {
+        "constant_regular_cross_integral": {"const": "integral_-L^L Re(alpha_T,E(s)) ds=2*Si(L*T/(2*E))"},
+        "long_time_cross_limit": {"const": "pi"}, "sequential_norm_growth": {"const": "9*pi*T/(8*E)"},
+        "cross_to_sequential_limit": {"const": "0"}, "interpretation": {"$ref": "#/$defs/text"}
+      }
+    },
+    "interpretation": {"const": {"finite_time_square_integrable_shell_history": "EXACTLY_CONSTRUCTED", "normalized_local_survival_plus_history_column": "EXACTLY_CONSTRUCTED", "isolated_channel_leading_rate": "COEFFICIENT_COMPUTED", "exact_local_labeled_phase_space_coarea": "COEFFICIENT_COMPUTED", "effective_strength_BT_calibration": "NOT_COMPUTED", "full_phase_space_wave_packet_embedding": "NOT_CONSTRUCTED", "multi_channel_intersection_gluing": "NOT_CONSTRUCTED", "connected_interference_distribution": "NOT_PRESCRIBED_GLOBALLY", "global_defect_partial_unitary": "NOT_FIXED", "finite_inclusive_BT_probability": "NOT_CONSTRUCTED", "Eq19_all_orders": "NOT_PROVED"}},
+    "does_not_establish": {"type": "array", "minItems": 13, "items": {"$ref": "#/$defs/text"}}, "next_gate": {"$ref": "#/$defs/text"},
+    "provenance": {"type": "object", "additionalProperties": false, "required": ["source_commit", "retrieval_date", "inputs", "method"], "properties": {"source_commit": {"const": "22ddd02f"}, "retrieval_date": {"const": "2026-08-12"}, "inputs": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"type": "object", "additionalProperties": false, "required": ["path", "sha256"], "properties": {"path": {"$ref": "#/$defs/text"}, "sha256": {"$ref": "#/$defs/hash"}}}}, "method": {"$ref": "#/$defs/text"}}},
+    "verification_commands": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/text"}},
+    "checks": {"type": "object", "additionalProperties": false, "required": ["ok", "passed", "total", "failures", "details"], "properties": {"ok": {"const": true}, "passed": {"const": 23}, "total": {"const": 23}, "failures": {"const": []}, "details": {"type": "object", "minProperties": 23, "maxProperties": 23, "additionalProperties": {"const": true}}}},
+    "report": {"const": "reverse_physics/reports/bt-six-point-finite-time-shell-column.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-six-point-finite-time-shell-column-v1.schema.json"}
+  },
+  "$defs": {"text": {"type": "string", "minLength": 1}, "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+}
