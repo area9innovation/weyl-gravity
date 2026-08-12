@@ -1,0 +1,39 @@
+{
+  "id": "sf:program/work/reverse-physics-bateman-finite-time-active-loop-affiliation",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "reverse-physics",
+    "state": "ACTIVE",
+    "objective": "Derive the renormalized second-Dyson active four-point loop on the same finite-duration BT carrier as the tagged tree experiment, compute its transient exactly, and match its large-time boundary to the certified covariant MSbar loop.",
+    "depends_on": [
+      "BATEMAN_TUROK_HAMILTONIAN_SOURCE_V1",
+      "REVERSE_PHYSICS_BT_FINITE_TIME_HAMILTONIAN_CUT_AFFILIATION_V1",
+      "REVERSE_PHYSICS_BT_AUXILIARY_ACTIVE_ONE_LOOP_MSBAR_V1",
+      "REVERSE_PHYSICS_BT_TAGGED_CONNECTED_COMPACT_PACKET_INTERFERENCE_V1",
+      "REVERSE_PHYSICS_BT_TAGGED_PACKET_NORMAL_ORDERED_SPECTATOR_REDUCTION_V1",
+      "REVERSE_PHYSICS_BT_TAGGED_PACKET_LAMBDA6_OBJECT_LEDGER_V1",
+      "REVERSE_PHYSICS_BT_TAGGED_SPECTATOR_PHYSICAL_PACKET_PROBABILITY_V1"
+    ],
+    "activates": [
+      "the exact second-Dyson dispersive kernel",
+      "the finite-time MSbar bubble and tagged central transient",
+      "the final assembly of the complete selected tagged q6 coefficient"
+    ],
+    "current_gate": "Derive the ordered two-vertex time integral, normalize its interference against the one-vertex tree, identify the Fejer energy average of the renormalized covariant bubble, evaluate that convolution exactly, and prove compact hard packet affiliation.",
+    "stop_condition": "Land a COEFFICIENT_COMPUTED finite-time active-loop certificate with an independent ordered-Dyson verifier, mutation tests, exact tagged and hard-window formulas, packet bounds, and paper/report updates; retain the separate final q6 assembly gate.",
+    "forbid": "no covariant bubble called a finite-time Hamiltonian result without deriving the time kernel; no cut term mixed into the real tree-loop interference; no unrenormalized sharp-switch expression; no large-time boundary called an all-time S operator; no selected scalar result called general Eq. 19, gravity, QME restoration or LORENTZIAN-CAUSAL physics",
+    "allowed_paths": [
+      "reverse_physics/",
+      "paper/05-interaction-obstructions.tex",
+      "paper/05-interaction-obstructions.pdf",
+      "paper/06-einstein-weyl-interaction-obstructions.tex",
+      "paper/06-einstein-weyl-interaction-obstructions.pdf",
+      "planning/work-items/reverse-physics-bateman-finite-time-active-loop-affiliation.json",
+      "planning/events/"
+    ],
+    "resource_hint": "For F_T(nu)=int_0^T exp(i nu t)dt, the energy-diagonal tree-loop interference divides the ordered second-Dyson integral by the one-vertex duration T and gives Kdisp_T(d)=int_0^T(1-t/T)sin(dt)dt=1/d-sin(dT)/(T d^2). This is the Hilbert transform of the normalized Fejer kernel |F_T|^2/(2 pi T). Convolving log|omega-a| gives log|E-a|+C(T|E-a|), C(z)=sin(z)/z-Ci(z). Therefore B_T(P)=B_MSbar(P)-C(T|P0-|P||)-C(T|P0+|P||).",
+    "input_commit": "b469b330",
+    "stream": "reverse-physics"
+  }
+}

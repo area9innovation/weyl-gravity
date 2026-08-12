@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-finite-time-active-loop-affiliation-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["certificate", "schema_version", "dependency_tags", "lifecycle_state", "result_kind", "question", "answer", "ordered_dyson_kernel", "fejer_affiliation", "finite_time_bubble", "tagged_fixture", "hard_window", "compact_packet", "interpretation", "assumptions", "does_not_establish", "next_gate", "provenance", "verification_commands", "checks", "report", "schema"],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_FINITE_TIME_ACTIVE_LOOP_AFFILIATION_V1"},
+    "schema_version": {"const": "reverse-physics-bt-finite-time-active-loop-affiliation-v1"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE"]},
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "ordered_dyson_kernel": {"type": "object", "required": ["time_interval", "ordered_integral", "tree_time_factor", "dispersive_interference", "resonant_value", "status"], "properties": {"status": {"const": "SECOND_DYSON_DISPERSIVE_KERNEL_DERIVED"}}},
+    "fejer_affiliation": {"type": "object", "required": ["time_window", "kernel", "triangle_transform", "normalization", "hilbert_transform", "renormalization_order", "status"], "properties": {"status": {"const": "FINITE_TIME_DYSON_AND_COVARIANT_BUBBLE_AFFILIATED"}}},
+    "finite_time_bubble": {"type": "object", "required": ["transient", "derivative", "bound", "general_formula", "finite_counterterm", "large_time_boundary", "status"], "properties": {"status": {"const": "FINITE_TIME_MSBAR_BUBBLE_COMPUTED"}}},
+    "tagged_fixture": {"type": "object", "required": ["invariants", "frame", "channel_light_cone_gaps", "bubble_sum", "local_loop_click", "large_time_boundary", "acceptance_scope", "status"], "properties": {"status": {"const": "TAGGED_FINITE_TIME_ACTIVE_LOOP_COMPUTED"}}},
+    "hard_window": {"type": "object", "required": ["definition", "transient_antiderivative", "angular_transient", "integrated_loop", "log_integral", "status"], "properties": {"status": {"const": "EXACT_FINITE_TIME_HARD_WINDOW_COMPUTED"}}},
+    "compact_packet": {"type": "object", "required": ["carrier", "support", "bound", "consequence", "shared_time_convention", "status"], "properties": {"status": {"const": "FINITE_TIME_COMPACT_ACTIVE_PACKET_AFFILIATED"}}},
+    "interpretation": {"const": {"finite_duration_BT_Dyson_affiliation": "PROVED_ON_SELECTED_ENERGY_DIAGONAL_HARD_CARRIER", "finite_time_active_loop": "COEFFICIENT_COMPUTED", "finite_time_transient": "COMPUTED_EXACTLY", "covariant_large_time_boundary": "MATCHED", "normal_ordered_spectator_loop": "ZERO_IN_DECLARED_SCHEME", "complete_tagged_q6_probability": "READY_FOR_SEPARATE_ASSEMBLY", "general_Eq19": "NOT_PROVED", "gravity_or_BV_BRST_transfer": "NOT_CONSTRUCTED", "Lorentzian_causal_claim": "NOT_ESTABLISHED"}},
+    "assumptions": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"$ref": "#/$defs/text"}},
+    "does_not_establish": {"type": "array", "minItems": 13, "maxItems": 13, "items": {"$ref": "#/$defs/text"}},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "provenance": {"type": "object", "required": ["source_commit", "retrieval_date", "inputs", "method"], "properties": {"source_commit": {"const": "b469b330"}, "retrieval_date": {"const": "2026-08-12"}, "inputs": {"type": "array", "minItems": 8, "maxItems": 8, "items": {"type": "object", "required": ["path", "sha256"], "properties": {"path": {"$ref": "#/$defs/text"}, "sha256": {"$ref": "#/$defs/hash"}}}}, "method": {"$ref": "#/$defs/text"}}},
+    "verification_commands": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/text"}},
+    "checks": {"type": "object", "required": ["ok", "passed", "total", "failures", "details"], "properties": {"ok": {"const": true}, "passed": {"const": 30}, "total": {"const": 30}, "failures": {"const": []}, "details": {"type": "object", "minProperties": 30, "maxProperties": 30, "additionalProperties": {"const": true}}}},
+    "report": {"const": "reverse_physics/reports/bt-finite-time-active-loop-affiliation.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-finite-time-active-loop-affiliation-v1.schema.json"}
+  },
+  "$defs": {"text": {"type": "string", "minLength": 1}, "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+}

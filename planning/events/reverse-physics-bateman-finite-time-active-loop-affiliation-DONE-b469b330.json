@@ -1,0 +1,32 @@
+{
+  "schema": "event-v0",
+  "id": "sf:program/event/reverse-physics-bateman-finite-time-active-loop-affiliation-DONE-b469b330",
+  "kind": "event",
+  "source": {
+    "path": "tools/science-forge/program/events/reverse-physics-bateman-finite-time-active-loop-affiliation-DONE-b469b330.json",
+    "span": null
+  },
+  "body": {
+    "event_kind": "WORK_ITEM_TRANSITIONED",
+    "actor": "reverse-physics",
+    "base_revision": "science-forge-ir-v0",
+    "predecessors": [],
+    "when": "2026-08-12",
+    "seq": 1,
+    "payload": {
+      "target": "sf:program/work/reverse-physics-bateman-finite-time-active-loop-affiliation",
+      "to_state": "DONE",
+      "note": "The ordered second-Dyson dispersive kernel is the Hilbert transform of the unit-mass Fejer time-window kernel. Exact convolution gives B_T(P)=B_MSbar(P)-C(T|P0-|p||)-C(T|P0+|p||), C(z)=sin(z)/z-Ci(z). At the tagged fixture the exact frame-dependent transient has gaps 4*kappa/5, 16*kappa/5 and four copies of 4*sqrt(2)*kappa/5. The compact hard finite-time packet kernel is Hilbert--Schmidt and its large-time boundary matches the independent covariant loop. Final q6 assembly remains separate. Evidence: REVERSE_PHYSICS_BT_FINITE_TIME_ACTIVE_LOOP_AFFILIATION_V1."
+    },
+    "native": {
+      "authored_by": "manual close-out after exact ordered-Dyson and Fejer-convolution derivation",
+      "policy": "append-only; one content-addressed file per event; the work-item base state is not rewritten"
+    }
+  },
+  "edges": [
+    {
+      "rel": "TRANSITIONS",
+      "to": "sf:program/work/reverse-physics-bateman-finite-time-active-loop-affiliation"
+    }
+  ]
+}

@@ -1,0 +1,184 @@
+{
+  "answer": "Yes on the declared energy-diagonal hard reduced-mode carrier. For a one-vertex tree observed on [0,T], division of the ordered two-vertex Dyson cross by the tree duration gives Kdisp_T(delta)=int_0^T(1-t/T)sin(delta*t)dt=1/delta-sin(delta*T)/(T*delta^2). This is the Hilbert transform of the unit-mass Fejer kernel K_T(nu)=|F_T(nu)|^2/(2*pi*T). Therefore the renormalized finite-time bubble is the Fejer energy average of the already renormalized covariant MSbar bubble. With C(z)=sin(z)/z-Ci(z), the exact result is B_T(P0,p)=log(mu^2/abs(P0^2-p^2))+2-C(T*abs(P0-p))-C(T*abs(P0+p)). The local MSbar counterterm is preserved because K_T has unit mass; the transient is ultraviolet finite and the timelike cut is orthogonal to the real tree-loop interference. In the total-three-particle center frame of the tagged fixture, the active s-channel is boosted: its light-cone gaps are 4*kappa/5 and 16*kappa/5, while each spacelike transfer has two gaps 4*sqrt(2)*kappa/5. Thus the three-channel sum is L_*+6-C(4*kappa*T/5)-C(16*kappa*T/5)-4*C(4*sqrt(2)*kappa*T/5). This gives the exact finite-duration local loop click shown below. On compact hard supports with both light-cone factors separated from zero the transient and logarithm are bounded, so the packet kernel is Hilbert--Schmidt. This closes the finite-duration active-loop affiliation. The final q6 sum with the independently certified connected-tree packet functional is intentionally left to a separate assembly certificate.",
+  "assumptions": [
+    "the public normal-ordered auxiliary quartic Hamiltonian acts on the certified finite-particle reduced-mode domain",
+    "the active incoming and outgoing total energies agree, so the one-vertex time factor is F_T(0)=T and the displayed energy-diagonal interference normalization applies",
+    "the renormalized two-vertex local product is fixed in the same MSbar coupling convention as the covariant predecessor, with no additional finite quartic counterterm",
+    "the timelike absorptive cut is kept distinct from the real tree-loop interference coefficient",
+    "active momenta remain in a compact hard region with both light-cone factors uniformly separated from zero",
+    "the tagged local-cell or finite hard-window detector and normalized spectator packet use the same positive carrier and normalization as the predecessor certificates"
+  ],
+  "certificate": "REVERSE_PHYSICS_BT_FINITE_TIME_ACTIVE_LOOP_AFFILIATION_V1",
+  "checks": {
+    "details": {
+      "Eq19_gravity_and_Lorentzian_boundaries_remain_open": true,
+      "compact_hard_packet_kernel_is_Hilbert_Schmidt": true,
+      "compact_tree_cross_is_imported": true,
+      "complete_q6_is_reserved_for_separate_assembly": true,
+      "covariant_loop_is_imported": true,
+      "dispersive_kernel_is_regular_at_resonance": true,
+      "fejer_kernel_has_unit_mass": true,
+      "fejer_triangle_transform_is_exact": true,
+      "finite_time_bubble_has_covariant_large_time_boundary": true,
+      "finite_time_bubble_preserves_local_constant": true,
+      "finite_time_cut_convention_is_imported": true,
+      "hard_window_covariant_part_is_imported": true,
+      "hard_window_transient_integral_is_exact": true,
+      "inputs_are_content_pinned": true,
+      "lambda6_ledger_has_only_this_missing_object": true,
+      "log_convolution_has_declared_transient": true,
+      "normal_ordered_spectator_term_remains_zero": true,
+      "ordered_Dyson_dispersive_kernel_is_exact": true,
+      "public_auxiliary_quartic_is_imported": true,
+      "six_predecessor_certificates_pass": true,
+      "tagged_channel_invariants_are_exact": true,
+      "tagged_channel_light_cone_gaps_are_exact": true,
+      "tagged_covariant_boundary_matches_predecessor": true,
+      "tagged_loop_normalization_is_exact": true,
+      "tagged_transient_multiplicities_are_one_one_and_four": true,
+      "timelike_cut_is_absent_from_real_tree_loop_interference": true,
+      "transient_antiderivative_is_exact": true,
+      "transient_derivative_is_exact": true,
+      "transient_has_zero_large_argument_boundary": true,
+      "transient_integral_bound_is_one_over_z": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 30,
+    "total": 30
+  },
+  "compact_packet": {
+    "bound": "abs(B_T)<=2+max_abs_log+2/(T*d_gap) for every T>0",
+    "carrier": "energy-diagonal reduced active two-body coarea, tensored with the normalized compact positive spectator packet",
+    "consequence": "the six-species active loop kernel is bounded and Hilbert--Schmidt on the declared compact product support",
+    "shared_time_convention": "the same [0,T] relative-duration convention that produces F_T in the connected tagged tree is used in the ordered second-Dyson cross",
+    "status": "FINITE_TIME_COMPACT_ACTIVE_PACKET_AFFILIATED",
+    "support": "compact hard support with finite coarea measure, bounded channel energy and spatial momentum, and abs(P0-p),abs(P0+p)>=d_gap>0"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "a finite-time kernel off the energy diagonal or for arbitrary temporal switching profiles",
+    "a canonical duration, packet, angular window, beam area or renormalization scale",
+    "scheme independence of the finite local quartic term",
+    "real-emission, forward, collinear or KLN completion outside the declared hard detector",
+    "an all-time Moller, LSZ or S operator",
+    "uniformity of perturbation theory as T tends to infinity",
+    "the complete tagged q6 sum before the separate assembly certificate combines this loop with the connected-tree packet functional",
+    "general Eq. (19) for the standard shift-invariant scalar projector",
+    "all-order positivity or infrared completion",
+    "gravity or metric BV/BRST transfer",
+    "a restored gravitational QME or residual transfer",
+    "anything LORENTZIAN-CAUSAL",
+    "literature priority"
+  ],
+  "fejer_affiliation": {
+    "hilbert_transform": "PV int_R K_T(nu)/(delta-nu)dnu=1/delta-sin(delta*T)/(T*delta^2)",
+    "kernel": "K_T(nu)=abs(F_T(nu))^2/(2*pi*T)=(1-cos(nu*T))/(pi*T*nu^2)",
+    "normalization": "int_R K_T(nu)dnu=1",
+    "renormalization_order": "extend the local two-vertex time-ordered product in MSbar first, then apply its well-defined spectral Fejer average",
+    "status": "FINITE_TIME_DYSON_AND_COVARIANT_BUBBLE_AFFILIATED",
+    "time_window": "F_T(nu)=int_0^T exp(i*nu*t)dt",
+    "triangle_transform": "K_T(nu)=(1/(2*pi))*int_-T^T (1-abs(t)/T)*exp(i*nu*t)dt"
+  },
+  "finite_time_bubble": {
+    "bound": "abs(C(z))<=1/z",
+    "derivative": "C'(z)=-sin(z)/z^2",
+    "finite_counterterm": "zero additional finite Omega^2*Upsilon^2 counterterm; any finite local scheme shift is preserved unchanged by the unit-mass Fejer kernel",
+    "general_formula": "B_T,MSbar(P0,p)=log(mu^2/abs(P0^2-p^2))+2-C(T*abs(P0-p))-C(T*abs(P0+p))",
+    "large_time_boundary": "B_T,MSbar(P0,p)->B_MSbar(P^2)=log(mu^2/abs(P^2))+2 when both abs(P0-p) and abs(P0+p) are nonzero",
+    "status": "FINITE_TIME_MSBAR_BUBBLE_COMPUTED",
+    "transient": "C(z)=sin(z)/z-Ci(z)=int_z^infinity sin(u)/u^2 du for z>0"
+  },
+  "hard_window": {
+    "angular_transient": "J_T(a)=[A(b*sqrt(1-a))-A(b*sqrt(a))]/b^2=int_a^(1-a) C(b*sqrt(z))dz",
+    "definition": "active two-body center frame with theta0<=theta<=pi-theta0, a=(1-cos(theta0))/2, c=1-2*a, b=T*sqrt(s)",
+    "integrated_loop": "sigma_loop,T^(6)=5*lambda^6/(64*pi^3*s)*{c*[3*log(mu^2/s)+6]+I(a)-2*c*C(b)-4*J_T(a)}",
+    "log_integral": "I(a)=2*c-2*(1-a)*log(1-a)+2*a*log(a)",
+    "status": "EXACT_FINITE_TIME_HARD_WINDOW_COMPUTED",
+    "transient_antiderivative": "A(z)=z*sin(z)-cos(z)-z^2*Ci(z), A'(z)=2*z*C(z)"
+  },
+  "interpretation": {
+    "Lorentzian_causal_claim": "NOT_ESTABLISHED",
+    "complete_tagged_q6_probability": "READY_FOR_SEPARATE_ASSEMBLY",
+    "covariant_large_time_boundary": "MATCHED",
+    "finite_duration_BT_Dyson_affiliation": "PROVED_ON_SELECTED_ENERGY_DIAGONAL_HARD_CARRIER",
+    "finite_time_active_loop": "COEFFICIENT_COMPUTED",
+    "finite_time_transient": "COMPUTED_EXACTLY",
+    "general_Eq19": "NOT_PROVED",
+    "gravity_or_BV_BRST_transfer": "NOT_CONSTRUCTED",
+    "normal_ordered_spectator_loop": "ZERO_IN_DECLARED_SCHEME"
+  },
+  "lifecycle_state": "COEFFICIENT_COMPUTED",
+  "next_gate": "Assemble q_tag^(6) by adding this exact finite-time active-loop functional to the certified compact tagged/connected tree cross; the normal-ordered spectator coefficient is zero and lambda5 is already absent. Verify the common normalization, state the packet-dependent final formula and sign boundary, and only then promote the selected tagged q6 lifecycle. General Eq. (19), all-time scattering and gravity remain separate later gates.",
+  "ordered_dyson_kernel": {
+    "dispersive_interference": "Im(D_T)/T=1/delta-sin(delta*T)/(T*delta^2)",
+    "ordered_integral": "D_T(delta)=int_0^T (T-tau)*exp(i*delta*tau)d_tau",
+    "resonant_value": "Kdisp_T(0)=0; the on-shell cut belongs to the orthogonal absorptive part",
+    "status": "SECOND_DYSON_DISPERSIVE_KERNEL_DERIVED",
+    "time_interval": "0<=t2<=t1<=T",
+    "tree_time_factor": "F_T(0)=T on the energy diagonal"
+  },
+  "provenance": {
+    "inputs": [
+      {
+        "path": "planning/work-items/reverse-physics-bateman-finite-time-active-loop-affiliation.json",
+        "sha256": "b27bc708148c4ff3a245525becc863b1c2687a740f1bcc18da84c69fa9d0983b"
+      },
+      {
+        "path": "reverse_physics/data/bateman_turok_hamiltonian_source_v1.json",
+        "sha256": "55ff3f989f1c5ac9bcc0688ad9c43721c22b5889c43da50fce43352c18be8fe7"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_FINITE_TIME_HAMILTONIAN_CUT_AFFILIATION_V1.json",
+        "sha256": "385ed146a7b001031a5da4cf239a4c00b28f4373043e73a20590795a90951b93"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_AUXILIARY_ACTIVE_ONE_LOOP_MSBAR_V1.json",
+        "sha256": "4e85465c2f5c9fa9d8b3e6eab4c76158776cd7d80c340e3d0d25bcf5436d3dfd"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_TAGGED_CONNECTED_COMPACT_PACKET_INTERFERENCE_V1.json",
+        "sha256": "aefdd2d59acf68720a132343f4e25f759170f4efb1b067cd0bcdf824304575fe"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_TAGGED_PACKET_NORMAL_ORDERED_SPECTATOR_REDUCTION_V1.json",
+        "sha256": "9ee80b008c7d68366c2909868e06798c130558f2d8725a07644e2f98e343a310"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_TAGGED_PACKET_LAMBDA6_OBJECT_LEDGER_V1.json",
+        "sha256": "77694bcf570499c9dd8ffa65788cd1c7f1a3cdfdbfa34aad8b5b52cc31ae29d2"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_TAGGED_SPECTATOR_PHYSICAL_PACKET_PROBABILITY_V1.json",
+        "sha256": "f1742448de34c8cc462c9a3a096bd3c1cd1241d7506b8abc1e687d751bff9779"
+      }
+    ],
+    "method": "Exact ordered-Dyson time integration; method-visible Fejer/triangular Fourier identity; exact cosine-integral convolution; exact tagged kinematics and window antiderivative; analytic compact-kernel bounds. No floating-point arithmetic is used.",
+    "retrieval_date": "2026-08-12",
+    "source_commit": "b469b330"
+  },
+  "question": "Does the covariant MSbar active bubble define the actual second-Dyson coefficient on the same finite-duration tagged BT experiment, and what are its transient terms?",
+  "report": "reverse_physics/reports/bt-finite-time-active-loop-affiliation.md",
+  "result_kind": "renormalized finite-duration second-Dyson active four-point loop interference on the selected auxiliary BT carrier",
+  "schema": "reverse_physics/schema/reverse-physics-bt-finite-time-active-loop-affiliation-v1.schema.json",
+  "schema_version": "reverse-physics-bt-finite-time-active-loop-affiliation-v1",
+  "tagged_fixture": {
+    "acceptance_scope": "local angular-cell coefficient at the exact central kinematics; use the hard-window formula for finite angular acceptance",
+    "bubble_sum": "B_s,T+B_t,T+B_u,T=L_*+6-C(4*kappa*T/5)-C(16*kappa*T/5)-4*C(4*sqrt(2)*kappa*T/5)",
+    "channel_light_cone_gaps": "s: abs(P0-p)=4*kappa/5 and abs(P0+p)=16*kappa/5; t,u: abs(P0-p)=abs(P0+p)=4*sqrt(2)*kappa/5",
+    "frame": "the total-three-particle center frame of the tagged fixture; finite sharp time is frame dependent",
+    "invariants": "s=64*kappa^2/25, t=u=-32*kappa^2/25",
+    "large_time_boundary": "q_loop,T^(6)->125*lambda^6*DeltaOmega*(L_*+6)/(16384*pi^4*kappa^2*Area)",
+    "local_loop_click": "q_loop,T^(6)=125*lambda^6*DeltaOmega/[16384*pi^4*kappa^2*Area]*[L_*+6-C(4*kappa*T/5)-C(16*kappa*T/5)-4*C(4*sqrt(2)*kappa*T/5)]",
+    "status": "TAGGED_FINITE_TIME_ACTIVE_LOOP_COMPUTED"
+  },
+  "verification_commands": [
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/bt_finite_time_active_loop_affiliation.py --write --check",
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/verify_bt_finite_time_active_loop_affiliation.py",
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 -m unittest -v reverse_physics.tests.test_bt_finite_time_active_loop_affiliation"
+  ]
+}

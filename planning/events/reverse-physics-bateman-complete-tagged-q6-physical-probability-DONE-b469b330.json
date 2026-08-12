@@ -1,0 +1,32 @@
+{
+  "schema": "event-v0",
+  "id": "sf:program/event/reverse-physics-bateman-complete-tagged-q6-physical-probability-DONE-b469b330",
+  "kind": "event",
+  "source": {
+    "path": "tools/science-forge/program/events/reverse-physics-bateman-complete-tagged-q6-physical-probability-DONE-b469b330.json",
+    "span": null
+  },
+  "body": {
+    "event_kind": "WORK_ITEM_TRANSITIONED",
+    "actor": "reverse-physics",
+    "base_revision": "science-forge-ir-v0",
+    "predecessors": [],
+    "when": "2026-08-12",
+    "seq": 1,
+    "payload": {
+      "target": "sf:program/work/reverse-physics-bateman-complete-tagged-q6-physical-probability",
+      "to_state": "DONE",
+      "note": "The complete selected tagged probability is q_tag=q4[1+lambda^2 R6]+O(lambda^8), q4=75 lambda^4 DeltaOmega/(2048 pi^2 kappa^2 Area), R6=(2 sqrt(2)/3) Re C_ff(T)+5 B_*(T,mu)/(24 pi^2). The compact tree functional and finite-time active loop exhaust the nonzero q6 objects; the normal-ordered spectator term is zero and odd orders vanish by parity. The exact packet/scale/duration-dependent sign wall is computed. This proves a selected BT physical probability beyond leading order without proving general Eq. 19 or gravity. Evidence: REVERSE_PHYSICS_BT_COMPLETE_TAGGED_Q6_PHYSICAL_PROBABILITY_V1."
+    },
+    "native": {
+      "authored_by": "manual close-out after exact common-normalization and completeness assembly",
+      "policy": "append-only; one content-addressed file per event; the work-item base state is not rewritten"
+    }
+  },
+  "edges": [
+    {
+      "rel": "TRANSITIONS",
+      "to": "sf:program/work/reverse-physics-bateman-complete-tagged-q6-physical-probability"
+    }
+  ]
+}

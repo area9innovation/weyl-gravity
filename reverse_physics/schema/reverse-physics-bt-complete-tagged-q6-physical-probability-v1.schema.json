@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-complete-tagged-q6-physical-probability-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["certificate", "schema_version", "dependency_tags", "lifecycle_state", "result_kind", "question", "answer", "complete_probability", "completeness_audit", "sign_and_bounds", "physical_scope", "interpretation", "assumptions", "does_not_establish", "next_gate", "provenance", "verification_commands", "checks", "report", "schema"],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_COMPLETE_TAGGED_Q6_PHYSICAL_PROBABILITY_V1"},
+    "schema_version": {"const": "reverse-physics-bt-complete-tagged-q6-physical-probability-v1"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE"]},
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "result_kind": {"$ref": "#/$defs/text"}, "question": {"$ref": "#/$defs/text"}, "answer": {"$ref": "#/$defs/text"},
+    "complete_probability": {"type": "object", "required": ["leading_term", "tree_functional", "transient", "finite_time_bubble_sum", "relative_q6_coefficient", "assembled_probability", "absolute_tree_cross", "absolute_loop_cross", "spectator_cross", "status"], "properties": {"status": {"const": "COMPLETE_SELECTED_TAGGED_Q6_COEFFICIENT_COMPUTED"}}},
+    "completeness_audit": {"type": "object", "required": ["probability_order_lambda4", "probability_order_lambda5", "probability_order_lambda6_term_1", "probability_order_lambda6_term_2", "probability_order_lambda6_term_3", "source_and_detector_terms", "pure_survival_term", "next_remainder", "status"], "properties": {"status": {"const": "ORDER_LAMBDA6_LEDGER_EXHAUSTED"}}},
+    "sign_and_bounds": {"type": "object", "required": ["q6_sign", "zero_wall", "critical_scale", "scale_boundary", "tree_bound", "transient_sum_bound", "finite_coefficient", "perturbative_positivity", "status"], "properties": {"status": {"const": "EXACT_PACKET_DEPENDENT_Q6_SIGN_BOUNDARY_COMPUTED"}}},
+    "physical_scope": {"type": "object", "required": ["preparation", "effect", "duration", "renormalization", "meaning", "status"], "properties": {"status": {"const": "SELECTED_BT_PHYSICAL_PROBABILITY_PROVED_THROUGH_Q6"}}},
+    "interpretation": {"const": {"selected_tagged_q6_probability": "COEFFICIENT_COMPUTED", "selected_BT_physical_probability_beyond_leading_order": "PROVED_THROUGH_ORDER_LAMBDA6", "probability_remainder": "O_LAMBDA8_BY_PARITY", "universal_q6_sign": "NO_SCHEME_PACKET_DURATION_AND_SCALE_DEPENDENT", "all_order_positivity": "NOT_PROVED", "general_Eq19": "NOT_PROVED", "all_time_scattering": "NOT_CONSTRUCTED", "gravity_or_BV_BRST_transfer": "NOT_CONSTRUCTED", "Lorentzian_causal_claim": "NOT_ESTABLISHED"}},
+    "assumptions": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"$ref": "#/$defs/text"}},
+    "does_not_establish": {"type": "array", "minItems": 14, "maxItems": 14, "items": {"$ref": "#/$defs/text"}},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "provenance": {"type": "object", "required": ["source_commit", "retrieval_date", "inputs", "method"], "properties": {"source_commit": {"const": "b469b330"}, "retrieval_date": {"const": "2026-08-12"}, "inputs": {"type": "array", "minItems": 7, "maxItems": 7, "items": {"type": "object", "required": ["path", "sha256"], "properties": {"path": {"$ref": "#/$defs/text"}, "sha256": {"$ref": "#/$defs/hash"}}}}, "method": {"$ref": "#/$defs/text"}}},
+    "verification_commands": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/text"}},
+    "checks": {"type": "object", "required": ["ok", "passed", "total", "failures", "details"], "properties": {"ok": {"const": true}, "passed": {"const": 25}, "total": {"const": 25}, "failures": {"const": []}, "details": {"type": "object", "minProperties": 25, "maxProperties": 25, "additionalProperties": {"const": true}}}},
+    "report": {"const": "reverse_physics/reports/bt-complete-tagged-q6-physical-probability.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-complete-tagged-q6-physical-probability-v1.schema.json"}
+  },
+  "$defs": {"text": {"type": "string", "minLength": 1}, "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+}

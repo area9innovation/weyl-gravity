@@ -1,0 +1,166 @@
+{
+  "answer": "For a normalized positive spectator packet f and the certified local hard active detector, the complete selected tagged probability is q_tag[f;T]=q4*{1+lambda^2*R6[f;T,mu]}+O(lambda^8), q4=75*lambda^4*DeltaOmega/(2048*pi^2*kappa^2*Area), and R6=(2*sqrt(2)/3)*Re C_ff(T)+(5/(24*pi^2))*B_*(T,mu). Here C_ff(T)=<f,W_kappa,T f> is the certified compact tagged/connected tree functional and B_*=L_*+6-C(4*kappa*T/5)-C(16*kappa*T/5)-4*C(4*sqrt(2)*kappa*T/5), with C(z)=sin(z)/z-Ci(z). This is the complete q6 ledger: the odd lambda5 and lambda7 probability coefficients vanish by exact coupling/Fock parity; the normal-ordered spectator self-energy term is zero; the only remaining ledger entries are precisely the tree cross and active loop displayed here. Both are on the same finite-duration, local-cell, compact positive spectator carrier. R6 is finite and its sign is exactly the sign of the displayed bracket. At fixed lambda(mu), packet and duration, its zero is the explicit mu_crit wall recorded below; this wall is renormalization-scale/scheme bookkeeping, not a universal observable sign. Since q4>0 and R6 is finite, the truncated probability is positive for sufficiently small coupling, but no all-order positivity or exact all-time probability is claimed. This is a genuine beyond-leading selected BT physical probability theorem and does not use general Eq. (19).",
+  "assumptions": [
+    "the normalized compact spectator packet and local active detector satisfy every hard-support and common-domain hypothesis of the two predecessor functionals",
+    "the same total-three-particle center frame and sharp finite interval [0,T] are used for the connected tree and active loop",
+    "the declared normal-ordered massless unit-residue and MSbar auxiliary renormalization conditions are held fixed",
+    "the selected scalar preparation and effect are transported covariantly by the same two-sided formal similarity, so representation-dressing terms are not double counted",
+    "the perturbative equality is interpreted coefficientwise through order lambda6 with the parity-controlled O(lambda8) remainder",
+    "DeltaOmega, kappa, Area and T are positive and f is normalized in the certified positive compact spectator carrier"
+  ],
+  "certificate": "REVERSE_PHYSICS_BT_COMPLETE_TAGGED_Q6_PHYSICAL_PROBABILITY_V1",
+  "checks": {
+    "details": {
+      "Eq19_gravity_and_Lorentzian_boundaries_remain_open": true,
+      "Lstar_is_exact_single_log": true,
+      "all_order_probability_is_not_promoted": true,
+      "compact_tree_cross_is_computed": true,
+      "complete_R6_is_finite_on_declared_domain": true,
+      "complete_assembly_identity_is_exact": true,
+      "critical_scale_sixth_power_is_exact": true,
+      "finite_time_loop_is_affiliated": true,
+      "inputs_are_content_pinned": true,
+      "lambda5_and_all_odd_probability_orders_vanish": true,
+      "lambda6_ledger_has_exactly_three_terms": true,
+      "leading_tagged_probability_is_imported": true,
+      "leading_term_makes_small_coupling_probability_positive": true,
+      "loop_absolute_normalization_matches_predecessor": true,
+      "loop_relative_factor_is_exact": true,
+      "q6_sign_is_not_promoted_to_scheme_independent": true,
+      "q6_sign_wall_is_exact": true,
+      "selected_physical_probability_is_promoted": true,
+      "six_predecessor_certificates_pass": true,
+      "spectator_term_is_zero": true,
+      "tagged_transient_bound_is_exact": true,
+      "tree_absolute_normalization_matches_predecessor": true,
+      "tree_packet_bound_is_finite": true,
+      "tree_packet_bound_is_imported": true,
+      "tree_relative_factor_is_exact": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 25,
+    "total": 25
+  },
+  "complete_probability": {
+    "absolute_loop_cross": "125*lambda^6*DeltaOmega*B_*(T,mu)/(16384*pi^4*kappa^2*Area)",
+    "absolute_tree_cross": "25*sqrt(2)*lambda^6*DeltaOmega*Re C_ff(T)/(1024*pi^2*kappa^2*Area)",
+    "assembled_probability": "q_tag[f;T]=q4*{1+lambda^2*R6[f;T,mu]}+O(lambda^8)",
+    "finite_time_bubble_sum": "B_*(T,mu)=L_*+6-C(4*kappa*T/5)-C(16*kappa*T/5)-4*C(4*sqrt(2)*kappa*T/5)",
+    "leading_term": "q4=75*lambda^4*DeltaOmega/(2048*pi^2*kappa^2*Area)",
+    "relative_q6_coefficient": "R6[f;T,mu]=(2*sqrt(2)/3)*Re C_ff(T)+(5/(24*pi^2))*B_*(T,mu)",
+    "spectator_cross": "0 in the declared normal-ordered massless unit-residue auxiliary scheme",
+    "status": "COMPLETE_SELECTED_TAGGED_Q6_COEFFICIENT_COMPUTED",
+    "transient": "C(z)=sin(z)/z-Ci(z)",
+    "tree_functional": "C_ff(T)=<f,W_kappa,T f> for a normalized compact positive spectator packet f"
+  },
+  "completeness_audit": {
+    "next_remainder": "O(lambda^8) because the complete covariantly named probability is even in lambda",
+    "probability_order_lambda4": "positive tagged active-tree square q4",
+    "probability_order_lambda5": "zero by exact total-Fock/coupling parity",
+    "probability_order_lambda6_term_1": "connected six-point tree crossed with tagged active tree: computed compact functional",
+    "probability_order_lambda6_term_2": "finite-time active four-point loop crossed with active tree and spectator identity: computed",
+    "probability_order_lambda6_term_3": "spectator order-lambda2 two-point block times active tree: zero in the declared scheme",
+    "pure_survival_term": "absent from this nonforward click by active support",
+    "source_and_detector_terms": "not independent summands because the selected scalar preparation and effect are transported by the same two-sided similarity",
+    "status": "ORDER_LAMBDA6_LEDGER_EXHAUSTED"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "a packet-, detector-, duration-, scale- or scheme-independent q6 number or sign",
+    "a canonical experimental packet, angular cell, beam area, duration or renormalization scale",
+    "an exact positive probability after summing every perturbative order",
+    "all-order weak-ghost-symmetry positivity",
+    "real-emission, forward, collinear or KLN completion outside the selected hard nonforward click",
+    "uniform perturbative control as T tends to infinity",
+    "an all-time Moller, LSZ or S operator",
+    "the standard shift-invariant scalar projector or general Bateman--Turok Eq. (19)",
+    "a nonperturbative construction of the full R_t operator",
+    "gravity or metric BV/BRST transfer",
+    "a restored gravitational quantum master equation",
+    "residual quantum transfer",
+    "anything LORENTZIAN-CAUSAL",
+    "literature priority"
+  ],
+  "interpretation": {
+    "Lorentzian_causal_claim": "NOT_ESTABLISHED",
+    "all_order_positivity": "NOT_PROVED",
+    "all_time_scattering": "NOT_CONSTRUCTED",
+    "general_Eq19": "NOT_PROVED",
+    "gravity_or_BV_BRST_transfer": "NOT_CONSTRUCTED",
+    "probability_remainder": "O_LAMBDA8_BY_PARITY",
+    "selected_BT_physical_probability_beyond_leading_order": "PROVED_THROUGH_ORDER_LAMBDA6",
+    "selected_tagged_q6_probability": "COEFFICIENT_COMPUTED",
+    "universal_q6_sign": "NO_SCHEME_PACKET_DURATION_AND_SCALE_DEPENDENT"
+  },
+  "lifecycle_state": "COEFFICIENT_COMPUTED",
+  "next_gate": "Use this completed selected physical coefficient to decide the next fork. The direct physical route should test order lambda8 and finite-resolution/collinear completion on the same carrier; the Eq. (19) route still requires a singular, doubled, localized or non-Fock projector pushforward because its regular perturbative-vacuum branch is obstructed. No scalar result transfers to gravity before the metric BV/BRST import, QME-restoration and residual-transfer gates.",
+  "physical_scope": {
+    "duration": "finite sharp interaction interval [0,T] shared by the connected tree and active second-Dyson loop",
+    "effect": "hard nonforward local angular-cell tagged detector in the total-three-particle center frame",
+    "meaning": "selected finite-order reduced-mode BT physical probability beyond leading order, obtained without assuming general Eq. (19)",
+    "preparation": "normalized compact positive ghost-even spectator packet tensored with the certified dressed scalar active source",
+    "renormalization": "normal-ordered massless unit-residue auxiliary carrier and MSbar quartic coupling with zero additional finite quartic counterterm",
+    "status": "SELECTED_BT_PHYSICAL_PROBABILITY_PROVED_THROUGH_Q6"
+  },
+  "provenance": {
+    "inputs": [
+      {
+        "path": "planning/work-items/reverse-physics-bateman-complete-tagged-q6-physical-probability.json",
+        "sha256": "70ce47d61719f84924c3a2c150557d7d4ba6fca039b1a999ceaee067b26e5209"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_TAGGED_PACKET_LAMBDA5_PARITY_SELECTION_V1.json",
+        "sha256": "2b777594fdd107f081df5c6b10f9fa0650510d1998419225c67a02d77faba87b"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_TAGGED_PACKET_LAMBDA6_OBJECT_LEDGER_V1.json",
+        "sha256": "77694bcf570499c9dd8ffa65788cd1c7f1a3cdfdbfa34aad8b5b52cc31ae29d2"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_TAGGED_PACKET_NORMAL_ORDERED_SPECTATOR_REDUCTION_V1.json",
+        "sha256": "9ee80b008c7d68366c2909868e06798c130558f2d8725a07644e2f98e343a310"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_FINITE_TIME_ACTIVE_LOOP_AFFILIATION_V1.json",
+        "sha256": "73d5f9d1db46e3c9a783acc8d35f94a17876425ce5f9aec3fca73f1c73d547a3"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_TAGGED_CONNECTED_COMPACT_PACKET_INTERFERENCE_V1.json",
+        "sha256": "aefdd2d59acf68720a132343f4e25f759170f4efb1b067cd0bcdf824304575fe"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_TAGGED_SPECTATOR_PHYSICAL_PACKET_PROBABILITY_V1.json",
+        "sha256": "f1742448de34c8cc462c9a3a096bd3c1cd1241d7506b8abc1e687d751bff9779"
+      }
+    ],
+    "method": "Exact symbolic common-normalization ratios, exhaustive imported q6 ledger, exact parity remainder, exact cosine-integral transient and sign-wall algebra, and analytic compact-packet bounds. No floating-point arithmetic is used.",
+    "retrieval_date": "2026-08-12",
+    "source_commit": "b469b330"
+  },
+  "question": "After the finite-time active loop is affiliated, what is the complete tagged physical probability through order lambda6, and what fixes the sign of its NLO coefficient?",
+  "report": "reverse_physics/reports/bt-complete-tagged-q6-physical-probability.md",
+  "result_kind": "complete selected hard tagged compact-packet BT physical probability through order lambda6 in the declared normal-ordered MSbar finite-time scheme",
+  "schema": "reverse_physics/schema/reverse-physics-bt-complete-tagged-q6-physical-probability-v1.schema.json",
+  "schema_version": "reverse-physics-bt-complete-tagged-q6-physical-probability-v1",
+  "sign_and_bounds": {
+    "critical_scale": "mu_crit/kappa={65536/15625*exp[-6+C(4*kappa*T/5)+C(16*kappa*T/5)+4*C(4*sqrt(2)*kappa*T/5)-(16*sqrt(2)*pi^2/5)*Re C_ff(T)]}^{1/6}",
+    "finite_coefficient": "R6 is finite for every T>0 on the declared compact hard carrier",
+    "perturbative_positivity": "because q4>0 and R6 is finite, 1+lambda^2*R6>0 for all sufficiently small abs(lambda); this is not all-order positivity",
+    "q6_sign": "sign(q_tag^(6))=sign(R6) for positive DeltaOmega, kappa and Area",
+    "scale_boundary": "the critical scale is at fixed perturbative lambda(mu); running of the leading term cancels the explicit scale dependence at this order, and a finite scheme change moves the displayed wall",
+    "status": "EXACT_PACKET_DEPENDENT_Q6_SIGN_BOUNDARY_COMPUTED",
+    "transient_sum_bound": "abs[C(4*kappa*T/5)+C(16*kappa*T/5)+4*C(4*sqrt(2)*kappa*T/5)]<=(25/16+5/sqrt(2))/(kappa*T)",
+    "tree_bound": "abs(C_ff(T))<=54*T*sqrt(mu_in*mu_out)/d0",
+    "zero_wall": "R6=0 iff L_*=-6+C(4*kappa*T/5)+C(16*kappa*T/5)+4*C(4*sqrt(2)*kappa*T/5)-(16*sqrt(2)*pi^2/5)*Re C_ff(T)"
+  },
+  "verification_commands": [
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/bt_complete_tagged_q6_physical_probability.py --write --check",
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/verify_bt_complete_tagged_q6_physical_probability.py",
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 -m unittest -v reverse_physics.tests.test_bt_complete_tagged_q6_physical_probability"
+  ]
+}
