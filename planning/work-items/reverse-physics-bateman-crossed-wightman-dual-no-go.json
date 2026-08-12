@@ -1,0 +1,37 @@
+{
+  "id": "sf:program/work/reverse-physics-bateman-crossed-wightman-dual-no-go",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "reverse-physics",
+    "state": "ACTIVE",
+    "objective": "Test whether reflection of the spectral delta-prime Wightman family or the crossed five-to-four physical amplitude ratio supplies the internal dual-number parity required by the reversed six-point quotient.",
+    "depends_on": [
+      "REVERSE_PHYSICS_BT_PHYSICAL_COLLINEAR_OPERATOR_FACTORIZATION_V1",
+      "REVERSE_PHYSICS_BT_CROSSED_DETECTOR_ORIENTATION_NO_GO_V1",
+      "REVERSE_PHYSICS_BT_CROSSED_SIX_POINT_KALLEN_OBSTRUCTION_V1"
+    ],
+    "activates": [
+      "an exact incoming/outgoing delta-prime parameter-derivative crosswalk",
+      "the crossed five-to-four two-species amplitude and Gram",
+      "a compatibility test for a universal incoming epsilon parity",
+      "a profile-selective or higher-composite next gate if the universal parity fails"
+    ],
+    "current_gate": "CROSSED_WIGHTMAN_DUAL_NO_GO: reflect the massive spectral family before differentiating in mass squared, reconstruct the crossed T map, and test whether the required anti-Krein epsilon parity is both produced and compatible with the positive first crossed splitting.",
+    "stop_condition": "Land an exact certificate with an independent verifier deciding Wightman-dual parity and universal-parity compatibility, while retaining distributional-domain, nonfactorizing six-point, Eq. 19, complete probability and spacetime boundaries.",
+    "forbid": "no support reflection sign invented from oriented integration; no formal delta derivative called a full rigged-state theorem; no universal epsilon parity accepted if it destroys the certified first crossed Gram; no reduced distributional no-go promoted to complete crossing, Eq. 19, gravity/BRST, or LORENTZIAN-CAUSAL",
+    "allowed_paths": [
+      "reverse_physics/",
+      "notes/bateman-turok-embedding.md",
+      "paper/05-interaction-obstructions.tex",
+      "paper/05-interaction-obstructions.pdf",
+      "paper/06-einstein-weyl-interaction-obstructions.tex",
+      "paper/06-einstein-weyl-interaction-obstructions.pdf",
+      "planning/work-items/reverse-physics-bateman-crossed-wightman-dual-no-go.json",
+      "planning/events/"
+    ],
+    "resource_hint": "Use W_m^plus=theta(p0)delta(p^2-m^2) and W_dip^plus=-partial_(m^2)W_m^plus|0. Reflection p->-p commutes with partial_(m^2), so its dual-number matrix is I, not diag(1,-1). Then cross tau->-x in T=diag(2Q,2L) and test both T and T*S_epsilon with the fifth delta-prime sign.",
+    "input_commit": "9ee8812666a4c6e51a249118cd8c424c8ea8cad7",
+    "stream": "reverse-physics"
+  }
+}

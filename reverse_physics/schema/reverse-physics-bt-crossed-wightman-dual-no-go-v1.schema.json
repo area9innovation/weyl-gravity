@@ -1,0 +1,164 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-crossed-wightman-dual-no-go-v1.schema.json",
+  "title": "BT crossed Wightman-dual no-go certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "certificate", "schema_version", "dependency_tags", "lifecycle_state",
+    "result_kind", "question", "answer", "spectral_reflection_crosswalk",
+    "crossed_five_to_four_operator", "universal_parity_incompatibility",
+    "history_disposition", "disposition", "assumptions",
+    "does_not_establish", "next_gate", "provenance",
+    "verification_commands", "checks", "report", "schema"
+  ],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_CROSSED_WIGHTMAN_DUAL_NO_GO_V1"},
+    "schema_version": {"const": "reverse-physics-bt-crossed-wightman-dual-no-go-v1"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "result_kind": {"type": "string", "minLength": 1},
+    "question": {"type": "string", "minLength": 1},
+    "answer": {"type": "string", "minLength": 1},
+    "spectral_reflection_crosswalk": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "massive_positive_family", "massive_negative_family",
+        "dipole_positive", "dipole_negative", "reflection", "commutation",
+        "dual_number_basis", "reflection_matrix", "jet_metric", "metric_law",
+        "jacobian_boundary", "domain_boundary"
+      ],
+      "properties": {
+        "massive_positive_family": {"type": "string", "minLength": 1},
+        "massive_negative_family": {"type": "string", "minLength": 1},
+        "dipole_positive": {"type": "string", "minLength": 1},
+        "dipole_negative": {"type": "string", "minLength": 1},
+        "reflection": {"const": "C_* W_mu^plus=W_mu^minus"},
+        "commutation": {"type": "string", "minLength": 1},
+        "dual_number_basis": {"const": ["simple_spectral_row", "dipole_mass_derivative_row"]},
+        "reflection_matrix": {"$ref": "#/$defs/string_matrix"},
+        "jet_metric": {"$ref": "#/$defs/string_matrix"},
+        "metric_law": {"const": "C_jet^T*J*C_jet=J"},
+        "jacobian_boundary": {"type": "string", "minLength": 1},
+        "domain_boundary": {"type": "string", "minLength": 1}
+      }
+    },
+    "crossed_five_to_four_operator": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "domain", "q_x", "ell_x", "T_cross", "T_cross_sharp",
+        "unsigned_gram", "fifth_external_delta_prime_sign",
+        "signed_physical_gram", "rho_x", "status"
+      ],
+      "properties": {
+        "domain": {"type": "string", "minLength": 1},
+        "q_x": {"type": "string", "minLength": 1},
+        "ell_x": {"type": "string", "minLength": 1},
+        "T_cross": {"$ref": "#/$defs/string_matrix"},
+        "T_cross_sharp": {"$ref": "#/$defs/string_matrix"},
+        "unsigned_gram": {"$ref": "#/$defs/string_matrix"},
+        "fifth_external_delta_prime_sign": {"const": -1},
+        "signed_physical_gram": {"$ref": "#/$defs/string_matrix"},
+        "rho_x": {"type": "string", "minLength": 1},
+        "status": {"const": "POSITIVE_FULL_RANK_FIRST_CROSSED_SPLITTING_WITH_IDENTITY_WIGHTMAN_DUAL"}
+      }
+    },
+    "universal_parity_incompatibility": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "required_six_point_parity", "metric_law", "parity_dressed_T",
+        "parity_dressed_T_sharp", "parity_unsigned_gram",
+        "fifth_signed_parity_gram", "incompatibility", "allowed_repair_types"
+      ],
+      "properties": {
+        "required_six_point_parity": {"$ref": "#/$defs/string_matrix"},
+        "metric_law": {"const": "S_epsilon^T*J*S_epsilon=-J"},
+        "parity_dressed_T": {"$ref": "#/$defs/string_matrix"},
+        "parity_dressed_T_sharp": {"$ref": "#/$defs/string_matrix"},
+        "parity_unsigned_gram": {"$ref": "#/$defs/string_matrix"},
+        "fifth_signed_parity_gram": {"$ref": "#/$defs/string_matrix"},
+        "incompatibility": {"type": "string", "minLength": 1},
+        "allowed_repair_types": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "string", "minLength": 1}}
+      }
+    },
+    "history_disposition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["first_crossed_pair_status", "reversed_six_point_history_count", "six_point_status", "next_missing_datum"],
+      "properties": {
+        "first_crossed_pair_status": {"const": "POSITIVE_WITHOUT_INTERNAL_PARITY"},
+        "reversed_six_point_history_count": {"const": 12},
+        "six_point_status": {"const": "UNAFFILIATED; UNIVERSAL_WIGHTMAN_DUAL_REPAIR_EXCLUDED"},
+        "next_missing_datum": {"type": "string", "minLength": 1}
+      }
+    },
+    "disposition": {
+      "const": {
+        "spectral_reflection_mass_jet_action": "IDENTITY",
+        "spectral_reflection_internal_epsilon_parity": "NOT_PRESENT",
+        "crossed_five_to_four_signed_gram": "POSITIVE_FULL_RANK",
+        "universal_epsilon_parity_compatibility": "EXACTLY_OBSTRUCTED_BY_FIRST_CROSSED_SPLITTING",
+        "profile_selective_or_higher_composite_parity": "NOT_DERIVED",
+        "nonfactorizing_crossed_six_point_term": "NOT_COMPUTED",
+        "twelve_reversed_physical_intertwiners": "NOT_CONSTRUCTED",
+        "complete_crossed_probability": "NOT_COMPUTED",
+        "Eq19_all_orders": "NOT_PROVED",
+        "spacetime_Moller_LSZ_S_operator": "NOT_CONSTRUCTED"
+      }
+    },
+    "assumptions": {"type": "array", "minItems": 5, "items": {"type": "string", "minLength": 1}},
+    "does_not_establish": {"type": "array", "minItems": 14, "items": {"type": "string", "minLength": 1}},
+    "next_gate": {"type": "string", "minLength": 1},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_commit", "retrieval_date", "inputs", "producer_method", "primary_source"],
+      "properties": {
+        "source_commit": {"const": "9ee8812666a4c6e51a249118cd8c424c8ea8cad7"},
+        "retrieval_date": {"const": "2026-08-12"},
+        "inputs": {
+          "type": "array", "minItems": 4, "maxItems": 4,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["path", "sha256"],
+            "properties": {
+              "path": {"type": "string", "minLength": 1},
+              "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+            }
+          }
+        },
+        "producer_method": {"type": "string", "minLength": 1},
+        "primary_source": {
+          "type": "object", "additionalProperties": false,
+          "required": ["source", "url", "equations"],
+          "properties": {
+            "source": {"type": "string", "minLength": 1},
+            "url": {"type": "string", "minLength": 1},
+            "equations": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}}
+          }
+        }
+      }
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "items": {"type": "string", "minLength": 1}},
+    "checks": {
+      "type": "object", "additionalProperties": false,
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true}, "passed": {"const": 27},
+        "total": {"const": 27}, "failures": {"const": []},
+        "details": {"type": "object", "minProperties": 27, "maxProperties": 27, "additionalProperties": {"const": true}}
+      }
+    },
+    "report": {"const": "reverse_physics/reports/bt-crossed-wightman-dual-no-go.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-crossed-wightman-dual-no-go-v1.schema.json"}
+  },
+  "$defs": {
+    "string_matrix": {
+      "type": "array", "minItems": 1,
+      "items": {"type": "array", "minItems": 1, "items": {"type": "string"}}
+    }
+  }
+}

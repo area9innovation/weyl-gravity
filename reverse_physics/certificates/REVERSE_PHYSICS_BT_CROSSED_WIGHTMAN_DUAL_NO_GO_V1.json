@@ -1,0 +1,272 @@
+{
+  "answer": "No. Introduce the massive spectral families W_mu^plus=theta(p0)delta(p^2-mu) and W_mu^minus=theta(-p0)delta(p^2-mu), with the dipole distributions W_dip^plus=-partial_mu W_mu^plus|0 and similarly for minus. Momentum reflection p->-p maps W_mu^plus to W_mu^minus and is independent of mu, so it commutes with -partial_mu. Its matrix on the simple/dipole dual-number jet is I2, not S_epsilon=diag(1,-1). There is no orientation sign because distributional pushforward uses the absolute Jacobian. The amplitude-level check agrees. Crossing tau->-x in the certified five-to-four map gives T_x=diag(-q_x,l_x), where q_x=[2x(a0+a1)+(a0-a1)^2]/(2x^2)>0 and l_x=(a0-a1)^2/(2x)>0. Its J-adjoint has T_x^sharp T_x=-rho_x I2; the fifth delta-prime sign is still minus, hence the physical signed Gram is +rho_x I2. Thus the first crossed splitting is already healthy with the identity Wightman dual. If the six-point repair S_epsilon were imposed as a universal incoming one-particle rule, T_x S_epsilon would instead have signed Gram -rho_x I2 and destroy that positivity. The required six-point sign therefore cannot be a universal Wightman-reflection or one-particle crossing law. It must act selectively on the second parent/profile block, arise from a higher composite, or be replaced by a nonfactorizing crossed six-point term. This remains a reduced distributional and amplitude-jet theorem, not a complete crossed probability or spacetime crossing theorem.",
+  "assumptions": [
+    "The spectral crosswalk is performed on the free parameterized Wightman distributions before the interacting asymptotic limit. It proves a distributional sign identity, not existence of the full interacting incoming state.",
+    "Mass squared mu is differentiated with the BT convention delta_prime(p^2)=-partial_mu delta(p^2-mu)|0. Reflection is independent of mu and distributional pushforward uses the absolute Jacobian.",
+    "The crossed amplitude calculation is restricted to the certified square-free five-to-four external-mass jet and the massless spacelike sheet tau=-x.",
+    "The fifth external delta-prime sign remains minus after crossing because the number of external derivative measures is unchanged.",
+    "Universal parity means the same incoming one-particle jet map acts at the first and second crossed splittings. Profile-selective, higher-composite and nonfactorizing actions are explicitly outside that hypothesis."
+  ],
+  "certificate": "REVERSE_PHYSICS_BT_CROSSED_WIGHTMAN_DUAL_NO_GO_V1",
+  "checks": {
+    "details": {
+      "all_twelve_six_point_histories_remain_open": true,
+      "crossed_L_is_positive_ellx_over_two": true,
+      "crossed_Q_is_negative_qx_over_two": true,
+      "crossed_T_reconstructs": true,
+      "crossed_sharp_reconstructs": true,
+      "crossed_signed_gram_is_positive": true,
+      "crossed_unsigned_gram_is_negative": true,
+      "dipole_convention_has_same_reflection_sign": true,
+      "epsilon_parity_is_anti_krein": true,
+      "epsilon_parity_is_not_reflection": true,
+      "fifth_delta_sign_is_minus": true,
+      "incoming_outgoing_supports_are_distinct": true,
+      "input_hashes_pinned": true,
+      "parity_reverse_block_is_fixed_sharp": true,
+      "predecessors_pass": true,
+      "reflection_commutes_with_mass_derivative": true,
+      "reflection_is_krein_unitary_on_jet": true,
+      "reflection_matrix_is_identity_on_mass_jet": true,
+      "reverse_block_is_fixed_sharp": true,
+      "rho_is_positive_formula": true,
+      "rho_matches_crossed_predecessor": true,
+      "six_point_repair_is_profile_block_selective": true,
+      "support_reflection_has_no_oriented_jacobian_sign": true,
+      "universal_parity_breaks_first_crossed_positivity": true,
+      "universal_parity_changes_T": true,
+      "universal_parity_signed_gram_is_negative": true,
+      "universal_parity_unsigned_gram_is_positive": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 27,
+    "total": 27
+  },
+  "crossed_five_to_four_operator": {
+    "T_cross": [
+      [
+        "-(a0**2 - 2*a0*a1 + 2*a0*x + a1**2 + 2*a1*x)/(2*x**2)",
+        "0"
+      ],
+      [
+        "0",
+        "(a0 - a1)**2/(2*x)"
+      ]
+    ],
+    "T_cross_sharp": [
+      [
+        "(a0 - a1)**2/(2*x)",
+        "0"
+      ],
+      [
+        "0",
+        "-(a0**2 - 2*a0*a1 + 2*a0*x + a1**2 + 2*a1*x)/(2*x**2)"
+      ]
+    ],
+    "domain": "a0>0, a1>0, a0!=a1, x>0 on the massless spacelike crossed pair sheet",
+    "ell_x": "(a0 - a1)**2/(2*x)",
+    "fifth_external_delta_prime_sign": -1,
+    "q_x": "(a0**2 - 2*a0*a1 + 2*a0*x + a1**2 + 2*a1*x)/(2*x**2)",
+    "rho_x": "(a0 - a1)**2*(a0**2 - 2*a0*a1 + 2*a0*x + a1**2 + 2*a1*x)/(4*x**3)",
+    "signed_physical_gram": [
+      [
+        "(a0 - a1)**2*(a0**2 - 2*a0*a1 + 2*a0*x + a1**2 + 2*a1*x)/(4*x**3)",
+        "0"
+      ],
+      [
+        "0",
+        "(a0 - a1)**2*(a0**2 - 2*a0*a1 + 2*a0*x + a1**2 + 2*a1*x)/(4*x**3)"
+      ]
+    ],
+    "status": "POSITIVE_FULL_RANK_FIRST_CROSSED_SPLITTING_WITH_IDENTITY_WIGHTMAN_DUAL",
+    "unsigned_gram": [
+      [
+        "-(a0 - a1)**2*(a0**2 - 2*a0*a1 + 2*a0*x + a1**2 + 2*a1*x)/(4*x**3)",
+        "0"
+      ],
+      [
+        "0",
+        "-(a0 - a1)**2*(a0**2 - 2*a0*a1 + 2*a0*x + a1**2 + 2*a1*x)/(4*x**3)"
+      ]
+    ]
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "disposition": {
+    "Eq19_all_orders": "NOT_PROVED",
+    "complete_crossed_probability": "NOT_COMPUTED",
+    "crossed_five_to_four_signed_gram": "POSITIVE_FULL_RANK",
+    "nonfactorizing_crossed_six_point_term": "NOT_COMPUTED",
+    "profile_selective_or_higher_composite_parity": "NOT_DERIVED",
+    "spacetime_Moller_LSZ_S_operator": "NOT_CONSTRUCTED",
+    "spectral_reflection_internal_epsilon_parity": "NOT_PRESENT",
+    "spectral_reflection_mass_jet_action": "IDENTITY",
+    "twelve_reversed_physical_intertwiners": "NOT_CONSTRUCTED",
+    "universal_epsilon_parity_compatibility": "EXACTLY_OBSTRUCTED_BY_FIRST_CROSSED_SPLITTING"
+  },
+  "does_not_establish": [
+    "a complete interacting incoming Wightman or rigged-state domain",
+    "a full LSZ crossing theorem for the dipole field",
+    "absence of a profile-selective or higher-composite internal parity",
+    "absence of a nonfactorizing crossed six-point pre-trace term",
+    "a positive crossed six-point probability",
+    "the twelve reversed physical intertwiners",
+    "the 300 crossed seven-point sheets or spectator sectors",
+    "a complete incoming/outgoing Moller, LSZ, or S operator",
+    "Bateman--Turok Eq. (19)",
+    "positivity beyond tree level or a KLN theorem",
+    "a metric or BRST lift to Weyl gravity",
+    "anything LORENTZIAN-CAUSAL",
+    "a new physical or spacetime dimension",
+    "literature priority"
+  ],
+  "history_disposition": {
+    "first_crossed_pair_status": "POSITIVE_WITHOUT_INTERNAL_PARITY",
+    "next_missing_datum": "a profile-selective/higher-composite BT derivation of R_minus or the first nonfactorizing crossed 3->3 pre-trace term",
+    "reversed_six_point_history_count": 12,
+    "six_point_status": "UNAFFILIATED; UNIVERSAL_WIGHTMAN_DUAL_REPAIR_EXCLUDED"
+  },
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "Test the smallest profile-selective implementation of S_epsilon on the four-component parent/profile carrier against prefix compatibility and the public BT charge/ghost-parity constraints. It must act trivially on the first crossed T_x block, act as diag(I2,-I2) only at the second coherent collapse, and arise from a declared higher-composite or doubled source operator. If no such operator exists on the available public algebra, compute the first nonfactorizing crossed 3->3 pre-trace amplitude term; the universal Wightman-dual route is closed.",
+  "provenance": {
+    "inputs": [
+      {
+        "path": "planning/work-items/reverse-physics-bateman-crossed-wightman-dual-no-go.json",
+        "sha256": "abbc6f4b0b9e3fe360820cc52b9a3399a85cf148f24e8d970780a17c82286099"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_PHYSICAL_COLLINEAR_OPERATOR_FACTORIZATION_V1.json",
+        "sha256": "d0f8786c62e24e37c198f4a286aa2e3b718f13decf5352d811cf554d485ed79e"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_CROSSED_DETECTOR_ORIENTATION_NO_GO_V1.json",
+        "sha256": "cb6149890f7335e029f25f37ea0ec6f5ca35923094121e496261c0910419ed65"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_CROSSED_SIX_POINT_KALLEN_OBSTRUCTION_V1.json",
+        "sha256": "5bd45432639aac028fc34fcf7ece5f94213c7c0e1cb633dbb44020f459cff232"
+      }
+    ],
+    "primary_source": {
+      "equations": [
+        "Eq. (5)",
+        "Eq. (6)",
+        "Eq. (9)",
+        "Eq. (13)",
+        "Eq. (18)"
+      ],
+      "source": "Bateman--Turok arXiv:2607.00096v1",
+      "url": "https://arxiv.org/abs/2607.00096v1"
+    },
+    "producer_method": "Exact symbolic parameter-derivative/reflection coefficient algebra for the spectral delta-prime family, followed by exact SymPy continuation of the certified amplitude-level T map and its J-adjoint before and after the candidate universal epsilon parity. No floating-point arithmetic is used.",
+    "retrieval_date": "2026-08-12",
+    "source_commit": "9ee8812666a4c6e51a249118cd8c424c8ea8cad7"
+  },
+  "question": "Does reflection of the delta-prime Wightman family or the crossed five-to-four physical adjoint generate the internal epsilon parity needed by the reversed six-point quotient?",
+  "report": "reverse_physics/reports/bt-crossed-wightman-dual-no-go.md",
+  "result_kind": "exact spectral-family reflection crosswalk, crossed five-to-four physical Gram, and incompatibility theorem for a universal incoming dual-number parity",
+  "schema": "reverse_physics/schema/reverse-physics-bt-crossed-wightman-dual-no-go-v1.schema.json",
+  "schema_version": "reverse-physics-bt-crossed-wightman-dual-no-go-v1",
+  "spectral_reflection_crosswalk": {
+    "commutation": "C_*[-partial_mu W_mu^plus]|0=[-partial_mu C_*W_mu^plus]|0=W_dip^minus",
+    "dipole_negative": "W_dip^minus=-partial_mu W_mu^minus at mu=0=theta(-p0)*delta_prime(p^2)",
+    "dipole_positive": "W_dip^plus=-partial_mu W_mu^plus at mu=0=theta(p0)*delta_prime(p^2)",
+    "domain_boundary": "This is an exact identity of parameterized tempered distributions tested after smearing. It is not a construction of the complete interacting incoming rigged state or LSZ domain.",
+    "dual_number_basis": [
+      "simple_spectral_row",
+      "dipole_mass_derivative_row"
+    ],
+    "jacobian_boundary": "Distributional pushforward under p->-p uses |det(-I4)|=1. No oriented integration sign is present.",
+    "jet_metric": [
+      [
+        "0",
+        "1"
+      ],
+      [
+        "1",
+        "0"
+      ]
+    ],
+    "massive_negative_family": "W_mu^minus(p)=theta(-p0)*delta(p^2-mu)",
+    "massive_positive_family": "W_mu^plus(p)=theta(p0)*delta(p^2-mu)",
+    "metric_law": "C_jet^T*J*C_jet=J",
+    "reflection": "C_* W_mu^plus=W_mu^minus",
+    "reflection_matrix": [
+      [
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "1"
+      ]
+    ]
+  },
+  "universal_parity_incompatibility": {
+    "allowed_repair_types": [
+      "a profile-selective parity acting only on the second parent/profile block",
+      "a higher-composite or doubled BT branch whose total sharp remains consistent",
+      "a nonfactorizing crossed six-point pre-trace contribution that changes the quotient before Hilbertization"
+    ],
+    "fifth_signed_parity_gram": [
+      [
+        "-(a0 - a1)**2*(a0**2 - 2*a0*a1 + 2*a0*x + a1**2 + 2*a1*x)/(4*x**3)",
+        "0"
+      ],
+      [
+        "0",
+        "-(a0 - a1)**2*(a0**2 - 2*a0*a1 + 2*a0*x + a1**2 + 2*a1*x)/(4*x**3)"
+      ]
+    ],
+    "incompatibility": "The same universal S_epsilon that would repair the second crossed quotient reverses the already positive first crossed splitting to -rho_x*I2. It cannot be the common incoming one-particle Wightman dual.",
+    "metric_law": "S_epsilon^T*J*S_epsilon=-J",
+    "parity_dressed_T": [
+      [
+        "-(a0**2 - 2*a0*a1 + 2*a0*x + a1**2 + 2*a1*x)/(2*x**2)",
+        "0"
+      ],
+      [
+        "0",
+        "-(a0 - a1)**2/(2*x)"
+      ]
+    ],
+    "parity_dressed_T_sharp": [
+      [
+        "-(a0 - a1)**2/(2*x)",
+        "0"
+      ],
+      [
+        "0",
+        "-(a0**2 - 2*a0*a1 + 2*a0*x + a1**2 + 2*a1*x)/(2*x**2)"
+      ]
+    ],
+    "parity_unsigned_gram": [
+      [
+        "(a0 - a1)**2*(a0**2 - 2*a0*a1 + 2*a0*x + a1**2 + 2*a1*x)/(4*x**3)",
+        "0"
+      ],
+      [
+        "0",
+        "(a0 - a1)**2*(a0**2 - 2*a0*a1 + 2*a0*x + a1**2 + 2*a1*x)/(4*x**3)"
+      ]
+    ],
+    "required_six_point_parity": [
+      [
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "-1"
+      ]
+    ]
+  },
+  "verification_commands": [
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/bt_crossed_wightman_dual_no_go.py --write --check",
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/verify_bt_crossed_wightman_dual_no_go.py",
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 -m unittest reverse_physics.tests.test_bt_crossed_wightman_dual_no_go"
+  ]
+}
