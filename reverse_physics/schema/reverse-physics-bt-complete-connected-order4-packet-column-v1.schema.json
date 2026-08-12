@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-complete-connected-order4-packet-column-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["certificate", "schema_version", "dependency_tags", "lifecycle_state", "result_kind", "question", "answer", "connected_graph_classification", "positive_output_closure", "unpartitioned_compact_packet_column", "declared_scalar_source", "outside_leakage_reduction", "assumptions", "does_not_establish", "missing_object_ledger", "next_gate", "provenance", "verification_commands", "checks", "report", "schema"],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_COMPLETE_CONNECTED_ORDER4_PACKET_COLUMN_V1"},
+    "schema_version": {"const": "reverse-physics-bt-complete-connected-order4-packet-column-v1"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "connected_graph_classification": {
+      "type": "object", "additionalProperties": false,
+      "required": ["vertex_degrees", "identity", "order4_types", "enumerated_graph_rows", "three_input_disposition", "tree_topologies", "status"],
+      "properties": {
+        "vertex_degrees": {"const": "V3 carries lambda^1 and V4 carries lambda^2"},
+        "identity": {"const": "d_lambda=sum_v(n_v-2)=E+2L-2"},
+        "order4_types": {"const": [{"external_legs": 0, "loops": 3}, {"external_legs": 2, "loops": 2}, {"external_legs": 4, "loops": 1}, {"external_legs": 6, "loops": 0}]},
+        "enumerated_graph_rows": {"type": "array", "minItems": 12, "maxItems": 12, "items": {"type": "object", "additionalProperties": false, "required": ["V3", "V4", "I", "E", "L", "coupling_degree"], "properties": {"V3": {"type": "integer", "minimum": 0}, "V4": {"type": "integer", "minimum": 0}, "I": {"type": "integer", "minimum": 0}, "E": {"type": "integer", "minimum": 0}, "L": {"type": "integer", "minimum": 0}, "coupling_degree": {"const": 4}}}},
+        "three_input_disposition": {"const": {"E6_L0": "THREE_TO_THREE_TREE_ALLOWED", "E4_L1": "THREE_TO_ONE_EXCLUDED_BY_P_SQUARED_256_OVER_25_NOT_ZERO", "E2_L2": "CANNOT_CONTAIN_THREE_INCOMING_EXTERNAL_LEGS", "E0_L3": "VACUUM_GRAPH_DOES_NOT_ATTACH_SOURCE"}},
+        "tree_topologies": {"const": ["V4^2", "V3^2*V4", "V3^4"]},
+        "status": {"const": "COMPLETE_CONNECTED_ORDER_LAMBDA4_OUTPUT_IS_THREE_TO_THREE_TREE"}
+      }
+    },
+    "positive_output_closure": {"const": {"three_particle_parity": "kappa_3|x>=|7-x>", "positive_basis": "u_x=(|x>+|7-x>)/sqrt(2), x=0,1,2,3", "positive_Krein_Gram": "I_4", "generic_Choi_identity": "kappa_3 A_6 kappa_3=A_6", "cross_blocks": "U_plus^T A_6 U_minus=U_minus^T A_6 U_plus=0 coefficientwise", "disposition": "NO_CONNECTED_NEGATIVE_PARITY_OUTPUT_FROM_POSITIVE_EVEN_SOURCE_AT_ORDER_LAMBDA4", "status": "COMPLETE_CONNECTED_SPECIES_CODOMAIN_IS_POSITIVE_EVEN"}},
+    "unpartitioned_compact_packet_column": {"const": {"acceptance": "one common compact regular C subset X times Y with |chi_C|<=1, every unordered q_B future-oriented, and D_B>=d>0", "channel_kernel": "beta_B,T(y,x)=chi_C(y,x)*F_T(delta_B(y,x))/D_B(y,x)", "amplitude": "A_full,C=16*lambda^4*sum_(B=0)^9(K_B,T tensor R_B)", "tree_weight_rule": "UNIT_WEIGHT_FOR_EVERY_PUBLIC_CHANNEL_TERM_NO_SQUARE_PARTITION", "pointwise_species_bound": "||sum_B beta_B,T R_B||_HS^2<=405*T^2/(8*d^2)", "operator_bound": "||A_full,C||^2<=12960*lambda^8*T^2*mu(X)*mu(Y)/d^2", "click": "E_click=A_full,C^*A_full,C", "no_click": "E_no=I-E_click", "sufficient_positive_domain": "12960*lambda^8*T^2*mu(X)*mu(Y)/d^2<=1", "completeness": "E_click+E_no=I", "status": "ACTUAL_UNPARTITIONED_TEN_CHANNEL_COMPACT_TREE_EFFECT_CONSTRUCTED"}},
+    "declared_scalar_source": {"const": {"source": "Psi_in=F tensor u0 with ||F||=1", "hard_channel": "R_0 u0=0", "exchange_channels": "R_B u0=u0/4 for B=1,...,9", "amplitude": "A_full,C(F tensor u0)=4*lambda^4*(sum_(B=1)^9 K_B,T F) tensor u0", "click_probability": "q_click=16*lambda^8*||sum_(B=1)^9 K_B,T F||^2", "no_click_probability": "q_no=1-q_click", "status": "LEADING_UNPARTITIONED_CONNECTED_PHYSICAL_SCALAR_PACKET_PROBABILITY"}},
+    "outside_leakage_reduction": {"const": {"different_particle_number_connected_outputs": "EXCLUDED_AT_ORDER_LAMBDA4", "negative_parity_connected_outputs": "EXCLUDED_FROM_KAPPA_EVEN_SOURCE", "remaining_connected_outside_block": "THREE_BODY_KAPPA_EVEN_MOMENTUM_OUTPUT_OUTSIDE_C", "global_kernel": "NOT_CONSTRUCTED_AT_SOFT_Q_B_ZERO_BOUNDARIES", "disconnected_spectator_terms": "OUTSIDE_CONNECTED_COLUMN_SCOPE", "status": "OUTPUT_TYPE_CLOSED_GLOBAL_MOMENTUM_DOMAIN_OPEN"}},
+    "assumptions": {"type": "array", "minItems": 7, "maxItems": 7, "items": {"$ref": "#/$defs/text"}},
+    "does_not_establish": {"type": "array", "minItems": 12, "maxItems": 12, "items": {"$ref": "#/$defs/text"}},
+    "missing_object_ledger": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "object", "additionalProperties": false, "required": ["object", "status", "required_value"], "properties": {"object": {"$ref": "#/$defs/text"}, "status": {"const": "MISSING"}, "required_value": {"$ref": "#/$defs/text"}}}},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "provenance": {"type": "object", "additionalProperties": false, "required": ["source_commit", "retrieval_date", "inputs", "method"], "properties": {"source_commit": {"const": "4c49ce8f15dc742d92b7740af36b4f4a3fd57655"}, "retrieval_date": {"const": "2026-08-12"}, "inputs": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"type": "object", "additionalProperties": false, "required": ["path", "sha256"], "properties": {"path": {"$ref": "#/$defs/text"}, "sha256": {"$ref": "#/$defs/hash"}}}}, "method": {"$ref": "#/$defs/text"}}},
+    "verification_commands": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/text"}},
+    "checks": {"type": "object", "additionalProperties": false, "required": ["ok", "passed", "total", "failures", "details"], "properties": {"ok": {"const": true}, "passed": {"const": 25}, "total": {"const": 25}, "failures": {"const": []}, "details": {"type": "object", "minProperties": 25, "maxProperties": 25, "additionalProperties": {"const": true}}}},
+    "report": {"const": "reverse_physics/reports/bt-complete-connected-order4-packet-column.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-complete-connected-order4-packet-column-v1.schema.json"}
+  },
+  "$defs": {"text": {"type": "string", "minLength": 1}, "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+}

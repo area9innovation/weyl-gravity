@@ -1,0 +1,32 @@
+{
+  "schema": "event-v0",
+  "id": "sf:program/event/reverse-physics-bateman-complete-connected-order4-packet-column-DONE-4c49ce8f",
+  "kind": "event",
+  "source": {
+    "path": "tools/science-forge/program/events/reverse-physics-bateman-complete-connected-order4-packet-column-DONE-4c49ce8f.json",
+    "span": null
+  },
+  "body": {
+    "event_kind": "WORK_ITEM_TRANSITIONED",
+    "actor": "reverse-physics",
+    "base_revision": "science-forge-ir-v0",
+    "predecessors": [],
+    "when": "2026-08-12",
+    "seq": 1,
+    "payload": {
+      "target": "sf:program/work/reverse-physics-bateman-complete-connected-order4-packet-column",
+      "to_state": "DONE",
+      "note": "The source-connected order-lambda4 output type is exactly the three-to-three tree: d_lambda=E+2L-2 leaves (E,L)=(6,0),(4,1),(2,2),(0,3), and the timelike three-particle source excludes the vacuum, two-leg and massless one-output cases. Complement parity confines its species output to the positive even C4 plane. On a common compact regular acceptance, the actual unit-weight ten-channel column has ||A_full,C||^2 <= 12960*lambda^8*T^2*mu(X)*mu(Y)/d^2, and its source click coefficient is 16||sum_{B=1}^9 K_B,T F||^2. Soft q_B=0 strata, compact-cutoff removal, disconnected spectators, full evolution and general Eq. 19 remain open. Evidence: REVERSE_PHYSICS_BT_COMPLETE_CONNECTED_ORDER4_PACKET_COLUMN_V1."
+    },
+    "native": {
+      "authored_by": "manual close-out after exact graph, Choi-parity, residue-Gram, amplitude-bound and independent mutation verification",
+      "policy": "append-only; one content-addressed file per event; the work-item file is never rewritten and the effective state is the fold of events over the base state"
+    }
+  },
+  "edges": [
+    {
+      "rel": "TRANSITIONS",
+      "to": "sf:program/work/reverse-physics-bateman-complete-connected-order4-packet-column"
+    }
+  ]
+}
