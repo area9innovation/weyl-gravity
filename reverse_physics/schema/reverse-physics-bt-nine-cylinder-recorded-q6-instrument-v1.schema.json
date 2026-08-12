@@ -1,0 +1,132 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-nine-cylinder-recorded-q6-instrument-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "schema_version", "certificate", "question", "answer",
+    "result_kind", "lifecycle_state", "dependency_tags", "assumptions",
+    "provenance", "permutation_orbit", "transported_tag_incidence", "record_algebra",
+    "equal_block_preparation", "probability_through_lambda6", "disposition",
+    "missing_object_ledger", "does_not_establish", "next_gate", "checks",
+    "verification_commands", "report"
+  ],
+  "properties": {
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-nine-cylinder-recorded-q6-instrument-v1.schema.json"},
+    "schema_version": {"const": 1},
+    "certificate": {"const": "REVERSE_PHYSICS_BT_NINE_CYLINDER_RECORDED_Q6_INSTRUMENT_V1"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE"]},
+    "assumptions": {"type": "array", "minItems": 7, "maxItems": 7, "items": {"$ref": "#/$defs/text"}},
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_commit", "retrieval_date", "inputs", "generated_by", "independent_verifier", "method"],
+      "properties": {
+        "source_commit": {"const": "8bc67f0c45b8a86afdabf2a15b2cb15cc36bef87"},
+        "retrieval_date": {"const": "2026-08-12"},
+        "inputs": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"type": "object", "additionalProperties": false, "required": ["path", "sha256"], "properties": {"path": {"$ref": "#/$defs/text"}, "sha256": {"$ref": "#/$defs/hash"}}}},
+        "generated_by": {"const": "reverse_physics/bt_nine_cylinder_recorded_q6_instrument.py"},
+        "independent_verifier": {"const": "reverse_physics/verify_bt_nine_cylinder_recorded_q6_instrument.py"},
+        "method": {"$ref": "#/$defs/text"}
+      }
+    },
+    "permutation_orbit": {
+      "type": "object", "additionalProperties": false,
+      "required": ["group", "group_order", "action", "reference", "orbit", "orbit_size", "stabilizer_order", "orbit_stabilizer_product", "status"],
+      "properties": {
+        "group": {"const": "S3_in x S3_out"},
+        "group_order": {"const": 36},
+        "action": {"$ref": "#/$defs/text"},
+        "reference": {"const": "Delta_00"},
+        "orbit": {"const": ["Delta_00", "Delta_01", "Delta_02", "Delta_10", "Delta_11", "Delta_12", "Delta_20", "Delta_21", "Delta_22"]},
+        "orbit_size": {"const": 9},
+        "stabilizer_order": {"const": 4},
+        "orbit_stabilizer_product": {"const": 36},
+        "status": {"const": "ONE_TRANSITIVE_NINE_CYLINDER_ORBIT_PLUS_ONE_FIXED_BULK_SECTOR"}
+      }
+    },
+    "transported_tag_incidence": {
+      "type": "object", "additionalProperties": false,
+      "required": ["representative_three_masks", "rule", "by_cylinder", "source_reference", "status"],
+      "properties": {
+        "representative_three_masks": {"const": [7, 11, 13, 14, 19, 21, 22, 25, 26, 28]},
+        "rule": {"$ref": "#/$defs/text"},
+        "by_cylinder": {
+          "type": "object", "minProperties": 9, "maxProperties": 9,
+          "additionalProperties": {
+            "type": "object", "additionalProperties": false,
+            "required": ["tag_labels", "weight_five_masks", "weight_six_masks", "weight_five_count", "weight_six_count"],
+            "properties": {
+              "tag_labels": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "integer", "minimum": 0, "maximum": 5}},
+              "weight_five_masks": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"type": "integer"}},
+              "weight_six_masks": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "integer"}},
+              "weight_five_count": {"const": 6},
+              "weight_six_count": {"const": 4}
+            }
+          }
+        },
+        "source_reference": {"$ref": "#/$defs/text"},
+        "status": {"const": "ALL_NINE_TEN_CHANNEL_INCIDENCE_SPLITS_RECOMPUTED"}
+      }
+    },
+    "record_algebra": {
+      "type": "object", "additionalProperties": false,
+      "required": ["ordered_sectors", "dimension", "effects", "orthogonality", "completeness", "group_average", "record_policy", "status"],
+      "properties": {
+        "ordered_sectors": {"const": ["bulk", "Delta_00", "Delta_01", "Delta_02", "Delta_10", "Delta_11", "Delta_12", "Delta_20", "Delta_21", "Delta_22"]},
+        "dimension": {"const": 10},
+        "effects": {"$ref": "#/$defs/text"},
+        "orthogonality": {"$ref": "#/$defs/text"},
+        "completeness": {"$ref": "#/$defs/text"},
+        "group_average": {"$ref": "#/$defs/text"},
+        "record_policy": {"$ref": "#/$defs/text"},
+        "status": {"const": "EXACT_TEN_SECTOR_RECORDED_DIRECT_SUM"}
+      }
+    },
+    "equal_block_preparation": {
+      "type": "object", "additionalProperties": false,
+      "required": ["state", "trace", "record_weights", "cylinder_union_weight", "bulk_weight", "group_invariance", "status"],
+      "properties": {
+        "state": {"const": "rho=I_10/10"},
+        "trace": {"$ref": "#/$defs/one"},
+        "record_weights": {"type": "object", "minProperties": 10, "maxProperties": 10, "additionalProperties": {"$ref": "#/$defs/tenth"}},
+        "cylinder_union_weight": {"$ref": "#/$defs/nine_tenths"},
+        "bulk_weight": {"$ref": "#/$defs/tenth"},
+        "group_invariance": {"$ref": "#/$defs/text"},
+        "status": {"const": "POSITIVE_NORMALIZED_GROUP_INVARIANT_MIXED_PREPARATION"}
+      }
+    },
+    "probability_through_lambda6": {
+      "type": "object", "additionalProperties": false,
+      "required": ["selected_cylinder_probability", "leading_term", "relative_q6_coefficient", "each_cylinder_outcome", "bulk_outcome", "recorded_total", "order_completeness", "small_coupling_positivity", "status"],
+      "properties": {
+        "selected_cylinder_probability": {"const": "q_tag[f;T]=q4*{1+lambda^2*R6[f;T,mu]}+O(lambda^8)"},
+        "leading_term": {"const": "q4=75*lambda^4*DeltaOmega/(2048*pi^2*kappa^2*Area)"},
+        "relative_q6_coefficient": {"$ref": "#/$defs/text"},
+        "each_cylinder_outcome": {"const": "q_ia=(1/10)*q4*{1+lambda^2*R6[f;T,mu]}+O(lambda^8)"},
+        "bulk_outcome": {"const": "q_bulk=O(lambda^8)"},
+        "recorded_total": {"const": "q_recorded=(9/10)*q4*{1+lambda^2*R6[f;T,mu]}+O(lambda^8)"},
+        "order_completeness": {"$ref": "#/$defs/text"},
+        "small_coupling_positivity": {"$ref": "#/$defs/text"},
+        "status": {"const": "COMPLETE_SELECTED_ORBIT_RECORDED_PROBABILITY_THROUGH_LAMBDA6"}
+      }
+    },
+    "disposition": {"type": "object", "minProperties": 10, "maxProperties": 10, "additionalProperties": {"$ref": "#/$defs/text"}},
+    "missing_object_ledger": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"type": "object", "additionalProperties": false, "required": ["object", "status", "required_value"], "properties": {"object": {"$ref": "#/$defs/text"}, "status": {"const": "MISSING"}, "required_value": {"$ref": "#/$defs/text"}}}},
+    "does_not_establish": {"type": "array", "minItems": 14, "maxItems": 14, "items": {"$ref": "#/$defs/text"}},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "checks": {"type": "object", "additionalProperties": false, "required": ["total", "passed", "ok", "failures", "details"], "properties": {"total": {"type": "integer", "minimum": 30}, "passed": {"type": "integer", "minimum": 30}, "ok": {"const": true}, "failures": {"const": []}, "details": {"type": "object", "minProperties": 30, "additionalProperties": {"const": true}}}},
+    "verification_commands": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/text"}},
+    "report": {"const": "reverse_physics/reports/bt-nine-cylinder-recorded-q6-instrument.md"}
+  },
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "one": {"const": {"numerator": 1, "denominator": 1}},
+    "tenth": {"const": {"numerator": 1, "denominator": 10}},
+    "nine_tenths": {"const": {"numerator": 9, "denominator": 10}}
+  }
+}
