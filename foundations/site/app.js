@@ -140,7 +140,7 @@
           const visible = matches(cell);
           return `<td><button class="matrix-cell${visible ? "" : " filtered"}${state.cell === key(cell) ? " selected" : ""}" data-cell="${key(cell)}" data-mark="${STATUS[cell.status].mark}" style="${statusStyle(cell.status)}" aria-label="${esc(`${f.label}; ${c.label}; ${obligation.label}; ${STATUS[cell.status].label}`)}" title="${esc(`${STATUS[cell.status].label}: ${cell.summary}`)}"></button></td>`;
         }).join("")}</tr>`).join("");
-        return `<article class="heatmap"><h4>${esc(obligation.label)}</h4><p class="meaning">${esc(obligation.meaning)}</p><table><thead><tr><th>Regime ↓ / carrier →</th>${carriers.map(c => `<th title="${esc(c.meaning)}">${esc(c.label)}</th>`).join("")}</tr></thead><tbody>${rows}</tbody></table></article>`;
+        return `<article class="heatmap"><h4>${esc(obligation.label)}</h4><p class="meaning">${esc(obligation.meaning)}</p><table><thead><tr><th>Regime ↓ / carrier →</th>${carriers.map(c => `<th title="${esc(c.meaning)}"><span class="column-label">${esc(c.label)}</span></th>`).join("")}</tr></thead><tbody>${rows}</tbody></table></article>`;
       }).join("");
       return `<section class="matrix-group"><h3>${esc(group.label)}</h3><div class="heatmaps">${maps}</div></section>`;
     }).join("");

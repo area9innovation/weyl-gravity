@@ -41,8 +41,13 @@ class MatrixSiteTests(unittest.TestCase):
 
     def test_static_shell_has_no_remote_code(self) -> None:
         html = (ROOT / "foundations/site/index.html").read_text()
+        app = (ROOT / "foundations/site/app.js").read_text()
+        css = (ROOT / "foundations/site/styles.css").read_text()
         self.assertNotIn("https://", html)
         self.assertIn('<script src="data.js"></script>', html)
+        self.assertIn('class="column-label"', app)
+        self.assertIn("writing-mode: vertical-rl", css)
+        self.assertIn("transform: rotate(180deg)", css)
         manifest = json.loads((ROOT / "foundations/site/manifest.json").read_text())
         self.assertEqual(len(manifest["outputs"]), 36)
         self.assertTrue((ROOT / "foundations/site/sources/foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V1.json").is_file())

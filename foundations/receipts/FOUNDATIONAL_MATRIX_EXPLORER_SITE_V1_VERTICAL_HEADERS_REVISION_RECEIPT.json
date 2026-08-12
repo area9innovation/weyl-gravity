@@ -1,0 +1,56 @@
+{
+  "schema_version": "science-forge-tier-receipt-v1",
+  "receipt_id": "FOUNDATIONAL_MATRIX_EXPLORER_SITE_V1_VERTICAL_HEADERS_REVISION_RECEIPT",
+  "created": "2026-08-12",
+  "repository_base_commit": "448a699b438f047469531200efaec9fc7731d86b",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
+  "scope": "Rotate all carrier column labels by 90 degrees through vertical writing mode so narrow heatmap headers remain distinct and readable.",
+  "tiers": {
+    "tier_0_diff_check": {
+      "status": "PASS",
+      "command": "git diff --check -- foundations",
+      "elapsed_seconds": 0.02
+    },
+    "tier_1_generator": {
+      "status": "PASS",
+      "command": "python3 foundations/build_matrix_site.py --check",
+      "elapsed_seconds": 0.06
+    },
+    "tier_1_site_verifier": {
+      "status": "PASS",
+      "command": "python3 foundations/verify_matrix_site.py",
+      "elapsed_seconds": 0.13
+    },
+    "tier_1_tests": {
+      "status": "PASS",
+      "command": "python3 -m unittest foundations.tests.test_matrix_site",
+      "elapsed_seconds": 0.19,
+      "result": "6/6 tests pass, including vertical-label CSS and generated-markup assertions."
+    },
+    "tier_1_browser_smoke": {
+      "status": "PASS",
+      "command": "render the 820 x 2400 matrix view and dump the generated DOM with headless Google Chrome",
+      "elapsed_seconds": 1.7,
+      "result": "All 96 carrier-header instances use the vertical column-label wrapper; all 576 matrix cells render."
+    },
+    "tier_2": {
+      "status": "NOT_RUN",
+      "criterion": "The change is presentation-only and leaves the canonical scientific dataset, evidence joins, graph, ladder, and source artifacts unchanged."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No freeze, theorem promotion, shared algebra change, or release applies."
+    }
+  },
+  "artifact_hashes": {
+    "foundations/matrix_site_assets/app.js": "8bc60ef4cc4d913948a40bdcf410799fa63bdaec2441bcdbd84a03fb974a627d",
+    "foundations/matrix_site_assets/styles.css": "c6d49bc68a1642aa3ca15452a89bff8592446ec0af242561b3f4f595db375690",
+    "foundations/site/app.js": "8bc60ef4cc4d913948a40bdcf410799fa63bdaec2441bcdbd84a03fb974a627d",
+    "foundations/site/styles.css": "c6d49bc68a1642aa3ca15452a89bff8592446ec0af242561b3f4f595db375690",
+    "foundations/site/manifest.json": "37c75b390b1842dbabdbb8e7fcba20fbfcd9e98b90a3794ec871cd27f2182893",
+    "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V1.json": "2162df771c7c81b7ca788b8b3004bfbe7f2fc56303a6f5f6d9aee2bd9e8618a1",
+    "foundations/check_matrix_site.py": "45ad7b321c03d94e5d09207bb3dc0c792d543563f1a2e564ac37a19797d40402",
+    "foundations/tests/test_matrix_site.py": "7c9287341fc319a0d9012ca0e95ee6b95e1a44c9321d6bf250d08be5ac5687d2"
+  },
+  "claim_boundary": "This revision changes header layout only. It establishes no new matrix cell, evidence relation, foundational strength, or LORENTZIAN-CAUSAL claim."
+}

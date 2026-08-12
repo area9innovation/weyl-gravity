@@ -98,7 +98,7 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
     app = (SITE / "app.js").read_text()
     if "https://" in html or "http://" in html or '<script src="data.js"></script>' not in html:
         errors.append("offline/no-remote-code shell")
-    for token in ("matrixGroups", "graphView", "ladderView", "evidenceView", "compareDialog", "exportJson", "exportCsv", "downloadBrief", "URLSearchParams", "navigator.clipboard"):
+    for token in ("matrixGroups", "graphView", "ladderView", "evidenceView", "compareDialog", "exportJson", "exportCsv", "downloadBrief", "URLSearchParams", "navigator.clipboard", "column-label"):
         if token not in html + app:
             errors.append("interface token " + token)
     counts = Counter(x.get("status") for x in cells)
