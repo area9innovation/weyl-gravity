@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-scalar-dressed-source-compact-wavepacket-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["certificate", "schema_version", "dependency_tags", "lifecycle_state", "result_kind", "question", "answer", "compact_packet_carrier", "positive_packet_frame", "fixed_strength_packet_effect", "finite_volume_approximation", "interpretation", "assumptions", "does_not_establish", "next_gate", "provenance", "verification_commands", "checks", "report", "schema"],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_SCALAR_DRESSED_SOURCE_COMPACT_WAVEPACKET_V1"},
+    "schema_version": {"const": "reverse-physics-bt-scalar-dressed-source-compact-wavepacket-v1"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "compact_packet_carrier": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["one_particle_space", "support_hypotheses", "packet_overlap", "common_core", "normalized_scalar_CCR", "Upsilon_creator", "Omega_creator_full", "Omega_creator_on_declared_frame", "multiplier_bounds", "domain_result", "status"],
+      "properties": {
+        "one_particle_space": {"$ref": "#/$defs/text"},
+        "support_hypotheses": {"$ref": "#/$defs/text"},
+        "packet_overlap": {"const": "<f_i,f_j>=delta_ij and <f_i,R f_j>=0"},
+        "common_core": {"$ref": "#/$defs/text"},
+        "normalized_scalar_CCR": {"$ref": "#/$defs/text"},
+        "Upsilon_creator": {"const": "d_Upsilon^dagger(f)=Z^-1*A1^dagger(2E*f)"},
+        "Omega_creator_full": {"$ref": "#/$defs/text"},
+        "Omega_creator_on_declared_frame": {"$ref": "#/$defs/text"},
+        "multiplier_bounds": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/text"}},
+        "domain_result": {"$ref": "#/$defs/text"},
+        "status": {"const": "COMPACT_CONTINUUM_PACKET_DOMAIN_CONSTRUCTED"}
+      }
+    },
+    "positive_packet_frame": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["species_states", "species_Gram", "positive_frame", "positive_Gram", "declared_source", "source_norm", "state_orbit_support", "projector_orbit_support", "status"],
+      "properties": {
+        "species_states": {"$ref": "#/$defs/text"},
+        "species_Gram": {"const": "<x;f|y;f>_K=delta_(y,7-x)"},
+        "positive_frame": {"$ref": "#/$defs/text"},
+        "positive_Gram": {"const": "<u_x(f),u_y(f)>_K=delta_xy"},
+        "declared_source": {"$ref": "#/$defs/text"},
+        "source_norm": {"const": "1"},
+        "state_orbit_support": {"const": ["Z^-3", "Z^3"]},
+        "projector_orbit_support": {"const": ["Z^-6", "1", "Z^6"]},
+        "status": {"const": "POSITIVE_GHOST_EVEN_COMPACT_SCALAR_PACKET_FRAME"}
+      }
+    },
+    "fixed_strength_packet_effect": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["packet_isometry", "residue", "effect", "relative_click", "relative_no_click", "uniform_positive_interval", "declared_source_click", "declared_source_no_click", "strength_boundary", "status"],
+      "properties": {
+        "packet_isometry": {"$ref": "#/$defs/text"},
+        "residue": {"$ref": "#/$defs/text"},
+        "effect": {"$ref": "#/$defs/text"},
+        "relative_click": {"$ref": "#/$defs/text"},
+        "relative_no_click": {"$ref": "#/$defs/text"},
+        "uniform_positive_interval": {"const": "0<=zeta<=16-8*sqrt(3)"},
+        "declared_source_click": {"const": "q_click(f)=zeta/16"},
+        "declared_source_no_click": {"const": "q_no(f)=1-zeta/16"},
+        "strength_boundary": {"$ref": "#/$defs/text"},
+        "status": {"const": "POSITIVE_FIXED_STRENGTH_COMPACT_PACKET_EFFECT"}
+      }
+    },
+    "finite_volume_approximation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["approximants", "multiplier_convergence", "vector_convergence", "rank_one_bound", "effect_convergence", "what_is_independent", "what_is_not_independent", "status"],
+      "properties": {
+        "approximants": {"$ref": "#/$defs/text"},
+        "multiplier_convergence": {"$ref": "#/$defs/text"},
+        "vector_convergence": {"$ref": "#/$defs/text"},
+        "rank_one_bound": {"const": "||Theta_(x,x)-Theta_(y,y)||_1 <= (||x||+||y||)||x-y||"},
+        "effect_convergence": {"$ref": "#/$defs/text"},
+        "what_is_independent": {"$ref": "#/$defs/text"},
+        "what_is_not_independent": {"$ref": "#/$defs/text"},
+        "status": {"const": "FINITE_VOLUME_SOURCE_AND_EFFECT_LIMIT_CONSTRUCTED"}
+      }
+    },
+    "interpretation": {"const": {"compact_continuum_scalar_source": "CONSTRUCTED", "common_closable_Gaussian_domain": "CONSTRUCTED", "finite_volume_source_effect_limit": "CONSTRUCTED_AT_FIXED_ZETA", "packet_BT_Hamiltonian_strength": "NOT_COMPUTED", "ordinary_massless_Fock_IR_limit": "OBSTRUCTED", "standard_shift_invariant_P_chi": "NOT_CONSTRUCTED", "general_Eq19": "NOT_PROVED", "global_or_all_time_probability": "NOT_CONSTRUCTED"}},
+    "assumptions": {"type": "array", "minItems": 7, "maxItems": 7, "items": {"$ref": "#/$defs/text"}},
+    "does_not_establish": {"type": "array", "minItems": 14, "items": {"$ref": "#/$defs/text"}},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "provenance": {"type": "object", "additionalProperties": false, "required": ["source_commit", "retrieval_date", "inputs", "method"], "properties": {"source_commit": {"const": "9c611092b2d7b1ae3adebcb637603e6d661ea9da"}, "retrieval_date": {"const": "2026-08-12"}, "inputs": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"type": "object", "additionalProperties": false, "required": ["path", "sha256"], "properties": {"path": {"$ref": "#/$defs/text"}, "sha256": {"$ref": "#/$defs/hash"}}}}, "method": {"$ref": "#/$defs/text"}}},
+    "verification_commands": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/text"}},
+    "checks": {"type": "object", "additionalProperties": false, "required": ["ok", "passed", "total", "failures", "details"], "properties": {"ok": {"const": true}, "passed": {"const": 26}, "total": {"const": 26}, "failures": {"const": []}, "details": {"type": "object", "minProperties": 26, "maxProperties": 26, "additionalProperties": {"const": true}}}},
+    "report": {"const": "reverse_physics/reports/bt-scalar-dressed-source-compact-wavepacket.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-scalar-dressed-source-compact-wavepacket-v1.schema.json"}
+  },
+  "$defs": {"text": {"type": "string", "minLength": 1}, "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+}

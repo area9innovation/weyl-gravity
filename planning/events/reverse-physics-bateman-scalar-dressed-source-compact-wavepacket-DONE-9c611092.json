@@ -1,0 +1,21 @@
+{
+  "schema": "event-v0",
+  "id": "sf:program/event/reverse-physics-bateman-scalar-dressed-source-compact-wavepacket-DONE-9c611092",
+  "kind": "event",
+  "source": {"path": "tools/science-forge/program/events/reverse-physics-bateman-scalar-dressed-source-compact-wavepacket-DONE-9c611092.json", "span": null},
+  "body": {
+    "event_kind": "WORK_ITEM_TRANSITIONED",
+    "actor": "reverse-physics",
+    "base_revision": "science-forge-ir-v0",
+    "predecessors": [],
+    "when": "2026-08-12",
+    "seq": 1,
+    "payload": {
+      "target": "sf:program/work/reverse-physics-bateman-scalar-dressed-source-compact-wavepacket",
+      "to_state": "DONE",
+      "note": "Three normalized compact, disjoint and non-antipodal momentum packets away from p=0 define a common closable dressed scalar Gaussian-core source. The complete four-dimensional ghost-even frame stays positive, finite-volume packet approximants converge in vector norm, and the associated fixed-zeta effects converge in finite-rank trace norm. The packet-dependent BT Hamiltonian strength, infrared removal and general Eq. 19 remain open. Evidence: REVERSE_PHYSICS_BT_SCALAR_DRESSED_SOURCE_COMPACT_WAVEPACKET_V1."
+    },
+    "native": {"authored_by": "manual close-out after exact packet Gram, multiplier, dense-adjoint, trace-norm and boundary verification", "policy": "append-only; one content-addressed file per event; the work-item file is never rewritten and the effective state is the fold of events over the base state"}
+  },
+  "edges": [{"rel": "TRANSITIONS", "to": "sf:program/work/reverse-physics-bateman-scalar-dressed-source-compact-wavepacket"}]
+}

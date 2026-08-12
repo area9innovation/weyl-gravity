@@ -1,0 +1,19 @@
+{
+  "id": "sf:program/work/reverse-physics-bateman-scalar-dressed-source-compact-wavepacket",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "reverse-physics",
+    "state": "ACTIVE",
+    "objective": "Replace the finite point-mode Rt-dressed positive scalar source by three compact continuum wave packets away from zero momentum, construct a common closable Gaussian image domain for the smeared pulled creators and finite-rank detector effects, and prove convergence of finite-volume packet approximants without promoting the result to general Eq. 19 or a packet scattering rate.",
+    "depends_on": ["REVERSE_PHYSICS_BT_SCALAR_DRESSED_SOURCE_FREE_NORMAL_FORM_V1", "REVERSE_PHYSICS_BT_SIX_POINT_POSITIVE_SECTOR_PHYSICAL_DETECTOR_EFFECT_V1", "REVERSE_PHYSICS_BT_CROSS_KREIN_TRACE_LIMIT_V1", "REVERSE_PHYSICS_BT_SQUEEZED_VACUUM_IMPLEMENTABILITY_V1"],
+    "activates": ["a compact continuum dressed scalar source", "a common closable packet creator/effect domain", "finite-volume independence of the source and fixed-strength detector effect"],
+    "current_gate": "Use three normalized compact packet profiles on mutually disjoint and non-antipodal supports with epsilon <= |p| <= M. Rewrite the scalar pulled creators in normalized Jordan oscillators, prove the energy multipliers are bounded, retain the Gaussian squeezed vacuum and Laurent orbit, reconstruct the exact positive ghost-even packet frame, and prove L2 packet approximation implies vector and finite-rank effect convergence.",
+    "stop_condition": "Land a certificate and method-distinct verifier for the packet cross Gram, positive frame, closability, packet-continuity estimates and finite-volume approximation theorem, while keeping the packet Hamiltonian strength, infrared removal, standard P_chi, general Eq. 19, global scattering and gravity explicitly open.",
+    "forbid": "no delta-normalized momentum eigenstate called a packet; no use of E^-1 without a positive support gap; no omission of antipodal contraction conditions; no closable core called a bounded global Rt; no fixed-zeta effect called a dynamically integrated packet rate; no ordinary-Fock infrared, Eq. 19, gravity, BRST or LORENTZIAN-CAUSAL promotion",
+    "allowed_paths": ["reverse_physics/", "notes/bateman-turok-embedding.md", "paper/05-interaction-obstructions.tex", "paper/05-interaction-obstructions.pdf", "paper/06-einstein-weyl-interaction-obstructions.tex", "paper/06-einstein-weyl-interaction-obstructions.pdf", "planning/work-items/reverse-physics-bateman-scalar-dressed-source-compact-wavepacket.json", "planning/events/"],
+    "resource_hint": "Normalize a1,a2 by a_r=(2E)^(3/2) A_r. Then d_Upsilon^dagger(f)=Z^-1 A1^dagger(2Ef), while on the pulled vacuum d_Omega^dagger(f)=Z[A2^dagger(f/(2E))-it A1^dagger(f)]. The full operator also has a reflected annihilator term; disjointness of K_i from -K_j removes its contractions in the declared three-packet frame. Use the standard number-operator creation bounds and the analytic Gaussian moments supplied by sup|z|<1 and sum|z|^2<infinity. Finite-rank Krein effects are Hilbert trace-class because J is bounded.",
+    "input_commit": "9c611092b2d7b1ae3adebcb637603e6d661ea9da",
+    "stream": "reverse-physics"
+  }
+}
