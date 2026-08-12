@@ -266,7 +266,11 @@ closed-system BT Hamiltonian.  A local quadratic scalar density reproduces
 that Hamiltonian on the two selected modes, but no nonzero finite-derivative
 local density can isolate exactly those two zero-width angles in the
 continuum.  The selected compression is therefore exact while its leakage
-into other angles remains to be bounded with finite angular wavepackets.
+into other angles must be retained.  An order-20 projective Fej\'er filter
+with at most 38 transverse derivatives and two finite rational angular packets
+does so explicitly: its exact reduced-continuum leakage is below $10^{-3}$,
+and exponentiating the residual-retaining star Hamiltonian gives bright-packet
+absorption efficiency above $999/1000$ at a half pulse.
 Independently, the projected three-channel hard loop logarithm closes the
 Callan--Symanzik equation exactly with the Born rate and one-loop beta
 function.  This yields the positive leading-log nonforward prediction
@@ -3932,10 +3936,71 @@ contradicting its nonzero selected weights.  Certificate
 \par\noindent
 therefore proves the selected local matrix elements and finite-derivative
 continuum selectivity no-go, not
-$\Pi e^{-iH\tau}\Pi=e^{-i\Pi H\Pi\tau}$.  Finite angular packets with a
-quantitative leakage matrix are the next local gate.  The interaction remains
+$\Pi e^{-iH\tau}\Pi=e^{-i\Pi H\Pi\tau}$.  A finite angular packet calculation
+must therefore retain the complement before exponentiation.  The interaction remains
 additional anisotropic scalar apparatus physics; it is neither selected by
 the public BT Hamiltonian nor a Lorentzian or gravitational detector.
+
+That packet calculation can be completed on the certified one-dimensional
+fixed-energy pair family.  With $\zeta=e^{2i\theta}$ and normalized projective
+Fej\'er kernels of order $N=20$ centered at the two target pair lines, set
+\[
+ p(\theta)={K_{20,0}(\theta)-K_{20,1}(\theta)\over1-\rho},
+ \qquad \rho=K_{20,0}(\theta_1)<10^{-3}.
+\]
+Then $p(\theta_0)=1$ and $p(\theta_1)=-1$ exactly.  Its Laurent support is
+$-19,\ldots,19$, and after the shell normalization
+$5(k_y+ik_z)/(4\kappa)$ each mode $e^{2im\theta}$ is the pair symbol of a
+local constant-coefficient bilinear with $2m$ transverse derivatives.  Thus the
+filter is a Hermitian local density of finite maximum order $38$.
+
+In the reduced two-body measure $dc$, take the disjoint packets
+\[
+ B_0=[-7/25,7/25],\qquad B_1=[5/13,20/29].
+\]
+All endpoint sines are rational, so the Fourier integrals are exact.  Writing
+\[
+ \eta={\int_{(-1,1)\setminus(B_0\cup B_1)}|p(c)|^2dc
+ \over\int_{-1}^{1}|p(c)|^2dc},
+\]
+the exact rational comparison gives
+\[
+ \boxed{\eta=0.000760242003438472779\ldots<10^{-3}.}
+\]
+The decimal is only a display; the certificate retains canonical exact
+fraction hashes and strict rational enclosures.
+
+Let $B$ be the normalized selected bright packet, $D$ its selected dark
+partner and $R$ the normalized complement.  The complete coupled direction is
+\[
+ v=\sqrt{1-\eta}\,B+\sqrt\eta\,R.
+\]
+Retaining $R$ gives the exact resonant rotating-wave star Hamiltonian
+$H/G=|e\rangle\langle v|+|v\rangle\langle e|$ and hence
+\[
+ U_\tau=I+[\cos(G\tau)-1](H/G)^2-i\sin(G\tau)(H/G).
+\]
+Its selected packet effect is
+\[
+ E_{\rm absorb}=(1-\eta)\sin^2(G\tau)P_B,
+ \qquad E_{\rm pass}=P_D+
+ [1-(1-\eta)\sin^2(G\tau)]P_B.
+\]
+At $G\tau=\pi/2$ the absorption efficiency is above $999/1000$ and the total
+field remainder is below $1/1000$.  At arbitrary time the outside-packet
+population, maximized over the selected detector/bright input plane, is
+$4\eta(1-\eta)<1/250$.  Certificate
+\par\noindent
+\texttt{REVERSE\_PHYSICS\_BT\_TWO\_ANGLE\_FEJER\_PACKET\_}
+\allowbreak\texttt{DETECTOR\_V1}
+\par\noindent
+therefore constructs a leakage-controlled local packet detector without
+asserting exact angle support or deleting the residual.  It is still restricted
+to one fixed-energy meridian and the pair rotating-wave sector.  The full
+solid angle, energy thickness, number-scattering and counter-rotating terms,
+public-BT selection, transfer of the earlier equal-weight relative-$q_8$
+formula to these unequal-norm packet modes, Eq.~(19), gravity and Lorentzian
+causality remain open.
 
 The auxiliary preparation nevertheless has an exact scalar preimage on the
 finite covariant detector ideal.  Put

@@ -1,0 +1,32 @@
+{
+  "schema": "event-v0",
+  "id": "sf:program/event/reverse-physics-bateman-two-angle-fejer-packet-detector-DONE-a874efc2",
+  "kind": "event",
+  "source": {
+    "path": "tools/science-forge/program/events/reverse-physics-bateman-two-angle-fejer-packet-detector-DONE-a874efc2.json",
+    "span": null
+  },
+  "body": {
+    "event_kind": "WORK_ITEM_TRANSITIONED",
+    "actor": "reverse-physics",
+    "base_revision": "science-forge-ir-v0",
+    "predecessors": [],
+    "when": "2026-08-12",
+    "seq": 1,
+    "payload": {
+      "target": "sf:program/work/reverse-physics-bateman-two-angle-fejer-packet-detector",
+      "to_state": "DONE",
+      "note": "A normalized N=20 projective Fejer difference interpolates +1 and -1 at the c=0 and c=3/5 BT pair lines and is realized by a finite local quadratic density with at most 38 transverse derivatives. Exact dc integration over the disjoint rational bins B0=[-7/25,7/25] and B1=[5/13,20/29] gives leakage fraction eta<1/1000. Writing the complete normalized coupled direction as v=sqrt(1-eta)B+sqrt(eta)R retains the complement mode exactly: the resonant rotating-wave star Hamiltonian yields selected absorption effect (1-eta)sin^2(G tau)P_B, efficiency above 999/1000 at a half pulse, and outside-packet population below 1/250 for every selected input and every time. This is a fixed-energy one-dimensional angular scalar detector theorem, not full-sphere locality, the complete microscopic Hamiltonian, public BT Eq. 19, gravity or Lorentzian causality. Evidence: REVERSE_PHYSICS_BT_TWO_ANGLE_FEJER_PACKET_DETECTOR_V1."
+    },
+    "native": {
+      "authored_by": "manual close-out after exact Fourier integration and residual-mode exponentiation",
+      "policy": "append-only; DONE applies only to the declared packet detector work item and does not close the general BT or gravity goals"
+    }
+  },
+  "edges": [
+    {
+      "rel": "TRANSITIONS",
+      "to": "sf:program/work/reverse-physics-bateman-two-angle-fejer-packet-detector"
+    }
+  ]
+}

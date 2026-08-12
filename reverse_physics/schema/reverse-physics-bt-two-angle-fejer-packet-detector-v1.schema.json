@@ -1,0 +1,138 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-two-angle-fejer-packet-detector-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "schema_version", "certificate", "question", "answer",
+    "result_kind", "lifecycle_state", "dependency_tags", "assumptions",
+    "provenance", "continuous_filter", "packet_decomposition",
+    "residual_retaining_evolution", "disposition", "does_not_establish",
+    "next_gate", "checks", "verification_commands", "report"
+  ],
+  "properties": {
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-two-angle-fejer-packet-detector-v1.schema.json"},
+    "schema_version": {"const": 1},
+    "certificate": {"const": "REVERSE_PHYSICS_BT_TWO_ANGLE_FEJER_PACKET_DETECTOR_V1"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE"]},
+    "assumptions": {"type": "array", "minItems": 8, "maxItems": 8, "items": {"$ref": "#/$defs/text"}},
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_commit", "retrieval_date", "inputs", "generated_by", "independent_verifier", "method"],
+      "properties": {
+        "source_commit": {"const": "a874efc2e5db36d98a5a06dc93bb84a99beb9790"},
+        "retrieval_date": {"const": "2026-08-12"},
+        "inputs": {
+          "type": "array", "minItems": 4, "maxItems": 4,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["path", "sha256"],
+            "properties": {"path": {"$ref": "#/$defs/text"}, "sha256": {"$ref": "#/$defs/hash"}}
+          }
+        },
+        "generated_by": {"const": "reverse_physics/bt_two_angle_fejer_packet_detector.py"},
+        "independent_verifier": {"const": "reverse_physics/verify_bt_two_angle_fejer_packet_detector.py"},
+        "method": {"$ref": "#/$defs/text"}
+      }
+    },
+    "continuous_filter": {
+      "type": "object", "additionalProperties": false,
+      "required": ["parameter", "target_c_values", "target_zeta_values", "order_N", "maximum_transverse_derivative_order", "normalized_kernel", "kernel_Laurent_support", "rho_exact", "filter", "target_weights", "local_density_realization", "status"],
+      "properties": {
+        "parameter": {"const": "c=cos(theta), zeta=exp(2*i*theta)"},
+        "target_c_values": {"const": ["0", "3/5"]},
+        "target_zeta_values": {"const": ["-1", "(-7+24*i)/25"]},
+        "order_N": {"const": 20},
+        "maximum_transverse_derivative_order": {"const": 38},
+        "normalized_kernel": {"$ref": "#/$defs/text"},
+        "kernel_Laurent_support": {"const": [-19, 19]},
+        "rho_exact": {"const": "5646762438667986757780624/9094947017729282379150390625"},
+        "filter": {"$ref": "#/$defs/text"},
+        "target_weights": {"const": ["1", "-1"]},
+        "local_density_realization": {"$ref": "#/$defs/text"},
+        "status": {"const": "FINITE_DERIVATIVE_LOCAL_PROJECTIVE_FILTER_WITH_EXACT_TARGET_INTERPOLATION"}
+      }
+    },
+    "packet_decomposition": {
+      "type": "object", "additionalProperties": false,
+      "required": ["measure", "packet_zero_c_interval", "packet_one_c_interval", "packet_zero_endpoint_sines", "packet_one_endpoint_sines", "packet_modes", "selected_bright_packet", "selected_dark_packet", "complete_direction", "exact_integral_receipts", "leakage_bound", "status"],
+      "properties": {
+        "measure": {"const": "dc on the azimuthally reduced fixed-energy two-body shell"},
+        "packet_zero_c_interval": {"const": ["-7/25", "7/25"]},
+        "packet_one_c_interval": {"const": ["5/13", "20/29"]},
+        "packet_zero_endpoint_sines": {"const": ["24/25", "24/25"]},
+        "packet_one_endpoint_sines": {"const": ["12/13", "21/29"]},
+        "packet_modes": {"$ref": "#/$defs/text"},
+        "selected_bright_packet": {"$ref": "#/$defs/text"},
+        "selected_dark_packet": {"$ref": "#/$defs/text"},
+        "complete_direction": {"$ref": "#/$defs/text"},
+        "exact_integral_receipts": {
+          "type": "object", "additionalProperties": false,
+          "required": ["rho", "total_norm_squared", "packet_zero_norm_squared", "packet_one_norm_squared", "leakage_norm_squared", "leakage_fraction_eta"],
+          "properties": {
+            "rho": {"$ref": "#/$defs/receipt"},
+            "total_norm_squared": {"$ref": "#/$defs/receipt"},
+            "packet_zero_norm_squared": {"$ref": "#/$defs/receipt"},
+            "packet_one_norm_squared": {"$ref": "#/$defs/receipt"},
+            "leakage_norm_squared": {"$ref": "#/$defs/receipt"},
+            "leakage_fraction_eta": {"$ref": "#/$defs/receipt"}
+          }
+        },
+        "leakage_bound": {"const": "0<eta<1/1000 and 1-eta>999/1000"},
+        "status": {"const": "EXACT_TWO_PACKET_ORTHOGONAL_DECOMPOSITION_WITH_SUB_PER_MILLE_CONTINUUM_LEAKAGE"}
+      }
+    },
+    "residual_retaining_evolution": {
+      "type": "object", "additionalProperties": false,
+      "required": ["basis", "Hamiltonian", "exact_exponential", "selected_absorption_effect", "selected_pass_effect", "half_pulse", "outside_packet_population_from_B", "all_time_selected_input_bound", "compressed_exponential_relation", "status"],
+      "properties": {
+        "basis": {"const": ["|e,0_field>", "|g,B>", "|g,R>", "|g,D>"]},
+        "Hamiltonian": {"$ref": "#/$defs/text"},
+        "exact_exponential": {"$ref": "#/$defs/text"},
+        "selected_absorption_effect": {"const": "E_absorb=(1-eta)*sin(G*tau)^2*P_B"},
+        "selected_pass_effect": {"const": "E_pass=P_D+[1-(1-eta)*sin(G*tau)^2]*P_B"},
+        "half_pulse": {"$ref": "#/$defs/text"},
+        "outside_packet_population_from_B": {"const": "eta*(1-eta)*(1-cos(G*tau))^2"},
+        "all_time_selected_input_bound": {"$ref": "#/$defs/text"},
+        "compressed_exponential_relation": {"$ref": "#/$defs/text"},
+        "status": {"const": "EXACT_FIXED_ENERGY_ROTATING_WAVE_STAR_EVOLUTION_WITH_RESIDUAL_RETAINED"}
+      }
+    },
+    "disposition": {"type": "object", "minProperties": 10, "maxProperties": 10, "additionalProperties": {"$ref": "#/$defs/text"}},
+    "does_not_establish": {"type": "array", "minItems": 14, "maxItems": 14, "items": {"$ref": "#/$defs/text"}},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "checks": {
+      "type": "object", "additionalProperties": false,
+      "required": ["total", "passed", "ok", "failures", "details"],
+      "properties": {
+        "total": {"type": "integer", "minimum": 32},
+        "passed": {"type": "integer", "minimum": 32},
+        "ok": {"const": true},
+        "failures": {"const": []},
+        "details": {"type": "object", "minProperties": 32, "additionalProperties": {"const": true}}
+      }
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/text"}},
+    "report": {"const": "reverse_physics/reports/bt-two-angle-fejer-packet-detector.md"}
+  },
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "receipt": {
+      "type": "object", "additionalProperties": false,
+      "required": ["decimal", "lower_bound", "upper_bound", "canonical_sha256", "numerator_digits", "denominator_digits"],
+      "properties": {
+        "decimal": {"$ref": "#/$defs/text"},
+        "lower_bound": {"$ref": "#/$defs/text"},
+        "upper_bound": {"$ref": "#/$defs/text"},
+        "canonical_sha256": {"$ref": "#/$defs/hash"},
+        "numerator_digits": {"type": "integer", "minimum": 1},
+        "denominator_digits": {"type": "integer", "minimum": 1}
+      }
+    }
+  }
+}

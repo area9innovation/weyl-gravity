@@ -1,0 +1,34 @@
+{
+  "id": "sf:program/work/reverse-physics-bateman-two-angle-fejer-packet-detector",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "reverse-physics",
+    "state": "ACTIVE",
+    "objective": "Replace the impossible zero-width two-angle local detector by an explicit finite-derivative local angular filter on two compact BT packets, compute its exact continuum leakage, and include the residual mode in the detector evolution.",
+    "depends_on": [
+      "REVERSE_PHYSICS_BT_TWO_ANGLE_LOCAL_DETECTOR_COMPRESSION_V1",
+      "REVERSE_PHYSICS_BT_CONTINUOUS_ANGLE_Q6_FAMILY_V1"
+    ],
+    "activates": [
+      "an exact projective Fejer angular filter with the required opposite values at c=0 and c=3/5",
+      "a finite-order local differential-density realization",
+      "two disjoint compact rational angular packet bins",
+      "an exact rational continuum leakage fraction and rigorous efficiency bound",
+      "full residual-mode evolution in the resonant fixed-energy rotating-wave star sector"
+    ],
+    "current_gate": "Use zeta=exp(2 i theta), target phases zeta0=-1 and zeta1=(-7+24 i)/25, and normalized Fejer kernels K_N. At N=20 form p=(K_0-K_1)/(1-rho), prove p(theta0)=1 and p(theta1)=-1, realize its modes by local bilinears with at most 38 derivatives, and integrate |p|^2 exactly in dc over B0=[-7/25,7/25] and B1=[5/13,20/29]. Retain the exact complement vector in the star Hamiltonian and exponentiate that full three-direction system.",
+    "stop_condition": "Land a COEFFICIENT_COMPUTED packet-leakage certificate, method-distinct verifier, mutation tests and report. Require an exact leakage fraction below 1/1000 and state the rotating-wave, fixed-energy, one-dimensional angular and non-gravitational boundaries explicitly.",
+    "forbid": "no exact continuum selectivity claim; no deletion of the residual mode before exponentiation; no one-dimensional angular bound promoted to the full sphere, other total momenta or a complete local field Hamiltonian; no promotion to public BT Eq. 19, absolute q8, gravity, QME or LORENTZIAN-CAUSAL physics",
+    "allowed_paths": [
+      "reverse_physics/",
+      "paper/05-interaction-obstructions.tex",
+      "paper/05-interaction-obstructions.pdf",
+      "paper/06-einstein-weyl-interaction-obstructions.tex",
+      "paper/06-einstein-weyl-interaction-obstructions.pdf",
+      "planning/work-items/reverse-physics-bateman-two-angle-fejer-packet-detector.json",
+      "planning/events/"
+    ],
+    "resource_hint": "The normalized projective Fejer kernel K_N(theta-theta_j)=|sum_(k=0)^(N-1) exp(2 i k(theta-theta_j))|^2/N^2 is a finite trigonometric polynomial with maximum local derivative order 2(N-1). For N=20 the exact two-bin leakage fraction is below 1/1000. If v=sqrt(1-eta)B+sqrt(eta)R is the complete coupled continuum direction, exponentiating H=G(|e><v|+|v><e|) gives absorption effect (1-eta)sin^2(G tau)P_B on the selected packets and retains R exactly."
+  }
+}
