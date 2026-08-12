@@ -1,0 +1,76 @@
+{
+  "schema_version": "science-forge-tier-receipt-v1",
+  "receipt_id": "FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2_GUIDE_AND_ZERO_PENDING_REVISION_RECEIPT",
+  "created": "2026-08-12",
+  "repository_base_commit": "951dabd009923af7928aa63db8bf26ed2328e827",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
+  "scope": "Remove the zero-valued migration-pending summary card from the canonical explorer and add a generated non-specialist guide covering all three dimensions and all 28 axis options.",
+  "tiers": {
+    "tier_0_python_compile": {
+      "status": "PASS",
+      "command": "python3 -m py_compile foundations/build_matrix_site.py foundations/build_matrix_site_v2.py foundations/check_matrix_site_v2.py foundations/verify_matrix_site_v2.py foundations/tests/test_matrix_site.py",
+      "elapsed_seconds": 0.04
+    },
+    "tier_0_json": {
+      "status": "PASS",
+      "command": "parse foundations/site/data.json foundations/site/manifest.json foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json with json.loads",
+      "elapsed_seconds": 0.02,
+      "result": "Three generated JSON artifacts parsed."
+    },
+    "tier_0_diff_check": {
+      "status": "PASS",
+      "command": "git diff --check -- foundations"
+    },
+    "tier_1_site_verifier": {
+      "status": "PASS",
+      "command": "python3 foundations/verify_matrix_site_v2.py",
+      "result": "Schema, independent full-surface audit, deterministic build, manifest pins, claim boundaries, and human report pass."
+    },
+    "tier_1_site_tests": {
+      "status": "PASS",
+      "command": "python3 -m unittest foundations.tests.test_matrix_site",
+      "elapsed_seconds": 0.328,
+      "result": "9/9 tests pass, including complete plain-language coverage of 6 + 6 + 16 axis choices."
+    },
+    "tier_1_browser_smoke": {
+      "status": "PASS",
+      "command": "serve foundations/site and render #view=guide in headless Google Chrome",
+      "elapsed_seconds": 0.9,
+      "result": "Five summary cards render, the zero Migration pending card is absent, three guide dimensions render, and all 28 option explanations are present."
+    },
+    "tier_2": {
+      "status": "NOT_RUN",
+      "criterion": "No scientific input, cube coordinate, evidence assignment, shared mathematical operator, or certificate claim changed; the deterministic site chain and its direct tests were run."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No freeze, theorem promotion, release preparation, shared core-algebra change, or explicit full-suite request applies."
+    }
+  },
+  "interface_checks": {
+    "zero_pending_rule": "The migration summary card is displayed only when its count is greater than zero, so a future pending migration remains visible.",
+    "dimension_guide": {
+      "dimensions": 3,
+      "mathematical_regimes": 6,
+      "carriers": 6,
+      "physical_obligations": 16,
+      "total_options": 28,
+      "technical_scope_retained": true
+    },
+    "filter_rename": "Open but seeded was replaced by Open cells with a starting point, with a tooltip stating that it selects Pieces only and Priority gap cells."
+  },
+  "artifact_hashes": {
+    "foundations/build_matrix_site_v2.py": "c39af44b563ec696bdda91873c23abf206e05eae3a4da03634e3c23b54263b88",
+    "foundations/check_matrix_site_v2.py": "d89a5b65149b58537ecb512222927412b7cd90f6a035bf7ddab29597a2418e0f",
+    "foundations/verify_matrix_site_v2.py": "65f4deed669e08bccabae9040c6d691a3a77ae463a31a968e0c412dcec6b3276",
+    "foundations/matrix_site_assets/app.js": "6fd781ea8bc58c8bcb14c8c8de2df555494337a72bcc6386e921a77471521323",
+    "foundations/matrix_site_assets/index.html": "c2db77f23708b0fef3b8838ae7909ce02d27dace2da9d330c0df8bf0f1569682",
+    "foundations/matrix_site_assets/styles.css": "86d68f456ae67f8519470930532773be6873bb921029978f867cc68cc75fca49",
+    "foundations/tests/test_matrix_site.py": "8e8dcb2d0eb3b3fff9c460c32ded3bf4f4d839776fcae24e767c1423bcf3ffdf",
+    "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json": "8502d74388380752d57bafee0958df5ed3a15d7c1539009b7d937e252ee7e825",
+    "foundations/site/data.json": "07c9ec00ee8b01e744138f0585e86f20945be3b278f59166686c0d995d20f400",
+    "foundations/site/manifest.json": "874d7ce1e20f9929247eb044386b4be54704901bc9ba9bfe8f3c89e0aa26af73"
+  },
+  "canonical_data_digest": "b461f5b4e2a58905daff87c3fd3629a3e80cb087c3f4dd1d0d925304344395e2",
+  "claim_boundary": "This is a generated explanatory and layout revision. It changes no cube status, evidence assignment, migration decision, foundational theorem, or Lorentzian claim."
+}

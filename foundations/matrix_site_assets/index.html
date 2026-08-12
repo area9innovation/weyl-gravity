@@ -19,6 +19,7 @@
 
   <nav class="tabs" aria-label="Explorer views">
     <button class="tab active" data-view="matrix">Matrix</button>
+    <button class="tab" data-view="guide">Dimensions guide</button>
     <button class="tab" data-view="graph">Implications</button>
     <button class="tab" data-view="ladder">Strength ladder</button>
     <button class="tab" data-view="evidence">Evidence</button>
@@ -32,7 +33,7 @@
       <label class="search"><span>Search claims, boundaries, evidence, authors</span><input id="search" type="search" placeholder="e.g. causal, Krein, Choice, QME"></label>
       <div class="filter-row" id="filters"></div>
       <div class="action-row">
-        <label class="check"><input id="seededOnly" type="checkbox"> Open but seeded</label>
+        <label class="check" title="Show only Pieces only and Priority gap cells: open questions with recorded ingredients or a concrete next investigation."><input id="seededOnly" type="checkbox"> Open cells with a starting point</label>
         <button id="clearFilters">Clear filters</button>
         <button id="copyLink">Copy permalink</button>
         <button id="exportJson">Export filtered JSON</button>
@@ -44,6 +45,11 @@
     <section id="matrixView" class="view active">
       <div class="section-head"><div><p class="eyebrow">Sixteen coordinated slices</p><h2>Entire 6 × 6 × 16 surface</h2></div><p>Rows are mathematical regimes. Columns are carriers. Choose any cell for its exact claim boundary and evidence trail.</p></div>
       <div id="matrixGroups"></div>
+    </section>
+
+    <section id="guideView" class="view">
+      <div class="section-head"><div><p class="eyebrow">Start here</p><h2>What the three dimensions mean</h2></div><p>Every cell combines one mathematical regime, one carrier, and one physical obligation. The guide explains all 28 choices without assuming specialist vocabulary.</p></div>
+      <div id="dimensionGuide"></div>
     </section>
 
     <section id="graphView" class="view">

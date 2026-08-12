@@ -20,7 +20,8 @@ window.MATRIX_EXPLORER_DATA = {
             "ordinary classical proofs",
             "standard completed real/complex analysis",
             "unrestricted background Choice when not audited"
-          ]
+          ],
+          "plain_meaning": "Mainstream mathematics: classical logic, completed infinite structures, and ordinary analysis, with Choice available unless a proof explicitly avoids it."
         },
         {
           "id": "WEAK_ARITHMETIC",
@@ -32,7 +33,8 @@ window.MATRIX_EXPLORER_DATA = {
             "WKL_0",
             "ACA_0",
             "stronger comprehension when required"
-          ]
+          ],
+          "plain_meaning": "Use a deliberately small formal system and ask exactly how much arithmetic or set existence the proof needs."
         },
         {
           "id": "WEAK_CHOICE_ZF",
@@ -43,7 +45,8 @@ window.MATRIX_EXPLORER_DATA = {
             "ZF + DC",
             "no Countable Choice",
             "ultrafilter/Boolean-prime-ideal fragments"
-          ]
+          ],
+          "plain_meaning": "Keep classical set theory but remove or isolate principles that choose objects from infinitely many sets at once."
         },
         {
           "id": "CONSTRUCTIVE_COMPUTABLE",
@@ -54,7 +57,8 @@ window.MATRIX_EXPLORER_DATA = {
             "computable analysis",
             "Weihrauch analysis",
             "constructive reformulations"
-          ]
+          ],
+          "plain_meaning": "An existence claim must provide a witness, construction, or algorithm—not only show that nonexistence would be contradictory."
         },
         {
           "id": "TOPOS_INTERNAL",
@@ -65,7 +69,8 @@ window.MATRIX_EXPLORER_DATA = {
             "locales",
             "internal algebraic quantum theory",
             "synthetic differential geometry"
-          ]
+          ],
+          "plain_meaning": "Do the mathematics inside an alternative logical universe, where truth may be local and classical either/or reasoning may fail."
         },
         {
           "id": "FINITE_DISCRETE",
@@ -77,9 +82,12 @@ window.MATRIX_EXPLORER_DATA = {
             "finite-dimensional systems",
             "potential-infinity/finitist proposals"
           ],
-          "warning": "A finite regulator, finite carrier, and foundational rejection of actual infinity are distinct and must not be conflated."
+          "warning": "A finite regulator, finite carrier, and foundational rejection of actual infinity are distinct and must not be conflated.",
+          "plain_meaning": "Replace an infinite or continuous system by finite exact data or finitely many modes. This is not automatically the same as rejecting infinity as a foundation."
         }
-      ]
+      ],
+      "plain_name": "Mathematical regime",
+      "guide_question": "Which rules of reasoning and mathematical existence are we allowing?"
     },
     {
       "id": "CARRIER",
@@ -88,34 +96,42 @@ window.MATRIX_EXPLORER_DATA = {
         {
           "id": "FINITE_EXACT",
           "label": "Finite exact algebra",
-          "meaning": "Finite matrices, rational/integer complexes, or explicitly finite-dimensional algebraic data."
+          "meaning": "Finite matrices, rational/integer complexes, or explicitly finite-dimensional algebraic data.",
+          "plain_meaning": "Finite matrices, rational arrays, or other finite algebraic data that can be checked exactly."
         },
         {
           "id": "HILBERT_OPERATOR",
           "label": "Hilbert/operator",
-          "meaning": "Positive Hilbert spaces, operator domains, spectral data, and their completions."
+          "meaning": "Positive Hilbert spaces, operator domains, spectral data, and their completions.",
+          "plain_meaning": "The positive-norm vector spaces and operators used in standard quantum mechanics and spectral theory."
         },
         {
           "id": "KREIN_INDEFINITE",
           "label": "Krein/indefinite",
-          "meaning": "Indefinite inner products, fundamental symmetries, and positive companion topologies."
+          "meaning": "Indefinite inner products, fundamental symmetries, and positive companion topologies.",
+          "plain_meaning": "A vector space whose inner product can be positive, negative, or zero, as often occurs before unphysical gauge directions are removed."
         },
         {
           "id": "ALGEBRAIC_CSTAR",
           "label": "Algebraic C*-system",
-          "meaning": "Observable algebras, states, GNS representations, nets, and algebra-first formulations."
+          "meaning": "Observable algebras, states, GNS representations, nets, and algebra-first formulations.",
+          "plain_meaning": "Start from an algebra of observable quantities; a state is a rule assigning expectation values rather than primarily a wavefunction."
         },
         {
           "id": "SMOOTH_DISTRIBUTIONAL",
           "label": "Smooth/PDE/distributional",
-          "meaning": "Manifolds, bundles, sections, Sobolev or distribution spaces, differential operators, and Green theory."
+          "meaning": "Manifolds, bundles, sections, Sobolev or distribution spaces, differential operators, and Green theory.",
+          "plain_meaning": "Continuum fields on space or spacetime, including derivatives, PDEs, Sobolev spaces, generalized functions, and Green operators."
         },
         {
           "id": "LOCALIC_SYNTHETIC",
           "label": "Localic/synthetic/internal",
-          "meaning": "Locales, internal algebra objects, formal manifolds, and synthetic smooth structures."
+          "meaning": "Locales, internal algebra objects, formal manifolds, and synthetic smooth structures.",
+          "plain_meaning": "Describe spaces through regions, logical relations, or internal geometry instead of beginning with a set of individual points."
         }
-      ]
+      ],
+      "plain_name": "Mathematical carrier",
+      "guide_question": "What kind of mathematical object holds the states, fields, and observables?"
     },
     {
       "id": "REFINED_OBLIGATION",
@@ -124,84 +140,102 @@ window.MATRIX_EXPLORER_DATA = {
         {
           "id": "KINEMATICS_OBSERVABLES",
           "label": "Kinematics/observables",
-          "meaning": "Define degrees of freedom, observables, commutation structure, and configurations."
+          "meaning": "Define degrees of freedom, observables, commutation structure, and configurations.",
+          "plain_meaning": "Say what the possible configurations and measurable quantities are before specifying how they evolve."
         },
         {
           "id": "STATE_EXISTENCE",
           "label": "State existence",
-          "meaning": "Construct at least one normalized or algebraically valid state in the declared carrier."
+          "meaning": "Construct at least one normalized or algebraically valid state in the declared carrier.",
+          "plain_meaning": "Show that at least one mathematically valid state actually exists."
         },
         {
           "id": "STATE_REPRESENTATION",
           "label": "State representation",
-          "meaning": "Relate states to vectors, density operators, measures, valuations, or GNS data."
+          "meaning": "Relate states to vectors, density operators, measures, valuations, or GNS data.",
+          "plain_meaning": "Explain how an abstract state is encoded—for example by a vector, density matrix, measure, valuation, or GNS construction."
         },
         {
           "id": "PROBABILITY_RULE",
           "label": "Probability rule",
-          "meaning": "Construct or derive normalized event probabilities or a Born-type rule."
+          "meaning": "Construct or derive normalized event probabilities or a Born-type rule.",
+          "plain_meaning": "Turn states and events into normalized probabilities, such as a Born-type prediction rule."
         },
         {
           "id": "PHYSICAL_STATE_SELECTION",
           "label": "Physical state selection",
-          "meaning": "Select or obstruct a physically distinguished vacuum, thermal, Hadamard, or other state."
+          "meaning": "Select or obstruct a physically distinguished vacuum, thermal, Hadamard, or other state.",
+          "plain_meaning": "Explain why a particular vacuum, thermal, Hadamard, or other state should count as physically distinguished."
         },
         {
           "id": "GENERATOR_SPECTRAL_DYNAMICS",
           "label": "Generator/spectral dynamics",
-          "meaning": "Construct generators, spectra, one-parameter groups, or algebra automorphisms."
+          "meaning": "Construct generators, spectra, one-parameter groups, or algebra automorphisms.",
+          "plain_meaning": "Construct what generates time evolution and, where relevant, identify its allowed frequencies or energy spectrum."
         },
         {
           "id": "EVOLUTION_WELLPOSEDNESS",
           "label": "Evolution/well-posedness",
-          "meaning": "Prove existence, uniqueness, stability, or computability of evolution in a stated topology."
+          "meaning": "Prove existence, uniqueness, stability, or computability of evolution in a stated topology.",
+          "plain_meaning": "Show that admissible initial data produce a solution that exists, is unique, and changes stably or computably with the data."
         },
         {
           "id": "CAUSAL_PROPAGATION_GREEN",
           "label": "Causal propagation/Green",
-          "meaning": "Construct advanced/retarded maps and prove finite propagation or causal support."
+          "meaning": "Construct advanced/retarded maps and prove finite propagation or causal support.",
+          "plain_meaning": "Show that disturbances propagate within the permitted causal region and construct retarded or advanced response maps."
         },
         {
           "id": "GAUGE_BV_COHOMOLOGY",
           "label": "Gauge/BV/cohomology",
-          "meaning": "Handle gauge symmetry, BRST/BV complexes, residual cohomology, and gauge independence."
+          "meaning": "Handle gauge symmetry, BRST/BV complexes, residual cohomology, and gauge independence.",
+          "plain_meaning": "Handle redundant gauge descriptions consistently and identify the quantities or states that remain physically meaningful."
         },
         {
           "id": "INTERACTION_CONSTRUCTION",
           "label": "Interaction construction",
-          "meaning": "Construct a nontrivial interaction, deformation, or interacting product."
+          "meaning": "Construct a nontrivial interaction, deformation, or interacting product.",
+          "plain_meaning": "Build a genuine coupling or nonlinear theory rather than only a collection of free, noninteracting fields."
         },
         {
           "id": "COUNTERTERM_CLASSIFICATION",
           "label": "Counterterm classification",
-          "meaning": "Classify allowed local counterterms before computing coefficients."
+          "meaning": "Classify allowed local counterterms before computing coefficients.",
+          "plain_meaning": "List every local correction that quantum calculations are allowed to require before attempting to calculate its coefficient."
         },
         {
           "id": "ANOMALY_CLASSIFICATION",
           "label": "Anomaly classification",
-          "meaning": "Classify possible local anomalies and consistency conditions."
+          "meaning": "Classify possible local anomalies and consistency conditions.",
+          "plain_meaning": "List the possible ways a classical symmetry or consistency condition could fail after quantization."
         },
         {
           "id": "RENORMALIZED_PRODUCTS",
           "label": "Renormalized products",
-          "meaning": "Construct renormalized time-ordered or interacting products."
+          "meaning": "Construct renormalized time-ordered or interacting products.",
+          "plain_meaning": "Define products and correlation functions that would otherwise be singular when fields meet at the same spacetime point."
         },
         {
           "id": "QME_RESTORATION",
           "label": "QME restoration",
-          "meaning": "Compute or cancel the breaking and restore the local quantum master equation."
+          "meaning": "Compute or cancel the breaking and restore the local quantum master equation.",
+          "plain_meaning": "Repair the quantum master equation, the BV consistency condition that encodes quantum gauge symmetry."
         },
         {
           "id": "RESIDUAL_QUANTUM_TRANSFER",
           "label": "Residual quantum transfer",
-          "meaning": "Transfer a restored quantum correction to the residual complex."
+          "meaning": "Transfer a restored quantum correction to the residual complex.",
+          "plain_meaning": "After quantum consistency is restored, transfer the correction to the smaller complex that represents the surviving physical content."
         },
         {
           "id": "RECONSTRUCTION_LIMITS",
           "label": "Reconstruction/limits",
-          "meaning": "Prove operational reconstruction, comparison, continuum-limit, or empirical-equivalence results."
+          "meaning": "Prove operational reconstruction, comparison, continuum-limit, or empirical-equivalence results.",
+          "plain_meaning": "Connect the formulation back to operational predictions, a continuum or standard theory, or a demonstrated notion of empirical equivalence."
         }
-      ]
+      ],
+      "plain_name": "Physical obligation",
+      "guide_question": "Which physical job must the theory perform?"
     }
   ],
   "groups": [
@@ -13112,5 +13146,5 @@ window.MATRIX_EXPLORER_DATA = {
     "migration_audit_report": "sources/foundations/reports/intersection-cube-migration-audit-v2.md",
     "ladder_report": "sources/foundations/reports/cylinder-wave-strength-ladder-v2.md"
   },
-  "canonical_digest": "5f40695375829b0edb8c6ab6d0abfd0dc4da592855f9bfb5f1a0523f49403fac"
+  "canonical_digest": "b461f5b4e2a58905daff87c3fd3629a3e80cb087c3f4dd1d0d925304344395e2"
 };

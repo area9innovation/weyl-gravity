@@ -23,6 +23,10 @@ to local results and adds five carefully typed evidence overlays.
 The cell inspector exposes coverage evidence separately from migration-review
 evidence and links to the explicit 112-decision audit ledger.
 
+The **Dimensions guide** explains the 6 mathematical regimes, 6 carriers, and
+16 physical obligations in non-specialist language while retaining each
+technical definition in an expandable detail block.
+
 ## Build and verification
 
 ```text

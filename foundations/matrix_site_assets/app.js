@@ -39,7 +39,7 @@
 
   function parseHash() {
     const params = new URLSearchParams(location.hash.slice(1));
-    if (params.get("view") && ["matrix", "graph", "ladder", "evidence"].includes(params.get("view"))) state.view = params.get("view");
+    if (params.get("view") && ["matrix", "guide", "graph", "ladder", "evidence"].includes(params.get("view"))) state.view = params.get("view");
     state.q = params.get("q") || "";
     state.seededOnly = params.get("seeded") === "1";
     state.cell = params.get("cell") || null;
@@ -93,7 +93,7 @@
       [DATA.counts.migration_unresolved, "Migration unresolved", STATUS.MIGRATION_UNRESOLVED.color],
       [DATA.counts.not_mapped, "Not mapped", STATUS.NOT_MAPPED.color],
       [DATA.counts.evidence_records, "Evidence records", "#2776a8"],
-    ];
+    ].filter(([count, label]) => label !== "Migration unresolved" || count > 0);
     document.getElementById("stats").innerHTML = items.map(([n, label, color]) => `<div class="stat" style="--tone:${color}"><b>${n}</b><span>${label}</span></div>`).join("");
   }
 
@@ -267,6 +267,14 @@
     document.getElementById("evidenceGrid").innerHTML = ids.length ? ids.map(id => evidenceCard(id)).join("") : `<p>No evidence records match the current cell filters.</p>`;
   }
 
+  function renderGuide() {
+    const dimensions = DATA.axes.map((dimension, index) => `<section class="guide-dimension">
+      <div class="guide-heading"><span>${index + 1}</span><div><p class="eyebrow">${esc(dimension.plain_name)}</p><h3>${esc(dimension.guide_question)}</h3><p>${dimension.keys.length} choices—select exactly one to define this part of a cell.</p></div></div>
+      <div class="guide-options">${dimension.keys.map(option => `<article><h4>${esc(option.label)}</h4><p>${esc(option.plain_meaning)}</p><details><summary>Technical scope</summary><p>${esc(option.meaning)}</p>${list(option.includes).length ? `<p><b>Includes:</b> ${esc(option.includes.join(", "))}</p>` : ""}${option.warning ? `<p class="boundary">${esc(option.warning)}</p>` : ""}</details></article>`).join("")}</div>
+    </section>`).join("");
+    document.getElementById("dimensionGuide").innerHTML = `<article class="guide-intro"><p class="eyebrow">How to read one coordinate</p><h3>Regime × carrier × obligation = one research question</h3><p>For example: <b>constructive/computable × smooth/PDE/distributional × causal propagation/Green</b> asks whether causal response maps can be built with explicit computational content for continuum fields.</p><p>The cell color reports the evidence currently recorded for that precise combination. It does not say whether the idea is true, important, or impossible.</p></article>${dimensions}<article class="guide-intro"><p class="eyebrow">Two records, two questions</p><h3>Coverage is not migration</h3><p><b>Coverage status</b> says what direct result, literature result, partial ingredients, or gap is recorded now. <b>Migration review</b> says whether evidence attached to an older, broader category was checked for transfer into this more precise cell. A reviewed migration is an audit fact, not additional physical evidence.</p></article>`;
+  }
+
   function setView(view) {
     state.view = view;
     document.querySelectorAll(".tab").forEach(x => x.classList.toggle("active", x.dataset.view === view));
@@ -333,7 +341,7 @@
     document.addEventListener("keydown", event => { if (event.key === "Escape") closeInspector(); });
   }
 
-  parseHash(); renderStats(); renderFilters(); renderGraph(); renderLadder(); bind(); setView(state.view); refresh();
+  parseHash(); renderStats(); renderFilters(); renderGuide(); renderGraph(); renderLadder(); bind(); setView(state.view); refresh();
   document.getElementById("digest").textContent = `Canonical data digest: ${DATA.canonical_digest}`;
   if (state.cell) openCell(state.cell);
 })();

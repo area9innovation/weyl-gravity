@@ -28,6 +28,49 @@ LEDGERS = v1.LEDGERS
 CREATED = "2026-08-12"
 BASE_COMMIT = "24e988693bd9ee6874bedf9de476202c949a2e7e"
 
+PLAIN_AXIS_GUIDE = {
+    "FOUNDATION": {
+        "question": "Which rules of reasoning and mathematical existence are we allowing?",
+        "plain_name": "Mathematical regime",
+        "CLASSICAL_STANDARD": "Mainstream mathematics: classical logic, completed infinite structures, and ordinary analysis, with Choice available unless a proof explicitly avoids it.",
+        "WEAK_ARITHMETIC": "Use a deliberately small formal system and ask exactly how much arithmetic or set existence the proof needs.",
+        "WEAK_CHOICE_ZF": "Keep classical set theory but remove or isolate principles that choose objects from infinitely many sets at once.",
+        "CONSTRUCTIVE_COMPUTABLE": "An existence claim must provide a witness, construction, or algorithm—not only show that nonexistence would be contradictory.",
+        "TOPOS_INTERNAL": "Do the mathematics inside an alternative logical universe, where truth may be local and classical either/or reasoning may fail.",
+        "FINITE_DISCRETE": "Replace an infinite or continuous system by finite exact data or finitely many modes. This is not automatically the same as rejecting infinity as a foundation.",
+    },
+    "CARRIER": {
+        "question": "What kind of mathematical object holds the states, fields, and observables?",
+        "plain_name": "Mathematical carrier",
+        "FINITE_EXACT": "Finite matrices, rational arrays, or other finite algebraic data that can be checked exactly.",
+        "HILBERT_OPERATOR": "The positive-norm vector spaces and operators used in standard quantum mechanics and spectral theory.",
+        "KREIN_INDEFINITE": "A vector space whose inner product can be positive, negative, or zero, as often occurs before unphysical gauge directions are removed.",
+        "ALGEBRAIC_CSTAR": "Start from an algebra of observable quantities; a state is a rule assigning expectation values rather than primarily a wavefunction.",
+        "SMOOTH_DISTRIBUTIONAL": "Continuum fields on space or spacetime, including derivatives, PDEs, Sobolev spaces, generalized functions, and Green operators.",
+        "LOCALIC_SYNTHETIC": "Describe spaces through regions, logical relations, or internal geometry instead of beginning with a set of individual points.",
+    },
+    "REFINED_OBLIGATION": {
+        "question": "Which physical job must the theory perform?",
+        "plain_name": "Physical obligation",
+        "KINEMATICS_OBSERVABLES": "Say what the possible configurations and measurable quantities are before specifying how they evolve.",
+        "STATE_EXISTENCE": "Show that at least one mathematically valid state actually exists.",
+        "STATE_REPRESENTATION": "Explain how an abstract state is encoded—for example by a vector, density matrix, measure, valuation, or GNS construction.",
+        "PROBABILITY_RULE": "Turn states and events into normalized probabilities, such as a Born-type prediction rule.",
+        "PHYSICAL_STATE_SELECTION": "Explain why a particular vacuum, thermal, Hadamard, or other state should count as physically distinguished.",
+        "GENERATOR_SPECTRAL_DYNAMICS": "Construct what generates time evolution and, where relevant, identify its allowed frequencies or energy spectrum.",
+        "EVOLUTION_WELLPOSEDNESS": "Show that admissible initial data produce a solution that exists, is unique, and changes stably or computably with the data.",
+        "CAUSAL_PROPAGATION_GREEN": "Show that disturbances propagate within the permitted causal region and construct retarded or advanced response maps.",
+        "GAUGE_BV_COHOMOLOGY": "Handle redundant gauge descriptions consistently and identify the quantities or states that remain physically meaningful.",
+        "INTERACTION_CONSTRUCTION": "Build a genuine coupling or nonlinear theory rather than only a collection of free, noninteracting fields.",
+        "COUNTERTERM_CLASSIFICATION": "List every local correction that quantum calculations are allowed to require before attempting to calculate its coefficient.",
+        "ANOMALY_CLASSIFICATION": "List the possible ways a classical symmetry or consistency condition could fail after quantization.",
+        "RENORMALIZED_PRODUCTS": "Define products and correlation functions that would otherwise be singular when fields meet at the same spacetime point.",
+        "QME_RESTORATION": "Repair the quantum master equation, the BV consistency condition that encodes quantum gauge symmetry.",
+        "RESIDUAL_QUANTUM_TRANSFER": "After quantum consistency is restored, transfer the correction to the smaller complex that represents the surviving physical content.",
+        "RECONSTRUCTION_LIMITS": "Connect the formulation back to operational predictions, a continuum or standard theory, or a demonstrated notion of empirical equivalence.",
+    },
+}
+
 
 def rel(path: Path) -> str:
     return str(path.relative_to(ROOT))
@@ -35,6 +78,19 @@ def rel(path: Path) -> str:
 
 def site_link(path: str) -> str:
     return "sources/" + Path(path).as_posix()
+
+
+def guided_axes(source_axes: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    axes: list[dict[str, Any]] = []
+    for source_axis in source_axes:
+        guide = PLAIN_AXIS_GUIDE[source_axis["id"]]
+        axes.append({
+            **source_axis,
+            "plain_name": guide["plain_name"],
+            "guide_question": guide["question"],
+            "keys": [{**key, "plain_meaning": guide[key["id"]]} for key in source_axis["keys"]],
+        })
+    return axes
 
 
 def evidence_registry(cube: dict[str, Any], ladder: dict[str, Any]) -> dict[str, dict[str, Any]]:
@@ -93,7 +149,7 @@ def build_dataset() -> dict[str, Any]:
         "title": "Reverse Mathematics × Physics Atlas",
         "created": CREATED,
         "dependency_tags": cube["dependency_tags"],
-        "axes": cube["axes"],
+        "axes": guided_axes(cube["axes"]),
         "groups": v1.GROUPS,
         "statuses": cube["cell_statuses"],
         "migration_statuses": cube["migration_statuses"] + [{"id": "NOT_REVIEWED", "meaning": "The coordinate was not emitted by cube v2, so no migration review was required."}],
@@ -167,6 +223,10 @@ to local results and adds five carefully typed evidence overlays.
 The cell inspector exposes coverage evidence separately from migration-review
 evidence and links to the explicit 112-decision audit ledger.
 
+The **Dimensions guide** explains the 6 mathematical regimes, 6 carriers, and
+16 physical obligations in non-specialist language while retaining each
+technical definition in an expandable detail block.
+
 ## Build and verification
 
 ```text
@@ -239,7 +299,7 @@ def generated() -> dict[Path, bytes]:
         "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
         "scope": "Deterministic static exploration surface over the migration-reviewed foundations cube and cylinder implication ladder.",
         "counts": dataset["counts"],
-        "features": ["sixteen 6x6 heatmaps", "separate coverage and migration-review states", "migration evidence inspector", "multi-select filters", "full-text search", "cell inspector", "one-axis neighbors", "two-cell comparison", "URL permalinks", "filtered JSON and CSV export", "research-brief export", "typed implication graph", "strength ladder", "evidence catalogue"],
+        "features": ["sixteen 6x6 heatmaps", "plain-language guide for all 28 axis options", "separate coverage and migration-review states", "migration evidence inspector", "multi-select filters", "full-text search", "cell inspector", "one-axis neighbors", "two-cell comparison", "URL permalinks", "filtered JSON and CSV export", "research-brief export", "typed implication graph", "strength ladder", "evidence catalogue"],
         "provenance": {"manifest": rel(SITE / "manifest.json"), "manifest_sha256": v1.sha_bytes(manifest_bytes), "canonical_data_digest": dataset["canonical_digest"]},
         "independent_checker": {"path": "foundations/check_matrix_site_v2.py", "expected_cells": 576, "expected_emitted": 452, "expected_synthetic_not_mapped": 124, "expected_total_not_mapped": 205, "expected_evidence_records": 69, "expected_digest": dataset["canonical_digest"]},
         "claim_flags": {"static_site_generated": True, "all_cartesian_coordinates_visible": True, "all_emitted_migrations_reviewed": True, "coverage_and_migration_separated": True, "all_used_evidence_resolved": True, "scientific_claims_duplicated_by_hand": False, "literature_complete": False, "unmapped_means_absent": False, "reviewed_no_transfer_means_absent": False, "priority_score_is_theorem": False, "new_lorentzian_claim": False},

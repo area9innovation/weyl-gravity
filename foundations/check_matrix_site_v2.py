@@ -40,6 +40,8 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
     keys = {axis_id: [x.get("id") for x in axes.get(axis_id, {}).get("keys", [])] for axis_id in ("FOUNDATION", "CARRIER", "REFINED_OBLIGATION")}
     if [len(keys[x]) for x in keys] != [6, 6, 16]:
         errors.append("axis sizes")
+    if any(not axis.get("plain_name") or not axis.get("guide_question") or any(not key.get("plain_meaning") for key in axis.get("keys", [])) for axis in axes.values()):
+        errors.append("plain-language dimension guide closure")
     expected = {(f, c, o) for f in keys["FOUNDATION"] for c in keys["CARRIER"] for o in keys["REFINED_OBLIGATION"]}
     cells = data.get("cells", [])
     coordinates = [(x.get("foundation"), x.get("carrier"), x.get("obligation")) for x in cells]
@@ -111,7 +113,7 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
     app = (SITE / "app.js").read_text() + (SITE / "migration-review.js").read_text()
     if "https://" in html or "http://" in html or '<script src="data.js"></script>' not in html or '<script src="migration-review.js"></script>' not in html:
         errors.append("offline/no-remote-code shell")
-    for token in ("matrixGroups", "graphView", "ladderView", "evidenceView", "compareDialog", "exportJson", "exportCsv", "downloadBrief", "column-label", "Migration review", "migration_evidence", "112-decision audit JSON"):
+    for token in ("matrixGroups", "guideView", "dimensionGuide", "Regime × carrier × obligation", "graphView", "ladderView", "evidenceView", "compareDialog", "exportJson", "exportCsv", "downloadBrief", "column-label", "Migration review", "migration_evidence", "112-decision audit JSON"):
         if token not in html + app:
             errors.append("interface token " + token)
 
