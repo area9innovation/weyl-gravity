@@ -2900,6 +2900,30 @@ finite-time or wave-packet Møller action that counts the on-shell sequential
 four-point history separately.  No finite inclusive probability is yet
 constructed.
 
+The leading history carrier can nevertheless be constructed exactly.  In the
+ten-channel basis the residue map is $R=(J-I)/4$, so
+
+\[
+ D=y^T\left(J+\frac18I\right)y
+  =\frac98\sum_A\frac1{s_A^2}
+   +2\sum_{A<B}\frac1{s_As_B}.
+\]
+
+For each channel the residue has nine entries $1/4$ and one zero, giving Born
+norm $9/8$; the complete Gram has spectrum $81/8$ and $1/8$ with multiplicity
+nine.  The diagonal term therefore contains every positive double pole as a
+separately labelled sequential outcome.  The zero-diagonal interference block
+is $J-I$, with inertia $(1,9)$, and is not itself a positive outcome Gram.  For
+$F_T(\omega)=\int_0^T e^{i\omega t}dt$ and
+$s=2E\omega+O(\omega^2)$, the exact finite-time normalization gives
+$|F_T|^2/(4E^2)\to(\pi T/E)\delta(s)$, or
+$9\pi T\delta(s)/(8E)$ for the BT leading history.  Certificate
+\texttt{REVERSE\_PHYSICS\_BT\_SIX\_POINT\_SEQUENTIAL\_}
+\allowbreak\texttt{HISTORY\_CARRIER\_V1}
+constructs this reduced carrier and coefficient.  It does not derive the
+finite-time block from the BT Hamiltonian, prescribe the signed interference,
+or provide the matching survival term.
+
 The classified endpoint freedom does not supply this complement by one fixed
 prescription on the minimal two-profile probe lift.  Take
 $v=(1,z(1-z))$ and parameterize a reflection-even extension relative to the

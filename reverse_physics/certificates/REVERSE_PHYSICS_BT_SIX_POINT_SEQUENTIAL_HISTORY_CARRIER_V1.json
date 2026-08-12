@@ -1,0 +1,630 @@
+{
+  "answer": "Yes at the exact leading-shell reduced-mode level. With y_A=1/s_A, the ten species coefficients obey c=(J-I)y/4. For a fixed on-shell channel B the residue vector has nine entries 1/4 and one zero, the nine allowed products of two auxiliary quartic transitions, and its Born norm is 2||r_B||^2=9/8. The full residue Gram is G=J+I/8, positive definite with spectrum 81/8 and 1/8 (multiplicity nine). It splits uniquely by pole order into a diagonal sequential part (9/8)I, containing every 1/s_A^2 pole, and an off-diagonal coherent interference part J-I, containing only 1/(s_A s_B) terms and having inertia (1,9). For F_T(omega)=integral_0^T exp(i omega t)dt, |F_T|^2/T tends to 2*pi*delta(omega). Near an intermediate state of energy E, s=2E*omega+O(omega^2), so |F_T|^2/(4E^2) tends to (pi*T/E)*delta(s). This matches the Feynman-modulus leading term pi*delta(s)/epsilon_s at epsilon_s=E/T and turns 9/(8s^2) into the positive sequential coefficient 9*pi*T*delta(s)/(8E). This identifies and normalizes the leading divergent history but does not construct the BT Moller operator, prescribe the signed interference distribution, or supply the survival term required for a finite inclusive probability.",
+  "certificate": "REVERSE_PHYSICS_BT_SIX_POINT_SEQUENTIAL_HISTORY_CARRIER_V1",
+  "checks": {
+    "details": {
+      "all_inputs_are_content_pinned": true,
+      "complete_gram_is_positive_definite": true,
+      "defect_completion_remains_BT_underdetermined": true,
+      "finite_Moller_column_is_not_two_sided": true,
+      "finite_time_shell_matching_is_exact": true,
+      "fixed_channel_norm_reproduces_double_pole": true,
+      "inclusive_eq19_gravity_and_causality_remain_open": true,
+      "interference_has_zero_diagonal": true,
+      "interference_is_not_a_positive_outcome_gram": true,
+      "leading_history_coefficient_is_positive": true,
+      "one_channel_has_nine_allowed_quartic_histories": true,
+      "positive_exclusive_completion_was_ruled_out": true,
+      "predecessor_formula_is_imported": true,
+      "residue_map_is_invertible": true,
+      "sequential_split_contains_every_double_pole": true,
+      "ten_channel_incidence_is_invertible": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 16,
+    "total": 16
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "a finite-time BT Hamiltonian derivation",
+    "a preferred distribution for 1/(s_A*s_B)",
+    "orthogonality of unresolved physical detector channels",
+    "a survival or virtual term",
+    "a finite inclusive probability",
+    "a complete Moller/LSZ/S operator",
+    "Eq. (19)",
+    "loops",
+    "gravity/BRST",
+    "anything LORENTZIAN-CAUSAL",
+    "literature priority"
+  ],
+  "exact_channel_carrier": {
+    "channel_count": 10,
+    "complete_channel_gram": [
+      [
+        "9/8",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      [
+        "1",
+        "9/8",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      [
+        "1",
+        "1",
+        "9/8",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      [
+        "1",
+        "1",
+        "1",
+        "9/8",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      [
+        "1",
+        "1",
+        "1",
+        "1",
+        "9/8",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      [
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "9/8",
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      [
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "9/8",
+        "1",
+        "1",
+        "1"
+      ],
+      [
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "9/8",
+        "1",
+        "1"
+      ],
+      [
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "9/8",
+        "1"
+      ],
+      [
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "9/8"
+      ]
+    ],
+    "complete_channel_gram_determinant": "81/1073741824",
+    "complete_channel_gram_formula": "G=2*R^T*R=J+I/8",
+    "complete_channel_gram_spectrum": {
+      "1/8": 9,
+      "81/8": 1
+    },
+    "density_split": "D=(9/8)*sum_A(1/s_A^2)+2*sum_{A<B}1/(s_A*s_B)",
+    "fixed_channel_born_norm": "9/8",
+    "fixed_channel_residue_vector": [
+      "0",
+      "1/4",
+      "1/4",
+      "1/4",
+      "1/4",
+      "1/4",
+      "1/4",
+      "1/4",
+      "1/4",
+      "1/4"
+    ],
+    "incidence_determinant": "-9",
+    "incidence_matrix": [
+      [
+        "0",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      [
+        "1",
+        "0",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      [
+        "1",
+        "1",
+        "0",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      [
+        "1",
+        "1",
+        "1",
+        "0",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      [
+        "1",
+        "1",
+        "1",
+        "1",
+        "0",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      [
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "0",
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      [
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "0",
+        "1",
+        "1",
+        "1"
+      ],
+      [
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "0",
+        "1",
+        "1"
+      ],
+      [
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "0",
+        "1"
+      ],
+      [
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "0"
+      ]
+    ],
+    "interference_gram": [
+      [
+        "0",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      [
+        "1",
+        "0",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      [
+        "1",
+        "1",
+        "0",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      [
+        "1",
+        "1",
+        "1",
+        "0",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      [
+        "1",
+        "1",
+        "1",
+        "1",
+        "0",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      [
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "0",
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      [
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "0",
+        "1",
+        "1",
+        "1"
+      ],
+      [
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "0",
+        "1",
+        "1"
+      ],
+      [
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "0",
+        "1"
+      ],
+      [
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "0"
+      ]
+    ],
+    "interference_gram_formula": "G_int=J-I",
+    "interference_gram_spectrum": {
+      "-1": 9,
+      "9": 1
+    },
+    "residue_map": "R=(J-I)/4",
+    "residue_map_determinant": "-9/1048576",
+    "residue_map_inverse": [
+      [
+        "-32/9",
+        "4/9",
+        "4/9",
+        "4/9",
+        "4/9",
+        "4/9",
+        "4/9",
+        "4/9",
+        "4/9",
+        "4/9"
+      ],
+      [
+        "4/9",
+        "-32/9",
+        "4/9",
+        "4/9",
+        "4/9",
+        "4/9",
+        "4/9",
+        "4/9",
+        "4/9",
+        "4/9"
+      ],
+      [
+        "4/9",
+        "4/9",
+        "-32/9",
+        "4/9",
+        "4/9",
+        "4/9",
+        "4/9",
+        "4/9",
+        "4/9",
+        "4/9"
+      ],
+      [
+        "4/9",
+        "4/9",
+        "4/9",
+        "-32/9",
+        "4/9",
+        "4/9",
+        "4/9",
+        "4/9",
+        "4/9",
+        "4/9"
+      ],
+      [
+        "4/9",
+        "4/9",
+        "4/9",
+        "4/9",
+        "-32/9",
+        "4/9",
+        "4/9",
+        "4/9",
+        "4/9",
+        "4/9"
+      ],
+      [
+        "4/9",
+        "4/9",
+        "4/9",
+        "4/9",
+        "4/9",
+        "-32/9",
+        "4/9",
+        "4/9",
+        "4/9",
+        "4/9"
+      ],
+      [
+        "4/9",
+        "4/9",
+        "4/9",
+        "4/9",
+        "4/9",
+        "4/9",
+        "-32/9",
+        "4/9",
+        "4/9",
+        "4/9"
+      ],
+      [
+        "4/9",
+        "4/9",
+        "4/9",
+        "4/9",
+        "4/9",
+        "4/9",
+        "4/9",
+        "-32/9",
+        "4/9",
+        "4/9"
+      ],
+      [
+        "4/9",
+        "4/9",
+        "4/9",
+        "4/9",
+        "4/9",
+        "4/9",
+        "4/9",
+        "4/9",
+        "-32/9",
+        "4/9"
+      ],
+      [
+        "4/9",
+        "4/9",
+        "4/9",
+        "4/9",
+        "4/9",
+        "4/9",
+        "4/9",
+        "4/9",
+        "4/9",
+        "-32/9"
+      ]
+    ],
+    "sequential_diagonal_gram": "G_seq=(9/8)*I"
+  },
+  "finite_time_shell_normalization": {
+    "BT_leading_sequential_history": "(9*pi*T/(8*E))*delta(s)",
+    "coefficient_match": "epsilon_s=E/T",
+    "distribution_limit": "|F_T(omega)|^2/T -> 2*pi*delta(omega)",
+    "exact_total_weight": "integral_R |F_T(omega)|^2 d_omega=2*pi*T",
+    "matched_feynman_modulus": "1/(s^2+epsilon_s^2) -> (pi/epsilon_s)*delta(s)",
+    "shell_coordinate": "s=2*E*omega+O(omega^2), E>0",
+    "squared_propagator_window": "|F_T(omega)|^2/(4*E^2) -> (pi*T/E)*delta(s)",
+    "status": "UNIVERSAL_FINITE_TIME_NORMALIZATION_NOT_BT_DYNAMICAL_AFFILIATION",
+    "window": "F_T(omega)=integral_0^T exp(i*omega*t) dt"
+  },
+  "interpretation": {
+    "BT_dynamical_Moller_affiliation": "NOT_CONSTRUCTED",
+    "Eq19_all_orders": "NOT_PROVED",
+    "connected_interference_distribution": "NOT_PRESCRIBED",
+    "finite_inclusive_probability": "NOT_CONSTRUCTED",
+    "leading_sequential_history_normalization": "COEFFICIENT_COMPUTED",
+    "on_shell_factorization_channel_carrier": "EXACTLY_CONSTRUCTED"
+  },
+  "lifecycle_state": "COEFFICIENT_COMPUTED",
+  "next_gate": "Derive the finite-time factorization block from the BT interaction Hamiltonian on wave packets and compute its overlap with the connected off-diagonal J-I interference sector. A physical detector instrument must decide which intermediate channels are distinguishable and produce the matching survival term. This is the first point at which the arbitrary defect partial unitary W must be fixed by BT dynamics rather than by algebraic completion.",
+  "provenance": {
+    "inputs": [
+      {
+        "path": "planning/work-items/reverse-physics-bateman-six-point-sequential-history-carrier.json",
+        "sha256": "7c3f58bfc9543b54961ed5da01f71f03fdd9d79ecb549b376e8b61e9f17c9758"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_SIX_POINT_FULL_PHASE_SPACE_BORN_POSITIVITY_V1.json",
+        "sha256": "c434f3abd4d235a59b3a45c3f7e01c7b1b473b5ee8673818065d3ba840c06541"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_SIX_POINT_POSITIVE_DISTRIBUTION_COMPLETION_NO_GO_V1.json",
+        "sha256": "d41bf94afbfd94336202acb0324a028f6f57f03a7b9f80851a7295be6ce017bf"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_FINITE_PHYSICAL_MOLLER_COLUMN_V1.json",
+        "sha256": "5bda31d257bebbe89a32553636286bf92e845b316988f1edd1a640b2c8e6c8ed"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_PHYSICAL_MOLLER_DEFECT_COMPLETION_V1.json",
+        "sha256": "31298fc3dd4aafbfc6ce08b3741f4fcb93bc4bb5022d906f1dee1709a9b4dc51"
+      }
+    ],
+    "method": "Exact SymPy characteristic-zero matrix algebra for the ten-channel residue carrier, exact distributional finite-time Fourier normalization, and fail-closed imports of the pole no-go and Moller scope certificates.",
+    "retrieval_date": "2026-08-12",
+    "source_commit": "b37b11f6"
+  },
+  "question": "Can the positive six-point double-pole coefficient be represented as a separately normalized on-shell sequential four-point channel history, and what remains after that separation?",
+  "report": "reverse_physics/reports/bt-six-point-sequential-history-carrier.md",
+  "result_kind": "exact ten-channel factorization residue carrier, sequential/interference decomposition, and finite-time leading-shell normalization",
+  "schema": "reverse_physics/schema/reverse-physics-bt-six-point-sequential-history-carrier-v1.schema.json",
+  "schema_version": "reverse-physics-bt-six-point-sequential-history-carrier-v1",
+  "sequential_interference_boundary": {
+    "connected_interference": "2*sum_{A<B}1/(s_A*s_B), represented by the indefinite zero-diagonal matrix J-I",
+    "isolated_channel_behavior": "the sequential term contains the full positive 1/s_B^2 divergence; interference is at most order 1/s_B when all other channels are nonzero",
+    "sequential_outcomes": "ten formal direct-sum on-shell 3|3 channel labels, each with leading coefficient 9/8 in the reduced Born normalization; physical detector orthogonality is not inferred",
+    "what_is_gained": "the nonextendable positive double pole is moved into a separately counted duration-growing history coefficient",
+    "what_is_not_gained": "no prescription for cross-channel interference, detector overlap, survival probability, or finite inclusive normalization"
+  },
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_six_point_sequential_history_carrier.py --write --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_six_point_sequential_history_carrier.py",
+    "ulimit -v 500000; python3 -m unittest reverse_physics.tests.test_bt_six_point_sequential_history_carrier"
+  ]
+}

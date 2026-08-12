@@ -1,0 +1,21 @@
+{
+  "schema": "event-v0",
+  "id": "sf:program/event/reverse-physics-bateman-six-point-sequential-history-carrier-DONE-b37b11f6",
+  "kind": "event",
+  "source": {"path": "tools/science-forge/program/events/reverse-physics-bateman-six-point-sequential-history-carrier-DONE-b37b11f6.json", "span": null},
+  "body": {
+    "event_kind": "WORK_ITEM_TRANSITIONED",
+    "actor": "reverse-physics",
+    "base_revision": "science-forge-ir-v0",
+    "predecessors": [],
+    "when": "2026-08-12",
+    "seq": 1,
+    "payload": {
+      "target": "sf:program/work/reverse-physics-bateman-six-point-sequential-history-carrier",
+      "to_state": "DONE",
+      "note": "The exact residue map is (J-I)/4 on the ten 3|3 channels. Each fixed pole has nine allowed two-quartic histories and Born norm 9/8. The full density splits into a diagonal sequential term (9/8) sum 1/s_A^2 and signed coherent interference 2 sum 1/(s_A s_B). A universal finite-time window turns one leading pole into 9*pi*T*delta(s)/(8E), but does not derive the BT Moller block, interference prescription or survival term. Evidence: REVERSE_PHYSICS_BT_SIX_POINT_SEQUENTIAL_HISTORY_CARRIER_V1."
+    },
+    "native": {"authored_by": "manual close-out after exact carrier and independent finite-time normalization", "policy": "append-only; one content-addressed file per event; the work-item file is never rewritten and the effective state is the fold of events over the base state"}
+  },
+  "edges": [{"rel": "TRANSITIONS", "to": "sf:program/work/reverse-physics-bateman-six-point-sequential-history-carrier"}]
+}

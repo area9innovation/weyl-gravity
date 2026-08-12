@@ -1,0 +1,19 @@
+{
+  "id": "sf:program/work/reverse-physics-bateman-six-point-sequential-history-carrier",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "reverse-physics",
+    "state": "ACTIVE",
+    "objective": "Construct the exact on-shell six-point factorization-channel carrier and determine whether a finite-time energy window converts the positive double-pole coefficient into a separately normalized sequential four-point history.",
+    "depends_on": ["REVERSE_PHYSICS_BT_SIX_POINT_FULL_PHASE_SPACE_BORN_POSITIVITY_V1", "REVERSE_PHYSICS_BT_SIX_POINT_POSITIVE_DISTRIBUTION_COMPLETION_NO_GO_V1", "REVERSE_PHYSICS_BT_PHYSICAL_MOLLER_DEFECT_COMPLETION_V1"],
+    "activates": ["an exact ten-channel sequential-history residue Gram", "a finite-time leading-shell normalization", "the residual connected-interference gate"],
+    "current_gate": "Factor the universal ten-channel coefficient map at one on-shell channel, compute the complete residue Gram and sequential/interference split, and match the Feynman-modulus divergence to a finite-time energy-window identity without calling that identity a BT-derived S operator.",
+    "stop_condition": "Land a certified exact channel carrier and finite-time leading-shell normalization, with the remaining dynamical Moller, interference-prescription, detector and survival-term inputs stated fail-closed.",
+    "forbid": "no finite-time Fourier identity called a Lorentzian causal construction; no diagonal sequential split called the complete coherent probability; no abstract defect completion called BT-derived; no Eq. 19, gravity, loop or inclusive-probability promotion",
+    "allowed_paths": ["reverse_physics/", "notes/bateman-turok-embedding.md", "paper/05-interaction-obstructions.tex", "paper/05-interaction-obstructions.pdf", "paper/06-einstein-weyl-interaction-obstructions.tex", "paper/06-einstein-weyl-interaction-obstructions.pdf", "planning/work-items/reverse-physics-bateman-six-point-sequential-history-carrier.json", "planning/events/"],
+    "resource_hint": "Use c=(J-I)y/4 and D=2 c^T c. Split G=J+I/8 into the diagonal sequential part 9I/8 and off-diagonal interference J-I. For F_T(omega)=integral_0^T exp(i omega t)dt, use |F_T|^2/T -> 2 pi delta(omega), s=2E omega+O(omega^2), and compare with 1/(s^2+epsilon_s^2).",
+    "input_commit": "b37b11f6",
+    "stream": "reverse-physics"
+  }
+}
