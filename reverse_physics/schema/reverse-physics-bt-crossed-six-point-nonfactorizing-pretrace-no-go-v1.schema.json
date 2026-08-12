@@ -1,0 +1,152 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-crossed-six-point-nonfactorizing-pretrace-no-go-v1.schema.json",
+  "title": "BT crossed six-point nonfactorizing pre-trace no-go certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "certificate", "schema_version", "dependency_tags", "lifecycle_state",
+    "result_kind", "question", "answer", "finite_pretrace_rows",
+    "exact_factorization", "finite_hierarchy_crossing",
+    "physical_disposition", "assumptions", "does_not_establish", "next_gate",
+    "provenance", "verification_commands", "checks", "report", "schema"
+  ],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_CROSSED_SIX_POINT_NONFACTORIZING_PRETRACE_NO_GO_V1"},
+    "schema_version": {"const": "reverse-physics-bt-crossed-six-point-nonfactorizing-pretrace-no-go-v1"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "result_kind": {"type": "string", "minLength": 1},
+    "question": {"type": "string", "minLength": 1},
+    "answer": {"type": "string", "minLength": 1},
+    "finite_pretrace_rows": {
+      "type": "object", "additionalProperties": false,
+      "required": ["leading_delta_order", "spectator_masks", "singleton_masks", "pair_masks", "cubic_mask", "singleton_row", "pair_row", "cubic_row", "three_hard_fixture_rows"],
+      "properties": {
+        "leading_delta_order": {"const": 2},
+        "spectator_masks": {"const": [0, 1, 2, 3, 4, 5, 6]},
+        "singleton_masks": {"const": [1, 2, 4]},
+        "pair_masks": {"const": [3, 5, 6]},
+        "cubic_mask": {"const": 7},
+        "singleton_row": {"type": "string", "minLength": 1},
+        "pair_row": {"type": "string", "minLength": 1},
+        "cubic_row": {"const": "0"},
+        "three_hard_fixture_rows": {
+          "type": "array", "minItems": 3, "maxItems": 3,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["hard_fixture_index", "leading_order", "leading_masks", "leading_components"],
+            "properties": {
+              "hard_fixture_index": {"type": "integer", "minimum": 0, "maximum": 2},
+              "leading_order": {"const": 2},
+              "leading_masks": {"const": [0, 1, 2, 3, 4, 5, 6]},
+              "leading_components": {
+                "type": "object", "minProperties": 7, "maxProperties": 7,
+                "additionalProperties": {"type": "string", "minLength": 1}
+              }
+            }
+          }
+        }
+      }
+    },
+    "exact_factorization": {
+      "type": "object", "additionalProperties": false,
+      "required": ["outer_profile_matrix", "outer_profile_determinant", "u_e", "v_e", "reconstruction", "nonfactorizing_residual", "status", "scope"],
+      "properties": {
+        "outer_profile_matrix": {"$ref": "#/$defs/string_matrix"},
+        "outer_profile_determinant": {"const": "-3*a2**2/(8*tau2**2)"},
+        "u_e": {"type": "string", "minLength": 1},
+        "v_e": {"type": "string", "minLength": 1},
+        "reconstruction": {"type": "string", "minLength": 1},
+        "nonfactorizing_residual": {"const": ["0", "0"]},
+        "status": {"const": "EXACTLY_ZERO_BEFORE_STRONG_ORDER_LIMIT"},
+        "scope": {"type": "string", "minLength": 1}
+      }
+    },
+    "finite_hierarchy_crossing": {
+      "type": "object", "additionalProperties": false,
+      "required": ["domain", "u_cross", "minus_six_a2_squared_x_squared_u_cross", "u_sign", "v_cross", "six_a2_x_v_cross", "v_sign", "metric_eta", "coherent_collapse_R_plus", "crossed_D", "raised_pullback", "characteristic_polynomial", "rank", "nonzero_eigenvalue", "fixed_hilbertized_gram", "status"],
+      "properties": {
+        "domain": {"type": "string", "minLength": 1},
+        "u_cross": {"type": "string", "minLength": 1},
+        "minus_six_a2_squared_x_squared_u_cross": {"type": "string", "minLength": 1},
+        "u_sign": {"const": "STRICTLY_NEGATIVE"},
+        "v_cross": {"type": "string", "minLength": 1},
+        "six_a2_x_v_cross": {"type": "string", "minLength": 1},
+        "v_sign": {"const": "STRICTLY_POSITIVE"},
+        "metric_eta": {"$ref": "#/$defs/string_matrix"},
+        "coherent_collapse_R_plus": {"$ref": "#/$defs/string_matrix"},
+        "crossed_D": {"$ref": "#/$defs/string_matrix"},
+        "raised_pullback": {"$ref": "#/$defs/string_matrix"},
+        "characteristic_polynomial": {"type": "string", "minLength": 1},
+        "rank": {"const": 2},
+        "nonzero_eigenvalue": {"type": "string", "minLength": 1},
+        "fixed_hilbertized_gram": {"$ref": "#/$defs/string_matrix"},
+        "status": {"const": "NEGATIVE_FULL_RANK_FOR_ALL_POSITIVE_FINITE_HIERARCHY_PARAMETERS"}
+      }
+    },
+    "physical_disposition": {
+      "const": {
+        "finite_hierarchy_nonfactorizing_pretrace_residue": "EXACTLY_ZERO_ON_CORRELATED_SQUARE_FREE_CYLINDER",
+        "finite_hierarchy_crossed_fixed_sharp_quotient": "NEGATIVE_RANK_TWO",
+        "regular_same_carrier_parity_repair": "EXACTLY_OBSTRUCTED_BY_PREDECESSOR",
+        "first_twelve_reversed_histories_on_available_cylinder": "NO_POSITIVE_FIXED_SHARP_INTERTWINER",
+        "complete_noncorrelated_crossed_three_to_three_phase_space": "NOT_COMPUTED",
+        "doubled_or_off_diagonal_source": "NOT_DERIVED",
+        "complete_crossed_probability": "NOT_COMPUTED",
+        "Eq19_all_orders": "NOT_PROVED",
+        "spacetime_Moller_LSZ_S_operator": "NOT_CONSTRUCTED"
+      }
+    },
+    "assumptions": {"type": "array", "minItems": 5, "items": {"type": "string", "minLength": 1}},
+    "does_not_establish": {"type": "array", "minItems": 14, "items": {"type": "string", "minLength": 1}},
+    "next_gate": {"type": "string", "minLength": 1},
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_commit", "retrieval_date", "inputs", "producer_method", "primary_source"],
+      "properties": {
+        "source_commit": {"const": "d97bf58854b9620aa29fe372bf1063a2f51aa2e5"},
+        "retrieval_date": {"const": "2026-08-12"},
+        "inputs": {
+          "type": "array", "minItems": 4, "maxItems": 4,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["path", "sha256"],
+            "properties": {
+              "path": {"type": "string", "minLength": 1},
+              "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+            }
+          }
+        },
+        "producer_method": {"type": "string", "minLength": 1},
+        "primary_source": {
+          "type": "object", "additionalProperties": false,
+          "required": ["source", "url", "equations"],
+          "properties": {
+            "source": {"type": "string", "minLength": 1},
+            "url": {"type": "string", "minLength": 1},
+            "equations": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}}
+          }
+        }
+      }
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "items": {"type": "string", "minLength": 1}},
+    "checks": {
+      "type": "object", "additionalProperties": false,
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true}, "passed": {"const": 25},
+        "total": {"const": 25}, "failures": {"const": []},
+        "details": {"type": "object", "minProperties": 25, "maxProperties": 25, "additionalProperties": {"const": true}}
+      }
+    },
+    "report": {"const": "reverse_physics/reports/bt-crossed-six-point-nonfactorizing-pretrace-no-go.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-crossed-six-point-nonfactorizing-pretrace-no-go-v1.schema.json"}
+  },
+  "$defs": {
+    "string_matrix": {
+      "type": "array", "minItems": 1,
+      "items": {"type": "array", "minItems": 1, "items": {"type": "string"}}
+    }
+  }
+}

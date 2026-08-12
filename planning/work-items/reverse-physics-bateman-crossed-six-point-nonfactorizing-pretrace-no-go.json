@@ -1,0 +1,38 @@
+{
+  "id": "sf:program/work/reverse-physics-bateman-crossed-six-point-nonfactorizing-pretrace-no-go",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "reverse-physics",
+    "state": "ACTIVE",
+    "objective": "Compute the first potentially nonfactorizing crossed 3-to-3 six-point pre-trace block from the complete 220-tree leading external-mass jet before the strong hierarchy limit, and decide whether it repairs the reversed quotient sign.",
+    "depends_on": [
+      "REVERSE_PHYSICS_BT_SIX_POINT_STRONGLY_ORDERED_TREE_V1",
+      "REVERSE_PHYSICS_BT_SIX_POINT_PROFILE_QUOTIENT_COMPLETION_V1",
+      "REVERSE_PHYSICS_BT_CROSSED_DETECTOR_ORIENTATION_NO_GO_V1",
+      "REVERSE_PHYSICS_BT_CROSSED_PROFILE_SELECTIVE_PARITY_OBSTRUCTION_V1"
+    ],
+    "activates": [
+      "finite-hierarchy singleton/pair pre-trace rows from all 220 trees",
+      "an exact profile reconstruction before the strong-order limit",
+      "a crossed finite-hierarchy quotient sign theorem",
+      "a decision whether the physical route must leave the correlated square-free cylinder"
+    ],
+    "current_gate": "CROSSED_NONFACTORIZING_PRETRACE: retain the hierarchy ratio e exactly in the delta-leading six-point amplitude, test all spectator masks before scalar square-free contraction, reconstruct the unique parent/profile coefficients, and continue them to tau1=-x.",
+    "stop_condition": "Land an exact independently verified certificate deciding whether a nonfactorizing pre-trace residue exists on the complete 220-tree correlated square-free cylinder and whether its crossed quotient is positive, while retaining full-phase-space, Eq. 19, LSZ, gravity and causal boundaries.",
+    "forbid": "no e-to-zero result called finite hierarchy; no scalar post-trace equality substituted for pre-trace row equality; no correlated-cylinder no-go promoted to the complete 3-to-3 phase space; no negative result promoted to Eq. 19, gravity/BRST, or LORENTZIAN-CAUSAL",
+    "allowed_paths": [
+      "reverse_physics/",
+      "notes/bateman-turok-embedding.md",
+      "paper/05-interaction-obstructions.tex",
+      "paper/05-interaction-obstructions.pdf",
+      "paper/06-einstein-weyl-interaction-obstructions.tex",
+      "paper/06-einstein-weyl-interaction-obstructions.pdf",
+      "planning/work-items/reverse-physics-bateman-crossed-six-point-nonfactorizing-pretrace-no-go.json",
+      "planning/events/"
+    ],
+    "resource_hint": "Use correlated_six_point(..., include_amplitude_components=True) without setting e=0. Verify the three singleton masks and three complementary-pair masks separately, solve the exact outer profile matrix for u(e),v(e), and cross tau1=-x. An independent explicit 220-tree enumerator should test finite rational e fixtures.",
+    "input_commit": "d97bf58854b9620aa29fe372bf1063a2f51aa2e5",
+    "stream": "reverse-physics"
+  }
+}
