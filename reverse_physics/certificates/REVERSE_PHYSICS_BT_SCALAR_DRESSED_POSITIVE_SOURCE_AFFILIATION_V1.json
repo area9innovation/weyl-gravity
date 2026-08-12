@@ -1,0 +1,202 @@
+{
+  "answer": "Yes for an explicitly Rt-dressed, shift-breaking perfect-square scalar source on the finite covariant detector ideal. Let u0=(|Upsilon^3>+|Omega^3>)/sqrt(2), P_u=|u0><u0|_K, and use the certified formal two-sided public map Rt. Then psi_phi=Rt^dagger u0 and P_phi=Rt^dagger P_u Rt are normalized, positive-range, idempotent and Krein self-adjoint, while Rt P_phi Rt^dagger=P_u exactly. Pulling back the BT effects preserves the finite generalized-Born trace, so q_click=zeta/16, q_no=1-zeta/16 and the leading scalar click rate is lambda^8/[2048*pi^4*kappa^4*Lx*Ly^2*Lz^2]. The construction is not the standard shift-invariant characteristic projector: u0 has state charges -3 and +3, P_u has operator-charge support {-6,0,+6}, and its scalar pullback has Laurent orbit support {Z^-6,1,Z^6}. This charge breaking is forced for a positive odd-particle preparation because there is no zero-charge three-particle sector and every fixed-charge subspace is totally isotropic. The result therefore supplies a scoped physical-scalar dressed-source probability jet, not general Eq. (19).",
+  "assumptions": [
+    "the public Rt acts on the declared finite detector ideal on a common invariant domain and admits the certified formal lambda expansion",
+    "the certified coefficientwise identities Rt^dagger Rt=Rt Rt^dagger=1 are used; no convergence or nonperturbative inverse is claimed",
+    "the scalar source is the Rt-pullback of the positive BT source and is allowed to depend on the coupling, finite time, and vacuum-orbit coordinate",
+    "the covariant scalar carrier contains finite Laurent powers of Z=exp(lambda phi0) with pairing <Z^m,Z^n>=delta_(m+n,0)",
+    "the finite detector-ideal trace is cyclic under the displayed formal similarities",
+    "the leading isolated-shell BT click effect and its finite-volume normalization are imported unchanged",
+    "spatial boundary terms vanish on the declared periodic finite-volume cell when the public Hamiltonian intertwining is used"
+  ],
+  "certificate": "REVERSE_PHYSICS_BT_SCALAR_DRESSED_POSITIVE_SOURCE_AFFILIATION_V1",
+  "checks": {
+    "details": {
+      "both_nonzero_projector_charge_branches_are_present": true,
+      "click_effect_is_pulled_by_similarity": true,
+      "declared_source_is_ghost_even": true,
+      "declared_source_is_normalized": true,
+      "declared_source_projector_has_rank_one": true,
+      "declared_source_projector_is_Krein_self_adjoint": true,
+      "declared_source_projector_is_idempotent": true,
+      "every_fixed_charge_space_is_totally_isotropic": true,
+      "finite_trace_click_is_preserved": true,
+      "finite_trace_no_click_is_preserved": true,
+      "fixture_R_is_Krein_unitary": true,
+      "fixture_R_is_nontrivial": true,
+      "formal_charge_pullback_is_equivariant": true,
+      "no_click_effect_is_pulled_by_similarity": true,
+      "odd_particle_charge_spectrum_has_no_zero": true,
+      "positive_frame_Gram_is_identity": true,
+      "positive_frame_is_ghost_even": true,
+      "positive_plane_projector_has_rank_four": true,
+      "positive_plane_projector_is_idempotent": true,
+      "positive_plane_pushforward_returns_target": true,
+      "positive_source_is_not_charge_invariant": true,
+      "predecessor_effect_passes": true,
+      "projector_pushforward_returns_target": true,
+      "public_Rt_is_formally_two_sided": true,
+      "pulled_effects_are_complete_on_pulled_positive_plane": true,
+      "pulled_fundamental_symmetry_is_Krein_self_adjoint": true,
+      "pulled_fundamental_symmetry_is_involutive": true,
+      "pulled_scalar_projector_is_Krein_self_adjoint": true,
+      "pulled_scalar_projector_is_idempotent": true,
+      "pulled_scalar_state_is_normalized": true,
+      "rate_is_imported_without_refitting": true,
+      "regular_local_parity_automorphism_remains_obstructed": true,
+      "source_projector_charge_support_is_minus_six_zero_plus_six": true,
+      "source_state_charge_support_is_plus_minus_three": true,
+      "target_declared_source_click_is_zeta_over_sixteen": true,
+      "target_declared_source_no_click_is_one_minus_zeta_over_sixteen": true,
+      "three_particle_metric_is_cross_complement": true,
+      "zero_mode_Laurent_carrier_is_available": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 38,
+    "total": 38
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "the standard shift-invariant characteristic projector P_chi^(phi)",
+    "Eq. (19) for arbitrary scalar projectors",
+    "ghost evenness of the public pushforward of P_chi^(phi)",
+    "a regular same-chart local-symbol hidden-parity automorphism",
+    "descent of the charge derivation through the fixed-vacuum quotient Z=1",
+    "convergence or nonperturbative existence of the full Rt operator",
+    "an explicit global dense domain for the pulled dressed projector",
+    "an exact finite-time probability beyond the leading isolated-shell jet",
+    "global gluing of the ten six-point shells",
+    "an asymptotic Moller, LSZ, or S operator",
+    "all-order transition-probability positivity",
+    "loops or infrared resummation",
+    "gravity or BRST transfer",
+    "anything LORENTZIAN-CAUSAL",
+    "literature priority"
+  ],
+  "formal_Rt_affiliation": {
+    "fixture_role": "a nontrivial rational Krein-unitary replay checks the universal identities but is not identified with the public Rt",
+    "normalization": "<psi_phi,psi_phi>_K=1",
+    "positive_plane_pushforward": "Rt*P_phi_plus*Rt^dagger=P_plus",
+    "projector_pushforward": "Rt*P_phi*Rt^dagger=P_u",
+    "public_identity": "Rt^dagger*Rt=Rt*Rt^dagger=1 coefficientwise in formal lambda",
+    "regularity": "finite Laurent-Fock detector ideal; no F^-1 or log(F) is adjoined",
+    "scalar_Laurent_orbit_support": [
+      "Z^-6",
+      "1",
+      "Z^6"
+    ],
+    "scalar_fundamental_symmetry": "kappa_phi=Rt^dagger*kappa3*Rt",
+    "scalar_positive_plane": "P_phi_plus=Rt^dagger*P_plus*Rt",
+    "scalar_projector": "P_phi=Rt^dagger*P_u*Rt",
+    "scalar_state": "psi_phi=Rt^dagger*u0",
+    "status": "FORMAL_FINITE_DETECTOR_IDEAL_SOURCE_AFFILIATED"
+  },
+  "interpretation": {
+    "all_time_scalar_probability": "NOT_CONSTRUCTED",
+    "dressed_shift_breaking_scalar_source": "CONSTRUCTED_AND_RT_AFFILIATED_FORMALLY",
+    "general_Eq19": "NOT_PROVED",
+    "leading_scalar_click_no_click_probability_jet": "TRANSFERRED_WITHOUT_REFITTING",
+    "regular_local_hidden_parity": "STILL_OBSTRUCTED",
+    "standard_shift_invariant_P_chi": "NOT_CONSTRUCTED"
+  },
+  "lifecycle_state": "COEFFICIENT_COMPUTED",
+  "next_gate": "Construct a compact wave-packet realization and common invariant domain for psi_phi=Rt^dagger u0, including its vacuum-orbit and squeeze factors, then test whether its finite-time pulled effect converges independently of the point-cell regulator. General Eq. (19) remains a separate gate for the shift-invariant P_chi projector.",
+  "odd_particle_charge_positivity_obstruction": {
+    "charge_values": [
+      -3,
+      -1,
+      1,
+      3
+    ],
+    "conclusion": "NO_NONZERO_CHARGE_INVARIANT_POSITIVE_RANGE_IN_THE_THREE_PARTICLE_CARRIER",
+    "fixed_charge_Gram": "eta restricted to every V_q is zero",
+    "forced_trade": "a positive three-particle source must break boost charge, hence its scalar preimage must carry nontrivial vacuum-orbit Laurent powers",
+    "lemma": "a nonzero Q-invariant range contains a nonzero charge eigenvector; that vector is eta-null because q is nonzero",
+    "three_particle_charge_spectrum": [
+      -3,
+      -1,
+      -1,
+      1,
+      -1,
+      1,
+      1,
+      3
+    ],
+    "zero_charge_dimension": 0
+  },
+  "positive_BT_source": {
+    "basis": "u_x=(|x>+|7-x>)/sqrt(2), x=0,1,2,3",
+    "declared_source": "u0=(|Upsilon^3>+|Omega^3>)/sqrt(2)",
+    "metric": "eta=kappa3 with eta|x>=|7-x>",
+    "positive_plane_Gram": "I4",
+    "shift_invariant": false,
+    "source_norm": "1",
+    "source_projector": "P_u=|u0><u0|_K",
+    "source_projector_charge_support": [
+      -6,
+      0,
+      6
+    ],
+    "source_state_charge_support": [
+      -3,
+      3
+    ]
+  },
+  "provenance": {
+    "inputs": [
+      {
+        "path": "planning/work-items/reverse-physics-bateman-scalar-dressed-positive-source-affiliation.json",
+        "sha256": "92457a0e776456591ec3d97ba56c5e6d51ac2b1fea43930301f90fa3bbf859ae"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_SIX_POINT_POSITIVE_SECTOR_PHYSICAL_DETECTOR_EFFECT_V1.json",
+        "sha256": "6e27b86c7a3263ec660c4be83e364b5e3ba4bf52768c2d7d444f98400b6d747a"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_PERTURBATIVE_COISOMETRY_RIGIDITY_V1.json",
+        "sha256": "53ed72d9038ebc8884d3c822a0651dc6b36b089b17aa603fed42d9c0d2ec3edb"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_COVARIANT_FORMAL_EQ19_CHARGE_SUPPORT_V1.json",
+        "sha256": "cc863395b767e7924579f0d30a26282981cb7ed6b7add58194db1a6acdde97f2"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_PERTURBATIVE_GHOST_PARITY_UNIT_OBSTRUCTION_V1.json",
+        "sha256": "ec50a99c058632ab3252e9f9bcbab9626f714f791291499c42827ec46f8e4f81"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_ZERO_MODE_EQ19_TRILEMMA_V1.json",
+        "sha256": "31c5d45987bb484711912af5d51da1831f5632ef34278c755265fd190963edd6"
+      }
+    ],
+    "method": "Exact SymPy cross-Krein charge decomposition, positive-frame algebra, universal two-sided-similarity identities, and a nontrivial rational Krein-unitary replay. No floating-point arithmetic is used.",
+    "retrieval_date": "2026-08-12",
+    "source_commit": "6c97a515"
+  },
+  "question": "Does the positive public BT three-particle source have a genuine perfect-square scalar preimage, can its detector probability be transferred without fitting, and which Eq. (19) hypothesis must change?",
+  "result_kind": "formal Rt affiliation and leading detector probability jet for an explicitly dressed shift-breaking perfect-square scalar source",
+  "schema": "reverse_physics/schema/reverse-physics-bt-scalar-dressed-positive-source-affiliation-v1.schema.json",
+  "schema_version": "reverse-physics-bt-scalar-dressed-positive-source-affiliation-v1",
+  "transferred_scalar_detector_effect": {
+    "BT_click_effect": "E_click=zeta*U_plus*G*U_plus^sharp",
+    "BT_no_click_effect": "E_no=P_plus-E_click",
+    "declared_source_click": "q_click=zeta/16",
+    "declared_source_no_click": "q_no=1-zeta/16",
+    "declared_source_rate": "lambda^8/[2048*pi^4*kappa^4*Lx*Ly^2*Lz^2]",
+    "finite_trace_identity": "tr(P_phi*E_phi)=tr(P_u*E_BT)",
+    "relative_completeness": "E_click_phi+E_no_phi=P_phi_plus",
+    "scalar_click_effect": "E_click_phi=Rt^dagger*E_click*Rt",
+    "scalar_no_click_effect": "E_no_phi=Rt^dagger*E_no*Rt",
+    "status": "LEADING_DRESSED_SCALAR_TWO_OUTCOME_PROBABILITY_JET",
+    "uniform_positive_interval": "0<=zeta<=16-8*sqrt(3)"
+  },
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_scalar_dressed_positive_source_affiliation.py --write --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_scalar_dressed_positive_source_affiliation.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_scalar_dressed_positive_source_affiliation"
+  ]
+}

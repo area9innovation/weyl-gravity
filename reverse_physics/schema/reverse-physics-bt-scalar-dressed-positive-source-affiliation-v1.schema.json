@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-scalar-dressed-positive-source-affiliation-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["certificate", "schema_version", "dependency_tags", "lifecycle_state", "result_kind", "question", "answer", "positive_BT_source", "odd_particle_charge_positivity_obstruction", "formal_Rt_affiliation", "transferred_scalar_detector_effect", "interpretation", "assumptions", "does_not_establish", "next_gate", "provenance", "verification_commands", "checks", "schema"],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_SCALAR_DRESSED_POSITIVE_SOURCE_AFFILIATION_V1"},
+    "schema_version": {"const": "reverse-physics-bt-scalar-dressed-positive-source-affiliation-v1"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "positive_BT_source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["basis", "declared_source", "metric", "positive_plane_Gram", "source_norm", "source_state_charge_support", "source_projector", "source_projector_charge_support", "shift_invariant"],
+      "properties": {
+        "basis": {"const": "u_x=(|x>+|7-x>)/sqrt(2), x=0,1,2,3"},
+        "declared_source": {"const": "u0=(|Upsilon^3>+|Omega^3>)/sqrt(2)"},
+        "metric": {"const": "eta=kappa3 with eta|x>=|7-x>"},
+        "positive_plane_Gram": {"const": "I4"},
+        "source_norm": {"const": "1"},
+        "source_state_charge_support": {"const": [-3, 3]},
+        "source_projector": {"const": "P_u=|u0><u0|_K"},
+        "source_projector_charge_support": {"const": [-6, 0, 6]},
+        "shift_invariant": {"const": false}
+      }
+    },
+    "odd_particle_charge_positivity_obstruction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["three_particle_charge_spectrum", "charge_values", "zero_charge_dimension", "fixed_charge_Gram", "lemma", "conclusion", "forced_trade"],
+      "properties": {
+        "three_particle_charge_spectrum": {"const": [-3, -1, -1, 1, -1, 1, 1, 3]},
+        "charge_values": {"const": [-3, -1, 1, 3]},
+        "zero_charge_dimension": {"const": 0},
+        "fixed_charge_Gram": {"const": "eta restricted to every V_q is zero"},
+        "lemma": {"$ref": "#/$defs/text"},
+        "conclusion": {"const": "NO_NONZERO_CHARGE_INVARIANT_POSITIVE_RANGE_IN_THE_THREE_PARTICLE_CARRIER"},
+        "forced_trade": {"$ref": "#/$defs/text"}
+      }
+    },
+    "formal_Rt_affiliation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["public_identity", "scalar_state", "scalar_projector", "scalar_positive_plane", "scalar_fundamental_symmetry", "projector_pushforward", "positive_plane_pushforward", "normalization", "scalar_Laurent_orbit_support", "regularity", "fixture_role", "status"],
+      "properties": {
+        "public_identity": {"const": "Rt^dagger*Rt=Rt*Rt^dagger=1 coefficientwise in formal lambda"},
+        "scalar_state": {"const": "psi_phi=Rt^dagger*u0"},
+        "scalar_projector": {"const": "P_phi=Rt^dagger*P_u*Rt"},
+        "scalar_positive_plane": {"const": "P_phi_plus=Rt^dagger*P_plus*Rt"},
+        "scalar_fundamental_symmetry": {"const": "kappa_phi=Rt^dagger*kappa3*Rt"},
+        "projector_pushforward": {"const": "Rt*P_phi*Rt^dagger=P_u"},
+        "positive_plane_pushforward": {"const": "Rt*P_phi_plus*Rt^dagger=P_plus"},
+        "normalization": {"const": "<psi_phi,psi_phi>_K=1"},
+        "scalar_Laurent_orbit_support": {"const": ["Z^-6", "1", "Z^6"]},
+        "regularity": {"const": "finite Laurent-Fock detector ideal; no F^-1 or log(F) is adjoined"},
+        "fixture_role": {"$ref": "#/$defs/text"},
+        "status": {"const": "FORMAL_FINITE_DETECTOR_IDEAL_SOURCE_AFFILIATED"}
+      }
+    },
+    "transferred_scalar_detector_effect": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["BT_click_effect", "BT_no_click_effect", "scalar_click_effect", "scalar_no_click_effect", "relative_completeness", "finite_trace_identity", "uniform_positive_interval", "declared_source_click", "declared_source_no_click", "declared_source_rate", "status"],
+      "properties": {
+        "BT_click_effect": {"const": "E_click=zeta*U_plus*G*U_plus^sharp"},
+        "BT_no_click_effect": {"const": "E_no=P_plus-E_click"},
+        "scalar_click_effect": {"const": "E_click_phi=Rt^dagger*E_click*Rt"},
+        "scalar_no_click_effect": {"const": "E_no_phi=Rt^dagger*E_no*Rt"},
+        "relative_completeness": {"const": "E_click_phi+E_no_phi=P_phi_plus"},
+        "finite_trace_identity": {"const": "tr(P_phi*E_phi)=tr(P_u*E_BT)"},
+        "uniform_positive_interval": {"const": "0<=zeta<=16-8*sqrt(3)"},
+        "declared_source_click": {"const": "q_click=zeta/16"},
+        "declared_source_no_click": {"const": "q_no=1-zeta/16"},
+        "declared_source_rate": {"const": "lambda^8/[2048*pi^4*kappa^4*Lx*Ly^2*Lz^2]"},
+        "status": {"const": "LEADING_DRESSED_SCALAR_TWO_OUTCOME_PROBABILITY_JET"}
+      }
+    },
+    "interpretation": {"const": {"dressed_shift_breaking_scalar_source": "CONSTRUCTED_AND_RT_AFFILIATED_FORMALLY", "leading_scalar_click_no_click_probability_jet": "TRANSFERRED_WITHOUT_REFITTING", "standard_shift_invariant_P_chi": "NOT_CONSTRUCTED", "general_Eq19": "NOT_PROVED", "regular_local_hidden_parity": "STILL_OBSTRUCTED", "all_time_scalar_probability": "NOT_CONSTRUCTED"}},
+    "assumptions": {"type": "array", "minItems": 7, "maxItems": 7, "items": {"$ref": "#/$defs/text"}},
+    "does_not_establish": {"type": "array", "minItems": 15, "items": {"$ref": "#/$defs/text"}},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_commit", "retrieval_date", "inputs", "method"],
+      "properties": {
+        "source_commit": {"const": "6c97a515"},
+        "retrieval_date": {"const": "2026-08-12"},
+        "inputs": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"type": "object", "additionalProperties": false, "required": ["path", "sha256"], "properties": {"path": {"$ref": "#/$defs/text"}, "sha256": {"$ref": "#/$defs/hash"}}}},
+        "method": {"$ref": "#/$defs/text"}
+      }
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/text"}},
+    "checks": {"type": "object", "additionalProperties": false, "required": ["ok", "passed", "total", "failures", "details"], "properties": {"ok": {"const": true}, "passed": {"const": 38}, "total": {"const": 38}, "failures": {"const": []}, "details": {"type": "object", "minProperties": 38, "maxProperties": 38, "additionalProperties": {"const": true}}}},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-scalar-dressed-positive-source-affiliation-v1.schema.json"}
+  },
+  "$defs": {"text": {"type": "string", "minLength": 1}, "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+}

@@ -218,6 +218,14 @@ $(|\Upsilon^3\rangle+|\Omega^3\rangle)/\sqrt2$ has click rate
 $\lambda^8/[2048\pi^4\kappa^4L_xL_y^2L_z^2]$; pseudo-unitarity fixes the
 leading no-click coefficient.  This is a physical auxiliary-BT probability
 jet, not a transported perfect-square scalar source or an all-time result.
+The certified formal two-sidedness of $R_t$ now pulls this source and both
+effects back to a normalized perfect-square scalar projector without changing
+the rate.  The price is exact and unavoidable: every fixed-charge subspace of
+the odd three-particle cross-Krein carrier is null, so a positive source must
+break shift charge.  Its projector has charge support $\{-6,0,+6\}$ and scalar
+orbit support $\{Z^{-6},1,Z^6\}$.  This gives a dressed physical-scalar
+probability jet, not the standard shift-invariant $P_\chi^{(\phi)}$ or general
+Eq.~(19).
 Independently, the projected three-channel hard loop logarithm closes the
 Callan--Symanzik equation exactly with the Born rate and one-loop beta
 function.  This yields the positive leading-log nonforward prediction
@@ -3176,6 +3184,44 @@ prepared directly in the public auxiliary theory.  It deliberately bypasses,
 and does not prove, the scalar projector pushforward: the source is not
 $R_tP_\chi^{(\phi)}R_t^\dagger$.  Smooth finite-duration terms, higher-order
 resummation, global shell gluing and all-order Eq.~(19) remain open.
+
+The auxiliary preparation nevertheless has an exact scalar preimage on the
+finite covariant detector ideal.  Put
+\[
+ P_u=|u_0\rangle\langle u_0|_K,\qquad
+ \psi_{\phi,+}=R_t^\dagger u_0,\qquad
+ P_{\phi,+}=R_t^\dagger P_uR_t.
+\]
+The coefficientwise formal identity
+$R_t^\dagger R_t=R_tR_t^\dagger=1$ gives
+\[
+ \langle\psi_{\phi,+},\psi_{\phi,+}\rangle_K=1,qquad
+ P_{\phi,+}^2=P_{\phi,+}=P_{\phi,+}^\dagger,qquad
+ R_tP_{\phi,+}R_t^\dagger=P_u.
+\]
+Pulling back the click and no-click effects by the same $R_t$ preserves their
+finite trace, relative completeness and probabilities.  Hence the displayed
+rate is also the leading rate for this explicitly dressed perfect-square
+scalar source.
+
+The source cannot be confused with the characteristic projector in
+Eq.~(18).  On a three-particle string $x$, the charge is
+$q(x)=2\operatorname{popcount}(x)-3$, so zero charge is absent.  The
+cross-Krein metric pairs $V_q$ only with $V_{-q}$ and vanishes on every
+$V_q\times V_q$.  Any nonzero charge-invariant range therefore contains a
+null vector and cannot be positive.  For $u_0$ the state charges are
+$\{-3,+3\}$ and the projector charges are $\{-6,0,+6\}$; Eq.~(16) transfers
+these to scalar Laurent support $\{Z^{-6},1,Z^6\}$.  Both orbit branches are
+forced.  Certificate
+\par\noindent
+\texttt{REVERSE\_PHYSICS\_BT\_SCALAR\_}
+\allowbreak\texttt{DRESSED\_POSITIVE\_SOURCE\_}
+\allowbreak\texttt{AFFILIATION\_V1}
+\par\noindent
+therefore establishes a leading physical-scalar probability jet for a
+coupling-dressed, shift-breaking source.  It does not construct the standard
+$P_\chi^{(\phi)}$, repair its ghost-parity obstruction, prove general
+Eq.~(19), or supply a convergent global $R_t$ or all-time probability.
 
 The classified endpoint freedom does not supply this complement by one fixed
 prescription on the minimal two-profile probe lift.  Take
