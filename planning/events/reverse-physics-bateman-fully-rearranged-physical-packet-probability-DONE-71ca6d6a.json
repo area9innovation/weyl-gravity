@@ -1,0 +1,32 @@
+{
+  "schema": "event-v0",
+  "id": "sf:program/event/reverse-physics-bateman-fully-rearranged-physical-packet-probability-DONE-71ca6d6a",
+  "kind": "event",
+  "source": {
+    "path": "tools/science-forge/program/events/reverse-physics-bateman-fully-rearranged-physical-packet-probability-DONE-71ca6d6a.json",
+    "span": null
+  },
+  "body": {
+    "event_kind": "WORK_ITEM_TRANSITIONED",
+    "actor": "reverse-physics",
+    "base_revision": "science-forge-ir-v0",
+    "predecessors": [],
+    "when": "2026-08-12",
+    "seq": 1,
+    "payload": {
+      "target": "sf:program/work/reverse-physics-bateman-fully-rearranged-physical-packet-probability",
+      "to_state": "DONE",
+      "note": "A nonempty exact rational fully rearranged three-particle packet detector annihilates every disconnected contribution through order lambda4. The 203 six-label set partitions give 202 disconnected partitions in ten size profiles, each containing a component of at most three legs. At the detector center all all-incoming subset momentum sums of sizes one, two and three have positive squared Euclidean margins 2, 32/625 and 17794/10625; distributional and external-mass derivatives preserve support. Thus P_Y(U_T-I)P_X=lambda4 P_Y A_full P_X+O(lambda5), with no disconnected remainder, identity, or forward contribution to the first click coefficient. The complete leading dressed-scalar probability is 16*lambda8*||sum_B P_Y K_B,T P_X F||^2 and is bounded by 81*lambda8*T^2/(200*pi^6). Higher orders, overlap detectors, all-time scattering and general Eq. 19 remain open. Evidence: REVERSE_PHYSICS_BT_FULLY_REARRANGED_PHYSICAL_PACKET_PROBABILITY_V1."
+    },
+    "native": {
+      "authored_by": "manual close-out after exact rational separation, exhaustive Bell-partition support classification and independent mutation verification",
+      "policy": "append-only; one content-addressed file per event; the work-item file is never rewritten and the effective state is the fold of events over the base state"
+    }
+  },
+  "edges": [
+    {
+      "rel": "TRANSITIONS",
+      "to": "sf:program/work/reverse-physics-bateman-fully-rearranged-physical-packet-probability"
+    }
+  ]
+}

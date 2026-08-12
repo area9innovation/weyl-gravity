@@ -1,0 +1,374 @@
+{
+  "answer": "Yes for a nonempty class of fully rearranged finite-time packet detectors. At the exact rational incoming and outgoing centers used by the global column, every external energy is at least one, every same-side two-particle invariant is at least 64/25, and every incoming-outgoing four-momentum pair is distinct, with minimum Euclidean separation squared 32/625. Continuity therefore supplies compact neighborhoods separated from all soft one-point loci, massless collinear two-leg loci, and spectator diagonals. An exhaustive enumeration of the 203 set partitions of six external legs leaves 202 disconnected partitions and ten size profiles. Every disconnected profile has a component of size one, two, or three. Its momentum-space distribution is supported respectively on a soft/identity delta locus, a collinear two-leg locus, or a spectator/three-leg momentum-conservation locus; the 3+3 profile is supported on two independent three-leg deltas and also misses the fully rearranged product. Distributional derivatives, including the independent external-mass derivatives in the generalized Born projector, do not enlarge support. Hence every disconnected contribution through order lambda4 vanishes exactly when paired with this detector. The connected graph identity shows that a six-leg connected amplitude first occurs at lambda4, so the restricted global column A_YX=P_Y A_full P_X is the complete leading transition amplitude for this detector, not merely its connected part. Because input and output supports are disjoint, the identity and forward amplitude do not enter the leading click coefficient. Thus q_click=<Psi_in,A_YX^*A_YX Psi_in>=16 lambda^8||sum_(B=1)^9 P_Y K_B,T P_X F||^2, bounded by 81 lambda^8 T^2/(200 pi^6), is the complete leading physical transition probability coefficient. The operational complement is positive in the certified contraction domain. This is a selected finite-time physical experiment; it is not an all-order S matrix, the BT forward graph, general Eq. (19), loops, gravity or Lorentzian causality.",
+  "assumptions": [
+    "the finite-time interaction-picture Dyson expansion has the standard linked-cluster support decomposition inherited from the local public cubic and quartic BT vertices",
+    "incoming and outgoing packet kernels are compactly supported inside sufficiently small neighborhoods of the exact displayed labeled three-body centers",
+    "the independent external-mass derivatives defining the generalized Born coefficient are taken distributionally and therefore preserve support",
+    "the certified dressed scalar source affiliation and global connected finite-time column are used on their common compact smooth packet core",
+    "the operational complement is used only in the stated small-coupling/duration contraction domain"
+  ],
+  "certificate": "REVERSE_PHYSICS_BT_FULLY_REARRANGED_PHYSICAL_PACKET_PROBABILITY_V1",
+  "checks": {
+    "details": {
+      "Bell_number_six_partitions_are_enumerated": true,
+      "all_disconnected_order4_terms_vanish_on_detector_support": true,
+      "all_external_momenta_are_massless": true,
+      "all_nine_spectator_diagonals_are_avoided": true,
+      "all_time_Eq19_loops_gravity_and_causality_remain_open": true,
+      "both_three_body_totals_are_fixed": true,
+      "compact_separated_neighborhoods_exist": true,
+      "complete_leading_transition_is_connected_column": true,
+      "connected_six_leg_order_starts_at_lambda4": true,
+      "distributional_and_external_mass_derivatives_preserve_support": true,
+      "every_disconnected_profile_has_excluded_support": true,
+      "exact_rational_centers_are_imported": true,
+      "global_connected_column_is_available": true,
+      "input_pair_invariant_margin_is_64_over_25": true,
+      "inputs_are_content_pinned": true,
+      "minimum_cross_Euclidean_distance_squared_is_32_over_625": true,
+      "minimum_energy_is_one": true,
+      "minimum_one_leg_component_sum_square_is_two": true,
+      "minimum_three_leg_component_sum_square_is_17794_over_10625": true,
+      "minimum_two_leg_component_sum_square_is_32_over_625": true,
+      "no_forward_coefficient_enters_leading_orthogonal_click": true,
+      "orthogonal_detector_identity_term_vanishes": true,
+      "output_pair_invariant_margin_is_64_over_25": true,
+      "positive_leading_click_and_operational_complement_are_constructed": true,
+      "predecessors_pass": true,
+      "ten_disconnected_size_profiles_are_complete": true,
+      "two_hundred_two_disconnected_partitions_are_enumerated": true,
+      "vacuum_bubbles_do_not_restore_an_order4_transition": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 28,
+    "total": 28
+  },
+  "complete_leading_physical_probability": {
+    "complete_leading_amplitude": "P_Y*(U_T-I)*P_X=lambda^4*A_YX+O(lambda^5)",
+    "declared_scalar_coefficient": "q_click=16*lambda^8*||sum_(B=1)^9 P_Y*K_B,T*P_X F||^2",
+    "first_connected_six_leg_order": "lambda^4",
+    "forward_independence": "the identity and forward/survival coefficient are killed by P_out*P_in=0 and do not enter the first nonzero orthogonal click coefficient",
+    "global_bound": "q_click<=81*lambda^8*T^2/(200*pi^6)",
+    "input_output_orthogonality": "P_out*P_in=0 on the separated packet supports",
+    "leading_click": "q_click=lambda^8*<Psi_in,A_YX^*A_YX Psi_in>+O(lambda^9)",
+    "operational_no_click": "q_no=1-q_click on the certified leading contraction domain",
+    "restricted_connected_column": "A_YX=P_Y*A_full*P_X",
+    "status": "COMPLETE_LEADING_FULLY_REARRANGED_FINITE_TIME_PHYSICAL_PROBABILITY"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "disconnected_support_classification": {
+    "all_set_partitions": 203,
+    "derivative_lemma": "support(partial^alpha T) is contained in support(T), so spacetime derivative vertices, delta derivatives and independent external-mass derivatives do not enlarge any disconnected support",
+    "detector_pairing": "ZERO_FOR_EVERY_DISCONNECTED_PARTITION_THROUGH_ORDER_LAMBDA4",
+    "disconnected_set_partitions": 202,
+    "external_labels": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "profile_support_types": [
+      {
+        "profile": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "support": "SOFT_OR_IDENTITY_DELTA_SUPPORT"
+      },
+      {
+        "profile": [
+          1,
+          1,
+          1,
+          1,
+          2
+        ],
+        "support": "SOFT_OR_COLLINEAR_TWO_LEG_SUPPORT"
+      },
+      {
+        "profile": [
+          1,
+          1,
+          1,
+          3
+        ],
+        "support": "SOFT_OR_SPECTATOR_THREE_LEG_SUPPORT"
+      },
+      {
+        "profile": [
+          1,
+          1,
+          2,
+          2
+        ],
+        "support": "SOFT_OR_COLLINEAR_TWO_LEG_SUPPORT"
+      },
+      {
+        "profile": [
+          1,
+          1,
+          4
+        ],
+        "support": "SOFT_SUPPORT_PRESENT"
+      },
+      {
+        "profile": [
+          1,
+          2,
+          3
+        ],
+        "support": "SOFT_COLLINEAR_OR_SPECTATOR_SUPPORT"
+      },
+      {
+        "profile": [
+          1,
+          5
+        ],
+        "support": "SOFT_SUPPORT_PRESENT"
+      },
+      {
+        "profile": [
+          2,
+          2,
+          2
+        ],
+        "support": "COLLINEAR_TWO_LEG_SUPPORT_PRESENT"
+      },
+      {
+        "profile": [
+          2,
+          4
+        ],
+        "support": "COLLINEAR_TWO_LEG_SUPPORT_PRESENT"
+      },
+      {
+        "profile": [
+          3,
+          3
+        ],
+        "support": "SPECTATOR_OR_THREE_LEG_MOMENTUM_DELTA_SUPPORT"
+      }
+    ],
+    "size_profiles": [
+      [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1,
+        2
+      ],
+      [
+        1,
+        1,
+        1,
+        3
+      ],
+      [
+        1,
+        1,
+        2,
+        2
+      ],
+      [
+        1,
+        1,
+        4
+      ],
+      [
+        1,
+        2,
+        3
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        2,
+        2,
+        2
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        3,
+        3
+      ]
+    ],
+    "status": "DISCONNECTED_SPECTATOR_LEDGER_ANNIHILATED_BY_SUPPORT",
+    "support_lemma": "a disconnected momentum-space graph is a tensor product of connected component distributions, and each component carries its own momentum-conservation delta. Every disconnected partition of six labels has a block of size at most three. At the exact center every all-incoming subset momentum sum of size one, two or three is nonzero, with positive squared Euclidean margins 2, 32/625 and 17794/10625; compact neighborhoods therefore miss at least one component delta in every disconnected partition",
+    "vacuum_component_ledger": "a nontrivial vacuum component has positive coupling degree. Multiplying the identity external graph is killed by P_Y P_X=0; multiplying the first connected six-leg graph raises the degree above lambda4. Thus omitted empty external blocks cannot contribute to the selected order-lambda4 transition"
+  },
+  "does_not_establish": [
+    "a complete order-lambda4 transition for detectors intersecting spectator or collinear supports",
+    "the order-lambda8 BT forward/survival graph",
+    "an exact probability after summing all perturbative orders",
+    "an all-time Moller, LSZ or S operator",
+    "the standard scalar projector or general Eq. (19)",
+    "loop, real-virtual or KLN completion",
+    "a packet-independent cross section",
+    "gravity or metric BV/BRST transfer",
+    "anything LORENTZIAN-CAUSAL",
+    "literature priority"
+  ],
+  "exact_detector_witness": {
+    "cross_Euclidean_distance_squares": [
+      "1152/425",
+      "45106/10625",
+      "9394/10625",
+      "514/425",
+      "928/425",
+      "1312/425",
+      "98/25",
+      "32/625",
+      "1568/625"
+    ],
+    "incoming_chart_center": [
+      "2",
+      "-2",
+      "0",
+      "15/16",
+      "0"
+    ],
+    "incoming_momenta": [
+      [
+        "6/5",
+        "6/5",
+        "0",
+        "0"
+      ],
+      [
+        "1",
+        "-3/5",
+        "124/2405",
+        "384/481"
+      ],
+      [
+        "1",
+        "-3/5",
+        "-124/2405",
+        "-384/481"
+      ]
+    ],
+    "minimum_component_momentum_sum_Euclidean_squares": {
+      "1": "2",
+      "2": "32/625",
+      "3": "17794/10625"
+    },
+    "minimum_cross_Euclidean_distance_squared": "32/625",
+    "minimum_external_energy": "1",
+    "minimum_same_side_pair_invariant": "64/25",
+    "neighborhood_statement": "there exist compact X,Y around the displayed centers whose product avoids every soft, same-side collinear and incoming-outgoing spectator-diagonal support",
+    "outgoing_chart_center": [
+      "2",
+      "-2",
+      "105/73",
+      "2",
+      "1/3"
+    ],
+    "outgoing_momenta": [
+      [
+        "6/5",
+        "6/85",
+        "-32328/40885",
+        "36792/40885"
+      ],
+      [
+        "1",
+        "-1563/2125",
+        "80904/1022125",
+        "-137548/204425"
+      ],
+      [
+        "1",
+        "1413/2125",
+        "727296/1022125",
+        "-46412/204425"
+      ]
+    ],
+    "status": "NONEMPTY_FULLY_REARRANGED_PACKET_DETECTOR_CONSTRUCTED"
+  },
+  "interpretation": {
+    "Lorentzian_causal_claim": "NOT_ESTABLISHED",
+    "all_order_probability": "NOT_CONSTRUCTED",
+    "all_time_limit": "NOT_CONSTRUCTED",
+    "complete_leading_finite_time_transition_probability": "COEFFICIENT_COMPUTED",
+    "connected_only_qualification_for_selected_detector": "REMOVED_AT_LEADING_ORDER_BY_EXACT_SUPPORT_SEPARATION",
+    "disconnected_spectator_terms": "EXACTLY_ZERO_ON_SELECTED_DETECTOR",
+    "general_Eq19": "NOT_PROVED",
+    "gravity_or_BV_BRST_transfer": "NOT_CONSTRUCTED",
+    "leading_forward_graph_needed_for_click": "NO"
+  },
+  "lifecycle_state": "COEFFICIENT_COMPUTED",
+  "missing_object_ledger": [
+    {
+      "object": "complete leading detector coefficient on spectator-overlap supports",
+      "required_value": "common-domain composition of lower connected blocks where their distributional supports are actually sampled",
+      "status": "MISSING"
+    },
+    {
+      "object": "all-order finite-time normalization",
+      "required_value": "derive higher amplitudes and the BT survival branch rather than use only the leading operational complement",
+      "status": "MISSING"
+    },
+    {
+      "object": "all-time or general Eq. 19 completion",
+      "required_value": "construct asymptotic domains and the nonregular projector/trace architecture independently",
+      "status": "MISSING"
+    }
+  ],
+  "next_gate": "For the physical route, derive the order-lambda8 forward/survival coefficient and higher-order corrections if an all-channel rather than selected orthogonal detector theorem is required. For the present fully rearranged detector the first nonzero finite-time physical probability coefficient is complete. General Eq. (19) remains the separate localized/doubled/nonregular projector problem.",
+  "provenance": {
+    "inputs": [
+      {
+        "path": "planning/work-items/reverse-physics-bateman-fully-rearranged-physical-packet-probability.json",
+        "sha256": "e11c3c2603f3156e1080fad92708081d320fa70af672ddf7f4a16112466cb4e6"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_SCALAR_DRESSED_SOURCE_COMPACT_WAVEPACKET_V1.json",
+        "sha256": "99d728aa4870389c6ee87cd96a9653c55e6b1ccf9e52c55633bb633292920bee"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_COMPLETE_CONNECTED_ORDER4_PACKET_COLUMN_V1.json",
+        "sha256": "5b0fc2719b8daa5650800449d802510911af45445e26fef516a7cb05426fefbb"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_GLOBAL_CONNECTED_FINITE_TIME_PACKET_COLUMN_V1.json",
+        "sha256": "857339d09000f45af1875501f519cf8f6800efc7941e0ba12b779b984235801c"
+      }
+    ],
+    "method": "Exact rational phase-chart witness; Fraction-only invariant and separation margins; exhaustive Bell-partition enumeration; standard distribution support and linked-cluster lemmas; imported exact global connected adjoint-square bound. No floating-point arithmetic is used.",
+    "retrieval_date": "2026-08-12",
+    "source_commit": "71ca6d6a016a404772497ebea12d1c87fa31aedd"
+  },
+  "question": "Can the globally defined connected BT tree effect be made the complete leading coefficient of a genuine three-particle transition, with every disconnected spectator contribution removed rather than left uncomputed?",
+  "report": "reverse_physics/reports/bt-fully-rearranged-physical-packet-probability.md",
+  "result_kind": "exact support theorem and complete leading finite-time physical three-to-three BT packet probability on a fully rearranged detector",
+  "schema": "reverse_physics/schema/reverse-physics-bt-fully-rearranged-physical-packet-probability-v1.schema.json",
+  "schema_version": "reverse-physics-bt-fully-rearranged-physical-packet-probability-v1",
+  "verification_commands": [
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/bt_fully_rearranged_physical_packet_probability.py --write --check",
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/verify_bt_fully_rearranged_physical_packet_probability.py",
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 -m unittest -v reverse_physics.tests.test_bt_fully_rearranged_physical_packet_probability"
+  ]
+}

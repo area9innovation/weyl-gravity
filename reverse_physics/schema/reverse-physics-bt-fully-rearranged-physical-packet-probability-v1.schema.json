@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-fully-rearranged-physical-packet-probability-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["certificate", "schema_version", "dependency_tags", "lifecycle_state", "result_kind", "question", "answer", "exact_detector_witness", "disconnected_support_classification", "complete_leading_physical_probability", "interpretation", "assumptions", "does_not_establish", "missing_object_ledger", "next_gate", "provenance", "verification_commands", "checks", "report", "schema"],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_FULLY_REARRANGED_PHYSICAL_PACKET_PROBABILITY_V1"},
+    "schema_version": {"const": "reverse-physics-bt-fully-rearranged-physical-packet-probability-v1"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "exact_detector_witness": {
+      "type": "object", "additionalProperties": false,
+      "required": ["incoming_chart_center", "outgoing_chart_center", "incoming_momenta", "outgoing_momenta", "minimum_external_energy", "minimum_same_side_pair_invariant", "cross_Euclidean_distance_squares", "minimum_cross_Euclidean_distance_squared", "minimum_component_momentum_sum_Euclidean_squares", "neighborhood_statement", "status"],
+      "properties": {
+        "incoming_chart_center": {"const": ["2", "-2", "0", "15/16", "0"]},
+        "outgoing_chart_center": {"const": ["2", "-2", "105/73", "2", "1/3"]},
+        "incoming_momenta": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/fourvector"}},
+        "outgoing_momenta": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/fourvector"}},
+        "minimum_external_energy": {"const": "1"},
+        "minimum_same_side_pair_invariant": {"const": "64/25"},
+        "cross_Euclidean_distance_squares": {"type": "array", "minItems": 9, "maxItems": 9, "items": {"$ref": "#/$defs/text"}},
+        "minimum_cross_Euclidean_distance_squared": {"const": "32/625"},
+        "minimum_component_momentum_sum_Euclidean_squares": {"const": {"1": "2", "2": "32/625", "3": "17794/10625"}},
+        "neighborhood_statement": {"$ref": "#/$defs/text"},
+        "status": {"const": "NONEMPTY_FULLY_REARRANGED_PACKET_DETECTOR_CONSTRUCTED"}
+      }
+    },
+    "disconnected_support_classification": {
+      "type": "object", "additionalProperties": false,
+      "required": ["external_labels", "all_set_partitions", "disconnected_set_partitions", "size_profiles", "profile_support_types", "support_lemma", "derivative_lemma", "vacuum_component_ledger", "detector_pairing", "status"],
+      "properties": {
+        "external_labels": {"const": [0, 1, 2, 3, 4, 5]},
+        "all_set_partitions": {"const": 203},
+        "disconnected_set_partitions": {"const": 202},
+        "size_profiles": {"type": "array", "minItems": 10, "maxItems": 10, "items": {"type": "array", "items": {"type": "integer", "minimum": 1}}},
+        "profile_support_types": {"type": "array", "minItems": 10, "maxItems": 10, "items": {"type": "object", "additionalProperties": false, "required": ["profile", "support"], "properties": {"profile": {"type": "array", "items": {"type": "integer", "minimum": 1}}, "support": {"$ref": "#/$defs/text"}}}},
+        "support_lemma": {"$ref": "#/$defs/text"},
+        "derivative_lemma": {"$ref": "#/$defs/text"},
+        "vacuum_component_ledger": {"$ref": "#/$defs/text"},
+        "detector_pairing": {"const": "ZERO_FOR_EVERY_DISCONNECTED_PARTITION_THROUGH_ORDER_LAMBDA4"},
+        "status": {"const": "DISCONNECTED_SPECTATOR_LEDGER_ANNIHILATED_BY_SUPPORT"}
+      }
+    },
+    "complete_leading_physical_probability": {
+      "type": "object", "additionalProperties": false,
+      "required": ["input_output_orthogonality", "first_connected_six_leg_order", "restricted_connected_column", "complete_leading_amplitude", "leading_click", "declared_scalar_coefficient", "global_bound", "forward_independence", "operational_no_click", "status"],
+      "properties": {
+        "input_output_orthogonality": {"const": "P_out*P_in=0 on the separated packet supports"},
+        "first_connected_six_leg_order": {"const": "lambda^4"},
+        "restricted_connected_column": {"const": "A_YX=P_Y*A_full*P_X"},
+        "complete_leading_amplitude": {"const": "P_Y*(U_T-I)*P_X=lambda^4*A_YX+O(lambda^5)"},
+        "leading_click": {"const": "q_click=lambda^8*<Psi_in,A_YX^*A_YX Psi_in>+O(lambda^9)"},
+        "declared_scalar_coefficient": {"const": "q_click=16*lambda^8*||sum_(B=1)^9 P_Y*K_B,T*P_X F||^2"},
+        "global_bound": {"const": "q_click<=81*lambda^8*T^2/(200*pi^6)"},
+        "forward_independence": {"$ref": "#/$defs/text"},
+        "operational_no_click": {"const": "q_no=1-q_click on the certified leading contraction domain"},
+        "status": {"const": "COMPLETE_LEADING_FULLY_REARRANGED_FINITE_TIME_PHYSICAL_PROBABILITY"}
+      }
+    },
+    "interpretation": {"const": {"connected_only_qualification_for_selected_detector": "REMOVED_AT_LEADING_ORDER_BY_EXACT_SUPPORT_SEPARATION", "disconnected_spectator_terms": "EXACTLY_ZERO_ON_SELECTED_DETECTOR", "leading_forward_graph_needed_for_click": "NO", "complete_leading_finite_time_transition_probability": "COEFFICIENT_COMPUTED", "all_order_probability": "NOT_CONSTRUCTED", "all_time_limit": "NOT_CONSTRUCTED", "general_Eq19": "NOT_PROVED", "gravity_or_BV_BRST_transfer": "NOT_CONSTRUCTED", "Lorentzian_causal_claim": "NOT_ESTABLISHED"}},
+    "assumptions": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"$ref": "#/$defs/text"}},
+    "does_not_establish": {"type": "array", "minItems": 10, "maxItems": 10, "items": {"$ref": "#/$defs/text"}},
+    "missing_object_ledger": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "object", "additionalProperties": false, "required": ["object", "status", "required_value"], "properties": {"object": {"$ref": "#/$defs/text"}, "status": {"const": "MISSING"}, "required_value": {"$ref": "#/$defs/text"}}}},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "provenance": {"type": "object", "additionalProperties": false, "required": ["source_commit", "retrieval_date", "inputs", "method"], "properties": {"source_commit": {"const": "71ca6d6a016a404772497ebea12d1c87fa31aedd"}, "retrieval_date": {"const": "2026-08-12"}, "inputs": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "object", "additionalProperties": false, "required": ["path", "sha256"], "properties": {"path": {"$ref": "#/$defs/text"}, "sha256": {"$ref": "#/$defs/hash"}}}}, "method": {"$ref": "#/$defs/text"}}},
+    "verification_commands": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/text"}},
+    "checks": {"type": "object", "additionalProperties": false, "required": ["ok", "passed", "total", "failures", "details"], "properties": {"ok": {"const": true}, "passed": {"const": 28}, "total": {"const": 28}, "failures": {"const": []}, "details": {"type": "object", "minProperties": 28, "maxProperties": 28, "additionalProperties": {"const": true}}}},
+    "report": {"const": "reverse_physics/reports/bt-fully-rearranged-physical-packet-probability.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-fully-rearranged-physical-packet-probability-v1.schema.json"}
+  },
+  "$defs": {"text": {"type": "string", "minLength": 1}, "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "fourvector": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/text"}}}
+}
