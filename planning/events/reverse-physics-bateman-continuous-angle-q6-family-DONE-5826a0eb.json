@@ -1,0 +1,32 @@
+{
+  "schema": "event-v0",
+  "id": "sf:program/event/reverse-physics-bateman-continuous-angle-q6-family-DONE-5826a0eb",
+  "kind": "event",
+  "source": {
+    "path": "tools/science-forge/program/events/reverse-physics-bateman-continuous-angle-q6-family-DONE-5826a0eb.json",
+    "span": null
+  },
+  "body": {
+    "event_kind": "WORK_ITEM_TRANSITIONED",
+    "actor": "reverse-physics",
+    "base_revision": "science-forge-ir-v0",
+    "predecessors": [],
+    "when": "2026-08-12",
+    "seq": 1,
+    "payload": {
+      "target": "sf:program/work/reverse-physics-bateman-continuous-angle-q6-family",
+      "to_state": "DONE",
+      "note": "The selected tagged q6 calculation extends to an exact continuous c=cos(theta) family on -1<c<1. All ten channel delta/D functions, the full tree-cross bracket and the finite-time MSbar loop sum are exact. Four channels remain resonant at every angle, and the tree bracket obeys W(c,T)>=13T/24>0 for every T>0, so the interference is not a ninety-degree accident. On every compact |c|<=c_star<1 the packet kernel and loop term have explicit uniform bounds, yielding uniform small-coupling positivity. All nine spectator labels follow by the separately certified permutation transport. Angle-coherent records, endpoints, all orders, Eq. 19, gravity and Lorentzian physics remain open. Evidence: REVERSE_PHYSICS_BT_CONTINUOUS_ANGLE_Q6_FAMILY_V1."
+    },
+    "native": {
+      "authored_by": "manual close-out after exact continuous-angle reconstruction",
+      "policy": "append-only; one event file; predecessor certificates remain immutable"
+    }
+  },
+  "edges": [
+    {
+      "rel": "TRANSITIONS",
+      "to": "sf:program/work/reverse-physics-bateman-continuous-angle-q6-family"
+    }
+  ]
+}

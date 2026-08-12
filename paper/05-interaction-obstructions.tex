@@ -243,6 +243,17 @@ starts at $\lambda^4$, unknown $O(\lambda)$ corrections to the source first
 enter probability at $\lambda^9$ and cannot change the displayed
 $\lambda^8$ rate.  The ordinary massless Fock thermodynamic source remains
 infrared-obstructed.
+For the tagged spectator process, the finite-time packet probability is
+complete through $\lambda^6$ in the declared normal-ordered
+$\overline{\rm MS}$ auxiliary scheme and transports to all nine recorded
+spectator labels.  Along the exact fixed-energy family
+$s=64\kappa^2/25$, $t=-32(1-c)\kappa^2/25$,
+$u=-32(1+c)\kappa^2/25$, its four resonant channels persist and the complete
+tree bracket obeys $W(c,T)\geq13T/24>0$ for every
+$-1<c<1$ and $T>0$.  The six finite-time loop gaps are uniformly separated
+from zero on compact interior angle intervals, giving a bounded fibrewise
+$q_6$ coefficient and uniform small-coupling positivity.  The angle remains
+a classical record; its coherent erasure and both forward endpoints are open.
 Independently, the projected three-channel hard loop logarithm closes the
 Callan--Symanzik equation exactly with the Born rate and one-loop beta
 function.  This yields the positive leading-log nonforward prediction
@@ -3670,8 +3681,76 @@ therefore closes all nine labelled outcomes through $\lambda^6$ on the
 selected permutation orbit.  The factor $9/10$ is the declared classical
 preparation weight, not a new interaction coefficient.  Because the stratum
 record is retained, amplitudes in different blocks are not coherently added.
-Generic continuous $s,t,u$, a detector that erases the record, forward and
-collinear completion, all-time scattering, and Eq.~(19) remain open.
+Arbitrary active energies and final-state shapes, a detector that erases the
+record, forward and collinear completion, all-time scattering, and
+Eq.~(19) remain open.
+
+The selected-angle restriction can be removed along an exact continuous
+fixed-energy family.  With $c=\cos\theta\in(-1,1)$ and $\kappa=1$, keep
+$p_0=k_0=(6/5,6/5,0,0)$ and take
+\[
+ p_{1,2}=(1,-3/5,\mathord\pm4/5,0),\qquad
+ k_{1,2}=(1,-3/5,\mathord\pm4c/5,
+                  \mathord\pm4\sqrt{1-c^2}/5).
+\]
+Then
+\[
+ s={64\over25},\qquad t=-{32(1-c)\over25},\qquad
+ u=-{32(1+c)\over25}.
+\]
+All ten channel functions are exact, and the same four weight-six channels
+remain resonant for every interior angle.  Put
+\[
+ a_t={2\over5}(\sqrt{17-8c}-3),\qquad
+ a_u={2\over5}(\sqrt{17+8c}-3).
+\]
+The complete tree bracket is
+\[
+ \begin{split}
+ W(c,T)={}&12T+{125\over256}\sin{16T\over5}
+ +{125\over128}\sin{8T\over5}\\
+ &+{10\sin(a_tT)\over-t}+{10\sin(a_uT)\over-u}.
+ \end{split}
+\]
+The factorizations $-t=a_tD_t$, $-u=a_uD_u$, with
+$D_t,D_u>12/5$, and $\sin x\geq-x$ for $x\geq0$ give the uniform strict
+bound
+\[
+ \boxed{W(c,T)\geq {13\over24}T>0}
+ \qquad(-1<c<1,\ T>0).
+\]
+Thus the resonant tree interference is not a ninety-degree artifact.  The
+finite-time active loop on the same family is
+\[
+ \begin{split}
+ B_*(c,T,\mu)={}&
+ \log {15625(\mu/\kappa)^6\over65536(1-c^2)}+6
+ -C(4\kappa T/5)-C(16\kappa T/5)\\
+ &-2C\!\left({4\kappa T\sqrt{2(1-c)}\over5}\right)
+ -2C\!\left({4\kappa T\sqrt{2(1+c)}\over5}\right),
+ \end{split}
+\]
+so the fibrewise probability is
+\[
+ q_{\rm tag}(c;f,T)=q_4\{1+\lambda^2R_6(c;f,T,\mu)\}
+ +O(\lambda^8),qquad
+ R_6={2\sqrt2\over3}\Re C_{ff}(c,T)+{5B_*\over24\pi^2}.
+\]
+On every $|c|\leq c_\star<1$ the loop gaps have a positive uniform lower
+bound.  On a compact spectator packet tube with $D_A\geq d_0>0$, the tree
+kernel retains the exact bound $54T/d_0$; the special value $27T$ applies on
+the normalized angle fibre where $d_0=2$.  These estimates give a finite
+uniform $M_R$ and hence positivity of the truncated bracket whenever
+$\lambda^2M_R<1$.  Certificate
+\par\noindent
+\texttt{REVERSE\_PHYSICS\_BT\_CONTINUOUS\_ANGLE\_Q6\_}
+\allowbreak\texttt{FAMILY\_V1}
+\par\noindent
+proves this fixed-energy continuous theorem and transports it to all nine
+spectator labels.  The angle is still an orthogonal classical record:
+off-diagonal two-angle coherence, the endpoints $c=\mathord\pm1$, arbitrary
+energy/shape kinematics, real--virtual completion, all orders and Eq.~(19)
+remain open.
 
 The auxiliary preparation nevertheless has an exact scalar preimage on the
 finite covariant detector ideal.  Put

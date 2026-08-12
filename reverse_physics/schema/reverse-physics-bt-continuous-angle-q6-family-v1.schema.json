@@ -1,0 +1,225 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-continuous-angle-q6-family-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "schema_version", "certificate", "question", "answer",
+    "result_kind", "lifecycle_state", "dependency_tags", "assumptions",
+    "provenance", "continuous_tagged_family", "ten_channel_kinematics",
+    "continuous_tree_cross", "continuous_finite_time_loop",
+    "compact_angle_bounds", "complete_probability_family", "disposition",
+    "missing_object_ledger", "does_not_establish", "next_gate", "checks",
+    "verification_commands", "report"
+  ],
+  "properties": {
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-continuous-angle-q6-family-v1.schema.json"},
+    "schema_version": {"const": 1},
+    "certificate": {"const": "REVERSE_PHYSICS_BT_CONTINUOUS_ANGLE_Q6_FAMILY_V1"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE"]},
+    "assumptions": {
+      "type": "array", "minItems": 7, "maxItems": 7,
+      "items": {"$ref": "#/$defs/text"}
+    },
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_commit", "retrieval_date", "inputs", "generated_by", "independent_verifier", "method"],
+      "properties": {
+        "source_commit": {"const": "5826a0eb4e805531152c56182e9d7353eabab335"},
+        "retrieval_date": {"const": "2026-08-12"},
+        "inputs": {
+          "type": "array", "minItems": 8, "maxItems": 8,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["path", "sha256"],
+            "properties": {
+              "path": {"$ref": "#/$defs/text"},
+              "sha256": {"$ref": "#/$defs/hash"}
+            }
+          }
+        },
+        "generated_by": {"const": "reverse_physics/bt_continuous_angle_q6_family.py"},
+        "independent_verifier": {"const": "reverse_physics/verify_bt_continuous_angle_q6_family.py"},
+        "method": {"$ref": "#/$defs/text"}
+      }
+    },
+    "continuous_tagged_family": {
+      "type": "object", "additionalProperties": false,
+      "required": ["parameter", "domain", "normalized_momenta_kappa_one", "active_invariants", "hard_boundary", "reference", "status"],
+      "properties": {
+        "parameter": {"const": "c=cos(theta)"},
+        "domain": {"const": "-1<c<1"},
+        "normalized_momenta_kappa_one": {
+          "type": "object", "additionalProperties": false,
+          "required": ["p0_equals_k0", "p1", "p2", "k1", "k2"],
+          "properties": {
+            "p0_equals_k0": {"$ref": "#/$defs/four_text"},
+            "p1": {"$ref": "#/$defs/four_text"},
+            "p2": {"$ref": "#/$defs/four_text"},
+            "k1": {"$ref": "#/$defs/four_text"},
+            "k2": {"$ref": "#/$defs/four_text"}
+          }
+        },
+        "active_invariants": {
+          "type": "object", "additionalProperties": false,
+          "required": ["s", "t", "u", "identity"],
+          "properties": {
+            "s": {"$ref": "#/$defs/text"},
+            "t": {"$ref": "#/$defs/text"},
+            "u": {"$ref": "#/$defs/text"},
+            "identity": {"const": "s+t+u=0"}
+          }
+        },
+        "hard_boundary": {"$ref": "#/$defs/text"},
+        "reference": {"$ref": "#/$defs/text"},
+        "status": {"const": "EXACT_CONTINUOUS_HARD_NONFORWARD_TAGGED_FAMILY"}
+      }
+    },
+    "ten_channel_kinematics": {
+      "type": "object", "additionalProperties": false,
+      "required": ["representative_masks", "rows", "resonant_masks", "t_exchange_masks", "u_exchange_masks", "exchange_formulas", "status"],
+      "properties": {
+        "representative_masks": {"const": [7, 11, 19, 13, 21, 25, 14, 22, 26, 28]},
+        "rows": {
+          "type": "array", "minItems": 10, "maxItems": 10,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["mask", "subset", "family", "weight", "q", "q_squared", "delta", "D"],
+            "properties": {
+              "mask": {"type": "integer"},
+              "subset": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "integer", "minimum": 0, "maximum": 5}},
+              "family": {"enum": ["HARD_TOTAL", "SPACELIKE_AXIS", "RESONANT_NULL", "T_EXCHANGE", "U_EXCHANGE"]},
+              "weight": {"enum": [5, 6]},
+              "q": {"$ref": "#/$defs/four_text"},
+              "q_squared": {"$ref": "#/$defs/text"},
+              "delta": {"$ref": "#/$defs/text"},
+              "D": {"$ref": "#/$defs/text"}
+            }
+          }
+        },
+        "resonant_masks": {"const": [11, 13, 25, 22]},
+        "t_exchange_masks": {"const": [19, 26]},
+        "u_exchange_masks": {"const": [21, 28]},
+        "exchange_formulas": {
+          "type": "object", "additionalProperties": false,
+          "required": ["minus_t", "a_t", "D_t", "minus_t_factorization", "minus_u", "a_u", "D_u", "minus_u_factorization"],
+          "properties": {
+            "minus_t": {"$ref": "#/$defs/text"},
+            "a_t": {"$ref": "#/$defs/text"},
+            "D_t": {"$ref": "#/$defs/text"},
+            "minus_t_factorization": {"const": "-t=a_t*D_t"},
+            "minus_u": {"$ref": "#/$defs/text"},
+            "a_u": {"$ref": "#/$defs/text"},
+            "D_u": {"$ref": "#/$defs/text"},
+            "minus_u_factorization": {"const": "-u=a_u*D_u"}
+          }
+        },
+        "status": {"const": "ALL_TEN_CHANNEL_FUNCTIONS_COMPUTED_EXACTLY"}
+      }
+    },
+    "continuous_tree_cross": {
+      "type": "object", "additionalProperties": false,
+      "required": ["bracket", "restored_kernel", "resonant_part", "fixture_regression", "denominator_bound", "lower_bound_steps", "uniform_lower_bound", "small_time_slope", "large_time_limit", "classification", "status"],
+      "properties": {
+        "bracket": {"$ref": "#/$defs/text"},
+        "restored_kernel": {"$ref": "#/$defs/text"},
+        "resonant_part": {"$ref": "#/$defs/text"},
+        "fixture_regression": {"$ref": "#/$defs/text"},
+        "denominator_bound": {"const": "D_t,D_u>=12/5"},
+        "lower_bound_steps": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/text"}},
+        "uniform_lower_bound": {"const": "W(c,T)>=13*T/24>0 for every -1<c<1 and T>0"},
+        "small_time_slope": {"$ref": "#/$defs/text"},
+        "large_time_limit": {"$ref": "#/$defs/text"},
+        "classification": {"const": "FINITE_STRICTLY_POSITIVE_AND_SECULAR_AT_EVERY_HARD_ANGLE"},
+        "status": {"const": "CONTINUOUS_TREE_INTERFERENCE_NONDECOUPLING_PROVED"}
+      }
+    },
+    "continuous_finite_time_loop": {
+      "type": "object", "additionalProperties": false,
+      "required": ["transient", "invariant_log", "light_cone_gaps", "bubble_sum", "fixture_regression", "large_time_limit", "status"],
+      "properties": {
+        "transient": {"const": "C(z)=sin(z)/z-Ci(z)"},
+        "invariant_log": {"$ref": "#/$defs/text"},
+        "light_cone_gaps": {
+          "type": "object", "additionalProperties": false,
+          "required": ["s", "t", "u"],
+          "properties": {
+            "s": {"$ref": "#/$defs/two_text"},
+            "t": {"$ref": "#/$defs/two_text"},
+            "u": {"$ref": "#/$defs/two_text"}
+          }
+        },
+        "bubble_sum": {"$ref": "#/$defs/text"},
+        "fixture_regression": {"$ref": "#/$defs/text"},
+        "large_time_limit": {"$ref": "#/$defs/text"},
+        "status": {"const": "CONTINUOUS_FINITE_TIME_ACTIVE_LOOP_COMPUTED"}
+      }
+    },
+    "compact_angle_bounds": {
+      "type": "object", "additionalProperties": false,
+      "required": ["domain", "minimum_light_cone_gap", "tree_pointwise_bound", "tree_packet_bound", "log_bound", "transient_bound", "loop_bound", "relative_bound", "uniform_positivity_condition", "status"],
+      "properties": {
+        "domain": {"const": "|c|<=c_star<1, kappa>0, T>0"},
+        "minimum_light_cone_gap": {"$ref": "#/$defs/text"},
+        "tree_pointwise_bound": {"$ref": "#/$defs/text"},
+        "tree_packet_bound": {"$ref": "#/$defs/text"},
+        "log_bound": {"$ref": "#/$defs/text"},
+        "transient_bound": {"$ref": "#/$defs/text"},
+        "loop_bound": {"$ref": "#/$defs/text"},
+        "relative_bound": {"$ref": "#/$defs/text"},
+        "uniform_positivity_condition": {"$ref": "#/$defs/text"},
+        "status": {"const": "UNIFORM_COMPACT_HARD_ANGLE_BOUNDS_PROVED"}
+      }
+    },
+    "complete_probability_family": {
+      "type": "object", "additionalProperties": false,
+      "required": ["leading_term", "tree_functional", "relative_coefficient", "probability", "label_transport", "status"],
+      "properties": {
+        "leading_term": {"const": "q4=75*lambda^4*DeltaOmega/(2048*pi^2*kappa^2*Area)"},
+        "tree_functional": {"$ref": "#/$defs/text"},
+        "relative_coefficient": {"$ref": "#/$defs/text"},
+        "probability": {"$ref": "#/$defs/text"},
+        "label_transport": {"$ref": "#/$defs/text"},
+        "status": {"const": "COMPLETE_CONTINUOUS_FIBREWISE_TAGGED_PROBABILITY_THROUGH_LAMBDA6"}
+      }
+    },
+    "disposition": {"type": "object", "minProperties": 11, "maxProperties": 11, "additionalProperties": {"$ref": "#/$defs/text"}},
+    "missing_object_ledger": {
+      "type": "array", "minItems": 4, "maxItems": 4,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["object", "status", "required_value"],
+        "properties": {
+          "object": {"$ref": "#/$defs/text"},
+          "status": {"const": "MISSING"},
+          "required_value": {"$ref": "#/$defs/text"}
+        }
+      }
+    },
+    "does_not_establish": {"type": "array", "minItems": 13, "maxItems": 13, "items": {"$ref": "#/$defs/text"}},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "checks": {
+      "type": "object", "additionalProperties": false,
+      "required": ["total", "passed", "ok", "failures", "details"],
+      "properties": {
+        "total": {"type": "integer", "minimum": 40},
+        "passed": {"type": "integer", "minimum": 40},
+        "ok": {"const": true},
+        "failures": {"const": []},
+        "details": {"type": "object", "minProperties": 40, "additionalProperties": {"const": true}}
+      }
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/text"}},
+    "report": {"const": "reverse_physics/reports/bt-continuous-angle-q6-family.md"}
+  },
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "four_text": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/text"}},
+    "two_text": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"$ref": "#/$defs/text"}}
+  }
+}

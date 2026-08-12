@@ -1,0 +1,511 @@
+{
+  "answer": "Yes, fibrewise with the scattering angle retained as a record. For c=cos(theta) in (-1,1), the exact tagged family has s=64*kappa^2/25, t=-32*(1-c)*kappa^2/25 and u=-32*(1+c)*kappa^2/25. Four of the ten connected channels remain exactly resonant for every c. The exact tree bracket is W(c,T)=12*T+125*sin(16*T/5)/256+125*sin(8*T/5)/128+10*sin(a_t*T)/(-t)+10*sin(a_u*T)/(-u), where a_t=2*(sqrt(17-8*c)-3)/5 and a_u=2*(sqrt(17+8*c)-3)/5 in kappa=1 units. Since -t=a_t*D_t, -u=a_u*D_u, D_t,D_u>=12/5 and sin(x)>=-x for x>=0, W(c,T)>=13*T/24>0 for every interior angle and T>0. The finite-time loop sum is also exact and its logarithmic/transient terms are uniformly bounded on every compact |c|<=c_star<1. Thus R6(c;f,T,mu)=(2*sqrt(2)/3)*Re C_ff(c,T)+(5/(24*pi^2))*B_*(c,T,mu) is a finite continuous fibrewise coefficient, reproduces the certified c=0 result, and gives uniform small-coupling positivity on compact hard angle intervals. The theorem transports to all nine spectator labels, but does not construct coherent superpositions of different angle records or include the forward/backward endpoints.",
+  "assumptions": [
+    "the fixed total-three-particle center frame and sharp relative-time interval [0,T] used by the tagged q6 predecessor",
+    "one unchanged positive normalized spectator and the massless active two-to-two family displayed in the certificate",
+    "the angle c is retained as an orthogonal classical record; different c fibres are not coherently superposed",
+    "the declared normal-ordered massless unit-residue auxiliary scheme and MSbar active coupling convention",
+    "compact hard-angle intervals satisfy |c|<=c_star<1 and have finite packet/coarea measure",
+    "the compact packet tube uses the same six weight-five and four weight-six incidence channels and has D_A>=d0>0 on its support",
+    "external label permutations transport the family to the other eight spectator cylinders"
+  ],
+  "certificate": "REVERSE_PHYSICS_BT_CONTINUOUS_ANGLE_Q6_FAMILY_V1",
+  "checks": {
+    "details": {
+      "C_bound_is_imported": true,
+      "Eq19_is_not_used": true,
+      "active_mandelstam_sum_vanishes": true,
+      "active_s_is_64_over_25": true,
+      "active_t_formula_is_exact": true,
+      "active_u_formula_is_exact": true,
+      "all_channel_kinematics_match_closed_forms": true,
+      "all_nine_label_transports_are_imported": true,
+      "all_six_external_momenta_are_null": true,
+      "angle_coherent_detector_is_not_claimed": true,
+      "compact_angle_gap_is_strict_for_cstar_less_than_one": true,
+      "compact_loop_bound_is_finite": true,
+      "compact_tree_kernel_definition_is_imported": true,
+      "compact_tree_weight_sum_is_imported": true,
+      "continuous_R6_reproduces_selected_formula_at_c_zero": true,
+      "continuous_loop_sum_reproduces_fixture_at_c_zero": true,
+      "continuous_tree_bracket_reproduces_fixture_at_c_zero": true,
+      "done_event_targets_this_item": true,
+      "endpoints_are_not_claimed_hard": true,
+      "exchange_denominator_lower_bound_is_12_over_5": true,
+      "exchange_factorizations_are_exact": true,
+      "fixture_loop_sum_is_imported": true,
+      "fixture_tree_bracket_matches_import": true,
+      "four_resonant_channels_persist_for_all_c": true,
+      "generic_finite_time_bubble_is_imported": true,
+      "hard_interval_excludes_only_active_forward_endpoints": true,
+      "imported_packet_bound_specializes_to_27T_on_exact_fibre": true,
+      "incidence_weights_sum_to_54": true,
+      "incoming_and_outgoing_total_momenta_match": true,
+      "inputs_are_content_pinned": true,
+      "invariant_product_is_exact": true,
+      "large_time_coefficient_is_12_pointwise_interior": true,
+      "loop_logarithm_argument_is_exact": true,
+      "relative_loop_coefficient_is_five_over_24_pi_squared": true,
+      "relative_tree_coefficient_matches_selected_q6": true,
+      "s_channel_light_cone_gaps_are_exact": true,
+      "six_predecessors_pass": true,
+      "small_time_slope_decomposes_into_positive_terms": true,
+      "t_and_u_gap_formulas_are_exact": true,
+      "tagged_spectator_is_unchanged": true,
+      "ten_public_masks_are_imported": true,
+      "two_t_and_two_u_exchange_channels_persist": true,
+      "uniform_R6_bound_implies_small_coupling_positivity": true,
+      "uniform_channel_D_minimum_is_two": true,
+      "uniform_tree_lower_bound_is_strict": true,
+      "uniform_tree_lower_coefficient_is_13_over_24": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 46,
+    "total": 46
+  },
+  "compact_angle_bounds": {
+    "domain": "|c|<=c_star<1, kappa>0, T>0",
+    "log_bound": "L_abs=max(abs(log[A]),abs(log[A/(1-c_star^2)])), A=15625*(mu/kappa)^6/65536",
+    "loop_bound": "|B_*|<=L_abs+6+(25/16+5/sqrt(2*(1-c_star)))/(kappa*T)",
+    "minimum_light_cone_gap": "d_gap=(4*kappa/5)*min(1,sqrt(2*(1-c_star)))>0",
+    "relative_bound": "|R6|<=M_R=(2*sqrt(2)/3)*(54*T/d0)*sqrt(vol_in*vol_out)+(5/(24*pi^2))*[L_abs+6+(25/16+5/sqrt(2*(1-c_star)))/(kappa*T)]",
+    "status": "UNIFORM_COMPACT_HARD_ANGLE_BOUNDS_PROVED",
+    "transient_bound": "|B_*(c,T,mu)-(L(c,mu/kappa)+6)|<=(25/16+5/sqrt(2*(1-c_star)))/(kappa*T)",
+    "tree_packet_bound": "|C_ff(c,T)|<=54*T*sqrt(vol_in*vol_out)/d0 uniformly in |c|<=c_star",
+    "tree_pointwise_bound": "|W_kappa,T(k,p;c)|<=54*T/d0 on a compact packet tube with D_A>=d0>0; on the exact normalized angle fibre d0=2 gives 27*T",
+    "uniform_positivity_condition": "lambda^2*M_R<1 implies 1+lambda^2*R6(c)>0 uniformly on the compact angle interval"
+  },
+  "complete_probability_family": {
+    "label_transport": "the same family occurs on all nine Delta_ia cylinders by REVERSE_PHYSICS_BT_NINE_CYLINDER_RECORDED_Q6_INSTRUMENT_V1",
+    "leading_term": "q4=75*lambda^4*DeltaOmega/(2048*pi^2*kappa^2*Area)",
+    "probability": "q_tag(c;f,T)=q4*{1+lambda^2*R6(c;f,T,mu)}+O(lambda^8)",
+    "relative_coefficient": "R6(c;f,T,mu)=(2*sqrt(2)/3)*Re C_ff(c,T)+(5/(24*pi^2))*B_*(c,T,mu)",
+    "status": "COMPLETE_CONTINUOUS_FIBREWISE_TAGGED_PROBABILITY_THROUGH_LAMBDA6",
+    "tree_functional": "C_ff(c,T)=<f,W_kappa,T(c)f> on the normalized positive spectator packet"
+  },
+  "continuous_finite_time_loop": {
+    "bubble_sum": "B_*(c,T,mu)=L(c,mu/kappa)+6-C(4*kappa*T/5)-C(16*kappa*T/5)-2*C(4*kappa*T*sqrt(2*(1-c))/5)-2*C(4*kappa*T*sqrt(2*(1+c))/5)",
+    "fixture_regression": "B_*(0,T,mu)=L_*+6-C(4*kappa*T/5)-C(16*kappa*T/5)-4*C(4*sqrt(2)*kappa*T/5)",
+    "invariant_log": "L(c,mu/kappa)=log[15625*(mu/kappa)^6/(65536*(1-c^2))]",
+    "large_time_limit": "B_*(c,T,mu)->L(c,mu/kappa)+6 for every fixed hard angle",
+    "light_cone_gaps": {
+      "s": [
+        "4*kappa/5",
+        "16*kappa/5"
+      ],
+      "t": [
+        "4*kappa*sqrt(2*(1-c))/5",
+        "4*kappa*sqrt(2*(1-c))/5"
+      ],
+      "u": [
+        "4*kappa*sqrt(2*(1+c))/5",
+        "4*kappa*sqrt(2*(1+c))/5"
+      ]
+    },
+    "status": "CONTINUOUS_FINITE_TIME_ACTIVE_LOOP_COMPUTED",
+    "transient": "C(z)=sin(z)/z-Ci(z)"
+  },
+  "continuous_tagged_family": {
+    "active_invariants": {
+      "identity": "s+t+u=0",
+      "s": "64*kappa^2/25",
+      "t": "-32*(1-c)*kappa^2/25",
+      "u": "-32*(1+c)*kappa^2/25"
+    },
+    "domain": "-1<c<1",
+    "hard_boundary": "c=1 is active forward identity and c=-1 is the exchanged forward permutation; both are excluded",
+    "normalized_momenta_kappa_one": {
+      "k1": [
+        "1",
+        "-3/5",
+        "4*c/5",
+        "4*sqrt(1-c^2)/5"
+      ],
+      "k2": [
+        "1",
+        "-3/5",
+        "-4*c/5",
+        "-4*sqrt(1-c^2)/5"
+      ],
+      "p0_equals_k0": [
+        "6/5",
+        "6/5",
+        "0",
+        "0"
+      ],
+      "p1": [
+        "1",
+        "-3/5",
+        "4/5",
+        "0"
+      ],
+      "p2": [
+        "1",
+        "-3/5",
+        "-4/5",
+        "0"
+      ]
+    },
+    "parameter": "c=cos(theta)",
+    "reference": "c=0 reproduces t=u=-32*kappa^2/25 and the certified selected q6 fixture",
+    "status": "EXACT_CONTINUOUS_HARD_NONFORWARD_TAGGED_FAMILY"
+  },
+  "continuous_tree_cross": {
+    "bracket": "W(c,T)=12*T+125*sin(16*T/5)/256+125*sin(8*T/5)/128+10*sin(a_t*T)/(-t)+10*sin(a_u*T)/(-u)",
+    "classification": "FINITE_STRICTLY_POSITIVE_AND_SECULAR_AT_EVERY_HARD_ANGLE",
+    "denominator_bound": "D_t,D_u>=12/5",
+    "fixture_regression": "W(0,T)=12*T+125*sin(16*T/5)/256+125*sin(8*T/5)/128+125*sin(2*(sqrt(17)-3)*T/5)/8",
+    "large_time_limit": "lim_(T->infinity) W(c,T)/T=12 for every fixed -1<c<1",
+    "lower_bound_steps": [
+      "125*sin(16*T/5)/256>=-25*T/16",
+      "125*sin(8*T/5)/128>=-25*T/16",
+      "10*sin(a_t*T)/(-t)>=-10*T/D_t>=-25*T/6",
+      "10*sin(a_u*T)/(-u)>=-10*T/D_u>=-25*T/6"
+    ],
+    "resonant_part": "12*T for every -1<c<1",
+    "restored_kernel": "I_tree^(6)(c,T)=16*sqrt(2)*lambda^6*W(c,T)",
+    "small_time_slope": "W_T(c,0)=12+25/8+10/D_t+10/D_u>0",
+    "status": "CONTINUOUS_TREE_INTERFERENCE_NONDECOUPLING_PROVED",
+    "uniform_lower_bound": "W(c,T)>=13*T/24>0 for every -1<c<1 and T>0"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL",
+    "REDUCED-MODE"
+  ],
+  "disposition": {
+    "Lorentzian_causal_claim": "NOT_ESTABLISHED",
+    "all_nine_spectator_labels": "TRANSPORTED_BY_CERTIFIED_PERMUTATION_COVARIANCE",
+    "all_order_or_all_time_probability": "NOT_CONSTRUCTED",
+    "coherent_superposition_of_angle_records": "NOT_CONSTRUCTED",
+    "compact_angle_uniform_finiteness": "PROVED",
+    "compact_angle_uniform_small_coupling_positivity": "PROVED",
+    "continuous_reference_cylinder": "COEFFICIENT_COMPUTED_FOR_ALL_MINUS_ONE_LT_C_LT_ONE",
+    "forward_and_backward_endpoints": "NOT_INCLUDED",
+    "general_Eq19": "NOT_PROVED_AND_NOT_USED",
+    "gravity_or_metric_BV_BRST_transfer": "NOT_CONSTRUCTED",
+    "tree_interference_sign": "STRICTLY_POSITIVE_FOR_ALL_HARD_ANGLES_AND_T_GT_ZERO"
+  },
+  "does_not_establish": [
+    "a coherent superposition or unresolved detector across different active scattering angles",
+    "the forward c=1 or exchanged-forward c=-1 endpoints",
+    "a packet-, detector-, duration-, scale- or scheme-independent q6 number or sign",
+    "real-virtual or KLN completion",
+    "an exact positive probability after summing every perturbative order",
+    "uniform perturbative control as T tends to infinity",
+    "an all-time Moller, LSZ or S operator",
+    "the standard scalar projector or general Bateman--Turok Eq. (19)",
+    "a nonperturbative construction of the full R_t operator",
+    "gravity or metric BV--BRST transfer",
+    "a restored gravitational quantum master equation or residual transfer",
+    "anything LORENTZIAN-CAUSAL",
+    "literature priority"
+  ],
+  "lifecycle_state": "COEFFICIENT_COMPUTED",
+  "missing_object_ledger": [
+    {
+      "object": "angle-coherent detector",
+      "required_value": "an off-diagonal kernel in two active-angle variables and a proof that erasing the angle record defines a bounded positive effect",
+      "status": "MISSING"
+    },
+    {
+      "object": "forward/backward endpoint completion",
+      "required_value": "real, virtual, survival and collinear sectors controlling the t=0 or u=0 logarithms",
+      "status": "MISSING"
+    },
+    {
+      "object": "all-order and asymptotic evolution",
+      "required_value": "uniform perturbative or resummed control and an all-time Moller/LSZ/S operator",
+      "status": "MISSING"
+    },
+    {
+      "object": "metric gravity transfer",
+      "required_value": "classical BV import, physical metric cohomology and pairing, restored QME and causal state",
+      "status": "MISSING"
+    }
+  ],
+  "next_gate": "Construct the off-diagonal two-angle packet kernel and test whether a finite-resolution detector may erase the angle record while preserving boundedness and positivity. In parallel, the endpoint route requires a common real-virtual/survival regulator. Neither gate may be replaced by pointwise fibre data.",
+  "provenance": {
+    "generated_by": "reverse_physics/bt_continuous_angle_q6_family.py",
+    "independent_verifier": "reverse_physics/verify_bt_continuous_angle_q6_family.py",
+    "inputs": [
+      {
+        "path": "planning/work-items/reverse-physics-bateman-continuous-angle-q6-family.json",
+        "sha256": "7ac4b2da1b6df985515259b8ed657076405b876c2cfc7487c7d72c1da0ee55f8"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_TAGGED_SPECTATOR_PHYSICAL_PACKET_PROBABILITY_V1.json",
+        "sha256": "f1742448de34c8cc462c9a3a096bd3c1cd1241d7506b8abc1e687d751bff9779"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_TAGGED_CONNECTED_FINITE_TIME_INTERFERENCE_V1.json",
+        "sha256": "66a06e1935e4fb9b396005011255631f73acf2de0ff1dbc6ec940b33e4e576cc"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_TAGGED_CONNECTED_COMPACT_PACKET_INTERFERENCE_V1.json",
+        "sha256": "aefdd2d59acf68720a132343f4e25f759170f4efb1b067cd0bcdf824304575fe"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_FINITE_TIME_ACTIVE_LOOP_AFFILIATION_V1.json",
+        "sha256": "73d5f9d1db46e3c9a783acc8d35f94a17876425ce5f9aec3fca73f1c73d547a3"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_COMPLETE_TAGGED_Q6_PHYSICAL_PROBABILITY_V1.json",
+        "sha256": "c322615c4bd6e5a9b0aa63fd5e62da9d8f3771da2f222ac4d13a986f90abbdd7"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_NINE_CYLINDER_RECORDED_Q6_INSTRUMENT_V1.json",
+        "sha256": "7470b81f753c43befc14badb41176cf5a14590edfc26b2e222f553c033a22c77"
+      },
+      {
+        "path": "planning/events/reverse-physics-bateman-continuous-angle-q6-family-DONE-5826a0eb.json",
+        "sha256": "3c1814c2952cb91da95804959f267759c40912fe6e25b901e82d5dd7c3ea8262"
+      }
+    ],
+    "method": "Exact symbolic reconstruction in c=cos(theta), including all ten channel momenta, radical energy gaps, incidence-weighted finite-time tree kernel, analytic loop sum, and inequality proof. No floating-point arithmetic is used.",
+    "retrieval_date": "2026-08-12",
+    "source_commit": "5826a0eb4e805531152c56182e9d7353eabab335"
+  },
+  "question": "Does the complete selected tagged BT probability through lambda6 extend from the ninety-degree fixture to a continuous hard nonforward angle family, and is its tree interference uniformly nonzero?",
+  "report": "reverse_physics/reports/bt-continuous-angle-q6-family.md",
+  "result_kind": "continuous hard-angle family of complete finite-time tagged BT probability coefficients through lambda6",
+  "schema": "reverse_physics/schema/reverse-physics-bt-continuous-angle-q6-family-v1.schema.json",
+  "schema_version": 1,
+  "ten_channel_kinematics": {
+    "exchange_formulas": {
+      "D_t": "2*(3+sqrt(17-8*c))/5",
+      "D_u": "2*(3+sqrt(17+8*c))/5",
+      "a_t": "2*(sqrt(17-8*c)-3)/5",
+      "a_u": "2*(sqrt(17+8*c)-3)/5",
+      "minus_t": "32*(1-c)/25",
+      "minus_t_factorization": "-t=a_t*D_t",
+      "minus_u": "32*(1+c)/25",
+      "minus_u_factorization": "-u=a_u*D_u"
+    },
+    "representative_masks": [
+      7,
+      11,
+      19,
+      13,
+      21,
+      25,
+      14,
+      22,
+      26,
+      28
+    ],
+    "resonant_masks": [
+      11,
+      13,
+      25,
+      22
+    ],
+    "rows": [
+      {
+        "D": "16/5",
+        "delta": "16/5",
+        "family": "HARD_TOTAL",
+        "mask": 7,
+        "q": [
+          "16/5",
+          "0",
+          "0",
+          "0"
+        ],
+        "q_squared": "256/25",
+        "subset": [
+          0,
+          1,
+          2
+        ],
+        "weight": 5
+      },
+      {
+        "D": "2",
+        "delta": "0",
+        "family": "RESONANT_NULL",
+        "mask": 11,
+        "q": [
+          "1",
+          "-3/5",
+          "4/5",
+          "0"
+        ],
+        "q_squared": "0",
+        "subset": [
+          0,
+          1,
+          3
+        ],
+        "weight": 6
+      },
+      {
+        "D": "2*(sqrt(17 - 8*c) + 3)/5",
+        "delta": "-2*(sqrt(17 - 8*c) - 3)/5",
+        "family": "T_EXCHANGE",
+        "mask": 19,
+        "q": [
+          "6/5",
+          "6/5",
+          "-4*(c - 1)/5",
+          "-4*sqrt(-(c - 1)*(c + 1))/5"
+        ],
+        "q_squared": "32*(c - 1)/25",
+        "subset": [
+          0,
+          1,
+          4
+        ],
+        "weight": 5
+      },
+      {
+        "D": "2",
+        "delta": "0",
+        "family": "RESONANT_NULL",
+        "mask": 13,
+        "q": [
+          "1",
+          "-3/5",
+          "-4/5",
+          "0"
+        ],
+        "q_squared": "0",
+        "subset": [
+          0,
+          2,
+          3
+        ],
+        "weight": 6
+      },
+      {
+        "D": "2*(sqrt(8*c + 17) + 3)/5",
+        "delta": "-2*(sqrt(8*c + 17) - 3)/5",
+        "family": "U_EXCHANGE",
+        "mask": 21,
+        "q": [
+          "6/5",
+          "6/5",
+          "-4*(c + 1)/5",
+          "-4*sqrt(-(c - 1)*(c + 1))/5"
+        ],
+        "q_squared": "-32*(c + 1)/25",
+        "subset": [
+          0,
+          2,
+          4
+        ],
+        "weight": 5
+      },
+      {
+        "D": "2",
+        "delta": "0",
+        "family": "RESONANT_NULL",
+        "mask": 25,
+        "q": [
+          "1",
+          "-3/5",
+          "4*c/5",
+          "4*sqrt(-(c - 1)*(c + 1))/5"
+        ],
+        "q_squared": "0",
+        "subset": [
+          0,
+          3,
+          4
+        ],
+        "weight": 6
+      },
+      {
+        "D": "16/5",
+        "delta": "-8/5",
+        "family": "SPACELIKE_AXIS",
+        "mask": 14,
+        "q": [
+          "4/5",
+          "-12/5",
+          "0",
+          "0"
+        ],
+        "q_squared": "-128/25",
+        "subset": [
+          1,
+          2,
+          3
+        ],
+        "weight": 5
+      },
+      {
+        "D": "2",
+        "delta": "0",
+        "family": "RESONANT_NULL",
+        "mask": 22,
+        "q": [
+          "1",
+          "-3/5",
+          "-4*c/5",
+          "-4*sqrt(-(c - 1)*(c + 1))/5"
+        ],
+        "q_squared": "0",
+        "subset": [
+          1,
+          2,
+          4
+        ],
+        "weight": 6
+      },
+      {
+        "D": "2*(sqrt(17 - 8*c) + 3)/5",
+        "delta": "-2*(sqrt(17 - 8*c) - 3)/5",
+        "family": "T_EXCHANGE",
+        "mask": 26,
+        "q": [
+          "6/5",
+          "6/5",
+          "4*(c - 1)/5",
+          "4*sqrt(-(c - 1)*(c + 1))/5"
+        ],
+        "q_squared": "32*(c - 1)/25",
+        "subset": [
+          1,
+          3,
+          4
+        ],
+        "weight": 5
+      },
+      {
+        "D": "2*(sqrt(8*c + 17) + 3)/5",
+        "delta": "-2*(sqrt(8*c + 17) - 3)/5",
+        "family": "U_EXCHANGE",
+        "mask": 28,
+        "q": [
+          "6/5",
+          "6/5",
+          "4*(c + 1)/5",
+          "4*sqrt(-(c - 1)*(c + 1))/5"
+        ],
+        "q_squared": "-32*(c + 1)/25",
+        "subset": [
+          2,
+          3,
+          4
+        ],
+        "weight": 5
+      }
+    ],
+    "status": "ALL_TEN_CHANNEL_FUNCTIONS_COMPUTED_EXACTLY",
+    "t_exchange_masks": [
+      19,
+      26
+    ],
+    "u_exchange_masks": [
+      21,
+      28
+    ]
+  },
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_continuous_angle_q6_family.py --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_continuous_angle_q6_family.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_continuous_angle_q6_family"
+  ]
+}
