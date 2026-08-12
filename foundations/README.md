@@ -282,6 +282,48 @@ and output hash in [`site/manifest.json`](site/manifest.json). Browser claims
 are projections of the authoritative JSON artifacts, not a separately edited
 scientific catalogue.
 
+The append-only
+[`migration-reviewed cube v2`](reports/refined-intersection-cube-v2.md) clears
+the 112 v1 migration questions without confusing evidence transfer with
+scientific coverage.  Its explicit
+[`decision ledger`](reports/intersection-cube-migration-audit-v2.md) reviews 12
+descendants of direct results first, batches 76 descendants of pieces-only
+parents by 18 repeated evidence sets, and decomposes 24 evidence-free parent
+gaps into child-specific programme gaps.  The result is 88
+`REVIEWED_NO_TRANSFER` cells with coverage `NOT_MAPPED`, 24 reviewed child
+gaps, and zero pending migrations.  `NOT_MAPPED` remains a non-absence state:
+
+```bash
+python3 foundations/audit_intersection_migrations.py --check
+python3 foundations/check_intersection_migration_audit.py
+python3 foundations/verify_intersection_migration_audit.py
+python3 foundations/refine_intersection_cube_v2.py --check
+python3 foundations/check_refined_intersection_cube_v2.py
+python3 foundations/verify_refined_intersection_cube_v2.py
+```
+
+The corresponding
+[`v2 static explorer`](site-v2/index.html) preserves the v1 deployment as a
+historical artifact and exposes coverage evidence separately from
+migration-review evidence.  All 452 emitted cells have reviewed migrations;
+the 124 remaining Cartesian complements are visibly `NOT_REVIEWED` rather
+than being folded into the migration audit:
+
+```bash
+python3 foundations/build_matrix_site_v2.py
+python3 foundations/build_matrix_site_v2.py --check
+python3 foundations/check_matrix_site_v2.py
+python3 foundations/verify_matrix_site_v2.py
+python3 -m unittest foundations.tests.test_intersection_migration_audit \
+  foundations.tests.test_refined_intersection_cube_v2 \
+  foundations.tests.test_matrix_site_v2
+python3 -m http.server 8000 --directory foundations/site-v2
+```
+
+The content-addressed v2 source bundle and manifest live under
+[`site-v2/`](site-v2/).  The inspector links each reviewed cell to the
+112-decision JSON ledger and its human-readable audit report.
+
 The bounded
 [`low-hanging cell closure audit`](reports/low-hanging-cell-closure-audit.md)
 imports the already-certified local BV cohomology and finite-cutoff dynamics,

@@ -1,0 +1,2356 @@
+{
+  "schema_version": "foundational-intersection-cube-migration-audit-v2",
+  "result_id": "FOUNDATIONAL_INTERSECTION_CUBE_MIGRATION_AUDIT_V2",
+  "result_kind": "EXPLICIT_MIGRATION_DECISION_LEDGER",
+  "lifecycle": "SEPARATED",
+  "created": "2026-08-12",
+  "repository_base_commit": "24e988693bd9ee6874bedf9de476202c949a2e7e",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "purpose": "Clear every v1 migration uncertainty without promoting parent evidence across refined child boundaries.",
+  "method": {
+    "coverage_and_migration_are_separate": true,
+    "evidence_batch_count": 18,
+    "review_rule": "A parent evidence set transfers only when its recorded supported statements and boundaries treat the child. Otherwise migration is reviewed-no-transfer and coverage remains NOT_MAPPED.",
+    "empty_gap_rule": "An evidence-free v0 priority gap becomes a child priority gap only after the child missing object is stated explicitly."
+  },
+  "summary": {
+    "v1_pending": 112,
+    "decisions": 112,
+    "decision_counts": {
+      "REVIEWED_CHILD_GAP": 24,
+      "REVIEWED_NO_TRANSFER": 88
+    },
+    "priority_counts": {
+      "EMPTY_PARENT_GAP_DECOMPOSITION": 24,
+      "PIECES_DESCENDANT_BATCH": 76,
+      "RESULT_DESCENDANT_FIRST": 12
+    },
+    "evidence_batch_counts": {
+      "AQFT_BV_ARCHITECTURE": 1,
+      "CONSTRUCTIVE_HILBERT_FOUNDATIONS": 6,
+      "CONSTRUCTIVE_TOPOS_DYNAMICS": 7,
+      "EFFECTIVE_CATEGORICAL_QUANTUM": 6,
+      "EMPTY_PARENT_GAP_DECOMPOSITION": 24,
+      "ENERGY_SPECTRAL_FRAGMENT": 2,
+      "FINITE_CONTEXTUAL_TOPOS": 7,
+      "FINITE_QUANTUM_RECONSTRUCTION": 8,
+      "LATTICE_DISCRETE_DYNAMICS": 4,
+      "LOCALIC_EFFECTIVE_SPECTRAL": 1,
+      "PT_KREIN_QFT": 6,
+      "PT_PSEUDOHERMITIAN_SPECTRAL": 3,
+      "REVERSE_FUNCTIONAL_ANALYSIS": 3,
+      "SYNTHETIC_GENERAL_RELATIVITY": 3,
+      "SYNTHETIC_GEOMETRY_LOCAL_BRST": 4,
+      "TOPOS_CONTEXT_STATE_DYNAMICS": 14,
+      "TOPOS_STATE_INTERNAL_DYNAMICS": 1,
+      "ZF_KREIN_SPECTRAL_QFT": 6,
+      "ZF_OPERATOR_FOUNDATIONS": 6
+    },
+    "pending_after_audit": 0
+  },
+  "evidence_batches": [
+    {
+      "id": "TOPOS_CONTEXT_STATE_DYNAMICS",
+      "evidence": [
+        "heunen-landsman-spitters-2009",
+        "doring-2008",
+        "brenna-flori-2012",
+        "harding-heunen-2019"
+      ],
+      "reviewed_scope": "Internal spectra, state measures, and one-parameter dynamics are reviewed; the records explicitly exclude causal propagation and interacting/renormalized field theory.",
+      "cell_count": 14,
+      "decision": "NO_TRANSFER_TO_LISTED_UNRESOLVED_CHILDREN"
+    },
+    {
+      "id": "FINITE_QUANTUM_RECONSTRUCTION",
+      "evidence": [
+        "gibbons-hoffman-wootters-2004",
+        "abramsky-coecke-2004",
+        "constantin-doring-2020"
+      ],
+      "reviewed_scope": "Finite phase-space, categorical protocol, and state-reconstruction results do not establish evolution well-posedness, causal propagation, or quantum field consistency obligations.",
+      "cell_count": 8,
+      "decision": "NO_TRANSFER_TO_LISTED_UNRESOLVED_CHILDREN"
+    },
+    {
+      "id": "CONSTRUCTIVE_TOPOS_DYNAMICS",
+      "evidence": [
+        "coquand-spitters-2009",
+        "heunen-landsman-spitters-2009",
+        "brenna-flori-2012"
+      ],
+      "reviewed_scope": "Constructive duality and internal one-parameter dynamics do not transfer to causal Green theory or interacting/renormalized field theory.",
+      "cell_count": 7,
+      "decision": "NO_TRANSFER_TO_LISTED_UNRESOLVED_CHILDREN"
+    },
+    {
+      "id": "FINITE_CONTEXTUAL_TOPOS",
+      "evidence": [
+        "harding-heunen-2019",
+        "constantin-doring-2020",
+        "abramsky-coecke-2004"
+      ],
+      "reviewed_scope": "Finite contextual and categorical structures do not establish causal propagation or the six quantum-consistency children.",
+      "cell_count": 7,
+      "decision": "NO_TRANSFER_TO_LISTED_UNRESOLVED_CHILDREN"
+    },
+    {
+      "id": "ZF_KREIN_SPECTRAL_QFT",
+      "evidence": [
+        "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1",
+        "mostafazadeh-2001",
+        "gottschalk-2004"
+      ],
+      "reviewed_scope": "The explicit Krein carrier, pseudo-Hermitian structure, and axiomatic indefinite-metric QFT do not construct the unresolved interaction or quantum-consistency children.",
+      "cell_count": 6,
+      "decision": "NO_TRANSFER_TO_LISTED_UNRESOLVED_CHILDREN"
+    },
+    {
+      "id": "PT_KREIN_QFT",
+      "evidence": [
+        "bender-boettcher-1998",
+        "mostafazadeh-2001",
+        "gottschalk-2004"
+      ],
+      "reviewed_scope": "Real-spectrum and indefinite-metric QFT results do not establish the unresolved interaction or quantum-consistency children.",
+      "cell_count": 6,
+      "decision": "NO_TRANSFER_TO_LISTED_UNRESOLVED_CHILDREN"
+    },
+    {
+      "id": "ZF_OPERATOR_FOUNDATIONS",
+      "evidence": [
+        "blackadar-farah-karagila-2026",
+        "blackadar-farah-2026",
+        "neumann-pape-streicher-2018"
+      ],
+      "reviewed_scope": "ZF operator theory and effective spectral representation do not establish interacting QFT, renormalized products, anomalies, QME restoration, or residual transfer.",
+      "cell_count": 6,
+      "decision": "NO_TRANSFER_TO_LISTED_UNRESOLVED_CHILDREN"
+    },
+    {
+      "id": "EFFECTIVE_CATEGORICAL_QUANTUM",
+      "evidence": [
+        "neumann-pape-streicher-2018",
+        "abramsky-coecke-2004"
+      ],
+      "reviewed_scope": "Effective spectral representation and categorical protocols do not establish the unresolved field-interaction and quantum-consistency children.",
+      "cell_count": 6,
+      "decision": "NO_TRANSFER_TO_LISTED_UNRESOLVED_CHILDREN"
+    },
+    {
+      "id": "CONSTRUCTIVE_HILBERT_FOUNDATIONS",
+      "evidence": [
+        "neumann-pape-streicher-2018",
+        "pour-el-richards-1981",
+        "bridges-svozil-2000",
+        "richman-bridges-1999"
+      ],
+      "reviewed_scope": "Constructive probability, Hilbert logic, effective spectra, and a representation-sensitive wave counterexample do not establish interacting or renormalized QFT children.",
+      "cell_count": 6,
+      "decision": "NO_TRANSFER_TO_LISTED_UNRESOLVED_CHILDREN"
+    },
+    {
+      "id": "SYNTHETIC_GEOMETRY_LOCAL_BRST",
+      "evidence": [
+        "grinkevich-1996",
+        "barnich-brandt-henneaux-2000"
+      ],
+      "reviewed_scope": "Synthetic classical geometry and local BRST classification do not construct or represent states, probabilities, or a physical state-selection rule.",
+      "cell_count": 4,
+      "decision": "NO_TRANSFER_TO_LISTED_UNRESOLVED_CHILDREN"
+    },
+    {
+      "id": "LATTICE_DISCRETE_DYNAMICS",
+      "evidence": [
+        "kogut-susskind-1975",
+        "zohar-burrello-2014",
+        "bahr-dittrich-2009",
+        "dittrich-2012"
+      ],
+      "reviewed_scope": "Lattice constraints and continuum-comparison programmes do not by themselves construct the four unresolved state/probability children.",
+      "cell_count": 4,
+      "decision": "NO_TRANSFER_TO_LISTED_UNRESOLVED_CHILDREN"
+    },
+    {
+      "id": "PT_PSEUDOHERMITIAN_SPECTRAL",
+      "evidence": [
+        "bender-boettcher-1998",
+        "mostafazadeh-2001"
+      ],
+      "reviewed_scope": "PT-symmetric and pseudo-Hermitian spectral structure does not supply state representation, normalized probabilities, or causal Green propagation.",
+      "cell_count": 3,
+      "decision": "NO_TRANSFER_TO_LISTED_UNRESOLVED_CHILDREN"
+    },
+    {
+      "id": "REVERSE_FUNCTIONAL_ANALYSIS",
+      "evidence": [
+        "brown-simpson-1986",
+        "humphreys-simpson-1999",
+        "humphreys-simpson-1996",
+        "brattka-2008"
+      ],
+      "reviewed_scope": "Logical-strength results for separation and Hahn-Banach principles do not construct a generator, well-posed evolution, or a causal Green operator.",
+      "cell_count": 3,
+      "decision": "NO_TRANSFER_TO_LISTED_UNRESOLVED_CHILDREN"
+    },
+    {
+      "id": "SYNTHETIC_GENERAL_RELATIVITY",
+      "evidence": [
+        "grinkevich-1996"
+      ],
+      "reviewed_scope": "The reviewed synthetic Einstein-equation formulation does not construct spectral generators, prove evolution well-posedness, or provide causal Green maps.",
+      "cell_count": 3,
+      "decision": "NO_TRANSFER_TO_LISTED_UNRESOLVED_CHILDREN"
+    },
+    {
+      "id": "ENERGY_SPECTRAL_FRAGMENT",
+      "evidence": [
+        "FOUNDATIONAL_EXPLICIT_ENERGY_SPECTRAL_FRAGMENT_ZF_V1"
+      ],
+      "reviewed_scope": "The exact energy spectrum is a reduced-mode spectral result and explicitly does not establish causal support or a Green operator.",
+      "cell_count": 2,
+      "decision": "NO_TRANSFER_TO_LISTED_UNRESOLVED_CHILDREN"
+    },
+    {
+      "id": "AQFT_BV_ARCHITECTURE",
+      "evidence": [
+        "barnich-brandt-henneaux-2000",
+        "brunetti-fredenhagen-verch-2001",
+        "fredenhagen-rejzner-2011",
+        "brunetti-fredenhagen-rejzner-2013"
+      ],
+      "reviewed_scope": "AQFT state-space and BV-renormalization architecture does not derive a normalized probability rule for the Weyl metric theory.",
+      "cell_count": 1,
+      "decision": "NO_TRANSFER_TO_LISTED_UNRESOLVED_CHILDREN"
+    },
+    {
+      "id": "LOCALIC_EFFECTIVE_SPECTRAL",
+      "evidence": [
+        "coquand-spitters-2009",
+        "henry-2014",
+        "neumann-pape-streicher-2018"
+      ],
+      "reviewed_scope": "Localic duality and effective spectral representation do not construct localized causal Green propagation.",
+      "cell_count": 1,
+      "decision": "NO_TRANSFER_TO_LISTED_UNRESOLVED_CHILDREN"
+    },
+    {
+      "id": "TOPOS_STATE_INTERNAL_DYNAMICS",
+      "evidence": [
+        "doring-2008",
+        "brenna-flori-2012",
+        "harding-heunen-2019"
+      ],
+      "reviewed_scope": "State measures and internal one-parameter groups do not establish spacetime support or causal Green propagation.",
+      "cell_count": 1,
+      "decision": "NO_TRANSFER_TO_LISTED_UNRESOLVED_CHILDREN"
+    }
+  ],
+  "decisions": [
+    {
+      "coordinate": "CLASSICAL_STANDARD|HILBERT_OPERATOR|ANOMALY_CLASSIFICATION",
+      "foundation": "CLASSICAL_STANDARD",
+      "carrier": "HILBERT_OPERATOR",
+      "obligation": "ANOMALY_CLASSIFICATION",
+      "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
+      "v0_parent_status": "PIECES_ONLY",
+      "parent_evidence": [
+        "neumann-pape-streicher-2018",
+        "abramsky-coecke-2004"
+      ],
+      "review_batch": "EFFECTIVE_CATEGORICAL_QUANTUM",
+      "review_priority": "PIECES_DESCENDANT_BATCH",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "Effective spectral representation and categorical protocols do not establish the unresolved field-interaction and quantum-consistency children. No reviewed record in the batch classifies anomalies in this refined coordinate.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "CLASSICAL_STANDARD|HILBERT_OPERATOR|CAUSAL_PROPAGATION_GREEN",
+      "foundation": "CLASSICAL_STANDARD",
+      "carrier": "HILBERT_OPERATOR",
+      "obligation": "CAUSAL_PROPAGATION_GREEN",
+      "parent_obligation": "DYNAMICS_PROPAGATION",
+      "v0_parent_status": "LOCAL_RESULT",
+      "parent_evidence": [
+        "FOUNDATIONAL_EXPLICIT_ENERGY_SPECTRAL_FRAGMENT_ZF_V1"
+      ],
+      "review_batch": "ENERGY_SPECTRAL_FRAGMENT",
+      "review_priority": "RESULT_DESCENDANT_FIRST",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "The exact energy spectrum is a reduced-mode spectral result and explicitly does not establish causal support or a Green operator. No reviewed record in the batch constructs advanced/retarded maps with causal support.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "CLASSICAL_STANDARD|HILBERT_OPERATOR|COUNTERTERM_CLASSIFICATION",
+      "foundation": "CLASSICAL_STANDARD",
+      "carrier": "HILBERT_OPERATOR",
+      "obligation": "COUNTERTERM_CLASSIFICATION",
+      "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
+      "v0_parent_status": "PIECES_ONLY",
+      "parent_evidence": [
+        "neumann-pape-streicher-2018",
+        "abramsky-coecke-2004"
+      ],
+      "review_batch": "EFFECTIVE_CATEGORICAL_QUANTUM",
+      "review_priority": "PIECES_DESCENDANT_BATCH",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "Effective spectral representation and categorical protocols do not establish the unresolved field-interaction and quantum-consistency children. No reviewed record in the batch classifies counterterms in this refined coordinate.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "CLASSICAL_STANDARD|HILBERT_OPERATOR|INTERACTION_CONSTRUCTION",
+      "foundation": "CLASSICAL_STANDARD",
+      "carrier": "HILBERT_OPERATOR",
+      "obligation": "INTERACTION_CONSTRUCTION",
+      "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
+      "v0_parent_status": "PIECES_ONLY",
+      "parent_evidence": [
+        "neumann-pape-streicher-2018",
+        "abramsky-coecke-2004"
+      ],
+      "review_batch": "EFFECTIVE_CATEGORICAL_QUANTUM",
+      "review_priority": "PIECES_DESCENDANT_BATCH",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "Effective spectral representation and categorical protocols do not establish the unresolved field-interaction and quantum-consistency children. No reviewed record in the batch constructs the required interaction in this refined coordinate.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "CLASSICAL_STANDARD|HILBERT_OPERATOR|QME_RESTORATION",
+      "foundation": "CLASSICAL_STANDARD",
+      "carrier": "HILBERT_OPERATOR",
+      "obligation": "QME_RESTORATION",
+      "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
+      "v0_parent_status": "PIECES_ONLY",
+      "parent_evidence": [
+        "neumann-pape-streicher-2018",
+        "abramsky-coecke-2004"
+      ],
+      "review_batch": "EFFECTIVE_CATEGORICAL_QUANTUM",
+      "review_priority": "PIECES_DESCENDANT_BATCH",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "Effective spectral representation and categorical protocols do not establish the unresolved field-interaction and quantum-consistency children. No reviewed record in the batch restores the quantum master equation in this refined coordinate.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "CLASSICAL_STANDARD|HILBERT_OPERATOR|RENORMALIZED_PRODUCTS",
+      "foundation": "CLASSICAL_STANDARD",
+      "carrier": "HILBERT_OPERATOR",
+      "obligation": "RENORMALIZED_PRODUCTS",
+      "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
+      "v0_parent_status": "PIECES_ONLY",
+      "parent_evidence": [
+        "neumann-pape-streicher-2018",
+        "abramsky-coecke-2004"
+      ],
+      "review_batch": "EFFECTIVE_CATEGORICAL_QUANTUM",
+      "review_priority": "PIECES_DESCENDANT_BATCH",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "Effective spectral representation and categorical protocols do not establish the unresolved field-interaction and quantum-consistency children. No reviewed record in the batch constructs renormalized products in this refined coordinate.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "CLASSICAL_STANDARD|HILBERT_OPERATOR|RESIDUAL_QUANTUM_TRANSFER",
+      "foundation": "CLASSICAL_STANDARD",
+      "carrier": "HILBERT_OPERATOR",
+      "obligation": "RESIDUAL_QUANTUM_TRANSFER",
+      "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
+      "v0_parent_status": "PIECES_ONLY",
+      "parent_evidence": [
+        "neumann-pape-streicher-2018",
+        "abramsky-coecke-2004"
+      ],
+      "review_batch": "EFFECTIVE_CATEGORICAL_QUANTUM",
+      "review_priority": "PIECES_DESCENDANT_BATCH",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "Effective spectral representation and categorical protocols do not establish the unresolved field-interaction and quantum-consistency children. No reviewed record in the batch transfers a restored quantum correction to the residual complex.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "CLASSICAL_STANDARD|KREIN_INDEFINITE|ANOMALY_CLASSIFICATION",
+      "foundation": "CLASSICAL_STANDARD",
+      "carrier": "KREIN_INDEFINITE",
+      "obligation": "ANOMALY_CLASSIFICATION",
+      "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
+      "v0_parent_status": "PIECES_ONLY",
+      "parent_evidence": [
+        "bender-boettcher-1998",
+        "mostafazadeh-2001",
+        "gottschalk-2004"
+      ],
+      "review_batch": "PT_KREIN_QFT",
+      "review_priority": "PIECES_DESCENDANT_BATCH",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "Real-spectrum and indefinite-metric QFT results do not establish the unresolved interaction or quantum-consistency children. No reviewed record in the batch classifies anomalies in this refined coordinate.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "CLASSICAL_STANDARD|KREIN_INDEFINITE|COUNTERTERM_CLASSIFICATION",
+      "foundation": "CLASSICAL_STANDARD",
+      "carrier": "KREIN_INDEFINITE",
+      "obligation": "COUNTERTERM_CLASSIFICATION",
+      "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
+      "v0_parent_status": "PIECES_ONLY",
+      "parent_evidence": [
+        "bender-boettcher-1998",
+        "mostafazadeh-2001",
+        "gottschalk-2004"
+      ],
+      "review_batch": "PT_KREIN_QFT",
+      "review_priority": "PIECES_DESCENDANT_BATCH",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "Real-spectrum and indefinite-metric QFT results do not establish the unresolved interaction or quantum-consistency children. No reviewed record in the batch classifies counterterms in this refined coordinate.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "CLASSICAL_STANDARD|KREIN_INDEFINITE|INTERACTION_CONSTRUCTION",
+      "foundation": "CLASSICAL_STANDARD",
+      "carrier": "KREIN_INDEFINITE",
+      "obligation": "INTERACTION_CONSTRUCTION",
+      "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
+      "v0_parent_status": "PIECES_ONLY",
+      "parent_evidence": [
+        "bender-boettcher-1998",
+        "mostafazadeh-2001",
+        "gottschalk-2004"
+      ],
+      "review_batch": "PT_KREIN_QFT",
+      "review_priority": "PIECES_DESCENDANT_BATCH",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "Real-spectrum and indefinite-metric QFT results do not establish the unresolved interaction or quantum-consistency children. No reviewed record in the batch constructs the required interaction in this refined coordinate.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "CLASSICAL_STANDARD|KREIN_INDEFINITE|QME_RESTORATION",
+      "foundation": "CLASSICAL_STANDARD",
+      "carrier": "KREIN_INDEFINITE",
+      "obligation": "QME_RESTORATION",
+      "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
+      "v0_parent_status": "PIECES_ONLY",
+      "parent_evidence": [
+        "bender-boettcher-1998",
+        "mostafazadeh-2001",
+        "gottschalk-2004"
+      ],
+      "review_batch": "PT_KREIN_QFT",
+      "review_priority": "PIECES_DESCENDANT_BATCH",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "Real-spectrum and indefinite-metric QFT results do not establish the unresolved interaction or quantum-consistency children. No reviewed record in the batch restores the quantum master equation in this refined coordinate.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "CLASSICAL_STANDARD|KREIN_INDEFINITE|RENORMALIZED_PRODUCTS",
+      "foundation": "CLASSICAL_STANDARD",
+      "carrier": "KREIN_INDEFINITE",
+      "obligation": "RENORMALIZED_PRODUCTS",
+      "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
+      "v0_parent_status": "PIECES_ONLY",
+      "parent_evidence": [
+        "bender-boettcher-1998",
+        "mostafazadeh-2001",
+        "gottschalk-2004"
+      ],
+      "review_batch": "PT_KREIN_QFT",
+      "review_priority": "PIECES_DESCENDANT_BATCH",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "Real-spectrum and indefinite-metric QFT results do not establish the unresolved interaction or quantum-consistency children. No reviewed record in the batch constructs renormalized products in this refined coordinate.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "CLASSICAL_STANDARD|KREIN_INDEFINITE|RESIDUAL_QUANTUM_TRANSFER",
+      "foundation": "CLASSICAL_STANDARD",
+      "carrier": "KREIN_INDEFINITE",
+      "obligation": "RESIDUAL_QUANTUM_TRANSFER",
+      "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
+      "v0_parent_status": "PIECES_ONLY",
+      "parent_evidence": [
+        "bender-boettcher-1998",
+        "mostafazadeh-2001",
+        "gottschalk-2004"
+      ],
+      "review_batch": "PT_KREIN_QFT",
+      "review_priority": "PIECES_DESCENDANT_BATCH",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "Real-spectrum and indefinite-metric QFT results do not establish the unresolved interaction or quantum-consistency children. No reviewed record in the batch transfers a restored quantum correction to the residual complex.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "CLASSICAL_STANDARD|LOCALIC_SYNTHETIC|ANOMALY_CLASSIFICATION",
+      "foundation": "CLASSICAL_STANDARD",
+      "carrier": "LOCALIC_SYNTHETIC",
+      "obligation": "ANOMALY_CLASSIFICATION",
+      "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
+      "v0_parent_status": "PIECES_ONLY",
+      "parent_evidence": [
+        "heunen-landsman-spitters-2009",
+        "doring-2008",
+        "brenna-flori-2012",
+        "harding-heunen-2019"
+      ],
+      "review_batch": "TOPOS_CONTEXT_STATE_DYNAMICS",
+      "review_priority": "PIECES_DESCENDANT_BATCH",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "Internal spectra, state measures, and one-parameter dynamics are reviewed; the records explicitly exclude causal propagation and interacting/renormalized field theory. No reviewed record in the batch classifies anomalies in this refined coordinate.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "CLASSICAL_STANDARD|LOCALIC_SYNTHETIC|CAUSAL_PROPAGATION_GREEN",
+      "foundation": "CLASSICAL_STANDARD",
+      "carrier": "LOCALIC_SYNTHETIC",
+      "obligation": "CAUSAL_PROPAGATION_GREEN",
+      "parent_obligation": "DYNAMICS_PROPAGATION",
+      "v0_parent_status": "LITERATURE_RESULT",
+      "parent_evidence": [
+        "heunen-landsman-spitters-2009",
+        "doring-2008",
+        "brenna-flori-2012",
+        "harding-heunen-2019"
+      ],
+      "review_batch": "TOPOS_CONTEXT_STATE_DYNAMICS",
+      "review_priority": "RESULT_DESCENDANT_FIRST",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "Internal spectra, state measures, and one-parameter dynamics are reviewed; the records explicitly exclude causal propagation and interacting/renormalized field theory. No reviewed record in the batch constructs advanced/retarded maps with causal support.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "CLASSICAL_STANDARD|LOCALIC_SYNTHETIC|COUNTERTERM_CLASSIFICATION",
+      "foundation": "CLASSICAL_STANDARD",
+      "carrier": "LOCALIC_SYNTHETIC",
+      "obligation": "COUNTERTERM_CLASSIFICATION",
+      "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
+      "v0_parent_status": "PIECES_ONLY",
+      "parent_evidence": [
+        "heunen-landsman-spitters-2009",
+        "doring-2008",
+        "brenna-flori-2012",
+        "harding-heunen-2019"
+      ],
+      "review_batch": "TOPOS_CONTEXT_STATE_DYNAMICS",
+      "review_priority": "PIECES_DESCENDANT_BATCH",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "Internal spectra, state measures, and one-parameter dynamics are reviewed; the records explicitly exclude causal propagation and interacting/renormalized field theory. No reviewed record in the batch classifies counterterms in this refined coordinate.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "CLASSICAL_STANDARD|LOCALIC_SYNTHETIC|INTERACTION_CONSTRUCTION",
+      "foundation": "CLASSICAL_STANDARD",
+      "carrier": "LOCALIC_SYNTHETIC",
+      "obligation": "INTERACTION_CONSTRUCTION",
+      "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
+      "v0_parent_status": "PIECES_ONLY",
+      "parent_evidence": [
+        "heunen-landsman-spitters-2009",
+        "doring-2008",
+        "brenna-flori-2012",
+        "harding-heunen-2019"
+      ],
+      "review_batch": "TOPOS_CONTEXT_STATE_DYNAMICS",
+      "review_priority": "PIECES_DESCENDANT_BATCH",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "Internal spectra, state measures, and one-parameter dynamics are reviewed; the records explicitly exclude causal propagation and interacting/renormalized field theory. No reviewed record in the batch constructs the required interaction in this refined coordinate.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "CLASSICAL_STANDARD|LOCALIC_SYNTHETIC|QME_RESTORATION",
+      "foundation": "CLASSICAL_STANDARD",
+      "carrier": "LOCALIC_SYNTHETIC",
+      "obligation": "QME_RESTORATION",
+      "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
+      "v0_parent_status": "PIECES_ONLY",
+      "parent_evidence": [
+        "heunen-landsman-spitters-2009",
+        "doring-2008",
+        "brenna-flori-2012",
+        "harding-heunen-2019"
+      ],
+      "review_batch": "TOPOS_CONTEXT_STATE_DYNAMICS",
+      "review_priority": "PIECES_DESCENDANT_BATCH",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "Internal spectra, state measures, and one-parameter dynamics are reviewed; the records explicitly exclude causal propagation and interacting/renormalized field theory. No reviewed record in the batch restores the quantum master equation in this refined coordinate.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "CLASSICAL_STANDARD|LOCALIC_SYNTHETIC|RENORMALIZED_PRODUCTS",
+      "foundation": "CLASSICAL_STANDARD",
+      "carrier": "LOCALIC_SYNTHETIC",
+      "obligation": "RENORMALIZED_PRODUCTS",
+      "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
+      "v0_parent_status": "PIECES_ONLY",
+      "parent_evidence": [
+        "heunen-landsman-spitters-2009",
+        "doring-2008",
+        "brenna-flori-2012",
+        "harding-heunen-2019"
+      ],
+      "review_batch": "TOPOS_CONTEXT_STATE_DYNAMICS",
+      "review_priority": "PIECES_DESCENDANT_BATCH",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "Internal spectra, state measures, and one-parameter dynamics are reviewed; the records explicitly exclude causal propagation and interacting/renormalized field theory. No reviewed record in the batch constructs renormalized products in this refined coordinate.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "CLASSICAL_STANDARD|LOCALIC_SYNTHETIC|RESIDUAL_QUANTUM_TRANSFER",
+      "foundation": "CLASSICAL_STANDARD",
+      "carrier": "LOCALIC_SYNTHETIC",
+      "obligation": "RESIDUAL_QUANTUM_TRANSFER",
+      "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
+      "v0_parent_status": "PIECES_ONLY",
+      "parent_evidence": [
+        "heunen-landsman-spitters-2009",
+        "doring-2008",
+        "brenna-flori-2012",
+        "harding-heunen-2019"
+      ],
+      "review_batch": "TOPOS_CONTEXT_STATE_DYNAMICS",
+      "review_priority": "PIECES_DESCENDANT_BATCH",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "Internal spectra, state measures, and one-parameter dynamics are reviewed; the records explicitly exclude causal propagation and interacting/renormalized field theory. No reviewed record in the batch transfers a restored quantum correction to the residual complex.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "CLASSICAL_STANDARD|SMOOTH_DISTRIBUTIONAL|PROBABILITY_RULE",
+      "foundation": "CLASSICAL_STANDARD",
+      "carrier": "SMOOTH_DISTRIBUTIONAL",
+      "obligation": "PROBABILITY_RULE",
+      "parent_obligation": "STATES_PROBABILITY",
+      "v0_parent_status": "LITERATURE_RESULT",
+      "parent_evidence": [
+        "barnich-brandt-henneaux-2000",
+        "brunetti-fredenhagen-verch-2001",
+        "fredenhagen-rejzner-2011",
+        "brunetti-fredenhagen-rejzner-2013"
+      ],
+      "review_batch": "AQFT_BV_ARCHITECTURE",
+      "review_priority": "RESULT_DESCENDANT_FIRST",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "AQFT state-space and BV-renormalization architecture does not derive a normalized probability rule for the Weyl metric theory. No reviewed record in the batch derives the required normalized event-probability rule.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "CONSTRUCTIVE_COMPUTABLE|ALGEBRAIC_CSTAR|CAUSAL_PROPAGATION_GREEN",
+      "foundation": "CONSTRUCTIVE_COMPUTABLE",
+      "carrier": "ALGEBRAIC_CSTAR",
+      "obligation": "CAUSAL_PROPAGATION_GREEN",
+      "parent_obligation": "DYNAMICS_PROPAGATION",
+      "v0_parent_status": "PIECES_ONLY",
+      "parent_evidence": [
+        "coquand-spitters-2009",
+        "henry-2014",
+        "neumann-pape-streicher-2018"
+      ],
+      "review_batch": "LOCALIC_EFFECTIVE_SPECTRAL",
+      "review_priority": "PIECES_DESCENDANT_BATCH",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "Localic duality and effective spectral representation do not construct localized causal Green propagation. No reviewed record in the batch constructs advanced/retarded maps with causal support.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "CONSTRUCTIVE_COMPUTABLE|HILBERT_OPERATOR|ANOMALY_CLASSIFICATION",
+      "foundation": "CONSTRUCTIVE_COMPUTABLE",
+      "carrier": "HILBERT_OPERATOR",
+      "obligation": "ANOMALY_CLASSIFICATION",
+      "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
+      "v0_parent_status": "PIECES_ONLY",
+      "parent_evidence": [
+        "neumann-pape-streicher-2018",
+        "pour-el-richards-1981",
+        "bridges-svozil-2000",
+        "richman-bridges-1999"
+      ],
+      "review_batch": "CONSTRUCTIVE_HILBERT_FOUNDATIONS",
+      "review_priority": "PIECES_DESCENDANT_BATCH",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "Constructive probability, Hilbert logic, effective spectra, and a representation-sensitive wave counterexample do not establish interacting or renormalized QFT children. No reviewed record in the batch classifies anomalies in this refined coordinate.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "CONSTRUCTIVE_COMPUTABLE|HILBERT_OPERATOR|COUNTERTERM_CLASSIFICATION",
+      "foundation": "CONSTRUCTIVE_COMPUTABLE",
+      "carrier": "HILBERT_OPERATOR",
+      "obligation": "COUNTERTERM_CLASSIFICATION",
+      "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
+      "v0_parent_status": "PIECES_ONLY",
+      "parent_evidence": [
+        "neumann-pape-streicher-2018",
+        "pour-el-richards-1981",
+        "bridges-svozil-2000",
+        "richman-bridges-1999"
+      ],
+      "review_batch": "CONSTRUCTIVE_HILBERT_FOUNDATIONS",
+      "review_priority": "PIECES_DESCENDANT_BATCH",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "Constructive probability, Hilbert logic, effective spectra, and a representation-sensitive wave counterexample do not establish interacting or renormalized QFT children. No reviewed record in the batch classifies counterterms in this refined coordinate.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "CONSTRUCTIVE_COMPUTABLE|HILBERT_OPERATOR|INTERACTION_CONSTRUCTION",
+      "foundation": "CONSTRUCTIVE_COMPUTABLE",
+      "carrier": "HILBERT_OPERATOR",
+      "obligation": "INTERACTION_CONSTRUCTION",
+      "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
+      "v0_parent_status": "PIECES_ONLY",
+      "parent_evidence": [
+        "neumann-pape-streicher-2018",
+        "pour-el-richards-1981",
+        "bridges-svozil-2000",
+        "richman-bridges-1999"
+      ],
+      "review_batch": "CONSTRUCTIVE_HILBERT_FOUNDATIONS",
+      "review_priority": "PIECES_DESCENDANT_BATCH",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "Constructive probability, Hilbert logic, effective spectra, and a representation-sensitive wave counterexample do not establish interacting or renormalized QFT children. No reviewed record in the batch constructs the required interaction in this refined coordinate.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "CONSTRUCTIVE_COMPUTABLE|HILBERT_OPERATOR|QME_RESTORATION",
+      "foundation": "CONSTRUCTIVE_COMPUTABLE",
+      "carrier": "HILBERT_OPERATOR",
+      "obligation": "QME_RESTORATION",
+      "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
+      "v0_parent_status": "PIECES_ONLY",
+      "parent_evidence": [
+        "neumann-pape-streicher-2018",
+        "pour-el-richards-1981",
+        "bridges-svozil-2000",
+        "richman-bridges-1999"
+      ],
+      "review_batch": "CONSTRUCTIVE_HILBERT_FOUNDATIONS",
+      "review_priority": "PIECES_DESCENDANT_BATCH",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "Constructive probability, Hilbert logic, effective spectra, and a representation-sensitive wave counterexample do not establish interacting or renormalized QFT children. No reviewed record in the batch restores the quantum master equation in this refined coordinate.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "CONSTRUCTIVE_COMPUTABLE|HILBERT_OPERATOR|RENORMALIZED_PRODUCTS",
+      "foundation": "CONSTRUCTIVE_COMPUTABLE",
+      "carrier": "HILBERT_OPERATOR",
+      "obligation": "RENORMALIZED_PRODUCTS",
+      "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
+      "v0_parent_status": "PIECES_ONLY",
+      "parent_evidence": [
+        "neumann-pape-streicher-2018",
+        "pour-el-richards-1981",
+        "bridges-svozil-2000",
+        "richman-bridges-1999"
+      ],
+      "review_batch": "CONSTRUCTIVE_HILBERT_FOUNDATIONS",
+      "review_priority": "PIECES_DESCENDANT_BATCH",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "Constructive probability, Hilbert logic, effective spectra, and a representation-sensitive wave counterexample do not establish interacting or renormalized QFT children. No reviewed record in the batch constructs renormalized products in this refined coordinate.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "CONSTRUCTIVE_COMPUTABLE|HILBERT_OPERATOR|RESIDUAL_QUANTUM_TRANSFER",
+      "foundation": "CONSTRUCTIVE_COMPUTABLE",
+      "carrier": "HILBERT_OPERATOR",
+      "obligation": "RESIDUAL_QUANTUM_TRANSFER",
+      "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
+      "v0_parent_status": "PIECES_ONLY",
+      "parent_evidence": [
+        "neumann-pape-streicher-2018",
+        "pour-el-richards-1981",
+        "bridges-svozil-2000",
+        "richman-bridges-1999"
+      ],
+      "review_batch": "CONSTRUCTIVE_HILBERT_FOUNDATIONS",
+      "review_priority": "PIECES_DESCENDANT_BATCH",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "Constructive probability, Hilbert logic, effective spectra, and a representation-sensitive wave counterexample do not establish interacting or renormalized QFT children. No reviewed record in the batch transfers a restored quantum correction to the residual complex.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "CONSTRUCTIVE_COMPUTABLE|KREIN_INDEFINITE|CAUSAL_PROPAGATION_GREEN",
+      "foundation": "CONSTRUCTIVE_COMPUTABLE",
+      "carrier": "KREIN_INDEFINITE",
+      "obligation": "CAUSAL_PROPAGATION_GREEN",
+      "parent_obligation": "DYNAMICS_PROPAGATION",
+      "v0_parent_status": "PIECES_ONLY",
+      "parent_evidence": [
+        "bender-boettcher-1998",
+        "mostafazadeh-2001"
+      ],
+      "review_batch": "PT_PSEUDOHERMITIAN_SPECTRAL",
+      "review_priority": "PIECES_DESCENDANT_BATCH",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "PT-symmetric and pseudo-Hermitian spectral structure does not supply state representation, normalized probabilities, or causal Green propagation. No reviewed record in the batch constructs advanced/retarded maps with causal support.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "CONSTRUCTIVE_COMPUTABLE|KREIN_INDEFINITE|PROBABILITY_RULE",
+      "foundation": "CONSTRUCTIVE_COMPUTABLE",
+      "carrier": "KREIN_INDEFINITE",
+      "obligation": "PROBABILITY_RULE",
+      "parent_obligation": "STATES_PROBABILITY",
+      "v0_parent_status": "PIECES_ONLY",
+      "parent_evidence": [
+        "bender-boettcher-1998",
+        "mostafazadeh-2001"
+      ],
+      "review_batch": "PT_PSEUDOHERMITIAN_SPECTRAL",
+      "review_priority": "PIECES_DESCENDANT_BATCH",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "PT-symmetric and pseudo-Hermitian spectral structure does not supply state representation, normalized probabilities, or causal Green propagation. No reviewed record in the batch derives the required normalized event-probability rule.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "CONSTRUCTIVE_COMPUTABLE|KREIN_INDEFINITE|STATE_REPRESENTATION",
+      "foundation": "CONSTRUCTIVE_COMPUTABLE",
+      "carrier": "KREIN_INDEFINITE",
+      "obligation": "STATE_REPRESENTATION",
+      "parent_obligation": "STATES_PROBABILITY",
+      "v0_parent_status": "PIECES_ONLY",
+      "parent_evidence": [
+        "bender-boettcher-1998",
+        "mostafazadeh-2001"
+      ],
+      "review_batch": "PT_PSEUDOHERMITIAN_SPECTRAL",
+      "review_priority": "PIECES_DESCENDANT_BATCH",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "PT-symmetric and pseudo-Hermitian spectral structure does not supply state representation, normalized probabilities, or causal Green propagation. No reviewed record in the batch supplies the required state representation in this refined coordinate.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "CONSTRUCTIVE_COMPUTABLE|LOCALIC_SYNTHETIC|ANOMALY_CLASSIFICATION",
+      "foundation": "CONSTRUCTIVE_COMPUTABLE",
+      "carrier": "LOCALIC_SYNTHETIC",
+      "obligation": "ANOMALY_CLASSIFICATION",
+      "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
+      "v0_parent_status": "PIECES_ONLY",
+      "parent_evidence": [
+        "coquand-spitters-2009",
+        "heunen-landsman-spitters-2009",
+        "brenna-flori-2012"
+      ],
+      "review_batch": "CONSTRUCTIVE_TOPOS_DYNAMICS",
+      "review_priority": "PIECES_DESCENDANT_BATCH",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "Constructive duality and internal one-parameter dynamics do not transfer to causal Green theory or interacting/renormalized field theory. No reviewed record in the batch classifies anomalies in this refined coordinate.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "CONSTRUCTIVE_COMPUTABLE|LOCALIC_SYNTHETIC|CAUSAL_PROPAGATION_GREEN",
+      "foundation": "CONSTRUCTIVE_COMPUTABLE",
+      "carrier": "LOCALIC_SYNTHETIC",
+      "obligation": "CAUSAL_PROPAGATION_GREEN",
+      "parent_obligation": "DYNAMICS_PROPAGATION",
+      "v0_parent_status": "LITERATURE_RESULT",
+      "parent_evidence": [
+        "coquand-spitters-2009",
+        "heunen-landsman-spitters-2009",
+        "brenna-flori-2012"
+      ],
+      "review_batch": "CONSTRUCTIVE_TOPOS_DYNAMICS",
+      "review_priority": "RESULT_DESCENDANT_FIRST",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "Constructive duality and internal one-parameter dynamics do not transfer to causal Green theory or interacting/renormalized field theory. No reviewed record in the batch constructs advanced/retarded maps with causal support.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "CONSTRUCTIVE_COMPUTABLE|LOCALIC_SYNTHETIC|COUNTERTERM_CLASSIFICATION",
+      "foundation": "CONSTRUCTIVE_COMPUTABLE",
+      "carrier": "LOCALIC_SYNTHETIC",
+      "obligation": "COUNTERTERM_CLASSIFICATION",
+      "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
+      "v0_parent_status": "PIECES_ONLY",
+      "parent_evidence": [
+        "coquand-spitters-2009",
+        "heunen-landsman-spitters-2009",
+        "brenna-flori-2012"
+      ],
+      "review_batch": "CONSTRUCTIVE_TOPOS_DYNAMICS",
+      "review_priority": "PIECES_DESCENDANT_BATCH",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "Constructive duality and internal one-parameter dynamics do not transfer to causal Green theory or interacting/renormalized field theory. No reviewed record in the batch classifies counterterms in this refined coordinate.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "CONSTRUCTIVE_COMPUTABLE|LOCALIC_SYNTHETIC|INTERACTION_CONSTRUCTION",
+      "foundation": "CONSTRUCTIVE_COMPUTABLE",
+      "carrier": "LOCALIC_SYNTHETIC",
+      "obligation": "INTERACTION_CONSTRUCTION",
+      "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
+      "v0_parent_status": "PIECES_ONLY",
+      "parent_evidence": [
+        "coquand-spitters-2009",
+        "heunen-landsman-spitters-2009",
+        "brenna-flori-2012"
+      ],
+      "review_batch": "CONSTRUCTIVE_TOPOS_DYNAMICS",
+      "review_priority": "PIECES_DESCENDANT_BATCH",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "Constructive duality and internal one-parameter dynamics do not transfer to causal Green theory or interacting/renormalized field theory. No reviewed record in the batch constructs the required interaction in this refined coordinate.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "CONSTRUCTIVE_COMPUTABLE|LOCALIC_SYNTHETIC|QME_RESTORATION",
+      "foundation": "CONSTRUCTIVE_COMPUTABLE",
+      "carrier": "LOCALIC_SYNTHETIC",
+      "obligation": "QME_RESTORATION",
+      "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
+      "v0_parent_status": "PIECES_ONLY",
+      "parent_evidence": [
+        "coquand-spitters-2009",
+        "heunen-landsman-spitters-2009",
+        "brenna-flori-2012"
+      ],
+      "review_batch": "CONSTRUCTIVE_TOPOS_DYNAMICS",
+      "review_priority": "PIECES_DESCENDANT_BATCH",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "Constructive duality and internal one-parameter dynamics do not transfer to causal Green theory or interacting/renormalized field theory. No reviewed record in the batch restores the quantum master equation in this refined coordinate.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "CONSTRUCTIVE_COMPUTABLE|LOCALIC_SYNTHETIC|RENORMALIZED_PRODUCTS",
+      "foundation": "CONSTRUCTIVE_COMPUTABLE",
+      "carrier": "LOCALIC_SYNTHETIC",
+      "obligation": "RENORMALIZED_PRODUCTS",
+      "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
+      "v0_parent_status": "PIECES_ONLY",
+      "parent_evidence": [
+        "coquand-spitters-2009",
+        "heunen-landsman-spitters-2009",
+        "brenna-flori-2012"
+      ],
+      "review_batch": "CONSTRUCTIVE_TOPOS_DYNAMICS",
+      "review_priority": "PIECES_DESCENDANT_BATCH",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "Constructive duality and internal one-parameter dynamics do not transfer to causal Green theory or interacting/renormalized field theory. No reviewed record in the batch constructs renormalized products in this refined coordinate.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "CONSTRUCTIVE_COMPUTABLE|LOCALIC_SYNTHETIC|RESIDUAL_QUANTUM_TRANSFER",
+      "foundation": "CONSTRUCTIVE_COMPUTABLE",
+      "carrier": "LOCALIC_SYNTHETIC",
+      "obligation": "RESIDUAL_QUANTUM_TRANSFER",
+      "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
+      "v0_parent_status": "PIECES_ONLY",
+      "parent_evidence": [
+        "coquand-spitters-2009",
+        "heunen-landsman-spitters-2009",
+        "brenna-flori-2012"
+      ],
+      "review_batch": "CONSTRUCTIVE_TOPOS_DYNAMICS",
+      "review_priority": "PIECES_DESCENDANT_BATCH",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "Constructive duality and internal one-parameter dynamics do not transfer to causal Green theory or interacting/renormalized field theory. No reviewed record in the batch transfers a restored quantum correction to the residual complex.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "CONSTRUCTIVE_COMPUTABLE|SMOOTH_DISTRIBUTIONAL|ANOMALY_CLASSIFICATION",
+      "foundation": "CONSTRUCTIVE_COMPUTABLE",
+      "carrier": "SMOOTH_DISTRIBUTIONAL",
+      "obligation": "ANOMALY_CLASSIFICATION",
+      "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
+      "v0_parent_status": "PRIORITY_GAP",
+      "parent_evidence": [],
+      "review_batch": "EMPTY_PARENT_GAP_DECOMPOSITION",
+      "review_priority": "EMPTY_PARENT_GAP_DECOMPOSITION",
+      "decision": "REVIEWED_CHILD_GAP",
+      "resulting_coverage_status": "PRIORITY_GAP",
+      "rationale": "The broad v0 priority gap is coherent at this child: the current corpus lacks a child-specific anomaly classification.",
+      "boundary": "This is a reviewed programme gap in the current corpus, not proof of literature absence, impossibility, necessity, or a no-go theorem."
+    },
+    {
+      "coordinate": "CONSTRUCTIVE_COMPUTABLE|SMOOTH_DISTRIBUTIONAL|COUNTERTERM_CLASSIFICATION",
+      "foundation": "CONSTRUCTIVE_COMPUTABLE",
+      "carrier": "SMOOTH_DISTRIBUTIONAL",
+      "obligation": "COUNTERTERM_CLASSIFICATION",
+      "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
+      "v0_parent_status": "PRIORITY_GAP",
+      "parent_evidence": [],
+      "review_batch": "EMPTY_PARENT_GAP_DECOMPOSITION",
+      "review_priority": "EMPTY_PARENT_GAP_DECOMPOSITION",
+      "decision": "REVIEWED_CHILD_GAP",
+      "resulting_coverage_status": "PRIORITY_GAP",
+      "rationale": "The broad v0 priority gap is coherent at this child: the current corpus lacks a child-specific local counterterm classification.",
+      "boundary": "This is a reviewed programme gap in the current corpus, not proof of literature absence, impossibility, necessity, or a no-go theorem."
+    },
+    {
+      "coordinate": "CONSTRUCTIVE_COMPUTABLE|SMOOTH_DISTRIBUTIONAL|GENERATOR_SPECTRAL_DYNAMICS",
+      "foundation": "CONSTRUCTIVE_COMPUTABLE",
+      "carrier": "SMOOTH_DISTRIBUTIONAL",
+      "obligation": "GENERATOR_SPECTRAL_DYNAMICS",
+      "parent_obligation": "DYNAMICS_PROPAGATION",
+      "v0_parent_status": "PRIORITY_GAP",
+      "parent_evidence": [],
+      "review_batch": "EMPTY_PARENT_GAP_DECOMPOSITION",
+      "review_priority": "EMPTY_PARENT_GAP_DECOMPOSITION",
+      "decision": "REVIEWED_CHILD_GAP",
+      "resulting_coverage_status": "PRIORITY_GAP",
+      "rationale": "The broad v0 priority gap is coherent at this child: the current corpus lacks a constructive smooth-wave generator with declared domains and representation.",
+      "boundary": "This is a reviewed programme gap in the current corpus, not proof of literature absence, impossibility, necessity, or a no-go theorem."
+    },
+    {
+      "coordinate": "CONSTRUCTIVE_COMPUTABLE|SMOOTH_DISTRIBUTIONAL|INTERACTION_CONSTRUCTION",
+      "foundation": "CONSTRUCTIVE_COMPUTABLE",
+      "carrier": "SMOOTH_DISTRIBUTIONAL",
+      "obligation": "INTERACTION_CONSTRUCTION",
+      "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
+      "v0_parent_status": "PRIORITY_GAP",
+      "parent_evidence": [],
+      "review_batch": "EMPTY_PARENT_GAP_DECOMPOSITION",
+      "review_priority": "EMPTY_PARENT_GAP_DECOMPOSITION",
+      "decision": "REVIEWED_CHILD_GAP",
+      "resulting_coverage_status": "PRIORITY_GAP",
+      "rationale": "The broad v0 priority gap is coherent at this child: the current corpus lacks an interaction construction in the declared foundational regime and smooth carrier.",
+      "boundary": "This is a reviewed programme gap in the current corpus, not proof of literature absence, impossibility, necessity, or a no-go theorem."
+    },
+    {
+      "coordinate": "CONSTRUCTIVE_COMPUTABLE|SMOOTH_DISTRIBUTIONAL|QME_RESTORATION",
+      "foundation": "CONSTRUCTIVE_COMPUTABLE",
+      "carrier": "SMOOTH_DISTRIBUTIONAL",
+      "obligation": "QME_RESTORATION",
+      "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
+      "v0_parent_status": "PRIORITY_GAP",
+      "parent_evidence": [],
+      "review_batch": "EMPTY_PARENT_GAP_DECOMPOSITION",
+      "review_priority": "EMPTY_PARENT_GAP_DECOMPOSITION",
+      "decision": "REVIEWED_CHILD_GAP",
+      "resulting_coverage_status": "PRIORITY_GAP",
+      "rationale": "The broad v0 priority gap is coherent at this child: the current corpus lacks restoration of the local quantum master equation.",
+      "boundary": "This is a reviewed programme gap in the current corpus, not proof of literature absence, impossibility, necessity, or a no-go theorem."
+    },
+    {
+      "coordinate": "CONSTRUCTIVE_COMPUTABLE|SMOOTH_DISTRIBUTIONAL|RENORMALIZED_PRODUCTS",
+      "foundation": "CONSTRUCTIVE_COMPUTABLE",
+      "carrier": "SMOOTH_DISTRIBUTIONAL",
+      "obligation": "RENORMALIZED_PRODUCTS",
+      "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
+      "v0_parent_status": "PRIORITY_GAP",
+      "parent_evidence": [],
+      "review_batch": "EMPTY_PARENT_GAP_DECOMPOSITION",
+      "review_priority": "EMPTY_PARENT_GAP_DECOMPOSITION",
+      "decision": "REVIEWED_CHILD_GAP",
+      "resulting_coverage_status": "PRIORITY_GAP",
+      "rationale": "The broad v0 priority gap is coherent at this child: the current corpus lacks renormalized products in the declared foundational regime and carrier.",
+      "boundary": "This is a reviewed programme gap in the current corpus, not proof of literature absence, impossibility, necessity, or a no-go theorem."
+    },
+    {
+      "coordinate": "CONSTRUCTIVE_COMPUTABLE|SMOOTH_DISTRIBUTIONAL|RESIDUAL_QUANTUM_TRANSFER",
+      "foundation": "CONSTRUCTIVE_COMPUTABLE",
+      "carrier": "SMOOTH_DISTRIBUTIONAL",
+      "obligation": "RESIDUAL_QUANTUM_TRANSFER",
+      "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
+      "v0_parent_status": "PRIORITY_GAP",
+      "parent_evidence": [],
+      "review_batch": "EMPTY_PARENT_GAP_DECOMPOSITION",
+      "review_priority": "EMPTY_PARENT_GAP_DECOMPOSITION",
+      "decision": "REVIEWED_CHILD_GAP",
+      "resulting_coverage_status": "PRIORITY_GAP",
+      "rationale": "The broad v0 priority gap is coherent at this child: the current corpus lacks a quantum correction transferred to the residual complex after QME restoration.",
+      "boundary": "This is a reviewed programme gap in the current corpus, not proof of literature absence, impossibility, necessity, or a no-go theorem."
+    },
+    {
+      "coordinate": "FINITE_DISCRETE|FINITE_EXACT|ANOMALY_CLASSIFICATION",
+      "foundation": "FINITE_DISCRETE",
+      "carrier": "FINITE_EXACT",
+      "obligation": "ANOMALY_CLASSIFICATION",
+      "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
+      "v0_parent_status": "PRIORITY_GAP",
+      "parent_evidence": [],
+      "review_batch": "EMPTY_PARENT_GAP_DECOMPOSITION",
+      "review_priority": "EMPTY_PARENT_GAP_DECOMPOSITION",
+      "decision": "REVIEWED_CHILD_GAP",
+      "resulting_coverage_status": "PRIORITY_GAP",
+      "rationale": "The broad v0 priority gap is coherent at this child: the current corpus lacks a child-specific anomaly classification.",
+      "boundary": "This is a reviewed programme gap in the current corpus, not proof of literature absence, impossibility, necessity, or a no-go theorem."
+    },
+    {
+      "coordinate": "FINITE_DISCRETE|FINITE_EXACT|COUNTERTERM_CLASSIFICATION",
+      "foundation": "FINITE_DISCRETE",
+      "carrier": "FINITE_EXACT",
+      "obligation": "COUNTERTERM_CLASSIFICATION",
+      "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
+      "v0_parent_status": "PRIORITY_GAP",
+      "parent_evidence": [],
+      "review_batch": "EMPTY_PARENT_GAP_DECOMPOSITION",
+      "review_priority": "EMPTY_PARENT_GAP_DECOMPOSITION",
+      "decision": "REVIEWED_CHILD_GAP",
+      "resulting_coverage_status": "PRIORITY_GAP",
+      "rationale": "The broad v0 priority gap is coherent at this child: the current corpus lacks a child-specific local counterterm classification.",
+      "boundary": "This is a reviewed programme gap in the current corpus, not proof of literature absence, impossibility, necessity, or a no-go theorem."
+    },
+    {
+      "coordinate": "FINITE_DISCRETE|FINITE_EXACT|QME_RESTORATION",
+      "foundation": "FINITE_DISCRETE",
+      "carrier": "FINITE_EXACT",
+      "obligation": "QME_RESTORATION",
+      "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
+      "v0_parent_status": "PRIORITY_GAP",
+      "parent_evidence": [],
+      "review_batch": "EMPTY_PARENT_GAP_DECOMPOSITION",
+      "review_priority": "EMPTY_PARENT_GAP_DECOMPOSITION",
+      "decision": "REVIEWED_CHILD_GAP",
+      "resulting_coverage_status": "PRIORITY_GAP",
+      "rationale": "The broad v0 priority gap is coherent at this child: the current corpus lacks restoration of the local quantum master equation.",
+      "boundary": "This is a reviewed programme gap in the current corpus, not proof of literature absence, impossibility, necessity, or a no-go theorem."
+    },
+    {
+      "coordinate": "FINITE_DISCRETE|FINITE_EXACT|RENORMALIZED_PRODUCTS",
+      "foundation": "FINITE_DISCRETE",
+      "carrier": "FINITE_EXACT",
+      "obligation": "RENORMALIZED_PRODUCTS",
+      "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
+      "v0_parent_status": "PRIORITY_GAP",
+      "parent_evidence": [],
+      "review_batch": "EMPTY_PARENT_GAP_DECOMPOSITION",
+      "review_priority": "EMPTY_PARENT_GAP_DECOMPOSITION",
+      "decision": "REVIEWED_CHILD_GAP",
+      "resulting_coverage_status": "PRIORITY_GAP",
+      "rationale": "The broad v0 priority gap is coherent at this child: the current corpus lacks renormalized products in the declared foundational regime and carrier.",
+      "boundary": "This is a reviewed programme gap in the current corpus, not proof of literature absence, impossibility, necessity, or a no-go theorem."
+    },
+    {
+      "coordinate": "FINITE_DISCRETE|FINITE_EXACT|RESIDUAL_QUANTUM_TRANSFER",
+      "foundation": "FINITE_DISCRETE",
+      "carrier": "FINITE_EXACT",
+      "obligation": "RESIDUAL_QUANTUM_TRANSFER",
+      "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
+      "v0_parent_status": "PRIORITY_GAP",
+      "parent_evidence": [],
+      "review_batch": "EMPTY_PARENT_GAP_DECOMPOSITION",
+      "review_priority": "EMPTY_PARENT_GAP_DECOMPOSITION",
+      "decision": "REVIEWED_CHILD_GAP",
+      "resulting_coverage_status": "PRIORITY_GAP",
+      "rationale": "The broad v0 priority gap is coherent at this child: the current corpus lacks a quantum correction transferred to the residual complex after QME restoration.",
+      "boundary": "This is a reviewed programme gap in the current corpus, not proof of literature absence, impossibility, necessity, or a no-go theorem."
+    },
+    {
+      "coordinate": "FINITE_DISCRETE|HILBERT_OPERATOR|ANOMALY_CLASSIFICATION",
+      "foundation": "FINITE_DISCRETE",
+      "carrier": "HILBERT_OPERATOR",
+      "obligation": "ANOMALY_CLASSIFICATION",
+      "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
+      "v0_parent_status": "PIECES_ONLY",
+      "parent_evidence": [
+        "gibbons-hoffman-wootters-2004",
+        "abramsky-coecke-2004",
+        "constantin-doring-2020"
+      ],
+      "review_batch": "FINITE_QUANTUM_RECONSTRUCTION",
+      "review_priority": "PIECES_DESCENDANT_BATCH",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "Finite phase-space, categorical protocol, and state-reconstruction results do not establish evolution well-posedness, causal propagation, or quantum field consistency obligations. No reviewed record in the batch classifies anomalies in this refined coordinate.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "FINITE_DISCRETE|HILBERT_OPERATOR|CAUSAL_PROPAGATION_GREEN",
+      "foundation": "FINITE_DISCRETE",
+      "carrier": "HILBERT_OPERATOR",
+      "obligation": "CAUSAL_PROPAGATION_GREEN",
+      "parent_obligation": "DYNAMICS_PROPAGATION",
+      "v0_parent_status": "LITERATURE_RESULT",
+      "parent_evidence": [
+        "gibbons-hoffman-wootters-2004",
+        "abramsky-coecke-2004",
+        "constantin-doring-2020"
+      ],
+      "review_batch": "FINITE_QUANTUM_RECONSTRUCTION",
+      "review_priority": "RESULT_DESCENDANT_FIRST",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "Finite phase-space, categorical protocol, and state-reconstruction results do not establish evolution well-posedness, causal propagation, or quantum field consistency obligations. No reviewed record in the batch constructs advanced/retarded maps with causal support.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "FINITE_DISCRETE|HILBERT_OPERATOR|COUNTERTERM_CLASSIFICATION",
+      "foundation": "FINITE_DISCRETE",
+      "carrier": "HILBERT_OPERATOR",
+      "obligation": "COUNTERTERM_CLASSIFICATION",
+      "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
+      "v0_parent_status": "PIECES_ONLY",
+      "parent_evidence": [
+        "gibbons-hoffman-wootters-2004",
+        "abramsky-coecke-2004",
+        "constantin-doring-2020"
+      ],
+      "review_batch": "FINITE_QUANTUM_RECONSTRUCTION",
+      "review_priority": "PIECES_DESCENDANT_BATCH",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "Finite phase-space, categorical protocol, and state-reconstruction results do not establish evolution well-posedness, causal propagation, or quantum field consistency obligations. No reviewed record in the batch classifies counterterms in this refined coordinate.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "FINITE_DISCRETE|HILBERT_OPERATOR|EVOLUTION_WELLPOSEDNESS",
+      "foundation": "FINITE_DISCRETE",
+      "carrier": "HILBERT_OPERATOR",
+      "obligation": "EVOLUTION_WELLPOSEDNESS",
+      "parent_obligation": "DYNAMICS_PROPAGATION",
+      "v0_parent_status": "LITERATURE_RESULT",
+      "parent_evidence": [
+        "gibbons-hoffman-wootters-2004",
+        "abramsky-coecke-2004",
+        "constantin-doring-2020"
+      ],
+      "review_batch": "FINITE_QUANTUM_RECONSTRUCTION",
+      "review_priority": "RESULT_DESCENDANT_FIRST",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "Finite phase-space, categorical protocol, and state-reconstruction results do not establish evolution well-posedness, causal propagation, or quantum field consistency obligations. No reviewed record in the batch proves existence, uniqueness, stability, or computability of the required evolution.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "FINITE_DISCRETE|HILBERT_OPERATOR|INTERACTION_CONSTRUCTION",
+      "foundation": "FINITE_DISCRETE",
+      "carrier": "HILBERT_OPERATOR",
+      "obligation": "INTERACTION_CONSTRUCTION",
+      "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
+      "v0_parent_status": "PIECES_ONLY",
+      "parent_evidence": [
+        "gibbons-hoffman-wootters-2004",
+        "abramsky-coecke-2004",
+        "constantin-doring-2020"
+      ],
+      "review_batch": "FINITE_QUANTUM_RECONSTRUCTION",
+      "review_priority": "PIECES_DESCENDANT_BATCH",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "Finite phase-space, categorical protocol, and state-reconstruction results do not establish evolution well-posedness, causal propagation, or quantum field consistency obligations. No reviewed record in the batch constructs the required interaction in this refined coordinate.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "FINITE_DISCRETE|HILBERT_OPERATOR|QME_RESTORATION",
+      "foundation": "FINITE_DISCRETE",
+      "carrier": "HILBERT_OPERATOR",
+      "obligation": "QME_RESTORATION",
+      "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
+      "v0_parent_status": "PIECES_ONLY",
+      "parent_evidence": [
+        "gibbons-hoffman-wootters-2004",
+        "abramsky-coecke-2004",
+        "constantin-doring-2020"
+      ],
+      "review_batch": "FINITE_QUANTUM_RECONSTRUCTION",
+      "review_priority": "PIECES_DESCENDANT_BATCH",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "Finite phase-space, categorical protocol, and state-reconstruction results do not establish evolution well-posedness, causal propagation, or quantum field consistency obligations. No reviewed record in the batch restores the quantum master equation in this refined coordinate.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "FINITE_DISCRETE|HILBERT_OPERATOR|RENORMALIZED_PRODUCTS",
+      "foundation": "FINITE_DISCRETE",
+      "carrier": "HILBERT_OPERATOR",
+      "obligation": "RENORMALIZED_PRODUCTS",
+      "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
+      "v0_parent_status": "PIECES_ONLY",
+      "parent_evidence": [
+        "gibbons-hoffman-wootters-2004",
+        "abramsky-coecke-2004",
+        "constantin-doring-2020"
+      ],
+      "review_batch": "FINITE_QUANTUM_RECONSTRUCTION",
+      "review_priority": "PIECES_DESCENDANT_BATCH",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "Finite phase-space, categorical protocol, and state-reconstruction results do not establish evolution well-posedness, causal propagation, or quantum field consistency obligations. No reviewed record in the batch constructs renormalized products in this refined coordinate.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "FINITE_DISCRETE|HILBERT_OPERATOR|RESIDUAL_QUANTUM_TRANSFER",
+      "foundation": "FINITE_DISCRETE",
+      "carrier": "HILBERT_OPERATOR",
+      "obligation": "RESIDUAL_QUANTUM_TRANSFER",
+      "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
+      "v0_parent_status": "PIECES_ONLY",
+      "parent_evidence": [
+        "gibbons-hoffman-wootters-2004",
+        "abramsky-coecke-2004",
+        "constantin-doring-2020"
+      ],
+      "review_batch": "FINITE_QUANTUM_RECONSTRUCTION",
+      "review_priority": "PIECES_DESCENDANT_BATCH",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "Finite phase-space, categorical protocol, and state-reconstruction results do not establish evolution well-posedness, causal propagation, or quantum field consistency obligations. No reviewed record in the batch transfers a restored quantum correction to the residual complex.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "FINITE_DISCRETE|LOCALIC_SYNTHETIC|ANOMALY_CLASSIFICATION",
+      "foundation": "FINITE_DISCRETE",
+      "carrier": "LOCALIC_SYNTHETIC",
+      "obligation": "ANOMALY_CLASSIFICATION",
+      "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
+      "v0_parent_status": "PIECES_ONLY",
+      "parent_evidence": [
+        "harding-heunen-2019",
+        "constantin-doring-2020",
+        "abramsky-coecke-2004"
+      ],
+      "review_batch": "FINITE_CONTEXTUAL_TOPOS",
+      "review_priority": "PIECES_DESCENDANT_BATCH",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "Finite contextual and categorical structures do not establish causal propagation or the six quantum-consistency children. No reviewed record in the batch classifies anomalies in this refined coordinate.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "FINITE_DISCRETE|LOCALIC_SYNTHETIC|CAUSAL_PROPAGATION_GREEN",
+      "foundation": "FINITE_DISCRETE",
+      "carrier": "LOCALIC_SYNTHETIC",
+      "obligation": "CAUSAL_PROPAGATION_GREEN",
+      "parent_obligation": "DYNAMICS_PROPAGATION",
+      "v0_parent_status": "LITERATURE_RESULT",
+      "parent_evidence": [
+        "harding-heunen-2019",
+        "constantin-doring-2020",
+        "abramsky-coecke-2004"
+      ],
+      "review_batch": "FINITE_CONTEXTUAL_TOPOS",
+      "review_priority": "RESULT_DESCENDANT_FIRST",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "Finite contextual and categorical structures do not establish causal propagation or the six quantum-consistency children. No reviewed record in the batch constructs advanced/retarded maps with causal support.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "FINITE_DISCRETE|LOCALIC_SYNTHETIC|COUNTERTERM_CLASSIFICATION",
+      "foundation": "FINITE_DISCRETE",
+      "carrier": "LOCALIC_SYNTHETIC",
+      "obligation": "COUNTERTERM_CLASSIFICATION",
+      "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
+      "v0_parent_status": "PIECES_ONLY",
+      "parent_evidence": [
+        "harding-heunen-2019",
+        "constantin-doring-2020",
+        "abramsky-coecke-2004"
+      ],
+      "review_batch": "FINITE_CONTEXTUAL_TOPOS",
+      "review_priority": "PIECES_DESCENDANT_BATCH",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "Finite contextual and categorical structures do not establish causal propagation or the six quantum-consistency children. No reviewed record in the batch classifies counterterms in this refined coordinate.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "FINITE_DISCRETE|LOCALIC_SYNTHETIC|INTERACTION_CONSTRUCTION",
+      "foundation": "FINITE_DISCRETE",
+      "carrier": "LOCALIC_SYNTHETIC",
+      "obligation": "INTERACTION_CONSTRUCTION",
+      "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
+      "v0_parent_status": "PIECES_ONLY",
+      "parent_evidence": [
+        "harding-heunen-2019",
+        "constantin-doring-2020",
+        "abramsky-coecke-2004"
+      ],
+      "review_batch": "FINITE_CONTEXTUAL_TOPOS",
+      "review_priority": "PIECES_DESCENDANT_BATCH",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "Finite contextual and categorical structures do not establish causal propagation or the six quantum-consistency children. No reviewed record in the batch constructs the required interaction in this refined coordinate.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "FINITE_DISCRETE|LOCALIC_SYNTHETIC|QME_RESTORATION",
+      "foundation": "FINITE_DISCRETE",
+      "carrier": "LOCALIC_SYNTHETIC",
+      "obligation": "QME_RESTORATION",
+      "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
+      "v0_parent_status": "PIECES_ONLY",
+      "parent_evidence": [
+        "harding-heunen-2019",
+        "constantin-doring-2020",
+        "abramsky-coecke-2004"
+      ],
+      "review_batch": "FINITE_CONTEXTUAL_TOPOS",
+      "review_priority": "PIECES_DESCENDANT_BATCH",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "Finite contextual and categorical structures do not establish causal propagation or the six quantum-consistency children. No reviewed record in the batch restores the quantum master equation in this refined coordinate.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "FINITE_DISCRETE|LOCALIC_SYNTHETIC|RENORMALIZED_PRODUCTS",
+      "foundation": "FINITE_DISCRETE",
+      "carrier": "LOCALIC_SYNTHETIC",
+      "obligation": "RENORMALIZED_PRODUCTS",
+      "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
+      "v0_parent_status": "PIECES_ONLY",
+      "parent_evidence": [
+        "harding-heunen-2019",
+        "constantin-doring-2020",
+        "abramsky-coecke-2004"
+      ],
+      "review_batch": "FINITE_CONTEXTUAL_TOPOS",
+      "review_priority": "PIECES_DESCENDANT_BATCH",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "Finite contextual and categorical structures do not establish causal propagation or the six quantum-consistency children. No reviewed record in the batch constructs renormalized products in this refined coordinate.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "FINITE_DISCRETE|LOCALIC_SYNTHETIC|RESIDUAL_QUANTUM_TRANSFER",
+      "foundation": "FINITE_DISCRETE",
+      "carrier": "LOCALIC_SYNTHETIC",
+      "obligation": "RESIDUAL_QUANTUM_TRANSFER",
+      "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
+      "v0_parent_status": "PIECES_ONLY",
+      "parent_evidence": [
+        "harding-heunen-2019",
+        "constantin-doring-2020",
+        "abramsky-coecke-2004"
+      ],
+      "review_batch": "FINITE_CONTEXTUAL_TOPOS",
+      "review_priority": "PIECES_DESCENDANT_BATCH",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "Finite contextual and categorical structures do not establish causal propagation or the six quantum-consistency children. No reviewed record in the batch transfers a restored quantum correction to the residual complex.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "FINITE_DISCRETE|SMOOTH_DISTRIBUTIONAL|PHYSICAL_STATE_SELECTION",
+      "foundation": "FINITE_DISCRETE",
+      "carrier": "SMOOTH_DISTRIBUTIONAL",
+      "obligation": "PHYSICAL_STATE_SELECTION",
+      "parent_obligation": "STATES_PROBABILITY",
+      "v0_parent_status": "PIECES_ONLY",
+      "parent_evidence": [
+        "kogut-susskind-1975",
+        "zohar-burrello-2014",
+        "bahr-dittrich-2009",
+        "dittrich-2012"
+      ],
+      "review_batch": "LATTICE_DISCRETE_DYNAMICS",
+      "review_priority": "PIECES_DESCENDANT_BATCH",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "Lattice constraints and continuum-comparison programmes do not by themselves construct the four unresolved state/probability children. No reviewed record in the batch selects a vacuum, thermal, Hadamard, or other physical state.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "FINITE_DISCRETE|SMOOTH_DISTRIBUTIONAL|PROBABILITY_RULE",
+      "foundation": "FINITE_DISCRETE",
+      "carrier": "SMOOTH_DISTRIBUTIONAL",
+      "obligation": "PROBABILITY_RULE",
+      "parent_obligation": "STATES_PROBABILITY",
+      "v0_parent_status": "PIECES_ONLY",
+      "parent_evidence": [
+        "kogut-susskind-1975",
+        "zohar-burrello-2014",
+        "bahr-dittrich-2009",
+        "dittrich-2012"
+      ],
+      "review_batch": "LATTICE_DISCRETE_DYNAMICS",
+      "review_priority": "PIECES_DESCENDANT_BATCH",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "Lattice constraints and continuum-comparison programmes do not by themselves construct the four unresolved state/probability children. No reviewed record in the batch derives the required normalized event-probability rule.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "FINITE_DISCRETE|SMOOTH_DISTRIBUTIONAL|STATE_EXISTENCE",
+      "foundation": "FINITE_DISCRETE",
+      "carrier": "SMOOTH_DISTRIBUTIONAL",
+      "obligation": "STATE_EXISTENCE",
+      "parent_obligation": "STATES_PROBABILITY",
+      "v0_parent_status": "PIECES_ONLY",
+      "parent_evidence": [
+        "kogut-susskind-1975",
+        "zohar-burrello-2014",
+        "bahr-dittrich-2009",
+        "dittrich-2012"
+      ],
+      "review_batch": "LATTICE_DISCRETE_DYNAMICS",
+      "review_priority": "PIECES_DESCENDANT_BATCH",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "Lattice constraints and continuum-comparison programmes do not by themselves construct the four unresolved state/probability children. No reviewed record in the batch constructs a state in this refined coordinate.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "FINITE_DISCRETE|SMOOTH_DISTRIBUTIONAL|STATE_REPRESENTATION",
+      "foundation": "FINITE_DISCRETE",
+      "carrier": "SMOOTH_DISTRIBUTIONAL",
+      "obligation": "STATE_REPRESENTATION",
+      "parent_obligation": "STATES_PROBABILITY",
+      "v0_parent_status": "PIECES_ONLY",
+      "parent_evidence": [
+        "kogut-susskind-1975",
+        "zohar-burrello-2014",
+        "bahr-dittrich-2009",
+        "dittrich-2012"
+      ],
+      "review_batch": "LATTICE_DISCRETE_DYNAMICS",
+      "review_priority": "PIECES_DESCENDANT_BATCH",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "Lattice constraints and continuum-comparison programmes do not by themselves construct the four unresolved state/probability children. No reviewed record in the batch supplies the required state representation in this refined coordinate.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "TOPOS_INTERNAL|ALGEBRAIC_CSTAR|ANOMALY_CLASSIFICATION",
+      "foundation": "TOPOS_INTERNAL",
+      "carrier": "ALGEBRAIC_CSTAR",
+      "obligation": "ANOMALY_CLASSIFICATION",
+      "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
+      "v0_parent_status": "PIECES_ONLY",
+      "parent_evidence": [
+        "heunen-landsman-spitters-2009",
+        "doring-2008",
+        "brenna-flori-2012",
+        "harding-heunen-2019"
+      ],
+      "review_batch": "TOPOS_CONTEXT_STATE_DYNAMICS",
+      "review_priority": "PIECES_DESCENDANT_BATCH",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "Internal spectra, state measures, and one-parameter dynamics are reviewed; the records explicitly exclude causal propagation and interacting/renormalized field theory. No reviewed record in the batch classifies anomalies in this refined coordinate.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "TOPOS_INTERNAL|ALGEBRAIC_CSTAR|CAUSAL_PROPAGATION_GREEN",
+      "foundation": "TOPOS_INTERNAL",
+      "carrier": "ALGEBRAIC_CSTAR",
+      "obligation": "CAUSAL_PROPAGATION_GREEN",
+      "parent_obligation": "DYNAMICS_PROPAGATION",
+      "v0_parent_status": "LITERATURE_RESULT",
+      "parent_evidence": [
+        "heunen-landsman-spitters-2009",
+        "doring-2008",
+        "brenna-flori-2012",
+        "harding-heunen-2019"
+      ],
+      "review_batch": "TOPOS_CONTEXT_STATE_DYNAMICS",
+      "review_priority": "RESULT_DESCENDANT_FIRST",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "Internal spectra, state measures, and one-parameter dynamics are reviewed; the records explicitly exclude causal propagation and interacting/renormalized field theory. No reviewed record in the batch constructs advanced/retarded maps with causal support.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "TOPOS_INTERNAL|ALGEBRAIC_CSTAR|COUNTERTERM_CLASSIFICATION",
+      "foundation": "TOPOS_INTERNAL",
+      "carrier": "ALGEBRAIC_CSTAR",
+      "obligation": "COUNTERTERM_CLASSIFICATION",
+      "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
+      "v0_parent_status": "PIECES_ONLY",
+      "parent_evidence": [
+        "heunen-landsman-spitters-2009",
+        "doring-2008",
+        "brenna-flori-2012",
+        "harding-heunen-2019"
+      ],
+      "review_batch": "TOPOS_CONTEXT_STATE_DYNAMICS",
+      "review_priority": "PIECES_DESCENDANT_BATCH",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "Internal spectra, state measures, and one-parameter dynamics are reviewed; the records explicitly exclude causal propagation and interacting/renormalized field theory. No reviewed record in the batch classifies counterterms in this refined coordinate.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "TOPOS_INTERNAL|ALGEBRAIC_CSTAR|INTERACTION_CONSTRUCTION",
+      "foundation": "TOPOS_INTERNAL",
+      "carrier": "ALGEBRAIC_CSTAR",
+      "obligation": "INTERACTION_CONSTRUCTION",
+      "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
+      "v0_parent_status": "PIECES_ONLY",
+      "parent_evidence": [
+        "heunen-landsman-spitters-2009",
+        "doring-2008",
+        "brenna-flori-2012",
+        "harding-heunen-2019"
+      ],
+      "review_batch": "TOPOS_CONTEXT_STATE_DYNAMICS",
+      "review_priority": "PIECES_DESCENDANT_BATCH",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "Internal spectra, state measures, and one-parameter dynamics are reviewed; the records explicitly exclude causal propagation and interacting/renormalized field theory. No reviewed record in the batch constructs the required interaction in this refined coordinate.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "TOPOS_INTERNAL|ALGEBRAIC_CSTAR|QME_RESTORATION",
+      "foundation": "TOPOS_INTERNAL",
+      "carrier": "ALGEBRAIC_CSTAR",
+      "obligation": "QME_RESTORATION",
+      "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
+      "v0_parent_status": "PIECES_ONLY",
+      "parent_evidence": [
+        "heunen-landsman-spitters-2009",
+        "doring-2008",
+        "brenna-flori-2012",
+        "harding-heunen-2019"
+      ],
+      "review_batch": "TOPOS_CONTEXT_STATE_DYNAMICS",
+      "review_priority": "PIECES_DESCENDANT_BATCH",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "Internal spectra, state measures, and one-parameter dynamics are reviewed; the records explicitly exclude causal propagation and interacting/renormalized field theory. No reviewed record in the batch restores the quantum master equation in this refined coordinate.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "TOPOS_INTERNAL|ALGEBRAIC_CSTAR|RENORMALIZED_PRODUCTS",
+      "foundation": "TOPOS_INTERNAL",
+      "carrier": "ALGEBRAIC_CSTAR",
+      "obligation": "RENORMALIZED_PRODUCTS",
+      "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
+      "v0_parent_status": "PIECES_ONLY",
+      "parent_evidence": [
+        "heunen-landsman-spitters-2009",
+        "doring-2008",
+        "brenna-flori-2012",
+        "harding-heunen-2019"
+      ],
+      "review_batch": "TOPOS_CONTEXT_STATE_DYNAMICS",
+      "review_priority": "PIECES_DESCENDANT_BATCH",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "Internal spectra, state measures, and one-parameter dynamics are reviewed; the records explicitly exclude causal propagation and interacting/renormalized field theory. No reviewed record in the batch constructs renormalized products in this refined coordinate.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "TOPOS_INTERNAL|ALGEBRAIC_CSTAR|RESIDUAL_QUANTUM_TRANSFER",
+      "foundation": "TOPOS_INTERNAL",
+      "carrier": "ALGEBRAIC_CSTAR",
+      "obligation": "RESIDUAL_QUANTUM_TRANSFER",
+      "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
+      "v0_parent_status": "PIECES_ONLY",
+      "parent_evidence": [
+        "heunen-landsman-spitters-2009",
+        "doring-2008",
+        "brenna-flori-2012",
+        "harding-heunen-2019"
+      ],
+      "review_batch": "TOPOS_CONTEXT_STATE_DYNAMICS",
+      "review_priority": "PIECES_DESCENDANT_BATCH",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "Internal spectra, state measures, and one-parameter dynamics are reviewed; the records explicitly exclude causal propagation and interacting/renormalized field theory. No reviewed record in the batch transfers a restored quantum correction to the residual complex.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "TOPOS_INTERNAL|HILBERT_OPERATOR|CAUSAL_PROPAGATION_GREEN",
+      "foundation": "TOPOS_INTERNAL",
+      "carrier": "HILBERT_OPERATOR",
+      "obligation": "CAUSAL_PROPAGATION_GREEN",
+      "parent_obligation": "DYNAMICS_PROPAGATION",
+      "v0_parent_status": "PIECES_ONLY",
+      "parent_evidence": [
+        "doring-2008",
+        "brenna-flori-2012",
+        "harding-heunen-2019"
+      ],
+      "review_batch": "TOPOS_STATE_INTERNAL_DYNAMICS",
+      "review_priority": "PIECES_DESCENDANT_BATCH",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "State measures and internal one-parameter groups do not establish spacetime support or causal Green propagation. No reviewed record in the batch constructs advanced/retarded maps with causal support.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "TOPOS_INTERNAL|SMOOTH_DISTRIBUTIONAL|CAUSAL_PROPAGATION_GREEN",
+      "foundation": "TOPOS_INTERNAL",
+      "carrier": "SMOOTH_DISTRIBUTIONAL",
+      "obligation": "CAUSAL_PROPAGATION_GREEN",
+      "parent_obligation": "DYNAMICS_PROPAGATION",
+      "v0_parent_status": "LITERATURE_RESULT",
+      "parent_evidence": [
+        "grinkevich-1996"
+      ],
+      "review_batch": "SYNTHETIC_GENERAL_RELATIVITY",
+      "review_priority": "RESULT_DESCENDANT_FIRST",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "The reviewed synthetic Einstein-equation formulation does not construct spectral generators, prove evolution well-posedness, or provide causal Green maps. No reviewed record in the batch constructs advanced/retarded maps with causal support.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "TOPOS_INTERNAL|SMOOTH_DISTRIBUTIONAL|EVOLUTION_WELLPOSEDNESS",
+      "foundation": "TOPOS_INTERNAL",
+      "carrier": "SMOOTH_DISTRIBUTIONAL",
+      "obligation": "EVOLUTION_WELLPOSEDNESS",
+      "parent_obligation": "DYNAMICS_PROPAGATION",
+      "v0_parent_status": "LITERATURE_RESULT",
+      "parent_evidence": [
+        "grinkevich-1996"
+      ],
+      "review_batch": "SYNTHETIC_GENERAL_RELATIVITY",
+      "review_priority": "RESULT_DESCENDANT_FIRST",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "The reviewed synthetic Einstein-equation formulation does not construct spectral generators, prove evolution well-posedness, or provide causal Green maps. No reviewed record in the batch proves existence, uniqueness, stability, or computability of the required evolution.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "TOPOS_INTERNAL|SMOOTH_DISTRIBUTIONAL|GENERATOR_SPECTRAL_DYNAMICS",
+      "foundation": "TOPOS_INTERNAL",
+      "carrier": "SMOOTH_DISTRIBUTIONAL",
+      "obligation": "GENERATOR_SPECTRAL_DYNAMICS",
+      "parent_obligation": "DYNAMICS_PROPAGATION",
+      "v0_parent_status": "LITERATURE_RESULT",
+      "parent_evidence": [
+        "grinkevich-1996"
+      ],
+      "review_batch": "SYNTHETIC_GENERAL_RELATIVITY",
+      "review_priority": "RESULT_DESCENDANT_FIRST",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "The reviewed synthetic Einstein-equation formulation does not construct spectral generators, prove evolution well-posedness, or provide causal Green maps. No reviewed record in the batch constructs the required generator or spectral dynamics in this refined coordinate.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "TOPOS_INTERNAL|SMOOTH_DISTRIBUTIONAL|PHYSICAL_STATE_SELECTION",
+      "foundation": "TOPOS_INTERNAL",
+      "carrier": "SMOOTH_DISTRIBUTIONAL",
+      "obligation": "PHYSICAL_STATE_SELECTION",
+      "parent_obligation": "STATES_PROBABILITY",
+      "v0_parent_status": "PIECES_ONLY",
+      "parent_evidence": [
+        "grinkevich-1996",
+        "barnich-brandt-henneaux-2000"
+      ],
+      "review_batch": "SYNTHETIC_GEOMETRY_LOCAL_BRST",
+      "review_priority": "PIECES_DESCENDANT_BATCH",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "Synthetic classical geometry and local BRST classification do not construct or represent states, probabilities, or a physical state-selection rule. No reviewed record in the batch selects a vacuum, thermal, Hadamard, or other physical state.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "TOPOS_INTERNAL|SMOOTH_DISTRIBUTIONAL|PROBABILITY_RULE",
+      "foundation": "TOPOS_INTERNAL",
+      "carrier": "SMOOTH_DISTRIBUTIONAL",
+      "obligation": "PROBABILITY_RULE",
+      "parent_obligation": "STATES_PROBABILITY",
+      "v0_parent_status": "PIECES_ONLY",
+      "parent_evidence": [
+        "grinkevich-1996",
+        "barnich-brandt-henneaux-2000"
+      ],
+      "review_batch": "SYNTHETIC_GEOMETRY_LOCAL_BRST",
+      "review_priority": "PIECES_DESCENDANT_BATCH",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "Synthetic classical geometry and local BRST classification do not construct or represent states, probabilities, or a physical state-selection rule. No reviewed record in the batch derives the required normalized event-probability rule.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "TOPOS_INTERNAL|SMOOTH_DISTRIBUTIONAL|STATE_EXISTENCE",
+      "foundation": "TOPOS_INTERNAL",
+      "carrier": "SMOOTH_DISTRIBUTIONAL",
+      "obligation": "STATE_EXISTENCE",
+      "parent_obligation": "STATES_PROBABILITY",
+      "v0_parent_status": "PIECES_ONLY",
+      "parent_evidence": [
+        "grinkevich-1996",
+        "barnich-brandt-henneaux-2000"
+      ],
+      "review_batch": "SYNTHETIC_GEOMETRY_LOCAL_BRST",
+      "review_priority": "PIECES_DESCENDANT_BATCH",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "Synthetic classical geometry and local BRST classification do not construct or represent states, probabilities, or a physical state-selection rule. No reviewed record in the batch constructs a state in this refined coordinate.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "TOPOS_INTERNAL|SMOOTH_DISTRIBUTIONAL|STATE_REPRESENTATION",
+      "foundation": "TOPOS_INTERNAL",
+      "carrier": "SMOOTH_DISTRIBUTIONAL",
+      "obligation": "STATE_REPRESENTATION",
+      "parent_obligation": "STATES_PROBABILITY",
+      "v0_parent_status": "PIECES_ONLY",
+      "parent_evidence": [
+        "grinkevich-1996",
+        "barnich-brandt-henneaux-2000"
+      ],
+      "review_batch": "SYNTHETIC_GEOMETRY_LOCAL_BRST",
+      "review_priority": "PIECES_DESCENDANT_BATCH",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "Synthetic classical geometry and local BRST classification do not construct or represent states, probabilities, or a physical state-selection rule. No reviewed record in the batch supplies the required state representation in this refined coordinate.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "WEAK_ARITHMETIC|HILBERT_OPERATOR|CAUSAL_PROPAGATION_GREEN",
+      "foundation": "WEAK_ARITHMETIC",
+      "carrier": "HILBERT_OPERATOR",
+      "obligation": "CAUSAL_PROPAGATION_GREEN",
+      "parent_obligation": "DYNAMICS_PROPAGATION",
+      "v0_parent_status": "PIECES_ONLY",
+      "parent_evidence": [
+        "brown-simpson-1986",
+        "humphreys-simpson-1999",
+        "humphreys-simpson-1996",
+        "brattka-2008"
+      ],
+      "review_batch": "REVERSE_FUNCTIONAL_ANALYSIS",
+      "review_priority": "PIECES_DESCENDANT_BATCH",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "Logical-strength results for separation and Hahn-Banach principles do not construct a generator, well-posed evolution, or a causal Green operator. No reviewed record in the batch constructs advanced/retarded maps with causal support.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "WEAK_ARITHMETIC|HILBERT_OPERATOR|EVOLUTION_WELLPOSEDNESS",
+      "foundation": "WEAK_ARITHMETIC",
+      "carrier": "HILBERT_OPERATOR",
+      "obligation": "EVOLUTION_WELLPOSEDNESS",
+      "parent_obligation": "DYNAMICS_PROPAGATION",
+      "v0_parent_status": "PIECES_ONLY",
+      "parent_evidence": [
+        "brown-simpson-1986",
+        "humphreys-simpson-1999",
+        "humphreys-simpson-1996",
+        "brattka-2008"
+      ],
+      "review_batch": "REVERSE_FUNCTIONAL_ANALYSIS",
+      "review_priority": "PIECES_DESCENDANT_BATCH",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "Logical-strength results for separation and Hahn-Banach principles do not construct a generator, well-posed evolution, or a causal Green operator. No reviewed record in the batch proves existence, uniqueness, stability, or computability of the required evolution.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "WEAK_ARITHMETIC|HILBERT_OPERATOR|GENERATOR_SPECTRAL_DYNAMICS",
+      "foundation": "WEAK_ARITHMETIC",
+      "carrier": "HILBERT_OPERATOR",
+      "obligation": "GENERATOR_SPECTRAL_DYNAMICS",
+      "parent_obligation": "DYNAMICS_PROPAGATION",
+      "v0_parent_status": "PIECES_ONLY",
+      "parent_evidence": [
+        "brown-simpson-1986",
+        "humphreys-simpson-1999",
+        "humphreys-simpson-1996",
+        "brattka-2008"
+      ],
+      "review_batch": "REVERSE_FUNCTIONAL_ANALYSIS",
+      "review_priority": "PIECES_DESCENDANT_BATCH",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "Logical-strength results for separation and Hahn-Banach principles do not construct a generator, well-posed evolution, or a causal Green operator. No reviewed record in the batch constructs the required generator or spectral dynamics in this refined coordinate.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "WEAK_ARITHMETIC|SMOOTH_DISTRIBUTIONAL|ANOMALY_CLASSIFICATION",
+      "foundation": "WEAK_ARITHMETIC",
+      "carrier": "SMOOTH_DISTRIBUTIONAL",
+      "obligation": "ANOMALY_CLASSIFICATION",
+      "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
+      "v0_parent_status": "PRIORITY_GAP",
+      "parent_evidence": [],
+      "review_batch": "EMPTY_PARENT_GAP_DECOMPOSITION",
+      "review_priority": "EMPTY_PARENT_GAP_DECOMPOSITION",
+      "decision": "REVIEWED_CHILD_GAP",
+      "resulting_coverage_status": "PRIORITY_GAP",
+      "rationale": "The broad v0 priority gap is coherent at this child: the current corpus lacks a child-specific anomaly classification.",
+      "boundary": "This is a reviewed programme gap in the current corpus, not proof of literature absence, impossibility, necessity, or a no-go theorem."
+    },
+    {
+      "coordinate": "WEAK_ARITHMETIC|SMOOTH_DISTRIBUTIONAL|COUNTERTERM_CLASSIFICATION",
+      "foundation": "WEAK_ARITHMETIC",
+      "carrier": "SMOOTH_DISTRIBUTIONAL",
+      "obligation": "COUNTERTERM_CLASSIFICATION",
+      "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
+      "v0_parent_status": "PRIORITY_GAP",
+      "parent_evidence": [],
+      "review_batch": "EMPTY_PARENT_GAP_DECOMPOSITION",
+      "review_priority": "EMPTY_PARENT_GAP_DECOMPOSITION",
+      "decision": "REVIEWED_CHILD_GAP",
+      "resulting_coverage_status": "PRIORITY_GAP",
+      "rationale": "The broad v0 priority gap is coherent at this child: the current corpus lacks a child-specific local counterterm classification.",
+      "boundary": "This is a reviewed programme gap in the current corpus, not proof of literature absence, impossibility, necessity, or a no-go theorem."
+    },
+    {
+      "coordinate": "WEAK_ARITHMETIC|SMOOTH_DISTRIBUTIONAL|INTERACTION_CONSTRUCTION",
+      "foundation": "WEAK_ARITHMETIC",
+      "carrier": "SMOOTH_DISTRIBUTIONAL",
+      "obligation": "INTERACTION_CONSTRUCTION",
+      "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
+      "v0_parent_status": "PRIORITY_GAP",
+      "parent_evidence": [],
+      "review_batch": "EMPTY_PARENT_GAP_DECOMPOSITION",
+      "review_priority": "EMPTY_PARENT_GAP_DECOMPOSITION",
+      "decision": "REVIEWED_CHILD_GAP",
+      "resulting_coverage_status": "PRIORITY_GAP",
+      "rationale": "The broad v0 priority gap is coherent at this child: the current corpus lacks an interaction construction in the declared foundational regime and smooth carrier.",
+      "boundary": "This is a reviewed programme gap in the current corpus, not proof of literature absence, impossibility, necessity, or a no-go theorem."
+    },
+    {
+      "coordinate": "WEAK_ARITHMETIC|SMOOTH_DISTRIBUTIONAL|QME_RESTORATION",
+      "foundation": "WEAK_ARITHMETIC",
+      "carrier": "SMOOTH_DISTRIBUTIONAL",
+      "obligation": "QME_RESTORATION",
+      "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
+      "v0_parent_status": "PRIORITY_GAP",
+      "parent_evidence": [],
+      "review_batch": "EMPTY_PARENT_GAP_DECOMPOSITION",
+      "review_priority": "EMPTY_PARENT_GAP_DECOMPOSITION",
+      "decision": "REVIEWED_CHILD_GAP",
+      "resulting_coverage_status": "PRIORITY_GAP",
+      "rationale": "The broad v0 priority gap is coherent at this child: the current corpus lacks restoration of the local quantum master equation.",
+      "boundary": "This is a reviewed programme gap in the current corpus, not proof of literature absence, impossibility, necessity, or a no-go theorem."
+    },
+    {
+      "coordinate": "WEAK_ARITHMETIC|SMOOTH_DISTRIBUTIONAL|RENORMALIZED_PRODUCTS",
+      "foundation": "WEAK_ARITHMETIC",
+      "carrier": "SMOOTH_DISTRIBUTIONAL",
+      "obligation": "RENORMALIZED_PRODUCTS",
+      "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
+      "v0_parent_status": "PRIORITY_GAP",
+      "parent_evidence": [],
+      "review_batch": "EMPTY_PARENT_GAP_DECOMPOSITION",
+      "review_priority": "EMPTY_PARENT_GAP_DECOMPOSITION",
+      "decision": "REVIEWED_CHILD_GAP",
+      "resulting_coverage_status": "PRIORITY_GAP",
+      "rationale": "The broad v0 priority gap is coherent at this child: the current corpus lacks renormalized products in the declared foundational regime and carrier.",
+      "boundary": "This is a reviewed programme gap in the current corpus, not proof of literature absence, impossibility, necessity, or a no-go theorem."
+    },
+    {
+      "coordinate": "WEAK_ARITHMETIC|SMOOTH_DISTRIBUTIONAL|RESIDUAL_QUANTUM_TRANSFER",
+      "foundation": "WEAK_ARITHMETIC",
+      "carrier": "SMOOTH_DISTRIBUTIONAL",
+      "obligation": "RESIDUAL_QUANTUM_TRANSFER",
+      "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
+      "v0_parent_status": "PRIORITY_GAP",
+      "parent_evidence": [],
+      "review_batch": "EMPTY_PARENT_GAP_DECOMPOSITION",
+      "review_priority": "EMPTY_PARENT_GAP_DECOMPOSITION",
+      "decision": "REVIEWED_CHILD_GAP",
+      "resulting_coverage_status": "PRIORITY_GAP",
+      "rationale": "The broad v0 priority gap is coherent at this child: the current corpus lacks a quantum correction transferred to the residual complex after QME restoration.",
+      "boundary": "This is a reviewed programme gap in the current corpus, not proof of literature absence, impossibility, necessity, or a no-go theorem."
+    },
+    {
+      "coordinate": "WEAK_CHOICE_ZF|HILBERT_OPERATOR|ANOMALY_CLASSIFICATION",
+      "foundation": "WEAK_CHOICE_ZF",
+      "carrier": "HILBERT_OPERATOR",
+      "obligation": "ANOMALY_CLASSIFICATION",
+      "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
+      "v0_parent_status": "PIECES_ONLY",
+      "parent_evidence": [
+        "blackadar-farah-karagila-2026",
+        "blackadar-farah-2026",
+        "neumann-pape-streicher-2018"
+      ],
+      "review_batch": "ZF_OPERATOR_FOUNDATIONS",
+      "review_priority": "PIECES_DESCENDANT_BATCH",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "ZF operator theory and effective spectral representation do not establish interacting QFT, renormalized products, anomalies, QME restoration, or residual transfer. No reviewed record in the batch classifies anomalies in this refined coordinate.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "WEAK_CHOICE_ZF|HILBERT_OPERATOR|CAUSAL_PROPAGATION_GREEN",
+      "foundation": "WEAK_CHOICE_ZF",
+      "carrier": "HILBERT_OPERATOR",
+      "obligation": "CAUSAL_PROPAGATION_GREEN",
+      "parent_obligation": "DYNAMICS_PROPAGATION",
+      "v0_parent_status": "LOCAL_RESULT",
+      "parent_evidence": [
+        "FOUNDATIONAL_EXPLICIT_ENERGY_SPECTRAL_FRAGMENT_ZF_V1"
+      ],
+      "review_batch": "ENERGY_SPECTRAL_FRAGMENT",
+      "review_priority": "RESULT_DESCENDANT_FIRST",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "The exact energy spectrum is a reduced-mode spectral result and explicitly does not establish causal support or a Green operator. No reviewed record in the batch constructs advanced/retarded maps with causal support.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "WEAK_CHOICE_ZF|HILBERT_OPERATOR|COUNTERTERM_CLASSIFICATION",
+      "foundation": "WEAK_CHOICE_ZF",
+      "carrier": "HILBERT_OPERATOR",
+      "obligation": "COUNTERTERM_CLASSIFICATION",
+      "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
+      "v0_parent_status": "PIECES_ONLY",
+      "parent_evidence": [
+        "blackadar-farah-karagila-2026",
+        "blackadar-farah-2026",
+        "neumann-pape-streicher-2018"
+      ],
+      "review_batch": "ZF_OPERATOR_FOUNDATIONS",
+      "review_priority": "PIECES_DESCENDANT_BATCH",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "ZF operator theory and effective spectral representation do not establish interacting QFT, renormalized products, anomalies, QME restoration, or residual transfer. No reviewed record in the batch classifies counterterms in this refined coordinate.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "WEAK_CHOICE_ZF|HILBERT_OPERATOR|INTERACTION_CONSTRUCTION",
+      "foundation": "WEAK_CHOICE_ZF",
+      "carrier": "HILBERT_OPERATOR",
+      "obligation": "INTERACTION_CONSTRUCTION",
+      "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
+      "v0_parent_status": "PIECES_ONLY",
+      "parent_evidence": [
+        "blackadar-farah-karagila-2026",
+        "blackadar-farah-2026",
+        "neumann-pape-streicher-2018"
+      ],
+      "review_batch": "ZF_OPERATOR_FOUNDATIONS",
+      "review_priority": "PIECES_DESCENDANT_BATCH",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "ZF operator theory and effective spectral representation do not establish interacting QFT, renormalized products, anomalies, QME restoration, or residual transfer. No reviewed record in the batch constructs the required interaction in this refined coordinate.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "WEAK_CHOICE_ZF|HILBERT_OPERATOR|QME_RESTORATION",
+      "foundation": "WEAK_CHOICE_ZF",
+      "carrier": "HILBERT_OPERATOR",
+      "obligation": "QME_RESTORATION",
+      "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
+      "v0_parent_status": "PIECES_ONLY",
+      "parent_evidence": [
+        "blackadar-farah-karagila-2026",
+        "blackadar-farah-2026",
+        "neumann-pape-streicher-2018"
+      ],
+      "review_batch": "ZF_OPERATOR_FOUNDATIONS",
+      "review_priority": "PIECES_DESCENDANT_BATCH",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "ZF operator theory and effective spectral representation do not establish interacting QFT, renormalized products, anomalies, QME restoration, or residual transfer. No reviewed record in the batch restores the quantum master equation in this refined coordinate.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "WEAK_CHOICE_ZF|HILBERT_OPERATOR|RENORMALIZED_PRODUCTS",
+      "foundation": "WEAK_CHOICE_ZF",
+      "carrier": "HILBERT_OPERATOR",
+      "obligation": "RENORMALIZED_PRODUCTS",
+      "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
+      "v0_parent_status": "PIECES_ONLY",
+      "parent_evidence": [
+        "blackadar-farah-karagila-2026",
+        "blackadar-farah-2026",
+        "neumann-pape-streicher-2018"
+      ],
+      "review_batch": "ZF_OPERATOR_FOUNDATIONS",
+      "review_priority": "PIECES_DESCENDANT_BATCH",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "ZF operator theory and effective spectral representation do not establish interacting QFT, renormalized products, anomalies, QME restoration, or residual transfer. No reviewed record in the batch constructs renormalized products in this refined coordinate.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "WEAK_CHOICE_ZF|HILBERT_OPERATOR|RESIDUAL_QUANTUM_TRANSFER",
+      "foundation": "WEAK_CHOICE_ZF",
+      "carrier": "HILBERT_OPERATOR",
+      "obligation": "RESIDUAL_QUANTUM_TRANSFER",
+      "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
+      "v0_parent_status": "PIECES_ONLY",
+      "parent_evidence": [
+        "blackadar-farah-karagila-2026",
+        "blackadar-farah-2026",
+        "neumann-pape-streicher-2018"
+      ],
+      "review_batch": "ZF_OPERATOR_FOUNDATIONS",
+      "review_priority": "PIECES_DESCENDANT_BATCH",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "ZF operator theory and effective spectral representation do not establish interacting QFT, renormalized products, anomalies, QME restoration, or residual transfer. No reviewed record in the batch transfers a restored quantum correction to the residual complex.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "WEAK_CHOICE_ZF|KREIN_INDEFINITE|ANOMALY_CLASSIFICATION",
+      "foundation": "WEAK_CHOICE_ZF",
+      "carrier": "KREIN_INDEFINITE",
+      "obligation": "ANOMALY_CLASSIFICATION",
+      "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
+      "v0_parent_status": "PIECES_ONLY",
+      "parent_evidence": [
+        "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1",
+        "mostafazadeh-2001",
+        "gottschalk-2004"
+      ],
+      "review_batch": "ZF_KREIN_SPECTRAL_QFT",
+      "review_priority": "PIECES_DESCENDANT_BATCH",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "The explicit Krein carrier, pseudo-Hermitian structure, and axiomatic indefinite-metric QFT do not construct the unresolved interaction or quantum-consistency children. No reviewed record in the batch classifies anomalies in this refined coordinate.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "WEAK_CHOICE_ZF|KREIN_INDEFINITE|COUNTERTERM_CLASSIFICATION",
+      "foundation": "WEAK_CHOICE_ZF",
+      "carrier": "KREIN_INDEFINITE",
+      "obligation": "COUNTERTERM_CLASSIFICATION",
+      "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
+      "v0_parent_status": "PIECES_ONLY",
+      "parent_evidence": [
+        "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1",
+        "mostafazadeh-2001",
+        "gottschalk-2004"
+      ],
+      "review_batch": "ZF_KREIN_SPECTRAL_QFT",
+      "review_priority": "PIECES_DESCENDANT_BATCH",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "The explicit Krein carrier, pseudo-Hermitian structure, and axiomatic indefinite-metric QFT do not construct the unresolved interaction or quantum-consistency children. No reviewed record in the batch classifies counterterms in this refined coordinate.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "WEAK_CHOICE_ZF|KREIN_INDEFINITE|INTERACTION_CONSTRUCTION",
+      "foundation": "WEAK_CHOICE_ZF",
+      "carrier": "KREIN_INDEFINITE",
+      "obligation": "INTERACTION_CONSTRUCTION",
+      "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
+      "v0_parent_status": "PIECES_ONLY",
+      "parent_evidence": [
+        "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1",
+        "mostafazadeh-2001",
+        "gottschalk-2004"
+      ],
+      "review_batch": "ZF_KREIN_SPECTRAL_QFT",
+      "review_priority": "PIECES_DESCENDANT_BATCH",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "The explicit Krein carrier, pseudo-Hermitian structure, and axiomatic indefinite-metric QFT do not construct the unresolved interaction or quantum-consistency children. No reviewed record in the batch constructs the required interaction in this refined coordinate.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "WEAK_CHOICE_ZF|KREIN_INDEFINITE|QME_RESTORATION",
+      "foundation": "WEAK_CHOICE_ZF",
+      "carrier": "KREIN_INDEFINITE",
+      "obligation": "QME_RESTORATION",
+      "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
+      "v0_parent_status": "PIECES_ONLY",
+      "parent_evidence": [
+        "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1",
+        "mostafazadeh-2001",
+        "gottschalk-2004"
+      ],
+      "review_batch": "ZF_KREIN_SPECTRAL_QFT",
+      "review_priority": "PIECES_DESCENDANT_BATCH",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "The explicit Krein carrier, pseudo-Hermitian structure, and axiomatic indefinite-metric QFT do not construct the unresolved interaction or quantum-consistency children. No reviewed record in the batch restores the quantum master equation in this refined coordinate.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "WEAK_CHOICE_ZF|KREIN_INDEFINITE|RENORMALIZED_PRODUCTS",
+      "foundation": "WEAK_CHOICE_ZF",
+      "carrier": "KREIN_INDEFINITE",
+      "obligation": "RENORMALIZED_PRODUCTS",
+      "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
+      "v0_parent_status": "PIECES_ONLY",
+      "parent_evidence": [
+        "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1",
+        "mostafazadeh-2001",
+        "gottschalk-2004"
+      ],
+      "review_batch": "ZF_KREIN_SPECTRAL_QFT",
+      "review_priority": "PIECES_DESCENDANT_BATCH",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "The explicit Krein carrier, pseudo-Hermitian structure, and axiomatic indefinite-metric QFT do not construct the unresolved interaction or quantum-consistency children. No reviewed record in the batch constructs renormalized products in this refined coordinate.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "WEAK_CHOICE_ZF|KREIN_INDEFINITE|RESIDUAL_QUANTUM_TRANSFER",
+      "foundation": "WEAK_CHOICE_ZF",
+      "carrier": "KREIN_INDEFINITE",
+      "obligation": "RESIDUAL_QUANTUM_TRANSFER",
+      "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
+      "v0_parent_status": "PIECES_ONLY",
+      "parent_evidence": [
+        "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1",
+        "mostafazadeh-2001",
+        "gottschalk-2004"
+      ],
+      "review_batch": "ZF_KREIN_SPECTRAL_QFT",
+      "review_priority": "PIECES_DESCENDANT_BATCH",
+      "decision": "REVIEWED_NO_TRANSFER",
+      "resulting_coverage_status": "NOT_MAPPED",
+      "rationale": "The explicit Krein carrier, pseudo-Hermitian structure, and axiomatic indefinite-metric QFT do not construct the unresolved interaction or quantum-consistency children. No reviewed record in the batch transfers a restored quantum correction to the residual complex.",
+      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent."
+    },
+    {
+      "coordinate": "WEAK_CHOICE_ZF|SMOOTH_DISTRIBUTIONAL|ANOMALY_CLASSIFICATION",
+      "foundation": "WEAK_CHOICE_ZF",
+      "carrier": "SMOOTH_DISTRIBUTIONAL",
+      "obligation": "ANOMALY_CLASSIFICATION",
+      "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
+      "v0_parent_status": "PRIORITY_GAP",
+      "parent_evidence": [],
+      "review_batch": "EMPTY_PARENT_GAP_DECOMPOSITION",
+      "review_priority": "EMPTY_PARENT_GAP_DECOMPOSITION",
+      "decision": "REVIEWED_CHILD_GAP",
+      "resulting_coverage_status": "PRIORITY_GAP",
+      "rationale": "The broad v0 priority gap is coherent at this child: the current corpus lacks a child-specific anomaly classification.",
+      "boundary": "This is a reviewed programme gap in the current corpus, not proof of literature absence, impossibility, necessity, or a no-go theorem."
+    },
+    {
+      "coordinate": "WEAK_CHOICE_ZF|SMOOTH_DISTRIBUTIONAL|COUNTERTERM_CLASSIFICATION",
+      "foundation": "WEAK_CHOICE_ZF",
+      "carrier": "SMOOTH_DISTRIBUTIONAL",
+      "obligation": "COUNTERTERM_CLASSIFICATION",
+      "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
+      "v0_parent_status": "PRIORITY_GAP",
+      "parent_evidence": [],
+      "review_batch": "EMPTY_PARENT_GAP_DECOMPOSITION",
+      "review_priority": "EMPTY_PARENT_GAP_DECOMPOSITION",
+      "decision": "REVIEWED_CHILD_GAP",
+      "resulting_coverage_status": "PRIORITY_GAP",
+      "rationale": "The broad v0 priority gap is coherent at this child: the current corpus lacks a child-specific local counterterm classification.",
+      "boundary": "This is a reviewed programme gap in the current corpus, not proof of literature absence, impossibility, necessity, or a no-go theorem."
+    },
+    {
+      "coordinate": "WEAK_CHOICE_ZF|SMOOTH_DISTRIBUTIONAL|INTERACTION_CONSTRUCTION",
+      "foundation": "WEAK_CHOICE_ZF",
+      "carrier": "SMOOTH_DISTRIBUTIONAL",
+      "obligation": "INTERACTION_CONSTRUCTION",
+      "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
+      "v0_parent_status": "PRIORITY_GAP",
+      "parent_evidence": [],
+      "review_batch": "EMPTY_PARENT_GAP_DECOMPOSITION",
+      "review_priority": "EMPTY_PARENT_GAP_DECOMPOSITION",
+      "decision": "REVIEWED_CHILD_GAP",
+      "resulting_coverage_status": "PRIORITY_GAP",
+      "rationale": "The broad v0 priority gap is coherent at this child: the current corpus lacks an interaction construction in the declared foundational regime and smooth carrier.",
+      "boundary": "This is a reviewed programme gap in the current corpus, not proof of literature absence, impossibility, necessity, or a no-go theorem."
+    },
+    {
+      "coordinate": "WEAK_CHOICE_ZF|SMOOTH_DISTRIBUTIONAL|QME_RESTORATION",
+      "foundation": "WEAK_CHOICE_ZF",
+      "carrier": "SMOOTH_DISTRIBUTIONAL",
+      "obligation": "QME_RESTORATION",
+      "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
+      "v0_parent_status": "PRIORITY_GAP",
+      "parent_evidence": [],
+      "review_batch": "EMPTY_PARENT_GAP_DECOMPOSITION",
+      "review_priority": "EMPTY_PARENT_GAP_DECOMPOSITION",
+      "decision": "REVIEWED_CHILD_GAP",
+      "resulting_coverage_status": "PRIORITY_GAP",
+      "rationale": "The broad v0 priority gap is coherent at this child: the current corpus lacks restoration of the local quantum master equation.",
+      "boundary": "This is a reviewed programme gap in the current corpus, not proof of literature absence, impossibility, necessity, or a no-go theorem."
+    },
+    {
+      "coordinate": "WEAK_CHOICE_ZF|SMOOTH_DISTRIBUTIONAL|RENORMALIZED_PRODUCTS",
+      "foundation": "WEAK_CHOICE_ZF",
+      "carrier": "SMOOTH_DISTRIBUTIONAL",
+      "obligation": "RENORMALIZED_PRODUCTS",
+      "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
+      "v0_parent_status": "PRIORITY_GAP",
+      "parent_evidence": [],
+      "review_batch": "EMPTY_PARENT_GAP_DECOMPOSITION",
+      "review_priority": "EMPTY_PARENT_GAP_DECOMPOSITION",
+      "decision": "REVIEWED_CHILD_GAP",
+      "resulting_coverage_status": "PRIORITY_GAP",
+      "rationale": "The broad v0 priority gap is coherent at this child: the current corpus lacks renormalized products in the declared foundational regime and carrier.",
+      "boundary": "This is a reviewed programme gap in the current corpus, not proof of literature absence, impossibility, necessity, or a no-go theorem."
+    },
+    {
+      "coordinate": "WEAK_CHOICE_ZF|SMOOTH_DISTRIBUTIONAL|RESIDUAL_QUANTUM_TRANSFER",
+      "foundation": "WEAK_CHOICE_ZF",
+      "carrier": "SMOOTH_DISTRIBUTIONAL",
+      "obligation": "RESIDUAL_QUANTUM_TRANSFER",
+      "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
+      "v0_parent_status": "PRIORITY_GAP",
+      "parent_evidence": [],
+      "review_batch": "EMPTY_PARENT_GAP_DECOMPOSITION",
+      "review_priority": "EMPTY_PARENT_GAP_DECOMPOSITION",
+      "decision": "REVIEWED_CHILD_GAP",
+      "resulting_coverage_status": "PRIORITY_GAP",
+      "rationale": "The broad v0 priority gap is coherent at this child: the current corpus lacks a quantum correction transferred to the residual complex after QME restoration.",
+      "boundary": "This is a reviewed programme gap in the current corpus, not proof of literature absence, impossibility, necessity, or a no-go theorem."
+    }
+  ],
+  "provenance": {
+    "inputs": [
+      {
+        "path": "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V0.json",
+        "sha256": "4a16777a481edeafe1809fc95ffb91ca8ec22972d60eaa8592e1fa68676c193c"
+      },
+      {
+        "path": "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V1.json",
+        "sha256": "20c77747866dd79c53be98a90987ad63f83aec765a17fe97be78bd555676a2de"
+      },
+      {
+        "path": "foundations/literature-ledger.json",
+        "sha256": "93aa76fc9042f81be11d716664593afe78f91b9c83fa3c04a03cb6aeae558596"
+      },
+      {
+        "path": "foundations/literature-supplement-known-attempts-v1.json",
+        "sha256": "3f4a836af7c815e9628f0c0b1ee10bc5de7d8ecceba9df8d0757f766a0394dc7"
+      },
+      {
+        "path": "foundations/literature-expansion-v2.json",
+        "sha256": "d242e4a978acd268a2b463b7246dc6a712f98ab00bcc9955791f1d61771ed8bc"
+      },
+      {
+        "path": "foundations/results/FOUNDATIONAL_EXPLICIT_ENERGY_SPECTRAL_FRAGMENT_ZF_V1.json",
+        "sha256": "0691b281e30ed16b1181be123116950cbd57fafffd43e0b528abcfab332c921c"
+      },
+      {
+        "path": "foundations/results/FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1.json",
+        "sha256": "bd71c8609cd6ff5d83d5f67aa86f46216f5301b377e6a437a74d197b577d9b2a"
+      }
+    ]
+  },
+  "independent_checker": {
+    "path": "foundations/check_intersection_migration_audit.py",
+    "checks": [
+      "112-coordinate closure",
+      "v1 pending partition",
+      "v0 parent reconstruction",
+      "18 evidence batches",
+      "12 result-descendant priority cases",
+      "76 pieces batches",
+      "24 child-gap decompositions",
+      "decision/status boundary",
+      "canonical digest"
+    ],
+    "expected_digest": "02ba119ad08cd74f692ffbba7160f452ea57a72bdd25da7f1803295e6b231014"
+  },
+  "claim_flags": {
+    "all_v1_pending_reviewed": true,
+    "coverage_separated_from_migration": true,
+    "parent_results_blindly_inherited": false,
+    "reviewed_no_transfer_means_literature_absent": false,
+    "child_gap_means_impossible": false,
+    "new_lorentzian_claim": false
+  },
+  "does_not_establish": [
+    "literature completeness",
+    "that a reviewed-no-transfer coordinate has no supporting literature",
+    "that every Cartesian coordinate is coherent",
+    "a weakest mathematical base",
+    "a new physical result",
+    "a new Lorentzian-causal result"
+  ],
+  "human_report": "foundations/reports/intersection-cube-migration-audit-v2.md"
+}

@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "result_id", "result_kind", "lifecycle", "created", "repository_base_commit", "dependency_tags", "scope", "counts", "features", "provenance", "independent_checker", "claim_flags", "does_not_establish", "human_report"],
+  "properties": {
+    "schema_version": {"const": "foundational-matrix-explorer-site-v2"},
+    "result_id": {"const": "FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2"},
+    "result_kind": {"const": "STATIC_EVIDENCE_EXPLORER"},
+    "lifecycle": {"const": "VERIFIED_NAVIGATION_ARTIFACT"},
+    "created": {"type": "string", "format": "date"},
+    "repository_base_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]},
+    "scope": {"type": "string", "minLength": 1},
+    "counts": {
+      "type": "object",
+      "required": ["cartesian_total", "emitted", "coverage_classified", "qualified", "migration_reviewed", "migration_pending", "migration_unresolved", "reviewed_no_transfer", "not_mapped", "synthetic_not_mapped", "status_counts", "migration_status_counts", "evidence_records"],
+      "properties": {
+        "cartesian_total": {"const": 576},
+        "emitted": {"const": 452},
+        "coverage_classified": {"const": 364},
+        "qualified": {"const": 364},
+        "migration_reviewed": {"const": 452},
+        "migration_pending": {"const": 0},
+        "migration_unresolved": {"const": 0},
+        "reviewed_no_transfer": {"const": 88},
+        "not_mapped": {"const": 212},
+        "synthetic_not_mapped": {"const": 124},
+        "status_counts": {"type": "object"},
+        "migration_status_counts": {"type": "object"},
+        "evidence_records": {"const": 51}
+      }
+    },
+    "features": {"type": "array", "minItems": 14, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "provenance": {"type": "object", "required": ["manifest", "manifest_sha256", "canonical_data_digest"]},
+    "independent_checker": {"type": "object", "required": ["path", "expected_cells", "expected_emitted", "expected_synthetic_not_mapped", "expected_total_not_mapped", "expected_evidence_records", "expected_digest"]},
+    "claim_flags": {"type": "object", "required": ["static_site_generated", "all_cartesian_coordinates_visible", "all_emitted_migrations_reviewed", "coverage_and_migration_separated", "all_used_evidence_resolved", "scientific_claims_duplicated_by_hand", "literature_complete", "unmapped_means_absent", "reviewed_no_transfer_means_absent", "priority_score_is_theorem", "new_lorentzian_claim"]},
+    "does_not_establish": {"type": "array", "minItems": 7, "items": {"type": "string", "minLength": 1}},
+    "human_report": {"const": "foundations/reports/matrix-explorer-site-v2.md"}
+  }
+}

@@ -1,0 +1,167 @@
+{
+  "schema_version": "foundational-low-hanging-cell-closure-audit-v1",
+  "result_id": "FOUNDATIONAL_LOW_HANGING_CELL_CLOSURE_AUDIT_V1",
+  "result_kind": "FOUNDATIONAL_SCOPE_AUDIT",
+  "lifecycle": "SEPARATED",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "created": "2026-08-11",
+  "repository_base_commit": "f64191a1e2e3fc1fb5a06bb1b86e941bb88480bf",
+  "question": "Which already-assessed open cube cells can be closed by existing certified repository results once the cube axes are kept orthogonal, and which remaining cells require genuinely new bridges or constructions?",
+  "decision_rule": {
+    "low_hanging": "Promote an assessed PIECES_ONLY or PRIORITY_GAP cell only when an existing content-pinned repository certificate directly performs at least one action named by that obligation on the stated foundation/carrier, and the unsolved remainder can be stated as a strict boundary.",
+    "not_low_hanging": "Retain an assessed open status when closure needs a new continuum theorem, foundational reformulation, internal construction, physical selector, interaction, or comparison theorem rather than a semantic correction or import of an existing certified result.",
+    "status_semantics": "LOCAL_RESULT means that one bounded result occupies the intersection; it does not mean the entire cell or programme is complete.",
+    "audit_universe": "The 25 PIECES_ONLY or PRIORITY_GAP cells assessed before this audit. The 157 NOT_MAPPED cells are outside the exhaustion claim."
+  },
+  "promotions": [
+    {
+      "foundation": "CLASSICAL_STANDARD",
+      "carrier": "SMOOTH_DISTRIBUTIONAL",
+      "obligation": "GAUGE_BV_COHOMOLOGY",
+      "old_status": "PIECES_ONLY",
+      "new_status": "LOCAL_RESULT",
+      "basis": "The authoritative local-BV chain certifies gauge-fixed H^{0,4}(s|d) and H^{1,4}(s|d), including the minimal-to-nonminimal-to-gauge-fixed contraction, on the regular Bach locus.",
+      "boundary": "This is local jet/BV cohomology, not a complete global smooth or distributional off-shell BV complex, full classical freeze gate, propagator, or residual-state theorem."
+    },
+    {
+      "foundation": "CLASSICAL_STANDARD",
+      "carrier": "SMOOTH_DISTRIBUTIONAL",
+      "obligation": "INTERACTION_RENORMALIZATION_QME",
+      "old_status": "PRIORITY_GAP",
+      "new_status": "LOCAL_RESULT",
+      "basis": "The same exact local-BV results classify the bounded counterterm and anomaly cohomology represented by H^{0,4}(s|d) and H^{1,4}(s|d).",
+      "boundary": "No coefficient, regulated breaking, renormalized product, QME restoration, residual transfer, or Lorentzian quantum construction follows."
+    },
+    {
+      "foundation": "FINITE_DISCRETE",
+      "carrier": "FINITE_EXACT",
+      "obligation": "DYNAMICS_PROPAGATION",
+      "old_status": "PRIORITY_GAP",
+      "new_status": "LOCAL_RESULT",
+      "basis": "Every displayed finite energy cutoff inherits the certified diagonal unitary dynamics; the independent rail checks its exact matrix-unit grading and finite-core derivation with integer Laurent exponents.",
+      "boundary": "The finite cutoff is not a finite-field theory and no convergence, error estimate, regulator independence, causal Green operator, or continuum reconstruction theorem is proved."
+    }
+  ],
+  "local_bv_evidence": {
+    "regularity_scope": "REGULAR_BACH_LOCUS",
+    "h04": {
+      "result_id": "H04_GAUGE_FIXED_BV_RESULT",
+      "result_state": "GAUGE_FIXED_BV_LOCAL_COHOMOLOGY_COMPLETE",
+      "form_degree": 4,
+      "ghost_number": 0,
+      "parity_dimensions": {"even": 2, "odd": 1},
+      "nontrivial_representatives": ["CT_C2", "CT_E4", "CT_C_DUAL_C"],
+      "exact_rows": ["CT_BOX_R"]
+    },
+    "h14": {
+      "result_id": "H14_GAUGE_FIXED_BV_RESULT",
+      "result_state": "GAUGE_FIXED_BV_LOCAL_COHOMOLOGY_COMPLETE",
+      "form_degree": 4,
+      "ghost_number": 1,
+      "parity_dimensions": {"even": 2, "odd": 1},
+      "nontrivial_representatives": ["ANOM_OMEGA_C2", "ANOM_OMEGA_E4", "ANOM_OMEGA_C_DUAL_C"],
+      "exact_rows": ["ANOM_OMEGA_BOX_R"]
+    },
+    "contraction_state": "FULL_LOCAL_BV_G2_COMPLETE_ON_REGULAR_BACH_LOCUS_ANALYTIC_QME_OPEN",
+    "classical_import_gate": "FAIL_CLOSED",
+    "separation": "The local cohomology completion and the broader classical import freeze are different claims. Importing the former does not promote the latter."
+  },
+  "finite_dynamics_evidence": {
+    "source_result": "FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1",
+    "maximum_energy": 8,
+    "representative_modes": 18,
+    "matrix_units": 324,
+    "star_degree_checks": 324,
+    "matrix_unit_composition_checks": 5832,
+    "derivation_leibniz_checks": 5832,
+    "formal_time_pair_checks": 15876,
+    "arithmetic": "exact integers and formal Laurent exponents only",
+    "axis_separation": "Finite dynamics belongs to DYNAMICS_PROPAGATION. Controlled comparison with the smooth continuum remains in RECONSTRUCTION_LIMITS."
+  },
+  "remaining_assessed_open_cells": [
+    {"foundation":"WEAK_ARITHMETIC","carrier":"HILBERT_OPERATOR","obligation":"KINEMATICS_OBSERVABLES","status":"PIECES_ONLY","missing_gate":"LITERATURE_TO_PHYSICS_BRIDGE"},
+    {"foundation":"WEAK_ARITHMETIC","carrier":"SMOOTH_DISTRIBUTIONAL","obligation":"DYNAMICS_PROPAGATION","status":"PRIORITY_GAP","missing_gate":"WEAK_BASE_CONTINUUM_THEOREM"},
+    {"foundation":"WEAK_ARITHMETIC","carrier":"SMOOTH_DISTRIBUTIONAL","obligation":"GAUGE_BV_COHOMOLOGY","status":"PRIORITY_GAP","missing_gate":"WEAK_BASE_CONTINUUM_THEOREM"},
+    {"foundation":"WEAK_ARITHMETIC","carrier":"SMOOTH_DISTRIBUTIONAL","obligation":"INTERACTION_RENORMALIZATION_QME","status":"PRIORITY_GAP","missing_gate":"WEAK_BASE_CONTINUUM_THEOREM"},
+    {"foundation":"WEAK_CHOICE_ZF","carrier":"SMOOTH_DISTRIBUTIONAL","obligation":"DYNAMICS_PROPAGATION","status":"PRIORITY_GAP","missing_gate":"CHOICE_FREE_CONTINUUM_THEOREM"},
+    {"foundation":"WEAK_CHOICE_ZF","carrier":"SMOOTH_DISTRIBUTIONAL","obligation":"GAUGE_BV_COHOMOLOGY","status":"PRIORITY_GAP","missing_gate":"CHOICE_FREE_CONTINUUM_THEOREM"},
+    {"foundation":"WEAK_CHOICE_ZF","carrier":"SMOOTH_DISTRIBUTIONAL","obligation":"INTERACTION_RENORMALIZATION_QME","status":"PRIORITY_GAP","missing_gate":"CHOICE_FREE_CONTINUUM_THEOREM"},
+    {"foundation":"CONSTRUCTIVE_COMPUTABLE","carrier":"FINITE_EXACT","obligation":"GAUGE_BV_COHOMOLOGY","status":"PIECES_ONLY","missing_gate":"CONSTRUCTIVE_PROOF_OBJECT"},
+    {"foundation":"CONSTRUCTIVE_COMPUTABLE","carrier":"ALGEBRAIC_CSTAR","obligation":"STATES_PROBABILITY","status":"PIECES_ONLY","missing_gate":"COMPOSITION_OR_PHYSICAL_SELECTION"},
+    {"foundation":"CONSTRUCTIVE_COMPUTABLE","carrier":"SMOOTH_DISTRIBUTIONAL","obligation":"DYNAMICS_PROPAGATION","status":"PRIORITY_GAP","missing_gate":"CONSTRUCTIVE_CONTINUUM_THEOREM"},
+    {"foundation":"CONSTRUCTIVE_COMPUTABLE","carrier":"SMOOTH_DISTRIBUTIONAL","obligation":"GAUGE_BV_COHOMOLOGY","status":"PRIORITY_GAP","missing_gate":"CONSTRUCTIVE_CONTINUUM_THEOREM"},
+    {"foundation":"CONSTRUCTIVE_COMPUTABLE","carrier":"SMOOTH_DISTRIBUTIONAL","obligation":"INTERACTION_RENORMALIZATION_QME","status":"PRIORITY_GAP","missing_gate":"CONSTRUCTIVE_CONTINUUM_THEOREM"},
+    {"foundation":"CONSTRUCTIVE_COMPUTABLE","carrier":"HILBERT_OPERATOR","obligation":"RECONSTRUCTION_LIMITS","status":"PIECES_ONLY","missing_gate":"SHARED_RECONSTRUCTION_REVERSAL"},
+    {"foundation":"TOPOS_INTERNAL","carrier":"LOCALIC_SYNTHETIC","obligation":"STATES_PROBABILITY","status":"PIECES_ONLY","missing_gate":"PHYSICAL_STATE_BRIDGE"},
+    {"foundation":"TOPOS_INTERNAL","carrier":"LOCALIC_SYNTHETIC","obligation":"DYNAMICS_PROPAGATION","status":"PRIORITY_GAP","missing_gate":"INTERNAL_CONSTRUCTION"},
+    {"foundation":"TOPOS_INTERNAL","carrier":"LOCALIC_SYNTHETIC","obligation":"GAUGE_BV_COHOMOLOGY","status":"PRIORITY_GAP","missing_gate":"INTERNAL_CONSTRUCTION"},
+    {"foundation":"TOPOS_INTERNAL","carrier":"LOCALIC_SYNTHETIC","obligation":"INTERACTION_RENORMALIZATION_QME","status":"PRIORITY_GAP","missing_gate":"INTERNAL_CONSTRUCTION"},
+    {"foundation":"TOPOS_INTERNAL","carrier":"LOCALIC_SYNTHETIC","obligation":"RECONSTRUCTION_LIMITS","status":"PRIORITY_GAP","missing_gate":"EXTERNAL_INTERNAL_COMPARISON"},
+    {"foundation":"TOPOS_INTERNAL","carrier":"SMOOTH_DISTRIBUTIONAL","obligation":"GAUGE_BV_COHOMOLOGY","status":"PRIORITY_GAP","missing_gate":"INTERNAL_SMOOTH_BV_CONSTRUCTION"},
+    {"foundation":"TOPOS_INTERNAL","carrier":"SMOOTH_DISTRIBUTIONAL","obligation":"INTERACTION_RENORMALIZATION_QME","status":"PRIORITY_GAP","missing_gate":"INTERNAL_SMOOTH_BV_CONSTRUCTION"},
+    {"foundation":"FINITE_DISCRETE","carrier":"FINITE_EXACT","obligation":"INTERACTION_RENORMALIZATION_QME","status":"PRIORITY_GAP","missing_gate":"FINITE_INTERACTION_WITH_RECONSTRUCTION"},
+    {"foundation":"FINITE_DISCRETE","carrier":"SMOOTH_DISTRIBUTIONAL","obligation":"RECONSTRUCTION_LIMITS","status":"PRIORITY_GAP","missing_gate":"CONTROLLED_CONTINUUM_LIMIT"}
+  ],
+  "audit_summary": {
+    "assessed_open_before": 25,
+    "promoted_local_results": 3,
+    "assessed_open_after": 22,
+    "pieces_only_after": 5,
+    "priority_gaps_after": 17,
+    "not_mapped_outside_audit": 157,
+    "bounded_exhaustion_status": "NO_FURTHER_SEMANTIC_OR_EXISTING_CERTIFICATE_CLOSURE_IDENTIFIED"
+  },
+  "independent_checker": {
+    "path": "foundations/check_low_hanging_cell_closure.py",
+    "arithmetic": "exact integers, set equality, and SHA-256 only",
+    "checks": [
+      "three-cell promotion set",
+      "exact H04 and H14 class data",
+      "full local-BV contraction state",
+      "failed classical import gate preservation",
+      "finite dynamics witness equality",
+      "exhaustive 22-cell post-promotion open ledger",
+      "canonical audit digest"
+    ],
+    "expected_digest": "cdf5f659fc2eaba5af071f6cba4679fed29fba5762f7844af7be0f5a332904ab"
+  },
+  "provenance": {
+    "inputs": [
+      {"path":"foundations/results/FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1.json","sha256":"0880db47af0c27a0f99c2929ed6e4d42789ef03e67ff4fe6a55f1f49ba92d2f7","role":"certified free dynamics and finite exact Laurent witness"},
+      {"path":"quantum-weyl/local_bv/cohomology/H04_GAUGE_FIXED_BV_RESULT.json","sha256":"ffcb1318fecd34b20695e29f8b1e545d74b0b5ba33709971bd9eefd578d4ca97","role":"completed gauge-fixed local counterterm cohomology"},
+      {"path":"quantum-weyl/local_bv/cohomology/H14_GAUGE_FIXED_BV_RESULT.json","sha256":"a7730a34b21d2068cc73e46c563ce929195a3d9a7c7626d3843788b54e0592b3","role":"completed gauge-fixed local anomaly cohomology"},
+      {"path":"quantum-weyl/local_bv/certificates/GENERAL_NONMINIMAL_GAUGE_FIXED_CONTRACTION.json","sha256":"4513be48247605774f02aaba69faf3a2a9c9a65eb8a3550c36a873a85c87da1a","role":"minimal/nonminimal/gauge-fixed contraction and claim boundaries"},
+      {"path":"quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_CERTIFICATE.json","sha256":"eb48675fb36489e7d33724b2d06f1f0ebfe6867d043bf71d1536015f9862b2d6","role":"fail-closed broader classical freeze gate"},
+      {"path":"quantum-weyl/classical_import/certificates/REPOSITORY_CLASSICAL_SNAPSHOT_COMPATIBILITY.json","sha256":"03953fd210a94b332eddb5e2d98a1dbde67a4bf6a8a4534f98989dd7a1956bac","role":"content-hash compatibility of the accepted analytic and local-BV snapshots"}
+    ]
+  },
+  "claim_flags": {
+    "three_existing_result_closures_identified": true,
+    "local_bv_cohomology_imported_with_scope": true,
+    "local_counterterm_anomaly_classes_imported_with_scope": true,
+    "finite_cutoff_dynamics_imported_with_scope": true,
+    "remaining_assessed_open_cells_exhaustively_triaged": true,
+    "classical_freeze_gate_passed": false,
+    "qme_restored": false,
+    "lorentzian_certified": false,
+    "all_216_cells_assessed": false,
+    "remaining_cells_impossible": false
+  },
+  "does_not_establish": [
+    "a complete global smooth or distributional off-shell BV complex",
+    "the classical import freeze gate",
+    "a complete classification beyond the regular Bach locus and declared derivative bounds",
+    "counterterm or anomaly coefficients",
+    "regulated Slavnov breaking, renormalized products, or QME restoration",
+    "residual transfer or a one-particle interpretation of residual classes",
+    "a finite-to-continuum comparison or regulator-independent limit",
+    "causal propagation or any LORENTZIAN-CAUSAL theorem",
+    "that any remaining open cell is impossible or unimportant",
+    "that any of the 157 NOT_MAPPED cells has been assessed"
+  ],
+  "next_gate": "The cheapest remaining theorem candidate is no longer a label repair: it must supply one of the typed missing gates in the 22-cell ledger. The pair-frontier analyzer should rank those gates, while NOT_MAPPED cells require an evidence pass before being called gaps.",
+  "human_report": "foundations/reports/low-hanging-cell-closure-audit.md"
+}

@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "result_id", "result_kind", "lifecycle", "created", "repository_base_commit", "dependency_tags", "purpose", "compatibility", "axes", "cell_statuses", "migration_statuses", "dimensions", "cells", "provenance", "independent_checker", "claim_flags", "does_not_establish", "human_report"],
+  "properties": {
+    "schema_version": {"const": "foundational-intersection-cube-v2"},
+    "result_id": {"const": "FOUNDATIONAL_INTERSECTION_CUBE_V2"},
+    "result_kind": {"const": "MIGRATION_REVIEWED_FOUNDATIONAL_NAVIGATION_CUBE"},
+    "lifecycle": {"const": "LITERATURE_SCOPED"},
+    "created": {"type": "string", "format": "date"},
+    "repository_base_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]},
+    "purpose": {"type": "string", "minLength": 1},
+    "compatibility": {"type": "object", "required": ["v0_unchanged", "v1_unchanged", "axes_preserved_from_v1", "coordinates_preserved_from_v1", "migration_audit", "rule"]},
+    "axes": {"type": "array", "minItems": 3, "maxItems": 3},
+    "cell_statuses": {"type": "array", "minItems": 5, "maxItems": 5},
+    "migration_statuses": {"type": "array", "minItems": 5, "maxItems": 5},
+    "dimensions": {
+      "type": "object",
+      "required": ["axis_sizes", "cartesian_total", "emitted_cells", "coverage_classified_cells", "migration_reviewed_cells", "migration_pending_cells", "reviewed_no_transfer_cells", "status_counts", "migration_status_counts"],
+      "properties": {
+        "axis_sizes": {"const": [6, 6, 16]},
+        "cartesian_total": {"const": 576},
+        "emitted_cells": {"const": 452},
+        "coverage_classified_cells": {"const": 364},
+        "migration_reviewed_cells": {"const": 452},
+        "migration_pending_cells": {"const": 0},
+        "reviewed_no_transfer_cells": {"const": 88},
+        "status_counts": {"type": "object"},
+        "migration_status_counts": {"type": "object"}
+      }
+    },
+    "cells": {
+      "type": "array",
+      "minItems": 452,
+      "maxItems": 452,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["foundation", "carrier", "obligation", "status", "evidence", "parent_obligation", "migration_relation", "summary", "boundary", "migration_status", "migration_evidence", "migration_rationale"],
+        "properties": {
+          "foundation": {"type": "string", "minLength": 1},
+          "carrier": {"type": "string", "minLength": 1},
+          "obligation": {"type": "string", "minLength": 1},
+          "status": {"enum": ["LITERATURE_RESULT", "LOCAL_RESULT", "PIECES_ONLY", "PRIORITY_GAP", "NOT_MAPPED"]},
+          "evidence": {"type": "array", "items": {"type": "string", "minLength": 1}, "uniqueItems": true},
+          "parent_obligation": {"type": "string", "minLength": 1},
+          "migration_relation": {"enum": ["EXACT_ONE_TO_ONE", "CAPABILITY_QUALIFIED", "NO_REGISTERED_DESCENT", "REVIEWED_V1_OVERLAY"]},
+          "summary": {"type": "string", "minLength": 1},
+          "boundary": {"type": "string", "minLength": 1},
+          "migration_status": {"enum": ["EXACT_PARENT_TRANSFER", "CAPABILITY_QUALIFIED", "REVIEWED_OVERLAY", "REVIEWED_NO_TRANSFER", "REVIEWED_CHILD_GAP"]},
+          "migration_evidence": {"type": "array", "items": {"type": "string", "minLength": 1}, "uniqueItems": true},
+          "migration_rationale": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "provenance": {"type": "object", "required": ["inputs"]},
+    "independent_checker": {"type": "object", "required": ["path", "checks", "expected_digest"], "properties": {"expected_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}},
+    "claim_flags": {"type": "object"},
+    "does_not_establish": {"type": "array", "minItems": 6, "items": {"type": "string", "minLength": 1}},
+    "human_report": {"const": "foundations/reports/refined-intersection-cube-v2.md"}
+  }
+}

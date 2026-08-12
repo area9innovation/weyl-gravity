@@ -1,0 +1,115 @@
+{
+  "schema_version": "science-forge-tier-receipt-v1",
+  "receipt_id": "FOUNDATIONAL_INTERSECTION_CUBE_MIGRATION_AND_SITE_V2_TIER_RECEIPT",
+  "created": "2026-08-12",
+  "repository_base_commit": "24e988693bd9ee6874bedf9de476202c949a2e7e",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
+  "scope": "Explicit review of all 112 v1 migration-pending cells, a v2 cube separating scientific coverage from evidence migration, and an append-only static v2 explorer exposing both fields.",
+  "tiers": {
+    "tier_0_compile": {
+      "status": "PASS",
+      "command": "python3 -m py_compile foundations/audit_intersection_migrations.py foundations/check_intersection_migration_audit.py foundations/verify_intersection_migration_audit.py foundations/refine_intersection_cube_v2.py foundations/check_refined_intersection_cube_v2.py foundations/verify_refined_intersection_cube_v2.py foundations/build_matrix_site_v2.py foundations/check_matrix_site_v2.py foundations/verify_matrix_site_v2.py foundations/tests/test_intersection_migration_audit.py foundations/tests/test_refined_intersection_cube_v2.py foundations/tests/test_matrix_site_v2.py",
+      "elapsed_seconds": 0.04
+    },
+    "tier_0_json": {
+      "status": "PASS",
+      "command": "parse every foundations/**/*.json with json.loads",
+      "elapsed_seconds": 0.03,
+      "result": "117 foundations JSON files parsed, including the standalone v2 source bundle."
+    },
+    "tier_0_diff_check": {
+      "status": "PASS",
+      "command": "git diff --check -- foundations",
+      "elapsed_seconds": 0.02
+    },
+    "tier_1_migration_audit": {
+      "status": "PASS",
+      "command": "python3 foundations/verify_intersection_migration_audit.py",
+      "elapsed_seconds": 0.10,
+      "result": "All 112 v1 pending coordinates are reconstructed: 12 direct-result descendants reviewed first, 76 pieces-only descendants reviewed in 18 evidence batches, 24 empty-parent gaps decomposed, and zero decisions left pending."
+    },
+    "tier_1_cube_v2": {
+      "status": "PASS",
+      "command": "python3 foundations/verify_refined_intersection_cube_v2.py",
+      "elapsed_seconds": 0.12,
+      "result": "All 452 v1 coordinates are preserved; 364 have classified coverage, all 452 have reviewed migration, 88 are reviewed-no-transfer, 24 are reviewed child gaps, and zero are migration-pending."
+    },
+    "tier_1_site_v2": {
+      "status": "PASS",
+      "command": "python3 foundations/verify_matrix_site_v2.py",
+      "elapsed_seconds": 0.14,
+      "result": "The 576-coordinate surface, 452 authoritative emitted cells, 124 fail-closed complements, 51 evidence joins across coverage and migration, typed graph, ladder, deterministic build, and content-addressed manifest pass."
+    },
+    "tier_1_browser_smoke": {
+      "status": "PASS",
+      "command": "serve foundations/site-v2 with python3 -m http.server; open a REVIEWED_NO_TRANSFER deep link in headless Google Chrome at 1600x1100",
+      "elapsed_seconds": 0.9,
+      "result": "The matrix renders with rotated carrier headers, five coverage-state controls and no unresolved-migration legend; the inspector separates zero positive coverage evidence from two reviewed parent-evidence records and links the audit JSON and report."
+    },
+    "tier_2_v1_compatibility": {
+      "status": "PASS",
+      "command": "python3 foundations/verify_refined_intersection_cube.py && python3 foundations/verify_cylinder_wave_strength_ladder.py",
+      "elapsed_seconds": 0.22,
+      "result": "The unchanged v1 cube and cylinder strength ladder remain valid."
+    },
+    "tier_2_foundations_tests": {
+      "status": "PASS",
+      "command": "python3 -m unittest discover -s foundations/tests -t .",
+      "elapsed_seconds": 1.70,
+      "result": "246/246 tests pass."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No classical or quantum freeze, paper-theorem promotion, shared core-algebra change, release preparation, or explicit full-repository-suite request applies. The affected certificate chain and complete foundations test suite were run."
+    }
+  },
+  "generation_checks": [
+    {
+      "status": "PASS",
+      "command": "python3 foundations/audit_intersection_migrations.py --check && python3 foundations/check_intersection_migration_audit.py",
+      "result": "The 112-decision ledger is byte-current; independent digest 02ba119ad08cd74f692ffbba7160f452ea57a72bdd25da7f1803295e6b231014."
+    },
+    {
+      "status": "PASS",
+      "command": "python3 foundations/refine_intersection_cube_v2.py --check && python3 foundations/check_refined_intersection_cube_v2.py",
+      "result": "The v2 cube and report are byte-current; independent digest 34996392dc7b7d4548f7bbf76cf1b6f8b50402da16e1789a637661a96f8fddc3."
+    },
+    {
+      "status": "PASS",
+      "command": "python3 foundations/build_matrix_site_v2.py --check && python3 foundations/check_matrix_site_v2.py",
+      "result": "Forty-two generated artifacts are byte-current; independent data digest 0751634f730ed623e985209fbd78f51261a3a7e68c6463191bd014fc6849b5e4."
+    }
+  ],
+  "artifact_hashes": {
+    "foundations/audit_intersection_migrations.py": "ea8c8557170cb2f1097f1bc55adc706d1a926326b8b4c18ad056c58d53ff3b59",
+    "foundations/check_intersection_migration_audit.py": "8178a97e64cae635f51c81be1150db7554936bf1562c2100a83b6c4b7888c94c",
+    "foundations/verify_intersection_migration_audit.py": "05b216bddf9e41a114c763802871d1a5efcfa926c208e81df8fdd22e9239bcac",
+    "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_MIGRATION_AUDIT_V2.json": "7ff80aa7677da55ae115f0cf6b16089891163e63c5cc37d355c46ea73eeecd63",
+    "foundations/reports/intersection-cube-migration-audit-v2.md": "116bbe21e5c21101db48314dafed3896e5f79d019e7f0bbe99cc0d4e3a2ad74e",
+    "foundations/schema/foundational-intersection-cube-migration-audit-v2.schema.json": "45d5d4f0565e1c90d570815faaaa88d22194cd5e7a15822c4ca5ec302f164684",
+    "foundations/refine_intersection_cube_v2.py": "065b224d6acd52d3141df498bb408bd8cf5e63e1413b47a3e7c6bc5f0cf344e1",
+    "foundations/check_refined_intersection_cube_v2.py": "9586d1554137c5df60de9720ab9778c40495f07a6e8f8c36391b42c6c5fcd093",
+    "foundations/verify_refined_intersection_cube_v2.py": "3d7e834e09c87adde18398e0233537aaada4c0b323f2e7bed15d0763be1e01a0",
+    "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V2.json": "c74207bb2df177f677159fc04096d8d1c000c216cae01a1954789035cbe4c3f8",
+    "foundations/reports/refined-intersection-cube-v2.md": "12f2ae7ad7573a21cc22fd006013bb28ef6ddeded5cd9a003fd55caeb1d67b66",
+    "foundations/schema/foundational-intersection-cube-v2.schema.json": "6330ff4100f17ad99b2c814b43ef30d3c31c5cc2583e2cb763019479ea89ba5e",
+    "foundations/build_matrix_site_v2.py": "9472cabfcd411b17704e47627448e3e6afb312746ac709a63fc172ce87f28282",
+    "foundations/check_matrix_site_v2.py": "e1ddf2dbe53be3b73d458d5fd94331e740eb9ca9f49922868d92b44349f87adc",
+    "foundations/verify_matrix_site_v2.py": "20e585470ff3e4ed8064ec544087bc65a5cb33238c903c0eebcf3d1be1a2ffda",
+    "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json": "17c8377ad495f0fc3f4264d19a3d9fab8bd80d115b087b97e4d9e0ea2da17122",
+    "foundations/reports/matrix-explorer-site-v2.md": "3d96f3947fe9f909f0d06be8e8ff816642c463a64c16b2a568a5e7ca0af65a11",
+    "foundations/schema/foundational-matrix-explorer-site-v2.schema.json": "bc8bebfb7be1bc221effbfa4e00a6a9dac3a818a2d8773b81396c7430e17c700",
+    "foundations/matrix_site_v2_assets/app-v2.js": "008cdfe60cfb8e650650ae15f6214dd5290be84c68007d0581aed24161c4cc72",
+    "foundations/site-v2/data.json": "76d407701a3fe09ca4e3f20e6b65df401da169034da51e9c7c7dcd4a3cefdc36",
+    "foundations/site-v2/manifest.json": "e95174c7cf4937416fe4199669411789a7d0a9f2a9da092a5a932db84b4aa896"
+  },
+  "unresolved": [
+    "The 88 reviewed-no-transfer cells have no direct coverage assigned by this audit; targeted literature search may still find child-specific evidence.",
+    "The 124 synthetic Cartesian complements have not been assessed or migration-reviewed and may include incoherent products.",
+    "The 31 priority gaps are current-corpus programme gaps, not literature-absence, impossibility, or no-go results.",
+    "The audit reviews transfer of already named parent evidence; it does not automate new literature discovery or theorem proving.",
+    "Pair-frontier scores from v0 were not migrated into refined obligations because that requires a separate scoring audit.",
+    "The static bundle was verified locally but was not externally deployed."
+  ],
+  "claim_boundary": "This receipt certifies a bounded evidence-migration review, navigation cube, and static projection. It establishes no literature completeness, weakest base, scientific-priority theorem, new physical result, quantum lifecycle promotion, or new LORENTZIAN-CAUSAL result."
+}

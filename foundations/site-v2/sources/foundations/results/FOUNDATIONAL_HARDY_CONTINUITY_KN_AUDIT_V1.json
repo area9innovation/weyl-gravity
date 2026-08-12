@@ -1,0 +1,32 @@
+{
+  "schema_version":"foundational-hardy-continuity-kn-audit-v1",
+  "result_id":"FOUNDATIONAL_HARDY_CONTINUITY_KN_AUDIT_V1",
+  "result_kind":"FOUNDATIONAL_PROOF_DEPENDENCY_AUDIT",
+  "lifecycle":"SEPARATED",
+  "dependency_tags":["LOCAL-ALGEBRAIC"],
+  "created":"2026-08-11",
+  "repository_base_commit":"b5b153330f87227f0ef548a1042870bd6f1f2aaa",
+  "programme_context":{"coverage_matrix":"FOUNDATIONAL_COVERAGE_MATRIX_V0","opportunity_realized":"OP-OPERATIONAL-RECONSTRUCTION-STRENGTH"},
+  "selected_claim":"Hardy's Axiom 5 rules out the K=N theory because its finite set of pure states cannot contain a continuous reversible path between two distinct pure states.",
+  "answer":"The physical axiom supplies existence of a continuous reversible path; it does not by itself state a logical axiom. In a coded reformulation where the path includes a modulus of uniform continuity, RCA_0 is a sufficient upper bound for the finite-discrete obstruction: choose a mesh whose adjacent images are closer than the minimum separation, infer equality step by step, and contradict distinct endpoints. If continuity is presented only pointwise, extracting a uniform modulus from compactness is an additional mathematical theorem and is not classified to a weakest subsystem here. Extrema, the compact Lie-group representation, matrix diagonalization, and Hilbert space are not used in this selected step.",
+  "physical_input":{"axiom":"Axiom 5 Continuity","statement":"There exists a continuous reversible transformation between any two pure states.","role":"supplies a path between specified endpoints","does_not_imply":"WKL_0, RCA_0, compactness, or any set-existence axiom without a formal reversal over a shared base"},
+  "mathematical_encoding":{"K_equals_N_case":"the normalized pure states are the N standard basis probability vectors","metric":"l1 distance; distinct basis states have distance 2","coded_path":"values/names for gamma:[0,1]->P together with endpoint codes","explicit_modulus_route":"a modulus mu with |s-t|<2^-mu(q) implying distance(gamma(s),gamma(t))<2^-q","mesh_argument":"use q=0 and mesh denominator 2^(mu(0)+1); adjacent images have distance below 1 and therefore are equal","base_upper_bound":"RCA_0","minimality":"NOT_CLAIMED","formalization_status":"PAPER_PROOF_REFORMULATED_NOT_PROOF_ASSISTANT_FORMALIZED"},
+  "dependency_classification":[
+    {"item":"finite probability vectors and separation","status":"USED_BY_DISPLAYED_PROOF","strength":"PRA-level finite rational arithmetic for fixed N"},
+    {"item":"path existence","status":"PHYSICAL_POSTULATE","strength":"not a mathematical consequence in the audit"},
+    {"item":"explicit modulus of uniform continuity","status":"USED_BY_CODED_REFORMULATION","strength":"supplied data; RCA_0 suffices for the mesh proof"},
+    {"item":"uniform-modulus extraction from pointwise continuity on [0,1]","status":"USED_ONLY_IF_MODULUS_NOT_SUPPLIED","strength":"COMPACTNESS_DEPENDENT_AND_NOT_CLASSIFIED_HERE"},
+    {"item":"extreme-value theorem","status":"NOT_USED_BY_SELECTED_STEP","strength":"none assigned"},
+    {"item":"compact Lie-group representation","status":"NOT_USED_BY_SELECTED_STEP","strength":"appears later in Hardy's reconstruction"},
+    {"item":"Hilbert-space spectral theorem","status":"NOT_USED_BY_SELECTED_STEP","strength":"none assigned"},
+    {"item":"real-number completeness beyond the coded path","status":"AVOIDED_BY_REFORMULATION","strength":"the checker uses rational mesh and finite separation only"}
+  ],
+  "relation":{"primary":"SUFFICIENT_OVER_BASE","secondary":"REPRESENTATION_SENSITIVE","avoidance":"AVOIDED_BY_REFORMULATION","boundary":"RCA_0 sufficiency concerns the path-with-modulus encoding, not Hardy's entire reconstruction and not the pointwise-continuity formulation."},
+  "independent_checker":{"path":"foundations/check_hardy_continuity_kn.py","permitted_runtime_modules":["hashlib","json","pathlib","sys","typing"],"regression_N":[2,3,4,5,6,7,8],"moduli":[0,1,2,3,4,5],"checks":["basis-state minimum separation","mesh adjacency obstruction","bounded equality induction","distinct endpoint contradiction","canonical digest"],"expected_digest":"55cc478d7bdb303413c566ba3c4ae538074c87635a1441753c1edc957b2bf1b9"},
+  "literature_dependency":{"source_id":"hardy-2001","local_ledger":"foundations/literature-ledger.json","local_ledger_sha256":"93aa76fc9042f81be11d716664593afe78f91b9c83fa3c04a03cb6aeae558596","pinned_pdf_sha256":"f809918a4518f4b5cfca032c8fa9bd54474f129782b87e2fab5c887d14232df4","locations":["Axiom 5 Continuity","Section 8.1, step 5: ruling out K=N"],"boundary":"The reconstruction and wording are Hardy's; the subsystem and representation-sensitive dependency audit is this repository's result."},
+  "proof_dependency_dag":{"nodes":[{"id":"P","kind":"PHYSICAL_POSTULATE"},{"id":"F","kind":"FINITE_PURE_STATE_ENCODING"},{"id":"M","kind":"EXPLICIT_MODULUS"},{"id":"Q","kind":"RATIONAL_MESH"},{"id":"I","kind":"BOUNDED_INDUCTION"},{"id":"C","kind":"CONTRADICTION"},{"id":"B","kind":"BOUNDARY"}],"edges":[{"from":"P","to":"M"},{"from":"F","to":"Q"},{"from":"M","to":"Q"},{"from":"Q","to":"I"},{"from":"I","to":"C"},{"from":"C","to":"B"}]},
+  "claim_flags":{"hardy_kn_step_audited":true,"rca0_sufficient_for_explicit_modulus_route":true,"physical_axiom_implies_rca0_or_wkl0":false,"weakest_base_proved":false,"full_hardy_reconstruction_audited":false,"empirical_superiority_established":false,"lorentzian_claim":false},
+  "does_not_establish":["a weakest-base theorem","a reversal to RCA_0 or WKL_0","the strength of extracting a modulus from every pointwise-continuous code","the full K=N^r derivation","the K=N^2 quantum reconstruction","that Axiom 5 is empirically necessary","infinite-dimensional quantum theory","anything LORENTZIAN-CAUSAL"],
+  "next_gate":"Audit the later N=2,K=4 compact-group/Bloch-ball step separately; do not import this finite-discrete continuity bound into that substantially stronger argument.",
+  "human_report":"foundations/reports/hardy-continuity-kn-foundational-audit.md"
+}
