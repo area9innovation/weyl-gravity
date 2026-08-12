@@ -1,0 +1,32 @@
+{
+  "schema": "event-v0",
+  "id": "sf:program/event/reverse-physics-bateman-tagged-spectator-physical-packet-probability-DONE-a895d55f",
+  "kind": "event",
+  "source": {
+    "path": "tools/science-forge/program/events/reverse-physics-bateman-tagged-spectator-physical-packet-probability-DONE-a895d55f.json",
+    "span": null
+  },
+  "body": {
+    "event_kind": "WORK_ITEM_TRANSITIONED",
+    "actor": "reverse-physics",
+    "base_revision": "science-forge-ir-v0",
+    "predecessors": [],
+    "when": "2026-08-12",
+    "seq": 1,
+    "payload": {
+      "target": "sf:program/work/reverse-physics-bateman-tagged-spectator-physical-packet-probability",
+      "to_state": "DONE",
+      "note": "An exact rational hard nonforward three-particle detector center has exactly one supported disconnected partition: the identity spectator {p0,-k0} times the active four-point block. All singleton and three-leg component deltas and every competing spectator pairing are separated by positive exact margins. Coupling-degree classification leaves this unique 2+4 block as the complete order-lambda2 transition. The physical four-point mass-jet vector has six equal coefficients 2 and complement-pairing norm 24, reproducing d sigma/d Omega=3 lambda4/(32 pi2 s). At s=64/25 the complete leading tagged-spectator detector probability per active solid angle and transverse beam area is 75 lambda4/(2048 pi2 Area), with source corrections beginning at lambda5 in probability. The forward graph, connected six-point tree, loops, cross-stratum detectors, all-time scattering and Eq. 19 remain open. Evidence: REVERSE_PHYSICS_BT_TAGGED_SPECTATOR_PHYSICAL_PACKET_PROBABILITY_V1."
+    },
+    "native": {
+      "authored_by": "manual close-out after exact support enumeration, four-point jet factorization and independent verification",
+      "policy": "append-only; one content-addressed file per event; the work-item base state is not rewritten"
+    }
+  },
+  "edges": [
+    {
+      "rel": "TRANSITIONS",
+      "to": "sf:program/work/reverse-physics-bateman-tagged-spectator-physical-packet-probability"
+    }
+  ]
+}

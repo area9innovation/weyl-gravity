@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-tagged-spectator-physical-packet-probability-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["certificate", "schema_version", "dependency_tags", "lifecycle_state", "result_kind", "question", "answer", "exact_tagged_spectator_witness", "partition_and_order_classification", "four_point_positive_jet_factorization", "complete_leading_tagged_probability", "hard_nonforward_stratified_atlas", "assumptions", "does_not_establish", "missing_object_ledger", "next_gate", "provenance", "verification_commands", "checks", "report", "schema"],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_TAGGED_SPECTATOR_PHYSICAL_PACKET_PROBABILITY_V1"},
+    "schema_version": {"const": "reverse-physics-bt-tagged-spectator-physical-packet-probability-v1"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "exact_tagged_spectator_witness": {
+      "type": "object", "additionalProperties": false,
+      "required": ["incoming_momenta", "outgoing_momenta", "all_incoming_labels", "tagged_pair", "zero_subsets", "minimum_positive_subset_sum_Euclidean_squares", "same_side_pair_invariant_minimum", "active_invariants", "neighborhood_statement", "status"],
+      "properties": {
+        "incoming_momenta": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/fourvector"}},
+        "outgoing_momenta": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/fourvector"}},
+        "all_incoming_labels": {"const": ["p0", "p1", "p2", "-k0", "-k1", "-k2"]},
+        "tagged_pair": {"const": [0, 3]},
+        "zero_subsets": {"const": {"1": [], "2": [[0, 3]], "3": []}},
+        "minimum_positive_subset_sum_Euclidean_squares": {"const": {"1": "2", "2": "32/25", "3": "2"}},
+        "same_side_pair_invariant_minimum": {"const": "64/25"},
+        "active_invariants": {"const": {"s": "64/25", "t": "-32/25", "u": "-32/25"}},
+        "neighborhood_statement": {"$ref": "#/$defs/text"},
+        "status": {"const": "NONEMPTY_UNIQUE_TAGGED_SPECTATOR_STRATUM_CONSTRUCTED"}
+      }
+    },
+    "partition_and_order_classification": {
+      "type": "object", "additionalProperties": false,
+      "required": ["all_set_partitions", "supported_partitions", "supported_disconnected_partitions", "order_zero", "order_one", "order_two", "order_four", "source_dressing_boundary", "status"],
+      "properties": {
+        "all_set_partitions": {"const": 203},
+        "supported_partitions": {"type": "array", "minItems": 2, "maxItems": 2},
+        "supported_disconnected_partitions": {"const": [[[0, 3], [1, 2, 4, 5]]]},
+        "order_zero": {"$ref": "#/$defs/text"},
+        "order_one": {"$ref": "#/$defs/text"},
+        "order_two": {"$ref": "#/$defs/text"},
+        "order_four": {"$ref": "#/$defs/text"},
+        "source_dressing_boundary": {"$ref": "#/$defs/text"},
+        "status": {"const": "UNIQUE_COMPLETE_ORDER_LAMBDA2_TAGGED_SPECTATOR_TRANSITION"}
+      }
+    },
+    "four_point_positive_jet_factorization": {
+      "type": "object", "additionalProperties": false,
+      "required": ["reduced_tree", "coefficient_vector", "jet_metric", "positive_direction", "jet_norm", "four_mass_derivative", "massless_phase_density", "Born_rate", "fixture_rate", "status"],
+      "properties": {
+        "reduced_tree": {"const": "M4=4*lambda^2*H and H^(2)=1/2*sum_(i<j)x_i*x_j"},
+        "coefficient_vector": {"const": "r4=2*(e12+e13+e14+e23+e24+e34)"},
+        "jet_metric": {"const": "J4*e_ij=e_complement(ij), with inertia (3,3)"},
+        "positive_direction": {"$ref": "#/$defs/text"},
+        "jet_norm": {"const": "r4^sharp*r4=24"},
+        "four_mass_derivative": {"const": "partial_x1 partial_x2 partial_x3 partial_x4 |M4|^2 at zero =24*lambda^4"},
+        "massless_phase_density": {"const": "1/(256*pi^2*s)"},
+        "Born_rate": {"const": "d_sigma/d_Omega=3*lambda^4/(32*pi^2*s)"},
+        "fixture_rate": {"const": "d_sigma/d_Omega=75*lambda^4/(2048*pi^2) at s=64/25"},
+        "status": {"const": "POSITIVE_PHYSICAL_FOUR_POINT_JET_FACTORIZED"}
+      }
+    },
+    "complete_leading_tagged_probability": {
+      "type": "object", "additionalProperties": false,
+      "required": ["amplitude", "spectator_packet", "active_acceptance", "beam_normalization", "general_coefficient", "fixture_coefficient", "forward_independence", "status"],
+      "properties": {
+        "amplitude": {"const": "P_Y*(U-I)*P_X=lambda^2*S_00+O(lambda^3), S_00=I_spectator tensor A4_active"},
+        "spectator_packet": {"$ref": "#/$defs/text"},
+        "active_acceptance": {"$ref": "#/$defs/text"},
+        "beam_normalization": {"$ref": "#/$defs/text"},
+        "general_coefficient": {"const": "q_click=3*lambda^4*DeltaOmega/(32*pi^2*s*Area)+O(lambda^5)"},
+        "fixture_coefficient": {"const": "q_click=75*lambda^4*DeltaOmega/(2048*pi^2*Area)+O(lambda^5)"},
+        "forward_independence": {"$ref": "#/$defs/text"},
+        "status": {"const": "COMPLETE_LEADING_TAGGED_SPECTATOR_PHYSICAL_PROBABILITY"}
+      }
+    },
+    "hard_nonforward_stratified_atlas": {
+      "type": "object", "additionalProperties": false,
+      "required": ["fully_rearranged_stratum", "tagged_spectator_stratum", "two_spectator_implication", "scope", "cross_stratum_detector", "status"],
+      "properties": {
+        "fully_rearranged_stratum": {"$ref": "#/$defs/text"},
+        "tagged_spectator_stratum": {"$ref": "#/$defs/text"},
+        "two_spectator_implication": {"$ref": "#/$defs/text"},
+        "scope": {"$ref": "#/$defs/text"},
+        "cross_stratum_detector": {"const": "NOT_CONSTRUCTED"},
+        "status": {"const": "TWO_HARD_NONFORWARD_LOCAL_STRATA_COVERED"}
+      }
+    },
+    "assumptions": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"$ref": "#/$defs/text"}},
+    "does_not_establish": {"type": "array", "minItems": 12, "maxItems": 12, "items": {"$ref": "#/$defs/text"}},
+    "missing_object_ledger": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "object", "additionalProperties": false, "required": ["object", "status", "required_value"], "properties": {"object": {"$ref": "#/$defs/text"}, "status": {"const": "MISSING"}, "required_value": {"$ref": "#/$defs/text"}}}},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "provenance": {"type": "object", "additionalProperties": false, "required": ["source_commit", "retrieval_date", "inputs", "method"], "properties": {"source_commit": {"const": "a895d55f61186170c2c2e91ea81ac95906d73502"}, "retrieval_date": {"const": "2026-08-12"}, "inputs": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"type": "object", "additionalProperties": false, "required": ["path", "sha256"], "properties": {"path": {"$ref": "#/$defs/text"}, "sha256": {"$ref": "#/$defs/hash"}}}}, "method": {"$ref": "#/$defs/text"}}},
+    "verification_commands": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/text"}},
+    "checks": {"type": "object", "additionalProperties": false, "required": ["ok", "passed", "total", "failures", "details"], "properties": {"ok": {"const": true}, "passed": {"const": 34}, "total": {"const": 34}, "failures": {"const": []}, "details": {"type": "object", "minProperties": 34, "maxProperties": 34, "additionalProperties": {"const": true}}}},
+    "report": {"const": "reverse_physics/reports/bt-tagged-spectator-physical-packet-probability.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-tagged-spectator-physical-packet-probability-v1.schema.json"}
+  },
+  "$defs": {"text": {"type": "string", "minLength": 1}, "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "fourvector": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/text"}}}
+}
