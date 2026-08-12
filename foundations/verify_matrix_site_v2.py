@@ -51,6 +51,8 @@ def verify(*, result=None, report=None) -> tuple[list[str], list[str]]:
         "theory_profiles": 36,
         "carrier_envelopes": 6,
         "pareto_profiles": 2,
+        "dual_direct_cells": 7,
+        "mark_counts": {"G": 30, "L": 76, "LR": 7, "Lr": 5, "P": 20, "Pl": 75, "Plr": 14, "Pr": 51, "R": 90, "Rl": 3, "\u00b7": 205},
     }
     if summary != expected_summary:
         errors.append("expected independent summary")

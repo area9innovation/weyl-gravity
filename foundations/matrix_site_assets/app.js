@@ -13,6 +13,20 @@
     MIGRATION_UNRESOLVED: {label: "Migration unresolved", mark: "?", color: "#7651a8"},
     NOT_MAPPED: {label: "Not mapped", mark: "·", color: "#87918c"},
   };
+
+  // A cell status names only its strongest grade: a direct local result outranks
+  // a direct literature result, so a coordinate holding both used to show only
+  // "L".  The per-evidence roles carried by the cube let both be displayed.
+  const ROLE = {
+    DIRECT_LOCAL: {label: "Direct local result", kind: "LOCAL", badge: "L"},
+    DIRECT_LITERATURE: {label: "Direct literature result", kind: "LITERATURE", badge: "R"},
+    SUPPORTING: {label: "Supporting ingredient", kind: null, badge: "·"},
+    UNREVIEWED: {label: "Directness unreviewed", kind: null, badge: "?"},
+  };
+  const KIND_STATUS = {LOCAL: "LOCAL_RESULT", LITERATURE: "LITERATURE_RESULT"};
+  const KIND_UPPER = {LOCAL: "L", LITERATURE: "R"};
+  const KIND_LOWER = {LOCAL_RESULT: "l", LITERATURE: "r"};
+  const DUAL = {mark: "LR", label: "Local + literature result", meaning: "This coordinate carries a direct local result and a direct literature result. Both are certified direct for this obligation; the status colour keeps the higher-ranked grade."};
   const RELATION = {
     SUFFICIENT: "#167958", CONDITIONAL_SUFFICIENT: "#2776a8", REPRESENTATION_DEPENDENT: "#7651a8",
     COUNTEREXAMPLE_TO_METHOD: "#b94040", LITERATURE_CONTRAST: "#607069", OPEN_IMPLICATION: "#c17b14", NOT_SUFFICIENT: "#9a3c55",
@@ -95,6 +109,50 @@
   function title(id) { return labels[id]?.label || id.replaceAll("_", " ").toLowerCase(); }
   function list(value) { return Array.isArray(value) ? value : []; }
   function statusStyle(status) { return `--status:${STATUS[status].color}`; }
+  function cellRoles(cell) { return cell.evidence_roles || {}; }
+  function directKinds(cell) {
+    const present = new Set(Object.values(cellRoles(cell)).map(role => ROLE[role]?.kind).filter(Boolean));
+    return ["LOCAL", "LITERATURE"].filter(kind => present.has(kind));
+  }
+  function isDual(cell) { return directKinds(cell).length === 2; }
+  function supportingKinds(cell) {
+    const kinds = new Set();
+    Object.entries(cellRoles(cell)).forEach(([id, role]) => {
+      if (role === "SUPPORTING" && DATA.evidence[id]) kinds.add(KIND_LOWER[DATA.evidence[id].kind]);
+    });
+    return kinds;
+  }
+  // Upper case is a certified direct grade; lower case is a supporting ingredient
+  // of that kind.  A lower-case letter is suppressed when its kind already shows
+  // as a grade, so an "L" cell never renders "Ll".  Unreviewed records add
+  // nothing: an ingredient claim is a claim, and they have not been reviewed.
+  function cellMark(cell) {
+    const direct = directKinds(cell).map(kind => KIND_UPPER[kind]);
+    const upper = direct.length ? direct.join("") : STATUS[cell.status].mark;
+    const support = supportingKinds(cell);
+    return upper + ["l", "r"].filter(x => support.has(x) && !upper.includes(x.toUpperCase())).join("");
+  }
+  function supportingLabels(cell) {
+    const support = supportingKinds(cell), direct = directKinds(cell);
+    return [["l", "LOCAL", "local"], ["r", "LITERATURE", "literature"]]
+      .filter(([letter, kind]) => support.has(letter) && !direct.includes(kind)).map(([, , name]) => name);
+  }
+  function markExplanation(cell) {
+    const support = supportingLabels(cell);
+    return gradeLabels(cell) + (support.length ? `; supporting ${support.join(" and ")} ingredients` : "");
+  }
+  // Every grade this cell may be read as: its status, plus any certified direct kind.
+  function cellGrades(cell) {
+    const grades = new Set([cell.status]);
+    directKinds(cell).forEach(kind => grades.add(KIND_STATUS[kind]));
+    return grades;
+  }
+  function cellStyle(cell) {
+    if (!isDual(cell)) return statusStyle(cell.status);
+    const alt = cell.status === "LOCAL_RESULT" ? STATUS.LITERATURE_RESULT.color : STATUS.LOCAL_RESULT.color;
+    return `${statusStyle(cell.status)};--alt:${alt}`;
+  }
+  function gradeLabels(cell) { return [...cellGrades(cell)].map(grade => STATUS[grade].label).join(" + "); }
   function selected(axisId, id) { return state.selected[axisId].has(id); }
   function allSelected(axisId, ids) { return ids.every(id => selected(axisId, id)); }
 
@@ -134,12 +192,13 @@
 
   function cellText(cell) {
     if (cell._search) return cell._search;
-    cell._search = [title(cell.foundation), title(cell.carrier), title(cell.obligation), cell.status, cell.summary, cell.boundary, cell.parent_obligation, cell.migration_relation, ...cell.evidence.map(evidenceText)].join(" ").toLowerCase();
+    cell._search = [title(cell.foundation), title(cell.carrier), title(cell.obligation), cell.status, cell.summary, cell.boundary, cell.parent_obligation, cell.migration_relation, ...Object.values(cellRoles(cell)).map(role => ROLE[role]?.label || role), ...cell.evidence.map(evidenceText)].join(" ").toLowerCase();
     return cell._search;
   }
 
   function matches(cell) {
-    if (!selected("FOUNDATION", cell.foundation) || !selected("CARRIER", cell.carrier) || !selected("REFINED_OBLIGATION", cell.obligation) || !selected("STATUS", cell.status)) return false;
+    if (!selected("FOUNDATION", cell.foundation) || !selected("CARRIER", cell.carrier) || !selected("REFINED_OBLIGATION", cell.obligation)) return false;
+    if (![...cellGrades(cell)].some(grade => selected("STATUS", grade))) return false;
     if (state.seededOnly && !["PIECES_ONLY", "PRIORITY_GAP"].includes(cell.status)) return false;
     return !state.q || cellText(cell).includes(state.q.toLowerCase());
   }
@@ -187,7 +246,10 @@
   }
 
   function renderLegend() {
-    return `<div class="legend">${Object.entries(STATUS).map(([id, x]) => `<span class="legend-item" title="${esc(DATA.statuses.find(s => s.id === id)?.meaning)}"><i class="swatch" style="--tone:${x.color}"></i><b>${x.mark}</b> ${esc(x.label)}</span>`).join("")}</div>`;
+    const statuses = Object.entries(STATUS).map(([id, x]) => `<span class="legend-item" title="${esc(DATA.statuses.find(s => s.id === id)?.meaning || x.label)}"><i class="swatch" style="--tone:${x.color}"></i><b>${x.mark}</b> ${esc(x.label)}</span>`).join("");
+    const dual = `<span class="legend-item" title="${esc(DUAL.meaning)}"><i class="swatch swatch-dual" style="--tone:${STATUS.LOCAL_RESULT.color};--tone-alt:${STATUS.LITERATURE_RESULT.color}"></i><b>${DUAL.mark}</b> ${esc(DUAL.label)}</span>`;
+    const note = `<p class="legend-note"><b>Upper case is a certified direct grade; lower case is a supporting ingredient of that kind.</b> So <b>Pl</b> holds local ingredients, <b>Pr</b> literature ingredients, <b>Plr</b> both, and <b>Lr</b> or <b>Rl</b> a result of one kind with ingredients of the other. An ingredient is not a result, and a record whose directness is unreviewed adds no letter.</p>`;
+    return `<div class="legend">${statuses}${dual}</div>${note}`;
   }
 
   function renderMatrix() {
@@ -199,7 +261,8 @@
         const rows = foundations.map(f => `<tr><th title="${esc(f.meaning)}">${esc(f.label)}</th>${carriers.map(c => {
           const cell = cellByKey.get(`${f.id}|${c.id}|${obligation.id}`);
           const visible = matches(cell);
-          return `<td><button class="matrix-cell${visible ? "" : " filtered"}${state.cell === key(cell) ? " selected" : ""}" data-cell="${key(cell)}" data-mark="${STATUS[cell.status].mark}" style="${statusStyle(cell.status)}" aria-label="${esc(`${f.label}; ${c.label}; ${obligation.label}; ${STATUS[cell.status].label}`)}" title="${esc(`${STATUS[cell.status].label}: ${cell.summary}`)}"></button></td>`;
+          const dual = isDual(cell);
+          return `<td><button class="matrix-cell${visible ? "" : " filtered"}${state.cell === key(cell) ? " selected" : ""}" data-cell="${key(cell)}" data-mark="${cellMark(cell)}" data-marklen="${cellMark(cell).length}"${dual ? ' data-dual="1"' : ""} style="${cellStyle(cell)}" aria-label="${esc(`${f.label}; ${c.label}; ${obligation.label}; ${markExplanation(cell)}`)}" title="${esc(`${cellMark(cell)} — ${markExplanation(cell)}: ${cell.summary}`)}"></button></td>`;
         }).join("")}</tr>`).join("");
         return `<article class="heatmap"><h4>${esc(obligation.label)}</h4><p class="meaning">${esc(obligation.meaning)}</p><table><thead><tr><th>Regime ↓ / carrier →</th>${carriers.map(c => `<th title="${esc(c.meaning)}"><span class="column-label">${esc(c.label)}</span></th>`).join("")}</tr></thead><tbody>${rows}</tbody></table></article>`;
       }).join("");
@@ -209,14 +272,25 @@
     document.querySelectorAll("[data-cell]").forEach(button => button.addEventListener("click", () => openCell(button.dataset.cell)));
   }
 
-  function evidenceCard(id, compact = false) {
+  function roleBadge(role) {
+    if (!role || !ROLE[role]) return "";
+    const direct = ROLE[role].kind ? " role-direct" : "";
+    return `<span class="role-badge${direct}" title="${esc(roleMeaning(role))}">${esc(ROLE[role].label)}</span>`;
+  }
+
+  function roleMeaning(role) {
+    return list(DATA.evidence_role_vocabulary).find(x => x.id === role)?.meaning || ROLE[role]?.label || role;
+  }
+
+  function evidenceCard(id, compact = false, role = null) {
     const e = DATA.evidence[id];
     if (!e) return `<div class="evidence-link"><b>${esc(id)}</b><br>Unresolved evidence</div>`;
+    const badge = roleBadge(role);
     if (e.kind === "LITERATURE") {
       const quality = e.artifact_status === "CONTENT_PINNED" ? "content" : "metadata";
-      return `<article class="${compact ? "evidence-link" : "evidence-card"}"><span class="quality ${quality}">${esc(e.artifact_status)}</span><h3>${esc(id)}</h3><p>${esc(e.citation)}</p>${compact ? "" : `<p>${list(e.supported_statements).map(esc).join(" ")}</p><p class="boundary"><b>Boundary:</b> ${esc(e.boundary)}</p>`}<p>${e.stable_url ? `<a href="${esc(e.stable_url)}" target="_blank" rel="noreferrer">Primary record ↗</a> · ` : ""}<a href="${esc(e.ledger_link)}">Ledger</a></p></article>`;
+      return `<article class="${compact ? "evidence-link" : "evidence-card"}"><span class="quality ${quality}">${esc(e.artifact_status)}</span>${badge}<h3>${esc(id)}</h3><p>${esc(e.citation)}</p>${compact ? "" : `<p>${list(e.supported_statements).map(esc).join(" ")}</p><p class="boundary"><b>Boundary:</b> ${esc(e.boundary)}</p>`}<p>${e.stable_url ? `<a href="${esc(e.stable_url)}" target="_blank" rel="noreferrer">Primary record ↗</a> · ` : ""}<a href="${esc(e.ledger_link)}">Ledger</a></p></article>`;
     }
-    return `<article class="${compact ? "evidence-link" : "evidence-card"}"><span class="quality content">LOCAL RESULT</span><h3>${esc(id)}</h3><p>${esc(e.result_kind || "Local certificate")} · ${esc(e.lifecycle || "")}</p>${compact ? "" : `<p>${list(e.dependency_tags).map(x => `<code>${esc(x)}</code>`).join(" ")}</p>${list(e.does_not_establish).length ? `<p class="boundary"><b>Does not establish:</b> ${esc(e.does_not_establish.join("; "))}</p>` : ""}`}<p><a href="${esc(e.result_link)}">Result JSON</a>${e.report_link ? ` · <a href="${esc(e.report_link)}">Report</a>` : ""}</p></article>`;
+    return `<article class="${compact ? "evidence-link" : "evidence-card"}"><span class="quality content">LOCAL RESULT</span>${badge}<h3>${esc(id)}</h3><p>${esc(e.result_kind || "Local certificate")} · ${esc(e.lifecycle || "")}</p>${compact ? "" : `<p>${list(e.dependency_tags).map(x => `<code>${esc(x)}</code>`).join(" ")}</p>${list(e.does_not_establish).length ? `<p class="boundary"><b>Does not establish:</b> ${esc(e.does_not_establish.join("; "))}</p>` : ""}`}<p><a href="${esc(e.result_link)}">Result JSON</a>${e.report_link ? ` · <a href="${esc(e.report_link)}">Report</a>` : ""}</p></article>`;
   }
 
   function neighbors(cell) {
@@ -231,7 +305,7 @@
     if (!cell) return;
     state.cell = cellKey; updateHash();
     const directNeighbors = neighbors(cell);
-    const body = `<p class="eyebrow">Cell inspector</p><h2 id="inspectorTitle">${esc(title(cell.obligation))}</h2><p class="coordinate">${esc(title(cell.foundation))} × ${esc(title(cell.carrier))} × ${esc(title(cell.obligation))}</p><p><span class="status-pill" style="${statusStyle(cell.status)}">${esc(STATUS[cell.status].label)}</span> ${cell.emitted ? "Emitted by the authoritative cube." : "Synthesized only to expose the full surface."}</p><h3>What is recorded</h3><p>${esc(cell.summary)}</p><p class="boundary"><b>Claim boundary:</b> ${esc(cell.boundary)}</p><dl><dt>Parent obligation</dt><dd>${esc(cell.parent_obligation || "none")}</dd><dt>Migration relation</dt><dd><code>${esc(cell.migration_relation)}</code></dd></dl><h3>Evidence (${cell.evidence.length})</h3><div class="evidence-list">${cell.evidence.length ? cell.evidence.map(id => evidenceCard(id, true)).join("") : "<p>No evidence is assigned. This is not an absence claim.</p>"}</div><h3>One-axis neighbors (${directNeighbors.length})</h3><div class="neighbor-list">${directNeighbors.map(n => `<button class="neighbor" data-neighbor="${key(n)}">${esc(title(n.foundation))} × ${esc(title(n.carrier))} × ${esc(title(n.obligation))}<i style="${statusStyle(n.status)}"></i><small>${esc(STATUS[n.status].label)}</small></button>`).join("")}</div><h3>Research actions</h3><div class="inspector-actions"><button id="pinCompare">Pin for comparison</button><button id="downloadBrief">Download investigation brief</button><button id="copyCellLink">Copy cell link</button></div>`;
+    const body = `<p class="eyebrow">Cell inspector</p><h2 id="inspectorTitle">${esc(title(cell.obligation))}</h2><p class="coordinate">${esc(title(cell.foundation))} × ${esc(title(cell.carrier))} × ${esc(title(cell.obligation))}</p><p><span class="status-pill" style="${statusStyle(cell.status)}">${esc(STATUS[cell.status].label)}</span>${isDual(cell) ? ` <span class="status-pill" style="${statusStyle(KIND_STATUS[directKinds(cell).find(kind => KIND_STATUS[kind] !== cell.status)])}">${esc(STATUS[KIND_STATUS[directKinds(cell).find(kind => KIND_STATUS[kind] !== cell.status)]].label)}</span>` : ""} ${cell.emitted ? "Emitted by the authoritative cube." : "Synthesized only to expose the full surface."}</p><h3>What is recorded</h3><p>${esc(cell.summary)}</p><p class="boundary"><b>Claim boundary:</b> ${esc(cell.boundary)}</p><dl><dt>Parent obligation</dt><dd>${esc(cell.parent_obligation || "none")}</dd><dt>Migration relation</dt><dd><code>${esc(cell.migration_relation)}</code></dd></dl><h3>Evidence (${cell.evidence.length})</h3>${directKinds(cell).length ? `<p class="direct-grades">Directly supported by: <b>${esc(directKinds(cell).map(kind => STATUS[KIND_STATUS[kind]].label.toLowerCase()).join(" and "))}</b>.${supportingLabels(cell).length ? ` Supporting ${esc(supportingLabels(cell).join(" and "))} ingredients are also attached and do not compose the result.` : ""} A record shown as unreviewed is not a finding that it fails to support this cell.</p>` : `<p class="direct-grades">No attached record is registered as a direct support at this obligation.${supportingLabels(cell).length ? ` Supporting ${esc(supportingLabels(cell).join(" and "))} ingredients are attached; they do not compose the result.` : ""} That is a review gap, not an absence claim.</p>`}<div class="evidence-list">${cell.evidence.length ? cell.evidence.map(id => evidenceCard(id, true, cellRoles(cell)[id])).join("") : "<p>No evidence is assigned. This is not an absence claim.</p>"}</div><h3>One-axis neighbors (${directNeighbors.length})</h3><div class="neighbor-list">${directNeighbors.map(n => `<button class="neighbor" data-neighbor="${key(n)}">${esc(title(n.foundation))} × ${esc(title(n.carrier))} × ${esc(title(n.obligation))}<i style="${statusStyle(n.status)}"></i><small>${esc(gradeLabels(n))}</small></button>`).join("")}</div><h3>Research actions</h3><div class="inspector-actions"><button id="pinCompare">Pin for comparison</button><button id="downloadBrief">Download investigation brief</button><button id="copyCellLink">Copy cell link</button></div>`;
     document.getElementById("inspectorBody").innerHTML = body;
     document.querySelectorAll("[data-neighbor]").forEach(x => x.addEventListener("click", () => openCell(x.dataset.neighbor)));
     document.getElementById("pinCompare").addEventListener("click", () => pinCompare(cellKey));
@@ -379,7 +453,7 @@
       <div class="guide-heading"><span>${index + 1}</span><div><p class="eyebrow">${esc(dimension.plain_name)}</p><h3>${esc(dimension.guide_question)}</h3><p>${dimension.keys.length} choices—select exactly one to define this part of a cell.</p></div></div>
       <div class="guide-options">${dimension.keys.map(option => `<article><h4>${esc(option.label)}</h4><p>${esc(option.plain_meaning)}</p><details><summary>Technical scope</summary><p>${esc(option.meaning)}</p>${list(option.includes).length ? `<p><b>Includes:</b> ${esc(option.includes.join(", "))}</p>` : ""}${option.warning ? `<p class="boundary">${esc(option.warning)}</p>` : ""}</details></article>`).join("")}</div>
     </section>`).join("");
-    document.getElementById("dimensionGuide").innerHTML = `<article class="guide-intro"><p class="eyebrow">How to read one coordinate</p><h3>Regime × carrier × obligation = one research question</h3><p>For example: <b>constructive/computable × smooth/PDE/distributional × causal propagation/Green</b> asks whether causal response maps can be built with explicit computational content for continuum fields.</p><p>The cell color reports the evidence currently recorded for that precise combination. It does not say whether the idea is true, important, or impossible.</p></article>${dimensions}<article class="guide-intro"><p class="eyebrow">Two records, two questions</p><h3>Coverage is not migration</h3><p><b>Coverage status</b> says what direct result, literature result, partial ingredients, or gap is recorded now. <b>Migration review</b> says whether evidence attached to an older, broader category was checked for transfer into this more precise cell. A reviewed migration is an audit fact, not additional physical evidence.</p></article>`;
+    document.getElementById("dimensionGuide").innerHTML = `<article class="guide-intro"><p class="eyebrow">How to read one coordinate</p><h3>Regime × carrier × obligation = one research question</h3><p>For example: <b>constructive/computable × smooth/PDE/distributional × causal propagation/Green</b> asks whether causal response maps can be built with explicit computational content for continuum fields.</p><p>The cell color reports the evidence currently recorded for that precise combination. It does not say whether the idea is true, important, or impossible.</p></article>${dimensions}<article class="guide-intro"><p class="eyebrow">One cell, two kinds of direct support</p><h3>Why some cells are marked <b>LR</b></h3><p>A cell's colour reports a single status, and a direct local result outranks a direct literature result. Some coordinates hold both at once. Those carry the <b>LR</b> mark and a corner wedge in the second grade's colour, and the status filter finds them under either grade.</p><p>Each attached record also carries a role for that obligation alone: a direct support, a supporting ingredient, or not yet reviewed for directness. <b>Unreviewed is not a finding that the record fails to support the cell.</b> Only records registered as direct in the capability registry can raise the <b>LR</b> mark.</p><p>Case separates the two ideas. An <b>upper-case</b> letter is a certified direct grade; a <b>lower-case</b> letter is a supporting ingredient of that kind. A pieces-only cell holding local ingredients reads <b>Pl</b>, one holding literature ingredients <b>Pr</b>, and one holding both <b>Plr</b>. A result of one kind carrying ingredients of the other reads <b>Lr</b> or <b>Rl</b>. Ingredients never promote a cell: <b>Plr</b> is still pieces-only, and the status colour never changes because of a lower-case letter.</p></article><article class="guide-intro"><p class="eyebrow">Two records, two questions</p><h3>Coverage is not migration</h3><p><b>Coverage status</b> says what direct result, literature result, partial ingredients, or gap is recorded now. <b>Migration review</b> says whether evidence attached to an older, broader category was checked for transfer into this more precise cell. A reviewed migration is an audit fact, not additional physical evidence.</p></article>`;
   }
 
   const READINESS_RANK = {NOT_MAPPED: 0, PRIORITY_GAP: 1, PIECES_ONLY: 2, LOCAL_RESULT: 3, LITERATURE_RESULT: 3};
@@ -510,14 +584,21 @@
   }
 
   function exportJson() { download("foundations-matrix-filtered.json", JSON.stringify({filters: serializedFilters(), cells: filteredCells()}, null, 2), "application/json"); }
+  function csvField(cell, field) {
+    if (field === "evidence") return cell.evidence.join("; ");
+    if (field === "direct_kinds") return directKinds(cell).join("; ");
+    if (field === "evidence_roles") return Object.entries(cellRoles(cell)).map(([id, role]) => `${id}=${role}`).join("; ");
+    return cell[field];
+  }
+
   function exportCsv() {
-    const fields = ["foundation", "carrier", "obligation", "status", "emitted", "migration_relation", "evidence", "summary", "boundary"];
+    const fields = ["foundation", "carrier", "obligation", "status", "direct_kinds", "emitted", "migration_relation", "evidence", "evidence_roles", "summary", "boundary"];
     const quote = value => `"${String(value ?? "").replaceAll('"', '""')}"`;
-    download("foundations-matrix-filtered.csv", [fields.join(","), ...filteredCells().map(c => fields.map(f => quote(f === "evidence" ? c.evidence.join("; ") : c[f])).join(","))].join("\n") + "\n", "text/csv");
+    download("foundations-matrix-filtered.csv", [fields.join(","), ...filteredCells().map(c => fields.map(f => quote(csvField(c, f))).join(","))].join("\n") + "\n", "text/csv");
   }
   function serializedFilters() { return {query: state.q, seeded_only: state.seededOnly, selected: Object.fromEntries(Object.entries(state.selected).map(([k, v]) => [k, [...v]]))}; }
   function downloadBrief(cell) {
-    const text = `# Candidate investigation: ${title(cell.obligation)}\n\n- Mathematical regime: ${title(cell.foundation)}\n- Carrier: ${title(cell.carrier)}\n- Evidence state: ${STATUS[cell.status].label}\n- Migration relation: ${cell.migration_relation}\n\n## Current record\n\n${cell.summary}\n\n## Boundary\n\n${cell.boundary}\n\n## Evidence to inspect\n\n${cell.evidence.length ? cell.evidence.map(x => `- ${x}`).join("\n") : "- No evidence assigned; run literature search without treating this as an absence result."}\n\n## Immediate research question\n\nWhat exact additional assumption, representation, or construction would move this coordinate one evidence state forward without crossing its declared boundary?\n`;
+    const text = `# Candidate investigation: ${title(cell.obligation)}\n\n- Mathematical regime: ${title(cell.foundation)}\n- Carrier: ${title(cell.carrier)}\n- Evidence state: ${gradeLabels(cell)}\n- Migration relation: ${cell.migration_relation}\n\n## Current record\n\n${cell.summary}\n\n## Boundary\n\n${cell.boundary}\n\n## Evidence to inspect\n\n${cell.evidence.length ? cell.evidence.map(x => `- ${x} (${ROLE[cellRoles(cell)[x]]?.label || "role unrecorded"})`).join("\n") : "- No evidence assigned; run literature search without treating this as an absence result."}\n\n## Immediate research question\n\nWhat exact additional assumption, representation, or construction would move this coordinate one evidence state forward without crossing its declared boundary?\n`;
     download(`investigation-${cell.foundation}-${cell.carrier}-${cell.obligation}.md`.toLowerCase(), text, "text/markdown");
   }
   async function copyPermalink() {

@@ -128,13 +128,22 @@ main { padding: 1.6rem max(4vw, 1.2rem) 6rem; }
 .heatmap td { height: 3.1rem; }
 .matrix-cell { position: relative; width: 100%; height: 100%; border: 0; border-radius: .35rem; color: white; background: var(--status); padding: .2rem; }
 .matrix-cell::after { content: attr(data-mark); display: block; font-size: 1.12rem; font-weight: 800; }
+/* A cell certified direct in both kinds keeps its status colour and shows the
+   second grade as a corner wedge, so "LR" is legible without recolouring it. */
+.matrix-cell[data-dual] { background: linear-gradient(135deg, var(--status) 0 58%, var(--alt) 58% 100%); }
+.matrix-cell[data-dual]::after { font-size: .95rem; letter-spacing: -.04em; }
+/* Compound marks stay inside the cell: upper case grade, lower case ingredient. */
+.matrix-cell[data-marklen="2"]::after { font-size: .95rem; letter-spacing: -.04em; }
+.matrix-cell[data-marklen="3"]::after { font-size: .8rem; letter-spacing: -.05em; }
 .matrix-cell.filtered { opacity: .08; filter: grayscale(1); }
 .matrix-cell.selected { outline: 3px solid #101815; outline-offset: 2px; }
 .matrix-cell:hover { transform: translateY(-1px); filter: brightness(1.05); }
 .matrix-cell[disabled] { cursor: default; }
 .legend { display: flex; flex-wrap: wrap; gap: .45rem; margin: 1rem 0; }
+.legend-note { max-width: 62rem; margin: -.4rem 0 1rem; color: var(--muted); font-size: .78rem; line-height: 1.45; }
 .legend-item { display: inline-flex; align-items: center; gap: .35rem; padding: .35rem .55rem; border: 1px solid var(--line); border-radius: 2rem; background: var(--paper); font-size: .76rem; }
 .swatch { width: .7rem; height: .7rem; border-radius: 50%; background: var(--tone); }
+.swatch-dual { background: linear-gradient(135deg, var(--tone) 0 50%, var(--tone-alt) 50% 100%); }
 .inspector { position: fixed; z-index: 60; top: 0; right: 0; width: min(46rem, 94vw); height: 100vh; overflow: auto; padding: 1.5rem; background: var(--paper); box-shadow: -20px 0 60px #10231d40; transform: translateX(105%); transition: transform .2s ease; }
 .inspector.open { transform: translateX(0); }
 .shade { position: fixed; z-index: 50; inset: 0; background: #0b1f1990; }
@@ -199,6 +208,9 @@ main { padding: 1.6rem max(4vw, 1.2rem) 6rem; }
 .quality { display: inline-block; padding: .2rem .4rem; border-radius: .3rem; background: #e7ece8; font-size: .7rem; font-weight: 800; }
 .quality.content { background: #d9efe3; color: #145d43; }
 .quality.metadata { background: #fff0ce; color: #79520e; }
+.role-badge { float: right; padding: .14rem .45rem; border: 1px solid var(--line); border-radius: 2rem; background: var(--paper); color: var(--muted); font-size: .66rem; font-weight: 700; }
+.role-badge.role-direct { border-color: var(--teal); background: #e2efe8; color: var(--forest); }
+.direct-grades { margin: .5rem 0 .8rem; padding: .6rem .75rem; border-left: 4px solid var(--teal); background: #eef3ef; font-size: .85rem; }
 .compare-tray { position: fixed; z-index: 40; left: 50%; bottom: 1rem; transform: translateX(-50%); display: flex; align-items: center; gap: .5rem; padding: .65rem; background: var(--forest); color: white; border-radius: .6rem; box-shadow: var(--shadow); }
 .compare-tray[hidden] { display: none; }
 dialog { width: min(72rem, 94vw); max-height: 90vh; overflow: auto; border: 0; border-radius: .8rem; box-shadow: var(--shadow); }

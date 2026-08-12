@@ -52,6 +52,7 @@ def build() -> dict[str, Any]:
                 raise ValueError("missing audit decision " + key(original))
             item["status"] = decision["resulting_coverage_status"]
             item["evidence"] = []
+            item["evidence_roles"] = {}
             item["migration_status"] = decision["decision"]
             item["migration_evidence"] = decision["parent_evidence"]
             item["migration_rationale"] = decision["rationale"]
@@ -73,6 +74,8 @@ def build() -> dict[str, Any]:
         raise ValueError("unused audit decisions: " + ", ".join(sorted(decisions)))
     counts = Counter(x["status"] for x in cells)
     migrations = Counter(x["migration_status"] for x in cells)
+    role_counts = Counter(role for x in cells for role in x["evidence_roles"].values())
+    dual_direct = sum({"DIRECT_LOCAL", "DIRECT_LITERATURE"} <= set(x["evidence_roles"].values()) for x in cells)
     return {
         "schema_version": "foundational-intersection-cube-v2",
         "result_id": "FOUNDATIONAL_INTERSECTION_CUBE_V2",
@@ -96,6 +99,8 @@ def build() -> dict[str, Any]:
             {"id": "PRIORITY_GAP", "meaning": "A child-specific review records a coherent current-programme gap."},
             {"id": "NOT_MAPPED", "meaning": "No coverage classification is made; this is not a literature-absence claim."}
         ],
+        "evidence_role_vocabulary": v1["evidence_role_vocabulary"],
+        "evidence_role_rule": v1["evidence_role_rule"],
         "migration_statuses": [
             {"id": "EXACT_PARENT_TRANSFER", "meaning": "The unsplit v0 obligation transfers exactly."},
             {"id": "CAPABILITY_QUALIFIED", "meaning": "An explicit evidence capability supports the split child."},
@@ -109,10 +114,11 @@ def build() -> dict[str, Any]:
             "migration_reviewed_cells": len(cells), "migration_pending_cells": 0,
             "reviewed_no_transfer_cells": migrations["REVIEWED_NO_TRANSFER"],
             "status_counts": dict(sorted(counts.items())), "migration_status_counts": dict(sorted(migrations.items())),
+            "evidence_role_counts": dict(sorted(role_counts.items())), "dual_direct_cells": dual_direct,
         },
         "cells": cells,
         "provenance": {"inputs": [{"path": str(path.relative_to(ROOT)), "sha256": sha(path)} for path in (V1, AUDIT)]},
-        "independent_checker": {"path": "foundations/check_refined_intersection_cube_v2.py", "checks": ["v1 coordinate preservation", "112 audit decisions applied", "coverage/migration field separation", "zero pending migrations", "status counts", "canonical digest"], "expected_digest": canonical_digest(cells)},
+        "independent_checker": {"path": "foundations/check_refined_intersection_cube_v2.py", "checks": ["v1 coordinate preservation", "112 audit decisions applied", "coverage/migration field separation", "cleared evidence clears its roles", "zero pending migrations", "status counts", "evidence-role counts", "canonical digest"], "expected_digest": canonical_digest(cells)},
         "claim_flags": {"v0_preserved": True, "v1_preserved": True, "all_v1_migrations_reviewed": True, "coverage_and_migration_separated": True, "all_576_cells_assessed": False, "literature_complete": False, "weakest_base_proved": False, "new_lorentzian_claim": False},
         "does_not_establish": ["literature completeness", "coverage for the 88 reviewed-no-transfer coordinates", "that NOT_MAPPED means no literature exists", "that every Cartesian coordinate is coherent", "a weakest mathematical base", "a new Lorentzian-causal result"],
         "human_report": "foundations/reports/refined-intersection-cube-v2.md",

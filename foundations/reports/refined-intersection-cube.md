@@ -55,6 +55,14 @@ V0 combined state existence with representation, probability, and physical selec
 | Topos/internal | 6 | 17 | 35 | 3 | 15 | 76 |
 | Finite/discrete restriction | 19 | 19 | 31 | 1 | 24 | 94 |
 
+## Per-evidence roles
+
+A cell status names only its strongest grade. Each cell also records a role for every attached record at that obligation alone: **76 direct local**, **84 direct literature**, **267 supporting**, and **428 unreviewed** record-obligation pairs.
+
+**7 cells carry a direct local result and a direct literature result at the same coordinate.** Their scalar status can only report the local one, because a direct local result outranks a direct literature result in the migration rule. The roles keep both visible without changing any status.
+
+`UNREVIEWED` covers records the capability registry does not register at that obligation, including every record attached to an unsplit one-to-one obligation. It is not a finding that the record fails to support the cell; it marks the pair as not yet reviewed.
+
 ## Three semantic corrections
 
 1. **Finite interaction is no longer finite renormalization.** The exact qubit Hamiltonian fills `INTERACTION_CONSTRUCTION`; its five quantum siblings remain independently open or unresolved.
@@ -94,6 +102,8 @@ python3 -m unittest foundations.tests.test_refined_intersection_cube
 
 - This does not establish that every refined Cartesian coordinate is coherent.
 - This does not establish that a v0 result supports every refined child.
+- This does not establish that an UNREVIEWED evidence role is an absence of direct support.
+- This does not establish a directness review for records the capability registry does not cover.
 - This does not establish literature completeness.
 - This does not establish a weakest mathematical base.
 - This does not establish a constructive continuum Weyl theory.

@@ -37,7 +37,7 @@ def verify(*, result=None, report=None) -> tuple[list[str], list[str]]:
     checks.append("Draft 2020-12 schema")
     checker_errors, summary = check(r)
     errors.extend("checker " + error for error in checker_errors)
-    if summary != {"digest": "37e04717bec0e78aaa9c6187a39fe6edb7dd512cdf8d9597455dc526d637fa9d", "cells": 452, "cartesian_total": 576, "status_counts": {"LITERATURE_RESULT": 90, "LOCAL_RESULT": 85, "MIGRATION_UNRESOLVED": 112, "PIECES_ONLY": 158, "PRIORITY_GAP": 7}, "overlays": 11}:
+    if summary != {"digest": "37e04717bec0e78aaa9c6187a39fe6edb7dd512cdf8d9597455dc526d637fa9d", "cells": 452, "cartesian_total": 576, "status_counts": {"LITERATURE_RESULT": 90, "LOCAL_RESULT": 85, "MIGRATION_UNRESOLVED": 112, "PIECES_ONLY": 158, "PRIORITY_GAP": 7}, "overlays": 11, "role_counts": {"DIRECT_LITERATURE": 84, "DIRECT_LOCAL": 76, "SUPPORTING": 267, "UNREVIEWED": 428}, "dual_direct_cells": 7}:
         errors.append("expected refined summary")
     checks.append("independent coordinate and migration audit")
     expected_result, expected_report = generated()
@@ -59,7 +59,7 @@ def verify(*, result=None, report=None) -> tuple[list[str], list[str]]:
         if flags.get(key) is not False:
             errors.append("boundary flag " + key)
     checks.append("compatibility and claim boundaries")
-    for token in ("V0 remains unchanged", "576 possible coordinates", "452 cells", "340 qualified", "112 migration-unresolved", "Finite interaction is no longer finite renormalization", "spectral dynamics is no longer causal propagation", "A state is not a selected physical state", "Cylinder-wave insertion", "MIGRATION_UNRESOLVED", "does not establish a new Lorentzian-causal result"):
+    for token in ("V0 remains unchanged", "576 possible coordinates", "452 cells", "340 qualified", "112 migration-unresolved", "Finite interaction is no longer finite renormalization", "spectral dynamics is no longer causal propagation", "A state is not a selected physical state", "Cylinder-wave insertion", "MIGRATION_UNRESOLVED", "Per-evidence roles", "7 cells carry a direct local result and a direct literature result", "It is not a finding that the record fails to support the cell", "does not establish a new Lorentzian-causal result"):
         if token not in text:
             errors.append("report token " + token)
     checks.append("plain-language refined overview")

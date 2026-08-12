@@ -32,6 +32,13 @@ def check(result: dict[str, Any] | None=None):
             o=overlays[key]
             if cell.get("status")!=source["status"] or not set(o["evidence"])<=set(cell.get("evidence",[])) or cell.get("research_revision",{}).get("kind")!="EVIDENCE_OVERLAY": errors.append("overlay "+key)
         elif cell!=source: errors.append("unaffected preservation "+key)
+    # Role and status are written by different passes; agreement is checked, not assumed.
+    DIRECT_STATUS={"DIRECT_LOCAL":"LOCAL_RESULT","DIRECT_LITERATURE":"LITERATURE_RESULT"}
+    for key, cell in by.items():
+        roles=cell.get("evidence_roles") or {}
+        if sorted(roles)!=sorted(cell.get("evidence") or []): errors.append("evidence-role closure "+key); break
+        present=[r for r in ("DIRECT_LOCAL","DIRECT_LITERATURE") if r in roles.values()]
+        if present and cell.get("status")!=DIRECT_STATUS[present[0]]: errors.append("role/status agreement "+key); break
     counts=Counter(x.get("status") for x in cells); expected={"LITERATURE_RESULT":93,"LOCAL_RESULT":86,"NOT_MAPPED":81,"PIECES_ONLY":162,"PRIORITY_GAP":30}
     if dict(sorted(counts.items()))!=expected or result.get("dimensions",{}).get("status_counts")!=expected: errors.append("status counts")
     d=result.get("dimensions",{})

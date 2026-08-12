@@ -74,6 +74,48 @@ def cap(direct: str = "", pieces: str = "") -> dict[str, set[str]]:
     return {"direct": set(direct.split()) if direct else set(), "pieces": set(pieces.split()) if pieces else set()}
 
 
+# A cell's scalar status names only its strongest grade.  The per-evidence role
+# records, for one obligation, which attached record is a direct support and
+# which is an ingredient, so a cell carrying both a direct local result and a
+# direct literature result stays legible instead of collapsing to one letter.
+DIRECT_LOCAL = "DIRECT_LOCAL"
+DIRECT_LITERATURE = "DIRECT_LITERATURE"
+SUPPORTING = "SUPPORTING"
+UNREVIEWED = "UNREVIEWED"
+
+EVIDENCE_ROLE_VOCABULARY = [
+    {"id": DIRECT_LOCAL, "meaning": "A bounded local result registered as directly supporting this refined obligation."},
+    {"id": DIRECT_LITERATURE, "meaning": "A reviewed source registered as directly treating this refined obligation within its boundary."},
+    {"id": SUPPORTING, "meaning": "The record is registered as an ingredient for this obligation and does not compose the refined result."},
+    {"id": UNREVIEWED, "meaning": "No capability registration covers this record at this obligation.  Neither directness nor its absence is claimed."},
+]
+
+STATUS_FOR_DIRECT_ROLE = {DIRECT_LOCAL: "LOCAL_RESULT", DIRECT_LITERATURE: "LITERATURE_RESULT"}
+
+
+def evidence_kind(evidence: str) -> str:
+    """Local repository results carry the FOUNDATIONAL_ prefix; ledger entries do not."""
+    return "LOCAL" if evidence.startswith("FOUNDATIONAL_") else "LITERATURE"
+
+
+def registered_role(evidence: str, obligation: str) -> str:
+    registration = CAPABILITIES.get(evidence)
+    if registration is None:
+        return UNREVIEWED
+    if obligation in registration["direct"]:
+        return DIRECT_LOCAL if evidence_kind(evidence) == "LOCAL" else DIRECT_LITERATURE
+    if obligation in registration["pieces"]:
+        return SUPPORTING
+    return UNREVIEWED
+
+
+def direct_kinds(roles: dict[str, str]) -> list[str]:
+    """The evidence kinds this cell may display as a direct grade."""
+    kinds = {"LOCAL" for role in roles.values() if role == DIRECT_LOCAL}
+    kinds |= {"LITERATURE" for role in roles.values() if role == DIRECT_LITERATURE}
+    return sorted(kinds)
+
+
 # Only the split children occur here.  Missing registration means no transfer.
 CAPABILITIES: dict[str, dict[str, set[str]]] = {
     "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": cap(f"{SE} {SR} {PR} {GD} {EW} {IC}", f"{PS} {CT} {AN} {RP} {QM} {RT} {CG}"),
@@ -122,15 +164,15 @@ CAPABILITIES: dict[str, dict[str, set[str]]] = {
 OVERLAYS = [
     # The finite exact witness fills interaction only, not the other five former siblings.
     *[
-        {"foundation": foundation, "carrier": "FINITE_EXACT", "obligation": IC, "status": "LOCAL_RESULT", "evidence": ["FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1"], "summary": "The exact two-qubit Hamiltonian constructs a nontrivial entangling interaction.", "boundary": "No counterterm, anomaly, renormalized-product, QME-restoration, or residual-transfer result follows."}
+        {"foundation": foundation, "carrier": "FINITE_EXACT", "obligation": IC, "status": "LOCAL_RESULT", "evidence": ["FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1"], "roles": {"FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": DIRECT_LOCAL}, "summary": "The exact two-qubit Hamiltonian constructs a nontrivial entangling interaction.", "boundary": "No counterterm, anomaly, renormalized-product, QME-restoration, or residual-transfer result follows."}
         for foundation in ("CLASSICAL_STANDARD", "WEAK_ARITHMETIC", "WEAK_CHOICE_ZF", "CONSTRUCTIVE_COMPUTABLE", "FINITE_DISCRETE")
     ],
-    {"foundation": "WEAK_ARITHMETIC", "carrier": "FINITE_EXACT", "obligation": GD, "status": "LOCAL_RESULT", "evidence": ["FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V1"], "summary": "Finite Laurent degrees give exact cylinder-wave generators.", "boundary": "This is a fixed finite fixture, not a completed evolution theorem."},
-    {"foundation": "WEAK_ARITHMETIC", "carrier": "FINITE_EXACT", "obligation": EW, "status": "LOCAL_RESULT", "evidence": ["FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V1"], "summary": "Every fixed finite Laurent fixture evolves exactly and satisfies the wave equation.", "boundary": "PRA sufficiency at fixed cutoff does not prove an infinite energy-space solution."},
-    {"foundation": "WEAK_ARITHMETIC", "carrier": "SMOOTH_DISTRIBUTIONAL", "obligation": EW, "status": "PIECES_ONLY", "evidence": ["FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V1", "weihrauch-zhong-2002"], "summary": "An exact finite-to-coded ladder and computable Sobolev wave result identify a specific RCA_0 formalization target.", "boundary": "No second-order-arithmetic upper bound or reversal has been proved."},
-    {"foundation": "WEAK_ARITHMETIC", "carrier": "SMOOTH_DISTRIBUTIONAL", "obligation": CG, "status": "PIECES_ONLY", "evidence": ["FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V1", "FOUNDATIONAL_TYPED_BIWAVE_GREEN_DEPENDENCY_AUDIT_V1"], "summary": "The exact antipodal obstruction separates spectral approximation from the conditional causal Green dependency shell.", "boundary": "No causal PDE theorem has been formalized over a weak base."},
-    {"foundation": "CONSTRUCTIVE_COMPUTABLE", "carrier": "SMOOTH_DISTRIBUTIONAL", "obligation": EW, "status": "LITERATURE_RESULT", "evidence": ["weihrauch-zhong-2002", "FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V1"], "summary": "Wave propagation is computable in the stated C1 and Sobolev representations reviewed by the ladder.", "boundary": "TTE computability is representation-sensitive and is not a Bishop-constructive or reverse-mathematical theorem."},
-    {"foundation": "CONSTRUCTIVE_COMPUTABLE", "carrier": "SMOOTH_DISTRIBUTIONAL", "obligation": CG, "status": "PIECES_ONLY", "evidence": ["pour-el-richards-1981", "weihrauch-zhong-2002", "FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V1"], "summary": "Positive and negative computability results expose the representation and localization dependencies of wave propagation.", "boundary": "Neither source constructs a constructive causal Green operator for Weyl gravity."},
+    {"foundation": "WEAK_ARITHMETIC", "carrier": "FINITE_EXACT", "obligation": GD, "status": "LOCAL_RESULT", "evidence": ["FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V1"], "roles": {"FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V1": DIRECT_LOCAL}, "summary": "Finite Laurent degrees give exact cylinder-wave generators.", "boundary": "This is a fixed finite fixture, not a completed evolution theorem."},
+    {"foundation": "WEAK_ARITHMETIC", "carrier": "FINITE_EXACT", "obligation": EW, "status": "LOCAL_RESULT", "evidence": ["FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V1"], "roles": {"FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V1": DIRECT_LOCAL}, "summary": "Every fixed finite Laurent fixture evolves exactly and satisfies the wave equation.", "boundary": "PRA sufficiency at fixed cutoff does not prove an infinite energy-space solution."},
+    {"foundation": "WEAK_ARITHMETIC", "carrier": "SMOOTH_DISTRIBUTIONAL", "obligation": EW, "status": "PIECES_ONLY", "evidence": ["FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V1", "weihrauch-zhong-2002"], "roles": {"FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V1": SUPPORTING, "weihrauch-zhong-2002": SUPPORTING}, "summary": "An exact finite-to-coded ladder and computable Sobolev wave result identify a specific RCA_0 formalization target.", "boundary": "No second-order-arithmetic upper bound or reversal has been proved."},
+    {"foundation": "WEAK_ARITHMETIC", "carrier": "SMOOTH_DISTRIBUTIONAL", "obligation": CG, "status": "PIECES_ONLY", "evidence": ["FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V1", "FOUNDATIONAL_TYPED_BIWAVE_GREEN_DEPENDENCY_AUDIT_V1"], "roles": {"FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V1": SUPPORTING, "FOUNDATIONAL_TYPED_BIWAVE_GREEN_DEPENDENCY_AUDIT_V1": SUPPORTING}, "summary": "The exact antipodal obstruction separates spectral approximation from the conditional causal Green dependency shell.", "boundary": "No causal PDE theorem has been formalized over a weak base."},
+    {"foundation": "CONSTRUCTIVE_COMPUTABLE", "carrier": "SMOOTH_DISTRIBUTIONAL", "obligation": EW, "status": "LITERATURE_RESULT", "evidence": ["weihrauch-zhong-2002", "FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V1"], "roles": {"weihrauch-zhong-2002": DIRECT_LITERATURE, "FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V1": SUPPORTING}, "summary": "Wave propagation is computable in the stated C1 and Sobolev representations reviewed by the ladder.", "boundary": "TTE computability is representation-sensitive and is not a Bishop-constructive or reverse-mathematical theorem."},
+    {"foundation": "CONSTRUCTIVE_COMPUTABLE", "carrier": "SMOOTH_DISTRIBUTIONAL", "obligation": CG, "status": "PIECES_ONLY", "evidence": ["pour-el-richards-1981", "weihrauch-zhong-2002", "FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V1"], "roles": {"pour-el-richards-1981": SUPPORTING, "weihrauch-zhong-2002": SUPPORTING, "FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V1": SUPPORTING}, "summary": "Positive and negative computability results expose the representation and localization dependencies of wave propagation.", "boundary": "Neither source constructs a constructive causal Green operator for Weyl gravity."},
 ]
 
 
@@ -151,8 +193,11 @@ def migrate_child(parent: dict[str, Any], child: str) -> dict[str, Any]:
     parent_obligation = parent["obligation"]
     coordinate = {key: parent[key] for key in ("foundation", "carrier")}
     if len(REFINEMENT[parent_obligation]) == 1:
+        # The registry only covers split children, so an unsplit obligation
+        # carries no reviewed directness for any of its records.
         return {
             **coordinate, "obligation": child, "status": parent["status"], "evidence": parent["evidence"],
+            "evidence_roles": {evidence: UNREVIEWED for evidence in parent["evidence"]},
             "parent_obligation": parent_obligation, "migration_relation": "EXACT_ONE_TO_ONE",
             "summary": parent["summary"], "boundary": parent["boundary"],
         }
@@ -172,8 +217,13 @@ def migrate_child(parent: dict[str, Any], child: str) -> dict[str, Any]:
     else:
         status, supporting = "MIGRATION_UNRESOLVED", parent["evidence"]
     label = OBLIGATION_META[child][0]
+    roles = {evidence: registered_role(evidence, child) for evidence in supporting}
+    if status == "MIGRATION_UNRESOLVED":
+        # Nothing descended, so no record is claimed to bear on this child.
+        roles = {evidence: UNREVIEWED for evidence in supporting}
     return {
         **coordinate, "obligation": child, "status": status, "evidence": supporting,
+        "evidence_roles": roles,
         "parent_obligation": parent_obligation, "migration_relation": "CAPABILITY_QUALIFIED" if status != "MIGRATION_UNRESOLVED" else "NO_REGISTERED_DESCENT",
         "summary": f"Refined child '{label}': " + ("registered evidence supports this child." if status != "MIGRATION_UNRESOLVED" else "the overloaded parent evidence has no registered transfer to this child."),
         "boundary": "The v0 parent status is not inherited by sibling obligations. " + parent["boundary"],
@@ -194,10 +244,23 @@ def build() -> dict[str, Any]:
     for overlay in OVERLAYS:
         coordinate = (overlay["foundation"], overlay["carrier"], overlay["obligation"])
         parent = next(parent for parent, children in REFINEMENT.items() if overlay["obligation"] in children)
-        by_coordinate[coordinate] = {**overlay, "parent_obligation": parent, "migration_relation": "REVIEWED_V1_OVERLAY"}
+        item = {key: value for key, value in overlay.items() if key != "roles"}
+        roles = overlay["roles"]
+        if sorted(roles) != sorted(overlay["evidence"]):
+            raise ValueError("overlay role coverage " + "|".join(coordinate))
+        declared = {STATUS_FOR_DIRECT_ROLE[role] for role in roles.values() if role in STATUS_FOR_DIRECT_ROLE}
+        if overlay["status"] in STATUS_FOR_DIRECT_ROLE.values():
+            if overlay["status"] not in declared:
+                raise ValueError("overlay status without a matching direct role " + "|".join(coordinate))
+        elif declared:
+            raise ValueError("overlay declares a direct role under a non-result status " + "|".join(coordinate))
+        by_coordinate[coordinate] = {**item, "evidence_roles": roles, "parent_obligation": parent, "migration_relation": "REVIEWED_V1_OVERLAY"}
     cells = sorted(by_coordinate.values(), key=lambda x: (x["foundation"], x["carrier"], x["obligation"]))
     counts = Counter(x["status"] for x in cells)
     split_counts = Counter(x["parent_obligation"] for x in cells)
+    role_counts = Counter(role for x in cells for role in x["evidence_roles"].values())
+    dual_direct = sum(len(direct_kinds(x["evidence_roles"])) == 2 for x in cells)
+    unreviewed_pairs = sum(role == UNREVIEWED for x in cells for role in x["evidence_roles"].values())
     qualified = len(cells) - counts["MIGRATION_UNRESOLVED"]
     return {
         "schema_version": "foundational-intersection-cube-v1",
@@ -225,6 +288,8 @@ def build() -> dict[str, Any]:
             {"id": "PRIORITY_GAP", "meaning": "A one-to-one migrated obligation retains a deliberately reviewed gap."},
             {"id": "MIGRATION_UNRESOLVED", "meaning": "The overloaded v0 parent was assessed, but its evidence cannot be transferred to this child without a new review."}
         ],
+        "evidence_role_vocabulary": EVIDENCE_ROLE_VOCABULARY,
+        "evidence_role_rule": "A cell status names only its strongest grade. The per-record role states, for this obligation alone, whether the record is a direct support, an ingredient, or unreviewed. A cell may carry a direct local result and a direct literature result at once; UNREVIEWED is never read as an absence of directness.",
         "dimensions": {
             "axis_sizes": [6, 6, len(obligation_keys)],
             "cartesian_total": 6 * 6 * len(obligation_keys),
@@ -233,6 +298,9 @@ def build() -> dict[str, Any]:
             "migration_unresolved_cells": counts["MIGRATION_UNRESOLVED"],
             "status_counts": dict(sorted(counts.items())),
             "descendant_counts_by_v0_obligation": dict(sorted(split_counts.items())),
+            "evidence_role_counts": dict(sorted(role_counts.items())),
+            "dual_direct_cells": dual_direct,
+            "unreviewed_evidence_pairs": unreviewed_pairs,
         },
         "cells": cells,
         "capability_registry": {
@@ -246,9 +314,9 @@ def build() -> dict[str, Any]:
             {"path": str(CYLINDER.relative_to(ROOT)), "sha256": sha(CYLINDER)},
             {"path": str(FINITE_QUBIT.relative_to(ROOT)), "sha256": sha(FINITE_QUBIT)},
         ]},
-        "independent_checker": {"path": "foundations/check_refined_intersection_cube.py", "checks": ["axis closure", "unique refined coordinates", "exact one-to-one migration", "no blind split inheritance", "overlay set", "status and evidence closure", "canonical digest"], "expected_digest": canonical_digest(cells)},
-        "claim_flags": {"v0_preserved": True, "overloaded_obligations_decomposed": True, "blind_parent_status_inheritance_forbidden": True, "cylinder_ladder_integrated": True, "all_576_cells_assessed": False, "literature_complete": False, "weakest_base_proved": False, "new_lorentzian_claim": False},
-        "does_not_establish": ["that every refined Cartesian coordinate is coherent", "that a v0 result supports every refined child", "literature completeness", "a weakest mathematical base", "a constructive continuum Weyl theory", "renormalized products", "QME restoration", "residual quantum transfer", "a controlled continuum limit", "a new Lorentzian-causal result"],
+        "independent_checker": {"path": "foundations/check_refined_intersection_cube.py", "checks": ["axis closure", "unique refined coordinates", "exact one-to-one migration", "no blind split inheritance", "overlay set", "status and evidence closure", "evidence-role closure", "role/status agreement", "canonical digest"], "expected_digest": canonical_digest(cells)},
+        "claim_flags": {"v0_preserved": True, "overloaded_obligations_decomposed": True, "per_evidence_roles_emitted": True, "unreviewed_role_means_absence": False, "blind_parent_status_inheritance_forbidden": True, "cylinder_ladder_integrated": True, "all_576_cells_assessed": False, "literature_complete": False, "weakest_base_proved": False, "new_lorentzian_claim": False},
+        "does_not_establish": ["that every refined Cartesian coordinate is coherent", "that a v0 result supports every refined child", "that an UNREVIEWED evidence role is an absence of direct support", "a directness review for records the capability registry does not cover", "literature completeness", "a weakest mathematical base", "a constructive continuum Weyl theory", "renormalized products", "QME restoration", "residual quantum transfer", "a controlled continuum limit", "a new Lorentzian-causal result"],
         "human_report": "foundations/reports/refined-intersection-cube.md",
     }
 
@@ -308,6 +376,14 @@ def render(result: dict[str, Any]) -> str:
         counts = Counter(x["status"] for x in result["cells"] if x["foundation"] == foundation["id"])
         lines.append(f"| {cell(foundation['label'])} | {counts['LOCAL_RESULT']} | {counts['LITERATURE_RESULT']} | {counts['PIECES_ONLY']} | {counts['PRIORITY_GAP']} | {counts['MIGRATION_UNRESOLVED']} | {sum(counts.values())} |")
     lines += [
+        "",
+        "## Per-evidence roles",
+        "",
+        f"A cell status names only its strongest grade. Each cell also records a role for every attached record at that obligation alone: **{dimensions['evidence_role_counts'].get('DIRECT_LOCAL', 0)} direct local**, **{dimensions['evidence_role_counts'].get('DIRECT_LITERATURE', 0)} direct literature**, **{dimensions['evidence_role_counts'].get('SUPPORTING', 0)} supporting**, and **{dimensions['evidence_role_counts'].get('UNREVIEWED', 0)} unreviewed** record-obligation pairs.",
+        "",
+        f"**{dimensions['dual_direct_cells']} cells carry a direct local result and a direct literature result at the same coordinate.** Their scalar status can only report the local one, because a direct local result outranks a direct literature result in the migration rule. The roles keep both visible without changing any status.",
+        "",
+        "`UNREVIEWED` covers records the capability registry does not register at that obligation, including every record attached to an unsplit one-to-one obligation. It is not a finding that the record fails to support the cell; it marks the pair as not yet reviewed.",
         "",
         "## Three semantic corrections",
         "",

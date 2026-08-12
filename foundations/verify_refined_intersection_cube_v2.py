@@ -51,6 +51,8 @@ def verify(*, result=None, report=None) -> tuple[list[str], list[str]]:
         "reviewed_no_transfer": 88,
         "reviewed_child_gap": 24,
         "migration_pending": 0,
+        "role_counts": {"DIRECT_LITERATURE": 84, "DIRECT_LOCAL": 76, "SUPPORTING": 267, "UNREVIEWED": 159},
+        "dual_direct_cells": 7,
     }
     if summary != expected_summary:
         errors.append("expected v2 cube summary")

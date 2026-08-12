@@ -308,6 +308,25 @@ window.MATRIX_EXPLORER_DATA = {
       "meaning": "No coverage classification is made; this is not a literature-absence claim."
     }
   ],
+  "evidence_role_vocabulary": [
+    {
+      "id": "DIRECT_LOCAL",
+      "meaning": "A bounded local result registered as directly supporting this refined obligation."
+    },
+    {
+      "id": "DIRECT_LITERATURE",
+      "meaning": "A reviewed source registered as directly treating this refined obligation within its boundary."
+    },
+    {
+      "id": "SUPPORTING",
+      "meaning": "The record is registered as an ingredient for this obligation and does not compose the refined result."
+    },
+    {
+      "id": "UNREVIEWED",
+      "meaning": "No capability registration covers this record at this obligation.  Neither directness nor its absence is claimed."
+    }
+  ],
+  "evidence_role_rule": "A cell status names only its strongest grade. The per-record role states, for this obligation alone, whether the record is a direct support, an ingredient, or unreviewed. A cell may carry a direct local result and a direct literature result at once; UNREVIEWED is never read as an absence of directness.",
   "migration_statuses": [
     {
       "id": "EXACT_PARENT_TRANSFER",
@@ -344,6 +363,26 @@ window.MATRIX_EXPLORER_DATA = {
     "migration_unresolved": 0,
     "reviewed_no_transfer": 88,
     "not_mapped": 205,
+    "dual_direct": 7,
+    "mark_counts": {
+      "G": 30,
+      "L": 76,
+      "LR": 7,
+      "Lr": 5,
+      "P": 20,
+      "Pl": 75,
+      "Plr": 14,
+      "Pr": 51,
+      "R": 90,
+      "Rl": 3,
+      "·": 205
+    },
+    "evidence_role_counts": {
+      "DIRECT_LITERATURE": 84,
+      "DIRECT_LOCAL": 76,
+      "SUPPORTING": 267,
+      "UNREVIEWED": 191
+    },
     "synthetic_not_mapped": 124,
     "status_counts": {
       "LITERATURE_RESULT": 93,
@@ -371,6 +410,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "UNREVIEWED"
+      },
       "parent_obligation": "KINEMATICS_OBSERVABLES",
       "migration_relation": "EXACT_ONE_TO_ONE",
       "summary": "An exact two-qubit matrix model provides observables, density states, a star derivation, and an entangling interaction. For this obligation, the evidence directly defines observables, configurations, or the carrier's algebraic structure.",
@@ -391,6 +433,10 @@ window.MATRIX_EXPLORER_DATA = {
         "hardy-2001",
         "chiribella-dariano-perinotti-2011"
       ],
+      "evidence_roles": {
+        "hardy-2001": "UNREVIEWED",
+        "chiribella-dariano-perinotti-2011": "UNREVIEWED"
+      },
       "parent_obligation": "KINEMATICS_OBSERVABLES",
       "migration_relation": "EXACT_ONE_TO_ONE",
       "summary": "Finite-dimensional quantum carriers are reconstructed from operational postulates.",
@@ -412,6 +458,10 @@ window.MATRIX_EXPLORER_DATA = {
         "esmeral-ferrer-wagner-2015",
         "bateman-turok-2026"
       ],
+      "evidence_roles": {
+        "esmeral-ferrer-wagner-2015": "UNREVIEWED",
+        "bateman-turok-2026": "UNREVIEWED"
+      },
       "parent_obligation": "KINEMATICS_OBSERVABLES",
       "migration_relation": "EXACT_ONE_TO_ONE",
       "summary": "Krein geometry and ghost parity provide an indefinite carrier architecture.",
@@ -432,6 +482,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "haag-kastler-1964"
       ],
+      "evidence_roles": {
+        "haag-kastler-1964": "UNREVIEWED"
+      },
       "parent_obligation": "KINEMATICS_OBSERVABLES",
       "migration_relation": "EXACT_ONE_TO_ONE",
       "summary": "Algebra-first local observables provide a kinematic formulation of QFT.",
@@ -454,6 +507,12 @@ window.MATRIX_EXPLORER_DATA = {
         "fredenhagen-rejzner-2011",
         "brunetti-fredenhagen-rejzner-2013"
       ],
+      "evidence_roles": {
+        "barnich-brandt-henneaux-2000": "UNREVIEWED",
+        "brunetti-fredenhagen-verch-2001": "UNREVIEWED",
+        "fredenhagen-rejzner-2011": "UNREVIEWED",
+        "brunetti-fredenhagen-rejzner-2013": "UNREVIEWED"
+      },
       "parent_obligation": "KINEMATICS_OBSERVABLES",
       "migration_relation": "EXACT_ONE_TO_ONE",
       "summary": "Local BRST, locally covariant QFT, and perturbative BV give a standard smooth/distributional architecture across all six obligations. For this obligation, the evidence directly defines observables, configurations, or the carrier's algebraic structure.",
@@ -479,6 +538,12 @@ window.MATRIX_EXPLORER_DATA = {
         "brenna-flori-2012",
         "harding-heunen-2019"
       ],
+      "evidence_roles": {
+        "heunen-landsman-spitters-2009": "UNREVIEWED",
+        "doring-2008": "UNREVIEWED",
+        "brenna-flori-2012": "UNREVIEWED",
+        "harding-heunen-2019": "UNREVIEWED"
+      },
       "parent_obligation": "KINEMATICS_OBSERVABLES",
       "migration_relation": "EXACT_ONE_TO_ONE",
       "summary": "Topos quantum theory supplies localic spectra, state measures, internal group dynamics, and comparisons between context topoi. For this obligation, the evidence directly defines observables, configurations, or the carrier's algebraic structure.",
@@ -501,6 +566,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "UNREVIEWED"
+      },
       "parent_obligation": "KINEMATICS_OBSERVABLES",
       "migration_relation": "EXACT_ONE_TO_ONE",
       "summary": "Every displayed operation is a finite loop over reduced rational pairs, providing a primitive-recursive sufficiency witness. For this obligation, the evidence directly defines observables, configurations, or the carrier's algebraic structure.",
@@ -521,6 +589,10 @@ window.MATRIX_EXPLORER_DATA = {
         "brown-simpson-1986",
         "humphreys-simpson-1999"
       ],
+      "evidence_roles": {
+        "brown-simpson-1986": "UNREVIEWED",
+        "humphreys-simpson-1999": "UNREVIEWED"
+      },
       "parent_obligation": "KINEMATICS_OBSERVABLES",
       "migration_relation": "EXACT_ONE_TO_ONE",
       "summary": "Reverse functional analysis calibrates separation principles used around Hilbert/Banach carriers.",
@@ -541,6 +613,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1": "UNREVIEWED"
+      },
       "parent_obligation": "KINEMATICS_OBSERVABLES",
       "migration_relation": "EXACT_ONE_TO_ONE",
       "summary": "Every fixed Krein mode cutoff reduces to finite exact sign and positivity checks.",
@@ -558,6 +633,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "KINEMATICS_OBSERVABLES",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -573,6 +649,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "KINEMATICS_OBSERVABLES",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -588,6 +665,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "KINEMATICS_OBSERVABLES",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -606,6 +684,10 @@ window.MATRIX_EXPLORER_DATA = {
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1",
         "FOUNDATIONAL_FREE_BV_ENERGY2_PRA_SDR_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "UNREVIEWED",
+        "FOUNDATIONAL_FREE_BV_ENERGY2_PRA_SDR_V1": "UNREVIEWED"
+      },
       "parent_obligation": "KINEMATICS_OBSERVABLES",
       "migration_relation": "EXACT_ONE_TO_ONE",
       "summary": "Named finite matrices and finite BV arrays are constructed without selecting from arbitrary families. For this obligation, the evidence directly defines observables, configurations, or the carrier's algebraic structure.",
@@ -626,6 +708,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "blackadar-farah-karagila-2026"
       ],
+      "evidence_roles": {
+        "blackadar-farah-karagila-2026": "UNREVIEWED"
+      },
       "parent_obligation": "KINEMATICS_OBSERVABLES",
       "migration_relation": "EXACT_ONE_TO_ONE",
       "summary": "Substantial Hilbert and operator theory can be developed in ZF without Countable Choice.",
@@ -645,6 +730,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1": "UNREVIEWED"
+      },
       "parent_obligation": "KINEMATICS_OBSERVABLES",
       "migration_relation": "EXACT_ONE_TO_ONE",
       "summary": "The explicitly labelled Krein symmetry and Fock lift are constructible in ZF without Countable Choice.",
@@ -665,6 +753,10 @@ window.MATRIX_EXPLORER_DATA = {
         "blackadar-farah-2026",
         "FOUNDATIONAL_BT_SEPARABLE_STATE_CHAIN_ZF_V1"
       ],
+      "evidence_roles": {
+        "blackadar-farah-2026": "UNREVIEWED",
+        "FOUNDATIONAL_BT_SEPARABLE_STATE_CHAIN_ZF_V1": "UNREVIEWED"
+      },
       "parent_obligation": "KINEMATICS_OBSERVABLES",
       "migration_relation": "EXACT_ONE_TO_ONE",
       "summary": "A separable detector algebra and robust ZF algebraic operations are available.",
@@ -683,6 +775,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "KINEMATICS_OBSERVABLES",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -698,6 +791,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "KINEMATICS_OBSERVABLES",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -716,6 +810,10 @@ window.MATRIX_EXPLORER_DATA = {
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1",
         "FOUNDATIONAL_FREE_BV_ENERGY2_PRA_SDR_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "UNREVIEWED",
+        "FOUNDATIONAL_FREE_BV_ENERGY2_PRA_SDR_V1": "UNREVIEWED"
+      },
       "parent_obligation": "KINEMATICS_OBSERVABLES",
       "migration_relation": "EXACT_ONE_TO_ONE",
       "summary": "The explicit Gaussian-rational interaction is executable using finite data, while the finite BV result remains a separate proof artifact. For this obligation, the evidence directly defines observables, configurations, or the carrier's algebraic structure.",
@@ -736,6 +834,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "bridges-svozil-2000"
       ],
+      "evidence_roles": {
+        "bridges-svozil-2000": "UNREVIEWED"
+      },
       "parent_obligation": "KINEMATICS_OBSERVABLES",
       "migration_relation": "EXACT_ONE_TO_ONE",
       "summary": "Constructive Hilbert subspaces, projections, and quantum logic have been studied.",
@@ -753,6 +854,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "KINEMATICS_OBSERVABLES",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -771,6 +873,10 @@ window.MATRIX_EXPLORER_DATA = {
         "coquand-spitters-2009",
         "henry-2014"
       ],
+      "evidence_roles": {
+        "coquand-spitters-2009": "UNREVIEWED",
+        "henry-2014": "UNREVIEWED"
+      },
       "parent_obligation": "KINEMATICS_OBSERVABLES",
       "migration_relation": "EXACT_ONE_TO_ONE",
       "summary": "Constructive localic Gelfand duality covers commutative unital and non-unital cases.",
@@ -789,6 +895,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "KINEMATICS_OBSERVABLES",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -808,6 +915,11 @@ window.MATRIX_EXPLORER_DATA = {
         "heunen-landsman-spitters-2009",
         "brenna-flori-2012"
       ],
+      "evidence_roles": {
+        "coquand-spitters-2009": "UNREVIEWED",
+        "heunen-landsman-spitters-2009": "UNREVIEWED",
+        "brenna-flori-2012": "UNREVIEWED"
+      },
       "parent_obligation": "KINEMATICS_OBSERVABLES",
       "migration_relation": "EXACT_ONE_TO_ONE",
       "summary": "Constructive localic spectra, valuations, and internal one-parameter dynamics form a coherent non-point-set quantum fragment. For this obligation, the evidence directly defines observables, configurations, or the carrier's algebraic structure.",
@@ -827,6 +939,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "KINEMATICS_OBSERVABLES",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -842,6 +955,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "KINEMATICS_OBSERVABLES",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -857,6 +971,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "KINEMATICS_OBSERVABLES",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -877,6 +992,12 @@ window.MATRIX_EXPLORER_DATA = {
         "brenna-flori-2012",
         "harding-heunen-2019"
       ],
+      "evidence_roles": {
+        "heunen-landsman-spitters-2009": "UNREVIEWED",
+        "doring-2008": "UNREVIEWED",
+        "brenna-flori-2012": "UNREVIEWED",
+        "harding-heunen-2019": "UNREVIEWED"
+      },
       "parent_obligation": "KINEMATICS_OBSERVABLES",
       "migration_relation": "EXACT_ONE_TO_ONE",
       "summary": "Contextual topos methods internalize commutative algebra, spectra, state measures, and one-parameter dynamics from operator-algebraic input. For this obligation, the evidence directly defines observables, configurations, or the carrier's algebraic structure.",
@@ -900,6 +1021,10 @@ window.MATRIX_EXPLORER_DATA = {
         "grinkevich-1996",
         "barnich-brandt-henneaux-2000"
       ],
+      "evidence_roles": {
+        "grinkevich-1996": "UNREVIEWED",
+        "barnich-brandt-henneaux-2000": "UNREVIEWED"
+      },
       "parent_obligation": "KINEMATICS_OBSERVABLES",
       "migration_relation": "EXACT_ONE_TO_ONE",
       "summary": "Synthetic general relativity supplies formal smooth geometry, while probability and BV/renormalization remain separate classical ingredients. For this obligation, the evidence directly defines observables, configurations, or the carrier's algebraic structure.",
@@ -920,6 +1045,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "heunen-landsman-spitters-2009"
       ],
+      "evidence_roles": {
+        "heunen-landsman-spitters-2009": "UNREVIEWED"
+      },
       "parent_obligation": "KINEMATICS_OBSERVABLES",
       "migration_relation": "EXACT_ONE_TO_ONE",
       "summary": "An algebraic quantum system can be represented internally with Heyting logic and a localic spectrum.",
@@ -939,6 +1067,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "gibbons-hoffman-wootters-2004"
       ],
+      "evidence_roles": {
+        "gibbons-hoffman-wootters-2004": "UNREVIEWED"
+      },
       "parent_obligation": "KINEMATICS_OBSERVABLES",
       "migration_relation": "EXACT_ONE_TO_ONE",
       "summary": "Prime-power finite-field phase spaces support discrete Wigner kinematics.",
@@ -959,6 +1090,10 @@ window.MATRIX_EXPLORER_DATA = {
         "hardy-2001",
         "chiribella-dariano-perinotti-2011"
       ],
+      "evidence_roles": {
+        "hardy-2001": "UNREVIEWED",
+        "chiribella-dariano-perinotti-2011": "UNREVIEWED"
+      },
       "parent_obligation": "KINEMATICS_OBSERVABLES",
       "migration_relation": "EXACT_ONE_TO_ONE",
       "summary": "Finite-dimensional Hilbert kinematics is reconstructed operationally.",
@@ -979,6 +1114,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1": "UNREVIEWED"
+      },
       "parent_obligation": "KINEMATICS_OBSERVABLES",
       "migration_relation": "EXACT_ONE_TO_ONE",
       "summary": "Finite Krein truncations have explicit sign, involution, and positivity witnesses.",
@@ -999,6 +1137,10 @@ window.MATRIX_EXPLORER_DATA = {
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1",
         "zohar-burrello-2014"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "UNREVIEWED",
+        "zohar-burrello-2014": "UNREVIEWED"
+      },
       "parent_obligation": "KINEMATICS_OBSERVABLES",
       "migration_relation": "EXACT_ONE_TO_ONE",
       "summary": "The finite matrix algebra is a concrete C*-system, while lattice gauge work adds local constraints and truncation architecture. For this obligation, the evidence directly defines observables, configurations, or the carrier's algebraic structure.",
@@ -1022,6 +1164,12 @@ window.MATRIX_EXPLORER_DATA = {
         "bahr-dittrich-2009",
         "dittrich-2012"
       ],
+      "evidence_roles": {
+        "kogut-susskind-1975": "UNREVIEWED",
+        "zohar-burrello-2014": "UNREVIEWED",
+        "bahr-dittrich-2009": "UNREVIEWED",
+        "dittrich-2012": "UNREVIEWED"
+      },
       "parent_obligation": "KINEMATICS_OBSERVABLES",
       "migration_relation": "EXACT_ONE_TO_ONE",
       "summary": "Lattice gauge and discrete-gravity work supplies dynamics, constraints, symmetry-restoration, and explicit continuum-comparison obligations. For this obligation, the evidence directly defines observables, configurations, or the carrier's algebraic structure.",
@@ -1046,6 +1194,11 @@ window.MATRIX_EXPLORER_DATA = {
         "constantin-doring-2020",
         "abramsky-coecke-2004"
       ],
+      "evidence_roles": {
+        "harding-heunen-2019": "UNREVIEWED",
+        "constantin-doring-2020": "UNREVIEWED",
+        "abramsky-coecke-2004": "UNREVIEWED"
+      },
       "parent_obligation": "KINEMATICS_OBSERVABLES",
       "migration_relation": "EXACT_ONE_TO_ONE",
       "summary": "Short-poset topoi, finite contextual entropy, and categorical protocols give finite internal/contextual kinematics, states, dynamics, and reconstruction. For this obligation, the evidence directly defines observables, configurations, or the carrier's algebraic structure.",
@@ -1067,6 +1220,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "DIRECT_LOCAL"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'State existence': registered evidence supports this child.",
@@ -1087,6 +1243,10 @@ window.MATRIX_EXPLORER_DATA = {
         "hardy-2001",
         "chiribella-dariano-perinotti-2011"
       ],
+      "evidence_roles": {
+        "hardy-2001": "DIRECT_LITERATURE",
+        "chiribella-dariano-perinotti-2011": "DIRECT_LITERATURE"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'State existence': registered evidence supports this child.",
@@ -1109,6 +1269,11 @@ window.MATRIX_EXPLORER_DATA = {
         "FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1",
         "bateman-turok-2026"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1": "DIRECT_LOCAL",
+        "FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1": "DIRECT_LOCAL",
+        "bateman-turok-2026": "DIRECT_LITERATURE"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'State existence': registered evidence supports this child.",
@@ -1132,6 +1297,11 @@ window.MATRIX_EXPLORER_DATA = {
         "FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1",
         "haag-kastler-1964"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_BT_SEPARABLE_STATE_CHAIN_ZF_V1": "DIRECT_LOCAL",
+        "FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1": "DIRECT_LOCAL",
+        "haag-kastler-1964": "DIRECT_LITERATURE"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'State existence': registered evidence supports this child.",
@@ -1153,6 +1323,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "brunetti-fredenhagen-verch-2001"
       ],
+      "evidence_roles": {
+        "brunetti-fredenhagen-verch-2001": "DIRECT_LITERATURE"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'State existence': registered evidence supports this child.",
@@ -1174,6 +1347,11 @@ window.MATRIX_EXPLORER_DATA = {
         "doring-2008",
         "harding-heunen-2019"
       ],
+      "evidence_roles": {
+        "heunen-landsman-spitters-2009": "DIRECT_LITERATURE",
+        "doring-2008": "SUPPORTING",
+        "harding-heunen-2019": "SUPPORTING"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'State existence': registered evidence supports this child.",
@@ -1195,6 +1373,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "DIRECT_LOCAL"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'State existence': registered evidence supports this child.",
@@ -1212,6 +1393,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "STATE_EXISTENCE",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -1227,6 +1409,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "STATE_EXISTENCE",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -1242,6 +1425,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "STATE_EXISTENCE",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -1257,6 +1441,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "STATE_EXISTENCE",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -1272,6 +1457,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "STATE_EXISTENCE",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -1289,6 +1475,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "DIRECT_LOCAL"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'State existence': registered evidence supports this child.",
@@ -1310,6 +1499,11 @@ window.MATRIX_EXPLORER_DATA = {
         "blackadar-farah-karagila-2026",
         "blackadar-farah-2026"
       ],
+      "evidence_roles": {
+        "neumann-pape-streicher-2018": "DIRECT_LITERATURE",
+        "blackadar-farah-karagila-2026": "SUPPORTING",
+        "blackadar-farah-2026": "SUPPORTING"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'State existence': registered evidence supports this child.",
@@ -1332,6 +1526,10 @@ window.MATRIX_EXPLORER_DATA = {
         "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1",
         "FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1": "DIRECT_LOCAL",
+        "FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1": "DIRECT_LOCAL"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'State existence': registered evidence supports this child.",
@@ -1352,6 +1550,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_BT_SEPARABLE_STATE_CHAIN_ZF_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_BT_SEPARABLE_STATE_CHAIN_ZF_V1": "DIRECT_LOCAL"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'State existence': registered evidence supports this child.",
@@ -1369,6 +1570,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "STATE_EXISTENCE",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -1387,6 +1589,10 @@ window.MATRIX_EXPLORER_DATA = {
         "heunen-landsman-spitters-2009",
         "coquand-spitters-2009"
       ],
+      "evidence_roles": {
+        "heunen-landsman-spitters-2009": "DIRECT_LITERATURE",
+        "coquand-spitters-2009": "SUPPORTING"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'State existence': registered evidence supports this child.",
@@ -1407,6 +1613,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "DIRECT_LOCAL"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'State existence': registered evidence supports this child.",
@@ -1426,6 +1635,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "richman-bridges-1999"
       ],
+      "evidence_roles": {
+        "richman-bridges-1999": "SUPPORTING"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'State existence': registered evidence supports this child.",
@@ -1446,6 +1658,10 @@ window.MATRIX_EXPLORER_DATA = {
         "bender-boettcher-1998",
         "mostafazadeh-2001"
       ],
+      "evidence_roles": {
+        "bender-boettcher-1998": "SUPPORTING",
+        "mostafazadeh-2001": "SUPPORTING"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'State existence': registered evidence supports this child.",
@@ -1467,6 +1683,10 @@ window.MATRIX_EXPLORER_DATA = {
         "coquand-spitters-2009",
         "richman-bridges-1999"
       ],
+      "evidence_roles": {
+        "coquand-spitters-2009": "SUPPORTING",
+        "richman-bridges-1999": "SUPPORTING"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'State existence': registered evidence supports this child.",
@@ -1485,6 +1705,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "STATE_EXISTENCE",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -1503,6 +1724,10 @@ window.MATRIX_EXPLORER_DATA = {
         "heunen-landsman-spitters-2009",
         "coquand-spitters-2009"
       ],
+      "evidence_roles": {
+        "heunen-landsman-spitters-2009": "DIRECT_LITERATURE",
+        "coquand-spitters-2009": "SUPPORTING"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'State existence': registered evidence supports this child.",
@@ -1524,6 +1749,10 @@ window.MATRIX_EXPLORER_DATA = {
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1",
         "abramsky-coecke-2004"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "DIRECT_LOCAL",
+        "abramsky-coecke-2004": "SUPPORTING"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'State existence': registered evidence supports this child.",
@@ -1545,6 +1774,10 @@ window.MATRIX_EXPLORER_DATA = {
         "doring-2008",
         "harding-heunen-2019"
       ],
+      "evidence_roles": {
+        "doring-2008": "SUPPORTING",
+        "harding-heunen-2019": "SUPPORTING"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'State existence': registered evidence supports this child.",
@@ -1566,6 +1799,10 @@ window.MATRIX_EXPLORER_DATA = {
         "gottschalk-2004",
         "harding-heunen-2019"
       ],
+      "evidence_roles": {
+        "gottschalk-2004": "SUPPORTING",
+        "harding-heunen-2019": "SUPPORTING"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'State existence': registered evidence supports this child.",
@@ -1588,6 +1825,11 @@ window.MATRIX_EXPLORER_DATA = {
         "doring-2008",
         "harding-heunen-2019"
       ],
+      "evidence_roles": {
+        "heunen-landsman-spitters-2009": "DIRECT_LITERATURE",
+        "doring-2008": "SUPPORTING",
+        "harding-heunen-2019": "SUPPORTING"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'State existence': registered evidence supports this child.",
@@ -1607,6 +1849,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "STATE_EXISTENCE",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed parent-evidence transfer: Synthetic classical geometry and local BRST classification do not construct or represent states, probabilities, or a physical state-selection rule. No reviewed record in the batch constructs a state in this refined coordinate.",
@@ -1628,6 +1871,10 @@ window.MATRIX_EXPLORER_DATA = {
         "heunen-landsman-spitters-2009",
         "FOUNDATIONAL_TOPOS_WEYL_BV_OBSTRUCTION_LEDGER_V0"
       ],
+      "evidence_roles": {
+        "heunen-landsman-spitters-2009": "DIRECT_LITERATURE",
+        "FOUNDATIONAL_TOPOS_WEYL_BV_OBSTRUCTION_LEDGER_V0": "SUPPORTING"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'State existence': registered evidence supports this child.",
@@ -1648,6 +1895,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "gibbons-hoffman-wootters-2004"
       ],
+      "evidence_roles": {
+        "gibbons-hoffman-wootters-2004": "DIRECT_LITERATURE"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'State existence': registered evidence supports this child.",
@@ -1668,6 +1918,10 @@ window.MATRIX_EXPLORER_DATA = {
         "gibbons-hoffman-wootters-2004",
         "abramsky-coecke-2004"
       ],
+      "evidence_roles": {
+        "gibbons-hoffman-wootters-2004": "DIRECT_LITERATURE",
+        "abramsky-coecke-2004": "SUPPORTING"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'State existence': registered evidence supports this child.",
@@ -1689,6 +1943,10 @@ window.MATRIX_EXPLORER_DATA = {
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1",
         "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "DIRECT_LOCAL",
+        "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1": "DIRECT_LOCAL"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'State existence': registered evidence supports this child.",
@@ -1709,6 +1967,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "DIRECT_LOCAL"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'State existence': registered evidence supports this child.",
@@ -1726,6 +1987,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "STATE_EXISTENCE",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed parent-evidence transfer: Lattice constraints and continuum-comparison programmes do not by themselves construct the four unresolved state/probability children. No reviewed record in the batch constructs a state in this refined coordinate.",
@@ -1749,6 +2011,10 @@ window.MATRIX_EXPLORER_DATA = {
         "harding-heunen-2019",
         "abramsky-coecke-2004"
       ],
+      "evidence_roles": {
+        "harding-heunen-2019": "SUPPORTING",
+        "abramsky-coecke-2004": "SUPPORTING"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'State existence': registered evidence supports this child.",
@@ -1769,6 +2035,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "DIRECT_LOCAL"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'State representation': registered evidence supports this child.",
@@ -1789,6 +2058,10 @@ window.MATRIX_EXPLORER_DATA = {
         "hardy-2001",
         "chiribella-dariano-perinotti-2011"
       ],
+      "evidence_roles": {
+        "hardy-2001": "DIRECT_LITERATURE",
+        "chiribella-dariano-perinotti-2011": "DIRECT_LITERATURE"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'State representation': registered evidence supports this child.",
@@ -1811,6 +2084,11 @@ window.MATRIX_EXPLORER_DATA = {
         "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1",
         "FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1"
       ],
+      "evidence_roles": {
+        "bateman-turok-2026": "SUPPORTING",
+        "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1": "SUPPORTING",
+        "FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1": "SUPPORTING"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'State representation': registered evidence supports this child.",
@@ -1834,6 +2112,11 @@ window.MATRIX_EXPLORER_DATA = {
         "haag-kastler-1964",
         "FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_BT_SEPARABLE_STATE_CHAIN_ZF_V1": "DIRECT_LOCAL",
+        "haag-kastler-1964": "SUPPORTING",
+        "FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1": "SUPPORTING"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'State representation': registered evidence supports this child.",
@@ -1855,6 +2138,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "brunetti-fredenhagen-verch-2001"
       ],
+      "evidence_roles": {
+        "brunetti-fredenhagen-verch-2001": "DIRECT_LITERATURE"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'State representation': registered evidence supports this child.",
@@ -1876,6 +2162,11 @@ window.MATRIX_EXPLORER_DATA = {
         "doring-2008",
         "harding-heunen-2019"
       ],
+      "evidence_roles": {
+        "heunen-landsman-spitters-2009": "DIRECT_LITERATURE",
+        "doring-2008": "DIRECT_LITERATURE",
+        "harding-heunen-2019": "DIRECT_LITERATURE"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'State representation': registered evidence supports this child.",
@@ -1897,6 +2188,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "DIRECT_LOCAL"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'State representation': registered evidence supports this child.",
@@ -1914,6 +2208,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "STATE_REPRESENTATION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -1929,6 +2224,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "STATE_REPRESENTATION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -1944,6 +2240,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "STATE_REPRESENTATION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -1959,6 +2256,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "STATE_REPRESENTATION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -1974,6 +2272,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "STATE_REPRESENTATION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -1991,6 +2290,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "DIRECT_LOCAL"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'State representation': registered evidence supports this child.",
@@ -2012,6 +2314,11 @@ window.MATRIX_EXPLORER_DATA = {
         "blackadar-farah-karagila-2026",
         "blackadar-farah-2026"
       ],
+      "evidence_roles": {
+        "neumann-pape-streicher-2018": "DIRECT_LITERATURE",
+        "blackadar-farah-karagila-2026": "SUPPORTING",
+        "blackadar-farah-2026": "SUPPORTING"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'State representation': registered evidence supports this child.",
@@ -2034,6 +2341,10 @@ window.MATRIX_EXPLORER_DATA = {
         "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1",
         "FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1": "SUPPORTING",
+        "FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1": "SUPPORTING"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'State representation': registered evidence supports this child.",
@@ -2054,6 +2365,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_BT_SEPARABLE_STATE_CHAIN_ZF_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_BT_SEPARABLE_STATE_CHAIN_ZF_V1": "DIRECT_LOCAL"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'State representation': registered evidence supports this child.",
@@ -2071,6 +2385,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "STATE_REPRESENTATION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -2089,6 +2404,10 @@ window.MATRIX_EXPLORER_DATA = {
         "heunen-landsman-spitters-2009",
         "coquand-spitters-2009"
       ],
+      "evidence_roles": {
+        "heunen-landsman-spitters-2009": "DIRECT_LITERATURE",
+        "coquand-spitters-2009": "SUPPORTING"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'State representation': registered evidence supports this child.",
@@ -2109,6 +2428,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "DIRECT_LOCAL"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'State representation': registered evidence supports this child.",
@@ -2128,6 +2450,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "richman-bridges-1999"
       ],
+      "evidence_roles": {
+        "richman-bridges-1999": "DIRECT_LITERATURE"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'State representation': registered evidence supports this child.",
@@ -2145,6 +2470,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "STATE_REPRESENTATION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed parent-evidence transfer: PT-symmetric and pseudo-Hermitian spectral structure does not supply state representation, normalized probabilities, or causal Green propagation. No reviewed record in the batch supplies the required state representation in this refined coordinate.",
@@ -2166,6 +2492,10 @@ window.MATRIX_EXPLORER_DATA = {
         "richman-bridges-1999",
         "coquand-spitters-2009"
       ],
+      "evidence_roles": {
+        "richman-bridges-1999": "DIRECT_LITERATURE",
+        "coquand-spitters-2009": "SUPPORTING"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'State representation': registered evidence supports this child.",
@@ -2184,6 +2514,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "STATE_REPRESENTATION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -2202,6 +2533,10 @@ window.MATRIX_EXPLORER_DATA = {
         "heunen-landsman-spitters-2009",
         "coquand-spitters-2009"
       ],
+      "evidence_roles": {
+        "heunen-landsman-spitters-2009": "DIRECT_LITERATURE",
+        "coquand-spitters-2009": "SUPPORTING"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'State representation': registered evidence supports this child.",
@@ -2224,6 +2559,11 @@ window.MATRIX_EXPLORER_DATA = {
         "constantin-doring-2020",
         "abramsky-coecke-2004"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "DIRECT_LOCAL",
+        "constantin-doring-2020": "DIRECT_LITERATURE",
+        "abramsky-coecke-2004": "SUPPORTING"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'State representation': registered evidence supports this child.",
@@ -2246,6 +2586,10 @@ window.MATRIX_EXPLORER_DATA = {
         "doring-2008",
         "harding-heunen-2019"
       ],
+      "evidence_roles": {
+        "doring-2008": "DIRECT_LITERATURE",
+        "harding-heunen-2019": "DIRECT_LITERATURE"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'State representation': registered evidence supports this child.",
@@ -2267,6 +2611,10 @@ window.MATRIX_EXPLORER_DATA = {
         "harding-heunen-2019",
         "gottschalk-2004"
       ],
+      "evidence_roles": {
+        "harding-heunen-2019": "DIRECT_LITERATURE",
+        "gottschalk-2004": "SUPPORTING"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'State representation': registered evidence supports this child.",
@@ -2289,6 +2637,11 @@ window.MATRIX_EXPLORER_DATA = {
         "doring-2008",
         "harding-heunen-2019"
       ],
+      "evidence_roles": {
+        "heunen-landsman-spitters-2009": "DIRECT_LITERATURE",
+        "doring-2008": "DIRECT_LITERATURE",
+        "harding-heunen-2019": "DIRECT_LITERATURE"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'State representation': registered evidence supports this child.",
@@ -2308,6 +2661,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "STATE_REPRESENTATION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed parent-evidence transfer: Synthetic classical geometry and local BRST classification do not construct or represent states, probabilities, or a physical state-selection rule. No reviewed record in the batch supplies the required state representation in this refined coordinate.",
@@ -2329,6 +2683,10 @@ window.MATRIX_EXPLORER_DATA = {
         "heunen-landsman-spitters-2009",
         "FOUNDATIONAL_TOPOS_WEYL_BV_OBSTRUCTION_LEDGER_V0"
       ],
+      "evidence_roles": {
+        "heunen-landsman-spitters-2009": "DIRECT_LITERATURE",
+        "FOUNDATIONAL_TOPOS_WEYL_BV_OBSTRUCTION_LEDGER_V0": "SUPPORTING"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'State representation': registered evidence supports this child.",
@@ -2349,6 +2707,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "gibbons-hoffman-wootters-2004"
       ],
+      "evidence_roles": {
+        "gibbons-hoffman-wootters-2004": "DIRECT_LITERATURE"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'State representation': registered evidence supports this child.",
@@ -2370,6 +2731,11 @@ window.MATRIX_EXPLORER_DATA = {
         "constantin-doring-2020",
         "abramsky-coecke-2004"
       ],
+      "evidence_roles": {
+        "gibbons-hoffman-wootters-2004": "DIRECT_LITERATURE",
+        "constantin-doring-2020": "DIRECT_LITERATURE",
+        "abramsky-coecke-2004": "SUPPORTING"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'State representation': registered evidence supports this child.",
@@ -2392,6 +2758,10 @@ window.MATRIX_EXPLORER_DATA = {
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1",
         "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "DIRECT_LOCAL",
+        "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1": "SUPPORTING"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'State representation': registered evidence supports this child.",
@@ -2412,6 +2782,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "DIRECT_LOCAL"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'State representation': registered evidence supports this child.",
@@ -2429,6 +2802,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "STATE_REPRESENTATION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed parent-evidence transfer: Lattice constraints and continuum-comparison programmes do not by themselves construct the four unresolved state/probability children. No reviewed record in the batch supplies the required state representation in this refined coordinate.",
@@ -2453,6 +2827,11 @@ window.MATRIX_EXPLORER_DATA = {
         "constantin-doring-2020",
         "abramsky-coecke-2004"
       ],
+      "evidence_roles": {
+        "harding-heunen-2019": "DIRECT_LITERATURE",
+        "constantin-doring-2020": "DIRECT_LITERATURE",
+        "abramsky-coecke-2004": "SUPPORTING"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'State representation': registered evidence supports this child.",
@@ -2474,6 +2853,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "DIRECT_LOCAL"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Probability rule': registered evidence supports this child.",
@@ -2494,6 +2876,10 @@ window.MATRIX_EXPLORER_DATA = {
         "hardy-2001",
         "chiribella-dariano-perinotti-2011"
       ],
+      "evidence_roles": {
+        "hardy-2001": "DIRECT_LITERATURE",
+        "chiribella-dariano-perinotti-2011": "DIRECT_LITERATURE"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Probability rule': registered evidence supports this child.",
@@ -2516,6 +2902,11 @@ window.MATRIX_EXPLORER_DATA = {
         "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1",
         "FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1"
       ],
+      "evidence_roles": {
+        "bateman-turok-2026": "SUPPORTING",
+        "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1": "SUPPORTING",
+        "FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1": "SUPPORTING"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Probability rule': registered evidence supports this child.",
@@ -2539,6 +2930,11 @@ window.MATRIX_EXPLORER_DATA = {
         "FOUNDATIONAL_BT_SEPARABLE_STATE_CHAIN_ZF_V1",
         "FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1"
       ],
+      "evidence_roles": {
+        "haag-kastler-1964": "SUPPORTING",
+        "FOUNDATIONAL_BT_SEPARABLE_STATE_CHAIN_ZF_V1": "SUPPORTING",
+        "FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1": "SUPPORTING"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Probability rule': registered evidence supports this child.",
@@ -2558,6 +2954,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "PROBABILITY_RULE",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed parent-evidence transfer: AQFT state-space and BV-renormalization architecture does not derive a normalized probability rule for the Weyl metric theory. No reviewed record in the batch derives the required normalized event-probability rule.",
@@ -2582,6 +2979,11 @@ window.MATRIX_EXPLORER_DATA = {
         "doring-2008",
         "harding-heunen-2019"
       ],
+      "evidence_roles": {
+        "heunen-landsman-spitters-2009": "SUPPORTING",
+        "doring-2008": "SUPPORTING",
+        "harding-heunen-2019": "SUPPORTING"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Probability rule': registered evidence supports this child.",
@@ -2603,6 +3005,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "DIRECT_LOCAL"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Probability rule': registered evidence supports this child.",
@@ -2620,6 +3025,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "PROBABILITY_RULE",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -2635,6 +3041,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "PROBABILITY_RULE",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -2650,6 +3057,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "PROBABILITY_RULE",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -2665,6 +3073,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "PROBABILITY_RULE",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -2680,6 +3089,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "PROBABILITY_RULE",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -2697,6 +3107,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "DIRECT_LOCAL"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Probability rule': registered evidence supports this child.",
@@ -2717,6 +3130,10 @@ window.MATRIX_EXPLORER_DATA = {
         "blackadar-farah-2026",
         "neumann-pape-streicher-2018"
       ],
+      "evidence_roles": {
+        "blackadar-farah-2026": "SUPPORTING",
+        "neumann-pape-streicher-2018": "SUPPORTING"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Probability rule': registered evidence supports this child.",
@@ -2738,6 +3155,10 @@ window.MATRIX_EXPLORER_DATA = {
         "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1",
         "FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1": "SUPPORTING",
+        "FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1": "SUPPORTING"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Probability rule': registered evidence supports this child.",
@@ -2758,6 +3179,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_BT_SEPARABLE_STATE_CHAIN_ZF_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_BT_SEPARABLE_STATE_CHAIN_ZF_V1": "SUPPORTING"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Probability rule': registered evidence supports this child.",
@@ -2775,6 +3199,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "PROBABILITY_RULE",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -2793,6 +3218,10 @@ window.MATRIX_EXPLORER_DATA = {
         "heunen-landsman-spitters-2009",
         "coquand-spitters-2009"
       ],
+      "evidence_roles": {
+        "heunen-landsman-spitters-2009": "SUPPORTING",
+        "coquand-spitters-2009": "SUPPORTING"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Probability rule': registered evidence supports this child.",
@@ -2813,6 +3242,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "DIRECT_LOCAL"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Probability rule': registered evidence supports this child.",
@@ -2832,6 +3264,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "richman-bridges-1999"
       ],
+      "evidence_roles": {
+        "richman-bridges-1999": "DIRECT_LITERATURE"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Probability rule': registered evidence supports this child.",
@@ -2849,6 +3284,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "PROBABILITY_RULE",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed parent-evidence transfer: PT-symmetric and pseudo-Hermitian spectral structure does not supply state representation, normalized probabilities, or causal Green propagation. No reviewed record in the batch derives the required normalized event-probability rule.",
@@ -2870,6 +3306,10 @@ window.MATRIX_EXPLORER_DATA = {
         "richman-bridges-1999",
         "coquand-spitters-2009"
       ],
+      "evidence_roles": {
+        "richman-bridges-1999": "DIRECT_LITERATURE",
+        "coquand-spitters-2009": "SUPPORTING"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Probability rule': registered evidence supports this child.",
@@ -2888,6 +3328,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "PROBABILITY_RULE",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -2906,6 +3347,10 @@ window.MATRIX_EXPLORER_DATA = {
         "coquand-spitters-2009",
         "heunen-landsman-spitters-2009"
       ],
+      "evidence_roles": {
+        "coquand-spitters-2009": "SUPPORTING",
+        "heunen-landsman-spitters-2009": "SUPPORTING"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Probability rule': registered evidence supports this child.",
@@ -2928,6 +3373,11 @@ window.MATRIX_EXPLORER_DATA = {
         "abramsky-coecke-2004",
         "constantin-doring-2020"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "DIRECT_LOCAL",
+        "abramsky-coecke-2004": "DIRECT_LITERATURE",
+        "constantin-doring-2020": "SUPPORTING"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Probability rule': registered evidence supports this child.",
@@ -2950,6 +3400,10 @@ window.MATRIX_EXPLORER_DATA = {
         "doring-2008",
         "harding-heunen-2019"
       ],
+      "evidence_roles": {
+        "doring-2008": "SUPPORTING",
+        "harding-heunen-2019": "SUPPORTING"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Probability rule': registered evidence supports this child.",
@@ -2971,6 +3425,10 @@ window.MATRIX_EXPLORER_DATA = {
         "gottschalk-2004",
         "harding-heunen-2019"
       ],
+      "evidence_roles": {
+        "gottschalk-2004": "SUPPORTING",
+        "harding-heunen-2019": "SUPPORTING"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Probability rule': registered evidence supports this child.",
@@ -2993,6 +3451,11 @@ window.MATRIX_EXPLORER_DATA = {
         "doring-2008",
         "harding-heunen-2019"
       ],
+      "evidence_roles": {
+        "heunen-landsman-spitters-2009": "SUPPORTING",
+        "doring-2008": "SUPPORTING",
+        "harding-heunen-2019": "SUPPORTING"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Probability rule': registered evidence supports this child.",
@@ -3012,6 +3475,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "PROBABILITY_RULE",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed parent-evidence transfer: Synthetic classical geometry and local BRST classification do not construct or represent states, probabilities, or a physical state-selection rule. No reviewed record in the batch derives the required normalized event-probability rule.",
@@ -3033,6 +3497,10 @@ window.MATRIX_EXPLORER_DATA = {
         "heunen-landsman-spitters-2009",
         "FOUNDATIONAL_TOPOS_WEYL_BV_OBSTRUCTION_LEDGER_V0"
       ],
+      "evidence_roles": {
+        "heunen-landsman-spitters-2009": "SUPPORTING",
+        "FOUNDATIONAL_TOPOS_WEYL_BV_OBSTRUCTION_LEDGER_V0": "SUPPORTING"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Probability rule': registered evidence supports this child.",
@@ -3053,6 +3521,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "gibbons-hoffman-wootters-2004"
       ],
+      "evidence_roles": {
+        "gibbons-hoffman-wootters-2004": "DIRECT_LITERATURE"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Probability rule': registered evidence supports this child.",
@@ -3074,6 +3545,11 @@ window.MATRIX_EXPLORER_DATA = {
         "abramsky-coecke-2004",
         "constantin-doring-2020"
       ],
+      "evidence_roles": {
+        "gibbons-hoffman-wootters-2004": "DIRECT_LITERATURE",
+        "abramsky-coecke-2004": "DIRECT_LITERATURE",
+        "constantin-doring-2020": "SUPPORTING"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Probability rule': registered evidence supports this child.",
@@ -3096,6 +3572,10 @@ window.MATRIX_EXPLORER_DATA = {
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1",
         "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "DIRECT_LOCAL",
+        "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1": "SUPPORTING"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Probability rule': registered evidence supports this child.",
@@ -3116,6 +3596,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "DIRECT_LOCAL"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Probability rule': registered evidence supports this child.",
@@ -3133,6 +3616,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "PROBABILITY_RULE",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed parent-evidence transfer: Lattice constraints and continuum-comparison programmes do not by themselves construct the four unresolved state/probability children. No reviewed record in the batch derives the required normalized event-probability rule.",
@@ -3157,6 +3641,11 @@ window.MATRIX_EXPLORER_DATA = {
         "harding-heunen-2019",
         "constantin-doring-2020"
       ],
+      "evidence_roles": {
+        "abramsky-coecke-2004": "DIRECT_LITERATURE",
+        "harding-heunen-2019": "SUPPORTING",
+        "constantin-doring-2020": "SUPPORTING"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Probability rule': registered evidence supports this child.",
@@ -3178,6 +3667,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "SUPPORTING"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Physical state selection': registered evidence supports this child.",
@@ -3198,6 +3690,10 @@ window.MATRIX_EXPLORER_DATA = {
         "hardy-2001",
         "chiribella-dariano-perinotti-2011"
       ],
+      "evidence_roles": {
+        "hardy-2001": "SUPPORTING",
+        "chiribella-dariano-perinotti-2011": "SUPPORTING"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Physical state selection': registered evidence supports this child.",
@@ -3220,6 +3716,11 @@ window.MATRIX_EXPLORER_DATA = {
         "bateman-turok-2026",
         "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1": "DIRECT_LOCAL",
+        "bateman-turok-2026": "SUPPORTING",
+        "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1": "SUPPORTING"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Physical state selection': registered evidence supports this child.",
@@ -3243,6 +3744,11 @@ window.MATRIX_EXPLORER_DATA = {
         "haag-kastler-1964",
         "FOUNDATIONAL_BT_SEPARABLE_STATE_CHAIN_ZF_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1": "DIRECT_LOCAL",
+        "haag-kastler-1964": "SUPPORTING",
+        "FOUNDATIONAL_BT_SEPARABLE_STATE_CHAIN_ZF_V1": "SUPPORTING"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Physical state selection': registered evidence supports this child.",
@@ -3264,6 +3770,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "brunetti-fredenhagen-verch-2001"
       ],
+      "evidence_roles": {
+        "brunetti-fredenhagen-verch-2001": "SUPPORTING"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Physical state selection': registered evidence supports this child.",
@@ -3285,6 +3794,11 @@ window.MATRIX_EXPLORER_DATA = {
         "doring-2008",
         "harding-heunen-2019"
       ],
+      "evidence_roles": {
+        "heunen-landsman-spitters-2009": "SUPPORTING",
+        "doring-2008": "SUPPORTING",
+        "harding-heunen-2019": "SUPPORTING"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Physical state selection': registered evidence supports this child.",
@@ -3306,6 +3820,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "SUPPORTING"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Physical state selection': registered evidence supports this child.",
@@ -3323,6 +3840,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "PHYSICAL_STATE_SELECTION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -3338,6 +3856,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "PHYSICAL_STATE_SELECTION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -3353,6 +3872,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "PHYSICAL_STATE_SELECTION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -3368,6 +3888,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "PHYSICAL_STATE_SELECTION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -3383,6 +3904,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "PHYSICAL_STATE_SELECTION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -3400,6 +3922,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "SUPPORTING"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Physical state selection': registered evidence supports this child.",
@@ -3419,6 +3944,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "neumann-pape-streicher-2018"
       ],
+      "evidence_roles": {
+        "neumann-pape-streicher-2018": "SUPPORTING"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Physical state selection': registered evidence supports this child.",
@@ -3439,6 +3967,10 @@ window.MATRIX_EXPLORER_DATA = {
         "FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1",
         "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1": "DIRECT_LOCAL",
+        "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1": "SUPPORTING"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Physical state selection': registered evidence supports this child.",
@@ -3459,6 +3991,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_BT_SEPARABLE_STATE_CHAIN_ZF_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_BT_SEPARABLE_STATE_CHAIN_ZF_V1": "SUPPORTING"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Physical state selection': registered evidence supports this child.",
@@ -3476,6 +4011,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "PHYSICAL_STATE_SELECTION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -3493,6 +4029,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "heunen-landsman-spitters-2009"
       ],
+      "evidence_roles": {
+        "heunen-landsman-spitters-2009": "SUPPORTING"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Physical state selection': registered evidence supports this child.",
@@ -3512,6 +4051,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "SUPPORTING"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Physical state selection': registered evidence supports this child.",
@@ -3531,6 +4073,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "richman-bridges-1999"
       ],
+      "evidence_roles": {
+        "richman-bridges-1999": "SUPPORTING"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Physical state selection': registered evidence supports this child.",
@@ -3551,6 +4096,10 @@ window.MATRIX_EXPLORER_DATA = {
         "bender-boettcher-1998",
         "mostafazadeh-2001"
       ],
+      "evidence_roles": {
+        "bender-boettcher-1998": "SUPPORTING",
+        "mostafazadeh-2001": "SUPPORTING"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Physical state selection': registered evidence supports this child.",
@@ -3571,6 +4120,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "richman-bridges-1999"
       ],
+      "evidence_roles": {
+        "richman-bridges-1999": "SUPPORTING"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Physical state selection': registered evidence supports this child.",
@@ -3588,6 +4140,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "PHYSICAL_STATE_SELECTION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -3605,6 +4158,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "heunen-landsman-spitters-2009"
       ],
+      "evidence_roles": {
+        "heunen-landsman-spitters-2009": "SUPPORTING"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Physical state selection': registered evidence supports this child.",
@@ -3626,6 +4182,11 @@ window.MATRIX_EXPLORER_DATA = {
         "constantin-doring-2020",
         "abramsky-coecke-2004"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "SUPPORTING",
+        "constantin-doring-2020": "SUPPORTING",
+        "abramsky-coecke-2004": "SUPPORTING"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Physical state selection': registered evidence supports this child.",
@@ -3648,6 +4209,10 @@ window.MATRIX_EXPLORER_DATA = {
         "doring-2008",
         "harding-heunen-2019"
       ],
+      "evidence_roles": {
+        "doring-2008": "SUPPORTING",
+        "harding-heunen-2019": "SUPPORTING"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Physical state selection': registered evidence supports this child.",
@@ -3669,6 +4234,10 @@ window.MATRIX_EXPLORER_DATA = {
         "gottschalk-2004",
         "harding-heunen-2019"
       ],
+      "evidence_roles": {
+        "gottschalk-2004": "DIRECT_LITERATURE",
+        "harding-heunen-2019": "SUPPORTING"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Physical state selection': registered evidence supports this child.",
@@ -3691,6 +4260,11 @@ window.MATRIX_EXPLORER_DATA = {
         "doring-2008",
         "harding-heunen-2019"
       ],
+      "evidence_roles": {
+        "heunen-landsman-spitters-2009": "SUPPORTING",
+        "doring-2008": "SUPPORTING",
+        "harding-heunen-2019": "SUPPORTING"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Physical state selection': registered evidence supports this child.",
@@ -3710,6 +4284,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "PHYSICAL_STATE_SELECTION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed parent-evidence transfer: Synthetic classical geometry and local BRST classification do not construct or represent states, probabilities, or a physical state-selection rule. No reviewed record in the batch selects a vacuum, thermal, Hadamard, or other physical state.",
@@ -3731,6 +4306,10 @@ window.MATRIX_EXPLORER_DATA = {
         "heunen-landsman-spitters-2009",
         "FOUNDATIONAL_TOPOS_WEYL_BV_OBSTRUCTION_LEDGER_V0"
       ],
+      "evidence_roles": {
+        "heunen-landsman-spitters-2009": "SUPPORTING",
+        "FOUNDATIONAL_TOPOS_WEYL_BV_OBSTRUCTION_LEDGER_V0": "SUPPORTING"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Physical state selection': registered evidence supports this child.",
@@ -3751,6 +4330,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "gibbons-hoffman-wootters-2004"
       ],
+      "evidence_roles": {
+        "gibbons-hoffman-wootters-2004": "SUPPORTING"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Physical state selection': registered evidence supports this child.",
@@ -3772,6 +4354,11 @@ window.MATRIX_EXPLORER_DATA = {
         "abramsky-coecke-2004",
         "constantin-doring-2020"
       ],
+      "evidence_roles": {
+        "gibbons-hoffman-wootters-2004": "SUPPORTING",
+        "abramsky-coecke-2004": "SUPPORTING",
+        "constantin-doring-2020": "SUPPORTING"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Physical state selection': registered evidence supports this child.",
@@ -3794,6 +4381,10 @@ window.MATRIX_EXPLORER_DATA = {
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1",
         "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "SUPPORTING",
+        "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1": "SUPPORTING"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Physical state selection': registered evidence supports this child.",
@@ -3814,6 +4405,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "SUPPORTING"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Physical state selection': registered evidence supports this child.",
@@ -3831,6 +4425,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "PHYSICAL_STATE_SELECTION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed parent-evidence transfer: Lattice constraints and continuum-comparison programmes do not by themselves construct the four unresolved state/probability children. No reviewed record in the batch selects a vacuum, thermal, Hadamard, or other physical state.",
@@ -3855,6 +4450,11 @@ window.MATRIX_EXPLORER_DATA = {
         "constantin-doring-2020",
         "abramsky-coecke-2004"
       ],
+      "evidence_roles": {
+        "harding-heunen-2019": "SUPPORTING",
+        "constantin-doring-2020": "SUPPORTING",
+        "abramsky-coecke-2004": "SUPPORTING"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Physical state selection': registered evidence supports this child.",
@@ -3876,6 +4476,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "DIRECT_LOCAL"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Generator/spectral dynamics': registered evidence supports this child.",
@@ -3895,6 +4498,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_EXPLICIT_ENERGY_SPECTRAL_FRAGMENT_ZF_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_EXPLICIT_ENERGY_SPECTRAL_FRAGMENT_ZF_V1": "DIRECT_LOCAL"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Generator/spectral dynamics': registered evidence supports this child.",
@@ -3915,6 +4521,10 @@ window.MATRIX_EXPLORER_DATA = {
         "FOUNDATIONAL_EXPLICIT_ENERGY_SPECTRAL_FRAGMENT_ZF_V1",
         "FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_EXPLICIT_ENERGY_SPECTRAL_FRAGMENT_ZF_V1": "DIRECT_LOCAL",
+        "FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1": "DIRECT_LOCAL"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Generator/spectral dynamics': registered evidence supports this child.",
@@ -3935,6 +4545,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1": "DIRECT_LOCAL"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Generator/spectral dynamics': registered evidence supports this child.",
@@ -3954,6 +4567,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_TYPED_BIWAVE_GREEN_DEPENDENCY_AUDIT_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_TYPED_BIWAVE_GREEN_DEPENDENCY_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Generator/spectral dynamics': registered evidence supports this child.",
@@ -3975,6 +4591,11 @@ window.MATRIX_EXPLORER_DATA = {
         "harding-heunen-2019",
         "heunen-landsman-spitters-2009"
       ],
+      "evidence_roles": {
+        "brenna-flori-2012": "DIRECT_LITERATURE",
+        "harding-heunen-2019": "DIRECT_LITERATURE",
+        "heunen-landsman-spitters-2009": "SUPPORTING"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Generator/spectral dynamics': registered evidence supports this child.",
@@ -3998,6 +4619,9 @@ window.MATRIX_EXPLORER_DATA = {
       ],
       "summary": "Finite Laurent degrees give exact cylinder-wave generators.",
       "boundary": "This is a fixed finite fixture, not a completed evolution theorem.",
+      "evidence_roles": {
+        "FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V1": "DIRECT_LOCAL"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "REVIEWED_V1_OVERLAY",
       "migration_status": "REVIEWED_OVERLAY",
@@ -4018,6 +4642,12 @@ window.MATRIX_EXPLORER_DATA = {
         "FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V2",
         "FOUNDATIONAL_CODED_WAVE_FRONTIER_V2"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_NORMAL_HYPERBOLIC_FACTOR_ATLAS_V1": "UNREVIEWED",
+        "FOUNDATIONAL_CODED_POLYGONAL_WAVE_RCA0_V1": "UNREVIEWED",
+        "FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V2": "UNREVIEWED",
+        "FOUNDATIONAL_CODED_WAVE_FRONTIER_V2": "UNREVIEWED"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "The declared fast-Cauchy energy carrier has an RCA_0-coded real-time isometric one-parameter group; no generator domain or spectral theorem is claimed.",
@@ -4052,6 +4682,10 @@ window.MATRIX_EXPLORER_DATA = {
         "mostafazadeh-2001",
         "gottschalk-2004"
       ],
+      "evidence_roles": {
+        "mostafazadeh-2001": "DIRECT_LITERATURE",
+        "gottschalk-2004": "DIRECT_LITERATURE"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Generator/spectral dynamics': registered evidence supports this child.",
@@ -4073,6 +4707,10 @@ window.MATRIX_EXPLORER_DATA = {
         "blackadar-farah-2026",
         "brunetti-fredenhagen-verch-2001"
       ],
+      "evidence_roles": {
+        "blackadar-farah-2026": "SUPPORTING",
+        "brunetti-fredenhagen-verch-2001": "SUPPORTING"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Generator/spectral dynamics': registered evidence supports this child.",
@@ -4093,6 +4731,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_TYPED_BIWAVE_GREEN_DEPENDENCY_AUDIT_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_TYPED_BIWAVE_GREEN_DEPENDENCY_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Generator/spectral dynamics': registered evidence supports this child.",
@@ -4110,6 +4751,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "GENERATOR_SPECTRAL_DYNAMICS",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -4127,6 +4769,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "DIRECT_LOCAL"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Generator/spectral dynamics': registered evidence supports this child.",
@@ -4146,6 +4791,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_EXPLICIT_ENERGY_SPECTRAL_FRAGMENT_ZF_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_EXPLICIT_ENERGY_SPECTRAL_FRAGMENT_ZF_V1": "DIRECT_LOCAL"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Generator/spectral dynamics': registered evidence supports this child.",
@@ -4166,6 +4814,10 @@ window.MATRIX_EXPLORER_DATA = {
         "FOUNDATIONAL_EXPLICIT_ENERGY_SPECTRAL_FRAGMENT_ZF_V1",
         "FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_EXPLICIT_ENERGY_SPECTRAL_FRAGMENT_ZF_V1": "DIRECT_LOCAL",
+        "FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1": "DIRECT_LOCAL"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Generator/spectral dynamics': registered evidence supports this child.",
@@ -4186,6 +4838,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1": "DIRECT_LOCAL"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Generator/spectral dynamics': registered evidence supports this child.",
@@ -4205,6 +4860,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_TYPED_BIWAVE_GREEN_DEPENDENCY_AUDIT_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_TYPED_BIWAVE_GREEN_DEPENDENCY_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Generator/spectral dynamics': registered evidence supports this child.",
@@ -4222,6 +4880,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "GENERATOR_SPECTRAL_DYNAMICS",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -4239,6 +4898,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "DIRECT_LOCAL"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Generator/spectral dynamics': registered evidence supports this child.",
@@ -4258,6 +4920,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "neumann-pape-streicher-2018"
       ],
+      "evidence_roles": {
+        "neumann-pape-streicher-2018": "DIRECT_LITERATURE"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Generator/spectral dynamics': registered evidence supports this child.",
@@ -4278,6 +4943,10 @@ window.MATRIX_EXPLORER_DATA = {
         "bender-boettcher-1998",
         "mostafazadeh-2001"
       ],
+      "evidence_roles": {
+        "bender-boettcher-1998": "DIRECT_LITERATURE",
+        "mostafazadeh-2001": "DIRECT_LITERATURE"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Generator/spectral dynamics': registered evidence supports this child.",
@@ -4298,6 +4967,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "neumann-pape-streicher-2018"
       ],
+      "evidence_roles": {
+        "neumann-pape-streicher-2018": "DIRECT_LITERATURE"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Generator/spectral dynamics': registered evidence supports this child.",
@@ -4318,6 +4990,10 @@ window.MATRIX_EXPLORER_DATA = {
         "selivanova-selivanov-2013",
         "selivanova-selivanov-2018"
       ],
+      "evidence_roles": {
+        "selivanova-selivanov-2013": "UNREVIEWED",
+        "selivanova-selivanov-2018": "UNREVIEWED"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "A represented symmetric-hyperbolic solution operator is computable, but an explicit computable generator/domain/spectral theorem is still missing.",
@@ -4341,6 +5017,10 @@ window.MATRIX_EXPLORER_DATA = {
         "brenna-flori-2012",
         "heunen-landsman-spitters-2009"
       ],
+      "evidence_roles": {
+        "brenna-flori-2012": "DIRECT_LITERATURE",
+        "heunen-landsman-spitters-2009": "SUPPORTING"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Generator/spectral dynamics': registered evidence supports this child.",
@@ -4362,6 +5042,10 @@ window.MATRIX_EXPLORER_DATA = {
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1",
         "abramsky-coecke-2004"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "DIRECT_LOCAL",
+        "abramsky-coecke-2004": "SUPPORTING"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Generator/spectral dynamics': registered evidence supports this child.",
@@ -4383,6 +5067,10 @@ window.MATRIX_EXPLORER_DATA = {
         "brenna-flori-2012",
         "harding-heunen-2019"
       ],
+      "evidence_roles": {
+        "brenna-flori-2012": "DIRECT_LITERATURE",
+        "harding-heunen-2019": "DIRECT_LITERATURE"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Generator/spectral dynamics': registered evidence supports this child.",
@@ -4404,6 +5092,10 @@ window.MATRIX_EXPLORER_DATA = {
         "gottschalk-2004",
         "harding-heunen-2019"
       ],
+      "evidence_roles": {
+        "gottschalk-2004": "DIRECT_LITERATURE",
+        "harding-heunen-2019": "DIRECT_LITERATURE"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Generator/spectral dynamics': registered evidence supports this child.",
@@ -4426,6 +5118,11 @@ window.MATRIX_EXPLORER_DATA = {
         "harding-heunen-2019",
         "heunen-landsman-spitters-2009"
       ],
+      "evidence_roles": {
+        "brenna-flori-2012": "DIRECT_LITERATURE",
+        "harding-heunen-2019": "DIRECT_LITERATURE",
+        "heunen-landsman-spitters-2009": "SUPPORTING"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Generator/spectral dynamics': registered evidence supports this child.",
@@ -4445,6 +5142,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "GENERATOR_SPECTRAL_DYNAMICS",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed parent-evidence transfer: The reviewed synthetic Einstein-equation formulation does not construct spectral generators, prove evolution well-posedness, or provide causal Green maps. No reviewed record in the batch constructs the required generator or spectral dynamics in this refined coordinate.",
@@ -4464,6 +5162,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_TOPOS_WEYL_BV_OBSTRUCTION_LEDGER_V0"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_TOPOS_WEYL_BV_OBSTRUCTION_LEDGER_V0": "SUPPORTING"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Generator/spectral dynamics': registered evidence supports this child.",
@@ -4483,6 +5184,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1": "DIRECT_LOCAL"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Generator/spectral dynamics': registered evidence supports this child.",
@@ -4502,6 +5206,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "abramsky-coecke-2004"
       ],
+      "evidence_roles": {
+        "abramsky-coecke-2004": "SUPPORTING"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Generator/spectral dynamics': registered evidence supports this child.",
@@ -4522,6 +5229,10 @@ window.MATRIX_EXPLORER_DATA = {
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1",
         "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "DIRECT_LOCAL",
+        "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1": "SUPPORTING"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Generator/spectral dynamics': registered evidence supports this child.",
@@ -4543,6 +5254,10 @@ window.MATRIX_EXPLORER_DATA = {
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1",
         "zohar-burrello-2014"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "DIRECT_LOCAL",
+        "zohar-burrello-2014": "DIRECT_LITERATURE"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Generator/spectral dynamics': registered evidence supports this child.",
@@ -4565,6 +5280,11 @@ window.MATRIX_EXPLORER_DATA = {
         "zohar-burrello-2014",
         "dittrich-2012"
       ],
+      "evidence_roles": {
+        "kogut-susskind-1975": "DIRECT_LITERATURE",
+        "zohar-burrello-2014": "DIRECT_LITERATURE",
+        "dittrich-2012": "SUPPORTING"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Generator/spectral dynamics': registered evidence supports this child.",
@@ -4587,6 +5307,10 @@ window.MATRIX_EXPLORER_DATA = {
         "harding-heunen-2019",
         "abramsky-coecke-2004"
       ],
+      "evidence_roles": {
+        "harding-heunen-2019": "DIRECT_LITERATURE",
+        "abramsky-coecke-2004": "SUPPORTING"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Generator/spectral dynamics': registered evidence supports this child.",
@@ -4607,6 +5331,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "DIRECT_LOCAL"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Evolution/well-posedness': registered evidence supports this child.",
@@ -4626,6 +5353,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_EXPLICIT_ENERGY_SPECTRAL_FRAGMENT_ZF_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_EXPLICIT_ENERGY_SPECTRAL_FRAGMENT_ZF_V1": "SUPPORTING"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Evolution/well-posedness': registered evidence supports this child.",
@@ -4646,6 +5376,10 @@ window.MATRIX_EXPLORER_DATA = {
         "FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1",
         "FOUNDATIONAL_EXPLICIT_ENERGY_SPECTRAL_FRAGMENT_ZF_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1": "DIRECT_LOCAL",
+        "FOUNDATIONAL_EXPLICIT_ENERGY_SPECTRAL_FRAGMENT_ZF_V1": "SUPPORTING"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Evolution/well-posedness': registered evidence supports this child.",
@@ -4666,6 +5400,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1": "DIRECT_LOCAL"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Evolution/well-posedness': registered evidence supports this child.",
@@ -4686,6 +5423,10 @@ window.MATRIX_EXPLORER_DATA = {
         "FOUNDATIONAL_TYPED_BIWAVE_GREEN_DEPENDENCY_AUDIT_V1",
         "baer-2015"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_TYPED_BIWAVE_GREEN_DEPENDENCY_AUDIT_V1": "DIRECT_LOCAL",
+        "baer-2015": "UNREVIEWED"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Evolution/well-posedness': registered evidence supports this child. New atlas evidence: The symmetric-hyperbolic Cauchy theorem gives existence, uniqueness and continuous dependence.",
@@ -4711,6 +5452,10 @@ window.MATRIX_EXPLORER_DATA = {
         "brenna-flori-2012",
         "harding-heunen-2019"
       ],
+      "evidence_roles": {
+        "brenna-flori-2012": "SUPPORTING",
+        "harding-heunen-2019": "SUPPORTING"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Evolution/well-posedness': registered evidence supports this child.",
@@ -4733,6 +5478,9 @@ window.MATRIX_EXPLORER_DATA = {
       ],
       "summary": "Every fixed finite Laurent fixture evolves exactly and satisfies the wave equation.",
       "boundary": "PRA sufficiency at fixed cutoff does not prove an infinite energy-space solution.",
+      "evidence_roles": {
+        "FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V1": "DIRECT_LOCAL"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "REVIEWED_V1_OVERLAY",
       "migration_status": "REVIEWED_OVERLAY",
@@ -4754,6 +5502,13 @@ window.MATRIX_EXPLORER_DATA = {
         "FOUNDATIONAL_CODED_WAVE_FRONTIER_V2",
         "pischke-2025-semigroups"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_NORMAL_HYPERBOLIC_FACTOR_ATLAS_V1": "UNREVIEWED",
+        "FOUNDATIONAL_CODED_POLYGONAL_WAVE_RCA0_V1": "UNREVIEWED",
+        "FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V2": "UNREVIEWED",
+        "FOUNDATIONAL_CODED_WAVE_FRONTIER_V2": "UNREVIEWED",
+        "pischke-2025-semigroups": "UNREVIEWED"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "RCA_0 suffices for existence, uniqueness, continuity, and energy conservation in the declared polygonal fast-Cauchy representation. Frontier evidence: Proof mining gives adjacent formal quantitative semigroup evidence, not the local RCA_0 proof.",
@@ -4788,6 +5543,10 @@ window.MATRIX_EXPLORER_DATA = {
         "gottschalk-2004",
         "mostafazadeh-2001"
       ],
+      "evidence_roles": {
+        "gottschalk-2004": "DIRECT_LITERATURE",
+        "mostafazadeh-2001": "SUPPORTING"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Evolution/well-posedness': registered evidence supports this child.",
@@ -4808,6 +5567,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "brunetti-fredenhagen-verch-2001"
       ],
+      "evidence_roles": {
+        "brunetti-fredenhagen-verch-2001": "SUPPORTING"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Evolution/well-posedness': registered evidence supports this child.",
@@ -4832,6 +5594,12 @@ window.MATRIX_EXPLORER_DATA = {
       ],
       "summary": "An exact finite-to-coded ladder and computable Sobolev wave result identify a specific RCA_0 formalization target. Frontier evidence: The local carrier and the ODE reversal clarify coding and strength, but no localized spacetime-distribution theorem is proved.",
       "boundary": "No second-order-arithmetic upper bound or reversal has been proved.",
+      "evidence_roles": {
+        "FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V1": "SUPPORTING",
+        "weihrauch-zhong-2002": "SUPPORTING",
+        "FOUNDATIONAL_CODED_POLYGONAL_WAVE_RCA0_V1": "UNREVIEWED",
+        "simpson-1984-ode": "UNREVIEWED"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "REVIEWED_V1_OVERLAY",
       "migration_status": "REVIEWED_OVERLAY",
@@ -4854,6 +5622,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "EVOLUTION_WELLPOSEDNESS",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -4871,6 +5640,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "DIRECT_LOCAL"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Evolution/well-posedness': registered evidence supports this child.",
@@ -4890,6 +5662,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_EXPLICIT_ENERGY_SPECTRAL_FRAGMENT_ZF_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_EXPLICIT_ENERGY_SPECTRAL_FRAGMENT_ZF_V1": "SUPPORTING"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Evolution/well-posedness': registered evidence supports this child.",
@@ -4910,6 +5685,10 @@ window.MATRIX_EXPLORER_DATA = {
         "FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1",
         "FOUNDATIONAL_EXPLICIT_ENERGY_SPECTRAL_FRAGMENT_ZF_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1": "DIRECT_LOCAL",
+        "FOUNDATIONAL_EXPLICIT_ENERGY_SPECTRAL_FRAGMENT_ZF_V1": "SUPPORTING"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Evolution/well-posedness': registered evidence supports this child.",
@@ -4930,6 +5709,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1": "DIRECT_LOCAL"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Evolution/well-posedness': registered evidence supports this child.",
@@ -4949,6 +5731,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_TYPED_BIWAVE_GREEN_DEPENDENCY_AUDIT_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_TYPED_BIWAVE_GREEN_DEPENDENCY_AUDIT_V1": "DIRECT_LOCAL"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Evolution/well-posedness': registered evidence supports this child.",
@@ -4966,6 +5751,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "EVOLUTION_WELLPOSEDNESS",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -4983,6 +5769,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "DIRECT_LOCAL"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Evolution/well-posedness': registered evidence supports this child.",
@@ -5004,6 +5793,11 @@ window.MATRIX_EXPLORER_DATA = {
         "neumann-pape-streicher-2018",
         "weihrauch-zhong-2007-cauchy"
       ],
+      "evidence_roles": {
+        "pour-el-richards-1981": "DIRECT_LITERATURE",
+        "neumann-pape-streicher-2018": "SUPPORTING",
+        "weihrauch-zhong-2007-cauchy": "UNREVIEWED"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Evolution/well-posedness': registered evidence supports this child. Frontier evidence: The abstract Cauchy problem has a direct TTE computability characterization under its representations.",
@@ -5031,6 +5825,10 @@ window.MATRIX_EXPLORER_DATA = {
         "bender-boettcher-1998",
         "mostafazadeh-2001"
       ],
+      "evidence_roles": {
+        "bender-boettcher-1998": "SUPPORTING",
+        "mostafazadeh-2001": "SUPPORTING"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Evolution/well-posedness': registered evidence supports this child.",
@@ -5051,6 +5849,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "neumann-pape-streicher-2018"
       ],
+      "evidence_roles": {
+        "neumann-pape-streicher-2018": "SUPPORTING"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Evolution/well-posedness': registered evidence supports this child.",
@@ -5077,6 +5878,14 @@ window.MATRIX_EXPLORER_DATA = {
       ],
       "summary": "Wave propagation is computable in the stated C1 and Sobolev representations reviewed by the ladder. New atlas evidence: The represented symmetric-hyperbolic solution operator is computable with effective approximation and complexity bounds in the papers' scope. Frontier evidence: Computable Sobolev hyperbolic applications strengthen the TTE evidence; the Bishop-constructive elliptic theorem is adjacent and does not alter the classification.",
       "boundary": "TTE computability is representation-sensitive and is not a Bishop-constructive or reverse-mathematical theorem.",
+      "evidence_roles": {
+        "weihrauch-zhong-2002": "DIRECT_LITERATURE",
+        "FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V1": "SUPPORTING",
+        "selivanova-selivanov-2013": "UNREVIEWED",
+        "selivanova-selivanov-2018": "UNREVIEWED",
+        "zhong-1999-sobolev": "UNREVIEWED",
+        "bridges-wang-1998-dirichlet": "UNREVIEWED"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "REVIEWED_V1_OVERLAY",
       "migration_status": "REVIEWED_OVERLAY",
@@ -5106,6 +5915,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "brenna-flori-2012"
       ],
+      "evidence_roles": {
+        "brenna-flori-2012": "SUPPORTING"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Evolution/well-posedness': registered evidence supports this child.",
@@ -5125,6 +5937,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "DIRECT_LOCAL"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Evolution/well-posedness': registered evidence supports this child.",
@@ -5145,6 +5960,10 @@ window.MATRIX_EXPLORER_DATA = {
         "brenna-flori-2012",
         "harding-heunen-2019"
       ],
+      "evidence_roles": {
+        "brenna-flori-2012": "SUPPORTING",
+        "harding-heunen-2019": "SUPPORTING"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Evolution/well-posedness': registered evidence supports this child.",
@@ -5166,6 +5985,10 @@ window.MATRIX_EXPLORER_DATA = {
         "gottschalk-2004",
         "harding-heunen-2019"
       ],
+      "evidence_roles": {
+        "gottschalk-2004": "DIRECT_LITERATURE",
+        "harding-heunen-2019": "SUPPORTING"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Evolution/well-posedness': registered evidence supports this child.",
@@ -5187,6 +6010,10 @@ window.MATRIX_EXPLORER_DATA = {
         "brenna-flori-2012",
         "harding-heunen-2019"
       ],
+      "evidence_roles": {
+        "brenna-flori-2012": "SUPPORTING",
+        "harding-heunen-2019": "SUPPORTING"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Evolution/well-posedness': registered evidence supports this child.",
@@ -5205,6 +6032,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "EVOLUTION_WELLPOSEDNESS",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed parent-evidence transfer: The reviewed synthetic Einstein-equation formulation does not construct spectral generators, prove evolution well-posedness, or provide causal Green maps. No reviewed record in the batch proves existence, uniqueness, stability, or computability of the required evolution.",
@@ -5224,6 +6052,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_TOPOS_WEYL_BV_OBSTRUCTION_LEDGER_V0"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_TOPOS_WEYL_BV_OBSTRUCTION_LEDGER_V0": "SUPPORTING"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Evolution/well-posedness': registered evidence supports this child.",
@@ -5243,6 +6074,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1": "DIRECT_LOCAL"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Evolution/well-posedness': registered evidence supports this child.",
@@ -5262,6 +6096,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "kostrykin-potthoff-schrader-2011"
       ],
+      "evidence_roles": {
+        "kostrykin-potthoff-schrader-2011": "UNREVIEWED"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "The metric-graph theorem proves existence and uniqueness for the specified finite/network geometry.",
@@ -5288,6 +6125,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "DIRECT_LOCAL"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Evolution/well-posedness': registered evidence supports this child.",
@@ -5308,6 +6148,10 @@ window.MATRIX_EXPLORER_DATA = {
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1",
         "zohar-burrello-2014"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "DIRECT_LOCAL",
+        "zohar-burrello-2014": "DIRECT_LITERATURE"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Evolution/well-posedness': registered evidence supports this child.",
@@ -5330,6 +6174,11 @@ window.MATRIX_EXPLORER_DATA = {
         "zohar-burrello-2014",
         "dittrich-2012"
       ],
+      "evidence_roles": {
+        "kogut-susskind-1975": "DIRECT_LITERATURE",
+        "zohar-burrello-2014": "DIRECT_LITERATURE",
+        "dittrich-2012": "SUPPORTING"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Evolution/well-posedness': registered evidence supports this child.",
@@ -5351,6 +6200,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "harding-heunen-2019"
       ],
+      "evidence_roles": {
+        "harding-heunen-2019": "SUPPORTING"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Evolution/well-posedness': registered evidence supports this child.",
@@ -5370,6 +6222,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "SUPPORTING"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Causal propagation/Green': registered evidence supports this child.",
@@ -5389,6 +6244,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "kostrykin-potthoff-schrader-2011"
       ],
+      "evidence_roles": {
+        "kostrykin-potthoff-schrader-2011": "UNREVIEWED"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Self-adjoint Hilbert-space Laplacians on metric graphs have well-posed wave evolution and strict finite propagation.",
@@ -5413,6 +6271,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1": "SUPPORTING"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Causal propagation/Green': registered evidence supports this child.",
@@ -5432,6 +6293,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1": "SUPPORTING"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Causal propagation/Green': registered evidence supports this child.",
@@ -5453,6 +6317,11 @@ window.MATRIX_EXPLORER_DATA = {
         "baer-2015",
         "muehlhoff-2010"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_TYPED_BIWAVE_GREEN_DEPENDENCY_AUDIT_V1": "DIRECT_LOCAL",
+        "baer-2015": "UNREVIEWED",
+        "muehlhoff-2010": "UNREVIEWED"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Causal propagation/Green': registered evidence supports this child. New atlas evidence: The normally- and prenormally-hyperbolic theorems give advanced/retarded Green maps with causal support.",
@@ -5475,6 +6344,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "CAUSAL_PROPAGATION_GREEN",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed parent-evidence transfer: Internal spectra, state measures, and one-parameter dynamics are reviewed; the records explicitly exclude causal propagation and interacting/renormalized field theory. No reviewed record in the batch constructs advanced/retarded maps with causal support.",
@@ -5497,6 +6367,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "SUPPORTING"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Causal propagation/Green': registered evidence supports this child.",
@@ -5516,6 +6389,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_NORMAL_HYPERBOLIC_FACTOR_ATLAS_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_NORMAL_HYPERBOLIC_FACTOR_ATLAS_V1": "UNREVIEWED"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Classical support and effective evolution exist separately; their combination has not been formalized over a weak subsystem.",
@@ -5543,6 +6419,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "gottschalk-2004"
       ],
+      "evidence_roles": {
+        "gottschalk-2004": "SUPPORTING"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Causal propagation/Green': registered evidence supports this child.",
@@ -5562,6 +6441,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "brunetti-fredenhagen-verch-2001"
       ],
+      "evidence_roles": {
+        "brunetti-fredenhagen-verch-2001": "SUPPORTING"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Causal propagation/Green': registered evidence supports this child.",
@@ -5584,6 +6466,10 @@ window.MATRIX_EXPLORER_DATA = {
       ],
       "summary": "The exact antipodal obstruction separates spectral approximation from the conditional causal Green dependency shell.",
       "boundary": "No causal PDE theorem has been formalized over a weak base.",
+      "evidence_roles": {
+        "FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V1": "SUPPORTING",
+        "FOUNDATIONAL_TYPED_BIWAVE_GREEN_DEPENDENCY_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "REVIEWED_V1_OVERLAY",
       "migration_status": "REVIEWED_OVERLAY",
@@ -5600,6 +6486,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "CAUSAL_PROPAGATION_GREEN",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -5617,6 +6504,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "SUPPORTING"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Causal propagation/Green': registered evidence supports this child.",
@@ -5637,6 +6527,10 @@ window.MATRIX_EXPLORER_DATA = {
         "FOUNDATIONAL_NORMAL_HYPERBOLIC_FACTOR_ATLAS_V1",
         "blackadar-farah-karagila-2026"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_NORMAL_HYPERBOLIC_FACTOR_ATLAS_V1": "UNREVIEWED",
+        "blackadar-farah-karagila-2026": "UNREVIEWED"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "ZF Hilbert theory and classical causal PDE are known separately; the Sobolev/Green construction has not been proved choice-free.",
@@ -5661,6 +6555,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1": "SUPPORTING"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Causal propagation/Green': registered evidence supports this child.",
@@ -5680,6 +6577,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1": "SUPPORTING"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Causal propagation/Green': registered evidence supports this child.",
@@ -5699,6 +6599,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_TYPED_BIWAVE_GREEN_DEPENDENCY_AUDIT_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_TYPED_BIWAVE_GREEN_DEPENDENCY_AUDIT_V1": "DIRECT_LOCAL"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Causal propagation/Green': registered evidence supports this child.",
@@ -5716,6 +6619,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "CAUSAL_PROPAGATION_GREEN",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -5733,6 +6637,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "SUPPORTING"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Causal propagation/Green': registered evidence supports this child.",
@@ -5752,6 +6659,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "pour-el-richards-1981"
       ],
+      "evidence_roles": {
+        "pour-el-richards-1981": "SUPPORTING"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Causal propagation/Green': registered evidence supports this child.",
@@ -5769,6 +6679,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "CAUSAL_PROPAGATION_GREEN",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed parent-evidence transfer: PT-symmetric and pseudo-Hermitian spectral structure does not supply state representation, normalized probabilities, or causal Green propagation. No reviewed record in the batch constructs advanced/retarded maps with causal support.",
@@ -5787,6 +6698,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "CAUSAL_PROPAGATION_GREEN",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed parent-evidence transfer: Localic duality and effective spectral representation do not construct localized causal Green propagation. No reviewed record in the batch constructs advanced/retarded maps with causal support.",
@@ -5815,6 +6727,14 @@ window.MATRIX_EXPLORER_DATA = {
       ],
       "summary": "Positive and negative computability results expose the representation and localization dependencies of wave propagation. New atlas evidence: Computable evolution is direct evidence for one ingredient, while strict globally-hyperbolic Green support remains outside the theorem. Frontier evidence: Computable distributional wave solutions and fundamental solutions are ingredients, but retarded/advanced selection and strict support are unverified.",
       "boundary": "Neither source constructs a constructive causal Green operator for Weyl gravity.",
+      "evidence_roles": {
+        "pour-el-richards-1981": "SUPPORTING",
+        "weihrauch-zhong-2002": "SUPPORTING",
+        "FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V1": "SUPPORTING",
+        "selivanova-selivanov-2013": "UNREVIEWED",
+        "zhong-weihrauch-2003-distributions": "UNREVIEWED",
+        "weihrauch-zhong-2006-fundamental": "UNREVIEWED"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "REVIEWED_V1_OVERLAY",
       "migration_status": "REVIEWED_OVERLAY",
@@ -5843,6 +6763,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "CAUSAL_PROPAGATION_GREEN",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed parent-evidence transfer: Constructive duality and internal one-parameter dynamics do not transfer to causal Green theory or interacting/renormalized field theory. No reviewed record in the batch constructs advanced/retarded maps with causal support.",
@@ -5864,6 +6785,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "SUPPORTING"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Causal propagation/Green': registered evidence supports this child.",
@@ -5881,6 +6805,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "CAUSAL_PROPAGATION_GREEN",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed parent-evidence transfer: State measures and internal one-parameter groups do not establish spacetime support or causal Green propagation. No reviewed record in the batch constructs advanced/retarded maps with causal support.",
@@ -5902,6 +6827,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "gottschalk-2004"
       ],
+      "evidence_roles": {
+        "gottschalk-2004": "SUPPORTING"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Causal propagation/Green': registered evidence supports this child.",
@@ -5919,6 +6847,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "CAUSAL_PROPAGATION_GREEN",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed parent-evidence transfer: Internal spectra, state measures, and one-parameter dynamics are reviewed; the records explicitly exclude causal propagation and interacting/renormalized field theory. No reviewed record in the batch constructs advanced/retarded maps with causal support.",
@@ -5939,6 +6868,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "CAUSAL_PROPAGATION_GREEN",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed parent-evidence transfer: The reviewed synthetic Einstein-equation formulation does not construct spectral generators, prove evolution well-posedness, or provide causal Green maps. No reviewed record in the batch constructs advanced/retarded maps with causal support.",
@@ -5958,6 +6888,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_TOPOS_WEYL_BV_OBSTRUCTION_LEDGER_V0"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_TOPOS_WEYL_BV_OBSTRUCTION_LEDGER_V0": "SUPPORTING"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Causal propagation/Green': registered evidence supports this child.",
@@ -5978,6 +6911,10 @@ window.MATRIX_EXPLORER_DATA = {
         "FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1",
         "FOUNDATIONAL_FINITE_GRAPH_WAVE_CAUSALITY_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1": "SUPPORTING",
+        "FOUNDATIONAL_FINITE_GRAPH_WAVE_CAUSALITY_V1": "UNREVIEWED"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Exact rational retarded/advanced kernels have a certified graph-step support cone on the displayed finite fixtures.",
@@ -6002,6 +6939,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "kostrykin-potthoff-schrader-2011"
       ],
+      "evidence_roles": {
+        "kostrykin-potthoff-schrader-2011": "UNREVIEWED"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "The same theorem proves strict finite propagation under its local boundary conditions.",
@@ -6028,6 +6968,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "SUPPORTING"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Causal propagation/Green': registered evidence supports this child.",
@@ -6049,6 +6992,11 @@ window.MATRIX_EXPLORER_DATA = {
         "zohar-burrello-2014",
         "nachtergaele-raz-schlein-sims-2007"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "SUPPORTING",
+        "zohar-burrello-2014": "SUPPORTING",
+        "nachtergaele-raz-schlein-sims-2007": "UNREVIEWED"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Causal propagation/Green': registered evidence supports this child. New atlas evidence: Lieb-Robinson decay supplies an effective lattice cone, explicitly distinguished from strict support.",
@@ -6075,6 +7023,10 @@ window.MATRIX_EXPLORER_DATA = {
         "kogut-susskind-1975",
         "zohar-burrello-2014"
       ],
+      "evidence_roles": {
+        "kogut-susskind-1975": "SUPPORTING",
+        "zohar-burrello-2014": "SUPPORTING"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Causal propagation/Green': registered evidence supports this child.",
@@ -6093,6 +7045,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "CAUSAL_PROPAGATION_GREEN",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed parent-evidence transfer: Finite contextual and categorical structures do not establish causal propagation or the six quantum-consistency children. No reviewed record in the batch constructs advanced/retarded maps with causal support.",
@@ -6114,6 +7067,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_FREE_BV_ENERGY2_PRA_SDR_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FREE_BV_ENERGY2_PRA_SDR_V1": "UNREVIEWED"
+      },
       "parent_obligation": "GAUGE_BV_COHOMOLOGY",
       "migration_relation": "EXACT_ONE_TO_ONE",
       "summary": "A fixed exact BV contraction and cohomology witness exists.",
@@ -6134,6 +7090,10 @@ window.MATRIX_EXPLORER_DATA = {
         "neumann-pape-streicher-2018",
         "abramsky-coecke-2004"
       ],
+      "evidence_roles": {
+        "neumann-pape-streicher-2018": "UNREVIEWED",
+        "abramsky-coecke-2004": "UNREVIEWED"
+      },
       "parent_obligation": "GAUGE_BV_COHOMOLOGY",
       "migration_relation": "EXACT_ONE_TO_ONE",
       "summary": "Spectral and compositional quantum results cover standard Hilbert kinematics, states, dynamics, and finite reconstruction. For this obligation, the evidence contains ingredients relevant to, but does not compose a result that treats gauge constraints, BRST/BV structure, or symmetry restoration.",
@@ -6156,6 +7116,11 @@ window.MATRIX_EXPLORER_DATA = {
         "mostafazadeh-2001",
         "gottschalk-2004"
       ],
+      "evidence_roles": {
+        "bender-boettcher-1998": "UNREVIEWED",
+        "mostafazadeh-2001": "UNREVIEWED",
+        "gottschalk-2004": "UNREVIEWED"
+      },
       "parent_obligation": "GAUGE_BV_COHOMOLOGY",
       "migration_relation": "EXACT_ONE_TO_ONE",
       "summary": "Pseudo-Hermitian and Krein-QFT work supplies spectral, dynamical, and relativistic indefinite-metric results under explicit hypotheses. For this obligation, the evidence contains ingredients relevant to, but does not compose a result that treats gauge constraints, BRST/BV structure, or symmetry restoration.",
@@ -6179,6 +7144,11 @@ window.MATRIX_EXPLORER_DATA = {
         "fewster-verch-2011",
         "fredenhagen-rejzner-2011"
       ],
+      "evidence_roles": {
+        "brunetti-fredenhagen-verch-2001": "UNREVIEWED",
+        "fewster-verch-2011": "UNREVIEWED",
+        "fredenhagen-rejzner-2011": "UNREVIEWED"
+      },
       "parent_obligation": "GAUGE_BV_COHOMOLOGY",
       "migration_relation": "EXACT_ONE_TO_ONE",
       "summary": "Locally covariant AQFT and perturbative BV jointly address algebraic kinematics, states, dynamics, gauge structure, interactions, and comparison principles. For this obligation, the evidence directly treats gauge constraints, BRST/BV structure, or symmetry restoration.",
@@ -6200,6 +7170,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_LOW_HANGING_CELL_CLOSURE_AUDIT_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_LOW_HANGING_CELL_CLOSURE_AUDIT_V1": "UNREVIEWED"
+      },
       "parent_obligation": "GAUGE_BV_COHOMOLOGY",
       "migration_relation": "EXACT_ONE_TO_ONE",
       "summary": "Gauge-fixed local BV cohomology H^{0,4}(s|d) and H^{1,4}(s|d) is complete on the regular Bach locus.",
@@ -6222,6 +7195,12 @@ window.MATRIX_EXPLORER_DATA = {
         "brenna-flori-2012",
         "harding-heunen-2019"
       ],
+      "evidence_roles": {
+        "heunen-landsman-spitters-2009": "UNREVIEWED",
+        "doring-2008": "UNREVIEWED",
+        "brenna-flori-2012": "UNREVIEWED",
+        "harding-heunen-2019": "UNREVIEWED"
+      },
       "parent_obligation": "GAUGE_BV_COHOMOLOGY",
       "migration_relation": "EXACT_ONE_TO_ONE",
       "summary": "Topos quantum theory supplies localic spectra, state measures, internal group dynamics, and comparisons between context topoi. For this obligation, the evidence contains ingredients relevant to, but does not compose a result that treats gauge constraints, BRST/BV structure, or symmetry restoration.",
@@ -6244,6 +7223,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_FREE_BV_ENERGY2_PRA_SDR_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FREE_BV_ENERGY2_PRA_SDR_V1": "UNREVIEWED"
+      },
       "parent_obligation": "GAUGE_BV_COHOMOLOGY",
       "migration_relation": "EXACT_ONE_TO_ONE",
       "summary": "PRA suffices to check the displayed finite BV contraction and explicit nontriviality witness.",
@@ -6261,6 +7243,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "GAUGE_BV_COHOMOLOGY",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -6276,6 +7259,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "GAUGE_BV_COHOMOLOGY",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -6291,6 +7275,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "GAUGE_BV_COHOMOLOGY",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -6306,6 +7291,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "GAUGE_BV_COHOMOLOGY",
       "status": "PRIORITY_GAP",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "GAUGE_BV_COHOMOLOGY",
       "migration_relation": "EXACT_ONE_TO_ONE",
       "summary": "The continuum BV complex has not been encoded over a weak base.",
@@ -6321,6 +7307,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "GAUGE_BV_COHOMOLOGY",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -6339,6 +7326,10 @@ window.MATRIX_EXPLORER_DATA = {
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1",
         "FOUNDATIONAL_FREE_BV_ENERGY2_PRA_SDR_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "UNREVIEWED",
+        "FOUNDATIONAL_FREE_BV_ENERGY2_PRA_SDR_V1": "UNREVIEWED"
+      },
       "parent_obligation": "GAUGE_BV_COHOMOLOGY",
       "migration_relation": "EXACT_ONE_TO_ONE",
       "summary": "Named finite matrices and finite BV arrays are constructed without selecting from arbitrary families. For this obligation, the evidence contains ingredients relevant to, but does not compose a result that treats gauge constraints, BRST/BV structure, or symmetry restoration.",
@@ -6361,6 +7352,11 @@ window.MATRIX_EXPLORER_DATA = {
         "blackadar-farah-2026",
         "neumann-pape-streicher-2018"
       ],
+      "evidence_roles": {
+        "blackadar-farah-karagila-2026": "UNREVIEWED",
+        "blackadar-farah-2026": "UNREVIEWED",
+        "neumann-pape-streicher-2018": "UNREVIEWED"
+      },
       "parent_obligation": "GAUGE_BV_COHOMOLOGY",
       "migration_relation": "EXACT_ONE_TO_ONE",
       "summary": "ZF operator theory and explicit separable representations cover substantial kinematics while isolating arbitrary-space pathologies. For this obligation, the evidence contains ingredients relevant to, but does not compose a result that treats gauge constraints, BRST/BV structure, or symmetry restoration.",
@@ -6384,6 +7380,11 @@ window.MATRIX_EXPLORER_DATA = {
         "mostafazadeh-2001",
         "gottschalk-2004"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1": "UNREVIEWED",
+        "mostafazadeh-2001": "UNREVIEWED",
+        "gottschalk-2004": "UNREVIEWED"
+      },
       "parent_obligation": "GAUGE_BV_COHOMOLOGY",
       "migration_relation": "EXACT_ONE_TO_ONE",
       "summary": "The repository constructs the named free Krein carrier in ZF; classical sources add interaction-adjacent and relativistic ingredients only. For this obligation, the evidence contains ingredients relevant to, but does not compose a result that treats gauge constraints, BRST/BV structure, or symmetry restoration.",
@@ -6407,6 +7408,11 @@ window.MATRIX_EXPLORER_DATA = {
         "FOUNDATIONAL_BT_SEPARABLE_STATE_CHAIN_ZF_V1",
         "fredenhagen-rejzner-2011"
       ],
+      "evidence_roles": {
+        "blackadar-farah-2026": "UNREVIEWED",
+        "FOUNDATIONAL_BT_SEPARABLE_STATE_CHAIN_ZF_V1": "UNREVIEWED",
+        "fredenhagen-rejzner-2011": "UNREVIEWED"
+      },
       "parent_obligation": "GAUGE_BV_COHOMOLOGY",
       "migration_relation": "EXACT_ONE_TO_ONE",
       "summary": "Robust separable C*-theory and an explicit state/GNS chain exist in ZF; perturbative BV remains an external classical ingredient. For this obligation, the evidence contains ingredients relevant to, but does not compose a result that treats gauge constraints, BRST/BV structure, or symmetry restoration.",
@@ -6426,6 +7432,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "GAUGE_BV_COHOMOLOGY",
       "status": "PRIORITY_GAP",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "GAUGE_BV_COHOMOLOGY",
       "migration_relation": "EXACT_ONE_TO_ONE",
       "summary": "No full continuum BV/BRST complex has been rebuilt in ZF without Choice.",
@@ -6441,6 +7448,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "GAUGE_BV_COHOMOLOGY",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -6458,6 +7466,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_FREE_BV_ENERGY2_PRA_SDR_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FREE_BV_ENERGY2_PRA_SDR_V1": "UNREVIEWED"
+      },
       "parent_obligation": "GAUGE_BV_COHOMOLOGY",
       "migration_relation": "EXACT_ONE_TO_ONE",
       "summary": "The finite checker is computationally explicit, but no constructive internal proof object has been produced.",
@@ -6480,6 +7491,12 @@ window.MATRIX_EXPLORER_DATA = {
         "bridges-svozil-2000",
         "richman-bridges-1999"
       ],
+      "evidence_roles": {
+        "neumann-pape-streicher-2018": "UNREVIEWED",
+        "pour-el-richards-1981": "UNREVIEWED",
+        "bridges-svozil-2000": "UNREVIEWED",
+        "richman-bridges-1999": "UNREVIEWED"
+      },
       "parent_obligation": "GAUGE_BV_COHOMOLOGY",
       "migration_relation": "EXACT_ONE_TO_ONE",
       "summary": "Constructive quantum logic, constructive Gleason, effective spectral analysis, and a wave-equation counterexample delimit computable Hilbert physics. For this obligation, the evidence contains ingredients relevant to, but does not compose a result that treats gauge constraints, BRST/BV structure, or symmetry restoration.",
@@ -6500,6 +7517,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "GAUGE_BV_COHOMOLOGY",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -6515,6 +7533,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "GAUGE_BV_COHOMOLOGY",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -6530,6 +7549,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "GAUGE_BV_COHOMOLOGY",
       "status": "PRIORITY_GAP",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "GAUGE_BV_COHOMOLOGY",
       "migration_relation": "EXACT_ONE_TO_ONE",
       "summary": "No constructive BV-BFV gauge-field complex is present.",
@@ -6549,6 +7569,11 @@ window.MATRIX_EXPLORER_DATA = {
         "heunen-landsman-spitters-2009",
         "brenna-flori-2012"
       ],
+      "evidence_roles": {
+        "coquand-spitters-2009": "UNREVIEWED",
+        "heunen-landsman-spitters-2009": "UNREVIEWED",
+        "brenna-flori-2012": "UNREVIEWED"
+      },
       "parent_obligation": "GAUGE_BV_COHOMOLOGY",
       "migration_relation": "EXACT_ONE_TO_ONE",
       "summary": "Constructive localic spectra, valuations, and internal one-parameter dynamics form a coherent non-point-set quantum fragment. For this obligation, the evidence contains ingredients relevant to, but does not compose a result that treats gauge constraints, BRST/BV structure, or symmetry restoration.",
@@ -6568,6 +7593,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "GAUGE_BV_COHOMOLOGY",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -6583,6 +7609,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "GAUGE_BV_COHOMOLOGY",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -6598,6 +7625,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "GAUGE_BV_COHOMOLOGY",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -6618,6 +7646,12 @@ window.MATRIX_EXPLORER_DATA = {
         "brenna-flori-2012",
         "harding-heunen-2019"
       ],
+      "evidence_roles": {
+        "heunen-landsman-spitters-2009": "UNREVIEWED",
+        "doring-2008": "UNREVIEWED",
+        "brenna-flori-2012": "UNREVIEWED",
+        "harding-heunen-2019": "UNREVIEWED"
+      },
       "parent_obligation": "GAUGE_BV_COHOMOLOGY",
       "migration_relation": "EXACT_ONE_TO_ONE",
       "summary": "Contextual topos methods internalize commutative algebra, spectra, state measures, and one-parameter dynamics from operator-algebraic input. For this obligation, the evidence contains ingredients relevant to, but does not compose a result that treats gauge constraints, BRST/BV structure, or symmetry restoration.",
@@ -6640,6 +7674,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_TOPOS_WEYL_BV_OBSTRUCTION_LEDGER_V0"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_TOPOS_WEYL_BV_OBSTRUCTION_LEDGER_V0": "UNREVIEWED"
+      },
       "parent_obligation": "GAUGE_BV_COHOMOLOGY",
       "migration_relation": "EXACT_ONE_TO_ONE",
       "summary": "Synthetic smooth geometry has not been joined to internal BV/BRST machinery.",
@@ -6659,6 +7696,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_TOPOS_WEYL_BV_OBSTRUCTION_LEDGER_V0"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_TOPOS_WEYL_BV_OBSTRUCTION_LEDGER_V0": "UNREVIEWED"
+      },
       "parent_obligation": "GAUGE_BV_COHOMOLOGY",
       "migration_relation": "EXACT_ONE_TO_ONE",
       "summary": "No internal Weyl BV complex or external/internal cohomology comparison exists.",
@@ -6678,6 +7718,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_FREE_BV_ENERGY2_PRA_SDR_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FREE_BV_ENERGY2_PRA_SDR_V1": "UNREVIEWED"
+      },
       "parent_obligation": "GAUGE_BV_COHOMOLOGY",
       "migration_relation": "EXACT_ONE_TO_ONE",
       "summary": "A finite energy-cutoff BV contraction is exact and independently checked.",
@@ -6699,6 +7742,11 @@ window.MATRIX_EXPLORER_DATA = {
         "abramsky-coecke-2004",
         "constantin-doring-2020"
       ],
+      "evidence_roles": {
+        "gibbons-hoffman-wootters-2004": "UNREVIEWED",
+        "abramsky-coecke-2004": "UNREVIEWED",
+        "constantin-doring-2020": "UNREVIEWED"
+      },
       "parent_obligation": "GAUGE_BV_COHOMOLOGY",
       "migration_relation": "EXACT_ONE_TO_ONE",
       "summary": "Finite-dimensional phase space, categorical protocols, and contextual entropy cover Hilbert kinematics, states, operations, and reconstruction. For this obligation, the evidence contains ingredients relevant to, but does not compose a result that treats gauge constraints, BRST/BV structure, or symmetry restoration.",
@@ -6721,6 +7769,10 @@ window.MATRIX_EXPLORER_DATA = {
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1",
         "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "UNREVIEWED",
+        "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1": "UNREVIEWED"
+      },
       "parent_obligation": "GAUGE_BV_COHOMOLOGY",
       "migration_relation": "EXACT_ONE_TO_ONE",
       "summary": "Explicit finite Krein matrices give sign, state-adjacent, J-unitary, and interacting witnesses at fixed dimension. For this obligation, the evidence contains ingredients relevant to, but does not compose a result that treats gauge constraints, BRST/BV structure, or symmetry restoration.",
@@ -6742,6 +7794,10 @@ window.MATRIX_EXPLORER_DATA = {
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1",
         "zohar-burrello-2014"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "UNREVIEWED",
+        "zohar-burrello-2014": "UNREVIEWED"
+      },
       "parent_obligation": "GAUGE_BV_COHOMOLOGY",
       "migration_relation": "EXACT_ONE_TO_ONE",
       "summary": "The finite matrix algebra is a concrete C*-system, while lattice gauge work adds local constraints and truncation architecture. For this obligation, the evidence contains ingredients relevant to, but does not compose a result that treats gauge constraints, BRST/BV structure, or symmetry restoration.",
@@ -6765,6 +7821,12 @@ window.MATRIX_EXPLORER_DATA = {
         "bahr-dittrich-2009",
         "dittrich-2012"
       ],
+      "evidence_roles": {
+        "kogut-susskind-1975": "UNREVIEWED",
+        "zohar-burrello-2014": "UNREVIEWED",
+        "bahr-dittrich-2009": "UNREVIEWED",
+        "dittrich-2012": "UNREVIEWED"
+      },
       "parent_obligation": "GAUGE_BV_COHOMOLOGY",
       "migration_relation": "EXACT_ONE_TO_ONE",
       "summary": "Lattice gauge and discrete-gravity work supplies dynamics, constraints, symmetry-restoration, and explicit continuum-comparison obligations. For this obligation, the evidence directly treats gauge constraints, BRST/BV structure, or symmetry restoration.",
@@ -6789,6 +7851,11 @@ window.MATRIX_EXPLORER_DATA = {
         "constantin-doring-2020",
         "abramsky-coecke-2004"
       ],
+      "evidence_roles": {
+        "harding-heunen-2019": "UNREVIEWED",
+        "constantin-doring-2020": "UNREVIEWED",
+        "abramsky-coecke-2004": "UNREVIEWED"
+      },
       "parent_obligation": "GAUGE_BV_COHOMOLOGY",
       "migration_relation": "EXACT_ONE_TO_ONE",
       "summary": "Short-poset topoi, finite contextual entropy, and categorical protocols give finite internal/contextual kinematics, states, dynamics, and reconstruction. For this obligation, the evidence contains ingredients relevant to, but does not compose a result that treats gauge constraints, BRST/BV structure, or symmetry restoration.",
@@ -6812,6 +7879,9 @@ window.MATRIX_EXPLORER_DATA = {
       ],
       "summary": "The exact two-qubit Hamiltonian constructs a nontrivial entangling interaction.",
       "boundary": "No counterterm, anomaly, renormalized-product, QME-restoration, or residual-transfer result follows.",
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "DIRECT_LOCAL"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "REVIEWED_V1_OVERLAY",
       "migration_status": "REVIEWED_OVERLAY",
@@ -6827,6 +7897,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "INTERACTION_CONSTRUCTION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed parent-evidence transfer: Effective spectral representation and categorical protocols do not establish the unresolved field-interaction and quantum-consistency children. No reviewed record in the batch constructs the required interaction in this refined coordinate.",
@@ -6845,6 +7916,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "INTERACTION_CONSTRUCTION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed parent-evidence transfer: Real-spectrum and indefinite-metric QFT results do not establish the unresolved interaction or quantum-consistency children. No reviewed record in the batch constructs the required interaction in this refined coordinate.",
@@ -6867,6 +7939,10 @@ window.MATRIX_EXPLORER_DATA = {
         "fredenhagen-rejzner-2011",
         "brunetti-fredenhagen-verch-2001"
       ],
+      "evidence_roles": {
+        "fredenhagen-rejzner-2011": "DIRECT_LITERATURE",
+        "brunetti-fredenhagen-verch-2001": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Interaction construction': registered evidence supports this child.",
@@ -6887,6 +7963,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_LOW_HANGING_CELL_CLOSURE_AUDIT_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_LOW_HANGING_CELL_CLOSURE_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Interaction construction': registered evidence supports this child.",
@@ -6904,6 +7983,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "INTERACTION_CONSTRUCTION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed parent-evidence transfer: Internal spectra, state measures, and one-parameter dynamics are reviewed; the records explicitly exclude causal propagation and interacting/renormalized field theory. No reviewed record in the batch constructs the required interaction in this refined coordinate.",
@@ -6928,6 +8008,9 @@ window.MATRIX_EXPLORER_DATA = {
       ],
       "summary": "The exact two-qubit Hamiltonian constructs a nontrivial entangling interaction.",
       "boundary": "No counterterm, anomaly, renormalized-product, QME-restoration, or residual-transfer result follows.",
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "DIRECT_LOCAL"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "REVIEWED_V1_OVERLAY",
       "migration_status": "REVIEWED_OVERLAY",
@@ -6943,6 +8026,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "INTERACTION_CONSTRUCTION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -6958,6 +8042,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "INTERACTION_CONSTRUCTION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -6973,6 +8058,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "INTERACTION_CONSTRUCTION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -6988,6 +8074,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "INTERACTION_CONSTRUCTION",
       "status": "PRIORITY_GAP",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed child gap: The broad v0 priority gap is coherent at this child: the current corpus lacks an interaction construction in the declared foundational regime and smooth carrier.",
@@ -7003,6 +8090,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "INTERACTION_CONSTRUCTION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -7022,6 +8110,9 @@ window.MATRIX_EXPLORER_DATA = {
       ],
       "summary": "The exact two-qubit Hamiltonian constructs a nontrivial entangling interaction.",
       "boundary": "No counterterm, anomaly, renormalized-product, QME-restoration, or residual-transfer result follows.",
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "DIRECT_LOCAL"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "REVIEWED_V1_OVERLAY",
       "migration_status": "REVIEWED_OVERLAY",
@@ -7037,6 +8128,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "INTERACTION_CONSTRUCTION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed parent-evidence transfer: ZF operator theory and effective spectral representation do not establish interacting QFT, renormalized products, anomalies, QME restoration, or residual transfer. No reviewed record in the batch constructs the required interaction in this refined coordinate.",
@@ -7056,6 +8148,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "INTERACTION_CONSTRUCTION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed parent-evidence transfer: The explicit Krein carrier, pseudo-Hermitian structure, and axiomatic indefinite-metric QFT do not construct the unresolved interaction or quantum-consistency children. No reviewed record in the batch constructs the required interaction in this refined coordinate.",
@@ -7077,6 +8170,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "fredenhagen-rejzner-2011"
       ],
+      "evidence_roles": {
+        "fredenhagen-rejzner-2011": "DIRECT_LITERATURE"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Interaction construction': registered evidence supports this child.",
@@ -7094,6 +8190,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "INTERACTION_CONSTRUCTION",
       "status": "PRIORITY_GAP",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed child gap: The broad v0 priority gap is coherent at this child: the current corpus lacks an interaction construction in the declared foundational regime and smooth carrier.",
@@ -7109,6 +8206,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "INTERACTION_CONSTRUCTION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -7128,6 +8226,9 @@ window.MATRIX_EXPLORER_DATA = {
       ],
       "summary": "The exact two-qubit Hamiltonian constructs a nontrivial entangling interaction.",
       "boundary": "No counterterm, anomaly, renormalized-product, QME-restoration, or residual-transfer result follows.",
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "DIRECT_LOCAL"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "REVIEWED_V1_OVERLAY",
       "migration_status": "REVIEWED_OVERLAY",
@@ -7143,6 +8244,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "INTERACTION_CONSTRUCTION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed parent-evidence transfer: Constructive probability, Hilbert logic, effective spectra, and a representation-sensitive wave counterexample do not establish interacting or renormalized QFT children. No reviewed record in the batch constructs the required interaction in this refined coordinate.",
@@ -7163,6 +8265,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "INTERACTION_CONSTRUCTION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -7178,6 +8281,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "INTERACTION_CONSTRUCTION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -7193,6 +8297,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "INTERACTION_CONSTRUCTION",
       "status": "PRIORITY_GAP",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed child gap: The broad v0 priority gap is coherent at this child: the current corpus lacks an interaction construction in the declared foundational regime and smooth carrier.",
@@ -7208,6 +8313,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "INTERACTION_CONSTRUCTION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed parent-evidence transfer: Constructive duality and internal one-parameter dynamics do not transfer to causal Green theory or interacting/renormalized field theory. No reviewed record in the batch constructs the required interaction in this refined coordinate.",
@@ -7229,6 +8335,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "DIRECT_LOCAL"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Interaction construction': registered evidence supports this child.",
@@ -7246,6 +8355,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "INTERACTION_CONSTRUCTION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -7261,6 +8371,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "INTERACTION_CONSTRUCTION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -7276,6 +8387,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "INTERACTION_CONSTRUCTION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed parent-evidence transfer: Internal spectra, state measures, and one-parameter dynamics are reviewed; the records explicitly exclude causal propagation and interacting/renormalized field theory. No reviewed record in the batch constructs the required interaction in this refined coordinate.",
@@ -7298,6 +8410,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_TOPOS_WEYL_BV_OBSTRUCTION_LEDGER_V0"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_TOPOS_WEYL_BV_OBSTRUCTION_LEDGER_V0": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Interaction construction': registered evidence supports this child.",
@@ -7317,6 +8432,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_TOPOS_WEYL_BV_OBSTRUCTION_LEDGER_V0"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_TOPOS_WEYL_BV_OBSTRUCTION_LEDGER_V0": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Interaction construction': registered evidence supports this child.",
@@ -7338,6 +8456,9 @@ window.MATRIX_EXPLORER_DATA = {
       ],
       "summary": "The exact two-qubit Hamiltonian constructs a nontrivial entangling interaction.",
       "boundary": "No counterterm, anomaly, renormalized-product, QME-restoration, or residual-transfer result follows.",
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "DIRECT_LOCAL"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "REVIEWED_V1_OVERLAY",
       "migration_status": "REVIEWED_OVERLAY",
@@ -7353,6 +8474,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "INTERACTION_CONSTRUCTION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed parent-evidence transfer: Finite phase-space, categorical protocol, and state-reconstruction results do not establish evolution well-posedness, causal propagation, or quantum field consistency obligations. No reviewed record in the batch constructs the required interaction in this refined coordinate.",
@@ -7374,6 +8496,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "DIRECT_LOCAL"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Interaction construction': registered evidence supports this child.",
@@ -7394,6 +8519,10 @@ window.MATRIX_EXPLORER_DATA = {
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1",
         "zohar-burrello-2014"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "DIRECT_LOCAL",
+        "zohar-burrello-2014": "DIRECT_LITERATURE"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Interaction construction': registered evidence supports this child.",
@@ -7417,6 +8546,12 @@ window.MATRIX_EXPLORER_DATA = {
         "bahr-dittrich-2009",
         "dittrich-2012"
       ],
+      "evidence_roles": {
+        "kogut-susskind-1975": "DIRECT_LITERATURE",
+        "zohar-burrello-2014": "DIRECT_LITERATURE",
+        "bahr-dittrich-2009": "SUPPORTING",
+        "dittrich-2012": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Interaction construction': registered evidence supports this child.",
@@ -7437,6 +8572,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "INTERACTION_CONSTRUCTION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed parent-evidence transfer: Finite contextual and categorical structures do not establish causal propagation or the six quantum-consistency children. No reviewed record in the batch constructs the required interaction in this refined coordinate.",
@@ -7458,6 +8594,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Counterterm classification': registered evidence supports this child.",
@@ -7475,6 +8614,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "COUNTERTERM_CLASSIFICATION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed parent-evidence transfer: Effective spectral representation and categorical protocols do not establish the unresolved field-interaction and quantum-consistency children. No reviewed record in the batch classifies counterterms in this refined coordinate.",
@@ -7493,6 +8633,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "COUNTERTERM_CLASSIFICATION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed parent-evidence transfer: Real-spectrum and indefinite-metric QFT results do not establish the unresolved interaction or quantum-consistency children. No reviewed record in the batch classifies counterterms in this refined coordinate.",
@@ -7514,6 +8655,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "fredenhagen-rejzner-2011"
       ],
+      "evidence_roles": {
+        "fredenhagen-rejzner-2011": "DIRECT_LITERATURE"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Counterterm classification': registered evidence supports this child.",
@@ -7533,6 +8677,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_LOW_HANGING_CELL_CLOSURE_AUDIT_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_LOW_HANGING_CELL_CLOSURE_AUDIT_V1": "DIRECT_LOCAL"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Counterterm classification': registered evidence supports this child.",
@@ -7550,6 +8697,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "COUNTERTERM_CLASSIFICATION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed parent-evidence transfer: Internal spectra, state measures, and one-parameter dynamics are reviewed; the records explicitly exclude causal propagation and interacting/renormalized field theory. No reviewed record in the batch classifies counterterms in this refined coordinate.",
@@ -7572,6 +8720,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Counterterm classification': registered evidence supports this child.",
@@ -7589,6 +8740,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "COUNTERTERM_CLASSIFICATION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -7604,6 +8756,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "COUNTERTERM_CLASSIFICATION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -7619,6 +8772,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "COUNTERTERM_CLASSIFICATION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -7634,6 +8788,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "COUNTERTERM_CLASSIFICATION",
       "status": "PRIORITY_GAP",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed child gap: The broad v0 priority gap is coherent at this child: the current corpus lacks a child-specific local counterterm classification.",
@@ -7649,6 +8804,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "COUNTERTERM_CLASSIFICATION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -7667,6 +8823,10 @@ window.MATRIX_EXPLORER_DATA = {
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1",
         "FOUNDATIONAL_FREE_BV_ENERGY2_PRA_SDR_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "SUPPORTING",
+        "FOUNDATIONAL_FREE_BV_ENERGY2_PRA_SDR_V1": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Counterterm classification': registered evidence supports this child.",
@@ -7685,6 +8845,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "COUNTERTERM_CLASSIFICATION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed parent-evidence transfer: ZF operator theory and effective spectral representation do not establish interacting QFT, renormalized products, anomalies, QME restoration, or residual transfer. No reviewed record in the batch classifies counterterms in this refined coordinate.",
@@ -7704,6 +8865,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "COUNTERTERM_CLASSIFICATION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed parent-evidence transfer: The explicit Krein carrier, pseudo-Hermitian structure, and axiomatic indefinite-metric QFT do not construct the unresolved interaction or quantum-consistency children. No reviewed record in the batch classifies counterterms in this refined coordinate.",
@@ -7725,6 +8887,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "fredenhagen-rejzner-2011"
       ],
+      "evidence_roles": {
+        "fredenhagen-rejzner-2011": "DIRECT_LITERATURE"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Counterterm classification': registered evidence supports this child.",
@@ -7742,6 +8907,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "COUNTERTERM_CLASSIFICATION",
       "status": "PRIORITY_GAP",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed child gap: The broad v0 priority gap is coherent at this child: the current corpus lacks a child-specific local counterterm classification.",
@@ -7757,6 +8923,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "COUNTERTERM_CLASSIFICATION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -7775,6 +8942,10 @@ window.MATRIX_EXPLORER_DATA = {
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1",
         "FOUNDATIONAL_FREE_BV_ENERGY2_PRA_SDR_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "SUPPORTING",
+        "FOUNDATIONAL_FREE_BV_ENERGY2_PRA_SDR_V1": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Counterterm classification': registered evidence supports this child.",
@@ -7793,6 +8964,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "COUNTERTERM_CLASSIFICATION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed parent-evidence transfer: Constructive probability, Hilbert logic, effective spectra, and a representation-sensitive wave counterexample do not establish interacting or renormalized QFT children. No reviewed record in the batch classifies counterterms in this refined coordinate.",
@@ -7813,6 +8985,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "COUNTERTERM_CLASSIFICATION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -7828,6 +9001,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "COUNTERTERM_CLASSIFICATION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -7843,6 +9017,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "COUNTERTERM_CLASSIFICATION",
       "status": "PRIORITY_GAP",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed child gap: The broad v0 priority gap is coherent at this child: the current corpus lacks a child-specific local counterterm classification.",
@@ -7858,6 +9033,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "COUNTERTERM_CLASSIFICATION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed parent-evidence transfer: Constructive duality and internal one-parameter dynamics do not transfer to causal Green theory or interacting/renormalized field theory. No reviewed record in the batch classifies counterterms in this refined coordinate.",
@@ -7879,6 +9055,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Counterterm classification': registered evidence supports this child.",
@@ -7896,6 +9075,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "COUNTERTERM_CLASSIFICATION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -7911,6 +9091,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "COUNTERTERM_CLASSIFICATION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -7926,6 +9107,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "COUNTERTERM_CLASSIFICATION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed parent-evidence transfer: Internal spectra, state measures, and one-parameter dynamics are reviewed; the records explicitly exclude causal propagation and interacting/renormalized field theory. No reviewed record in the batch classifies counterterms in this refined coordinate.",
@@ -7948,6 +9130,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_TOPOS_WEYL_BV_OBSTRUCTION_LEDGER_V0"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_TOPOS_WEYL_BV_OBSTRUCTION_LEDGER_V0": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Counterterm classification': registered evidence supports this child.",
@@ -7967,6 +9152,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_TOPOS_WEYL_BV_OBSTRUCTION_LEDGER_V0"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_TOPOS_WEYL_BV_OBSTRUCTION_LEDGER_V0": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Counterterm classification': registered evidence supports this child.",
@@ -7984,6 +9172,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "COUNTERTERM_CLASSIFICATION",
       "status": "PRIORITY_GAP",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed child gap: The broad v0 priority gap is coherent at this child: the current corpus lacks a child-specific local counterterm classification.",
@@ -7999,6 +9188,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "COUNTERTERM_CLASSIFICATION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed parent-evidence transfer: Finite phase-space, categorical protocol, and state-reconstruction results do not establish evolution well-posedness, causal propagation, or quantum field consistency obligations. No reviewed record in the batch classifies counterterms in this refined coordinate.",
@@ -8020,6 +9210,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Counterterm classification': registered evidence supports this child.",
@@ -8040,6 +9233,10 @@ window.MATRIX_EXPLORER_DATA = {
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1",
         "zohar-burrello-2014"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "SUPPORTING",
+        "zohar-burrello-2014": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Counterterm classification': registered evidence supports this child.",
@@ -8062,6 +9259,11 @@ window.MATRIX_EXPLORER_DATA = {
         "zohar-burrello-2014",
         "bahr-dittrich-2009"
       ],
+      "evidence_roles": {
+        "kogut-susskind-1975": "SUPPORTING",
+        "zohar-burrello-2014": "SUPPORTING",
+        "bahr-dittrich-2009": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Counterterm classification': registered evidence supports this child.",
@@ -8081,6 +9283,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "COUNTERTERM_CLASSIFICATION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed parent-evidence transfer: Finite contextual and categorical structures do not establish causal propagation or the six quantum-consistency children. No reviewed record in the batch classifies counterterms in this refined coordinate.",
@@ -8102,6 +9305,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Anomaly classification': registered evidence supports this child.",
@@ -8119,6 +9325,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "ANOMALY_CLASSIFICATION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed parent-evidence transfer: Effective spectral representation and categorical protocols do not establish the unresolved field-interaction and quantum-consistency children. No reviewed record in the batch classifies anomalies in this refined coordinate.",
@@ -8137,6 +9344,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "ANOMALY_CLASSIFICATION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed parent-evidence transfer: Real-spectrum and indefinite-metric QFT results do not establish the unresolved interaction or quantum-consistency children. No reviewed record in the batch classifies anomalies in this refined coordinate.",
@@ -8158,6 +9366,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "fredenhagen-rejzner-2011"
       ],
+      "evidence_roles": {
+        "fredenhagen-rejzner-2011": "DIRECT_LITERATURE"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Anomaly classification': registered evidence supports this child.",
@@ -8177,6 +9388,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_LOW_HANGING_CELL_CLOSURE_AUDIT_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_LOW_HANGING_CELL_CLOSURE_AUDIT_V1": "DIRECT_LOCAL"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Anomaly classification': registered evidence supports this child.",
@@ -8194,6 +9408,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "ANOMALY_CLASSIFICATION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed parent-evidence transfer: Internal spectra, state measures, and one-parameter dynamics are reviewed; the records explicitly exclude causal propagation and interacting/renormalized field theory. No reviewed record in the batch classifies anomalies in this refined coordinate.",
@@ -8216,6 +9431,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Anomaly classification': registered evidence supports this child.",
@@ -8233,6 +9451,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "ANOMALY_CLASSIFICATION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -8248,6 +9467,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "ANOMALY_CLASSIFICATION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -8263,6 +9483,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "ANOMALY_CLASSIFICATION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -8278,6 +9499,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "ANOMALY_CLASSIFICATION",
       "status": "PRIORITY_GAP",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed child gap: The broad v0 priority gap is coherent at this child: the current corpus lacks a child-specific anomaly classification.",
@@ -8293,6 +9515,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "ANOMALY_CLASSIFICATION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -8311,6 +9534,10 @@ window.MATRIX_EXPLORER_DATA = {
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1",
         "FOUNDATIONAL_FREE_BV_ENERGY2_PRA_SDR_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "SUPPORTING",
+        "FOUNDATIONAL_FREE_BV_ENERGY2_PRA_SDR_V1": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Anomaly classification': registered evidence supports this child.",
@@ -8329,6 +9556,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "ANOMALY_CLASSIFICATION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed parent-evidence transfer: ZF operator theory and effective spectral representation do not establish interacting QFT, renormalized products, anomalies, QME restoration, or residual transfer. No reviewed record in the batch classifies anomalies in this refined coordinate.",
@@ -8348,6 +9576,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "ANOMALY_CLASSIFICATION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed parent-evidence transfer: The explicit Krein carrier, pseudo-Hermitian structure, and axiomatic indefinite-metric QFT do not construct the unresolved interaction or quantum-consistency children. No reviewed record in the batch classifies anomalies in this refined coordinate.",
@@ -8369,6 +9598,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "fredenhagen-rejzner-2011"
       ],
+      "evidence_roles": {
+        "fredenhagen-rejzner-2011": "DIRECT_LITERATURE"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Anomaly classification': registered evidence supports this child.",
@@ -8386,6 +9618,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "ANOMALY_CLASSIFICATION",
       "status": "PRIORITY_GAP",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed child gap: The broad v0 priority gap is coherent at this child: the current corpus lacks a child-specific anomaly classification.",
@@ -8401,6 +9634,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "ANOMALY_CLASSIFICATION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -8419,6 +9653,10 @@ window.MATRIX_EXPLORER_DATA = {
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1",
         "FOUNDATIONAL_FREE_BV_ENERGY2_PRA_SDR_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "SUPPORTING",
+        "FOUNDATIONAL_FREE_BV_ENERGY2_PRA_SDR_V1": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Anomaly classification': registered evidence supports this child.",
@@ -8437,6 +9675,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "ANOMALY_CLASSIFICATION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed parent-evidence transfer: Constructive probability, Hilbert logic, effective spectra, and a representation-sensitive wave counterexample do not establish interacting or renormalized QFT children. No reviewed record in the batch classifies anomalies in this refined coordinate.",
@@ -8457,6 +9696,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "ANOMALY_CLASSIFICATION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -8472,6 +9712,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "ANOMALY_CLASSIFICATION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -8487,6 +9728,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "ANOMALY_CLASSIFICATION",
       "status": "PRIORITY_GAP",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed child gap: The broad v0 priority gap is coherent at this child: the current corpus lacks a child-specific anomaly classification.",
@@ -8502,6 +9744,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "ANOMALY_CLASSIFICATION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed parent-evidence transfer: Constructive duality and internal one-parameter dynamics do not transfer to causal Green theory or interacting/renormalized field theory. No reviewed record in the batch classifies anomalies in this refined coordinate.",
@@ -8523,6 +9766,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Anomaly classification': registered evidence supports this child.",
@@ -8540,6 +9786,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "ANOMALY_CLASSIFICATION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -8555,6 +9802,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "ANOMALY_CLASSIFICATION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -8570,6 +9818,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "ANOMALY_CLASSIFICATION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed parent-evidence transfer: Internal spectra, state measures, and one-parameter dynamics are reviewed; the records explicitly exclude causal propagation and interacting/renormalized field theory. No reviewed record in the batch classifies anomalies in this refined coordinate.",
@@ -8592,6 +9841,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_TOPOS_WEYL_BV_OBSTRUCTION_LEDGER_V0"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_TOPOS_WEYL_BV_OBSTRUCTION_LEDGER_V0": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Anomaly classification': registered evidence supports this child.",
@@ -8611,6 +9863,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_TOPOS_WEYL_BV_OBSTRUCTION_LEDGER_V0"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_TOPOS_WEYL_BV_OBSTRUCTION_LEDGER_V0": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Anomaly classification': registered evidence supports this child.",
@@ -8628,6 +9883,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "ANOMALY_CLASSIFICATION",
       "status": "PRIORITY_GAP",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed child gap: The broad v0 priority gap is coherent at this child: the current corpus lacks a child-specific anomaly classification.",
@@ -8643,6 +9899,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "ANOMALY_CLASSIFICATION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed parent-evidence transfer: Finite phase-space, categorical protocol, and state-reconstruction results do not establish evolution well-posedness, causal propagation, or quantum field consistency obligations. No reviewed record in the batch classifies anomalies in this refined coordinate.",
@@ -8664,6 +9921,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Anomaly classification': registered evidence supports this child.",
@@ -8684,6 +9944,10 @@ window.MATRIX_EXPLORER_DATA = {
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1",
         "zohar-burrello-2014"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "SUPPORTING",
+        "zohar-burrello-2014": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Anomaly classification': registered evidence supports this child.",
@@ -8706,6 +9970,11 @@ window.MATRIX_EXPLORER_DATA = {
         "zohar-burrello-2014",
         "bahr-dittrich-2009"
       ],
+      "evidence_roles": {
+        "kogut-susskind-1975": "SUPPORTING",
+        "zohar-burrello-2014": "SUPPORTING",
+        "bahr-dittrich-2009": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Anomaly classification': registered evidence supports this child.",
@@ -8725,6 +9994,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "ANOMALY_CLASSIFICATION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed parent-evidence transfer: Finite contextual and categorical structures do not establish causal propagation or the six quantum-consistency children. No reviewed record in the batch classifies anomalies in this refined coordinate.",
@@ -8746,6 +10016,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Renormalized products': registered evidence supports this child.",
@@ -8763,6 +10036,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "RENORMALIZED_PRODUCTS",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed parent-evidence transfer: Effective spectral representation and categorical protocols do not establish the unresolved field-interaction and quantum-consistency children. No reviewed record in the batch constructs renormalized products in this refined coordinate.",
@@ -8781,6 +10055,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "RENORMALIZED_PRODUCTS",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed parent-evidence transfer: Real-spectrum and indefinite-metric QFT results do not establish the unresolved interaction or quantum-consistency children. No reviewed record in the batch constructs renormalized products in this refined coordinate.",
@@ -8802,6 +10077,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "fredenhagen-rejzner-2011"
       ],
+      "evidence_roles": {
+        "fredenhagen-rejzner-2011": "DIRECT_LITERATURE"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Renormalized products': registered evidence supports this child.",
@@ -8821,6 +10099,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_LOW_HANGING_CELL_CLOSURE_AUDIT_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_LOW_HANGING_CELL_CLOSURE_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Renormalized products': registered evidence supports this child.",
@@ -8838,6 +10119,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "RENORMALIZED_PRODUCTS",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed parent-evidence transfer: Internal spectra, state measures, and one-parameter dynamics are reviewed; the records explicitly exclude causal propagation and interacting/renormalized field theory. No reviewed record in the batch constructs renormalized products in this refined coordinate.",
@@ -8860,6 +10142,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Renormalized products': registered evidence supports this child.",
@@ -8877,6 +10162,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "RENORMALIZED_PRODUCTS",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -8892,6 +10178,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "RENORMALIZED_PRODUCTS",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -8907,6 +10194,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "RENORMALIZED_PRODUCTS",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -8922,6 +10210,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "RENORMALIZED_PRODUCTS",
       "status": "PRIORITY_GAP",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed child gap: The broad v0 priority gap is coherent at this child: the current corpus lacks renormalized products in the declared foundational regime and carrier.",
@@ -8937,6 +10226,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "RENORMALIZED_PRODUCTS",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -8954,6 +10244,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Renormalized products': registered evidence supports this child.",
@@ -8971,6 +10264,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "RENORMALIZED_PRODUCTS",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed parent-evidence transfer: ZF operator theory and effective spectral representation do not establish interacting QFT, renormalized products, anomalies, QME restoration, or residual transfer. No reviewed record in the batch constructs renormalized products in this refined coordinate.",
@@ -8990,6 +10284,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "RENORMALIZED_PRODUCTS",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed parent-evidence transfer: The explicit Krein carrier, pseudo-Hermitian structure, and axiomatic indefinite-metric QFT do not construct the unresolved interaction or quantum-consistency children. No reviewed record in the batch constructs renormalized products in this refined coordinate.",
@@ -9011,6 +10306,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "fredenhagen-rejzner-2011"
       ],
+      "evidence_roles": {
+        "fredenhagen-rejzner-2011": "DIRECT_LITERATURE"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Renormalized products': registered evidence supports this child.",
@@ -9028,6 +10326,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "RENORMALIZED_PRODUCTS",
       "status": "PRIORITY_GAP",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed child gap: The broad v0 priority gap is coherent at this child: the current corpus lacks renormalized products in the declared foundational regime and carrier.",
@@ -9043,6 +10342,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "RENORMALIZED_PRODUCTS",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -9060,6 +10360,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Renormalized products': registered evidence supports this child.",
@@ -9077,6 +10380,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "RENORMALIZED_PRODUCTS",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed parent-evidence transfer: Constructive probability, Hilbert logic, effective spectra, and a representation-sensitive wave counterexample do not establish interacting or renormalized QFT children. No reviewed record in the batch constructs renormalized products in this refined coordinate.",
@@ -9097,6 +10401,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "RENORMALIZED_PRODUCTS",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -9112,6 +10417,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "RENORMALIZED_PRODUCTS",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -9127,6 +10433,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "RENORMALIZED_PRODUCTS",
       "status": "PRIORITY_GAP",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed child gap: The broad v0 priority gap is coherent at this child: the current corpus lacks renormalized products in the declared foundational regime and carrier.",
@@ -9142,6 +10449,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "RENORMALIZED_PRODUCTS",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed parent-evidence transfer: Constructive duality and internal one-parameter dynamics do not transfer to causal Green theory or interacting/renormalized field theory. No reviewed record in the batch constructs renormalized products in this refined coordinate.",
@@ -9163,6 +10471,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Renormalized products': registered evidence supports this child.",
@@ -9180,6 +10491,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "RENORMALIZED_PRODUCTS",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -9195,6 +10507,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "RENORMALIZED_PRODUCTS",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -9210,6 +10523,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "RENORMALIZED_PRODUCTS",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed parent-evidence transfer: Internal spectra, state measures, and one-parameter dynamics are reviewed; the records explicitly exclude causal propagation and interacting/renormalized field theory. No reviewed record in the batch constructs renormalized products in this refined coordinate.",
@@ -9232,6 +10546,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_TOPOS_WEYL_BV_OBSTRUCTION_LEDGER_V0"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_TOPOS_WEYL_BV_OBSTRUCTION_LEDGER_V0": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Renormalized products': registered evidence supports this child.",
@@ -9251,6 +10568,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_TOPOS_WEYL_BV_OBSTRUCTION_LEDGER_V0"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_TOPOS_WEYL_BV_OBSTRUCTION_LEDGER_V0": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Renormalized products': registered evidence supports this child.",
@@ -9268,6 +10588,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "RENORMALIZED_PRODUCTS",
       "status": "PRIORITY_GAP",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed child gap: The broad v0 priority gap is coherent at this child: the current corpus lacks renormalized products in the declared foundational regime and carrier.",
@@ -9283,6 +10604,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "RENORMALIZED_PRODUCTS",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed parent-evidence transfer: Finite phase-space, categorical protocol, and state-reconstruction results do not establish evolution well-posedness, causal propagation, or quantum field consistency obligations. No reviewed record in the batch constructs renormalized products in this refined coordinate.",
@@ -9304,6 +10626,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Renormalized products': registered evidence supports this child.",
@@ -9324,6 +10649,10 @@ window.MATRIX_EXPLORER_DATA = {
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1",
         "zohar-burrello-2014"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "SUPPORTING",
+        "zohar-burrello-2014": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Renormalized products': registered evidence supports this child.",
@@ -9346,6 +10675,11 @@ window.MATRIX_EXPLORER_DATA = {
         "zohar-burrello-2014",
         "dittrich-2012"
       ],
+      "evidence_roles": {
+        "kogut-susskind-1975": "SUPPORTING",
+        "zohar-burrello-2014": "SUPPORTING",
+        "dittrich-2012": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Renormalized products': registered evidence supports this child.",
@@ -9365,6 +10699,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "RENORMALIZED_PRODUCTS",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed parent-evidence transfer: Finite contextual and categorical structures do not establish causal propagation or the six quantum-consistency children. No reviewed record in the batch constructs renormalized products in this refined coordinate.",
@@ -9386,6 +10721,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'QME restoration': registered evidence supports this child.",
@@ -9403,6 +10741,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "QME_RESTORATION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed parent-evidence transfer: Effective spectral representation and categorical protocols do not establish the unresolved field-interaction and quantum-consistency children. No reviewed record in the batch restores the quantum master equation in this refined coordinate.",
@@ -9421,6 +10760,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "QME_RESTORATION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed parent-evidence transfer: Real-spectrum and indefinite-metric QFT results do not establish the unresolved interaction or quantum-consistency children. No reviewed record in the batch restores the quantum master equation in this refined coordinate.",
@@ -9442,6 +10782,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "fredenhagen-rejzner-2011"
       ],
+      "evidence_roles": {
+        "fredenhagen-rejzner-2011": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'QME restoration': registered evidence supports this child.",
@@ -9461,6 +10804,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_LOW_HANGING_CELL_CLOSURE_AUDIT_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_LOW_HANGING_CELL_CLOSURE_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'QME restoration': registered evidence supports this child.",
@@ -9478,6 +10824,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "QME_RESTORATION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed parent-evidence transfer: Internal spectra, state measures, and one-parameter dynamics are reviewed; the records explicitly exclude causal propagation and interacting/renormalized field theory. No reviewed record in the batch restores the quantum master equation in this refined coordinate.",
@@ -9500,6 +10847,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'QME restoration': registered evidence supports this child.",
@@ -9517,6 +10867,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "QME_RESTORATION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -9532,6 +10883,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "QME_RESTORATION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -9547,6 +10899,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "QME_RESTORATION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -9562,6 +10915,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "QME_RESTORATION",
       "status": "PRIORITY_GAP",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed child gap: The broad v0 priority gap is coherent at this child: the current corpus lacks restoration of the local quantum master equation.",
@@ -9577,6 +10931,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "QME_RESTORATION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -9595,6 +10950,10 @@ window.MATRIX_EXPLORER_DATA = {
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1",
         "FOUNDATIONAL_FREE_BV_ENERGY2_PRA_SDR_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "SUPPORTING",
+        "FOUNDATIONAL_FREE_BV_ENERGY2_PRA_SDR_V1": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'QME restoration': registered evidence supports this child.",
@@ -9613,6 +10972,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "QME_RESTORATION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed parent-evidence transfer: ZF operator theory and effective spectral representation do not establish interacting QFT, renormalized products, anomalies, QME restoration, or residual transfer. No reviewed record in the batch restores the quantum master equation in this refined coordinate.",
@@ -9632,6 +10992,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "QME_RESTORATION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed parent-evidence transfer: The explicit Krein carrier, pseudo-Hermitian structure, and axiomatic indefinite-metric QFT do not construct the unresolved interaction or quantum-consistency children. No reviewed record in the batch restores the quantum master equation in this refined coordinate.",
@@ -9653,6 +11014,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "fredenhagen-rejzner-2011"
       ],
+      "evidence_roles": {
+        "fredenhagen-rejzner-2011": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'QME restoration': registered evidence supports this child.",
@@ -9670,6 +11034,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "QME_RESTORATION",
       "status": "PRIORITY_GAP",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed child gap: The broad v0 priority gap is coherent at this child: the current corpus lacks restoration of the local quantum master equation.",
@@ -9685,6 +11050,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "QME_RESTORATION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -9703,6 +11069,10 @@ window.MATRIX_EXPLORER_DATA = {
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1",
         "FOUNDATIONAL_FREE_BV_ENERGY2_PRA_SDR_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "SUPPORTING",
+        "FOUNDATIONAL_FREE_BV_ENERGY2_PRA_SDR_V1": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'QME restoration': registered evidence supports this child.",
@@ -9721,6 +11091,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "QME_RESTORATION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed parent-evidence transfer: Constructive probability, Hilbert logic, effective spectra, and a representation-sensitive wave counterexample do not establish interacting or renormalized QFT children. No reviewed record in the batch restores the quantum master equation in this refined coordinate.",
@@ -9741,6 +11112,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "QME_RESTORATION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -9756,6 +11128,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "QME_RESTORATION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -9771,6 +11144,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "QME_RESTORATION",
       "status": "PRIORITY_GAP",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed child gap: The broad v0 priority gap is coherent at this child: the current corpus lacks restoration of the local quantum master equation.",
@@ -9786,6 +11160,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "QME_RESTORATION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed parent-evidence transfer: Constructive duality and internal one-parameter dynamics do not transfer to causal Green theory or interacting/renormalized field theory. No reviewed record in the batch restores the quantum master equation in this refined coordinate.",
@@ -9807,6 +11182,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'QME restoration': registered evidence supports this child.",
@@ -9824,6 +11202,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "QME_RESTORATION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -9839,6 +11218,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "QME_RESTORATION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -9854,6 +11234,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "QME_RESTORATION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed parent-evidence transfer: Internal spectra, state measures, and one-parameter dynamics are reviewed; the records explicitly exclude causal propagation and interacting/renormalized field theory. No reviewed record in the batch restores the quantum master equation in this refined coordinate.",
@@ -9876,6 +11257,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_TOPOS_WEYL_BV_OBSTRUCTION_LEDGER_V0"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_TOPOS_WEYL_BV_OBSTRUCTION_LEDGER_V0": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'QME restoration': registered evidence supports this child.",
@@ -9895,6 +11279,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_TOPOS_WEYL_BV_OBSTRUCTION_LEDGER_V0"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_TOPOS_WEYL_BV_OBSTRUCTION_LEDGER_V0": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'QME restoration': registered evidence supports this child.",
@@ -9912,6 +11299,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "QME_RESTORATION",
       "status": "PRIORITY_GAP",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed child gap: The broad v0 priority gap is coherent at this child: the current corpus lacks restoration of the local quantum master equation.",
@@ -9927,6 +11315,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "QME_RESTORATION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed parent-evidence transfer: Finite phase-space, categorical protocol, and state-reconstruction results do not establish evolution well-posedness, causal propagation, or quantum field consistency obligations. No reviewed record in the batch restores the quantum master equation in this refined coordinate.",
@@ -9948,6 +11337,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'QME restoration': registered evidence supports this child.",
@@ -9968,6 +11360,10 @@ window.MATRIX_EXPLORER_DATA = {
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1",
         "zohar-burrello-2014"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "SUPPORTING",
+        "zohar-burrello-2014": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'QME restoration': registered evidence supports this child.",
@@ -9990,6 +11386,11 @@ window.MATRIX_EXPLORER_DATA = {
         "zohar-burrello-2014",
         "bahr-dittrich-2009"
       ],
+      "evidence_roles": {
+        "kogut-susskind-1975": "SUPPORTING",
+        "zohar-burrello-2014": "SUPPORTING",
+        "bahr-dittrich-2009": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'QME restoration': registered evidence supports this child.",
@@ -10009,6 +11410,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "QME_RESTORATION",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed parent-evidence transfer: Finite contextual and categorical structures do not establish causal propagation or the six quantum-consistency children. No reviewed record in the batch restores the quantum master equation in this refined coordinate.",
@@ -10030,6 +11432,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Residual quantum transfer': registered evidence supports this child.",
@@ -10047,6 +11452,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "RESIDUAL_QUANTUM_TRANSFER",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed parent-evidence transfer: Effective spectral representation and categorical protocols do not establish the unresolved field-interaction and quantum-consistency children. No reviewed record in the batch transfers a restored quantum correction to the residual complex.",
@@ -10065,6 +11471,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "RESIDUAL_QUANTUM_TRANSFER",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed parent-evidence transfer: Real-spectrum and indefinite-metric QFT results do not establish the unresolved interaction or quantum-consistency children. No reviewed record in the batch transfers a restored quantum correction to the residual complex.",
@@ -10086,6 +11493,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "fredenhagen-rejzner-2011"
       ],
+      "evidence_roles": {
+        "fredenhagen-rejzner-2011": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Residual quantum transfer': registered evidence supports this child.",
@@ -10105,6 +11515,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_LOW_HANGING_CELL_CLOSURE_AUDIT_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_LOW_HANGING_CELL_CLOSURE_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Residual quantum transfer': registered evidence supports this child.",
@@ -10122,6 +11535,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "RESIDUAL_QUANTUM_TRANSFER",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed parent-evidence transfer: Internal spectra, state measures, and one-parameter dynamics are reviewed; the records explicitly exclude causal propagation and interacting/renormalized field theory. No reviewed record in the batch transfers a restored quantum correction to the residual complex.",
@@ -10144,6 +11558,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Residual quantum transfer': registered evidence supports this child.",
@@ -10161,6 +11578,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "RESIDUAL_QUANTUM_TRANSFER",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -10176,6 +11594,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "RESIDUAL_QUANTUM_TRANSFER",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -10191,6 +11610,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "RESIDUAL_QUANTUM_TRANSFER",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -10206,6 +11626,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "RESIDUAL_QUANTUM_TRANSFER",
       "status": "PRIORITY_GAP",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed child gap: The broad v0 priority gap is coherent at this child: the current corpus lacks a quantum correction transferred to the residual complex after QME restoration.",
@@ -10221,6 +11642,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "RESIDUAL_QUANTUM_TRANSFER",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -10239,6 +11661,10 @@ window.MATRIX_EXPLORER_DATA = {
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1",
         "FOUNDATIONAL_FREE_BV_ENERGY2_PRA_SDR_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "SUPPORTING",
+        "FOUNDATIONAL_FREE_BV_ENERGY2_PRA_SDR_V1": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Residual quantum transfer': registered evidence supports this child.",
@@ -10257,6 +11683,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "RESIDUAL_QUANTUM_TRANSFER",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed parent-evidence transfer: ZF operator theory and effective spectral representation do not establish interacting QFT, renormalized products, anomalies, QME restoration, or residual transfer. No reviewed record in the batch transfers a restored quantum correction to the residual complex.",
@@ -10276,6 +11703,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "RESIDUAL_QUANTUM_TRANSFER",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed parent-evidence transfer: The explicit Krein carrier, pseudo-Hermitian structure, and axiomatic indefinite-metric QFT do not construct the unresolved interaction or quantum-consistency children. No reviewed record in the batch transfers a restored quantum correction to the residual complex.",
@@ -10297,6 +11725,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "fredenhagen-rejzner-2011"
       ],
+      "evidence_roles": {
+        "fredenhagen-rejzner-2011": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Residual quantum transfer': registered evidence supports this child.",
@@ -10314,6 +11745,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "RESIDUAL_QUANTUM_TRANSFER",
       "status": "PRIORITY_GAP",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed child gap: The broad v0 priority gap is coherent at this child: the current corpus lacks a quantum correction transferred to the residual complex after QME restoration.",
@@ -10329,6 +11761,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "RESIDUAL_QUANTUM_TRANSFER",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -10347,6 +11780,10 @@ window.MATRIX_EXPLORER_DATA = {
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1",
         "FOUNDATIONAL_FREE_BV_ENERGY2_PRA_SDR_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "SUPPORTING",
+        "FOUNDATIONAL_FREE_BV_ENERGY2_PRA_SDR_V1": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Residual quantum transfer': registered evidence supports this child.",
@@ -10365,6 +11802,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "RESIDUAL_QUANTUM_TRANSFER",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed parent-evidence transfer: Constructive probability, Hilbert logic, effective spectra, and a representation-sensitive wave counterexample do not establish interacting or renormalized QFT children. No reviewed record in the batch transfers a restored quantum correction to the residual complex.",
@@ -10385,6 +11823,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "RESIDUAL_QUANTUM_TRANSFER",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -10400,6 +11839,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "RESIDUAL_QUANTUM_TRANSFER",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -10415,6 +11855,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "RESIDUAL_QUANTUM_TRANSFER",
       "status": "PRIORITY_GAP",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed child gap: The broad v0 priority gap is coherent at this child: the current corpus lacks a quantum correction transferred to the residual complex after QME restoration.",
@@ -10430,6 +11871,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "RESIDUAL_QUANTUM_TRANSFER",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed parent-evidence transfer: Constructive duality and internal one-parameter dynamics do not transfer to causal Green theory or interacting/renormalized field theory. No reviewed record in the batch transfers a restored quantum correction to the residual complex.",
@@ -10451,6 +11893,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Residual quantum transfer': registered evidence supports this child.",
@@ -10468,6 +11913,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "RESIDUAL_QUANTUM_TRANSFER",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -10483,6 +11929,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "RESIDUAL_QUANTUM_TRANSFER",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -10498,6 +11945,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "RESIDUAL_QUANTUM_TRANSFER",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed parent-evidence transfer: Internal spectra, state measures, and one-parameter dynamics are reviewed; the records explicitly exclude causal propagation and interacting/renormalized field theory. No reviewed record in the batch transfers a restored quantum correction to the residual complex.",
@@ -10520,6 +11968,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_TOPOS_WEYL_BV_OBSTRUCTION_LEDGER_V0"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_TOPOS_WEYL_BV_OBSTRUCTION_LEDGER_V0": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Residual quantum transfer': registered evidence supports this child.",
@@ -10539,6 +11990,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_TOPOS_WEYL_BV_OBSTRUCTION_LEDGER_V0"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_TOPOS_WEYL_BV_OBSTRUCTION_LEDGER_V0": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Residual quantum transfer': registered evidence supports this child.",
@@ -10556,6 +12010,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "RESIDUAL_QUANTUM_TRANSFER",
       "status": "PRIORITY_GAP",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed child gap: The broad v0 priority gap is coherent at this child: the current corpus lacks a quantum correction transferred to the residual complex after QME restoration.",
@@ -10571,6 +12026,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "RESIDUAL_QUANTUM_TRANSFER",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed parent-evidence transfer: Finite phase-space, categorical protocol, and state-reconstruction results do not establish evolution well-posedness, causal propagation, or quantum field consistency obligations. No reviewed record in the batch transfers a restored quantum correction to the residual complex.",
@@ -10592,6 +12048,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Residual quantum transfer': registered evidence supports this child.",
@@ -10612,6 +12071,10 @@ window.MATRIX_EXPLORER_DATA = {
         "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1",
         "zohar-burrello-2014"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "SUPPORTING",
+        "zohar-burrello-2014": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Residual quantum transfer': registered evidence supports this child.",
@@ -10635,6 +12098,12 @@ window.MATRIX_EXPLORER_DATA = {
         "bahr-dittrich-2009",
         "dittrich-2012"
       ],
+      "evidence_roles": {
+        "kogut-susskind-1975": "SUPPORTING",
+        "zohar-burrello-2014": "SUPPORTING",
+        "bahr-dittrich-2009": "SUPPORTING",
+        "dittrich-2012": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "CAPABILITY_QUALIFIED",
       "summary": "Refined child 'Residual quantum transfer': registered evidence supports this child.",
@@ -10655,6 +12124,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "RESIDUAL_QUANTUM_TRANSFER",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
       "summary": "Reviewed parent-evidence transfer: Finite contextual and categorical structures do not establish causal propagation or the six quantum-consistency children. No reviewed record in the batch transfers a restored quantum correction to the residual complex.",
@@ -10674,6 +12144,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "RECONSTRUCTION_LIMITS",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -10692,6 +12163,10 @@ window.MATRIX_EXPLORER_DATA = {
         "neumann-pape-streicher-2018",
         "abramsky-coecke-2004"
       ],
+      "evidence_roles": {
+        "neumann-pape-streicher-2018": "UNREVIEWED",
+        "abramsky-coecke-2004": "UNREVIEWED"
+      },
       "parent_obligation": "RECONSTRUCTION_LIMITS",
       "migration_relation": "EXACT_ONE_TO_ONE",
       "summary": "Spectral and compositional quantum results cover standard Hilbert kinematics, states, dynamics, and finite reconstruction. For this obligation, the evidence directly supplies reconstruction, comparison, covariance, or continuum-limit obligations.",
@@ -10714,6 +12189,11 @@ window.MATRIX_EXPLORER_DATA = {
         "mostafazadeh-2001",
         "gottschalk-2004"
       ],
+      "evidence_roles": {
+        "bender-boettcher-1998": "UNREVIEWED",
+        "mostafazadeh-2001": "UNREVIEWED",
+        "gottschalk-2004": "UNREVIEWED"
+      },
       "parent_obligation": "RECONSTRUCTION_LIMITS",
       "migration_relation": "EXACT_ONE_TO_ONE",
       "summary": "Pseudo-Hermitian and Krein-QFT work supplies spectral, dynamical, and relativistic indefinite-metric results under explicit hypotheses. For this obligation, the evidence directly supplies reconstruction, comparison, covariance, or continuum-limit obligations.",
@@ -10737,6 +12217,11 @@ window.MATRIX_EXPLORER_DATA = {
         "fewster-verch-2011",
         "fredenhagen-rejzner-2011"
       ],
+      "evidence_roles": {
+        "brunetti-fredenhagen-verch-2001": "UNREVIEWED",
+        "fewster-verch-2011": "UNREVIEWED",
+        "fredenhagen-rejzner-2011": "UNREVIEWED"
+      },
       "parent_obligation": "RECONSTRUCTION_LIMITS",
       "migration_relation": "EXACT_ONE_TO_ONE",
       "summary": "Locally covariant AQFT and perturbative BV jointly address algebraic kinematics, states, dynamics, gauge structure, interactions, and comparison principles. For this obligation, the evidence directly supplies reconstruction, comparison, covariance, or continuum-limit obligations.",
@@ -10761,6 +12246,12 @@ window.MATRIX_EXPLORER_DATA = {
         "fredenhagen-rejzner-2011",
         "brunetti-fredenhagen-rejzner-2013"
       ],
+      "evidence_roles": {
+        "barnich-brandt-henneaux-2000": "UNREVIEWED",
+        "brunetti-fredenhagen-verch-2001": "UNREVIEWED",
+        "fredenhagen-rejzner-2011": "UNREVIEWED",
+        "brunetti-fredenhagen-rejzner-2013": "UNREVIEWED"
+      },
       "parent_obligation": "RECONSTRUCTION_LIMITS",
       "migration_relation": "EXACT_ONE_TO_ONE",
       "summary": "Local BRST, locally covariant QFT, and perturbative BV give a standard smooth/distributional architecture across all six obligations. For this obligation, the evidence directly supplies reconstruction, comparison, covariance, or continuum-limit obligations.",
@@ -10786,6 +12277,12 @@ window.MATRIX_EXPLORER_DATA = {
         "brenna-flori-2012",
         "harding-heunen-2019"
       ],
+      "evidence_roles": {
+        "heunen-landsman-spitters-2009": "UNREVIEWED",
+        "doring-2008": "UNREVIEWED",
+        "brenna-flori-2012": "UNREVIEWED",
+        "harding-heunen-2019": "UNREVIEWED"
+      },
       "parent_obligation": "RECONSTRUCTION_LIMITS",
       "migration_relation": "EXACT_ONE_TO_ONE",
       "summary": "Topos quantum theory supplies localic spectra, state measures, internal group dynamics, and comparisons between context topoi. For this obligation, the evidence directly supplies reconstruction, comparison, covariance, or continuum-limit obligations.",
@@ -10808,6 +12305,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_HARDY_CONTINUITY_KN_AUDIT_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_HARDY_CONTINUITY_KN_AUDIT_V1": "UNREVIEWED"
+      },
       "parent_obligation": "RECONSTRUCTION_LIMITS",
       "migration_relation": "EXACT_ONE_TO_ONE",
       "summary": "One Hardy continuity step has an RCA_0 sufficiency route when an explicit modulus is supplied.",
@@ -10830,6 +12330,12 @@ window.MATRIX_EXPLORER_DATA = {
         "humphreys-simpson-1996",
         "brattka-2008"
       ],
+      "evidence_roles": {
+        "brown-simpson-1986": "UNREVIEWED",
+        "humphreys-simpson-1999": "UNREVIEWED",
+        "humphreys-simpson-1996": "UNREVIEWED",
+        "brattka-2008": "UNREVIEWED"
+      },
       "parent_obligation": "RECONSTRUCTION_LIMITS",
       "migration_relation": "EXACT_ONE_TO_ONE",
       "summary": "Reverse mathematics calibrates specific separable Hahn-Banach, separation, and weak-star closure statements, with representation-sensitive strength. For this obligation, the evidence directly supplies reconstruction, comparison, covariance, or continuum-limit obligations.",
@@ -10850,6 +12356,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "RECONSTRUCTION_LIMITS",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -10865,6 +12372,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "RECONSTRUCTION_LIMITS",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -10880,6 +12388,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "RECONSTRUCTION_LIMITS",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -10895,6 +12404,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "RECONSTRUCTION_LIMITS",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -10910,6 +12420,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "RECONSTRUCTION_LIMITS",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -10929,6 +12440,11 @@ window.MATRIX_EXPLORER_DATA = {
         "blackadar-farah-2026",
         "neumann-pape-streicher-2018"
       ],
+      "evidence_roles": {
+        "blackadar-farah-karagila-2026": "UNREVIEWED",
+        "blackadar-farah-2026": "UNREVIEWED",
+        "neumann-pape-streicher-2018": "UNREVIEWED"
+      },
       "parent_obligation": "RECONSTRUCTION_LIMITS",
       "migration_relation": "EXACT_ONE_TO_ONE",
       "summary": "ZF operator theory and explicit separable representations cover substantial kinematics while isolating arbitrary-space pathologies. For this obligation, the evidence directly supplies reconstruction, comparison, covariance, or continuum-limit obligations.",
@@ -10948,6 +12464,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "RECONSTRUCTION_LIMITS",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -10967,6 +12484,11 @@ window.MATRIX_EXPLORER_DATA = {
         "FOUNDATIONAL_BT_SEPARABLE_STATE_CHAIN_ZF_V1",
         "fredenhagen-rejzner-2011"
       ],
+      "evidence_roles": {
+        "blackadar-farah-2026": "UNREVIEWED",
+        "FOUNDATIONAL_BT_SEPARABLE_STATE_CHAIN_ZF_V1": "UNREVIEWED",
+        "fredenhagen-rejzner-2011": "UNREVIEWED"
+      },
       "parent_obligation": "RECONSTRUCTION_LIMITS",
       "migration_relation": "EXACT_ONE_TO_ONE",
       "summary": "Robust separable C*-theory and an explicit state/GNS chain exist in ZF; perturbative BV remains an external classical ingredient. For this obligation, the evidence directly supplies reconstruction, comparison, covariance, or continuum-limit obligations.",
@@ -10986,6 +12508,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "RECONSTRUCTION_LIMITS",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -11001,6 +12524,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "RECONSTRUCTION_LIMITS",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -11016,6 +12540,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "RECONSTRUCTION_LIMITS",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -11035,6 +12560,11 @@ window.MATRIX_EXPLORER_DATA = {
         "chiribella-dariano-perinotti-2011",
         "brattka-2008"
       ],
+      "evidence_roles": {
+        "hardy-2001": "UNREVIEWED",
+        "chiribella-dariano-perinotti-2011": "UNREVIEWED",
+        "brattka-2008": "UNREVIEWED"
+      },
       "parent_obligation": "RECONSTRUCTION_LIMITS",
       "migration_relation": "EXACT_ONE_TO_ONE",
       "summary": "Operational and computability ingredients exist, but no shared constructive reversal joins them.",
@@ -11054,6 +12584,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "RECONSTRUCTION_LIMITS",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -11073,6 +12604,11 @@ window.MATRIX_EXPLORER_DATA = {
         "henry-2014",
         "neumann-pape-streicher-2018"
       ],
+      "evidence_roles": {
+        "coquand-spitters-2009": "UNREVIEWED",
+        "henry-2014": "UNREVIEWED",
+        "neumann-pape-streicher-2018": "UNREVIEWED"
+      },
       "parent_obligation": "RECONSTRUCTION_LIMITS",
       "migration_relation": "EXACT_ONE_TO_ONE",
       "summary": "Constructive localic Gelfand duality and computable spectral representations cover commutative kinematics and state-adjacent structure. For this obligation, the evidence directly supplies reconstruction, comparison, covariance, or continuum-limit obligations.",
@@ -11092,6 +12628,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "RECONSTRUCTION_LIMITS",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -11111,6 +12648,11 @@ window.MATRIX_EXPLORER_DATA = {
         "heunen-landsman-spitters-2009",
         "brenna-flori-2012"
       ],
+      "evidence_roles": {
+        "coquand-spitters-2009": "UNREVIEWED",
+        "heunen-landsman-spitters-2009": "UNREVIEWED",
+        "brenna-flori-2012": "UNREVIEWED"
+      },
       "parent_obligation": "RECONSTRUCTION_LIMITS",
       "migration_relation": "EXACT_ONE_TO_ONE",
       "summary": "Constructive localic spectra, valuations, and internal one-parameter dynamics form a coherent non-point-set quantum fragment. For this obligation, the evidence directly supplies reconstruction, comparison, covariance, or continuum-limit obligations.",
@@ -11134,6 +12676,11 @@ window.MATRIX_EXPLORER_DATA = {
         "constantin-doring-2020",
         "abramsky-coecke-2004"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "UNREVIEWED",
+        "constantin-doring-2020": "UNREVIEWED",
+        "abramsky-coecke-2004": "UNREVIEWED"
+      },
       "parent_obligation": "RECONSTRUCTION_LIMITS",
       "migration_relation": "EXACT_ONE_TO_ONE",
       "summary": "Finite categorical and contextual-entropy constructions coexist with the exact matrix witness, but their internalization is not automatic. For this obligation, the evidence directly supplies reconstruction, comparison, covariance, or continuum-limit obligations.",
@@ -11153,6 +12700,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "RECONSTRUCTION_LIMITS",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -11168,6 +12716,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "RECONSTRUCTION_LIMITS",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -11188,6 +12737,12 @@ window.MATRIX_EXPLORER_DATA = {
         "brenna-flori-2012",
         "harding-heunen-2019"
       ],
+      "evidence_roles": {
+        "heunen-landsman-spitters-2009": "UNREVIEWED",
+        "doring-2008": "UNREVIEWED",
+        "brenna-flori-2012": "UNREVIEWED",
+        "harding-heunen-2019": "UNREVIEWED"
+      },
       "parent_obligation": "RECONSTRUCTION_LIMITS",
       "migration_relation": "EXACT_ONE_TO_ONE",
       "summary": "Contextual topos methods internalize commutative algebra, spectra, state measures, and one-parameter dynamics from operator-algebraic input. For this obligation, the evidence directly supplies reconstruction, comparison, covariance, or continuum-limit obligations.",
@@ -11211,6 +12766,10 @@ window.MATRIX_EXPLORER_DATA = {
         "grinkevich-1996",
         "barnich-brandt-henneaux-2000"
       ],
+      "evidence_roles": {
+        "grinkevich-1996": "UNREVIEWED",
+        "barnich-brandt-henneaux-2000": "UNREVIEWED"
+      },
       "parent_obligation": "RECONSTRUCTION_LIMITS",
       "migration_relation": "EXACT_ONE_TO_ONE",
       "summary": "Synthetic general relativity supplies formal smooth geometry, while probability and BV/renormalization remain separate classical ingredients. For this obligation, the evidence directly supplies reconstruction, comparison, covariance, or continuum-limit obligations.",
@@ -11231,6 +12790,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_TOPOS_WEYL_BV_OBSTRUCTION_LEDGER_V0"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_TOPOS_WEYL_BV_OBSTRUCTION_LEDGER_V0": "UNREVIEWED"
+      },
       "parent_obligation": "RECONSTRUCTION_LIMITS",
       "migration_relation": "EXACT_ONE_TO_ONE",
       "summary": "No external comparison theorem states which physical predictions an internal construction preserves.",
@@ -11250,6 +12812,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_FINITE_FIELD_FINITE_MODE_NON_EQUIVALENCE_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_FIELD_FINITE_MODE_NON_EQUIVALENCE_V1": "UNREVIEWED"
+      },
       "parent_obligation": "RECONSTRUCTION_LIMITS",
       "migration_relation": "EXACT_ONE_TO_ONE",
       "summary": "Finite field, finite mode, finite Hilbert dimension, and finitism are proved non-equivalent by type, and bridge obligations are listed.",
@@ -11269,6 +12834,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_HARDY_CONTINUITY_KN_AUDIT_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_HARDY_CONTINUITY_KN_AUDIT_V1": "UNREVIEWED"
+      },
       "parent_obligation": "RECONSTRUCTION_LIMITS",
       "migration_relation": "EXACT_ONE_TO_ONE",
       "summary": "One finite-dimensional reconstruction step has a representation-sensitive logical audit.",
@@ -11286,6 +12854,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "RECONSTRUCTION_LIMITS",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -11301,6 +12870,7 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "RECONSTRUCTION_LIMITS",
       "status": "NOT_MAPPED",
       "evidence": [],
+      "evidence_roles": {},
       "parent_obligation": null,
       "migration_relation": "NOT_EMITTED",
       "migration_status": "NOT_REVIEWED",
@@ -11318,6 +12888,9 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_FINITE_FIELD_FINITE_MODE_NON_EQUIVALENCE_V1"
       ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_FIELD_FINITE_MODE_NON_EQUIVALENCE_V1": "UNREVIEWED"
+      },
       "parent_obligation": "RECONSTRUCTION_LIMITS",
       "migration_relation": "EXACT_ONE_TO_ONE",
       "summary": "No topology, comparison maps, error bounds, or regulator-independent continuum theorem joins finite models to smooth Weyl fields.",
@@ -11339,6 +12912,11 @@ window.MATRIX_EXPLORER_DATA = {
         "constantin-doring-2020",
         "abramsky-coecke-2004"
       ],
+      "evidence_roles": {
+        "harding-heunen-2019": "UNREVIEWED",
+        "constantin-doring-2020": "UNREVIEWED",
+        "abramsky-coecke-2004": "UNREVIEWED"
+      },
       "parent_obligation": "RECONSTRUCTION_LIMITS",
       "migration_relation": "EXACT_ONE_TO_ONE",
       "summary": "Short-poset topoi, finite contextual entropy, and categorical protocols give finite internal/contextual kinematics, states, dynamics, and reconstruction. For this obligation, the evidence directly supplies reconstruction, comparison, covariance, or continuum-limit obligations.",
@@ -13153,7 +14731,9 @@ window.MATRIX_EXPLORER_DATA = {
       "Coverage status and migration-review status answer different questions.",
       "REVIEWED_NO_TRANSFER and NOT_MAPPED are not literature-absence claims.",
       "The 124 synthetic coordinates have not received the migration review applied to the 452 emitted coordinates.",
-      "Neighbor counts and candidate views are navigation aids, not theorem rankings."
+      "Neighbor counts and candidate views are navigation aids, not theorem rankings.",
+      "An UNREVIEWED evidence role means the record has not been reviewed for directness at that obligation; it is not a finding that the record fails to support the cell.",
+      "The LR mark reports two certified direct evidence kinds at one coordinate. It does not merge them into a stronger single result."
     ]
   },
   "source_links": {
@@ -13164,5 +14744,5 @@ window.MATRIX_EXPLORER_DATA = {
     "migration_audit_report": "sources/foundations/reports/intersection-cube-migration-audit-v2.md",
     "ladder_report": "sources/foundations/reports/cylinder-wave-strength-ladder-v2.md"
   },
-  "canonical_digest": "378a9806111aec5b00bb9b9d71e8b9bbeaad573feb163684e967aa8cc34de625"
+  "canonical_digest": "2b862d2274aa796e0d87c68672313245b2b8317487d0e49e91fbbf0af5585016"
 };

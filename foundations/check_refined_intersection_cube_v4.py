@@ -19,6 +19,15 @@ def check(result:dict[str,Any]|None=None):
         if key not in actions and cell.get("status")!=source.get("status"):errors.append("status preservation "+key)
         expected=set((actions.get(key) or {}).get("evidence",[])+(overlays.get(key) or {}).get("evidence",[]))
         if not expected<=set(cell.get("evidence",[])):errors.append("evidence "+key)
+    # A status change must never leave a direct role stranded under a non-result
+    # status: role and status are written by different passes, so agreement is
+    # checked here rather than assumed.
+    DIRECT_STATUS={"DIRECT_LOCAL":"LOCAL_RESULT","DIRECT_LITERATURE":"LITERATURE_RESULT"}
+    for key,cell in by.items():
+        roles=cell.get("evidence_roles") or {}
+        if sorted(roles)!=sorted(cell.get("evidence") or []):errors.append("evidence-role closure "+key);break
+        present=[role for role in ("DIRECT_LOCAL","DIRECT_LITERATURE") if role in roles.values()]
+        if present and cell.get("status")!=DIRECT_STATUS[present[0]]:errors.append("role/status agreement "+key);break
     counts=Counter(x.get("status") for x in cells);expected={"LITERATURE_RESULT":93,"LOCAL_RESULT":88,"NOT_MAPPED":81,"PIECES_ONLY":160,"PRIORITY_GAP":30}
     if dict(sorted(counts.items()))!=expected or r.get("dimensions",{}).get("status_counts")!=expected:errors.append("status counts")
     d=r.get("dimensions",{})
