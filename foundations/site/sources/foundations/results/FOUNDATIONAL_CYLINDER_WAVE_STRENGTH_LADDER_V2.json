@@ -1,0 +1,357 @@
+{
+  "schema_version": "foundational-cylinder-wave-strength-ladder-v2",
+  "result_id": "FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V2",
+  "result_kind": "FOUNDATIONAL_STRENGTH_LADDER",
+  "lifecycle": "L2_UPPER_BOUND_CERTIFIED",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "created": "2026-08-12",
+  "repository_base_commit": "a0c5fab221459d0938a8d66a91bf7386ab2b9fba",
+  "question": "Which additional mathematical assumptions enter when an exact finite Fourier-mode wave on the cylinder is promoted to a completed energy solution, a weak or distributional spacetime solution, and finally a causal Green operator?",
+  "answer": "The finite Laurent and named-tail rungs remain exact. The L2 target is now closed for one explicit second-order-arithmetic representation: mean-zero rational polygonal chiral pairs, completed by fast Cauchy names with prescribed rates. RCA_0 suffices to extend exact rational translations to a unique real-time isometric energy evolution. This does not close L3: a coded localized test class and weak spacetime equation remain to be formalized, and causal Green support remains separate.",
+  "model": {
+    "spacetime": "R x S^1 with formal time Laurent variable z and spatial Laurent variable w",
+    "equation": "(partial_t^2-partial_x^2)u=0",
+    "finite_solution": "u_N=sum_{|n|<=N}(a_n z^n w^n+b_n z^{-n}w^n)",
+    "exact_scalar_domain": "Gaussian rationals Q(i)",
+    "energy_encoding": "integer mode weights and squared Gaussian-rational amplitudes",
+    "explicit_infinite_datum": "c_n=1/n^2 for n>=1, whose energy summand is 1/n^2",
+    "explicit_tail_modulus": "N(k)=2^k gives energy tail at most 2^{-k} by telescoping",
+    "localization_obstruction": "The Dirichlet kernel sum_{n=-N}^N exp(inx) equals (-1)^N at x=pi; a spectrally truncated point source is therefore nonzero at the antipode for every N."
+  },
+  "ladder": [
+    {
+      "level": "L0_FINITE_LAURENT",
+      "object": "A labelled finite family of rational-complex chiral modes",
+      "status": "CERTIFIED",
+      "sufficient_base": "PRA for every fixed fixture",
+      "adds": [
+        "finite sums",
+        "integer differentiation weights",
+        "decidable rational equality"
+      ],
+      "establishes": [
+        "exact wave-equation residual zero",
+        "Galerkin nesting",
+        "exact positive finite energy"
+      ],
+      "does_not_establish": [
+        "completion",
+        "spatial localization",
+        "causal support"
+      ]
+    },
+    {
+      "level": "L1_NAMED_TAIL_MODULUS",
+      "object": "The explicit datum c_n=1/n^2 together with N(k)=2^k",
+      "status": "CERTIFIED",
+      "sufficient_base": "Primitive-recursive rational inequalities plus induction for the displayed telescoping bound",
+      "adds": [
+        "a tolerance-to-cutoff function supplied as data"
+      ],
+      "establishes": [
+        "a constructive Cauchy name for this named energy datum"
+      ],
+      "does_not_establish": [
+        "a uniform modulus extractor for every classically convergent energy series"
+      ]
+    },
+    {
+      "level": "L2_CODED_ENERGY_CARRIER",
+      "object": "Fast-Cauchy completion of mean-zero rational polygonal chiral pairs",
+      "status": "CERTIFIED",
+      "sufficient_base": "RCA_0 for the declared representation",
+      "source": "FOUNDATIONAL_CODED_POLYGONAL_WAVE_RCA0_V1",
+      "adds": [
+        "coded Cauchy completion with prescribed rate",
+        "exact rational translation group",
+        "finite-code time moduli",
+        "primitive-recursive diagonal for named real times"
+      ],
+      "establishes": [
+        "completed energy state",
+        "energy-conserving real-time solution name",
+        "Cauchy existence and uniqueness in the declared carrier"
+      ],
+      "does_not_establish": [
+        "necessity or reversal",
+        "representation invariance",
+        "localized weak equation",
+        "causal support"
+      ]
+    },
+    {
+      "level": "L3_COEFFICIENT_WEAK_SOLUTION",
+      "object": "An energy solution tested against finite Fourier sequences",
+      "status": "FORMALIZATION_TARGET",
+      "adds": [
+        "finite-support test-sequence pairing",
+        "termwise weak equation"
+      ],
+      "separation": "This coefficient-weak notion avoids claiming a spacetime distribution or localized support.",
+      "open": [
+        "coded localized test class",
+        "coefficient-to-distribution comparison",
+        "weakest base"
+      ],
+      "source_boundary": "L2 supplies a completed evolution name, but the present certificate does not formalize test-function integration."
+    },
+    {
+      "level": "L4_SPACETIME_DISTRIBUTION",
+      "object": "A distribution on R x S^1 tested against localized smooth functions",
+      "status": "OPEN",
+      "adds": [
+        "coded test-function space",
+        "integration or Fourier/test-function comparison",
+        "continuity in the test-function topology"
+      ],
+      "boundary": "Neither finite Laurent algebra nor a Hilbert coefficient sequence supplies this automatically."
+    },
+    {
+      "level": "L5_CAUSAL_GREEN_OPERATOR",
+      "object": "Advanced and retarded solution maps with finite propagation and uniqueness",
+      "status": "CONDITIONAL_IMPORT_ONLY",
+      "adds": [
+        "localized energy estimates",
+        "Cauchy uniqueness",
+        "support propagation",
+        "slab globalization",
+        "distributional duality"
+      ],
+      "source": "FOUNDATIONAL_TYPED_BIWAVE_GREEN_DEPENDENCY_AUDIT_V1",
+      "boundary": "The imported biwave result is conditional and its weakest base and Choice strength remain open."
+    }
+  ],
+  "typed_relation_graph": {
+    "relation_vocabulary": [
+      "SUFFICIENT",
+      "CONDITIONAL_SUFFICIENT",
+      "REPRESENTATION_DEPENDENT",
+      "COUNTEREXAMPLE_TO_METHOD",
+      "LITERATURE_CONTRAST",
+      "OPEN_IMPLICATION",
+      "NOT_SUFFICIENT"
+    ],
+    "nodes": [
+      {
+        "id": "P-FINITE-RESOLUTION",
+        "kind": "PHYSICAL_ASSUMPTION",
+        "statement": "Only finitely many Fourier modes are resolved."
+      },
+      {
+        "id": "M-FINITE-LAURENT",
+        "kind": "MATHEMATICAL_CONSTRUCTION",
+        "statement": "A finite Gaussian-rational Laurent wave is available."
+      },
+      {
+        "id": "P-ERROR-CONTROL",
+        "kind": "PHYSICAL_ASSUMPTION",
+        "statement": "Preparation supplies a cutoff for every requested energy tolerance."
+      },
+      {
+        "id": "M-TAIL-MODULUS",
+        "kind": "MATHEMATICAL_DATA",
+        "statement": "A function N(k) bounds the energy tail by 2^{-k}."
+      },
+      {
+        "id": "P-FINITE-ENERGY",
+        "kind": "PHYSICAL_ASSUMPTION",
+        "statement": "The state has finite total energy, without a supplied modulus."
+      },
+      {
+        "id": "M-CODED-HILBERT",
+        "kind": "MATHEMATICAL_CONSTRUCTION",
+        "statement": "A fast-Cauchy completed chiral energy state and its isometric evolution exist in the declared RCA_0 coding."
+      },
+      {
+        "id": "M-COEFFICIENT-WEAK",
+        "kind": "MATHEMATICAL_CONSTRUCTION",
+        "statement": "The wave equation holds against finite Fourier tests."
+      },
+      {
+        "id": "M-SPACETIME-DISTRIBUTION",
+        "kind": "MATHEMATICAL_CONSTRUCTION",
+        "statement": "A localized spacetime distribution is constructed."
+      },
+      {
+        "id": "P-LOCAL-CAUSALITY",
+        "kind": "PHYSICAL_ASSUMPTION",
+        "statement": "Disturbances have finite propagation speed."
+      },
+      {
+        "id": "M-CAUSAL-GREEN",
+        "kind": "MATHEMATICAL_CONSTRUCTION",
+        "statement": "Advanced and retarded Green maps with support control exist."
+      },
+      {
+        "id": "L-WEIHRAUCH-ZHONG",
+        "kind": "LITERATURE_RESULT",
+        "statement": "Wave propagation is computable on stated C^1 and Sobolev representations."
+      },
+      {
+        "id": "L-POUR-EL-RICHARDS",
+        "kind": "LITERATURE_RESULT",
+        "statement": "A different representation/regularity setting admits computable initial data with a noncomputable solution value."
+      }
+    ],
+    "edges": [
+      {
+        "from": "P-FINITE-RESOLUTION",
+        "to": "M-FINITE-LAURENT",
+        "relation": "SUFFICIENT",
+        "evidence": [
+          "FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V1"
+        ]
+      },
+      {
+        "from": "P-ERROR-CONTROL",
+        "to": "M-TAIL-MODULUS",
+        "relation": "REPRESENTATION_DEPENDENT",
+        "evidence": [
+          "FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V1"
+        ]
+      },
+      {
+        "from": "M-TAIL-MODULUS",
+        "to": "M-CODED-HILBERT",
+        "relation": "SUFFICIENT",
+        "evidence": [
+          "FOUNDATIONAL_CODED_POLYGONAL_WAVE_RCA0_V1"
+        ],
+        "meaning": "A prescribed fast Cauchy rate and finite-code time moduli support the explicit diagonal extension in RCA_0."
+      },
+      {
+        "from": "P-FINITE-ENERGY",
+        "to": "M-TAIL-MODULUS",
+        "relation": "OPEN_IMPLICATION",
+        "evidence": []
+      },
+      {
+        "from": "M-CODED-HILBERT",
+        "to": "M-COEFFICIENT-WEAK",
+        "relation": "OPEN_IMPLICATION",
+        "evidence": [
+          "FOUNDATIONAL_CODED_POLYGONAL_WAVE_RCA0_V1"
+        ]
+      },
+      {
+        "from": "M-COEFFICIENT-WEAK",
+        "to": "M-SPACETIME-DISTRIBUTION",
+        "relation": "OPEN_IMPLICATION",
+        "evidence": []
+      },
+      {
+        "from": "M-FINITE-LAURENT",
+        "to": "M-CAUSAL-GREEN",
+        "relation": "COUNTEREXAMPLE_TO_METHOD",
+        "evidence": [
+          "FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V1"
+        ],
+        "meaning": "Finite spectral projection is globally nonzero and cannot certify support."
+      },
+      {
+        "from": "M-SPACETIME-DISTRIBUTION",
+        "to": "M-CAUSAL-GREEN",
+        "relation": "NOT_SUFFICIENT",
+        "evidence": [
+          "FOUNDATIONAL_TYPED_BIWAVE_GREEN_DEPENDENCY_AUDIT_V1"
+        ],
+        "meaning": "Energy uniqueness and support propagation are additional requirements."
+      },
+      {
+        "from": "P-LOCAL-CAUSALITY",
+        "to": "M-CAUSAL-GREEN",
+        "relation": "OPEN_IMPLICATION",
+        "evidence": [
+          "FOUNDATIONAL_TYPED_BIWAVE_GREEN_DEPENDENCY_AUDIT_V1"
+        ]
+      },
+      {
+        "from": "L-WEIHRAUCH-ZHONG",
+        "to": "L-POUR-EL-RICHARDS",
+        "relation": "LITERATURE_CONTRAST",
+        "evidence": [
+          "weihrauch-zhong-2002",
+          "pour-el-richards-1981"
+        ],
+        "meaning": "Computability changes with topology, regularity, and representation; the results are not contradictory."
+      }
+    ]
+  },
+  "literature_dependencies": [
+    {
+      "id": "weihrauch-zhong-2002",
+      "citation": "Klaus Weihrauch and Ning Zhong, Is wave propagation computable or can wave computers beat the Turing machine?, Proceedings of the London Mathematical Society 85 (2002), 312-332.",
+      "stable_url": "https://doi.org/10.1112/S0024611502013643",
+      "artifact_status": "METADATA_ONLY",
+      "retrieval_note": "The authoritative Cambridge record and article text were reviewed on 2026-08-12, but the direct PDF endpoint returned an HTML redirect in the receipt environment; no content hash is claimed.",
+      "supported_statement": "The paper proves computability of the wave propagator for specified continuously differentiable and Sobolev representations, with a loss of one derivative in the former setting and no loss in the stated Sobolev setting.",
+      "boundary": "This is TTE computable analysis, not a reverse-mathematical RCA_0/WKL_0/ACA_0 classification and not specifically the cylinder fixture."
+    },
+    {
+      "id": "pour-el-richards-1981",
+      "citation": "Marian B. Pour-El and J. Ian Richards, The wave equation with computable initial data such that its unique solution is not computable, Advances in Mathematics 39 (1981), 215-239.",
+      "stable_url": "https://doi.org/10.1016/0001-8708(81)90001-3",
+      "artifact_status": "METADATA_ONLY",
+      "local_ledger": "foundations/literature-expansion-v2.json",
+      "local_ledger_sha256": "d242e4a978acd268a2b463b7246dc6a712f98ab00bcc9955791f1d61771ed8bc",
+      "supported_statement": "Under the paper's representations, computable initial data can evolve to a unique wave solution with noncomputable values.",
+      "boundary": "The result is representation-sensitive and is not a no-go theorem for computable Sobolev wave propagation or for the explicit coefficient carrier used here."
+    }
+  ],
+  "independent_checker": {
+    "path": "foundations/check_cylinder_wave_strength_ladder_v2.py",
+    "checks": [
+      "v1 rung preservation outside L2/L3",
+      "L2 source closure",
+      "typed graph promotion",
+      "input pins",
+      "boundary flags",
+      "canonical digest"
+    ],
+    "expected_digest": "59e4309ea880235eac032da345a1399aaf6fff599058feeb6acc0c00fb3f16af"
+  },
+  "provenance": {
+    "inputs": [
+      {
+        "path": "foundations/results/FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V1.json",
+        "sha256": "6fb1e264fe2d1b006aafe6b6ce285fcd7b01ffcd080b2b6e70631e46c93b0135"
+      },
+      {
+        "path": "foundations/results/FOUNDATIONAL_CODED_POLYGONAL_WAVE_RCA0_V1.json",
+        "sha256": "4138c860c53fe85ba4fa1f2ece93cc5b6c0fce9468c7e5dfa69e314663b56ac7"
+      }
+    ]
+  },
+  "claim_flags": {
+    "finite_cylinder_wave_exact": true,
+    "explicit_tail_modulus_exact": true,
+    "finite_spectral_locality_obstruction_exact": true,
+    "typed_physics_to_mathematics_graph_constructed": true,
+    "arbitrary_energy_completion_formalized_in_rca0": true,
+    "weakest_base_proved": false,
+    "choice_strength_proved": false,
+    "spacetime_distribution_constructed": false,
+    "causal_green_operator_constructed": false,
+    "new_lorentzian_claim": false,
+    "declared_representation_rca0_upper_bound": true,
+    "coefficient_weak_solution_formalized": false
+  },
+  "does_not_establish": [
+    "that RCA_0 is necessary or the weakest base",
+    "a WKL_0, ACA_0, or Choice reversal",
+    "an upper bound for representations lacking prescribed Cauchy rates",
+    "representation invariance",
+    "a coefficient-weak or localized spacetime-distribution theorem",
+    "finite propagation or causal support from Fourier or polygonal evolution",
+    "a normally-hyperbolic Green theorem",
+    "the full biwave or metric-BV propagator",
+    "renormalized Lorentzian products or a QME theorem",
+    "a new LORENTZIAN-CAUSAL result"
+  ],
+  "next_gate": "Formalize L3 against a fixed coded test class. Only then compare it with localized spacetime distributions; support propagation and Green maps remain a separate L5 problem.",
+  "human_report": "foundations/reports/cylinder-wave-strength-ladder-v2.md"
+}

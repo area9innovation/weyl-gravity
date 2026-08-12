@@ -17,8 +17,9 @@ coverage; **81 remain `NOT_MAPPED`**, which is not a literature-absence claim.
 The remaining **124**
 coordinates are browser-visible complements that have not been assessed.
 
-Coverage is classified for **371** emitted cells after
-nine status changes and five evidence overlays from the normally-hyperbolic atlas.
+Coverage is classified for **371** emitted cells. The
+coded-wave pass promotes two weak-arithmetic Hilbert/operator cells from pieces
+to local results and adds five carefully typed evidence overlays.
 The cell inspector exposes coverage evidence separately from migration-review
 evidence and links to the explicit 112-decision audit ledger.
 

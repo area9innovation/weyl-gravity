@@ -13,8 +13,8 @@ SITE = ROOT / "foundations/site"
 DATA = SITE / "data.json"
 MANIFEST = SITE / "manifest.json"
 RESULT = ROOT / "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json"
-CUBE = ROOT / "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V3.json"
-LADDER = ROOT / "foundations/results/FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V1.json"
+CUBE = ROOT / "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V4.json"
+LADDER = ROOT / "foundations/results/FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V2.json"
 STATUSES = {"LOCAL_RESULT", "LITERATURE_RESULT", "PIECES_ONLY", "PRIORITY_GAP", "NOT_MAPPED"}
 MIGRATIONS = {"EXACT_PARENT_TRANSFER", "CAPABILITY_QUALIFIED", "REVIEWED_OVERLAY", "REVIEWED_NO_TRANSFER", "REVIEWED_CHILD_GAP", "NOT_REVIEWED"}
 
@@ -74,7 +74,7 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
 
     evidence = data.get("evidence", {})
     used = {item for cell in emitted for field in ("evidence", "migration_evidence") for item in cell.get(field, [])}
-    if set(evidence) != used or len(evidence) != 59:
+    if set(evidence) != used or len(evidence) != 69:
         errors.append("coverage and migration evidence resolution")
     for item in evidence.values():
         for field in ("result_link", "report_link", "ledger_link"):

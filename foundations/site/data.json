@@ -313,9 +313,9 @@
     "synthetic_not_mapped": 124,
     "status_counts": {
       "LITERATURE_RESULT": 93,
-      "LOCAL_RESULT": 86,
+      "LOCAL_RESULT": 88,
       "NOT_MAPPED": 205,
-      "PIECES_ONLY": 162,
+      "PIECES_ONLY": 160,
       "PRIORITY_GAP": 30
     },
     "migration_status_counts": {
@@ -326,7 +326,7 @@
       "REVIEWED_NO_TRANSFER": 88,
       "REVIEWED_OVERLAY": 11
     },
-    "evidence_records": 59
+    "evidence_records": 69
   },
   "cells": [
     {
@@ -3977,14 +3977,17 @@
       "foundation": "WEAK_ARITHMETIC",
       "carrier": "HILBERT_OPERATOR",
       "obligation": "GENERATOR_SPECTRAL_DYNAMICS",
-      "status": "PIECES_ONLY",
+      "status": "LOCAL_RESULT",
       "evidence": [
-        "FOUNDATIONAL_NORMAL_HYPERBOLIC_FACTOR_ATLAS_V1"
+        "FOUNDATIONAL_NORMAL_HYPERBOLIC_FACTOR_ATLAS_V1",
+        "FOUNDATIONAL_CODED_POLYGONAL_WAVE_RCA0_V1",
+        "FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V2",
+        "FOUNDATIONAL_CODED_WAVE_FRONTIER_V2"
       ],
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Effective evolution and reverse functional-analysis ingredients exist, but no coded generator theorem or subsystem calibration was located.",
-      "boundary": "This classification is restricted to the cited object and foundational framework; it does not transfer to stronger causal, continuum, choice-free, or reverse-mathematical claims.",
+      "summary": "The declared fast-Cauchy energy carrier has an RCA_0-coded real-time isometric one-parameter group; no generator domain or spectral theorem is claimed.",
+      "boundary": "The local RCA_0 upper bound is restricted to the declared fast-Cauchy polygonal energy representation; it is neither a reversal nor a spacetime causal theorem.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "brown-simpson-1986",
@@ -3997,6 +4000,12 @@
         "atlas": "FOUNDATIONAL_NORMAL_HYPERBOLIC_FACTOR_ATLAS_V1",
         "kind": "STATUS_CHANGE",
         "previous_status": "NOT_MAPPED"
+      },
+      "coded_wave_revision": {
+        "frontier": "FOUNDATIONAL_CODED_WAVE_FRONTIER_V2",
+        "status_change": true,
+        "evidence_overlay": false,
+        "previous_status": "PIECES_ONLY"
       },
       "emitted": true
     },
@@ -4703,14 +4712,18 @@
       "foundation": "WEAK_ARITHMETIC",
       "carrier": "HILBERT_OPERATOR",
       "obligation": "EVOLUTION_WELLPOSEDNESS",
-      "status": "PIECES_ONLY",
+      "status": "LOCAL_RESULT",
       "evidence": [
-        "FOUNDATIONAL_NORMAL_HYPERBOLIC_FACTOR_ATLAS_V1"
+        "FOUNDATIONAL_NORMAL_HYPERBOLIC_FACTOR_ATLAS_V1",
+        "FOUNDATIONAL_CODED_POLYGONAL_WAVE_RCA0_V1",
+        "FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V2",
+        "FOUNDATIONAL_CODED_WAVE_FRONTIER_V2",
+        "pischke-2025-semigroups"
       ],
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Computable solution operators are adjacent, but no second-order-arithmetic upper bound or reversal was located.",
-      "boundary": "This classification is restricted to the cited object and foundational framework; it does not transfer to stronger causal, continuum, choice-free, or reverse-mathematical claims.",
+      "summary": "RCA_0 suffices for existence, uniqueness, continuity, and energy conservation in the declared polygonal fast-Cauchy representation. Frontier evidence: Proof mining gives adjacent formal quantitative semigroup evidence, not the local RCA_0 proof.",
+      "boundary": "The local RCA_0 upper bound is restricted to the declared fast-Cauchy polygonal energy representation; it is neither a reversal nor a spacetime causal theorem.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "brown-simpson-1986",
@@ -4723,6 +4736,12 @@
         "atlas": "FOUNDATIONAL_NORMAL_HYPERBOLIC_FACTOR_ATLAS_V1",
         "kind": "STATUS_CHANGE",
         "previous_status": "NOT_MAPPED"
+      },
+      "coded_wave_revision": {
+        "frontier": "FOUNDATIONAL_CODED_WAVE_FRONTIER_V2",
+        "status_change": true,
+        "evidence_overlay": true,
+        "previous_status": "PIECES_ONLY"
       },
       "emitted": true
     },
@@ -4773,9 +4792,11 @@
       "status": "PIECES_ONLY",
       "evidence": [
         "FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V1",
-        "weihrauch-zhong-2002"
+        "weihrauch-zhong-2002",
+        "FOUNDATIONAL_CODED_POLYGONAL_WAVE_RCA0_V1",
+        "simpson-1984-ode"
       ],
-      "summary": "An exact finite-to-coded ladder and computable Sobolev wave result identify a specific RCA_0 formalization target.",
+      "summary": "An exact finite-to-coded ladder and computable Sobolev wave result identify a specific RCA_0 formalization target. Frontier evidence: The local carrier and the ODE reversal clarify coding and strength, but no localized spacetime-distribution theorem is proved.",
       "boundary": "No second-order-arithmetic upper bound or reversal has been proved.",
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "REVIEWED_V1_OVERLAY",
@@ -4785,6 +4806,12 @@
         "weihrauch-zhong-2002"
       ],
       "migration_rationale": "A child-specific v1 review overrides the mechanical migration.",
+      "coded_wave_revision": {
+        "frontier": "FOUNDATIONAL_CODED_WAVE_FRONTIER_V2",
+        "status_change": false,
+        "evidence_overlay": true,
+        "previous_status": "PIECES_ONLY"
+      },
       "emitted": true
     },
     {
@@ -4940,11 +4967,12 @@
       "status": "LITERATURE_RESULT",
       "evidence": [
         "pour-el-richards-1981",
-        "neumann-pape-streicher-2018"
+        "neumann-pape-streicher-2018",
+        "weihrauch-zhong-2007-cauchy"
       ],
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "CAPABILITY_QUALIFIED",
-      "summary": "Refined child 'Evolution/well-posedness': registered evidence supports this child.",
+      "summary": "Refined child 'Evolution/well-posedness': registered evidence supports this child. Frontier evidence: The abstract Cauchy problem has a direct TTE computability characterization under its representations.",
       "boundary": "The v0 parent status is not inherited by sibling obligations. Computable, Bishop-constructive, intuitionistic, and reverse-mathematical results remain distinct types. Domain, completion, and spectral-measure hypotheses remain part of the result. Still open here: full interacting Lorentzian-causal propagation.",
       "migration_status": "CAPABILITY_QUALIFIED",
       "migration_evidence": [
@@ -4952,6 +4980,12 @@
         "neumann-pape-streicher-2018"
       ],
       "migration_rationale": "The explicit v1 evidence-capability registry licenses transfer to this child.",
+      "coded_wave_revision": {
+        "frontier": "FOUNDATIONAL_CODED_WAVE_FRONTIER_V2",
+        "status_change": false,
+        "evidence_overlay": true,
+        "previous_status": "LITERATURE_RESULT"
+      },
       "emitted": true
     },
     {
@@ -5003,9 +5037,11 @@
         "weihrauch-zhong-2002",
         "FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V1",
         "selivanova-selivanov-2013",
-        "selivanova-selivanov-2018"
+        "selivanova-selivanov-2018",
+        "zhong-1999-sobolev",
+        "bridges-wang-1998-dirichlet"
       ],
-      "summary": "Wave propagation is computable in the stated C1 and Sobolev representations reviewed by the ladder. New atlas evidence: The represented symmetric-hyperbolic solution operator is computable with effective approximation and complexity bounds in the papers' scope.",
+      "summary": "Wave propagation is computable in the stated C1 and Sobolev representations reviewed by the ladder. New atlas evidence: The represented symmetric-hyperbolic solution operator is computable with effective approximation and complexity bounds in the papers' scope. Frontier evidence: Computable Sobolev hyperbolic applications strengthen the TTE evidence; the Bishop-constructive elliptic theorem is adjacent and does not alter the classification.",
       "boundary": "TTE computability is representation-sensitive and is not a Bishop-constructive or reverse-mathematical theorem.",
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "REVIEWED_V1_OVERLAY",
@@ -5018,6 +5054,12 @@
       "research_revision": {
         "atlas": "FOUNDATIONAL_NORMAL_HYPERBOLIC_FACTOR_ATLAS_V1",
         "kind": "EVIDENCE_OVERLAY",
+        "previous_status": "LITERATURE_RESULT"
+      },
+      "coded_wave_revision": {
+        "frontier": "FOUNDATIONAL_CODED_WAVE_FRONTIER_V2",
+        "status_change": false,
+        "evidence_overlay": true,
         "previous_status": "LITERATURE_RESULT"
       },
       "emitted": true
@@ -5733,9 +5775,11 @@
         "pour-el-richards-1981",
         "weihrauch-zhong-2002",
         "FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V1",
-        "selivanova-selivanov-2013"
+        "selivanova-selivanov-2013",
+        "zhong-weihrauch-2003-distributions",
+        "weihrauch-zhong-2006-fundamental"
       ],
-      "summary": "Positive and negative computability results expose the representation and localization dependencies of wave propagation. New atlas evidence: Computable evolution is direct evidence for one ingredient, while strict globally-hyperbolic Green support remains outside the theorem.",
+      "summary": "Positive and negative computability results expose the representation and localization dependencies of wave propagation. New atlas evidence: Computable evolution is direct evidence for one ingredient, while strict globally-hyperbolic Green support remains outside the theorem. Frontier evidence: Computable distributional wave solutions and fundamental solutions are ingredients, but retarded/advanced selection and strict support are unverified.",
       "boundary": "Neither source constructs a constructive causal Green operator for Weyl gravity.",
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "REVIEWED_V1_OVERLAY",
@@ -5749,6 +5793,12 @@
       "research_revision": {
         "atlas": "FOUNDATIONAL_NORMAL_HYPERBOLIC_FACTOR_ATLAS_V1",
         "kind": "EVIDENCE_OVERLAY",
+        "previous_status": "PIECES_ONLY"
+      },
+      "coded_wave_revision": {
+        "frontier": "FOUNDATIONAL_CODED_WAVE_FRONTIER_V2",
+        "status_change": false,
+        "evidence_overlay": true,
         "previous_status": "PIECES_ONLY"
       },
       "emitted": true
@@ -11305,6 +11355,82 @@
       "report_link": "sources/foundations/reports/bt-separable-cstar-state-chain.md",
       "sha256": "08389e96d349766e29a34cde8109d4b1271288b59d44f3b29fcb456065641998"
     },
+    "FOUNDATIONAL_CODED_POLYGONAL_WAVE_RCA0_V1": {
+      "id": "FOUNDATIONAL_CODED_POLYGONAL_WAVE_RCA0_V1",
+      "kind": "LOCAL_RESULT",
+      "result_kind": "CODED_SECOND_ORDER_ARITHMETIC_UPPER_BOUND",
+      "lifecycle": "CERTIFIED",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE"
+      ],
+      "claim_flags": {
+        "rca0_upper_bound_for_declared_representation": true,
+        "completed_energy_state_constructed": true,
+        "real_time_solution_name_constructed": true,
+        "energy_conservation_proved": true,
+        "cauchy_uniqueness_in_declared_carrier": true,
+        "weakest_base_proved": false,
+        "reverse_lower_bound_proved": false,
+        "representation_invariance_proved": false,
+        "spacetime_distribution_constructed": false,
+        "causal_green_operator_constructed": false,
+        "choice_free_zf_theorem_proved": false,
+        "new_lorentzian_claim": false
+      },
+      "does_not_establish": [
+        "that RCA_0 is necessary or the weakest base",
+        "a WKL_0, ACA_0, or Choice lower bound",
+        "the same upper bound for bare finite-energy existence without a fast Cauchy name",
+        "representation invariance",
+        "a localized spacetime-distribution theorem",
+        "finite propagation or an advanced/retarded Green map",
+        "a variable-coefficient or curved-spacetime Cauchy theorem",
+        "the biwave or metric-BV propagator",
+        "a new LORENTZIAN-CAUSAL result"
+      ],
+      "result_path": "foundations/results/FOUNDATIONAL_CODED_POLYGONAL_WAVE_RCA0_V1.json",
+      "result_link": "sources/foundations/results/FOUNDATIONAL_CODED_POLYGONAL_WAVE_RCA0_V1.json",
+      "report_path": "foundations/reports/coded-polygonal-wave-rca0.md",
+      "report_link": "sources/foundations/reports/coded-polygonal-wave-rca0.md",
+      "sha256": "4138c860c53fe85ba4fa1f2ece93cc5b6c0fce9468c7e5dfa69e314663b56ac7"
+    },
+    "FOUNDATIONAL_CODED_WAVE_FRONTIER_V2": {
+      "id": "FOUNDATIONAL_CODED_WAVE_FRONTIER_V2",
+      "kind": "LOCAL_RESULT",
+      "result_kind": "CODED_UPPER_BOUND_AND_LITERATURE_FRONTIER",
+      "lifecycle": "L2_UPPER_BOUND_CERTIFIED",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "claim_flags": {
+        "declared_representation_rca0_upper_bound": true,
+        "literature_screen_completed": true,
+        "weakest_base_proved": false,
+        "reverse_lower_bound_proved": false,
+        "bishop_hyperbolic_theorem_found": false,
+        "zf_choice_free_pde_found": false,
+        "computable_causal_support_proved": false,
+        "new_lorentzian_claim": false
+      },
+      "does_not_establish": [
+        "literature completeness",
+        "that RCA_0 is the weakest base",
+        "a reverse-mathematical equivalence for wave evolution",
+        "a Bishop-constructive hyperbolic Green theorem",
+        "a ZF-without-Choice PDE theorem",
+        "that a distributional fundamental solution is retarded or advanced",
+        "strict causal support",
+        "a new Lorentzian Weyl result"
+      ],
+      "result_path": "foundations/results/FOUNDATIONAL_CODED_WAVE_FRONTIER_V2.json",
+      "result_link": "sources/foundations/results/FOUNDATIONAL_CODED_WAVE_FRONTIER_V2.json",
+      "report_path": "foundations/reports/coded-wave-frontier-v2.md",
+      "report_link": "sources/foundations/reports/coded-wave-frontier-v2.md",
+      "sha256": "a86361f9419e345b2ce0ce3b2ff1c689d0b3ac090d4cbb5f031b014af9e84021"
+    },
     "FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V1": {
       "id": "FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V1",
       "kind": "LOCAL_RESULT",
@@ -11344,6 +11470,48 @@
       "report_path": "foundations/reports/cylinder-wave-strength-ladder.md",
       "report_link": "sources/foundations/reports/cylinder-wave-strength-ladder.md",
       "sha256": "6fb1e264fe2d1b006aafe6b6ce285fcd7b01ffcd080b2b6e70631e46c93b0135"
+    },
+    "FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V2": {
+      "id": "FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V2",
+      "kind": "LOCAL_RESULT",
+      "result_kind": "FOUNDATIONAL_STRENGTH_LADDER",
+      "lifecycle": "L2_UPPER_BOUND_CERTIFIED",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "claim_flags": {
+        "finite_cylinder_wave_exact": true,
+        "explicit_tail_modulus_exact": true,
+        "finite_spectral_locality_obstruction_exact": true,
+        "typed_physics_to_mathematics_graph_constructed": true,
+        "arbitrary_energy_completion_formalized_in_rca0": true,
+        "weakest_base_proved": false,
+        "choice_strength_proved": false,
+        "spacetime_distribution_constructed": false,
+        "causal_green_operator_constructed": false,
+        "new_lorentzian_claim": false,
+        "declared_representation_rca0_upper_bound": true,
+        "coefficient_weak_solution_formalized": false
+      },
+      "does_not_establish": [
+        "that RCA_0 is necessary or the weakest base",
+        "a WKL_0, ACA_0, or Choice reversal",
+        "an upper bound for representations lacking prescribed Cauchy rates",
+        "representation invariance",
+        "a coefficient-weak or localized spacetime-distribution theorem",
+        "finite propagation or causal support from Fourier or polygonal evolution",
+        "a normally-hyperbolic Green theorem",
+        "the full biwave or metric-BV propagator",
+        "renormalized Lorentzian products or a QME theorem",
+        "a new LORENTZIAN-CAUSAL result"
+      ],
+      "result_path": "foundations/results/FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V2.json",
+      "result_link": "sources/foundations/results/FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V2.json",
+      "report_path": "foundations/reports/cylinder-wave-strength-ladder-v2.md",
+      "report_link": "sources/foundations/reports/cylinder-wave-strength-ladder-v2.md",
+      "sha256": "e57410af6a196fb60c1391e22ecbf422441505ff076a81256f3bd913b8923cc9"
     },
     "FOUNDATIONAL_EXPLICIT_ENERGY_SPECTRAL_FRAGMENT_ZF_V1": {
       "id": "FOUNDATIONAL_EXPLICIT_ENERGY_SPECTRAL_FRAGMENT_ZF_V1",
@@ -11995,6 +12163,22 @@
       "ledger": "foundations/literature-supplement-known-attempts-v1.json",
       "ledger_link": "sources/foundations/literature-supplement-known-attempts-v1.json"
     },
+    "bridges-wang-1998-dirichlet": {
+      "id": "bridges-wang-1998-dirichlet",
+      "kind": "LITERATURE",
+      "citation": "Douglas Bridges and Luminiţa Vîţă Wang, Constructive aspects of the Dirichlet problem, Bulletin of the London Mathematical Society 30 (1998), 579-588.",
+      "year": null,
+      "source_kind": "PRIMARY_RESEARCH",
+      "stable_url": "https://doi.org/10.1112/S0024610798006243",
+      "artifact_status": "METADATA_ONLY",
+      "artifact_sha256": null,
+      "supported_statements": [
+        "The paper constructively treats weak solutions of the Dirichlet problem and dependence on boundary or domain data in its elliptic setting."
+      ],
+      "boundary": "This is genuine constructive PDE evidence, but it is elliptic rather than hyperbolic and supplies no causal Green maps.",
+      "ledger": "foundations/literature-coded-wave-frontier-v2.json",
+      "ledger_link": "sources/foundations/literature-coded-wave-frontier-v2.json"
+    },
     "brown-simpson-1986": {
       "id": "brown-simpson-1986",
       "kind": "LITERATURE",
@@ -12428,6 +12612,22 @@
       "ledger": "foundations/literature-expansion-v2.json",
       "ledger_link": "sources/foundations/literature-expansion-v2.json"
     },
+    "pischke-2025-semigroups": {
+      "id": "pischke-2025-semigroups",
+      "kind": "LITERATURE",
+      "citation": "Nicholas Pischke, A proof-theoretic metatheorem for nonlinear semigroups generated by an accretive operator and applications, Selecta Mathematica 31 (2025), 32.",
+      "year": null,
+      "source_kind": "PRIMARY_RESEARCH",
+      "stable_url": "https://arxiv.org/abs/2304.01723",
+      "artifact_status": "CONTENT_PINNED",
+      "artifact_sha256": "df22f1d13d554d99c41a0da840078f0614680171b77338aa2507601a33856877",
+      "supported_statements": [
+        "Logical metatheorems cover nonlinear semigroups generated by accretive operators and support extraction of quantitative convergence information in the stated systems and case studies."
+      ],
+      "boundary": "Proof mining in higher-type systems is not an RCA_0/WKL_0/ACA_0 reversal, and the operator and semigroup structures are encoded assumptions rather than a causal PDE construction.",
+      "ledger": "foundations/literature-coded-wave-frontier-v2.json",
+      "ledger_link": "sources/foundations/literature-coded-wave-frontier-v2.json"
+    },
     "pour-el-richards-1981": {
       "id": "pour-el-richards-1981",
       "kind": "LITERATURE",
@@ -12493,6 +12693,22 @@
       "ledger": "foundations/literature-causal-green-atlas-v1.json",
       "ledger_link": "sources/foundations/literature-causal-green-atlas-v1.json"
     },
+    "simpson-1984-ode": {
+      "id": "simpson-1984-ode",
+      "kind": "LITERATURE",
+      "citation": "Stephen G. Simpson, Which set existence axioms are needed to prove the Cauchy/Peano theorem for ordinary differential equations?, Journal of Symbolic Logic 49 (1984), 783-802.",
+      "year": null,
+      "source_kind": "PRIMARY_RESEARCH",
+      "stable_url": "https://doi.org/10.2307/2274131",
+      "artifact_status": "METADATA_ONLY",
+      "artifact_sha256": null,
+      "supported_statements": [
+        "Over RCA_0, the Cauchy-Peano existence theorem for ordinary differential equations is equivalent to WKL_0; stronger related ODE solution principles reach ACA_0."
+      ],
+      "boundary": "This calibrates ODE existence, not a hyperbolic PDE energy theorem, finite propagation, or a Green map.",
+      "ledger": "foundations/literature-coded-wave-frontier-v2.json",
+      "ledger_link": "sources/foundations/literature-coded-wave-frontier-v2.json"
+    },
     "weihrauch-zhong-2002": {
       "id": "weihrauch-zhong-2002",
       "kind": "LITERATURE",
@@ -12508,6 +12724,70 @@
       "boundary": "This is TTE computable analysis, not a reverse-mathematical RCA_0/WKL_0/ACA_0 classification and not specifically the cylinder fixture.",
       "ledger": "foundations/results/FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V1.json",
       "ledger_link": "sources/foundations/results/FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V1.json"
+    },
+    "weihrauch-zhong-2006-fundamental": {
+      "id": "weihrauch-zhong-2006-fundamental",
+      "kind": "LITERATURE",
+      "citation": "Klaus Weihrauch and Ning Zhong, An Algorithm for Computing Fundamental Solutions, SIAM Journal on Computing 35 (2006), 1283-1294.",
+      "year": null,
+      "source_kind": "PRIMARY_RESEARCH",
+      "stable_url": "https://doi.org/10.1137/S0097539704446360",
+      "artifact_status": "METADATA_ONLY",
+      "artifact_sha256": null,
+      "supported_statements": [
+        "The paper computes a distributional fundamental solution for every constant-coefficient differential operator in its represented setting."
+      ],
+      "boundary": "A fundamental solution is not automatically a retarded or advanced Green operator and the record does not establish causal support.",
+      "ledger": "foundations/literature-coded-wave-frontier-v2.json",
+      "ledger_link": "sources/foundations/literature-coded-wave-frontier-v2.json"
+    },
+    "weihrauch-zhong-2007-cauchy": {
+      "id": "weihrauch-zhong-2007-cauchy",
+      "kind": "LITERATURE",
+      "citation": "Klaus Weihrauch and Ning Zhong, Computable analysis of the abstract Cauchy problem in a Banach space and its applications I, Mathematical Logic Quarterly 53 (2007), 511-531.",
+      "year": null,
+      "source_kind": "PRIMARY_RESEARCH",
+      "stable_url": "https://doi.org/10.1002/malq.200710015",
+      "artifact_status": "METADATA_ONLY",
+      "artifact_sha256": null,
+      "supported_statements": [
+        "The paper gives necessary and sufficient conditions for computability of the solution operator of an abstract linear Cauchy problem with a possibly unbounded Banach-space operator in the representation approach."
+      ],
+      "boundary": "This is TTE computability, not Bishop constructivity or reverse mathematics, and it does not prove finite propagation.",
+      "ledger": "foundations/literature-coded-wave-frontier-v2.json",
+      "ledger_link": "sources/foundations/literature-coded-wave-frontier-v2.json"
+    },
+    "zhong-1999-sobolev": {
+      "id": "zhong-1999-sobolev",
+      "kind": "LITERATURE",
+      "citation": "Ning Zhong, Computability structure of the Sobolev spaces and its applications, Theoretical Computer Science 219 (1999), 487-510.",
+      "year": null,
+      "source_kind": "PRIMARY_RESEARCH",
+      "stable_url": "https://doi.org/10.1016/S0304-3975(98)00302-8",
+      "artifact_status": "METADATA_ONLY",
+      "artifact_sha256": null,
+      "supported_statements": [
+        "The paper defines computability structures on Sobolev spaces and applies them to classes of second-order hyperbolic and parabolic PDEs."
+      ],
+      "boundary": "A computable-analysis result is not a Bishop proof, a subsystem reversal, or a causal-support theorem.",
+      "ledger": "foundations/literature-coded-wave-frontier-v2.json",
+      "ledger_link": "sources/foundations/literature-coded-wave-frontier-v2.json"
+    },
+    "zhong-weihrauch-2003-distributions": {
+      "id": "zhong-weihrauch-2003-distributions",
+      "kind": "LITERATURE",
+      "citation": "Ning Zhong and Klaus Weihrauch, Computability theory of generalized functions, Journal of the ACM 50 (2003), 469-505.",
+      "year": null,
+      "source_kind": "PRIMARY_RESEARCH",
+      "stable_url": "https://doi.org/10.1145/792538.792542",
+      "artifact_status": "METADATA_ONLY",
+      "artifact_sha256": null,
+      "supported_statements": [
+        "The paper defines TTE computability for test functions and distributions and proves computability of the solution operator for the distributional inhomogeneous three-dimensional wave equation."
+      ],
+      "boundary": "The reviewed abstract does not certify retarded or advanced selection or a strict cone-support theorem; this is therefore not direct causal-Green evidence.",
+      "ledger": "foundations/literature-coded-wave-frontier-v2.json",
+      "ledger_link": "sources/foundations/literature-coded-wave-frontier-v2.json"
     },
     "zohar-burrello-2014": {
       "id": "zohar-burrello-2014",
@@ -12565,22 +12845,26 @@
     },
     {
       "level": "L2_CODED_ENERGY_CARRIER",
-      "object": "Countable Fourier coefficients with an explicit energy-tail modulus",
-      "status": "FORMALIZATION_TARGET",
-      "candidate_upper_bound": "RCA_0 sufficiency is plausible for the chosen coded representation but is not proved here",
+      "object": "Fast-Cauchy completion of mean-zero rational polygonal chiral pairs",
+      "status": "CERTIFIED",
+      "sufficient_base": "RCA_0 for the declared representation",
+      "source": "FOUNDATIONAL_CODED_POLYGONAL_WAVE_RCA0_V1",
       "adds": [
-        "coded Cauchy completion",
-        "coordinatewise phase evolution",
-        "uniform tail control"
+        "coded Cauchy completion with prescribed rate",
+        "exact rational translation group",
+        "finite-code time moduli",
+        "primitive-recursive diagonal for named real times"
       ],
-      "establishes_if_formalized": [
+      "establishes": [
         "completed energy state",
-        "norm-conserving coordinate propagator"
+        "energy-conserving real-time solution name",
+        "Cauchy existence and uniqueness in the declared carrier"
       ],
-      "open": [
-        "exact subsystem proof",
+      "does_not_establish": [
+        "necessity or reversal",
         "representation invariance",
-        "necessity or reversal"
+        "localized weak equation",
+        "causal support"
       ]
     },
     {
@@ -12593,9 +12877,11 @@
       ],
       "separation": "This coefficient-weak notion avoids claiming a spacetime distribution or localized support.",
       "open": [
-        "comparison with standard distributional solutions",
+        "coded localized test class",
+        "coefficient-to-distribution comparison",
         "weakest base"
-      ]
+      ],
+      "source_boundary": "L2 supplies a completed evolution name, but the present certificate does not formalize test-function integration."
     },
     {
       "level": "L4_SPACETIME_DISTRIBUTION",
@@ -12662,7 +12948,7 @@
       {
         "id": "M-CODED-HILBERT",
         "kind": "MATHEMATICAL_CONSTRUCTION",
-        "statement": "A coded completed energy-space element exists."
+        "statement": "A fast-Cauchy completed chiral energy state and its isometric evolution exist in the declared RCA_0 coding."
       },
       {
         "id": "M-COEFFICIENT-WEAK",
@@ -12715,10 +13001,11 @@
       {
         "from": "M-TAIL-MODULUS",
         "to": "M-CODED-HILBERT",
-        "relation": "CONDITIONAL_SUFFICIENT",
+        "relation": "SUFFICIENT",
         "evidence": [
-          "FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V1"
-        ]
+          "FOUNDATIONAL_CODED_POLYGONAL_WAVE_RCA0_V1"
+        ],
+        "meaning": "A prescribed fast Cauchy rate and finite-code time moduli support the explicit diagonal extension in RCA_0."
       },
       {
         "from": "P-FINITE-ENERGY",
@@ -12731,7 +13018,7 @@
         "to": "M-COEFFICIENT-WEAK",
         "relation": "OPEN_IMPLICATION",
         "evidence": [
-          "FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1"
+          "FOUNDATIONAL_CODED_POLYGONAL_WAVE_RCA0_V1"
         ]
       },
       {
@@ -12781,13 +13068,14 @@
   "boundaries": {
     "cube": [
       "literature completeness",
-      "coverage for the 81 still-unmapped reviewed-no-transfer coordinates",
-      "that NOT_MAPPED means no literature exists",
-      "a weakest mathematical base",
-      "a reverse-mathematical classification of hyperbolic PDE",
-      "a choice-free Green theorem",
-      "a continuum limit from finite graphs",
-      "a new Lorentzian-causal Weyl result"
+      "that RCA_0 is necessary or weakest",
+      "a WKL_0 or ACA_0 reversal",
+      "representation invariance",
+      "a spacetime-distribution theorem",
+      "causal Green support",
+      "coverage for 81 still-unmapped emitted coordinates",
+      "coherence of 124 synthetic coordinates",
+      "a new Lorentzian Weyl result"
     ],
     "migration_audit": [
       "literature completeness",
@@ -12798,12 +13086,12 @@
       "a new Lorentzian-causal result"
     ],
     "ladder": [
-      "that PRA proves an infinite completed energy-space theorem",
-      "RCA_0 sufficiency for the selected representation",
-      "a WKL_0, ACA_0, or stronger reversal",
-      "a uniform constructive modulus extractor from bare finite-energy existence",
-      "equivalence between coefficient-weak and spacetime-distributional solutions",
-      "finite propagation or causal support from Fourier truncations",
+      "that RCA_0 is necessary or the weakest base",
+      "a WKL_0, ACA_0, or Choice reversal",
+      "an upper bound for representations lacking prescribed Cauchy rates",
+      "representation invariance",
+      "a coefficient-weak or localized spacetime-distribution theorem",
+      "finite propagation or causal support from Fourier or polygonal evolution",
       "a normally-hyperbolic Green theorem",
       "the full biwave or metric-BV propagator",
       "renormalized Lorentzian products or a QME theorem",
@@ -12817,12 +13105,12 @@
     ]
   },
   "source_links": {
-    "cube": "sources/foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V3.json",
+    "cube": "sources/foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V4.json",
     "migration_audit": "sources/foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_MIGRATION_AUDIT_V2.json",
-    "ladder": "sources/foundations/results/FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V1.json",
-    "cube_report": "sources/foundations/reports/refined-intersection-cube-v3.md",
+    "ladder": "sources/foundations/results/FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V2.json",
+    "cube_report": "sources/foundations/reports/refined-intersection-cube-v4.md",
     "migration_audit_report": "sources/foundations/reports/intersection-cube-migration-audit-v2.md",
-    "ladder_report": "sources/foundations/reports/cylinder-wave-strength-ladder.md"
+    "ladder_report": "sources/foundations/reports/cylinder-wave-strength-ladder-v2.md"
   },
-  "canonical_digest": "461dac5c6ba241f33b2cf2117585ba1bef1c5d2137b373cf866a419243316d6f"
+  "canonical_digest": "5f40695375829b0edb8c6ab6d0abfd0dc4da592855f9bfb5f1a0523f49403fac"
 }

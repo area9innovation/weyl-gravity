@@ -38,6 +38,7 @@ LEDGERS = [
     FOUNDATIONS / "literature-supplement-known-attempts-v1.json",
     FOUNDATIONS / "literature-expansion-v2.json",
     FOUNDATIONS / "literature-causal-green-atlas-v1.json",
+    FOUNDATIONS / "literature-coded-wave-frontier-v2.json",
 ]
 CREATED = "2026-08-12"
 BASE_COMMIT = "448435587a0e7fe80e8f746328b427f2e0e42df7"

@@ -65,7 +65,8 @@ class MatrixSiteTests(unittest.TestCase):
         self.assertIn("grid-template-columns: 12rem minmax(0, 1fr)", css)
         manifest = json.loads((ROOT / "foundations/site/manifest.json").read_text())
         self.assertGreaterEqual(len(manifest["outputs"]), 38)
-        self.assertTrue((ROOT / "foundations/site/sources/foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V3.json").is_file())
+        self.assertTrue((ROOT / "foundations/site/sources/foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V4.json").is_file())
+        self.assertTrue((ROOT / "foundations/site/sources/foundations/results/FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V2.json").is_file())
         self.assertTrue((ROOT / "foundations/site/sources/foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_MIGRATION_AUDIT_V2.json").is_file())
 
 

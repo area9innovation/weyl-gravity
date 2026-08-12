@@ -21,9 +21,9 @@ V2_ASSETS = FOUNDATIONS / "matrix_site_v2_assets"
 SITE = FOUNDATIONS / "site"
 RESULT = FOUNDATIONS / "results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json"
 REPORT = FOUNDATIONS / "reports/matrix-explorer-site-v2.md"
-CUBE = FOUNDATIONS / "results/FOUNDATIONAL_INTERSECTION_CUBE_V3.json"
+CUBE = FOUNDATIONS / "results/FOUNDATIONAL_INTERSECTION_CUBE_V4.json"
 AUDIT = FOUNDATIONS / "results/FOUNDATIONAL_INTERSECTION_CUBE_MIGRATION_AUDIT_V2.json"
-LADDER = v1.LADDER
+LADDER = FOUNDATIONS / "results/FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V2.json"
 LEDGERS = v1.LEDGERS
 CREATED = "2026-08-12"
 BASE_COMMIT = "24e988693bd9ee6874bedf9de476202c949a2e7e"
@@ -131,9 +131,9 @@ def build_dataset() -> dict[str, Any]:
             "cube": site_link(rel(CUBE)),
             "migration_audit": site_link(rel(AUDIT)),
             "ladder": site_link(rel(LADDER)),
-            "cube_report": site_link("foundations/reports/refined-intersection-cube-v3.md"),
+            "cube_report": site_link("foundations/reports/refined-intersection-cube-v4.md"),
             "migration_audit_report": site_link("foundations/reports/intersection-cube-migration-audit-v2.md"),
-            "ladder_report": site_link("foundations/reports/cylinder-wave-strength-ladder.md"),
+            "ladder_report": site_link("foundations/reports/cylinder-wave-strength-ladder-v2.md"),
         },
     }
     dataset["canonical_digest"] = v1.canonical_digest(dataset)
@@ -161,8 +161,9 @@ coverage; **81 remain `NOT_MAPPED`**, which is not a literature-absence claim.
 The remaining **{counts['synthetic_not_mapped']}**
 coordinates are browser-visible complements that have not been assessed.
 
-Coverage is classified for **{counts['coverage_classified']}** emitted cells after
-nine status changes and five evidence overlays from the normally-hyperbolic atlas.
+Coverage is classified for **{counts['coverage_classified']}** emitted cells. The
+coded-wave pass promotes two weak-arithmetic Hilbert/operator cells from pieces
+to local results and adds five carefully typed evidence overlays.
 The cell inspector exposes coverage evidence separately from migration-review
 evidence and links to the explicit 112-decision audit ledger.
 
@@ -210,7 +211,7 @@ def generated() -> dict[Path, bytes]:
     local_evidence_paths = [ROOT / item["result_path"] for item in dataset["evidence"].values() if item["kind"] == "LOCAL_RESULT"]
     local_report_paths = [ROOT / item["report_path"] for item in dataset["evidence"].values() if item["kind"] == "LOCAL_RESULT" and item.get("report_path")]
     reports = [
-        FOUNDATIONS / "reports/refined-intersection-cube-v3.md",
+        FOUNDATIONS / "reports/refined-intersection-cube-v4.md",
         FOUNDATIONS / "reports/intersection-cube-migration-audit-v2.md",
         FOUNDATIONS / "reports/cylinder-wave-strength-ladder.md",
     ]
@@ -240,7 +241,7 @@ def generated() -> dict[Path, bytes]:
         "counts": dataset["counts"],
         "features": ["sixteen 6x6 heatmaps", "separate coverage and migration-review states", "migration evidence inspector", "multi-select filters", "full-text search", "cell inspector", "one-axis neighbors", "two-cell comparison", "URL permalinks", "filtered JSON and CSV export", "research-brief export", "typed implication graph", "strength ladder", "evidence catalogue"],
         "provenance": {"manifest": rel(SITE / "manifest.json"), "manifest_sha256": v1.sha_bytes(manifest_bytes), "canonical_data_digest": dataset["canonical_digest"]},
-        "independent_checker": {"path": "foundations/check_matrix_site_v2.py", "expected_cells": 576, "expected_emitted": 452, "expected_synthetic_not_mapped": 124, "expected_total_not_mapped": 205, "expected_evidence_records": 59, "expected_digest": dataset["canonical_digest"]},
+        "independent_checker": {"path": "foundations/check_matrix_site_v2.py", "expected_cells": 576, "expected_emitted": 452, "expected_synthetic_not_mapped": 124, "expected_total_not_mapped": 205, "expected_evidence_records": 69, "expected_digest": dataset["canonical_digest"]},
         "claim_flags": {"static_site_generated": True, "all_cartesian_coordinates_visible": True, "all_emitted_migrations_reviewed": True, "coverage_and_migration_separated": True, "all_used_evidence_resolved": True, "scientific_claims_duplicated_by_hand": False, "literature_complete": False, "unmapped_means_absent": False, "reviewed_no_transfer_means_absent": False, "priority_score_is_theorem": False, "new_lorentzian_claim": False},
         "does_not_establish": ["literature completeness", "coverage for the 81 still-unmapped reviewed-no-transfer coordinates", "that NOT_MAPPED means no literature exists", "that the 124 synthetic coordinates are coherent", "a weakest mathematical base", "a theorem ranking from interface order or neighbor counts", "a new Lorentzian-causal result"],
         "human_report": "foundations/reports/matrix-explorer-site-v2.md",

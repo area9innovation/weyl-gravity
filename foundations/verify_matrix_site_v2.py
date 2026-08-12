@@ -45,7 +45,7 @@ def verify(*, result=None, report=None) -> tuple[list[str], list[str]]:
         "migration_reviewed": 452,
         "migration_pending": 0,
         "reviewed_no_transfer": 88,
-        "evidence_records": 59,
+        "evidence_records": 69,
         "graph_edges": 10,
         "ladder_levels": 6,
     }
@@ -67,7 +67,7 @@ def verify(*, result=None, report=None) -> tuple[list[str], list[str]]:
         if flags.get(key) is not False:
             errors.append("boundary flag " + key)
     checks.append("fail-closed claim flags")
-    for token in ("576", "452", "reviewed", "0 pending", "88", "81", "124", "371", "nine status changes", "NOT_MAPPED", "not a literature-absence claim", "separate coverage and migration", "Earlier cubes remain unchanged", "does not establish"):
+    for token in ("576", "452", "reviewed", "0 pending", "88", "81", "124", "371", "two weak-arithmetic", "five carefully typed evidence overlays", "NOT_MAPPED", "not a literature-absence claim", "separate coverage and migration", "Earlier cubes remain unchanged", "does not establish"):
         if token not in text:
             errors.append("report token " + token)
     checks.append("human-readable migration and deployment report")

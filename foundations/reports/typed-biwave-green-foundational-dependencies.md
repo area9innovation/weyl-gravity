@@ -80,8 +80,16 @@ and an exact local finite-graph support certificate. It does **not** find or
 prove a reverse-mathematical subsystem classification, a Bishop-style global
 Green theorem, or Choice avoidance for the Sobolev/distributional construction.
 
-The next gate is therefore formal rather than bibliographic: choose a coded
-scalar fixture, state the representation of the geometry, Sobolev data and
-solution operator, and prove the weakest licensed upper bound for its finite-slab
-energy and Cauchy theorem. No `RCA_0`, `WKL_0`, or `ACA_0` label should be attached
-until that coding and proof have an independently checked certificate.
+That gate is now partly closed by the
+[coded polygonal wave certificate](coded-polygonal-wave-rca0.md). For its
+declared fast-Cauchy chiral energy representation, `RCA_0` suffices for a
+unique real-time isometric Cauchy evolution. This is an upper bound, not a
+necessity theorem or representation-invariant reversal, and the certificate
+does not construct a spacetime distribution or causal Green map.
+
+The next gate is L3 of the
+[updated strength ladder](cylinder-wave-strength-ladder-v2.md): formalize the
+weak transport/wave identity against a fixed coded localized test class. Only
+after that comparison is explicit should the programme attempt finite
+propagation or advanced/retarded support. The full normally-hyperbolic factor
+and the biwave Volterra wrapper remain beyond this reduced flat fixture.

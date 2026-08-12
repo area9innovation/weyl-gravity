@@ -243,18 +243,21 @@ python3 foundations/verify_refined_intersection_cube.py
 python3 -m unittest foundations.tests.test_refined_intersection_cube
 ```
 
-The first physics-to-mathematics implication rail is the
-[`cylinder-wave strength ladder`](reports/cylinder-wave-strength-ladder.md).
-It certifies exact finite Fourier dynamics and a named rational energy-tail
-modulus, then keeps coded energy solutions, reverse-mathematical strength,
-spacetime distributions, and causal Green operators at distinct levels.  Its
-typed graph also records why finite spectral truncation does not establish
-causal support:
+The current physics-to-mathematics implication rail is the
+[`cylinder-wave strength ladder v2`](reports/cylinder-wave-strength-ladder-v2.md).
+It retains the exact finite Fourier and named-tail rungs, and now certifies an
+`RCA_0` upper bound for one explicit polygonal fast-Cauchy energy representation.
+It keeps that represented Cauchy theorem separate from a subsystem reversal,
+spacetime distributions, and causal Green operators. Its typed graph also
+records why finite spectral truncation does not establish causal support:
 
 ```bash
 python3 foundations/check_cylinder_wave_strength_ladder.py
 python3 foundations/verify_cylinder_wave_strength_ladder.py
-python3 -m unittest foundations.tests.test_cylinder_wave_strength_ladder
+python3 foundations/build_coded_polygonal_wave_rca0.py --check
+python3 foundations/verify_coded_polygonal_wave_rca0.py
+python3 foundations/build_cylinder_wave_strength_ladder_v2.py --check
+python3 foundations/verify_cylinder_wave_strength_ladder_v2.py
 ```
 
 The generated
@@ -303,6 +306,22 @@ python3 foundations/build_normal_hyperbolic_factor_atlas.py --check
 python3 foundations/verify_normal_hyperbolic_factor_atlas.py
 python3 foundations/refine_intersection_cube_v3.py --check
 python3 foundations/verify_refined_intersection_cube_v3.py
+```
+
+The independent follow-up literature pass keeps reverse mathematics, proof
+mining, TTE computability, Bishop constructivity, and ZF without Countable
+Choice as distinct evidence types. The
+[`coded-wave frontier`](reports/coded-wave-frontier-v2.md) adds seven reviewed
+primary records but finds no direct literature reversal or causal-support
+theorem. The resulting [`cube v4`](reports/refined-intersection-cube-v4.md)
+promotes two weak-arithmetic Hilbert/operator cells from `PIECES_ONLY` to
+`LOCAL_RESULT` and adds five evidence overlays:
+
+```bash
+python3 foundations/build_coded_wave_frontier_v2.py --check
+python3 foundations/verify_coded_wave_frontier_v2.py
+python3 foundations/refine_intersection_cube_v4.py --check
+python3 foundations/verify_refined_intersection_cube_v4.py
 ```
 
 The append-only

@@ -1,0 +1,599 @@
+{
+  "schema_version": "foundational-coded-polygonal-wave-rca0-v1",
+  "result_id": "FOUNDATIONAL_CODED_POLYGONAL_WAVE_RCA0_V1",
+  "result_kind": "CODED_SECOND_ORDER_ARITHMETIC_UPPER_BOUND",
+  "lifecycle": "CERTIFIED",
+  "created": "2026-08-12",
+  "repository_base_commit": "a0c5fab221459d0938a8d66a91bf7386ab2b9fba",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "theorem": "RCA_0 suffices for the represented mean-zero scalar wave Cauchy theorem on the coded circle completion of Q/Z: the dense carrier is rational periodic polygonal chiral data, completed states and real times are fast Cauchy names with prescribed rates, and the solution is the unique continuous isometric extension of exact rational translations.",
+  "representation": {
+    "geometry": "The spatial circle is the complete separable metric space coded by dense Q/Z with circular rational distance; time reals are fast Cauchy sequences of rationals.",
+    "dense_state": "A pair (a,b) of zero-mean rational step functions on one finite rational partition. Their rational polygonal primitives are the right- and left-moving H1 profiles.",
+    "completed_state": "A fast Cauchy sequence of dense pairs in the chiral L2 energy metric, coded by the rational condition d(p_i,p_j)^2<=4^-i for i<=j, supplied as part of the name.",
+    "solution": "S_t(a,b)=(T_t a,T_-t b), corresponding to u(t,x)=f(x-t)+g(x+t) modulo the fixed mean-zero convention.",
+    "energy": "E=integral(a^2+b^2)=one half integral(u_x^2+u_t^2).",
+    "continuity_name": "Each finite code supplies C_p and a minimum cell width. These give an explicit time modulus; a primitive-recursive diagonal combines it with the two input Cauchy rates."
+  },
+  "formal_proof": [
+    {
+      "id": "FINITE_CODE",
+      "base": "PRA",
+      "statement": "Finite rational partitions, zero-mean step pairs, exact L2 inner products, polygonal primitives, and rational translations are primitive-recursively coded."
+    },
+    {
+      "id": "RATIONAL_GROUP",
+      "base": "PRA",
+      "depends_on": [
+        "FINITE_CODE"
+      ],
+      "statement": "S_q(a,b)=(T_q a,T_-q b) is a rational-time group action on the dense code and preserves zero mean."
+    },
+    {
+      "id": "ENERGY_ISOMETRY",
+      "base": "PRA",
+      "depends_on": [
+        "RATIONAL_GROUP"
+      ],
+      "statement": "The chiral energy d^2=integral(|a-a'|^2+|b-b'|^2) is exactly translation invariant; equivalently one half of integral(u_x^2+u_t^2) is conserved."
+    },
+    {
+      "id": "CODE_MODULUS",
+      "base": "PRA",
+      "depends_on": [
+        "FINITE_CODE"
+      ],
+      "statement": "For a finite step pair p, d(S_q p,S_r p)^2 <= C_p |q-r| below half the minimum cell width, with primitive-recursive rational C_p and a displayed binary modulus."
+    },
+    {
+      "id": "COMPLETION_NAME",
+      "base": "RCA_0",
+      "depends_on": [
+        "ENERGY_ISOMETRY"
+      ],
+      "statement": "A completed energy state is a fast Cauchy sequence of dense rational codes with d(p_i,p_j)^2<=4^-i for i<=j; applying a fixed rational translation termwise preserves its prescribed rate."
+    },
+    {
+      "id": "REAL_TIME_EXTENSION",
+      "base": "RCA_0",
+      "depends_on": [
+        "CODE_MODULUS",
+        "COMPLETION_NAME"
+      ],
+      "statement": "Given fast Cauchy names for a state and a real time, finite-code moduli provide a primitive-recursive diagonal name for S_t p."
+    },
+    {
+      "id": "CAUCHY_EXISTENCE_UNIQUENESS",
+      "base": "RCA_0",
+      "depends_on": [
+        "REAL_TIME_EXTENSION",
+        "ENERGY_ISOMETRY"
+      ],
+      "statement": "The diagonal name exists, is independent of representatives, conserves energy, has the initial value, obeys the group law, and is the unique continuous isometric extension of the dense rational-time action."
+    }
+  ],
+  "diagonal_construction": {
+    "inputs": "A state name (p_n) with d(p_i,p_j)<=2^-i and a real-time name (q_n) with |q_i-q_j|<=2^-i for i<=j.",
+    "index_rule": "Choose a strictly increasing primitive-recursive m(k)>=k+4 so that, for the computed constants of p_(k+3) and p_(k+4), C*2^-m(k)<=2^-2(k+3).",
+    "output": "z_k=S_q(m(k)) p_(k+3).",
+    "adjacent_bound": "d(z_k,z_(k+1)) <= d(p_(k+3),p_(k+4)) + sqrt(C_(p_(k+4))*|q_m(k)-q_m(k+1)|) <= 2^-(k+2).",
+    "fast_cauchy_bound": "For i<=j, telescoping the adjacent bounds gives d(z_i,z_j)<=2^-(i+1)<=2^-i.",
+    "independence": "Interleave equivalent state or time names and repeat the same isometry/modulus estimate; the output distance is zero.",
+    "logical_boundary": "All searches are bounded number searches over rational inequalities with supplied rates. No tree, subsequence, compactness, basis selection, or convergence-modulus extraction is used."
+  },
+  "fixtures": [
+    {
+      "id": "TRIANGLE_RIGHT",
+      "breaks": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "right": [
+        [
+          1,
+          1
+        ],
+        [
+          -1,
+          1
+        ]
+      ],
+      "left": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "zero_mean_checks": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "chiral_energies": [
+        [
+          1,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "total_energy": [
+        1,
+        1
+      ],
+      "minimum_cell_width": [
+        1,
+        2
+      ],
+      "translation_bound_constant": [
+        8,
+        1
+      ],
+      "time_continuity_moduli": [
+        {
+          "precision": 1,
+          "time_name_index": 5,
+          "certified_delta": [
+            1,
+            32
+          ]
+        },
+        {
+          "precision": 2,
+          "time_name_index": 7,
+          "certified_delta": [
+            1,
+            128
+          ]
+        },
+        {
+          "precision": 3,
+          "time_name_index": 9,
+          "certified_delta": [
+            1,
+            512
+          ]
+        },
+        {
+          "precision": 4,
+          "time_name_index": 11,
+          "certified_delta": [
+            1,
+            2048
+          ]
+        },
+        {
+          "precision": 5,
+          "time_name_index": 13,
+          "certified_delta": [
+            1,
+            8192
+          ]
+        },
+        {
+          "precision": 6,
+          "time_name_index": 15,
+          "certified_delta": [
+            1,
+            32768
+          ]
+        },
+        {
+          "precision": 7,
+          "time_name_index": 17,
+          "certified_delta": [
+            1,
+            131072
+          ]
+        },
+        {
+          "precision": 8,
+          "time_name_index": 19,
+          "certified_delta": [
+            1,
+            524288
+          ]
+        }
+      ]
+    },
+    {
+      "id": "QUARTER_MIXED",
+      "breaks": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "right": [
+        [
+          2,
+          1
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "left": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          -1,
+          1
+        ]
+      ],
+      "zero_mean_checks": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "chiral_energies": [
+        [
+          3,
+          2
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "total_energy": [
+        5,
+        2
+      ],
+      "minimum_cell_width": [
+        1,
+        4
+      ],
+      "translation_bound_constant": [
+        80,
+        1
+      ],
+      "time_continuity_moduli": [
+        {
+          "precision": 1,
+          "time_name_index": 9,
+          "certified_delta": [
+            1,
+            512
+          ]
+        },
+        {
+          "precision": 2,
+          "time_name_index": 11,
+          "certified_delta": [
+            1,
+            2048
+          ]
+        },
+        {
+          "precision": 3,
+          "time_name_index": 13,
+          "certified_delta": [
+            1,
+            8192
+          ]
+        },
+        {
+          "precision": 4,
+          "time_name_index": 15,
+          "certified_delta": [
+            1,
+            32768
+          ]
+        },
+        {
+          "precision": 5,
+          "time_name_index": 17,
+          "certified_delta": [
+            1,
+            131072
+          ]
+        },
+        {
+          "precision": 6,
+          "time_name_index": 19,
+          "certified_delta": [
+            1,
+            524288
+          ]
+        },
+        {
+          "precision": 7,
+          "time_name_index": 21,
+          "certified_delta": [
+            1,
+            2097152
+          ]
+        },
+        {
+          "precision": 8,
+          "time_name_index": 23,
+          "certified_delta": [
+            1,
+            8388608
+          ]
+        }
+      ]
+    },
+    {
+      "id": "NONUNIFORM_MIXED",
+      "breaks": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "right": [
+        [
+          3,
+          1
+        ],
+        [
+          -3,
+          2
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "left": [
+        [
+          0,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          -2,
+          1
+        ],
+        [
+          -2,
+          1
+        ]
+      ],
+      "zero_mean_checks": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "chiral_energies": [
+        [
+          9,
+          4
+        ],
+        [
+          5,
+          1
+        ]
+      ],
+      "total_energy": [
+        29,
+        4
+      ],
+      "minimum_cell_width": [
+        1,
+        6
+      ],
+      "translation_bound_constant": [
+        288,
+        1
+      ],
+      "time_continuity_moduli": [
+        {
+          "precision": 1,
+          "time_name_index": 11,
+          "certified_delta": [
+            1,
+            2048
+          ]
+        },
+        {
+          "precision": 2,
+          "time_name_index": 13,
+          "certified_delta": [
+            1,
+            8192
+          ]
+        },
+        {
+          "precision": 3,
+          "time_name_index": 15,
+          "certified_delta": [
+            1,
+            32768
+          ]
+        },
+        {
+          "precision": 4,
+          "time_name_index": 17,
+          "certified_delta": [
+            1,
+            131072
+          ]
+        },
+        {
+          "precision": 5,
+          "time_name_index": 19,
+          "certified_delta": [
+            1,
+            524288
+          ]
+        },
+        {
+          "precision": 6,
+          "time_name_index": 21,
+          "certified_delta": [
+            1,
+            2097152
+          ]
+        },
+        {
+          "precision": 7,
+          "time_name_index": 23,
+          "certified_delta": [
+            1,
+            8388608
+          ]
+        },
+        {
+          "precision": 8,
+          "time_name_index": 25,
+          "certified_delta": [
+            1,
+            33554432
+          ]
+        }
+      ]
+    }
+  ],
+  "literature_context": [
+    {
+      "id": "fernandez-duque-shafer-yokoyama-2020",
+      "source_kind": "PRIMARY_RESEARCH",
+      "citation": "David Fernández-Duque, Paul Shafer, and Keita Yokoyama, Ekeland's variational principle in weak and strong systems of arithmetic, Selecta Mathematica 26 (2020), 68.",
+      "stable_url": "https://arxiv.org/abs/1902.03915",
+      "artifact": {
+        "status": "CONTENT_PINNED",
+        "locator": "https://arxiv.org/pdf/1902.03915",
+        "sha256": "72579f36f47d21861a878568ee5d5199609a00e197e2d25e422011d387349638"
+      },
+      "supported_statement": "The paper records the standard RCA_0 coding of complete separable metric spaces by dense sets and of points by fast Cauchy sequences, and explicitly uses rational piecewise-linear functions as an equivalent dense presentation of C[a,b].",
+      "boundary": "This source supplies the coding convention, not the polygonal wave theorem proved by the local certificate."
+    }
+  ],
+  "independent_checker": {
+    "path": "foundations/check_coded_polygonal_wave_rca0.py",
+    "checks": [
+      "fixture closure",
+      "zero-mean code",
+      "exact rational translation group",
+      "energy isometry",
+      "explicit time-modulus inequality",
+      "formal dependency DAG",
+      "diagonal rate algebra",
+      "forbidden-principle boundary",
+      "canonical digest"
+    ],
+    "expected_digest": "7c97bdf8f2e1214fa9144f4b7fc5d2d3084765e2a800a6475e2fd5fdaa0c91e0"
+  },
+  "claim_flags": {
+    "rca0_upper_bound_for_declared_representation": true,
+    "completed_energy_state_constructed": true,
+    "real_time_solution_name_constructed": true,
+    "energy_conservation_proved": true,
+    "cauchy_uniqueness_in_declared_carrier": true,
+    "weakest_base_proved": false,
+    "reverse_lower_bound_proved": false,
+    "representation_invariance_proved": false,
+    "spacetime_distribution_constructed": false,
+    "causal_green_operator_constructed": false,
+    "choice_free_zf_theorem_proved": false,
+    "new_lorentzian_claim": false
+  },
+  "does_not_establish": [
+    "that RCA_0 is necessary or the weakest base",
+    "a WKL_0, ACA_0, or Choice lower bound",
+    "the same upper bound for bare finite-energy existence without a fast Cauchy name",
+    "representation invariance",
+    "a localized spacetime-distribution theorem",
+    "finite propagation or an advanced/retarded Green map",
+    "a variable-coefficient or curved-spacetime Cauchy theorem",
+    "the biwave or metric-BV propagator",
+    "a new LORENTZIAN-CAUSAL result"
+  ],
+  "next_gate": "Formalize the coefficient-weak transport identity against a coded localized test class, then separate that from strict support and Green-map construction.",
+  "human_report": "foundations/reports/coded-polygonal-wave-rca0.md"
+}
