@@ -2586,9 +2586,34 @@ Certificate
 \allowbreak\texttt{HAMILTONIAN\_PROBABILITY\_V1}
 \par\noindent
 replaces the fitted packet strength by a BT-Hamiltonian integral.  It remains
-a selected scalar, finite-time, single-channel result: ten-channel gluing, the
-zero-gap limit, general Eq.~(19), and every metric-BV or Lorentzian claim remain
-open.
+a selected scalar, finite-time, single-channel result.  All ten channel records
+can be combined without choosing between overlap strata if the detector keeps
+them orthogonal.  A smooth square partition
+$\sum_B|\chi_B|^2=1$ gives
+\[
+ A_{\rm rec}=16\lambda^4
+ \bigoplus_{B=0}^{9}(K_{B,T}\otimes R_B),
+ \qquad
+ \|A_{\rm rec}\|^2\leq
+ 144\lambda^8\frac{T^2\mu(X)\mu(Y)}{d^2}.
+\]
+Here every $R_B$ has squared Hilbert--Schmidt norm $9/16$.  One exceptional
+channel is the hard split $q=P$, $q^2=256/25$, and is dark for the chosen
+source; the other nine are mixed exchange channels and contribute
+\[
+ q_{\rm click}=16\lambda^8
+ \sum_{B=1}^{9}\|K_{B,T}F\|^2.
+\]
+Thus $A_{\rm rec}^*A_{\rm rec}$ and its complement form a positive normalized
+instrument when the displayed bound is at most one.  Certificate
+\par\noindent
+\texttt{REVERSE\_PHYSICS\_BT\_TEN\_CHANNEL\_RECORDED\_}
+\allowbreak\texttt{COMPACT\_WAVEPACKET\_INSTRUMENT\_V1}
+\par\noindent
+proves positivity even where shell neighborhoods overlap, because the output
+records are orthogonal.  Erasing the record would restore the signed coherent
+cross terms; that unobserved probability, the zero-gap limit, general
+Eq.~(19), and every metric-BV or Lorentzian claim remain open.
 There is nevertheless a genuine scalar hard-scattering baseline.  The
 certificate
 \par\noindent

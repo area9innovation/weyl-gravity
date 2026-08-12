@@ -1,0 +1,32 @@
+{
+  "schema": "event-v0",
+  "id": "sf:program/event/reverse-physics-bateman-ten-channel-recorded-compact-wavepacket-instrument-DONE-96511656",
+  "kind": "event",
+  "source": {
+    "path": "tools/science-forge/program/events/reverse-physics-bateman-ten-channel-recorded-compact-wavepacket-instrument-DONE-96511656.json",
+    "span": null
+  },
+  "body": {
+    "event_kind": "WORK_ITEM_TRANSITIONED",
+    "actor": "reverse-physics",
+    "base_revision": "science-forge-ir-v0",
+    "predecessors": [],
+    "when": "2026-08-12",
+    "seq": 1,
+    "payload": {
+      "target": "sf:program/work/reverse-physics-bateman-ten-channel-recorded-compact-wavepacket-instrument",
+      "to_state": "DONE",
+      "note": "All ten exact positive-frame channel residues--one hard off-resonant dark channel and nine mixed exchange-shell visible channels--a smooth square partition on a compact regular channel cover, the orthogonal-record direct-sum Hamiltonian amplitude, its 144 lambda^8 Hilbert--Schmidt bound, positive normalized effects and the dressed scalar source probability are certified. Simultaneous exchange-shell overlaps are positive in the recorded instrument. Coherent record erasure, the soft internal zero, general Eq. 19, all-time scattering, loops, gravity and LORENTZIAN-CAUSAL claims remain open. Evidence: REVERSE_PHYSICS_BT_TEN_CHANNEL_RECORDED_COMPACT_WAVEPACKET_INSTRUMENT_V1."
+    },
+    "native": {
+      "authored_by": "manual close-out after exact producer, independent mask-to-Choi Fraction verifier, overlap mutation suite and paper verification",
+      "policy": "append-only; one content-addressed file per event; the work-item file is never rewritten and the effective state is the fold of events over the base state"
+    }
+  },
+  "edges": [
+    {
+      "rel": "TRANSITIONS",
+      "to": "sf:program/work/reverse-physics-bateman-ten-channel-recorded-compact-wavepacket-instrument"
+    }
+  ]
+}

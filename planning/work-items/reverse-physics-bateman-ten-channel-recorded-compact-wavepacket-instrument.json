@@ -1,0 +1,19 @@
+{
+  "id": "sf:program/work/reverse-physics-bateman-ten-channel-recorded-compact-wavepacket-instrument",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "reverse-physics",
+    "state": "ACTIVE",
+    "objective": "Glue the ten finite-time compact BT channel kernels into one positive normalized packet instrument by retaining the intermediate channel as an orthogonal detector record and using a smooth square partition of unity across overlap strata.",
+    "depends_on": ["REVERSE_PHYSICS_BT_COMPACT_WAVEPACKET_HAMILTONIAN_PROBABILITY_V1", "REVERSE_PHYSICS_BT_SIX_POINT_FULL_PHASE_SPACE_BORN_POSITIVITY_V1", "REVERSE_PHYSICS_BT_SIX_POINT_GHOST_EVEN_HISTORY_EMBEDDING_V1", "REVERSE_PHYSICS_BT_SIX_POINT_HISTORY_INCIDENCE_ISOMETRY_V1"],
+    "activates": ["an all-ten-channel compact finite-time recorded detector with one hard and nine exchange records", "positive treatment of simultaneous-shell overlaps without signed interference", "a leading dressed scalar packet probability summed over nine visible and one dark channel record"],
+    "current_gate": "Reconstruct all ten positive-frame residue matrices, separate the fixed hard channel from the nine mixed exchange-shell channels, prove their stated exact Grams, build a smooth square partition subordinate to a compact regular channel cover, stack the ten Hamiltonian kernels into an orthogonal-record amplitude, and derive a uniform no-click positivity bound.",
+    "stop_condition": "Land an exact certificate and independent verifier for all ten residues, the square-partition gluing lemma, overlap-safe direct-sum amplitude, Hilbert--Schmidt bound, normalized click/no-click effects, declared-source probability, scalar affiliation and strict coherent-scattering boundaries.",
+    "forbid": "no internal channel record called an asymptotic particle; no orthogonal-record probability called the unobserved coherent BT cross section; no shell intersection ignored without proving why the recorded instrument stays positive there; no soft q_B=0 point admitted; no fitted detector strength; no all-time, Eq. 19, loop, gravity, BRST or LORENTZIAN-CAUSAL promotion",
+    "allowed_paths": ["reverse_physics/", "paper/06-einstein-weyl-interaction-obstructions.tex", "paper/06-einstein-weyl-interaction-obstructions.pdf", "planning/work-items/reverse-physics-bateman-ten-channel-recorded-compact-wavepacket-instrument.json", "planning/events/"],
+    "resource_hint": "In the positive four-frame the ten coefficient positions are (0,0),(1,3),(2,3),(1,2),(2,2),(3,1),(1,1),(2,1),(3,2),(3,3). The channel-B residue has 1/4 in the other nine positions and zero at B. Channel 0 has Gram spectrum {0,0,0,9/16}; channels 1..9 have {0,1/16,(2-sqrt(3))/8,(2+sqrt(3))/8}. Every residue has Hilbert--Schmidt norm squared 9/16. If sum_B |chi_B|^2=1 and D_B>=d on its support, the stacked amplitude A=16 lambda^4 directsum_B(K_B tensor R_B) obeys ||A||^2<=144 lambda^8 T^2 mu(X)mu(Y)/d^2.",
+    "input_commit": "965116562723639f33d95c7ce81a46aac3077c0e",
+    "stream": "reverse-physics"
+  }
+}

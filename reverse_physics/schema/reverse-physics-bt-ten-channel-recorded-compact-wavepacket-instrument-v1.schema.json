@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-ten-channel-recorded-compact-wavepacket-instrument-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["certificate", "schema_version", "dependency_tags", "lifecycle_state", "result_kind", "question", "answer", "ten_channel_residue_algebra", "compact_square_partition", "recorded_packet_instrument", "declared_scalar_source_probability", "interpretation", "assumptions", "does_not_establish", "next_gate", "provenance", "verification_commands", "checks", "report", "schema"],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_TEN_CHANNEL_RECORDED_COMPACT_WAVEPACKET_INSTRUMENT_V1"},
+    "schema_version": {"const": "reverse-physics-bt-ten-channel-recorded-compact-wavepacket-instrument-v1"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "ten_channel_residue_algebra": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["channel_masks", "coefficient_positions", "rule", "kinematic_classes", "residues", "exceptional_spectrum", "generic_spectrum", "all_trace_Gram", "stacked_rank", "status"],
+      "properties": {
+        "channel_masks": {"const": [7, 11, 19, 13, 21, 25, 14, 22, 26, 28]},
+        "coefficient_positions": {"const": [[0,0],[1,3],[2,3],[1,2],[2,2],[3,1],[1,1],[2,1],[3,2],[3,3]]},
+        "rule": {"const": "R_B has value 0 at coefficient position B and 1/4 at the other nine positions"},
+        "kinematic_classes": {"const": {"hard_off_resonant": [{"index": 0, "mask": 7, "invariant": "q^2=P^2=256/25"}], "mixed_exchange_shell_capable": [{"index": 1, "mask": 11}, {"index": 2, "mask": 19}, {"index": 3, "mask": 13}, {"index": 4, "mask": 21}, {"index": 5, "mask": 25}, {"index": 6, "mask": 14}, {"index": 7, "mask": 22}, {"index": 8, "mask": 26}, {"index": 9, "mask": 28}]}},
+        "residues": {"type": "array", "minItems": 10, "maxItems": 10, "items": {"$ref": "#/$defs/residue"}},
+        "exceptional_spectrum": {"const": ["0", "0", "0", "9/16"]},
+        "generic_spectrum": {"const": ["0", "1/16", "(2-sqrt(3))/8", "(2+sqrt(3))/8"]},
+        "all_trace_Gram": {"const": "9/16"},
+        "stacked_rank": {"const": 4},
+        "status": {"const": "ALL_TEN_POSITIVE_FRAME_CHANNEL_RESIDUES_COMPUTED"}
+      }
+    },
+    "compact_square_partition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["acceptance", "construction", "identity", "intersection_rule", "denominator_margin", "status"],
+      "properties": {
+        "acceptance": {"$ref": "#/$defs/text"},
+        "construction": {"const": "choose smooth psi_B supported in U_B with sum_A psi_A^2>0 on C, then chi_B=psi_B/sqrt(sum_A psi_A^2)"},
+        "identity": {"const": "sum_B |chi_B|^2=1 on C"},
+        "intersection_rule": {"$ref": "#/$defs/text"},
+        "denominator_margin": {"$ref": "#/$defs/text"},
+        "status": {"const": "SMOOTH_SQUARE_PARTITION_ON_DECLARED_COMPACT_REGULAR_COVER"}
+      }
+    },
+    "recorded_packet_instrument": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["channel_kernel", "stacked_kernel_bound", "amplitude", "amplitude_bound", "click_effect", "no_click_effect", "sufficient_positive_domain", "completeness", "overlap_disposition", "status"],
+      "properties": {
+        "channel_kernel": {"const": "beta_B,T(y,x)=chi_B(y,x)*F_T(delta_B(y,x))/D_B(y,x)"},
+        "stacked_kernel_bound": {"const": "sum_B ||K_B,T||_HS^2<=T^2*mu(X)*mu(Y)/d^2"},
+        "amplitude": {"const": "A_rec=16*lambda^4*directsum_B(K_B,T tensor R_B)"},
+        "amplitude_bound": {"const": "||A_rec||^2<=144*lambda^8*T^2*mu(X)*mu(Y)/d^2"},
+        "click_effect": {"const": "E_click=A_rec^* A_rec=256*lambda^8*sum_B(K_B,T^*K_B,T tensor G_B)"},
+        "no_click_effect": {"const": "E_no=I-E_click"},
+        "sufficient_positive_domain": {"const": "144*lambda^8*T^2*mu(X)*mu(Y)/d^2<=1"},
+        "completeness": {"const": "E_click+E_no=I"},
+        "overlap_disposition": {"const": "POSITIVE_WITHOUT_CROSS_TERMS_BECAUSE_CHANNEL_RECORDS_ARE_ORTHOGONAL"},
+        "status": {"const": "ALL_TEN_CHANNEL_RECORDED_COMPACT_PACKET_INSTRUMENT_CONSTRUCTED"}
+      }
+    },
+    "declared_scalar_source_probability": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source", "dark_channel", "visible_channels", "click", "no_click", "leading_order", "status"],
+      "properties": {
+        "source": {"const": "Psi_in=F tensor u0 with ||F||=1"},
+        "dark_channel": {"const": {"index": 0, "mask": 7, "source_Gram": "0"}},
+        "visible_channels": {"type": "array", "minItems": 9, "maxItems": 9, "items": {"type": "object", "additionalProperties": false, "required": ["index", "mask", "source_Gram"], "properties": {"index": {"type": "integer", "minimum": 1, "maximum": 9}, "mask": {"type": "integer"}, "source_Gram": {"const": "1/16"}}}},
+        "click": {"const": "q_click=16*lambda^8*sum_(B=1)^9 ||K_B,T F||^2"},
+        "no_click": {"const": "q_no=1-q_click"},
+        "leading_order": {"const": "unknown O(lambda) source corrections first enter at order lambda^9"},
+        "status": {"const": "LEADING_ALL_TEN_RECORDS_DRESSED_SCALAR_PACKET_PROBABILITY"}
+      }
+    },
+    "interpretation": {"const": {"all_ten_finite_time_channel_records": "GLUED_ON_DECLARED_COMPACT_REGULAR_ACCEPTANCE", "simultaneous_shell_overlaps": "POSITIVE_IN_ORTHOGONAL_RECORD_INSTRUMENT", "selected_dressed_scalar_probability": "CONSTRUCTED_AT_ORDER_LAMBDA8", "unobserved_coherent_BT_probability": "NOT_CONSTRUCTED", "soft_internal_zero_limit": "EXCLUDED", "all_time_scattering": "NOT_CONSTRUCTED", "general_Eq19": "NOT_PROVED"}},
+    "assumptions": {"type": "array", "minItems": 7, "maxItems": 7, "items": {"$ref": "#/$defs/text"}},
+    "does_not_establish": {"type": "array", "minItems": 13, "maxItems": 13, "items": {"$ref": "#/$defs/text"}},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "provenance": {"type": "object", "additionalProperties": false, "required": ["source_commit", "retrieval_date", "inputs", "method"], "properties": {"source_commit": {"const": "965116562723639f33d95c7ce81a46aac3077c0e"}, "retrieval_date": {"const": "2026-08-12"}, "inputs": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"type": "object", "additionalProperties": false, "required": ["path", "sha256"], "properties": {"path": {"$ref": "#/$defs/text"}, "sha256": {"$ref": "#/$defs/hash"}}}}, "method": {"$ref": "#/$defs/text"}}},
+    "verification_commands": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/text"}},
+    "checks": {"type": "object", "additionalProperties": false, "required": ["ok", "passed", "total", "failures", "details"], "properties": {"ok": {"const": true}, "passed": {"const": 28}, "total": {"const": 28}, "failures": {"const": []}, "details": {"type": "object", "minProperties": 28, "maxProperties": 28, "additionalProperties": {"const": true}}}},
+    "report": {"const": "reverse_physics/reports/bt-ten-channel-recorded-compact-wavepacket-instrument.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-ten-channel-recorded-compact-wavepacket-instrument-v1.schema.json"}
+  },
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "rational": {"type": "string", "pattern": "^-?[0-9]+(/[1-9][0-9]*)?$"},
+    "matrix4": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/rational"}}},
+    "residue": {"type": "object", "additionalProperties": false, "required": ["channel_index", "channel_mask", "matrix", "rank", "trace_Gram", "source_Gram", "type"], "properties": {"channel_index": {"type": "integer", "minimum": 0, "maximum": 9}, "channel_mask": {"type": "integer"}, "matrix": {"$ref": "#/$defs/matrix4"}, "rank": {"type": "integer", "minimum": 1, "maximum": 3}, "trace_Gram": {"const": "9/16"}, "source_Gram": {"enum": ["0", "1/16"]}, "type": {"enum": ["EXCEPTIONAL_DARK_SOURCE_CHANNEL", "GENERIC_VISIBLE_SOURCE_CHANNEL"]}}}
+  }
+}
