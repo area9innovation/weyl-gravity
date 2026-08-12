@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-coherent-compact-wavepacket-detector-dilation-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["certificate", "schema_version", "dependency_tags", "lifecycle_state", "result_kind", "question", "answer", "coherent_residue_interference", "coherent_packet_effect", "declared_scalar_source", "exact_detector_dilation", "BT_virtual_coefficient_boundary", "interpretation", "assumptions", "does_not_establish", "missing_object_ledger", "next_gate", "provenance", "verification_commands", "checks", "report", "schema"],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_COHERENT_COMPACT_WAVEPACKET_DETECTOR_DILATION_V1"},
+    "schema_version": {"const": "reverse-physics-bt-coherent-compact-wavepacket-detector-dilation-v1"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "coherent_residue_interference": {
+      "type": "object", "additionalProperties": false,
+      "required": ["Gram", "matrix", "spectrum", "disposition", "meaning", "status"],
+      "properties": {
+        "Gram": {"const": "H_AB=tr(R_A^T R_B)=(delta_AB+8)/16"},
+        "matrix": {"$ref": "#/$defs/matrix10"},
+        "spectrum": {"const": {"singlet": "81/16", "transverse": "1/16", "transverse_multiplicity": 9}},
+        "disposition": {"const": "STRICTLY_POSITIVE_TOTAL_GRAM_WITH_SIGNED_CROSS_TERMS_INCLUDED"},
+        "meaning": {"$ref": "#/$defs/text"},
+        "status": {"const": "COHERENT_TEN_RESIDUE_GRAM_COMPUTED"}
+      }
+    },
+    "coherent_packet_effect": {
+      "const": {
+        "amplitude": "A_coh=16*lambda^4*sum_B(K_B,T tensor R_B)",
+        "kernel_bound": "||sum_B beta_B,T R_B||_HS(species)^2<=81*T^2/(16*d^2)",
+        "operator_bound": "||A_coh||^2<=1296*lambda^8*T^2*mu(X)*mu(Y)/d^2",
+        "click": "E_click=A_coh^*A_coh",
+        "no_click": "E_no=I-E_click",
+        "sufficient_positive_domain": "1296*lambda^8*T^2*mu(X)*mu(Y)/d^2<=1",
+        "completeness": "E_click+E_no=I",
+        "status": "COHERENT_UNRECORDED_COMPACT_PACKET_EFFECT_CONSTRUCTED"
+      }
+    },
+    "declared_scalar_source": {
+      "const": {
+        "source": "Psi_in=F tensor u0 with ||F||=1",
+        "hard_image": "R_0 u0=0",
+        "exchange_images": "R_B u0=u0/4 for B=1,...,9",
+        "coherent_amplitude": "A_coh(F tensor u0)=4*lambda^4*(sum_(B=1)^9 K_B,T F) tensor u0",
+        "click_probability": "q_click=16*lambda^8*||sum_(B=1)^9 K_B,T F||^2",
+        "no_click_probability": "q_no=1-q_click",
+        "source_correction_boundary": "unknown O(lambda) source corrections first change probability at order lambda^9",
+        "status": "LEADING_COHERENT_DRESSED_SCALAR_PACKET_PROBABILITY"
+      }
+    },
+    "exact_detector_dilation": {
+      "const": {
+        "source_defect": "D_X=(I-A_coh^*A_coh)^(1/2)",
+        "output_defect": "D_Y=(I-A_coh A_coh^*)^(1/2)",
+        "Julia_operator": "U_J=[[D_X,-A_coh^*],[A_coh,D_Y]]",
+        "intertwining_identity": "D_Y A_coh=A_coh D_X by continuous functional calculus",
+        "unitarity": "U_J^*U_J=U_J U_J^*=I",
+        "Kraus_column": "Psi -> (D_X Psi, A_coh Psi)",
+        "probability_identity": "||D_X Psi||^2+||A_coh Psi||^2=||Psi||^2",
+        "status": "EXACT_OPERATIONAL_JULIA_DILATION_OF_LEADING_COHERENT_AMPLITUDE"
+      }
+    },
+    "BT_virtual_coefficient_boundary": {
+      "const": {
+        "formal_completion": "S=I+lambda^4 L_4+lambda^8 M_8+... with L_4=[[0,-A_4^*],[A_4,0]]",
+        "pseudo_unitarity_equation": "M_8+M_8^*+L_4^*L_4=0",
+        "forced_source_Hermitian_part": "Herm(M_8)_source=-A_4^*A_4/2",
+        "forced_survival_probability_coefficient": "2*Herm(M_8)_source=-A_4^*A_4",
+        "anti_Hermitian_freedom": "UNFIXED_BUT_DROPS_OUT_OF_ORDER_LAMBDA8_PROBABILITY",
+        "public_BT_order_lambda8_virtual_graph": "NOT_COMPUTED",
+        "common_dense_domain_BT_finite_time_evolution": "NOT_CONSTRUCTED",
+        "disposition": "CONDITIONALLY_FORCED_TARGET_NOT_DYNAMICALLY_AFFILIATED"
+      }
+    },
+    "interpretation": {"const": {"coherent_unrecorded_finite_time_click_effect": "CONSTRUCTED", "positive_normalized_detector_probability": "CONSTRUCTED_ON_EXPLICIT_CONTRACTION_DOMAIN", "exact_detector_dilation": "CONSTRUCTED_FOR_LEADING_AMPLITUDE", "BT_virtual_survival_coefficient": "CONDITIONALLY_FORCED_NOT_COMPUTED", "complete_BT_finite_time_evolution": "NOT_CONSTRUCTED", "all_time_scattering": "NOT_CONSTRUCTED", "general_Eq19": "NOT_PROVED"}},
+    "assumptions": {"type": "array", "minItems": 7, "maxItems": 7, "items": {"$ref": "#/$defs/text"}},
+    "does_not_establish": {"type": "array", "minItems": 13, "maxItems": 13, "items": {"$ref": "#/$defs/text"}},
+    "missing_object_ledger": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "object", "additionalProperties": false, "required": ["object", "status", "required_value"], "properties": {"object": {"$ref": "#/$defs/text"}, "status": {"const": "MISSING"}, "required_value": {"$ref": "#/$defs/text"}}}},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "provenance": {"type": "object", "additionalProperties": false, "required": ["source_commit", "retrieval_date", "inputs", "method"], "properties": {"source_commit": {"const": "7a112e90e988a18126f4c5f9c557f9d466bdd1e1"}, "retrieval_date": {"const": "2026-08-12"}, "inputs": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "object", "additionalProperties": false, "required": ["path", "sha256"], "properties": {"path": {"$ref": "#/$defs/text"}, "sha256": {"$ref": "#/$defs/hash"}}}}, "method": {"$ref": "#/$defs/text"}}},
+    "verification_commands": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/text"}},
+    "checks": {"type": "object", "additionalProperties": false, "required": ["ok", "passed", "total", "failures", "details"], "properties": {"ok": {"const": true}, "passed": {"const": 24}, "total": {"const": 24}, "failures": {"const": []}, "details": {"type": "object", "minProperties": 24, "maxProperties": 24, "additionalProperties": {"const": true}}}},
+    "report": {"const": "reverse_physics/reports/bt-coherent-compact-wavepacket-detector-dilation.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-coherent-compact-wavepacket-detector-dilation-v1.schema.json"}
+  },
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "rational": {"type": "string", "pattern": "^-?[0-9]+(/[1-9][0-9]*)?$"},
+    "matrix10": {"type": "array", "minItems": 10, "maxItems": 10, "items": {"type": "array", "minItems": 10, "maxItems": 10, "items": {"$ref": "#/$defs/rational"}}}
+  }
+}

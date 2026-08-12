@@ -2611,9 +2611,41 @@ instrument when the displayed bound is at most one.  Certificate
 \allowbreak\texttt{COMPACT\_WAVEPACKET\_INSTRUMENT\_V1}
 \par\noindent
 proves positivity even where shell neighborhoods overlap, because the output
-records are orthogonal.  Erasing the record would restore the signed coherent
-cross terms; that unobserved probability, the zero-gap limit, general
-Eq.~(19), and every metric-BV or Lorentzian claim remain open.
+records are orthogonal.  The record can now also be erased coherently without
+discarding its cross terms.  The exact residue-interference Gram is
+\[
+ H_{AB}=\operatorname{tr}(R_A^TR_B)=\frac{\delta_{AB}+8}{16},
+ \qquad
+ \operatorname{spec}H=\left\{\frac{81}{16},
+ \left(\frac1{16}\right)^{\!\times9}\right\}.
+\]
+Thus
+\[
+ A_{\rm coh}=16\lambda^4\sum_{B=0}^{9}K_{B,T}\otimes R_B,
+ \qquad
+ \|A_{\rm coh}\|^2\leq
+ 1296\lambda^8\frac{T^2\mu(X)\mu(Y)}{d^2},
+\]
+and $A_{\rm coh}^*A_{\rm coh}$ and its complement form a positive normalized
+instrument when the last bound is at most one.  On the selected source,
+\[
+ q_{\rm click}=16\lambda^8
+ \left\|\sum_{B=1}^{9}K_{B,T}F\right\|^2,
+\]
+which retains every coherent channel cross term.  Certificate
+\par\noindent
+\texttt{REVERSE\_PHYSICS\_BT\_COHERENT\_COMPACT\_}
+\allowbreak\texttt{WAVEPACKET\_DETECTOR\_DILATION\_V1}
+\par\noindent
+also constructs the exact Julia unitary with no-click Kraus
+$(I-A_{\rm coh}^*A_{\rm coh})^{1/2}$.  Expanding any actual pseudo-unitary BT
+completion on the same positive source/output sector would force its
+order-$\lambda^8$ source survival coefficient to have Hermitian part
+$-A_4^*A_4/2$.  The public calculation does not yet supply that virtual graph
+or a common-domain BT evolution, so the Julia complement is an operational
+detector completion, not a dynamical affiliation.  The zero-gap limit,
+general Eq.~(19), all-time scattering, and every metric-BV or Lorentzian claim
+remain open.
 There is nevertheless a genuine scalar hard-scattering baseline.  The
 certificate
 \par\noindent
