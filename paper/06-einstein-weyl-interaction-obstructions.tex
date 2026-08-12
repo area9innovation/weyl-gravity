@@ -145,8 +145,10 @@ at order $\lambda$: the off-resonant symplectic phase cancels the oscillatory
 inverse phase, every endpoint-dangerous row vanishes, and the parent cross-Gram
 is zero.  Its mixed-sign rows satisfy the cross-CCR Ward identity, while the
 unique zero-mode dressing makes the finite-mode generator neutral.  Hence the
-finite-mode quadratic carrier obeys Eq.~(19) through order $\lambda$ with
-$Q_1=0$.  The conditional $1/48$ is absent from the completed public quadratic
+unsqueezed finite-mode nonlinear factor has neutral charge support through
+order $\lambda$, with $Q_1=0$ in that charge decomposition.  This is not the
+full Eq.~(19) statement because the public map is $R=S U$.  The conditional
+$1/48$ is absent from the completed public quadratic
 map.  This does not determine the physical scalar response because the
 S-matrix transition block is a distinct operator.  The squeezed-vacuum and
 dynamical-zero-mode projector trace, continuum domains, and higher orders
@@ -156,7 +158,13 @@ This remains solely a scalar \texttt{LOCAL-ALGEBRAIC},
 The covariant Appendix-C squeeze conjugates the finite-core scalar detector
 and Born operator together, so finite-rank cyclicity preserves this zero; bare
 squeezed-vacuum pair occupation is not an additive Eq.~(19) contribution.
-The missing thermodynamic trace domain still limits Eq.~(19), while the
+Trace similarity does not imply ghost evenness.  For any homogeneous
+assignment $q(Z)=s$, the public factors obey
+$q_K=1-s$ and $q_S=2s-2=-2q_K$.  One factor has positive charge unless
+$s=1$; at that value the neutral squeezed $n=1$ projector has exact non-null
+ghost-odd norm $-z^2(z^2+2)$.  No homogeneous regular assignment therefore
+realizes the full Eq.~(19) package on the finite regulator.  The missing
+thermodynamic trace domain still limits Eq.~(19), while the
 operator distinction independently forbids reading its zero as an S-matrix
 coefficient.
 Finite paired scalar processes nevertheless have a spectator-stable
@@ -1694,9 +1702,9 @@ The signed sum is time independent and has only
 Its parent cross-Gram vanishes, so the resonant-only $dr/r$ carrier and its
 conditional $1/48$ normalization do not occur in the completed quadratic
 map.  The mixed-sign rows satisfy the exact order-$\lambda$ cross-CCR Ward
-identity; after the covariant $Z$ dressing, a neutral finite-mode projector has
-$R_tP_0R_t^\dagger=P_0+\lambda[K,P_0]+O(\lambda^2)$ with $Q_1=0$ in the
-Eq.~(19) decomposition.  The certificate
+identity; after the covariant $Z$ dressing, the unsqueezed factor has
+$U P_0U^{-1}=P_0+\lambda[K,P_0]+O(\lambda^2)$ with wholly neutral charge
+support and $Q_1=0$.  The certificate
 \texttt{REVERSE\_PHYSICS\_BT\_FULL\_SIGNED\_}
 \allowbreak\texttt{QUADRATIC\_CLOSURE\_V1} has dependency tags
 \texttt{LOCAL-ALGEBRAIC} and \texttt{REDUCED-MODE}.  This Eq.~(19)
@@ -1984,8 +1992,8 @@ does not promote the full Eq.~(19): ghost evenness, time independence,
 asymptotic limits and the continuum trace remain open, and the charge theorem
 does not descend through $Z=1$ because
 $\delta_\phi(Z-1)=Z\equiv1\pmod{(Z-1)}$.
-Ghost parity supplies a separate obstruction already at first nonlinear
-order.  The complete public signed kernel has a charge-$+1$ Krein-skew
+For the unsqueezed nonlinear factor, ghost parity supplies a separate exact
+calculation at first nonlinear order.  The complete public signed kernel has a charge-$+1$ Krein-skew
 species generator $K_+$, and covariance fixes the neutral generator to
 $Z^{-1}K_+$.  For the standard two-species one-particle projector,
 $P_1=Z^{-1}[K_+,P_0]$ is nonzero, rank four and stationary, whereas
@@ -1997,9 +2005,9 @@ norm $-7/288$, rather than zero.  Certificate
 \texttt{REVERSE\_PHYSICS\_BT\_COVARIANT\_GHOST\_}
 \allowbreak\texttt{PARITY\_BRANCH\_OBSTRUCTION\_V1}
 \par\noindent
-therefore preserves the Eq.~(19) charge formula with $Q=0$ while obstructing
-the ghost-even neutral term used by its positivity argument on this declared
-public branch.  The minimal symmetric generator
+records this unsqueezed-factor obstruction.  It is not by itself the full
+projector coefficient because $R=S U$ conjugates it by the Appendix-C
+squeeze.  The minimal symmetric generator
 $\frac12(Z^{-1}K_++Z\kappa K_+\kappa)$ does yield an exact all-order finite
 ghost-even projector, but its added conjugate branch has no public $R_t$ or
 source affiliation.  Neither this repair nor the obstruction is a continuum
@@ -2020,22 +2028,47 @@ automorphism exchanging them, independently of normalization.  Certificate
 does not impose that augmentation on the CCR/Weyl algebra: singular,
 nonlocal or unbounded operator correspondences remain open.  Localization
 at the bracketed field strength loses the zero-jet vacuum chart, while a
-doubled sheet changes the source theory.  Thus no regular
-same-chart pullback supplies the missing branch.  Combining this fact with
-the charge and parity certificates gives a scoped no-go theorem.  Directness
-of the Laurent grading and all-order neutrality force $Q_{<0}=0$, hence the
-Eq.~(19) ghost-even neutral term must be the complete pushforward.  The
-nonzero rank-four $Z^{-1}[K_+,P_0]$ coefficient then contradicts ghost
-evenness at order $\lambda$, and its odd norm $-7/288$ excludes nullity.
-Certificate
+doubled sheet changes the source theory.
+
+The complete map has a stronger charge--squeeze exhaustion.  Assign an
+arbitrary homogeneous real charge $q(Z)=s$.  Its two public factors obey
+\[
+ q_K=1-s,\qquad q_S=2s-2=-2q_K.
+\]
+For $s<1$, the full order-$\lambda$ tangent has a unique positive rank-four
+component of charge $q_K$; this includes the fixed-vacuum oscillator choice
+$s=0$.  For $s>1$, the free squeeze already contributes positive charges
+$q_S$ and $2q_S$.  Only $s=1$ avoids positive support, when directness forces
+$Q_{<0}=0$ and the full neutral projector must be ghost even.
+
+That last condition fails exactly.  On one disjoint unordered momentum pair,
+with basis $(|0\rangle,|\Omega\Omega\rangle,|\Upsilon\Upsilon\rangle)$, the
+$t=0$ squeeze generator and transported pair vacuum are
+\[
+ Q=\begin{pmatrix}0&-z&0\\0&0&0\\z&0&0\end{pmatrix},\qquad
+ SPS^{-1}=\begin{pmatrix}
+ 1&zZ^2&0\\0&0&0\\zZ^2&z^2Z^4&0
+ \end{pmatrix},\qquad Q^3=0.
+\]
+After tensoring with the public two-species $n=1$ projector, the canonical
+odd part is orthogonal to the even part but has relative norm
+\[
+ \tau_0(C^\sharp C)=-z^2(z^2+2),
+\]
+which is nonzero for every real nonzero amplitude and equals $-33/256$ at the
+normalized finite-box fixture $z=1/4$.  Certificate
 \par\noindent
+\texttt{REVERSE\_PHYSICS\_BT\_EQ19\_SPURION\_}
+\allowbreak\texttt{SQUEEZE\_DICHOTOMY\_NO\_GO\_V1}
+\par\noindent
+therefore refutes every homogeneous regular realization of the public full
+map on this finite regulator.  The earlier certificate
 \texttt{REVERSE\_PHYSICS\_BT\_REGULAR\_COVARIANT\_}
-\allowbreak\texttt{EQ19\_NO\_GO\_V1}
-\par\noindent
-refutes the public regular covariant Laurent--Fock realization on the
-$n=1$ resonant corner.  The theorem does not descend through $Z=1$ and does
-not rule out localized, doubled, singular, non-Fock or nonperturbative
-completions.
+\allowbreak\texttt{EQ19\_NO\_GO\_V1} retains its exact unsqueezed rank-four
+tangent calculation, but that tangent is not used as the complete squeezed
+coefficient.  Nonhomogeneous, localized, doubled, singular, non-Fock and
+nonperturbative completions remain open; no scalar statement transfers to the
+metric BV complex.
 The scalar history labels admit a more physical reduced-mode lift.  The
 rooted-comb sectors have dimensions $3$, $12$, and $60$, and their exact tree
 weights factor into positive per-extension rate squares

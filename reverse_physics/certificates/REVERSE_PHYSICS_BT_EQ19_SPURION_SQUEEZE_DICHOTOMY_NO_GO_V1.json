@@ -1,0 +1,375 @@
+{
+  "Eq19_requirements": {
+    "necessary_conditions_used": [
+      "no positive charge",
+      "kappa N_neutral kappa=N_neutral"
+    ],
+    "neutral_requirement": "charge zero, time independent, covariant and ghost even",
+    "positive_charge_requirement": "R_t yields no positively charged operators",
+    "remainder_requirement": "strictly negative charge, hence null and orthogonal when no positive charge occurs",
+    "source_statement": "A=R_t P_chi^(phi) R_t^dagger=N_neutral+Q_negative"
+  },
+  "answer": "No. The public nonlinear and squeeze charges are locked as q_K=1-s and q_S=2s-2=-2q_K. If s<1, the complete order-lambda squeezed tangent retains a unique nonzero rank-four component of positive charge q_K. If s>1, the free squeezed projector already contains positive q_S and 2q_S components. The only remaining assignment is s=1, where the full projector is neutral and the strict-negative remainder is forced to zero; however, the exact squeezed n=1 projector is not ghost even. Its canonical odd part has relative norm -z^2(z^2+2), nonzero for every real nonzero pair amplitude. Thus no homogeneous regular charge assignment realizes the public Eq. (19) package on this finite regulator.",
+  "assumptions": [
+    "the public finite-regulator factorization R(lambda)=S U(lambda)",
+    "the complete public order-lambda signed quadratic nonlinear factor",
+    "the Appendix-C one-sided Upsilon pair squeeze at a finite nonzero momentum",
+    "target species charges q(Omega)=+1 and q(Upsilon)=-1",
+    "a real homogeneous orbit/spurion assignment q(Z)=s",
+    "direct charge support and the Eq. (19) absence of positive-charge operators",
+    "the Eq. (19) neutral term is required to be ghost even",
+    "the public two-species n=1 projector tensored with vacuum on a disjoint pair mode",
+    "Krein adjoint fixes Z while ghost parity sends Z to Z^-1",
+    "the fixed time slice t=0, where the nonzero squeeze amplitude is real"
+  ],
+  "certificate": "REVERSE_PHYSICS_BT_EQ19_SPURION_SQUEEZE_DICHOTOMY_NO_GO_V1",
+  "checks": {
+    "items": {
+      "charge_locking_identity_is_exact": true,
+      "complete_public_nonlinear_kernel_imported": true,
+      "complete_unsqueezed_tangent_is_rank_four": true,
+      "covariant_squeeze_monomial_is_Z_squared_Upsilon_pair": true,
+      "full_even_odd_overlap_vanishes": true,
+      "full_ghost_defect_ranks_double_pair_ranks": true,
+      "full_input_is_an_exact_n1_projector": true,
+      "full_map_factorization_imported": true,
+      "full_odd_norm_polynomial_is_exact": true,
+      "full_squeezed_n1_projector_is_Krein_selfadjoint": true,
+      "full_squeezed_n1_projector_is_idempotent": true,
+      "full_squeezed_n1_trace_is_two": true,
+      "input_hashes_pinned": true,
+      "n1_input_projector_is_Krein_selfadjoint": true,
+      "n1_input_projector_is_ghost_even": true,
+      "n1_input_projector_is_rank_two": true,
+      "pair_even_odd_overlap_vanishes": true,
+      "pair_exponential_and_inverse_are_exact": true,
+      "pair_generator_cube_vanishes": true,
+      "pair_generator_is_Krein_skew": true,
+      "pair_ghost_defect_has_four_nonzero_supports": true,
+      "pair_ghost_defect_ranks_are_one_two_two_one": true,
+      "pair_ghost_parity_is_involutive": true,
+      "pair_gram_is_involutive": true,
+      "pair_odd_norm_polynomial_is_exact": true,
+      "pair_similarity_matches_recorded_Laurent_projector": true,
+      "pair_squeezed_projector_has_trace_one": true,
+      "pair_squeezed_projector_is_Krein_selfadjoint": true,
+      "pair_squeezed_projector_is_idempotent": true,
+      "physical_fixture_full_odd_norm_is_minus_33_over_256": true,
+      "physical_unordered_pair_amplitude_is_one_quarter": true,
+      "predecessor_certificates_pass": true,
+      "predecessor_is_scoped_to_unsqueezed_factor_in_successor": true,
+      "primary_source_records_no_positive_and_ghost_even_neutral": true,
+      "s_equal_one_makes_all_displayed_components_neutral": true,
+      "s_greater_than_one_has_positive_free_squeeze_components": true,
+      "s_less_than_one_has_unique_positive_nonlinear_component": true,
+      "s_one_covariant_grading_lies_in_neutral_parity_case": true,
+      "s_zero_fixed_grading_lies_in_positive_nonlinear_case": true,
+      "selected_q6_probability_is_not_used": true,
+      "source_record_marks_continuum_pushforward_deferred": true,
+      "three_real_sign_cases_are_exhaustive": true
+    },
+    "ok": true,
+    "passed": 42,
+    "total": 42
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "disposition": {
+    "all_other_homogeneous_s": "REFUTED_BY_POSITIVE_CHARGE_SUPPORT",
+    "continuum_or_non_Fock_Eq19": "NOT_RULED_OUT",
+    "covariant_orbit_s_one": "REFUTED_BY_NEUTRAL_NON_GHOST_EVEN_SQUEEZED_PROJECTOR",
+    "fixed_vacuum_s_zero": "REFUTED_BY_POSITIVE_ORDER_LAMBDA_COMPONENT",
+    "gravity_or_Lorentzian_claim": "NOT_ESTABLISHED",
+    "nonhomogeneous_or_enlarged_charge_architecture": "NOT_RULED_OUT",
+    "public_homogeneous_regular_Eq19_architecture": "REFUTED_ON_FINITE_REGULATOR",
+    "selected_q6_physical_probability": "UNCHANGED_AND_NOT_USED_AS_EQ19_EVIDENCE"
+  },
+  "does_not_establish": [
+    "a universal refutation of Bateman--Turok Eq. (19) in every representation",
+    "a no-go for nonhomogeneous, localized, doubled or dynamically enlarged charge architectures",
+    "a no-go for singular, unbounded, rigged, inequivalent or non-Fock completions",
+    "a regulator-independent continuum or asymptotic no-go theorem",
+    "a generalized-Born trace or complete transition probability",
+    "that the separately certified selected q6 probability is all-order or general",
+    "a Weyl-gravity, metric BV--BRST, QME or LORENTZIAN-CAUSAL theorem",
+    "literature priority"
+  ],
+  "exact_squeezed_n1_witness": {
+    "even_odd_overlap": "0",
+    "generator_cube": [
+      [
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0"
+      ]
+    ],
+    "ghost_odd_rank_by_support": {
+      "-2": 4,
+      "-4": 2,
+      "2": 4,
+      "4": 2
+    },
+    "laurent_support": [
+      0,
+      2,
+      4
+    ],
+    "n1_tensor_ghost_odd_relative_norm": "-z^2*(z^2+2)",
+    "pair_basis": [
+      "vacuum",
+      "OmegaOmega",
+      "UpsilonUpsilon"
+    ],
+    "pair_generator": [
+      [
+        "0",
+        "-z",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "z",
+        "0",
+        "0"
+      ]
+    ],
+    "pair_ghost_odd_relative_norm": "-z^2*(z^2+2)/2",
+    "pair_ghost_parity": [
+      [
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1"
+      ],
+      [
+        "0",
+        "1",
+        "0"
+      ]
+    ],
+    "pair_gram": [
+      [
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1"
+      ],
+      [
+        "0",
+        "1",
+        "0"
+      ]
+    ],
+    "physical_fixture_n1_odd_norm": "-33/256",
+    "physical_fixture_z": "1/4",
+    "squeezed_pair_projector": {
+      "0": [
+        [
+          "1",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0"
+        ]
+      ],
+      "2": [
+        [
+          "0",
+          "z",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "z",
+          "0",
+          "0"
+        ]
+      ],
+      "4": [
+        [
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "z**2",
+          "0"
+        ]
+      ]
+    }
+  },
+  "full_map_factorization": {
+    "locking_identity": "q_S=-2q_K",
+    "map": "R(lambda)=S U(lambda)",
+    "nonlinear_charge": "q_K=1-s",
+    "nonlinear_factor": "U(lambda)=1+lambda Z^-1 K_plus+O(lambda^2)",
+    "spurion_assignment": "q(Z)=s",
+    "squeeze_charge": "q_S=2s-2",
+    "squeeze_factor": "S=exp(Q_S), Q_S proportional to Z^2 b_Upsilon^dagger b_Upsilon^dagger-h.c.",
+    "target_species_charges": {
+      "Omega": 1,
+      "Upsilon": -1
+    }
+  },
+  "homogeneous_charge_exhaustion": {
+    "cases": [
+      {
+        "case": "s<1",
+        "charges": [
+          "q_K>0",
+          "q_S=-2q_K<0"
+        ],
+        "conclusion": "FORBIDDEN_POSITIVE_CHARGE",
+        "decisive_component": "[K_plus,P_n1] tensor P_pair at charge q_K",
+        "order_lambda_full_charges": [
+          "q_K",
+          "-q_K",
+          "-3q_K"
+        ],
+        "rank_by_component": [
+          4,
+          8,
+          4
+        ]
+      },
+      {
+        "case": "s=1",
+        "charges": [
+          "q_K=0",
+          "q_S=0"
+        ],
+        "conclusion": "NEUTRAL_TERM_NOT_GHOST_EVEN",
+        "decisive_component": "the lambda^0 squeezed n=1 projector has non-null ghost-odd part",
+        "strict_negative_remainder": "forced to zero because the complete projector is neutral"
+      },
+      {
+        "case": "s>1",
+        "charges": [
+          "q_K<0",
+          "q_S=-2q_K>0"
+        ],
+        "conclusion": "FORBIDDEN_POSITIVE_CHARGE",
+        "decisive_component": "P_n1 tensor the one-pair squeezed-projector coefficient at charge q_S",
+        "free_full_charges": [
+          "0",
+          "q_S",
+          "2q_S"
+        ],
+        "rank_by_positive_component": [
+          4,
+          2
+        ]
+      }
+    ],
+    "exhaustive_conclusion": "NO_REAL_HOMOGENEOUS_s_SATISFIES_THE_EQ19_PACKAGE",
+    "parameter_domain": "s in R"
+  },
+  "lifecycle_state": "CLASSIFIED",
+  "missing_object_ledger": [
+    "a nonhomogeneous charge extension with an independently defined direct grading",
+    "or an enlarged/doubled source whose additional branch is dynamically derived",
+    "or a singular or unbounded CCR correspondence with controlled domains and adjoints",
+    "or an extended non-Fock representation with a positive topology and generalized Born trace",
+    "a continuum-domain construction of R_plus/minus_infinity",
+    "an all-order general physical probability rather than one selected q6 experiment",
+    "a metric BV--BRST import and restored quantum master equation"
+  ],
+  "predecessor_scope": {
+    "disposition": "SUPERSEDED_AS_FULL_MAP_PROOF_ROUTE_RETAINED_AS_UNSQUEEZED_FACTOR_WITNESS",
+    "full_map_correction": "R=S U, so the unsqueezed tangent is not by itself the complete squeezed projector coefficient",
+    "predecessor": "REVERSE_PHYSICS_BT_REGULAR_COVARIANT_EQ19_NO_GO_V1",
+    "retained_exact_content": "the complete unsqueezed U(lambda) order-lambda tangent is nonzero rank four with the recorded Laurent parity defect",
+    "successor_proof": "the full-map theorem uses charge locking plus the exact squeezed n=1 projector and does not identify the unsqueezed tangent with the full coefficient"
+  },
+  "provenance": {
+    "external_source": {
+      "arxiv": "2607.00096v1",
+      "authors": "Sam Bateman and Neil Turok",
+      "equations": [
+        "16",
+        "18",
+        "19",
+        "20",
+        "Appendix C 31--34"
+      ],
+      "last_checked": "2026-08-12",
+      "title": "Escape from Ostrogradsky via Hidden Ghost Parity",
+      "url": "https://arxiv.org/abs/2607.00096"
+    },
+    "generated_by": "reverse_physics/bt_eq19_spurion_squeeze_dichotomy_no_go.py",
+    "independent_verifier": "reverse_physics/verify_bt_eq19_spurion_squeeze_dichotomy_no_go.py",
+    "input_hashes": {
+      "planning/events/reverse-physics-bateman-eq19-spurion-squeeze-dichotomy-no-go-DONE-31357dbe.json": "f43dc925fdcc4d47178a9407644656e1d499238bafac35af1d87b355744c2279",
+      "planning/work-items/reverse-physics-bateman-eq19-spurion-squeeze-dichotomy-no-go.json": "5489f8f83973b8aeaa0663b8ccb03ac46add536694db673035b1e1149010990e",
+      "reverse_physics/certificates/REVERSE_PHYSICS_BT_BORN_TRACE_V1.json": "b7d99d0a57020df6abd9dc4dceda9c284be066311be635edaf10c0ccdb8c241a",
+      "reverse_physics/certificates/REVERSE_PHYSICS_BT_COVARIANT_GHOST_PARITY_BRANCH_OBSTRUCTION_V1.json": "f78b03e729466bf89d440ce712ec5fc7c20aef9e9ce8203827e4bd5ae85c8b1e",
+      "reverse_physics/certificates/REVERSE_PHYSICS_BT_FULL_SIGNED_QUADRATIC_CLOSURE_V1.json": "5859aad65cf0dcbc1ceb9d2c3381a9a61c2d3df6457e8b77903c8a6931aa081b",
+      "reverse_physics/certificates/REVERSE_PHYSICS_BT_REGULAR_COVARIANT_EQ19_NO_GO_V1.json": "a786e084b08b30139a68ac405d41c33026bd4dbde154a92ecd01b0156d71e32a",
+      "reverse_physics/certificates/REVERSE_PHYSICS_BT_SQUEEZED_DETECTOR_SIMILARITY_V1.json": "3e8b5c7947b51c18f0ab366c5cba9c0947e6cba7a6e0bbd17a312fef26b4f23a",
+      "reverse_physics/certificates/REVERSE_PHYSICS_BT_SQUEEZED_VACUUM_IMPLEMENTABILITY_V1.json": "bec358efc7e3de8163d1b8c0931c6f112133983cf645fe630ec33bb1b84957cb",
+      "reverse_physics/certificates/REVERSE_PHYSICS_BT_ZERO_MODE_EQ19_TRILEMMA_V1.json": "31c5d45987bb484711912af5d51da1831f5632ef34278c755265fd190963edd6",
+      "reverse_physics/data/bateman_turok_hamiltonian_source_v1.json": "55ff3f989f1c5ac9bcc0688ad9c43721c22b5889c43da50fce43352c18be8fe7"
+    },
+    "source_commit": "31357dbebde04d62b2736acebcf67427b54f7b56"
+  },
+  "question": "Does any homogeneous assignment q(Z)=s make the complete public finite-regulator map R=S U satisfy both the absence of positive charge and the ghost-even neutral condition required by Bateman--Turok Eq. (19) on an admissible n=1 projector?",
+  "report": "reverse_physics/reports/bt-eq19-spurion-squeeze-dichotomy-no-go.md",
+  "result_kind": "scoped homogeneous-charge full-map Eq19 no-go theorem",
+  "schema": "reverse_physics/schema/reverse-physics-bt-eq19-spurion-squeeze-dichotomy-no-go-v1.schema.json",
+  "schema_version": 1,
+  "theorem_scope": {
+    "architecture": "the public regular finite-regulator Laurent--Fock map including both Appendix-C squeeze and complete order-lambda nonlinear factor",
+    "charge_family": "all real homogeneous assignments q(Z)=s with fixed target species charges plus/minus one",
+    "continuum_boundary": "a finite regulator falsifies the declared regular architecture but does not exclude a quotient or representation in which this finite witness is absent",
+    "quantifier_logic": "the three cases s<1, s=1 and s>1 exhaust the declared homogeneous family",
+    "time_slice": "t=0; failure of a necessary identity at one time is enough to refute an all-time Eq. (19) claim",
+    "witness": "the public two-species n=1 projector on one momentum fibre tensored with a vacuum on one disjoint unordered pair, then transported by the public squeeze"
+  },
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_eq19_spurion_squeeze_dichotomy_no_go.py --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_eq19_spurion_squeeze_dichotomy_no_go.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_eq19_spurion_squeeze_dichotomy_no_go"
+  ]
+}

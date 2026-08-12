@@ -1,4 +1,4 @@
-# Regular covariant Bateman--Turok Eq. (19) no-go
+# Regular covariant Bateman--Turok Eq. (19) unsqueezed-factor witness
 
 Certificate: `REVERSE_PHYSICS_BT_REGULAR_COVARIANT_EQ19_NO_GO_V1`.
 
@@ -6,19 +6,31 @@ Dependencies: `LOCAL-ALGEBRAIC`, `REDUCED-MODE`.
 
 Lifecycle: `CLASSIFIED`.
 
+## Full-map scope
+
+This certificate computes an exact obstruction for the unsqueezed nonlinear
+factor \(U(\lambda)\).  The complete public map is \(R=S U\), so its
+order-\(\lambda\) tangent must also be conjugated by the Appendix-C squeeze and
+the squeezed free projector must be tested separately.  The full-map
+disposition is supplied by successor certificate
+`REVERSE_PHYSICS_BT_EQ19_SPURION_SQUEEZE_DICHOTOMY_NO_GO_V1`: no homogeneous
+charge assignment works, and at the covariant assignment the contradiction is
+already the non-ghost-even squeezed free projector.  The rank-four tangent and
+its Laurent parity defect below remain exact for \(U(\lambda)\), but are not
+used as though they were the complete squeezed coefficient.
+
 ## Result
 
-The public regular covariant Laurent--Fock realization of Bateman--Turok
-Eq. (19) fails already at order \(\lambda\) on the one-particle resonant
-corner.  This is now a single contradiction theorem rather than three
-adjacent obstructions.
+The exact calculation in this certificate applies to the complete
+order-\(\lambda\) tangent of the unsqueezed nonlinear factor \(U(\lambda)\).
+On the one-particle resonant corner that tangent is nonzero, has rank four,
+and has a non-null Laurent ghost-odd part of relative norm \(-7/288\).
 
-The theorem is scoped.  It does not refute every possible interpretation of
-Eq. (19).  In particular, it does not descend the covariant charge theorem
-through the non-invariant fixed-vacuum quotient \(Z=1\), and it does not rule
-out a localized on-shell chart, a doubled source theory, a singular or
-unbounded CCR correspondence, a non-Fock representation, or a genuinely
-nonperturbative completion.
+It is not by itself a no-go theorem for the complete public map.  Since
+\(R=S U\), the tangent must be conjugated by the Appendix-C squeeze and the
+squeezed free projector must also be included.  The successor certificate
+`REVERSE_PHYSICS_BT_EQ19_SPURION_SQUEEZE_DICHOTOMY_NO_GO_V1` performs that
+full-map calculation and proves the scoped homogeneous-charge no-go.
 
 ## The necessary Eq. (19) package
 
@@ -44,10 +56,11 @@ Only one necessary condition is needed below:
  \kappa N_0\kappa=N_0.
 \]
 
-Failure on one admissible \(n=1\) corner is enough to refute the general claim
-on this declared realization.
+Failure on one admissible \(n=1\) corner would be enough to refute the general
+claim on a declared realization, but only after the complete \(R=S U\) map is
+tested.
 
-## Charge uniqueness removes the proposed remainder
+## Exact unsqueezed calculation
 
 On the covariant orbit algebra
 
@@ -56,57 +69,29 @@ On the covariant orbit algebra
  \qquad \kappa Z\kappa=Z^{-1},
 \]
 
-the certified Eq. (16) intertwiner makes the complete pushed projector charge
-zero to every formal order:
+the certified Eq. (16) intertwiner makes the unsqueezed nonlinear factor
+neutral.  Take the exact nonendpoint resonant block with daughter energies
+\(1,2\) and parent energy \(3\).  The complete public order-\(\lambda\) signed
+nonlinear kernel gives a charge-\(+1\), Krein-skew species generator \(K_+\),
+and covariance uniquely dresses it as \(K_{\rm pub}=Z^{-1}K_+\).  For the
+\(n=1\) two-species projector \(P_0\),
 
 \[
- A=A_0,\qquad A_q=0\quad(q\ne0).
-\]
-
-Apply the strict-negative charge projection to the proposed Eq. (19) split.
-Since the charge grading is a direct Laurent sum,
-
-\[
- 0=\Pi_{<0}A=\Pi_{<0}N_0+Q_{<0}=Q_{<0}.
-\]
-
-Thus
-
-\[
- Q_{<0}=0,\qquad N_0=A.
-\]
-
-There is no freedom to move a neutral ghost-odd term into the claimed
-strictly negative remainder.  Ghost evenness must hold for the entire public
-pushforward.
-
-## The first coefficient contradicts ghost evenness
-
-Take the exact nonendpoint resonant block with daughter energies \(1,2\) and
-parent energy \(3\).  The complete public order-\(\lambda\) signed kernel gives
-a charge-\(+1\), Krein-skew species generator \(K_+\).  Covariance uniquely
-dresses it as
-
-\[
- K_{\rm pub}=Z^{-1}K_+.
-\]
-
-For the \(n=1\) two-species projector \(P_0\),
-
-\[
- A_1=Z^{-1}[K_+,P_0].
+ U(\lambda)P_0U(\lambda)^{-1}
+ =P_0+\lambda U_1+O(\lambda^2),
+ \qquad U_1=Z^{-1}[K_+,P_0].
 \]
 
 The commutator has exact rank four and is nonzero.  Ghost parity gives
 
 \[
- \kappa A_1\kappa
+ \kappa U_1\kappa
  =Z\,\kappa[K_+,P_0]\kappa.
 \]
 
 The Laurent powers \(Z^{-1}\) and \(Z\) are linearly independent, so these
 coefficients cannot be equal.  Splitting the tangent canonically into its
-even and odd parts, \(A_1=B_1+C_1\), the finite orbit trace gives
+even and odd parts, \(U_1=B_1+C_1\), the finite orbit trace gives
 
 \[
  \tau_0(B_1^\sharp C_1)=0,
@@ -114,19 +99,11 @@ even and odd parts, \(A_1=B_1+C_1\), the finite orbit trace gives
  \tau_0(C_1^\sharp C_1)=-\frac7{288}.
 \]
 
-The forced odd part is therefore orthogonal but not null.  Formal series
-equality is coefficientwise: no \(\lambda^2\) or higher term can cancel a
-nonzero defect at order \(\lambda\).  Consequently
-
-\[
- \kappa A(\lambda)\kappa\ne A(\lambda)
-\]
-
-on this branch, and the Eq. (19) ghost-even neutral condition fails.
-
-Time independence and the asymptotic limits cannot rescue this identity:
-they are additional requirements, whereas one already-required algebraic
-condition is false.
+The odd part of the unsqueezed tangent is therefore orthogonal but not null.
+This is an exact obstruction to treating \(U(\lambda)P_0U(\lambda)^{-1}\) as
+the complete ghost-even neutral term.  It is not the coefficient of the
+complete squeezed projector, so coefficientwise formal equality alone does
+not promote this calculation to the full-map contradiction.
 
 ## Why the regular repair is closed
 
@@ -139,32 +116,32 @@ The support-minimal algebraic repair is known:
 \]
 
 It exponentiates to a neutral, stationary, ghost-even finite projector.  But
-the public \(R_t\) supplies only the first branch.  The missing conjugate
-branch also cannot be generated by a regular unital ghost-parity pullback on
-the same zero-jet local-symbol chart: the Eq. (16) \(\Omega\) image is a unit,
+the public nonlinear factor supplies only the first branch.  The missing
+conjugate branch also cannot be generated by a regular unital ghost-parity
+pullback on the same zero-jet local-symbol chart: the Eq. (16) \(\Omega\) image is a unit,
 whereas the \(\Upsilon\) image has zero augmentation and is not a unit.
 Automorphisms preserve units.
 
-This closes the regular same-chart repair.  It does not close singular,
-localized, doubled, unbounded or nonperturbative repairs because each changes
-one of the theorem's hypotheses.
+This closes that regular same-chart affiliation route for the nonlinear
+factor.  It does not close singular, localized, doubled, unbounded or
+nonperturbative repairs because each changes one of the calculation's
+hypotheses.
 
 ## Exact boundary
 
 Established:
 
-- uniqueness of the Eq. (19) charge split on the covariant Laurent algebra;
-- \(Q_{<0}=0\) and hence \(N_0=A\) on that branch;
-- failure of ghost evenness at order \(\lambda\) on the public \(n=1\)
-  resonant corner;
+- neutrality of the complete unsqueezed nonlinear tangent on the covariant
+  Laurent algebra;
+- failure of ghost evenness at order \(\lambda\) for that unsqueezed
+  \(n=1\) tangent;
 - exact rank four of the defect and non-null odd norm \(-7/288\);
-- impossibility of higher-order cancellation of the first formal
-  coefficient; and
 - obstruction of a regular same-chart local-symbol affiliation of the
   minimal two-branch repair.
 
 Not established:
 
+- a full-map Eq. (19) contradiction without the successor squeeze theorem;
 - a universal refutation of Eq. (19) in every representation;
 - a no-go theorem on the fixed-vacuum oscillator quotient;
 - a no-go for localized, doubled, singular, unbounded, non-Fock or

@@ -148,8 +148,10 @@ Appendix-C inverse image removes the logarithmic carrier itself.  The
 off-resonant symplectic phase of the opposite-sign preimage cancels its
 oscillatory inverse phase; the complete signed kernel is time independent,
 obeys the cross-CCR Ward identity, and has identically zero parent cross-Gram.
-Consequently its finite-mode, zero-mode-completed projector obeys Eq.~(19)
-through order $\lambda$ with $Q_1=0$.  The conditional $1/48$ and the
+Consequently the unsqueezed finite-mode nonlinear factor has neutral charge
+support through order $\lambda$, with $Q_1=0$ in that charge decomposition.
+This is not the full Eq.~(19) statement because the public map is
+$R=S U$.  The conditional $1/48$ and the
 associated finite-cell trace growth are not coefficients of this completed
 quadratic map.  This does not determine a physical response because the
 S-matrix transition block is a distinct operator.  The squeezed-vacuum and
@@ -158,7 +160,13 @@ remain open within Eq.~(19).
 On every finite paired core the covariant squeeze conjugates this Born
 operator and the detector together, so cyclicity preserves the zero trace; a
 nonzero bare squeezed-vacuum pair occupation is a fixed-detector comparison,
-not an additional Eq.~(19) term.  The squeeze's non-trace-class thermodynamic
+not an additional Eq.~(19) term.  Trace similarity does not imply ghost
+evenness.  For any homogeneous assignment $q(Z)=s$, the nonlinear and squeeze
+charges obey $q_K=1-s$ and $q_S=2s-2=-2q_K$.  If $s<1$ the nonlinear tangent
+has a positive component, if $s>1$ the free squeeze does, and at $s=1$ the
+neutral squeezed $n=1$ projector has exact non-null ghost-odd norm
+$-z^2(z^2+2)$.  Thus no homogeneous regular assignment realizes the full
+Eq.~(19) package on the finite regulator.  The squeeze's non-trace-class thermodynamic
 limit prevents a thermodynamic pushforward statement, while object typing
 independently prevents promotion of the pushforward zero to an S-matrix zero.
 Nevertheless, finite paired-process probabilities have a non-normal
@@ -1630,9 +1638,10 @@ with every other row zero.  The daughter Krein contraction has
 $G_{\Omega\Upsilon}=G_{\Upsilon\Omega}=0$; because the parent inverse metric
 is off diagonal, the quadratic parent trace has no $dr/r$ term.  The mixed-sign
 rows close the order-$\lambda$ cross-CCR Ward identity, and the unique $Z$
-dressing makes the associated finite-mode cubic generator neutral.  Thus
-$R_tP_0R_t^\dagger=P_0+\lambda[K,P_0]+O(\lambda^2)$ has the Eq.~(19)
-decomposition with $Q_1=0$ on the finite-mode quadratic carrier.  The
+dressing makes the associated finite-mode cubic generator neutral.  Thus the
+unsqueezed factor obeys
+$U P_0U^{-1}=P_0+\lambda[K,P_0]+O(\lambda^2)$ with wholly neutral charge
+support and $Q_1=0$.  The
 certificate
 \texttt{REVERSE\_PHYSICS\_BT\_FULL\_SIGNED\_}
 \allowbreak\texttt{QUADRATIC\_CLOSURE\_V1} records 128 exact preimage
@@ -2183,8 +2192,8 @@ prove ghost evenness or time independence, and it does not descend to the
 fixed-vacuum quotient: for $I=(Z-1)$,
 $\delta_\phi(Z-1)=Z\equiv1\pmod I$.  The asymptotic limits, continuum
 projector and generalized-Born trace remain unconstructed.
-The remaining parity condition is independent of charge and fails for the
-public first nonlinear branch.  On the exact resonant block with daughter
+The parity calculation for the unsqueezed nonlinear factor is independent of
+its charge support.  On the exact resonant block with daughter
 energies $1,2$ and parent energy $3$, the complete signed kernel defines a
 Krein-skew species generator $K_+$ with $[q,K_+]=K_+$.  Its unique covariant
 dressing is $K_{\rm pub}=Z^{-1}K_+$.  If $P_0$ is the standard projector onto
@@ -2202,9 +2211,10 @@ canonical even/odd split obeys, for the finite relative orbit trace,
  \tau_0(B_1^\sharp B_1)=\frac7{288},\qquad
  \tau_0(C_1^\sharp C_1)=-\frac7{288}.
 \]
-Thus the Eq.~(19) charge formula still holds with $Q=0$, but its neutral term
-does not satisfy the ghost-even condition used by the weak-ghost-symmetry
-argument, and the forced odd remainder is not null.  Certificate
+Thus this complete $U(\lambda)$ tangent is not ghost even and its odd part is
+not null.  It is not by itself the order-$\lambda$ coefficient of the full
+projector: the public factorization $R=S U$ conjugates it by the Appendix-C
+squeeze.  Certificate
 \par\noindent
 \texttt{REVERSE\_PHYSICS\_BT\_COVARIANT\_GHOST\_}
 \allowbreak\texttt{PARITY\_BRANCH\_OBSTRUCTION\_V1}
@@ -2216,7 +2226,8 @@ also gives the support-minimal finite repair
  P_{\rm even}=e^{\lambda K_{\rm even}}P_0e^{-\lambda K_{\rm even}}.
 \]
 This projector is neutral, stationary and ghost even to all formal orders,
-but the conjugate $Z$ branch is not supplied by the public $R_t$ map.  The
+but the conjugate $Z$ branch is not supplied by the public nonlinear factor.
+The
 repair therefore requires a new source-affiliation theorem; it is not a
 physical probability or an asymptotic completion.
 There is an exact obstruction to such an affiliation if it is required to be
@@ -2245,22 +2256,53 @@ zero-oscillator augmentation of the CCR algebra.  It rules out a
 filtration-continuous quantum automorphism with that regular classical
 symbol, but not a singular or unbounded correspondence.  Localizing at the
 bracketed field strength excludes the zero-jet vacuum chart; doubling the
-sheet retains two vacua but changes the source theory.  The regular
-covariant Eq.~(19) route can then be closed as one exact contradiction.
-All-order neutrality and directness of the Laurent charge grading force
-$Q_{<0}=0$, so the claimed ghost-even neutral term must equal the whole
-pushforward.  Its order-$\lambda$ coefficient is nevertheless the nonzero
-rank-four tangent $Z^{-1}[K_+,P_0]$, whose ghost conjugate has independent
-$Z$ support and whose canonical odd part has norm $-7/288$.  Coefficientwise
-formal equality prevents any higher-order repair.  Certificate
+sheet retains two vacua but changes the source theory.
+
+The complete map admits a stronger charge--squeeze exhaustion that does not
+treat the preceding tangent as the full coefficient.  Give the orbit factor
+an arbitrary homogeneous real charge $q(Z)=s$.  The nonlinear and squeeze
+charges are locked:
+\[
+ q_K=1-s,\qquad q_S=2s-2=-2q_K.
+\]
+For $s<1$, the full order-$\lambda$ squeezed tangent has charges
+$q_K,-q_K,-3q_K$; its unique positive component has rank four.  This includes
+the fixed-vacuum oscillator choice $s=0$.  For $s>1$, the free squeezed
+projector already has positive components $q_S,2q_S$, of ranks four and two
+after tensoring with the public two-species $n=1$ projector.
+
+Only $s=1$ avoids positive charge.  Then the whole projector is neutral, so
+directness forces $Q_{<0}=0$.  On one disjoint unordered momentum pair, with
+basis $(|0\rangle,|\Omega\Omega\rangle,|\Upsilon\Upsilon\rangle)$, its exact
+Krein-skew squeeze generator and transported vacuum projector at $t=0$ are
+\[
+ Q=\begin{pmatrix}0&-z&0\\0&0&0\\z&0&0\end{pmatrix},\qquad
+ SPS^{-1}=\begin{pmatrix}
+ 1&zZ^2&0\\0&0&0\\zZ^2&z^2Z^4&0
+ \end{pmatrix},\qquad Q^3=0.
+\]
+Tensoring with the public $n=1$ projector gives canonical even and odd parts
+with
+\[
+ \tau_0(B^\sharp C)=0,\qquad
+ \tau_0(C^\sharp C)=-z^2(z^2+2).
+\]
+This is nonzero for every real nonzero Appendix-C amplitude; the normalized
+finite-box fixture $z=1/4$ gives $-33/256$.  Thus the only neutral assignment
+fails the required ghost evenness already in the squeezed free projector.
+Certificate
 \par\noindent
+\texttt{REVERSE\_PHYSICS\_BT\_EQ19\_SPURION\_}
+\allowbreak\texttt{SQUEEZE\_DICHOTOMY\_NO\_GO\_V1}
+\par\noindent
+therefore refutes every homogeneous regular realization of the public full
+map on this finite regulator.  The earlier certificate
 \texttt{REVERSE\_PHYSICS\_BT\_REGULAR\_COVARIANT\_}
-\allowbreak\texttt{EQ19\_NO\_GO\_V1}
-\par\noindent
-therefore refutes the public regular covariant Laurent--Fock realization on
-the $n=1$ resonant corner.  It is not a universal refutation of Eq.~(19): the
-charge theorem does not descend through $Z=1$, and localized, doubled,
-singular, non-Fock and nonperturbative completions remain open.
+\allowbreak\texttt{EQ19\_NO\_GO\_V1} retains its exact rank-four
+unsqueezed-factor calculation, but its tangent is not used as the complete
+squeezed coefficient.  This is not a universal refutation of Eq.~(19):
+nonhomogeneous, localized, doubled, singular, non-Fock and nonperturbative
+completions remain open.
 Resolving the labels gives a different, channel-faithful lift.
 The ordered histories are rooted combs with dimensions $3$, $12$, and $60$;
 canonical one-leaf insertion has respectively $3$, $4$, and $5$ children.

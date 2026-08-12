@@ -1,0 +1,154 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-eq19-spurion-squeeze-dichotomy-no-go-v1.schema.json",
+  "title": "Full-map Bateman--Turok Eq. (19) homogeneous-charge dichotomy certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "schema_version",
+    "certificate",
+    "question",
+    "answer",
+    "result_kind",
+    "lifecycle_state",
+    "dependency_tags",
+    "assumptions",
+    "provenance",
+    "theorem_scope",
+    "Eq19_requirements",
+    "full_map_factorization",
+    "homogeneous_charge_exhaustion",
+    "exact_squeezed_n1_witness",
+    "predecessor_scope",
+    "disposition",
+    "missing_object_ledger",
+    "does_not_establish",
+    "checks",
+    "verification_commands",
+    "report"
+  ],
+  "properties": {
+    "schema": {
+      "const": "reverse_physics/schema/reverse-physics-bt-eq19-spurion-squeeze-dichotomy-no-go-v1.schema.json"
+    },
+    "schema_version": {"const": 1},
+    "certificate": {
+      "const": "REVERSE_PHYSICS_BT_EQ19_SPURION_SQUEEZE_DICHOTOMY_NO_GO_V1"
+    },
+    "question": {"type": "string", "minLength": 1},
+    "answer": {"type": "string", "minLength": 1},
+    "result_kind": {"const": "scoped homogeneous-charge full-map Eq19 no-go theorem"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "assumptions": {
+      "type": "array",
+      "minItems": 8,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_commit", "input_hashes", "external_source", "generated_by", "independent_verifier"],
+      "properties": {
+        "source_commit": {"pattern": "^[0-9a-f]{40}$"},
+        "input_hashes": {
+          "type": "object",
+          "minProperties": 9,
+          "additionalProperties": {"pattern": "^[0-9a-f]{64}$"}
+        },
+        "external_source": {
+          "type": "object",
+          "required": ["title", "authors", "arxiv", "url", "equations", "last_checked"]
+        },
+        "generated_by": {"const": "reverse_physics/bt_eq19_spurion_squeeze_dichotomy_no_go.py"},
+        "independent_verifier": {"const": "reverse_physics/verify_bt_eq19_spurion_squeeze_dichotomy_no_go.py"}
+      }
+    },
+    "theorem_scope": {
+      "type": "object",
+      "required": ["architecture", "charge_family", "witness", "time_slice", "quantifier_logic", "continuum_boundary"]
+    },
+    "Eq19_requirements": {
+      "const": {
+        "source_statement": "A=R_t P_chi^(phi) R_t^dagger=N_neutral+Q_negative",
+        "positive_charge_requirement": "R_t yields no positively charged operators",
+        "neutral_requirement": "charge zero, time independent, covariant and ghost even",
+        "remainder_requirement": "strictly negative charge, hence null and orthogonal when no positive charge occurs",
+        "necessary_conditions_used": ["no positive charge", "kappa N_neutral kappa=N_neutral"]
+      }
+    },
+    "full_map_factorization": {
+      "const": {
+        "map": "R(lambda)=S U(lambda)",
+        "nonlinear_factor": "U(lambda)=1+lambda Z^-1 K_plus+O(lambda^2)",
+        "squeeze_factor": "S=exp(Q_S), Q_S proportional to Z^2 b_Upsilon^dagger b_Upsilon^dagger-h.c.",
+        "target_species_charges": {"Omega": 1, "Upsilon": -1},
+        "spurion_assignment": "q(Z)=s",
+        "nonlinear_charge": "q_K=1-s",
+        "squeeze_charge": "q_S=2s-2",
+        "locking_identity": "q_S=-2q_K"
+      }
+    },
+    "homogeneous_charge_exhaustion": {
+      "type": "object",
+      "required": ["parameter_domain", "cases", "exhaustive_conclusion"]
+    },
+    "exact_squeezed_n1_witness": {
+      "type": "object",
+      "required": ["pair_basis", "pair_gram", "pair_ghost_parity", "pair_generator", "generator_cube", "squeezed_pair_projector", "laurent_support", "ghost_odd_rank_by_support", "pair_ghost_odd_relative_norm", "n1_tensor_ghost_odd_relative_norm", "even_odd_overlap", "physical_fixture_z", "physical_fixture_n1_odd_norm"]
+    },
+    "predecessor_scope": {
+      "const": {
+        "predecessor": "REVERSE_PHYSICS_BT_REGULAR_COVARIANT_EQ19_NO_GO_V1",
+        "retained_exact_content": "the complete unsqueezed U(lambda) order-lambda tangent is nonzero rank four with the recorded Laurent parity defect",
+        "full_map_correction": "R=S U, so the unsqueezed tangent is not by itself the complete squeezed projector coefficient",
+        "successor_proof": "the full-map theorem uses charge locking plus the exact squeezed n=1 projector and does not identify the unsqueezed tangent with the full coefficient",
+        "disposition": "SUPERSEDED_AS_FULL_MAP_PROOF_ROUTE_RETAINED_AS_UNSQUEEZED_FACTOR_WITNESS"
+      }
+    },
+    "disposition": {
+      "const": {
+        "public_homogeneous_regular_Eq19_architecture": "REFUTED_ON_FINITE_REGULATOR",
+        "fixed_vacuum_s_zero": "REFUTED_BY_POSITIVE_ORDER_LAMBDA_COMPONENT",
+        "covariant_orbit_s_one": "REFUTED_BY_NEUTRAL_NON_GHOST_EVEN_SQUEEZED_PROJECTOR",
+        "all_other_homogeneous_s": "REFUTED_BY_POSITIVE_CHARGE_SUPPORT",
+        "nonhomogeneous_or_enlarged_charge_architecture": "NOT_RULED_OUT",
+        "continuum_or_non_Fock_Eq19": "NOT_RULED_OUT",
+        "selected_q6_physical_probability": "UNCHANGED_AND_NOT_USED_AS_EQ19_EVIDENCE",
+        "gravity_or_Lorentzian_claim": "NOT_ESTABLISHED"
+      }
+    },
+    "missing_object_ledger": {
+      "type": "array",
+      "minItems": 7,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "does_not_establish": {
+      "type": "array",
+      "minItems": 8,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["total", "passed", "ok", "items"],
+      "properties": {
+        "total": {"type": "integer", "minimum": 30},
+        "passed": {"type": "integer", "minimum": 30},
+        "ok": {"const": true},
+        "items": {
+          "type": "object",
+          "minProperties": 30,
+          "additionalProperties": {"const": true}
+        }
+      }
+    },
+    "verification_commands": {
+      "type": "array",
+      "minItems": 3,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "report": {"const": "reverse_physics/reports/bt-eq19-spurion-squeeze-dichotomy-no-go.md"}
+  }
+}

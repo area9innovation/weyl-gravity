@@ -1,0 +1,32 @@
+{
+  "schema": "event-v0",
+  "id": "sf:program/event/reverse-physics-bateman-eq19-spurion-squeeze-dichotomy-no-go-DONE-31357dbe",
+  "kind": "event",
+  "source": {
+    "path": "tools/science-forge/program/events/reverse-physics-bateman-eq19-spurion-squeeze-dichotomy-no-go-DONE-31357dbe.json",
+    "span": null
+  },
+  "body": {
+    "event_kind": "WORK_ITEM_TRANSITIONED",
+    "actor": "reverse-physics",
+    "base_revision": "science-forge-ir-v0",
+    "predecessors": [],
+    "when": "2026-08-12",
+    "seq": 1,
+    "payload": {
+      "target": "sf:program/work/reverse-physics-bateman-eq19-spurion-squeeze-dichotomy-no-go",
+      "to_state": "DONE",
+      "note": "The complete finite-regulator public map R=S U has no homogeneous charge assignment compatible with the Eq. (19) package. Writing q(Z)=s gives q_K=1-s and q_S=2s-2=-2q_K. For s<1 the complete order-lambda tangent retains a unique positive q_K component; for s>1 the free squeeze has positive q_S support; at s=1 the whole squeezed n=1 projector is neutral but its exact ghost-odd relative norm is -z^2(z^2+2), nonzero for every real nonzero pair amplitude. This supersedes use of the unsqueezed tangent as the complete full-map coefficient while retaining it as the s<1 positive-charge witness. Extended, nonhomogeneous, singular, non-Fock, continuum and nonperturbative completions remain open. Evidence: REVERSE_PHYSICS_BT_EQ19_SPURION_SQUEEZE_DICHOTOMY_NO_GO_V1."
+    },
+    "native": {
+      "authored_by": "manual close-out after exact full-map squeeze and homogeneous-charge exhaustion",
+      "policy": "append-only; one content-addressed file per event; the predecessor certificate is not rewritten"
+    }
+  },
+  "edges": [
+    {
+      "rel": "TRANSITIONS",
+      "to": "sf:program/work/reverse-physics-bateman-eq19-spurion-squeeze-dichotomy-no-go"
+    }
+  ]
+}
