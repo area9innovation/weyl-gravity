@@ -226,6 +226,14 @@ break shift charge.  Its projector has charge support $\{-6,0,+6\}$ and scalar
 orbit support $\{Z^{-6},1,Z^6\}$.  This gives a dressed physical-scalar
 probability jet, not the standard shift-invariant $P_\chi^{(\phi)}$ or general
 Eq.~(19).
+On the finite covariant Gaussian core this dressed source is also explicit in
+the scalar Jordan oscillators.  Its two three-mode branches carry $Z^{-3}$
+and $Z^3$; each is null and their cross CCR gives unit pairing, so the
+symmetric source has norm one.  Because the complete six-point amplitude
+starts at $\lambda^4$, unknown $O(\lambda)$ corrections to the source first
+enter probability at $\lambda^9$ and cannot change the displayed
+$\lambda^8$ rate.  The ordinary massless Fock thermodynamic source remains
+infrared-obstructed.
 Independently, the projected three-channel hard loop logarithm closes the
 Callan--Symanzik equation exactly with the Born rate and one-loop beta
 function.  This yields the positive leading-log nonforward prediction
@@ -3222,6 +3230,39 @@ therefore establishes a leading physical-scalar probability jet for a
 coupling-dressed, shift-breaking source.  It does not construct the standard
 $P_\chi^{(\phi)}$, repair its ghost-parity obstruction, prove general
 Eq.~(19), or supply a convergent global $R_t$ or all-time probability.
+
+At the leading order needed here, the scalar state is no longer merely an
+inverse symbol.  On
+$|0_{\phi;t}\rangle=R_t^\dagger|0_{\rm BT}\rangle$ the pulled creators are
+\[
+ d_\Upsilon^\dagger=\frac{Z^{-1}a_1^\dagger}{\sqrt{2E}},\qquad
+ d_\Omega^\dagger|0_{\phi;t}\rangle
+ =\frac{Z(a_2^\dagger-2iEt\,a_1^\dagger)}
+ {4E^2\sqrt{2E}}|0_{\phi;t}\rangle.
+\]
+For the three distinct detector modes,
+\[
+ \psi_{\phi,+}^{(0)}=\frac1{\sqrt2}\left[
+ Z^{-3}\prod_j\frac{a_{1j}^\dagger}{\sqrt{2E_j}}
+ +Z^3\prod_j\frac{a_{2j}^\dagger-2iE_jt\,a_{1j}^\dagger}
+ {4E_j^2\sqrt{2E_j}}
+ \right]|0_{\phi;t}\rangle.
+\]
+The two pure branches are null.  Their cross pairing is one because each leg
+contributes
+$(2E)^3/[\sqrt{2E}\,4E^2\sqrt{2E}]=1$; hence the displayed state has norm
+one.  If $\psi_\phi=\psi_0+\lambda\psi_1+\cdots$ and
+$A=\lambda^4A_4+\lambda^5A_5+\cdots$, its leading probability is
+$\lambda^8\langle A_4\psi_0,A_4\psi_0\rangle_K$.  Certificate
+\par\noindent
+\texttt{REVERSE\_PHYSICS\_BT\_SCALAR\_}
+\allowbreak\texttt{DRESSED\_SOURCE\_FREE\_}
+\allowbreak\texttt{NORMAL\_FORM\_V1}
+\par\noindent
+therefore proves that unknown nonlinear source corrections cannot affect the
+certified leading rate.  This is a finite-mode Gaussian-core state, not a
+vector in the infrared-obstructed ordinary massless Fock thermodynamic
+completion.
 
 The classified endpoint freedom does not supply this complement by one fixed
 prescription on the minimal two-profile probe lift.  Take

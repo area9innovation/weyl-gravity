@@ -208,6 +208,11 @@ rate.  Positivity forces the source to break shift charge: its projector has
 charge support $\{-6,0,+6\}$ and orbit support $\{Z^{-6},1,Z^6\}$.  This is a
 selected physical-scalar probability jet, not the shift-invariant
 $P_\chi^{(\phi)}$, general Eq.~(19), or a metric-BV result.
+The leading scalar source is explicit on the finite covariant Gaussian core:
+its $Z^{-3}$ and $Z^3$ Jordan-oscillator branches are individually null and
+cross-pair to one.  Unknown $O(\lambda)$ source corrections first affect
+probability at $\lambda^9$, so they cannot alter the leading $\lambda^8$
+rate.  No ordinary massless Fock thermodynamic vector follows.
 \end{abstract}
 
 \section*{AI authorship and computational accountability}
@@ -2494,6 +2499,26 @@ Certificate
 therefore supplies a dressed physical-scalar result while leaving the
 standard shift-invariant $P_\chi^{(\phi)}$, general Eq.~(19), all-time
 scattering and the metric BV carrier open.
+The leading source has the explicit finite-core form
+\[
+ \psi_{\phi,+}^{(0)}=\frac1{\sqrt2}\left[
+ Z^{-3}\prod_j\frac{a_{1j}^\dagger}{\sqrt{2E_j}}
+ +Z^3\prod_j\frac{a_{2j}^\dagger-2iE_jt\,a_{1j}^\dagger}
+ {4E_j^2\sqrt{2E_j}}
+ \right]|0_{\phi;t}\rangle,
+\]
+where $|0_{\phi;t}\rangle=R_t^\dagger|0_{\rm BT}\rangle$ is the pulled
+squeezed vacuum.  Each branch is null and their cross pairing is one by the
+repaired scalar CCR.  Since the six-point amplitude starts at $\lambda^4$,
+an $O(\lambda)$ source correction first enters the probability at
+$\lambda^9$.  Certificate
+\par\noindent
+\texttt{REVERSE\_PHYSICS\_BT\_SCALAR\_}
+\allowbreak\texttt{DRESSED\_SOURCE\_FREE\_}
+\allowbreak\texttt{NORMAL\_FORM\_V1}
+\par\noindent
+therefore removes the leading source-symbol ambiguity while retaining the
+ordinary-Fock infrared obstruction and every metric-BV boundary.
 There is nevertheless a genuine scalar hard-scattering baseline.  The
 certificate
 \par\noindent

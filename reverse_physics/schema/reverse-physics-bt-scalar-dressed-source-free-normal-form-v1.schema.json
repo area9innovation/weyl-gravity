@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-scalar-dressed-source-free-normal-form-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["certificate", "schema_version", "dependency_tags", "lifecycle_state", "result_kind", "question", "answer", "explicit_leading_scalar_source", "perturbative_order_protection", "interpretation", "assumptions", "does_not_establish", "next_gate", "provenance", "verification_commands", "checks", "schema"],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_SCALAR_DRESSED_SOURCE_FREE_NORMAL_FORM_V1"},
+    "schema_version": {"const": "reverse-physics-bt-scalar-dressed-source-free-normal-form-v1"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "explicit_leading_scalar_source": {
+      "type": "object", "additionalProperties": false,
+      "required": ["pulled_vacuum", "pulled_vacuum_property", "one_mode_Upsilon_creator", "one_mode_Omega_creator_full", "one_mode_Omega_creator_on_vacuum", "three_mode_source", "state_orbit_support", "projector_orbit_support", "Krein_norm", "ghost_parity", "status"],
+      "properties": {
+        "pulled_vacuum": {"const": "|0_phi;t>=Rt^dagger|0_BT>=exp[-alpha_t(Q_cov)]|0_phi>"},
+        "pulled_vacuum_property": {"const": "d_Upsilon,j|0_phi;t>=d_Omega,j|0_phi;t>=0"},
+        "one_mode_Upsilon_creator": {"const": "d_Upsilon^dagger=Z^-1*a1^dagger/sqrt(2E)"},
+        "one_mode_Omega_creator_full": {"const": "d_Omega^dagger=Z*(a2^dagger-2iEt*a1^dagger+exp(-2iEt)*a1(-p))/(4E^2*sqrt(2E))"},
+        "one_mode_Omega_creator_on_vacuum": {"const": "d_Omega^dagger|0_phi;t>=Z*(a2^dagger-2iEt*a1^dagger)/(4E^2*sqrt(2E))|0_phi;t>"},
+        "three_mode_source": {"$ref": "#/$defs/text"},
+        "state_orbit_support": {"const": ["Z^-3", "Z^3"]},
+        "projector_orbit_support": {"const": ["Z^-6", "1", "Z^6"]},
+        "Krein_norm": {"const": "1"},
+        "ghost_parity": {"const": "EVEN_UNDER_THE_PULLED_FUNDAMENTAL_SYMMETRY"},
+        "status": {"const": "EXPLICIT_LEADING_FINITE_MODE_SCALAR_SOURCE_NORMAL_FORM"}
+      }
+    },
+    "perturbative_order_protection": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_series", "transition_series", "leading_amplitude", "leading_probability", "first_source_correction_order_in_probability", "consequence"],
+      "properties": {
+        "source_series": {"const": "psi_phi=psi0+lambda*psi1+O(lambda^2)"},
+        "transition_series": {"const": "A=lambda^4*A4+lambda^5*A5+O(lambda^6)"},
+        "leading_amplitude": {"const": "lambda^4*A4*psi0"},
+        "leading_probability": {"const": "lambda^8*<A4 psi0,A4 psi0>"},
+        "first_source_correction_order_in_probability": {"const": "lambda^9"},
+        "consequence": {"const": "the lambda^8 detector rate uses only psi_phi,+^(0)"}
+      }
+    },
+    "interpretation": {"const": {"leading_scalar_source": "EXPLICIT_ON_FINITE_COVARIANT_CORE", "leading_lambda8_probability": "UNAFFECTED_BY_UNKNOWN_O_LAMBDA_SOURCE_CORRECTIONS", "ordinary_massless_Fock_thermodynamic_source": "OBSTRUCTED", "standard_shift_invariant_P_chi": "NOT_CONSTRUCTED", "general_Eq19": "NOT_PROVED", "all_time_probability": "NOT_CONSTRUCTED"}},
+    "assumptions": {"type": "array", "minItems": 7, "maxItems": 7, "items": {"$ref": "#/$defs/text"}},
+    "does_not_establish": {"type": "array", "minItems": 13, "items": {"$ref": "#/$defs/text"}},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "provenance": {"type": "object", "additionalProperties": false, "required": ["source_commit", "retrieval_date", "inputs", "method"], "properties": {"source_commit": {"const": "9e37dddd"}, "retrieval_date": {"const": "2026-08-12"}, "inputs": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"type": "object", "additionalProperties": false, "required": ["path", "sha256"], "properties": {"path": {"$ref": "#/$defs/text"}, "sha256": {"$ref": "#/$defs/hash"}}}}, "method": {"$ref": "#/$defs/text"}}},
+    "verification_commands": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/text"}},
+    "checks": {"type": "object", "additionalProperties": false, "required": ["ok", "passed", "total", "failures", "details"], "properties": {"ok": {"const": true}, "passed": {"const": 23}, "total": {"const": 23}, "failures": {"const": []}, "details": {"type": "object", "minProperties": 23, "maxProperties": 23, "additionalProperties": {"const": true}}}},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-scalar-dressed-source-free-normal-form-v1.schema.json"}
+  },
+  "$defs": {"text": {"type": "string", "minLength": 1}, "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+}

@@ -1,0 +1,19 @@
+{
+  "id": "sf:program/work/reverse-physics-bateman-scalar-dressed-source-free-normal-form",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "reverse-physics",
+    "state": "ACTIVE",
+    "objective": "Expand the Rt-affiliated dressed scalar source on the published free Appendix-C oscillator map and covariant squeezed vacuum, prove its exact finite-mode normalization, and decide whether the explicit leading source is sufficient for the lambda^8 detector probability coefficient.",
+    "depends_on": ["REVERSE_PHYSICS_BT_SCALAR_DRESSED_POSITIVE_SOURCE_AFFILIATION_V1", "REVERSE_PHYSICS_BT_RT_JORDAN_KERNEL_V1", "REVERSE_PHYSICS_BT_ZERO_MODE_EQ19_TRILEMMA_V1", "REVERSE_PHYSICS_BT_CROSS_KREIN_TRACE_LIMIT_V1", "REVERSE_PHYSICS_BT_SQUEEZED_VACUUM_IMPLEMENTABILITY_V1"],
+    "activates": ["an explicit scalar Jordan-oscillator source normal form on the finite detector core", "a proof that unknown nonlinear Rt source corrections do not affect the leading lambda^8 probability", "a sharp separation between finite-core preparation and the obstructed ordinary-Fock infrared limit"],
+    "current_gate": "Pull the positive three-particle source and target vacuum through the covariant leading Appendix-C map, retain all Z powers and the squeezed-vacuum factor, prove the cross-CCR normalization for three distinct momenta, and perform exact perturbative order counting.",
+    "stop_condition": "Land an exact certificate and method-distinct verifier for the explicit leading source, vacuum annihilation identities, charge/orbit branches, norm, ghost parity and lambda-order sufficiency, while preserving the ordinary-Fock infrared obstruction and all general Eq. 19 boundaries.",
+    "forbid": "no bare scalar Fock vacuum substituted for the pulled squeezed vacuum; no fixed-vacuum Z=1 quotient used with covariant charge; no finite-mode vector called a thermodynamic Fock vector; no leading normal form called the full nonlinear Rt; no standard P_chi, all-time probability, gravity, BRST, or LORENTZIAN-CAUSAL promotion",
+    "allowed_paths": ["reverse_physics/", "notes/bateman-turok-embedding.md", "paper/05-interaction-obstructions.tex", "paper/05-interaction-obstructions.pdf", "paper/06-einstein-weyl-interaction-obstructions.tex", "paper/06-einstein-weyl-interaction-obstructions.pdf", "planning/work-items/reverse-physics-bateman-scalar-dressed-source-free-normal-form.json", "planning/events/"],
+    "resource_hint": "Use d_Upsilon^dagger=Z^-1 a1^dagger/sqrt(2E) and d_Omega^dagger=Z(a2^dagger-2iEt a1^dagger+exp(-2iEt)a1(-p))/(4E^2 sqrt(2E)). On |0_phi;t>=Rt^dagger|0_BT>, both pulled annihilators vanish and the last term drops. The cross commutator is (2E)^3/[sqrt(2E) 4E^2 sqrt(2E)]=1. For three distinct modes, the two pure-species branches are null and their cross pairings are one. The complete tree amplitude begins at lambda^4, so psi=psi0+O(lambda) has probability lambda^8 ||A4 psi0||^2+O(lambda^9).",
+    "input_commit": "9e37dddd",
+    "stream": "reverse-physics"
+  }
+}
