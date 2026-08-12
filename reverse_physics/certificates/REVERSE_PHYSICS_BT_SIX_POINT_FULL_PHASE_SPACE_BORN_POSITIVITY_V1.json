@@ -1,0 +1,407 @@
+{
+  "answer": "Yes, locally and at tree level. For every unordered three-three split S, the complete 220-tree middle external-mass coefficient is c_S=c_Sc=(1/4) sum_{A!=S} 1/s_A, where A runs over the ten unordered three-particle channels and s_A is their massless invariant. The auxiliary O(1,1) two-quartic-tree species-flow matrix is J-I: the unique forbidden channel puts all three like external species on one vertex. Its determinant is -9, so the ten real coefficients have no common zero wherever every channel is finite and nonzero. The six-delta-prime coefficient 2 sum c_S^2 is therefore strictly positive at every regular physical point with positive local measure. An exact rational chart has Jacobian rank five, confirming that the result is not a lower-dimensional slice. This does not regulate or integrate the channel poles and does not prove Eq. (19).",
+  "assumptions": [
+    "The public BT perfect-square scalar cubic and quartic vertices and common tree normalization are used.",
+    "The leading square-free six-external-mass coefficient is identified with the three-Omega/three-Upsilon auxiliary tree assignment by the linearized Eq. (16) external-leg map.",
+    "All ten massless three-particle channel invariants are finite and nonzero.",
+    "The external phase-space/detector weight is regular and positive at the local physical point.",
+    "The common tree phase is omitted before the real tree coefficient is squared."
+  ],
+  "certificate": "REVERSE_PHYSICS_BT_SIX_POINT_FULL_PHASE_SPACE_BORN_POSITIVITY_V1",
+  "checks": {
+    "details": {
+      "all_exact_full_chart_fixtures_are_strictly_positive": true,
+      "all_fixture_channels_are_regular": true,
+      "all_fixtures_retain_twenty_middle_coefficients": true,
+      "auxiliary_species_flow_is_J_minus_I": true,
+      "common_zero_is_impossible_at_regular_kinematics": true,
+      "fixture_energies_are_future_positive": true,
+      "fixture_momenta_are_massless_and_conserved": true,
+      "incidence_map_is_invertible_in_characteristic_zero": true,
+      "input_hashes_pinned": true,
+      "integration_eq19_gravity_loops_and_causality_remain_open": true,
+      "rank_minor_is_exact_and_nonzero": true,
+      "rational_chart_has_exact_rank_five": true,
+      "six_delta_prime_sign_is_positive": true,
+      "six_shape_and_orientation_fixtures": true,
+      "ten_unordered_three_three_channels": true,
+      "universal_formula_matches_complete_220_tree_kernel": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 16,
+    "total": 16
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "a prescription at any internal three-particle channel pole",
+    "a regulated or integrated six-body probability",
+    "normalization of a complete scattering probability",
+    "real-virtual or KLN cancellation",
+    "positivity beyond tree level",
+    "a Moller, LSZ, or S operator",
+    "Bateman--Turok Eq. (19)",
+    "a derivation of the full nonlinear R_t projector transport",
+    "a gravity or metric BV/BRST lift",
+    "anything LORENTZIAN-CAUSAL",
+    "literature priority"
+  ],
+  "full_physical_chart": {
+    "exact_fixtures": [
+      {
+        "all_ten_channels_regular": true,
+        "energies": [
+          "8/9",
+          "52/45",
+          "52/45"
+        ],
+        "massless_and_conserved": true,
+        "parameters": [
+          "3/2",
+          "-3/2",
+          "1/2",
+          "2/3",
+          "1/4"
+        ],
+        "strict_square_sum": true,
+        "twenty_middle_coefficients": true,
+        "universal_formula_matches_complete_tree_sum": true
+      },
+      {
+        "all_ten_channels_regular": true,
+        "energies": [
+          "88/75",
+          "29/25",
+          "13/15"
+        ],
+        "massless_and_conserved": true,
+        "parameters": [
+          "5/2",
+          "-3/2",
+          "1",
+          "2/5",
+          "3/7"
+        ],
+        "strict_square_sum": true,
+        "twenty_middle_coefficients": true,
+        "universal_formula_matches_complete_tree_sum": true
+      },
+      {
+        "all_ten_channels_regular": true,
+        "energies": [
+          "88/75",
+          "13/15",
+          "29/25"
+        ],
+        "massless_and_conserved": true,
+        "parameters": [
+          "3/2",
+          "-5/2",
+          "3/2",
+          "4/5",
+          "5/6"
+        ],
+        "strict_square_sum": true,
+        "twenty_middle_coefficients": true,
+        "universal_formula_matches_complete_tree_sum": true
+      },
+      {
+        "all_ten_channels_regular": true,
+        "energies": [
+          "376/315",
+          "13/14",
+          "97/90"
+        ],
+        "massless_and_conserved": true,
+        "parameters": [
+          "7/4",
+          "-9/4",
+          "5/3",
+          "7/6",
+          "2/9"
+        ],
+        "strict_square_sum": true,
+        "twenty_middle_coefficients": true,
+        "universal_formula_matches_complete_tree_sum": true
+      },
+      {
+        "all_ten_channels_regular": true,
+        "energies": [
+          "376/315",
+          "97/90",
+          "13/14"
+        ],
+        "massless_and_conserved": true,
+        "parameters": [
+          "9/4",
+          "-7/4",
+          "2/3",
+          "3/7",
+          "4/9"
+        ],
+        "strict_square_sum": true,
+        "twenty_middle_coefficients": true,
+        "universal_formula_matches_complete_tree_sum": true
+      },
+      {
+        "all_ten_channels_regular": true,
+        "energies": [
+          "208/175",
+          "68/75",
+          "116/105"
+        ],
+        "massless_and_conserved": true,
+        "parameters": [
+          "5/3",
+          "-7/3",
+          "4/5",
+          "5/8",
+          "7/10"
+        ],
+        "strict_square_sum": true,
+        "twenty_middle_coefficients": true,
+        "universal_formula_matches_complete_tree_sum": true
+      }
+    ],
+    "fixed_total_momentum": [
+      "16/5",
+      "0",
+      "0",
+      "0"
+    ],
+    "jacobian_certificate": {
+      "base_point": [
+        "2",
+        "-2",
+        "0",
+        "1",
+        "0"
+      ],
+      "jacobian_shape": [
+        12,
+        5
+      ],
+      "nonzero_minor_determinant": "864/3125",
+      "nonzero_minor_rows": [
+        0,
+        2,
+        3,
+        4,
+        6
+      ],
+      "rank": 5
+    },
+    "orientation": "R_z(v) R_x(u) R_z(t)",
+    "parameters": [
+      "a",
+      "b",
+      "t",
+      "u",
+      "v"
+    ],
+    "shape": "three planar null directions n(0), n(a), n(b), with positive momentum-conserving energies from oriented cross weights"
+  },
+  "interpretation": {
+    "Eq19_all_orders": "NOT_PROVED",
+    "complete_regular_massless_three_to_three_local_phase_space": "STRICTLY_POSITIVE",
+    "integrated_normalized_probability": "NOT_COMPUTED",
+    "internal_channel_poles": "EXCLUDED_NOT_REGULATED",
+    "metric_BV_BRST_lift": "NOT_CONSTRUCTED"
+  },
+  "lifecycle_state": "COEFFICIENT_COMPUTED",
+  "local_born_density": {
+    "external_derivative_sign": "+1 from (-1)^6",
+    "external_projector": "(-partial_x0)...(-partial_x5) at x_i=0",
+    "kernel": "2*sum_{S<Sc} c_S^2",
+    "status": "STRICTLY_POSITIVE_AT_EVERY_REGULAR_PHYSICAL_POINT_WITH_POSITIVE_LOCAL_WEIGHT"
+  },
+  "next_gate": "Construct one common causal or explicitly distributional prescription for the ten s_A=0 tree poles and integrate the positive local density over the exact five-dimensional chart. In parallel, Eq. (19) remains the distinct nonlinear projector-transport gate.",
+  "provenance": {
+    "inputs": [
+      {
+        "path": "planning/work-items/reverse-physics-bateman-six-point-full-phase-space-born-positivity.json",
+        "sha256": "46fae09ac666f7261382321e5bc3d4eef9e8695eb8df50ff0c636534f3045f09"
+      },
+      {
+        "path": "reverse_physics/bt_six_point_generic_external_mass_kernel.py",
+        "sha256": "3ec7bf5171a65150c8c08ac570223a2b7c7fc1c7d806b8c31755667ba633e1b6"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_SIX_POINT_TWO_ANGLE_PHYSICAL_BORN_DENSITY_V1.json",
+        "sha256": "f723ffcfc8f90d61e665edb96db538a686dcf5df2e230ee244a54f1db5c6a723"
+      },
+      {
+        "path": "notes/bateman-turok-embedding.md",
+        "sha256": "15d947657ad93dc6e6e44390156d1e1c5fb6b921ad9960cdd2b21f7dbb29541c"
+      }
+    ],
+    "primary_source": {
+      "equations": [
+        "Eq. (14)",
+        "Eq. (16)",
+        "Eq. (18)",
+        "Appendix B Eqs. (24)-(25)"
+      ],
+      "source": "Bateman--Turok arXiv:2607.00096v1",
+      "url": "https://arxiv.org/abs/2607.00096v1"
+    },
+    "producer_method": "Exact characteristic-zero auxiliary-species combinatorics gives J-I and its determinant. SymPy exact differentiation certifies a rank-five rational physical chart. The complete PS 220-tree recursion independently matches the closed formula on six positive rational fixtures varying both shape coordinates and all three orientation parameters.",
+    "retrieval_date": "2026-08-12",
+    "source_commit": "1ec0ae4b25c0cb53859263613a8dc6a56fb85709"
+  },
+  "question": "Is the complete leading BT six-point local Born density positive over the full regular massless physical 3-to-3 phase space?",
+  "report": "reverse_physics/reports/bt-six-point-full-phase-space-born-positivity.md",
+  "result_kind": "exact complete-regular-phase-space local six-delta-prime scalar tree Born-density theorem",
+  "schema": "reverse_physics/schema/reverse-physics-bt-six-point-full-phase-space-born-positivity-v1.schema.json",
+  "schema_version": "reverse-physics-bt-six-point-full-phase-space-born-positivity-v1",
+  "universal_complement_formula": {
+    "auxiliary_model": "S_1,1=integral(partial Omega partial Upsilon + lambda^2 Omega^2 Upsilon^2/2)",
+    "channel_rule": "A two-quartic tree exists exactly when a 3|3 channel contains one or two Omega legs; the channels A=S and A=Sc are the same unordered forbidden channel",
+    "channels": [
+      7,
+      11,
+      19,
+      13,
+      21,
+      25,
+      14,
+      22,
+      26,
+      28
+    ],
+    "common_zero_argument": "Writing y_A=1/s_A and 4c=(J-I)y, det(J-I)=-9. At a regular point y is nonzero, hence c cannot vanish identically.",
+    "formula": "c_S=c_Sc=(1/4)*sum_{A != S} 1/s_A",
+    "incidence_determinant": -9,
+    "incidence_matrix": [
+      [
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0
+      ]
+    ],
+    "species_assignment": "S labels the three Omega external legs and Sc the three Upsilon external legs"
+  },
+  "verification_commands": [
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/bt_six_point_full_phase_space_born_positivity.py --write --check",
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/verify_bt_six_point_full_phase_space_born_positivity.py",
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 -m unittest reverse_physics.tests.test_bt_six_point_full_phase_space_born_positivity"
+  ]
+}

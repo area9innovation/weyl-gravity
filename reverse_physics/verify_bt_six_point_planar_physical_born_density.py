@@ -134,7 +134,11 @@ def partitions(mask, count):
 
 
 def explicit_tree_family(
-    tilt_ratio=Fraction(0), parameter_value=None, tilt_value=None
+    tilt_ratio=Fraction(0),
+    parameter_value=None,
+    tilt_value=None,
+    final_rotation_value=None,
+    shape_values=None,
 ):
     """Enumerate all trees; do not use the producer's summed-current recursion."""
     if parameter_value is None:
@@ -174,21 +178,65 @@ def explicit_tree_family(
     )
     tilt_cosine = (1 - tilt * tilt) / (1 + tilt * tilt)
     tilt_sine = 2 * tilt / (1 + tilt * tilt)
+    final_rotation = (
+        rational(final_rotation_value)
+        if final_rotation_value is not None
+        else rational(0)
+    )
+    final_cosine = (1 - final_rotation * final_rotation) / (
+        1 + final_rotation * final_rotation
+    )
+    final_sine = 2 * final_rotation / (1 + final_rotation * final_rotation)
     incoming = [
         vector("6/5", "6/5", 0, 0),
         vector(1, "-3/5", "4/5", 0),
         vector(1, "-3/5", "-4/5", 0),
     ]
+    outgoing_seed = incoming
+    if shape_values is not None:
+        shape_a, shape_b = map(rational, shape_values)
+
+        def direction(parameter):
+            return (
+                (1 - parameter * parameter) / (1 + parameter * parameter),
+                2 * parameter / (1 + parameter * parameter),
+                rational(0),
+            )
+
+        directions = [
+            direction(rational(0)),
+            direction(shape_a),
+            direction(shape_b),
+        ]
+
+        def cross(left, right):
+            return left[0] * right[1] - left[1] * right[0]
+
+        weights = [
+            cross(directions[1], directions[2]),
+            cross(directions[2], directions[0]),
+            cross(directions[0], directions[1]),
+        ]
+        normalization = sum(weights, base.zero)
+        total_energy = rational(Fraction(16, 5))
+        energies = [total_energy * weight / normalization for weight in weights]
+        outgoing_seed = [
+            (energies[index],)
+            + tuple(energies[index] * entry for entry in directions[index])
+            for index in range(3)
+        ]
     outgoing = []
-    for value in incoming:
+    for value in outgoing_seed:
         rotated_x = cosine * value[1] - sine * value[2]
         rotated_y = sine * value[1] + cosine * value[2]
+        tilted_y = tilt_cosine * rotated_y
+        tilted_z = tilt_sine * rotated_y
         outgoing.append(
             (
                 value[0],
-                rotated_x,
-                tilt_cosine * rotated_y,
-                tilt_sine * rotated_y,
+                final_cosine * rotated_x - final_sine * tilted_y,
+                final_sine * rotated_x + final_cosine * tilted_y,
+                tilted_z,
             )
         )
     momenta = incoming + [tuple(-entry for entry in value) for value in outgoing]

@@ -1,0 +1,114 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-six-point-full-phase-space-born-positivity-v1.schema.json",
+  "title": "BT six-point complete-phase-space local Born-positivity certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "certificate", "schema_version", "dependency_tags", "lifecycle_state",
+    "result_kind", "question", "answer", "universal_complement_formula",
+    "full_physical_chart", "local_born_density", "interpretation",
+    "assumptions", "does_not_establish", "next_gate", "provenance",
+    "verification_commands", "checks", "report", "schema"
+  ],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_SIX_POINT_FULL_PHASE_SPACE_BORN_POSITIVITY_V1"},
+    "schema_version": {"const": "reverse-physics-bt-six-point-full-phase-space-born-positivity-v1"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "result_kind": {"$ref": "#/$defs/nonempty"},
+    "question": {"$ref": "#/$defs/nonempty"},
+    "answer": {"$ref": "#/$defs/nonempty"},
+    "universal_complement_formula": {
+      "type": "object", "additionalProperties": false,
+      "required": ["channels", "formula", "auxiliary_model", "species_assignment", "channel_rule", "incidence_matrix", "incidence_determinant", "common_zero_argument"],
+      "properties": {
+        "channels": {"type": "array", "minItems": 10, "maxItems": 10, "uniqueItems": true, "items": {"type": "integer", "minimum": 0, "maximum": 63}},
+        "formula": {"const": "c_S=c_Sc=(1/4)*sum_{A != S} 1/s_A"},
+        "auxiliary_model": {"$ref": "#/$defs/nonempty"},
+        "species_assignment": {"$ref": "#/$defs/nonempty"},
+        "channel_rule": {"$ref": "#/$defs/nonempty"},
+        "incidence_matrix": {"type": "array", "minItems": 10, "maxItems": 10, "items": {"type": "array", "minItems": 10, "maxItems": 10, "items": {"enum": [0, 1]}}},
+        "incidence_determinant": {"const": -9},
+        "common_zero_argument": {"$ref": "#/$defs/nonempty"}
+      }
+    },
+    "full_physical_chart": {
+      "type": "object", "additionalProperties": false,
+      "required": ["parameters", "shape", "orientation", "fixed_total_momentum", "jacobian_certificate", "exact_fixtures"],
+      "properties": {
+        "parameters": {"const": ["a", "b", "t", "u", "v"]},
+        "shape": {"$ref": "#/$defs/nonempty"},
+        "orientation": {"const": "R_z(v) R_x(u) R_z(t)"},
+        "fixed_total_momentum": {"const": ["16/5", "0", "0", "0"]},
+        "jacobian_certificate": {
+          "type": "object", "additionalProperties": false,
+          "required": ["base_point", "jacobian_shape", "rank", "nonzero_minor_rows", "nonzero_minor_determinant"],
+          "properties": {
+            "base_point": {"const": ["2", "-2", "0", "1", "0"]},
+            "jacobian_shape": {"const": [12, 5]},
+            "rank": {"const": 5},
+            "nonzero_minor_rows": {"const": [0, 2, 3, 4, 6]},
+            "nonzero_minor_determinant": {"const": "864/3125"}
+          }
+        },
+        "exact_fixtures": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"$ref": "#/$defs/fixture"}}
+      }
+    },
+    "local_born_density": {
+      "const": {
+        "external_projector": "(-partial_x0)...(-partial_x5) at x_i=0",
+        "external_derivative_sign": "+1 from (-1)^6",
+        "kernel": "2*sum_{S<Sc} c_S^2",
+        "status": "STRICTLY_POSITIVE_AT_EVERY_REGULAR_PHYSICAL_POINT_WITH_POSITIVE_LOCAL_WEIGHT"
+      }
+    },
+    "interpretation": {
+      "const": {
+        "complete_regular_massless_three_to_three_local_phase_space": "STRICTLY_POSITIVE",
+        "internal_channel_poles": "EXCLUDED_NOT_REGULATED",
+        "integrated_normalized_probability": "NOT_COMPUTED",
+        "Eq19_all_orders": "NOT_PROVED",
+        "metric_BV_BRST_lift": "NOT_CONSTRUCTED"
+      }
+    },
+    "assumptions": {"type": "array", "minItems": 5, "items": {"$ref": "#/$defs/nonempty"}},
+    "does_not_establish": {"type": "array", "minItems": 11, "items": {"$ref": "#/$defs/nonempty"}},
+    "next_gate": {"$ref": "#/$defs/nonempty"},
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_commit", "retrieval_date", "inputs", "producer_method", "primary_source"],
+      "properties": {
+        "source_commit": {"const": "1ec0ae4b25c0cb53859263613a8dc6a56fb85709"},
+        "retrieval_date": {"const": "2026-08-12"},
+        "inputs": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "object", "additionalProperties": false, "required": ["path", "sha256"], "properties": {"path": {"$ref": "#/$defs/nonempty"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}}},
+        "producer_method": {"$ref": "#/$defs/nonempty"},
+        "primary_source": {"type": "object", "additionalProperties": false, "required": ["source", "url", "equations"], "properties": {"source": {"$ref": "#/$defs/nonempty"}, "url": {"$ref": "#/$defs/nonempty"}, "equations": {"type": "array", "minItems": 4, "items": {"$ref": "#/$defs/nonempty"}}}}
+      }
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "items": {"$ref": "#/$defs/nonempty"}},
+    "checks": {
+      "type": "object", "additionalProperties": false,
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true}, "passed": {"const": 16}, "total": {"const": 16}, "failures": {"const": []},
+        "details": {"type": "object", "minProperties": 16, "maxProperties": 16, "additionalProperties": {"const": true}}
+      }
+    },
+    "report": {"const": "reverse_physics/reports/bt-six-point-full-phase-space-born-positivity.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-six-point-full-phase-space-born-positivity-v1.schema.json"}
+  },
+  "$defs": {
+    "nonempty": {"type": "string", "minLength": 1},
+    "fixture": {
+      "type": "object", "additionalProperties": false,
+      "required": ["parameters", "energies", "massless_and_conserved", "all_ten_channels_regular", "twenty_middle_coefficients", "universal_formula_matches_complete_tree_sum", "strict_square_sum"],
+      "properties": {
+        "parameters": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"$ref": "#/$defs/nonempty"}},
+        "energies": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/nonempty"}},
+        "massless_and_conserved": {"const": true}, "all_ten_channels_regular": {"const": true}, "twenty_middle_coefficients": {"const": true},
+        "universal_formula_matches_complete_tree_sum": {"const": true}, "strict_square_sum": {"const": true}
+      }
+    }
+  }
+}
