@@ -1,0 +1,284 @@
+{
+  "answer": "Yes on the declared one-parameter planar family, away from its ordinary internal-propagator poles. Three exact future-null incoming momenta are mapped to three outgoing momenta by the rational rotation cos=(1-t^2)/(1+t^2), sin=2t/(1+t^2). The complete 220-tree amplitude in the 64-slot external-mass jet has no terms below degree three. Its twenty degree-three coefficients obey ten exact complement equalities c_S(t)=c_Sc(t), although none of the three cubic/quartic topology sectors has that symmetry separately. Consequently the six-derivative square-free coefficient is 2*sum_S c_S(t)^2. The ten reduced numerator polynomials have gcd one and every denominator pole has even multiplicity, so this coefficient is strictly positive for every real regular t. Because |M|^2 begins at the top six-mass degree, derivatives of a regular phase-space weight cannot mix into this coefficient; a positive massless interior weight multiplies it without changing its sign. This breaks the negative reduced-quotient barrier on a genuine physical continuum, but it is a local planar density, not the complete integrated six-body probability or Eq. (19).",
+  "assumptions": [
+    "The calculation uses the public BT cubic and quartic tree vertices with their perfect-square relative coupling and common tree phase removed before squaring.",
+    "The all-incoming metric convention is (+---); the last three entries are negatives of future-null outgoing momenta.",
+    "The nine cyclic invariant coordinates are held fixed while the six independent external mass squares are differentiated, as required by the off-shell external-mass jet.",
+    "The parameter t is real and excludes the displayed internal-propagator pole set.",
+    "The local massless phase-space/detector weight is analytic and strictly positive at the selected regular interior point.",
+    "The theorem is about a planar one-parameter physical family and does not infer the sign on arbitrary nonplanar six-body kinematics."
+  ],
+  "certificate": "REVERSE_PHYSICS_BT_SIX_POINT_PLANAR_PHYSICAL_BORN_DENSITY_V1",
+  "checks": {
+    "details": {
+      "all_recorded_propagator_poles_have_even_multiplicity": true,
+      "all_six_external_momenta_are_massless": true,
+      "all_twenty_middle_degree_coefficients_retained": true,
+      "amplitude_starts_at_external_mass_degree_three": true,
+      "complete_amplitude_has_42_squarefree_terms": true,
+      "complete_perfect_square_topology_sum_is_self_dual": true,
+      "correlated_cylinder_no_go_not_promoted": true,
+      "eq19_gravity_and_causal_claims_remain_open": true,
+      "external_delta_prime_sign_is_positive": true,
+      "full_phase_space_integration_remains_open": true,
+      "individual_topologies_are_not_artificially_self_dual": true,
+      "input_hashes_pinned": true,
+      "local_born_density_is_strictly_positive_off_poles": true,
+      "phase_space_mass_derivatives_decouple": true,
+      "predecessors_pass": true,
+      "rational_rotation_is_defined_for_all_real_t": true,
+      "six_derivative_kernel_is_twice_ten_square_sum": true,
+      "ten_coefficient_numerators_have_constant_gcd": true,
+      "ten_complement_coefficients_are_exactly_equal": true,
+      "three_to_three_momentum_is_conserved": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 20,
+    "total": 20
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "positivity over the complete nonplanar 3-to-3 six-body phase space",
+    "an integrated or normalized six-point transition probability",
+    "control or cancellation of the displayed internal propagator poles",
+    "the twelve reversed history intertwiners as separate positive channels",
+    "a complete incoming/outgoing Moller, LSZ, or S operator",
+    "Bateman--Turok Eq. (19)",
+    "positivity beyond tree level, a loop theorem, or KLN cancellation",
+    "a metric or BRST lift to Weyl gravity",
+    "anything LORENTZIAN-CAUSAL",
+    "a new physical or spacetime dimension",
+    "literature priority"
+  ],
+  "exact_physical_family": {
+    "adjacent_invariants": [
+      "96/25",
+      "64/25",
+      "(-24*t**2 - 96*t - 96)/(25*t**2 + 25)",
+      "96/25",
+      "64/25",
+      "(-24*t**2 + 96*t - 96)/(25*t**2 + 25)"
+    ],
+    "all_six_massless": true,
+    "amplitude_degrees": [
+      3,
+      4,
+      5,
+      6
+    ],
+    "amplitude_term_count": 42,
+    "degree_three_numerator_gcd": "1",
+    "degree_three_term_count": 20,
+    "equals_twice_ten_square_sum": true,
+    "incoming_momenta": [
+      [
+        "6/5",
+        "6/5",
+        "0",
+        "0"
+      ],
+      [
+        "1",
+        "-3/5",
+        "4/5",
+        "0"
+      ],
+      [
+        "1",
+        "-3/5",
+        "-4/5",
+        "0"
+      ]
+    ],
+    "middle_coefficients": [
+      {
+        "coefficient": "(-175*t**4 - 3375*t**2 - 3200)/(3136*t**4 - 61952*t**2 + 294912)",
+        "complement_coefficient": "(-175*t**4 - 3375*t**2 - 3200)/(3136*t**4 - 61952*t**2 + 294912)",
+        "complement_mask": 56,
+        "mask": 7
+      },
+      {
+        "coefficient": "(25025*t**6 + 18900*t**5 - 1439000*t**4 + 938400*t**3 + 3488000*t**2 - 768000*t + 3686400)/(451584*t**6 - 602112*t**5 - 8921088*t**4 + 11894784*t**3 + 42467328*t**2 - 56623104*t)",
+        "complement_coefficient": "(25025*t**6 + 18900*t**5 - 1439000*t**4 + 938400*t**3 + 3488000*t**2 - 768000*t + 3686400)/(451584*t**6 - 602112*t**5 - 8921088*t**4 + 11894784*t**3 + 42467328*t**2 - 56623104*t)",
+        "complement_mask": 52,
+        "mask": 11
+      },
+      {
+        "coefficient": "(25025*t**6 - 18900*t**5 - 1439000*t**4 - 938400*t**3 + 3488000*t**2 + 768000*t + 3686400)/(451584*t**6 + 602112*t**5 - 8921088*t**4 - 11894784*t**3 + 42467328*t**2 + 56623104*t)",
+        "complement_coefficient": "(25025*t**6 - 18900*t**5 - 1439000*t**4 - 938400*t**3 + 3488000*t**2 + 768000*t + 3686400)/(451584*t**6 + 602112*t**5 - 8921088*t**4 - 11894784*t**3 + 42467328*t**2 + 56623104*t)",
+        "complement_mask": 50,
+        "mask": 13
+      },
+      {
+        "coefficient": "(-21175*t**2 - 36800)/(50176*t**2 - 589824)",
+        "complement_coefficient": "(-21175*t**2 - 36800)/(50176*t**2 - 589824)",
+        "complement_mask": 49,
+        "mask": 14
+      },
+      {
+        "coefficient": "(1375*t**4 - 10200*t**3 + 12600*t**2 - 4800*t + 12800)/(7168*t**4 - 24576*t**3 - 57344*t**2 + 196608*t)",
+        "complement_coefficient": "(1375*t**4 - 10200*t**3 + 12600*t**2 - 4800*t + 12800)/(7168*t**4 - 24576*t**3 - 57344*t**2 + 196608*t)",
+        "complement_mask": 44,
+        "mask": 19
+      },
+      {
+        "coefficient": "(-92575*t**6 + 791800*t**4 - 3996800*t**2 - 8396800)/(451584*t**6 - 9723904*t**4 + 58327040*t**2 - 75497472)",
+        "complement_coefficient": "(-92575*t**6 + 791800*t**4 - 3996800*t**2 - 8396800)/(451584*t**6 - 9723904*t**4 + 58327040*t**2 - 75497472)",
+        "complement_mask": 42,
+        "mask": 21
+      },
+      {
+        "coefficient": "(25025*t**6 + 18900*t**5 - 1439000*t**4 + 938400*t**3 + 3488000*t**2 - 768000*t + 3686400)/(451584*t**6 - 602112*t**5 - 8921088*t**4 + 11894784*t**3 + 42467328*t**2 - 56623104*t)",
+        "complement_coefficient": "(25025*t**6 + 18900*t**5 - 1439000*t**4 + 938400*t**3 + 3488000*t**2 - 768000*t + 3686400)/(451584*t**6 - 602112*t**5 - 8921088*t**4 + 11894784*t**3 + 42467328*t**2 - 56623104*t)",
+        "complement_mask": 41,
+        "mask": 22
+      },
+      {
+        "coefficient": "(25025*t**6 - 18900*t**5 - 1439000*t**4 - 938400*t**3 + 3488000*t**2 + 768000*t + 3686400)/(451584*t**6 + 602112*t**5 - 8921088*t**4 - 11894784*t**3 + 42467328*t**2 + 56623104*t)",
+        "complement_coefficient": "(25025*t**6 - 18900*t**5 - 1439000*t**4 - 938400*t**3 + 3488000*t**2 + 768000*t + 3686400)/(451584*t**6 + 602112*t**5 - 8921088*t**4 - 11894784*t**3 + 42467328*t**2 + 56623104*t)",
+        "complement_mask": 38,
+        "mask": 25
+      },
+      {
+        "coefficient": "(1375*t**4 + 10200*t**3 + 12600*t**2 + 4800*t + 12800)/(7168*t**4 + 24576*t**3 - 57344*t**2 - 196608*t)",
+        "complement_coefficient": "(1375*t**4 + 10200*t**3 + 12600*t**2 + 4800*t + 12800)/(7168*t**4 + 24576*t**3 - 57344*t**2 - 196608*t)",
+        "complement_mask": 37,
+        "mask": 26
+      },
+      {
+        "coefficient": "(-92575*t**6 + 791800*t**4 - 3996800*t**2 - 8396800)/(451584*t**6 - 9723904*t**4 + 58327040*t**2 - 75497472)",
+        "complement_coefficient": "(-92575*t**6 + 791800*t**4 - 3996800*t**2 - 8396800)/(451584*t**6 - 9723904*t**4 + 58327040*t**2 - 75497472)",
+        "complement_mask": 35,
+        "mask": 28
+      }
+    ],
+    "momentum_conservation": true,
+    "no_common_complex_zero_of_ten_coefficients": true,
+    "outgoing_momenta": [
+      [
+        "6/5",
+        "(-6*t**2 + 6)/(5*t**2 + 5)",
+        "12*t/(5*t**2 + 5)",
+        "0"
+      ],
+      [
+        "1",
+        "(3*t**2 - 8*t - 3)/(5*t**2 + 5)",
+        "(-4*t**2 - 6*t + 4)/(5*t**2 + 5)",
+        "0"
+      ],
+      [
+        "1",
+        "(3*t**2 + 8*t - 3)/(5*t**2 + 5)",
+        "(4*t**2 - 6*t - 4)/(5*t**2 + 5)",
+        "0"
+      ]
+    ],
+    "parameter": "t",
+    "rotation": {
+      "cosine": "(-t**2 + 1)/(t**2 + 1)",
+      "sine": "2*t/(t**2 + 1)"
+    },
+    "squarefree_denominator_factors": [
+      {
+        "factor": "t",
+        "multiplicity": 2
+      },
+      {
+        "factor": "3*t - 4",
+        "multiplicity": 2
+      },
+      {
+        "factor": "3*t + 4",
+        "multiplicity": 2
+      },
+      {
+        "factor": "7*t - 24",
+        "multiplicity": 2
+      },
+      {
+        "factor": "7*t + 24",
+        "multiplicity": 2
+      },
+      {
+        "factor": "t**2 - 8",
+        "multiplicity": 2
+      }
+    ],
+    "squarefree_squared_amplitude": "(644462240625*t**14 - 12869280110000*t**12 + 135648090280000*t**10 - 429232869120000*t**8 + 161283819520000*t**6 + 1812842414080000*t**4 + 3378889359360000*t**2 + 1304596316160000)/(917676490752*t**14 - 39520435175424*t**12 + 662550412787712*t**10 - 5411339891638272*t**8 + 21916367707963392*t**6 - 39631896623185920*t**4 + 25649407252758528*t**2)",
+    "strict_positivity_domain": "real t away from the internal-propagator pole set; the ten real coefficient numerators have constant gcd, so their square sum never vanishes simultaneously",
+    "ten_complement_pairs_equal": true,
+    "topology_antisymmetry_cancels_in_complete_amplitude": true,
+    "topology_antisymmetry_is_nontrivial": true,
+    "triple_invariants": [
+      "256/25",
+      "(16*t**2 - 128)/(25*t**2 + 25)",
+      "(36*t**2 - 64)/(25*t**2 + 25)"
+    ]
+  },
+  "interpretation": {
+    "Eq19_all_orders": "NOT_PROVED",
+    "complete_nonplanar_six_body_phase_space": "NOT_COMPUTED",
+    "complete_planar_middle_degree_recombination": "POSITIVE_TEN_SQUARE_SUM",
+    "correlated_crossed_negative_quotient": "REMAINS_A_CERTIFIED_REDUCED_BOUNDARY_BLOCK",
+    "integrated_normalized_probability": "NOT_COMPUTED",
+    "negative_reduced_block_is_complete_probability": "NO",
+    "physical_progress": "FIRST_EXACT_CONTINUOUS_NONFORWARD_SIX_POINT_LOCAL_BORN_DENSITY"
+  },
+  "lifecycle_state": "COEFFICIENT_COMPUTED",
+  "local_born_density": {
+    "amplitude_minimum_mass_degree": 3,
+    "external_derivative_sign": "+1 because six delta-prime Wightman factors give (-1)^6",
+    "external_projector": "(-partial_x0)...(-partial_x5) evaluated at x_i=0",
+    "measure_decoupling": "In the square-free six-mass algebra, |M|^2 has no coefficient below the full mask. Therefore the full-mask coefficient of K(x)|M(x)|^2 is K(0) times the displayed amplitude coefficient for every regular analytic local phase-space weight K.",
+    "positivity_assumption": "The undifferentiated massless local phase-space/detector weight K(0) is strictly positive at the selected regular interior point.",
+    "squared_amplitude_minimum_mass_degree": 6,
+    "status": "STRICTLY_POSITIVE_ON_DECLARED_REGULAR_PHYSICAL_FAMILY"
+  },
+  "next_gate": "Promote the positive local-density theorem from the planar rotation slice to a genuinely nonplanar two-parameter physical family, then integrate the six-delta-prime density on a common regulated six-body chart. The complement self-duality must be proved or falsified there rather than inferred from this slice. In parallel, Eq. (19) still requires the missing nonlinear projector transport and trace.",
+  "provenance": {
+    "inputs": [
+      {
+        "path": "planning/work-items/reverse-physics-bateman-six-point-planar-physical-born-density.json",
+        "sha256": "c71b6d583d2a63f27493f9b4e680c79372eb6ca0e1192e03da8304d3038cb12e"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_SIX_POINT_STRONGLY_ORDERED_TREE_V1.json",
+        "sha256": "92793513ecd3491e0f1da56800c0962b4f38a836545e9470943bc754388f3c0d"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_SIX_POINT_PROFILE_QUOTIENT_COMPLETION_V1.json",
+        "sha256": "fc98bc7f779a9b62325f153c8e09b411e1aeeaad1f0871be411c4485be25d3c8"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_CROSSED_SIX_POINT_NONFACTORIZING_PRETRACE_NO_GO_V1.json",
+        "sha256": "46bc5ea6421fb5d714e6457cb924713e943a8c9bbc110aacc2d1faade98d8b83"
+      }
+    ],
+    "primary_source": {
+      "equations": [
+        "Eq. (18)",
+        "Appendix B Eqs. (24)-(25)"
+      ],
+      "source": "Bateman--Turok arXiv:2607.00096v1",
+      "url": "https://arxiv.org/abs/2607.00096v1"
+    },
+    "producer_method": "A cached Berends--Giele subset recursion evaluates all 220 BT cubic/quartic trees in the exact 64-slot square-free algebra of six external mass squares over Q(t). It retains topology sectors separately, reconstructs exact physical momenta and cyclic invariants, pairs the twenty middle-degree coefficients, and computes a polynomial gcd and rational pole factorization. No floating-point arithmetic is used.",
+    "retrieval_date": "2026-08-12",
+    "source_commit": "656b97e6c9d6b290156872cd081bd5462064f11d"
+  },
+  "question": "After leaving the singular correlated crossed cylinder, is the complete six-external-mass BT tree Born density positive on an exact nonforward physical 3-to-3 continuum?",
+  "report": "reverse_physics/reports/bt-six-point-planar-physical-born-density.md",
+  "result_kind": "exact local six-delta-prime tree Born density on a continuous physical planar 3-to-3 family",
+  "schema": "reverse_physics/schema/reverse-physics-bt-six-point-planar-physical-born-density-v1.schema.json",
+  "schema_version": "reverse-physics-bt-six-point-planar-physical-born-density-v1",
+  "verification_commands": [
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/bt_six_point_generic_external_mass_kernel.py --write --check",
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/verify_bt_six_point_planar_physical_born_density.py",
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 -m unittest reverse_physics.tests.test_bt_six_point_planar_physical_born_density"
+  ]
+}

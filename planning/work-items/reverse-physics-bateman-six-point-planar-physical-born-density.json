@@ -1,0 +1,37 @@
+{
+  "id": "sf:program/work/reverse-physics-bateman-six-point-planar-physical-born-density",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "reverse-physics",
+    "state": "ACTIVE",
+    "objective": "Leave the correlated crossed cylinder and compute the complete six-external-mass BT tree Born kernel on an exact continuous nonforward physical 3-to-3 family, deciding whether the full generalized-Born density is positive or retains the reduced negative quotient.",
+    "depends_on": [
+      "REVERSE_PHYSICS_BT_SIX_POINT_STRONGLY_ORDERED_TREE_V1",
+      "REVERSE_PHYSICS_BT_SIX_POINT_PROFILE_QUOTIENT_COMPLETION_V1",
+      "REVERSE_PHYSICS_BT_CROSSED_SIX_POINT_NONFACTORIZING_PRETRACE_NO_GO_V1"
+    ],
+    "activates": [
+      "a complete 64-slot external-mass jet at generic interior kinematics",
+      "an exact physical massless 3-to-3 momentum family",
+      "the six-delta-prime local Born density before phase-space integration",
+      "a decision whether complementary middle-degree recombination restores positivity"
+    ],
+    "current_gate": "PLANAR_PHYSICAL_BORN_DENSITY: construct an exact conserved massless three-in/three-out family, evaluate the complete 220-tree six-mass jet, and prove or refute strict positivity of its top square-free coefficient away from propagator poles.",
+    "stop_condition": "Land an exact certificate with a method-distinct explicit-tree verifier proving either a positive or obstructed local six-derivative Born density on the full declared continuous family. Separate the local density from phase-space integration, normalization, Eq. 19, LSZ/S, gravity, and Lorentzian claims.",
+    "forbid": "no finite fixture census called a continuum theorem; no reduced quotient sign called the full Born density; no local density called an integrated probability; no planar one-parameter family called complete six-body phase space; no scalar result promoted to Eq. 19, gravity/BRST, or LORENTZIAN-CAUSAL",
+    "allowed_paths": [
+      "reverse_physics/",
+      "notes/bateman-turok-embedding.md",
+      "paper/05-interaction-obstructions.tex",
+      "paper/05-interaction-obstructions.pdf",
+      "paper/06-einstein-weyl-interaction-obstructions.tex",
+      "paper/06-einstein-weyl-interaction-obstructions.pdf",
+      "planning/work-items/reverse-physics-bateman-six-point-planar-physical-born-density.json",
+      "planning/events/"
+    ],
+    "resource_hint": "Use a 64-slot exact square-free mass jet with the complete 220-tree recursion. Take three rational future-null incoming momenta with weights 6/5,1,1 and obtain the outgoing triple by the rational planar rotation cos=(1-t^2)/(1+t^2), sin=2t/(1+t^2). Test the 20 degree-three coefficients in ten complement pairs, the topology-level cancellation, the numerator gcd, and the even propagator-pole denominator.",
+    "input_commit": "656b97e6c9d6b290156872cd081bd5462064f11d",
+    "stream": "reverse-physics"
+  }
+}

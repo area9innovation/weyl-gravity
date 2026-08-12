@@ -1,0 +1,170 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-six-point-planar-physical-born-density-v1.schema.json",
+  "title": "BT six-point planar physical Born-density certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "certificate", "schema_version", "dependency_tags", "lifecycle_state",
+    "result_kind", "question", "answer", "exact_physical_family",
+    "local_born_density", "interpretation", "assumptions",
+    "does_not_establish", "next_gate", "provenance",
+    "verification_commands", "checks", "report", "schema"
+  ],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_SIX_POINT_PLANAR_PHYSICAL_BORN_DENSITY_V1"},
+    "schema_version": {"const": "reverse-physics-bt-six-point-planar-physical-born-density-v1"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "result_kind": {"type": "string", "minLength": 1},
+    "question": {"type": "string", "minLength": 1},
+    "answer": {"type": "string", "minLength": 1},
+    "exact_physical_family": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "parameter", "rotation", "incoming_momenta", "outgoing_momenta",
+        "all_six_massless", "momentum_conservation", "adjacent_invariants",
+        "triple_invariants", "amplitude_degrees", "amplitude_term_count",
+        "degree_three_term_count", "middle_coefficients",
+        "ten_complement_pairs_equal", "topology_antisymmetry_is_nontrivial",
+        "topology_antisymmetry_cancels_in_complete_amplitude",
+        "squarefree_squared_amplitude", "equals_twice_ten_square_sum",
+        "degree_three_numerator_gcd",
+        "no_common_complex_zero_of_ten_coefficients",
+        "squarefree_denominator_factors", "strict_positivity_domain"
+      ],
+      "properties": {
+        "parameter": {"const": "t"},
+        "rotation": {
+          "type": "object", "additionalProperties": false,
+          "required": ["cosine", "sine"],
+          "properties": {
+            "cosine": {"const": "(-t**2 + 1)/(t**2 + 1)"},
+            "sine": {"const": "2*t/(t**2 + 1)"}
+          }
+        },
+        "incoming_momenta": {"$ref": "#/$defs/string_matrix"},
+        "outgoing_momenta": {"$ref": "#/$defs/string_matrix"},
+        "all_six_massless": {"const": true},
+        "momentum_conservation": {"const": true},
+        "adjacent_invariants": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"type": "string", "minLength": 1}},
+        "triple_invariants": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "string", "minLength": 1}},
+        "amplitude_degrees": {"const": [3, 4, 5, 6]},
+        "amplitude_term_count": {"const": 42},
+        "degree_three_term_count": {"const": 20},
+        "middle_coefficients": {
+          "type": "array", "minItems": 10, "maxItems": 10,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["mask", "complement_mask", "coefficient", "complement_coefficient"],
+            "properties": {
+              "mask": {"type": "integer", "minimum": 0, "maximum": 63},
+              "complement_mask": {"type": "integer", "minimum": 0, "maximum": 63},
+              "coefficient": {"type": "string", "minLength": 1},
+              "complement_coefficient": {"type": "string", "minLength": 1}
+            }
+          }
+        },
+        "ten_complement_pairs_equal": {"const": true},
+        "topology_antisymmetry_is_nontrivial": {"const": true},
+        "topology_antisymmetry_cancels_in_complete_amplitude": {"const": true},
+        "squarefree_squared_amplitude": {"type": "string", "minLength": 1},
+        "equals_twice_ten_square_sum": {"const": true},
+        "degree_three_numerator_gcd": {"const": "1"},
+        "no_common_complex_zero_of_ten_coefficients": {"const": true},
+        "squarefree_denominator_factors": {
+          "type": "array", "minItems": 6, "maxItems": 6,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["factor", "multiplicity"],
+            "properties": {
+              "factor": {"type": "string", "minLength": 1},
+              "multiplicity": {"const": 2}
+            }
+          }
+        },
+        "strict_positivity_domain": {"type": "string", "minLength": 1}
+      }
+    },
+    "local_born_density": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "external_projector", "external_derivative_sign",
+        "amplitude_minimum_mass_degree", "squared_amplitude_minimum_mass_degree",
+        "measure_decoupling", "positivity_assumption", "status"
+      ],
+      "properties": {
+        "external_projector": {"type": "string", "minLength": 1},
+        "external_derivative_sign": {"type": "string", "minLength": 1},
+        "amplitude_minimum_mass_degree": {"const": 3},
+        "squared_amplitude_minimum_mass_degree": {"const": 6},
+        "measure_decoupling": {"type": "string", "minLength": 1},
+        "positivity_assumption": {"type": "string", "minLength": 1},
+        "status": {"const": "STRICTLY_POSITIVE_ON_DECLARED_REGULAR_PHYSICAL_FAMILY"}
+      }
+    },
+    "interpretation": {
+      "const": {
+        "correlated_crossed_negative_quotient": "REMAINS_A_CERTIFIED_REDUCED_BOUNDARY_BLOCK",
+        "complete_planar_middle_degree_recombination": "POSITIVE_TEN_SQUARE_SUM",
+        "negative_reduced_block_is_complete_probability": "NO",
+        "physical_progress": "FIRST_EXACT_CONTINUOUS_NONFORWARD_SIX_POINT_LOCAL_BORN_DENSITY",
+        "complete_nonplanar_six_body_phase_space": "NOT_COMPUTED",
+        "integrated_normalized_probability": "NOT_COMPUTED",
+        "Eq19_all_orders": "NOT_PROVED"
+      }
+    },
+    "assumptions": {"type": "array", "minItems": 6, "items": {"type": "string", "minLength": 1}},
+    "does_not_establish": {"type": "array", "minItems": 11, "items": {"type": "string", "minLength": 1}},
+    "next_gate": {"type": "string", "minLength": 1},
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_commit", "retrieval_date", "inputs", "producer_method", "primary_source"],
+      "properties": {
+        "source_commit": {"const": "656b97e6c9d6b290156872cd081bd5462064f11d"},
+        "retrieval_date": {"const": "2026-08-12"},
+        "inputs": {
+          "type": "array", "minItems": 4, "maxItems": 4,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["path", "sha256"],
+            "properties": {
+              "path": {"type": "string", "minLength": 1},
+              "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+            }
+          }
+        },
+        "producer_method": {"type": "string", "minLength": 1},
+        "primary_source": {
+          "type": "object", "additionalProperties": false,
+          "required": ["source", "url", "equations"],
+          "properties": {
+            "source": {"type": "string", "minLength": 1},
+            "url": {"type": "string", "minLength": 1},
+            "equations": {"type": "array", "minItems": 2, "items": {"type": "string", "minLength": 1}}
+          }
+        }
+      }
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "items": {"type": "string", "minLength": 1}},
+    "checks": {
+      "type": "object", "additionalProperties": false,
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true}, "passed": {"const": 20},
+        "total": {"const": 20}, "failures": {"const": []},
+        "details": {"type": "object", "minProperties": 20, "maxProperties": 20, "additionalProperties": {"const": true}}
+      }
+    },
+    "report": {"const": "reverse_physics/reports/bt-six-point-planar-physical-born-density.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-six-point-planar-physical-born-density-v1.schema.json"}
+  },
+  "$defs": {
+    "string_matrix": {
+      "type": "array", "minItems": 1,
+      "items": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "string"}}
+    }
+  }
+}
