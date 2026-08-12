@@ -1,0 +1,245 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-perturbative-ghost-parity-unit-obstruction-v1.schema.json",
+  "title": "BT perturbative ghost-parity unit obstruction certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "schema_version",
+    "certificate",
+    "question",
+    "answer",
+    "result_kind",
+    "lifecycle_state",
+    "dependency_tags",
+    "assumptions",
+    "provenance",
+    "source_algebra",
+    "exact_generator_images",
+    "unit_obstruction",
+    "relation_to_formal_inverse",
+    "escape_routes",
+    "Eq19_consequence",
+    "disposition",
+    "missing_object_ledger",
+    "does_not_establish",
+    "checks",
+    "verification_commands",
+    "report"
+  ],
+  "properties": {
+    "schema": {
+      "const": "reverse_physics/schema/reverse-physics-bt-perturbative-ghost-parity-unit-obstruction-v1.schema.json"
+    },
+    "schema_version": {"const": 1},
+    "certificate": {
+      "const": "REVERSE_PHYSICS_BT_PERTURBATIVE_GHOST_PARITY_UNIT_OBSTRUCTION_V1"
+    },
+    "question": {"type": "string", "minLength": 1},
+    "answer": {"type": "string", "minLength": 1},
+    "result_kind": {"const": "all-order regular local-symbol affiliation obstruction"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]
+    },
+    "assumptions": {
+      "type": "array",
+      "minItems": 6,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["source_commit", "input_hashes", "external_source", "generated_by", "independent_verifier"],
+      "properties": {
+        "source_commit": {"pattern": "^[0-9a-f]{40}$"},
+        "input_hashes": {
+          "type": "object",
+          "minProperties": 6,
+          "additionalProperties": {"pattern": "^[0-9a-f]{64}$"}
+        },
+        "external_source": {
+          "type": "object",
+          "required": ["title", "authors", "arxiv", "equations"]
+        },
+        "generated_by": {
+          "const": "reverse_physics/bt_perturbative_ghost_parity_unit_obstruction.py"
+        },
+        "independent_verifier": {
+          "const": "reverse_physics/verify_bt_perturbative_ghost_parity_unit_obstruction.py"
+        }
+      }
+    },
+    "source_algebra": {
+      "type": "object",
+      "required": ["coefficient_ring", "algebra", "relation_to_quantum_source", "augmentation", "augmentation_ideal", "unit_criterion_used", "proof_of_criterion"],
+      "properties": {
+        "coefficient_ring": {"const": "Q((lambda))[Z,Z^-1]"},
+        "algebra": {"type": "string", "minLength": 1},
+        "relation_to_quantum_source": {"type": "string", "minLength": 1},
+        "augmentation": {"type": "string", "minLength": 1},
+        "augmentation_ideal": {"type": "string", "minLength": 1},
+        "unit_criterion_used": {"const": "if a is a unit then epsilon(a) is a unit"},
+        "proof_of_criterion": {"const": "epsilon(ab)=1 implies epsilon(a)epsilon(b)=1"}
+      }
+    },
+    "exact_generator_images": {
+      "type": "object",
+      "required": [
+        "F",
+        "Omega_image",
+        "Omega_inverse",
+        "Omega_augmentation",
+        "Upsilon_image",
+        "Upsilon_augmentation",
+        "field_degrees_in_F",
+        "exponential_inverse_replay",
+        "replay_max_order"
+      ],
+      "properties": {
+        "F": {"const": "Box(varphi)+lambda(dvarphi)^2"},
+        "Omega_image": {"const": "O=lambda^-1 Z exp(lambda varphi)"},
+        "Omega_inverse": {"const": "O^-1=lambda Z^-1 exp(-lambda varphi)"},
+        "Omega_augmentation": {"const": "lambda^-1 Z"},
+        "Upsilon_image": {"const": "Y=Z^-1 exp(-lambda varphi)F"},
+        "Upsilon_augmentation": {"const": "0"},
+        "field_degrees_in_F": {
+          "const": {"Box(varphi)": 1, "lambda(dvarphi)^2": 2}
+        },
+        "exponential_inverse_replay": {
+          "type": "array",
+          "minItems": 17,
+          "maxItems": 17,
+          "items": {
+            "type": "object",
+            "required": ["augmentation_cutoff", "product_coefficients_through_cutoff", "is_identity_mod_augmentation_power"],
+            "properties": {
+              "augmentation_cutoff": {"type": "integer", "minimum": 0, "maximum": 16},
+              "product_coefficients_through_cutoff": {
+                "type": "array",
+                "minItems": 1,
+                "items": {"$ref": "#/$defs/rational"}
+              },
+              "is_identity_mod_augmentation_power": {"const": true}
+            }
+          }
+        },
+        "replay_max_order": {"const": 16}
+      }
+    },
+    "unit_obstruction": {
+      "type": "object",
+      "required": ["Omega_unit_status", "Upsilon_unit_status", "candidate_exchange", "normalization_classes_tested", "lemma", "contradiction", "conclusion", "scope", "quantum_corollary", "quantum_boundary"],
+      "properties": {
+        "Omega_unit_status": {"const": "UNIT"},
+        "Upsilon_unit_status": {"const": "NONUNIT_BY_ZERO_AUGMENTATION"},
+        "candidate_exchange": {"const": "h(O)=cY; h(Y)=c^-1 O with c a coefficient-ring unit"},
+        "normalization_classes_tested": {
+          "type": "array",
+          "minItems": 4,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "lemma": {"const": "unital algebra automorphisms and anti-automorphisms preserve units"},
+        "contradiction": {"const": "h maps the unit O to the nonunit cY"},
+        "conclusion": {"const": "NO_SAME_CHART_REGULAR_LOCAL_SYMBOL_HIDDEN_PARITY_AUTOMORPHISM"},
+        "scope": {"type": "string", "minLength": 1},
+        "quantum_corollary": {"type": "string", "minLength": 1},
+        "quantum_boundary": {"type": "string", "minLength": 1}
+      }
+    },
+    "relation_to_formal_inverse": {
+      "type": "object",
+      "required": ["predecessor_statement", "boundary", "charge_theorem"]
+    },
+    "escape_routes": {
+      "type": "object",
+      "required": ["localized_on_shell_chart", "doubled_sheet", "partial_unbounded_correspondence"],
+      "properties": {
+        "localized_on_shell_chart": {
+          "type": "object",
+          "required": ["algebra_change", "unit_mismatch", "vacuum_boundary", "involution_boundary", "disposition"],
+          "properties": {
+            "disposition": {"const": "POSSIBLE_DIFFERENT_ON_SHELL_NONVACUUM_CHART_NOT_CONSTRUCTED"}
+          }
+        },
+        "doubled_sheet": {
+          "type": "object",
+          "required": ["algebra_change", "unit_mismatch", "vacuum_boundary", "dynamics_boundary", "disposition"],
+          "properties": {
+            "disposition": {"const": "EXACT_ABSTRACT_EXCHANGE_BUT_NEW_SOURCE_THEORY"}
+          }
+        },
+        "partial_unbounded_correspondence": {
+          "type": "object",
+          "required": ["boundary", "disposition"],
+          "properties": {
+            "disposition": {"const": "NOT_A_UNITAL_AUTOMORPHISM_AND_NOT_CONSTRUCTED"}
+          }
+        }
+      }
+    },
+    "Eq19_consequence": {
+      "const": {
+        "charge_formula": "PROVED_WITH_Q_ZERO_ON_THE_COVARIANT_FORMAL_ALGEBRA",
+        "public_branch_ghost_evenness": "OBSTRUCTED_AT_ORDER_LAMBDA",
+        "same_chart_regular_local_symbol_affiliation_of_two_branch_repair": "OBSTRUCTED_TO_ALL_FORMAL_ORDERS",
+        "singular_or_unbounded_quantum_affiliation": "NOT_DECIDED",
+        "unpublished_enlarged_completion": "NOT_RULED_OUT",
+        "direct_physical_route": "REMAINS_OPEN"
+      }
+    },
+    "disposition": {
+      "const": {
+        "same_chart_regular_local_symbol_hidden_parity": "EXACTLY_OBSTRUCTED",
+        "same_chart_regular_local_symbol_repair_affiliation": "EXACTLY_OBSTRUCTED",
+        "singular_or_unbounded_CCR_affiliation": "OPEN",
+        "localized_nonvacuum_hidden_parity": "OPEN_ON_DIFFERENT_CHART",
+        "doubled_source_architecture": "ALGEBRAICALLY_AVAILABLE_BUT_NOT_BT_DERIVED",
+        "Eq19_charge_support": "RETAINED_WITH_Q_ZERO",
+        "full_Eq19_positivity_package": "NOT_ESTABLISHED",
+        "physical_probability": "NOT_ESTABLISHED"
+      }
+    },
+    "missing_object_ledger": {
+      "type": "array",
+      "minItems": 6,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "does_not_establish": {
+      "type": "array",
+      "minItems": 8,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "checks": {
+      "type": "object",
+      "required": ["total", "passed", "ok", "items"],
+      "properties": {
+        "total": {"type": "integer", "minimum": 25},
+        "passed": {"type": "integer", "minimum": 25},
+        "ok": {"const": true},
+        "items": {
+          "type": "object",
+          "minProperties": 25,
+          "additionalProperties": {"const": true}
+        }
+      }
+    },
+    "verification_commands": {
+      "type": "array",
+      "minItems": 3,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "report": {"const": "reverse_physics/reports/bt-perturbative-ghost-parity-unit-obstruction.md"}
+  },
+  "$defs": {
+    "rational": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      }
+    }
+  }
+}

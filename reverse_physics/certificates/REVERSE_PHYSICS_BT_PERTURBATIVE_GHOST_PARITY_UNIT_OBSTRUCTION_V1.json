@@ -1,0 +1,909 @@
+{
+  "Eq19_consequence": {
+    "charge_formula": "PROVED_WITH_Q_ZERO_ON_THE_COVARIANT_FORMAL_ALGEBRA",
+    "direct_physical_route": "REMAINS_OPEN",
+    "public_branch_ghost_evenness": "OBSTRUCTED_AT_ORDER_LAMBDA",
+    "same_chart_regular_local_symbol_affiliation_of_two_branch_repair": "OBSTRUCTED_TO_ALL_FORMAL_ORDERS",
+    "singular_or_unbounded_quantum_affiliation": "NOT_DECIDED",
+    "unpublished_enlarged_completion": "NOT_RULED_OUT"
+  },
+  "answer": "No as a regular unital automorphism of the same zero-jet local-symbol algebra. The Omega image is a unit with an explicit inverse, whereas the Upsilon image has zero augmentation and is not a unit. A unital automorphism cannot exchange them, even after an invertible normalization. This also forbids a filtration-continuous quantum automorphism with that regular classical symbol, but it does not rule out a singular or unbounded CCR correspondence. Localizing at F removes the zero-jet vacuum chart; doubling changes the source theory.",
+  "assumptions": [
+    "commutative field-degree-completed local-jet symbol algebra over Q((lambda))[Z,Z^-1]",
+    "zero-jet augmentation kills every positive-degree local field jet",
+    "Z and lambda are invertible and exp(lambda varphi) is interpreted formally",
+    "target ghost parity exchanges Omega and Upsilon up to an invertible scalar normalization",
+    "regular source affiliation means a unital local-symbol automorphism on the same zero-jet chart",
+    "the exact Eq. (16) factorization is used without imposing F inverse"
+  ],
+  "certificate": "REVERSE_PHYSICS_BT_PERTURBATIVE_GHOST_PARITY_UNIT_OBSTRUCTION_V1",
+  "checks": {
+    "items": {
+      "Eq19_charge_formula_not_retracted": true,
+      "Omega_augmentation_is_Laurent_unit": true,
+      "Omega_exact_factorization_imported": true,
+      "Omega_has_explicit_two_sided_inverse": true,
+      "Omega_inverse_augmentation_is_inverse": true,
+      "Upsilon_augmentation_is_zero": true,
+      "Upsilon_exact_factorization_imported": true,
+      "Upsilon_is_not_a_unit_by_augmentation": true,
+      "branch_repair_affiliation_was_open": true,
+      "branch_repair_regular_local_symbol_affiliation_is_now_obstructed": true,
+      "commutative_local_symbol_shadow_declared": true,
+      "doubled_sheet_changes_source_algebra": true,
+      "doubled_sheet_exchange_is_unital": true,
+      "every_exponential_replay_is_identity": true,
+      "exponential_inverse_replayed_through_order_16": true,
+      "field_strength_augmentation_is_zero": true,
+      "field_strength_has_positive_augmentation_degree": true,
+      "formal_two_sidedness_is_not_promoted_beyond_declared_image": true,
+      "hidden_parity_involution_requires_field_equation": true,
+      "input_hashes_pinned": true,
+      "localization_at_F_makes_Upsilon_unit_eligible": true,
+      "localization_excludes_Fock_vacuum_prime": true,
+      "logarithm_requires_localized_background_or_adjoined_symbol": true,
+      "normalization_independence_is_explicit": true,
+      "normalized_exchange_automorphism_is_impossible": true,
+      "partial_unbounded_map_not_called_automorphism": true,
+      "physical_probability_not_promoted": true,
+      "predecessor_certificates_pass": true,
+      "quantum_source_algebra_imported_as_parent_not_augmented": true,
+      "regular_classical_limit_quantum_automorphism_is_obstructed": true,
+      "same_chart_regular_local_symbol_hidden_parity_is_obstructed": true,
+      "singular_or_unbounded_CCR_correspondence_remains_open": true,
+      "unit_multiple_of_Upsilon_remains_nonunit": true,
+      "unital_automorphisms_preserve_units": true
+    },
+    "ok": true,
+    "passed": 34,
+    "total": 34
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "disposition": {
+    "Eq19_charge_support": "RETAINED_WITH_Q_ZERO",
+    "doubled_source_architecture": "ALGEBRAICALLY_AVAILABLE_BUT_NOT_BT_DERIVED",
+    "full_Eq19_positivity_package": "NOT_ESTABLISHED",
+    "localized_nonvacuum_hidden_parity": "OPEN_ON_DIFFERENT_CHART",
+    "physical_probability": "NOT_ESTABLISHED",
+    "same_chart_regular_local_symbol_hidden_parity": "EXACTLY_OBSTRUCTED",
+    "same_chart_regular_local_symbol_repair_affiliation": "EXACTLY_OBSTRUCTED",
+    "singular_or_unbounded_CCR_affiliation": "OPEN"
+  },
+  "does_not_establish": [
+    "a no-go for partial unbounded or nonunital correspondences",
+    "a no-go for automorphisms of the completed CCR/Weyl algebra without a regular classical-symbol limit",
+    "a no-go for an on-shell F-localized nonvacuum representation",
+    "a no-go for a doubled or nonperturbative BT completion",
+    "failure of the Eq. (19) charge formula",
+    "a negative or positive complete transition probability",
+    "a gravity, BRST, or LORENTZIAN-CAUSAL theorem",
+    "literature priority"
+  ],
+  "escape_routes": {
+    "doubled_sheet": {
+      "algebra_change": "A_double=A_left direct-sum A_right with kappa_double(a,b)=(b,a)",
+      "disposition": "EXACT_ABSTRACT_EXCHANGE_BUT_NEW_SOURCE_THEORY",
+      "dynamics_boundary": "no public PS Hamiltonian or Rt affiliation selects the symmetric coupling",
+      "unit_mismatch": "avoided by exchanging independent copies rather than O with Y inside one copy",
+      "vacuum_boundary": "both copies may retain a Fock vacuum, but the source and projector multiplicity are doubled"
+    },
+    "localized_on_shell_chart": {
+      "algebra_change": "localize at the multiplicative set {1,F,F^2,...} and, for Eq. (15), adjoin log(F) or choose a nonzero background",
+      "disposition": "POSSIBLE_DIFFERENT_ON_SHELL_NONVACUUM_CHART_NOT_CONSTRUCTED",
+      "involution_boundary": "h(F)=F and h^2(phi)=phi use the PS field equation",
+      "unit_mismatch": "removed because F becomes invertible",
+      "vacuum_boundary": "the zero-jet F=0 augmentation prime has no extension to A_sym[F^-1]"
+    },
+    "partial_unbounded_correspondence": {
+      "boundary": "may exist on a domain excluding zeros of F",
+      "disposition": "NOT_A_UNITAL_AUTOMORPHISM_AND_NOT_CONSTRUCTED"
+    }
+  },
+  "exact_generator_images": {
+    "F": "Box(varphi)+lambda(dvarphi)^2",
+    "Omega_augmentation": "lambda^-1 Z",
+    "Omega_image": "O=lambda^-1 Z exp(lambda varphi)",
+    "Omega_inverse": "O^-1=lambda Z^-1 exp(-lambda varphi)",
+    "Upsilon_augmentation": "0",
+    "Upsilon_image": "Y=Z^-1 exp(-lambda varphi)F",
+    "exponential_inverse_replay": [
+      {
+        "augmentation_cutoff": 0,
+        "is_identity_mod_augmentation_power": true,
+        "product_coefficients_through_cutoff": [
+          {
+            "denominator": 1,
+            "numerator": 1
+          }
+        ]
+      },
+      {
+        "augmentation_cutoff": 1,
+        "is_identity_mod_augmentation_power": true,
+        "product_coefficients_through_cutoff": [
+          {
+            "denominator": 1,
+            "numerator": 1
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ]
+      },
+      {
+        "augmentation_cutoff": 2,
+        "is_identity_mod_augmentation_power": true,
+        "product_coefficients_through_cutoff": [
+          {
+            "denominator": 1,
+            "numerator": 1
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ]
+      },
+      {
+        "augmentation_cutoff": 3,
+        "is_identity_mod_augmentation_power": true,
+        "product_coefficients_through_cutoff": [
+          {
+            "denominator": 1,
+            "numerator": 1
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ]
+      },
+      {
+        "augmentation_cutoff": 4,
+        "is_identity_mod_augmentation_power": true,
+        "product_coefficients_through_cutoff": [
+          {
+            "denominator": 1,
+            "numerator": 1
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ]
+      },
+      {
+        "augmentation_cutoff": 5,
+        "is_identity_mod_augmentation_power": true,
+        "product_coefficients_through_cutoff": [
+          {
+            "denominator": 1,
+            "numerator": 1
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ]
+      },
+      {
+        "augmentation_cutoff": 6,
+        "is_identity_mod_augmentation_power": true,
+        "product_coefficients_through_cutoff": [
+          {
+            "denominator": 1,
+            "numerator": 1
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ]
+      },
+      {
+        "augmentation_cutoff": 7,
+        "is_identity_mod_augmentation_power": true,
+        "product_coefficients_through_cutoff": [
+          {
+            "denominator": 1,
+            "numerator": 1
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ]
+      },
+      {
+        "augmentation_cutoff": 8,
+        "is_identity_mod_augmentation_power": true,
+        "product_coefficients_through_cutoff": [
+          {
+            "denominator": 1,
+            "numerator": 1
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ]
+      },
+      {
+        "augmentation_cutoff": 9,
+        "is_identity_mod_augmentation_power": true,
+        "product_coefficients_through_cutoff": [
+          {
+            "denominator": 1,
+            "numerator": 1
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ]
+      },
+      {
+        "augmentation_cutoff": 10,
+        "is_identity_mod_augmentation_power": true,
+        "product_coefficients_through_cutoff": [
+          {
+            "denominator": 1,
+            "numerator": 1
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ]
+      },
+      {
+        "augmentation_cutoff": 11,
+        "is_identity_mod_augmentation_power": true,
+        "product_coefficients_through_cutoff": [
+          {
+            "denominator": 1,
+            "numerator": 1
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ]
+      },
+      {
+        "augmentation_cutoff": 12,
+        "is_identity_mod_augmentation_power": true,
+        "product_coefficients_through_cutoff": [
+          {
+            "denominator": 1,
+            "numerator": 1
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ]
+      },
+      {
+        "augmentation_cutoff": 13,
+        "is_identity_mod_augmentation_power": true,
+        "product_coefficients_through_cutoff": [
+          {
+            "denominator": 1,
+            "numerator": 1
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ]
+      },
+      {
+        "augmentation_cutoff": 14,
+        "is_identity_mod_augmentation_power": true,
+        "product_coefficients_through_cutoff": [
+          {
+            "denominator": 1,
+            "numerator": 1
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ]
+      },
+      {
+        "augmentation_cutoff": 15,
+        "is_identity_mod_augmentation_power": true,
+        "product_coefficients_through_cutoff": [
+          {
+            "denominator": 1,
+            "numerator": 1
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ]
+      },
+      {
+        "augmentation_cutoff": 16,
+        "is_identity_mod_augmentation_power": true,
+        "product_coefficients_through_cutoff": [
+          {
+            "denominator": 1,
+            "numerator": 1
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          },
+          {
+            "denominator": 1,
+            "numerator": 0
+          }
+        ]
+      }
+    ],
+    "field_degrees_in_F": {
+      "Box(varphi)": 1,
+      "lambda(dvarphi)^2": 2
+    },
+    "replay_max_order": 16
+  },
+  "lifecycle_state": "CLASSIFIED",
+  "missing_object_ledger": [
+    "a localized on-shell representation with a controlled relation to asymptotic particles",
+    "or a dynamically derived doubled-sheet source and projector",
+    "or a singular/unbounded CCR correspondence with stated domains and adjoints",
+    "a public or new Rt map supplying the kappa-conjugate branch",
+    "all-order stationarity and asymptotic limits",
+    "a continuum generalized-Born trace or direct physical S-matrix construction",
+    "a gravity/BRST lift"
+  ],
+  "provenance": {
+    "external_source": {
+      "arxiv": "2607.00096v1",
+      "authors": "Sam Bateman and Neil Turok",
+      "equations": [
+        "14",
+        "15",
+        "16",
+        "19"
+      ],
+      "title": "Escape from Ostrogradsky via Hidden Ghost Parity"
+    },
+    "generated_by": "reverse_physics/bt_perturbative_ghost_parity_unit_obstruction.py",
+    "independent_verifier": "reverse_physics/verify_bt_perturbative_ghost_parity_unit_obstruction.py",
+    "input_hashes": {
+      "planning/events/reverse-physics-bateman-perturbative-ghost-parity-unit-obstruction-DONE-74ea3efb.json": "6f1c859f514e022b1bf2bc8fe21ac15c698ab153a75c54c539cdcfc3088f33b8",
+      "planning/work-items/reverse-physics-bateman-perturbative-ghost-parity-unit-obstruction.json": "15aeb026c7f6f63cb7eb9e48c874b25facc82b3c898d6998f17e04ec23ea53ad",
+      "reverse_physics/certificates/REVERSE_PHYSICS_BT_COVARIANT_FORMAL_EQ19_CHARGE_SUPPORT_V1.json": "cc863395b767e7924579f0d30a26282981cb7ed6b7add58194db1a6acdde97f2",
+      "reverse_physics/certificates/REVERSE_PHYSICS_BT_COVARIANT_GHOST_PARITY_BRANCH_OBSTRUCTION_V1.json": "f78b03e729466bf89d440ce712ec5fc7c20aef9e9ce8203827e4bd5ae85c8b1e",
+      "reverse_physics/certificates/REVERSE_PHYSICS_BT_PERTURBATIVE_COISOMETRY_RIGIDITY_V1.json": "53ed72d9038ebc8884d3c822a0651dc6b36b089b17aa603fed42d9c0d2ec3edb",
+      "reverse_physics/certificates/REVERSE_PHYSICS_BT_ZERO_MODE_EQ19_TRILEMMA_V1.json": "31c5d45987bb484711912af5d51da1831f5632ef34278c755265fd190963edd6"
+    },
+    "source_commit": "74ea3efb1691d0b2992f25fa6bae184d8e9ae09f"
+  },
+  "question": "Can the kappa-conjugate orbit branch required by ghost evenness be affiliated by a regular automorphism of the same off-shell perturbative perfect-square local-symbol algebra by pulling target ghost parity back through Eq. (16)?",
+  "relation_to_formal_inverse": {
+    "boundary": "The image-qualified inverse cannot be promoted to an isomorphism whose regular local-symbol shadow pulls back kappa on the complete zero-jet chart; such a promotion would contradict unit preservation.",
+    "charge_theorem": "unchanged: the Eq. (19) charge formula remains neutral with Q=0",
+    "predecessor_statement": "R^dagger R=R R^dagger=1 coefficientwise on the declared formal perturbative image"
+  },
+  "report": "reverse_physics/reports/bt-perturbative-ghost-parity-unit-obstruction.md",
+  "result_kind": "all-order regular local-symbol affiliation obstruction",
+  "schema": "reverse_physics/schema/reverse-physics-bt-perturbative-ghost-parity-unit-obstruction-v1.schema.json",
+  "schema_version": 1,
+  "source_algebra": {
+    "algebra": "commutative field-degree completion Q((lambda))[Z,Z^-1][[local jets]]",
+    "augmentation": "epsilon(Z)=Z; epsilon(lambda)=lambda; epsilon(positive-degree local jets)=0",
+    "augmentation_ideal": "m=(varphi, dvarphi, d2varphi, ...)",
+    "coefficient_ring": "Q((lambda))[Z,Z^-1]",
+    "proof_of_criterion": "epsilon(ab)=1 implies epsilon(a)epsilon(b)=1",
+    "relation_to_quantum_source": "classical/normal-symbol shadow only; no zero-oscillator character is imposed on the CCR/Weyl algebra",
+    "unit_criterion_used": "if a is a unit then epsilon(a) is a unit"
+  },
+  "unit_obstruction": {
+    "Omega_unit_status": "UNIT",
+    "Upsilon_unit_status": "NONUNIT_BY_ZERO_AUGMENTATION",
+    "candidate_exchange": "h(O)=cY; h(Y)=c^-1 O with c a coefficient-ring unit",
+    "conclusion": "NO_SAME_CHART_REGULAR_LOCAL_SYMBOL_HIDDEN_PARITY_AUTOMORPHISM",
+    "contradiction": "h maps the unit O to the nonunit cY",
+    "lemma": "unital algebra automorphisms and anti-automorphisms preserve units",
+    "normalization_classes_tested": [
+      "c in Q((lambda))^x",
+      "c=lambda",
+      "c=lambda^-1",
+      "c=mu^2 for an adjoined nonzero scale mu"
+    ],
+    "quantum_boundary": "singular, non-filtration-preserving, nonlocal or unbounded CCR correspondences are not decided",
+    "quantum_corollary": "no filtration-continuous quantum automorphism whose regular classical symbol implements this exchange",
+    "scope": "the off-shell perturbative local-symbol algebra on the zero-jet F=0 chart"
+  },
+  "verification_commands": [
+    "python3 reverse_physics/bt_perturbative_ghost_parity_unit_obstruction.py --check",
+    "python3 reverse_physics/verify_bt_perturbative_ghost_parity_unit_obstruction.py",
+    "python3 -m unittest reverse_physics.tests.test_bt_perturbative_ghost_parity_unit_obstruction"
+  ]
+}
