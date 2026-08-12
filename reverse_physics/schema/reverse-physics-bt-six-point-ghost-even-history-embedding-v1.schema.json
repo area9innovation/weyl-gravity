@@ -1,0 +1,138 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-six-point-ghost-even-history-embedding-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "certificate", "schema_version", "dependency_tags", "lifecycle_state",
+    "result_kind", "question", "answer", "neutral_six_leg_carrier",
+    "complete_coefficient_embedding", "three_particle_Choi_process",
+    "fixed_channel_history_embedding", "global_history_rank_boundary",
+    "interpretation", "assumptions", "does_not_establish", "next_gate",
+    "provenance", "verification_commands", "checks", "report", "schema"
+  ],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_SIX_POINT_GHOST_EVEN_HISTORY_EMBEDDING_V1"},
+    "schema_version": {"const": "reverse-physics-bt-six-point-ghost-even-history-embedding-v1"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "neutral_six_leg_carrier": {
+      "type": "object", "additionalProperties": false,
+      "required": ["representative_masks", "complement_masks", "mask_convention", "ordered_basis", "Krein_metric", "ghost_parity", "fundamental_positive_metric", "positive_frame", "negative_frame", "frame_grams", "spectral_projectors", "inertia"],
+      "properties": {
+        "representative_masks": {"const": [7, 11, 19, 13, 21, 25, 14, 22, 26, 28]},
+        "complement_masks": {"const": [56, 52, 44, 50, 42, 38, 49, 41, 37, 35]},
+        "mask_convention": {"$ref": "#/$defs/text"},
+        "ordered_basis": {"$ref": "#/$defs/text"},
+        "Krein_metric": {"const": "eta=[[0,I10],[I10,0]]"},
+        "ghost_parity": {"const": "kappa=eta"},
+        "fundamental_positive_metric": {"const": "eta*kappa=I20"},
+        "positive_frame": {"const": "U_plus=[I10;I10]/sqrt(2)"},
+        "negative_frame": {"const": "U_minus=[I10;-I10]/sqrt(2)"},
+        "frame_grams": {"const": {"positive": "U_plus^T*eta*U_plus=I10", "negative": "U_minus^T*eta*U_minus=-I10", "cross": "U_plus^T*eta*U_minus=0"}},
+        "spectral_projectors": {"const": {"positive_even": "P_plus=(I20+kappa)/2", "negative_odd": "P_minus=(I20-kappa)/2"}},
+        "inertia": {"const": {"positive": 10, "negative": 10, "zero": 0}}
+      }
+    },
+    "complete_coefficient_embedding": {
+      "type": "object", "additionalProperties": false,
+      "required": ["public_formula", "full_vector", "ghost_parity_identity", "Krein_Born_norm", "channel_incidence", "channel_pullback", "status"],
+      "properties": {
+        "public_formula": {"const": "c_S=c_Sc=(1/4)*sum_{A!=S}1/s_A"},
+        "full_vector": {"const": "a=(c,c)=sqrt(2)*U_plus*c"},
+        "ghost_parity_identity": {"const": "kappa*a=a and P_plus*a=a"},
+        "Krein_Born_norm": {"const": "a^T*eta*a=2*sum_S c_S^2"},
+        "channel_incidence": {"const": "c=(J-I)y/4 with det(J-I)=-9"},
+        "channel_pullback": {"const": "2*((J-I)/4)^T*((J-I)/4)=J+I/8"},
+        "status": {"const": "COMPLETE_SIX_POINT_TREE_COEFFICIENT_IS_PUBLIC_FOCK_GHOST_EVEN_AND_POSITIVE"}
+      }
+    },
+    "three_particle_Choi_process": {
+      "type": "object", "additionalProperties": false,
+      "required": ["shape", "entry_rule", "three_particle_ghost_parity", "intertwining_identity", "Krein_adjoint", "Born_trace", "status"],
+      "properties": {
+        "shape": {"const": [8, 8]},
+        "entry_rule": {"$ref": "#/$defs/text"},
+        "three_particle_ghost_parity": {"const": "kappa3[x,y]=delta_(x,7-y)"},
+        "intertwining_identity": {"const": "kappa3*A*kappa3=A"},
+        "Krein_adjoint": {"const": "A^sharp=kappa3*A^T*kappa3=A^T"},
+        "Born_trace": {"const": "tr(A^sharp*A)=2*sum_S c_S^2"},
+        "status": {"const": "STRONGLY_GHOST_SYMMETRIC_AT_COMPLETE_TREE_COEFFICIENT_LEVEL"}
+      }
+    },
+    "fixed_channel_history_embedding": {
+      "type": "object", "additionalProperties": false,
+      "required": ["fixed_channel_index", "fixed_channel_mask", "normalized_history_basis", "allowed_basis", "embedding", "isometry", "ghost_parity", "normalized_residue_coordinates", "public_residue", "norm", "status"],
+      "properties": {
+        "fixed_channel_index": {"const": 1},
+        "fixed_channel_mask": {"const": 11},
+        "normalized_history_basis": {"$ref": "#/$defs/text"},
+        "allowed_basis": {"const": "f_(S,B) for S!=B"},
+        "embedding": {"const": "E_B*f_(S,B)=U_plus*e_S"},
+        "isometry": {"const": "E_B^T*eta*E_B=I9"},
+        "ghost_parity": {"const": "kappa*E_B=E_B"},
+        "normalized_residue_coordinates": {"const": "h_S=1/(2sqrt(2)) for S!=B"},
+        "public_residue": {"$ref": "#/$defs/text"},
+        "norm": {"const": "h^T*h=(E_B*h)^T*eta*(E_B*h)=9/8"},
+        "status": {"const": "FIXED_SHELL_POSITIVE_HISTORY_RANGE_PUBLIC_FOCK_AFFILIATED"}
+      }
+    },
+    "global_history_rank_boundary": {
+      "type": "object", "additionalProperties": false,
+      "required": ["resolved_history_dimension", "public_positive_dimension", "simultaneous_restriction", "rank", "kernel_dimension", "Gram_status", "meaning", "status"],
+      "properties": {
+        "resolved_history_dimension": {"const": 90},
+        "public_positive_dimension": {"const": 10},
+        "simultaneous_restriction": {"const": "E_all*f_(S,A)=U_plus*e_S for every allowed S!=A"},
+        "rank": {"const": 10},
+        "kernel_dimension": {"const": 80},
+        "Gram_status": {"const": "E_all^T*eta*E_all is not I90"},
+        "meaning": {"$ref": "#/$defs/text"},
+        "status": {"const": "GLOBAL_RESOLVED_HISTORY_ISOMETRY_NOT_SUPPLIED_BY_PUBLIC_SPECIES_SECTOR_ALONE"}
+      }
+    },
+    "interpretation": {
+      "const": {
+        "complete_six_point_Choi_ghost_symmetry": "EXACTLY_PROVED",
+        "fixed_shell_output_history_public_Fock_embedding": "EXACTLY_CONSTRUCTED",
+        "fixed_shell_history_norm_match": "EXACTLY_PROVED",
+        "global_ninety_history_embedding_without_ancilla": "EXACTLY_OBSTRUCTED_BY_RANK",
+        "input_projector_pushforward": "NOT_CONSTRUCTED",
+        "BT_virtual_survival_block": "NOT_CONSTRUCTED",
+        "finite_inclusive_probability": "NOT_CONSTRUCTED",
+        "Eq19_all_orders": "NOT_PROVED"
+      }
+    },
+    "assumptions": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/text"}},
+    "does_not_establish": {"type": "array", "minItems": 12, "items": {"$ref": "#/$defs/text"}},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_commit", "retrieval_date", "inputs", "method"],
+      "properties": {
+        "source_commit": {"const": "9cc75810"},
+        "retrieval_date": {"const": "2026-08-12"},
+        "inputs": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "object", "additionalProperties": false, "required": ["path", "sha256"], "properties": {"path": {"$ref": "#/$defs/text"}, "sha256": {"$ref": "#/$defs/hash"}}}},
+        "method": {"$ref": "#/$defs/text"}
+      }
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/text"}},
+    "checks": {
+      "type": "object", "additionalProperties": false,
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true}, "passed": {"const": 31}, "total": {"const": 31}, "failures": {"const": []},
+        "details": {"type": "object", "minProperties": 31, "maxProperties": 31, "additionalProperties": {"const": true}}
+      }
+    },
+    "report": {"const": "reverse_physics/reports/bt-six-point-ghost-even-history-embedding.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-six-point-ghost-even-history-embedding-v1.schema.json"}
+  },
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

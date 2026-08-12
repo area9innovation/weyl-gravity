@@ -193,6 +193,19 @@ squared $1/8$.  Their exact shell isometries likewise remain separated by
 $2\sin^2(x/4)$.  A fixed abstract endpoint fibre pulls the family back to one
 isometry and preserves the conditional cancellation, but its local detector
 affiliation and dynamical origin remain open.
+At six points the output-side weak-ghost gate can be closed exactly.  The
+twenty neutral three-$\Omega$/three-$\Upsilon$ species assignments form ten
+complement pairs with Krein metric and ghost parity
+$\eta=\kappa=\left(\begin{smallmatrix}0&I_{10}\\I_{10}&0\end{smallmatrix}\right)$.
+The complete coefficient $(c,c)$ lies in the positive even ten-plane and has
+Krein norm $2\sum c_S^2$.  Its $8\times8$ three-particle Choi matrix obeys
+$\kappa_3A\kappa_3=A$, so $A^\sharp=A^T$ and its generalized Born trace is
+the same sum of squares.  Every fixed-shell nine-history range embeds
+isometrically in this public Fock plane with norm $9/8$.  All ninety resolved
+histories do not: the simultaneous species map has rank ten and forgets an
+eighty-dimensional channel record.  Thus the output history is now publicly
+affiliated, while a channel ancilla, the transported input projector, the
+virtual survival block and all-order Eq.~(19) remain open.
 Independently, the projected three-channel hard loop logarithm closes the
 Callan--Symanzik equation exactly with the Born rate and one-loop beta
 function.  This yields the positive leading-log nonforward prediction
@@ -3058,6 +3071,45 @@ $-\sinh^2r$.  The positive $\cos^2\theta/\sin^2\theta$ history rotation is
 therefore still an operational detector dilation until its carrier is
 embedded as a weakly ghost-symmetric BT subquotient or obtained from
 Eq.~(19).
+
+That output-carrier embedding can now be made inside the public neutral
+six-leg Fock sector.  Its twenty three-$\Omega$/three-$\Upsilon$ assignments
+come in ten complement pairs.  In the basis of representatives followed by
+complements, both the cross-Krein metric and ghost parity are
+\[
+ \eta=\kappa=
+ \begin{pmatrix}0&I_{10}\\I_{10}&0\end{pmatrix},
+ \qquad
+ U_+=\frac1{\sqrt2}\binom{I_{10}}{I_{10}},
+ \qquad U_+^T\eta U_+=I_{10}.
+\]
+The certified complement identity $c_S=c_{S^c}$ therefore puts the complete
+coefficient $a=(c,c)=\sqrt2U_+c$ entirely in this positive ghost-even plane,
+with
+\[
+ a^T\eta a=2\sum_Sc_S^2.
+\]
+Equivalently, arrange the twenty neutral coefficients as the $8\times8$
+three-in/three-out species matrix $A$ and let
+$\kappa_3|x\rangle=|7-x\rangle$.  Then
+$\kappa_3A\kappa_3=A$, hence $A^\sharp=A^T$ and
+$\operatorname{tr}(A^\sharp A)=2\sum_Sc_S^2$.  For each fixed intermediate
+channel $B$, the nine normalized histories $S\ne B$ embed isometrically as
+$U_+e_S$; their residue maps to coefficient $1/4$ on both $S,S^c$ and has
+norm $9/8$, exactly matching the Hamiltonian-cut shell norm.  Certificate
+\texttt{REVERSE\_PHYSICS\_BT\_SIX\_POINT\_GHOST\_EVEN\_}
+\allowbreak\texttt{HISTORY\_EMBEDDING\_V1}
+therefore closes the fixed-shell output-history affiliation gate.
+
+It also identifies the remaining record problem without ambiguity.  The map
+that simultaneously has this action on all ninety resolved histories has
+rank ten and an eighty-dimensional kernel: public species data coherently
+forgets which intermediate channel occurred.  An explicit positive
+channel-label ancilla is required to retain that detector record.  More
+importantly, output ghost symmetry does not compute
+$R_tP_\chi^{(\phi)}R_t^\dagger$.  The transported physical input projector,
+vacuum/zero-mode trace, virtual survival block, global shell gluing and
+all-order Eq.~(19) remain open.
 
 The classified endpoint freedom does not supply this complement by one fixed
 prescription on the minimal two-profile probe lift.  Take

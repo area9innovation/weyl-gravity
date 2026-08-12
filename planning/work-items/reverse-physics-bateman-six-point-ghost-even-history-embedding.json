@@ -1,0 +1,19 @@
+{
+  "id": "sf:program/work/reverse-physics-bateman-six-point-ghost-even-history-embedding",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "reverse-physics",
+    "state": "ACTIVE",
+    "objective": "Embed the certified positive fixed-shell six-point history carrier into the public neutral O(1,1) six-leg Fock/Choi sector and decide whether complement symmetry supplies the missing weak ghost symmetry needed for a physical detector outcome.",
+    "depends_on": ["REVERSE_PHYSICS_BT_SIX_POINT_FULL_PHASE_SPACE_BORN_POSITIVITY_V1", "REVERSE_PHYSICS_BT_SIX_POINT_HISTORY_INCIDENCE_ISOMETRY_V1", "REVERSE_PHYSICS_BT_FINITE_TIME_HAMILTONIAN_CUT_AFFILIATION_V1"],
+    "activates": ["a public-Fock affiliation of the positive fixed-shell history range", "an operator-level ghost-symmetry proof for the complete six-point coefficient", "the source-projector/Eq. 19 gate isolated from the output-history gate"],
+    "current_gate": "Construct the 20-dimensional neutral three-Omega/three-Upsilon species carrier with complement-pair Krein metric and ghost parity, identify its positive even ten-plane, map each fixed channel's nine histories into that plane, and compare the full Choi Born trace with the certified complement-square density.",
+    "stop_condition": "Land an exact certificate and independent verifier proving or obstructing a ghost-even isometric fixed-shell history embedding, exact residue and Born-norm matching, full six-point Choi ghost symmetry, and the rank disposition of the global ninety-history carrier. Keep the incoming projector pushforward, global channel record, Eq. 19, gravity, and Lorentzian causality fail-closed.",
+    "forbid": "no fixed-channel embedding called an isometry of all ninety resolved histories; no Choi ghost evenness called the all-order Eq. 19 projector theorem; no operational survival dilation called the BT virtual term; no gravity or LORENTZIAN-CAUSAL promotion",
+    "allowed_paths": ["reverse_physics/", "notes/bateman-turok-embedding.md", "paper/05-interaction-obstructions.tex", "paper/05-interaction-obstructions.pdf", "paper/06-einstein-weyl-interaction-obstructions.tex", "paper/06-einstein-weyl-interaction-obstructions.pdf", "planning/work-items/reverse-physics-bateman-six-point-ghost-even-history-embedding.json", "planning/events/"],
+    "resource_hint": "Order the twenty neutral six-leg species assignments as ten complement pairs. Use eta=kappa=[[0,I10],[I10,0]], U_plus=[I10;I10]/sqrt(2), and U_minus=[I10;-I10]/sqrt(2). Then U_plus^T eta U_plus=I10 and kappa U_plus=U_plus. For a fixed channel B, embed the nine history basis states S!=B as columns U_plus e_S; the residue entries 1/(2*sqrt(2)) map to coefficient 1/4 on both S and Sc and have norm 9/8. Build the 8x8 three-in/three-out Choi matrix and test kappa_out A kappa_in=A from c_S=c_Sc.",
+    "input_commit": "9cc75810",
+    "stream": "reverse-physics"
+  }
+}

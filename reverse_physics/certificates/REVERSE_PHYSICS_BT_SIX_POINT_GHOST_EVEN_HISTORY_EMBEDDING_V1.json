@@ -1,0 +1,203 @@
+{
+  "answer": "Yes, exactly at the complete six-point tree-coefficient level. The twenty neutral three-Omega/three-Upsilon species assignments form ten complement pairs. In the ordered pair basis the public cross-Krein metric and ghost parity are both eta=kappa=[[0,I10],[I10,0]]. Their symmetric frame U_plus=[I10;I10]/sqrt(2) has positive Gram I10 and ghost parity +1; the antisymmetric frame has Gram -I10 and parity -1. The complete coefficient vector is (c,c)=sqrt(2)U_plus*c, hence it is entirely ghost even and has Krein norm 2 sum c_S^2, exactly the certified local Born density. Equivalently, arranging the twenty coefficients as an 8-by-8 three-in/three-out species matrix A gives kappa3*A*kappa3=A, A^sharp=A^T, and tr(A^sharp*A)=2 sum c_S^2. For any fixed intermediate channel B, the nine normalized histories S!=B embed isometrically as U_plus*e_S. Their residue 1/(2sqrt(2)) maps to coefficient 1/4 on both S and Sc and has norm 9/8, matching the Hamiltonian-cut coefficient. Thus the previously abstract positive fixed-shell output history range is a concrete public-Fock ghost-even range. A single map of all ninety resolved histories into the same public ten-plane necessarily has rank ten and an eighty-dimensional kernel; retaining all resolved channel records requires an additional positive detector ancilla. This closes the fixed-shell output-history affiliation gate, but it does not construct the transported physical input projector R_t P_phi R_t^dagger, the BT virtual/survival block, a global channel-record dilation, or all-order Eq. (19).",
+  "assumptions": [
+    "the six external momentum slots are distinguishable before the already certified Bose orbit factors are applied",
+    "the public one-particle cross-Krein pairing induces bitwise-complement pairing on the neutral six-leg tensor sector",
+    "the complete complement equality imported from the full phase-space Born certificate holds on its declared regular physical domain",
+    "the fixed-channel history basis is normalized using the predecessor's resolved-history metric 2*I90"
+  ],
+  "certificate": "REVERSE_PHYSICS_BT_SIX_POINT_GHOST_EVEN_HISTORY_EMBEDDING_V1",
+  "checks": {
+    "details": {
+      "Choi_Born_trace_matches_complete_density": true,
+      "Choi_has_exactly_twenty_neutral_entries": true,
+      "Choi_is_ghost_parity_intertwiner": true,
+      "Choi_sharp_reduces_to_transpose": true,
+      "Krein_metric_is_non_degenerate_involution": true,
+      "channel_pullback_matches_complete_gram": true,
+      "complete_Krein_norm_is_sum_of_squares": true,
+      "complete_coefficient_is_ghost_even": true,
+      "fixed_history_embedding_is_ghost_even": true,
+      "fixed_history_embedding_is_isometric": true,
+      "fixed_history_norm_is_nine_eighths": true,
+      "fixed_history_norm_matches_cut": true,
+      "fixed_history_residue_maps_to_public_Fock_residue": true,
+      "frames_are_Krein_orthogonal": true,
+      "frames_have_declared_ghost_parity": true,
+      "fundamental_positive_metric_is_identity": true,
+      "ghost_parity_preserves_Krein_metric": true,
+      "global_map_restricts_to_every_fixed_embedding": true,
+      "global_resolved_history_kernel_has_dimension_eighty": true,
+      "global_resolved_history_map_has_rank_ten": true,
+      "global_resolved_history_map_is_not_isometric": true,
+      "incidence_formula_is_reconstructed": true,
+      "inputs_are_content_pinned": true,
+      "negative_frame_is_orthonormal": true,
+      "positive_frame_is_orthonormal": true,
+      "public_Born_density_is_imported": true,
+      "representatives_are_disjoint_from_complements": true,
+      "source_Eq19_and_physical_survival_remain_open": true,
+      "spectral_projectors_are_exact": true,
+      "ten_unordered_channels_imported": true,
+      "twenty_neutral_masks_exhausted": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 31,
+    "total": 31
+  },
+  "complete_coefficient_embedding": {
+    "Krein_Born_norm": "a^T*eta*a=2*sum_S c_S^2",
+    "channel_incidence": "c=(J-I)y/4 with det(J-I)=-9",
+    "channel_pullback": "2*((J-I)/4)^T*((J-I)/4)=J+I/8",
+    "full_vector": "a=(c,c)=sqrt(2)*U_plus*c",
+    "ghost_parity_identity": "kappa*a=a and P_plus*a=a",
+    "public_formula": "c_S=c_Sc=(1/4)*sum_{A!=S}1/s_A",
+    "status": "COMPLETE_SIX_POINT_TREE_COEFFICIENT_IS_PUBLIC_FOCK_GHOST_EVEN_AND_POSITIVE"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "the nonlinear transported physical input projector R_t P_phi R_t^dagger",
+    "the source half of weak ghost symmetry",
+    "a BT-derived virtual or survival term",
+    "a simultaneous isometry of all ninety resolved histories without a detector ancilla",
+    "global gluing of the ten shell tubes and their intersections",
+    "a complete finite inclusive probability",
+    "a Moller, LSZ, or S operator",
+    "all-order Eq. (19)",
+    "loops or infrared cancellation",
+    "gravity or BRST transfer",
+    "anything LORENTZIAN-CAUSAL",
+    "literature priority"
+  ],
+  "fixed_channel_history_embedding": {
+    "allowed_basis": "f_(S,B) for S!=B",
+    "embedding": "E_B*f_(S,B)=U_plus*e_S",
+    "fixed_channel_index": 1,
+    "fixed_channel_mask": 11,
+    "ghost_parity": "kappa*E_B=E_B",
+    "isometry": "E_B^T*eta*E_B=I9",
+    "norm": "h^T*h=(E_B*h)^T*eta*(E_B*h)=9/8",
+    "normalized_history_basis": "f_(S,B)=e_(S,B)/sqrt(2) because the resolved-history metric is 2*I90",
+    "normalized_residue_coordinates": "h_S=1/(2sqrt(2)) for S!=B",
+    "public_residue": "E_B*h has coefficient 1/4 on S and Sc for S!=B and zero on B,Bc",
+    "status": "FIXED_SHELL_POSITIVE_HISTORY_RANGE_PUBLIC_FOCK_AFFILIATED"
+  },
+  "global_history_rank_boundary": {
+    "Gram_status": "E_all^T*eta*E_all is not I90",
+    "kernel_dimension": 80,
+    "meaning": "the public species carrier coherently forgets the intermediate-channel record; an isometric embedding of all ninety resolved records requires an additional positive channel-label ancilla",
+    "public_positive_dimension": 10,
+    "rank": 10,
+    "resolved_history_dimension": 90,
+    "simultaneous_restriction": "E_all*f_(S,A)=U_plus*e_S for every allowed S!=A",
+    "status": "GLOBAL_RESOLVED_HISTORY_ISOMETRY_NOT_SUPPLIED_BY_PUBLIC_SPECIES_SECTOR_ALONE"
+  },
+  "interpretation": {
+    "BT_virtual_survival_block": "NOT_CONSTRUCTED",
+    "Eq19_all_orders": "NOT_PROVED",
+    "complete_six_point_Choi_ghost_symmetry": "EXACTLY_PROVED",
+    "finite_inclusive_probability": "NOT_CONSTRUCTED",
+    "fixed_shell_history_norm_match": "EXACTLY_PROVED",
+    "fixed_shell_output_history_public_Fock_embedding": "EXACTLY_CONSTRUCTED",
+    "global_ninety_history_embedding_without_ancilla": "EXACTLY_OBSTRUCTED_BY_RANK",
+    "input_projector_pushforward": "NOT_CONSTRUCTED"
+  },
+  "lifecycle_state": "COEFFICIENT_COMPUTED",
+  "neutral_six_leg_carrier": {
+    "Krein_metric": "eta=[[0,I10],[I10,0]]",
+    "complement_masks": [
+      56,
+      52,
+      44,
+      50,
+      42,
+      38,
+      49,
+      41,
+      37,
+      35
+    ],
+    "frame_grams": {
+      "cross": "U_plus^T*eta*U_minus=0",
+      "negative": "U_minus^T*eta*U_minus=-I10",
+      "positive": "U_plus^T*eta*U_plus=I10"
+    },
+    "fundamental_positive_metric": "eta*kappa=I20",
+    "ghost_parity": "kappa=eta",
+    "inertia": {
+      "negative": 10,
+      "positive": 10,
+      "zero": 0
+    },
+    "mask_convention": "six bits with value one for Omega and zero for Upsilon; bits 0..2 incoming and bits 3..5 outgoing",
+    "negative_frame": "U_minus=[I10;-I10]/sqrt(2)",
+    "ordered_basis": "the ten representative masks followed by their ten bitwise complements",
+    "positive_frame": "U_plus=[I10;I10]/sqrt(2)",
+    "representative_masks": [
+      7,
+      11,
+      19,
+      13,
+      21,
+      25,
+      14,
+      22,
+      26,
+      28
+    ],
+    "spectral_projectors": {
+      "negative_odd": "P_minus=(I20-kappa)/2",
+      "positive_even": "P_plus=(I20+kappa)/2"
+    }
+  },
+  "next_gate": "Use the now-public-Fock-affiliated ghost-even output range as fixed boundary data and compute the incoming scalar projector pushforward on the same finite-time six-point carrier. Either prove that its leading transition column lands in this positive even plane and derive the pseudo-unitary survival block, or exhibit the first source component outside it. Preserve the intermediate-channel record with an explicit positive ancilla when gluing all ten shells; do not identify coherent species collapse with a ninety-history isometry.",
+  "provenance": {
+    "inputs": [
+      {
+        "path": "planning/work-items/reverse-physics-bateman-six-point-ghost-even-history-embedding.json",
+        "sha256": "9ec4660901b0ee486255f81744e2b4867214a94280be0d215712d40637fae0b5"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_SIX_POINT_FULL_PHASE_SPACE_BORN_POSITIVITY_V1.json",
+        "sha256": "4d0c198f332391788ce98dbb20aac18b0598ba7ebb6b64035b7b86035d0ff174"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_SIX_POINT_HISTORY_INCIDENCE_ISOMETRY_V1.json",
+        "sha256": "b3493bcb3c2ccf9a348602157d48ac4f3483531127301d780dccb927baf8b4a7"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_FINITE_TIME_HAMILTONIAN_CUT_AFFILIATION_V1.json",
+        "sha256": "68e310188382bd566aee4c351d1364442dcb5345ec978036a12a8981ad3981fd"
+      }
+    ],
+    "method": "Exact SymPy complement-pair Krein algebra, symbolic 8-by-8 Choi reconstruction, fixed-channel algebraic isometry, and exact global rank test. No floating-point arithmetic is used.",
+    "retrieval_date": "2026-08-12",
+    "source_commit": "9cc75810"
+  },
+  "question": "Does complement symmetry place the certified six-point BT coefficient and its fixed-shell histories inside a positive ghost-even sector of the public neutral Fock carrier?",
+  "report": "reverse_physics/reports/bt-six-point-ghost-even-history-embedding.md",
+  "result_kind": "exact public neutral six-leg Fock/Choi ghost-even embedding of the complete six-point coefficient and each fixed-channel positive history carrier",
+  "schema": "reverse_physics/schema/reverse-physics-bt-six-point-ghost-even-history-embedding-v1.schema.json",
+  "schema_version": "reverse-physics-bt-six-point-ghost-even-history-embedding-v1",
+  "three_particle_Choi_process": {
+    "Born_trace": "tr(A^sharp*A)=2*sum_S c_S^2",
+    "Krein_adjoint": "A^sharp=kappa3*A^T*kappa3=A^T",
+    "entry_rule": "A_out,in=c_pair(mask) when popcount(in+8*out)=3 and zero otherwise",
+    "intertwining_identity": "kappa3*A*kappa3=A",
+    "shape": [
+      8,
+      8
+    ],
+    "status": "STRONGLY_GHOST_SYMMETRIC_AT_COMPLETE_TREE_COEFFICIENT_LEVEL",
+    "three_particle_ghost_parity": "kappa3[x,y]=delta_(x,7-y)"
+  },
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_six_point_ghost_even_history_embedding.py --write --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_six_point_ghost_even_history_embedding.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_six_point_ghost_even_history_embedding"
+  ]
+}
