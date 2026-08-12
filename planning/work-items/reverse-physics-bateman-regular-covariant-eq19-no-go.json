@@ -1,0 +1,37 @@
+{
+  "id": "sf:program/work/reverse-physics-bateman-regular-covariant-eq19-no-go",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "reverse-physics",
+    "state": "ACTIVE",
+    "objective": "Decide whether the public Bateman--Turok Eq. (19) decomposition can hold on the regular covariant Laurent--Fock realization of the first nonlinear n=1 resonant block, after combining the certified all-order charge support, exact ghost-parity defect and same-chart unit obstruction.",
+    "depends_on": [
+      "REVERSE_PHYSICS_BT_BORN_TRACE_V1",
+      "REVERSE_PHYSICS_BT_FULL_SIGNED_QUADRATIC_CLOSURE_V1",
+      "REVERSE_PHYSICS_BT_COVARIANT_FORMAL_EQ19_CHARGE_SUPPORT_V1",
+      "REVERSE_PHYSICS_BT_COVARIANT_GHOST_PARITY_BRANCH_OBSTRUCTION_V1",
+      "REVERSE_PHYSICS_BT_PERTURBATIVE_GHOST_PARITY_UNIT_OBSTRUCTION_V1"
+    ],
+    "activates": [
+      "a scoped Eq. (19) no-go theorem for the public regular covariant branch",
+      "a forced architecture choice between localized, doubled, singular and direct-physical continuations",
+      "removal of the regular same-chart Eq. (19) branch from the active research search"
+    ],
+    "current_gate": "Use uniqueness of the Laurent charge decomposition to show that all-order neutrality forces Q_negative=0 and hence identifies the claimed ghost-even neutral term with the whole pushforward; then replay the nonzero order-lambda ghost defect and prove that higher orders or a regular same-chart parity pullback cannot repair it.",
+    "stop_condition": "Land an exact CLASSIFIED no-go certificate, method-distinct verifier, adversarial mutation suite, report and Papers 05/06 update. Scope the theorem to the public regular covariant Laurent--Fock n=1 resonant branch and leave fixed-vacuum descent, singular/localized/doubled/non-Fock completions, the continuum trace, complete physical probability, gravity and LORENTZIAN-CAUSAL claims open.",
+    "forbid": "no finite witness called a universal refutation of Eq. (19); no covariant Laurent theorem silently descended through Z=1; no absence of a regular local-symbol automorphism promoted to absence of singular or unbounded CCR maps; no no-go theorem called a physical probability or gravity result",
+    "allowed_paths": [
+      "reverse_physics/",
+      "paper/05-interaction-obstructions.tex",
+      "paper/05-interaction-obstructions.pdf",
+      "paper/06-einstein-weyl-interaction-obstructions.tex",
+      "paper/06-einstein-weyl-interaction-obstructions.pdf",
+      "planning/work-items/reverse-physics-bateman-regular-covariant-eq19-no-go.json",
+      "planning/events/"
+    ],
+    "resource_hint": "For A=R_t P_0 R_t^dagger on the certified covariant Laurent algebra, delta A=0 implies A_q=0 for q!=0. In an Eq. (19) split A=N_0+Q_<0, directness forces Q_<0=0 and N_0=A. Ghost evenness then requires kappa A_1 kappa=A_1, but A_1=Z^-1[K_+,P_0] is rank four while its kappa image has independent Z support; the canonical odd norm is -7/288. Formal coefficient uniqueness prevents higher-order repair, and unit preservation prevents a regular same-chart source parity from supplying the missing Z branch.",
+    "input_commit": "8b969d1d",
+    "stream": "reverse-physics"
+  }
+}

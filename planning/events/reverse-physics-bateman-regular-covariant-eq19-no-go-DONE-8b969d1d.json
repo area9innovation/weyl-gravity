@@ -1,0 +1,32 @@
+{
+  "schema": "event-v0",
+  "id": "sf:program/event/reverse-physics-bateman-regular-covariant-eq19-no-go-DONE-8b969d1d",
+  "kind": "event",
+  "source": {
+    "path": "tools/science-forge/program/events/reverse-physics-bateman-regular-covariant-eq19-no-go-DONE-8b969d1d.json",
+    "span": null
+  },
+  "body": {
+    "event_kind": "WORK_ITEM_TRANSITIONED",
+    "actor": "reverse-physics",
+    "base_revision": "science-forge-ir-v0",
+    "predecessors": [],
+    "when": "2026-08-12",
+    "seq": 1,
+    "payload": {
+      "target": "sf:program/work/reverse-physics-bateman-regular-covariant-eq19-no-go",
+      "to_state": "DONE",
+      "note": "The public regular covariant Laurent--Fock realization of Eq. (19) is obstructed already at order lambda on the n=1 resonant block. All-order charge neutrality and direct Laurent charge support force Q_negative=0 and identify the claimed ghost-even neutral term with the whole pushforward. Its certified rank-four first correction is not ghost even and has canonical odd relative norm -7/288, so higher formal orders cannot repair the coefficientwise contradiction. The minimal conjugate-branch repair changes the public Rt data and cannot be affiliated by a regular same-chart local-symbol parity. Singular, localized, doubled, non-Fock, fixed-vacuum and nonperturbative completions remain open. Evidence: REVERSE_PHYSICS_BT_REGULAR_COVARIANT_EQ19_NO_GO_V1."
+    },
+    "native": {
+      "authored_by": "manual close-out after exact charge-projection and parity-defect synthesis",
+      "policy": "append-only; one content-addressed file per event; the work-item base state is not rewritten"
+    }
+  },
+  "edges": [
+    {
+      "rel": "TRANSITIONS",
+      "to": "sf:program/work/reverse-physics-bateman-regular-covariant-eq19-no-go"
+    }
+  ]
+}

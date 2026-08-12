@@ -1,0 +1,178 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-regular-covariant-eq19-no-go-v1.schema.json",
+  "title": "Regular covariant Bateman--Turok Eq. (19) no-go certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "schema_version",
+    "certificate",
+    "question",
+    "answer",
+    "result_kind",
+    "lifecycle_state",
+    "dependency_tags",
+    "assumptions",
+    "provenance",
+    "theorem_scope",
+    "Eq19_requirements",
+    "charge_projection_argument",
+    "order_lambda_contradiction",
+    "repair_and_escape_boundary",
+    "disposition",
+    "missing_object_ledger",
+    "does_not_establish",
+    "checks",
+    "verification_commands",
+    "report"
+  ],
+  "properties": {
+    "schema": {
+      "const": "reverse_physics/schema/reverse-physics-bt-regular-covariant-eq19-no-go-v1.schema.json"
+    },
+    "schema_version": {"const": 1},
+    "certificate": {
+      "const": "REVERSE_PHYSICS_BT_REGULAR_COVARIANT_EQ19_NO_GO_V1"
+    },
+    "question": {"type": "string", "minLength": 1},
+    "answer": {"type": "string", "minLength": 1},
+    "result_kind": {"const": "scoped regular covariant Eq19 no-go theorem"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "assumptions": {
+      "type": "array",
+      "minItems": 7,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["source_commit", "input_hashes", "external_source", "generated_by", "independent_verifier"],
+      "properties": {
+        "source_commit": {"pattern": "^[0-9a-f]{40}$"},
+        "input_hashes": {
+          "type": "object",
+          "minProperties": 9,
+          "additionalProperties": {"pattern": "^[0-9a-f]{64}$"}
+        },
+        "external_source": {
+          "type": "object",
+          "required": ["title", "authors", "arxiv", "url", "equations", "last_checked"]
+        },
+        "generated_by": {"const": "reverse_physics/bt_regular_covariant_eq19_no_go.py"},
+        "independent_verifier": {"const": "reverse_physics/verify_bt_regular_covariant_eq19_no_go.py"}
+      }
+    },
+    "theorem_scope": {
+      "type": "object",
+      "required": ["architecture", "witness", "quantifier_logic", "fixed_vacuum_boundary", "continuum_boundary"],
+      "properties": {
+        "architecture": {"type": "string", "minLength": 1},
+        "witness": {"type": "string", "minLength": 1},
+        "quantifier_logic": {"type": "string", "minLength": 1},
+        "fixed_vacuum_boundary": {"type": "string", "pattern": "not descended through Z=1"},
+        "continuum_boundary": {"type": "string", "minLength": 1}
+      }
+    },
+    "Eq19_requirements": {
+      "const": {
+        "source_statement": "A=R_t P_chi^(phi) R_t^dagger=N_neutral+Q_negative",
+        "neutral_requirement": "charge zero, time independent, covariant and ghost even",
+        "remainder_requirement": "strictly negative charge, hence null and orthogonal when no positive charge occurs",
+        "necessary_condition_used": "kappa N_neutral kappa=N_neutral"
+      }
+    },
+    "charge_projection_argument": {
+      "const": {
+        "premise": "A=A_0 and A_q=0 for every q!=0 to all formal orders",
+        "assumed_split": "A=N_0+Q_<0",
+        "negative_projection": "Pi_<0(A)=0=Pi_<0(N_0)+Q_<0=Q_<0",
+        "forced_remainder": "Q_<0=0",
+        "forced_neutral_term": "N_0=A",
+        "consequence": "Eq. (19) ghost evenness is a condition on the whole public pushforward"
+      }
+    },
+    "order_lambda_contradiction": {
+      "type": "object",
+      "required": [
+        "public_coefficient",
+        "public_support",
+        "ghost_conjugate_support",
+        "commutator_rank",
+        "charge_defect",
+        "ghost_defect_support",
+        "ghost_defect_rank_by_support",
+        "canonical_odd_relative_norm",
+        "canonical_even_odd_overlap",
+        "coefficientwise_conclusion",
+        "higher_order_boundary"
+      ],
+      "properties": {
+        "public_coefficient": {"const": "A1=Z^-1[K_plus,P0]"},
+        "public_support": {"const": [-1]},
+        "ghost_conjugate_support": {"const": [1]},
+        "commutator_rank": {"const": 4},
+        "charge_defect": {"const": "0"},
+        "ghost_defect_support": {"const": [-1, 1]},
+        "ghost_defect_rank_by_support": {"const": {"-1": 4, "1": 4}},
+        "canonical_odd_relative_norm": {"const": "-7/288"},
+        "canonical_even_odd_overlap": {"const": "0"},
+        "coefficientwise_conclusion": {"type": "string", "minLength": 1},
+        "higher_order_boundary": {"type": "string", "minLength": 1}
+      }
+    },
+    "repair_and_escape_boundary": {
+      "const": {
+        "minimal_algebraic_repair": "add the kappa-conjugate Z branch and use K_even=(Z^-1 K_plus+Z kappa K_plus kappa)/2",
+        "public_affiliation": "NOT_SUPPLIED_BY_PUBLIC_RT",
+        "regular_same_chart_affiliation": "OBSTRUCTED_BY_UNIT_PRESERVATION",
+        "localized_on_shell": "OPEN_ON_DIFFERENT_NONVACUUM_CHART",
+        "doubled_source": "ALGEBRAICALLY_AVAILABLE_BUT_NEW_THEORY",
+        "singular_or_unbounded_CCR": "OPEN",
+        "nonperturbative_completion": "OPEN"
+      }
+    },
+    "disposition": {
+      "const": {
+        "public_regular_covariant_Eq19_architecture": "REFUTED_AT_ORDER_LAMBDA",
+        "Eq19_charge_support": "PROVED_WITH_Q_ZERO",
+        "Eq19_required_ghost_evenness": "REFUTED_ON_N1_RESONANT_CORNER",
+        "same_chart_regular_repair": "EXACTLY_OBSTRUCTED",
+        "fixed_vacuum_Eq19": "NOT_DECIDED_BY_COVARIANT_NO_GO",
+        "unpublished_enlarged_Eq19": "NOT_RULED_OUT",
+        "complete_physical_probability": "NOT_ESTABLISHED_BY_THIS_THEOREM",
+        "gravity_or_Lorentzian_claim": "NOT_ESTABLISHED"
+      }
+    },
+    "missing_object_ledger": {
+      "type": "array",
+      "minItems": 7,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "does_not_establish": {
+      "type": "array",
+      "minItems": 8,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "checks": {
+      "type": "object",
+      "required": ["total", "passed", "ok", "items"],
+      "properties": {
+        "total": {"type": "integer", "minimum": 25},
+        "passed": {"type": "integer", "minimum": 25},
+        "ok": {"const": true},
+        "items": {
+          "type": "object",
+          "minProperties": 25,
+          "additionalProperties": {"const": true}
+        }
+      }
+    },
+    "verification_commands": {
+      "type": "array",
+      "minItems": 3,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "report": {"const": "reverse_physics/reports/bt-regular-covariant-eq19-no-go.md"}
+  }
+}

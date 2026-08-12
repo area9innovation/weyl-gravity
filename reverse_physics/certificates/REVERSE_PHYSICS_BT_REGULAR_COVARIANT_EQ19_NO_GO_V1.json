@@ -1,0 +1,172 @@
+{
+  "Eq19_requirements": {
+    "necessary_condition_used": "kappa N_neutral kappa=N_neutral",
+    "neutral_requirement": "charge zero, time independent, covariant and ghost even",
+    "remainder_requirement": "strictly negative charge, hence null and orthogonal when no positive charge occurs",
+    "source_statement": "A=R_t P_chi^(phi) R_t^dagger=N_neutral+Q_negative"
+  },
+  "answer": "No. On the declared covariant Laurent--Fock branch the complete projector pushforward is charge zero to every formal order. Directness of the charge grading therefore forces the strictly negative Eq. (19) remainder to vanish and identifies the claimed neutral term with the whole pushforward. Ghost evenness would then have to hold coefficient by coefficient. The public order-lambda coefficient is a nonzero rank-four Z^-1 projector tangent whose ghost conjugate lies on the independent Z branch; its canonical odd remainder has exact relative norm -7/288. This contradiction cannot be canceled at higher order. The two-branch algebraic repair is not supplied by public R_t and no regular same-chart local-symbol parity can supply it.",
+  "assumptions": [
+    "the formal covariant Laurent--Fock algebra Q((lambda))[Z,Z^-1] with linearly independent orbit powers",
+    "the public Eq. (16) homomorphism and certified complete public order-lambda signed quadratic kernel",
+    "the n=1 nonzero-mode characteristic projector whose resonant parent corner is P0=diag(1,1)",
+    "target charge splits as a direct sum and the Eq. (19) remainder has strictly negative charge",
+    "the Eq. (19) neutral term is required to be ghost even under kappa",
+    "formal power-series identities are coefficientwise",
+    "regular same-chart repair means a unital local-symbol automorphism on the zero-jet perturbative chart"
+  ],
+  "certificate": "REVERSE_PHYSICS_BT_REGULAR_COVARIANT_EQ19_NO_GO_V1",
+  "charge_projection_argument": {
+    "assumed_split": "A=N_0+Q_<0",
+    "consequence": "Eq. (19) ghost evenness is a condition on the whole public pushforward",
+    "forced_neutral_term": "N_0=A",
+    "forced_remainder": "Q_<0=0",
+    "negative_projection": "Pi_<0(A)=0=Pi_<0(N_0)+Q_<0=Q_<0",
+    "premise": "A=A_0 and A_q=0 for every q!=0 to all formal orders"
+  },
+  "checks": {
+    "items": {
+      "Eq19_neutral_term_is_then_the_whole_A": true,
+      "all_order_pushforward_is_charge_zero": true,
+      "canonical_even_odd_parts_are_orthogonal": true,
+      "canonical_odd_remainder_is_non_null": true,
+      "direct_charge_sum_forces_Q_negative_zero": true,
+      "fixed_vacuum_descent_is_not_claimed": true,
+      "formal_order_lambda_defect_cannot_be_repaired_at_higher_order": true,
+      "ghost_parity_sends_minus_one_support_to_plus_one": true,
+      "independent_Laurent_support_makes_parity_defect_nonzero": true,
+      "input_hashes_pinned": true,
+      "minimal_two_branch_repair_is_not_public_Rt_affiliated": true,
+      "n1_projector_is_the_public_one_particle_species_corner": true,
+      "necessary_ghost_even_condition_fails_before_asymptotic_questions": true,
+      "physical_q6_result_is_not_used_as_Eq19_evidence": true,
+      "predecessor_certificates_pass": true,
+      "primary_source_records_neutral_ghost_even_plus_negative_split": true,
+      "public_first_coefficient_is_charge_zero": true,
+      "public_first_coefficient_is_nonzero_rank_four": true,
+      "public_first_coefficient_matches_predecessor": true,
+      "public_order_lambda_kernel_is_complete_on_declared_corner": true,
+      "regular_same_chart_parity_repair_is_impossible": true,
+      "singular_localized_doubled_and_nonperturbative_routes_remain_open": true,
+      "source_record_marks_Eq19_as_deferred": true,
+      "strict_negative_charge_projection_of_A_is_zero": true,
+      "tangent_recomputed_from_K_plus_and_P0": true
+    },
+    "ok": true,
+    "passed": 25,
+    "total": 25
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "disposition": {
+    "Eq19_charge_support": "PROVED_WITH_Q_ZERO",
+    "Eq19_required_ghost_evenness": "REFUTED_ON_N1_RESONANT_CORNER",
+    "complete_physical_probability": "NOT_ESTABLISHED_BY_THIS_THEOREM",
+    "fixed_vacuum_Eq19": "NOT_DECIDED_BY_COVARIANT_NO_GO",
+    "gravity_or_Lorentzian_claim": "NOT_ESTABLISHED",
+    "public_regular_covariant_Eq19_architecture": "REFUTED_AT_ORDER_LAMBDA",
+    "same_chart_regular_repair": "EXACTLY_OBSTRUCTED",
+    "unpublished_enlarged_Eq19": "NOT_RULED_OUT"
+  },
+  "does_not_establish": [
+    "a universal refutation of Bateman--Turok Eq. (19) in every representation",
+    "a no-go for the fixed-vacuum oscillator grading",
+    "a no-go for localized, doubled, singular, unbounded, non-Fock or nonperturbative completions",
+    "a continuum or asymptotic no-go theorem independent of the declared finite corner",
+    "a generalized-Born trace or complete transition probability",
+    "that the independently certified selected q6 physical probability is all-order",
+    "a Weyl-gravity, metric BV--BRST, QME or LORENTZIAN-CAUSAL theorem",
+    "literature priority"
+  ],
+  "lifecycle_state": "CLASSIFIED",
+  "missing_object_ledger": [
+    "a fixed-vacuum or other representation with an independently defined invariant charge split and trace",
+    "or a localized on-shell nonvacuum representation with controlled particle interpretation",
+    "or a dynamically derived doubled source and R_t map",
+    "or a singular/unbounded CCR correspondence with domains and adjoints",
+    "continuum R_plus/minus_infinity and generalized-Born trace",
+    "an all-order direct physical probability or complete scattering column",
+    "a metric BV--BRST and quantum-master-equation transfer"
+  ],
+  "order_lambda_contradiction": {
+    "canonical_even_odd_overlap": "0",
+    "canonical_odd_relative_norm": "-7/288",
+    "charge_defect": "0",
+    "coefficientwise_conclusion": "kappa A1 kappa != A1, so kappa A(lambda) kappa=A(lambda) is false already at order lambda",
+    "commutator_rank": 4,
+    "ghost_conjugate_support": [
+      1
+    ],
+    "ghost_defect_rank_by_support": {
+      "-1": 4,
+      "1": 4
+    },
+    "ghost_defect_support": [
+      -1,
+      1
+    ],
+    "higher_order_boundary": "coefficients of lambda^2 and above cannot cancel a nonzero lambda coefficient",
+    "public_coefficient": "A1=Z^-1[K_plus,P0]",
+    "public_support": [
+      -1
+    ]
+  },
+  "provenance": {
+    "external_source": {
+      "arxiv": "2607.00096v1",
+      "authors": "Sam Bateman and Neil Turok",
+      "equations": [
+        "16",
+        "18",
+        "19",
+        "20",
+        "Appendix C 31--34"
+      ],
+      "last_checked": "2026-08-12",
+      "title": "Escape from Ostrogradsky via Hidden Ghost Parity",
+      "url": "https://arxiv.org/abs/2607.00096"
+    },
+    "generated_by": "reverse_physics/bt_regular_covariant_eq19_no_go.py",
+    "independent_verifier": "reverse_physics/verify_bt_regular_covariant_eq19_no_go.py",
+    "input_hashes": {
+      "planning/events/reverse-physics-bateman-regular-covariant-eq19-no-go-DONE-8b969d1d.json": "f84dacc72c010e301ac72ae9c74429e12bfce21d84e603555e56275e8918650d",
+      "planning/work-items/reverse-physics-bateman-regular-covariant-eq19-no-go.json": "eaf05322376602d7aabdbb061c4749478600eb777f295e17670484ef324f7099",
+      "reverse_physics/certificates/REVERSE_PHYSICS_BT_BORN_TRACE_V1.json": "b7d99d0a57020df6abd9dc4dceda9c284be066311be635edaf10c0ccdb8c241a",
+      "reverse_physics/certificates/REVERSE_PHYSICS_BT_COVARIANT_FORMAL_EQ19_CHARGE_SUPPORT_V1.json": "cc863395b767e7924579f0d30a26282981cb7ed6b7add58194db1a6acdde97f2",
+      "reverse_physics/certificates/REVERSE_PHYSICS_BT_COVARIANT_GHOST_PARITY_BRANCH_OBSTRUCTION_V1.json": "f78b03e729466bf89d440ce712ec5fc7c20aef9e9ce8203827e4bd5ae85c8b1e",
+      "reverse_physics/certificates/REVERSE_PHYSICS_BT_FULL_SIGNED_QUADRATIC_CLOSURE_V1.json": "5859aad65cf0dcbc1ceb9d2c3381a9a61c2d3df6457e8b77903c8a6931aa081b",
+      "reverse_physics/certificates/REVERSE_PHYSICS_BT_PERTURBATIVE_GHOST_PARITY_UNIT_OBSTRUCTION_V1.json": "ec50a99c058632ab3252e9f9bcbab9626f714f791291499c42827ec46f8e4f81",
+      "reverse_physics/certificates/REVERSE_PHYSICS_BT_ZERO_MODE_EQ19_TRILEMMA_V1.json": "31c5d45987bb484711912af5d51da1831f5632ef34278c755265fd190963edd6",
+      "reverse_physics/data/bateman_turok_hamiltonian_source_v1.json": "55ff3f989f1c5ac9bcc0688ad9c43721c22b5889c43da50fce43352c18be8fe7"
+    },
+    "source_commit": "8b969d1d50006dd431c123b016f128da48943f62"
+  },
+  "question": "Can the public regular covariant Laurent--Fock realization of the Bateman--Turok Eq. (19) neutral-plus-strictly-negative decomposition satisfy the required ghost-even neutral condition on its first nonlinear n=1 resonant block?",
+  "repair_and_escape_boundary": {
+    "doubled_source": "ALGEBRAICALLY_AVAILABLE_BUT_NEW_THEORY",
+    "localized_on_shell": "OPEN_ON_DIFFERENT_NONVACUUM_CHART",
+    "minimal_algebraic_repair": "add the kappa-conjugate Z branch and use K_even=(Z^-1 K_plus+Z kappa K_plus kappa)/2",
+    "nonperturbative_completion": "OPEN",
+    "public_affiliation": "NOT_SUPPLIED_BY_PUBLIC_RT",
+    "regular_same_chart_affiliation": "OBSTRUCTED_BY_UNIT_PRESERVATION",
+    "singular_or_unbounded_CCR": "OPEN"
+  },
+  "report": "reverse_physics/reports/bt-regular-covariant-eq19-no-go.md",
+  "result_kind": "scoped regular covariant Eq19 no-go theorem",
+  "schema": "reverse_physics/schema/reverse-physics-bt-regular-covariant-eq19-no-go-v1.schema.json",
+  "schema_version": 1,
+  "theorem_scope": {
+    "architecture": "public Eq16/Rt data on the regular covariant Laurent--Fock orbit completion",
+    "continuum_boundary": "the finite resonant corner falsifies a necessary algebraic identity but does not construct or universally exclude other continuum representations",
+    "fixed_vacuum_boundary": "the covariant charge theorem is not descended through Z=1",
+    "quantifier_logic": "Eq. (19) is stated for a general n-particle projection; failure on one admissible n=1 characteristic-projector corner refutes this declared realization of the general claim",
+    "witness": "n=1 finite nonendpoint resonant block with daughter energies 1,2 and parent energy 3"
+  },
+  "verification_commands": [
+    "python3 reverse_physics/bt_regular_covariant_eq19_no_go.py --check",
+    "python3 reverse_physics/verify_bt_regular_covariant_eq19_no_go.py",
+    "python3 -m unittest -v reverse_physics.tests.test_bt_regular_covariant_eq19_no_go"
+  ]
+}
