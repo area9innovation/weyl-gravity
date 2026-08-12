@@ -1,0 +1,173 @@
+{
+  "schema_version": "science-forge-tier-receipt-v1",
+  "receipt_id": "PAPER21_REVERSE_FOUNDATIONS_COMPLETE_EVIDENCE_REGISTERS_V2_TIER_RECEIPT",
+  "result_id": "PAPER21_REVERSE_FOUNDATIONS_INTRODUCTION_V1",
+  "created": "2026-08-12",
+  "source_base_commit": "3a0fdb46c35e3361c7c8515ad2221e694bf91fda",
+  "prior_receipt": "foundations/receipts/PAPER21_REVERSE_FOUNDATIONS_ATLAS_APPENDICES_V1_TIER_RECEIPT.json",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "scope": "Expanded the generated static atlas appendix with the complete 51-record literature reference and evidence register, the complete 18-record local result register, and a 69-record matrix/graph/ladder usage crosswalk. This is a publication view over unchanged normalized evidence and does not promote a scientific lifecycle.",
+  "input": {
+    "path": "foundations/site/data.json",
+    "sha256": "5e15943033608c792f6d979048401f12df77b1b081c8bb8b744d9e1bb8fa00e2",
+    "canonical_digest": "378a9806111aec5b00bb9b9d71e8b9bbeaad573feb163684e967aa8cc34de625",
+    "role": "authoritative normalized website dataset; unchanged by this revision"
+  },
+  "artifacts": [
+    {
+      "path": "paper/21-reverse-foundations-of-physics.tex",
+      "sha256": "d96f10d3b1ab513bb146be093ad90327d14c6ed518593152f3e662c842fd4103",
+      "role": "unchanged manuscript source importing the generated appendix"
+    },
+    {
+      "path": "paper/21-reverse-foundations-of-physics-appendices.tex",
+      "sha256": "3c70b8f6f20f85c2136ba060cfcb742febdc1fb5c78f3e4aaa156d905beab79e",
+      "role": "generated complete static atlas, literature, local-evidence, and usage appendix"
+    },
+    {
+      "path": "paper/21-reverse-foundations-of-physics.pdf",
+      "sha256": "90866608057254b465256b71ebddfe4380900b0b8cd56b2fff01ca83380b650b",
+      "role": "compiled 32-page manuscript"
+    },
+    {
+      "path": "paper/21-reverse-foundations-of-physics-claim-map.json",
+      "sha256": "f8ec93ceb8b48b4b2974f27dd2977d9ff85a433a401a6385a252ff673f81d4c4",
+      "role": "machine-readable claim and complete-register provenance map"
+    },
+    {
+      "path": "paper/generate_21_reverse_foundations_appendices.py",
+      "sha256": "cf06e2632694cfd095ef47b2a71343323d9d6982f683609c0fdf7aeaa3ba15ae",
+      "role": "deterministic complete-register and appendix generator"
+    },
+    {
+      "path": "paper/generate_21_reverse_foundations_claim_map.py",
+      "sha256": "887bf53c9eedfd0268a3e21e32f5094250851ae9678b4fecab2b7fee7007450d",
+      "role": "deterministic claim-map generator with complete-register counts and flags"
+    },
+    {
+      "path": "paper/verify_21_reverse_foundations_claim_map.py",
+      "sha256": "3848018e333e9517fe8a8cb21de5ea76f6f69aae964ec5ef219dcbcb88fef858",
+      "role": "independent all-record citation, boundary, locator, and usage checker"
+    }
+  ],
+  "evidence_snapshot": {
+    "evidence_records": 69,
+    "literature_records": 51,
+    "local_result_records": 18,
+    "content_pinned_literature": 39,
+    "metadata_only_literature": 12,
+    "records_used_by_matrix": 69,
+    "records_with_graph_use": 5,
+    "records_with_ladder_use": 2,
+    "literature_fields_printed": [
+      "citation",
+      "stable_url",
+      "source_kind",
+      "artifact_status",
+      "supported_statements",
+      "boundary"
+    ],
+    "local_fields_printed": [
+      "result_kind",
+      "lifecycle",
+      "dependency_tags",
+      "result_path",
+      "report_path",
+      "positive_claim_flags",
+      "does_not_establish"
+    ]
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "python3 -W error::SyntaxWarning -m py_compile paper/generate_21_reverse_foundations_appendices.py paper/generate_21_reverse_foundations_claim_map.py paper/verify_21_reverse_foundations_claim_map.py",
+          "elapsed_seconds": 0.05,
+          "status": "PASS"
+        },
+        {
+          "command": "cd paper && pdflatex -interaction=nonstopmode -halt-on-error 21-reverse-foundations-of-physics.tex && pdflatex -interaction=nonstopmode -halt-on-error 21-reverse-foundations-of-physics.tex",
+          "elapsed_seconds": 3.2,
+          "status": "PASS",
+          "output": "32 pages; no undefined citations or references, overfull boxes, or LaTeX warnings on the final pass; representative literature, local-register, and crosswalk pages visually inspected"
+        },
+        {
+          "command": "git diff --cached --check -- foundations/receipts/PAPER21_REVERSE_FOUNDATIONS_COMPLETE_EVIDENCE_REGISTERS_V2_TIER_RECEIPT.json paper/21-reverse-foundations-of-physics-appendices.tex paper/21-reverse-foundations-of-physics.pdf paper/21-reverse-foundations-of-physics-claim-map.json paper/generate_21_reverse_foundations_appendices.py paper/generate_21_reverse_foundations_claim_map.py paper/verify_21_reverse_foundations_claim_map.py",
+          "elapsed_seconds": 0.01,
+          "status": "PASS"
+        }
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "python3 paper/generate_21_reverse_foundations_appendices.py --check",
+          "elapsed_seconds": 0.06,
+          "status": "PASS"
+        },
+        {
+          "command": "python3 paper/generate_21_reverse_foundations_claim_map.py --check",
+          "elapsed_seconds": 0.06,
+          "status": "PASS"
+        },
+        {
+          "command": "python3 paper/verify_21_reverse_foundations_claim_map.py",
+          "elapsed_seconds": 0.05,
+          "status": "PASS",
+          "output": "all 51 literature citations, URLs, artifact statuses, supported statements, and boundaries; all 18 local result/report locators, dependency tags, positive flags, and complete negative boundaries; and all 69 matrix/graph/ladder crosswalk entries verified"
+        }
+      ]
+    },
+    "tier_2": {
+      "status": "NOT_RUN",
+      "criterion": "No mathematical input, shared operator, source certificate, schema, or scientific result changed. The expanded appendix is a generated publication view over an unchanged content-addressed atlas dataset."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "This remains a working-draft synthesis and does not freeze a classical or quantum snapshot, promote a theorem lifecycle, change shared core algebra, or prepare a release."
+    }
+  },
+  "claim_flags": {
+    "complete_literature_register_generated": true,
+    "complete_local_evidence_register_generated": true,
+    "complete_usage_crosswalk_generated": true,
+    "all_register_entries_independently_checked": true,
+    "appendices_generated_from_normalized_data": true,
+    "claim_map_current": true,
+    "paper_compiles": true,
+    "systematic_review_complete": false,
+    "literature_absence_claims_established": false,
+    "weakest_foundation_proved": false,
+    "new_lorentzian_claim": false,
+    "quantum_lifecycle_promoted": false
+  },
+  "preexisting_unrelated_work_preserved": [
+    "notes/bateman-turok-embedding.md",
+    "paper/05-interaction-obstructions.tex",
+    "paper/05-interaction-obstructions.pdf",
+    "paper/06-einstein-weyl-interaction-obstructions.tex",
+    "paper/06-einstein-weyl-interaction-obstructions.pdf",
+    "planning/events/reverse-physics-bateman-six-point-finite-time-shell-column-DONE-22ddd02f.json",
+    "planning/work-items/reverse-physics-bateman-six-point-finite-time-shell-column.json",
+    "reverse_physics/bt_six_point_finite_time_shell_column.py",
+    "reverse_physics/certificates/REVERSE_PHYSICS_BT_SIX_POINT_FINITE_TIME_SHELL_COLUMN_V1.json",
+    "reverse_physics/reports/bt-six-point-finite-time-shell-column.md",
+    "reverse_physics/schema/reverse-physics-bt-six-point-finite-time-shell-column-v1.schema.json",
+    "reverse_physics/tests/test_bt_six_point_finite_time_shell_column.py",
+    "reverse_physics/verify_bt_six_point_finite_time_shell_column.py"
+  ],
+  "does_not_establish": [
+    "that the 51-source seed corpus is a systematic or literature-complete review",
+    "absence theorems for unmapped cells or unrepresented literature",
+    "that all 576 synthetic coordinates are coherent",
+    "a weakest mathematical base or reversal",
+    "a new LORENTZIAN-CAUSAL result",
+    "a quantum lifecycle promotion"
+  ]
+}

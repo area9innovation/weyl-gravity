@@ -65,6 +65,9 @@ def build() -> dict:
     cube = loaded["intersection_cube"]
     site = loaded["explorer_snapshot"]
     atlas_data = json.loads((ROOT / ATLAS_DATA).read_text())
+    evidence = atlas_data["evidence"]
+    literature = [entry for entry in evidence.values() if entry["kind"] == "LITERATURE"]
+    local_results = [entry for entry in evidence.values() if entry["kind"] == "LOCAL_RESULT"]
     dimensions = cube["dimensions"]
     payload = {
         "schema_version": "paper-21-reverse-foundations-claim-map-v1",
@@ -120,6 +123,19 @@ def build() -> dict:
             "synthetic_complements": dimensions["cartesian_total"] - dimensions["emitted_cells"],
             "total_not_mapped_in_explorer": site["counts"]["not_mapped"],
             "evidence_records": site["counts"]["evidence_records"],
+            "literature_records": len(literature),
+            "local_result_records": len(local_results),
+            "content_pinned_literature": sum(
+                entry["artifact_status"] == "CONTENT_PINNED" for entry in literature
+            ),
+            "metadata_only_literature": sum(
+                entry["artifact_status"] == "METADATA_ONLY" for entry in literature
+            ),
+            "evidence_records_used_by_matrix": len({
+                evidence_id
+                for cell in atlas_data["cells"]
+                for evidence_id in cell.get("evidence", [])
+            }),
             "axis_options": sum(len(axis["keys"]) for axis in atlas_data["axes"]),
             "implication_nodes": len(atlas_data["graph"]["nodes"]),
             "implication_edges": len(atlas_data["graph"]["edges"]),
@@ -204,6 +220,9 @@ def build() -> dict:
             "typed_relations_supplied": True,
             "case_study_authorities_pinned": True,
             "static_atlas_appendix_generated": True,
+            "complete_evidence_register_generated": True,
+            "complete_literature_register_generated": True,
+            "evidence_usage_crosswalk_generated": True,
             "weakest_foundation_proved": False,
             "global_physics_implies_choice_theorem": False,
             "axes_independent_proved": False,
@@ -232,6 +251,9 @@ def build() -> dict:
                 "authority result identities and dependency tags",
                 "atlas counts against source artifacts",
                 "generated appendix hash and normalized atlas source",
+                "complete literature citations, URLs, artifact statuses, roles, and boundaries",
+                "complete local-certificate locators, positive flags, dependency tags, and boundaries",
+                "all-record matrix, graph, and strength-ladder usage crosswalk",
                 "claim-to-authority dependency boundaries",
                 "required paper language and bibliography keys",
                 "canonical claim-map digest",

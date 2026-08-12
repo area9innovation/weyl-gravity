@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import collections
 from pathlib import Path
 
 
@@ -26,6 +27,29 @@ def digest_without_self(data: dict) -> str:
     body.pop("canonical_digest", None)
     encoded = json.dumps(body, sort_keys=True, separators=(",", ":")).encode()
     return hashlib.sha256(encoded).hexdigest()
+
+
+def tex(value: object) -> str:
+    text = str(value)
+    replacements = [
+        ("\\", r"\textbackslash{}"),
+        ("&", r"\&"),
+        ("%", r"\%"),
+        ("$", r"\$"),
+        ("#", r"\#"),
+        ("_", r"\_"),
+        ("{", r"\{"),
+        ("}", r"\}"),
+        ("~", r"\textasciitilde{}"),
+        ("^", r"\textasciicircum{}"),
+        ("×", r"\(\times\)"),
+        ("→", r"\(\rightarrow\)"),
+        ("—", "---"),
+        ("–", "--"),
+    ]
+    for old, new in replacements:
+        text = text.replace(old, new)
+    return text
 
 
 def main() -> int:
@@ -55,6 +79,11 @@ def main() -> int:
     require(atlas["synthetic_complements"] == 124, "synthetic complement mismatch")
     require(atlas["total_not_mapped_in_explorer"] == site["counts"]["not_mapped"] == 205, "explorer not-mapped mismatch")
     require(atlas["evidence_records"] == site["counts"]["evidence_records"] == 69, "evidence-record mismatch")
+    require(atlas["literature_records"] == 51, "literature-record mismatch")
+    require(atlas["local_result_records"] == 18, "local-result-record mismatch")
+    require(atlas["content_pinned_literature"] == 39, "content-pinned literature mismatch")
+    require(atlas["metadata_only_literature"] == 12, "metadata-only literature mismatch")
+    require(atlas["evidence_records_used_by_matrix"] == 69, "matrix evidence usage is incomplete")
     require(atlas["migration_pending_cells"] == 0, "migration must remain fully reviewed")
 
     allowed_tags = {"LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE", "LORENTZIAN-CAUSAL"}
@@ -78,6 +107,9 @@ def main() -> int:
 
     flags = data["claim_flags"]
     require(flags["static_atlas_appendix_generated"] is True, "static atlas appendix flag is not certified")
+    require(flags["complete_evidence_register_generated"] is True, "complete evidence register flag is not certified")
+    require(flags["complete_literature_register_generated"] is True, "complete literature register flag is not certified")
+    require(flags["evidence_usage_crosswalk_generated"] is True, "evidence crosswalk flag is not certified")
     for false_flag in [
         "weakest_foundation_proved",
         "global_physics_implies_choice_theorem",
@@ -124,6 +156,89 @@ def main() -> int:
     } | {step["source"] for step in atlas_data["ladder"] if step.get("source")}
     for evidence_id in linked_evidence:
         require(rf"\cert{{{evidence_id}}}" in appendix, f"linked evidence missing from appendix: {evidence_id}")
+
+    evidence = atlas_data["evidence"]
+    require(appendix.count(r"\hypertarget{atlas-evidence-") == 69, "evidence-register anchor count drift")
+    require(appendix.count(r"\hyperlink{atlas-evidence-") == 69, "evidence-crosswalk link count drift")
+    cell_usage = {evidence_id: [] for evidence_id in evidence}
+    for cell in atlas_data["cells"]:
+        for evidence_id in cell.get("evidence", []):
+            require(evidence_id in evidence, f"cell references unknown evidence: {evidence_id}")
+            cell_usage[evidence_id].append(cell)
+    graph_usage = collections.defaultdict(list)
+    for edge_number, edge in enumerate(atlas_data["graph"]["edges"], start=1):
+        for evidence_id in edge.get("evidence", []):
+            require(evidence_id in evidence, f"graph references unknown evidence: {evidence_id}")
+            graph_usage[evidence_id].append(edge_number)
+    ladder_usage = collections.defaultdict(list)
+    for step in atlas_data["ladder"]:
+        if step.get("source"):
+            require(step["source"] in evidence, f"ladder references unknown evidence: {step['source']}")
+            ladder_usage[step["source"]].append(step["level"])
+    status_order = ["LOCAL_RESULT", "LITERATURE_RESULT", "PIECES_ONLY", "PRIORITY_GAP", "NOT_MAPPED"]
+    status_short = {
+        "LOCAL_RESULT": "Local",
+        "LITERATURE_RESULT": "Literature",
+        "PIECES_ONLY": "Pieces",
+        "PRIORITY_GAP": "Priority gap",
+        "NOT_MAPPED": "Not mapped",
+    }
+
+    for number, (evidence_id, entry) in enumerate(sorted(evidence.items()), start=1):
+        anchor = f"atlas-evidence-{number}"
+        require(
+            rf"\hypertarget{{{anchor}}}{{\cert{{{evidence_id}}}}}" in appendix,
+            f"evidence register entry missing: {evidence_id}",
+        )
+        require(
+            rf"\hyperlink{{{anchor}}}{{\cert{{{evidence_id}}}}}" in appendix,
+            f"evidence crosswalk entry missing: {evidence_id}",
+        )
+        require(cell_usage[evidence_id], f"evidence record has no matrix usage: {evidence_id}")
+        status_counts = collections.Counter(cell["status"] for cell in cell_usage[evidence_id])
+        status_summary = ", ".join(
+            f"{status_short[status]} {status_counts[status]}"
+            for status in status_order
+            if status_counts[status]
+        )
+        matrix_use = f"{len(cell_usage[evidence_id])} coordinates ({status_summary})."
+        target = rf"\hyperlink{{{anchor}}}{{\cert{{{evidence_id}}}}}"
+        target += " (literature)" if entry["kind"] == "LITERATURE" else " (local)"
+        require(
+            f"{target} & {tex(matrix_use)} &" in appendix,
+            f"matrix usage count missing: {evidence_id}",
+        )
+        if graph_usage[evidence_id]:
+            require(
+                "graph edges " + ", ".join(map(str, graph_usage[evidence_id])) in appendix,
+                f"graph crosswalk missing: {evidence_id}",
+            )
+        if ladder_usage[evidence_id]:
+            require(
+                tex("ladder " + ", ".join(ladder_usage[evidence_id])) in appendix,
+                f"ladder crosswalk missing: {evidence_id}",
+            )
+        if entry["kind"] == "LITERATURE":
+            for field in ["citation", "source_kind", "artifact_status", "stable_url", "supported_statements", "boundary"]:
+                require(field in entry, f"literature record lacks {field}: {evidence_id}")
+            require(tex(entry["citation"]) in appendix, f"literature citation missing: {evidence_id}")
+            require(rf"\url{{{entry['stable_url']}}}" in appendix, f"literature URL missing: {evidence_id}")
+            require(rf"\cert{{{entry['artifact_status']}}}" in appendix, f"artifact status missing: {evidence_id}")
+            for statement in entry["supported_statements"]:
+                require(tex(statement) in appendix, f"supported statement missing: {evidence_id}")
+            require(tex(entry["boundary"]) in appendix, f"literature boundary missing: {evidence_id}")
+        else:
+            for field in ["result_path", "report_path", "result_kind", "lifecycle", "dependency_tags", "claim_flags", "does_not_establish"]:
+                require(field in entry, f"local record lacks {field}: {evidence_id}")
+            require(rf"\cert{{{entry['result_path']}}}" in appendix, f"result locator missing: {evidence_id}")
+            require(rf"\cert{{{entry['report_path']}}}" in appendix, f"report locator missing: {evidence_id}")
+            for tag in entry["dependency_tags"]:
+                require(tag in appendix, f"local dependency tag missing: {evidence_id} / {tag}")
+            for exclusion in entry["does_not_establish"]:
+                require(tex(exclusion) in appendix, f"local boundary item missing: {evidence_id}")
+            for flag, enabled in entry["claim_flags"].items():
+                if enabled:
+                    require(tex(flag.replace("_", " ")) in appendix, f"local positive flag missing: {evidence_id} / {flag}")
 
     paper = paper_path.read_text()
     prose = " ".join(paper.split())
