@@ -1,0 +1,152 @@
+{
+  "answer": "No. The exact density is D=(sum_A 1/s_A)^2+(1/8)sum_A 1/s_A^2. Near a single channel s_B=0 it has universal leading term 9/(8s_B^2). At the positive-energy full-rank physical chart point (a,b,t,u,v)=(2,-2,3/5,1/2,1/3), s_11 is the unique zero channel, partial_t s_11=-1152/425, and the chart has rank five. Thus D=180625/[1179648(t-3/5)^2]+O((t-3/5)^-1), whose ordinary local integral diverges positively. A regulator, detector resolution, or inclusive real-virtual distribution is mandatory; none is selected here.",
+  "certificate": "REVERSE_PHYSICS_BT_SIX_POINT_PHASE_SPACE_POLE_OBSTRUCTION_V1",
+  "checks": {
+    "details": {
+      "all_three_outgoing_energies_are_positive": true,
+      "chart_minor_is_nonzero": true,
+      "coordinate_double_pole_coefficient_is_positive": true,
+      "declared_channel_is_the_unique_zero": true,
+      "density_quadratic_form_is_exact": true,
+      "exactly_one_channel_vanishes": true,
+      "inputs_are_content_pinned": true,
+      "ordinary_local_integral_diverges": true,
+      "physical_chart_remains_rank_five": true,
+      "pole_is_transverse": true,
+      "regulation_inclusion_eq19_and_gravity_are_not_promoted": true,
+      "single_channel_leading_coefficient_is_9_over_8": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 12,
+    "total": 12
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "a preferred pole regulator",
+    "a Hadamard finite part",
+    "a detector-resolution prescription",
+    "real-virtual or KLN cancellation",
+    "a finite normalized probability",
+    "Eq. (19)",
+    "loops",
+    "gravity/BRST",
+    "anything LORENTZIAN-CAUSAL"
+  ],
+  "exact_transverse_physical_pole": {
+    "channel_values": [
+      {
+        "mask": 7,
+        "value": "256/25"
+      },
+      {
+        "mask": 11,
+        "value": "0"
+      },
+      {
+        "mask": 19,
+        "value": "-1568/625"
+      },
+      {
+        "mask": 13,
+        "value": "-1152/425"
+      },
+      {
+        "mask": 21,
+        "value": "-32/85"
+      },
+      {
+        "mask": 25,
+        "value": "-32256/10625"
+      },
+      {
+        "mask": 14,
+        "value": "-1024/425"
+      },
+      {
+        "mask": 22,
+        "value": "3456/10625"
+      },
+      {
+        "mask": 26,
+        "value": "224/425"
+      },
+      {
+        "mask": 28,
+        "value": "-32/625"
+      }
+    ],
+    "chart_rank": 5,
+    "density_leading_coefficient_in_s": "9/8",
+    "density_leading_coefficient_in_t_minus_3_over_5": "180625/1179648",
+    "energies": [
+      "6/5",
+      "1",
+      "1"
+    ],
+    "nonzero_minor_determinant": "-8957952/112890625",
+    "nonzero_minor_rows": [
+      0,
+      1,
+      2,
+      4,
+      5
+    ],
+    "point": [
+      "2",
+      "-2",
+      "3/5",
+      "1/2",
+      "1/3"
+    ],
+    "transverse_derivative": "-1152/425",
+    "unique_zero_channel": 11,
+    "zero_channel_function_on_transverse_line": "-36*(5*t - 3)*(13*t + 5)/(625*(t**2 + 1))"
+  },
+  "interpretation": {
+    "Eq19_all_orders": "NOT_PROVED",
+    "metric_BV_BRST_lift": "NOT_CONSTRUCTED",
+    "ordinary_exclusive_tree_phase_space_integral": "DIVERGES_LOCALLY",
+    "principal_value_of_positive_double_pole": "DOES_NOT_CURE_DIVERGENCE",
+    "regulated_or_inclusive_probability": "NOT_COMPUTED"
+  },
+  "lifecycle_state": "COEFFICIENT_COMPUTED",
+  "next_gate": "Compute the distributional completion of the ten factorization channels from a common causal prescription and combine it with the already classified virtual external-mass logarithmic jets, or prove that no positive exclusive completion exists without inclusive real-virtual data.",
+  "provenance": {
+    "inputs": [
+      {
+        "path": "planning/work-items/reverse-physics-bateman-six-point-phase-space-pole-obstruction.json",
+        "sha256": "cef0f47af9a6606eac7d7351606b877de1556f9ae9ce0ad385b5a4dcccc91832"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_SIX_POINT_FULL_PHASE_SPACE_BORN_POSITIVITY_V1.json",
+        "sha256": "19c9260ac5456ac634547eeaf49ba9a0cdf1a5d09615fdea06231f6092c36083"
+      },
+      {
+        "path": "reverse_physics/bt_six_point_full_phase_space_born_positivity.py",
+        "sha256": "0e4d443f45ace9e25a97d4c23074a28dcdb872aa9af411a5308bc59c02f74917"
+      }
+    ],
+    "method": "Exact SymPy rational algebra applied to the certified universal density and five-coordinate physical chart.",
+    "retrieval_date": "2026-08-12",
+    "source_commit": "c7c0ff1c"
+  },
+  "question": "Does the strictly positive complete six-point local BT tree density define an ordinary finite phase-space integral without an additional pole prescription?",
+  "report": "reverse_physics/reports/bt-six-point-phase-space-pole-obstruction.md",
+  "result_kind": "exact transverse physical factorization-pole and ordinary exclusive-integrability obstruction",
+  "schema": "reverse_physics/schema/reverse-physics-bt-six-point-phase-space-pole-obstruction-v1.schema.json",
+  "schema_version": "reverse-physics-bt-six-point-phase-space-pole-obstruction-v1",
+  "universal_density": {
+    "formula": "D=(sum_A y_A)^2+(1/8)sum_A y_A^2",
+    "single_channel_asymptotic": "D=9/(8*s_B^2)+O(1/s_B)",
+    "variables": "y_A=1/s_A"
+  },
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_six_point_phase_space_pole_obstruction.py --write --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_six_point_phase_space_pole_obstruction.py",
+    "ulimit -v 500000; python3 -m unittest reverse_physics.tests.test_bt_six_point_phase_space_pole_obstruction"
+  ]
+}

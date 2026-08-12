@@ -1,0 +1,19 @@
+{
+  "id": "sf:program/work/reverse-physics-bateman-six-point-phase-space-pole-obstruction",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "reverse-physics",
+    "state": "ACTIVE",
+    "objective": "Decide whether the strictly positive complete six-point local BT tree density has an ordinary finite integral across its physical factorization hypersurfaces.",
+    "depends_on": ["REVERSE_PHYSICS_BT_SIX_POINT_FULL_PHASE_SPACE_BORN_POSITIVITY_V1"],
+    "activates": ["an exact pole asymptotic", "a regulated or inclusive probability gate"],
+    "current_gate": "Find an exact rank-five positive-energy physical point with one and only one transverse three-particle channel pole, derive the local density order and coefficient, and decide ordinary local integrability.",
+    "stop_condition": "Land an exact certificate proving ordinary integrability or a transverse divergence, without treating a regulator, finite part, detector cutoff, or real-virtual cancellation as already supplied.",
+    "forbid": "no principal value assigned to a positive double pole by convention; no divergent exclusive tree integral called a physical probability; no scalar pole statement promoted to Eq. 19, loops, gravity, or LORENTZIAN-CAUSAL",
+    "allowed_paths": ["reverse_physics/", "notes/bateman-turok-embedding.md", "paper/05-interaction-obstructions.tex", "paper/05-interaction-obstructions.pdf", "paper/06-einstein-weyl-interaction-obstructions.tex", "paper/06-einstein-weyl-interaction-obstructions.pdf", "planning/work-items/reverse-physics-bateman-six-point-phase-space-pole-obstruction.json", "planning/events/"],
+    "resource_hint": "Use D=(sum_A 1/s_A)^2+(1/8)sum_A 1/s_A^2. Certify a single transverse channel zero on the exact five-coordinate chart and keep the local phase-space Jacobian nonzero.",
+    "input_commit": "c7c0ff1c",
+    "stream": "reverse-physics"
+  }
+}

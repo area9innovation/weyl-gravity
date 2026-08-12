@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-six-point-phase-space-pole-obstruction-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["certificate", "schema_version", "dependency_tags", "lifecycle_state", "result_kind", "question", "answer", "universal_density", "exact_transverse_physical_pole", "interpretation", "does_not_establish", "next_gate", "provenance", "verification_commands", "checks", "report", "schema"],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_SIX_POINT_PHASE_SPACE_POLE_OBSTRUCTION_V1"},
+    "schema_version": {"const": "reverse-physics-bt-six-point-phase-space-pole-obstruction-v1"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "result_kind": {"$ref": "#/$defs/text"}, "question": {"$ref": "#/$defs/text"}, "answer": {"$ref": "#/$defs/text"},
+    "universal_density": {"const": {"variables": "y_A=1/s_A", "formula": "D=(sum_A y_A)^2+(1/8)sum_A y_A^2", "single_channel_asymptotic": "D=9/(8*s_B^2)+O(1/s_B)"}},
+    "exact_transverse_physical_pole": {
+      "type": "object", "additionalProperties": false,
+      "required": ["point", "energies", "channel_values", "unique_zero_channel", "zero_channel_function_on_transverse_line", "transverse_derivative", "chart_rank", "nonzero_minor_rows", "nonzero_minor_determinant", "density_leading_coefficient_in_s", "density_leading_coefficient_in_t_minus_3_over_5"],
+      "properties": {
+        "point": {"const": ["2", "-2", "3/5", "1/2", "1/3"]}, "energies": {"const": ["6/5", "1", "1"]},
+        "channel_values": {"type": "array", "minItems": 10, "maxItems": 10, "items": {"type": "object", "additionalProperties": false, "required": ["mask", "value"], "properties": {"mask": {"type": "integer"}, "value": {"$ref": "#/$defs/text"}}}},
+        "unique_zero_channel": {"const": 11}, "zero_channel_function_on_transverse_line": {"$ref": "#/$defs/text"},
+        "transverse_derivative": {"const": "-1152/425"}, "chart_rank": {"const": 5}, "nonzero_minor_rows": {"const": [0, 1, 2, 4, 5]},
+        "nonzero_minor_determinant": {"const": "-8957952/112890625"}, "density_leading_coefficient_in_s": {"const": "9/8"},
+        "density_leading_coefficient_in_t_minus_3_over_5": {"const": "180625/1179648"}
+      }
+    },
+    "interpretation": {"const": {"ordinary_exclusive_tree_phase_space_integral": "DIVERGES_LOCALLY", "principal_value_of_positive_double_pole": "DOES_NOT_CURE_DIVERGENCE", "regulated_or_inclusive_probability": "NOT_COMPUTED", "Eq19_all_orders": "NOT_PROVED", "metric_BV_BRST_lift": "NOT_CONSTRUCTED"}},
+    "does_not_establish": {"type": "array", "minItems": 9, "items": {"$ref": "#/$defs/text"}}, "next_gate": {"$ref": "#/$defs/text"},
+    "provenance": {"type": "object", "additionalProperties": false, "required": ["source_commit", "retrieval_date", "inputs", "method"], "properties": {"source_commit": {"const": "c7c0ff1c"}, "retrieval_date": {"const": "2026-08-12"}, "inputs": {"type": "array", "minItems": 3, "maxItems": 3}, "method": {"$ref": "#/$defs/text"}}},
+    "verification_commands": {"type": "array", "minItems": 3},
+    "checks": {"type": "object", "additionalProperties": false, "required": ["ok", "passed", "total", "failures", "details"], "properties": {"ok": {"const": true}, "passed": {"const": 12}, "total": {"const": 12}, "failures": {"const": []}, "details": {"type": "object", "minProperties": 12, "maxProperties": 12, "additionalProperties": {"const": true}}}},
+    "report": {"const": "reverse_physics/reports/bt-six-point-phase-space-pole-obstruction.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-six-point-phase-space-pole-obstruction-v1.schema.json"}
+  },
+  "$defs": {"text": {"type": "string", "minLength": 1}}
+}
