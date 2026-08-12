@@ -1,0 +1,32 @@
+{
+  "schema": "event-v0",
+  "id": "sf:program/event/reverse-physics-bateman-hard-nonforward-physical-stratified-atlas-DONE-f6ef6966",
+  "kind": "event",
+  "source": {
+    "path": "tools/science-forge/program/events/reverse-physics-bateman-hard-nonforward-physical-stratified-atlas-DONE-f6ef6966.json",
+    "span": null
+  },
+  "body": {
+    "event_kind": "WORK_ITEM_TRANSITIONED",
+    "actor": "reverse-physics",
+    "base_revision": "science-forge-ir-v0",
+    "predecessors": [],
+    "when": "2026-08-12",
+    "seq": 1,
+    "payload": {
+      "target": "sf:program/work/reverse-physics-bateman-hard-nonforward-physical-stratified-atlas",
+      "to_state": "DONE",
+      "note": "All 202 disconnected six-label partitions are classified exactly on the hard massless domain. The 162 singleton-containing partitions and all ten 3+3 partitions are off support. Of fifteen 2+4 partitions, nine give the spectator cylinders Delta_ia={p_i=k_a} and six are same-side impossible. Of fifteen 2+2+2 partitions, six are forward permutation diagonals and nine contain an impossible same-side pair. Away from equal-particle and forward loci the nine cylinders are pairwise disjoint. Hence every stratum-local hard nonforward detector is either fully rearranged, with complete leading probability order lambda8, or lies on exactly one spectator cylinder, with complete leading probability order lambda4. There is no generic two-spectator nonforward stratum. One finite-resolution detector crossing strata, forward/collinear boundaries, higher orders, all-time scattering and Eq. 19 remain open. Evidence: REVERSE_PHYSICS_BT_HARD_NONFORWARD_PHYSICAL_STRATIFIED_ATLAS_V1."
+    },
+    "native": {
+      "authored_by": "manual close-out after exhaustive partition support and cylinder-incidence verification",
+      "policy": "append-only; one content-addressed file per event; the work-item base state is not rewritten"
+    }
+  },
+  "edges": [
+    {
+      "rel": "TRANSITIONS",
+      "to": "sf:program/work/reverse-physics-bateman-hard-nonforward-physical-stratified-atlas"
+    }
+  ]
+}

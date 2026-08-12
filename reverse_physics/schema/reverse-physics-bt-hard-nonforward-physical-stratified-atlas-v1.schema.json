@@ -1,0 +1,185 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-hard-nonforward-physical-stratified-atlas-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "certificate", "schema_version", "dependency_tags", "lifecycle_state",
+    "result_kind", "question", "answer", "hard_nonforward_domain",
+    "disconnected_partition_census", "spectator_cylinder_incidence",
+    "complete_local_physical_atlas", "interpretation", "assumptions",
+    "does_not_establish", "missing_object_ledger", "next_gate", "provenance",
+    "verification_commands", "checks", "report", "schema"
+  ],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_HARD_NONFORWARD_PHYSICAL_STRATIFIED_ATLAS_V1"},
+    "schema_version": {"const": "reverse-physics-bt-hard-nonforward-physical-stratified-atlas-v1"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "hard_nonforward_domain": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["external_labels", "conditions", "status"],
+      "properties": {
+        "external_labels": {"const": ["p0", "p1", "p2", "-k0", "-k1", "-k2"]},
+        "conditions": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/text"}},
+        "status": {"const": "HARD_DISTINCT_NONCOLLINEAR_NONFORWARD_DOMAIN"}
+      }
+    },
+    "disconnected_partition_census": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["all_set_partitions", "disconnected_partitions", "profile_counts", "singleton_containing", "two_plus_four", "three_plus_three", "two_plus_two_plus_two", "support_theorem", "status"],
+      "properties": {
+        "all_set_partitions": {"const": 203},
+        "disconnected_partitions": {"const": 202},
+        "profile_counts": {"const": [
+          {"profile": [1, 1, 1, 1, 1, 1], "count": 1},
+          {"profile": [1, 1, 1, 1, 2], "count": 15},
+          {"profile": [1, 1, 1, 3], "count": 20},
+          {"profile": [1, 1, 2, 2], "count": 45},
+          {"profile": [1, 1, 4], "count": 15},
+          {"profile": [1, 2, 3], "count": 60},
+          {"profile": [1, 5], "count": 6},
+          {"profile": [2, 2, 2], "count": 15},
+          {"profile": [2, 4], "count": 15},
+          {"profile": [3, 3], "count": 10}
+        ]},
+        "singleton_containing": {"const": 162},
+        "two_plus_four": {"const": {"total": 15, "spectator_cylinders": 9, "same_side_impossible": 6}},
+        "three_plus_three": {"const": {
+          "total": 10,
+          "orientation_obstructions": {
+            "all_same_side_total_is_nonzero": 1,
+            "mixed_block_forces_same_side_collinearity": 9
+          },
+          "kinematic_reason": "the all-plus/all-minus partition carries total momentum plus or minus P; in every mixed block p_i+p_j=k_a (or its reverse) implies (p_i+p_j)^2=2*p_i dot p_j=0, contradicting the strictly positive same-side pair invariant",
+          "hard_domain_supported": 0
+        }},
+        "two_plus_two_plus_two": {"const": {"total": 15, "forward_permutations": 6, "same_side_impossible": 9}},
+        "support_theorem": {"$ref": "#/$defs/text"},
+        "status": {"const": "ALL_202_DISCONNECTED_PARTITIONS_CLASSIFIED"}
+      }
+    },
+    "spectator_cylinder_incidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["cylinders", "pairwise_intersections", "intersection_types", "same_incoming_reason", "same_outgoing_reason", "distinct_pair_reason", "conclusion", "status"],
+      "properties": {
+        "cylinders": {
+          "type": "array", "minItems": 9, "maxItems": 9,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["incoming", "outgoing", "equation"],
+            "properties": {"incoming": {"type": "integer", "minimum": 0, "maximum": 2}, "outgoing": {"type": "integer", "minimum": 0, "maximum": 2}, "equation": {"$ref": "#/$defs/text"}}
+          }
+        },
+        "pairwise_intersections": {"const": 36},
+        "intersection_types": {"const": {
+          "same_incoming_forces_equal_outgoing": 9,
+          "same_outgoing_forces_equal_incoming": 9,
+          "distinct_pairs_force_third_and_forward": 18
+        }},
+        "same_incoming_reason": {"$ref": "#/$defs/text"},
+        "same_outgoing_reason": {"$ref": "#/$defs/text"},
+        "distinct_pair_reason": {"$ref": "#/$defs/text"},
+        "conclusion": {"const": "the nine cylinders are pairwise disjoint on the declared hard nonforward domain"},
+        "status": {"const": "NINE_PAIRWISE_DISJOINT_NONFORWARD_SPECTATOR_CYLINDERS"}
+      }
+    },
+    "complete_local_physical_atlas": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["bulk", "spectator_cylinder", "additional_generic_strata", "coverage", "status"],
+      "properties": {
+        "bulk": {
+          "type": "object", "additionalProperties": false,
+          "required": ["condition", "disconnected_contribution", "leading_amplitude", "leading_probability", "declared_scalar", "global_bound", "status"],
+          "properties": {
+            "condition": {"const": "p_i!=k_a for all nine pairs"},
+            "disconnected_contribution": {"const": "ZERO_BY_SUPPORT"},
+            "leading_amplitude": {"const": "lambda^4*A_YX"},
+            "leading_probability": {"const": "q_bulk=lambda^8*<Psi,A_YX^*A_YX Psi>+O(lambda^9)"},
+            "declared_scalar": {"const": "q_bulk=16*lambda^8*||sum_(B=1)^9 P_Y*K_B,T*P_X F||^2+O(lambda^9)"},
+            "global_bound": {"const": "q_bulk^(8)<=81*lambda^8*T^2/(200*pi^6)"},
+            "status": {"const": "COMPLETE_LEADING_FULLY_REARRANGED_LOCAL_STRATUM"}
+          }
+        },
+        "spectator_cylinder": {
+          "type": "object", "additionalProperties": false,
+          "required": ["condition", "disconnected_contribution", "leading_amplitude", "active_invariant", "leading_probability", "status"],
+          "properties": {
+            "condition": {"$ref": "#/$defs/text"},
+            "disconnected_contribution": {"const": "UNIQUE_FOUR_POINT_TREE_TIMES_SPECTATOR_IDENTITY"},
+            "leading_amplitude": {"const": "lambda^2*(I_spectator tensor A4_active)"},
+            "active_invariant": {"const": "s_ia=(P-p_i)^2=(P-k_a)^2"},
+            "leading_probability": {"const": "q_ia=3*lambda^4*DeltaOmega/(32*pi^2*s_ia*Area)+O(lambda^5)"},
+            "status": {"const": "COMPLETE_LEADING_TAGGED_SPECTATOR_LOCAL_STRATUM"}
+          }
+        },
+        "additional_generic_strata": {"const": "NONE"},
+        "coverage": {"const": "every distributionally stratum-local detector germ in the declared hard nonforward domain"},
+        "status": {"const": "COMPLETE_HARD_NONFORWARD_LOCAL_PHYSICAL_ATLAS"}
+      }
+    },
+    "interpretation": {"const": {
+      "fully_rearranged_local_stratum": "COEFFICIENT_COMPUTED",
+      "all_nine_tagged_spectator_local_strata": "COEFFICIENT_COMPUTED",
+      "generic_two_spectator_nonforward_stratum": "DOES_NOT_EXIST",
+      "all_disconnected_hard_nonforward_supports": "CLASSIFIED",
+      "one_finite_resolution_cross_stratum_detector": "NOT_CONSTRUCTED",
+      "forward_and_collinear_boundaries": "NOT_CONSTRUCTED",
+      "all_order_probability": "NOT_CONSTRUCTED",
+      "all_time_scattering": "NOT_CONSTRUCTED",
+      "general_Eq19": "NOT_PROVED",
+      "gravity_or_BV_BRST_transfer": "NOT_CONSTRUCTED",
+      "Lorentzian_causal_claim": "NOT_ESTABLISHED"
+    }},
+    "assumptions": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"$ref": "#/$defs/text"}},
+    "does_not_establish": {"type": "array", "minItems": 13, "maxItems": 13, "items": {"$ref": "#/$defs/text"}},
+    "missing_object_ledger": {
+      "type": "array", "minItems": 3, "maxItems": 3,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["object", "status", "required_value"],
+        "properties": {"object": {"$ref": "#/$defs/text"}, "status": {"const": "MISSING"}, "required_value": {"$ref": "#/$defs/text"}}
+      }
+    },
+    "next_gate": {"$ref": "#/$defs/text"},
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_commit", "retrieval_date", "inputs", "method"],
+      "properties": {
+        "source_commit": {"const": "f6ef6966298f14642e39ffdcaec2db3fc9e33416"},
+        "retrieval_date": {"const": "2026-08-12"},
+        "inputs": {
+          "type": "array", "minItems": 5, "maxItems": 5,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["path", "sha256"],
+            "properties": {"path": {"$ref": "#/$defs/text"}, "sha256": {"$ref": "#/$defs/hash"}}
+          }
+        },
+        "method": {"$ref": "#/$defs/text"}
+      }
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/text"}},
+    "checks": {
+      "type": "object", "additionalProperties": false,
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true}, "passed": {"const": 33}, "total": {"const": 33}, "failures": {"const": []},
+        "details": {"type": "object", "minProperties": 33, "maxProperties": 33, "additionalProperties": {"const": true}}
+      }
+    },
+    "report": {"const": "reverse_physics/reports/bt-hard-nonforward-physical-stratified-atlas.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-hard-nonforward-physical-stratified-atlas-v1.schema.json"}
+  },
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

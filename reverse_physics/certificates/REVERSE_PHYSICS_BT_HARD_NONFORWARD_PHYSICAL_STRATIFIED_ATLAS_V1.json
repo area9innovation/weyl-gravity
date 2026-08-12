@@ -1,0 +1,351 @@
+{
+  "answer": "They exhaust the local hard nonforward domain. Enumerating all 202 disconnected partitions gives 162 with a singleton, fifteen 2+4, ten 3+3, and fifteen 2+2+2 after the singleton profiles are combined. Positive-energy hard massless kinematics removes every singleton and every 3+3 block: a mixed conserved three-block would force a same-side null pair to be collinear. Of the fifteen 2+4 partitions, exactly nine are p_i=k_a spectator cylinders and six contain an impossible same-side two-block. Of the fifteen 2+2+2 matchings, exactly six pair every incoming label with an outgoing label and are the six forward permutation diagonals; the other nine contain a same-side pair. The nine spectator cylinders have 36 pairwise intersections: nine identify two outgoing momenta, nine identify two incoming momenta, and eighteen force the remaining spectator equality and hence a forward permutation. They are therefore pairwise disjoint after equal-particle and forward loci are removed. Every stratum-local hard nonforward detector is consequently of exactly one of two types. In the fully rearranged bulk, all disconnected terms vanish and the complete leading probability is the certified lambda8 connected 3->3 packet coefficient. On one cylinder Delta_ia, the unique leading transition is the certified active four-point tree tensored with spectator identity and its complete probability starts at lambda4. Two spectators do not define a third nonforward stratum because total momentum conservation forces the third spectator. This is a complete local stratified atlas, not one finite-resolution detector crossing the strata, and it does not include forward, collinear, higher-order, all-time, Eq. (19), gravity or Lorentzian claims.",
+  "assumptions": [
+    "all external particles are massless, future directed, distinct on each side, and have the same fixed timelike total momentum",
+    "strictly positive same-side pair invariants remove soft, equal and collinear two-particle loci and the associated real three-point conservation supports",
+    "the six labeled forward permutation diagonals are removed from the declared nonforward domain",
+    "local detector germs are contained in the fully rearranged bulk or restricted to one spectator distributional cylinder; a finite-width detector crossing their closure is a different object",
+    "the certified compact scalar packet source, generalized-Born normalization, four-point coefficient and global connected finite-time column are imported with their original domains"
+  ],
+  "certificate": "REVERSE_PHYSICS_BT_HARD_NONFORWARD_PHYSICAL_STRATIFIED_ATLAS_V1",
+  "checks": {
+    "details": {
+      "Bell_number_six_is_203": true,
+      "Eq19_gravity_and_Lorentzian_boundaries_remain_open": true,
+      "all_nine_spectator_coefficients_follow_by_label_symmetry": true,
+      "all_nine_spectator_cylinders_occur_once": true,
+      "all_three_plus_three_are_hard_collinear_or_total_excluded": true,
+      "bulk_first_amplitude_order_is_lambda4": true,
+      "bulk_first_probability_order_is_lambda8": true,
+      "connected_codomain_is_complete": true,
+      "cross_stratum_forward_collinear_and_all_time_gates_remain_open": true,
+      "cylinder_intersection_types_are_exact": true,
+      "cylinder_pair_count_is_36": true,
+      "cylinders_are_pairwise_disjoint_on_hard_nonforward_domain": true,
+      "disconnected_partition_count_is_202": true,
+      "distinct_label_intersections_force_forward": true,
+      "global_connected_column_is_available": true,
+      "inputs_are_content_pinned": true,
+      "nine_cylinders_are_enumerated": true,
+      "no_generic_two_spectator_nonforward_stratum": true,
+      "perfect_matchings_split_six_and_nine": true,
+      "predecessors_pass": true,
+      "profile_formula_reproduces_every_count": true,
+      "same_label_intersections_are_equal_particle_loci": true,
+      "singleton_profiles_total_162": true,
+      "six_bipartite_matchings_are_forward_permutations": true,
+      "spectator_first_amplitude_order_is_lambda2": true,
+      "spectator_first_probability_order_is_lambda4": true,
+      "ten_profiles_are_complete": true,
+      "three_plus_three_count_is_10": true,
+      "three_plus_three_orientation_split_is_one_and_nine": true,
+      "two_local_physical_strata_are_complete": true,
+      "two_plus_four_count_is_15": true,
+      "two_plus_four_splits_nine_and_six": true,
+      "two_plus_two_plus_two_count_is_15": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 33,
+    "total": 33
+  },
+  "complete_local_physical_atlas": {
+    "additional_generic_strata": "NONE",
+    "bulk": {
+      "condition": "p_i!=k_a for all nine pairs",
+      "declared_scalar": "q_bulk=16*lambda^8*||sum_(B=1)^9 P_Y*K_B,T*P_X F||^2+O(lambda^9)",
+      "disconnected_contribution": "ZERO_BY_SUPPORT",
+      "global_bound": "q_bulk^(8)<=81*lambda^8*T^2/(200*pi^6)",
+      "leading_amplitude": "lambda^4*A_YX",
+      "leading_probability": "q_bulk=lambda^8*<Psi,A_YX^*A_YX Psi>+O(lambda^9)",
+      "status": "COMPLETE_LEADING_FULLY_REARRANGED_LOCAL_STRATUM"
+    },
+    "coverage": "every distributionally stratum-local detector germ in the declared hard nonforward domain",
+    "spectator_cylinder": {
+      "active_invariant": "s_ia=(P-p_i)^2=(P-k_a)^2",
+      "condition": "exactly one Delta_ia, with active complementary pair hard and nonforward",
+      "disconnected_contribution": "UNIQUE_FOUR_POINT_TREE_TIMES_SPECTATOR_IDENTITY",
+      "leading_amplitude": "lambda^2*(I_spectator tensor A4_active)",
+      "leading_probability": "q_ia=3*lambda^4*DeltaOmega/(32*pi^2*s_ia*Area)+O(lambda^5)",
+      "status": "COMPLETE_LEADING_TAGGED_SPECTATOR_LOCAL_STRATUM"
+    },
+    "status": "COMPLETE_HARD_NONFORWARD_LOCAL_PHYSICAL_ATLAS"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "disconnected_partition_census": {
+    "all_set_partitions": 203,
+    "disconnected_partitions": 202,
+    "profile_counts": [
+      {
+        "count": 1,
+        "profile": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "count": 15,
+        "profile": [
+          1,
+          1,
+          1,
+          1,
+          2
+        ]
+      },
+      {
+        "count": 20,
+        "profile": [
+          1,
+          1,
+          1,
+          3
+        ]
+      },
+      {
+        "count": 45,
+        "profile": [
+          1,
+          1,
+          2,
+          2
+        ]
+      },
+      {
+        "count": 15,
+        "profile": [
+          1,
+          1,
+          4
+        ]
+      },
+      {
+        "count": 60,
+        "profile": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "count": 6,
+        "profile": [
+          1,
+          5
+        ]
+      },
+      {
+        "count": 15,
+        "profile": [
+          2,
+          2,
+          2
+        ]
+      },
+      {
+        "count": 15,
+        "profile": [
+          2,
+          4
+        ]
+      },
+      {
+        "count": 10,
+        "profile": [
+          3,
+          3
+        ]
+      }
+    ],
+    "singleton_containing": 162,
+    "status": "ALL_202_DISCONNECTED_PARTITIONS_CLASSIFIED",
+    "support_theorem": "on the hard domain the disconnected support is the union of the nine Delta_ia={p_i=k_a}; its triple intersections are the six removed forward permutation diagonals",
+    "three_plus_three": {
+      "hard_domain_supported": 0,
+      "kinematic_reason": "the all-plus/all-minus partition carries total momentum plus or minus P; in every mixed block p_i+p_j=k_a (or its reverse) implies (p_i+p_j)^2=2*p_i dot p_j=0, contradicting the strictly positive same-side pair invariant",
+      "orientation_obstructions": {
+        "all_same_side_total_is_nonzero": 1,
+        "mixed_block_forces_same_side_collinearity": 9
+      },
+      "total": 10
+    },
+    "two_plus_four": {
+      "same_side_impossible": 6,
+      "spectator_cylinders": 9,
+      "total": 15
+    },
+    "two_plus_two_plus_two": {
+      "forward_permutations": 6,
+      "same_side_impossible": 9,
+      "total": 15
+    }
+  },
+  "does_not_establish": [
+    "one coherent or recorded finite-resolution detector whose support crosses spectator cylinders and the fully rearranged bulk",
+    "the order-lambda6 interference between a spectator amplitude and the connected six-point amplitude in one unresolved output record",
+    "the six forward permutation diagonals or a BT survival coefficient",
+    "massless collinear three-plus-three component supports",
+    "higher-order spectator corrections or finite loop terms",
+    "an exact probability after summing all perturbative orders",
+    "an independently constructed all-time Moller, LSZ or S operator",
+    "the standard scalar projector or general Eq. (19)",
+    "loop, real-virtual or KLN completion",
+    "a detector-independent numerical probability",
+    "gravity or metric BV/BRST transfer",
+    "anything LORENTZIAN-CAUSAL",
+    "literature priority"
+  ],
+  "hard_nonforward_domain": {
+    "conditions": [
+      "the three p_i are pairwise distinct and the three k_a are pairwise distinct future null momenta with a common timelike total P",
+      "every same-side pair invariant is strictly positive, excluding soft and collinear pair loci",
+      "the six forward permutation diagonals k_a=p_sigma(a) are removed",
+      "detectors are local to one distributional stratum; finite-width supports crossing strata are not included"
+    ],
+    "external_labels": [
+      "p0",
+      "p1",
+      "p2",
+      "-k0",
+      "-k1",
+      "-k2"
+    ],
+    "status": "HARD_DISTINCT_NONCOLLINEAR_NONFORWARD_DOMAIN"
+  },
+  "interpretation": {
+    "Lorentzian_causal_claim": "NOT_ESTABLISHED",
+    "all_disconnected_hard_nonforward_supports": "CLASSIFIED",
+    "all_nine_tagged_spectator_local_strata": "COEFFICIENT_COMPUTED",
+    "all_order_probability": "NOT_CONSTRUCTED",
+    "all_time_scattering": "NOT_CONSTRUCTED",
+    "forward_and_collinear_boundaries": "NOT_CONSTRUCTED",
+    "fully_rearranged_local_stratum": "COEFFICIENT_COMPUTED",
+    "general_Eq19": "NOT_PROVED",
+    "generic_two_spectator_nonforward_stratum": "DOES_NOT_EXIST",
+    "gravity_or_BV_BRST_transfer": "NOT_CONSTRUCTED",
+    "one_finite_resolution_cross_stratum_detector": "NOT_CONSTRUCTED"
+  },
+  "lifecycle_state": "COEFFICIENT_COMPUTED",
+  "missing_object_ledger": [
+    {
+      "object": "cross-stratum finite-resolution detector",
+      "required_value": "one common packet domain and physical momentum-resolution record controlling the lambda6 spectator-connected interference",
+      "status": "MISSING"
+    },
+    {
+      "object": "forward and collinear boundary atlas",
+      "required_value": "the BT virtual/survival coefficient and distributional real three-point sectors",
+      "status": "MISSING"
+    },
+    {
+      "object": "higher-order and asymptotic completion",
+      "required_value": "loop-corrected pseudo-unitary evolution and a controlled all-time limit",
+      "status": "MISSING"
+    }
+  ],
+  "next_gate": "Thicken the disjoint spectator cylinders by a physical momentum-resolution profile eta_epsilon and use a square partition between the nine tubes and their complement. Construct the four-point spectator amplitude and connected six-point amplitude on one common finite-time compact packet domain. The decisive new coefficient is the order-lambda6 interference inside a spectator tube; the orthogonal bulk record has no spectator contribution. A finite limit as epsilon tends to zero would produce one detector spanning the atlas. Failure would identify an exact scaling or distribution-product obstruction. Forward/collinear boundaries and Eq. (19) remain separate later gates.",
+  "provenance": {
+    "inputs": [
+      {
+        "path": "planning/work-items/reverse-physics-bateman-hard-nonforward-physical-stratified-atlas.json",
+        "sha256": "b994cef94a084e67f8e629e84d25d81a3074abe72a014de5f3fc401a36f05070"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_FULLY_REARRANGED_PHYSICAL_PACKET_PROBABILITY_V1.json",
+        "sha256": "3790673f55cc7c43b9d2f731da217c0be73b628c169c6e2e9def3ba2a6b07c30"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_TAGGED_SPECTATOR_PHYSICAL_PACKET_PROBABILITY_V1.json",
+        "sha256": "f1742448de34c8cc462c9a3a096bd3c1cd1241d7506b8abc1e687d751bff9779"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_COMPLETE_CONNECTED_ORDER4_PACKET_COLUMN_V1.json",
+        "sha256": "5b0fc2719b8daa5650800449d802510911af45445e26fef516a7cb05426fefbb"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_GLOBAL_CONNECTED_FINITE_TIME_PACKET_COLUMN_V1.json",
+        "sha256": "857339d09000f45af1875501f519cf8f6800efc7941e0ba12b779b984235801c"
+      }
+    ],
+    "method": "Exact enumeration of all 203 set partitions, orientation classification of every two-block, exact perfect-matching and S3 comparison, and complete pairwise incidence count for the nine bipartite spectator cylinders. Leading coefficients are imported only after their support strata are proved exhaustive. No floating-point arithmetic is used.",
+    "retrieval_date": "2026-08-12",
+    "source_commit": "f6ef6966298f14642e39ffdcaec2db3fc9e33416"
+  },
+  "question": "Do the fully rearranged and tagged-spectator calculations exhaust all local hard nonforward three-particle detector strata, or is another disconnected support type missing?",
+  "report": "reverse_physics/reports/bt-hard-nonforward-physical-stratified-atlas.md",
+  "result_kind": "complete disconnected-support classification and local leading physical probability atlas on the hard nonforward BT three-particle domain",
+  "schema": "reverse_physics/schema/reverse-physics-bt-hard-nonforward-physical-stratified-atlas-v1.schema.json",
+  "schema_version": "reverse-physics-bt-hard-nonforward-physical-stratified-atlas-v1",
+  "spectator_cylinder_incidence": {
+    "conclusion": "the nine cylinders are pairwise disjoint on the declared hard nonforward domain",
+    "cylinders": [
+      {
+        "equation": "p_0=k_0",
+        "incoming": 0,
+        "outgoing": 0
+      },
+      {
+        "equation": "p_0=k_1",
+        "incoming": 0,
+        "outgoing": 1
+      },
+      {
+        "equation": "p_0=k_2",
+        "incoming": 0,
+        "outgoing": 2
+      },
+      {
+        "equation": "p_1=k_0",
+        "incoming": 1,
+        "outgoing": 0
+      },
+      {
+        "equation": "p_1=k_1",
+        "incoming": 1,
+        "outgoing": 1
+      },
+      {
+        "equation": "p_1=k_2",
+        "incoming": 1,
+        "outgoing": 2
+      },
+      {
+        "equation": "p_2=k_0",
+        "incoming": 2,
+        "outgoing": 0
+      },
+      {
+        "equation": "p_2=k_1",
+        "incoming": 2,
+        "outgoing": 1
+      },
+      {
+        "equation": "p_2=k_2",
+        "incoming": 2,
+        "outgoing": 2
+      }
+    ],
+    "distinct_pair_reason": "Delta_ia intersect Delta_jb with i!=j and a!=b plus total momentum conservation forces p_l=k_c for the remaining labels, hence a forward permutation",
+    "intersection_types": {
+      "distinct_pairs_force_third_and_forward": 18,
+      "same_incoming_forces_equal_outgoing": 9,
+      "same_outgoing_forces_equal_incoming": 9
+    },
+    "pairwise_intersections": 36,
+    "same_incoming_reason": "Delta_ia intersect Delta_ib with a!=b forces k_a=k_b and is excluded by distinct hard outgoing momenta",
+    "same_outgoing_reason": "Delta_ia intersect Delta_ja with i!=j forces p_i=p_j and is excluded by distinct hard incoming momenta",
+    "status": "NINE_PAIRWISE_DISJOINT_NONFORWARD_SPECTATOR_CYLINDERS"
+  },
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_hard_nonforward_physical_stratified_atlas.py --write --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_hard_nonforward_physical_stratified_atlas.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_hard_nonforward_physical_stratified_atlas"
+  ]
+}
