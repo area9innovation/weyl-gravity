@@ -32,9 +32,9 @@
       }
     },
     "features": {"type": "array", "minItems": 14, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
-    "provenance": {"type": "object", "required": ["manifest", "manifest_sha256", "canonical_data_digest"]},
-    "independent_checker": {"type": "object", "required": ["path", "expected_cells", "expected_emitted", "expected_synthetic_not_mapped", "expected_total_not_mapped", "expected_evidence_records", "expected_digest"]},
-    "claim_flags": {"type": "object", "required": ["static_site_generated", "all_cartesian_coordinates_visible", "all_emitted_migrations_reviewed", "coverage_and_migration_separated", "all_used_evidence_resolved", "scientific_claims_duplicated_by_hand", "literature_complete", "unmapped_means_absent", "reviewed_no_transfer_means_absent", "priority_score_is_theorem", "new_lorentzian_claim"]},
+    "provenance": {"type": "object", "required": ["manifest", "manifest_sha256", "canonical_data_digest", "viability_digest"]},
+    "independent_checker": {"type": "object", "required": ["path", "expected_cells", "expected_emitted", "expected_synthetic_not_mapped", "expected_total_not_mapped", "expected_evidence_records", "expected_digest", "expected_viability_digest"]},
+    "claim_flags": {"type": "object", "required": ["static_site_generated", "all_cartesian_coordinates_visible", "all_emitted_migrations_reviewed", "coverage_and_migration_separated", "all_used_evidence_resolved", "theory_profiles_generated", "composition_and_observation_rails_separated", "scientific_claims_duplicated_by_hand", "literature_complete", "unmapped_means_absent", "reviewed_no_transfer_means_absent", "priority_score_is_theorem", "complete_observationally_valid_theory_identified", "new_lorentzian_claim"]},
     "does_not_establish": {"type": "array", "minItems": 7, "items": {"type": "string", "minLength": 1}},
     "human_report": {"const": "foundations/reports/matrix-explorer-site-v2.md"}
   }

@@ -1,0 +1,107 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "result_id",
+    "result_kind",
+    "lifecycle",
+    "title",
+    "created",
+    "dependency_tags",
+    "unit",
+    "status_semantics",
+    "bundles",
+    "presets",
+    "profiles",
+    "carrier_envelopes",
+    "global_rails",
+    "pareto_definition",
+    "claim_flags",
+    "does_not_establish",
+    "source_atlas_digest",
+    "canonical_digest"
+  ],
+  "properties": {
+    "schema_version": {"const": "foundational-theory-viability-assessment-v1"},
+    "result_id": {"const": "FOUNDATIONAL_THEORY_VIABILITY_ASSESSMENT_V1"},
+    "result_kind": {"const": "FAIL_CLOSED_THEORY_COVERAGE_AND_MISSING_RAIL_ASSESSMENT"},
+    "lifecycle": {"const": "VERIFIED_NAVIGATION_ARTIFACT"},
+    "title": {"type": "string", "minLength": 1},
+    "created": {"type": "string", "format": "date"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]},
+    "unit": {"type": "string", "minLength": 1},
+    "status_semantics": {
+      "type": "object",
+      "required": ["direct", "partial", "explicit_gap", "unknown", "tie_rule"]
+    },
+    "bundles": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "required": ["id", "label", "question", "obligations"]
+      }
+    },
+    "presets": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "object",
+        "required": ["id", "label", "description", "obligations"]
+      }
+    },
+    "profiles": {
+      "type": "array",
+      "minItems": 36,
+      "maxItems": 36,
+      "items": {
+        "type": "object",
+        "required": ["foundation", "carrier", "counts", "direct", "assessed", "default_gate", "reconstruction_status", "bundles", "pareto_default"]
+      }
+    },
+    "carrier_envelopes": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "required": ["foundation", "all_carriers_envelope", "maximum_direct_obligations", "minimum_carriers_for_that_maximum", "minimal_maximum_subsets", "composition_status"]
+      }
+    },
+    "global_rails": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "required": ["id", "label", "status", "meaning"]
+      }
+    },
+    "pareto_definition": {
+      "type": "object",
+      "required": ["preset", "maximize", "warning"]
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": [
+        "all_36_single_carrier_profiles_computed",
+        "carrier_portfolio_envelopes_computed",
+        "coverage_and_empirical_agreement_separated",
+        "complete_observationally_valid_theory_identified",
+        "cross_cell_composability_established",
+        "empirical_agreement_assessed",
+        "scalar_winner_score_defined"
+      ]
+    },
+    "does_not_establish": {
+      "type": "array",
+      "minItems": 6,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "source_atlas_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "canonical_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

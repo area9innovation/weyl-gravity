@@ -48,6 +48,9 @@ def verify(*, result=None, report=None) -> tuple[list[str], list[str]]:
         "evidence_records": 69,
         "graph_edges": 10,
         "ladder_levels": 6,
+        "theory_profiles": 36,
+        "carrier_envelopes": 6,
+        "pareto_profiles": 2,
     }
     if summary != expected_summary:
         errors.append("expected independent summary")
@@ -60,10 +63,10 @@ def verify(*, result=None, report=None) -> tuple[list[str], list[str]]:
         errors.append("manifest pin")
     checks.append("content-addressed manifest")
     flags = value.get("claim_flags", {})
-    for key in ("static_site_generated", "all_cartesian_coordinates_visible", "all_emitted_migrations_reviewed", "coverage_and_migration_separated", "all_used_evidence_resolved"):
+    for key in ("static_site_generated", "all_cartesian_coordinates_visible", "all_emitted_migrations_reviewed", "coverage_and_migration_separated", "all_used_evidence_resolved", "theory_profiles_generated", "composition_and_observation_rails_separated"):
         if flags.get(key) is not True:
             errors.append("positive flag " + key)
-    for key in ("scientific_claims_duplicated_by_hand", "literature_complete", "unmapped_means_absent", "reviewed_no_transfer_means_absent", "priority_score_is_theorem", "new_lorentzian_claim"):
+    for key in ("scientific_claims_duplicated_by_hand", "literature_complete", "unmapped_means_absent", "reviewed_no_transfer_means_absent", "priority_score_is_theorem", "complete_observationally_valid_theory_identified", "new_lorentzian_claim"):
         if flags.get(key) is not False:
             errors.append("boundary flag " + key)
     checks.append("fail-closed claim flags")

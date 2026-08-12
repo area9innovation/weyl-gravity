@@ -272,14 +272,22 @@ absence. The inspector separates positive coverage evidence from evidence
 reviewed only for migration. The bundle also provides multi-select filters,
 evidence-aware search, comparison, one-axis neighbors, permalinks, filtered
 exports, investigation briefs, the typed implication graph, the cylinder
-strength ladder, and the resolved evidence catalogue:
+strength ladder, and the resolved evidence catalogue. The **Theory profiles**
+view adds a 36-profile coverage map, selectable obligation gates, six
+foundation-specific carrier envelopes, and a non-scalar Pareto view. It keeps
+three rails separate: obligation coverage is computed; cross-cell composition
+is not assessed; and observational agreement is not represented by the current
+schema. A multi-carrier maximum is therefore labelled a coverage envelope, not
+a completed theory:
 
 ```bash
 python3 foundations/build_matrix_site.py
 python3 foundations/build_matrix_site.py --check
 python3 foundations/check_matrix_site.py
 python3 foundations/verify_matrix_site.py
+python3 foundations/verify_theory_viability.py
 python3 -m unittest foundations.tests.test_matrix_site
+python3 -m unittest foundations.tests.test_theory_viability
 python3 -m http.server 8000 --directory foundations/site
 ```
 

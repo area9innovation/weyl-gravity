@@ -13,6 +13,7 @@ if str(_ROOT) not in sys.path:
     sys.path.insert(0, str(_ROOT))
 
 from foundations import build_matrix_site as v1
+from foundations.theory_viability import build_assessment
 
 ROOT = v1.ROOT
 FOUNDATIONS = v1.FOUNDATIONS
@@ -21,6 +22,8 @@ V2_ASSETS = FOUNDATIONS / "matrix_site_v2_assets"
 SITE = FOUNDATIONS / "site"
 RESULT = FOUNDATIONS / "results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json"
 REPORT = FOUNDATIONS / "reports/matrix-explorer-site-v2.md"
+VIABILITY_RESULT = FOUNDATIONS / "results/FOUNDATIONAL_THEORY_VIABILITY_ASSESSMENT_V1.json"
+VIABILITY_REPORT = FOUNDATIONS / "reports/theory-viability-assessment-v1.md"
 CUBE = FOUNDATIONS / "results/FOUNDATIONAL_INTERSECTION_CUBE_V4.json"
 AUDIT = FOUNDATIONS / "results/FOUNDATIONAL_INTERSECTION_CUBE_MIGRATION_AUDIT_V2.json"
 LADDER = FOUNDATIONS / "results/FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V2.json"
@@ -257,10 +260,68 @@ This site does not establish:
 """ + "\n".join(f"- {item}" for item in result["does_not_establish"]) + "\n"
 
 
+def render_viability_report(assessment: dict[str, Any]) -> str:
+    pareto = [item for item in assessment["profiles"] if item["pareto_default"]]
+    lines = [
+        "# Theory coverage, composition, and observation assessment v1",
+        "",
+        "**Result:** `FOUNDATIONAL_THEORY_VIABILITY_ASSESSMENT_V1`",
+        "",
+        "**Lifecycle:** `VERIFIED_NAVIGATION_ARTIFACT`",
+        "",
+        "## Outcome",
+        "",
+        "The assessment compares all **36** regime-carrier formulation profiles and computes",
+        "six carrier-portfolio coverage envelopes. It deliberately refuses to turn coverage",
+        "into an empirical-validity score.",
+        "",
+        "Under the default predictive-physics gate, no single profile has direct evidence for",
+        "every required obligation. The present Pareto navigation set is:",
+        "",
+        *[
+            f"- `{item['foundation']} × {item['carrier']}`: "
+            f"{item['default_gate']['direct']}/{item['default_gate']['total']} default-gate obligations direct; "
+            f"{item['direct']}/16 total obligations direct."
+            for item in pareto
+        ],
+        "",
+        "This does **not** make those profiles complete theories. Evidence across obligations",
+        "can come from different scoped models. Combining carriers takes the best recorded cell",
+        "status and therefore creates a coverage envelope, not a composition theorem.",
+        "",
+        "## Three separate rails",
+        "",
+        "1. **Obligation coverage — computed.** Direct, partial, gap, and unknown statuses are",
+        "   projected from the atlas without changing their evidence type.",
+        "2. **One coherent integrated theory — not assessed.** No cross-cell or cross-carrier",
+        "   composition certificate is registered.",
+        "3. **Agreement with observations — not in the current schema.** There are no typed",
+        "   dataset, likelihood, residual, fit, or out-of-sample prediction records. The",
+        "   reconstruction obligation is only a bridge-readiness proxy.",
+        "",
+        "## Interface",
+        "",
+        "The **Theory profiles** tab provides a 6×6 readiness map, selectable obligation gates,",
+        "a single-carrier ranking table, a multi-carrier coverage-envelope composer, bundle",
+        "profiles, exact blockers, and the default Pareto set. No scalar winner is emitted.",
+        "",
+        "## Boundaries",
+        "",
+        *[f"- This does not establish {item}." for item in assessment["does_not_establish"]],
+        "",
+    ]
+    return "\n".join(lines)
+
+
 def generated() -> dict[Path, bytes]:
     dataset = build_dataset()
+    viability = build_assessment(dataset)
     data_json = (json.dumps(dataset, indent=2, ensure_ascii=False) + "\n").encode()
+    viability_json = (json.dumps(viability, indent=2, ensure_ascii=False) + "\n").encode()
     index = (ASSETS / "index.html").read_text().replace(
+        '<script src="data.js"></script>',
+        '<script src="data.js"></script>\n  <script src="viability.js"></script>',
+    ).replace(
         '<script src="app.js"></script>',
         '<script src="app.js"></script>\n  <script src="migration-review.js"></script>',
     ).encode()
@@ -271,6 +332,8 @@ def generated() -> dict[Path, bytes]:
         SITE / "migration-review.js": (V2_ASSETS / "app-v2.js").read_bytes(),
         SITE / "data.json": data_json,
         SITE / "data.js": b"window.MATRIX_EXPLORER_DATA = " + data_json.rstrip() + b";\n",
+        SITE / "viability.json": viability_json,
+        SITE / "viability.js": b"window.THEORY_VIABILITY_DATA = " + viability_json.rstrip() + b";\n",
     }
     local_evidence_paths = [ROOT / item["result_path"] for item in dataset["evidence"].values() if item["kind"] == "LOCAL_RESULT"]
     local_report_paths = [ROOT / item["report_path"] for item in dataset["evidence"].values() if item["kind"] == "LOCAL_RESULT" and item.get("report_path")]
@@ -282,7 +345,7 @@ def generated() -> dict[Path, bytes]:
     bundled_sources = sorted(set([CUBE, AUDIT, LADDER, *LEDGERS, *local_evidence_paths, *local_report_paths, *reports]))
     for source in bundled_sources:
         outputs[SITE / "sources" / source.relative_to(ROOT)] = source.read_bytes()
-    input_paths = sorted(set([Path(__file__).resolve(), *bundled_sources, ASSETS / "index.html", ASSETS / "styles.css", ASSETS / "app.js", V2_ASSETS / "app-v2.js"]))
+    input_paths = sorted(set([Path(__file__).resolve(), FOUNDATIONS / "theory_viability.py", *bundled_sources, ASSETS / "index.html", ASSETS / "styles.css", ASSETS / "app.js", V2_ASSETS / "app-v2.js"]))
     manifest = {
         "schema_version": "foundational-matrix-explorer-manifest-v2",
         "created": CREATED,
@@ -303,15 +366,17 @@ def generated() -> dict[Path, bytes]:
         "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
         "scope": "Deterministic static exploration surface over the migration-reviewed foundations cube and cylinder implication ladder.",
         "counts": dataset["counts"],
-        "features": ["sixteen 6x6 heatmaps", "plain-language guide for all 28 axis options", "separate coverage and migration-review states", "migration evidence inspector", "multi-select filters", "full-text search", "cell inspector", "one-axis neighbors", "two-cell comparison", "URL permalinks", "filtered JSON and CSV export", "research-brief export", "three-pathway typed argument map with linked relation ledger", "strength ladder", "evidence catalogue"],
-        "provenance": {"manifest": rel(SITE / "manifest.json"), "manifest_sha256": v1.sha_bytes(manifest_bytes), "canonical_data_digest": dataset["canonical_digest"]},
-        "independent_checker": {"path": "foundations/check_matrix_site_v2.py", "expected_cells": 576, "expected_emitted": 452, "expected_synthetic_not_mapped": 124, "expected_total_not_mapped": 205, "expected_evidence_records": 69, "expected_digest": dataset["canonical_digest"]},
-        "claim_flags": {"static_site_generated": True, "all_cartesian_coordinates_visible": True, "all_emitted_migrations_reviewed": True, "coverage_and_migration_separated": True, "all_used_evidence_resolved": True, "scientific_claims_duplicated_by_hand": False, "literature_complete": False, "unmapped_means_absent": False, "reviewed_no_transfer_means_absent": False, "priority_score_is_theorem": False, "new_lorentzian_claim": False},
-        "does_not_establish": ["literature completeness", "coverage for the 81 still-unmapped reviewed-no-transfer coordinates", "that NOT_MAPPED means no literature exists", "that the 124 synthetic coordinates are coherent", "a weakest mathematical base", "a theorem ranking from interface order or neighbor counts", "a new Lorentzian-causal result"],
+        "features": ["sixteen 6x6 heatmaps", "plain-language guide for all 28 axis options", "separate coverage and migration-review states", "migration evidence inspector", "multi-select filters", "full-text search", "cell inspector", "one-axis neighbors", "two-cell comparison", "URL permalinks", "filtered JSON and CSV export", "research-brief export", "three-pathway typed argument map with linked relation ledger", "strength ladder", "evidence catalogue", "theory-profile readiness map", "researcher-selectable obligation gates", "multi-carrier coverage-envelope composer", "non-scalar Pareto navigation", "separate composition and empirical-agreement rails"],
+        "provenance": {"manifest": rel(SITE / "manifest.json"), "manifest_sha256": v1.sha_bytes(manifest_bytes), "canonical_data_digest": dataset["canonical_digest"], "viability_digest": viability["canonical_digest"]},
+        "independent_checker": {"path": "foundations/check_matrix_site_v2.py", "expected_cells": 576, "expected_emitted": 452, "expected_synthetic_not_mapped": 124, "expected_total_not_mapped": 205, "expected_evidence_records": 69, "expected_digest": dataset["canonical_digest"], "expected_viability_digest": viability["canonical_digest"]},
+        "claim_flags": {"static_site_generated": True, "all_cartesian_coordinates_visible": True, "all_emitted_migrations_reviewed": True, "coverage_and_migration_separated": True, "all_used_evidence_resolved": True, "theory_profiles_generated": True, "composition_and_observation_rails_separated": True, "scientific_claims_duplicated_by_hand": False, "literature_complete": False, "unmapped_means_absent": False, "reviewed_no_transfer_means_absent": False, "priority_score_is_theorem": False, "complete_observationally_valid_theory_identified": False, "new_lorentzian_claim": False},
+        "does_not_establish": ["literature completeness", "coverage for the 81 still-unmapped reviewed-no-transfer coordinates", "that NOT_MAPPED means no literature exists", "that the 124 synthetic coordinates are coherent", "a weakest mathematical base", "a theorem ranking from interface order, Pareto membership, or neighbor counts", "cross-cell or cross-carrier composability", "agreement with observations", "a complete observationally validated theory", "a new Lorentzian-causal result"],
         "human_report": "foundations/reports/matrix-explorer-site-v2.md",
     }
     outputs[RESULT] = (json.dumps(result, indent=2) + "\n").encode()
     outputs[REPORT] = render_report(result).encode()
+    outputs[VIABILITY_RESULT] = viability_json
+    outputs[VIABILITY_REPORT] = render_viability_report(viability).encode()
     return outputs
 
 

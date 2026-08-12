@@ -1,0 +1,178 @@
+{
+  "schema_version": "science-forge-tier-receipt-v1",
+  "receipt_id": "FOUNDATIONAL_THEORY_VIABILITY_ASSESSMENT_V1_TIER_RECEIPT",
+  "result_id": "FOUNDATIONAL_THEORY_VIABILITY_ASSESSMENT_V1",
+  "created": "2026-08-12",
+  "source_base_commit": "a40de6279b24095a9740bf03f28068fc94e677cb",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "scope": "Added a fail-closed theory-profile assessment and interactive site view. It computes coverage for 36 regime-carrier profiles and six multi-carrier envelopes while keeping cross-cell composition and observational agreement as separate missing evidence rails.",
+  "input": {
+    "path": "foundations/site/data.json",
+    "sha256": "5e15943033608c792f6d979048401f12df77b1b081c8bb8b744d9e1bb8fa00e2",
+    "canonical_digest": "378a9806111aec5b00bb9b9d71e8b9bbeaad573feb163684e967aa8cc34de625",
+    "role": "unchanged normalized coverage atlas"
+  },
+  "artifacts": [
+    {
+      "path": "foundations/theory_viability.py",
+      "sha256": "82001d877ed6e9ccd4ac139c01569e193f1386d4f8967e38813849c49dd7e615",
+      "role": "deterministic coverage-profile, portfolio-envelope, and Pareto producer"
+    },
+    {
+      "path": "foundations/results/FOUNDATIONAL_THEORY_VIABILITY_ASSESSMENT_V1.json",
+      "sha256": "1819fe0182f8bc70bc139b744333574e7b04408510aba8a4cd5d7e816a9af221",
+      "canonical_digest": "5e07301c67b4b57033c06b32eaa70db7a37a43f609f0e9138926b4d88d1fec94",
+      "role": "machine-readable fail-closed assessment"
+    },
+    {
+      "path": "foundations/reports/theory-viability-assessment-v1.md",
+      "sha256": "69d8445f9906aebc018d2d1d33d27c60bccfccdfba67f577497e9447f77791c9",
+      "role": "human-readable outcome and boundaries"
+    },
+    {
+      "path": "foundations/schema/foundational-theory-viability-assessment-v1.schema.json",
+      "sha256": "374b86ba440c3660cccf8d6118c3c7bded30f9b061c656a2011ef9374c788c11",
+      "role": "Draft 2020-12 result schema"
+    },
+    {
+      "path": "foundations/verify_theory_viability.py",
+      "sha256": "05277686faee9d7a83fd09fe3eec5df86bfde38f1b1f9b22222a786b6536f4e0",
+      "role": "independent profile, Pareto, exhaustive portfolio, boundary, and interface verifier"
+    },
+    {
+      "path": "foundations/tests/test_theory_viability.py",
+      "sha256": "5a722769783f5160be2ee09e30ff8c25b509e70ed2cbce335778697c9c6463e9",
+      "role": "regression and fail-closed promotion tests"
+    },
+    {
+      "path": "foundations/site/manifest.json",
+      "sha256": "949863871c0b3191be8e88dc17add103927667cadaea6359d5cbd401d620b894",
+      "role": "content-addressed generated site bundle, including all theory-profile UI assets"
+    },
+    {
+      "path": "foundations/site/viability.json",
+      "sha256": "1819fe0182f8bc70bc139b744333574e7b04408510aba8a4cd5d7e816a9af221",
+      "role": "downloadable site assessment identical to the registered result"
+    },
+    {
+      "path": "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json",
+      "sha256": "a3de2375af32f997c816bb733839503174fcda0b2c115e07bd2a89b5b6fb885a",
+      "role": "updated explorer result with assessment provenance and fail-closed flags"
+    }
+  ],
+  "assessment_snapshot": {
+    "single_carrier_profiles": 36,
+    "foundation_carrier_subsets_checked": 378,
+    "foundation_envelopes": 6,
+    "obligation_bundles": 5,
+    "selectable_gate_presets": 3,
+    "default_gate_obligations": 10,
+    "single_profiles_complete_on_default_gate": 0,
+    "default_pareto_profiles": [
+      "CLASSICAL_STANDARD x ALGEBRAIC_CSTAR",
+      "FINITE_DISCRETE x FINITE_EXACT"
+    ],
+    "classical_all_carrier_envelope_direct_obligations": 14,
+    "classical_minimum_carriers_for_14": 2,
+    "global_rails": {
+      "obligation_coverage": "COMPUTED_FROM_ATLAS",
+      "cross_obligation_composition": "NOT_ASSESSED",
+      "empirical_agreement": "NOT_IN_CURRENT_SCHEMA"
+    }
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "python3 -W error::SyntaxWarning -m py_compile foundations/theory_viability.py foundations/build_matrix_site_v2.py foundations/check_matrix_site_v2.py foundations/verify_matrix_site_v2.py foundations/verify_theory_viability.py foundations/tests/test_matrix_site.py foundations/tests/test_theory_viability.py",
+          "elapsed_seconds": 0.06,
+          "status": "PASS"
+        },
+        {
+          "command": "deno check foundations/matrix_site_assets/app.js foundations/site/app.js foundations/site/migration-review.js",
+          "elapsed_seconds": 0.02,
+          "status": "PASS"
+        },
+        {
+          "command": "git diff --check",
+          "elapsed_seconds": 0.02,
+          "status": "PASS"
+        },
+        {
+          "command": "google-chrome --headless --disable-gpu --no-sandbox --window-size=1600,5000 --virtual-time-budget=2000 --screenshot=/tmp/theory-profiles-full.png http://127.0.0.1:8765/index.html#view=viability",
+          "elapsed_seconds": 1.4,
+          "status": "PASS",
+          "output": "Full-page theory-profile view rendered and visually inspected at 1600 px width."
+        }
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "python3 foundations/build_matrix_site_v2.py --check",
+          "elapsed_seconds": 0.12,
+          "status": "PASS"
+        },
+        {
+          "command": "python3 foundations/check_matrix_site_v2.py",
+          "elapsed_seconds": 0.07,
+          "status": "PASS"
+        },
+        {
+          "command": "python3 foundations/verify_matrix_site_v2.py",
+          "elapsed_seconds": 0.21,
+          "status": "PASS"
+        },
+        {
+          "command": "python3 foundations/verify_theory_viability.py",
+          "elapsed_seconds": 0.10,
+          "status": "PASS",
+          "output": "All 36 profiles, the two-member default Pareto set, all 378 nonempty carrier subsets, three evidence rails, result/site parity, and fail-closed boundaries verified independently."
+        },
+        {
+          "command": "python3 -m unittest foundations.tests.test_matrix_site foundations.tests.test_theory_viability",
+          "elapsed_seconds": 0.47,
+          "status": "PASS",
+          "output": "14 tests passed."
+        }
+      ]
+    },
+    "tier_2": {
+      "status": "NOT_RUN",
+      "criterion": "The normalized cube, evidence records, mathematical inputs, and scientific certificates are unchanged. This revision adds a derived assessment and independently verified navigation layer over content-addressed inputs."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No freeze, theorem promotion, shared core algebra change, release, or quantum lifecycle transition is made."
+    }
+  },
+  "claim_flags": {
+    "all_profiles_computed": true,
+    "all_carrier_subsets_exhaustively_checked": true,
+    "composition_and_observation_rails_separated": true,
+    "interactive_assessment_generated": true,
+    "complete_observationally_valid_theory_identified": false,
+    "cross_cell_composability_established": false,
+    "empirical_agreement_assessed": false,
+    "scalar_winner_score_defined": false,
+    "literature_complete": false,
+    "new_lorentzian_claim": false,
+    "quantum_lifecycle_promoted": false
+  },
+  "does_not_establish": [
+    "that direct evidence in separate cells composes into one theory",
+    "that a finite or reduced model has a controlled continuum limit",
+    "that reconstruction coverage demonstrates agreement with observations",
+    "that NOT_MAPPED is failure, incoherence, or literature absence",
+    "that Pareto profiles are physically preferred or more likely true",
+    "a complete observationally validated theory",
+    "a new LORENTZIAN-CAUSAL result",
+    "a quantum lifecycle promotion"
+  ]
+}

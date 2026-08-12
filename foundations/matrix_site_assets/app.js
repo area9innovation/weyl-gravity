@@ -2,6 +2,8 @@
   "use strict";
   const DATA = window.MATRIX_EXPLORER_DATA;
   if (!DATA) throw new Error("Generated matrix data are missing.");
+  const VIABILITY = window.THEORY_VIABILITY_DATA;
+  if (!VIABILITY) throw new Error("Generated theory-profile assessment is missing.");
 
   const STATUS = {
     LOCAL_RESULT: {label: "Local result", mark: "L", color: "#167958"},
@@ -78,6 +80,14 @@
       STATUS: new Set(Object.keys(STATUS)),
     },
     compare: [],
+    viability: {
+      preset: VIABILITY.presets[0].id,
+      obligations: new Set(VIABILITY.presets[0].obligations),
+      foundation: axis.FOUNDATION.keys[0].id,
+      carriers: new Set(axis.CARRIER.keys.map(x => x.id)),
+      profile: null,
+      paretoOnly: false,
+    },
   };
 
   function key(c) { return `${c.foundation}|${c.carrier}|${c.obligation}`; }
@@ -90,7 +100,7 @@
 
   function parseHash() {
     const params = new URLSearchParams(location.hash.slice(1));
-    if (params.get("view") && ["matrix", "guide", "graph", "ladder", "evidence"].includes(params.get("view"))) state.view = params.get("view");
+    if (params.get("view") && ["matrix", "viability", "guide", "graph", "ladder", "evidence"].includes(params.get("view"))) state.view = params.get("view");
     state.q = params.get("q") || "";
     state.seededOnly = params.get("seeded") === "1";
     state.cell = params.get("cell") || null;
@@ -372,10 +382,108 @@
     document.getElementById("dimensionGuide").innerHTML = `<article class="guide-intro"><p class="eyebrow">How to read one coordinate</p><h3>Regime × carrier × obligation = one research question</h3><p>For example: <b>constructive/computable × smooth/PDE/distributional × causal propagation/Green</b> asks whether causal response maps can be built with explicit computational content for continuum fields.</p><p>The cell color reports the evidence currently recorded for that precise combination. It does not say whether the idea is true, important, or impossible.</p></article>${dimensions}<article class="guide-intro"><p class="eyebrow">Two records, two questions</p><h3>Coverage is not migration</h3><p><b>Coverage status</b> says what direct result, literature result, partial ingredients, or gap is recorded now. <b>Migration review</b> says whether evidence attached to an older, broader category was checked for transfer into this more precise cell. A reviewed migration is an audit fact, not additional physical evidence.</p></article>`;
   }
 
+  const READINESS_RANK = {NOT_MAPPED: 0, PRIORITY_GAP: 1, PIECES_ONLY: 2, LOCAL_RESULT: 3, LITERATURE_RESULT: 3};
+  const DIRECT = new Set(["LOCAL_RESULT", "LITERATURE_RESULT"]);
+
+  function profileCells(profile, obligations = axis.REFINED_OBLIGATION.keys.map(x => x.id)) {
+    return obligations.map(obligation => cellByKey.get(`${profile.foundation}|${profile.carrier}|${obligation}`));
+  }
+
+  function profileMetrics(profile, obligations) {
+    const cells = profileCells(profile, obligations);
+    return {
+      direct: cells.filter(cell => DIRECT.has(cell.status)).length,
+      assessed: cells.filter(cell => cell.status !== "NOT_MAPPED").length,
+      partial: cells.filter(cell => cell.status === "PIECES_ONLY").length,
+      gap: cells.filter(cell => cell.status === "PRIORITY_GAP").length,
+      unknown: cells.filter(cell => cell.status === "NOT_MAPPED").length,
+      total: cells.length,
+      allDirect: profile.direct,
+      reconstruction: READINESS_RANK[profile.reconstruction_status],
+    };
+  }
+
+  function paretoProfiles(obligations) {
+    const values = VIABILITY.profiles.map(profile => ({profile, metrics: profileMetrics(profile, obligations)}));
+    const dominates = (a, b) => {
+      const left = [a.direct, a.assessed, a.allDirect, a.reconstruction];
+      const right = [b.direct, b.assessed, b.allDirect, b.reconstruction];
+      return left.every((value, index) => value >= right[index]) && left.some((value, index) => value > right[index]);
+    };
+    return new Set(values.filter(candidate => !values.some(other => other !== candidate && dominates(other.metrics, candidate.metrics))).map(item => `${item.profile.foundation}|${item.profile.carrier}`));
+  }
+
+  function selectedEnvelope() {
+    const carriers = [...state.viability.carriers];
+    return axis.REFINED_OBLIGATION.keys.map(obligation => {
+      const candidates = carriers.map(carrier => cellByKey.get(`${state.viability.foundation}|${carrier}|${obligation.id}`));
+      const rank = candidates.length ? Math.max(...candidates.map(cell => READINESS_RANK[cell.status])) : 0;
+      const contributors = candidates.filter(cell => READINESS_RANK[cell.status] === rank);
+      return {obligation, rank, contributors};
+    });
+  }
+
+  function renderTheoryProfiles() {
+    const obligations = [...state.viability.obligations];
+    const frontier = paretoProfiles(obligations);
+    const profiles = VIABILITY.profiles.map(profile => ({profile, metrics: profileMetrics(profile, obligations)}))
+      .filter(item => !state.viability.paretoOnly || frontier.has(`${item.profile.foundation}|${item.profile.carrier}`))
+      .sort((a, b) => b.metrics.direct - a.metrics.direct || b.metrics.assessed - a.metrics.assessed || b.metrics.allDirect - a.metrics.allDirect || title(a.profile.foundation).localeCompare(title(b.profile.foundation)));
+    const selectedProfile = VIABILITY.profiles.find(profile => `${profile.foundation}|${profile.carrier}` === state.viability.profile) || profiles[0]?.profile;
+    if (selectedProfile) state.viability.profile = `${selectedProfile.foundation}|${selectedProfile.carrier}`;
+    const selectedMetrics = selectedProfile ? profileMetrics(selectedProfile, obligations) : null;
+    const envelope = selectedEnvelope();
+    const envelopeDirect = envelope.filter(item => item.rank === 3 && obligations.includes(item.obligation.id)).length;
+    const preset = VIABILITY.presets.find(item => item.id === state.viability.preset);
+    const rails = VIABILITY.global_rails.map(rail => `<article class="rail-card ${rail.status === "COMPUTED_FROM_ATLAS" ? "computed" : "missing"}"><span class="quality">${esc(rail.status)}</span><h3>${esc(rail.label)}</h3><p>${esc(rail.meaning)}</p></article>`).join("");
+    const mapRows = axis.FOUNDATION.keys.map(foundation => `<tr><th>${esc(foundation.label)}</th>${axis.CARRIER.keys.map(carrier => {
+      const profile = VIABILITY.profiles.find(item => item.foundation === foundation.id && item.carrier === carrier.id);
+      const metrics = profileMetrics(profile, obligations);
+      const key = `${foundation.id}|${carrier.id}`;
+      const tone = metrics.total ? Math.round(18 + 72 * metrics.direct / metrics.total) : 18;
+      return `<td><button class="profile-cell${key === state.viability.profile ? " selected" : ""}" data-profile="${key}" style="--readiness:${tone}%" title="${esc(`${foundation.label} × ${carrier.label}: ${metrics.direct}/${metrics.total} selected obligations direct; ${metrics.unknown} unknown`)}"><b>${metrics.direct}/${metrics.total}</b><small>${frontier.has(key) ? "Pareto" : `${metrics.unknown} ?`}</small></button></td>`;
+    }).join("")}</tr>`).join("");
+    const obligationChecks = axis.REFINED_OBLIGATION.keys.map(obligation => `<label><input type="checkbox" data-viability-obligation="${obligation.id}" ${state.viability.obligations.has(obligation.id) ? "checked" : ""}>${esc(obligation.label)}</label>`).join("");
+    const carrierChecks = axis.CARRIER.keys.map(carrier => `<label><input type="checkbox" data-portfolio-carrier="${carrier.id}" ${state.viability.carriers.has(carrier.id) ? "checked" : ""}>${esc(carrier.label)}</label>`).join("");
+    const profileBlocks = selectedProfile ? profileCells(selectedProfile, obligations).filter(cell => !DIRECT.has(cell.status)).map(cell => `<li><button data-cell-jump="${key(cell)}"><span class="status-dot" style="${statusStyle(cell.status)}"></span>${esc(title(cell.obligation))}: ${esc(STATUS[cell.status].label)}</button></li>`).join("") : "";
+    const bundleRows = selectedProfile ? VIABILITY.bundles.map(bundle => {
+      const metrics = profileMetrics(selectedProfile, bundle.obligations);
+      return `<tr><th>${esc(bundle.label)}</th><td><div class="readiness-bar"><i style="width:${100 * metrics.direct / metrics.total}%"></i></div></td><td>${metrics.direct}/${metrics.total} direct</td><td>${metrics.partial} partial · ${metrics.gap} gap · ${metrics.unknown} unknown</td></tr>`;
+    }).join("") : "";
+    const envelopeRows = envelope.map(item => {
+      const statuses = [...new Set(item.contributors.map(cell => cell.status))];
+      return `<tr class="${obligations.includes(item.obligation.id) ? "required-row" : ""}"><th>${esc(item.obligation.label)}</th><td>${statuses.map(status => `<span class="status-pill" style="${statusStyle(status)}">${esc(STATUS[status].label)}</span>`).join(" ")}</td><td>${item.contributors.map(cell => esc(title(cell.carrier))).join(", ") || "No carrier selected"}</td></tr>`;
+    }).join("");
+    const rankingRows = profiles.map(({profile, metrics}) => {
+      const profileKey = `${profile.foundation}|${profile.carrier}`;
+      return `<tr class="${profileKey === state.viability.profile ? "focused" : ""}"><td><button data-profile="${profileKey}">${esc(title(profile.foundation))}<br><small>${esc(title(profile.carrier))}</small></button></td><td>${metrics.direct}/${metrics.total}</td><td>${metrics.partial}</td><td>${metrics.gap}</td><td>${metrics.unknown}</td><td>${profile.direct}/16</td><td>${esc(STATUS[profile.reconstruction_status].label)}</td><td>${frontier.has(profileKey) ? "Yes" : ""}</td></tr>`;
+    }).join("");
+    document.getElementById("viabilityExplorer").innerHTML = `
+      <article class="viability-warning"><p class="eyebrow">What can be concluded now</p><h3>No complete observationally validated theory is certified by this atlas.</h3><p>The first rail below is computable. The other two are independent missing prerequisites. A high coverage profile is therefore a research map, not a validity verdict.</p></article>
+      <div class="rail-grid">${rails}</div>
+      <section class="viability-controls"><div><label><b>Required-obligation preset</b><select id="viabilityPreset">${state.viability.preset === "CUSTOM" ? '<option value="CUSTOM" selected disabled>Custom selection</option>' : ""}${VIABILITY.presets.map(item => `<option value="${item.id}" ${item.id === state.viability.preset ? "selected" : ""}>${esc(item.label)}</option>`).join("")}</select></label><p>${esc(preset?.description || "Custom selection")}</p></div><details><summary>Choose individual hard gates (${obligations.length})</summary><div class="obligation-picker">${obligationChecks}</div></details><label class="check"><input id="paretoOnly" type="checkbox" ${state.viability.paretoOnly ? "checked" : ""}> Show current Pareto set only</label></section>
+      <div class="section-head compact-head"><div><p class="eyebrow">Single-carrier profiles</p><h2>Coverage readiness map</h2></div><p>Each tile is direct selected obligations / selected obligations. “Pareto” means nondominated on the four declared coverage metrics, not physically preferred.</p></div>
+      <div class="profile-map-wrap"><table class="profile-map"><thead><tr><th>Regime ↓ / carrier →</th>${axis.CARRIER.keys.map(carrier => `<th><span class="column-label">${esc(carrier.label)}</span></th>`).join("")}</tr></thead><tbody>${mapRows}</tbody></table></div>
+      ${selectedProfile ? `<section class="profile-detail"><div><p class="eyebrow">Selected formulation profile</p><h3>${esc(title(selectedProfile.foundation))} × ${esc(title(selectedProfile.carrier))}</h3><p><b>${selectedMetrics.direct}/${selectedMetrics.total}</b> selected hard gates direct; <b>${selectedProfile.direct}/16</b> obligations direct overall.</p><h4>Selected-gate blockers</h4>${profileBlocks ? `<ul class="blocker-list">${profileBlocks}</ul>` : `<p class="good-news">All selected gates have direct evidence—but composition and observation rails remain open.</p>`}</div><table class="bundle-table"><thead><tr><th>Obligation bundle</th><th>Direct share</th><th>Direct</th><th>Other states</th></tr></thead><tbody>${bundleRows}</tbody></table></section>` : ""}
+      <div class="section-head compact-head"><div><p class="eyebrow">Carrier portfolio composer</p><h2>Coverage envelope, not a composed theory</h2></div><p>Choose carriers under one mathematical regime. For each obligation the table shows the strongest recorded cell and its source carrier. Taking maxima does not prove the pieces coexist consistently.</p></div>
+      <section class="portfolio-controls"><label><b>Mathematical regime</b><select id="portfolioFoundation">${axis.FOUNDATION.keys.map(item => `<option value="${item.id}" ${item.id === state.viability.foundation ? "selected" : ""}>${esc(item.label)}</option>`).join("")}</select></label><fieldset><legend>Carriers in envelope</legend>${carrierChecks}</fieldset><div class="portfolio-summary"><b>${envelopeDirect}/${obligations.length}</b><span>selected gates direct somewhere in the envelope</span><strong>Composition: NOT ASSESSED</strong></div></section>
+      <div class="envelope-table-wrap"><table class="envelope-table"><thead><tr><th>Obligation</th><th>Best recorded state</th><th>Contributing carrier(s)</th></tr></thead><tbody>${envelopeRows}</tbody></table></div>
+      <details class="ranking-details"><summary>Show all formulation profiles as a coverage-ranked research table (${profiles.length})</summary><div class="ranking-wrap"><table class="profile-ranking"><thead><tr><th>Profile</th><th>Selected direct</th><th>Partial</th><th>Gap</th><th>Unknown</th><th>All direct</th><th>Reconstruction proxy</th><th>Pareto</th></tr></thead><tbody>${rankingRows}</tbody></table></div></details>
+      <article class="viability-warning boundary"><b>Fail-closed boundary.</b> ${esc(VIABILITY.pareto_definition.warning)} ${esc(VIABILITY.unit)}</article>`;
+    document.querySelectorAll("[data-profile]").forEach(button => button.addEventListener("click", () => { state.viability.profile = button.dataset.profile; const [foundation, carrier] = button.dataset.profile.split("|"); state.viability.foundation = foundation; state.viability.carriers = new Set([carrier]); renderTheoryProfiles(); }));
+    document.querySelectorAll("[data-cell-jump]").forEach(button => button.addEventListener("click", () => openCell(button.dataset.cellJump)));
+    document.getElementById("viabilityPreset").addEventListener("change", event => { const next = VIABILITY.presets.find(item => item.id === event.target.value); state.viability.preset = next.id; state.viability.obligations = new Set(next.obligations); renderTheoryProfiles(); });
+    document.querySelectorAll("[data-viability-obligation]").forEach(input => input.addEventListener("change", () => { input.checked ? state.viability.obligations.add(input.dataset.viabilityObligation) : state.viability.obligations.delete(input.dataset.viabilityObligation); state.viability.preset = "CUSTOM"; renderTheoryProfiles(); }));
+    document.getElementById("paretoOnly").addEventListener("change", event => { state.viability.paretoOnly = event.target.checked; renderTheoryProfiles(); });
+    document.getElementById("portfolioFoundation").addEventListener("change", event => { state.viability.foundation = event.target.value; renderTheoryProfiles(); });
+    document.querySelectorAll("[data-portfolio-carrier]").forEach(input => input.addEventListener("change", () => { input.checked ? state.viability.carriers.add(input.dataset.portfolioCarrier) : state.viability.carriers.delete(input.dataset.portfolioCarrier); renderTheoryProfiles(); }));
+  }
+
   function setView(view) {
     state.view = view;
     document.querySelectorAll(".tab").forEach(x => x.classList.toggle("active", x.dataset.view === view));
     document.querySelectorAll(".view").forEach(x => x.classList.toggle("active", x.id === `${view}View`));
+    document.querySelector(".controls").hidden = view === "viability";
     updateHash();
   }
 
@@ -438,7 +546,7 @@
     document.addEventListener("keydown", event => { if (event.key === "Escape") closeInspector(); });
   }
 
-  parseHash(); renderStats(); renderFilters(); renderGuide(); renderGraph(); renderLadder(); bind(); setView(state.view); refresh();
+  parseHash(); renderStats(); renderFilters(); renderGuide(); renderTheoryProfiles(); renderGraph(); renderLadder(); bind(); setView(state.view); refresh();
   document.getElementById("digest").textContent = `Canonical data digest: ${DATA.canonical_digest}`;
   if (state.cell) openCell(state.cell);
 })();

@@ -1,0 +1,5322 @@
+{
+  "schema_version": "foundational-theory-viability-assessment-v1",
+  "result_id": "FOUNDATIONAL_THEORY_VIABILITY_ASSESSMENT_V1",
+  "result_kind": "FAIL_CLOSED_THEORY_COVERAGE_AND_MISSING_RAIL_ASSESSMENT",
+  "lifecycle": "VERIFIED_NAVIGATION_ARTIFACT",
+  "title": "Theory coverage, composition, and observation assessment",
+  "created": "2026-08-12",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "unit": "A formulation profile is one mathematical regime paired with one carrier; a carrier portfolio is a coverage envelope, not a proved integrated theory.",
+  "status_semantics": {
+    "direct": [
+      "LOCAL_RESULT",
+      "LITERATURE_RESULT"
+    ],
+    "partial": [
+      "PIECES_ONLY"
+    ],
+    "explicit_gap": [
+      "PRIORITY_GAP"
+    ],
+    "unknown": [
+      "NOT_MAPPED"
+    ],
+    "tie_rule": "Local and literature results are equally direct but remain visibly distinct evidence types."
+  },
+  "bundles": [
+    {
+      "id": "KINEMATICS_STATES",
+      "label": "Kinematics and states",
+      "question": "Does the formulation say what exists, what is observable, and how states are represented?",
+      "obligations": [
+        "KINEMATICS_OBSERVABLES",
+        "STATE_EXISTENCE",
+        "STATE_REPRESENTATION"
+      ]
+    },
+    {
+      "id": "PREDICTION_OBSERVATION",
+      "label": "Prediction and observational bridge",
+      "question": "Can it assign probabilities, select a physical state, and connect the formulation back to operational or standard predictions?",
+      "obligations": [
+        "PROBABILITY_RULE",
+        "PHYSICAL_STATE_SELECTION",
+        "RECONSTRUCTION_LIMITS"
+      ]
+    },
+    {
+      "id": "DYNAMICS_CAUSALITY",
+      "label": "Dynamics and causality",
+      "question": "Are the generator, evolution problem, and causal response all under control?",
+      "obligations": [
+        "GENERATOR_SPECTRAL_DYNAMICS",
+        "EVOLUTION_WELLPOSEDNESS",
+        "CAUSAL_PROPAGATION_GREEN"
+      ]
+    },
+    {
+      "id": "GAUGE_INTERACTION",
+      "label": "Gauge structure and interactions",
+      "question": "Are gauge-redundant content and genuine interactions both constructed?",
+      "obligations": [
+        "GAUGE_BV_COHOMOLOGY",
+        "INTERACTION_CONSTRUCTION"
+      ]
+    },
+    {
+      "id": "QUANTUM_CONSISTENCY",
+      "label": "Quantum consistency chain",
+      "question": "Are counterterms, anomalies, singular products, QME restoration, and residual transfer connected in the required order?",
+      "obligations": [
+        "COUNTERTERM_CLASSIFICATION",
+        "ANOMALY_CLASSIFICATION",
+        "RENORMALIZED_PRODUCTS",
+        "QME_RESTORATION",
+        "RESIDUAL_QUANTUM_TRANSFER"
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "id": "PREDICTIVE_PHYSICS",
+      "label": "Predictive physics chain",
+      "description": "A broad default for turning states and dynamics into operational predictions; it is not a definition of all physics.",
+      "obligations": [
+        "KINEMATICS_OBSERVABLES",
+        "STATE_EXISTENCE",
+        "STATE_REPRESENTATION",
+        "PROBABILITY_RULE",
+        "PHYSICAL_STATE_SELECTION",
+        "GENERATOR_SPECTRAL_DYNAMICS",
+        "EVOLUTION_WELLPOSEDNESS",
+        "CAUSAL_PROPAGATION_GREEN",
+        "INTERACTION_CONSTRUCTION",
+        "RECONSTRUCTION_LIMITS"
+      ]
+    },
+    {
+      "id": "CAUSAL_CLASSICAL",
+      "label": "Causal classical/interacting chain",
+      "description": "Kinematics, states, well-posed causal dynamics, interactions, and reconstruction, without requiring the quantum-consistency tail.",
+      "obligations": [
+        "KINEMATICS_OBSERVABLES",
+        "STATE_EXISTENCE",
+        "STATE_REPRESENTATION",
+        "GENERATOR_SPECTRAL_DYNAMICS",
+        "EVOLUTION_WELLPOSEDNESS",
+        "CAUSAL_PROPAGATION_GREEN",
+        "INTERACTION_CONSTRUCTION",
+        "RECONSTRUCTION_LIMITS"
+      ]
+    },
+    {
+      "id": "QUANTUM_GAUGE",
+      "label": "Quantum gauge completion",
+      "description": "The complete sixteen-obligation chain, including the ordered counterterm/anomaly/QME/residual-transfer requirements.",
+      "obligations": [
+        "KINEMATICS_OBSERVABLES",
+        "STATE_EXISTENCE",
+        "STATE_REPRESENTATION",
+        "PROBABILITY_RULE",
+        "PHYSICAL_STATE_SELECTION",
+        "RECONSTRUCTION_LIMITS",
+        "GENERATOR_SPECTRAL_DYNAMICS",
+        "EVOLUTION_WELLPOSEDNESS",
+        "CAUSAL_PROPAGATION_GREEN",
+        "GAUGE_BV_COHOMOLOGY",
+        "INTERACTION_CONSTRUCTION",
+        "COUNTERTERM_CLASSIFICATION",
+        "ANOMALY_CLASSIFICATION",
+        "RENORMALIZED_PRODUCTS",
+        "QME_RESTORATION",
+        "RESIDUAL_QUANTUM_TRANSFER"
+      ]
+    }
+  ],
+  "profiles": [
+    {
+      "foundation": "CLASSICAL_STANDARD",
+      "carrier": "FINITE_EXACT",
+      "counts": {
+        "LOCAL_RESULT": 8,
+        "LITERATURE_RESULT": 0,
+        "PIECES_ONLY": 7,
+        "PRIORITY_GAP": 0,
+        "NOT_MAPPED": 1
+      },
+      "direct": 8,
+      "assessed": 15,
+      "default_gate": {
+        "preset": "PREDICTIVE_PHYSICS",
+        "direct": 7,
+        "assessed": 9,
+        "total": 10,
+        "complete_direct": false,
+        "blockers": [
+          {
+            "obligation": "PHYSICAL_STATE_SELECTION",
+            "status": "PIECES_ONLY"
+          },
+          {
+            "obligation": "CAUSAL_PROPAGATION_GREEN",
+            "status": "PIECES_ONLY"
+          },
+          {
+            "obligation": "RECONSTRUCTION_LIMITS",
+            "status": "NOT_MAPPED"
+          }
+        ]
+      },
+      "reconstruction_status": "NOT_MAPPED",
+      "bundles": [
+        {
+          "bundle": "KINEMATICS_STATES",
+          "counts": {
+            "LOCAL_RESULT": 3,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 0,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 3,
+          "total": 3
+        },
+        {
+          "bundle": "PREDICTION_OBSERVATION",
+          "counts": {
+            "LOCAL_RESULT": 1,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 1,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 1
+          },
+          "direct": 1,
+          "total": 3
+        },
+        {
+          "bundle": "DYNAMICS_CAUSALITY",
+          "counts": {
+            "LOCAL_RESULT": 2,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 1,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 2,
+          "total": 3
+        },
+        {
+          "bundle": "GAUGE_INTERACTION",
+          "counts": {
+            "LOCAL_RESULT": 2,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 0,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 2,
+          "total": 2
+        },
+        {
+          "bundle": "QUANTUM_CONSISTENCY",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 5,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 0,
+          "total": 5
+        }
+      ],
+      "pareto_default": false
+    },
+    {
+      "foundation": "CLASSICAL_STANDARD",
+      "carrier": "HILBERT_OPERATOR",
+      "counts": {
+        "LOCAL_RESULT": 1,
+        "LITERATURE_RESULT": 6,
+        "PIECES_ONLY": 3,
+        "PRIORITY_GAP": 0,
+        "NOT_MAPPED": 6
+      },
+      "direct": 7,
+      "assessed": 10,
+      "default_gate": {
+        "preset": "PREDICTIVE_PHYSICS",
+        "direct": 7,
+        "assessed": 9,
+        "total": 10,
+        "complete_direct": false,
+        "blockers": [
+          {
+            "obligation": "PHYSICAL_STATE_SELECTION",
+            "status": "PIECES_ONLY"
+          },
+          {
+            "obligation": "EVOLUTION_WELLPOSEDNESS",
+            "status": "PIECES_ONLY"
+          },
+          {
+            "obligation": "INTERACTION_CONSTRUCTION",
+            "status": "NOT_MAPPED"
+          }
+        ]
+      },
+      "reconstruction_status": "LITERATURE_RESULT",
+      "bundles": [
+        {
+          "bundle": "KINEMATICS_STATES",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 3,
+            "PIECES_ONLY": 0,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 3,
+          "total": 3
+        },
+        {
+          "bundle": "PREDICTION_OBSERVATION",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 2,
+            "PIECES_ONLY": 1,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 2,
+          "total": 3
+        },
+        {
+          "bundle": "DYNAMICS_CAUSALITY",
+          "counts": {
+            "LOCAL_RESULT": 1,
+            "LITERATURE_RESULT": 1,
+            "PIECES_ONLY": 1,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 2,
+          "total": 3
+        },
+        {
+          "bundle": "GAUGE_INTERACTION",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 1,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 1
+          },
+          "direct": 0,
+          "total": 2
+        },
+        {
+          "bundle": "QUANTUM_CONSISTENCY",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 0,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 5
+          },
+          "direct": 0,
+          "total": 5
+        }
+      ],
+      "pareto_default": false
+    },
+    {
+      "foundation": "CLASSICAL_STANDARD",
+      "carrier": "KREIN_INDEFINITE",
+      "counts": {
+        "LOCAL_RESULT": 4,
+        "LITERATURE_RESULT": 2,
+        "PIECES_ONLY": 4,
+        "PRIORITY_GAP": 0,
+        "NOT_MAPPED": 6
+      },
+      "direct": 6,
+      "assessed": 10,
+      "default_gate": {
+        "preset": "PREDICTIVE_PHYSICS",
+        "direct": 6,
+        "assessed": 9,
+        "total": 10,
+        "complete_direct": false,
+        "blockers": [
+          {
+            "obligation": "STATE_REPRESENTATION",
+            "status": "PIECES_ONLY"
+          },
+          {
+            "obligation": "PROBABILITY_RULE",
+            "status": "PIECES_ONLY"
+          },
+          {
+            "obligation": "CAUSAL_PROPAGATION_GREEN",
+            "status": "PIECES_ONLY"
+          },
+          {
+            "obligation": "INTERACTION_CONSTRUCTION",
+            "status": "NOT_MAPPED"
+          }
+        ]
+      },
+      "reconstruction_status": "LITERATURE_RESULT",
+      "bundles": [
+        {
+          "bundle": "KINEMATICS_STATES",
+          "counts": {
+            "LOCAL_RESULT": 1,
+            "LITERATURE_RESULT": 1,
+            "PIECES_ONLY": 1,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 2,
+          "total": 3
+        },
+        {
+          "bundle": "PREDICTION_OBSERVATION",
+          "counts": {
+            "LOCAL_RESULT": 1,
+            "LITERATURE_RESULT": 1,
+            "PIECES_ONLY": 1,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 2,
+          "total": 3
+        },
+        {
+          "bundle": "DYNAMICS_CAUSALITY",
+          "counts": {
+            "LOCAL_RESULT": 2,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 1,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 2,
+          "total": 3
+        },
+        {
+          "bundle": "GAUGE_INTERACTION",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 1,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 1
+          },
+          "direct": 0,
+          "total": 2
+        },
+        {
+          "bundle": "QUANTUM_CONSISTENCY",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 0,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 5
+          },
+          "direct": 0,
+          "total": 5
+        }
+      ],
+      "pareto_default": false
+    },
+    {
+      "foundation": "CLASSICAL_STANDARD",
+      "carrier": "ALGEBRAIC_CSTAR",
+      "counts": {
+        "LOCAL_RESULT": 5,
+        "LITERATURE_RESULT": 7,
+        "PIECES_ONLY": 4,
+        "PRIORITY_GAP": 0,
+        "NOT_MAPPED": 0
+      },
+      "direct": 12,
+      "assessed": 16,
+      "default_gate": {
+        "preset": "PREDICTIVE_PHYSICS",
+        "direct": 8,
+        "assessed": 10,
+        "total": 10,
+        "complete_direct": false,
+        "blockers": [
+          {
+            "obligation": "PROBABILITY_RULE",
+            "status": "PIECES_ONLY"
+          },
+          {
+            "obligation": "CAUSAL_PROPAGATION_GREEN",
+            "status": "PIECES_ONLY"
+          }
+        ]
+      },
+      "reconstruction_status": "LITERATURE_RESULT",
+      "bundles": [
+        {
+          "bundle": "KINEMATICS_STATES",
+          "counts": {
+            "LOCAL_RESULT": 2,
+            "LITERATURE_RESULT": 1,
+            "PIECES_ONLY": 0,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 3,
+          "total": 3
+        },
+        {
+          "bundle": "PREDICTION_OBSERVATION",
+          "counts": {
+            "LOCAL_RESULT": 1,
+            "LITERATURE_RESULT": 1,
+            "PIECES_ONLY": 1,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 2,
+          "total": 3
+        },
+        {
+          "bundle": "DYNAMICS_CAUSALITY",
+          "counts": {
+            "LOCAL_RESULT": 2,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 1,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 2,
+          "total": 3
+        },
+        {
+          "bundle": "GAUGE_INTERACTION",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 2,
+            "PIECES_ONLY": 0,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 2,
+          "total": 2
+        },
+        {
+          "bundle": "QUANTUM_CONSISTENCY",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 3,
+            "PIECES_ONLY": 2,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 3,
+          "total": 5
+        }
+      ],
+      "pareto_default": true
+    },
+    {
+      "foundation": "CLASSICAL_STANDARD",
+      "carrier": "SMOOTH_DISTRIBUTIONAL",
+      "counts": {
+        "LOCAL_RESULT": 5,
+        "LITERATURE_RESULT": 4,
+        "PIECES_ONLY": 6,
+        "PRIORITY_GAP": 0,
+        "NOT_MAPPED": 1
+      },
+      "direct": 9,
+      "assessed": 15,
+      "default_gate": {
+        "preset": "PREDICTIVE_PHYSICS",
+        "direct": 6,
+        "assessed": 9,
+        "total": 10,
+        "complete_direct": false,
+        "blockers": [
+          {
+            "obligation": "PROBABILITY_RULE",
+            "status": "NOT_MAPPED"
+          },
+          {
+            "obligation": "PHYSICAL_STATE_SELECTION",
+            "status": "PIECES_ONLY"
+          },
+          {
+            "obligation": "GENERATOR_SPECTRAL_DYNAMICS",
+            "status": "PIECES_ONLY"
+          },
+          {
+            "obligation": "INTERACTION_CONSTRUCTION",
+            "status": "PIECES_ONLY"
+          }
+        ]
+      },
+      "reconstruction_status": "LITERATURE_RESULT",
+      "bundles": [
+        {
+          "bundle": "KINEMATICS_STATES",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 3,
+            "PIECES_ONLY": 0,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 3,
+          "total": 3
+        },
+        {
+          "bundle": "PREDICTION_OBSERVATION",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 1,
+            "PIECES_ONLY": 1,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 1
+          },
+          "direct": 1,
+          "total": 3
+        },
+        {
+          "bundle": "DYNAMICS_CAUSALITY",
+          "counts": {
+            "LOCAL_RESULT": 2,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 1,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 2,
+          "total": 3
+        },
+        {
+          "bundle": "GAUGE_INTERACTION",
+          "counts": {
+            "LOCAL_RESULT": 1,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 1,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 1,
+          "total": 2
+        },
+        {
+          "bundle": "QUANTUM_CONSISTENCY",
+          "counts": {
+            "LOCAL_RESULT": 2,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 3,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 2,
+          "total": 5
+        }
+      ],
+      "pareto_default": false
+    },
+    {
+      "foundation": "CLASSICAL_STANDARD",
+      "carrier": "LOCALIC_SYNTHETIC",
+      "counts": {
+        "LOCAL_RESULT": 0,
+        "LITERATURE_RESULT": 5,
+        "PIECES_ONLY": 4,
+        "PRIORITY_GAP": 0,
+        "NOT_MAPPED": 7
+      },
+      "direct": 5,
+      "assessed": 9,
+      "default_gate": {
+        "preset": "PREDICTIVE_PHYSICS",
+        "direct": 5,
+        "assessed": 8,
+        "total": 10,
+        "complete_direct": false,
+        "blockers": [
+          {
+            "obligation": "PROBABILITY_RULE",
+            "status": "PIECES_ONLY"
+          },
+          {
+            "obligation": "PHYSICAL_STATE_SELECTION",
+            "status": "PIECES_ONLY"
+          },
+          {
+            "obligation": "EVOLUTION_WELLPOSEDNESS",
+            "status": "PIECES_ONLY"
+          },
+          {
+            "obligation": "CAUSAL_PROPAGATION_GREEN",
+            "status": "NOT_MAPPED"
+          },
+          {
+            "obligation": "INTERACTION_CONSTRUCTION",
+            "status": "NOT_MAPPED"
+          }
+        ]
+      },
+      "reconstruction_status": "LITERATURE_RESULT",
+      "bundles": [
+        {
+          "bundle": "KINEMATICS_STATES",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 3,
+            "PIECES_ONLY": 0,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 3,
+          "total": 3
+        },
+        {
+          "bundle": "PREDICTION_OBSERVATION",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 1,
+            "PIECES_ONLY": 2,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 1,
+          "total": 3
+        },
+        {
+          "bundle": "DYNAMICS_CAUSALITY",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 1,
+            "PIECES_ONLY": 1,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 1
+          },
+          "direct": 1,
+          "total": 3
+        },
+        {
+          "bundle": "GAUGE_INTERACTION",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 1,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 1
+          },
+          "direct": 0,
+          "total": 2
+        },
+        {
+          "bundle": "QUANTUM_CONSISTENCY",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 0,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 5
+          },
+          "direct": 0,
+          "total": 5
+        }
+      ],
+      "pareto_default": false
+    },
+    {
+      "foundation": "WEAK_ARITHMETIC",
+      "carrier": "FINITE_EXACT",
+      "counts": {
+        "LOCAL_RESULT": 9,
+        "LITERATURE_RESULT": 0,
+        "PIECES_ONLY": 7,
+        "PRIORITY_GAP": 0,
+        "NOT_MAPPED": 0
+      },
+      "direct": 9,
+      "assessed": 16,
+      "default_gate": {
+        "preset": "PREDICTIVE_PHYSICS",
+        "direct": 8,
+        "assessed": 10,
+        "total": 10,
+        "complete_direct": false,
+        "blockers": [
+          {
+            "obligation": "PHYSICAL_STATE_SELECTION",
+            "status": "PIECES_ONLY"
+          },
+          {
+            "obligation": "CAUSAL_PROPAGATION_GREEN",
+            "status": "PIECES_ONLY"
+          }
+        ]
+      },
+      "reconstruction_status": "LOCAL_RESULT",
+      "bundles": [
+        {
+          "bundle": "KINEMATICS_STATES",
+          "counts": {
+            "LOCAL_RESULT": 3,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 0,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 3,
+          "total": 3
+        },
+        {
+          "bundle": "PREDICTION_OBSERVATION",
+          "counts": {
+            "LOCAL_RESULT": 2,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 1,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 2,
+          "total": 3
+        },
+        {
+          "bundle": "DYNAMICS_CAUSALITY",
+          "counts": {
+            "LOCAL_RESULT": 2,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 1,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 2,
+          "total": 3
+        },
+        {
+          "bundle": "GAUGE_INTERACTION",
+          "counts": {
+            "LOCAL_RESULT": 2,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 0,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 2,
+          "total": 2
+        },
+        {
+          "bundle": "QUANTUM_CONSISTENCY",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 5,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 0,
+          "total": 5
+        }
+      ],
+      "pareto_default": false
+    },
+    {
+      "foundation": "WEAK_ARITHMETIC",
+      "carrier": "HILBERT_OPERATOR",
+      "counts": {
+        "LOCAL_RESULT": 2,
+        "LITERATURE_RESULT": 1,
+        "PIECES_ONLY": 2,
+        "PRIORITY_GAP": 0,
+        "NOT_MAPPED": 11
+      },
+      "direct": 3,
+      "assessed": 5,
+      "default_gate": {
+        "preset": "PREDICTIVE_PHYSICS",
+        "direct": 3,
+        "assessed": 5,
+        "total": 10,
+        "complete_direct": false,
+        "blockers": [
+          {
+            "obligation": "KINEMATICS_OBSERVABLES",
+            "status": "PIECES_ONLY"
+          },
+          {
+            "obligation": "STATE_EXISTENCE",
+            "status": "NOT_MAPPED"
+          },
+          {
+            "obligation": "STATE_REPRESENTATION",
+            "status": "NOT_MAPPED"
+          },
+          {
+            "obligation": "PROBABILITY_RULE",
+            "status": "NOT_MAPPED"
+          },
+          {
+            "obligation": "PHYSICAL_STATE_SELECTION",
+            "status": "NOT_MAPPED"
+          },
+          {
+            "obligation": "CAUSAL_PROPAGATION_GREEN",
+            "status": "PIECES_ONLY"
+          },
+          {
+            "obligation": "INTERACTION_CONSTRUCTION",
+            "status": "NOT_MAPPED"
+          }
+        ]
+      },
+      "reconstruction_status": "LITERATURE_RESULT",
+      "bundles": [
+        {
+          "bundle": "KINEMATICS_STATES",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 1,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 2
+          },
+          "direct": 0,
+          "total": 3
+        },
+        {
+          "bundle": "PREDICTION_OBSERVATION",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 1,
+            "PIECES_ONLY": 0,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 2
+          },
+          "direct": 1,
+          "total": 3
+        },
+        {
+          "bundle": "DYNAMICS_CAUSALITY",
+          "counts": {
+            "LOCAL_RESULT": 2,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 1,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 2,
+          "total": 3
+        },
+        {
+          "bundle": "GAUGE_INTERACTION",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 0,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 2
+          },
+          "direct": 0,
+          "total": 2
+        },
+        {
+          "bundle": "QUANTUM_CONSISTENCY",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 0,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 5
+          },
+          "direct": 0,
+          "total": 5
+        }
+      ],
+      "pareto_default": false
+    },
+    {
+      "foundation": "WEAK_ARITHMETIC",
+      "carrier": "KREIN_INDEFINITE",
+      "counts": {
+        "LOCAL_RESULT": 1,
+        "LITERATURE_RESULT": 2,
+        "PIECES_ONLY": 1,
+        "PRIORITY_GAP": 0,
+        "NOT_MAPPED": 12
+      },
+      "direct": 3,
+      "assessed": 4,
+      "default_gate": {
+        "preset": "PREDICTIVE_PHYSICS",
+        "direct": 3,
+        "assessed": 4,
+        "total": 10,
+        "complete_direct": false,
+        "blockers": [
+          {
+            "obligation": "STATE_EXISTENCE",
+            "status": "NOT_MAPPED"
+          },
+          {
+            "obligation": "STATE_REPRESENTATION",
+            "status": "NOT_MAPPED"
+          },
+          {
+            "obligation": "PROBABILITY_RULE",
+            "status": "NOT_MAPPED"
+          },
+          {
+            "obligation": "PHYSICAL_STATE_SELECTION",
+            "status": "NOT_MAPPED"
+          },
+          {
+            "obligation": "CAUSAL_PROPAGATION_GREEN",
+            "status": "PIECES_ONLY"
+          },
+          {
+            "obligation": "INTERACTION_CONSTRUCTION",
+            "status": "NOT_MAPPED"
+          },
+          {
+            "obligation": "RECONSTRUCTION_LIMITS",
+            "status": "NOT_MAPPED"
+          }
+        ]
+      },
+      "reconstruction_status": "NOT_MAPPED",
+      "bundles": [
+        {
+          "bundle": "KINEMATICS_STATES",
+          "counts": {
+            "LOCAL_RESULT": 1,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 0,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 2
+          },
+          "direct": 1,
+          "total": 3
+        },
+        {
+          "bundle": "PREDICTION_OBSERVATION",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 0,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 3
+          },
+          "direct": 0,
+          "total": 3
+        },
+        {
+          "bundle": "DYNAMICS_CAUSALITY",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 2,
+            "PIECES_ONLY": 1,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 2,
+          "total": 3
+        },
+        {
+          "bundle": "GAUGE_INTERACTION",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 0,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 2
+          },
+          "direct": 0,
+          "total": 2
+        },
+        {
+          "bundle": "QUANTUM_CONSISTENCY",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 0,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 5
+          },
+          "direct": 0,
+          "total": 5
+        }
+      ],
+      "pareto_default": false
+    },
+    {
+      "foundation": "WEAK_ARITHMETIC",
+      "carrier": "ALGEBRAIC_CSTAR",
+      "counts": {
+        "LOCAL_RESULT": 0,
+        "LITERATURE_RESULT": 0,
+        "PIECES_ONLY": 3,
+        "PRIORITY_GAP": 0,
+        "NOT_MAPPED": 13
+      },
+      "direct": 0,
+      "assessed": 3,
+      "default_gate": {
+        "preset": "PREDICTIVE_PHYSICS",
+        "direct": 0,
+        "assessed": 3,
+        "total": 10,
+        "complete_direct": false,
+        "blockers": [
+          {
+            "obligation": "KINEMATICS_OBSERVABLES",
+            "status": "NOT_MAPPED"
+          },
+          {
+            "obligation": "STATE_EXISTENCE",
+            "status": "NOT_MAPPED"
+          },
+          {
+            "obligation": "STATE_REPRESENTATION",
+            "status": "NOT_MAPPED"
+          },
+          {
+            "obligation": "PROBABILITY_RULE",
+            "status": "NOT_MAPPED"
+          },
+          {
+            "obligation": "PHYSICAL_STATE_SELECTION",
+            "status": "NOT_MAPPED"
+          },
+          {
+            "obligation": "GENERATOR_SPECTRAL_DYNAMICS",
+            "status": "PIECES_ONLY"
+          },
+          {
+            "obligation": "EVOLUTION_WELLPOSEDNESS",
+            "status": "PIECES_ONLY"
+          },
+          {
+            "obligation": "CAUSAL_PROPAGATION_GREEN",
+            "status": "PIECES_ONLY"
+          },
+          {
+            "obligation": "INTERACTION_CONSTRUCTION",
+            "status": "NOT_MAPPED"
+          },
+          {
+            "obligation": "RECONSTRUCTION_LIMITS",
+            "status": "NOT_MAPPED"
+          }
+        ]
+      },
+      "reconstruction_status": "NOT_MAPPED",
+      "bundles": [
+        {
+          "bundle": "KINEMATICS_STATES",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 0,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 3
+          },
+          "direct": 0,
+          "total": 3
+        },
+        {
+          "bundle": "PREDICTION_OBSERVATION",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 0,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 3
+          },
+          "direct": 0,
+          "total": 3
+        },
+        {
+          "bundle": "DYNAMICS_CAUSALITY",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 3,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 0,
+          "total": 3
+        },
+        {
+          "bundle": "GAUGE_INTERACTION",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 0,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 2
+          },
+          "direct": 0,
+          "total": 2
+        },
+        {
+          "bundle": "QUANTUM_CONSISTENCY",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 0,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 5
+          },
+          "direct": 0,
+          "total": 5
+        }
+      ],
+      "pareto_default": false
+    },
+    {
+      "foundation": "WEAK_ARITHMETIC",
+      "carrier": "SMOOTH_DISTRIBUTIONAL",
+      "counts": {
+        "LOCAL_RESULT": 0,
+        "LITERATURE_RESULT": 0,
+        "PIECES_ONLY": 3,
+        "PRIORITY_GAP": 7,
+        "NOT_MAPPED": 6
+      },
+      "direct": 0,
+      "assessed": 10,
+      "default_gate": {
+        "preset": "PREDICTIVE_PHYSICS",
+        "direct": 0,
+        "assessed": 4,
+        "total": 10,
+        "complete_direct": false,
+        "blockers": [
+          {
+            "obligation": "KINEMATICS_OBSERVABLES",
+            "status": "NOT_MAPPED"
+          },
+          {
+            "obligation": "STATE_EXISTENCE",
+            "status": "NOT_MAPPED"
+          },
+          {
+            "obligation": "STATE_REPRESENTATION",
+            "status": "NOT_MAPPED"
+          },
+          {
+            "obligation": "PROBABILITY_RULE",
+            "status": "NOT_MAPPED"
+          },
+          {
+            "obligation": "PHYSICAL_STATE_SELECTION",
+            "status": "NOT_MAPPED"
+          },
+          {
+            "obligation": "GENERATOR_SPECTRAL_DYNAMICS",
+            "status": "PIECES_ONLY"
+          },
+          {
+            "obligation": "EVOLUTION_WELLPOSEDNESS",
+            "status": "PIECES_ONLY"
+          },
+          {
+            "obligation": "CAUSAL_PROPAGATION_GREEN",
+            "status": "PIECES_ONLY"
+          },
+          {
+            "obligation": "INTERACTION_CONSTRUCTION",
+            "status": "PRIORITY_GAP"
+          },
+          {
+            "obligation": "RECONSTRUCTION_LIMITS",
+            "status": "NOT_MAPPED"
+          }
+        ]
+      },
+      "reconstruction_status": "NOT_MAPPED",
+      "bundles": [
+        {
+          "bundle": "KINEMATICS_STATES",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 0,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 3
+          },
+          "direct": 0,
+          "total": 3
+        },
+        {
+          "bundle": "PREDICTION_OBSERVATION",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 0,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 3
+          },
+          "direct": 0,
+          "total": 3
+        },
+        {
+          "bundle": "DYNAMICS_CAUSALITY",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 3,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 0,
+          "total": 3
+        },
+        {
+          "bundle": "GAUGE_INTERACTION",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 0,
+            "PRIORITY_GAP": 2,
+            "NOT_MAPPED": 0
+          },
+          "direct": 0,
+          "total": 2
+        },
+        {
+          "bundle": "QUANTUM_CONSISTENCY",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 0,
+            "PRIORITY_GAP": 5,
+            "NOT_MAPPED": 0
+          },
+          "direct": 0,
+          "total": 5
+        }
+      ],
+      "pareto_default": false
+    },
+    {
+      "foundation": "WEAK_ARITHMETIC",
+      "carrier": "LOCALIC_SYNTHETIC",
+      "counts": {
+        "LOCAL_RESULT": 0,
+        "LITERATURE_RESULT": 0,
+        "PIECES_ONLY": 0,
+        "PRIORITY_GAP": 0,
+        "NOT_MAPPED": 16
+      },
+      "direct": 0,
+      "assessed": 0,
+      "default_gate": {
+        "preset": "PREDICTIVE_PHYSICS",
+        "direct": 0,
+        "assessed": 0,
+        "total": 10,
+        "complete_direct": false,
+        "blockers": [
+          {
+            "obligation": "KINEMATICS_OBSERVABLES",
+            "status": "NOT_MAPPED"
+          },
+          {
+            "obligation": "STATE_EXISTENCE",
+            "status": "NOT_MAPPED"
+          },
+          {
+            "obligation": "STATE_REPRESENTATION",
+            "status": "NOT_MAPPED"
+          },
+          {
+            "obligation": "PROBABILITY_RULE",
+            "status": "NOT_MAPPED"
+          },
+          {
+            "obligation": "PHYSICAL_STATE_SELECTION",
+            "status": "NOT_MAPPED"
+          },
+          {
+            "obligation": "GENERATOR_SPECTRAL_DYNAMICS",
+            "status": "NOT_MAPPED"
+          },
+          {
+            "obligation": "EVOLUTION_WELLPOSEDNESS",
+            "status": "NOT_MAPPED"
+          },
+          {
+            "obligation": "CAUSAL_PROPAGATION_GREEN",
+            "status": "NOT_MAPPED"
+          },
+          {
+            "obligation": "INTERACTION_CONSTRUCTION",
+            "status": "NOT_MAPPED"
+          },
+          {
+            "obligation": "RECONSTRUCTION_LIMITS",
+            "status": "NOT_MAPPED"
+          }
+        ]
+      },
+      "reconstruction_status": "NOT_MAPPED",
+      "bundles": [
+        {
+          "bundle": "KINEMATICS_STATES",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 0,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 3
+          },
+          "direct": 0,
+          "total": 3
+        },
+        {
+          "bundle": "PREDICTION_OBSERVATION",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 0,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 3
+          },
+          "direct": 0,
+          "total": 3
+        },
+        {
+          "bundle": "DYNAMICS_CAUSALITY",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 0,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 3
+          },
+          "direct": 0,
+          "total": 3
+        },
+        {
+          "bundle": "GAUGE_INTERACTION",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 0,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 2
+          },
+          "direct": 0,
+          "total": 2
+        },
+        {
+          "bundle": "QUANTUM_CONSISTENCY",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 0,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 5
+          },
+          "direct": 0,
+          "total": 5
+        }
+      ],
+      "pareto_default": false
+    },
+    {
+      "foundation": "WEAK_CHOICE_ZF",
+      "carrier": "FINITE_EXACT",
+      "counts": {
+        "LOCAL_RESULT": 7,
+        "LITERATURE_RESULT": 0,
+        "PIECES_ONLY": 8,
+        "PRIORITY_GAP": 0,
+        "NOT_MAPPED": 1
+      },
+      "direct": 7,
+      "assessed": 15,
+      "default_gate": {
+        "preset": "PREDICTIVE_PHYSICS",
+        "direct": 7,
+        "assessed": 9,
+        "total": 10,
+        "complete_direct": false,
+        "blockers": [
+          {
+            "obligation": "PHYSICAL_STATE_SELECTION",
+            "status": "PIECES_ONLY"
+          },
+          {
+            "obligation": "CAUSAL_PROPAGATION_GREEN",
+            "status": "PIECES_ONLY"
+          },
+          {
+            "obligation": "RECONSTRUCTION_LIMITS",
+            "status": "NOT_MAPPED"
+          }
+        ]
+      },
+      "reconstruction_status": "NOT_MAPPED",
+      "bundles": [
+        {
+          "bundle": "KINEMATICS_STATES",
+          "counts": {
+            "LOCAL_RESULT": 3,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 0,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 3,
+          "total": 3
+        },
+        {
+          "bundle": "PREDICTION_OBSERVATION",
+          "counts": {
+            "LOCAL_RESULT": 1,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 1,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 1
+          },
+          "direct": 1,
+          "total": 3
+        },
+        {
+          "bundle": "DYNAMICS_CAUSALITY",
+          "counts": {
+            "LOCAL_RESULT": 2,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 1,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 2,
+          "total": 3
+        },
+        {
+          "bundle": "GAUGE_INTERACTION",
+          "counts": {
+            "LOCAL_RESULT": 1,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 1,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 1,
+          "total": 2
+        },
+        {
+          "bundle": "QUANTUM_CONSISTENCY",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 5,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 0,
+          "total": 5
+        }
+      ],
+      "pareto_default": false
+    },
+    {
+      "foundation": "WEAK_CHOICE_ZF",
+      "carrier": "HILBERT_OPERATOR",
+      "counts": {
+        "LOCAL_RESULT": 1,
+        "LITERATURE_RESULT": 4,
+        "PIECES_ONLY": 5,
+        "PRIORITY_GAP": 0,
+        "NOT_MAPPED": 6
+      },
+      "direct": 5,
+      "assessed": 10,
+      "default_gate": {
+        "preset": "PREDICTIVE_PHYSICS",
+        "direct": 5,
+        "assessed": 9,
+        "total": 10,
+        "complete_direct": false,
+        "blockers": [
+          {
+            "obligation": "PROBABILITY_RULE",
+            "status": "PIECES_ONLY"
+          },
+          {
+            "obligation": "PHYSICAL_STATE_SELECTION",
+            "status": "PIECES_ONLY"
+          },
+          {
+            "obligation": "EVOLUTION_WELLPOSEDNESS",
+            "status": "PIECES_ONLY"
+          },
+          {
+            "obligation": "CAUSAL_PROPAGATION_GREEN",
+            "status": "PIECES_ONLY"
+          },
+          {
+            "obligation": "INTERACTION_CONSTRUCTION",
+            "status": "NOT_MAPPED"
+          }
+        ]
+      },
+      "reconstruction_status": "LITERATURE_RESULT",
+      "bundles": [
+        {
+          "bundle": "KINEMATICS_STATES",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 3,
+            "PIECES_ONLY": 0,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 3,
+          "total": 3
+        },
+        {
+          "bundle": "PREDICTION_OBSERVATION",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 1,
+            "PIECES_ONLY": 2,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 1,
+          "total": 3
+        },
+        {
+          "bundle": "DYNAMICS_CAUSALITY",
+          "counts": {
+            "LOCAL_RESULT": 1,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 2,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 1,
+          "total": 3
+        },
+        {
+          "bundle": "GAUGE_INTERACTION",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 1,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 1
+          },
+          "direct": 0,
+          "total": 2
+        },
+        {
+          "bundle": "QUANTUM_CONSISTENCY",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 0,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 5
+          },
+          "direct": 0,
+          "total": 5
+        }
+      ],
+      "pareto_default": false
+    },
+    {
+      "foundation": "WEAK_CHOICE_ZF",
+      "carrier": "KREIN_INDEFINITE",
+      "counts": {
+        "LOCAL_RESULT": 5,
+        "LITERATURE_RESULT": 0,
+        "PIECES_ONLY": 4,
+        "PRIORITY_GAP": 0,
+        "NOT_MAPPED": 7
+      },
+      "direct": 5,
+      "assessed": 9,
+      "default_gate": {
+        "preset": "PREDICTIVE_PHYSICS",
+        "direct": 5,
+        "assessed": 8,
+        "total": 10,
+        "complete_direct": false,
+        "blockers": [
+          {
+            "obligation": "STATE_REPRESENTATION",
+            "status": "PIECES_ONLY"
+          },
+          {
+            "obligation": "PROBABILITY_RULE",
+            "status": "PIECES_ONLY"
+          },
+          {
+            "obligation": "CAUSAL_PROPAGATION_GREEN",
+            "status": "PIECES_ONLY"
+          },
+          {
+            "obligation": "INTERACTION_CONSTRUCTION",
+            "status": "NOT_MAPPED"
+          },
+          {
+            "obligation": "RECONSTRUCTION_LIMITS",
+            "status": "NOT_MAPPED"
+          }
+        ]
+      },
+      "reconstruction_status": "NOT_MAPPED",
+      "bundles": [
+        {
+          "bundle": "KINEMATICS_STATES",
+          "counts": {
+            "LOCAL_RESULT": 2,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 1,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 2,
+          "total": 3
+        },
+        {
+          "bundle": "PREDICTION_OBSERVATION",
+          "counts": {
+            "LOCAL_RESULT": 1,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 1,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 1
+          },
+          "direct": 1,
+          "total": 3
+        },
+        {
+          "bundle": "DYNAMICS_CAUSALITY",
+          "counts": {
+            "LOCAL_RESULT": 2,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 1,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 2,
+          "total": 3
+        },
+        {
+          "bundle": "GAUGE_INTERACTION",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 1,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 1
+          },
+          "direct": 0,
+          "total": 2
+        },
+        {
+          "bundle": "QUANTUM_CONSISTENCY",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 0,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 5
+          },
+          "direct": 0,
+          "total": 5
+        }
+      ],
+      "pareto_default": false
+    },
+    {
+      "foundation": "WEAK_CHOICE_ZF",
+      "carrier": "ALGEBRAIC_CSTAR",
+      "counts": {
+        "LOCAL_RESULT": 5,
+        "LITERATURE_RESULT": 5,
+        "PIECES_ONLY": 6,
+        "PRIORITY_GAP": 0,
+        "NOT_MAPPED": 0
+      },
+      "direct": 10,
+      "assessed": 16,
+      "default_gate": {
+        "preset": "PREDICTIVE_PHYSICS",
+        "direct": 7,
+        "assessed": 10,
+        "total": 10,
+        "complete_direct": false,
+        "blockers": [
+          {
+            "obligation": "PROBABILITY_RULE",
+            "status": "PIECES_ONLY"
+          },
+          {
+            "obligation": "PHYSICAL_STATE_SELECTION",
+            "status": "PIECES_ONLY"
+          },
+          {
+            "obligation": "CAUSAL_PROPAGATION_GREEN",
+            "status": "PIECES_ONLY"
+          }
+        ]
+      },
+      "reconstruction_status": "LITERATURE_RESULT",
+      "bundles": [
+        {
+          "bundle": "KINEMATICS_STATES",
+          "counts": {
+            "LOCAL_RESULT": 3,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 0,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 3,
+          "total": 3
+        },
+        {
+          "bundle": "PREDICTION_OBSERVATION",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 1,
+            "PIECES_ONLY": 2,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 1,
+          "total": 3
+        },
+        {
+          "bundle": "DYNAMICS_CAUSALITY",
+          "counts": {
+            "LOCAL_RESULT": 2,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 1,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 2,
+          "total": 3
+        },
+        {
+          "bundle": "GAUGE_INTERACTION",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 1,
+            "PIECES_ONLY": 1,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 1,
+          "total": 2
+        },
+        {
+          "bundle": "QUANTUM_CONSISTENCY",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 3,
+            "PIECES_ONLY": 2,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 3,
+          "total": 5
+        }
+      ],
+      "pareto_default": false
+    },
+    {
+      "foundation": "WEAK_CHOICE_ZF",
+      "carrier": "SMOOTH_DISTRIBUTIONAL",
+      "counts": {
+        "LOCAL_RESULT": 2,
+        "LITERATURE_RESULT": 0,
+        "PIECES_ONLY": 1,
+        "PRIORITY_GAP": 7,
+        "NOT_MAPPED": 6
+      },
+      "direct": 2,
+      "assessed": 10,
+      "default_gate": {
+        "preset": "PREDICTIVE_PHYSICS",
+        "direct": 2,
+        "assessed": 4,
+        "total": 10,
+        "complete_direct": false,
+        "blockers": [
+          {
+            "obligation": "KINEMATICS_OBSERVABLES",
+            "status": "NOT_MAPPED"
+          },
+          {
+            "obligation": "STATE_EXISTENCE",
+            "status": "NOT_MAPPED"
+          },
+          {
+            "obligation": "STATE_REPRESENTATION",
+            "status": "NOT_MAPPED"
+          },
+          {
+            "obligation": "PROBABILITY_RULE",
+            "status": "NOT_MAPPED"
+          },
+          {
+            "obligation": "PHYSICAL_STATE_SELECTION",
+            "status": "NOT_MAPPED"
+          },
+          {
+            "obligation": "GENERATOR_SPECTRAL_DYNAMICS",
+            "status": "PIECES_ONLY"
+          },
+          {
+            "obligation": "INTERACTION_CONSTRUCTION",
+            "status": "PRIORITY_GAP"
+          },
+          {
+            "obligation": "RECONSTRUCTION_LIMITS",
+            "status": "NOT_MAPPED"
+          }
+        ]
+      },
+      "reconstruction_status": "NOT_MAPPED",
+      "bundles": [
+        {
+          "bundle": "KINEMATICS_STATES",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 0,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 3
+          },
+          "direct": 0,
+          "total": 3
+        },
+        {
+          "bundle": "PREDICTION_OBSERVATION",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 0,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 3
+          },
+          "direct": 0,
+          "total": 3
+        },
+        {
+          "bundle": "DYNAMICS_CAUSALITY",
+          "counts": {
+            "LOCAL_RESULT": 2,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 1,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 2,
+          "total": 3
+        },
+        {
+          "bundle": "GAUGE_INTERACTION",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 0,
+            "PRIORITY_GAP": 2,
+            "NOT_MAPPED": 0
+          },
+          "direct": 0,
+          "total": 2
+        },
+        {
+          "bundle": "QUANTUM_CONSISTENCY",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 0,
+            "PRIORITY_GAP": 5,
+            "NOT_MAPPED": 0
+          },
+          "direct": 0,
+          "total": 5
+        }
+      ],
+      "pareto_default": false
+    },
+    {
+      "foundation": "WEAK_CHOICE_ZF",
+      "carrier": "LOCALIC_SYNTHETIC",
+      "counts": {
+        "LOCAL_RESULT": 0,
+        "LITERATURE_RESULT": 2,
+        "PIECES_ONLY": 2,
+        "PRIORITY_GAP": 0,
+        "NOT_MAPPED": 12
+      },
+      "direct": 2,
+      "assessed": 4,
+      "default_gate": {
+        "preset": "PREDICTIVE_PHYSICS",
+        "direct": 2,
+        "assessed": 4,
+        "total": 10,
+        "complete_direct": false,
+        "blockers": [
+          {
+            "obligation": "KINEMATICS_OBSERVABLES",
+            "status": "NOT_MAPPED"
+          },
+          {
+            "obligation": "PROBABILITY_RULE",
+            "status": "PIECES_ONLY"
+          },
+          {
+            "obligation": "PHYSICAL_STATE_SELECTION",
+            "status": "PIECES_ONLY"
+          },
+          {
+            "obligation": "GENERATOR_SPECTRAL_DYNAMICS",
+            "status": "NOT_MAPPED"
+          },
+          {
+            "obligation": "EVOLUTION_WELLPOSEDNESS",
+            "status": "NOT_MAPPED"
+          },
+          {
+            "obligation": "CAUSAL_PROPAGATION_GREEN",
+            "status": "NOT_MAPPED"
+          },
+          {
+            "obligation": "INTERACTION_CONSTRUCTION",
+            "status": "NOT_MAPPED"
+          },
+          {
+            "obligation": "RECONSTRUCTION_LIMITS",
+            "status": "NOT_MAPPED"
+          }
+        ]
+      },
+      "reconstruction_status": "NOT_MAPPED",
+      "bundles": [
+        {
+          "bundle": "KINEMATICS_STATES",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 2,
+            "PIECES_ONLY": 0,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 1
+          },
+          "direct": 2,
+          "total": 3
+        },
+        {
+          "bundle": "PREDICTION_OBSERVATION",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 2,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 1
+          },
+          "direct": 0,
+          "total": 3
+        },
+        {
+          "bundle": "DYNAMICS_CAUSALITY",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 0,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 3
+          },
+          "direct": 0,
+          "total": 3
+        },
+        {
+          "bundle": "GAUGE_INTERACTION",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 0,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 2
+          },
+          "direct": 0,
+          "total": 2
+        },
+        {
+          "bundle": "QUANTUM_CONSISTENCY",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 0,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 5
+          },
+          "direct": 0,
+          "total": 5
+        }
+      ],
+      "pareto_default": false
+    },
+    {
+      "foundation": "CONSTRUCTIVE_COMPUTABLE",
+      "carrier": "FINITE_EXACT",
+      "counts": {
+        "LOCAL_RESULT": 7,
+        "LITERATURE_RESULT": 0,
+        "PIECES_ONLY": 8,
+        "PRIORITY_GAP": 0,
+        "NOT_MAPPED": 1
+      },
+      "direct": 7,
+      "assessed": 15,
+      "default_gate": {
+        "preset": "PREDICTIVE_PHYSICS",
+        "direct": 7,
+        "assessed": 9,
+        "total": 10,
+        "complete_direct": false,
+        "blockers": [
+          {
+            "obligation": "PHYSICAL_STATE_SELECTION",
+            "status": "PIECES_ONLY"
+          },
+          {
+            "obligation": "CAUSAL_PROPAGATION_GREEN",
+            "status": "PIECES_ONLY"
+          },
+          {
+            "obligation": "RECONSTRUCTION_LIMITS",
+            "status": "NOT_MAPPED"
+          }
+        ]
+      },
+      "reconstruction_status": "NOT_MAPPED",
+      "bundles": [
+        {
+          "bundle": "KINEMATICS_STATES",
+          "counts": {
+            "LOCAL_RESULT": 3,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 0,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 3,
+          "total": 3
+        },
+        {
+          "bundle": "PREDICTION_OBSERVATION",
+          "counts": {
+            "LOCAL_RESULT": 1,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 1,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 1
+          },
+          "direct": 1,
+          "total": 3
+        },
+        {
+          "bundle": "DYNAMICS_CAUSALITY",
+          "counts": {
+            "LOCAL_RESULT": 2,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 1,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 2,
+          "total": 3
+        },
+        {
+          "bundle": "GAUGE_INTERACTION",
+          "counts": {
+            "LOCAL_RESULT": 1,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 1,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 1,
+          "total": 2
+        },
+        {
+          "bundle": "QUANTUM_CONSISTENCY",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 5,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 0,
+          "total": 5
+        }
+      ],
+      "pareto_default": false
+    },
+    {
+      "foundation": "CONSTRUCTIVE_COMPUTABLE",
+      "carrier": "HILBERT_OPERATOR",
+      "counts": {
+        "LOCAL_RESULT": 0,
+        "LITERATURE_RESULT": 5,
+        "PIECES_ONLY": 5,
+        "PRIORITY_GAP": 0,
+        "NOT_MAPPED": 6
+      },
+      "direct": 5,
+      "assessed": 10,
+      "default_gate": {
+        "preset": "PREDICTIVE_PHYSICS",
+        "direct": 5,
+        "assessed": 9,
+        "total": 10,
+        "complete_direct": false,
+        "blockers": [
+          {
+            "obligation": "STATE_EXISTENCE",
+            "status": "PIECES_ONLY"
+          },
+          {
+            "obligation": "PHYSICAL_STATE_SELECTION",
+            "status": "PIECES_ONLY"
+          },
+          {
+            "obligation": "CAUSAL_PROPAGATION_GREEN",
+            "status": "PIECES_ONLY"
+          },
+          {
+            "obligation": "INTERACTION_CONSTRUCTION",
+            "status": "NOT_MAPPED"
+          },
+          {
+            "obligation": "RECONSTRUCTION_LIMITS",
+            "status": "PIECES_ONLY"
+          }
+        ]
+      },
+      "reconstruction_status": "PIECES_ONLY",
+      "bundles": [
+        {
+          "bundle": "KINEMATICS_STATES",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 2,
+            "PIECES_ONLY": 1,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 2,
+          "total": 3
+        },
+        {
+          "bundle": "PREDICTION_OBSERVATION",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 1,
+            "PIECES_ONLY": 2,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 1,
+          "total": 3
+        },
+        {
+          "bundle": "DYNAMICS_CAUSALITY",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 2,
+            "PIECES_ONLY": 1,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 2,
+          "total": 3
+        },
+        {
+          "bundle": "GAUGE_INTERACTION",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 1,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 1
+          },
+          "direct": 0,
+          "total": 2
+        },
+        {
+          "bundle": "QUANTUM_CONSISTENCY",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 0,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 5
+          },
+          "direct": 0,
+          "total": 5
+        }
+      ],
+      "pareto_default": false
+    },
+    {
+      "foundation": "CONSTRUCTIVE_COMPUTABLE",
+      "carrier": "KREIN_INDEFINITE",
+      "counts": {
+        "LOCAL_RESULT": 0,
+        "LITERATURE_RESULT": 1,
+        "PIECES_ONLY": 3,
+        "PRIORITY_GAP": 0,
+        "NOT_MAPPED": 12
+      },
+      "direct": 1,
+      "assessed": 4,
+      "default_gate": {
+        "preset": "PREDICTIVE_PHYSICS",
+        "direct": 1,
+        "assessed": 4,
+        "total": 10,
+        "complete_direct": false,
+        "blockers": [
+          {
+            "obligation": "KINEMATICS_OBSERVABLES",
+            "status": "NOT_MAPPED"
+          },
+          {
+            "obligation": "STATE_EXISTENCE",
+            "status": "PIECES_ONLY"
+          },
+          {
+            "obligation": "STATE_REPRESENTATION",
+            "status": "NOT_MAPPED"
+          },
+          {
+            "obligation": "PROBABILITY_RULE",
+            "status": "NOT_MAPPED"
+          },
+          {
+            "obligation": "PHYSICAL_STATE_SELECTION",
+            "status": "PIECES_ONLY"
+          },
+          {
+            "obligation": "EVOLUTION_WELLPOSEDNESS",
+            "status": "PIECES_ONLY"
+          },
+          {
+            "obligation": "CAUSAL_PROPAGATION_GREEN",
+            "status": "NOT_MAPPED"
+          },
+          {
+            "obligation": "INTERACTION_CONSTRUCTION",
+            "status": "NOT_MAPPED"
+          },
+          {
+            "obligation": "RECONSTRUCTION_LIMITS",
+            "status": "NOT_MAPPED"
+          }
+        ]
+      },
+      "reconstruction_status": "NOT_MAPPED",
+      "bundles": [
+        {
+          "bundle": "KINEMATICS_STATES",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 1,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 2
+          },
+          "direct": 0,
+          "total": 3
+        },
+        {
+          "bundle": "PREDICTION_OBSERVATION",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 1,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 2
+          },
+          "direct": 0,
+          "total": 3
+        },
+        {
+          "bundle": "DYNAMICS_CAUSALITY",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 1,
+            "PIECES_ONLY": 1,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 1
+          },
+          "direct": 1,
+          "total": 3
+        },
+        {
+          "bundle": "GAUGE_INTERACTION",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 0,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 2
+          },
+          "direct": 0,
+          "total": 2
+        },
+        {
+          "bundle": "QUANTUM_CONSISTENCY",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 0,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 5
+          },
+          "direct": 0,
+          "total": 5
+        }
+      ],
+      "pareto_default": false
+    },
+    {
+      "foundation": "CONSTRUCTIVE_COMPUTABLE",
+      "carrier": "ALGEBRAIC_CSTAR",
+      "counts": {
+        "LOCAL_RESULT": 0,
+        "LITERATURE_RESULT": 5,
+        "PIECES_ONLY": 3,
+        "PRIORITY_GAP": 0,
+        "NOT_MAPPED": 8
+      },
+      "direct": 5,
+      "assessed": 8,
+      "default_gate": {
+        "preset": "PREDICTIVE_PHYSICS",
+        "direct": 5,
+        "assessed": 8,
+        "total": 10,
+        "complete_direct": false,
+        "blockers": [
+          {
+            "obligation": "STATE_EXISTENCE",
+            "status": "PIECES_ONLY"
+          },
+          {
+            "obligation": "PHYSICAL_STATE_SELECTION",
+            "status": "PIECES_ONLY"
+          },
+          {
+            "obligation": "EVOLUTION_WELLPOSEDNESS",
+            "status": "PIECES_ONLY"
+          },
+          {
+            "obligation": "CAUSAL_PROPAGATION_GREEN",
+            "status": "NOT_MAPPED"
+          },
+          {
+            "obligation": "INTERACTION_CONSTRUCTION",
+            "status": "NOT_MAPPED"
+          }
+        ]
+      },
+      "reconstruction_status": "LITERATURE_RESULT",
+      "bundles": [
+        {
+          "bundle": "KINEMATICS_STATES",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 2,
+            "PIECES_ONLY": 1,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 2,
+          "total": 3
+        },
+        {
+          "bundle": "PREDICTION_OBSERVATION",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 2,
+            "PIECES_ONLY": 1,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 2,
+          "total": 3
+        },
+        {
+          "bundle": "DYNAMICS_CAUSALITY",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 1,
+            "PIECES_ONLY": 1,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 1
+          },
+          "direct": 1,
+          "total": 3
+        },
+        {
+          "bundle": "GAUGE_INTERACTION",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 0,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 2
+          },
+          "direct": 0,
+          "total": 2
+        },
+        {
+          "bundle": "QUANTUM_CONSISTENCY",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 0,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 5
+          },
+          "direct": 0,
+          "total": 5
+        }
+      ],
+      "pareto_default": false
+    },
+    {
+      "foundation": "CONSTRUCTIVE_COMPUTABLE",
+      "carrier": "SMOOTH_DISTRIBUTIONAL",
+      "counts": {
+        "LOCAL_RESULT": 0,
+        "LITERATURE_RESULT": 1,
+        "PIECES_ONLY": 2,
+        "PRIORITY_GAP": 7,
+        "NOT_MAPPED": 6
+      },
+      "direct": 1,
+      "assessed": 10,
+      "default_gate": {
+        "preset": "PREDICTIVE_PHYSICS",
+        "direct": 1,
+        "assessed": 4,
+        "total": 10,
+        "complete_direct": false,
+        "blockers": [
+          {
+            "obligation": "KINEMATICS_OBSERVABLES",
+            "status": "NOT_MAPPED"
+          },
+          {
+            "obligation": "STATE_EXISTENCE",
+            "status": "NOT_MAPPED"
+          },
+          {
+            "obligation": "STATE_REPRESENTATION",
+            "status": "NOT_MAPPED"
+          },
+          {
+            "obligation": "PROBABILITY_RULE",
+            "status": "NOT_MAPPED"
+          },
+          {
+            "obligation": "PHYSICAL_STATE_SELECTION",
+            "status": "NOT_MAPPED"
+          },
+          {
+            "obligation": "GENERATOR_SPECTRAL_DYNAMICS",
+            "status": "PIECES_ONLY"
+          },
+          {
+            "obligation": "CAUSAL_PROPAGATION_GREEN",
+            "status": "PIECES_ONLY"
+          },
+          {
+            "obligation": "INTERACTION_CONSTRUCTION",
+            "status": "PRIORITY_GAP"
+          },
+          {
+            "obligation": "RECONSTRUCTION_LIMITS",
+            "status": "NOT_MAPPED"
+          }
+        ]
+      },
+      "reconstruction_status": "NOT_MAPPED",
+      "bundles": [
+        {
+          "bundle": "KINEMATICS_STATES",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 0,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 3
+          },
+          "direct": 0,
+          "total": 3
+        },
+        {
+          "bundle": "PREDICTION_OBSERVATION",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 0,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 3
+          },
+          "direct": 0,
+          "total": 3
+        },
+        {
+          "bundle": "DYNAMICS_CAUSALITY",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 1,
+            "PIECES_ONLY": 2,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 1,
+          "total": 3
+        },
+        {
+          "bundle": "GAUGE_INTERACTION",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 0,
+            "PRIORITY_GAP": 2,
+            "NOT_MAPPED": 0
+          },
+          "direct": 0,
+          "total": 2
+        },
+        {
+          "bundle": "QUANTUM_CONSISTENCY",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 0,
+            "PRIORITY_GAP": 5,
+            "NOT_MAPPED": 0
+          },
+          "direct": 0,
+          "total": 5
+        }
+      ],
+      "pareto_default": false
+    },
+    {
+      "foundation": "CONSTRUCTIVE_COMPUTABLE",
+      "carrier": "LOCALIC_SYNTHETIC",
+      "counts": {
+        "LOCAL_RESULT": 0,
+        "LITERATURE_RESULT": 5,
+        "PIECES_ONLY": 4,
+        "PRIORITY_GAP": 0,
+        "NOT_MAPPED": 7
+      },
+      "direct": 5,
+      "assessed": 9,
+      "default_gate": {
+        "preset": "PREDICTIVE_PHYSICS",
+        "direct": 5,
+        "assessed": 8,
+        "total": 10,
+        "complete_direct": false,
+        "blockers": [
+          {
+            "obligation": "PROBABILITY_RULE",
+            "status": "PIECES_ONLY"
+          },
+          {
+            "obligation": "PHYSICAL_STATE_SELECTION",
+            "status": "PIECES_ONLY"
+          },
+          {
+            "obligation": "EVOLUTION_WELLPOSEDNESS",
+            "status": "PIECES_ONLY"
+          },
+          {
+            "obligation": "CAUSAL_PROPAGATION_GREEN",
+            "status": "NOT_MAPPED"
+          },
+          {
+            "obligation": "INTERACTION_CONSTRUCTION",
+            "status": "NOT_MAPPED"
+          }
+        ]
+      },
+      "reconstruction_status": "LITERATURE_RESULT",
+      "bundles": [
+        {
+          "bundle": "KINEMATICS_STATES",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 3,
+            "PIECES_ONLY": 0,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 3,
+          "total": 3
+        },
+        {
+          "bundle": "PREDICTION_OBSERVATION",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 1,
+            "PIECES_ONLY": 2,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 1,
+          "total": 3
+        },
+        {
+          "bundle": "DYNAMICS_CAUSALITY",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 1,
+            "PIECES_ONLY": 1,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 1
+          },
+          "direct": 1,
+          "total": 3
+        },
+        {
+          "bundle": "GAUGE_INTERACTION",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 1,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 1
+          },
+          "direct": 0,
+          "total": 2
+        },
+        {
+          "bundle": "QUANTUM_CONSISTENCY",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 0,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 5
+          },
+          "direct": 0,
+          "total": 5
+        }
+      ],
+      "pareto_default": false
+    },
+    {
+      "foundation": "TOPOS_INTERNAL",
+      "carrier": "FINITE_EXACT",
+      "counts": {
+        "LOCAL_RESULT": 6,
+        "LITERATURE_RESULT": 1,
+        "PIECES_ONLY": 7,
+        "PRIORITY_GAP": 0,
+        "NOT_MAPPED": 2
+      },
+      "direct": 7,
+      "assessed": 14,
+      "default_gate": {
+        "preset": "PREDICTIVE_PHYSICS",
+        "direct": 7,
+        "assessed": 9,
+        "total": 10,
+        "complete_direct": false,
+        "blockers": [
+          {
+            "obligation": "KINEMATICS_OBSERVABLES",
+            "status": "NOT_MAPPED"
+          },
+          {
+            "obligation": "PHYSICAL_STATE_SELECTION",
+            "status": "PIECES_ONLY"
+          },
+          {
+            "obligation": "CAUSAL_PROPAGATION_GREEN",
+            "status": "PIECES_ONLY"
+          }
+        ]
+      },
+      "reconstruction_status": "LITERATURE_RESULT",
+      "bundles": [
+        {
+          "bundle": "KINEMATICS_STATES",
+          "counts": {
+            "LOCAL_RESULT": 2,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 0,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 1
+          },
+          "direct": 2,
+          "total": 3
+        },
+        {
+          "bundle": "PREDICTION_OBSERVATION",
+          "counts": {
+            "LOCAL_RESULT": 1,
+            "LITERATURE_RESULT": 1,
+            "PIECES_ONLY": 1,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 2,
+          "total": 3
+        },
+        {
+          "bundle": "DYNAMICS_CAUSALITY",
+          "counts": {
+            "LOCAL_RESULT": 2,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 1,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 2,
+          "total": 3
+        },
+        {
+          "bundle": "GAUGE_INTERACTION",
+          "counts": {
+            "LOCAL_RESULT": 1,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 0,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 1
+          },
+          "direct": 1,
+          "total": 2
+        },
+        {
+          "bundle": "QUANTUM_CONSISTENCY",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 5,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 0,
+          "total": 5
+        }
+      ],
+      "pareto_default": false
+    },
+    {
+      "foundation": "TOPOS_INTERNAL",
+      "carrier": "HILBERT_OPERATOR",
+      "counts": {
+        "LOCAL_RESULT": 0,
+        "LITERATURE_RESULT": 2,
+        "PIECES_ONLY": 4,
+        "PRIORITY_GAP": 0,
+        "NOT_MAPPED": 10
+      },
+      "direct": 2,
+      "assessed": 6,
+      "default_gate": {
+        "preset": "PREDICTIVE_PHYSICS",
+        "direct": 2,
+        "assessed": 6,
+        "total": 10,
+        "complete_direct": false,
+        "blockers": [
+          {
+            "obligation": "KINEMATICS_OBSERVABLES",
+            "status": "NOT_MAPPED"
+          },
+          {
+            "obligation": "STATE_EXISTENCE",
+            "status": "PIECES_ONLY"
+          },
+          {
+            "obligation": "PROBABILITY_RULE",
+            "status": "PIECES_ONLY"
+          },
+          {
+            "obligation": "PHYSICAL_STATE_SELECTION",
+            "status": "PIECES_ONLY"
+          },
+          {
+            "obligation": "EVOLUTION_WELLPOSEDNESS",
+            "status": "PIECES_ONLY"
+          },
+          {
+            "obligation": "CAUSAL_PROPAGATION_GREEN",
+            "status": "NOT_MAPPED"
+          },
+          {
+            "obligation": "INTERACTION_CONSTRUCTION",
+            "status": "NOT_MAPPED"
+          },
+          {
+            "obligation": "RECONSTRUCTION_LIMITS",
+            "status": "NOT_MAPPED"
+          }
+        ]
+      },
+      "reconstruction_status": "NOT_MAPPED",
+      "bundles": [
+        {
+          "bundle": "KINEMATICS_STATES",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 1,
+            "PIECES_ONLY": 1,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 1
+          },
+          "direct": 1,
+          "total": 3
+        },
+        {
+          "bundle": "PREDICTION_OBSERVATION",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 2,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 1
+          },
+          "direct": 0,
+          "total": 3
+        },
+        {
+          "bundle": "DYNAMICS_CAUSALITY",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 1,
+            "PIECES_ONLY": 1,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 1
+          },
+          "direct": 1,
+          "total": 3
+        },
+        {
+          "bundle": "GAUGE_INTERACTION",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 0,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 2
+          },
+          "direct": 0,
+          "total": 2
+        },
+        {
+          "bundle": "QUANTUM_CONSISTENCY",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 0,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 5
+          },
+          "direct": 0,
+          "total": 5
+        }
+      ],
+      "pareto_default": false
+    },
+    {
+      "foundation": "TOPOS_INTERNAL",
+      "carrier": "KREIN_INDEFINITE",
+      "counts": {
+        "LOCAL_RESULT": 0,
+        "LITERATURE_RESULT": 4,
+        "PIECES_ONLY": 3,
+        "PRIORITY_GAP": 0,
+        "NOT_MAPPED": 9
+      },
+      "direct": 4,
+      "assessed": 7,
+      "default_gate": {
+        "preset": "PREDICTIVE_PHYSICS",
+        "direct": 4,
+        "assessed": 7,
+        "total": 10,
+        "complete_direct": false,
+        "blockers": [
+          {
+            "obligation": "KINEMATICS_OBSERVABLES",
+            "status": "NOT_MAPPED"
+          },
+          {
+            "obligation": "STATE_EXISTENCE",
+            "status": "PIECES_ONLY"
+          },
+          {
+            "obligation": "PROBABILITY_RULE",
+            "status": "PIECES_ONLY"
+          },
+          {
+            "obligation": "CAUSAL_PROPAGATION_GREEN",
+            "status": "PIECES_ONLY"
+          },
+          {
+            "obligation": "INTERACTION_CONSTRUCTION",
+            "status": "NOT_MAPPED"
+          },
+          {
+            "obligation": "RECONSTRUCTION_LIMITS",
+            "status": "NOT_MAPPED"
+          }
+        ]
+      },
+      "reconstruction_status": "NOT_MAPPED",
+      "bundles": [
+        {
+          "bundle": "KINEMATICS_STATES",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 1,
+            "PIECES_ONLY": 1,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 1
+          },
+          "direct": 1,
+          "total": 3
+        },
+        {
+          "bundle": "PREDICTION_OBSERVATION",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 1,
+            "PIECES_ONLY": 1,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 1
+          },
+          "direct": 1,
+          "total": 3
+        },
+        {
+          "bundle": "DYNAMICS_CAUSALITY",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 2,
+            "PIECES_ONLY": 1,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 2,
+          "total": 3
+        },
+        {
+          "bundle": "GAUGE_INTERACTION",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 0,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 2
+          },
+          "direct": 0,
+          "total": 2
+        },
+        {
+          "bundle": "QUANTUM_CONSISTENCY",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 0,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 5
+          },
+          "direct": 0,
+          "total": 5
+        }
+      ],
+      "pareto_default": false
+    },
+    {
+      "foundation": "TOPOS_INTERNAL",
+      "carrier": "ALGEBRAIC_CSTAR",
+      "counts": {
+        "LOCAL_RESULT": 0,
+        "LITERATURE_RESULT": 5,
+        "PIECES_ONLY": 4,
+        "PRIORITY_GAP": 0,
+        "NOT_MAPPED": 7
+      },
+      "direct": 5,
+      "assessed": 9,
+      "default_gate": {
+        "preset": "PREDICTIVE_PHYSICS",
+        "direct": 5,
+        "assessed": 8,
+        "total": 10,
+        "complete_direct": false,
+        "blockers": [
+          {
+            "obligation": "PROBABILITY_RULE",
+            "status": "PIECES_ONLY"
+          },
+          {
+            "obligation": "PHYSICAL_STATE_SELECTION",
+            "status": "PIECES_ONLY"
+          },
+          {
+            "obligation": "EVOLUTION_WELLPOSEDNESS",
+            "status": "PIECES_ONLY"
+          },
+          {
+            "obligation": "CAUSAL_PROPAGATION_GREEN",
+            "status": "NOT_MAPPED"
+          },
+          {
+            "obligation": "INTERACTION_CONSTRUCTION",
+            "status": "NOT_MAPPED"
+          }
+        ]
+      },
+      "reconstruction_status": "LITERATURE_RESULT",
+      "bundles": [
+        {
+          "bundle": "KINEMATICS_STATES",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 3,
+            "PIECES_ONLY": 0,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 3,
+          "total": 3
+        },
+        {
+          "bundle": "PREDICTION_OBSERVATION",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 1,
+            "PIECES_ONLY": 2,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 1,
+          "total": 3
+        },
+        {
+          "bundle": "DYNAMICS_CAUSALITY",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 1,
+            "PIECES_ONLY": 1,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 1
+          },
+          "direct": 1,
+          "total": 3
+        },
+        {
+          "bundle": "GAUGE_INTERACTION",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 1,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 1
+          },
+          "direct": 0,
+          "total": 2
+        },
+        {
+          "bundle": "QUANTUM_CONSISTENCY",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 0,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 5
+          },
+          "direct": 0,
+          "total": 5
+        }
+      ],
+      "pareto_default": false
+    },
+    {
+      "foundation": "TOPOS_INTERNAL",
+      "carrier": "SMOOTH_DISTRIBUTIONAL",
+      "counts": {
+        "LOCAL_RESULT": 0,
+        "LITERATURE_RESULT": 2,
+        "PIECES_ONLY": 6,
+        "PRIORITY_GAP": 1,
+        "NOT_MAPPED": 7
+      },
+      "direct": 2,
+      "assessed": 9,
+      "default_gate": {
+        "preset": "PREDICTIVE_PHYSICS",
+        "direct": 2,
+        "assessed": 3,
+        "total": 10,
+        "complete_direct": false,
+        "blockers": [
+          {
+            "obligation": "STATE_EXISTENCE",
+            "status": "NOT_MAPPED"
+          },
+          {
+            "obligation": "STATE_REPRESENTATION",
+            "status": "NOT_MAPPED"
+          },
+          {
+            "obligation": "PROBABILITY_RULE",
+            "status": "NOT_MAPPED"
+          },
+          {
+            "obligation": "PHYSICAL_STATE_SELECTION",
+            "status": "NOT_MAPPED"
+          },
+          {
+            "obligation": "GENERATOR_SPECTRAL_DYNAMICS",
+            "status": "NOT_MAPPED"
+          },
+          {
+            "obligation": "EVOLUTION_WELLPOSEDNESS",
+            "status": "NOT_MAPPED"
+          },
+          {
+            "obligation": "CAUSAL_PROPAGATION_GREEN",
+            "status": "NOT_MAPPED"
+          },
+          {
+            "obligation": "INTERACTION_CONSTRUCTION",
+            "status": "PIECES_ONLY"
+          }
+        ]
+      },
+      "reconstruction_status": "LITERATURE_RESULT",
+      "bundles": [
+        {
+          "bundle": "KINEMATICS_STATES",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 1,
+            "PIECES_ONLY": 0,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 2
+          },
+          "direct": 1,
+          "total": 3
+        },
+        {
+          "bundle": "PREDICTION_OBSERVATION",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 1,
+            "PIECES_ONLY": 0,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 2
+          },
+          "direct": 1,
+          "total": 3
+        },
+        {
+          "bundle": "DYNAMICS_CAUSALITY",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 0,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 3
+          },
+          "direct": 0,
+          "total": 3
+        },
+        {
+          "bundle": "GAUGE_INTERACTION",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 1,
+            "PRIORITY_GAP": 1,
+            "NOT_MAPPED": 0
+          },
+          "direct": 0,
+          "total": 2
+        },
+        {
+          "bundle": "QUANTUM_CONSISTENCY",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 5,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 0,
+          "total": 5
+        }
+      ],
+      "pareto_default": false
+    },
+    {
+      "foundation": "TOPOS_INTERNAL",
+      "carrier": "LOCALIC_SYNTHETIC",
+      "counts": {
+        "LOCAL_RESULT": 0,
+        "LITERATURE_RESULT": 3,
+        "PIECES_ONLY": 11,
+        "PRIORITY_GAP": 2,
+        "NOT_MAPPED": 0
+      },
+      "direct": 3,
+      "assessed": 16,
+      "default_gate": {
+        "preset": "PREDICTIVE_PHYSICS",
+        "direct": 3,
+        "assessed": 10,
+        "total": 10,
+        "complete_direct": false,
+        "blockers": [
+          {
+            "obligation": "PROBABILITY_RULE",
+            "status": "PIECES_ONLY"
+          },
+          {
+            "obligation": "PHYSICAL_STATE_SELECTION",
+            "status": "PIECES_ONLY"
+          },
+          {
+            "obligation": "GENERATOR_SPECTRAL_DYNAMICS",
+            "status": "PIECES_ONLY"
+          },
+          {
+            "obligation": "EVOLUTION_WELLPOSEDNESS",
+            "status": "PIECES_ONLY"
+          },
+          {
+            "obligation": "CAUSAL_PROPAGATION_GREEN",
+            "status": "PIECES_ONLY"
+          },
+          {
+            "obligation": "INTERACTION_CONSTRUCTION",
+            "status": "PIECES_ONLY"
+          },
+          {
+            "obligation": "RECONSTRUCTION_LIMITS",
+            "status": "PRIORITY_GAP"
+          }
+        ]
+      },
+      "reconstruction_status": "PRIORITY_GAP",
+      "bundles": [
+        {
+          "bundle": "KINEMATICS_STATES",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 3,
+            "PIECES_ONLY": 0,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 3,
+          "total": 3
+        },
+        {
+          "bundle": "PREDICTION_OBSERVATION",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 2,
+            "PRIORITY_GAP": 1,
+            "NOT_MAPPED": 0
+          },
+          "direct": 0,
+          "total": 3
+        },
+        {
+          "bundle": "DYNAMICS_CAUSALITY",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 3,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 0,
+          "total": 3
+        },
+        {
+          "bundle": "GAUGE_INTERACTION",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 1,
+            "PRIORITY_GAP": 1,
+            "NOT_MAPPED": 0
+          },
+          "direct": 0,
+          "total": 2
+        },
+        {
+          "bundle": "QUANTUM_CONSISTENCY",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 5,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 0,
+          "total": 5
+        }
+      ],
+      "pareto_default": false
+    },
+    {
+      "foundation": "FINITE_DISCRETE",
+      "carrier": "FINITE_EXACT",
+      "counts": {
+        "LOCAL_RESULT": 6,
+        "LITERATURE_RESULT": 4,
+        "PIECES_ONLY": 1,
+        "PRIORITY_GAP": 5,
+        "NOT_MAPPED": 0
+      },
+      "direct": 10,
+      "assessed": 16,
+      "default_gate": {
+        "preset": "PREDICTIVE_PHYSICS",
+        "direct": 9,
+        "assessed": 10,
+        "total": 10,
+        "complete_direct": false,
+        "blockers": [
+          {
+            "obligation": "PHYSICAL_STATE_SELECTION",
+            "status": "PIECES_ONLY"
+          }
+        ]
+      },
+      "reconstruction_status": "LOCAL_RESULT",
+      "bundles": [
+        {
+          "bundle": "KINEMATICS_STATES",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 3,
+            "PIECES_ONLY": 0,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 3,
+          "total": 3
+        },
+        {
+          "bundle": "PREDICTION_OBSERVATION",
+          "counts": {
+            "LOCAL_RESULT": 1,
+            "LITERATURE_RESULT": 1,
+            "PIECES_ONLY": 1,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 2,
+          "total": 3
+        },
+        {
+          "bundle": "DYNAMICS_CAUSALITY",
+          "counts": {
+            "LOCAL_RESULT": 3,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 0,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 3,
+          "total": 3
+        },
+        {
+          "bundle": "GAUGE_INTERACTION",
+          "counts": {
+            "LOCAL_RESULT": 2,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 0,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 2,
+          "total": 2
+        },
+        {
+          "bundle": "QUANTUM_CONSISTENCY",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 0,
+            "PRIORITY_GAP": 5,
+            "NOT_MAPPED": 0
+          },
+          "direct": 0,
+          "total": 5
+        }
+      ],
+      "pareto_default": true
+    },
+    {
+      "foundation": "FINITE_DISCRETE",
+      "carrier": "HILBERT_OPERATOR",
+      "counts": {
+        "LOCAL_RESULT": 1,
+        "LITERATURE_RESULT": 6,
+        "PIECES_ONLY": 3,
+        "PRIORITY_GAP": 0,
+        "NOT_MAPPED": 6
+      },
+      "direct": 7,
+      "assessed": 10,
+      "default_gate": {
+        "preset": "PREDICTIVE_PHYSICS",
+        "direct": 7,
+        "assessed": 9,
+        "total": 10,
+        "complete_direct": false,
+        "blockers": [
+          {
+            "obligation": "PHYSICAL_STATE_SELECTION",
+            "status": "PIECES_ONLY"
+          },
+          {
+            "obligation": "GENERATOR_SPECTRAL_DYNAMICS",
+            "status": "PIECES_ONLY"
+          },
+          {
+            "obligation": "INTERACTION_CONSTRUCTION",
+            "status": "NOT_MAPPED"
+          }
+        ]
+      },
+      "reconstruction_status": "LOCAL_RESULT",
+      "bundles": [
+        {
+          "bundle": "KINEMATICS_STATES",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 3,
+            "PIECES_ONLY": 0,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 3,
+          "total": 3
+        },
+        {
+          "bundle": "PREDICTION_OBSERVATION",
+          "counts": {
+            "LOCAL_RESULT": 1,
+            "LITERATURE_RESULT": 1,
+            "PIECES_ONLY": 1,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 2,
+          "total": 3
+        },
+        {
+          "bundle": "DYNAMICS_CAUSALITY",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 2,
+            "PIECES_ONLY": 1,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 2,
+          "total": 3
+        },
+        {
+          "bundle": "GAUGE_INTERACTION",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 1,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 1
+          },
+          "direct": 0,
+          "total": 2
+        },
+        {
+          "bundle": "QUANTUM_CONSISTENCY",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 0,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 5
+          },
+          "direct": 0,
+          "total": 5
+        }
+      ],
+      "pareto_default": false
+    },
+    {
+      "foundation": "FINITE_DISCRETE",
+      "carrier": "KREIN_INDEFINITE",
+      "counts": {
+        "LOCAL_RESULT": 7,
+        "LITERATURE_RESULT": 0,
+        "PIECES_ONLY": 8,
+        "PRIORITY_GAP": 0,
+        "NOT_MAPPED": 1
+      },
+      "direct": 7,
+      "assessed": 15,
+      "default_gate": {
+        "preset": "PREDICTIVE_PHYSICS",
+        "direct": 7,
+        "assessed": 9,
+        "total": 10,
+        "complete_direct": false,
+        "blockers": [
+          {
+            "obligation": "PHYSICAL_STATE_SELECTION",
+            "status": "PIECES_ONLY"
+          },
+          {
+            "obligation": "CAUSAL_PROPAGATION_GREEN",
+            "status": "PIECES_ONLY"
+          },
+          {
+            "obligation": "RECONSTRUCTION_LIMITS",
+            "status": "NOT_MAPPED"
+          }
+        ]
+      },
+      "reconstruction_status": "NOT_MAPPED",
+      "bundles": [
+        {
+          "bundle": "KINEMATICS_STATES",
+          "counts": {
+            "LOCAL_RESULT": 3,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 0,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 3,
+          "total": 3
+        },
+        {
+          "bundle": "PREDICTION_OBSERVATION",
+          "counts": {
+            "LOCAL_RESULT": 1,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 1,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 1
+          },
+          "direct": 1,
+          "total": 3
+        },
+        {
+          "bundle": "DYNAMICS_CAUSALITY",
+          "counts": {
+            "LOCAL_RESULT": 2,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 1,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 2,
+          "total": 3
+        },
+        {
+          "bundle": "GAUGE_INTERACTION",
+          "counts": {
+            "LOCAL_RESULT": 1,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 1,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 1,
+          "total": 2
+        },
+        {
+          "bundle": "QUANTUM_CONSISTENCY",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 5,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 0,
+          "total": 5
+        }
+      ],
+      "pareto_default": false
+    },
+    {
+      "foundation": "FINITE_DISCRETE",
+      "carrier": "ALGEBRAIC_CSTAR",
+      "counts": {
+        "LOCAL_RESULT": 6,
+        "LITERATURE_RESULT": 1,
+        "PIECES_ONLY": 8,
+        "PRIORITY_GAP": 0,
+        "NOT_MAPPED": 1
+      },
+      "direct": 7,
+      "assessed": 15,
+      "default_gate": {
+        "preset": "PREDICTIVE_PHYSICS",
+        "direct": 7,
+        "assessed": 9,
+        "total": 10,
+        "complete_direct": false,
+        "blockers": [
+          {
+            "obligation": "PHYSICAL_STATE_SELECTION",
+            "status": "PIECES_ONLY"
+          },
+          {
+            "obligation": "CAUSAL_PROPAGATION_GREEN",
+            "status": "PIECES_ONLY"
+          },
+          {
+            "obligation": "RECONSTRUCTION_LIMITS",
+            "status": "NOT_MAPPED"
+          }
+        ]
+      },
+      "reconstruction_status": "NOT_MAPPED",
+      "bundles": [
+        {
+          "bundle": "KINEMATICS_STATES",
+          "counts": {
+            "LOCAL_RESULT": 2,
+            "LITERATURE_RESULT": 1,
+            "PIECES_ONLY": 0,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 3,
+          "total": 3
+        },
+        {
+          "bundle": "PREDICTION_OBSERVATION",
+          "counts": {
+            "LOCAL_RESULT": 1,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 1,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 1
+          },
+          "direct": 1,
+          "total": 3
+        },
+        {
+          "bundle": "DYNAMICS_CAUSALITY",
+          "counts": {
+            "LOCAL_RESULT": 2,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 1,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 2,
+          "total": 3
+        },
+        {
+          "bundle": "GAUGE_INTERACTION",
+          "counts": {
+            "LOCAL_RESULT": 1,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 1,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 1,
+          "total": 2
+        },
+        {
+          "bundle": "QUANTUM_CONSISTENCY",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 5,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 0,
+          "total": 5
+        }
+      ],
+      "pareto_default": false
+    },
+    {
+      "foundation": "FINITE_DISCRETE",
+      "carrier": "SMOOTH_DISTRIBUTIONAL",
+      "counts": {
+        "LOCAL_RESULT": 0,
+        "LITERATURE_RESULT": 5,
+        "PIECES_ONLY": 6,
+        "PRIORITY_GAP": 1,
+        "NOT_MAPPED": 4
+      },
+      "direct": 5,
+      "assessed": 12,
+      "default_gate": {
+        "preset": "PREDICTIVE_PHYSICS",
+        "direct": 4,
+        "assessed": 6,
+        "total": 10,
+        "complete_direct": false,
+        "blockers": [
+          {
+            "obligation": "STATE_EXISTENCE",
+            "status": "NOT_MAPPED"
+          },
+          {
+            "obligation": "STATE_REPRESENTATION",
+            "status": "NOT_MAPPED"
+          },
+          {
+            "obligation": "PROBABILITY_RULE",
+            "status": "NOT_MAPPED"
+          },
+          {
+            "obligation": "PHYSICAL_STATE_SELECTION",
+            "status": "NOT_MAPPED"
+          },
+          {
+            "obligation": "CAUSAL_PROPAGATION_GREEN",
+            "status": "PIECES_ONLY"
+          },
+          {
+            "obligation": "RECONSTRUCTION_LIMITS",
+            "status": "PRIORITY_GAP"
+          }
+        ]
+      },
+      "reconstruction_status": "PRIORITY_GAP",
+      "bundles": [
+        {
+          "bundle": "KINEMATICS_STATES",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 1,
+            "PIECES_ONLY": 0,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 2
+          },
+          "direct": 1,
+          "total": 3
+        },
+        {
+          "bundle": "PREDICTION_OBSERVATION",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 0,
+            "PRIORITY_GAP": 1,
+            "NOT_MAPPED": 2
+          },
+          "direct": 0,
+          "total": 3
+        },
+        {
+          "bundle": "DYNAMICS_CAUSALITY",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 2,
+            "PIECES_ONLY": 1,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 2,
+          "total": 3
+        },
+        {
+          "bundle": "GAUGE_INTERACTION",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 2,
+            "PIECES_ONLY": 0,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 2,
+          "total": 2
+        },
+        {
+          "bundle": "QUANTUM_CONSISTENCY",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 5,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 0,
+          "total": 5
+        }
+      ],
+      "pareto_default": false
+    },
+    {
+      "foundation": "FINITE_DISCRETE",
+      "carrier": "LOCALIC_SYNTHETIC",
+      "counts": {
+        "LOCAL_RESULT": 0,
+        "LITERATURE_RESULT": 5,
+        "PIECES_ONLY": 4,
+        "PRIORITY_GAP": 0,
+        "NOT_MAPPED": 7
+      },
+      "direct": 5,
+      "assessed": 9,
+      "default_gate": {
+        "preset": "PREDICTIVE_PHYSICS",
+        "direct": 5,
+        "assessed": 8,
+        "total": 10,
+        "complete_direct": false,
+        "blockers": [
+          {
+            "obligation": "STATE_EXISTENCE",
+            "status": "PIECES_ONLY"
+          },
+          {
+            "obligation": "PHYSICAL_STATE_SELECTION",
+            "status": "PIECES_ONLY"
+          },
+          {
+            "obligation": "EVOLUTION_WELLPOSEDNESS",
+            "status": "PIECES_ONLY"
+          },
+          {
+            "obligation": "CAUSAL_PROPAGATION_GREEN",
+            "status": "NOT_MAPPED"
+          },
+          {
+            "obligation": "INTERACTION_CONSTRUCTION",
+            "status": "NOT_MAPPED"
+          }
+        ]
+      },
+      "reconstruction_status": "LITERATURE_RESULT",
+      "bundles": [
+        {
+          "bundle": "KINEMATICS_STATES",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 2,
+            "PIECES_ONLY": 1,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 2,
+          "total": 3
+        },
+        {
+          "bundle": "PREDICTION_OBSERVATION",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 2,
+            "PIECES_ONLY": 1,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 0
+          },
+          "direct": 2,
+          "total": 3
+        },
+        {
+          "bundle": "DYNAMICS_CAUSALITY",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 1,
+            "PIECES_ONLY": 1,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 1
+          },
+          "direct": 1,
+          "total": 3
+        },
+        {
+          "bundle": "GAUGE_INTERACTION",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 1,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 1
+          },
+          "direct": 0,
+          "total": 2
+        },
+        {
+          "bundle": "QUANTUM_CONSISTENCY",
+          "counts": {
+            "LOCAL_RESULT": 0,
+            "LITERATURE_RESULT": 0,
+            "PIECES_ONLY": 0,
+            "PRIORITY_GAP": 0,
+            "NOT_MAPPED": 5
+          },
+          "direct": 0,
+          "total": 5
+        }
+      ],
+      "pareto_default": false
+    }
+  ],
+  "carrier_envelopes": [
+    {
+      "foundation": "CLASSICAL_STANDARD",
+      "all_carriers_envelope": [
+        {
+          "obligation": "KINEMATICS_OBSERVABLES",
+          "readiness_rank": 3,
+          "statuses": [
+            "LITERATURE_RESULT",
+            "LOCAL_RESULT"
+          ],
+          "contributing_carriers": [
+            "FINITE_EXACT",
+            "HILBERT_OPERATOR",
+            "KREIN_INDEFINITE",
+            "ALGEBRAIC_CSTAR",
+            "SMOOTH_DISTRIBUTIONAL",
+            "LOCALIC_SYNTHETIC"
+          ]
+        },
+        {
+          "obligation": "STATE_EXISTENCE",
+          "readiness_rank": 3,
+          "statuses": [
+            "LITERATURE_RESULT",
+            "LOCAL_RESULT"
+          ],
+          "contributing_carriers": [
+            "FINITE_EXACT",
+            "HILBERT_OPERATOR",
+            "KREIN_INDEFINITE",
+            "ALGEBRAIC_CSTAR",
+            "SMOOTH_DISTRIBUTIONAL",
+            "LOCALIC_SYNTHETIC"
+          ]
+        },
+        {
+          "obligation": "STATE_REPRESENTATION",
+          "readiness_rank": 3,
+          "statuses": [
+            "LITERATURE_RESULT",
+            "LOCAL_RESULT"
+          ],
+          "contributing_carriers": [
+            "FINITE_EXACT",
+            "HILBERT_OPERATOR",
+            "ALGEBRAIC_CSTAR",
+            "SMOOTH_DISTRIBUTIONAL",
+            "LOCALIC_SYNTHETIC"
+          ]
+        },
+        {
+          "obligation": "PROBABILITY_RULE",
+          "readiness_rank": 3,
+          "statuses": [
+            "LITERATURE_RESULT",
+            "LOCAL_RESULT"
+          ],
+          "contributing_carriers": [
+            "FINITE_EXACT",
+            "HILBERT_OPERATOR"
+          ]
+        },
+        {
+          "obligation": "PHYSICAL_STATE_SELECTION",
+          "readiness_rank": 3,
+          "statuses": [
+            "LOCAL_RESULT"
+          ],
+          "contributing_carriers": [
+            "KREIN_INDEFINITE",
+            "ALGEBRAIC_CSTAR"
+          ]
+        },
+        {
+          "obligation": "GENERATOR_SPECTRAL_DYNAMICS",
+          "readiness_rank": 3,
+          "statuses": [
+            "LITERATURE_RESULT",
+            "LOCAL_RESULT"
+          ],
+          "contributing_carriers": [
+            "FINITE_EXACT",
+            "HILBERT_OPERATOR",
+            "KREIN_INDEFINITE",
+            "ALGEBRAIC_CSTAR",
+            "LOCALIC_SYNTHETIC"
+          ]
+        },
+        {
+          "obligation": "EVOLUTION_WELLPOSEDNESS",
+          "readiness_rank": 3,
+          "statuses": [
+            "LOCAL_RESULT"
+          ],
+          "contributing_carriers": [
+            "FINITE_EXACT",
+            "KREIN_INDEFINITE",
+            "ALGEBRAIC_CSTAR",
+            "SMOOTH_DISTRIBUTIONAL"
+          ]
+        },
+        {
+          "obligation": "CAUSAL_PROPAGATION_GREEN",
+          "readiness_rank": 3,
+          "statuses": [
+            "LITERATURE_RESULT",
+            "LOCAL_RESULT"
+          ],
+          "contributing_carriers": [
+            "HILBERT_OPERATOR",
+            "SMOOTH_DISTRIBUTIONAL"
+          ]
+        },
+        {
+          "obligation": "GAUGE_BV_COHOMOLOGY",
+          "readiness_rank": 3,
+          "statuses": [
+            "LITERATURE_RESULT",
+            "LOCAL_RESULT"
+          ],
+          "contributing_carriers": [
+            "FINITE_EXACT",
+            "ALGEBRAIC_CSTAR",
+            "SMOOTH_DISTRIBUTIONAL"
+          ]
+        },
+        {
+          "obligation": "INTERACTION_CONSTRUCTION",
+          "readiness_rank": 3,
+          "statuses": [
+            "LITERATURE_RESULT",
+            "LOCAL_RESULT"
+          ],
+          "contributing_carriers": [
+            "FINITE_EXACT",
+            "ALGEBRAIC_CSTAR"
+          ]
+        },
+        {
+          "obligation": "COUNTERTERM_CLASSIFICATION",
+          "readiness_rank": 3,
+          "statuses": [
+            "LITERATURE_RESULT",
+            "LOCAL_RESULT"
+          ],
+          "contributing_carriers": [
+            "ALGEBRAIC_CSTAR",
+            "SMOOTH_DISTRIBUTIONAL"
+          ]
+        },
+        {
+          "obligation": "ANOMALY_CLASSIFICATION",
+          "readiness_rank": 3,
+          "statuses": [
+            "LITERATURE_RESULT",
+            "LOCAL_RESULT"
+          ],
+          "contributing_carriers": [
+            "ALGEBRAIC_CSTAR",
+            "SMOOTH_DISTRIBUTIONAL"
+          ]
+        },
+        {
+          "obligation": "RENORMALIZED_PRODUCTS",
+          "readiness_rank": 3,
+          "statuses": [
+            "LITERATURE_RESULT"
+          ],
+          "contributing_carriers": [
+            "ALGEBRAIC_CSTAR"
+          ]
+        },
+        {
+          "obligation": "QME_RESTORATION",
+          "readiness_rank": 2,
+          "statuses": [
+            "PIECES_ONLY"
+          ],
+          "contributing_carriers": [
+            "FINITE_EXACT",
+            "ALGEBRAIC_CSTAR",
+            "SMOOTH_DISTRIBUTIONAL"
+          ]
+        },
+        {
+          "obligation": "RESIDUAL_QUANTUM_TRANSFER",
+          "readiness_rank": 2,
+          "statuses": [
+            "PIECES_ONLY"
+          ],
+          "contributing_carriers": [
+            "FINITE_EXACT",
+            "ALGEBRAIC_CSTAR",
+            "SMOOTH_DISTRIBUTIONAL"
+          ]
+        },
+        {
+          "obligation": "RECONSTRUCTION_LIMITS",
+          "readiness_rank": 3,
+          "statuses": [
+            "LITERATURE_RESULT"
+          ],
+          "contributing_carriers": [
+            "HILBERT_OPERATOR",
+            "KREIN_INDEFINITE",
+            "ALGEBRAIC_CSTAR",
+            "SMOOTH_DISTRIBUTIONAL",
+            "LOCALIC_SYNTHETIC"
+          ]
+        }
+      ],
+      "maximum_direct_obligations": 14,
+      "minimum_carriers_for_that_maximum": 2,
+      "minimal_maximum_subsets": [
+        [
+          "HILBERT_OPERATOR",
+          "ALGEBRAIC_CSTAR"
+        ]
+      ],
+      "composition_status": "NOT_ASSESSED"
+    },
+    {
+      "foundation": "WEAK_ARITHMETIC",
+      "all_carriers_envelope": [
+        {
+          "obligation": "KINEMATICS_OBSERVABLES",
+          "readiness_rank": 3,
+          "statuses": [
+            "LOCAL_RESULT"
+          ],
+          "contributing_carriers": [
+            "FINITE_EXACT",
+            "KREIN_INDEFINITE"
+          ]
+        },
+        {
+          "obligation": "STATE_EXISTENCE",
+          "readiness_rank": 3,
+          "statuses": [
+            "LOCAL_RESULT"
+          ],
+          "contributing_carriers": [
+            "FINITE_EXACT"
+          ]
+        },
+        {
+          "obligation": "STATE_REPRESENTATION",
+          "readiness_rank": 3,
+          "statuses": [
+            "LOCAL_RESULT"
+          ],
+          "contributing_carriers": [
+            "FINITE_EXACT"
+          ]
+        },
+        {
+          "obligation": "PROBABILITY_RULE",
+          "readiness_rank": 3,
+          "statuses": [
+            "LOCAL_RESULT"
+          ],
+          "contributing_carriers": [
+            "FINITE_EXACT"
+          ]
+        },
+        {
+          "obligation": "PHYSICAL_STATE_SELECTION",
+          "readiness_rank": 2,
+          "statuses": [
+            "PIECES_ONLY"
+          ],
+          "contributing_carriers": [
+            "FINITE_EXACT"
+          ]
+        },
+        {
+          "obligation": "GENERATOR_SPECTRAL_DYNAMICS",
+          "readiness_rank": 3,
+          "statuses": [
+            "LITERATURE_RESULT",
+            "LOCAL_RESULT"
+          ],
+          "contributing_carriers": [
+            "FINITE_EXACT",
+            "HILBERT_OPERATOR",
+            "KREIN_INDEFINITE"
+          ]
+        },
+        {
+          "obligation": "EVOLUTION_WELLPOSEDNESS",
+          "readiness_rank": 3,
+          "statuses": [
+            "LITERATURE_RESULT",
+            "LOCAL_RESULT"
+          ],
+          "contributing_carriers": [
+            "FINITE_EXACT",
+            "HILBERT_OPERATOR",
+            "KREIN_INDEFINITE"
+          ]
+        },
+        {
+          "obligation": "CAUSAL_PROPAGATION_GREEN",
+          "readiness_rank": 2,
+          "statuses": [
+            "PIECES_ONLY"
+          ],
+          "contributing_carriers": [
+            "FINITE_EXACT",
+            "HILBERT_OPERATOR",
+            "KREIN_INDEFINITE",
+            "ALGEBRAIC_CSTAR",
+            "SMOOTH_DISTRIBUTIONAL"
+          ]
+        },
+        {
+          "obligation": "GAUGE_BV_COHOMOLOGY",
+          "readiness_rank": 3,
+          "statuses": [
+            "LOCAL_RESULT"
+          ],
+          "contributing_carriers": [
+            "FINITE_EXACT"
+          ]
+        },
+        {
+          "obligation": "INTERACTION_CONSTRUCTION",
+          "readiness_rank": 3,
+          "statuses": [
+            "LOCAL_RESULT"
+          ],
+          "contributing_carriers": [
+            "FINITE_EXACT"
+          ]
+        },
+        {
+          "obligation": "COUNTERTERM_CLASSIFICATION",
+          "readiness_rank": 2,
+          "statuses": [
+            "PIECES_ONLY"
+          ],
+          "contributing_carriers": [
+            "FINITE_EXACT"
+          ]
+        },
+        {
+          "obligation": "ANOMALY_CLASSIFICATION",
+          "readiness_rank": 2,
+          "statuses": [
+            "PIECES_ONLY"
+          ],
+          "contributing_carriers": [
+            "FINITE_EXACT"
+          ]
+        },
+        {
+          "obligation": "RENORMALIZED_PRODUCTS",
+          "readiness_rank": 2,
+          "statuses": [
+            "PIECES_ONLY"
+          ],
+          "contributing_carriers": [
+            "FINITE_EXACT"
+          ]
+        },
+        {
+          "obligation": "QME_RESTORATION",
+          "readiness_rank": 2,
+          "statuses": [
+            "PIECES_ONLY"
+          ],
+          "contributing_carriers": [
+            "FINITE_EXACT"
+          ]
+        },
+        {
+          "obligation": "RESIDUAL_QUANTUM_TRANSFER",
+          "readiness_rank": 2,
+          "statuses": [
+            "PIECES_ONLY"
+          ],
+          "contributing_carriers": [
+            "FINITE_EXACT"
+          ]
+        },
+        {
+          "obligation": "RECONSTRUCTION_LIMITS",
+          "readiness_rank": 3,
+          "statuses": [
+            "LITERATURE_RESULT",
+            "LOCAL_RESULT"
+          ],
+          "contributing_carriers": [
+            "FINITE_EXACT",
+            "HILBERT_OPERATOR"
+          ]
+        }
+      ],
+      "maximum_direct_obligations": 9,
+      "minimum_carriers_for_that_maximum": 1,
+      "minimal_maximum_subsets": [
+        [
+          "FINITE_EXACT"
+        ]
+      ],
+      "composition_status": "NOT_ASSESSED"
+    },
+    {
+      "foundation": "WEAK_CHOICE_ZF",
+      "all_carriers_envelope": [
+        {
+          "obligation": "KINEMATICS_OBSERVABLES",
+          "readiness_rank": 3,
+          "statuses": [
+            "LITERATURE_RESULT",
+            "LOCAL_RESULT"
+          ],
+          "contributing_carriers": [
+            "FINITE_EXACT",
+            "HILBERT_OPERATOR",
+            "KREIN_INDEFINITE",
+            "ALGEBRAIC_CSTAR"
+          ]
+        },
+        {
+          "obligation": "STATE_EXISTENCE",
+          "readiness_rank": 3,
+          "statuses": [
+            "LITERATURE_RESULT",
+            "LOCAL_RESULT"
+          ],
+          "contributing_carriers": [
+            "FINITE_EXACT",
+            "HILBERT_OPERATOR",
+            "KREIN_INDEFINITE",
+            "ALGEBRAIC_CSTAR",
+            "LOCALIC_SYNTHETIC"
+          ]
+        },
+        {
+          "obligation": "STATE_REPRESENTATION",
+          "readiness_rank": 3,
+          "statuses": [
+            "LITERATURE_RESULT",
+            "LOCAL_RESULT"
+          ],
+          "contributing_carriers": [
+            "FINITE_EXACT",
+            "HILBERT_OPERATOR",
+            "ALGEBRAIC_CSTAR",
+            "LOCALIC_SYNTHETIC"
+          ]
+        },
+        {
+          "obligation": "PROBABILITY_RULE",
+          "readiness_rank": 3,
+          "statuses": [
+            "LOCAL_RESULT"
+          ],
+          "contributing_carriers": [
+            "FINITE_EXACT"
+          ]
+        },
+        {
+          "obligation": "PHYSICAL_STATE_SELECTION",
+          "readiness_rank": 3,
+          "statuses": [
+            "LOCAL_RESULT"
+          ],
+          "contributing_carriers": [
+            "KREIN_INDEFINITE"
+          ]
+        },
+        {
+          "obligation": "GENERATOR_SPECTRAL_DYNAMICS",
+          "readiness_rank": 3,
+          "statuses": [
+            "LOCAL_RESULT"
+          ],
+          "contributing_carriers": [
+            "FINITE_EXACT",
+            "HILBERT_OPERATOR",
+            "KREIN_INDEFINITE",
+            "ALGEBRAIC_CSTAR"
+          ]
+        },
+        {
+          "obligation": "EVOLUTION_WELLPOSEDNESS",
+          "readiness_rank": 3,
+          "statuses": [
+            "LOCAL_RESULT"
+          ],
+          "contributing_carriers": [
+            "FINITE_EXACT",
+            "KREIN_INDEFINITE",
+            "ALGEBRAIC_CSTAR",
+            "SMOOTH_DISTRIBUTIONAL"
+          ]
+        },
+        {
+          "obligation": "CAUSAL_PROPAGATION_GREEN",
+          "readiness_rank": 3,
+          "statuses": [
+            "LOCAL_RESULT"
+          ],
+          "contributing_carriers": [
+            "SMOOTH_DISTRIBUTIONAL"
+          ]
+        },
+        {
+          "obligation": "GAUGE_BV_COHOMOLOGY",
+          "readiness_rank": 2,
+          "statuses": [
+            "PIECES_ONLY"
+          ],
+          "contributing_carriers": [
+            "FINITE_EXACT",
+            "HILBERT_OPERATOR",
+            "KREIN_INDEFINITE",
+            "ALGEBRAIC_CSTAR"
+          ]
+        },
+        {
+          "obligation": "INTERACTION_CONSTRUCTION",
+          "readiness_rank": 3,
+          "statuses": [
+            "LITERATURE_RESULT",
+            "LOCAL_RESULT"
+          ],
+          "contributing_carriers": [
+            "FINITE_EXACT",
+            "ALGEBRAIC_CSTAR"
+          ]
+        },
+        {
+          "obligation": "COUNTERTERM_CLASSIFICATION",
+          "readiness_rank": 3,
+          "statuses": [
+            "LITERATURE_RESULT"
+          ],
+          "contributing_carriers": [
+            "ALGEBRAIC_CSTAR"
+          ]
+        },
+        {
+          "obligation": "ANOMALY_CLASSIFICATION",
+          "readiness_rank": 3,
+          "statuses": [
+            "LITERATURE_RESULT"
+          ],
+          "contributing_carriers": [
+            "ALGEBRAIC_CSTAR"
+          ]
+        },
+        {
+          "obligation": "RENORMALIZED_PRODUCTS",
+          "readiness_rank": 3,
+          "statuses": [
+            "LITERATURE_RESULT"
+          ],
+          "contributing_carriers": [
+            "ALGEBRAIC_CSTAR"
+          ]
+        },
+        {
+          "obligation": "QME_RESTORATION",
+          "readiness_rank": 2,
+          "statuses": [
+            "PIECES_ONLY"
+          ],
+          "contributing_carriers": [
+            "FINITE_EXACT",
+            "ALGEBRAIC_CSTAR"
+          ]
+        },
+        {
+          "obligation": "RESIDUAL_QUANTUM_TRANSFER",
+          "readiness_rank": 2,
+          "statuses": [
+            "PIECES_ONLY"
+          ],
+          "contributing_carriers": [
+            "FINITE_EXACT",
+            "ALGEBRAIC_CSTAR"
+          ]
+        },
+        {
+          "obligation": "RECONSTRUCTION_LIMITS",
+          "readiness_rank": 3,
+          "statuses": [
+            "LITERATURE_RESULT"
+          ],
+          "contributing_carriers": [
+            "HILBERT_OPERATOR",
+            "ALGEBRAIC_CSTAR"
+          ]
+        }
+      ],
+      "maximum_direct_obligations": 13,
+      "minimum_carriers_for_that_maximum": 4,
+      "minimal_maximum_subsets": [
+        [
+          "FINITE_EXACT",
+          "KREIN_INDEFINITE",
+          "ALGEBRAIC_CSTAR",
+          "SMOOTH_DISTRIBUTIONAL"
+        ]
+      ],
+      "composition_status": "NOT_ASSESSED"
+    },
+    {
+      "foundation": "CONSTRUCTIVE_COMPUTABLE",
+      "all_carriers_envelope": [
+        {
+          "obligation": "KINEMATICS_OBSERVABLES",
+          "readiness_rank": 3,
+          "statuses": [
+            "LITERATURE_RESULT",
+            "LOCAL_RESULT"
+          ],
+          "contributing_carriers": [
+            "FINITE_EXACT",
+            "HILBERT_OPERATOR",
+            "ALGEBRAIC_CSTAR",
+            "LOCALIC_SYNTHETIC"
+          ]
+        },
+        {
+          "obligation": "STATE_EXISTENCE",
+          "readiness_rank": 3,
+          "statuses": [
+            "LITERATURE_RESULT",
+            "LOCAL_RESULT"
+          ],
+          "contributing_carriers": [
+            "FINITE_EXACT",
+            "LOCALIC_SYNTHETIC"
+          ]
+        },
+        {
+          "obligation": "STATE_REPRESENTATION",
+          "readiness_rank": 3,
+          "statuses": [
+            "LITERATURE_RESULT",
+            "LOCAL_RESULT"
+          ],
+          "contributing_carriers": [
+            "FINITE_EXACT",
+            "HILBERT_OPERATOR",
+            "ALGEBRAIC_CSTAR",
+            "LOCALIC_SYNTHETIC"
+          ]
+        },
+        {
+          "obligation": "PROBABILITY_RULE",
+          "readiness_rank": 3,
+          "statuses": [
+            "LITERATURE_RESULT",
+            "LOCAL_RESULT"
+          ],
+          "contributing_carriers": [
+            "FINITE_EXACT",
+            "HILBERT_OPERATOR",
+            "ALGEBRAIC_CSTAR"
+          ]
+        },
+        {
+          "obligation": "PHYSICAL_STATE_SELECTION",
+          "readiness_rank": 2,
+          "statuses": [
+            "PIECES_ONLY"
+          ],
+          "contributing_carriers": [
+            "FINITE_EXACT",
+            "HILBERT_OPERATOR",
+            "KREIN_INDEFINITE",
+            "ALGEBRAIC_CSTAR",
+            "LOCALIC_SYNTHETIC"
+          ]
+        },
+        {
+          "obligation": "GENERATOR_SPECTRAL_DYNAMICS",
+          "readiness_rank": 3,
+          "statuses": [
+            "LITERATURE_RESULT",
+            "LOCAL_RESULT"
+          ],
+          "contributing_carriers": [
+            "FINITE_EXACT",
+            "HILBERT_OPERATOR",
+            "KREIN_INDEFINITE",
+            "ALGEBRAIC_CSTAR",
+            "LOCALIC_SYNTHETIC"
+          ]
+        },
+        {
+          "obligation": "EVOLUTION_WELLPOSEDNESS",
+          "readiness_rank": 3,
+          "statuses": [
+            "LITERATURE_RESULT",
+            "LOCAL_RESULT"
+          ],
+          "contributing_carriers": [
+            "FINITE_EXACT",
+            "HILBERT_OPERATOR",
+            "SMOOTH_DISTRIBUTIONAL"
+          ]
+        },
+        {
+          "obligation": "CAUSAL_PROPAGATION_GREEN",
+          "readiness_rank": 2,
+          "statuses": [
+            "PIECES_ONLY"
+          ],
+          "contributing_carriers": [
+            "FINITE_EXACT",
+            "HILBERT_OPERATOR",
+            "SMOOTH_DISTRIBUTIONAL"
+          ]
+        },
+        {
+          "obligation": "GAUGE_BV_COHOMOLOGY",
+          "readiness_rank": 2,
+          "statuses": [
+            "PIECES_ONLY"
+          ],
+          "contributing_carriers": [
+            "FINITE_EXACT",
+            "HILBERT_OPERATOR",
+            "LOCALIC_SYNTHETIC"
+          ]
+        },
+        {
+          "obligation": "INTERACTION_CONSTRUCTION",
+          "readiness_rank": 3,
+          "statuses": [
+            "LOCAL_RESULT"
+          ],
+          "contributing_carriers": [
+            "FINITE_EXACT"
+          ]
+        },
+        {
+          "obligation": "COUNTERTERM_CLASSIFICATION",
+          "readiness_rank": 2,
+          "statuses": [
+            "PIECES_ONLY"
+          ],
+          "contributing_carriers": [
+            "FINITE_EXACT"
+          ]
+        },
+        {
+          "obligation": "ANOMALY_CLASSIFICATION",
+          "readiness_rank": 2,
+          "statuses": [
+            "PIECES_ONLY"
+          ],
+          "contributing_carriers": [
+            "FINITE_EXACT"
+          ]
+        },
+        {
+          "obligation": "RENORMALIZED_PRODUCTS",
+          "readiness_rank": 2,
+          "statuses": [
+            "PIECES_ONLY"
+          ],
+          "contributing_carriers": [
+            "FINITE_EXACT"
+          ]
+        },
+        {
+          "obligation": "QME_RESTORATION",
+          "readiness_rank": 2,
+          "statuses": [
+            "PIECES_ONLY"
+          ],
+          "contributing_carriers": [
+            "FINITE_EXACT"
+          ]
+        },
+        {
+          "obligation": "RESIDUAL_QUANTUM_TRANSFER",
+          "readiness_rank": 2,
+          "statuses": [
+            "PIECES_ONLY"
+          ],
+          "contributing_carriers": [
+            "FINITE_EXACT"
+          ]
+        },
+        {
+          "obligation": "RECONSTRUCTION_LIMITS",
+          "readiness_rank": 3,
+          "statuses": [
+            "LITERATURE_RESULT"
+          ],
+          "contributing_carriers": [
+            "ALGEBRAIC_CSTAR",
+            "LOCALIC_SYNTHETIC"
+          ]
+        }
+      ],
+      "maximum_direct_obligations": 8,
+      "minimum_carriers_for_that_maximum": 2,
+      "minimal_maximum_subsets": [
+        [
+          "FINITE_EXACT",
+          "ALGEBRAIC_CSTAR"
+        ],
+        [
+          "FINITE_EXACT",
+          "LOCALIC_SYNTHETIC"
+        ]
+      ],
+      "composition_status": "NOT_ASSESSED"
+    },
+    {
+      "foundation": "TOPOS_INTERNAL",
+      "all_carriers_envelope": [
+        {
+          "obligation": "KINEMATICS_OBSERVABLES",
+          "readiness_rank": 3,
+          "statuses": [
+            "LITERATURE_RESULT"
+          ],
+          "contributing_carriers": [
+            "ALGEBRAIC_CSTAR",
+            "SMOOTH_DISTRIBUTIONAL",
+            "LOCALIC_SYNTHETIC"
+          ]
+        },
+        {
+          "obligation": "STATE_EXISTENCE",
+          "readiness_rank": 3,
+          "statuses": [
+            "LITERATURE_RESULT",
+            "LOCAL_RESULT"
+          ],
+          "contributing_carriers": [
+            "FINITE_EXACT",
+            "ALGEBRAIC_CSTAR",
+            "LOCALIC_SYNTHETIC"
+          ]
+        },
+        {
+          "obligation": "STATE_REPRESENTATION",
+          "readiness_rank": 3,
+          "statuses": [
+            "LITERATURE_RESULT",
+            "LOCAL_RESULT"
+          ],
+          "contributing_carriers": [
+            "FINITE_EXACT",
+            "HILBERT_OPERATOR",
+            "KREIN_INDEFINITE",
+            "ALGEBRAIC_CSTAR",
+            "LOCALIC_SYNTHETIC"
+          ]
+        },
+        {
+          "obligation": "PROBABILITY_RULE",
+          "readiness_rank": 3,
+          "statuses": [
+            "LOCAL_RESULT"
+          ],
+          "contributing_carriers": [
+            "FINITE_EXACT"
+          ]
+        },
+        {
+          "obligation": "PHYSICAL_STATE_SELECTION",
+          "readiness_rank": 3,
+          "statuses": [
+            "LITERATURE_RESULT"
+          ],
+          "contributing_carriers": [
+            "KREIN_INDEFINITE"
+          ]
+        },
+        {
+          "obligation": "GENERATOR_SPECTRAL_DYNAMICS",
+          "readiness_rank": 3,
+          "statuses": [
+            "LITERATURE_RESULT",
+            "LOCAL_RESULT"
+          ],
+          "contributing_carriers": [
+            "FINITE_EXACT",
+            "HILBERT_OPERATOR",
+            "KREIN_INDEFINITE",
+            "ALGEBRAIC_CSTAR"
+          ]
+        },
+        {
+          "obligation": "EVOLUTION_WELLPOSEDNESS",
+          "readiness_rank": 3,
+          "statuses": [
+            "LITERATURE_RESULT",
+            "LOCAL_RESULT"
+          ],
+          "contributing_carriers": [
+            "FINITE_EXACT",
+            "KREIN_INDEFINITE"
+          ]
+        },
+        {
+          "obligation": "CAUSAL_PROPAGATION_GREEN",
+          "readiness_rank": 2,
+          "statuses": [
+            "PIECES_ONLY"
+          ],
+          "contributing_carriers": [
+            "FINITE_EXACT",
+            "KREIN_INDEFINITE",
+            "LOCALIC_SYNTHETIC"
+          ]
+        },
+        {
+          "obligation": "GAUGE_BV_COHOMOLOGY",
+          "readiness_rank": 2,
+          "statuses": [
+            "PIECES_ONLY"
+          ],
+          "contributing_carriers": [
+            "ALGEBRAIC_CSTAR"
+          ]
+        },
+        {
+          "obligation": "INTERACTION_CONSTRUCTION",
+          "readiness_rank": 3,
+          "statuses": [
+            "LOCAL_RESULT"
+          ],
+          "contributing_carriers": [
+            "FINITE_EXACT"
+          ]
+        },
+        {
+          "obligation": "COUNTERTERM_CLASSIFICATION",
+          "readiness_rank": 2,
+          "statuses": [
+            "PIECES_ONLY"
+          ],
+          "contributing_carriers": [
+            "FINITE_EXACT",
+            "SMOOTH_DISTRIBUTIONAL",
+            "LOCALIC_SYNTHETIC"
+          ]
+        },
+        {
+          "obligation": "ANOMALY_CLASSIFICATION",
+          "readiness_rank": 2,
+          "statuses": [
+            "PIECES_ONLY"
+          ],
+          "contributing_carriers": [
+            "FINITE_EXACT",
+            "SMOOTH_DISTRIBUTIONAL",
+            "LOCALIC_SYNTHETIC"
+          ]
+        },
+        {
+          "obligation": "RENORMALIZED_PRODUCTS",
+          "readiness_rank": 2,
+          "statuses": [
+            "PIECES_ONLY"
+          ],
+          "contributing_carriers": [
+            "FINITE_EXACT",
+            "SMOOTH_DISTRIBUTIONAL",
+            "LOCALIC_SYNTHETIC"
+          ]
+        },
+        {
+          "obligation": "QME_RESTORATION",
+          "readiness_rank": 2,
+          "statuses": [
+            "PIECES_ONLY"
+          ],
+          "contributing_carriers": [
+            "FINITE_EXACT",
+            "SMOOTH_DISTRIBUTIONAL",
+            "LOCALIC_SYNTHETIC"
+          ]
+        },
+        {
+          "obligation": "RESIDUAL_QUANTUM_TRANSFER",
+          "readiness_rank": 2,
+          "statuses": [
+            "PIECES_ONLY"
+          ],
+          "contributing_carriers": [
+            "FINITE_EXACT",
+            "SMOOTH_DISTRIBUTIONAL",
+            "LOCALIC_SYNTHETIC"
+          ]
+        },
+        {
+          "obligation": "RECONSTRUCTION_LIMITS",
+          "readiness_rank": 3,
+          "statuses": [
+            "LITERATURE_RESULT"
+          ],
+          "contributing_carriers": [
+            "FINITE_EXACT",
+            "ALGEBRAIC_CSTAR",
+            "SMOOTH_DISTRIBUTIONAL"
+          ]
+        }
+      ],
+      "maximum_direct_obligations": 9,
+      "minimum_carriers_for_that_maximum": 3,
+      "minimal_maximum_subsets": [
+        [
+          "FINITE_EXACT",
+          "KREIN_INDEFINITE",
+          "ALGEBRAIC_CSTAR"
+        ],
+        [
+          "FINITE_EXACT",
+          "KREIN_INDEFINITE",
+          "SMOOTH_DISTRIBUTIONAL"
+        ],
+        [
+          "FINITE_EXACT",
+          "KREIN_INDEFINITE",
+          "LOCALIC_SYNTHETIC"
+        ]
+      ],
+      "composition_status": "NOT_ASSESSED"
+    },
+    {
+      "foundation": "FINITE_DISCRETE",
+      "all_carriers_envelope": [
+        {
+          "obligation": "KINEMATICS_OBSERVABLES",
+          "readiness_rank": 3,
+          "statuses": [
+            "LITERATURE_RESULT",
+            "LOCAL_RESULT"
+          ],
+          "contributing_carriers": [
+            "FINITE_EXACT",
+            "HILBERT_OPERATOR",
+            "KREIN_INDEFINITE",
+            "ALGEBRAIC_CSTAR",
+            "SMOOTH_DISTRIBUTIONAL",
+            "LOCALIC_SYNTHETIC"
+          ]
+        },
+        {
+          "obligation": "STATE_EXISTENCE",
+          "readiness_rank": 3,
+          "statuses": [
+            "LITERATURE_RESULT",
+            "LOCAL_RESULT"
+          ],
+          "contributing_carriers": [
+            "FINITE_EXACT",
+            "HILBERT_OPERATOR",
+            "KREIN_INDEFINITE",
+            "ALGEBRAIC_CSTAR"
+          ]
+        },
+        {
+          "obligation": "STATE_REPRESENTATION",
+          "readiness_rank": 3,
+          "statuses": [
+            "LITERATURE_RESULT",
+            "LOCAL_RESULT"
+          ],
+          "contributing_carriers": [
+            "FINITE_EXACT",
+            "HILBERT_OPERATOR",
+            "KREIN_INDEFINITE",
+            "ALGEBRAIC_CSTAR",
+            "LOCALIC_SYNTHETIC"
+          ]
+        },
+        {
+          "obligation": "PROBABILITY_RULE",
+          "readiness_rank": 3,
+          "statuses": [
+            "LITERATURE_RESULT",
+            "LOCAL_RESULT"
+          ],
+          "contributing_carriers": [
+            "FINITE_EXACT",
+            "HILBERT_OPERATOR",
+            "KREIN_INDEFINITE",
+            "ALGEBRAIC_CSTAR",
+            "LOCALIC_SYNTHETIC"
+          ]
+        },
+        {
+          "obligation": "PHYSICAL_STATE_SELECTION",
+          "readiness_rank": 2,
+          "statuses": [
+            "PIECES_ONLY"
+          ],
+          "contributing_carriers": [
+            "FINITE_EXACT",
+            "HILBERT_OPERATOR",
+            "KREIN_INDEFINITE",
+            "ALGEBRAIC_CSTAR",
+            "LOCALIC_SYNTHETIC"
+          ]
+        },
+        {
+          "obligation": "GENERATOR_SPECTRAL_DYNAMICS",
+          "readiness_rank": 3,
+          "statuses": [
+            "LITERATURE_RESULT",
+            "LOCAL_RESULT"
+          ],
+          "contributing_carriers": [
+            "FINITE_EXACT",
+            "KREIN_INDEFINITE",
+            "ALGEBRAIC_CSTAR",
+            "SMOOTH_DISTRIBUTIONAL",
+            "LOCALIC_SYNTHETIC"
+          ]
+        },
+        {
+          "obligation": "EVOLUTION_WELLPOSEDNESS",
+          "readiness_rank": 3,
+          "statuses": [
+            "LITERATURE_RESULT",
+            "LOCAL_RESULT"
+          ],
+          "contributing_carriers": [
+            "FINITE_EXACT",
+            "HILBERT_OPERATOR",
+            "KREIN_INDEFINITE",
+            "ALGEBRAIC_CSTAR",
+            "SMOOTH_DISTRIBUTIONAL"
+          ]
+        },
+        {
+          "obligation": "CAUSAL_PROPAGATION_GREEN",
+          "readiness_rank": 3,
+          "statuses": [
+            "LITERATURE_RESULT",
+            "LOCAL_RESULT"
+          ],
+          "contributing_carriers": [
+            "FINITE_EXACT",
+            "HILBERT_OPERATOR"
+          ]
+        },
+        {
+          "obligation": "GAUGE_BV_COHOMOLOGY",
+          "readiness_rank": 3,
+          "statuses": [
+            "LITERATURE_RESULT",
+            "LOCAL_RESULT"
+          ],
+          "contributing_carriers": [
+            "FINITE_EXACT",
+            "SMOOTH_DISTRIBUTIONAL"
+          ]
+        },
+        {
+          "obligation": "INTERACTION_CONSTRUCTION",
+          "readiness_rank": 3,
+          "statuses": [
+            "LITERATURE_RESULT",
+            "LOCAL_RESULT"
+          ],
+          "contributing_carriers": [
+            "FINITE_EXACT",
+            "KREIN_INDEFINITE",
+            "ALGEBRAIC_CSTAR",
+            "SMOOTH_DISTRIBUTIONAL"
+          ]
+        },
+        {
+          "obligation": "COUNTERTERM_CLASSIFICATION",
+          "readiness_rank": 2,
+          "statuses": [
+            "PIECES_ONLY"
+          ],
+          "contributing_carriers": [
+            "KREIN_INDEFINITE",
+            "ALGEBRAIC_CSTAR",
+            "SMOOTH_DISTRIBUTIONAL"
+          ]
+        },
+        {
+          "obligation": "ANOMALY_CLASSIFICATION",
+          "readiness_rank": 2,
+          "statuses": [
+            "PIECES_ONLY"
+          ],
+          "contributing_carriers": [
+            "KREIN_INDEFINITE",
+            "ALGEBRAIC_CSTAR",
+            "SMOOTH_DISTRIBUTIONAL"
+          ]
+        },
+        {
+          "obligation": "RENORMALIZED_PRODUCTS",
+          "readiness_rank": 2,
+          "statuses": [
+            "PIECES_ONLY"
+          ],
+          "contributing_carriers": [
+            "KREIN_INDEFINITE",
+            "ALGEBRAIC_CSTAR",
+            "SMOOTH_DISTRIBUTIONAL"
+          ]
+        },
+        {
+          "obligation": "QME_RESTORATION",
+          "readiness_rank": 2,
+          "statuses": [
+            "PIECES_ONLY"
+          ],
+          "contributing_carriers": [
+            "KREIN_INDEFINITE",
+            "ALGEBRAIC_CSTAR",
+            "SMOOTH_DISTRIBUTIONAL"
+          ]
+        },
+        {
+          "obligation": "RESIDUAL_QUANTUM_TRANSFER",
+          "readiness_rank": 2,
+          "statuses": [
+            "PIECES_ONLY"
+          ],
+          "contributing_carriers": [
+            "KREIN_INDEFINITE",
+            "ALGEBRAIC_CSTAR",
+            "SMOOTH_DISTRIBUTIONAL"
+          ]
+        },
+        {
+          "obligation": "RECONSTRUCTION_LIMITS",
+          "readiness_rank": 3,
+          "statuses": [
+            "LITERATURE_RESULT",
+            "LOCAL_RESULT"
+          ],
+          "contributing_carriers": [
+            "FINITE_EXACT",
+            "HILBERT_OPERATOR",
+            "LOCALIC_SYNTHETIC"
+          ]
+        }
+      ],
+      "maximum_direct_obligations": 10,
+      "minimum_carriers_for_that_maximum": 1,
+      "minimal_maximum_subsets": [
+        [
+          "FINITE_EXACT"
+        ]
+      ],
+      "composition_status": "NOT_ASSESSED"
+    }
+  ],
+  "global_rails": [
+    {
+      "id": "OBLIGATION_COVERAGE",
+      "label": "Obligation coverage",
+      "status": "COMPUTED_FROM_ATLAS",
+      "meaning": "The tables can show where direct results, partial ingredients, explicit gaps, and unmapped cells occur."
+    },
+    {
+      "id": "CROSS_OBLIGATION_COMPOSITION",
+      "label": "One coherent integrated theory",
+      "status": "NOT_ASSESSED",
+      "meaning": "Evidence in different cells may concern different models or scopes. No current certificate proves that a profile or carrier envelope composes into one jointly consistent theory."
+    },
+    {
+      "id": "EMPIRICAL_AGREEMENT",
+      "label": "Agreement with observations",
+      "status": "NOT_IN_CURRENT_SCHEMA",
+      "meaning": "The atlas has no typed dataset, likelihood, residual, parameter-fit, or out-of-sample prediction record. Reconstruction coverage is only a bridge-readiness proxy, not observational validation."
+    }
+  ],
+  "pareto_definition": {
+    "preset": "PREDICTIVE_PHYSICS",
+    "maximize": [
+      "direct obligations in the default gate",
+      "assessed obligations in the default gate",
+      "direct obligations across all sixteen",
+      "reconstruction/limits readiness rank"
+    ],
+    "warning": "Pareto membership is a navigation aid over present coverage, not a theorem ranking, probability, or empirical verdict."
+  },
+  "claim_flags": {
+    "all_36_single_carrier_profiles_computed": true,
+    "carrier_portfolio_envelopes_computed": true,
+    "coverage_and_empirical_agreement_separated": true,
+    "complete_observationally_valid_theory_identified": false,
+    "cross_cell_composability_established": false,
+    "empirical_agreement_assessed": false,
+    "scalar_winner_score_defined": false
+  },
+  "does_not_establish": [
+    "that direct evidence in separate cells composes into one theory",
+    "that a finite or reduced model has a controlled continuum limit",
+    "that reconstruction/limits coverage demonstrates agreement with observations",
+    "that NOT_MAPPED is failure, incoherence, or absence from the literature",
+    "that Pareto-frontier profiles are physically preferred or more likely true",
+    "a complete observationally validated theory under any regime or carrier portfolio"
+  ],
+  "source_atlas_digest": "378a9806111aec5b00bb9b9d71e8b9bbeaad573feb163684e967aa8cc34de625",
+  "canonical_digest": "5e07301c67b4b57033c06b32eaa70db7a37a43f609f0e9138926b4d88d1fec94"
+}

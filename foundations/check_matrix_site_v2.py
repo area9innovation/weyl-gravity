@@ -13,6 +13,7 @@ SITE = ROOT / "foundations/site"
 DATA = SITE / "data.json"
 MANIFEST = SITE / "manifest.json"
 RESULT = ROOT / "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json"
+VIABILITY = ROOT / "foundations/site/viability.json"
 CUBE = ROOT / "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V4.json"
 LADDER = ROOT / "foundations/results/FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V2.json"
 STATUSES = {"LOCAL_RESULT", "LITERATURE_RESULT", "PIECES_ONLY", "PRIORITY_GAP", "NOT_MAPPED"}
@@ -34,7 +35,7 @@ def digest(data: dict[str, Any]) -> str:
 
 def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]]:
     data = load(DATA) if data is None else data
-    cube, ladder, result, manifest = load(CUBE), load(LADDER), load(RESULT), load(MANIFEST)
+    cube, ladder, result, manifest, viability = load(CUBE), load(LADDER), load(RESULT), load(MANIFEST), load(VIABILITY)
     errors: list[str] = []
     axes = {x.get("id"): x for x in data.get("axes", [])}
     keys = {axis_id: [x.get("id") for x in axes.get(axis_id, {}).get("keys", [])] for axis_id in ("FOUNDATION", "CARRIER", "REFINED_OBLIGATION")}
@@ -94,6 +95,10 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
         errors.append("typed implication graph")
     if data.get("ladder") != ladder.get("ladder") or len(data.get("ladder", [])) != 6:
         errors.append("strength ladder projection")
+    if viability.get("source_atlas_digest") != data.get("canonical_digest") or viability.get("canonical_digest") != result.get("independent_checker", {}).get("expected_viability_digest"):
+        errors.append("theory viability source/digest pin")
+    if len(viability.get("profiles", [])) != 36 or len(viability.get("carrier_envelopes", [])) != 6:
+        errors.append("theory viability profile/envelope closure")
 
     calculated_digest = digest(data)
     if calculated_digest != data.get("canonical_digest") or calculated_digest != result.get("independent_checker", {}).get("expected_digest"):
@@ -111,9 +116,9 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
 
     html = (SITE / "index.html").read_text()
     app = (SITE / "app.js").read_text() + (SITE / "migration-review.js").read_text()
-    if "https://" in html or "http://" in html or '<script src="data.js"></script>' not in html or '<script src="migration-review.js"></script>' not in html:
+    if "https://" in html or "http://" in html or '<script src="data.js"></script>' not in html or '<script src="viability.js"></script>' not in html or '<script src="migration-review.js"></script>' not in html:
         errors.append("offline/no-remote-code shell")
-    for token in ("matrixGroups", "guideView", "dimensionGuide", "Regime × carrier × obligation", "graphView", "GRAPH_PATHWAYS", "Relation ledger", "graph-edge-hit", "No direct certificate yet", "ladderView", "evidenceView", "compareDialog", "exportJson", "exportCsv", "downloadBrief", "column-label", "Migration review", "migration_evidence", "112-decision audit JSON"):
+    for token in ("matrixGroups", "viabilityView", "Theory profiles", "Coverage readiness map", "Coverage envelope, not a composed theory", "No complete observationally validated theory is certified", "paretoProfiles", "guideView", "dimensionGuide", "Regime × carrier × obligation", "graphView", "GRAPH_PATHWAYS", "Relation ledger", "graph-edge-hit", "No direct certificate yet", "ladderView", "evidenceView", "compareDialog", "exportJson", "exportCsv", "downloadBrief", "column-label", "Migration review", "migration_evidence", "112-decision audit JSON"):
         if token not in html + app:
             errors.append("interface token " + token)
     if "No stronger interpretation is licensed" in app:
@@ -139,6 +144,9 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
         "evidence_records": len(evidence),
         "graph_edges": len(graph.get("edges", [])),
         "ladder_levels": len(data.get("ladder", [])),
+        "theory_profiles": len(viability.get("profiles", [])),
+        "carrier_envelopes": len(viability.get("carrier_envelopes", [])),
+        "pareto_profiles": sum(item.get("pareto_default") is True for item in viability.get("profiles", [])),
     }
     return errors, summary
 

@@ -59,5 +59,8 @@ This site does not establish:
 - that NOT_MAPPED means no literature exists
 - that the 124 synthetic coordinates are coherent
 - a weakest mathematical base
-- a theorem ranking from interface order or neighbor counts
+- a theorem ranking from interface order, Pareto membership, or neighbor counts
+- cross-cell or cross-carrier composability
+- agreement with observations
+- a complete observationally validated theory
 - a new Lorentzian-causal result
