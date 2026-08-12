@@ -1,0 +1,212 @@
+{
+  "schema_version": "foundational-krein-state-selection-zf-v1",
+  "result_id": "FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1",
+  "result_kind": "FOUNDATIONAL_DEPENDENCY_CERTIFICATE",
+  "lifecycle": "SUFFICIENCY_PROVED",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "created": "2026-08-11",
+  "repository_base_commit": "c676bde482341c627de41d0cc162b21f50bd91a3",
+  "question": "Does the explicit choice-free Krein carrier admit positive normalized states, and does its fundamental symmetry J by itself select a physical state or probability rule?",
+  "answer": "The state-existence link closes in ZF for the displayed carrier. If v is an explicitly named unit coordinate with Jv=sigma v, then omega_v(A)=sigma[v,Av]=(v,Av)_0 is a positive normalized vector state on the companion Hilbert-adjoint operator algebra, represented by the explicit rank-one density |v><v|_0. The Fock vacuum and every named occupation coordinate give the same kind of state without a choice operation. These states are nonunique. More sharply, no density-operator state on the one-particle carrier is invariant under every finite coordinate permutation preserving the positive and negative J sectors: invariance makes the diagonal weight constant on each explicitly infinite sector, while trace one forces their sum to be one and trace class forces both constants to vanish. Thus J supplies state existence after Hilbertization but does not select a normal permutation-natural state. This does not rule out singular states or selection by energy, dynamics, boundary data, BRST reduction, or another physical principle.",
+  "typed_products": {
+    "krein_product": "[x,y]=(x,Jy)_0",
+    "hilbert_companion": "(x,y)_0=[x,Jy]",
+    "operator_involution_used_for_state_positivity": "Hilbert adjoint dagger_0",
+    "krein_adjoint": "A^sharp=J A^dagger_0 J",
+    "typing_boundary": "C*-state positivity omega(A^dagger_0 A)>=0 is asserted. Positivity with the Krein adjoint is a different predicate and is not silently substituted."
+  },
+  "state_construction": {
+    "carrier": "H_1=l2(I) with the coordinate Hilbert product and J=+1 on E, -1 on A,L",
+    "foundation": "ZF",
+    "choice_status": "NO_CHOICE_OPERATION",
+    "named_positive_mode": "p=(2,+1,E,0)",
+    "named_negative_mode": "n=(3,+1,A,0)",
+    "formula": "For Jv=sigma v and (v,v)_0=1, omega_v(A)=sigma[v,Av]=(v,Av)_0.",
+    "normalization_proof": "omega_v(1)=sigma[v,v]=sigma^2(v,v)_0=1.",
+    "positivity_proof": "omega_v(A^dagger_0 A)=sigma[v,A^dagger_0 A v]=(v,A^dagger_0 A v)_0=||Av||_0^2>=0.",
+    "density_operator": "rho_v=|v><v|_0 is an explicitly given positive rank-one operator with trace one.",
+    "boundedness": "|omega_v(A)|<=||A|| follows from the coordinate Hilbert product and ||v||_0=1.",
+    "algebras": [
+      "B(H_1) with Hilbert adjoint",
+      "K(H_1)^~ by restriction",
+      "every finite coordinate matrix corner"
+    ]
+  },
+  "fock_state_construction": {
+    "carrier": "Gamma_s(H_1)=l2(Occ(I))",
+    "vacuum": "The empty occupation is a named Gamma_s(J)-positive unit coordinate and defines omega_0(A)=<0|A|0>_0.",
+    "negative_one_particle": "Any named one-particle A or L occupation is a Gamma_s(J)-negative unit coordinate and defines the sign-normalized state -[m,A m].",
+    "nonuniqueness_witness": "The vacuum state and a one-particle coordinate state disagree on the vacuum rank-one projection.",
+    "extra_structure_warning": "The vacuum is named by the occupation grading, not selected by J alone, and no dynamics or physical asymptotic condition makes it the Weyl or Bateman-Turok state here."
+  },
+  "selection_obstruction": {
+    "theorem": "No positive trace-class density rho of trace one on H_1 is invariant under every finite coordinate permutation that preserves the positive and negative J sectors.",
+    "scope": "density-operator states on the explicit one-particle coordinate carrier",
+    "proof": [
+      "Invariance under finite permutations within the positive E sector makes every positive-sector diagonal entry <e_i,rho e_i>_0 equal to one constant c_+>=0.",
+      "Invariance under finite permutations within the negative A/L sector makes every negative-sector diagonal entry equal to one constant c_->=0.",
+      "Each sector contains an explicitly enumerated infinite sequence. Positivity and trace one give N c_+<=1 and N c_-<=1 for every natural N, hence c_+=c_-=0.",
+      "For a positive trace-class operator, the trace is the sum of its diagonal entries in the supplied coordinate basis. All entries are zero, so tr(rho)=0, contradicting tr(rho)=1."
+    ],
+    "relation": "NOT_IMPLIED_BY_CARRIER",
+    "interpretation": "A state may be selected only after adding structure that breaks or refines the J-preserving coordinate symmetry, or by leaving the density-operator class.",
+    "does_not_rule_out": [
+      "singular non-density-operator states",
+      "states selected by the energy operator or a Hamiltonian",
+      "KMS, boundary, incoming, detector, or asymptotic selection data",
+      "BRST-reduced physical states",
+      "a dynamically justified generalized Born functional"
+    ]
+  },
+  "finite_exact_witness": {
+    "model": "J=diag(1,-1), p=(1,0), n=(0,1)",
+    "state_formulas": {
+      "omega_p": "omega_p(A)=[p,Ap]=A_11",
+      "omega_n": "omega_n(A)=-[n,An]=A_22"
+    },
+    "distinguishing_projection": "P_p=diag(1,0), with omega_p(P_p)=1 and omega_n(P_p)=0",
+    "integer_matrix_range": [-2, 2],
+    "integer_matrix_count": 625,
+    "positivity_identity_checked": "For every 2x2 integer A in the declared range and v=p,n, omega_v(A^T A)=||Av||_2^2.",
+    "permutation_controls": [
+      {"sector_size_each_sign": 1, "total_dimension": 2, "uniform_coordinate_weight": {"numerator": 1, "denominator": 2}, "fixed_two_coordinate_mass": {"numerator": 1, "denominator": 1}},
+      {"sector_size_each_sign": 2, "total_dimension": 4, "uniform_coordinate_weight": {"numerator": 1, "denominator": 4}, "fixed_two_coordinate_mass": {"numerator": 1, "denominator": 2}},
+      {"sector_size_each_sign": 3, "total_dimension": 6, "uniform_coordinate_weight": {"numerator": 1, "denominator": 6}, "fixed_two_coordinate_mass": {"numerator": 1, "denominator": 3}},
+      {"sector_size_each_sign": 4, "total_dimension": 8, "uniform_coordinate_weight": {"numerator": 1, "denominator": 8}, "fixed_two_coordinate_mass": {"numerator": 1, "denominator": 4}},
+      {"sector_size_each_sign": 5, "total_dimension": 10, "uniform_coordinate_weight": {"numerator": 1, "denominator": 10}, "fixed_two_coordinate_mass": {"numerator": 1, "denominator": 5}},
+      {"sector_size_each_sign": 6, "total_dimension": 12, "uniform_coordinate_weight": {"numerator": 1, "denominator": 12}, "fixed_two_coordinate_mass": {"numerator": 1, "denominator": 6}},
+      {"sector_size_each_sign": 7, "total_dimension": 14, "uniform_coordinate_weight": {"numerator": 1, "denominator": 14}, "fixed_two_coordinate_mass": {"numerator": 1, "denominator": 7}},
+      {"sector_size_each_sign": 8, "total_dimension": 16, "uniform_coordinate_weight": {"numerator": 1, "denominator": 16}, "fixed_two_coordinate_mass": {"numerator": 1, "denominator": 8}},
+      {"sector_size_each_sign": 9, "total_dimension": 18, "uniform_coordinate_weight": {"numerator": 1, "denominator": 18}, "fixed_two_coordinate_mass": {"numerator": 1, "denominator": 9}},
+      {"sector_size_each_sign": 10, "total_dimension": 20, "uniform_coordinate_weight": {"numerator": 1, "denominator": 20}, "fixed_two_coordinate_mass": {"numerator": 1, "denominator": 10}},
+      {"sector_size_each_sign": 11, "total_dimension": 22, "uniform_coordinate_weight": {"numerator": 1, "denominator": 22}, "fixed_two_coordinate_mass": {"numerator": 1, "denominator": 11}},
+      {"sector_size_each_sign": 12, "total_dimension": 24, "uniform_coordinate_weight": {"numerator": 1, "denominator": 24}, "fixed_two_coordinate_mass": {"numerator": 1, "denominator": 12}}
+    ],
+    "control_boundary": "Finite uniform density matrices exist at every cutoff. Their coordinate weights tend toward zero and do not define a trace-one density operator on the infinite carrier."
+  },
+  "cstar_crosswalk": {
+    "source": "FOUNDATIONAL_BT_SEPARABLE_STATE_CHAIN_ZF_V1",
+    "established": "The explicit separable detector algebra K(l2(Z))^~ has faithful and corner states and explicit GNS representations in ZF.",
+    "cube_audit": "Because STATES_PROBABILITY explicitly includes constructing states and representations, the classical-standard algebraic-C*-system cell already contains a bounded local result even though physical Weyl-state selection remains open.",
+    "boundary": "Existence of many algebraic or Krein-Hilbertized states is precisely why a physical selection principle is still required."
+  },
+  "cube_promotions": [
+    {
+      "foundation": "CLASSICAL_STANDARD",
+      "carrier": "KREIN_INDEFINITE",
+      "obligation": "STATES_PROBABILITY",
+      "old_status": "PIECES_ONLY",
+      "new_status": "LOCAL_RESULT",
+      "basis": "Explicit sign-normalized Krein coordinate and Fock states plus the density-state selection obstruction."
+    },
+    {
+      "foundation": "WEAK_CHOICE_ZF",
+      "carrier": "KREIN_INDEFINITE",
+      "obligation": "STATES_PROBABILITY",
+      "old_status": "PRIORITY_GAP",
+      "new_status": "LOCAL_RESULT",
+      "basis": "The named-coordinate construction and rank-one state use no Choice; physical selection remains outside the result."
+    },
+    {
+      "foundation": "CLASSICAL_STANDARD",
+      "carrier": "ALGEBRAIC_CSTAR",
+      "obligation": "STATES_PROBABILITY",
+      "old_status": "PIECES_ONLY",
+      "new_status": "LOCAL_RESULT",
+      "basis": "Audit correction: the existing ZF detector-algebra state/GNS certificate is a bounded local result under the cube's stated cell semantics."
+    }
+  ],
+  "proof_dependency_dag": {
+    "nodes": [
+      {"id": "K0", "kind": "IMPORTED_CARRIER", "statement": "The explicit l2(I), J, and Fock coordinate carriers exist in ZF."},
+      {"id": "M0", "kind": "NAMED_MODE", "statement": "Positive E and negative A coordinates are explicitly named."},
+      {"id": "S0", "kind": "STATE_IDENTITY", "statement": "sigma[v,Av]=(v,Av)_0 for a J-eigenvector."},
+      {"id": "P0", "kind": "POSITIVITY", "statement": "omega_v(A^dagger_0 A)=||Av||_0^2."},
+      {"id": "D0", "kind": "DENSITY_WITNESS", "statement": "rho_v is explicit, positive, rank one, and trace one."},
+      {"id": "F0", "kind": "FOCK_WITNESS", "statement": "Vacuum and occupation coordinates give explicit states."},
+      {"id": "N0", "kind": "NONUNIQUENESS", "statement": "Two coordinate states disagree on a rank-one projection."},
+      {"id": "G0", "kind": "SYMMETRY_HYPOTHESIS", "statement": "Demand invariance under every finite sign-preserving coordinate permutation."},
+      {"id": "T0", "kind": "TRACE_OBSTRUCTION", "statement": "No trace-one positive density operator satisfies G0 on two infinite sectors."},
+      {"id": "B0", "kind": "BOUNDARY", "statement": "State existence is proved; physical selection and Born interpretation are not."}
+    ],
+    "edges": [
+      {"from": "K0", "to": "M0"},
+      {"from": "M0", "to": "S0"},
+      {"from": "S0", "to": "P0"},
+      {"from": "P0", "to": "D0"},
+      {"from": "K0", "to": "F0"},
+      {"from": "D0", "to": "N0"},
+      {"from": "K0", "to": "G0"},
+      {"from": "G0", "to": "T0"},
+      {"from": "N0", "to": "B0"},
+      {"from": "T0", "to": "B0"}
+    ]
+  },
+  "independent_checker": {
+    "path": "foundations/check_krein_state_selection.py",
+    "arithmetic": "exact integers and fractions",
+    "checks": [
+      "2x2 Krein signature and state normalization",
+      "positive and negative coordinate states distinguished by a projection",
+      "625 integer-matrix positivity identities",
+      "12 exact finite permutation-invariant density controls",
+      "exact three-cell promotion set",
+      "canonical finite witness digest"
+    ],
+    "expected_finite_digest": "872d38d8c7b0fb28bbd16c3e4c3626cdba3da3482389997597491c10e3c14043"
+  },
+  "provenance": {
+    "inputs": [
+      {
+        "path": "foundations/results/FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1.json",
+        "sha256": "bd71c8609cd6ff5d83d5f67aa86f46216f5301b377e6a437a74d197b577d9b2a",
+        "role": "choice-free one-particle and Fock Krein carrier"
+      },
+      {
+        "path": "foundations/results/FOUNDATIONAL_BT_SEPARABLE_STATE_CHAIN_ZF_V1.json",
+        "sha256": "08389e96d349766e29a34cde8109d4b1271288b59d44f3b29fcb456065641998",
+        "role": "C*-algebra state/GNS comparison and physical-selection boundary"
+      },
+      {
+        "path": "analytic_completion/certificates/fock_fundamental_symmetry.json",
+        "sha256": "6b40128129cfe9469b5c1adcb4b4b1a44c416c37b6e53c8e58f963e99b65a9a3",
+        "role": "published Fock coordinate symmetry source"
+      }
+    ],
+    "verification_boundary": "The checker reconstructs the finite state identities and cutoff controls without importing the source producers. The infinite permutation obstruction is a proof from positivity, explicit infinitude, and the trace-one density hypothesis; finite cutoff sampling is only its regression rail."
+  },
+  "claim_flags": {
+    "explicit_zf_krein_vector_states_constructed": true,
+    "explicit_rank_one_density_witnesses_constructed": true,
+    "explicit_fock_coordinate_states_constructed": true,
+    "state_existence_requires_choice_here": false,
+    "j_alone_selects_unique_state": false,
+    "sign_permutation_invariant_density_state_exists": false,
+    "singular_state_nonexistence_proved": false,
+    "physical_weyl_state_selected": false,
+    "generalized_born_rule_derived": false,
+    "interacting_state_constructed": false,
+    "lorentzian_claim": false
+  },
+  "assumptions": [
+    "The imported carrier supplies the coordinate Hilbert product, explicit J, and named positive and negative unit modes.",
+    "C*-state positivity is typed using the companion Hilbert adjoint, not the Krein adjoint.",
+    "The selection obstruction concerns positive trace-class density operators of trace one and the full group of finite coordinate permutations preserving each J sector."
+  ],
+  "does_not_establish": [
+    "a unique or canonical state from J",
+    "nonexistence of singular permutation-invariant states",
+    "that sign-preserving coordinate permutations are a required physical symmetry",
+    "a KMS, Hadamard, BRST-compatible, incoming, outgoing, or interacting state",
+    "a generalized Born rule or physical probability interpretation",
+    "trace-norm thermodynamic convergence of the Bateman-Turok construction",
+    "positivity with respect to the Krein adjoint where Hilbert-adjoint positivity was used",
+    "a weakest-base reverse-mathematics theorem",
+    "anything LORENTZIAN-CAUSAL"
+  ],
+  "next_gate": "Add one explicit physical selection principle—energy/KMS, asymptotic input, detector conditioning, or BRST reduction—and test it against the certified higher-point and thermodynamic obstructions. State existence itself is no longer the missing link for the explicit Krein carrier.",
+  "human_report": "foundations/reports/krein-state-selection-zf.md"
+}

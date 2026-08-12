@@ -1,0 +1,297 @@
+{
+  "schema_version": "foundational-literature-ledger-v1",
+  "ledger_id": "FOUNDATIONAL_LITERATURE_LEDGER_V1",
+  "created": "2026-08-11",
+  "repository_base_commit": "911f9d080f84cfcc6e228c0f0f646118bc2c455f",
+  "method": {
+    "scope": "Seed corpus for coupling reverse physics, reverse mathematics, weak-choice analysis, constructive mathematics, topos quantum theory, operational reconstruction, and Krein geometry.",
+    "selection": "Primary research and an authoritative reverse-mathematics monograph were preferred. Local entries are pinned reports that define this repository's existing separation discipline.",
+    "pinning": "Remote PDF bytes were fetched on 2026-08-11 and SHA-256 hashed without vendoring. Local reports are pinned by Git blob and repository commit. One historical metadata record is explicitly unpinned.",
+    "verification_boundary": "Hashes establish identity of consulted bytes, not correctness of the papers. The ledger is a literature receipt and does not independently reproduce any cited theorem."
+  },
+  "entries": [
+    {
+      "id": "carcassi-aidala-2022",
+      "source_kind": "PRIMARY_RESEARCH",
+      "citation": "Gabriele Carcassi and Christine A. Aidala, Reverse Physics: From Laws to Physical Assumptions, Foundations of Physics 52, 40 (2022).",
+      "year": 2022,
+      "stable_url": "https://doi.org/10.1007/s10701-022-00555-z",
+      "doi": "10.1007/s10701-022-00555-z",
+      "artifact": {
+        "status": "METADATA_ONLY",
+        "locator": "https://inspirehep.net/literature/2054599",
+        "sha256": null
+      },
+      "bears_on": ["PHYSICAL_POSTULATES", "TARGET_CLAIMS"],
+      "supported_statements": [
+        "Reverse physics asks which physical assumptions are sufficient or necessary for physical laws, by analogy with reverse mathematics."
+      ],
+      "boundary": "Defines the reverse-physics programme; it does not classify the logical or set-theoretic strength of the mathematics used by a physical theory."
+    },
+    {
+      "id": "simpson-2009",
+      "source_kind": "AUTHORITATIVE_MONOGRAPH",
+      "citation": "Stephen G. Simpson, Subsystems of Second Order Arithmetic, second edition, Cambridge University Press (2009).",
+      "year": 2009,
+      "stable_url": "https://doi.org/10.1017/CBO9780511581007",
+      "doi": "10.1017/CBO9780511581007",
+      "artifact": {
+        "status": "CONTENT_PINNED",
+        "locator": "https://assets.cambridge.org/97805218/84396/frontmatter/9780521884396_frontmatter.pdf",
+        "sha256": "f6f1477cbb53fc34dd713285c62933429edd55e0a94c1be479d8f8bede729ad8"
+      },
+      "bears_on": ["LOGIC", "SET_EXISTENCE", "INFINITY"],
+      "supported_statements": [
+        "Reverse mathematics classifies the set-existence axioms needed for theorems of ordinary mathematics over explicit weak base theories.",
+        "Complete separable metric spaces belong to the intended scope of ordinary countable mathematics even though their point sets may be uncountable."
+      ],
+      "boundary": "The standard second-order-arithmetic programme is not by itself a formalization of a physical theory or of arbitrary set-sized functional analysis."
+    },
+    {
+      "id": "eastaugh-2018",
+      "source_kind": "PRIMARY_RESEARCH",
+      "citation": "Benedict Eastaugh, Computational reverse mathematics and foundational analysis (2018).",
+      "year": 2018,
+      "stable_url": "https://arxiv.org/abs/1807.10022",
+      "arxiv": "1807.10022",
+      "artifact": {
+        "status": "CONTENT_PINNED",
+        "locator": "https://arxiv.org/pdf/1807.10022",
+        "sha256": "908ca2a5268e5c0436c77219ba413dfb551bd17c427dba3547a01d984fae05f1"
+      },
+      "bears_on": ["LOGIC", "SET_EXISTENCE"],
+      "supported_statements": [
+        "Foundational analysis uses reverse mathematics to compare what different foundational programmes can justify.",
+        "The choice of entailment and model class can itself exceed the resources of the foundation being assessed."
+      ],
+      "boundary": "A methodological analysis, not a physics application or a theorem that one reverse-mathematical framework fits every target."
+    },
+    {
+      "id": "solovay-1970",
+      "source_kind": "PRIMARY_RESEARCH",
+      "citation": "Robert M. Solovay, A model of set-theory in which every set of reals is Lebesgue measurable, Annals of Mathematics 92 (1970), 1-56.",
+      "year": 1970,
+      "stable_url": "https://doi.org/10.2307/1970696",
+      "doi": "10.2307/1970696",
+      "artifact": {
+        "status": "CONTENT_PINNED",
+        "locator": "https://people.math.ethz.ch/~fdalio/ZKmodel.pdf",
+        "sha256": "b0c04c1c40167c3f9c917993ef560a13f3cdb89dd303e8a335f0a1ac92f65b07"
+      },
+      "bears_on": ["SET_EXISTENCE", "INFINITY"],
+      "supported_statements": [
+        "Relative to an inaccessible-cardinal assumption, there is a model of ZF with dependent choice in which every set of reals is Lebesgue measurable."
+      ],
+      "boundary": "Dropping Choice alone does not imply that every set of reals is measurable; this is a relative-consistency construction with additional strength in the metatheory."
+    },
+    {
+      "id": "rossi-2009",
+      "source_kind": "PRIMARY_RESEARCH",
+      "citation": "Stefano Rossi, The Banach-Alaoglu theorem is equivalent to the Tychonoff theorem for compact Hausdorff spaces (2009).",
+      "year": 2009,
+      "stable_url": "https://arxiv.org/abs/0911.0332",
+      "arxiv": "0911.0332",
+      "artifact": {
+        "status": "CONTENT_PINNED",
+        "locator": "https://arxiv.org/pdf/0911.0332",
+        "sha256": "65ae7b54815a32f27d0106543ef923d5d5ea8f737761eb5584d8340b91d41ce4"
+      },
+      "bears_on": ["SET_EXISTENCE", "CARRIER_GEOMETRY"],
+      "supported_statements": [
+        "Over ZF, the full Banach-Alaoglu compactness statement and Tychonoff compactness for compact Hausdorff spaces have the Boolean-prime-ideal or ultrafilter strength described in the paper, strictly below full Choice."
+      ],
+      "boundary": "A theorem about general compactness principles; it does not show that every concrete PDE or quantum construction uses that full generality."
+    },
+    {
+      "id": "blackadar-farah-karagila-2026",
+      "source_kind": "PRIMARY_RESEARCH",
+      "citation": "Bruce Blackadar, Ilijas Farah, and Asaf Karagila, Hilbert Spaces Without The Countable Axiom of Choice, revised 2026.",
+      "year": 2026,
+      "stable_url": "https://arxiv.org/abs/2304.09602",
+      "arxiv": "2304.09602",
+      "artifact": {
+        "status": "CONTENT_PINNED",
+        "locator": "https://arxiv.org/pdf/2304.09602",
+        "sha256": "954597e0dddc7d8e1398da2993e6e79d11f8db350be829c943f347f5a50bd55e"
+      },
+      "bears_on": ["SET_EXISTENCE", "INFINITY", "CARRIER_GEOMETRY"],
+      "supported_statements": [
+        "Hilbert spaces and their operator theory can be studied in ZF without countable Choice, and pathologies expose distinctions hidden by ZFC.",
+        "The assertion that every Hilbert space has the familiar basis behaviour is not a definition-level truth independent of set theory."
+      ],
+      "boundary": "Foundational Hilbert-space analysis, not evidence that a particular physical Hilbert space exhibits the pathological examples."
+    },
+    {
+      "id": "blackadar-farah-2026",
+      "source_kind": "PRIMARY_RESEARCH",
+      "citation": "Bruce Blackadar and Ilijas Farah, Separable C*-algebras Without the Countable Axiom of Choice (2026).",
+      "year": 2026,
+      "stable_url": "https://arxiv.org/abs/2602.15812",
+      "arxiv": "2602.15812",
+      "artifact": {
+        "status": "CONTENT_PINNED",
+        "locator": "https://arxiv.org/pdf/2602.15812",
+        "sha256": "0eaa3c5e0b2e32c5c9267902f2330eb220848a0d22c13ce75093640304382158"
+      },
+      "bears_on": ["SET_EXISTENCE", "CARRIER_GEOMETRY"],
+      "supported_statements": [
+        "A substantial theory of separable C*-algebras, including representation, polynomial spectral mapping, and continuous functional calculus for commuting normal elements, can be developed in ZF.",
+        "Without Choice, nonseparable examples can break familiar state-space and commutative representation conclusions."
+      ],
+      "boundary": "Does not automatically remove Choice from AQFT, interacting QFT, state selection, or nonseparable operator-algebra arguments."
+    },
+    {
+      "id": "coquand-spitters-2009",
+      "source_kind": "PRIMARY_RESEARCH",
+      "citation": "Thierry Coquand and Bas Spitters, Constructive Gelfand duality for C*-algebras, Math. Proc. Cambridge Philos. Soc. 147 (2009), 339-344.",
+      "year": 2009,
+      "stable_url": "https://doi.org/10.1017/S0305004109002515",
+      "doi": "10.1017/S0305004109002515",
+      "arxiv": "0808.1518",
+      "artifact": {
+        "status": "CONTENT_PINNED",
+        "locator": "https://arxiv.org/pdf/0808.1518",
+        "sha256": "86ac9042dae2bb37d28e2d26fe50ca98f5e08d343827b6198b5a5a5d0c477cfd"
+      },
+      "bears_on": ["LOGIC", "CARRIER_GEOMETRY"],
+      "supported_statements": [
+        "Commutative Gelfand duality admits a constructive formulation in which spectra are handled point-free."
+      ],
+      "boundary": "Constructive commutative duality is not a complete constructive formulation of interacting quantum field theory."
+    },
+    {
+      "id": "heunen-landsman-spitters-2009",
+      "source_kind": "PRIMARY_RESEARCH",
+      "citation": "Chris Heunen, Nicolaas P. Landsman, and Bas Spitters, A topos for algebraic quantum theory, Communications in Mathematical Physics 291 (2009), 63-110.",
+      "year": 2009,
+      "stable_url": "https://arxiv.org/abs/0709.4364",
+      "arxiv": "0709.4364",
+      "artifact": {
+        "status": "CONTENT_PINNED",
+        "locator": "https://arxiv.org/pdf/0709.4364",
+        "sha256": "cd36e253d40e7abb6a570a87f521b7979bd702670ad20f366f823b90ea2dd53b"
+      },
+      "bears_on": ["LOGIC", "CARRIER_GEOMETRY", "PHYSICAL_POSTULATES"],
+      "supported_statements": [
+        "An algebraic quantum system can be represented internally in a topos with an intuitionistic Heyting logic and a localic spectrum."
+      ],
+      "boundary": "A reformulation of algebraic quantum theory; it does not establish empirical superiority, eliminate all external classical reasoning, or construct Weyl QFT."
+    },
+    {
+      "id": "hardy-2001",
+      "source_kind": "PRIMARY_RESEARCH",
+      "citation": "Lucien Hardy, Quantum Theory From Five Reasonable Axioms (2001).",
+      "year": 2001,
+      "stable_url": "https://arxiv.org/abs/quant-ph/0101012",
+      "arxiv": "quant-ph/0101012",
+      "artifact": {
+        "status": "CONTENT_PINNED",
+        "locator": "https://arxiv.org/pdf/quant-ph/0101012",
+        "sha256": "f809918a4518f4b5cfca032c8fa9bd54474f129782b87e2fab5c887d14232df4"
+      },
+      "bears_on": ["PHYSICAL_POSTULATES", "CARRIER_GEOMETRY"],
+      "supported_statements": [
+        "Finite-dimensional quantum formalism can be reconstructed from operational axioms, with continuity doing explicit work in separating the quantum and classical cases in this framework."
+      ],
+      "boundary": "Finite-dimensional reconstruction under its stated framework; it does not establish the foundations of infinite-dimensional QFT or the set-theoretic strength of the reconstruction proof."
+    },
+    {
+      "id": "chiribella-dariano-perinotti-2011",
+      "source_kind": "PRIMARY_RESEARCH",
+      "citation": "Giulio Chiribella, Giacomo Mauro D'Ariano, and Paolo Perinotti, Informational derivation of quantum theory, Physical Review A 84, 012311 (2011).",
+      "year": 2011,
+      "stable_url": "https://doi.org/10.1103/PhysRevA.84.012311",
+      "doi": "10.1103/PhysRevA.84.012311",
+      "arxiv": "1011.6451",
+      "artifact": {
+        "status": "CONTENT_PINNED",
+        "locator": "https://arxiv.org/pdf/1011.6451",
+        "sha256": "71bc890fc29e1ea180306b387ae27982735fd73243492f01ad85cc8737a31d20"
+      },
+      "bears_on": ["PHYSICAL_POSTULATES", "CARRIER_GEOMETRY"],
+      "supported_statements": [
+        "Within an operational-probabilistic framework, five informational axioms define a broad class and purification selects quantum theory without taking Hilbert space as the starting postulate."
+      ],
+      "boundary": "A reconstruction result in its declared operational framework; its proof has not yet been audited for logical or choice strength here."
+    },
+    {
+      "id": "esmeral-ferrer-wagner-2015",
+      "source_kind": "PRIMARY_RESEARCH",
+      "citation": "K. Esmeral, O. Ferrer, and E. Wagner, Frames in Krein spaces arising from a non-regular W-metric, Banach Journal of Mathematical Analysis 9 (2015), 1-16.",
+      "year": 2015,
+      "stable_url": "https://doi.org/10.15352/bjma/09-1-1",
+      "doi": "10.15352/bjma/09-1-1",
+      "artifact": {
+        "status": "CONTENT_PINNED",
+        "locator": "https://projecteuclid.org/journalArticle/Download?urlid=10.15352%2Fbjma%2F09-1-1",
+        "sha256": "5778214f73d0965dc5e1fb3d09df3f9c4a630c74c26fc389fac7d5b53d25f811"
+      },
+      "bears_on": ["CARRIER_GEOMETRY"],
+      "supported_statements": [
+        "A Krein space has an indefinite product together with a fundamental symmetry whose associated positive product supplies a Hilbert-space topology."
+      ],
+      "boundary": "A mathematical structural fact; it neither validates a generalized Born rule nor removes set-theoretic assumptions from infinite-dimensional analysis."
+    },
+    {
+      "id": "bateman-turok-2026",
+      "source_kind": "PRIMARY_RESEARCH",
+      "citation": "Sam Bateman and Neil Turok, Escape from Ostrogradsky via Hidden Ghost Parity (2026).",
+      "year": 2026,
+      "stable_url": "https://arxiv.org/abs/2607.00096",
+      "arxiv": "2607.00096v1",
+      "artifact": {
+        "status": "CONTENT_PINNED",
+        "locator": "https://arxiv.org/pdf/2607.00096",
+        "sha256": "c3a2cf3a6c408e199f6b8d2ea8c097f3f1e5b53384ad2d26a5cb8ea6d9504d90"
+      },
+      "bears_on": ["CARRIER_GEOMETRY", "PHYSICAL_POSTULATES", "TARGET_CLAIMS"],
+      "supported_statements": [
+        "The Bateman-Turok proposal changes the state-space metric and adjoint/probability structure by using a Krein carrier and a fundamental ghost parity."
+      ],
+      "boundary": "The paper's tree-level positivity and deferred operator claims retain the boundaries audited in the repository; no foundational-strength result follows from this citation."
+    },
+    {
+      "id": "repo-physics-vs-math",
+      "source_kind": "LOCAL_CERTIFIED_REPORT",
+      "citation": "weyl-gravity repository, Physics, geometry, mathematics -- the separation ledger.",
+      "year": 2026,
+      "stable_url": "https://github.com/area9innovation/weyl-gravity/blob/911f9d080f84cfcc6e228c0f0f646118bc2c455f/reverse_physics/reports/PHYSICS-VS-MATH.md",
+      "artifact": {
+        "status": "GIT_BLOB_PINNED",
+        "locator": "reverse_physics/reports/PHYSICS-VS-MATH.md",
+        "sha256": null,
+        "git_blob": "20e1ef3bcf2c996daf05341b6a0bd31d8cc752aa"
+      },
+      "bears_on": ["PHYSICAL_POSTULATES", "CARRIER_GEOMETRY", "TARGET_CLAIMS"],
+      "supported_statements": [
+        "This repository already separates physical postulates, imported geometry, and proved mathematics, and requires independence witnesses and level-specific claims."
+      ],
+      "boundary": "The report explicitly does not yet separate object mathematics from foundational and metalogical assumptions."
+    },
+    {
+      "id": "repo-weakenable-base",
+      "source_kind": "LOCAL_CERTIFIED_REPORT",
+      "citation": "weyl-gravity repository, The weakenable base -- recognised, not invented.",
+      "year": 2026,
+      "stable_url": "https://github.com/area9innovation/weyl-gravity/blob/911f9d080f84cfcc6e228c0f0f646118bc2c455f/reverse_physics/reports/weakenable-base.md",
+      "artifact": {
+        "status": "GIT_BLOB_PINNED",
+        "locator": "reverse_physics/reports/weakenable-base.md",
+        "sha256": null,
+        "git_blob": "65d505ddc3c53661e8af3e6d10739b21e41ee128"
+      },
+      "bears_on": ["SET_EXISTENCE", "PHYSICAL_POSTULATES", "TARGET_CLAIMS"],
+      "supported_statements": [
+        "Carrier construction constraints can be made into a weakenable base, but the repository's existing lattice is structural rather than a logical reverse-mathematics theorem."
+      ],
+      "boundary": "No proof system or logical independence result is supplied by the carrier lattice alone."
+    }
+  ],
+  "unresolved": [
+    "The Carcassi-Aidala paper is currently metadata-pinned only; acquire and hash an authoritative full-text artifact before a source-freeze.",
+    "No source in this seed corpus proves that an empirically stated physical postulate implies full Choice over a weak base.",
+    "The logical and choice strength of the Hardy and Chiribella-D'Ariano-Perinotti reconstruction proofs has not been classified.",
+    "The choice strength of the specific spectral, Green-operator, state-selection, and renormalization theorems used in this repository remains unaudited.",
+    "Finite, constructive, predicative, ZF, ZF+DC, and topos-internal formulations are not interchangeable and require separate formal targets."
+  ]
+}

@@ -257,6 +257,31 @@ python3 foundations/verify_cylinder_wave_strength_ladder.py
 python3 -m unittest foundations.tests.test_cylinder_wave_strength_ladder
 ```
 
+The generated
+[`static matrix explorer`](site/index.html) turns the complete refined surface
+into a browser-based research instrument. It displays all 576 coordinates as
+sixteen coordinated heatmaps, including 124 explicit `NOT_MAPPED` coordinates
+whose boundary forbids interpreting them as literature absence. It also
+provides multi-select filters, evidence-aware search, cell inspection and
+comparison, one-axis neighbors, permalinks, filtered exports, investigation
+briefs, the typed implication graph, the cylinder strength ladder, and the
+resolved evidence catalogue. The bundle is self-contained and can be opened
+directly or served from any static host:
+
+```bash
+python3 foundations/build_matrix_site.py
+python3 foundations/build_matrix_site.py --check
+python3 foundations/check_matrix_site.py
+python3 foundations/verify_matrix_site.py
+python3 -m unittest foundations.tests.test_matrix_site
+python3 -m http.server 8000 --directory foundations/site
+```
+
+The generator fails closed on dangling evidence IDs and records every source
+and output hash in [`site/manifest.json`](site/manifest.json). Browser claims
+are projections of the authoritative JSON artifacts, not a separately edited
+scientific catalogue.
+
 The bounded
 [`low-hanging cell closure audit`](reports/low-hanging-cell-closure-audit.md)
 imports the already-certified local BV cohomology and finite-cutoff dynamics,

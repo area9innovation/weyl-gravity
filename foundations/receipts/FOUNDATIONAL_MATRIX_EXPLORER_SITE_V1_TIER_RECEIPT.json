@@ -1,0 +1,92 @@
+{
+  "schema_version": "science-forge-tier-receipt-v1",
+  "receipt_id": "FOUNDATIONAL_MATRIX_EXPLORER_SITE_V1_TIER_RECEIPT",
+  "created": "2026-08-12",
+  "repository_base_commit": "448435587a0e7fe80e8f746328b427f2e0e42df7",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
+  "scope": "Deterministic self-contained static explorer for all 576 refined foundations coordinates, with evidence-aware search and filters, cell inspection and comparison, exports, implication graph, strength ladder, and provenance catalogue.",
+  "tiers": {
+    "tier_0_compile": {
+      "status": "PASS",
+      "command": "python3 -m py_compile foundations/build_matrix_site.py foundations/check_matrix_site.py foundations/verify_matrix_site.py foundations/tests/test_matrix_site.py",
+      "elapsed_seconds": 0.04
+    },
+    "tier_0_json": {
+      "status": "PASS",
+      "command": "parse every foundations/**/*.json with json.loads",
+      "elapsed_seconds": 0.03,
+      "result": "89 foundations JSON files parsed, including bundled source copies"
+    },
+    "tier_0_diff_check": {
+      "status": "PASS",
+      "command": "git diff --check -- foundations",
+      "elapsed_seconds": 0.02
+    },
+    "tier_1_site": {
+      "status": "PASS",
+      "command": "python3 foundations/verify_matrix_site.py",
+      "elapsed_seconds": 0.12,
+      "result": "Schema, full Cartesian closure, exact authoritative-cell copy, 124-cell fail-closed complement, 51 evidence joins, graph typing, ladder projection, deterministic build, and manifest pins pass."
+    },
+    "tier_1_browser_smoke": {
+      "status": "PASS",
+      "command": "serve foundations/site with python3 -m http.server; render matrix, graph, deep-linked cell, filtered evidence, and ladder views with headless Google Chrome; repeat the ladder smoke over file://",
+      "elapsed_seconds": 6.7,
+      "result": "JavaScript rendered sixteen heatmaps, graph and ladder views, restored hash filters, opened a deep-linked cell inspector, rendered evidence cards, kept the empty comparison tray hidden, and operated directly from the generated local file."
+    },
+    "tier_2_refined_cube": {
+      "status": "PASS",
+      "command": "python3 foundations/verify_refined_intersection_cube.py",
+      "elapsed_seconds": 0.13
+    },
+    "tier_2_cylinder_ladder": {
+      "status": "PASS",
+      "command": "python3 foundations/verify_cylinder_wave_strength_ladder.py",
+      "elapsed_seconds": 0.11
+    },
+    "tier_2_foundations_tests": {
+      "status": "PASS",
+      "command": "python3 -m unittest discover -s foundations/tests -t .",
+      "elapsed_seconds": 1.27,
+      "result": "228/228 tests pass."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No classical/quantum freeze, paper-theorem promotion, shared core-algebra change, release preparation, or full-suite request applies. The complete foundations test suite and direct source certificate chain were run."
+    }
+  },
+  "generation_checks": [
+    {
+      "status": "PASS",
+      "command": "python3 foundations/build_matrix_site.py --check",
+      "result": "Thirty-nine generated artifacts are byte-current, including thirty-one bundled source records."
+    },
+    {
+      "status": "PASS",
+      "command": "python3 foundations/check_matrix_site.py",
+      "result": "Independent digest ce3d52110583af9c85eece5024656d5bae9541386f7a43dba1c756e3ddbc1c6f; 576 cells, 452 emitted, 124 not mapped, 51 evidence records, 12 graph nodes, 10 edges, and 6 ladder levels."
+    }
+  ],
+  "artifact_hashes": {
+    "foundations/build_matrix_site.py": "22d443336ad205977e318a1a41de2f9acf8dca9b179fac43d5bdbad40d858204",
+    "foundations/check_matrix_site.py": "364e5ebae485480316c8e7248ba909b5164bfad85c7cac8c0a354887b52b0068",
+    "foundations/verify_matrix_site.py": "26c1ab33208d10ebf19a03666e3e01215ded59d0d88edfef7dfe414bd3a7aad0",
+    "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V1.json": "c1fc2f4d0b5dc07244b1075a28d4caedc89e6704ecae44e35226c4db1c50e00b",
+    "foundations/reports/matrix-explorer-site.md": "b48e87ca1d9c6dbe80da4f2ad32dfd88917f1007624791853e30a3e0553b3c85",
+    "foundations/schema/foundational-matrix-explorer-site-v1.schema.json": "a2e3310f8b4df8860db21a6031abf62e1fe1c6cd43e2d4cc28120ab13076653f",
+    "foundations/matrix_site_assets/index.html": "0542e9335a26aef2d56cc9eebcff7a504e52ed64346f11024ec1fe68a2790db5",
+    "foundations/matrix_site_assets/styles.css": "0c0e28eba5759ca9d70805afc6401b902ca37e9134b203469398fb560245aaaa",
+    "foundations/matrix_site_assets/app.js": "2854980567673fe1a90bd3d65da51fdc5e797c7bbec01120e4c0ecc629bfd043",
+    "foundations/site/data.json": "539775bd74a8c897b4e3c44b1dd4691cd0b5e577456477c9c9e37fa96c93b1da",
+    "foundations/site/data.js": "27fc1a0e09ec903acefd13f65a675d7408c783423c995b3e655d2eb79783fdbf",
+    "foundations/site/manifest.json": "46e7b64572967a9832274dea3bb8c0d89914df2ae919bd15bfeea09dd314477a"
+  },
+  "unresolved": [
+    "The 124 NOT_MAPPED coordinates have not been assessed; they are not literature-absence findings and may include incoherent products.",
+    "The 112 MIGRATION_UNRESOLVED cells still require child-specific evidence review.",
+    "The site exposes current evidence but does not automate new literature discovery or theorem proving.",
+    "Pair-frontier scores from v0 were not migrated into refined obligations because that would require a new scoring audit.",
+    "The static bundle has been verified locally but was not externally deployed."
+  ],
+  "claim_boundary": "This is a content-addressed navigation artifact, not a literature-completeness certificate, scientific-priority theorem, weakest-base theorem, or new LORENTZIAN-CAUSAL result."
+}
