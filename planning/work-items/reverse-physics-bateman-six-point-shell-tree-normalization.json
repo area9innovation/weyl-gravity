@@ -1,0 +1,19 @@
+{
+  "id": "sf:program/work/reverse-physics-bateman-six-point-shell-tree-normalization",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "reverse-physics",
+    "state": "ACTIVE",
+    "objective": "Separate the BT-Hamiltonian six-point tree multiplier from the incoming generalized-Born detector normalization and compute the resulting finite-time shell coefficient in public conventions.",
+    "depends_on": ["REVERSE_PHYSICS_BT_SIX_POINT_FINITE_TIME_SHELL_COLUMN_V1", "REVERSE_PHYSICS_BT_SIX_POINT_FULL_PHASE_SPACE_BORN_POSITIVITY_V1"],
+    "activates": ["a BT-coupling-normalized local shell coefficient", "an exact missing-object specification for a dimensionless three-particle probability"],
+    "current_gate": "Restore the common Feynman factor for all three six-point tree topology classes, propagate it through the certified history norm and coarea density, and decide whether the public generalized Born rule fixes the remaining incoming normalization.",
+    "stop_condition": "Land an exact certificate fixing the Hamiltonian amplitude and density multipliers, the local phase-weighted coefficient and its mass dimension, while identifying the precise public datum still required for a dimensionless three-to-three transition probability.",
+    "forbid": "no reduced coefficient called a dimensionless probability; no ordinary 3! convention substituted for a generalized-Born trace; no inferred three-particle flux absent a declared incoming projector cell; no Eq. 19, gravity, or LORENTZIAN-CAUSAL promotion",
+    "allowed_paths": ["reverse_physics/", "notes/bateman-turok-embedding.md", "paper/05-interaction-obstructions.tex", "paper/05-interaction-obstructions.pdf", "paper/06-einstein-weyl-interaction-obstructions.tex", "paper/06-einstein-weyl-interaction-obstructions.pdf", "planning/work-items/reverse-physics-bateman-six-point-shell-tree-normalization.json", "planning/events/"],
+    "resource_hint": "Use V3=-2*i*lambda*F3, V4=-4*i*lambda^2*F4 and P=-i/K^4. The V4^2, V3^2*V4 and V3^4 topology factors are respectively +16*i, -16*i and +16*i times lambda^4, matching the reduced recursion signs. Then multiply the reduced density by 256*lambda^8 and audit the dimension of the finite shell coefficient.",
+    "input_commit": "3a0fdb46",
+    "stream": "reverse-physics"
+  }
+}

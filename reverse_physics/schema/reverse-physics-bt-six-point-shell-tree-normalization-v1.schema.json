@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-six-point-shell-tree-normalization-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["certificate", "schema_version", "dependency_tags", "lifecycle_state", "result_kind", "question", "answer", "tree_topology_normalization", "finite_shell_coefficient", "dimensional_and_detector_audit", "effective_strength_split", "public_source_audit", "interpretation", "does_not_establish", "next_gate", "provenance", "verification_commands", "checks", "report", "schema"],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_SIX_POINT_SHELL_TREE_NORMALIZATION_V1"},
+    "schema_version": {"const": "reverse-physics-bt-six-point-shell-tree-normalization-v1"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"type": "string", "minLength": 1000},
+    "tree_topology_normalization": {
+      "type": "object", "additionalProperties": false,
+      "required": ["public_rules", "topology_factors", "reduced_recursion_relative_signs", "common_amplitude_multiplier", "common_density_multiplier", "status"],
+      "properties": {
+        "public_rules": {"const": {"cubic": "V3=-2*i*lambda*F3", "internal_propagator": "P=-i/K^4", "quartic": "V4=-4*i*lambda^2*F4"}},
+        "topology_factors": {"const": {"V3_V3_V3_V3": "+16*i*lambda^4", "V3_V3_V4": "-16*i*lambda^4", "V4_V4": "+16*i*lambda^4"}},
+        "reduced_recursion_relative_signs": {"const": [1, -1, 1]},
+        "common_amplitude_multiplier": {"const": "16*i*lambda^4"},
+        "common_density_multiplier": {"const": "256*lambda^8"},
+        "status": {"const": "FIXED_BY_PUBLIC_BT_FEYNMAN_RULES"}
+      }
+    },
+    "finite_shell_coefficient": {
+      "const": {
+        "BT_finite_time_shell_norm": "288*pi*lambda^8*T/E",
+        "BT_fixed_channel_residue_norm": "288*lambda^8",
+        "fixture_outgoing_shell_density": "3/[320*(2*pi)^5]",
+        "labeled_phase_weighted_coefficient": "27*lambda^8*T/(320*pi^4)",
+        "ordinary_identical_final_preflight": "9*lambda^8*T/(640*pi^4) after division by 3!",
+        "reduced_fixed_channel_residue_norm": "9/8",
+        "status": "BT_COUPLING_NORMALIZED_LOCAL_OUTGOING_SHELL_DENSITY"
+      }
+    },
+    "dimensional_and_detector_audit": {
+      "type": "object", "additionalProperties": false,
+      "required": ["lambda_mass_dimension", "T_over_E_mass_dimension", "outgoing_shell_density_mass_dimension", "phase_weighted_coefficient_mass_dimension", "required_incoming_projector_cell_weight_mass_dimension", "two_particle_public_example", "three_particle_public_status", "consequence"],
+      "properties": {
+        "lambda_mass_dimension": {"const": 0}, "T_over_E_mass_dimension": {"const": -2},
+        "outgoing_shell_density_mass_dimension": {"const": 0}, "phase_weighted_coefficient_mass_dimension": {"const": -2},
+        "required_incoming_projector_cell_weight_mass_dimension": {"const": 2},
+        "two_particle_public_example": {"$ref": "#/$defs/text"},
+        "three_particle_public_status": {"const": "NO_INCOMING_CHARACTERISTIC_CELL_OR_3_TO_3_FLUX_NORMALIZATION_SPECIFIED"},
+        "consequence": {"$ref": "#/$defs/text"}
+      }
+    },
+    "effective_strength_split": {
+      "type": "object", "additionalProperties": false,
+      "required": ["hamiltonian_amplitude_factor", "outgoing_phase_factor_at_fixture", "incoming_and_detector_factor", "dimensionless_local_cell_probability", "status"],
+      "properties": {
+        "hamiltonian_amplitude_factor": {"const": "g_tree=16*lambda^4 up to the topology-independent phase i"},
+        "outgoing_phase_factor_at_fixture": {"const": "rho_out=3/[320*(2*pi)^5] per da*db*du*dv"},
+        "incoming_and_detector_factor": {"$ref": "#/$defs/text"}, "dimensionless_local_cell_probability": {"$ref": "#/$defs/text"},
+        "status": {"const": "HAMILTONIAN_PART_FIXED_INCOMING_PROJECTOR_NORMALIZATION_OPEN"}
+      }
+    },
+    "public_source_audit": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source", "checked", "current_arxiv_version", "relevant_equations", "companion_status", "inference_boundary"],
+      "properties": {
+        "source": {"const": "Bateman--Turok, arXiv:2607.00096v1"}, "checked": {"const": "2026-08-12"},
+        "current_arxiv_version": {"const": "v1 only"},
+        "relevant_equations": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/text"}},
+        "companion_status": {"$ref": "#/$defs/text"}, "inference_boundary": {"$ref": "#/$defs/text"}
+      }
+    },
+    "interpretation": {"const": {"Eq19_all_orders": "NOT_PROVED", "dimensionless_three_to_three_detector_probability": "NOT_COMPUTED", "global_multichannel_probability": "NOT_CONSTRUCTED", "incoming_three_particle_projector_cell": "NOT_SPECIFIED_BY_PUBLIC_SOURCE", "local_labeled_outgoing_shell_coefficient": "COMPUTED", "six_point_tree_coupling_normalization": "COMPUTED"}},
+    "does_not_establish": {"type": "array", "minItems": 10, "items": {"$ref": "#/$defs/text"}},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "provenance": {
+      "type": "object", "additionalProperties": false, "required": ["source_commit", "retrieval_date", "inputs", "method"],
+      "properties": {
+        "source_commit": {"const": "3a0fdb46"}, "retrieval_date": {"const": "2026-08-12"},
+        "inputs": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "object", "additionalProperties": false, "required": ["path", "sha256"], "properties": {"path": {"$ref": "#/$defs/text"}, "sha256": {"$ref": "#/$defs/hash"}}}},
+        "method": {"$ref": "#/$defs/text"}
+      }
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/text"}},
+    "checks": {"type": "object", "additionalProperties": false, "required": ["ok", "passed", "total", "failures", "details"], "properties": {"ok": {"const": true}, "passed": {"const": 19}, "total": {"const": 19}, "failures": {"const": []}, "details": {"type": "object", "minProperties": 19, "maxProperties": 19, "additionalProperties": {"const": true}}}},
+    "report": {"const": "reverse_physics/reports/bt-six-point-shell-tree-normalization.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-six-point-shell-tree-normalization-v1.schema.json"}
+  },
+  "$defs": {"text": {"type": "string", "minLength": 1}, "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+}
