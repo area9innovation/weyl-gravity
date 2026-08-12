@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "result_id", "result_kind", "lifecycle", "dependency_tags", "created", "repository_base_commit", "purpose", "compatibility", "axes", "cell_statuses", "dimensions", "cells", "capability_registry", "provenance", "independent_checker", "claim_flags", "does_not_establish", "human_report"],
+  "properties": {
+    "schema_version": {"const": "foundational-intersection-cube-v1"},
+    "result_id": {"const": "FOUNDATIONAL_INTERSECTION_CUBE_V1"},
+    "result_kind": {"const": "REFINED_FOUNDATIONAL_NAVIGATION_CUBE"},
+    "lifecycle": {"const": "LITERATURE_SCOPED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]},
+    "created": {"type": "string", "format": "date"},
+    "repository_base_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "purpose": {"type": "string", "minLength": 1},
+    "compatibility": {"type": "object", "required": ["v0_result", "v0_unchanged", "foundation_keys_preserved", "carrier_keys_preserved", "one_to_one_obligations", "refinement_map", "migration_rule"]},
+    "axes": {"type": "array", "minItems": 3, "maxItems": 3},
+    "cell_statuses": {"type": "array", "minItems": 5, "maxItems": 5},
+    "dimensions": {"type": "object", "required": ["axis_sizes", "cartesian_total", "migrated_or_overlaid_cells", "qualified_cells", "migration_unresolved_cells", "status_counts", "descendant_counts_by_v0_obligation"]},
+    "cells": {
+      "type": "array",
+      "minItems": 452,
+      "maxItems": 452,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["foundation", "carrier", "obligation", "status", "evidence", "parent_obligation", "migration_relation", "summary", "boundary"],
+        "properties": {
+          "foundation": {"type": "string", "minLength": 1},
+          "carrier": {"type": "string", "minLength": 1},
+          "obligation": {"type": "string", "minLength": 1},
+          "status": {"enum": ["LITERATURE_RESULT", "LOCAL_RESULT", "MIGRATION_UNRESOLVED", "PIECES_ONLY", "PRIORITY_GAP"]},
+          "evidence": {"type": "array", "items": {"type": "string", "minLength": 1}, "uniqueItems": true},
+          "parent_obligation": {"type": "string", "minLength": 1},
+          "migration_relation": {"enum": ["EXACT_ONE_TO_ONE", "CAPABILITY_QUALIFIED", "NO_REGISTERED_DESCENT", "REVIEWED_V1_OVERLAY"]},
+          "summary": {"type": "string", "minLength": 1},
+          "boundary": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "capability_registry": {"type": "object", "required": ["producer_path", "registered_evidence_ids", "digest", "boundary"]},
+    "provenance": {"type": "object", "required": ["inputs"]},
+    "independent_checker": {"type": "object", "required": ["path", "checks", "expected_digest"], "properties": {"expected_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}},
+    "claim_flags": {"type": "object"},
+    "does_not_establish": {"type": "array", "minItems": 10, "items": {"type": "string", "minLength": 1}},
+    "human_report": {"const": "foundations/reports/refined-intersection-cube.md"}
+  }
+}

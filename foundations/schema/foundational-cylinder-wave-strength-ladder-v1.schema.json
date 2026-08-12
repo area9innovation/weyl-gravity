@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "result_id", "result_kind", "lifecycle", "dependency_tags", "created", "repository_base_commit", "question", "answer", "model", "ladder", "typed_relation_graph", "literature_dependencies", "independent_checker", "provenance", "claim_flags", "does_not_establish", "next_gate", "human_report"],
+  "properties": {
+    "schema_version": {"const": "foundational-cylinder-wave-strength-ladder-v1"},
+    "result_id": {"const": "FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V1"},
+    "result_kind": {"const": "FOUNDATIONAL_STRENGTH_LADDER"},
+    "lifecycle": {"const": "SEPARATED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]},
+    "created": {"type": "string", "format": "date"},
+    "repository_base_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "question": {"type": "string", "minLength": 1},
+    "answer": {"type": "string", "minLength": 1},
+    "model": {"type": "object", "required": ["spacetime", "equation", "finite_solution", "exact_scalar_domain", "energy_encoding", "explicit_infinite_datum", "explicit_tail_modulus", "localization_obstruction"]},
+    "ladder": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"type": "object", "required": ["level", "object", "status"]}},
+    "typed_relation_graph": {"type": "object", "required": ["relation_vocabulary", "nodes", "edges"], "properties": {"nodes": {"type": "array", "minItems": 12, "maxItems": 12}, "edges": {"type": "array", "minItems": 10, "maxItems": 10}}},
+    "literature_dependencies": {"type": "array", "minItems": 2, "maxItems": 2},
+    "independent_checker": {"type": "object", "required": ["path", "permitted_runtime_modules", "cutoffs", "tail_regression_range", "checks", "expected_digest"], "properties": {"expected_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}},
+    "provenance": {"type": "object", "required": ["inputs"]},
+    "claim_flags": {"type": "object"},
+    "does_not_establish": {"type": "array", "minItems": 10, "items": {"type": "string", "minLength": 1}},
+    "next_gate": {"type": "string", "minLength": 1},
+    "human_report": {"const": "foundations/reports/cylinder-wave-strength-ladder.md"}
+  }
+}

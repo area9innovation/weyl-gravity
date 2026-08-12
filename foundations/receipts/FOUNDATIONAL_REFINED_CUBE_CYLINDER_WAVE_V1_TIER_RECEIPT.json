@@ -1,0 +1,111 @@
+{
+  "schema_version": "science-forge-tier-receipt-v1",
+  "receipt_id": "FOUNDATIONAL_REFINED_CUBE_CYLINDER_WAVE_V1_TIER_RECEIPT",
+  "created": "2026-08-12",
+  "repository_base_commit": "50b3749e02fe3d86064a40766b0e54f10366b4f4",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
+  "scope": "Backward-compatible refinement of the six-obligation intersection cube into sixteen independently migrated obligations, plus an exact cylinder-wave strength ladder and typed physics-to-mathematics implication graph.",
+  "tiers": {
+    "tier_0_compile": {
+      "status": "PASS",
+      "command": "python3 -m py_compile foundations/check_cylinder_wave_strength_ladder.py foundations/check_refined_intersection_cube.py foundations/refine_intersection_cube.py foundations/verify_cylinder_wave_strength_ladder.py foundations/verify_refined_intersection_cube.py foundations/tests/test_cylinder_wave_strength_ladder.py foundations/tests/test_refined_intersection_cube.py",
+      "elapsed_seconds": 0.07
+    },
+    "tier_0_json": {
+      "status": "PASS",
+      "command": "parse every foundations/**/*.json with json.loads",
+      "elapsed_seconds": 0.04,
+      "result": "66 foundations JSON files parsed"
+    },
+    "tier_0_diff_check": {
+      "status": "PASS",
+      "command": "git diff --check -- foundations",
+      "elapsed_seconds": 0.02
+    },
+    "tier_1_cylinder_ladder": {
+      "status": "PASS",
+      "command": "python3 foundations/verify_cylinder_wave_strength_ladder.py",
+      "elapsed_seconds": 0.14,
+      "result": "Exact finite Laurent-wave dynamics, Galerkin nesting, positive energy, explicit rational energy-tail modulus, antipodal Dirichlet-kernel nonlocality witness, schema, provenance, graph typing, and boundaries pass."
+    },
+    "tier_1_refined_cube": {
+      "status": "PASS",
+      "command": "python3 foundations/verify_refined_intersection_cube.py",
+      "elapsed_seconds": 0.18,
+      "result": "Sixteen-obligation deterministic migration passes: 576 possible coordinates, 452 emitted, 340 qualified, 112 migration-unresolved, and 11 reviewed overlays."
+    },
+    "tier_2_v0_cube": {
+      "status": "PASS",
+      "command": "python3 foundations/verify_intersection_cube.py",
+      "elapsed_seconds": 0.04,
+      "result": "The original 6 x 6 x 6 cube remains valid and unchanged."
+    },
+    "tier_2_expansion": {
+      "status": "PASS",
+      "command": "python3 foundations/verify_intersection_cube_expansion.py",
+      "elapsed_seconds": 0.15
+    },
+    "tier_2_markdown": {
+      "status": "PASS",
+      "command": "python3 foundations/verify_completion_matrix_markdown.py",
+      "elapsed_seconds": 0.05
+    },
+    "tier_2_pair_frontiers": {
+      "status": "PASS",
+      "command": "python3 foundations/verify_pair_frontiers.py",
+      "elapsed_seconds": 0.25
+    },
+    "tier_2_foundations_tests": {
+      "status": "PASS",
+      "command": "python3 -m unittest discover -s foundations/tests -t .",
+      "elapsed_seconds": 1.27,
+      "result": "222/222 tests pass."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No classical/quantum freeze, paper-theorem promotion, shared core-algebra change, release, or full-suite request applies. The affected foundations certificate chain and all foundations unit tests were run."
+    }
+  },
+  "generation_checks": [
+    {
+      "status": "PASS",
+      "command": "python3 foundations/refine_intersection_cube.py --check",
+      "result": "Generated JSON and Markdown are current."
+    },
+    {
+      "status": "PASS",
+      "command": "python3 foundations/check_refined_intersection_cube.py",
+      "result": "Independent coordinate, count, capability-migration, overlay, boundary, and canonical digest checks pass."
+    },
+    {
+      "status": "PASS",
+      "command": "python3 foundations/check_cylinder_wave_strength_ladder.py",
+      "result": "Independent exact-arithmetic fixtures pass with digest 33fcd6ba646e225321c1ed6a6642bacb8c1bac5af304796bda0f91c6b7e66edf."
+    }
+  ],
+  "literature_provenance": {
+    "reviewed_primary_record": "weihrauch-zhong-2002",
+    "record_status": "METADATA_ONLY",
+    "doi": "10.1112/S0024611502013643",
+    "boundary": "The authoritative publication record and article were reviewed, but no stable source bytes were imported. The computability result is used only as a representation-sensitive literature contrast, not as a reverse-mathematical theorem."
+  },
+  "artifact_hashes": {
+    "foundations/results/FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V1.json": "6fb1e264fe2d1b006aafe6b6ce285fcd7b01ffcd080b2b6e70631e46c93b0135",
+    "foundations/reports/cylinder-wave-strength-ladder.md": "340717cea9ac6696216872c1cae3a511964705e76b6fd3d0b413eef4a1674c57",
+    "foundations/schema/foundational-cylinder-wave-strength-ladder-v1.schema.json": "057efb61af87e5c3d6d462bd0191ed70e3b3f5ecce4943fc8b330b4a8a15f68b",
+    "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V1.json": "20c77747866dd79c53be98a90987ad63f83aec765a17fe97be78bd555676a2de",
+    "foundations/reports/refined-intersection-cube.md": "8392be7980862ecaf9fb928ced01b7b0bc67cc2ed715cb303f67b7f7181c0fa5",
+    "foundations/schema/foundational-intersection-cube-v1.schema.json": "8bfca6b1b3536da215aff791be6bdd2b7625f8fdf183604745644f57d8ed1795",
+    "foundations/refine_intersection_cube.py": "9848759c0dba5d13bc2c2760162c1c153adfdd9ca7bb9a890bf6bf48bc1d87dd",
+    "foundations/check_cylinder_wave_strength_ladder.py": "5d2963a71e333448c66b76fa30dcb511f8ca15f7d5eced8d450cf25706137bcc",
+    "foundations/check_refined_intersection_cube.py": "3aa1fd6312a8e25663e25c4675469daa72ae8c9c18fc3cbd97c5fa6d8baccd4b"
+  },
+  "unresolved": [
+    "One hundred twelve refined cells remain migration-unresolved; this means the parent evidence has not been reviewed for that child, not that literature is absent.",
+    "No formal second-order-arithmetic encoding of the energy-space solution has been supplied.",
+    "No RCA_0 sufficiency proof, WKL_0 or ACA_0 lower bound, or reverse-mathematical equivalence has been established.",
+    "No spacetime distribution, advanced/retarded Green operator, or causal-support theorem is constructed by the finite spectral rail.",
+    "No constructive continuum Weyl theory, renormalized product, QME restoration, residual quantum transfer, or controlled continuum limit is established."
+  ],
+  "claim_boundary": "This receipt certifies a navigation refinement and bounded exact reduced-mode witnesses. It establishes no literature completeness, weakest base, new LORENTZIAN-CAUSAL result, quantum lifecycle promotion, or continuum Weyl construction."
+}

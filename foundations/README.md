@@ -228,6 +228,35 @@ python3 foundations/verify_pair_frontiers.py
 python3 -m unittest foundations.tests.test_pair_frontiers
 ```
 
+The
+[`refined intersection cube`](reports/refined-intersection-cube.md) preserves
+the v0 cube and splits its overloaded physical-obligation axis from six labels
+into sixteen independently auditable questions.  The resulting Cartesian
+space has 576 possible coordinates.  Evidence descends into a split child only
+through an explicit capability registration; otherwise the cell is marked
+`MIGRATION_UNRESOLVED`, not silently inherited or called absent:
+
+```bash
+python3 foundations/refine_intersection_cube.py --check
+python3 foundations/check_refined_intersection_cube.py
+python3 foundations/verify_refined_intersection_cube.py
+python3 -m unittest foundations.tests.test_refined_intersection_cube
+```
+
+The first physics-to-mathematics implication rail is the
+[`cylinder-wave strength ladder`](reports/cylinder-wave-strength-ladder.md).
+It certifies exact finite Fourier dynamics and a named rational energy-tail
+modulus, then keeps coded energy solutions, reverse-mathematical strength,
+spacetime distributions, and causal Green operators at distinct levels.  Its
+typed graph also records why finite spectral truncation does not establish
+causal support:
+
+```bash
+python3 foundations/check_cylinder_wave_strength_ladder.py
+python3 foundations/verify_cylinder_wave_strength_ladder.py
+python3 -m unittest foundations.tests.test_cylinder_wave_strength_ladder
+```
+
 The bounded
 [`low-hanging cell closure audit`](reports/low-hanging-cell-closure-audit.md)
 imports the already-certified local BV cohomology and finite-cutoff dynamics,
