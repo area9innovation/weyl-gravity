@@ -1,0 +1,185 @@
+{
+  "absolute_q8_boundary": {
+    "missing_values": [
+      "the complete norm ||X4||^2 on either angle fibre and their cross-angle overlap",
+      "the complete interference 2 Re<X2,X6>, including every order-lambda6 amplitude object and renormalization condition"
+    ],
+    "not_a_contradiction": "an exact relative coefficient can be known while both absolute coefficients remain unknown",
+    "status": "NOT_COMPUTED",
+    "what_is_independent_of_missing_values": "the coherent-minus-recorded q8 coefficient and its nonpositive sign"
+  },
+  "answer": "No. For the selected odd-to-odd tagged block, exact total-Fock parity removes every odd amplitude coefficient. The complete probability-order-lambda8 ledger is therefore ||X4||^2+2 Re<X2,X6>. The operational effect E_epsilon fixes the common leading angle vector X2, so self-adjointness makes 2 Re<X2,E_epsilon X6> exactly equal to the recorded cross for arbitrary complete X6. The entire coherent-minus-recorded q8 coefficient is consequently -(epsilon/2)||X4(c1)-X4(c2)||^2, which is nonpositive and vanishes exactly when epsilon=0 or the two complete X4 outputs agree. This computes the full relative q8 coefficient, not either absolute q8 probability: the complete X4 norm and X2-X6 cross remain unevaluated.",
+  "assumptions": [
+    "the two orthogonal equal-normalization hard angle modes and fixed operational effect E_epsilon are exactly those certified by the q6 predecessor",
+    "the declared input and output packet projectors have total-Fock parity odd and the regulator/counterterms preserve the exact lambda-to-minus-lambda covariance",
+    "X2, X4 and X6 denote the complete selected output coefficients, including every source, detector, loop, counterterm and disconnected term allowed at their respective orders",
+    "E_epsilon is coupling independent, self-adjoint, acts only on the two-angle record factor and is tensored with the identity on every internal positive-output coordinate",
+    "the common fixed-s leading phase is aligned so X2=x2 times (1,1)",
+    "0<epsilon<=1 for the off-diagonal detector family; epsilon=0 is used only to state the recorded-limit equality condition",
+    "the theorem compares coefficients of two declared operational effects and does not derive either effect from a BT apparatus interaction"
+  ],
+  "certificate": "REVERSE_PHYSICS_BT_TWO_ANGLE_Q8_COHERENCE_DIFFERENCE_V1",
+  "checks": {
+    "details": {
+      "Eq19_boundary_is_preserved": true,
+      "absolute_q8_is_not_computed": true,
+      "arbitrary_X2_X6_cross_is_invariant": true,
+      "complete_q6_is_imported": true,
+      "done_event_targets_this_item": true,
+      "five_ordered_q8_pairs_exhausted": true,
+      "fixture_cross_is_detector_independent": true,
+      "fixture_difference_is_minus_seventeen_fifths": true,
+      "fixture_full_q8_values_have_expected_shift": true,
+      "four_predecessors_pass": true,
+      "full_relative_q8_difference_is_variance": true,
+      "gravity_and_Lorentzian_boundaries_are_preserved": true,
+      "inputs_are_content_pinned": true,
+      "leading_vector_is_fixed": true,
+      "odd_order_three_block_imported": true,
+      "odd_selected_blocks_vanish": true,
+      "only_two_hermitian_q8_classes_survive": true,
+      "operational_detector_boundary_is_preserved": true,
+      "parity_covariance_imported": true,
+      "q6_effect_fixes_leading_vector_imported": true,
+      "q8_coherent_ledger_is_cross_plus_norm": true,
+      "q8_recorded_ledger_is_cross_plus_norm": true,
+      "relative_q8_difference_is_nonpositive": true,
+      "relative_q8_equality_condition_is_exact": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 24,
+    "total": 24
+  },
+  "complete_q8_ledger": {
+    "coherent_coefficient": "q8[E_epsilon]=2*Re<X2,E_epsilon X6>+<X4,E_epsilon X4>",
+    "odd_block_rule": "Pout*X_n*Pin=0 for every odd n because Pin and Pout are total-Fock odd and Pi_F X_n Pi_F=(-1)^n X_n",
+    "ordered_coefficient_pairs": [
+      "(2,6)",
+      "(3,5)",
+      "(4,4)",
+      "(5,3)",
+      "(6,2)"
+    ],
+    "recorded_coefficient": "q8[I2]=2*Re<X2,X6>+||X4||^2",
+    "selected_output": "X(lambda)=lambda^2*X2+lambda^4*X4+lambda^6*X6+O(lambda^8)",
+    "status": "EXHAUSTIVE_SELECTED_PROBABILITY_LEDGER_AT_ORDER_LAMBDA8",
+    "surviving_hermitian_classes": [
+      "(2,6)",
+      "(4,4)"
+    ],
+    "vanishing_pairs": [
+      "(3,5)",
+      "(5,3)"
+    ]
+  },
+  "cross_invariance": {
+    "leading_fixed_point": "E_epsilon X2=X2",
+    "scope": "arbitrary complete complex X6 on the same two-angle and internal output carrier",
+    "self_adjoint_step": "<X2,E_epsilon X6>=<E_epsilon X2,X6>=<X2,X6>",
+    "status": "COMPLETE_X2_X6_CROSS_IS_DETECTOR_INDEPENDENT"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL",
+    "REDUCED-MODE"
+  ],
+  "disposition": {
+    "BT_dynamical_detector_selection": "NOT_ESTABLISHED",
+    "Lorentzian_causal_claim": "NOT_ESTABLISHED",
+    "absolute_coherent_q8_probability": "NOT_COMPUTED",
+    "absolute_recorded_q8_probability": "NOT_COMPUTED",
+    "all_order_or_all_time_probability": "NOT_CONSTRUCTED",
+    "complete_q8_object_ledger": "CLASSIFIED",
+    "complete_relative_q8_coefficient": "COEFFICIENT_COMPUTED",
+    "continuum_angle_coherence": "NOT_CONSTRUCTED",
+    "forward_and_backward_endpoints": "NOT_INCLUDED",
+    "general_Eq19": "NOT_PROVED_AND_NOT_USED",
+    "gravity_or_metric_BV_BRST_transfer": "NOT_CONSTRUCTED"
+  },
+  "does_not_establish": [
+    "either absolute order-lambda8 probability coefficient",
+    "the complete numerical or functional X4 norm or X2-X6 cross",
+    "that BT dynamics selects epsilon, the relative angle phase or this apparatus effect",
+    "coherence over a continuum of angles or unequal-normalization cells",
+    "either forward or exchanged-forward endpoint",
+    "real-virtual, survival, collinear or KLN completion",
+    "an all-order probability or all-time Moller, LSZ or S operator",
+    "the standard scalar projector or general Bateman--Turok Eq. (19)",
+    "gravity or metric BV--BRST transfer",
+    "a restored gravitational quantum master equation or residual transfer",
+    "anything LORENTZIAN-CAUSAL",
+    "literature priority"
+  ],
+  "exact_fixture": {
+    "X2": "(2/3-i/5)*(1,1)",
+    "X4": [
+      "1+2*i",
+      "-3+i"
+    ],
+    "X6": [
+      "7/4-2*i/3",
+      "-5/6+9*i/7"
+    ],
+    "coherent_X2_X6_cross": "307/315",
+    "coherent_q8": "3961/315",
+    "difference": "-17/5",
+    "epsilon": "2/5",
+    "recorded_X2_X6_cross": "307/315",
+    "recorded_q8": "5032/315",
+    "status": "EXACT_COMPLEX_SEPARATING_FIXTURE"
+  },
+  "lifecycle_state": "COEFFICIENT_COMPUTED",
+  "next_gate": "Compute the two missing absolute q8 values on the same carrier: the complete X4 Gram data and the complete X2-X6 interference. The relative coherence question is closed at q8, so a physical detector successor must instead derive epsilon and the relative phase from an explicit apparatus interaction, while the independent Eq. (19) route still requires the missing zero-mode representation and generalized Born trace.",
+  "provenance": {
+    "generated_by": "reverse_physics/bt_two_angle_q8_coherence_difference.py",
+    "independent_verifier": "reverse_physics/verify_bt_two_angle_q8_coherence_difference.py",
+    "inputs": [
+      {
+        "path": "planning/work-items/reverse-physics-bateman-two-angle-q8-coherence-difference.json",
+        "sha256": "5cd2d1084b61b30d666478219825d9f4ab074ab709d2214fd252572427773663"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_TWO_ANGLE_COHERENT_Q6_DETECTOR_V1.json",
+        "sha256": "b06a7ea92b4794bed66523888a0efc9e0cceed03f89927f1ce4638966b100b82"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_TAGGED_PACKET_LAMBDA5_PARITY_SELECTION_V1.json",
+        "sha256": "2b777594fdd107f081df5c6b10f9fa0650510d1998419225c67a02d77faba87b"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_TAGGED_PACKET_LAMBDA6_OBJECT_LEDGER_V1.json",
+        "sha256": "77694bcf570499c9dd8ffa65788cd1c7f1a3cdfdbfa34aad8b5b52cc31ae29d2"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_COMPLETE_TAGGED_Q6_PHYSICAL_PROBABILITY_V1.json",
+        "sha256": "c322615c4bd6e5a9b0aa63fd5e62da9d8f3771da2f222ac4d13a986f90abbdd7"
+      },
+      {
+        "path": "planning/events/reverse-physics-bateman-two-angle-q8-coherence-difference-DONE-6c11450e.json",
+        "sha256": "184d18c0758a5c5f86561671819cf2d1af35faec84f666b17443d096383f26f2"
+      }
+    ],
+    "method": "Exact SymPy coefficient-pair enumeration and arbitrary complex two-angle projector algebra. The independent rail uses Fraction arithmetic, direct polynomial convolution and finite separating complex fixtures. No floating-point arithmetic is used.",
+    "retrieval_date": "2026-08-12",
+    "source_commit": "6c11450e1411f5d61b27422ed290d6d894d24491"
+  },
+  "question": "Does the unknown complete order-lambda6 BT output obstruct computing the entire coherent-minus-recorded probability coefficient at order lambda8 on the certified two-angle carrier?",
+  "relative_q8_coefficient": {
+    "equality": "epsilon=0 or X4(c1)=X4(c2)",
+    "formula": "q8[E_epsilon]-q8[I2]=-(epsilon/2)*||X4(c1)-X4(c2)||^2",
+    "meaning": "the off-diagonal detector removes exactly epsilon times the antisymmetric-angle norm of the complete X4 output",
+    "pure_coherent_endpoint": "q8[P_plus]-q8[I2]=-||X4(c1)-X4(c2)||^2/2",
+    "sign": "NONPOSITIVE",
+    "status": "COMPLETE_RELATIVE_Q8_COEFFICIENT_COMPUTED"
+  },
+  "report": "reverse_physics/reports/bt-two-angle-q8-coherence-difference.md",
+  "result_kind": "complete relative order-lambda8 coefficient between coherent and recorded two-angle BT detector effects",
+  "schema": "reverse_physics/schema/reverse-physics-bt-two-angle-q8-coherence-difference-v1.schema.json",
+  "schema_version": 1,
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_two_angle_q8_coherence_difference.py --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_two_angle_q8_coherence_difference.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_two_angle_q8_coherence_difference"
+  ]
+}

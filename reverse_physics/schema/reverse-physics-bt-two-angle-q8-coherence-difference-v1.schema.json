@@ -1,0 +1,144 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-two-angle-q8-coherence-difference-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "schema_version", "certificate", "question", "answer",
+    "result_kind", "lifecycle_state", "dependency_tags", "assumptions",
+    "provenance", "complete_q8_ledger", "cross_invariance",
+    "relative_q8_coefficient", "exact_fixture", "absolute_q8_boundary",
+    "disposition", "does_not_establish", "next_gate", "checks",
+    "verification_commands", "report"
+  ],
+  "properties": {
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-two-angle-q8-coherence-difference-v1.schema.json"},
+    "schema_version": {"const": 1},
+    "certificate": {"const": "REVERSE_PHYSICS_BT_TWO_ANGLE_Q8_COHERENCE_DIFFERENCE_V1"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE"]},
+    "assumptions": {
+      "type": "array", "minItems": 7, "maxItems": 7,
+      "items": {"$ref": "#/$defs/text"}
+    },
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_commit", "retrieval_date", "inputs", "generated_by", "independent_verifier", "method"],
+      "properties": {
+        "source_commit": {"const": "6c11450e1411f5d61b27422ed290d6d894d24491"},
+        "retrieval_date": {"const": "2026-08-12"},
+        "inputs": {
+          "type": "array", "minItems": 6, "maxItems": 6,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["path", "sha256"],
+            "properties": {
+              "path": {"$ref": "#/$defs/text"},
+              "sha256": {"$ref": "#/$defs/hash"}
+            }
+          }
+        },
+        "generated_by": {"const": "reverse_physics/bt_two_angle_q8_coherence_difference.py"},
+        "independent_verifier": {"const": "reverse_physics/verify_bt_two_angle_q8_coherence_difference.py"},
+        "method": {"$ref": "#/$defs/text"}
+      }
+    },
+    "complete_q8_ledger": {
+      "type": "object", "additionalProperties": false,
+      "required": ["selected_output", "odd_block_rule", "ordered_coefficient_pairs", "vanishing_pairs", "surviving_hermitian_classes", "recorded_coefficient", "coherent_coefficient", "status"],
+      "properties": {
+        "selected_output": {"const": "X(lambda)=lambda^2*X2+lambda^4*X4+lambda^6*X6+O(lambda^8)"},
+        "odd_block_rule": {"$ref": "#/$defs/text"},
+        "ordered_coefficient_pairs": {"const": ["(2,6)", "(3,5)", "(4,4)", "(5,3)", "(6,2)"]},
+        "vanishing_pairs": {"const": ["(3,5)", "(5,3)"]},
+        "surviving_hermitian_classes": {"const": ["(2,6)", "(4,4)"]},
+        "recorded_coefficient": {"const": "q8[I2]=2*Re<X2,X6>+||X4||^2"},
+        "coherent_coefficient": {"const": "q8[E_epsilon]=2*Re<X2,E_epsilon X6>+<X4,E_epsilon X4>"},
+        "status": {"const": "EXHAUSTIVE_SELECTED_PROBABILITY_LEDGER_AT_ORDER_LAMBDA8"}
+      }
+    },
+    "cross_invariance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["leading_fixed_point", "self_adjoint_step", "scope", "status"],
+      "properties": {
+        "leading_fixed_point": {"const": "E_epsilon X2=X2"},
+        "self_adjoint_step": {"const": "<X2,E_epsilon X6>=<E_epsilon X2,X6>=<X2,X6>"},
+        "scope": {"$ref": "#/$defs/text"},
+        "status": {"const": "COMPLETE_X2_X6_CROSS_IS_DETECTOR_INDEPENDENT"}
+      }
+    },
+    "relative_q8_coefficient": {
+      "type": "object", "additionalProperties": false,
+      "required": ["formula", "sign", "equality", "pure_coherent_endpoint", "meaning", "status"],
+      "properties": {
+        "formula": {"const": "q8[E_epsilon]-q8[I2]=-(epsilon/2)*||X4(c1)-X4(c2)||^2"},
+        "sign": {"const": "NONPOSITIVE"},
+        "equality": {"const": "epsilon=0 or X4(c1)=X4(c2)"},
+        "pure_coherent_endpoint": {"const": "q8[P_plus]-q8[I2]=-||X4(c1)-X4(c2)||^2/2"},
+        "meaning": {"$ref": "#/$defs/text"},
+        "status": {"const": "COMPLETE_RELATIVE_Q8_COEFFICIENT_COMPUTED"}
+      }
+    },
+    "exact_fixture": {
+      "type": "object", "additionalProperties": false,
+      "required": ["epsilon", "X2", "X4", "X6", "recorded_X2_X6_cross", "coherent_X2_X6_cross", "recorded_q8", "coherent_q8", "difference", "status"],
+      "properties": {
+        "epsilon": {"const": "2/5"},
+        "X2": {"const": "(2/3-i/5)*(1,1)"},
+        "X4": {"const": ["1+2*i", "-3+i"]},
+        "X6": {"const": ["7/4-2*i/3", "-5/6+9*i/7"]},
+        "recorded_X2_X6_cross": {"$ref": "#/$defs/text"},
+        "coherent_X2_X6_cross": {"$ref": "#/$defs/text"},
+        "recorded_q8": {"$ref": "#/$defs/text"},
+        "coherent_q8": {"$ref": "#/$defs/text"},
+        "difference": {"const": "-17/5"},
+        "status": {"const": "EXACT_COMPLEX_SEPARATING_FIXTURE"}
+      }
+    },
+    "absolute_q8_boundary": {
+      "type": "object", "additionalProperties": false,
+      "required": ["status", "missing_values", "what_is_independent_of_missing_values", "not_a_contradiction"],
+      "properties": {
+        "status": {"const": "NOT_COMPUTED"},
+        "missing_values": {
+          "type": "array", "minItems": 2, "maxItems": 2,
+          "items": {"$ref": "#/$defs/text"}
+        },
+        "what_is_independent_of_missing_values": {"$ref": "#/$defs/text"},
+        "not_a_contradiction": {"$ref": "#/$defs/text"}
+      }
+    },
+    "disposition": {
+      "type": "object", "minProperties": 11, "maxProperties": 11,
+      "additionalProperties": {"$ref": "#/$defs/text"}
+    },
+    "does_not_establish": {
+      "type": "array", "minItems": 12, "maxItems": 12,
+      "items": {"$ref": "#/$defs/text"}
+    },
+    "next_gate": {"$ref": "#/$defs/text"},
+    "checks": {
+      "type": "object", "additionalProperties": false,
+      "required": ["total", "passed", "ok", "failures", "details"],
+      "properties": {
+        "total": {"type": "integer", "minimum": 24},
+        "passed": {"type": "integer", "minimum": 24},
+        "ok": {"const": true},
+        "failures": {"const": []},
+        "details": {"type": "object", "minProperties": 24, "additionalProperties": {"const": true}}
+      }
+    },
+    "verification_commands": {
+      "type": "array", "minItems": 3, "maxItems": 3,
+      "items": {"$ref": "#/$defs/text"}
+    },
+    "report": {"const": "reverse_physics/reports/bt-two-angle-q8-coherence-difference.md"}
+  },
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

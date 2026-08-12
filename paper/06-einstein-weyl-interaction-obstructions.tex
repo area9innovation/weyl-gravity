@@ -237,8 +237,11 @@ On two orthogonal equal-normalization hard modes, the positive off-diagonal
 effect $E_\epsilon=P_++(1-\epsilon)P_-$ fixes the common leading scalar
 amplitude.  Recorded and coherent probabilities therefore agree through
 $\lambda^6$; their first known difference is the order-$\lambda^8$ term
-$-\epsilon\|Y_4(c_1)-Y_4(c_2)\|^2/2$.  The full $q_8$ coefficient and
-dynamical detector selection remain open, and no part transfers to gravity.
+$-\epsilon\|Y_4(c_1)-Y_4(c_2)\|^2/2$.  The exhaustive order-eight ledger
+shows this is the complete coherent-minus-recorded coefficient, because the
+unknown leading--sixth-order cross is identical for both effects.  The two
+absolute $q_8$ coefficients and dynamical detector selection remain open,
+and no part transfers to gravity.
 \end{abstract}
 
 \section*{AI authorship and computational accountability}
@@ -3093,8 +3096,25 @@ therefore gives
 \]
 for every $0<\epsilon\leq1$.  At $\epsilon=1$ the click is the pure
 symmetric angle mode.  The first known detector-sensitive term is
-$-\epsilon\|Y_4(c_1)-Y_4(c_2)\|^2/2$ at order $\lambda^8$, whose complete
-ledger is not computed.  This is an operational
+$-\epsilon\|Y_4(c_1)-Y_4(c_2)\|^2/2$ at order $\lambda^8$.
+Exact total-Fock parity leaves only the $X_4$ norm and $X_2$--$X_6$ cross in
+the complete order-eight ledger.  Since $E_\epsilon X_2=X_2$,
+self-adjointness gives
+\[
+ \langle X_2,E_\epsilon X_6\rangle=\langle X_2,X_6\rangle
+\]
+for arbitrary complete $X_6$.  Certificate
+\par\noindent
+\texttt{REVERSE\_PHYSICS\_BT\_TWO\_ANGLE\_Q8\_COHERENCE\_}
+\allowbreak\texttt{DIFFERENCE\_V1}
+\par\noindent
+therefore proves that the entire relative coefficient is
+\[
+ q_8[E_\epsilon]-q_8[I_2]
+ =-{\epsilon\over2}\|X_4(c_1)-X_4(c_2)\|^2\leq0.
+\]
+Neither absolute $q_8$ coefficient is computed: both the complete $X_4$
+Gram data and the common $X_2$--$X_6$ interference remain open.  This is an operational
 \texttt{LOCAL-ALGEBRAIC}, \texttt{REDUCED-MODE} scalar effect, not a detector
 selected by BT dynamics and not a gravitational result.
 There is nevertheless a genuine scalar hard-scattering baseline.  The

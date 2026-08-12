@@ -256,8 +256,11 @@ $q_6$ coefficient and uniform small-coupling positivity.  The angle remains
 a classical record at this fibrewise stage.  For two orthogonal equal-weight
 hard modes, an off-diagonal positive detector erases that record without
 changing $q_4$ or $q_6$; its first known difference is an order-$\lambda^8$
-angle variance.  Continuum coherence, dynamical detector selection and both
-forward endpoints remain open.
+angle variance.  Exhausting the order-$\lambda^8$ ledger shows that this is
+the complete coherent-minus-recorded coefficient: the unknown higher cross
+is common to both effects.  The two absolute $q_8$ coefficients, continuum
+coherence, dynamical detector selection and both forward endpoints remain
+open.
 Independently, the projected three-channel hard loop logarithm closes the
 Callan--Symanzik equation exactly with the Born rate and one-loop beta
 function.  This yields the positive leading-log nonforward prediction
@@ -3800,10 +3803,38 @@ Certificate
 \allowbreak\texttt{Q6\_DETECTOR\_V1}
 \par\noindent
 therefore closes the two-mode operational coherence gate through
-$\lambda^6$ and localizes the first known distinction at $\lambda^8$.  It
-does not compute the full $q_8$ ledger, continuum-angle coherence, or an
-apparatus coupling that dynamically selects $\epsilon$ and the relative
-phase.  It supplies no endpoint, all-order or Eq.~(19) completion.
+$\lambda^6$ and localizes the first distinction at $\lambda^8$.
+
+The displayed variance is in fact the complete \emph{relative} $q_8$
+coefficient.  Exact total-Fock parity removes the odd selected blocks, so the
+exhaustive order-eight ledger is
+\[
+ q_8[I_2]=2\operatorname{Re}\langle X_2,X_6\rangle+\|X_4\|^2,
+ \qquad
+ q_8[E_\epsilon]=2\operatorname{Re}\langle X_2,E_\epsilon X_6\rangle
+ +\langle X_4,E_\epsilon X_4\rangle.
+\]
+Although $X_6$ is unknown, its cross cannot change the comparison:
+\[
+ \langle X_2,E_\epsilon X_6\rangle
+ =\langle E_\epsilon X_2,X_6\rangle
+ =\langle X_2,X_6\rangle.
+\]
+Thus
+\[
+ \boxed{q_8[E_\epsilon]-q_8[I_2]
+ =-{\epsilon\over2}\|X_4(c_1)-X_4(c_2)\|^2\leq0.}
+\]
+Certificate
+\par\noindent
+\texttt{REVERSE\_PHYSICS\_BT\_TWO\_ANGLE\_Q8\_COHERENCE\_}
+\allowbreak\texttt{DIFFERENCE\_V1}
+\par\noindent
+computes this full difference, not either absolute $q_8$ coefficient.  The
+complete $X_4$ Gram data and $X_2$--$X_6$ interference, continuum-angle
+coherence, and an apparatus coupling that dynamically selects $\epsilon$ and
+the relative phase remain open.  No endpoint, all-order or Eq.~(19)
+completion follows.
 
 The auxiliary preparation nevertheless has an exact scalar preimage on the
 finite covariant detector ideal.  Put
