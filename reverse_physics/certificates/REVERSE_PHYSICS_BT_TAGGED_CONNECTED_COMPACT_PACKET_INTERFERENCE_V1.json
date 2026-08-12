@@ -1,0 +1,234 @@
+{
+  "answer": "The single-mode limit changes the state. Smearing the positive ghost-even spectator with normalized compact packets f and g gives identity overlap c_fg=<g,f> and the connected functional C_fg=<g,W_kappa,T f>, where W_kappa,T is the active-contracted ten-channel finite-time kernel. The exact relative tree cross is (2*sqrt(2)*lambda^2/3)*Re[conj(c_fg)*C_fg]. On a compact hard tagged tube with every oriented denominator D_A>=d0, the incidence weights give |W_kappa,T(k,p)|<=54*T/d0, so the packet operator is Hilbert--Schmidt and the cross is finite. Its diagonal at the certified fixture is the strictly positive W_kappa(T); continuity therefore supplies a nonnegative normalized compact packet with strictly positive tree cross for every fixed T>0. In an equal-cell box discretization, a cell has dnu-measure h and the normalized packet matrix element is (h/N)*sum_ij W_ij. A single mode gives h*W=W/N_s, reproducing the finite-box theorem. A fixed packet of measure mu=N*h instead gives mu*W for a constant kernel and converges to the double packet integral for a continuous kernel. Hence its continuum limit is generally finite and nonzero: O(V) coherent modes compensate the 1/V matrix element. This constructs the box-independent tree-cross functional, not the complete order-lambda6 probability; active loop, source dressing, survival/virtual and forward-collinear completion remain open.",
+  "assumptions": [
+    "the public BT one-particle measure dnu=d^3p/(2E_p) and off-diagonal cross CCR are used without an unrecorded two-pi conversion",
+    "incoming and outgoing normalized spectator packets lie on one compact hard tagged tube and the same active preparation/detector contraction used by the certified tagged fixture",
+    "the ten oriented channel denominators obey D_A>=d0>0 on packet support; resonances occur through delta_A=0 and are regular at finite T",
+    "the active external-mass projector, label orbit, angular acceptance and beam factor are common to the leading tagged and connected terms",
+    "the equal-cell discretization refines a fixed physical packet support when N grows with V; holding N=1 instead defines a different momentum-sharpening family",
+    "T is fixed and finite for the compactness, continuity and positivity-neighborhood statement"
+  ],
+  "box_to_packet_limit": {
+    "connected_matrix": "B_ij=h*W_ij",
+    "constant_kernel_fixture": [
+      {
+        "cell_measure": "3/13",
+        "cells": 1,
+        "kernel_value": "7/11",
+        "matrix_element": "21/143",
+        "packet_measure": "3/13"
+      },
+      {
+        "cell_measure": "3/26",
+        "cells": 2,
+        "kernel_value": "7/11",
+        "matrix_element": "21/143",
+        "packet_measure": "3/13"
+      },
+      {
+        "cell_measure": "3/65",
+        "cells": 5,
+        "kernel_value": "7/11",
+        "matrix_element": "21/143",
+        "packet_measure": "3/13"
+      },
+      {
+        "cell_measure": "3/143",
+        "cells": 11,
+        "kernel_value": "7/11",
+        "matrix_element": "21/143",
+        "packet_measure": "3/13"
+      }
+    ],
+    "continuous_kernel_limit": "as the cell mesh tends to zero at fixed support, the equal-cell sum converges to mu^(-1)*double_integral_(SxS)W(k,p)dnu(k)dnu(p)",
+    "fixed_packet_constant_kernel": "h=mu/N gives <f_N,B*f_N>=mu*W for every N",
+    "matrix_element": "<f_N,B*f_N>=(h/N)*sum_(i,j)W_ij",
+    "mode_counting": "at fixed physical packet support N is proportional to V; its coherent double sum compensates the single-mode 1/V factor",
+    "nonconstant_fixture": {
+      "cell_measure": "1/17",
+      "diagonal_only_wrong_value": "47/510",
+      "matrix_element": "36887/282744"
+    },
+    "normalized_cell_basis": "e_i=1_Ci/sqrt(h) for equal dnu-cell measure h",
+    "single_mode": "N=1 gives h*W; with h=1/(2*E_s*V)=1/N_s this is W/N_s",
+    "smooth_packet_extension": "bounded compact kernels are Hilbert--Schmidt, so L2 smooth approximants converge in the packet functional",
+    "status": "FIXED_PACKET_CONTINUUM_LIMIT_FINITE_AND_SINGLE_MODE_LIMIT_CLASSIFIED",
+    "uniform_packet": "f_N=N^(-1/2)*sum_i e_i with total packet measure mu=N*h"
+  },
+  "certificate": "REVERSE_PHYSICS_BT_TAGGED_CONNECTED_COMPACT_PACKET_INTERFERENCE_V1",
+  "checks": {
+    "details": {
+      "Eq19_gravity_and_Lorentzian_boundaries_remain_open": true,
+      "all_constant_kernel_refinements_preserve_mu_W": true,
+      "compact_Hamiltonian_kernel_is_Hilbert_Schmidt": true,
+      "compact_kernel_bound_is_54T_over_d0": true,
+      "compact_packet_q6_prefactor_is_25_over_1024": true,
+      "compact_positive_packet_norm_is_imported": true,
+      "complete_lambda6_is_not_promoted": true,
+      "finite_box_cell_measure_is_inverse_mode_norm": true,
+      "fixed_packet_limit_is_not_single_mode_limit": true,
+      "four_resonant_masks_are_rebuilt": true,
+      "global_connected_packet_operator_is_bounded": true,
+      "incidence_weights_are_five_and_six": true,
+      "inputs_are_content_pinned": true,
+      "leading_tagged_prefactor_is_75_over_2048": true,
+      "nonconstant_double_sum_is_exact": true,
+      "off_diagonal_terms_are_not_discarded": true,
+      "packet_functional_bound_is_exact": true,
+      "point_kernel_is_strictly_positive_for_positive_time": true,
+      "predecessors_pass": true,
+      "public_packet_cross_CCR_is_imported": true,
+      "refinement_cell_measure_tends_down": true,
+      "refinement_packet_measure_stays_fixed": true,
+      "relative_cross_functional_has_exact_prefactor": true,
+      "single_box_mode_prefactor_is_125_over_12288": true,
+      "single_cell_formula_is_h_times_W": true,
+      "six_tag_odd_masks_are_rebuilt": true,
+      "smooth_approximation_uses_bounded_compact_kernel": true,
+      "tagged_identity_overlap_is_imported": true,
+      "total_absolute_incidence_weight_is_54": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 29,
+    "total": 29
+  },
+  "compact_packet_carrier": {
+    "identity_overlap": "c_fg=<u(g),I*u(f)>_K=<g,f>_L2(dnu)",
+    "normalization": "<u(f),u(f)>_K=||f||_L2(dnu)^2=1",
+    "one_particle_measure": "dnu(p)=d^3p/(2*E_p) in the public BT convention",
+    "positive_packet": "u(f)=(|Omega,f>+|Upsilon,f>)/sqrt(2)",
+    "same_packet_overlap": "c_ff=1",
+    "status": "COMMON_NORMALIZED_COMPACT_SPECTATOR_PACKET_CONSTRUCTED",
+    "support": "normalized compact packets on one hard tagged tube, separated from soft, collinear and competing component-delta supports"
+  },
+  "compact_tree_cross_functional": {
+    "compact_denominator_hypothesis": "D_A>=d0>0 on the declared packet support",
+    "fixture_diagonal": "W_kappa,T(p_star,p_star)=W_kappa(T)=w(kappa*T)/kappa^2>0 for T>0",
+    "fixture_probability": "q_cross^(6)[f,f]=25*sqrt(2)*lambda^6*DeltaOmega*Re(C_ff)/(1024*pi^2*kappa^2*Area)",
+    "functional": "C_fg=<g,W_kappa,T f>=double_integral conj(g(k))*W_kappa,T(k,p)*f(p)dnu(k)dnu(p)",
+    "functional_bound": "|C_fg|<=54*T*sqrt(mu_in*mu_out)/d0 for normalized packets",
+    "incidence_weight_sum": 54,
+    "kernel": "W_kappa,T(k,p)=Re[5*sum_(A in R) beta_A,T(k,p)+6*sum_(A in N) beta_A,T(k,p)] after the common active packet contraction",
+    "mask_sets": {
+      "N": [
+        11,
+        13,
+        25,
+        22
+      ],
+      "R": [
+        7,
+        19,
+        21,
+        14,
+        26,
+        28
+      ]
+    },
+    "operator": "(W_kappa,T f)(k)=integral W_kappa,T(k,p)f(p)dnu(p)",
+    "pointwise_bound": "|W_kappa,T(k,p)|<=54*T/d0",
+    "relative_tree_cross": "q_cross^(6)[g,f]/q_tag^(4)=(2*sqrt(2)*lambda^2/3)*Re[conj(c_fg)*C_fg]",
+    "status": "BOX_INDEPENDENT_COMPACT_PACKET_TREE_CROSS_FUNCTIONAL_COMPUTED",
+    "time_kernel": "beta_A,T=F_T(delta_A)/D_A, F_T(delta)=integral_0^T exp(i*delta*t)dt"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "a packet-independent numerical value for the compact tree cross",
+    "a canonical packet shape, detector resolution, duration or acceptance",
+    "the complete order-lambda6 tagged probability",
+    "the active four-point one-loop interference",
+    "the order-lambda dressed-source contribution or the potentially earlier order-lambda5 probability term",
+    "the matching virtual or survival contribution required by pseudo-unitarity",
+    "forward, collinear or real-virtual/KLN completion",
+    "an all-time Moller, LSZ or S operator",
+    "uniform control of the secular limit T to infinity",
+    "the standard scalar projector or general Eq. (19)",
+    "gravity or metric BV/BRST transfer",
+    "anything LORENTZIAN-CAUSAL",
+    "literature priority"
+  ],
+  "lifecycle_state": "COEFFICIENT_COMPUTED",
+  "missing_object_ledger": [
+    {
+      "object": "complete tagged probability through order lambda6",
+      "required_value": "assemble this packet tree cross with active loop, source dressing, detector/survival and normalization terms on the same packet carrier",
+      "status": "MISSING"
+    },
+    {
+      "object": "order-lambda dressed source on the tagged packet",
+      "required_value": "derive the full oscillatory and endpoint-completed R_t action rather than fitting or omitting the possible lambda5 probability term",
+      "status": "MISSING"
+    },
+    {
+      "object": "forward-collinear inclusive completion",
+      "required_value": "place real, virtual, survival and degenerate sectors on one regulated packet domain and prove regulator cancellation",
+      "status": "MISSING"
+    },
+    {
+      "object": "gravity transfer",
+      "required_value": "construct the corresponding metric BV/BRST physical carrier, detector and restored quantum master equation before any residual transfer",
+      "status": "MISSING"
+    }
+  ],
+  "next_gate": "Audit the tagged packet probability by perturbative order before computing another coefficient. The first unresolved term is the possible order-lambda correction to the dressed source, which can interfere with the order-lambda2 tagged amplitude at probability order lambda5. Either prove that term vanishes on the ghost-even tagged packet from the dynamically derived R_t kernel, or compute it together with its endpoint/oscillatory completion. Only after disposing of lambda5 should the active one-loop, this lambda6 tree cross, and survival terms be assembled as the complete physical lambda6 probability. General Eq. (19), gravity and Lorentzian transfer remain later gates.",
+  "physical_interpretation": {
+    "Lorentzian_causal_claim": "NOT_ESTABLISHED",
+    "active_loop_source_survival_completion": "NOT_CONSTRUCTED",
+    "compact_packet_tree_cross": "COEFFICIENT_COMPUTED_AS_FUNCTIONAL",
+    "complete_order_lambda6_probability": "NOT_COMPUTED",
+    "fixed_compact_packet_box_refinement": "FINITE_AND_GENERALLY_NONZERO",
+    "general_Eq19": "NOT_PROVED",
+    "gravity_or_BV_BRST_transfer": "NOT_CONSTRUCTED",
+    "single_box_mode_fixed_T_V_to_infinity": "ZERO_BUT_STATE_BECOMES_MOMENTUM_SHARP",
+    "strictly_positive_local_packet_exists_for_each_fixed_T_gt_0": "YES_BY_CONTINUITY_OF_THE_FINITE_TIME_KERNEL"
+  },
+  "provenance": {
+    "inputs": [
+      {
+        "path": "planning/work-items/reverse-physics-bateman-tagged-connected-compact-packet-interference.json",
+        "sha256": "363a127018b27c79dfc6e7228356a4fb72e2be5298e40a00b46eb7856dfc9d72"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_TAGGED_CONNECTED_FINITE_VOLUME_NORMALIZATION_V1.json",
+        "sha256": "efdbc5f064fe1c299ff9359cbc94102c4d09bead63b01e0d071e8ca0712b487c"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_TAGGED_CONNECTED_FINITE_TIME_INTERFERENCE_V1.json",
+        "sha256": "66a06e1935e4fb9b396005011255631f73acf2de0ff1dbc6ec940b33e4e576cc"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_TAGGED_SPECTATOR_PHYSICAL_PACKET_PROBABILITY_V1.json",
+        "sha256": "f1742448de34c8cc462c9a3a096bd3c1cd1241d7506b8abc1e687d751bff9779"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_SCALAR_DRESSED_SOURCE_COMPACT_WAVEPACKET_V1.json",
+        "sha256": "99d728aa4870389c6ee87cd96a9653c55e6b1ccf9e52c55633bb633292920bee"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_GLOBAL_CONNECTED_FINITE_TIME_PACKET_COLUMN_V1.json",
+        "sha256": "857339d09000f45af1875501f519cf8f6800efc7941e0ba12b779b984235801c"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_COMPACT_WAVEPACKET_HAMILTONIAN_PROBABILITY_V1.json",
+        "sha256": "d22bfee2112d1b9f4ca0fe91aa8dc5286170d93ba47f7aeceb69f9df86bbdc37"
+      }
+    ],
+    "method": "Exact incidence algebra and rational equal-cell discretization, combined with analytic Cauchy--Schwarz, Hilbert--Schmidt, continuity and Riemann-sum arguments on the certified compact hard packet carrier. No floating-point arithmetic is used.",
+    "retrieval_date": "2026-08-12",
+    "source_commit": "e60edd43"
+  },
+  "question": "Does the single-mode 1/V suppression make the tagged/connected resonant tree cross term vanish for a fixed physical compact packet, or is that limit changing the state?",
+  "report": "reverse_physics/reports/bt-tagged-connected-compact-packet-interference.md",
+  "result_kind": "exact normalized compact-wave-packet functional and box-refinement theorem for the tagged/connected finite-time BT tree interference",
+  "schema": "reverse_physics/schema/reverse-physics-bt-tagged-connected-compact-packet-interference-v1.schema.json",
+  "schema_version": "reverse-physics-bt-tagged-connected-compact-packet-interference-v1",
+  "verification_commands": [
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/bt_tagged_connected_compact_packet_interference.py --write --check",
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/verify_bt_tagged_connected_compact_packet_interference.py",
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 -m unittest -v reverse_physics.tests.test_bt_tagged_connected_compact_packet_interference"
+  ]
+}

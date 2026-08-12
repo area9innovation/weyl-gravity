@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-tagged-connected-compact-packet-interference-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["certificate", "schema_version", "dependency_tags", "lifecycle_state", "result_kind", "question", "answer", "compact_packet_carrier", "compact_tree_cross_functional", "box_to_packet_limit", "physical_interpretation", "assumptions", "does_not_establish", "missing_object_ledger", "next_gate", "provenance", "verification_commands", "checks", "report", "schema"],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_TAGGED_CONNECTED_COMPACT_PACKET_INTERFERENCE_V1"},
+    "schema_version": {"const": "reverse-physics-bt-tagged-connected-compact-packet-interference-v1"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "compact_packet_carrier": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["one_particle_measure", "positive_packet", "normalization", "identity_overlap", "same_packet_overlap", "support", "status"],
+      "properties": {
+        "one_particle_measure": {"const": "dnu(p)=d^3p/(2*E_p) in the public BT convention"},
+        "positive_packet": {"const": "u(f)=(|Omega,f>+|Upsilon,f>)/sqrt(2)"},
+        "normalization": {"const": "<u(f),u(f)>_K=||f||_L2(dnu)^2=1"},
+        "identity_overlap": {"const": "c_fg=<u(g),I*u(f)>_K=<g,f>_L2(dnu)"},
+        "same_packet_overlap": {"const": "c_ff=1"},
+        "support": {"$ref": "#/$defs/text"},
+        "status": {"const": "COMMON_NORMALIZED_COMPACT_SPECTATOR_PACKET_CONSTRUCTED"}
+      }
+    },
+    "compact_tree_cross_functional": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kernel", "mask_sets", "incidence_weight_sum", "time_kernel", "compact_denominator_hypothesis", "pointwise_bound", "operator", "functional", "functional_bound", "relative_tree_cross", "fixture_diagonal", "fixture_probability", "status"],
+      "properties": {
+        "kernel": {"$ref": "#/$defs/text"},
+        "mask_sets": {"const": {"R": [7, 19, 21, 14, 26, 28], "N": [11, 13, 25, 22]}},
+        "incidence_weight_sum": {"const": 54},
+        "time_kernel": {"$ref": "#/$defs/text"},
+        "compact_denominator_hypothesis": {"const": "D_A>=d0>0 on the declared packet support"},
+        "pointwise_bound": {"const": "|W_kappa,T(k,p)|<=54*T/d0"},
+        "operator": {"$ref": "#/$defs/text"},
+        "functional": {"$ref": "#/$defs/text"},
+        "functional_bound": {"const": "|C_fg|<=54*T*sqrt(mu_in*mu_out)/d0 for normalized packets"},
+        "relative_tree_cross": {"const": "q_cross^(6)[g,f]/q_tag^(4)=(2*sqrt(2)*lambda^2/3)*Re[conj(c_fg)*C_fg]"},
+        "fixture_diagonal": {"const": "W_kappa,T(p_star,p_star)=W_kappa(T)=w(kappa*T)/kappa^2>0 for T>0"},
+        "fixture_probability": {"const": "q_cross^(6)[f,f]=25*sqrt(2)*lambda^6*DeltaOmega*Re(C_ff)/(1024*pi^2*kappa^2*Area)"},
+        "status": {"const": "BOX_INDEPENDENT_COMPACT_PACKET_TREE_CROSS_FUNCTIONAL_COMPUTED"}
+      }
+    },
+    "box_to_packet_limit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["normalized_cell_basis", "connected_matrix", "uniform_packet", "matrix_element", "single_mode", "fixed_packet_constant_kernel", "continuous_kernel_limit", "smooth_packet_extension", "mode_counting", "constant_kernel_fixture", "nonconstant_fixture", "status"],
+      "properties": {
+        "normalized_cell_basis": {"const": "e_i=1_Ci/sqrt(h) for equal dnu-cell measure h"},
+        "connected_matrix": {"const": "B_ij=h*W_ij"},
+        "uniform_packet": {"const": "f_N=N^(-1/2)*sum_i e_i with total packet measure mu=N*h"},
+        "matrix_element": {"const": "<f_N,B*f_N>=(h/N)*sum_(i,j)W_ij"},
+        "single_mode": {"const": "N=1 gives h*W; with h=1/(2*E_s*V)=1/N_s this is W/N_s"},
+        "fixed_packet_constant_kernel": {"const": "h=mu/N gives <f_N,B*f_N>=mu*W for every N"},
+        "continuous_kernel_limit": {"$ref": "#/$defs/text"},
+        "smooth_packet_extension": {"$ref": "#/$defs/text"},
+        "mode_counting": {"$ref": "#/$defs/text"},
+        "constant_kernel_fixture": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "object", "additionalProperties": false, "required": ["cells", "cell_measure", "packet_measure", "kernel_value", "matrix_element"], "properties": {"cells": {"type": "integer", "minimum": 1}, "cell_measure": {"$ref": "#/$defs/text"}, "packet_measure": {"$ref": "#/$defs/text"}, "kernel_value": {"$ref": "#/$defs/text"}, "matrix_element": {"$ref": "#/$defs/text"}}}},
+        "nonconstant_fixture": {"const": {"cell_measure": "1/17", "matrix_element": "36887/282744", "diagonal_only_wrong_value": "47/510"}},
+        "status": {"const": "FIXED_PACKET_CONTINUUM_LIMIT_FINITE_AND_SINGLE_MODE_LIMIT_CLASSIFIED"}
+      }
+    },
+    "physical_interpretation": {
+      "const": {
+        "single_box_mode_fixed_T_V_to_infinity": "ZERO_BUT_STATE_BECOMES_MOMENTUM_SHARP",
+        "fixed_compact_packet_box_refinement": "FINITE_AND_GENERALLY_NONZERO",
+        "strictly_positive_local_packet_exists_for_each_fixed_T_gt_0": "YES_BY_CONTINUITY_OF_THE_FINITE_TIME_KERNEL",
+        "compact_packet_tree_cross": "COEFFICIENT_COMPUTED_AS_FUNCTIONAL",
+        "complete_order_lambda6_probability": "NOT_COMPUTED",
+        "active_loop_source_survival_completion": "NOT_CONSTRUCTED",
+        "general_Eq19": "NOT_PROVED",
+        "gravity_or_BV_BRST_transfer": "NOT_CONSTRUCTED",
+        "Lorentzian_causal_claim": "NOT_ESTABLISHED"
+      }
+    },
+    "assumptions": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"$ref": "#/$defs/text"}},
+    "does_not_establish": {"type": "array", "minItems": 13, "maxItems": 13, "items": {"$ref": "#/$defs/text"}},
+    "missing_object_ledger": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "object", "additionalProperties": false, "required": ["object", "status", "required_value"], "properties": {"object": {"$ref": "#/$defs/text"}, "status": {"const": "MISSING"}, "required_value": {"$ref": "#/$defs/text"}}}},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "provenance": {"type": "object", "additionalProperties": false, "required": ["source_commit", "retrieval_date", "inputs", "method"], "properties": {"source_commit": {"const": "e60edd43"}, "retrieval_date": {"const": "2026-08-12"}, "inputs": {"type": "array", "minItems": 7, "maxItems": 7, "items": {"type": "object", "additionalProperties": false, "required": ["path", "sha256"], "properties": {"path": {"$ref": "#/$defs/text"}, "sha256": {"$ref": "#/$defs/hash"}}}}, "method": {"$ref": "#/$defs/text"}}},
+    "verification_commands": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/text"}},
+    "checks": {"type": "object", "additionalProperties": false, "required": ["ok", "passed", "total", "failures", "details"], "properties": {"ok": {"const": true}, "passed": {"const": 29}, "total": {"const": 29}, "failures": {"const": []}, "details": {"type": "object", "minProperties": 29, "maxProperties": 29, "additionalProperties": {"const": true}}}},
+    "report": {"const": "reverse_physics/reports/bt-tagged-connected-compact-packet-interference.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-tagged-connected-compact-packet-interference-v1.schema.json"}
+  },
+  "$defs": {"text": {"type": "string", "minLength": 1}, "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+}

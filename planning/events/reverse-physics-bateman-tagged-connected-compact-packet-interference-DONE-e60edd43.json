@@ -1,0 +1,32 @@
+{
+  "schema": "event-v0",
+  "id": "sf:program/event/reverse-physics-bateman-tagged-connected-compact-packet-interference-DONE-e60edd43",
+  "kind": "event",
+  "source": {
+    "path": "tools/science-forge/program/events/reverse-physics-bateman-tagged-connected-compact-packet-interference-DONE-e60edd43.json",
+    "span": null
+  },
+  "body": {
+    "event_kind": "WORK_ITEM_TRANSITIONED",
+    "actor": "reverse-physics",
+    "base_revision": "science-forge-ir-v0",
+    "predecessors": [],
+    "when": "2026-08-12",
+    "seq": 1,
+    "payload": {
+      "target": "sf:program/work/reverse-physics-bateman-tagged-connected-compact-packet-interference",
+      "to_state": "DONE",
+      "note": "Normalized positive spectator packets give the exact relative tree cross (2 sqrt(2) lambda^2/3) Re[conj(<g,f>) <g,W_T f>]. On compact hard support the ten-channel incidence bound is 54 T/d0, so the functional is finite and Hilbert--Schmidt. An equal-cell refinement has matrix element (h/N) sum_ij W_ij: N=1 and h=1/(2EV) recover the single-box-mode W/N_s, while a fixed packet has mu=Nh and a finite generally nonzero continuum limit. Continuity of the strictly positive tagged diagonal gives a positive compact packet at every fixed T>0. The tree cross is therefore not removed by physical packet refinement. Source, loop, survival, forward-collinear and Eq. 19 completion remain open. Evidence: REVERSE_PHYSICS_BT_TAGGED_CONNECTED_COMPACT_PACKET_INTERFERENCE_V1."
+    },
+    "native": {
+      "authored_by": "manual close-out after exact packet normalization and box-refinement classification",
+      "policy": "append-only; one content-addressed file per event; the work-item base state is not rewritten"
+    }
+  },
+  "edges": [
+    {
+      "rel": "TRANSITIONS",
+      "to": "sf:program/work/reverse-physics-bateman-tagged-connected-compact-packet-interference"
+    }
+  ]
+}

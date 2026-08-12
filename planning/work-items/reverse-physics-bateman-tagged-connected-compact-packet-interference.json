@@ -1,0 +1,19 @@
+{
+  "id": "sf:program/work/reverse-physics-bateman-tagged-connected-compact-packet-interference",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "reverse-physics",
+    "state": "ACTIVE",
+    "objective": "Replace the single-mode finite-box normalization of the tagged/connected order-lambda6 tree interference by its exact normalized compact-wave-packet functional, prove the box-to-packet continuum limit, and decide whether fixed physical packets retain or lose the resonant cross term.",
+    "depends_on": ["REVERSE_PHYSICS_BT_TAGGED_CONNECTED_FINITE_VOLUME_NORMALIZATION_V1", "REVERSE_PHYSICS_BT_TAGGED_CONNECTED_FINITE_TIME_INTERFERENCE_V1", "REVERSE_PHYSICS_BT_TAGGED_SPECTATOR_PHYSICAL_PACKET_PROBABILITY_V1", "REVERSE_PHYSICS_BT_SCALAR_DRESSED_SOURCE_COMPACT_WAVEPACKET_V1", "REVERSE_PHYSICS_BT_GLOBAL_CONNECTED_FINITE_TIME_PACKET_COLUMN_V1", "REVERSE_PHYSICS_BT_COMPACT_WAVEPACKET_HAMILTONIAN_PROBABILITY_V1"],
+    "activates": ["a box-independent compact-packet tagged tree-cross functional", "the correct fixed-packet continuum interpretation of the single-mode 1/V factor", "a nonzero compact-packet order-lambda6 tree contribution on a declared hard tagged tube"],
+    "current_gate": "Smear the public positive spectator cross-CCR with normalized compact packets f and g, contract the finite-time ten-channel connected kernel on the same hard tagged tube, derive the exact overlap factor conjugate(<g,f>)*<g,W_T f>, and prove that a fixed packet contains O(V) coherent box modes so its continuum limit is finite rather than 1/V-suppressed.",
+    "stop_condition": "Land an exact certificate and independent verifier for the packet norm, identity overlap, compact cross functional, Hilbert--Schmidt bound, positive local packet witness, equal-cell box refinement, single-cell recovery, fixed-packet continuum limit, and strict boundaries excluding the complete lambda6 probability, source/loop/survival completion, Eq. 19, gravity and Lorentzian claims.",
+    "forbid": "no single-box-mode V-to-infinity limit called the continuum limit of a fixed packet; no tree cross functional called the complete lambda6 probability; no local positivity called all-time positivity; no reduced scalar packet result called Eq. 19, gravity, BV/BRST or LORENTZIAN-CAUSAL physics; no literature-priority claim",
+    "allowed_paths": ["reverse_physics/", "paper/05-interaction-obstructions.tex", "paper/05-interaction-obstructions.pdf", "paper/06-einstein-weyl-interaction-obstructions.tex", "paper/06-einstein-weyl-interaction-obstructions.pdf", "planning/work-items/reverse-physics-bateman-tagged-connected-compact-packet-interference.json", "planning/events/"],
+    "resource_hint": "Use dnu=d^3p/(2E_p) and normalized positive ghost-even packets. After the common active contraction, define W_T(k,p)=Re[5 sum_R beta_A,T+6 sum_N beta_A,T], with diagonal value W_kappa(T) at the certified tagged fixture. The exact relative tree cross is (2 sqrt(2) lambda^2/3) Re[conj(<g,f>) <g,W_T f>]. On compact supports with D_A>=d0, |W_T|<=54T/d0. For N equal cells of dnu-measure h and a uniform normalized packet, the matrix element is (h/N) sum_ij W_ij; for a constant kernel this is Nh W=mu W. N=1 and h=1/(2EV) recovers W/N_s, while fixed mu=Nh survives refinement. Continuity and W_kappa(T)>0 give a nonzero positive compact packet for every fixed T>0.",
+    "input_commit": "e60edd43",
+    "stream": "reverse-physics"
+  }
+}
