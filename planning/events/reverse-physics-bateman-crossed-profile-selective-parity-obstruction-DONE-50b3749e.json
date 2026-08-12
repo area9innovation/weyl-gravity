@@ -1,0 +1,34 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/reverse-physics-bateman-crossed-profile-selective-parity-obstruction-DONE-50b3749e",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work item transitioned",
+  "source": {
+    "path": "tools/science-forge/program/events/reverse-physics-bateman-crossed-profile-selective-parity-obstruction-DONE-50b3749e.json",
+    "span": null
+  },
+  "body": {
+    "event_kind": "WORK_ITEM_TRANSITIONED",
+    "actor": "reverse-physics",
+    "base_revision": "science-forge-ir-v0",
+    "predecessors": [],
+    "when": "2026-08-12",
+    "seq": 1,
+    "payload": {
+      "target": "sf:program/work/reverse-physics-bateman-crossed-profile-selective-parity-obstruction",
+      "to_state": "DONE",
+      "note": "A same-carrier crossed sign repair must be anti-Krein, whereas public ghost parity and its symmetric-power Fock actions are Krein isometries and preserve the negative crossed quotient spectrum. Every anti-Krein repair flips the metric of the certified non-null five-point prefix, so it cannot be localized regularly while preserving prefix compatibility. A continuous spectator-controlled switch from identity to anti-Krein type is impossible without singularity. Evidence: REVERSE_PHYSICS_BT_CROSSED_PROFILE_SELECTIVE_PARITY_OBSTRUCTION_V1. The remaining gate is a new doubled/off-diagonal or nonfactorizing crossed 3-to-3 amplitude, not another parity convention."
+    },
+    "native": {
+      "authored_by": "manual close-out after scoped exact calculation",
+      "policy": "append-only; one content-addressed file per event; the work-item file is never rewritten and the effective state is the fold of events over the base state"
+    }
+  },
+  "edges": [
+    {
+      "rel": "TRANSITIONS",
+      "to": "sf:program/work/reverse-physics-bateman-crossed-profile-selective-parity-obstruction"
+    }
+  ]
+}

@@ -1,0 +1,196 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-crossed-profile-selective-parity-obstruction-v1.schema.json",
+  "title": "BT crossed profile-selective parity obstruction certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "certificate", "schema_version", "dependency_tags", "lifecycle_state",
+    "result_kind", "question", "answer", "same_carrier_classification",
+    "prefix_obstruction", "public_ghost_parity_test", "escape_architectures",
+    "disposition", "assumptions", "does_not_establish", "next_gate",
+    "provenance", "verification_commands", "checks", "report", "schema"
+  ],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_CROSSED_PROFILE_SELECTIVE_PARITY_OBSTRUCTION_V1"},
+    "schema_version": {"const": "reverse-physics-bt-crossed-profile-selective-parity-obstruction-v1"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "result_kind": {"type": "string", "minLength": 1},
+    "question": {"type": "string", "minLength": 1},
+    "answer": {"type": "string", "minLength": 1},
+    "same_carrier_classification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "metric_eta", "profile_metric_K", "crossed_amplitude_D",
+        "outgoing_style_collapse_R_plus", "repaired_collapse_R_minus",
+        "base_raised_pullback", "base_characteristic_polynomial",
+        "isometry_lemma", "anti_isometry_lemma", "diagonal_unit_sign_census",
+        "census_summary"
+      ],
+      "properties": {
+        "metric_eta": {"$ref": "#/$defs/string_matrix"},
+        "profile_metric_K": {"$ref": "#/$defs/string_matrix"},
+        "crossed_amplitude_D": {"$ref": "#/$defs/string_matrix"},
+        "outgoing_style_collapse_R_plus": {"$ref": "#/$defs/string_matrix"},
+        "repaired_collapse_R_minus": {"$ref": "#/$defs/string_matrix"},
+        "base_raised_pullback": {"$ref": "#/$defs/string_matrix"},
+        "base_characteristic_polynomial": {"type": "string", "minLength": 1},
+        "isometry_lemma": {"type": "string", "minLength": 1},
+        "anti_isometry_lemma": {"type": "string", "minLength": 1},
+        "diagonal_unit_sign_census": {
+          "type": "array", "minItems": 16, "maxItems": 16,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": [
+              "signs", "metric_type", "prefix_gram_preserved",
+              "exact_R_minus_collapse", "phase_equivalent_R_minus_collapse",
+              "raised_characteristic_polynomial", "repairs_nonzero_spectrum"
+            ],
+            "properties": {
+              "signs": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"enum": [-1, 1]}},
+              "metric_type": {"enum": ["KREIN_ISOMETRY", "KREIN_ANTI_ISOMETRY", "MIXED_METRIC_BREAKING"]},
+              "prefix_gram_preserved": {"type": "boolean"},
+              "exact_R_minus_collapse": {"type": "boolean"},
+              "phase_equivalent_R_minus_collapse": {"type": "boolean"},
+              "raised_characteristic_polynomial": {"type": "string", "minLength": 1},
+              "repairs_nonzero_spectrum": {"type": "boolean"}
+            }
+          }
+        },
+        "census_summary": {
+          "const": {
+            "total": 16,
+            "krein_isometries": 4,
+            "krein_anti_isometries": 4,
+            "mixed_metric_breakers": 8,
+            "sign_repairing_metric_homogeneous_maps": 4,
+            "sign_repairs_preserving_prefix_gram": 0,
+            "exact_R_minus_repair_up_to_global_phase": 2
+          }
+        }
+      }
+    },
+    "prefix_obstruction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "prefix_vector", "prefix_gram", "canonical_parent_parity",
+        "parent_parity_metric_law", "parent_parity_collapse_law",
+        "repaired_raised_pullback", "repaired_characteristic_polynomial",
+        "transformed_prefix", "transformed_prefix_gram", "general_no_go",
+        "regular_localization_no_go"
+      ],
+      "properties": {
+        "prefix_vector": {"const": ["0", "1/2", "1/2", "0"]},
+        "prefix_gram": {"const": "3/2"},
+        "canonical_parent_parity": {"$ref": "#/$defs/string_matrix"},
+        "parent_parity_metric_law": {"const": "S_parent^T*eta*S_parent=-eta"},
+        "parent_parity_collapse_law": {"const": "R_plus*S_parent=R_minus"},
+        "repaired_raised_pullback": {"$ref": "#/$defs/string_matrix"},
+        "repaired_characteristic_polynomial": {"type": "string", "minLength": 1},
+        "transformed_prefix": {"const": ["0", "1/2", "-1/2", "0"]},
+        "transformed_prefix_gram": {"const": "-3/2"},
+        "general_no_go": {"type": "string", "minLength": 1},
+        "regular_localization_no_go": {"type": "string", "minLength": 1}
+      }
+    },
+    "public_ghost_parity_test": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "neutral_degree_four_metric", "neutral_degree_four_ghost_parity",
+        "full_metric_law", "selected_odd_columns", "selected_metric",
+        "selected_ghost_action", "selected_metric_law",
+        "symmetric_power_boundary", "charge_boundary"
+      ],
+      "properties": {
+        "neutral_degree_four_metric": {"$ref": "#/$defs/string_matrix"},
+        "neutral_degree_four_ghost_parity": {"$ref": "#/$defs/string_matrix"},
+        "full_metric_law": {"const": "kappa9^T*W9*kappa9=W9"},
+        "selected_odd_columns": {"$ref": "#/$defs/string_matrix"},
+        "selected_metric": {"const": [["-1", "0"], ["0", "-1"]]},
+        "selected_ghost_action": {"const": [["-1", "0"], ["0", "-1"]]},
+        "selected_metric_law": {"type": "string", "minLength": 1},
+        "symmetric_power_boundary": {"type": "string", "minLength": 1},
+        "charge_boundary": {"type": "string", "minLength": 1}
+      }
+    },
+    "escape_architectures": {
+      "const": {
+        "regular_same_carrier_parity": "EXACTLY_OBSTRUCTED",
+        "inherited_public_symmetric_power_ghost_parity": "EXACTLY_OBSTRUCTED_AS_SIGN_REPAIR",
+        "singular_or_discontinuous_spectator_control": "NOT_RULED_OUT_BUT_NOT_CONSTRUCTED",
+        "localized_nonvacuum_chart": "NOT_RULED_OUT_BUT_DOES_NOT_CONTAIN_THE_ZERO_JET_PREFIX",
+        "doubled_cross_paired_source": "ALGEBRAICALLY_POSSIBLE_NEW_CARRIER_NOT_BT_DERIVED",
+        "off_diagonal_dynamical_transition": "NOT_COMPUTED",
+        "nonfactorizing_crossed_three_to_three_pretrace_term": "NOT_COMPUTED"
+      }
+    },
+    "disposition": {
+      "const": {
+        "same_carrier_regular_profile_selective_parity": "EXACTLY_OBSTRUCTED",
+        "five_point_prefix_preserving_anti_krein_repair": "IMPOSSIBLE",
+        "public_ghost_parity_metric_type": "KREIN_ISOMETRY",
+        "public_higher_composite_parity_sign_repair": "EXACTLY_OBSTRUCTED",
+        "singular_or_doubled_repair": "NOT_DERIVED",
+        "nonfactorizing_crossed_six_point_term": "NOT_COMPUTED",
+        "twelve_reversed_physical_intertwiners": "NOT_CONSTRUCTED",
+        "complete_crossed_probability": "NOT_COMPUTED",
+        "Eq19_all_orders": "NOT_PROVED",
+        "spacetime_Moller_LSZ_S_operator": "NOT_CONSTRUCTED"
+      }
+    },
+    "assumptions": {"type": "array", "minItems": 5, "items": {"type": "string", "minLength": 1}},
+    "does_not_establish": {"type": "array", "minItems": 15, "items": {"type": "string", "minLength": 1}},
+    "next_gate": {"type": "string", "minLength": 1},
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_commit", "retrieval_date", "inputs", "producer_method", "primary_source"],
+      "properties": {
+        "source_commit": {"const": "50b3749e02fe3d86064a40766b0e54f10366b4f4"},
+        "retrieval_date": {"const": "2026-08-12"},
+        "inputs": {
+          "type": "array", "minItems": 6, "maxItems": 6,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["path", "sha256"],
+            "properties": {
+              "path": {"type": "string", "minLength": 1},
+              "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+            }
+          }
+        },
+        "producer_method": {"type": "string", "minLength": 1},
+        "primary_source": {
+          "type": "object", "additionalProperties": false,
+          "required": ["source", "url", "equations"],
+          "properties": {
+            "source": {"type": "string", "minLength": 1},
+            "url": {"type": "string", "minLength": 1},
+            "equations": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}}
+          }
+        }
+      }
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "items": {"type": "string", "minLength": 1}},
+    "checks": {
+      "type": "object", "additionalProperties": false,
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true}, "passed": {"const": 33},
+        "total": {"const": 33}, "failures": {"const": []},
+        "details": {"type": "object", "minProperties": 33, "maxProperties": 33, "additionalProperties": {"const": true}}
+      }
+    },
+    "report": {"const": "reverse_physics/reports/bt-crossed-profile-selective-parity-obstruction.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-crossed-profile-selective-parity-obstruction-v1.schema.json"}
+  },
+  "$defs": {
+    "string_matrix": {
+      "type": "array", "minItems": 1,
+      "items": {"type": "array", "minItems": 1, "items": {"type": "string"}}
+    }
+  }
+}
