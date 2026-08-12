@@ -1,0 +1,33 @@
+{
+  "id": "sf:program/work/reverse-physics-bateman-compact-energy-quadratic-sector-bound",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "reverse-physics",
+    "state": "ACTIVE",
+    "objective": "Promote the Schwartz detector's pointwise pair-versus-number spectral gap to an operator bound for every undesired quadratic sector at first Dyson order on a compact one-particle energy domain.",
+    "depends_on": [
+      "REVERSE_PHYSICS_BT_SCHWARTZ_FOUR_MOMENTUM_PACKET_RESPONSE_V1",
+      "REVERSE_PHYSICS_BT_FIXED_P_TWO_SPHERE_PACKET_DETECTOR_V1"
+    ],
+    "activates": [
+      "an explicit finite bidifferential off-shell density matching the fixed-P filter",
+      "a Hilbert-Schmidt number-scattering operator on a compact energy band",
+      "a global wrong-sign pair-vector norm bound",
+      "a complete first-Dyson quadratic-sector perturbation bound relative to the desired pair absorption"
+    ],
+    "current_gate": "Use D_F=:F((i partial_1-i partial_2)/M0)phi(x1)phi(x2): at x1=x2. On K={M0/4<=|k|<=3M0/4}, bound the number symbol by A0(3/2)^38 and use dist(P0,{q^2<=0})^2=M0^2/2. Compare its Hilbert-Schmidt norm with the desired pair norm from the unit Gaussian four-ball. Bound the wrong-sign pair vector by a Gaussian tail outside R=1/sigma_over_M0.",
+    "stop_condition": "Land a COEFFICIENT_COMPUTED exact certificate, independent verifier, mutations and report showing each undesired first-Dyson quadratic block has squared norm relative to the desired pair block below 10^-1000000, and that the induced leading click effect changes by less than 10^-399999 on the declared domain.",
+    "forbid": "no rewrite of the published Schwartz V1 certificate; no claim outside the compact one-particle energy band; no promotion from first Dyson order to complete time ordering, all-order unitarity, absolute q8, Eq. 19, gravity, QME or LORENTZIAN-CAUSAL physics",
+    "allowed_paths": [
+      "reverse_physics/",
+      "paper/05-interaction-obstructions.tex",
+      "paper/05-interaction-obstructions.pdf",
+      "paper/06-einstein-weyl-interaction-obstructions.tex",
+      "paper/06-einstein-weyl-interaction-obstructions.pdf",
+      "planning/work-items/reverse-physics-bateman-compact-energy-quadratic-sector-bound.json",
+      "planning/events/"
+    ],
+    "resource_hint": "With dmu=d3k/(2|k|), mu(K)=pi M0^2/2. The desired symmetric pair norm is at least t*pi^3*sigma^4*(1-2/e)/8 with rational t>1/64. The number squared ratio has a prefactor below 2^153 multiplying exp[-1/(2s^2)]. The wrong-sign pair squared ratio has a prefactor below 2^47 multiplying exp[-(1/s^2-76)]."
+  }
+}

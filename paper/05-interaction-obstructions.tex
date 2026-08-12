@@ -272,13 +272,17 @@ lift to the complete invariant fixed-total-momentum two-body sphere.  Two
 finite solid-angle packets capture all but less than $83/125000$ of its exact
 phase-space norm, and exponentiating the residual-retaining star Hamiltonian
 gives bright-packet absorption efficiency above $124917/125000$ at a half
-pulse.  This is a fixed-$P$ rotating-wave result; momentum bandwidth and the
-remaining local-Hamiltonian sectors are open.  A Gaussian-switched version of
-the same local density has a square-integrable response on an open
+pulse.  This is a fixed-$P$ rotating-wave result.  A Gaussian-switched version
+of the same local density has a square-integrable response on an open
 four-momentum set and retains more than $999117/10^6$ of its norm in the two
 packets and their momentum core.  The target timelike pair sum is separated
-exactly from the non-timelike number-scattering transfer cone.  This is a
-leading switched-vertex result, not complete time-ordered evolution.
+exactly from the non-timelike number-scattering transfer cone.  An explicit
+off-shell finite-jet successor turns this pointwise gap into a
+Hilbert--Schmidt number-operator bound on
+$M_0/4\leq|k|\leq3M_0/4$; including the wrong-sign pair and adjoints, every
+undesired quadratic block is below $10^{-400000}$ relative to the desired
+pair block at first Dyson order.  Unrestricted energies and complete
+time-ordered evolution remain open.
 Independently, the projected three-channel hard loop logarithm closes the
 Callan--Symanzik equation exactly with the Born rate and one-loop beta
 function.  This yields the positive leading-log nonforward prediction
@@ -4139,6 +4143,54 @@ Hilbert--Schmidt argument.  Nor does a spacetime switching define the exact
 time-independent star Hamiltonian used at fixed energy.  Complete time
 ordering, absolute $q_8$, Eq.~(19), gravity and Lorentzian causality remain
 open.
+
+The operator-bounded successor first makes the off-shell realization
+explicit.  Use the finite bidifferential density
+\[
+ {\cal D}_F(x)=:
+ F\left({i\partial_1-i\partial_2\over M_0}\right)
+ \phi(x_1)\phi(x_2):\bigg|_{x_1=x_2=x}.
+\]
+It is jet-local through order 38.  Its pair symbol is
+$F((k_1-k_2)/M_0)$ with switching transfer $k_1+k_2$, whereas its number
+symbol is $F((k+k')/M_0)$ with transfer $k-k'$.  On the declared
+one-particle apparatus band
+\[
+ K=\{k:M_0/4\leq|k|\leq3M_0/4\},
+ \qquad \mu(K)={\pi M_0^2\over2},
+\]
+the number compression has kernel
+\[
+ N_K(k',k)=\widehat h(k-k')F((k+k')/M_0)
+\]
+and is Hilbert--Schmidt.  The cone gap and
+$|F((k+k')/M_0)|\leq A_0(3/2)^{38}$ give
+\[
+ {\|N_K\|^2\over\|w\|^2}
+ <2^{153-1,250,000,000}<10^{-1,000,000}.
+\]
+The complete wrong-sign pair vector obeys independently
+\[
+ {\|w_-\|^2\over\|w\|^2}
+ <2^{47-2,499,999,924}<10^{-1,000,000}.
+\]
+Including both adjoints therefore gives, at first Dyson order on the declared
+domain,
+\[
+ {\|E_{\rm undesired}\|\over\|A_{\rm pair}\|}<10^{-400,000},
+ \qquad
+ {\|(A+E)^\dagger(A+E)-A^\dagger A\|\over\|A\|^2}<10^{-399,999}.
+\]
+These exact exponential comparisons use rational prefactor ledgers and
+$e>2$, not floating-point exponentials.  Certificate
+\par\noindent
+\texttt{REVERSE\_PHYSICS\_BT\_COMPACT\_ENERGY\_QUADRATIC\_}
+\allowbreak\texttt{SECTOR\_BOUND\_V1}
+\par\noindent
+thus closes every quadratic frequency sector at first Dyson order on $K$.
+It does not control scattering from $K$ to its complement, unrestricted
+energies, higher time ordering, absolute $q_8$, Eq.~(19), gravity or
+Lorentzian causality.
 
 The auxiliary preparation nevertheless has an exact scalar preimage on the
 finite covariant detector ideal.  Put

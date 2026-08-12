@@ -1,0 +1,176 @@
+{
+  "answer": "Yes at first Dyson order on K={M0/4<=|k|<=3M0/4}. The explicit degree-38 bidifferential density has pair symbol F((k1-k2)/M0) and number symbol F((k+k')/M0). The number kernel is Hilbert-Schmidt on K. Its squared norm, divided by a unit-Gaussian-ball lower bound for the desired pair vector, is smaller than 2^(153-1250000000), hence below 10^-1000000. The wrong-sign pair vector has squared relative norm smaller than 2^(47-2499999924), also below 10^-1000000. Including Hermitian adjoints, the entire undesired first-Dyson quadratic block is below 10^-400000 in relative norm and changes the leading click effect by less than 10^-399999. This does not control unrestricted energies or complete time ordering.",
+  "assumptions": [
+    "the one-particle Hilbert measure is dmu(k)=d3k/(2|k|), with harmless 2pi conventions omitted consistently",
+    "the declared number-scattering block is the compression P_K N P_K, so both one-particle legs lie in the full angular band M0/4<=|k|<=3M0/4",
+    "the local off-shell density is the finite bidifferential F((i partial_1-i partial_2)/M0) at coincident points",
+    "the squared Gaussian Fourier envelope has sigma/M0=1/50000 as in the predecessor",
+    "the desired pair norm uses the symmetric bosonic two-particle convention and projective angular shell",
+    "the compared blocks all carry the same detector coupling and switching normalization",
+    "the perturbation estimate applies to the vacuum, declared one-particle band and two-particle response blocks at first Dyson order",
+    "higher time ordering and unrestricted one-particle energies are outside this certificate"
+  ],
+  "certificate": "REVERSE_PHYSICS_BT_COMPACT_ENERGY_QUADRATIC_SECTOR_BOUND_V1",
+  "checks": {
+    "details": {
+      "Hermitian_adjoint_blocks_have_same_norm": true,
+      "absolute_q8_Eq19_gravity_and_Lorentzian_boundaries_preserved": true,
+      "bidifferential_degree_is_even_thirty_eight": true,
+      "complete_undesired_relative_norm_below_ten_minus_400000": true,
+      "desired_angular_lower_exceeds_one_over_sixty_four_pi": true,
+      "desired_angular_lower_is_positive": true,
+      "desired_pair_ball_is_future_timelike": true,
+      "energy_band_contains_target_half_energy": true,
+      "energy_band_measure_coefficient_is_one_half": true,
+      "event_targets_work_item": true,
+      "first_Dyson_only_boundary_preserved": true,
+      "inputs_content_pinned": true,
+      "leading_effect_relative_error_below_ten_minus_399999": true,
+      "number_binary_decay_exceeds_four_million": true,
+      "number_distance_exponent_is_1250000000": true,
+      "number_polynomial_bound_is_three_halves_power_thirty_eight": true,
+      "number_prefactor_power_ledger_is_153": true,
+      "number_squared_relative_norm_below_ten_minus_one_million": true,
+      "number_symbol_is_mean_momentum": true,
+      "pair_symbol_is_relative_momentum": true,
+      "predecessors_pass": true,
+      "published_predecessor_is_not_rewritten": true,
+      "unit_ball_Gaussian_factor_is_positive": true,
+      "unrestricted_energy_boundary_preserved": true,
+      "wrong_binary_decay_exceeds_four_million": true,
+      "wrong_decay_coefficient_exceeds_one_half": true,
+      "wrong_prefactor_power_ledger_is_47": true,
+      "wrong_squared_relative_norm_below_ten_minus_one_million": true,
+      "wrong_tail_exponent_is_2499999924": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 29,
+    "total": 29
+  },
+  "complete_first_Dyson_bound": {
+    "desired_block": "A_pair=-i*g*|e,0><g,w| plus its physical reverse adjoint",
+    "leading_click_effect_error": "||(A+E)^dagger(A+E)-A^dagger A||/||A||^2<10^(-399999)",
+    "relative_operator_norm": "||E_undesired||/||A_pair||<10^(-400000)",
+    "status": "COMPLETE_QUADRATIC_FIELD_SECTOR_BOUND_AT_FIRST_DYSON_ORDER_ON_DECLARED_DOMAIN",
+    "undesired_blocks": [
+      "compressed number scattering P_K N P_K",
+      "compressed number adjoint",
+      "wrong-sign pair",
+      "wrong-sign pair adjoint"
+    ]
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL",
+    "REDUCED-MODE"
+  ],
+  "desired_pair_lower_bound": {
+    "Gaussian_core": "||P-P0||_E<=sigma",
+    "angular_pi_coefficient_bound": "t>1/64",
+    "angular_pi_coefficient_lower": {
+      "canonical_sha256": "d2e310250397170a436a34b411e59b21bc6c118be3c1679319d5429c558e4d43",
+      "exact": "146698796506905053520296856473562493445800707435625709106139024681654454549619974021164421796803513782851617290727767122369215469546737021371491836129053010378232736235503531830766164414808663609638932729454257192699714824264105802360246808430880759418742454155091459640475790958611404779975867118525595712922318670348833065598808636892172255049933731625054887376741859742836943726638724086646806158757139302001356593361722371141503568953030502181580850632926464199879239589951472692702797354421355718766648547614289001838009588907681861375976468747828905673147344860079962056984230873786098888570151193669799236051868246379717953355290333709523109252428071472668776924752593632799118578008178120719082465875344407042581100111783052960765603313920779259/7788613271186212015166933699112449045723407409854307686387593574426917776741585857894515164246057518924548719707904302164894693421593386973563510782620272700578844604614285205746908715908647893952542004613276143137228245731210473311528847765140550396498562201804319984738217187683948284206935876328309294491699987855218527680087063718994165290334413373286953347221684450735740769686875694035922951243813609166965178469126119758011392604091530458483916800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+    },
+    "four_ball_integral": "integral_(||z||<=1) exp(-||z||^2)d4z=pi^2*(1-2/e)",
+    "norm_lower": "||w||^2 >= t*pi^3*sigma^4*(1-2/e)/8",
+    "sigma_over_M0": "1/50000",
+    "status": "NONZERO_EXACT_LOWER_BOUND_IN_DECLARED_TWO_PARTICLE_CONVENTION"
+  },
+  "disposition": {
+    "Lorentzian_causal_claim": "NOT_ESTABLISHED",
+    "absolute_q8_probability": "NOT_COMPUTED",
+    "compact_energy_number_operator": "BOUNDED_HILBERT_SCHMIDT",
+    "complete_first_Dyson_quadratic_sector": "BOUNDED",
+    "complete_time_ordered_Dyson_evolution": "NOT_COMPUTED",
+    "explicit_off_shell_local_density": "CONSTRUCTED",
+    "general_Eq19": "NOT_PROVED_AND_NOT_USED",
+    "gravity_or_metric_BV_BRST_transfer": "NOT_CONSTRUCTED",
+    "unrestricted_energy_number_operator": "NOT_COMPUTED",
+    "wrong_sign_pair_vector": "BOUNDED"
+  },
+  "does_not_establish": [
+    "a bound outside M0/4<=|k|<=3M0/4",
+    "a complete interacting-domain theorem for the unbounded local Hamiltonian",
+    "second or higher Dyson orders",
+    "exact all-time Rabi evolution for the thick packet",
+    "compact spacetime support of the Gaussian switching",
+    "selection of the energy band, switching or coupling by public BT dynamics",
+    "either absolute order-lambda8 probability coefficient",
+    "forward endpoints or real-virtual or KLN completion",
+    "an all-time Moller, LSZ or S operator",
+    "the standard scalar projector or general Bateman--Turok Eq. (19)",
+    "a complete positive physical Hilbert or Fock construction",
+    "gravity, metric BV--BRST, QME restoration or residual transfer",
+    "anything LORENTZIAN-CAUSAL",
+    "literature priority"
+  ],
+  "lifecycle_state": "COEFFICIENT_COMPUTED",
+  "next_gate": "Control the second and higher time-ordered Dyson terms on a common invariant core, or compute the unequal-packet absolute q8 Gram and X2-X6 interference before attempting a full detector probability.",
+  "number_operator_bound": {
+    "Hilbert_Schmidt_bound": "||N||_HS^2<=A0^2*(3/2)^76*exp(-1250000000)*(pi*M0^2/2)^2",
+    "energy_band_measure": "mu(K)=pi*M0^2/2",
+    "energy_band_over_M0": [
+      "1/4",
+      "3/4"
+    ],
+    "kernel": "N_K(k_prime,k)=h_hat(k-k_prime)*F((k+k_prime)/M0) on KxK",
+    "polynomial_bound": "|F((k+k_prime)/M0)|<=A0*(3/2)^38",
+    "relative_prefactor_dyadic_bound": "prefactor<2^153",
+    "squared_relative_norm_bound": "||N||^2/||w||^2<2^(153-1250000000)<10^(-1000000)",
+    "status": "HILBERT_SCHMIDT_NUMBER_SCATTERING_OPERATOR_WITH_MILLION_DECIMAL_RELATIVE_SUPPRESSION"
+  },
+  "off_shell_local_density": {
+    "density": ":F((i*partial_1-i*partial_2)/M0) phi(x_1) phi(x_2): evaluated at x_1=x_2=x",
+    "jet_order": 38,
+    "number_Fourier_transfer": "k-k_prime",
+    "number_scattering_symbol": "F((k+k_prime)/M0)",
+    "pair_Fourier_transfer": "k1+k2",
+    "pair_annihilation_symbol": "F((k1-k2)/M0)",
+    "status": "EXPLICIT_FINITE_JET_LOCAL_OFF_SHELL_EXTENSION_OF_FIXED_P_FILTER"
+  },
+  "provenance": {
+    "generated_by": "reverse_physics/bt_compact_energy_quadratic_sector_bound.py",
+    "independent_verifier": "reverse_physics/verify_bt_compact_energy_quadratic_sector_bound.py",
+    "inputs": [
+      {
+        "path": "planning/work-items/reverse-physics-bateman-compact-energy-quadratic-sector-bound.json",
+        "sha256": "ec0ab427de223be9a5669eb21303b8fc72aa4617344b0492fa28230cbd201e34"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_SCHWARTZ_FOUR_MOMENTUM_PACKET_RESPONSE_V1.json",
+        "sha256": "bd408ad7c60189d4938aa9799734b8130b9a48338cc3de5d4f5b512f45178d61"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_FIXED_P_TWO_SPHERE_PACKET_DETECTOR_V1.json",
+        "sha256": "664f8fd8503184686b00bcba3dd710d6da0a6c81a6f7141e58b6201f49933304"
+      },
+      {
+        "path": "planning/events/reverse-physics-bateman-compact-energy-quadratic-sector-bound-DONE-96a1b95b.json",
+        "sha256": "a9d92aeabf56a73e3c8500c2d9b40e0bf8c42cc3a1a7a93b7eb2e40b7a7ce190"
+      }
+    ],
+    "method": "Exact rational coefficient and phase-volume bounds plus exponent ledgers. Huge exponentials are never evaluated: e>2 and 2^10>10^3 convert exact Gaussian exponents and dyadic prefactor ledgers into decimal suppression bounds.",
+    "retrieval_date": "2026-08-13",
+    "source_commit": "96a1b95b974c2c8897bdba3b450ef6c816c17a14"
+  },
+  "question": "Does the Schwartz detector's pointwise timelike-versus-spacelike gap yield an operator bound for the complete undesired quadratic field sectors on a declared physical energy domain?",
+  "report": "reverse_physics/reports/bt-compact-energy-quadratic-sector-bound.md",
+  "result_kind": "explicit off-shell local bidifferential, compact-energy Hilbert-Schmidt number operator, wrong-sign pair-vector tail, and complete first-Dyson quadratic-sector perturbation bound",
+  "schema": "reverse_physics/schema/reverse-physics-bt-compact-energy-quadratic-sector-bound-v1.schema.json",
+  "schema_version": 1,
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_compact_energy_quadratic_sector_bound.py --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_compact_energy_quadratic_sector_bound.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_compact_energy_quadratic_sector_bound"
+  ],
+  "wrong_sign_pair_bound": {
+    "decay_coefficient": "624999981/625000000",
+    "kernel": "w_minus(P,n)=h_hat(-P)*F((k1-k2)/M0)",
+    "radial_domain": "R=||-P-P0||_E/sigma>=1/s with s=1/50000",
+    "relative_prefactor_dyadic_bound": "prefactor<2^47",
+    "squared_relative_norm_bound": "||w_minus||^2/||w||^2<2^(47-2499999924)<10^(-1000000)",
+    "status": "GLOBAL_WRONG_SIGN_PAIR_VECTOR_WITH_MILLION_DECIMAL_RELATIVE_SUPPRESSION",
+    "tail_exponent": "2499999924"
+  }
+}
