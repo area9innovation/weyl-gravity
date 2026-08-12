@@ -9,7 +9,7 @@ from pathlib import Path
 from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
-SITE = ROOT / "foundations/site-v2"
+SITE = ROOT / "foundations/site"
 DATA = SITE / "data.json"
 MANIFEST = SITE / "manifest.json"
 RESULT = ROOT / "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json"
@@ -106,8 +106,8 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
             errors.append("manifest input " + str(source.get("path")))
 
     html = (SITE / "index.html").read_text()
-    app = (SITE / "app.js").read_text() + (SITE / "app-v2.js").read_text()
-    if "https://" in html or "http://" in html or '<script src="data.js"></script>' not in html or '<script src="app-v2.js"></script>' not in html:
+    app = (SITE / "app.js").read_text() + (SITE / "migration-review.js").read_text()
+    if "https://" in html or "http://" in html or '<script src="data.js"></script>' not in html or '<script src="migration-review.js"></script>' not in html:
         errors.append("offline/no-remote-code shell")
     for token in ("matrixGroups", "graphView", "ladderView", "evidenceView", "compareDialog", "exportJson", "exportCsv", "downloadBrief", "column-label", "Migration review", "migration_evidence", "112-decision audit JSON"):
         if token not in html + app:

@@ -19,7 +19,7 @@ from foundations.check_matrix_site_v2 import check
 RESULT = ROOT / "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json"
 SCHEMA = ROOT / "foundations/schema/foundational-matrix-explorer-site-v2.schema.json"
 REPORT = ROOT / "foundations/reports/matrix-explorer-site-v2.md"
-MANIFEST = ROOT / "foundations/site-v2/manifest.json"
+MANIFEST = ROOT / "foundations/site/manifest.json"
 
 
 def load(path: Path) -> dict[str, Any]:

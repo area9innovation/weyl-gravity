@@ -260,13 +260,15 @@ python3 -m unittest foundations.tests.test_cylinder_wave_strength_ladder
 The generated
 [`static matrix explorer`](site/index.html) turns the complete refined surface
 into a browser-based research instrument. It displays all 576 coordinates as
-sixteen coordinated heatmaps, including 124 explicit `NOT_MAPPED` coordinates
-whose boundary forbids interpreting them as literature absence. It also
-provides multi-select filters, evidence-aware search, cell inspection and
-comparison, one-axis neighbors, permalinks, filtered exports, investigation
-briefs, the typed implication graph, the cylinder strength ladder, and the
-resolved evidence catalogue. The bundle is self-contained and can be opened
-directly or served from any static host:
+sixteen coordinated heatmaps. Coverage is classified for 364 emitted cells;
+all 452 emitted cells have completed migration review, including 88
+`REVIEWED_NO_TRANSFER` cells. The other 124 Cartesian coordinates remain
+unassessed. Both kinds of `NOT_MAPPED` forbid an interpretation as literature
+absence. The inspector separates positive coverage evidence from evidence
+reviewed only for migration. The bundle also provides multi-select filters,
+evidence-aware search, comparison, one-axis neighbors, permalinks, filtered
+exports, investigation briefs, the typed implication graph, the cylinder
+strength ladder, and the resolved evidence catalogue:
 
 ```bash
 python3 foundations/build_matrix_site.py
@@ -302,27 +304,10 @@ python3 foundations/check_refined_intersection_cube_v2.py
 python3 foundations/verify_refined_intersection_cube_v2.py
 ```
 
-The corresponding
-[`v2 static explorer`](site-v2/index.html) preserves the v1 deployment as a
-historical artifact and exposes coverage evidence separately from
-migration-review evidence.  All 452 emitted cells have reviewed migrations;
-the 124 remaining Cartesian complements are visibly `NOT_REVIEWED` rather
-than being folded into the migration audit:
-
-```bash
-python3 foundations/build_matrix_site_v2.py
-python3 foundations/build_matrix_site_v2.py --check
-python3 foundations/check_matrix_site_v2.py
-python3 foundations/verify_matrix_site_v2.py
-python3 -m unittest foundations.tests.test_intersection_migration_audit \
-  foundations.tests.test_refined_intersection_cube_v2 \
-  foundations.tests.test_matrix_site_v2
-python3 -m http.server 8000 --directory foundations/site-v2
-```
-
-The content-addressed v2 source bundle and manifest live under
-[`site-v2/`](site-v2/).  The inspector links each reviewed cell to the
-112-decision JSON ledger and its human-readable audit report.
+The existing explorer is regenerated from this migration-reviewed cube. Its
+content-addressed source bundle and manifest remain under [`site/`](site/), and
+the inspector links each reviewed cell to the 112-decision JSON ledger and its
+human-readable audit report.
 
 The bounded
 [`low-hanging cell closure audit`](reports/low-hanging-cell-closure-audit.md)

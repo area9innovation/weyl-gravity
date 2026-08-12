@@ -8,7 +8,7 @@
 
 ## Outcome
 
-`foundations/site-v2/index.html` presents all **576** Cartesian coordinates.
+`foundations/site/index.html` presents all **576** Cartesian coordinates.
 The **452** cube-emitted coordinates now have separate coverage and migration
 review fields: **452 reviewed**, **0 pending**.
 Of those, **88** parent-evidence reviews found no
@@ -36,7 +36,7 @@ cube, migration audit, strength ladder, local results, and literature ledgers.
 
 ## Deployment
 
-Serve `foundations/site-v2/` from any static host, or open `index.html` directly.
+Serve `foundations/site/` from any static host, or open `index.html` directly.
 All source links resolve inside the standalone directory; no remote code is used.
 
 ## Boundaries

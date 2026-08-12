@@ -18,7 +18,7 @@ ROOT = v1.ROOT
 FOUNDATIONS = v1.FOUNDATIONS
 ASSETS = v1.ASSETS
 V2_ASSETS = FOUNDATIONS / "matrix_site_v2_assets"
-SITE = FOUNDATIONS / "site-v2"
+SITE = FOUNDATIONS / "site"
 RESULT = FOUNDATIONS / "results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json"
 REPORT = FOUNDATIONS / "reports/matrix-explorer-site-v2.md"
 CUBE = FOUNDATIONS / "results/FOUNDATIONAL_INTERSECTION_CUBE_V2.json"
@@ -152,7 +152,7 @@ def render_report(result: dict[str, Any]) -> str:
 
 ## Outcome
 
-`foundations/site-v2/index.html` presents all **576** Cartesian coordinates.
+`foundations/site/index.html` presents all **576** Cartesian coordinates.
 The **452** cube-emitted coordinates now have separate coverage and migration
 review fields: **{counts['migration_reviewed']} reviewed**, **{counts['migration_pending']} pending**.
 Of those, **{counts['reviewed_no_transfer']}** parent-evidence reviews found no
@@ -180,7 +180,7 @@ cube, migration audit, strength ladder, local results, and literature ledgers.
 
 ## Deployment
 
-Serve `foundations/site-v2/` from any static host, or open `index.html` directly.
+Serve `foundations/site/` from any static host, or open `index.html` directly.
 All source links resolve inside the standalone directory; no remote code is used.
 
 ## Boundaries
@@ -195,13 +195,13 @@ def generated() -> dict[Path, bytes]:
     data_json = (json.dumps(dataset, indent=2, ensure_ascii=False) + "\n").encode()
     index = (ASSETS / "index.html").read_text().replace(
         '<script src="app.js"></script>',
-        '<script src="app.js"></script>\n  <script src="app-v2.js"></script>',
+        '<script src="app.js"></script>\n  <script src="migration-review.js"></script>',
     ).encode()
     outputs: dict[Path, bytes] = {
         SITE / "index.html": index,
         SITE / "styles.css": (ASSETS / "styles.css").read_bytes(),
         SITE / "app.js": (ASSETS / "app.js").read_bytes(),
-        SITE / "app-v2.js": (V2_ASSETS / "app-v2.js").read_bytes(),
+        SITE / "migration-review.js": (V2_ASSETS / "app-v2.js").read_bytes(),
         SITE / "data.json": data_json,
         SITE / "data.js": b"window.MATRIX_EXPLORER_DATA = " + data_json.rstrip() + b";\n",
     }

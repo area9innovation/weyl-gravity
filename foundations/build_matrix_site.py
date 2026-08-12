@@ -12,7 +12,18 @@ import argparse
 import hashlib
 import json
 from pathlib import Path
+import sys
 from typing import Any
+
+# The unversioned command is the canonical deployment entry point.  V1 remains
+# importable below for historical artifact reconstruction; direct execution
+# delegates to the migration-reviewed current builder.
+if __name__ == "__main__":
+    _ROOT = Path(__file__).resolve().parents[1]
+    if str(_ROOT) not in sys.path:
+        sys.path.insert(0, str(_ROOT))
+    from foundations.build_matrix_site_v2 import main as _current_main
+    raise SystemExit(_current_main())
 
 ROOT = Path(__file__).resolve().parents[1]
 FOUNDATIONS = ROOT / "foundations"

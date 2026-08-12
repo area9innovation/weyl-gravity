@@ -1,0 +1,86 @@
+{
+  "schema_version": "science-forge-tier-receipt-v1",
+  "receipt_id": "FOUNDATIONAL_MATRIX_EXPLORER_CANONICAL_SITE_REVISION_RECEIPT",
+  "created": "2026-08-12",
+  "repository_base_commit": "612e310e82817f433f2779b5289dffcffef54198",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
+  "scope": "Deploy the migration-reviewed explorer at the existing foundations/site location, make the unversioned commands canonical, and remove the duplicate foundations/site-v2 tree without changing the v2 scientific data projection.",
+  "supersedes_deployment_location_from": "FOUNDATIONAL_INTERSECTION_CUBE_MIGRATION_AND_SITE_V2_TIER_RECEIPT",
+  "tiers": {
+    "tier_0_compile": {
+      "status": "PASS",
+      "command": "python3 -m py_compile foundations/build_matrix_site.py foundations/build_matrix_site_v2.py foundations/check_matrix_site.py foundations/check_matrix_site_v2.py foundations/verify_matrix_site.py foundations/verify_matrix_site_v2.py foundations/tests/test_matrix_site.py",
+      "elapsed_seconds": 0.04
+    },
+    "tier_0_json": {
+      "status": "PASS",
+      "command": "parse every foundations/**/*.json with json.loads",
+      "elapsed_seconds": 0.03,
+      "result": "100 foundations JSON files parsed after removal of the duplicate standalone source bundle and addition of this receipt."
+    },
+    "tier_0_diff_check": {
+      "status": "PASS",
+      "command": "git diff --check -- foundations",
+      "elapsed_seconds": 0.02
+    },
+    "tier_1_generation": {
+      "status": "PASS",
+      "command": "python3 foundations/build_matrix_site.py --check",
+      "elapsed_seconds": 0.07,
+      "result": "The unversioned command verifies the current migration-reviewed artifacts under foundations/site."
+    },
+    "tier_1_independent_checker": {
+      "status": "PASS",
+      "command": "python3 foundations/check_matrix_site.py",
+      "elapsed_seconds": 0.04,
+      "result": "576 Cartesian cells, 452 emitted, 364 coverage-classified, 452 migration-reviewed, zero migration-pending, 88 reviewed-no-transfer, 124 synthetic complements, 212 total NOT_MAPPED, and 51 evidence records."
+    },
+    "tier_1_verifier": {
+      "status": "PASS",
+      "command": "python3 foundations/verify_matrix_site.py",
+      "elapsed_seconds": 0.13,
+      "result": "Schema, deterministic build, manifest, source links, coverage/migration separation, and fail-closed claim flags pass at the canonical site path."
+    },
+    "tier_1_browser_smoke": {
+      "status": "PASS",
+      "command": "serve foundations/site with python3 -m http.server; open a REVIEWED_NO_TRANSFER deep link in headless Google Chrome at 1600x1100",
+      "elapsed_seconds": 0.9,
+      "result": "The existing URL renders five coverage states, zero pending migrations, rotated headers, and the separate migration-evidence inspector with audit links."
+    },
+    "tier_2_foundations_tests": {
+      "status": "PASS",
+      "command": "python3 -m unittest discover -s foundations/tests -t .",
+      "elapsed_seconds": 1.67,
+      "result": "240/240 tests pass after consolidating the duplicate site test module into the canonical test."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "This is a deployment-location and command-routing revision. It changes no mathematical input, certificate chain, paper theorem, lifecycle state, or shared core algebra."
+    }
+  },
+  "artifact_hashes": {
+    "foundations/build_matrix_site.py": "cbf9407f3c346a33878fcbb70a7a8554ca6fa7039be07546b729f0c5e4081d75",
+    "foundations/build_matrix_site_v2.py": "947269e71d1660bc1bc5902c101b33a54707d98ab39e2979a398cf527b8098fb",
+    "foundations/check_matrix_site.py": "e9da4514e9df95a141516a5d4efa5b24ea025eb3bd280af0220bb6dd199ab4df",
+    "foundations/check_matrix_site_v2.py": "ec938061a178792a2afd2cd95a9e88d8fdec9ede11eef4ac563924f691d8f0b2",
+    "foundations/verify_matrix_site.py": "0dfa1396a67faa02a1888e0ec72090dff39430776d42048a2e83677d48f1a2d9",
+    "foundations/verify_matrix_site_v2.py": "7d5076a08c2327044750df1543c0a57115d035f7eba3d382115d6274293dcf66",
+    "foundations/tests/test_matrix_site.py": "2690d0dd8c326f8d597c4f9769aa625ed7620a2999f39ccd2e11701cdfd505ee",
+    "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json": "13640d3bf2d303d503625bb6cd9fa240895751a4ee57a1d518214acf6f951da9",
+    "foundations/reports/matrix-explorer-site-v2.md": "2c348e640f3204ac8e081e136e6933ab9568af85239480253f24bfe4d2e6d60f",
+    "foundations/site/data.json": "76d407701a3fe09ca4e3f20e6b65df401da169034da51e9c7c7dcd4a3cefdc36",
+    "foundations/site/manifest.json": "cd6929bf14b43f063332299b062e52561a6c78e9332d2d892aa1be5999845c26",
+    "foundations/site/migration-review.js": "008cdfe60cfb8e650650ae15f6214dd5290be84c68007d0581aed24161c4cc72"
+  },
+  "removed": {
+    "path": "foundations/site-v2",
+    "tracked_files": 40,
+    "recoverability": "The removed duplicate remains recoverable from commit 612e310e82817f433f2779b5289dffcffef54198. Its current content is regenerated at foundations/site by the canonical build command."
+  },
+  "unresolved": [
+    "The scientific boundaries recorded by the migration audit and cube v2 are unchanged.",
+    "The internal v2 result identifier remains necessary because the evidence model changed; only the browser deployment has one canonical location.",
+    "The static site was verified locally but was not externally deployed."
+  ],
+  "claim_boundary": "This receipt certifies a canonical deployment location and command path. It establishes no new literature result, mathematical theorem, physical result, quantum lifecycle promotion, or LORENTZIAN-CAUSAL result."
+}

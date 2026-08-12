@@ -6,7 +6,15 @@ from collections import Counter
 import hashlib
 import json
 from pathlib import Path
+import sys
 from typing import Any
+
+if __name__ == "__main__":
+    _ROOT = Path(__file__).resolve().parents[1]
+    if str(_ROOT) not in sys.path:
+        sys.path.insert(0, str(_ROOT))
+    from foundations.check_matrix_site_v2 import main as _current_main
+    raise SystemExit(_current_main())
 
 ROOT = Path(__file__).resolve().parents[1]
 SITE = ROOT / "foundations/site"
