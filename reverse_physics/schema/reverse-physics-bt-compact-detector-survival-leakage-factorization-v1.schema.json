@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-compact-detector-survival-leakage-factorization-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["certificate", "schema_version", "dependency_tags", "lifecycle_state", "result_kind", "question", "answer", "complete_transition_factorization", "order_lambda8_identity", "two_completion_witness", "compact_BT_disposition", "assumptions", "does_not_establish", "missing_object_ledger", "next_gate", "provenance", "verification_commands", "checks", "report", "schema"],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_COMPACT_DETECTOR_SURVIVAL_LEAKAGE_FACTORIZATION_V1"},
+    "schema_version": {"const": "reverse-physics-bt-compact-detector-survival-leakage-factorization-v1"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "complete_transition_factorization": {"const": {"source_space": "X", "selected_click_output": "Y_C", "outside_positive_output": "Y_out", "full_leading_column": "C_4=(A_C,B_out):X->Y_C directsum Y_out", "full_column_Gram": "C_4^*C_4=A_C^*A_C+B_out^*B_out", "status": "FORMAL_EXHAUSTIVE_POSITIVE_OUTPUT_FACTORIZATION"}},
+    "order_lambda8_identity": {"const": {"pseudo_unitarity": "M_8+M_8^*+L_4^*L_4=0", "forward_Hermitian_part": "Herm(M_8)_source,C4-cut=-(A_C^*A_C+B_out^*B_out)/2", "click_probability_coefficient": "+A_C^*A_C", "outside_leakage_probability_coefficient": "+B_out^*B_out", "true_survival_probability_coefficient": "-(A_C^*A_C+B_out^*B_out)", "detector_no_click_coefficient": "-A_C^*A_C", "factorization": "detector no-click=true survival+outside leakage", "status": "EXACT_LEADING_SURVIVAL_LEAKAGE_FACTORIZATION"}},
+    "two_completion_witness": {
+      "type": "object", "additionalProperties": false,
+      "required": ["selected_click_amplitude", "selected_click_probability", "minimal_leakage_amplitude", "leaky_amplitude", "leaky_probability", "minimal_forward_Hermitian_coefficient", "leaky_forward_Hermitian_coefficient", "common_detector_no_click_coefficient", "minimal_order_two_defect", "leaky_order_two_defect", "status"],
+      "properties": {
+        "selected_click_amplitude": {"const": {"numerator": 3, "denominator": 10}},
+        "selected_click_probability": {"const": {"numerator": 9, "denominator": 100}},
+        "minimal_leakage_amplitude": {"const": {"numerator": 0, "denominator": 1}},
+        "leaky_amplitude": {"const": {"numerator": 2, "denominator": 5}},
+        "leaky_probability": {"const": {"numerator": 4, "denominator": 25}},
+        "minimal_forward_Hermitian_coefficient": {"const": {"numerator": -9, "denominator": 200}},
+        "leaky_forward_Hermitian_coefficient": {"const": {"numerator": -1, "denominator": 8}},
+        "common_detector_no_click_coefficient": {"const": {"numerator": -9, "denominator": 100}},
+        "minimal_order_two_defect": {"$ref": "#/$defs/zero3"},
+        "leaky_order_two_defect": {"$ref": "#/$defs/zero3"},
+        "status": {"const": "SAME_LOCAL_CLICK_DIFFERENT_VIRTUAL_EXACT_WITNESS"}
+      }
+    },
+    "compact_BT_disposition": {"const": {"coherent_selected_click_effect": "BT_CUT_AFFILIATED_AND_POSITIVE", "binary_operational_no_click": "FIXED_AS_I_MINUS_SELECTED_CLICK", "binary_detector_probability": "CONSTRUCTED_AT_LEADING_ORDER_ON_DECLARED_DOMAIN", "true_BT_survival_amplitude": "NOT_IDENTIFIED_BY_LOCAL_CLICK_DATA", "outside_positive_transition_block": "UNCOMPUTED_AND_NOT_CERTIFIED_ZERO", "minimal_Julia_dilation": "ZERO_LEAKAGE_COMPLETION_NOT_UNIQUE_BT_EVOLUTION", "full_positive_output_completeness": "NOT_CONSTRUCTED", "complete_BT_finite_time_evolution": "NOT_CONSTRUCTED"}},
+    "assumptions": {"type": "array", "minItems": 7, "maxItems": 7, "items": {"$ref": "#/$defs/text"}},
+    "does_not_establish": {"type": "array", "minItems": 13, "maxItems": 13, "items": {"$ref": "#/$defs/text"}},
+    "missing_object_ledger": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "object", "additionalProperties": false, "required": ["object", "status", "required_value"], "properties": {"object": {"$ref": "#/$defs/text"}, "status": {"const": "MISSING"}, "required_value": {"$ref": "#/$defs/text"}}}},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "provenance": {"type": "object", "additionalProperties": false, "required": ["source_commit", "retrieval_date", "inputs", "method"], "properties": {"source_commit": {"const": "fa65ef035cdf7da679ce81e87a818e164df01fa2"}, "retrieval_date": {"const": "2026-08-12"}, "inputs": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "object", "additionalProperties": false, "required": ["path", "sha256"], "properties": {"path": {"$ref": "#/$defs/text"}, "sha256": {"$ref": "#/$defs/hash"}}}}, "method": {"$ref": "#/$defs/text"}}},
+    "verification_commands": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/text"}},
+    "checks": {"type": "object", "additionalProperties": false, "required": ["ok", "passed", "total", "failures", "details"], "properties": {"ok": {"const": true}, "passed": {"const": 20}, "total": {"const": 20}, "failures": {"const": []}, "details": {"type": "object", "minProperties": 20, "maxProperties": 20, "additionalProperties": {"const": true}}}},
+    "report": {"const": "reverse_physics/reports/bt-compact-detector-survival-leakage-factorization.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-compact-detector-survival-leakage-factorization-v1.schema.json"}
+  },
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "zero3": {"const": [["0", "0", "0"], ["0", "0", "0"], ["0", "0", "0"]]}
+  }
+}

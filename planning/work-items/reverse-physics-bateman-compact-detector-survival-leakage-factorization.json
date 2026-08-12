@@ -1,0 +1,19 @@
+{
+  "id": "sf:program/work/reverse-physics-bateman-compact-detector-survival-leakage-factorization",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "reverse-physics",
+    "state": "ACTIVE",
+    "objective": "Separate the coherent compact detector's operational no-click event from genuine BT forward survival, prove the exact leading survival-plus-leakage factorization, and decide whether the detector-local transition block determines the order-lambda8 BT virtual coefficient.",
+    "depends_on": ["REVERSE_PHYSICS_BT_COHERENT_COMPACT_WAVEPACKET_DETECTOR_DILATION_V1", "REVERSE_PHYSICS_BT_SIX_POINT_FULL_PHASE_SPACE_BORN_POSITIVITY_V1", "REVERSE_PHYSICS_BT_FINITE_TIME_HAMILTONIAN_CUT_AFFILIATION_V1"],
+    "activates": ["an honest dynamical meaning for compact no-click", "an exact nonidentifiability theorem for the local virtual coefficient", "the correct full-output next gate"],
+    "current_gate": "Write the leading BT transition column as (A_C,B_out), derive pseudo-unitarity and all three click/leakage/survival coefficients, prove that no-click is independent of B_out while the forward virtual coefficient is not, and test the result on exact rational completions sharing the same detector click block.",
+    "stop_condition": "Land an exact certificate and independent verifier for survival-plus-leakage factorization, two-completion nonidentifiability, the minimal-Julia boundary, compact-acceptance nonexhaustivity, and all Eq. 19/gravity boundaries.",
+    "forbid": "no local no-click Kraus called BT survival; no compact detector block called a complete transition column; no unobserved leakage set to zero without an invariance certificate; no operational probability promoted to an all-time S matrix; no Eq. 19, loop, gravity, BRST or LORENTZIAN-CAUSAL promotion",
+    "allowed_paths": ["reverse_physics/", "paper/05-interaction-obstructions.tex", "paper/05-interaction-obstructions.pdf", "paper/06-einstein-weyl-interaction-obstructions.tex", "paper/06-einstein-weyl-interaction-obstructions.pdf", "planning/work-items/reverse-physics-bateman-compact-detector-survival-leakage-factorization.json", "planning/events/"],
+    "resource_hint": "For the C4^*C4 cut component of a complete positive order-lambda4 transition column C4=(A_C,B_out), pseudo-unitarity forces Herm(M8)_source,C4-cut=-(A_C^*A_C+B_out^*B_out)/2. The compact click probability is A_C^*A_C. True survival in this slice loses both terms, leakage restores B_out^*B_out inside the no-click event, and therefore E_no=I-A_C^*A_C without identifying no-click with survival. Other perturbative products and cut-free terms are separate. Two exact completions with the same A_C and different B_out prove that the local click data cannot determine the forward virtual coefficient. The minimal Julia dilation is the B_out=0 completion, not the unique BT completion.",
+    "input_commit": "fa65ef035cdf7da679ce81e87a818e164df01fa2",
+    "stream": "reverse-physics"
+  }
+}

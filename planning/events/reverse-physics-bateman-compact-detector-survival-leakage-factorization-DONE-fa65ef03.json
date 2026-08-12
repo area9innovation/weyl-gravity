@@ -1,0 +1,32 @@
+{
+  "schema": "event-v0",
+  "id": "sf:program/event/reverse-physics-bateman-compact-detector-survival-leakage-factorization-DONE-fa65ef03",
+  "kind": "event",
+  "source": {
+    "path": "tools/science-forge/program/events/reverse-physics-bateman-compact-detector-survival-leakage-factorization-DONE-fa65ef03.json",
+    "span": null
+  },
+  "body": {
+    "event_kind": "WORK_ITEM_TRANSITIONED",
+    "actor": "reverse-physics",
+    "base_revision": "science-forge-ir-v0",
+    "predecessors": [],
+    "when": "2026-08-12",
+    "seq": 1,
+    "payload": {
+      "target": "sf:program/work/reverse-physics-bateman-compact-detector-survival-leakage-factorization",
+      "to_state": "DONE",
+      "note": "The exact order-lambda8 factorization detector no-click=true survival+outside leakage is certified for the C4^*C4 cut slice. For the complete positive order-lambda4 transition column C4=(A_C,B_out), pseudo-unitarity forces Herm(M8)_source,C4-cut=-(A_C^*A_C+B_out^*B_out)/2, while the binary no-click coefficient remains -A_C^*A_C. Other perturbative products and cut-free terms remain separate. Two rational completions with the same local click block and different forward coefficients prove nonidentifiability. Thus the compact binary detector probability does not require a separate virtual graph, but genuine survival, complete evolution and an S matrix require the full output column. Eq. 19, loops, gravity, BV/BRST and LORENTZIAN-CAUSAL claims remain open. Evidence: REVERSE_PHYSICS_BT_COMPACT_DETECTOR_SURVIVAL_LEAKAGE_FACTORIZATION_V1."
+    },
+    "native": {
+      "authored_by": "manual close-out after exact three-block producer, independent Fraction verifier, leakage mutation suite and Papers 5/6 verification",
+      "policy": "append-only; one content-addressed file per event; the work-item file is never rewritten and the effective state is the fold of events over the base state"
+    }
+  },
+  "edges": [
+    {
+      "rel": "TRANSITIONS",
+      "to": "sf:program/work/reverse-physics-bateman-compact-detector-survival-leakage-factorization"
+    }
+  ]
+}

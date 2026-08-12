@@ -198,10 +198,10 @@ normalized leading probability jet without Eq.~(19).  The fixed-shell click
 effect has spectrum $0,1/16,(2-\sqrt3)/8,(2+\sqrt3)/8$, and its no-click
 complement is positive on an exact finite interval.  The source
 $(|\Upsilon^3\rangle+|\Omega^3\rangle)/\sqrt2$ has rate
-$\lambda^8/[2048\pi^4\kappa^4L_xL_y^2L_z^2]$, with the leading survival
-coefficient fixed by pseudo-unitarity.  It is a scalar auxiliary-sector
-result, not a transported perfect-square source, metric-BV result, or
-all-time probability.
+$\lambda^8/[2048\pi^4\kappa^4L_xL_y^2L_z^2]$.  Its binary no-click complement
+is fixed by normalization; genuine forward survival also depends on
+unobserved output blocks.  It is a scalar auxiliary-sector result, not a
+transported perfect-square source, metric-BV result, or all-time probability.
 Formal two-sidedness of $R_t$ does, however, pull this source and its effects
 back to a normalized dressed perfect-square scalar projector with the same
 rate.  Positivity forces the source to break shift charge: its projector has
@@ -2641,9 +2641,26 @@ also constructs the exact Julia unitary with no-click Kraus
 $(I-A_{\rm coh}^*A_{\rm coh})^{1/2}$.  Expanding any actual pseudo-unitary BT
 completion on the same positive source/output sector would force its
 order-$\lambda^8$ source survival coefficient to have Hermitian part
-$-A_4^*A_4/2$.  The public calculation does not yet supply that virtual graph
-or a common-domain BT evolution, so the Julia complement is an operational
-detector completion, not a dynamical affiliation.  The zero-gap limit,
+$-A_4^*A_4/2$ only if this selected output block is exhaustive.  In general,
+writing the complete positive transition column as
+$C_4=(A_4,B_{\rm out})$ gives
+\[
+ \operatorname{Herm}(M_8)_{\rm source}
+ =-\frac12(A_4^*A_4+B_{\rm out}^*B_{\rm out}).
+\]
+This is the $C_4^*C_4$ cut component; other perturbative products and cut-free
+order-$\lambda^8$ terms remain separate.
+True survival loses both terms and outside leakage restores the second inside
+the detector's no-click event, leaving exactly $I-A_4^*A_4$.  Certificate
+\par\noindent
+\texttt{REVERSE\_PHYSICS\_BT\_COMPACT\_DETECTOR\_}
+\allowbreak\texttt{SURVIVAL\_LEAKAGE\_FACTORIZATION\_V1}
+\par\noindent
+proves with two exact completions that the compact click data determine the
+binary detector probability but not the BT forward coefficient.  The public
+calculation supplies neither $B_{\rm out}$ nor a common-domain evolution, so
+the Julia complement is the minimal zero-leakage detector completion, not a
+dynamical affiliation.  The zero-gap limit,
 general Eq.~(19), all-time scattering, and every metric-BV or Lorentzian claim
 remain open.
 There is nevertheless a genuine scalar hard-scattering baseline.  The
