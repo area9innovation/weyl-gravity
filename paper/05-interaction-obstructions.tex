@@ -3247,8 +3247,42 @@ is inserted.  Certificate
 \allowbreak\texttt{ORDER4\_PACKET\_COLUMN\_V1}
 \par\noindent
 therefore reduces connected outside leakage to positive-even three-body
-momentum outside the detector.  The $q_B=0$ boundaries, removal of the compact
-cutoff, disconnected spectator terms, and all-time dynamics remain open.
+momentum outside the detector.  This reduction also permits an exact removal
+of the compact momentum cutoff at fixed finite time.  Put
+$P=(M,\mathbf0)$, $M=16/5$.  Every mixed channel can be oriented as
+$q=P-p-k$, where the two spectator energies satisfy $0\leq E,K\leq M/2$.
+Thus $q^0=M-E-K\geq0$, and $q=0$ occurs exactly when
+$E=K=M/2$ and the spectator directions are antipodal.  The transverse
+Jacobian of $(q^0,q^z,q^x,q^y)$ with respect to two energies and two relative
+angular coordinates has determinant
+\[
+ -2M^2=-\frac{512}{25}.
+\]
+Using
+\[
+ d\Phi_3(P)=\frac{E\,dE\,d\Omega\,d\Omega_*}{512\pi^5}
+\]
+and integrating the relative angle and both energy variables gives, exactly,
+\[
+ \int_{\Phi_3\times\Phi_3}\frac{d\Phi_3(x)d\Phi_3(y)}{D_B^2}
+ =\frac{1}{3200\pi^6}
+\]
+for each of the nine exchange channels; the intermediate dimensionless
+integral is $1/16$.  The hard channel contributes $1/(6400\pi^6)$.
+Consequently the unpartitioned column exists globally as a Hilbert--Schmidt
+operator and obeys
+\[
+ \|A_{\rm full}\|^2\leq
+ \frac{1539}{400\pi^6}\lambda^8T^2.
+\]
+Certificate
+\par\noindent
+\texttt{REVERSE\_PHYSICS\_BT\_GLOBAL\_CONNECTED\_FINITE\_}
+\allowbreak\texttt{TIME\_PACKET\_COLUMN\_V1}
+\par\noindent
+therefore closes the connected order-$\lambda^4$ momentum domain, including
+$q_B=0$ as an $L^2$ equivalence class.  Disconnected spectator terms, the
+matching forward coefficient, all-time dynamics, and Eq.~(19) remain open.
 
 The auxiliary preparation nevertheless has an exact scalar preimage on the
 finite covariant detector ideal.  Put

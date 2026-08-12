@@ -1,0 +1,208 @@
+{
+  "answer": "Yes at fixed finite time on the full labeled massless three-body phase-space product. With P=(M,0), M=16/5, the hard channel has q=P. Each of the nine exchange channels can be oriented as q=P-p-k, where p and k are one incoming and one outgoing spectator with energies E,K in [0,M/2]. Hence q0=M-E-K>=0, and q=0 occurs exactly at E=K=M/2 with opposite spectator directions. The exact derivative of (q0,qz,qx,qy) with respect to (E,K,s,t) in a local antipodal angular chart has determinant -2M^2=-512/25, so the zero has four transverse directions. Recursive phase space gives dPhi3=E dE dOmega dOmega_star/(512*pi^5), and after integrating the two internal fibers the apparent squared singularity reduces to an elementary energy-angle integral. Its dimensionless value is 1/16: on e>=k the angular primitive integrates to 1/32, including the exact moment integral_0^1 x log(x)dx=-1/4, and symmetry doubles it. Therefore integral dPhi3(x)dPhi3(y)/D_B^2=M^2/(32768*pi^6)=1/(3200*pi^6) for every exchange channel. The hard channel contributes 1/(6400*pi^6). Since |F_T(delta)|<=T, the sum of all ten kernel Hilbert--Schmidt norms squared is at most 19*T^2/(6400*pi^6). Combining this with the exact ten-residue Gram eigenvalue 81/16 and the tree multiplier 16 gives ||A_full||^2<=1539*lambda^8*T^2/(400*pi^6). Thus the unpartitioned connected finite-time column and its adjoint-square click effect exist globally as Hilbert--Schmidt/bounded operators, with no q_B=0 cutoff. Its complement is positive when the displayed bound is at most one. For the declared scalar source, q_click<=81*lambda^8*T^2/(200*pi^6). This closes the connected order-lambda4 momentum-domain gate, but not disconnected spectator terms, the matching forward coefficient, an all-time limit, general Eq. (19), loops, gravity or Lorentzian causality.",
+  "assumptions": [
+    "the standard labeled massless three-body invariant phase measure and fixed timelike total momentum P=(16/5,0,0,0) from the certified five-dimensional chart are used",
+    "the finite-time spectral replacement beta=F_T(delta)/D is applied to all ten public connected tree channels with unit physical weights",
+    "each unordered exchange channel is oriented as q=P-p_i-k_a, which has q0>=0 on the closed physical energy triangle",
+    "kernel values on the measure-zero q=0 locus are understood as an L2 equivalence class",
+    "the result is the connected order-lambda4 column only; disconnected lower-order spectator compositions remain separate",
+    "the coupling-duration bound is imposed when the operational complement I-A^*A is used"
+  ],
+  "certificate": "REVERSE_PHYSICS_BT_GLOBAL_CONNECTED_FINITE_TIME_PACKET_COLUMN_V1",
+  "checks": {
+    "details": {
+      "D_dominates_Euclidean_q_radius": true,
+      "all_exchange_kernels_are_globally_Hilbert_Schmidt": true,
+      "connected_momentum_domain_gap_is_closed": true,
+      "disconnected_all_time_Eq19_gravity_and_causality_remain_open": true,
+      "exchange_soft_integral_is_one_over_3200_pi6": true,
+      "finite_time_numerator_is_bounded_by_T": true,
+      "fixed_total_mass_is_sixteen_fifths": true,
+      "full_energy_integral_is_one_over_16": true,
+      "global_amplitude_bound_is_1539_over_400_pi6": true,
+      "global_scalar_source_bound_is_81_over_200_pi6": true,
+      "half_energy_integral_is_one_over_32": true,
+      "hard_integral_is_one_over_6400_pi6": true,
+      "inputs_are_content_pinned": true,
+      "log_moment_is_exact": true,
+      "one_hard_and_nine_exchange_channels": true,
+      "predecessors_pass": true,
+      "recursive_phase_measure_coefficient_is_one_over_512": true,
+      "soft_transverse_Jacobian_is_exact": true,
+      "soft_transverse_determinant_is_minus_512_over_25": true,
+      "soft_transverse_rank_is_four": true,
+      "soft_zero_requires_antipodal_spectators": true,
+      "spectator_marginal_coefficient_is_one_over_128": true,
+      "standard_total_phase_volume_is_one_over_25_pi3": true,
+      "ten_channel_kernel_sum_is_19_over_6400_pi6": true,
+      "unpartitioned_finite_time_effect_is_global_and_positive": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 25,
+    "total": 25
+  },
+  "declared_scalar_source": {
+    "global_bound": "q_click<=81*lambda^8*T^2/(200*pi^6)",
+    "hard_channel": "dark because R_0*u_0=0",
+    "probability": "q_click=16*lambda^8*||sum_(B=1)^9 K_B,T F||^2",
+    "status": "GLOBAL_CONNECTED_FINITE_TIME_SCALAR_PACKET_PROBABILITY"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "the disconnected spectator contribution to the complete order-lambda4 three-particle evolution",
+    "the matching order-lambda8 forward coefficient or exhaustive positive output theorem",
+    "an exact probability after summing all perturbative orders",
+    "an all-time Moller, LSZ or S operator",
+    "the standard scalar projector or general Eq. (19)",
+    "loop, real-virtual or KLN completion",
+    "a packet-independent cross section",
+    "gravity or metric BV/BRST transfer",
+    "anything LORENTZIAN-CAUSAL",
+    "literature priority"
+  ],
+  "exact_exchange_integral": {
+    "angular_reduction": "integral_-1^1 dc/(D/M)^2=(1/(e*k))*[log((1)/(1-2*min(e,k)))+(1-e-k)-(1-e-k)/(1-2*min(e,k))]",
+    "denominator": "D/M=1-e-k+sqrt(e^2+k^2+2*e*k*c)",
+    "exchange_channel_value": "integral dPhi3(x)dPhi3(y)/D_B^2=M^2/(32768*pi^6)=1/(3200*pi^6)",
+    "full_dimensionless_value": "1/16",
+    "half_domain_integrand_after_e_integration": "3*k^2/2-3*k/4+(k-1/2)*log(1-2*k)",
+    "half_domain_value": "1/32",
+    "hard_channel_value": "Phi3(P)^2/M^2=1/(6400*pi^6)",
+    "log_moment": "integral_0^1 x*log(x)dx=-1/4",
+    "scaled_variables": "e=E/M, k=K/M, c=n dot m; 0<=e,k<=1/2 and -1<=c<=1",
+    "status": "EXACT_GLOBAL_SOFT_INTEGRAL_FINITE"
+  },
+  "global_connected_column": {
+    "amplitude": "A_full=16*lambda^4*sum_(B=0)^9(K_B,T tensor R_B)",
+    "click": "E_click=A_full^*A_full",
+    "kernel": "beta_B,T=F_T(delta_B)/D_B on the full phase-space product, defined as an L2 equivalence class at q_B=0",
+    "kernel_sum_bound": "sum_B ||K_B,T||_HS^2<=19*T^2/(6400*pi^6)",
+    "no_click": "E_no=I-E_click",
+    "operator_bound": "||A_full||^2<=||A_full||_HS^2<=1539*lambda^8*T^2/(400*pi^6)",
+    "residue_Gram_bound": "lambda_max(H)=81/16",
+    "status": "GLOBAL_CONNECTED_FINITE_TIME_POSITIVE_EFFECT_CONSTRUCTED",
+    "sufficient_positive_domain": "1539*lambda^8*T^2/(400*pi^6)<=1",
+    "time_bound": "|F_T(delta)|<=T"
+  },
+  "interpretation": {
+    "Lorentzian_causal_claim": "NOT_ESTABLISHED",
+    "all_time_limit": "NOT_CONSTRUCTED",
+    "connected_particle_number_species_and_momentum_codomain": "CLOSED_AT_ORDER_LAMBDA4",
+    "disconnected_spectator_completion": "MISSING",
+    "general_Eq19": "NOT_PROVED",
+    "gravity_or_BV_BRST_transfer": "NOT_CONSTRUCTED",
+    "matching_forward_cut": "MISSING",
+    "q_B_zero_cutoff": "REMOVED_FOR_FIXED_FINITE_TIME_CONNECTED_COLUMN"
+  },
+  "lifecycle_state": "COEFFICIENT_COMPUTED",
+  "missing_object_ledger": [
+    {
+      "object": "disconnected spectator completion of the full order-lambda4 three-particle column",
+      "required_value": "compose identity-spectator lower-order connected blocks on the same finite-time phase-space domain",
+      "status": "MISSING"
+    },
+    {
+      "object": "matching forward cut and exhaustive normalization",
+      "required_value": "derive the order-lambda8 forward coefficient from BT dynamics or prove a complete positive-output identity",
+      "status": "MISSING"
+    },
+    {
+      "object": "all-time or general Eq. 19 completion",
+      "required_value": "control T to infinity and the nonregular projector/trace architecture independently",
+      "status": "MISSING"
+    }
+  ],
+  "next_gate": "Construct the disconnected spectator part of the order-lambda4 three-particle finite-time column from the already certified lower connected blocks, on the same full phase-space domain. Then the complete output column can be compared with the order-lambda8 forward cut. The connected momentum, particle-number and species gates are now closed; all-time scattering and general Eq. (19) remain distinct later gates.",
+  "phase_space_disintegration": {
+    "integrated_spectator_marginal": "dnu(p)=E*dE*dOmega/(128*pi^4)",
+    "recursive_measure": "dPhi3(P)=E*dE*dOmega*dOmega_star/(512*pi^5)",
+    "spectator_energy_range": "0<=E<=M/2",
+    "status": "EXACT_STANDARD_LABELED_PHASE_MEASURE_DISINTEGRATION",
+    "total_momentum": "P=(M,0), M=16/5",
+    "total_phase_volume": "Phi3(P)=M^2/(256*pi^3)=1/(25*pi^3)"
+  },
+  "provenance": {
+    "inputs": [
+      {
+        "path": "planning/work-items/reverse-physics-bateman-global-connected-finite-time-packet-column.json",
+        "sha256": "082d5aa0567567faa3a382871d49b8975ce1b4239606ad59861cd7b6894bce48"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_SIX_POINT_FULL_PHASE_SPACE_BORN_POSITIVITY_V1.json",
+        "sha256": "e85ed5ebc678601ed181547e3e0a5342fa9ed4cb03a5df3c5b3a88ecaf79def8"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_COMPACT_WAVEPACKET_HAMILTONIAN_PROBABILITY_V1.json",
+        "sha256": "d22bfee2112d1b9f4ca0fe91aa8dc5286170d93ba47f7aeceb69f9df86bbdc37"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_TEN_CHANNEL_RECORDED_COMPACT_WAVEPACKET_INSTRUMENT_V1.json",
+        "sha256": "44c646377a24a99ba737f90c9a9993261f9dae95330f033c27167273faf04fd0"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_COMPLETE_CONNECTED_ORDER4_PACKET_COLUMN_V1.json",
+        "sha256": "5b0fc2719b8daa5650800449d802510911af45445e26fef516a7cb05426fefbb"
+      }
+    ],
+    "method": "Exact invariant three-body phase-space recursion; exact rational rank-four soft-zero Jacobian; elementary angular primitive and Fraction audit of the logarithmic energy moment; exact residue-Gram norm propagation. No floating-point arithmetic is used.",
+    "retrieval_date": "2026-08-12",
+    "source_commit": "f41362ca662820893221873a11f5aaae37e4ebd0"
+  },
+  "question": "Does the actual unit-weight ten-channel connected BT packet column remain square-integrable when the compact regular cutoff is removed across every q_B=0 point?",
+  "report": "reverse_physics/reports/bt-global-connected-finite-time-packet-column.md",
+  "result_kind": "exact soft-complete Hilbert--Schmidt theorem and global positive finite-time effect for the connected order-lambda4 BT three-particle column",
+  "schema": "reverse_physics/schema/reverse-physics-bt-global-connected-finite-time-packet-column-v1.schema.json",
+  "schema_version": "reverse-physics-bt-global-connected-finite-time-packet-column-v1",
+  "soft_zero_geometry": {
+    "Jacobian_determinant": "-512/25",
+    "Jacobian_rows_q0_qz_qx_qy": [
+      [
+        "-1",
+        "-1",
+        "0",
+        "0"
+      ],
+      [
+        "-1",
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "-16/5",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "-16/5"
+      ]
+    ],
+    "effective_transverse_rank": 4,
+    "energy_component": "q_ia^0=M-E_i-K_a>=0",
+    "exchange_channels": "q_ia=P-p_i-k_a for i,a in {0,1,2}",
+    "hard_channel": "q_0=P and D_0=M",
+    "local_antipodal_chart": "n=+z, m(s,t)=(2s,2t,s^2+t^2-1)/(1+s^2+t^2)",
+    "local_measure_power": "d^4q and |beta|^2=O(|q|^-2), hence radial behavior r*dr",
+    "status": "SOFT_ZERO_EFFECTIVE_CODIMENSION_FOUR_AND_LOCALLY_SQUARE_INTEGRABLE",
+    "transverse_variables": [
+      "E",
+      "K",
+      "s",
+      "t"
+    ],
+    "zero_locus": "E_i=K_a=M/2 and direction(k_a)=-direction(p_i)"
+  },
+  "verification_commands": [
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/bt_global_connected_finite_time_packet_column.py --write --check",
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/verify_bt_global_connected_finite_time_packet_column.py",
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 -m unittest -v reverse_physics.tests.test_bt_global_connected_finite_time_packet_column"
+  ]
+}

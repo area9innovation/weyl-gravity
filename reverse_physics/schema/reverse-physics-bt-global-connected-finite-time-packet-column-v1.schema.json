@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-global-connected-finite-time-packet-column-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["certificate", "schema_version", "dependency_tags", "lifecycle_state", "result_kind", "question", "answer", "phase_space_disintegration", "soft_zero_geometry", "exact_exchange_integral", "global_connected_column", "declared_scalar_source", "interpretation", "assumptions", "does_not_establish", "missing_object_ledger", "next_gate", "provenance", "verification_commands", "checks", "report", "schema"],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_GLOBAL_CONNECTED_FINITE_TIME_PACKET_COLUMN_V1"},
+    "schema_version": {"const": "reverse-physics-bt-global-connected-finite-time-packet-column-v1"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "phase_space_disintegration": {
+      "type": "object", "additionalProperties": false,
+      "required": ["total_momentum", "spectator_energy_range", "recursive_measure", "integrated_spectator_marginal", "total_phase_volume", "status"],
+      "properties": {
+        "total_momentum": {"const": "P=(M,0), M=16/5"},
+        "spectator_energy_range": {"const": "0<=E<=M/2"},
+        "recursive_measure": {"const": "dPhi3(P)=E*dE*dOmega*dOmega_star/(512*pi^5)"},
+        "integrated_spectator_marginal": {"const": "dnu(p)=E*dE*dOmega/(128*pi^4)"},
+        "total_phase_volume": {"const": "Phi3(P)=M^2/(256*pi^3)=1/(25*pi^3)"},
+        "status": {"const": "EXACT_STANDARD_LABELED_PHASE_MEASURE_DISINTEGRATION"}
+      }
+    },
+    "soft_zero_geometry": {
+      "type": "object", "additionalProperties": false,
+      "required": ["hard_channel", "exchange_channels", "energy_component", "zero_locus", "local_antipodal_chart", "transverse_variables", "Jacobian_rows_q0_qz_qx_qy", "Jacobian_determinant", "effective_transverse_rank", "local_measure_power", "status"],
+      "properties": {
+        "hard_channel": {"const": "q_0=P and D_0=M"},
+        "exchange_channels": {"const": "q_ia=P-p_i-k_a for i,a in {0,1,2}"},
+        "energy_component": {"const": "q_ia^0=M-E_i-K_a>=0"},
+        "zero_locus": {"const": "E_i=K_a=M/2 and direction(k_a)=-direction(p_i)"},
+        "local_antipodal_chart": {"$ref": "#/$defs/text"},
+        "transverse_variables": {"const": ["E", "K", "s", "t"]},
+        "Jacobian_rows_q0_qz_qx_qy": {"const": [["-1", "-1", "0", "0"], ["-1", "1", "0", "0"], ["0", "0", "-16/5", "0"], ["0", "0", "0", "-16/5"]]},
+        "Jacobian_determinant": {"const": "-512/25"},
+        "effective_transverse_rank": {"const": 4},
+        "local_measure_power": {"const": "d^4q and |beta|^2=O(|q|^-2), hence radial behavior r*dr"},
+        "status": {"const": "SOFT_ZERO_EFFECTIVE_CODIMENSION_FOUR_AND_LOCALLY_SQUARE_INTEGRABLE"}
+      }
+    },
+    "exact_exchange_integral": {
+      "type": "object", "additionalProperties": false,
+      "required": ["scaled_variables", "denominator", "angular_reduction", "half_domain_integrand_after_e_integration", "log_moment", "half_domain_value", "full_dimensionless_value", "exchange_channel_value", "hard_channel_value", "status"],
+      "properties": {
+        "scaled_variables": {"const": "e=E/M, k=K/M, c=n dot m; 0<=e,k<=1/2 and -1<=c<=1"},
+        "denominator": {"const": "D/M=1-e-k+sqrt(e^2+k^2+2*e*k*c)"},
+        "angular_reduction": {"const": "integral_-1^1 dc/(D/M)^2=(1/(e*k))*[log((1)/(1-2*min(e,k)))+(1-e-k)-(1-e-k)/(1-2*min(e,k))]"},
+        "half_domain_integrand_after_e_integration": {"const": "3*k^2/2-3*k/4+(k-1/2)*log(1-2*k)"},
+        "log_moment": {"const": "integral_0^1 x*log(x)dx=-1/4"},
+        "half_domain_value": {"const": "1/32"},
+        "full_dimensionless_value": {"const": "1/16"},
+        "exchange_channel_value": {"const": "integral dPhi3(x)dPhi3(y)/D_B^2=M^2/(32768*pi^6)=1/(3200*pi^6)"},
+        "hard_channel_value": {"const": "Phi3(P)^2/M^2=1/(6400*pi^6)"},
+        "status": {"const": "EXACT_GLOBAL_SOFT_INTEGRAL_FINITE"}
+      }
+    },
+    "global_connected_column": {
+      "type": "object", "additionalProperties": false,
+      "required": ["kernel", "time_bound", "kernel_sum_bound", "amplitude", "residue_Gram_bound", "operator_bound", "click", "no_click", "sufficient_positive_domain", "status"],
+      "properties": {
+        "kernel": {"$ref": "#/$defs/text"},
+        "time_bound": {"const": "|F_T(delta)|<=T"},
+        "kernel_sum_bound": {"const": "sum_B ||K_B,T||_HS^2<=19*T^2/(6400*pi^6)"},
+        "amplitude": {"const": "A_full=16*lambda^4*sum_(B=0)^9(K_B,T tensor R_B)"},
+        "residue_Gram_bound": {"const": "lambda_max(H)=81/16"},
+        "operator_bound": {"const": "||A_full||^2<=||A_full||_HS^2<=1539*lambda^8*T^2/(400*pi^6)"},
+        "click": {"const": "E_click=A_full^*A_full"},
+        "no_click": {"const": "E_no=I-E_click"},
+        "sufficient_positive_domain": {"const": "1539*lambda^8*T^2/(400*pi^6)<=1"},
+        "status": {"const": "GLOBAL_CONNECTED_FINITE_TIME_POSITIVE_EFFECT_CONSTRUCTED"}
+      }
+    },
+    "declared_scalar_source": {"const": {"probability": "q_click=16*lambda^8*||sum_(B=1)^9 K_B,T F||^2", "global_bound": "q_click<=81*lambda^8*T^2/(200*pi^6)", "hard_channel": "dark because R_0*u_0=0", "status": "GLOBAL_CONNECTED_FINITE_TIME_SCALAR_PACKET_PROBABILITY"}},
+    "interpretation": {"const": {"q_B_zero_cutoff": "REMOVED_FOR_FIXED_FINITE_TIME_CONNECTED_COLUMN", "connected_particle_number_species_and_momentum_codomain": "CLOSED_AT_ORDER_LAMBDA4", "disconnected_spectator_completion": "MISSING", "matching_forward_cut": "MISSING", "all_time_limit": "NOT_CONSTRUCTED", "general_Eq19": "NOT_PROVED", "gravity_or_BV_BRST_transfer": "NOT_CONSTRUCTED", "Lorentzian_causal_claim": "NOT_ESTABLISHED"}},
+    "assumptions": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"$ref": "#/$defs/text"}},
+    "does_not_establish": {"type": "array", "minItems": 10, "maxItems": 10, "items": {"$ref": "#/$defs/text"}},
+    "missing_object_ledger": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "object", "additionalProperties": false, "required": ["object", "status", "required_value"], "properties": {"object": {"$ref": "#/$defs/text"}, "status": {"const": "MISSING"}, "required_value": {"$ref": "#/$defs/text"}}}},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "provenance": {"type": "object", "additionalProperties": false, "required": ["source_commit", "retrieval_date", "inputs", "method"], "properties": {"source_commit": {"const": "f41362ca662820893221873a11f5aaae37e4ebd0"}, "retrieval_date": {"const": "2026-08-12"}, "inputs": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"type": "object", "additionalProperties": false, "required": ["path", "sha256"], "properties": {"path": {"$ref": "#/$defs/text"}, "sha256": {"$ref": "#/$defs/hash"}}}}, "method": {"$ref": "#/$defs/text"}}},
+    "verification_commands": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/text"}},
+    "checks": {"type": "object", "additionalProperties": false, "required": ["ok", "passed", "total", "failures", "details"], "properties": {"ok": {"const": true}, "passed": {"const": 25}, "total": {"const": 25}, "failures": {"const": []}, "details": {"type": "object", "minProperties": 25, "maxProperties": 25, "additionalProperties": {"const": true}}}},
+    "report": {"const": "reverse_physics/reports/bt-global-connected-finite-time-packet-column.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-global-connected-finite-time-packet-column-v1.schema.json"}
+  },
+  "$defs": {"text": {"type": "string", "minLength": 1}, "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+}

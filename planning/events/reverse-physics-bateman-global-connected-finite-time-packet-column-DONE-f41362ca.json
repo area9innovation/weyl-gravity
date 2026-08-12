@@ -1,0 +1,32 @@
+{
+  "schema": "event-v0",
+  "id": "sf:program/event/reverse-physics-bateman-global-connected-finite-time-packet-column-DONE-f41362ca",
+  "kind": "event",
+  "source": {
+    "path": "tools/science-forge/program/events/reverse-physics-bateman-global-connected-finite-time-packet-column-DONE-f41362ca.json",
+    "span": null
+  },
+  "body": {
+    "event_kind": "WORK_ITEM_TRANSITIONED",
+    "actor": "reverse-physics",
+    "base_revision": "science-forge-ir-v0",
+    "predecessors": [],
+    "when": "2026-08-12",
+    "seq": 1,
+    "payload": {
+      "target": "sf:program/work/reverse-physics-bateman-global-connected-finite-time-packet-column",
+      "to_state": "DONE",
+      "note": "The q_B=0 exclusion is removed for the complete connected order-lambda4 finite-time column. Each of nine exchange zeros has an exact rank-four spectator Jacobian det=-512/25, and invariant phase-space recursion reduces its squared denominator to a dimensionless integral 1/16. Thus each exchange integral is 1/(3200*pi^6), the hard integral is 1/(6400*pi^6), and the actual unit-weight ten-channel column obeys ||A_full||^2<=1539*lambda^8*T^2/(400*pi^6). The connected momentum, particle-number and species codomain is closed at this order. Disconnected spectators, the matching forward cut, all-time scattering and general Eq. 19 remain open. Evidence: REVERSE_PHYSICS_BT_GLOBAL_CONNECTED_FINITE_TIME_PACKET_COLUMN_V1."
+    },
+    "native": {
+      "authored_by": "manual close-out after exact phase-recursion, soft-rank, angular-energy, residue-Gram and independent mutation verification",
+      "policy": "append-only; one content-addressed file per event; the work-item file is never rewritten and the effective state is the fold of events over the base state"
+    }
+  },
+  "edges": [
+    {
+      "rel": "TRANSITIONS",
+      "to": "sf:program/work/reverse-physics-bateman-global-connected-finite-time-packet-column"
+    }
+  ]
+}
