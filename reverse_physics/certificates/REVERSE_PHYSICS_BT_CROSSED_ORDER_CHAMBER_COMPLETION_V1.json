@@ -1,0 +1,300 @@
+{
+  "HP_gauge_theorem": {
+    "annihilation": "-J_e^dagger dA_e changes (N_F,L) by (-1,-1)",
+    "boundary": "Q_HP is an auxiliary system-noise grading, not the BT boost charge, ghost parity, or a spacetime charge.",
+    "commutation": "[Q_HP,U_a]=0 on the finite-particle adapted core",
+    "creation": "J_e dA_e^dagger changes (N_F,L) by (+1,+1)",
+    "drift": "-D da changes (N_F,L) by (0,0)",
+    "gauge": "Q_HP=N_F-L",
+    "gauge_deltas": {
+      "annihilation_Q_change": 0,
+      "annihilation_level_change": -1,
+      "annihilation_noise_change": -1,
+      "creation_Q_change": 0,
+      "creation_level_change": 1,
+      "creation_noise_change": 1,
+      "drift_Q_change": 0,
+      "drift_level_change": 0,
+      "drift_noise_change": 0
+    },
+    "noise_number": "N_F on the 75-edge Boson Fock carrier",
+    "system_level": "L|h_k>=k|h_k>"
+  },
+  "answer": "No on the presently certified chronological carrier. The HP structure has the exact gauge Q_HP=N_F-L: every J_e dA_e^dagger raises both noise number and rooted-comb level, every reverse term lowers both, and the drift changes neither. The ancestry-matched no-spectator path sector is therefore stable only after every assignment of its k distinct ancestral edge times is included. The vacuum maps A_k cover one chamber t1<...<tk. Used as incoming data, a level-k state can receive its child quantum in any of k+1 temporal positions, and all but the last are orthogonal crossed chambers. The minimal reducing closure consequently has k! chambers per history. Multiplying the certified history counts 1,3,12,60 gives 1,3,24,360 chamber-history sheets, rather than 76 canonical sheets; 312 crossed sheets, or 624 species-resolved multiplicities, are missing. An exact three-state skew/Cayley witness at q1=5/64 has reversed-chamber probability 1280/4761. Thus the abstract HP cocycle supplies a candidate dynamics, but the physical Kallen maps affiliate only its vacuum chronology and cannot yet transfer it to a two-sided physical operator. The first missing calculation is a crossed six-point two-emission intertwiner, not the scalar vacuum fourth jump.",
+  "assumptions": [
+    "The no-spectator path sector contains exactly one Boson in each distinct ancestral edge channel and the system in the terminal rooted-comb history; arbitrary additional incoming noise belongs to separate Q_HP sectors and is not included.",
+    "Order chambers are the connected components obtained by removing equal-time diagonals from the k ancestral time coordinates; those diagonals have measure zero.",
+    "The certified A1, A2 and A3 maps affiliate only the vacuum chronological chamber in which ancestry order equals detector-time order.",
+    "The finite Cayley matrix is an exact witness for unitary-compatible leakage of the HP coefficient, not the continuous HP cocycle itself."
+  ],
+  "certificate": "REVERSE_PHYSICS_BT_CROSSED_ORDER_CHAMBER_COMPLETION_V1",
+  "checks": {
+    "details": {
+      "all_available_marks_physically_affiliated_on_vacuum_chamber": true,
+      "annihilation_preserves_HP_gauge": true,
+      "canonical_level_one_input_leaks_at_level_two": true,
+      "canonical_level_two_input_leaks_at_level_three": true,
+      "chamber_counts_are_1_1_2_6": true,
+      "chamber_recurrence_is_factorial": true,
+      "completed_history_sheets_are_1_3_24_360": true,
+      "creation_preserves_HP_gauge": true,
+      "crossed_chambers_not_supplied_by_external_label_covariance": true,
+      "defect_action_remains_physically_unselected": true,
+      "drift_preserves_HP_gauge": true,
+      "edge_counts_imported": true,
+      "every_HP_edge_raises_comb_level_by_one": true,
+      "every_history_has_unique_ancestral_parent_edge": true,
+      "extension_rates_recovered": true,
+      "finite_cayley_witness_is_unitary": true,
+      "finite_cayley_witness_leaks_exactly": true,
+      "finite_leakage_generator_is_skew": true,
+      "finite_leakage_generator_norm_is_q1": true,
+      "history_counts_imported": true,
+      "input_hashes_pinned": true,
+      "missing_crossed_sheets_are_0_0_12_300": true,
+      "predecessor_certificates_pass": true,
+      "species_multiplicity_grows_152_to_776": true,
+      "total_completed_sheets_are_388": true,
+      "total_existing_sheets_are_76": true,
+      "total_missing_crossed_sheets_are_312": true,
+      "vacuum_affiliation_is_ordered": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 28,
+    "total": 28
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "disposition": {
+    "Eq19_all_orders": "NOT_PROVED",
+    "HP_number_level_gauge": "PROVED_ON_FINITE_PARTICLE_ADAPTED_CORE",
+    "arbitrary_incoming_spectator_sectors": "NOT_CONSTRUCTED",
+    "canonical_physical_history_sheets": 76,
+    "complete_BT_probability": "NOT_CONSTRUCTED",
+    "crossed_six_and_seven_point_intertwiners": "NOT_CONSTRUCTED",
+    "minimal_no_spectator_path_reducing_closure": "CLASSIFIED_AS_ALL_FACTORIAL_ORDER_CHAMBERS",
+    "missing_crossed_physical_sheets": 312,
+    "required_chamber_complete_history_sheets": 388,
+    "spacetime_Moller_LSZ_S_operator": "NOT_CONSTRUCTED",
+    "two_sided_reduced_mode_physical_operator": "NOT_CONSTRUCTED",
+    "vacuum_chronological_carrier_two_sided_invariance": "EXACTLY_OBSTRUCTED"
+  },
+  "does_not_establish": [
+    "a physical crossed six-point or seven-point amplitude",
+    "that the finite Cayley witness equals the HP cocycle",
+    "physical affiliation of the 312 crossed chamber sheets",
+    "arbitrary incoming spectator or non-strongly-ordered sectors",
+    "the vacuum fourth jump or a normalized fourth probability",
+    "a unique all-order stochastic law",
+    "a complete physical two-to-n probability",
+    "a spacetime-local Moller, LSZ, AQFT, or S operator",
+    "the all-order Bateman--Turok Eq. (19)",
+    "a gravity or BRST lift",
+    "anything LORENTZIAN-CAUSAL",
+    "a new physical or spacetime dimension",
+    "literature priority"
+  ],
+  "finite_exact_leakage_witness": {
+    "basis": [
+      "late_parent",
+      "canonical_child",
+      "reversed_child"
+    ],
+    "cayley_unitary": [
+      [
+        "59/69",
+        "0",
+        "-16*sqrt(5)/69"
+      ],
+      [
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "16*sqrt(5)/69",
+        "0",
+        "59/69"
+      ]
+    ],
+    "coefficient_B": [
+      [
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "sqrt(5)/8",
+        "0",
+        "0"
+      ]
+    ],
+    "meaning": "A late parent quantum and an earlier child creation have reversed ancestry-time order. The rational-algebraic Cayley unitary proves the missing chamber is compatible with exact two-sided unitarity; it is not identified with U_a.",
+    "rate_q1": {
+      "denominator": 64,
+      "numerator": 5
+    },
+    "reversed_chamber_probability": {
+      "denominator": 4761,
+      "numerator": 1280
+    },
+    "skew_generator_K": [
+      [
+        "0",
+        "0",
+        "-sqrt(5)/8"
+      ],
+      [
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "sqrt(5)/8",
+        "0",
+        "0"
+      ]
+    ]
+  },
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "Construct the first reversed two-time six-point physical intertwiner. Cross one degenerate leg into the incoming side while retaining both Abel/Kallen resolution coordinates, the full two-species parent/profile Gram and the generalized-Born sign. It must map each of the 12 reversed chambers into a declared physical range and intertwine the HP q1 creation/annihilation pair. Only then can the chamber transfer be extended to level two; the 300 level-three crossed sheets and all spectator Q_HP sectors remain subsequent gates.",
+  "order_chamber_completion": {
+    "canonical_chamber": "O_k={0<t1<...<tk<a}, one chamber per rooted-comb history",
+    "canonical_history_sheets": [
+      1,
+      3,
+      12,
+      60
+    ],
+    "canonical_total": 76,
+    "chambers_per_history": [
+      1,
+      1,
+      2,
+      6
+    ],
+    "closure_recurrence": "c_0=1 and c_(k+1)=(k+1)c_k, hence c_k=k!",
+    "completed_history_sheets": [
+      1,
+      3,
+      24,
+      360
+    ],
+    "completed_total": 388,
+    "direct_canonical_input_leakage": [
+      {
+        "canonical_positions_per_child": 1,
+        "crossed_positions_per_child": 0,
+        "direct_crossed_sheets": 0,
+        "insertion_positions_per_child": 1,
+        "per_edge_leakage_rate": {
+          "denominator": 48,
+          "numerator": 1
+        },
+        "source_level": 0,
+        "target_histories": 3,
+        "target_level": 1
+      },
+      {
+        "canonical_positions_per_child": 1,
+        "crossed_positions_per_child": 1,
+        "direct_crossed_sheets": 12,
+        "insertion_positions_per_child": 2,
+        "per_edge_leakage_rate": {
+          "denominator": 64,
+          "numerator": 5
+        },
+        "source_level": 1,
+        "target_histories": 12,
+        "target_level": 2
+      },
+      {
+        "canonical_positions_per_child": 1,
+        "crossed_positions_per_child": 2,
+        "direct_crossed_sheets": 120,
+        "insertion_positions_per_child": 3,
+        "per_edge_leakage_rate": {
+          "denominator": 400,
+          "numerator": 27
+        },
+        "source_level": 2,
+        "target_histories": 60,
+        "target_level": 3
+      }
+    ],
+    "history_counts": [
+      1,
+      3,
+      12,
+      60
+    ],
+    "insertion_rule": "For a level-k incoming configuration, the new child-edge time can occupy any of k+1 positions among the k existing ancestral times.",
+    "minimality": "Starting from all chambers at level k, insertion in every temporal position produces all (k+1)! chambers at level k+1; adjoint annihilation deletes the current edge and returns a chamber at level k. No proper chamber subset containing the canonical chambers is reducing for all nonzero edge coefficients.",
+    "missing_crossed_sheets": [
+      0,
+      0,
+      12,
+      300
+    ],
+    "missing_crossed_total": 312,
+    "species_resolved_completed_multiplicities": [
+      2,
+      6,
+      48,
+      720
+    ]
+  },
+  "physical_transfer_gate": {
+    "certified_map": "A_<=3 on the 76 canonical vacuum-ordered history sheets",
+    "conditional_transfer": "If A_ch is unitary onto declared physical incoming/outgoing ranges and intertwines the chamber-complete HP restriction, then S_ch=A_ch U_a|_ch A_ch^* is a two-sided reduced-mode physical unitary with vacuum column M_a.",
+    "external_permutation_boundary": "Existing external-label covariance inside t1<t2<t3 does not identify a chronologically attached daughter with a pre-existing incoming cluster and therefore does not supply crossed chambers.",
+    "first_missing_block": "the reversed two-time chamber of each of the 12 six-point histories",
+    "higher_missing_block": "the five noncanonical time-order chambers of each of the 60 seven-point histories",
+    "required_extension": "A_ch on all 388 no-spectator chamber-history sheets, agreeing with A_<=3 on the canonical chambers",
+    "spectator_boundary": "Arbitrary incoming spectator/noise sectors Q_HP!=0 remain additional and are not closed by the 388-sheet no-spectator completion."
+  },
+  "provenance": {
+    "inputs": [
+      {
+        "path": "planning/work-items/reverse-physics-bateman-crossed-order-chamber-completion.json",
+        "sha256": "a51affa71d7ca2290541fa591154d261cd31cfb6a3c924a8744ecd3b65c01400"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_QUANTUM_STOCHASTIC_MOLLER_DILATION_V1.json",
+        "sha256": "6bc4ec6c6831835acaf5848c07375701a3df5aa4413c5ccd42a074691e489e9c"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_SEVEN_POINT_NESTED_CONTINUUM_INTERTWINER_V1.json",
+        "sha256": "eabe5cdc08fdb4083d04e18a45354d76114c14e09f979eadb80488b07a7eeb78"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_PHYSICAL_MOLLER_DEFECT_COMPLETION_V1.json",
+        "sha256": "31298fc3dd4aafbfc6ce08b3741f4fcb93bc4bb5022d906f1dee1709a9b4dc51"
+      },
+      {
+        "path": "planning/events/reverse-physics-bateman-crossed-order-chamber-completion-DONE-63f24352.json",
+        "sha256": "e89e0bf902f0c2327d0e48eba223bad71a59424afc4ba425d659499f5b65708b"
+      }
+    ],
+    "retrieval_date": "2026-08-12",
+    "source_commit": "63f24352be5e68773982d772fa3acbe20ef839aa"
+  },
+  "question": "Can the certified vacuum-ordered physical intertwiners transfer the full two-sided 75-edge HP unitary, and if not what is the smallest no-spectator path closure they require?",
+  "report": "reverse_physics/reports/bt-crossed-order-chamber-completion.md",
+  "result_kind": "exact crossed-time-order reducing closure and two-sided invariance obstruction for the finite physical BT HP path carrier",
+  "schema": "reverse_physics/schema/reverse-physics-bt-crossed-order-chamber-completion-v1.schema.json",
+  "schema_version": "reverse-physics-bt-crossed-order-chamber-completion-v1",
+  "verification_commands": [
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/bt_crossed_order_chamber_completion.py --check",
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/verify_bt_crossed_order_chamber_completion.py",
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 -m unittest -v reverse_physics.tests.test_bt_crossed_order_chamber_completion"
+  ]
+}

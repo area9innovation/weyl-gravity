@@ -1,0 +1,34 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/reverse-physics-bateman-crossed-order-chamber-completion-DONE-63f24352",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work item transitioned",
+  "source": {
+    "path": "tools/science-forge/program/events/reverse-physics-bateman-crossed-order-chamber-completion-DONE-63f24352.json",
+    "span": null
+  },
+  "body": {
+    "event_kind": "WORK_ITEM_TRANSITIONED",
+    "actor": "reverse-physics",
+    "base_revision": "science-forge-ir-v0",
+    "predecessors": [],
+    "when": "2026-08-12",
+    "seq": 1,
+    "payload": {
+      "target": "sf:program/work/reverse-physics-bateman-crossed-order-chamber-completion",
+      "to_state": "DONE",
+      "note": "The certified vacuum-chronological carrier is not invariant under the two-sided HP cocycle: a forward edge acting before an existing ancestral quantum lands in an orthogonal crossed-order chamber with exact nonzero rate. The minimal ancestry-matched no-spectator reducing closure contains all k! chambers, increasing the 1,3,12,60 history multiplicities to 1,3,24,360 and requiring 312 unaffiliated crossed physical sheets. Evidence: REVERSE_PHYSICS_BT_CROSSED_ORDER_CHAMBER_COMPLETION_V1."
+    },
+    "native": {
+      "authored_by": "manual close-out after scoped exact calculation",
+      "policy": "append-only; one content-addressed file per event; the work-item file is never rewritten and the effective state is the fold of events over the base state"
+    }
+  },
+  "edges": [
+    {
+      "rel": "TRANSITIONS",
+      "to": "sf:program/work/reverse-physics-bateman-crossed-order-chamber-completion"
+    }
+  ]
+}
