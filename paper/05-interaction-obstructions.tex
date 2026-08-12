@@ -2805,6 +2805,28 @@ therefore proves strict local positivity away from poles without planar
 kinematics.  It remains a one-parameter diagonal, not the full two-parameter
 nonplanar phase space or its regulated integral.
 
+The diagonal restriction can now be removed exactly.  Let the two
+stereographic parameters in $R_x(u)R_z(t)$ be algebraically independent.  A
+sparse-FLINT computation of the complete 220-tree mass jet over
+$\mathbb Q(t,u)$ finds no term below degree three and proves all ten identities
+$c_S(t,u)=c_{S^c}(t,u)$.  Therefore
+\[
+ [x_0\cdots x_5]|\mathcal M_6|^2
+ =2\sum_{S<S^c}c_S(t,u)^2\geq0
+\]
+at every regular real pair, with strict inequality on a dense open regular
+subset.  Certificate
+\par\noindent
+\texttt{REVERSE\_PHYSICS\_BT\_SIX\_POINT\_TWO\_ANGLE\_}
+\allowbreak\texttt{PHYSICAL\_BORN\_DENSITY\_V1}
+\par\noindent
+records the exact rational-function equalities and six independent explicit
+220-tree checks.  A bivariate elimination was stopped at the memory boundary,
+so isolated or lower-dimensional common zeros are not excluded.  Moreover the
+two angles rigidly rotate a fixed outgoing energy triangle: they do not cover
+the full five-dimensional final-state phase space.  Pole regulation,
+integration, normalization, and Eq.~(19) remain open.
+
 The classified endpoint freedom does not supply this complement by one fixed
 prescription on the minimal two-profile probe lift.  Take
 $v=(1,z(1-z))$ and parameterize a reflection-even extension relative to the

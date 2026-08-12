@@ -1,0 +1,350 @@
+{
+  "answer": "Yes on the declared two-angle rigid-rotation family. Over the exact field Q(t,u), the complete 220-tree degree-three external-mass jet has twenty coefficients satisfying all ten complement identities c_S=c_Sc. Hence the six-delta-prime kernel is exactly 2 sum c_S(t,u)^2: it is nonnegative at every regular real parameter pair and strictly positive on a dense open regular subset. A complete bivariate common-zero classification was stopped at the memory boundary, so isolated regular zeros are not excluded. The family varies two relative orientation angles but fixes the incoming and outgoing energy shape; it is not the full five-dimensional final-state phase space or an integrated probability.",
+  "assumptions": [
+    "The public BT cubic and quartic vertices are used with their perfect-square relative coupling and common tree phase omitted before squaring.",
+    "Signature is (+---), and the three future-null outgoing momenta enter the all-incoming amplitude with a minus sign.",
+    "The outgoing rigid rotation is R_x(u)R_z(t), with t and u algebraically independent rational stereographic parameters.",
+    "The cyclic invariant chart is held fixed while the six external mass squares are differentiated independently.",
+    "Real parameter pairs exclude zeros of the reduced rational denominators, including internal propagator poles.",
+    "The local massless phase-space/detector weight is regular and nonnegative at the selected interior point.",
+    "Nonzero rational coefficients imply generic strict positivity, not absence of every isolated or lower-dimensional common zero."
+  ],
+  "certificate": "REVERSE_PHYSICS_BT_SIX_POINT_TWO_ANGLE_PHYSICAL_BORN_DENSITY_V1",
+  "checks": {
+    "details": {
+      "all_six_momenta_are_exactly_massless": true,
+      "all_ten_complement_pairs_are_identical_in_Q_t_u": true,
+      "all_twenty_middle_coefficients_are_retained": true,
+      "amplitude_has_no_terms_below_mass_degree_three": true,
+      "input_hashes_pinned": true,
+      "integration_eq19_gravity_and_causality_remain_open": true,
+      "local_density_is_nonnegative_at_every_regular_real_parameter_pair": true,
+      "local_density_is_strictly_positive_on_a_dense_open_regular_subset": true,
+      "possible_common_zero_locus_is_not_silently_excluded": true,
+      "regular_measure_derivatives_decouple": true,
+      "six_delta_prime_sign_is_positive": true,
+      "six_derivative_kernel_is_twice_ten_rational_squares": true,
+      "t_and_u_enter_independent_rotation_factors": true,
+      "the_square_sum_is_not_the_zero_rational_function": true,
+      "three_to_three_momentum_is_exactly_conserved": true,
+      "two_angle_family_is_not_called_complete_phase_space": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 16,
+    "total": 16
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "strict positivity at every regular two-angle parameter pair",
+    "absence or classification of a lower-dimensional common zero locus",
+    "positivity over the complete five-dimensional massless three-particle final-state phase space",
+    "variation of outgoing energies or Dalitz shape",
+    "a regulated, integrated, or normalized six-point probability",
+    "cancellation or prescription for internal propagator poles",
+    "a complete Moller, LSZ, or S operator",
+    "Bateman--Turok Eq. (19)",
+    "positivity beyond tree level or KLN cancellation",
+    "a metric or BRST lift to Weyl gravity",
+    "anything LORENTZIAN-CAUSAL",
+    "literature priority"
+  ],
+  "exact_two_angle_family": {
+    "adjacent_invariant_degrees": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        4,
+        4
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        2,
+        2
+      ]
+    ],
+    "all_six_massless": true,
+    "at_least_one_coefficient_is_nonzero_rational_function": true,
+    "degree_three_term_count": 20,
+    "equals_twice_ten_square_sum": true,
+    "in_plane_orientation_depends_nontrivially_on_t": true,
+    "middle_coefficients": [
+      {
+        "complement_mask": 56,
+        "denominator_term_count": 52,
+        "denominator_total_degree": 26,
+        "denominator_variable_degrees": [
+          14,
+          12
+        ],
+        "exactly_equal": true,
+        "mask": 7,
+        "numerator_term_count": 54,
+        "numerator_total_degree": 26,
+        "numerator_variable_degrees": [
+          14,
+          12
+        ]
+      },
+      {
+        "complement_mask": 52,
+        "denominator_term_count": 76,
+        "denominator_total_degree": 24,
+        "denominator_variable_degrees": [
+          14,
+          10
+        ],
+        "exactly_equal": true,
+        "mask": 11,
+        "numerator_term_count": 84,
+        "numerator_total_degree": 24,
+        "numerator_variable_degrees": [
+          14,
+          10
+        ]
+      },
+      {
+        "complement_mask": 50,
+        "denominator_term_count": 76,
+        "denominator_total_degree": 24,
+        "denominator_variable_degrees": [
+          14,
+          10
+        ],
+        "exactly_equal": true,
+        "mask": 13,
+        "numerator_term_count": 84,
+        "numerator_total_degree": 24,
+        "numerator_variable_degrees": [
+          14,
+          10
+        ]
+      },
+      {
+        "complement_mask": 49,
+        "denominator_term_count": 45,
+        "denominator_total_degree": 24,
+        "denominator_variable_degrees": [
+          12,
+          12
+        ],
+        "exactly_equal": true,
+        "mask": 14,
+        "numerator_term_count": 47,
+        "numerator_total_degree": 24,
+        "numerator_variable_degrees": [
+          12,
+          12
+        ]
+      },
+      {
+        "complement_mask": 44,
+        "denominator_term_count": 67,
+        "denominator_total_degree": 22,
+        "denominator_variable_degrees": [
+          12,
+          10
+        ],
+        "exactly_equal": true,
+        "mask": 19,
+        "numerator_term_count": 70,
+        "numerator_total_degree": 22,
+        "numerator_variable_degrees": [
+          12,
+          10
+        ]
+      },
+      {
+        "complement_mask": 42,
+        "denominator_term_count": 67,
+        "denominator_total_degree": 22,
+        "denominator_variable_degrees": [
+          12,
+          10
+        ],
+        "exactly_equal": true,
+        "mask": 21,
+        "numerator_term_count": 70,
+        "numerator_total_degree": 22,
+        "numerator_variable_degrees": [
+          12,
+          10
+        ]
+      },
+      {
+        "complement_mask": 41,
+        "denominator_term_count": 90,
+        "denominator_total_degree": 26,
+        "denominator_variable_degrees": [
+          14,
+          12
+        ],
+        "exactly_equal": true,
+        "mask": 22,
+        "numerator_term_count": 99,
+        "numerator_total_degree": 26,
+        "numerator_variable_degrees": [
+          14,
+          12
+        ]
+      },
+      {
+        "complement_mask": 38,
+        "denominator_term_count": 90,
+        "denominator_total_degree": 26,
+        "denominator_variable_degrees": [
+          14,
+          12
+        ],
+        "exactly_equal": true,
+        "mask": 25,
+        "numerator_term_count": 99,
+        "numerator_total_degree": 26,
+        "numerator_variable_degrees": [
+          14,
+          12
+        ]
+      },
+      {
+        "complement_mask": 37,
+        "denominator_term_count": 67,
+        "denominator_total_degree": 22,
+        "denominator_variable_degrees": [
+          12,
+          10
+        ],
+        "exactly_equal": true,
+        "mask": 26,
+        "numerator_term_count": 70,
+        "numerator_total_degree": 22,
+        "numerator_variable_degrees": [
+          12,
+          10
+        ]
+      },
+      {
+        "complement_mask": 35,
+        "denominator_term_count": 67,
+        "denominator_total_degree": 22,
+        "denominator_variable_degrees": [
+          12,
+          10
+        ],
+        "exactly_equal": true,
+        "mask": 28,
+        "numerator_term_count": 70,
+        "numerator_total_degree": 22,
+        "numerator_variable_degrees": [
+          12,
+          10
+        ]
+      }
+    ],
+    "momentum_conservation": true,
+    "outgoing_z_depends_nontrivially_on_u": true,
+    "parameters": [
+      "t",
+      "u"
+    ],
+    "rational_rotation_denominators": [
+      "1+t^2",
+      "1+u^2"
+    ],
+    "retained_amplitude_degrees_through_three": [
+      3
+    ],
+    "rotation_order": "R_x(u) R_z(t)",
+    "ten_complement_pairs_equal": true,
+    "triple_invariant_degrees": [
+      [
+        0,
+        0
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        4,
+        4
+      ]
+    ]
+  },
+  "interpretation": {
+    "Eq19_all_orders": "NOT_PROVED",
+    "complete_five_dimensional_final_state_phase_space": "NOT_COMPUTED",
+    "correlated_crossed_negative_quotient": "REMAINS_A_REDUCED_BOUNDARY_BLOCK_NOT_THE_COMPLETE_DENSITY",
+    "generic_regular_sign": "STRICTLY_POSITIVE",
+    "integrated_normalized_probability": "NOT_COMPUTED",
+    "possible_isolated_or_lower_dimensional_regular_zero_set": "NOT_EXCLUDED",
+    "two_angle_middle_degree_recombination": "NONNEGATIVE_TEN_SQUARE_SUM"
+  },
+  "lifecycle_state": "COEFFICIENT_COMPUTED",
+  "local_born_density": {
+    "amplitude_minimum_mass_degree": 3,
+    "external_derivative_sign": "+1 from (-1)^6",
+    "external_projector": "(-partial_x0)...(-partial_x5) evaluated at x_i=0",
+    "measure_decoupling": "The amplitude has no mass degree below three, so its square begins at the full six-mass mask. A regular local phase-space weight contributes only its positive massless value to this leading coefficient.",
+    "positivity_assumption": "The undifferentiated massless local phase-space/detector weight is nonnegative, and positive when strict generic positivity is asserted.",
+    "squared_amplitude_minimum_mass_degree": 6,
+    "status": "NONNEGATIVE_EVERYWHERE_REGULAR_AND_STRICTLY_POSITIVE_GENERICALLY_ON_DECLARED_TWO_ANGLE_FAMILY"
+  },
+  "next_gate": "Either classify the possible common zero locus using a memory-bounded elimination rail, or enlarge the exact physical chart to the two final-state shape variables and the missing orientation angle. Only after a sign theorem on that larger chart should a common pole regulator and phase-space integral be promoted. Eq. (19) remains a separate nonlinear projector-transport problem.",
+  "provenance": {
+    "inputs": [
+      {
+        "path": "planning/work-items/reverse-physics-bateman-six-point-two-angle-born-nonnegativity.json",
+        "sha256": "9d622d8c60c0572d47d8d085cead5eb41527c7f7364bbfb9471e2687abf9e561"
+      },
+      {
+        "path": "reverse_physics/bt_bivariate_rational.py",
+        "sha256": "c86df9b252c221c879a6792922add17fb35dcde535b8e55d7f3823376ec9ff89"
+      },
+      {
+        "path": "reverse_physics/bt_six_point_generic_external_mass_kernel.py",
+        "sha256": "3ec7bf5171a65150c8c08ac570223a2b7c7fc1c7d806b8c31755667ba633e1b6"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_SIX_POINT_NONPLANAR_DIAGONAL_PHYSICAL_BORN_DENSITY_V1.json",
+        "sha256": "45b067c3fe138125213065bd30f0b3936e110a7d324ba21003979575b0fc06de"
+      }
+    ],
+    "primary_source": {
+      "equations": [
+        "Eq. (18)",
+        "Appendix B Eqs. (24)-(25)"
+      ],
+      "source": "Bateman--Turok arXiv:2607.00096v1",
+      "url": "https://arxiv.org/abs/2607.00096v1"
+    },
+    "producer_method": "The complete cached subset recursion is evaluated in the 64-slot square-free mass algebra truncated at the only relevant degree, three. Scalar coefficients are reduced exactly in Q(t,u) by FLINT sparse multivariate polynomial gcd algorithms. Reduced numerator/denominator degree and term metadata are retained; all complement differences are compared as exact rational functions, never by sampling or floating point. In a homogeneous degree-three six-variable square-free jet those identities algebraically imply the displayed ten-square full-mask coefficient.",
+    "retrieval_date": "2026-08-12",
+    "source_commit": "efa87446a599aac7ce26004ba1046137837d18d1"
+  },
+  "question": "Does the complete BT six-point local Born density stay nonnegative when the in-plane and out-of-plane rotations are algebraically independent?",
+  "report": "reverse_physics/reports/bt-six-point-two-angle-physical-born-density.md",
+  "result_kind": "exact local six-delta-prime tree Born density on a two-independent-angle physical 3-to-3 family",
+  "schema": "reverse_physics/schema/reverse-physics-bt-six-point-two-angle-physical-born-density-v1.schema.json",
+  "schema_version": "reverse-physics-bt-six-point-two-angle-physical-born-density-v1",
+  "verification_commands": [
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/bt_six_point_two_angle_physical_born_density.py --write --check",
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/verify_bt_six_point_two_angle_physical_born_density.py",
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 -m unittest reverse_physics.tests.test_bt_six_point_two_angle_physical_born_density"
+  ]
+}

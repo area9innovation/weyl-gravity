@@ -133,7 +133,9 @@ def partitions(mask, count):
         subset = (subset - 1) & rest
 
 
-def explicit_tree_family(tilt_ratio=Fraction(0), parameter_value=None):
+def explicit_tree_family(
+    tilt_ratio=Fraction(0), parameter_value=None, tilt_value=None
+):
     """Enumerate all trees; do not use the producer's summed-current recursion."""
     if parameter_value is None:
         values = field("t", QQ)
@@ -165,7 +167,11 @@ def explicit_tree_family(tilt_ratio=Fraction(0), parameter_value=None):
 
     cosine = (1 - t * t) / (1 + t * t)
     sine = 2 * t / (1 + t * t)
-    tilt = rational(tilt_ratio) * t
+    tilt = (
+        rational(tilt_value)
+        if tilt_value is not None
+        else rational(tilt_ratio) * t
+    )
     tilt_cosine = (1 - tilt * tilt) / (1 + tilt * tilt)
     tilt_sine = 2 * tilt / (1 + tilt * tilt)
     incoming = [

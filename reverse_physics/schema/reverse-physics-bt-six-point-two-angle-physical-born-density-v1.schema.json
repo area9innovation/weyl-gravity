@@ -1,0 +1,157 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-six-point-two-angle-physical-born-density-v1.schema.json",
+  "title": "BT six-point two-angle physical Born-density certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "certificate", "schema_version", "dependency_tags", "lifecycle_state",
+    "result_kind", "question", "answer", "exact_two_angle_family",
+    "local_born_density", "interpretation", "assumptions",
+    "does_not_establish", "next_gate", "provenance",
+    "verification_commands", "checks", "report", "schema"
+  ],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_SIX_POINT_TWO_ANGLE_PHYSICAL_BORN_DENSITY_V1"},
+    "schema_version": {"const": "reverse-physics-bt-six-point-two-angle-physical-born-density-v1"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "result_kind": {"type": "string", "minLength": 1},
+    "question": {"type": "string", "minLength": 1},
+    "answer": {"type": "string", "minLength": 1},
+    "exact_two_angle_family": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "parameters", "rotation_order", "rational_rotation_denominators",
+        "all_six_massless", "momentum_conservation",
+        "outgoing_z_depends_nontrivially_on_u",
+        "in_plane_orientation_depends_nontrivially_on_t",
+        "adjacent_invariant_degrees", "triple_invariant_degrees",
+        "retained_amplitude_degrees_through_three",
+        "degree_three_term_count", "middle_coefficients",
+        "ten_complement_pairs_equal", "equals_twice_ten_square_sum",
+        "at_least_one_coefficient_is_nonzero_rational_function"
+      ],
+      "properties": {
+        "parameters": {"const": ["t", "u"]},
+        "rotation_order": {"const": "R_x(u) R_z(t)"},
+        "rational_rotation_denominators": {"const": ["1+t^2", "1+u^2"]},
+        "all_six_massless": {"const": true},
+        "momentum_conservation": {"const": true},
+        "outgoing_z_depends_nontrivially_on_u": {"const": true},
+        "in_plane_orientation_depends_nontrivially_on_t": {"const": true},
+        "adjacent_invariant_degrees": {"$ref": "#/$defs/degree_pairs_six"},
+        "triple_invariant_degrees": {"$ref": "#/$defs/degree_pairs_three"},
+        "retained_amplitude_degrees_through_three": {"const": [3]},
+        "degree_three_term_count": {"const": 20},
+        "middle_coefficients": {
+          "type": "array", "minItems": 10, "maxItems": 10,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": [
+              "mask", "complement_mask", "exactly_equal",
+              "numerator_total_degree", "denominator_total_degree",
+              "numerator_variable_degrees", "denominator_variable_degrees",
+              "numerator_term_count", "denominator_term_count"
+            ],
+            "properties": {
+              "mask": {"type": "integer", "minimum": 0, "maximum": 63},
+              "complement_mask": {"type": "integer", "minimum": 0, "maximum": 63},
+              "exactly_equal": {"const": true},
+              "numerator_total_degree": {"type": "integer", "minimum": 0},
+              "denominator_total_degree": {"type": "integer", "minimum": 0},
+              "numerator_variable_degrees": {"$ref": "#/$defs/two_degrees"},
+              "denominator_variable_degrees": {"$ref": "#/$defs/two_degrees"},
+              "numerator_term_count": {"type": "integer", "minimum": 1},
+              "denominator_term_count": {"type": "integer", "minimum": 1}
+            }
+          }
+        },
+        "ten_complement_pairs_equal": {"const": true},
+        "equals_twice_ten_square_sum": {"const": true},
+        "at_least_one_coefficient_is_nonzero_rational_function": {"const": true}
+      }
+    },
+    "local_born_density": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "external_projector", "external_derivative_sign",
+        "amplitude_minimum_mass_degree", "squared_amplitude_minimum_mass_degree",
+        "measure_decoupling", "positivity_assumption", "status"
+      ],
+      "properties": {
+        "external_projector": {"type": "string", "minLength": 1},
+        "external_derivative_sign": {"type": "string", "minLength": 1},
+        "amplitude_minimum_mass_degree": {"const": 3},
+        "squared_amplitude_minimum_mass_degree": {"const": 6},
+        "measure_decoupling": {"type": "string", "minLength": 1},
+        "positivity_assumption": {"type": "string", "minLength": 1},
+        "status": {"const": "NONNEGATIVE_EVERYWHERE_REGULAR_AND_STRICTLY_POSITIVE_GENERICALLY_ON_DECLARED_TWO_ANGLE_FAMILY"}
+      }
+    },
+    "interpretation": {
+      "const": {
+        "two_angle_middle_degree_recombination": "NONNEGATIVE_TEN_SQUARE_SUM",
+        "generic_regular_sign": "STRICTLY_POSITIVE",
+        "possible_isolated_or_lower_dimensional_regular_zero_set": "NOT_EXCLUDED",
+        "correlated_crossed_negative_quotient": "REMAINS_A_REDUCED_BOUNDARY_BLOCK_NOT_THE_COMPLETE_DENSITY",
+        "complete_five_dimensional_final_state_phase_space": "NOT_COMPUTED",
+        "integrated_normalized_probability": "NOT_COMPUTED",
+        "Eq19_all_orders": "NOT_PROVED"
+      }
+    },
+    "assumptions": {"type": "array", "minItems": 7, "items": {"type": "string", "minLength": 1}},
+    "does_not_establish": {"type": "array", "minItems": 12, "items": {"type": "string", "minLength": 1}},
+    "next_gate": {"type": "string", "minLength": 1},
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_commit", "retrieval_date", "inputs", "producer_method", "primary_source"],
+      "properties": {
+        "source_commit": {"const": "efa87446a599aac7ce26004ba1046137837d18d1"},
+        "retrieval_date": {"const": "2026-08-12"},
+        "inputs": {
+          "type": "array", "minItems": 4, "maxItems": 4,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["path", "sha256"],
+            "properties": {
+              "path": {"type": "string", "minLength": 1},
+              "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+            }
+          }
+        },
+        "producer_method": {"type": "string", "minLength": 1},
+        "primary_source": {
+          "type": "object", "additionalProperties": false,
+          "required": ["source", "url", "equations"],
+          "properties": {
+            "source": {"type": "string", "minLength": 1},
+            "url": {"type": "string", "minLength": 1},
+            "equations": {"type": "array", "minItems": 2, "items": {"type": "string", "minLength": 1}}
+          }
+        }
+      }
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "items": {"type": "string", "minLength": 1}},
+    "checks": {
+      "type": "object", "additionalProperties": false,
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"const": 16},
+        "total": {"const": 16},
+        "failures": {"const": []},
+        "details": {"type": "object", "minProperties": 16, "maxProperties": 16, "additionalProperties": {"const": true}}
+      }
+    },
+    "report": {"const": "reverse_physics/reports/bt-six-point-two-angle-physical-born-density.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-six-point-two-angle-physical-born-density-v1.schema.json"}
+  },
+  "$defs": {
+    "two_degrees": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "integer", "minimum": 0}},
+    "degree_pair": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "integer", "minimum": 0}},
+    "degree_pairs_six": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"$ref": "#/$defs/degree_pair"}},
+    "degree_pairs_three": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/degree_pair"}}
+  }
+}
