@@ -1,0 +1,289 @@
+{
+  "active_virtual_probability": {
+    "born_density": "d_sigma_Born/dOmega=3*lambda^4/(32*pi^2*s)",
+    "callan_symanzik": "the explicit scale derivative cancels the one-loop running of the Born density",
+    "complete_msbar_density": "d_sigma_active,MSbar^(6)/dOmega=5*lambda^6*(L_s+L_t+L_u+6)/(256*pi^4*s)",
+    "finite_constant_part": "15*lambda^6/(128*pi^4*s)",
+    "logarithmic_part": "5*lambda^6*(L_s+L_t+L_u)/(256*pi^4*s)",
+    "relative_loop_factor": "5*lambda^2*(B_s+B_t+B_u)/(24*pi^2)",
+    "status": "ACTIVE_COVARIANT_MSBAR_COEFFICIENT_COMPUTED"
+  },
+  "answer": "Let g=lambda^2. The auxiliary vertex tensor is V/g=2 on every neutral two-Omega/two-Upsilon assignment and zero otherwise, with cross-only propagator metric. Exact contraction of two vertices gives bubble weights (2,4,4), permuted among s,t,u, for each of the six neutral assignments. The complement-paired tree vector has norm 24 and its pairing with the loop vector is 40*(B_s+B_t+B_u). Hence the relative tree-loop species factor is 5*g*(B_s+B_t+B_u)/(24*pi^2). In MSbar the real massless bubble is B_X=L_X+2 because -integral_0^1 log[x(1-x)|X|/mu^2]dx=L_X+2. Multiplying the certified Born density gives the complete real active virtual density d_sigma_active,MSbar^(6)/dOmega=5*lambda^6*(L_s+L_t+L_u+6)/(256*pi^4*s). Its logarithmic part exactly reproduces the independently certified hard coefficient and Callan--Symanzik row. At the tagged center the local click coefficient is 125*lambda^6*DeltaOmega*(L_*+6)/(16384*pi^4*kappa^2*Area). On compact hard supports separated from s*t*u=0, the logarithms and the finite six-dimensional species tensor are bounded, so this defines a Hilbert--Schmidt covariant packet kernel after the common momentum delta is reduced. This computes the finite covariant/MSbar active loop. It does not yet prove that the kernel is the coefficient of the same finite-duration BT Dyson evolution used by the connected tree cross; that affiliation, and therefore the complete tagged q6 probability, remain open.",
+  "assumptions": [
+    "the fixed auxiliary O(1,1) action and cross-only propagator define the active loop species tensor",
+    "dimensional regularization and MSbar subtraction are used for the coupling, with no additional finite quartic counterterm",
+    "the external active momenta are massless and lie in a compact hard nonforward region separated from s*t*u=0",
+    "the selected covariant source/effect pullback uses the same auxiliary scheme and does not reinsert scalar-frame wave-function terms",
+    "the common Born phase-space normalization and positive complement pairing are those of the certified tagged leading probability",
+    "the covariant compact-kernel statement reduces the momentum-conservation delta before applying the Hilbert--Schmidt bound"
+  ],
+  "certificate": "REVERSE_PHYSICS_BT_AUXILIARY_ACTIVE_ONE_LOOP_MSBAR_V1",
+  "checks": {
+    "details": {
+      "Eq19_gravity_and_Lorentzian_boundaries_remain_open": true,
+      "callan_symanzik_row_is_imported": true,
+      "central_tagged_coefficient_is_exact": true,
+      "compact_hard_kernel_has_finite_log_bound": true,
+      "complement_metric_is_involutive": true,
+      "complete_density_matches_closed_formula": true,
+      "complete_tagged_q6_is_not_promoted": true,
+      "cross_metric_is_imported": true,
+      "each_channel_has_total_weight_twenty": true,
+      "each_loop_row_is_a_244_permutation": true,
+      "feynman_parameter_constant_is_two": true,
+      "finite_duration_Dyson_affiliation_is_not_promoted": true,
+      "finite_scheme_change_is_not_suppressed": true,
+      "hard_window_integral_is_exact": true,
+      "inputs_are_content_pinned": true,
+      "log_part_matches_independent_hard_certificate": true,
+      "msbar_finite_counterterm_is_zero_by_definition": true,
+      "positive_tree_norm_is_twenty_four": true,
+      "predecessor_certificates_pass": true,
+      "public_auxiliary_action_is_imported": true,
+      "relative_species_factor_is_five_over_twenty_four": true,
+      "renormalized_bubble_sum_has_constant_six": true,
+      "six_neutral_assignments_are_enumerated": true,
+      "tree_loop_pairing_is_forty_channel_sum": true,
+      "tree_vector_is_uniform_two": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 25,
+    "total": 25
+  },
+  "compact_kernel": {
+    "bubble_bound": "abs(Re B_X)<=2+max(abs(log(mu^2/rho)),abs(log(mu^2/R)))",
+    "carrier": "the reduced covariant two-body coarea after the common four-momentum delta is removed",
+    "consequence": "the reduced covariant loop packet kernel is bounded and Hilbert--Schmidt on every declared compact hard product support",
+    "hard_support": "compact support with 0<rho<=abs(s),abs(t),abs(u)<=R and finite incoming/output coarea measure",
+    "species_bound": "each loop row has absolute coefficient sum 10, so the six-component kernel norm is bounded by 10*sqrt(6) times the bubble bound up to the fixed common normalization",
+    "status": "COVARIANT_COMPACT_HARD_PACKET_KERNEL_CONSTRUCTED"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "a BT Hamiltonian derivation of the finite-duration second-Dyson kernel",
+    "equality between the covariant MSbar packet kernel and the finite-time connected-tree carrier at every finite T",
+    "the complete tagged q6 probability or its sign",
+    "scheme independence of the finite plus-six constant",
+    "real-emission, forward, collinear or KLN completion",
+    "an all-time Moller, LSZ or S operator beyond the formal covariant amplitude",
+    "general Eq. (19) for the standard shift-invariant scalar projector",
+    "all-order positivity or infrared completion",
+    "gravity or metric BV/BRST transfer",
+    "a restored gravity quantum master equation or residual transfer",
+    "anything LORENTZIAN-CAUSAL",
+    "literature priority"
+  ],
+  "hard_window": {
+    "angular_log_integral": "I(a)=integral_a^(1-a) -log[z*(1-z)] dz=2*c-2*(1-a)*log(1-a)+2*a*log(a)",
+    "collinear_control": "finite for every 0<a<1/2",
+    "definition": "theta0<=theta<=pi-theta0, a=(1-cos(theta0))/2, c=cos(theta0)",
+    "integrated_loop": "sigma_active,MSbar^(6)=5*lambda^6/(64*pi^3*s)*[c*(3*log(mu^2/s)+6)+I(a)]",
+    "solid_angle": "DeltaOmega=4*pi*c",
+    "status": "EXACT_HARD_WINDOW_INTEGRAL_COMPUTED"
+  },
+  "interpretation": {
+    "Lorentzian_causal_claim": "NOT_ESTABLISHED",
+    "active_auxiliary_one_loop_msbar": "COEFFICIENT_COMPUTED",
+    "complete_tagged_q6_probability": "NOT_COMPUTED",
+    "covariant_compact_packet_kernel": "CONSTRUCTED",
+    "finite_constant": "COMPUTED_AS_PLUS_SIX_IN_MSBAR",
+    "finite_duration_BT_Dyson_affiliation": "NOT_PROVED",
+    "general_Eq19": "NOT_PROVED",
+    "gravity_or_BV_BRST_transfer": "NOT_CONSTRUCTED",
+    "hard_log_match": "EXACT"
+  },
+  "lifecycle_state": "COEFFICIENT_COMPUTED",
+  "msbar_bubble": {
+    "coupling_scheme": "MSbar with zero additional finite local Omega^2*Upsilon^2 counterterm",
+    "endpoint_integrals": "integral_0^1 log(x) dx=integral_0^1 log(1-x) dx=-1",
+    "feynman_parameter_definition": "Re B_R(X)=-integral_0^1 dx log[x*(1-x)*abs(X)/mu^2]",
+    "finite_scheme_freedom": "a finite coupling redefinition adds a common local multiple of the tree and shifts the displayed constant together with the definition of lambda(mu)",
+    "real_bubble": "B_X=L_X+2, L_X=log(mu^2/abs(X))",
+    "status": "FINITE_REAL_BUBBLE_COMPUTED",
+    "three_channel_sum": "B_s+B_t+B_u=L_s+L_t+L_u+6",
+    "timelike_imaginary_part": "the s-channel i*pi discontinuity is orthogonal to the real tree in this virtual interference coefficient"
+  },
+  "next_gate": "Derive the second-order finite-duration Dyson kernel for the normal-ordered auxiliary quartic Hamiltonian on the same compact active packet and prove that its renormalized covariant boundary equals the MSbar kernel computed here, including transient terms and the local coupling counterterm. Only then may this active coefficient be added to the certified connected-tree compact functional to promote the selected tagged q6 probability. General Eq. (19) and gravity remain separate later gates.",
+  "provenance": {
+    "inputs": [
+      {
+        "path": "planning/work-items/reverse-physics-bateman-auxiliary-active-one-loop-msbar.json",
+        "sha256": "3ed9a85b9f9af1e158f30a4fcfda067c39eea3431f2d414887638b898119e3d1"
+      },
+      {
+        "path": "reverse_physics/data/bateman_turok_hamiltonian_source_v1.json",
+        "sha256": "55ff3f989f1c5ac9bcc0688ad9c43721c22b5889c43da50fce43352c18be8fe7"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_CHARGE_GRADING_LOOP_STABILITY_V1.json",
+        "sha256": "962be17a99fc38b945eb1370a7c2b7074cd7d626b8e596634b5cda95cce9ce37"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_TAGGED_PACKET_NORMAL_ORDERED_SPECTATOR_REDUCTION_V1.json",
+        "sha256": "9ee80b008c7d68366c2909868e06798c130558f2d8725a07644e2f98e343a310"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_UV_HARD_SCATTERING_LAW_V1.json",
+        "sha256": "8ce6d81e672fa876b19696e228654d79989a21dc72c9ef099bdef0e97743ce05"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_TAGGED_SPECTATOR_PHYSICAL_PACKET_PROBABILITY_V1.json",
+        "sha256": "f1742448de34c8cc462c9a3a096bd3c1cd1241d7506b8abc1e687d751bff9779"
+      }
+    ],
+    "method": "Exact auxiliary species-tensor contraction, exact complement-pairing trace, exact Feynman-parameter endpoint integrals, exact normalization against an independent hard-log certificate, and analytic compact-kernel bounds. No floating-point arithmetic is used.",
+    "retrieval_date": "2026-08-12",
+    "source_commit": "65a1b473"
+  },
+  "question": "What is the full finite active auxiliary one-loop coefficient beyond the already certified logarithm, and does its exact species normalization agree with the independent hard probability?",
+  "report": "reverse_physics/reports/bt-auxiliary-active-one-loop-msbar.md",
+  "result_kind": "complete real finite MSbar one-loop active four-point interference on the covariant hard auxiliary BT carrier",
+  "schema": "reverse_physics/schema/reverse-physics-bt-auxiliary-active-one-loop-msbar-v1.schema.json",
+  "schema_version": "reverse-physics-bt-auxiliary-active-one-loop-msbar-v1",
+  "species_enumeration": {
+    "bubble_weights": [
+      {
+        "Omega_labels": [
+          0,
+          1
+        ],
+        "s": 2,
+        "t": 4,
+        "u": 4
+      },
+      {
+        "Omega_labels": [
+          0,
+          2
+        ],
+        "s": 4,
+        "t": 2,
+        "u": 4
+      },
+      {
+        "Omega_labels": [
+          0,
+          3
+        ],
+        "s": 4,
+        "t": 4,
+        "u": 2
+      },
+      {
+        "Omega_labels": [
+          1,
+          2
+        ],
+        "s": 4,
+        "t": 4,
+        "u": 2
+      },
+      {
+        "Omega_labels": [
+          1,
+          3
+        ],
+        "s": 4,
+        "t": 2,
+        "u": 4
+      },
+      {
+        "Omega_labels": [
+          2,
+          3
+        ],
+        "s": 2,
+        "t": 4,
+        "u": 4
+      }
+    ],
+    "channel_column_sums": {
+      "s": 20,
+      "t": 20,
+      "u": 20
+    },
+    "channel_partitions": {
+      "s": [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "t": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "u": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ]
+      ]
+    },
+    "complement_pairing": "J4 maps each two-subset assignment to its complement",
+    "conventions": "Omega=0, Upsilon=1, V_abcd/g=2 iff the multiset has two of each species, G_OU=G_UO=1 and diagonal G=0",
+    "neutral_assignments": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    "relative_interference": "2*Re<A_tree,A_loop>/<A_tree,A_tree>=5*g*(B_s+B_t+B_u)/(24*pi^2)",
+    "row_pattern": "each row is a permutation of (2,4,4)",
+    "status": "EXACT_SPECIES_TENSOR_COMPUTED",
+    "tree_loop_pairing": "<d,b>_J=40*(B_s+B_t+B_u)",
+    "tree_norm": 24,
+    "tree_vector": "d_S=2 for all six neutral assignments"
+  },
+  "tagged_fixture": {
+    "acceptance_scope": "local angular cell coefficient; a finite nonconstant window must integrate the logarithms",
+    "invariants": "s=64*kappa^2/25, t=u=-32*kappa^2/25",
+    "local_click": "q_active,MSbar^(6)=125*lambda^6*DeltaOmega*(L_*+6)/(16384*pi^4*kappa^2*Area)",
+    "log_sum": "L_*=log(25*mu^2/(64*kappa^2))+2*log(25*mu^2/(32*kappa^2))",
+    "status": "EXACT_CENTRAL_DENSITY_COMPUTED"
+  },
+  "verification_commands": [
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/bt_auxiliary_active_one_loop_msbar.py --write --check",
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/verify_bt_auxiliary_active_one_loop_msbar.py",
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 -m unittest -v reverse_physics.tests.test_bt_auxiliary_active_one_loop_msbar"
+  ]
+}

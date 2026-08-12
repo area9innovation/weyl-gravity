@@ -1,0 +1,19 @@
+{
+  "id": "sf:program/work/reverse-physics-bateman-auxiliary-active-one-loop-msbar",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "reverse-physics",
+    "state": "ACTIVE",
+    "objective": "Compute the complete real finite one-loop active four-point interference in the fixed auxiliary BT frame under one declared MSbar coupling convention, including exact species factors, and determine how much of the remaining tagged q6 barrier it closes.",
+    "depends_on": ["BATEMAN_TUROK_HAMILTONIAN_SOURCE_V1", "REVERSE_PHYSICS_CHARGE_GRADING_LOOP_STABILITY_V1", "REVERSE_PHYSICS_BT_TAGGED_PACKET_NORMAL_ORDERED_SPECTATOR_REDUCTION_V1", "REVERSE_PHYSICS_BT_UV_HARD_SCATTERING_LAW_V1", "REVERSE_PHYSICS_BT_TAGGED_SPECTATOR_PHYSICAL_PACKET_PROBABILITY_V1"],
+    "activates": ["the exact auxiliary one-loop species tensor", "the finite MSbar three-channel bubble coefficient", "an exact central tagged loop coefficient and compact-hard bounded kernel"],
+    "current_gate": "Enumerate the six neutral two-Omega/two-Upsilon assignments and all three bubble partitions, derive the renormalized massless bubble by exact Feynman-parameter integration, normalize the interference against the positive tree norm, and independently match the certified hard logarithm and Callan--Symanzik row.",
+    "stop_condition": "Land a COEFFICIENT_COMPUTED certificate, independent verifier, mutation suite and paper/report update for the complete real MSbar auxiliary active loop; distinguish this covariant hard packet kernel from a BT-derived finite-duration Dyson kernel and do not promote the complete tagged q6 coefficient until the carrier affiliation is proved.",
+    "forbid": "no logarithm-only answer called the finite loop; no unproved finite constant; no species-average guessed instead of enumerated; no MSbar coefficient called scheme independent; no covariant packet kernel called a finite-duration Hamiltonian kernel; no scalar result called general Eq. 19, gravity or LORENTZIAN-CAUSAL physics",
+    "allowed_paths": ["reverse_physics/", "paper/05-interaction-obstructions.tex", "paper/05-interaction-obstructions.pdf", "paper/06-einstein-weyl-interaction-obstructions.tex", "paper/06-einstein-weyl-interaction-obstructions.pdf", "planning/work-items/reverse-physics-bateman-auxiliary-active-one-loop-msbar.json", "planning/events/"],
+    "resource_hint": "For V_abcd/g=2 when the external multiset is Omega^2 Upsilon^2 and cross metric G_OU=G_UO=1, the one-loop channel contraction (1/2)V_abmn G_mr G_ns V_rscd gives weights (2,4,4) in a channel permutation for each neutral assignment. The six assignment sum pairs with the tree vector d=2 to give 40(Bs+Bt+Bu), while d^sharp d=24. The MSbar massless bubble has real part B_X=-int_0^1 log[x(1-x)|X|/mu^2]dx=L_X+2. Hence the full active density should be 5 lambda^6(Ls+Lt+Lu+6)/(256 pi^4 s), with the log part matching the existing hard certificate.",
+    "input_commit": "65a1b473",
+    "stream": "reverse-physics"
+  }
+}

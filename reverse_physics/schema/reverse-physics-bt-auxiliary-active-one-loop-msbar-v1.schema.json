@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-auxiliary-active-one-loop-msbar-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["certificate", "schema_version", "dependency_tags", "lifecycle_state", "result_kind", "question", "answer", "species_enumeration", "msbar_bubble", "active_virtual_probability", "tagged_fixture", "hard_window", "compact_kernel", "interpretation", "assumptions", "does_not_establish", "next_gate", "provenance", "verification_commands", "checks", "report", "schema"],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_AUXILIARY_ACTIVE_ONE_LOOP_MSBAR_V1"},
+    "schema_version": {"const": "reverse-physics-bt-auxiliary-active-one-loop-msbar-v1"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE"]},
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "result_kind": {"$ref": "#/$defs/text"}, "question": {"$ref": "#/$defs/text"}, "answer": {"$ref": "#/$defs/text"},
+    "species_enumeration": {
+      "type": "object", "additionalProperties": false,
+      "required": ["conventions", "neutral_assignments", "channel_partitions", "bubble_weights", "row_pattern", "channel_column_sums", "tree_vector", "complement_pairing", "tree_norm", "tree_loop_pairing", "relative_interference", "status"],
+      "properties": {
+        "conventions": {"$ref": "#/$defs/text"},
+        "neutral_assignments": {"type": "array", "minItems": 6, "maxItems": 6},
+        "channel_partitions": {"type": "object"},
+        "bubble_weights": {"type": "array", "minItems": 6, "maxItems": 6},
+        "row_pattern": {"const": "each row is a permutation of (2,4,4)"},
+        "channel_column_sums": {"const": {"s": 20, "t": 20, "u": 20}},
+        "tree_vector": {"const": "d_S=2 for all six neutral assignments"},
+        "complement_pairing": {"$ref": "#/$defs/text"},
+        "tree_norm": {"const": 24},
+        "tree_loop_pairing": {"const": "<d,b>_J=40*(B_s+B_t+B_u)"},
+        "relative_interference": {"const": "2*Re<A_tree,A_loop>/<A_tree,A_tree>=5*g*(B_s+B_t+B_u)/(24*pi^2)"},
+        "status": {"const": "EXACT_SPECIES_TENSOR_COMPUTED"}
+      }
+    },
+    "msbar_bubble": {
+      "type": "object", "additionalProperties": false,
+      "required": ["feynman_parameter_definition", "endpoint_integrals", "real_bubble", "timelike_imaginary_part", "three_channel_sum", "coupling_scheme", "finite_scheme_freedom", "status"],
+      "properties": {
+        "feynman_parameter_definition": {"$ref": "#/$defs/text"}, "endpoint_integrals": {"$ref": "#/$defs/text"},
+        "real_bubble": {"const": "B_X=L_X+2, L_X=log(mu^2/abs(X))"},
+        "timelike_imaginary_part": {"$ref": "#/$defs/text"},
+        "three_channel_sum": {"const": "B_s+B_t+B_u=L_s+L_t+L_u+6"},
+        "coupling_scheme": {"const": "MSbar with zero additional finite local Omega^2*Upsilon^2 counterterm"},
+        "finite_scheme_freedom": {"$ref": "#/$defs/text"},
+        "status": {"const": "FINITE_REAL_BUBBLE_COMPUTED"}
+      }
+    },
+    "active_virtual_probability": {
+      "type": "object", "additionalProperties": false,
+      "required": ["born_density", "relative_loop_factor", "complete_msbar_density", "logarithmic_part", "finite_constant_part", "callan_symanzik", "status"],
+      "properties": {
+        "born_density": {"const": "d_sigma_Born/dOmega=3*lambda^4/(32*pi^2*s)"},
+        "relative_loop_factor": {"const": "5*lambda^2*(B_s+B_t+B_u)/(24*pi^2)"},
+        "complete_msbar_density": {"const": "d_sigma_active,MSbar^(6)/dOmega=5*lambda^6*(L_s+L_t+L_u+6)/(256*pi^4*s)"},
+        "logarithmic_part": {"const": "5*lambda^6*(L_s+L_t+L_u)/(256*pi^4*s)"},
+        "finite_constant_part": {"const": "15*lambda^6/(128*pi^4*s)"},
+        "callan_symanzik": {"$ref": "#/$defs/text"},
+        "status": {"const": "ACTIVE_COVARIANT_MSBAR_COEFFICIENT_COMPUTED"}
+      }
+    },
+    "tagged_fixture": {
+      "type": "object", "additionalProperties": false,
+      "required": ["invariants", "log_sum", "local_click", "acceptance_scope", "status"],
+      "properties": {
+        "invariants": {"$ref": "#/$defs/text"}, "log_sum": {"$ref": "#/$defs/text"},
+        "local_click": {"const": "q_active,MSbar^(6)=125*lambda^6*DeltaOmega*(L_*+6)/(16384*pi^4*kappa^2*Area)"},
+        "acceptance_scope": {"$ref": "#/$defs/text"}, "status": {"const": "EXACT_CENTRAL_DENSITY_COMPUTED"}
+      }
+    },
+    "hard_window": {"type": "object", "additionalProperties": false, "required": ["definition", "solid_angle", "angular_log_integral", "integrated_loop", "collinear_control", "status"], "properties": {"definition": {"$ref": "#/$defs/text"}, "solid_angle": {"$ref": "#/$defs/text"}, "angular_log_integral": {"$ref": "#/$defs/text"}, "integrated_loop": {"$ref": "#/$defs/text"}, "collinear_control": {"$ref": "#/$defs/text"}, "status": {"const": "EXACT_HARD_WINDOW_INTEGRAL_COMPUTED"}}},
+    "compact_kernel": {"type": "object", "additionalProperties": false, "required": ["carrier", "hard_support", "bubble_bound", "species_bound", "consequence", "status"], "properties": {"carrier": {"$ref": "#/$defs/text"}, "hard_support": {"$ref": "#/$defs/text"}, "bubble_bound": {"$ref": "#/$defs/text"}, "species_bound": {"$ref": "#/$defs/text"}, "consequence": {"$ref": "#/$defs/text"}, "status": {"const": "COVARIANT_COMPACT_HARD_PACKET_KERNEL_CONSTRUCTED"}}},
+    "interpretation": {"const": {"active_auxiliary_one_loop_msbar": "COEFFICIENT_COMPUTED", "finite_constant": "COMPUTED_AS_PLUS_SIX_IN_MSBAR", "hard_log_match": "EXACT", "covariant_compact_packet_kernel": "CONSTRUCTED", "finite_duration_BT_Dyson_affiliation": "NOT_PROVED", "complete_tagged_q6_probability": "NOT_COMPUTED", "general_Eq19": "NOT_PROVED", "gravity_or_BV_BRST_transfer": "NOT_CONSTRUCTED", "Lorentzian_causal_claim": "NOT_ESTABLISHED"}},
+    "assumptions": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"$ref": "#/$defs/text"}},
+    "does_not_establish": {"type": "array", "minItems": 12, "maxItems": 12, "items": {"$ref": "#/$defs/text"}},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "provenance": {"type": "object", "additionalProperties": false, "required": ["source_commit", "retrieval_date", "inputs", "method"], "properties": {"source_commit": {"const": "65a1b473"}, "retrieval_date": {"const": "2026-08-12"}, "inputs": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"type": "object", "additionalProperties": false, "required": ["path", "sha256"], "properties": {"path": {"$ref": "#/$defs/text"}, "sha256": {"$ref": "#/$defs/hash"}}}}, "method": {"$ref": "#/$defs/text"}}},
+    "verification_commands": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/text"}},
+    "checks": {"type": "object", "additionalProperties": false, "required": ["ok", "passed", "total", "failures", "details"], "properties": {"ok": {"const": true}, "passed": {"const": 25}, "total": {"const": 25}, "failures": {"const": []}, "details": {"type": "object", "minProperties": 25, "maxProperties": 25, "additionalProperties": {"const": true}}}},
+    "report": {"const": "reverse_physics/reports/bt-auxiliary-active-one-loop-msbar.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-auxiliary-active-one-loop-msbar-v1.schema.json"}
+  },
+  "$defs": {"text": {"type": "string", "minLength": 1}, "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+}
