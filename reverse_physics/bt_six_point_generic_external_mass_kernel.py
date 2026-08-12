@@ -332,8 +332,8 @@ def fraction_string(value):
     return str(value.numerator) if value.denominator == 1 else str(value)
 
 
-def planar_rotation_family():
-    """Prove positivity on an exact one-parameter physical 3-to-3 family."""
+def rotation_family(tilt_ratio=Fraction(0)):
+    """Evaluate an exact rotated physical 3-to-3 family."""
     from sympy.polys.domains import QQ
     from sympy.polys.fields import field
 
@@ -359,13 +359,18 @@ def planar_rotation_family():
 
     cosine = (1 - t * t) / (1 + t * t)
     sine = 2 * t / (1 + t * t)
+    tilt = base(tilt_ratio) * t
+    tilt_cosine = (1 - tilt * tilt) / (1 + tilt * tilt)
+    tilt_sine = 2 * tilt / (1 + tilt * tilt)
 
     def rotate(value):
+        rotated_x = cosine * value[1] - sine * value[2]
+        rotated_y = sine * value[1] + cosine * value[2]
         return (
             value[0],
-            cosine * value[1] - sine * value[2],
-            sine * value[1] + cosine * value[2],
-            value[3],
+            rotated_x,
+            tilt_cosine * rotated_y,
+            tilt_sine * rotated_y,
         )
 
     incoming = [
@@ -434,7 +439,7 @@ def planar_rotation_family():
         {"factor": str(factor), "multiplicity": multiplicity}
         for factor, multiplicity in result["squarefree"].denom.factor_list()[1]
     ]
-    return {
+    family = {
         "parameter": "t",
         "rotation": {
             "cosine": str(cosine),
@@ -478,6 +483,28 @@ def planar_rotation_family():
             "never vanishes simultaneously"
         ),
     }
+    if tilt_ratio:
+        family["tilt"] = {
+            "ratio": str(tilt_ratio),
+            "parameter": str(tilt),
+            "cosine": str(tilt_cosine),
+            "sine": str(tilt_sine),
+        }
+        family["generic_outgoing_z_is_nonzero"] = any(
+            row[3] != 0 for row in outgoing
+        )
+        family["incoming_and_outgoing_planes_differ_generically"] = True
+    return family
+
+
+def planar_rotation_family():
+    """Prove positivity on the exact planar physical family."""
+    return rotation_family()
+
+
+def nonplanar_diagonal_family():
+    """Prove positivity when the out-of-plane tilt is tied by u=t/2."""
+    return rotation_family(Fraction(1, 2))
 
 
 def build():

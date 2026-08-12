@@ -133,13 +133,21 @@ def partitions(mask, count):
         subset = (subset - 1) & rest
 
 
-def explicit_tree_family():
+def explicit_tree_family(tilt_ratio=Fraction(0), parameter_value=None):
     """Enumerate all trees; do not use the producer's summed-current recursion."""
-    values = field("t", QQ)
-    base, t = values
+    if parameter_value is None:
+        values = field("t", QQ)
+        base, t = values
+    else:
+        base = QQ
+        parameter_fraction = Fraction(parameter_value)
+        t = base(parameter_fraction.numerator, parameter_fraction.denominator)
 
     def rational(value):
-        return base(Fraction(value))
+        fraction = Fraction(value)
+        if parameter_value is None:
+            return base(fraction)
+        return base(fraction.numerator, fraction.denominator)
 
     def vector(*entries):
         return tuple(rational(value) for value in entries)
@@ -157,20 +165,26 @@ def explicit_tree_family():
 
     cosine = (1 - t * t) / (1 + t * t)
     sine = 2 * t / (1 + t * t)
+    tilt = rational(tilt_ratio) * t
+    tilt_cosine = (1 - tilt * tilt) / (1 + tilt * tilt)
+    tilt_sine = 2 * tilt / (1 + tilt * tilt)
     incoming = [
         vector("6/5", "6/5", 0, 0),
         vector(1, "-3/5", "4/5", 0),
         vector(1, "-3/5", "-4/5", 0),
     ]
-    outgoing = [
-        (
-            value[0],
-            cosine * value[1] - sine * value[2],
-            sine * value[1] + cosine * value[2],
-            value[3],
+    outgoing = []
+    for value in incoming:
+        rotated_x = cosine * value[1] - sine * value[2]
+        rotated_y = sine * value[1] + cosine * value[2]
+        outgoing.append(
+            (
+                value[0],
+                rotated_x,
+                tilt_cosine * rotated_y,
+                tilt_sine * rotated_y,
+            )
         )
-        for value in incoming
-    ]
     momenta = incoming + [tuple(-entry for entry in value) for value in outgoing]
     adjacent = [
         minkowski_square(add_vectors(momenta[i], momenta[(i + 1) % N]))

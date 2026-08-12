@@ -1,0 +1,36 @@
+{
+  "id": "sf:program/work/reverse-physics-bateman-six-point-nonplanar-diagonal-born-density",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "reverse-physics",
+    "state": "ACTIVE",
+    "objective": "Decide whether the positive ten-square BT six-point Born-density mechanism survives on a genuinely nonplanar continuous physical 3-to-3 family rather than depending on coplanarity.",
+    "depends_on": [
+      "REVERSE_PHYSICS_BT_SIX_POINT_PLANAR_PHYSICAL_BORN_DENSITY_V1",
+      "REVERSE_PHYSICS_BT_CROSSED_SIX_POINT_NONFACTORIZING_PRETRACE_NO_GO_V1"
+    ],
+    "activates": [
+      "an exact rational out-of-plane tilt of the physical outgoing triple",
+      "a complete 64-slot six-external-mass jet over Q(t)",
+      "nonplanar complement self-duality and strict local-density positivity",
+      "degree and pole data for the unrestricted two-parameter proof"
+    ],
+    "current_gate": "NONPLANAR_DIAGONAL_DENSITY: compose the rational in-plane scattering rotation with an out-of-plane rotation of stereographic parameter t/2, enumerate the complete tree amplitude, and test complement pairing, numerator gcd, and pole parity on the resulting physical continuum.",
+    "stop_condition": "Land an exact independently replayed certificate proving either strict positivity or the first sign/self-duality obstruction on the whole regular nonplanar diagonal family. Preserve the distinction from two-independent-parameter phase space, integration, normalization, Eq. 19, gravity, and causal claims.",
+    "forbid": "no isolated nonplanar fixtures called a continuum theorem; no diagonal one-parameter family called the complete nonplanar phase space; no local density called an integrated probability; no scalar tree result promoted to Eq. 19, gravity/BRST, or LORENTZIAN-CAUSAL",
+    "allowed_paths": [
+      "reverse_physics/",
+      "notes/bateman-turok-embedding.md",
+      "paper/05-interaction-obstructions.tex",
+      "paper/05-interaction-obstructions.pdf",
+      "paper/06-einstein-weyl-interaction-obstructions.tex",
+      "paper/06-einstein-weyl-interaction-obstructions.pdf",
+      "planning/work-items/reverse-physics-bateman-six-point-nonplanar-diagonal-born-density.json",
+      "planning/events/"
+    ],
+    "resource_hint": "Use the exact planar incoming triple and apply R_x(u)R_z(t) with rational stereographic parameters u=t/2. The z-components are generically nonzero, so the outgoing plane differs from the incoming plane. Retain all 220 trees and 64 mass masks; prove the ten complement equalities and strictness by numerator gcd one, with every rational pole factor recorded.",
+    "input_commit": "24e988693bd9ee6874bedf9de476202c949a2e7e",
+    "stream": "reverse-physics"
+  }
+}
