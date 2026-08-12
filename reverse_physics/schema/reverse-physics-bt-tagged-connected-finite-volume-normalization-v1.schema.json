@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-tagged-connected-finite-volume-normalization-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["certificate", "schema_version", "dependency_tags", "lifecycle_state", "result_kind", "question", "answer", "common_finite_volume_spectator", "scaled_finite_time_kernel", "dimensionless_tree_cross_probability", "limit_classification", "interpretation", "assumptions", "does_not_establish", "missing_object_ledger", "next_gate", "provenance", "verification_commands", "checks", "report", "schema"],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_TAGGED_CONNECTED_FINITE_VOLUME_NORMALIZATION_V1"},
+    "schema_version": {"const": "reverse-physics-bt-tagged-connected-finite-volume-normalization-v1"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "common_finite_volume_spectator": {"const": {
+      "public_cross_CCR": "[b_Omega(p),b_Upsilon^dagger(q)]=2*E_p*delta_3(p-q)",
+      "finite_volume_delta": "delta_3(0)=V=Lx*Ly*Lz",
+      "positive_ghost_even_mode": "u_p=(|Omega,p>+|Upsilon,p>)/sqrt(2)",
+      "raw_mode_norm": "N_s=<u_p,u_p>_K=2*E_s*V",
+      "normalized_mode": "u_p^N=u_p/sqrt(N_s)",
+      "fixture_energy": "E_s=6*kappa/5",
+      "fixture_norm": "N_s=12*kappa*V/5",
+      "disconnected_identity_factor": "N_s^(-1/2)*N_s*N_s^(-1/2)=1",
+      "connected_factor": "N_s^(-1/2)*1*N_s^(-1/2)=1/N_s",
+      "status": "COMMON_NORMALIZED_SPECTATOR_BOX_MODE_CONSTRUCTED"
+    }},
+    "scaled_finite_time_kernel": {"const": {
+      "dimensionless_function": "w(z)=12*z+125*sin(16*z/5)/256+125*sin(8*z/5)/128+125*sin(2*(sqrt(17)-3)*z/5)/8",
+      "scale_covariance": "W_kappa(T)=w(kappa*T)/kappa^2",
+      "mass_dimension": -2,
+      "strict_sign": "W_kappa(T)>0 for kappa,T>0",
+      "large_time_rate": "lim_(T->infinity) W_kappa(T)/T=12/kappa",
+      "status": "EXACT_SCALE_RESTORATION_AND_SECULAR_RATE"
+    }},
+    "dimensionless_tree_cross_probability": {"const": {
+      "unnormalized_external_jet_cross": "I_tree^(6)=16*sqrt(2)*lambda^6*W_kappa(T)",
+      "box_normalized_external_jet_cross": "I_box^(6)=16*sqrt(2)*lambda^6*W_kappa(T)/N_s",
+      "leading_tagged_external_jet_norm": "24*lambda^4",
+      "relative_tree_cross": "I_box^(6)/(24*lambda^4)=2*sqrt(2)*lambda^2*W_kappa(T)/(3*N_s)",
+      "leading_tagged_probability": "q_tag^(4)=75*lambda^4*DeltaOmega/(2048*pi^2*kappa^2*Area)",
+      "tree_cross_contribution": "q_cross^(6)=125*sqrt(2)*lambda^6*W_kappa(T)*DeltaOmega/(12288*pi^2*kappa^3*Area*V)",
+      "dimension_audit": "W_kappa/(kappa^3*Area*V) is dimensionless because dimensions are -2-(3-2-3)=0",
+      "status": "FINITE_VOLUME_DIMENSIONLESS_TAGGED_TREE_CROSS_CONTRIBUTION_COMPUTED"
+    }},
+    "limit_classification": {"const": {
+      "fixed_finite_T_V_to_infinity": "q_cross^(6)->0 as 1/V",
+      "fixed_finite_V_T_to_infinity": "q_cross^(6)/T->125*sqrt(2)*lambda^6*DeltaOmega/(1024*pi^2*kappa^4*Area*V)",
+      "large_time_relative_rate": "(q_cross^(6)/q_tag^(4))/T->10*sqrt(2)*lambda^2/(3*kappa^2*V)",
+      "double_scaling_variable": "tau=T/(kappa^2*V)",
+      "double_scaled_relative_limit": "q_cross^(6)/q_tag^(4)->(10*sqrt(2)/3)*lambda^2*tau when V,T->infinity at fixed tau",
+      "order_of_limits": "fixed-T thermodynamic decoupling does not imply all-time decoupling; fixed-V perturbation theory becomes nonuniform at secular times",
+      "status": "FIXED_TIME_THERMODYNAMIC_SUPPRESSION_WITH_NONUNIFORM_LONG_TIME_LIMIT"
+    }},
+    "interpretation": {"const": {
+      "common_finite_volume_spectator_normalization": "CONSTRUCTED",
+      "dimensionless_tagged_tree_cross_contribution": "COEFFICIENT_COMPUTED",
+      "fixed_time_thermodynamic_limit": "ZERO",
+      "fixed_volume_long_time_behavior": "SECULAR",
+      "universal_joint_large_time_large_volume_limit": "DOES_NOT_EXIST_WITHOUT_SCALING_CHOICE",
+      "compact_packet_replacement": "NOT_CONSTRUCTED",
+      "complete_order_lambda6_probability": "NOT_COMPUTED",
+      "loop_source_and_survival_completion": "NOT_CONSTRUCTED",
+      "general_Eq19": "NOT_PROVED",
+      "gravity_or_BV_BRST_transfer": "NOT_CONSTRUCTED",
+      "Lorentzian_causal_claim": "NOT_ESTABLISHED"
+    }},
+    "assumptions": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"$ref": "#/$defs/text"}},
+    "does_not_establish": {"type": "array", "minItems": 13, "maxItems": 13, "items": {"$ref": "#/$defs/text"}},
+    "missing_object_ledger": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "object", "additionalProperties": false, "required": ["object", "status", "required_value"], "properties": {"object": {"$ref": "#/$defs/text"}, "status": {"const": "MISSING"}, "required_value": {"$ref": "#/$defs/text"}}}},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "provenance": {"type": "object", "additionalProperties": false, "required": ["source_commit", "retrieval_date", "inputs", "method"], "properties": {"source_commit": {"const": "b6f4e935ee3b435f40b26b1d281b0f1c127c4a83"}, "retrieval_date": {"const": "2026-08-12"}, "inputs": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"type": "object", "additionalProperties": false, "required": ["path", "sha256"], "properties": {"path": {"$ref": "#/$defs/text"}, "sha256": {"$ref": "#/$defs/hash"}}}}, "method": {"$ref": "#/$defs/text"}}},
+    "verification_commands": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/text"}},
+    "checks": {"type": "object", "additionalProperties": false, "required": ["ok", "passed", "total", "failures", "details"], "properties": {"ok": {"const": true}, "passed": {"const": 32}, "total": {"const": 32}, "failures": {"const": []}, "details": {"type": "object", "minProperties": 32, "maxProperties": 32, "additionalProperties": {"const": true}}}},
+    "report": {"const": "reverse_physics/reports/bt-tagged-connected-finite-volume-normalization.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-tagged-connected-finite-volume-normalization-v1.schema.json"}
+  },
+  "$defs": {"text": {"type": "string", "minLength": 1}, "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+}

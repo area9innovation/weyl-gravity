@@ -1,0 +1,32 @@
+{
+  "schema": "event-v0",
+  "id": "sf:program/event/reverse-physics-bateman-tagged-connected-finite-volume-normalization-DONE-b6f4e935",
+  "kind": "event",
+  "source": {
+    "path": "tools/science-forge/program/events/reverse-physics-bateman-tagged-connected-finite-volume-normalization-DONE-b6f4e935.json",
+    "span": null
+  },
+  "body": {
+    "event_kind": "WORK_ITEM_TRANSITIONED",
+    "actor": "reverse-physics",
+    "base_revision": "science-forge-ir-v0",
+    "predecessors": [],
+    "when": "2026-08-12",
+    "seq": 1,
+    "payload": {
+      "target": "sf:program/work/reverse-physics-bateman-tagged-connected-finite-volume-normalization",
+      "to_state": "DONE",
+      "note": "The public cross-CCR and finite-volume delta convention give exact positive spectator norm N_s=2*E_s*V. Normalizing the two external spectator legs cancels this factor in the disconnected identity tree but divides the connected tree by N_s. The certified external-jet cross therefore becomes a dimensionless tagged finite-volume contribution with q_cross/q_tag^(4)=2*sqrt(2)*lambda^2*W_kappa(T)/(3*N_s). At E_s=6*kappa/5 it is 125*sqrt(2)*lambda^6*W_kappa(T)*DeltaOmega/(12288*pi^2*kappa^3*Area*V). It vanishes as 1/V at fixed finite T but grows as T/V at fixed V; the controlling double-scaling variable is T/(kappa^2*V). This is the tree-cross part only, not the complete lambda6 probability. Evidence: REVERSE_PHYSICS_BT_TAGGED_CONNECTED_FINITE_VOLUME_NORMALIZATION_V1."
+    },
+    "native": {
+      "authored_by": "manual close-out after exact box-normalization and limit classification",
+      "policy": "append-only; one content-addressed file per event; the work-item base state is not rewritten"
+    }
+  },
+  "edges": [
+    {
+      "rel": "TRANSITIONS",
+      "to": "sf:program/work/reverse-physics-bateman-tagged-connected-finite-volume-normalization"
+    }
+  ]
+}

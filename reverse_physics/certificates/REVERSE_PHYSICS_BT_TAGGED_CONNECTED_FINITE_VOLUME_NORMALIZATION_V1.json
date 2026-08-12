@@ -1,0 +1,188 @@
+{
+  "answer": "For the declared finite-volume tagged detector the tree cross contribution is dimensionless and finite, but it vanishes in the fixed-time thermodynamic limit. The public cross-CCR gives a raw positive ghost-even spectator mode norm N_s=2*E_s*delta_3(0)=2*E_s*V. Normalizing the incoming and outgoing spectator legs contributes 1/N_s. The disconnected spectator identity contains the compensating raw contraction N_s and remains unit normalized, whereas the connected six-point tree contains no spectator identity and retains 1/N_s. Therefore the certified external-jet interference becomes I_box^(6)=16*sqrt(2)*lambda^6*W_kappa(T)/N_s and its ratio to the leading tagged external coefficient 24*lambda^4 is 2*sqrt(2)*lambda^2*W_kappa(T)/(3*N_s). With E_s=6*kappa/5, N_s=12*kappa*V/5 and W_kappa(T)=kappa^-2*w(kappa*T). Multiplying the certified tagged detector probability gives q_cross^(6)=125*sqrt(2)*lambda^6*W_kappa(T)*DeltaOmega/[12288*pi^2*kappa^3*Area*V]. It is positive for finite T,V and tends to zero as V^-1 at fixed T. At fixed V it is secular: q_cross/T tends to 125*sqrt(2)*lambda^6*DeltaOmega/[1024*pi^2*kappa^4*Area*V], while q_cross/q_tag^(4) grows with rate (10*sqrt(2)/3)*lambda^2/(kappa^2*V). Thus the relevant double-scaling variable is T/(kappa^2*V): the infinite-volume and long-time limits are not one universal limit. This normalizes the tree-cross contribution only; it does not compute the active loop, source dressing, survival block or complete order-lambda6 probability, and it does not prove Eq. (19), gravity or Lorentzian causality.",
+  "assumptions": [
+    "the public momentum and delta conventions are used in a rectangular finite spatial box with V=Lx*Ly*Lz",
+    "the tag is a declared labeled spectator mode at p0=k0 with energy E_s=6*kappa/5 and the positive ghost-even species normalization already certified",
+    "the connected and disconnected reduced amplitudes share the certified active input/output cell, phase convention, external-mass projector, label orbit and angular acceptance, so those common factors cancel in their ratio",
+    "the connected tree has no spectator identity contraction while the disconnected four-point tree contains exactly one, as proved by the hard-nonforward support atlas",
+    "T and V are finite before limits are taken; the result does not identify a canonical joint thermodynamic/asymptotic scaling",
+    "the displayed q_cross is only the spectator-connected tree cross part of probability order lambda6"
+  ],
+  "certificate": "REVERSE_PHYSICS_BT_TAGGED_CONNECTED_FINITE_VOLUME_NORMALIZATION_V1",
+  "checks": {
+    "details": {
+      "Eq19_gravity_and_Lorentzian_boundaries_remain_open": true,
+      "all_active_phase_orbit_and_acceptance_factors_cancel_in_ratio": true,
+      "compact_packet_limit_is_not_inferred_from_box_normalization": true,
+      "complete_lambda6_loop_source_and_survival_remain_open": true,
+      "connected_tree_retains_inverse_Ns": true,
+      "double_scaled_relative_limit_is_exact": true,
+      "double_scaling_parameter_is_dimensionless": true,
+      "finite_T_fixed_V_cross_is_positive": true,
+      "finite_spatial_volume_is_delta3_at_zero": true,
+      "fixed_T_thermodynamic_limit_is_zero": true,
+      "four_certificate_predecessors_pass": true,
+      "identity_contraction_cancels_external_normalizers": true,
+      "inputs_are_content_pinned": true,
+      "large_T_and_large_V_limits_do_not_define_one_universal_value": true,
+      "large_time_W_rate_is_twelve_over_kappa": true,
+      "large_time_cross_rate_is_exact": true,
+      "large_time_relative_rate_is_exact": true,
+      "leading_tagged_fixture_probability_is_imported": true,
+      "normalized_external_cross_is_exact": true,
+      "positive_packet_species_norm_is_one": true,
+      "public_cross_CCR_is_two_E": true,
+      "public_delta_normalization_is_imported": true,
+      "relative_cross_is_exact": true,
+      "scaled_W_has_mass_dimension_minus_two": true,
+      "scaled_W_is_kappa_minus_two_w_kappaT": true,
+      "spectator_box_norm_is_exact": true,
+      "spectator_energy_scales_as_six_fifths_kappa": true,
+      "tagged_external_jet_norm_is_24_lambda4": true,
+      "tree_cross_probability_is_dimensionless": true,
+      "tree_cross_probability_is_exact": true,
+      "two_external_normalizers_give_inverse_Ns": true,
+      "unnormalized_cross_kernel_is_imported": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 32,
+    "total": 32
+  },
+  "common_finite_volume_spectator": {
+    "connected_factor": "N_s^(-1/2)*1*N_s^(-1/2)=1/N_s",
+    "disconnected_identity_factor": "N_s^(-1/2)*N_s*N_s^(-1/2)=1",
+    "finite_volume_delta": "delta_3(0)=V=Lx*Ly*Lz",
+    "fixture_energy": "E_s=6*kappa/5",
+    "fixture_norm": "N_s=12*kappa*V/5",
+    "normalized_mode": "u_p^N=u_p/sqrt(N_s)",
+    "positive_ghost_even_mode": "u_p=(|Omega,p>+|Upsilon,p>)/sqrt(2)",
+    "public_cross_CCR": "[b_Omega(p),b_Upsilon^dagger(q)]=2*E_p*delta_3(p-q)",
+    "raw_mode_norm": "N_s=<u_p,u_p>_K=2*E_s*V",
+    "status": "COMMON_NORMALIZED_SPECTATOR_BOX_MODE_CONSTRUCTED"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "dimensionless_tree_cross_probability": {
+    "box_normalized_external_jet_cross": "I_box^(6)=16*sqrt(2)*lambda^6*W_kappa(T)/N_s",
+    "dimension_audit": "W_kappa/(kappa^3*Area*V) is dimensionless because dimensions are -2-(3-2-3)=0",
+    "leading_tagged_external_jet_norm": "24*lambda^4",
+    "leading_tagged_probability": "q_tag^(4)=75*lambda^4*DeltaOmega/(2048*pi^2*kappa^2*Area)",
+    "relative_tree_cross": "I_box^(6)/(24*lambda^4)=2*sqrt(2)*lambda^2*W_kappa(T)/(3*N_s)",
+    "status": "FINITE_VOLUME_DIMENSIONLESS_TAGGED_TREE_CROSS_CONTRIBUTION_COMPUTED",
+    "tree_cross_contribution": "q_cross^(6)=125*sqrt(2)*lambda^6*W_kappa(T)*DeltaOmega/(12288*pi^2*kappa^3*Area*V)",
+    "unnormalized_external_jet_cross": "I_tree^(6)=16*sqrt(2)*lambda^6*W_kappa(T)"
+  },
+  "does_not_establish": [
+    "the complete order-lambda6 tagged probability",
+    "the active four-point one-loop interference on the same finite-volume cell",
+    "the order-lambda dressed-source correction",
+    "the matching virtual or survival contribution",
+    "forward, collinear or real-virtual/KLN completion",
+    "a box-independent compact-packet value for q_cross",
+    "a universal result after taking T and V to infinity without a declared scaling",
+    "all-time decoupling from the fixed-time V-to-infinity limit",
+    "an all-time Moller, LSZ or S operator",
+    "the standard scalar projector or general Eq. (19)",
+    "gravity or metric BV/BRST transfer",
+    "anything LORENTZIAN-CAUSAL",
+    "literature priority"
+  ],
+  "interpretation": {
+    "Lorentzian_causal_claim": "NOT_ESTABLISHED",
+    "common_finite_volume_spectator_normalization": "CONSTRUCTED",
+    "compact_packet_replacement": "NOT_CONSTRUCTED",
+    "complete_order_lambda6_probability": "NOT_COMPUTED",
+    "dimensionless_tagged_tree_cross_contribution": "COEFFICIENT_COMPUTED",
+    "fixed_time_thermodynamic_limit": "ZERO",
+    "fixed_volume_long_time_behavior": "SECULAR",
+    "general_Eq19": "NOT_PROVED",
+    "gravity_or_BV_BRST_transfer": "NOT_CONSTRUCTED",
+    "loop_source_and_survival_completion": "NOT_CONSTRUCTED",
+    "universal_joint_large_time_large_volume_limit": "DOES_NOT_EXIST_WITHOUT_SCALING_CHOICE"
+  },
+  "lifecycle_state": "COEFFICIENT_COMPUTED",
+  "limit_classification": {
+    "double_scaled_relative_limit": "q_cross^(6)/q_tag^(4)->(10*sqrt(2)/3)*lambda^2*tau when V,T->infinity at fixed tau",
+    "double_scaling_variable": "tau=T/(kappa^2*V)",
+    "fixed_finite_T_V_to_infinity": "q_cross^(6)->0 as 1/V",
+    "fixed_finite_V_T_to_infinity": "q_cross^(6)/T->125*sqrt(2)*lambda^6*DeltaOmega/(1024*pi^2*kappa^4*Area*V)",
+    "large_time_relative_rate": "(q_cross^(6)/q_tag^(4))/T->10*sqrt(2)*lambda^2/(3*kappa^2*V)",
+    "order_of_limits": "fixed-T thermodynamic decoupling does not imply all-time decoupling; fixed-V perturbation theory becomes nonuniform at secular times",
+    "status": "FIXED_TIME_THERMODYNAMIC_SUPPRESSION_WITH_NONUNIFORM_LONG_TIME_LIMIT"
+  },
+  "missing_object_ledger": [
+    {
+      "object": "compact-packet spectator normalization",
+      "required_value": "replace 2*E_s*V by the exact effective overlap functional of normalized compact spectator packets and prove the box limit",
+      "status": "MISSING"
+    },
+    {
+      "object": "active four-point one-loop term",
+      "required_value": "renormalized finite and logarithmic loop interference on the same tagged detector cell",
+      "status": "MISSING"
+    },
+    {
+      "object": "source and survival terms",
+      "required_value": "the order-lambda source correction and pseudo-unitary virtual/survival coefficient at probability order lambda6",
+      "status": "MISSING"
+    },
+    {
+      "object": "joint large-time/volume prescription",
+      "required_value": "a physical preparation/detector scaling or asymptotic dynamics selecting the behavior of T/(kappa^2*V)",
+      "status": "MISSING"
+    }
+  ],
+  "next_gate": "Replace the point box spectator by a normalized compact packet f0 and derive the exact effective identity-overlap functional that replaces N_s, while keeping the active detector and connected finite-time column on the same domain. In parallel compute the active one-loop and source/survival terms on this common cell. The fixed-time box result predicts suppression by inverse spectator mode volume, while the secular double scaling shows why the order of limits must be part of the physical definition. Only the assembled packet result may promote the complete lambda6 probability; Eq. (19), gravity and Lorentzian transfer remain separate.",
+  "provenance": {
+    "inputs": [
+      {
+        "path": "planning/work-items/reverse-physics-bateman-tagged-connected-finite-volume-normalization.json",
+        "sha256": "c48817f40a591133c903557f1e39cc0c9a8a88555ceba8c1c11ed465ff9dc9f2"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_TAGGED_CONNECTED_FINITE_TIME_INTERFERENCE_V1.json",
+        "sha256": "66a06e1935e4fb9b396005011255631f73acf2de0ff1dbc6ec940b33e4e576cc"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_TAGGED_SPECTATOR_PHYSICAL_PACKET_PROBABILITY_V1.json",
+        "sha256": "f1742448de34c8cc462c9a3a096bd3c1cd1241d7506b8abc1e687d751bff9779"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_PERTURBATIVE_COISOMETRY_RIGIDITY_V1.json",
+        "sha256": "53ed72d9038ebc8884d3c822a0651dc6b36b089b17aa603fed42d9c0d2ec3edb"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_SCALAR_DRESSED_SOURCE_COMPACT_WAVEPACKET_V1.json",
+        "sha256": "99d728aa4870389c6ee87cd96a9653c55e6b1ccf9e52c55633bb633292920bee"
+      },
+      {
+        "path": "reverse_physics/data/bateman_turok_characteristic_function_source_v1.json",
+        "sha256": "42b3a1253e3496bb329d4f33b8db3db52266f79515d034c56e0b9e37e10b8732"
+      }
+    ],
+    "method": "Exact SymPy normalization ledger using the public cross-CCR and finite-volume delta convention; separate counting of the normalized external spectator legs and the disconnected identity contraction; exact propagation through the certified external-jet interference and tagged detector coefficient; symbolic scale restoration and sequential thermodynamic, large-time and double-scaling limits. No floating-point arithmetic is used.",
+    "retrieval_date": "2026-08-12",
+    "source_commit": "b6f4e935ee3b435f40b26b1d281b0f1c127c4a83"
+  },
+  "question": "After the tagged and connected tree coefficients are placed on the same normalized spectator box mode, does their secular order-lambda6 cross term remain a finite dimensionless detector contribution, and does it survive the fixed-time thermodynamic limit?",
+  "report": "reverse_physics/reports/bt-tagged-connected-finite-volume-normalization.md",
+  "result_kind": "exact finite-volume common-spectator normalization and thermodynamic/secular scaling theorem for the tagged-connected BT tree cross contribution",
+  "scaled_finite_time_kernel": {
+    "dimensionless_function": "w(z)=12*z+125*sin(16*z/5)/256+125*sin(8*z/5)/128+125*sin(2*(sqrt(17)-3)*z/5)/8",
+    "large_time_rate": "lim_(T->infinity) W_kappa(T)/T=12/kappa",
+    "mass_dimension": -2,
+    "scale_covariance": "W_kappa(T)=w(kappa*T)/kappa^2",
+    "status": "EXACT_SCALE_RESTORATION_AND_SECULAR_RATE",
+    "strict_sign": "W_kappa(T)>0 for kappa,T>0"
+  },
+  "schema": "reverse_physics/schema/reverse-physics-bt-tagged-connected-finite-volume-normalization-v1.schema.json",
+  "schema_version": "reverse-physics-bt-tagged-connected-finite-volume-normalization-v1",
+  "verification_commands": [
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/bt_tagged_connected_finite_volume_normalization.py --write --check",
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/verify_bt_tagged_connected_finite_volume_normalization.py",
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 -m unittest -v reverse_physics.tests.test_bt_tagged_connected_finite_volume_normalization"
+  ]
+}

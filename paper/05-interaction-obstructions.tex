@@ -3396,6 +3396,30 @@ the complete order-$\lambda^6$ coefficient.  Common packet/coarea
 normalization, the active one-loop term, source dressing and survival/
 collinear completion remain the next physical gate; all-time scattering and
 Eq.~(19) remain open.
+The missing spectator normalization can be fixed for a declared finite box.
+The public cross commutator gives the positive ghost-even mode norm
+$N_s=2E_sV$.  Normalizing both external spectator legs cancels $N_s$ in the
+disconnected identity tree but leaves $1/N_s$ on the connected tree.  Restoring
+the scale $kappa$, with $E_s=6kappa/5$ and
+$W_kappa(T)=kappa^{-2}w(kappa T)$, gives
+\[
+ q_{\rm cross}^{(6)}=
+ \frac{125\sqrt2\lambda^6W_\kappa(T)\Delta\Omega}
+ {12288\pi^2\kappa^3\mathrm{Area}\,V}.
+\]
+Certificate
+\par\noindent
+\texttt{REVERSE\_PHYSICS\_BT\_TAGGED\_CONNECTED\_}
+\allowbreak\texttt{FINITE\_VOLUME\_NORMALIZATION\_V1}
+\par\noindent
+therefore makes the tree cross contribution dimensionless on the declared
+cell.  It vanishes as $V^{-1}$ at fixed finite $T$, but at fixed $V$ its
+ratio to the leading tagged probability grows asymptotically as
+$(10\sqrt2/3)\lambda^2T/(\kappa^2V)$.  Fixed-time thermodynamic suppression
+is not all-time decoupling: the joint limit depends on
+$T/(\kappa^2V)$.  A compact-packet replacement and the loop, source and
+survival terms are still required for the complete order-$\lambda^6$
+probability.
 
 The auxiliary preparation nevertheless has an exact scalar preimage on the
 finite covariant detector ideal.  Put

@@ -1,0 +1,19 @@
+{
+  "id": "sf:program/work/reverse-physics-bateman-tagged-connected-finite-volume-normalization",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "reverse-physics",
+    "state": "ACTIVE",
+    "objective": "Put the certified tagged-spectator and connected six-point tree amplitudes on one normalized finite-volume spectator mode, derive the exact missing identity-overlap factor in their order-lambda6 interference, and classify the fixed-time thermodynamic and secular finite-volume limits.",
+    "depends_on": ["REVERSE_PHYSICS_BT_TAGGED_CONNECTED_FINITE_TIME_INTERFERENCE_V1", "REVERSE_PHYSICS_BT_TAGGED_SPECTATOR_PHYSICAL_PACKET_PROBABILITY_V1", "REVERSE_PHYSICS_BT_PERTURBATIVE_COISOMETRY_RIGIDITY_V1", "REVERSE_PHYSICS_BT_SCALAR_DRESSED_SOURCE_COMPACT_WAVEPACKET_V1"],
+    "activates": ["a dimensionless finite-volume tagged tree-cross probability contribution", "the exact resolution/volume scaling of the resonant lambda6 term", "a decision whether the resonance survives the fixed-time thermodynamic limit"],
+    "current_gate": "Use the public cross-CCR and delta normalization to prove that a positive ghost-even spectator box mode has norm N_s=2*E_s*V, that normalization cancels N_s in the spectator tree but divides the connected tree by N_s, and propagate this factor through the certified external-jet interference and tagged leading probability.",
+    "stop_condition": "Land an exact certificate and independent verifier for the one-particle box normalization, the relative 1/N_s cross factor, the dimensionless tagged tree-cross coefficient at arbitrary scale kappa, its fixed-T V-to-infinity limit, its large-T behavior at fixed V, and the T/(kappa^2 V) double-scaling parameter, with strict boundaries excluding the complete lambda6 probability, loop/source/survival completion, Eq. 19, gravity and Lorentzian claims.",
+    "forbid": "no finite-volume tree-cross contribution called the complete NLO probability; no vanishing fixed-time thermodynamic limit called all-time decoupling; no double-scaling parameter called a universal scattering rate; no reduced scalar result called Eq. 19, gravity, BV/BRST or LORENTZIAN-CAUSAL physics; no literature-priority claim",
+    "allowed_paths": ["reverse_physics/", "paper/05-interaction-obstructions.tex", "paper/05-interaction-obstructions.pdf", "paper/06-einstein-weyl-interaction-obstructions.tex", "paper/06-einstein-weyl-interaction-obstructions.pdf", "planning/work-items/reverse-physics-bateman-tagged-connected-finite-volume-normalization.json", "planning/events/"],
+    "resource_hint": "With delta_3(0)=V=Lx*Ly*Lz and spectator energy E_s=6*kappa/5, the public cross-CCR gives N_s=2*E_s*V=12*kappa*V/5. Normalizing both external spectator legs cancels N_s in the disconnected identity amplitude and leaves 1/N_s multiplying the connected amplitude. Hence q_cross/q_tag^(4)=2*sqrt(2)*lambda^2*W_kappa(T)/(3*N_s), where W_kappa(T)=kappa^-2*w(kappa*T). At the fixture q_cross=125*sqrt(2)*lambda^6*W_kappa(T)*DeltaOmega/(12288*pi^2*kappa^3*Area*V). It vanishes as V^-1 at fixed T, grows as T/V at fixed V, and q_cross/q_tag tends (10*sqrt(2)/3)*lambda^2*T/(kappa^2*V) for large T.",
+    "input_commit": "b6f4e935ee3b435f40b26b1d281b0f1c127c4a83",
+    "stream": "reverse-physics"
+  }
+}
