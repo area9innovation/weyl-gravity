@@ -27,6 +27,10 @@ The **Dimensions guide** explains the 6 mathematical regimes, 6 carriers, and
 16 physical obligations in non-specialist language while retaining each
 technical definition in an expandable detail block.
 
+The implication view is a three-pathway argument map. Arrowheads terminate at
+visible box ports, every edge has an explicit plain-language assertion, and
+hover or keyboard focus links the diagram to its relation-ledger row.
+
 ## Build and verification
 
 ```text

@@ -15,6 +15,57 @@
     SUFFICIENT: "#167958", CONDITIONAL_SUFFICIENT: "#2776a8", REPRESENTATION_DEPENDENT: "#7651a8",
     COUNTEREXAMPLE_TO_METHOD: "#b94040", LITERATURE_CONTRAST: "#607069", OPEN_IMPLICATION: "#c17b14", NOT_SUFFICIENT: "#9a3c55",
   };
+  const RELATION_LABEL = {
+    SUFFICIENT: "Enough for this step",
+    CONDITIONAL_SUFFICIENT: "Enough with conditions",
+    REPRESENTATION_DEPENDENT: "Depends on the coding",
+    COUNTEREXAMPLE_TO_METHOD: "This method fails",
+    LITERATURE_CONTRAST: "Literature contrast",
+    OPEN_IMPLICATION: "Unproved bridge",
+    NOT_SUFFICIENT: "Not enough by itself",
+  };
+  const RELATION_DESCRIPTION = {
+    SUFFICIENT: "The source supplies what this particular target step needs.",
+    CONDITIONAL_SUFFICIENT: "The source is enough only after named extra conditions are supplied.",
+    REPRESENTATION_DEPENDENT: "The implication relies on what information is included in the representation.",
+    COUNTEREXAMPLE_TO_METHOD: "The source exposes why this proposed route cannot establish the target.",
+    LITERATURE_CONTRAST: "The results use different assumptions or representations and should be compared, not merged.",
+    OPEN_IMPLICATION: "This is a concrete research bridge; no proof is currently certified.",
+    NOT_SUFFICIENT: "The source is useful but additional mathematical input is required.",
+  };
+  const RELATION_DASH = {OPEN_IMPLICATION: "8 6", COUNTEREXAMPLE_TO_METHOD: "3 5", NOT_SUFFICIENT: "10 5"};
+  const GRAPH_PATHWAYS = [
+    {
+      id: "coded-evolution", title: "1. Coded evolution toward causal propagation",
+      subtitle: "The main construction chain, with two physical inputs shown as open bridges.",
+      panel: [20, 20, 1160, 800],
+      nodes: {
+        "P-ERROR-CONTROL": [470, 85], "M-TAIL-MODULUS": [470, 200], "M-CODED-HILBERT": [470, 315],
+        "M-COEFFICIENT-WEAK": [470, 430], "M-SPACETIME-DISTRIBUTION": [470, 545], "M-CAUSAL-GREEN": [470, 660],
+        "P-FINITE-ENERGY": [70, 200], "P-LOCAL-CAUSALITY": [70, 660],
+      },
+      edges: [
+        ["P-ERROR-CONTROL", "M-TAIL-MODULUS"], ["M-TAIL-MODULUS", "M-CODED-HILBERT"],
+        ["P-FINITE-ENERGY", "M-TAIL-MODULUS"], ["M-CODED-HILBERT", "M-COEFFICIENT-WEAK"],
+        ["M-COEFFICIENT-WEAK", "M-SPACETIME-DISTRIBUTION"], ["M-SPACETIME-DISTRIBUTION", "M-CAUSAL-GREEN"],
+        ["P-LOCAL-CAUSALITY", "M-CAUSAL-GREEN"],
+      ],
+    },
+    {
+      id: "finite-route", title: "2. The finite spectral route and its causal obstruction",
+      subtitle: "Finite exact dynamics is certified; using that projection to prove causal support is ruled out.",
+      panel: [20, 840, 1160, 220],
+      nodes: {"P-FINITE-RESOLUTION": [80, 930], "M-FINITE-LAURENT": [475, 930], "M-CAUSAL-GREEN": [870, 930]},
+      edges: [["P-FINITE-RESOLUTION", "M-FINITE-LAURENT"], ["M-FINITE-LAURENT", "M-CAUSAL-GREEN"]],
+    },
+    {
+      id: "literature-contrast", title: "3. A representation-sensitive literature contrast",
+      subtitle: "The computable and noncomputable results are not contradictory because their representations differ.",
+      panel: [20, 1080, 1160, 220],
+      nodes: {"L-WEIHRAUCH-ZHONG": [220, 1170], "L-POUR-EL-RICHARDS": [730, 1170]},
+      edges: [["L-WEIHRAUCH-ZHONG", "L-POUR-EL-RICHARDS"]],
+    },
+  ];
   const axis = Object.fromEntries(DATA.axes.map(a => [a.id, a]));
   const labels = Object.fromEntries(DATA.axes.flatMap(a => a.keys.map(k => [k.id, k])));
   const cellByKey = new Map(DATA.cells.map(c => [key(c), c]));
@@ -190,7 +241,7 @@
 
   function openNodeInspector(node) {
     const incident = DATA.graph.edges.filter(e => e.from === node.id || e.to === node.id);
-    document.getElementById("inspectorBody").innerHTML = `<p class="eyebrow">Implication node</p><h2 id="inspectorTitle">${esc(node.id)}</h2><p><span class="quality">${esc(node.kind)}</span></p><p>${esc(node.statement)}</p><h3>Typed relations</h3>${incident.map(e => `<p class="boundary" style="border-color:${RELATION[e.relation]}"><b>${esc(e.from)} → ${esc(e.to)}</b><br>${esc(e.relation)}${e.meaning ? `<br>${esc(e.meaning)}` : ""}<br><small>Evidence: ${esc(e.evidence.join(", ") || "none")}</small></p>`).join("")}`;
+    document.getElementById("inspectorBody").innerHTML = `<p class="eyebrow">Implication node</p><h2 id="inspectorTitle">${esc(node.label || node.id)}</h2><p><span class="quality">${esc(node.kind.replaceAll("_", " "))}</span> <code>${esc(node.id)}</code></p><p>${esc(node.statement)}</p><h3>Typed relations</h3>${incident.map(e => `<p class="boundary" style="border-color:${RELATION[e.relation]}"><b>${esc(DATA.graph.nodes.find(x => x.id === e.from)?.label || e.from)} → ${esc(DATA.graph.nodes.find(x => x.id === e.to)?.label || e.to)}</b><br><strong>${esc(RELATION_LABEL[e.relation])}</strong><br>${esc(e.meaning)}<br><small>Evidence: ${esc(e.evidence.join(", ") || "No direct certificate yet")}</small></p>`).join("")}`;
     document.getElementById("inspector").classList.add("open");
     document.getElementById("inspector").setAttribute("aria-hidden", "false");
     document.getElementById("shade").hidden = false;
@@ -220,33 +271,79 @@
   }
 
   function renderGraph() {
-    document.getElementById("graphLegend").innerHTML = DATA.graph.relation_vocabulary.map(r => `<span class="legend-item"><i class="swatch" style="--tone:${RELATION[r]}"></i>${esc(r.replaceAll("_", " "))}</span>`).join("");
-    const kinds = ["PHYSICAL_ASSUMPTION", "MATHEMATICAL_DATA", "MATHEMATICAL_CONSTRUCTION", "LITERATURE_RESULT"];
-    const columns = {PHYSICAL_ASSUMPTION: 40, MATHEMATICAL_DATA: 395, MATHEMATICAL_CONSTRUCTION: 395, LITERATURE_RESULT: 790};
-    const grouped = Object.fromEntries(kinds.map(k => [k, DATA.graph.nodes.filter(n => n.kind === k)]));
-    const positions = {};
-    let mathIndex = 0;
-    for (const kind of kinds) for (const [i, node] of grouped[kind].entries()) {
-      const index = ["MATHEMATICAL_DATA", "MATHEMATICAL_CONSTRUCTION"].includes(kind) ? mathIndex++ : i;
-      positions[node.id] = {x: columns[kind], y: 55 + index * 105};
-    }
-    const edgePaths = DATA.graph.edges.map((e, i) => {
-      const a = positions[e.from], b = positions[e.to];
-      const sameColumn = a.x === b.x;
-      const path = sameColumn ? `M ${a.x + 145} ${a.y + 35} C ${a.x + 260} ${a.y + 35}, ${b.x + 260} ${b.y + 35}, ${b.x + 145} ${b.y + 35}` : `M ${a.x + 290} ${a.y + 35} C ${(a.x + b.x) / 2 + 145} ${a.y + 35}, ${(a.x + b.x) / 2 + 145} ${b.y + 35}, ${b.x} ${b.y + 35}`;
-      return `<path class="graph-edge" d="${path}" stroke="${RELATION[e.relation]}" marker-end="url(#arrow${i})"/><marker id="arrow${i}" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="${RELATION[e.relation]}"/></marker>`;
-    }).join("");
-    const nodes = DATA.graph.nodes.map(node => {
-      const p = positions[node.id], words = node.statement.split(" ");
+    const nodeById = Object.fromEntries(DATA.graph.nodes.map(node => [node.id, node]));
+    const edgeByPair = new Map(DATA.graph.edges.map((edge, index) => [`${edge.from}|${edge.to}`, {...edge, index}]));
+    const usedRelations = DATA.graph.relation_vocabulary.filter(relation => DATA.graph.edges.some(edge => edge.relation === relation));
+    document.getElementById("graphLegend").innerHTML = usedRelations.map(relation => `<span class="legend-item relation-legend" title="${esc(RELATION_DESCRIPTION[relation])}"><i class="swatch" style="--tone:${RELATION[relation]}"></i><b>${esc(RELATION_LABEL[relation])}</b></span>`).join("");
+
+    const width = 250, height = 88;
+    const wrap = (text, limit = 39) => {
       const lines = []; let line = "";
-      for (const word of words) { if ((line + " " + word).length > 38) { lines.push(line); line = word; } else line += (line ? " " : "") + word; }
+      for (const word of text.split(" ")) { if (line && `${line} ${word}`.length > limit) { lines.push(line); line = word; } else line += (line ? " " : "") + word; }
       if (line) lines.push(line);
-      return `<g class="graph-node" data-node="${esc(node.id)}" transform="translate(${p.x},${p.y})"><rect width="290" height="70"></rect><text x="12" y="17" class="node-kind">${esc(node.kind.replaceAll("_", " "))}</text>${lines.slice(0, 3).map((x, i) => `<text x="12" y="${36 + i * 14}">${esc(x)}</text>`).join("")}</g>`;
+      return lines;
+    };
+    const panels = GRAPH_PATHWAYS.map(pathway => {
+      const [x, y, w, h] = pathway.panel;
+      return `<g class="graph-panel"><rect x="${x}" y="${y}" width="${w}" height="${h}" rx="14"></rect><text x="${x + 20}" y="${y + 28}" class="panel-title">${esc(pathway.title)}</text><text x="${x + 20}" y="${y + 49}" class="panel-copy">${esc(pathway.subtitle)}</text></g>`;
     }).join("");
-    document.getElementById("graph").setAttribute("viewBox", "0 0 1120 780");
-    document.getElementById("graph").innerHTML = `<defs></defs>${edgePaths}${nodes}`;
-    document.querySelectorAll("[data-node]").forEach(g => g.addEventListener("click", () => openNodeInspector(DATA.graph.nodes.find(n => n.id === g.dataset.node))));
-    document.getElementById("edgeTable").innerHTML = `<table class="edge-table"><thead><tr><th>From</th><th>Relation</th><th>To</th><th>Meaning / evidence</th></tr></thead><tbody>${DATA.graph.edges.map(e => `<tr><td>${esc(e.from)}</td><td><span class="quality" style="border-left:4px solid ${RELATION[e.relation]}">${esc(e.relation)}</span></td><td>${esc(e.to)}</td><td>${esc(e.meaning || "No stronger interpretation is licensed.")}<br><small>${esc(e.evidence.join(", ") || "No evidence assigned")}</small></td></tr>`).join("")}</tbody></table>`;
+    const edgeRecords = [];
+    for (const pathway of GRAPH_PATHWAYS) for (const [from, to] of pathway.edges) {
+      const edge = edgeByPair.get(`${from}|${to}`), a = pathway.nodes[from], b = pathway.nodes[to];
+      if (!edge || !a || !b) continue;
+      const vertical = Math.abs(a[0] - b[0]) < 2;
+      const sourceOnLeft = a[0] < b[0];
+      const sx = vertical ? a[0] + width / 2 : sourceOnLeft ? a[0] + width : a[0];
+      const sy = vertical ? a[1] + height : a[1] + height / 2;
+      const tx = vertical ? b[0] + width / 2 : sourceOnLeft ? b[0] : b[0] + width;
+      const ty = vertical ? b[1] : b[1] + height / 2;
+      const bend = Math.max(18, Math.abs(tx - sx) / 2);
+      const d = vertical ? `M ${sx} ${sy} L ${tx} ${ty}` : Math.abs(sy - ty) < 2 ? `M ${sx} ${sy} L ${tx} ${ty}` : `M ${sx} ${sy} C ${sx + (sourceOnLeft ? bend : -bend)} ${sy}, ${tx + (sourceOnLeft ? -bend : bend)} ${ty}, ${tx} ${ty}`;
+      const lx = vertical ? sx + 105 : (sx + tx) / 2, ly = vertical ? (sy + ty) / 2 : Math.min(sy, ty) - 11;
+      edgeRecords.push({...edge, d, sx, sy, tx, ty, lx, ly});
+    }
+    const definitions = usedRelations.map(relation => `<marker id="arrow-${relation}" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,8 L9,4 z" fill="${RELATION[relation]}"></path></marker>`).join("");
+    const edgePaths = edgeRecords.map(edge => `<g class="graph-edge-group" data-edge="${edge.index}" data-from="${esc(edge.from)}" data-to="${esc(edge.to)}" tabindex="0" role="button" aria-label="${esc(`${RELATION_LABEL[edge.relation]}: ${nodeById[edge.from].label} to ${nodeById[edge.to].label}`)}"><path class="graph-edge" d="${edge.d}" stroke="${RELATION[edge.relation]}" stroke-dasharray="${RELATION_DASH[edge.relation] || "none"}" marker-end="url(#arrow-${edge.relation})"></path><path class="graph-edge-hit" d="${edge.d}"></path></g>`).join("");
+    const nodes = GRAPH_PATHWAYS.flatMap(pathway => Object.entries(pathway.nodes).map(([id, p]) => {
+      const node = nodeById[id], lines = wrap(node.statement).slice(0, 3);
+      return `<g class="graph-node" data-node="${esc(id)}" transform="translate(${p[0]},${p[1]})" tabindex="0" role="button"><rect width="${width}" height="${height}"></rect><text x="11" y="16" class="node-kind">${esc(node.kind.replaceAll("_", " "))}</text><text x="11" y="35" class="node-title">${esc(node.label)}</text>${lines.map((line, i) => `<text x="11" y="${55 + i * 13}" class="node-copy">${esc(line)}</text>`).join("")}</g>`;
+    })).join("");
+    const decorations = edgeRecords.map(edge => {
+      const label = RELATION_LABEL[edge.relation], labelWidth = Math.max(58, label.length * 5.8 + 14);
+      return `<g class="edge-decoration" data-edge-decoration="${edge.index}"><circle cx="${edge.sx}" cy="${edge.sy}" r="4" fill="${RELATION[edge.relation]}"></circle><circle cx="${edge.tx}" cy="${edge.ty}" r="4" fill="${RELATION[edge.relation]}"></circle><rect x="${edge.lx - labelWidth / 2}" y="${edge.ly - 12}" width="${labelWidth}" height="18" rx="9"></rect><text x="${edge.lx}" y="${edge.ly + 1}" text-anchor="middle">${esc(label)}</text></g>`;
+    }).join("");
+    const graph = document.getElementById("graph");
+    graph.setAttribute("viewBox", "0 0 1200 1320");
+    graph.innerHTML = `<defs>${definitions}</defs>${panels}${edgePaths}${nodes}${decorations}`;
+
+    const endpoint = id => { const node = nodeById[id]; return `<strong>${esc(node.label)}</strong><small>${esc(node.statement)}</small><code>${esc(id)}</code>`; };
+    const evidence = edge => edge.evidence.length ? `<ul class="edge-evidence">${edge.evidence.map(id => { const item = DATA.evidence[id], href = item ? (item.kind === "LITERATURE" ? item.ledger_link : item.result_link) : ""; return `<li>${href ? `<a href="${esc(href)}"><code>${esc(id)}</code></a>` : `<code>${esc(id)}</code>`}</li>`; }).join("")}</ul>` : `<span class="open-evidence">No direct certificate yet</span>`;
+    document.getElementById("edgeTable").innerHTML = `<h3>Relation ledger</h3><p class="muted">Each row states exactly what its arrow asserts. An empty evidence field marks an open bridge; it is not replaced by a generic interpretation.</p><table class="edge-table"><thead><tr><th>From</th><th>Relation</th><th>To</th><th>What this arrow asserts</th><th>Evidence</th></tr></thead><tbody>${DATA.graph.edges.map((edge, index) => `<tr data-edge-row="${index}" tabindex="0"><td class="edge-endpoint">${endpoint(edge.from)}</td><td><span class="quality relation-badge" style="border-left-color:${RELATION[edge.relation]}" title="${esc(RELATION_DESCRIPTION[edge.relation])}">${esc(RELATION_LABEL[edge.relation])}</span><small><code>${esc(edge.relation)}</code></small></td><td class="edge-endpoint">${endpoint(edge.to)}</td><td>${esc(edge.meaning || "ERROR: missing edge explanation")}</td><td>${evidence(edge)}</td></tr>`).join("")}</tbody></table>`;
+
+    const clearFocus = () => document.querySelectorAll(".graph-edge-group, .edge-decoration, .graph-node, [data-edge-row]").forEach(item => item.classList.remove("focused", "dimmed"));
+    const focusEdge = index => {
+      const edge = DATA.graph.edges[index];
+      document.querySelectorAll(".graph-edge-group").forEach(item => item.classList.toggle("dimmed", Number(item.dataset.edge) !== index));
+      document.querySelectorAll("[data-edge-decoration]").forEach(item => item.classList.toggle("dimmed", Number(item.dataset.edgeDecoration) !== index));
+      document.querySelectorAll(".graph-node").forEach(item => item.classList.toggle("dimmed", ![edge.from, edge.to].includes(item.dataset.node)));
+      document.querySelectorAll("[data-edge-row]").forEach(item => { item.classList.toggle("focused", Number(item.dataset.edgeRow) === index); item.classList.toggle("dimmed", Number(item.dataset.edgeRow) !== index); });
+    };
+    document.querySelectorAll(".graph-edge-group, [data-edge-row]").forEach(item => {
+      const index = Number(item.dataset.edge ?? item.dataset.edgeRow);
+      item.addEventListener("mouseenter", () => focusEdge(index)); item.addEventListener("focus", () => focusEdge(index));
+      item.addEventListener("mouseleave", clearFocus); item.addEventListener("blur", clearFocus);
+    });
+    document.querySelectorAll("[data-node]").forEach(item => {
+      item.addEventListener("mouseenter", () => {
+        const incident = new Set(DATA.graph.edges.map((edge, index) => ({edge, index})).filter(x => x.edge.from === item.dataset.node || x.edge.to === item.dataset.node).map(x => x.index));
+        document.querySelectorAll(".graph-edge-group").forEach(edge => edge.classList.toggle("dimmed", !incident.has(Number(edge.dataset.edge))));
+        document.querySelectorAll("[data-edge-decoration]").forEach(edge => edge.classList.toggle("dimmed", !incident.has(Number(edge.dataset.edgeDecoration))));
+        document.querySelectorAll(".graph-node").forEach(node => node.classList.toggle("dimmed", node.dataset.node !== item.dataset.node));
+      });
+      item.addEventListener("mouseleave", clearFocus);
+      item.addEventListener("click", () => openNodeInspector(nodeById[item.dataset.node]));
+      item.addEventListener("keydown", event => { if (event.key === "Enter" || event.key === " ") openNodeInspector(nodeById[item.dataset.node]); });
+    });
   }
 
   function renderLadder() {

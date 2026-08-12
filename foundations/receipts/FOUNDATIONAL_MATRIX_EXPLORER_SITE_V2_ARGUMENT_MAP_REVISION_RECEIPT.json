@@ -1,0 +1,84 @@
+{
+  "schema_version": "science-forge-tier-receipt-v1",
+  "receipt_id": "FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2_ARGUMENT_MAP_REVISION_RECEIPT",
+  "created": "2026-08-12",
+  "repository_base_commit": "7f81da5d2a6ef78627607c5bbfed692a31aa6dce",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
+  "scope": "Replace the obscured generic implications diagram with a three-pathway argument map, make all ten edge meanings explicit in the source certificate, and replace the fallback table with a linked plain-language relation ledger.",
+  "tiers": {
+    "tier_0_compile": {
+      "status": "PASS",
+      "command": "python3 -m py_compile foundations/build_cylinder_wave_strength_ladder_v2.py foundations/check_cylinder_wave_strength_ladder_v2.py foundations/verify_cylinder_wave_strength_ladder_v2.py foundations/build_coded_wave_frontier_v2.py foundations/refine_intersection_cube_v4.py foundations/build_matrix_site.py foundations/build_matrix_site_v2.py foundations/check_matrix_site_v2.py foundations/verify_matrix_site_v2.py foundations/tests/test_cylinder_wave_strength_ladder_v2.py foundations/tests/test_matrix_site.py",
+      "elapsed_seconds": 0.04
+    },
+    "tier_0_json": {
+      "status": "PASS",
+      "command": "parse every foundations/**/*.json with json.loads",
+      "elapsed_seconds": 0.05,
+      "result": "130 foundations JSON files parsed before adding this receipt."
+    },
+    "tier_0_diff_check": {
+      "status": "PASS",
+      "command": "git diff --check -- foundations"
+    },
+    "tier_1_affected_verifiers": {
+      "status": "PASS",
+      "command": "python3 foundations/verify_cylinder_wave_strength_ladder_v2.py && python3 foundations/verify_coded_wave_frontier_v2.py && python3 foundations/verify_refined_intersection_cube_v4.py && python3 foundations/verify_matrix_site_v2.py",
+      "result": "The ladder graph, downstream input pins, cube preservation, deterministic site, manifest, and claim boundaries pass."
+    },
+    "tier_1_browser_smoke": {
+      "status": "PASS",
+      "command": "serve foundations/site and render #view=graph in headless Google Chrome at 1800 x 3400",
+      "result": "Three pathway panels, ten arrows, ten visible endpoint-label groups, and ten relation-ledger rows render; the legacy fallback text is absent."
+    },
+    "tier_2_generator_chain": {
+      "status": "PASS",
+      "command": "run the ladder v2, coded-wave frontier v2, cube v4, and matrix-site generators with --check followed by their independent checkers",
+      "elapsed_seconds": 0.38,
+      "result": "All four generated chains are byte-current. Ladder graph digest 32c12fbd5a4b96d4a37e041522ac81e22dea21f9536de293520625094cb94768; site data digest 378a9806111aec5b00bb9b9d71e8b9bbeaad573feb163684e967aa8cc34de625."
+    },
+    "tier_2_foundations_tests": {
+      "status": "PASS",
+      "command": "python3 -m unittest discover -s foundations/tests -p 'test_*.py'",
+      "elapsed_seconds": 2.05,
+      "result": "273/273 tests pass."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No classical or quantum freeze, theorem promotion, shared core-algebra change, release preparation, or explicit full-repository-suite request applies. The complete foundations suite and affected generated chain were run."
+    }
+  },
+  "argument_map_checks": {
+    "source_nodes": 12,
+    "source_edges": 10,
+    "edges_with_specific_meaning": 10,
+    "legacy_fallback_occurrences": 0,
+    "rendered_pathways": [
+      "coded evolution toward causal propagation",
+      "finite spectral route and causal obstruction",
+      "representation-sensitive literature contrast"
+    ],
+    "visible_boundary_ports": true,
+    "visible_arrowheads": true,
+    "relation_labels": true,
+    "non_color_line_styles": true,
+    "diagram_ledger_linked_highlighting": true,
+    "empty_evidence_wording": "No direct certificate yet"
+  },
+  "artifact_hashes": {
+    "foundations/build_cylinder_wave_strength_ladder_v2.py": "0507b6db93a28b083a2895b46169dd75530ccab65f68820122890b71568c3ea8",
+    "foundations/check_cylinder_wave_strength_ladder_v2.py": "82788ee2aa03739d09bbfc2911696ead9030e98dbaf31b018e0b22181c4d4bee",
+    "foundations/results/FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V2.json": "c043f1c8bc22344ee0fc378cb39789899009830708a6da7a4df5227cff015295",
+    "foundations/build_matrix_site_v2.py": "a4853c22ab7451df70535b649fbbb5b3e05cc8a12c199ca306c99208be619385",
+    "foundations/check_matrix_site_v2.py": "9b96ff25022caf481a983ce856ec4b5cb093000e605fbca3b362ff8d0d76a4d4",
+    "foundations/matrix_site_assets/app.js": "f067f1f7fa9a183ebaf3c8a34b6d9b3eabf636dd43709bd4f89e7ba4aa32db3b",
+    "foundations/matrix_site_assets/index.html": "fb2f9242fea4c4862710741c9ee3d60a1f8eaa17a1f7fe4290479d5219739227",
+    "foundations/matrix_site_assets/styles.css": "7ca40e3331a96e8dd3b54fb7c981cf4592a5bf77a8b8b9a46f890c3bb1286d24",
+    "foundations/results/FOUNDATIONAL_CODED_WAVE_FRONTIER_V2.json": "d8832e2b5e2f8e762b885bdcd61263abd7a296bd0a4c691106331326c2397dde",
+    "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V4.json": "daa6ff464520e6975e46009009908583d63dc2d1fc6f60a99118b026223965a8",
+    "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json": "3c852d2645f6bec17f1d729906610af48d95f94a403bbeb32a207fde1101f2fb",
+    "foundations/site/data.json": "5e15943033608c792f6d979048401f12df77b1b081c8bb8b744d9e1bb8fa00e2",
+    "foundations/site/manifest.json": "2dff5cae92ecd2d9656eaa46c5597b88d60c2262669af389ddc51276e2ce2560"
+  },
+  "claim_boundary": "This revision clarifies the certified relation graph and its presentation. It adds no edge, theorem, evidence assignment, cube-status promotion, causal Green construction, or new Lorentzian claim."
+}

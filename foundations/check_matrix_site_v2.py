@@ -113,9 +113,11 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
     app = (SITE / "app.js").read_text() + (SITE / "migration-review.js").read_text()
     if "https://" in html or "http://" in html or '<script src="data.js"></script>' not in html or '<script src="migration-review.js"></script>' not in html:
         errors.append("offline/no-remote-code shell")
-    for token in ("matrixGroups", "guideView", "dimensionGuide", "Regime × carrier × obligation", "graphView", "ladderView", "evidenceView", "compareDialog", "exportJson", "exportCsv", "downloadBrief", "column-label", "Migration review", "migration_evidence", "112-decision audit JSON"):
+    for token in ("matrixGroups", "guideView", "dimensionGuide", "Regime × carrier × obligation", "graphView", "GRAPH_PATHWAYS", "Relation ledger", "graph-edge-hit", "No direct certificate yet", "ladderView", "evidenceView", "compareDialog", "exportJson", "exportCsv", "downloadBrief", "column-label", "Migration review", "migration_evidence", "112-decision audit JSON"):
         if token not in html + app:
             errors.append("interface token " + token)
+    if "No stronger interpretation is licensed" in app:
+        errors.append("legacy graph fallback")
 
     status_counts = Counter(x.get("status") for x in cells)
     all_migrations = Counter(x.get("migration_status") for x in cells)

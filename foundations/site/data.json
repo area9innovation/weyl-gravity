@@ -11463,7 +11463,7 @@
       "result_link": "sources/foundations/results/FOUNDATIONAL_CODED_WAVE_FRONTIER_V2.json",
       "report_path": "foundations/reports/coded-wave-frontier-v2.md",
       "report_link": "sources/foundations/reports/coded-wave-frontier-v2.md",
-      "sha256": "a86361f9419e345b2ce0ce3b2ff1c689d0b3ac090d4cbb5f031b014af9e84021"
+      "sha256": "d8832e2b5e2f8e762b885bdcd61263abd7a296bd0a4c691106331326c2397dde"
     },
     "FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V1": {
       "id": "FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V1",
@@ -11545,7 +11545,7 @@
       "result_link": "sources/foundations/results/FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V2.json",
       "report_path": "foundations/reports/cylinder-wave-strength-ladder-v2.md",
       "report_link": "sources/foundations/reports/cylinder-wave-strength-ladder-v2.md",
-      "sha256": "e57410af6a196fb60c1391e22ecbf422441505ff076a81256f3bd913b8923cc9"
+      "sha256": "c043f1c8bc22344ee0fc378cb39789899009830708a6da7a4df5227cff015295"
     },
     "FOUNDATIONAL_EXPLICIT_ENERGY_SPECTRAL_FRAGMENT_ZF_V1": {
       "id": "FOUNDATIONAL_EXPLICIT_ENERGY_SPECTRAL_FRAGMENT_ZF_V1",
@@ -12957,62 +12957,74 @@
       {
         "id": "P-FINITE-RESOLUTION",
         "kind": "PHYSICAL_ASSUMPTION",
-        "statement": "Only finitely many Fourier modes are resolved."
+        "statement": "Only finitely many Fourier modes are resolved.",
+        "label": "Finite resolution"
       },
       {
         "id": "M-FINITE-LAURENT",
         "kind": "MATHEMATICAL_CONSTRUCTION",
-        "statement": "A finite Gaussian-rational Laurent wave is available."
+        "statement": "A finite Gaussian-rational Laurent wave is available.",
+        "label": "Finite Laurent wave"
       },
       {
         "id": "P-ERROR-CONTROL",
         "kind": "PHYSICAL_ASSUMPTION",
-        "statement": "Preparation supplies a cutoff for every requested energy tolerance."
+        "statement": "Preparation supplies a cutoff for every requested energy tolerance.",
+        "label": "Supplied error control"
       },
       {
         "id": "M-TAIL-MODULUS",
         "kind": "MATHEMATICAL_DATA",
-        "statement": "A function N(k) bounds the energy tail by 2^{-k}."
+        "statement": "A function N(k) bounds the energy tail by 2^{-k}.",
+        "label": "Energy-tail modulus"
       },
       {
         "id": "P-FINITE-ENERGY",
         "kind": "PHYSICAL_ASSUMPTION",
-        "statement": "The state has finite total energy, without a supplied modulus."
+        "statement": "The state has finite total energy, without a supplied modulus.",
+        "label": "Finite total energy"
       },
       {
         "id": "M-CODED-HILBERT",
         "kind": "MATHEMATICAL_CONSTRUCTION",
-        "statement": "A fast-Cauchy completed chiral energy state and its isometric evolution exist in the declared RCA_0 coding."
+        "statement": "A fast-Cauchy completed chiral energy state and its isometric evolution exist in the declared RCA_0 coding.",
+        "label": "Coded Hilbert evolution"
       },
       {
         "id": "M-COEFFICIENT-WEAK",
         "kind": "MATHEMATICAL_CONSTRUCTION",
-        "statement": "The wave equation holds against finite Fourier tests."
+        "statement": "The wave equation holds against finite Fourier tests.",
+        "label": "Finite-test wave identity"
       },
       {
         "id": "M-SPACETIME-DISTRIBUTION",
         "kind": "MATHEMATICAL_CONSTRUCTION",
-        "statement": "A localized spacetime distribution is constructed."
+        "statement": "A localized spacetime distribution is constructed.",
+        "label": "Localized spacetime distribution"
       },
       {
         "id": "P-LOCAL-CAUSALITY",
         "kind": "PHYSICAL_ASSUMPTION",
-        "statement": "Disturbances have finite propagation speed."
+        "statement": "Disturbances have finite propagation speed.",
+        "label": "Finite propagation speed"
       },
       {
         "id": "M-CAUSAL-GREEN",
         "kind": "MATHEMATICAL_CONSTRUCTION",
-        "statement": "Advanced and retarded Green maps with support control exist."
+        "statement": "Advanced and retarded Green maps with support control exist.",
+        "label": "Causal Green maps"
       },
       {
         "id": "L-WEIHRAUCH-ZHONG",
         "kind": "LITERATURE_RESULT",
-        "statement": "Wave propagation is computable on stated C^1 and Sobolev representations."
+        "statement": "Wave propagation is computable on stated C^1 and Sobolev representations.",
+        "label": "Computable wave propagation"
       },
       {
         "id": "L-POUR-EL-RICHARDS",
         "kind": "LITERATURE_RESULT",
-        "statement": "A different representation/regularity setting admits computable initial data with a noncomputable solution value."
+        "statement": "A different representation/regularity setting admits computable initial data with a noncomputable solution value.",
+        "label": "Noncomputable solution value"
       }
     ],
     "edges": [
@@ -13022,7 +13034,8 @@
         "relation": "SUFFICIENT",
         "evidence": [
           "FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V1"
-        ]
+        ],
+        "meaning": "Resolving finitely many Fourier modes is enough to construct the exact finite Laurent-wave fixture."
       },
       {
         "from": "P-ERROR-CONTROL",
@@ -13030,7 +13043,8 @@
         "relation": "REPRESENTATION_DEPENDENT",
         "evidence": [
           "FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V1"
-        ]
+        ],
+        "meaning": "A usable cutoff rule supplies a tail modulus only because that quantitative rule is part of the chosen representation."
       },
       {
         "from": "M-TAIL-MODULUS",
@@ -13045,7 +13059,8 @@
         "from": "P-FINITE-ENERGY",
         "to": "M-TAIL-MODULUS",
         "relation": "OPEN_IMPLICATION",
-        "evidence": []
+        "evidence": [],
+        "meaning": "Finite total energy alone does not supply a rate of tail convergence; deriving one uniformly remains an open bridge."
       },
       {
         "from": "M-CODED-HILBERT",
@@ -13053,13 +13068,15 @@
         "relation": "OPEN_IMPLICATION",
         "evidence": [
           "FOUNDATIONAL_CODED_POLYGONAL_WAVE_RCA0_V1"
-        ]
+        ],
+        "meaning": "The completed evolution name has been constructed, but verifying the wave identity against the declared finite test class remains open."
       },
       {
         "from": "M-COEFFICIENT-WEAK",
         "to": "M-SPACETIME-DISTRIBUTION",
         "relation": "OPEN_IMPLICATION",
-        "evidence": []
+        "evidence": [],
+        "meaning": "An identity on finite Fourier tests has not yet been extended to a localized spacetime test-function class."
       },
       {
         "from": "M-FINITE-LAURENT",
@@ -13068,7 +13085,7 @@
         "evidence": [
           "FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V1"
         ],
-        "meaning": "Finite spectral projection is globally nonzero and cannot certify support."
+        "meaning": "Finite spectral projection is globally nonzero, so this route cannot certify causal support."
       },
       {
         "from": "M-SPACETIME-DISTRIBUTION",
@@ -13077,7 +13094,7 @@
         "evidence": [
           "FOUNDATIONAL_TYPED_BIWAVE_GREEN_DEPENDENCY_AUDIT_V1"
         ],
-        "meaning": "Energy uniqueness and support propagation are additional requirements."
+        "meaning": "A spacetime distribution alone is not enough: energy uniqueness and support propagation are additional requirements."
       },
       {
         "from": "P-LOCAL-CAUSALITY",
@@ -13085,7 +13102,8 @@
         "relation": "OPEN_IMPLICATION",
         "evidence": [
           "FOUNDATIONAL_TYPED_BIWAVE_GREEN_DEPENDENCY_AUDIT_V1"
-        ]
+        ],
+        "meaning": "Finite propagation is the physical requirement, but an explicit theorem must still construct advanced and retarded maps with controlled support."
       },
       {
         "from": "L-WEIHRAUCH-ZHONG",
@@ -13095,7 +13113,7 @@
           "weihrauch-zhong-2002",
           "pour-el-richards-1981"
         ],
-        "meaning": "Computability changes with topology, regularity, and representation; the results are not contradictory."
+        "meaning": "Computability changes with topology, regularity, and representation; the two literature results are not contradictory."
       }
     ]
   },
@@ -13146,5 +13164,5 @@
     "migration_audit_report": "sources/foundations/reports/intersection-cube-migration-audit-v2.md",
     "ladder_report": "sources/foundations/reports/cylinder-wave-strength-ladder-v2.md"
   },
-  "canonical_digest": "b461f5b4e2a58905daff87c3fd3629a3e80cb087c3f4dd1d0d925304344395e2"
+  "canonical_digest": "378a9806111aec5b00bb9b9d71e8b9bbeaad573feb163684e967aa8cc34de625"
 }

@@ -6,6 +6,32 @@ from pathlib import Path
 from typing import Any
 ROOT=Path(__file__).resolve().parents[1];F=ROOT/"foundations"
 V1=F/"results/FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V1.json";WAVE=F/"results/FOUNDATIONAL_CODED_POLYGONAL_WAVE_RCA0_V1.json";OUTPUT=F/"results/FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V2.json";REPORT=F/"reports/cylinder-wave-strength-ladder-v2.md"
+NODE_LABELS={
+    "P-FINITE-RESOLUTION":"Finite resolution",
+    "M-FINITE-LAURENT":"Finite Laurent wave",
+    "P-ERROR-CONTROL":"Supplied error control",
+    "M-TAIL-MODULUS":"Energy-tail modulus",
+    "P-FINITE-ENERGY":"Finite total energy",
+    "M-CODED-HILBERT":"Coded Hilbert evolution",
+    "M-COEFFICIENT-WEAK":"Finite-test wave identity",
+    "M-SPACETIME-DISTRIBUTION":"Localized spacetime distribution",
+    "P-LOCAL-CAUSALITY":"Finite propagation speed",
+    "M-CAUSAL-GREEN":"Causal Green maps",
+    "L-WEIHRAUCH-ZHONG":"Computable wave propagation",
+    "L-POUR-EL-RICHARDS":"Noncomputable solution value",
+}
+EDGE_MEANINGS={
+    ("P-FINITE-RESOLUTION","M-FINITE-LAURENT"):"Resolving finitely many Fourier modes is enough to construct the exact finite Laurent-wave fixture.",
+    ("P-ERROR-CONTROL","M-TAIL-MODULUS"):"A usable cutoff rule supplies a tail modulus only because that quantitative rule is part of the chosen representation.",
+    ("M-TAIL-MODULUS","M-CODED-HILBERT"):"A prescribed fast Cauchy rate and finite-code time moduli support the explicit diagonal extension in RCA_0.",
+    ("P-FINITE-ENERGY","M-TAIL-MODULUS"):"Finite total energy alone does not supply a rate of tail convergence; deriving one uniformly remains an open bridge.",
+    ("M-CODED-HILBERT","M-COEFFICIENT-WEAK"):"The completed evolution name has been constructed, but verifying the wave identity against the declared finite test class remains open.",
+    ("M-COEFFICIENT-WEAK","M-SPACETIME-DISTRIBUTION"):"An identity on finite Fourier tests has not yet been extended to a localized spacetime test-function class.",
+    ("M-FINITE-LAURENT","M-CAUSAL-GREEN"):"Finite spectral projection is globally nonzero, so this route cannot certify causal support.",
+    ("M-SPACETIME-DISTRIBUTION","M-CAUSAL-GREEN"):"A spacetime distribution alone is not enough: energy uniqueness and support propagation are additional requirements.",
+    ("P-LOCAL-CAUSALITY","M-CAUSAL-GREEN"):"Finite propagation is the physical requirement, but an explicit theorem must still construct advanced and retarded maps with controlled support.",
+    ("L-WEIHRAUCH-ZHONG","L-POUR-EL-RICHARDS"):"Computability changes with topology, regularity, and representation; the two literature results are not contradictory.",
+}
 def load(p):return json.loads(p.read_text())
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def digest(r):
@@ -18,8 +44,10 @@ def build()->dict[str,Any]:
     r["ladder"]=ladder
     graph=json.loads(json.dumps(old["typed_relation_graph"]));
     for node in graph["nodes"]:
+        node["label"]=NODE_LABELS[node["id"]]
         if node["id"]=="M-CODED-HILBERT":node["statement"]="A fast-Cauchy completed chiral energy state and its isometric evolution exist in the declared RCA_0 coding."
     for edge in graph["edges"]:
+        edge["meaning"]=EDGE_MEANINGS[(edge["from"],edge["to"])]
         if edge["from"]=="M-TAIL-MODULUS" and edge["to"]=="M-CODED-HILBERT":edge.update({"relation":"SUFFICIENT","evidence":["FOUNDATIONAL_CODED_POLYGONAL_WAVE_RCA0_V1"],"meaning":"A prescribed fast Cauchy rate and finite-code time moduli support the explicit diagonal extension in RCA_0."})
         if edge["from"]=="M-CODED-HILBERT" and edge["to"]=="M-COEFFICIENT-WEAK":edge["evidence"]=["FOUNDATIONAL_CODED_POLYGONAL_WAVE_RCA0_V1"]
     r["typed_relation_graph"]=graph

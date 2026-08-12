@@ -14,6 +14,8 @@ def check(result:dict[str,Any]|None=None):
     if ladder[2].get("status")!="CERTIFIED" or ladder[2].get("sufficient_base")!="RCA_0 for the declared representation" or ladder[2].get("source")!="FOUNDATIONAL_CODED_POLYGONAL_WAVE_RCA0_V1":errors.append("L2 promotion")
     graph=r.get("typed_relation_graph",{});nodes={x.get("id") for x in graph.get("nodes",[])};edges=graph.get("edges",[])
     if len(nodes)!=12 or len(edges)!=10:errors.append("graph dimensions")
+    if any(not x.get("label") for x in graph.get("nodes",[])):errors.append("graph display-label closure")
+    if any(not x.get("meaning") or "No stronger interpretation" in x.get("meaning","") for x in edges):errors.append("graph edge-meaning closure")
     promoted=[x for x in edges if x.get("from")=="M-TAIL-MODULUS" and x.get("to")=="M-CODED-HILBERT"]
     if len(promoted)!=1 or promoted[0].get("relation")!="SUFFICIENT" or promoted[0].get("evidence")!=["FOUNDATIONAL_CODED_POLYGONAL_WAVE_RCA0_V1"]:errors.append("typed graph promotion")
     flags=r.get("claim_flags",{})
