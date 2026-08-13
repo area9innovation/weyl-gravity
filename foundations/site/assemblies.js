@@ -66,6 +66,31 @@ window.THEORY_ASSEMBLY_DATA = {
       "evidence": [
         "FOUNDATIONAL_BT_CORNER_BORN_INTERFACE_V1"
       ]
+    },
+    {
+      "id": "SELECTION_TO_DYNAMICS",
+      "label": "Free energy ground-state selection to invariant Krein--Fock dynamics",
+      "status": "CERTIFIED",
+      "relation": "CONDITIONAL_BRIDGE",
+      "source_coordinates": [
+        {
+          "foundation": "CLASSICAL_STANDARD",
+          "carrier": "KREIN_INDEFINITE",
+          "obligation": "PHYSICAL_STATE_SELECTION"
+        }
+      ],
+      "target_coordinates": [
+        {
+          "foundation": "CLASSICAL_STANDARD",
+          "carrier": "KREIN_INDEFINITE",
+          "obligation": "GENERATOR_SPECTRAL_DYNAMICS"
+        }
+      ],
+      "carrier_transition": "IDENTICAL_FREE_KREIN_FOCK_CARRIER",
+      "scope": "The explicit free reduced-mode bosonic Fock carrier, its diagonal total-occupation energy, and normal zero-energy states.",
+      "evidence": [
+        "FOUNDATIONAL_KREIN_FOCK_GROUND_STATE_DYNAMICS_INTERFACE_V1"
+      ]
     }
   ],
   "assemblies": [
@@ -163,12 +188,14 @@ window.THEORY_ASSEMBLY_DATA = {
           "evidence": [
             "FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1",
             "bateman-turok-2026",
-            "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1"
+            "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1",
+            "FOUNDATIONAL_KREIN_FOCK_GROUND_STATE_DYNAMICS_INTERFACE_V1"
           ],
           "evidence_roles": {
             "FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1": "DIRECT_LOCAL",
             "bateman-turok-2026": "SUPPORTING",
-            "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1": "SUPPORTING"
+            "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1": "SUPPORTING",
+            "FOUNDATIONAL_KREIN_FOCK_GROUND_STATE_DYNAMICS_INTERFACE_V1": "DIRECT_LOCAL"
           },
           "selection_basis": "Strongest recorded status in the declared admissible region; ties prefer more reviewed direct kinds, local grade, more evidence, then declared order."
         },
@@ -179,11 +206,13 @@ window.THEORY_ASSEMBLY_DATA = {
           "status": "LOCAL_RESULT",
           "evidence": [
             "FOUNDATIONAL_EXPLICIT_ENERGY_SPECTRAL_FRAGMENT_ZF_V1",
-            "FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1"
+            "FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1",
+            "FOUNDATIONAL_KREIN_FOCK_GROUND_STATE_DYNAMICS_INTERFACE_V1"
           ],
           "evidence_roles": {
             "FOUNDATIONAL_EXPLICIT_ENERGY_SPECTRAL_FRAGMENT_ZF_V1": "DIRECT_LOCAL",
-            "FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1": "DIRECT_LOCAL"
+            "FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1": "DIRECT_LOCAL",
+            "FOUNDATIONAL_KREIN_FOCK_GROUND_STATE_DYNAMICS_INTERFACE_V1": "DIRECT_LOCAL"
           },
           "selection_basis": "Strongest recorded status in the declared admissible region; ties prefer more reviewed direct kinds, local grade, more evidence, then declared order."
         },
@@ -362,10 +391,12 @@ window.THEORY_ASSEMBLY_DATA = {
           "target_obligations": [
             "GENERATOR_SPECTRAL_DYNAMICS"
           ],
-          "relation": "NOT_ASSESSED",
-          "certification_status": "NOT_ASSESSED",
-          "evidence": [],
-          "rationale": "Coverage records do not by themselves prove that these selected objects share a model, scope, or translation."
+          "relation": "CONDITIONAL_BRIDGE",
+          "certification_status": "CERTIFIED",
+          "evidence": [
+            "FOUNDATIONAL_KREIN_FOCK_GROUND_STATE_DYNAMICS_INTERFACE_V1"
+          ],
+          "rationale": "The explicit free reduced-mode bosonic Fock carrier, its diagonal total-occupation energy, and normal zero-energy states."
         },
         {
           "id": "DYNAMICS_TO_CAUSALITY",
@@ -455,7 +486,7 @@ window.THEORY_ASSEMBLY_DATA = {
           "id": "CROSS_CELL_COMPOSITION",
           "label": "Cross-cell composition",
           "status": "BLOCKED",
-          "basis": "1/7 required interfaces are certified; the remainder block assembly composition."
+          "basis": "2/7 required interfaces are certified; the remainder block assembly composition."
         },
         {
           "id": "PREDICTION_DERIVATION",
@@ -1724,12 +1755,14 @@ window.THEORY_ASSEMBLY_DATA = {
           "evidence": [
             "FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1",
             "bateman-turok-2026",
-            "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1"
+            "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1",
+            "FOUNDATIONAL_KREIN_FOCK_GROUND_STATE_DYNAMICS_INTERFACE_V1"
           ],
           "evidence_roles": {
             "FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1": "DIRECT_LOCAL",
             "bateman-turok-2026": "SUPPORTING",
-            "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1": "SUPPORTING"
+            "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1": "SUPPORTING",
+            "FOUNDATIONAL_KREIN_FOCK_GROUND_STATE_DYNAMICS_INTERFACE_V1": "DIRECT_LOCAL"
           },
           "selection_basis": "Strongest recorded status in the declared admissible region; ties prefer more reviewed direct kinds, local grade, more evidence, then declared order."
         },
@@ -1740,11 +1773,13 @@ window.THEORY_ASSEMBLY_DATA = {
           "status": "LOCAL_RESULT",
           "evidence": [
             "FOUNDATIONAL_EXPLICIT_ENERGY_SPECTRAL_FRAGMENT_ZF_V1",
-            "FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1"
+            "FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1",
+            "FOUNDATIONAL_KREIN_FOCK_GROUND_STATE_DYNAMICS_INTERFACE_V1"
           ],
           "evidence_roles": {
             "FOUNDATIONAL_EXPLICIT_ENERGY_SPECTRAL_FRAGMENT_ZF_V1": "DIRECT_LOCAL",
-            "FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1": "DIRECT_LOCAL"
+            "FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1": "DIRECT_LOCAL",
+            "FOUNDATIONAL_KREIN_FOCK_GROUND_STATE_DYNAMICS_INTERFACE_V1": "DIRECT_LOCAL"
           },
           "selection_basis": "Strongest recorded status in the declared admissible region; ties prefer more reviewed direct kinds, local grade, more evidence, then declared order."
         },
@@ -1923,10 +1958,12 @@ window.THEORY_ASSEMBLY_DATA = {
           "target_obligations": [
             "GENERATOR_SPECTRAL_DYNAMICS"
           ],
-          "relation": "NOT_ASSESSED",
-          "certification_status": "NOT_ASSESSED",
-          "evidence": [],
-          "rationale": "Coverage records do not by themselves prove that these selected objects share a model, scope, or translation."
+          "relation": "CONDITIONAL_BRIDGE",
+          "certification_status": "CERTIFIED",
+          "evidence": [
+            "FOUNDATIONAL_KREIN_FOCK_GROUND_STATE_DYNAMICS_INTERFACE_V1"
+          ],
+          "rationale": "The explicit free reduced-mode bosonic Fock carrier, its diagonal total-occupation energy, and normal zero-energy states."
         },
         {
           "id": "DYNAMICS_TO_CAUSALITY",
@@ -2016,7 +2053,7 @@ window.THEORY_ASSEMBLY_DATA = {
           "id": "CROSS_CELL_COMPOSITION",
           "label": "Cross-cell composition",
           "status": "BLOCKED",
-          "basis": "1/7 required interfaces are certified; the remainder block assembly composition."
+          "basis": "2/7 required interfaces are certified; the remainder block assembly composition."
         },
         {
           "id": "PREDICTION_DERIVATION",
@@ -2937,13 +2974,13 @@ window.THEORY_ASSEMBLY_DATA = {
   },
   "does_not_establish": [
     "that selected cells concern the same physical model or scope",
-    "that a certified finite-corner bridge supplies any unregistered carrier or foundation translation",
+    "that either certified scoped bridge supplies any unregistered carrier or foundation translation",
     "that direct coverage composes into an end-to-end prediction",
     "that a reduced or finite construction has a controlled continuum limit",
     "that any prototype agrees with observations",
     "that the benchmark catalogue is a complete set of physical tests",
     "a complete theory, a new Lorentzian-causal result, or a quantum lifecycle promotion"
   ],
-  "source_atlas_digest": "ac00af3729e6475bd015e793bfe29ff48b3c0797e09baf228ab0f5003e6d95d4",
-  "canonical_digest": "9e4fde427c83f2460a44a75621e29844664fbd54aa299650a506f4a3a963bd83"
+  "source_atlas_digest": "0feeede6101f7539fcb73f5e4c0f740533448021bb5a226fd9d515880db2d00d",
+  "canonical_digest": "caa72886481b90682ee5f738feb6b4b2d31a59d2d812d308d43e54ec1c85338e"
 };

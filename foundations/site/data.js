@@ -379,7 +379,7 @@ window.MATRIX_EXPLORER_DATA = {
     },
     "evidence_role_counts": {
       "DIRECT_LITERATURE": 84,
-      "DIRECT_LOCAL": 78,
+      "DIRECT_LOCAL": 80,
       "SUPPORTING": 267,
       "UNREVIEWED": 191
     },
@@ -399,7 +399,7 @@ window.MATRIX_EXPLORER_DATA = {
       "REVIEWED_NO_TRANSFER": 88,
       "REVIEWED_OVERLAY": 11
     },
-    "evidence_records": 70
+    "evidence_records": 71
   },
   "cells": [
     {
@@ -3734,17 +3734,19 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1",
         "bateman-turok-2026",
-        "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1"
+        "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1",
+        "FOUNDATIONAL_KREIN_FOCK_GROUND_STATE_DYNAMICS_INTERFACE_V1"
       ],
       "evidence_roles": {
         "FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1": "DIRECT_LOCAL",
         "bateman-turok-2026": "SUPPORTING",
-        "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1": "SUPPORTING"
+        "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1": "SUPPORTING",
+        "FOUNDATIONAL_KREIN_FOCK_GROUND_STATE_DYNAMICS_INTERFACE_V1": "DIRECT_LOCAL"
       },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
-      "summary": "Refined child 'Physical state selection': registered evidence supports this child.",
-      "boundary": "The v0 parent status is not inherited by sibling obligations. State existence and a conditional nonselection theorem do not supply a physical Weyl state or generalized Born rule.",
+      "summary": "The explicit free Fock energy has a one-dimensional zero eigenspace, selecting the vacuum uniquely among vector ground states and normal zero-energy density states; the same vacuum is invariant under the generated dynamics.",
+      "boundary": "This is free reduced-mode ground-state selection, not selection of an interacting, KMS, Hadamard, BRST-compatible, thermodynamic, or Lorentzian state.",
       "migration_status": "CAPABILITY_QUALIFIED",
       "migration_evidence": [
         "FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1",
@@ -3752,6 +3754,14 @@ window.MATRIX_EXPLORER_DATA = {
         "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1"
       ],
       "migration_rationale": "The explicit v1 evidence-capability registry licenses transfer to this child.",
+      "interface_revision": {
+        "certificate": "FOUNDATIONAL_KREIN_FOCK_GROUND_STATE_DYNAMICS_INTERFACE_V1",
+        "interface_id": "SELECTION_TO_DYNAMICS",
+        "relation": "CONDITIONAL_BRIDGE",
+        "role": "SOURCE",
+        "previous_status": "LOCAL_RESULT",
+        "status_change": false
+      },
       "emitted": true
     },
     {
@@ -4539,11 +4549,13 @@ window.MATRIX_EXPLORER_DATA = {
       "status": "LOCAL_RESULT",
       "evidence": [
         "FOUNDATIONAL_EXPLICIT_ENERGY_SPECTRAL_FRAGMENT_ZF_V1",
-        "FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1"
+        "FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1",
+        "FOUNDATIONAL_KREIN_FOCK_GROUND_STATE_DYNAMICS_INTERFACE_V1"
       ],
       "evidence_roles": {
         "FOUNDATIONAL_EXPLICIT_ENERGY_SPECTRAL_FRAGMENT_ZF_V1": "DIRECT_LOCAL",
-        "FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1": "DIRECT_LOCAL"
+        "FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1": "DIRECT_LOCAL",
+        "FOUNDATIONAL_KREIN_FOCK_GROUND_STATE_DYNAMICS_INTERFACE_V1": "DIRECT_LOCAL"
       },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "CAPABILITY_QUALIFIED",
@@ -4555,6 +4567,14 @@ window.MATRIX_EXPLORER_DATA = {
         "FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1"
       ],
       "migration_rationale": "The explicit v1 evidence-capability registry licenses transfer to this child.",
+      "interface_revision": {
+        "certificate": "FOUNDATIONAL_KREIN_FOCK_GROUND_STATE_DYNAMICS_INTERFACE_V1",
+        "interface_id": "SELECTION_TO_DYNAMICS",
+        "relation": "CONDITIONAL_BRIDGE",
+        "role": "TARGET",
+        "previous_status": "LOCAL_RESULT",
+        "status_change": false
+      },
       "emitted": true
     },
     {
@@ -13465,6 +13485,47 @@ window.MATRIX_EXPLORER_DATA = {
       "report_link": "sources/foundations/reports/krein-explicit-j-zf-audit.md",
       "sha256": "bd71c8609cd6ff5d83d5f67aa86f46216f5301b377e6a437a74d197b577d9b2a"
     },
+    "FOUNDATIONAL_KREIN_FOCK_GROUND_STATE_DYNAMICS_INTERFACE_V1": {
+      "id": "FOUNDATIONAL_KREIN_FOCK_GROUND_STATE_DYNAMICS_INTERFACE_V1",
+      "kind": "LOCAL_RESULT",
+      "result_kind": "CERTIFIED_CROSS_CELL_INTERFACE",
+      "lifecycle": "SUFFICIENCY_PROVED",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE"
+      ],
+      "claim_flags": {
+        "cross_cell_interface_certified": true,
+        "free_ground_state_selected": true,
+        "unique_vector_ground_state_proved": true,
+        "unique_normal_zero_energy_density_state_proved": true,
+        "vacuum_dynamics_invariance_proved": true,
+        "shared_fock_objects_identified": true,
+        "interface_independent_rederivation_passed": true,
+        "stationarity_alone_implies_uniqueness": false,
+        "interacting_ground_state_selected": false,
+        "kms_or_hadamard_state_constructed": false,
+        "brst_compatible_state_constructed": false,
+        "thermodynamic_limit_established": false,
+        "lorentzian_claim": false
+      },
+      "does_not_establish": [
+        "that stationarity alone selects a unique state; excited energy eigenstates and mixtures can also be stationary",
+        "an interacting Weyl or Bateman--Turok ground state",
+        "a KMS, Hadamard, incoming, outgoing, detector-conditioned, or BRST-compatible state",
+        "selection among non-normal states without a density operator",
+        "a thermodynamic limit or implementability in an inequivalent representation",
+        "causal propagation, a Green operator, or a Lorentzian off-shell BV propagator",
+        "a generalized Born rule, prediction chain, or empirical agreement",
+        "a weakest-base reverse-mathematics theorem",
+        "a gravitational, QME, residual-transfer, or LORENTZIAN-CAUSAL result"
+      ],
+      "result_path": "foundations/results/FOUNDATIONAL_KREIN_FOCK_GROUND_STATE_DYNAMICS_INTERFACE_V1.json",
+      "result_link": "sources/foundations/results/FOUNDATIONAL_KREIN_FOCK_GROUND_STATE_DYNAMICS_INTERFACE_V1.json",
+      "report_path": "foundations/reports/krein-fock-ground-state-dynamics-interface.md",
+      "report_link": "sources/foundations/reports/krein-fock-ground-state-dynamics-interface.md",
+      "sha256": "36444854eaed27ebd0a82cb7b26f2c3ad1c1e211f08fc0326882fd325676af06"
+    },
     "FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1": {
       "id": "FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1",
       "kind": "LOCAL_RESULT",
@@ -14779,16 +14840,41 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_BT_CORNER_BORN_INTERFACE_V1"
       ]
+    },
+    {
+      "id": "SELECTION_TO_DYNAMICS",
+      "label": "Free energy ground-state selection to invariant Krein--Fock dynamics",
+      "status": "CERTIFIED",
+      "relation": "CONDITIONAL_BRIDGE",
+      "source_coordinates": [
+        {
+          "foundation": "CLASSICAL_STANDARD",
+          "carrier": "KREIN_INDEFINITE",
+          "obligation": "PHYSICAL_STATE_SELECTION"
+        }
+      ],
+      "target_coordinates": [
+        {
+          "foundation": "CLASSICAL_STANDARD",
+          "carrier": "KREIN_INDEFINITE",
+          "obligation": "GENERATOR_SPECTRAL_DYNAMICS"
+        }
+      ],
+      "carrier_transition": "IDENTICAL_FREE_KREIN_FOCK_CARRIER",
+      "scope": "The explicit free reduced-mode bosonic Fock carrier, its diagonal total-occupation energy, and normal zero-energy states.",
+      "evidence": [
+        "FOUNDATIONAL_KREIN_FOCK_GROUND_STATE_DYNAMICS_INTERFACE_V1"
+      ]
     }
   ],
   "boundaries": {
     "cube": [
-      "a probability rule for arbitrary Krein processes",
-      "identity of the full algebraic C* and Krein carriers",
-      "a physical selection principle for the incoming corner",
-      "a thermodynamic, all-order, gravitational, or Lorentzian completion",
-      "cross-cell composition for the other six assembly interfaces",
-      "empirical agreement or a complete theory",
+      "state-to-dynamics composition outside the certified free reduced-mode Fock system",
+      "that stationarity alone uniquely selects a state",
+      "an interacting, thermal, Hadamard, BRST-compatible, or thermodynamic state",
+      "cross-cell composition for the other five assembly interfaces",
+      "causal response, a prediction chain, or empirical agreement",
+      "a complete physical theory or Lorentzian completion",
       "literature completeness or coherence of unassessed coordinates"
     ],
     "migration_audit": [
@@ -14821,14 +14907,16 @@ window.MATRIX_EXPLORER_DATA = {
     ]
   },
   "source_links": {
-    "cube": "sources/foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V5.json",
+    "cube": "sources/foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V6.json",
     "migration_audit": "sources/foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_MIGRATION_AUDIT_V2.json",
     "ladder": "sources/foundations/results/FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V2.json",
-    "cube_report": "sources/foundations/reports/refined-intersection-cube-v5.md",
+    "cube_report": "sources/foundations/reports/refined-intersection-cube-v6.md",
     "corner_born_interface": "sources/foundations/results/FOUNDATIONAL_BT_CORNER_BORN_INTERFACE_V1.json",
     "corner_born_interface_report": "sources/foundations/reports/bt-corner-born-interface.md",
+    "ground_state_dynamics_interface": "sources/foundations/results/FOUNDATIONAL_KREIN_FOCK_GROUND_STATE_DYNAMICS_INTERFACE_V1.json",
+    "ground_state_dynamics_interface_report": "sources/foundations/reports/krein-fock-ground-state-dynamics-interface.md",
     "migration_audit_report": "sources/foundations/reports/intersection-cube-migration-audit-v2.md",
     "ladder_report": "sources/foundations/reports/cylinder-wave-strength-ladder-v2.md"
   },
-  "canonical_digest": "ac00af3729e6475bd015e793bfe29ff48b3c0797e09baf228ab0f5003e6d95d4"
+  "canonical_digest": "0feeede6101f7539fcb73f5e4c0f740533448021bb5a226fd9d515880db2d00d"
 };

@@ -57,7 +57,7 @@ def verify(*, value: dict[str, Any] | None = None) -> tuple[list[str], list[str]
     cell_map = {(item["foundation"], item["carrier"], item["obligation"]): item for item in atlas["cells"]}
     assemblies = result.get("assemblies", [])
     certified_records = atlas.get("cross_cell_interfaces", [])
-    if result.get("certified_interface_records") != certified_records or len(certified_records) != 1:
+    if result.get("certified_interface_records") != certified_records or [item.get("id") for item in certified_records] != ["STATE_TO_PROBABILITY", "SELECTION_TO_DYNAMICS"]:
         errors.append("certified interface record projection")
     if len(assemblies) != 7 or len({item.get("id") for item in assemblies}) != 7:
         errors.append("seven unique prototype assemblies")
@@ -107,8 +107,8 @@ def verify(*, value: dict[str, Any] | None = None) -> tuple[list[str], list[str]
         if gates != expected_gates or assembly.get("complete_theory") is not False or assembly.get("empirically_supported") is not False:
             errors.append("hard-gate closure " + assembly["id"])
     certified_instances = sum(interface.get("certification_status") == "CERTIFIED" for assembly in assemblies for interface in assembly.get("interfaces", []))
-    if certified_instances != 2:
-        errors.append("two assembly projections of one certified relation")
+    if certified_instances != 4:
+        errors.append("four assembly projections of two certified relations")
     checks.append("independent cell selection, certified-interface projection, coverage, and hard gates")
 
     ledger = result.get("empirical_ledger", {})

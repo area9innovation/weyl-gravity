@@ -45,7 +45,7 @@ def verify(*, result=None, report=None) -> tuple[list[str], list[str]]:
         "migration_reviewed": 452,
         "migration_pending": 0,
         "reviewed_no_transfer": 88,
-        "evidence_records": 70,
+        "evidence_records": 71,
         "graph_edges": 10,
         "ladder_levels": 6,
         "theory_profiles": 36,
@@ -54,8 +54,8 @@ def verify(*, result=None, report=None) -> tuple[list[str], list[str]]:
         "prototype_assemblies": 7,
         "assembly_interfaces": 49,
         "empirical_comparisons": 0,
-        "certified_cross_cell_interfaces": 1,
-        "certified_assembly_interface_instances": 2,
+        "certified_cross_cell_interfaces": 2,
+        "certified_assembly_interface_instances": 4,
         "dual_direct_cells": 7,
         "mark_counts": {"G": 30, "L": 76, "LR": 7, "Lr": 6, "P": 20, "Pl": 75, "Plr": 13, "Pr": 51, "R": 90, "Rl": 3, "\u00b7": 205},
     }
@@ -77,7 +77,7 @@ def verify(*, result=None, report=None) -> tuple[list[str], list[str]]:
         if flags.get(key) is not False:
             errors.append("boundary flag " + key)
     checks.append("fail-closed claim flags")
-    for token in ("576", "452", "reviewed", "0 pending", "88", "81", "124", "371", "two weak-arithmetic", "five carefully typed evidence overlays", "CONDITIONAL_BRIDGE", "five explicit hypotheses", "NOT_MAPPED", "not a literature-absence claim", "separate coverage and migration", "Earlier cubes remain unchanged", "does not establish"):
+    for token in ("576", "452", "reviewed", "0 pending", "88", "81", "124", "371", "two weak-arithmetic", "five carefully typed evidence overlays", "two certified", "CONDITIONAL_BRIDGE", "unique normal", "NOT_MAPPED", "not a literature-absence claim", "separate coverage and migration", "Earlier cubes remain unchanged", "does not establish"):
         if token not in text:
             errors.append("report token " + token)
     checks.append("human-readable migration and deployment report")

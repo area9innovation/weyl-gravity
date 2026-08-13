@@ -77,7 +77,7 @@ class MatrixSiteTests(unittest.TestCase):
         self.assertIn("Coverage envelope, not a composed theory", base_app)
         self.assertIn("No complete observationally validated theory is certified", base_app)
         self.assertIn("paretoProfiles", base_app)
-        self.assertIn("One cross-cell relation is certified", base_app)
+        self.assertIn("Two cross-cell relations are certified", base_app)
         self.assertIn("CERTIFIED ·", base_app)
         self.assertIn("GRAPH_PATHWAYS", base_app)
         self.assertIn("Relation ledger", base_app)
@@ -97,7 +97,9 @@ class MatrixSiteTests(unittest.TestCase):
         self.assertGreaterEqual(len(manifest["outputs"]), 38)
         self.assertTrue((ROOT / "foundations/site/sources/foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V4.json").is_file())
         self.assertTrue((ROOT / "foundations/site/sources/foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V5.json").is_file())
+        self.assertTrue((ROOT / "foundations/site/sources/foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V6.json").is_file())
         self.assertTrue((ROOT / "foundations/site/sources/foundations/results/FOUNDATIONAL_BT_CORNER_BORN_INTERFACE_V1.json").is_file())
+        self.assertTrue((ROOT / "foundations/site/sources/foundations/results/FOUNDATIONAL_KREIN_FOCK_GROUND_STATE_DYNAMICS_INTERFACE_V1.json").is_file())
         self.assertTrue((ROOT / "foundations/site/sources/foundations/results/FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V2.json").is_file())
         self.assertTrue((ROOT / "foundations/site/sources/foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_MIGRATION_AUDIT_V2.json").is_file())
 

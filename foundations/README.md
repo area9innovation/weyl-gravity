@@ -276,13 +276,14 @@ strength ladder, and the resolved evidence catalogue. The **Theory profiles**
 view adds a 36-profile coverage map, selectable obligation gates, six
 foundation-specific carrier envelopes, and a non-scalar Pareto view. It keeps
 three rails separate: obligation coverage is computed; cross-cell composition
-is not assessed; and observational agreement is not represented by the current
+is partially assessed; and observational agreement is not represented by the current
 schema. A multi-carrier maximum is therefore labelled a coverage envelope, not
 a completed theory. The **Assemblies** view adds seven named prototype
 envelopes, a six-stage hard-gate chain, 49 explicitly typed cross-cell joins,
-and an empirical benchmark ledger. One finite-corner state-to-probability join
-is now a certified `CONDITIONAL_BRIDGE` and appears in two compatible
-prototypes. The other joins remain `NOT_ASSESSED`, and the empirical ledger is
+and an empirical benchmark ledger. Two scoped joins are now certified
+`CONDITIONAL_BRIDGE` relations: finite-corner state-to-probability and free
+ground-state-to-dynamics. Each appears in two compatible prototypes. The other
+joins remain `NOT_ASSESSED`, and the empirical ledger is
 empty, so every prototype remains fail-closed before theory or observational
 completion:
 
@@ -295,11 +296,15 @@ python3 foundations/verify_theory_viability.py
 python3 foundations/verify_theory_assembly.py
 python3 foundations/verify_bt_corner_born_interface.py
 python3 foundations/verify_refined_intersection_cube_v5.py
+python3 foundations/verify_krein_fock_ground_state_dynamics_interface.py
+python3 foundations/verify_refined_intersection_cube_v6.py
 python3 -m unittest foundations.tests.test_matrix_site
 python3 -m unittest foundations.tests.test_theory_viability
 python3 -m unittest foundations.tests.test_theory_assembly
 python3 -m unittest foundations.tests.test_bt_corner_born_interface
 python3 -m unittest foundations.tests.test_refined_intersection_cube_v5
+python3 -m unittest foundations.tests.test_krein_fock_ground_state_dynamics_interface
+python3 -m unittest foundations.tests.test_refined_intersection_cube_v6
 python3 -m http.server 8000 --directory foundations/site
 ```
 
@@ -361,6 +366,26 @@ python3 foundations/verify_bt_corner_born_interface.py
 python3 foundations/refine_intersection_cube_v5.py --check
 python3 foundations/check_refined_intersection_cube_v5.py
 python3 foundations/verify_refined_intersection_cube_v5.py
+```
+
+The second object-level composition proof is the
+[`free Krein--Fock ground-state-to-dynamics interface`](reports/krein-fock-ground-state-dynamics-interface.md).
+On the shared occupation carrier, all one-particle energies are integers at
+least two. The empty occupation is therefore the unique zero-energy ray and
+selects the unique normal density state of zero extended mean energy. The
+identical total energy generates the free Fock evolution, which fixes that
+vacuum and leaves its state invariant. The append-only
+[`cube v6`](reports/refined-intersection-cube-v6.md) overlays this direct
+interface evidence without changing either endpoint's existing local-result
+grade or any earlier migration decision:
+
+```bash
+python3 foundations/build_krein_fock_ground_state_dynamics_interface.py --check
+python3 foundations/check_krein_fock_ground_state_dynamics_interface.py
+python3 foundations/verify_krein_fock_ground_state_dynamics_interface.py
+python3 foundations/refine_intersection_cube_v6.py --check
+python3 foundations/check_refined_intersection_cube_v6.py
+python3 foundations/verify_refined_intersection_cube_v6.py
 ```
 
 The append-only

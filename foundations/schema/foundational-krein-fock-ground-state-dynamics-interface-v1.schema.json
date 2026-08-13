@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "result_id", "result_kind", "lifecycle", "created", "repository_base_commit", "dependency_tags", "question", "answer", "interface", "shared_object_ledger", "typed_maps", "hypotheses", "proof_obligations", "proof_authority", "exact_witness", "provenance", "independent_checker", "claim_flags", "does_not_establish", "human_report", "canonical_digest"],
+  "properties": {
+    "schema_version": {"const": "foundational-krein-fock-ground-state-dynamics-interface-v1"},
+    "result_id": {"const": "FOUNDATIONAL_KREIN_FOCK_GROUND_STATE_DYNAMICS_INTERFACE_V1"},
+    "result_kind": {"const": "CERTIFIED_CROSS_CELL_INTERFACE"},
+    "lifecycle": {"const": "SUFFICIENCY_PROVED"},
+    "created": {"type": "string", "format": "date"},
+    "repository_base_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "question": {"type": "string", "minLength": 1},
+    "answer": {"type": "string", "minLength": 1},
+    "interface": {
+      "type": "object",
+      "required": ["id", "label", "status", "relation", "source_coordinates", "target_coordinates", "carrier_transition", "scope", "evidence"],
+      "properties": {
+        "id": {"const": "SELECTION_TO_DYNAMICS"},
+        "status": {"const": "CERTIFIED"},
+        "relation": {"const": "CONDITIONAL_BRIDGE"},
+        "source_coordinates": {"type": "array", "minItems": 1, "maxItems": 1},
+        "target_coordinates": {"type": "array", "minItems": 1, "maxItems": 1}
+      }
+    },
+    "shared_object_ledger": {"type": "array", "minItems": 6, "maxItems": 6},
+    "typed_maps": {"type": "array", "minItems": 5, "maxItems": 5},
+    "hypotheses": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"type": "string", "minLength": 1}},
+    "proof_obligations": {"type": "array", "minItems": 9, "maxItems": 9},
+    "proof_authority": {"type": "object", "required": ["status", "meaning", "general_argument"]},
+    "exact_witness": {"type": "object", "required": ["arithmetic", "finite_occupation_control", "three_level_control", "formal_phase_control"]},
+    "provenance": {"type": "object", "required": ["inputs"]},
+    "independent_checker": {"type": "object", "required": ["path", "checks"]},
+    "claim_flags": {"type": "object"},
+    "does_not_establish": {"type": "array", "minItems": 9, "items": {"type": "string", "minLength": 1}},
+    "human_report": {"const": "foundations/reports/krein-fock-ground-state-dynamics-interface.md"},
+    "canonical_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

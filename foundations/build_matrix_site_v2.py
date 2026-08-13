@@ -28,9 +28,13 @@ VIABILITY_RESULT = FOUNDATIONS / "results/FOUNDATIONAL_THEORY_VIABILITY_ASSESSME
 VIABILITY_REPORT = FOUNDATIONS / "reports/theory-viability-assessment-v1.md"
 ASSEMBLY_RESULT = FOUNDATIONS / "results/FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1.json"
 ASSEMBLY_REPORT = FOUNDATIONS / "reports/theory-assembly-atlas-v1.md"
-CUBE = FOUNDATIONS / "results/FOUNDATIONAL_INTERSECTION_CUBE_V5.json"
-PREVIOUS_CUBE = FOUNDATIONS / "results/FOUNDATIONAL_INTERSECTION_CUBE_V4.json"
+CUBE = FOUNDATIONS / "results/FOUNDATIONAL_INTERSECTION_CUBE_V6.json"
+PREVIOUS_CUBES = [
+    FOUNDATIONS / "results/FOUNDATIONAL_INTERSECTION_CUBE_V4.json",
+    FOUNDATIONS / "results/FOUNDATIONAL_INTERSECTION_CUBE_V5.json",
+]
 CORNER_BORN_INTERFACE = FOUNDATIONS / "results/FOUNDATIONAL_BT_CORNER_BORN_INTERFACE_V1.json"
+GROUND_STATE_DYNAMICS_INTERFACE = FOUNDATIONS / "results/FOUNDATIONAL_KREIN_FOCK_GROUND_STATE_DYNAMICS_INTERFACE_V1.json"
 AUDIT = FOUNDATIONS / "results/FOUNDATIONAL_INTERSECTION_CUBE_MIGRATION_AUDIT_V2.json"
 LADDER = FOUNDATIONS / "results/FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V2.json"
 LEDGERS = v1.LEDGERS
@@ -161,8 +165,8 @@ def cell_mark(cell: dict[str, Any], evidence: dict[str, dict[str, Any]]) -> str:
 
 def build_dataset() -> dict[str, Any]:
     cube, audit, ladder = v1.load(CUBE), v1.load(AUDIT), v1.load(LADDER)
-    corner_born_interface = v1.load(CORNER_BORN_INTERFACE)
-    if cube.get("certified_interfaces") != [corner_born_interface.get("interface")]:
+    interface_results = [v1.load(CORNER_BORN_INTERFACE), v1.load(GROUND_STATE_DYNAMICS_INTERFACE)]
+    if cube.get("certified_interfaces") != [item.get("interface") for item in interface_results]:
         raise ValueError("cube/interface projection mismatch")
     cells = complete_surface(cube)
     evidence = evidence_registry(cube, ladder)
@@ -222,9 +226,11 @@ def build_dataset() -> dict[str, Any]:
             "cube": site_link(rel(CUBE)),
             "migration_audit": site_link(rel(AUDIT)),
             "ladder": site_link(rel(LADDER)),
-            "cube_report": site_link("foundations/reports/refined-intersection-cube-v5.md"),
+            "cube_report": site_link("foundations/reports/refined-intersection-cube-v6.md"),
             "corner_born_interface": site_link(rel(CORNER_BORN_INTERFACE)),
             "corner_born_interface_report": site_link("foundations/reports/bt-corner-born-interface.md"),
+            "ground_state_dynamics_interface": site_link(rel(GROUND_STATE_DYNAMICS_INTERFACE)),
+            "ground_state_dynamics_interface_report": site_link("foundations/reports/krein-fock-ground-state-dynamics-interface.md"),
             "migration_audit_report": site_link("foundations/reports/intersection-cube-migration-audit-v2.md"),
             "ladder_report": site_link("foundations/reports/cylinder-wave-strength-ladder-v2.md"),
         },
@@ -254,10 +260,11 @@ coverage; **81 remain `NOT_MAPPED`**, which is not a literature-absence claim.
 The remaining **{counts['synthetic_not_mapped']}**
 coordinates are browser-visible complements that have not been assessed.
 
-Cube v5 adds one certified finite-corner `CONDITIONAL_BRIDGE` from algebraic
-state representation to a Krein probability rule. The target is promoted from
-pieces to a local result under five explicit hypotheses; the other assembly
-interfaces remain open.
+Cube v6 carries two certified `CONDITIONAL_BRIDGE` relations. The first maps an
+algebraic finite-corner state to a Krein probability rule under five explicit
+hypotheses. The second uses the free Fock energy gap to select the unique normal
+zero-energy vacuum state and proves that the same state is invariant under the
+generated Krein--Fock dynamics. The other assembly interfaces remain open.
 
 Coverage is classified for **{counts['coverage_classified']}** emitted cells. The
 coded-wave pass promotes two weak-arithmetic Hilbert/operator cells from pieces
@@ -332,8 +339,8 @@ def render_viability_report(assessment: dict[str, Any]) -> str:
         "",
         "1. **Obligation coverage — computed.** Direct, partial, gap, and unknown statuses are",
         "   projected from the atlas without changing their evidence type.",
-        "2. **One coherent integrated theory — partially assessed.** One finite-corner",
-        "   state-to-probability bridge is certified under five hypotheses, but the",
+        "2. **One coherent integrated theory — partially assessed.** Two scoped joins",
+        "   are certified: finite-corner state-to-probability and free ground-state-to-dynamics. The",
         "   remaining interfaces block a composed theory.",
         "3. **Agreement with observations — not in the current schema.** There are no typed",
         "   dataset, likelihood, residual, fit, or out-of-sample prediction records. The",
@@ -375,8 +382,8 @@ def render_assembly_report(assessment: dict[str, Any]) -> str:
         "The crucial new object is the interface ledger. Seven joins in each prototype",
         "must separately record whether the linked objects are identical, exactly",
         "translated, conditionally bridged, approximated with a bound, conjecturally",
-        "linked, incompatible, or not assessed. One finite-corner relation is now",
-        "certified and appears in " + str(certified_instances) + " compatible prototype assemblies; the other",
+        "linked, incompatible, or not assessed. Two scoped relations are now",
+        "certified and produce " + str(certified_instances) + " compatible prototype-interface instances; the other",
         "required joins remain `NOT_ASSESSED`, so coverage cannot silently promote them.",
         "",
         "## Hard-gate chain",
@@ -384,7 +391,7 @@ def render_assembly_report(assessment: dict[str, Any]) -> str:
         "Every prototype is displayed against six ordered gates: obligation coverage,",
         "cross-cell composition, prediction derivation, observable identification,",
         "empirical comparison, and robustness/out-of-sample performance. The latter",
-        "five remain blocked or have no records. Certifying one join does not bypass",
+        "five remain blocked or have no records. Certifying two joins does not bypass",
         "the remaining interfaces.",
         "",
         "## Empirical ledger",
@@ -436,12 +443,14 @@ def generated() -> dict[Path, bytes]:
     local_evidence_paths = [ROOT / item["result_path"] for item in dataset["evidence"].values() if item["kind"] == "LOCAL_RESULT"]
     local_report_paths = [ROOT / item["report_path"] for item in dataset["evidence"].values() if item["kind"] == "LOCAL_RESULT" and item.get("report_path")]
     reports = [
+        FOUNDATIONS / "reports/refined-intersection-cube-v6.md",
         FOUNDATIONS / "reports/refined-intersection-cube-v5.md",
         FOUNDATIONS / "reports/bt-corner-born-interface.md",
+        FOUNDATIONS / "reports/krein-fock-ground-state-dynamics-interface.md",
         FOUNDATIONS / "reports/intersection-cube-migration-audit-v2.md",
         FOUNDATIONS / "reports/cylinder-wave-strength-ladder.md",
     ]
-    bundled_sources = sorted(set([CUBE, PREVIOUS_CUBE, CORNER_BORN_INTERFACE, AUDIT, LADDER, *LEDGERS, *local_evidence_paths, *local_report_paths, *reports]))
+    bundled_sources = sorted(set([CUBE, *PREVIOUS_CUBES, CORNER_BORN_INTERFACE, GROUND_STATE_DYNAMICS_INTERFACE, AUDIT, LADDER, *LEDGERS, *local_evidence_paths, *local_report_paths, *reports]))
     for source in bundled_sources:
         outputs[SITE / "sources" / source.relative_to(ROOT)] = source.read_bytes()
     input_paths = sorted(set([Path(__file__).resolve(), FOUNDATIONS / "theory_viability.py", FOUNDATIONS / "theory_assembly.py", *bundled_sources, ASSETS / "index.html", ASSETS / "styles.css", ASSETS / "app.js", V2_ASSETS / "app-v2.js"]))
@@ -465,11 +474,11 @@ def generated() -> dict[Path, bytes]:
         "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
         "scope": "Deterministic static exploration surface over the migration-reviewed foundations cube and cylinder implication ladder.",
         "counts": dataset["counts"],
-        "features": ["sixteen 6x6 heatmaps", "dual local+literature cell marks", "per-evidence directness roles", "plain-language guide for all 28 axis options", "separate coverage and migration-review states", "migration evidence inspector", "multi-select filters", "full-text search", "cell inspector", "one-axis neighbors", "two-cell comparison", "URL permalinks", "filtered JSON and CSV export", "research-brief export", "three-pathway typed argument map with linked relation ledger", "strength ladder", "evidence catalogue", "theory-profile readiness map", "researcher-selectable obligation gates", "multi-carrier coverage-envelope composer", "non-scalar Pareto navigation", "separate composition and empirical-agreement rails", "seven named prototype assemblies", "typed cross-cell interface ledger", "one certified finite-corner state-to-probability bridge", "six-stage theory hard-gate chain", "empty fail-closed empirical benchmark ledger"],
+        "features": ["sixteen 6x6 heatmaps", "dual local+literature cell marks", "per-evidence directness roles", "plain-language guide for all 28 axis options", "separate coverage and migration-review states", "migration evidence inspector", "multi-select filters", "full-text search", "cell inspector", "one-axis neighbors", "two-cell comparison", "URL permalinks", "filtered JSON and CSV export", "research-brief export", "three-pathway typed argument map with linked relation ledger", "strength ladder", "evidence catalogue", "theory-profile readiness map", "researcher-selectable obligation gates", "multi-carrier coverage-envelope composer", "non-scalar Pareto navigation", "separate composition and empirical-agreement rails", "seven named prototype assemblies", "typed cross-cell interface ledger", "two certified scoped cross-cell bridges", "six-stage theory hard-gate chain", "empty fail-closed empirical benchmark ledger"],
         "provenance": {"manifest": rel(SITE / "manifest.json"), "manifest_sha256": v1.sha_bytes(manifest_bytes), "canonical_data_digest": dataset["canonical_digest"], "viability_digest": viability["canonical_digest"], "assembly_digest": assemblies["canonical_digest"]},
-        "independent_checker": {"path": "foundations/check_matrix_site_v2.py", "expected_cells": 576, "expected_emitted": 452, "expected_synthetic_not_mapped": 124, "expected_total_not_mapped": 205, "expected_evidence_records": 70, "expected_digest": dataset["canonical_digest"], "expected_viability_digest": viability["canonical_digest"], "expected_assembly_digest": assemblies["canonical_digest"]},
+        "independent_checker": {"path": "foundations/check_matrix_site_v2.py", "expected_cells": 576, "expected_emitted": 452, "expected_synthetic_not_mapped": 124, "expected_total_not_mapped": 205, "expected_evidence_records": 71, "expected_digest": dataset["canonical_digest"], "expected_viability_digest": viability["canonical_digest"], "expected_assembly_digest": assemblies["canonical_digest"]},
         "claim_flags": {"static_site_generated": True, "all_cartesian_coordinates_visible": True, "all_emitted_migrations_reviewed": True, "coverage_and_migration_separated": True, "all_used_evidence_resolved": True, "theory_profiles_generated": True, "theory_assembly_atlas_generated": True, "at_least_one_cross_cell_interface_certified": True, "composition_and_observation_rails_separated": True, "scientific_claims_duplicated_by_hand": False, "literature_complete": False, "unmapped_means_absent": False, "reviewed_no_transfer_means_absent": False, "priority_score_is_theorem": False, "complete_observationally_valid_theory_identified": False, "new_lorentzian_claim": False},
-        "does_not_establish": ["literature completeness", "coverage for the 81 still-unmapped reviewed-no-transfer coordinates", "that NOT_MAPPED means no literature exists", "that an UNREVIEWED evidence role is an absence of direct support", "that a dual LR mark composes its two records into a stronger result", "that the 124 synthetic coordinates are coherent", "a weakest mathematical base", "a theorem ranking from interface order, Pareto membership, or neighbor counts", "composition beyond the certified finite-corner state-to-probability interface", "agreement with observations", "a complete observationally validated theory", "a new Lorentzian-causal result"],
+        "does_not_establish": ["literature completeness", "coverage for the 81 still-unmapped reviewed-no-transfer coordinates", "that NOT_MAPPED means no literature exists", "that an UNREVIEWED evidence role is an absence of direct support", "that a dual LR mark composes its two records into a stronger result", "that the 124 synthetic coordinates are coherent", "a weakest mathematical base", "a theorem ranking from interface order, Pareto membership, or neighbor counts", "composition beyond the two certified scoped interfaces", "agreement with observations", "a complete observationally validated theory", "a new Lorentzian-causal result"],
         "human_report": "foundations/reports/matrix-explorer-site-v2.md",
     }
     outputs[RESULT] = (json.dumps(result, indent=2) + "\n").encode()

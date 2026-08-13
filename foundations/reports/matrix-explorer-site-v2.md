@@ -17,10 +17,11 @@ coverage; **81 remain `NOT_MAPPED`**, which is not a literature-absence claim.
 The remaining **124**
 coordinates are browser-visible complements that have not been assessed.
 
-Cube v5 adds one certified finite-corner `CONDITIONAL_BRIDGE` from algebraic
-state representation to a Krein probability rule. The target is promoted from
-pieces to a local result under five explicit hypotheses; the other assembly
-interfaces remain open.
+Cube v6 carries two certified `CONDITIONAL_BRIDGE` relations. The first maps an
+algebraic finite-corner state to a Krein probability rule under five explicit
+hypotheses. The second uses the free Fock energy gap to select the unique normal
+zero-energy vacuum state and proves that the same state is invariant under the
+generated Krein--Fock dynamics. The other assembly interfaces remain open.
 
 Coverage is classified for **371** emitted cells. The
 coded-wave pass promotes two weak-arithmetic Hilbert/operator cells from pieces
@@ -67,7 +68,7 @@ This site does not establish:
 - that the 124 synthetic coordinates are coherent
 - a weakest mathematical base
 - a theorem ranking from interface order, Pareto membership, or neighbor counts
-- composition beyond the certified finite-corner state-to-probability interface
+- composition beyond the two certified scoped interfaces
 - agreement with observations
 - a complete observationally validated theory
 - a new Lorentzian-causal result

@@ -236,7 +236,7 @@ def build_assembly_assessment(dataset: dict[str, Any]) -> dict[str, Any]:
         },
         "does_not_establish": [
             "that selected cells concern the same physical model or scope",
-            "that a certified finite-corner bridge supplies any unregistered carrier or foundation translation",
+            "that either certified scoped bridge supplies any unregistered carrier or foundation translation",
             "that direct coverage composes into an end-to-end prediction",
             "that a reduced or finite construction has a controlled continuum limit",
             "that any prototype agrees with observations",

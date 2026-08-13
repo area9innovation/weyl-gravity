@@ -15,7 +15,7 @@ MANIFEST = SITE / "manifest.json"
 RESULT = ROOT / "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json"
 VIABILITY = ROOT / "foundations/site/viability.json"
 ASSEMBLIES = ROOT / "foundations/site/assemblies.json"
-CUBE = ROOT / "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V5.json"
+CUBE = ROOT / "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V6.json"
 LADDER = ROOT / "foundations/results/FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V2.json"
 STATUSES = {"LOCAL_RESULT", "LITERATURE_RESULT", "PIECES_ONLY", "PRIORITY_GAP", "NOT_MAPPED"}
 MIGRATIONS = {"EXACT_PARENT_TRANSFER", "CAPABILITY_QUALIFIED", "REVIEWED_OVERLAY", "REVIEWED_NO_TRANSFER", "REVIEWED_CHILD_GAP", "NOT_REVIEWED"}
@@ -131,7 +131,7 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
             break
 
     used = {item for cell in emitted for field in ("evidence", "migration_evidence") for item in cell.get(field, [])}
-    if set(evidence) != used or len(evidence) != 70:
+    if set(evidence) != used or len(evidence) != 71:
         errors.append("coverage and migration evidence resolution")
     for item in evidence.values():
         for field in ("result_link", "report_link", "ledger_link"):
@@ -154,7 +154,7 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
     if len(viability.get("profiles", [])) != 36 or len(viability.get("carrier_envelopes", [])) != 6:
         errors.append("theory viability profile/envelope closure")
     interfaces = data.get("cross_cell_interfaces", [])
-    if len(interfaces) != 1 or interfaces[0].get("status") != "CERTIFIED" or interfaces[0].get("relation") != "CONDITIONAL_BRIDGE":
+    if [item.get("id") for item in interfaces] != ["STATE_TO_PROBABILITY", "SELECTION_TO_DYNAMICS"] or any(item.get("status") != "CERTIFIED" or item.get("relation") != "CONDITIONAL_BRIDGE" for item in interfaces):
         errors.append("certified cross-cell interface projection")
     if assemblies.get("source_atlas_digest") != data.get("canonical_digest") or assemblies.get("canonical_digest") != result.get("independent_checker", {}).get("expected_assembly_digest"):
         errors.append("theory assembly source/digest pin")
@@ -192,7 +192,7 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
     counts = data.get("counts", {})
     if counts.get("status_counts") != dict(sorted(status_counts.items())) or counts.get("migration_status_counts") != dict(sorted(all_migrations.items())):
         errors.append("coverage/migration counts")
-    if counts.get("coverage_classified") != 371 or counts.get("migration_reviewed") != 452 or counts.get("migration_pending") != 0 or counts.get("not_mapped") != 205 or counts.get("evidence_records") != 70:
+    if counts.get("coverage_classified") != 371 or counts.get("migration_reviewed") != 452 or counts.get("migration_pending") != 0 or counts.get("not_mapped") != 205 or counts.get("evidence_records") != 71:
         errors.append("review count summary")
     summary = {
         "digest": calculated_digest,
