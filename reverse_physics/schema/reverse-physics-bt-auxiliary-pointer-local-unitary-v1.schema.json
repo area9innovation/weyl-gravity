@@ -1,0 +1,185 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-auxiliary-pointer-local-unitary-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "schema_version", "certificate", "question", "answer",
+    "result_kind", "lifecycle_state", "dependency_tags", "assumptions",
+    "provenance", "positive_free_local_carrier",
+    "closable_charged_column", "selfadjoint_pointer_block",
+    "local_functional_calculus", "operational_q8_tangent", "disposition",
+    "does_not_establish", "missing_object_ledger", "next_gate", "checks",
+    "verification_commands", "report"
+  ],
+  "properties": {
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-auxiliary-pointer-local-unitary-v1.schema.json"},
+    "schema_version": {"const": 1},
+    "certificate": {"const": "REVERSE_PHYSICS_BT_AUXILIARY_POINTER_LOCAL_UNITARY_V1"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE"]},
+    "assumptions": {
+      "type": "array", "minItems": 8, "maxItems": 8,
+      "items": {"$ref": "#/$defs/text"}
+    },
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_commit", "retrieval_date", "inputs", "generated_by", "independent_verifier", "method"],
+      "properties": {
+        "source_commit": {"const": "9a232e13e8ecbc53988daa97201e1794e338b044"},
+        "retrieval_date": {"const": "2026-08-13"},
+        "inputs": {
+          "type": "array", "minItems": 7, "maxItems": 7,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["path", "sha256"],
+            "properties": {
+              "path": {"$ref": "#/$defs/text"},
+              "sha256": {"$ref": "#/$defs/hash"}
+            }
+          }
+        },
+        "generated_by": {"const": "reverse_physics/bt_auxiliary_pointer_local_unitary.py"},
+        "independent_verifier": {"const": "reverse_physics/verify_bt_auxiliary_pointer_local_unitary.py"},
+        "method": {"$ref": "#/$defs/text"}
+      }
+    },
+    "positive_free_local_carrier": {
+      "type": "object", "additionalProperties": false,
+      "required": ["one_particle_space", "Hilbert_space", "field_identification", "local_net", "vacuum", "internal_symmetries", "status"],
+      "properties": {
+        "one_particle_space": {"$ref": "#/$defs/text"},
+        "Hilbert_space": {"const": "H=Gamma_s(H1)"},
+        "field_identification": {"$ref": "#/$defs/text"},
+        "local_net": {"$ref": "#/$defs/text"},
+        "vacuum": {"$ref": "#/$defs/text"},
+        "internal_symmetries": {
+          "type": "array", "minItems": 2, "maxItems": 2,
+          "items": {"$ref": "#/$defs/text"}
+        },
+        "status": {"const": "POSITIVE_AUXILIARY_FREE_COMPLEX_SCALAR_LOCAL_CARRIER_CONSTRUCTED"}
+      }
+    },
+    "closable_charged_column": {
+      "type": "object", "additionalProperties": false,
+      "required": ["branches", "common_domain", "adjoint_inclusions", "column", "closability_proof", "separate_branch_essential_selfadjointness", "status"],
+      "properties": {
+        "branches": {
+          "type": "array", "minItems": 2, "maxItems": 2,
+          "items": {"$ref": "#/$defs/text"}
+        },
+        "common_domain": {"$ref": "#/$defs/text"},
+        "adjoint_inclusions": {
+          "type": "array", "minItems": 2, "maxItems": 2,
+          "items": {"$ref": "#/$defs/text"}
+        },
+        "column": {"$ref": "#/$defs/text"},
+        "closability_proof": {"$ref": "#/$defs/text"},
+        "separate_branch_essential_selfadjointness": {"const": "NOT_ASSUMED_AND_NOT_NEEDED"},
+        "status": {"const": "DENSELY_DEFINED_COLUMN_CLOSABLE"}
+      }
+    },
+    "selfadjoint_pointer_block": {
+      "type": "object", "additionalProperties": false,
+      "required": ["operator", "domain", "square", "resolvent", "resolvent_reason", "conclusion", "finite_rational_witness", "status"],
+      "properties": {
+        "operator": {"$ref": "#/$defs/text"},
+        "domain": {"$ref": "#/$defs/text"},
+        "square": {"$ref": "#/$defs/text"},
+        "resolvent": {"$ref": "#/$defs/text"},
+        "resolvent_reason": {"$ref": "#/$defs/text"},
+        "conclusion": {"$ref": "#/$defs/text"},
+        "finite_rational_witness": {
+          "type": "object", "additionalProperties": false,
+          "required": ["K", "V", "I_plus_V_squared", "inverse_I_plus_V_squared", "left_I_plus_KstarK", "right_I_plus_KKstar"],
+          "properties": {
+            "K": {"$ref": "#/$defs/matrix"},
+            "V": {"$ref": "#/$defs/matrix"},
+            "I_plus_V_squared": {"$ref": "#/$defs/matrix"},
+            "inverse_I_plus_V_squared": {"$ref": "#/$defs/matrix"},
+            "left_I_plus_KstarK": {"$ref": "#/$defs/matrix"},
+            "right_I_plus_KKstar": {"$ref": "#/$defs/matrix"}
+          }
+        },
+        "status": {"const": "SELFADJOINT_WITH_EXPLICIT_RESOLVENT"}
+      }
+    },
+    "local_functional_calculus": {
+      "type": "object", "additionalProperties": false,
+      "required": ["affiliation_proof", "symmetry", "unitary", "ground_to_click_block", "effects", "vacuum_boundary", "status"],
+      "properties": {
+        "affiliation_proof": {"$ref": "#/$defs/text"},
+        "symmetry": {"$ref": "#/$defs/text"},
+        "unitary": {"$ref": "#/$defs/text"},
+        "ground_to_click_block": {"$ref": "#/$defs/text"},
+        "effects": {
+          "type": "array", "minItems": 3, "maxItems": 3,
+          "items": {"$ref": "#/$defs/text"}
+        },
+        "vacuum_boundary": {"$ref": "#/$defs/text"},
+        "status": {"const": "EXACT_BOUNDED_LOCAL_UNITARY_AND_NORMALIZED_POINTER_EFFECTS"}
+      }
+    },
+    "operational_q8_tangent": {
+      "type": "object", "additionalProperties": false,
+      "required": ["inputs", "readout", "half_contrast", "exact_tangent", "phase_optimization", "locality", "mixed_tangent", "strict_bound", "status"],
+      "properties": {
+        "inputs": {"$ref": "#/$defs/text"},
+        "readout": {"$ref": "#/$defs/text"},
+        "half_contrast": {"$ref": "#/$defs/text"},
+        "exact_tangent": {"$ref": "#/$defs/text"},
+        "phase_optimization": {"$ref": "#/$defs/text"},
+        "locality": {"$ref": "#/$defs/text"},
+        "mixed_tangent": {"$ref": "#/$defs/text"},
+        "strict_bound": {"const": "Q8_aux,compact/q4_bar>1/18874368000"},
+        "status": {"const": "STRICTLY_POSITIVE_Q8_TRANSITION_HAS_POINTER_ONLY_LOCAL_UNITARY_TANGENT"}
+      }
+    },
+    "disposition": {
+      "type": "object", "minProperties": 13, "maxProperties": 13,
+      "additionalProperties": {"$ref": "#/$defs/text"}
+    },
+    "does_not_establish": {
+      "type": "array", "minItems": 12, "maxItems": 12,
+      "items": {"$ref": "#/$defs/text"}
+    },
+    "missing_object_ledger": {
+      "type": "array", "minItems": 5, "maxItems": 5,
+      "items": {"$ref": "#/$defs/text"}
+    },
+    "next_gate": {"$ref": "#/$defs/text"},
+    "checks": {
+      "type": "object", "additionalProperties": false,
+      "required": ["total", "passed", "ok", "failures", "details"],
+      "properties": {
+        "total": {"const": 46},
+        "passed": {"const": 46},
+        "ok": {"const": true},
+        "failures": {"const": []},
+        "details": {
+          "type": "object", "minProperties": 46, "maxProperties": 46,
+          "additionalProperties": {"const": true}
+        }
+      }
+    },
+    "verification_commands": {
+      "type": "array", "minItems": 3, "maxItems": 3,
+      "items": {"$ref": "#/$defs/text"}
+    },
+    "report": {"const": "reverse_physics/reports/bt-auxiliary-pointer-local-unitary.md"}
+  },
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "matrix": {
+      "type": "array", "minItems": 1,
+      "items": {
+        "type": "array", "minItems": 1,
+        "items": {"type": "string", "pattern": "^-?[0-9]+(?:/[1-9][0-9]*)?$"}
+      }
+    }
+  }
+}

@@ -4485,10 +4485,83 @@ Certificate
 \par\noindent
 certifies the exact species, charge, parity, adjoint and response statements.
 The density is regular and uses neither the scalar logarithm nor a mirror
-sheet.  Essential self-adjoint closure and bounded-region affiliation of the
-full unbounded smeared coupling, the $g_{\rm det}^4$ and $\lambda^{10}$
-remainders, source/apparatus selection by the closed BT Hamiltonian, general
-Eq.~(19), gravity and Lorentzian transfer remain open.
+sheet.  The selected-core calculation alone does not imply closure or local
+affiliation of the full unbounded smeared coupling.
+
+The operator gap closes without a separate essential-self-adjointness claim
+for either charged branch.  On the certified positive carrier
+$\Omega^*=\Upsilon$, so the pair is a free complex scalar.  For compact
+switching $h$, the charged derivative Wick quadratics on the common
+Weyl-invariant exponential-polynomial domain obey
+\[
+ D_\Upsilon(\bar h)\subset D_\Omega(h)^*,\qquad
+ D_\Omega(\bar h)\subset D_\Upsilon(h)^* .
+\]
+The literature on local Wick polynomials supplies the operator-valued
+distribution domain and locality framework \cite{BFK1996,Sanders2012}; the
+following column and pointer argument is internal.  The two-component column
+\[
+ K_h\psi=(D_\Omega(h)\psi,D_\Upsilon(h)\psi)
+\]
+is closable: a vertical graph limit pairs to zero against the two dense
+adjoint domains.  For its closure, the canonical ground/click block
+\[
+ V_h=\begin{pmatrix}0&K_h^*\\K_h&0\end{pmatrix},\qquad
+ \operatorname{Dom}V_h=\operatorname{Dom}K_h\oplus
+                         \operatorname{Dom}K_h^*,
+\]
+is self-adjoint.  Indeed, for $z=\pm i$,
+\[
+ (V_h-z)^{-1}=
+ \begin{pmatrix}
+ z(K_h^*K_h-z^2)^{-1}&K_h^*(K_hK_h^*-z^2)^{-1}\\
+ K_h(K_h^*K_h-z^2)^{-1}&z(K_hK_h^*-z^2)^{-1}
+ \end{pmatrix},
+\]
+so both deficiency ranges are full.  Complement-localized Weyl unitaries
+preserve the common domain and commute with both Wick branches.  Passing to
+the closures affiliates $V_h$ with
+$B(\mathbb C^3)\bar\otimes{\cal F}^{d}({\cal O})$ for
+$\operatorname{supp}h\subset{\cal O}$.  The pointer charges $-2,+2$ cancel
+the field charges $+2,-2$, and pointer exchange combined with $\kappa$
+commutes with $V_h$.
+
+Bounded functional calculus therefore gives the exact local unitary and
+ground-sector effects
+\[
+ U_g=e^{-igV_h},\qquad
+ E_{\rm click}(g)=\sin^2(g|K_h|),\qquad
+ E_{\rm no}(g)=\cos^2(g|K_h|).
+\]
+They are positive complements at every real detector strength.  No
+vacuum-dark local effect is claimed; the unavoidable common background is
+instead removed operationally by a phase reversal.  For
+\[
+ \Psi_\theta={|g\rangle u+e^{i\theta}|{\rm click}\rangle v\over\sqrt2},
+ \qquad
+ C_\theta(g)={p_\theta(g)-p_{\theta+\pi}(g)\over2},
+\]
+where only the finite pointer projection is read out,
+\[
+ C_\theta'(0)=
+ \operatorname{Im}\!\left(e^{-i\theta}\langle v,K_hu\rangle\right),
+ \qquad
+ \max_\theta|C_\theta'(0)|=|\langle v,K_hu\rangle|.
+\]
+Thus the positive compact $q_8$ coefficient above is an operational tangent
+of a bounded local unitary without a final field-vacuum postselection.
+Certificate
+\par\noindent
+\texttt{REVERSE\_PHYSICS\_BT\_AUXILIARY\_POINTER\_LOCAL\_}
+\allowbreak\texttt{UNITARY\_V1}
+\par\noindent
+checks the adjoint inclusions, column closability, explicit block resolvent,
+affiliation, symmetries, functional calculus and pointer contrast.  This is
+an exact free-carrier local operation, not time-ordered evolution generated
+by the interacting BT Hamiltonian.  Equality of the positive Hilbert and
+public generalized Krein Born rules, the $\lambda^{10}$ remainder, an
+interacting BT local net, source/apparatus selection, general Eq.~(19),
+gravity and Lorentzian transfer remain open.
 
 The effect itself has a finite Hamiltonian realization.  For the phased
 antisymmetric angle projector
@@ -5065,6 +5138,20 @@ H.~Reeh and S.~Schlieder,
 \emph{Bemerkungen zur unit\"ar\"aquivalenz von lorentzinvarianten Feldern},
 Nuovo Cim. \textbf{22} (1961) 1051--1068,
 \href{https://doi.org/10.1007/BF02787889}{doi:10.1007/BF02787889}.
+
+\bibitem{BFK1996}
+R.~Brunetti, K.~Fredenhagen and M.~K\"ohler,
+\emph{The microlocal spectrum condition and Wick polynomials of free fields
+on curved spacetimes},
+Commun.\ Math.\ Phys.\ \textbf{180} (1996) 633--652,
+arXiv:gr-qc/9510056.
+
+\bibitem{Sanders2012}
+K.~Sanders,
+\emph{Essential self-adjointness of Wick squares in quasi-free Hadamard
+representations on curved spacetimes},
+J.\ Math.\ Phys.\ \textbf{53} (2012) 042502,
+arXiv:1010.3978.
 
 \bibitem{Mostafazadeh2005}
 A.~Mostafazadeh,

@@ -3546,9 +3546,53 @@ This is a
 \texttt{LOCAL-}\allowbreak\texttt{ALGEBRAIC}/
 \texttt{EUCLIDEAN-}\allowbreak\texttt{SPECTRAL}/
 \texttt{REDUCED-}\allowbreak\texttt{MODE} public auxiliary result.  Full
-self-adjoint local affiliation, higher detector and BT remainders, Eq.~(19),
-metric BV--BRST transfer, QME restoration and every Lorentzian claim remain
-open.
+self-adjoint local affiliation does not follow from the finite selected-core
+matrix alone.
+
+It does follow from a closed-column construction on the positive free
+carrier.  Since $\Omega^*=\Upsilon$, the auxiliary pair is a complex scalar.
+For compact $h$, locality and the adjoint relations on the common
+Weyl-invariant exponential-polynomial domain
+\cite{BFK1996,Sanders2012} give
+\[
+ D_\Upsilon(\bar h)\subset D_\Omega(h)^*,\qquad
+ D_\Omega(\bar h)\subset D_\Upsilon(h)^* .
+\]
+Hence $K_h\psi=(D_\Omega(h)\psi,D_\Upsilon(h)\psi)$ is closable, without
+assuming that either branch is essentially self-adjoint.  For its closure,
+\[
+ V_h=\begin{pmatrix}0&K_h^*\\K_h&0\end{pmatrix}
+\]
+is self-adjoint: its explicit resolvent at $z=\pm i$ has diagonal
+denominators $K_h^*K_h-z^2$ and $K_hK_h^*-z^2$, so both deficiency ranges
+are full.  Free-field locality affiliates $V_h$ with the three-pointer
+matrix amplification of the dual local net.  The charged pointer makes the
+block neutral and ghost even.  Bounded functional calculus then gives
+\[
+ U_g=e^{-igV_h},\qquad E_{\rm click}=\sin^2(g|K_h|),\qquad
+ E_{\rm no}=\cos^2(g|K_h|)
+\]
+as exact positive complementary local effects for every real $g$.
+
+A phase-reversed coherent ground/click input, followed by pointer-only
+readout, has half-contrast tangent
+\[
+ C_\theta'(0)=
+ \operatorname{Im}\!\left(e^{-i\theta}\langle v,K_hu\rangle\right),
+ \qquad \max_\theta|C_\theta'(0)|=|\langle v,K_hu\rangle|.
+\]
+Thus the certified positive compact $q_8$ response is an operational local
+unitary tangent and needs no final field-vacuum projection.  Certificate
+\par\noindent
+\texttt{REVERSE\_PHYSICS\_BT\_AUXILIARY\_POINTER\_LOCAL\_}
+\allowbreak\texttt{UNITARY\_V1}
+\par\noindent
+checks the closability, block resolvent, affiliation, symmetries and exact
+contrast.  The local unitary is a bounded functional-calculus operation in
+the free auxiliary carrier, not interacting BT time evolution.  Equality of
+the positive Hilbert and public generalized Krein Born rules, higher
+$\lambda$ control, Eq.~(19), metric BV--BRST transfer, QME restoration and
+every Lorentzian claim remain open.
 
 On the same two-mode carrier, the bounded interaction
 \[
@@ -3961,6 +4005,20 @@ H.~Reeh and S.~Schlieder,
 \emph{Bemerkungen zur unit\"ar\"aquivalenz von lorentzinvarianten Feldern},
 Nuovo Cim. \textbf{22} (1961) 1051--1068,
 \href{https://doi.org/10.1007/BF02787889}{doi:10.1007/BF02787889}.
+
+\bibitem{BFK1996}
+R.~Brunetti, K.~Fredenhagen and M.~K\"ohler,
+\emph{The microlocal spectrum condition and Wick polynomials of free fields
+on curved spacetimes},
+Commun.\ Math.\ Phys.\ \textbf{180} (1996) 633--652,
+arXiv:gr-qc/9510056.
+
+\bibitem{Sanders2012}
+K.~Sanders,
+\emph{Essential self-adjointness of Wick squares in quasi-free Hadamard
+representations on curved spacetimes},
+J.\ Math.\ Phys.\ \textbf{53} (2012) 042502,
+arXiv:1010.3978.
 
 \bibitem{Maldacena}
 J.~Maldacena,
