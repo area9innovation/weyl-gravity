@@ -258,7 +258,11 @@ hard modes, an off-diagonal positive detector erases that record without
 changing $q_4$ or $q_6$; its first known difference is an order-$\lambda^8$
 angle variance.  Exhausting the order-$\lambda^8$ ledger shows that this is
 the complete coherent-minus-recorded coefficient: the unknown higher cross
-is common to both effects.  The two absolute $q_8$ coefficients, continuum
+is common to both effects.  The complementary antisymmetric port removes
+that cross altogether.  At $c=0,3/5$ and $\kappa T=1$, exact finite-time
+tree and loop contrasts force a volume-uniform strictly positive lower bound
+on its absolute leading coefficient.  The
+recorded and symmetric bright-port absolute $q_8$ coefficients, continuum
 coherence and both forward endpoints remain open.  On the two-mode carrier,
 an explicit finite pointer Hamiltonian now selects the detector strength and
 relative phase; it is added apparatus physics, not a prediction of the public
@@ -3857,6 +3861,56 @@ complete $X_4$ Gram data and $X_2$--$X_6$ interference, continuum-angle
 coherence, and selection by the public closed-system BT dynamics remain open.
 No endpoint, all-order or Eq.~(19) completion follows.
 
+There is nevertheless an absolute coefficient at the complementary dark
+port which does not require $X_6$.  Set the effect equal to $P_-$ itself.
+Since $P_-X_2=0$, its probability begins two orders later:
+\[
+ q_-(\lambda)=\lambda^8Q_{8,-}+O(\lambda^{10}),\qquad
+ Q_{8,-}=\langle X_4,P_-X_4\rangle
+ ={1\over2}\|X_4(c_2)-X_4(c_1)\|^2.
+\]
+In particular
+$\langle X_2,P_-X_6\rangle=\langle P_-X_2,X_6\rangle=0$.
+Let $\bar q_4=q_4/\lambda^4=\|x_2\|^2$ be the one-cell leading
+coefficient.  The complete fibrewise relation
+\[
+ 2\operatorname{Re}\langle x_2,X_4(c_i)\rangle
+ =\bar q_4R_6(c_i)
+\]
+and Cauchy--Schwarz give
+\[
+ {Q_{8,-}\over\bar q_4}\geq
+ {\{R_6(c_2)-R_6(c_1)\}^2\over8}.
+\]
+For the common-lattice fixture $c_1=0,c_2=3/5$ at $\kappa T=1$, exact
+alternating-series enclosures give
+\[
+ \Delta W>{1\over16},\qquad \Delta B>{1\over220}.
+\]
+With $N_s=12\kappa V/5>0$, the complete contrast is
+\[
+ \Delta R_6={2\sqrt2\,\Delta W\over3N_s}
+ +{5\Delta B\over24\pi^2}>{49\over511104},
+\]
+where the last strict bound drops the positive tree term and uses
+$\pi<22/7$.  Therefore
+\[
+ \boxed{{Q_{8,-}\over\bar q_4}
+ >{2401\over2089818390528}>{1\over10^9}.}
+\]
+Certificate
+\par\noindent
+\texttt{REVERSE\_PHYSICS\_BT\_DARK\_PORT\_ABSOLUTE\_Q8\_}
+\allowbreak\texttt{LOWER\_BOUND\_V1}
+\par\noindent
+computes this strictly positive absolute dark-port coefficient on the
+declared finite-volume reduced-mode apparatus.  The loop contrast is
+independent of the common scale and finite local scheme constant; its
+positive contribution makes the displayed lower bound uniform in finite
+positive $N_s$.  This does not compute the recorded or symmetric bright-port
+absolute coefficients, thicken the modes into compact continuum packets, or
+control the $O(\lambda^{10})$ remainder at finite coupling.
+
 The effect itself has a finite Hamiltonian realization.  For the phased
 antisymmetric angle projector
 \[
@@ -4141,7 +4195,8 @@ promote the pointwise number bound to an operator estimate: unrestricted mean
 momentum and the derivative weights still require a Schur or
 Hilbert--Schmidt argument.  Nor does a spacetime switching define the exact
 time-independent star Hamiltonian used at fixed energy.  Complete time
-ordering, absolute $q_8$, Eq.~(19), gravity and Lorentzian causality remain
+ordering, recorded or bright-port absolute $q_8$, Eq.~(19), gravity and
+Lorentzian causality remain
 open.
 
 The operator-bounded successor first makes the off-shell realization
@@ -4189,7 +4244,8 @@ $e>2$, not floating-point exponentials.  Certificate
 \par\noindent
 thus closes every quadratic frequency sector at first Dyson order on $K$.
 It does not control scattering from $K$ to its complement, unrestricted
-energies, higher time ordering, absolute $q_8$, Eq.~(19), gravity or
+energies, higher time ordering, recorded or bright-port absolute $q_8$,
+Eq.~(19), gravity or
 Lorentzian causality.
 
 The auxiliary preparation nevertheless has an exact scalar preimage on the

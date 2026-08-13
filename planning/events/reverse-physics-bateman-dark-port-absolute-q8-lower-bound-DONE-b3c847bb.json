@@ -1,0 +1,32 @@
+{
+  "schema": "event-v0",
+  "id": "sf:program/event/reverse-physics-bateman-dark-port-absolute-q8-lower-bound-DONE-b3c847bb",
+  "kind": "event",
+  "source": {
+    "path": "tools/science-forge/program/events/reverse-physics-bateman-dark-port-absolute-q8-lower-bound-DONE-b3c847bb.json",
+    "span": null
+  },
+  "body": {
+    "event_kind": "WORK_ITEM_TRANSITIONED",
+    "actor": "reverse-physics",
+    "base_revision": "science-forge-ir-v0",
+    "predecessors": [],
+    "when": "2026-08-13",
+    "seq": 1,
+    "payload": {
+      "target": "sf:program/work/reverse-physics-bateman-dark-port-absolute-q8-lower-bound",
+      "to_state": "DONE",
+      "note": "The complementary antisymmetric detector annihilates the common leading two-angle amplitude, so its first nonzero probability is the absolute coefficient q8_dark=||X4(c2)-X4(c1)||^2/2; the uncomputed X2-X6 cross is absent. Cauchy gives q8_dark/q4>=DeltaR6^2/8. On the certified finite-volume lattice modes c=0 and c=3/5 at kappa*T=1, exact series intervals give DeltaW>1/16 and DeltaB>1/220. Both enter DeltaR6 positively for every N_s>0, yielding DeltaR6>49/511104 and q8_dark/q4>10^-9. The earlier recorded and bright-port absolute q8 coefficients, continuum packets, higher orders, Eq. 19, gravity and Lorentzian causality remain open. Evidence: REVERSE_PHYSICS_BT_DARK_PORT_ABSOLUTE_Q8_LOWER_BOUND_V1."
+    },
+    "native": {
+      "authored_by": "manual close-out after exact dark-port ledger, Cauchy bound and two-angle series witness",
+      "policy": "append-only; predecessor q8 certificates are not rewritten"
+    }
+  },
+  "edges": [
+    {
+      "rel": "TRANSITIONS",
+      "to": "sf:program/work/reverse-physics-bateman-dark-port-absolute-q8-lower-bound"
+    }
+  ]
+}

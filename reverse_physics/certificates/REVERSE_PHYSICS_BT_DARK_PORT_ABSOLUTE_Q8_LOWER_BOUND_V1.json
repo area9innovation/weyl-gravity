@@ -1,0 +1,241 @@
+{
+  "absolute_q8_bound": {
+    "comparison": "Q8_dark/q4_bar>2401/2089818390528>1/1000000000",
+    "exact_rational_lower": {
+      "canonical_sha256": "74fd6a6ebd37bd9ff8a34db16e1491ed21b31456dc7a72127ae136d20a0c9ef9",
+      "exact": "2401/2089818390528"
+    },
+    "leading_probability": "q_dark(lambda)>lambda^8*q4_bar/1000000000 at coefficient level, with remainder O(lambda^10)",
+    "sign": "STRICTLY_POSITIVE",
+    "status": "ABSOLUTE_DARK_PORT_Q8_COEFFICIENT_STRICTLY_POSITIVE",
+    "volume_uniformity": "the displayed lower bound uses only the active-loop contrast and holds for every N_s>0"
+  },
+  "answer": "Yes on the declared finite-volume two-angle carrier. The antisymmetric dark effect P_minus annihilates the common leading coefficient X2=x2(1,1), so its probability starts at absolute order lambda8 with Q8_dark=<X4,P_minus X4>=||X4(c2)-X4(c1)||^2/2; the X2-X6 cross is exactly absent. The complete per-cell q6 coefficients imply by Cauchy that Q8_dark/q4_bar>=DeltaR6^2/8, where q4_bar=q4/lambda4. For the already certified lattice-compatible modes c1=0 and c2=3/5 at kappa*T=1, exact alternating-series intervals give DeltaW>1/16 and DeltaB>1/220. The finite-volume tree term 2*sqrt(2)*DeltaW/(3*N_s) and loop term 5*DeltaB/(24*pi^2) are both positive for every N_s>0. Using pi<22/7 gives DeltaR6>49/511104 and Q8_dark/q4_bar>2401/2089818390528>10^-9. This computes a new absolute dark-port q8 coefficient, not either previously open recorded or bright-port coefficient.",
+  "assumptions": [
+    "the two orthogonal equal-leading hard modes and P_minus are the c=0 and c=3/5 finite-volume modes of the certified two-angle apparatus",
+    "the common leading amplitude phase is aligned, so X2=x2*(1,1) and q4_bar=||x2||^2>0 per angle",
+    "the finite interaction duration satisfies kappa*T=1",
+    "the positive normalized spectator box mode has arbitrary finite norm N_s=12*kappa*V/5>0",
+    "the complete order-lambda4 coefficient X4 includes the connected finite-time tree, active finite-time loop and the zero normal-ordered spectator term in the declared massless unit-residue MSbar scheme",
+    "the two cells use the same scale, finite coupling convention, acceptance and normalization, so common local loop constants cancel in their contrast",
+    "the perturbative probability is read coefficientwise; no convergence or all-time assertion is made"
+  ],
+  "certificate": "REVERSE_PHYSICS_BT_DARK_PORT_ABSOLUTE_Q8_LOWER_BOUND_V1",
+  "checks": {
+    "details": {
+      "Cauchy_lower_bound_is_one_eighth_DeltaR_squared": true,
+      "H_arguments_are_in_alternating_domain": true,
+      "X2_X6_cross_is_absent_from_dark_q8": true,
+      "all_three_gap_arguments_are_between_zero_and_one": true,
+      "common_scale_and_scheme_cancel_from_loop_contrast": true,
+      "continuum_all_orders_Eq19_gravity_and_Lorentzian_boundaries_remain_open": true,
+      "dark_port_is_orthogonal_to_leading_bright_mode": true,
+      "dark_q8_is_half_difference_norm": true,
+      "dark_relative_lower_exceeds_one_billionth": true,
+      "dark_relative_lower_is_exact": true,
+      "done_event_targets_work_item": true,
+      "finite_volume_tree_contrast_is_positive_for_every_Ns": true,
+      "inputs_are_content_pinned": true,
+      "kappa_T_is_one": true,
+      "loop_contrast_exceeds_one_over_220": true,
+      "loop_contrast_interval_is_ordered": true,
+      "next_probability_remainder_is_order_lambda10": true,
+      "pi_upper_bound_is_classical": true,
+      "recorded_and_bright_absolute_q8_remain_open": true,
+      "relative_q6_contrast_exceeds_49_over_511104": true,
+      "sine_intervals_are_positive": true,
+      "six_predecessors_pass": true,
+      "sqrt_intervals_are_strict": true,
+      "tree_contrast_exceeds_one_sixteenth": true,
+      "tree_contrast_interval_is_ordered": true,
+      "two_angles_match_certified_lattice_fixture": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 26,
+    "total": 26
+  },
+  "dark_port_ledger": {
+    "X2_X6_disposition": "ABSENT because <X2,P_minus X6>=<P_minus X2,X6>=0",
+    "absolute_probability": "q_dark(lambda)=lambda^8*Q8_dark+O(lambda^10)",
+    "absolute_q8_coefficient": "Q8_dark=<X4,P_minus X4>=||X4(c2)-X4(c1)||^2/2",
+    "bright_projector": "P_plus=|+><+|, |+>=(1,1)/sqrt(2)",
+    "dark_effect": "P_minus=I-P_plus=|-><-|, |->=(1,-1)/sqrt(2)",
+    "leading_annihilation": "P_minus*X2=0",
+    "selected_output": "X(lambda)=lambda^2*X2+lambda^4*X4+lambda^6*X6+O(lambda^8)",
+    "status": "ABSOLUTE_DARK_PORT_Q8_LEDGER_EXHAUSTED"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL",
+    "REDUCED-MODE"
+  ],
+  "disposition": {
+    "Lorentzian_causal_claim": "NOT_ESTABLISHED",
+    "absolute_bright_port_q8_probability": "NOT_COMPUTED",
+    "absolute_dark_port_q8_probability": "COEFFICIENT_COMPUTED_AND_STRICTLY_POSITIVE",
+    "absolute_recorded_q8_probability": "NOT_COMPUTED",
+    "all_order_or_all_time_probability": "NOT_CONSTRUCTED",
+    "compact_continuum_packet_extension": "NOT_CONSTRUCTED",
+    "complete_X2_X6_interference": "NOT_COMPUTED_AND_NOT_NEEDED_FOR_DARK_PORT",
+    "finite_volume_two_angle_apparatus": "CONSTRUCTED",
+    "general_Eq19": "NOT_PROVED_AND_NOT_USED",
+    "gravity_or_metric_BV_BRST_transfer": "NOT_CONSTRUCTED"
+  },
+  "does_not_establish": [
+    "either absolute recorded or bright-port order-lambda8 coefficient",
+    "the complete X2-X6 interference on those ports",
+    "a compact continuum-packet dark-port lower bound",
+    "a volume-independent value of the positive tree contribution",
+    "selection of the two angles, duration or apparatus by public BT dynamics",
+    "forward, exchanged-forward, real-virtual, collinear or KLN completion",
+    "an exact probability after summing every perturbative order",
+    "an all-time Moller, LSZ or S operator",
+    "the standard scalar projector or general Bateman--Turok Eq. (19)",
+    "a complete positive physical Hilbert or Fock construction",
+    "gravity, metric BV--BRST, QME restoration or residual transfer",
+    "anything LORENTZIAN-CAUSAL",
+    "literature priority"
+  ],
+  "exact_two_angle_witness": {
+    "angles": [
+      "0",
+      "3/5"
+    ],
+    "duration": "kappa*T=1",
+    "lattice_status": "the c=0 and c=3/5 modes are the certified common-integer-lattice two-angle fixture",
+    "loop_H_arguments_c1": [
+      "32/25",
+      "32/25"
+    ],
+    "loop_H_arguments_c2": [
+      "64/125",
+      "256/125"
+    ],
+    "loop_H_series": "H(y)=sum_(n>=1)(-1)^(n+1)*y^n/[2*n*(2*n+1)*(2*n)!]",
+    "loop_contrast_identity": "DeltaB=2*[2*H(32/25)-H(64/125)-H(256/125)]",
+    "loop_contrast_lower_receipt": {
+      "canonical_sha256": "81812021fa9273fd6f7a92cfee057708dfd9158ee0af23054971eb4b612b8492",
+      "exact": "435148318162817984384/94107878208160400390625"
+    },
+    "loop_contrast_upper_receipt": {
+      "canonical_sha256": "d9f555ff0a5c1142b7642f59bb0853742f669a35b8d3807e0ed4287bdad7f953",
+      "exact": "427377812491860037222784/92427380383014678955078125"
+    },
+    "loop_simple_bound": "DeltaB>1/220",
+    "scale_and_scheme_dependence": "CANCELS from DeltaB between the two angles",
+    "status": "EXACT_STRICTLY_POSITIVE_TREE_AND_LOOP_CONTRASTS",
+    "tree_contrast": "DeltaW=W(3/5,1)-W(0,1)",
+    "tree_contrast_lower_receipt": {
+      "canonical_sha256": "e84984995969d87a711e2d803489252d682c31753da7afcc57e7c55b160360ef",
+      "exact": "475106913843025468207791849949523991083136612435935884917338042636241038971333486929682158255609332657355293149015779781262836774483751688400142444452912470005125323674856526051583515387486438709505668777604990099250844932747519590211621336420280152080586467914404369263557162658666730260860793998866422262836712070543696082985612077821102219135142505834130846268195892096523092774004337388212204686018706403415537115344725962427158671469356615527165185480863770891/7558154296875000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+    },
+    "tree_contrast_upper_receipt": {
+      "canonical_sha256": "d3f58d328f643d42b1510724fc9a5f7bda17c03206b7da8d22f551f65150e7fe",
+      "exact": "49840698740711312463075648587382299006673482239782874951629122085107821603544192525961976862107535958195397332550195864907779562189025573312245268823378250063759602197213877574926588779472820044604908460211803018769657353203841688778208285068668941287339161262687428917108684908951055648967938237490451974607733297723179024263344624728056486837727755717124680280434773441392461079816368492542323361610367799294741598681284466015326612733172921894759996656263081/792881939560174942016601562500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+    },
+    "tree_gaps": [
+      {
+        "gap_lower": "561552812808830274910704927987/1250000000000000000000000000000",
+        "gap_upper": "44924225024706421992856394239/100000000000000000000000000000",
+        "label": "c1_common",
+        "radicand": "17",
+        "sin_lower": "154831444457987983872862747305919315721576992931380456404933724224412382546297837628114649433319134791601687012578590199268133432585019713711486929340719309747283038971374568666616765097487014053315535818326246151972533583047730205351593411746858245689942149643662527148980608268758918833530707315170424551203542129421590479249931323572131183290966256984735450193087552588107713474921023110437899296088275004696689355127304829893944383644617890532252439015331/356521923094987869262695312500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "sin_upper": "270428987021104219581851997588262429035436399314088130984152697415575963475676169639707224599213150586806731058382629301701738383199501741174965122560175922679756310429726940591985831482179590327216231482487540418436497817420352367145819531167481888688554869782899057960660951669884983447719159709063218260602689878074449275784343824739449980183842202118803419005891773615945244972536319/622702080000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "sqrt_lower": "2061552812808830274910704927987/500000000000000000000000000000",
+        "sqrt_upper": "164924225024706421992856394239/40000000000000000000000000000"
+      },
+      {
+        "gap_lower": "492849839314596129264208726187/2500000000000000000000000000000",
+        "gap_upper": "123212459828649032316052181547/625000000000000000000000000000",
+        "label": "c2_t",
+        "radicand": "61/5",
+        "sin_lower": "238538023959172230404482496486172219921745508583574254888502490856596245742839312231959827709803949588964877879569048362752128989120660489109005308377467550321009796839906917300109830661127723975384459543181888623863810683926928142210281250192543063011894106379749747636260940972589897929753777976298859182268991971891770793763768942565168955633112310190689617047068863751043226524408286700642510407069547002377426998453124271022274919077101450779578071721478417613757/1217866659164428710937500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "sin_upper": "1592113791160390673487769207926767876566968704183915361566653606396675864019066392614884514976731845728643578243567485681885150958757959133087275301914066322558083515391136082715137108036374386664835971066149997329592480212672032771928366212518759675076796964873803583875788393929376095057171317070523678906191704194164798999758254858819941409778064972748088658007316929444474745614990985740927/8128608897095546126365661621093750000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "sqrt_lower": "3492849839314596129264208726187/1000000000000000000000000000000",
+        "sqrt_upper": "873212459828649032316052181547/250000000000000000000000000000"
+      },
+      {
+        "gap_lower": "333809402394300161396601242789/500000000000000000000000000000",
+        "gap_upper": "834523505985750403491503106973/1250000000000000000000000000000",
+        "label": "c2_u",
+        "radicand": "109/5",
+        "sin_lower": "24707167738203438729751848383661633815563631304056159903778695406499324692700135282116134855917839735373204871516430162132194646974129464371642964126839141319599225746449929829537572147379194396251941038649229109581479315662444808661548082477379293769383987036849970626935609630514301586432793867226696449127184595989398488902416406799672572072694688922909865313551274795249005821858794786703978814188578547361480859025207422899683215273167518603479749893651/39907054687500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "sin_upper": "70126759830552935400189495041911327715049735077228588498323982234793064759437721201132957779325594386929633734926872528515748115500965668613719029856592676923691647460836135212439568146718471310200075919760438056699904027143714392359045374860917224260310498318919267506573717404447356049700813301904865676335270158880381358586141599185217717289519603676828764888419021083861274894740198364961471334733/113268848508596420288085937500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "sqrt_lower": "933809402394300161396601242789/200000000000000000000000000000",
+        "sqrt_upper": "2334523505985750403491503106973/500000000000000000000000000000"
+      }
+    ],
+    "tree_simple_bound": "DeltaW>1/16"
+  },
+  "finite_volume_complete_contrast": {
+    "formula": "DeltaR6=2*sqrt(2)*DeltaW/(3*N_s)+5*DeltaB/(24*pi^2)",
+    "loop_sign": "STRICTLY_POSITIVE_AND_VOLUME_INDEPENDENT",
+    "pi_bound": "pi<22/7",
+    "relative_q6_lower_bound": "DeltaR6>49/511104",
+    "spectator_norm": "N_s=12*kappa*V/5>0",
+    "status": "NONZERO_COMPLETE_Q6_CONTRAST_FOR_EVERY_FINITE_POSITIVE_VOLUME",
+    "tree_sign": "STRICTLY_POSITIVE_FOR_EVERY_N_s_GT_ZERO"
+  },
+  "lifecycle_state": "COEFFICIENT_COMPUTED",
+  "next_gate": "Thicken the two lattice modes into normalized compact angle/momentum packets while preserving a nonzero complete R6 contrast, or compute the full X6 column if the recorded and bright-port absolute q8 coefficients are required. The dark-port absolute q8 obstruction is closed only on the declared finite-volume reduced-mode apparatus.",
+  "provenance": {
+    "generated_by": "reverse_physics/bt_dark_port_absolute_q8_lower_bound.py",
+    "independent_verifier": "reverse_physics/verify_bt_dark_port_absolute_q8_lower_bound.py",
+    "inputs": [
+      {
+        "path": "planning/work-items/reverse-physics-bateman-dark-port-absolute-q8-lower-bound.json",
+        "sha256": "b7fc0f7931405920bb16f7001deaf8b951b570abcf29dea77d0faaab8f8d9da0"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_TWO_ANGLE_COHERENT_Q6_DETECTOR_V1.json",
+        "sha256": "b06a7ea92b4794bed66523888a0efc9e0cceed03f89927f1ce4638966b100b82"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_TWO_ANGLE_Q8_COHERENCE_DIFFERENCE_V1.json",
+        "sha256": "a3fe4ab807dc538f364f5adc5013937d5f2d5bb493dc41314d7ad21b2dcb8407"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_CONTINUOUS_ANGLE_Q6_FAMILY_V1.json",
+        "sha256": "b2a144a500727aefa8f6a8b6e682dc92a2f9678ee7df57bc5df4ed80562712f2"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_TAGGED_CONNECTED_FINITE_VOLUME_NORMALIZATION_V1.json",
+        "sha256": "efdbc5f064fe1c299ff9359cbc94102c4d09bead63b01e0d071e8ca0712b487c"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_FINITE_TIME_ACTIVE_LOOP_AFFILIATION_V1.json",
+        "sha256": "73d5f9d1db46e3c9a783acc8d35f94a17876425ce5f9aec3fca73f1c73d547a3"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_TAGGED_PACKET_NORMAL_ORDERED_SPECTATOR_REDUCTION_V1.json",
+        "sha256": "9ee80b008c7d68366c2909868e06798c130558f2d8725a07644e2f98e343a310"
+      },
+      {
+        "path": "planning/events/reverse-physics-bateman-dark-port-absolute-q8-lower-bound-DONE-b3c847bb.json",
+        "sha256": "90a7603781706951e32cd372e190af8d48fb015dbcdcd685056b4adeedef6241"
+      }
+    ],
+    "method": "Exact Fraction arithmetic, integer-square-root enclosures, alternating sine and Ci-combination series, finite-volume normalization algebra, and Cauchy-Schwarz. No floating-point arithmetic is used.",
+    "retrieval_date": "2026-08-13",
+    "source_commit": "b3c847bbc412403cf293f49fd6c8c4f93966b6c2"
+  },
+  "q6_to_q8_inequality": {
+    "Cauchy_step": "||X4(c2)-X4(c1)||^2>=q4_bar*DeltaR6^2/4",
+    "complete_q6_relation": "2*Re<x2,X4(ci)>=q4_bar*R6(ci)",
+    "contrast_relation": "Re<x2,X4(c2)-X4(c1)>=q4_bar*DeltaR6/2",
+    "dark_lower_bound": "Q8_dark/q4_bar>=DeltaR6^2/8",
+    "per_cell_leading_coefficient": "q4_bar=q4/lambda^4=||x2||^2",
+    "status": "COMPLETE_Q6_CONTRAST_FORCES_ABSOLUTE_DARK_Q8"
+  },
+  "question": "Can the complementary port of the certified two-angle BT apparatus have a strictly positive absolute order-lambda8 probability even though the recorded and bright-port X2-X6 interference remains uncomputed?",
+  "report": "reverse_physics/reports/bt-dark-port-absolute-q8-lower-bound.md",
+  "result_kind": "strictly positive absolute order-lambda8 dark-port detector coefficient and exact finite-volume lower bound derived from complete q6 contrast",
+  "schema": "reverse_physics/schema/reverse-physics-bt-dark-port-absolute-q8-lower-bound-v1.schema.json",
+  "schema_version": 1,
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_dark_port_absolute_q8_lower_bound.py --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_dark_port_absolute_q8_lower_bound.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_dark_port_absolute_q8_lower_bound"
+  ]
+}

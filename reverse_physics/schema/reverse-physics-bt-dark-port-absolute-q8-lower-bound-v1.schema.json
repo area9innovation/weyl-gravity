@@ -1,0 +1,131 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-dark-port-absolute-q8-lower-bound-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "schema_version", "certificate", "question", "answer",
+    "result_kind", "lifecycle_state", "dependency_tags", "assumptions",
+    "provenance", "dark_port_ledger", "q6_to_q8_inequality",
+    "exact_two_angle_witness", "finite_volume_complete_contrast",
+    "absolute_q8_bound", "disposition", "does_not_establish", "next_gate",
+    "checks", "verification_commands", "report"
+  ],
+  "properties": {
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-dark-port-absolute-q8-lower-bound-v1.schema.json"},
+    "schema_version": {"const": 1},
+    "certificate": {"const": "REVERSE_PHYSICS_BT_DARK_PORT_ABSOLUTE_Q8_LOWER_BOUND_V1"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE"]},
+    "assumptions": {"type": "array", "minItems": 7, "maxItems": 7, "items": {"$ref": "#/$defs/text"}},
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_commit", "retrieval_date", "inputs", "generated_by", "independent_verifier", "method"],
+      "properties": {
+        "source_commit": {"const": "b3c847bbc412403cf293f49fd6c8c4f93966b6c2"},
+        "retrieval_date": {"const": "2026-08-13"},
+        "inputs": {"type": "array", "minItems": 8, "maxItems": 8, "items": {
+          "type": "object", "additionalProperties": false, "required": ["path", "sha256"],
+          "properties": {"path": {"$ref": "#/$defs/text"}, "sha256": {"$ref": "#/$defs/hash"}}
+        }},
+        "generated_by": {"const": "reverse_physics/bt_dark_port_absolute_q8_lower_bound.py"},
+        "independent_verifier": {"const": "reverse_physics/verify_bt_dark_port_absolute_q8_lower_bound.py"},
+        "method": {"$ref": "#/$defs/text"}
+      }
+    },
+    "dark_port_ledger": {
+      "type": "object", "additionalProperties": false,
+      "required": ["bright_projector", "dark_effect", "selected_output", "leading_annihilation", "absolute_probability", "absolute_q8_coefficient", "X2_X6_disposition", "status"],
+      "properties": {
+        "bright_projector": {"const": "P_plus=|+><+|, |+>=(1,1)/sqrt(2)"},
+        "dark_effect": {"const": "P_minus=I-P_plus=|-><-|, |->=(1,-1)/sqrt(2)"},
+        "selected_output": {"const": "X(lambda)=lambda^2*X2+lambda^4*X4+lambda^6*X6+O(lambda^8)"},
+        "leading_annihilation": {"const": "P_minus*X2=0"},
+        "absolute_probability": {"const": "q_dark(lambda)=lambda^8*Q8_dark+O(lambda^10)"},
+        "absolute_q8_coefficient": {"const": "Q8_dark=<X4,P_minus X4>=||X4(c2)-X4(c1)||^2/2"},
+        "X2_X6_disposition": {"const": "ABSENT because <X2,P_minus X6>=<P_minus X2,X6>=0"},
+        "status": {"const": "ABSOLUTE_DARK_PORT_Q8_LEDGER_EXHAUSTED"}
+      }
+    },
+    "q6_to_q8_inequality": {
+      "type": "object", "additionalProperties": false,
+      "required": ["per_cell_leading_coefficient", "complete_q6_relation", "contrast_relation", "Cauchy_step", "dark_lower_bound", "status"],
+      "properties": {
+        "per_cell_leading_coefficient": {"const": "q4_bar=q4/lambda^4=||x2||^2"},
+        "complete_q6_relation": {"const": "2*Re<x2,X4(ci)>=q4_bar*R6(ci)"},
+        "contrast_relation": {"const": "Re<x2,X4(c2)-X4(c1)>=q4_bar*DeltaR6/2"},
+        "Cauchy_step": {"const": "||X4(c2)-X4(c1)||^2>=q4_bar*DeltaR6^2/4"},
+        "dark_lower_bound": {"const": "Q8_dark/q4_bar>=DeltaR6^2/8"},
+        "status": {"const": "COMPLETE_Q6_CONTRAST_FORCES_ABSOLUTE_DARK_Q8"}
+      }
+    },
+    "exact_two_angle_witness": {"type": "object", "additionalProperties": false,
+      "required": ["angles", "duration", "lattice_status", "tree_gaps", "tree_contrast", "tree_contrast_lower_receipt", "tree_contrast_upper_receipt", "tree_simple_bound", "loop_H_series", "loop_H_arguments_c1", "loop_H_arguments_c2", "loop_contrast_identity", "loop_contrast_lower_receipt", "loop_contrast_upper_receipt", "loop_simple_bound", "scale_and_scheme_dependence", "status"],
+      "properties": {
+        "angles": {"const": ["0", "3/5"]},
+        "duration": {"const": "kappa*T=1"},
+        "lattice_status": {"$ref": "#/$defs/text"},
+        "tree_gaps": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/gap"}},
+        "tree_contrast": {"const": "DeltaW=W(3/5,1)-W(0,1)"},
+        "tree_contrast_lower_receipt": {"$ref": "#/$defs/receipt"},
+        "tree_contrast_upper_receipt": {"$ref": "#/$defs/receipt"},
+        "tree_simple_bound": {"const": "DeltaW>1/16"},
+        "loop_H_series": {"$ref": "#/$defs/text"},
+        "loop_H_arguments_c1": {"const": ["32/25", "32/25"]},
+        "loop_H_arguments_c2": {"const": ["64/125", "256/125"]},
+        "loop_contrast_identity": {"const": "DeltaB=2*[2*H(32/25)-H(64/125)-H(256/125)]"},
+        "loop_contrast_lower_receipt": {"$ref": "#/$defs/receipt"},
+        "loop_contrast_upper_receipt": {"$ref": "#/$defs/receipt"},
+        "loop_simple_bound": {"const": "DeltaB>1/220"},
+        "scale_and_scheme_dependence": {"const": "CANCELS from DeltaB between the two angles"},
+        "status": {"const": "EXACT_STRICTLY_POSITIVE_TREE_AND_LOOP_CONTRASTS"}
+      }},
+    "finite_volume_complete_contrast": {"type": "object", "additionalProperties": false,
+      "required": ["spectator_norm", "formula", "tree_sign", "loop_sign", "pi_bound", "relative_q6_lower_bound", "status"],
+      "properties": {
+        "spectator_norm": {"const": "N_s=12*kappa*V/5>0"},
+        "formula": {"const": "DeltaR6=2*sqrt(2)*DeltaW/(3*N_s)+5*DeltaB/(24*pi^2)"},
+        "tree_sign": {"const": "STRICTLY_POSITIVE_FOR_EVERY_N_s_GT_ZERO"},
+        "loop_sign": {"const": "STRICTLY_POSITIVE_AND_VOLUME_INDEPENDENT"},
+        "pi_bound": {"const": "pi<22/7"},
+        "relative_q6_lower_bound": {"const": "DeltaR6>49/511104"},
+        "status": {"const": "NONZERO_COMPLETE_Q6_CONTRAST_FOR_EVERY_FINITE_POSITIVE_VOLUME"}
+      }
+    },
+    "absolute_q8_bound": {"type": "object", "additionalProperties": false,
+      "required": ["exact_rational_lower", "comparison", "leading_probability", "sign", "volume_uniformity", "status"],
+      "properties": {
+        "exact_rational_lower": {"$ref": "#/$defs/receipt"},
+        "comparison": {"const": "Q8_dark/q4_bar>2401/2089818390528>1/1000000000"},
+        "leading_probability": {"const": "q_dark(lambda)>lambda^8*q4_bar/1000000000 at coefficient level, with remainder O(lambda^10)"},
+        "sign": {"const": "STRICTLY_POSITIVE"},
+        "volume_uniformity": {"$ref": "#/$defs/text"},
+        "status": {"const": "ABSOLUTE_DARK_PORT_Q8_COEFFICIENT_STRICTLY_POSITIVE"}
+      }
+    },
+    "disposition": {"type": "object", "minProperties": 10, "additionalProperties": {"$ref": "#/$defs/text"}},
+    "does_not_establish": {"type": "array", "minItems": 13, "maxItems": 13, "items": {"$ref": "#/$defs/text"}},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "checks": {"type": "object", "additionalProperties": false, "required": ["total", "passed", "ok", "failures", "details"],
+      "properties": {"total": {"const": 26}, "passed": {"const": 26}, "ok": {"const": true}, "failures": {"const": []}, "details": {"type": "object", "minProperties": 26, "maxProperties": 26, "additionalProperties": {"const": true}}}},
+    "verification_commands": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/text"}},
+    "report": {"const": "reverse_physics/reports/bt-dark-port-absolute-q8-lower-bound.md"}
+  },
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "receipt": {"type": "object", "additionalProperties": false, "required": ["exact", "canonical_sha256"],
+      "properties": {"exact": {"$ref": "#/$defs/text"}, "canonical_sha256": {"$ref": "#/$defs/hash"}}},
+    "gap": {"type": "object", "additionalProperties": false,
+      "required": ["label", "radicand", "sqrt_lower", "sqrt_upper", "gap_lower", "gap_upper", "sin_lower", "sin_upper"],
+      "properties": {
+        "label": {"$ref": "#/$defs/text"}, "radicand": {"$ref": "#/$defs/text"},
+        "sqrt_lower": {"$ref": "#/$defs/text"}, "sqrt_upper": {"$ref": "#/$defs/text"},
+        "gap_lower": {"$ref": "#/$defs/text"}, "gap_upper": {"$ref": "#/$defs/text"},
+        "sin_lower": {"$ref": "#/$defs/text"}, "sin_upper": {"$ref": "#/$defs/text"}
+      }}
+  }
+}

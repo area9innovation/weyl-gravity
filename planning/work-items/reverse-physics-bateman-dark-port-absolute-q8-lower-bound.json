@@ -1,0 +1,37 @@
+{
+  "id": "sf:program/work/reverse-physics-bateman-dark-port-absolute-q8-lower-bound",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "reverse-physics",
+    "state": "ACTIVE",
+    "objective": "Turn the complete two-angle q6 contrast into a strictly positive absolute q8 coefficient for the complementary dark-port effect, avoiding the uncomputed X2-X6 bright-port interference.",
+    "depends_on": [
+      "REVERSE_PHYSICS_BT_TWO_ANGLE_COHERENT_Q6_DETECTOR_V1",
+      "REVERSE_PHYSICS_BT_TWO_ANGLE_Q8_COHERENCE_DIFFERENCE_V1",
+      "REVERSE_PHYSICS_BT_CONTINUOUS_ANGLE_Q6_FAMILY_V1",
+      "REVERSE_PHYSICS_BT_TAGGED_CONNECTED_FINITE_VOLUME_NORMALIZATION_V1",
+      "REVERSE_PHYSICS_BT_FINITE_TIME_ACTIVE_LOOP_AFFILIATION_V1",
+      "REVERSE_PHYSICS_BT_TAGGED_PACKET_NORMAL_ORDERED_SPECTATOR_REDUCTION_V1"
+    ],
+    "activates": [
+      "an exact dark-port probability ledger whose leading term is absolute order lambda8",
+      "a Cauchy lower bound from the complete q6 contrast that removes X6",
+      "an exact nonzero finite-volume two-angle witness at c=0 and c=3/5",
+      "the first strictly positive absolute q8 detector coefficient in the selected BT line"
+    ],
+    "current_gate": "Use P_minus X2=0 to show q8_dark=<X4,P_minus X4>=||X4(c2)-X4(c1)||^2/2. From 2 Re<x2,X4(ci)>=q4_coefficient*R6(ci), derive q8_dark/q4_coefficient>=DeltaR6^2/8. On the certified finite-volume modes at kappa*T=1, prove DeltaW>1/16 and DeltaB>1/220 by exact alternating-series intervals, hence DeltaR6>49/511104 and q8_dark/q4_coefficient>10^-9 for every positive spectator norm N_s.",
+    "stop_condition": "Land a COEFFICIENT_COMPUTED exact certificate, method-distinct verifier, mutations and report proving a strictly positive absolute dark-port q8 coefficient with the stated uniform lower bound, and integrate the theorem into Papers V and VI without calling it the still-open recorded or bright-port q8 coefficient.",
+    "forbid": "no claim that the recorded or bright-port absolute q8 coefficients are computed; no deletion of finite-volume normalization; no continuum-packet, all-order, Eq. 19, gravity, QME or LORENTZIAN-CAUSAL promotion; no literature-priority claim",
+    "allowed_paths": [
+      "reverse_physics/",
+      "paper/05-interaction-obstructions.tex",
+      "paper/05-interaction-obstructions.pdf",
+      "paper/06-einstein-weyl-interaction-obstructions.tex",
+      "paper/06-einstein-weyl-interaction-obstructions.pdf",
+      "planning/work-items/reverse-physics-bateman-dark-port-absolute-q8-lower-bound.json",
+      "planning/events/"
+    ],
+    "resource_hint": "The loop contrast is scale and common-scheme independent because the logarithmic scale and finite local constant cancel between angles. With pi<22/7, DeltaB>1/220 gives DeltaR6>5*49/(24*484*220)=49/511104 even if the positive finite-volume tree contrast is dropped. Squaring and dividing by eight gives 2401/2089818390528>10^-9."
+  }
+}
