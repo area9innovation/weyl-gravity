@@ -24,7 +24,7 @@ The certified strict bound is
  >{2401\over2284119687168}>{1\over10^9}.}
 \]
 
-Here (ar q_{4,\mathrm{pkt}}>0) is the leading one-packet coefficient and
+Here (\(\bar q_{4,\mathrm{pkt}}>0\)) is the leading one-packet coefficient and
 
 \[
  q_-(\lambda)=\lambda^8Q_{8,-}+O(\lambda^{10}).
@@ -104,8 +104,8 @@ where
 
 The common resonant and fixed-gap terms cancel between packet cells.  Rational
 square-root enclosures followed by alternating sine bounds prove uniformly
-for every equatorial (arphi_0\in I_0) and
-(arphi_1\in I_1) that
+for every equatorial (\(\varphi_0\in I_0\)) and
+(\(\varphi_1\in I_1\)) that
 
 \[
  \boxed{W(\cos\varphi_1,1)-W(\cos\varphi_0,1)>{1\over20}.}
