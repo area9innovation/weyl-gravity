@@ -2867,10 +2867,10 @@ The complete leading coefficient is also common to the public generalized-
 Krein and positive-Hilbert Born prescriptions.  With the coupling-independent
 tree coefficient denoted by $T_4$, set $T_{4,YX}=P_YT_4P_X$.  The packet
 projectors act on momentum and total ghost parity on the species carrier;
-hence both projectors commute with $\kappa_{m tot}$.  Coherent ten-channel
+hence both projectors commute with $\kappa_{\rm tot}$.  Coherent ten-channel
 fixedness then gives
 \[
- \kappa_{m tot}T_{4,YX}\kappa_{m tot}=T_{4,YX},\qquad
+ \kappa_{\rm tot}T_{4,YX}\kappa_{\rm tot}=T_{4,YX},\qquad
  T_{4,YX}^\sharp=T_{4,YX}^*.
 \]
 The exact disconnected-support exhaustion identifies this restricted
@@ -2887,8 +2887,30 @@ defect.  Certificate
 \allowbreak\texttt{BORN\_PHYSICAL\_V1}
 \par\noindent
 therefore establishes a complete-leading public common-Born finite-time
-physical probability.  The $O(\lambda^9)$ remainder, overlap sectors,
-Eq.~(19), metric BV--BRST transfer and Lorentzian causality remain open.
+physical probability.
+
+The apparent order-$\lambda^9$ correction vanishes by exact coupling/Fock-
+parity covariance, which is distinct from ghost parity.  In the covariant
+source--detector family,
+\[
+ Y(\lambda)=\lambda^4y_4+\lambda^5y_5+O(\lambda^6),\qquad
+ \Pi_Fy_4=-y_4,\quad\Pi_Fy_5=+y_5.
+\]
+Both the public Krein and Hilbert forms make opposite parity sectors
+orthogonal, including all dynamical, source and detector terms in $y_5$.
+Thus
+\[
+ q_9^{\mathrm{public}}=q_9^{\mathrm{Hilbert}}=0,
+ \qquad q=\lambda^8q_8+\lambda^{10}q_{10}+O(\lambda^{12}).
+\]
+Certificate
+\par\noindent
+\texttt{REVERSE\_PHYSICS\_BT\_FULLY\_REARRANGED\_LAMBDA9\_}
+\allowbreak\texttt{PARITY\_SELECTION\_V1}
+\par\noindent
+checks both exact cross forms and a parity-breaking mutation.  The $q_{10}$
+coefficient, overlap sectors, Eq.~(19), metric BV--BRST transfer and
+Lorentzian causality remain open.
 The first overlap stratum is nevertheless separately tractable.  An exact
 hard nonforward rational configuration has one tagged identity spectator and
 no competing component momentum delta.  Exhaustive enumeration of all 203

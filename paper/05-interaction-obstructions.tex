@@ -3470,12 +3470,12 @@ the coupling-independent tree coefficient as $T_4$ and put
 $T_{4,YX}=P_YT_4P_X$.  Momentum support projectors and species parity act on
 different tensor factors, so
 \[
- [P_X,\kappa_{m tot}]=[P_Y,\kappa_{m tot}]=0.
+ [P_X,\kappa_{\rm tot}]=[P_Y,\kappa_{\rm tot}]=0.
 \]
 The coherent ten-channel identity
-$\kappa_{m tot}T_4\kappa_{m tot}=T_4$ therefore restricts to
+$\kappa_{\rm tot}T_4\kappa_{\rm tot}=T_4$ therefore restricts to
 \[
- \kappa_{m tot}T_{4,YX}\kappa_{m tot}=T_{4,YX},\qquad
+ \kappa_{\rm tot}T_{4,YX}\kappa_{\rm tot}=T_{4,YX},\qquad
  T_{4,YX}^\sharp=T_{4,YX}^*.
 \]
 Because the support theorem makes all 202 disconnected order-$\lambda^4$
@@ -3491,9 +3491,32 @@ generic trace squares $770$ and zero Born defect.  Certificate
 \allowbreak\texttt{BORN\_PHYSICAL\_V1}
 \par\noindent
 therefore promotes the complete leading fully rearranged coefficient to a
-public common-Born physical probability.  The $O(\lambda^9)$ probability
-remainder, overlap detectors, all-time scattering, general Eq.~(19), gravity
-and Lorentzian causality remain open.
+public common-Born physical probability.
+
+Exact coupling/Fock-parity covariance removes the nominal
+$O(\lambda^9)$ term.  This total fluctuation parity is distinct from ghost
+parity.  For the covariantly dressed source and detector,
+\[
+ Y(\lambda)=\lambda^4y_4+\lambda^5y_5+O(\lambda^6),\qquad
+ \Pi_Fy_4=-y_4,\quad \Pi_Fy_5=+y_5.
+\]
+The complete $y_5$ includes order-five dynamics, $T_4\psi_1$, and the first
+covariant detector correction.  Since $\Pi_F$ is self-adjoint for both Born
+forms,
+\[
+ q_9^{\mathrm{public}}=2\operatorname{Re}\langle y_4,y_5\rangle_K=0,
+ \qquad
+ q_9^{\mathrm{Hilbert}}=2\operatorname{Re}\langle y_4,y_5\rangle_H=0.
+\]
+Certificate
+\par\noindent
+\texttt{REVERSE\_PHYSICS\_BT\_FULLY\_REARRANGED\_LAMBDA9\_}
+\allowbreak\texttt{PARITY\_SELECTION\_V1}
+\par\noindent
+therefore sharpens the common probability to
+$q=\lambda^8q_8+\lambda^{10}q_{10}+O(\lambda^{12})$ in parity order.  The
+$q_{10}$ coefficient, overlap detectors, all-time scattering, general
+Eq.~(19), gravity and Lorentzian causality remain open.
 The first overlap stratum can also be closed locally.  There is an exact hard
 nonforward rational configuration with one tagged identity spectator and no
 other vanishing component momentum sum of sizes one, two, or three.  Of all

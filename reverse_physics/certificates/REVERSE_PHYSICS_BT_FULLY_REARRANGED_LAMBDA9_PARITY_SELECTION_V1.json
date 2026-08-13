@@ -1,0 +1,220 @@
+{
+  "answer": "No for the certified covariantly dressed fully rearranged packet family. Exact S_lambda[phi]=S_-lambda[-phi] covariance makes coupling order equal total fluctuation Fock-parity change. The leading three-particle source and detector sector are Fock odd. The complete order-four output y4 is odd, whereas the complete order-five output y5 is even; y5 includes the order-five dynamics, the order-four transition acting on the order-lambda source correction, and the first covariant detector correction. Total Fock parity is self-adjoint for both the public Krein and positive Hilbert forms, so 2 Re<y4,y5> vanishes in both prescriptions. Thus q9_public=q9_Hilbert=0 and q_click=lambda8 q8+lambda10 q10+O(lambda12) in parity order. The already certified q8 is complete-leading and common-Born; q10 is not computed.",
+  "assumptions": [
+    "source and detector are the covariant lambda-family rather than held noncovariantly fixed under lambda sign reversal",
+    "packet projectors select the three-particle sector and commute with total fluctuation Fock parity",
+    "regularization and counterterms preserve exact coupling/Fock-parity covariance",
+    "the result concerns finite perturbative coefficients, not an all-time expansion"
+  ],
+  "certificate": "REVERSE_PHYSICS_BT_FULLY_REARRANGED_LAMBDA9_PARITY_SELECTION_V1",
+  "checks": {
+    "details": {
+      "Fock_parity_distinct_from_ghost": true,
+      "Hilbert_q9_zero": true,
+      "Pi_Hilbert_selfadjoint": true,
+      "Pi_Krein_selfadjoint": true,
+      "disconnected_leading_ledger_complete": true,
+      "event_done": true,
+      "exact_covariance_imported": true,
+      "first_unresolved_probability_order_is_lambda10": true,
+      "higher_Eq19_gravity_Lorentzian_open": true,
+      "inputs_content_pinned": true,
+      "leading_q8_common_Born": true,
+      "parity_break_mutation_detected": true,
+      "predecessors_pass": true,
+      "public_Born_imported": true,
+      "public_q9_zero": true,
+      "three_particle_packet_projectors_are_even": true,
+      "three_particle_source_is_odd": true,
+      "work_active": true,
+      "y4_odd": true,
+      "y5_even": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 20,
+    "total": 20
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "disposition": {
+    "Lorentzian_causal_claim": "NOT_ESTABLISHED",
+    "first_unresolved_probability_order": "LAMBDA10",
+    "general_Eq19": "NOT_PROVED",
+    "gravity_or_metric_BV_BRST_transfer": "NOT_CONSTRUCTED",
+    "leading_q8_common_Born": "COEFFICIENT_COMPUTED",
+    "probability_order_lambda9": "EXACTLY_ZERO_IN_BOTH_BORN_FORMS",
+    "q10_coefficient": "NOT_COMPUTED",
+    "spectator_overlap_detectors": "NOT_COMPLETED"
+  },
+  "does_not_establish": [
+    "the value or sign of q10",
+    "finite-coupling positivity",
+    "a detector held noncovariantly fixed under lambda sign reversal",
+    "spectator-overlap completion",
+    "an all-time operator",
+    "loop or KLN completion",
+    "general Eq. (19)",
+    "gravity or metric BV--BRST transfer",
+    "anything LORENTZIAN-CAUSAL",
+    "literature priority"
+  ],
+  "finite_dual_metric_witness": {
+    "Fock_parity": [
+      [
+        "-1",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "-1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "1"
+      ]
+    ],
+    "Hilbert_cross": "0",
+    "Hilbert_metric": [
+      [
+        "1",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "1"
+      ]
+    ],
+    "Krein_metric": [
+      [
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "1",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      [
+        "0",
+        "0",
+        "1",
+        "0"
+      ]
+    ],
+    "parity_breaking_cross": "20",
+    "public_cross": "0",
+    "status": "ODD_EVEN_OUTPUTS_ARE_ORTHOGONAL_IN_BOTH_BORN_FORMS",
+    "y4": [
+      "2",
+      "-3",
+      "0",
+      "0"
+    ],
+    "y5": [
+      "0",
+      "0",
+      "5",
+      "7"
+    ]
+  },
+  "fully_rearranged_output_selection": {
+    "Hilbert_cross": "q9_Hilbert=2*Re<y4,y5>_H=0",
+    "complete_next_output": "y5 contains T5 psi0, T4 psi1 and first covariant detector correction and is Pi_F-even",
+    "leading_output": "y4=T4 psi0 is Pi_F-odd",
+    "output_series": "Y=lambda^4*y4+lambda^5*y5+O(lambda^6)",
+    "probability_series": "q_click=lambda^8*q8+0*lambda^9+lambda^10*q10+O(lambda^12), with every odd coefficient zero",
+    "public_cross": "q9_public=2*Re<y4,y5>_K=0",
+    "status": "COMPLETE_FULLY_REARRANGED_PROBABILITY_ORDER_LAMBDA9_COEFFICIENT_ZERO"
+  },
+  "lifecycle_state": "COEFFICIENT_COMPUTED",
+  "missing_object_ledger": [
+    "complete fully rearranged q10 object ledger",
+    "order-lambda6 transition and second-order source/detector coefficients",
+    "all-channel spectator-overlap composition",
+    "Eq. (19) or gravity/BV--BRST transfer"
+  ],
+  "next_gate": "Classify every contribution to q10: ||y5||^2 plus 2 Re<y4,y6>, including order-lambda6 connected loops, second-order source/detector corrections and survival terms. Test total ghost-kappa fixedness of the complete selected coefficient before claiming common-Born q10 or finite-coupling positivity.",
+  "provenance": {
+    "generated_by": "reverse_physics/bt_fully_rearranged_lambda9_parity_selection.py",
+    "independent_verifier": "reverse_physics/verify_bt_fully_rearranged_lambda9_parity_selection.py",
+    "inputs": [
+      {
+        "path": "planning/work-items/reverse-physics-bateman-fully-rearranged-lambda9-parity-selection.json",
+        "sha256": "94e955c28e5232e06c0a279cf1dc521897497164ce95b59eb23134a67e92c1ae"
+      },
+      {
+        "path": "planning/events/reverse-physics-bateman-fully-rearranged-lambda9-parity-selection-DONE-acb87dd1.json",
+        "sha256": "446ea9e8e4f6839ea71bce1f9f16ad1dc10bfdbaf75796cec3844515b71868f2"
+      },
+      {
+        "path": "reverse_physics/data/bateman_turok_hamiltonian_source_v1.json",
+        "sha256": "55ff3f989f1c5ac9bcc0688ad9c43721c22b5889c43da50fce43352c18be8fe7"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_FULLY_REARRANGED_COMMON_BORN_PHYSICAL_V1.json",
+        "sha256": "7ade5768a01cc42cf0ef1edfea9c8cf4c52cc716956a7abfc280c1def5611d47"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_TAGGED_PACKET_LAMBDA5_PARITY_SELECTION_V1.json",
+        "sha256": "2b777594fdd107f081df5c6b10f9fa0650510d1998419225c67a02d77faba87b"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_SCALAR_DRESSED_SOURCE_COMPACT_WAVEPACKET_V1.json",
+        "sha256": "99d728aa4870389c6ee87cd96a9653c55e6b1ccf9e52c55633bb633292920bee"
+      }
+    ],
+    "method": "Exact rational odd/even block witness for both Krein and Hilbert forms plus content-pinned import of the symbolic coupling/Fock-parity covariance theorem.",
+    "retrieval_date": "2026-08-13",
+    "source_commit": "acb87dd1ff3986be900ebdbf1c0f13086c654964"
+  },
+  "question": "Can the complete first correction to the fully rearranged common-Born probability contribute at order lambda9?",
+  "report": "reverse_physics/reports/bt-fully-rearranged-lambda9-parity-selection.md",
+  "result_kind": "exact dual-Born total-Fock-parity selection theorem for the complete fully rearranged probability-order-lambda9 coefficient",
+  "schema": "reverse_physics/schema/reverse-physics-bt-fully-rearranged-lambda9-parity-selection-v1.schema.json",
+  "schema_version": 1,
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_fully_rearranged_lambda9_parity_selection.py --write --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_fully_rearranged_lambda9_parity_selection.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_fully_rearranged_lambda9_parity_selection"
+  ]
+}
