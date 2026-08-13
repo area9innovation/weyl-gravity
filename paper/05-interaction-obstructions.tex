@@ -284,7 +284,17 @@ local-net hypothesis that the spacelike-complement algebra is cyclic on the
 vacuum, its nonzero exactly vacuum-dark effect is ruled out as a bounded
 local effect; a balanced local contrast with nonzero vacuum baselines exists
 conditionally on self-adjoint local affiliation and domains.  The
-recorded and symmetric bright-port absolute $q_8$ coefficients, continuum
+positive-real-structure gate is sharper still.  The public two-field
+Wightman species Gram has signature $(1,1)$, so it cannot be a positive
+vacuum two-point matrix while both public fields remain individually
+Hermitian.  The fundamental-symmetry Hilbertization makes the Gram positive
+but changes the adjoint to $\Omega^*=\Upsilon$.  A Krein-selfadjoint local
+observable then remains Hilbert-selfadjoint exactly when it is ghost-even;
+the compact quadrupole has not yet been certified to satisfy this condition.
+An exact weak-ghost fixture also separates the generalized Krein Born weight
+$2$ from the ordinary Hilbert weight $3$, so the auxiliary positive topology
+does not silently replace the public probability rule.  The recorded and
+symmetric bright-port absolute $q_8$ coefficients, continuum
 coherence and both forward endpoints remain open.  On the two-mode carrier,
 an explicit finite pointer Hamiltonian now selects the detector strength and
 relative phase; it is added apparatus physics, not a prediction of the public
@@ -4285,6 +4295,81 @@ asserting that a single nonlinear function preserves darkness or that this is
 a one-shot dark-port probability.  What remains open is the positive BT local
 net, self-adjoint affiliation and the domain theorem needed to instantiate
 it, as well as Eq.~(19) and gravity.
+
+There is an independent real-structure gate before these positive-Hilbert
+hypotheses can be imported into the public BT carrier.  On any test packet
+with nonzero massless scalar pairing $w(f,f)>0$, the public two-field
+Wightman matrix factors as $w(f,f)G$, where
+\[
+ G=\begin{pmatrix}0&1\\1&0\end{pmatrix}.
+\]
+The species combinations $t=(1,1)$ and $x=(1,-1)$ have exact scaled norms
+$2$ and $-2$, respectively, and $\det G=-1$.  Thus no positive Hilbert
+vacuum representation can preserve this two-point matrix while treating
+$\Omega$ and $\Upsilon$ as individually Hermitian real fields.  Equivalently,
+the zero diagonal entries would make both field-created vectors vanish in a
+positive space, contradicting their nonzero cross pairing.
+
+The public fundamental symmetry does furnish a positive auxiliary carrier:
+$\kappa=G$, so $G\kappa=I$.  It necessarily changes the adjoint.  If
+$\sharp$ denotes the Krein adjoint and $*$ the positive-Hilbert adjoint, then
+\[
+ A^*=\kappa A^\sharp\kappa,
+ \qquad \Omega^*=\Upsilon,
+ \qquad T^*=T,\quad X^*=-X,
+\]
+for $T=(\Omega+\Upsilon)/2$ and $X=(\Omega-\Upsilon)/2$.  Hence, for
+$A^\sharp=A$,
+\[
+ A_{\rm e}={A+\kappa A\kappa\over2},\qquad
+ A_{\rm o}={A-\kappa A\kappa\over2},
+ \qquad
+ A_{\rm e}^*=A_{\rm e},\quad A_{\rm o}^*=-A_{\rm o},
+\]
+and $(iA_{\rm o})^*=iA_{\rm o}$.  In particular,
+\[
+ \boxed{A^*=A\quad\Longleftrightarrow\quad\kappa A\kappa=A}
+\]
+for a Krein-selfadjoint operator.  If $\kappa$ preserves each local algebra,
+the bounded parity components remain local; an unbounded density also needs
+a common $\kappa$-invariant domain and affiliation proof.
+
+This adjoint change also prevents an implicit replacement of the generalized
+Born rule.  In the ordered positive/negative-charge species basis, take
+\[
+ B=I,\qquad Q=E_{21}=\begin{pmatrix}0&0\\1&0\end{pmatrix},
+ \qquad A=B+Q.
+\]
+Exact matrix algebra gives $Q^\sharp=Q$, $Q^2=0$ and
+\[
+ \operatorname{tr}(Q^\sharp Q)
+ =\operatorname{tr}(B^\sharp Q)=0,
+ \qquad \operatorname{tr}(A^\sharp A)=2.
+\]
+But $Q^*=E_{12}$, so
+\[
+ \operatorname{tr}(Q^*Q)=1,
+ \qquad \operatorname{tr}(A^*A)=3.
+\]
+Thus a nonzero negative-charge remainder can be null for the public Krein
+functional without being null in the positive Hilbert topology.  In
+Eq.~(19) the advertised neutral term is the correct ghost-even candidate,
+but the negative-charge $Q_\chi$ requires a local dynamics-compatible
+quotient or conditional expectation before an ordinary positive local Born
+interpretation follows.
+
+Certificate
+\par\noindent
+\texttt{REVERSE\_PHYSICS\_BT\_POSITIVE\_LOCAL\_REAL\_}
+\allowbreak\texttt{STRUCTURE\_DICHOTOMY\_V1}
+\par\noindent
+classifies this \texttt{LOCAL-ALGEBRAIC} dichotomy.  It does not rule out
+$\kappa$-Hilbertization or the generalized Krein rule.  It shows that the
+compact quadrupole must first be projected to its ghost-even part, or to
+$i$ times its ghost-odd part, and its $X_2/X_4$ response and common domains
+rechecked.  Momentum-exchange evenness is not a certificate of internal
+ghost parity.  The positive BT local net, Eq.~(19), its physical quotient,
+and every gravitational or Lorentzian transfer remain open.
 
 The effect itself has a finite Hamiltonian realization.  For the phased
 antisymmetric angle projector

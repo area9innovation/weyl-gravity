@@ -1,0 +1,322 @@
+{
+  "Eq19_and_detector_consequence": {
+    "Eq19_role": "the advertised neutral term is the candidate ghost-even Hilbert observable, while the negatively charged Q term is Krein-null but is not automatically null in the positive Hilbert norm",
+    "current_quadrupole_status": "KAPPA_PARITY_AND_INVARIANT_DOMAIN_NOT_ESTABLISHED",
+    "physical_quotient_gate": "to obtain an ordinary positive local theory, prove that the Q sector is zero or removed by a local dynamics-compatible quotient/conditional expectation without changing the certified probabilities",
+    "quadrupole_gate": "prove the compact quadrupole density is kappa-even on a common invariant domain, or retain its even and i-times-odd observables separately and recheck the X2/X4 responses",
+    "status": "EXACT_NECESSARY_CONDITIONS_CLASSIFIED"
+  },
+  "answer": "Not simultaneously. On any test packet with nonzero positive mass-shell pairing, the public Omega/Upsilon Wightman matrix factors as w times G with G=[[0,1],[1,0]]. It has exact signature (1,1), so it cannot be the positive-type vacuum two-point matrix of two individually Hermitian fields. The public fundamental symmetry kappa=G does give the positive auxiliary Hilbert Gram G kappa=I, but the corresponding Hilbert adjoint is A*=kappa A^sharp kappa: Omega*=Upsilon, T*=T and X*=-X. Thus a Krein-selfadjoint observable remains Hilbert-selfadjoint exactly when it is ghost-even; its ghost-odd part becomes Hilbert-selfadjoint after multiplication by i. Hilbertization also does not preserve the generalized Born functional on weakly ghost-symmetric operators: the exact B=I, Q=E21 fixture has tr(Q^sharp Q)=tr(B^sharp Q)=0 and generalized weight 2, but positive-Hilbert remainder weight 1 and ordinary Hilbert weight 3. A positive local BT realization is therefore not ruled out, but it changes the real observable structure and cannot silently replace the public Born rule. The compact quadrupole route now requires a certified kappa-even density, or a controlled even/odd decomposition with common invariant domains; the existing detector certificate supplies neither.",
+  "assumptions": [
+    "the public O(1,1) free Wightman matrix has only the cross entries W^{Omega Upsilon}=W^{Upsilon Omega}=w and w(f,f)>0 for at least one positive-frequency test packet",
+    "Omega and Upsilon are individually Krein-selfadjoint public real fields and kappa exchanges them",
+    "the auxiliary positive product is (u,v)_kappa=[u,kappa v], so its adjoint is A*=kappa A^sharp kappa",
+    "finite weak-ghost traces use the ordinary algebraic trace together with the Krein adjoint, exactly as in the declared fixture",
+    "a local escape additionally requires kappa to act as an internal automorphism preserving each local algebra and the relevant unbounded domains",
+    "no positive Haag--Kastler net, Reeh--Schlieder theorem or self-adjoint affiliation is assumed for public BT"
+  ],
+  "certificate": "REVERSE_PHYSICS_BT_POSITIVE_LOCAL_REAL_STRUCTURE_DICHOTOMY_V1",
+  "checks": {
+    "details": {
+      "Born_weights_are_inequivalent": true,
+      "Eq19_remains_open": true,
+      "cross_Gram_has_negative_determinant": true,
+      "cross_Gram_is_not_positive_semidefinite": true,
+      "cross_Gram_is_symmetric": true,
+      "done_event_matches_work_item": true,
+      "even_part_is_Hilbert_selfadjoint": true,
+      "generalized_Born_weight_is_two": true,
+      "ghost_evenness_is_exact_observable_gate": true,
+      "gravity_and_Lorentzian_boundaries_remain_open": true,
+      "i_times_odd_part_is_Hilbert_selfadjoint": true,
+      "individual_real_fields_do_not_survive_Hilbertization": true,
+      "inputs_are_content_pinned": true,
+      "kappa_Hilbert_Gram_is_identity": true,
+      "kappa_Hilbert_Gram_is_positive": true,
+      "kappa_is_involution": true,
+      "literature_priority_is_forbidden": true,
+      "negative_direction_has_norm_minus_two": true,
+      "negative_remainder_Hilbert_adjoint_is_opposite_matrix_unit": true,
+      "negative_remainder_has_positive_Hilbert_weight": true,
+      "negative_remainder_is_Krein_null": true,
+      "negative_remainder_is_Krein_orthogonal_to_even_part": true,
+      "negative_remainder_is_Krein_selfadjoint": true,
+      "negative_remainder_is_nilpotent": true,
+      "negative_remainder_is_not_ghost_even": true,
+      "odd_part_is_Hilbert_anti_selfadjoint": true,
+      "ordinary_Hilbert_Born_weight_is_three": true,
+      "positive_direction_has_norm_two": true,
+      "positive_local_net_remains_open": true,
+      "predecessor_passes": true,
+      "predecessor_positive_local_net_is_open": true,
+      "public_digest_declares_cross_Wightman": true,
+      "public_digest_declares_indefinite_inner_product": true,
+      "public_digest_records_Eq19_deferred": true,
+      "quadrupole_ghost_parity_is_not_imported": true,
+      "weak_process_is_Krein_selfadjoint": true,
+      "weak_process_is_not_Hilbert_selfadjoint": true,
+      "zero_diagonal_nonzero_cross_contradicts_positive_type": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 38,
+    "total": 38
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "disposition": {
+    "Lorentzian_causal_BT_claim": "NOT_ESTABLISHED",
+    "compact_quadrupole_kappa_parity": "NOT_ESTABLISHED",
+    "general_Eq19": "NOT_PROVED",
+    "gravity_or_metric_BV_BRST_transfer": "NOT_CONSTRUCTED",
+    "kappa_Hilbert_carrier": "POSITIVE_AUXILIARY_CARRIER_CONSTRUCTED_ALGEBRAICALLY",
+    "physical_Q_sector_quotient": "NOT_CONSTRUCTED",
+    "positive_BT_Haag_Kastler_net": "NOT_CONSTRUCTED",
+    "positive_local_observable_gate": "KREIN_SELFADJOINT_PLUS_GHOST_EVEN_OR_I_TIMES_GHOST_ODD",
+    "positive_representation_with_public_real_adjoint": "RULED_OUT_FOR_NONZERO_PUBLIC_CROSS_WIGHTMAN_PAIRING",
+    "public_and_Hilbert_Born_functionals": "INEQUIVALENT_ON_THE_EXACT_NONZERO_WEAK_GHOST_FIXTURE",
+    "public_and_Hilbert_adjoints": "INEQUIVALENT_ON_GHOST_ODD_FIELDS_AND_OPERATORS"
+  },
+  "does_not_establish": [
+    "that kappa-Hilbertization is mathematically impossible",
+    "that the public generalized Krein Born rule is inconsistent",
+    "that the auxiliary Hilbert product is the public physical probability product",
+    "a positive Haag--Kastler net or Reeh--Schlieder property for BT",
+    "self-adjoint local affiliation or invariant domains for the compact quadrupole density",
+    "that momentum-exchange evenness of the quadrupole equals ghost-parity evenness",
+    "survival of the certified X4 response after the kappa-even or i-times-odd projection",
+    "a local dynamics-compatible quotient or conditional expectation removing the Q sector",
+    "the standard scalar projector or general Bateman--Turok Eq. (19)",
+    "a complete positive BT Hilbert, Fock, Born or scattering construction",
+    "gravity, metric BV--BRST, QME restoration or residual transfer",
+    "anything LORENTZIAN-CAUSAL for the BT or gravitational models",
+    "literature priority"
+  ],
+  "finite_exact_fixture": {
+    "conclusion": "the exact parity split realizes the two allowed positive-Hilbert observable channels A_even and i A_odd",
+    "even_part": [
+      [
+        "1",
+        "1/2"
+      ],
+      [
+        "1/2",
+        "1"
+      ]
+    ],
+    "even_part_Hilbert_adjoint": [
+      [
+        "1",
+        "1/2"
+      ],
+      [
+        "1/2",
+        "1"
+      ]
+    ],
+    "odd_part": [
+      [
+        "0",
+        "-1/2"
+      ],
+      [
+        "1/2",
+        "0"
+      ]
+    ],
+    "odd_part_Hilbert_adjoint": [
+      [
+        "0",
+        "1/2"
+      ],
+      [
+        "-1/2",
+        "0"
+      ]
+    ]
+  },
+  "kappa_Hilbertization_dictionary": {
+    "Krein_Gram_G": [
+      [
+        "0",
+        "1"
+      ],
+      [
+        "1",
+        "0"
+      ]
+    ],
+    "adjoint_relation": "A*=kappa A^sharp kappa",
+    "field_adjoint_map": [
+      "Omega*=Upsilon",
+      "Upsilon*=Omega",
+      "T*=T",
+      "X*=-X",
+      "(iX)*=iX"
+    ],
+    "fundamental_symmetry_kappa": [
+      [
+        "0",
+        "1"
+      ],
+      [
+        "1",
+        "0"
+      ]
+    ],
+    "interpretation": "the auxiliary positive carrier exists, but Omega and Upsilon become a mutually adjoint complex pair rather than two individually Hermitian public real fields",
+    "positive_Hilbert_Gram_G_kappa": [
+      [
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "1"
+      ]
+    ],
+    "status": "CONSTRUCTED_EXACTLY"
+  },
+  "lifecycle_state": "CLASSIFIED",
+  "literature_context": {
+    "current_public_version_checked": "v1 on 2026-08-13; the detailed Eq. (19) proof remains deferred to a work listed as to appear",
+    "primary_reference": "S. Bateman and N. Turok, Escape from Ostrogradsky via Hidden Ghost Parity, arXiv:2607.00096v1 (2026)",
+    "priority_status": "NOT_CLAIMED",
+    "stable_url": "https://arxiv.org/abs/2607.00096",
+    "use": "public cross Wightman matrix, fundamental symmetry, generalized Born rule and Eq. (19) statement only; all representation-mismatch and trace-separation proofs here are self-contained"
+  },
+  "next_gate": "Compute the hidden-ghost-parity transform of the compact quadrupole density on the same finite packet core. If its even projection retains zero X2 and nonzero X4 response, the positive-local balanced contrast has the correct real structure; otherwise test i times the odd projection. In parallel, Eq. (19) still requires a local dynamics-compatible treatment of its nonzero negative-charge Q sector, since Krein nullity does not make that sector null in the positive Hilbert topology.",
+  "observable_parity_theorem": {
+    "adjoints": [
+      "A_even*=A_even",
+      "A_odd*=-A_odd",
+      "(i A_odd)*=i A_odd"
+    ],
+    "even_part": "A_even=(A+kappa A kappa)/2",
+    "hypothesis": "A^sharp=A",
+    "iff_statement": "A*=A iff kappa A kappa=A",
+    "local_escape_condition": "if kappa preserves A(O), then bounded A_even and i A_odd remain in A(O); unbounded densities additionally require a common kappa-invariant domain and affiliation proof",
+    "odd_part": "A_odd=(A-kappa A kappa)/2",
+    "status": "PROVED_EXACTLY"
+  },
+  "positive_Wightman_obstruction": {
+    "conclusion": "NO_POSITIVE_HILBERT_REPRESENTATION_PRESERVING_BOTH_PUBLIC_REAL_FIELDS_AND_THE_PUBLIC_TWO_POINT_MATRIX",
+    "determinant": "-1",
+    "factored_public_Gram": [
+      [
+        "0",
+        "1"
+      ],
+      [
+        "1",
+        "0"
+      ]
+    ],
+    "negative_direction": "X=(Omega-Upsilon)/2",
+    "negative_direction_scaled_norm": "-2",
+    "positive_direction": "T=(Omega+Upsilon)/2",
+    "positive_direction_scaled_norm": "2",
+    "positive_type_contradiction": "in a positive Hilbert vacuum representation the diagonal entries are squared norms; both being zero forces both field-created vectors and hence their cross pairing to vanish, contrary to w(f,f)>0",
+    "scalar_factor": "w(f,f)>0",
+    "status": "PROVED_EXACTLY"
+  },
+  "provenance": {
+    "generated_by": "reverse_physics/bt_positive_local_real_structure_dichotomy.py",
+    "independent_verifier": "reverse_physics/verify_bt_positive_local_real_structure_dichotomy.py",
+    "inputs": [
+      {
+        "path": "planning/work-items/reverse-physics-bateman-positive-local-real-structure-dichotomy.json",
+        "sha256": "7ec51b122a65e1b0bb6f2ed8cbf18b91ad4551d2b94797b9cd13cd230ab9938c"
+      },
+      {
+        "path": "planning/events/reverse-physics-bateman-positive-local-real-structure-dichotomy-DONE-769024f1.json",
+        "sha256": "94cb1942ebab04e522e6596999c37d7f3558892a4dbf0580f345698c5a868f97"
+      },
+      {
+        "path": "notes/bateman-turok-embedding.md",
+        "sha256": "fba59a777e24e948883d5642d6245c8969b472513ec6ee83aa6aeddc53e1f675"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_REEH_SCHLIEDER_LOCAL_DETECTOR_OBSTRUCTION_V1.json",
+        "sha256": "017b62de9583eb962665572848a6a3d779ea47b97cc7d9e71c63fdb92e57a926"
+      }
+    ],
+    "method": "Exact rational two-dimensional species-Gram, adjoint and trace computation after factoring a strictly positive scalar mass-shell test-packet pairing. The independent rail reconstructs the obstruction from principal minors and recomputes the trace separation from matrix units. No floating-point arithmetic enters the claim.",
+    "retrieval_date": "2026-08-13",
+    "source_commit": "769024f1e6e0f097883f1ee8f2e39aca77ee5ae1"
+  },
+  "question": "Can the positive Hilbert-space local-net assumptions needed by the balanced BT quadrupole preserve the public two-field Wightman matrix, individual real-field adjoint and generalized Born rule?",
+  "report": "reverse_physics/reports/bt-positive-local-real-structure-dichotomy.md",
+  "result_kind": "exact public-BT real-structure dichotomy between preservation of the Krein Wightman/adjoint data and a positive Hilbert local-observable interpretation, with the necessary and sufficient ghost-evenness escape condition",
+  "schema": "reverse_physics/schema/reverse-physics-bt-positive-local-real-structure-dichotomy-v1.schema.json",
+  "schema_version": 1,
+  "verification_commands": [
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/bt_positive_local_real_structure_dichotomy.py --check",
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/verify_bt_positive_local_real_structure_dichotomy.py",
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 -m unittest -v reverse_physics.tests.test_bt_positive_local_real_structure_dichotomy"
+  ],
+  "weak_ghost_Born_separation": {
+    "B": [
+      [
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "1"
+      ]
+    ],
+    "Krein_cross_weight": "0",
+    "Krein_null_weight": "0",
+    "Q_negative": [
+      [
+        "0",
+        "0"
+      ],
+      [
+        "1",
+        "0"
+      ]
+    ],
+    "Q_sharp": [
+      [
+        "0",
+        "0"
+      ],
+      [
+        "1",
+        "0"
+      ]
+    ],
+    "Q_squared": [
+      [
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0"
+      ]
+    ],
+    "Q_star": [
+      [
+        "0",
+        "1"
+      ],
+      [
+        "0",
+        "0"
+      ]
+    ],
+    "conclusion": "kappa-Hilbertization does not identify the public generalized Born functional with the ordinary positive Hilbert Born functional when a nonzero weak-ghost null remainder is present",
+    "generalized_Krein_Born_weight": "2",
+    "ordered_species_basis": [
+      "positive charge",
+      "negative charge"
+    ],
+    "ordinary_Hilbert_Born_weight": "3",
+    "positive_Hilbert_remainder_weight": "1",
+    "status": "PROVED_BY_EXACT_FIXTURE"
+  }
+}

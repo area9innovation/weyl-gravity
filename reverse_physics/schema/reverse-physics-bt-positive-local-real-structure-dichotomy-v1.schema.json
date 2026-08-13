@@ -1,0 +1,155 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-positive-local-real-structure-dichotomy-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "schema_version", "certificate", "question", "answer",
+    "result_kind", "lifecycle_state", "dependency_tags", "assumptions",
+    "provenance", "positive_Wightman_obstruction",
+    "kappa_Hilbertization_dictionary", "observable_parity_theorem",
+    "weak_ghost_Born_separation", "Eq19_and_detector_consequence",
+    "finite_exact_fixture", "disposition", "does_not_establish", "next_gate",
+    "literature_context", "checks", "verification_commands", "report"
+  ],
+  "properties": {
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-positive-local-real-structure-dichotomy-v1.schema.json"},
+    "schema_version": {"const": 1},
+    "certificate": {"const": "REVERSE_PHYSICS_BT_POSITIVE_LOCAL_REAL_STRUCTURE_DICHOTOMY_V1"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "assumptions": {
+      "type": "array", "minItems": 6, "maxItems": 6,
+      "items": {"$ref": "#/$defs/text"}
+    },
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_commit", "retrieval_date", "inputs", "generated_by", "independent_verifier", "method"],
+      "properties": {
+        "source_commit": {"const": "769024f1e6e0f097883f1ee8f2e39aca77ee5ae1"},
+        "retrieval_date": {"const": "2026-08-13"},
+        "inputs": {
+          "type": "array", "minItems": 4, "maxItems": 4,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["path", "sha256"],
+            "properties": {
+              "path": {"$ref": "#/$defs/text"},
+              "sha256": {"$ref": "#/$defs/hash"}
+            }
+          }
+        },
+        "generated_by": {"const": "reverse_physics/bt_positive_local_real_structure_dichotomy.py"},
+        "independent_verifier": {"const": "reverse_physics/verify_bt_positive_local_real_structure_dichotomy.py"},
+        "method": {"$ref": "#/$defs/text"}
+      }
+    },
+    "positive_Wightman_obstruction": {
+      "type": "object", "additionalProperties": false,
+      "required": ["factored_public_Gram", "scalar_factor", "positive_direction", "positive_direction_scaled_norm", "negative_direction", "negative_direction_scaled_norm", "determinant", "positive_type_contradiction", "conclusion", "status"],
+      "properties": {
+        "factored_public_Gram": {"const": [["0", "1"], ["1", "0"]]},
+        "scalar_factor": {"const": "w(f,f)>0"},
+        "positive_direction": {"$ref": "#/$defs/text"},
+        "positive_direction_scaled_norm": {"const": "2"},
+        "negative_direction": {"$ref": "#/$defs/text"},
+        "negative_direction_scaled_norm": {"const": "-2"},
+        "determinant": {"const": "-1"},
+        "positive_type_contradiction": {"$ref": "#/$defs/text"},
+        "conclusion": {"const": "NO_POSITIVE_HILBERT_REPRESENTATION_PRESERVING_BOTH_PUBLIC_REAL_FIELDS_AND_THE_PUBLIC_TWO_POINT_MATRIX"},
+        "status": {"const": "PROVED_EXACTLY"}
+      }
+    },
+    "kappa_Hilbertization_dictionary": {
+      "type": "object", "additionalProperties": false,
+      "required": ["Krein_Gram_G", "fundamental_symmetry_kappa", "positive_Hilbert_Gram_G_kappa", "adjoint_relation", "field_adjoint_map", "interpretation", "status"],
+      "properties": {
+        "Krein_Gram_G": {"const": [["0", "1"], ["1", "0"]]},
+        "fundamental_symmetry_kappa": {"const": [["0", "1"], ["1", "0"]]},
+        "positive_Hilbert_Gram_G_kappa": {"const": [["1", "0"], ["0", "1"]]},
+        "adjoint_relation": {"const": "A*=kappa A^sharp kappa"},
+        "field_adjoint_map": {"const": ["Omega*=Upsilon", "Upsilon*=Omega", "T*=T", "X*=-X", "(iX)*=iX"]},
+        "interpretation": {"$ref": "#/$defs/text"},
+        "status": {"const": "CONSTRUCTED_EXACTLY"}
+      }
+    },
+    "observable_parity_theorem": {
+      "type": "object", "additionalProperties": false,
+      "required": ["hypothesis", "even_part", "odd_part", "adjoints", "iff_statement", "local_escape_condition", "status"],
+      "properties": {
+        "hypothesis": {"const": "A^sharp=A"},
+        "even_part": {"const": "A_even=(A+kappa A kappa)/2"},
+        "odd_part": {"const": "A_odd=(A-kappa A kappa)/2"},
+        "adjoints": {"const": ["A_even*=A_even", "A_odd*=-A_odd", "(i A_odd)*=i A_odd"]},
+        "iff_statement": {"const": "A*=A iff kappa A kappa=A"},
+        "local_escape_condition": {"$ref": "#/$defs/text"},
+        "status": {"const": "PROVED_EXACTLY"}
+      }
+    },
+    "weak_ghost_Born_separation": {
+      "type": "object", "additionalProperties": false,
+      "required": ["ordered_species_basis", "B", "Q_negative", "Q_sharp", "Q_star", "Q_squared", "Krein_null_weight", "Krein_cross_weight", "positive_Hilbert_remainder_weight", "generalized_Krein_Born_weight", "ordinary_Hilbert_Born_weight", "conclusion", "status"],
+      "properties": {
+        "ordered_species_basis": {"const": ["positive charge", "negative charge"]},
+        "B": {"const": [["1", "0"], ["0", "1"]]},
+        "Q_negative": {"const": [["0", "0"], ["1", "0"]]},
+        "Q_sharp": {"const": [["0", "0"], ["1", "0"]]},
+        "Q_star": {"const": [["0", "1"], ["0", "0"]]},
+        "Q_squared": {"const": [["0", "0"], ["0", "0"]]},
+        "Krein_null_weight": {"const": "0"},
+        "Krein_cross_weight": {"const": "0"},
+        "positive_Hilbert_remainder_weight": {"const": "1"},
+        "generalized_Krein_Born_weight": {"const": "2"},
+        "ordinary_Hilbert_Born_weight": {"const": "3"},
+        "conclusion": {"$ref": "#/$defs/text"},
+        "status": {"const": "PROVED_BY_EXACT_FIXTURE"}
+      }
+    },
+    "Eq19_and_detector_consequence": {
+      "type": "object", "additionalProperties": false,
+      "required": ["Eq19_role", "physical_quotient_gate", "quadrupole_gate", "current_quadrupole_status", "status"],
+      "properties": {
+        "Eq19_role": {"$ref": "#/$defs/text"},
+        "physical_quotient_gate": {"$ref": "#/$defs/text"},
+        "quadrupole_gate": {"$ref": "#/$defs/text"},
+        "current_quadrupole_status": {"const": "KAPPA_PARITY_AND_INVARIANT_DOMAIN_NOT_ESTABLISHED"},
+        "status": {"const": "EXACT_NECESSARY_CONDITIONS_CLASSIFIED"}
+      }
+    },
+    "finite_exact_fixture": {"type": "object", "minProperties": 5, "maxProperties": 5},
+    "disposition": {"type": "object", "minProperties": 11, "maxProperties": 11, "additionalProperties": {"$ref": "#/$defs/text"}},
+    "does_not_establish": {"type": "array", "minItems": 13, "maxItems": 13, "items": {"$ref": "#/$defs/text"}},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "literature_context": {
+      "type": "object", "additionalProperties": false,
+      "required": ["primary_reference", "stable_url", "current_public_version_checked", "use", "priority_status"],
+      "properties": {
+        "primary_reference": {"$ref": "#/$defs/text"},
+        "stable_url": {"const": "https://arxiv.org/abs/2607.00096"},
+        "current_public_version_checked": {"$ref": "#/$defs/text"},
+        "use": {"$ref": "#/$defs/text"},
+        "priority_status": {"const": "NOT_CLAIMED"}
+      }
+    },
+    "checks": {
+      "type": "object", "additionalProperties": false,
+      "required": ["total", "passed", "ok", "failures", "details"],
+      "properties": {
+        "total": {"const": 38},
+        "passed": {"const": 38},
+        "ok": {"const": true},
+        "failures": {"const": []},
+        "details": {"type": "object", "minProperties": 38, "maxProperties": 38, "additionalProperties": {"const": true}}
+      }
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/text"}},
+    "report": {"const": "reverse_physics/reports/bt-positive-local-real-structure-dichotomy.md"}
+  },
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

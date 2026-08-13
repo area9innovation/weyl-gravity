@@ -1,0 +1,34 @@
+{
+  "id": "sf:program/work/reverse-physics-bateman-positive-local-real-structure-dichotomy",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "reverse-physics",
+    "state": "ACTIVE",
+    "objective": "Decide whether the positive Hilbert-space local-net hypotheses needed by the balanced BT quadrupole detector can preserve the public Bateman--Turok two-field Wightman matrix, real-field adjoint and generalized Born rule, and identify the exact additional condition that reaches a positive local observable.",
+    "depends_on": [
+      "REVERSE_PHYSICS_BT_REEH_SCHLIEDER_LOCAL_DETECTOR_OBSTRUCTION_V1",
+      "Bateman--Turok arXiv:2607.00096v1 Eqs. (1), (5), (8), (19) and (20)"
+    ],
+    "activates": [
+      "an exact positive-Wightman obstruction for the public cross Gram with both fields individually Hermitian",
+      "an exact kappa-Hilbertization adjoint dictionary",
+      "a necessary and sufficient ghost-evenness criterion for Krein-selfadjoint observables to remain Hilbert-selfadjoint",
+      "a finite weak-ghost fixture separating the generalized Krein Born weight from the ordinary Hilbert Born weight",
+      "the precise kappa-parity gate for the compact quadrupole contrast"
+    ],
+    "current_gate": "Factor the nonzero scalar mass-shell pairing from the public O(1,1) Wightman matrix and test its two-dimensional species Gram against positive type. Then compute the Hilbert adjoint induced by the public fundamental symmetry and compare the weak-ghost generalized Born trace with the ordinary Hilbert trace on an exact negative-charge nilpotent fixture.",
+    "stop_condition": "Land a CLASSIFIED LOCAL-ALGEBRAIC certificate, independent verifier, adversarial tests and report proving the scoped real-structure dichotomy and its exact escape condition. Update Papers V and VI without changelog prose and preserve Eq. (19), local-net, detector-affiliation, gravity and Lorentzian boundaries.",
+    "forbid": "no claim that kappa-Hilbertization is impossible; no claim that the public generalized Born rule is inconsistent; no promotion of the auxiliary positive topology to the public physical Born rule; no assumption that angular exchange-evenness is ghost parity; no positive Haag--Kastler, Eq. (19), gravity, QME or LORENTZIAN-CAUSAL promotion; no literature-priority claim",
+    "allowed_paths": [
+      "reverse_physics/",
+      "paper/05-interaction-obstructions.tex",
+      "paper/05-interaction-obstructions.pdf",
+      "paper/06-einstein-weyl-interaction-obstructions.tex",
+      "paper/06-einstein-weyl-interaction-obstructions.pdf",
+      "planning/work-items/reverse-physics-bateman-positive-local-real-structure-dichotomy.json",
+      "planning/events/"
+    ],
+    "resource_hint": "On one nonzero positive-frequency test packet, factor out w(f,f)>0. The public species Gram is G=[[0,1],[1,0]], with eigenvectors (1,1) and (1,-1) of signs plus and minus. Hence it is not a positive Wightman matrix for two individually Hermitian fields. With kappa=G, the auxiliary Hilbert Gram G kappa is I, but the Hilbert adjoint is A*=kappa A^sharp kappa, so Omega*=Upsilon, T*=T and X*=-X. A Krein-selfadjoint A is Hilbert-selfadjoint iff kappa A kappa=A. For B=I and the negative-charge Q=E21, Q^sharp=Q, Q^2=0 and tr(B^sharp Q)=0, but ||Q||_HS^2=1: tr[(B+Q)^sharp(B+Q)]=2 while tr[(B+Q)^*(B+Q)]=3. Thus the auxiliary positive topology does not silently replace the generalized Born rule."
+  }
+}
