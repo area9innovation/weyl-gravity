@@ -1,0 +1,131 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-finite-bandwidth-dark-port-q8-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "schema_version", "certificate", "question", "answer",
+    "result_kind", "lifecycle_state", "dependency_tags", "assumptions",
+    "provenance", "off_diagonal_temporal_kernel",
+    "ultraviolet_and_continuity", "finite_bandwidth_packet",
+    "absolute_dark_port_coefficient", "disposition", "does_not_establish",
+    "next_gate", "checks", "verification_commands", "report"
+  ],
+  "properties": {
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-finite-bandwidth-dark-port-q8-v1.schema.json"},
+    "schema_version": {"const": 1},
+    "certificate": {"const": "REVERSE_PHYSICS_BT_FINITE_BANDWIDTH_DARK_PORT_Q8_V1"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE"]},
+    "assumptions": {"type": "array", "minItems": 7, "maxItems": 7, "items": {"$ref": "#/$defs/text"}},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_commit", "retrieval_date", "inputs", "generated_by", "independent_verifier", "method"],
+      "properties": {
+        "source_commit": {"const": "ab61fffacc2cb7ce4f6e29d21fadbe37e50e6be4"},
+        "retrieval_date": {"const": "2026-08-13"},
+        "inputs": {"type": "array", "minItems": 6, "maxItems": 6, "items": {
+          "type": "object", "additionalProperties": false, "required": ["path", "sha256"],
+          "properties": {"path": {"$ref": "#/$defs/text"}, "sha256": {"$ref": "#/$defs/hash"}}
+        }},
+        "generated_by": {"const": "reverse_physics/bt_finite_bandwidth_dark_port_q8.py"},
+        "independent_verifier": {"const": "reverse_physics/verify_bt_finite_bandwidth_dark_port_q8.py"},
+        "method": {"$ref": "#/$defs/text"}
+      }
+    },
+    "off_diagonal_temporal_kernel": {
+      "type": "object", "additionalProperties": false,
+      "required": ["dimensionless_variables", "tree_switch", "ordered_Dyson_integral", "divided_difference", "interference_kernel", "closed_form", "energy_diagonal", "resonant_values", "coefficient_check", "mismatch_window", "sinc_floor", "status"],
+      "properties": {
+        "dimensionless_variables": {"const": "x=Omega*T and y=delta*T"},
+        "tree_switch": {"$ref": "#/$defs/text"},
+        "ordered_Dyson_integral": {"$ref": "#/$defs/text"},
+        "divided_difference": {"$ref": "#/$defs/text"},
+        "interference_kernel": {"$ref": "#/$defs/text"},
+        "closed_form": {"$ref": "#/$defs/text"},
+        "energy_diagonal": {"const": "k(0,y)=1/y-sin(y)/y^2"},
+        "resonant_values": {"$ref": "#/$defs/text"},
+        "coefficient_check": {"type": "array", "minItems": 13, "maxItems": 13, "items": {
+          "type": "object", "additionalProperties": false,
+          "required": ["total_degree", "coefficient_without_i_power", "multiplicity"],
+          "properties": {
+            "total_degree": {"type": "integer", "minimum": 0, "maximum": 12},
+            "coefficient_without_i_power": {"$ref": "#/$defs/text"},
+            "multiplicity": {"type": "integer", "minimum": 1, "maximum": 13}
+          }
+        }},
+        "mismatch_window": {"const": "abs(x)<=1/2"},
+        "sinc_floor": {"$ref": "#/$defs/receipt"},
+        "status": {"const": "EXACT_OFF_ENERGY_DIAGONAL_SECOND_DYSON_KERNEL_DERIVED"}
+      }
+    },
+    "ultraviolet_and_continuity": {
+      "type": "object", "additionalProperties": false,
+      "required": ["rewritten_kernel", "large_defect_domain", "denominator_bound", "numerator_Lipschitz_bound", "uv_difference_bound", "uv_constant", "local_divergence", "counterterm", "absolute_convergence", "finite_region", "cut_boundary", "status"],
+      "properties": {
+        "rewritten_kernel": {"$ref": "#/$defs/text"},
+        "large_defect_domain": {"const": "abs(x)<=1/2 and abs(y)>=1"},
+        "denominator_bound": {"const": "abs(y-x)>=abs(y)/2"},
+        "numerator_Lipschitz_bound": {"const": "abs(N(x,y)-sin(y))<=(6/5)*abs(x)"},
+        "uv_difference_bound": {"const": "abs(k(x,y)-k(0,y))<=(32/5)*abs(x)/y^2"},
+        "uv_constant": {"$ref": "#/$defs/receipt"},
+        "local_divergence": {"$ref": "#/$defs/text"},
+        "counterterm": {"$ref": "#/$defs/text"},
+        "absolute_convergence": {"$ref": "#/$defs/text"},
+        "finite_region": {"$ref": "#/$defs/text"},
+        "cut_boundary": {"$ref": "#/$defs/text"},
+        "status": {"const": "COMMON_LOCAL_RENORMALIZATION_AND_JOINT_HARD_KERNEL_CONTINUITY_PROVED"}
+      }
+    },
+    "finite_bandwidth_packet": {
+      "type": "object", "additionalProperties": false,
+      "required": ["central_fibre", "direct_integral_coordinates", "measure", "packet_choice", "leading_symmetry", "continuity_argument", "radius_status", "normalizability", "retained_contrast", "status"],
+      "properties": {
+        "central_fibre": {"$ref": "#/$defs/text"},
+        "direct_integral_coordinates": {"$ref": "#/$defs/text"},
+        "measure": {"$ref": "#/$defs/text"},
+        "packet_choice": {"$ref": "#/$defs/text"},
+        "leading_symmetry": {"$ref": "#/$defs/text"},
+        "continuity_argument": {"$ref": "#/$defs/text"},
+        "radius_status": {"const": "EXISTS_BUT_NOT_NUMERICALLY_COMPUTED"},
+        "normalizability": {"$ref": "#/$defs/text"},
+        "retained_contrast": {"const": "DeltaR6_band>DeltaR6_central/2=49/1068672"},
+        "status": {"const": "NONEMPTY_GLOBALLY_NORMALIZABLE_FINITE_BANDWIDTH_PACKET_CLASS"}
+      }
+    },
+    "absolute_dark_port_coefficient": {
+      "type": "object", "additionalProperties": false,
+      "required": ["leading_coefficient", "probability", "Cauchy_bound", "retained_q6_lower", "exact_rational_lower", "comparison", "status"],
+      "properties": {
+        "leading_coefficient": {"const": "q4_bar_band=||X2_band||^2>0"},
+        "probability": {"const": "q_dark(lambda)=lambda^8*Q8_dark_band+O(lambda^10)"},
+        "Cauchy_bound": {"const": "Q8_dark_band/q4_bar_band>=DeltaR6_band^2/8"},
+        "retained_q6_lower": {"$ref": "#/$defs/receipt"},
+        "exact_rational_lower": {"$ref": "#/$defs/receipt"},
+        "comparison": {"const": "Q8_dark_band/q4_bar_band>2401/9136478748672>1/10000000000"},
+        "status": {"const": "STRICTLY_POSITIVE_ABSOLUTE_FINITE_BANDWIDTH_DARK_Q8_COEFFICIENT"}
+      }
+    },
+    "disposition": {"type": "object", "minProperties": 12, "maxProperties": 12, "additionalProperties": {"$ref": "#/$defs/text"}},
+    "does_not_establish": {"type": "array", "minItems": 13, "maxItems": 13, "items": {"$ref": "#/$defs/text"}},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "checks": {"type": "object", "additionalProperties": false, "required": ["total", "passed", "ok", "failures", "details"],
+      "properties": {
+        "total": {"const": 29}, "passed": {"const": 29}, "ok": {"const": true}, "failures": {"const": []},
+        "details": {"type": "object", "minProperties": 29, "maxProperties": 29, "additionalProperties": {"const": true}}
+      }
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/text"}},
+    "report": {"const": "reverse_physics/reports/bt-finite-bandwidth-dark-port-q8.md"}
+  },
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "receipt": {"type": "object", "additionalProperties": false, "required": ["exact", "canonical_sha256"],
+      "properties": {"exact": {"$ref": "#/$defs/text"}, "canonical_sha256": {"$ref": "#/$defs/hash"}}}
+  }
+}

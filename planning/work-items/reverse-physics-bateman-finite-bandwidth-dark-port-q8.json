@@ -1,0 +1,35 @@
+{
+  "id": "sf:program/work/reverse-physics-bateman-finite-bandwidth-dark-port-q8",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "reverse-physics",
+    "state": "ACTIVE",
+    "objective": "Replace the sharp total-momentum and invariant-mass labels in the compact-sphere BT dark-port theorem by a nonempty class of globally normalizable finite-bandwidth wavepackets, deriving the off-energy-diagonal finite-time loop kernel needed to preserve a strictly positive absolute q8 coefficient.",
+    "depends_on": [
+      "REVERSE_PHYSICS_BT_COMPACT_SPHERE_DARK_PORT_ABSOLUTE_Q8_V1",
+      "REVERSE_PHYSICS_BT_FINITE_TIME_ACTIVE_LOOP_AFFILIATION_V1",
+      "REVERSE_PHYSICS_BT_SCHWARTZ_FOUR_MOMENTUM_PACKET_RESPONSE_V1",
+      "REVERSE_PHYSICS_BT_COMPACT_ENERGY_QUADRATIC_SECTOR_BOUND_V1"
+    ],
+    "activates": [
+      "an exact off-energy-diagonal second-Dyson temporal kernel",
+      "a common local ultraviolet subtraction for diagonal and off-diagonal kernels",
+      "a nonempty finite-total-momentum and invariant-mass packet class",
+      "a strictly positive absolute dark-port q8 coefficient on a globally normalizable reduced-mode wavepacket"
+    ],
+    "current_gate": "Derive the divided-difference temporal kernel for energy mismatch Omega, prove that its difference from the energy-diagonal kernel decays as O(Omega/delta^2) in the ultraviolet, and use hard-kernel continuity plus the certified fixed-fibre margin to retain at least half the complete q6 contrast on a compact positive-measure direct-integral neighborhood.",
+    "stop_condition": "Land a COEFFICIENT_COMPUTED certificate, method-distinct verifier, adversarial tests and report proving a nonempty globally normalizable finite-bandwidth reduced-mode packet class with Q8_dark/q4_bar>10^-10, and update Papers V and VI without promoting a numerical bandwidth, local apparatus, general Eq. 19, gravity or Lorentzian causality.",
+    "forbid": "no fabricated bandwidth radius; no use of the leading Gaussian apparatus response as the interacting q8 coefficient; no omission of the off-diagonal loop or its ultraviolet subtraction; no compact-spacetime-support claim for a sharp-time spatially global interaction; no Eq. 19, gravity, QME or LORENTZIAN-CAUSAL promotion; no literature-priority claim",
+    "allowed_paths": [
+      "reverse_physics/",
+      "paper/05-interaction-obstructions.tex",
+      "paper/05-interaction-obstructions.pdf",
+      "paper/06-einstein-weyl-interaction-obstructions.tex",
+      "paper/06-einstein-weyl-interaction-obstructions.pdf",
+      "planning/work-items/reverse-physics-bateman-finite-bandwidth-dark-port-q8.json",
+      "planning/events/"
+    ],
+    "resource_hint": "For f(x)=integral_0^1 exp(i*x*t)dt and d(x,y)=integral_{0<t2<t1<1} exp(i*y*t1+i*(x-y)*t2)dt1dt2, the normalized interference kernel is k(x,y)=Im(conj(f(x))*d(x,y))/abs(f(x))^2. It equals [1-cos((y-x)/2)*sinc(y/2)/sinc(x/2)]/(y-x), reduces to 1/y-sin(y)/y^2 at x=0, and differs from that diagonal kernel by at most (32/5)*abs(x)/y^2 for abs(x)<=1/2 and abs(y)>=1. The ultraviolet divergence is therefore the same local diagonal term; the difference is absolutely integrable on compact external support."
+  }
+}

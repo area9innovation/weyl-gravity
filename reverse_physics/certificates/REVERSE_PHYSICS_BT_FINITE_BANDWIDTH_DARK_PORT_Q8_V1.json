@@ -1,0 +1,256 @@
+{
+  "absolute_dark_port_coefficient": {
+    "Cauchy_bound": "Q8_dark_band/q4_bar_band>=DeltaR6_band^2/8",
+    "comparison": "Q8_dark_band/q4_bar_band>2401/9136478748672>1/10000000000",
+    "exact_rational_lower": {
+      "canonical_sha256": "870ff1fc86119f67acd422638c4e24a17f548caeed207cc84e05100fe18e148b",
+      "exact": "2401/9136478748672"
+    },
+    "leading_coefficient": "q4_bar_band=||X2_band||^2>0",
+    "probability": "q_dark(lambda)=lambda^8*Q8_dark_band+O(lambda^10)",
+    "retained_q6_lower": {
+      "canonical_sha256": "fbab874eefa2933ea8ffefc9d399e8452d66e0ff7fb58d326bbcbf9b44e62a3f",
+      "exact": "49/1068672"
+    },
+    "status": "STRICTLY_POSITIVE_ABSOLUTE_FINITE_BANDWIDTH_DARK_Q8_COEFFICIENT"
+  },
+  "answer": "Yes for a nonempty, existentially sized compact hard neighborhood. With x=Omega*T, y=delta*T and f(x)=int_0^1 exp(i*x*t)dt, the ordered second-Dyson factor is d(x,y)=[f(x)-f(y)]/[i*(x-y)]. Its normalized tree-loop interference kernel is k(x,y)=Im(conj(f(x))*d(x,y))/abs(f(x))^2=[1-cos((y-x)/2)*sinc(y/2)/sinc(x/2)]/(y-x). It is jointly continuous after removable values are filled and reduces at x=0 to 1/y-sin(y)/y^2. For abs(x)<=1/2 and abs(y)>=1, abs(k(x,y)-k(0,y))<=(32/5)*abs(x)/y^2. The ultraviolet-leading 1/y term is therefore independent of the external energy mismatch, the diagonal MSbar local subtraction renormalizes the off-diagonal kernel, and the difference is absolutely integrable on compact hard external support. Joint continuity in all external momenta thickens the certified fixed-P packet class to a compact positive-measure direct-integral neighborhood while retaining DeltaR6>49/1068672. The fibrewise dark projector still kills the leading amplitude, so Q8_dark/q4_bar>2401/9136478748672>10^-10. The neighborhood radius is proved to exist but is not numerically computed.",
+  "assumptions": [
+    "the public spatially translation-invariant BT interaction is restricted to a finite sharp time interval with common duration T and uses the same massless unit-residue MSbar local counterterm as the energy-diagonal predecessor",
+    "incoming and outgoing total spatial momentum agree while their on-shell total energies may differ by Omega; the packet has compact support in the resulting spatial-momentum and invariant-mass direct-integral coordinates",
+    "all active s, t and u channels remain in one compact hard neighborhood separated from every light-cone endpoint and the external one-particle energies stay in a compact positive band",
+    "the fixed-fibre angular, incoming-active and positive spectator packets are those in the compact-sphere predecessor, transported continuously over the direct-integral neighborhood",
+    "the two output cells have equal invariant angular measure on every fibre and the dark effect is the measurable fibrewise antisymmetric projector",
+    "the renormalized old-fashioned spectral representation contains finitely many energy branches whose radial density is bounded at large intermediate momentum on compact external support",
+    "the probability statement is coefficientwise through absolute order lambda eight; no finite-coupling remainder sign, all-time limit or canonical detector selection is assumed"
+  ],
+  "certificate": "REVERSE_PHYSICS_BT_FINITE_BANDWIDTH_DARK_PORT_Q8_V1",
+  "checks": {
+    "details": {
+      "Cauchy_factor_remains_one_eighth": true,
+      "bandwidth_radius_is_not_fabricated": true,
+      "compact_total_momentum_and_mass_neighborhood_exists": true,
+      "complete_uv_difference_constant_is_exact": true,
+      "direct_Dyson_and_divided_difference_match_through_degree_12": true,
+      "done_event_targets_work_item": true,
+      "energy_denominator_separation_is_uniform": true,
+      "finite_bandwidth_dark_lower_exceeds_ten_to_minus_ten": true,
+      "finite_bandwidth_dark_lower_is_exact": true,
+      "four_predecessors_pass": true,
+      "general_Eq19_remains_open": true,
+      "gravity_and_Lorentzian_boundaries_remain_open": true,
+      "hard_lightcone_separation_is_open": true,
+      "inputs_are_content_pinned": true,
+      "leading_dark_annihilation_is_fibrewise": true,
+      "local_apparatus_remains_open": true,
+      "mismatch_window_is_symmetric_and_nonzero": true,
+      "numerator_Lipschitz_constant_is_conservative": true,
+      "off_diagonal_uv_difference_is_one_power_better": true,
+      "ordered_simplex_constant_is_one_half": true,
+      "ordered_simplex_linear_coefficients_are_one_sixth": true,
+      "oscillatory_uv_piece_is_exact": true,
+      "q4_weighted_contrast_retains_half_margin": true,
+      "renormalized_off_diagonal_kernel_is_jointly_continuous": true,
+      "same_local_counterterm_renormalizes_the_kernel": true,
+      "sinc_denominator_has_strict_rational_floor": true,
+      "timelike_cut_is_included_in_continuity_statement": true,
+      "two_body_direct_integral_has_positive_local_measure": true,
+      "wavepacket_is_globally_L2_normalizable": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 29,
+    "total": 29
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL",
+    "REDUCED-MODE"
+  ],
+  "disposition": {
+    "Lorentzian_causal_claim": "NOT_ESTABLISHED",
+    "absolute_dark_port_q8_probability": "COEFFICIENT_COMPUTED_AND_STRICTLY_POSITIVE",
+    "all_order_or_all_time_probability": "NOT_CONSTRUCTED",
+    "finite_total_momentum_and_invariant_mass_bandwidth": "CONSTRUCTED_AS_NONEMPTY_EXISTENCE_CLASS",
+    "general_Eq19": "NOT_PROVED_AND_NOT_USED",
+    "globally_normalizable_direct_integral_packet": "PROVED_TO_EXIST",
+    "gravity_or_metric_BV_BRST_transfer": "NOT_CONSTRUCTED",
+    "local_detector_for_the_fibrewise_projector": "NOT_CONSTRUCTED",
+    "numerical_bandwidth_radius": "NOT_COMPUTED",
+    "off_diagonal_loop_local_subtraction": "SAME_MSBAR_COUNTERTERM_PROVED",
+    "off_energy_diagonal_temporal_kernel": "DERIVED_EXACTLY",
+    "recorded_or_bright_port_absolute_q8": "NOT_COMPUTED"
+  },
+  "does_not_establish": [
+    "a numerical total-momentum, invariant-mass, angular, incoming or spectator bandwidth radius",
+    "a canonical or experimentally optimized wavepacket",
+    "compact spacetime support or causal-AQFT locality for the spatially global sharp-time interaction",
+    "selection or exact realization of the fibrewise dark projector by a local finite-derivative apparatus",
+    "either recorded or symmetric bright-port absolute order-lambda8 coefficient",
+    "control of the complete O(lambda^10) remainder at finite coupling",
+    "forward, exchanged-forward, real-virtual, collinear or KLN completion",
+    "an all-time Moller, LSZ or S operator",
+    "the standard scalar projector or general Bateman--Turok Eq. (19)",
+    "a complete positive physical BT Hilbert or Fock construction",
+    "gravity, metric BV--BRST, QME restoration or residual transfer",
+    "anything LORENTZIAN-CAUSAL",
+    "literature priority"
+  ],
+  "finite_bandwidth_packet": {
+    "central_fibre": "P0=(8*kappa/5,0,0,0), kappa*T=1, with the compact equal-area sphere cells and incoming/spectator packets of the predecessor",
+    "continuity_argument": "the connected tree is entire in finite-time energy defects on hard support and the renormalized loop is jointly continuous by the ultraviolet theorem above; for normalized compact bump envelopes shrinking only in the direct-integral total-momentum and mass variables, the q4 and q6 bilinear forms carry the same positive coarea scaling, their quotient converges to the fixed-fibre packet quotient, and the central q4 denominator stays positive",
+    "direct_integral_coordinates": "common total spatial momentum together with positive incoming and outgoing invariant masses, angular sphere coordinates and spectator variables",
+    "leading_symmetry": "the contact X2 kernel and common switching factor are angle independent on each fibre, so both output cells have the same leading amplitude and the fibrewise dark projector annihilates X2 pointwise",
+    "measure": "the product of incoming and outgoing massless two-body coareas is locally a positive smooth multiple of d^3(P_spatial)*dM_in*dM_out*dOmega_in*dOmega_out on the hard future-timelike neighborhood after the spatial conservation delta is reduced, with the normalized spectator measure tensored separately",
+    "normalizability": "the normalized compact L2 bump envelope is an ordinary globally normalized L2 wavepacket across total momentum and invariant mass on a set of finite positive direct-integral measure",
+    "packet_choice": "choose nonzero normalized compact L2 envelopes inside one sufficiently small product neighborhood and transport the two equal-area angular cells fibrewise",
+    "radius_status": "EXISTS_BUT_NOT_NUMERICALLY_COMPUTED",
+    "retained_contrast": "DeltaR6_band>DeltaR6_central/2=49/1068672",
+    "status": "NONEMPTY_GLOBALLY_NORMALIZABLE_FINITE_BANDWIDTH_PACKET_CLASS"
+  },
+  "lifecycle_state": "COEFFICIENT_COMPUTED",
+  "next_gate": "Make the existential bandwidth quantitative for one smooth compact envelope or the already certified Gaussian apparatus, then compute the O(lambda^10) dark remainder or the recorded/bright q8 coefficient. General Eq. (19) remains the alternative architectural route; gravity and Lorentzian transfer remain separate later gates.",
+  "off_diagonal_temporal_kernel": {
+    "closed_form": "k(x,y)=[1-cos((y-x)/2)*sinc(y/2)/sinc(x/2)]/(y-x)",
+    "coefficient_check": [
+      {
+        "coefficient_without_i_power": "1/2",
+        "multiplicity": 1,
+        "total_degree": 0
+      },
+      {
+        "coefficient_without_i_power": "1/6",
+        "multiplicity": 2,
+        "total_degree": 1
+      },
+      {
+        "coefficient_without_i_power": "1/24",
+        "multiplicity": 3,
+        "total_degree": 2
+      },
+      {
+        "coefficient_without_i_power": "1/120",
+        "multiplicity": 4,
+        "total_degree": 3
+      },
+      {
+        "coefficient_without_i_power": "1/720",
+        "multiplicity": 5,
+        "total_degree": 4
+      },
+      {
+        "coefficient_without_i_power": "1/5040",
+        "multiplicity": 6,
+        "total_degree": 5
+      },
+      {
+        "coefficient_without_i_power": "1/40320",
+        "multiplicity": 7,
+        "total_degree": 6
+      },
+      {
+        "coefficient_without_i_power": "1/362880",
+        "multiplicity": 8,
+        "total_degree": 7
+      },
+      {
+        "coefficient_without_i_power": "1/3628800",
+        "multiplicity": 9,
+        "total_degree": 8
+      },
+      {
+        "coefficient_without_i_power": "1/39916800",
+        "multiplicity": 10,
+        "total_degree": 9
+      },
+      {
+        "coefficient_without_i_power": "1/479001600",
+        "multiplicity": 11,
+        "total_degree": 10
+      },
+      {
+        "coefficient_without_i_power": "1/6227020800",
+        "multiplicity": 12,
+        "total_degree": 11
+      },
+      {
+        "coefficient_without_i_power": "1/87178291200",
+        "multiplicity": 13,
+        "total_degree": 12
+      }
+    ],
+    "dimensionless_variables": "x=Omega*T and y=delta*T",
+    "divided_difference": "d(x,y)=[f(x)-f(y)]/[i*(x-y)] with the diagonal value filled by continuity",
+    "energy_diagonal": "k(0,y)=1/y-sin(y)/y^2",
+    "interference_kernel": "k(x,y)=Im(conj(f(x))*d(x,y))/abs(f(x))^2",
+    "mismatch_window": "abs(x)<=1/2",
+    "ordered_Dyson_integral": "d(x,y)=int_0^1 dt1 int_0^t1 dt2 exp(i*y*t1+i*(x-y)*t2)",
+    "resonant_values": "all x=y and x=0 or y=0 apparent singularities are removable through the ordered-simplex integral",
+    "sinc_floor": {
+      "canonical_sha256": "c5bdeb3ef6025f9877dc56340aa097558a68befd165fbb098d3684acdd925e0a",
+      "exact": "95/96"
+    },
+    "status": "EXACT_OFF_ENERGY_DIAGONAL_SECOND_DYSON_KERNEL_DERIVED",
+    "tree_switch": "f(x)=int_0^1 exp(i*x*t)dt=exp(i*x/2)*sinc(x/2)"
+  },
+  "provenance": {
+    "generated_by": "reverse_physics/bt_finite_bandwidth_dark_port_q8.py",
+    "independent_verifier": "reverse_physics/verify_bt_finite_bandwidth_dark_port_q8.py",
+    "inputs": [
+      {
+        "path": "planning/work-items/reverse-physics-bateman-finite-bandwidth-dark-port-q8.json",
+        "sha256": "8cd9989429633b51a6268a337cbf925771257f8747b8f3e51ee6a86b9ea1bc6e"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_COMPACT_SPHERE_DARK_PORT_ABSOLUTE_Q8_V1.json",
+        "sha256": "29baab346ebd1926b34a29860c2596391fc0fc34e64e2dc0ff6e805494339d29"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_FINITE_TIME_ACTIVE_LOOP_AFFILIATION_V1.json",
+        "sha256": "73d5f9d1db46e3c9a783acc8d35f94a17876425ce5f9aec3fca73f1c73d547a3"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_SCHWARTZ_FOUR_MOMENTUM_PACKET_RESPONSE_V1.json",
+        "sha256": "bd408ad7c60189d4938aa9799734b8130b9a48338cc3de5d4f5b512f45178d61"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_COMPACT_ENERGY_QUADRATIC_SECTOR_BOUND_V1.json",
+        "sha256": "5713d94308795268247b73a71a1f6d683b875c4c45f77804acc7d4d7997ee417"
+      },
+      {
+        "path": "planning/events/reverse-physics-bateman-finite-bandwidth-dark-port-q8-DONE-ab61fffa.json",
+        "sha256": "0c281322f374876d3e7b78d68dd269d697846da92cd6c0ab616b9e3ad88e1c53"
+      }
+    ],
+    "method": "Exact ordered-simplex and divided-difference coefficient comparison over every monomial through total degree twelve, exact rational sinc and ultraviolet bounds, analytic local-subtraction and dominated-convergence proof, and compact direct-integral continuity. No floating-point arithmetic enters a claim.",
+    "retrieval_date": "2026-08-13",
+    "source_commit": "ab61fffacc2cb7ce4f6e29d21fadbe37e50e6be4"
+  },
+  "question": "Does the positive compact-sphere BT dark-port coefficient survive finite total-momentum and invariant-mass bandwidth once the active loop is taken off the energy diagonal?",
+  "report": "reverse_physics/reports/bt-finite-bandwidth-dark-port-q8.md",
+  "result_kind": "strictly positive absolute order-lambda8 BT dark-port coefficient on a nonempty globally normalizable finite-total-momentum and invariant-mass reduced-mode wavepacket class",
+  "schema": "reverse_physics/schema/reverse-physics-bt-finite-bandwidth-dark-port-q8-v1.schema.json",
+  "schema_version": 1,
+  "ultraviolet_and_continuity": {
+    "absolute_convergence": "on compact external support the massless two-particle radial density is bounded at large intermediate momentum and abs(y) grows linearly, so the off-diagonal-minus-diagonal remainder is dominated by an integrable constant/q^2 tail",
+    "counterterm": "the energy-diagonal MSbar local counterterm multiplies the same first-Dyson tree switch and renormalizes every abs(Omega*T)<=1/2 kernel; no mismatch-dependent counterterm is introduced",
+    "cut_boundary": "intermediate on-shell resonances and the timelike cut are included through the removable ordered-simplex kernel; their off-diagonal contribution is continuous and vanishes into the certified diagonal value as Omega tends to zero",
+    "denominator_bound": "abs(y-x)>=abs(y)/2",
+    "finite_region": "the ordered-simplex representation is jointly continuous and bounded on every compact finite-y region because abs(f(x))>=95/96",
+    "large_defect_domain": "abs(x)<=1/2 and abs(y)>=1",
+    "local_divergence": "the common leading term is 1/y; every mismatch-dependent term is one ultraviolet power better",
+    "numerator_Lipschitz_bound": "abs(N(x,y)-sin(y))<=(6/5)*abs(x)",
+    "rewritten_kernel": "k(x,y)=1/(y-x)-N(x,y)/[y*(y-x)], N=[sin(y-x/2)+sin(x/2)]/sinc(x/2)",
+    "status": "COMMON_LOCAL_RENORMALIZATION_AND_JOINT_HARD_KERNEL_CONTINUITY_PROVED",
+    "uv_constant": {
+      "canonical_sha256": "0db3c82b1cd93bcb66d1340a8d486b6344942905c3041156f5ab38755d3de70c",
+      "exact": "32/5"
+    },
+    "uv_difference_bound": "abs(k(x,y)-k(0,y))<=(32/5)*abs(x)/y^2"
+  },
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_finite_bandwidth_dark_port_q8.py --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_finite_bandwidth_dark_port_q8.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_finite_bandwidth_dark_port_q8"
+  ]
+}

@@ -244,7 +244,10 @@ complementary antisymmetric port that cross is absent.  On the exact
 finite-volume two-angle fixture its absolute leading coefficient has a
 volume-uniform strictly positive lower bound.  Equal-area compact packets on
 the invariant fixed-$P$ two-body sphere preserve the same strict coefficient;
-finite invariant-mass and total-momentum bandwidth remains open.  The recorded and symmetric bright-port absolute
+the exact off-energy-diagonal second-Dyson kernel has the same local
+ultraviolet subtraction as its diagonal restriction, so a nonempty globally
+normalizable finite-bandwidth packet class preserves a strict coefficient.
+Its numerical bandwidth remains open.  The recorded and symmetric bright-port absolute
 $q_8$ coefficients and selection by the public BT dynamics remain open,
 while an explicit external pointer Hamiltonian realizes the finite
 two-mode effect and selects its strength and phase.  That apparatus is not a
@@ -3201,6 +3204,35 @@ Certificate
 proves this compact fixed-$P$ auxiliary-scalar result without assigning a
 fabricated numerical continuity radius.  It supplies neither finite
 invariant-mass or total-momentum bandwidth nor a metric-theory coefficient.
+For finite bandwidth, put $x=\Omega T$ and $y=\delta T$.  The exact ordered
+second-Dyson interference kernel is
+\[
+ k(x,y)={1-\cos((y-x)/2)\operatorname{sinc}(y/2)/
+                 \operatorname{sinc}(x/2)\over y-x},
+ \qquad k(0,y)={1\over y}-{\sin y\over y^2}.
+\]
+On $|x|\leq1/2$, $|y|\geq1$, it obeys
+\[
+ |k(x,y)-k(0,y)|\leq {32\over5}{|x|\over y^2}.
+\]
+The mismatch-dependent remainder is therefore ultraviolet integrable on
+compact hard support, while the common $1/y$ divergence is removed by the
+already fixed local $\overline{\rm MS}$ counterterm.  Joint external-momentum
+continuity supplies a nonempty compact direct-integral neighborhood with
+\[
+ \boxed{{Q_{8,-}^{\rm band}\over\bar q_{4,\rm band}}
+ >{2401\over9136478748672}>{1\over10^{10}}.}
+\]
+Certificate
+\par\noindent
+\texttt{REVERSE\_PHYSICS\_BT\_FINITE\_BANDWIDTH\_DARK\_PORT\_}
+\allowbreak\texttt{Q8\_V1}
+\par\noindent
+proves this globally normalizable finite-bandwidth auxiliary-scalar packet
+class.  It supersedes only the preceding fixed-fibre certificate's
+sharp-bandwidth boundary.  Its bandwidth radius is existential, not
+numerical, and it supplies neither a local apparatus for the fibrewise
+projector nor a metric-theory coefficient.
 On the same two-mode carrier, the bounded interaction
 \[
  H_{\rm int}=gP_-(\phi)\otimes\sigma_y

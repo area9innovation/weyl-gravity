@@ -265,7 +265,12 @@ on its absolute leading coefficient.  Equal-area compact cells in the
 invariant fixed-total-momentum two-body sphere preserve that coefficient
 after the incoming and spectator modes are thickened inside a hard continuity
 neighborhood.  Finite invariant-mass and total-momentum bandwidth remains
-open.  The
+open at that fixed-fibre stage.  The exact off-energy-diagonal second-Dyson
+kernel is a divided difference of the tree switching function; its difference
+from the diagonal kernel decays by one additional ultraviolet power.  The
+same local subtraction therefore gives a jointly continuous hard loop, and
+the dark coefficient survives on a nonempty globally normalizable
+finite-bandwidth packet class.  A numerical bandwidth remains open.  The
 recorded and symmetric bright-port absolute $q_8$ coefficients, continuum
 coherence and both forward endpoints remain open.  On the two-mode carrier,
 an explicit finite pointer Hamiltonian now selects the detector strength and
@@ -3963,6 +3968,45 @@ not assign a numerical transverse radius.  It also does not give the carrier
 finite invariant-mass or total-momentum bandwidth, realize these exact packet
 projectors with a local apparatus, or compute either bright/recorded absolute
 coefficient.
+
+The radial direct-integral gate can nevertheless be closed existentially.
+Let $x=\Omega T$ be the incoming--outgoing total-energy mismatch and
+$y=\delta T$ an intermediate energy defect.  With
+\[
+ f(x)=\int_0^1e^{ixt}dt,\qquad
+ d(x,y)=\int_0^1dt_1\int_0^{t_1}dt_2\,e^{iyt_1+i(x-y)t_2},
+\]
+ordered integration gives
+\[
+ d(x,y)={f(x)-f(y)\over i(x-y)},\qquad
+ k(x,y)={\operatorname{Im}(\overline f(x)d(x,y))\over|f(x)|^2}.
+\]
+For $|x|\leq1/2$ and $|y|\geq1$, exact sinc and denominator estimates imply
+\[
+ |k(x,y)-k(0,y)|\leq {32\over5}{|x|\over y^2},\qquad
+ k(0,y)={1\over y}-{\sin y\over y^2}.
+\]
+Thus the logarithmically divergent $1/y$ term is independent of the external
+energy mismatch, the same local $\overline{\rm MS}$ subtraction renormalizes
+the off-diagonal kernel, and the remainder is absolutely integrable on
+compact hard external support.  Joint continuity in the common total spatial
+momentum and the incoming and outgoing invariant masses then retains half the
+fixed-fibre contrast on one nonempty compact direct-integral neighborhood:
+\[
+ \Delta R_6^{\rm band}>{49\over1068672},\qquad
+ \boxed{{Q_{8,-}^{\rm band}\over\bar q_{4,\rm band}}
+ >{2401\over9136478748672}>{1\over10^{10}}.}
+\]
+Certificate
+\par\noindent
+\texttt{REVERSE\_PHYSICS\_BT\_FINITE\_BANDWIDTH\_DARK\_PORT\_}
+\allowbreak\texttt{Q8\_V1}
+\par\noindent
+proves a nonempty globally normalizable reduced-mode wavepacket class.  This
+supersedes only the preceding fixed-fibre certificate's sharp-bandwidth
+boundary; the bandwidth radius is existential rather than numerical.  It
+does not supply a local apparatus for the fibrewise projector, the
+$O(\lambda^{10})$ remainder, Eq.~(19), or a gravitational transfer.
 
 The effect itself has a finite Hamiltonian realization.  For the phased
 antisymmetric angle projector
