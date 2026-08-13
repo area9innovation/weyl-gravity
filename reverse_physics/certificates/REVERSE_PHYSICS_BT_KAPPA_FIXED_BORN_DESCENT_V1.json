@@ -1,0 +1,226 @@
+{
+  "answer": "The canonical expectation preserves the public quadratic Born functional only on operators that are already total-kappa fixed. With the positive adjoint *=kappa sharp kappa and A=A_even+A_odd under alpha(A)=kappa A kappa, exact trace orthogonality gives Tr(A^sharp A)=||A_even||_2^2-||A_odd||_2^2. The normal unital completely positive expectation E_kappa(A)=(A+alpha(A))/2 retains A_even, so Tr(E_kappa(A)^sharp E_kappa(A))-Tr(A^sharp A)=||A_odd||_2^2. Under a faithful Hilbert trace this vanishes exactly when A_odd=0. Therefore the expectation cannot erase a nonzero weak-ghost remainder while preserving its public probability. The complete auxiliary pointer process passes the criterion without erasure: the self-adjoint local coupling V, its unitary U_g, and the ground and click projections are all fixed by total kappa. Hence A_g=P_click U_g P_ground is fixed, A_g^sharp=A_g*, and the public generalized-Born click effect A_g^sharp A_g equals the ordinary positive-Hilbert effect A_g* A_g=sin^2(g|K|). The certified compact q8 tangent is consequently a strictly positive common-Born selected public-auxiliary physical coefficient. This does not establish equality of the two Born rules on arbitrary processes, general Eq. (19), interacting BT time evolution, gravity or Lorentzian causality.",
+  "assumptions": [
+    "the positive auxiliary carrier uses the certified fundamental symmetry kappa and Hilbert adjoint A*=kappa A^sharp kappa",
+    "the trace is the faithful finite-dimensional or Hilbert-Schmidt trace on the declared finite detector ideal; no thermodynamic identity trace is used",
+    "alpha(A)=kappa A kappa is the involutive total ghost-parity automorphism",
+    "the canonical fixed-point expectation is E_kappa=(id+alpha)/2",
+    "the local pointer theorem supplies a self-adjoint affiliated V and its bounded local unitary U_g",
+    "the pointer ground is fixed and the two click states are exchanged by total kappa, so both pointer projections are fixed",
+    "the selected compact q8 matrix element and strict lower bound are imported content-addressedly",
+    "the result compares the two Born prescriptions only for the declared selected pointer transition and not for arbitrary public processes"
+  ],
+  "canonical_expectation_theorem": {
+    "automorphism": "alpha(A)=kappa A kappa, alpha^2=id",
+    "decomposition": "A_even=(A+alpha(A))/2 and A_odd=(A-alpha(A))/2",
+    "expectation": "E_kappa(A)=(A+alpha(A))/2=A_even is normal, unital, completely positive, trace preserving and idempotent",
+    "iff": "on the faithful finite/Hilbert-Schmidt ideal, E_kappa preserves q_K(A) iff A_odd=0 iff alpha(A)=A",
+    "orthogonality": "Tr(A_even* A_odd)=Tr(A_odd* A_even)=0 by alpha invariance of the trace",
+    "positive_adjoint": "A*=kappa A^sharp kappa, equivalently A^sharp=kappa A* kappa",
+    "public_Born_identity": "q_K(A)=Tr(A^sharp A)=||A_even||_2^2-||A_odd||_2^2",
+    "status": "CANONICAL_EXPECTATION_CLASSIFIED_WITH_EXACT_BORN_PRESERVATION_CRITERION",
+    "weight_defect": "q_K(E_kappa(A))-q_K(A)=||A_odd||_2^2"
+  },
+  "certificate": "REVERSE_PHYSICS_BT_KAPPA_FIXED_BORN_DESCENT_V1",
+  "checks": {
+    "details": {
+      "Krein_weight_has_difference_formula": true,
+      "canonical_expectation_changes_non_even_weight": true,
+      "click_projection_is_kappa_fixed": true,
+      "common_click_effect_is_positive": true,
+      "common_click_effect_is_sine_squared": true,
+      "complete_transition_Krein_and_Hilbert_adjoints_agree": true,
+      "complete_transition_operator_is_kappa_fixed": true,
+      "done_event_targets_work_item": true,
+      "even_odd_Hilbert_cross_term_vanishes": true,
+      "even_part_is_kappa_fixed": true,
+      "expectation_does_not_prove_general_Eq19": true,
+      "expectation_is_idempotent_on_fixture": true,
+      "expectation_is_trace_preserving": true,
+      "expectation_is_unital": true,
+      "fixture_even_part_is_correct": true,
+      "fixture_expected_positive_weight_is_exact": true,
+      "fixture_full_Krein_weight_is_exact": true,
+      "fixture_odd_part_is_correct": true,
+      "fixture_odd_penalty_is_exact": true,
+      "fixture_splits_exactly": true,
+      "ground_projection_is_kappa_fixed": true,
+      "input_hashes_are_pinned": true,
+      "interacting_gravity_and_Lorentzian_boundaries_remain_open": true,
+      "kappa_is_involution": true,
+      "odd_part_is_kappa_anti_fixed": true,
+      "pointer_unitary_is_kappa_fixed_by_functional_calculus": true,
+      "predecessors_pass": true,
+      "prior_nonzero_remainder_is_not_erased_probability_preservingly": true,
+      "prior_weak_ghost_fixture_has_Hilbert_weight_three": true,
+      "prior_weak_ghost_fixture_has_public_weight_two": true,
+      "public_Born_rule_is_imported": true,
+      "public_and_Hilbert_click_effects_agree": true,
+      "selected_interaction_is_kappa_fixed": true,
+      "selected_pair_map_intertwines_total_kappa": true,
+      "selected_pair_map_is_nonzero": true,
+      "selected_q8_bound_is_imported": true,
+      "selected_q8_common_Born_coefficient_is_positive": true,
+      "work_item_is_active_source": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 38,
+    "total": 38
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL",
+    "REDUCED-MODE"
+  ],
+  "disposition": {
+    "Born_preservation_criterion": "PROVED_IFF_THE_PROCESS_IS_KAPPA_FIXED",
+    "Born_preservation_for_arbitrary_processes": "REFUTED_WHEN_THE_ODD_PART_IS_NONZERO",
+    "Lorentzian_causal_claim": "NOT_ESTABLISHED",
+    "arbitrary_weak_ghost_process_equivalence": "NOT_ESTABLISHED",
+    "canonical_kappa_fixed_expectation": "CONSTRUCTED_AND_CLASSIFIED",
+    "complete_local_pointer_process": "KAPPA_FIXED",
+    "general_Eq19": "NOT_PROVED",
+    "gravity_or_metric_BV_BRST_transfer": "NOT_CONSTRUCTED",
+    "interacting_public_BT_local_net": "NOT_CONSTRUCTED",
+    "selected_pointer_public_vs_Hilbert_Born_equivalence": "PROVED_AT_OPERATOR_LEVEL",
+    "selected_q8_public_auxiliary_physical_coefficient": "COEFFICIENT_COMPUTED_AND_STRICTLY_POSITIVE"
+  },
+  "does_not_establish": [
+    "equality of the public generalized Krein Born rule and ordinary positive Hilbert Born rule on arbitrary processes",
+    "probability-preserving removal of any nonzero total-kappa-odd or nonfixed remainder",
+    "that every physical public BT transition is total-kappa fixed",
+    "the scalar-projector pushforward or general Eq. (19)",
+    "an interacting BT Haag--Kastler net or time-ordered detector evolution",
+    "lambda10 and higher response control",
+    "a thermodynamic normal trace or state on the identity",
+    "a Moller, LSZ or all-time scattering operator",
+    "gravity, metric BV--BRST import, QME restoration or residual transfer",
+    "anything LORENTZIAN-CAUSAL",
+    "literature priority"
+  ],
+  "exact_rational_witness": {
+    "A": [
+      [
+        "1",
+        "2"
+      ],
+      [
+        "3",
+        "4"
+      ]
+    ],
+    "A_even": [
+      [
+        "5/2",
+        "5/2"
+      ],
+      [
+        "5/2",
+        "5/2"
+      ]
+    ],
+    "A_odd": [
+      [
+        "-3/2",
+        "-1/2"
+      ],
+      [
+        "1/2",
+        "3/2"
+      ]
+    ],
+    "Hilbert_square_even": "25",
+    "Hilbert_square_odd": "5",
+    "kappa": [
+      [
+        "0",
+        "1"
+      ],
+      [
+        "1",
+        "0"
+      ]
+    ],
+    "q_K_A": "20",
+    "q_K_E_kappa_A": "25",
+    "status": "NONZERO_ODD_REMAINDER_CHANGES_WEIGHT_EXACTLY_BY_ITS_POSITIVE_HILBERT_SQUARE",
+    "weight_defect": "5"
+  },
+  "lifecycle_state": "COEFFICIENT_COMPUTED",
+  "missing_object_ledger": [
+    "a proof that the dynamically complete public BT scattering transition algebra is total-kappa fixed, or an explicit counterexample",
+    "lambda10 and higher control for the selected common-Born pointer contrast",
+    "closed-BT dynamical preparation and calibration of the selected pointer interferometer",
+    "the full Eq. (19) projector pushforward and proof that its complete physical transition operators satisfy the fixed-point criterion",
+    "the gravity/BV--BRST observable descent of the selected auxiliary pointer coefficient"
+  ],
+  "next_gate": "Compute the lambda10 coefficient of the same total-kappa-fixed pointer contrast and then test the first complete multi-channel public BT transition operator for alpha(A)=A before applying any expectation. A nonfixed component is a certified probability mismatch; a fixed complete operator extends the common-Born physical sector without requiring general Eq. (19).",
+  "provenance": {
+    "generated_by": "reverse_physics/bt_kappa_fixed_born_descent.py",
+    "independent_verifier": "reverse_physics/verify_bt_kappa_fixed_born_descent.py",
+    "inputs": [
+      {
+        "path": "planning/work-items/reverse-physics-bateman-kappa-fixed-born-descent.json",
+        "sha256": "15214d52e670b4ed02952bd1a734358a7955df9a3fc2bfa38e4ceef90ae1003e"
+      },
+      {
+        "path": "planning/events/reverse-physics-bateman-kappa-fixed-born-descent-DONE-93a5b506.json",
+        "sha256": "4957df57d8f01cf095fd65d5c38cc1097ec199acf5380d2b6108b31c3c3042e7"
+      },
+      {
+        "path": "reverse_physics/data/bateman_turok_hamiltonian_source_v1.json",
+        "sha256": "55ff3f989f1c5ac9bcc0688ad9c43721c22b5889c43da50fce43352c18be8fe7"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_POSITIVE_LOCAL_REAL_STRUCTURE_DICHOTOMY_V1.json",
+        "sha256": "650b7b246c8cb4cc4dd677271786d0150d6742eccada33f74801108aa98dfe33"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_AUXILIARY_POLYNOMIAL_QUADRUPOLE_POSITIVE_DETECTOR_V1.json",
+        "sha256": "fecfb8099e287c3fd0ff30b70546dcc36f34ff306dd0db74bfc394f262ac457d"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_AUXILIARY_POINTER_LOCAL_UNITARY_V1.json",
+        "sha256": "8b6d3a50cbeacd4959fbb08d89123c4e31185b979f8f4895af47205f45125a12"
+      }
+    ],
+    "method": "Exact rational parity decomposition and trace reconstruction, an abstract faithful-trace fixed-point argument, exact re-evaluation of the predecessor weak-ghost witness, exact selected pair-map kappa intertwining, and bounded-functional-calculus symmetry descent. No floating-point arithmetic enters a claim.",
+    "retrieval_date": "2026-08-13",
+    "source_commit": "93a5b506545f3079ab63cb7890dce05c447d04fd"
+  },
+  "question": "Can the canonical conditional expectation onto the total-kappa fixed positive auxiliary algebra preserve the public generalized Born functional, and does the complete local pointer process satisfy the resulting exact descent criterion?",
+  "report": "reverse_physics/reports/bt-kappa-fixed-born-descent.md",
+  "result_kind": "exact kappa-fixed conditional-expectation obstruction together with selected operator-level public generalized-Born and positive-Hilbert descent for the complete local BT auxiliary pointer process",
+  "schema": "reverse_physics/schema/reverse-physics-bt-kappa-fixed-born-descent-v1.schema.json",
+  "schema_version": 1,
+  "selected_pointer_descent": {
+    "adjoints": "A_g^sharp=A_g*",
+    "positive_Hilbert_effect": "A_g* A_g=sin^2(g|K|)",
+    "probability_identity": "Tr(A_g^sharp A_g rho)=Tr(A_g* A_g rho) for every trace-class selected input rho on the ground sector",
+    "public_effect": "A_g^sharp A_g=sin^2(g|K|)",
+    "selected_pair_map_kappa_intertwining": "M kappa_in=kappa_out M",
+    "status": "SELECTED_LOCAL_POINTER_PROCESS_HAS_OPERATOR_LEVEL_COMMON_BORN_DESCENT",
+    "strict_bound": "Q8_aux,compact/q4_bar>1/18874368000",
+    "symmetries": [
+      "kappa_total V kappa_total=V",
+      "kappa_total U_g kappa_total=U_g",
+      "kappa_total P_ground kappa_total=P_ground",
+      "kappa_total P_click kappa_total=P_click"
+    ],
+    "transition": "A_g=P_click U_g P_ground satisfies alpha(A_g)=A_g"
+  },
+  "verification_commands": [
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/bt_kappa_fixed_born_descent.py --write --check",
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/verify_bt_kappa_fixed_born_descent.py",
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 -m unittest -v reverse_physics.tests.test_bt_kappa_fixed_born_descent"
+  ],
+  "weak_ghost_remainder_disposition": {
+    "Eq19_consequence": "a conditional-expectation proof of general Eq. (19) must first show that every physical transition operator is already kappa fixed; the expectation alone does not make a nonfixed remainder harmless",
+    "expectation_consequence": "a nonzero odd or nonfixed remainder cannot be removed by E_kappa while preserving the public quadratic probability",
+    "imported_fixture": "B=I and Q=E21 on the two-dimensional cross-Krein carrier",
+    "positive_Hilbert_weight": "Tr((B+Q)*(B+Q))=3",
+    "public_weight": "Tr((B+Q)^sharp(B+Q))=2",
+    "status": "GENERAL_NONFIXED_REMAINDER_DESCENT_OBSTRUCTED"
+  }
+}

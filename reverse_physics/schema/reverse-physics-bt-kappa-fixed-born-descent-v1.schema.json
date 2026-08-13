@@ -1,0 +1,130 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-kappa-fixed-born-descent-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "schema_version", "certificate", "question", "answer",
+    "result_kind", "lifecycle_state", "dependency_tags", "assumptions",
+    "provenance", "canonical_expectation_theorem", "exact_rational_witness",
+    "weak_ghost_remainder_disposition", "selected_pointer_descent",
+    "disposition", "does_not_establish", "missing_object_ledger", "next_gate",
+    "checks", "verification_commands", "report"
+  ],
+  "properties": {
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-kappa-fixed-born-descent-v1.schema.json"},
+    "schema_version": {"const": 1},
+    "certificate": {"const": "REVERSE_PHYSICS_BT_KAPPA_FIXED_BORN_DESCENT_V1"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE"]},
+    "assumptions": {"type": "array", "minItems": 8, "maxItems": 8, "items": {"$ref": "#/$defs/text"}},
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_commit", "retrieval_date", "inputs", "generated_by", "independent_verifier", "method"],
+      "properties": {
+        "source_commit": {"const": "93a5b506545f3079ab63cb7890dce05c447d04fd"},
+        "retrieval_date": {"const": "2026-08-13"},
+        "inputs": {
+          "type": "array", "minItems": 6, "maxItems": 6,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["path", "sha256"],
+            "properties": {
+              "path": {"$ref": "#/$defs/text"},
+              "sha256": {"$ref": "#/$defs/hash"}
+            }
+          }
+        },
+        "generated_by": {"const": "reverse_physics/bt_kappa_fixed_born_descent.py"},
+        "independent_verifier": {"const": "reverse_physics/verify_bt_kappa_fixed_born_descent.py"},
+        "method": {"$ref": "#/$defs/text"}
+      }
+    },
+    "canonical_expectation_theorem": {
+      "type": "object", "additionalProperties": false,
+      "required": ["automorphism", "decomposition", "positive_adjoint", "orthogonality", "public_Born_identity", "expectation", "weight_defect", "iff", "status"],
+      "properties": {
+        "automorphism": {"$ref": "#/$defs/text"},
+        "decomposition": {"$ref": "#/$defs/text"},
+        "positive_adjoint": {"$ref": "#/$defs/text"},
+        "orthogonality": {"$ref": "#/$defs/text"},
+        "public_Born_identity": {"const": "q_K(A)=Tr(A^sharp A)=||A_even||_2^2-||A_odd||_2^2"},
+        "expectation": {"$ref": "#/$defs/text"},
+        "weight_defect": {"const": "q_K(E_kappa(A))-q_K(A)=||A_odd||_2^2"},
+        "iff": {"$ref": "#/$defs/text"},
+        "status": {"const": "CANONICAL_EXPECTATION_CLASSIFIED_WITH_EXACT_BORN_PRESERVATION_CRITERION"}
+      }
+    },
+    "exact_rational_witness": {
+      "type": "object", "additionalProperties": false,
+      "required": ["kappa", "A", "A_even", "A_odd", "q_K_A", "Hilbert_square_even", "Hilbert_square_odd", "q_K_E_kappa_A", "weight_defect", "status"],
+      "properties": {
+        "kappa": {"$ref": "#/$defs/matrix"},
+        "A": {"$ref": "#/$defs/matrix"},
+        "A_even": {"$ref": "#/$defs/matrix"},
+        "A_odd": {"$ref": "#/$defs/matrix"},
+        "q_K_A": {"const": "20"},
+        "Hilbert_square_even": {"const": "25"},
+        "Hilbert_square_odd": {"const": "5"},
+        "q_K_E_kappa_A": {"const": "25"},
+        "weight_defect": {"const": "5"},
+        "status": {"const": "NONZERO_ODD_REMAINDER_CHANGES_WEIGHT_EXACTLY_BY_ITS_POSITIVE_HILBERT_SQUARE"}
+      }
+    },
+    "weak_ghost_remainder_disposition": {
+      "type": "object", "additionalProperties": false,
+      "required": ["imported_fixture", "public_weight", "positive_Hilbert_weight", "expectation_consequence", "Eq19_consequence", "status"],
+      "properties": {
+        "imported_fixture": {"$ref": "#/$defs/text"},
+        "public_weight": {"$ref": "#/$defs/text"},
+        "positive_Hilbert_weight": {"$ref": "#/$defs/text"},
+        "expectation_consequence": {"$ref": "#/$defs/text"},
+        "Eq19_consequence": {"$ref": "#/$defs/text"},
+        "status": {"const": "GENERAL_NONFIXED_REMAINDER_DESCENT_OBSTRUCTED"}
+      }
+    },
+    "selected_pointer_descent": {
+      "type": "object", "additionalProperties": false,
+      "required": ["symmetries", "transition", "adjoints", "public_effect", "positive_Hilbert_effect", "probability_identity", "selected_pair_map_kappa_intertwining", "strict_bound", "status"],
+      "properties": {
+        "symmetries": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/text"}},
+        "transition": {"$ref": "#/$defs/text"},
+        "adjoints": {"const": "A_g^sharp=A_g*"},
+        "public_effect": {"const": "A_g^sharp A_g=sin^2(g|K|)"},
+        "positive_Hilbert_effect": {"const": "A_g* A_g=sin^2(g|K|)"},
+        "probability_identity": {"$ref": "#/$defs/text"},
+        "selected_pair_map_kappa_intertwining": {"const": "M kappa_in=kappa_out M"},
+        "strict_bound": {"const": "Q8_aux,compact/q4_bar>1/18874368000"},
+        "status": {"const": "SELECTED_LOCAL_POINTER_PROCESS_HAS_OPERATOR_LEVEL_COMMON_BORN_DESCENT"}
+      }
+    },
+    "disposition": {"type": "object", "minProperties": 11, "maxProperties": 11, "additionalProperties": {"$ref": "#/$defs/text"}},
+    "does_not_establish": {"type": "array", "minItems": 11, "maxItems": 11, "items": {"$ref": "#/$defs/text"}},
+    "missing_object_ledger": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"$ref": "#/$defs/text"}},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "checks": {
+      "type": "object", "additionalProperties": false,
+      "required": ["total", "passed", "ok", "failures", "details"],
+      "properties": {
+        "total": {"const": 38},
+        "passed": {"const": 38},
+        "ok": {"const": true},
+        "failures": {"const": []},
+        "details": {"type": "object", "minProperties": 38, "maxProperties": 38, "additionalProperties": {"const": true}}
+      }
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/text"}},
+    "report": {"const": "reverse_physics/reports/bt-kappa-fixed-born-descent.md"}
+  },
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "matrix": {
+      "type": "array", "minItems": 1,
+      "items": {"type": "array", "minItems": 1, "items": {"type": "string", "pattern": "^-?[0-9]+(?:/[1-9][0-9]*)?$"}}
+    }
+  }
+}
