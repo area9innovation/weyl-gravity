@@ -1,0 +1,185 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-fully-rearranged-rigged-all-time-physical-jet-v1.schema.json",
+  "title": "Selected BT all-time physical probability jet through lambda10",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "schema_version", "certificate", "question", "answer",
+    "dependency_tags", "lifecycle_state", "result_kind",
+    "selected_physical_domain", "complete_amplitude_jet",
+    "physical_probability_jet", "common_Born_operator_identity",
+    "small_coupling_positivity", "renormalization_group", "claim_boundary",
+    "assumptions", "does_not_establish", "next_gate", "provenance",
+    "checks", "verification_commands", "report"
+  ],
+  "properties": {
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-fully-rearranged-rigged-all-time-physical-jet-v1.schema.json"},
+    "schema_version": {"const": 1},
+    "certificate": {"const": "REVERSE_PHYSICS_BT_FULLY_REARRANGED_RIGGED_ALL_TIME_PHYSICAL_JET_V1"},
+    "question": {"type": "string", "minLength": 20},
+    "answer": {"type": "string", "minLength": 500},
+    "dependency_tags": {
+      "type": "array",
+      "prefixItems": [
+        {"const": "LOCAL-ALGEBRAIC"},
+        {"const": "EUCLIDEAN-SPECTRAL"},
+        {"const": "REDUCED-MODE"}
+      ],
+      "items": false,
+      "minItems": 3,
+      "maxItems": 3
+    },
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "result_kind": {"type": "string", "minLength": 30},
+    "selected_physical_domain": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["domain", "restriction_order", "input_output_orthogonality", "disconnected_partitions", "support_margins_squared", "support_conclusion", "all_time_conclusion", "status"],
+      "properties": {
+        "domain": {"type": "string"},
+        "restriction_order": {"type": "string"},
+        "input_output_orthogonality": {"const": "P_Y*P_X=0"},
+        "disconnected_partitions": {"const": 202},
+        "support_margins_squared": {"const": ["2", "32/625", "17794/10625"]},
+        "support_conclusion": {"type": "string"},
+        "all_time_conclusion": {"type": "string"},
+        "status": {"const": "COMPLETE_SELECTED_SUPPORT_RESTRICTION_THROUGH_LAMBDA10"}
+      }
+    },
+    "complete_amplitude_jet": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["coupling", "amplitude", "tree", "loop", "graph_exhaustion", "vacuum", "survival", "similarity_dressing", "status"],
+      "properties": {
+        "coupling": {"const": "g=lambda^2"},
+        "amplitude": {"const": "A_YX,infinity=lambda^4*T4,infinity+lambda^6*T6,infinity+O(lambda^8)"},
+        "tree": {"type": "string"},
+        "loop": {"type": "string"},
+        "graph_exhaustion": {"type": "string"},
+        "vacuum": {"type": "string"},
+        "survival": {"type": "string"},
+        "similarity_dressing": {"type": "string"},
+        "status": {"const": "NO_MISSING_SELECTED_AMPLITUDE_TERM_THROUGH_LAMBDA6"}
+      }
+    },
+    "physical_probability_jet": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["formula", "q8", "q9", "q10", "E8", "E10", "q8_sign", "q10_sign", "completeness_scope", "status"],
+      "properties": {
+        "formula": {"const": "q_phys,infinity[F]=lambda^8*q8,infinity[F]+lambda^10*q10,infinity[F]+O(lambda^12)"},
+        "q8": {"type": "string"},
+        "q9": {"type": "string"},
+        "q10": {"type": "string"},
+        "E8": {"type": "string"},
+        "E10": {"type": "string"},
+        "q8_sign": {"const": "STRICTLY_POSITIVE_ON_A_NONEMPTY_REAL_NONNEGATIVE_PACKET_CLASS"},
+        "q10_sign": {"const": "NOT_DETERMINED"},
+        "completeness_scope": {"type": "string"},
+        "status": {"const": "COMPLETE_SELECTED_ALL_TIME_PHYSICAL_JET_THROUGH_LAMBDA10"}
+      }
+    },
+    "common_Born_operator_identity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["fixedness", "E8", "E10", "probability", "finite_exact_witness", "status"],
+      "properties": {
+        "fixedness": {"type": "string"},
+        "E8": {"const": "E8_public=E8_Hilbert"},
+        "E10": {"const": "E10_public=E10_Hilbert"},
+        "probability": {"type": "string"},
+        "finite_exact_witness": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["kappa", "tree", "loop", "tree_fixed", "loop_fixed", "E8_public", "E8_Hilbert", "E10_public", "E10_Hilbert"],
+          "properties": {
+            "kappa": {"type": "array"}, "tree": {"type": "array"}, "loop": {"type": "array"},
+            "tree_fixed": {"const": true}, "loop_fixed": {"const": true},
+            "E8_public": {"type": "array"}, "E8_Hilbert": {"type": "array"},
+            "E10_public": {"type": "array"}, "E10_Hilbert": {"type": "array"}
+          }
+        },
+        "status": {"const": "PUBLIC_AND_POSITIVE_HILBERT_SELECTED_EFFECT_JETS_AGREE_THROUGH_LAMBDA10"}
+      }
+    },
+    "small_coupling_positivity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["lemma", "half_margin_choice", "rational_lemma_fixture", "scope", "status"],
+      "properties": {
+        "lemma": {"type": "string"},
+        "half_margin_choice": {"type": "string"},
+        "rational_lemma_fixture": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["q8", "q10", "safe_lambda_squared", "lower_margin"],
+          "properties": {
+            "q8": {"$ref": "#/$defs/rational"},
+            "q10": {"$ref": "#/$defs/rational"},
+            "safe_lambda_squared": {"$ref": "#/$defs/rational"},
+            "lower_margin": {"$ref": "#/$defs/rational"}
+          }
+        },
+        "scope": {"type": "string"},
+        "status": {"const": "NONEMPTY_PACKETWISE_PERTURBATIVE_POSITIVITY_NEIGHBORHOOD_PROVED"}
+      }
+    },
+    "renormalization_group": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["q10_derivative", "beta", "cancellation", "scheme_boundary", "status"],
+      "properties": {
+        "q10_derivative": {"type": "string"}, "beta": {"type": "string"},
+        "cancellation": {"type": "string"}, "scheme_boundary": {"type": "string"},
+        "status": {"const": "SELECTED_PHYSICAL_JET_RG_INVARIANT_THROUGH_LAMBDA10"}
+      }
+    },
+    "claim_boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["selected_packet_physical_jet", "matched_finite_time_q10", "all_channel_probability", "finite_coupling_exact_probability", "bounded_whole_carrier_operator", "Moller_LSZ_S", "general_Eq19", "gravity_BV_BRST_QME", "Lorentzian_causal_claim"],
+      "properties": {
+        "selected_packet_physical_jet": {"const": "COEFFICIENT_COMPUTED_THROUGH_LAMBDA10"},
+        "matched_finite_time_q10": {"const": "NOT_COMPUTED"},
+        "all_channel_probability": {"const": "NOT_CONSTRUCTED"},
+        "finite_coupling_exact_probability": {"const": "NOT_ESTABLISHED"},
+        "bounded_whole_carrier_operator": {"const": "NOT_CONSTRUCTED"},
+        "Moller_LSZ_S": {"const": "NOT_CONSTRUCTED"},
+        "general_Eq19": {"const": "NOT_PROVED"},
+        "gravity_BV_BRST_QME": {"const": "NOT_CONSTRUCTED"},
+        "Lorentzian_causal_claim": {"const": "NOT_ESTABLISHED"}
+      }
+    },
+    "assumptions": {"type": "array", "minItems": 5, "items": {"type": "string"}},
+    "does_not_establish": {"type": "array", "minItems": 13, "items": {"type": "string"}},
+    "next_gate": {"type": "string", "minLength": 100},
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_commit", "input_hashes", "method", "generated_by", "independent_verifier"],
+      "properties": {
+        "source_commit": {"pattern": "^[0-9a-f]{40}$"},
+        "input_hashes": {"type": "object", "minProperties": 8, "additionalProperties": {"pattern": "^[0-9a-f]{64}$"}},
+        "method": {"type": "string"}, "generated_by": {"type": "string"}, "independent_verifier": {"type": "string"}
+      }
+    },
+    "checks": {
+      "type": "object", "additionalProperties": false,
+      "required": ["ok", "passed", "total", "items"],
+      "properties": {
+        "ok": {"const": true}, "passed": {"type": "integer", "minimum": 1},
+        "total": {"type": "integer", "minimum": 1},
+        "items": {"type": "object", "minProperties": 30, "additionalProperties": {"const": true}}
+      }
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "items": {"type": "string"}},
+    "report": {"const": "reverse_physics/reports/bt-fully-rearranged-rigged-all-time-physical-jet.md"}
+  },
+  "$defs": {
+    "rational": {
+      "type": "object", "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {"numerator": {"type": "integer"}, "denominator": {"type": "integer", "minimum": 1}}
+    }
+  }
+}
