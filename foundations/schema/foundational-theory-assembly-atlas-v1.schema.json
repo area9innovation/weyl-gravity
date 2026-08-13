@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "result_id", "result_kind", "lifecycle", "title", "created", "dependency_tags", "unit", "interface_vocabulary", "assemblies", "empirical_ledger", "claim_flags", "does_not_establish", "source_atlas_digest", "canonical_digest"],
+  "properties": {
+    "schema_version": {"const": "foundational-theory-assembly-atlas-v1"},
+    "result_id": {"const": "FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1"},
+    "result_kind": {"const": "FAIL_CLOSED_THEORY_ASSEMBLY_AND_EMPIRICAL_LEDGER"},
+    "lifecycle": {"const": "VERIFIED_NAVIGATION_ARTIFACT"},
+    "title": {"type": "string", "minLength": 1},
+    "created": {"type": "string", "format": "date"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]},
+    "unit": {"type": "string", "minLength": 1},
+    "interface_vocabulary": {
+      "type": "array", "minItems": 7, "maxItems": 7,
+      "items": {"type": "object", "required": ["id", "meaning"]}
+    },
+    "assemblies": {
+      "type": "array", "minItems": 7, "maxItems": 7,
+      "items": {
+        "type": "object",
+        "required": ["id", "label", "aim", "foundations", "carriers", "kind", "selection_rule", "selected_cells", "coverage", "interfaces", "hard_gates", "complete_theory", "empirically_supported"],
+        "properties": {
+          "selected_cells": {"type": "array", "minItems": 16, "maxItems": 16},
+          "interfaces": {"type": "array", "minItems": 7, "maxItems": 7},
+          "hard_gates": {"type": "array", "minItems": 6, "maxItems": 6},
+          "complete_theory": {"const": false},
+          "empirically_supported": {"const": false}
+        }
+      }
+    },
+    "empirical_ledger": {
+      "type": "object",
+      "required": ["record_schema", "benchmarks", "records"],
+      "properties": {
+        "record_schema": {"type": "array", "minItems": 10, "uniqueItems": true},
+        "benchmarks": {"type": "array", "minItems": 6, "maxItems": 6},
+        "records": {"type": "array", "maxItems": 0}
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": ["prototype_assemblies_generated", "selected_cells_content_addressed", "interface_and_coverage_states_separated", "empirical_record_schema_declared", "cross_cell_composability_established", "prediction_chain_established", "empirical_agreement_assessed", "complete_observationally_valid_theory_identified"]
+    },
+    "does_not_establish": {"type": "array", "minItems": 7, "items": {"type": "string", "minLength": 1}},
+    "source_atlas_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "canonical_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

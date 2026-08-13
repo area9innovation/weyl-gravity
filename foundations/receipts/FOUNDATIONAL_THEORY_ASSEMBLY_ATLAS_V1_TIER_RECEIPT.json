@@ -1,0 +1,147 @@
+{
+  "schema_version": "science-forge-tier-receipt-v1",
+  "receipt_id": "FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1_TIER_RECEIPT",
+  "result_id": "FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1",
+  "created": "2026-08-13",
+  "source_base_commit": "23de3e07843b5acd41a6c9bf880fc05c0e6e4ff7",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "scope": "Added a fail-closed theory-assembly layer over the existing foundations cube. Seven named navigational prototypes select recorded obligation cells, while 49 cross-cell interfaces, six ordered hard gates, and an empty empirical benchmark ledger prevent coverage from being mistaken for composition or observational support.",
+  "input": {
+    "path": "foundations/site/data.json",
+    "sha256": "0995ae3f4566426b55417bd2cddac72f2b6d2a3012cafcfc1fc10f8152bb5bd4",
+    "canonical_digest": "2b862d2274aa796e0d87c68672313245b2b8317487d0e49e91fbbf0af5585016",
+    "role": "normalized coverage atlas with per-evidence directness roles"
+  },
+  "artifacts": [
+    {
+      "path": "foundations/theory_assembly.py",
+      "sha256": "b4638941fa79510c3ca394cbf0d4185d5f5367a6ec74b593d82944f225582a13",
+      "role": "deterministic prototype selection, interface, hard-gate, and empirical-ledger producer"
+    },
+    {
+      "path": "foundations/results/FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1.json",
+      "sha256": "8c87f72a385ddf932f7d91d4c8c646f0f40b88faf05724478899e8eb540df74f",
+      "canonical_digest": "4362127ef736380284716aee9e36564b58fd3f3b780a9d5ba7bff36ebeb7ac46",
+      "role": "machine-readable fail-closed assembly atlas"
+    },
+    {
+      "path": "foundations/reports/theory-assembly-atlas-v1.md",
+      "sha256": "3cc99f2513b44d91492aafd1acfdb020864df0b1f7f917c123c2fb596ddf6a48",
+      "role": "human-readable outcome and boundaries"
+    },
+    {
+      "path": "foundations/schema/foundational-theory-assembly-atlas-v1.schema.json",
+      "sha256": "fe47f64965f0aa6d41caf010e002966a1723cccfdc5d4dfb94228c0b507f4bab",
+      "role": "Draft 2020-12 result schema"
+    },
+    {
+      "path": "foundations/verify_theory_assembly.py",
+      "sha256": "e381840bfa5798b987960a252ad5ac6548bfe27ceb6fdbb22bad89e7d7bd6198",
+      "role": "independent selection, coverage, interface, empirical-ledger, and boundary verifier"
+    },
+    {
+      "path": "foundations/tests/test_theory_assembly.py",
+      "sha256": "7e3416aeb7d9d6d93590c590201e4e88e6ec5a11e4faf76624f790de5406f3fa",
+      "role": "regression and fail-closed promotion tests"
+    },
+    {
+      "path": "foundations/site/manifest.json",
+      "sha256": "f7ccead1727f8e831f29084ddcbf5e07b8997d9fbee75bf7a0550f70c9bc485d",
+      "role": "content-addressed static-site input and output manifest"
+    },
+    {
+      "path": "foundations/site/assemblies.json",
+      "sha256": "8c87f72a385ddf932f7d91d4c8c646f0f40b88faf05724478899e8eb540df74f",
+      "role": "downloadable site assessment identical to the registered result"
+    },
+    {
+      "path": "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json",
+      "sha256": "b57711ea68e0434d76af616b02957bd92f192f4f6390d1a5e76773158439acfd",
+      "role": "updated explorer result with assembly provenance and fail-closed flags"
+    }
+  ],
+  "assessment_snapshot": {
+    "prototype_assemblies": 7,
+    "selected_obligation_cells": 112,
+    "typed_interfaces": 49,
+    "interfaces_not_assessed": 49,
+    "hard_gates_per_assembly": 6,
+    "empirical_benchmark_families": 6,
+    "empirical_comparison_records": 0,
+    "complete_theories": 0,
+    "empirically_supported_theories": 0,
+    "largest_coverage_envelope": {
+      "assembly": "STANDARD_MIXED_REFERENCE",
+      "direct": 14,
+      "total": 16
+    }
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "python3 -m py_compile foundations/theory_assembly.py foundations/verify_theory_assembly.py foundations/build_matrix_site_v2.py foundations/check_matrix_site_v2.py foundations/verify_matrix_site_v2.py foundations/tests/test_theory_assembly.py",
+          "elapsed_seconds": 0.04,
+          "status": "PASS"
+        },
+        {
+          "command": "deno check foundations/matrix_site_assets/app.js foundations/site/app.js foundations/site/migration-review.js foundations/site/assemblies.js",
+          "elapsed_seconds": 0.08,
+          "status": "PASS"
+        },
+        {
+          "command": "google-chrome --headless --disable-gpu --no-sandbox --window-size=1600,5000 --virtual-time-budget=2500 --screenshot=/tmp/foundations-assemblies.png http://127.0.0.1:8765/index.html#view=assemblies",
+          "elapsed_seconds": 1.2,
+          "status": "PASS",
+          "output": "Full-page Assemblies view rendered and visually inspected at 1600 px width."
+        }
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "commands": [
+        {"command": "python3 foundations/build_matrix_site_v2.py --check", "elapsed_seconds": 0.09, "status": "PASS"},
+        {"command": "python3 foundations/check_matrix_site_v2.py", "elapsed_seconds": 0.05, "status": "PASS"},
+        {"command": "python3 foundations/verify_matrix_site_v2.py", "elapsed_seconds": 0.16, "status": "PASS"},
+        {"command": "python3 foundations/verify_theory_viability.py", "elapsed_seconds": 0.10, "status": "PASS"},
+        {"command": "python3 foundations/verify_theory_assembly.py", "elapsed_seconds": 0.10, "status": "PASS"},
+        {"command": "python3 -m unittest foundations.tests.test_matrix_site foundations.tests.test_theory_viability foundations.tests.test_theory_assembly", "elapsed_seconds": 0.72, "status": "PASS", "output": "18 tests passed."}
+      ]
+    },
+    "tier_2": {
+      "status": "NOT_RUN",
+      "criterion": "The underlying cube, evidence records, mathematical inputs, and scientific certificates are unchanged. This is a derived, independently checked assembly and navigation layer over content-addressed inputs."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No freeze, theorem promotion, shared core algebra change, release, or quantum lifecycle transition is made."
+    }
+  },
+  "claim_flags": {
+    "prototype_assemblies_generated": true,
+    "selected_cells_content_addressed": true,
+    "interfaces_typed_and_separate": true,
+    "empirical_record_schema_declared": true,
+    "interactive_assembly_view_generated": true,
+    "cross_cell_composability_established": false,
+    "prediction_chain_established": false,
+    "empirical_agreement_assessed": false,
+    "complete_observationally_valid_theory_identified": false,
+    "new_lorentzian_claim": false,
+    "quantum_lifecycle_promoted": false
+  },
+  "does_not_establish": [
+    "that selected cells concern the same physical model or scope",
+    "that any carrier or foundation translation exists",
+    "that direct coverage composes into an end-to-end prediction",
+    "that a finite or reduced construction has a controlled continuum limit",
+    "that any prototype agrees with observations",
+    "a complete theory or a new LORENTZIAN-CAUSAL result",
+    "a quantum lifecycle promotion"
+  ]
+}

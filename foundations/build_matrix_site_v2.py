@@ -14,6 +14,7 @@ if str(_ROOT) not in sys.path:
     sys.path.insert(0, str(_ROOT))
 
 from foundations import build_matrix_site as v1
+from foundations.theory_assembly import build_assembly_assessment
 from foundations.theory_viability import build_assessment
 
 ROOT = v1.ROOT
@@ -25,6 +26,8 @@ RESULT = FOUNDATIONS / "results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json"
 REPORT = FOUNDATIONS / "reports/matrix-explorer-site-v2.md"
 VIABILITY_RESULT = FOUNDATIONS / "results/FOUNDATIONAL_THEORY_VIABILITY_ASSESSMENT_V1.json"
 VIABILITY_REPORT = FOUNDATIONS / "reports/theory-viability-assessment-v1.md"
+ASSEMBLY_RESULT = FOUNDATIONS / "results/FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1.json"
+ASSEMBLY_REPORT = FOUNDATIONS / "reports/theory-assembly-atlas-v1.md"
 CUBE = FOUNDATIONS / "results/FOUNDATIONAL_INTERSECTION_CUBE_V4.json"
 AUDIT = FOUNDATIONS / "results/FOUNDATIONAL_INTERSECTION_CUBE_MIGRATION_AUDIT_V2.json"
 LADDER = FOUNDATIONS / "results/FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V2.json"
@@ -336,14 +339,63 @@ def render_viability_report(assessment: dict[str, Any]) -> str:
     return "\n".join(lines)
 
 
+def render_assembly_report(assessment: dict[str, Any]) -> str:
+    lines = [
+        "# Candidate theory assembly atlas v1",
+        "",
+        "**Result:** `FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1`",
+        "",
+        "**Lifecycle:** `VERIFIED_NAVIGATION_ARTIFACT`",
+        "",
+        "## Outcome",
+        "",
+        "The atlas generates seven named prototype assemblies. Each is a deterministic",
+        "coverage envelope: it selects the strongest recorded cell for every obligation",
+        "inside a declared regime/carrier region. It is not a composed theory.",
+        "",
+        "The crucial new object is the interface ledger. Seven joins in each prototype",
+        "must separately record whether the linked objects are identical, exactly",
+        "translated, conditionally bridged, approximated with a bound, conjecturally",
+        "linked, incompatible, or not assessed. Every current interface is",
+        "`NOT_ASSESSED`; coverage cannot silently promote one.",
+        "",
+        "## Hard-gate chain",
+        "",
+        "Every prototype is displayed against six ordered gates: obligation coverage,",
+        "cross-cell composition, prediction derivation, observable identification,",
+        "empirical comparison, and robustness/out-of-sample performance. The latter",
+        "five remain blocked or have no records.",
+        "",
+        "## Empirical ledger",
+        "",
+        "The ledger declares six benchmark families and the fields a future comparison",
+        "must carry. It is intentionally empty. A benchmark name is not observational",
+        "evidence, and reconstruction coverage is not an empirical comparison.",
+        "",
+        "## Interface",
+        "",
+        "The **Assemblies** tab synchronizes the hard-gate chain, selected obligation",
+        "cells, typed interface ledger, and empirical benchmark ledger for one prototype.",
+        "Each selected cell links back to the exact matrix coordinate.",
+        "",
+        "## Boundaries",
+        "",
+        *[f"- This does not establish {item}." for item in assessment["does_not_establish"]],
+        "",
+    ]
+    return "\n".join(lines)
+
+
 def generated() -> dict[Path, bytes]:
     dataset = build_dataset()
     viability = build_assessment(dataset)
+    assemblies = build_assembly_assessment(dataset)
     data_json = (json.dumps(dataset, indent=2, ensure_ascii=False) + "\n").encode()
     viability_json = (json.dumps(viability, indent=2, ensure_ascii=False) + "\n").encode()
+    assembly_json = (json.dumps(assemblies, indent=2, ensure_ascii=False) + "\n").encode()
     index = (ASSETS / "index.html").read_text().replace(
         '<script src="data.js"></script>',
-        '<script src="data.js"></script>\n  <script src="viability.js"></script>',
+        '<script src="data.js"></script>\n  <script src="viability.js"></script>\n  <script src="assemblies.js"></script>',
     ).replace(
         '<script src="app.js"></script>',
         '<script src="app.js"></script>\n  <script src="migration-review.js"></script>',
@@ -357,6 +409,8 @@ def generated() -> dict[Path, bytes]:
         SITE / "data.js": b"window.MATRIX_EXPLORER_DATA = " + data_json.rstrip() + b";\n",
         SITE / "viability.json": viability_json,
         SITE / "viability.js": b"window.THEORY_VIABILITY_DATA = " + viability_json.rstrip() + b";\n",
+        SITE / "assemblies.json": assembly_json,
+        SITE / "assemblies.js": b"window.THEORY_ASSEMBLY_DATA = " + assembly_json.rstrip() + b";\n",
     }
     local_evidence_paths = [ROOT / item["result_path"] for item in dataset["evidence"].values() if item["kind"] == "LOCAL_RESULT"]
     local_report_paths = [ROOT / item["report_path"] for item in dataset["evidence"].values() if item["kind"] == "LOCAL_RESULT" and item.get("report_path")]
@@ -368,7 +422,7 @@ def generated() -> dict[Path, bytes]:
     bundled_sources = sorted(set([CUBE, AUDIT, LADDER, *LEDGERS, *local_evidence_paths, *local_report_paths, *reports]))
     for source in bundled_sources:
         outputs[SITE / "sources" / source.relative_to(ROOT)] = source.read_bytes()
-    input_paths = sorted(set([Path(__file__).resolve(), FOUNDATIONS / "theory_viability.py", *bundled_sources, ASSETS / "index.html", ASSETS / "styles.css", ASSETS / "app.js", V2_ASSETS / "app-v2.js"]))
+    input_paths = sorted(set([Path(__file__).resolve(), FOUNDATIONS / "theory_viability.py", FOUNDATIONS / "theory_assembly.py", *bundled_sources, ASSETS / "index.html", ASSETS / "styles.css", ASSETS / "app.js", V2_ASSETS / "app-v2.js"]))
     manifest = {
         "schema_version": "foundational-matrix-explorer-manifest-v2",
         "created": CREATED,
@@ -389,10 +443,10 @@ def generated() -> dict[Path, bytes]:
         "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
         "scope": "Deterministic static exploration surface over the migration-reviewed foundations cube and cylinder implication ladder.",
         "counts": dataset["counts"],
-        "features": ["sixteen 6x6 heatmaps", "dual local+literature cell marks", "per-evidence directness roles", "plain-language guide for all 28 axis options", "separate coverage and migration-review states", "migration evidence inspector", "multi-select filters", "full-text search", "cell inspector", "one-axis neighbors", "two-cell comparison", "URL permalinks", "filtered JSON and CSV export", "research-brief export", "three-pathway typed argument map with linked relation ledger", "strength ladder", "evidence catalogue", "theory-profile readiness map", "researcher-selectable obligation gates", "multi-carrier coverage-envelope composer", "non-scalar Pareto navigation", "separate composition and empirical-agreement rails"],
-        "provenance": {"manifest": rel(SITE / "manifest.json"), "manifest_sha256": v1.sha_bytes(manifest_bytes), "canonical_data_digest": dataset["canonical_digest"], "viability_digest": viability["canonical_digest"]},
-        "independent_checker": {"path": "foundations/check_matrix_site_v2.py", "expected_cells": 576, "expected_emitted": 452, "expected_synthetic_not_mapped": 124, "expected_total_not_mapped": 205, "expected_evidence_records": 69, "expected_digest": dataset["canonical_digest"], "expected_viability_digest": viability["canonical_digest"]},
-        "claim_flags": {"static_site_generated": True, "all_cartesian_coordinates_visible": True, "all_emitted_migrations_reviewed": True, "coverage_and_migration_separated": True, "all_used_evidence_resolved": True, "theory_profiles_generated": True, "composition_and_observation_rails_separated": True, "scientific_claims_duplicated_by_hand": False, "literature_complete": False, "unmapped_means_absent": False, "reviewed_no_transfer_means_absent": False, "priority_score_is_theorem": False, "complete_observationally_valid_theory_identified": False, "new_lorentzian_claim": False},
+        "features": ["sixteen 6x6 heatmaps", "dual local+literature cell marks", "per-evidence directness roles", "plain-language guide for all 28 axis options", "separate coverage and migration-review states", "migration evidence inspector", "multi-select filters", "full-text search", "cell inspector", "one-axis neighbors", "two-cell comparison", "URL permalinks", "filtered JSON and CSV export", "research-brief export", "three-pathway typed argument map with linked relation ledger", "strength ladder", "evidence catalogue", "theory-profile readiness map", "researcher-selectable obligation gates", "multi-carrier coverage-envelope composer", "non-scalar Pareto navigation", "separate composition and empirical-agreement rails", "seven named prototype assemblies", "typed cross-cell interface ledger", "six-stage theory hard-gate chain", "empty fail-closed empirical benchmark ledger"],
+        "provenance": {"manifest": rel(SITE / "manifest.json"), "manifest_sha256": v1.sha_bytes(manifest_bytes), "canonical_data_digest": dataset["canonical_digest"], "viability_digest": viability["canonical_digest"], "assembly_digest": assemblies["canonical_digest"]},
+        "independent_checker": {"path": "foundations/check_matrix_site_v2.py", "expected_cells": 576, "expected_emitted": 452, "expected_synthetic_not_mapped": 124, "expected_total_not_mapped": 205, "expected_evidence_records": 69, "expected_digest": dataset["canonical_digest"], "expected_viability_digest": viability["canonical_digest"], "expected_assembly_digest": assemblies["canonical_digest"]},
+        "claim_flags": {"static_site_generated": True, "all_cartesian_coordinates_visible": True, "all_emitted_migrations_reviewed": True, "coverage_and_migration_separated": True, "all_used_evidence_resolved": True, "theory_profiles_generated": True, "theory_assembly_atlas_generated": True, "composition_and_observation_rails_separated": True, "scientific_claims_duplicated_by_hand": False, "literature_complete": False, "unmapped_means_absent": False, "reviewed_no_transfer_means_absent": False, "priority_score_is_theorem": False, "complete_observationally_valid_theory_identified": False, "new_lorentzian_claim": False},
         "does_not_establish": ["literature completeness", "coverage for the 81 still-unmapped reviewed-no-transfer coordinates", "that NOT_MAPPED means no literature exists", "that an UNREVIEWED evidence role is an absence of direct support", "that a dual LR mark composes its two records into a stronger result", "that the 124 synthetic coordinates are coherent", "a weakest mathematical base", "a theorem ranking from interface order, Pareto membership, or neighbor counts", "cross-cell or cross-carrier composability", "agreement with observations", "a complete observationally validated theory", "a new Lorentzian-causal result"],
         "human_report": "foundations/reports/matrix-explorer-site-v2.md",
     }
@@ -400,6 +454,8 @@ def generated() -> dict[Path, bytes]:
     outputs[REPORT] = render_report(result).encode()
     outputs[VIABILITY_RESULT] = viability_json
     outputs[VIABILITY_REPORT] = render_viability_report(viability).encode()
+    outputs[ASSEMBLY_RESULT] = assembly_json
+    outputs[ASSEMBLY_REPORT] = render_assembly_report(assemblies).encode()
     return outputs
 
 

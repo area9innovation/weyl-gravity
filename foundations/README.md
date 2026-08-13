@@ -278,7 +278,11 @@ foundation-specific carrier envelopes, and a non-scalar Pareto view. It keeps
 three rails separate: obligation coverage is computed; cross-cell composition
 is not assessed; and observational agreement is not represented by the current
 schema. A multi-carrier maximum is therefore labelled a coverage envelope, not
-a completed theory:
+a completed theory. The **Assemblies** view adds seven named prototype
+envelopes, a six-stage hard-gate chain, 49 explicitly typed cross-cell joins,
+and an empirical benchmark ledger. All current joins are `NOT_ASSESSED` and
+the empirical ledger is empty, so every prototype remains fail-closed before
+theory or observational completion:
 
 ```bash
 python3 foundations/build_matrix_site.py
@@ -286,8 +290,10 @@ python3 foundations/build_matrix_site.py --check
 python3 foundations/check_matrix_site.py
 python3 foundations/verify_matrix_site.py
 python3 foundations/verify_theory_viability.py
+python3 foundations/verify_theory_assembly.py
 python3 -m unittest foundations.tests.test_matrix_site
 python3 -m unittest foundations.tests.test_theory_viability
+python3 -m unittest foundations.tests.test_theory_assembly
 python3 -m http.server 8000 --directory foundations/site
 ```
 

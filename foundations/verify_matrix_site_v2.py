@@ -51,6 +51,9 @@ def verify(*, result=None, report=None) -> tuple[list[str], list[str]]:
         "theory_profiles": 36,
         "carrier_envelopes": 6,
         "pareto_profiles": 2,
+        "prototype_assemblies": 7,
+        "assembly_interfaces": 49,
+        "empirical_comparisons": 0,
         "dual_direct_cells": 7,
         "mark_counts": {"G": 30, "L": 76, "LR": 7, "Lr": 5, "P": 20, "Pl": 75, "Plr": 14, "Pr": 51, "R": 90, "Rl": 3, "\u00b7": 205},
     }
@@ -65,7 +68,7 @@ def verify(*, result=None, report=None) -> tuple[list[str], list[str]]:
         errors.append("manifest pin")
     checks.append("content-addressed manifest")
     flags = value.get("claim_flags", {})
-    for key in ("static_site_generated", "all_cartesian_coordinates_visible", "all_emitted_migrations_reviewed", "coverage_and_migration_separated", "all_used_evidence_resolved", "theory_profiles_generated", "composition_and_observation_rails_separated"):
+    for key in ("static_site_generated", "all_cartesian_coordinates_visible", "all_emitted_migrations_reviewed", "coverage_and_migration_separated", "all_used_evidence_resolved", "theory_profiles_generated", "theory_assembly_atlas_generated", "composition_and_observation_rails_separated"):
         if flags.get(key) is not True:
             errors.append("positive flag " + key)
     for key in ("scientific_claims_duplicated_by_hand", "literature_complete", "unmapped_means_absent", "reviewed_no_transfer_means_absent", "priority_score_is_theorem", "complete_observationally_valid_theory_identified", "new_lorentzian_claim"):

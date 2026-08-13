@@ -4,6 +4,8 @@
   if (!DATA) throw new Error("Generated matrix data are missing.");
   const VIABILITY = window.THEORY_VIABILITY_DATA;
   if (!VIABILITY) throw new Error("Generated theory-profile assessment is missing.");
+  const ASSEMBLIES = window.THEORY_ASSEMBLY_DATA;
+  if (!ASSEMBLIES) throw new Error("Generated theory-assembly assessment is missing.");
 
   const STATUS = {
     LOCAL_RESULT: {label: "Local result", mark: "L", color: "#167958"},
@@ -102,6 +104,7 @@
       profile: null,
       paretoOnly: false,
     },
+    assembly: ASSEMBLIES.assemblies[0].id,
   };
 
   function key(c) { return `${c.foundation}|${c.carrier}|${c.obligation}`; }
@@ -158,7 +161,8 @@
 
   function parseHash() {
     const params = new URLSearchParams(location.hash.slice(1));
-    if (params.get("view") && ["matrix", "viability", "guide", "graph", "ladder", "evidence"].includes(params.get("view"))) state.view = params.get("view");
+    if (params.get("view") && ["matrix", "viability", "assemblies", "guide", "graph", "ladder", "evidence"].includes(params.get("view"))) state.view = params.get("view");
+    if (ASSEMBLIES.assemblies.some(item => item.id === params.get("assembly"))) state.assembly = params.get("assembly");
     state.q = params.get("q") || "";
     state.seededOnly = params.get("seeded") === "1";
     state.cell = params.get("cell") || null;
@@ -176,6 +180,7 @@
     if (state.q) params.set("q", state.q);
     if (state.seededOnly) params.set("seeded", "1");
     if (state.cell) params.set("cell", state.cell);
+    if (state.view === "assemblies") params.set("assembly", state.assembly);
     const mapping = {f: "FOUNDATION", c: "CARRIER", o: "REFINED_OBLIGATION", s: "STATUS"};
     for (const [param, axisId] of Object.entries(mapping)) {
       const allowed = axisId === "STATUS" ? Object.keys(STATUS) : axis[axisId].keys.map(x => x.id);
@@ -553,11 +558,44 @@
     document.querySelectorAll("[data-portfolio-carrier]").forEach(input => input.addEventListener("change", () => { input.checked ? state.viability.carriers.add(input.dataset.portfolioCarrier) : state.viability.carriers.delete(input.dataset.portfolioCarrier); renderTheoryProfiles(); }));
   }
 
+  const ASSEMBLY_GATE_STYLE = {SATISFIED: "complete", OPEN: "open", BLOCKED: "blocked", NO_RECORDS: "missing"};
+
+  function renderAssemblies() {
+    const assembly = ASSEMBLIES.assemblies.find(item => item.id === state.assembly) || ASSEMBLIES.assemblies[0];
+    state.assembly = assembly.id;
+    const options = ASSEMBLIES.assemblies.map(item => `<option value="${item.id}" ${item.id === assembly.id ? "selected" : ""}>${esc(item.label)}</option>`).join("");
+    const gates = assembly.hard_gates.map((gate, index) => `<article class="assembly-gate ${ASSEMBLY_GATE_STYLE[gate.status] || "missing"}"><span>${index + 1}</span><div><small>${esc(gate.status.replaceAll("_", " "))}</small><h3>${esc(gate.label)}</h3><p>${esc(gate.basis)}</p></div></article>`).join("");
+    const cells = assembly.selected_cells.map(cell => {
+      const source = cellByKey.get(`${cell.foundation}|${cell.carrier}|${cell.obligation}`);
+      const roles = Object.values(cell.evidence_roles || {});
+      const directness = [roles.includes("DIRECT_LOCAL") ? "local" : "", roles.includes("DIRECT_LITERATURE") ? "literature" : ""].filter(Boolean).join(" + ") || "no reviewed direct kind";
+      return `<tr><th>${esc(title(cell.obligation))}</th><td>${esc(title(cell.foundation))}<br><small>${esc(title(cell.carrier))}</small></td><td><button class="status-pill assembly-cell-jump" data-cell-jump="${esc(`${cell.foundation}|${cell.carrier}|${cell.obligation}`)}" style="${statusStyle(cell.status)}">${esc(STATUS[cell.status].label)}</button></td><td>${esc(directness)}</td><td>${cell.evidence.length}</td></tr>`;
+    }).join("");
+    const interfaces = assembly.interfaces.map(item => `<tr><th>${esc(item.label)}</th><td>${item.source_obligations.map(title).map(esc).join(" + ")}</td><td><span class="interface-relation relation-${item.relation.toLowerCase()}">${esc(item.relation.replaceAll("_", " "))}</span></td><td>${item.target_obligations.map(title).map(esc).join(" + ")}</td><td>${esc(item.rationale)}</td></tr>`).join("");
+    const vocabulary = ASSEMBLIES.interface_vocabulary.map(item => `<details><summary>${esc(item.id.replaceAll("_", " "))}</summary><p>${esc(item.meaning)}</p></details>`).join("");
+    const benchmarks = ASSEMBLIES.empirical_ledger.benchmarks.map(item => `<article><span class="quality">${esc(item.status.replaceAll("_", " "))}</span><h3>${esc(item.label)}</h3><p>${esc(item.question)}</p></article>`).join("");
+    document.getElementById("assemblyExplorer").innerHTML = `
+      <article class="assembly-boundary"><p class="eyebrow">Current conclusion</p><h3>No prototype passes the composition or empirical gates.</h3><p>These are navigational hypotheses assembled from recorded coverage. A selected cell is a research input, not proof that adjacent inputs share objects, assumptions, parameters, or observational meaning.</p></article>
+      <section class="assembly-selector"><label><b>Prototype assembly</b><select id="assemblySelect">${options}</select></label><div><p class="eyebrow">Aim</p><p>${esc(assembly.aim)}</p></div><div class="assembly-score"><b>${assembly.coverage.direct}/${assembly.coverage.total}</b><span>obligations direct</span><strong>Complete theory: NO</strong></div></section>
+      <div class="section-head compact-head"><div><p class="eyebrow">Ordered hard gates</p><h2>Assembly hard-gate chain</h2></div><p>A downstream gate cannot be credited from upstream coverage. The chain stops at the first open or blocked gate.</p></div>
+      <div class="assembly-gates">${gates}</div>
+      <div class="section-head compact-head"><div><p class="eyebrow">Inputs selected from the cube</p><h2>Obligation source map</h2></div><p>The deterministic selector uses the strongest recorded status inside this prototype's declared region. Open any grade to inspect its exact boundary and evidence.</p></div>
+      <div class="assembly-table-wrap"><table class="assembly-table"><thead><tr><th>Physical obligation</th><th>Selected regime / carrier</th><th>Recorded grade</th><th>Reviewed direct kind</th><th>Records</th></tr></thead><tbody>${cells}</tbody></table></div>
+      <div class="section-head compact-head"><div><p class="eyebrow">The missing middle</p><h2>Typed interface ledger</h2></div><p>Coverage becomes a theory only through explicit joins. “Not assessed” means the atlas has no registered relation; it is neither compatibility nor incompatibility.</p></div>
+      <div class="interface-vocabulary">${vocabulary}</div>
+      <div class="assembly-table-wrap"><table class="assembly-table interface-table"><thead><tr><th>Join</th><th>From</th><th>Relation</th><th>To</th><th>Why this state</th></tr></thead><tbody>${interfaces}</tbody></table></div>
+      <div class="section-head compact-head"><div><p class="eyebrow">No benchmark name is evidence</p><h2>Empirical benchmark ledger</h2></div><p>A future record must identify observables, data, prediction, comparison method, uncertainty, fit scope, and out-of-sample status. The ledger currently contains ${ASSEMBLIES.empirical_ledger.records.length} comparison records.</p></div>
+      <div class="benchmark-grid">${benchmarks}</div>
+      <article class="viability-warning boundary"><b>Fail-closed boundary.</b> ${esc(ASSEMBLIES.unit)} ${esc(ASSEMBLIES.does_not_establish[4])}.</article>`;
+    document.getElementById("assemblySelect").addEventListener("change", event => { state.assembly = event.target.value; renderAssemblies(); updateHash(); });
+    document.querySelectorAll(".assembly-cell-jump").forEach(button => button.addEventListener("click", () => openCell(button.dataset.cellJump)));
+  }
+
   function setView(view) {
     state.view = view;
     document.querySelectorAll(".tab").forEach(x => x.classList.toggle("active", x.dataset.view === view));
     document.querySelectorAll(".view").forEach(x => x.classList.toggle("active", x.id === `${view}View`));
-    document.querySelector(".controls").hidden = view === "viability";
+    document.querySelector(".controls").hidden = ["viability", "assemblies"].includes(view);
     updateHash();
   }
 
@@ -627,7 +665,7 @@
     document.addEventListener("keydown", event => { if (event.key === "Escape") closeInspector(); });
   }
 
-  parseHash(); renderStats(); renderFilters(); renderGuide(); renderTheoryProfiles(); renderGraph(); renderLadder(); bind(); setView(state.view); refresh();
+  parseHash(); renderStats(); renderFilters(); renderGuide(); renderTheoryProfiles(); renderAssemblies(); renderGraph(); renderLadder(); bind(); setView(state.view); refresh();
   document.getElementById("digest").textContent = `Canonical data digest: ${DATA.canonical_digest}`;
   if (state.cell) openCell(state.cell);
 })();

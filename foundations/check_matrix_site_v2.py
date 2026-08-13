@@ -14,6 +14,7 @@ DATA = SITE / "data.json"
 MANIFEST = SITE / "manifest.json"
 RESULT = ROOT / "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json"
 VIABILITY = ROOT / "foundations/site/viability.json"
+ASSEMBLIES = ROOT / "foundations/site/assemblies.json"
 CUBE = ROOT / "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V4.json"
 LADDER = ROOT / "foundations/results/FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V2.json"
 STATUSES = {"LOCAL_RESULT", "LITERATURE_RESULT", "PIECES_ONLY", "PRIORITY_GAP", "NOT_MAPPED"}
@@ -35,7 +36,7 @@ def digest(data: dict[str, Any]) -> str:
 
 def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]]:
     data = load(DATA) if data is None else data
-    cube, ladder, result, manifest, viability = load(CUBE), load(LADDER), load(RESULT), load(MANIFEST), load(VIABILITY)
+    cube, ladder, result, manifest, viability, assemblies = load(CUBE), load(LADDER), load(RESULT), load(MANIFEST), load(VIABILITY), load(ASSEMBLIES)
     errors: list[str] = []
     axes = {x.get("id"): x for x in data.get("axes", [])}
     keys = {axis_id: [x.get("id") for x in axes.get(axis_id, {}).get("keys", [])] for axis_id in ("FOUNDATION", "CARRIER", "REFINED_OBLIGATION")}
@@ -152,6 +153,12 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
         errors.append("theory viability source/digest pin")
     if len(viability.get("profiles", [])) != 36 or len(viability.get("carrier_envelopes", [])) != 6:
         errors.append("theory viability profile/envelope closure")
+    if assemblies.get("source_atlas_digest") != data.get("canonical_digest") or assemblies.get("canonical_digest") != result.get("independent_checker", {}).get("expected_assembly_digest"):
+        errors.append("theory assembly source/digest pin")
+    if len(assemblies.get("assemblies", [])) != 7 or any(len(item.get("selected_cells", [])) != 16 or len(item.get("interfaces", [])) != 7 for item in assemblies.get("assemblies", [])):
+        errors.append("theory assembly prototype/cell/interface closure")
+    if assemblies.get("empirical_ledger", {}).get("records") != [] or any(item.get("complete_theory") is not False or item.get("empirically_supported") is not False for item in assemblies.get("assemblies", [])):
+        errors.append("theory assembly fail-closed boundary")
 
     calculated_digest = digest(data)
     if calculated_digest != data.get("canonical_digest") or calculated_digest != result.get("independent_checker", {}).get("expected_digest"):
@@ -168,10 +175,10 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
             errors.append("manifest input " + str(source.get("path")))
 
     html = (SITE / "index.html").read_text()
-    app = (SITE / "app.js").read_text() + (SITE / "migration-review.js").read_text()
-    if "https://" in html or "http://" in html or '<script src="data.js"></script>' not in html or '<script src="viability.js"></script>' not in html or '<script src="migration-review.js"></script>' not in html:
+    app = (SITE / "app.js").read_text() + (SITE / "migration-review.js").read_text() + (SITE / "assemblies.js").read_text()
+    if "https://" in html or "http://" in html or '<script src="data.js"></script>' not in html or '<script src="viability.js"></script>' not in html or '<script src="assemblies.js"></script>' not in html or '<script src="migration-review.js"></script>' not in html:
         errors.append("offline/no-remote-code shell")
-    for token in ("matrixGroups", "viabilityView", "Theory profiles", "Coverage readiness map", "Coverage envelope, not a composed theory", "No complete observationally validated theory is certified", "paretoProfiles", "guideView", "dimensionGuide", "Regime × carrier × obligation", "graphView", "GRAPH_PATHWAYS", "Relation ledger", "graph-edge-hit", "No direct certificate yet", "ladderView", "evidenceView", "compareDialog", "exportJson", "exportCsv", "downloadBrief", "column-label", "Migration review", "migration_evidence", "112-decision audit JSON", "data-dual", "directKinds", "role-badge", "Local + literature result", "Directness unreviewed", "Why some cells are marked", "is not a finding that the record fails to support the cell", "data-marklen", "supportingKinds", "legend-note", "Upper case is a certified direct grade", "An ingredient is not a result", "Ingredients never promote a cell"):
+    for token in ("matrixGroups", "viabilityView", "Theory profiles", "Coverage readiness map", "Coverage envelope, not a composed theory", "No complete observationally validated theory is certified", "paretoProfiles", "assembliesView", "Assembly hard-gate chain", "Typed interface ledger", "Empirical benchmark ledger", "NOT_ASSESSED", "guideView", "dimensionGuide", "Regime × carrier × obligation", "graphView", "GRAPH_PATHWAYS", "Relation ledger", "graph-edge-hit", "No direct certificate yet", "ladderView", "evidenceView", "compareDialog", "exportJson", "exportCsv", "downloadBrief", "column-label", "Migration review", "migration_evidence", "112-decision audit JSON", "data-dual", "directKinds", "role-badge", "Local + literature result", "Directness unreviewed", "Why some cells are marked", "is not a finding that the record fails to support the cell", "data-marklen", "supportingKinds", "legend-note", "Upper case is a certified direct grade", "An ingredient is not a result", "Ingredients never promote a cell"):
         if token not in html + app:
             errors.append("interface token " + token)
     if "No stronger interpretation is licensed" in app:
@@ -200,6 +207,9 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
         "theory_profiles": len(viability.get("profiles", [])),
         "carrier_envelopes": len(viability.get("carrier_envelopes", [])),
         "pareto_profiles": sum(item.get("pareto_default") is True for item in viability.get("profiles", [])),
+        "prototype_assemblies": len(assemblies.get("assemblies", [])),
+        "assembly_interfaces": sum(len(item.get("interfaces", [])) for item in assemblies.get("assemblies", [])),
+        "empirical_comparisons": len(assemblies.get("empirical_ledger", {}).get("records", [])),
         "dual_direct_cells": dual,
         "mark_counts": dict(sorted(marks.items())),
     }
