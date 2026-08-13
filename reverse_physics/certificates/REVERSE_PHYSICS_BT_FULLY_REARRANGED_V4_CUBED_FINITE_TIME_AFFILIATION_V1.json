@@ -1,0 +1,313 @@
+{
+  "answer": "Yes on the declared compact hard reduced-mode packet carrier, in the same overall-phase-stripped coefficient convention as the covariant predecessor. For one chronological ordering e<m<l, use base time t and adjacent gaps u,v. The exact time factor is T^3*Phi3(T*Omega,T*Delta1,T*Delta2), where Phi3(x,y,z)=integral_(t,u,v>=0,t+u+v<=1) exp(i*x*t+i*y*u+i*z*v)=-f[x,y,z] and f(x)=integral_0^1 exp(i*x*s)ds. Thus Phi3 is the symmetric second divided difference of the sharp-time switch, not the one-variable Fejer kernel of the second-Dyson bubble. All coincident-frequency values are removable and Phi3(0,0,0)=1/6. Summing the six vertex orderings and integrating d^3 ell/[(2*pi)^3*8*E01*E12*E20] gives J_T,P for each of the fifteen external pairings. The finite-time amplitude coefficient is T6,V4cubed,T=8*sum_P J_T,P*S_P, with the factor eight and no extra 1/6 fixed by the public vertices, the cube/order-simplex exhaustion and the covariant predecessor. After restoring the same common Dyson/Feynman phase on both sides, the unrestricted-time distributional boundary is F_T(Omega)*C0/(16*pi^2), exactly reproducing the certified covariant coefficient. On the fully rearranged packet center every external pair has nonzero spatial momentum, with exact minimum squared norm 32/625, so at most one internal line is soft and the finite loop region is locally integrable. At large loop radius r, both adjacent-state defects are -2r+bounded. Combining u+v=s gives an oscillatory radial integral whose amplitude vanishes at s=0 and s=1; two integrations by parts give Phi3=O(r^-2). With the three on-shell factors the radial tail is O(r^-3), hence absolutely integrable uniformly on a sufficiently small compact packet neighborhood. The finite-time block is therefore an actual bounded Hilbert-Schmidt third-Dyson packet kernel. Its scalar time kernel commutes with ghost parity, so its isolated interference with T4 is common-Born. Its sign and complete q10 remain open.",
+  "certificate": "REVERSE_PHYSICS_BT_FULLY_REARRANGED_V4_CUBED_FINITE_TIME_AFFILIATION_V1",
+  "checks": {
+    "details": {
+      "Dyson_factorial_cancels_vertex_labelings": true,
+      "Eq19_gravity_and_causality_are_not_promoted": true,
+      "all_frequency_collisions_are_removable": true,
+      "compact_external_packet_kernel_is_Hilbert_Schmidt": true,
+      "complete_q10_is_not_promoted": true,
+      "covariant_V4_cubed_block_is_imported": true,
+      "covariant_boundary_has_no_free_normalization": true,
+      "finite_loop_region_is_locally_integrable": true,
+      "finite_time_isolated_interference_is_common_Born": true,
+      "finite_time_spatial_triangle_is_absolutely_convergent": true,
+      "finite_time_species_tensor_remains_kappa_fixed": true,
+      "finite_time_transient_is_retained": true,
+      "four_predecessors_pass": true,
+      "inputs_are_content_pinned": true,
+      "large_loop_defects_are_minus_two_r_plus_bounded": true,
+      "linear_coefficients_are_one_twenty_fourth": true,
+      "minimum_external_pair_spatial_square_is_32_over_625": true,
+      "no_two_internal_lines_can_be_simultaneously_soft": true,
+      "old_fashioned_triangle_has_all_six_orderings": true,
+      "ordered_simplex_and_second_divided_difference_match_through_degree_12": true,
+      "public_auxiliary_quartic_is_imported": true,
+      "quadratic_coefficients_are_one_one_twentieth": true,
+      "radial_loop_tail_is_O_r_minus_three": true,
+      "second_Dyson_one_defect_kernel_is_not_reused": true,
+      "simplex_amplitude_vanishes_at_both_radial_endpoints": true,
+      "six_simplex_volumes_fill_the_cube": true,
+      "six_time_orderings_are_exhaustive": true,
+      "temporal_kernel_is_symmetric_in_three_frequencies": true,
+      "three_internal_spatial_energies_are_explicit": true,
+      "two_radial_integrations_by_parts_give_r_minus_two": true,
+      "zero_frequency_simplex_volume_is_one_sixth": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 31,
+    "total": 31
+  },
+  "common_Born_interference": {
+    "effect_identity": "T4,T^sharp*T6,V4cubed,T+T6,V4cubed,T^sharp*T4,T=T4,T^*T6,V4cubed,T+T6,V4cubed,T^*T4,T",
+    "sign": "NOT_DETERMINED because the coherent momentum-dependent transient integrals remain complex",
+    "species_identity": "kappa3*S_P*kappa3=S_P for every pairing P",
+    "status": "ISOLATED_FINITE_TIME_V4_CUBED_INTERFERENCE_COMMON_BORN",
+    "time_kernel": "J_T,P acts only on momentum and commutes with total ghost parity",
+    "tree_identity": "kappa3*T4,T*kappa3=T4,T on the certified packet core"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL",
+    "REDUCED-MODE"
+  ],
+  "disposition": {
+    "Lorentzian_causal_claim": "NOT_ESTABLISHED",
+    "UV_counterterm": "NOT_REQUIRED",
+    "compact_packet_affiliation": "PROVED",
+    "complete_q10": "NOT_COMPUTED",
+    "covariant_boundary": "MATCHED",
+    "finite_coupling_positivity": "NOT_ESTABLISHED",
+    "finite_time_V4_cubed_block": "COEFFICIENT_COMPUTED",
+    "finite_time_transient": "RETAINED_AS_EXACT_SPATIAL_INTEGRAL",
+    "general_Eq19": "NOT_PROVED",
+    "gravity_or_BV_BRST_transfer": "NOT_CONSTRUCTED",
+    "isolated_common_Born_interference": "ESTABLISHED_WITHOUT_SIGN",
+    "remaining_three_order6_loop_classes": "NOT_COMPUTED",
+    "six_time_orderings": "EXHAUSTIVE",
+    "third_Dyson_temporal_kernel": "DERIVED_EXACTLY",
+    "total_kappa": "FIXED_COEFFICIENTWISE"
+  },
+  "does_not_establish": [
+    "a closed elementary or polylogarithmic evaluation of every finite-time transient spatial integral",
+    "the sign of the isolated finite-time tree-triangle interference",
+    "the V3^2*V4^2, V3^4*V4 or V3^6 order-six loop classes",
+    "the complete y5 norm or y4-y6 interference",
+    "second-order source or detector dressing",
+    "vacuum, survival or cumulant normalization at q10",
+    "the value, sign or common-Born property of complete q10",
+    "finite-coupling or all-order positivity",
+    "an all-time Moller, LSZ or S operator",
+    "general Eq. (19)",
+    "gravity or metric BV--BRST transfer",
+    "anything LORENTZIAN-CAUSAL",
+    "literature priority"
+  ],
+  "finite_time_triangle": {
+    "amplitude": "T6,V4cubed,T=8*sum_(15 pairings P) J_T,P*S_P",
+    "counterterm": "NONE; the covariant graph has superficial UV degree -2 and the switched spatial representation remains absolutely convergent",
+    "covariant_boundary": "after restoring the same common Dyson/Feynman phase, as the time window exhausts R the switched kernel converges distributionally to 2*pi*delta(Omega)*C0/(16*pi^2); its translation-invariant finite-window comparison term is F_T(Omega)*C0/(16*pi^2)",
+    "external_pairing": "P partitions the six all-incoming external legs into q0,q1,q2 with q0+q1+q2=0 on the fixed-total packet carrier",
+    "normalization": "in the common overall-phase-stripped convention, the three V/g=2 tensors give eight; no graph counterterm, scheme parameter or fitted finite factor occurs",
+    "scalar_kernel": "J_T,P=integral d^3ell/[(2*pi)^3*8*E01*E12*E02] * sum_(six orderings) T^3*Phi3(T*Omega,T*Delta1,T*Delta2)",
+    "status": "FINITE_DURATION_V4_CUBED_DYSON_BLOCK_COMPUTED",
+    "transient_decomposition": "J_T,P=F_T(Omega)*C0(q0^2,q1^2,q2^2)/(16*pi^2)+R_T,P, with R_T,P defined by the displayed exact six-ordering spatial integral minus its translation-invariant boundary"
+  },
+  "lifecycle_state": "COEFFICIENT_COMPUTED",
+  "next_gate": "Compute the next-smallest V3^2*V4^2 order-six loop class using the same three-vertex time kernel where applicable and additional cubic vertices where required. In parallel, evaluate or sign-control the finite-time V4^3 packet interference for one explicit compact envelope. Complete q10 still requires all four loop classes, y5, dressing and normalization.",
+  "packet_convergence": {
+    "consequence": "J_T,P is absolutely convergent and locally bounded for every P and fixed T>0; the finite fifteen-tensor sum is Hilbert-Schmidt after the common momentum delta is reduced",
+    "endpoint_identity": "h(0)=h(1)=0",
+    "finite_region": "nonzero spatial pair shifts forbid two internal energies from vanishing together; a single 1/E singularity is locally integrable against d^3ell",
+    "integration_by_parts": "two radial integrations give |Phi3|<=C_packet/r^2 for r>=R_packet",
+    "large_radius_defects": "uniformly on a small compact external neighborhood, Delta1=-2*r+A and Delta2=-2*r+B with bounded A,B",
+    "minimum_external_pair_spatial_square": "32/625",
+    "radial_reduction": "Phi3=integral_0^1 exp(-2*i*r*s) h(s) ds, where h(s)=s*J_x(1-s)*integral_0^1 exp(i*s*(A*w+B*(1-w)))dw",
+    "status": "NONEMPTY_COMPACT_FINITE_TIME_PACKET_DOMAIN_AFFILIATED",
+    "tail": "d^3ell/(E01*E12*E02) contributes O(dr/r), so the complete radial tail is O(dr/r^3)"
+  },
+  "provenance": {
+    "generated_by": "reverse_physics/bt_fully_rearranged_v4_cubed_finite_time_affiliation.py",
+    "independent_verifier": "reverse_physics/verify_bt_fully_rearranged_v4_cubed_finite_time_affiliation.py",
+    "inputs": [
+      {
+        "path": "planning/work-items/reverse-physics-bateman-fully-rearranged-v4-cubed-finite-time-affiliation.json",
+        "sha256": "229b054ee68ad43278a63a4ea83a1c173a4c16e6a64f29528450e89c8f72f819"
+      },
+      {
+        "path": "planning/events/reverse-physics-bateman-fully-rearranged-v4-cubed-finite-time-affiliation-DONE-2cad87ba.json",
+        "sha256": "86f4c836b22ebff7d1715d7e401e20708bc7e5dffbef8be4f766361adc090cc4"
+      },
+      {
+        "path": "reverse_physics/data/bateman_turok_hamiltonian_source_v1.json",
+        "sha256": "55ff3f989f1c5ac9bcc0688ad9c43721c22b5889c43da50fce43352c18be8fe7"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_FULLY_REARRANGED_V4_CUBED_TRIANGLE_BLOCK_V1.json",
+        "sha256": "6dc5d75dc19acfc827b702632192def1cdd02ddf034db2637b52373ad6e1adde"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_FINITE_TIME_ACTIVE_LOOP_AFFILIATION_V1.json",
+        "sha256": "73d5f9d1db46e3c9a783acc8d35f94a17876425ce5f9aec3fca73f1c73d547a3"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_FULLY_REARRANGED_COMMON_BORN_PHYSICAL_V1.json",
+        "sha256": "7ade5768a01cc42cf0ef1edfea9c8cf4c52cc716956a7abfc280c1def5611d47"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_FULLY_REARRANGED_PHYSICAL_PACKET_PROBABILITY_V1.json",
+        "sha256": "3790673f55cc7c43b9d2f731da217c0be73b628c169c6e2e9def3ba2a6b07c30"
+      }
+    ],
+    "method": "Exact ordered-simplex coefficient reconstruction through degree twelve, six-permutation time-order exhaustion, explicit old-fashioned spatial triangle, rational packet margin audit, and analytic endpoint/UV/IR bounds. No floating-point arithmetic enters a claim.",
+    "retrieval_date": "2026-08-13",
+    "source_commit": "2cad87ba756920989ac21b7edc2487098aea3c7a"
+  },
+  "question": "Does the covariant V4^3 six-leg triangle equal the boundary of the actual third-order finite-duration auxiliary BT Dyson graph on the fully rearranged packet, including every time ordering and transient?",
+  "report": "reverse_physics/reports/bt-fully-rearranged-v4-cubed-finite-time-affiliation.md",
+  "result_kind": "exact finite-duration third-Dyson affiliation of the isolated fully rearranged auxiliary V4^3 six-leg triangle block",
+  "schema": "reverse_physics/schema/reverse-physics-bt-fully-rearranged-v4-cubed-finite-time-affiliation-v1.schema.json",
+  "schema_version": 1,
+  "six_ordering_exhaustion": {
+    "cube_identity": "the six open chronological simplexes are disjoint and fill [0,T]^3 up to equal-time measure-zero faces",
+    "factorial_identity": "the Dyson 1/3! cancels the 3! assignments of identical quartic insertions to the three labeled external pairs",
+    "internal_edge_energies": "E01=|ell|, E12=|ell+q1_spatial|, E02=|ell-q0_spatial| after one fixed cyclic routing",
+    "ordered_variables": "for earliest e, middle m, latest l: base t=t_e, u=t_m-t_e, v=t_l-t_m",
+    "rows": [
+      {
+        "earliest_middle_latest": [
+          0,
+          1,
+          2
+        ],
+        "first_interval_defect": "Delta1=q1^0+q2^0-(E01+E02)",
+        "index": 0,
+        "overall_frequency": "Omega=q0^0+q1^0+q2^0",
+        "second_interval_defect": "Delta2=q2^0-(E12+E02)"
+      },
+      {
+        "earliest_middle_latest": [
+          0,
+          2,
+          1
+        ],
+        "first_interval_defect": "Delta1=q2^0+q1^0-(E02+E01)",
+        "index": 1,
+        "overall_frequency": "Omega=q0^0+q1^0+q2^0",
+        "second_interval_defect": "Delta2=q1^0-(E12+E01)"
+      },
+      {
+        "earliest_middle_latest": [
+          1,
+          0,
+          2
+        ],
+        "first_interval_defect": "Delta1=q0^0+q2^0-(E01+E12)",
+        "index": 2,
+        "overall_frequency": "Omega=q0^0+q1^0+q2^0",
+        "second_interval_defect": "Delta2=q2^0-(E02+E12)"
+      },
+      {
+        "earliest_middle_latest": [
+          1,
+          2,
+          0
+        ],
+        "first_interval_defect": "Delta1=q2^0+q0^0-(E12+E01)",
+        "index": 3,
+        "overall_frequency": "Omega=q0^0+q1^0+q2^0",
+        "second_interval_defect": "Delta2=q0^0-(E02+E01)"
+      },
+      {
+        "earliest_middle_latest": [
+          2,
+          0,
+          1
+        ],
+        "first_interval_defect": "Delta1=q0^0+q1^0-(E02+E12)",
+        "index": 4,
+        "overall_frequency": "Omega=q0^0+q1^0+q2^0",
+        "second_interval_defect": "Delta2=q1^0-(E01+E12)"
+      },
+      {
+        "earliest_middle_latest": [
+          2,
+          1,
+          0
+        ],
+        "first_interval_defect": "Delta1=q1^0+q0^0-(E12+E02)",
+        "index": 5,
+        "overall_frequency": "Omega=q0^0+q1^0+q2^0",
+        "second_interval_defect": "Delta2=q0^0-(E01+E02)"
+      }
+    ],
+    "status": "ALL_SIX_TIME_ORDERINGS_INCLUDED_NO_EXTRA_FACTORIAL",
+    "time_interval": "0<=t1,t2,t3<=T",
+    "zero_frequency_control": "six*T^3*Phi3(0,0,0)=T^3"
+  },
+  "three_vertex_time_kernel": {
+    "coefficient_check": [
+      {
+        "coefficient_without_i_power": "1/6",
+        "monomial_count": 1,
+        "total_degree": 0
+      },
+      {
+        "coefficient_without_i_power": "1/24",
+        "monomial_count": 3,
+        "total_degree": 1
+      },
+      {
+        "coefficient_without_i_power": "1/120",
+        "monomial_count": 6,
+        "total_degree": 2
+      },
+      {
+        "coefficient_without_i_power": "1/720",
+        "monomial_count": 10,
+        "total_degree": 3
+      },
+      {
+        "coefficient_without_i_power": "1/5040",
+        "monomial_count": 15,
+        "total_degree": 4
+      },
+      {
+        "coefficient_without_i_power": "1/40320",
+        "monomial_count": 21,
+        "total_degree": 5
+      },
+      {
+        "coefficient_without_i_power": "1/362880",
+        "monomial_count": 28,
+        "total_degree": 6
+      },
+      {
+        "coefficient_without_i_power": "1/3628800",
+        "monomial_count": 36,
+        "total_degree": 7
+      },
+      {
+        "coefficient_without_i_power": "1/39916800",
+        "monomial_count": 45,
+        "total_degree": 8
+      },
+      {
+        "coefficient_without_i_power": "1/479001600",
+        "monomial_count": 55,
+        "total_degree": 9
+      },
+      {
+        "coefficient_without_i_power": "1/6227020800",
+        "monomial_count": 66,
+        "total_degree": 10
+      },
+      {
+        "coefficient_without_i_power": "1/87178291200",
+        "monomial_count": 78,
+        "total_degree": 11
+      },
+      {
+        "coefficient_without_i_power": "1/1307674368000",
+        "monomial_count": 91,
+        "total_degree": 12
+      }
+    ],
+    "collision_rule": "all pairwise and triple collisions are filled by analytic divided-difference limits",
+    "distinct_frequency_formula": "Phi3=-[f(x)/((x-y)*(x-z))+f(y)/((y-x)*(y-z))+f(z)/((z-x)*(z-y))]",
+    "divided_difference": "Phi3(x,y,z)=-f[x,y,z]=(1/i^2)*f[x,y,z]",
+    "series": "Phi3=sum_(N>=0) i^N*h_N(x,y,z)/(N+3)!, with h_N the complete homogeneous symmetric polynomial",
+    "simplex": "Phi3(x,y,z)=integral_[t,u,v>=0,t+u+v<=1] exp(i*x*t+i*y*u+i*z*v) dt du dv",
+    "status": "EXACT_THIRD_DYSON_TEMPORAL_KERNEL_DERIVED",
+    "switch": "f(x)=integral_0^1 exp(i*x*s)ds=exp(i*x/2)*sinc(x/2)",
+    "triple_zero": "Phi3(0,0,0)=1/6",
+    "warning": "the second-Dyson one-variable Fejer/Hilbert kernel does not determine this two-intermediate-defect object"
+  },
+  "verification_commands": [
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/bt_fully_rearranged_v4_cubed_finite_time_affiliation.py --write --check",
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/verify_bt_fully_rearranged_v4_cubed_finite_time_affiliation.py",
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 -m unittest -v reverse_physics.tests.test_bt_fully_rearranged_v4_cubed_finite_time_affiliation"
+  ]
+}

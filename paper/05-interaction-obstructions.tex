@@ -3540,9 +3540,42 @@ bounded.  Certificate
 \allowbreak\texttt{TRIANGLE\_BLOCK\_V1}
 \par\noindent
 therefore computes one common-Born interference class.  This block is scheme
-independent.  Its finite-duration third-Dyson affiliation, the other three loop classes,
-the complete $q_{10}$ coefficient, overlap detectors, all-time scattering,
-general Eq.~(19), gravity and Lorentzian causality remain open.
+independent.  Its finite-duration third-Dyson affiliation is now also exact.
+For earliest, middle and latest vertices $e,m,l$, with base time $t$ and
+adjacent gaps $u,v$, the sharp-window temporal factor is
+\[
+ T^3\Phi_3(T\Omega,T\Delta_1,T\Delta_2),\qquad
+ \Phi_3(x,y,z)=\int_{t,u,v\geq0\atop t+u+v\leq1}
+ e^{i(xt+yu+zv)}\,dt\,du\,dv=-f[x,y,z],
+\]
+where $f(x)=\int_0^1e^{ixs}ds$.  Thus the triangle uses a symmetric second
+divided difference with removable collision values and
+$\Phi_3(0,0,0)=1/6$, not the one-variable Fej\'er kernel of the second-Dyson
+bubble.  The six chronological simplexes fill the time cube and cancel the
+Dyson $1/3!$.  In the same overall-phase-stripped convention as the
+covariant block, the exact switched coefficient is
+\[
+ T_{6,V_4^3,T}=8\sum_P J_{T,P}S_P,
+ \quad
+ J_{T,P}=\int{d^3\ell\over(2\pi)^3\,8E_{01}E_{12}E_{02}}
+ \sum_{\mathrm{ord}}T^3\Phi_3(T\Omega,T\Delta_1,T\Delta_2).
+\]
+The certified packet has minimum external-pair spatial norm squared
+$32/625$, so no two internal energies can vanish together.  At large loop
+radius both defects are $-2r+O(1)$; after combining $u+v=s$, the radial
+amplitude vanishes at both endpoints and two integrations by parts give
+$\Phi_3=O(r^{-2})$.  Hence $J_{T,P}$ is absolutely convergent, including its
+finite-time transient, and its translation-invariant distributional boundary
+is $F_T(\Omega)C_0/(16\pi^2)$.  Certificate
+\par\noindent
+\texttt{REVERSE\_PHYSICS\_BT\_FULLY\_REARRANGED\_V4\_CUBED\_}
+\allowbreak\texttt{FINITE\_TIME\_AFFILIATION\_V1}
+\par\noindent
+therefore affiliates the first actual finite-duration $q_{10}$ loop block
+and preserves its common-Born interference class, but does not determine its
+sign.  The other three loop classes, source/detector and vacuum/survival
+terms, the complete $q_{10}$ coefficient, overlap detectors, all-time
+scattering, general Eq.~(19), gravity and Lorentzian causality remain open.
 The first overlap stratum can also be closed locally.  There is an exact hard
 nonforward rational configuration with one tagged identity spectator and no
 other vanishing component momentum sum of sizes one, two, or three.  Of all

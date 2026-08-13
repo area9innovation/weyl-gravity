@@ -1,0 +1,230 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-fully-rearranged-v4-cubed-finite-time-affiliation-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "schema_version", "certificate", "question", "answer",
+    "result_kind", "lifecycle_state", "dependency_tags", "provenance",
+    "three_vertex_time_kernel", "six_ordering_exhaustion",
+    "finite_time_triangle", "packet_convergence", "common_Born_interference",
+    "disposition", "does_not_establish", "next_gate", "checks",
+    "verification_commands", "report"
+  ],
+  "properties": {
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-fully-rearranged-v4-cubed-finite-time-affiliation-v1.schema.json"},
+    "schema_version": {"const": 1},
+    "certificate": {"const": "REVERSE_PHYSICS_BT_FULLY_REARRANGED_V4_CUBED_FINITE_TIME_AFFILIATION_V1"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE"]},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_commit", "retrieval_date", "inputs", "generated_by", "independent_verifier", "method"],
+      "properties": {
+        "source_commit": {"const": "2cad87ba756920989ac21b7edc2487098aea3c7a"},
+        "retrieval_date": {"const": "2026-08-13"},
+        "inputs": {
+          "type": "array", "minItems": 7, "maxItems": 7,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["path", "sha256"],
+            "properties": {
+              "path": {"$ref": "#/$defs/text"},
+              "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+            }
+          }
+        },
+        "generated_by": {"const": "reverse_physics/bt_fully_rearranged_v4_cubed_finite_time_affiliation.py"},
+        "independent_verifier": {"const": "reverse_physics/verify_bt_fully_rearranged_v4_cubed_finite_time_affiliation.py"},
+        "method": {"$ref": "#/$defs/text"}
+      }
+    },
+    "three_vertex_time_kernel": {
+      "type": "object", "additionalProperties": false,
+      "required": ["switch", "simplex", "divided_difference", "distinct_frequency_formula", "collision_rule", "triple_zero", "series", "coefficient_check", "warning", "status"],
+      "properties": {
+        "switch": {"$ref": "#/$defs/text"},
+        "simplex": {"const": "Phi3(x,y,z)=integral_[t,u,v>=0,t+u+v<=1] exp(i*x*t+i*y*u+i*z*v) dt du dv"},
+        "divided_difference": {"const": "Phi3(x,y,z)=-f[x,y,z]=(1/i^2)*f[x,y,z]"},
+        "distinct_frequency_formula": {"$ref": "#/$defs/text"},
+        "collision_rule": {"const": "all pairwise and triple collisions are filled by analytic divided-difference limits"},
+        "triple_zero": {"const": "Phi3(0,0,0)=1/6"},
+        "series": {"$ref": "#/$defs/text"},
+        "coefficient_check": {
+          "type": "array", "minItems": 13, "maxItems": 13,
+          "items": {"$ref": "#/$defs/coefficientRow"}
+        },
+        "warning": {"$ref": "#/$defs/text"},
+        "status": {"const": "EXACT_THIRD_DYSON_TEMPORAL_KERNEL_DERIVED"}
+      }
+    },
+    "six_ordering_exhaustion": {
+      "type": "object", "additionalProperties": false,
+      "required": ["time_interval", "ordered_variables", "rows", "internal_edge_energies", "cube_identity", "factorial_identity", "zero_frequency_control", "status"],
+      "properties": {
+        "time_interval": {"const": "0<=t1,t2,t3<=T"},
+        "ordered_variables": {"$ref": "#/$defs/text"},
+        "rows": {
+          "type": "array", "minItems": 6, "maxItems": 6,
+          "items": {"$ref": "#/$defs/orderingRow"}
+        },
+        "internal_edge_energies": {"$ref": "#/$defs/text"},
+        "cube_identity": {"$ref": "#/$defs/text"},
+        "factorial_identity": {"$ref": "#/$defs/text"},
+        "zero_frequency_control": {"const": "six*T^3*Phi3(0,0,0)=T^3"},
+        "status": {"const": "ALL_SIX_TIME_ORDERINGS_INCLUDED_NO_EXTRA_FACTORIAL"}
+      }
+    },
+    "finite_time_triangle": {
+      "type": "object", "additionalProperties": false,
+      "required": ["external_pairing", "scalar_kernel", "amplitude", "normalization", "transient_decomposition", "covariant_boundary", "counterterm", "status"],
+      "properties": {
+        "external_pairing": {"$ref": "#/$defs/text"},
+        "scalar_kernel": {"$ref": "#/$defs/text"},
+        "amplitude": {"const": "T6,V4cubed,T=8*sum_(15 pairings P) J_T,P*S_P"},
+        "normalization": {"$ref": "#/$defs/text"},
+        "transient_decomposition": {"$ref": "#/$defs/text"},
+        "covariant_boundary": {"$ref": "#/$defs/text"},
+        "counterterm": {"$ref": "#/$defs/text"},
+        "status": {"const": "FINITE_DURATION_V4_CUBED_DYSON_BLOCK_COMPUTED"}
+      }
+    },
+    "packet_convergence": {
+      "type": "object", "additionalProperties": false,
+      "required": ["minimum_external_pair_spatial_square", "finite_region", "large_radius_defects", "radial_reduction", "endpoint_identity", "integration_by_parts", "tail", "consequence", "status"],
+      "properties": {
+        "minimum_external_pair_spatial_square": {"const": "32/625"},
+        "finite_region": {"$ref": "#/$defs/text"},
+        "large_radius_defects": {"$ref": "#/$defs/text"},
+        "radial_reduction": {"$ref": "#/$defs/text"},
+        "endpoint_identity": {"const": "h(0)=h(1)=0"},
+        "integration_by_parts": {"$ref": "#/$defs/text"},
+        "tail": {"$ref": "#/$defs/text"},
+        "consequence": {"$ref": "#/$defs/text"},
+        "status": {"const": "NONEMPTY_COMPACT_FINITE_TIME_PACKET_DOMAIN_AFFILIATED"}
+      }
+    },
+    "common_Born_interference": {
+      "type": "object", "additionalProperties": false,
+      "required": ["species_identity", "time_kernel", "tree_identity", "effect_identity", "sign", "status"],
+      "properties": {
+        "species_identity": {"const": "kappa3*S_P*kappa3=S_P for every pairing P"},
+        "time_kernel": {"$ref": "#/$defs/text"},
+        "tree_identity": {"$ref": "#/$defs/text"},
+        "effect_identity": {"$ref": "#/$defs/text"},
+        "sign": {"$ref": "#/$defs/text"},
+        "status": {"const": "ISOLATED_FINITE_TIME_V4_CUBED_INTERFERENCE_COMMON_BORN"}
+      }
+    },
+    "disposition": {
+      "type": "object", "additionalProperties": false,
+      "required": ["third_Dyson_temporal_kernel", "six_time_orderings", "finite_time_V4_cubed_block", "covariant_boundary", "finite_time_transient", "UV_counterterm", "compact_packet_affiliation", "total_kappa", "isolated_common_Born_interference", "remaining_three_order6_loop_classes", "complete_q10", "finite_coupling_positivity", "general_Eq19", "gravity_or_BV_BRST_transfer", "Lorentzian_causal_claim"],
+      "properties": {
+        "third_Dyson_temporal_kernel": {"const": "DERIVED_EXACTLY"},
+        "six_time_orderings": {"const": "EXHAUSTIVE"},
+        "finite_time_V4_cubed_block": {"const": "COEFFICIENT_COMPUTED"},
+        "covariant_boundary": {"const": "MATCHED"},
+        "finite_time_transient": {"const": "RETAINED_AS_EXACT_SPATIAL_INTEGRAL"},
+        "UV_counterterm": {"const": "NOT_REQUIRED"},
+        "compact_packet_affiliation": {"const": "PROVED"},
+        "total_kappa": {"const": "FIXED_COEFFICIENTWISE"},
+        "isolated_common_Born_interference": {"const": "ESTABLISHED_WITHOUT_SIGN"},
+        "remaining_three_order6_loop_classes": {"const": "NOT_COMPUTED"},
+        "complete_q10": {"const": "NOT_COMPUTED"},
+        "finite_coupling_positivity": {"const": "NOT_ESTABLISHED"},
+        "general_Eq19": {"const": "NOT_PROVED"},
+        "gravity_or_BV_BRST_transfer": {"const": "NOT_CONSTRUCTED"},
+        "Lorentzian_causal_claim": {"const": "NOT_ESTABLISHED"}
+      }
+    },
+    "does_not_establish": {
+      "type": "array", "minItems": 13, "maxItems": 13,
+      "items": {"$ref": "#/$defs/text"}
+    },
+    "next_gate": {"$ref": "#/$defs/text"},
+    "checks": {
+      "type": "object", "additionalProperties": false,
+      "required": ["total", "passed", "ok", "failures", "details"],
+      "properties": {
+        "total": {"const": 31},
+        "passed": {"const": 31},
+        "ok": {"const": true},
+        "failures": {"const": []},
+        "details": {
+          "type": "object", "additionalProperties": false,
+          "required": [
+            "inputs_are_content_pinned", "four_predecessors_pass", "public_auxiliary_quartic_is_imported", "covariant_V4_cubed_block_is_imported", "second_Dyson_one_defect_kernel_is_not_reused", "ordered_simplex_and_second_divided_difference_match_through_degree_12", "zero_frequency_simplex_volume_is_one_sixth", "linear_coefficients_are_one_twenty_fourth", "quadratic_coefficients_are_one_one_twentieth", "six_time_orderings_are_exhaustive", "six_simplex_volumes_fill_the_cube", "all_frequency_collisions_are_removable", "temporal_kernel_is_symmetric_in_three_frequencies", "three_internal_spatial_energies_are_explicit", "old_fashioned_triangle_has_all_six_orderings", "Dyson_factorial_cancels_vertex_labelings", "covariant_boundary_has_no_free_normalization", "finite_time_transient_is_retained", "minimum_external_pair_spatial_square_is_32_over_625", "no_two_internal_lines_can_be_simultaneously_soft", "finite_loop_region_is_locally_integrable", "large_loop_defects_are_minus_two_r_plus_bounded", "simplex_amplitude_vanishes_at_both_radial_endpoints", "two_radial_integrations_by_parts_give_r_minus_two", "radial_loop_tail_is_O_r_minus_three", "finite_time_spatial_triangle_is_absolutely_convergent", "compact_external_packet_kernel_is_Hilbert_Schmidt", "finite_time_species_tensor_remains_kappa_fixed", "finite_time_isolated_interference_is_common_Born", "complete_q10_is_not_promoted", "Eq19_gravity_and_causality_are_not_promoted"
+          ],
+          "properties": {
+            "inputs_are_content_pinned": {"const": true},
+            "four_predecessors_pass": {"const": true},
+            "public_auxiliary_quartic_is_imported": {"const": true},
+            "covariant_V4_cubed_block_is_imported": {"const": true},
+            "second_Dyson_one_defect_kernel_is_not_reused": {"const": true},
+            "ordered_simplex_and_second_divided_difference_match_through_degree_12": {"const": true},
+            "zero_frequency_simplex_volume_is_one_sixth": {"const": true},
+            "linear_coefficients_are_one_twenty_fourth": {"const": true},
+            "quadratic_coefficients_are_one_one_twentieth": {"const": true},
+            "six_time_orderings_are_exhaustive": {"const": true},
+            "six_simplex_volumes_fill_the_cube": {"const": true},
+            "all_frequency_collisions_are_removable": {"const": true},
+            "temporal_kernel_is_symmetric_in_three_frequencies": {"const": true},
+            "three_internal_spatial_energies_are_explicit": {"const": true},
+            "old_fashioned_triangle_has_all_six_orderings": {"const": true},
+            "Dyson_factorial_cancels_vertex_labelings": {"const": true},
+            "covariant_boundary_has_no_free_normalization": {"const": true},
+            "finite_time_transient_is_retained": {"const": true},
+            "minimum_external_pair_spatial_square_is_32_over_625": {"const": true},
+            "no_two_internal_lines_can_be_simultaneously_soft": {"const": true},
+            "finite_loop_region_is_locally_integrable": {"const": true},
+            "large_loop_defects_are_minus_two_r_plus_bounded": {"const": true},
+            "simplex_amplitude_vanishes_at_both_radial_endpoints": {"const": true},
+            "two_radial_integrations_by_parts_give_r_minus_two": {"const": true},
+            "radial_loop_tail_is_O_r_minus_three": {"const": true},
+            "finite_time_spatial_triangle_is_absolutely_convergent": {"const": true},
+            "compact_external_packet_kernel_is_Hilbert_Schmidt": {"const": true},
+            "finite_time_species_tensor_remains_kappa_fixed": {"const": true},
+            "finite_time_isolated_interference_is_common_Born": {"const": true},
+            "complete_q10_is_not_promoted": {"const": true},
+            "Eq19_gravity_and_causality_are_not_promoted": {"const": true}
+          }
+        }
+      }
+    },
+    "verification_commands": {
+      "type": "array", "minItems": 3, "maxItems": 3,
+      "items": {"$ref": "#/$defs/text"}
+    },
+    "report": {"const": "reverse_physics/reports/bt-fully-rearranged-v4-cubed-finite-time-affiliation.md"}
+  },
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "coefficientRow": {
+      "type": "object", "additionalProperties": false,
+      "required": ["total_degree", "coefficient_without_i_power", "monomial_count"],
+      "properties": {
+        "total_degree": {"type": "integer", "minimum": 0, "maximum": 12},
+        "coefficient_without_i_power": {"$ref": "#/$defs/text"},
+        "monomial_count": {"type": "integer", "minimum": 1}
+      }
+    },
+    "orderingRow": {
+      "type": "object", "additionalProperties": false,
+      "required": ["index", "earliest_middle_latest", "overall_frequency", "first_interval_defect", "second_interval_defect"],
+      "properties": {
+        "index": {"type": "integer", "minimum": 0, "maximum": 5},
+        "earliest_middle_latest": {
+          "type": "array", "minItems": 3, "maxItems": 3,
+          "items": {"type": "integer", "minimum": 0, "maximum": 2}
+        },
+        "overall_frequency": {"const": "Omega=q0^0+q1^0+q2^0"},
+        "first_interval_defect": {"$ref": "#/$defs/text"},
+        "second_interval_defect": {"$ref": "#/$defs/text"}
+      }
+    }
+  }
+}
