@@ -1,0 +1,32 @@
+{
+  "schema": "event-v0",
+  "id": "sf:program/event/reverse-physics-bateman-standard-characteristic-eq19-squeeze-inheritance-DONE-60b2991c",
+  "kind": "event",
+  "source": {
+    "path": "tools/science-forge/program/events/reverse-physics-bateman-standard-characteristic-eq19-squeeze-inheritance-DONE-60b2991c.json",
+    "span": null
+  },
+  "body": {
+    "event_kind": "WORK_ITEM_TRANSITIONED",
+    "actor": "reverse-physics",
+    "base_revision": "science-forge-ir-v0",
+    "predecessors": [],
+    "when": "2026-08-13",
+    "seq": 1,
+    "payload": {
+      "target": "sf:program/work/reverse-physics-bateman-standard-characteristic-eq19-squeeze-inheritance",
+      "to_state": "DONE",
+      "note": "The normalized n=3 characteristic projector inherits the complete homogeneous charge--squeeze obstruction: fixed-vacuum grading leaks positive charge, while covariant grading has exact non-null free ghost-parity defect. A canonical two-sheet parity completion restores the finite formal charge/parity/projector package and preserves the sheet-normalized trace, but changes the source theory and leaves stationarity, asymptotics and physical affiliation open. Evidence: REVERSE_PHYSICS_BT_STANDARD_CHARACTERISTIC_EQ19_SQUEEZE_INHERITANCE_V1."
+    },
+    "native": {
+      "authored_by": "exact characteristic normalization, tensor inheritance and parity-orbit doubling",
+      "policy": "append-only; closes the public finite one-sheet standard-projector test, not Eq. 19 in an enlarged theory"
+    }
+  },
+  "edges": [
+    {
+      "rel": "TRANSITIONS",
+      "to": "sf:program/work/reverse-physics-bateman-standard-characteristic-eq19-squeeze-inheritance"
+    }
+  ]
+}

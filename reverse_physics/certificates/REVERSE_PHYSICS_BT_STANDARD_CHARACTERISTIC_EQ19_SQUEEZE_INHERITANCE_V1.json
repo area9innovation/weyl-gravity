@@ -1,0 +1,188 @@
+{
+  "answer": "No on the public one-sheet architecture, and yes algebraically after an explicit two-sheet enlargement. The six S3 images cancel the public 1/3! normalization, while the neutral Omega/Upsilon species fibre has rank 2^3=8. Tensoring one disjoint Appendix-C squeeze pair therefore multiplies rather than removes the predecessor defect. For homogeneous q(Z)=s, s<1 has a nonzero positive order-lambda component of rank 16, s>1 has positive free squeeze components of ranks 16 and 8, and s=1 makes the full block neutral but leaves exact ghost-odd relative norm -4*z^2*(z^2+2), equal to -33/64 at z=1/4. This order-lambda-zero defect cannot be repaired by the proposed order-lambda-squared q10 transport. The parity-orbit direct sum A plus kappa*A*kappa on two sheets is idempotent, Krein self-adjoint, wholly neutral and exactly ghost even, and the sheet-averaged trace preserves the original finite q8--q10 jet. That completion changes the source theory and does not supply stationarity, asymptotic limits, continuum domains or a physical derivation of the second sheet, so it is an explicit escape architecture rather than the public Eq. (19) theorem.",
+  "assumptions": [
+    "the public finite-volume n-particle characteristic formula with its 1/n! factor",
+    "the declared three-particle cell has six disjoint S3 images and three distinct nonzero momenta",
+    "the neutral public species fibre at each active momentum is spanned by Omega and Upsilon",
+    "one finite nonzero unordered squeeze pair is disjoint from the characteristic support",
+    "the complete public factorization R=S U and homogeneous orbit charge q(Z)=s",
+    "Krein adjoint fixes Z while ghost parity inverts Z and exchanges Omega with Upsilon",
+    "the Eq. (19) package forbids positive charge and requires a ghost-even neutral term",
+    "the normalized finite-box squeeze amplitude is z=1/4 at t=0",
+    "the doubled construction uses a new second source and target sheet with the averaged sheet trace"
+  ],
+  "canonical_doubled_completion": {
+    "Krein_adjoint_identity": "A_dbl^sharp=A_dbl",
+    "charge_assignment": "covariant s=1 on both sheets, so A and its parity conjugate are wholly neutral",
+    "doubled_ghost_parity": "K_dbl(v,w)=(kappa*w,kappa*v), together with Z inversion",
+    "ghost_parity_identity": "K_dbl*A_dbl*K_dbl=A_dbl",
+    "projector_identity": "A_dbl^2=A_dbl",
+    "pushforward": "A_dbl=A direct-sum kappa*A*kappa",
+    "raw_finite_n3_trace": 16,
+    "selected_probability_jet": "the same averaging sends two identical kappa-fixed copies of lambda^8*q8+lambda^10*q10 to lambda^8*q8+lambda^10*q10",
+    "sheet_normalized_trace": "tau_dbl=(tau_sheet1+tau_sheet2)/2, giving tau_dbl(A_dbl)=tau(A)=8",
+    "source": "P_chi^(phi) direct-sum P_chi^(phi) on two declared sheets",
+    "status": "FORMAL_FINITE_PARITY_AND_CHARGE_COMPLETION_ON_A_CHANGED_DOUBLED_SOURCE_THEORY",
+    "strict_negative_remainder": "Q_negative=0"
+  },
+  "certificate": "REVERSE_PHYSICS_BT_STANDARD_CHARACTERISTIC_EQ19_SQUEEZE_INHERITANCE_V1",
+  "checks": {
+    "items": {
+      "active_projector_is_Krein_selfadjoint": true,
+      "active_projector_is_ghost_even": true,
+      "active_projector_is_idempotent": true,
+      "active_species_dimension_is_eight": true,
+      "covariant_formal_pushforward_is_wholly_neutral": true,
+      "doubled_ghost_odd_part_vanishes": true,
+      "doubled_metric_is_involutive": true,
+      "doubled_parity_is_involutive": true,
+      "doubled_projector_is_Krein_selfadjoint": true,
+      "doubled_projector_is_ghost_even": true,
+      "doubled_projector_is_idempotent": true,
+      "doubled_trace_is_sixteen": true,
+      "doubling_is_not_called_public_or_derived": true,
+      "fixed_vacuum_positive_tangent_rank_is_sixteen": true,
+      "higher_lambda_orders_cannot_cancel_lambda_zero_defect": true,
+      "inputs_are_content_pinned": true,
+      "pair_exponential_is_exact": true,
+      "pair_generator_cube_vanishes": true,
+      "pair_generator_is_Krein_skew": true,
+      "pair_similarity_matches_Laurent_sum": true,
+      "physical_standard_n3_odd_norm_is_minus_33_over_64": true,
+      "predecessors_pass": true,
+      "q10_is_common_Born_on_selected_packet": true,
+      "s_greater_free_positive_ranks_are_sixteen_and_eight": true,
+      "sheet_normalized_selected_q10_jet_is_unchanged": true,
+      "sheet_normalized_trace_recovers_original_eight": true,
+      "six_orbit_images_cancel_one_over_three_factorial": true,
+      "source_formula_is_the_public_n_particle_projector": true,
+      "standard_n3_even_odd_overlap_vanishes": true,
+      "standard_n3_odd_norm_is_exact": true,
+      "standard_n3_odd_ranks_are_eight_sixteen_sixteen_eight": true,
+      "standard_n3_odd_support_is_four_branches": true,
+      "standard_n3_squeezed_block_is_Krein_selfadjoint": true,
+      "standard_n3_squeezed_block_is_idempotent": true,
+      "standard_n3_squeezed_trace_is_eight": true,
+      "stationarity_asymptotics_and_continuum_remain_open": true,
+      "three_particle_cell_is_permutation_symmetric": true
+    },
+    "ok": true,
+    "passed": 37,
+    "total": 37
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "the public one-sheet Bateman--Turok Eq. (19)",
+    "that the doubled sheet is a derived BT degree of freedom",
+    "time independence of the complete neutral doubled projector",
+    "the t-to-plus-or-minus-infinity limits or a spacetime S operator",
+    "a continuum, thermodynamic or regulator-independent generalized-Born trace",
+    "affiliation of the standard shift-invariant characteristic projector with the selected q10 detector ideal",
+    "finite-coupling positivity or a complete all-channel probability",
+    "a metric Weyl-gravity, BV--BRST, QME or LORENTZIAN-CAUSAL theorem",
+    "literature priority"
+  ],
+  "homogeneous_charge_inheritance": {
+    "conclusion": "THE_NORMALIZED_STANDARD_N3_CHARACTERISTIC_PROJECTOR_INHERITS_THE_COMPLETE_PUBLIC_HOMOGENEOUS_EQ19_NO_GO",
+    "s_equal_one": {
+      "charge": "q_K=q_S=0",
+      "conclusion": "NEUTRAL_TERM_NOT_GHOST_EVEN",
+      "even_odd_overlap": "0",
+      "finite_box_ghost_odd_relative_norm": "-33/64",
+      "finite_box_z": "1/4",
+      "ghost_odd_relative_norm": "-4*z^2*(z^2+2)",
+      "ghost_odd_support_ranks": {
+        "-2": 16,
+        "-4": 8,
+        "2": 16,
+        "4": 8
+      },
+      "strict_negative_remainder": "Q_negative=0 by direct neutral support"
+    },
+    "s_greater_than_one": {
+      "charge": "q_S=2s-2>0",
+      "conclusion": "FORBIDDEN_POSITIVE_CHARGE",
+      "positive_free_component_ranks": [
+        16,
+        8
+      ]
+    },
+    "s_less_than_one": {
+      "charge": "q_K=1-s>0",
+      "conclusion": "FORBIDDEN_POSITIVE_CHARGE",
+      "positive_component_rank": 16,
+      "witness": "the rank-four one-particle nonlinear tangent acting on one active leg, tensored with two rank-two species spectators and the pair vacuum"
+    }
+  },
+  "lifecycle_state": "CLASSIFIED",
+  "minimality_and_boundary": {
+    "asymptotic_limits": "NOT_CONSTRUCTED",
+    "continuum_trace_domain": "NOT_CONSTRUCTED",
+    "not_global_minimality": "a localized, singular, non-Fock or non-direct-sum realization may encode the conjugate branch differently",
+    "one_sheet": "fails because its parity orbit has two distinct nonzero Laurent branches",
+    "public_derivation": "the Letter supplies no second source sheet or dynamics selecting it",
+    "standard_to_selected_packet_affiliation": "NOT_PROVED",
+    "time_independence": "NOT_PROVED",
+    "two_sheet": "the smallest direct-sheet orbit closed under parity and retaining the original branch"
+  },
+  "next_gate": "Decide whether the parity-conjugate sheet can be generated without changing the source theory. The sharp alternatives are: construct a localized or singular source parity with controlled domain that supplies the conjugate Laurent branch, or prove that every source-affiliated completion retaining the perturbative vacuum must contain an independent doubled sector. On any passing architecture, prove time independence and asymptotic-domain convergence before comparing the standard-projector trace with q10.",
+  "provenance": {
+    "external_source": {
+      "arxiv": "2607.00096v1",
+      "authors": "Sam Bateman and Neil Turok",
+      "equations": [
+        "18",
+        "19",
+        "20",
+        "Appendix C 31--34"
+      ],
+      "last_checked": "2026-08-13",
+      "title": "Escape from Ostrogradsky via Hidden Ghost Parity",
+      "url": "https://arxiv.org/abs/2607.00096"
+    },
+    "generated_by": "reverse_physics/bt_standard_characteristic_eq19_squeeze_inheritance.py",
+    "independent_verifier": "reverse_physics/verify_bt_standard_characteristic_eq19_squeeze_inheritance.py",
+    "input_hashes": {
+      "planning/events/reverse-physics-bateman-standard-characteristic-eq19-squeeze-inheritance-DONE-60b2991c.json": "4333835262c962bd8b20b95e4f5e389d60031aaaeeaaaa9fe2d42361ec1bf7b7",
+      "planning/work-items/reverse-physics-bateman-standard-characteristic-eq19-squeeze-inheritance.json": "b75e2b3b095918ebe2aed76eec7860692be71fffd9babcd8b89c42476795dcf4",
+      "reverse_physics/certificates/REVERSE_PHYSICS_BT_COVARIANT_FORMAL_EQ19_CHARGE_SUPPORT_V1.json": "cc863395b767e7924579f0d30a26282981cb7ed6b7add58194db1a6acdde97f2",
+      "reverse_physics/certificates/REVERSE_PHYSICS_BT_COVARIANT_GHOST_PARITY_BRANCH_OBSTRUCTION_V1.json": "f78b03e729466bf89d440ce712ec5fc7c20aef9e9ce8203827e4bd5ae85c8b1e",
+      "reverse_physics/certificates/REVERSE_PHYSICS_BT_EQ19_SPURION_SQUEEZE_DICHOTOMY_NO_GO_V1.json": "8bc0eb55dd1921df20d037c25466c4c828c45ddb92f906540382001b49a8dab6",
+      "reverse_physics/certificates/REVERSE_PHYSICS_BT_FULLY_REARRANGED_Q10_SELECTED_PACKET_ASSEMBLY_V1.json": "cd478d16440161adef9dcfde172359df3fdbe6abb5356043a29c77c80b718a0e",
+      "reverse_physics/certificates/REVERSE_PHYSICS_BT_THREE_PARTICLE_CHARACTERISTIC_CELL_V1.json": "663f585a92f74a89a410a3cd2b5ce3a07aeeb156c908e74960530e253957d1c8",
+      "reverse_physics/data/bateman_turok_characteristic_function_source_v1.json": "42b3a1253e3496bb329d4f33b8db3db52266f79515d034c56e0b9e37e10b8732"
+    },
+    "method": "Exact rational/Laurent tensor calculation on the normalized S3 cell, rank-product realization of the inherited positive components, and an explicit block-matrix parity-orbit completion.",
+    "source_commit": "60b2991c191ee725007e9bcbe02e011a24cea699"
+  },
+  "q10_transport_disposition": {
+    "decisive_earlier_failure": "the covariant one-sheet neutral projector is already non-ghost-even at order lambda^0; fixed-vacuum grading already has positive support at order lambda",
+    "formal_series_logic": "coefficients at order lambda^2 or higher cannot cancel a nonzero order-lambda^0 parity defect",
+    "public_one_sheet_result": "BLOCKED_BEFORE_Q10_COMPARISON",
+    "requested_test": "construct the order-lambda^2 standard-projector pushforward and compare its trace with the completed q10 functional",
+    "selected_q10_result": "UNCHANGED_AND_COMPLETE_ON_ITS_DECLARED_SHIFT_BREAKING_PACKET_IDEAL"
+  },
+  "question": "Does the actual normalized shift-invariant n=3 characteristic projector used by the completed q8--q10 packet calculation evade the public finite-regulator Eq. (19) charge--squeeze obstruction, and if not is there an exact parity-completed enlarged carrier?",
+  "report": "reverse_physics/reports/bt-standard-characteristic-eq19-squeeze-inheritance.md",
+  "result_kind": "exact standard n=3 characteristic-projector inheritance theorem with canonical doubled formal repair",
+  "schema": "reverse_physics/schema/reverse-physics-bt-standard-characteristic-eq19-squeeze-inheritance-v1.schema.json",
+  "schema_version": 1,
+  "standard_characteristic_normalization": {
+    "S3_orbit_size": 6,
+    "active_species_fibre": "(span{Omega,Upsilon})^tensor3",
+    "active_species_rank": 8,
+    "disjoint_pair_condition": "choose an unordered nonzero momentum pair outside the compact characteristic support and all of its antipodes",
+    "net_unordered_cell_weight": "6/3!=1",
+    "particle_number": 3,
+    "public_factor": "1/3!",
+    "reason_factorial_does_not_remove_species_rank": "the orbit/factorial normalizes identical momentum labels; it does not identify the eight Omega/Upsilon species assignments"
+  },
+  "verification_commands": [
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/bt_standard_characteristic_eq19_squeeze_inheritance.py --write --check",
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/verify_bt_standard_characteristic_eq19_squeeze_inheritance.py",
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 -m unittest -v reverse_physics.tests.test_bt_standard_characteristic_eq19_squeeze_inheritance"
+  ]
+}

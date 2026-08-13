@@ -1,0 +1,205 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-standard-characteristic-eq19-squeeze-inheritance-v1.schema.json",
+  "title": "BT standard n=3 characteristic Eq. 19 squeeze inheritance certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "schema_version",
+    "certificate",
+    "question",
+    "answer",
+    "result_kind",
+    "lifecycle_state",
+    "dependency_tags",
+    "assumptions",
+    "standard_characteristic_normalization",
+    "homogeneous_charge_inheritance",
+    "q10_transport_disposition",
+    "canonical_doubled_completion",
+    "minimality_and_boundary",
+    "does_not_establish",
+    "next_gate",
+    "provenance",
+    "checks",
+    "verification_commands",
+    "report"
+  ],
+  "properties": {
+    "schema": {
+      "const": "reverse_physics/schema/reverse-physics-bt-standard-characteristic-eq19-squeeze-inheritance-v1.schema.json"
+    },
+    "schema_version": {"const": 1},
+    "certificate": {
+      "const": "REVERSE_PHYSICS_BT_STANDARD_CHARACTERISTIC_EQ19_SQUEEZE_INHERITANCE_V1"
+    },
+    "question": {"type": "string", "minLength": 1},
+    "answer": {"type": "string", "minLength": 1},
+    "result_kind": {
+      "const": "exact standard n=3 characteristic-projector inheritance theorem with canonical doubled formal repair"
+    },
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "assumptions": {
+      "type": "array",
+      "minItems": 9,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "standard_characteristic_normalization": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "particle_number",
+        "S3_orbit_size",
+        "public_factor",
+        "net_unordered_cell_weight",
+        "active_species_fibre",
+        "active_species_rank",
+        "reason_factorial_does_not_remove_species_rank",
+        "disjoint_pair_condition"
+      ],
+      "properties": {
+        "particle_number": {"const": 3},
+        "S3_orbit_size": {"const": 6},
+        "public_factor": {"const": "1/3!"},
+        "net_unordered_cell_weight": {"const": "6/3!=1"},
+        "active_species_fibre": {"const": "(span{Omega,Upsilon})^tensor3"},
+        "active_species_rank": {"const": 8},
+        "reason_factorial_does_not_remove_species_rank": {"type": "string", "minLength": 1},
+        "disjoint_pair_condition": {"type": "string", "minLength": 1}
+      }
+    },
+    "homogeneous_charge_inheritance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["s_less_than_one", "s_equal_one", "s_greater_than_one", "conclusion"],
+      "properties": {
+        "s_less_than_one": {
+          "type": "object",
+          "required": ["charge", "witness", "positive_component_rank", "conclusion"],
+          "properties": {
+            "positive_component_rank": {"const": 16},
+            "conclusion": {"const": "FORBIDDEN_POSITIVE_CHARGE"}
+          }
+        },
+        "s_equal_one": {
+          "type": "object",
+          "required": ["charge", "strict_negative_remainder", "ghost_odd_support_ranks", "ghost_odd_relative_norm", "finite_box_z", "finite_box_ghost_odd_relative_norm", "even_odd_overlap", "conclusion"],
+          "properties": {
+            "ghost_odd_support_ranks": {"const": {"-4": 8, "-2": 16, "2": 16, "4": 8}},
+            "ghost_odd_relative_norm": {"const": "-4*z^2*(z^2+2)"},
+            "finite_box_z": {"const": "1/4"},
+            "finite_box_ghost_odd_relative_norm": {"const": "-33/64"},
+            "even_odd_overlap": {"const": "0"},
+            "conclusion": {"const": "NEUTRAL_TERM_NOT_GHOST_EVEN"}
+          }
+        },
+        "s_greater_than_one": {
+          "type": "object",
+          "required": ["charge", "positive_free_component_ranks", "conclusion"],
+          "properties": {
+            "positive_free_component_ranks": {"const": [16, 8]},
+            "conclusion": {"const": "FORBIDDEN_POSITIVE_CHARGE"}
+          }
+        },
+        "conclusion": {
+          "const": "THE_NORMALIZED_STANDARD_N3_CHARACTERISTIC_PROJECTOR_INHERITS_THE_COMPLETE_PUBLIC_HOMOGENEOUS_EQ19_NO_GO"
+        }
+      }
+    },
+    "q10_transport_disposition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["requested_test", "decisive_earlier_failure", "formal_series_logic", "public_one_sheet_result", "selected_q10_result"],
+      "properties": {
+        "requested_test": {"type": "string", "minLength": 1},
+        "decisive_earlier_failure": {"type": "string", "minLength": 1},
+        "formal_series_logic": {"type": "string", "minLength": 1},
+        "public_one_sheet_result": {"const": "BLOCKED_BEFORE_Q10_COMPARISON"},
+        "selected_q10_result": {"const": "UNCHANGED_AND_COMPLETE_ON_ITS_DECLARED_SHIFT_BREAKING_PACKET_IDEAL"}
+      }
+    },
+    "canonical_doubled_completion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source", "pushforward", "doubled_ghost_parity", "charge_assignment", "projector_identity", "Krein_adjoint_identity", "ghost_parity_identity", "strict_negative_remainder", "raw_finite_n3_trace", "sheet_normalized_trace", "selected_probability_jet", "status"],
+      "properties": {
+        "source": {"type": "string", "minLength": 1},
+        "pushforward": {"type": "string", "minLength": 1},
+        "doubled_ghost_parity": {"type": "string", "minLength": 1},
+        "charge_assignment": {"type": "string", "minLength": 1},
+        "projector_identity": {"type": "string", "minLength": 1},
+        "Krein_adjoint_identity": {"type": "string", "minLength": 1},
+        "ghost_parity_identity": {"type": "string", "minLength": 1},
+        "strict_negative_remainder": {"type": "string", "minLength": 1},
+        "raw_finite_n3_trace": {"const": 16},
+        "sheet_normalized_trace": {"type": "string", "minLength": 1},
+        "selected_probability_jet": {"type": "string", "minLength": 1},
+        "status": {"const": "FORMAL_FINITE_PARITY_AND_CHARGE_COMPLETION_ON_A_CHANGED_DOUBLED_SOURCE_THEORY"}
+      }
+    },
+    "minimality_and_boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["one_sheet", "two_sheet", "not_global_minimality", "public_derivation", "time_independence", "asymptotic_limits", "continuum_trace_domain", "standard_to_selected_packet_affiliation"],
+      "properties": {
+        "one_sheet": {"type": "string", "minLength": 1},
+        "two_sheet": {"type": "string", "minLength": 1},
+        "not_global_minimality": {"type": "string", "minLength": 1},
+        "public_derivation": {"type": "string", "minLength": 1},
+        "time_independence": {"const": "NOT_PROVED"},
+        "asymptotic_limits": {"const": "NOT_CONSTRUCTED"},
+        "continuum_trace_domain": {"const": "NOT_CONSTRUCTED"},
+        "standard_to_selected_packet_affiliation": {"const": "NOT_PROVED"}
+      }
+    },
+    "does_not_establish": {
+      "type": "array",
+      "minItems": 9,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "next_gate": {"type": "string", "minLength": 1},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_commit", "input_hashes", "external_source", "method", "generated_by", "independent_verifier"],
+      "properties": {
+        "source_commit": {"const": "60b2991c191ee725007e9bcbe02e011a24cea699"},
+        "input_hashes": {
+          "type": "object",
+          "minProperties": 8,
+          "additionalProperties": {"pattern": "^[0-9a-f]{64}$"}
+        },
+        "external_source": {
+          "type": "object",
+          "required": ["title", "authors", "arxiv", "url", "equations", "last_checked"]
+        },
+        "method": {"type": "string", "minLength": 1},
+        "generated_by": {"const": "reverse_physics/bt_standard_characteristic_eq19_squeeze_inheritance.py"},
+        "independent_verifier": {"const": "reverse_physics/verify_bt_standard_characteristic_eq19_squeeze_inheritance.py"}
+      }
+    },
+    "checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ok", "passed", "total", "items"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"type": "integer", "minimum": 35},
+        "total": {"type": "integer", "minimum": 35},
+        "items": {
+          "type": "object",
+          "minProperties": 35,
+          "additionalProperties": {"const": true}
+        }
+      }
+    },
+    "verification_commands": {
+      "type": "array",
+      "minItems": 3,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "report": {"const": "reverse_physics/reports/bt-standard-characteristic-eq19-squeeze-inheritance.md"}
+  }
+}
