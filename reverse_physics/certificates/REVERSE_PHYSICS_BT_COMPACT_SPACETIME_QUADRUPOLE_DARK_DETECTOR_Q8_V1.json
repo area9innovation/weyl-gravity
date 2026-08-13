@@ -1,0 +1,162 @@
+{
+  "answer": "Yes at the same leading order in the external pointer coupling. Let h0 be the certified Schwartz switching with smooth compact momentum support and let chi be a real C_c_infinity function equal to one on the Euclidean unit four-ball and supported in the radius-two ball. For R>=1 set h_R(x)=chi(x/R)h0(x). Every h_R is compactly supported. Leibniz scaling and arbitrary Schwartz tail gain prove h_R tends to h0 in Schwartz topology, and Fourier transformation preserves that convergence even though no h_R has compact Fourier support. After the declared compact incoming and spectator smearing, the complete selected order-lambda4 pair response is tempered: the global finite-time connected tree is Hilbert--Schmidt, its apparent soft loci are locally integrable, and the renormalized loop has only locally integrable logarithmic angular endpoints and at most logarithmic growth. Distributional continuity therefore supplies a finite but nonnumerical R0 for which the compactly switched order-lambda4 amplitude differs from the certified one by less than half its magnitude. The order-lambda2 amplitude remains exactly zero for every R because the covariant STF quadrupole mean vanishes separately on every timelike pair fibre, independent of the total-momentum Fourier weight. Hence Q8_compact/q4_bar is greater than one quarter of the imported lower bound, namely 1/18874368000>1/20000000000. The construction is a compact-spacetime local density insertion at leading detector order, not a causal perturbative AQFT construction or an all-order detector probability.",
+  "assumptions": [
+    "the finite-time BT interaction, renormalization convention, compact incoming packet and unchanged spectator are those of the imported local-quadrupole theorem",
+    "the order-lambda4 connected tree and renormalized active loop are taken as the displayed finite-order distributions, with the imported global tree and continuous-angle endpoint bounds",
+    "h0 is the complex certified Schwartz transition switching synthesized by two real Hermitian detector quadratures",
+    "chi is any fixed real smooth function equal to one on the closed Euclidean unit four-ball and supported in the open radius-two ball",
+    "the selected leading-coupling outcome is pointer excited, active field vacuum and unchanged tagged spectator",
+    "the comparison q4_bar is the fixed imported bright reference normalization; no finite-coupling normalization identity is assumed",
+    "the theorem is coefficientwise in lambda and at leading nonzero order g_detector^2"
+  ],
+  "certificate": "REVERSE_PHYSICS_BT_COMPACT_SPACETIME_QUADRUPOLE_DARK_DETECTOR_Q8_V1",
+  "checks": {
+    "details": {
+      "Fourier_sequence_converges_in_S": true,
+      "Fourier_tail_is_not_set_to_zero": true,
+      "base_local_lower_is_imported": true,
+      "compact_lower_exceeds_one_over_twenty_billion": true,
+      "cutoff_equals_one_on_unit_ball": true,
+      "cutoff_is_real_smooth_and_compact": true,
+      "cutoff_sequence_converges_in_S": true,
+      "cutoff_support_is_radius_two": true,
+      "detector_Eq19_gravity_and_Lorentzian_boundaries_remain_open": true,
+      "done_event_targets_work_item": true,
+      "fibrewise_STF_mean_is_imported": true,
+      "finite_order_pair_response_is_tempered": true,
+      "four_predecessors_pass": true,
+      "global_tree_Hilbert_Schmidt_bound_is_imported": true,
+      "inputs_are_content_pinned": true,
+      "leading_amplitude_is_zero_for_every_cutoff": true,
+      "leibniz_derivative_scaling_is_R_minus_gamma": true,
+      "loop_endpoint_log_is_locally_integrable": true,
+      "loop_formula_has_two_endpoint_logs": true,
+      "pointer_vacuum_selection_is_retained": true,
+      "quarter_probability_lower_is_exact": true,
+      "real_quadratures_remain_compact": true,
+      "scaled_switching_has_finite_support": true,
+      "schwartz_tail_gain_is_arbitrary": true,
+      "support_radius_remains_existential": true,
+      "tempered_continuity_retains_half_amplitude": true,
+      "tree_bound_numerator_is_exact": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 27,
+    "total": 27
+  },
+  "compact_cutoff_sequence": {
+    "Fourier_statement": "h_R_hat tends to h0_hat in S(R^4), but h_R_hat is not claimed compactly supported",
+    "Hermitian_realization": "Re(h_R) and Im(h_R) are two real compactly supported smooth detector quadratures",
+    "Leibniz_bound": "for every N,m,L there is C_N,m,L with p_N,m(h_R-h0)<=C_N,m,L*R^(-L)*p_(N+L,m)(h0)",
+    "base_switching": "h0 in S(R^4), with h0_hat smooth and compactly supported in the certified hard finite-bandwidth neighborhood",
+    "cutoff": "chi in C_c_infinity(R^4;R), chi=1 for |x|_E<=1 and chi=0 for |x|_E>=2",
+    "sequence": "h_R(x)=chi(x/R)*h0(x), R>=1",
+    "status": "EXPLICIT_COMPACT_SPACETIME_APPROXIMATING_SEQUENCE",
+    "support": "supp(h_R) subset {|x|_E<2R}"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL",
+    "REDUCED-MODE"
+  ],
+  "disposition": {
+    "Fourier_support": "NONCOMPACT_AND_RETAINED",
+    "Lorentzian_causal_claim": "NOT_ESTABLISHED",
+    "absolute_compact_spacetime_dark_q8": "COEFFICIENT_COMPUTED_AND_STRICTLY_POSITIVE",
+    "all_order_or_all_time_BT_probability": "NOT_CONSTRUCTED",
+    "all_orders_in_external_detector_coupling": "NOT_CONSTRUCTED",
+    "causal_pAQFT_observable": "NOT_CONSTRUCTED",
+    "compact_spacetime_switching": "CONSTRUCTED_AS_NONEMPTY_EXISTENCE_CLASS",
+    "finite_support_radius": "EXISTS_BUT_NOT_NUMERICALLY_BOUNDED",
+    "general_Eq19": "NOT_PROVED_AND_NOT_USED",
+    "gravity_or_metric_BV_BRST_transfer": "NOT_CONSTRUCTED",
+    "leading_BT_amplitude_annihilation": "EXACT_FOR_EVERY_CUTOFF_RADIUS"
+  },
+  "does_not_establish": [
+    "a numerical cutoff radius R0, detector duration or spatial size",
+    "compact Fourier support or absence of Fourier tails",
+    "a renormalized time-ordered causal perturbative AQFT construction",
+    "the sign of the g_detector^4 or lambda^10 remainders",
+    "selection of the apparatus axis, cutoff profile, coupling or outcome by public BT dynamics",
+    "the recorded or bright-port absolute order-lambda8 coefficient",
+    "forward, collinear, real-virtual or KLN completion",
+    "an all-time Moller, LSZ or S operator",
+    "the standard scalar projector or general Bateman--Turok Eq. (19)",
+    "a complete positive BT Hilbert or Fock construction",
+    "gravity, metric BV--BRST, QME restoration or residual transfer",
+    "anything LORENTZIAN-CAUSAL",
+    "literature priority"
+  ],
+  "exact_darkness_and_probability": {
+    "amplitude_retention": "|A4(h_R)|>|A4(h0)|/2 for R>=R0",
+    "compact_lower": {
+      "canonical_sha256": "b42022b33423849f6245f62b87453e9084f8044e96e230240871a6f366ef91a8",
+      "exact": "1/18874368000"
+    },
+    "comparison": "Q8_compact/q4_bar>1/18874368000>1/20000000000",
+    "imported_lower": {
+      "canonical_sha256": "633b90ae8545cc394babcfd1e98e49163e07f672de0ea5c9013293974600ef56",
+      "exact": "1/4718592000"
+    },
+    "joint_expansion": "p_selected=g_det^2*lambda^8*Q8_compact+O(g_det^2*lambda^10)+O(g_det^4)",
+    "leading_identity": "A2(h_R)=integral dP h_R_hat(P) C2(P) integral_sphere F2(P,r)dOmega=0 for every finite R",
+    "reason": "the inner angular integral is zero separately on every timelike P fibre, so Paley--Wiener Fourier tails do not mix into a lower lambda order",
+    "status": "STRICTLY_POSITIVE_COMPACT_SPACETIME_LOCAL_DARK_Q8_COEFFICIENT"
+  },
+  "lifecycle_state": "COEFFICIENT_COMPUTED",
+  "next_gate": "Compute a quantitative Schwartz-seminorm continuity constant and finite R0 for a chosen bump, or compute the g_detector^4 correction for the compactly switched pointer outcome. The BT-internal alternative remains the O(lambda^10) dark remainder or general Eq. (19); gravity and Lorentzian transfer remain separate.",
+  "provenance": {
+    "generated_by": "reverse_physics/bt_compact_spacetime_quadrupole_dark_detector_q8.py",
+    "independent_verifier": "reverse_physics/verify_bt_compact_spacetime_quadrupole_dark_detector_q8.py",
+    "inputs": [
+      {
+        "path": "planning/work-items/reverse-physics-bateman-compact-spacetime-quadrupole-dark-detector-q8.json",
+        "sha256": "8e0581810365934c868bafd9fe10068fbe875bb57e39142314f66d2e3224d2c9"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_LOCAL_QUADRUPOLE_DARK_DETECTOR_Q8_V1.json",
+        "sha256": "969dccb1bd9ba40a21d412e61c2768d19c11b41d7841417044ee57998078f80e"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_GLOBAL_CONNECTED_FINITE_TIME_PACKET_COLUMN_V1.json",
+        "sha256": "857339d09000f45af1875501f519cf8f6800efc7941e0ba12b779b984235801c"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_CONTINUOUS_ANGLE_Q6_FAMILY_V1.json",
+        "sha256": "b2a144a500727aefa8f6a8b6e682dc92a2f9678ee7df57bc5df4ed80562712f2"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_FINITE_BANDWIDTH_DARK_PORT_Q8_V1.json",
+        "sha256": "87c7293c5133b80c01c09e7c2f20b164aa7c065939cf687c32593e1c1581ad60"
+      },
+      {
+        "path": "planning/events/reverse-physics-bateman-compact-spacetime-quadrupole-dark-detector-q8-DONE-0982d70d.json",
+        "sha256": "d2c8d0469742e2afad54aaf03729869e8c53950ca54e2bf33691bf420dd49349"
+      }
+    ],
+    "method": "Exact rational inheritance of the local probability bound; analytic C_c_infinity cutoff and multiindex Leibniz estimate; independent reconstruction of Schwartz convergence; exact local integrability integral for logarithmic endpoints; content-addressed import of the global Hilbert--Schmidt tree. No floating-point arithmetic enters the claim.",
+    "retrieval_date": "2026-08-13",
+    "source_commit": "0982d70d82e3e77d84195bee881624361c6dc21c"
+  },
+  "question": "Can the certified local BT quadrupole dark detector be switched by a smooth compactly supported spacetime function without Fourier-tail leakage restoring the lower order, while retaining a strictly positive absolute q8 coefficient?",
+  "report": "reverse_physics/reports/bt-compact-spacetime-quadrupole-dark-detector-q8.md",
+  "result_kind": "strictly positive absolute order-lambda8 BT pointer-plus-vacuum coefficient selected by a degree-four local quadrupole density with a smooth compactly supported spacetime switching",
+  "schema": "reverse_physics/schema/reverse-physics-bt-compact-spacetime-quadrupole-dark-detector-q8-v1.schema.json",
+  "schema_version": 1,
+  "tempered_response_gate": {
+    "continuity_consequence": "because A4(h0) is nonzero, there exists finite R0 such that |A4(h_R)-A4(h0)|<|A4(h0)|/2 for every R>=R0",
+    "functional": "A4:S(R^4)->C is a tempered distribution and therefore continuous in the Schwartz topology",
+    "growth": "the MSbar bubble logarithm and finite-time transient have at most logarithmic growth after compact source and spectator smearing; multiplication by the degree-four F2 preserves polynomial growth",
+    "log_integral": "int_0^1 abs(log u)du=1",
+    "loop_endpoint_model": "log(1-c^2)=log(1-c)+log(1+c) on -1<c<1",
+    "status": "FINITE_ORDER_PAIR_RESPONSE_TEMPERED_AND_CUTOFF_CONTINUOUS",
+    "tree_input": "the complete connected finite-time order-lambda4 tree column is globally Hilbert--Schmidt with squared operator bound 1539*lambda^8*T^2/(400*pi^6)",
+    "tree_soft_locus": "the worst local squared behavior is r^(-2) against d^4q, hence r*dr and locally integrable"
+  },
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_compact_spacetime_quadrupole_dark_detector_q8.py --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_compact_spacetime_quadrupole_dark_detector_q8.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_compact_spacetime_quadrupole_dark_detector_q8"
+  ]
+}

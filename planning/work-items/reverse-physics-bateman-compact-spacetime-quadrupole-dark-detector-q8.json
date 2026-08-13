@@ -1,0 +1,35 @@
+{
+  "id": "sf:program/work/reverse-physics-bateman-compact-spacetime-quadrupole-dark-detector-q8",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "reverse-physics",
+    "state": "ACTIVE",
+    "objective": "Replace the momentum-compact non-spacetime-compact switching in the certified local BT quadrupole dark detector by an explicit sequence of compactly supported smooth spacetime switchings, preserving exact leading darkness and a strictly positive absolute q8 coefficient.",
+    "depends_on": [
+      "REVERSE_PHYSICS_BT_LOCAL_QUADRUPOLE_DARK_DETECTOR_Q8_V1",
+      "REVERSE_PHYSICS_BT_GLOBAL_CONNECTED_FINITE_TIME_PACKET_COLUMN_V1",
+      "REVERSE_PHYSICS_BT_CONTINUOUS_ANGLE_Q6_FAMILY_V1",
+      "REVERSE_PHYSICS_BT_FINITE_BANDWIDTH_DARK_PORT_Q8_V1"
+    ],
+    "activates": [
+      "a C_c_infinity spacetime switching for the degree-four local quadrupole density",
+      "exact fibrewise leading-amplitude cancellation despite noncompact Fourier tails",
+      "a tempered-response continuity proof for the complete order-lambda4 pair amplitude",
+      "a strictly positive compact-spacetime absolute q8 detector coefficient"
+    ],
+    "current_gate": "Choose a real smooth cutoff chi equal to one on the unit four-ball and supported in the radius-two ball. For the certified Schwartz switching h0, prove h_R=chi(x/R)h0 converges to h0 in Schwartz topology. Establish that the compact-packet order-lambda4 pair response is tempered using the global Hilbert--Schmidt finite-time tree and locally integrable logarithmic loop endpoints. Use continuity to retain half the nonzero amplitude, while the covariant STF mean proves the order-lambda2 amplitude remains exactly zero for every R.",
+    "stop_condition": "Land a COEFFICIENT_COMPUTED certificate, method-distinct verifier, adversarial tests and report proving existence of a finite R0 for which a compact-spacetime local quadrupole pointer-plus-field-vacuum outcome obeys Q8_compact/q4_bar>1/20000000000. Preserve all detector-coupling, causal-AQFT, Eq. 19, gravity and Lorentzian boundaries, and update Papers V and VI as scientific text rather than a changelog.",
+    "forbid": "no Paley--Wiener tail called zero in momentum space; no numerical support radius inferred from qualitative continuity; no compactly supported insertion called a renormalized causal-AQFT construction; no leading detector-coupling coefficient called an all-order probability; no Eq. 19, gravity, QME or LORENTZIAN-CAUSAL promotion; no literature-priority claim",
+    "allowed_paths": [
+      "reverse_physics/",
+      "paper/05-interaction-obstructions.tex",
+      "paper/05-interaction-obstructions.pdf",
+      "paper/06-einstein-weyl-interaction-obstructions.tex",
+      "paper/06-einstein-weyl-interaction-obstructions.pdf",
+      "planning/work-items/reverse-physics-bateman-compact-spacetime-quadrupole-dark-detector-q8.json",
+      "planning/events/"
+    ],
+    "resource_hint": "For chi_R(x)=chi(x/R), Leibniz and the Schwartz tail give p_N,m((1-chi_R)h0)<=C_N,m,L R^-L p_N+L,m(h0) for arbitrary L. Fourier transformation is continuous on Schwartz space. The global connected tree is Hilbert--Schmidt; the loop endpoint model log(1-c^2) is locally integrable because integral_0^1 |log u|du=1. Thus the selected order-lambda4 amplitude is tempered. Retaining half its amplitude retains one quarter of the imported q8 lower bound, 1/18874368000>1/20000000000."
+  }
+}

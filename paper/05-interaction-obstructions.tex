@@ -274,7 +274,11 @@ finite-bandwidth packet class.  A real exchange-even degree-four local
 quadrupole density has zero angular mean on every timelike pair fibre and
 therefore removes the leading angle-independent amplitude exactly while
 retaining a strictly positive absolute order-$\lambda^8$ detector
-coefficient on such a packet.  A numerical bandwidth remains open.  The
+coefficient on such a packet.  Multiplying its Schwartz switching by an
+expanding smooth compact spacetime cutoff preserves exact leading darkness
+for every cutoff and retains a positive order-eight coefficient for some
+finite, existential support radius.  A numerical bandwidth and support
+radius remain open.  The
 recorded and symmetric bright-port absolute $q_8$ coefficients, continuum
 coherence and both forward endpoints remain open.  On the two-mode carrier,
 an explicit finite pointer Hamiltonian now selects the detector strength and
@@ -4085,6 +4089,64 @@ The switching is not compactly supported in spacetime.  The statement is not
 all orders in $g_{\rm det}$ or $\lambda$, does not derive the apparatus from
 the public BT Hamiltonian, and does not prove Eq.~(19), causal scattering, or
 a gravitational transfer.
+
+Compact spacetime support can nevertheless be imposed without restoring the
+leading channel.  Let $h_0\in\mathcal S(\mathbb R^4)$ be the preceding
+switching and choose a real $\chi\in C_c^\infty(\mathbb R^4)$ equal to one
+for $|x|_E\leq1$ and zero for $|x|_E\geq2$.  Then
+\[
+ h_R(x)=\chi(x/R)h_0(x),\qquad
+ \operatorname{supp}h_R\subset\{|x|_E<2R\}.
+\]
+Leibniz' rule and arbitrary Schwartz tail gain give, for every seminorm and
+$L>0$,
+\[
+ p_{N,m}(h_R-h_0)
+ \leq C_{N,m,L}R^{-L}p_{N+L,m}(h_0).
+\]
+Thus $h_R\to h_0$ in Schwartz topology, as do their Fourier transforms.
+The Fourier transforms of the compactly supported $h_R$ are not claimed to
+have compact support.
+
+The selected finite-order response is tempered on the declared compact
+source and spectator packets.  For the tree this follows from the global
+finite-time Hilbert--Schmidt bound
+\[
+ \|A_{\rm full}\|^2
+ \leq {1539\over400\pi^6}\lambda^8T^2.
+\]
+The apparent soft loci are locally integrable.  For the active loop, its only
+hard-angle endpoints are logarithmic, with
+\[
+ \int_0^1|\log u|du=1,
+\]
+and the renormalized bubble has at most logarithmic growth.  Hence the
+order-$\lambda^4$ functional $A_4$ is continuous on Schwartz space.  Since
+$A_4(h_0)\ne0$, some finite $R_0$ obeys
+\[
+ |A_4(h_R)|>{1\over2}|A_4(h_0)|\qquad(R\geq R_0).
+\]
+For every such cutoff the lower-order amplitude remains exactly zero:
+\[
+ A_2(h_R)=\int dP\,\widehat h_R(P)C_2(P)
+ \int_{S_P^2}F_2(P,r)d\Omega_P=0,
+\]
+because the inner STF mean vanishes separately on every timelike fibre.
+Fourier tails therefore cannot create a lower order.  Squaring the retained
+half-amplitude gives
+\[
+ \boxed{{Q_{8,\mathrm{compact}}\over\bar q_4}
+ >{1\over18874368000}>{1\over20000000000}.}
+\]
+Certificate
+\par\noindent
+\texttt{REVERSE\_PHYSICS\_BT\_COMPACT\_SPACETIME\_}
+\allowbreak\texttt{QUADRUPOLE\_DARK\_DETECTOR\_Q8\_V1}
+\par\noindent
+certifies this compactly switched local coefficient.  The support radius is
+existential, not numerical.  A compact local insertion alone does not supply
+renormalized Lorentzian time-ordered products or causal perturbative AQFT,
+and the detector-coupling, Eq.~(19), and gravity boundaries remain unchanged.
 
 The effect itself has a finite Hamiltonian realization.  For the phased
 antisymmetric angle projector

@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-compact-spacetime-quadrupole-dark-detector-q8-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "schema_version", "certificate", "question", "answer",
+    "result_kind", "lifecycle_state", "dependency_tags", "assumptions",
+    "provenance", "compact_cutoff_sequence", "tempered_response_gate",
+    "exact_darkness_and_probability", "disposition", "does_not_establish",
+    "next_gate", "checks", "verification_commands", "report"
+  ],
+  "properties": {
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-compact-spacetime-quadrupole-dark-detector-q8-v1.schema.json"},
+    "schema_version": {"const": 1},
+    "certificate": {"const": "REVERSE_PHYSICS_BT_COMPACT_SPACETIME_QUADRUPOLE_DARK_DETECTOR_Q8_V1"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE"]},
+    "assumptions": {"type": "array", "minItems": 7, "maxItems": 7, "items": {"$ref": "#/$defs/text"}},
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_commit", "retrieval_date", "inputs", "generated_by", "independent_verifier", "method"],
+      "properties": {
+        "source_commit": {"const": "0982d70d82e3e77d84195bee881624361c6dc21c"},
+        "retrieval_date": {"const": "2026-08-13"},
+        "inputs": {"type": "array", "minItems": 6, "maxItems": 6, "items": {
+          "type": "object", "additionalProperties": false, "required": ["path", "sha256"],
+          "properties": {"path": {"$ref": "#/$defs/text"}, "sha256": {"$ref": "#/$defs/hash"}}
+        }},
+        "generated_by": {"const": "reverse_physics/bt_compact_spacetime_quadrupole_dark_detector_q8.py"},
+        "independent_verifier": {"const": "reverse_physics/verify_bt_compact_spacetime_quadrupole_dark_detector_q8.py"},
+        "method": {"$ref": "#/$defs/text"}
+      }
+    },
+    "compact_cutoff_sequence": {
+      "type": "object", "additionalProperties": false,
+      "required": ["base_switching", "cutoff", "sequence", "support", "Hermitian_realization", "Leibniz_bound", "Fourier_statement", "status"],
+      "properties": {
+        "base_switching": {"$ref": "#/$defs/text"},
+        "cutoff": {"$ref": "#/$defs/text"},
+        "sequence": {"const": "h_R(x)=chi(x/R)*h0(x), R>=1"},
+        "support": {"const": "supp(h_R) subset {|x|_E<2R}"},
+        "Hermitian_realization": {"$ref": "#/$defs/text"},
+        "Leibniz_bound": {"$ref": "#/$defs/text"},
+        "Fourier_statement": {"$ref": "#/$defs/text"},
+        "status": {"const": "EXPLICIT_COMPACT_SPACETIME_APPROXIMATING_SEQUENCE"}
+      }
+    },
+    "tempered_response_gate": {
+      "type": "object", "additionalProperties": false,
+      "required": ["tree_input", "tree_soft_locus", "loop_endpoint_model", "log_integral", "growth", "functional", "continuity_consequence", "status"],
+      "properties": {
+        "tree_input": {"$ref": "#/$defs/text"},
+        "tree_soft_locus": {"$ref": "#/$defs/text"},
+        "loop_endpoint_model": {"const": "log(1-c^2)=log(1-c)+log(1+c) on -1<c<1"},
+        "log_integral": {"const": "int_0^1 abs(log u)du=1"},
+        "growth": {"$ref": "#/$defs/text"},
+        "functional": {"const": "A4:S(R^4)->C is a tempered distribution and therefore continuous in the Schwartz topology"},
+        "continuity_consequence": {"$ref": "#/$defs/text"},
+        "status": {"const": "FINITE_ORDER_PAIR_RESPONSE_TEMPERED_AND_CUTOFF_CONTINUOUS"}
+      }
+    },
+    "exact_darkness_and_probability": {
+      "type": "object", "additionalProperties": false,
+      "required": ["leading_identity", "reason", "amplitude_retention", "imported_lower", "compact_lower", "comparison", "joint_expansion", "status"],
+      "properties": {
+        "leading_identity": {"$ref": "#/$defs/text"},
+        "reason": {"$ref": "#/$defs/text"},
+        "amplitude_retention": {"const": "|A4(h_R)|>|A4(h0)|/2 for R>=R0"},
+        "imported_lower": {"$ref": "#/$defs/receipt"},
+        "compact_lower": {"$ref": "#/$defs/receipt"},
+        "comparison": {"const": "Q8_compact/q4_bar>1/18874368000>1/20000000000"},
+        "joint_expansion": {"const": "p_selected=g_det^2*lambda^8*Q8_compact+O(g_det^2*lambda^10)+O(g_det^4)"},
+        "status": {"const": "STRICTLY_POSITIVE_COMPACT_SPACETIME_LOCAL_DARK_Q8_COEFFICIENT"}
+      }
+    },
+    "disposition": {"type": "object", "minProperties": 11, "maxProperties": 11, "additionalProperties": {"$ref": "#/$defs/text"}},
+    "does_not_establish": {"type": "array", "minItems": 13, "maxItems": 13, "items": {"$ref": "#/$defs/text"}},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "checks": {"type": "object", "additionalProperties": false, "required": ["total", "passed", "ok", "failures", "details"],
+      "properties": {
+        "total": {"const": 27}, "passed": {"const": 27}, "ok": {"const": true}, "failures": {"const": []},
+        "details": {"type": "object", "minProperties": 27, "maxProperties": 27, "additionalProperties": {"const": true}}
+      }
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/text"}},
+    "report": {"const": "reverse_physics/reports/bt-compact-spacetime-quadrupole-dark-detector-q8.md"}
+  },
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "receipt": {"type": "object", "additionalProperties": false, "required": ["exact", "canonical_sha256"],
+      "properties": {"exact": {"$ref": "#/$defs/text"}, "canonical_sha256": {"$ref": "#/$defs/hash"}}}
+  }
+}
