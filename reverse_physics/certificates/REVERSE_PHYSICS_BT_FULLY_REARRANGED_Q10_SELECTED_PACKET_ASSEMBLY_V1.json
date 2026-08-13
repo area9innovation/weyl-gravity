@@ -1,0 +1,254 @@
+{
+  "answer": "Yes in the declared normal-ordered massless direct-auxiliary scheme on a sufficiently small common compact selected packet. The public interaction is g*V with g=lambda^2, and fully rearranged support removes the one-vertex spectator transition. Hence the fixed-BT off-diagonal amplitude is A_YX=g^2*T4,T+g^3*T6,T+O(g^4), with no lambda^5 output. At g^3 all externally disconnected partitions remain off support, forward survival is orthogonal to the detector, and a vacuum factor could contribute only through a one-vertex vacuum expectation, which vanishes by normal ordering. The frame-typed loop exhaustion and its two finite-time successors give T6,T=T6,triangle,T+T6,bb,T. Therefore q10[F]=2*Re<T4,T F,T6,T F>. The triangle and bubble-with-bridge packet kernels make this a finite exact functional on the common compact packet. Apparent scalar y5, source and detector corrections are not additional terms: pulling the whole selected experiment through the same coefficientwise two-sided Rt is a similarity. The exact Cayley witness shows explicitly that the induced nonzero y5 norm cancels the second-order dressing cross, leaving the fixed-BT q10. Both T6 summands are total-kappa fixed, so the complete q10 functional is identical in the public Krein and positive Hilbert Born prescriptions. In MSbar, d q10/d log(mu)=[5/(2*pi^2)]q8, exactly cancelling the order-lambda10 contribution from beta(lambda)=-5*lambda^3/(16*pi^2). The packet-dependent value and sign are not evaluated, and the result does not construct the standard shift-invariant Eq. (19) projector or transfer to gravity.",
+  "assembled_packet_functional": {
+    "boundedness": "T4,T is bounded and both T6 summands are Hilbert-Schmidt on the common finite-measure packet, so the displayed cross functional is finite",
+    "bubble_bridge": "T6,bb,T=(4/(16*pi^2))*sum_R J_bb,T,R*W_R",
+    "complete_T6": "T6,T=T6,triangle,T+T6,bb,T",
+    "packet_domain": "the intersection of the predecessor compact neighborhoods around the same rational fully rearranged center; it is nonempty after shrinking",
+    "q10": "q10[F]=2*Re<(16*sum_C K_C,T tensor R_C)F,(8*sum_P J_triangle,T,P*S_P+(4/(16*pi^2))*sum_R J_bb,T,R*W_R)F>",
+    "sign": "NOT_DETERMINED",
+    "status": "COMPLETE_SELECTED_PACKET_Q10_FUNCTIONAL_COMPUTED",
+    "tree": "T4,T=16*sum_C K_C,T tensor R_C",
+    "triangle": "T6,triangle,T=8*sum_P J_triangle,T,P*S_P",
+    "value": "EXACT_PACKET_FUNCTIONAL_NOT_REDUCED_TO_A_PACKET_INDEPENDENT_NUMBER"
+  },
+  "assumptions": [
+    "the public direct auxiliary action is used throughout the internal graph expansion, with g=lambda^2 and no mixing with original-phi graph lists",
+    "the declared normal-ordered massless auxiliary scheme sets both tadpole orbits and the one-vertex vacuum expectation to zero",
+    "all packet supports are shrunk to one common compact neighborhood of the certified fully rearranged rational center",
+    "the selected scalar source, detector and effect are all pulled through the same coefficientwise two-sided Rt on the finite detector ideal",
+    "the common external momentum-conservation delta is reduced before the Hilbert-Schmidt and probability pairings",
+    "the bridge shell and bubble logarithm are paired distributionally at finite T"
+  ],
+  "certificate": "REVERSE_PHYSICS_BT_FULLY_REARRANGED_Q10_SELECTED_PACKET_ASSEMBLY_V1",
+  "checks": {
+    "details": {
+      "Rt_is_formally_two_sided": true,
+      "T4_and_T6_packet_maps_are_Hilbert_Schmidt": true,
+      "all_external_disconnected_partitions_are_off_support": true,
+      "assembled_q10_is_common_Born": true,
+      "bubble_bridge_is_finite_time_computed": true,
+      "bubble_interference_is_common_Born": true,
+      "common_packet_intersection_is_nonempty": true,
+      "connected_T6_is_complete": true,
+      "direct_auxiliary_has_no_cubic_vertex": true,
+      "done_event_matches": true,
+      "explicit_scale_derivative_is_five_over_two_pi2_q8": true,
+      "fixed_amplitude_is_even_in_lambda": true,
+      "fixed_y5_and_q9_are_zero": true,
+      "fully_rearranged_identity_and_forward_are_zero": true,
+      "inputs_are_content_pinned": true,
+      "leading_running_is_minus_five_over_two_pi2_q8": true,
+      "normal_ordered_survivors_are_triangle_and_bubble_bridge": true,
+      "one_vertex_vacuum_factor_is_zero_by_normal_ordering": true,
+      "order_lambda10_scale_terms_cancel": true,
+      "public_auxiliary_interaction_has_lambda_squared_only": true,
+      "pulled_and_fixed_q10_agree": true,
+      "q10_is_two_a4_a6": true,
+      "q8_is_a4_squared": true,
+      "selected_scalar_trace_is_similarity_invariant": true,
+      "seven_predecessors_pass": true,
+      "sign_and_Eq19_are_not_promoted": true,
+      "similarity_fixture_has_nonzero_apparent_y5": true,
+      "similarity_fixture_is_exactly_orthogonal": true,
+      "triangle_interference_is_common_Born": true,
+      "triangle_is_finite_time_computed": true,
+      "vacuum_factors_cannot_enter_amplitude_order_g3": true,
+      "work_item_is_active": true,
+      "y5_norm_cancels_second_order_dressing": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 33,
+    "total": 33
+  },
+  "common_Born_identity": {
+    "conclusion": "q10_public[F]=q10_Hilbert[F] on the selected positive packet carrier",
+    "effect": "T4,T^sharp*T6,T+T6,T^sharp*T4,T=T4,T^*T6,T+T6,T^*T4,T",
+    "loop": "kappa3*T6,T*kappa3=T6,T",
+    "status": "COMPLETE_Q10_IS_COMMON_BORN",
+    "tree": "kappa3*T4,T*kappa3=T4,T"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL",
+    "REDUCED-MODE"
+  ],
+  "disposition": {
+    "Lorentzian_causal_claim": "NOT_ESTABLISHED",
+    "all_time_scattering": "NOT_CONSTRUCTED",
+    "general_Eq19": "NOT_PROVED",
+    "gravity_or_metric_BV_BRST_transfer": "NOT_CONSTRUCTED",
+    "selected_Rt_dressing": "CANCELLED_COEFFICIENTWISE",
+    "selected_finite_time_q10": "COEFFICIENT_COMPUTED_AS_EXACT_PACKET_FUNCTIONAL",
+    "selected_finite_time_q8": "COEFFICIENT_COMPUTED",
+    "selected_finite_time_q9": "EXACTLY_ZERO",
+    "selected_q10_common_Born": "PROVED",
+    "selected_q10_sign": "NOT_DETERMINED",
+    "standard_shift_invariant_projector": "NOT_CONSTRUCTED",
+    "vacuum_and_survival_at_selected_q10": "EXHAUSTED_AND_ABSENT"
+  },
+  "does_not_establish": [
+    "a packet-independent numerical value or sign for q10",
+    "scheme independence of q10 as a standalone perturbative coordinate",
+    "finite-coupling positivity beyond the leading positive q8 neighborhood",
+    "a full-carrier extension through the hard zero-spatial bridge mode",
+    "the standard shift-invariant scalar characteristic projector",
+    "general Eq. (19)",
+    "an all-time Moller, LSZ or S operator",
+    "overlap, forward or collinear detector strata",
+    "gravity or metric BV--BRST transfer",
+    "anything LORENTZIAN-CAUSAL",
+    "literature priority"
+  ],
+  "fixed_auxiliary_expansion": {
+    "coupling": "g=lambda^2",
+    "fixed_y5": "0",
+    "interaction": "H_int(g)=g*V4 with no cubic vertex",
+    "probability": "q=lambda^8*q8+lambda^10*q10+O(lambda^12)",
+    "q10": "q10[F]=2*Re<T4,T F,T6,T F>",
+    "q8": "q8[F]=<T4,T F,T4,T F>",
+    "restricted_amplitude": "A_YX=P_Y*(U_T-I)*P_X=g^2*T4,T+g^3*T6,T+O(g^4)=lambda^4*T4,T+lambda^6*T6,T+O(lambda^8)",
+    "status": "FIXED_AUXILIARY_Q10_REDUCES_TO_TREE_LOOP_INTERFERENCE"
+  },
+  "lifecycle_state": "COEFFICIENT_COMPUTED",
+  "next_gate": "Use the now-complete selected q8-q10 finite-time probability jet as the target of a standard-projector transport test: construct the order-lambda^2 pushforward of the shift-invariant scalar characteristic projector on the same compact packet ideal and decide whether its coefficientwise trace equals this q10 functional. Failure gives a scoped Eq. (19) obstruction; success still requires continuum-domain and all-time control before any gravitational or Lorentzian promotion.",
+  "order_g3_exhaustion": {
+    "complete_kernel": "T6,T=T6,triangle,T+T6,bb,T",
+    "connected": "every direct-auxiliary six-leg g^3 connected graph has three quartic vertices and one loop",
+    "external_disconnected": "all 202 nontrivial external partitions are off the fully rearranged compact support at every coupling order",
+    "forward_survival": "P_Y*P_X=0, so a pure input-support survival term has zero selected click pairing",
+    "normal_ordered_topologies": [
+      "triangle",
+      "bubble_with_bridge"
+    ],
+    "status": "NO_MISSING_SOURCE_DETECTOR_VACUUM_SURVIVAL_OR_GRAPH_TERM_AT_SELECTED_Q10",
+    "vacuum": "a g^1 vacuum expectation is required to multiply the leading g^2 transition at g^3; the normal-ordered quartic vertex has zero one-vertex vacuum expectation"
+  },
+  "provenance": {
+    "generated_by": "reverse_physics/bt_fully_rearranged_q10_selected_packet_assembly.py",
+    "independent_verifier": "reverse_physics/verify_bt_fully_rearranged_q10_selected_packet_assembly.py",
+    "inputs": [
+      {
+        "path": "planning/work-items/reverse-physics-bateman-fully-rearranged-q10-selected-packet-assembly.json",
+        "sha256": "3346dbfa8bc04fbefd6bfb79a38a939e3fd53d426d5d6f029ad3ef4a87e9b7d6"
+      },
+      {
+        "path": "planning/events/reverse-physics-bateman-fully-rearranged-q10-selected-packet-assembly-DONE-5b286625.json",
+        "sha256": "159384309d973b5b63920f939245452f1f360ec10a4c2fa804087c5e2f76dabb"
+      },
+      {
+        "path": "reverse_physics/data/bateman_turok_hamiltonian_source_v1.json",
+        "sha256": "55ff3f989f1c5ac9bcc0688ad9c43721c22b5889c43da50fce43352c18be8fe7"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_FULLY_REARRANGED_Q10_FRAME_TYPED_LOOP_LEDGER_V1.json",
+        "sha256": "33fc45521d72ef46ddd902e4fa21655f9826ee105a3ce6059d5dfa1b17940107"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_FULLY_REARRANGED_PHYSICAL_PACKET_PROBABILITY_V1.json",
+        "sha256": "3790673f55cc7c43b9d2f731da217c0be73b628c169c6e2e9def3ba2a6b07c30"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_FULLY_REARRANGED_COMMON_BORN_PHYSICAL_V1.json",
+        "sha256": "7ade5768a01cc42cf0ef1edfea9c8cf4c52cc716956a7abfc280c1def5611d47"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_SCALAR_DRESSED_POSITIVE_SOURCE_AFFILIATION_V1.json",
+        "sha256": "f31220e01d24fc65e3febbe3caba0bc4796cc455aa2d83d3b0bfd50d51c57e98"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_FULLY_REARRANGED_LAMBDA9_PARITY_SELECTION_V1.json",
+        "sha256": "3675c120b414be2e1e0db8621d6b1624b5bcf0ad6adbef20eb24f0995698e30d"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_FULLY_REARRANGED_V4_CUBED_FINITE_TIME_AFFILIATION_V1.json",
+        "sha256": "7f2067dc3fe1bd30dbc1598c2e94307a45ccf096234fb8cbaca823402601f9da"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_FULLY_REARRANGED_BUBBLE_BRIDGE_FINITE_TIME_AFFILIATION_V1.json",
+        "sha256": "adbc12c3c45b35a17f1159ab89632a458d1cf8796da371bed80768f2f07d8320"
+      }
+    ],
+    "method": "Exact coupling-series extraction in g=lambda^2, content-pinned graph/support imports, exact rational Cayley similarity expansion, and algebraic RG cancellation. No floating-point arithmetic enters a claim.",
+    "retrieval_date": "2026-08-13",
+    "source_commit": "5b286625d63840c31f3051f8ceda54453acc8ffe"
+  },
+  "question": "Does the completed finite-time direct-auxiliary T6 loop determine the full selected fully rearranged probability coefficient q10 once source, detector, vacuum and survival terms are typed correctly?",
+  "renormalization_group": {
+    "beta": "partial_log(mu)lambda=-5*lambda^3/(16*pi^2)",
+    "bubble_scale_derivative": "partial_log(mu)T6,bb,T=[5/(4*pi^2)]*T4,T",
+    "cancellation": "partial_log(mu)[lambda^8*q8+lambda^10*q10]=O(lambda^12)",
+    "finite_scheme_rule": "a finite quartic coupling redefinition changes the coordinate q10 together with lambda; the displayed coefficient is the declared MSbar coordinate",
+    "leading_running": "partial_log(mu)[lambda^8*q8]=-[5/(2*pi^2)]*lambda^10*q8+O(lambda^12)",
+    "q10_scale_derivative": "partial_log(mu)q10=[5/(2*pi^2)]*q8",
+    "scheme": "normal-ordered massless auxiliary action with MSbar quartic bubble subtraction",
+    "status": "ORDER_LAMBDA10_PACKET_PROBABILITY_IS_RG_INVARIANT",
+    "triangle_scale_derivative": "0"
+  },
+  "report": "reverse_physics/reports/bt-fully-rearranged-q10-selected-packet-assembly.md",
+  "result_kind": "complete exact finite-time selected-packet probability-order-lambda10 functional in the normal-ordered public direct-auxiliary BT frame",
+  "schema": "reverse_physics/schema/reverse-physics-bt-fully-rearranged-q10-selected-packet-assembly-v1.schema.json",
+  "schema_version": 1,
+  "similarity_dressing_cancellation": {
+    "exact_fixture": {
+      "dressing_sum": "0",
+      "fixed_q10": "2",
+      "fixed_y4": [
+        "1",
+        "2"
+      ],
+      "fixed_y6": [
+        "3",
+        "-1"
+      ],
+      "generator": [
+        [
+          "0",
+          "1"
+        ],
+        [
+          "-1",
+          "0"
+        ]
+      ],
+      "pulled_q10": "2",
+      "pulled_y4": [
+        "1",
+        "2"
+      ],
+      "pulled_y5": [
+        "-2",
+        "1"
+      ],
+      "pulled_y6": [
+        "5/2",
+        "-2"
+      ],
+      "rotation": [
+        [
+          "-(lambda - 2)*(lambda + 2)/(lambda**2 + 4)",
+          "4*lambda/(lambda**2 + 4)"
+        ],
+        [
+          "-4*lambda/(lambda**2 + 4)",
+          "-(lambda - 2)*(lambda + 2)/(lambda**2 + 4)"
+        ]
+      ],
+      "rotation_is_exactly_orthogonal": true,
+      "second_order_dressing_cross": "-5",
+      "status": "APPARENT_Y5_NORM_CANCELS_SECOND_ORDER_SIMILARITY_DRESSING",
+      "y5_norm": "5"
+    },
+    "general_relation": "if R^dagger R=1 and R=1+lambda*r1+lambda^2*r2+..., then ||r1^dagger*y4||^2+2*Re<y4,r2^dagger*y4>=0",
+    "interpretation": "the apparent scalar ||y5||^2 and second-order source/detector/output dressing cross cancel; they are the expansion of one similarity and are not added to the fixed-BT ledger",
+    "scope": "selected shift-breaking scalar pullback on the finite compact detector ideal, not the standard shift-invariant Eq. (19) projector",
+    "selected_scalar_identity": "tr(P_phi*E_phi)=tr(P_u*E_BT) coefficientwise on the finite detector ideal",
+    "status": "ALL_SELECTED_RT_DRESSING_CANCELS_FROM_Q10"
+  },
+  "verification_commands": [
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/bt_fully_rearranged_q10_selected_packet_assembly.py --write --check",
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/verify_bt_fully_rearranged_q10_selected_packet_assembly.py",
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 -m unittest reverse_physics.tests.test_bt_fully_rearranged_q10_selected_packet_assembly"
+  ]
+}

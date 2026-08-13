@@ -1,0 +1,161 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-fully-rearranged-q10-selected-packet-assembly-v1.schema.json",
+  "title": "Fully rearranged BT q10 selected-packet assembly",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "schema_version", "certificate", "question", "answer",
+    "result_kind", "lifecycle_state", "dependency_tags", "provenance",
+    "fixed_auxiliary_expansion", "order_g3_exhaustion",
+    "similarity_dressing_cancellation", "assembled_packet_functional",
+    "common_Born_identity", "renormalization_group", "disposition",
+    "assumptions", "does_not_establish", "next_gate", "checks",
+    "verification_commands", "report"
+  ],
+  "properties": {
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-fully-rearranged-q10-selected-packet-assembly-v1.schema.json"},
+    "schema_version": {"const": 1},
+    "certificate": {"const": "REVERSE_PHYSICS_BT_FULLY_REARRANGED_Q10_SELECTED_PACKET_ASSEMBLY_V1"},
+    "question": {"type": "string", "minLength": 80},
+    "answer": {"type": "string", "minLength": 1000},
+    "result_kind": {"type": "string", "minLength": 80},
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE"]},
+    "provenance": {"$ref": "#/$defs/provenance"},
+    "fixed_auxiliary_expansion": {"$ref": "#/$defs/expansion"},
+    "order_g3_exhaustion": {"$ref": "#/$defs/exhaustion"},
+    "similarity_dressing_cancellation": {"$ref": "#/$defs/dressing"},
+    "assembled_packet_functional": {"$ref": "#/$defs/functional"},
+    "common_Born_identity": {"$ref": "#/$defs/born"},
+    "renormalization_group": {"$ref": "#/$defs/rg"},
+    "disposition": {"$ref": "#/$defs/disposition"},
+    "assumptions": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"type": "string"}},
+    "does_not_establish": {"type": "array", "minItems": 11, "maxItems": 11, "items": {"type": "string"}},
+    "next_gate": {"type": "string", "minLength": 250},
+    "checks": {"$ref": "#/$defs/checks"},
+    "verification_commands": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "string"}},
+    "report": {"const": "reverse_physics/reports/bt-fully-rearranged-q10-selected-packet-assembly.md"}
+  },
+  "$defs": {
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_commit", "retrieval_date", "inputs", "generated_by", "independent_verifier", "method"],
+      "properties": {
+        "source_commit": {"const": "5b286625d63840c31f3051f8ceda54453acc8ffe"},
+        "retrieval_date": {"const": "2026-08-13"},
+        "inputs": {
+          "type": "array", "minItems": 10, "maxItems": 10,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["path", "sha256"],
+            "properties": {"path": {"type": "string"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+          }
+        },
+        "generated_by": {"const": "reverse_physics/bt_fully_rearranged_q10_selected_packet_assembly.py"},
+        "independent_verifier": {"const": "reverse_physics/verify_bt_fully_rearranged_q10_selected_packet_assembly.py"},
+        "method": {"type": "string", "minLength": 100}
+      }
+    },
+    "expansion": {
+      "type": "object", "additionalProperties": false,
+      "required": ["coupling", "interaction", "restricted_amplitude", "fixed_y5", "probability", "q8", "q10", "status"],
+      "properties": {
+        "coupling": {"const": "g=lambda^2"}, "interaction": {"type": "string"},
+        "restricted_amplitude": {"type": "string"}, "fixed_y5": {"const": "0"},
+        "probability": {"type": "string"}, "q8": {"type": "string"}, "q10": {"type": "string"},
+        "status": {"const": "FIXED_AUXILIARY_Q10_REDUCES_TO_TREE_LOOP_INTERFERENCE"}
+      }
+    },
+    "exhaustion": {
+      "type": "object", "additionalProperties": false,
+      "required": ["external_disconnected", "forward_survival", "vacuum", "connected", "normal_ordered_topologies", "complete_kernel", "status"],
+      "properties": {
+        "external_disconnected": {"type": "string"}, "forward_survival": {"type": "string"},
+        "vacuum": {"type": "string"}, "connected": {"type": "string"},
+        "normal_ordered_topologies": {"const": ["triangle", "bubble_with_bridge"]},
+        "complete_kernel": {"const": "T6,T=T6,triangle,T+T6,bb,T"},
+        "status": {"const": "NO_MISSING_SOURCE_DETECTOR_VACUUM_SURVIVAL_OR_GRAPH_TERM_AT_SELECTED_Q10"}
+      }
+    },
+    "fixture": {
+      "type": "object", "additionalProperties": false,
+      "required": ["generator", "rotation", "rotation_is_exactly_orthogonal", "fixed_y4", "fixed_y6", "pulled_y4", "pulled_y5", "pulled_y6", "y5_norm", "second_order_dressing_cross", "dressing_sum", "fixed_q10", "pulled_q10", "status"],
+      "properties": {
+        "generator": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "string"}}},
+        "rotation": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "string"}}},
+        "rotation_is_exactly_orthogonal": {"const": true},
+        "fixed_y4": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "string"}},
+        "fixed_y6": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "string"}},
+        "pulled_y4": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "string"}},
+        "pulled_y5": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "string"}},
+        "pulled_y6": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "string"}},
+        "y5_norm": {"type": "string"}, "second_order_dressing_cross": {"type": "string"},
+        "dressing_sum": {"const": "0"}, "fixed_q10": {"type": "string"}, "pulled_q10": {"type": "string"},
+        "status": {"const": "APPARENT_Y5_NORM_CANCELS_SECOND_ORDER_SIMILARITY_DRESSING"}
+      }
+    },
+    "dressing": {
+      "type": "object", "additionalProperties": false,
+      "required": ["selected_scalar_identity", "general_relation", "interpretation", "exact_fixture", "scope", "status"],
+      "properties": {
+        "selected_scalar_identity": {"type": "string"}, "general_relation": {"type": "string"},
+        "interpretation": {"type": "string"}, "exact_fixture": {"$ref": "#/$defs/fixture"},
+        "scope": {"type": "string"}, "status": {"const": "ALL_SELECTED_RT_DRESSING_CANCELS_FROM_Q10"}
+      }
+    },
+    "functional": {
+      "type": "object", "additionalProperties": false,
+      "required": ["tree", "triangle", "bubble_bridge", "complete_T6", "q10", "packet_domain", "boundedness", "value", "sign", "status"],
+      "properties": {
+        "tree": {"type": "string"}, "triangle": {"type": "string"}, "bubble_bridge": {"type": "string"},
+        "complete_T6": {"const": "T6,T=T6,triangle,T+T6,bb,T"}, "q10": {"type": "string", "minLength": 100},
+        "packet_domain": {"type": "string"}, "boundedness": {"type": "string"},
+        "value": {"const": "EXACT_PACKET_FUNCTIONAL_NOT_REDUCED_TO_A_PACKET_INDEPENDENT_NUMBER"},
+        "sign": {"const": "NOT_DETERMINED"}, "status": {"const": "COMPLETE_SELECTED_PACKET_Q10_FUNCTIONAL_COMPUTED"}
+      }
+    },
+    "born": {
+      "type": "object", "additionalProperties": false,
+      "required": ["tree", "loop", "effect", "conclusion", "status"],
+      "properties": {
+        "tree": {"type": "string"}, "loop": {"type": "string"}, "effect": {"type": "string"},
+        "conclusion": {"type": "string"}, "status": {"const": "COMPLETE_Q10_IS_COMMON_BORN"}
+      }
+    },
+    "rg": {
+      "type": "object", "additionalProperties": false,
+      "required": ["scheme", "triangle_scale_derivative", "bubble_scale_derivative", "q10_scale_derivative", "beta", "leading_running", "cancellation", "finite_scheme_rule", "status"],
+      "properties": {
+        "scheme": {"type": "string"}, "triangle_scale_derivative": {"const": "0"},
+        "bubble_scale_derivative": {"type": "string"}, "q10_scale_derivative": {"type": "string"},
+        "beta": {"type": "string"}, "leading_running": {"type": "string"}, "cancellation": {"type": "string"},
+        "finite_scheme_rule": {"type": "string"}, "status": {"const": "ORDER_LAMBDA10_PACKET_PROBABILITY_IS_RG_INVARIANT"}
+      }
+    },
+    "disposition": {
+      "type": "object", "additionalProperties": false,
+      "required": ["selected_finite_time_q8", "selected_finite_time_q9", "selected_finite_time_q10", "selected_q10_common_Born", "selected_q10_sign", "selected_Rt_dressing", "vacuum_and_survival_at_selected_q10", "standard_shift_invariant_projector", "general_Eq19", "all_time_scattering", "gravity_or_metric_BV_BRST_transfer", "Lorentzian_causal_claim"],
+      "properties": {
+        "selected_finite_time_q8": {"const": "COEFFICIENT_COMPUTED"},
+        "selected_finite_time_q9": {"const": "EXACTLY_ZERO"},
+        "selected_finite_time_q10": {"const": "COEFFICIENT_COMPUTED_AS_EXACT_PACKET_FUNCTIONAL"},
+        "selected_q10_common_Born": {"const": "PROVED"}, "selected_q10_sign": {"const": "NOT_DETERMINED"},
+        "selected_Rt_dressing": {"const": "CANCELLED_COEFFICIENTWISE"},
+        "vacuum_and_survival_at_selected_q10": {"const": "EXHAUSTED_AND_ABSENT"},
+        "standard_shift_invariant_projector": {"const": "NOT_CONSTRUCTED"}, "general_Eq19": {"const": "NOT_PROVED"},
+        "all_time_scattering": {"const": "NOT_CONSTRUCTED"}, "gravity_or_metric_BV_BRST_transfer": {"const": "NOT_CONSTRUCTED"},
+        "Lorentzian_causal_claim": {"const": "NOT_ESTABLISHED"}
+      }
+    },
+    "checks": {
+      "type": "object", "additionalProperties": false,
+      "required": ["total", "passed", "ok", "failures", "details"],
+      "properties": {
+        "total": {"const": 33}, "passed": {"const": 33}, "ok": {"const": true},
+        "failures": {"type": "array", "maxItems": 0},
+        "details": {"type": "object", "minProperties": 33, "maxProperties": 33, "additionalProperties": {"const": true}}
+      }
+    }
+  }
+}
