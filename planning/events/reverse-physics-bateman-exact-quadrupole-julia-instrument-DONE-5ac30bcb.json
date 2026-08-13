@@ -1,0 +1,32 @@
+{
+  "schema": "event-v0",
+  "id": "sf:program/event/reverse-physics-bateman-exact-quadrupole-julia-instrument-DONE-5ac30bcb",
+  "kind": "event",
+  "source": {
+    "path": "tools/science-forge/program/events/reverse-physics-bateman-exact-quadrupole-julia-instrument-DONE-5ac30bcb.json",
+    "span": null
+  },
+  "body": {
+    "event_kind": "WORK_ITEM_TRANSITIONED",
+    "actor": "reverse-physics",
+    "base_revision": "science-forge-ir-v0",
+    "predecessors": [],
+    "when": "2026-08-13",
+    "seq": 1,
+    "payload": {
+      "target": "sf:program/work/reverse-physics-bateman-exact-quadrupole-julia-instrument",
+      "to_state": "DONE",
+      "note": "The normalized compact-spacetime quadrupole response mode u2 defines the exact contraction K_click=|0><u2|/2. Its source and click defects are I+(sqrt(3)/2-1)|u2><u2| and sqrt(3)/2, and the associated Julia block is exactly unitary. The click/no-click effects are P_u/4 and I-P_u/4, so probabilities are normalized at finite detector strength. Fibrewise STF orthogonality gives K_click X2=0 exactly, while the imported compact-spacetime theorem gives a nonzero X4 overlap and hence a strictly positive order-lambda8 click coefficient. This removes the external g_detector expansion from the operational instrument. It does not remove the BT lambda expansion. The click map equals a normalized P0 D_h P2 compression and the no-click effect contains the global rank-one P_u, so neither is established as a compact-local AQFT Kraus operator or as public BT dynamics. Eq. 19, gravity and Lorentzian causality remain open. Evidence: REVERSE_PHYSICS_BT_EXACT_QUADRUPOLE_JULIA_INSTRUMENT_V1."
+    },
+    "native": {
+      "authored_by": "exact rank-one defect calculus, Julia dilation and fibrewise STF orthogonality",
+      "policy": "append-only; compact-local density and leading-pointer predecessors remain unchanged"
+    }
+  },
+  "edges": [
+    {
+      "rel": "TRANSITIONS",
+      "to": "sf:program/work/reverse-physics-bateman-exact-quadrupole-julia-instrument"
+    }
+  ]
+}

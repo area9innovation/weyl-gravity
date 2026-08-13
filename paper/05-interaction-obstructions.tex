@@ -278,7 +278,10 @@ coefficient on such a packet.  Multiplying its Schwartz switching by an
 expanding smooth compact spacetime cutoff preserves exact leading darkness
 for every cutoff and retains a positive order-eight coefficient for some
 finite, existential support radius.  A numerical bandwidth and support
-radius remain open.  The
+radius remain open.  Normalizing the resulting quadrupole response mode gives
+an exact finite-strength Julia click/no-click instrument, but its vacuum and
+two-particle compressions are global and are not promoted to local-algebra
+Kraus operators.  The
 recorded and symmetric bright-port absolute $q_8$ coefficients, continuum
 coherence and both forward endpoints remain open.  On the two-mode carrier,
 an explicit finite pointer Hamiltonian now selects the detector strength and
@@ -4147,6 +4150,68 @@ certifies this compactly switched local coefficient.  The support radius is
 existential, not numerical.  A compact local insertion alone does not supply
 renormalized Lorentzian time-ordered products or causal perturbative AQFT,
 and the detector-coupling, Eq.~(19), and gravity boundaries remain unchanged.
+
+On the certified compact pair-packet carrier the detector-strength expansion
+can be removed operationally.  Let
+\[
+ w_2=P_2D_hP_0|0\rangle,\qquad u_2={w_2\over\|w_2\|}.
+\]
+The strict compact-spacetime coefficient makes $w_2$ nonzero.  Define the
+bounded click contraction and its exact complement by
+\[
+ K_{\rm click}={1\over2}|0\rangle\langle u_2|,qquad
+ K_{\rm no}=I+\left({\sqrt3\over2}-1\right)|u_2\rangle\langle u_2|.
+\]
+Then
+\[
+ E_{\rm click}={1\over4}|u_2\rangle\langle u_2|,qquad
+ E_{\rm no}=I-E_{\rm click},qquad
+ E_{\rm click}+E_{\rm no}=I.
+\]
+In the source basis $(u_2,u_2^\perp)$ and one-dimensional click codomain, the
+Julia dilation is
+\[
+ U_J=
+ \begin{pmatrix}
+ \sqrt3/2&0&-1/2\\
+ 0&1&0\\
+ 1/2&0&\sqrt3/2
+ \end{pmatrix},
+ \qquad U_J^*U_J=U_JU_J^*=I.
+\]
+Consequently
+\[
+ p_{\rm click}(\Psi)={1\over4}|\langle u_2,\Psi\rangle|^2
+\]
+is an exactly normalized finite-strength instrument probability.  Fibrewise
+trace-freeness gives $\langle u_2,X_2\rangle=0$, while the preceding strict
+response gives $\langle u_2,X_4\rangle\ne0$.  Thus
+\[
+ p_{\rm click}[X(\lambda)]
+ ={\lambda^8\over4}|\langle u_2,X_4\rangle|^2+O(\lambda^{10})
+\]
+has a strictly positive leading coefficient without a $g_{\rm det}$
+remainder.
+
+This instrument is not identified with the exponential of the full local
+quadratic Hamiltonian.  Indeed,
+\[
+ \int_{-1}^{1}P_2(c)^3dc={4\over35},
+\]
+so three quadrupole insertions contain scalar coefficient $2/35$ and need not
+preserve the one-insertion dark identity.  Moreover
+$K_{\rm click}$ is the normalized compression $P_0D_hP_2$ and
+$K_{\rm no}$ contains the global rank-one projector
+$|u_2\rangle\langle u_2|$.  Compact locality of $D_h$ therefore does not prove
+that either Kraus operator belongs to a bounded-region local algebra.
+Certificate
+\par\noindent
+\texttt{REVERSE\_PHYSICS\_BT\_EXACT\_QUADRUPOLE\_JULIA\_}
+\allowbreak\texttt{INSTRUMENT\_V1}
+\par\noindent
+classifies this exact operational completion and its local-Kraus boundary.
+It removes the external detector-strength expansion, not the BT expansion in
+$\lambda$, public-BT selection, Eq.~(19), or the gravitational boundary.
 
 The effect itself has a finite Hamiltonian realization.  For the phased
 antisymmetric angle projector

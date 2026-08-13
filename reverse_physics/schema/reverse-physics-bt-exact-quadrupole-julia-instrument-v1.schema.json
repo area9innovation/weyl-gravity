@@ -1,0 +1,120 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-exact-quadrupole-julia-instrument-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "schema_version", "certificate", "question", "answer",
+    "result_kind", "lifecycle_state", "dependency_tags", "assumptions",
+    "provenance", "bounded_click_instrument", "exact_Julia_dilation",
+    "darkness_and_response", "full_local_exponential_obstruction",
+    "locality_ledger", "disposition", "does_not_establish", "next_gate",
+    "checks", "verification_commands", "report"
+  ],
+  "properties": {
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-exact-quadrupole-julia-instrument-v1.schema.json"},
+    "schema_version": {"const": 1},
+    "certificate": {"const": "REVERSE_PHYSICS_BT_EXACT_QUADRUPOLE_JULIA_INSTRUMENT_V1"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE"]},
+    "assumptions": {"type": "array", "minItems": 7, "maxItems": 7, "items": {"$ref": "#/$defs/text"}},
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_commit", "retrieval_date", "inputs", "generated_by", "independent_verifier", "method"],
+      "properties": {
+        "source_commit": {"const": "5ac30bcb5b9e5066c4d4bb030b23b69b56b8c8c3"},
+        "retrieval_date": {"const": "2026-08-13"},
+        "inputs": {"type": "array", "minItems": 5, "maxItems": 5, "items": {
+          "type": "object", "additionalProperties": false, "required": ["path", "sha256"],
+          "properties": {"path": {"$ref": "#/$defs/text"}, "sha256": {"$ref": "#/$defs/hash"}}
+        }},
+        "generated_by": {"const": "reverse_physics/bt_exact_quadrupole_julia_instrument.py"},
+        "independent_verifier": {"const": "reverse_physics/verify_bt_exact_quadrupole_julia_instrument.py"},
+        "method": {"$ref": "#/$defs/text"}
+      }
+    },
+    "bounded_click_instrument": {"type": "object", "additionalProperties": false,
+      "required": ["input_decomposition", "response_mode", "click_Kraus", "click_norm", "source_effect", "no_click_Kraus", "no_click_effect", "normalization", "probability", "status"],
+      "properties": {
+        "input_decomposition": {"$ref": "#/$defs/text"},
+        "response_mode": {"$ref": "#/$defs/text"},
+        "click_Kraus": {"const": "K_click=(1/2)|0><u2|"},
+        "click_norm": {"const": "1/2"},
+        "source_effect": {"const": "E_click=K_click^*K_click=(1/4)P_u"},
+        "no_click_Kraus": {"const": "K_no=I+(sqrt(3)/2-1)P_u"},
+        "no_click_effect": {"const": "E_no=K_no^*K_no=I-(1/4)P_u"},
+        "normalization": {"const": "E_click+E_no=I exactly"},
+        "probability": {"$ref": "#/$defs/text"},
+        "status": {"const": "EXACT_FINITE_STRENGTH_NORMALIZED_CLICK_NO_CLICK_INSTRUMENT"}
+      }
+    },
+    "exact_Julia_dilation": {"type": "object", "additionalProperties": false,
+      "required": ["source_fixture_basis", "click_matrix", "source_defect", "output_defect", "Julia_matrix", "intertwining", "unitarity", "detector_isometry", "status"],
+      "properties": {
+        "source_fixture_basis": {"const": ["u2", "u2_perp"]},
+        "click_matrix": {"const": [["1/2", "0"]]},
+        "source_defect": {"const": [["sqrt(3)/2", "0"], ["0", "1"]]},
+        "output_defect": {"const": [["sqrt(3)/2"]]},
+        "Julia_matrix": {"const": [["sqrt(3)/2", "0", "-1/2"], ["0", "1", "0"], ["1/2", "0", "sqrt(3)/2"]]},
+        "intertwining": {"const": "D_Y K_click=K_click D_X"},
+        "unitarity": {"const": "U_J^* U_J=U_J U_J^*=I exactly"},
+        "detector_isometry": {"$ref": "#/$defs/text"},
+        "status": {"const": "EXACT_JULIA_UNITARY_DILATION"}
+      }
+    },
+    "darkness_and_response": {"type": "object", "additionalProperties": false,
+      "required": ["leading_subspace", "orthogonality", "strict_response", "exact_instrument_probability", "coefficient_statement", "detector_coupling_status", "BT_coupling_status", "status"],
+      "properties": {
+        "leading_subspace": {"$ref": "#/$defs/text"},
+        "orthogonality": {"$ref": "#/$defs/text"},
+        "strict_response": {"$ref": "#/$defs/text"},
+        "exact_instrument_probability": {"const": "p_click[X(lambda)]=(1/4)|<u2,X(lambda)>|^2"},
+        "coefficient_statement": {"$ref": "#/$defs/text"},
+        "detector_coupling_status": {"const": "EXACT_FINITE_STRENGTH_NO_G_DETECTOR_REMAINDER"},
+        "BT_coupling_status": {"const": "COEFFICIENTWISE_LAMBDA_EXPANSION_REMAINS"},
+        "status": {"const": "EXACT_X2_DARK_STRICT_X4_CLICK_RESPONSE"}
+      }
+    },
+    "full_local_exponential_obstruction": {"type": "object", "additionalProperties": false,
+      "required": ["quadrupole", "mean", "cubic_moment", "scalar_projection_coefficient", "consequence", "status"],
+      "properties": {
+        "quadrupole": {"const": "P2(c)=(3*c^2-1)/2"},
+        "mean": {"const": "int_-1^1 P2(c)dc=0"},
+        "cubic_moment": {"const": "int_-1^1 P2(c)^3dc=4/35"},
+        "scalar_projection_coefficient": {"const": "(1/2)*int_-1^1 P2(c)^3dc=2/35"},
+        "consequence": {"$ref": "#/$defs/text"},
+        "status": {"const": "FULL_LOCAL_EXPONENTIAL_DARKNESS_NOT_DERIVED"}
+      }
+    },
+    "locality_ledger": {"type": "object", "additionalProperties": false,
+      "required": ["underlying_density", "click_compression", "global_objects_in_click", "global_object_in_no_click", "established_relation", "not_established_relation", "status"],
+      "properties": {
+        "underlying_density": {"$ref": "#/$defs/text"},
+        "click_compression": {"$ref": "#/$defs/text"},
+        "global_objects_in_click": {"const": ["vacuum projection P0", "two-particle projection P2", "global response-mode normalization"]},
+        "global_object_in_no_click": {"const": "P_u=|u2><u2|"},
+        "established_relation": {"$ref": "#/$defs/text"},
+        "not_established_relation": {"$ref": "#/$defs/text"},
+        "status": {"const": "OPERATIONAL_INSTRUMENT_EXACT_LOCAL_KRAUS_REALIZATION_OPEN"}
+      }
+    },
+    "disposition": {"type": "object", "minProperties": 12, "maxProperties": 12, "additionalProperties": {"$ref": "#/$defs/text"}},
+    "does_not_establish": {"type": "array", "minItems": 14, "maxItems": 14, "items": {"$ref": "#/$defs/text"}},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "checks": {"type": "object", "additionalProperties": false, "required": ["total", "passed", "ok", "failures", "details"],
+      "properties": {
+        "total": {"const": 28}, "passed": {"const": 28}, "ok": {"const": true}, "failures": {"const": []},
+        "details": {"type": "object", "minProperties": 28, "maxProperties": 28, "additionalProperties": {"const": true}}
+      }
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/text"}},
+    "report": {"const": "reverse_physics/reports/bt-exact-quadrupole-julia-instrument.md"}
+  },
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}
