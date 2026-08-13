@@ -1,0 +1,127 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-compact-sphere-dark-port-absolute-q8-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "schema_version", "certificate", "question", "answer",
+    "result_kind", "lifecycle_state", "dependency_tags", "assumptions",
+    "provenance", "invariant_packet_geometry", "exact_equatorial_margins",
+    "compact_thickening", "absolute_dark_port_coefficient", "disposition",
+    "does_not_establish", "next_gate", "checks", "verification_commands",
+    "report"
+  ],
+  "properties": {
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-compact-sphere-dark-port-absolute-q8-v1.schema.json"},
+    "schema_version": {"const": 1},
+    "certificate": {"const": "REVERSE_PHYSICS_BT_COMPACT_SPHERE_DARK_PORT_ABSOLUTE_Q8_V1"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE"]},
+    "assumptions": {"type": "array", "minItems": 7, "maxItems": 7, "items": {"$ref": "#/$defs/text"}},
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_commit", "retrieval_date", "inputs", "generated_by", "independent_verifier", "method"],
+      "properties": {
+        "source_commit": {"const": "60b68304ed58160ddac92c61c1ec7825e77c3b0a"},
+        "retrieval_date": {"const": "2026-08-13"},
+        "inputs": {"type": "array", "minItems": 8, "maxItems": 8, "items": {
+          "type": "object", "additionalProperties": false, "required": ["path", "sha256"],
+          "properties": {"path": {"$ref": "#/$defs/text"}, "sha256": {"$ref": "#/$defs/hash"}}
+        }},
+        "generated_by": {"const": "reverse_physics/bt_compact_sphere_dark_port_absolute_q8.py"},
+        "independent_verifier": {"const": "reverse_physics/verify_bt_compact_sphere_dark_port_absolute_q8.py"},
+        "method": {"$ref": "#/$defs/text"}
+      }
+    },
+    "invariant_packet_geometry": {
+      "type": "object", "additionalProperties": false,
+      "required": ["sphere_coordinates", "measure", "azimuth_domain", "half_width", "bin_0", "bin_1", "c_interval_0", "c_interval_1", "disjointness_witness", "positive_measure_cells", "normalized_packets", "orthogonality", "equal_leading_output", "status"],
+      "properties": {
+        "sphere_coordinates": {"$ref": "#/$defs/text"},
+        "measure": {"const": "dOmega=dn_x*dphi"},
+        "azimuth_domain": {"$ref": "#/$defs/text"},
+        "half_width": {"const": "1/10000"},
+        "bin_0": {"const": "I0=[pi/2-delta,pi/2+delta]"},
+        "bin_1": {"const": "I1=[arccos(3/5)-delta,arccos(3/5)+delta]"},
+        "c_interval_0": {"$ref": "#/$defs/interval"},
+        "c_interval_1": {"$ref": "#/$defs/interval"},
+        "disjointness_witness": {"$ref": "#/$defs/text"},
+        "positive_measure_cells": {"const": "B_j(epsilon)={abs(n_x)<=epsilon, phi in I_j}, measure(B_j)=4*epsilon*delta for every sufficiently small epsilon>0"},
+        "normalized_packets": {"const": "h_j=indicator(B_j)/sqrt(4*epsilon*delta)"},
+        "orthogonality": {"const": "<h0,h1>=0"},
+        "equal_leading_output": {"$ref": "#/$defs/text"},
+        "status": {"const": "EQUAL_AREA_ORTHOGONAL_COMPACT_SPHERE_PACKETS"}
+      }
+    },
+    "exact_equatorial_margins": {
+      "type": "object", "additionalProperties": false,
+      "required": ["duration", "W_angle_part_0", "W_angle_part_1", "tree_contrast", "tree_simple_bound", "loop_reduction", "H_series", "H_pair_0", "H_pair_1", "loop_contrast", "loop_simple_bound", "cancellation", "status"],
+      "properties": {
+        "duration": {"const": "kappa*T=1"},
+        "W_angle_part_0": {"$ref": "#/$defs/interval"},
+        "W_angle_part_1": {"$ref": "#/$defs/interval"},
+        "tree_contrast": {"$ref": "#/$defs/interval"},
+        "tree_simple_bound": {"const": "DeltaW_equator>1/20"},
+        "loop_reduction": {"const": "B(c)=common-2*[H(32*(1-c)/25)+H(32*(1+c)/25)]"},
+        "H_series": {"$ref": "#/$defs/text"},
+        "H_pair_0": {"$ref": "#/$defs/interval"},
+        "H_pair_1": {"$ref": "#/$defs/interval"},
+        "loop_contrast": {"$ref": "#/$defs/interval"},
+        "loop_simple_bound": {"const": "DeltaB_equator>1/225"},
+        "cancellation": {"const": "the common scale, finite local constant and all logarithms cancel before the H-series contrast"},
+        "status": {"const": "UNIFORM_EXACT_EQUATORIAL_BIN_CONTRASTS"}
+      }
+    },
+    "compact_thickening": {
+      "type": "object", "additionalProperties": false,
+      "required": ["tree_kernel_input", "loop_kernel_input", "uniformity_argument", "radius_status", "packet_choice", "pointwise_tree_kernel_contrast_after_thickening", "packet_tree_functional_contrast", "loop_contrast_after_thickening", "complete_contrast", "complete_lower_bound", "status"],
+      "properties": {
+        "tree_kernel_input": {"$ref": "#/$defs/text"},
+        "loop_kernel_input": {"$ref": "#/$defs/text"},
+        "uniformity_argument": {"$ref": "#/$defs/text"},
+        "radius_status": {"const": "EXISTS_BUT_NOT_NUMERICALLY_COMPUTED"},
+        "packet_choice": {"$ref": "#/$defs/text"},
+        "pointwise_tree_kernel_contrast_after_thickening": {"const": "DeltaW_kernel>1/40 can be retained on the compact product support"},
+        "packet_tree_functional_contrast": {"const": "DeltaC_tree>0; its magnitude carries the packet-measure normalization and is not bounded below by 1/40"},
+        "loop_contrast_after_thickening": {"const": "DeltaB_packet>1/230"},
+        "complete_contrast": {"const": "DeltaR6=(2*sqrt(2)/3)*DeltaC_tree+5*DeltaB_packet/(24*pi^2)"},
+        "complete_lower_bound": {"const": "DeltaR6>49/534336"},
+        "status": {"const": "NONEMPTY_NORMALIZED_COMPACT_PACKET_CLASS_WITH_POSITIVE_COMPLETE_Q6_CONTRAST"}
+      }
+    },
+    "absolute_dark_port_coefficient": {
+      "type": "object", "additionalProperties": false,
+      "required": ["leading_coefficient", "dark_effect", "leading_annihilation", "probability", "coefficient", "q6_relation", "Cauchy_bound", "exact_rational_lower", "comparison", "status"],
+      "properties": {
+        "leading_coefficient": {"const": "q4_bar_packet=||x2_packet||^2>0"},
+        "dark_effect": {"const": "P_minus=|h0-h1><h0-h1|/2 on the two packet modes"},
+        "leading_annihilation": {"const": "P_minus*X2_packet=0"},
+        "probability": {"const": "q_dark(lambda)=lambda^8*Q8_dark+O(lambda^10)"},
+        "coefficient": {"const": "Q8_dark=||X4_packet(1)-X4_packet(0)||^2/2"},
+        "q6_relation": {"const": "2*Re<x2_packet,X4_packet(j)>=q4_bar_packet*R6_packet(j)"},
+        "Cauchy_bound": {"const": "Q8_dark/q4_bar_packet>=DeltaR6^2/8"},
+        "exact_rational_lower": {"$ref": "#/$defs/receipt"},
+        "comparison": {"const": "Q8_dark/q4_bar_packet>2401/2284119687168>1/1000000000"},
+        "status": {"const": "STRICTLY_POSITIVE_ABSOLUTE_COMPACT_PACKET_DARK_Q8_COEFFICIENT"}
+      }
+    },
+    "disposition": {"type": "object", "minProperties": 12, "maxProperties": 12, "additionalProperties": {"$ref": "#/$defs/text"}},
+    "does_not_establish": {"type": "array", "minItems": 14, "maxItems": 14, "items": {"$ref": "#/$defs/text"}},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "checks": {"type": "object", "additionalProperties": false, "required": ["total", "passed", "ok", "failures", "details"],
+      "properties": {"total": {"const": 32}, "passed": {"const": 32}, "ok": {"const": true}, "failures": {"const": []}, "details": {"type": "object", "minProperties": 32, "maxProperties": 32, "additionalProperties": {"const": true}}}},
+    "verification_commands": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/text"}},
+    "report": {"const": "reverse_physics/reports/bt-compact-sphere-dark-port-absolute-q8.md"}
+  },
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "receipt": {"type": "object", "additionalProperties": false, "required": ["exact", "canonical_sha256"],
+      "properties": {"exact": {"$ref": "#/$defs/text"}, "canonical_sha256": {"$ref": "#/$defs/hash"}}},
+    "interval": {"type": "object", "additionalProperties": false, "required": ["lower", "upper"],
+      "properties": {"lower": {"$ref": "#/$defs/receipt"}, "upper": {"$ref": "#/$defs/receipt"}}}
+  }
+}

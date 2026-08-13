@@ -1,0 +1,272 @@
+{
+  "absolute_dark_port_coefficient": {
+    "Cauchy_bound": "Q8_dark/q4_bar_packet>=DeltaR6^2/8",
+    "coefficient": "Q8_dark=||X4_packet(1)-X4_packet(0)||^2/2",
+    "comparison": "Q8_dark/q4_bar_packet>2401/2284119687168>1/1000000000",
+    "dark_effect": "P_minus=|h0-h1><h0-h1|/2 on the two packet modes",
+    "exact_rational_lower": {
+      "canonical_sha256": "2075e521486ff1fa05da7c86930cf7751c302c57c996778f7441d696a0b9880c",
+      "exact": "2401/2284119687168"
+    },
+    "leading_annihilation": "P_minus*X2_packet=0",
+    "leading_coefficient": "q4_bar_packet=||x2_packet||^2>0",
+    "probability": "q_dark(lambda)=lambda^8*Q8_dark+O(lambda^10)",
+    "q6_relation": "2*Re<x2_packet,X4_packet(j)>=q4_bar_packet*R6_packet(j)",
+    "status": "STRICTLY_POSITIVE_ABSOLUTE_COMPACT_PACKET_DARK_Q8_COEFFICIENT"
+  },
+  "answer": "Yes on a nonempty compact fixed-P fibre carrier. The invariant shell measure is dOmega=dn_x*dphi. Equal azimuth bins of half-width 1/10000 around phi=pi/2 and phi=arccos(3/5) have equal measure. Exact rational root and alternating-series intervals prove that every equatorial pair in those bins has DeltaW>1/20 and DeltaB>1/225. The hard finite-time tree and loop kernels are jointly continuous, so the bins admit positive latitude thickness together with compact incoming and spectator packet neighborhoods on which the tree contrast stays positive and DeltaB>1/230. The two output packets are orthogonal, equal-normalized and have the same leading BT amplitude. Their antisymmetric dark effect therefore starts at absolute q8, and Cauchy gives Q8_dark/q4_bar>=DeltaR6^2/8 with DeltaR6>49/534336. Hence Q8_dark/q4_bar>2401/2284119687168>10^-9. The transverse and incoming radii are existential continuity radii, not computed numbers; total momentum and invariant mass remain sharp.",
+  "assumptions": [
+    "the active two-body carrier has fixed timelike total momentum and invariant mass, with invariant shell measure dOmega=dn_x*dphi up to a common positive factor",
+    "the two compact output cells use identical latitude and azimuth widths and nonnegative normalized indicator packets",
+    "the common incoming active packet and positive ghost-even spectator packet are chosen inside the nonempty hard continuity neighborhoods certified below",
+    "the finite duration satisfies kappa*T=1 and the same total-three-particle frame and switching convention is used in both packet cells",
+    "the complete X4 coefficient uses the connected compact-packet tree functional, finite-time active loop and zero normal-ordered spectator term in the common massless unit-residue MSbar convention",
+    "the scale, finite coupling convention, source, acceptance and normalization are common to the two cells",
+    "the probability statement is coefficientwise; no convergence, all-time limit or finite-coupling remainder sign is assumed"
+  ],
+  "certificate": "REVERSE_PHYSICS_BT_COMPACT_SPHERE_DARK_PORT_ABSOLUTE_Q8_V1",
+  "checks": {
+    "details": {
+      "H_alternating_terms_decrease_uniformly": true,
+      "H_pair_intervals_are_ordered": true,
+      "W_intervals_are_ordered": true,
+      "all_H_arguments_are_positive": true,
+      "azimuth_bins_are_disjoint": true,
+      "both_c_intervals_are_hard": true,
+      "c_intervals_are_ordered": true,
+      "compact_output_packets_are_orthogonal": true,
+      "compact_product_thickening_exists": true,
+      "complete_packet_loop_contrast_exceeds_one_over_230": true,
+      "complete_packet_tree_contrast_is_positive": true,
+      "dark_q8_Cauchy_factor_is_one_eighth": true,
+      "dark_relative_lower_exceeds_one_billionth": true,
+      "dark_relative_lower_is_exact": true,
+      "done_event_targets_work_item": true,
+      "equal_rectangles_have_equal_positive_measure": true,
+      "equatorial_loop_contrast_exceeds_one_over_225": true,
+      "equatorial_loop_contrast_interval_is_ordered": true,
+      "equatorial_tree_contrast_exceeds_one_twentieth": true,
+      "equatorial_tree_contrast_interval_is_ordered": true,
+      "fixed_P_and_invariant_mass_remain_sharp": true,
+      "inputs_are_content_pinned": true,
+      "invariant_azimuth_half_width_is_exact": true,
+      "joint_hard_kernels_are_continuous": true,
+      "leading_packet_amplitudes_are_equal": true,
+      "local_apparatus_Eq19_gravity_and_Lorentzian_boundaries_remain_open": true,
+      "loop_thickening_margin_is_strict": true,
+      "relative_q6_lower_is_exact": true,
+      "six_predecessors_pass": true,
+      "small_angle_trig_intervals_are_ordered": true,
+      "sphere_measure_is_dx_dphi": true,
+      "tree_kernel_thickening_margin_is_strict": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 32,
+    "total": 32
+  },
+  "compact_thickening": {
+    "complete_contrast": "DeltaR6=(2*sqrt(2)/3)*DeltaC_tree+5*DeltaB_packet/(24*pi^2)",
+    "complete_lower_bound": "DeltaR6>49/534336",
+    "loop_contrast_after_thickening": "DeltaB_packet>1/230",
+    "loop_kernel_input": "the renormalized finite-time loop kernel is continuous where both light-cone gaps stay nonzero",
+    "packet_choice": "choose nonzero nonnegative normalized compact incoming and spectator packets, and equal-area output indicators, inside that product neighborhood",
+    "packet_tree_functional_contrast": "DeltaC_tree>0; its magnitude carries the packet-measure normalization and is not bounded below by 1/40",
+    "pointwise_tree_kernel_contrast_after_thickening": "DeltaW_kernel>1/40 can be retained on the compact product support",
+    "radius_status": "EXISTS_BUT_NOT_NUMERICALLY_COMPUTED",
+    "status": "NONEMPTY_NORMALIZED_COMPACT_PACKET_CLASS_WITH_POSITIVE_COMPLETE_Q6_CONTRAST",
+    "tree_kernel_input": "the compact tagged tree kernel is continuous because F_T(delta) is entire and every oriented D_A stays nonzero on a hard tube",
+    "uniformity_argument": "the equatorial azimuth-bin product is compact and has strict rational margins, so joint continuity supplies one common open neighborhood in latitude, incoming active variables and spectator variables"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL",
+    "REDUCED-MODE"
+  ],
+  "disposition": {
+    "Lorentzian_causal_claim": "NOT_ESTABLISHED",
+    "absolute_dark_port_q8_probability": "COEFFICIENT_COMPUTED_AND_STRICTLY_POSITIVE",
+    "all_order_or_all_time_probability": "NOT_CONSTRUCTED",
+    "compact_fixed_P_output_packets": "CONSTRUCTED_AS_NONEMPTY_CLASS",
+    "compact_incoming_active_packet": "EXISTS_ON_FIXED_P_FIBRE",
+    "compact_positive_spectator_packet": "EXISTS",
+    "continuity_radii": "NOT_NUMERICALLY_COMPUTED",
+    "finite_total_momentum_or_invariant_mass_bandwidth": "NOT_CONSTRUCTED",
+    "general_Eq19": "NOT_PROVED_AND_NOT_USED",
+    "gravity_or_metric_BV_BRST_transfer": "NOT_CONSTRUCTED",
+    "local_detector_Hamiltonian_for_these_exact_packets": "NOT_CONSTRUCTED",
+    "recorded_or_bright_port_absolute_q8": "NOT_COMPUTED"
+  },
+  "does_not_establish": [
+    "a numerical latitude, incoming-active or spectator support radius",
+    "finite invariant-mass or total-momentum bandwidth",
+    "a globally normalizable packet across the direct integral of total momenta",
+    "selection or exact realization of these packet projectors by a local finite-derivative apparatus",
+    "either recorded or symmetric bright-port absolute order-lambda8 coefficient",
+    "the complete X2-X6 interference on those ports",
+    "forward, exchanged-forward, real-virtual, collinear or KLN completion",
+    "an exact probability after summing every perturbative order",
+    "an all-time Moller, LSZ or S operator",
+    "the standard scalar projector or general Bateman--Turok Eq. (19)",
+    "a complete positive physical Hilbert or Fock construction",
+    "gravity, metric BV--BRST, QME restoration or residual transfer",
+    "anything LORENTZIAN-CAUSAL",
+    "literature priority"
+  ],
+  "exact_equatorial_margins": {
+    "H_pair_0": {
+      "lower": {
+        "canonical_sha256": "6c69160db2d2d278a70fd8ba810a278cd6fbcb9afc04680c59924a64fa08cf37",
+        "exact": "184548044081501072660585442157099537708613323897187163847355329437205831577474275294730899784721459354729963298014931146849748223812133920500458090637499158736723217438162161222538369047568292616454150032426970391998501602666666673333333333/893172660068725672317668795585632324218750000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "upper": {
+        "canonical_sha256": "112af6e63bca28d0c083501f39a8f7e92571bd19062ae37e5f3067ddd6f59b00",
+        "exact": "46632926502428725213789435798655156880595705377645268597938988089746927999419345232125594537458360538513035228857386733104357566407074854310004160538198471236106586413656186955133814309767703974098149999993368421053/225643619385783327743411064147949218750000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    "H_pair_1": {
+      "lower": {
+        "canonical_sha256": "5681d611451d2552f397c0388b0baaa062568b1c174affe6ef5c70856eb9cd8e",
+        "exact": "109492266523540954948235628358351029862510810119496145518775449991347416724104018728326088675223116094914550846634513258479267662475658345599031632569351625065368642880789493273094464508612628305446548529884107810912728302896376272064790047398689874012978409151599963845421361759741999199999/535903596041235403390601277351379394531250000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "upper": {
+        "canonical_sha256": "ecc3a5938de3c96c9e1c218e885ea6fe0277dd2ac8c4d16674a77870a1da4da1",
+        "exact": "487938866122922971517310685499205027195013868396272123677991154713537311720562335882066156265950564102351226228667569651119800566264281497836419480617114435386994961414384146923291413934398573721758266278570565579888178795010547032388871656057279314236648577/2387763168103527277708053588867187500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    "H_series": "H(y)=sum_(n>=1)(-1)^(n+1)*y^n/[2*n*(2*n+1)*(2*n)!]",
+    "W_angle_part_0": {
+      "lower": {
+        "canonical_sha256": "f464d686af6e64ce22bf8ce1e494c8ff73f85146b49440fbd3ad3d90dd671a9a",
+        "exact": "528856331185583161085796844025689907166848631105379119673216809411882809807280160764140337230386289758784553891778411142499418886988284615029751735537769449513394611129379909450391764654608661196032933981419439779178508150527755823940802830917224229020311008379698091140481272337959153365269555076586307661679340803030752146092522520224019702222260247847847343583937644998633681671092259500365982160128572391521164283246167110855480356623459079437753893877934127820599/77951260533129099266058741382598876953125000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "upper": {
+        "canonical_sha256": "260752b6331a33df495f6cd9f6118872f19756aafbf426d0e3695dc14b85f284",
+        "exact": "710763715968788635360838348097518577259500376077881107806625278464989281119171456428155880609638371819053912476604747909910596969003137997221954466916298337857081520625392562341014172302153923454291874118741498607704356266484842715270998383416502221471482962457359497420178272312284344702277425335190229883075300379624856666083980296692524798124292873167045838435607850400772562653925997860816000496129/104725854492204956054678771972656250000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    "W_angle_part_1": {
+      "lower": {
+        "canonical_sha256": "8a9d743eded3a4d521205c086602dfffcb69b8f903f052010639c80d3466baa4",
+        "exact": "1924750866199242061657964703607869963367565316379047884656591212205187582911160113188655132078112003274152620234239741925574178251348947706964721098896364146556994734416122069840889597127213064928920205995781145975279904637022691472823838041775570790752032626742672767498790814222728102358845220283643162857464174259571931927124722115220478857707909597211709259051364161902581170467955016982120184543046351923356428581903885062126896860471914718603690122746642971630755769405832422169778523/281116418044125890697187641704011542696174338718862920440733432769775390625000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "upper": {
+        "canonical_sha256": "483f5ee0691006ec185af11454be88e539a7802ac2c7960d3d41bd89b2ff279f",
+        "exact": "76257043917704567904567781120715044711845691534569727016896155497991803483560058759769170338317856335427773858611810269605007735445678475191028177795162504730116010372168667474235466388866683499156687456098648806099234642874982128339479097372051525329334236182348548018245819821433256149060783203853772370289910973872049975156812772251624591645889662915294042930793850699003170331880878381252257961884733471576288289806605950049/11131997362553705455675190311896243792577509254540188086032867431640625000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    "cancellation": "the common scale, finite local constant and all logarithms cancel before the H-series contrast",
+    "duration": "kappa*T=1",
+    "loop_contrast": {
+      "lower": {
+        "canonical_sha256": "e4aef8407861a1d1679007159163f6536fa545f92a727b1d4b73358e3083d8ed",
+        "exact": "6490918311664635607652524360170103115131036000661192268981642006954498918404564892305690260765844704621464757932698797528793038380483592691271771741311328799281326989101092044942958472743443627708635368317338255269055110905708556897187293299436660858731653331/1429076256109961075708270072937011718750000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "upper": {
+        "canonical_sha256": "aa181e5193e9ec548b650f9c453592df424850bbb6e40f3b8f618b1ce436780d",
+        "exact": "420311306575755811504760554484989242967996717470455800443215573933845758172308732657399450413496728017969273967260077547860519247048144462409416236289914706794833283881316915116114825695222877678852573366714063029382232367874575978403317533770041995673863616133345384859546080086000266667/89317266006872567231766879558563232421875000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    "loop_reduction": "B(c)=common-2*[H(32*(1-c)/25)+H(32*(1+c)/25)]",
+    "loop_simple_bound": "DeltaB_equator>1/225",
+    "status": "UNIFORM_EXACT_EQUATORIAL_BIN_CONTRASTS",
+    "tree_contrast": {
+      "lower": {
+        "canonical_sha256": "4956460d652dcb9f6b252621b3187f21e978d4fb8e0c5bf8d2543143558d4bce",
+        "exact": "2627143476613390424683830252676092154210013884308576496031630331921480780627866310366308433383865956244297805468050071878382172774140850809513403413061518254997446292580805489389475060253000347065087583440659789430068670218873840701782644002989494437383008876346376521506092519219578622782213823386351608380474337268515763142311869554549114054389770741383501146627928255948508609943761285709998071436382878431857868373041999615518291553451724926392999624149837308390024982973820164072952861015338420109792879201/43849775798769459611731888738338771322642377381226549709947180240061866292692534625530242919921875000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "upper": {
+        "canonical_sha256": "e3baa206c2a5080edbbd720005e1d18d721ac99349abf43280d35710e7d9ef82",
+        "exact": "172247912839774017802163310127421044552767590478244800729448952467967992855023688838583461714237561376245976786571850704396621202500223238700726741718826379784026675710421245504627705625076620868855010065289390185890946729916692739560583084089951082620322027409317981834674822306320614051184283166341578586399990910748350162157373991720613279896777465514634052715050569772010259175249779984535458342130768901188384220512039664199813516740964192816486753329705980444776824773288254198038686144527403033602754961507/2617417013827734189451790077862799758268991087705752420898895916806947458675384521484375000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    "tree_simple_bound": "DeltaW_equator>1/20"
+  },
+  "invariant_packet_geometry": {
+    "azimuth_domain": "0<=phi<pi after the unordered-pair quotient",
+    "bin_0": "I0=[pi/2-delta,pi/2+delta]",
+    "bin_1": "I1=[arccos(3/5)-delta,arccos(3/5)+delta]",
+    "c_interval_0": {
+      "lower": {
+        "canonical_sha256": "6c59bc5514511df8808d06214e297eacf0b800354b8eecb8fd5f280dcd0dee1d",
+        "exact": "-1199999998000000001/12000000000000000000000"
+      },
+      "upper": {
+        "canonical_sha256": "3b04dfc86cc8604d4066726efbc813babfc39de465d6156ec0009fe6ff6c8d70",
+        "exact": "1199999998000000001/12000000000000000000000"
+      }
+    },
+    "c_interval_1": {
+      "lower": {
+        "canonical_sha256": "51de21d8d3a25b70f1d3217b5be84b96781bcf1ad1262e399683a79e194159b5",
+        "exact": "719903996400160002999919999/1200000000000000000000000000"
+      },
+      "upper": {
+        "canonical_sha256": "a81ccda21aeb10edca26c8a042c800708197a7d3bacb608be206b49e7db6fdd4",
+        "exact": "9001199954998000037501/15000000000000000000000"
+      }
+    },
+    "disjointness_witness": "max(c on I0)<min(c on I1), equivalently I1 lies strictly below I0 in phi",
+    "equal_leading_output": "X2_packet=x2*sqrt(4*epsilon*delta)*(common incoming overlap) in both cells",
+    "half_width": "1/10000",
+    "measure": "dOmega=dn_x*dphi",
+    "normalized_packets": "h_j=indicator(B_j)/sqrt(4*epsilon*delta)",
+    "orthogonality": "<h0,h1>=0",
+    "positive_measure_cells": "B_j(epsilon)={abs(n_x)<=epsilon, phi in I_j}, measure(B_j)=4*epsilon*delta for every sufficiently small epsilon>0",
+    "sphere_coordinates": "n=(n_x,sqrt(1-n_x^2)*cos(phi),sqrt(1-n_x^2)*sin(phi))",
+    "status": "EQUAL_AREA_ORTHOGONAL_COMPACT_SPHERE_PACKETS"
+  },
+  "lifecycle_state": "COEFFICIENT_COMPUTED",
+  "next_gate": "Give the fixed-P compact packet class a quantitative finite bandwidth in invariant mass and total momentum under one common spacetime switching, while retaining energy-diagonal q6 normalization or replacing it with a certified off-diagonal finite-time loop kernel. This is now the missing normalizability layer before calling the dark-port coefficient a full wavepacket probability. Eq. (19), gravity and Lorentzian transfer remain separate.",
+  "provenance": {
+    "generated_by": "reverse_physics/bt_compact_sphere_dark_port_absolute_q8.py",
+    "independent_verifier": "reverse_physics/verify_bt_compact_sphere_dark_port_absolute_q8.py",
+    "inputs": [
+      {
+        "path": "planning/work-items/reverse-physics-bateman-compact-sphere-dark-port-absolute-q8.json",
+        "sha256": "14e74f7146ef00f22af3adc0bce7736792efe5ead91ea3d2771139b9f0dbe075"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_DARK_PORT_ABSOLUTE_Q8_LOWER_BOUND_V1.json",
+        "sha256": "85909efedfef98fac421bd7b68d902dff0f892c9176110aee6bddcaac15cb7ee"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_CONTINUOUS_ANGLE_Q6_FAMILY_V1.json",
+        "sha256": "b2a144a500727aefa8f6a8b6e682dc92a2f9678ee7df57bc5df4ed80562712f2"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_FIXED_P_TWO_SPHERE_PACKET_DETECTOR_V1.json",
+        "sha256": "664f8fd8503184686b00bcba3dd710d6da0a6c81a6f7141e58b6201f49933304"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_TAGGED_CONNECTED_COMPACT_PACKET_INTERFERENCE_V1.json",
+        "sha256": "aefdd2d59acf68720a132343f4e25f759170f4efb1b067cd0bcdf824304575fe"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_FINITE_TIME_ACTIVE_LOOP_AFFILIATION_V1.json",
+        "sha256": "73d5f9d1db46e3c9a783acc8d35f94a17876425ce5f9aec3fca73f1c73d547a3"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_TWO_ANGLE_COHERENT_Q6_DETECTOR_V1.json",
+        "sha256": "b06a7ea92b4794bed66523888a0efc9e0cceed03f89927f1ce4638966b100b82"
+      },
+      {
+        "path": "planning/events/reverse-physics-bateman-compact-sphere-dark-port-absolute-q8-DONE-60b68304.json",
+        "sha256": "c8b2b871f2ac71380da939eb675fd53e563357cb7cebc8ed50093940dd811e2d"
+      }
+    ],
+    "method": "Exact Fraction interval arithmetic for invariant-azimuth bins, independent rational square-root enclosures, alternating sine/cosine and H-series bounds, followed by a compactness/continuity thickening using the certified hard kernels. No floating-point arithmetic enters a claim.",
+    "retrieval_date": "2026-08-13",
+    "source_commit": "60b68304ed58160ddac92c61c1ec7825e77c3b0a"
+  },
+  "question": "Does the strictly positive absolute BT dark-port q8 coefficient survive replacement of the two zero-width angle modes by normalizable compact packets in the invariant fixed-P two-body measure?",
+  "report": "reverse_physics/reports/bt-compact-sphere-dark-port-absolute-q8.md",
+  "result_kind": "strictly positive absolute order-lambda8 dark-port coefficient on equal-area compact packets of the invariant fixed-P two-body sphere, with compact incoming and spectator packet thickening",
+  "schema": "reverse_physics/schema/reverse-physics-bt-compact-sphere-dark-port-absolute-q8-v1.schema.json",
+  "schema_version": 1,
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_compact_sphere_dark_port_absolute_q8.py --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_compact_sphere_dark_port_absolute_q8.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_compact_sphere_dark_port_absolute_q8"
+  ]
+}
