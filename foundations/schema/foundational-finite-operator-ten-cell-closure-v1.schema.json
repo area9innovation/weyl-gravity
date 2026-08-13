@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "result_id", "result_kind", "lifecycle", "created", "repository_base_commit", "dependency_tags", "question", "answer", "carrier_realization", "promotions", "exact_witness", "proof_obligations", "proof_authority", "provenance", "independent_checker", "claim_flags", "does_not_establish", "human_report", "canonical_digest"],
+  "properties": {
+    "schema_version": {"const": "foundational-finite-operator-ten-cell-closure-v1"},
+    "result_id": {"const": "FOUNDATIONAL_FINITE_OPERATOR_TEN_CELL_CLOSURE_V1"},
+    "result_kind": {"const": "SCOPED_MULTI_CELL_LOCAL_CERTIFICATE"},
+    "lifecycle": {"const": "SUFFICIENCY_PROVED"},
+    "created": {"type": "string", "format": "date"},
+    "repository_base_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "question": {"type": "string", "minLength": 1},
+    "answer": {"type": "string", "minLength": 1},
+    "carrier_realization": {"type": "object", "required": ["finite_exact", "hilbert_operator", "krein_indefinite", "relation", "non_equivalence_boundary"]},
+    "promotions": {
+      "type": "array", "minItems": 10, "maxItems": 10,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["coordinate", "prior_status", "new_status", "evidence_role", "finding", "boundary"],
+        "properties": {
+          "coordinate": {"type": "object", "additionalProperties": false, "required": ["foundation", "carrier", "obligation"], "properties": {"foundation": {"type": "string"}, "carrier": {"type": "string"}, "obligation": {"type": "string"}}},
+          "prior_status": {"const": "NOT_MAPPED"},
+          "new_status": {"enum": ["LOCAL_RESULT", "PIECES_ONLY"]},
+          "evidence_role": {"enum": ["DIRECT_LOCAL", "SUPPORTING"]},
+          "finding": {"type": "string", "minLength": 1},
+          "boundary": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "exact_witness": {"type": "object", "required": ["arithmetic", "hilbert_dimension", "operator_basis", "operator_basis_dimension", "hilbert_schmidt_gram_diagonal", "interaction", "krein", "counterterms", "regulated_products", "constructive_krein_state"]},
+    "proof_obligations": {"type": "array", "minItems": 9, "maxItems": 9, "items": {"type": "object", "required": ["id", "status", "evidence"], "properties": {"status": {"const": "PASS"}}}},
+    "proof_authority": {"type": "object", "required": ["status", "meaning"]},
+    "provenance": {
+      "type": "object",
+      "required": ["inputs"],
+      "properties": {
+        "inputs": {
+          "type": "array", "minItems": 2, "maxItems": 2,
+          "items": {
+            "type": "object",
+            "required": ["path", "sha256", "role"],
+            "properties": {"sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+          }
+        }
+      }
+    },
+    "independent_checker": {"type": "object", "required": ["path", "expected_digest", "checks"], "properties": {"expected_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}},
+    "claim_flags": {"type": "object"},
+    "does_not_establish": {"type": "array", "minItems": 9, "items": {"type": "string", "minLength": 1}},
+    "human_report": {"const": "foundations/reports/finite-operator-ten-cell-closure.md"},
+    "canonical_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

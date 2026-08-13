@@ -16,7 +16,7 @@ class MatrixSiteTests(unittest.TestCase):
     def test_dataset_separates_coverage_and_migration(self):
         data = build_dataset()
         self.assertEqual(len(data["cells"]), 576)
-        self.assertEqual(data["counts"]["coverage_classified"], 371)
+        self.assertEqual(data["counts"]["coverage_classified"], 381)
         self.assertEqual(data["counts"]["migration_reviewed"], 452)
         self.assertEqual(data["counts"]["migration_pending"], 0)
         self.assertEqual(data["counts"]["reviewed_no_transfer"], 88)
@@ -32,7 +32,7 @@ class MatrixSiteTests(unittest.TestCase):
         reviewed = [x for x in data["cells"] if x["migration_status"] == "REVIEWED_NO_TRANSFER"]
         synthetic = [x for x in data["cells"] if not x["emitted"]]
         self.assertEqual((len(reviewed), len(synthetic)), (88, 124))
-        self.assertEqual(sum(x["status"] == "NOT_MAPPED" for x in reviewed), 81)
+        self.assertEqual(sum(x["status"] == "NOT_MAPPED" for x in reviewed), 71)
         self.assertTrue(all(not x["evidence"] and x["migration_evidence"] for x in reviewed if x["status"] == "NOT_MAPPED"))
         self.assertTrue(all(x["evidence"] and x["migration_evidence"] for x in reviewed if x["status"] != "NOT_MAPPED"))
         self.assertTrue(all(x["status"] == "NOT_MAPPED" and x["migration_status"] == "NOT_REVIEWED" for x in synthetic))
@@ -45,7 +45,7 @@ class MatrixSiteTests(unittest.TestCase):
     def test_independent_checker(self):
         errors, summary = check()
         self.assertEqual(errors, [])
-        self.assertEqual(summary["total_not_mapped"], 205)
+        self.assertEqual(summary["total_not_mapped"], 195)
 
     def test_verifier(self):
         self.assertEqual(verify()[0], [])
@@ -98,6 +98,8 @@ class MatrixSiteTests(unittest.TestCase):
         self.assertTrue((ROOT / "foundations/site/sources/foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V4.json").is_file())
         self.assertTrue((ROOT / "foundations/site/sources/foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V5.json").is_file())
         self.assertTrue((ROOT / "foundations/site/sources/foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V6.json").is_file())
+        self.assertTrue((ROOT / "foundations/site/sources/foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V7.json").is_file())
+        self.assertTrue((ROOT / "foundations/site/sources/foundations/results/FOUNDATIONAL_FINITE_OPERATOR_TEN_CELL_CLOSURE_V1.json").is_file())
         self.assertTrue((ROOT / "foundations/site/sources/foundations/results/FOUNDATIONAL_BT_CORNER_BORN_INTERFACE_V1.json").is_file())
         self.assertTrue((ROOT / "foundations/site/sources/foundations/results/FOUNDATIONAL_KREIN_FOCK_GROUND_STATE_DYNAMICS_INTERFACE_V1.json").is_file())
         self.assertTrue((ROOT / "foundations/site/sources/foundations/results/FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V2.json").is_file())

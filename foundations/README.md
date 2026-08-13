@@ -263,10 +263,10 @@ python3 foundations/verify_cylinder_wave_strength_ladder_v2.py
 The generated
 [`static matrix explorer`](site/index.html) turns the complete refined surface
 into a browser-based research instrument. It displays all 576 coordinates as
-sixteen coordinated heatmaps. Coverage is classified for 371 emitted cells;
+sixteen coordinated heatmaps. Coverage is classified for 381 emitted cells;
 all 452 emitted cells have completed migration review. Of the 88 historical
-`REVIEWED_NO_TRANSFER` decisions, seven now have independent child-specific
-coverage and 81 remain `NOT_MAPPED`. The other 124 Cartesian coordinates remain
+`REVIEWED_NO_TRANSFER` decisions, seventeen now have independent child-specific
+coverage and 71 remain `NOT_MAPPED`. The other 124 Cartesian coordinates remain
 unassessed. Both kinds of `NOT_MAPPED` forbid an interpretation as literature
 absence. The inspector separates positive coverage evidence from evidence
 reviewed only for migration. The bundle also provides multi-select filters,
@@ -298,6 +298,8 @@ python3 foundations/verify_bt_corner_born_interface.py
 python3 foundations/verify_refined_intersection_cube_v5.py
 python3 foundations/verify_krein_fock_ground_state_dynamics_interface.py
 python3 foundations/verify_refined_intersection_cube_v6.py
+python3 foundations/verify_finite_operator_ten_cell_closure.py
+python3 foundations/verify_refined_intersection_cube_v7.py
 python3 -m unittest foundations.tests.test_matrix_site
 python3 -m unittest foundations.tests.test_theory_viability
 python3 -m unittest foundations.tests.test_theory_assembly
@@ -305,6 +307,8 @@ python3 -m unittest foundations.tests.test_bt_corner_born_interface
 python3 -m unittest foundations.tests.test_refined_intersection_cube_v5
 python3 -m unittest foundations.tests.test_krein_fock_ground_state_dynamics_interface
 python3 -m unittest foundations.tests.test_refined_intersection_cube_v6
+python3 -m unittest foundations.tests.test_finite_operator_ten_cell_closure
+python3 -m unittest foundations.tests.test_refined_intersection_cube_v7
 python3 -m http.server 8000 --directory foundations/site
 ```
 
@@ -386,6 +390,26 @@ python3 foundations/verify_krein_fock_ground_state_dynamics_interface.py
 python3 foundations/refine_intersection_cube_v6.py --check
 python3 foundations/check_refined_intersection_cube_v6.py
 python3 foundations/verify_refined_intersection_cube_v6.py
+```
+
+The exact
+[`finite-operator ten-cell closure`](reports/finite-operator-ten-cell-closure.md)
+reconstructs all sixteen two-qubit Pauli words over Gaussian rationals and
+checks their Hilbert basis, a genuine entangling interaction, a finite Krein
+realization, the complete parity-preserving correction space, all 256 regulated
+basis products, and a constructive finite-corner probability rule. The
+append-only [`cube v7`](reports/refined-intersection-cube-v7.md) applies this
+single certificate to exactly ten previously `NOT_MAPPED` coordinates: nine
+become `LOCAL_RESULT`, while the finite regulated-product coordinate remains
+`PIECES_ONLY` because no continuum renormalization construction is present:
+
+```bash
+python3 foundations/build_finite_operator_ten_cell_closure.py --check
+python3 foundations/check_finite_operator_ten_cell_closure.py
+python3 foundations/verify_finite_operator_ten_cell_closure.py
+python3 foundations/refine_intersection_cube_v7.py --check
+python3 foundations/check_refined_intersection_cube_v7.py
+python3 foundations/verify_refined_intersection_cube_v7.py
 ```
 
 The append-only

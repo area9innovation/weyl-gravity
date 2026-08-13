@@ -4,7 +4,7 @@ window.THEORY_VIABILITY_DATA = {
   "result_kind": "FAIL_CLOSED_THEORY_COVERAGE_AND_MISSING_RAIL_ASSESSMENT",
   "lifecycle": "VERIFIED_NAVIGATION_ARTIFACT",
   "title": "Theory coverage, composition, and observation assessment",
-  "created": "2026-08-12",
+  "created": "2026-08-13",
   "dependency_tags": [
     "LOCAL-ALGEBRAIC",
     "REDUCED-MODE",
@@ -240,18 +240,18 @@ window.THEORY_VIABILITY_DATA = {
       "foundation": "CLASSICAL_STANDARD",
       "carrier": "HILBERT_OPERATOR",
       "counts": {
-        "LOCAL_RESULT": 1,
+        "LOCAL_RESULT": 2,
         "LITERATURE_RESULT": 6,
         "PIECES_ONLY": 3,
         "PRIORITY_GAP": 0,
-        "NOT_MAPPED": 6
+        "NOT_MAPPED": 5
       },
-      "direct": 7,
-      "assessed": 10,
+      "direct": 8,
+      "assessed": 11,
       "default_gate": {
         "preset": "PREDICTIVE_PHYSICS",
-        "direct": 7,
-        "assessed": 9,
+        "direct": 8,
+        "assessed": 10,
         "total": 10,
         "complete_direct": false,
         "blockers": [
@@ -262,10 +262,6 @@ window.THEORY_VIABILITY_DATA = {
           {
             "obligation": "EVOLUTION_WELLPOSEDNESS",
             "status": "PIECES_ONLY"
-          },
-          {
-            "obligation": "INTERACTION_CONSTRUCTION",
-            "status": "NOT_MAPPED"
           }
         ]
       },
@@ -310,13 +306,13 @@ window.THEORY_VIABILITY_DATA = {
         {
           "bundle": "GAUGE_INTERACTION",
           "counts": {
-            "LOCAL_RESULT": 0,
+            "LOCAL_RESULT": 1,
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 1
+            "NOT_MAPPED": 0
           },
-          "direct": 0,
+          "direct": 1,
           "total": 2
         },
         {
@@ -338,18 +334,18 @@ window.THEORY_VIABILITY_DATA = {
       "foundation": "CLASSICAL_STANDARD",
       "carrier": "KREIN_INDEFINITE",
       "counts": {
-        "LOCAL_RESULT": 5,
+        "LOCAL_RESULT": 6,
         "LITERATURE_RESULT": 2,
         "PIECES_ONLY": 3,
         "PRIORITY_GAP": 0,
-        "NOT_MAPPED": 6
+        "NOT_MAPPED": 5
       },
-      "direct": 7,
-      "assessed": 10,
+      "direct": 8,
+      "assessed": 11,
       "default_gate": {
         "preset": "PREDICTIVE_PHYSICS",
-        "direct": 7,
-        "assessed": 9,
+        "direct": 8,
+        "assessed": 10,
         "total": 10,
         "complete_direct": false,
         "blockers": [
@@ -360,10 +356,6 @@ window.THEORY_VIABILITY_DATA = {
           {
             "obligation": "CAUSAL_PROPAGATION_GREEN",
             "status": "PIECES_ONLY"
-          },
-          {
-            "obligation": "INTERACTION_CONSTRUCTION",
-            "status": "NOT_MAPPED"
           }
         ]
       },
@@ -408,13 +400,13 @@ window.THEORY_VIABILITY_DATA = {
         {
           "bundle": "GAUGE_INTERACTION",
           "counts": {
-            "LOCAL_RESULT": 0,
+            "LOCAL_RESULT": 1,
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 1
+            "NOT_MAPPED": 0
           },
-          "direct": 0,
+          "direct": 1,
           "total": 2
         },
         {
@@ -1536,18 +1528,18 @@ window.THEORY_VIABILITY_DATA = {
       "foundation": "WEAK_CHOICE_ZF",
       "carrier": "HILBERT_OPERATOR",
       "counts": {
-        "LOCAL_RESULT": 1,
+        "LOCAL_RESULT": 2,
         "LITERATURE_RESULT": 4,
         "PIECES_ONLY": 5,
         "PRIORITY_GAP": 0,
-        "NOT_MAPPED": 6
+        "NOT_MAPPED": 5
       },
-      "direct": 5,
-      "assessed": 10,
+      "direct": 6,
+      "assessed": 11,
       "default_gate": {
         "preset": "PREDICTIVE_PHYSICS",
-        "direct": 5,
-        "assessed": 9,
+        "direct": 6,
+        "assessed": 10,
         "total": 10,
         "complete_direct": false,
         "blockers": [
@@ -1566,10 +1558,6 @@ window.THEORY_VIABILITY_DATA = {
           {
             "obligation": "CAUSAL_PROPAGATION_GREEN",
             "status": "PIECES_ONLY"
-          },
-          {
-            "obligation": "INTERACTION_CONSTRUCTION",
-            "status": "NOT_MAPPED"
           }
         ]
       },
@@ -1614,13 +1602,13 @@ window.THEORY_VIABILITY_DATA = {
         {
           "bundle": "GAUGE_INTERACTION",
           "counts": {
-            "LOCAL_RESULT": 0,
+            "LOCAL_RESULT": 1,
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 1
+            "NOT_MAPPED": 0
           },
-          "direct": 0,
+          "direct": 1,
           "total": 2
         },
         {
@@ -1642,18 +1630,18 @@ window.THEORY_VIABILITY_DATA = {
       "foundation": "WEAK_CHOICE_ZF",
       "carrier": "KREIN_INDEFINITE",
       "counts": {
-        "LOCAL_RESULT": 5,
+        "LOCAL_RESULT": 6,
         "LITERATURE_RESULT": 0,
         "PIECES_ONLY": 4,
         "PRIORITY_GAP": 0,
-        "NOT_MAPPED": 7
+        "NOT_MAPPED": 6
       },
-      "direct": 5,
-      "assessed": 9,
+      "direct": 6,
+      "assessed": 10,
       "default_gate": {
         "preset": "PREDICTIVE_PHYSICS",
-        "direct": 5,
-        "assessed": 8,
+        "direct": 6,
+        "assessed": 9,
         "total": 10,
         "complete_direct": false,
         "blockers": [
@@ -1668,10 +1656,6 @@ window.THEORY_VIABILITY_DATA = {
           {
             "obligation": "CAUSAL_PROPAGATION_GREEN",
             "status": "PIECES_ONLY"
-          },
-          {
-            "obligation": "INTERACTION_CONSTRUCTION",
-            "status": "NOT_MAPPED"
           },
           {
             "obligation": "RECONSTRUCTION_LIMITS",
@@ -1720,13 +1704,13 @@ window.THEORY_VIABILITY_DATA = {
         {
           "bundle": "GAUGE_INTERACTION",
           "counts": {
-            "LOCAL_RESULT": 0,
+            "LOCAL_RESULT": 1,
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 1
+            "NOT_MAPPED": 0
           },
-          "direct": 0,
+          "direct": 1,
           "total": 2
         },
         {
@@ -2180,18 +2164,18 @@ window.THEORY_VIABILITY_DATA = {
       "foundation": "CONSTRUCTIVE_COMPUTABLE",
       "carrier": "HILBERT_OPERATOR",
       "counts": {
-        "LOCAL_RESULT": 0,
+        "LOCAL_RESULT": 1,
         "LITERATURE_RESULT": 5,
         "PIECES_ONLY": 5,
         "PRIORITY_GAP": 0,
-        "NOT_MAPPED": 6
+        "NOT_MAPPED": 5
       },
-      "direct": 5,
-      "assessed": 10,
+      "direct": 6,
+      "assessed": 11,
       "default_gate": {
         "preset": "PREDICTIVE_PHYSICS",
-        "direct": 5,
-        "assessed": 9,
+        "direct": 6,
+        "assessed": 10,
         "total": 10,
         "complete_direct": false,
         "blockers": [
@@ -2206,10 +2190,6 @@ window.THEORY_VIABILITY_DATA = {
           {
             "obligation": "CAUSAL_PROPAGATION_GREEN",
             "status": "PIECES_ONLY"
-          },
-          {
-            "obligation": "INTERACTION_CONSTRUCTION",
-            "status": "NOT_MAPPED"
           },
           {
             "obligation": "RECONSTRUCTION_LIMITS",
@@ -2258,13 +2238,13 @@ window.THEORY_VIABILITY_DATA = {
         {
           "bundle": "GAUGE_INTERACTION",
           "counts": {
-            "LOCAL_RESULT": 0,
+            "LOCAL_RESULT": 1,
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 1
+            "NOT_MAPPED": 0
           },
-          "direct": 0,
+          "direct": 1,
           "total": 2
         },
         {
@@ -2286,18 +2266,18 @@ window.THEORY_VIABILITY_DATA = {
       "foundation": "CONSTRUCTIVE_COMPUTABLE",
       "carrier": "KREIN_INDEFINITE",
       "counts": {
-        "LOCAL_RESULT": 0,
+        "LOCAL_RESULT": 2,
         "LITERATURE_RESULT": 1,
         "PIECES_ONLY": 3,
         "PRIORITY_GAP": 0,
-        "NOT_MAPPED": 12
+        "NOT_MAPPED": 10
       },
-      "direct": 1,
-      "assessed": 4,
+      "direct": 3,
+      "assessed": 6,
       "default_gate": {
         "preset": "PREDICTIVE_PHYSICS",
-        "direct": 1,
-        "assessed": 4,
+        "direct": 3,
+        "assessed": 6,
         "total": 10,
         "complete_direct": false,
         "blockers": [
@@ -2308,14 +2288,6 @@ window.THEORY_VIABILITY_DATA = {
           {
             "obligation": "STATE_EXISTENCE",
             "status": "PIECES_ONLY"
-          },
-          {
-            "obligation": "STATE_REPRESENTATION",
-            "status": "NOT_MAPPED"
-          },
-          {
-            "obligation": "PROBABILITY_RULE",
-            "status": "NOT_MAPPED"
           },
           {
             "obligation": "PHYSICAL_STATE_SELECTION",
@@ -2344,25 +2316,25 @@ window.THEORY_VIABILITY_DATA = {
         {
           "bundle": "KINEMATICS_STATES",
           "counts": {
-            "LOCAL_RESULT": 0,
+            "LOCAL_RESULT": 1,
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 2
+            "NOT_MAPPED": 1
           },
-          "direct": 0,
+          "direct": 1,
           "total": 3
         },
         {
           "bundle": "PREDICTION_OBSERVATION",
           "counts": {
-            "LOCAL_RESULT": 0,
+            "LOCAL_RESULT": 1,
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 2
+            "NOT_MAPPED": 1
           },
-          "direct": 0,
+          "direct": 1,
           "total": 3
         },
         {
@@ -3496,18 +3468,18 @@ window.THEORY_VIABILITY_DATA = {
       "foundation": "FINITE_DISCRETE",
       "carrier": "HILBERT_OPERATOR",
       "counts": {
-        "LOCAL_RESULT": 1,
+        "LOCAL_RESULT": 3,
         "LITERATURE_RESULT": 6,
-        "PIECES_ONLY": 3,
+        "PIECES_ONLY": 4,
         "PRIORITY_GAP": 0,
-        "NOT_MAPPED": 6
+        "NOT_MAPPED": 3
       },
-      "direct": 7,
-      "assessed": 10,
+      "direct": 9,
+      "assessed": 13,
       "default_gate": {
         "preset": "PREDICTIVE_PHYSICS",
-        "direct": 7,
-        "assessed": 9,
+        "direct": 8,
+        "assessed": 10,
         "total": 10,
         "complete_direct": false,
         "blockers": [
@@ -3518,10 +3490,6 @@ window.THEORY_VIABILITY_DATA = {
           {
             "obligation": "GENERATOR_SPECTRAL_DYNAMICS",
             "status": "PIECES_ONLY"
-          },
-          {
-            "obligation": "INTERACTION_CONSTRUCTION",
-            "status": "NOT_MAPPED"
           }
         ]
       },
@@ -3566,25 +3534,25 @@ window.THEORY_VIABILITY_DATA = {
         {
           "bundle": "GAUGE_INTERACTION",
           "counts": {
-            "LOCAL_RESULT": 0,
+            "LOCAL_RESULT": 1,
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 1
+            "NOT_MAPPED": 0
           },
-          "direct": 0,
+          "direct": 1,
           "total": 2
         },
         {
           "bundle": "QUANTUM_CONSISTENCY",
           "counts": {
-            "LOCAL_RESULT": 0,
+            "LOCAL_RESULT": 1,
             "LITERATURE_RESULT": 0,
-            "PIECES_ONLY": 0,
+            "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 5
+            "NOT_MAPPED": 3
           },
-          "direct": 0,
+          "direct": 1,
           "total": 5
         }
       ],
@@ -4140,6 +4108,8 @@ window.THEORY_VIABILITY_DATA = {
           ],
           "contributing_carriers": [
             "FINITE_EXACT",
+            "HILBERT_OPERATOR",
+            "KREIN_INDEFINITE",
             "ALGEBRAIC_CSTAR"
           ]
         },
@@ -4536,6 +4506,8 @@ window.THEORY_VIABILITY_DATA = {
           ],
           "contributing_carriers": [
             "FINITE_EXACT",
+            "HILBERT_OPERATOR",
+            "KREIN_INDEFINITE",
             "ALGEBRAIC_CSTAR"
           ]
         },
@@ -4654,6 +4626,7 @@ window.THEORY_VIABILITY_DATA = {
           "contributing_carriers": [
             "FINITE_EXACT",
             "HILBERT_OPERATOR",
+            "KREIN_INDEFINITE",
             "ALGEBRAIC_CSTAR",
             "LOCALIC_SYNTHETIC"
           ]
@@ -4668,6 +4641,7 @@ window.THEORY_VIABILITY_DATA = {
           "contributing_carriers": [
             "FINITE_EXACT",
             "HILBERT_OPERATOR",
+            "KREIN_INDEFINITE",
             "ALGEBRAIC_CSTAR"
           ]
         },
@@ -4744,7 +4718,8 @@ window.THEORY_VIABILITY_DATA = {
             "LOCAL_RESULT"
           ],
           "contributing_carriers": [
-            "FINITE_EXACT"
+            "FINITE_EXACT",
+            "HILBERT_OPERATOR"
           ]
         },
         {
@@ -4818,6 +4793,10 @@ window.THEORY_VIABILITY_DATA = {
         ],
         [
           "FINITE_EXACT",
+          "LOCALIC_SYNTHETIC"
+        ],
+        [
+          "HILBERT_OPERATOR",
           "LOCALIC_SYNTHETIC"
         ]
       ],
@@ -5178,6 +5157,7 @@ window.THEORY_VIABILITY_DATA = {
           ],
           "contributing_carriers": [
             "FINITE_EXACT",
+            "HILBERT_OPERATOR",
             "KREIN_INDEFINITE",
             "ALGEBRAIC_CSTAR",
             "SMOOTH_DISTRIBUTIONAL"
@@ -5185,14 +5165,12 @@ window.THEORY_VIABILITY_DATA = {
         },
         {
           "obligation": "COUNTERTERM_CLASSIFICATION",
-          "readiness_rank": 2,
+          "readiness_rank": 3,
           "statuses": [
-            "PIECES_ONLY"
+            "LOCAL_RESULT"
           ],
           "contributing_carriers": [
-            "KREIN_INDEFINITE",
-            "ALGEBRAIC_CSTAR",
-            "SMOOTH_DISTRIBUTIONAL"
+            "HILBERT_OPERATOR"
           ]
         },
         {
@@ -5214,6 +5192,7 @@ window.THEORY_VIABILITY_DATA = {
             "PIECES_ONLY"
           ],
           "contributing_carriers": [
+            "HILBERT_OPERATOR",
             "KREIN_INDEFINITE",
             "ALGEBRAIC_CSTAR",
             "SMOOTH_DISTRIBUTIONAL"
@@ -5257,11 +5236,16 @@ window.THEORY_VIABILITY_DATA = {
           ]
         }
       ],
-      "maximum_direct_obligations": 10,
-      "minimum_carriers_for_that_maximum": 1,
+      "maximum_direct_obligations": 11,
+      "minimum_carriers_for_that_maximum": 2,
       "minimal_maximum_subsets": [
         [
-          "FINITE_EXACT"
+          "FINITE_EXACT",
+          "HILBERT_OPERATOR"
+        ],
+        [
+          "HILBERT_OPERATOR",
+          "SMOOTH_DISTRIBUTIONAL"
         ]
       ],
       "composition_status": "NOT_ASSESSED"
@@ -5314,6 +5298,6 @@ window.THEORY_VIABILITY_DATA = {
     "that Pareto-frontier profiles are physically preferred or more likely true",
     "a complete observationally validated theory under any regime or carrier portfolio"
   ],
-  "source_atlas_digest": "0feeede6101f7539fcb73f5e4c0f740533448021bb5a226fd9d515880db2d00d",
-  "canonical_digest": "95ded641e9187b4f5dc3269af462b04d369c3714a4604d395c637bbdfdb6830a"
+  "source_atlas_digest": "146b91e50a8d614efc24a163f924391c03c3e843bd630b1900c767823af34940",
+  "canonical_digest": "9c32d532fce6546eed843e7e719b7b5ff894762cc6e076c04c61dc35641389c8"
 };

@@ -1,0 +1,187 @@
+{
+  "schema_version": "science-forge-tier-receipt-v1",
+  "receipt_id": "FOUNDATIONAL_FINITE_OPERATOR_TEN_CELL_CLOSURE_V1_TIER_RECEIPT",
+  "result_id": "FOUNDATIONAL_FINITE_OPERATOR_TEN_CELL_CLOSURE_V1",
+  "created": "2026-08-13",
+  "source_base_commit": "64e0e9460b659b43eb10583aa9d95fb27f2b5589",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "scope": "Independently certified one exact finite-operator realization and used it to classify exactly ten previously NOT_MAPPED cube-v6 coordinates. Nine receive scoped direct local results and one receives only a supporting pieces-level regulated-product result. Cube v7, the existing static site, viability profiles, and assembly projections were regenerated without promoting a continuum, empirical, Lorentzian, QME, or complete-theory claim.",
+  "inputs": [
+    {
+      "path": "foundations/results/FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1.json",
+      "sha256": "8c92b0482802a4c54a6876f46fc78ff9a571a1298a5c5649014116e79872512e",
+      "role": "exact finite two-qubit interaction and finite Hilbert/Krein realization"
+    },
+    {
+      "path": "foundations/results/FOUNDATIONAL_BT_CORNER_BORN_INTERFACE_V1.json",
+      "sha256": "f223e9f70deba7aba0fdcd0759ded22f2bfe79c254ef159311cb47e23e856a06",
+      "role": "certified finite-corner state representation and probability rule"
+    },
+    {
+      "path": "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V6.json",
+      "sha256": "7161d1be8f6d5af7caddbd3c439ab21e12b339c4c49c0f4f5712f2933f2c4816",
+      "role": "append-only predecessor whose ten target cells were independently required to be NOT_MAPPED"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "foundations/build_finite_operator_ten_cell_closure.py",
+      "sha256": "543bce3e4f83c5e26ddeb543ba7460470c79c0c5df731f7c2d5afcfd6c8b9323",
+      "role": "deterministic certificate and report producer"
+    },
+    {
+      "path": "foundations/check_finite_operator_ten_cell_closure.py",
+      "sha256": "357b5c7948be4b3eb2f957d67e150ffbc88a533fc782a9e4bc95e362c7d43bff",
+      "role": "independent Gaussian-rational matrix rederivation"
+    },
+    {
+      "path": "foundations/verify_finite_operator_ten_cell_closure.py",
+      "sha256": "dab87d084c6bb24bd482b0363b235d9c50fb4adf2b3a4086bc33527f45dc3216",
+      "role": "schema, provenance, status-split, report, and boundary verifier"
+    },
+    {
+      "path": "foundations/results/FOUNDATIONAL_FINITE_OPERATOR_TEN_CELL_CLOSURE_V1.json",
+      "sha256": "2da6cc719447c94057a2cc3226660822e42231848646e7db20fbe671c0722d80",
+      "canonical_digest": "bff404c18986cd4962143568bd5a552825fd4bc972628e5dd395e61a385451ad",
+      "role": "machine-readable ten-cell local certificate"
+    },
+    {
+      "path": "foundations/reports/finite-operator-ten-cell-closure.md",
+      "sha256": "a17ce92909a1c90c70177accb670419c1d4a6a16f2c1f42859e63ab3666057a7",
+      "role": "human-readable result and explicit non-equivalence and renormalization boundaries"
+    },
+    {
+      "path": "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V7.json",
+      "sha256": "7bb689e911d748b57a7656c217a2acf8a3111a2d1b6f5e6570ab4c5a0816f645",
+      "canonical_digest": "94f435449c9b9ad439613dcbaadf09bf5a827d47d46c691d12b16d6a2f96d371",
+      "role": "v6-preserving cube with exactly ten new classifications"
+    },
+    {
+      "path": "foundations/results/FOUNDATIONAL_THEORY_VIABILITY_ASSESSMENT_V1.json",
+      "sha256": "f7f84f1cb1f9e67789fb405cb0a7e3675acd4392af88f1f7244a5018e4310e90",
+      "canonical_digest": "9c32d532fce6546eed843e7e719b7b5ff894762cc6e076c04c61dc35641389c8",
+      "role": "regenerated 36-profile viability projection"
+    },
+    {
+      "path": "foundations/results/FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1.json",
+      "sha256": "6979a76d8e6353773e03a49e7cb430673ccd56acb0883c53db589a2ad8a67bc0",
+      "canonical_digest": "417e74c436df9ac79b30b4dfb14f7be3e0cc648024dea788c98e6239e393408b",
+      "role": "regenerated fail-closed assembly projection"
+    },
+    {
+      "path": "foundations/site/manifest.json",
+      "sha256": "8998bcd0aae8f338fddb20f2a7a38720c930474e1f5c1c9e1a1791f9b8981ac2",
+      "role": "content-addressed existing-site manifest"
+    }
+  ],
+  "assessment_snapshot": {
+    "prior_not_mapped_coordinates": 10,
+    "new_local_results": 9,
+    "new_pieces_only_results": 1,
+    "pauli_basis_dimension": 16,
+    "parity_preserving_basis_dimension": 8,
+    "regulated_products_checked": 256,
+    "constructive_probabilities": ["9/25", "16/25", "0"],
+    "cube_cells_preserved": 452,
+    "emitted_coverage_classified_before": 371,
+    "emitted_coverage_classified_after": 381,
+    "emitted_not_mapped_after": 71,
+    "total_browser_not_mapped_after": 195,
+    "evidence_records_after": 72,
+    "certified_cross_cell_relations": 2,
+    "pareto_profiles": 2,
+    "empirical_comparison_records": 0,
+    "complete_theories": 0
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "python3 -m py_compile <12 changed Python source and test paths>",
+          "elapsed_seconds": 0.1,
+          "status": "PASS"
+        },
+        {
+          "command": "deno check foundations/site/app.js foundations/site/migration-review.js foundations/site/assemblies.js foundations/site/viability.js",
+          "elapsed_seconds": 0.1,
+          "status": "PASS"
+        },
+        {
+          "command": "google-chrome --headless --disable-gpu --no-sandbox --window-size=1600,1800 --virtual-time-budget=2500 --screenshot=/tmp/finite-operator-grid-v7.png http://127.0.0.1:8765/index.html#view=matrix",
+          "elapsed_seconds": 1.0,
+          "status": "PASS",
+          "output": "Rendered overview visibly reports 576 coordinates, 452 emitted assessments, 381 classified cells, 195 not mapped, and 72 evidence records; heatmaps and rotated carrier labels are legible."
+        },
+        {
+          "command": "git diff --check",
+          "elapsed_seconds": 0.2,
+          "status": "PASS"
+        }
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "python3 foundations/build_finite_operator_ten_cell_closure.py --check && python3 foundations/check_finite_operator_ten_cell_closure.py && python3 foundations/verify_finite_operator_ten_cell_closure.py",
+          "elapsed_seconds": 1.1,
+          "status": "PASS"
+        },
+        {
+          "command": "python3 foundations/refine_intersection_cube_v7.py --check && python3 foundations/check_refined_intersection_cube_v7.py && python3 foundations/verify_refined_intersection_cube_v7.py",
+          "elapsed_seconds": 0.3,
+          "status": "PASS"
+        },
+        {
+          "command": "python3 foundations/build_matrix_site_v2.py --check && python3 foundations/check_matrix_site_v2.py && python3 foundations/verify_matrix_site_v2.py && python3 foundations/verify_theory_viability.py && python3 foundations/verify_theory_assembly.py",
+          "elapsed_seconds": 1.2,
+          "status": "PASS"
+        },
+        {
+          "command": "python3 -m unittest foundations.tests.test_finite_operator_ten_cell_closure foundations.tests.test_refined_intersection_cube_v7 foundations.tests.test_matrix_site foundations.tests.test_theory_viability foundations.tests.test_theory_assembly",
+          "elapsed_seconds": 3.6,
+          "status": "PASS",
+          "output": "28 tests passed."
+        }
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "python3 foundations/verify_finite_qubit_interaction_core.py && python3 foundations/verify_bt_corner_born_interface.py && python3 foundations/verify_refined_intersection_cube_v6.py",
+          "elapsed_seconds": 0.5,
+          "status": "PASS",
+          "output": "Both mathematical source certificates and the append-only cube predecessor pass."
+        }
+      ]
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No freeze, paper theorem or lifecycle promotion, shared core algebra change, release, or Lorentzian certificate is made."
+    }
+  },
+  "claim_flags": {
+    "ten_previously_unmapped_cells_classified": true,
+    "exact_finite_witness_independently_checked": true,
+    "cube_and_existing_site_regenerated": true,
+    "continuum_renormalized_products_constructed": false,
+    "carrier_categories_proved_equivalent": false,
+    "weyl_counterterms_classified": false,
+    "empirical_agreement_assessed": false,
+    "complete_theory_identified": false,
+    "new_lorentzian_claim": false,
+    "quantum_lifecycle_promoted": false
+  },
+  "does_not_establish": [
+    "general equivalence among finite exact, Hilbert, and Krein carriers",
+    "an infinite-dimensional, thermodynamic, or continuum interacting theory",
+    "continuum renormalization from exact finite-product closure",
+    "Weyl-gravity counterterm or anomaly classification",
+    "QME restoration or residual quantum transfer",
+    "a weakest reverse-mathematical base",
+    "causal response or empirical agreement",
+    "a complete physical theory or LORENTZIAN-CAUSAL result"
+  ]
+}

@@ -12,20 +12,21 @@
 The **452** cube-emitted coordinates now have separate coverage and migration
 review fields: **452 reviewed**, **0 pending**.
 Of those, **88** parent-evidence reviews found no
-licensed transfer to the refined child. Seven now have independent child-specific
-coverage; **81 remain `NOT_MAPPED`**, which is not a literature-absence claim.
+licensed transfer to the refined child. Seventeen now have independent child-specific
+coverage; **71 remain `NOT_MAPPED`**, which is not a literature-absence claim.
 The remaining **124**
 coordinates are browser-visible complements that have not been assessed.
 
-Cube v6 carries two certified `CONDITIONAL_BRIDGE` relations. The first maps an
+Cube v7 preserves two certified `CONDITIONAL_BRIDGE` relations. The first maps an
 algebraic finite-corner state to a Krein probability rule under five explicit
 hypotheses. The second uses the free Fock energy gap to select the unique normal
 zero-energy vacuum state and proves that the same state is invariant under the
 generated Krein--Fock dynamics. The other assembly interfaces remain open.
 
-Coverage is classified for **371** emitted cells. The
-coded-wave pass promotes two weak-arithmetic Hilbert/operator cells from pieces
-to local results and adds five carefully typed evidence overlays.
+Coverage is classified for **381** emitted cells. The
+finite-operator pass classifies exactly ten prior empty cells: nine direct local
+results and one pieces-only regulated-product result. The latter explicitly does
+not establish a continuum renormalized product.
 The cell inspector exposes coverage evidence separately from migration-review
 evidence and links to the explicit 112-decision audit ledger.
 
@@ -61,12 +62,14 @@ All source links resolve inside the standalone directory; no remote code is used
 This site does not establish:
 
 - literature completeness
-- coverage for the 81 still-unmapped reviewed-no-transfer coordinates
+- coverage for the 71 still-unmapped reviewed-no-transfer coordinates
 - that NOT_MAPPED means no literature exists
 - that an UNREVIEWED evidence role is an absence of direct support
 - that a dual LR mark composes its two records into a stronger result
 - that the 124 synthetic coordinates are coherent
 - a weakest mathematical base
+- continuum renormalized products from finite regulated-product closure
+- equivalence of carrier categories from one finite realization
 - a theorem ranking from interface order, Pareto membership, or neighbor counts
 - composition beyond the two certified scoped interfaces
 - agreement with observations

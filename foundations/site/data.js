@@ -1,7 +1,7 @@
 window.MATRIX_EXPLORER_DATA = {
   "schema_version": "foundational-matrix-explorer-data-v2",
   "title": "Reverse Mathematics × Physics Atlas",
-  "created": "2026-08-12",
+  "created": "2026-08-13",
   "dependency_tags": [
     "LOCAL-ALGEBRAIC",
     "REDUCED-MODE",
@@ -356,39 +356,39 @@ window.MATRIX_EXPLORER_DATA = {
   "counts": {
     "cartesian_total": 576,
     "emitted": 452,
-    "coverage_classified": 371,
-    "qualified": 371,
+    "coverage_classified": 381,
+    "qualified": 381,
     "migration_reviewed": 452,
     "migration_pending": 0,
     "migration_unresolved": 0,
     "reviewed_no_transfer": 88,
-    "not_mapped": 205,
+    "not_mapped": 195,
     "dual_direct": 7,
     "mark_counts": {
       "G": 30,
-      "L": 76,
+      "L": 85,
       "LR": 7,
       "Lr": 6,
       "P": 20,
-      "Pl": 75,
+      "Pl": 76,
       "Plr": 13,
       "Pr": 51,
       "R": 90,
       "Rl": 3,
-      "·": 205
+      "·": 195
     },
     "evidence_role_counts": {
       "DIRECT_LITERATURE": 84,
-      "DIRECT_LOCAL": 80,
-      "SUPPORTING": 267,
+      "DIRECT_LOCAL": 89,
+      "SUPPORTING": 268,
       "UNREVIEWED": 191
     },
     "synthetic_not_mapped": 124,
     "status_counts": {
       "LITERATURE_RESULT": 93,
-      "LOCAL_RESULT": 89,
-      "NOT_MAPPED": 205,
-      "PIECES_ONLY": 159,
+      "LOCAL_RESULT": 98,
+      "NOT_MAPPED": 195,
+      "PIECES_ONLY": 160,
       "PRIORITY_GAP": 30
     },
     "migration_status_counts": {
@@ -399,7 +399,7 @@ window.MATRIX_EXPLORER_DATA = {
       "REVIEWED_NO_TRANSFER": 88,
       "REVIEWED_OVERLAY": 11
     },
-    "evidence_records": 71
+    "evidence_records": 72
   },
   "cells": [
     {
@@ -2478,19 +2478,30 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "CONSTRUCTIVE_COMPUTABLE",
       "carrier": "KREIN_INDEFINITE",
       "obligation": "STATE_REPRESENTATION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "LOCAL_RESULT",
+      "evidence": [
+        "FOUNDATIONAL_FINITE_OPERATOR_TEN_CELL_CLOSURE_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_OPERATOR_TEN_CELL_CLOSURE_V1": "DIRECT_LOCAL"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: PT-symmetric and pseudo-Hermitian spectral structure does not supply state representation, normalized probabilities, or causal Green propagation. No reviewed record in the batch supplies the required state representation in this refined coordinate.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "The explicit J-even finite corner P defines rho=P and omega_P(T)=Tr(PTP)/Tr(P); all entries and normalization are computable rationals.",
+      "boundary": "This represents a named finite companion-Hilbert positive state, not every Krein state or an interacting physical state.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "bender-boettcher-1998",
         "mostafazadeh-2001"
       ],
       "migration_rationale": "PT-symmetric and pseudo-Hermitian spectral structure does not supply state representation, normalized probabilities, or causal Green propagation. No reviewed record in the batch supplies the required state representation in this refined coordinate.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FINITE_OPERATOR_TEN_CELL_CLOSURE_V1",
+        "previous_status": "NOT_MAPPED",
+        "new_status": "LOCAL_RESULT",
+        "evidence_role": "DIRECT_LOCAL",
+        "status_change": true
+      },
       "emitted": true
     },
     {
@@ -3302,19 +3313,30 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "CONSTRUCTIVE_COMPUTABLE",
       "carrier": "KREIN_INDEFINITE",
       "obligation": "PROBABILITY_RULE",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "LOCAL_RESULT",
+      "evidence": [
+        "FOUNDATIONAL_FINITE_OPERATOR_TEN_CELL_CLOSURE_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_OPERATOR_TEN_CELL_CLOSURE_V1": "DIRECT_LOCAL"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: PT-symmetric and pseudo-Hermitian spectral structure does not supply state representation, normalized probabilities, or causal Green propagation. No reviewed record in the batch derives the required normalized event-probability rule.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "For the certified finite Krein process fixture, the computable corner rule yields exact probabilities 9/25, 16/25, and 0, summing to one.",
+      "boundary": "The rule is conditional on the five finite-corner hypotheses and is not an unconditional probability rule for arbitrary Krein operators.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "bender-boettcher-1998",
         "mostafazadeh-2001"
       ],
       "migration_rationale": "PT-symmetric and pseudo-Hermitian spectral structure does not supply state representation, normalized probabilities, or causal Green propagation. No reviewed record in the batch derives the required normalized event-probability rule.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FINITE_OPERATOR_TEN_CELL_CLOSURE_V1",
+        "previous_status": "NOT_MAPPED",
+        "new_status": "LOCAL_RESULT",
+        "evidence_role": "DIRECT_LOCAL",
+        "status_change": true
+      },
       "emitted": true
     },
     {
@@ -7935,32 +7957,47 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "CLASSICAL_STANDARD",
       "carrier": "HILBERT_OPERATOR",
       "obligation": "INTERACTION_CONSTRUCTION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "LOCAL_RESULT",
+      "evidence": [
+        "FOUNDATIONAL_FINITE_OPERATOR_TEN_CELL_CLOSURE_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_OPERATOR_TEN_CELL_CLOSURE_V1": "DIRECT_LOCAL"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: Effective spectral representation and categorical protocols do not establish the unresolved field-interaction and quantum-consistency children. No reviewed record in the batch constructs the required interaction in this refined coordinate.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "The named M_4(Q(i)) Hamiltonian H=Z tensor Z is a bounded operator on C^4, is not a sum of one-body terms, and exactly maps a product state to a state with reduced density I/2.",
+      "boundary": "This is one finite two-qubit interaction, not a Weyl-gravity vertex, continuum interaction, scattering construction, or thermodynamic limit.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "neumann-pape-streicher-2018",
         "abramsky-coecke-2004"
       ],
       "migration_rationale": "Effective spectral representation and categorical protocols do not establish the unresolved field-interaction and quantum-consistency children. No reviewed record in the batch constructs the required interaction in this refined coordinate.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FINITE_OPERATOR_TEN_CELL_CLOSURE_V1",
+        "previous_status": "NOT_MAPPED",
+        "new_status": "LOCAL_RESULT",
+        "evidence_role": "DIRECT_LOCAL",
+        "status_change": true
+      },
       "emitted": true
     },
     {
       "foundation": "CLASSICAL_STANDARD",
       "carrier": "KREIN_INDEFINITE",
       "obligation": "INTERACTION_CONSTRUCTION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "LOCAL_RESULT",
+      "evidence": [
+        "FOUNDATIONAL_FINITE_OPERATOR_TEN_CELL_CLOSURE_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_OPERATOR_TEN_CELL_CLOSURE_V1": "DIRECT_LOCAL"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: Real-spectrum and indefinite-metric QFT results do not establish the unresolved interaction or quantum-consistency children. No reviewed record in the batch constructs the required interaction in this refined coordinate.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "On the same finite carrier, J=Z tensor I and H=Z tensor Z satisfy H^sharp=H; the exact entangling evolution is therefore a genuine scoped Krein interaction.",
+      "boundary": "This is one finite two-qubit interaction, not a Weyl-gravity vertex, continuum interaction, scattering construction, or thermodynamic limit. J-self-adjointness alone is not a physical-state or unitarity theorem.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "bender-boettcher-1998",
@@ -7968,6 +8005,13 @@ window.MATRIX_EXPLORER_DATA = {
         "gottschalk-2004"
       ],
       "migration_rationale": "Real-spectrum and indefinite-metric QFT results do not establish the unresolved interaction or quantum-consistency children. No reviewed record in the batch constructs the required interaction in this refined coordinate.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FINITE_OPERATOR_TEN_CELL_CLOSURE_V1",
+        "previous_status": "NOT_MAPPED",
+        "new_status": "LOCAL_RESULT",
+        "evidence_role": "DIRECT_LOCAL",
+        "status_change": true
+      },
       "emitted": true
     },
     {
@@ -8166,13 +8210,17 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "WEAK_CHOICE_ZF",
       "carrier": "HILBERT_OPERATOR",
       "obligation": "INTERACTION_CONSTRUCTION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "LOCAL_RESULT",
+      "evidence": [
+        "FOUNDATIONAL_FINITE_OPERATOR_TEN_CELL_CLOSURE_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_OPERATOR_TEN_CELL_CLOSURE_V1": "DIRECT_LOCAL"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: ZF operator theory and effective spectral representation do not establish interacting QFT, renormalized products, anomalies, QME restoration, or residual transfer. No reviewed record in the batch constructs the required interaction in this refined coordinate.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "The named M_4(Q(i)) Hamiltonian H=Z tensor Z is a bounded operator on C^4, is not a sum of one-body terms, and exactly maps a product state to a state with reduced density I/2. The labelled finite construction invokes no choice operation.",
+      "boundary": "This is one finite two-qubit interaction, not a Weyl-gravity vertex, continuum interaction, scattering construction, or thermodynamic limit.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "blackadar-farah-karagila-2026",
@@ -8180,19 +8228,30 @@ window.MATRIX_EXPLORER_DATA = {
         "neumann-pape-streicher-2018"
       ],
       "migration_rationale": "ZF operator theory and effective spectral representation do not establish interacting QFT, renormalized products, anomalies, QME restoration, or residual transfer. No reviewed record in the batch constructs the required interaction in this refined coordinate.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FINITE_OPERATOR_TEN_CELL_CLOSURE_V1",
+        "previous_status": "NOT_MAPPED",
+        "new_status": "LOCAL_RESULT",
+        "evidence_role": "DIRECT_LOCAL",
+        "status_change": true
+      },
       "emitted": true
     },
     {
       "foundation": "WEAK_CHOICE_ZF",
       "carrier": "KREIN_INDEFINITE",
       "obligation": "INTERACTION_CONSTRUCTION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "LOCAL_RESULT",
+      "evidence": [
+        "FOUNDATIONAL_FINITE_OPERATOR_TEN_CELL_CLOSURE_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_OPERATOR_TEN_CELL_CLOSURE_V1": "DIRECT_LOCAL"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: The explicit Krein carrier, pseudo-Hermitian structure, and axiomatic indefinite-metric QFT do not construct the unresolved interaction or quantum-consistency children. No reviewed record in the batch constructs the required interaction in this refined coordinate.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "The labelled finite J and interaction H obey H^sharp=H by exact matrix arithmetic and require no choice operation.",
+      "boundary": "This is one finite two-qubit interaction, not a Weyl-gravity vertex, continuum interaction, scattering construction, or thermodynamic limit. No infinite Krein completion is inferred.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1",
@@ -8200,6 +8259,13 @@ window.MATRIX_EXPLORER_DATA = {
         "gottschalk-2004"
       ],
       "migration_rationale": "The explicit Krein carrier, pseudo-Hermitian structure, and axiomatic indefinite-metric QFT do not construct the unresolved interaction or quantum-consistency children. No reviewed record in the batch constructs the required interaction in this refined coordinate.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FINITE_OPERATOR_TEN_CELL_CLOSURE_V1",
+        "previous_status": "NOT_MAPPED",
+        "new_status": "LOCAL_RESULT",
+        "evidence_role": "DIRECT_LOCAL",
+        "status_change": true
+      },
       "emitted": true
     },
     {
@@ -8282,13 +8348,17 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "CONSTRUCTIVE_COMPUTABLE",
       "carrier": "HILBERT_OPERATOR",
       "obligation": "INTERACTION_CONSTRUCTION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "LOCAL_RESULT",
+      "evidence": [
+        "FOUNDATIONAL_FINITE_OPERATOR_TEN_CELL_CLOSURE_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_OPERATOR_TEN_CELL_CLOSURE_V1": "DIRECT_LOCAL"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: Constructive probability, Hilbert logic, effective spectra, and a representation-sensitive wave counterexample do not establish interacting or renormalized QFT children. No reviewed record in the batch constructs the required interaction in this refined coordinate.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "The named M_4(Q(i)) Hamiltonian H=Z tensor Z is a bounded operator on C^4, is not a sum of one-body terms, and exactly maps a product state to a state with reduced density I/2. Every operation is a finite Gaussian-rational algorithm.",
+      "boundary": "This is one finite two-qubit interaction, not a Weyl-gravity vertex, continuum interaction, scattering construction, or thermodynamic limit.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "neumann-pape-streicher-2018",
@@ -8297,6 +8367,13 @@ window.MATRIX_EXPLORER_DATA = {
         "richman-bridges-1999"
       ],
       "migration_rationale": "Constructive probability, Hilbert logic, effective spectra, and a representation-sensitive wave counterexample do not establish interacting or renormalized QFT children. No reviewed record in the batch constructs the required interaction in this refined coordinate.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FINITE_OPERATOR_TEN_CELL_CLOSURE_V1",
+        "previous_status": "NOT_MAPPED",
+        "new_status": "LOCAL_RESULT",
+        "evidence_role": "DIRECT_LOCAL",
+        "status_change": true
+      },
       "emitted": true
     },
     {
@@ -8512,13 +8589,17 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "FINITE_DISCRETE",
       "carrier": "HILBERT_OPERATOR",
       "obligation": "INTERACTION_CONSTRUCTION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "LOCAL_RESULT",
+      "evidence": [
+        "FOUNDATIONAL_FINITE_OPERATOR_TEN_CELL_CLOSURE_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_OPERATOR_TEN_CELL_CLOSURE_V1": "DIRECT_LOCAL"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: Finite phase-space, categorical protocol, and state-reconstruction results do not establish evolution well-posedness, causal propagation, or quantum field consistency obligations. No reviewed record in the batch constructs the required interaction in this refined coordinate.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "The named M_4(Q(i)) Hamiltonian H=Z tensor Z is a bounded operator on C^4, is not a sum of one-body terms, and exactly maps a product state to a state with reduced density I/2.",
+      "boundary": "This is one finite two-qubit interaction, not a Weyl-gravity vertex, continuum interaction, scattering construction, or thermodynamic limit.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "gibbons-hoffman-wootters-2004",
@@ -8526,6 +8607,13 @@ window.MATRIX_EXPLORER_DATA = {
         "constantin-doring-2020"
       ],
       "migration_rationale": "Finite phase-space, categorical protocol, and state-reconstruction results do not establish evolution well-posedness, causal propagation, or quantum field consistency obligations. No reviewed record in the batch constructs the required interaction in this refined coordinate.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FINITE_OPERATOR_TEN_CELL_CLOSURE_V1",
+        "previous_status": "NOT_MAPPED",
+        "new_status": "LOCAL_RESULT",
+        "evidence_role": "DIRECT_LOCAL",
+        "status_change": true
+      },
       "emitted": true
     },
     {
@@ -9226,13 +9314,17 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "FINITE_DISCRETE",
       "carrier": "HILBERT_OPERATOR",
       "obligation": "COUNTERTERM_CLASSIFICATION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "LOCAL_RESULT",
+      "evidence": [
+        "FOUNDATIONAL_FINITE_OPERATOR_TEN_CELL_CLOSURE_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_OPERATOR_TEN_CELL_CLOSURE_V1": "DIRECT_LOCAL"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: Finite phase-space, categorical protocol, and state-reconstruction results do not establish evolution well-posedness, causal propagation, or quantum field consistency obligations. No reviewed record in the batch classifies counterterms in this refined coordinate.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "For the declared two-qubit parity P=Z tensor Z, the sixteen Pauli words form a complete Hermitian operator basis and exactly eight commute with P; these eight span every parity-preserving Hermitian correction.",
+      "boundary": "This is a complete counterterm-space classification only for the fixed finite two-qubit model and declared parity, not for Weyl gravity, locality, power counting, or a continuum limit.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "gibbons-hoffman-wootters-2004",
@@ -9240,6 +9332,13 @@ window.MATRIX_EXPLORER_DATA = {
         "constantin-doring-2020"
       ],
       "migration_rationale": "Finite phase-space, categorical protocol, and state-reconstruction results do not establish evolution well-posedness, causal propagation, or quantum field consistency obligations. No reviewed record in the batch classifies counterterms in this refined coordinate.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FINITE_OPERATOR_TEN_CELL_CLOSURE_V1",
+        "previous_status": "NOT_MAPPED",
+        "new_status": "LOCAL_RESULT",
+        "evidence_role": "DIRECT_LOCAL",
+        "status_change": true
+      },
       "emitted": true
     },
     {
@@ -10642,13 +10741,17 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "FINITE_DISCRETE",
       "carrier": "HILBERT_OPERATOR",
       "obligation": "RENORMALIZED_PRODUCTS",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "PIECES_ONLY",
+      "evidence": [
+        "FOUNDATIONAL_FINITE_OPERATOR_TEN_CELL_CLOSURE_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_OPERATOR_TEN_CELL_CLOSURE_V1": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: Finite phase-space, categorical protocol, and state-reconstruction results do not establish evolution well-posedness, causal propagation, or quantum field consistency obligations. No reviewed record in the batch constructs renormalized products in this refined coordinate.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "All 256 products of Pauli basis operators close exactly up to phases in {1,-1,i,-i}; finite-cutoff products and traces are therefore defined without coincident-point singularities.",
+      "boundary": "A regulated finite product is only an ingredient. No subtraction prescription, regulator-independent limit, microlocal extension, or continuum renormalized product is constructed.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "gibbons-hoffman-wootters-2004",
@@ -10656,6 +10759,13 @@ window.MATRIX_EXPLORER_DATA = {
         "constantin-doring-2020"
       ],
       "migration_rationale": "Finite phase-space, categorical protocol, and state-reconstruction results do not establish evolution well-posedness, causal propagation, or quantum field consistency obligations. No reviewed record in the batch constructs renormalized products in this refined coordinate.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FINITE_OPERATOR_TEN_CELL_CLOSURE_V1",
+        "previous_status": "NOT_MAPPED",
+        "new_status": "PIECES_ONLY",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
       "emitted": true
     },
     {
@@ -13341,6 +13451,48 @@ window.MATRIX_EXPLORER_DATA = {
       "report_link": "sources/foundations/reports/finite-graph-wave-causality.md",
       "sha256": "2790e43f566c86e07f7b452fdfac516c59d319df4fd2e410664e7ff130396e79"
     },
+    "FOUNDATIONAL_FINITE_OPERATOR_TEN_CELL_CLOSURE_V1": {
+      "id": "FOUNDATIONAL_FINITE_OPERATOR_TEN_CELL_CLOSURE_V1",
+      "kind": "LOCAL_RESULT",
+      "result_kind": "SCOPED_MULTI_CELL_LOCAL_CERTIFICATE",
+      "lifecycle": "SUFFICIENCY_PROVED",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE"
+      ],
+      "claim_flags": {
+        "exactly_ten_previously_unmapped_cells_classified": true,
+        "nine_local_results": true,
+        "one_pieces_only_result": true,
+        "finite_hilbert_interaction_constructed": true,
+        "finite_krein_interaction_constructed": true,
+        "constructive_krein_state_probability_constructed": true,
+        "fixed_model_counterterm_space_classified": true,
+        "finite_regulated_products_constructed": true,
+        "continuum_renormalized_products_constructed": false,
+        "weyl_counterterms_classified": false,
+        "general_carrier_equivalence_established": false,
+        "choice_principle_required": false,
+        "empirical_agreement_assessed": false,
+        "lorentzian_claim": false
+      },
+      "does_not_establish": [
+        "equivalence of finite exact, Hilbert, and Krein carrier classes beyond the named finite realization",
+        "an infinite-dimensional or continuum interacting theory",
+        "a Weyl-gravity or Bateman--Turok interaction vertex",
+        "Weyl counterterm or anomaly classification",
+        "a continuum renormalized product or regulator-independent limit",
+        "QME restoration or residual quantum transfer",
+        "a general constructive probability rule for arbitrary Krein processes",
+        "a weakest mathematical base or reverse-mathematics lower bound",
+        "causal propagation, empirical agreement, or a LORENTZIAN-CAUSAL result"
+      ],
+      "result_path": "foundations/results/FOUNDATIONAL_FINITE_OPERATOR_TEN_CELL_CLOSURE_V1.json",
+      "result_link": "sources/foundations/results/FOUNDATIONAL_FINITE_OPERATOR_TEN_CELL_CLOSURE_V1.json",
+      "report_path": "foundations/reports/finite-operator-ten-cell-closure.md",
+      "report_link": "sources/foundations/reports/finite-operator-ten-cell-closure.md",
+      "sha256": "2da6cc719447c94057a2cc3226660822e42231848646e7db20fbe671c0722d80"
+    },
     "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": {
       "id": "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1",
       "kind": "LOCAL_RESULT",
@@ -14869,13 +15021,15 @@ window.MATRIX_EXPLORER_DATA = {
   ],
   "boundaries": {
     "cube": [
-      "state-to-dynamics composition outside the certified free reduced-mode Fock system",
-      "that stationarity alone uniquely selects a state",
-      "an interacting, thermal, Hadamard, BRST-compatible, or thermodynamic state",
-      "cross-cell composition for the other five assembly interfaces",
-      "causal response, a prediction chain, or empirical agreement",
-      "a complete physical theory or Lorentzian completion",
-      "literature completeness or coherence of unassessed coordinates"
+      "equivalence of finite, Hilbert, and Krein carrier categories",
+      "a continuum interaction or thermodynamic limit",
+      "continuum renormalized products from finite Pauli-product closure",
+      "Weyl-gravity counterterm or anomaly classification",
+      "QME restoration or residual transfer",
+      "a general Krein probability rule",
+      "coverage of the 124 un-emitted Cartesian coordinates",
+      "literature completeness, empirical agreement, or a complete physical theory",
+      "a new LORENTZIAN-CAUSAL conclusion"
     ],
     "migration_audit": [
       "literature completeness",
@@ -14907,10 +15061,12 @@ window.MATRIX_EXPLORER_DATA = {
     ]
   },
   "source_links": {
-    "cube": "sources/foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V6.json",
+    "cube": "sources/foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V7.json",
     "migration_audit": "sources/foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_MIGRATION_AUDIT_V2.json",
     "ladder": "sources/foundations/results/FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V2.json",
-    "cube_report": "sources/foundations/reports/refined-intersection-cube-v6.md",
+    "cube_report": "sources/foundations/reports/refined-intersection-cube-v7.md",
+    "ten_cell_closure": "sources/foundations/results/FOUNDATIONAL_FINITE_OPERATOR_TEN_CELL_CLOSURE_V1.json",
+    "ten_cell_closure_report": "sources/foundations/reports/finite-operator-ten-cell-closure.md",
     "corner_born_interface": "sources/foundations/results/FOUNDATIONAL_BT_CORNER_BORN_INTERFACE_V1.json",
     "corner_born_interface_report": "sources/foundations/reports/bt-corner-born-interface.md",
     "ground_state_dynamics_interface": "sources/foundations/results/FOUNDATIONAL_KREIN_FOCK_GROUND_STATE_DYNAMICS_INTERFACE_V1.json",
@@ -14918,5 +15074,5 @@ window.MATRIX_EXPLORER_DATA = {
     "migration_audit_report": "sources/foundations/reports/intersection-cube-migration-audit-v2.md",
     "ladder_report": "sources/foundations/reports/cylinder-wave-strength-ladder-v2.md"
   },
-  "canonical_digest": "0feeede6101f7539fcb73f5e4c0f740533448021bb5a226fd9d515880db2d00d"
+  "canonical_digest": "146b91e50a8d614efc24a163f924391c03c3e843bd630b1900c767823af34940"
 };
