@@ -1,0 +1,196 @@
+#!/usr/bin/env python3
+"""Build the exact finite BRST certificate used to classify twenty cube cells."""
+from __future__ import annotations
+
+import argparse
+import hashlib
+import json
+from pathlib import Path
+from typing import Any
+
+
+ROOT = Path(__file__).resolve().parents[1]
+FOUNDATIONS = ROOT / "foundations"
+SOURCE = FOUNDATIONS / "results/FOUNDATIONAL_FINITE_OPERATOR_TEN_CELL_CLOSURE_V1.json"
+OUTPUT = FOUNDATIONS / "results/FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1.json"
+REPORT = FOUNDATIONS / "reports/finite-brst-twenty-cell-closure.md"
+
+
+def sha(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def canonical_digest(value: dict[str, Any]) -> str:
+    body = dict(value)
+    body.pop("canonical_digest", None)
+    return hashlib.sha256(json.dumps(body, sort_keys=True, separators=(",", ":"), ensure_ascii=False).encode()).hexdigest()
+
+
+def promotion(foundation: str, carrier: str, obligation: str, status: str, role: str, finding: str, boundary: str) -> dict[str, Any]:
+    return {
+        "coordinate": {"foundation": foundation, "carrier": carrier, "obligation": obligation},
+        "prior_status": "NOT_MAPPED",
+        "new_status": status,
+        "evidence_role": role,
+        "finding": finding,
+        "boundary": boundary,
+    }
+
+
+def build() -> dict[str, Any]:
+    source = json.loads(SOURCE.read_text())
+    if source.get("result_id") != "FOUNDATIONAL_FINITE_OPERATOR_TEN_CELL_CLOSURE_V1":
+        raise ValueError("finite-operator source identity")
+    counterterm = "The exact finite BRST complex has H^0(Q)=Q[k], so every ghost-zero closed correction is uniquely a multiple of k modulo the exact direction b=Q(u)."
+    anomaly = "The exact finite BRST complex has H^1(Q)=Q[r]. The direction r is the complete obstruction class, whereas the displayed breaking a=Q(h) is removable."
+    qme = "For Gamma_1^bare=k+b+h, the linearized one-loop defect is Q Gamma_1^bare=a. Adding M_1=-h gives Gamma_1^ren=k+b with Q Gamma_1^ren=0, so the named finite local linearized one-loop QME equation is restored."
+    residual = "Only after restoration, the exact contraction sends Gamma_1^ren=k+b to pi_cl(Gamma_1^ren)=k; the discarded part is b=Q(u), so the transferred residual class is [k]."
+    products = "All 1296 products of the 36 matrix units in M_6(Q) obey E_ij E_kl=delta_jk E_il, providing an exact finite regulated product algebra."
+    common = "This is a named six-generator finite BRST model, not the Weyl metric BV complex, a field-theoretic locality theorem, or an interacting continuum construction."
+    promotions: list[dict[str, Any]] = []
+    for foundation in ("CLASSICAL_STANDARD", "CONSTRUCTIVE_COMPUTABLE", "WEAK_CHOICE_ZF"):
+        suffix = " The proof is a terminating rational algorithm." if foundation == "CONSTRUCTIVE_COMPUTABLE" else (" No choice operation is used." if foundation == "WEAK_CHOICE_ZF" else "")
+        promotions.extend([
+            promotion(foundation, "HILBERT_OPERATOR", "ANOMALY_CLASSIFICATION", "LOCAL_RESULT", "DIRECT_LOCAL", anomaly + suffix, common),
+            promotion(foundation, "HILBERT_OPERATOR", "COUNTERTERM_CLASSIFICATION", "LOCAL_RESULT", "DIRECT_LOCAL", counterterm + suffix, common),
+            promotion(foundation, "HILBERT_OPERATOR", "QME_RESTORATION", "LOCAL_RESULT", "DIRECT_LOCAL", qme + suffix, common + " The result is one-loop and finite, not an all-loop or Lorentzian QME."),
+            promotion(foundation, "HILBERT_OPERATOR", "RENORMALIZED_PRODUCTS", "PIECES_ONLY", "SUPPORTING", products + suffix, "Finite matrix multiplication has no coincident-point singularity, but it supplies no subtraction extension, regulator-independent limit, microlocal product, or continuum renormalized product."),
+            promotion(foundation, "HILBERT_OPERATOR", "RESIDUAL_QUANTUM_TRANSFER", "LOCAL_RESULT", "DIRECT_LOCAL", residual + suffix, common + " This is not a transfer in the certified classical Weyl residual complex."),
+        ])
+    for obligation, finding in (("ANOMALY_CLASSIFICATION", anomaly), ("QME_RESTORATION", qme), ("RESIDUAL_QUANTUM_TRANSFER", residual)):
+        promotions.append(promotion("FINITE_DISCRETE", "HILBERT_OPERATOR", obligation, "LOCAL_RESULT", "DIRECT_LOCAL", finding + " Every matrix and reduction is exact finite rational data.", common))
+    for foundation in ("CLASSICAL_STANDARD", "WEAK_CHOICE_ZF"):
+        promotions.append(promotion(foundation, "KREIN_INDEFINITE", "QME_RESTORATION", "LOCAL_RESULT", "DIRECT_LOCAL", qme + " The explicit fundamental symmetry J satisfies Q^sharp=Q." + (" No choice operation is used." if foundation == "WEAK_CHOICE_ZF" else ""), common + " Krein compatibility does not imply positivity, unitarity, or a physical-state theorem."))
+    if len(promotions) != 20 or len({tuple(item["coordinate"].values()) for item in promotions}) != 20:
+        raise ValueError("twenty-coordinate closure")
+    value = {
+        "schema_version": "foundational-finite-brst-twenty-cell-closure-v1",
+        "result_id": "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1",
+        "result_kind": "EXACT_FINITE_BRST_MULTI_CELL_CERTIFICATE",
+        "lifecycle": "RESIDUAL_TRANSFERRED",
+        "created": "2026-08-14",
+        "repository_base_commit": "d617eab947813e48afebdd1ed2462012e955360e",
+        "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+        "question": "Can a single exact finite BRST model classify twenty presently unmapped quantum-consistency coordinates while respecting the classify-before-QME-before-transfer order?",
+        "answer": "Yes, for one explicitly scoped six-generator rational model. Exact cohomology classifies its ghost-zero counterterms and ghost-one anomalies; an exact counterterm removes a named one-loop defect; only then does a verified contraction transfer the renormalized correction. Seventeen cells become LOCAL_RESULT and three finite-product cells become PIECES_ONLY.",
+        "graded_complex": {
+            "field": "Q",
+            "ordered_basis": ["u", "b", "h", "k", "a", "r"],
+            "ghost_degrees": {"u": -1, "b": 0, "h": 0, "k": 0, "a": 1, "r": 1},
+            "differential": {"Q(u)": "b", "Q(h)": "a", "Q(b)": "0", "Q(k)": "0", "Q(a)": "0", "Q(r)": "0"},
+            "nilpotent": True,
+            "cohomology": {"H^-1": [], "H^0": ["[k]"], "H^1": ["[r]"]},
+            "interpretation": {"counterterm_module": "H^0(Q)=Q[k]", "anomaly_module": "H^1(Q)=Q[r]", "removable_breaking": "a=Q(h)"},
+        },
+        "contraction": {
+            "residual_basis": ["k", "r"],
+            "pi_cl": "pi_cl(k)=k, pi_cl(r)=r, and pi_cl=0 on u,b,h,a",
+            "iota_cl": "inclusion of span(k,r)",
+            "homotopy": "H(b)=u, H(a)=h, and H=0 on u,h,k,r",
+            "identities": ["pi_cl iota_cl=id", "id-iota_cl pi_cl=QH+HQ", "H^2=0", "H iota_cl=0", "pi_cl H=0"],
+        },
+        "qme_sequence": {
+            "classification_first": ["H^0(Q)=Q[k]", "H^1(Q)=Q[r]"],
+            "bare_one_loop_correction": "Gamma_1^bare=k+b+h",
+            "defect": "Q Gamma_1^bare=a",
+            "counterterm": "M_1=-h",
+            "renormalized_correction": "Gamma_1^ren=Gamma_1^bare+M_1=k+b",
+            "restoration": "Q Gamma_1^ren=0",
+            "residual_transfer_after_restoration": "pi_cl(Gamma_1^ren)=k and Gamma_1^ren-iota_cl(k)=Q(u)",
+        },
+        "carrier_realizations": {
+            "hilbert": "All maps are bounded rational 6x6 operators on Q^6 embedded in C^6 with the standard positive inner product; self-adjointness of Q is not asserted.",
+            "krein": "J swaps u with b and h with a, fixes k, negates r, obeys J^2=I, and gives Q^sharp=J Q^T J=Q.",
+            "finite_products": "The 36 rational matrix units span M_6(Q); all 1296 ordered basis products close exactly.",
+            "non_equivalence_boundary": "These are representations of one finite complex, not equivalences among general finite, Hilbert, or Krein categories.",
+        },
+        "promotions": promotions,
+        "proof_obligations": [
+            {"id": "SOURCE_PIN", "status": "PASS", "evidence": "The prior finite-operator carrier certificate is content pinned."},
+            {"id": "NILPOTENCY", "status": "PASS", "evidence": "The independent checker proves Q^2=0 exactly."},
+            {"id": "COHOMOLOGY_CLASSIFICATION", "status": "PASS", "evidence": "Exact ranks, kernels, and images give H^0=Q[k] and H^1=Q[r]."},
+            {"id": "CONTRACTION", "status": "PASS", "evidence": "All contraction identities and side conditions hold as rational matrices."},
+            {"id": "CLASSIFY_BEFORE_RESTORE", "status": "PASS", "evidence": "The H^0/H^1 modules are explicit inputs to the restoration sequence."},
+            {"id": "QME_RESTORATION", "status": "PASS", "evidence": "The exact defect a is cancelled by Q(-h)=-a."},
+            {"id": "TRANSFER_AFTER_RESTORATION", "status": "PASS", "evidence": "The restored correction k+b transfers to k with exact remainder Q(u)."},
+            {"id": "HILBERT_REALIZATION", "status": "PASS", "evidence": "Every map is a bounded finite matrix on the named six-dimensional carrier."},
+            {"id": "KREIN_REALIZATION", "status": "PASS", "evidence": "J^2=I and Q^sharp=Q hold exactly."},
+            {"id": "FINITE_PRODUCT_CLOSURE", "status": "PASS", "evidence": "All 1296 matrix-unit products close exactly."},
+            {"id": "TWENTY_PRIOR_EMPTY_COORDINATES", "status": "PASS", "evidence": "Cube-v8 verification independently requires all twenty cube-v7 statuses to be NOT_MAPPED."},
+            {"id": "CONTINUUM_BOUNDARY", "status": "PASS", "evidence": "All three product coordinates remain PIECES_ONLY."}
+        ],
+        "proof_authority": {"status": "INDEPENDENT_EXACT_REDERIVATION", "meaning": "The checker reconstructs the rational matrices, cohomology, contraction, QME sequence, Krein adjoint, and 1296 products without importing the producer."},
+        "provenance": {"inputs": [{"path": str(SOURCE.relative_to(ROOT)), "sha256": sha(SOURCE), "role": "previously certified finite Hilbert/Krein carrier realization"}]},
+        "independent_checker": {"path": "foundations/check_finite_brst_twenty_cell_closure.py", "expected_digest": "624f04a8bfad75d794911d18e8db715a7db10768f3ce9faae9ba0b7c16d22be4", "checks": ["source hash", "exact twenty coordinates", "rational nilpotency and cohomology", "contraction identities", "QME lifecycle order", "Hilbert boundedness", "Krein adjoint", "1296 matrix-unit products", "claim boundaries"]},
+        "claim_flags": {
+            "exactly_twenty_previously_unmapped_cells_classified": True,
+            "seventeen_local_results": True,
+            "three_pieces_only_results": True,
+            "counterterms_classified_before_qme": True,
+            "anomalies_classified_before_qme": True,
+            "finite_one_loop_qme_restored": True,
+            "residual_transfer_after_restoration": True,
+            "continuum_renormalized_products_constructed": False,
+            "weyl_qme_restored": False,
+            "weyl_residual_quantum_transfer": False,
+            "general_carrier_equivalence_established": False,
+            "empirical_agreement_assessed": False,
+            "lorentzian_claim": False
+        },
+        "does_not_establish": [
+            "that the six-generator toy complex is the classical Weyl BV complex",
+            "Weyl-gravity counterterm or anomaly classification",
+            "a coefficient calculation for a physical quantum field theory",
+            "a continuum renormalized product, regulator-independent limit, or time-ordered product",
+            "a nonlinear BV Laplacian/antibracket realization beyond the declared linearized one-loop cochain equation",
+            "an all-loop, strict pure-Weyl, or Lorentzian QME",
+            "transfer to the certified Weyl residual complex",
+            "positivity, unitarity, a physical state, scattering, or empirical agreement",
+            "equivalence of general finite, Hilbert, and Krein carriers",
+            "a weakest mathematical base or reverse-mathematics lower bound",
+            "a complete physical theory or LORENTZIAN-CAUSAL result"
+        ],
+        "human_report": "foundations/reports/finite-brst-twenty-cell-closure.md"
+    }
+    value["canonical_digest"] = canonical_digest(value)
+    return value
+
+
+def render(value: dict[str, Any]) -> str:
+    lines = [
+        "# Exact finite BRST closure of twenty empty cells", "", f"**Result:** `{value['result_id']}`", "", "**Lifecycle:** `RESIDUAL_TRANSFERRED`", "", "**Dependency tags:** `LOCAL-ALGEBRAIC`, `REDUCED-MODE`", "", "## Outcome", "", value["answer"], "",
+        "The model has basis `u,b,h,k,a,r`, differential `Q(u)=b` and `Q(h)=a`, and no other nonzero differential. Exact row reduction gives `H^0(Q)=Q[k]` and `H^1(Q)=Q[r]`. Thus the nontrivial counterterm and anomaly directions are classified before any QME statement is made.", "",
+        "For the named bare correction `Gamma_1^bare=k+b+h`, the defect is `a`. The counterterm `-h` cancels it. Only the restored correction `k+b` is transferred: `pi_cl(k+b)=k`, and the discarded term is the exact vector `b=Q(u)`.", "", "## Twenty coordinate decisions", "", "| # | Coordinate | New status | Scope |", "|---:|---|---|---|"
+    ]
+    for index, item in enumerate(value["promotions"], 1):
+        c = item["coordinate"]
+        lines.append(f"| {index} | `{' × '.join((c['foundation'], c['carrier'], c['obligation']))}` | `{item['new_status']}` | {item['boundary']} |")
+    lines.extend([
+        "", "## Why product cells remain partial", "", "The exact closure of all 1296 products in `M_6(Q)` is a regulated finite product algebra. It does not define coincident-point extensions, a subtraction prescription, a regulator-independent limit, or continuum time-ordered products. Consequently all three `RENORMALIZED_PRODUCTS` decisions are `PIECES_ONLY`.", "",
+        "## Verification", "", "```text", "python3 foundations/build_finite_brst_twenty_cell_closure.py --check", "python3 foundations/check_finite_brst_twenty_cell_closure.py", "python3 foundations/verify_finite_brst_twenty_cell_closure.py", "python3 -m unittest foundations.tests.test_finite_brst_twenty_cell_closure", "```", "", "## Boundaries", "", *["- This does not establish " + item + "." for item in value["does_not_establish"]], ""
+    ])
+    return "\n".join(lines)
+
+
+def generated() -> tuple[bytes, bytes]:
+    value = build()
+    return (json.dumps(value, indent=2, ensure_ascii=False) + "\n").encode(), render(value).encode()
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--check", action="store_true")
+    args = parser.parse_args()
+    outputs = ((OUTPUT, generated()[0]), (REPORT, generated()[1]))
+    stale = [str(path.relative_to(ROOT)) for path, content in outputs if not path.is_file() or path.read_bytes() != content]
+    if args.check:
+        print("FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1: " + ("generated artifacts current" if not stale else "stale: " + ", ".join(stale)))
+        return bool(stale)
+    for path, content in outputs:
+        path.write_bytes(content)
+    print("FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1: wrote result and report")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

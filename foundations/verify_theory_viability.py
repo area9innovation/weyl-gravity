@@ -104,8 +104,10 @@ def verify(*, value: dict[str, Any] | None = None) -> tuple[list[str], list[str]
         if not any(other_key != key and dominates(other, profile) for other_key, other in profiles.items())
     }
     expected_frontier = {
+        ("CLASSICAL_STANDARD", "HILBERT_OPERATOR"),
         ("CLASSICAL_STANDARD", "ALGEBRAIC_CSTAR"),
         ("FINITE_DISCRETE", "FINITE_EXACT"),
+        ("FINITE_DISCRETE", "HILBERT_OPERATOR"),
     }
     if frontier != expected_frontier or {key for key, profile in profiles.items() if profile.get("pareto_default")} != frontier:
         errors.append("default Pareto frontier")

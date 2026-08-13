@@ -40,24 +40,24 @@ def verify(*, result=None, report=None) -> tuple[list[str], list[str]]:
         "cells": 576,
         "emitted": 452,
         "synthetic_not_mapped": 124,
-        "total_not_mapped": 195,
-        "coverage_classified": 381,
+        "total_not_mapped": 175,
+        "coverage_classified": 401,
         "migration_reviewed": 452,
         "migration_pending": 0,
         "reviewed_no_transfer": 88,
-        "evidence_records": 72,
+        "evidence_records": 73,
         "graph_edges": 10,
         "ladder_levels": 6,
         "theory_profiles": 36,
         "carrier_envelopes": 6,
-        "pareto_profiles": 2,
+        "pareto_profiles": 4,
         "prototype_assemblies": 7,
         "assembly_interfaces": 49,
         "empirical_comparisons": 0,
         "certified_cross_cell_interfaces": 2,
         "certified_assembly_interface_instances": 4,
         "dual_direct_cells": 7,
-        "mark_counts": {"G": 30, "L": 85, "LR": 7, "Lr": 6, "P": 20, "Pl": 76, "Plr": 13, "Pr": 51, "R": 90, "Rl": 3, "\u00b7": 195},
+        "mark_counts": {"G": 30, "L": 102, "LR": 7, "Lr": 6, "P": 20, "Pl": 79, "Plr": 13, "Pr": 51, "R": 90, "Rl": 3, "\u00b7": 175},
     }
     if summary != expected_summary:
         errors.append("expected independent summary")
@@ -77,7 +77,7 @@ def verify(*, result=None, report=None) -> tuple[list[str], list[str]]:
         if flags.get(key) is not False:
             errors.append("boundary flag " + key)
     checks.append("fail-closed claim flags")
-    for token in ("576", "452", "reviewed", "0 pending", "88", "71", "124", "381", "exactly ten prior empty cells", "nine direct local", "one pieces-only", "continuum renormalized product", "two certified", "CONDITIONAL_BRIDGE", "unique normal", "NOT_MAPPED", "not a literature-absence claim", "separate coverage and migration", "Earlier cubes remain unchanged", "does not establish"):
+    for token in ("576", "452", "reviewed", "0 pending", "88", "51", "124", "401", "exactly twenty additional empty cells", "seventeen", "three pieces-only", "classification before QME restoration", "none of those toy-model statements is a Weyl-BV promotion", "two certified", "CONDITIONAL_BRIDGE", "unique normal", "NOT_MAPPED", "not a literature-absence claim", "separate coverage and migration", "Earlier cubes remain unchanged", "does not establish"):
         if token not in text:
             errors.append("report token " + token)
     checks.append("human-readable migration and deployment report")

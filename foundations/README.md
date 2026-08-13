@@ -263,10 +263,10 @@ python3 foundations/verify_cylinder_wave_strength_ladder_v2.py
 The generated
 [`static matrix explorer`](site/index.html) turns the complete refined surface
 into a browser-based research instrument. It displays all 576 coordinates as
-sixteen coordinated heatmaps. Coverage is classified for 381 emitted cells;
+sixteen coordinated heatmaps. Coverage is classified for 401 emitted cells;
 all 452 emitted cells have completed migration review. Of the 88 historical
-`REVIEWED_NO_TRANSFER` decisions, seventeen now have independent child-specific
-coverage and 71 remain `NOT_MAPPED`. The other 124 Cartesian coordinates remain
+`REVIEWED_NO_TRANSFER` decisions, thirty-seven now have independent child-specific
+coverage and 51 remain `NOT_MAPPED`. The other 124 Cartesian coordinates remain
 unassessed. Both kinds of `NOT_MAPPED` forbid an interpretation as literature
 absence. The inspector separates positive coverage evidence from evidence
 reviewed only for migration. The bundle also provides multi-select filters,
@@ -300,6 +300,8 @@ python3 foundations/verify_krein_fock_ground_state_dynamics_interface.py
 python3 foundations/verify_refined_intersection_cube_v6.py
 python3 foundations/verify_finite_operator_ten_cell_closure.py
 python3 foundations/verify_refined_intersection_cube_v7.py
+python3 foundations/verify_finite_brst_twenty_cell_closure.py
+python3 foundations/verify_refined_intersection_cube_v8.py
 python3 -m unittest foundations.tests.test_matrix_site
 python3 -m unittest foundations.tests.test_theory_viability
 python3 -m unittest foundations.tests.test_theory_assembly
@@ -309,6 +311,8 @@ python3 -m unittest foundations.tests.test_krein_fock_ground_state_dynamics_inte
 python3 -m unittest foundations.tests.test_refined_intersection_cube_v6
 python3 -m unittest foundations.tests.test_finite_operator_ten_cell_closure
 python3 -m unittest foundations.tests.test_refined_intersection_cube_v7
+python3 -m unittest foundations.tests.test_finite_brst_twenty_cell_closure
+python3 -m unittest foundations.tests.test_refined_intersection_cube_v8
 python3 -m http.server 8000 --directory foundations/site
 ```
 
@@ -410,6 +414,27 @@ python3 foundations/verify_finite_operator_ten_cell_closure.py
 python3 foundations/refine_intersection_cube_v7.py --check
 python3 foundations/check_refined_intersection_cube_v7.py
 python3 foundations/verify_refined_intersection_cube_v7.py
+```
+
+The exact
+[`finite BRST twenty-cell closure`](reports/finite-brst-twenty-cell-closure.md)
+uses a six-generator rational complex to classify `H^0` counterterms and `H^1`
+anomalies, cancel a named one-loop defect, and only then transfer the restored
+correction through an exact contraction. Its bounded Hilbert realization and
+finite Krein adjoint are checked independently. The append-only
+[`cube v8`](reports/refined-intersection-cube-v8.md) applies the certificate to
+exactly twenty cube-v7 `NOT_MAPPED` coordinates. Seventeen become
+`LOCAL_RESULT`; three matrix-product coordinates remain `PIECES_ONLY` because
+finite closure does not supply continuum renormalization. The result is scoped
+to this toy complex and does not promote a Weyl QME or Weyl residual transfer:
+
+```bash
+python3 foundations/build_finite_brst_twenty_cell_closure.py --check
+python3 foundations/check_finite_brst_twenty_cell_closure.py
+python3 foundations/verify_finite_brst_twenty_cell_closure.py
+python3 foundations/refine_intersection_cube_v8.py --check
+python3 foundations/check_refined_intersection_cube_v8.py
+python3 foundations/verify_refined_intersection_cube_v8.py
 ```
 
 The append-only

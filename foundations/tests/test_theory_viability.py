@@ -30,7 +30,7 @@ class TheoryViabilityTests(unittest.TestCase):
         self.assertEqual(len(value["profiles"]), 36)
         self.assertEqual(len(value["carrier_envelopes"]), 6)
         self.assertFalse(any(item["default_gate"]["complete_direct"] for item in value["profiles"]))
-        self.assertEqual(sum(item["pareto_default"] for item in value["profiles"]), 2)
+        self.assertEqual(sum(item["pareto_default"] for item in value["profiles"]), 4)
 
     def test_independent_verifier(self):
         self.assertEqual(verify()[0], [])

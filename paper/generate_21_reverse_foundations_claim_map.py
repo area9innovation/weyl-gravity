@@ -21,7 +21,7 @@ APPENDIX_GENERATOR = "paper/generate_21_reverse_foundations_appendices.py"
 ATLAS_DATA = "foundations/site/data.json"
 
 AUTHORITY_PATHS = {
-    "intersection_cube": "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V4.json",
+    "intersection_cube": "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V8.json",
     "explorer_snapshot": "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json",
     "explicit_krein": "foundations/results/FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1.json",
     "krein_state_selection": "foundations/results/FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1.json",
@@ -74,7 +74,7 @@ def build() -> dict:
         "result_id": "PAPER21_REVERSE_FOUNDATIONS_INTRODUCTION_V1",
         "result_kind": "PROGRAMME_SYNTHESIS_AND_TYPED_CASE_STUDY_MAP",
         "lifecycle": "WORKING_DRAFT",
-        "created": "2026-08-12",
+        "created": "2026-08-14",
         "dependency_tags": [
             "LOCAL-ALGEBRAIC",
             "REDUCED-MODE",

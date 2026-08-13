@@ -13,8 +13,10 @@ into an empirical-validity score.
 Under the default predictive-physics gate, no single profile has direct evidence for
 every required obligation. The present Pareto navigation set is:
 
+- `CLASSICAL_STANDARD × HILBERT_OPERATOR`: 8/10 default-gate obligations direct; 12/16 total obligations direct.
 - `CLASSICAL_STANDARD × ALGEBRAIC_CSTAR`: 8/10 default-gate obligations direct; 12/16 total obligations direct.
 - `FINITE_DISCRETE × FINITE_EXACT`: 9/10 default-gate obligations direct; 10/16 total obligations direct.
+- `FINITE_DISCRETE × HILBERT_OPERATOR`: 8/10 default-gate obligations direct; 12/16 total obligations direct.
 
 This does **not** make those profiles complete theories. Evidence across obligations
 can come from different scoped models. Combining carriers takes the best recorded cell

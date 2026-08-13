@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "result_id", "result_kind", "lifecycle", "created", "repository_base_commit", "dependency_tags", "question", "answer", "graded_complex", "contraction", "qme_sequence", "carrier_realizations", "promotions", "proof_obligations", "proof_authority", "provenance", "independent_checker", "claim_flags", "does_not_establish", "human_report", "canonical_digest"],
+  "properties": {
+    "schema_version": {"const": "foundational-finite-brst-twenty-cell-closure-v1"},
+    "result_id": {"const": "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1"},
+    "result_kind": {"const": "EXACT_FINITE_BRST_MULTI_CELL_CERTIFICATE"},
+    "lifecycle": {"const": "RESIDUAL_TRANSFERRED"},
+    "created": {"type": "string", "format": "date"},
+    "repository_base_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "question": {"type": "string", "minLength": 1},
+    "answer": {"type": "string", "minLength": 1},
+    "graded_complex": {"type": "object", "required": ["field", "ordered_basis", "ghost_degrees", "differential", "nilpotent", "cohomology", "interpretation"]},
+    "contraction": {"type": "object", "required": ["residual_basis", "pi_cl", "iota_cl", "homotopy", "identities"]},
+    "qme_sequence": {"type": "object", "required": ["classification_first", "bare_one_loop_correction", "defect", "counterterm", "renormalized_correction", "restoration", "residual_transfer_after_restoration"]},
+    "carrier_realizations": {"type": "object", "required": ["hilbert", "krein", "finite_products", "non_equivalence_boundary"]},
+    "promotions": {
+      "type": "array", "minItems": 20, "maxItems": 20,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["coordinate", "prior_status", "new_status", "evidence_role", "finding", "boundary"],
+        "properties": {
+          "coordinate": {"type": "object", "additionalProperties": false, "required": ["foundation", "carrier", "obligation"], "properties": {"foundation": {"type": "string"}, "carrier": {"type": "string"}, "obligation": {"type": "string"}}},
+          "prior_status": {"const": "NOT_MAPPED"},
+          "new_status": {"enum": ["LOCAL_RESULT", "PIECES_ONLY"]},
+          "evidence_role": {"enum": ["DIRECT_LOCAL", "SUPPORTING"]},
+          "finding": {"type": "string", "minLength": 1},
+          "boundary": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "proof_obligations": {"type": "array", "minItems": 12, "maxItems": 12, "items": {"type": "object", "required": ["id", "status", "evidence"], "properties": {"status": {"const": "PASS"}}}},
+    "proof_authority": {"type": "object", "required": ["status", "meaning"]},
+    "provenance": {"type": "object", "required": ["inputs"]},
+    "independent_checker": {"type": "object", "required": ["path", "expected_digest", "checks"], "properties": {"expected_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}},
+    "claim_flags": {"type": "object"},
+    "does_not_establish": {"type": "array", "minItems": 10, "items": {"type": "string", "minLength": 1}},
+    "human_report": {"const": "foundations/reports/finite-brst-twenty-cell-closure.md"},
+    "canonical_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

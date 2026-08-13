@@ -1,0 +1,169 @@
+{
+  "schema_version": "science-forge-tier-receipt-v1",
+  "receipt_id": "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1_TIER_RECEIPT",
+  "result_id": "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1",
+  "created": "2026-08-14",
+  "source_base_commit": "d617eab947813e48afebdd1ed2462012e955360e",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "scope": "Classified exactly twenty cube-v7 NOT_MAPPED coordinates with one independently rederived six-generator rational BRST deformation complex. Exact H^0 and H^1 classification precedes a scoped linearized one-loop QME restoration, which precedes residual transfer. Seventeen coordinates receive direct local results and three finite-product coordinates remain pieces-only. Cube v8, the existing explorer, theory projections, and paper-21 generated appendices were regenerated without promoting a Weyl, nonlinear BV, continuum-renormalization, empirical, or Lorentzian claim.",
+  "inputs": [
+    {
+      "path": "foundations/results/FOUNDATIONAL_FINITE_OPERATOR_TEN_CELL_CLOSURE_V1.json",
+      "sha256": "2da6cc719447c94057a2cc3226660822e42231848646e7db20fbe671c0722d80",
+      "role": "previous exact finite Hilbert/Krein carrier realization"
+    },
+    {
+      "path": "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V7.json",
+      "sha256": "7bb689e911d748b57a7656c217a2acf8a3111a2d1b6f5e6570ab4c5a0816f645",
+      "role": "append-only predecessor whose twenty target coordinates were required to be NOT_MAPPED"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "foundations/build_finite_brst_twenty_cell_closure.py",
+      "sha256": "d8e80506ebbe800bf72b77af11fe167fe087827daff69dac5ce0d4960b0847cf",
+      "role": "deterministic certificate and report producer"
+    },
+    {
+      "path": "foundations/check_finite_brst_twenty_cell_closure.py",
+      "sha256": "2a642c37cba9bff57bd4ff1b9af8edc3783d8634e5dcfdcad484cd1959389113",
+      "role": "independent rational cohomology, contraction, lifecycle, Krein, and matrix-product checker"
+    },
+    {
+      "path": "foundations/verify_finite_brst_twenty_cell_closure.py",
+      "sha256": "095d6889f7cc86a38e7ae072a0c2cfbd19c30078941e2372af80ebbaa2e05275",
+      "role": "schema, provenance, exact coordinate-set, and boundary verifier"
+    },
+    {
+      "path": "foundations/results/FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1.json",
+      "sha256": "9126813652d51b80b9a18024cbb87300f50b86b2493c1648770387aafecbd6d0",
+      "canonical_digest": "a98f044a752160d974e9442bd4cc7c379ba01ee0b0c9d90bd0926177111543a8",
+      "role": "machine-readable exact finite BRST certificate"
+    },
+    {
+      "path": "foundations/reports/finite-brst-twenty-cell-closure.md",
+      "sha256": "8317353f63d1160b8da95e588e012b8a87c376fb30de055eae02f573c4fe382d",
+      "role": "human-readable result, lifecycle order, twenty decisions, and exclusions"
+    },
+    {
+      "path": "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V8.json",
+      "sha256": "1066c076a1c90fb5b5f7fac9e97c870434f8b5a9ade07f133cda609a81b43b7b",
+      "canonical_digest": "326a485d7b26f6e1cb08cce83ebbf968418538df9f6b13fb4e8c01e064082dab",
+      "role": "v7-preserving cube with exactly twenty new classifications"
+    },
+    {
+      "path": "foundations/results/FOUNDATIONAL_THEORY_VIABILITY_ASSESSMENT_V1.json",
+      "sha256": "bcf9adcf9516b803c6d6f258e0491d1635f3cf77ccfce3f5575af384736959b8",
+      "canonical_digest": "760ebe0d95de5a099833d38a6368d9827e69caf7a06bb2f289143ff6e9d1d318",
+      "role": "regenerated 36-profile and four-profile Pareto navigation projection"
+    },
+    {
+      "path": "foundations/results/FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1.json",
+      "sha256": "92d7487556d284d4f1f7ed5a3d72dafe9743a7ef34d6f1a357c6c2ad97f14a7b",
+      "canonical_digest": "be1c8dc222c2b650ac857897d20885bfc0292d08b5664706f8e45bec66522502",
+      "role": "regenerated fail-closed assembly projection"
+    },
+    {
+      "path": "foundations/site/manifest.json",
+      "sha256": "ceeb307b12c2ab9229fe9efe4aedd009ef9b071feea283a337785191d31d87da",
+      "role": "content-addressed existing-site manifest"
+    },
+    {
+      "path": "paper/21-reverse-foundations-of-physics-appendices.tex",
+      "sha256": "60c279f35d4a1a6cf7d7a9f3a54ccd1ba4eba33d461ecb10a5d17153014bdc04",
+      "role": "regenerated static atlas, evidence, and literature appendices"
+    },
+    {
+      "path": "paper/21-reverse-foundations-of-physics-claim-map.json",
+      "sha256": "d03a6fb75bc3b41d822632d769481810df76c337364a6858638e03be1c88bd6f",
+      "canonical_digest": "eb74fd0a001c44366ca2a3e290579ee19f51646aa76c07a07be5540e06efdfce",
+      "role": "paper claim map pinned to cube v8 and the current atlas dataset"
+    },
+    {
+      "path": "paper/21-reverse-foundations-of-physics.pdf",
+      "sha256": "c58732c3152ffed1e41023b2fece26ae4f22a3081bdbc46f735a3fc5574d58f1",
+      "role": "33-page rebuilt introduction paper"
+    }
+  ],
+  "assessment_snapshot": {
+    "prior_not_mapped_coordinates": 20,
+    "new_local_results": 17,
+    "new_pieces_only_results": 3,
+    "complex_dimension": 6,
+    "differential_rank": 2,
+    "H0_dimension": 1,
+    "H1_dimension": 1,
+    "contraction_identities_checked": 5,
+    "matrix_products_checked": 1296,
+    "linearized_one_loop_qme_restored": true,
+    "residual_transfer_after_restoration": true,
+    "cube_cells_preserved": 452,
+    "emitted_coverage_classified_before": 381,
+    "emitted_coverage_classified_after": 401,
+    "emitted_not_mapped_after": 51,
+    "total_browser_not_mapped_after": 175,
+    "evidence_records_after": 73,
+    "pareto_profiles_after": 4,
+    "certified_cross_cell_relations": 2,
+    "empirical_comparison_records": 0,
+    "complete_theories": 0
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        {"command": "python3 -m py_compile <17 changed Python source and test paths>", "elapsed_seconds": 0.2, "status": "PASS"},
+        {"command": "python3 -m json.tool <two new schemas>", "elapsed_seconds": 0.1, "status": "PASS"},
+        {"command": "deno check foundations/site/app.js foundations/site/migration-review.js foundations/site/assemblies.js foundations/site/viability.js", "elapsed_seconds": 0.1, "status": "PASS"},
+        {"command": "git diff --check", "elapsed_seconds": 0.2, "status": "PASS"},
+        {"command": "google-chrome --headless --disable-gpu --no-sandbox --window-size=1600,1800 --virtual-time-budget=2500 --screenshot=/tmp/finite-brst-grid-v8.png http://127.0.0.1:8765/index.html#view=matrix", "elapsed_seconds": 1.0, "status": "PASS", "output": "Rendered overview visibly reports 576 coordinates, 452 emitted, 401 classified, 175 not mapped, and 73 evidence records; the matrix remains legible."},
+        {"command": "pdflatex -interaction=nonstopmode -halt-on-error paper/21-reverse-foundations-of-physics.tex (three stable passes total)", "elapsed_seconds": 3.3, "status": "PASS", "output": "33 pages; generated matrix appendix visually inspected at page 17."}
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "commands": [
+        {"command": "python3 foundations/build_finite_brst_twenty_cell_closure.py --check && python3 foundations/check_finite_brst_twenty_cell_closure.py && python3 foundations/verify_finite_brst_twenty_cell_closure.py", "elapsed_seconds": 0.5, "status": "PASS"},
+        {"command": "python3 foundations/refine_intersection_cube_v8.py --check && python3 foundations/check_refined_intersection_cube_v8.py && python3 foundations/verify_refined_intersection_cube_v8.py", "elapsed_seconds": 0.3, "status": "PASS"},
+        {"command": "python3 foundations/build_matrix_site_v2.py --check && python3 foundations/check_matrix_site_v2.py && python3 foundations/verify_matrix_site_v2.py && python3 foundations/verify_theory_viability.py && python3 foundations/verify_theory_assembly.py", "elapsed_seconds": 1.2, "status": "PASS"},
+        {"command": "python3 paper/generate_21_reverse_foundations_appendices.py --check && python3 paper/generate_21_reverse_foundations_claim_map.py --check && python3 paper/verify_21_reverse_foundations_claim_map.py", "elapsed_seconds": 0.3, "status": "PASS"},
+        {"command": "python3 -m unittest foundations.tests.test_finite_brst_twenty_cell_closure foundations.tests.test_refined_intersection_cube_v8 foundations.tests.test_matrix_site foundations.tests.test_theory_viability foundations.tests.test_theory_assembly", "elapsed_seconds": 1.8, "status": "PASS", "output": "28 tests passed."}
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "commands": [
+        {"command": "python3 foundations/verify_finite_operator_ten_cell_closure.py && python3 foundations/verify_refined_intersection_cube_v7.py && python3 foundations/verify_finite_qubit_interaction_core.py && python3 foundations/verify_bt_corner_born_interface.py", "elapsed_seconds": 1.3, "status": "PASS", "output": "The finite-carrier source, append-only predecessor, and its two mathematical inputs pass."}
+      ]
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No Weyl theorem or lifecycle promotion, shared classical core change, freeze, release, tag, or Lorentzian certificate is made; the result is an explicitly bounded finite toy-model classification."
+    }
+  },
+  "claim_flags": {
+    "exactly_twenty_previously_unmapped_cells_classified": true,
+    "exact_rational_witness_independently_checked": true,
+    "classification_precedes_qme_restoration": true,
+    "restoration_precedes_residual_transfer": true,
+    "cube_existing_site_and_paper_appendices_regenerated": true,
+    "nonlinear_bv_qme_constructed": false,
+    "continuum_renormalized_products_constructed": false,
+    "weyl_qme_restored": false,
+    "weyl_residual_transfer_completed": false,
+    "empirical_agreement_assessed": false,
+    "complete_theory_identified": false,
+    "new_lorentzian_claim": false
+  },
+  "does_not_establish": [
+    "that the six-generator complex is the authoritative classical Weyl BV complex",
+    "Weyl counterterm or anomaly classification",
+    "a nonlinear BV Laplacian or antibracket realization beyond the declared linearized equation",
+    "continuum renormalized or time-ordered products",
+    "an all-loop, pure-Weyl, or Lorentzian QME",
+    "transfer to the Weyl residual complex",
+    "a weakest mathematical base",
+    "positivity, unitarity, scattering, causal response, or empirical agreement",
+    "a complete physical theory or LORENTZIAN-CAUSAL result"
+  ]
+}

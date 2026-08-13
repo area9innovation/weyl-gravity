@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["schema_version", "result_id", "result_kind", "lifecycle", "created", "repository_base_commit", "dependency_tags", "purpose", "compatibility", "axes", "cell_statuses", "migration_statuses", "evidence_role_vocabulary", "evidence_role_rule", "dimensions", "certified_interfaces", "cells", "provenance", "independent_checker", "claim_flags", "does_not_establish", "human_report"],
+  "properties": {
+    "schema_version": {"const": "foundational-intersection-cube-v8"},
+    "result_id": {"const": "FOUNDATIONAL_INTERSECTION_CUBE_V8"},
+    "result_kind": {"const": "LOCAL_CERTIFICATE_REFINED_NAVIGATION_CUBE"},
+    "lifecycle": {"const": "TWENTY_EMPTY_CELLS_CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]},
+    "certified_interfaces": {"type": "array", "minItems": 2, "maxItems": 2},
+    "cells": {"type": "array", "minItems": 452, "maxItems": 452},
+    "does_not_establish": {"type": "array", "minItems": 10}
+  }
+}

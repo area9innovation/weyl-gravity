@@ -4,7 +4,7 @@ window.THEORY_ASSEMBLY_DATA = {
   "result_kind": "FAIL_CLOSED_THEORY_ASSEMBLY_AND_EMPIRICAL_LEDGER",
   "lifecycle": "VERIFIED_NAVIGATION_ARTIFACT",
   "title": "Candidate theory assemblies and missing interfaces",
-  "created": "2026-08-13",
+  "created": "2026-08-14",
   "dependency_tags": [
     "LOCAL-ALGEBRAIC",
     "REDUCED-MODE",
@@ -277,26 +277,26 @@ window.THEORY_ASSEMBLY_DATA = {
         {
           "obligation": "COUNTERTERM_CLASSIFICATION",
           "foundation": "CLASSICAL_STANDARD",
-          "carrier": "SMOOTH_DISTRIBUTIONAL",
+          "carrier": "HILBERT_OPERATOR",
           "status": "LOCAL_RESULT",
           "evidence": [
-            "FOUNDATIONAL_LOW_HANGING_CELL_CLOSURE_AUDIT_V1"
+            "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1"
           ],
           "evidence_roles": {
-            "FOUNDATIONAL_LOW_HANGING_CELL_CLOSURE_AUDIT_V1": "DIRECT_LOCAL"
+            "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1": "DIRECT_LOCAL"
           },
           "selection_basis": "Strongest recorded status in the declared admissible region; ties prefer more reviewed direct kinds, local grade, more evidence, then declared order."
         },
         {
           "obligation": "ANOMALY_CLASSIFICATION",
           "foundation": "CLASSICAL_STANDARD",
-          "carrier": "SMOOTH_DISTRIBUTIONAL",
+          "carrier": "HILBERT_OPERATOR",
           "status": "LOCAL_RESULT",
           "evidence": [
-            "FOUNDATIONAL_LOW_HANGING_CELL_CLOSURE_AUDIT_V1"
+            "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1"
           ],
           "evidence_roles": {
-            "FOUNDATIONAL_LOW_HANGING_CELL_CLOSURE_AUDIT_V1": "DIRECT_LOCAL"
+            "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1": "DIRECT_LOCAL"
           },
           "selection_basis": "Strongest recorded status in the declared admissible region; ties prefer more reviewed direct kinds, local grade, more evidence, then declared order."
         },
@@ -316,26 +316,26 @@ window.THEORY_ASSEMBLY_DATA = {
         {
           "obligation": "QME_RESTORATION",
           "foundation": "CLASSICAL_STANDARD",
-          "carrier": "FINITE_EXACT",
-          "status": "PIECES_ONLY",
+          "carrier": "HILBERT_OPERATOR",
+          "status": "LOCAL_RESULT",
           "evidence": [
-            "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1"
+            "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1"
           ],
           "evidence_roles": {
-            "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "SUPPORTING"
+            "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1": "DIRECT_LOCAL"
           },
           "selection_basis": "Strongest recorded status in the declared admissible region; ties prefer more reviewed direct kinds, local grade, more evidence, then declared order."
         },
         {
           "obligation": "RESIDUAL_QUANTUM_TRANSFER",
           "foundation": "CLASSICAL_STANDARD",
-          "carrier": "FINITE_EXACT",
-          "status": "PIECES_ONLY",
+          "carrier": "HILBERT_OPERATOR",
+          "status": "LOCAL_RESULT",
           "evidence": [
-            "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1"
+            "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1"
           ],
           "evidence_roles": {
-            "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "SUPPORTING"
+            "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1": "DIRECT_LOCAL"
           },
           "selection_basis": "Strongest recorded status in the declared admissible region; ties prefer more reviewed direct kinds, local grade, more evidence, then declared order."
         },
@@ -360,10 +360,10 @@ window.THEORY_ASSEMBLY_DATA = {
         }
       ],
       "coverage": {
-        "direct": 14,
+        "direct": 16,
         "assessed": 16,
         "total": 16,
-        "complete_direct": false
+        "complete_direct": true
       },
       "interfaces": [
         {
@@ -479,8 +479,8 @@ window.THEORY_ASSEMBLY_DATA = {
         {
           "id": "OBLIGATION_COVERAGE",
           "label": "Obligation coverage",
-          "status": "OPEN",
-          "basis": "14/16 obligations have a direct recorded result."
+          "status": "SATISFIED",
+          "basis": "16/16 obligations have a direct recorded result."
         },
         {
           "id": "CROSS_CELL_COMPOSITION",
@@ -1883,13 +1883,13 @@ window.THEORY_ASSEMBLY_DATA = {
         {
           "obligation": "QME_RESTORATION",
           "foundation": "CLASSICAL_STANDARD",
-          "carrier": "ALGEBRAIC_CSTAR",
-          "status": "PIECES_ONLY",
+          "carrier": "KREIN_INDEFINITE",
+          "status": "LOCAL_RESULT",
           "evidence": [
-            "fredenhagen-rejzner-2011"
+            "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1"
           ],
           "evidence_roles": {
-            "fredenhagen-rejzner-2011": "SUPPORTING"
+            "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1": "DIRECT_LOCAL"
           },
           "selection_basis": "Strongest recorded status in the declared admissible region; ties prefer more reviewed direct kinds, local grade, more evidence, then declared order."
         },
@@ -1925,7 +1925,7 @@ window.THEORY_ASSEMBLY_DATA = {
         }
       ],
       "coverage": {
-        "direct": 13,
+        "direct": 14,
         "assessed": 16,
         "total": 16,
         "complete_direct": false
@@ -2045,7 +2045,7 @@ window.THEORY_ASSEMBLY_DATA = {
           "id": "OBLIGATION_COVERAGE",
           "label": "Obligation coverage",
           "status": "OPEN",
-          "basis": "13/16 obligations have a direct recorded result."
+          "basis": "14/16 obligations have a direct recorded result."
         },
         {
           "id": "CROSS_CELL_COMPOSITION",
@@ -2252,30 +2252,26 @@ window.THEORY_ASSEMBLY_DATA = {
         {
           "obligation": "COUNTERTERM_CLASSIFICATION",
           "foundation": "CONSTRUCTIVE_COMPUTABLE",
-          "carrier": "FINITE_EXACT",
-          "status": "PIECES_ONLY",
+          "carrier": "HILBERT_OPERATOR",
+          "status": "LOCAL_RESULT",
           "evidence": [
-            "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1",
-            "FOUNDATIONAL_FREE_BV_ENERGY2_PRA_SDR_V1"
+            "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1"
           ],
           "evidence_roles": {
-            "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "SUPPORTING",
-            "FOUNDATIONAL_FREE_BV_ENERGY2_PRA_SDR_V1": "SUPPORTING"
+            "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1": "DIRECT_LOCAL"
           },
           "selection_basis": "Strongest recorded status in the declared admissible region; ties prefer more reviewed direct kinds, local grade, more evidence, then declared order."
         },
         {
           "obligation": "ANOMALY_CLASSIFICATION",
           "foundation": "CONSTRUCTIVE_COMPUTABLE",
-          "carrier": "FINITE_EXACT",
-          "status": "PIECES_ONLY",
+          "carrier": "HILBERT_OPERATOR",
+          "status": "LOCAL_RESULT",
           "evidence": [
-            "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1",
-            "FOUNDATIONAL_FREE_BV_ENERGY2_PRA_SDR_V1"
+            "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1"
           ],
           "evidence_roles": {
-            "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "SUPPORTING",
-            "FOUNDATIONAL_FREE_BV_ENERGY2_PRA_SDR_V1": "SUPPORTING"
+            "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1": "DIRECT_LOCAL"
           },
           "selection_basis": "Strongest recorded status in the declared admissible region; ties prefer more reviewed direct kinds, local grade, more evidence, then declared order."
         },
@@ -2295,30 +2291,26 @@ window.THEORY_ASSEMBLY_DATA = {
         {
           "obligation": "QME_RESTORATION",
           "foundation": "CONSTRUCTIVE_COMPUTABLE",
-          "carrier": "FINITE_EXACT",
-          "status": "PIECES_ONLY",
+          "carrier": "HILBERT_OPERATOR",
+          "status": "LOCAL_RESULT",
           "evidence": [
-            "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1",
-            "FOUNDATIONAL_FREE_BV_ENERGY2_PRA_SDR_V1"
+            "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1"
           ],
           "evidence_roles": {
-            "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "SUPPORTING",
-            "FOUNDATIONAL_FREE_BV_ENERGY2_PRA_SDR_V1": "SUPPORTING"
+            "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1": "DIRECT_LOCAL"
           },
           "selection_basis": "Strongest recorded status in the declared admissible region; ties prefer more reviewed direct kinds, local grade, more evidence, then declared order."
         },
         {
           "obligation": "RESIDUAL_QUANTUM_TRANSFER",
           "foundation": "CONSTRUCTIVE_COMPUTABLE",
-          "carrier": "FINITE_EXACT",
-          "status": "PIECES_ONLY",
+          "carrier": "HILBERT_OPERATOR",
+          "status": "LOCAL_RESULT",
           "evidence": [
-            "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1",
-            "FOUNDATIONAL_FREE_BV_ENERGY2_PRA_SDR_V1"
+            "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1"
           ],
           "evidence_roles": {
-            "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "SUPPORTING",
-            "FOUNDATIONAL_FREE_BV_ENERGY2_PRA_SDR_V1": "SUPPORTING"
+            "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1": "DIRECT_LOCAL"
           },
           "selection_basis": "Strongest recorded status in the declared admissible region; ties prefer more reviewed direct kinds, local grade, more evidence, then declared order."
         },
@@ -2341,7 +2333,7 @@ window.THEORY_ASSEMBLY_DATA = {
         }
       ],
       "coverage": {
-        "direct": 8,
+        "direct": 12,
         "assessed": 16,
         "total": 16,
         "complete_direct": false
@@ -2457,7 +2449,7 @@ window.THEORY_ASSEMBLY_DATA = {
           "id": "OBLIGATION_COVERAGE",
           "label": "Obligation coverage",
           "status": "OPEN",
-          "basis": "8/16 obligations have a direct recorded result."
+          "basis": "12/16 obligations have a direct recorded result."
         },
         {
           "id": "CROSS_CELL_COMPOSITION",
@@ -2979,6 +2971,6 @@ window.THEORY_ASSEMBLY_DATA = {
     "that the benchmark catalogue is a complete set of physical tests",
     "a complete theory, a new Lorentzian-causal result, or a quantum lifecycle promotion"
   ],
-  "source_atlas_digest": "146b91e50a8d614efc24a163f924391c03c3e843bd630b1900c767823af34940",
-  "canonical_digest": "417e74c436df9ac79b30b4dfb14f7be3e0cc648024dea788c98e6239e393408b"
+  "source_atlas_digest": "784e40266f584374492423625e1218254caa7af6b1a387885bbca195a1e8878a",
+  "canonical_digest": "be1c8dc222c2b650ac857897d20885bfc0292d08b5664706f8e45bec66522502"
 };

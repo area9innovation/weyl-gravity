@@ -4,7 +4,7 @@ window.THEORY_VIABILITY_DATA = {
   "result_kind": "FAIL_CLOSED_THEORY_COVERAGE_AND_MISSING_RAIL_ASSESSMENT",
   "lifecycle": "VERIFIED_NAVIGATION_ARTIFACT",
   "title": "Theory coverage, composition, and observation assessment",
-  "created": "2026-08-13",
+  "created": "2026-08-14",
   "dependency_tags": [
     "LOCAL-ALGEBRAIC",
     "REDUCED-MODE",
@@ -240,14 +240,14 @@ window.THEORY_VIABILITY_DATA = {
       "foundation": "CLASSICAL_STANDARD",
       "carrier": "HILBERT_OPERATOR",
       "counts": {
-        "LOCAL_RESULT": 2,
+        "LOCAL_RESULT": 6,
         "LITERATURE_RESULT": 6,
-        "PIECES_ONLY": 3,
+        "PIECES_ONLY": 4,
         "PRIORITY_GAP": 0,
-        "NOT_MAPPED": 5
+        "NOT_MAPPED": 0
       },
-      "direct": 8,
-      "assessed": 11,
+      "direct": 12,
+      "assessed": 16,
       "default_gate": {
         "preset": "PREDICTIVE_PHYSICS",
         "direct": 8,
@@ -318,30 +318,30 @@ window.THEORY_VIABILITY_DATA = {
         {
           "bundle": "QUANTUM_CONSISTENCY",
           "counts": {
-            "LOCAL_RESULT": 0,
+            "LOCAL_RESULT": 4,
             "LITERATURE_RESULT": 0,
-            "PIECES_ONLY": 0,
+            "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 5
+            "NOT_MAPPED": 0
           },
-          "direct": 0,
+          "direct": 4,
           "total": 5
         }
       ],
-      "pareto_default": false
+      "pareto_default": true
     },
     {
       "foundation": "CLASSICAL_STANDARD",
       "carrier": "KREIN_INDEFINITE",
       "counts": {
-        "LOCAL_RESULT": 6,
+        "LOCAL_RESULT": 7,
         "LITERATURE_RESULT": 2,
         "PIECES_ONLY": 3,
         "PRIORITY_GAP": 0,
-        "NOT_MAPPED": 5
+        "NOT_MAPPED": 4
       },
-      "direct": 8,
-      "assessed": 11,
+      "direct": 9,
+      "assessed": 12,
       "default_gate": {
         "preset": "PREDICTIVE_PHYSICS",
         "direct": 8,
@@ -412,13 +412,13 @@ window.THEORY_VIABILITY_DATA = {
         {
           "bundle": "QUANTUM_CONSISTENCY",
           "counts": {
-            "LOCAL_RESULT": 0,
+            "LOCAL_RESULT": 1,
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 0,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 5
+            "NOT_MAPPED": 4
           },
-          "direct": 0,
+          "direct": 1,
           "total": 5
         }
       ],
@@ -1528,14 +1528,14 @@ window.THEORY_VIABILITY_DATA = {
       "foundation": "WEAK_CHOICE_ZF",
       "carrier": "HILBERT_OPERATOR",
       "counts": {
-        "LOCAL_RESULT": 2,
+        "LOCAL_RESULT": 6,
         "LITERATURE_RESULT": 4,
-        "PIECES_ONLY": 5,
+        "PIECES_ONLY": 6,
         "PRIORITY_GAP": 0,
-        "NOT_MAPPED": 5
+        "NOT_MAPPED": 0
       },
-      "direct": 6,
-      "assessed": 11,
+      "direct": 10,
+      "assessed": 16,
       "default_gate": {
         "preset": "PREDICTIVE_PHYSICS",
         "direct": 6,
@@ -1614,13 +1614,13 @@ window.THEORY_VIABILITY_DATA = {
         {
           "bundle": "QUANTUM_CONSISTENCY",
           "counts": {
-            "LOCAL_RESULT": 0,
+            "LOCAL_RESULT": 4,
             "LITERATURE_RESULT": 0,
-            "PIECES_ONLY": 0,
+            "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 5
+            "NOT_MAPPED": 0
           },
-          "direct": 0,
+          "direct": 4,
           "total": 5
         }
       ],
@@ -1630,14 +1630,14 @@ window.THEORY_VIABILITY_DATA = {
       "foundation": "WEAK_CHOICE_ZF",
       "carrier": "KREIN_INDEFINITE",
       "counts": {
-        "LOCAL_RESULT": 6,
+        "LOCAL_RESULT": 7,
         "LITERATURE_RESULT": 0,
         "PIECES_ONLY": 4,
         "PRIORITY_GAP": 0,
-        "NOT_MAPPED": 6
+        "NOT_MAPPED": 5
       },
-      "direct": 6,
-      "assessed": 10,
+      "direct": 7,
+      "assessed": 11,
       "default_gate": {
         "preset": "PREDICTIVE_PHYSICS",
         "direct": 6,
@@ -1716,13 +1716,13 @@ window.THEORY_VIABILITY_DATA = {
         {
           "bundle": "QUANTUM_CONSISTENCY",
           "counts": {
-            "LOCAL_RESULT": 0,
+            "LOCAL_RESULT": 1,
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 0,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 5
+            "NOT_MAPPED": 4
           },
-          "direct": 0,
+          "direct": 1,
           "total": 5
         }
       ],
@@ -2164,14 +2164,14 @@ window.THEORY_VIABILITY_DATA = {
       "foundation": "CONSTRUCTIVE_COMPUTABLE",
       "carrier": "HILBERT_OPERATOR",
       "counts": {
-        "LOCAL_RESULT": 1,
+        "LOCAL_RESULT": 5,
         "LITERATURE_RESULT": 5,
-        "PIECES_ONLY": 5,
+        "PIECES_ONLY": 6,
         "PRIORITY_GAP": 0,
-        "NOT_MAPPED": 5
+        "NOT_MAPPED": 0
       },
-      "direct": 6,
-      "assessed": 11,
+      "direct": 10,
+      "assessed": 16,
       "default_gate": {
         "preset": "PREDICTIVE_PHYSICS",
         "direct": 6,
@@ -2250,13 +2250,13 @@ window.THEORY_VIABILITY_DATA = {
         {
           "bundle": "QUANTUM_CONSISTENCY",
           "counts": {
-            "LOCAL_RESULT": 0,
+            "LOCAL_RESULT": 4,
             "LITERATURE_RESULT": 0,
-            "PIECES_ONLY": 0,
+            "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 5
+            "NOT_MAPPED": 0
           },
-          "direct": 0,
+          "direct": 4,
           "total": 5
         }
       ],
@@ -3468,14 +3468,14 @@ window.THEORY_VIABILITY_DATA = {
       "foundation": "FINITE_DISCRETE",
       "carrier": "HILBERT_OPERATOR",
       "counts": {
-        "LOCAL_RESULT": 3,
+        "LOCAL_RESULT": 6,
         "LITERATURE_RESULT": 6,
         "PIECES_ONLY": 4,
         "PRIORITY_GAP": 0,
-        "NOT_MAPPED": 3
+        "NOT_MAPPED": 0
       },
-      "direct": 9,
-      "assessed": 13,
+      "direct": 12,
+      "assessed": 16,
       "default_gate": {
         "preset": "PREDICTIVE_PHYSICS",
         "direct": 8,
@@ -3546,17 +3546,17 @@ window.THEORY_VIABILITY_DATA = {
         {
           "bundle": "QUANTUM_CONSISTENCY",
           "counts": {
-            "LOCAL_RESULT": 1,
+            "LOCAL_RESULT": 4,
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 3
+            "NOT_MAPPED": 0
           },
-          "direct": 1,
+          "direct": 4,
           "total": 5
         }
       ],
-      "pareto_default": false
+      "pareto_default": true
     },
     {
       "foundation": "FINITE_DISCRETE",
@@ -4121,6 +4121,7 @@ window.THEORY_VIABILITY_DATA = {
             "LOCAL_RESULT"
           ],
           "contributing_carriers": [
+            "HILBERT_OPERATOR",
             "ALGEBRAIC_CSTAR",
             "SMOOTH_DISTRIBUTIONAL"
           ]
@@ -4133,6 +4134,7 @@ window.THEORY_VIABILITY_DATA = {
             "LOCAL_RESULT"
           ],
           "contributing_carriers": [
+            "HILBERT_OPERATOR",
             "ALGEBRAIC_CSTAR",
             "SMOOTH_DISTRIBUTIONAL"
           ]
@@ -4149,26 +4151,23 @@ window.THEORY_VIABILITY_DATA = {
         },
         {
           "obligation": "QME_RESTORATION",
-          "readiness_rank": 2,
+          "readiness_rank": 3,
           "statuses": [
-            "PIECES_ONLY"
+            "LOCAL_RESULT"
           ],
           "contributing_carriers": [
-            "FINITE_EXACT",
-            "ALGEBRAIC_CSTAR",
-            "SMOOTH_DISTRIBUTIONAL"
+            "HILBERT_OPERATOR",
+            "KREIN_INDEFINITE"
           ]
         },
         {
           "obligation": "RESIDUAL_QUANTUM_TRANSFER",
-          "readiness_rank": 2,
+          "readiness_rank": 3,
           "statuses": [
-            "PIECES_ONLY"
+            "LOCAL_RESULT"
           ],
           "contributing_carriers": [
-            "FINITE_EXACT",
-            "ALGEBRAIC_CSTAR",
-            "SMOOTH_DISTRIBUTIONAL"
+            "HILBERT_OPERATOR"
           ]
         },
         {
@@ -4186,7 +4185,7 @@ window.THEORY_VIABILITY_DATA = {
           ]
         }
       ],
-      "maximum_direct_obligations": 14,
+      "maximum_direct_obligations": 16,
       "minimum_carriers_for_that_maximum": 2,
       "minimal_maximum_subsets": [
         [
@@ -4515,9 +4514,11 @@ window.THEORY_VIABILITY_DATA = {
           "obligation": "COUNTERTERM_CLASSIFICATION",
           "readiness_rank": 3,
           "statuses": [
-            "LITERATURE_RESULT"
+            "LITERATURE_RESULT",
+            "LOCAL_RESULT"
           ],
           "contributing_carriers": [
+            "HILBERT_OPERATOR",
             "ALGEBRAIC_CSTAR"
           ]
         },
@@ -4525,9 +4526,11 @@ window.THEORY_VIABILITY_DATA = {
           "obligation": "ANOMALY_CLASSIFICATION",
           "readiness_rank": 3,
           "statuses": [
-            "LITERATURE_RESULT"
+            "LITERATURE_RESULT",
+            "LOCAL_RESULT"
           ],
           "contributing_carriers": [
+            "HILBERT_OPERATOR",
             "ALGEBRAIC_CSTAR"
           ]
         },
@@ -4543,24 +4546,23 @@ window.THEORY_VIABILITY_DATA = {
         },
         {
           "obligation": "QME_RESTORATION",
-          "readiness_rank": 2,
+          "readiness_rank": 3,
           "statuses": [
-            "PIECES_ONLY"
+            "LOCAL_RESULT"
           ],
           "contributing_carriers": [
-            "FINITE_EXACT",
-            "ALGEBRAIC_CSTAR"
+            "HILBERT_OPERATOR",
+            "KREIN_INDEFINITE"
           ]
         },
         {
           "obligation": "RESIDUAL_QUANTUM_TRANSFER",
-          "readiness_rank": 2,
+          "readiness_rank": 3,
           "statuses": [
-            "PIECES_ONLY"
+            "LOCAL_RESULT"
           ],
           "contributing_carriers": [
-            "FINITE_EXACT",
-            "ALGEBRAIC_CSTAR"
+            "HILBERT_OPERATOR"
           ]
         },
         {
@@ -4575,11 +4577,12 @@ window.THEORY_VIABILITY_DATA = {
           ]
         }
       ],
-      "maximum_direct_obligations": 13,
-      "minimum_carriers_for_that_maximum": 4,
+      "maximum_direct_obligations": 15,
+      "minimum_carriers_for_that_maximum": 5,
       "minimal_maximum_subsets": [
         [
           "FINITE_EXACT",
+          "HILBERT_OPERATOR",
           "KREIN_INDEFINITE",
           "ALGEBRAIC_CSTAR",
           "SMOOTH_DISTRIBUTIONAL"
@@ -4724,22 +4727,22 @@ window.THEORY_VIABILITY_DATA = {
         },
         {
           "obligation": "COUNTERTERM_CLASSIFICATION",
-          "readiness_rank": 2,
+          "readiness_rank": 3,
           "statuses": [
-            "PIECES_ONLY"
+            "LOCAL_RESULT"
           ],
           "contributing_carriers": [
-            "FINITE_EXACT"
+            "HILBERT_OPERATOR"
           ]
         },
         {
           "obligation": "ANOMALY_CLASSIFICATION",
-          "readiness_rank": 2,
+          "readiness_rank": 3,
           "statuses": [
-            "PIECES_ONLY"
+            "LOCAL_RESULT"
           ],
           "contributing_carriers": [
-            "FINITE_EXACT"
+            "HILBERT_OPERATOR"
           ]
         },
         {
@@ -4749,27 +4752,28 @@ window.THEORY_VIABILITY_DATA = {
             "PIECES_ONLY"
           ],
           "contributing_carriers": [
-            "FINITE_EXACT"
+            "FINITE_EXACT",
+            "HILBERT_OPERATOR"
           ]
         },
         {
           "obligation": "QME_RESTORATION",
-          "readiness_rank": 2,
+          "readiness_rank": 3,
           "statuses": [
-            "PIECES_ONLY"
+            "LOCAL_RESULT"
           ],
           "contributing_carriers": [
-            "FINITE_EXACT"
+            "HILBERT_OPERATOR"
           ]
         },
         {
           "obligation": "RESIDUAL_QUANTUM_TRANSFER",
-          "readiness_rank": 2,
+          "readiness_rank": 3,
           "statuses": [
-            "PIECES_ONLY"
+            "LOCAL_RESULT"
           ],
           "contributing_carriers": [
-            "FINITE_EXACT"
+            "HILBERT_OPERATOR"
           ]
         },
         {
@@ -4784,17 +4788,9 @@ window.THEORY_VIABILITY_DATA = {
           ]
         }
       ],
-      "maximum_direct_obligations": 8,
+      "maximum_direct_obligations": 12,
       "minimum_carriers_for_that_maximum": 2,
       "minimal_maximum_subsets": [
-        [
-          "FINITE_EXACT",
-          "ALGEBRAIC_CSTAR"
-        ],
-        [
-          "FINITE_EXACT",
-          "LOCALIC_SYNTHETIC"
-        ],
         [
           "HILBERT_OPERATOR",
           "LOCALIC_SYNTHETIC"
@@ -5175,14 +5171,12 @@ window.THEORY_VIABILITY_DATA = {
         },
         {
           "obligation": "ANOMALY_CLASSIFICATION",
-          "readiness_rank": 2,
+          "readiness_rank": 3,
           "statuses": [
-            "PIECES_ONLY"
+            "LOCAL_RESULT"
           ],
           "contributing_carriers": [
-            "KREIN_INDEFINITE",
-            "ALGEBRAIC_CSTAR",
-            "SMOOTH_DISTRIBUTIONAL"
+            "HILBERT_OPERATOR"
           ]
         },
         {
@@ -5200,26 +5194,22 @@ window.THEORY_VIABILITY_DATA = {
         },
         {
           "obligation": "QME_RESTORATION",
-          "readiness_rank": 2,
+          "readiness_rank": 3,
           "statuses": [
-            "PIECES_ONLY"
+            "LOCAL_RESULT"
           ],
           "contributing_carriers": [
-            "KREIN_INDEFINITE",
-            "ALGEBRAIC_CSTAR",
-            "SMOOTH_DISTRIBUTIONAL"
+            "HILBERT_OPERATOR"
           ]
         },
         {
           "obligation": "RESIDUAL_QUANTUM_TRANSFER",
-          "readiness_rank": 2,
+          "readiness_rank": 3,
           "statuses": [
-            "PIECES_ONLY"
+            "LOCAL_RESULT"
           ],
           "contributing_carriers": [
-            "KREIN_INDEFINITE",
-            "ALGEBRAIC_CSTAR",
-            "SMOOTH_DISTRIBUTIONAL"
+            "HILBERT_OPERATOR"
           ]
         },
         {
@@ -5236,7 +5226,7 @@ window.THEORY_VIABILITY_DATA = {
           ]
         }
       ],
-      "maximum_direct_obligations": 11,
+      "maximum_direct_obligations": 14,
       "minimum_carriers_for_that_maximum": 2,
       "minimal_maximum_subsets": [
         [
@@ -5298,6 +5288,6 @@ window.THEORY_VIABILITY_DATA = {
     "that Pareto-frontier profiles are physically preferred or more likely true",
     "a complete observationally validated theory under any regime or carrier portfolio"
   ],
-  "source_atlas_digest": "146b91e50a8d614efc24a163f924391c03c3e843bd630b1900c767823af34940",
-  "canonical_digest": "9c32d532fce6546eed843e7e719b7b5ff894762cc6e076c04c61dc35641389c8"
+  "source_atlas_digest": "784e40266f584374492423625e1218254caa7af6b1a387885bbca195a1e8878a",
+  "canonical_digest": "760ebe0d95de5a099833d38a6368d9827e69caf7a06bb2f289143ff6e9d1d318"
 };

@@ -1,7 +1,7 @@
 window.MATRIX_EXPLORER_DATA = {
   "schema_version": "foundational-matrix-explorer-data-v2",
   "title": "Reverse Mathematics × Physics Atlas",
-  "created": "2026-08-13",
+  "created": "2026-08-14",
   "dependency_tags": [
     "LOCAL-ALGEBRAIC",
     "REDUCED-MODE",
@@ -356,39 +356,39 @@ window.MATRIX_EXPLORER_DATA = {
   "counts": {
     "cartesian_total": 576,
     "emitted": 452,
-    "coverage_classified": 381,
-    "qualified": 381,
+    "coverage_classified": 401,
+    "qualified": 401,
     "migration_reviewed": 452,
     "migration_pending": 0,
     "migration_unresolved": 0,
     "reviewed_no_transfer": 88,
-    "not_mapped": 195,
+    "not_mapped": 175,
     "dual_direct": 7,
     "mark_counts": {
       "G": 30,
-      "L": 85,
+      "L": 102,
       "LR": 7,
       "Lr": 6,
       "P": 20,
-      "Pl": 76,
+      "Pl": 79,
       "Plr": 13,
       "Pr": 51,
       "R": 90,
       "Rl": 3,
-      "·": 195
+      "·": 175
     },
     "evidence_role_counts": {
       "DIRECT_LITERATURE": 84,
-      "DIRECT_LOCAL": 89,
-      "SUPPORTING": 268,
+      "DIRECT_LOCAL": 106,
+      "SUPPORTING": 271,
       "UNREVIEWED": 191
     },
     "synthetic_not_mapped": 124,
     "status_counts": {
       "LITERATURE_RESULT": 93,
-      "LOCAL_RESULT": 98,
-      "NOT_MAPPED": 195,
-      "PIECES_ONLY": 160,
+      "LOCAL_RESULT": 115,
+      "NOT_MAPPED": 175,
+      "PIECES_ONLY": 163,
       "PRIORITY_GAP": 30
     },
     "migration_status_counts": {
@@ -399,7 +399,7 @@ window.MATRIX_EXPLORER_DATA = {
       "REVIEWED_NO_TRANSFER": 88,
       "REVIEWED_OVERLAY": 11
     },
-    "evidence_records": 72
+    "evidence_records": 73
   },
   "cells": [
     {
@@ -8740,19 +8740,30 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "CLASSICAL_STANDARD",
       "carrier": "HILBERT_OPERATOR",
       "obligation": "COUNTERTERM_CLASSIFICATION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "LOCAL_RESULT",
+      "evidence": [
+        "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1": "DIRECT_LOCAL"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: Effective spectral representation and categorical protocols do not establish the unresolved field-interaction and quantum-consistency children. No reviewed record in the batch classifies counterterms in this refined coordinate.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "The exact finite BRST complex has H^0(Q)=Q[k], so every ghost-zero closed correction is uniquely a multiple of k modulo the exact direction b=Q(u).",
+      "boundary": "This is a named six-generator finite BRST model, not the Weyl metric BV complex, a field-theoretic locality theorem, or an interacting continuum construction.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "neumann-pape-streicher-2018",
         "abramsky-coecke-2004"
       ],
       "migration_rationale": "Effective spectral representation and categorical protocols do not establish the unresolved field-interaction and quantum-consistency children. No reviewed record in the batch classifies counterterms in this refined coordinate.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1",
+        "previous_status": "NOT_MAPPED",
+        "new_status": "LOCAL_RESULT",
+        "evidence_role": "DIRECT_LOCAL",
+        "status_change": true
+      },
       "emitted": true
     },
     {
@@ -8971,13 +8982,17 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "WEAK_CHOICE_ZF",
       "carrier": "HILBERT_OPERATOR",
       "obligation": "COUNTERTERM_CLASSIFICATION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "LOCAL_RESULT",
+      "evidence": [
+        "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1": "DIRECT_LOCAL"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: ZF operator theory and effective spectral representation do not establish interacting QFT, renormalized products, anomalies, QME restoration, or residual transfer. No reviewed record in the batch classifies counterterms in this refined coordinate.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "The exact finite BRST complex has H^0(Q)=Q[k], so every ghost-zero closed correction is uniquely a multiple of k modulo the exact direction b=Q(u). No choice operation is used.",
+      "boundary": "This is a named six-generator finite BRST model, not the Weyl metric BV complex, a field-theoretic locality theorem, or an interacting continuum construction.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "blackadar-farah-karagila-2026",
@@ -8985,6 +9000,13 @@ window.MATRIX_EXPLORER_DATA = {
         "neumann-pape-streicher-2018"
       ],
       "migration_rationale": "ZF operator theory and effective spectral representation do not establish interacting QFT, renormalized products, anomalies, QME restoration, or residual transfer. No reviewed record in the batch classifies counterterms in this refined coordinate.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1",
+        "previous_status": "NOT_MAPPED",
+        "new_status": "LOCAL_RESULT",
+        "evidence_role": "DIRECT_LOCAL",
+        "status_change": true
+      },
       "emitted": true
     },
     {
@@ -9090,13 +9112,17 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "CONSTRUCTIVE_COMPUTABLE",
       "carrier": "HILBERT_OPERATOR",
       "obligation": "COUNTERTERM_CLASSIFICATION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "LOCAL_RESULT",
+      "evidence": [
+        "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1": "DIRECT_LOCAL"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: Constructive probability, Hilbert logic, effective spectra, and a representation-sensitive wave counterexample do not establish interacting or renormalized QFT children. No reviewed record in the batch classifies counterterms in this refined coordinate.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "The exact finite BRST complex has H^0(Q)=Q[k], so every ghost-zero closed correction is uniquely a multiple of k modulo the exact direction b=Q(u). The proof is a terminating rational algorithm.",
+      "boundary": "This is a named six-generator finite BRST model, not the Weyl metric BV complex, a field-theoretic locality theorem, or an interacting continuum construction.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "neumann-pape-streicher-2018",
@@ -9105,6 +9131,13 @@ window.MATRIX_EXPLORER_DATA = {
         "richman-bridges-1999"
       ],
       "migration_rationale": "Constructive probability, Hilbert logic, effective spectra, and a representation-sensitive wave counterexample do not establish interacting or renormalized QFT children. No reviewed record in the batch classifies counterterms in this refined coordinate.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1",
+        "previous_status": "NOT_MAPPED",
+        "new_status": "LOCAL_RESULT",
+        "evidence_role": "DIRECT_LOCAL",
+        "status_change": true
+      },
       "emitted": true
     },
     {
@@ -9462,19 +9495,30 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "CLASSICAL_STANDARD",
       "carrier": "HILBERT_OPERATOR",
       "obligation": "ANOMALY_CLASSIFICATION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "LOCAL_RESULT",
+      "evidence": [
+        "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1": "DIRECT_LOCAL"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: Effective spectral representation and categorical protocols do not establish the unresolved field-interaction and quantum-consistency children. No reviewed record in the batch classifies anomalies in this refined coordinate.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "The exact finite BRST complex has H^1(Q)=Q[r]. The direction r is the complete obstruction class, whereas the displayed breaking a=Q(h) is removable.",
+      "boundary": "This is a named six-generator finite BRST model, not the Weyl metric BV complex, a field-theoretic locality theorem, or an interacting continuum construction.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "neumann-pape-streicher-2018",
         "abramsky-coecke-2004"
       ],
       "migration_rationale": "Effective spectral representation and categorical protocols do not establish the unresolved field-interaction and quantum-consistency children. No reviewed record in the batch classifies anomalies in this refined coordinate.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1",
+        "previous_status": "NOT_MAPPED",
+        "new_status": "LOCAL_RESULT",
+        "evidence_role": "DIRECT_LOCAL",
+        "status_change": true
+      },
       "emitted": true
     },
     {
@@ -9693,13 +9737,17 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "WEAK_CHOICE_ZF",
       "carrier": "HILBERT_OPERATOR",
       "obligation": "ANOMALY_CLASSIFICATION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "LOCAL_RESULT",
+      "evidence": [
+        "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1": "DIRECT_LOCAL"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: ZF operator theory and effective spectral representation do not establish interacting QFT, renormalized products, anomalies, QME restoration, or residual transfer. No reviewed record in the batch classifies anomalies in this refined coordinate.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "The exact finite BRST complex has H^1(Q)=Q[r]. The direction r is the complete obstruction class, whereas the displayed breaking a=Q(h) is removable. No choice operation is used.",
+      "boundary": "This is a named six-generator finite BRST model, not the Weyl metric BV complex, a field-theoretic locality theorem, or an interacting continuum construction.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "blackadar-farah-karagila-2026",
@@ -9707,6 +9755,13 @@ window.MATRIX_EXPLORER_DATA = {
         "neumann-pape-streicher-2018"
       ],
       "migration_rationale": "ZF operator theory and effective spectral representation do not establish interacting QFT, renormalized products, anomalies, QME restoration, or residual transfer. No reviewed record in the batch classifies anomalies in this refined coordinate.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1",
+        "previous_status": "NOT_MAPPED",
+        "new_status": "LOCAL_RESULT",
+        "evidence_role": "DIRECT_LOCAL",
+        "status_change": true
+      },
       "emitted": true
     },
     {
@@ -9812,13 +9867,17 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "CONSTRUCTIVE_COMPUTABLE",
       "carrier": "HILBERT_OPERATOR",
       "obligation": "ANOMALY_CLASSIFICATION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "LOCAL_RESULT",
+      "evidence": [
+        "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1": "DIRECT_LOCAL"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: Constructive probability, Hilbert logic, effective spectra, and a representation-sensitive wave counterexample do not establish interacting or renormalized QFT children. No reviewed record in the batch classifies anomalies in this refined coordinate.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "The exact finite BRST complex has H^1(Q)=Q[r]. The direction r is the complete obstruction class, whereas the displayed breaking a=Q(h) is removable. The proof is a terminating rational algorithm.",
+      "boundary": "This is a named six-generator finite BRST model, not the Weyl metric BV complex, a field-theoretic locality theorem, or an interacting continuum construction.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "neumann-pape-streicher-2018",
@@ -9827,6 +9886,13 @@ window.MATRIX_EXPLORER_DATA = {
         "richman-bridges-1999"
       ],
       "migration_rationale": "Constructive probability, Hilbert logic, effective spectra, and a representation-sensitive wave counterexample do not establish interacting or renormalized QFT children. No reviewed record in the batch classifies anomalies in this refined coordinate.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1",
+        "previous_status": "NOT_MAPPED",
+        "new_status": "LOCAL_RESULT",
+        "evidence_role": "DIRECT_LOCAL",
+        "status_change": true
+      },
       "emitted": true
     },
     {
@@ -10036,13 +10102,17 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "FINITE_DISCRETE",
       "carrier": "HILBERT_OPERATOR",
       "obligation": "ANOMALY_CLASSIFICATION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "LOCAL_RESULT",
+      "evidence": [
+        "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1": "DIRECT_LOCAL"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: Finite phase-space, categorical protocol, and state-reconstruction results do not establish evolution well-posedness, causal propagation, or quantum field consistency obligations. No reviewed record in the batch classifies anomalies in this refined coordinate.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "The exact finite BRST complex has H^1(Q)=Q[r]. The direction r is the complete obstruction class, whereas the displayed breaking a=Q(h) is removable. Every matrix and reduction is exact finite rational data.",
+      "boundary": "This is a named six-generator finite BRST model, not the Weyl metric BV complex, a field-theoretic locality theorem, or an interacting continuum construction.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "gibbons-hoffman-wootters-2004",
@@ -10050,6 +10120,13 @@ window.MATRIX_EXPLORER_DATA = {
         "constantin-doring-2020"
       ],
       "migration_rationale": "Finite phase-space, categorical protocol, and state-reconstruction results do not establish evolution well-posedness, causal propagation, or quantum field consistency obligations. No reviewed record in the batch classifies anomalies in this refined coordinate.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1",
+        "previous_status": "NOT_MAPPED",
+        "new_status": "LOCAL_RESULT",
+        "evidence_role": "DIRECT_LOCAL",
+        "status_change": true
+      },
       "emitted": true
     },
     {
@@ -10173,19 +10250,30 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "CLASSICAL_STANDARD",
       "carrier": "HILBERT_OPERATOR",
       "obligation": "RENORMALIZED_PRODUCTS",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "PIECES_ONLY",
+      "evidence": [
+        "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: Effective spectral representation and categorical protocols do not establish the unresolved field-interaction and quantum-consistency children. No reviewed record in the batch constructs renormalized products in this refined coordinate.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "All 1296 products of the 36 matrix units in M_6(Q) obey E_ij E_kl=delta_jk E_il, providing an exact finite regulated product algebra.",
+      "boundary": "Finite matrix multiplication has no coincident-point singularity, but it supplies no subtraction extension, regulator-independent limit, microlocal product, or continuum renormalized product.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "neumann-pape-streicher-2018",
         "abramsky-coecke-2004"
       ],
       "migration_rationale": "Effective spectral representation and categorical protocols do not establish the unresolved field-interaction and quantum-consistency children. No reviewed record in the batch constructs renormalized products in this refined coordinate.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1",
+        "previous_status": "NOT_MAPPED",
+        "new_status": "PIECES_ONLY",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
       "emitted": true
     },
     {
@@ -10401,13 +10489,17 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "WEAK_CHOICE_ZF",
       "carrier": "HILBERT_OPERATOR",
       "obligation": "RENORMALIZED_PRODUCTS",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "PIECES_ONLY",
+      "evidence": [
+        "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: ZF operator theory and effective spectral representation do not establish interacting QFT, renormalized products, anomalies, QME restoration, or residual transfer. No reviewed record in the batch constructs renormalized products in this refined coordinate.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "All 1296 products of the 36 matrix units in M_6(Q) obey E_ij E_kl=delta_jk E_il, providing an exact finite regulated product algebra. No choice operation is used.",
+      "boundary": "Finite matrix multiplication has no coincident-point singularity, but it supplies no subtraction extension, regulator-independent limit, microlocal product, or continuum renormalized product.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "blackadar-farah-karagila-2026",
@@ -10415,6 +10507,13 @@ window.MATRIX_EXPLORER_DATA = {
         "neumann-pape-streicher-2018"
       ],
       "migration_rationale": "ZF operator theory and effective spectral representation do not establish interacting QFT, renormalized products, anomalies, QME restoration, or residual transfer. No reviewed record in the batch constructs renormalized products in this refined coordinate.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1",
+        "previous_status": "NOT_MAPPED",
+        "new_status": "PIECES_ONLY",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
       "emitted": true
     },
     {
@@ -10517,13 +10616,17 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "CONSTRUCTIVE_COMPUTABLE",
       "carrier": "HILBERT_OPERATOR",
       "obligation": "RENORMALIZED_PRODUCTS",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "PIECES_ONLY",
+      "evidence": [
+        "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: Constructive probability, Hilbert logic, effective spectra, and a representation-sensitive wave counterexample do not establish interacting or renormalized QFT children. No reviewed record in the batch constructs renormalized products in this refined coordinate.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "All 1296 products of the 36 matrix units in M_6(Q) obey E_ij E_kl=delta_jk E_il, providing an exact finite regulated product algebra. The proof is a terminating rational algorithm.",
+      "boundary": "Finite matrix multiplication has no coincident-point singularity, but it supplies no subtraction extension, regulator-independent limit, microlocal product, or continuum renormalized product.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "neumann-pape-streicher-2018",
@@ -10532,6 +10635,13 @@ window.MATRIX_EXPLORER_DATA = {
         "richman-bridges-1999"
       ],
       "migration_rationale": "Constructive probability, Hilbert logic, effective spectra, and a representation-sensitive wave counterexample do not establish interacting or renormalized QFT children. No reviewed record in the batch constructs renormalized products in this refined coordinate.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1",
+        "previous_status": "NOT_MAPPED",
+        "new_status": "PIECES_ONLY",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
       "emitted": true
     },
     {
@@ -10889,32 +10999,47 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "CLASSICAL_STANDARD",
       "carrier": "HILBERT_OPERATOR",
       "obligation": "QME_RESTORATION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "LOCAL_RESULT",
+      "evidence": [
+        "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1": "DIRECT_LOCAL"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: Effective spectral representation and categorical protocols do not establish the unresolved field-interaction and quantum-consistency children. No reviewed record in the batch restores the quantum master equation in this refined coordinate.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "For Gamma_1^bare=k+b+h, the linearized one-loop defect is Q Gamma_1^bare=a. Adding M_1=-h gives Gamma_1^ren=k+b with Q Gamma_1^ren=0, so the named finite local linearized one-loop QME equation is restored.",
+      "boundary": "This is a named six-generator finite BRST model, not the Weyl metric BV complex, a field-theoretic locality theorem, or an interacting continuum construction. The result is one-loop and finite, not an all-loop or Lorentzian QME.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "neumann-pape-streicher-2018",
         "abramsky-coecke-2004"
       ],
       "migration_rationale": "Effective spectral representation and categorical protocols do not establish the unresolved field-interaction and quantum-consistency children. No reviewed record in the batch restores the quantum master equation in this refined coordinate.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1",
+        "previous_status": "NOT_MAPPED",
+        "new_status": "LOCAL_RESULT",
+        "evidence_role": "DIRECT_LOCAL",
+        "status_change": true
+      },
       "emitted": true
     },
     {
       "foundation": "CLASSICAL_STANDARD",
       "carrier": "KREIN_INDEFINITE",
       "obligation": "QME_RESTORATION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "LOCAL_RESULT",
+      "evidence": [
+        "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1": "DIRECT_LOCAL"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: Real-spectrum and indefinite-metric QFT results do not establish the unresolved interaction or quantum-consistency children. No reviewed record in the batch restores the quantum master equation in this refined coordinate.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "For Gamma_1^bare=k+b+h, the linearized one-loop defect is Q Gamma_1^bare=a. Adding M_1=-h gives Gamma_1^ren=k+b with Q Gamma_1^ren=0, so the named finite local linearized one-loop QME equation is restored. The explicit fundamental symmetry J satisfies Q^sharp=Q.",
+      "boundary": "This is a named six-generator finite BRST model, not the Weyl metric BV complex, a field-theoretic locality theorem, or an interacting continuum construction. Krein compatibility does not imply positivity, unitarity, or a physical-state theorem.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "bender-boettcher-1998",
@@ -10922,6 +11047,13 @@ window.MATRIX_EXPLORER_DATA = {
         "gottschalk-2004"
       ],
       "migration_rationale": "Real-spectrum and indefinite-metric QFT results do not establish the unresolved interaction or quantum-consistency children. No reviewed record in the batch restores the quantum master equation in this refined coordinate.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1",
+        "previous_status": "NOT_MAPPED",
+        "new_status": "LOCAL_RESULT",
+        "evidence_role": "DIRECT_LOCAL",
+        "status_change": true
+      },
       "emitted": true
     },
     {
@@ -11120,13 +11252,17 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "WEAK_CHOICE_ZF",
       "carrier": "HILBERT_OPERATOR",
       "obligation": "QME_RESTORATION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "LOCAL_RESULT",
+      "evidence": [
+        "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1": "DIRECT_LOCAL"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: ZF operator theory and effective spectral representation do not establish interacting QFT, renormalized products, anomalies, QME restoration, or residual transfer. No reviewed record in the batch restores the quantum master equation in this refined coordinate.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "For Gamma_1^bare=k+b+h, the linearized one-loop defect is Q Gamma_1^bare=a. Adding M_1=-h gives Gamma_1^ren=k+b with Q Gamma_1^ren=0, so the named finite local linearized one-loop QME equation is restored. No choice operation is used.",
+      "boundary": "This is a named six-generator finite BRST model, not the Weyl metric BV complex, a field-theoretic locality theorem, or an interacting continuum construction. The result is one-loop and finite, not an all-loop or Lorentzian QME.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "blackadar-farah-karagila-2026",
@@ -11134,19 +11270,30 @@ window.MATRIX_EXPLORER_DATA = {
         "neumann-pape-streicher-2018"
       ],
       "migration_rationale": "ZF operator theory and effective spectral representation do not establish interacting QFT, renormalized products, anomalies, QME restoration, or residual transfer. No reviewed record in the batch restores the quantum master equation in this refined coordinate.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1",
+        "previous_status": "NOT_MAPPED",
+        "new_status": "LOCAL_RESULT",
+        "evidence_role": "DIRECT_LOCAL",
+        "status_change": true
+      },
       "emitted": true
     },
     {
       "foundation": "WEAK_CHOICE_ZF",
       "carrier": "KREIN_INDEFINITE",
       "obligation": "QME_RESTORATION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "LOCAL_RESULT",
+      "evidence": [
+        "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1": "DIRECT_LOCAL"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: The explicit Krein carrier, pseudo-Hermitian structure, and axiomatic indefinite-metric QFT do not construct the unresolved interaction or quantum-consistency children. No reviewed record in the batch restores the quantum master equation in this refined coordinate.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "For Gamma_1^bare=k+b+h, the linearized one-loop defect is Q Gamma_1^bare=a. Adding M_1=-h gives Gamma_1^ren=k+b with Q Gamma_1^ren=0, so the named finite local linearized one-loop QME equation is restored. The explicit fundamental symmetry J satisfies Q^sharp=Q. No choice operation is used.",
+      "boundary": "This is a named six-generator finite BRST model, not the Weyl metric BV complex, a field-theoretic locality theorem, or an interacting continuum construction. Krein compatibility does not imply positivity, unitarity, or a physical-state theorem.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1",
@@ -11154,6 +11301,13 @@ window.MATRIX_EXPLORER_DATA = {
         "gottschalk-2004"
       ],
       "migration_rationale": "The explicit Krein carrier, pseudo-Hermitian structure, and axiomatic indefinite-metric QFT do not construct the unresolved interaction or quantum-consistency children. No reviewed record in the batch restores the quantum master equation in this refined coordinate.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1",
+        "previous_status": "NOT_MAPPED",
+        "new_status": "LOCAL_RESULT",
+        "evidence_role": "DIRECT_LOCAL",
+        "status_change": true
+      },
       "emitted": true
     },
     {
@@ -11239,13 +11393,17 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "CONSTRUCTIVE_COMPUTABLE",
       "carrier": "HILBERT_OPERATOR",
       "obligation": "QME_RESTORATION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "LOCAL_RESULT",
+      "evidence": [
+        "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1": "DIRECT_LOCAL"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: Constructive probability, Hilbert logic, effective spectra, and a representation-sensitive wave counterexample do not establish interacting or renormalized QFT children. No reviewed record in the batch restores the quantum master equation in this refined coordinate.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "For Gamma_1^bare=k+b+h, the linearized one-loop defect is Q Gamma_1^bare=a. Adding M_1=-h gives Gamma_1^ren=k+b with Q Gamma_1^ren=0, so the named finite local linearized one-loop QME equation is restored. The proof is a terminating rational algorithm.",
+      "boundary": "This is a named six-generator finite BRST model, not the Weyl metric BV complex, a field-theoretic locality theorem, or an interacting continuum construction. The result is one-loop and finite, not an all-loop or Lorentzian QME.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "neumann-pape-streicher-2018",
@@ -11254,6 +11412,13 @@ window.MATRIX_EXPLORER_DATA = {
         "richman-bridges-1999"
       ],
       "migration_rationale": "Constructive probability, Hilbert logic, effective spectra, and a representation-sensitive wave counterexample do not establish interacting or renormalized QFT children. No reviewed record in the batch restores the quantum master equation in this refined coordinate.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1",
+        "previous_status": "NOT_MAPPED",
+        "new_status": "LOCAL_RESULT",
+        "evidence_role": "DIRECT_LOCAL",
+        "status_change": true
+      },
       "emitted": true
     },
     {
@@ -11463,13 +11628,17 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "FINITE_DISCRETE",
       "carrier": "HILBERT_OPERATOR",
       "obligation": "QME_RESTORATION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "LOCAL_RESULT",
+      "evidence": [
+        "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1": "DIRECT_LOCAL"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: Finite phase-space, categorical protocol, and state-reconstruction results do not establish evolution well-posedness, causal propagation, or quantum field consistency obligations. No reviewed record in the batch restores the quantum master equation in this refined coordinate.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "For Gamma_1^bare=k+b+h, the linearized one-loop defect is Q Gamma_1^bare=a. Adding M_1=-h gives Gamma_1^ren=k+b with Q Gamma_1^ren=0, so the named finite local linearized one-loop QME equation is restored. Every matrix and reduction is exact finite rational data.",
+      "boundary": "This is a named six-generator finite BRST model, not the Weyl metric BV complex, a field-theoretic locality theorem, or an interacting continuum construction.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "gibbons-hoffman-wootters-2004",
@@ -11477,6 +11646,13 @@ window.MATRIX_EXPLORER_DATA = {
         "constantin-doring-2020"
       ],
       "migration_rationale": "Finite phase-space, categorical protocol, and state-reconstruction results do not establish evolution well-posedness, causal propagation, or quantum field consistency obligations. No reviewed record in the batch restores the quantum master equation in this refined coordinate.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1",
+        "previous_status": "NOT_MAPPED",
+        "new_status": "LOCAL_RESULT",
+        "evidence_role": "DIRECT_LOCAL",
+        "status_change": true
+      },
       "emitted": true
     },
     {
@@ -11600,19 +11776,30 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "CLASSICAL_STANDARD",
       "carrier": "HILBERT_OPERATOR",
       "obligation": "RESIDUAL_QUANTUM_TRANSFER",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "LOCAL_RESULT",
+      "evidence": [
+        "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1": "DIRECT_LOCAL"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: Effective spectral representation and categorical protocols do not establish the unresolved field-interaction and quantum-consistency children. No reviewed record in the batch transfers a restored quantum correction to the residual complex.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "Only after restoration, the exact contraction sends Gamma_1^ren=k+b to pi_cl(Gamma_1^ren)=k; the discarded part is b=Q(u), so the transferred residual class is [k].",
+      "boundary": "This is a named six-generator finite BRST model, not the Weyl metric BV complex, a field-theoretic locality theorem, or an interacting continuum construction. This is not a transfer in the certified classical Weyl residual complex.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "neumann-pape-streicher-2018",
         "abramsky-coecke-2004"
       ],
       "migration_rationale": "Effective spectral representation and categorical protocols do not establish the unresolved field-interaction and quantum-consistency children. No reviewed record in the batch transfers a restored quantum correction to the residual complex.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1",
+        "previous_status": "NOT_MAPPED",
+        "new_status": "LOCAL_RESULT",
+        "evidence_role": "DIRECT_LOCAL",
+        "status_change": true
+      },
       "emitted": true
     },
     {
@@ -11831,13 +12018,17 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "WEAK_CHOICE_ZF",
       "carrier": "HILBERT_OPERATOR",
       "obligation": "RESIDUAL_QUANTUM_TRANSFER",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "LOCAL_RESULT",
+      "evidence": [
+        "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1": "DIRECT_LOCAL"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: ZF operator theory and effective spectral representation do not establish interacting QFT, renormalized products, anomalies, QME restoration, or residual transfer. No reviewed record in the batch transfers a restored quantum correction to the residual complex.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "Only after restoration, the exact contraction sends Gamma_1^ren=k+b to pi_cl(Gamma_1^ren)=k; the discarded part is b=Q(u), so the transferred residual class is [k]. No choice operation is used.",
+      "boundary": "This is a named six-generator finite BRST model, not the Weyl metric BV complex, a field-theoretic locality theorem, or an interacting continuum construction. This is not a transfer in the certified classical Weyl residual complex.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "blackadar-farah-karagila-2026",
@@ -11845,6 +12036,13 @@ window.MATRIX_EXPLORER_DATA = {
         "neumann-pape-streicher-2018"
       ],
       "migration_rationale": "ZF operator theory and effective spectral representation do not establish interacting QFT, renormalized products, anomalies, QME restoration, or residual transfer. No reviewed record in the batch transfers a restored quantum correction to the residual complex.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1",
+        "previous_status": "NOT_MAPPED",
+        "new_status": "LOCAL_RESULT",
+        "evidence_role": "DIRECT_LOCAL",
+        "status_change": true
+      },
       "emitted": true
     },
     {
@@ -11950,13 +12148,17 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "CONSTRUCTIVE_COMPUTABLE",
       "carrier": "HILBERT_OPERATOR",
       "obligation": "RESIDUAL_QUANTUM_TRANSFER",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "LOCAL_RESULT",
+      "evidence": [
+        "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1": "DIRECT_LOCAL"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: Constructive probability, Hilbert logic, effective spectra, and a representation-sensitive wave counterexample do not establish interacting or renormalized QFT children. No reviewed record in the batch transfers a restored quantum correction to the residual complex.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "Only after restoration, the exact contraction sends Gamma_1^ren=k+b to pi_cl(Gamma_1^ren)=k; the discarded part is b=Q(u), so the transferred residual class is [k]. The proof is a terminating rational algorithm.",
+      "boundary": "This is a named six-generator finite BRST model, not the Weyl metric BV complex, a field-theoretic locality theorem, or an interacting continuum construction. This is not a transfer in the certified classical Weyl residual complex.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "neumann-pape-streicher-2018",
@@ -11965,6 +12167,13 @@ window.MATRIX_EXPLORER_DATA = {
         "richman-bridges-1999"
       ],
       "migration_rationale": "Constructive probability, Hilbert logic, effective spectra, and a representation-sensitive wave counterexample do not establish interacting or renormalized QFT children. No reviewed record in the batch transfers a restored quantum correction to the residual complex.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1",
+        "previous_status": "NOT_MAPPED",
+        "new_status": "LOCAL_RESULT",
+        "evidence_role": "DIRECT_LOCAL",
+        "status_change": true
+      },
       "emitted": true
     },
     {
@@ -12174,13 +12383,17 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "FINITE_DISCRETE",
       "carrier": "HILBERT_OPERATOR",
       "obligation": "RESIDUAL_QUANTUM_TRANSFER",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "LOCAL_RESULT",
+      "evidence": [
+        "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1": "DIRECT_LOCAL"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: Finite phase-space, categorical protocol, and state-reconstruction results do not establish evolution well-posedness, causal propagation, or quantum field consistency obligations. No reviewed record in the batch transfers a restored quantum correction to the residual complex.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "Only after restoration, the exact contraction sends Gamma_1^ren=k+b to pi_cl(Gamma_1^ren)=k; the discarded part is b=Q(u), so the transferred residual class is [k]. Every matrix and reduction is exact finite rational data.",
+      "boundary": "This is a named six-generator finite BRST model, not the Weyl metric BV complex, a field-theoretic locality theorem, or an interacting continuum construction.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "gibbons-hoffman-wootters-2004",
@@ -12188,6 +12401,13 @@ window.MATRIX_EXPLORER_DATA = {
         "constantin-doring-2020"
       ],
       "migration_rationale": "Finite phase-space, categorical protocol, and state-reconstruction results do not establish evolution well-posedness, causal propagation, or quantum field consistency obligations. No reviewed record in the batch transfers a restored quantum correction to the residual complex.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1",
+        "previous_status": "NOT_MAPPED",
+        "new_status": "LOCAL_RESULT",
+        "evidence_role": "DIRECT_LOCAL",
+        "status_change": true
+      },
       "emitted": true
     },
     {
@@ -13385,6 +13605,49 @@ window.MATRIX_EXPLORER_DATA = {
       "report_path": "foundations/reports/explicit-mode-dynamics-zf.md",
       "report_link": "sources/foundations/reports/explicit-mode-dynamics-zf.md",
       "sha256": "0880db47af0c27a0f99c2929ed6e4d42789ef03e67ff4fe6a55f1f49ba92d2f7"
+    },
+    "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1": {
+      "id": "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1",
+      "kind": "LOCAL_RESULT",
+      "result_kind": "EXACT_FINITE_BRST_MULTI_CELL_CERTIFICATE",
+      "lifecycle": "RESIDUAL_TRANSFERRED",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE"
+      ],
+      "claim_flags": {
+        "exactly_twenty_previously_unmapped_cells_classified": true,
+        "seventeen_local_results": true,
+        "three_pieces_only_results": true,
+        "counterterms_classified_before_qme": true,
+        "anomalies_classified_before_qme": true,
+        "finite_one_loop_qme_restored": true,
+        "residual_transfer_after_restoration": true,
+        "continuum_renormalized_products_constructed": false,
+        "weyl_qme_restored": false,
+        "weyl_residual_quantum_transfer": false,
+        "general_carrier_equivalence_established": false,
+        "empirical_agreement_assessed": false,
+        "lorentzian_claim": false
+      },
+      "does_not_establish": [
+        "that the six-generator toy complex is the classical Weyl BV complex",
+        "Weyl-gravity counterterm or anomaly classification",
+        "a coefficient calculation for a physical quantum field theory",
+        "a continuum renormalized product, regulator-independent limit, or time-ordered product",
+        "a nonlinear BV Laplacian/antibracket realization beyond the declared linearized one-loop cochain equation",
+        "an all-loop, strict pure-Weyl, or Lorentzian QME",
+        "transfer to the certified Weyl residual complex",
+        "positivity, unitarity, a physical state, scattering, or empirical agreement",
+        "equivalence of general finite, Hilbert, and Krein carriers",
+        "a weakest mathematical base or reverse-mathematics lower bound",
+        "a complete physical theory or LORENTZIAN-CAUSAL result"
+      ],
+      "result_path": "foundations/results/FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1.json",
+      "result_link": "sources/foundations/results/FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1.json",
+      "report_path": "foundations/reports/finite-brst-twenty-cell-closure.md",
+      "report_link": "sources/foundations/reports/finite-brst-twenty-cell-closure.md",
+      "sha256": "9126813652d51b80b9a18024cbb87300f50b86b2493c1648770387aafecbd6d0"
     },
     "FOUNDATIONAL_FINITE_FIELD_FINITE_MODE_NON_EQUIVALENCE_V1": {
       "id": "FOUNDATIONAL_FINITE_FIELD_FINITE_MODE_NON_EQUIVALENCE_V1",
@@ -15021,14 +15284,15 @@ window.MATRIX_EXPLORER_DATA = {
   ],
   "boundaries": {
     "cube": [
-      "equivalence of finite, Hilbert, and Krein carrier categories",
-      "a continuum interaction or thermodynamic limit",
-      "continuum renormalized products from finite Pauli-product closure",
-      "Weyl-gravity counterterm or anomaly classification",
-      "QME restoration or residual transfer",
-      "a general Krein probability rule",
-      "coverage of the 124 un-emitted Cartesian coordinates",
-      "literature completeness, empirical agreement, or a complete physical theory",
+      "that the finite toy BRST complex is the Weyl BV complex",
+      "Weyl counterterm or anomaly classification",
+      "a continuum renormalized product",
+      "an all-loop or Lorentzian QME",
+      "transfer to the Weyl residual complex",
+      "equivalence of general carrier categories",
+      "coverage of 124 un-emitted Cartesian coordinates",
+      "literature completeness or a weakest base",
+      "empirical agreement or a complete physical theory",
       "a new LORENTZIAN-CAUSAL conclusion"
     ],
     "migration_audit": [
@@ -15061,10 +15325,12 @@ window.MATRIX_EXPLORER_DATA = {
     ]
   },
   "source_links": {
-    "cube": "sources/foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V7.json",
+    "cube": "sources/foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V8.json",
     "migration_audit": "sources/foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_MIGRATION_AUDIT_V2.json",
     "ladder": "sources/foundations/results/FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V2.json",
-    "cube_report": "sources/foundations/reports/refined-intersection-cube-v7.md",
+    "cube_report": "sources/foundations/reports/refined-intersection-cube-v8.md",
+    "twenty_cell_closure": "sources/foundations/results/FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1.json",
+    "twenty_cell_closure_report": "sources/foundations/reports/finite-brst-twenty-cell-closure.md",
     "ten_cell_closure": "sources/foundations/results/FOUNDATIONAL_FINITE_OPERATOR_TEN_CELL_CLOSURE_V1.json",
     "ten_cell_closure_report": "sources/foundations/reports/finite-operator-ten-cell-closure.md",
     "corner_born_interface": "sources/foundations/results/FOUNDATIONAL_BT_CORNER_BORN_INTERFACE_V1.json",
@@ -15074,5 +15340,5 @@ window.MATRIX_EXPLORER_DATA = {
     "migration_audit_report": "sources/foundations/reports/intersection-cube-migration-audit-v2.md",
     "ladder_report": "sources/foundations/reports/cylinder-wave-strength-ladder-v2.md"
   },
-  "canonical_digest": "146b91e50a8d614efc24a163f924391c03c3e843bd630b1900c767823af34940"
+  "canonical_digest": "784e40266f584374492423625e1218254caa7af6b1a387885bbca195a1e8878a"
 };
