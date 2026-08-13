@@ -1,0 +1,417 @@
+{
+  "anchored_distributional_boundary": {
+    "consequence": "a center-time-intensive all-time q10 target exists at the temporal-distribution level, but passage through the loop distributions and the complete normalized Born cut remains unproved",
+    "one_gap": "A2,T(s)=int_0^T(1-tau/T)exp(i*s*tau)d tau -> H_+(s)=pi*delta(s)+i*PV(1/s) in S'(R)",
+    "one_gap_reason": "against a Schwartz test, the taper correction (1/T)*int_0^T tau*ghat(tau)d tau tends to zero",
+    "overlap_kernel": "Fourier_inverse W_T is the normalized length of [0,T] intersect ([0,T]-u) intersect ([0,T]-v), which tends to 1 for fixed (u,v)",
+    "status": "MATCHED_ANCHORED_TEMPORAL_BOUNDARIES_IDENTIFIED",
+    "three_window": "W_T(x,y)=F_T(-x-y)*F_T(x)*F_T(y)/T -> (2*pi)^2*delta(x)*delta(y) in S'(R^2)",
+    "two_gap": "A3,T(s1,s2)->H_+(s1) tensor H_+(s2) in S'(R^2)",
+    "two_gap_reason": "the complement of the expanding simplex and its linear taper vanish against the rapidly decreasing two-dimensional Fourier transform"
+  },
+  "answer": "No. The leading tree kernel K_C,T=F_T(delta_C)/D_C is a one-sided internal relative-duration cut root after the independent external center-time volume has been cancelled. The certified triangle and bubble-with-bridge blocks instead integrate all three vertex times over [0,T]^3. On the fixed-total carrier their total external frequency is Omega=0. In each chronological sector, writing the earliest time as t and the two gaps as u,v makes the base-time integral exactly T-u-v; consequently every full third-Dyson sector is T times an anchored triangular-taper sector. The local bubble forest face likewise leaves a two-time square whose center-time reduction is a triangularly tapered relative kernel. It is not the untapered F_T tree kernel: at zero defect the one-sided anchored kernel equals T/2 whereas F_T(0)=T. Therefore the finite-time q10 tree-loop cross and its RG identity compare different center-time conventions and are superseded at that normalization step. The connected graph exhaustion, fully rearranged support zeros, species tensors, fixed-T distributional existence and conditional common-Born identities remain valid. Dividing the third-order cube by T is necessary but not by itself sufficient: the leading side must be derived in the matching anchored convention, or q10 must be computed directly as a normalized order-g^5 Born cut. The anchored one-gap and two-gap tapers have the expected half-line tempered boundaries, and the normalized three-window product has the relative-energy two-delta boundary, so this correction identifies a viable next calculation rather than an all-time no-go theorem.",
+  "assumptions": [
+    "the sharp vertex switch is the common interval [0,T] used in the predecessor third-Dyson blocks",
+    "the fully rearranged source and detector have equal fixed total four-momentum, so Omega=0 exactly",
+    "the leading K_C,T object retains its certified cut-root meaning after cancellation of external center time",
+    "the predecessor graph, support and species classifications are imported only within their declared reduced-mode domains",
+    "all distributional limits are on Schwartz or smooth compact packet tests, never pointwise"
+  ],
+  "bubble_forest_correction": {
+    "collapsed_cube": "2*int_[0,T]^2 dt dt_C exp(i*((q_A+q_B)*t+q_C*t_C))*d_E(t-t_C)",
+    "corrected_structural_identity": "partial_log(mu)(T6,bb,T/T) is proportional to the center-time-anchored collapsed tree kernel, not to the certified untapered cut root T4,T at finite T",
+    "fixed_total_reduction": "with q_A+q_B=-q_C, the center-time overlap at relative time tau=t-t_C is T-|tau|",
+    "local_derivative": "partial_log(mu)b_mu,Q(t_A-t_B)=2*delta(t_A-t_B)",
+    "matched_relative_kernel": "the positive- and negative-time branches carry the taper 1-|tau|/T; an oriented positive-time branch uses A2,T, not F_T",
+    "status": "FINITE_TIME_RG_IDENTITY_SUPERSEDED_AT_KERNEL_NORMALIZATION",
+    "superseded_identity": "partial_log(mu)T6_bb,T=[5/(4*pi^2)]*T4,T"
+  },
+  "certificate": "REVERSE_PHYSICS_BT_FULLY_REARRANGED_Q10_TIME_NORMALIZATION_OBSTRUCTION_V1",
+  "checks": {
+    "items": {
+      "Eq19_gravity_and_causality_are_not_promoted": true,
+      "active_loop_divides_by_tree_duration": true,
+      "all_time_q8_is_not_superseded": true,
+      "anchored_half_line_taper_has_same_tempered_boundary_as_F_T": true,
+      "anchored_two_gap_taper_has_tensor_half_line_boundary": true,
+      "bubble_is_full_three_time_cube": true,
+      "bubble_windows_sum_to_Omega": true,
+      "collapsed_forest_kernel_has_triangular_taper": true,
+      "common_Born_species_identity_survives_conditionally": true,
+      "cut_cancels_external_center_time": true,
+      "forest_face_retains_center_time_factor": true,
+      "full_triangle_is_T_times_anchored_triangle_on_Omega_zero": true,
+      "graph_support_species_ledger_survives": true,
+      "inputs_are_content_pinned": true,
+      "normalized_three_window_overlap_has_two_delta_boundary": true,
+      "old_finite_time_RG_identity_compares_different_kernels": true,
+      "old_q10_normalization_is_not_a_common_U_coefficient": true,
+      "one_ordering_zero_defect_anchored_volume_is_T2_over_6": true,
+      "one_ordering_zero_defect_full_volume_is_T3_over_6": true,
+      "predecessors_record_pass": true,
+      "q10_all_time_is_not_promoted": true,
+      "q10_assembly_uses_tree_loop_cross": true,
+      "six_zero_defect_orderings_fill_full_cube": true,
+      "three_vertex_base_time_factor_is_exact_through_degree_eight": true,
+      "tree_uses_untapered_relative_window": true,
+      "triangle_fixed_total_has_Omega_zero": true,
+      "triangle_is_full_three_time_cube": true,
+      "two_vertex_rows_are_exact": true,
+      "untapered_and_anchored_kernels_differ_at_every_recorded_degree": true,
+      "work_event_is_obstructed": true,
+      "zero_defect_tree_witness_is_factor_two": true
+    },
+    "ok": true,
+    "passed": 31,
+    "total": 31
+  },
+  "claim_boundary": {
+    "Lorentzian_causal_claim": "NOT_ESTABLISHED",
+    "Moller_LSZ_S": "NOT_CONSTRUCTED",
+    "all_time_q10": "NOT_COMPUTED",
+    "finite_coupling_probability": "NOT_ESTABLISHED",
+    "general_Eq19": "NOT_PROVED",
+    "gravity_BV_BRST_QME": "NOT_CONSTRUCTED",
+    "matched_finite_time_q10": "NOT_COMPUTED",
+    "q10_sign": "NOT_DETERMINED"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "that the corrected anchored q10 is zero or divergent",
+    "that division of T6,T by T alone completes the normalized Born cut",
+    "a passage of the anchored temporal limit through every triangle loop-momentum integral",
+    "a passage of the normalized three-window limit through the renormalized bubble and bridge distributions",
+    "the numerical value or sign of matched q10",
+    "the old finite-time q10 functional as a coefficient of one U_T",
+    "the old finite-time q10 RG cancellation",
+    "scheme independence of a future matched q10 coordinate",
+    "a bounded whole-carrier all-time operator",
+    "Moller, LSZ or S operators",
+    "general Eq. (19) or the standard scalar projector",
+    "gravity, metric BV-BRST or QME transfer",
+    "anything LORENTZIAN-CAUSAL",
+    "literature priority"
+  ],
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "Derive q10 directly from the order-g^5 normalized Born trace with one external center time removed before splitting it into tree and loop sides. Equivalently, construct both the order-g^2 and order-g^3 restricted amplitudes with the same anchored sharp-window convention, verify the local forest identity between their tapered kernels, and only then prove the two-gap coarea/distribution bounds needed for the T-to-infinity packet limit.",
+  "provenance": {
+    "generated_by": "reverse_physics/bt_fully_rearranged_q10_time_normalization_obstruction.py",
+    "independent_verifier": "reverse_physics/verify_bt_fully_rearranged_q10_time_normalization_obstruction.py",
+    "input_hashes": {
+      "planning/events/reverse-physics-bateman-fully-rearranged-q10-time-normalization-obstruction-OBSTRUCTED-fef711b3.json": "26792d0b6888691ad1f42d86673e0b3e2d0b57a5dddae72bcfde618264ce3e63",
+      "planning/work-items/reverse-physics-bateman-fully-rearranged-q10-time-normalization-obstruction.json": "fe282025982bfe03244f0d9728e7b51762066f4b98f3e576831c0cc2f30a5e5a",
+      "reverse_physics/certificates/REVERSE_PHYSICS_BT_COMPLETE_CONNECTED_ORDER4_PACKET_COLUMN_V1.json": "5b0fc2719b8daa5650800449d802510911af45445e26fef516a7cb05426fefbb",
+      "reverse_physics/certificates/REVERSE_PHYSICS_BT_FINITE_TIME_ACTIVE_LOOP_AFFILIATION_V1.json": "73d5f9d1db46e3c9a783acc8d35f94a17876425ce5f9aec3fca73f1c73d547a3",
+      "reverse_physics/certificates/REVERSE_PHYSICS_BT_FINITE_TIME_HAMILTONIAN_CUT_AFFILIATION_V1.json": "385ed146a7b001031a5da4cf239a4c00b28f4373043e73a20590795a90951b93",
+      "reverse_physics/certificates/REVERSE_PHYSICS_BT_FULLY_REARRANGED_BUBBLE_BRIDGE_FINITE_TIME_AFFILIATION_V1.json": "adbc12c3c45b35a17f1159ab89632a458d1cf8796da371bed80768f2f07d8320",
+      "reverse_physics/certificates/REVERSE_PHYSICS_BT_FULLY_REARRANGED_Q10_SELECTED_PACKET_ASSEMBLY_V1.json": "cd478d16440161adef9dcfde172359df3fdbe6abb5356043a29c77c80b718a0e",
+      "reverse_physics/certificates/REVERSE_PHYSICS_BT_FULLY_REARRANGED_RIGGED_ALL_TIME_PACKET_LIMIT_V1.json": "d8e6529cfc8c1fbc8cf31a7486eede56d868809d0ab12e70ece4a80d7ad04015",
+      "reverse_physics/certificates/REVERSE_PHYSICS_BT_FULLY_REARRANGED_V4_CUBED_FINITE_TIME_AFFILIATION_V1.json": "7f2067dc3fe1bd30dbc1598c2e94307a45ccf096234fb8cbaca823402601f9da"
+    },
+    "method": "Exact base-time integration on ordered two- and three-vertex simplexes, exact rational Taylor-moment comparison through degree eight, exact local forest-face reduction, and independent tempered-distribution overlap-kernel analysis. No floating-point arithmetic enters a claim.",
+    "source_commit": "fef711b362e06649c4cded0d158add7733ffcaa3"
+  },
+  "question": "Do the certified leading fully rearranged tree and third-Dyson loop blocks use one common finite-time normalization, so that their displayed interference is a coefficient of the same selected BT experiment and can be sent to all time?",
+  "report": "reverse_physics/reports/bt-fully-rearranged-q10-time-normalization-obstruction.md",
+  "result_kind": "exact center-time normalization obstruction and matched anchored-kernel target for the fully rearranged q10 coefficient",
+  "schema": "reverse_physics/schema/reverse-physics-bt-fully-rearranged-q10-time-normalization-obstruction-v1.schema.json",
+  "schema_version": 1,
+  "supersession_and_retention": {
+    "bubble_bridge_full_cube": "RETAINED_AS_A_WELL_DEFINED_RENORMALIZED_UNNORMALIZED_THIRD_DYSON_BLOCK",
+    "conditional_common_Born_identity": "RETAINED_AFTER_THE_SCALAR_KERNEL_IS_RENORMALIZED_CONSISTENTLY",
+    "connected_graph_exhaustion": "RETAINED",
+    "finite_time_q10_RG_identity": "SUPERSEDED",
+    "finite_time_q10_value": "NOT_ESTABLISHED_AS_A_COEFFICIENT_OF_ONE_NORMALIZED_EXPERIMENT",
+    "fully_rearranged_disconnected_support_zeros": "RETAINED",
+    "leading_all_time_q8": "RETAINED; IT WAS DERIVED DIRECTLY FROM THE RELATIVE-DURATION CUT ROOT AND EXPLICITLY DID NOT TRANSFER q10",
+    "q10_selected_packet_assembly": "SUPERSEDED_AT_COMMON_TIME_NORMALIZATION",
+    "species_and_total_kappa_identities": "RETAINED",
+    "status": "FAIL_CLOSED_CORRECTION_WITH_SCOPED_RETENTION",
+    "triangle_full_cube": "RETAINED_AS_A_WELL_DEFINED_UNNORMALIZED_THIRD_DYSON_BLOCK"
+  },
+  "time_normalization_audit": {
+    "exact_factorization": "I3,T=T*A3,T for every ordering when Omega=0",
+    "finite_time_mismatch": "A2,T is not F_T; at delta=0, A2,T(0)=T/2 and F_T(0)=T",
+    "fixed_total_rule": "Omega=0 on the fully rearranged fixed-total packet carrier",
+    "status": "EXACT_EXTERNAL_CENTER_TIME_FACTOR_AND_TAPER_MISMATCH",
+    "three_vertex_anchored_sector": "A3,T=I3,T/T=int_(u,v>=0,u+v<=T) (1-(u+v)/T)*exp(i*Delta1*u+i*Delta2*v) du dv",
+    "three_vertex_full_sector": "I3,T=int_(u,v>=0,u+v<=T) (T-u-v)*exp(i*Delta1*u+i*Delta2*v) du dv",
+    "three_vertex_series": [
+      {
+        "anchored_coefficient_without_i_power": {
+          "denominator": 6,
+          "numerator": 1
+        },
+        "anchored_power_of_T": 2,
+        "full_coefficient_without_i_power": {
+          "denominator": 6,
+          "numerator": 1
+        },
+        "full_power_of_T": 3,
+        "monomial_count": 1,
+        "total_degree": 0
+      },
+      {
+        "anchored_coefficient_without_i_power": {
+          "denominator": 24,
+          "numerator": 1
+        },
+        "anchored_power_of_T": 3,
+        "full_coefficient_without_i_power": {
+          "denominator": 24,
+          "numerator": 1
+        },
+        "full_power_of_T": 4,
+        "monomial_count": 2,
+        "total_degree": 1
+      },
+      {
+        "anchored_coefficient_without_i_power": {
+          "denominator": 120,
+          "numerator": 1
+        },
+        "anchored_power_of_T": 4,
+        "full_coefficient_without_i_power": {
+          "denominator": 120,
+          "numerator": 1
+        },
+        "full_power_of_T": 5,
+        "monomial_count": 3,
+        "total_degree": 2
+      },
+      {
+        "anchored_coefficient_without_i_power": {
+          "denominator": 720,
+          "numerator": 1
+        },
+        "anchored_power_of_T": 5,
+        "full_coefficient_without_i_power": {
+          "denominator": 720,
+          "numerator": 1
+        },
+        "full_power_of_T": 6,
+        "monomial_count": 4,
+        "total_degree": 3
+      },
+      {
+        "anchored_coefficient_without_i_power": {
+          "denominator": 5040,
+          "numerator": 1
+        },
+        "anchored_power_of_T": 6,
+        "full_coefficient_without_i_power": {
+          "denominator": 5040,
+          "numerator": 1
+        },
+        "full_power_of_T": 7,
+        "monomial_count": 5,
+        "total_degree": 4
+      },
+      {
+        "anchored_coefficient_without_i_power": {
+          "denominator": 40320,
+          "numerator": 1
+        },
+        "anchored_power_of_T": 7,
+        "full_coefficient_without_i_power": {
+          "denominator": 40320,
+          "numerator": 1
+        },
+        "full_power_of_T": 8,
+        "monomial_count": 6,
+        "total_degree": 5
+      },
+      {
+        "anchored_coefficient_without_i_power": {
+          "denominator": 362880,
+          "numerator": 1
+        },
+        "anchored_power_of_T": 8,
+        "full_coefficient_without_i_power": {
+          "denominator": 362880,
+          "numerator": 1
+        },
+        "full_power_of_T": 9,
+        "monomial_count": 7,
+        "total_degree": 6
+      },
+      {
+        "anchored_coefficient_without_i_power": {
+          "denominator": 3628800,
+          "numerator": 1
+        },
+        "anchored_power_of_T": 9,
+        "full_coefficient_without_i_power": {
+          "denominator": 3628800,
+          "numerator": 1
+        },
+        "full_power_of_T": 10,
+        "monomial_count": 8,
+        "total_degree": 7
+      },
+      {
+        "anchored_coefficient_without_i_power": {
+          "denominator": 39916800,
+          "numerator": 1
+        },
+        "anchored_power_of_T": 10,
+        "full_coefficient_without_i_power": {
+          "denominator": 39916800,
+          "numerator": 1
+        },
+        "full_power_of_T": 11,
+        "monomial_count": 9,
+        "total_degree": 8
+      }
+    ],
+    "tree_center_time_status": "external center-time delta1(0)=L0 is cancelled before the internal relative-duration cut root is formed",
+    "tree_cut_root": "K_C,T=F_T(delta_C)/D_C, F_T(s)=int_0^T exp(i*s*tau)d tau",
+    "two_vertex_anchored_sector": "A2,T(delta)=int_0^T (1-tau/T)*exp(i*delta*tau)d tau",
+    "two_vertex_full_sector": "I2,T=int_0^T (T-tau)*exp(i*delta*tau)d tau=T*A2,T(delta)",
+    "two_vertex_series": [
+      {
+        "F_T_coefficient_without_i_power": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "anchored_taper_coefficient_without_i_power": {
+          "denominator": 2,
+          "numerator": 1
+        },
+        "degree": 0,
+        "ratio_anchored_to_F_T": {
+          "denominator": 2,
+          "numerator": 1
+        }
+      },
+      {
+        "F_T_coefficient_without_i_power": {
+          "denominator": 2,
+          "numerator": 1
+        },
+        "anchored_taper_coefficient_without_i_power": {
+          "denominator": 6,
+          "numerator": 1
+        },
+        "degree": 1,
+        "ratio_anchored_to_F_T": {
+          "denominator": 3,
+          "numerator": 1
+        }
+      },
+      {
+        "F_T_coefficient_without_i_power": {
+          "denominator": 6,
+          "numerator": 1
+        },
+        "anchored_taper_coefficient_without_i_power": {
+          "denominator": 24,
+          "numerator": 1
+        },
+        "degree": 2,
+        "ratio_anchored_to_F_T": {
+          "denominator": 4,
+          "numerator": 1
+        }
+      },
+      {
+        "F_T_coefficient_without_i_power": {
+          "denominator": 24,
+          "numerator": 1
+        },
+        "anchored_taper_coefficient_without_i_power": {
+          "denominator": 120,
+          "numerator": 1
+        },
+        "degree": 3,
+        "ratio_anchored_to_F_T": {
+          "denominator": 5,
+          "numerator": 1
+        }
+      },
+      {
+        "F_T_coefficient_without_i_power": {
+          "denominator": 120,
+          "numerator": 1
+        },
+        "anchored_taper_coefficient_without_i_power": {
+          "denominator": 720,
+          "numerator": 1
+        },
+        "degree": 4,
+        "ratio_anchored_to_F_T": {
+          "denominator": 6,
+          "numerator": 1
+        }
+      },
+      {
+        "F_T_coefficient_without_i_power": {
+          "denominator": 720,
+          "numerator": 1
+        },
+        "anchored_taper_coefficient_without_i_power": {
+          "denominator": 5040,
+          "numerator": 1
+        },
+        "degree": 5,
+        "ratio_anchored_to_F_T": {
+          "denominator": 7,
+          "numerator": 1
+        }
+      },
+      {
+        "F_T_coefficient_without_i_power": {
+          "denominator": 5040,
+          "numerator": 1
+        },
+        "anchored_taper_coefficient_without_i_power": {
+          "denominator": 40320,
+          "numerator": 1
+        },
+        "degree": 6,
+        "ratio_anchored_to_F_T": {
+          "denominator": 8,
+          "numerator": 1
+        }
+      },
+      {
+        "F_T_coefficient_without_i_power": {
+          "denominator": 40320,
+          "numerator": 1
+        },
+        "anchored_taper_coefficient_without_i_power": {
+          "denominator": 362880,
+          "numerator": 1
+        },
+        "degree": 7,
+        "ratio_anchored_to_F_T": {
+          "denominator": 9,
+          "numerator": 1
+        }
+      },
+      {
+        "F_T_coefficient_without_i_power": {
+          "denominator": 362880,
+          "numerator": 1
+        },
+        "anchored_taper_coefficient_without_i_power": {
+          "denominator": 3628800,
+          "numerator": 1
+        },
+        "degree": 8,
+        "ratio_anchored_to_F_T": {
+          "denominator": 10,
+          "numerator": 1
+        }
+      }
+    ]
+  },
+  "verification_commands": [
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/bt_fully_rearranged_q10_time_normalization_obstruction.py --write --check",
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/verify_bt_fully_rearranged_q10_time_normalization_obstruction.py",
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 -m unittest -v reverse_physics.tests.test_bt_fully_rearranged_q10_time_normalization_obstruction"
+  ]
+}

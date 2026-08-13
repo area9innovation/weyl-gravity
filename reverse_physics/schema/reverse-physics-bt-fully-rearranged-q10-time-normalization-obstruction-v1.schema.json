@@ -1,0 +1,230 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-fully-rearranged-q10-time-normalization-obstruction-v1.schema.json",
+  "title": "BT fully rearranged q10 time-normalization obstruction certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "schema_version",
+    "certificate",
+    "question",
+    "answer",
+    "dependency_tags",
+    "lifecycle_state",
+    "result_kind",
+    "time_normalization_audit",
+    "bubble_forest_correction",
+    "anchored_distributional_boundary",
+    "supersession_and_retention",
+    "claim_boundary",
+    "assumptions",
+    "does_not_establish",
+    "next_gate",
+    "provenance",
+    "checks",
+    "verification_commands",
+    "report"
+  ],
+  "properties": {
+    "schema": {
+      "const": "reverse_physics/schema/reverse-physics-bt-fully-rearranged-q10-time-normalization-obstruction-v1.schema.json"
+    },
+    "schema_version": {"const": 1},
+    "certificate": {
+      "const": "REVERSE_PHYSICS_BT_FULLY_REARRANGED_Q10_TIME_NORMALIZATION_OBSTRUCTION_V1"
+    },
+    "question": {"type": "string", "minLength": 1},
+    "answer": {"type": "string", "minLength": 900},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "result_kind": {"type": "string", "minLength": 1},
+    "time_normalization_audit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "fixed_total_rule",
+        "tree_cut_root",
+        "tree_center_time_status",
+        "three_vertex_full_sector",
+        "three_vertex_anchored_sector",
+        "exact_factorization",
+        "two_vertex_full_sector",
+        "two_vertex_anchored_sector",
+        "finite_time_mismatch",
+        "two_vertex_series",
+        "three_vertex_series",
+        "status"
+      ],
+      "properties": {
+        "fixed_total_rule": {"const": "Omega=0 on the fully rearranged fixed-total packet carrier"},
+        "tree_cut_root": {"type": "string", "minLength": 1},
+        "tree_center_time_status": {"type": "string", "minLength": 1},
+        "three_vertex_full_sector": {"type": "string", "minLength": 1},
+        "three_vertex_anchored_sector": {"type": "string", "minLength": 1},
+        "exact_factorization": {"const": "I3,T=T*A3,T for every ordering when Omega=0"},
+        "two_vertex_full_sector": {"type": "string", "minLength": 1},
+        "two_vertex_anchored_sector": {"type": "string", "minLength": 1},
+        "finite_time_mismatch": {"const": "A2,T is not F_T; at delta=0, A2,T(0)=T/2 and F_T(0)=T"},
+        "two_vertex_series": {
+          "type": "array",
+          "minItems": 9,
+          "maxItems": 9,
+          "items": {"$ref": "#/$defs/twoVertexRow"}
+        },
+        "three_vertex_series": {
+          "type": "array",
+          "minItems": 9,
+          "maxItems": 9,
+          "items": {"$ref": "#/$defs/threeVertexRow"}
+        },
+        "status": {"const": "EXACT_EXTERNAL_CENTER_TIME_FACTOR_AND_TAPER_MISMATCH"}
+      }
+    },
+    "bubble_forest_correction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "local_derivative",
+        "collapsed_cube",
+        "fixed_total_reduction",
+        "matched_relative_kernel",
+        "corrected_structural_identity",
+        "superseded_identity",
+        "status"
+      ],
+      "properties": {
+        "local_derivative": {"const": "partial_log(mu)b_mu,Q(t_A-t_B)=2*delta(t_A-t_B)"},
+        "collapsed_cube": {"type": "string", "minLength": 1},
+        "fixed_total_reduction": {"type": "string", "minLength": 1},
+        "matched_relative_kernel": {"type": "string", "minLength": 1},
+        "corrected_structural_identity": {"type": "string", "minLength": 1},
+        "superseded_identity": {"const": "partial_log(mu)T6_bb,T=[5/(4*pi^2)]*T4,T"},
+        "status": {"const": "FINITE_TIME_RG_IDENTITY_SUPERSEDED_AT_KERNEL_NORMALIZATION"}
+      }
+    },
+    "anchored_distributional_boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["one_gap", "one_gap_reason", "two_gap", "two_gap_reason", "three_window", "overlap_kernel", "consequence", "status"],
+      "properties": {
+        "one_gap": {"type": "string", "pattern": "pi\\*delta"},
+        "one_gap_reason": {"type": "string", "minLength": 1},
+        "two_gap": {"type": "string", "pattern": "tensor"},
+        "two_gap_reason": {"type": "string", "minLength": 1},
+        "three_window": {"type": "string", "pattern": "\\(2\\*pi\\)\\^2\\*delta"},
+        "overlap_kernel": {"type": "string", "minLength": 1},
+        "consequence": {"type": "string", "minLength": 1},
+        "status": {"const": "MATCHED_ANCHORED_TEMPORAL_BOUNDARIES_IDENTIFIED"}
+      }
+    },
+    "supersession_and_retention": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "q10_selected_packet_assembly",
+        "finite_time_q10_value",
+        "finite_time_q10_RG_identity",
+        "triangle_full_cube",
+        "bubble_bridge_full_cube",
+        "connected_graph_exhaustion",
+        "fully_rearranged_disconnected_support_zeros",
+        "species_and_total_kappa_identities",
+        "conditional_common_Born_identity",
+        "leading_all_time_q8",
+        "status"
+      ],
+      "properties": {
+        "q10_selected_packet_assembly": {"const": "SUPERSEDED_AT_COMMON_TIME_NORMALIZATION"},
+        "finite_time_q10_value": {"const": "NOT_ESTABLISHED_AS_A_COEFFICIENT_OF_ONE_NORMALIZED_EXPERIMENT"},
+        "finite_time_q10_RG_identity": {"const": "SUPERSEDED"},
+        "triangle_full_cube": {"type": "string", "pattern": "RETAINED"},
+        "bubble_bridge_full_cube": {"type": "string", "pattern": "RETAINED"},
+        "connected_graph_exhaustion": {"const": "RETAINED"},
+        "fully_rearranged_disconnected_support_zeros": {"const": "RETAINED"},
+        "species_and_total_kappa_identities": {"const": "RETAINED"},
+        "conditional_common_Born_identity": {"type": "string", "pattern": "RETAINED"},
+        "leading_all_time_q8": {"type": "string", "pattern": "RETAINED"},
+        "status": {"const": "FAIL_CLOSED_CORRECTION_WITH_SCOPED_RETENTION"}
+      }
+    },
+    "claim_boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["matched_finite_time_q10", "all_time_q10", "q10_sign", "finite_coupling_probability", "Moller_LSZ_S", "general_Eq19", "gravity_BV_BRST_QME", "Lorentzian_causal_claim"],
+      "properties": {
+        "matched_finite_time_q10": {"const": "NOT_COMPUTED"},
+        "all_time_q10": {"const": "NOT_COMPUTED"},
+        "q10_sign": {"const": "NOT_DETERMINED"},
+        "finite_coupling_probability": {"const": "NOT_ESTABLISHED"},
+        "Moller_LSZ_S": {"const": "NOT_CONSTRUCTED"},
+        "general_Eq19": {"const": "NOT_PROVED"},
+        "gravity_BV_BRST_QME": {"const": "NOT_CONSTRUCTED"},
+        "Lorentzian_causal_claim": {"const": "NOT_ESTABLISHED"}
+      }
+    },
+    "assumptions": {"type": "array", "minItems": 5, "items": {"type": "string", "minLength": 1}},
+    "does_not_establish": {"type": "array", "minItems": 14, "items": {"type": "string", "minLength": 1}},
+    "next_gate": {"type": "string", "minLength": 100},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_commit", "input_hashes", "method", "generated_by", "independent_verifier"],
+      "properties": {
+        "source_commit": {"const": "fef711b362e06649c4cded0d158add7733ffcaa3"},
+        "input_hashes": {"type": "object", "minProperties": 9, "additionalProperties": {"pattern": "^[0-9a-f]{64}$"}},
+        "method": {"type": "string", "minLength": 1},
+        "generated_by": {"const": "reverse_physics/bt_fully_rearranged_q10_time_normalization_obstruction.py"},
+        "independent_verifier": {"const": "reverse_physics/verify_bt_fully_rearranged_q10_time_normalization_obstruction.py"}
+      }
+    },
+    "checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ok", "passed", "total", "items"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"type": "integer", "minimum": 31},
+        "total": {"type": "integer", "minimum": 31},
+        "items": {"type": "object", "minProperties": 31, "additionalProperties": {"const": true}}
+      }
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "items": {"type": "string", "minLength": 1}},
+    "report": {"const": "reverse_physics/reports/bt-fully-rearranged-q10-time-normalization-obstruction.md"}
+  },
+  "$defs": {
+    "rational": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      }
+    },
+    "twoVertexRow": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["degree", "F_T_coefficient_without_i_power", "anchored_taper_coefficient_without_i_power", "ratio_anchored_to_F_T"],
+      "properties": {
+        "degree": {"type": "integer", "minimum": 0},
+        "F_T_coefficient_without_i_power": {"$ref": "#/$defs/rational"},
+        "anchored_taper_coefficient_without_i_power": {"$ref": "#/$defs/rational"},
+        "ratio_anchored_to_F_T": {"$ref": "#/$defs/rational"}
+      }
+    },
+    "threeVertexRow": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["total_degree", "monomial_count", "anchored_coefficient_without_i_power", "full_coefficient_without_i_power", "full_power_of_T", "anchored_power_of_T"],
+      "properties": {
+        "total_degree": {"type": "integer", "minimum": 0},
+        "monomial_count": {"type": "integer", "minimum": 1},
+        "anchored_coefficient_without_i_power": {"$ref": "#/$defs/rational"},
+        "full_coefficient_without_i_power": {"$ref": "#/$defs/rational"},
+        "full_power_of_T": {"type": "integer", "minimum": 3},
+        "anchored_power_of_T": {"type": "integer", "minimum": 2}
+      }
+    }
+  }
+}
