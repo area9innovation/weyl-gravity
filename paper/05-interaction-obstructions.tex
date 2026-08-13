@@ -289,8 +289,16 @@ Wightman species Gram has signature $(1,1)$, so it cannot be a positive
 vacuum two-point matrix while both public fields remain individually
 Hermitian.  The fundamental-symmetry Hilbertization makes the Gram positive
 but changes the adjoint to $\Omega^*=\Upsilon$.  A Krein-selfadjoint local
-observable then remains Hilbert-selfadjoint exactly when it is ghost-even;
-the compact quadrupole has not yet been certified to satisfy this condition.
+observable then remains Hilbert-selfadjoint exactly when it is ghost-even.
+The compact scalar quadrupole fails this condition on the regular
+perturbative vacuum chart: its hidden image contains
+$\lambda^{-1}\log(\psi/\lambda)$, and an exact scaled mirror-jet family
+approaches $\psi=0$ while retaining a direction-dependent nonzero pair
+coefficient.  Neither parity projection extends continuously there.  A
+minimal cross-paired two-vacuum completion does make the mirrored block
+density local, ghost-even and Hilbert-selfadjoint and preserves the normalized
+dark response, but it doubles the source data and is not selected by the
+public scalar action or $R_t$.
 An exact weak-ghost fixture also separates the generalized Krein Born weight
 $2$ from the ordinary Hilbert weight $3$, so the auxiliary positive topology
 does not silently replace the public probability rule.  The recorded and
@@ -4370,6 +4378,52 @@ $i$ times its ghost-odd part, and its $X_2/X_4$ response and common domains
 rechecked.  Momentum-exchange evenness is not a certificate of internal
 ghost parity.  The positive BT local net, Eq.~(19), its physical quotient,
 and every gravitational or Lorentzian transfer remain open.
+
+For the compact scalar quadrupole this parity gate has a definite outcome.
+Writing the symmetric bilinear density as $D[\phi]=B(\phi,\phi)$ and
+\[
+ g={1\over\lambda}\log{\psi\over\lambda},\qquad h(\phi)=g-\phi,
+\]
+the exact hidden image is
+\[
+ D[h(\phi)]=D[\phi]-2B(\phi,g)+D[g].
+\]
+Thus both parity projections contain $D[g]/2$ and are defined only on the
+overlap $\psi\ne0$.  This singularity is not removable.  Set $\phi=0$ and
+$\psi_t=\lambda t e^{\lambda f}$.  Every finite $\psi_t$ jet tends to zero
+as $t\to0$, whereas $h(0)=\lambda^{-1}\log t+f$.  The constant logarithm has
+no selected nonzero-momentum pair coefficient, so the hidden quadrupole
+coefficient is that of $D[f]$, independent of $t$.  On the exact fixture
+\[
+ P=(1,0,0,0),\qquad r=(0,1/2,0,0),\qquad a=(0,1,0,0),
+\]
+that coefficient is one; choosing $f=0$ gives zero with the same limiting
+vacuum jet.  Hence neither the hidden image nor its even/odd projections has
+a single-valued regular same-chart extension to $\psi=0$.
+
+There is a minimal changed-theory repair.  Put the two exchanged vacuum
+charts on sheets $A,B$ with
+\[
+ G=\kappa=\begin{pmatrix}0&1\\1&0\end{pmatrix},\qquad G\kappa=I,
+ \qquad D_{\rm dbl}=\operatorname{diag}(D_A,D_B).
+\]
+For identically transported mirror dynamics,
+$\kappa D_{\rm dbl}\kappa=D_{\rm dbl}$ and
+$D_{\rm dbl}^{\sharp}=D_{\rm dbl}^{*}=D_{\rm dbl}$.  The normalized
+symmetric sheet projector
+$P_+=\tfrac12\left(\begin{smallmatrix}1&1\\1&1\end{smallmatrix}\right)$
+retains the single-sheet amplitude rather than doubling it.  The exact
+leading darkness and the compact bound
+$Q_{8,\rm compact}/\bar q_4>1/18874368000$ therefore survive on that declared
+symmetric sector.  Certificate
+\par\noindent
+\texttt{REVERSE\_PHYSICS\_BT\_QUADRUPOLE\_MIRROR\_SHEET\_}
+\allowbreak\texttt{DICHOTOMY\_V1}
+\par\noindent
+certifies both statements.  The doubled source and mirror dynamics are
+additional data: the public one-sheet scalar action and $R_t$ do not select
+them.  This is not Eq.~(19), a positive local-net construction, or a
+gravitational or Lorentzian result.
 
 The effect itself has a finite Hamiltonian realization.  For the phased
 antisymmetric angle projector

@@ -1,0 +1,34 @@
+{
+  "id": "sf:program/work/reverse-physics-bateman-quadrupole-mirror-sheet-dichotomy",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "reverse-physics",
+    "state": "ACTIVE",
+    "objective": "Decide whether the compact scalar quadrupole can satisfy the positive-Hilbert ghost-even local-observable gate on the regular Bateman--Turok perturbative vacuum chart, and classify the smallest mirror-sheet completion if it cannot.",
+    "depends_on": [
+      "REVERSE_PHYSICS_BT_COMPACT_SPACETIME_QUADRUPOLE_DARK_DETECTOR_Q8_V1",
+      "REVERSE_PHYSICS_BT_POSITIVE_LOCAL_REAL_STRUCTURE_DICHOTOMY_V1",
+      "REVERSE_PHYSICS_BT_PERTURBATIVE_GHOST_PARITY_UNIT_OBSTRUCTION_V1"
+    ],
+    "activates": [
+      "a quadrupole-specific same-chart ghost-parity test",
+      "an exact nonextension witness at the psi=0 perturbative vacuum",
+      "the minimal cross-paired two-sheet positive local carrier",
+      "a precise changed-theory boundary for the inherited dark q8 response"
+    ],
+    "current_gate": "Apply the exact hidden exchange phi -> lambda^-1 log(psi/lambda)-phi to the bilinear quadrupole, test regularity at psi=0 with a scaled mirror-jet family, and then compute the adjoints and response normalization on the minimal two-sheet cross-paired carrier.",
+    "stop_condition": "Land a CLASSIFIED LOCAL-ALGEBRAIC/REDUCED-MODE certificate with an independent verifier, adversarial tests and report. It must distinguish a public same-chart obstruction from a constructive but changed doubled theory, preserve the existing q8 coefficient boundary, and make no Eq. (19), local-net, gravity or Lorentzian promotion.",
+    "forbid": "no claim that every BT detector is impossible; no identification of daughter exchange with ghost parity; no claim that the doubled carrier is selected by the public scalar action or public R_t; no general Eq. (19), positive Haag--Kastler, gravity, QME or LORENTZIAN-CAUSAL promotion; no literature-priority claim",
+    "allowed_paths": [
+      "reverse_physics/",
+      "paper/05-interaction-obstructions.tex",
+      "paper/05-interaction-obstructions.pdf",
+      "paper/06-einstein-weyl-interaction-obstructions.tex",
+      "paper/06-einstein-weyl-interaction-obstructions.pdf",
+      "planning/work-items/reverse-physics-bateman-quadrupole-mirror-sheet-dichotomy.json",
+      "planning/events/"
+    ],
+    "resource_hint": "For a symmetric bilinear density D[phi], hidden exchange gives D[g-phi]=D[phi]-2B(phi,g)+D[g], g=lambda^-1 log(psi/lambda). At phi=0 choose psi_t=lambda*t*exp(lambda*f). Every finite psi jet tends to zero with t, while the pair Fourier coefficient of D[g] at k1+k2 is the nonzero quadrupole coefficient of f and is independent of t. Hence the parity image and its even/odd projections have no regular continuous extension to psi=0. On two mirror sheets use G=kappa=swap and the block-diagonal mirrored density; G*kappa=I, the density is ghost-even and Hilbert-selfadjoint, and normalized symmetric source/detector projections retain the single-sheet response rather than doubling it. This is a changed doubled theory, not public Eq. (19)."
+  }
+}

@@ -1,0 +1,133 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-quadrupole-mirror-sheet-dichotomy-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "schema_version", "certificate", "question", "answer",
+    "result_kind", "lifecycle_state", "dependency_tags", "assumptions",
+    "provenance", "same_chart_hidden_image", "scaled_mirror_jet_witness",
+    "minimal_mirror_sheet_completion", "response_transfer", "disposition",
+    "does_not_establish", "next_gate", "checks", "verification_commands",
+    "report"
+  ],
+  "properties": {
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-quadrupole-mirror-sheet-dichotomy-v1.schema.json"},
+    "schema_version": {"const": 1},
+    "certificate": {"const": "REVERSE_PHYSICS_BT_QUADRUPOLE_MIRROR_SHEET_DICHOTOMY_V1"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "assumptions": {
+      "type": "array", "minItems": 7, "maxItems": 7,
+      "items": {"$ref": "#/$defs/text"}
+    },
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_commit", "retrieval_date", "inputs", "generated_by", "independent_verifier", "method"],
+      "properties": {
+        "source_commit": {"const": "a0527532999cf0b899508f7e2e81644130955886"},
+        "retrieval_date": {"const": "2026-08-13"},
+        "inputs": {
+          "type": "array", "minItems": 5, "maxItems": 5,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["path", "sha256"],
+            "properties": {
+              "path": {"$ref": "#/$defs/text"},
+              "sha256": {"$ref": "#/$defs/hash"}
+            }
+          }
+        },
+        "generated_by": {"const": "reverse_physics/bt_quadrupole_mirror_sheet_dichotomy.py"},
+        "independent_verifier": {"const": "reverse_physics/verify_bt_quadrupole_mirror_sheet_dichotomy.py"},
+        "method": {"$ref": "#/$defs/text"}
+      }
+    },
+    "same_chart_hidden_image": {
+      "type": "object", "additionalProperties": false,
+      "required": ["hidden_field", "transform", "bilinear_formula", "even_projection", "odd_projection", "overlap_domain", "vacuum_chart", "conclusion", "status"],
+      "properties": {
+        "hidden_field": {"const": "g=lambda^-1*log(psi/lambda)"},
+        "transform": {"const": "h(phi)=g-phi"},
+        "bilinear_formula": {"const": "D[h(phi)]=D[phi]-2*B(phi,g)+D[g]"},
+        "even_projection": {"const": "D_even=D[phi]-B(phi,g)+D[g]/2"},
+        "odd_projection": {"const": "D_odd=B(phi,g)-D[g]/2"},
+        "overlap_domain": {"$ref": "#/$defs/text"},
+        "vacuum_chart": {"const": "psi=0"},
+        "conclusion": {"const": "THE_COMPACT_SCALAR_QUADRUPOLE_IS_NOT_A_REGULAR_SAME_CHART_GHOST_EVEN_OBSERVABLE"},
+        "status": {"const": "OBSTRUCTED"}
+      }
+    },
+    "scaled_mirror_jet_witness": {
+      "type": "object", "additionalProperties": false,
+      "required": ["family", "limit", "hidden_image", "selected_pair_momenta", "quadrupole_pair_coefficient", "sample_t", "sample_pair_coefficients", "direction_comparison", "conclusion", "status"],
+      "properties": {
+        "family": {"$ref": "#/$defs/text"},
+        "limit": {"$ref": "#/$defs/text"},
+        "hidden_image": {"$ref": "#/$defs/text"},
+        "selected_pair_momenta": {"$ref": "#/$defs/text"},
+        "quadrupole_pair_coefficient": {"const": "1"},
+        "sample_t": {"const": ["1", "1/2", "1/3", "1/5"]},
+        "sample_pair_coefficients": {"const": ["1", "1", "1", "1"]},
+        "direction_comparison": {"$ref": "#/$defs/text"},
+        "conclusion": {"const": "NO_SINGLE_VALUED_REGULAR_CONTINUOUS_EXTENSION_OF_THE_HIDDEN_QUADRUPOLE_IMAGE_TO_PSI_ZERO"},
+        "status": {"const": "PROVED_BY_EXACT_PATH_WITNESS"}
+      }
+    },
+    "minimal_mirror_sheet_completion": {
+      "type": "object", "additionalProperties": false,
+      "required": ["sheet_basis", "Krein_Gram_G", "fundamental_symmetry_kappa", "positive_Hilbert_Gram", "even_sheet_projector", "mirrored_density_fixture", "ghost_identity", "adjoints", "locality", "source_cost", "status"],
+      "properties": {
+        "sheet_basis": {"const": ["A vacuum sheet", "B mirror-vacuum sheet"]},
+        "Krein_Gram_G": {"const": [["0", "1"], ["1", "0"]]},
+        "fundamental_symmetry_kappa": {"const": [["0", "1"], ["1", "0"]]},
+        "positive_Hilbert_Gram": {"const": [["1", "0"], ["0", "1"]]},
+        "even_sheet_projector": {"const": [["1/2", "1/2"], ["1/2", "1/2"]]},
+        "mirrored_density_fixture": {"const": [["3/5", "0"], ["0", "3/5"]]},
+        "ghost_identity": {"const": "kappa D_double kappa=D_double"},
+        "adjoints": {"const": ["D_double^sharp=D_double", "D_double*=D_double"]},
+        "locality": {"$ref": "#/$defs/text"},
+        "source_cost": {"$ref": "#/$defs/text"},
+        "status": {"const": "CONSTRUCTED_AS_A_CHANGED_DOUBLED_THEORY"}
+      }
+    },
+    "response_transfer": {
+      "type": "object", "additionalProperties": false,
+      "required": ["single_sheet_fixture_amplitude", "normalized_symmetric_amplitude", "leading_scalar_response", "higher_quadrupole_response", "single_sheet_fixture_probability", "symmetric_fixture_probability", "inherited_compact_q8_lower", "normalization_statement", "status"],
+      "properties": {
+        "single_sheet_fixture_amplitude": {"const": "3/5"},
+        "normalized_symmetric_amplitude": {"const": "3/5"},
+        "leading_scalar_response": {"$ref": "#/$defs/text"},
+        "higher_quadrupole_response": {"$ref": "#/$defs/text"},
+        "single_sheet_fixture_probability": {"const": "9/25"},
+        "symmetric_fixture_probability": {"const": "9/25"},
+        "inherited_compact_q8_lower": {"const": "Q8_compact/q4_bar>1/18874368000"},
+        "normalization_statement": {"$ref": "#/$defs/text"},
+        "status": {"const": "PRESERVED_EXACTLY_ON_THE_DECLARED_MIRROR_SYMMETRIC_SECTOR"}
+      }
+    },
+    "disposition": {"type": "object", "minProperties": 10, "maxProperties": 10, "additionalProperties": {"$ref": "#/$defs/text"}},
+    "does_not_establish": {"type": "array", "minItems": 11, "maxItems": 11, "items": {"$ref": "#/$defs/text"}},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "checks": {
+      "type": "object", "additionalProperties": false,
+      "required": ["total", "passed", "ok", "failures", "details"],
+      "properties": {
+        "total": {"const": 34},
+        "passed": {"const": 34},
+        "ok": {"const": true},
+        "failures": {"const": []},
+        "details": {"type": "object", "minProperties": 34, "maxProperties": 34, "additionalProperties": {"const": true}}
+      }
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/text"}},
+    "report": {"const": "reverse_physics/reports/bt-quadrupole-mirror-sheet-dichotomy.md"}
+  },
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

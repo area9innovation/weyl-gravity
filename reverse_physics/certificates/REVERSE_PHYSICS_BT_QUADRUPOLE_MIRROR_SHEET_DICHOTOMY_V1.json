@@ -1,0 +1,233 @@
+{
+  "answer": "Not on the regular same chart. For the symmetric bilinear quadrupole D and g=lambda^-1 log(psi/lambda), hidden exchange gives D[g-phi]=D[phi]-2B(phi,g)+D[g]. At phi=0 the original density vanishes while its mirror has a nonzero pair Fourier coefficient. More strongly, along psi_t=lambda*t*exp(lambda*f), every finite psi jet tends to the perturbative value zero as t tends to zero, but the selected pair coefficient of D[lambda^-1 log(psi_t/lambda)] is the nonzero quadrupole coefficient of f and is independent of t. Hence the hidden image and both parity projections have no regular continuous extension to psi=0. The minimal cross-paired two-sheet completion is constructive: with sheet Gram G=kappa=swap, the Hilbert Gram is I and the block density diag(D_A,D_B) is local sheetwise, ghost-even, Krein-selfadjoint and Hilbert-selfadjoint. On normalized symmetric source and detector sectors its mirror amplitudes average to the original amplitude, so exact leading darkness and the inherited strict compact q8 lower bound are preserved without a factor of two. This completion doubles the vacuum/source data and is not selected by the public scalar action, R_t or Eq. (19).",
+  "assumptions": [
+    "the compact quadrupole is the certified real symmetric bilinear finite-derivative density with nonzero central pair symbol",
+    "the exact extended-field hidden exchange is phi -> lambda^-1 log(psi/lambda)-phi on the overlap psi!=0",
+    "regularity at the perturbative vacuum means continuity in finite local jets at psi=0",
+    "the scaled mirror family uses smooth local jets f whose selected two-plane-wave quadrupole coefficient is nonzero",
+    "the doubled completion contains two isomorphic local sheets related by exact exchange and uses the cross sheet Krein pairing",
+    "mirror dynamics, source and detector packets are transported identically between the sheets",
+    "no public dynamical principle selecting the doubled symmetric source is assumed"
+  ],
+  "certificate": "REVERSE_PHYSICS_BT_QUADRUPOLE_MIRROR_SHEET_DICHOTOMY_V1",
+  "checks": {
+    "details": {
+      "all_mirror_path_jets_approach_zero": true,
+      "central_quadrupole_pair_coefficient_is_one": true,
+      "compressed_density_is_response_times_even_projector": true,
+      "done_event_matches_work_item": true,
+      "doubled_source_is_additional_data": true,
+      "even_sheet_projector_is_ghost_even": true,
+      "even_sheet_projector_is_idempotent": true,
+      "general_Eq19_remains_open": true,
+      "gravity_and_Lorentzian_boundaries_remain_open": true,
+      "hidden_image_bilinear_expansion_is_exact": true,
+      "inputs_are_content_pinned": true,
+      "leading_darkness_is_preserved_sheetwise": true,
+      "literature_priority_is_forbidden": true,
+      "mirror_pair_coefficient_is_direction_dependent": true,
+      "mirror_pair_coefficient_is_scale_independent": true,
+      "mirrored_density_is_Hilbert_selfadjoint": true,
+      "mirrored_density_is_Krein_selfadjoint": true,
+      "mirrored_density_is_ghost_even": true,
+      "no_regular_continuous_extension_at_psi_zero": true,
+      "phi_zero_has_zero_original_quadrupole": true,
+      "phi_zero_mirror_has_nonzero_quadrupole": true,
+      "positive_local_net_remains_open": true,
+      "public_Rt_does_not_select_doubling": true,
+      "quadrupole_predecessor_is_compact_spacetime": true,
+      "real_structure_requires_internal_ghost_evenness": true,
+      "regular_hidden_parity_is_already_obstructed": true,
+      "same_chart_even_projection_is_not_regular": true,
+      "same_chart_odd_projection_is_not_regular": true,
+      "sheet_Gram_is_cross_pairing": true,
+      "sheet_Hilbert_Gram_is_identity": true,
+      "sheet_kappa_is_involution": true,
+      "strict_q8_lower_is_inherited_without_doubling": true,
+      "symmetric_response_is_single_sheet_response": true,
+      "three_predecessors_pass": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 34,
+    "total": 34
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "disposition": {
+    "Lorentzian_causal_BT_claim": "NOT_ESTABLISHED",
+    "dark_q8_response_in_doubled_theory": "INHERITED_WITH_THE_SAME_NORMALIZED_COEFFICIENT_BOUND",
+    "general_Eq19": "NOT_PROVED",
+    "gravity_or_metric_BV_BRST_transfer": "NOT_CONSTRUCTED",
+    "minimal_mirror_sheet_observable": "LOCAL_GHOST_EVEN_AND_HILBERT_SELFADJOINT",
+    "positive_BT_Haag_Kastler_net": "NOT_CONSTRUCTED",
+    "public_Rt_selects_doubling": "NO",
+    "public_scalar_action_selects_doubling": "NO",
+    "regular_same_chart_even_or_odd_projection": "NOT_DEFINED_AT_THE_PERTURBATIVE_VACUUM",
+    "regular_same_chart_quadrupole_ghost_parity": "OBSTRUCTED"
+  },
+  "does_not_establish": [
+    "that every local or almost-local BT detector is impossible",
+    "a no-go for singular, localized, on-shell, unbounded or nonperturbative hidden parity",
+    "that the doubled mirror-sheet theory is equivalent to the public scalar theory",
+    "that the public scalar action or R_t prepares the symmetric two-sheet source",
+    "a positive Haag--Kastler net, Reeh--Schlieder theorem or full domain construction",
+    "the standard scalar projector or general Bateman--Turok Eq. (19)",
+    "an all-order Born rule, finite-time evolution or all-time scattering operator",
+    "the sign of the lambda10 or higher dark-detector remainder",
+    "gravity, metric BV--BRST, QME restoration or residual transfer",
+    "anything LORENTZIAN-CAUSAL",
+    "literature priority"
+  ],
+  "lifecycle_state": "CLASSIFIED",
+  "minimal_mirror_sheet_completion": {
+    "Krein_Gram_G": [
+      [
+        "0",
+        "1"
+      ],
+      [
+        "1",
+        "0"
+      ]
+    ],
+    "adjoints": [
+      "D_double^sharp=D_double",
+      "D_double*=D_double"
+    ],
+    "even_sheet_projector": [
+      [
+        "1/2",
+        "1/2"
+      ],
+      [
+        "1/2",
+        "1/2"
+      ]
+    ],
+    "fundamental_symmetry_kappa": [
+      [
+        "0",
+        "1"
+      ],
+      [
+        "1",
+        "0"
+      ]
+    ],
+    "ghost_identity": "kappa D_double kappa=D_double",
+    "locality": "D_double is block-local in A(O) direct-sum B(O); exchange swaps the two local summands",
+    "mirrored_density_fixture": [
+      [
+        "3/5",
+        "0"
+      ],
+      [
+        "0",
+        "3/5"
+      ]
+    ],
+    "positive_Hilbert_Gram": [
+      [
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "1"
+      ]
+    ],
+    "sheet_basis": [
+      "A vacuum sheet",
+      "B mirror-vacuum sheet"
+    ],
+    "source_cost": "the symmetric two-sheet source and its mirror dynamics are additional data not contained in the one-sheet perturbative scalar chart",
+    "status": "CONSTRUCTED_AS_A_CHANGED_DOUBLED_THEORY"
+  },
+  "next_gate": "For the public one-sheet physical route, abandon regular same-chart parity projection of the scalar quadrupole. Either derive a polynomial ghost-even auxiliary Omega/Upsilon detector directly from the public Hamiltonian and recompute its q8 response, or explicitly adopt the doubled mirror-vacuum theory and construct its common local domains and dynamics. Eq. (19) remains a separate singular/localized/doubled projector problem.",
+  "provenance": {
+    "generated_by": "reverse_physics/bt_quadrupole_mirror_sheet_dichotomy.py",
+    "independent_verifier": "reverse_physics/verify_bt_quadrupole_mirror_sheet_dichotomy.py",
+    "inputs": [
+      {
+        "path": "planning/work-items/reverse-physics-bateman-quadrupole-mirror-sheet-dichotomy.json",
+        "sha256": "093d27615da29027bb10094b7e8fb0d40755f5a63401aaa56e5754ad70d58853"
+      },
+      {
+        "path": "planning/events/reverse-physics-bateman-quadrupole-mirror-sheet-dichotomy-DONE-a0527532.json",
+        "sha256": "950ec022335a81007585a8cdefc36e54ccb1702033bb801d0b00bd668a6174f7"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_COMPACT_SPACETIME_QUADRUPOLE_DARK_DETECTOR_Q8_V1.json",
+        "sha256": "b37d25f9db6130ee1b4f5ce6d8beef573b2329ac90c7ae078ea510f58214c908"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_POSITIVE_LOCAL_REAL_STRUCTURE_DICHOTOMY_V1.json",
+        "sha256": "650b7b246c8cb4cc4dd677271786d0150d6742eccada33f74801108aa98dfe33"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_PERTURBATIVE_GHOST_PARITY_UNIT_OBSTRUCTION_V1.json",
+        "sha256": "ec50a99c058632ab3252e9f9bcbab9626f714f791291499c42827ec46f8e4f81"
+      }
+    ],
+    "method": "Exact rational evaluation of the covariant quadrupole on a central two-mode fixture; a scaled mirror-jet nonextension argument at psi=0; and independent two-by-two cross-sheet Gram, adjoint, projector and response calculations. No floating-point arithmetic enters the claim.",
+    "retrieval_date": "2026-08-13",
+    "source_commit": "a0527532999cf0b899508f7e2e81644130955886"
+  },
+  "question": "Can the compact scalar quadrupole be made ghost-even and positive-Hilbert self-adjoint on the regular public perturbative vacuum chart, and what is the smallest constructive completion if not?",
+  "report": "reverse_physics/reports/bt-quadrupole-mirror-sheet-dichotomy.md",
+  "response_transfer": {
+    "higher_quadrupole_response": "equal nonzero mirror amplitudes average to the single-sheet amplitude",
+    "inherited_compact_q8_lower": "Q8_compact/q4_bar>1/18874368000",
+    "leading_scalar_response": "zero on each sheet and therefore zero on the symmetric sheet sector",
+    "normalization_statement": "normalizing both the symmetric source and symmetric detector removes the apparent factor two",
+    "normalized_symmetric_amplitude": "3/5",
+    "single_sheet_fixture_amplitude": "3/5",
+    "single_sheet_fixture_probability": "9/25",
+    "status": "PRESERVED_EXACTLY_ON_THE_DECLARED_MIRROR_SYMMETRIC_SECTOR",
+    "symmetric_fixture_probability": "9/25"
+  },
+  "result_kind": "quadrupole-specific regular-chart ghost-parity obstruction together with the minimal constructive cross-paired mirror-sheet positive-local completion",
+  "same_chart_hidden_image": {
+    "bilinear_formula": "D[h(phi)]=D[phi]-2*B(phi,g)+D[g]",
+    "conclusion": "THE_COMPACT_SCALAR_QUADRUPOLE_IS_NOT_A_REGULAR_SAME_CHART_GHOST_EVEN_OBSERVABLE",
+    "even_projection": "D_even=D[phi]-B(phi,g)+D[g]/2",
+    "hidden_field": "g=lambda^-1*log(psi/lambda)",
+    "odd_projection": "D_odd=B(phi,g)-D[g]/2",
+    "overlap_domain": "psi!=0 with a chosen logarithm branch",
+    "status": "OBSTRUCTED",
+    "transform": "h(phi)=g-phi",
+    "vacuum_chart": "psi=0"
+  },
+  "scaled_mirror_jet_witness": {
+    "conclusion": "NO_SINGLE_VALUED_REGULAR_CONTINUOUS_EXTENSION_OF_THE_HIDDEN_QUADRUPOLE_IMAGE_TO_PSI_ZERO",
+    "direction_comparison": "f=0 gives zero selected pair coefficient while the declared f gives one, although both scaled psi families have the same zero jet limit",
+    "family": "phi=0, psi_t=lambda*t*exp(lambda*f), t>0",
+    "hidden_image": "h(phi)=lambda^-1*log(t)+f",
+    "limit": "every finite psi_t jet tends to zero as t tends to zero",
+    "quadrupole_pair_coefficient": "1",
+    "sample_pair_coefficients": [
+      "1",
+      "1",
+      "1",
+      "1"
+    ],
+    "sample_t": [
+      "1",
+      "1/2",
+      "1/3",
+      "1/5"
+    ],
+    "selected_pair_momenta": "P=(1,0,0,0), r=(0,1/2,0,0), a=(0,1,0,0)",
+    "status": "PROVED_BY_EXACT_PATH_WITNESS"
+  },
+  "schema": "reverse_physics/schema/reverse-physics-bt-quadrupole-mirror-sheet-dichotomy-v1.schema.json",
+  "schema_version": 1,
+  "verification_commands": [
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/bt_quadrupole_mirror_sheet_dichotomy.py --write --check",
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/verify_bt_quadrupole_mirror_sheet_dichotomy.py",
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 -m unittest -v reverse_physics.tests.test_bt_quadrupole_mirror_sheet_dichotomy"
+  ]
+}

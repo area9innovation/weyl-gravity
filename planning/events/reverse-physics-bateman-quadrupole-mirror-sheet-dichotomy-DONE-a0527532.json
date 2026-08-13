@@ -1,0 +1,32 @@
+{
+  "schema": "event-v0",
+  "id": "sf:program/event/reverse-physics-bateman-quadrupole-mirror-sheet-dichotomy-DONE-a0527532",
+  "kind": "event",
+  "source": {
+    "path": "tools/science-forge/program/events/reverse-physics-bateman-quadrupole-mirror-sheet-dichotomy-DONE-a0527532.json",
+    "span": null
+  },
+  "body": {
+    "event_kind": "WORK_ITEM_TRANSITIONED",
+    "actor": "reverse-physics",
+    "base_revision": "science-forge-ir-v0",
+    "predecessors": [],
+    "when": "2026-08-13",
+    "seq": 1,
+    "payload": {
+      "target": "sf:program/work/reverse-physics-bateman-quadrupole-mirror-sheet-dichotomy",
+      "to_state": "DONE",
+      "note": "The compact scalar quadrupole is not ghost-even on the regular perturbative vacuum chart. Its exact hidden image uses g=lambda^-1 log(psi/lambda); a scaled mirror-jet family approaches psi=0 while retaining a nonzero direction-dependent pair coefficient, proving that neither the image nor the parity projections extend regularly there. A minimal two-sheet cross-paired carrier does make the mirrored block density local, ghost-even and Hilbert-selfadjoint and preserves the inherited dark q8 response on the normalized symmetric sector. This is a constructive changed-theory architecture, not the public scalar theory, public R_t or Eq. (19). Evidence: REVERSE_PHYSICS_BT_QUADRUPOLE_MIRROR_SHEET_DICHOTOMY_V1."
+    },
+    "native": {
+      "authored_by": "exact bilinear parity expansion, scaled mirror-jet nonextension and cross-paired sheet algebra",
+      "policy": "append-only; all predecessor certificates remain unchanged"
+    }
+  },
+  "edges": [
+    {
+      "rel": "TRANSITIONS",
+      "to": "sf:program/work/reverse-physics-bateman-quadrupole-mirror-sheet-dichotomy"
+    }
+  ]
+}
