@@ -280,9 +280,11 @@ is not assessed; and observational agreement is not represented by the current
 schema. A multi-carrier maximum is therefore labelled a coverage envelope, not
 a completed theory. The **Assemblies** view adds seven named prototype
 envelopes, a six-stage hard-gate chain, 49 explicitly typed cross-cell joins,
-and an empirical benchmark ledger. All current joins are `NOT_ASSESSED` and
-the empirical ledger is empty, so every prototype remains fail-closed before
-theory or observational completion:
+and an empirical benchmark ledger. One finite-corner state-to-probability join
+is now a certified `CONDITIONAL_BRIDGE` and appears in two compatible
+prototypes. The other joins remain `NOT_ASSESSED`, and the empirical ledger is
+empty, so every prototype remains fail-closed before theory or observational
+completion:
 
 ```bash
 python3 foundations/build_matrix_site.py
@@ -291,9 +293,13 @@ python3 foundations/check_matrix_site.py
 python3 foundations/verify_matrix_site.py
 python3 foundations/verify_theory_viability.py
 python3 foundations/verify_theory_assembly.py
+python3 foundations/verify_bt_corner_born_interface.py
+python3 foundations/verify_refined_intersection_cube_v5.py
 python3 -m unittest foundations.tests.test_matrix_site
 python3 -m unittest foundations.tests.test_theory_viability
 python3 -m unittest foundations.tests.test_theory_assembly
+python3 -m unittest foundations.tests.test_bt_corner_born_interface
+python3 -m unittest foundations.tests.test_refined_intersection_cube_v5
 python3 -m http.server 8000 --directory foundations/site
 ```
 
@@ -336,6 +342,25 @@ python3 foundations/build_coded_wave_frontier_v2.py --check
 python3 foundations/verify_coded_wave_frontier_v2.py
 python3 foundations/refine_intersection_cube_v4.py --check
 python3 foundations/verify_refined_intersection_cube_v4.py
+```
+
+The first object-level cross-cell composition proof is the
+[`finite-corner state-to-probability interface`](reports/bt-corner-born-interface.md).
+It pins one algebraic corner state and reuses that identical functional to
+evaluate public Krein process effects. Under five explicit hypotheses, exact
+probabilities are nonnegative and normalized; the independent rational witness
+gives `9/25`, `16/25`, and `0`. The append-only
+[`cube v5`](reports/refined-intersection-cube-v5.md) therefore promotes the
+classical-standard Krein probability cell from `PIECES_ONLY` to `LOCAL_RESULT`
+without changing any earlier coordinate or migration decision:
+
+```bash
+python3 foundations/build_bt_corner_born_interface.py --check
+python3 foundations/check_bt_corner_born_interface.py
+python3 foundations/verify_bt_corner_born_interface.py
+python3 foundations/refine_intersection_cube_v5.py --check
+python3 foundations/check_refined_intersection_cube_v5.py
+python3 foundations/verify_refined_intersection_cube_v5.py
 ```
 
 The append-only

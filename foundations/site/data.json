@@ -368,10 +368,10 @@
       "G": 30,
       "L": 76,
       "LR": 7,
-      "Lr": 5,
+      "Lr": 6,
       "P": 20,
       "Pl": 75,
-      "Plr": 14,
+      "Plr": 13,
       "Pr": 51,
       "R": 90,
       "Rl": 3,
@@ -379,16 +379,16 @@
     },
     "evidence_role_counts": {
       "DIRECT_LITERATURE": 84,
-      "DIRECT_LOCAL": 76,
+      "DIRECT_LOCAL": 78,
       "SUPPORTING": 267,
       "UNREVIEWED": 191
     },
     "synthetic_not_mapped": 124,
     "status_counts": {
       "LITERATURE_RESULT": 93,
-      "LOCAL_RESULT": 88,
+      "LOCAL_RESULT": 89,
       "NOT_MAPPED": 205,
-      "PIECES_ONLY": 160,
+      "PIECES_ONLY": 159,
       "PRIORITY_GAP": 30
     },
     "migration_status_counts": {
@@ -399,7 +399,7 @@
       "REVIEWED_NO_TRANSFER": 88,
       "REVIEWED_OVERLAY": 11
     },
-    "evidence_records": 69
+    "evidence_records": 70
   },
   "cells": [
     {
@@ -2110,12 +2110,14 @@
       "evidence": [
         "FOUNDATIONAL_BT_SEPARABLE_STATE_CHAIN_ZF_V1",
         "haag-kastler-1964",
-        "FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1"
+        "FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1",
+        "FOUNDATIONAL_BT_CORNER_BORN_INTERFACE_V1"
       ],
       "evidence_roles": {
         "FOUNDATIONAL_BT_SEPARABLE_STATE_CHAIN_ZF_V1": "DIRECT_LOCAL",
         "haag-kastler-1964": "SUPPORTING",
-        "FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1": "SUPPORTING"
+        "FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1": "SUPPORTING",
+        "FOUNDATIONAL_BT_CORNER_BORN_INTERFACE_V1": "DIRECT_LOCAL"
       },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
@@ -2128,6 +2130,14 @@
         "FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1"
       ],
       "migration_rationale": "The explicit v1 evidence-capability registry licenses transfer to this child.",
+      "interface_revision": {
+        "certificate": "FOUNDATIONAL_BT_CORNER_BORN_INTERFACE_V1",
+        "interface_id": "STATE_TO_PROBABILITY",
+        "relation": "CONDITIONAL_BRIDGE",
+        "role": "SOURCE",
+        "previous_status": "LOCAL_RESULT",
+        "status_change": false
+      },
       "emitted": true
     },
     {
@@ -2896,21 +2906,23 @@
       "foundation": "CLASSICAL_STANDARD",
       "carrier": "KREIN_INDEFINITE",
       "obligation": "PROBABILITY_RULE",
-      "status": "PIECES_ONLY",
+      "status": "LOCAL_RESULT",
       "evidence": [
         "bateman-turok-2026",
         "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1",
-        "FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1"
+        "FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1",
+        "FOUNDATIONAL_BT_CORNER_BORN_INTERFACE_V1"
       ],
       "evidence_roles": {
         "bateman-turok-2026": "SUPPORTING",
         "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1": "SUPPORTING",
-        "FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1": "SUPPORTING"
+        "FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1": "SUPPORTING",
+        "FOUNDATIONAL_BT_CORNER_BORN_INTERFACE_V1": "DIRECT_LOCAL"
       },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "CAPABILITY_QUALIFIED",
-      "summary": "Refined child 'Probability rule': registered evidence supports this child.",
-      "boundary": "The v0 parent status is not inherited by sibling obligations. State existence and a conditional nonselection theorem do not supply a physical Weyl state or generalized Born rule.",
+      "summary": "A certified conditional bridge evaluates the shared finite-corner state on public Krein process effects and proves exact nonnegative normalized event probabilities under five explicit hypotheses.",
+      "boundary": "The promotion is restricted to finite detector corners, finite exhaustive partitions, paired-domain preservation, cross-Krein isometry, and weak ghost orthogonality; it is not an arbitrary-process, thermodynamic, all-order, or empirical Born rule.",
       "migration_status": "CAPABILITY_QUALIFIED",
       "migration_evidence": [
         "bateman-turok-2026",
@@ -2918,6 +2930,14 @@
         "FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1"
       ],
       "migration_rationale": "The explicit v1 evidence-capability registry licenses transfer to this child.",
+      "interface_revision": {
+        "certificate": "FOUNDATIONAL_BT_CORNER_BORN_INTERFACE_V1",
+        "interface_id": "STATE_TO_PROBABILITY",
+        "relation": "CONDITIONAL_BRIDGE",
+        "role": "TARGET",
+        "previous_status": "PIECES_ONLY",
+        "status_change": true
+      },
       "emitted": true
     },
     {
@@ -12932,6 +12952,45 @@
     }
   ],
   "evidence": {
+    "FOUNDATIONAL_BT_CORNER_BORN_INTERFACE_V1": {
+      "id": "FOUNDATIONAL_BT_CORNER_BORN_INTERFACE_V1",
+      "kind": "LOCAL_RESULT",
+      "result_kind": "CERTIFIED_CROSS_CELL_INTERFACE",
+      "lifecycle": "SUFFICIENCY_PROVED",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE"
+      ],
+      "claim_flags": {
+        "cross_cell_interface_certified": true,
+        "same_corner_state_used_on_both_sides": true,
+        "event_effect_map_constructed": true,
+        "conditional_probabilities_nonnegative": true,
+        "conditional_probabilities_normalized": true,
+        "interface_independent_rederivation_passed": true,
+        "predecessor_note_only_provenance_drift_recorded": true,
+        "legacy_semifinite_source_verifier_passed": false,
+        "arbitrary_krein_process_probability_rule": false,
+        "physical_thermodynamic_state_selected": false,
+        "all_order_bt_probability_constructed": false,
+        "lorentzian_claim": false
+      },
+      "does_not_establish": [
+        "a probability rule for arbitrary Krein operators without the five displayed hypotheses",
+        "identity of the full algebraic C* and Krein carriers",
+        "a canonical choice of the finite incoming projection",
+        "a thermodynamic normal state or finite trace of the identity",
+        "the nonlinear Bateman-Turok Eq. (19), a complete NLO probability, or an all-order process",
+        "a gravitational, BV-BRST, QME, residual-transfer, or LORENTZIAN-CAUSAL result",
+        "empirical agreement or a complete physical theory",
+        "repair or successful replay of the predecessor certificate's stale narrative-note provenance pin"
+      ],
+      "result_path": "foundations/results/FOUNDATIONAL_BT_CORNER_BORN_INTERFACE_V1.json",
+      "result_link": "sources/foundations/results/FOUNDATIONAL_BT_CORNER_BORN_INTERFACE_V1.json",
+      "report_path": "foundations/reports/bt-corner-born-interface.md",
+      "report_link": "sources/foundations/reports/bt-corner-born-interface.md",
+      "sha256": "f223e9f70deba7aba0fdcd0759ded22f2bfe79c254ef159311cb47e23e856a06"
+    },
     "FOUNDATIONAL_BT_SEPARABLE_STATE_CHAIN_ZF_V1": {
       "id": "FOUNDATIONAL_BT_SEPARABLE_STATE_CHAIN_ZF_V1",
       "kind": "LOCAL_RESULT",
@@ -14695,17 +14754,42 @@
       }
     ]
   },
+  "cross_cell_interfaces": [
+    {
+      "id": "STATE_TO_PROBABILITY",
+      "label": "Finite detector-corner state representation to conditional Krein Born rule",
+      "status": "CERTIFIED",
+      "relation": "CONDITIONAL_BRIDGE",
+      "source_coordinates": [
+        {
+          "foundation": "CLASSICAL_STANDARD",
+          "carrier": "ALGEBRAIC_CSTAR",
+          "obligation": "STATE_REPRESENTATION"
+        }
+      ],
+      "target_coordinates": [
+        {
+          "foundation": "CLASSICAL_STANDARD",
+          "carrier": "KREIN_INDEFINITE",
+          "obligation": "PROBABILITY_RULE"
+        }
+      ],
+      "carrier_transition": "ALGEBRAIC_CSTAR_TO_KREIN_INDEFINITE_VIA_SHARED_FINITE_COMPANION_CORNER",
+      "scope": "Finite-trace detector corners and finite exhaustive output partitions satisfying the five displayed hypotheses.",
+      "evidence": [
+        "FOUNDATIONAL_BT_CORNER_BORN_INTERFACE_V1"
+      ]
+    }
+  ],
   "boundaries": {
     "cube": [
-      "literature completeness",
-      "that RCA_0 is necessary or weakest",
-      "a WKL_0 or ACA_0 reversal",
-      "representation invariance",
-      "a spacetime-distribution theorem",
-      "causal Green support",
-      "coverage for 81 still-unmapped emitted coordinates",
-      "coherence of 124 synthetic coordinates",
-      "a new Lorentzian Weyl result"
+      "a probability rule for arbitrary Krein processes",
+      "identity of the full algebraic C* and Krein carriers",
+      "a physical selection principle for the incoming corner",
+      "a thermodynamic, all-order, gravitational, or Lorentzian completion",
+      "cross-cell composition for the other six assembly interfaces",
+      "empirical agreement or a complete theory",
+      "literature completeness or coherence of unassessed coordinates"
     ],
     "migration_audit": [
       "literature completeness",
@@ -14737,12 +14821,14 @@
     ]
   },
   "source_links": {
-    "cube": "sources/foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V4.json",
+    "cube": "sources/foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V5.json",
     "migration_audit": "sources/foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_MIGRATION_AUDIT_V2.json",
     "ladder": "sources/foundations/results/FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V2.json",
-    "cube_report": "sources/foundations/reports/refined-intersection-cube-v4.md",
+    "cube_report": "sources/foundations/reports/refined-intersection-cube-v5.md",
+    "corner_born_interface": "sources/foundations/results/FOUNDATIONAL_BT_CORNER_BORN_INTERFACE_V1.json",
+    "corner_born_interface_report": "sources/foundations/reports/bt-corner-born-interface.md",
     "migration_audit_report": "sources/foundations/reports/intersection-cube-migration-audit-v2.md",
     "ladder_report": "sources/foundations/reports/cylinder-wave-strength-ladder-v2.md"
   },
-  "canonical_digest": "2b862d2274aa796e0d87c68672313245b2b8317487d0e49e91fbbf0af5585016"
+  "canonical_digest": "ac00af3729e6475bd015e793bfe29ff48b3c0797e09baf228ab0f5003e6d95d4"
 }

@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "result_id", "result_kind", "lifecycle", "created", "repository_base_commit", "dependency_tags", "question", "answer", "interface", "shared_object_ledger", "typed_maps", "hypotheses", "proof_obligations", "exact_witness", "proof_authority", "predecessor_source_audit", "provenance", "independent_checker", "claim_flags", "does_not_establish", "human_report", "canonical_digest"],
+  "properties": {
+    "schema_version": {"const": "foundational-bt-corner-born-interface-v1"},
+    "result_id": {"const": "FOUNDATIONAL_BT_CORNER_BORN_INTERFACE_V1"},
+    "result_kind": {"const": "CERTIFIED_CROSS_CELL_INTERFACE"},
+    "lifecycle": {"const": "SUFFICIENCY_PROVED"},
+    "created": {"type": "string", "format": "date"},
+    "repository_base_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "question": {"type": "string", "minLength": 1},
+    "answer": {"type": "string", "minLength": 1},
+    "interface": {
+      "type": "object",
+      "required": ["id", "label", "status", "relation", "source_coordinates", "target_coordinates", "carrier_transition", "scope", "evidence"],
+      "properties": {
+        "id": {"const": "STATE_TO_PROBABILITY"},
+        "status": {"const": "CERTIFIED"},
+        "relation": {"const": "CONDITIONAL_BRIDGE"},
+        "source_coordinates": {"type": "array", "minItems": 1, "maxItems": 1},
+        "target_coordinates": {"type": "array", "minItems": 1, "maxItems": 1}
+      }
+    },
+    "shared_object_ledger": {"type": "array", "minItems": 4, "maxItems": 4},
+    "typed_maps": {"type": "array", "minItems": 3, "maxItems": 3},
+    "hypotheses": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"type": "string", "minLength": 1}},
+    "proof_obligations": {"type": "array", "minItems": 7, "maxItems": 7},
+    "exact_witness": {"type": "object", "required": ["arithmetic", "probabilities", "probability_sum", "identities"]},
+    "proof_authority": {"type": "object", "required": ["status", "meaning", "general_argument"]},
+    "predecessor_source_audit": {"type": "object", "required": ["verifier_status", "input_audit", "drift_scope", "claim_boundary"]},
+    "provenance": {"type": "object", "required": ["inputs"]},
+    "independent_checker": {"type": "object", "required": ["path", "checks"]},
+    "claim_flags": {"type": "object"},
+    "does_not_establish": {"type": "array", "minItems": 7, "items": {"type": "string", "minLength": 1}},
+    "human_report": {"const": "foundations/reports/bt-corner-born-interface.md"},
+    "canonical_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

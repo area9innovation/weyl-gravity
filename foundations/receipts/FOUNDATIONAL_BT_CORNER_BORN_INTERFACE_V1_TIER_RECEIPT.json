@@ -1,0 +1,217 @@
+{
+  "schema_version": "science-forge-tier-receipt-v1",
+  "receipt_id": "FOUNDATIONAL_BT_CORNER_BORN_INTERFACE_V1_TIER_RECEIPT",
+  "result_id": "FOUNDATIONAL_BT_CORNER_BORN_INTERFACE_V1",
+  "created": "2026-08-13",
+  "source_base_commit": "64d2a94daf3070e1e422d71d69142161e14c11ff",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "scope": "Certified one finite detector-corner interface from an algebraic state representation to a conditional Krein Born rule. The result identifies four shared objects, constructs three typed maps, proves exact positivity and normalization under five explicit hypotheses, projects the relation into cube v5 and two prototype assemblies, and leaves all stronger physical, continuum, empirical, and Lorentzian claims closed.",
+  "inputs": [
+    {
+      "path": "foundations/results/FOUNDATIONAL_BT_SEPARABLE_STATE_CHAIN_ZF_V1.json",
+      "sha256": "08389e96d349766e29a34cde8109d4b1271288b59d44f3b29fcb456065641998",
+      "role": "explicit separable detector state and GNS representation"
+    },
+    {
+      "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_SEMIFINITE_RELATIVE_BORN_WEIGHT_V1.json",
+      "sha256": "bed18646e76f92dc8af1f0b9935d5c71f060fabd283325b26443b524395c4e9c",
+      "role": "source theorem statement independently re-derived by this certificate"
+    },
+    {
+      "path": "notes/bateman-turok-embedding.md",
+      "sha256": "fba59a777e24e948883d5642d6245c8969b472513ec6ee83aa6aeddc53e1f675",
+      "role": "audited narrative drift input; not mathematical proof authority"
+    }
+  ],
+  "source_audit": {
+    "legacy_verifier": "reverse_physics/verify_bt_semifinite_relative_born_weight.py",
+    "status": "PROVENANCE_DRIFT_NOT_PASS",
+    "matched_mathematical_inputs": 3,
+    "drifted_inputs": 1,
+    "drift": {
+      "path": "notes/bateman-turok-embedding.md",
+      "recorded_sha256": "7a6d946b28e720b46be101e26dcc6a07c3715ef056ef5661000300848a909533",
+      "actual_sha256": "fba59a777e24e948883d5642d6245c8969b472513ec6ee83aa6aeddc53e1f675"
+    },
+    "boundary": "The legacy verifier is not reported as passing. The interface producer audits the mismatch and the new checker independently re-derives the finite-dimensional exact identities."
+  },
+  "artifacts": [
+    {
+      "path": "foundations/build_bt_corner_born_interface.py",
+      "sha256": "52cbff4dc2fc862edb6f851e910c80919ec8a8154eeb65d7f252e39d180c3ab8",
+      "role": "deterministic exact interface producer and source-provenance audit"
+    },
+    {
+      "path": "foundations/check_bt_corner_born_interface.py",
+      "sha256": "b816bbe3fddbfe84d57f6fb616b098d41fd2812b42c63177cf010d949b49bcdb",
+      "role": "independent rational-arithmetic and shared-object checker"
+    },
+    {
+      "path": "foundations/verify_bt_corner_born_interface.py",
+      "sha256": "39782ee270addf90cd77e075884934461b56c5e3de1314ee12a9de40de4ea65d",
+      "role": "schema, provenance, report, and claim-boundary verifier"
+    },
+    {
+      "path": "foundations/results/FOUNDATIONAL_BT_CORNER_BORN_INTERFACE_V1.json",
+      "sha256": "f223e9f70deba7aba0fdcd0759ded22f2bfe79c254ef159311cb47e23e856a06",
+      "canonical_digest": "70d239c53f1cd6d0566bc0410f7728747ee33fad8d73f94385ef94fbb6364dd6",
+      "role": "machine-readable certified conditional bridge"
+    },
+    {
+      "path": "foundations/reports/bt-corner-born-interface.md",
+      "sha256": "894a5ac7bf8cef2b3cf2c76c8e02f330c792016fbef5ee986c6e1c98eff7fd22",
+      "role": "human-readable proof, assumptions, source audit, and boundaries"
+    },
+    {
+      "path": "foundations/schema/foundational-bt-corner-born-interface-v1.schema.json",
+      "sha256": "88c2a4988df103505f0ed90123731f28a68df9ea5a2ac929501f7c3bccbf5292",
+      "role": "Draft 2020-12 interface schema"
+    },
+    {
+      "path": "foundations/tests/test_bt_corner_born_interface.py",
+      "sha256": "faecd87285395e2624d6feda7a3b3fee5702c99c2c720c73026b9ea8a05a0032",
+      "role": "regression and fail-closed source-drift tests"
+    },
+    {
+      "path": "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V5.json",
+      "sha256": "a7c92d24226e7297c22586d07850c835e5c2dd218bc28b4f0c24de21efd7dac1",
+      "role": "v4-preserving cube projection with one certified interface and one target promotion"
+    },
+    {
+      "path": "foundations/results/FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1.json",
+      "sha256": "11e8f793bfbf3591663bafd04ac8b3f7aa8120a06c511dccd09aa102dcdc9d97",
+      "canonical_digest": "9e4fde427c83f2460a44a75621e29844664fbd54aa299650a506f4a3a963bd83",
+      "role": "assembly projection with two certified interface instances"
+    },
+    {
+      "path": "foundations/results/FOUNDATIONAL_THEORY_VIABILITY_ASSESSMENT_V1.json",
+      "sha256": "7619581cc7de548a58f608e7b952e6c61df63ccf6b6cf10cd978aade35732e21",
+      "canonical_digest": "de035ca62230b1d00d742cf17e30d331abc6ef0d57db377ec6d87de5b9cf8835",
+      "role": "viability projection with composition rail partially assessed"
+    },
+    {
+      "path": "foundations/site/manifest.json",
+      "sha256": "1662e1534f6db07b58aee24ac1bf35a69e2cc9cbca1084c41e14f48723770618",
+      "role": "content-addressed static-site input and output manifest"
+    }
+  ],
+  "assessment_snapshot": {
+    "certified_cross_cell_relations": 1,
+    "relation": "CONDITIONAL_BRIDGE",
+    "shared_objects": 4,
+    "typed_maps": 3,
+    "explicit_hypotheses": 5,
+    "proof_obligations_passed": 7,
+    "exact_probabilities": ["9/25", "16/25", "0"],
+    "exact_probability_sum": "1",
+    "cube_cells_preserved": 452,
+    "cube_target_promotions": 1,
+    "certified_assembly_interface_instances": 2,
+    "assembly_interface_instances_not_assessed": 47,
+    "empirical_comparison_records": 0,
+    "complete_theories": 0
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "python3 -m py_compile <19 changed Python source and test paths>",
+          "elapsed_seconds": 0.11,
+          "status": "PASS"
+        },
+        {
+          "command": "deno check foundations/matrix_site_assets/app.js foundations/site/app.js foundations/site/migration-review.js foundations/site/assemblies.js foundations/site/viability.js",
+          "elapsed_seconds": 0.07,
+          "status": "PASS"
+        },
+        {
+          "command": "google-chrome --headless --disable-gpu --no-sandbox --window-size=1600,5000 --virtual-time-budget=2500 --screenshot=/tmp/certified-interface-assembly-final.png http://127.0.0.1:8765/index.html#view=assemblies&assembly=KREIN_ALGEBRAIC_PROGRAMME",
+          "elapsed_seconds": 1.32,
+          "status": "PASS",
+          "output": "Full assembly page rendered; the certified conditional bridge is legible and all downstream gates remain visibly blocked."
+        }
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "python3 foundations/build_bt_corner_born_interface.py --check && python3 foundations/check_bt_corner_born_interface.py && python3 foundations/verify_bt_corner_born_interface.py",
+          "elapsed_seconds": 0.21,
+          "status": "PASS"
+        },
+        {
+          "command": "python3 foundations/refine_intersection_cube_v5.py --check && python3 foundations/check_refined_intersection_cube_v5.py && python3 foundations/verify_refined_intersection_cube_v5.py",
+          "elapsed_seconds": 0.22,
+          "status": "PASS"
+        },
+        {
+          "command": "python3 foundations/check_matrix_site_v2.py && python3 foundations/build_matrix_site_v2.py --check && python3 foundations/verify_matrix_site_v2.py",
+          "elapsed_seconds": 0.36,
+          "status": "PASS"
+        },
+        {
+          "command": "python3 foundations/theory_assembly.py --check && python3 foundations/verify_theory_assembly.py && python3 foundations/theory_viability.py --check && python3 foundations/verify_theory_viability.py",
+          "elapsed_seconds": 0.29,
+          "status": "PASS"
+        },
+        {
+          "command": "python3 -m unittest foundations.tests.test_bt_corner_born_interface foundations.tests.test_refined_intersection_cube_v5 foundations.tests.test_matrix_site foundations.tests.test_theory_viability foundations.tests.test_theory_assembly",
+          "elapsed_seconds": 0.84,
+          "status": "PASS",
+          "output": "26 tests passed."
+        }
+      ]
+    },
+    "tier_2": {
+      "status": "PASS_WITH_RECORDED_SOURCE_DRIFT",
+      "commands": [
+        {
+          "command": "python3 foundations/verify_bt_separable_state_chain.py",
+          "elapsed_seconds": 0.03,
+          "status": "PASS"
+        },
+        {
+          "command": "python3 reverse_physics/verify_bt_semifinite_relative_born_weight.py",
+          "elapsed_seconds": 0.11,
+          "status": "PROVENANCE_DRIFT_NOT_PASS",
+          "output": "BT SEMIFINITE RELATIVE BORN WEIGHT VERIFY: FAIL; input_hashes. The independently checked interface result is the proof authority for this bridge."
+        }
+      ],
+      "criterion": "The transitive mathematical source objects were audited. The algebraic state source passes. The older Krein theorem verifier exposes one stale narrative-note pin, is not counted as a pass, and is replaced as proof authority by the new independent exact derivation."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No freeze, paper theorem promotion, shared core algebra change, release, Lorentzian certificate, or quantum lifecycle transition is made."
+    }
+  },
+  "claim_flags": {
+    "cross_cell_interface_certified": true,
+    "shared_objects_identified": true,
+    "typed_maps_constructed": true,
+    "exact_positivity_and_normalization_checked": true,
+    "source_provenance_drift_recorded": true,
+    "legacy_semifinite_source_verifier_passed": false,
+    "cube_and_assembly_projection_generated": true,
+    "arbitrary_krein_probability_rule": false,
+    "continuum_or_thermodynamic_limit_established": false,
+    "empirical_agreement_assessed": false,
+    "complete_theory_identified": false,
+    "new_lorentzian_claim": false,
+    "quantum_lifecycle_promoted": false
+  },
+  "does_not_establish": [
+    "a probability rule for arbitrary Krein operators outside the five displayed hypotheses",
+    "identity of the full algebraic C-star and Krein carriers",
+    "a canonical physical choice of finite incoming projection",
+    "a thermodynamic normal state or controlled continuum limit",
+    "a nonlinear or all-order Bateman-Turok probability construction",
+    "empirical agreement or a complete physical theory",
+    "a gravitational, BV-BRST, QME, residual-transfer, or LORENTZIAN-CAUSAL result",
+    "repair or successful replay of the predecessor certificate's stale narrative-note provenance pin"
+  ]
+}

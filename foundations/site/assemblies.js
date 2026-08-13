@@ -41,6 +41,33 @@ window.THEORY_ASSEMBLY_DATA = {
       "meaning": "No registered record currently decides how the two selected cells compose."
     }
   ],
+  "certified_interface_records": [
+    {
+      "id": "STATE_TO_PROBABILITY",
+      "label": "Finite detector-corner state representation to conditional Krein Born rule",
+      "status": "CERTIFIED",
+      "relation": "CONDITIONAL_BRIDGE",
+      "source_coordinates": [
+        {
+          "foundation": "CLASSICAL_STANDARD",
+          "carrier": "ALGEBRAIC_CSTAR",
+          "obligation": "STATE_REPRESENTATION"
+        }
+      ],
+      "target_coordinates": [
+        {
+          "foundation": "CLASSICAL_STANDARD",
+          "carrier": "KREIN_INDEFINITE",
+          "obligation": "PROBABILITY_RULE"
+        }
+      ],
+      "carrier_transition": "ALGEBRAIC_CSTAR_TO_KREIN_INDEFINITE_VIA_SHARED_FINITE_COMPANION_CORNER",
+      "scope": "Finite-trace detector corners and finite exhaustive output partitions satisfying the five displayed hypotheses.",
+      "evidence": [
+        "FOUNDATIONAL_BT_CORNER_BORN_INTERFACE_V1"
+      ]
+    }
+  ],
   "assemblies": [
     {
       "id": "STANDARD_MIXED_REFERENCE",
@@ -98,25 +125,33 @@ window.THEORY_ASSEMBLY_DATA = {
           "evidence": [
             "FOUNDATIONAL_BT_SEPARABLE_STATE_CHAIN_ZF_V1",
             "haag-kastler-1964",
-            "FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1"
+            "FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1",
+            "FOUNDATIONAL_BT_CORNER_BORN_INTERFACE_V1"
           ],
           "evidence_roles": {
             "FOUNDATIONAL_BT_SEPARABLE_STATE_CHAIN_ZF_V1": "DIRECT_LOCAL",
             "haag-kastler-1964": "SUPPORTING",
-            "FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1": "SUPPORTING"
+            "FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1": "SUPPORTING",
+            "FOUNDATIONAL_BT_CORNER_BORN_INTERFACE_V1": "DIRECT_LOCAL"
           },
           "selection_basis": "Strongest recorded status in the declared admissible region; ties prefer more reviewed direct kinds, local grade, more evidence, then declared order."
         },
         {
           "obligation": "PROBABILITY_RULE",
           "foundation": "CLASSICAL_STANDARD",
-          "carrier": "FINITE_EXACT",
+          "carrier": "KREIN_INDEFINITE",
           "status": "LOCAL_RESULT",
           "evidence": [
-            "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1"
+            "bateman-turok-2026",
+            "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1",
+            "FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1",
+            "FOUNDATIONAL_BT_CORNER_BORN_INTERFACE_V1"
           ],
           "evidence_roles": {
-            "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": "DIRECT_LOCAL"
+            "bateman-turok-2026": "SUPPORTING",
+            "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1": "SUPPORTING",
+            "FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1": "SUPPORTING",
+            "FOUNDATIONAL_BT_CORNER_BORN_INTERFACE_V1": "DIRECT_LOCAL"
           },
           "selection_basis": "Strongest recorded status in the declared admissible region; ties prefer more reviewed direct kinds, local grade, more evidence, then declared order."
         },
@@ -311,9 +346,12 @@ window.THEORY_ASSEMBLY_DATA = {
           "target_obligations": [
             "PROBABILITY_RULE"
           ],
-          "relation": "NOT_ASSESSED",
-          "evidence": [],
-          "rationale": "Coverage records do not by themselves prove that these selected objects share a model, scope, or translation."
+          "relation": "CONDITIONAL_BRIDGE",
+          "certification_status": "CERTIFIED",
+          "evidence": [
+            "FOUNDATIONAL_BT_CORNER_BORN_INTERFACE_V1"
+          ],
+          "rationale": "Finite-trace detector corners and finite exhaustive output partitions satisfying the five displayed hypotheses."
         },
         {
           "id": "SELECTION_TO_DYNAMICS",
@@ -325,6 +363,7 @@ window.THEORY_ASSEMBLY_DATA = {
             "GENERATOR_SPECTRAL_DYNAMICS"
           ],
           "relation": "NOT_ASSESSED",
+          "certification_status": "NOT_ASSESSED",
           "evidence": [],
           "rationale": "Coverage records do not by themselves prove that these selected objects share a model, scope, or translation."
         },
@@ -339,6 +378,7 @@ window.THEORY_ASSEMBLY_DATA = {
             "CAUSAL_PROPAGATION_GREEN"
           ],
           "relation": "NOT_ASSESSED",
+          "certification_status": "NOT_ASSESSED",
           "evidence": [],
           "rationale": "Coverage records do not by themselves prove that these selected objects share a model, scope, or translation."
         },
@@ -353,6 +393,7 @@ window.THEORY_ASSEMBLY_DATA = {
             "INTERACTION_CONSTRUCTION"
           ],
           "relation": "NOT_ASSESSED",
+          "certification_status": "NOT_ASSESSED",
           "evidence": [],
           "rationale": "Coverage records do not by themselves prove that these selected objects share a model, scope, or translation."
         },
@@ -368,6 +409,7 @@ window.THEORY_ASSEMBLY_DATA = {
             "QME_RESTORATION"
           ],
           "relation": "NOT_ASSESSED",
+          "certification_status": "NOT_ASSESSED",
           "evidence": [],
           "rationale": "Coverage records do not by themselves prove that these selected objects share a model, scope, or translation."
         },
@@ -381,6 +423,7 @@ window.THEORY_ASSEMBLY_DATA = {
             "RESIDUAL_QUANTUM_TRANSFER"
           ],
           "relation": "NOT_ASSESSED",
+          "certification_status": "NOT_ASSESSED",
           "evidence": [],
           "rationale": "Coverage records do not by themselves prove that these selected objects share a model, scope, or translation."
         },
@@ -396,6 +439,7 @@ window.THEORY_ASSEMBLY_DATA = {
             "RECONSTRUCTION_LIMITS"
           ],
           "relation": "NOT_ASSESSED",
+          "certification_status": "NOT_ASSESSED",
           "evidence": [],
           "rationale": "Coverage records do not by themselves prove that these selected objects share a model, scope, or translation."
         }
@@ -411,7 +455,7 @@ window.THEORY_ASSEMBLY_DATA = {
           "id": "CROSS_CELL_COMPOSITION",
           "label": "Cross-cell composition",
           "status": "BLOCKED",
-          "basis": "All required interfaces remain NOT_ASSESSED."
+          "basis": "1/7 required interfaces are certified; the remainder block assembly composition."
         },
         {
           "id": "PREDICTION_DERIVATION",
@@ -492,12 +536,14 @@ window.THEORY_ASSEMBLY_DATA = {
           "evidence": [
             "FOUNDATIONAL_BT_SEPARABLE_STATE_CHAIN_ZF_V1",
             "haag-kastler-1964",
-            "FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1"
+            "FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1",
+            "FOUNDATIONAL_BT_CORNER_BORN_INTERFACE_V1"
           ],
           "evidence_roles": {
             "FOUNDATIONAL_BT_SEPARABLE_STATE_CHAIN_ZF_V1": "DIRECT_LOCAL",
             "haag-kastler-1964": "SUPPORTING",
-            "FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1": "SUPPORTING"
+            "FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1": "SUPPORTING",
+            "FOUNDATIONAL_BT_CORNER_BORN_INTERFACE_V1": "DIRECT_LOCAL"
           },
           "selection_basis": "Strongest recorded status in the declared admissible region; ties prefer more reviewed direct kinds, local grade, more evidence, then declared order."
         },
@@ -706,6 +752,7 @@ window.THEORY_ASSEMBLY_DATA = {
             "PROBABILITY_RULE"
           ],
           "relation": "NOT_ASSESSED",
+          "certification_status": "NOT_ASSESSED",
           "evidence": [],
           "rationale": "Coverage records do not by themselves prove that these selected objects share a model, scope, or translation."
         },
@@ -719,6 +766,7 @@ window.THEORY_ASSEMBLY_DATA = {
             "GENERATOR_SPECTRAL_DYNAMICS"
           ],
           "relation": "NOT_ASSESSED",
+          "certification_status": "NOT_ASSESSED",
           "evidence": [],
           "rationale": "Coverage records do not by themselves prove that these selected objects share a model, scope, or translation."
         },
@@ -733,6 +781,7 @@ window.THEORY_ASSEMBLY_DATA = {
             "CAUSAL_PROPAGATION_GREEN"
           ],
           "relation": "NOT_ASSESSED",
+          "certification_status": "NOT_ASSESSED",
           "evidence": [],
           "rationale": "Coverage records do not by themselves prove that these selected objects share a model, scope, or translation."
         },
@@ -747,6 +796,7 @@ window.THEORY_ASSEMBLY_DATA = {
             "INTERACTION_CONSTRUCTION"
           ],
           "relation": "NOT_ASSESSED",
+          "certification_status": "NOT_ASSESSED",
           "evidence": [],
           "rationale": "Coverage records do not by themselves prove that these selected objects share a model, scope, or translation."
         },
@@ -762,6 +812,7 @@ window.THEORY_ASSEMBLY_DATA = {
             "QME_RESTORATION"
           ],
           "relation": "NOT_ASSESSED",
+          "certification_status": "NOT_ASSESSED",
           "evidence": [],
           "rationale": "Coverage records do not by themselves prove that these selected objects share a model, scope, or translation."
         },
@@ -775,6 +826,7 @@ window.THEORY_ASSEMBLY_DATA = {
             "RESIDUAL_QUANTUM_TRANSFER"
           ],
           "relation": "NOT_ASSESSED",
+          "certification_status": "NOT_ASSESSED",
           "evidence": [],
           "rationale": "Coverage records do not by themselves prove that these selected objects share a model, scope, or translation."
         },
@@ -790,6 +842,7 @@ window.THEORY_ASSEMBLY_DATA = {
             "RECONSTRUCTION_LIMITS"
           ],
           "relation": "NOT_ASSESSED",
+          "certification_status": "NOT_ASSESSED",
           "evidence": [],
           "rationale": "Coverage records do not by themselves prove that these selected objects share a model, scope, or translation."
         }
@@ -805,7 +858,7 @@ window.THEORY_ASSEMBLY_DATA = {
           "id": "CROSS_CELL_COMPOSITION",
           "label": "Cross-cell composition",
           "status": "BLOCKED",
-          "basis": "All required interfaces remain NOT_ASSESSED."
+          "basis": "0/7 required interfaces are certified; the remainder block assembly composition."
         },
         {
           "id": "PREDICTION_DERIVATION",
@@ -1056,6 +1109,7 @@ window.THEORY_ASSEMBLY_DATA = {
             "PROBABILITY_RULE"
           ],
           "relation": "NOT_ASSESSED",
+          "certification_status": "NOT_ASSESSED",
           "evidence": [],
           "rationale": "Coverage records do not by themselves prove that these selected objects share a model, scope, or translation."
         },
@@ -1069,6 +1123,7 @@ window.THEORY_ASSEMBLY_DATA = {
             "GENERATOR_SPECTRAL_DYNAMICS"
           ],
           "relation": "NOT_ASSESSED",
+          "certification_status": "NOT_ASSESSED",
           "evidence": [],
           "rationale": "Coverage records do not by themselves prove that these selected objects share a model, scope, or translation."
         },
@@ -1083,6 +1138,7 @@ window.THEORY_ASSEMBLY_DATA = {
             "CAUSAL_PROPAGATION_GREEN"
           ],
           "relation": "NOT_ASSESSED",
+          "certification_status": "NOT_ASSESSED",
           "evidence": [],
           "rationale": "Coverage records do not by themselves prove that these selected objects share a model, scope, or translation."
         },
@@ -1097,6 +1153,7 @@ window.THEORY_ASSEMBLY_DATA = {
             "INTERACTION_CONSTRUCTION"
           ],
           "relation": "NOT_ASSESSED",
+          "certification_status": "NOT_ASSESSED",
           "evidence": [],
           "rationale": "Coverage records do not by themselves prove that these selected objects share a model, scope, or translation."
         },
@@ -1112,6 +1169,7 @@ window.THEORY_ASSEMBLY_DATA = {
             "QME_RESTORATION"
           ],
           "relation": "NOT_ASSESSED",
+          "certification_status": "NOT_ASSESSED",
           "evidence": [],
           "rationale": "Coverage records do not by themselves prove that these selected objects share a model, scope, or translation."
         },
@@ -1125,6 +1183,7 @@ window.THEORY_ASSEMBLY_DATA = {
             "RESIDUAL_QUANTUM_TRANSFER"
           ],
           "relation": "NOT_ASSESSED",
+          "certification_status": "NOT_ASSESSED",
           "evidence": [],
           "rationale": "Coverage records do not by themselves prove that these selected objects share a model, scope, or translation."
         },
@@ -1140,6 +1199,7 @@ window.THEORY_ASSEMBLY_DATA = {
             "RECONSTRUCTION_LIMITS"
           ],
           "relation": "NOT_ASSESSED",
+          "certification_status": "NOT_ASSESSED",
           "evidence": [],
           "rationale": "Coverage records do not by themselves prove that these selected objects share a model, scope, or translation."
         }
@@ -1155,7 +1215,7 @@ window.THEORY_ASSEMBLY_DATA = {
           "id": "CROSS_CELL_COMPOSITION",
           "label": "Cross-cell composition",
           "status": "BLOCKED",
-          "basis": "All required interfaces remain NOT_ASSESSED."
+          "basis": "0/7 required interfaces are certified; the remainder block assembly composition."
         },
         {
           "id": "PREDICTION_DERIVATION",
@@ -1435,6 +1495,7 @@ window.THEORY_ASSEMBLY_DATA = {
             "PROBABILITY_RULE"
           ],
           "relation": "NOT_ASSESSED",
+          "certification_status": "NOT_ASSESSED",
           "evidence": [],
           "rationale": "Coverage records do not by themselves prove that these selected objects share a model, scope, or translation."
         },
@@ -1448,6 +1509,7 @@ window.THEORY_ASSEMBLY_DATA = {
             "GENERATOR_SPECTRAL_DYNAMICS"
           ],
           "relation": "NOT_ASSESSED",
+          "certification_status": "NOT_ASSESSED",
           "evidence": [],
           "rationale": "Coverage records do not by themselves prove that these selected objects share a model, scope, or translation."
         },
@@ -1462,6 +1524,7 @@ window.THEORY_ASSEMBLY_DATA = {
             "CAUSAL_PROPAGATION_GREEN"
           ],
           "relation": "NOT_ASSESSED",
+          "certification_status": "NOT_ASSESSED",
           "evidence": [],
           "rationale": "Coverage records do not by themselves prove that these selected objects share a model, scope, or translation."
         },
@@ -1476,6 +1539,7 @@ window.THEORY_ASSEMBLY_DATA = {
             "INTERACTION_CONSTRUCTION"
           ],
           "relation": "NOT_ASSESSED",
+          "certification_status": "NOT_ASSESSED",
           "evidence": [],
           "rationale": "Coverage records do not by themselves prove that these selected objects share a model, scope, or translation."
         },
@@ -1491,6 +1555,7 @@ window.THEORY_ASSEMBLY_DATA = {
             "QME_RESTORATION"
           ],
           "relation": "NOT_ASSESSED",
+          "certification_status": "NOT_ASSESSED",
           "evidence": [],
           "rationale": "Coverage records do not by themselves prove that these selected objects share a model, scope, or translation."
         },
@@ -1504,6 +1569,7 @@ window.THEORY_ASSEMBLY_DATA = {
             "RESIDUAL_QUANTUM_TRANSFER"
           ],
           "relation": "NOT_ASSESSED",
+          "certification_status": "NOT_ASSESSED",
           "evidence": [],
           "rationale": "Coverage records do not by themselves prove that these selected objects share a model, scope, or translation."
         },
@@ -1519,6 +1585,7 @@ window.THEORY_ASSEMBLY_DATA = {
             "RECONSTRUCTION_LIMITS"
           ],
           "relation": "NOT_ASSESSED",
+          "certification_status": "NOT_ASSESSED",
           "evidence": [],
           "rationale": "Coverage records do not by themselves prove that these selected objects share a model, scope, or translation."
         }
@@ -1534,7 +1601,7 @@ window.THEORY_ASSEMBLY_DATA = {
           "id": "CROSS_CELL_COMPOSITION",
           "label": "Cross-cell composition",
           "status": "BLOCKED",
-          "basis": "All required interfaces remain NOT_ASSESSED."
+          "basis": "0/7 required interfaces are certified; the remainder block assembly composition."
         },
         {
           "id": "PREDICTION_DERIVATION",
@@ -1619,12 +1686,14 @@ window.THEORY_ASSEMBLY_DATA = {
           "evidence": [
             "FOUNDATIONAL_BT_SEPARABLE_STATE_CHAIN_ZF_V1",
             "haag-kastler-1964",
-            "FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1"
+            "FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1",
+            "FOUNDATIONAL_BT_CORNER_BORN_INTERFACE_V1"
           ],
           "evidence_roles": {
             "FOUNDATIONAL_BT_SEPARABLE_STATE_CHAIN_ZF_V1": "DIRECT_LOCAL",
             "haag-kastler-1964": "SUPPORTING",
-            "FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1": "SUPPORTING"
+            "FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1": "SUPPORTING",
+            "FOUNDATIONAL_BT_CORNER_BORN_INTERFACE_V1": "DIRECT_LOCAL"
           },
           "selection_basis": "Strongest recorded status in the declared admissible region; ties prefer more reviewed direct kinds, local grade, more evidence, then declared order."
         },
@@ -1632,16 +1701,18 @@ window.THEORY_ASSEMBLY_DATA = {
           "obligation": "PROBABILITY_RULE",
           "foundation": "CLASSICAL_STANDARD",
           "carrier": "KREIN_INDEFINITE",
-          "status": "PIECES_ONLY",
+          "status": "LOCAL_RESULT",
           "evidence": [
             "bateman-turok-2026",
             "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1",
-            "FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1"
+            "FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1",
+            "FOUNDATIONAL_BT_CORNER_BORN_INTERFACE_V1"
           ],
           "evidence_roles": {
             "bateman-turok-2026": "SUPPORTING",
             "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1": "SUPPORTING",
-            "FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1": "SUPPORTING"
+            "FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1": "SUPPORTING",
+            "FOUNDATIONAL_BT_CORNER_BORN_INTERFACE_V1": "DIRECT_LOCAL"
           },
           "selection_basis": "Strongest recorded status in the declared admissible region; ties prefer more reviewed direct kinds, local grade, more evidence, then declared order."
         },
@@ -1821,7 +1892,7 @@ window.THEORY_ASSEMBLY_DATA = {
         }
       ],
       "coverage": {
-        "direct": 12,
+        "direct": 13,
         "assessed": 16,
         "total": 16,
         "complete_direct": false
@@ -1836,9 +1907,12 @@ window.THEORY_ASSEMBLY_DATA = {
           "target_obligations": [
             "PROBABILITY_RULE"
           ],
-          "relation": "NOT_ASSESSED",
-          "evidence": [],
-          "rationale": "Coverage records do not by themselves prove that these selected objects share a model, scope, or translation."
+          "relation": "CONDITIONAL_BRIDGE",
+          "certification_status": "CERTIFIED",
+          "evidence": [
+            "FOUNDATIONAL_BT_CORNER_BORN_INTERFACE_V1"
+          ],
+          "rationale": "Finite-trace detector corners and finite exhaustive output partitions satisfying the five displayed hypotheses."
         },
         {
           "id": "SELECTION_TO_DYNAMICS",
@@ -1850,6 +1924,7 @@ window.THEORY_ASSEMBLY_DATA = {
             "GENERATOR_SPECTRAL_DYNAMICS"
           ],
           "relation": "NOT_ASSESSED",
+          "certification_status": "NOT_ASSESSED",
           "evidence": [],
           "rationale": "Coverage records do not by themselves prove that these selected objects share a model, scope, or translation."
         },
@@ -1864,6 +1939,7 @@ window.THEORY_ASSEMBLY_DATA = {
             "CAUSAL_PROPAGATION_GREEN"
           ],
           "relation": "NOT_ASSESSED",
+          "certification_status": "NOT_ASSESSED",
           "evidence": [],
           "rationale": "Coverage records do not by themselves prove that these selected objects share a model, scope, or translation."
         },
@@ -1878,6 +1954,7 @@ window.THEORY_ASSEMBLY_DATA = {
             "INTERACTION_CONSTRUCTION"
           ],
           "relation": "NOT_ASSESSED",
+          "certification_status": "NOT_ASSESSED",
           "evidence": [],
           "rationale": "Coverage records do not by themselves prove that these selected objects share a model, scope, or translation."
         },
@@ -1893,6 +1970,7 @@ window.THEORY_ASSEMBLY_DATA = {
             "QME_RESTORATION"
           ],
           "relation": "NOT_ASSESSED",
+          "certification_status": "NOT_ASSESSED",
           "evidence": [],
           "rationale": "Coverage records do not by themselves prove that these selected objects share a model, scope, or translation."
         },
@@ -1906,6 +1984,7 @@ window.THEORY_ASSEMBLY_DATA = {
             "RESIDUAL_QUANTUM_TRANSFER"
           ],
           "relation": "NOT_ASSESSED",
+          "certification_status": "NOT_ASSESSED",
           "evidence": [],
           "rationale": "Coverage records do not by themselves prove that these selected objects share a model, scope, or translation."
         },
@@ -1921,6 +2000,7 @@ window.THEORY_ASSEMBLY_DATA = {
             "RECONSTRUCTION_LIMITS"
           ],
           "relation": "NOT_ASSESSED",
+          "certification_status": "NOT_ASSESSED",
           "evidence": [],
           "rationale": "Coverage records do not by themselves prove that these selected objects share a model, scope, or translation."
         }
@@ -1930,13 +2010,13 @@ window.THEORY_ASSEMBLY_DATA = {
           "id": "OBLIGATION_COVERAGE",
           "label": "Obligation coverage",
           "status": "OPEN",
-          "basis": "12/16 obligations have a direct recorded result."
+          "basis": "13/16 obligations have a direct recorded result."
         },
         {
           "id": "CROSS_CELL_COMPOSITION",
           "label": "Cross-cell composition",
           "status": "BLOCKED",
-          "basis": "All required interfaces remain NOT_ASSESSED."
+          "basis": "1/7 required interfaces are certified; the remainder block assembly composition."
         },
         {
           "id": "PREDICTION_DERIVATION",
@@ -2242,6 +2322,7 @@ window.THEORY_ASSEMBLY_DATA = {
             "PROBABILITY_RULE"
           ],
           "relation": "NOT_ASSESSED",
+          "certification_status": "NOT_ASSESSED",
           "evidence": [],
           "rationale": "Coverage records do not by themselves prove that these selected objects share a model, scope, or translation."
         },
@@ -2255,6 +2336,7 @@ window.THEORY_ASSEMBLY_DATA = {
             "GENERATOR_SPECTRAL_DYNAMICS"
           ],
           "relation": "NOT_ASSESSED",
+          "certification_status": "NOT_ASSESSED",
           "evidence": [],
           "rationale": "Coverage records do not by themselves prove that these selected objects share a model, scope, or translation."
         },
@@ -2269,6 +2351,7 @@ window.THEORY_ASSEMBLY_DATA = {
             "CAUSAL_PROPAGATION_GREEN"
           ],
           "relation": "NOT_ASSESSED",
+          "certification_status": "NOT_ASSESSED",
           "evidence": [],
           "rationale": "Coverage records do not by themselves prove that these selected objects share a model, scope, or translation."
         },
@@ -2283,6 +2366,7 @@ window.THEORY_ASSEMBLY_DATA = {
             "INTERACTION_CONSTRUCTION"
           ],
           "relation": "NOT_ASSESSED",
+          "certification_status": "NOT_ASSESSED",
           "evidence": [],
           "rationale": "Coverage records do not by themselves prove that these selected objects share a model, scope, or translation."
         },
@@ -2298,6 +2382,7 @@ window.THEORY_ASSEMBLY_DATA = {
             "QME_RESTORATION"
           ],
           "relation": "NOT_ASSESSED",
+          "certification_status": "NOT_ASSESSED",
           "evidence": [],
           "rationale": "Coverage records do not by themselves prove that these selected objects share a model, scope, or translation."
         },
@@ -2311,6 +2396,7 @@ window.THEORY_ASSEMBLY_DATA = {
             "RESIDUAL_QUANTUM_TRANSFER"
           ],
           "relation": "NOT_ASSESSED",
+          "certification_status": "NOT_ASSESSED",
           "evidence": [],
           "rationale": "Coverage records do not by themselves prove that these selected objects share a model, scope, or translation."
         },
@@ -2326,6 +2412,7 @@ window.THEORY_ASSEMBLY_DATA = {
             "RECONSTRUCTION_LIMITS"
           ],
           "relation": "NOT_ASSESSED",
+          "certification_status": "NOT_ASSESSED",
           "evidence": [],
           "rationale": "Coverage records do not by themselves prove that these selected objects share a model, scope, or translation."
         }
@@ -2341,7 +2428,7 @@ window.THEORY_ASSEMBLY_DATA = {
           "id": "CROSS_CELL_COMPOSITION",
           "label": "Cross-cell composition",
           "status": "BLOCKED",
-          "basis": "All required interfaces remain NOT_ASSESSED."
+          "basis": "0/7 required interfaces are certified; the remainder block assembly composition."
         },
         {
           "id": "PREDICTION_DERIVATION",
@@ -2647,6 +2734,7 @@ window.THEORY_ASSEMBLY_DATA = {
             "PROBABILITY_RULE"
           ],
           "relation": "NOT_ASSESSED",
+          "certification_status": "NOT_ASSESSED",
           "evidence": [],
           "rationale": "Coverage records do not by themselves prove that these selected objects share a model, scope, or translation."
         },
@@ -2660,6 +2748,7 @@ window.THEORY_ASSEMBLY_DATA = {
             "GENERATOR_SPECTRAL_DYNAMICS"
           ],
           "relation": "NOT_ASSESSED",
+          "certification_status": "NOT_ASSESSED",
           "evidence": [],
           "rationale": "Coverage records do not by themselves prove that these selected objects share a model, scope, or translation."
         },
@@ -2674,6 +2763,7 @@ window.THEORY_ASSEMBLY_DATA = {
             "CAUSAL_PROPAGATION_GREEN"
           ],
           "relation": "NOT_ASSESSED",
+          "certification_status": "NOT_ASSESSED",
           "evidence": [],
           "rationale": "Coverage records do not by themselves prove that these selected objects share a model, scope, or translation."
         },
@@ -2688,6 +2778,7 @@ window.THEORY_ASSEMBLY_DATA = {
             "INTERACTION_CONSTRUCTION"
           ],
           "relation": "NOT_ASSESSED",
+          "certification_status": "NOT_ASSESSED",
           "evidence": [],
           "rationale": "Coverage records do not by themselves prove that these selected objects share a model, scope, or translation."
         },
@@ -2703,6 +2794,7 @@ window.THEORY_ASSEMBLY_DATA = {
             "QME_RESTORATION"
           ],
           "relation": "NOT_ASSESSED",
+          "certification_status": "NOT_ASSESSED",
           "evidence": [],
           "rationale": "Coverage records do not by themselves prove that these selected objects share a model, scope, or translation."
         },
@@ -2716,6 +2808,7 @@ window.THEORY_ASSEMBLY_DATA = {
             "RESIDUAL_QUANTUM_TRANSFER"
           ],
           "relation": "NOT_ASSESSED",
+          "certification_status": "NOT_ASSESSED",
           "evidence": [],
           "rationale": "Coverage records do not by themselves prove that these selected objects share a model, scope, or translation."
         },
@@ -2731,6 +2824,7 @@ window.THEORY_ASSEMBLY_DATA = {
             "RECONSTRUCTION_LIMITS"
           ],
           "relation": "NOT_ASSESSED",
+          "certification_status": "NOT_ASSESSED",
           "evidence": [],
           "rationale": "Coverage records do not by themselves prove that these selected objects share a model, scope, or translation."
         }
@@ -2746,7 +2840,7 @@ window.THEORY_ASSEMBLY_DATA = {
           "id": "CROSS_CELL_COMPOSITION",
           "label": "Cross-cell composition",
           "status": "BLOCKED",
-          "basis": "All required interfaces remain NOT_ASSESSED."
+          "basis": "0/7 required interfaces are certified; the remainder block assembly composition."
         },
         {
           "id": "PREDICTION_DERIVATION",
@@ -2834,6 +2928,7 @@ window.THEORY_ASSEMBLY_DATA = {
     "prototype_assemblies_generated": true,
     "selected_cells_content_addressed": true,
     "interface_and_coverage_states_separated": true,
+    "at_least_one_cross_cell_interface_certified": true,
     "empirical_record_schema_declared": true,
     "cross_cell_composability_established": false,
     "prediction_chain_established": false,
@@ -2842,13 +2937,13 @@ window.THEORY_ASSEMBLY_DATA = {
   },
   "does_not_establish": [
     "that selected cells concern the same physical model or scope",
-    "that any carrier or foundation translation exists",
+    "that a certified finite-corner bridge supplies any unregistered carrier or foundation translation",
     "that direct coverage composes into an end-to-end prediction",
     "that a reduced or finite construction has a controlled continuum limit",
     "that any prototype agrees with observations",
     "that the benchmark catalogue is a complete set of physical tests",
     "a complete theory, a new Lorentzian-causal result, or a quantum lifecycle promotion"
   ],
-  "source_atlas_digest": "2b862d2274aa796e0d87c68672313245b2b8317487d0e49e91fbbf0af5585016",
-  "canonical_digest": "4362127ef736380284716aee9e36564b58fd3f3b780a9d5ba7bff36ebeb7ac46"
+  "source_atlas_digest": "ac00af3729e6475bd015e793bfe29ff48b3c0797e09baf228ab0f5003e6d95d4",
+  "canonical_digest": "9e4fde427c83f2460a44a75621e29844664fbd54aa299650a506f4a3a963bd83"
 };

@@ -138,7 +138,7 @@ def verify(*, value: dict[str, Any] | None = None) -> tuple[list[str], list[str]
     rails = {item.get("id"): item.get("status") for item in result.get("global_rails", [])}
     if rails != {
         "OBLIGATION_COVERAGE": "COMPUTED_FROM_ATLAS",
-        "CROSS_OBLIGATION_COMPOSITION": "NOT_ASSESSED",
+        "CROSS_OBLIGATION_COMPOSITION": "PARTIALLY_ASSESSED",
         "EMPIRICAL_AGREEMENT": "NOT_IN_CURRENT_SCHEMA",
     }:
         errors.append("three-rail separation")
@@ -164,7 +164,7 @@ def verify(*, value: dict[str, Any] | None = None) -> tuple[list[str], list[str]
     checks.append("offline theory-profile interface and result parity")
 
     report = REPORT.read_text()
-    for token in ("36", "six carrier-portfolio", "no single profile", "Pareto", "not assessed", "not in the current schema", "not a composition theorem", "does not establish"):
+    for token in ("36", "six carrier-portfolio", "no single profile", "Pareto", "partially assessed", "not in the current schema", "not a composition theorem", "does not establish"):
         if token not in report:
             errors.append("report token " + token)
     checks.append("human-readable outcome and boundaries")

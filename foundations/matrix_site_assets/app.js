@@ -514,7 +514,7 @@
     const envelope = selectedEnvelope();
     const envelopeDirect = envelope.filter(item => item.rank === 3 && obligations.includes(item.obligation.id)).length;
     const preset = VIABILITY.presets.find(item => item.id === state.viability.preset);
-    const rails = VIABILITY.global_rails.map(rail => `<article class="rail-card ${rail.status === "COMPUTED_FROM_ATLAS" ? "computed" : "missing"}"><span class="quality">${esc(rail.status)}</span><h3>${esc(rail.label)}</h3><p>${esc(rail.meaning)}</p></article>`).join("");
+    const rails = VIABILITY.global_rails.map(rail => `<article class="rail-card ${rail.status === "COMPUTED_FROM_ATLAS" ? "computed" : rail.status === "PARTIALLY_ASSESSED" ? "partial" : "missing"}"><span class="quality">${esc(rail.status)}</span><h3>${esc(rail.label)}</h3><p>${esc(rail.meaning)}</p></article>`).join("");
     const mapRows = axis.FOUNDATION.keys.map(foundation => `<tr><th>${esc(foundation.label)}</th>${axis.CARRIER.keys.map(carrier => {
       const profile = VIABILITY.profiles.find(item => item.foundation === foundation.id && item.carrier === carrier.id);
       const metrics = profileMetrics(profile, obligations);
@@ -571,11 +571,14 @@
       const directness = [roles.includes("DIRECT_LOCAL") ? "local" : "", roles.includes("DIRECT_LITERATURE") ? "literature" : ""].filter(Boolean).join(" + ") || "no reviewed direct kind";
       return `<tr><th>${esc(title(cell.obligation))}</th><td>${esc(title(cell.foundation))}<br><small>${esc(title(cell.carrier))}</small></td><td><button class="status-pill assembly-cell-jump" data-cell-jump="${esc(`${cell.foundation}|${cell.carrier}|${cell.obligation}`)}" style="${statusStyle(cell.status)}">${esc(STATUS[cell.status].label)}</button></td><td>${esc(directness)}</td><td>${cell.evidence.length}</td></tr>`;
     }).join("");
-    const interfaces = assembly.interfaces.map(item => `<tr><th>${esc(item.label)}</th><td>${item.source_obligations.map(title).map(esc).join(" + ")}</td><td><span class="interface-relation relation-${item.relation.toLowerCase()}">${esc(item.relation.replaceAll("_", " "))}</span></td><td>${item.target_obligations.map(title).map(esc).join(" + ")}</td><td>${esc(item.rationale)}</td></tr>`).join("");
+    const interfaces = assembly.interfaces.map(item => {
+      const evidence = item.evidence.map(id => DATA.evidence[id] ? `<a href="${esc(DATA.evidence[id].result_link)}"><code>${esc(id)}</code></a>` : `<code>${esc(id)}</code>`).join(" · ");
+      return `<tr><th>${esc(item.label)}</th><td>${item.source_obligations.map(title).map(esc).join(" + ")}</td><td><span class="interface-relation relation-${item.relation.toLowerCase()}">${item.certification_status === "CERTIFIED" ? "CERTIFIED · " : ""}${esc(item.relation.replaceAll("_", " "))}</span></td><td>${item.target_obligations.map(title).map(esc).join(" + ")}</td><td>${esc(item.rationale)}${evidence ? `<p class="interface-evidence">${evidence}</p>` : ""}</td></tr>`;
+    }).join("");
     const vocabulary = ASSEMBLIES.interface_vocabulary.map(item => `<details><summary>${esc(item.id.replaceAll("_", " "))}</summary><p>${esc(item.meaning)}</p></details>`).join("");
     const benchmarks = ASSEMBLIES.empirical_ledger.benchmarks.map(item => `<article><span class="quality">${esc(item.status.replaceAll("_", " "))}</span><h3>${esc(item.label)}</h3><p>${esc(item.question)}</p></article>`).join("");
     document.getElementById("assemblyExplorer").innerHTML = `
-      <article class="assembly-boundary"><p class="eyebrow">Current conclusion</p><h3>No prototype passes the composition or empirical gates.</h3><p>These are navigational hypotheses assembled from recorded coverage. A selected cell is a research input, not proof that adjacent inputs share objects, assumptions, parameters, or observational meaning.</p></article>
+      <article class="assembly-boundary"><p class="eyebrow">Current conclusion</p><h3>One cross-cell relation is certified; no prototype yet passes the full composition or empirical gates.</h3><p>The finite-corner state-to-probability bridge is exact under five named hypotheses. Every other join remains independently gated: a selected cell is not proof that adjacent inputs share objects, assumptions, parameters, or observational meaning.</p></article>
       <section class="assembly-selector"><label><b>Prototype assembly</b><select id="assemblySelect">${options}</select></label><div><p class="eyebrow">Aim</p><p>${esc(assembly.aim)}</p></div><div class="assembly-score"><b>${assembly.coverage.direct}/${assembly.coverage.total}</b><span>obligations direct</span><strong>Complete theory: NO</strong></div></section>
       <div class="section-head compact-head"><div><p class="eyebrow">Ordered hard gates</p><h2>Assembly hard-gate chain</h2></div><p>A downstream gate cannot be credited from upstream coverage. The chain stops at the first open or blocked gate.</p></div>
       <div class="assembly-gates">${gates}</div>

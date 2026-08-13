@@ -275,8 +275,8 @@ def build_assessment(dataset: dict[str, Any]) -> dict[str, Any]:
             {
                 "id": "CROSS_OBLIGATION_COMPOSITION",
                 "label": "One coherent integrated theory",
-                "status": "NOT_ASSESSED",
-                "meaning": "Evidence in different cells may concern different models or scopes. No current certificate proves that a profile or carrier envelope composes into one jointly consistent theory.",
+                "status": "PARTIALLY_ASSESSED",
+                "meaning": "One finite-corner state-to-probability relation is certified under five hypotheses. The other required joins remain open, so no profile or carrier envelope composes into one jointly consistent theory.",
             },
             {
                 "id": "EMPIRICAL_AGREEMENT",

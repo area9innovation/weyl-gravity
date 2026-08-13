@@ -163,6 +163,7 @@ def canonical_digest(dataset: dict[str, Any]) -> str:
         "evidence": dataset["evidence"],
         "ladder": dataset["ladder"],
         "graph": dataset["graph"],
+        "cross_cell_interfaces": dataset.get("cross_cell_interfaces", []),
     }
     return sha_bytes(json.dumps(projection, sort_keys=True, separators=(",", ":"), ensure_ascii=False).encode())
 

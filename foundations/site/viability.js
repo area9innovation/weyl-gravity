@@ -338,27 +338,23 @@ window.THEORY_VIABILITY_DATA = {
       "foundation": "CLASSICAL_STANDARD",
       "carrier": "KREIN_INDEFINITE",
       "counts": {
-        "LOCAL_RESULT": 4,
+        "LOCAL_RESULT": 5,
         "LITERATURE_RESULT": 2,
-        "PIECES_ONLY": 4,
+        "PIECES_ONLY": 3,
         "PRIORITY_GAP": 0,
         "NOT_MAPPED": 6
       },
-      "direct": 6,
+      "direct": 7,
       "assessed": 10,
       "default_gate": {
         "preset": "PREDICTIVE_PHYSICS",
-        "direct": 6,
+        "direct": 7,
         "assessed": 9,
         "total": 10,
         "complete_direct": false,
         "blockers": [
           {
             "obligation": "STATE_REPRESENTATION",
-            "status": "PIECES_ONLY"
-          },
-          {
-            "obligation": "PROBABILITY_RULE",
             "status": "PIECES_ONLY"
           },
           {
@@ -388,13 +384,13 @@ window.THEORY_VIABILITY_DATA = {
         {
           "bundle": "PREDICTION_OBSERVATION",
           "counts": {
-            "LOCAL_RESULT": 1,
+            "LOCAL_RESULT": 2,
             "LITERATURE_RESULT": 1,
-            "PIECES_ONLY": 1,
+            "PIECES_ONLY": 0,
             "PRIORITY_GAP": 0,
             "NOT_MAPPED": 0
           },
-          "direct": 2,
+          "direct": 3,
           "total": 3
         },
         {
@@ -4067,7 +4063,8 @@ window.THEORY_VIABILITY_DATA = {
           ],
           "contributing_carriers": [
             "FINITE_EXACT",
-            "HILBERT_OPERATOR"
+            "HILBERT_OPERATOR",
+            "KREIN_INDEFINITE"
           ]
         },
         {
@@ -5280,8 +5277,8 @@ window.THEORY_VIABILITY_DATA = {
     {
       "id": "CROSS_OBLIGATION_COMPOSITION",
       "label": "One coherent integrated theory",
-      "status": "NOT_ASSESSED",
-      "meaning": "Evidence in different cells may concern different models or scopes. No current certificate proves that a profile or carrier envelope composes into one jointly consistent theory."
+      "status": "PARTIALLY_ASSESSED",
+      "meaning": "One finite-corner state-to-probability relation is certified under five hypotheses. The other required joins remain open, so no profile or carrier envelope composes into one jointly consistent theory."
     },
     {
       "id": "EMPIRICAL_AGREEMENT",
@@ -5317,6 +5314,6 @@ window.THEORY_VIABILITY_DATA = {
     "that Pareto-frontier profiles are physically preferred or more likely true",
     "a complete observationally validated theory under any regime or carrier portfolio"
   ],
-  "source_atlas_digest": "2b862d2274aa796e0d87c68672313245b2b8317487d0e49e91fbbf0af5585016",
-  "canonical_digest": "3645f465e3ec8eebc85449b760ec58a85435e7ce453713b2f26c7409c2caadbc"
+  "source_atlas_digest": "ac00af3729e6475bd015e793bfe29ff48b3c0797e09baf228ab0f5003e6d95d4",
+  "canonical_digest": "de035ca62230b1d00d742cf17e30d331abc6ef0d57db377ec6d87de5b9cf8835"
 };

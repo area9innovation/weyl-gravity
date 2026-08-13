@@ -19,7 +19,7 @@ class TheoryViabilityTests(unittest.TestCase):
             {item["id"]: item["status"] for item in value["global_rails"]},
             {
                 "OBLIGATION_COVERAGE": "COMPUTED_FROM_ATLAS",
-                "CROSS_OBLIGATION_COMPOSITION": "NOT_ASSESSED",
+                "CROSS_OBLIGATION_COMPOSITION": "PARTIALLY_ASSESSED",
                 "EMPIRICAL_AGREEMENT": "NOT_IN_CURRENT_SCHEMA",
             },
         )

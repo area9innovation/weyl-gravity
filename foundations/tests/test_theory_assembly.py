@@ -17,7 +17,9 @@ class TheoryAssemblyTests(unittest.TestCase):
         value = build_assembly_assessment(build_dataset())
         self.assertEqual(len(value["assemblies"]), 7)
         self.assertTrue(all(not item["complete_theory"] for item in value["assemblies"]))
-        self.assertTrue(all(interface["relation"] == "NOT_ASSESSED" for item in value["assemblies"] for interface in item["interfaces"]))
+        certified = [interface for item in value["assemblies"] for interface in item["interfaces"] if interface["certification_status"] == "CERTIFIED"]
+        self.assertEqual(len(certified), 2)
+        self.assertTrue(all(interface["relation"] == "CONDITIONAL_BRIDGE" for interface in certified))
         self.assertEqual(value["empirical_ledger"]["records"], [])
 
     def test_selected_cells_cover_all_obligations(self):

@@ -75,6 +75,7 @@ main { padding: 1.6rem max(4vw, 1.2rem) 6rem; }
 .rail-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: .8rem; margin: 1rem 0 2rem; }
 .rail-card { padding: 1rem; background: var(--paper); border: 1px solid var(--line); border-top: 5px solid var(--unmapped); border-radius: .7rem; }
 .rail-card.computed { border-top-color: var(--local); }
+.rail-card.partial { border-top-color: var(--pieces); background: #fff9e9; }
 .rail-card.missing { background: #f5f3ee; }
 .rail-card h3 { margin: .35rem 0; }
 .viability-controls, .portfolio-controls { display: grid; grid-template-columns: minmax(15rem, .8fr) minmax(20rem, 1.5fr) minmax(12rem, .7fr); gap: 1rem; align-items: start; padding: 1rem; background: var(--paper); border: 1px solid var(--line); border-radius: .8rem; }
@@ -145,6 +146,8 @@ main { padding: 1.6rem max(4vw, 1.2rem) 6rem; }
 .interface-vocabulary p { color: var(--muted); font-size: .78rem; }
 .interface-relation { display: inline-block; padding: .25rem .45rem; border-radius: .3rem; background: #e7e9e6; font-size: .7rem; font-weight: 800; white-space: nowrap; }
 .relation-not_assessed { background: #e7e9e6; color: #52615b; }
+.relation-conditional_bridge { background: #d9efe3; color: #145d43; border: 1px solid #66a88e; }
+.interface-evidence { margin: .45rem 0 0; overflow-wrap: anywhere; font-size: .72rem; }
 .benchmark-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr)); gap: .7rem; }
 .benchmark-grid article { padding: 1rem; background: #f3f2ee; border: 1px solid var(--line); border-top: 4px solid var(--unmapped); border-radius: .65rem; }
 .benchmark-grid h3 { margin: .35rem 0; font-size: .95rem; }

@@ -1,0 +1,296 @@
+{
+  "schema_version": "foundational-bt-corner-born-interface-v1",
+  "result_id": "FOUNDATIONAL_BT_CORNER_BORN_INTERFACE_V1",
+  "result_kind": "CERTIFIED_CROSS_CELL_INTERFACE",
+  "lifecycle": "SUFFICIENCY_PROVED",
+  "created": "2026-08-13",
+  "repository_base_commit": "64d2a94daf3070e1e422d71d69142161e14c11ff",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "question": "Does the explicitly represented finite detector-corner state extend to a normalized Born-type probability rule for the same corner when the public Krein process satisfies the certified weak-ghost hypotheses?",
+  "answer": "Yes, conditionally and exactly on the finite detector ideal. The state-representation source and the Born theorem use the identical normalized corner functional omega_P(T)=Tau(PTP)/Tau(P). For a finite J-even incoming projection P_in, a cross-Krein isometry S, an exhaustive finite output partition P_i, and the certified weak-ghost decomposition, the event map sends P_i to E_i=(P_i S P_in)^sharp(P_i S P_in). The same omega_P_in evaluates p_i=Tau(E_i)/Tau(P_in); the imported theorem proves p_i>=0 and sum_i p_i=1. An independent rational witness gives (9/25,16/25,0). The relation is a CONDITIONAL_BRIDGE between the algebraic state-representation and Krein probability-rule cells, not an identification of their full carriers or an unconditional rule for arbitrary processes.",
+  "interface": {
+    "id": "STATE_TO_PROBABILITY",
+    "label": "Finite detector-corner state representation to conditional Krein Born rule",
+    "status": "CERTIFIED",
+    "relation": "CONDITIONAL_BRIDGE",
+    "source_coordinates": [
+      {
+        "foundation": "CLASSICAL_STANDARD",
+        "carrier": "ALGEBRAIC_CSTAR",
+        "obligation": "STATE_REPRESENTATION"
+      }
+    ],
+    "target_coordinates": [
+      {
+        "foundation": "CLASSICAL_STANDARD",
+        "carrier": "KREIN_INDEFINITE",
+        "obligation": "PROBABILITY_RULE"
+      }
+    ],
+    "carrier_transition": "ALGEBRAIC_CSTAR_TO_KREIN_INDEFINITE_VIA_SHARED_FINITE_COMPANION_CORNER",
+    "scope": "Finite-trace detector corners and finite exhaustive output partitions satisfying the five displayed hypotheses.",
+    "evidence": [
+      "FOUNDATIONAL_BT_CORNER_BORN_INTERFACE_V1"
+    ]
+  },
+  "shared_object_ledger": [
+    {
+      "id": "H0",
+      "object": "the companion Hilbertized detector carrier",
+      "source_role": "GNS/state representation carrier",
+      "target_role": "carrier on which J, P_in, S, and P_i act",
+      "identity_status": "IDENTICAL_OBJECT"
+    },
+    {
+      "id": "TAU",
+      "object": "the faithful normal semifinite trace Tau",
+      "source_role": "normalizes the finite corner state",
+      "target_role": "normalizes finite process weights",
+      "identity_status": "IDENTICAL_OBJECT"
+    },
+    {
+      "id": "P_IN",
+      "object": "a finite-rank J-even incoming projection with r=Tau(P_in)>0",
+      "source_role": "defines omega_P_in",
+      "target_role": "defines A_i=P_i S P_in",
+      "identity_status": "IDENTICAL_OBJECT"
+    },
+    {
+      "id": "OMEGA_P",
+      "object": "omega_P(T)=Tau(PTP)/Tau(P)",
+      "source_role": "represented normal corner state",
+      "target_role": "the functional evaluating every event effect",
+      "identity_status": "IDENTICAL_OBJECT"
+    }
+  ],
+  "typed_maps": [
+    {
+      "id": "CORNER_STATE",
+      "from": "(Tau,P_in)",
+      "to": "omega_P_in",
+      "type": "NORMALIZED_POSITIVE_FUNCTIONAL",
+      "formula": "omega_P_in(T)=Tau(P_in T P_in)/r"
+    },
+    {
+      "id": "EVENT_EFFECT",
+      "from": "(P_i,S,P_in)",
+      "to": "E_i",
+      "type": "PUBLIC_KREIN_PROCESS_EFFECT",
+      "formula": "E_i=(P_i S P_in)^sharp(P_i S P_in)"
+    },
+    {
+      "id": "PROBABILITY",
+      "from": "(omega_P_in,E_i)",
+      "to": "p_i",
+      "type": "NORMALIZED_EVENT_PROBABILITY",
+      "formula": "p_i=omega_P_in(S^sharp P_i S)=Tau(E_i)/r"
+    }
+  ],
+  "hypotheses": [
+    "P_in is a finite-rank J-even Krein-self-adjoint projection with r=Tau(P_in)>0",
+    "S is cross-Krein isometric on Ran(P_in) and all displayed products preserve the paired core",
+    "the finite output projections P_i are Krein-self-adjoint, orthogonal, and exhaustive on S Ran(P_in)",
+    "each A_i=P_i S P_in has a weak ghost decomposition A_i=B_i+C_i",
+    "B_i commutes with J and Tr(C_i^dagger C_i)=Tr(B_i^dagger C_i)=Tr(C_i^dagger B_i)=0"
+  ],
+  "proof_obligations": [
+    {
+      "id": "SOURCE_STATE_NORMALIZED",
+      "status": "PASS",
+      "evidence": "The state source constructs omega_P for every finite nonzero P."
+    },
+    {
+      "id": "SHARED_OBJECT_IDENTITY",
+      "status": "PASS",
+      "evidence": "Both pinned sources use the same l2(Z) companion carrier, semifinite trace, finite projection, and corner formula."
+    },
+    {
+      "id": "EVENT_MAP_TYPED",
+      "status": "PASS",
+      "evidence": "Krein-self-adjoint P_i and P_in type E_i as the quadratic process effect on the shared finite corner."
+    },
+    {
+      "id": "POSITIVITY",
+      "status": "PASS",
+      "evidence": "weak ghost orthogonality gives Tr(A_i^dagger A_i)=Tr(B_i^star B_i)>=0"
+    },
+    {
+      "id": "NORMALIZATION",
+      "status": "PASS",
+      "evidence": "sum_i Tr(P_in S^dagger P_i S P_in)=Tr(P_in S^dagger S P_in)=Tr(P_in)=r"
+    },
+    {
+      "id": "EXACT_NONTRIVIAL_WITNESS",
+      "status": "PASS",
+      "evidence": "The independent three-output rational fixture yields 9/25, 16/25, and 0."
+    },
+    {
+      "id": "NONZERO_WEAK_NULL_REMAINDER",
+      "status": "PASS",
+      "evidence": "A second exact fixture has C!=0, all three null/cross traces zero, and Tr(A^sharp A)=Tr(B^sharp B)=18/25."
+    }
+  ],
+  "exact_witness": {
+    "arithmetic": "EXACT_RATIONAL",
+    "fundamental_symmetry": "J=diag(1,1,-1)",
+    "incoming_corner": "P_in=diag(1,0,0), r=Tr(P_in)=1",
+    "cross_krein_isometry": "S=[[3/5,-4/5,0],[4/5,3/5,0],[0,0,1]]",
+    "output_partition": [
+      "P_1=diag(1,0,0)",
+      "P_2=diag(0,1,0)",
+      "P_3=diag(0,0,1)"
+    ],
+    "probabilities": [
+      {
+        "numerator": 9,
+        "denominator": 25
+      },
+      {
+        "numerator": 16,
+        "denominator": 25
+      },
+      {
+        "numerator": 0,
+        "denominator": 1
+      }
+    ],
+    "probability_sum": {
+      "numerator": 1,
+      "denominator": 1
+    },
+    "nonzero_weak_null_remainder": {
+      "fundamental_symmetry": "J_null=[[0,1],[1,0]]",
+      "B": "(3/5)1",
+      "C": "(4/5)E_01, C!=0, C^sharp=C",
+      "traces": {
+        "Tr(C^sharp C)": {
+          "numerator": 0,
+          "denominator": 1
+        },
+        "Tr(B^sharp C)": {
+          "numerator": 0,
+          "denominator": 1
+        },
+        "Tr(C^sharp B)": {
+          "numerator": 0,
+          "denominator": 1
+        },
+        "Tr(B^sharp B)": {
+          "numerator": 18,
+          "denominator": 25
+        },
+        "Tr(A^sharp A)": {
+          "numerator": 18,
+          "denominator": 25
+        }
+      },
+      "conclusion": "The public quadratic weight equals the positive B-sector weight even with a nonzero trace-null remainder."
+    },
+    "identities": {
+      "cross_krein_isometry": "S^sharp S=1",
+      "effect_map": "E_i=(P_i S P_in)^sharp(P_i S P_in)=P_in S^sharp P_i S P_in",
+      "same_state_evaluation": "p_i=omega_P_in(S^sharp P_i S)=Tr(E_i)/r",
+      "normalization": "sum_i p_i=omega_P_in(S^sharp S)=omega_P_in(1)=1"
+    }
+  },
+  "proof_authority": {
+    "status": "INDEPENDENT_REDERIVATION",
+    "meaning": "The foundations checker re-derives the event-effect identity, probability normalization, and both rational fixtures. It does not treat a reproduction of the predecessor producer as verification.",
+    "general_argument": [
+      "Krein-self-adjoint projections give A_i^sharp A_i=P_in S^sharp P_i S P_in.",
+      "Exhaustiveness and cross-Krein isometry give sum_i Tau(A_i^sharp A_i)=Tau(P_in)=r.",
+      "The weak decomposition and three trace-null identities give Tau(A_i^sharp A_i)=Tau(B_i^* B_i)>=0."
+    ]
+  },
+  "predecessor_source_audit": {
+    "verifier_status": "PROVENANCE_DRIFT",
+    "input_audit": [
+      {
+        "path": "planning/work-items/reverse-physics-bateman-semifinite-relative-born-weight.json",
+        "recorded_sha256": "87496af0d988616245003bee6a3acf5c5bdcb17c8cc4ac452388bb12a0314367",
+        "actual_sha256": "87496af0d988616245003bee6a3acf5c5bdcb17c8cc4ac452388bb12a0314367",
+        "status": "MATCH"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_CROSS_KREIN_TRACE_LIMIT_V1.json",
+        "recorded_sha256": "e9dab0edb6ac2d611f2818c9117886516599eec8300e42d7020f641cbdc59996",
+        "actual_sha256": "e9dab0edb6ac2d611f2818c9117886516599eec8300e42d7020f641cbdc59996",
+        "status": "MATCH"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_ZERO_MODE_EQ19_TRILEMMA_V1.json",
+        "recorded_sha256": "31c5d45987bb484711912af5d51da1831f5632ef34278c755265fd190963edd6",
+        "actual_sha256": "31c5d45987bb484711912af5d51da1831f5632ef34278c755265fd190963edd6",
+        "status": "MATCH"
+      },
+      {
+        "path": "notes/bateman-turok-embedding.md",
+        "recorded_sha256": "7a6d946b28e720b46be101e26dcc6a07c3715ef056ef5661000300848a909533",
+        "actual_sha256": "fba59a777e24e948883d5642d6245c8969b472513ec6ee83aa6aeddc53e1f675",
+        "status": "DRIFT"
+      }
+    ],
+    "drift_scope": "The only mismatch is the evolving narrative note notes/bateman-turok-embedding.md; all three mathematical/work-item inputs match their recorded hashes.",
+    "claim_boundary": "The predecessor verifier is not reported as passing. Its theorem statement is independently re-derived here, and the stale note pin is not used as mathematical evidence."
+  },
+  "provenance": {
+    "inputs": [
+      {
+        "path": "foundations/results/FOUNDATIONAL_BT_SEPARABLE_STATE_CHAIN_ZF_V1.json",
+        "sha256": "08389e96d349766e29a34cde8109d4b1271288b59d44f3b29fcb456065641998",
+        "role": "explicit separable detector state and GNS representation"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_SEMIFINITE_RELATIVE_BORN_WEIGHT_V1.json",
+        "sha256": "bed18646e76f92dc8af1f0b9935d5c71f060fabd283325b26443b524395c4e9c",
+        "role": "conditional finite-ideal public Krein Born theorem"
+      },
+      {
+        "path": "notes/bateman-turok-embedding.md",
+        "sha256": "fba59a777e24e948883d5642d6245c8969b472513ec6ee83aa6aeddc53e1f675",
+        "role": "audited narrative drift input; not mathematical proof authority"
+      }
+    ]
+  },
+  "independent_checker": {
+    "path": "foundations/check_bt_corner_born_interface.py",
+    "checks": [
+      "source identities and hashes",
+      "shared corner formula",
+      "exact rational cross-Krein isometry",
+      "event-effect identity",
+      "same-state evaluation",
+      "probability positivity and normalization",
+      "claim boundaries"
+    ]
+  },
+  "claim_flags": {
+    "cross_cell_interface_certified": true,
+    "same_corner_state_used_on_both_sides": true,
+    "event_effect_map_constructed": true,
+    "conditional_probabilities_nonnegative": true,
+    "conditional_probabilities_normalized": true,
+    "interface_independent_rederivation_passed": true,
+    "predecessor_note_only_provenance_drift_recorded": true,
+    "legacy_semifinite_source_verifier_passed": false,
+    "arbitrary_krein_process_probability_rule": false,
+    "physical_thermodynamic_state_selected": false,
+    "all_order_bt_probability_constructed": false,
+    "lorentzian_claim": false
+  },
+  "does_not_establish": [
+    "a probability rule for arbitrary Krein operators without the five displayed hypotheses",
+    "identity of the full algebraic C* and Krein carriers",
+    "a canonical choice of the finite incoming projection",
+    "a thermodynamic normal state or finite trace of the identity",
+    "the nonlinear Bateman-Turok Eq. (19), a complete NLO probability, or an all-order process",
+    "a gravitational, BV-BRST, QME, residual-transfer, or LORENTZIAN-CAUSAL result",
+    "empirical agreement or a complete physical theory",
+    "repair or successful replay of the predecessor certificate's stale narrative-note provenance pin"
+  ],
+  "human_report": "foundations/reports/bt-corner-born-interface.md",
+  "canonical_digest": "70d239c53f1cd6d0566bc0410f7728747ee33fad8d73f94385ef94fbb6364dd6"
+}

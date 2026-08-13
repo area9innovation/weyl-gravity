@@ -24,8 +24,9 @@ status and therefore creates a coverage envelope, not a composition theorem.
 
 1. **Obligation coverage — computed.** Direct, partial, gap, and unknown statuses are
    projected from the atlas without changing their evidence type.
-2. **One coherent integrated theory — not assessed.** No cross-cell or cross-carrier
-   composition certificate is registered.
+2. **One coherent integrated theory — partially assessed.** One finite-corner
+   state-to-probability bridge is certified under five hypotheses, but the
+   remaining interfaces block a composed theory.
 3. **Agreement with observations — not in the current schema.** There are no typed
    dataset, likelihood, residual, fit, or out-of-sample prediction records. The
    reconstruction obligation is only a bridge-readiness proxy.

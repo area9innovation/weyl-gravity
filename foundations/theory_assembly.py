@@ -122,7 +122,12 @@ def _selection_key(cell: dict[str, Any], config: dict[str, Any]) -> tuple[int, i
     )
 
 
-def _assembly(config: dict[str, Any], obligations: list[str], cell_map: dict[tuple[str, str, str], dict[str, Any]]) -> dict[str, Any]:
+def _assembly(
+    config: dict[str, Any],
+    obligations: list[str],
+    cell_map: dict[tuple[str, str, str], dict[str, Any]],
+    certified_interfaces: list[dict[str, Any]],
+) -> dict[str, Any]:
     selected = []
     for obligation in obligations:
         candidates = [
@@ -140,20 +145,41 @@ def _assembly(config: dict[str, Any], obligations: list[str], cell_map: dict[tup
             "evidence_roles": cell.get("evidence_roles", {}),
             "selection_basis": "Strongest recorded status in the declared admissible region; ties prefer more reviewed direct kinds, local grade, more evidence, then declared order.",
         })
-    interfaces = [
-        {
+    selected_coordinates = {
+        item["obligation"]: {
+            "foundation": item["foundation"],
+            "carrier": item["carrier"],
+            "obligation": item["obligation"],
+        }
+        for item in selected
+    }
+    interfaces = []
+    for interface_id, label, sources, targets in INTERFACE_TEMPLATES:
+        expected_sources = [selected_coordinates[item] for item in sources]
+        expected_targets = [selected_coordinates[item] for item in targets]
+        certified = next(
+            (
+                item for item in certified_interfaces
+                if item.get("id") == interface_id
+                and item.get("status") == "CERTIFIED"
+                and item.get("source_coordinates") == expected_sources
+                and item.get("target_coordinates") == expected_targets
+            ),
+            None,
+        )
+        interfaces.append({
             "id": interface_id,
             "label": label,
             "source_obligations": sources,
             "target_obligations": targets,
-            "relation": "NOT_ASSESSED",
-            "evidence": [],
-            "rationale": "Coverage records do not by themselves prove that these selected objects share a model, scope, or translation.",
-        }
-        for interface_id, label, sources, targets in INTERFACE_TEMPLATES
-    ]
+            "relation": certified["relation"] if certified else "NOT_ASSESSED",
+            "certification_status": "CERTIFIED" if certified else "NOT_ASSESSED",
+            "evidence": certified.get("evidence", []) if certified else [],
+            "rationale": certified.get("scope") if certified else "Coverage records do not by themselves prove that these selected objects share a model, scope, or translation.",
+        })
     direct = sum(item["status"] in DIRECT for item in selected)
     assessed = sum(item["status"] != "NOT_MAPPED" for item in selected)
+    certified_count = sum(item["certification_status"] == "CERTIFIED" for item in interfaces)
     return {
         **config,
         "kind": "NAVIGATIONAL_PROTOTYPE",
@@ -163,7 +189,7 @@ def _assembly(config: dict[str, Any], obligations: list[str], cell_map: dict[tup
         "interfaces": interfaces,
         "hard_gates": [
             {"id": "OBLIGATION_COVERAGE", "label": "Obligation coverage", "status": "SATISFIED" if direct == len(selected) else "OPEN", "basis": f"{direct}/{len(selected)} obligations have a direct recorded result."},
-            {"id": "CROSS_CELL_COMPOSITION", "label": "Cross-cell composition", "status": "BLOCKED", "basis": "All required interfaces remain NOT_ASSESSED."},
+            {"id": "CROSS_CELL_COMPOSITION", "label": "Cross-cell composition", "status": "BLOCKED", "basis": f"{certified_count}/{len(interfaces)} required interfaces are certified; the remainder block assembly composition."},
             {"id": "PREDICTION_DERIVATION", "label": "Prediction derivation", "status": "BLOCKED", "basis": "No registered end-to-end derivation connects the selected cells."},
             {"id": "OBSERVABLE_IDENTIFICATION", "label": "Observable identification", "status": "BLOCKED", "basis": "No assembly-level map from formal quantities to measured observables is registered."},
             {"id": "EMPIRICAL_COMPARISON", "label": "Empirical comparison", "status": "NO_RECORDS", "basis": "The empirical ledger contains no comparison for this assembly."},
@@ -178,7 +204,8 @@ def build_assembly_assessment(dataset: dict[str, Any]) -> dict[str, Any]:
     axes = {axis["id"]: axis for axis in dataset["axes"]}
     obligations = [item["id"] for item in axes["REFINED_OBLIGATION"]["keys"]]
     cell_map = {(cell["foundation"], cell["carrier"], cell["obligation"]): cell for cell in dataset["cells"]}
-    assemblies = [_assembly(config, obligations, cell_map) for config in ASSEMBLY_CONFIGS]
+    certified_interfaces = dataset.get("cross_cell_interfaces", [])
+    assemblies = [_assembly(config, obligations, cell_map, certified_interfaces) for config in ASSEMBLY_CONFIGS]
     value = {
         "schema_version": "foundational-theory-assembly-atlas-v1",
         "result_id": "FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1",
@@ -189,6 +216,7 @@ def build_assembly_assessment(dataset: dict[str, Any]) -> dict[str, Any]:
         "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
         "unit": "A prototype assembly is a deterministic coverage envelope over selected cells, not a composed theory.",
         "interface_vocabulary": INTERFACE_VOCABULARY,
+        "certified_interface_records": certified_interfaces,
         "assemblies": assemblies,
         "empirical_ledger": {
             "record_schema": ["assembly", "benchmark", "observable_map", "dataset", "prediction", "comparison_method", "uncertainty", "parameter_fit_scope", "out_of_sample_status", "evidence"],
@@ -199,6 +227,7 @@ def build_assembly_assessment(dataset: dict[str, Any]) -> dict[str, Any]:
             "prototype_assemblies_generated": True,
             "selected_cells_content_addressed": True,
             "interface_and_coverage_states_separated": True,
+            "at_least_one_cross_cell_interface_certified": bool(certified_interfaces),
             "empirical_record_schema_declared": True,
             "cross_cell_composability_established": False,
             "prediction_chain_established": False,
@@ -207,7 +236,7 @@ def build_assembly_assessment(dataset: dict[str, Any]) -> dict[str, Any]:
         },
         "does_not_establish": [
             "that selected cells concern the same physical model or scope",
-            "that any carrier or foundation translation exists",
+            "that a certified finite-corner bridge supplies any unregistered carrier or foundation translation",
             "that direct coverage composes into an end-to-end prediction",
             "that a reduced or finite construction has a controlled continuum limit",
             "that any prototype agrees with observations",

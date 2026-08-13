@@ -17,6 +17,11 @@ coverage; **81 remain `NOT_MAPPED`**, which is not a literature-absence claim.
 The remaining **124**
 coordinates are browser-visible complements that have not been assessed.
 
+Cube v5 adds one certified finite-corner `CONDITIONAL_BRIDGE` from algebraic
+state representation to a Krein probability rule. The target is promoted from
+pieces to a local result under five explicit hypotheses; the other assembly
+interfaces remain open.
+
 Coverage is classified for **371** emitted cells. The
 coded-wave pass promotes two weak-arithmetic Hilbert/operator cells from pieces
 to local results and adds five carefully typed evidence overlays.
@@ -62,7 +67,7 @@ This site does not establish:
 - that the 124 synthetic coordinates are coherent
 - a weakest mathematical base
 - a theorem ranking from interface order, Pareto membership, or neighbor counts
-- cross-cell or cross-carrier composability
+- composition beyond the certified finite-corner state-to-probability interface
 - agreement with observations
 - a complete observationally validated theory
 - a new Lorentzian-causal result

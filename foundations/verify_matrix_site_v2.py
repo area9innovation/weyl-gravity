@@ -45,7 +45,7 @@ def verify(*, result=None, report=None) -> tuple[list[str], list[str]]:
         "migration_reviewed": 452,
         "migration_pending": 0,
         "reviewed_no_transfer": 88,
-        "evidence_records": 69,
+        "evidence_records": 70,
         "graph_edges": 10,
         "ladder_levels": 6,
         "theory_profiles": 36,
@@ -54,8 +54,10 @@ def verify(*, result=None, report=None) -> tuple[list[str], list[str]]:
         "prototype_assemblies": 7,
         "assembly_interfaces": 49,
         "empirical_comparisons": 0,
+        "certified_cross_cell_interfaces": 1,
+        "certified_assembly_interface_instances": 2,
         "dual_direct_cells": 7,
-        "mark_counts": {"G": 30, "L": 76, "LR": 7, "Lr": 5, "P": 20, "Pl": 75, "Plr": 14, "Pr": 51, "R": 90, "Rl": 3, "\u00b7": 205},
+        "mark_counts": {"G": 30, "L": 76, "LR": 7, "Lr": 6, "P": 20, "Pl": 75, "Plr": 13, "Pr": 51, "R": 90, "Rl": 3, "\u00b7": 205},
     }
     if summary != expected_summary:
         errors.append("expected independent summary")
@@ -68,14 +70,14 @@ def verify(*, result=None, report=None) -> tuple[list[str], list[str]]:
         errors.append("manifest pin")
     checks.append("content-addressed manifest")
     flags = value.get("claim_flags", {})
-    for key in ("static_site_generated", "all_cartesian_coordinates_visible", "all_emitted_migrations_reviewed", "coverage_and_migration_separated", "all_used_evidence_resolved", "theory_profiles_generated", "theory_assembly_atlas_generated", "composition_and_observation_rails_separated"):
+    for key in ("static_site_generated", "all_cartesian_coordinates_visible", "all_emitted_migrations_reviewed", "coverage_and_migration_separated", "all_used_evidence_resolved", "theory_profiles_generated", "theory_assembly_atlas_generated", "at_least_one_cross_cell_interface_certified", "composition_and_observation_rails_separated"):
         if flags.get(key) is not True:
             errors.append("positive flag " + key)
     for key in ("scientific_claims_duplicated_by_hand", "literature_complete", "unmapped_means_absent", "reviewed_no_transfer_means_absent", "priority_score_is_theorem", "complete_observationally_valid_theory_identified", "new_lorentzian_claim"):
         if flags.get(key) is not False:
             errors.append("boundary flag " + key)
     checks.append("fail-closed claim flags")
-    for token in ("576", "452", "reviewed", "0 pending", "88", "81", "124", "371", "two weak-arithmetic", "five carefully typed evidence overlays", "NOT_MAPPED", "not a literature-absence claim", "separate coverage and migration", "Earlier cubes remain unchanged", "does not establish"):
+    for token in ("576", "452", "reviewed", "0 pending", "88", "81", "124", "371", "two weak-arithmetic", "five carefully typed evidence overlays", "CONDITIONAL_BRIDGE", "five explicit hypotheses", "NOT_MAPPED", "not a literature-absence claim", "separate coverage and migration", "Earlier cubes remain unchanged", "does not establish"):
         if token not in text:
             errors.append("report token " + token)
     checks.append("human-readable migration and deployment report")

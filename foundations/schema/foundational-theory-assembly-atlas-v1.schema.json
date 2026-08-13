@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "additionalProperties": false,
-  "required": ["schema_version", "result_id", "result_kind", "lifecycle", "title", "created", "dependency_tags", "unit", "interface_vocabulary", "assemblies", "empirical_ledger", "claim_flags", "does_not_establish", "source_atlas_digest", "canonical_digest"],
+  "required": ["schema_version", "result_id", "result_kind", "lifecycle", "title", "created", "dependency_tags", "unit", "interface_vocabulary", "certified_interface_records", "assemblies", "empirical_ledger", "claim_flags", "does_not_establish", "source_atlas_digest", "canonical_digest"],
   "properties": {
     "schema_version": {"const": "foundational-theory-assembly-atlas-v1"},
     "result_id": {"const": "FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1"},
@@ -16,6 +16,7 @@
       "type": "array", "minItems": 7, "maxItems": 7,
       "items": {"type": "object", "required": ["id", "meaning"]}
     },
+    "certified_interface_records": {"type": "array", "minItems": 1, "maxItems": 1},
     "assemblies": {
       "type": "array", "minItems": 7, "maxItems": 7,
       "items": {
@@ -41,7 +42,7 @@
     },
     "claim_flags": {
       "type": "object",
-      "required": ["prototype_assemblies_generated", "selected_cells_content_addressed", "interface_and_coverage_states_separated", "empirical_record_schema_declared", "cross_cell_composability_established", "prediction_chain_established", "empirical_agreement_assessed", "complete_observationally_valid_theory_identified"]
+      "required": ["prototype_assemblies_generated", "selected_cells_content_addressed", "interface_and_coverage_states_separated", "at_least_one_cross_cell_interface_certified", "empirical_record_schema_declared", "cross_cell_composability_established", "prediction_chain_established", "empirical_agreement_assessed", "complete_observationally_valid_theory_identified"]
     },
     "does_not_establish": {"type": "array", "minItems": 7, "items": {"type": "string", "minLength": 1}},
     "source_atlas_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
