@@ -1,0 +1,356 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-fully-rearranged-rigged-all-time-q10-packet-v1.schema.json",
+  "title": "BT fully rearranged rigged all-time q10 packet certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "schema_version",
+    "certificate",
+    "question",
+    "answer",
+    "dependency_tags",
+    "lifecycle_state",
+    "result_kind",
+    "anchored_temporal_limit",
+    "bridge_chart_audit",
+    "all_time_loop_operator",
+    "q10_packet_coefficient",
+    "renormalization_group",
+    "claim_boundary",
+    "assumptions",
+    "does_not_establish",
+    "next_gate",
+    "provenance",
+    "checks",
+    "verification_commands",
+    "report"
+  ],
+  "properties": {
+    "schema": {
+      "const": "reverse_physics/schema/reverse-physics-bt-fully-rearranged-rigged-all-time-q10-packet-v1.schema.json"
+    },
+    "schema_version": {"const": 1},
+    "certificate": {
+      "const": "REVERSE_PHYSICS_BT_FULLY_REARRANGED_RIGGED_ALL_TIME_Q10_PACKET_V1"
+    },
+    "question": {"type": "string", "minLength": 1},
+    "answer": {"type": "string", "minLength": 1600},
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE"]
+    },
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "result_kind": {"type": "string", "minLength": 1},
+    "anchored_temporal_limit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "external_time_rule",
+        "one_gap",
+        "two_gap",
+        "three_window",
+        "inverse_Fourier_overlap",
+        "overlap_fixtures",
+        "L1_proof",
+        "approximate_identity",
+        "boundary",
+        "status"
+      ],
+      "properties": {
+        "external_time_rule": {
+          "const": "remove the common total-energy center-time factor before taking T to infinity"
+        },
+        "one_gap": {"const": "A2,T and F_T both tend to H_+(s)=pi*delta(s)+i*PV(1/s) in S'(R)"},
+        "two_gap": {"type": "string", "pattern": "tensor"},
+        "three_window": {
+          "const": "W_T(x,y)=F_T(-x-y)*F_T(x)*F_T(y)/T"
+        },
+        "inverse_Fourier_overlap": {
+          "const": "L_T(u,v)/T=max(0,1-diam(0,u,v)/T)"
+        },
+        "overlap_fixtures": {
+          "type": "array",
+          "minItems": 6,
+          "maxItems": 6,
+          "items": {"$ref": "#/$defs/overlapFixture"}
+        },
+        "L1_proof": {"type": "string", "minLength": 100},
+        "approximate_identity": {"type": "string", "minLength": 50},
+        "boundary": {"type": "string", "pattern": "\\(2\\*pi\\)\\^2\\*delta"},
+        "status": {"const": "CENTER_TIME_INTENSIVE_TEMPORAL_BOUNDARIES_MATCHED"}
+      }
+    },
+    "bridge_chart_audit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "all_incoming_labels",
+        "hard_mask",
+        "hard_mask_interpretation",
+        "exchange_rows",
+        "mask_set",
+        "unique_shell_mask",
+        "unique_shell_exchange",
+        "derivative_identity",
+        "bubble_invariant_margin",
+        "neighborhood_conclusion",
+        "status"
+      ],
+      "properties": {
+        "all_incoming_labels": {"const": "[p0,p1,p2,-k0,-k1,-k2]"},
+        "hard_mask": {"const": 7},
+        "hard_mask_interpretation": {"type": "string", "minLength": 1},
+        "exchange_rows": {
+          "type": "array",
+          "minItems": 9,
+          "maxItems": 9,
+          "items": {"$ref": "#/$defs/bridgeRow"}
+        },
+        "mask_set": {"const": [7, 11, 13, 14, 19, 21, 22, 25, 26, 28]},
+        "unique_shell_mask": {"const": 11},
+        "unique_shell_exchange": {"const": [2, 0]},
+        "derivative_identity": {
+          "const": "partial_t K_mask^2=partial_t q_ia^2=-2*N_ia"
+        },
+        "bubble_invariant_margin": {"const": "32/625"},
+        "neighborhood_conclusion": {"type": "string", "minLength": 1},
+        "status": {
+          "const": "ALL_SOURCE_SURVIVING_BRIDGE_DISTRIBUTIONS_HAVE_COMMON_EXACT_COAREA"
+        }
+      }
+    },
+    "all_time_loop_operator": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "tree",
+        "triangle",
+        "bubble_bridge",
+        "complete_loop",
+        "triangle_domain",
+        "bridge_distribution",
+        "bridge_domain",
+        "convergence",
+        "status"
+      ],
+      "properties": {
+        "tree": {"type": "string", "minLength": 1},
+        "triangle": {"type": "string", "pattern": "C0"},
+        "bubble_bridge": {"type": "string", "pattern": "K_R\\^2\\+i0"},
+        "complete_loop": {"const": "T6,infinity=T6,triangle,infinity+T6,bb,infinity"},
+        "triangle_domain": {"type": "string", "minLength": 1},
+        "bridge_distribution": {"type": "string", "pattern": "coarea"},
+        "bridge_domain": {"type": "string", "pattern": "L2"},
+        "convergence": {"type": "string", "pattern": "L2"},
+        "status": {"const": "COMPLETE_SELECTED_ALL_TIME_T6_PACKET_MAP_CONSTRUCTED"}
+      }
+    },
+    "q10_packet_coefficient": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "domain",
+        "q8",
+        "q10",
+        "expanded",
+        "finiteness",
+        "value",
+        "sign",
+        "scheme",
+        "common_Born",
+        "status"
+      ],
+      "properties": {
+        "domain": {"type": "string", "minLength": 1},
+        "q8": {"const": "q8,infinity[F]=<T4,infinity F,T4,infinity F>"},
+        "q10": {"const": "q10,infinity[F]=2*Re<T4,infinity F,T6,infinity F>"},
+        "expanded": {"type": "string", "minLength": 1},
+        "finiteness": {"type": "string", "pattern": "finite"},
+        "value": {"const": "EXACT_PACKET_FUNCTIONAL_NOT_A_PACKET_INDEPENDENT_NUMBER"},
+        "sign": {"const": "NOT_DETERMINED"},
+        "scheme": {"const": "MSbar normal-ordered massless direct auxiliary frame"},
+        "common_Born": {
+          "const": "q10,infinity^public[F]=q10,infinity^Hilbert[F] on the selected positive packet carrier"
+        },
+        "status": {
+          "const": "COMPLETE_SELECTED_RIGGED_ALL_TIME_Q10_COEFFICIENT_COMPUTED"
+        }
+      }
+    },
+    "renormalization_group": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "triangle_scale_derivative",
+        "bubble_scale_derivative",
+        "q10_scale_derivative",
+        "beta",
+        "cancellation",
+        "scope",
+        "status"
+      ],
+      "properties": {
+        "triangle_scale_derivative": {"const": "0"},
+        "bubble_scale_derivative": {
+          "const": "partial_log(mu)T6,bb,infinity=[5/(4*pi^2)]*T4,infinity"
+        },
+        "q10_scale_derivative": {
+          "const": "partial_log(mu)q10,infinity=[5/(2*pi^2)]*q8,infinity"
+        },
+        "beta": {
+          "const": "partial_log(mu)lambda=-5*lambda^3/(16*pi^2)"
+        },
+        "cancellation": {
+          "const": "partial_log(mu)[lambda^8*q8,infinity+lambda^10*q10,infinity]=O(lambda^12)"
+        },
+        "scope": {"type": "string", "minLength": 1},
+        "status": {
+          "const": "ALL_TIME_SELECTED_Q8_Q10_JET_IS_RG_INVARIANT_THROUGH_LAMBDA10"
+        }
+      }
+    },
+    "claim_boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "matched_finite_time_q10",
+        "q10_sign",
+        "q10_scheme_independence",
+        "finite_coupling_probability",
+        "bounded_whole_carrier_operator",
+        "Moller_LSZ_S",
+        "general_Eq19",
+        "gravity_BV_BRST_QME",
+        "Lorentzian_causal_claim"
+      ],
+      "properties": {
+        "matched_finite_time_q10": {"const": "NOT_COMPUTED"},
+        "q10_sign": {"const": "NOT_DETERMINED"},
+        "q10_scheme_independence": {"const": "FALSE_AS_A_STANDALONE_COORDINATE"},
+        "finite_coupling_probability": {"const": "NOT_ESTABLISHED"},
+        "bounded_whole_carrier_operator": {"const": "NOT_CONSTRUCTED"},
+        "Moller_LSZ_S": {"const": "NOT_CONSTRUCTED"},
+        "general_Eq19": {"const": "NOT_PROVED"},
+        "gravity_BV_BRST_QME": {"const": "NOT_CONSTRUCTED"},
+        "Lorentzian_causal_claim": {"const": "NOT_ESTABLISHED"}
+      }
+    },
+    "assumptions": {
+      "type": "array",
+      "minItems": 5,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "does_not_establish": {
+      "type": "array",
+      "minItems": 15,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "next_gate": {"type": "string", "minLength": 150},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_commit",
+        "input_hashes",
+        "method",
+        "generated_by",
+        "independent_verifier"
+      ],
+      "properties": {
+        "source_commit": {"const": "41bcb0f9b5f5587cb7dbb4e909af4a1ac804eecf"},
+        "input_hashes": {
+          "type": "object",
+          "minProperties": 10,
+          "additionalProperties": {"pattern": "^[0-9a-f]{64}$"}
+        },
+        "method": {"type": "string", "minLength": 1},
+        "generated_by": {
+          "const": "reverse_physics/bt_fully_rearranged_rigged_all_time_q10_packet.py"
+        },
+        "independent_verifier": {
+          "const": "reverse_physics/verify_bt_fully_rearranged_rigged_all_time_q10_packet.py"
+        }
+      }
+    },
+    "checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ok", "passed", "total", "items"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"type": "integer", "minimum": 46},
+        "total": {"type": "integer", "minimum": 46},
+        "items": {
+          "type": "object",
+          "minProperties": 46,
+          "additionalProperties": {"const": true}
+        }
+      }
+    },
+    "verification_commands": {
+      "type": "array",
+      "minItems": 3,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "report": {
+      "const": "reverse_physics/reports/bt-fully-rearranged-rigged-all-time-q10-packet.md"
+    }
+  },
+  "$defs": {
+    "rational": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      }
+    },
+    "overlapFixture": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["u_over_T", "v_over_T", "normalized_overlap"],
+      "properties": {
+        "u_over_T": {"$ref": "#/$defs/rational"},
+        "v_over_T": {"$ref": "#/$defs/rational"},
+        "normalized_overlap": {"$ref": "#/$defs/rational"}
+      }
+    },
+    "bridgeRow": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "mask",
+        "exchange_channel",
+        "canonical_bridge_momentum",
+        "role_count",
+        "bridge_invariant",
+        "q_squared",
+        "rotation_numerator_N",
+        "partial_t_K_squared",
+        "on_shell",
+        "all_role_source_weights_positive",
+        "noncritical"
+      ],
+      "properties": {
+        "mask": {"type": "integer", "minimum": 0, "maximum": 63},
+        "exchange_channel": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {"type": "integer", "minimum": 0, "maximum": 2}
+        },
+        "canonical_bridge_momentum": {"enum": ["q_ia", "-q_ia"]},
+        "role_count": {"const": 6},
+        "bridge_invariant": {"$ref": "#/$defs/rational"},
+        "q_squared": {"$ref": "#/$defs/rational"},
+        "rotation_numerator_N": {"$ref": "#/$defs/rational"},
+        "partial_t_K_squared": {"$ref": "#/$defs/rational"},
+        "on_shell": {"type": "boolean"},
+        "all_role_source_weights_positive": {"const": true},
+        "noncritical": {"const": true}
+      }
+    }
+  }
+}
