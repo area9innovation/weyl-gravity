@@ -1,0 +1,37 @@
+{
+  "id": "sf:program/work/reverse-physics-bateman-auxiliary-polynomial-quadrupole-positive-detector",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "reverse-physics",
+    "state": "ACTIVE",
+    "objective": "Construct a regular polynomial ghost-even quadrupole detector directly in the public Bateman--Turok Omega/Upsilon fields, decide the continuous-charge cost of a nonzero response, and test the exact compact q8 coefficient on the certified positive source.",
+    "depends_on": [
+      "REVERSE_PHYSICS_BT_POSITIVE_LOCAL_REAL_STRUCTURE_DICHOTOMY_V1",
+      "REVERSE_PHYSICS_BT_QUADRUPOLE_MIRROR_SHEET_DICHOTOMY_V1",
+      "REVERSE_PHYSICS_BT_COMPACT_SPACETIME_QUADRUPOLE_DARK_DETECTOR_Q8_V1",
+      "REVERSE_PHYSICS_BT_SCALAR_DRESSED_SOURCE_COMPACT_WAVEPACKET_V1",
+      "REVERSE_PHYSICS_BT_CONTINUOUS_ANGLE_Q6_FAMILY_V1",
+      "REVERSE_PHYSICS_BT_SIX_POINT_FULL_PHASE_SPACE_BORN_POSITIVITY_V1"
+    ],
+    "activates": [
+      "a regular same-chart public-field quadrupole with the correct positive adjoint",
+      "an exact classification of ghost-even versus boost-neutral quadratic pair detectors",
+      "a charge-balanced finite pointer that preserves the public O(1,1) symmetry",
+      "a public auxiliary positive local q8 detector coefficient"
+    ],
+    "current_gate": "Classify real quadratic species tensors C under ghost parity and SO+(1,1), construct the charge-balanced pointer intertwiner on the positive three-particle source, and recompute the pure-channel quadrupole moment and compact response without using the singular scalar hidden-parity image.",
+    "stop_condition": "Land a COEFFICIENT_COMPUTED LOCAL-ALGEBRAIC/EUCLIDEAN-SPECTRAL/REDUCED-MODE certificate with an independent verifier, adversarial tests and report. It must prove the polynomial detector's ghost parity, positive adjoint, total charge conservation, positive selected species map and strict compact q8 response, while keeping Eq. (19), full local-net affiliation, all-order probability, gravity and Lorentzian claims open.",
+    "forbid": "no identification with the singular scalar quadrupole pushforward; no claim that the boost-neutral cross bilinear sees the pure positive source; no omission of the charged pointer required by O(1,1); no general Eq. (19), Haag--Kastler, all-order, gravity, QME or LORENTZIAN-CAUSAL promotion; no literature-priority claim",
+    "allowed_paths": [
+      "reverse_physics/",
+      "paper/05-interaction-obstructions.tex",
+      "paper/05-interaction-obstructions.pdf",
+      "paper/06-einstein-weyl-interaction-obstructions.tex",
+      "paper/06-einstein-weyl-interaction-obstructions.pdf",
+      "planning/work-items/reverse-physics-bateman-auxiliary-polynomial-quadrupole-positive-detector.json",
+      "planning/events/"
+    ],
+    "resource_hint": "For Phi=(Omega,Upsilon), every real symmetric ghost-even quadratic species tensor is C=[[a,b],[b,a]]. Boost neutrality forces a=0, but the neutral cross bilinear has zero pair-annihilation matrix element on the pure source (|Upsilon^3>+|Omega^3>)/sqrt(2). The responding choice C=I has charge branches +2 and -2. Couple them to a pointer with a neutral ground and two exchanged click states of charges -2 and +2. The combined pair map preserves total charge, intertwines ghost parity, and is an isometry from the normalized pure even source to a normalized positive even pointer-spectator state. On the tagged angle family the pure channel excludes mask 7, so its t/u angular coefficient is 2 rather than the imported 10; its tree quadrupole moment is one fifth of the certified positive moment. The active loop has the same positive complement species eigenvector. The compact q8 bound therefore survives without the logarithmic scalar parity image."
+  }
+}

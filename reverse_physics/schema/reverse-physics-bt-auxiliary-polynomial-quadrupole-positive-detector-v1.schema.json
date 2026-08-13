@@ -1,0 +1,166 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-auxiliary-polynomial-quadrupole-positive-detector-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "schema_version", "certificate", "question", "answer",
+    "result_kind", "lifecycle_state", "dependency_tags", "assumptions",
+    "provenance", "quadratic_species_classification",
+    "charge_balanced_pointer", "compact_q8_response", "disposition",
+    "does_not_establish", "next_gate", "checks", "verification_commands",
+    "report"
+  ],
+  "properties": {
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-auxiliary-polynomial-quadrupole-positive-detector-v1.schema.json"},
+    "schema_version": {"const": 1},
+    "certificate": {"const": "REVERSE_PHYSICS_BT_AUXILIARY_POLYNOMIAL_QUADRUPOLE_POSITIVE_DETECTOR_V1"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE"]},
+    "assumptions": {
+      "type": "array", "minItems": 8, "maxItems": 8,
+      "items": {"$ref": "#/$defs/text"}
+    },
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_commit", "retrieval_date", "inputs", "generated_by", "independent_verifier", "method"],
+      "properties": {
+        "source_commit": {"const": "11b1bcf6a7a94ac4f908d1a558a181a2fe4df263"},
+        "retrieval_date": {"const": "2026-08-13"},
+        "inputs": {
+          "type": "array", "minItems": 11, "maxItems": 11,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["path", "sha256"],
+            "properties": {
+              "path": {"$ref": "#/$defs/text"},
+              "sha256": {"$ref": "#/$defs/hash"}
+            }
+          }
+        },
+        "generated_by": {"const": "reverse_physics/bt_auxiliary_polynomial_quadrupole_positive_detector.py"},
+        "independent_verifier": {"const": "reverse_physics/verify_bt_auxiliary_polynomial_quadrupole_positive_detector.py"},
+        "method": {"$ref": "#/$defs/text"}
+      }
+    },
+    "quadratic_species_classification": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "field_basis", "fundamental_symmetry",
+        "general_real_symmetric_ghost_even_tensor", "responding_tensor",
+        "responding_density", "responding_charge_support", "neutral_tensor",
+        "neutral_density", "neutral_pure_pair_response", "dichotomy",
+        "regularity", "adjoints", "status"
+      ],
+      "properties": {
+        "field_basis": {"const": ["Omega", "Upsilon"]},
+        "fundamental_symmetry": {"$ref": "#/$defs/matrix"},
+        "general_real_symmetric_ghost_even_tensor": {"const": "C(a,b)=[[a,b],[b,a]]"},
+        "responding_tensor": {"const": [["1", "0"], ["0", "1"]]},
+        "responding_density": {"$ref": "#/$defs/text"},
+        "responding_charge_support": {"const": ["+2", "-2"]},
+        "neutral_tensor": {"const": [["0", "1"], ["1", "0"]]},
+        "neutral_density": {"$ref": "#/$defs/text"},
+        "neutral_pure_pair_response": {"const": ["0", "0"]},
+        "dichotomy": {"$ref": "#/$defs/text"},
+        "regularity": {"const": "POLYNOMIAL_ON_THE_PUBLIC_PERTURBATIVE_VACUUM_CHART_WITH_NO_LOGARITHM_OR_INVERSE_FIELD"},
+        "adjoints": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"$ref": "#/$defs/text"}},
+        "status": {"const": "RESPONDING_GHOST_EVEN_PUBLIC_POLYNOMIAL_CONSTRUCTED_WITH_EXCHANGED_CHARGE_BRANCHES"}
+      }
+    },
+    "charge_balanced_pointer": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "pointer_states", "pointer_ghost_parity", "interaction",
+        "branch_charge_sums", "three_particle_kappa",
+        "pointer_spectator_kappa", "pair_map", "pair_map_identity", "source",
+        "selected_output", "norm_identity", "truncated_interaction",
+        "Hilbert_Gram", "operator_identities", "status"
+      ],
+      "properties": {
+        "pointer_states": {"const": ["g charge 0", "e_- charge -2", "e_+ charge +2"]},
+        "pointer_ghost_parity": {"$ref": "#/$defs/text"},
+        "interaction": {"$ref": "#/$defs/text"},
+        "branch_charge_sums": {"const": ["-2+2=0", "+2-2=0"]},
+        "three_particle_kappa": {"$ref": "#/$defs/matrix"},
+        "pointer_spectator_kappa": {"$ref": "#/$defs/matrix"},
+        "pair_map": {"$ref": "#/$defs/matrix"},
+        "pair_map_identity": {"$ref": "#/$defs/text"},
+        "source": {"$ref": "#/$defs/text"},
+        "selected_output": {"$ref": "#/$defs/text"},
+        "norm_identity": {"$ref": "#/$defs/text"},
+        "truncated_interaction": {"$ref": "#/$defs/matrix"},
+        "Hilbert_Gram": {"$ref": "#/$defs/matrix"},
+        "operator_identities": {"const": ["V^sharp=V", "V*=V", "kappa_total V kappa_total=V"]},
+        "status": {"const": "FINITE_CHARGE_NEUTRAL_GHOST_EVEN_POSITIVE_SELECTED_POINTER_COUPLING_CONSTRUCTED"}
+      }
+    },
+    "compact_q8_response": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "leading_density_identity", "leading_response", "pure_channel",
+        "connected_tree_relation", "connected_tree_lower",
+        "loop_species_rule", "loop_lower", "complete_relative_lower",
+        "local_lower", "compact_lower", "probability", "normalization",
+        "status"
+      ],
+      "properties": {
+        "leading_density_identity": {"$ref": "#/$defs/text"},
+        "leading_response": {"const": "A2_aux(h_R)=0 for every compact cutoff radius R"},
+        "pure_channel": {"const": "S=7 and S^c=56, corresponding to the two all-pure three-particle branches"},
+        "connected_tree_relation": {"const": "after P2 removes all c-independent terms, J_tree,pure=(2/10)*J_tree=J_tree/5"},
+        "connected_tree_lower": {"const": "J_tree,pure>1/500>0"},
+        "loop_species_rule": {"$ref": "#/$defs/text"},
+        "loop_lower": {"const": "J_loop>252416/73828125>1/400"},
+        "complete_relative_lower": {"const": "J_R,aux>1/19200"},
+        "local_lower": {"const": "Q8_aux,local/q4_bar>1/4718592000"},
+        "compact_lower": {"const": "Q8_aux,compact/q4_bar>1/18874368000"},
+        "probability": {"const": "p_click=g_det^2*lambda^8*Q8_aux,compact+O(g_det^2*lambda^10)+O(g_det^4)"},
+        "normalization": {"$ref": "#/$defs/text"},
+        "status": {"const": "STRICTLY_POSITIVE_PUBLIC_AUXILIARY_COMPACT_SPACETIME_Q8_COEFFICIENT"}
+      }
+    },
+    "disposition": {
+      "type": "object", "minProperties": 12, "maxProperties": 12,
+      "additionalProperties": {"$ref": "#/$defs/text"}
+    },
+    "does_not_establish": {
+      "type": "array", "minItems": 13, "maxItems": 13,
+      "items": {"$ref": "#/$defs/text"}
+    },
+    "next_gate": {"$ref": "#/$defs/text"},
+    "checks": {
+      "type": "object", "additionalProperties": false,
+      "required": ["total", "passed", "ok", "failures", "details"],
+      "properties": {
+        "total": {"const": 50},
+        "passed": {"const": 50},
+        "ok": {"const": true},
+        "failures": {"const": []},
+        "details": {
+          "type": "object", "minProperties": 50, "maxProperties": 50,
+          "additionalProperties": {"const": true}
+        }
+      }
+    },
+    "verification_commands": {
+      "type": "array", "minItems": 3, "maxItems": 3,
+      "items": {"$ref": "#/$defs/text"}
+    },
+    "report": {"const": "reverse_physics/reports/bt-auxiliary-polynomial-quadrupole-positive-detector.md"}
+  },
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "matrix": {
+      "type": "array", "minItems": 1,
+      "items": {
+        "type": "array", "minItems": 1,
+        "items": {"type": "string", "pattern": "^-?[0-9]+(?:/[1-9][0-9]*)?$"}
+      }
+    }
+  }
+}
