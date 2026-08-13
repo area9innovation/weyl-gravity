@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-fully-rearranged-common-born-physical-v1.schema.json",
+  "type": "object", "additionalProperties": false,
+  "required": ["schema","schema_version","certificate","question","answer","result_kind","lifecycle_state","dependency_tags","assumptions","provenance","exact_tensor_witness","complete_leading_common_Born_transition","disposition","does_not_establish","missing_object_ledger","next_gate","checks","verification_commands","report"],
+  "properties": {
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-fully-rearranged-common-born-physical-v1.schema.json"},
+    "schema_version": {"const": 1},
+    "certificate": {"const": "REVERSE_PHYSICS_BT_FULLY_REARRANGED_COMMON_BORN_PHYSICAL_V1"},
+    "question": {"$ref":"#/$defs/text"}, "answer": {"$ref":"#/$defs/text"}, "result_kind": {"$ref":"#/$defs/text"},
+    "lifecycle_state": {"const":"COEFFICIENT_COMPUTED"},
+    "dependency_tags": {"const":["LOCAL-ALGEBRAIC","REDUCED-MODE"]},
+    "assumptions": {"type":"array","minItems":5,"maxItems":5,"items":{"$ref":"#/$defs/text"}},
+    "provenance": {
+      "type":"object","additionalProperties":false,"required":["source_commit","retrieval_date","inputs","generated_by","independent_verifier","method"],
+      "properties": {
+        "source_commit":{"const":"23de3e07843b5acd41a6c9bf880fc05c0e6e4ff7"}, "retrieval_date":{"const":"2026-08-13"},
+        "inputs":{"type":"array","minItems":6,"maxItems":6,"items":{"type":"object","additionalProperties":false,"required":["path","sha256"],"properties":{"path":{"$ref":"#/$defs/text"},"sha256":{"$ref":"#/$defs/hash"}}}},
+        "generated_by":{"const":"reverse_physics/bt_fully_rearranged_common_born_physical.py"},
+        "independent_verifier":{"const":"reverse_physics/verify_bt_fully_rearranged_common_born_physical.py"}, "method":{"$ref":"#/$defs/text"}
+      }
+    },
+    "exact_tensor_witness": {
+      "type":"object","additionalProperties":false,"required":["space","P_X","P_Y","kappa_total","T4_YX","projector_product","commutators","fixed_point","adjoint","public_trace_square","Hilbert_trace_square","Born_defect","status"],
+      "properties": {
+        "space":{"const":"span{|X>,|Y>} tensor C^8_species"}, "P_X":{"$ref":"#/$defs/matrix16"}, "P_Y":{"$ref":"#/$defs/matrix16"}, "kappa_total":{"$ref":"#/$defs/matrix16"}, "T4_YX":{"$ref":"#/$defs/matrix16"},
+        "projector_product":{"const":"P_Y P_X=0"}, "commutators":{"const":["[P_X,kappa_total]=0","[P_Y,kappa_total]=0"]},
+        "fixed_point":{"const":"kappa_total T4,YX kappa_total=T4,YX"}, "adjoint":{"const":"T4,YX^sharp=T4,YX*"},
+        "public_trace_square":{"const":"770"}, "Hilbert_trace_square":{"const":"770"}, "Born_defect":{"const":"0"},
+        "status":{"const":"ORTHOGONAL_PACKET_RESTRICTION_PRESERVES_TOTAL_KAPPA_FIXEDNESS_EXACTLY"}
+      }
+    },
+    "complete_leading_common_Born_transition": {
+      "type":"object","additionalProperties":false,"required":["expansion","connected_restriction","disconnected_restriction","complete_leading_identity","fixed_point","effect_identity","Born_defect","scalar_probability","coefficient_bound","status"],
+      "properties": {
+        "expansion":{"const":"P_Y(U_T-I)P_X=lambda^4*T4,YX+O(lambda^5)"}, "connected_restriction":{"const":"T4,YX=P_Y*T4*P_X"},
+        "disconnected_restriction":{"const":"P_Y*D4_disconnected*P_X=0 for all 202 disconnected partitions"}, "complete_leading_identity":{"const":"L4_YX=T4,YX"},
+        "fixed_point":{"const":"alpha(L4_YX)=L4_YX"}, "effect_identity":{"const":"E8_public=L4_YX^sharp L4_YX=L4_YX* L4_YX=E8_Hilbert"},
+        "Born_defect":{"const":"E8_public-E8_Hilbert=0 as an operator coefficient"}, "scalar_probability":{"$ref":"#/$defs/text"},
+        "coefficient_bound":{"const":"q_click^(8)<=81*lambda^8*T^2/(200*pi^6)"}, "status":{"const":"COMPLETE_LEADING_FULLY_REARRANGED_PUBLIC_COMMON_BORN_PHYSICAL_PROBABILITY"}
+      }
+    },
+    "disposition": {
+      "type":"object","additionalProperties":false,
+      "required":["complete_leading_disconnected_ledger","complete_leading_operator","public_vs_Hilbert_leading_Born_equivalence","leading_Born_defect","coherent_channel_interference","complete_leading_finite_time_public_physical_probability","spectator_overlap_detectors","higher_orders","general_Eq19","gravity_or_metric_BV_BRST_transfer","Lorentzian_causal_claim"],
+      "properties": {
+        "complete_leading_disconnected_ledger":{"const":"EXHAUSTED_AND_ZERO_ON_DETECTOR"}, "complete_leading_operator":{"const":"TOTAL_KAPPA_FIXED"},
+        "public_vs_Hilbert_leading_Born_equivalence":{"const":"PROVED_AT_OPERATOR_LEVEL"}, "leading_Born_defect":{"const":"ZERO"}, "coherent_channel_interference":{"const":"RETAINED"},
+        "complete_leading_finite_time_public_physical_probability":{"const":"COEFFICIENT_COMPUTED"}, "spectator_overlap_detectors":{"const":"NOT_COMPLETED"},
+        "higher_orders":{"const":"NOT_CONTROLLED"}, "general_Eq19":{"const":"NOT_PROVED"}, "gravity_or_metric_BV_BRST_transfer":{"const":"NOT_CONSTRUCTED"}, "Lorentzian_causal_claim":{"const":"NOT_ESTABLISHED"}
+      }
+    },
+    "does_not_establish":{"type":"array","minItems":11,"maxItems":11,"items":{"$ref":"#/$defs/text"}},
+    "missing_object_ledger":{"type":"array","minItems":4,"maxItems":4,"items":{"$ref":"#/$defs/text"}}, "next_gate":{"$ref":"#/$defs/text"},
+    "checks":{"type":"object","additionalProperties":false,"required":["total","passed","ok","failures","details"],"properties":{"total":{"const":25},"passed":{"const":25},"ok":{"const":true},"failures":{"const":[]},"details":{"type":"object","minProperties":25,"maxProperties":25,"additionalProperties":{"const":true}}}},
+    "verification_commands":{"type":"array","minItems":3,"maxItems":3,"items":{"$ref":"#/$defs/text"}}, "report":{"const":"reverse_physics/reports/bt-fully-rearranged-common-born-physical.md"}
+  },
+  "$defs": {
+    "text":{"type":"string","minLength":1}, "hash":{"type":"string","pattern":"^[0-9a-f]{64}$"}, "rational":{"type":"string","pattern":"^-?[0-9]+(?:/[1-9][0-9]*)?$"},
+    "matrix16":{"type":"array","minItems":16,"maxItems":16,"items":{"type":"array","minItems":16,"maxItems":16,"items":{"$ref":"#/$defs/rational"}}}
+  }
+}
