@@ -1,0 +1,35 @@
+{
+  "id": "sf:program/work/reverse-physics-bateman-local-quadrupole-dark-detector-q8",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "reverse-physics",
+    "state": "ACTIVE",
+    "objective": "Replace the ideal fibrewise BT dark projector by an explicit finite-derivative local quadratic detector density whose pair-annihilation mode kills the leading amplitude exactly on every timelike fibre and has a strictly positive absolute q8 coefficient on a finite-bandwidth wavepacket.",
+    "depends_on": [
+      "REVERSE_PHYSICS_BT_FINITE_BANDWIDTH_DARK_PORT_Q8_V1",
+      "REVERSE_PHYSICS_BT_CONTINUOUS_ANGLE_Q6_FAMILY_V1",
+      "REVERSE_PHYSICS_BT_SCHWARTZ_FOUR_MOMENTUM_PACKET_RESPONSE_V1",
+      "REVERSE_PHYSICS_BT_COMPACT_ENERGY_QUADRATIC_SECTOR_BOUND_V1"
+    ],
+    "activates": [
+      "an explicit covariantly trace-free degree-four pair symbol",
+      "exact leading-amplitude annihilation on every finite-bandwidth fibre",
+      "a local finite-jet pointer-plus-vacuum detector outcome",
+      "a strictly positive absolute q8 coefficient selected by that local apparatus"
+    ],
+    "current_gate": "Use the covariant quadrupole F2(P,r)=6[P^2(a.r)^2-(P^2 a^2-(a.P)^2)r^2/3]/M0^4. Prove its spherical mean is zero for every timelike P and it reduces to P2(c) at the central fibre. Prove exact positive P2 moments of both the connected tree and finite-time loop q6 kernels, derive the normalized Cauchy factor 5/16, and thicken the result to finite bandwidth while preserving exact fibrewise leading cancellation.",
+    "stop_condition": "Land a COEFFICIENT_COMPUTED certificate, independent verifier, adversarial tests and report proving a finite-bandwidth local-quadrupole pointer-plus-field-vacuum probability with Q8_local/q4_bar>1/5000000000, and update Papers V and VI without promoting finite apparatus-coupling order, compact spacetime support, Eq. 19, gravity or Lorentzian causality.",
+    "forbid": "no use of exponentially small lower-order leakage as coefficientwise dark cancellation; no rotating-wave deletion of number or counter-rotating sectors; no claim beyond the leading detector-coupling pointer-plus-vacuum coefficient; no compact-spacetime-support claim for a momentum-compact Schwartz switching; no Eq. 19, gravity, QME or LORENTZIAN-CAUSAL promotion; no literature-priority claim",
+    "allowed_paths": [
+      "reverse_physics/",
+      "paper/05-interaction-obstructions.tex",
+      "paper/05-interaction-obstructions.pdf",
+      "paper/06-einstein-weyl-interaction-obstructions.tex",
+      "paper/06-einstein-weyl-interaction-obstructions.pdf",
+      "planning/work-items/reverse-physics-bateman-local-quadrupole-dark-detector-q8.json",
+      "planning/events/"
+    ],
+    "resource_hint": "The degree-four polynomial is the P-transverse STF square of the apparatus axis and has zero angular mean identically. At the central CM fibre it is P2(c). The loop P2 moment is -4 sum_n h_n(32/25)^n I_n with I_n=2^(n+1)n(n-1)/[(n+1)(n+2)(n+3)]; the n=2 plus n=3 partial sum is 252416/73828125>1/400 and the alternating ratio is at most 32/525. Exact interval quadrature proves the tree P2 moment positive. The normalized rank-one Cauchy factor is 5/16."
+  }
+}

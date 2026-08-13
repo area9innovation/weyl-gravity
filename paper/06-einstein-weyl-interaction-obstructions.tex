@@ -247,7 +247,10 @@ the invariant fixed-$P$ two-body sphere preserve the same strict coefficient;
 the exact off-energy-diagonal second-Dyson kernel has the same local
 ultraviolet subtraction as its diagonal restriction, so a nonempty globally
 normalizable finite-bandwidth packet class preserves a strict coefficient.
-Its numerical bandwidth remains open.  The recorded and symmetric bright-port absolute
+An explicit real exchange-even degree-four local quadrupole density has zero
+angular mean on every timelike pair fibre and selects a strictly positive
+absolute order-$\lambda^8$ coefficient on such a packet at leading external
+detector coupling.  Its numerical bandwidth remains open.  The recorded and symmetric bright-port absolute
 $q_8$ coefficients and selection by the public BT dynamics remain open,
 while an explicit external pointer Hamiltonian realizes the finite
 two-mode effect and selects its strength and phase.  That apparatus is not a
@@ -3233,6 +3236,56 @@ class.  It supersedes only the preceding fixed-fibre certificate's
 sharp-bandwidth boundary.  Its bandwidth radius is existential, not
 numerical, and it supplies neither a local apparatus for the fibrewise
 projector nor a metric-theory coefficient.
+
+A local dark apparatus exists for a quadrupole direction.  With
+$P=k_1+k_2$, $r=(k_1-k_2)/2$, $P\mathbin{\cdot}r=0$, a calibrated spacelike
+axis $a$, and target pair mass $M_0$, take
+\[
+ F_2(P,r)={6\over M_0^4}\left[
+ P^2(a\mathbin{\cdot}r)^2
+ -{P^2a^2-(a\mathbin{\cdot}P)^2\over3}r^2\right].
+\]
+It is a real exchange-even polynomial of degree four and hence the pair
+symbol of a Hermitian finite-derivative local quadratic scalar density.  The
+invariant fibre identity
+\[
+ \langle r_\mu r_\nu\rangle
+ =-{P^2\over12}\left(g_{\mu\nu}-{P_\mu P_\nu\over P^2}\right)
+\]
+gives $\langle F_2\rangle=0$ for every timelike $P$.  Thus the local density
+annihilates the leading angle-independent amplitude exactly throughout the
+packet bandwidth.  At the central centre-of-mass point it reduces to
+$P_2(c)=(3c^2-1)/2$.  Exact tree and loop moment bounds give
+\[
+ J_{\rm tree}>{1\over100},\qquad
+ J_{\rm loop}>{252416\over73828125}>{1\over400},
+ \qquad J_R>{1\over19200}.
+\]
+Both contributions have the same positive sign.  The exact normalized
+spherical Cauchy factor is $5/16$, and continuity retains half the central
+relative moment on a nonempty compact four-momentum neighborhood.  Hence
+\[
+ \boxed{{Q_{8,\mathrm{local}}\over\bar q_4}
+ >{1\over4718592000}>{1\over5000000000}.}
+\]
+Certificate
+\par\noindent
+\texttt{REVERSE\_PHYSICS\_BT\_LOCAL\_QUADRUPOLE\_DARK\_}
+\allowbreak\texttt{DETECTOR\_Q8\_V1}
+\par\noindent
+proves this \texttt{LOCAL-ALGEBRAIC}, \texttt{EUCLIDEAN-SPECTRAL},
+\texttt{REDUCED-MODE} auxiliary-scalar coefficient.  With smooth compact
+Fourier support inside the continuity neighborhood, selecting pointer
+excitation together with the active-field vacuum and unchanged spectator
+yields
+\[
+ p_{\rm selected}=g_{\rm det}^2\lambda^8Q_{8,\mathrm{local}}
+ +O(g_{\rm det}^2\lambda^{10})+O(g_{\rm det}^4).
+\]
+The switching is Schwartz rather than compactly supported in spacetime.  The
+apparatus is external to BT dynamics, the detector-coupling remainder is
+uncontrolled, and no metric BV--BRST, Eq.~(19), or Lorentzian-causal result
+follows.
 On the same two-mode carrier, the bounded interaction
 \[
  H_{\rm int}=gP_-(\phi)\otimes\sigma_y

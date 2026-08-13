@@ -270,7 +270,11 @@ kernel is a divided difference of the tree switching function; its difference
 from the diagonal kernel decays by one additional ultraviolet power.  The
 same local subtraction therefore gives a jointly continuous hard loop, and
 the dark coefficient survives on a nonempty globally normalizable
-finite-bandwidth packet class.  A numerical bandwidth remains open.  The
+finite-bandwidth packet class.  A real exchange-even degree-four local
+quadrupole density has zero angular mean on every timelike pair fibre and
+therefore removes the leading angle-independent amplitude exactly while
+retaining a strictly positive absolute order-$\lambda^8$ detector
+coefficient on such a packet.  A numerical bandwidth remains open.  The
 recorded and symmetric bright-port absolute $q_8$ coefficients, continuum
 coherence and both forward endpoints remain open.  On the two-mode carrier,
 an explicit finite pointer Hamiltonian now selects the detector strength and
@@ -4007,6 +4011,80 @@ supersedes only the preceding fixed-fibre certificate's sharp-bandwidth
 boundary; the bandwidth radius is existential rather than numerical.  It
 does not supply a local apparatus for the fibrewise projector, the
 $O(\lambda^{10})$ remainder, Eq.~(19), or a gravitational transfer.
+
+A different angular dark direction does admit a finite-derivative local
+apparatus.  For pair variables
+\[
+ P=k_1+k_2,\qquad r={k_1-k_2\over2},\qquad P\mathbin{\cdot}r=0,
+\]
+and a calibrated real spacelike apparatus axis $a$, define
+\[
+ F_2(P,r)={6\over M_0^4}\left[
+ P^2(a\mathbin{\cdot}r)^2
+ -{P^2a^2-(a\mathbin{\cdot}P)^2\over3}r^2\right].
+\]
+This real exchange-even degree-four polynomial is the symbol of a Hermitian
+normal-ordered local quadratic scalar density with four derivatives.  On
+every timelike fixed-$P$ fibre,
+\[
+ \langle r_\mu r_\nu\rangle
+ =-{P^2\over12}\left(g_{\mu\nu}-{P_\mu P_\nu\over P^2}\right),
+ \qquad \langle F_2\rangle=0.
+\]
+It therefore annihilates the leading angle-independent BT pair amplitude
+exactly throughout a finite-bandwidth packet, rather than approximately by
+angular leakage control.  At the central centre-of-mass point and with $a$
+along the incoming axis, $F_2=P_2(c)=(3c^2-1)/2$.
+
+Exact interval quadrature of the complete finite-time tree kernel gives
+\[
+ J_{\rm tree}=\int_{-1}^{1}P_2(c)W(c,1)dc>{1\over100}.
+\]
+For the active loop, its common angle-independent part drops out and the
+remaining Legendre moment is the alternating series
+\[
+ J_{\rm loop}=-4\sum_{n\geq2}h_n
+ \left({32\over25}\right)^n I_n,qquad
+ h_n={(-1)^{n+1}\over2n(2n+1)(2n)!},\qquad
+ I_n={2^{n+1}n(n-1)\over(n+1)(n+2)(n+3)}.
+\]
+Successive absolute terms have ratio at most $32/525<2/25$.  Its first two
+terms hence give
+\[
+ J_{\rm loop}>{252416\over73828125}>{1\over400}.
+\]
+Tree and loop have the same positive sign.  Dropping the positive tree term
+and using $\pi^2<10$ proves the complete relative moment
+$J_R>1/19200$.  Since
+$\int_{-1}^{1}P_2(c)^2dc=2/5$, the normalized spherical Cauchy factor is
+\[
+ {Q_{8,\mathrm{local}}\over\bar q_4}\geq {5J_R^2\over16}.
+\]
+Joint continuity retains $J_R^{\rm band}>1/38400$ on a nonempty compact
+four-momentum neighborhood and therefore
+\[
+ \boxed{{Q_{8,\mathrm{local}}\over\bar q_4}
+ >{1\over4718592000}>{1\over5000000000}.}
+\]
+Certificate
+\par\noindent
+\texttt{REVERSE\_PHYSICS\_BT\_LOCAL\_QUADRUPOLE\_DARK\_}
+\allowbreak\texttt{DETECTOR\_Q8\_V1}
+\par\noindent
+certifies this absolute coefficient with an independent energy-defect
+coordinate verifier.  Smearing the local density by a switching with smooth
+compact Fourier support inside the continuity neighborhood gives a Schwartz
+response.  Selecting pointer excitation together with the active-field
+vacuum and unchanged spectator isolates pair annihilation at first detector
+order without a rotating-wave deletion:
+\[
+ p_{\rm selected}=g_{\rm det}^2\lambda^8Q_{8,\mathrm{local}}
+ +O(g_{\rm det}^2\lambda^{10})+O(g_{\rm det}^4).
+\]
+The switching is not compactly supported in spacetime.  The statement is not
+all orders in $g_{\rm det}$ or $\lambda$, does not derive the apparatus from
+the public BT Hamiltonian, and does not prove Eq.~(19), causal scattering, or
+a gravitational transfer.
 
 The effect itself has a finite Hamiltonian realization.  For the phased
 antisymmetric angle projector

@@ -1,0 +1,110 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-local-quadrupole-dark-detector-q8-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "schema_version", "certificate", "question", "answer",
+    "result_kind", "lifecycle_state", "dependency_tags", "assumptions",
+    "provenance", "local_quadrupole_density", "exact_P2_moments",
+    "local_detector_probability", "disposition", "does_not_establish",
+    "next_gate", "checks", "verification_commands", "report"
+  ],
+  "properties": {
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-local-quadrupole-dark-detector-q8-v1.schema.json"},
+    "schema_version": {"const": 1},
+    "certificate": {"const": "REVERSE_PHYSICS_BT_LOCAL_QUADRUPOLE_DARK_DETECTOR_Q8_V1"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE"]},
+    "assumptions": {"type": "array", "minItems": 7, "maxItems": 7, "items": {"$ref": "#/$defs/text"}},
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_commit", "retrieval_date", "inputs", "generated_by", "independent_verifier", "method"],
+      "properties": {
+        "source_commit": {"const": "3ffe6cf656c21e350b8a597e765c77b6c06bce9a"},
+        "retrieval_date": {"const": "2026-08-13"},
+        "inputs": {"type": "array", "minItems": 6, "maxItems": 6, "items": {
+          "type": "object", "additionalProperties": false, "required": ["path", "sha256"],
+          "properties": {"path": {"$ref": "#/$defs/text"}, "sha256": {"$ref": "#/$defs/hash"}}
+        }},
+        "generated_by": {"const": "reverse_physics/bt_local_quadrupole_dark_detector_q8.py"},
+        "independent_verifier": {"const": "reverse_physics/verify_bt_local_quadrupole_dark_detector_q8.py"},
+        "method": {"$ref": "#/$defs/text"}
+      }
+    },
+    "local_quadrupole_density": {
+      "type": "object", "additionalProperties": false,
+      "required": ["pair_variables", "apparatus_axis", "symbol", "local_density", "derivative_order", "reality_and_exchange", "fibre_mean_identity", "central_reduction", "rational_boosted_values", "status"],
+      "properties": {
+        "pair_variables": {"$ref": "#/$defs/text"},
+        "apparatus_axis": {"$ref": "#/$defs/text"},
+        "symbol": {"const": "F2(P,r)=6*[P^2*(a.r)^2-(P^2*a^2-(a.P)^2)*r^2/3]/M0^4"},
+        "local_density": {"$ref": "#/$defs/text"},
+        "derivative_order": {"const": 4},
+        "reality_and_exchange": {"$ref": "#/$defs/text"},
+        "fibre_mean_identity": {"$ref": "#/$defs/text"},
+        "central_reduction": {"const": "at P=(M0,0) and a a unit incoming spatial axis, F2=P2(c)=(3*c^2-1)/2"},
+        "rational_boosted_values": {"const": ["25/16", "-25/32", "-25/32"]},
+        "status": {"const": "EXPLICIT_DEGREE_FOUR_LOCAL_FIBREWISE_DARK_PAIR_SYMBOL"}
+      }
+    },
+    "exact_P2_moments": {
+      "type": "object", "additionalProperties": false,
+      "required": ["tree_definition", "tree_cells", "tree_interval", "tree_simple_lower", "loop_reduction", "loop_power_moment", "loop_series", "alternating_ratio", "loop_lower_partial", "loop_simple_lower", "complete_relative_moment", "status"],
+      "properties": {
+        "tree_definition": {"$ref": "#/$defs/text"},
+        "tree_cells": {"const": 512},
+        "tree_interval": {"$ref": "#/$defs/interval"},
+        "tree_simple_lower": {"const": "J_tree>1/100>0"},
+        "loop_reduction": {"$ref": "#/$defs/text"},
+        "loop_power_moment": {"$ref": "#/$defs/text"},
+        "loop_series": {"$ref": "#/$defs/text"},
+        "alternating_ratio": {"$ref": "#/$defs/text"},
+        "loop_lower_partial": {"$ref": "#/$defs/receipt"},
+        "loop_simple_lower": {"const": "J_loop>252416/73828125>1/400"},
+        "complete_relative_moment": {"const": "J_R=(positive tree normalization)*J_tree+5*J_loop/(24*pi^2)>1/19200"},
+        "status": {"const": "TREE_AND_LOOP_QUADRUPOLE_MOMENTS_STRICTLY_POSITIVE"}
+      }
+    },
+    "local_detector_probability": {
+      "type": "object", "additionalProperties": false,
+      "required": ["Legendre_integrals", "normalized_mode", "Cauchy_factor", "central_relative_lower", "finite_bandwidth_argument", "finite_bandwidth_relative_lower", "exact_rational_lower", "comparison", "pointer_coupling", "selected_outcome", "joint_expansion", "status"],
+      "properties": {
+        "Legendre_integrals": {"const": "int_-1^1 P2(c)dc=0 and int_-1^1 P2(c)^2dc=2/5"},
+        "normalized_mode": {"$ref": "#/$defs/text"},
+        "Cauchy_factor": {"const": "Q8_local/q4_bar>=5*J_R^2/16"},
+        "central_relative_lower": {"$ref": "#/$defs/receipt"},
+        "finite_bandwidth_argument": {"$ref": "#/$defs/text"},
+        "finite_bandwidth_relative_lower": {"$ref": "#/$defs/receipt"},
+        "exact_rational_lower": {"$ref": "#/$defs/receipt"},
+        "comparison": {"const": "Q8_local/q4_bar>1/4718592000>1/5000000000"},
+        "pointer_coupling": {"$ref": "#/$defs/text"},
+        "selected_outcome": {"$ref": "#/$defs/text"},
+        "joint_expansion": {"const": "p_selected=g_det^2*lambda^8*Q8_local+O(g_det^2*lambda^10)+O(g_det^4)"},
+        "status": {"const": "STRICTLY_POSITIVE_LOCAL_APPARATUS_DARK_Q8_COEFFICIENT"}
+      }
+    },
+    "disposition": {"type": "object", "minProperties": 12, "maxProperties": 12, "additionalProperties": {"$ref": "#/$defs/text"}},
+    "does_not_establish": {"type": "array", "minItems": 14, "maxItems": 14, "items": {"$ref": "#/$defs/text"}},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "checks": {"type": "object", "additionalProperties": false, "required": ["total", "passed", "ok", "failures", "details"],
+      "properties": {
+        "total": {"const": 29}, "passed": {"const": 29}, "ok": {"const": true}, "failures": {"const": []},
+        "details": {"type": "object", "minProperties": 29, "maxProperties": 29, "additionalProperties": {"const": true}}
+      }
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/text"}},
+    "report": {"const": "reverse_physics/reports/bt-local-quadrupole-dark-detector-q8.md"}
+  },
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "receipt": {"type": "object", "additionalProperties": false, "required": ["exact", "canonical_sha256"],
+      "properties": {"exact": {"$ref": "#/$defs/text"}, "canonical_sha256": {"$ref": "#/$defs/hash"}}},
+    "interval": {"type": "object", "additionalProperties": false, "required": ["lower", "upper"],
+      "properties": {"lower": {"$ref": "#/$defs/receipt"}, "upper": {"$ref": "#/$defs/receipt"}}}
+  }
+}
