@@ -1,0 +1,219 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-fully-rearranged-v4-cubed-triangle-block-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "schema_version", "certificate", "question", "answer",
+    "result_kind", "lifecycle_state", "dependency_tags", "provenance",
+    "graph_and_master", "species_tensor", "tree_triangle_interference",
+    "hard_packet_regularization", "disposition", "does_not_establish",
+    "next_gate", "checks", "verification_commands", "report"
+  ],
+  "properties": {
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-fully-rearranged-v4-cubed-triangle-block-v1.schema.json"},
+    "schema_version": {"const": 1},
+    "certificate": {"const": "REVERSE_PHYSICS_BT_FULLY_REARRANGED_V4_CUBED_TRIANGLE_BLOCK_V1"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE"]},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_commit", "retrieval_date", "inputs", "generated_by", "independent_verifier", "method"],
+      "properties": {
+        "source_commit": {"const": "3779e2fe200df84e4fdd9e3d5438fb1ee4c764ca"},
+        "retrieval_date": {"const": "2026-08-13"},
+        "inputs": {
+          "type": "array", "minItems": 8, "maxItems": 8,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["path", "sha256"],
+            "properties": {
+              "path": {"$ref": "#/$defs/text"},
+              "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+            }
+          }
+        },
+        "generated_by": {"const": "reverse_physics/bt_fully_rearranged_v4_cubed_triangle_block.py"},
+        "independent_verifier": {"const": "reverse_physics/verify_bt_fully_rearranged_v4_cubed_triangle_block.py"},
+        "method": {"$ref": "#/$defs/text"}
+      }
+    },
+    "graph_and_master": {
+      "type": "object", "additionalProperties": false,
+      "required": ["action", "vertex", "propagator", "graph", "counts", "symmetry_factor", "superficial_UV_degree", "subdivergences", "triangle_master", "amplitude_coefficient", "coupling_convention", "renormalization", "status"],
+      "properties": {
+        "action": {"const": "S_int=(g/2)*integral Omega^2*Upsilon^2, g=lambda^2"},
+        "vertex": {"const": "V_abcd/g=2 exactly for two Omega and two Upsilon"},
+        "propagator": {"$ref": "#/$defs/text"},
+        "graph": {"const": "three quartic vertices in one triangle, two external legs at each vertex"},
+        "counts": {
+          "type": "object", "additionalProperties": false,
+          "required": ["V4", "I", "E", "L", "d_lambda"],
+          "properties": {
+            "V4": {"const": 3}, "I": {"const": 3}, "E": {"const": 6},
+            "L": {"const": 1}, "d_lambda": {"const": 6}
+          }
+        },
+        "symmetry_factor": {"const": "1"},
+        "superficial_UV_degree": {"const": -2},
+        "subdivergences": {"const": "NONE"},
+        "triangle_master": {"const": "C0(s1,s2,s3)=integral_[x,y,z>=0] delta(1-x-y-z)/[-x*y*s1-y*z*s2-z*x*s3-i0]"},
+        "amplitude_coefficient": {"const": "T6_V4cubed,cov=(8/(16*pi^2))*sum_P C0(Q_P1^2,Q_P2^2,Q_P3^2)*S_P"},
+        "coupling_convention": {"$ref": "#/$defs/text"},
+        "renormalization": {"const": "UV_FINITE_NO_COUNTERTERM_NO_SCHEME_OR_SCALE_DEPENDENCE"},
+        "status": {"const": "COVARIANT_V4_CUBED_BLOCK_COMPUTED"}
+      }
+    },
+    "species_tensor": {
+      "type": "object", "additionalProperties": false,
+      "required": ["external_basis", "pairing_count", "neutral_assignment_count", "routing_rule", "rows", "tensors", "per_pairing_weight_profile", "per_pairing_HS_square", "pairing_sum_on_every_neutral_assignment", "ghost_parity", "source_response", "status"],
+      "properties": {
+        "external_basis": {"$ref": "#/$defs/text"},
+        "pairing_count": {"const": 15},
+        "neutral_assignment_count": {"const": 20},
+        "routing_rule": {"$ref": "#/$defs/text"},
+        "rows": {
+          "type": "array", "minItems": 15, "maxItems": 15,
+          "items": {"$ref": "#/$defs/triangleRow"}
+        },
+        "tensors": {
+          "type": "array", "minItems": 15, "maxItems": 15,
+          "items": {"$ref": "#/$defs/tensor8"}
+        },
+        "per_pairing_weight_profile": {"const": "twelve entries 1 and eight entries 2"},
+        "per_pairing_HS_square": {"const": 44},
+        "pairing_sum_on_every_neutral_assignment": {"const": 21},
+        "ghost_parity": {"const": "kappa3*S_P*kappa3=S_P for every P"},
+        "source_response": {"$ref": "#/$defs/text"},
+        "status": {"const": "EXACT_FIFTEEN_PAIRING_SPECIES_TENSOR_COMPUTED"}
+      }
+    },
+    "tree_triangle_interference": {
+      "type": "object", "additionalProperties": false,
+      "required": ["carrier", "tree_channel_count", "triangle_pairing_count", "cross_Gram", "entry_values", "entry_multiplicities", "row_sum", "column_sum", "positive_frame_entry_values", "common_Born_identity", "status"],
+      "properties": {
+        "carrier": {"const": "full eight-dimensional neutral Choi lifts; the positive four-frame cross Gram is exactly one half"},
+        "tree_channel_count": {"const": 10},
+        "triangle_pairing_count": {"const": 15},
+        "cross_Gram": {
+          "type": "array", "minItems": 10, "maxItems": 10,
+          "items": {
+            "type": "array", "minItems": 15, "maxItems": 15,
+            "items": {"enum": ["6", "13/2"]}
+          }
+        },
+        "entry_values": {"const": ["6", "13/2"]},
+        "entry_multiplicities": {
+          "type": "object", "additionalProperties": false,
+          "required": ["6", "13/2"],
+          "properties": {"6": {"const": 60}, "13/2": {"const": 90}}
+        },
+        "row_sum": {"const": "189/2"},
+        "column_sum": {"const": "63"},
+        "positive_frame_entry_values": {"const": ["3", "13/4"]},
+        "common_Born_identity": {"const": "T4^sharp*T6_V4cubed+T6_V4cubed^sharp*T4=T4^* T6_V4cubed+T6_V4cubed^* T4"},
+        "status": {"const": "ISOLATED_V4_CUBED_INTERFERENCE_COMMON_BORN_SIGN_NOT_DETERMINED"}
+      }
+    },
+    "hard_packet_regularization": {
+      "type": "object", "additionalProperties": false,
+      "required": ["all_incoming_convention", "rows", "minimum_absolute_pair_invariant", "minimum_absolute_Kallen", "neighborhood", "consequence", "status"],
+      "properties": {
+        "all_incoming_convention": {"$ref": "#/$defs/text"},
+        "rows": {
+          "type": "array", "minItems": 15, "maxItems": 15,
+          "items": {"$ref": "#/$defs/kinematicRow"}
+        },
+        "minimum_absolute_pair_invariant": {"const": "32/625"},
+        "minimum_absolute_Kallen": {"const": "80896/903125"},
+        "neighborhood": {"$ref": "#/$defs/text"},
+        "consequence": {"$ref": "#/$defs/text"},
+        "status": {"const": "NONEMPTY_HARD_PACKET_DOMAIN_CONSTRUCTED"}
+      }
+    },
+    "disposition": {
+      "type": "object", "additionalProperties": false,
+      "required": ["V4_cubed_covariant_block", "UV_counterterm", "scheme_dependence", "total_kappa", "isolated_common_Born_interference", "finite_duration_three_Dyson_affiliation", "remaining_three_order6_loop_classes", "source_detector_second_order_dressing", "vacuum_survival_normalization", "complete_q10", "finite_coupling_positivity", "general_Eq19", "gravity_or_BV_BRST_transfer", "Lorentzian_causal_claim"],
+      "properties": {
+        "V4_cubed_covariant_block": {"const": "COEFFICIENT_COMPUTED"},
+        "UV_counterterm": {"const": "NOT_REQUIRED"},
+        "scheme_dependence": {"const": "ABSENT_FOR_THIS_BLOCK"},
+        "total_kappa": {"const": "FIXED_COEFFICIENTWISE"},
+        "isolated_common_Born_interference": {"const": "ESTABLISHED_WITHOUT_SIGN"},
+        "finite_duration_three_Dyson_affiliation": {"const": "NOT_PROVED"},
+        "remaining_three_order6_loop_classes": {"const": "NOT_COMPUTED"},
+        "source_detector_second_order_dressing": {"const": "NOT_COMPUTED"},
+        "vacuum_survival_normalization": {"const": "NOT_COMPUTED"},
+        "complete_q10": {"const": "NOT_COMPUTED"},
+        "finite_coupling_positivity": {"const": "NOT_ESTABLISHED"},
+        "general_Eq19": {"const": "NOT_PROVED"},
+        "gravity_or_BV_BRST_transfer": {"const": "NOT_CONSTRUCTED"},
+        "Lorentzian_causal_claim": {"const": "NOT_ESTABLISHED"}
+      }
+    },
+    "does_not_establish": {
+      "type": "array", "minItems": 13, "maxItems": 13,
+      "items": {"$ref": "#/$defs/text"}
+    },
+    "next_gate": {"$ref": "#/$defs/text"},
+    "checks": {
+      "type": "object", "additionalProperties": false,
+      "required": ["total", "passed", "ok", "failures", "details"],
+      "properties": {
+        "total": {"const": 32},
+        "passed": {"const": 32},
+        "ok": {"const": true},
+        "failures": {"const": []},
+        "details": {
+          "type": "object", "minProperties": 32, "maxProperties": 32,
+          "additionalProperties": {"const": true}
+        }
+      }
+    },
+    "verification_commands": {
+      "type": "array", "minItems": 3, "maxItems": 3,
+      "items": {"$ref": "#/$defs/text"}
+    },
+    "report": {"const": "reverse_physics/reports/bt-fully-rearranged-v4-cubed-triangle-block.md"}
+  },
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "pair": {
+      "type": "array", "minItems": 2, "maxItems": 2,
+      "items": {"type": "integer", "minimum": 0, "maximum": 5}
+    },
+    "triangleRow": {
+      "type": "object", "additionalProperties": false,
+      "required": ["index", "pairs", "bipartite_input_output", "source_weight", "weight_one_count", "weight_two_count", "tensor_HS_square"],
+      "properties": {
+        "index": {"type": "integer", "minimum": 0, "maximum": 14},
+        "pairs": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/pair"}},
+        "bipartite_input_output": {"type": "boolean"},
+        "source_weight": {"enum": [1, 2]},
+        "weight_one_count": {"const": 12},
+        "weight_two_count": {"const": 8},
+        "tensor_HS_square": {"const": 44}
+      }
+    },
+    "tensor8": {
+      "type": "array", "minItems": 8, "maxItems": 8,
+      "items": {
+        "type": "array", "minItems": 8, "maxItems": 8,
+        "items": {"type": "integer", "minimum": 0, "maximum": 2}
+      }
+    },
+    "kinematicRow": {
+      "type": "object", "additionalProperties": false,
+      "required": ["index", "pair_invariants", "kallen"],
+      "properties": {
+        "index": {"type": "integer", "minimum": 0, "maximum": 14},
+        "pair_invariants": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/text"}},
+        "kallen": {"$ref": "#/$defs/text"}
+      }
+    }
+  }
+}
