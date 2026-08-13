@@ -1,0 +1,263 @@
+{
+  "abstract_commuting_algebra_theorem": {
+    "hypotheses": "M,N subset B(H) are commuting unital von Neumann algebras and closure(N Omega)=H",
+    "proof": [
+      "for every B in N, locality gives A B Omega=B A Omega=0",
+      "the set N Omega is dense in H by hypothesis",
+      "boundedness of A therefore gives A=0 on H"
+    ],
+    "separating_conclusion": "A in M and A Omega=0 imply A=0",
+    "status": "PROVED_ABSTRACTLY"
+  },
+  "answer": "No for the zero-baseline Julia effect under the declared abstract local-net hypotheses, but yes conditionally for an exact balanced local contrast. If M and N are commuting unital von Neumann algebras and the vacuum Omega is cyclic for N, then Omega is separating for M. A positive E in M with zero vacuum expectation obeys E^(1/2)Omega=0 and therefore E=0. The exact Julia click effect E_click=P_u/4 is nonzero and annihilates the active-field vacuum, so neither it, its Kraus maps, nor a normal local pointer dilation can be local. If instead the compact quadrupole density has a self-adjoint realization D affiliated with M and Omega,X2,X4 lie in Dom(D), bounded spectral truncations D_n have response vectors converging in R^5 to the exact zero-vacuum, zero-X2, nonzero-X4 response. The finite-dimensional span is closed, so at most five D_n have a finite real combination giving that response exactly. Normalizing it produces a bounded self-adjoint local contraction B and balanced effects (I plus or minus B)/2. This is a conditional LOCAL-ALGEBRAIC construction, not a proof that the public BT theory has the required positive local net, affiliation, domains or Reeh--Schlieder vacuum.",
+  "assumptions": [
+    "M=A(O) and N=A(O') are unital von Neumann algebras on a positive Hilbert space H",
+    "M and N commute, as supplied by locality for spacelike separated regions",
+    "the vacuum Omega is cyclic for N: the closure of N Omega is H",
+    "the exact Julia effect is compared in the same active-field vacuum representation",
+    "pointer dilations use a normal state and the normal von Neumann tensor-product slice map",
+    "the public BT reduced-mode carrier is not assumed to satisfy any of these local-net hypotheses"
+  ],
+  "balanced_contrast_boundary": {
+    "BT_status": "a bounded local B with exact X2-zero contrast and strict X4 response is CONSTRUCTED_CONDITIONALLY_ON_SELF_ADJOINT_LOCAL_AFFILIATION_AND_DOMAIN",
+    "consequence": "the theorem forbids exact vacuum-dark positive outcomes, not vacuum-dark signed contrasts",
+    "construction": "for any self-adjoint contraction B in M, E_plus=(I+B)/2 and E_minus=(I-B)/2 are local effects summing to I",
+    "next_options": [
+      "construct a balanced bounded local quadrupole contrast with nonzero vacuum baseline",
+      "derive quantitative approximate or almost-local dark counts",
+      "return to the public-BT lambda10 or Eq. (19) route"
+    ],
+    "status": "BOUNDED_LOCAL_CONTRAST_CONSTRUCTED_CONDITIONALLY",
+    "vacuum_condition": "<Omega,B Omega>=0 gives p_plus(Omega)=p_minus(Omega)=1/2, not a zero-probability outcome"
+  },
+  "bounded_spectral_truncation_lift": {
+    "BT_status": "CONDITIONAL_ON_UNCONSTRUCTED_POSITIVE_LOCAL_NET_AFFILIATION_AND_DOMAIN",
+    "additional_hypotheses": [
+      "the compact quadrupole density D_h has a self-adjoint realization D affiliated with M",
+      "Omega, X2 and X4 belong to Dom(D)",
+      "<Omega,D Omega>=0, <Omega,D X2>=0 and a=<Omega,D X4> is nonzero"
+    ],
+    "bounded_operator": "C=sum_j c_j D_nj is bounded self-adjoint in M; B=C/max(1,||C||) is a self-adjoint contraction",
+    "closed_span_step": "V=span_R{v_n} is finite-dimensional and therefore closed, so v belongs to V",
+    "constructivity": "the theorem is finite-existence exact but does not compute the cutoffs or coefficients without the local spectral measures",
+    "effects": "E_plus=(I+B)/2 and E_minus=(I-B)/2 are local positive effects summing to I with equal vacuum baselines",
+    "exact_responses": "<Omega,B Omega>=0 and <Omega,B X2>=0, while <Omega,B X4> is nonzero",
+    "finite_combination": "there exist at most five indices n_j and real c_j with sum_j c_j v_nj=v",
+    "limit": "v_n converges to v=(0,0,0,Re(a),Im(a)), which is nonzero",
+    "operational_response": "the phase-reversal contrast is exactly zero for X2 and strictly nonzero for a calibrated phase of X4",
+    "phase_reversal_contrast": "C_B(X)=(1/4)[<Omega+X,B(Omega+X)>-<Omega-X,B(Omega-X)>]=Re<Omega,BX>; for normalized Omega plus/minus X with Omega perpendicular to X, divide both sides by 1+||X||^2",
+    "response_vector": "v_n=(<Omega,D_n Omega>,Re<Omega,D_n X2>,Im<Omega,D_n X2>,Re<Omega,D_n X4>,Im<Omega,D_n X4>) in R^5",
+    "status": "PROVED_ABSTRACTLY",
+    "truncations": "D_n=D 1_[minus n,n](D) are bounded self-adjoint elements of M"
+  },
+  "certificate": "REVERSE_PHYSICS_BT_REEH_SCHLIEDER_LOCAL_DETECTOR_OBSTRUCTION_V1",
+  "checks": {
+    "details": {
+      "BT_Haag_Kastler_net_is_not_promoted": true,
+      "BT_affiliation_and_domain_remain_open": true,
+      "Eq19_gravity_and_Lorentzian_boundaries_remain_open": true,
+      "Julia_effect_is_nonzero": true,
+      "Julia_vacuum_probability_is_zero": true,
+      "balanced_BT_quadrupole_is_not_promoted": true,
+      "balanced_contrast_has_zero_vacuum_mean": true,
+      "balanced_effects_are_positive": true,
+      "balanced_effects_sum_to_identity": true,
+      "balanced_vacuum_probabilities_are_half": true,
+      "bounded_local_contrast_is_exact_conditionally": true,
+      "click_Kraus_locality_is_ruled_out_conditionally": true,
+      "commuting_algebra_hypothesis_is_explicit": true,
+      "complement_cyclicity_hypothesis_is_explicit": true,
+      "countermodel_complement_is_not_cyclic": true,
+      "countermodel_effect_is_nonzero": true,
+      "countermodel_vacuum_probability_is_zero": true,
+      "done_event_matches_work_item": true,
+      "finite_combination_matches_limit_exactly": true,
+      "finite_dimensional_response_span_is_closed": true,
+      "inputs_are_content_pinned": true,
+      "limit_response_has_exact_zero_constraints": true,
+      "literature_priority_is_forbidden": true,
+      "no_click_Kraus_locality_is_ruled_out_conditionally": true,
+      "nonzero_vacuum_dark_effect_is_forbidden": true,
+      "normal_pointer_exact_realization_is_ruled_out_conditionally": true,
+      "normal_pointer_slice_stays_local": true,
+      "positive_square_root_step_is_explicit": true,
+      "predecessor_effect_is_quarter_projector": true,
+      "predecessor_passes": true,
+      "predecessor_vacuum_pair_orthogonality_is_declared": true,
+      "separating_proof_uses_dense_orbit": true,
+      "spectral_truncations_are_bounded_local": true,
+      "truncated_response_vectors_converge": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 34,
+    "total": 34
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "disposition": {
+    "BT_Reeh_Schlieder_property": "NOT_ESTABLISHED",
+    "Lorentzian_causal_BT_claim": "NOT_ESTABLISHED",
+    "abstract_separating_vacuum_theorem": "PROVED",
+    "balanced_BT_quadrupole_contrast": "CONSTRUCTED_CONDITIONALLY_ON_LOCAL_AFFILIATION_AND_DOMAIN",
+    "balanced_local_contrast_in_general": "ALGEBRAICALLY_ALLOWED",
+    "exact_Julia_effect_in_local_algebra": "RULED_OUT_UNDER_DECLARED_HYPOTHESES",
+    "general_Eq19": "NOT_PROVED",
+    "gravity_or_metric_BV_BRST_transfer": "NOT_CONSTRUCTED",
+    "nonzero_exactly_vacuum_dark_local_effect": "IMPOSSIBLE_UNDER_DECLARED_HYPOTHESES",
+    "normal_local_pointer_realization": "RULED_OUT_UNDER_DECLARED_HYPOTHESES",
+    "positive_BT_Haag_Kastler_net": "NOT_CONSTRUCTED"
+  },
+  "does_not_establish": [
+    "a positive Haag--Kastler net for the public BT theory",
+    "the Reeh--Schlieder property for the BT Krein or reduced-mode carrier",
+    "that every local detector or local pointer coupling is impossible",
+    "an obstruction to two nonzero local effects used through their signed contrast",
+    "an obstruction to approximate, almost-local, unbounded-readout or non-normal constructions",
+    "an unconditional bounded local BT operator before a positive local net, self-adjoint affiliation and domain theorem are supplied",
+    "selection of any detector or phase-reversed preparation by public BT dynamics",
+    "the lambda10 and higher BT amplitudes",
+    "the standard scalar projector or general Bateman--Turok Eq. (19)",
+    "a complete positive BT Hilbert or Fock construction",
+    "gravity, metric BV--BRST, QME restoration or residual transfer",
+    "anything LORENTZIAN-CAUSAL for the BT or gravitational models",
+    "literature priority"
+  ],
+  "exact_Julia_application": {
+    "Julia_pointer_unitary_locality": "no normal bounded local tensor-pointer unitary can induce the exact effect",
+    "click_Kraus_locality": "K_click NOT_IN_M because K_click^*K_click=E_click",
+    "effect": "E_click=P_u/4",
+    "effect_locality": "E_click NOT_IN_M under the declared hypotheses",
+    "no_click_Kraus_locality": "K_no NOT_IN_M because I-K_no^*K_no=E_click",
+    "nonzero_witness": "<u2,E_click u2>=1/4",
+    "response_mode": "u2 is a normalized two-particle vector orthogonal to the active-field vacuum Omega",
+    "status": "SCOPED_EXACT_LOCAL_REALIZATION_NO_GO",
+    "vacuum_probability": "<Omega,E_click Omega>=0"
+  },
+  "finite_exact_fixtures": {
+    "balanced_diagonal_fixture": {
+      "B": "diag(1,-1)",
+      "E_minus": "diag(0,1)",
+      "E_plus": "diag(1,0)",
+      "algebra": "diagonal matrices on C^2",
+      "conclusion": "separation permits balanced nonzero effects but not a nonzero zero-vacuum effect",
+      "contrast": "0",
+      "vacuum": "(e0+e1)/sqrt(2)",
+      "vacuum_probabilities": [
+        "1/2",
+        "1/2"
+      ]
+    },
+    "cyclicity_necessity_countermodel": {
+      "Hilbert_space": "C^2",
+      "algebra": "B(C^2)",
+      "commutant_orbit_dimension": 1,
+      "conclusion": "without complement cyclicity the no-go is false",
+      "effect": "|e1><e1|",
+      "effect_nonzero": true,
+      "vacuum": "e0",
+      "vacuum_probability": "0"
+    },
+    "spectral_truncation_span_fixture": {
+      "coefficients": [
+        "1/2",
+        "1/2",
+        "1/2"
+      ],
+      "combined_response": [
+        "0",
+        "0",
+        "0",
+        "1",
+        "0"
+      ],
+      "conclusion": "a finite real combination cancels the first three vacuum-to-pair constraints exactly and retains unit X4 interference response",
+      "coordinate_order": [
+        "vacuum",
+        "Re_X2",
+        "Im_X2",
+        "Re_X4",
+        "Im_X4"
+      ],
+      "vectors": [
+        [
+          "1",
+          "1",
+          "0",
+          "1",
+          "0"
+        ],
+        [
+          "1",
+          "-1",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "-2",
+          "0",
+          "0",
+          "1",
+          "0"
+        ]
+      ]
+    }
+  },
+  "lifecycle_state": "CLASSIFIED",
+  "literature_context": {
+    "doi": "10.1007/BF02787889",
+    "primary_reference": "H. Reeh and S. Schlieder, Bemerkungen zur unitaeraequivalenz von lorentzinvarianten Feldern, Il Nuovo Cimento 22 (1961) 1051-1068",
+    "priority_status": "NOT_CLAIMED",
+    "use": "the cyclic-vacuum hypothesis is standard Reeh--Schlieder input; the separating and detector corollaries used here are proved self-contained"
+  },
+  "next_gate": "Construct the positive BT local net and prove self-adjoint affiliation of the compact quadrupole density with Omega, X2 and X4 in its domain; the abstract spectral-truncation theorem then supplies the bounded exact balanced contrast. Independently, continue the public-BT route through the lambda10 dark remainder or general Eq. (19).",
+  "normal_pointer_dilation_corollary": {
+    "conclusion": "if the induced click probability is exactly zero on Omega, then E=0",
+    "exact_Julia_realization": "IMPOSSIBLE_UNDER_THE_DECLARED_HYPOTHESES",
+    "induced_effect": "E=(id tensor omega)(U^*(I tensor Q)U)",
+    "setup": "U in M tensor_bar B(K), normal pointer state omega and pointer effect 0<=Q<=I",
+    "slice_map_result": "E belongs to M and 0<=E<=I",
+    "status": "PROVED_ABSTRACTLY"
+  },
+  "positive_effect_corollary": {
+    "conclusion": "E=0",
+    "effect_hypotheses": "E in M, 0<=E<=I and <Omega,E Omega>=0",
+    "functional_calculus": "E^(1/2) belongs to M",
+    "physical_reading": "every nonzero bounded local positive outcome has strictly positive vacuum probability",
+    "square_root_identity": "||E^(1/2) Omega||^2=<Omega,E Omega>=0",
+    "status": "PROVED_ABSTRACTLY"
+  },
+  "provenance": {
+    "generated_by": "reverse_physics/bt_reeh_schlieder_local_detector_obstruction.py",
+    "independent_verifier": "reverse_physics/verify_bt_reeh_schlieder_local_detector_obstruction.py",
+    "inputs": [
+      {
+        "path": "planning/work-items/reverse-physics-bateman-reeh-schlieder-local-detector-obstruction.json",
+        "sha256": "3c0371f5a5a145e2fa0b5c4835e51ccd55732463fe203f47f4577ebbee243c7b"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EXACT_QUADRUPOLE_JULIA_INSTRUMENT_V1.json",
+        "sha256": "42f130a4d30abd1ccf533d14d3624340db52d1d15b4d9073398911f3551ffea9"
+      },
+      {
+        "path": "planning/events/reverse-physics-bateman-reeh-schlieder-local-detector-obstruction-DONE-13ca819c.json",
+        "sha256": "8533b2aeb35f36acfe67fe86c81098c128753c15afb6935f151d164af7b12708"
+      }
+    ],
+    "method": "Self-contained commuting-algebra separation proof and positive functional calculus; exact rational finite-dimensional fixtures independently distinguish the essential cyclicity hypothesis from the balanced-contrast escape. No floating-point arithmetic enters the claim.",
+    "retrieval_date": "2026-08-13",
+    "source_commit": "13ca819c61edeb81bcb83e49316e7ac71082cdf7"
+  },
+  "question": "Can the exact vacuum-dark quadrupole Julia instrument be realized by a bounded-region local effect or by a normal locally coupled pointer under the standard complement-cyclicity hypothesis?",
+  "report": "reverse_physics/reports/bt-reeh-schlieder-local-detector-obstruction.md",
+  "result_kind": "abstract local-net no-go for the exactly vacuum-dark Julia effect together with a conditional bounded-spectral-truncation construction of an exact balanced local quadrupole contrast",
+  "schema": "reverse_physics/schema/reverse-physics-bt-reeh-schlieder-local-detector-obstruction-v1.schema.json",
+  "schema_version": 1,
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_reeh_schlieder_local_detector_obstruction.py --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_reeh_schlieder_local_detector_obstruction.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_reeh_schlieder_local_detector_obstruction"
+  ]
+}

@@ -1,0 +1,172 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-reeh-schlieder-local-detector-obstruction-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "schema_version", "certificate", "question", "answer",
+    "result_kind", "lifecycle_state", "dependency_tags", "assumptions",
+    "provenance", "abstract_commuting_algebra_theorem",
+    "positive_effect_corollary", "normal_pointer_dilation_corollary",
+    "exact_Julia_application", "balanced_contrast_boundary",
+    "bounded_spectral_truncation_lift",
+    "finite_exact_fixtures", "literature_context", "disposition",
+    "does_not_establish", "next_gate", "checks", "verification_commands",
+    "report"
+  ],
+  "properties": {
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-reeh-schlieder-local-detector-obstruction-v1.schema.json"},
+    "schema_version": {"const": 1},
+    "certificate": {"const": "REVERSE_PHYSICS_BT_REEH_SCHLIEDER_LOCAL_DETECTOR_OBSTRUCTION_V1"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "assumptions": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"$ref": "#/$defs/text"}},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_commit", "retrieval_date", "inputs", "generated_by", "independent_verifier", "method"],
+      "properties": {
+        "source_commit": {"const": "13ca819c61edeb81bcb83e49316e7ac71082cdf7"},
+        "retrieval_date": {"const": "2026-08-13"},
+        "inputs": {
+          "type": "array", "minItems": 3, "maxItems": 3,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["path", "sha256"],
+            "properties": {
+              "path": {"$ref": "#/$defs/text"},
+              "sha256": {"$ref": "#/$defs/hash"}
+            }
+          }
+        },
+        "generated_by": {"const": "reverse_physics/bt_reeh_schlieder_local_detector_obstruction.py"},
+        "independent_verifier": {"const": "reverse_physics/verify_bt_reeh_schlieder_local_detector_obstruction.py"},
+        "method": {"$ref": "#/$defs/text"}
+      }
+    },
+    "abstract_commuting_algebra_theorem": {
+      "type": "object", "additionalProperties": false,
+      "required": ["hypotheses", "separating_conclusion", "proof", "status"],
+      "properties": {
+        "hypotheses": {"$ref": "#/$defs/text"},
+        "separating_conclusion": {"const": "A in M and A Omega=0 imply A=0"},
+        "proof": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/text"}},
+        "status": {"const": "PROVED_ABSTRACTLY"}
+      }
+    },
+    "positive_effect_corollary": {
+      "type": "object", "additionalProperties": false,
+      "required": ["effect_hypotheses", "square_root_identity", "functional_calculus", "conclusion", "physical_reading", "status"],
+      "properties": {
+        "effect_hypotheses": {"$ref": "#/$defs/text"},
+        "square_root_identity": {"const": "||E^(1/2) Omega||^2=<Omega,E Omega>=0"},
+        "functional_calculus": {"const": "E^(1/2) belongs to M"},
+        "conclusion": {"const": "E=0"},
+        "physical_reading": {"$ref": "#/$defs/text"},
+        "status": {"const": "PROVED_ABSTRACTLY"}
+      }
+    },
+    "normal_pointer_dilation_corollary": {
+      "type": "object", "additionalProperties": false,
+      "required": ["setup", "induced_effect", "slice_map_result", "conclusion", "exact_Julia_realization", "status"],
+      "properties": {
+        "setup": {"$ref": "#/$defs/text"},
+        "induced_effect": {"const": "E=(id tensor omega)(U^*(I tensor Q)U)"},
+        "slice_map_result": {"const": "E belongs to M and 0<=E<=I"},
+        "conclusion": {"$ref": "#/$defs/text"},
+        "exact_Julia_realization": {"const": "IMPOSSIBLE_UNDER_THE_DECLARED_HYPOTHESES"},
+        "status": {"const": "PROVED_ABSTRACTLY"}
+      }
+    },
+    "exact_Julia_application": {
+      "type": "object", "additionalProperties": false,
+      "required": ["effect", "response_mode", "vacuum_probability", "nonzero_witness", "effect_locality", "click_Kraus_locality", "no_click_Kraus_locality", "Julia_pointer_unitary_locality", "status"],
+      "properties": {
+        "effect": {"const": "E_click=P_u/4"},
+        "response_mode": {"$ref": "#/$defs/text"},
+        "vacuum_probability": {"const": "<Omega,E_click Omega>=0"},
+        "nonzero_witness": {"const": "<u2,E_click u2>=1/4"},
+        "effect_locality": {"const": "E_click NOT_IN_M under the declared hypotheses"},
+        "click_Kraus_locality": {"$ref": "#/$defs/text"},
+        "no_click_Kraus_locality": {"$ref": "#/$defs/text"},
+        "Julia_pointer_unitary_locality": {"$ref": "#/$defs/text"},
+        "status": {"const": "SCOPED_EXACT_LOCAL_REALIZATION_NO_GO"}
+      }
+    },
+    "balanced_contrast_boundary": {
+      "type": "object", "additionalProperties": false,
+      "required": ["construction", "vacuum_condition", "consequence", "BT_status", "next_options", "status"],
+      "properties": {
+        "construction": {"$ref": "#/$defs/text"},
+        "vacuum_condition": {"$ref": "#/$defs/text"},
+        "consequence": {"$ref": "#/$defs/text"},
+        "BT_status": {"const": "a bounded local B with exact X2-zero contrast and strict X4 response is CONSTRUCTED_CONDITIONALLY_ON_SELF_ADJOINT_LOCAL_AFFILIATION_AND_DOMAIN"},
+        "next_options": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/text"}},
+        "status": {"const": "BOUNDED_LOCAL_CONTRAST_CONSTRUCTED_CONDITIONALLY"}
+      }
+    },
+    "bounded_spectral_truncation_lift": {
+      "type": "object", "additionalProperties": false,
+      "required": ["additional_hypotheses", "truncations", "response_vector", "limit", "closed_span_step", "finite_combination", "bounded_operator", "exact_responses", "effects", "phase_reversal_contrast", "operational_response", "constructivity", "BT_status", "status"],
+      "properties": {
+        "additional_hypotheses": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/text"}},
+        "truncations": {"$ref": "#/$defs/text"},
+        "response_vector": {"$ref": "#/$defs/text"},
+        "limit": {"$ref": "#/$defs/text"},
+        "closed_span_step": {"$ref": "#/$defs/text"},
+        "finite_combination": {"$ref": "#/$defs/text"},
+        "bounded_operator": {"$ref": "#/$defs/text"},
+        "exact_responses": {"$ref": "#/$defs/text"},
+        "effects": {"$ref": "#/$defs/text"},
+        "phase_reversal_contrast": {"$ref": "#/$defs/text"},
+        "operational_response": {"$ref": "#/$defs/text"},
+        "constructivity": {"$ref": "#/$defs/text"},
+        "BT_status": {"const": "CONDITIONAL_ON_UNCONSTRUCTED_POSITIVE_LOCAL_NET_AFFILIATION_AND_DOMAIN"},
+        "status": {"const": "PROVED_ABSTRACTLY"}
+      }
+    },
+    "finite_exact_fixtures": {
+      "type": "object",
+      "required": ["cyclicity_necessity_countermodel", "balanced_diagonal_fixture", "spectral_truncation_span_fixture"],
+      "additionalProperties": false,
+      "properties": {
+        "cyclicity_necessity_countermodel": {"type": "object"},
+        "balanced_diagonal_fixture": {"type": "object"},
+        "spectral_truncation_span_fixture": {"type": "object"}
+      }
+    },
+    "literature_context": {
+      "type": "object", "additionalProperties": false,
+      "required": ["primary_reference", "doi", "use", "priority_status"],
+      "properties": {
+        "primary_reference": {"$ref": "#/$defs/text"},
+        "doi": {"const": "10.1007/BF02787889"},
+        "use": {"$ref": "#/$defs/text"},
+        "priority_status": {"const": "NOT_CLAIMED"}
+      }
+    },
+    "disposition": {"type": "object", "minProperties": 11, "maxProperties": 11, "additionalProperties": {"$ref": "#/$defs/text"}},
+    "does_not_establish": {"type": "array", "minItems": 13, "maxItems": 13, "items": {"$ref": "#/$defs/text"}},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "checks": {
+      "type": "object", "additionalProperties": false,
+      "required": ["total", "passed", "ok", "failures", "details"],
+      "properties": {
+        "total": {"const": 34},
+        "passed": {"const": 34},
+        "ok": {"const": true},
+        "failures": {"const": []},
+        "details": {"type": "object", "minProperties": 34, "maxProperties": 34, "additionalProperties": {"const": true}}
+      }
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/text"}},
+    "report": {"const": "reverse_physics/reports/bt-reeh-schlieder-local-detector-obstruction.md"}
+  },
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

@@ -279,9 +279,11 @@ expanding smooth compact spacetime cutoff preserves exact leading darkness
 for every cutoff and retains a positive order-eight coefficient for some
 finite, existential support radius.  A numerical bandwidth and support
 radius remain open.  Normalizing the resulting quadrupole response mode gives
-an exact finite-strength Julia click/no-click instrument, but its vacuum and
-two-particle compressions are global and are not promoted to local-algebra
-Kraus operators.  The
+an exact finite-strength Julia click/no-click instrument.  Under the standard
+local-net hypothesis that the spacelike-complement algebra is cyclic on the
+vacuum, its nonzero exactly vacuum-dark effect is ruled out as a bounded
+local effect; a balanced local contrast with nonzero vacuum baselines exists
+conditionally on self-adjoint local affiliation and domains.  The
 recorded and symmetric bright-port absolute $q_8$ coefficients, continuum
 coherence and both forward endpoints remain open.  On the two-mode carrier,
 an explicit finite pointer Hamiltonian now selects the detector strength and
@@ -4213,6 +4215,77 @@ classifies this exact operational completion and its local-Kraus boundary.
 It removes the external detector-strength expansion, not the BT expansion in
 $\lambda$, public-BT selection, Eq.~(19), or the gravitational boundary.
 
+There is a conditional exact obstruction to closing that local-Kraus
+boundary.  Let $\mathcal M=\mathcal A(O)$ and
+$\mathcal N=\mathcal A(O')$ be commuting unital von Neumann algebras on a
+positive Hilbert space, and assume that $\mathcal N\Omega$ is dense.  If
+$A\in\mathcal M$ obeys $A\Omega=0$, then
+$AB\Omega=BA\Omega=0$ for every $B\in\mathcal N$; density and boundedness
+give $A=0$.  Thus $\Omega$ is separating for $\mathcal M$.  For a positive
+local effect $E$ with zero vacuum probability,
+\[
+ \|E^{1/2}\Omega\|^2=\langle\Omega,E\Omega\rangle=0,
+\]
+so functional calculus and separation imply $E=0$.
+
+The Julia effect $E_{\rm click}=P_u/4$ is nonzero but
+$\langle\Omega,E_{\rm click}\Omega\rangle=0$.  Hence it cannot belong to
+$\mathcal A(O)$ under these hypotheses.  Neither exact Kraus operator can
+belong to $\mathcal A(O)$, since
+$K_{\rm click}^*K_{\rm click}=E_{\rm click}$ and
+$I-K_{\rm no}^*K_{\rm no}=E_{\rm click}$.  A normal local tensor-pointer
+dilation does not evade the result: its induced effect
+\[
+ ({\rm id}\otimes\omega)[U^*(I\otimes Q)U]\in\mathcal M
+\]
+is again positive and local.  Certificate
+\par\noindent
+\texttt{REVERSE\_PHYSICS\_BT\_REEH\_SCHLIEDER\_LOCAL\_}
+\allowbreak\texttt{DETECTOR\_OBSTRUCTION\_V1}
+\par\noindent
+classifies this \texttt{LOCAL-ALGEBRAIC} no-go.  It assumes, but does not
+construct, a positive local net and complement-cyclic vacuum for the public
+BT theory \cite{ReehSchlieder}.
+
+The obstruction concerns a zero-probability positive outcome, not a signed
+contrast.  For a self-adjoint local contraction $B$,
+$E_\pm=(I\pm B)/2$ are local effects with $E_++E_-=I$.  If
+$\langle\Omega,B\Omega\rangle=0$, both vacuum probabilities are $1/2$ while
+their contrast vanishes.  This is the viable local architecture left by the
+theorem.  It has an exact conditional realization.  Suppose the compact
+quadrupole density has a self-adjoint realization $D$ affiliated with
+$\mathcal M$, the vectors $\Omega,X_2,X_4$ lie in
+$\operatorname{Dom}(D)$, and its certified responses are
+\[
+ \langle\Omega,D\Omega\rangle=\langle\Omega,DX_2\rangle=0,
+ \qquad a=\langle\Omega,DX_4\rangle\ne0.
+\]
+The bounded spectral truncations
+$D_n=D1_{[-n,n]}(D)\in\mathcal M$ define response vectors
+\[
+ v_n=(\langle\Omega,D_n\Omega\rangle,
+ \Re\langle\Omega,D_nX_2\rangle,\Im\langle\Omega,D_nX_2\rangle,
+ \Re\langle\Omega,D_nX_4\rangle,\Im\langle\Omega,D_nX_4\rangle)
+ \longrightarrow(0,0,0,\Re a,\Im a).
+\]
+Their real span is a closed subspace of $\mathbb R^5$, so the limit is an
+exact finite combination of at most five $v_n$.  The same finite combination
+of the $D_n$, normalized in operator norm, is a bounded self-adjoint local
+contraction $B$ with exact zero vacuum and $X_2$ responses and nonzero $X_4$
+response.  The imported datum is off diagonal, so its operational observable
+is the phase-reversal contrast
+\[
+ {1\over4}\{\langle\Omega+X,B(\Omega+X)\rangle
+ -\langle\Omega-X,B(\Omega-X)\rangle\}
+ =\Re\langle\Omega,BX\rangle .
+\]
+It is exactly zero for $X_2$ and, after a calibrated phase choice, nonzero for
+$X_4$.  Hence a bounded balanced local contrast exists conditionally, without
+asserting that a single nonlinear function preserves darkness or that this is
+a one-shot dark-port probability.  What remains open is the positive BT local
+net, self-adjoint affiliation and the domain theorem needed to instantiate
+it, as well as Eq.~(19) and gravity.
+
 The effect itself has a finite Hamiltonian realization.  For the phased
 antisymmetric angle projector
 \[
@@ -4782,6 +4855,12 @@ R.~L.~Hudson and K.~R.~Parthasarathy,
 \emph{Quantum It\^o's formula and stochastic evolutions},
 Commun.\ Math.\ Phys.\ \textbf{93} (1984) 301--323,
 \href{https://doi.org/10.1007/BF01258530}{doi:10.1007/BF01258530}.
+
+\bibitem{ReehSchlieder}
+H.~Reeh and S.~Schlieder,
+\emph{Bemerkungen zur unit\"ar\"aquivalenz von lorentzinvarianten Feldern},
+Nuovo Cim. \textbf{22} (1961) 1051--1068,
+\href{https://doi.org/10.1007/BF02787889}{doi:10.1007/BF02787889}.
 
 \bibitem{Mostafazadeh2005}
 A.~Mostafazadeh,
