@@ -1,0 +1,197 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-fully-rearranged-q10-frame-typed-loop-ledger-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "schema_version", "certificate", "question", "answer",
+    "result_kind", "lifecycle_state", "dependency_tags", "provenance",
+    "frame_dictionary", "original_phi_order6", "direct_auxiliary_order6",
+    "correction", "disposition", "does_not_establish", "next_gate",
+    "checks", "verification_commands", "report"
+  ],
+  "properties": {
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-fully-rearranged-q10-frame-typed-loop-ledger-v1.schema.json"},
+    "schema_version": {"const": 1},
+    "certificate": {"const": "REVERSE_PHYSICS_BT_FULLY_REARRANGED_Q10_FRAME_TYPED_LOOP_LEDGER_V1"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_commit", "retrieval_date", "inputs", "generated_by", "independent_verifier", "method"],
+      "properties": {
+        "source_commit": {"const": "978a336eaccbded0fcee39db58afbd946db8a2e2"},
+        "retrieval_date": {"const": "2026-08-13"},
+        "inputs": {
+          "type": "array", "minItems": 8, "maxItems": 8,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["path", "sha256"],
+            "properties": {
+              "path": {"$ref": "#/$defs/text"},
+              "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+            }
+          }
+        },
+        "generated_by": {"const": "reverse_physics/bt_fully_rearranged_q10_frame_typed_loop_ledger.py"},
+        "independent_verifier": {"const": "reverse_physics/verify_bt_fully_rearranged_q10_frame_typed_loop_ledger.py"},
+        "method": {"$ref": "#/$defs/text"}
+      }
+    },
+    "frame_dictionary": {
+      "type": "object", "additionalProperties": false,
+      "required": ["original_phi_action", "original_phi_vertices", "auxiliary_action", "auxiliary_vertices", "published_interaction_relation", "typing_rule", "projector_rule", "status"],
+      "properties": {
+        "original_phi_action": {"const": "S_phi=-1/2*integral (Box(phi)+lambda*(partial phi)^2)^2"},
+        "original_phi_vertices": {"$ref": "#/$defs/text"},
+        "auxiliary_action": {"$ref": "#/$defs/text"},
+        "auxiliary_vertices": {"$ref": "#/$defs/text"},
+        "published_interaction_relation": {"const": "S_phi=R_infinity^dagger S_OmegaUpsilon R_minus_infinity"},
+        "typing_rule": {"$ref": "#/$defs/text"},
+        "projector_rule": {"$ref": "#/$defs/text"},
+        "status": {"const": "TWO_ACTION_FRAMES_SEPARATED"}
+      }
+    },
+    "original_phi_order6": {
+      "type": "object", "additionalProperties": false,
+      "required": ["half_edge_identity", "coupling_identity", "loop_identity", "rows", "vertex_count_classes", "meaning", "status"],
+      "properties": {
+        "half_edge_identity": {"const": "3*V3+4*V4=2*I+E"},
+        "coupling_identity": {"const": "V3+2*V4=6"},
+        "loop_identity": {"const": "L=I-(V3+V4)+1"},
+        "rows": {
+          "type": "array", "minItems": 4, "maxItems": 4,
+          "items": {"$ref": "#/$defs/phiRow"}
+        },
+        "vertex_count_classes": {"const": ["V4^3", "V3^2*V4^2", "V3^4*V4", "V3^6"]},
+        "meaning": {"$ref": "#/$defs/text"},
+        "status": {"const": "FOUR_ORIGINAL_PHI_VERTEX_COUNT_CLASSES_EXHAUSTIVE"}
+      }
+    },
+    "direct_auxiliary_order6": {
+      "type": "object", "additionalProperties": false,
+      "required": ["identities", "labeled_multigraph_count", "orbit_count", "rows", "normal_ordered_massless_survivors", "counterterm_ledger", "status"],
+      "properties": {
+        "identities": {"$ref": "#/$defs/text"},
+        "labeled_multigraph_count": {"const": 16},
+        "orbit_count": {"const": 4},
+        "rows": {
+          "type": "array", "minItems": 4, "maxItems": 4,
+          "items": {"$ref": "#/$defs/auxiliaryRow"}
+        },
+        "normal_ordered_massless_survivors": {"const": ["triangle", "bubble_with_bridge"]},
+        "counterterm_ledger": {
+          "type": "object", "additionalProperties": false,
+          "required": ["triangle", "bubble_with_bridge", "tadpoles", "primitive_six_point"],
+          "properties": {
+            "triangle": {"const": "UV finite, no proper loop subgraph and no counterterm"},
+            "bubble_with_bridge": {"$ref": "#/$defs/text"},
+            "tadpoles": {"$ref": "#/$defs/text"},
+            "primitive_six_point": {"const": "none because every overall six-point graph has degree -2"}
+          }
+        },
+        "status": {"const": "FOUR_AUXILIARY_MULTIGRAPH_ORBITS_TWO_SURVIVE_SELECTED_NORMAL_ORDERING"}
+      }
+    },
+    "correction": {
+      "type": "object", "additionalProperties": false,
+      "required": ["predecessor", "status", "invalid_interpretation", "retained_exact_results", "replacement"],
+      "properties": {
+        "predecessor": {"const": "REVERSE_PHYSICS_BT_FULLY_REARRANGED_Q10_OBJECT_LEDGER_V1"},
+        "status": {"const": "SUPERSEDED_NEXT_GATE_FRAME_TYPING"},
+        "invalid_interpretation": {"$ref": "#/$defs/text"},
+        "retained_exact_results": {
+          "type": "array", "minItems": 6, "maxItems": 6,
+          "items": {"$ref": "#/$defs/text"}
+        },
+        "replacement": {"$ref": "#/$defs/text"}
+      }
+    },
+    "disposition": {
+      "type": "object", "additionalProperties": false,
+      "required": ["original_phi_order6_vertex_count_classes", "direct_auxiliary_triangle", "direct_auxiliary_bubble_with_bridge", "direct_auxiliary_tadpoles", "direct_auxiliary_connected_T6", "cross_frame_addition_of_original_V3_classes", "standard_scalar_projector_transfer", "complete_q10", "common_Born_q10", "general_Eq19", "gravity_or_metric_BV_BRST_transfer", "Lorentzian_causal_claim"],
+      "properties": {
+        "original_phi_order6_vertex_count_classes": {"const": "FOUR_CLASSIFIED_NOT_COMPUTED"},
+        "direct_auxiliary_triangle": {"const": "COEFFICIENT_COMPUTED_AT_FINITE_TIME"},
+        "direct_auxiliary_bubble_with_bridge": {"const": "MISSING_ASSEMBLY"},
+        "direct_auxiliary_tadpoles": {"const": "ZERO_ONLY_IN_DECLARED_NORMAL_ORDERED_MASSLESS_SCHEME"},
+        "direct_auxiliary_connected_T6": {"const": "INCOMPLETE_ONE_RENORMALIZED_CLASS_REMAINS"},
+        "cross_frame_addition_of_original_V3_classes": {"const": "FORBIDDEN_DOUBLE_COUNTING"},
+        "standard_scalar_projector_transfer": {"const": "NOT_CONSTRUCTED"},
+        "complete_q10": {"const": "NOT_COMPUTED"},
+        "common_Born_q10": {"const": "NOT_ESTABLISHED"},
+        "general_Eq19": {"const": "NOT_PROVED"},
+        "gravity_or_metric_BV_BRST_transfer": {"const": "NOT_CONSTRUCTED"},
+        "Lorentzian_causal_claim": {"const": "NOT_ESTABLISHED"}
+      }
+    },
+    "does_not_establish": {
+      "type": "array", "minItems": 14, "maxItems": 14,
+      "items": {"$ref": "#/$defs/text"}
+    },
+    "next_gate": {"$ref": "#/$defs/text"},
+    "checks": {
+      "type": "object", "additionalProperties": false,
+      "required": ["total", "passed", "ok", "failures", "details"],
+      "properties": {
+        "total": {"const": 28},
+        "passed": {"const": 28},
+        "ok": {"const": true},
+        "failures": {"const": []},
+        "details": {
+          "type": "object", "minProperties": 28, "maxProperties": 28,
+          "additionalProperties": {"const": true}
+        }
+      }
+    },
+    "verification_commands": {
+      "type": "array", "minItems": 3, "maxItems": 3,
+      "items": {"$ref": "#/$defs/text"}
+    },
+    "report": {"const": "reverse_physics/reports/bt-fully-rearranged-q10-frame-typed-loop-ledger.md"}
+  },
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "phiRow": {
+      "type": "object", "additionalProperties": false,
+      "required": ["V3", "V4", "I", "E", "L", "lambda_degree"],
+      "properties": {
+        "V3": {"type": "integer", "minimum": 0, "maximum": 6},
+        "V4": {"type": "integer", "minimum": 0, "maximum": 3},
+        "I": {"type": "integer", "minimum": 3, "maximum": 6},
+        "E": {"const": 6},
+        "L": {"const": 1},
+        "lambda_degree": {"const": 6}
+      }
+    },
+    "matrix3": {
+      "type": "array", "minItems": 3, "maxItems": 3,
+      "items": {
+        "type": "array", "minItems": 3, "maxItems": 3,
+        "items": {"type": "integer", "minimum": 0, "maximum": 2}
+      }
+    },
+    "profile3": {
+      "type": "array", "minItems": 3, "maxItems": 3,
+      "items": {"type": "integer", "minimum": 0, "maximum": 4}
+    },
+    "auxiliaryRow": {
+      "type": "object", "additionalProperties": false,
+      "required": ["topology", "canonical_adjacency", "internal_degree_profile", "external_leg_profile", "self_loop_count", "labeled_orbit_size", "overall_superficial_degree", "proper_loop_subgraph", "normal_ordered_massless_status"],
+      "properties": {
+        "topology": {"enum": ["triangle", "bubble_with_bridge", "tadpole_at_tree_center", "tadpole_at_tree_leaf"]},
+        "canonical_adjacency": {"$ref": "#/$defs/matrix3"},
+        "internal_degree_profile": {"$ref": "#/$defs/profile3"},
+        "external_leg_profile": {"$ref": "#/$defs/profile3"},
+        "self_loop_count": {"enum": [0, 1]},
+        "labeled_orbit_size": {"enum": [1, 3, 6]},
+        "overall_superficial_degree": {"const": -2},
+        "proper_loop_subgraph": {"enum": ["NONE", "FOUR_POINT_BUBBLE_DEGREE_ZERO", "TWO_POINT_TADPOLE_LOCAL_MASS"]},
+        "normal_ordered_massless_status": {"enum": ["RETAINED", "ZERO_IN_DECLARED_NORMAL_ORDERED_MASSLESS_SCHEME"]}
+      }
+    }
+  }
+}

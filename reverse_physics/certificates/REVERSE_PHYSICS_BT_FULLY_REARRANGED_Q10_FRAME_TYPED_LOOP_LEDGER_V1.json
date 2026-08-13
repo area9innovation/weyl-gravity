@@ -1,0 +1,356 @@
+{
+  "answer": "No. The four rows V3^6, V3^4*V4, V3^2*V4^2 and V4^3 are the exhaustive one-loop vertex-count classes of the original perfect-square phi action, whose cubic and quartic vertices have lambda degrees one and two. The direct auxiliary Omega/Upsilon action has no cubic vertex: at six external legs and one loop it forces exactly three quartic vertices and three internal lines. Exact quotient enumeration of all sixteen labeled connected three-vertex multigraphs gives four isomorphism types: the simple triangle, a double-edge four-point bubble with a bridge, a tadpole at the center of a three-vertex tree, and a tadpole at a leaf. In the declared normal-ordered massless unit-residue auxiliary scheme the two tadpole classes vanish, leaving the already certified finite-time triangle and one renormalized bubble-with-bridge class. The bubble has a logarithmically divergent four-point subgraph and must include the same local quartic counterterm and finite-time bubble kernel already certified for the active loop; the overall six-point graph has degree -2 and needs no primitive six-point counterterm. Therefore the prior instruction to add three V3 families after the auxiliary triangle mixed frames and is superseded. The triangle coefficient itself remains valid. A direct auxiliary q10 calculation next assembles the bubble-with-bridge and then source/detector and normalization terms. A standard scalar-phi projector result cannot be obtained by adding graph lists across frames; it requires the missing R_t projector pushforward, Eq. (19), and matched composite/Jacobian/counterterm data.",
+  "certificate": "REVERSE_PHYSICS_BT_FULLY_REARRANGED_Q10_FRAME_TYPED_LOOP_LEDGER_V1",
+  "checks": {
+    "details": {
+      "Eq19_gravity_and_causality_are_not_promoted": true,
+      "all_original_phi_classes_are_one_loop": true,
+      "auxiliary_E6_L1_forces_three_quartic_vertices": true,
+      "auxiliary_orbit_sizes_are_1_3_6_6": true,
+      "auxiliary_topology_names_are_exhaustive": true,
+      "bubble_bridge_requires_quartic_counterterm": true,
+      "bubble_subgraph_is_already_renormalized_and_affiliated": true,
+      "complete_auxiliary_connected_T6_remains_missing_bubble_bridge": true,
+      "complete_q10_is_not_promoted": true,
+      "every_auxiliary_graph_has_overall_degree_minus_two": true,
+      "every_auxiliary_graph_has_six_external_legs": true,
+      "five_predecessors_pass": true,
+      "four_auxiliary_multigraph_orbits": true,
+      "four_original_phi_vertex_count_solutions": true,
+      "frame_transfer_requires_Rt_projector_data": true,
+      "inputs_are_content_pinned": true,
+      "no_primitive_six_point_counterterm": true,
+      "normal_ordering_is_selected_not_public_unique": true,
+      "normal_ordering_leaves_triangle_and_bubble_bridge": true,
+      "old_ledger_rows_are_original_phi_rows": true,
+      "original_V3_classes_are_not_auxiliary_addends": true,
+      "previous_next_gate_is_superseded_only_in_frame_typing": true,
+      "previous_triangle_coefficient_is_retained": true,
+      "public_auxiliary_action_has_only_quartic_interaction": true,
+      "public_interaction_picture_relation_is_imported": true,
+      "public_phi_cubic_and_quartic_rules_are_imported": true,
+      "sixteen_labeled_auxiliary_multigraphs": true,
+      "triangle_block_is_already_finite_time_computed": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 28,
+    "total": 28
+  },
+  "correction": {
+    "invalid_interpretation": "the auxiliary V4^3 triangle was treated as one member of the original-phi four-row list and the other three V3 families were requested as additive auxiliary corrections",
+    "predecessor": "REVERSE_PHYSICS_BT_FULLY_REARRANGED_Q10_OBJECT_LEDGER_V1",
+    "replacement": "for the direct auxiliary experiment, compute the renormalized bubble-with-bridge after the triangle and state the tadpole scheme; for the scalar-phi experiment, complete the frame/projector transfer rather than adding auxiliary and phi graph lists",
+    "retained_exact_results": [
+      "q10=<y5,y5>+2*Re<y4,y6>",
+      "four original-phi order-six vertex-count solutions",
+      "all original-phi rows are one loop",
+      "fully rearranged external disconnected support remains zero",
+      "vacuum, source/detector and total-kappa blocks remain required",
+      "the isolated finite-time auxiliary triangle coefficient and common-Born class"
+    ],
+    "status": "SUPERSEDED_NEXT_GATE_FRAME_TYPING"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "direct_auxiliary_order6": {
+    "counterterm_ledger": {
+      "bubble_with_bridge": "overall degree -2 with one degree-zero four-point bubble subdivergence; use the matched quartic coupling counterterm",
+      "primitive_six_point": "none because every overall six-point graph has degree -2",
+      "tadpoles": "local two-point mass structures; zero only in the declared normal-ordered massless scheme",
+      "triangle": "UV finite, no proper loop subgraph and no counterterm"
+    },
+    "identities": "4*V4=2*I+6, L=I-V4+1, lambda_degree=2*V4=6 imply V4=I=3",
+    "labeled_multigraph_count": 16,
+    "normal_ordered_massless_survivors": [
+      "triangle",
+      "bubble_with_bridge"
+    ],
+    "orbit_count": 4,
+    "rows": [
+      {
+        "canonical_adjacency": [
+          [
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "external_leg_profile": [
+          0,
+          3,
+          3
+        ],
+        "internal_degree_profile": [
+          1,
+          1,
+          4
+        ],
+        "labeled_orbit_size": 3,
+        "normal_ordered_massless_status": "ZERO_IN_DECLARED_NORMAL_ORDERED_MASSLESS_SCHEME",
+        "overall_superficial_degree": -2,
+        "proper_loop_subgraph": "TWO_POINT_TADPOLE_LOCAL_MASS",
+        "self_loop_count": 1,
+        "topology": "tadpole_at_tree_center"
+      },
+      {
+        "canonical_adjacency": [
+          [
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            2
+          ],
+          [
+            1,
+            2,
+            0
+          ]
+        ],
+        "external_leg_profile": [
+          1,
+          2,
+          3
+        ],
+        "internal_degree_profile": [
+          1,
+          2,
+          3
+        ],
+        "labeled_orbit_size": 6,
+        "normal_ordered_massless_status": "RETAINED",
+        "overall_superficial_degree": -2,
+        "proper_loop_subgraph": "FOUR_POINT_BUBBLE_DEGREE_ZERO",
+        "self_loop_count": 0,
+        "topology": "bubble_with_bridge"
+      },
+      {
+        "canonical_adjacency": [
+          [
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            0
+          ]
+        ],
+        "external_leg_profile": [
+          1,
+          2,
+          3
+        ],
+        "internal_degree_profile": [
+          1,
+          2,
+          3
+        ],
+        "labeled_orbit_size": 6,
+        "normal_ordered_massless_status": "ZERO_IN_DECLARED_NORMAL_ORDERED_MASSLESS_SCHEME",
+        "overall_superficial_degree": -2,
+        "proper_loop_subgraph": "TWO_POINT_TADPOLE_LOCAL_MASS",
+        "self_loop_count": 1,
+        "topology": "tadpole_at_tree_leaf"
+      },
+      {
+        "canonical_adjacency": [
+          [
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            1,
+            0
+          ]
+        ],
+        "external_leg_profile": [
+          2,
+          2,
+          2
+        ],
+        "internal_degree_profile": [
+          2,
+          2,
+          2
+        ],
+        "labeled_orbit_size": 1,
+        "normal_ordered_massless_status": "RETAINED",
+        "overall_superficial_degree": -2,
+        "proper_loop_subgraph": "NONE",
+        "self_loop_count": 0,
+        "topology": "triangle"
+      }
+    ],
+    "status": "FOUR_AUXILIARY_MULTIGRAPH_ORBITS_TWO_SURVIVE_SELECTED_NORMAL_ORDERING"
+  },
+  "disposition": {
+    "Lorentzian_causal_claim": "NOT_ESTABLISHED",
+    "common_Born_q10": "NOT_ESTABLISHED",
+    "complete_q10": "NOT_COMPUTED",
+    "cross_frame_addition_of_original_V3_classes": "FORBIDDEN_DOUBLE_COUNTING",
+    "direct_auxiliary_bubble_with_bridge": "MISSING_ASSEMBLY",
+    "direct_auxiliary_connected_T6": "INCOMPLETE_ONE_RENORMALIZED_CLASS_REMAINS",
+    "direct_auxiliary_tadpoles": "ZERO_ONLY_IN_DECLARED_NORMAL_ORDERED_MASSLESS_SCHEME",
+    "direct_auxiliary_triangle": "COEFFICIENT_COMPUTED_AT_FINITE_TIME",
+    "general_Eq19": "NOT_PROVED",
+    "gravity_or_metric_BV_BRST_transfer": "NOT_CONSTRUCTED",
+    "original_phi_order6_vertex_count_classes": "FOUR_CLASSIFIED_NOT_COMPUTED",
+    "standard_scalar_projector_transfer": "NOT_CONSTRUCTED"
+  },
+  "does_not_establish": [
+    "the value or sign of the renormalized bubble-with-bridge packet interference",
+    "a public-unique normal-ordering, mass or finite coupling-counterterm prescription",
+    "loop-level equality of the original-phi and direct-auxiliary packet experiments",
+    "the composite external-operator, functional-Jacobian or local-contact terms of a full field-redefinition equivalence theorem",
+    "the complete original-phi one-loop six-leg amplitude",
+    "the complete auxiliary connected T6 coefficient",
+    "the complete y5 norm or y4-y6 interference",
+    "source/detector second-order dressing or vacuum/survival normalization",
+    "the value, sign or common-Born property of complete q10",
+    "finite-coupling or all-order positivity",
+    "general Eq. (19) or the standard scalar projector pushforward",
+    "gravity or metric BV--BRST transfer",
+    "anything LORENTZIAN-CAUSAL",
+    "literature priority"
+  ],
+  "frame_dictionary": {
+    "auxiliary_action": "S_1,1=integral d4x [partial Omega partial Upsilon + (lambda^2/2) Omega^2 Upsilon^2]",
+    "auxiliary_vertices": "one Omega^2*Upsilon^2 quartic vertex of lambda degree two; no cubic vertex",
+    "original_phi_action": "S_phi=-1/2*integral (Box(phi)+lambda*(partial phi)^2)^2",
+    "original_phi_vertices": "V3 has lambda degree one and V4 has lambda degree two",
+    "projector_rule": "transporting the standard scalar projector to the auxiliary frame requires R_t P_phi R_t^dagger and cannot be inferred from an on-shell leading residue coincidence",
+    "published_interaction_relation": "S_phi=R_infinity^dagger S_OmegaUpsilon R_minus_infinity",
+    "status": "TWO_ACTION_FRAMES_SEPARATED",
+    "typing_rule": "choose one action frame for internal graph enumeration; original-phi and direct-auxiliary loop lists are related reorganizations, not additive summands"
+  },
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "Assemble the renormalized auxiliary bubble-with-bridge six-leg kernel by joining the certified finite-time active four-point bubble, including its matched local quartic counterterm, to one auxiliary tree vertex on every labeled three-three channel. Prove its total-kappa class and compact packet bound. State separately whether the two tadpole orbits are set to zero in the selected normal-ordered massless scheme. Do not compute or add an auxiliary V3^2*V4^2 graph. Complete q10 still requires y5, source/detector dressing and vacuum/survival normalization; a standard scalar-phi result additionally requires R_t/Eq. (19).",
+  "original_phi_order6": {
+    "coupling_identity": "V3+2*V4=6",
+    "half_edge_identity": "3*V3+4*V4=2*I+E",
+    "loop_identity": "L=I-(V3+V4)+1",
+    "meaning": "complete vertex-count classes before graph topology, derivative numerator, counterterm and external composite-operator resolution in the original phi action",
+    "rows": [
+      {
+        "E": 6,
+        "I": 3,
+        "L": 1,
+        "V3": 0,
+        "V4": 3,
+        "lambda_degree": 6
+      },
+      {
+        "E": 6,
+        "I": 4,
+        "L": 1,
+        "V3": 2,
+        "V4": 2,
+        "lambda_degree": 6
+      },
+      {
+        "E": 6,
+        "I": 5,
+        "L": 1,
+        "V3": 4,
+        "V4": 1,
+        "lambda_degree": 6
+      },
+      {
+        "E": 6,
+        "I": 6,
+        "L": 1,
+        "V3": 6,
+        "V4": 0,
+        "lambda_degree": 6
+      }
+    ],
+    "status": "FOUR_ORIGINAL_PHI_VERTEX_COUNT_CLASSES_EXHAUSTIVE",
+    "vertex_count_classes": [
+      "V4^3",
+      "V3^2*V4^2",
+      "V3^4*V4",
+      "V3^6"
+    ]
+  },
+  "provenance": {
+    "generated_by": "reverse_physics/bt_fully_rearranged_q10_frame_typed_loop_ledger.py",
+    "independent_verifier": "reverse_physics/verify_bt_fully_rearranged_q10_frame_typed_loop_ledger.py",
+    "inputs": [
+      {
+        "path": "planning/work-items/reverse-physics-bateman-fully-rearranged-q10-frame-typed-loop-ledger.json",
+        "sha256": "100a7522de64b10af2e0e3c970d234fdf564ddf9136b3f4365c8ec2108c6e1de"
+      },
+      {
+        "path": "planning/events/reverse-physics-bateman-fully-rearranged-q10-frame-typed-loop-ledger-DONE-978a336e.json",
+        "sha256": "559987a45cc10130011a4ac7b97eb9a515f69f9e9cc9fd9aea44c56d38b579f0"
+      },
+      {
+        "path": "reverse_physics/data/bateman_turok_hamiltonian_source_v1.json",
+        "sha256": "55ff3f989f1c5ac9bcc0688ad9c43721c22b5889c43da50fce43352c18be8fe7"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_FULLY_REARRANGED_Q10_OBJECT_LEDGER_V1.json",
+        "sha256": "9c63b9cc8e418343472acb037e2332e30bcabd118db41824f45ef6794e3f2325"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_SIX_POINT_SHELL_TREE_NORMALIZATION_V1.json",
+        "sha256": "82793a5d82847a81d9fba1ff1fb5d23398274929319278fb6be1c08232d7a6c4"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_FULLY_REARRANGED_V4_CUBED_FINITE_TIME_AFFILIATION_V1.json",
+        "sha256": "7f2067dc3fe1bd30dbc1598c2e94307a45ccf096234fb8cbaca823402601f9da"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_FINITE_TIME_ACTIVE_LOOP_AFFILIATION_V1.json",
+        "sha256": "73d5f9d1db46e3c9a783acc8d35f94a17876425ce5f9aec3fca73f1c73d547a3"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_TAGGED_PACKET_NORMAL_ORDERED_SPECTATOR_REDUCTION_V1.json",
+        "sha256": "9ee80b008c7d68366c2909868e06798c130558f2d8725a07644e2f98e343a310"
+      }
+    ],
+    "method": "Exact nonnegative vertex-count enumeration in the original frame and exhaustive connected symmetric-adjacency enumeration in the auxiliary frame, followed by an exact S3 orbit quotient and subgraph power-counting audit. No floating-point arithmetic enters a claim.",
+    "retrieval_date": "2026-08-13",
+    "source_commit": "978a336eaccbded0fcee39db58afbd946db8a2e2"
+  },
+  "question": "Are the three V3-containing order-six loop families additional direct-auxiliary corrections after the finite-time Omega/Upsilon V4^3 triangle, and what connected auxiliary loop objects actually remain?",
+  "report": "reverse_physics/reports/bt-fully-rearranged-q10-frame-typed-loop-ledger.md",
+  "result_kind": "exact action-frame typing and connected one-loop multigraph classification for the fully rearranged q10 ledger",
+  "schema": "reverse_physics/schema/reverse-physics-bt-fully-rearranged-q10-frame-typed-loop-ledger-v1.schema.json",
+  "schema_version": 1,
+  "verification_commands": [
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/bt_fully_rearranged_q10_frame_typed_loop_ledger.py --write --check",
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/verify_bt_fully_rearranged_q10_frame_typed_loop_ledger.py",
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 -m unittest -v reverse_physics.tests.test_bt_fully_rearranged_q10_frame_typed_loop_ledger"
+  ]
+}
