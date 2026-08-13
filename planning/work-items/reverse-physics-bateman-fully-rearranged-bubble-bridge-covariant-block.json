@@ -1,0 +1,34 @@
+{
+  "id": "sf:program/work/reverse-physics-bateman-fully-rearranged-bubble-bridge-covariant-block",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "reverse-physics",
+    "state": "ACTIVE",
+    "objective": "Compute the remaining direct-auxiliary connected six-leg one-loop bubble-with-bridge block, including its exact species tensor, MSbar forest subtraction, RG identity and physical-source packet margins.",
+    "depends_on": [
+      "REVERSE_PHYSICS_BT_FULLY_REARRANGED_Q10_FRAME_TYPED_LOOP_LEDGER_V1",
+      "REVERSE_PHYSICS_BT_AUXILIARY_ACTIVE_ONE_LOOP_MSBAR_V1",
+      "REVERSE_PHYSICS_BT_COMPLETE_CONNECTED_ORDER4_PACKET_COLUMN_V1",
+      "REVERSE_PHYSICS_BT_FULLY_REARRANGED_PHYSICAL_PACKET_PROBABILITY_V1"
+    ],
+    "activates": [
+      "a complete covariant direct-auxiliary connected six-leg loop ledger",
+      "the off-diagonal third-Dyson bubble insertion problem",
+      "an exact finite-time counterterm normalization check"
+    ],
+    "current_gate": "Enumerate all labelled one-two-three external-leg role partitions, contract the auxiliary species tensor independently, derive the covariant MSbar block and prove that its scale derivative is the tree coefficient required by the certified beta function.",
+    "stop_condition": "Land a strict exact coefficient certificate and independent verifier that compute the covariant block, its tree cross Gram, physical-source margins and RG cancellation while leaving finite-time affiliation and complete q10 fail closed.",
+    "forbid": "no energy-diagonal four-point B_T inserted as an off-diagonal six-point third-Dyson kernel; no covariant coefficient called finite-time q10; no selected-source regularity promoted to a full-carrier zero-mode theorem; no Eq. (19), gravity or LORENTZIAN-CAUSAL promotion",
+    "allowed_paths": [
+      "reverse_physics/",
+      "planning/work-items/reverse-physics-bateman-fully-rearranged-bubble-bridge-covariant-block.json",
+      "planning/events/",
+      "paper/05-interaction-obstructions.tex",
+      "paper/05-interaction-obstructions.pdf",
+      "paper/06-einstein-weyl-interaction-obstructions.tex",
+      "paper/06-einstein-weyl-interaction-obstructions.pdf"
+    ],
+    "resource_hint": "Write each labelled topology as R=(a;bc;def), where a is attached to the degree-three junction, bc to the bubble leaf and def to the tree leaf. There are 6*C(5,2)=60 roles. Use the bubble symmetry factor 1/2 and group the six roles over each unordered three-three bridge channel before applying the RG derivative."
+  }
+}

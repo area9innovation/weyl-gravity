@@ -1,0 +1,206 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-fully-rearranged-bubble-bridge-covariant-block-v1.schema.json",
+  "title": "Fully rearranged BT bubble-with-bridge covariant block certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "schema_version", "certificate", "question", "answer",
+    "result_kind", "lifecycle_state", "dependency_tags", "provenance",
+    "graph_and_master", "species_tensor", "role_kinematics", "tree_incidence",
+    "renormalization", "finite_time_gate", "common_Born_interference",
+    "disposition", "assumptions", "does_not_establish", "next_gate",
+    "checks", "verification_commands", "report"
+  ],
+  "properties": {
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-fully-rearranged-bubble-bridge-covariant-block-v1.schema.json"},
+    "schema_version": {"const": 1},
+    "certificate": {"const": "REVERSE_PHYSICS_BT_FULLY_REARRANGED_BUBBLE_BRIDGE_COVARIANT_BLOCK_V1"},
+    "question": {"type": "string", "minLength": 20},
+    "answer": {"type": "string", "minLength": 200},
+    "result_kind": {"type": "string", "minLength": 20},
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE"]
+    },
+    "provenance": {"$ref": "#/$defs/provenance"},
+    "graph_and_master": {"$ref": "#/$defs/graph"},
+    "species_tensor": {"$ref": "#/$defs/species"},
+    "role_kinematics": {"$ref": "#/$defs/kinematics"},
+    "tree_incidence": {"$ref": "#/$defs/incidence"},
+    "renormalization": {"$ref": "#/$defs/renormalization"},
+    "finite_time_gate": {"$ref": "#/$defs/finite_time_gate"},
+    "common_Born_interference": {"$ref": "#/$defs/common_born"},
+    "disposition": {"$ref": "#/$defs/disposition"},
+    "assumptions": {"type": "array", "minItems": 5, "items": {"type": "string"}},
+    "does_not_establish": {"type": "array", "minItems": 14, "items": {"type": "string"}},
+    "next_gate": {"type": "string", "minLength": 100},
+    "checks": {"$ref": "#/$defs/checks"},
+    "verification_commands": {"type": "array", "minItems": 3, "items": {"type": "string"}},
+    "report": {"const": "reverse_physics/reports/bt-fully-rearranged-bubble-bridge-covariant-block.md"}
+  },
+  "$defs": {
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_commit", "retrieval_date", "inputs", "generated_by", "independent_verifier", "method"],
+      "properties": {
+        "source_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "retrieval_date": {"const": "2026-08-13"},
+        "inputs": {
+          "type": "array", "minItems": 9, "maxItems": 9,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["path", "sha256"],
+            "properties": {
+              "path": {"type": "string"},
+              "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+            }
+          }
+        },
+        "generated_by": {"const": "reverse_physics/bt_fully_rearranged_bubble_bridge_covariant_block.py"},
+        "independent_verifier": {"const": "reverse_physics/verify_bt_fully_rearranged_bubble_bridge_covariant_block.py"},
+        "method": {"type": "string", "minLength": 50}
+      }
+    },
+    "graph": {
+      "type": "object", "additionalProperties": false,
+      "required": ["interaction", "role", "internal_edges", "counts", "labeled_role_count", "role_count_per_unordered_bridge_channel", "vertex_product", "bubble_symmetry_factor", "net_tensor_prefactor", "bubble_master", "amplitude", "coupling_convention", "status"],
+      "properties": {
+        "interaction": {"type": "string"}, "role": {"type": "string"}, "internal_edges": {"type": "string"},
+        "counts": {
+          "type": "object", "additionalProperties": false,
+          "required": ["V4", "I", "E", "L", "d_lambda"],
+          "properties": {"V4": {"const": 3}, "I": {"const": 3}, "E": {"const": 6}, "L": {"const": 1}, "d_lambda": {"const": 6}}
+        },
+        "labeled_role_count": {"const": 60}, "role_count_per_unordered_bridge_channel": {"const": 6},
+        "vertex_product": {"type": "string"}, "bubble_symmetry_factor": {"type": "string"}, "net_tensor_prefactor": {"type": "string"},
+        "bubble_master": {"type": "string"}, "amplitude": {"type": "string"}, "coupling_convention": {"type": "string"},
+        "status": {"const": "COVARIANT_BUBBLE_WITH_BRIDGE_BLOCK_COMPUTED"}
+      }
+    },
+    "matrix8": {
+      "type": "array", "minItems": 8, "maxItems": 8,
+      "items": {"type": "array", "minItems": 8, "maxItems": 8, "items": {"type": "integer", "minimum": 0, "maximum": 2}}
+    },
+    "species": {
+      "type": "object", "additionalProperties": false,
+      "required": ["neutral_masks", "routing_rule", "per_role_profile", "per_role_HS_square", "sum_over_all_roles_on_each_neutral_assignment", "source_weight_profile", "kappa_identity", "tensors", "status"],
+      "properties": {
+        "neutral_masks": {"type": "array", "minItems": 20, "maxItems": 20, "uniqueItems": true, "items": {"type": "integer", "minimum": 0, "maximum": 63}},
+        "routing_rule": {"type": "string"}, "per_role_profile": {"type": "string"}, "per_role_HS_square": {"const": 54},
+        "sum_over_all_roles_on_each_neutral_assignment": {"const": 90},
+        "source_weight_profile": {
+          "type": "object", "additionalProperties": false, "required": ["zero_roles", "unit_roles", "double_roles"],
+          "properties": {"zero_roles": {"const": 6}, "unit_roles": {"const": 18}, "double_roles": {"const": 36}}
+        },
+        "kappa_identity": {"type": "string"},
+        "tensors": {"type": "array", "minItems": 60, "maxItems": 60, "items": {"$ref": "#/$defs/matrix8"}},
+        "status": {"const": "EXACT_SIXTY_ROLE_SPECIES_TENSOR_COMPUTED"}
+      }
+    },
+    "role_row": {
+      "type": "object", "additionalProperties": false,
+      "required": ["index", "junction_leg", "bubble_pair", "bridge_triple", "bridge_channel_mask", "bubble_invariant", "bubble_spatial_square", "bridge_invariant", "bridge_spatial_square", "source_weight", "weight_zero_count", "weight_one_count", "weight_two_count", "tensor_HS_square", "tree_cross_Gram_column"],
+      "properties": {
+        "index": {"type": "integer", "minimum": 0, "maximum": 59}, "junction_leg": {"type": "integer", "minimum": 0, "maximum": 5},
+        "bubble_pair": {"type": "array", "minItems": 2, "maxItems": 2, "uniqueItems": true, "items": {"type": "integer", "minimum": 0, "maximum": 5}},
+        "bridge_triple": {"type": "array", "minItems": 3, "maxItems": 3, "uniqueItems": true, "items": {"type": "integer", "minimum": 0, "maximum": 5}},
+        "bridge_channel_mask": {"type": "integer", "minimum": 0, "maximum": 63},
+        "bubble_invariant": {"type": "string"}, "bubble_spatial_square": {"type": "string"}, "bridge_invariant": {"type": "string"}, "bridge_spatial_square": {"type": "string"},
+        "source_weight": {"type": "integer", "minimum": 0, "maximum": 2}, "weight_zero_count": {"const": 2}, "weight_one_count": {"const": 6}, "weight_two_count": {"const": 12}, "tensor_HS_square": {"const": 54},
+        "tree_cross_Gram_column": {"type": "array", "minItems": 10, "maxItems": 10, "items": {"enum": ["13/2", "7", "15/2"]}}
+      }
+    },
+    "kinematics": {
+      "type": "object", "additionalProperties": false,
+      "required": ["all_incoming_convention", "rows", "minimum_abs_bubble_invariant", "minimum_bubble_spatial_square", "on_shell_bridge_role_indices", "hard_zero_spatial_bridge_role_indices", "hard_bridge_source_weight", "minimum_source_surviving_bridge_spatial_square", "status"],
+      "properties": {
+        "all_incoming_convention": {"type": "string"},
+        "rows": {"type": "array", "minItems": 60, "maxItems": 60, "items": {"$ref": "#/$defs/role_row"}},
+        "minimum_abs_bubble_invariant": {"const": "32/625"}, "minimum_bubble_spatial_square": {"const": "32/625"},
+        "on_shell_bridge_role_indices": {"type": "array", "minItems": 6, "maxItems": 6, "uniqueItems": true, "items": {"type": "integer", "minimum": 0, "maximum": 59}},
+        "hard_zero_spatial_bridge_role_indices": {"type": "array", "minItems": 6, "maxItems": 6, "uniqueItems": true, "items": {"type": "integer", "minimum": 0, "maximum": 59}},
+        "hard_bridge_source_weight": {"const": 0}, "minimum_source_surviving_bridge_spatial_square": {"const": "7169/10625"},
+        "status": {"const": "NONEMPTY_SELECTED_SOURCE_FINITE_TIME_PACKET_MARGIN"}
+      }
+    },
+    "group_row": {
+      "type": "object", "additionalProperties": false,
+      "required": ["bridge_channel_mask", "role_indices", "role_count", "tensor_sum_identity", "zero_species_masks", "nonzero_species_value"],
+      "properties": {
+        "bridge_channel_mask": {"type": "integer"}, "role_indices": {"type": "array", "minItems": 6, "maxItems": 6, "uniqueItems": true, "items": {"type": "integer"}},
+        "role_count": {"const": 6}, "tensor_sum_identity": {"const": "sum_(R over C) W_R=40*R_C"},
+        "zero_species_masks": {"type": "array", "minItems": 2, "maxItems": 2, "uniqueItems": true, "items": {"type": "integer"}},
+        "nonzero_species_value": {"const": 10}
+      }
+    },
+    "incidence": {
+      "type": "object", "additionalProperties": false,
+      "required": ["tree_channel_masks", "group_rows", "group_identity", "cross_Gram", "entry_values", "entry_multiplicities", "row_sum", "column_sum", "same_bridge_channel_entry", "positive_frame_entry_values", "status"],
+      "properties": {
+        "tree_channel_masks": {"type": "array", "minItems": 10, "maxItems": 10, "uniqueItems": true, "items": {"type": "integer"}},
+        "group_rows": {"type": "array", "minItems": 10, "maxItems": 10, "items": {"$ref": "#/$defs/group_row"}},
+        "group_identity": {"type": "string"},
+        "cross_Gram": {"type": "array", "minItems": 10, "maxItems": 10, "items": {"type": "array", "minItems": 60, "maxItems": 60, "items": {"enum": ["13/2", "7", "15/2"]}}},
+        "entry_values": {"const": ["13/2", "7", "15/2"]},
+        "entry_multiplicities": {
+          "type": "object", "additionalProperties": false, "required": ["13/2", "7", "15/2"],
+          "properties": {"13/2": {"const": 360}, "7": {"const": 180}, "15/2": {"const": 60}}
+        },
+        "row_sum": {"const": "405"}, "column_sum": {"const": "135/2"}, "same_bridge_channel_entry": {"const": "15/2"},
+        "positive_frame_entry_values": {"const": ["13/4", "7/2", "15/4"]},
+        "status": {"const": "EXACT_TREE_BUBBLE_BRIDGE_INCIDENCE_COMPUTED"}
+      }
+    },
+    "renormalization": {
+      "type": "object", "additionalProperties": false,
+      "required": ["overall_superficial_degree", "proper_subgraph", "forest_subtraction", "primitive_six_point_counterterm", "bubble_scale_derivative", "covariant_tree", "explicit_scale_identity", "running", "running_tree_identity", "RG_sum", "finite_time_local_identity", "scheme_boundary", "status"],
+      "properties": {
+        "overall_superficial_degree": {"const": -2}, "proper_subgraph": {"type": "string"}, "forest_subtraction": {"type": "string"},
+        "primitive_six_point_counterterm": {"const": "NONE"}, "bubble_scale_derivative": {"type": "string"}, "covariant_tree": {"type": "string"},
+        "explicit_scale_identity": {"type": "string"}, "running": {"type": "string"}, "running_tree_identity": {"type": "string"}, "RG_sum": {"type": "string"},
+        "finite_time_local_identity": {"type": "string"}, "scheme_boundary": {"type": "string"},
+        "status": {"const": "MSBAR_FOREST_AND_RG_IDENTITY_COMPUTED"}
+      }
+    },
+    "finite_time_gate": {
+      "type": "object", "additionalProperties": false,
+      "required": ["known", "missing_object", "why_existing_B_T_is_insufficient", "required_construction", "on_shell_fact", "selected_source_fact", "status"],
+      "properties": {
+        "known": {"type": "string"}, "missing_object": {"type": "string"}, "why_existing_B_T_is_insufficient": {"type": "string"},
+        "required_construction": {"type": "string"}, "on_shell_fact": {"type": "string"}, "selected_source_fact": {"type": "string"},
+        "status": {"const": "COUNTERTERM_NORMALIZED_OFF_DIAGONAL_THIRD_DYSON_KERNEL_NOT_YET_COMPUTED"}
+      }
+    },
+    "common_born": {
+      "type": "object", "additionalProperties": false,
+      "required": ["species_identity", "scalar_kernel", "effect_identity", "sign", "status"],
+      "properties": {
+        "species_identity": {"type": "string"}, "scalar_kernel": {"type": "string"}, "effect_identity": {"type": "string"}, "sign": {"type": "string"},
+        "status": {"const": "ISOLATED_COVARIANT_BUBBLE_BRIDGE_INTERFERENCE_COMMON_BORN"}
+      }
+    },
+    "disposition": {
+      "type": "object", "additionalProperties": false,
+      "required": ["covariant_bubble_bridge_block", "species_tensor", "MSbar_subdivergence", "RG_identity", "selected_source_packet_margin", "covariant_direct_auxiliary_connected_T6", "finite_time_bubble_bridge", "complete_finite_time_direct_auxiliary_connected_T6", "isolated_common_Born_interference", "complete_q10", "general_Eq19", "gravity_or_metric_BV_BRST_transfer", "Lorentzian_causal_claim"],
+      "properties": {
+        "covariant_bubble_bridge_block": {"const": "COEFFICIENT_COMPUTED"}, "species_tensor": {"const": "COMPUTED"},
+        "MSbar_subdivergence": {"const": "MATCHED_TO_QUARTIC_COUNTERTERM"}, "RG_identity": {"const": "PROVED"},
+        "selected_source_packet_margin": {"const": "PROVED"}, "covariant_direct_auxiliary_connected_T6": {"const": "COMPLETE_WITH_TRIANGLE_PREDECESSOR"},
+        "finite_time_bubble_bridge": {"const": "NOT_COMPUTED"}, "complete_finite_time_direct_auxiliary_connected_T6": {"const": "NOT_COMPUTED"},
+        "isolated_common_Born_interference": {"const": "ESTABLISHED_WITHOUT_SIGN"}, "complete_q10": {"const": "NOT_COMPUTED"},
+        "general_Eq19": {"const": "NOT_PROVED"}, "gravity_or_metric_BV_BRST_transfer": {"const": "NOT_CONSTRUCTED"},
+        "Lorentzian_causal_claim": {"const": "NOT_ESTABLISHED"}
+      }
+    },
+    "checks": {
+      "type": "object", "additionalProperties": false,
+      "required": ["total", "passed", "ok", "failures", "details"],
+      "properties": {
+        "total": {"const": 38}, "passed": {"const": 38}, "ok": {"const": true},
+        "failures": {"type": "array", "maxItems": 0},
+        "details": {"type": "object", "minProperties": 38, "maxProperties": 38, "additionalProperties": {"const": true}}
+      }
+    }
+  }
+}

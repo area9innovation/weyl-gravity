@@ -1,0 +1,8123 @@
+{
+  "answer": "Write a labelled bubble-with-bridge role as R=(a;bc;def): one external leg meets the degree-three junction, two meet the bubble leaf and three meet the tree leaf. There are exactly 6*C(5,2)=60 roles, or six roles over each of the ten unordered three-three bridge channels. Exact cross-propagator routing gives a tensor W_R with two zero, six unit and twelve double entries on the twenty neutral species assignments, squared Hilbert-Schmidt norm 54, and kappa3*W_R*kappa3=W_R. With g=lambda^2, the three vertex tensors contribute 2^3 and the parallel-edge bubble symmetry factor is 1/2, so the covariant phase-stripped block is T6,bb,cov=[4/(16*pi^2)]*sum_R B_MSbar(Q_R^2)*W_R/(K_R^2+i0), with B_MSbar(Q^2)=log[mu^2/(-Q^2-i0)]+2. Its only divergent proper subgraph is the logarithmic four-point bubble; there is no primitive six-point counterterm. For every bridge channel C, the exact local identity sum_(R over C) W_R=40*R_C holds. Since d B/d log(mu)=2 and T4,cov=16*sum_C R_C/(K_C^2+i0), this gives d T6,bb,cov/d log(mu)=[5/(4*pi^2)]*T4,cov. It is cancelled exactly by d(lambda^4)/d log(mu)=-5*lambda^6/(4*pi^2), imported from beta_lambda=-5*lambda^3/(16*pi^2). The same local forest identity collapses to the certified finite-time tree kernel for any common switching, fixing the finite-time counterterm normalization. At the fully rearranged center every bubble invariant and spatial momentum is separated from zero by 32/625. Six bridge roles are on shell and therefore require finite-time treatment. The only zero-spatial hard bridge has six roles whose tensors annihilate the declared positive source; every source-surviving bridge has spatial square at least 7169/10625. The covariant block, species tensor, packet margins, common-Born class and RG identity are computed. The existing B_T is an energy-diagonal four-point tree-loop interference and does not by itself specify the off-diagonal three-vertex insertion, so finite-time affiliation and the interference sign remain open.",
+  "assumptions": [
+    "the public auxiliary quartic vertex has tensor V/g=2 on neutral two-Omega/two-Upsilon assignments and the propagator metric is cross-only",
+    "the bubble subgraph is renormalized in the same MSbar coupling convention as the certified active four-point loop",
+    "the complete connected tree coefficient uses T4=16*sum_C K_C*R_C on the declared carrier",
+    "the selected fully rearranged packet is shrunk inside the exact rational margins recorded here",
+    "the declared positive source is u0=(|000>+|111>)/sqrt(2) in the three-particle species frame"
+  ],
+  "certificate": "REVERSE_PHYSICS_BT_FULLY_REARRANGED_BUBBLE_BRIDGE_COVARIANT_BLOCK_V1",
+  "checks": {
+    "details": {
+      "Eq19_gravity_and_causality_are_not_promoted": true,
+      "active_MSbar_bubble_is_imported": true,
+      "beta_coefficient_is_five_over_sixteen": true,
+      "bubble_invariants_are_hard_at_packet_center": true,
+      "bubble_scale_derivative_is_two": true,
+      "bubble_spatial_momenta_are_nonzero": true,
+      "bubble_vertex_product_over_symmetry_is_four": true,
+      "complete_connected_auxiliary_loop_is_covariantly_closed": true,
+      "complete_q10_is_not_promoted": true,
+      "covariant_graph_has_only_bubble_subdivergence": true,
+      "covariant_scale_derivative_is_five_over_four_pi2_times_tree": true,
+      "cross_Gram_column_sums_are_135_over_2": true,
+      "cross_Gram_multiplicities_are_360_180_60": true,
+      "cross_Gram_row_sums_are_405": true,
+      "cross_Gram_values_are_13half_7_15half": true,
+      "each_role_HS_square_is_fifty_four": true,
+      "each_role_has_two_zero_six_unit_twelve_double_weights": true,
+      "energy_diagonal_B_T_is_not_promoted_off_diagonal": true,
+      "every_neutral_assignment_has_total_weight_ninety": true,
+      "every_role_has_one_two_three_external_profile": true,
+      "every_tensor_is_kappa_fixed": true,
+      "finite_time_local_counterterm_collapses_to_tree_kernel": true,
+      "frame_ledger_selects_bubble_bridge": true,
+      "grouped_tensor_is_forty_times_tree_residue": true,
+      "hard_zero_spatial_bridge_is_source_dark": true,
+      "inputs_are_content_pinned": true,
+      "isolated_block_is_common_Born_without_sign": true,
+      "no_primitive_six_point_counterterm": true,
+      "public_auxiliary_action_has_only_quartic_vertex": true,
+      "running_lambda4_cancels_explicit_scale_derivative": true,
+      "same_bridge_tree_cross_is_15_over_2": true,
+      "six_bridge_roles_are_on_shell": true,
+      "six_predecessors_pass": true,
+      "sixty_role_partitions_are_exhaustive": true,
+      "source_surviving_bridge_spatial_margin_is_7169_over_10625": true,
+      "source_weight_profile_is_6_18_36": true,
+      "ten_bridge_channels_each_have_six_roles": true,
+      "twenty_neutral_species_assignments_are_exhaustive": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 38,
+    "total": 38
+  },
+  "common_Born_interference": {
+    "effect_identity": "T4^sharp*T6_bb+T6_bb^sharp*T4=T4^*T6_bb+T6_bb^*T4",
+    "scalar_kernel": "the covariant bubble and bridge factors commute with total ghost parity",
+    "sign": "NOT_DETERMINED because the momentum-dependent complex bubble, bridge boundary and future finite-time transient enter coherently",
+    "species_identity": "kappa3*W_R*kappa3=W_R for every role R",
+    "status": "ISOLATED_COVARIANT_BUBBLE_BRIDGE_INTERFERENCE_COMMON_BORN"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL",
+    "REDUCED-MODE"
+  ],
+  "disposition": {
+    "Lorentzian_causal_claim": "NOT_ESTABLISHED",
+    "MSbar_subdivergence": "MATCHED_TO_QUARTIC_COUNTERTERM",
+    "RG_identity": "PROVED",
+    "complete_finite_time_direct_auxiliary_connected_T6": "NOT_COMPUTED",
+    "complete_q10": "NOT_COMPUTED",
+    "covariant_bubble_bridge_block": "COEFFICIENT_COMPUTED",
+    "covariant_direct_auxiliary_connected_T6": "COMPLETE_WITH_TRIANGLE_PREDECESSOR",
+    "finite_time_bubble_bridge": "NOT_COMPUTED",
+    "general_Eq19": "NOT_PROVED",
+    "gravity_or_metric_BV_BRST_transfer": "NOT_CONSTRUCTED",
+    "isolated_common_Born_interference": "ESTABLISHED_WITHOUT_SIGN",
+    "selected_source_packet_margin": "PROVED",
+    "species_tensor": "COMPUTED"
+  },
+  "does_not_establish": [
+    "the off-diagonal finite-time third-Dyson bubble-with-bridge kernel",
+    "that the energy-diagonal four-point B_T may be inserted multiplicatively into a six-point finite-time graph",
+    "the value or sign of finite-time tree-bubble-bridge interference",
+    "a full-carrier treatment of the zero-spatial hard bridge mode",
+    "scheme independence of the finite local quartic term",
+    "the complete finite-time connected auxiliary T6 block",
+    "the complete y5 norm or y4-y6 interference",
+    "source, detector, vacuum or survival dressing at q10",
+    "the value, sign or finite-coupling positivity of complete q10",
+    "an all-time Moller, LSZ or S operator",
+    "general Eq. (19) or the standard scalar projector pushforward",
+    "gravity or metric BV--BRST transfer",
+    "anything LORENTZIAN-CAUSAL",
+    "literature priority"
+  ],
+  "finite_time_gate": {
+    "known": "the local counterterm coefficient and its collapse to the switched tree kernel are fixed exactly",
+    "missing_object": "the off-diagonal renormalized three-vertex time-ordered bubble distribution joined to the bridge on [0,T]",
+    "on_shell_fact": "six labelled roles have K_R^2=0 at the packet center and cannot be replaced by the covariant bridge pole",
+    "required_construction": "retain the two independent intermediate defects or equivalently convolve the full renormalized bubble time distribution with the finite-time bridge kernel, including all six orderings and the local forest term",
+    "selected_source_fact": "the zero-spatial hard bridge is coefficientwise dark on u0, while every source-surviving bridge has nonzero spatial energy",
+    "status": "COUNTERTERM_NORMALIZED_OFF_DIAGONAL_THIRD_DYSON_KERNEL_NOT_YET_COMPUTED",
+    "why_existing_B_T_is_insufficient": "the certified B_T divides an energy-diagonal second-Dyson tree-loop cross by its tree duration; a bubble subgraph inside a third-Dyson six-point graph exchanges energy with the bridge vertex before the total projection"
+  },
+  "graph_and_master": {
+    "amplitude": "T6_bb,cov=(4/(16*pi^2))*sum_R B_MSbar(Q_R^2)*W_R/(K_R^2+i0)",
+    "bubble_master": "B_MSbar(Q^2)=log[mu^2/(-Q^2-i0)]+2; Re B=log(mu^2/abs(Q^2))+2",
+    "bubble_symmetry_factor": "1/2",
+    "counts": {
+      "E": 6,
+      "I": 3,
+      "L": 1,
+      "V4": 3,
+      "d_lambda": 6
+    },
+    "coupling_convention": "lambda^6 is outside T6_bb,cov",
+    "interaction": "S_int=(g/2)*integral Omega^2*Upsilon^2, g=lambda^2",
+    "internal_edges": "two parallel A-B bubble edges and one A-C bridge",
+    "labeled_role_count": 60,
+    "net_tensor_prefactor": "4",
+    "role": "R=(a;bc;def), with external profiles 1 at junction A, 2 at bubble leaf B and 3 at tree leaf C",
+    "role_count_per_unordered_bridge_channel": 6,
+    "status": "COVARIANT_BUBBLE_WITH_BRIDGE_BLOCK_COMPUTED",
+    "vertex_product": "(V/g)^3=2^3=8"
+  },
+  "lifecycle_state": "COEFFICIENT_COMPUTED",
+  "next_gate": "Construct the full renormalized off-diagonal bubble time distribution on [0,T] and join it to the finite-time bridge for all sixty roles, retaining all six third-Dyson orderings. Use the exact local collapse identity here to fix the MSbar counterterm. Prove boundedness on the selected source packet, including the six on-shell bridge roles, and match the covariant boundary. Do not substitute the energy-diagonal B_T formula as a multiplicative vertex. Only then combine this block with the triangle and T4 for the connected y4-y6 interference; complete q10 still requires y5, dressing and normalization.",
+  "provenance": {
+    "generated_by": "reverse_physics/bt_fully_rearranged_bubble_bridge_covariant_block.py",
+    "independent_verifier": "reverse_physics/verify_bt_fully_rearranged_bubble_bridge_covariant_block.py",
+    "inputs": [
+      {
+        "path": "planning/work-items/reverse-physics-bateman-fully-rearranged-bubble-bridge-covariant-block.json",
+        "sha256": "5604b10cf00b12d4068481f410f0103473e2a16a40ee8881ebcc947f8d3f844a"
+      },
+      {
+        "path": "planning/events/reverse-physics-bateman-fully-rearranged-bubble-bridge-covariant-block-DONE-718aec15.json",
+        "sha256": "7ded9f796c8a214f82aa2cb506fa0f16a0ca393245d1b315c23074ec30fe7342"
+      },
+      {
+        "path": "reverse_physics/data/bateman_turok_hamiltonian_source_v1.json",
+        "sha256": "55ff3f989f1c5ac9bcc0688ad9c43721c22b5889c43da50fce43352c18be8fe7"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_FULLY_REARRANGED_Q10_FRAME_TYPED_LOOP_LEDGER_V1.json",
+        "sha256": "33fc45521d72ef46ddd902e4fa21655f9826ee105a3ce6059d5dfa1b17940107"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_AUXILIARY_ACTIVE_ONE_LOOP_MSBAR_V1.json",
+        "sha256": "4e85465c2f5c9fa9d8b3e6eab4c76158776cd7d80c340e3d0d25bcf5436d3dfd"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_TEN_CHANNEL_RECORDED_COMPACT_WAVEPACKET_INSTRUMENT_V1.json",
+        "sha256": "44c646377a24a99ba737f90c9a9993261f9dae95330f033c27167273faf04fd0"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_COMPLETE_CONNECTED_ORDER4_PACKET_COLUMN_V1.json",
+        "sha256": "5b0fc2719b8daa5650800449d802510911af45445e26fef516a7cb05426fefbb"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_FULLY_REARRANGED_PHYSICAL_PACKET_PROBABILITY_V1.json",
+        "sha256": "3790673f55cc7c43b9d2f731da217c0be73b628c169c6e2e9def3ba2a6b07c30"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_UV_HARD_SCATTERING_LAW_V1.json",
+        "sha256": "8ce6d81e672fa876b19696e228654d79989a21dc72c9ef099bdef0e97743ce05"
+      }
+    ],
+    "method": "Exact labelled role enumeration, direct internal-edge species routing, Fraction-only Choi contraction, exact rational packet kinematics, and algebraic forest/RG matching. No floating-point arithmetic enters a claim.",
+    "retrieval_date": "2026-08-13",
+    "source_commit": "718aec1572f697a8b058c51084d6a593948d1cf9"
+  },
+  "question": "What is the remaining direct-auxiliary connected six-leg one-loop bubble-with-bridge block, how does its subdivergence match the BT running coupling, and may the existing energy-diagonal finite-time bubble be inserted directly?",
+  "renormalization": {
+    "RG_sum": "d[lambda^4*T4+lambda^6*T6_bb,cov]/d log(mu)=O(lambda^8) for this counterterm sector",
+    "bubble_scale_derivative": "d B_MSbar/d log(mu)=2",
+    "covariant_tree": "T4,cov=16*sum_C R_C/(K_C^2+i0)",
+    "explicit_scale_identity": "d T6_bb,cov/d log(mu)=[5/(4*pi^2)]*T4,cov",
+    "finite_time_local_identity": "the derivative of the renormalized bubble distribution is 2*delta(t_A-t_B), so the subgraph collapses to the same switched T4 kernel with coefficient 5/(4*pi^2)",
+    "forest_subtraction": "renormalize that bubble in the same MSbar quartic-coupling convention before joining the bridge",
+    "overall_superficial_degree": -2,
+    "primitive_six_point_counterterm": "NONE",
+    "proper_subgraph": "one logarithmic degree-zero four-point bubble",
+    "running": "d lambda/d log(mu)=-5*lambda^3/(16*pi^2)",
+    "running_tree_identity": "d[lambda^4*T4]/d log(mu)=-[5*lambda^6/(4*pi^2)]*T4",
+    "scheme_boundary": "a finite quartic coupling redefinition shifts a local multiple of T4; the logarithmic derivative and cancellation are scheme independent",
+    "status": "MSBAR_FOREST_AND_RG_IDENTITY_COMPUTED"
+  },
+  "report": "reverse_physics/reports/bt-fully-rearranged-bubble-bridge-covariant-block.md",
+  "result_kind": "exact covariant auxiliary bubble-with-bridge six-leg one-loop block, forest counterterm identity, physical-source margins and RG cancellation",
+  "role_kinematics": {
+    "all_incoming_convention": "incoming momenta followed by negatives of outgoing momenta",
+    "hard_bridge_source_weight": 0,
+    "hard_zero_spatial_bridge_role_indices": [
+      0,
+      10,
+      20,
+      39,
+      49,
+      59
+    ],
+    "minimum_abs_bubble_invariant": "32/625",
+    "minimum_bubble_spatial_square": "32/625",
+    "minimum_source_surviving_bridge_spatial_square": "7169/10625",
+    "on_shell_bridge_role_indices": [
+      1,
+      11,
+      29,
+      30,
+      48,
+      58
+    ],
+    "rows": [
+      {
+        "bridge_channel_mask": 7,
+        "bridge_invariant": "256/25",
+        "bridge_spatial_square": "0",
+        "bridge_triple": [
+          3,
+          4,
+          5
+        ],
+        "bubble_invariant": "64/25",
+        "bubble_pair": [
+          1,
+          2
+        ],
+        "bubble_spatial_square": "36/25",
+        "index": 0,
+        "junction_leg": 0,
+        "source_weight": 0,
+        "tensor_HS_square": 54,
+        "tree_cross_Gram_column": [
+          "15/2",
+          "13/2",
+          "13/2",
+          "13/2",
+          "13/2",
+          "7",
+          "7",
+          "7",
+          "13/2",
+          "13/2"
+        ],
+        "weight_one_count": 6,
+        "weight_two_count": 12,
+        "weight_zero_count": 2
+      },
+      {
+        "bridge_channel_mask": 11,
+        "bridge_invariant": "0",
+        "bridge_spatial_square": "1",
+        "bridge_triple": [
+          2,
+          4,
+          5
+        ],
+        "bubble_invariant": "-96/85",
+        "bubble_pair": [
+          1,
+          3
+        ],
+        "bubble_spatial_square": "497/425",
+        "index": 1,
+        "junction_leg": 0,
+        "source_weight": 2,
+        "tensor_HS_square": 54,
+        "tree_cross_Gram_column": [
+          "13/2",
+          "15/2",
+          "13/2",
+          "13/2",
+          "7",
+          "13/2",
+          "7",
+          "13/2",
+          "7",
+          "13/2"
+        ],
+        "weight_one_count": 6,
+        "weight_two_count": 12,
+        "weight_zero_count": 2
+      },
+      {
+        "bridge_channel_mask": 19,
+        "bridge_invariant": "-1568/625",
+        "bridge_spatial_square": "2468/625",
+        "bridge_triple": [
+          2,
+          3,
+          5
+        ],
+        "bubble_invariant": "-928/425",
+        "bubble_pair": [
+          1,
+          4
+        ],
+        "bubble_spatial_square": "928/425",
+        "index": 2,
+        "junction_leg": 0,
+        "source_weight": 2,
+        "tensor_HS_square": 54,
+        "tree_cross_Gram_column": [
+          "13/2",
+          "13/2",
+          "15/2",
+          "7",
+          "13/2",
+          "13/2",
+          "13/2",
+          "7",
+          "7",
+          "13/2"
+        ],
+        "weight_one_count": 6,
+        "weight_two_count": 12,
+        "weight_zero_count": 2
+      },
+      {
+        "bridge_channel_mask": 28,
+        "bridge_invariant": "-32/625",
+        "bridge_spatial_square": "932/625",
+        "bridge_triple": [
+          2,
+          3,
+          4
+        ],
+        "bubble_invariant": "-1312/425",
+        "bubble_pair": [
+          1,
+          5
+        ],
+        "bubble_spatial_square": "1312/425",
+        "index": 3,
+        "junction_leg": 0,
+        "source_weight": 2,
+        "tensor_HS_square": 54,
+        "tree_cross_Gram_column": [
+          "13/2",
+          "13/2",
+          "13/2",
+          "7",
+          "7",
+          "7",
+          "13/2",
+          "13/2",
+          "13/2",
+          "15/2"
+        ],
+        "weight_one_count": 6,
+        "weight_two_count": 12,
+        "weight_zero_count": 2
+      },
+      {
+        "bridge_channel_mask": 13,
+        "bridge_invariant": "-1152/425",
+        "bridge_spatial_square": "1577/425",
+        "bridge_triple": [
+          1,
+          4,
+          5
+        ],
+        "bubble_invariant": "-96/25",
+        "bubble_pair": [
+          2,
+          3
+        ],
+        "bubble_spatial_square": "97/25",
+        "index": 4,
+        "junction_leg": 0,
+        "source_weight": 2,
+        "tensor_HS_square": 54,
+        "tree_cross_Gram_column": [
+          "13/2",
+          "13/2",
+          "7",
+          "15/2",
+          "13/2",
+          "13/2",
+          "7",
+          "13/2",
+          "13/2",
+          "7"
+        ],
+        "weight_one_count": 6,
+        "weight_two_count": 12,
+        "weight_zero_count": 2
+      },
+      {
+        "bridge_channel_mask": 21,
+        "bridge_invariant": "-32/85",
+        "bridge_spatial_square": "772/425",
+        "bridge_triple": [
+          1,
+          3,
+          5
+        ],
+        "bubble_invariant": "-32/625",
+        "bubble_pair": [
+          2,
+          4
+        ],
+        "bubble_spatial_square": "32/625",
+        "index": 5,
+        "junction_leg": 0,
+        "source_weight": 2,
+        "tensor_HS_square": 54,
+        "tree_cross_Gram_column": [
+          "13/2",
+          "7",
+          "13/2",
+          "13/2",
+          "15/2",
+          "13/2",
+          "13/2",
+          "7",
+          "13/2",
+          "7"
+        ],
+        "weight_one_count": 6,
+        "weight_two_count": 12,
+        "weight_zero_count": 2
+      },
+      {
+        "bridge_channel_mask": 26,
+        "bridge_invariant": "224/425",
+        "bridge_spatial_square": "388/425",
+        "bridge_triple": [
+          1,
+          3,
+          4
+        ],
+        "bubble_invariant": "-1568/625",
+        "bubble_pair": [
+          2,
+          5
+        ],
+        "bubble_spatial_square": "1568/625",
+        "index": 6,
+        "junction_leg": 0,
+        "source_weight": 2,
+        "tensor_HS_square": 54,
+        "tree_cross_Gram_column": [
+          "13/2",
+          "7",
+          "7",
+          "13/2",
+          "13/2",
+          "7",
+          "13/2",
+          "13/2",
+          "15/2",
+          "13/2"
+        ],
+        "weight_one_count": 6,
+        "weight_two_count": 12,
+        "weight_zero_count": 2
+      },
+      {
+        "bridge_channel_mask": 25,
+        "bridge_invariant": "-32256/10625",
+        "bridge_spatial_square": "42881/10625",
+        "bridge_triple": [
+          1,
+          2,
+          5
+        ],
+        "bubble_invariant": "96/25",
+        "bubble_pair": [
+          3,
+          4
+        ],
+        "bubble_spatial_square": "1",
+        "index": 7,
+        "junction_leg": 0,
+        "source_weight": 1,
+        "tensor_HS_square": 54,
+        "tree_cross_Gram_column": [
+          "7",
+          "13/2",
+          "13/2",
+          "13/2",
+          "13/2",
+          "15/2",
+          "13/2",
+          "13/2",
+          "7",
+          "7"
+        ],
+        "weight_one_count": 6,
+        "weight_two_count": 12,
+        "weight_zero_count": 2
+      },
+      {
+        "bridge_channel_mask": 22,
+        "bridge_invariant": "3456/10625",
+        "bridge_spatial_square": "7169/10625",
+        "bridge_triple": [
+          1,
+          2,
+          4
+        ],
+        "bubble_invariant": "96/25",
+        "bubble_pair": [
+          3,
+          5
+        ],
+        "bubble_spatial_square": "1",
+        "index": 8,
+        "junction_leg": 0,
+        "source_weight": 1,
+        "tensor_HS_square": 54,
+        "tree_cross_Gram_column": [
+          "7",
+          "13/2",
+          "7",
+          "13/2",
+          "7",
+          "13/2",
+          "13/2",
+          "15/2",
+          "13/2",
+          "13/2"
+        ],
+        "weight_one_count": 6,
+        "weight_two_count": 12,
+        "weight_zero_count": 2
+      },
+      {
+        "bridge_channel_mask": 14,
+        "bridge_invariant": "-1024/425",
+        "bridge_spatial_square": "1296/425",
+        "bridge_triple": [
+          1,
+          2,
+          3
+        ],
+        "bubble_invariant": "64/25",
+        "bubble_pair": [
+          4,
+          5
+        ],
+        "bubble_spatial_square": "36/25",
+        "index": 9,
+        "junction_leg": 0,
+        "source_weight": 1,
+        "tensor_HS_square": 54,
+        "tree_cross_Gram_column": [
+          "7",
+          "7",
+          "13/2",
+          "7",
+          "13/2",
+          "13/2",
+          "15/2",
+          "13/2",
+          "13/2",
+          "13/2"
+        ],
+        "weight_one_count": 6,
+        "weight_two_count": 12,
+        "weight_zero_count": 2
+      },
+      {
+        "bridge_channel_mask": 7,
+        "bridge_invariant": "256/25",
+        "bridge_spatial_square": "0",
+        "bridge_triple": [
+          3,
+          4,
+          5
+        ],
+        "bubble_invariant": "96/25",
+        "bubble_pair": [
+          0,
+          2
+        ],
+        "bubble_spatial_square": "1",
+        "index": 10,
+        "junction_leg": 1,
+        "source_weight": 0,
+        "tensor_HS_square": 54,
+        "tree_cross_Gram_column": [
+          "15/2",
+          "13/2",
+          "13/2",
+          "7",
+          "7",
+          "13/2",
+          "13/2",
+          "13/2",
+          "7",
+          "13/2"
+        ],
+        "weight_one_count": 6,
+        "weight_two_count": 12,
+        "weight_zero_count": 2
+      },
+      {
+        "bridge_channel_mask": 11,
+        "bridge_invariant": "0",
+        "bridge_spatial_square": "1",
+        "bridge_triple": [
+          2,
+          4,
+          5
+        ],
+        "bubble_invariant": "-1152/425",
+        "bubble_pair": [
+          0,
+          3
+        ],
+        "bubble_spatial_square": "1152/425",
+        "index": 11,
+        "junction_leg": 1,
+        "source_weight": 2,
+        "tensor_HS_square": 54,
+        "tree_cross_Gram_column": [
+          "13/2",
+          "15/2",
+          "13/2",
+          "7",
+          "13/2",
+          "7",
+          "13/2",
+          "7",
+          "13/2",
+          "13/2"
+        ],
+        "weight_one_count": 6,
+        "weight_two_count": 12,
+        "weight_zero_count": 2
+      },
+      {
+        "bridge_channel_mask": 19,
+        "bridge_invariant": "-1568/625",
+        "bridge_spatial_square": "2468/625",
+        "bridge_triple": [
+          2,
+          3,
+          5
+        ],
+        "bubble_invariant": "-44256/10625",
+        "bubble_pair": [
+          0,
+          4
+        ],
+        "bubble_spatial_square": "44681/10625",
+        "index": 12,
+        "junction_leg": 1,
+        "source_weight": 2,
+        "tensor_HS_square": 54,
+        "tree_cross_Gram_column": [
+          "13/2",
+          "13/2",
+          "15/2",
+          "13/2",
+          "7",
+          "7",
+          "7",
+          "13/2",
+          "13/2",
+          "13/2"
+        ],
+        "weight_one_count": 6,
+        "weight_two_count": 12,
+        "weight_zero_count": 2
+      },
+      {
+        "bridge_channel_mask": 28,
+        "bridge_invariant": "-32/625",
+        "bridge_spatial_square": "932/625",
+        "bridge_triple": [
+          2,
+          3,
+          4
+        ],
+        "bubble_invariant": "-8544/10625",
+        "bubble_pair": [
+          0,
+          5
+        ],
+        "bubble_spatial_square": "8969/10625",
+        "index": 13,
+        "junction_leg": 1,
+        "source_weight": 2,
+        "tensor_HS_square": 54,
+        "tree_cross_Gram_column": [
+          "13/2",
+          "13/2",
+          "13/2",
+          "13/2",
+          "13/2",
+          "13/2",
+          "7",
+          "7",
+          "7",
+          "15/2"
+        ],
+        "weight_one_count": 6,
+        "weight_two_count": 12,
+        "weight_zero_count": 2
+      },
+      {
+        "bridge_channel_mask": 14,
+        "bridge_invariant": "-1024/425",
+        "bridge_spatial_square": "1296/425",
+        "bridge_triple": [
+          0,
+          4,
+          5
+        ],
+        "bubble_invariant": "-96/25",
+        "bubble_pair": [
+          2,
+          3
+        ],
+        "bubble_spatial_square": "97/25",
+        "index": 14,
+        "junction_leg": 1,
+        "source_weight": 2,
+        "tensor_HS_square": 54,
+        "tree_cross_Gram_column": [
+          "13/2",
+          "13/2",
+          "7",
+          "7",
+          "13/2",
+          "13/2",
+          "15/2",
+          "13/2",
+          "13/2",
+          "7"
+        ],
+        "weight_one_count": 6,
+        "weight_two_count": 12,
+        "weight_zero_count": 2
+      },
+      {
+        "bridge_channel_mask": 22,
+        "bridge_invariant": "3456/10625",
+        "bridge_spatial_square": "7169/10625",
+        "bridge_triple": [
+          0,
+          3,
+          5
+        ],
+        "bubble_invariant": "-32/625",
+        "bubble_pair": [
+          2,
+          4
+        ],
+        "bubble_spatial_square": "32/625",
+        "index": 15,
+        "junction_leg": 1,
+        "source_weight": 2,
+        "tensor_HS_square": 54,
+        "tree_cross_Gram_column": [
+          "13/2",
+          "7",
+          "13/2",
+          "13/2",
+          "7",
+          "13/2",
+          "13/2",
+          "15/2",
+          "13/2",
+          "7"
+        ],
+        "weight_one_count": 6,
+        "weight_two_count": 12,
+        "weight_zero_count": 2
+      },
+      {
+        "bridge_channel_mask": 25,
+        "bridge_invariant": "-32256/10625",
+        "bridge_spatial_square": "42881/10625",
+        "bridge_triple": [
+          0,
+          3,
+          4
+        ],
+        "bubble_invariant": "-1568/625",
+        "bubble_pair": [
+          2,
+          5
+        ],
+        "bubble_spatial_square": "1568/625",
+        "index": 16,
+        "junction_leg": 1,
+        "source_weight": 2,
+        "tensor_HS_square": 54,
+        "tree_cross_Gram_column": [
+          "13/2",
+          "7",
+          "7",
+          "13/2",
+          "13/2",
+          "15/2",
+          "13/2",
+          "13/2",
+          "7",
+          "13/2"
+        ],
+        "weight_one_count": 6,
+        "weight_two_count": 12,
+        "weight_zero_count": 2
+      },
+      {
+        "bridge_channel_mask": 26,
+        "bridge_invariant": "224/425",
+        "bridge_spatial_square": "388/425",
+        "bridge_triple": [
+          0,
+          2,
+          5
+        ],
+        "bubble_invariant": "96/25",
+        "bubble_pair": [
+          3,
+          4
+        ],
+        "bubble_spatial_square": "1",
+        "index": 17,
+        "junction_leg": 1,
+        "source_weight": 1,
+        "tensor_HS_square": 54,
+        "tree_cross_Gram_column": [
+          "7",
+          "13/2",
+          "13/2",
+          "13/2",
+          "13/2",
+          "7",
+          "13/2",
+          "13/2",
+          "15/2",
+          "7"
+        ],
+        "weight_one_count": 6,
+        "weight_two_count": 12,
+        "weight_zero_count": 2
+      },
+      {
+        "bridge_channel_mask": 21,
+        "bridge_invariant": "-32/85",
+        "bridge_spatial_square": "772/425",
+        "bridge_triple": [
+          0,
+          2,
+          4
+        ],
+        "bubble_invariant": "96/25",
+        "bubble_pair": [
+          3,
+          5
+        ],
+        "bubble_spatial_square": "1",
+        "index": 18,
+        "junction_leg": 1,
+        "source_weight": 1,
+        "tensor_HS_square": 54,
+        "tree_cross_Gram_column": [
+          "7",
+          "13/2",
+          "7",
+          "13/2",
+          "15/2",
+          "13/2",
+          "13/2",
+          "7",
+          "13/2",
+          "13/2"
+        ],
+        "weight_one_count": 6,
+        "weight_two_count": 12,
+        "weight_zero_count": 2
+      },
+      {
+        "bridge_channel_mask": 13,
+        "bridge_invariant": "-1152/425",
+        "bridge_spatial_square": "1577/425",
+        "bridge_triple": [
+          0,
+          2,
+          3
+        ],
+        "bubble_invariant": "64/25",
+        "bubble_pair": [
+          4,
+          5
+        ],
+        "bubble_spatial_square": "36/25",
+        "index": 19,
+        "junction_leg": 1,
+        "source_weight": 1,
+        "tensor_HS_square": 54,
+        "tree_cross_Gram_column": [
+          "7",
+          "7",
+          "13/2",
+          "15/2",
+          "13/2",
+          "13/2",
+          "7",
+          "13/2",
+          "13/2",
+          "13/2"
+        ],
+        "weight_one_count": 6,
+        "weight_two_count": 12,
+        "weight_zero_count": 2
+      },
+      {
+        "bridge_channel_mask": 7,
+        "bridge_invariant": "256/25",
+        "bridge_spatial_square": "0",
+        "bridge_triple": [
+          3,
+          4,
+          5
+        ],
+        "bubble_invariant": "96/25",
+        "bubble_pair": [
+          0,
+          1
+        ],
+        "bubble_spatial_square": "1",
+        "index": 20,
+        "junction_leg": 2,
+        "source_weight": 0,
+        "tensor_HS_square": 54,
+        "tree_cross_Gram_column": [
+          "15/2",
+          "7",
+          "7",
+          "13/2",
+          "13/2",
+          "13/2",
+          "13/2",
+          "13/2",
+          "13/2",
+          "7"
+        ],
+        "weight_one_count": 6,
+        "weight_two_count": 12,
+        "weight_zero_count": 2
+      },
+      {
+        "bridge_channel_mask": 13,
+        "bridge_invariant": "-1152/425",
+        "bridge_spatial_square": "1577/425",
+        "bridge_triple": [
+          1,
+          4,
+          5
+        ],
+        "bubble_invariant": "-1152/425",
+        "bubble_pair": [
+          0,
+          3
+        ],
+        "bubble_spatial_square": "1152/425",
+        "index": 21,
+        "junction_leg": 2,
+        "source_weight": 2,
+        "tensor_HS_square": 54,
+        "tree_cross_Gram_column": [
+          "13/2",
+          "7",
+          "13/2",
+          "15/2",
+          "13/2",
+          "7",
+          "13/2",
+          "7",
+          "13/2",
+          "13/2"
+        ],
+        "weight_one_count": 6,
+        "weight_two_count": 12,
+        "weight_zero_count": 2
+      },
+      {
+        "bridge_channel_mask": 21,
+        "bridge_invariant": "-32/85",
+        "bridge_spatial_square": "772/425",
+        "bridge_triple": [
+          1,
+          3,
+          5
+        ],
+        "bubble_invariant": "-44256/10625",
+        "bubble_pair": [
+          0,
+          4
+        ],
+        "bubble_spatial_square": "44681/10625",
+        "index": 22,
+        "junction_leg": 2,
+        "source_weight": 2,
+        "tensor_HS_square": 54,
+        "tree_cross_Gram_column": [
+          "13/2",
+          "13/2",
+          "7",
+          "13/2",
+          "15/2",
+          "7",
+          "7",
+          "13/2",
+          "13/2",
+          "13/2"
+        ],
+        "weight_one_count": 6,
+        "weight_two_count": 12,
+        "weight_zero_count": 2
+      },
+      {
+        "bridge_channel_mask": 26,
+        "bridge_invariant": "224/425",
+        "bridge_spatial_square": "388/425",
+        "bridge_triple": [
+          1,
+          3,
+          4
+        ],
+        "bubble_invariant": "-8544/10625",
+        "bubble_pair": [
+          0,
+          5
+        ],
+        "bubble_spatial_square": "8969/10625",
+        "index": 23,
+        "junction_leg": 2,
+        "source_weight": 2,
+        "tensor_HS_square": 54,
+        "tree_cross_Gram_column": [
+          "13/2",
+          "13/2",
+          "13/2",
+          "13/2",
+          "13/2",
+          "13/2",
+          "7",
+          "7",
+          "15/2",
+          "7"
+        ],
+        "weight_one_count": 6,
+        "weight_two_count": 12,
+        "weight_zero_count": 2
+      },
+      {
+        "bridge_channel_mask": 14,
+        "bridge_invariant": "-1024/425",
+        "bridge_spatial_square": "1296/425",
+        "bridge_triple": [
+          0,
+          4,
+          5
+        ],
+        "bubble_invariant": "-96/85",
+        "bubble_pair": [
+          1,
+          3
+        ],
+        "bubble_spatial_square": "497/425",
+        "index": 24,
+        "junction_leg": 2,
+        "source_weight": 2,
+        "tensor_HS_square": 54,
+        "tree_cross_Gram_column": [
+          "13/2",
+          "7",
+          "13/2",
+          "13/2",
+          "7",
+          "13/2",
+          "15/2",
+          "13/2",
+          "7",
+          "13/2"
+        ],
+        "weight_one_count": 6,
+        "weight_two_count": 12,
+        "weight_zero_count": 2
+      },
+      {
+        "bridge_channel_mask": 22,
+        "bridge_invariant": "3456/10625",
+        "bridge_spatial_square": "7169/10625",
+        "bridge_triple": [
+          0,
+          3,
+          5
+        ],
+        "bubble_invariant": "-928/425",
+        "bubble_pair": [
+          1,
+          4
+        ],
+        "bubble_spatial_square": "928/425",
+        "index": 25,
+        "junction_leg": 2,
+        "source_weight": 2,
+        "tensor_HS_square": 54,
+        "tree_cross_Gram_column": [
+          "13/2",
+          "13/2",
+          "7",
+          "7",
+          "13/2",
+          "13/2",
+          "13/2",
+          "15/2",
+          "7",
+          "13/2"
+        ],
+        "weight_one_count": 6,
+        "weight_two_count": 12,
+        "weight_zero_count": 2
+      },
+      {
+        "bridge_channel_mask": 25,
+        "bridge_invariant": "-32256/10625",
+        "bridge_spatial_square": "42881/10625",
+        "bridge_triple": [
+          0,
+          3,
+          4
+        ],
+        "bubble_invariant": "-1312/425",
+        "bubble_pair": [
+          1,
+          5
+        ],
+        "bubble_spatial_square": "1312/425",
+        "index": 26,
+        "junction_leg": 2,
+        "source_weight": 2,
+        "tensor_HS_square": 54,
+        "tree_cross_Gram_column": [
+          "13/2",
+          "13/2",
+          "13/2",
+          "7",
+          "7",
+          "15/2",
+          "13/2",
+          "13/2",
+          "13/2",
+          "7"
+        ],
+        "weight_one_count": 6,
+        "weight_two_count": 12,
+        "weight_zero_count": 2
+      },
+      {
+        "bridge_channel_mask": 28,
+        "bridge_invariant": "-32/625",
+        "bridge_spatial_square": "932/625",
+        "bridge_triple": [
+          0,
+          1,
+          5
+        ],
+        "bubble_invariant": "96/25",
+        "bubble_pair": [
+          3,
+          4
+        ],
+        "bubble_spatial_square": "1",
+        "index": 27,
+        "junction_leg": 2,
+        "source_weight": 1,
+        "tensor_HS_square": 54,
+        "tree_cross_Gram_column": [
+          "7",
+          "13/2",
+          "13/2",
+          "13/2",
+          "13/2",
+          "7",
+          "13/2",
+          "13/2",
+          "7",
+          "15/2"
+        ],
+        "weight_one_count": 6,
+        "weight_two_count": 12,
+        "weight_zero_count": 2
+      },
+      {
+        "bridge_channel_mask": 19,
+        "bridge_invariant": "-1568/625",
+        "bridge_spatial_square": "2468/625",
+        "bridge_triple": [
+          0,
+          1,
+          4
+        ],
+        "bubble_invariant": "96/25",
+        "bubble_pair": [
+          3,
+          5
+        ],
+        "bubble_spatial_square": "1",
+        "index": 28,
+        "junction_leg": 2,
+        "source_weight": 1,
+        "tensor_HS_square": 54,
+        "tree_cross_Gram_column": [
+          "7",
+          "13/2",
+          "15/2",
+          "13/2",
+          "7",
+          "13/2",
+          "13/2",
+          "7",
+          "13/2",
+          "13/2"
+        ],
+        "weight_one_count": 6,
+        "weight_two_count": 12,
+        "weight_zero_count": 2
+      },
+      {
+        "bridge_channel_mask": 11,
+        "bridge_invariant": "0",
+        "bridge_spatial_square": "1",
+        "bridge_triple": [
+          0,
+          1,
+          3
+        ],
+        "bubble_invariant": "64/25",
+        "bubble_pair": [
+          4,
+          5
+        ],
+        "bubble_spatial_square": "36/25",
+        "index": 29,
+        "junction_leg": 2,
+        "source_weight": 1,
+        "tensor_HS_square": 54,
+        "tree_cross_Gram_column": [
+          "7",
+          "15/2",
+          "13/2",
+          "7",
+          "13/2",
+          "13/2",
+          "7",
+          "13/2",
+          "13/2",
+          "13/2"
+        ],
+        "weight_one_count": 6,
+        "weight_two_count": 12,
+        "weight_zero_count": 2
+      },
+      {
+        "bridge_channel_mask": 11,
+        "bridge_invariant": "0",
+        "bridge_spatial_square": "1",
+        "bridge_triple": [
+          2,
+          4,
+          5
+        ],
+        "bubble_invariant": "96/25",
+        "bubble_pair": [
+          0,
+          1
+        ],
+        "bubble_spatial_square": "1",
+        "index": 30,
+        "junction_leg": 3,
+        "source_weight": 1,
+        "tensor_HS_square": 54,
+        "tree_cross_Gram_column": [
+          "7",
+          "15/2",
+          "7",
+          "13/2",
+          "13/2",
+          "13/2",
+          "13/2",
+          "13/2",
+          "13/2",
+          "7"
+        ],
+        "weight_one_count": 6,
+        "weight_two_count": 12,
+        "weight_zero_count": 2
+      },
+      {
+        "bridge_channel_mask": 13,
+        "bridge_invariant": "-1152/425",
+        "bridge_spatial_square": "1577/425",
+        "bridge_triple": [
+          1,
+          4,
+          5
+        ],
+        "bubble_invariant": "96/25",
+        "bubble_pair": [
+          0,
+          2
+        ],
+        "bubble_spatial_square": "1",
+        "index": 31,
+        "junction_leg": 3,
+        "source_weight": 1,
+        "tensor_HS_square": 54,
+        "tree_cross_Gram_column": [
+          "7",
+          "13/2",
+          "13/2",
+          "15/2",
+          "7",
+          "13/2",
+          "13/2",
+          "13/2",
+          "7",
+          "13/2"
+        ],
+        "weight_one_count": 6,
+        "weight_two_count": 12,
+        "weight_zero_count": 2
+      },
+      {
+        "bridge_channel_mask": 25,
+        "bridge_invariant": "-32256/10625",
+        "bridge_spatial_square": "42881/10625",
+        "bridge_triple": [
+          1,
+          2,
+          5
+        ],
+        "bubble_invariant": "-44256/10625",
+        "bubble_pair": [
+          0,
+          4
+        ],
+        "bubble_spatial_square": "44681/10625",
+        "index": 32,
+        "junction_leg": 3,
+        "source_weight": 2,
+        "tensor_HS_square": 54,
+        "tree_cross_Gram_column": [
+          "13/2",
+          "13/2",
+          "7",
+          "13/2",
+          "7",
+          "15/2",
+          "7",
+          "13/2",
+          "13/2",
+          "13/2"
+        ],
+        "weight_one_count": 6,
+        "weight_two_count": 12,
+        "weight_zero_count": 2
+      },
+      {
+        "bridge_channel_mask": 22,
+        "bridge_invariant": "3456/10625",
+        "bridge_spatial_square": "7169/10625",
+        "bridge_triple": [
+          1,
+          2,
+          4
+        ],
+        "bubble_invariant": "-8544/10625",
+        "bubble_pair": [
+          0,
+          5
+        ],
+        "bubble_spatial_square": "8969/10625",
+        "index": 33,
+        "junction_leg": 3,
+        "source_weight": 2,
+        "tensor_HS_square": 54,
+        "tree_cross_Gram_column": [
+          "13/2",
+          "13/2",
+          "13/2",
+          "13/2",
+          "13/2",
+          "13/2",
+          "7",
+          "15/2",
+          "7",
+          "7"
+        ],
+        "weight_one_count": 6,
+        "weight_two_count": 12,
+        "weight_zero_count": 2
+      },
+      {
+        "bridge_channel_mask": 14,
+        "bridge_invariant": "-1024/425",
+        "bridge_spatial_square": "1296/425",
+        "bridge_triple": [
+          0,
+          4,
+          5
+        ],
+        "bubble_invariant": "64/25",
+        "bubble_pair": [
+          1,
+          2
+        ],
+        "bubble_spatial_square": "36/25",
+        "index": 34,
+        "junction_leg": 3,
+        "source_weight": 1,
+        "tensor_HS_square": 54,
+        "tree_cross_Gram_column": [
+          "7",
+          "13/2",
+          "13/2",
+          "13/2",
+          "13/2",
+          "7",
+          "15/2",
+          "7",
+          "13/2",
+          "13/2"
+        ],
+        "weight_one_count": 6,
+        "weight_two_count": 12,
+        "weight_zero_count": 2
+      },
+      {
+        "bridge_channel_mask": 26,
+        "bridge_invariant": "224/425",
+        "bridge_spatial_square": "388/425",
+        "bridge_triple": [
+          0,
+          2,
+          5
+        ],
+        "bubble_invariant": "-928/425",
+        "bubble_pair": [
+          1,
+          4
+        ],
+        "bubble_spatial_square": "928/425",
+        "index": 35,
+        "junction_leg": 3,
+        "source_weight": 2,
+        "tensor_HS_square": 54,
+        "tree_cross_Gram_column": [
+          "13/2",
+          "13/2",
+          "7",
+          "7",
+          "13/2",
+          "13/2",
+          "13/2",
+          "7",
+          "15/2",
+          "13/2"
+        ],
+        "weight_one_count": 6,
+        "weight_two_count": 12,
+        "weight_zero_count": 2
+      },
+      {
+        "bridge_channel_mask": 21,
+        "bridge_invariant": "-32/85",
+        "bridge_spatial_square": "772/425",
+        "bridge_triple": [
+          0,
+          2,
+          4
+        ],
+        "bubble_invariant": "-1312/425",
+        "bubble_pair": [
+          1,
+          5
+        ],
+        "bubble_spatial_square": "1312/425",
+        "index": 36,
+        "junction_leg": 3,
+        "source_weight": 2,
+        "tensor_HS_square": 54,
+        "tree_cross_Gram_column": [
+          "13/2",
+          "13/2",
+          "13/2",
+          "7",
+          "15/2",
+          "7",
+          "13/2",
+          "13/2",
+          "13/2",
+          "7"
+        ],
+        "weight_one_count": 6,
+        "weight_two_count": 12,
+        "weight_zero_count": 2
+      },
+      {
+        "bridge_channel_mask": 28,
+        "bridge_invariant": "-32/625",
+        "bridge_spatial_square": "932/625",
+        "bridge_triple": [
+          0,
+          1,
+          5
+        ],
+        "bubble_invariant": "-32/625",
+        "bubble_pair": [
+          2,
+          4
+        ],
+        "bubble_spatial_square": "32/625",
+        "index": 37,
+        "junction_leg": 3,
+        "source_weight": 2,
+        "tensor_HS_square": 54,
+        "tree_cross_Gram_column": [
+          "13/2",
+          "7",
+          "13/2",
+          "13/2",
+          "7",
+          "13/2",
+          "13/2",
+          "7",
+          "13/2",
+          "15/2"
+        ],
+        "weight_one_count": 6,
+        "weight_two_count": 12,
+        "weight_zero_count": 2
+      },
+      {
+        "bridge_channel_mask": 19,
+        "bridge_invariant": "-1568/625",
+        "bridge_spatial_square": "2468/625",
+        "bridge_triple": [
+          0,
+          1,
+          4
+        ],
+        "bubble_invariant": "-1568/625",
+        "bubble_pair": [
+          2,
+          5
+        ],
+        "bubble_spatial_square": "1568/625",
+        "index": 38,
+        "junction_leg": 3,
+        "source_weight": 2,
+        "tensor_HS_square": 54,
+        "tree_cross_Gram_column": [
+          "13/2",
+          "7",
+          "15/2",
+          "13/2",
+          "13/2",
+          "7",
+          "13/2",
+          "13/2",
+          "7",
+          "13/2"
+        ],
+        "weight_one_count": 6,
+        "weight_two_count": 12,
+        "weight_zero_count": 2
+      },
+      {
+        "bridge_channel_mask": 7,
+        "bridge_invariant": "256/25",
+        "bridge_spatial_square": "0",
+        "bridge_triple": [
+          0,
+          1,
+          2
+        ],
+        "bubble_invariant": "64/25",
+        "bubble_pair": [
+          4,
+          5
+        ],
+        "bubble_spatial_square": "36/25",
+        "index": 39,
+        "junction_leg": 3,
+        "source_weight": 0,
+        "tensor_HS_square": 54,
+        "tree_cross_Gram_column": [
+          "15/2",
+          "7",
+          "13/2",
+          "7",
+          "13/2",
+          "13/2",
+          "7",
+          "13/2",
+          "13/2",
+          "13/2"
+        ],
+        "weight_one_count": 6,
+        "weight_two_count": 12,
+        "weight_zero_count": 2
+      },
+      {
+        "bridge_channel_mask": 19,
+        "bridge_invariant": "-1568/625",
+        "bridge_spatial_square": "2468/625",
+        "bridge_triple": [
+          2,
+          3,
+          5
+        ],
+        "bubble_invariant": "96/25",
+        "bubble_pair": [
+          0,
+          1
+        ],
+        "bubble_spatial_square": "1",
+        "index": 40,
+        "junction_leg": 4,
+        "source_weight": 1,
+        "tensor_HS_square": 54,
+        "tree_cross_Gram_column": [
+          "7",
+          "7",
+          "15/2",
+          "13/2",
+          "13/2",
+          "13/2",
+          "13/2",
+          "13/2",
+          "13/2",
+          "7"
+        ],
+        "weight_one_count": 6,
+        "weight_two_count": 12,
+        "weight_zero_count": 2
+      },
+      {
+        "bridge_channel_mask": 21,
+        "bridge_invariant": "-32/85",
+        "bridge_spatial_square": "772/425",
+        "bridge_triple": [
+          1,
+          3,
+          5
+        ],
+        "bubble_invariant": "96/25",
+        "bubble_pair": [
+          0,
+          2
+        ],
+        "bubble_spatial_square": "1",
+        "index": 41,
+        "junction_leg": 4,
+        "source_weight": 1,
+        "tensor_HS_square": 54,
+        "tree_cross_Gram_column": [
+          "7",
+          "13/2",
+          "13/2",
+          "7",
+          "15/2",
+          "13/2",
+          "13/2",
+          "13/2",
+          "7",
+          "13/2"
+        ],
+        "weight_one_count": 6,
+        "weight_two_count": 12,
+        "weight_zero_count": 2
+      },
+      {
+        "bridge_channel_mask": 25,
+        "bridge_invariant": "-32256/10625",
+        "bridge_spatial_square": "42881/10625",
+        "bridge_triple": [
+          1,
+          2,
+          5
+        ],
+        "bubble_invariant": "-1152/425",
+        "bubble_pair": [
+          0,
+          3
+        ],
+        "bubble_spatial_square": "1152/425",
+        "index": 42,
+        "junction_leg": 4,
+        "source_weight": 2,
+        "tensor_HS_square": 54,
+        "tree_cross_Gram_column": [
+          "13/2",
+          "7",
+          "13/2",
+          "7",
+          "13/2",
+          "15/2",
+          "13/2",
+          "7",
+          "13/2",
+          "13/2"
+        ],
+        "weight_one_count": 6,
+        "weight_two_count": 12,
+        "weight_zero_count": 2
+      },
+      {
+        "bridge_channel_mask": 14,
+        "bridge_invariant": "-1024/425",
+        "bridge_spatial_square": "1296/425",
+        "bridge_triple": [
+          1,
+          2,
+          3
+        ],
+        "bubble_invariant": "-8544/10625",
+        "bubble_pair": [
+          0,
+          5
+        ],
+        "bubble_spatial_square": "8969/10625",
+        "index": 43,
+        "junction_leg": 4,
+        "source_weight": 2,
+        "tensor_HS_square": 54,
+        "tree_cross_Gram_column": [
+          "13/2",
+          "13/2",
+          "13/2",
+          "13/2",
+          "13/2",
+          "13/2",
+          "15/2",
+          "7",
+          "7",
+          "7"
+        ],
+        "weight_one_count": 6,
+        "weight_two_count": 12,
+        "weight_zero_count": 2
+      },
+      {
+        "bridge_channel_mask": 22,
+        "bridge_invariant": "3456/10625",
+        "bridge_spatial_square": "7169/10625",
+        "bridge_triple": [
+          0,
+          3,
+          5
+        ],
+        "bubble_invariant": "64/25",
+        "bubble_pair": [
+          1,
+          2
+        ],
+        "bubble_spatial_square": "36/25",
+        "index": 44,
+        "junction_leg": 4,
+        "source_weight": 1,
+        "tensor_HS_square": 54,
+        "tree_cross_Gram_column": [
+          "7",
+          "13/2",
+          "13/2",
+          "13/2",
+          "13/2",
+          "7",
+          "7",
+          "15/2",
+          "13/2",
+          "13/2"
+        ],
+        "weight_one_count": 6,
+        "weight_two_count": 12,
+        "weight_zero_count": 2
+      },
+      {
+        "bridge_channel_mask": 26,
+        "bridge_invariant": "224/425",
+        "bridge_spatial_square": "388/425",
+        "bridge_triple": [
+          0,
+          2,
+          5
+        ],
+        "bubble_invariant": "-96/85",
+        "bubble_pair": [
+          1,
+          3
+        ],
+        "bubble_spatial_square": "497/425",
+        "index": 45,
+        "junction_leg": 4,
+        "source_weight": 2,
+        "tensor_HS_square": 54,
+        "tree_cross_Gram_column": [
+          "13/2",
+          "7",
+          "13/2",
+          "13/2",
+          "7",
+          "13/2",
+          "7",
+          "13/2",
+          "15/2",
+          "13/2"
+        ],
+        "weight_one_count": 6,
+        "weight_two_count": 12,
+        "weight_zero_count": 2
+      },
+      {
+        "bridge_channel_mask": 13,
+        "bridge_invariant": "-1152/425",
+        "bridge_spatial_square": "1577/425",
+        "bridge_triple": [
+          0,
+          2,
+          3
+        ],
+        "bubble_invariant": "-1312/425",
+        "bubble_pair": [
+          1,
+          5
+        ],
+        "bubble_spatial_square": "1312/425",
+        "index": 46,
+        "junction_leg": 4,
+        "source_weight": 2,
+        "tensor_HS_square": 54,
+        "tree_cross_Gram_column": [
+          "13/2",
+          "13/2",
+          "13/2",
+          "15/2",
+          "7",
+          "7",
+          "13/2",
+          "13/2",
+          "13/2",
+          "7"
+        ],
+        "weight_one_count": 6,
+        "weight_two_count": 12,
+        "weight_zero_count": 2
+      },
+      {
+        "bridge_channel_mask": 28,
+        "bridge_invariant": "-32/625",
+        "bridge_spatial_square": "932/625",
+        "bridge_triple": [
+          0,
+          1,
+          5
+        ],
+        "bubble_invariant": "-96/25",
+        "bubble_pair": [
+          2,
+          3
+        ],
+        "bubble_spatial_square": "97/25",
+        "index": 47,
+        "junction_leg": 4,
+        "source_weight": 2,
+        "tensor_HS_square": 54,
+        "tree_cross_Gram_column": [
+          "13/2",
+          "13/2",
+          "7",
+          "7",
+          "13/2",
+          "13/2",
+          "7",
+          "13/2",
+          "13/2",
+          "15/2"
+        ],
+        "weight_one_count": 6,
+        "weight_two_count": 12,
+        "weight_zero_count": 2
+      },
+      {
+        "bridge_channel_mask": 11,
+        "bridge_invariant": "0",
+        "bridge_spatial_square": "1",
+        "bridge_triple": [
+          0,
+          1,
+          3
+        ],
+        "bubble_invariant": "-1568/625",
+        "bubble_pair": [
+          2,
+          5
+        ],
+        "bubble_spatial_square": "1568/625",
+        "index": 48,
+        "junction_leg": 4,
+        "source_weight": 2,
+        "tensor_HS_square": 54,
+        "tree_cross_Gram_column": [
+          "13/2",
+          "15/2",
+          "7",
+          "13/2",
+          "13/2",
+          "7",
+          "13/2",
+          "13/2",
+          "7",
+          "13/2"
+        ],
+        "weight_one_count": 6,
+        "weight_two_count": 12,
+        "weight_zero_count": 2
+      },
+      {
+        "bridge_channel_mask": 7,
+        "bridge_invariant": "256/25",
+        "bridge_spatial_square": "0",
+        "bridge_triple": [
+          0,
+          1,
+          2
+        ],
+        "bubble_invariant": "96/25",
+        "bubble_pair": [
+          3,
+          5
+        ],
+        "bubble_spatial_square": "1",
+        "index": 49,
+        "junction_leg": 4,
+        "source_weight": 0,
+        "tensor_HS_square": 54,
+        "tree_cross_Gram_column": [
+          "15/2",
+          "13/2",
+          "7",
+          "13/2",
+          "7",
+          "13/2",
+          "13/2",
+          "7",
+          "13/2",
+          "13/2"
+        ],
+        "weight_one_count": 6,
+        "weight_two_count": 12,
+        "weight_zero_count": 2
+      },
+      {
+        "bridge_channel_mask": 28,
+        "bridge_invariant": "-32/625",
+        "bridge_spatial_square": "932/625",
+        "bridge_triple": [
+          2,
+          3,
+          4
+        ],
+        "bubble_invariant": "96/25",
+        "bubble_pair": [
+          0,
+          1
+        ],
+        "bubble_spatial_square": "1",
+        "index": 50,
+        "junction_leg": 5,
+        "source_weight": 1,
+        "tensor_HS_square": 54,
+        "tree_cross_Gram_column": [
+          "7",
+          "7",
+          "7",
+          "13/2",
+          "13/2",
+          "13/2",
+          "13/2",
+          "13/2",
+          "13/2",
+          "15/2"
+        ],
+        "weight_one_count": 6,
+        "weight_two_count": 12,
+        "weight_zero_count": 2
+      },
+      {
+        "bridge_channel_mask": 26,
+        "bridge_invariant": "224/425",
+        "bridge_spatial_square": "388/425",
+        "bridge_triple": [
+          1,
+          3,
+          4
+        ],
+        "bubble_invariant": "96/25",
+        "bubble_pair": [
+          0,
+          2
+        ],
+        "bubble_spatial_square": "1",
+        "index": 51,
+        "junction_leg": 5,
+        "source_weight": 1,
+        "tensor_HS_square": 54,
+        "tree_cross_Gram_column": [
+          "7",
+          "13/2",
+          "13/2",
+          "7",
+          "7",
+          "13/2",
+          "13/2",
+          "13/2",
+          "15/2",
+          "13/2"
+        ],
+        "weight_one_count": 6,
+        "weight_two_count": 12,
+        "weight_zero_count": 2
+      },
+      {
+        "bridge_channel_mask": 22,
+        "bridge_invariant": "3456/10625",
+        "bridge_spatial_square": "7169/10625",
+        "bridge_triple": [
+          1,
+          2,
+          4
+        ],
+        "bubble_invariant": "-1152/425",
+        "bubble_pair": [
+          0,
+          3
+        ],
+        "bubble_spatial_square": "1152/425",
+        "index": 52,
+        "junction_leg": 5,
+        "source_weight": 2,
+        "tensor_HS_square": 54,
+        "tree_cross_Gram_column": [
+          "13/2",
+          "7",
+          "13/2",
+          "7",
+          "13/2",
+          "7",
+          "13/2",
+          "15/2",
+          "13/2",
+          "13/2"
+        ],
+        "weight_one_count": 6,
+        "weight_two_count": 12,
+        "weight_zero_count": 2
+      },
+      {
+        "bridge_channel_mask": 14,
+        "bridge_invariant": "-1024/425",
+        "bridge_spatial_square": "1296/425",
+        "bridge_triple": [
+          1,
+          2,
+          3
+        ],
+        "bubble_invariant": "-44256/10625",
+        "bubble_pair": [
+          0,
+          4
+        ],
+        "bubble_spatial_square": "44681/10625",
+        "index": 53,
+        "junction_leg": 5,
+        "source_weight": 2,
+        "tensor_HS_square": 54,
+        "tree_cross_Gram_column": [
+          "13/2",
+          "13/2",
+          "7",
+          "13/2",
+          "7",
+          "7",
+          "15/2",
+          "13/2",
+          "13/2",
+          "13/2"
+        ],
+        "weight_one_count": 6,
+        "weight_two_count": 12,
+        "weight_zero_count": 2
+      },
+      {
+        "bridge_channel_mask": 25,
+        "bridge_invariant": "-32256/10625",
+        "bridge_spatial_square": "42881/10625",
+        "bridge_triple": [
+          0,
+          3,
+          4
+        ],
+        "bubble_invariant": "64/25",
+        "bubble_pair": [
+          1,
+          2
+        ],
+        "bubble_spatial_square": "36/25",
+        "index": 54,
+        "junction_leg": 5,
+        "source_weight": 1,
+        "tensor_HS_square": 54,
+        "tree_cross_Gram_column": [
+          "7",
+          "13/2",
+          "13/2",
+          "13/2",
+          "13/2",
+          "15/2",
+          "7",
+          "7",
+          "13/2",
+          "13/2"
+        ],
+        "weight_one_count": 6,
+        "weight_two_count": 12,
+        "weight_zero_count": 2
+      },
+      {
+        "bridge_channel_mask": 21,
+        "bridge_invariant": "-32/85",
+        "bridge_spatial_square": "772/425",
+        "bridge_triple": [
+          0,
+          2,
+          4
+        ],
+        "bubble_invariant": "-96/85",
+        "bubble_pair": [
+          1,
+          3
+        ],
+        "bubble_spatial_square": "497/425",
+        "index": 55,
+        "junction_leg": 5,
+        "source_weight": 2,
+        "tensor_HS_square": 54,
+        "tree_cross_Gram_column": [
+          "13/2",
+          "7",
+          "13/2",
+          "13/2",
+          "15/2",
+          "13/2",
+          "7",
+          "13/2",
+          "7",
+          "13/2"
+        ],
+        "weight_one_count": 6,
+        "weight_two_count": 12,
+        "weight_zero_count": 2
+      },
+      {
+        "bridge_channel_mask": 13,
+        "bridge_invariant": "-1152/425",
+        "bridge_spatial_square": "1577/425",
+        "bridge_triple": [
+          0,
+          2,
+          3
+        ],
+        "bubble_invariant": "-928/425",
+        "bubble_pair": [
+          1,
+          4
+        ],
+        "bubble_spatial_square": "928/425",
+        "index": 56,
+        "junction_leg": 5,
+        "source_weight": 2,
+        "tensor_HS_square": 54,
+        "tree_cross_Gram_column": [
+          "13/2",
+          "13/2",
+          "7",
+          "15/2",
+          "13/2",
+          "13/2",
+          "13/2",
+          "7",
+          "7",
+          "13/2"
+        ],
+        "weight_one_count": 6,
+        "weight_two_count": 12,
+        "weight_zero_count": 2
+      },
+      {
+        "bridge_channel_mask": 19,
+        "bridge_invariant": "-1568/625",
+        "bridge_spatial_square": "2468/625",
+        "bridge_triple": [
+          0,
+          1,
+          4
+        ],
+        "bubble_invariant": "-96/25",
+        "bubble_pair": [
+          2,
+          3
+        ],
+        "bubble_spatial_square": "97/25",
+        "index": 57,
+        "junction_leg": 5,
+        "source_weight": 2,
+        "tensor_HS_square": 54,
+        "tree_cross_Gram_column": [
+          "13/2",
+          "13/2",
+          "15/2",
+          "7",
+          "13/2",
+          "13/2",
+          "7",
+          "13/2",
+          "13/2",
+          "7"
+        ],
+        "weight_one_count": 6,
+        "weight_two_count": 12,
+        "weight_zero_count": 2
+      },
+      {
+        "bridge_channel_mask": 11,
+        "bridge_invariant": "0",
+        "bridge_spatial_square": "1",
+        "bridge_triple": [
+          0,
+          1,
+          3
+        ],
+        "bubble_invariant": "-32/625",
+        "bubble_pair": [
+          2,
+          4
+        ],
+        "bubble_spatial_square": "32/625",
+        "index": 58,
+        "junction_leg": 5,
+        "source_weight": 2,
+        "tensor_HS_square": 54,
+        "tree_cross_Gram_column": [
+          "13/2",
+          "15/2",
+          "13/2",
+          "13/2",
+          "7",
+          "13/2",
+          "13/2",
+          "7",
+          "13/2",
+          "7"
+        ],
+        "weight_one_count": 6,
+        "weight_two_count": 12,
+        "weight_zero_count": 2
+      },
+      {
+        "bridge_channel_mask": 7,
+        "bridge_invariant": "256/25",
+        "bridge_spatial_square": "0",
+        "bridge_triple": [
+          0,
+          1,
+          2
+        ],
+        "bubble_invariant": "96/25",
+        "bubble_pair": [
+          3,
+          4
+        ],
+        "bubble_spatial_square": "1",
+        "index": 59,
+        "junction_leg": 5,
+        "source_weight": 0,
+        "tensor_HS_square": 54,
+        "tree_cross_Gram_column": [
+          "15/2",
+          "13/2",
+          "13/2",
+          "13/2",
+          "13/2",
+          "7",
+          "13/2",
+          "13/2",
+          "7",
+          "7"
+        ],
+        "weight_one_count": 6,
+        "weight_two_count": 12,
+        "weight_zero_count": 2
+      }
+    ],
+    "status": "NONEMPTY_SELECTED_SOURCE_FINITE_TIME_PACKET_MARGIN"
+  },
+  "schema": "reverse_physics/schema/reverse-physics-bt-fully-rearranged-bubble-bridge-covariant-block-v1.schema.json",
+  "schema_version": 1,
+  "species_tensor": {
+    "kappa_identity": "kappa3*W_R*kappa3=W_R coefficientwise",
+    "neutral_masks": [
+      7,
+      11,
+      13,
+      14,
+      19,
+      21,
+      22,
+      25,
+      26,
+      28,
+      35,
+      37,
+      38,
+      41,
+      42,
+      44,
+      49,
+      50,
+      52,
+      56
+    ],
+    "per_role_HS_square": 54,
+    "per_role_profile": "two entries 0, six entries 1 and twelve entries 2",
+    "routing_rule": "each internal edge joins opposite species and every vertex has exactly two Omega and two Upsilon",
+    "source_weight_profile": {
+      "double_roles": 36,
+      "unit_roles": 18,
+      "zero_roles": 6
+    },
+    "status": "EXACT_SIXTY_ROLE_SPECIES_TENSOR_COMPUTED",
+    "sum_over_all_roles_on_each_neutral_assignment": 90,
+    "tensors": [
+      [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          2,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          2,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          2,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          2,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          2,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          2,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          1,
+          2,
+          0
+        ],
+        [
+          0,
+          2,
+          1,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          1,
+          2,
+          0
+        ],
+        [
+          0,
+          2,
+          1,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          1,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          1,
+          0
+        ],
+        [
+          0,
+          2,
+          1,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          1,
+          2,
+          0
+        ],
+        [
+          0,
+          1,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          1,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          1,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          1,
+          2,
+          0
+        ],
+        [
+          0,
+          1,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          1,
+          0
+        ],
+        [
+          0,
+          2,
+          1,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          1,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          2,
+          2,
+          0
+        ],
+        [
+          0,
+          2,
+          2,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          2,
+          2,
+          0
+        ],
+        [
+          0,
+          2,
+          2,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          2,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          2,
+          2,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          2,
+          2,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          2,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          2,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          2,
+          2,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          2,
+          2,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          2,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          2,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          2,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          2,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          2,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          2,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          2,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          2,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          2,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          2,
+          2,
+          0
+        ],
+        [
+          0,
+          2,
+          2,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          2,
+          2,
+          0
+        ],
+        [
+          0,
+          2,
+          2,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          1,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          1,
+          2,
+          0
+        ],
+        [
+          0,
+          2,
+          1,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          1,
+          2,
+          0
+        ],
+        [
+          0,
+          2,
+          1,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          1,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          2,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          2,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          2,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          2,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          2,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          2,
+          0
+        ],
+        [
+          0,
+          1,
+          2,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          2,
+          1,
+          0
+        ],
+        [
+          0,
+          2,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          2,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          2,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          2,
+          1,
+          0
+        ],
+        [
+          0,
+          2,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          2,
+          0
+        ],
+        [
+          0,
+          1,
+          2,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          2,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          2,
+          2,
+          0
+        ],
+        [
+          0,
+          2,
+          2,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          2,
+          2,
+          0
+        ],
+        [
+          0,
+          2,
+          2,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          2,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          2,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          2,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          2,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          2,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          2,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          2,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          2,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          2,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          2,
+          2,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          2,
+          2,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          2,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          2,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          2,
+          2,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          2,
+          2,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          2,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          2,
+          2,
+          0
+        ],
+        [
+          0,
+          2,
+          2,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          2,
+          2,
+          0
+        ],
+        [
+          0,
+          2,
+          2,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          2,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          2,
+          2,
+          0
+        ],
+        [
+          0,
+          2,
+          2,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          2,
+          2,
+          0
+        ],
+        [
+          0,
+          2,
+          2,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          2,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          2,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          2,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          2,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          2,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          2,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          1,
+          2,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          2,
+          1,
+          0
+        ],
+        [
+          0,
+          2,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          2,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          2,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          2,
+          1,
+          0
+        ],
+        [
+          0,
+          2,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          1,
+          2,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          2,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          1,
+          2,
+          0
+        ],
+        [
+          0,
+          2,
+          1,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          1,
+          2,
+          0
+        ],
+        [
+          0,
+          2,
+          1,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          2,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          1,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          1,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          1,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          1,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          1,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          1,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          1,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          1,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          2,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          2,
+          2,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          2,
+          2,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          2,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          2,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          2,
+          2,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          2,
+          2,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          2,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          2,
+          2,
+          0
+        ],
+        [
+          0,
+          2,
+          2,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          2,
+          2,
+          0
+        ],
+        [
+          0,
+          2,
+          2,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          2,
+          2,
+          0
+        ],
+        [
+          0,
+          2,
+          2,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          2,
+          2,
+          0
+        ],
+        [
+          0,
+          2,
+          2,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          1,
+          2,
+          0
+        ],
+        [
+          0,
+          2,
+          1,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          1,
+          2,
+          0
+        ],
+        [
+          0,
+          2,
+          1,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          2,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          2,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          2,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          2,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          2,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          2,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          2,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          2,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          2,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          1,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          2,
+          1,
+          0
+        ],
+        [
+          0,
+          2,
+          0,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          1,
+          2,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          1,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          1,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          1,
+          2,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          2,
+          1,
+          0
+        ],
+        [
+          0,
+          2,
+          0,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          1,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          2,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          2,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          2,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          2,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          2,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          2,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          2,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          2,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          2,
+          2,
+          0
+        ],
+        [
+          0,
+          2,
+          2,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          2,
+          2,
+          0
+        ],
+        [
+          0,
+          2,
+          2,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          2,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          2,
+          0
+        ],
+        [
+          0,
+          2,
+          2,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          2,
+          2,
+          0
+        ],
+        [
+          0,
+          2,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          2,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          1,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          2,
+          1,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          1,
+          2,
+          0
+        ],
+        [
+          0,
+          2,
+          0,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          1,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          2,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          2,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          2,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          2,
+          1,
+          0
+        ],
+        [
+          0,
+          2,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          2,
+          0
+        ],
+        [
+          0,
+          1,
+          2,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          2,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          2,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          2,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          2,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          2,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          2,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          2,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          1,
+          2,
+          0
+        ],
+        [
+          0,
+          2,
+          0,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          2,
+          1,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          2,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          1,
+          2,
+          0
+        ],
+        [
+          0,
+          1,
+          2,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          2,
+          1,
+          0
+        ],
+        [
+          0,
+          2,
+          1,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          2,
+          2,
+          0
+        ],
+        [
+          0,
+          2,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          2,
+          0
+        ],
+        [
+          0,
+          2,
+          2,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          2,
+          2,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          2,
+          2,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          2,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          2,
+          2,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          2,
+          2,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          2,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          2,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          2,
+          2,
+          0
+        ],
+        [
+          0,
+          2,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          2,
+          0
+        ],
+        [
+          0,
+          2,
+          2,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          2,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          1,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          1,
+          2,
+          0
+        ],
+        [
+          0,
+          2,
+          0,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          2,
+          1,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          1,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          2,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          2,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          2,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          2,
+          0
+        ],
+        [
+          0,
+          1,
+          2,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          2,
+          1,
+          0
+        ],
+        [
+          0,
+          2,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          2,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          2,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          2,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          2,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          2,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          2,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          2,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          2,
+          1,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          1,
+          2,
+          0
+        ],
+        [
+          0,
+          2,
+          0,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          2,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          2,
+          1,
+          0
+        ],
+        [
+          0,
+          2,
+          1,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          1,
+          2,
+          0
+        ],
+        [
+          0,
+          1,
+          2,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          2,
+          0
+        ],
+        [
+          0,
+          2,
+          2,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          2,
+          2,
+          0
+        ],
+        [
+          0,
+          2,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          2,
+          2,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          2,
+          2,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          2,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          2,
+          0,
+          2,
+          2,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          2,
+          2,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          2,
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    ]
+  },
+  "tree_incidence": {
+    "column_sum": "135/2",
+    "cross_Gram": [
+      [
+        "15/2",
+        "13/2",
+        "13/2",
+        "13/2",
+        "13/2",
+        "13/2",
+        "13/2",
+        "7",
+        "7",
+        "7",
+        "15/2",
+        "13/2",
+        "13/2",
+        "13/2",
+        "13/2",
+        "13/2",
+        "13/2",
+        "7",
+        "7",
+        "7",
+        "15/2",
+        "13/2",
+        "13/2",
+        "13/2",
+        "13/2",
+        "13/2",
+        "13/2",
+        "7",
+        "7",
+        "7",
+        "7",
+        "7",
+        "13/2",
+        "13/2",
+        "7",
+        "13/2",
+        "13/2",
+        "13/2",
+        "13/2",
+        "15/2",
+        "7",
+        "7",
+        "13/2",
+        "13/2",
+        "7",
+        "13/2",
+        "13/2",
+        "13/2",
+        "13/2",
+        "15/2",
+        "7",
+        "7",
+        "13/2",
+        "13/2",
+        "7",
+        "13/2",
+        "13/2",
+        "13/2",
+        "13/2",
+        "15/2"
+      ],
+      [
+        "13/2",
+        "15/2",
+        "13/2",
+        "13/2",
+        "13/2",
+        "7",
+        "7",
+        "13/2",
+        "13/2",
+        "7",
+        "13/2",
+        "15/2",
+        "13/2",
+        "13/2",
+        "13/2",
+        "7",
+        "7",
+        "13/2",
+        "13/2",
+        "7",
+        "7",
+        "7",
+        "13/2",
+        "13/2",
+        "7",
+        "13/2",
+        "13/2",
+        "13/2",
+        "13/2",
+        "15/2",
+        "15/2",
+        "13/2",
+        "13/2",
+        "13/2",
+        "13/2",
+        "13/2",
+        "13/2",
+        "7",
+        "7",
+        "7",
+        "7",
+        "13/2",
+        "7",
+        "13/2",
+        "13/2",
+        "7",
+        "13/2",
+        "13/2",
+        "15/2",
+        "13/2",
+        "7",
+        "13/2",
+        "7",
+        "13/2",
+        "13/2",
+        "7",
+        "13/2",
+        "13/2",
+        "15/2",
+        "13/2"
+      ],
+      [
+        "13/2",
+        "13/2",
+        "15/2",
+        "13/2",
+        "7",
+        "13/2",
+        "7",
+        "13/2",
+        "7",
+        "13/2",
+        "13/2",
+        "13/2",
+        "15/2",
+        "13/2",
+        "7",
+        "13/2",
+        "7",
+        "13/2",
+        "7",
+        "13/2",
+        "7",
+        "13/2",
+        "7",
+        "13/2",
+        "13/2",
+        "7",
+        "13/2",
+        "13/2",
+        "15/2",
+        "13/2",
+        "7",
+        "13/2",
+        "7",
+        "13/2",
+        "13/2",
+        "7",
+        "13/2",
+        "13/2",
+        "15/2",
+        "13/2",
+        "15/2",
+        "13/2",
+        "13/2",
+        "13/2",
+        "13/2",
+        "13/2",
+        "13/2",
+        "7",
+        "7",
+        "7",
+        "7",
+        "13/2",
+        "13/2",
+        "7",
+        "13/2",
+        "13/2",
+        "7",
+        "15/2",
+        "13/2",
+        "13/2"
+      ],
+      [
+        "13/2",
+        "13/2",
+        "7",
+        "7",
+        "15/2",
+        "13/2",
+        "13/2",
+        "13/2",
+        "13/2",
+        "7",
+        "7",
+        "7",
+        "13/2",
+        "13/2",
+        "7",
+        "13/2",
+        "13/2",
+        "13/2",
+        "13/2",
+        "15/2",
+        "13/2",
+        "15/2",
+        "13/2",
+        "13/2",
+        "13/2",
+        "7",
+        "7",
+        "13/2",
+        "13/2",
+        "7",
+        "13/2",
+        "15/2",
+        "13/2",
+        "13/2",
+        "13/2",
+        "7",
+        "7",
+        "13/2",
+        "13/2",
+        "7",
+        "13/2",
+        "7",
+        "7",
+        "13/2",
+        "13/2",
+        "13/2",
+        "15/2",
+        "7",
+        "13/2",
+        "13/2",
+        "13/2",
+        "7",
+        "7",
+        "13/2",
+        "13/2",
+        "13/2",
+        "15/2",
+        "7",
+        "13/2",
+        "13/2"
+      ],
+      [
+        "13/2",
+        "7",
+        "13/2",
+        "7",
+        "13/2",
+        "15/2",
+        "13/2",
+        "13/2",
+        "7",
+        "13/2",
+        "7",
+        "13/2",
+        "7",
+        "13/2",
+        "13/2",
+        "7",
+        "13/2",
+        "13/2",
+        "15/2",
+        "13/2",
+        "13/2",
+        "13/2",
+        "15/2",
+        "13/2",
+        "7",
+        "13/2",
+        "7",
+        "13/2",
+        "7",
+        "13/2",
+        "13/2",
+        "7",
+        "7",
+        "13/2",
+        "13/2",
+        "13/2",
+        "15/2",
+        "7",
+        "13/2",
+        "13/2",
+        "13/2",
+        "15/2",
+        "13/2",
+        "13/2",
+        "13/2",
+        "7",
+        "7",
+        "13/2",
+        "13/2",
+        "7",
+        "13/2",
+        "7",
+        "13/2",
+        "7",
+        "13/2",
+        "15/2",
+        "13/2",
+        "13/2",
+        "7",
+        "13/2"
+      ],
+      [
+        "7",
+        "13/2",
+        "13/2",
+        "7",
+        "13/2",
+        "13/2",
+        "7",
+        "15/2",
+        "13/2",
+        "13/2",
+        "13/2",
+        "7",
+        "7",
+        "13/2",
+        "13/2",
+        "13/2",
+        "15/2",
+        "7",
+        "13/2",
+        "13/2",
+        "13/2",
+        "7",
+        "7",
+        "13/2",
+        "13/2",
+        "13/2",
+        "15/2",
+        "7",
+        "13/2",
+        "13/2",
+        "13/2",
+        "13/2",
+        "15/2",
+        "13/2",
+        "7",
+        "13/2",
+        "7",
+        "13/2",
+        "7",
+        "13/2",
+        "13/2",
+        "13/2",
+        "15/2",
+        "13/2",
+        "7",
+        "13/2",
+        "7",
+        "13/2",
+        "7",
+        "13/2",
+        "13/2",
+        "13/2",
+        "7",
+        "7",
+        "15/2",
+        "13/2",
+        "13/2",
+        "13/2",
+        "13/2",
+        "7"
+      ],
+      [
+        "7",
+        "7",
+        "13/2",
+        "13/2",
+        "7",
+        "13/2",
+        "13/2",
+        "13/2",
+        "13/2",
+        "15/2",
+        "13/2",
+        "13/2",
+        "7",
+        "7",
+        "15/2",
+        "13/2",
+        "13/2",
+        "13/2",
+        "13/2",
+        "7",
+        "13/2",
+        "13/2",
+        "7",
+        "7",
+        "15/2",
+        "13/2",
+        "13/2",
+        "13/2",
+        "13/2",
+        "7",
+        "13/2",
+        "13/2",
+        "7",
+        "7",
+        "15/2",
+        "13/2",
+        "13/2",
+        "13/2",
+        "13/2",
+        "7",
+        "13/2",
+        "13/2",
+        "13/2",
+        "15/2",
+        "7",
+        "7",
+        "13/2",
+        "7",
+        "13/2",
+        "13/2",
+        "13/2",
+        "13/2",
+        "13/2",
+        "15/2",
+        "7",
+        "7",
+        "13/2",
+        "7",
+        "13/2",
+        "13/2"
+      ],
+      [
+        "7",
+        "13/2",
+        "7",
+        "13/2",
+        "13/2",
+        "7",
+        "13/2",
+        "13/2",
+        "15/2",
+        "13/2",
+        "13/2",
+        "7",
+        "13/2",
+        "7",
+        "13/2",
+        "15/2",
+        "13/2",
+        "13/2",
+        "7",
+        "13/2",
+        "13/2",
+        "7",
+        "13/2",
+        "7",
+        "13/2",
+        "15/2",
+        "13/2",
+        "13/2",
+        "7",
+        "13/2",
+        "13/2",
+        "13/2",
+        "13/2",
+        "15/2",
+        "7",
+        "7",
+        "13/2",
+        "7",
+        "13/2",
+        "13/2",
+        "13/2",
+        "13/2",
+        "7",
+        "7",
+        "15/2",
+        "13/2",
+        "13/2",
+        "13/2",
+        "13/2",
+        "7",
+        "13/2",
+        "13/2",
+        "15/2",
+        "13/2",
+        "7",
+        "13/2",
+        "7",
+        "13/2",
+        "7",
+        "13/2"
+      ],
+      [
+        "13/2",
+        "7",
+        "7",
+        "13/2",
+        "13/2",
+        "13/2",
+        "15/2",
+        "7",
+        "13/2",
+        "13/2",
+        "7",
+        "13/2",
+        "13/2",
+        "7",
+        "13/2",
+        "13/2",
+        "7",
+        "15/2",
+        "13/2",
+        "13/2",
+        "13/2",
+        "13/2",
+        "13/2",
+        "15/2",
+        "7",
+        "7",
+        "13/2",
+        "7",
+        "13/2",
+        "13/2",
+        "13/2",
+        "7",
+        "13/2",
+        "7",
+        "13/2",
+        "15/2",
+        "13/2",
+        "13/2",
+        "7",
+        "13/2",
+        "13/2",
+        "7",
+        "13/2",
+        "7",
+        "13/2",
+        "15/2",
+        "13/2",
+        "13/2",
+        "7",
+        "13/2",
+        "13/2",
+        "15/2",
+        "13/2",
+        "13/2",
+        "13/2",
+        "7",
+        "7",
+        "13/2",
+        "13/2",
+        "7"
+      ],
+      [
+        "13/2",
+        "13/2",
+        "13/2",
+        "15/2",
+        "7",
+        "7",
+        "13/2",
+        "7",
+        "13/2",
+        "13/2",
+        "13/2",
+        "13/2",
+        "13/2",
+        "15/2",
+        "7",
+        "7",
+        "13/2",
+        "7",
+        "13/2",
+        "13/2",
+        "7",
+        "13/2",
+        "13/2",
+        "7",
+        "13/2",
+        "13/2",
+        "7",
+        "15/2",
+        "13/2",
+        "13/2",
+        "7",
+        "13/2",
+        "13/2",
+        "7",
+        "13/2",
+        "13/2",
+        "7",
+        "15/2",
+        "13/2",
+        "13/2",
+        "7",
+        "13/2",
+        "13/2",
+        "7",
+        "13/2",
+        "13/2",
+        "7",
+        "15/2",
+        "13/2",
+        "13/2",
+        "15/2",
+        "13/2",
+        "13/2",
+        "13/2",
+        "13/2",
+        "13/2",
+        "13/2",
+        "7",
+        "7",
+        "7"
+      ]
+    ],
+    "entry_multiplicities": {
+      "13/2": 360,
+      "15/2": 60,
+      "7": 180
+    },
+    "entry_values": [
+      "13/2",
+      "7",
+      "15/2"
+    ],
+    "group_identity": "sum_(R with bridge C) W_R=40*R_C for every unordered channel C",
+    "group_rows": [
+      {
+        "bridge_channel_mask": 7,
+        "nonzero_species_value": 10,
+        "role_count": 6,
+        "role_indices": [
+          0,
+          10,
+          20,
+          39,
+          49,
+          59
+        ],
+        "tensor_sum_identity": "sum_(R over C) W_R=40*R_C",
+        "zero_species_masks": [
+          7,
+          56
+        ]
+      },
+      {
+        "bridge_channel_mask": 11,
+        "nonzero_species_value": 10,
+        "role_count": 6,
+        "role_indices": [
+          1,
+          11,
+          29,
+          30,
+          48,
+          58
+        ],
+        "tensor_sum_identity": "sum_(R over C) W_R=40*R_C",
+        "zero_species_masks": [
+          11,
+          52
+        ]
+      },
+      {
+        "bridge_channel_mask": 19,
+        "nonzero_species_value": 10,
+        "role_count": 6,
+        "role_indices": [
+          2,
+          12,
+          28,
+          38,
+          40,
+          57
+        ],
+        "tensor_sum_identity": "sum_(R over C) W_R=40*R_C",
+        "zero_species_masks": [
+          19,
+          44
+        ]
+      },
+      {
+        "bridge_channel_mask": 13,
+        "nonzero_species_value": 10,
+        "role_count": 6,
+        "role_indices": [
+          4,
+          19,
+          21,
+          31,
+          46,
+          56
+        ],
+        "tensor_sum_identity": "sum_(R over C) W_R=40*R_C",
+        "zero_species_masks": [
+          13,
+          50
+        ]
+      },
+      {
+        "bridge_channel_mask": 21,
+        "nonzero_species_value": 10,
+        "role_count": 6,
+        "role_indices": [
+          5,
+          18,
+          22,
+          36,
+          41,
+          55
+        ],
+        "tensor_sum_identity": "sum_(R over C) W_R=40*R_C",
+        "zero_species_masks": [
+          21,
+          42
+        ]
+      },
+      {
+        "bridge_channel_mask": 25,
+        "nonzero_species_value": 10,
+        "role_count": 6,
+        "role_indices": [
+          7,
+          16,
+          26,
+          32,
+          42,
+          54
+        ],
+        "tensor_sum_identity": "sum_(R over C) W_R=40*R_C",
+        "zero_species_masks": [
+          25,
+          38
+        ]
+      },
+      {
+        "bridge_channel_mask": 14,
+        "nonzero_species_value": 10,
+        "role_count": 6,
+        "role_indices": [
+          9,
+          14,
+          24,
+          34,
+          43,
+          53
+        ],
+        "tensor_sum_identity": "sum_(R over C) W_R=40*R_C",
+        "zero_species_masks": [
+          14,
+          49
+        ]
+      },
+      {
+        "bridge_channel_mask": 22,
+        "nonzero_species_value": 10,
+        "role_count": 6,
+        "role_indices": [
+          8,
+          15,
+          25,
+          33,
+          44,
+          52
+        ],
+        "tensor_sum_identity": "sum_(R over C) W_R=40*R_C",
+        "zero_species_masks": [
+          22,
+          41
+        ]
+      },
+      {
+        "bridge_channel_mask": 26,
+        "nonzero_species_value": 10,
+        "role_count": 6,
+        "role_indices": [
+          6,
+          17,
+          23,
+          35,
+          45,
+          51
+        ],
+        "tensor_sum_identity": "sum_(R over C) W_R=40*R_C",
+        "zero_species_masks": [
+          26,
+          37
+        ]
+      },
+      {
+        "bridge_channel_mask": 28,
+        "nonzero_species_value": 10,
+        "role_count": 6,
+        "role_indices": [
+          3,
+          13,
+          27,
+          37,
+          47,
+          50
+        ],
+        "tensor_sum_identity": "sum_(R over C) W_R=40*R_C",
+        "zero_species_masks": [
+          28,
+          35
+        ]
+      }
+    ],
+    "positive_frame_entry_values": [
+      "13/4",
+      "7/2",
+      "15/4"
+    ],
+    "row_sum": "405",
+    "same_bridge_channel_entry": "15/2",
+    "status": "EXACT_TREE_BUBBLE_BRIDGE_INCIDENCE_COMPUTED",
+    "tree_channel_masks": [
+      7,
+      11,
+      19,
+      13,
+      21,
+      25,
+      14,
+      22,
+      26,
+      28
+    ]
+  },
+  "verification_commands": [
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/bt_fully_rearranged_bubble_bridge_covariant_block.py --write --check",
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/verify_bt_fully_rearranged_bubble_bridge_covariant_block.py",
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 -m unittest reverse_physics.tests.test_bt_fully_rearranged_bubble_bridge_covariant_block"
+  ]
+}
