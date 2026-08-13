@@ -1,0 +1,128 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-complete-connected-common-born-packet-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "schema_version", "certificate", "question", "answer",
+    "result_kind", "lifecycle_state", "dependency_tags", "assumptions",
+    "provenance", "exact_generic_Choi_witness", "complete_packet_descent",
+    "dressed_source_probability", "disposition", "does_not_establish",
+    "missing_object_ledger", "next_gate", "checks", "verification_commands", "report"
+  ],
+  "properties": {
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-complete-connected-common-born-packet-v1.schema.json"},
+    "schema_version": {"const": 1},
+    "certificate": {"const": "REVERSE_PHYSICS_BT_COMPLETE_CONNECTED_COMMON_BORN_PACKET_V1"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "assumptions": {"type": "array", "minItems": 7, "maxItems": 7, "items": {"$ref": "#/$defs/text"}},
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_commit", "retrieval_date", "inputs", "generated_by", "independent_verifier", "method"],
+      "properties": {
+        "source_commit": {"const": "b48c491d485a6f8f2bad97c6b1e3b03d8e3c2046"},
+        "retrieval_date": {"const": "2026-08-13"},
+        "inputs": {
+          "type": "array", "minItems": 7, "maxItems": 7,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["path", "sha256"],
+            "properties": {"path": {"$ref": "#/$defs/text"}, "sha256": {"$ref": "#/$defs/hash"}}
+          }
+        },
+        "generated_by": {"const": "reverse_physics/bt_complete_connected_common_born_packet.py"},
+        "independent_verifier": {"const": "reverse_physics/verify_bt_complete_connected_common_born_packet.py"},
+        "method": {"$ref": "#/$defs/text"}
+      }
+    },
+    "exact_generic_Choi_witness": {
+      "type": "object", "additionalProperties": false,
+      "required": ["channel_masks", "coefficient_fixture", "kappa_3", "A_6", "A_even", "A_odd", "public_Krein_square", "positive_Hilbert_square", "Born_defect", "status"],
+      "properties": {
+        "channel_masks": {"type": "array", "minItems": 10, "maxItems": 10, "items": {"type": "integer", "minimum": 0, "maximum": 63}},
+        "coefficient_fixture": {"type": "array", "minItems": 10, "maxItems": 10, "items": {"$ref": "#/$defs/rational"}},
+        "kappa_3": {"$ref": "#/$defs/matrix8"},
+        "A_6": {"$ref": "#/$defs/matrix8"},
+        "A_even": {"$ref": "#/$defs/matrix8"},
+        "A_odd": {"$ref": "#/$defs/matrix8"},
+        "public_Krein_square": {"const": "770"},
+        "positive_Hilbert_square": {"const": "770"},
+        "Born_defect": {"const": "0"},
+        "status": {"const": "COMPLETE_TEN_COEFFICIENT_CHOI_IS_FIXED_WITH_ZERO_ODD_PART_AND_ZERO_BORN_DEFECT"}
+      }
+    },
+    "complete_packet_descent": {
+      "type": "object", "additionalProperties": false,
+      "required": ["operator", "channel_rule", "fixed_point_identity", "adjoint_identity", "effect_identity", "Born_defect", "operator_bound", "positive_domain", "effects", "status"],
+      "properties": {
+        "operator": {"const": "A_full,C=16*lambda^4*sum_(B=0)^9(K_B,T tensor R_B)"},
+        "channel_rule": {"$ref": "#/$defs/text"},
+        "fixed_point_identity": {"const": "alpha(A_full,C)=kappa_3 A_full,C kappa_3=A_full,C"},
+        "adjoint_identity": {"const": "A_full,C^sharp=A_full,C*"},
+        "effect_identity": {"const": "E_click^public=A_full,C^sharp A_full,C=A_full,C* A_full,C=E_click^Hilbert"},
+        "Born_defect": {"const": "E_click^public-E_click^Hilbert=0 as an operator"},
+        "operator_bound": {"const": "||A_full,C||^2<=12960*lambda^8*T^2*mu(X)*mu(Y)/d^2"},
+        "positive_domain": {"const": "12960*lambda^8*T^2*mu(X)*mu(Y)/d^2<=1"},
+        "effects": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/text"}},
+        "status": {"const": "ACTUAL_COHERENT_ALL_TEN_CHANNEL_CONNECTED_PACKET_HAS_OPERATOR_LEVEL_COMMON_BORN_DESCENT"}
+      }
+    },
+    "dressed_source_probability": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source", "hard_channel", "exchange_channels", "common_probability", "no_click", "interference", "status"],
+      "properties": {
+        "source": {"$ref": "#/$defs/text"},
+        "hard_channel": {"const": "R_0 u0=0"},
+        "exchange_channels": {"const": "R_B u0=u0/4 for B=1,...,9"},
+        "common_probability": {"const": "q_click^public=q_click^Hilbert=16*lambda^8*||sum_(B=1)^9 K_B,T F||^2"},
+        "no_click": {"const": "q_no=1-q_click"},
+        "interference": {"$ref": "#/$defs/text"},
+        "status": {"const": "COMPLETE_CONNECTED_COHERENT_COMPACT_TREE_PACKET_PROBABILITY_IS_COMMON_BORN_AND_POSITIVE"}
+      }
+    },
+    "disposition": {
+      "type": "object", "additionalProperties": false,
+      "required": ["complete_connected_order_lambda4_graph_type", "actual_all_ten_channel_packet_operator", "complete_connected_public_vs_Hilbert_Born_equivalence", "complete_connected_Born_defect", "coherent_channel_interference", "compact_connected_physical_probability", "disconnected_order_lambda4_spectator_completion", "soft_global_completion", "loops_and_higher_orders", "general_Eq19", "gravity_or_metric_BV_BRST_transfer", "Lorentzian_causal_claim"],
+      "properties": {
+        "complete_connected_order_lambda4_graph_type": {"const": "THREE_TO_THREE_TREE_EXHAUSTIVE"},
+        "actual_all_ten_channel_packet_operator": {"const": "TOTAL_KAPPA_FIXED"},
+        "complete_connected_public_vs_Hilbert_Born_equivalence": {"const": "PROVED_AT_OPERATOR_LEVEL"},
+        "complete_connected_Born_defect": {"const": "ZERO"},
+        "coherent_channel_interference": {"const": "RETAINED"},
+        "compact_connected_physical_probability": {"const": "COEFFICIENT_COMPUTED_AND_POSITIVE_ON_DECLARED_DOMAIN"},
+        "disconnected_order_lambda4_spectator_completion": {"const": "NOT_CONSTRUCTED"},
+        "soft_global_completion": {"const": "NOT_CONSTRUCTED"},
+        "loops_and_higher_orders": {"const": "NOT_CONTROLLED"},
+        "general_Eq19": {"const": "NOT_PROVED"},
+        "gravity_or_metric_BV_BRST_transfer": {"const": "NOT_CONSTRUCTED"},
+        "Lorentzian_causal_claim": {"const": "NOT_ESTABLISHED"}
+      }
+    },
+    "does_not_establish": {"type": "array", "minItems": 11, "maxItems": 11, "items": {"$ref": "#/$defs/text"}},
+    "missing_object_ledger": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"$ref": "#/$defs/text"}},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "checks": {
+      "type": "object", "additionalProperties": false,
+      "required": ["total", "passed", "ok", "failures", "details"],
+      "properties": {
+        "total": {"const": 31}, "passed": {"const": 31}, "ok": {"const": true}, "failures": {"const": []},
+        "details": {"type": "object", "minProperties": 31, "maxProperties": 31, "additionalProperties": {"const": true}}
+      }
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/text"}},
+    "report": {"const": "reverse_physics/reports/bt-complete-connected-common-born-packet.md"}
+  },
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "rational": {"type": "string", "pattern": "^-?[0-9]+(?:/[1-9][0-9]*)?$"},
+    "matrix8": {
+      "type": "array", "minItems": 8, "maxItems": 8,
+      "items": {"type": "array", "minItems": 8, "maxItems": 8, "items": {"$ref": "#/$defs/rational"}}
+    }
+  }
+}
