@@ -1,0 +1,190 @@
+{
+  "answer": "For Y=lambda4 y4+lambda5 y5+lambda6 y6+..., exact expansion gives q10=<y5,y5>+2 Re<y4,y6>. At six external legs and coupling degree six, d=E+2L-2 forces L=1. The four and only four vertex-count classes are (V3,V4,I)=(6,0,6),(4,1,5),(2,2,4),(0,3,3). The fully rearranged support theorem remains order-independent for external component deltas, so all externally disconnected partitions vanish. This does not remove vacuum factors multiplying a connected external block. A complete q10 calculation still requires the renormalized one-loop kernels and counterterms, all components of y5 and y6 from source/detector dressing, normalized vacuum/survival disposition, and a total ghost-kappa audit of the assembled effect. No q10 coefficient or sign is computed here.",
+  "certificate": "REVERSE_PHYSICS_BT_FULLY_REARRANGED_Q10_OBJECT_LEDGER_V1",
+  "checks": {
+    "details": {
+      "Eq19_gravity_causality_open": true,
+      "all_order6_graphs_one_loop": true,
+      "common_Born_q10_not_promoted": true,
+      "event_done": true,
+      "external_disconnected_support_exhausted": true,
+      "external_disconnected_terms_zero": true,
+      "five_required_blocks_listed": true,
+      "four_vertex_solutions": true,
+      "graph_identity": true,
+      "inputs_pinned": true,
+      "lifecycle_classified_only": true,
+      "predecessors_pass": true,
+      "q10_expansion_exact": true,
+      "q9_zero_imported": true,
+      "source_second_order_missing": true,
+      "support_argument_is_order_independent": true,
+      "vacuum_not_silently_deleted": true,
+      "work_active": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 18,
+    "total": 18
+  },
+  "connected_order6_graphs": {
+    "identity": "d_lambda=E+2*L-2",
+    "renormalization": "one-loop distributions require regulator, local counterterm classification, scheme/scale ledger and finite-time packet pairing",
+    "rows": [
+      {
+        "E": 6,
+        "I": 3,
+        "L": 1,
+        "V3": 0,
+        "V4": 3,
+        "d_lambda": 6
+      },
+      {
+        "E": 6,
+        "I": 4,
+        "L": 1,
+        "V3": 2,
+        "V4": 2,
+        "d_lambda": 6
+      },
+      {
+        "E": 6,
+        "I": 5,
+        "L": 1,
+        "V3": 4,
+        "V4": 1,
+        "d_lambda": 6
+      },
+      {
+        "E": 6,
+        "I": 6,
+        "L": 1,
+        "V3": 6,
+        "V4": 0,
+        "d_lambda": 6
+      }
+    ],
+    "status": "FOUR_ONE_LOOP_VERTEX_COUNT_CLASSES_EXHAUSTIVE",
+    "vertex_count_classes": [
+      "V3^6",
+      "V3^4*V4",
+      "V3^2*V4^2",
+      "V4^3"
+    ]
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "disposition": {
+    "Lorentzian_causal_claim": "NOT_ESTABLISHED",
+    "common_Born_q10": "NOT_ESTABLISHED",
+    "connected_one_loop_q10": "MISSING",
+    "external_disconnected_q10": "ZERO_BY_SUPPORT",
+    "general_Eq19": "NOT_PROVED",
+    "gravity_or_metric_BV_BRST_transfer": "NOT_CONSTRUCTED",
+    "q10": "CLASSIFIED_NOT_COMPUTED",
+    "q8": "COMMON_BORN_COEFFICIENT_COMPUTED",
+    "q9": "EXACTLY_ZERO",
+    "source_detector_q10": "MISSING",
+    "vacuum_normalization_q10": "MISSING"
+  },
+  "does_not_establish": [
+    "a q10 value or sign",
+    "renormalized one-loop coefficients",
+    "second-order source or detector projectors",
+    "vacuum cancellation or survival normalization",
+    "common-Born q10",
+    "finite-coupling positivity",
+    "spectator-overlap completion",
+    "Eq. (19)",
+    "gravity/BV--BRST transfer",
+    "Lorentzian causality",
+    "literature priority"
+  ],
+  "exact_probability_decomposition": {
+    "output": "Y=lambda^4*y4+lambda^5*y5+lambda^6*y6+O(lambda^7)",
+    "q10": "<y5,y5>+2*Re<y4,y6>",
+    "q8": "<y4,y4>",
+    "q9": "2*Re<y4,y5>=0",
+    "status": "FIRST_UNRESOLVED_EVEN_COEFFICIENT_DECOMPOSED_EXACTLY"
+  },
+  "lifecycle_state": "CLASSIFIED",
+  "next_gate": "Compute the renormalized V4^3 one-loop six-leg block first: it has the fewest vertices and internal lines among the four exhaustive classes. Pair it with the fully rearranged compact packets, record counterterm/scheme dependence, then add the remaining three loop classes before source/detector and normalization assembly.",
+  "provenance": {
+    "generated_by": "reverse_physics/bt_fully_rearranged_q10_object_ledger.py",
+    "independent_verifier": "reverse_physics/verify_bt_fully_rearranged_q10_object_ledger.py",
+    "inputs": [
+      {
+        "path": "planning/work-items/reverse-physics-bateman-fully-rearranged-q10-object-ledger.json",
+        "sha256": "df840bedb33716eaaf3a94a16a4adedba86848f2b5100bff88cf448a94b72417"
+      },
+      {
+        "path": "planning/events/reverse-physics-bateman-fully-rearranged-q10-object-ledger-DONE-8f4f6cf1.json",
+        "sha256": "83cc436b7e1c30ab18ee13b8b4b763e6c9fc029129c95fbc861f1b7b1fb3921c"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_FULLY_REARRANGED_LAMBDA9_PARITY_SELECTION_V1.json",
+        "sha256": "3675c120b414be2e1e0db8621d6b1624b5bcf0ad6adbef20eb24f0995698e30d"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_FULLY_REARRANGED_COMMON_BORN_PHYSICAL_V1.json",
+        "sha256": "7ade5768a01cc42cf0ef1edfea9c8cf4c52cc716956a7abfc280c1def5611d47"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_FULLY_REARRANGED_PHYSICAL_PACKET_PROBABILITY_V1.json",
+        "sha256": "3790673f55cc7c43b9d2f731da217c0be73b628c169c6e2e9def3ba2a6b07c30"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_SCALAR_DRESSED_SOURCE_FREE_NORMAL_FORM_V1.json",
+        "sha256": "ff0b58bf10ffb940ecc6bf105c02606961cb0bd3fdd13e5710263cbc93de6846"
+      }
+    ],
+    "method": "Exact symbolic coefficient extraction and exhaustive nonnegative integer vertex-count enumeration; content-pinned support and parity imports.",
+    "retrieval_date": "2026-08-13",
+    "source_commit": "8f4f6cf116fce8efe8f23942ebb9efd6c8cfccb6"
+  },
+  "question": "What complete set of objects must be computed before the first unresolved fully rearranged BT probability coefficient q10 can be called physical and common-Born?",
+  "report": "reverse_physics/reports/bt-fully-rearranged-q10-object-ledger.md",
+  "required_blocks": [
+    {
+      "content": "four one-loop vertex-count classes plus symmetry factors, finite-time kernels and local counterterms",
+      "object": "renormalized connected six-leg order-six kernel",
+      "status": "MISSING"
+    },
+    {
+      "content": "T5 psi0 + T4 psi1 + first covariant detector correction; its norm square enters q10",
+      "object": "complete order-five output y5",
+      "status": "CLASSIFIED_NOT_COMPUTED"
+    },
+    {
+      "content": "T6 psi0 + T5 psi1 + T4 psi2 plus first/second detector corrections",
+      "object": "complete order-six output y6",
+      "status": "MISSING"
+    },
+    {
+      "content": "vacuum factors are not removed by external support and require normalized finite-time evolution/cumulant disposition",
+      "object": "vacuum and normalization block",
+      "status": "MISSING"
+    },
+    {
+      "content": "test the complete q10 effect coefficient, not individual graph pieces, for public/Hilbert Born equality",
+      "object": "total ghost-kappa audit",
+      "status": "MISSING"
+    }
+  ],
+  "result_kind": "exact perturbative and graph-topological object classification for the fully rearranged q10 coefficient",
+  "schema": "reverse_physics/schema/reverse-physics-bt-fully-rearranged-q10-object-ledger-v1.schema.json",
+  "schema_version": 1,
+  "support_disposition": {
+    "derivatives": "distributional derivatives do not enlarge support",
+    "external_partitions": "all 202 disconnected external set partitions remain off the fully rearranged packet support at every perturbative order",
+    "status": "EXTERNAL_DISCONNECTED_ZERO_VACUUM_NORMALIZATION_OPEN",
+    "vacuum_components": "not decided by external support; must be cancelled or retained through normalized evolution/cumulants"
+  },
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_fully_rearranged_q10_object_ledger.py --write --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_fully_rearranged_q10_object_ledger.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_fully_rearranged_q10_object_ledger"
+  ]
+}
