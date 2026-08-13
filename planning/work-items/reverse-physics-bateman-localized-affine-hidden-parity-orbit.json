@@ -1,0 +1,32 @@
+{
+  "id": "sf:program/work/reverse-physics-bateman-localized-affine-hidden-parity-orbit",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "reverse-physics",
+    "state": "ACTIVE",
+    "objective": "Construct or obstruct the F-localized on-shell hidden-parity escape from the standard Bateman--Turok Eq. 19 squeeze obstruction, including its background orbit, linearized involution, perturbative-vacuum limit and source-sheet interpretation.",
+    "depends_on": [
+      "REVERSE_PHYSICS_BT_PERTURBATIVE_GHOST_PARITY_UNIT_OBSTRUCTION_V1",
+      "REVERSE_PHYSICS_BT_STANDARD_CHARACTERISTIC_EQ19_SQUEEZE_INHERITANCE_V1"
+    ],
+    "activates": [
+      "a same-action derivation or refutation of the parity-conjugate sheet",
+      "the correct representation in which to test stationarity and asymptotic Eq. 19",
+      "a disposition of the localized and singular escape routes"
+    ],
+    "current_gate": "Work on the affine on-shell charts phi_v=v.x+c with F=lambda v^2 nonzero. Derive hidden parity, its exact off-shell defect, the linearized parity intertwiners between v and -v, and the v-to-zero limit on ordinary and Jordan wave packets.",
+    "stop_condition": "Certify whether localization supplies ghost parity within one original-source representation, only on a two-background orbit completion, or not at all; explicitly decide whether that completion limits to the public perturbative vacuum.",
+    "forbid": "no on-shell quotient called an off-shell projector algebra; no affine background pair called a new field or dimension; no measure-zero momentum slice called a dense asymptotic domain; no singular v-to-zero limit called the public Eq. 19; no scalar result transferred to gravity, BV-BRST or LORENTZIAN-CAUSAL physics",
+    "allowed_paths": [
+      "reverse_physics/",
+      "planning/work-items/reverse-physics-bateman-localized-affine-hidden-parity-orbit.json",
+      "planning/events/",
+      "paper/05-interaction-obstructions.tex",
+      "paper/05-interaction-obstructions.pdf",
+      "paper/06-einstein-weyl-interaction-obstructions.tex",
+      "paper/06-einstein-weyl-interaction-obstructions.pdf"
+    ],
+    "resource_hint": "Use F=Box(phi)+lambda(dphi)^2 and E=Box(F)-2lambda d_mu(F d^mu phi). The exact localized identity is F(h phi)-F=E/(lambda F). Around phi_v=v.x+c, put f0=lambda v^2, L_v=Box+2lambda v.d and T_v=-1+L_v/(lambda f0). Check T_-v T_v-1=E_v^(1)/(lambda f0)^2 and test the v-to-zero Fourier multiplier on both massless and Jordan jets."
+  }
+}

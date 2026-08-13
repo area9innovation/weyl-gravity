@@ -1,0 +1,495 @@
+{
+  "Eq19_and_physical_disposition": {
+    "arbitrary_nonaffine_localized_background": "NOT_CLASSIFIED",
+    "arbitrary_singular_or_nonlocal_CCR_map": "NOT_CLASSIFIED",
+    "full_public_Eq19": "NOT_PROVED",
+    "localized_affine_same_action_completion": "CONSTRUCTED_ON_TWO_BACKGROUND_ON_SHELL_QUOTIENT",
+    "off_shell_projector_identity": "NOT_CONSTRUCTED",
+    "physical_probability": "SELECTED_ZERO_BACKGROUND_Q10_REMAINS_VALID_BUT_SEPARATE",
+    "public_zero_vacuum_affiliation": "OBSTRUCTED_BY_SINGULAR_V_TO_ZERO_LIMIT_ON_GENERIC_PACKETS_AND_JORDAN_JETS",
+    "regular_zero_vacuum_one_sheet": "REFUTED_BY_PREDECESSOR",
+    "second_sheet_status": "DERIVED_AS_PARITY_CONJUGATE_BACKGROUND_REPRESENTATION_NOT_AS_A_NEW_FIELD",
+    "standard_projector_q10_comparison": "NOT_TRANSFERABLE_FROM_THE_AFFINE_COMPLETION",
+    "time_independent_asymptotic_affine_projector": "NOT_CONSTRUCTED"
+  },
+  "affine_background_orbit": {
+    "Lorentz_boundary": "a nonzero v selects its stabilizer and is not the Lorentz-invariant perturbative vacuum",
+    "background": "phi_v(x)=v.x+c",
+    "conclusion": "LOCALIZED_HIDDEN_PARITY_REQUIRES_TWO_BACKGROUND_REPRESENTATIONS",
+    "equation_of_motion": "E(phi_v)=0",
+    "field_strength": "f0=lambda v^2",
+    "fixed_chart_test": "v=-v implies v=0, which gives f0=0 and leaves the localized algebra",
+    "homogeneity": "translations change phi_v only by the exact global shift symmetry",
+    "localized_condition": "f0!=0",
+    "orbit": [
+      "(v,c)",
+      "(-v,-c+lambda^-1 log(f0))"
+    ],
+    "parity_image": "h(phi_v)=phi_-v+c_h with c_h=-c+lambda^-1 log(f0)",
+    "real_log_condition": "f0>0"
+  },
+  "answer": "It generates a precise two-background completion inside the same classical scalar action, but it cannot return regularly to the public zero background. With F=Box(phi)+lambda(dphi)^2 and E=Box(F)-2lambda d_mu(F d^mu phi), the localized hidden parity h(phi)=-phi+lambda^-1 log(F) obeys the exact off-shell identity F(h phi)-F=E/(lambda F), hence preserves F and squares to one only on the E=0 quotient. Every affine solution phi_v=v.x+c with f0=lambda v^2 nonzero lies in the localized chart, and h sends it to phi_-v with shifted constant. No nonzero localized affine chart is parity fixed, so the symmetry is represented on the direct sum of the v and -v background sectors. Linearizing gives L_v=Box+2lambda v.d, T_v=-1+L_v/(lambda f0), and T_-v T_v-1=E_v^(1)/(lambda f0)^2 exactly. Thus the two-sector parity is involutive on the linearized on-shell quotient and derives the two sheets from two representations of the original action rather than a new field. However, for v=epsilon u the Fourier multiplier diverges as epsilon^-2 off shell and epsilon^-1 on generic massless modes; the only finite massless slice u.k=0 has measure zero. The nilpotent Jordan jet diverges as epsilon^-2 as well. There is no strong limit on a fixed dense packet/Jordan core as v tends to zero, so this affine completion does not affiliate the public zero-vacuum projector or its q10 coefficient.",
+  "assumptions": [
+    "the perfect-square scalar action S=-1/2 integral F(phi)^2",
+    "F(phi)=Box(phi)+lambda(dphi)^2 and its exact Euler--Lagrange equation E=0",
+    "localization at F and a chosen logarithm branch",
+    "a real affine chart with f0=lambda v^2 nonzero, and f0 positive when a real logarithm is required",
+    "constant-coefficient linearization around phi_v=v.x+c",
+    "commuting Fourier symbols Box and v.d",
+    "the perturbative zero-background carrier contains generic massless packets and the double-pole Jordan jet",
+    "strong affiliation requires convergence on one fixed dense packet core rather than an epsilon-dependent measure-zero slice"
+  ],
+  "certificate": "REVERSE_PHYSICS_BT_LOCALIZED_AFFINE_HIDDEN_PARITY_ORBIT_V1",
+  "checks": {
+    "items": {
+      "Euler_Lagrange_symbol_is_exact": true,
+      "F_definition_is_exact": true,
+      "Jordan_fixture_retains_nilpotent_double_pole_jet": true,
+      "Jordan_norms_diverge_monotonically": true,
+      "affine_background_has_F0_lambda_v_squared": true,
+      "affine_background_satisfies_EOM": true,
+      "affine_orbit_breaks_Lorentz_to_v_stabilizer": true,
+      "affine_orbit_changes_background_representation": true,
+      "affine_orbit_uses_same_scalar_action": true,
+      "arbitrary_singular_nonaffine_routes_remain_open": true,
+      "gravity_and_Lorentzian_boundaries_remain_open": true,
+      "hidden_parity_flips_affine_gradient": true,
+      "inputs_are_content_pinned": true,
+      "linearized_EOM_operator_is_exact": true,
+      "linearized_F_operator_is_L_plus": true,
+      "linearized_composition_is_EOM_quotient": true,
+      "linearized_hidden_parity_operator_is_exact": true,
+      "localized_F_transform_identity_is_exact": true,
+      "massless_fourier_norms_diverge_monotonically": true,
+      "no_nonzero_localized_affine_fixed_chart": true,
+      "no_strong_limit_on_fixed_dense_packet_core": true,
+      "off_shell_hidden_parity_defect_is_E_over_lambda_F": true,
+      "offshell_fourier_norms_diverge_monotonically": true,
+      "on_shell_F_is_invariant": true,
+      "on_shell_hidden_parity_is_involutive": true,
+      "orthogonal_massless_slice_has_finite_minus_one_limit": true,
+      "orthogonal_massless_slice_is_measure_zero_not_dense": true,
+      "predecessors_pass": true,
+      "public_source_defers_Eq19": true,
+      "q10_zero_background_transfer_is_not_made": true,
+      "reverse_linearized_composition_is_same_EOM_quotient": true,
+      "scaled_massless_multiplier_has_inverse_epsilon": true,
+      "scaled_multiplier_has_inverse_epsilon_squared_offshell": true,
+      "six_exact_Jordan_rows": true,
+      "six_exact_fourier_rows": true,
+      "standard_predecessor_requires_source_derivation": true,
+      "two_background_parity_orbit_is_involutive_on_shell": true,
+      "unit_predecessor_left_localized_chart_open": true
+    },
+    "ok": true,
+    "passed": 38,
+    "total": 38
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "the public zero-vacuum Bateman--Turok Eq. (19)",
+    "an off-shell hidden-parity automorphism after localization",
+    "a fixed-background one-sheet implementation of hidden parity",
+    "a no-go for nonaffine localized backgrounds",
+    "a no-go for arbitrary singular, nonlocal, unbounded or non-Fock CCR correspondences",
+    "a time-independent affine asymptotic projector or continuum generalized-Born trace",
+    "transport of the completed zero-background q10 coefficient to the affine sectors",
+    "finite-coupling or all-channel probability",
+    "a metric Weyl-gravity, BV--BRST, QME or LORENTZIAN-CAUSAL theorem",
+    "literature priority"
+  ],
+  "exact_localized_identity": {
+    "Euler_Lagrange_equation": "E=Box(F)-2lambda d_mu(F d^mu phi)=0",
+    "field_strength": "F=Box(phi)+lambda(dphi)^2",
+    "hidden_parity": "h(phi)=-phi+lambda^-1 log(F)",
+    "identity": "F(h(phi))-F(phi)=E(phi)/(lambda F(phi))",
+    "localization_boundary": "F must be invertible and a log branch chosen",
+    "off_shell_consequence": "the map is not an involutive automorphism of the off-shell projector algebra",
+    "on_shell_consequence": "F(h(phi))=F(phi) and h^2(phi)=phi",
+    "second_iterate": "h^2(phi)-phi=lambda^-1 log(1+E/(lambda F^2))"
+  },
+  "lifecycle_state": "CLASSIFIED",
+  "linearized_on_shell_intertwiner": {
+    "composition": "T_-v T_v-1=E_v^(1)/a^2 and T_v T_-v-1=E_-v^(1)/a^2",
+    "field_strength_variation": "delta F=L_v eta",
+    "interpretation": "the parity double is the orbit of two background representations of the same source action",
+    "linearized_equation": "E_v^(1)=[L_-v L_v-2aD]eta=[D^2-4lambda^2 V^2-2lambda^2 v^2 D]eta",
+    "operators": {
+      "D": "Box",
+      "L_-v": "D-2lambda V",
+      "L_v": "D+2lambda V",
+      "V": "v.d",
+      "a": "lambda f0=lambda^2 v^2"
+    },
+    "parity_tangent": "T_v=-1+L_v/a",
+    "quotient_identity": "K_aff^2=1 on ker(E_v^(1)) direct-sum ker(E_-v^(1))",
+    "two_sector_operator": "K_aff(eta_v,eta_-v)=(T_-v eta_-v,T_v eta_v)"
+  },
+  "next_gate": "Classify whether any nonaffine on-shell background with invertible F is both asymptotically stationary and fixed by hidden parity up to the exact shift/Poincare symmetries. A pass could avoid the two-background direct sum; a no-go would make parity-orbit doubling necessary throughout the localized source theory. Independently, the physical route should seek an all-time limit of the already positive selected zero-background packet process rather than transfer q10 through the singular affine limit.",
+  "provenance": {
+    "external_source": {
+      "arxiv": "2607.00096v1",
+      "authors": "Sam Bateman and Neil Turok",
+      "equations": [
+        "1",
+        "15",
+        "16",
+        "19"
+      ],
+      "last_checked": "2026-08-13",
+      "title": "Escape from Ostrogradsky via Hidden Ghost Parity",
+      "url": "https://arxiv.org/abs/2607.00096"
+    },
+    "generated_by": "reverse_physics/bt_localized_affine_hidden_parity_orbit.py",
+    "independent_verifier": "reverse_physics/verify_bt_localized_affine_hidden_parity_orbit.py",
+    "input_hashes": {
+      "planning/events/reverse-physics-bateman-localized-affine-hidden-parity-orbit-DONE-f87e707c.json": "82ca9bd5faa1bc9c19ad7809df8bf16d561ce5621589098e7a5ed50c0956dcda",
+      "planning/work-items/reverse-physics-bateman-localized-affine-hidden-parity-orbit.json": "117a8fe5430a27fb48f8e501fe128b6c258404e525c82e925120cde3a3b27c70",
+      "reverse_physics/certificates/REVERSE_PHYSICS_BT_FULLY_REARRANGED_Q10_SELECTED_PACKET_ASSEMBLY_V1.json": "cd478d16440161adef9dcfde172359df3fdbe6abb5356043a29c77c80b718a0e",
+      "reverse_physics/certificates/REVERSE_PHYSICS_BT_PERTURBATIVE_GHOST_PARITY_UNIT_OBSTRUCTION_V1.json": "ec50a99c058632ab3252e9f9bcbab9626f714f791291499c42827ec46f8e4f81",
+      "reverse_physics/certificates/REVERSE_PHYSICS_BT_STANDARD_CHARACTERISTIC_EQ19_SQUEEZE_INHERITANCE_V1.json": "3a11135e76857212c92ca1797dd0dd78dfa4e3e1fb68a3e3462cfdc958075d45",
+      "reverse_physics/data/bateman_turok_hamiltonian_source_v1.json": "55ff3f989f1c5ac9bcc0688ad9c43721c22b5889c43da50fce43352c18be8fe7"
+    },
+    "method": "Exact differential-symbol reduction of the localized hidden parity, exact commuting constant-coefficient operator algebra on affine backgrounds, rational Fourier and nilpotent-Jordan scaling fixtures, and a representation-level source-sheet audit.",
+    "source_commit": "f87e707cd766e8d14243f2571888def3b5669953"
+  },
+  "question": "Does F-localization generate the parity-conjugate sheet required by the standard Eq. (19) projector from the original perfect-square scalar theory, and can that localized completion return to the public perturbative vacuum?",
+  "report": "reverse_physics/reports/bt-localized-affine-hidden-parity-orbit.md",
+  "result_kind": "exact localized affine hidden-parity orbit theorem and perturbative-vacuum non-affiliation",
+  "schema": "reverse_physics/schema/reverse-physics-bt-localized-affine-hidden-parity-orbit-v1.schema.json",
+  "schema_version": 1,
+  "verification_commands": [
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/bt_localized_affine_hidden_parity_orbit.py --write --check",
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/verify_bt_localized_affine_hidden_parity_orbit.py",
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 -m unittest -v reverse_physics.tests.test_bt_localized_affine_hidden_parity_orbit"
+  ],
+  "zero_background_limit": {
+    "Jordan_fixture": {
+      "Box_matrix": [
+        [
+          "0",
+          "1"
+        ],
+        [
+          "0",
+          "0"
+        ]
+      ],
+      "T_epsilon": "-I+Box/epsilon^2 at lambda=u^2=1",
+      "conclusion": "NO_LIMIT_ON_THE_DOUBLE_POLE_JORDAN_JET",
+      "norm_growth": "Frobenius norm squared=2+epsilon^-4",
+      "rows": [
+        {
+          "T_matrix": [
+            [
+              "-1",
+              "1"
+            ],
+            [
+              "0",
+              "-1"
+            ]
+          ],
+          "composition_defect_N_coefficient": {
+            "denominator": 1,
+            "numerator": -2
+          },
+          "epsilon": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "frobenius_norm_squared": {
+            "denominator": 1,
+            "numerator": 3
+          },
+          "n": 1
+        },
+        {
+          "T_matrix": [
+            [
+              "-1",
+              "4"
+            ],
+            [
+              "0",
+              "-1"
+            ]
+          ],
+          "composition_defect_N_coefficient": {
+            "denominator": 1,
+            "numerator": -8
+          },
+          "epsilon": {
+            "denominator": 2,
+            "numerator": 1
+          },
+          "frobenius_norm_squared": {
+            "denominator": 1,
+            "numerator": 18
+          },
+          "n": 2
+        },
+        {
+          "T_matrix": [
+            [
+              "-1",
+              "9"
+            ],
+            [
+              "0",
+              "-1"
+            ]
+          ],
+          "composition_defect_N_coefficient": {
+            "denominator": 1,
+            "numerator": -18
+          },
+          "epsilon": {
+            "denominator": 3,
+            "numerator": 1
+          },
+          "frobenius_norm_squared": {
+            "denominator": 1,
+            "numerator": 83
+          },
+          "n": 3
+        },
+        {
+          "T_matrix": [
+            [
+              "-1",
+              "16"
+            ],
+            [
+              "0",
+              "-1"
+            ]
+          ],
+          "composition_defect_N_coefficient": {
+            "denominator": 1,
+            "numerator": -32
+          },
+          "epsilon": {
+            "denominator": 4,
+            "numerator": 1
+          },
+          "frobenius_norm_squared": {
+            "denominator": 1,
+            "numerator": 258
+          },
+          "n": 4
+        },
+        {
+          "T_matrix": [
+            [
+              "-1",
+              "25"
+            ],
+            [
+              "0",
+              "-1"
+            ]
+          ],
+          "composition_defect_N_coefficient": {
+            "denominator": 1,
+            "numerator": -50
+          },
+          "epsilon": {
+            "denominator": 5,
+            "numerator": 1
+          },
+          "frobenius_norm_squared": {
+            "denominator": 1,
+            "numerator": 627
+          },
+          "n": 5
+        },
+        {
+          "T_matrix": [
+            [
+              "-1",
+              "36"
+            ],
+            [
+              "0",
+              "-1"
+            ]
+          ],
+          "composition_defect_N_coefficient": {
+            "denominator": 1,
+            "numerator": -72
+          },
+          "epsilon": {
+            "denominator": 6,
+            "numerator": 1
+          },
+          "frobenius_norm_squared": {
+            "denominator": 1,
+            "numerator": 1298
+          },
+          "n": 6
+        }
+      ],
+      "u_dot_d_matrix": [
+        [
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0"
+        ]
+      ]
+    },
+    "density_boundary": "the finite slice is measure zero in the massless momentum measure and supports no nonzero L2 packet subspace",
+    "exact_fourier_fixtures": [
+      {
+        "epsilon": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "massless_k2_zero_u_dot_k_one_modulus_squared": {
+          "denominator": 1,
+          "numerator": 5
+        },
+        "massless_k2_zero_u_dot_k_zero_multiplier": {
+          "denominator": 1,
+          "numerator": -1
+        },
+        "n": 1,
+        "offshell_k2_one_u_dot_k_zero_multiplier": {
+          "denominator": 1,
+          "numerator": -2
+        },
+        "offshell_modulus_squared": {
+          "denominator": 1,
+          "numerator": 4
+        }
+      },
+      {
+        "epsilon": {
+          "denominator": 2,
+          "numerator": 1
+        },
+        "massless_k2_zero_u_dot_k_one_modulus_squared": {
+          "denominator": 1,
+          "numerator": 17
+        },
+        "massless_k2_zero_u_dot_k_zero_multiplier": {
+          "denominator": 1,
+          "numerator": -1
+        },
+        "n": 2,
+        "offshell_k2_one_u_dot_k_zero_multiplier": {
+          "denominator": 1,
+          "numerator": -5
+        },
+        "offshell_modulus_squared": {
+          "denominator": 1,
+          "numerator": 25
+        }
+      },
+      {
+        "epsilon": {
+          "denominator": 3,
+          "numerator": 1
+        },
+        "massless_k2_zero_u_dot_k_one_modulus_squared": {
+          "denominator": 1,
+          "numerator": 37
+        },
+        "massless_k2_zero_u_dot_k_zero_multiplier": {
+          "denominator": 1,
+          "numerator": -1
+        },
+        "n": 3,
+        "offshell_k2_one_u_dot_k_zero_multiplier": {
+          "denominator": 1,
+          "numerator": -10
+        },
+        "offshell_modulus_squared": {
+          "denominator": 1,
+          "numerator": 100
+        }
+      },
+      {
+        "epsilon": {
+          "denominator": 4,
+          "numerator": 1
+        },
+        "massless_k2_zero_u_dot_k_one_modulus_squared": {
+          "denominator": 1,
+          "numerator": 65
+        },
+        "massless_k2_zero_u_dot_k_zero_multiplier": {
+          "denominator": 1,
+          "numerator": -1
+        },
+        "n": 4,
+        "offshell_k2_one_u_dot_k_zero_multiplier": {
+          "denominator": 1,
+          "numerator": -17
+        },
+        "offshell_modulus_squared": {
+          "denominator": 1,
+          "numerator": 289
+        }
+      },
+      {
+        "epsilon": {
+          "denominator": 5,
+          "numerator": 1
+        },
+        "massless_k2_zero_u_dot_k_one_modulus_squared": {
+          "denominator": 1,
+          "numerator": 101
+        },
+        "massless_k2_zero_u_dot_k_zero_multiplier": {
+          "denominator": 1,
+          "numerator": -1
+        },
+        "n": 5,
+        "offshell_k2_one_u_dot_k_zero_multiplier": {
+          "denominator": 1,
+          "numerator": -26
+        },
+        "offshell_modulus_squared": {
+          "denominator": 1,
+          "numerator": 676
+        }
+      },
+      {
+        "epsilon": {
+          "denominator": 6,
+          "numerator": 1
+        },
+        "massless_k2_zero_u_dot_k_one_modulus_squared": {
+          "denominator": 1,
+          "numerator": 145
+        },
+        "massless_k2_zero_u_dot_k_zero_multiplier": {
+          "denominator": 1,
+          "numerator": -1
+        },
+        "n": 6,
+        "offshell_k2_one_u_dot_k_zero_multiplier": {
+          "denominator": 1,
+          "numerator": -37
+        },
+        "offshell_modulus_squared": {
+          "denominator": 1,
+          "numerator": 1369
+        }
+      }
+    ],
+    "finite_massless_slice": "k^2=0 and u.k=0 gives T_epsilon=-1",
+    "generic_massless": "for k^2=0, epsilon T_epsilon tends to 2i(u.k)/(lambda u^2), so u.k!=0 diverges as epsilon^-1",
+    "generic_offshell": "epsilon^2 T_epsilon tends to -k^2/(lambda^2 u^2), so nonzero k^2 diverges as epsilon^-2",
+    "multiplier": "T_epsilon(k)=-1+[-k^2+2i lambda epsilon (u.k)]/[lambda^2 epsilon^2 u^2]",
+    "packet_conclusion": "NO_STRONG_LIMIT_ON_A_FIXED_DENSE_MASSLESS_PACKET_CORE",
+    "scaling": "v=epsilon u with u^2!=0"
+  }
+}

@@ -1,0 +1,160 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-localized-affine-hidden-parity-orbit-v1.schema.json",
+  "title": "BT localized affine hidden-parity orbit certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "schema_version",
+    "certificate",
+    "question",
+    "answer",
+    "result_kind",
+    "lifecycle_state",
+    "dependency_tags",
+    "assumptions",
+    "exact_localized_identity",
+    "affine_background_orbit",
+    "linearized_on_shell_intertwiner",
+    "zero_background_limit",
+    "Eq19_and_physical_disposition",
+    "does_not_establish",
+    "next_gate",
+    "provenance",
+    "checks",
+    "verification_commands",
+    "report"
+  ],
+  "properties": {
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-localized-affine-hidden-parity-orbit-v1.schema.json"},
+    "schema_version": {"const": 1},
+    "certificate": {"const": "REVERSE_PHYSICS_BT_LOCALIZED_AFFINE_HIDDEN_PARITY_ORBIT_V1"},
+    "question": {"type": "string", "minLength": 1},
+    "answer": {"type": "string", "minLength": 1},
+    "result_kind": {"const": "exact localized affine hidden-parity orbit theorem and perturbative-vacuum non-affiliation"},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "assumptions": {"type": "array", "minItems": 8, "items": {"type": "string", "minLength": 1}},
+    "exact_localized_identity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["field_strength", "Euler_Lagrange_equation", "hidden_parity", "identity", "second_iterate", "on_shell_consequence", "off_shell_consequence", "localization_boundary"],
+      "properties": {
+        "field_strength": {"const": "F=Box(phi)+lambda(dphi)^2"},
+        "Euler_Lagrange_equation": {"const": "E=Box(F)-2lambda d_mu(F d^mu phi)=0"},
+        "hidden_parity": {"const": "h(phi)=-phi+lambda^-1 log(F)"},
+        "identity": {"const": "F(h(phi))-F(phi)=E(phi)/(lambda F(phi))"},
+        "second_iterate": {"const": "h^2(phi)-phi=lambda^-1 log(1+E/(lambda F^2))"},
+        "on_shell_consequence": {"type": "string", "minLength": 1},
+        "off_shell_consequence": {"type": "string", "minLength": 1},
+        "localization_boundary": {"type": "string", "minLength": 1}
+      }
+    },
+    "affine_background_orbit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["background", "field_strength", "equation_of_motion", "localized_condition", "real_log_condition", "parity_image", "orbit", "fixed_chart_test", "homogeneity", "Lorentz_boundary", "conclusion"],
+      "properties": {
+        "background": {"const": "phi_v(x)=v.x+c"},
+        "field_strength": {"const": "f0=lambda v^2"},
+        "equation_of_motion": {"const": "E(phi_v)=0"},
+        "localized_condition": {"const": "f0!=0"},
+        "real_log_condition": {"const": "f0>0"},
+        "parity_image": {"type": "string", "minLength": 1},
+        "orbit": {"const": ["(v,c)", "(-v,-c+lambda^-1 log(f0))"]},
+        "fixed_chart_test": {"type": "string", "minLength": 1},
+        "homogeneity": {"type": "string", "minLength": 1},
+        "Lorentz_boundary": {"type": "string", "minLength": 1},
+        "conclusion": {"const": "LOCALIZED_HIDDEN_PARITY_REQUIRES_TWO_BACKGROUND_REPRESENTATIONS"}
+      }
+    },
+    "linearized_on_shell_intertwiner": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["operators", "field_strength_variation", "linearized_equation", "parity_tangent", "composition", "two_sector_operator", "quotient_identity", "interpretation"],
+      "properties": {
+        "operators": {"type": "object", "required": ["D", "V", "L_v", "L_-v", "a"]},
+        "field_strength_variation": {"const": "delta F=L_v eta"},
+        "linearized_equation": {"const": "E_v^(1)=[L_-v L_v-2aD]eta=[D^2-4lambda^2 V^2-2lambda^2 v^2 D]eta"},
+        "parity_tangent": {"const": "T_v=-1+L_v/a"},
+        "composition": {"const": "T_-v T_v-1=E_v^(1)/a^2 and T_v T_-v-1=E_-v^(1)/a^2"},
+        "two_sector_operator": {"type": "string", "minLength": 1},
+        "quotient_identity": {"type": "string", "minLength": 1},
+        "interpretation": {"type": "string", "minLength": 1}
+      }
+    },
+    "zero_background_limit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["scaling", "multiplier", "generic_offshell", "generic_massless", "finite_massless_slice", "density_boundary", "packet_conclusion", "exact_fourier_fixtures", "Jordan_fixture"],
+      "properties": {
+        "scaling": {"const": "v=epsilon u with u^2!=0"},
+        "multiplier": {"type": "string", "minLength": 1},
+        "generic_offshell": {"type": "string", "minLength": 1},
+        "generic_massless": {"type": "string", "minLength": 1},
+        "finite_massless_slice": {"type": "string", "minLength": 1},
+        "density_boundary": {"type": "string", "minLength": 1},
+        "packet_conclusion": {"const": "NO_STRONG_LIMIT_ON_A_FIXED_DENSE_MASSLESS_PACKET_CORE"},
+        "exact_fourier_fixtures": {"type": "array", "minItems": 6, "maxItems": 6},
+        "Jordan_fixture": {
+          "type": "object",
+          "required": ["Box_matrix", "u_dot_d_matrix", "T_epsilon", "norm_growth", "rows", "conclusion"],
+          "properties": {
+            "Box_matrix": {"const": [["0", "1"], ["0", "0"]]},
+            "u_dot_d_matrix": {"const": [["0", "0"], ["0", "0"]]},
+            "norm_growth": {"const": "Frobenius norm squared=2+epsilon^-4"},
+            "rows": {"type": "array", "minItems": 6, "maxItems": 6},
+            "conclusion": {"const": "NO_LIMIT_ON_THE_DOUBLE_POLE_JORDAN_JET"}
+          }
+        }
+      }
+    },
+    "Eq19_and_physical_disposition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["regular_zero_vacuum_one_sheet", "localized_affine_same_action_completion", "second_sheet_status", "off_shell_projector_identity", "public_zero_vacuum_affiliation", "standard_projector_q10_comparison", "time_independent_asymptotic_affine_projector", "arbitrary_nonaffine_localized_background", "arbitrary_singular_or_nonlocal_CCR_map", "full_public_Eq19", "physical_probability"],
+      "properties": {
+        "regular_zero_vacuum_one_sheet": {"const": "REFUTED_BY_PREDECESSOR"},
+        "localized_affine_same_action_completion": {"const": "CONSTRUCTED_ON_TWO_BACKGROUND_ON_SHELL_QUOTIENT"},
+        "second_sheet_status": {"const": "DERIVED_AS_PARITY_CONJUGATE_BACKGROUND_REPRESENTATION_NOT_AS_A_NEW_FIELD"},
+        "off_shell_projector_identity": {"const": "NOT_CONSTRUCTED"},
+        "public_zero_vacuum_affiliation": {"const": "OBSTRUCTED_BY_SINGULAR_V_TO_ZERO_LIMIT_ON_GENERIC_PACKETS_AND_JORDAN_JETS"},
+        "standard_projector_q10_comparison": {"const": "NOT_TRANSFERABLE_FROM_THE_AFFINE_COMPLETION"},
+        "time_independent_asymptotic_affine_projector": {"const": "NOT_CONSTRUCTED"},
+        "arbitrary_nonaffine_localized_background": {"const": "NOT_CLASSIFIED"},
+        "arbitrary_singular_or_nonlocal_CCR_map": {"const": "NOT_CLASSIFIED"},
+        "full_public_Eq19": {"const": "NOT_PROVED"},
+        "physical_probability": {"const": "SELECTED_ZERO_BACKGROUND_Q10_REMAINS_VALID_BUT_SEPARATE"}
+      }
+    },
+    "does_not_establish": {"type": "array", "minItems": 10, "items": {"type": "string", "minLength": 1}},
+    "next_gate": {"type": "string", "minLength": 1},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_commit", "input_hashes", "external_source", "method", "generated_by", "independent_verifier"],
+      "properties": {
+        "source_commit": {"const": "f87e707cd766e8d14243f2571888def3b5669953"},
+        "input_hashes": {"type": "object", "minProperties": 6, "additionalProperties": {"pattern": "^[0-9a-f]{64}$"}},
+        "external_source": {"type": "object", "required": ["title", "authors", "arxiv", "url", "equations", "last_checked"]},
+        "method": {"type": "string", "minLength": 1},
+        "generated_by": {"const": "reverse_physics/bt_localized_affine_hidden_parity_orbit.py"},
+        "independent_verifier": {"const": "reverse_physics/verify_bt_localized_affine_hidden_parity_orbit.py"}
+      }
+    },
+    "checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ok", "passed", "total", "items"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"type": "integer", "minimum": 38},
+        "total": {"type": "integer", "minimum": 38},
+        "items": {"type": "object", "minProperties": 38, "additionalProperties": {"const": true}}
+      }
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "items": {"type": "string", "minLength": 1}},
+    "report": {"const": "reverse_physics/reports/bt-localized-affine-hidden-parity-orbit.md"}
+  }
+}
