@@ -290,7 +290,7 @@ Paper VI has 71 pages, 728,776 bytes and SHA-256
 `675d0341d877dd9b7897f2dd24b71c66d3d7b56d9738457aa7ade5e238e09232`.
 There are no undefined references; every overfull-box warning lies outside
 the new passages.  The certificate SHA-256 is
-`bc92ff6a8f04b67148431d921de00439a0bc91f0494af4912b1f4b5c8d7bd70a`.
+`3a11135e76857212c92ca1797dd0dd78dfa4e3e1fb68a3e3462cfdc958075d45`.
 
 CLOSE-OUT: DONE -- the actual normalized three-particle characteristic
 projector inherits the public one-sheet Eq. (19) obstruction, while a canonical
