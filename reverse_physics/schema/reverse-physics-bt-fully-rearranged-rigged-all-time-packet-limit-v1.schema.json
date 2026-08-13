@@ -1,0 +1,309 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-fully-rearranged-rigged-all-time-packet-limit-v1.schema.json",
+  "title": "BT fully rearranged rigged all-time packet-limit certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "schema_version",
+    "certificate",
+    "question",
+    "answer",
+    "dependency_tags",
+    "lifecycle_state",
+    "result_kind",
+    "exact_chart_phase_audit",
+    "half_line_distribution",
+    "rigged_packet_limit",
+    "operator_and_claim_boundary",
+    "assumptions",
+    "does_not_establish",
+    "next_gate",
+    "provenance",
+    "checks",
+    "verification_commands",
+    "report"
+  ],
+  "properties": {
+    "schema": {
+      "const": "reverse_physics/schema/reverse-physics-bt-fully-rearranged-rigged-all-time-packet-limit-v1.schema.json"
+    },
+    "schema_version": {"const": 1},
+    "certificate": {
+      "const": "REVERSE_PHYSICS_BT_FULLY_REARRANGED_RIGGED_ALL_TIME_PACKET_LIMIT_V1"
+    },
+    "question": {"type": "string", "minLength": 1},
+    "answer": {"type": "string", "minLength": 500},
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]
+    },
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "result_kind": {"type": "string", "minLength": 1},
+    "exact_chart_phase_audit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "total_momentum",
+        "incoming_center",
+        "outgoing_center",
+        "exchange_orientation",
+        "phase",
+        "denominator",
+        "common_coordinate",
+        "derivative_identity",
+        "rows",
+        "unique_shell",
+        "neighborhood_conclusion"
+      ],
+      "properties": {
+        "total_momentum": {"const": "P=(16/5,0,0,0)"},
+        "incoming_center": {"const": ["2", "-2", "0", "15/16", "0"]},
+        "outgoing_center": {"const": ["2", "-2", "105/73", "2", "1/3"]},
+        "exchange_orientation": {"const": "q_ia=P-p_i-k_a"},
+        "phase": {"const": "delta_ia=q_ia^0-|p_i+k_a|"},
+        "denominator": {"const": "D_ia=q_ia^0+|p_i+k_a|"},
+        "common_coordinate": {
+          "const": "incoming global stereographic rotation t"
+        },
+        "derivative_identity": {
+          "const": "partial_t delta_ia=-N_ia/sqrt(r_ia^2), N_ia=(p_i+k_a).partial_t p_i"
+        },
+        "rows": {
+          "type": "array",
+          "minItems": 9,
+          "maxItems": 9,
+          "items": {"$ref": "#/$defs/phaseRow"}
+        },
+        "unique_shell": {"const": [2, 0]},
+        "neighborhood_conclusion": {"type": "string", "minLength": 1}
+      }
+    },
+    "half_line_distribution": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "finite_window",
+        "pointwise_boundary",
+        "tempered_boundary",
+        "test_action",
+        "tail_bound",
+        "limit_action",
+        "even_Gaussian_fixture",
+        "odd_Gaussian_fixture"
+      ],
+      "properties": {
+        "finite_window": {"type": "string", "minLength": 1},
+        "pointwise_boundary": {
+          "const": "DOES_NOT_EXIST_FOR_FIXED_NONZERO_s_IN_GENERAL"
+        },
+        "tempered_boundary": {
+          "const": "lim_(T->infinity) F_T(s)=pi*delta(s)+i*PV(1/s)"
+        },
+        "test_action": {"type": "string", "minLength": 1},
+        "tail_bound": {"type": "string", "minLength": 1},
+        "limit_action": {
+          "const": "I_infinity(g)=pi*g(0)+i*PV integral_R g(s)/s ds"
+        },
+        "even_Gaussian_fixture": {"$ref": "#/$defs/GaussianFixture"},
+        "odd_Gaussian_fixture": {"$ref": "#/$defs/GaussianFixture"}
+      }
+    },
+    "rigged_packet_limit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "domain",
+        "channel_coarea_density",
+        "uniformity",
+        "channel_limit",
+        "coherent_limit",
+        "leading_coefficient",
+        "strict_nontriviality",
+        "probability_limit",
+        "common_Born",
+        "disconnected_terms",
+        "status"
+      ],
+      "properties": {
+        "domain": {"type": "string", "minLength": 1},
+        "channel_coarea_density": {"type": "string", "minLength": 1},
+        "uniformity": {"type": "string", "minLength": 1},
+        "channel_limit": {"type": "string", "minLength": 1},
+        "coherent_limit": {"type": "string", "minLength": 1},
+        "leading_coefficient": {
+          "const": "q8,infinity[F]=16*||K_infinity F||_L2(Y)^2"
+        },
+        "strict_nontriviality": {"type": "string", "minLength": 1},
+        "probability_limit": {
+          "const": "lim_(T->infinity) q8,T[F]=q8,infinity[F]>0"
+        },
+        "common_Born": {"type": "string", "minLength": 1},
+        "disconnected_terms": {"type": "string", "minLength": 1},
+        "status": {
+          "const": "COMPLETE_LEADING_SELECTED_ALL_TIME_PACKET_COEFFICIENT_COMPUTED"
+        }
+      }
+    },
+    "operator_and_claim_boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "whole_L2_kernel_Hilbert_Schmidt_limit",
+        "bounded_L2_operator_extension",
+        "strong_Moller_operator",
+        "LSZ_or_S_operator",
+        "all_order_probability",
+        "q10_all_time_limit",
+        "general_Eq19",
+        "gravity_BV_BRST_QME",
+        "Lorentzian_causal_claim"
+      ],
+      "properties": {
+        "whole_L2_kernel_Hilbert_Schmidt_limit": {"const": "NOT_CLAIMED"},
+        "bounded_L2_operator_extension": {"const": "NOT_CLASSIFIED"},
+        "strong_Moller_operator": {"const": "NOT_CONSTRUCTED"},
+        "LSZ_or_S_operator": {"const": "NOT_CONSTRUCTED"},
+        "all_order_probability": {"const": "NOT_CONSTRUCTED"},
+        "q10_all_time_limit": {"const": "NOT_CONSTRUCTED"},
+        "general_Eq19": {"const": "NOT_PROVED"},
+        "gravity_BV_BRST_QME": {"const": "NOT_CONSTRUCTED"},
+        "Lorentzian_causal_claim": {"const": "NOT_ESTABLISHED"}
+      }
+    },
+    "assumptions": {
+      "type": "array",
+      "minItems": 5,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "does_not_establish": {
+      "type": "array",
+      "minItems": 12,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "next_gate": {"type": "string", "minLength": 1},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_commit",
+        "input_hashes",
+        "method",
+        "generated_by",
+        "independent_verifier"
+      ],
+      "properties": {
+        "source_commit": {
+          "const": "acfee00f9ab93aeebd06e8bf34e1189a48009862"
+        },
+        "input_hashes": {
+          "type": "object",
+          "minProperties": 8,
+          "additionalProperties": {"pattern": "^[0-9a-f]{64}$"}
+        },
+        "method": {"type": "string", "minLength": 1},
+        "generated_by": {
+          "const": "reverse_physics/bt_fully_rearranged_rigged_all_time_packet_limit.py"
+        },
+        "independent_verifier": {
+          "const": "reverse_physics/verify_bt_fully_rearranged_rigged_all_time_packet_limit.py"
+        }
+      }
+    },
+    "checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ok", "passed", "total", "items"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"type": "integer", "minimum": 36},
+        "total": {"type": "integer", "minimum": 36},
+        "items": {
+          "type": "object",
+          "minProperties": 36,
+          "additionalProperties": {"const": true}
+        }
+      }
+    },
+    "verification_commands": {
+      "type": "array",
+      "minItems": 3,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "report": {
+      "const": "reverse_physics/reports/bt-fully-rearranged-rigged-all-time-packet-limit.md"
+    }
+  },
+  "$defs": {
+    "rational": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      }
+    },
+    "phaseRow": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "channel",
+        "q0",
+        "spatial_radius_squared",
+        "rotation_numerator_N",
+        "q_squared",
+        "phase_derivative",
+        "noncritical",
+        "on_shell"
+      ],
+      "properties": {
+        "channel": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {"type": "integer", "minimum": 0, "maximum": 2}
+        },
+        "q0": {"$ref": "#/$defs/rational"},
+        "spatial_radius_squared": {"$ref": "#/$defs/rational"},
+        "rotation_numerator_N": {"$ref": "#/$defs/rational"},
+        "q_squared": {"$ref": "#/$defs/rational"},
+        "phase_derivative": {
+          "const": "-N/sqrt(spatial_radius_squared)"
+        },
+        "noncritical": {"const": true},
+        "on_shell": {"type": "boolean"}
+      }
+    },
+    "GaussianFixture": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "test",
+        "finite_action",
+        "limit",
+        "normalized_series",
+        "coefficients"
+      ],
+      "properties": {
+        "test": {"type": "string", "minLength": 1},
+        "finite_action": {"type": "string", "minLength": 1},
+        "limit": {"type": "string", "minLength": 1},
+        "normalized_series": {"type": "string", "minLength": 1},
+        "coefficients": {
+          "type": "array",
+          "minItems": 6,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["power", "coefficient"],
+            "properties": {
+              "power": {"type": "integer", "minimum": 1},
+              "coefficient": {"$ref": "#/$defs/rational"}
+            }
+          }
+        }
+      }
+    }
+  }
+}

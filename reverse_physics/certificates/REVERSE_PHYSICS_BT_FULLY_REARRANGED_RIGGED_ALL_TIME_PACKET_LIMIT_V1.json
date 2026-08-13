@@ -1,0 +1,495 @@
+{
+  "answer": "Yes on a nonempty smooth compact rigged packet class, at the complete leading order only. For each of the nine exchange channels write q_ia=P-p_i-k_a, delta_ia=q_ia^0-|p_i+k_a| and D_ia=q_ia^0+|p_i+k_a|. Exact rational automatic differentiation at the certified fully rearranged incoming/outgoing centers gives N_ia=(p_i+k_a).partial_t p_i nonzero for all nine channels, hence partial_t delta_ia=-N_ia/|p_i+k_a| is nonzero in one common incoming rotation coordinate. The neighborhoods may be shrunk so this remains true, with exactly channel (2,0) crossing delta=0 and the other eight shell separated. Changing t to s=delta_ia converts every channel action on a smooth compact packet into I_T(g)=integral F_T(s)g(s)ds. The half-line Fourier boundary is F_T -> pi delta+i PV(1/s) in the tempered-distribution topology, with a rapid uniform Fourier-tail bound. Therefore every K_ia,T F converges in L2(Y), their coherent sum converges, and q8,T[F]=16||sum K_ia,T F||^2 has a finite limit. For real nonnegative source/detector cutoffs, the unique shell contributes a strictly positive real pi*g_20,y(0) on an open output set while all eight shell-separated channel boundaries are purely imaginary; the limit is therefore nonzero and q8,infinity[F]>0. The exact disconnected-support zero and total-kappa common-Born identity survive coefficientwise. This is an all-time selected leading wave-packet probability coefficient on a dense smooth domain. It is not a bounded whole-carrier Moller/LSZ/S operator, does not transport finite-time q10, and proves neither general Eq. (19) nor gravity or Lorentzian causality.",
+  "assumptions": [
+    "the exact fully rearranged compact incoming/outgoing neighborhoods and phase-space measure of the predecessors",
+    "real smooth compact source and detector cutoffs supported strictly inside a common neighborhood on which all nine phase derivatives in the incoming rotation coordinate remain nonzero",
+    "the public finite-time Hamiltonian kernels beta_ia,T=F_T(delta_ia)/D_ia and their coherent unit-weight sum",
+    "standard one-dimensional change of variables, Fourier integration by parts and tempered half-line Fourier boundary",
+    "the selected leading-order support theorem and total-kappa common-Born identity are used coefficientwise",
+    "the T-to-infinity limit is taken at the fixed perturbative coefficient q8 before any finite-coupling summation"
+  ],
+  "certificate": "REVERSE_PHYSICS_BT_FULLY_REARRANGED_RIGGED_ALL_TIME_PACKET_LIMIT_V1",
+  "checks": {
+    "items": {
+      "Fourier_tail_is_rapid_on_the_declared_domain": true,
+      "Gaussian_even_fixture_tends_to_pi": true,
+      "Gaussian_odd_fixture_tends_to_i_sqrt_pi": true,
+      "all_channel_energies_are_positive": true,
+      "all_spatial_radii_are_positive": true,
+      "all_time_q8_is_finite_and_strictly_positive": true,
+      "coherent_nine_channel_sum_converges": true,
+      "common_Born_identity_is_imported": true,
+      "complete_leading_amplitude_is_imported": true,
+      "disconnected_support_zero_survives_the_limit": true,
+      "each_channel_packet_vector_converges_in_L2Y": true,
+      "even_Gaussian_series_has_seven_exact_terms": true,
+      "exactly_one_shell_crosses_the_center": true,
+      "general_Eq19_all_orders_gravity_and_causality_remain_open": true,
+      "half_line_boundary_has_positive_delta_sign": true,
+      "half_line_boundary_has_positive_iPV_sign": true,
+      "incoming_center_reconstructs_predecessor": true,
+      "inputs_are_content_pinned": true,
+      "localized_background_route_remains_separate": true,
+      "nine_exchange_channels_are_generated": true,
+      "nonempty_real_nonnegative_packet_class_has_strict_limit": true,
+      "odd_Gaussian_series_has_six_exact_terms": true,
+      "one_common_rotation_coordinate_is_noncritical": true,
+      "ordinary_log_shell_scope_core_is_reconstructed": true,
+      "other_eight_channels_are_shell_separated": true,
+      "outgoing_center_reconstructs_predecessor": true,
+      "pointwise_FT_limit_is_not_used": true,
+      "q10_all_time_transfer_is_not_made": true,
+      "scientific_predecessors_record_pass": true,
+      "smooth_packet_coarea_density_is_uniformly_compact": true,
+      "source_commit_is_current_predecessor": true,
+      "unique_shell_delta_cannot_be_cancelled_by_eight_smooth_channels": true,
+      "unique_shell_has_unit_q0_and_radius": true,
+      "unique_shell_is_channel_two_zero": true,
+      "unique_shell_rotation_numerator_is_minus_384_over_425": true,
+      "whole_carrier_bounded_operator_is_not_promoted": true
+    },
+    "ok": true,
+    "passed": 36,
+    "total": 36
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "pointwise convergence of F_T(s)",
+    "uniform Hilbert--Schmidt convergence of the finite-time kernels",
+    "a bounded extension of K_infinity to the whole L2 packet carrier",
+    "a strong Moller, LSZ or S operator",
+    "an exact finite-coupling or all-order probability",
+    "uniformity in lambda or interchange of the T-to-infinity limit with the perturbation series",
+    "an all-time limit of q10 or any higher perturbative coefficient",
+    "a detector-independent cross section or inclusive KLN theorem",
+    "the ordinary logarithmic-shell L2 endpoint excluded by the predecessor",
+    "the standard shift-invariant projector or general Bateman--Turok Eq. (19)",
+    "gravity, metric BV--BRST transfer, QME restoration or residual transfer",
+    "anything LORENTZIAN-CAUSAL",
+    "literature priority"
+  ],
+  "exact_chart_phase_audit": {
+    "common_coordinate": "incoming global stereographic rotation t",
+    "denominator": "D_ia=q_ia^0+|p_i+k_a|",
+    "derivative_identity": "partial_t delta_ia=-N_ia/sqrt(r_ia^2), N_ia=(p_i+k_a).partial_t p_i",
+    "exchange_orientation": "q_ia=P-p_i-k_a",
+    "incoming_center": [
+      "2",
+      "-2",
+      "0",
+      "15/16",
+      "0"
+    ],
+    "neighborhood_conclusion": "after shrinking X times Y, partial_t delta_ia is uniformly separated from zero for all nine channels; channel (2,0) is the only shell crossing",
+    "outgoing_center": [
+      "2",
+      "-2",
+      "105/73",
+      "2",
+      "1/3"
+    ],
+    "phase": "delta_ia=q_ia^0-|p_i+k_a|",
+    "rows": [
+      {
+        "channel": [
+          0,
+          0
+        ],
+        "noncritical": true,
+        "on_shell": false,
+        "phase_derivative": "-N/sqrt(spatial_radius_squared)",
+        "q0": {
+          "denominator": 5,
+          "numerator": 4
+        },
+        "q_squared": {
+          "denominator": 425,
+          "numerator": -1024
+        },
+        "rotation_numerator_N": {
+          "denominator": 425,
+          "numerator": 864
+        },
+        "spatial_radius_squared": {
+          "denominator": 425,
+          "numerator": 1296
+        }
+      },
+      {
+        "channel": [
+          0,
+          1
+        ],
+        "noncritical": true,
+        "on_shell": false,
+        "phase_derivative": "-N/sqrt(spatial_radius_squared)",
+        "q0": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "q_squared": {
+          "denominator": 10625,
+          "numerator": 3456
+        },
+        "rotation_numerator_N": {
+          "denominator": 10625,
+          "numerator": -16992
+        },
+        "spatial_radius_squared": {
+          "denominator": 10625,
+          "numerator": 7169
+        }
+      },
+      {
+        "channel": [
+          0,
+          2
+        ],
+        "noncritical": true,
+        "on_shell": false,
+        "phase_derivative": "-N/sqrt(spatial_radius_squared)",
+        "q0": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "q_squared": {
+          "denominator": 10625,
+          "numerator": -32256
+        },
+        "rotation_numerator_N": {
+          "denominator": 10625,
+          "numerator": -4608
+        },
+        "spatial_radius_squared": {
+          "denominator": 10625,
+          "numerator": 42881
+        }
+      },
+      {
+        "channel": [
+          1,
+          0
+        ],
+        "noncritical": true,
+        "on_shell": false,
+        "phase_derivative": "-N/sqrt(spatial_radius_squared)",
+        "q0": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "q_squared": {
+          "denominator": 425,
+          "numerator": -1152
+        },
+        "rotation_numerator_N": {
+          "denominator": 85,
+          "numerator": -96
+        },
+        "spatial_radius_squared": {
+          "denominator": 425,
+          "numerator": 1577
+        }
+      },
+      {
+        "channel": [
+          1,
+          1
+        ],
+        "noncritical": true,
+        "on_shell": false,
+        "phase_derivative": "-N/sqrt(spatial_radius_squared)",
+        "q0": {
+          "denominator": 5,
+          "numerator": 6
+        },
+        "q_squared": {
+          "denominator": 85,
+          "numerator": -32
+        },
+        "rotation_numerator_N": {
+          "denominator": 85,
+          "numerator": 168
+        },
+        "spatial_radius_squared": {
+          "denominator": 425,
+          "numerator": 772
+        }
+      },
+      {
+        "channel": [
+          1,
+          2
+        ],
+        "noncritical": true,
+        "on_shell": false,
+        "phase_derivative": "-N/sqrt(spatial_radius_squared)",
+        "q0": {
+          "denominator": 5,
+          "numerator": 6
+        },
+        "q_squared": {
+          "denominator": 425,
+          "numerator": 224
+        },
+        "rotation_numerator_N": {
+          "denominator": 85,
+          "numerator": -72
+        },
+        "spatial_radius_squared": {
+          "denominator": 425,
+          "numerator": 388
+        }
+      },
+      {
+        "channel": [
+          2,
+          0
+        ],
+        "noncritical": true,
+        "on_shell": true,
+        "phase_derivative": "-N/sqrt(spatial_radius_squared)",
+        "q0": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "q_squared": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "rotation_numerator_N": {
+          "denominator": 425,
+          "numerator": -384
+        },
+        "spatial_radius_squared": {
+          "denominator": 1,
+          "numerator": 1
+        }
+      },
+      {
+        "channel": [
+          2,
+          1
+        ],
+        "noncritical": true,
+        "on_shell": false,
+        "phase_derivative": "-N/sqrt(spatial_radius_squared)",
+        "q0": {
+          "denominator": 5,
+          "numerator": 6
+        },
+        "q_squared": {
+          "denominator": 625,
+          "numerator": -1568
+        },
+        "rotation_numerator_N": {
+          "denominator": 10625,
+          "numerator": -4008
+        },
+        "spatial_radius_squared": {
+          "denominator": 625,
+          "numerator": 2468
+        }
+      },
+      {
+        "channel": [
+          2,
+          2
+        ],
+        "noncritical": true,
+        "on_shell": false,
+        "phase_derivative": "-N/sqrt(spatial_radius_squared)",
+        "q0": {
+          "denominator": 5,
+          "numerator": 6
+        },
+        "q_squared": {
+          "denominator": 625,
+          "numerator": -32
+        },
+        "rotation_numerator_N": {
+          "denominator": 10625,
+          "numerator": 13608
+        },
+        "spatial_radius_squared": {
+          "denominator": 625,
+          "numerator": 932
+        }
+      }
+    ],
+    "total_momentum": "P=(16/5,0,0,0)",
+    "unique_shell": [
+      2,
+      0
+    ]
+  },
+  "half_line_distribution": {
+    "even_Gaussian_fixture": {
+      "coefficients": [
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 1
+          },
+          "power": 1
+        },
+        {
+          "coefficient": {
+            "denominator": 12,
+            "numerator": -1
+          },
+          "power": 3
+        },
+        {
+          "coefficient": {
+            "denominator": 160,
+            "numerator": 1
+          },
+          "power": 5
+        },
+        {
+          "coefficient": {
+            "denominator": 2688,
+            "numerator": -1
+          },
+          "power": 7
+        },
+        {
+          "coefficient": {
+            "denominator": 55296,
+            "numerator": 1
+          },
+          "power": 9
+        },
+        {
+          "coefficient": {
+            "denominator": 1351680,
+            "numerator": -1
+          },
+          "power": 11
+        },
+        {
+          "coefficient": {
+            "denominator": 38338560,
+            "numerator": 1
+          },
+          "power": 13
+        }
+      ],
+      "finite_action": "I_T=pi*erf(T/2)",
+      "limit": "pi",
+      "normalized_series": "I_T/sqrt(pi)",
+      "test": "g_even(s)=exp(-s^2)"
+    },
+    "finite_window": "F_T(s)=integral_0^T exp(i*s*tau)d_tau=(exp(i*T*s)-1)/(i*s)",
+    "limit_action": "I_infinity(g)=pi*g(0)+i*PV integral_R g(s)/s ds",
+    "odd_Gaussian_fixture": {
+      "coefficients": [
+        {
+          "coefficient": {
+            "denominator": 4,
+            "numerator": 1
+          },
+          "power": 2
+        },
+        {
+          "coefficient": {
+            "denominator": 32,
+            "numerator": -1
+          },
+          "power": 4
+        },
+        {
+          "coefficient": {
+            "denominator": 384,
+            "numerator": 1
+          },
+          "power": 6
+        },
+        {
+          "coefficient": {
+            "denominator": 6144,
+            "numerator": -1
+          },
+          "power": 8
+        },
+        {
+          "coefficient": {
+            "denominator": 122880,
+            "numerator": 1
+          },
+          "power": 10
+        },
+        {
+          "coefficient": {
+            "denominator": 2949120,
+            "numerator": -1
+          },
+          "power": 12
+        }
+      ],
+      "finite_action": "I_T=i*sqrt(pi)*(1-exp(-T^2/4))",
+      "limit": "i*sqrt(pi)",
+      "normalized_series": "I_T/(i*sqrt(pi))",
+      "test": "g_odd(s)=s*exp(-s^2)"
+    },
+    "pointwise_boundary": "DOES_NOT_EXIST_FOR_FIXED_NONZERO_s_IN_GENERAL",
+    "tail_bound": "|I_infinity(g)-I_T(g)|<=||g^(N)||_1/[(N-1)T^(N-1)] for N>1",
+    "tempered_boundary": "lim_(T->infinity) F_T(s)=pi*delta(s)+i*PV(1/s)",
+    "test_action": "I_T(g)=integral_R F_T(s)g(s)ds=integral_0^T ghat(tau)d_tau, ghat(tau)=integral_R exp(i*tau*s)g(s)ds"
+  },
+  "lifecycle_state": "COEFFICIENT_COMPUTED",
+  "next_gate": "Apply the same rigged packet topology to the finite-time triangle and bubble-with-bridge operators in T6,T. Prove uniform distributional convergence of their two-defect and renormalized three-window kernels on the same packet class; only then may the completed finite-time q10 functional be promoted to an all-time coefficient. Independently classify whether K_infinity has a bounded L2 extension, but do not make that operator theorem a prerequisite for the already established selected smooth-packet coefficient.",
+  "operator_and_claim_boundary": {
+    "LSZ_or_S_operator": "NOT_CONSTRUCTED",
+    "Lorentzian_causal_claim": "NOT_ESTABLISHED",
+    "all_order_probability": "NOT_CONSTRUCTED",
+    "bounded_L2_operator_extension": "NOT_CLASSIFIED",
+    "general_Eq19": "NOT_PROVED",
+    "gravity_BV_BRST_QME": "NOT_CONSTRUCTED",
+    "q10_all_time_limit": "NOT_CONSTRUCTED",
+    "strong_Moller_operator": "NOT_CONSTRUCTED",
+    "whole_L2_kernel_Hilbert_Schmidt_limit": "NOT_CLAIMED"
+  },
+  "provenance": {
+    "generated_by": "reverse_physics/bt_fully_rearranged_rigged_all_time_packet_limit.py",
+    "independent_verifier": "reverse_physics/verify_bt_fully_rearranged_rigged_all_time_packet_limit.py",
+    "input_hashes": {
+      "planning/events/reverse-physics-bateman-fully-rearranged-rigged-all-time-packet-limit-DONE-acfee00f.json": "e7c1f4aadce230c990e4ffa8b13b46672ae1d69219e88a0696f860a8b0cafdd3",
+      "planning/work-items/reverse-physics-bateman-fully-rearranged-rigged-all-time-packet-limit.json": "e9bb865bd0602b1f95e5b6a082de57651643538a5315a30a190c4ca86df27dc5",
+      "reverse_physics/certificates/REVERSE_PHYSICS_BT_COMPACT_WAVEPACKET_HAMILTONIAN_PROBABILITY_V1.json": "d22bfee2112d1b9f4ca0fe91aa8dc5286170d93ba47f7aeceb69f9df86bbdc37",
+      "reverse_physics/certificates/REVERSE_PHYSICS_BT_COMPLETE_CONNECTED_COMMON_BORN_PACKET_V1.json": "6a3b5edeb28c6b50d8fbc9746436ca3d3ce53ab04426f7531ac121f121d52661",
+      "reverse_physics/certificates/REVERSE_PHYSICS_BT_FULLY_REARRANGED_PHYSICAL_PACKET_PROBABILITY_V1.json": "3790673f55cc7c43b9d2f731da217c0be73b628c169c6e2e9def3ba2a6b07c30",
+      "reverse_physics/certificates/REVERSE_PHYSICS_BT_FULLY_REARRANGED_Q10_SELECTED_PACKET_ASSEMBLY_V1.json": "cd478d16440161adef9dcfde172359df3fdbe6abb5356043a29c77c80b718a0e",
+      "reverse_physics/certificates/REVERSE_PHYSICS_BT_LOCALIZED_AFFINE_HIDDEN_PARITY_ORBIT_V1.json": "2ee7fd4c281a42ccfb783ebf04d06184d7e5d7126edac4adab87eedc0966500f",
+      "reverse_physics/certificates/REVERSE_PHYSICS_BT_LOG_SHELL_MOLLER_LIMIT_V1.json": "836d6b478b4fb1bccee038ecf6f0c1d1f6e56ec02eeb436273249a083be2b5e2"
+    },
+    "method": "Exact Fraction forward-mode differentiation of the public five-coordinate three-body chart; exact nine-channel shell audit; tempered half-line Fourier theorem with uniform integration-by-parts tail; Gaussian even/odd sign fixtures; imported exact support and total-kappa identities.",
+    "source_commit": "acfee00f9ab93aeebd06e8bf34e1189a48009862"
+  },
+  "question": "Does the complete leading fully rearranged BT physical packet probability have a nonzero all-time limit even though a whole-carrier strong Moller operator is unavailable?",
+  "report": "reverse_physics/reports/bt-fully-rearranged-rigged-all-time-packet-limit.md",
+  "result_kind": "complete leading fully rearranged rigged smooth-packet all-time transition coefficient",
+  "rigged_packet_limit": {
+    "channel_coarea_density": "g_ia,y(s)=integral dz [chi*F*rho_X/(D_ia*|partial_t delta_ia|)] evaluated at t=t_ia(s,z,y), with the same real source/output cutoff chi for every unit-weight channel",
+    "channel_limit": "(K_ia,infinity F)(y)=pi*g_ia,y(0)+i*PV integral g_ia,y(s)/s ds",
+    "coherent_limit": "K_infinity F=sum_(i,a) K_ia,infinity F=lim_(T->infinity) sum_(i,a)K_ia,T F in L2(Y)",
+    "common_Born": "the scalar distributional limit commutes with total ghost complement, so the public generalized-Krein and positive-Hilbert leading coefficients agree",
+    "disconnected_terms": "the selected detector remains disjoint from every disconnected order-lambda4 support, so their pairing stays zero before and after the limit",
+    "domain": "D_X=C_c^infinity(X) inside L2(X,dmu), with real smooth detector cutoffs inside the certified separated neighborhoods",
+    "leading_coefficient": "q8,infinity[F]=16*||K_infinity F||_L2(Y)^2",
+    "probability_limit": "lim_(T->infinity) q8,T[F]=q8,infinity[F]>0",
+    "status": "COMPLETE_LEADING_SELECTED_ALL_TIME_PACKET_COEFFICIENT_COMPUTED",
+    "strict_nontriviality": "for a nonempty real nonnegative packet/cutoff class, Re(K_infinity F)=pi*g_20,y(0)>0 on an open output subset because only channel (2,0) crosses shell",
+    "uniformity": "the nine g_ia,y form a bounded family in compactly supported smooth test functions after the common neighborhood shrink"
+  },
+  "schema": "reverse_physics/schema/reverse-physics-bt-fully-rearranged-rigged-all-time-packet-limit-v1.schema.json",
+  "schema_version": 1,
+  "verification_commands": [
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/bt_fully_rearranged_rigged_all_time_packet_limit.py --write --check",
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/verify_bt_fully_rearranged_rigged_all_time_packet_limit.py",
+    "ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 -m unittest -v reverse_physics.tests.test_bt_fully_rearranged_rigged_all_time_packet_limit"
+  ]
+}
