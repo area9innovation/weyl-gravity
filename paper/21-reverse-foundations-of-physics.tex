@@ -828,8 +828,65 @@ gives a lowest-mode Hessian Schur complement
 Thus no field-independent pointwise Hessian estimate controls even this
 single infrared mode.  The same centers have action \(A(x)\sim x^4\), with
 \(\kappa(x)A(x)^{1/4}\to18\).  This leaves action-weighted or annealed
-curvature control viable and fixes the quarter-power behavior that the next
-candidate inequality must accommodate.
+curvature control viable along that family, but does not make the quarter
+power a global exponent.
+
+The successor certificate
+\cert{REVERSE_PHYSICS_BT_EUCLIDEAN_ACTION_WEIGHT_VIRIAL_OBSTRUCTION_V1}
+decides that exponent negatively.  At the period-three center
+
+\[
+ k(a)=a(-2,1,1,-2,1,1),\qquad x=2^{3a},
+\]
+
+the chosen lowest mode couples, by the exact shift-and-reflection symmetry
+decomposition of the full mean-zero six-cycle sector, only to the alternating
+mode.  Its full Schur curvature and center action obey
+
+\[
+ \kappa(x)\sim\frac{36}{x},\qquad A(x)\sim4x^2.
+\]
+
+Consequently
+
+\[
+ \kappa(x)A(x)^p\longrightarrow0\quad(p<1/2),\qquad
+ \kappa(x)A(x)^{1/2}\longrightarrow72.
+\]
+
+In particular the quarter-power candidate is obstructed.  The first exponent
+not ruled out by this family is one half.  With full volume \(N=6^4\), the
+scale-compatible version uses action density:
+
+\[
+ C(x)=\frac{\kappa(x)}{\kappa(0)}
+       \sqrt{1+\frac{A_{\rm total}(x)}N},
+ \qquad \lim_{x\to\infty}C(x)^2=6.
+\]
+
+This is a surviving candidate, not a theorem.  A total-action half weight
+would ordinarily introduce a \(\sqrt N\) factor after Gibbs averaging, so it
+would not by itself give the required volume-uniform covariance estimate.
+
+The same certificate also obstructs the immediate moment shortcut.  For the
+exact rational center
+
+\[
+ \psi=(-1,-1,0,0,2,0)\log(101/100),
+\]
+
+an alternating rational upper bound on \(\log(101/100)\) proves
+
+\[
+ \frac{\psi\cdot\nabla A(\psi)}{A(\psi)}<2.
+\]
+
+Thus the pointwise virial inequality with coefficient two cannot be used to
+deduce \(\mathbb E[S_\lambda]/N<1/2\) by Gibbs integration by parts.  A
+weaker positive virial constant, a direct annealed action-density estimate,
+or a normalized low-mode marginal bound remains open.  No interacting
+\(H^{-1}\) moment, tightness, continuum measure, positive-Hilbert
+reconstruction, Krein bridge, Born rule, or Lorentzian statement follows.
 
 \subsection{A finite BV contraction does not freeze the quantum theory}
 

@@ -26,6 +26,12 @@ AUTHORITY_PATHS = {
     "bt_euclidean_import": "foundations/results/FOUNDATIONAL_BT_EUCLIDEAN_LATTICE_IMPORT_V1.json",
     "bt_free_reconstruction_obstruction": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_FREE_RECONSTRUCTION_OBSTRUCTION_V1.json",
     "bt_interacting_os_preflight": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_OS_WITNESS_PREFLIGHT_V1.json",
+    "bt_lambda04_os_kernel_obstruction": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_LAMBDA04_OS_KERNEL_OBSTRUCTION_V1.json",
+    "bt_uniform_convexity_obstruction": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_UNIFORM_CONVEXITY_OBSTRUCTION_V1.json",
+    "bt_schwinger_dyson_mode_obstruction": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_SCHWINGER_DYSON_MODE_OBSTRUCTION_V1.json",
+    "bt_bilaplacian_reference_bridge": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_BILAPLACIAN_REFERENCE_BRIDGE_V1.json",
+    "bt_low_mode_uv_schur_obstruction": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_LOW_MODE_UV_SCHUR_OBSTRUCTION_V1.json",
+    "bt_action_weight_virial_obstruction": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_ACTION_WEIGHT_VIRIAL_OBSTRUCTION_V1.json",
     "full_surface_gap_audit": "foundations/results/FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1.json",
     "explorer_snapshot": "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json",
     "theory_assembly": "foundations/results/FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1.json",
@@ -74,6 +80,8 @@ def build() -> dict:
     bt_euclidean = loaded["bt_euclidean_import"]
     bt_free_obstruction = loaded["bt_free_reconstruction_obstruction"]
     bt_interacting_os = loaded["bt_interacting_os_preflight"]
+    bt_lambda04_os = loaded["bt_lambda04_os_kernel_obstruction"]
+    bt_action_weight = loaded["bt_action_weight_virial_obstruction"]
     site = loaded["explorer_snapshot"]
     gr_cassini = loaded["gr_cassini_assembly"]
     mannheim_ngc3198 = loaded["mannheim_ngc3198_assembly"]
@@ -194,6 +202,10 @@ def build() -> dict:
             "bt_interacting_os_local_z": bt_interacting_os["algorithm_summaries"]["local_metropolis"]["z_from_zero"],
             "bt_interacting_os_hmc_z": bt_interacting_os["algorithm_summaries"]["hmc"]["z_from_zero"],
             "bt_interacting_os_cross_sampler_z": bt_interacting_os["cross_sampler_mean_z"],
+            "bt_lambda_0p4_exact_os_status": bt_lambda04_os["disposition"]["ordinary_os_reflection_positivity_at_lambda_0p4"],
+            "bt_interacting_uniform_h_minus_one_status": bt_action_weight["method_disposition"]["actual_interacting_h_minus_one_second_moment_bound"],
+            "bt_pointwise_action_weight_necessary_exponent": "AT_LEAST_ONE_HALF",
+            "bt_pointwise_virial_constant_two_status": bt_action_weight["radial_virial_obstruction"]["status"],
             "standard_reference_direct_obligations": next(item for item in assembly_data["assemblies"] if item["id"] == "STANDARD_MIXED_REFERENCE")["coverage"]["direct"],
             "external_calibration_records": len(assembly_data["calibration_controls"][0]["records"]),
             "external_calibration_benchmark_families": sum(item["status"] == "SUPPORTED_CONTROL" for item in assembly_data["calibration_controls"][0]["benchmark_coverage"]),
@@ -278,13 +290,27 @@ def build() -> dict:
             },
             {
                 "claim_id": "RF-12-BT-INTERACTING-OS-PREFLIGHT",
-                "statement": "At lambda=0.4 on 6^4, all eight independent HMC and local-Metropolis chain means for the reflected witness are negative; equal-replica scores are -6.25 and -2.53 standard errors and the algorithm means differ by 0.64 combined standard errors. This is numerical sign support, not an exact or all-observable OS obstruction.",
-                "status": "NUMERICAL_FINITE_VOLUME_OBSERVED_WITH_EXACT_STATUS_OPEN",
+                "statement": "At lambda=0.4 on 6^4, all eight independent HMC and local-Metropolis chain means for the reflected witness are negative; equal-replica scores are -6.25 and -2.53 standard errors and the algorithm means differ by 0.64 combined standard errors. This numerical result is supporting only; the separate exact kernel certificate decides ordinary OS positivity.",
+                "status": "NUMERICAL_FINITE_VOLUME_SUPPORTING_EXACT_OBSTRUCTION",
                 "authorities": ["bt_interacting_os_preflight"],
                 "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"],
             },
             {
-                "claim_id": "RF-13-MANNHEIM-NGC3198-ASSEMBLY",
+                "claim_id": "RF-13-BT-INTERACTING-RECONSTRUCTION-FRONTIER",
+                "statement": "At lambda=0.4 on the 6^4 lattice, an exact two-point reflected density-kernel minor obstructs ordinary OS positivity. The first interacting uniform-estimate routes are also sharply classified: field-independent lowest-mode curvature and every pointwise action-weight exponent below one half are obstructed, while a volume-normalized half-action-density bound remains open; the coefficient-two radial virial shortcut is exactly obstructed.",
+                "status": "EXACT_FINITE_OS_AND_UNIFORM_ESTIMATE_METHOD_OBSTRUCTIONS",
+                "authorities": [
+                    "bt_lambda04_os_kernel_obstruction",
+                    "bt_uniform_convexity_obstruction",
+                    "bt_schwinger_dyson_mode_obstruction",
+                    "bt_bilaplacian_reference_bridge",
+                    "bt_low_mode_uv_schur_obstruction",
+                    "bt_action_weight_virial_obstruction",
+                ],
+                "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"],
+            },
+            {
+                "claim_id": "RF-14-MANNHEIM-NGC3198-ASSEMBLY",
                 "statement": "For the declared Mannheim--Kazanas NGC 3198 thin-disk model, independent evaluation coarsely reproduces the paper's endpoint and passes a no-refit SPARC RMS gate, but fails the declared reduced-chi-squared gate from SPARC random errors alone; the mixed comparison does not establish empirical support.",
                 "status": "NUMERICAL_REPRODUCTION_WITH_MIXED_CROSS_DATASET_COMPARISON",
                 "authorities": ["mannheim_ngc3198_assembly"],
@@ -326,8 +352,10 @@ def build() -> dict:
             "bt_euclidean_coarse_reproduction_separated": True,
             "bt_free_os_obstruction_certified": True,
             "bt_free_h_minus_one_estimate_certified": True,
-            "bt_lambda_0p4_os_status_decided": False,
+            "bt_lambda_0p4_os_status_decided": True,
             "bt_lambda_0p4_two_sampler_sign_support": True,
+            "bt_interacting_uniform_h_minus_one_established": False,
+            "bt_half_action_density_candidate_established": False,
             "research_programme_lenses_explained": True,
             "weakest_foundation_proved": False,
             "global_physics_implies_choice_theorem": False,
@@ -351,7 +379,7 @@ def build() -> dict:
             "reproduction of the Cassini raw-data reduction, likelihood, covariance analysis, or systematic-error budget",
             "a complete standard-GR theory or empirical support for a Weyl-gravity model",
             "a continuum, empirical, Born-rule, or Lorentzian promotion from the BT Euclidean finite lattice",
-            "reflection-positivity failure at lambda=0.4 or every nonzero coupling",
+            "reflection-positivity failure at every nonzero coupling or in a continuum limit",
         ],
         "authorities": authorities,
         "independent_checker": {

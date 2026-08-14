@@ -26,6 +26,10 @@
     "bt_interacting_os_hmc_z": -6.254432004803571,
     "bt_interacting_os_local_z": -2.5326776073871837,
     "bt_interacting_os_numerical_status": "TWO_SAMPLER_NEGATIVE_SIGN_SUPPORT_NOT_EXACT",
+    "bt_interacting_uniform_h_minus_one_status": "OPEN",
+    "bt_lambda_0p4_exact_os_status": "OBSTRUCTED",
+    "bt_pointwise_action_weight_necessary_exponent": "AT_LEAST_ONE_HALF",
+    "bt_pointwise_virial_constant_two_status": "POINTWISE_VIRIAL_CONSTANT_TWO_OBSTRUCTED",
     "cartesian_total": 576,
     "content_pinned_literature": 39,
     "coverage_classified_cells": 576,
@@ -73,6 +77,26 @@
     "total_not_mapped_in_explorer": 0
   },
   "authorities": {
+    "bt_action_weight_virial_obstruction": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL"
+      ],
+      "lifecycle": "OBSTRUCTION_PROVED",
+      "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_ACTION_WEIGHT_VIRIAL_OBSTRUCTION_V1.json",
+      "result_id": "REVERSE_PHYSICS_BT_EUCLIDEAN_ACTION_WEIGHT_VIRIAL_OBSTRUCTION_V1",
+      "sha256": "65e93f1948c5f449c42700e4c8b9865d193f48be0c0f22fb7cb25cb8e8c8a04d"
+    },
+    "bt_bilaplacian_reference_bridge": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL"
+      ],
+      "lifecycle": "CLASSIFIED",
+      "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_BILAPLACIAN_REFERENCE_BRIDGE_V1.json",
+      "result_id": "REVERSE_PHYSICS_BT_EUCLIDEAN_BILAPLACIAN_REFERENCE_BRIDGE_V1",
+      "sha256": "b96b3aba94374af4351c4e4609cc5f86eeb96562b189a527fdea65bc2bb7d559"
+    },
     "bt_euclidean_import": {
       "dependency_tags": [
         "LOCAL-ALGEBRAIC",
@@ -102,6 +126,46 @@
       "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_OS_WITNESS_PREFLIGHT_V1.json",
       "result_id": "REVERSE_PHYSICS_BT_EUCLIDEAN_OS_WITNESS_PREFLIGHT_V1",
       "sha256": "6964ebbdd6c8dd0dcbb4b0905142cb66cf7645e2939ecc2f9c02666d551c3387"
+    },
+    "bt_lambda04_os_kernel_obstruction": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL"
+      ],
+      "lifecycle": "OBSTRUCTION_PROVED",
+      "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_LAMBDA04_OS_KERNEL_OBSTRUCTION_V1.json",
+      "result_id": "REVERSE_PHYSICS_BT_EUCLIDEAN_LAMBDA04_OS_KERNEL_OBSTRUCTION_V1",
+      "sha256": "9872d3d610daf5146fee84e19246319a7bcfa72748be116a2a8caa7b9f57f40b"
+    },
+    "bt_low_mode_uv_schur_obstruction": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL"
+      ],
+      "lifecycle": "OBSTRUCTION_PROVED",
+      "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_LOW_MODE_UV_SCHUR_OBSTRUCTION_V1.json",
+      "result_id": "REVERSE_PHYSICS_BT_EUCLIDEAN_LOW_MODE_UV_SCHUR_OBSTRUCTION_V1",
+      "sha256": "7284cc2e295449465d10c4de4ee1f47d73b4d2ea7b3ce36f9d208f4089629651"
+    },
+    "bt_schwinger_dyson_mode_obstruction": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL"
+      ],
+      "lifecycle": "OBSTRUCTION_PROVED",
+      "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_SCHWINGER_DYSON_MODE_OBSTRUCTION_V1.json",
+      "result_id": "REVERSE_PHYSICS_BT_EUCLIDEAN_SCHWINGER_DYSON_MODE_OBSTRUCTION_V1",
+      "sha256": "939bc4d65cd7c9c7e677eea2ac072cf9fe3efb2c91451a4ca5c9994fb1f90776"
+    },
+    "bt_uniform_convexity_obstruction": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL"
+      ],
+      "lifecycle": "OBSTRUCTION_PROVED",
+      "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_UNIFORM_CONVEXITY_OBSTRUCTION_V1.json",
+      "result_id": "REVERSE_PHYSICS_BT_EUCLIDEAN_UNIFORM_CONVEXITY_OBSTRUCTION_V1",
+      "sha256": "c6aeb2e6cbb7bd6066534304a76a977f9efec57b52d145bd9bfaae438e51f550"
     },
     "coded_wave": {
       "dependency_tags": [
@@ -230,7 +294,7 @@
       "sha256": "5ff1b8fec12baf9d72758dd18eb04e695e9efa4444a722e5d008abea26d6b4b3"
     }
   },
-  "canonical_digest": "3ff94dca4c24651d2073a36b3ff1699bdd720e045c9ccfb4414322e87dc03923",
+  "canonical_digest": "068f954b5c71f5bb5a63f373eb6b3b764aceefe08f416e177f650c0cbbe043cc",
   "claim_flags": {
     "atlas_exhaustive": false,
     "axes_independent_proved": false,
@@ -239,7 +303,9 @@
     "bt_euclidean_finite_capabilities_imported": true,
     "bt_free_h_minus_one_estimate_certified": true,
     "bt_free_os_obstruction_certified": true,
-    "bt_lambda_0p4_os_status_decided": false,
+    "bt_half_action_density_candidate_established": false,
+    "bt_interacting_uniform_h_minus_one_established": false,
+    "bt_lambda_0p4_os_status_decided": true,
     "bt_lambda_0p4_two_sampler_sign_support": true,
     "case_study_authorities_pinned": true,
     "complete_evidence_register_generated": true,
@@ -400,14 +466,31 @@
         "LOCAL-ALGEBRAIC",
         "EUCLIDEAN-SPECTRAL"
       ],
-      "statement": "At lambda=0.4 on 6^4, all eight independent HMC and local-Metropolis chain means for the reflected witness are negative; equal-replica scores are -6.25 and -2.53 standard errors and the algorithm means differ by 0.64 combined standard errors. This is numerical sign support, not an exact or all-observable OS obstruction.",
-      "status": "NUMERICAL_FINITE_VOLUME_OBSERVED_WITH_EXACT_STATUS_OPEN"
+      "statement": "At lambda=0.4 on 6^4, all eight independent HMC and local-Metropolis chain means for the reflected witness are negative; equal-replica scores are -6.25 and -2.53 standard errors and the algorithm means differ by 0.64 combined standard errors. This numerical result is supporting only; the separate exact kernel certificate decides ordinary OS positivity.",
+      "status": "NUMERICAL_FINITE_VOLUME_SUPPORTING_EXACT_OBSTRUCTION"
+    },
+    {
+      "authorities": [
+        "bt_lambda04_os_kernel_obstruction",
+        "bt_uniform_convexity_obstruction",
+        "bt_schwinger_dyson_mode_obstruction",
+        "bt_bilaplacian_reference_bridge",
+        "bt_low_mode_uv_schur_obstruction",
+        "bt_action_weight_virial_obstruction"
+      ],
+      "claim_id": "RF-13-BT-INTERACTING-RECONSTRUCTION-FRONTIER",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL"
+      ],
+      "statement": "At lambda=0.4 on the 6^4 lattice, an exact two-point reflected density-kernel minor obstructs ordinary OS positivity. The first interacting uniform-estimate routes are also sharply classified: field-independent lowest-mode curvature and every pointwise action-weight exponent below one half are obstructed, while a volume-normalized half-action-density bound remains open; the coefficient-two radial virial shortcut is exactly obstructed.",
+      "status": "EXACT_FINITE_OS_AND_UNIFORM_ESTIMATE_METHOD_OBSTRUCTIONS"
     },
     {
       "authorities": [
         "mannheim_ngc3198_assembly"
       ],
-      "claim_id": "RF-13-MANNHEIM-NGC3198-ASSEMBLY",
+      "claim_id": "RF-14-MANNHEIM-NGC3198-ASSEMBLY",
       "dependency_tags": [
         "LOCAL-ALGEBRAIC",
         "REDUCED-MODE"
@@ -437,7 +520,7 @@
     "reproduction of the Cassini raw-data reduction, likelihood, covariance analysis, or systematic-error budget",
     "a complete standard-GR theory or empirical support for a Weyl-gravity model",
     "a continuum, empirical, Born-rule, or Lorentzian promotion from the BT Euclidean finite lattice",
-    "reflection-positivity failure at lambda=0.4 or every nonzero coupling"
+    "reflection-positivity failure at every nonzero coupling or in a continuum limit"
   ],
   "formal_object": {
     "coordinates": {
@@ -581,7 +664,7 @@
       "source_sha256": "c8ecc8ea14f565cb32ed9e9d6f22b26335a27c01a54cf3129dfbdbff8b83475b"
     },
     "path": "paper/21-reverse-foundations-of-physics.tex",
-    "sha256": "d4353c69e2b6c5a30089f0c344b1cbaf50afc3c264ef7bbc7d35c8fc078c6a42"
+    "sha256": "aa0d56c315d72cfda16feb24d8c67c7886b24a54dc44e0983b84e0c1fcabb80a"
   },
   "result_id": "PAPER21_REVERSE_FOUNDATIONS_INTRODUCTION_V1",
   "result_kind": "PROGRAMME_SYNTHESIS_AND_TYPED_CASE_STUDY_MAP",

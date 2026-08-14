@@ -88,6 +88,8 @@ def main() -> int:
     bt_euclidean = json.loads((ROOT / data["authorities"]["bt_euclidean_import"]["path"]).read_text())
     bt_free_obstruction = json.loads((ROOT / data["authorities"]["bt_free_reconstruction_obstruction"]["path"]).read_text())
     bt_interacting_os = json.loads((ROOT / data["authorities"]["bt_interacting_os_preflight"]["path"]).read_text())
+    bt_lambda04_os = json.loads((ROOT / data["authorities"]["bt_lambda04_os_kernel_obstruction"]["path"]).read_text())
+    bt_action_weight = json.loads((ROOT / data["authorities"]["bt_action_weight_virial_obstruction"]["path"]).read_text())
     dims = cube["dimensions"]
     atlas = data["atlas_snapshot"]
     require(atlas["axis_sizes"] == [6, 6, 16], "unexpected axis sizes")
@@ -122,6 +124,10 @@ def main() -> int:
     require(abs(atlas["bt_interacting_os_hmc_z"] + 6.254432004803571) < 1e-12, "BT HMC sign score drift")
     require(abs(atlas["bt_interacting_os_cross_sampler_z"] + 0.6439112862910602) < 1e-12, "BT cross-sampler score drift")
     require(bt_interacting_os["disposition"]["ordinary_os_reflection_positivity_at_lambda_0p4"] == "OPEN", "BT numerical preflight promoted to exact OS obstruction")
+    require(atlas["bt_lambda_0p4_exact_os_status"] == bt_lambda04_os["disposition"]["ordinary_os_reflection_positivity_at_lambda_0p4"] == "OBSTRUCTED", "BT exact lambda=0.4 OS status drift")
+    require(atlas["bt_interacting_uniform_h_minus_one_status"] == bt_action_weight["method_disposition"]["actual_interacting_h_minus_one_second_moment_bound"] == "OPEN", "BT interacting uniform estimate promoted")
+    require(atlas["bt_pointwise_action_weight_necessary_exponent"] == "AT_LEAST_ONE_HALF", "BT necessary action-weight exponent drift")
+    require(atlas["bt_pointwise_virial_constant_two_status"] == "POINTWISE_VIRIAL_CONSTANT_TWO_OBSTRUCTED", "BT virial obstruction drift")
 
     allowed_tags = {"LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE", "LORENTZIAN-CAUSAL"}
     claim_ids = set()
@@ -144,7 +150,8 @@ def main() -> int:
         (10, "BT-EUCLIDEAN-LATTICE"),
         (11, "BT-FREE-RECONSTRUCTION-OBSTRUCTION"),
         (12, "BT-INTERACTING-OS-PREFLIGHT"),
-        (13, "MANNHEIM-NGC3198-ASSEMBLY"),
+        (13, "BT-INTERACTING-RECONSTRUCTION-FRONTIER"),
+        (14, "MANNHEIM-NGC3198-ASSEMBLY"),
     ]}, "claim set drift")
 
     flags = data["claim_flags"]
@@ -159,8 +166,10 @@ def main() -> int:
     require(flags["bt_euclidean_coarse_reproduction_separated"] is True, "BT numerical separation flag is not certified")
     require(flags["bt_free_os_obstruction_certified"] is True, "BT OS obstruction flag is not certified")
     require(flags["bt_free_h_minus_one_estimate_certified"] is True, "BT free uniform estimate flag is not certified")
-    require(flags["bt_lambda_0p4_os_status_decided"] is False, "BT lambda=0.4 OS status promoted")
+    require(flags["bt_lambda_0p4_os_status_decided"] is True, "BT lambda=0.4 exact OS status missing")
     require(flags["bt_lambda_0p4_two_sampler_sign_support"] is True, "BT interacting sign-support flag missing")
+    require(flags["bt_interacting_uniform_h_minus_one_established"] is False, "BT interacting H^-1 bound promoted")
+    require(flags["bt_half_action_density_candidate_established"] is False, "BT half-action-density candidate promoted")
     require(flags["research_programme_lenses_explained"] is True, "research-programme exposition flag is not certified")
     for false_flag in [
         "weakest_foundation_proved",

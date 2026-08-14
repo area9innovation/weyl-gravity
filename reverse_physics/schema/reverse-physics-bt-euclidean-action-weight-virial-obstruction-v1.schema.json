@@ -1,0 +1,211 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-action-weight-virial-obstruction-v1.schema.json",
+  "title": "BT action-weight threshold and radial virial obstruction certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["certificate", "schema_version", "created", "dependency_tags", "lifecycle_state", "result_kind", "question", "answer", "lattice_and_symmetry", "exact_full_low_mode_schur", "action_weight_threshold", "volume_normalized_candidate", "radial_virial_obstruction", "method_disposition", "missing_object_ledger", "next_gate", "does_not_establish", "provenance", "verification_commands", "tier_receipt", "checks", "report", "schema"],
+  "$defs": {
+    "fraction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      }
+    },
+    "text": {"type": "string", "minLength": 1},
+    "six_vector": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"type": "integer"}},
+    "laurent": {"type": "object", "minProperties": 1, "patternProperties": {"^-?[0-9]+$": {"type": "integer"}}, "additionalProperties": false},
+    "text_array": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/text"}}
+  },
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_EUCLIDEAN_ACTION_WEIGHT_VIRIAL_OBSTRUCTION_V1"},
+    "schema_version": {"const": "reverse-physics-bt-euclidean-action-weight-virial-obstruction-v1"},
+    "created": {"const": "2026-08-14"},
+    "dependency_tags": {"type": "array", "prefixItems": [{"const": "LOCAL-ALGEBRAIC"}, {"const": "EUCLIDEAN-SPECTRAL"}], "items": false},
+    "lifecycle_state": {"const": "OBSTRUCTION_PROVED"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "lattice_and_symmetry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["lattice", "coordinates", "center_family", "center_shape", "mean_zero_basis", "basis_gram_determinant", "lowest_mode_h", "lowest_odd_mode_u", "alternating_mode_g", "symmetry_selection_rule", "full_schur_statement"],
+      "properties": {
+        "lattice": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["length", "dimensions", "spatial_volume", "volume"],
+          "properties": {"length": {"const": 6}, "dimensions": {"const": 4}, "spatial_volume": {"const": 216}, "volume": {"const": 1296}}
+        },
+        "coordinates": {"$ref": "#/$defs/text"},
+        "center_family": {"const": "k(a)=a*(-2,1,1,-2,1,1), x=2^(3a), a>=1"},
+        "center_shape": {"$ref": "#/$defs/six_vector"},
+        "mean_zero_basis": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"$ref": "#/$defs/six_vector"}},
+        "basis_gram_determinant": {"$ref": "#/$defs/fraction"},
+        "lowest_mode_h": {"$ref": "#/$defs/six_vector"},
+        "lowest_odd_mode_u": {"$ref": "#/$defs/six_vector"},
+        "alternating_mode_g": {"$ref": "#/$defs/six_vector"},
+        "symmetry_selection_rule": {"$ref": "#/$defs/text"},
+        "full_schur_statement": {"$ref": "#/$defs/text"}
+      }
+    },
+    "exact_full_low_mode_schur": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["action", "coupling_cancellation", "h_h_laurent_coefficients", "h_g_laurent_coefficients", "g_g_laurent_coefficients", "determinant_laurent_coefficients", "schur_complement", "positivity_and_bound", "exact_limit", "free_curvature_per_spatial_site", "full_lattice_scaling", "fixtures"],
+      "properties": {
+        "action": {"$ref": "#/$defs/text"},
+        "coupling_cancellation": {"$ref": "#/$defs/text"},
+        "h_h_laurent_coefficients": {"$ref": "#/$defs/laurent"},
+        "h_g_laurent_coefficients": {"$ref": "#/$defs/laurent"},
+        "g_g_laurent_coefficients": {"$ref": "#/$defs/laurent"},
+        "determinant_laurent_coefficients": {"$ref": "#/$defs/laurent"},
+        "schur_complement": {"$ref": "#/$defs/text"},
+        "positivity_and_bound": {"const": "for x>=8, 0<kappa(x)<48/x"},
+        "exact_limit": {"const": "lim_(x->infinity) x*kappa(x)=36"},
+        "free_curvature_per_spatial_site": {"const": 12},
+        "full_lattice_scaling": {"$ref": "#/$defs/text"},
+        "fixtures": {
+          "type": "array",
+          "minItems": 8,
+          "maxItems": 8,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["parameter", "x", "center_time_exponents", "h_hessian_per_spatial_site", "h_g_hessian_per_spatial_site", "g_g_hessian_per_spatial_site", "determinant_per_spatial_site_squared", "full_low_mode_schur_per_spatial_site", "x_times_schur", "center_action_per_spatial_site", "other_h_mixed_entries", "formula_matches", "all_other_h_mixed_entries_vanish", "strict_schur_bound"],
+            "properties": {
+              "parameter": {"type": "integer", "minimum": 1, "maximum": 8},
+              "x": {"type": "integer", "minimum": 8},
+              "center_time_exponents": {"$ref": "#/$defs/six_vector"},
+              "h_hessian_per_spatial_site": {"$ref": "#/$defs/fraction"},
+              "h_g_hessian_per_spatial_site": {"$ref": "#/$defs/fraction"},
+              "g_g_hessian_per_spatial_site": {"$ref": "#/$defs/fraction"},
+              "determinant_per_spatial_site_squared": {"$ref": "#/$defs/fraction"},
+              "full_low_mode_schur_per_spatial_site": {"$ref": "#/$defs/fraction"},
+              "x_times_schur": {"$ref": "#/$defs/fraction"},
+              "center_action_per_spatial_site": {"$ref": "#/$defs/fraction"},
+              "other_h_mixed_entries": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/fraction"}},
+              "formula_matches": {"const": true},
+              "all_other_h_mixed_entries_vanish": {"const": true},
+              "strict_schur_bound": {"const": true}
+            }
+          }
+        }
+      }
+    },
+    "action_weight_threshold": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["center_action_laurent_coefficients", "action_asymptotic", "general_weight_asymptotic", "subhalf_obstruction", "quarter_power_status", "quarter_power_limit", "half_power_limit", "previous_certificate_disposition"],
+      "properties": {
+        "center_action_laurent_coefficients": {"$ref": "#/$defs/laurent"},
+        "action_asymptotic": {"const": "lim_(x->infinity) A(x)/x^2=4"},
+        "general_weight_asymptotic": {"$ref": "#/$defs/text"},
+        "subhalf_obstruction": {"$ref": "#/$defs/text"},
+        "quarter_power_status": {"const": "OBSTRUCTED_BY_SUCCESSOR_FAMILY"},
+        "quarter_power_limit": {"const": "lim kappa(x)*A(x)^(1/4)=0"},
+        "half_power_limit": {"const": "lim kappa(x)*A(x)^(1/2)=72"},
+        "previous_certificate_disposition": {"$ref": "#/$defs/text"}
+      }
+    },
+    "volume_normalized_candidate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["action_density_on_spatially_constant_sector", "normalized_curvature", "candidate_score", "exact_squared_limit", "status", "why_density_not_total_action"],
+      "properties": {
+        "action_density_on_spatially_constant_sector": {"const": "A_total/N=A(x)/6"},
+        "normalized_curvature": {"const": "kappa(x)/kappa(0)=kappa(x)/12"},
+        "candidate_score": {"$ref": "#/$defs/text"},
+        "exact_squared_limit": {"const": "lim C(x)^2=6"},
+        "status": {"const": "NOT_OBSTRUCTED_BY_THIS_FAMILY_BUT_NOT_PROVED"},
+        "why_density_not_total_action": {"$ref": "#/$defs/text"}
+      }
+    },
+    "radial_virial_obstruction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["definition", "proposed_shortcut", "fixture", "log_bound_proof", "full_lattice_transfer", "status", "surviving_routes"],
+      "properties": {
+        "definition": {"$ref": "#/$defs/text"},
+        "proposed_shortcut": {"$ref": "#/$defs/text"},
+        "fixture": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["shape", "rational_base", "action_per_spatial_site", "radial_factor_without_log", "D_over_A_factor_without_log", "log_upper_bound", "certified_upper_bound_for_D_over_A", "upper_bound_is_below_two"],
+          "properties": {
+            "shape": {"$ref": "#/$defs/six_vector"},
+            "rational_base": {"$ref": "#/$defs/fraction"},
+            "action_per_spatial_site": {"$ref": "#/$defs/fraction"},
+            "radial_factor_without_log": {"$ref": "#/$defs/fraction"},
+            "D_over_A_factor_without_log": {"$ref": "#/$defs/fraction"},
+            "log_upper_bound": {"$ref": "#/$defs/fraction"},
+            "certified_upper_bound_for_D_over_A": {"$ref": "#/$defs/fraction"},
+            "upper_bound_is_below_two": {"const": true}
+          }
+        },
+        "log_bound_proof": {"$ref": "#/$defs/text"},
+        "full_lattice_transfer": {"$ref": "#/$defs/text"},
+        "status": {"const": "POINTWISE_VIRIAL_CONSTANT_TWO_OBSTRUCTED"},
+        "surviving_routes": {"$ref": "#/$defs/text_array"}
+      }
+    },
+    "method_disposition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["quarter_power_action_weight", "every_pointwise_weight_exponent_below_one_half", "half_action_density_weight", "pointwise_radial_virial_constant_two", "weaker_positive_radial_virial_constant", "annealed_action_density_moment", "actual_interacting_h_minus_one_second_moment_bound", "interacting_tightness", "continuum_limit", "born_rule", "krein_reconstruction", "lorentzian_transfer"],
+      "properties": {
+        "quarter_power_action_weight": {"const": "OBSTRUCTED"},
+        "every_pointwise_weight_exponent_below_one_half": {"const": "OBSTRUCTED"},
+        "half_action_density_weight": {"const": "OPEN"},
+        "pointwise_radial_virial_constant_two": {"const": "OBSTRUCTED"},
+        "weaker_positive_radial_virial_constant": {"const": "OPEN"},
+        "annealed_action_density_moment": {"const": "OPEN"},
+        "actual_interacting_h_minus_one_second_moment_bound": {"const": "OPEN"},
+        "interacting_tightness": {"const": "NOT_ESTABLISHED"},
+        "continuum_limit": {"const": "NOT_ESTABLISHED"},
+        "born_rule": {"const": "NOT_ESTABLISHED"},
+        "krein_reconstruction": {"const": "NOT_ASSESSED"},
+        "lorentzian_transfer": {"const": "NOT_ESTABLISHED"}
+      }
+    },
+    "missing_object_ledger": {"$ref": "#/$defs/text_array"},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "does_not_establish": {"$ref": "#/$defs/text_array"},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["repository_base_commit", "inputs", "arithmetic"],
+      "properties": {
+        "repository_base_commit": {"const": "3c7fedd277eb533637b98693dfc6380181bd7cc2"},
+        "inputs": {
+          "type": "array", "minItems": 2, "maxItems": 2,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["path", "sha256"],
+            "properties": {"path": {"$ref": "#/$defs/text"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+          }
+        },
+        "arithmetic": {"$ref": "#/$defs/text"}
+      }
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "items": {"$ref": "#/$defs/text"}},
+    "tier_receipt": {"type": "object", "minProperties": 5},
+    "checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"const": 16},
+        "total": {"const": 16},
+        "failures": {"type": "array", "maxItems": 0},
+        "details": {"type": "object", "minProperties": 16, "maxProperties": 16, "additionalProperties": {"const": true}}
+      }
+    },
+    "report": {"const": "reverse_physics/reports/bt-euclidean-action-weight-virial-obstruction.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-euclidean-action-weight-virial-obstruction-v1.schema.json"}
+  }
+}

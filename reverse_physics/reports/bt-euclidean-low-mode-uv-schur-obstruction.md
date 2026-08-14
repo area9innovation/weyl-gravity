@@ -18,9 +18,11 @@ direction makes the effective lowest-mode Hessian tend to zero.
 
 This blocks a field-independent, pointwise Schur-complement or anisotropic
 Brascamp--Lieb proof of the interacting covariance estimate. It does not
-disprove the covariance estimate itself. The same exact family shows that the
-bad curvature occurs at rapidly increasing action, leaving an action-weighted
-or annealed estimate as the live route.
+disprove the covariance estimate itself. This family alone leaves an
+action-weighted or annealed estimate open. The exact successor
+REVERSE_PHYSICS_BT_EUCLIDEAN_ACTION_WEIGHT_VIRIAL_OBSTRUCTION_V1 shows that
+its quarter-power scaling is not the global threshold: every exponent below
+one half is obstructed by a second family.
 
 ## Exact mode decomposition
 
@@ -124,9 +126,11 @@ Thus
 
 The inverse effective curvature grows only like the fourth root of the action
 along this exact family. Since the Gibbs density contains \(e^{-A}\), this
-family does not obstruct an averaged inverse-curvature estimate. Instead, it
-identifies the quarter-power action weight that a sharp candidate inequality
-must tolerate.
+family does not obstruct an averaged inverse-curvature estimate. The exponent
+is family-specific, however. The successor period-three family has
+\(\kappa\sim36/x\) and \(A\sim4x^2\), so
+\(\kappa A^{1/4}\to0\) and the first exponent it does not obstruct is one
+half.
 
 ## Meaning for the continuum gate
 
@@ -137,9 +141,10 @@ Three pointwise routes are now closed:
 3. field-independent curvature after projecting to, and Schur-complementing
    around, a lowest mode.
 
-The next falsifiable target is a global action-weighted lower bound for the
-low-mode Schur complement, followed by an annealed Gibbs estimate of the
-weight. A direct normalized marginal estimate remains the alternative.
+The next falsifiable target is the volume-normalized half-action-density lower
+bound identified by the successor certificate, followed by an annealed Gibbs
+estimate of that weight. A weaker positive radial virial constant or a direct
+normalized marginal estimate remains the alternative.
 
 This result does not establish or refute the actual interacting \(H^{-1}\)
 bound, tightness, a continuum measure, a Born rule, Krein reconstruction, or

@@ -1,0 +1,793 @@
+{
+  "certificate": "REVERSE_PHYSICS_BT_EUCLIDEAN_ACTION_WEIGHT_VIRIAL_OBSTRUCTION_V1",
+  "schema_version": "reverse-physics-bt-euclidean-action-weight-virial-obstruction-v1",
+  "created": "2026-08-14",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "lifecycle_state": "OBSTRUCTION_PROVED",
+  "result_kind": "exact sharp-exponent obstruction for pointwise action-weighted lowest-mode curvature, plus an exact obstruction to the coefficient-two radial virial shortcut",
+  "question": "Does the quarter-power action weight suggested by the first lowest-mode Schur family survive globally, and can the needed action-density moment then be obtained from the pointwise virial inequality psi dot grad A >= 2A?",
+  "answer": "No to both proposed shortcuts. A second, period-three dyadic center makes the full lowest-mode Schur curvature scale as 36/x while its action scales as 4*x^2. Therefore every pointwise weight exponent p<1/2 fails, including the previous p=1/4 candidate; p=1/2 is the first exponent not obstructed by this family. Separately, an exact rational center with base 101/100 has radial ratio D/A<2, so the coefficient-two virial argument for a half-unit action-density bound is invalid. A volume-normalized half-action-density curvature estimate and a weaker positive virial or annealed action moment remain open.",
+  "lattice_and_symmetry": {
+    "lattice": {
+      "length": 6,
+      "dimensions": 4,
+      "spatial_volume": 216,
+      "volume": 1296
+    },
+    "coordinates": "psi=lambda*phi=k*log(2), with displayed time vectors constant on every spatial slice",
+    "center_family": "k(a)=a*(-2,1,1,-2,1,1), x=2^(3a), a>=1",
+    "center_shape": [
+      -2,
+      1,
+      1,
+      -2,
+      1,
+      1
+    ],
+    "mean_zero_basis": [
+      [
+        2,
+        1,
+        -1,
+        -2,
+        -1,
+        1
+      ],
+      [
+        0,
+        1,
+        1,
+        0,
+        -1,
+        -1
+      ],
+      [
+        1,
+        -1,
+        1,
+        -1,
+        1,
+        -1
+      ],
+      [
+        1,
+        0,
+        -1,
+        1,
+        0,
+        -1
+      ],
+      [
+        1,
+        -1,
+        0,
+        1,
+        -1,
+        0
+      ]
+    ],
+    "basis_gram_determinant": {
+      "numerator": 3456,
+      "denominator": 1
+    },
+    "lowest_mode_h": [
+      2,
+      1,
+      -1,
+      -2,
+      -1,
+      1
+    ],
+    "lowest_odd_mode_u": [
+      0,
+      1,
+      1,
+      0,
+      -1,
+      -1
+    ],
+    "alternating_mode_g": [
+      1,
+      -1,
+      1,
+      -1,
+      1,
+      -1
+    ],
+    "symmetry_selection_rule": "The center Hessian commutes with shift by three and reflection i->-i. The even, shift-odd h can couple among this complete mean-zero basis only to the even, shift-odd g; u is reflection odd and the remaining two modes are shift even.",
+    "full_schur_statement": "Because every other h mixed entry vanishes, eliminating the entire mean-zero complement gives the same h-g Schur term."
+  },
+  "exact_full_low_mode_schur": {
+    "action": "A(psi)=(1/2)*sum_x[sum_(y~x)exp(psi_y-psi_x)-8]^2",
+    "coupling_cancellation": "For S_lambda(phi)=A(lambda*phi)/lambda^2, the phi-Hessian equals the psi-Hessian of A.",
+    "h_h_laurent_coefficients": {
+      "2": 16,
+      "1": -8,
+      "-1": -4,
+      "-2": 8
+    },
+    "h_g_laurent_coefficients": {
+      "2": 32,
+      "1": -16,
+      "-1": -32,
+      "-2": 16
+    },
+    "g_g_laurent_coefficients": {
+      "2": 64,
+      "1": -32,
+      "-1": 32,
+      "-2": 32
+    },
+    "determinant_laurent_coefficients": {
+      "1": 2304,
+      "0": -1152,
+      "-2": -1152,
+      "-3": 1152
+    },
+    "schur_complement": "kappa(x)=H_hh-H_hg^2/H_gg=det(H_hg)/H_gg",
+    "positivity_and_bound": "for x>=8, 0<kappa(x)<48/x",
+    "exact_limit": "lim_(x->infinity) x*kappa(x)=36",
+    "free_curvature_per_spatial_site": 12,
+    "full_lattice_scaling": "The action and every Hessian entry acquire the common factor 216; the normalized curvature ratio is kappa/12.",
+    "fixtures": [
+      {
+        "parameter": 1,
+        "x": 8,
+        "center_time_exponents": [
+          -2,
+          1,
+          1,
+          -2,
+          1,
+          1
+        ],
+        "h_hessian_per_spatial_site": {
+          "numerator": 7677,
+          "denominator": 8
+        },
+        "h_g_hessian_per_spatial_site": {
+          "numerator": 7665,
+          "denominator": 4
+        },
+        "g_g_hessian_per_spatial_site": {
+          "numerator": 7689,
+          "denominator": 2
+        },
+        "determinant_per_spatial_site_squared": {
+          "numerator": 69057,
+          "denominator": 4
+        },
+        "full_low_mode_schur_per_spatial_site": {
+          "numerator": 23019,
+          "denominator": 5126
+        },
+        "x_times_schur": {
+          "numerator": 92076,
+          "denominator": 2563
+        },
+        "center_action_per_spatial_site": {
+          "numerator": 6321,
+          "denominator": 32
+        },
+        "other_h_mixed_entries": [
+          {
+            "numerator": 0,
+            "denominator": 1
+          },
+          {
+            "numerator": 0,
+            "denominator": 1
+          },
+          {
+            "numerator": 0,
+            "denominator": 1
+          }
+        ],
+        "formula_matches": true,
+        "all_other_h_mixed_entries_vanish": true,
+        "strict_schur_bound": true
+      },
+      {
+        "parameter": 2,
+        "x": 64,
+        "center_time_exponents": [
+          -4,
+          2,
+          2,
+          -4,
+          2,
+          2
+        ],
+        "h_hessian_per_spatial_site": {
+          "numerator": 33292257,
+          "denominator": 512
+        },
+        "h_g_hessian_per_spatial_site": {
+          "numerator": 33292161,
+          "denominator": 256
+        },
+        "g_g_hessian_per_spatial_site": {
+          "numerator": 33292353,
+          "denominator": 128
+        },
+        "determinant_per_spatial_site_squared": {
+          "numerator": 299630025,
+          "denominator": 2048
+        },
+        "full_low_mode_schur_per_spatial_site": {
+          "numerator": 99876675,
+          "denominator": 177559216
+        },
+        "x_times_schur": {
+          "numerator": 399506700,
+          "denominator": 11097451
+        },
+        "center_action_per_spatial_site": {
+          "numerator": 32518017,
+          "denominator": 2048
+        },
+        "other_h_mixed_entries": [
+          {
+            "numerator": 0,
+            "denominator": 1
+          },
+          {
+            "numerator": 0,
+            "denominator": 1
+          },
+          {
+            "numerator": 0,
+            "denominator": 1
+          }
+        ],
+        "formula_matches": true,
+        "all_other_h_mixed_entries_vanish": true,
+        "strict_schur_bound": true
+      },
+      {
+        "parameter": 3,
+        "x": 512,
+        "center_time_exponents": [
+          -6,
+          3,
+          3,
+          -6,
+          3,
+          3
+        ],
+        "h_hessian_per_spatial_site": {
+          "numerator": 137304735489,
+          "denominator": 32768
+        },
+        "h_g_hessian_per_spatial_site": {
+          "numerator": 137304734721,
+          "denominator": 16384
+        },
+        "g_g_hessian_per_spatial_site": {
+          "numerator": 137304736257,
+          "denominator": 8192
+        },
+        "determinant_per_spatial_site_squared": {
+          "numerator": 1235742617097,
+          "denominator": 1048576
+        },
+        "full_low_mode_schur_per_spatial_site": {
+          "numerator": 411914205699,
+          "denominator": 5858335413632
+        },
+        "x_times_schur": {
+          "numerator": 1647656822796,
+          "denominator": 45768245419
+        },
+        "center_action_per_spatial_site": {
+          "numerator": 136902867969,
+          "denominator": 131072
+        },
+        "other_h_mixed_entries": [
+          {
+            "numerator": 0,
+            "denominator": 1
+          },
+          {
+            "numerator": 0,
+            "denominator": 1
+          },
+          {
+            "numerator": 0,
+            "denominator": 1
+          }
+        ],
+        "formula_matches": true,
+        "all_other_h_mixed_entries_vanish": true,
+        "strict_schur_bound": true
+      },
+      {
+        "parameter": 4,
+        "x": 4096,
+        "center_time_exponents": [
+          -8,
+          4,
+          4,
+          -8,
+          4,
+          4
+        ],
+        "h_hessian_per_spatial_site": {
+          "numerator": 562881233942529,
+          "denominator": 2097152
+        },
+        "h_g_hessian_per_spatial_site": {
+          "numerator": 562881233936385,
+          "denominator": 1048576
+        },
+        "g_g_hessian_per_spatial_site": {
+          "numerator": 562881233948673,
+          "denominator": 524288
+        },
+        "determinant_per_spatial_site_squared": {
+          "numerator": 5065931105464329,
+          "denominator": 536870912
+        },
+        "full_low_mode_schur_per_spatial_site": {
+          "numerator": 1688643701821443,
+          "denominator": 192130127854480384
+        },
+        "x_times_schur": {
+          "numerator": 6754574807285772,
+          "denominator": 187627077982891
+        },
+        "center_action_per_spatial_site": {
+          "numerator": 562675125837825,
+          "denominator": 8388608
+        },
+        "other_h_mixed_entries": [
+          {
+            "numerator": 0,
+            "denominator": 1
+          },
+          {
+            "numerator": 0,
+            "denominator": 1
+          },
+          {
+            "numerator": 0,
+            "denominator": 1
+          }
+        ],
+        "formula_matches": true,
+        "all_other_h_mixed_entries_vanish": true,
+        "strict_schur_bound": true
+      },
+      {
+        "parameter": 5,
+        "x": 32768,
+        "center_time_exponents": [
+          -10,
+          5,
+          5,
+          -10,
+          5,
+          5
+        ],
+        "h_hessian_per_spatial_site": {
+          "numerator": 2305807824841588737,
+          "denominator": 134217728
+        },
+        "h_g_hessian_per_spatial_site": {
+          "numerator": 2305807824841539585,
+          "denominator": 67108864
+        },
+        "g_g_hessian_per_spatial_site": {
+          "numerator": 2305807824841637889,
+          "denominator": 33554432
+        },
+        "determinant_per_spatial_site_squared": {
+          "numerator": 20752270423574151177,
+          "denominator": 274877906944
+        },
+        "full_low_mode_schur_per_spatial_site": {
+          "numerator": 6917423474524717059,
+          "denominator": 6296392567034232528896
+        },
+        "x_times_schur": {
+          "numerator": 27669693898098868236,
+          "denominator": 768602608280545963
+        },
+        "center_action_per_spatial_site": {
+          "numerator": 2305702274946498561,
+          "denominator": 536870912
+        },
+        "other_h_mixed_entries": [
+          {
+            "numerator": 0,
+            "denominator": 1
+          },
+          {
+            "numerator": 0,
+            "denominator": 1
+          },
+          {
+            "numerator": 0,
+            "denominator": 1
+          }
+        ],
+        "formula_matches": true,
+        "all_other_h_mixed_entries_vanish": true,
+        "strict_schur_bound": true
+      },
+      {
+        "parameter": 6,
+        "x": 262144,
+        "center_time_exponents": [
+          -12,
+          6,
+          6,
+          -12,
+          6,
+          6
+        ],
+        "h_hessian_per_spatial_site": {
+          "numerator": 9444714951340780814337,
+          "denominator": 8589934592
+        },
+        "h_g_hessian_per_spatial_site": {
+          "numerator": 9444714951340780421121,
+          "denominator": 4294967296
+        },
+        "g_g_hessian_per_spatial_site": {
+          "numerator": 9444714951340781207553,
+          "denominator": 2147483648
+        },
+        "determinant_per_spatial_site_squared": {
+          "numerator": 85002434562067026149385,
+          "denominator": 140737488355328
+        },
+        "full_low_mode_schur_per_spatial_site": {
+          "numerator": 28334144854022342049795,
+          "denominator": 206322946350356479072731136
+        },
+        "x_times_schur": {
+          "numerator": 113336579416089368199180,
+          "denominator": 3148238317113593735851
+        },
+        "center_action_per_spatial_site": {
+          "numerator": 9444660908351410405377,
+          "denominator": 34359738368
+        },
+        "other_h_mixed_entries": [
+          {
+            "numerator": 0,
+            "denominator": 1
+          },
+          {
+            "numerator": 0,
+            "denominator": 1
+          },
+          {
+            "numerator": 0,
+            "denominator": 1
+          }
+        ],
+        "formula_matches": true,
+        "all_other_h_mixed_entries_vanish": true,
+        "strict_schur_bound": true
+      },
+      {
+        "parameter": 7,
+        "x": 2097152,
+        "center_time_exponents": [
+          -14,
+          7,
+          7,
+          -14,
+          7,
+          7
+        ],
+        "h_hessian_per_spatial_site": {
+          "numerator": 38685617004296096734773249,
+          "denominator": 549755813888
+        },
+        "h_g_hessian_per_spatial_site": {
+          "numerator": 38685617004296096731627521,
+          "denominator": 274877906944
+        },
+        "g_g_hessian_per_spatial_site": {
+          "numerator": 38685617004296096737918977,
+          "denominator": 137438953472
+        },
+        "determinant_per_spatial_site_squared": {
+          "numerator": 348170553038664870603522057,
+          "denominator": 72057594037927936
+        },
+        "full_low_mode_schur_per_spatial_site": {
+          "numerator": 116056851012888290201174019,
+          "denominator": 6760801589316130655510021537792
+        },
+        "x_times_schur": {
+          "numerator": 464227404051553160804696076,
+          "denominator": 12895205668098698912639659
+        },
+        "center_action_per_spatial_site": {
+          "numerator": 38685589334193180306833409,
+          "denominator": 2199023255552
+        },
+        "other_h_mixed_entries": [
+          {
+            "numerator": 0,
+            "denominator": 1
+          },
+          {
+            "numerator": 0,
+            "denominator": 1
+          },
+          {
+            "numerator": 0,
+            "denominator": 1
+          }
+        ],
+        "formula_matches": true,
+        "all_other_h_mixed_entries_vanish": true,
+        "strict_schur_bound": true
+      },
+      {
+        "parameter": 8,
+        "x": 16777216,
+        "center_time_exponents": [
+          -16,
+          8,
+          8,
+          -16,
+          8,
+          8
+        ],
+        "h_hessian_per_spatial_site": {
+          "numerator": 158456320306162192317434298369,
+          "denominator": 35184372088832
+        },
+        "h_g_hessian_per_spatial_site": {
+          "numerator": 158456320306162192317409132545,
+          "denominator": 17592186044416
+        },
+        "g_g_hessian_per_spatial_site": {
+          "numerator": 158456320306162192317459464193,
+          "denominator": 8796093022208
+        },
+        "determinant_per_spatial_site_squared": {
+          "numerator": 1426106882755459730856833187849,
+          "denominator": 36893488147419103232
+        },
+        "full_low_mode_schur_per_spatial_site": {
+          "numerator": 475368960918486576952277729283,
+          "denominator": 221537992695139102628629833500852224
+        },
+        "x_times_schur": {
+          "numerator": 1901475843673946307809110917132,
+          "denominator": 52818773435387397439153154731
+        },
+        "center_action_per_spatial_site": {
+          "numerator": 158456306139063588133403623425,
+          "denominator": 140737488355328
+        },
+        "other_h_mixed_entries": [
+          {
+            "numerator": 0,
+            "denominator": 1
+          },
+          {
+            "numerator": 0,
+            "denominator": 1
+          },
+          {
+            "numerator": 0,
+            "denominator": 1
+          }
+        ],
+        "formula_matches": true,
+        "all_other_h_mixed_entries_vanish": true,
+        "strict_schur_bound": true
+      }
+    ]
+  },
+  "action_weight_threshold": {
+    "center_action_laurent_coefficients": {
+      "2": 4,
+      "1": -8,
+      "0": 6,
+      "-1": -4,
+      "-2": 2
+    },
+    "action_asymptotic": "lim_(x->infinity) A(x)/x^2=4",
+    "general_weight_asymptotic": "kappa(x)*A(x)^p ~ 36*4^p*x^(2p-1)",
+    "subhalf_obstruction": "For every fixed p<1/2, kappa(x)*(1+A(x))^p tends to zero; no positive global lower-bound constant with that exponent exists.",
+    "quarter_power_status": "OBSTRUCTED_BY_SUCCESSOR_FAMILY",
+    "quarter_power_limit": "lim kappa(x)*A(x)^(1/4)=0",
+    "half_power_limit": "lim kappa(x)*A(x)^(1/2)=72",
+    "previous_certificate_disposition": "The predecessor's exact family and limit 18 remain correct, but its family-sharp quarter-power candidate is not global."
+  },
+  "volume_normalized_candidate": {
+    "action_density_on_spatially_constant_sector": "A_total/N=A(x)/6",
+    "normalized_curvature": "kappa(x)/kappa(0)=kappa(x)/12",
+    "candidate_score": "C(x)=(kappa(x)/12)*sqrt(1+A(x)/6)",
+    "exact_squared_limit": "lim C(x)^2=6",
+    "status": "NOT_OBSTRUCTED_BY_THIS_FAMILY_BUT_NOT_PROVED",
+    "why_density_not_total_action": "An annealed inverse-curvature proof needs a volume-uniform expectation. A total-action half weight typically carries a sqrt(N) factor; action density is the scale-compatible target."
+  },
+  "radial_virial_obstruction": {
+    "definition": "D(psi)=psi dot grad A(psi); along psi=t*k this is t*dA(t*k)/dt.",
+    "proposed_shortcut": "D>=2A would combine with finite-dimensional Gibbs integration by parts to give E[S_lambda]/N<(1/2).",
+    "fixture": {
+      "shape": [
+        -1,
+        -1,
+        0,
+        0,
+        2,
+        0
+      ],
+      "rational_base": {
+        "numerator": 101,
+        "denominator": 100
+      },
+      "action_per_spatial_site": {
+        "numerator": 12274143260801,
+        "denominator": 10406040100000000
+      },
+      "radial_factor_without_log": {
+        "numerator": 614597925020801,
+        "denominator": 2601510025000000
+      },
+      "D_over_A_factor_without_log": {
+        "numerator": 2458391700083204,
+        "denominator": 12274143260801
+      },
+      "log_upper_bound": {
+        "numerator": 29851,
+        "denominator": 3000000
+      },
+      "certified_upper_bound_for_D_over_A": {
+        "numerator": 18346362659795930651,
+        "denominator": 9205607445600750000
+      },
+      "upper_bound_is_below_two": true
+    },
+    "log_bound_proof": "For u=1/100, log(1+u)<u-u^2/2+u^3/3 by the alternating Taylor bound. Multiplying this rational upper bound by the exact rational factor T/A gives a number strictly below 2.",
+    "full_lattice_transfer": "Spatial replication multiplies D and A by 216, preserving D/A.",
+    "status": "POINTWISE_VIRIAL_CONSTANT_TWO_OBSTRUCTED",
+    "surviving_routes": [
+      "prove a universal D>=c*A with some explicit 0<c<2",
+      "prove the action-density moment directly under the Gibbs measure",
+      "bypass curvature with a normalized low-mode marginal estimate"
+    ]
+  },
+  "method_disposition": {
+    "quarter_power_action_weight": "OBSTRUCTED",
+    "every_pointwise_weight_exponent_below_one_half": "OBSTRUCTED",
+    "half_action_density_weight": "OPEN",
+    "pointwise_radial_virial_constant_two": "OBSTRUCTED",
+    "weaker_positive_radial_virial_constant": "OPEN",
+    "annealed_action_density_moment": "OPEN",
+    "actual_interacting_h_minus_one_second_moment_bound": "OPEN",
+    "interacting_tightness": "NOT_ESTABLISHED",
+    "continuum_limit": "NOT_ESTABLISHED",
+    "born_rule": "NOT_ESTABLISHED",
+    "krein_reconstruction": "NOT_ASSESSED",
+    "lorentzian_transfer": "NOT_ESTABLISHED"
+  },
+  "missing_object_ledger": [
+    "a global positive or variationally well-defined lowest-mode Schur complement, including the orthogonal-block invertibility gate",
+    "a proof or obstruction of the volume-normalized half-action-density curvature inequality",
+    "a positive uniform action-density moment bound by a weaker virial or direct Gibbs argument",
+    "or a direct normalized lowest-mode marginal estimate",
+    "an L-uniform actual interacting H^-1 second moment",
+    "tightness in a declared negative-Sobolev topology and limit identification"
+  ],
+  "next_gate": "First prove or obstruct positivity/invertibility of the orthogonal Hessian block needed to define kappa_h globally, then test the normalized inequality (kappa_h(psi)/kappa_h(0))*sqrt(1+A(psi)/N)>=c uniformly in volume. In parallel, prove or obstruct a weaker radial inequality D>=c*A with explicit c>0; either ingredient must then be integrated under the actual Gibbs measure before any H^-1 claim.",
+  "does_not_establish": [
+    "failure of every action-weighted or annealed covariance estimate",
+    "failure of a half-action-density curvature estimate",
+    "failure of every positive radial virial constant",
+    "failure of the actual interacting H^-1 moment bound",
+    "tightness or a continuum Euclidean BT measure",
+    "a Born rule or Krein reconstruction",
+    "anything LORENTZIAN-CAUSAL"
+  ],
+  "provenance": {
+    "repository_base_commit": "3c7fedd277eb533637b98693dfc6380181bd7cc2",
+    "inputs": [
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_LOW_MODE_UV_SCHUR_OBSTRUCTION_V1.json",
+        "sha256": "7284cc2e295449465d10c4de4ee1f47d73b4d2ea7b3ce36f9d208f4089629651"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_BILAPLACIAN_REFERENCE_BRIDGE_V1.json",
+        "sha256": "b96b3aba94374af4351c4e4609cc5f86eeb96562b189a527fdea65bc2bb7d559"
+      }
+    ],
+    "arithmetic": "Exact Python Fraction arithmetic for dyadic Hessians, full mean-zero symmetry blocks, determinants, Schur complements, Laurent fixtures, rational virial data, and the alternating rational logarithm bound"
+  },
+  "verification_commands": [
+    "python3 reverse_physics/bt_euclidean_action_weight_virial_obstruction.py --check",
+    "python3 reverse_physics/verify_bt_euclidean_action_weight_virial_obstruction.py",
+    "python3 -m unittest -v reverse_physics.tests.test_bt_euclidean_action_weight_virial_obstruction"
+  ],
+  "tier_receipt": {
+    "command_results": [
+      {
+        "command": "python3 reverse_physics/bt_euclidean_action_weight_virial_obstruction.py --check",
+        "elapsed_seconds": "0.04",
+        "status": "PASS_16_OF_16"
+      },
+      {
+        "command": "python3 reverse_physics/verify_bt_euclidean_action_weight_virial_obstruction.py",
+        "elapsed_seconds": "1.90",
+        "status": "PASS_16_OF_16"
+      },
+      {
+        "command": "python3 -m unittest -v reverse_physics.tests.test_bt_euclidean_action_weight_virial_obstruction",
+        "elapsed_seconds": "17.21",
+        "status": "PASS_14_TESTS"
+      },
+      {
+        "command": "python3 paper/generate_21_reverse_foundations_claim_map.py --check && python3 paper/verify_21_reverse_foundations_claim_map.py",
+        "elapsed_seconds": "0.14",
+        "status": "PASS"
+      },
+      {
+        "command": "cd paper && pdflatex -interaction=nonstopmode -halt-on-error 21-reverse-foundations-of-physics.tex (twice)",
+        "elapsed_seconds": "3.0",
+        "status": "PASS_41_PAGES"
+      },
+      {
+        "command": "GOMEMLIMIT=300MiB GOGC=50 sfc conform planning/work-items",
+        "elapsed_seconds": "6.9",
+        "status": "PASS_CLEAN"
+      }
+    ],
+    "failed_or_nonpassing_attempts": [
+      {
+        "command": "ulimit -v 500000; sfc conform planning/work-items",
+        "status": "FAILED_BEFORE_VALIDATION",
+        "reason": "The Go runtime could not reserve its virtual page-summary arena under the virtual-address ceiling; this was not counted as a pass. The retry used a 300 MiB Go heap limit without a virtual-address cap."
+      },
+      {
+        "command": "GOMEMLIMIT=300MiB GOGC=50 timeout 60s ci/science-forge-shadow.sh",
+        "status": "ADVISORY_FINDINGS_NOT_A_PASS",
+        "reason": "The read-only shadow rail reported a Forge binary/stdlib mismatch that made the bridge audit fail closed and the known corpus-baseline drift (1647 versus 976 certificates). It exited zero only because the rail is advisory; neither finding is counted as verification of this certificate."
+      }
+    ],
+    "tier_0": "parse changed Python, JSON, and TeX; deterministic generation; strict schema; scoped diff check; staged-diff inspection",
+    "tier_1": "exact producer, independent full-6^4 selected-fixture enumeration, exact virial reconstruction, tests, mutations",
+    "tier_2": "two predecessor certificates checked by content hash; no sampler rerun because no numerical input changes",
+    "tier_3": "not run: obstruction correction only, with no theorem, freeze, continuum, quantum lifecycle, or Lorentzian promotion",
+    "memory_policy": "all commands run sequentially under a 500000 KiB virtual-memory ceiling"
+  },
+  "checks": {
+    "ok": true,
+    "passed": 16,
+    "total": 16,
+    "failures": [],
+    "details": {
+      "mean_zero_basis_is_complete": true,
+      "lowest_modes_have_eigenvalue_one": true,
+      "alternating_mode_has_eigenvalue_four": true,
+      "center_has_shift_three_and_reflection_symmetry": true,
+      "h_and_g_share_symmetry_character": true,
+      "all_exact_fixtures_match": true,
+      "h_couples_only_to_g": true,
+      "all_schur_bounds_hold": true,
+      "quarter_power_weight_has_zero_limit": true,
+      "all_subhalf_weights_have_zero_limit": true,
+      "half_weight_limit_is_seventy_two": true,
+      "density_normalized_half_score_squared_limit_is_six": true,
+      "virial_fixture_is_exactly_mean_zero": true,
+      "virial_two_constant_is_obstructed": true,
+      "actual_interacting_uniform_bound_remains_open": true,
+      "no_continuum_born_krein_or_lorentzian_promotion": true
+    }
+  },
+  "report": "reverse_physics/reports/bt-euclidean-action-weight-virial-obstruction.md",
+  "schema": "reverse_physics/schema/reverse-physics-bt-euclidean-action-weight-virial-obstruction-v1.schema.json"
+}
