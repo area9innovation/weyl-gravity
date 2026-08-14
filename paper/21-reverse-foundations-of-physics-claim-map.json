@@ -10,7 +10,18 @@
     "bt_actual_action_density_status": "PROVED",
     "bt_actual_half_action_factor_status": "PROVED",
     "bt_affine_virial_status": "PROVED",
+    "bt_all_background_conditional_variance_status": "PROVED",
+    "bt_all_background_curvature_constant": {
+      "denominator": 9,
+      "numerator": 2
+    },
+    "bt_all_background_lowest_mode_curvature_status": "PROVED",
     "bt_all_background_recentered_variance_status": "OPEN",
+    "bt_all_background_variance_constant": {
+      "denominator": 2,
+      "numerator": 9
+    },
+    "bt_annealed_center_after_width_status": "OPEN",
     "bt_annealed_center_second_moment_status": "OPEN",
     "bt_annealed_recentered_fiber_status": "OPEN",
     "bt_centered_fiber_all_n_ratio_bound": "A(eta_n+t_n h)/A(eta_n)<=9/(4*x^2)=9/(4*4^n)",
@@ -129,14 +140,14 @@
     "emitted_cells": 576,
     "emitted_status_counts": {
       "LITERATURE_RESULT": 90,
-      "LOCAL_RESULT": 125,
+      "LOCAL_RESULT": 127,
       "NOT_MAPPED": 0,
-      "PIECES_ONLY": 162,
+      "PIECES_ONLY": 160,
       "PRIORITY_GAP": 30,
       "REVIEWED_GAP": 169
     },
-    "evidence_records": 78,
-    "evidence_records_used_by_matrix": 78,
+    "evidence_records": 81,
+    "evidence_records_used_by_matrix": 81,
     "external_calibration_benchmark_families": 3,
     "external_calibration_records": 4,
     "gr_cassini_bounded_complete": true,
@@ -149,7 +160,7 @@
     "implication_nodes": 12,
     "literature_complete": false,
     "literature_records": 51,
-    "local_result_records": 27,
+    "local_result_records": 30,
     "mannheim_ngc3198_empirically_supported": false,
     "mannheim_ngc3198_endpoint_coarse_gate_passed": true,
     "mannheim_ngc3198_interfaces": 6,
@@ -174,8 +185,22 @@
     "prototype_assemblies": 9,
     "research_programme_lenses": 9,
     "reviewed_open_gaps": 169,
+    "scalar_green_causal_support": true,
+    "scalar_green_fixtures": 4,
+    "scalar_green_support_samples": 8,
+    "scalar_green_weyl_bv_propagator": false,
+    "smooth_translator_choice_used": false,
+    "smooth_translator_fixture_shifts": {
+      "1/16": 11,
+      "1/32": 13,
+      "1/8": 9
+    },
     "standard_reference_direct_obligations": 16,
     "strength_ladder_levels": 6,
+    "support_indexed_full_lf_topology": false,
+    "support_indexed_inclusion_checks": 15,
+    "support_indexed_name_equivalence": true,
+    "support_indexed_stages": 6,
     "synthetic_complements": 0,
     "total_not_mapped_in_explorer": 0
   },
@@ -199,6 +224,16 @@
       "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_AFFINE_VIRIAL_ACTION_DENSITY_V1.json",
       "result_id": "REVERSE_PHYSICS_BT_EUCLIDEAN_AFFINE_VIRIAL_ACTION_DENSITY_V1",
       "sha256": "5ca8a2a7bc0d48300b0af031990e3c9c177fdec0d35f763666d2e397b495e1e0"
+    },
+    "bt_all_background_lowest_mode_curvature": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL"
+      ],
+      "lifecycle": "VOLUME_UNIFORM_CONDITIONAL_ESTIMATE_PROVED",
+      "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_ALL_BACKGROUND_LOWEST_MODE_CURVATURE_V1.json",
+      "result_id": "REVERSE_PHYSICS_BT_EUCLIDEAN_ALL_BACKGROUND_LOWEST_MODE_CURVATURE_V1",
+      "sha256": "49e2d144667818f57e4d994a7e41534e6ded204b52eaa6f35b8923f30907e6d0"
     },
     "bt_bilaplacian_reference_bridge": {
       "dependency_tags": [
@@ -420,7 +455,7 @@
       "lifecycle": "VERIFIED_NAVIGATION_ARTIFACT",
       "path": "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json",
       "result_id": "FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2",
-      "sha256": "e89f2832948e0a4a1dc89e2b4cf6df69b0281b0914e63abfe27bd24d98e1151f"
+      "sha256": "845d64482052c51efb13a28448ef2e9818d433401042a2ddabbd640bef85fda7"
     },
     "finite_bv": {
       "dependency_tags": [
@@ -440,6 +475,16 @@
       "path": "foundations/results/FOUNDATIONAL_FINITE_GRAPH_WAVE_CAUSALITY_V1.json",
       "result_id": "FOUNDATIONAL_FINITE_GRAPH_WAVE_CAUSALITY_V1",
       "sha256": "2790e43f566c86e07f7b452fdfac516c59d319df4fd2e410664e7ff130396e79"
+    },
+    "fixed_support_smooth_to_h2_translator": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE"
+      ],
+      "lifecycle": "CERTIFIED",
+      "path": "foundations/results/FOUNDATIONAL_FIXED_SUPPORT_SMOOTH_TO_H2_TRANSLATOR_V1.json",
+      "result_id": "FOUNDATIONAL_FIXED_SUPPORT_SMOOTH_TO_H2_TRANSLATOR_V1",
+      "sha256": "1403506997a12454a3bce1eda5c4457da17bc81973c31b0ca6f94b0f75a2a85e"
     },
     "full_surface_gap_audit": {
       "dependency_tags": [
@@ -471,9 +516,9 @@
         "LORENTZIAN-CAUSAL"
       ],
       "lifecycle": "EVIDENCE_AUGMENTED_FULL_CARTESIAN_SURFACE",
-      "path": "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V13.json",
-      "result_id": "FOUNDATIONAL_INTERSECTION_CUBE_V13",
-      "sha256": "6f68214a586a81120b482f21d6c3499c3d38bb0087535113725f3b496c4c93d6"
+      "path": "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V14.json",
+      "result_id": "FOUNDATIONAL_INTERSECTION_CUBE_V14",
+      "sha256": "b9249ff2d51a0768be50afde8f4f3c3f4e4ab4913e3d54c42c9a2266894598c0"
     },
     "krein_state_selection": {
       "dependency_tags": [
@@ -503,6 +548,16 @@
       "result_id": "FOUNDATIONAL_NGC3198_COMMON_FIT_COMPARISON_V1",
       "sha256": "e9c9ecd8e6778a98cf15754970ac2e8fa6c117edca630f3a89b30aea1a03eaeb"
     },
+    "scalar_minkowski_green_choice_audit": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "lifecycle": "CERTIFIED",
+      "path": "foundations/results/FOUNDATIONAL_SCALAR_MINKOWSKI_GREEN_CHOICE_AUDIT_V1.json",
+      "result_id": "FOUNDATIONAL_SCALAR_MINKOWSKI_GREEN_CHOICE_AUDIT_V1",
+      "sha256": "5a08ba2ff2881084b60097c1d28f124d5b94a12a2ff7ce3babbd7ad8f14a0779"
+    },
     "separable_cstar_state_chain": {
       "dependency_tags": [
         "LOCAL-ALGEBRAIC",
@@ -512,6 +567,16 @@
       "path": "foundations/results/FOUNDATIONAL_BT_SEPARABLE_STATE_CHAIN_ZF_V1.json",
       "result_id": "FOUNDATIONAL_BT_SEPARABLE_STATE_CHAIN_ZF_V1",
       "sha256": "08389e96d349766e29a34cde8109d4b1271288b59d44f3b29fcb456065641998"
+    },
+    "support_indexed_test_space_comparison": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE"
+      ],
+      "lifecycle": "CERTIFIED",
+      "path": "foundations/results/FOUNDATIONAL_SUPPORT_INDEXED_TEST_SPACE_COMPARISON_V1.json",
+      "result_id": "FOUNDATIONAL_SUPPORT_INDEXED_TEST_SPACE_COMPARISON_V1",
+      "sha256": "d0f853a43affb516fc86563d1ba89e25c1a47ab635388cc4e4a20ae7dd30e24a"
     },
     "theory_assembly": {
       "dependency_tags": [
@@ -523,17 +588,19 @@
       "lifecycle": "VERIFIED_NAVIGATION_ARTIFACT",
       "path": "foundations/results/FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1.json",
       "result_id": "FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1",
-      "sha256": "c97c9018c7c820d5d8352b4b1201b62ce64f84d5af92f3160fc0b406e97b63ff"
+      "sha256": "3182339b6fc77d8652204cc115d87cd4afc4dea193cd48cf189f153cf59718d6"
     }
   },
-  "canonical_digest": "e14aec456a5a74c4295a12a6b6795f04a6132e057ee06cf4f7bb379f76d56185",
+  "canonical_digest": "d50cd0975b23aa9eac198c17fd4693a6ad56732e41367ad35d4e55cd96801f51",
   "claim_flags": {
     "atlas_exhaustive": false,
     "axes_independent_proved": false,
     "bounded_empirical_comparison_registered": true,
     "bt_actual_annealed_half_action_factor_established": true,
     "bt_actual_interacting_action_density_established": true,
-    "bt_all_background_lowest_mode_curvature_established": false,
+    "bt_all_background_lowest_mode_curvature_absorption_established": true,
+    "bt_all_background_lowest_mode_curvature_established": true,
+    "bt_all_background_recentered_conditional_variance_established": true,
     "bt_annealed_center_second_moment_established": false,
     "bt_annealed_recentered_fiber_bound_established": false,
     "bt_centered_pointwise_fiber_domination_obstructed": true,
@@ -562,7 +629,7 @@
     "bt_standard_boundary_curvature_spectral_gap_route_obstructed": true,
     "bt_tree_log_convexity_extra_tilt_confinement_obstructed": true,
     "bt_uniform_backgroundwise_raw_conditional_moment_obstructed": true,
-    "bt_uniform_recentered_conditional_variance_established": false,
+    "bt_uniform_recentered_conditional_variance_established": true,
     "bt_vertex_transitive_entropy_jacobian_minimum_established": true,
     "case_study_authorities_pinned": true,
     "coded_h2_arbitrary_distribution_uniqueness_proved": false,
@@ -577,16 +644,23 @@
     "complete_evidence_register_generated": true,
     "complete_literature_register_generated": true,
     "evidence_usage_crosswalk_generated": true,
+    "fixed_support_smooth_to_h2_translator_certified": true,
+    "fixed_support_translator_uses_choice": false,
     "global_physics_implies_choice_theorem": false,
     "literature_complete": false,
     "mannheim_ngc3198_mixed_assembly_registered": true,
     "model_scoped_end_to_end_assembly_generated": true,
-    "new_lorentzian_claim": false,
+    "new_lorentzian_claim": true,
     "ngc3198_common_fit_comparison_registered": true,
     "programme_definition_supplied": true,
     "quantum_lifecycle_promoted": false,
     "research_programme_lenses_explained": true,
+    "scalar_green_promoted_to_weyl_bv": false,
+    "scalar_minkowski_causal_support_proved": true,
+    "scalar_minkowski_green_certified": true,
     "static_atlas_appendix_generated": true,
+    "support_indexed_full_lf_topology_reconstructed": false,
+    "support_indexed_name_equivalence_certified": true,
     "typed_relations_supplied": true,
     "weakest_foundation_proved": false
   },
@@ -752,15 +826,16 @@
         "bt_centered_fiber_domination_obstruction",
         "bt_conditional_mass_escape_obstruction",
         "bt_runaway_fiber_width_bound",
-        "bt_separable_lowest_mode_curvature"
+        "bt_separable_lowest_mode_curvature",
+        "bt_all_background_lowest_mode_curvature"
       ],
       "claim_id": "RF-13-BT-INTERACTING-RECONSTRUCTION-FRONTIER",
       "dependency_tags": [
         "LOCAL-ALGEBRAIC",
         "EUCLIDEAN-SPECTRAL"
       ],
-      "statement": "At lambda=0.4 on the 6^4 lattice, an exact two-point reflected density-kernel minor obstructs ordinary OS positivity. The affine virial theorem proves a volume-uniform actual Gibbs action-density bound and annealed half-action factor. Exact period-four data obstruct the global Schur route. The residual map identifies positive fields modulo scale with a Schr\u00f6dinger spectrahedral boundary and gives the exact normalized Gaussian-surface/tree-Jacobian pushforward. Its curvature and tree-Jacobian shortcuts are obstructed. An exact orthogonal-background family makes centered pointwise relative-action domination fail. On the subsequence eta_m=4m log(2) a, every global fiber minimizer lies below u=-m and the conditional probability of u>=-m is at most 2^-m, so the background-uniform raw conditional second moment is obstructed. On that same runaway family, however, K_m(2^u)>=115/4 proves a uniform recentered conditional-variance bound and E_qm[u]<-m/2: the obstruction is moving center rather than widening fiber. On every separable background and every L>=4, the lowest temporal mode has curvature at least N*omega_L^2/3 and conditional variance at most 3/(N*omega_L^2); an exact orthogonal correlated fixture makes the spatial remainder negative, so this does not extend by a sign argument. Half-period translation proves the fully integrated marginal is even. All-background recentered width, the annealed center moment, and the actual interacting H^-1 moment remain open.",
-      "status": "EXACT_FINITE_OS_GLOBAL_CURVATURE_TREE_TILT_CENTERED_FIBER_AND_RAW_CONDITIONAL_MOMENT_ROUTE_OBSTRUCTIONS_WITH_RUNAWAY_FAMILY_WIDTH_BOUND_ACTION_DENSITY_EVEN_MARGINAL_AND_NORMALIZED_RESIDUAL_REFORMULATION"
+      "statement": "At lambda=0.4 on the 6^4 lattice, an exact two-point reflected density-kernel minor obstructs ordinary OS positivity. The affine virial theorem proves a volume-uniform actual Gibbs action-density bound and annealed half-action factor. Exact period-four data obstruct the global Schur route. The residual map identifies positive fields modulo scale with a Schr\u00f6dinger spectrahedral boundary and gives the exact normalized Gaussian-surface/tree-Jacobian pushforward. Its curvature and tree-Jacobian shortcuts are obstructed. An exact orthogonal-background family makes centered pointwise relative-action domination fail. On the subsequence eta_m=4m log(2) a, every global fiber minimizer lies below u=-m and the conditional probability of u>=-m is at most 2^-m, so the background-uniform raw conditional second moment is obstructed. On that same runaway family, however, K_m(2^u)>=115/4 proves a uniform recentered conditional-variance bound and E_qm[u]<-m/2: the obstruction is moving center rather than widening fiber. A plaquette absorption theorem now proves for every background and L>=4 that the lowest axial curvature is at least (2/9)*N*omega_L^2 and conditional variance is at most 9/(2*N*omega_L^2). Half-period translation proves the fully integrated marginal is even. The all-background width is closed; the annealed center moment and actual interacting H^-1 moment remain open.",
+      "status": "EXACT_FINITE_OS_AND_METHOD_OBSTRUCTIONS_WITH_ALL_BACKGROUND_VOLUME_UNIFORM_LOWEST_MODE_CONDITIONAL_WIDTH_ACTION_DENSITY_EVEN_MARGINAL_AND_NORMALIZED_RESIDUAL_REFORMULATION"
     },
     {
       "authorities": [
@@ -820,6 +895,42 @@
       ],
       "statement": "Over RCA_0, fast H2 names of rational periodic compact-time C1 piecewise-polynomial tests carry an explicit weak-residual modulus, so the coded energy solution defines a continuous distributional field-state functional and satisfies the weak wave equation on every represented test; this does not reconstruct the unrestricted LF test topology or prove uniqueness among arbitrary distributions or causal support.",
       "status": "REPRESENTATION_AWARE_WEAK_SOLUTION_COMPLETION_WITH_LF_AND_CAUSAL_BOUNDARIES"
+    },
+    {
+      "authorities": [
+        "fixed_support_smooth_to_h2_translator"
+      ],
+      "claim_id": "RF-19-FIXED-SUPPORT-SMOOTH-TO-H2-TRANSLATOR",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE"
+      ],
+      "statement": "Over RCA_0, a periodic smooth test carrying rational fixed-support advice and a supplied derivative approximation rate through order two translates uniformly to the rational compact-time H2 name by an explicit cubic cutoff and base-four index shift, without a choice operation; no name is manufactured from a bare extensional function.",
+      "status": "REPRESENTATION_TRANSLATOR_WITH_EXPLICIT_ADVICE_AND_MODULUS"
+    },
+    {
+      "authorities": [
+        "support_indexed_test_space_comparison"
+      ],
+      "claim_id": "RF-20-SUPPORT-INDEXED-TEST-SPACE-COMPARISON",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE"
+      ],
+      "statement": "Over RCA_0, conventional compact-test names with a discrete support bound and tagged fixed-support union names are exactly intertranslatable, and the stagewise H2 embedding is coherent; this name equivalence neither identifies the full locally convex LF topology nor makes the H2 embedding surjective.",
+      "status": "REPRESENTED_NAME_EQUIVALENCE_WITH_LF_TOPOLOGY_BOUNDARY"
+    },
+    {
+      "authorities": [
+        "scalar_minkowski_green_choice_audit"
+      ],
+      "claim_id": "RF-21-SCALAR-MINKOWSKI-GREEN-CHOICE-AUDIT",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "statement": "For the flat scalar 1+1 wave operator, canonical exact retarded and advanced Green maps satisfy two-sided code identities, strict causal support, and adjoint duality in PRA and extend to supplied fast source names over RCA_0 without choice; this is not a Weyl/BV propagator or quantum causal construction.",
+      "status": "SCOPED_SCALAR_LORENTZIAN_CAUSAL_GREEN_CERTIFICATE"
     }
   ],
   "created": "2026-08-14",
@@ -836,9 +947,11 @@
     "literature completeness or absence theorems for reviewed open gaps",
     "representation invariance of the RCA_0 coded-wave upper bound",
     "full-state reconstruction from the single coded wave observable",
-    "a uniform H2 name constructor for every bare extensional smooth test",
-    "the unrestricted LF smooth-test topology from the named fixed-slab H2 completion",
-    "uniqueness among arbitrary distributional weak solutions or causal support from the energy-image weak representation",
+    "a uniform H2 name constructor for every bare extensional smooth test without support and rate advice",
+    "the unrestricted LF smooth-test topology from the support-indexed represented union",
+    "surjectivity of the smooth-test embedding onto the H2 completion",
+    "uniqueness among arbitrary distributional weak solutions",
+    "a variable-coefficient, curved-spacetime, Weyl, or metric-BV Green operator from the flat scalar 1+1 benchmark",
     "a complete Lorentzian off-shell BV propagator",
     "a BRST-compatible Hadamard state for the full metric BV complex",
     "renormalized Lorentzian time-ordered products or causal perturbative AQFT",
@@ -956,6 +1069,11 @@
       "url": "https://doi.org/10.1137/S0097539704446360"
     },
     {
+      "role": "computable wave propagation on differentiable and Sobolev representations",
+      "source_id": "weihrauch-zhong-2002",
+      "url": "https://doi.org/10.1112/S0024611502013643"
+    },
+    {
       "role": "proof mining for nonlinear semigroups",
       "source_id": "pischke-2025",
       "url": "https://arxiv.org/abs/2304.01723"
@@ -993,19 +1111,19 @@
   ],
   "paper": {
     "appendix": {
-      "assembly_source_canonical_digest": "5b8c44b61cf3237244b0e3d82801e5d150c714363921f8b0a4bb63458de77011",
+      "assembly_source_canonical_digest": "72dc55c6d5b64976022eb968ccf0c19b2594324c9bb03142b4a59900c2ab3983",
       "assembly_source_path": "foundations/site/assemblies.json",
-      "assembly_source_sha256": "c97c9018c7c820d5d8352b4b1201b62ce64f84d5af92f3160fc0b406e97b63ff",
+      "assembly_source_sha256": "3182339b6fc77d8652204cc115d87cd4afc4dea193cd48cf189f153cf59718d6",
       "generator_path": "paper/generate_21_reverse_foundations_appendices.py",
       "generator_sha256": "f46fd7cd15f93d83c0f2ec292fa9e0cbae6bdc9f7a503dd39ff61565424db364",
       "path": "paper/21-reverse-foundations-of-physics-appendices.tex",
-      "sha256": "f4dab48c95e56a30ff5c6f820aa7c02924572e122f202b4278a9dcd003c10c4e",
-      "source_canonical_digest": "c0783aa221f774c07b556b006841d12c0f5c87504ce715d3674b0577e6788766",
+      "sha256": "b6b14b9d50938360d1ade48c5b3b0a3d267a566ff16d6a77aa42d0a67f7a1df7",
+      "source_canonical_digest": "9e16d02dc4cf3cb8f2b55fb812d4d50c51d82cd8109f849b3fa4af2f227a5b47",
       "source_path": "foundations/site/data.json",
-      "source_sha256": "666472dc3323a17e3d9be456fa0122210cb9458963e6eadcb3918d2e056ff5f8"
+      "source_sha256": "a1f9eaee9ab4099cfa41bd947b9d74801fa2fe783adfd2a00bbf7b0fb56d1229"
     },
     "path": "paper/21-reverse-foundations-of-physics.tex",
-    "sha256": "a117b618656b99c1d2071f264741988766a2c62e7e6fb155924cd299acc4f03f"
+    "sha256": "e66846670492e0f9cbad2f71f04ea5fdabf6c44db707cd5e477e1fb77269bfa7"
   },
   "result_id": "PAPER21_REVERSE_FOUNDATIONS_INTRODUCTION_V1",
   "result_kind": "PROGRAMME_SYNTHESIS_AND_TYPED_CASE_STUDY_MAP",

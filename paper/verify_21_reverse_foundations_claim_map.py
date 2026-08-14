@@ -89,6 +89,9 @@ def main() -> int:
     coded_wave_observable = json.loads((ROOT / data["authorities"]["coded_wave_observable_reconstruction"]["path"]).read_text())
     coded_local_weak_wave = json.loads((ROOT / data["authorities"]["coded_local_weak_wave_test_class"]["path"]).read_text())
     coded_h2_test = json.loads((ROOT / data["authorities"]["coded_weak_wave_h2_test_completion"]["path"]).read_text())
+    smooth_translator = json.loads((ROOT / data["authorities"]["fixed_support_smooth_to_h2_translator"]["path"]).read_text())
+    support_indexed = json.loads((ROOT / data["authorities"]["support_indexed_test_space_comparison"]["path"]).read_text())
+    scalar_green = json.loads((ROOT / data["authorities"]["scalar_minkowski_green_choice_audit"]["path"]).read_text())
     bt_euclidean = json.loads((ROOT / data["authorities"]["bt_euclidean_import"]["path"]).read_text())
     bt_free_obstruction = json.loads((ROOT / data["authorities"]["bt_free_reconstruction_obstruction"]["path"]).read_text())
     bt_interacting_os = json.loads((ROOT / data["authorities"]["bt_interacting_os_preflight"]["path"]).read_text())
@@ -103,6 +106,7 @@ def main() -> int:
     bt_conditional_escape = json.loads((ROOT / data["authorities"]["bt_conditional_mass_escape_obstruction"]["path"]).read_text())
     bt_runaway_width = json.loads((ROOT / data["authorities"]["bt_runaway_fiber_width_bound"]["path"]).read_text())
     bt_separable_curvature = json.loads((ROOT / data["authorities"]["bt_separable_lowest_mode_curvature"]["path"]).read_text())
+    bt_all_background_curvature = json.loads((ROOT / data["authorities"]["bt_all_background_lowest_mode_curvature"]["path"]).read_text())
     dims = cube["dimensions"]
     atlas = data["atlas_snapshot"]
     require(atlas["axis_sizes"] == [6, 6, 16], "unexpected axis sizes")
@@ -113,12 +117,12 @@ def main() -> int:
     require(atlas["synthetic_complements"] == 0, "synthetic complement mismatch")
     require(atlas["total_not_mapped_in_explorer"] == site["counts"]["not_mapped"] == 0, "explorer not-mapped mismatch")
     require(atlas["reviewed_open_gaps"] == site["counts"]["reviewed_gap"] == 169, "reviewed-gap mismatch")
-    require(atlas["evidence_records"] == site["counts"]["evidence_records"] == 78, "evidence-record mismatch")
+    require(atlas["evidence_records"] == site["counts"]["evidence_records"] == 81, "evidence-record mismatch")
     require(atlas["literature_records"] == 51, "literature-record mismatch")
-    require(atlas["local_result_records"] == 27, "local-result-record mismatch")
+    require(atlas["local_result_records"] == 30, "local-result-record mismatch")
     require(atlas["content_pinned_literature"] == 39, "content-pinned literature mismatch")
     require(atlas["metadata_only_literature"] == 12, "metadata-only literature mismatch")
-    require(atlas["evidence_records_used_by_matrix"] == 78, "matrix evidence usage is incomplete")
+    require(atlas["evidence_records_used_by_matrix"] == 81, "matrix evidence usage is incomplete")
     require(atlas["migration_pending_cells"] == 0, "migration must remain fully reviewed")
     require(atlas["all_cells_assessed"] is True, "full-surface assessment flag is not certified")
     require(atlas["coded_wave_observable_cutoff"] == coded_wave_observable["cutoff_theorem"]["cutoff"] == "N(k)=k+ell(K)+1", "coded observable cutoff drift")
@@ -134,6 +138,16 @@ def main() -> int:
     require(atlas["coded_h2_arbitrary_distribution_uniqueness"] is coded_h2_test["claim_flags"]["uniqueness_among_arbitrary_distributions_proved"] is False, "energy-image uniqueness promoted to arbitrary distributions")
     require(atlas["coded_h2_causal_support"] is coded_h2_test["claim_flags"]["strict_causal_support_proved"] is False, "named weak solution promoted to causal support")
     require(atlas["coded_h2_fixture_wave_offsets"] == {item["id"]: item["binary_cutoff_offsets"]["scalar_wave"] for item in coded_h2_test["fixtures"]}, "H2 fixture cutoff drift")
+    require(atlas["smooth_translator_fixture_shifts"] == {f"{item['margin'][0]}/{item['margin'][1]}": item["index_shift"] for item in smooth_translator["fixtures"]}, "smooth translator shift drift")
+    require(atlas["smooth_translator_choice_used"] is smooth_translator["claim_flags"]["choice_principle_used"] is False, "smooth translator choice boundary drift")
+    require(atlas["support_indexed_stages"] == len(support_indexed["fixtures"]) == 6, "support-indexed stage count drift")
+    require(atlas["support_indexed_inclusion_checks"] == len(support_indexed["inclusion_checks"]) == 15, "support-indexed inclusion count drift")
+    require(atlas["support_indexed_name_equivalence"] is support_indexed["claim_flags"]["conventional_and_tagged_names_equivalent"] is True, "support-indexed name equivalence missing")
+    require(atlas["support_indexed_full_lf_topology"] is support_indexed["claim_flags"]["full_lf_locally_convex_topology_identified"] is False, "represented union promoted to LF topology")
+    require(atlas["scalar_green_fixtures"] == len(scalar_green["fixtures"]) == 4, "scalar Green fixture drift")
+    require(atlas["scalar_green_support_samples"] == len(scalar_green["support_samples"]) == 8, "scalar Green support-sample drift")
+    require(atlas["scalar_green_causal_support"] is scalar_green["claim_flags"]["strict_causal_support_proved"] is True, "scalar causal support missing")
+    require(atlas["scalar_green_weyl_bv_propagator"] is scalar_green["claim_flags"]["weyl_bv_propagator_constructed"] is False, "scalar Green result promoted to Weyl/BV")
     require(atlas["bt_euclidean_direct_capabilities"] == 5, "BT direct-capability count mismatch")
     require(atlas["bt_euclidean_reconstruction_status"] == "PRIORITY_GAP", "BT reconstruction boundary mismatch")
     require(atlas["bt_euclidean_numerical_status"] == "COARSE_REPRODUCTION_ONLY", "BT numerical status mismatch")
@@ -216,6 +230,13 @@ def main() -> int:
     require(atlas["bt_correlated_spatial_remainder_fixture"] == {"numerator": -456623975, "denominator": 262144}, "BT correlated remainder fixture drift")
     require(bt_separable_curvature["method_disposition"]["all_background_recentered_conditional_variance"] == "OPEN", "BT separable theorem widened to all backgrounds")
     require(bt_separable_curvature["method_disposition"]["actual_interacting_h_minus_one_second_moment"] == "OPEN", "BT separable theorem promoted to H^-1")
+    require(atlas["bt_all_background_lowest_mode_curvature_status"] == bt_all_background_curvature["method_disposition"]["all_background_lowest_mode_strong_convexity"] == "PROVED", "BT all-background curvature theorem drift")
+    require(atlas["bt_all_background_conditional_variance_status"] == bt_all_background_curvature["method_disposition"]["all_background_uniform_recentered_conditional_variance"] == "PROVED", "BT all-background conditional variance drift")
+    require(atlas["bt_all_background_curvature_constant"] == {"numerator": 2, "denominator": 9}, "BT all-background curvature constant drift")
+    require(atlas["bt_all_background_variance_constant"] == {"numerator": 9, "denominator": 2}, "BT all-background variance constant drift")
+    require(atlas["bt_annealed_center_after_width_status"] == bt_all_background_curvature["method_disposition"]["annealed_center_second_moment"] == "OPEN", "BT annealed center promoted after width theorem")
+    require(bt_all_background_curvature["method_disposition"]["normalized_lowest_mode_second_moment"] == "OPEN", "BT width theorem promoted to normalized marginal")
+    require(bt_all_background_curvature["method_disposition"]["actual_interacting_h_minus_one_second_moment"] == "OPEN", "BT width theorem promoted to H^-1")
 
     allowed_tags = {"LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE", "LORENTZIAN-CAUSAL"}
     claim_ids = set()
@@ -244,6 +265,9 @@ def main() -> int:
         (16, "CODED-OBSERVABLE-RECONSTRUCTION"),
         (17, "LOCALIZED-COEFFICIENT-WEAK-WAVE"),
         (18, "NAMED-H2-WEAK-WAVE-COMPLETION"),
+        (19, "FIXED-SUPPORT-SMOOTH-TO-H2-TRANSLATOR"),
+        (20, "SUPPORT-INDEXED-TEST-SPACE-COMPARISON"),
+        (21, "SCALAR-MINKOWSKI-GREEN-CHOICE-AUDIT"),
     ]}, "claim set drift")
 
     flags = data["claim_flags"]
@@ -282,7 +306,11 @@ def main() -> int:
     require(flags["bt_annealed_recentered_fiber_bound_established"] is False, "BT annealed fiber bound promoted")
     require(flags["bt_conditional_mass_escape_established"] is True, "BT conditional mass escape flag missing")
     require(flags["bt_uniform_backgroundwise_raw_conditional_moment_obstructed"] is True, "BT raw conditional moment obstruction flag missing")
-    require(flags["bt_uniform_recentered_conditional_variance_established"] is False, "BT recentered conditional variance promoted")
+    require(flags["bt_uniform_recentered_conditional_variance_established"] is True, "BT all-background recentered conditional variance theorem omitted")
+    require(flags["bt_all_background_lowest_mode_curvature_established"] is True, "BT all-background curvature theorem omitted")
+    require(flags["bt_all_background_lowest_mode_curvature_absorption_established"] is True, "BT plaquette absorption theorem omitted")
+    require(flags["bt_all_background_recentered_conditional_variance_established"] is True, "BT all-background conditional variance theorem omitted")
+    require(flags["bt_annealed_center_second_moment_established"] is False, "BT width theorem promoted to annealed center bound")
     require(flags["bt_runaway_family_recentered_conditional_variance_established"] is True, "BT runaway-family recentered variance flag missing")
     require(flags["bt_runaway_family_conditional_mean_escape_established"] is True, "BT runaway-family conditional-mean escape flag missing")
     require(flags["bt_annealed_center_second_moment_established"] is False, "BT annealed center moment promoted")
@@ -296,13 +324,20 @@ def main() -> int:
     require(flags["coded_h2_full_lf_topology_reconstructed"] is False, "named H2 completion promoted to LF topology")
     require(flags["coded_h2_arbitrary_distribution_uniqueness_proved"] is False, "energy-image uniqueness promoted")
     require(flags["coded_h2_causal_support_proved"] is False, "named weak solution promoted to causal support")
+    require(flags["fixed_support_smooth_to_h2_translator_certified"] is True, "smooth translator flag missing")
+    require(flags["fixed_support_translator_uses_choice"] is False, "smooth translator choice flag promoted")
+    require(flags["support_indexed_name_equivalence_certified"] is True, "support-indexed equivalence flag missing")
+    require(flags["support_indexed_full_lf_topology_reconstructed"] is False, "support-indexed comparison promoted to LF topology")
+    require(flags["scalar_minkowski_green_certified"] is True, "scalar Green flag missing")
+    require(flags["scalar_minkowski_causal_support_proved"] is True, "scalar causal-support flag missing")
+    require(flags["scalar_green_promoted_to_weyl_bv"] is False, "scalar Green flag promoted to Weyl/BV")
+    require(flags["new_lorentzian_claim"] is True, "scoped scalar Lorentzian claim missing")
     for false_flag in [
         "weakest_foundation_proved",
         "global_physics_implies_choice_theorem",
         "axes_independent_proved",
         "atlas_exhaustive",
         "literature_complete",
-        "new_lorentzian_claim",
         "quantum_lifecycle_promoted",
     ]:
         require(flags[false_flag] is False, f"fail-closed flag promoted: {false_flag}")
@@ -364,8 +399,8 @@ def main() -> int:
     appendix = appendix_path.read_text()
     for token in ("Bateman--Turok", "Mannheim conformal-gravity programme", "Pure-Weyl BV--BFV"):
         require(token in appendix, f"research-programme lens missing from appendix: {token}")
-    require(r"All obligations & 125 & 90 & 162 & 30 & 169 & 0 & 576" in appendix, "appendix coverage totals drift")
-    require("contains 78 evidence records: 27 local result records and 51 literature records" in appendix, "appendix evidence summary drift")
+    require(r"All obligations & 127 & 90 & 160 & 30 & 169 & 0 & 576" in appendix, "appendix coverage totals drift")
+    require("contains 81 evidence records: 30 local result records and 51 literature records" in appendix, "appendix evidence summary drift")
     require("BT positive Euclidean lattice programme" in appendix, "BT Euclidean prototype missing")
     require("COARSE REPRODUCTION ONLY" in appendix, "BT numerical boundary missing")
     require("The classical-standard mixed-carrier reference has complete direct coverage" in appendix, "classical reference calibration missing")
@@ -406,8 +441,8 @@ def main() -> int:
         require(rf"\cert{{{evidence_id}}}" in appendix, f"linked evidence missing from appendix: {evidence_id}")
 
     evidence = atlas_data["evidence"]
-    require(appendix.count(r"\hypertarget{atlas-evidence-") == 78, "evidence-register anchor count drift")
-    require(appendix.count(r"\hyperlink{atlas-evidence-") == 78, "evidence-crosswalk link count drift")
+    require(appendix.count(r"\hypertarget{atlas-evidence-") == 81, "evidence-register anchor count drift")
+    require(appendix.count(r"\hyperlink{atlas-evidence-") == 81, "evidence-crosswalk link count drift")
     cell_usage = {evidence_id: [] for evidence_id in evidence}
     for cell in atlas_data["cells"]:
         for evidence_id in cell.get("evidence", []):
@@ -499,10 +534,15 @@ def main() -> int:
         r"N(k)=k+\ell(K)+1",
         r"diagonal of exact rank ten",
         r"does not cover every smooth compactly supported test",
-        r"Compare represented and classical test spaces",
+        r"Compare the represented union with the full LF topology",
         r"N_W(k)=k+\ell(\lceil4E\rceil)",
         r"nonmetrizable LF",
         r"uniqueness only inside the represented energy solution image",
+        r"FOUNDATIONAL_FIXED_SUPPORT_SMOOTH_TO_H2_TRANSLATOR_V1",
+        r"FOUNDATIONAL_SUPPORT_INDEXED_TEST_SPACE_COMPARISON_V1",
+        r"FOUNDATIONAL_SCALAR_MINKOWSKI_GREEN_CHOICE_AUDIT_V1",
+        r"This is a genuine \rtype{LORENTZIAN-CAUSAL} result",
+        r"not a Weyl/BV propagator or quantum causal construction",
         r"Exact finite causality is not continuum causality",
         r"none of the case studies constructs a complete Lorentzian off-shell",
         r"bounded prediction assembly",
@@ -550,6 +590,7 @@ def main() -> int:
         "AbbottGW1708172017",
         "PaulySteinberg2018",
         "VanSchaftingen2014",
+        "WeihrauchZhong2002",
     ]:
         require(f"bibitem{{{citation}}}" in paper, f"missing bibliography entry: {citation}")
 
