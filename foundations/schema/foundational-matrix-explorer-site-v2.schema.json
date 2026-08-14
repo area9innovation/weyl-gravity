@@ -10,7 +10,7 @@
     "lifecycle": {"const": "VERIFIED_NAVIGATION_ARTIFACT"},
     "created": {"type": "string", "format": "date"},
     "repository_base_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
-    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]},
     "scope": {"type": "string", "minLength": 1},
     "counts": {
       "type": "object",
@@ -24,12 +24,12 @@
         "migration_pending": {"const": 0},
         "migration_unresolved": {"const": 0},
         "reviewed_no_transfer": {"const": 88},
-        "reviewed_gap": {"const": 175},
+        "reviewed_gap": {"const": 172},
         "not_mapped": {"const": 0},
         "synthetic_not_mapped": {"const": 0},
         "status_counts": {"type": "object"},
         "migration_status_counts": {"type": "object"},
-        "evidence_records": {"const": 74}
+        "evidence_records": {"const": 75}
       }
     },
     "features": {"type": "array", "minItems": 14, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},

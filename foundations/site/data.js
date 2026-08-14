@@ -4,6 +4,7 @@ window.MATRIX_EXPLORER_DATA = {
   "created": "2026-08-14",
   "dependency_tags": [
     "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL",
     "REDUCED-MODE",
     "LORENTZIAN-CAUSAL"
   ],
@@ -370,36 +371,37 @@ window.MATRIX_EXPLORER_DATA = {
     "migration_pending": 0,
     "migration_unresolved": 0,
     "reviewed_no_transfer": 88,
-    "reviewed_gap": 175,
+    "reviewed_gap": 172,
     "not_mapped": 0,
-    "dual_direct": 7,
+    "dual_direct": 8,
     "mark_counts": {
-      "G": 30,
-      "L": 102,
-      "LR": 7,
+      "G": 29,
+      "Gl": 1,
+      "L": 106,
+      "LR": 8,
       "Lr": 6,
-      "Ol": 175,
+      "Ol": 172,
       "P": 20,
       "Pl": 79,
       "Plr": 13,
       "Pr": 51,
-      "R": 90,
+      "R": 88,
       "Rl": 3
     },
     "evidence_role_counts": {
       "DIRECT_LITERATURE": 84,
-      "DIRECT_LOCAL": 106,
-      "SUPPORTING": 446,
+      "DIRECT_LOCAL": 111,
+      "SUPPORTING": 447,
       "UNREVIEWED": 191
     },
     "synthetic_not_mapped": 0,
     "status_counts": {
-      "LITERATURE_RESULT": 93,
-      "LOCAL_RESULT": 115,
+      "LITERATURE_RESULT": 91,
+      "LOCAL_RESULT": 120,
       "NOT_MAPPED": 0,
       "PIECES_ONLY": 163,
       "PRIORITY_GAP": 30,
-      "REVIEWED_GAP": 175
+      "REVIEWED_GAP": 172
     },
     "migration_status_counts": {
       "CAPABILITY_QUALIFIED": 257,
@@ -409,7 +411,7 @@ window.MATRIX_EXPLORER_DATA = {
       "REVIEWED_NO_TRANSFER": 88,
       "REVIEWED_OVERLAY": 11
     },
-    "evidence_records": 74
+    "evidence_records": 75
   },
   "cells": [
     {
@@ -1297,23 +1299,25 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "FINITE_DISCRETE",
       "carrier": "SMOOTH_DISTRIBUTIONAL",
       "obligation": "KINEMATICS_OBSERVABLES",
-      "status": "LITERATURE_RESULT",
+      "status": "LOCAL_RESULT",
       "evidence": [
         "kogut-susskind-1975",
         "zohar-burrello-2014",
         "bahr-dittrich-2009",
-        "dittrich-2012"
+        "dittrich-2012",
+        "FOUNDATIONAL_BT_EUCLIDEAN_LATTICE_IMPORT_V1"
       ],
       "evidence_roles": {
         "kogut-susskind-1975": "UNREVIEWED",
         "zohar-burrello-2014": "UNREVIEWED",
         "bahr-dittrich-2009": "UNREVIEWED",
-        "dittrich-2012": "UNREVIEWED"
+        "dittrich-2012": "UNREVIEWED",
+        "FOUNDATIONAL_BT_EUCLIDEAN_LATTICE_IMPORT_V1": "DIRECT_LOCAL"
       },
       "parent_obligation": "KINEMATICS_OBSERVABLES",
       "migration_relation": "EXACT_ONE_TO_ONE",
-      "summary": "Lattice gauge and discrete-gravity work supplies dynamics, constraints, symmetry-restoration, and explicit continuum-comparison obligations. For this obligation, the evidence directly defines observables, configurations, or the carrier's algebraic structure.",
-      "boundary": "Finite dimension, lattice regularization, finite field, and finitism remain distinct; a continuum bridge is never automatic. Local/formal PDE data do not imply global existence, support, or microlocal renormalization. Still open here: a full Weyl observable algebra and its domains.",
+      "summary": "The finite periodic graph, mean-zero real field, positive variable, lattice action, and finite-volume observables are explicit.",
+      "boundary": "This is a finite Euclidean statistical construction, not a Lorentzian state, Born rule, continuum theory, or full Weyl-gravity model.",
       "migration_status": "EXACT_PARENT_TRANSFER",
       "migration_evidence": [
         "kogut-susskind-1975",
@@ -1322,6 +1326,13 @@ window.MATRIX_EXPLORER_DATA = {
         "dittrich-2012"
       ],
       "migration_rationale": "The v0 obligation was not split, so its reviewed status and evidence transfer exactly.",
+      "bt_euclidean_revision": {
+        "certificate": "FOUNDATIONAL_BT_EUCLIDEAN_LATTICE_IMPORT_V1",
+        "previous_status": "LITERATURE_RESULT",
+        "new_status": "LOCAL_RESULT",
+        "evidence_role": "DIRECT_LOCAL",
+        "status_change": true
+      },
       "emitted": true
     },
     {
@@ -2227,17 +2238,19 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "FINITE_DISCRETE",
       "carrier": "SMOOTH_DISTRIBUTIONAL",
       "obligation": "STATE_EXISTENCE",
-      "status": "REVIEWED_GAP",
+      "status": "LOCAL_RESULT",
       "evidence": [
-        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "FOUNDATIONAL_BT_EUCLIDEAN_LATTICE_IMPORT_V1"
       ],
       "evidence_roles": {
-        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING",
+        "FOUNDATIONAL_BT_EUCLIDEAN_LATTICE_IMPORT_V1": "DIRECT_LOCAL"
       },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
-      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "summary": "Coercivity after zero-mode fixing makes the finite-dimensional partition function finite, so a normalized Euclidean Gibbs state exists.",
+      "boundary": "This is a finite Euclidean statistical construction, not a Lorentzian state, Born rule, continuum theory, or full Weyl-gravity model.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "kogut-susskind-1975",
@@ -2251,6 +2264,13 @@ window.MATRIX_EXPLORER_DATA = {
         "previous_status": "NOT_MAPPED",
         "new_status": "REVIEWED_GAP",
         "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "bt_euclidean_revision": {
+        "certificate": "FOUNDATIONAL_BT_EUCLIDEAN_LATTICE_IMPORT_V1",
+        "previous_status": "REVIEWED_GAP",
+        "new_status": "LOCAL_RESULT",
+        "evidence_role": "DIRECT_LOCAL",
         "status_change": true
       },
       "emitted": true
@@ -3176,17 +3196,19 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "FINITE_DISCRETE",
       "carrier": "SMOOTH_DISTRIBUTIONAL",
       "obligation": "STATE_REPRESENTATION",
-      "status": "REVIEWED_GAP",
+      "status": "LOCAL_RESULT",
       "evidence": [
-        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "FOUNDATIONAL_BT_EUCLIDEAN_LATTICE_IMPORT_V1"
       ],
       "evidence_roles": {
-        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING",
+        "FOUNDATIONAL_BT_EUCLIDEAN_LATTICE_IMPORT_V1": "DIRECT_LOCAL"
       },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
-      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "summary": "The state is represented by the positive normalized density exp(-S_E,L)/Z on the real mean-zero field hyperplane.",
+      "boundary": "This is a finite Euclidean statistical construction, not a Lorentzian state, Born rule, continuum theory, or full Weyl-gravity model.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "kogut-susskind-1975",
@@ -3200,6 +3222,13 @@ window.MATRIX_EXPLORER_DATA = {
         "previous_status": "NOT_MAPPED",
         "new_status": "REVIEWED_GAP",
         "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "bt_euclidean_revision": {
+        "certificate": "FOUNDATIONAL_BT_EUCLIDEAN_LATTICE_IMPORT_V1",
+        "previous_status": "REVIEWED_GAP",
+        "new_status": "LOCAL_RESULT",
+        "evidence_role": "DIRECT_LOCAL",
         "status_change": true
       },
       "emitted": true
@@ -4135,17 +4164,19 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "FINITE_DISCRETE",
       "carrier": "SMOOTH_DISTRIBUTIONAL",
       "obligation": "PROBABILITY_RULE",
-      "status": "REVIEWED_GAP",
+      "status": "LOCAL_RESULT",
       "evidence": [
-        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "FOUNDATIONAL_BT_EUCLIDEAN_LATTICE_IMPORT_V1"
       ],
       "evidence_roles": {
-        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING",
+        "FOUNDATIONAL_BT_EUCLIDEAN_LATTICE_IMPORT_V1": "DIRECT_LOCAL"
       },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
-      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "summary": "Measurable finite-lattice events receive ordinary Euclidean statistical probabilities by integration against the normalized Gibbs measure.",
+      "boundary": "This is a finite Euclidean statistical construction, not a Lorentzian state, Born rule, continuum theory, or full Weyl-gravity model.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "kogut-susskind-1975",
@@ -4159,6 +4190,13 @@ window.MATRIX_EXPLORER_DATA = {
         "previous_status": "NOT_MAPPED",
         "new_status": "REVIEWED_GAP",
         "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "bt_euclidean_revision": {
+        "certificate": "FOUNDATIONAL_BT_EUCLIDEAN_LATTICE_IMPORT_V1",
+        "previous_status": "REVIEWED_GAP",
+        "new_status": "LOCAL_RESULT",
+        "evidence_role": "DIRECT_LOCAL",
         "status_change": true
       },
       "emitted": true
@@ -9738,23 +9776,25 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "FINITE_DISCRETE",
       "carrier": "SMOOTH_DISTRIBUTIONAL",
       "obligation": "INTERACTION_CONSTRUCTION",
-      "status": "LITERATURE_RESULT",
+      "status": "LOCAL_RESULT",
       "evidence": [
         "kogut-susskind-1975",
         "zohar-burrello-2014",
         "bahr-dittrich-2009",
-        "dittrich-2012"
+        "dittrich-2012",
+        "FOUNDATIONAL_BT_EUCLIDEAN_LATTICE_IMPORT_V1"
       ],
       "evidence_roles": {
         "kogut-susskind-1975": "DIRECT_LITERATURE",
         "zohar-burrello-2014": "DIRECT_LITERATURE",
         "bahr-dittrich-2009": "SUPPORTING",
-        "dittrich-2012": "SUPPORTING"
+        "dittrich-2012": "SUPPORTING",
+        "FOUNDATIONAL_BT_EUCLIDEAN_LATTICE_IMPORT_V1": "DIRECT_LOCAL"
       },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "CAPABILITY_QUALIFIED",
-      "summary": "Refined child 'Interaction construction': registered evidence supports this child.",
-      "boundary": "The v0 parent status is not inherited by sibling obligations. Finite dimension, lattice regularization, finite field, and finitism remain distinct; a continuum bridge is never automatic. Local/formal PDE data do not imply global existence, support, or microlocal renormalization. Still open here: Weyl counterterm coefficients, QME restoration, and residual transfer.",
+      "summary": "For nonzero lambda the exact positive action is nonlinear; the two-site mean-zero restriction has quartic coefficient (28/3) lambda^2.",
+      "boundary": "This is a finite Euclidean statistical construction, not a Lorentzian state, Born rule, continuum theory, or full Weyl-gravity model.",
       "migration_status": "CAPABILITY_QUALIFIED",
       "migration_evidence": [
         "kogut-susskind-1975",
@@ -9763,6 +9803,13 @@ window.MATRIX_EXPLORER_DATA = {
         "dittrich-2012"
       ],
       "migration_rationale": "The explicit v1 evidence-capability registry licenses transfer to this child.",
+      "bt_euclidean_revision": {
+        "certificate": "FOUNDATIONAL_BT_EUCLIDEAN_LATTICE_IMPORT_V1",
+        "previous_status": "LITERATURE_RESULT",
+        "new_status": "LOCAL_RESULT",
+        "evidence_role": "DIRECT_LOCAL",
+        "status_change": true
+      },
       "emitted": true
     },
     {
@@ -15439,20 +15486,29 @@ window.MATRIX_EXPLORER_DATA = {
       "obligation": "RECONSTRUCTION_LIMITS",
       "status": "PRIORITY_GAP",
       "evidence": [
-        "FOUNDATIONAL_FINITE_FIELD_FINITE_MODE_NON_EQUIVALENCE_V1"
+        "FOUNDATIONAL_FINITE_FIELD_FINITE_MODE_NON_EQUIVALENCE_V1",
+        "FOUNDATIONAL_BT_EUCLIDEAN_LATTICE_IMPORT_V1"
       ],
       "evidence_roles": {
-        "FOUNDATIONAL_FINITE_FIELD_FINITE_MODE_NON_EQUIVALENCE_V1": "UNREVIEWED"
+        "FOUNDATIONAL_FINITE_FIELD_FINITE_MODE_NON_EQUIVALENCE_V1": "UNREVIEWED",
+        "FOUNDATIONAL_BT_EUCLIDEAN_LATTICE_IMPORT_V1": "SUPPORTING"
       },
       "parent_obligation": "RECONSTRUCTION_LIMITS",
       "migration_relation": "EXACT_ONE_TO_ONE",
-      "summary": "No topology, comparison maps, error bounds, or regulator-independent continuum theorem joins finite models to smooth Weyl fields.",
-      "boundary": "Cardinality resemblance is not convergence.",
+      "summary": "The L=4 and L=6 independent-sampler preflight supplies a concrete finite-volume test and exposes the next numerical gate, but no controlled continuum or Lorentzian reconstruction.",
+      "boundary": "No topology, uniform error bound, regulator-independent limit, reflection positivity theorem, analytic continuation, or observable matching is established.",
       "migration_status": "EXACT_PARENT_TRANSFER",
       "migration_evidence": [
         "FOUNDATIONAL_FINITE_FIELD_FINITE_MODE_NON_EQUIVALENCE_V1"
       ],
       "migration_rationale": "The v0 obligation was not split, so its reviewed status and evidence transfer exactly.",
+      "bt_euclidean_revision": {
+        "certificate": "FOUNDATIONAL_BT_EUCLIDEAN_LATTICE_IMPORT_V1",
+        "previous_status": "PRIORITY_GAP",
+        "new_status": "PRIORITY_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": false
+      },
       "emitted": true
     },
     {
@@ -15523,6 +15579,44 @@ window.MATRIX_EXPLORER_DATA = {
       "report_path": "foundations/reports/bt-corner-born-interface.md",
       "report_link": "sources/foundations/reports/bt-corner-born-interface.md",
       "sha256": "f223e9f70deba7aba0fdcd0759ded22f2bfe79c254ef159311cb47e23e856a06"
+    },
+    "FOUNDATIONAL_BT_EUCLIDEAN_LATTICE_IMPORT_V1": {
+      "id": "FOUNDATIONAL_BT_EUCLIDEAN_LATTICE_IMPORT_V1",
+      "kind": "LOCAL_RESULT",
+      "result_kind": "FOUNDATIONAL_EVIDENCE_IMPORT_AND_SCOPED_CARRIER_INTERFACE",
+      "lifecycle": "CLASSIFIED",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL"
+      ],
+      "claim_flags": {
+        "five_finite_euclidean_capabilities_imported": true,
+        "finite_partition_function_supports_normalized_gibbs_state": true,
+        "independent_sampler_coarse_reproduction_recorded": true,
+        "full_nonperturbative_carriers_identified": false,
+        "continuum_reconstruction_established": false,
+        "physical_state_selection_established": false,
+        "empirical_agreement_assessed": false,
+        "lorentzian_transfer_established": false,
+        "new_physics_dimension_established": false
+      },
+      "does_not_establish": [
+        "a finite exact carrier or finite probability sample space",
+        "a physical-state-selection theorem from zero-mode fixing",
+        "reflection positivity or Osterwalder-Schrader reconstruction",
+        "a continuum or infinite-volume limit",
+        "analytic continuation to the BT Krein theory",
+        "a Born rule, scattering probability, or laboratory event rate",
+        "empirical validation or out-of-sample robustness",
+        "a graviton or full Weyl-gravity lattice theory",
+        "a new physical dimension",
+        "anything LORENTZIAN-CAUSAL"
+      ],
+      "result_path": "foundations/results/FOUNDATIONAL_BT_EUCLIDEAN_LATTICE_IMPORT_V1.json",
+      "result_link": "sources/foundations/results/FOUNDATIONAL_BT_EUCLIDEAN_LATTICE_IMPORT_V1.json",
+      "report_path": "foundations/reports/bt-euclidean-lattice-foundational-import.md",
+      "report_link": "sources/foundations/reports/bt-euclidean-lattice-foundational-import.md",
+      "sha256": "f8791f9209682cd01b29a5868ea8f353b958f9fb8ce24d77d9b8af6bc92b7f94"
     },
     "FOUNDATIONAL_BT_SEPARABLE_STATE_CHAIN_ZF_V1": {
       "id": "FOUNDATIONAL_BT_SEPARABLE_STATE_CHAIN_ZF_V1",
@@ -17505,16 +17599,69 @@ window.MATRIX_EXPLORER_DATA = {
       ]
     }
   ],
+  "carrier_interfaces": [
+    {
+      "id": "EUCLIDEAN_TO_KREIN_CARRIER",
+      "label": "Positive Euclidean lattice carrier versus BT Krein carrier",
+      "status": "CERTIFIED",
+      "relation": "INCOMPATIBLE",
+      "source_coordinates": [
+        {
+          "foundation": "FINITE_DISCRETE",
+          "carrier": "SMOOTH_DISTRIBUTIONAL",
+          "obligation": "STATE_REPRESENTATION"
+        }
+      ],
+      "target_coordinates": [
+        {
+          "foundation": "CLASSICAL_STANDARD",
+          "carrier": "KREIN_INDEFINITE",
+          "obligation": "STATE_REPRESENTATION"
+        }
+      ],
+      "scope": "The positive-Omega Euclidean lattice path integral and the all-real-Omega two-field BT path integral cannot be identified as the same full nonperturbative configuration space and measure.",
+      "witness": {
+        "source_domain": "Omega_x=exp(lambda*phi_x)>0",
+        "target_domain_caveat": "the phi and (Omega,Upsilon) path integrals are inequivalent, 'the former integrates over Omega > 0 whereas the latter integrates over all Omega' -- a statement about the vacuum, not the action"
+      },
+      "evidence": [
+        "REVERSE_PHYSICS_BT_EUCLIDEAN_LATTICE_PILOT_V1",
+        "REVERSE_PHYSICS_GHOST_PARITY_DOUBLE_POLE_V1",
+        "FOUNDATIONAL_BT_EUCLIDEAN_LATTICE_IMPORT_V1"
+      ],
+      "does_not_establish": "No obstruction is proved to a conditional perturbative, Osterwalder-Schrader, analytic-continuation, or other explicitly constructed bridge."
+    }
+  ],
+  "numerical_reproducibility_records": [
+    {
+      "id": "BT_L4_L6_INDEPENDENT_SAMPLER_REPRODUCTION",
+      "assembly": "BT_EUCLIDEAN_LATTICE_PROGRAMME",
+      "dependency_tag": "EUCLIDEAN-SPECTRAL",
+      "status": "COARSE_REPRODUCTION_ONLY",
+      "algorithms": [
+        "zero-mode-projected HMC",
+        "independent local random-scan Metropolis"
+      ],
+      "gate_passed": "all declared finite-volume observables agree within four combined standard errors",
+      "precision_gate": "not all declared observables agree within two combined standard errors",
+      "maximum_absolute_cross_sampler_z": 3.0404583746200773,
+      "finite_size_change_cross_algorithm_z": 1.577545278876236,
+      "continuum_status": "NOT_ESTABLISHED",
+      "evidence": [
+        "REVERSE_PHYSICS_BT_EUCLIDEAN_STEP_SCALING_PREFLIGHT_V1"
+      ]
+    }
+  ],
   "boundaries": {
     "cube": [
-      "a result for any REVIEWED_GAP coordinate",
-      "that a reviewed gap is a programme priority",
-      "literature completeness or absence",
+      "that the five finite Euclidean capabilities form a continuum theory",
+      "that zero-mode fixing is physical-state selection",
+      "that a positive Euclidean Gibbs measure is a Born rule or reflection-positive quantum theory",
+      "that coarse sampler reproduction is empirical validation",
+      "a controlled continuum or infinite-volume limit",
+      "an analytic-continuation map to the BT Krein carrier",
+      "that the scoped carrier incompatibility forbids every conditional bridge",
       "that all 576 coordinates are jointly realizable",
-      "evidence transfer from a one-axis neighbor",
-      "impossibility, independence, inconsistency, or a no-go theorem",
-      "a weakest foundation or equivalence of carrier categories",
-      "a continuum limit or empirical equivalence",
       "a complete Weyl theory or quantum completion",
       "a new LORENTZIAN-CAUSAL conclusion"
     ],
@@ -17549,11 +17696,13 @@ window.MATRIX_EXPLORER_DATA = {
     ]
   },
   "source_links": {
-    "cube": "sources/foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V9.json",
+    "cube": "sources/foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V10.json",
     "full_surface_audit": "sources/foundations/results/FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1.json",
     "migration_audit": "sources/foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_MIGRATION_AUDIT_V2.json",
     "ladder": "sources/foundations/results/FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V2.json",
-    "cube_report": "sources/foundations/reports/refined-intersection-cube-v9.md",
+    "cube_report": "sources/foundations/reports/refined-intersection-cube-v10.md",
+    "bt_euclidean_import": "sources/foundations/results/FOUNDATIONAL_BT_EUCLIDEAN_LATTICE_IMPORT_V1.json",
+    "bt_euclidean_import_report": "sources/foundations/reports/bt-euclidean-lattice-foundational-import.md",
     "full_surface_audit_report": "sources/foundations/reports/full-surface-gap-audit.md",
     "twenty_cell_closure": "sources/foundations/results/FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1.json",
     "twenty_cell_closure_report": "sources/foundations/reports/finite-brst-twenty-cell-closure.md",
@@ -17566,5 +17715,5 @@ window.MATRIX_EXPLORER_DATA = {
     "migration_audit_report": "sources/foundations/reports/intersection-cube-migration-audit-v2.md",
     "ladder_report": "sources/foundations/reports/cylinder-wave-strength-ladder-v2.md"
   },
-  "canonical_digest": "4ba28f1320371b129b8f97dca3668acd02711ab4aefb980d21964cd90cefd30d"
+  "canonical_digest": "e4c79e8ec537c2d9f9271d9ccbd042da2a5529b0b5f0f11fa6917cc3af0386cd"
 };

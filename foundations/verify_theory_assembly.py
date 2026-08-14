@@ -92,8 +92,14 @@ def verify(*, value: dict[str, Any] | None = None) -> tuple[list[str], list[str]
     certified_records = atlas.get("cross_cell_interfaces", [])
     if result.get("certified_interface_records") != certified_records or [item.get("id") for item in certified_records] != ["STATE_TO_PROBABILITY", "SELECTION_TO_DYNAMICS"]:
         errors.append("certified interface record projection")
-    if len(assemblies) != 7 or len({item.get("id") for item in assemblies}) != 7:
-        errors.append("seven unique prototype assemblies")
+    carrier_records = atlas.get("carrier_interfaces", [])
+    if result.get("certified_carrier_interface_records") != carrier_records or [item.get("id") for item in carrier_records] != ["EUCLIDEAN_TO_KREIN_CARRIER"]:
+        errors.append("certified carrier interface record projection")
+    numerical_records = atlas.get("numerical_reproducibility_records", [])
+    if result.get("numerical_reproducibility_ledger", {}).get("records") != numerical_records or len(numerical_records) != 1:
+        errors.append("numerical reproduction record projection")
+    if len(assemblies) != 8 or len({item.get("id") for item in assemblies}) != 8:
+        errors.append("eight unique prototype assemblies")
     for assembly in assemblies:
         selected = {item.get("obligation"): item for item in assembly.get("selected_cells", [])}
         if set(selected) != set(obligations):
@@ -135,6 +141,7 @@ def verify(*, value: dict[str, Any] | None = None) -> tuple[list[str], list[str]
             "CROSS_CELL_COMPOSITION": "PARTIALLY_CERTIFIED" if certified_count else "NOT_ASSESSED",
             "PREDICTION_DERIVATION": "NOT_EVALUABLE",
             "OBSERVABLE_IDENTIFICATION": "NOT_REGISTERED",
+            "NUMERICAL_REPRODUCIBILITY": "COARSE_REPRODUCTION_ONLY" if assembly["id"] == "BT_EUCLIDEAN_LATTICE_PROGRAMME" else "NO_RECORDS",
             "EMPIRICAL_COMPARISON": "NO_RECORDS",
             "ROBUSTNESS_OUT_OF_SAMPLE": "NO_RECORDS",
         }
@@ -149,7 +156,7 @@ def verify(*, value: dict[str, Any] | None = None) -> tuple[list[str], list[str]
     if ledger.get("records") != [] or len(ledger.get("benchmarks", [])) != 6 or any(item.get("status") != "NOT_REGISTERED" for item in ledger.get("benchmarks", [])):
         errors.append("empty empirical ledger and benchmark closure")
     flags = result.get("claim_flags", {})
-    for name in ("prototype_assemblies_generated", "selected_cells_content_addressed", "interface_and_coverage_states_separated", "at_least_one_cross_cell_interface_certified", "empirical_record_schema_declared", "external_positive_control_registered", "missing_and_failed_states_separated", "model_scoped_prediction_assembly_registered", "bounded_prediction_chain_established", "bounded_empirical_agreement_assessed"):
+    for name in ("prototype_assemblies_generated", "selected_cells_content_addressed", "interface_and_coverage_states_separated", "at_least_one_cross_cell_interface_certified", "scoped_carrier_interface_registered", "numerical_reproducibility_rail_declared", "empirical_record_schema_declared", "external_positive_control_registered", "missing_and_failed_states_separated", "model_scoped_prediction_assembly_registered", "bounded_prediction_chain_established", "bounded_empirical_agreement_assessed"):
         if flags.get(name) is not True:
             errors.append("positive flag " + name)
     for name in ("cross_cell_composability_established", "prediction_chain_established", "empirical_agreement_assessed", "complete_observationally_valid_theory_identified"):
@@ -163,10 +170,10 @@ def verify(*, value: dict[str, Any] | None = None) -> tuple[list[str], list[str]
         if SITE_JS.read_bytes() != b"window.THEORY_ASSEMBLY_DATA = " + SITE_JSON.read_bytes().rstrip() + b";\n":
             errors.append("offline assembly assignment")
         combined = (ROOT / "foundations/site/index.html").read_text() + (ROOT / "foundations/site/app.js").read_text()
-        for token in ("Assemblies", "assembliesView", "Bounded assembly complete", "Field equations to Cassini", "Six independent maturity rails", "External positive control", "Typed interface ledger", "Empirical benchmark ledger", "NOT_ASSESSED"):
+        for token in ("Assemblies", "assembliesView", "Bounded assembly complete", "Field equations to Cassini", "Seven independent maturity rails", "Numerical reproduction is not empirical validation", "Euclidean/Krein carrier boundary", "External positive control", "Typed interface ledger", "Empirical benchmark ledger", "NOT_ASSESSED"):
             if token not in combined + SITE_JS.read_text():
                 errors.append("interface token " + token)
-        for token in ("seven", "coverage envelope", "model-scoped", "Cassini", "NOT_ASSESSED", "positive control", "does not establish"):
+        for token in ("eight", "coverage envelope", "model-scoped", "Cassini", "COARSE_REPRODUCTION_ONLY", "Euclidean", "NOT_ASSESSED", "positive control", "does not establish"):
             if token not in REPORT.read_text():
                 errors.append("report token " + token)
     checks.append("offline assembly interface, parity, and report")

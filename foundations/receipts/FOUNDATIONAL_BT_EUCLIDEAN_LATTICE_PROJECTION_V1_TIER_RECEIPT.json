@@ -1,0 +1,139 @@
+{
+  "schema_version": "science-forge-tier-receipt-v1",
+  "result_id": "FOUNDATIONAL_BT_EUCLIDEAN_LATTICE_PROJECTION_V1_TIER_RECEIPT",
+  "result_kind": "FOUNDATIONAL_CUBE_ASSEMBLY_SITE_AND_PAPER_PROJECTION_RECEIPT",
+  "lifecycle": "VERIFIED_NAVIGATION_ARTIFACT",
+  "created": "2026-08-14",
+  "repository_base_commit": "2a211e2931cd391b78f16d8ec374369ec09a4a24",
+  "source_import_commit": "0ade9235",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "scope": "Projected the certified BT positive Euclidean finite lattice through cube v10, an eighth theory prototype, a seventh numerical-reproducibility maturity rail, the static atlas, and Paper 21. Preserved the reconstruction priority gap and kept the numerical, empirical, robustness, carrier-identity, continuum, and Lorentzian claims distinct.",
+  "inputs": [
+    {
+      "path": "foundations/results/FOUNDATIONAL_BT_EUCLIDEAN_LATTICE_IMPORT_V1.json",
+      "sha256": "f8791f9209682cd01b29a5868ea8f353b958f9fb8ce24d77d9b8af6bc92b7f94",
+      "role": "content-pinned exact/numerical/carrier import"
+    },
+    {
+      "path": "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V9.json",
+      "sha256": "a6c2d08940ba7112202ed33ca64b581fd886b07b53eb553c24321578feb08269",
+      "role": "preserved 576-coordinate source surface"
+    },
+    {
+      "path": "foundations/results/FOUNDATIONAL_GR_CASSINI_MODEL_ASSEMBLY_V1.json",
+      "sha256": "f87aa0453de1af594175d1c23c39b48d644064a8582a56785bd9ea4ce279a902",
+      "role": "independently landed model-scoped assembly preserved in the shared atlas"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V10.json",
+      "sha256": "2e85d0cd04191a707d69bfc0f3cc3c695fccabb4bca2295e27d84ed9a933d6d5"
+    },
+    {
+      "path": "foundations/results/FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1.json",
+      "sha256": "36e309fe8da7b06d7a195ed3f553432e97bb47e1aa980f5791e31417091623bd"
+    },
+    {
+      "path": "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json",
+      "sha256": "0f8e66eab550d90467e24f8e1ea6e0474c8c2afca9de9ce7df4ee0353e462925"
+    },
+    {
+      "path": "foundations/site/manifest.json",
+      "sha256": "0aaf5e4746300daa0271ff0d19a97503386117ddfcb932f36cca8a6e435c4341"
+    },
+    {
+      "path": "paper/21-reverse-foundations-of-physics-appendices.tex",
+      "sha256": "5d4111c80c75601819d40042d0a70e59d826b093e95204f4c31ad3065ae08c46"
+    },
+    {
+      "path": "paper/21-reverse-foundations-of-physics-claim-map.json",
+      "sha256": "ae7dc607bb0829ff8bd214889813bcfcaed6ba4c15a380c4ab4b7067f25c3357"
+    },
+    {
+      "path": "paper/21-reverse-foundations-of-physics.tex",
+      "sha256": "8a0d1b0223037e69061042650577a0954acaf1e60c8c91754d0211c7793800ad"
+    },
+    {
+      "path": "paper/21-reverse-foundations-of-physics.pdf",
+      "sha256": "94939cef51fb243acf2be2fa8ad98c262ed639c66af7a6160e9194702bc979c2"
+    }
+  ],
+  "assessment": {
+    "cube_cells": 576,
+    "cube_v9_cells_preserved_without_change": 570,
+    "finite_euclidean_direct_imports": 5,
+    "prototype_assemblies": 8,
+    "bt_euclidean_selected_direct_obligations": "8/16",
+    "prototype_composition_interfaces": "0/7 certified for the BT Euclidean prototype",
+    "numerical_reproducibility": "COARSE_REPRODUCTION_ONLY",
+    "candidate_empirical_records": 0,
+    "robustness_records": 0,
+    "carrier_interface": "INCOMPATIBLE only with full nonperturbative identity",
+    "continuum_reconstruction": "PRIORITY_GAP",
+    "paper_pages": 37
+  },
+  "tests": {
+    "tier_0": [
+      {
+        "command": "python3 -m py_compile on changed producers/checkers/verifiers; python3 -m json.tool on changed schemas/results/receipts/events; git diff --check on explicit scoped paths; inspect exact staged path list and diff",
+        "status": "PASS"
+      }
+    ],
+    "tier_1": [
+      {
+        "command": "python3 foundations/build_bt_euclidean_lattice_import.py --check; check/verify import; refine cube v10 --check; check/verify cube v10; unittest import and cube v10",
+        "status": "PASS",
+        "output": "11 focused certificate tests passed"
+      },
+      {
+        "command": "python3 foundations/build_matrix_site_v2.py --check; check/verify matrix site; verify theory assembly; verify theory viability; unittest theory_viability, theory_assembly, and matrix_site",
+        "elapsed_seconds": 2.4,
+        "status": "PASS",
+        "output": "20 direct-consumer tests passed; 576 cells, 75 evidence records, 8 prototypes, 7 maturity rails"
+      },
+      {
+        "command": "generate Paper 21 appendices and claim map --check; verify claim map; pdflatex twice under a 500 MB virtual-memory cap",
+        "elapsed_seconds": 3.5,
+        "status": "PASS",
+        "output": "37-page PDF; no overfull boxes or undefined references"
+      }
+    ],
+    "tier_2": {
+      "status": "PASS",
+      "criterion": "Cube v10 is a mathematical input to the viability, assembly, site, appendix, and Paper 21 claim-map chain, so every transitive derived consumer was regenerated and independently verified. The unchanged reverse-physics producer certificates were checked by content hash rather than rerun."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No classical or quantum freeze, release, shared core algebra change, quantum lifecycle promotion, or Lorentzian certification was made."
+    }
+  },
+  "claim_flags": {
+    "five_finite_euclidean_capabilities_imported": true,
+    "eighth_prototype_generated": true,
+    "numerical_reproducibility_separated_from_empirical_validation": true,
+    "scoped_carrier_nonidentity_displayed": true,
+    "continuum_reconstruction_established": false,
+    "empirical_agreement_assessed_for_bt": false,
+    "robustness_assessed_for_bt": false,
+    "new_lorentzian_claim": false,
+    "quantum_lifecycle_promoted": false
+  },
+  "does_not_establish": [
+    "a finite exact state carrier",
+    "physical state selection",
+    "reflection positivity or a Born rule",
+    "precision sampler equivalence",
+    "a continuum or infinite-volume limit",
+    "analytic continuation to the BT Krein theory",
+    "empirical support or out-of-sample robustness",
+    "a full Weyl-gravity lattice construction",
+    "a new Lorentzian-causal result or quantum lifecycle promotion"
+  ],
+  "unrelated_worktree_changes_excluded": []
+}

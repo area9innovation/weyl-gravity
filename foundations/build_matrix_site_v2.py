@@ -31,24 +31,26 @@ ASSEMBLY_REPORT = FOUNDATIONS / "reports/theory-assembly-atlas-v1.md"
 GR_CASSINI_RESULT = FOUNDATIONS / "results/FOUNDATIONAL_GR_CASSINI_MODEL_ASSEMBLY_V1.json"
 GR_CASSINI_REPORT = FOUNDATIONS / "reports/gr-cassini-model-assembly-v1.md"
 GR_CASSINI_SCHEMA = FOUNDATIONS / "schema/foundational-gr-cassini-model-assembly-v1.schema.json"
-CUBE = FOUNDATIONS / "results/FOUNDATIONAL_INTERSECTION_CUBE_V9.json"
+CUBE = FOUNDATIONS / "results/FOUNDATIONAL_INTERSECTION_CUBE_V10.json"
 PREVIOUS_CUBES = [
     FOUNDATIONS / "results/FOUNDATIONAL_INTERSECTION_CUBE_V4.json",
     FOUNDATIONS / "results/FOUNDATIONAL_INTERSECTION_CUBE_V5.json",
     FOUNDATIONS / "results/FOUNDATIONAL_INTERSECTION_CUBE_V6.json",
     FOUNDATIONS / "results/FOUNDATIONAL_INTERSECTION_CUBE_V7.json",
     FOUNDATIONS / "results/FOUNDATIONAL_INTERSECTION_CUBE_V8.json",
+    FOUNDATIONS / "results/FOUNDATIONAL_INTERSECTION_CUBE_V9.json",
 ]
 TEN_CELL_CLOSURE = FOUNDATIONS / "results/FOUNDATIONAL_FINITE_OPERATOR_TEN_CELL_CLOSURE_V1.json"
 TWENTY_CELL_CLOSURE = FOUNDATIONS / "results/FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1.json"
 CORNER_BORN_INTERFACE = FOUNDATIONS / "results/FOUNDATIONAL_BT_CORNER_BORN_INTERFACE_V1.json"
 GROUND_STATE_DYNAMICS_INTERFACE = FOUNDATIONS / "results/FOUNDATIONAL_KREIN_FOCK_GROUND_STATE_DYNAMICS_INTERFACE_V1.json"
+BT_EUCLIDEAN_IMPORT = FOUNDATIONS / "results/FOUNDATIONAL_BT_EUCLIDEAN_LATTICE_IMPORT_V1.json"
 AUDIT = FOUNDATIONS / "results/FOUNDATIONAL_INTERSECTION_CUBE_MIGRATION_AUDIT_V2.json"
 FULL_SURFACE_AUDIT = FOUNDATIONS / "results/FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1.json"
 LADDER = FOUNDATIONS / "results/FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V2.json"
 LEDGERS = v1.LEDGERS
 CREATED = "2026-08-14"
-BASE_COMMIT = "3b4c7dfa3506baeef447ba97038f5f6f9f807a75"
+BASE_COMMIT = "2a211e2931cd391b78f16d8ec374369ec09a4a24"
 
 PLAIN_AXIS_GUIDE = {
     "FOUNDATION": {
@@ -172,11 +174,21 @@ def cell_mark(cell: dict[str, Any], evidence: dict[str, dict[str, Any]]) -> str:
     return upper + "".join(x for x in "lr" if x in support and x.upper() not in upper)
 
 
+def canonical_digest(dataset: dict[str, Any]) -> str:
+    projection = {
+        key: dataset[key]
+        for key in ("axes", "cells", "evidence", "ladder", "graph", "cross_cell_interfaces", "carrier_interfaces", "numerical_reproducibility_records")
+    }
+    return v1.sha_bytes(json.dumps(projection, sort_keys=True, separators=(",", ":"), ensure_ascii=False).encode())
+
+
 def build_dataset() -> dict[str, Any]:
-    cube, audit, ladder = v1.load(CUBE), v1.load(AUDIT), v1.load(LADDER)
+    cube, audit, ladder, bt_import = v1.load(CUBE), v1.load(AUDIT), v1.load(LADDER), v1.load(BT_EUCLIDEAN_IMPORT)
     interface_results = [v1.load(CORNER_BORN_INTERFACE), v1.load(GROUND_STATE_DYNAMICS_INTERFACE)]
     if cube.get("certified_interfaces") != [item.get("interface") for item in interface_results]:
         raise ValueError("cube/interface projection mismatch")
+    if cube.get("certified_carrier_interfaces") != [bt_import.get("carrier_interface")]:
+        raise ValueError("cube/carrier-interface projection mismatch")
     cells = complete_surface(cube)
     evidence = evidence_registry(cube, ladder)
     status_counts: dict[str, int] = {}
@@ -221,6 +233,8 @@ def build_dataset() -> dict[str, Any]:
         "ladder": ladder["ladder"],
         "graph": ladder["typed_relation_graph"],
         "cross_cell_interfaces": cube["certified_interfaces"],
+        "carrier_interfaces": cube["certified_carrier_interfaces"],
+        "numerical_reproducibility_records": bt_import["numerical_reproducibility_records"],
         "boundaries": {
             "cube": cube["does_not_establish"],
             "migration_audit": audit["does_not_establish"],
@@ -240,7 +254,9 @@ def build_dataset() -> dict[str, Any]:
             "full_surface_audit": site_link(rel(FULL_SURFACE_AUDIT)),
             "migration_audit": site_link(rel(AUDIT)),
             "ladder": site_link(rel(LADDER)),
-            "cube_report": site_link("foundations/reports/refined-intersection-cube-v9.md"),
+            "cube_report": site_link("foundations/reports/refined-intersection-cube-v10.md"),
+            "bt_euclidean_import": site_link(rel(BT_EUCLIDEAN_IMPORT)),
+            "bt_euclidean_import_report": site_link("foundations/reports/bt-euclidean-lattice-foundational-import.md"),
             "full_surface_audit_report": site_link("foundations/reports/full-surface-gap-audit.md"),
             "twenty_cell_closure": site_link(rel(TWENTY_CELL_CLOSURE)),
             "twenty_cell_closure_report": site_link("foundations/reports/finite-brst-twenty-cell-closure.md"),
@@ -254,7 +270,7 @@ def build_dataset() -> dict[str, Any]:
             "ladder_report": site_link("foundations/reports/cylinder-wave-strength-ladder-v2.md"),
         },
     }
-    dataset["canonical_digest"] = v1.canonical_digest(dataset)
+    dataset["canonical_digest"] = canonical_digest(dataset)
     return dataset
 
 
@@ -271,7 +287,7 @@ def render_report(result: dict[str, Any]) -> str:
 ## Outcome
 
 `foundations/site/index.html` presents all **576** Cartesian coordinates.
-All **576** are now emitted by cube v9 and have separate coverage and migration
+All **576** are now emitted by cube v10 and have separate coverage and migration
 review fields: **{counts['migration_reviewed']} reviewed**, **{counts['migration_pending']} pending**.
 The surface has **{counts['reviewed_gap']} `REVIEWED_GAP`** cells and **{counts['not_mapped']}
 `NOT_MAPPED`** cells. A reviewed gap is a formulated open question with a typed
@@ -282,11 +298,17 @@ The full-surface audit preserves all 401 prior positive, partial, and priority
 classifications. It revises 51 emitted blanks and directly assesses the 124
 formerly synthetic coordinates without transferring evidence from neighbors.
 
-Cube v9 preserves two certified `CONDITIONAL_BRIDGE` relations. The first maps an
+Cube v10 preserves two certified `CONDITIONAL_BRIDGE` relations. The first maps an
 algebraic finite-corner state to a Krein probability rule under five explicit
 hypotheses. The second uses the free Fock energy gap to select the unique normal
 zero-energy vacuum state and proves that the same state is invariant under the
 generated Krein--Fock dynamics. The other assembly interfaces remain open.
+
+Cube v10 also imports the positive BT Euclidean finite lattice into five direct
+`FINITE_DISCRETE × SMOOTH_DISTRIBUTIONAL` cells. Its independent-sampler record
+is coarse numerical reproduction, not empirical validation. A separate carrier
+interface refuses only identification of the positive Euclidean measure with the
+all-real BT/Krein path integral; controlled conditional bridges remain open.
 
 Coverage is assessed for **{counts['coverage_classified']}** emitted cells. The
 finite-BRST pass classifies exactly twenty additional empty cells: seventeen
@@ -400,7 +422,7 @@ def render_assembly_report(assessment: dict[str, Any]) -> str:
         "",
         "## Outcome",
         "",
-        "The atlas generates seven named prototype assemblies. Each is a deterministic",
+        "The atlas generates eight named prototype assemblies. Each is a deterministic",
         "coverage envelope: it selects the strongest recorded cell for every obligation",
         "inside a declared regime/carrier region. It is not a composed theory.",
         "",
@@ -424,13 +446,17 @@ def render_assembly_report(assessment: dict[str, Any]) -> str:
         "",
         "## Independent maturity rails",
         "",
-        "Every prototype is displayed against six separately reported rails: obligation coverage,",
-        "cross-cell composition, prediction derivation, observable identification,",
+        "Every prototype is displayed against seven separately reported rails: obligation coverage,",
+        "cross-cell composition, prediction derivation, observable identification, numerical reproducibility,",
         "empirical comparison, and robustness/out-of-sample performance. A complete",
         "classical coverage envelope is therefore shown as complete even when composition",
         "is only partial. Missing or premature downstream work is `NOT_ASSESSED`,",
         "`NOT_EVALUABLE`, `NOT_REGISTERED`, or `NO_RECORDS`; red failure states are",
         "reserved for an explicit obstruction, incompatibility, or failed comparison.",
+        "",
+        "The BT Euclidean lattice prototype has one `COARSE_REPRODUCTION_ONLY` numerical",
+        "record: HMC and local Metropolis pass the declared four-standard-error gate but",
+        "not a two-standard-error precision gate. The empirical and robustness rails stay empty.",
         "",
         "## Empirical ledger",
         "",
@@ -490,7 +516,8 @@ def generated() -> dict[Path, bytes]:
     local_evidence_paths = [ROOT / item["result_path"] for item in dataset["evidence"].values() if item["kind"] == "LOCAL_RESULT"]
     local_report_paths = [ROOT / item["report_path"] for item in dataset["evidence"].values() if item["kind"] == "LOCAL_RESULT" and item.get("report_path")]
     reports = [
-        FOUNDATIONS / "reports/refined-intersection-cube-v9.md",
+        FOUNDATIONS / "reports/refined-intersection-cube-v10.md",
+        FOUNDATIONS / "reports/bt-euclidean-lattice-foundational-import.md",
         FOUNDATIONS / "reports/refined-intersection-cube-v8.md",
         FOUNDATIONS / "reports/refined-intersection-cube-v7.md",
         FOUNDATIONS / "reports/refined-intersection-cube-v6.md",
@@ -502,7 +529,7 @@ def generated() -> dict[Path, bytes]:
         FOUNDATIONS / "reports/full-surface-gap-audit.md",
         GR_CASSINI_REPORT,
     ]
-    bundled_sources = sorted(set([CUBE, *PREVIOUS_CUBES, FULL_SURFACE_AUDIT, CORNER_BORN_INTERFACE, GROUND_STATE_DYNAMICS_INTERFACE, GR_CASSINI_RESULT, GR_CASSINI_SCHEMA, AUDIT, LADDER, *LEDGERS, *local_evidence_paths, *local_report_paths, *reports]))
+    bundled_sources = sorted(set([CUBE, *PREVIOUS_CUBES, FULL_SURFACE_AUDIT, CORNER_BORN_INTERFACE, GROUND_STATE_DYNAMICS_INTERFACE, BT_EUCLIDEAN_IMPORT, GR_CASSINI_RESULT, GR_CASSINI_SCHEMA, AUDIT, LADDER, *LEDGERS, *local_evidence_paths, *local_report_paths, *reports]))
     for source in bundled_sources:
         outputs[SITE / "sources" / source.relative_to(ROOT)] = source.read_bytes()
     input_paths = sorted(set([Path(__file__).resolve(), FOUNDATIONS / "theory_viability.py", FOUNDATIONS / "theory_assembly.py", FOUNDATIONS / "build_gr_cassini_assembly.py", FOUNDATIONS / "check_gr_cassini_assembly.py", FOUNDATIONS / "verify_gr_cassini_assembly.py", FOUNDATIONS / "standard-gr-observational-control-v1.json", FOUNDATIONS / "schema/standard-gr-observational-control-v1.schema.json", *bundled_sources, ASSETS / "index.html", ASSETS / "styles.css", ASSETS / "app.js", V2_ASSETS / "app-v2.js"]))
@@ -523,14 +550,14 @@ def generated() -> dict[Path, bytes]:
         "lifecycle": "VERIFIED_NAVIGATION_ARTIFACT",
         "created": CREATED,
         "repository_base_commit": BASE_COMMIT,
-        "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
+        "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
         "scope": "Deterministic static exploration surface over the migration-reviewed foundations cube and cylinder implication ladder.",
         "counts": dataset["counts"],
-        "features": ["sixteen 6x6 heatmaps", "complete 576-coordinate assessment surface", "reviewed-open-gap state distinct from priority and result", "dual local+literature cell marks", "per-evidence directness roles", "plain-language guide for all 28 axis options", "separate coverage and migration-review states", "migration evidence inspector", "multi-select filters", "full-text search", "cell inspector", "one-axis neighbors", "two-cell comparison", "URL permalinks", "filtered JSON and CSV export", "research-brief export", "three-pathway typed argument map with linked relation ledger", "strength ladder", "evidence catalogue", "theory-profile readiness map", "researcher-selectable obligation gates", "multi-carrier coverage-envelope composer", "non-scalar Pareto navigation", "separate composition and empirical-agreement rails", "seven named prototype assemblies", "first model-scoped GR-to-Cassini bounded prediction assembly", "typed applicability mask", "exact field-equation-to-PPN-to-null-delay chain", "typed cross-cell interface ledger", "two certified scoped cross-cell bridges", "six independent maturity rails with missing distinct from failure", "empty fail-closed candidate empirical benchmark ledger", "external standard-GR positive control with four primary-source records", "ten-cell exact finite-operator closure", "twenty-cell exact finite-BRST closure"],
+        "features": ["sixteen 6x6 heatmaps", "complete 576-coordinate assessment surface", "reviewed-open-gap state distinct from priority and result", "dual local+literature cell marks", "per-evidence directness roles", "plain-language guide for all 28 axis options", "separate coverage and migration-review states", "migration evidence inspector", "multi-select filters", "full-text search", "cell inspector", "one-axis neighbors", "two-cell comparison", "URL permalinks", "filtered JSON and CSV export", "research-brief export", "three-pathway typed argument map with linked relation ledger", "strength ladder", "evidence catalogue", "theory-profile readiness map", "researcher-selectable obligation gates", "multi-carrier coverage-envelope composer", "non-scalar Pareto navigation", "separate composition, numerical-reproduction, and empirical-agreement rails", "eight named prototype assemblies", "first model-scoped GR-to-Cassini bounded prediction assembly", "typed applicability mask", "exact field-equation-to-PPN-to-null-delay chain", "typed cross-cell interface ledger", "two certified scoped cross-cell bridges", "one certified scoped carrier non-identity", "seven independent maturity rails with missing distinct from failure", "empty fail-closed candidate empirical benchmark ledger", "external standard-GR positive control with four primary-source records", "ten-cell exact finite-operator closure", "twenty-cell exact finite-BRST closure"],
         "provenance": {"manifest": rel(SITE / "manifest.json"), "manifest_sha256": v1.sha_bytes(manifest_bytes), "canonical_data_digest": dataset["canonical_digest"], "viability_digest": viability["canonical_digest"], "assembly_digest": assemblies["canonical_digest"]},
-        "independent_checker": {"path": "foundations/check_matrix_site_v2.py", "expected_cells": 576, "expected_emitted": 576, "expected_synthetic_not_mapped": 0, "expected_total_not_mapped": 0, "expected_reviewed_gaps": 175, "expected_evidence_records": 74, "expected_digest": dataset["canonical_digest"], "expected_viability_digest": viability["canonical_digest"], "expected_assembly_digest": assemblies["canonical_digest"]},
+        "independent_checker": {"path": "foundations/check_matrix_site_v2.py", "expected_cells": 576, "expected_emitted": 576, "expected_synthetic_not_mapped": 0, "expected_total_not_mapped": 0, "expected_reviewed_gaps": 172, "expected_evidence_records": 75, "expected_digest": dataset["canonical_digest"], "expected_viability_digest": viability["canonical_digest"], "expected_assembly_digest": assemblies["canonical_digest"]},
         "claim_flags": {"static_site_generated": True, "all_cartesian_coordinates_visible": True, "all_cartesian_coordinates_assessed": True, "zero_not_mapped": True, "reviewed_gaps_distinguished_from_results": True, "all_emitted_migrations_reviewed": True, "coverage_and_migration_separated": True, "all_used_evidence_resolved": True, "theory_profiles_generated": True, "theory_assembly_atlas_generated": True, "at_least_one_cross_cell_interface_certified": True, "composition_and_observation_rails_separated": True, "scientific_claims_duplicated_by_hand": False, "literature_complete": False, "unmapped_means_absent": False, "reviewed_gap_means_absent": False, "reviewed_no_transfer_means_absent": False, "priority_score_is_theorem": False, "complete_observationally_valid_theory_identified": False, "new_lorentzian_claim": False},
-        "does_not_establish": ["literature completeness", "a result for any of the 175 reviewed open gaps", "that REVIEWED_GAP or NOT_MAPPED means no literature exists", "that an UNREVIEWED evidence role is an absence of direct support", "that a dual LR mark composes its two records into a stronger result", "that all 576 coordinates are jointly realizable", "a weakest mathematical base", "continuum renormalized products from finite regulated-product closure", "a Weyl QME or Weyl residual transfer from a finite toy BRST complex", "equivalence of carrier categories from one finite realization", "a theorem ranking from interface order, Pareto membership, or neighbor counts", "composition beyond the two certified scoped interfaces", "agreement with observations", "a complete observationally validated theory", "a new Lorentzian-causal result"],
+        "does_not_establish": ["literature completeness", "a result for any of the 172 reviewed open gaps", "that REVIEWED_GAP or NOT_MAPPED means no literature exists", "that an UNREVIEWED evidence role is an absence of direct support", "that a dual LR mark composes its two records into a stronger result", "that all 576 coordinates are jointly realizable", "a weakest mathematical base", "continuum renormalized products from finite regulated-product closure", "a Weyl QME or Weyl residual transfer from a finite toy BRST complex", "equivalence of carrier categories from one finite realization", "a theorem ranking from interface order, Pareto membership, or neighbor counts", "composition beyond the two certified scoped cross-cell interfaces", "precision sampler equivalence, continuum reconstruction, or empirical support from the BT finite lattice", "a complete observationally validated theory", "a new Lorentzian-causal result"],
         "human_report": "foundations/reports/matrix-explorer-site-v2.md",
     }
     outputs[RESULT] = (json.dumps(result, indent=2) + "\n").encode()

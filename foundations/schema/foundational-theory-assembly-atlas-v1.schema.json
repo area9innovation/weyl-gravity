@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "additionalProperties": false,
-  "required": ["schema_version", "result_id", "result_kind", "lifecycle", "title", "created", "dependency_tags", "unit", "interface_vocabulary", "certified_interface_records", "assemblies", "model_scoped_assemblies", "model_scoped_sources", "calibration_controls", "calibration_source", "empirical_ledger", "claim_flags", "does_not_establish", "source_atlas_digest", "canonical_digest"],
+  "required": ["schema_version", "result_id", "result_kind", "lifecycle", "title", "created", "dependency_tags", "unit", "interface_vocabulary", "certified_interface_records", "certified_carrier_interface_records", "assemblies", "model_scoped_assemblies", "model_scoped_sources", "calibration_controls", "calibration_source", "empirical_ledger", "numerical_reproducibility_ledger", "claim_flags", "does_not_establish", "source_atlas_digest", "canonical_digest"],
   "properties": {
     "schema_version": {"const": "foundational-theory-assembly-atlas-v1"},
     "result_id": {"const": "FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1"},
@@ -10,15 +10,16 @@
     "lifecycle": {"const": "VERIFIED_NAVIGATION_ARTIFACT"},
     "title": {"type": "string", "minLength": 1},
     "created": {"type": "string", "format": "date"},
-    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]},
     "unit": {"type": "string", "minLength": 1},
     "interface_vocabulary": {
       "type": "array", "minItems": 7, "maxItems": 7,
       "items": {"type": "object", "required": ["id", "meaning"]}
     },
     "certified_interface_records": {"type": "array", "minItems": 2, "maxItems": 2},
+    "certified_carrier_interface_records": {"type": "array", "minItems": 1, "maxItems": 1},
     "assemblies": {
-      "type": "array", "minItems": 7, "maxItems": 7,
+      "type": "array", "minItems": 8, "maxItems": 8,
       "items": {
         "type": "object",
         "required": ["id", "label", "aim", "foundations", "carriers", "kind", "selection_rule", "selected_cells", "coverage", "interfaces", "maturity_rails", "complete_theory", "empirically_supported"],
@@ -26,12 +27,12 @@
           "selected_cells": {"type": "array", "minItems": 16, "maxItems": 16},
           "interfaces": {"type": "array", "minItems": 7, "maxItems": 7},
           "maturity_rails": {
-            "type": "array", "minItems": 6, "maxItems": 6,
+            "type": "array", "minItems": 7, "maxItems": 7,
             "items": {
               "type": "object",
               "required": ["id", "label", "status", "basis"],
               "properties": {
-                "status": {"enum": ["SATISFIED", "OPEN", "PARTIALLY_CERTIFIED", "NOT_ASSESSED", "NOT_EVALUABLE", "NOT_REGISTERED", "NO_RECORDS", "BLOCKED", "FAILED"]}
+                "status": {"enum": ["SATISFIED", "OPEN", "PARTIALLY_CERTIFIED", "NOT_ASSESSED", "NOT_EVALUABLE", "NOT_REGISTERED", "NO_RECORDS", "COARSE_REPRODUCTION_ONLY", "BLOCKED", "FAILED"]}
               }
             }
           },
@@ -77,9 +78,17 @@
         "records": {"type": "array", "maxItems": 0}
       }
     },
+    "numerical_reproducibility_ledger": {
+      "type": "object",
+      "required": ["unit", "records"],
+      "properties": {
+        "unit": {"type": "string", "minLength": 1},
+        "records": {"type": "array", "minItems": 1, "maxItems": 1}
+      }
+    },
     "claim_flags": {
       "type": "object",
-      "required": ["prototype_assemblies_generated", "selected_cells_content_addressed", "interface_and_coverage_states_separated", "at_least_one_cross_cell_interface_certified", "empirical_record_schema_declared", "external_positive_control_registered", "missing_and_failed_states_separated", "model_scoped_prediction_assembly_registered", "bounded_prediction_chain_established", "bounded_empirical_agreement_assessed", "cross_cell_composability_established", "prediction_chain_established", "empirical_agreement_assessed", "complete_observationally_valid_theory_identified"]
+      "required": ["prototype_assemblies_generated", "selected_cells_content_addressed", "interface_and_coverage_states_separated", "at_least_one_cross_cell_interface_certified", "scoped_carrier_interface_registered", "numerical_reproducibility_rail_declared", "empirical_record_schema_declared", "external_positive_control_registered", "missing_and_failed_states_separated", "model_scoped_prediction_assembly_registered", "bounded_prediction_chain_established", "bounded_empirical_agreement_assessed", "cross_cell_composability_established", "prediction_chain_established", "empirical_agreement_assessed", "complete_observationally_valid_theory_identified"]
     },
     "does_not_establish": {"type": "array", "minItems": 7, "items": {"type": "string", "minLength": 1}},
     "source_atlas_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},

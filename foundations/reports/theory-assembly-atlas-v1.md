@@ -6,7 +6,7 @@
 
 ## Outcome
 
-The atlas generates seven named prototype assemblies. Each is a deterministic
+The atlas generates eight named prototype assemblies. Each is a deterministic
 coverage envelope: it selects the strongest recorded cell for every obligation
 inside a declared regime/carrier region. It is not a composed theory.
 
@@ -30,13 +30,17 @@ The disposition is `BOUNDED_PREDICTION_ASSEMBLY_COMPLETE`, not complete theory.
 
 ## Independent maturity rails
 
-Every prototype is displayed against six separately reported rails: obligation coverage,
-cross-cell composition, prediction derivation, observable identification,
+Every prototype is displayed against seven separately reported rails: obligation coverage,
+cross-cell composition, prediction derivation, observable identification, numerical reproducibility,
 empirical comparison, and robustness/out-of-sample performance. A complete
 classical coverage envelope is therefore shown as complete even when composition
 is only partial. Missing or premature downstream work is `NOT_ASSESSED`,
 `NOT_EVALUABLE`, `NOT_REGISTERED`, or `NO_RECORDS`; red failure states are
 reserved for an explicit obstruction, incompatibility, or failed comparison.
+
+The BT Euclidean lattice prototype has one `COARSE_REPRODUCTION_ONLY` numerical
+record: HMC and local Metropolis pass the declared four-standard-error gate but
+not a two-standard-error precision gate. The empirical and robustness rails stay empty.
 
 ## Empirical ledger
 
@@ -65,6 +69,8 @@ Each selected cell links back to the exact matrix coordinate.
 - This does not establish that either certified scoped bridge supplies any unregistered carrier or foundation translation.
 - This does not establish that direct coverage composes into an end-to-end prediction.
 - This does not establish that a reduced or finite construction has a controlled continuum limit.
+- This does not establish that coarse independent-sampler compatibility is precision equivalence, empirical validation, or out-of-sample robustness.
+- This does not establish that the scoped Euclidean/Krein carrier non-identity forbids every conditional bridge.
 - This does not establish that any prototype agrees with observations.
 - This does not establish that the external standard-GR control is selected from the cube or transfers empirical support to a prototype.
 - This does not establish that the benchmark catalogue is a complete set of physical tests.

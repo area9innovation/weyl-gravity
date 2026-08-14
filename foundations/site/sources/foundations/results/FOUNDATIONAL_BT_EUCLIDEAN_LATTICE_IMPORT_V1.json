@@ -1,0 +1,218 @@
+{
+  "schema_version": "foundational-bt-euclidean-lattice-import-v1",
+  "result_id": "FOUNDATIONAL_BT_EUCLIDEAN_LATTICE_IMPORT_V1",
+  "result_kind": "FOUNDATIONAL_EVIDENCE_IMPORT_AND_SCOPED_CARRIER_INTERFACE",
+  "lifecycle": "CLASSIFIED",
+  "created": "2026-08-14",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "source_classification": {
+    "foundation": "FINITE_DISCRETE",
+    "carrier": "SMOOTH_DISTRIBUTIONAL",
+    "reason": "The base graph is finite, but the field values range over a noncompact real vector space and the state is a smooth density; this is not a finite exact sample space."
+  },
+  "capability_decisions": [
+    {
+      "coordinate": {
+        "foundation": "FINITE_DISCRETE",
+        "carrier": "SMOOTH_DISTRIBUTIONAL",
+        "obligation": "KINEMATICS_OBSERVABLES"
+      },
+      "evidence_role": "DIRECT_LOCAL",
+      "new_status": "LOCAL_RESULT",
+      "status_change": true,
+      "finding": "The finite periodic graph, mean-zero real field, positive variable, lattice action, and finite-volume observables are explicit.",
+      "boundary": "This is a finite Euclidean statistical construction, not a Lorentzian state, Born rule, continuum theory, or full Weyl-gravity model."
+    },
+    {
+      "coordinate": {
+        "foundation": "FINITE_DISCRETE",
+        "carrier": "SMOOTH_DISTRIBUTIONAL",
+        "obligation": "STATE_EXISTENCE"
+      },
+      "evidence_role": "DIRECT_LOCAL",
+      "new_status": "LOCAL_RESULT",
+      "status_change": true,
+      "finding": "Coercivity after zero-mode fixing makes the finite-dimensional partition function finite, so a normalized Euclidean Gibbs state exists.",
+      "boundary": "This is a finite Euclidean statistical construction, not a Lorentzian state, Born rule, continuum theory, or full Weyl-gravity model."
+    },
+    {
+      "coordinate": {
+        "foundation": "FINITE_DISCRETE",
+        "carrier": "SMOOTH_DISTRIBUTIONAL",
+        "obligation": "STATE_REPRESENTATION"
+      },
+      "evidence_role": "DIRECT_LOCAL",
+      "new_status": "LOCAL_RESULT",
+      "status_change": true,
+      "finding": "The state is represented by the positive normalized density exp(-S_E,L)/Z on the real mean-zero field hyperplane.",
+      "boundary": "This is a finite Euclidean statistical construction, not a Lorentzian state, Born rule, continuum theory, or full Weyl-gravity model."
+    },
+    {
+      "coordinate": {
+        "foundation": "FINITE_DISCRETE",
+        "carrier": "SMOOTH_DISTRIBUTIONAL",
+        "obligation": "PROBABILITY_RULE"
+      },
+      "evidence_role": "DIRECT_LOCAL",
+      "new_status": "LOCAL_RESULT",
+      "status_change": true,
+      "finding": "Measurable finite-lattice events receive ordinary Euclidean statistical probabilities by integration against the normalized Gibbs measure.",
+      "boundary": "This is a finite Euclidean statistical construction, not a Lorentzian state, Born rule, continuum theory, or full Weyl-gravity model."
+    },
+    {
+      "coordinate": {
+        "foundation": "FINITE_DISCRETE",
+        "carrier": "SMOOTH_DISTRIBUTIONAL",
+        "obligation": "INTERACTION_CONSTRUCTION"
+      },
+      "evidence_role": "DIRECT_LOCAL",
+      "new_status": "LOCAL_RESULT",
+      "status_change": true,
+      "finding": "For nonzero lambda the exact positive action is nonlinear; the two-site mean-zero restriction has quartic coefficient (28/3) lambda^2.",
+      "boundary": "This is a finite Euclidean statistical construction, not a Lorentzian state, Born rule, continuum theory, or full Weyl-gravity model."
+    },
+    {
+      "coordinate": {
+        "foundation": "FINITE_DISCRETE",
+        "carrier": "SMOOTH_DISTRIBUTIONAL",
+        "obligation": "RECONSTRUCTION_LIMITS"
+      },
+      "evidence_role": "SUPPORTING",
+      "new_status": "PRIORITY_GAP",
+      "status_change": false,
+      "finding": "The L=4 and L=6 independent-sampler preflight supplies a concrete finite-volume test and exposes the next numerical gate, but no controlled continuum or Lorentzian reconstruction.",
+      "boundary": "No topology, uniform error bound, regulator-independent limit, reflection positivity theorem, analytic continuation, or observable matching is established."
+    }
+  ],
+  "exact_evidence": {
+    "configuration": "real phi on a connected periodic L^4 hypercubic graph",
+    "positive_variable": "Omega_x=exp(lambda*phi_x)>0",
+    "zero_mode_constraint": "sum_x phi_x=0",
+    "action": "S_E,L=(1/(2*lambda^2))*sum_x[((Delta_L Omega)_x/Omega_x)^2]",
+    "measure": "product_x dOmega_x/Omega_x proportional to product_x dphi_x",
+    "normalizability": {
+      "action_lower_bound": "S_E,L>=(exp(R/D)-q)^2/(2*lambda^2) once exp(R/D)>=q",
+      "classification": "FINITE_PARTITION_FUNCTION",
+      "conclusion": "On the mean-zero hyperplane R tends to infinity with the field norm, so exp(-S_E,L) is Lebesgue integrable.",
+      "field_range": "R=max_x(lambda*phi_x)-min_x(lambda*phi_x)",
+      "graph_degree": "q=2*d",
+      "graph_diameter": "D",
+      "path_edge_bound": "some oriented edge u->v has x_v-x_u>=R/D",
+      "pilot_diameter": 8
+    },
+    "interaction_witness": {
+      "restriction": "two-site mean-zero direction phi=(t,-t), with a=2*lambda*t",
+      "exact_action": "[(exp(a)-1)^2+(exp(-a)-1)^2]/(2*lambda^2)",
+      "series_through_quartic": "4*t^2+(28/3)*lambda^2*t^4+O(t^6)",
+      "quartic_coefficient": "28/3*lambda^2",
+      "nonlinear_when": "lambda!=0"
+    },
+    "probability_rule": "P_L(A)=Z_L^-1 integral_A exp(-S_E,L(phi)) dphi on the mean-zero hyperplane"
+  },
+  "numerical_reproducibility_records": [
+    {
+      "id": "BT_L4_L6_INDEPENDENT_SAMPLER_REPRODUCTION",
+      "assembly": "BT_EUCLIDEAN_LATTICE_PROGRAMME",
+      "dependency_tag": "EUCLIDEAN-SPECTRAL",
+      "status": "COARSE_REPRODUCTION_ONLY",
+      "algorithms": [
+        "zero-mode-projected HMC",
+        "independent local random-scan Metropolis"
+      ],
+      "gate_passed": "all declared finite-volume observables agree within four combined standard errors",
+      "precision_gate": "not all declared observables agree within two combined standard errors",
+      "maximum_absolute_cross_sampler_z": 3.0404583746200773,
+      "finite_size_change_cross_algorithm_z": 1.577545278876236,
+      "continuum_status": "NOT_ESTABLISHED",
+      "evidence": [
+        "REVERSE_PHYSICS_BT_EUCLIDEAN_STEP_SCALING_PREFLIGHT_V1"
+      ]
+    }
+  ],
+  "carrier_interface": {
+    "id": "EUCLIDEAN_TO_KREIN_CARRIER",
+    "label": "Positive Euclidean lattice carrier versus BT Krein carrier",
+    "status": "CERTIFIED",
+    "relation": "INCOMPATIBLE",
+    "source_coordinates": [
+      {
+        "foundation": "FINITE_DISCRETE",
+        "carrier": "SMOOTH_DISTRIBUTIONAL",
+        "obligation": "STATE_REPRESENTATION"
+      }
+    ],
+    "target_coordinates": [
+      {
+        "foundation": "CLASSICAL_STANDARD",
+        "carrier": "KREIN_INDEFINITE",
+        "obligation": "STATE_REPRESENTATION"
+      }
+    ],
+    "scope": "The positive-Omega Euclidean lattice path integral and the all-real-Omega two-field BT path integral cannot be identified as the same full nonperturbative configuration space and measure.",
+    "witness": {
+      "source_domain": "Omega_x=exp(lambda*phi_x)>0",
+      "target_domain_caveat": "the phi and (Omega,Upsilon) path integrals are inequivalent, 'the former integrates over Omega > 0 whereas the latter integrates over all Omega' -- a statement about the vacuum, not the action"
+    },
+    "evidence": [
+      "REVERSE_PHYSICS_BT_EUCLIDEAN_LATTICE_PILOT_V1",
+      "REVERSE_PHYSICS_GHOST_PARITY_DOUBLE_POLE_V1",
+      "FOUNDATIONAL_BT_EUCLIDEAN_LATTICE_IMPORT_V1"
+    ],
+    "does_not_establish": "No obstruction is proved to a conditional perturbative, Osterwalder-Schrader, analytic-continuation, or other explicitly constructed bridge."
+  },
+  "claim_flags": {
+    "five_finite_euclidean_capabilities_imported": true,
+    "finite_partition_function_supports_normalized_gibbs_state": true,
+    "independent_sampler_coarse_reproduction_recorded": true,
+    "full_nonperturbative_carriers_identified": false,
+    "continuum_reconstruction_established": false,
+    "physical_state_selection_established": false,
+    "empirical_agreement_assessed": false,
+    "lorentzian_transfer_established": false,
+    "new_physics_dimension_established": false
+  },
+  "does_not_establish": [
+    "a finite exact carrier or finite probability sample space",
+    "a physical-state-selection theorem from zero-mode fixing",
+    "reflection positivity or Osterwalder-Schrader reconstruction",
+    "a continuum or infinite-volume limit",
+    "analytic continuation to the BT Krein theory",
+    "a Born rule, scattering probability, or laboratory event rate",
+    "empirical validation or out-of-sample robustness",
+    "a graviton or full Weyl-gravity lattice theory",
+    "a new physical dimension",
+    "anything LORENTZIAN-CAUSAL"
+  ],
+  "provenance": {
+    "inputs": [
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_LATTICE_PILOT_V1.json",
+        "sha256": "4171ff54d9a92f7555337e8865029a7dbb65aaf0b4cf930017732fb0c6051320"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_STEP_SCALING_PREFLIGHT_V1.json",
+        "sha256": "e5beb28e078ae7b389bcedef28cd01bf17873247f91a748a5aa4dab5807a2311"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_GHOST_PARITY_DOUBLE_POLE_V1.json",
+        "sha256": "6472608e92db1528d057b2d2c569ebc5637e412b1c8d66eb17cf42ea7889d5e0"
+      }
+    ]
+  },
+  "independent_checker": {
+    "path": "foundations/check_bt_euclidean_lattice_import.py",
+    "checks": [
+      "content-pinned source certificates",
+      "exact five-direct plus one-supporting capability partition",
+      "exact two-site quartic interaction coefficient",
+      "coarse-four-sigma versus precision-two-sigma numerical boundary",
+      "scoped positive-Euclidean versus all-real-Krein non-identity",
+      "fail-closed continuum, empirical, and Lorentzian flags"
+    ]
+  },
+  "human_report": "foundations/reports/bt-euclidean-lattice-foundational-import.md",
+  "canonical_digest": "06f1606d983001848f2f12e0a992c52432ed6047fd685f06b1a5d266911f3322"
+}

@@ -7,20 +7,24 @@
       6,
       16
     ],
+    "bt_euclidean_carrier_relation": "INCOMPATIBLE",
+    "bt_euclidean_direct_capabilities": 5,
+    "bt_euclidean_numerical_status": "COARSE_REPRODUCTION_ONLY",
+    "bt_euclidean_reconstruction_status": "PRIORITY_GAP",
     "cartesian_total": 576,
     "content_pinned_literature": 39,
     "coverage_classified_cells": 576,
     "emitted_cells": 576,
     "emitted_status_counts": {
-      "LITERATURE_RESULT": 93,
-      "LOCAL_RESULT": 115,
+      "LITERATURE_RESULT": 91,
+      "LOCAL_RESULT": 120,
       "NOT_MAPPED": 0,
       "PIECES_ONLY": 163,
       "PRIORITY_GAP": 30,
-      "REVIEWED_GAP": 175
+      "REVIEWED_GAP": 172
     },
-    "evidence_records": 74,
-    "evidence_records_used_by_matrix": 74,
+    "evidence_records": 75,
+    "evidence_records_used_by_matrix": 75,
     "external_calibration_benchmark_families": 3,
     "external_calibration_records": 4,
     "gr_cassini_bounded_complete": true,
@@ -33,18 +37,28 @@
     "implication_nodes": 12,
     "literature_complete": false,
     "literature_records": 51,
-    "local_result_records": 23,
+    "local_result_records": 24,
     "metadata_only_literature": 12,
     "migration_pending_cells": 0,
     "model_scoped_assemblies": 1,
-    "prototype_assemblies": 7,
-    "reviewed_open_gaps": 175,
+    "prototype_assemblies": 8,
+    "reviewed_open_gaps": 172,
     "standard_reference_direct_obligations": 16,
     "strength_ladder_levels": 6,
     "synthetic_complements": 0,
     "total_not_mapped_in_explorer": 0
   },
   "authorities": {
+    "bt_euclidean_import": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL"
+      ],
+      "lifecycle": "CLASSIFIED",
+      "path": "foundations/results/FOUNDATIONAL_BT_EUCLIDEAN_LATTICE_IMPORT_V1.json",
+      "result_id": "FOUNDATIONAL_BT_EUCLIDEAN_LATTICE_IMPORT_V1",
+      "sha256": "f8791f9209682cd01b29a5868ea8f353b958f9fb8ce24d77d9b8af6bc92b7f94"
+    },
     "coded_wave": {
       "dependency_tags": [
         "LOCAL-ALGEBRAIC",
@@ -68,13 +82,14 @@
     "explorer_snapshot": {
       "dependency_tags": [
         "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL",
         "REDUCED-MODE",
         "LORENTZIAN-CAUSAL"
       ],
       "lifecycle": "VERIFIED_NAVIGATION_ARTIFACT",
       "path": "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json",
       "result_id": "FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2",
-      "sha256": "03e316260ce52929aca40ea2feace4d38fecfcaae155aed19598fc217e93b09e"
+      "sha256": "0f8e66eab550d90467e24f8e1ea6e0474c8c2afca9de9ce7df4ee0353e462925"
     },
     "finite_bv": {
       "dependency_tags": [
@@ -120,13 +135,14 @@
     "intersection_cube": {
       "dependency_tags": [
         "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL",
         "REDUCED-MODE",
         "LORENTZIAN-CAUSAL"
       ],
-      "lifecycle": "FULL_CARTESIAN_SURFACE_ASSESSED",
-      "path": "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V9.json",
-      "result_id": "FOUNDATIONAL_INTERSECTION_CUBE_V9",
-      "sha256": "a6c2d08940ba7112202ed33ca64b581fd886b07b53eb553c24321578feb08269"
+      "lifecycle": "EVIDENCE_AUGMENTED_FULL_CARTESIAN_SURFACE",
+      "path": "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V10.json",
+      "result_id": "FOUNDATIONAL_INTERSECTION_CUBE_V10",
+      "sha256": "2e85d0cd04191a707d69bfc0f3cc3c695fccabb4bca2295e27d84ed9a933d6d5"
     },
     "krein_state_selection": {
       "dependency_tags": [
@@ -151,20 +167,23 @@
     "theory_assembly": {
       "dependency_tags": [
         "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL",
         "REDUCED-MODE",
         "LORENTZIAN-CAUSAL"
       ],
       "lifecycle": "VERIFIED_NAVIGATION_ARTIFACT",
       "path": "foundations/results/FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1.json",
       "result_id": "FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1",
-      "sha256": "10b9aa14fb51d591bdb54644051d4b6d13ea52adff751795f3332045a4f96673"
+      "sha256": "36e309fe8da7b06d7a195ed3f553432e97bb47e1aa980f5791e31417091623bd"
     }
   },
-  "canonical_digest": "17ae4397c4838e98d1f820eefd0dfe09ec48f7de699549b407183efacc381b44",
+  "canonical_digest": "fcce9e431dfa28b11881491dd593f09800875199c47d1d5356cb9f20cf363889",
   "claim_flags": {
     "atlas_exhaustive": false,
     "axes_independent_proved": false,
     "bounded_empirical_comparison_registered": true,
+    "bt_euclidean_coarse_reproduction_separated": true,
+    "bt_euclidean_finite_capabilities_imported": true,
     "case_study_authorities_pinned": true,
     "complete_evidence_register_generated": true,
     "complete_literature_register_generated": true,
@@ -288,11 +307,24 @@
       ],
       "statement": "For the declared standard-GR solar-vacuum model, the exact field-equation-to-null-delay chain gives gamma=1 and the resulting prediction lies inside the publisher's displayed Cassini band; the operational and empirical joins remain literature-scoped.",
       "status": "MODEL_SCOPED_EMPIRICAL_COMPARISON"
+    },
+    {
+      "authorities": [
+        "bt_euclidean_import"
+      ],
+      "claim_id": "RF-10-BT-EUCLIDEAN-LATTICE",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL"
+      ],
+      "statement": "The positive finite BT Euclidean lattice supplies five direct finite-volume capabilities and a coarse independent-sampler reproduction record; reconstruction remains open, and its full nonperturbative carrier is not identical to the all-real BT/Krein carrier.",
+      "status": "LOCAL_RESULT_WITH_NUMERICAL_AND_CARRIER_BOUNDARIES"
     }
   ],
   "created": "2026-08-14",
   "dependency_tags": [
     "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL",
     "REDUCED-MODE",
     "LORENTZIAN-CAUSAL"
   ],
@@ -308,7 +340,8 @@
     "restoration of a Lorentzian quantum master equation",
     "promotion of any quantum lifecycle state",
     "reproduction of the Cassini raw-data reduction, likelihood, covariance analysis, or systematic-error budget",
-    "a complete standard-GR theory or empirical support for a Weyl-gravity model"
+    "a complete standard-GR theory or empirical support for a Weyl-gravity model",
+    "a continuum, empirical, Born-rule, or Lorentzian promotion from the BT Euclidean finite lattice"
   ],
   "formal_object": {
     "coordinates": {
@@ -430,19 +463,19 @@
   ],
   "paper": {
     "appendix": {
-      "assembly_source_canonical_digest": "823418839c58fb4efdeae7448fe18555f88e758a15ba569c2013aa1a656ee736",
+      "assembly_source_canonical_digest": "3edb5b9829b81f727cc8bdf4d11231192f54c20266e3db625391294af3361c62",
       "assembly_source_path": "foundations/site/assemblies.json",
-      "assembly_source_sha256": "10b9aa14fb51d591bdb54644051d4b6d13ea52adff751795f3332045a4f96673",
+      "assembly_source_sha256": "36e309fe8da7b06d7a195ed3f553432e97bb47e1aa980f5791e31417091623bd",
       "generator_path": "paper/generate_21_reverse_foundations_appendices.py",
-      "generator_sha256": "f2c1454ec50ac99e12e816eae87bca61b5cd61559e0a9473a254d7ab9dd54342",
+      "generator_sha256": "299fd8e2848cf295e95ac4bb6a7e0cb4bef99b633c73ae82a7c05312da7170c6",
       "path": "paper/21-reverse-foundations-of-physics-appendices.tex",
-      "sha256": "fa319dd159c245926066ee64abcd18f6f314ec67f522184f65f5028e9cbc8ea9",
-      "source_canonical_digest": "4ba28f1320371b129b8f97dca3668acd02711ab4aefb980d21964cd90cefd30d",
+      "sha256": "5d4111c80c75601819d40042d0a70e59d826b093e95204f4c31ad3065ae08c46",
+      "source_canonical_digest": "e4c79e8ec537c2d9f9271d9ccbd042da2a5529b0b5f0f11fa6917cc3af0386cd",
       "source_path": "foundations/site/data.json",
-      "source_sha256": "9e2dcefdc4eb94e32e9d08b81bd7cbf16916a5ed2bf8f8d18275908472b842d5"
+      "source_sha256": "c8ecc8ea14f565cb32ed9e9d6f22b26335a27c01a54cf3129dfbdbff8b83475b"
     },
     "path": "paper/21-reverse-foundations-of-physics.tex",
-    "sha256": "a38457c4aeb8da00ffb297699a1cc795dd740870e94249da94723f5124ceb89c"
+    "sha256": "8a0d1b0223037e69061042650577a0954acaf1e60c8c91754d0211c7793800ad"
   },
   "result_id": "PAPER21_REVERSE_FOUNDATIONS_INTRODUCTION_V1",
   "result_kind": "PROGRAMME_SYNTHESIS_AND_TYPED_CASE_STUDY_MAP",

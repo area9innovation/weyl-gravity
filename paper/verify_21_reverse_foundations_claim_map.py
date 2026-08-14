@@ -84,6 +84,7 @@ def main() -> int:
     cube = json.loads((ROOT / data["authorities"]["intersection_cube"]["path"]).read_text())
     site = json.loads((ROOT / data["authorities"]["explorer_snapshot"]["path"]).read_text())
     gr_cassini = json.loads((ROOT / data["authorities"]["gr_cassini_assembly"]["path"]).read_text())
+    bt_euclidean = json.loads((ROOT / data["authorities"]["bt_euclidean_import"]["path"]).read_text())
     dims = cube["dimensions"]
     atlas = data["atlas_snapshot"]
     require(atlas["axis_sizes"] == [6, 6, 16], "unexpected axis sizes")
@@ -93,15 +94,20 @@ def main() -> int:
     require(sum(atlas["emitted_status_counts"].values()) == atlas["emitted_cells"], "status counts do not cover emitted cells")
     require(atlas["synthetic_complements"] == 0, "synthetic complement mismatch")
     require(atlas["total_not_mapped_in_explorer"] == site["counts"]["not_mapped"] == 0, "explorer not-mapped mismatch")
-    require(atlas["reviewed_open_gaps"] == site["counts"]["reviewed_gap"] == 175, "reviewed-gap mismatch")
-    require(atlas["evidence_records"] == site["counts"]["evidence_records"] == 74, "evidence-record mismatch")
+    require(atlas["reviewed_open_gaps"] == site["counts"]["reviewed_gap"] == 172, "reviewed-gap mismatch")
+    require(atlas["evidence_records"] == site["counts"]["evidence_records"] == 75, "evidence-record mismatch")
     require(atlas["literature_records"] == 51, "literature-record mismatch")
-    require(atlas["local_result_records"] == 23, "local-result-record mismatch")
+    require(atlas["local_result_records"] == 24, "local-result-record mismatch")
     require(atlas["content_pinned_literature"] == 39, "content-pinned literature mismatch")
     require(atlas["metadata_only_literature"] == 12, "metadata-only literature mismatch")
-    require(atlas["evidence_records_used_by_matrix"] == 74, "matrix evidence usage is incomplete")
+    require(atlas["evidence_records_used_by_matrix"] == 75, "matrix evidence usage is incomplete")
     require(atlas["migration_pending_cells"] == 0, "migration must remain fully reviewed")
     require(atlas["all_cells_assessed"] is True, "full-surface assessment flag is not certified")
+    require(atlas["bt_euclidean_direct_capabilities"] == 5, "BT direct-capability count mismatch")
+    require(atlas["bt_euclidean_reconstruction_status"] == "PRIORITY_GAP", "BT reconstruction boundary mismatch")
+    require(atlas["bt_euclidean_numerical_status"] == "COARSE_REPRODUCTION_ONLY", "BT numerical status mismatch")
+    require(atlas["bt_euclidean_carrier_relation"] == "INCOMPATIBLE", "BT carrier relation mismatch")
+    require(bt_euclidean["claim_flags"]["continuum_reconstruction_established"] is False, "BT continuum claim promoted")
 
     allowed_tags = {"LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE", "LORENTZIAN-CAUSAL"}
     claim_ids = set()
@@ -121,6 +127,7 @@ def main() -> int:
         (7, "FINITE-CONTINUUM-SPLIT"),
         (8, "FINITE-BV-BOUNDARY"),
         (9, "GR-CASSINI-ASSEMBLY"),
+        (10, "BT-EUCLIDEAN-LATTICE"),
     ]}, "claim set drift")
 
     flags = data["claim_flags"]
@@ -130,6 +137,8 @@ def main() -> int:
     require(flags["evidence_usage_crosswalk_generated"] is True, "evidence crosswalk flag is not certified")
     require(flags["model_scoped_end_to_end_assembly_generated"] is True, "model-scoped assembly flag is not certified")
     require(flags["bounded_empirical_comparison_registered"] is True, "bounded empirical comparison flag is not certified")
+    require(flags["bt_euclidean_finite_capabilities_imported"] is True, "BT finite import flag is not certified")
+    require(flags["bt_euclidean_coarse_reproduction_separated"] is True, "BT numerical separation flag is not certified")
     for false_flag in [
         "weakest_foundation_proved",
         "global_physics_implies_choice_theorem",
@@ -161,7 +170,7 @@ def main() -> int:
     require(atlas["implication_nodes"] == len(atlas_data["graph"]["nodes"]) == 12, "appendix implication-node mismatch")
     require(atlas["implication_edges"] == len(atlas_data["graph"]["edges"]) == 10, "appendix implication-edge mismatch")
     require(atlas["strength_ladder_levels"] == len(atlas_data["ladder"]) == 6, "appendix ladder-level mismatch")
-    require(atlas["prototype_assemblies"] == len(assembly_data["assemblies"]) == 7, "appendix assembly-count mismatch")
+    require(atlas["prototype_assemblies"] == len(assembly_data["assemblies"]) == 8, "appendix assembly-count mismatch")
     require(atlas["model_scoped_assemblies"] == len(assembly_data["model_scoped_assemblies"]) == 1, "model-scoped assembly-count mismatch")
     model = assembly_data["model_scoped_assemblies"][0]
     require(model["result_id"] == gr_cassini["result_id"], "GR/Cassini model assembly identity drift")
@@ -181,8 +190,10 @@ def main() -> int:
     require(atlas["external_calibration_benchmark_families"] == sum(item["status"] == "SUPPORTED_CONTROL" for item in control["benchmark_coverage"]) == 3, "calibration benchmark mismatch")
 
     appendix = appendix_path.read_text()
-    require(r"All obligations & 115 & 93 & 163 & 30 & 175 & 0 & 576" in appendix, "appendix coverage totals drift")
-    require("contains 74 evidence records: 23 local result records and 51 literature records" in appendix, "appendix evidence summary drift")
+    require(r"All obligations & 120 & 91 & 163 & 30 & 172 & 0 & 576" in appendix, "appendix coverage totals drift")
+    require("contains 75 evidence records: 24 local result records and 51 literature records" in appendix, "appendix evidence summary drift")
+    require("BT positive Euclidean lattice programme" in appendix, "BT Euclidean prototype missing")
+    require("COARSE REPRODUCTION ONLY" in appendix, "BT numerical boundary missing")
     require("The classical-standard mixed-carrier reference has complete direct coverage" in appendix, "classical reference calibration missing")
     require("First bounded end-to-end assembly" in appendix, "model-scoped GR/Cassini appendix section missing")
     require("The six typed stages of the standard-GR solar-exterior assembly" in appendix, "GR/Cassini stage table missing")
@@ -211,8 +222,8 @@ def main() -> int:
         require(rf"\cert{{{evidence_id}}}" in appendix, f"linked evidence missing from appendix: {evidence_id}")
 
     evidence = atlas_data["evidence"]
-    require(appendix.count(r"\hypertarget{atlas-evidence-") == 74, "evidence-register anchor count drift")
-    require(appendix.count(r"\hyperlink{atlas-evidence-") == 74, "evidence-crosswalk link count drift")
+    require(appendix.count(r"\hypertarget{atlas-evidence-") == 75, "evidence-register anchor count drift")
+    require(appendix.count(r"\hyperlink{atlas-evidence-") == 75, "evidence-crosswalk link count drift")
     cell_usage = {evidence_id: [] for evidence_id in evidence}
     for cell in atlas_data["cells"]:
         for evidence_id in cell.get("evidence", []):

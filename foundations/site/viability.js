@@ -3965,34 +3965,22 @@ window.THEORY_VIABILITY_DATA = {
       "foundation": "FINITE_DISCRETE",
       "carrier": "SMOOTH_DISTRIBUTIONAL",
       "counts": {
-        "LOCAL_RESULT": 0,
-        "LITERATURE_RESULT": 5,
+        "LOCAL_RESULT": 5,
+        "LITERATURE_RESULT": 3,
         "PIECES_ONLY": 6,
         "PRIORITY_GAP": 1,
-        "REVIEWED_GAP": 4,
+        "REVIEWED_GAP": 1,
         "NOT_MAPPED": 0
       },
-      "direct": 5,
+      "direct": 8,
       "assessed": 16,
       "default_gate": {
         "preset": "PREDICTIVE_PHYSICS",
-        "direct": 4,
+        "direct": 7,
         "assessed": 10,
         "total": 10,
         "complete_direct": false,
         "blockers": [
-          {
-            "obligation": "STATE_EXISTENCE",
-            "status": "REVIEWED_GAP"
-          },
-          {
-            "obligation": "STATE_REPRESENTATION",
-            "status": "REVIEWED_GAP"
-          },
-          {
-            "obligation": "PROBABILITY_RULE",
-            "status": "REVIEWED_GAP"
-          },
           {
             "obligation": "PHYSICAL_STATE_SELECTION",
             "status": "REVIEWED_GAP"
@@ -4012,27 +4000,27 @@ window.THEORY_VIABILITY_DATA = {
         {
           "bundle": "KINEMATICS_STATES",
           "counts": {
-            "LOCAL_RESULT": 0,
-            "LITERATURE_RESULT": 1,
+            "LOCAL_RESULT": 3,
+            "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 0,
             "PRIORITY_GAP": 0,
-            "REVIEWED_GAP": 2,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
-          "direct": 1,
+          "direct": 3,
           "total": 3
         },
         {
           "bundle": "PREDICTION_OBSERVATION",
           "counts": {
-            "LOCAL_RESULT": 0,
+            "LOCAL_RESULT": 1,
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 0,
             "PRIORITY_GAP": 1,
-            "REVIEWED_GAP": 2,
+            "REVIEWED_GAP": 1,
             "NOT_MAPPED": 0
           },
-          "direct": 0,
+          "direct": 1,
           "total": 3
         },
         {
@@ -4051,8 +4039,8 @@ window.THEORY_VIABILITY_DATA = {
         {
           "bundle": "GAUGE_INTERACTION",
           "counts": {
-            "LOCAL_RESULT": 0,
-            "LITERATURE_RESULT": 2,
+            "LOCAL_RESULT": 1,
+            "LITERATURE_RESULT": 1,
             "PIECES_ONLY": 0,
             "PRIORITY_GAP": 0,
             "REVIEWED_GAP": 0,
@@ -5262,7 +5250,8 @@ window.THEORY_VIABILITY_DATA = {
             "FINITE_EXACT",
             "HILBERT_OPERATOR",
             "KREIN_INDEFINITE",
-            "ALGEBRAIC_CSTAR"
+            "ALGEBRAIC_CSTAR",
+            "SMOOTH_DISTRIBUTIONAL"
           ]
         },
         {
@@ -5277,6 +5266,7 @@ window.THEORY_VIABILITY_DATA = {
             "HILBERT_OPERATOR",
             "KREIN_INDEFINITE",
             "ALGEBRAIC_CSTAR",
+            "SMOOTH_DISTRIBUTIONAL",
             "LOCALIC_SYNTHETIC"
           ]
         },
@@ -5292,6 +5282,7 @@ window.THEORY_VIABILITY_DATA = {
             "HILBERT_OPERATOR",
             "KREIN_INDEFINITE",
             "ALGEBRAIC_CSTAR",
+            "SMOOTH_DISTRIBUTIONAL",
             "LOCALIC_SYNTHETIC"
           ]
         },
@@ -5367,7 +5358,6 @@ window.THEORY_VIABILITY_DATA = {
           "obligation": "INTERACTION_CONSTRUCTION",
           "readiness_rank": 3,
           "statuses": [
-            "LITERATURE_RESULT",
             "LOCAL_RESULT"
           ],
           "contributing_carriers": [
@@ -5508,6 +5498,6 @@ window.THEORY_VIABILITY_DATA = {
     "that Pareto-frontier profiles are physically preferred or more likely true",
     "a complete observationally validated theory under any regime or carrier portfolio"
   ],
-  "source_atlas_digest": "4ba28f1320371b129b8f97dca3668acd02711ab4aefb980d21964cd90cefd30d",
-  "canonical_digest": "4ac8b7c724f108487c21151468adcf671bd6108e24a428f236061e87dd268a29"
+  "source_atlas_digest": "e4c79e8ec537c2d9f9271d9ccbd042da2a5529b0b5f0f11fa6917cc3af0386cd",
+  "canonical_digest": "e7d853c6452549915d3e85470f167136331766630b13ec46e58dc483585f2380"
 };

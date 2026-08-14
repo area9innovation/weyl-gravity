@@ -185,7 +185,7 @@ def build(data: dict, assemblies: dict) -> str:
         r"Matrix & Overall counts, a \(6\times6\) three-way coverage roll-up, and status counts for every obligation. \\",
         r"Dimensions guide & All 28 axis options with their non-specialist descriptions. \\",
         r"Theory profiles & Coverage-envelope and Pareto navigation; these are not composed theories. \\",
-        r"Assemblies & Seven cube-selected prototypes, independent maturity rails, typed joins, and an external standard-GR calibration control. \\",
+        r"Assemblies & Eight cube-selected prototypes, seven independent maturity rails, typed joins, and an external standard-GR calibration control. \\",
         r"Implications & The complete typed relation ledger: ten directed edges with their exact assertion and evidence. \\",
         r"Strength ladder & All six cylinder-wave gates, including what each adds, establishes, and leaves open. \\",
         rf"Evidence & The complete literature register, local-certificate register, and usage crosswalk for all {len(evidence)} records. \\",
@@ -495,7 +495,7 @@ def build(data: dict, assemblies: dict) -> str:
             "",
             r"\subsection{Model-scoped assembly, prototype envelopes, and empirical calibration}",
             r"\label{app:assembly-calibration}",
-            "The assembly view no longer treats missing downstream work as a failed test.  Its six maturity rails are reported independently: direct obligation coverage may be complete while composition is partial and prediction or empirical records remain unregistered.  Red is reserved for an explicit incompatibility, obstruction, or failed comparison.",
+            "The assembly view no longer treats missing downstream work as a failed test.  Its seven maturity rails are reported independently: direct obligation coverage may be complete while composition is partial and numerical, prediction, or empirical records remain separately typed.  Red is reserved for an explicit incompatibility, obstruction, or failed comparison.",
             "",
         ]
     )
@@ -564,6 +564,8 @@ def build(data: dict, assemblies: dict) -> str:
             r"\caption{Cube-selected coverage and composition maturity.  The classical-standard mixed-carrier reference has complete direct coverage; this does not certify the unregistered joins.}",
             r"\label{tab:assembly-maturity}",
             r"\end{table}",
+            "",
+            "The BT positive Euclidean lattice programme is the only prototype with a numerical-reproducibility record.  Its status is COARSE REPRODUCTION ONLY: two independent algorithms pass the declared four-standard-error gate but not the two-standard-error precision gate.  The empirical and out-of-sample rails remain empty.  The separate Euclidean-to-Krein carrier record is incompatible only with identification as the same full nonperturbative measure; it does not refute every conditional bridge.",
             "",
             r"\paragraph{External positive control.}",
             tex(control["label"]) + ". " + tex(control["scope"]),

@@ -278,8 +278,8 @@ foundation-specific carrier envelopes, and a non-scalar Pareto view. It keeps
 three rails separate: obligation coverage is computed; cross-cell composition
 is partially assessed; and observational agreement is not registered for those
 cross-cell profiles. A multi-carrier maximum is therefore labelled a coverage envelope, not
-a completed theory. The **Assemblies** view adds seven named prototype
-envelopes, six separately reported maturity rails, and 49 explicitly typed
+a completed theory. The **Assemblies** view adds eight named prototype
+envelopes, seven separately reported maturity rails, and 56 explicitly typed
 cross-cell joins. Missing, premature, blocked, and failed work are distinct
 states: red is reserved for an explicit obstruction or failed comparison.
 Two scoped joins are now certified
@@ -288,6 +288,23 @@ ground-state-to-dynamics. Each appears in two compatible prototypes. The other
 joins remain `NOT_ASSESSED`, and the candidate empirical ledger is empty, so
 every cube-selected prototype remains fail-closed before theory or observational
 completion.
+
+The eighth prototype is the positive Bateman--Turok Euclidean finite lattice.
+Its exact import supplies five direct capabilities in
+`FINITE_DISCRETE × SMOOTH_DISTRIBUTIONAL`, while reconstruction stays a
+`PRIORITY_GAP`. A separate numerical rail records only coarse HMC/Metropolis
+reproduction; the empirical and robustness rails remain empty. The certified
+Euclidean/Krein carrier relation refuses identification as the same full
+nonperturbative measure without ruling out every conditional bridge:
+
+```bash
+python3 foundations/build_bt_euclidean_lattice_import.py --check
+python3 foundations/check_bt_euclidean_lattice_import.py
+python3 foundations/verify_bt_euclidean_lattice_import.py
+python3 foundations/refine_intersection_cube_v10.py --check
+python3 foundations/check_refined_intersection_cube_v10.py
+python3 foundations/verify_refined_intersection_cube_v10.py
+```
 
 The view now leads with the first model-scoped vertical slice:
 [`FOUNDATIONAL_GR_CASSINI_MODEL_ASSEMBLY_V1`](reports/gr-cassini-model-assembly-v1.md).
@@ -314,8 +331,8 @@ calibrates the display and is neither a cube-selected assembly nor evidence
 for Weyl gravity:
 
 ```bash
-python3 foundations/build_matrix_site.py
-python3 foundations/build_matrix_site.py --check
+python3 foundations/build_matrix_site_v2.py
+python3 foundations/build_matrix_site_v2.py --check
 python3 foundations/check_matrix_site_v2.py
 python3 foundations/verify_matrix_site_v2.py
 python3 foundations/verify_theory_viability.py
@@ -330,6 +347,7 @@ python3 foundations/verify_finite_brst_twenty_cell_closure.py
 python3 foundations/verify_refined_intersection_cube_v8.py
 python3 foundations/verify_full_surface_gap_audit.py
 python3 foundations/verify_refined_intersection_cube_v9.py
+python3 foundations/verify_refined_intersection_cube_v10.py
 python3 -m unittest foundations.tests.test_matrix_site
 python3 -m unittest foundations.tests.test_theory_viability
 python3 -m unittest foundations.tests.test_theory_assembly
@@ -475,7 +493,13 @@ records the foundation and carrier requirements and missing theorem-level
 certificate, and classifies all 175 as `REVIEWED_GAP`. The append-only
 [`cube v9`](reports/refined-intersection-cube-v9.md) applies that audit while
 preserving all 401 earlier classifications and both certified interfaces. Full
-assessment is explicitly not full scientific or literature coverage:
+assessment is explicitly not full scientific or literature coverage.
+
+The append-only [`cube v10`](reports/refined-intersection-cube-v10.md) then
+changes exactly six declared finite-Euclidean coordinates: five become direct
+local results and the reconstruction coordinate receives supporting evidence
+without promotion. It adds the carrier non-identity on a separate interface
+ledger rather than treating it as one of the seven theory-composition joins.
 
 ```bash
 python3 foundations/build_full_surface_gap_audit.py --check
@@ -484,8 +508,12 @@ python3 foundations/verify_full_surface_gap_audit.py
 python3 foundations/refine_intersection_cube_v9.py --check
 python3 foundations/check_refined_intersection_cube_v9.py
 python3 foundations/verify_refined_intersection_cube_v9.py
+python3 foundations/refine_intersection_cube_v10.py --check
+python3 foundations/check_refined_intersection_cube_v10.py
+python3 foundations/verify_refined_intersection_cube_v10.py
 python3 -m unittest foundations.tests.test_full_surface_gap_audit \
-  foundations.tests.test_refined_intersection_cube_v9
+  foundations.tests.test_refined_intersection_cube_v9 \
+  foundations.tests.test_refined_intersection_cube_v10
 ```
 
 The append-only

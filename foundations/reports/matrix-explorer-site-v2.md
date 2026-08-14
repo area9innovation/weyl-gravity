@@ -4,14 +4,14 @@
 
 **Lifecycle:** `VERIFIED_NAVIGATION_ARTIFACT`
 
-**Dependency tags:** `LOCAL-ALGEBRAIC`, `REDUCED-MODE`, `LORENTZIAN-CAUSAL`
+**Dependency tags:** `LOCAL-ALGEBRAIC`, `EUCLIDEAN-SPECTRAL`, `REDUCED-MODE`, `LORENTZIAN-CAUSAL`
 
 ## Outcome
 
 `foundations/site/index.html` presents all **576** Cartesian coordinates.
-All **576** are now emitted by cube v9 and have separate coverage and migration
+All **576** are now emitted by cube v10 and have separate coverage and migration
 review fields: **576 reviewed**, **0 pending**.
-The surface has **175 `REVIEWED_GAP`** cells and **0
+The surface has **172 `REVIEWED_GAP`** cells and **0
 `NOT_MAPPED`** cells. A reviewed gap is a formulated open question with a typed
 missing certificate; it is not a result, a selected priority, or a literature-absence claim.
 There are **0** browser-only complements.
@@ -20,11 +20,17 @@ The full-surface audit preserves all 401 prior positive, partial, and priority
 classifications. It revises 51 emitted blanks and directly assesses the 124
 formerly synthetic coordinates without transferring evidence from neighbors.
 
-Cube v9 preserves two certified `CONDITIONAL_BRIDGE` relations. The first maps an
+Cube v10 preserves two certified `CONDITIONAL_BRIDGE` relations. The first maps an
 algebraic finite-corner state to a Krein probability rule under five explicit
 hypotheses. The second uses the free Fock energy gap to select the unique normal
 zero-energy vacuum state and proves that the same state is invariant under the
 generated Krein--Fock dynamics. The other assembly interfaces remain open.
+
+Cube v10 also imports the positive BT Euclidean finite lattice into five direct
+`FINITE_DISCRETE × SMOOTH_DISTRIBUTIONAL` cells. Its independent-sampler record
+is coarse numerical reproduction, not empirical validation. A separate carrier
+interface refuses only identification of the positive Euclidean measure with the
+all-real BT/Krein path integral; controlled conditional bridges remain open.
 
 Coverage is assessed for **576** emitted cells. The
 finite-BRST pass classifies exactly twenty additional empty cells: seventeen
@@ -66,7 +72,7 @@ All source links resolve inside the standalone directory; no remote code is used
 This site does not establish:
 
 - literature completeness
-- a result for any of the 175 reviewed open gaps
+- a result for any of the 172 reviewed open gaps
 - that REVIEWED_GAP or NOT_MAPPED means no literature exists
 - that an UNREVIEWED evidence role is an absence of direct support
 - that a dual LR mark composes its two records into a stronger result
@@ -76,7 +82,7 @@ This site does not establish:
 - a Weyl QME or Weyl residual transfer from a finite toy BRST complex
 - equivalence of carrier categories from one finite realization
 - a theorem ranking from interface order, Pareto membership, or neighbor counts
-- composition beyond the two certified scoped interfaces
-- agreement with observations
+- composition beyond the two certified scoped cross-cell interfaces
+- precision sampler equivalence, continuum reconstruction, or empirical support from the BT finite lattice
 - a complete observationally validated theory
 - a new Lorentzian-causal result

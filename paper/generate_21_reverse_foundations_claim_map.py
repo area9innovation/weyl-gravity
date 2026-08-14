@@ -22,7 +22,8 @@ ATLAS_DATA = "foundations/site/data.json"
 ASSEMBLY_DATA = "foundations/site/assemblies.json"
 
 AUTHORITY_PATHS = {
-    "intersection_cube": "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V9.json",
+    "intersection_cube": "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V10.json",
+    "bt_euclidean_import": "foundations/results/FOUNDATIONAL_BT_EUCLIDEAN_LATTICE_IMPORT_V1.json",
     "full_surface_gap_audit": "foundations/results/FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1.json",
     "explorer_snapshot": "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json",
     "theory_assembly": "foundations/results/FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1.json",
@@ -67,6 +68,7 @@ def build() -> dict:
         loaded[name], authorities[name] = load_authority(path)
 
     cube = loaded["intersection_cube"]
+    bt_euclidean = loaded["bt_euclidean_import"]
     site = loaded["explorer_snapshot"]
     gr_cassini = loaded["gr_cassini_assembly"]
     atlas_data = json.loads((ROOT / ATLAS_DATA).read_text())
@@ -83,6 +85,7 @@ def build() -> dict:
         "created": "2026-08-14",
         "dependency_tags": [
             "LOCAL-ALGEBRAIC",
+            "EUCLIDEAN-SPECTRAL",
             "REDUCED-MODE",
             "LORENTZIAN-CAUSAL",
         ],
@@ -160,6 +163,10 @@ def build() -> dict:
             "gr_cassini_required_obligations_satisfied": gr_cassini["applicability_summary"]["required_satisfied"],
             "gr_cassini_bounded_complete": gr_cassini["assembly_disposition"]["complete_within_declared_scope"],
             "gr_cassini_prediction_inside_reported_band": gr_cassini["empirical_comparison_rail"]["prediction_inside_reported_band"],
+            "bt_euclidean_direct_capabilities": sum(item["evidence_role"] == "DIRECT_LOCAL" for item in bt_euclidean["capability_decisions"]),
+            "bt_euclidean_reconstruction_status": next(item["new_status"] for item in bt_euclidean["capability_decisions"] if item["coordinate"]["obligation"] == "RECONSTRUCTION_LIMITS"),
+            "bt_euclidean_numerical_status": bt_euclidean["numerical_reproducibility_records"][0]["status"],
+            "bt_euclidean_carrier_relation": bt_euclidean["carrier_interface"]["relation"],
             "standard_reference_direct_obligations": next(item for item in assembly_data["assemblies"] if item["id"] == "STANDARD_MIXED_REFERENCE")["coverage"]["direct"],
             "external_calibration_records": len(assembly_data["calibration_controls"][0]["records"]),
             "external_calibration_benchmark_families": sum(item["status"] == "SUPPORTED_CONTROL" for item in assembly_data["calibration_controls"][0]["benchmark_coverage"]),
@@ -228,6 +235,13 @@ def build() -> dict:
                 "authorities": ["gr_cassini_assembly"],
                 "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
             },
+            {
+                "claim_id": "RF-10-BT-EUCLIDEAN-LATTICE",
+                "statement": "The positive finite BT Euclidean lattice supplies five direct finite-volume capabilities and a coarse independent-sampler reproduction record; reconstruction remains open, and its full nonperturbative carrier is not identical to the all-real BT/Krein carrier.",
+                "status": "LOCAL_RESULT_WITH_NUMERICAL_AND_CARRIER_BOUNDARIES",
+                "authorities": ["bt_euclidean_import"],
+                "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"],
+            },
         ],
         "literature_scope": [
             {"source_id": "simpson-2009", "url": "https://doi.org/10.1017/CBO9780511581007", "role": "reverse mathematics and subsystem calibration"},
@@ -257,6 +271,8 @@ def build() -> dict:
             "evidence_usage_crosswalk_generated": True,
             "model_scoped_end_to_end_assembly_generated": True,
             "bounded_empirical_comparison_registered": True,
+            "bt_euclidean_finite_capabilities_imported": True,
+            "bt_euclidean_coarse_reproduction_separated": True,
             "weakest_foundation_proved": False,
             "global_physics_implies_choice_theorem": False,
             "axes_independent_proved": False,
@@ -278,6 +294,7 @@ def build() -> dict:
             "promotion of any quantum lifecycle state",
             "reproduction of the Cassini raw-data reduction, likelihood, covariance analysis, or systematic-error budget",
             "a complete standard-GR theory or empirical support for a Weyl-gravity model",
+            "a continuum, empirical, Born-rule, or Lorentzian promotion from the BT Euclidean finite lattice",
         ],
         "authorities": authorities,
         "independent_checker": {

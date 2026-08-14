@@ -32,7 +32,7 @@ class MatrixSiteTests(unittest.TestCase):
         reviewed = [x for x in data["cells"] if x["migration_status"] == "REVIEWED_NO_TRANSFER"]
         synthetic = [x for x in data["cells"] if not x["emitted"]]
         self.assertEqual((len(reviewed), len(synthetic)), (88, 0))
-        self.assertEqual(sum(x["status"] == "REVIEWED_GAP" for x in data["cells"]), 175)
+        self.assertEqual(sum(x["status"] == "REVIEWED_GAP" for x in data["cells"]), 172)
         self.assertEqual(sum(x["status"] == "NOT_MAPPED" for x in data["cells"]), 0)
         self.assertTrue(all(x["evidence"] and x["migration_evidence"] for x in reviewed))
         self.assertEqual(sum(x["migration_status"] == "DIRECT_COORDINATE_REVIEW" for x in data["cells"]), 124)
@@ -77,7 +77,9 @@ class MatrixSiteTests(unittest.TestCase):
         self.assertIn("Coverage envelope, not a composed theory", base_app)
         self.assertIn("No complete observationally validated theory is certified", base_app)
         self.assertIn("paretoProfiles", base_app)
-        self.assertIn("Six independent maturity rails", base_app)
+        self.assertIn("Seven independent maturity rails", base_app)
+        self.assertIn("Numerical reproduction is not empirical validation", base_app)
+        self.assertIn("Euclidean/Krein carrier boundary", base_app)
         self.assertIn("Bounded assembly complete", base_app)
         self.assertIn("Field equations to Cassini", base_app)
         self.assertIn("Applicability mask", base_app)
@@ -108,6 +110,8 @@ class MatrixSiteTests(unittest.TestCase):
         self.assertTrue((ROOT / "foundations/site/sources/foundations/results/FOUNDATIONAL_FINITE_OPERATOR_TEN_CELL_CLOSURE_V1.json").is_file())
         self.assertTrue((ROOT / "foundations/site/sources/foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V8.json").is_file())
         self.assertTrue((ROOT / "foundations/site/sources/foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V9.json").is_file())
+        self.assertTrue((ROOT / "foundations/site/sources/foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V10.json").is_file())
+        self.assertTrue((ROOT / "foundations/site/sources/foundations/results/FOUNDATIONAL_BT_EUCLIDEAN_LATTICE_IMPORT_V1.json").is_file())
         self.assertTrue((ROOT / "foundations/site/sources/foundations/results/FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1.json").is_file())
         self.assertTrue((ROOT / "foundations/site/sources/foundations/results/FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1.json").is_file())
         self.assertTrue((ROOT / "foundations/site/sources/foundations/results/FOUNDATIONAL_BT_CORNER_BORN_INTERFACE_V1.json").is_file())

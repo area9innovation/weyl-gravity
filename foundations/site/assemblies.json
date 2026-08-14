@@ -7,6 +7,7 @@
   "created": "2026-08-14",
   "dependency_tags": [
     "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL",
     "REDUCED-MODE",
     "LORENTZIAN-CAUSAL"
   ],
@@ -91,6 +92,39 @@
       "evidence": [
         "FOUNDATIONAL_KREIN_FOCK_GROUND_STATE_DYNAMICS_INTERFACE_V1"
       ]
+    }
+  ],
+  "certified_carrier_interface_records": [
+    {
+      "id": "EUCLIDEAN_TO_KREIN_CARRIER",
+      "label": "Positive Euclidean lattice carrier versus BT Krein carrier",
+      "status": "CERTIFIED",
+      "relation": "INCOMPATIBLE",
+      "source_coordinates": [
+        {
+          "foundation": "FINITE_DISCRETE",
+          "carrier": "SMOOTH_DISTRIBUTIONAL",
+          "obligation": "STATE_REPRESENTATION"
+        }
+      ],
+      "target_coordinates": [
+        {
+          "foundation": "CLASSICAL_STANDARD",
+          "carrier": "KREIN_INDEFINITE",
+          "obligation": "STATE_REPRESENTATION"
+        }
+      ],
+      "scope": "The positive-Omega Euclidean lattice path integral and the all-real-Omega two-field BT path integral cannot be identified as the same full nonperturbative configuration space and measure.",
+      "witness": {
+        "source_domain": "Omega_x=exp(lambda*phi_x)>0",
+        "target_domain_caveat": "the phi and (Omega,Upsilon) path integrals are inequivalent, 'the former integrates over Omega > 0 whereas the latter integrates over all Omega' -- a statement about the vacuum, not the action"
+      },
+      "evidence": [
+        "REVERSE_PHYSICS_BT_EUCLIDEAN_LATTICE_PILOT_V1",
+        "REVERSE_PHYSICS_GHOST_PARITY_DOUBLE_POLE_V1",
+        "FOUNDATIONAL_BT_EUCLIDEAN_LATTICE_IMPORT_V1"
+      ],
+      "does_not_establish": "No obstruction is proved to a conditional perturbative, Osterwalder-Schrader, analytic-continuation, or other explicitly constructed bridge."
     }
   ],
   "assemblies": [
@@ -501,6 +535,12 @@
           "basis": "No assembly-level map from formal quantities to measured observables is registered."
         },
         {
+          "id": "NUMERICAL_REPRODUCIBILITY",
+          "label": "Numerical reproducibility",
+          "status": "NO_RECORDS",
+          "basis": "No independent numerical reproduction record is registered for this assembly."
+        },
+        {
           "id": "EMPIRICAL_COMPARISON",
           "label": "Empirical comparison",
           "status": "NO_RECORDS",
@@ -904,6 +944,12 @@
           "basis": "No assembly-level map from formal quantities to measured observables is registered."
         },
         {
+          "id": "NUMERICAL_REPRODUCIBILITY",
+          "label": "Numerical reproducibility",
+          "status": "NO_RECORDS",
+          "basis": "No independent numerical reproduction record is registered for this assembly."
+        },
+        {
           "id": "EMPIRICAL_COMPARISON",
           "label": "Empirical comparison",
           "status": "NO_RECORDS",
@@ -1259,6 +1305,455 @@
           "label": "Observable identification",
           "status": "NOT_REGISTERED",
           "basis": "No assembly-level map from formal quantities to measured observables is registered."
+        },
+        {
+          "id": "NUMERICAL_REPRODUCIBILITY",
+          "label": "Numerical reproducibility",
+          "status": "NO_RECORDS",
+          "basis": "No independent numerical reproduction record is registered for this assembly."
+        },
+        {
+          "id": "EMPIRICAL_COMPARISON",
+          "label": "Empirical comparison",
+          "status": "NO_RECORDS",
+          "basis": "The empirical ledger contains no comparison for this assembly."
+        },
+        {
+          "id": "ROBUSTNESS_OUT_OF_SAMPLE",
+          "label": "Robustness / out-of-sample",
+          "status": "NO_RECORDS",
+          "basis": "No robustness or held-out prediction record is registered."
+        }
+      ],
+      "complete_theory": false,
+      "empirically_supported": false
+    },
+    {
+      "id": "BT_EUCLIDEAN_LATTICE_PROGRAMME",
+      "label": "BT positive Euclidean lattice programme",
+      "aim": "Track the exact finite-volume Gibbs construction and its numerical reproduction without importing continuum, Krein, or empirical claims.",
+      "foundations": [
+        "FINITE_DISCRETE"
+      ],
+      "carriers": [
+        "SMOOTH_DISTRIBUTIONAL"
+      ],
+      "kind": "NAVIGATIONAL_PROTOTYPE",
+      "selection_rule": "DETERMINISTIC_COVERAGE_ENVELOPE",
+      "selected_cells": [
+        {
+          "obligation": "KINEMATICS_OBSERVABLES",
+          "foundation": "FINITE_DISCRETE",
+          "carrier": "SMOOTH_DISTRIBUTIONAL",
+          "status": "LOCAL_RESULT",
+          "evidence": [
+            "kogut-susskind-1975",
+            "zohar-burrello-2014",
+            "bahr-dittrich-2009",
+            "dittrich-2012",
+            "FOUNDATIONAL_BT_EUCLIDEAN_LATTICE_IMPORT_V1"
+          ],
+          "evidence_roles": {
+            "kogut-susskind-1975": "UNREVIEWED",
+            "zohar-burrello-2014": "UNREVIEWED",
+            "bahr-dittrich-2009": "UNREVIEWED",
+            "dittrich-2012": "UNREVIEWED",
+            "FOUNDATIONAL_BT_EUCLIDEAN_LATTICE_IMPORT_V1": "DIRECT_LOCAL"
+          },
+          "selection_basis": "Strongest recorded status in the declared admissible region; ties prefer more reviewed direct kinds, local grade, more evidence, then declared order."
+        },
+        {
+          "obligation": "STATE_EXISTENCE",
+          "foundation": "FINITE_DISCRETE",
+          "carrier": "SMOOTH_DISTRIBUTIONAL",
+          "status": "LOCAL_RESULT",
+          "evidence": [
+            "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+            "FOUNDATIONAL_BT_EUCLIDEAN_LATTICE_IMPORT_V1"
+          ],
+          "evidence_roles": {
+            "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING",
+            "FOUNDATIONAL_BT_EUCLIDEAN_LATTICE_IMPORT_V1": "DIRECT_LOCAL"
+          },
+          "selection_basis": "Strongest recorded status in the declared admissible region; ties prefer more reviewed direct kinds, local grade, more evidence, then declared order."
+        },
+        {
+          "obligation": "STATE_REPRESENTATION",
+          "foundation": "FINITE_DISCRETE",
+          "carrier": "SMOOTH_DISTRIBUTIONAL",
+          "status": "LOCAL_RESULT",
+          "evidence": [
+            "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+            "FOUNDATIONAL_BT_EUCLIDEAN_LATTICE_IMPORT_V1"
+          ],
+          "evidence_roles": {
+            "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING",
+            "FOUNDATIONAL_BT_EUCLIDEAN_LATTICE_IMPORT_V1": "DIRECT_LOCAL"
+          },
+          "selection_basis": "Strongest recorded status in the declared admissible region; ties prefer more reviewed direct kinds, local grade, more evidence, then declared order."
+        },
+        {
+          "obligation": "PROBABILITY_RULE",
+          "foundation": "FINITE_DISCRETE",
+          "carrier": "SMOOTH_DISTRIBUTIONAL",
+          "status": "LOCAL_RESULT",
+          "evidence": [
+            "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+            "FOUNDATIONAL_BT_EUCLIDEAN_LATTICE_IMPORT_V1"
+          ],
+          "evidence_roles": {
+            "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING",
+            "FOUNDATIONAL_BT_EUCLIDEAN_LATTICE_IMPORT_V1": "DIRECT_LOCAL"
+          },
+          "selection_basis": "Strongest recorded status in the declared admissible region; ties prefer more reviewed direct kinds, local grade, more evidence, then declared order."
+        },
+        {
+          "obligation": "PHYSICAL_STATE_SELECTION",
+          "foundation": "FINITE_DISCRETE",
+          "carrier": "SMOOTH_DISTRIBUTIONAL",
+          "status": "REVIEWED_GAP",
+          "evidence": [
+            "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+          ],
+          "evidence_roles": {
+            "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+          },
+          "selection_basis": "Strongest recorded status in the declared admissible region; ties prefer more reviewed direct kinds, local grade, more evidence, then declared order."
+        },
+        {
+          "obligation": "GENERATOR_SPECTRAL_DYNAMICS",
+          "foundation": "FINITE_DISCRETE",
+          "carrier": "SMOOTH_DISTRIBUTIONAL",
+          "status": "LITERATURE_RESULT",
+          "evidence": [
+            "kogut-susskind-1975",
+            "zohar-burrello-2014",
+            "dittrich-2012"
+          ],
+          "evidence_roles": {
+            "kogut-susskind-1975": "DIRECT_LITERATURE",
+            "zohar-burrello-2014": "DIRECT_LITERATURE",
+            "dittrich-2012": "SUPPORTING"
+          },
+          "selection_basis": "Strongest recorded status in the declared admissible region; ties prefer more reviewed direct kinds, local grade, more evidence, then declared order."
+        },
+        {
+          "obligation": "EVOLUTION_WELLPOSEDNESS",
+          "foundation": "FINITE_DISCRETE",
+          "carrier": "SMOOTH_DISTRIBUTIONAL",
+          "status": "LITERATURE_RESULT",
+          "evidence": [
+            "kogut-susskind-1975",
+            "zohar-burrello-2014",
+            "dittrich-2012"
+          ],
+          "evidence_roles": {
+            "kogut-susskind-1975": "DIRECT_LITERATURE",
+            "zohar-burrello-2014": "DIRECT_LITERATURE",
+            "dittrich-2012": "SUPPORTING"
+          },
+          "selection_basis": "Strongest recorded status in the declared admissible region; ties prefer more reviewed direct kinds, local grade, more evidence, then declared order."
+        },
+        {
+          "obligation": "CAUSAL_PROPAGATION_GREEN",
+          "foundation": "FINITE_DISCRETE",
+          "carrier": "SMOOTH_DISTRIBUTIONAL",
+          "status": "PIECES_ONLY",
+          "evidence": [
+            "kogut-susskind-1975",
+            "zohar-burrello-2014"
+          ],
+          "evidence_roles": {
+            "kogut-susskind-1975": "SUPPORTING",
+            "zohar-burrello-2014": "SUPPORTING"
+          },
+          "selection_basis": "Strongest recorded status in the declared admissible region; ties prefer more reviewed direct kinds, local grade, more evidence, then declared order."
+        },
+        {
+          "obligation": "GAUGE_BV_COHOMOLOGY",
+          "foundation": "FINITE_DISCRETE",
+          "carrier": "SMOOTH_DISTRIBUTIONAL",
+          "status": "LITERATURE_RESULT",
+          "evidence": [
+            "kogut-susskind-1975",
+            "zohar-burrello-2014",
+            "bahr-dittrich-2009",
+            "dittrich-2012"
+          ],
+          "evidence_roles": {
+            "kogut-susskind-1975": "UNREVIEWED",
+            "zohar-burrello-2014": "UNREVIEWED",
+            "bahr-dittrich-2009": "UNREVIEWED",
+            "dittrich-2012": "UNREVIEWED"
+          },
+          "selection_basis": "Strongest recorded status in the declared admissible region; ties prefer more reviewed direct kinds, local grade, more evidence, then declared order."
+        },
+        {
+          "obligation": "INTERACTION_CONSTRUCTION",
+          "foundation": "FINITE_DISCRETE",
+          "carrier": "SMOOTH_DISTRIBUTIONAL",
+          "status": "LOCAL_RESULT",
+          "evidence": [
+            "kogut-susskind-1975",
+            "zohar-burrello-2014",
+            "bahr-dittrich-2009",
+            "dittrich-2012",
+            "FOUNDATIONAL_BT_EUCLIDEAN_LATTICE_IMPORT_V1"
+          ],
+          "evidence_roles": {
+            "kogut-susskind-1975": "DIRECT_LITERATURE",
+            "zohar-burrello-2014": "DIRECT_LITERATURE",
+            "bahr-dittrich-2009": "SUPPORTING",
+            "dittrich-2012": "SUPPORTING",
+            "FOUNDATIONAL_BT_EUCLIDEAN_LATTICE_IMPORT_V1": "DIRECT_LOCAL"
+          },
+          "selection_basis": "Strongest recorded status in the declared admissible region; ties prefer more reviewed direct kinds, local grade, more evidence, then declared order."
+        },
+        {
+          "obligation": "COUNTERTERM_CLASSIFICATION",
+          "foundation": "FINITE_DISCRETE",
+          "carrier": "SMOOTH_DISTRIBUTIONAL",
+          "status": "PIECES_ONLY",
+          "evidence": [
+            "kogut-susskind-1975",
+            "zohar-burrello-2014",
+            "bahr-dittrich-2009"
+          ],
+          "evidence_roles": {
+            "kogut-susskind-1975": "SUPPORTING",
+            "zohar-burrello-2014": "SUPPORTING",
+            "bahr-dittrich-2009": "SUPPORTING"
+          },
+          "selection_basis": "Strongest recorded status in the declared admissible region; ties prefer more reviewed direct kinds, local grade, more evidence, then declared order."
+        },
+        {
+          "obligation": "ANOMALY_CLASSIFICATION",
+          "foundation": "FINITE_DISCRETE",
+          "carrier": "SMOOTH_DISTRIBUTIONAL",
+          "status": "PIECES_ONLY",
+          "evidence": [
+            "kogut-susskind-1975",
+            "zohar-burrello-2014",
+            "bahr-dittrich-2009"
+          ],
+          "evidence_roles": {
+            "kogut-susskind-1975": "SUPPORTING",
+            "zohar-burrello-2014": "SUPPORTING",
+            "bahr-dittrich-2009": "SUPPORTING"
+          },
+          "selection_basis": "Strongest recorded status in the declared admissible region; ties prefer more reviewed direct kinds, local grade, more evidence, then declared order."
+        },
+        {
+          "obligation": "RENORMALIZED_PRODUCTS",
+          "foundation": "FINITE_DISCRETE",
+          "carrier": "SMOOTH_DISTRIBUTIONAL",
+          "status": "PIECES_ONLY",
+          "evidence": [
+            "kogut-susskind-1975",
+            "zohar-burrello-2014",
+            "dittrich-2012"
+          ],
+          "evidence_roles": {
+            "kogut-susskind-1975": "SUPPORTING",
+            "zohar-burrello-2014": "SUPPORTING",
+            "dittrich-2012": "SUPPORTING"
+          },
+          "selection_basis": "Strongest recorded status in the declared admissible region; ties prefer more reviewed direct kinds, local grade, more evidence, then declared order."
+        },
+        {
+          "obligation": "QME_RESTORATION",
+          "foundation": "FINITE_DISCRETE",
+          "carrier": "SMOOTH_DISTRIBUTIONAL",
+          "status": "PIECES_ONLY",
+          "evidence": [
+            "kogut-susskind-1975",
+            "zohar-burrello-2014",
+            "bahr-dittrich-2009"
+          ],
+          "evidence_roles": {
+            "kogut-susskind-1975": "SUPPORTING",
+            "zohar-burrello-2014": "SUPPORTING",
+            "bahr-dittrich-2009": "SUPPORTING"
+          },
+          "selection_basis": "Strongest recorded status in the declared admissible region; ties prefer more reviewed direct kinds, local grade, more evidence, then declared order."
+        },
+        {
+          "obligation": "RESIDUAL_QUANTUM_TRANSFER",
+          "foundation": "FINITE_DISCRETE",
+          "carrier": "SMOOTH_DISTRIBUTIONAL",
+          "status": "PIECES_ONLY",
+          "evidence": [
+            "kogut-susskind-1975",
+            "zohar-burrello-2014",
+            "bahr-dittrich-2009",
+            "dittrich-2012"
+          ],
+          "evidence_roles": {
+            "kogut-susskind-1975": "SUPPORTING",
+            "zohar-burrello-2014": "SUPPORTING",
+            "bahr-dittrich-2009": "SUPPORTING",
+            "dittrich-2012": "SUPPORTING"
+          },
+          "selection_basis": "Strongest recorded status in the declared admissible region; ties prefer more reviewed direct kinds, local grade, more evidence, then declared order."
+        },
+        {
+          "obligation": "RECONSTRUCTION_LIMITS",
+          "foundation": "FINITE_DISCRETE",
+          "carrier": "SMOOTH_DISTRIBUTIONAL",
+          "status": "PRIORITY_GAP",
+          "evidence": [
+            "FOUNDATIONAL_FINITE_FIELD_FINITE_MODE_NON_EQUIVALENCE_V1",
+            "FOUNDATIONAL_BT_EUCLIDEAN_LATTICE_IMPORT_V1"
+          ],
+          "evidence_roles": {
+            "FOUNDATIONAL_FINITE_FIELD_FINITE_MODE_NON_EQUIVALENCE_V1": "UNREVIEWED",
+            "FOUNDATIONAL_BT_EUCLIDEAN_LATTICE_IMPORT_V1": "SUPPORTING"
+          },
+          "selection_basis": "Strongest recorded status in the declared admissible region; ties prefer more reviewed direct kinds, local grade, more evidence, then declared order."
+        }
+      ],
+      "coverage": {
+        "direct": 8,
+        "assessed": 16,
+        "total": 16,
+        "complete_direct": false
+      },
+      "interfaces": [
+        {
+          "id": "STATE_TO_PROBABILITY",
+          "label": "State encoding → probability rule",
+          "source_obligations": [
+            "STATE_REPRESENTATION"
+          ],
+          "target_obligations": [
+            "PROBABILITY_RULE"
+          ],
+          "relation": "NOT_ASSESSED",
+          "certification_status": "NOT_ASSESSED",
+          "evidence": [],
+          "rationale": "Coverage records do not by themselves prove that these selected objects share a model, scope, or translation."
+        },
+        {
+          "id": "SELECTION_TO_DYNAMICS",
+          "label": "Physical state selection → dynamics",
+          "source_obligations": [
+            "PHYSICAL_STATE_SELECTION"
+          ],
+          "target_obligations": [
+            "GENERATOR_SPECTRAL_DYNAMICS"
+          ],
+          "relation": "NOT_ASSESSED",
+          "certification_status": "NOT_ASSESSED",
+          "evidence": [],
+          "rationale": "Coverage records do not by themselves prove that these selected objects share a model, scope, or translation."
+        },
+        {
+          "id": "DYNAMICS_TO_CAUSALITY",
+          "label": "Evolution → causal response",
+          "source_obligations": [
+            "GENERATOR_SPECTRAL_DYNAMICS",
+            "EVOLUTION_WELLPOSEDNESS"
+          ],
+          "target_obligations": [
+            "CAUSAL_PROPAGATION_GREEN"
+          ],
+          "relation": "NOT_ASSESSED",
+          "certification_status": "NOT_ASSESSED",
+          "evidence": [],
+          "rationale": "Coverage records do not by themselves prove that these selected objects share a model, scope, or translation."
+        },
+        {
+          "id": "GAUGE_TO_INTERACTION",
+          "label": "Gauge content → interaction",
+          "source_obligations": [
+            "KINEMATICS_OBSERVABLES",
+            "GAUGE_BV_COHOMOLOGY"
+          ],
+          "target_obligations": [
+            "INTERACTION_CONSTRUCTION"
+          ],
+          "relation": "NOT_ASSESSED",
+          "certification_status": "NOT_ASSESSED",
+          "evidence": [],
+          "rationale": "Coverage records do not by themselves prove that these selected objects share a model, scope, or translation."
+        },
+        {
+          "id": "RENORMALIZATION_TO_QME",
+          "label": "Classifications and products → restored QME",
+          "source_obligations": [
+            "COUNTERTERM_CLASSIFICATION",
+            "ANOMALY_CLASSIFICATION",
+            "RENORMALIZED_PRODUCTS"
+          ],
+          "target_obligations": [
+            "QME_RESTORATION"
+          ],
+          "relation": "NOT_ASSESSED",
+          "certification_status": "NOT_ASSESSED",
+          "evidence": [],
+          "rationale": "Coverage records do not by themselves prove that these selected objects share a model, scope, or translation."
+        },
+        {
+          "id": "QME_TO_RESIDUAL",
+          "label": "Restored QME → residual correction",
+          "source_obligations": [
+            "QME_RESTORATION"
+          ],
+          "target_obligations": [
+            "RESIDUAL_QUANTUM_TRANSFER"
+          ],
+          "relation": "NOT_ASSESSED",
+          "certification_status": "NOT_ASSESSED",
+          "evidence": [],
+          "rationale": "Coverage records do not by themselves prove that these selected objects share a model, scope, or translation."
+        },
+        {
+          "id": "PREDICTION_TO_RECONSTRUCTION",
+          "label": "Prediction chain → standard or operational interpretation",
+          "source_obligations": [
+            "PROBABILITY_RULE",
+            "CAUSAL_PROPAGATION_GREEN",
+            "INTERACTION_CONSTRUCTION"
+          ],
+          "target_obligations": [
+            "RECONSTRUCTION_LIMITS"
+          ],
+          "relation": "NOT_ASSESSED",
+          "certification_status": "NOT_ASSESSED",
+          "evidence": [],
+          "rationale": "Coverage records do not by themselves prove that these selected objects share a model, scope, or translation."
+        }
+      ],
+      "maturity_rails": [
+        {
+          "id": "OBLIGATION_COVERAGE",
+          "label": "Obligation coverage",
+          "status": "OPEN",
+          "basis": "8/16 obligations have a direct recorded result."
+        },
+        {
+          "id": "CROSS_CELL_COMPOSITION",
+          "label": "Cross-cell composition",
+          "status": "NOT_ASSESSED",
+          "basis": "0/7 required interfaces are certified; unassessed joins are missing work, not incompatibility results."
+        },
+        {
+          "id": "PREDICTION_DERIVATION",
+          "label": "Prediction derivation",
+          "status": "NOT_EVALUABLE",
+          "basis": "An end-to-end prediction test is premature until the required cross-cell joins are registered."
+        },
+        {
+          "id": "OBSERVABLE_IDENTIFICATION",
+          "label": "Observable identification",
+          "status": "NOT_REGISTERED",
+          "basis": "No assembly-level map from formal quantities to measured observables is registered."
+        },
+        {
+          "id": "NUMERICAL_REPRODUCIBILITY",
+          "label": "Numerical reproducibility",
+          "status": "COARSE_REPRODUCTION_ONLY",
+          "basis": "all declared finite-volume observables agree within four combined standard errors; not all declared observables agree within two combined standard errors. This is algorithmic reproduction, not empirical validation."
         },
         {
           "id": "EMPIRICAL_COMPARISON",
@@ -1645,6 +2140,12 @@
           "label": "Observable identification",
           "status": "NOT_REGISTERED",
           "basis": "No assembly-level map from formal quantities to measured observables is registered."
+        },
+        {
+          "id": "NUMERICAL_REPRODUCIBILITY",
+          "label": "Numerical reproducibility",
+          "status": "NO_RECORDS",
+          "basis": "No independent numerical reproduction record is registered for this assembly."
         },
         {
           "id": "EMPIRICAL_COMPARISON",
@@ -2066,6 +2567,12 @@
           "basis": "No assembly-level map from formal quantities to measured observables is registered."
         },
         {
+          "id": "NUMERICAL_REPRODUCIBILITY",
+          "label": "Numerical reproducibility",
+          "status": "NO_RECORDS",
+          "basis": "No independent numerical reproduction record is registered for this assembly."
+        },
+        {
           "id": "EMPIRICAL_COMPARISON",
           "label": "Empirical comparison",
           "status": "NO_RECORDS",
@@ -2468,6 +2975,12 @@
           "label": "Observable identification",
           "status": "NOT_REGISTERED",
           "basis": "No assembly-level map from formal quantities to measured observables is registered."
+        },
+        {
+          "id": "NUMERICAL_REPRODUCIBILITY",
+          "label": "Numerical reproducibility",
+          "status": "NO_RECORDS",
+          "basis": "No independent numerical reproduction record is registered for this assembly."
         },
         {
           "id": "EMPIRICAL_COMPARISON",
@@ -2880,6 +3393,12 @@
           "label": "Observable identification",
           "status": "NOT_REGISTERED",
           "basis": "No assembly-level map from formal quantities to measured observables is registered."
+        },
+        {
+          "id": "NUMERICAL_REPRODUCIBILITY",
+          "label": "Numerical reproducibility",
+          "status": "NO_RECORDS",
+          "basis": "No independent numerical reproduction record is registered for this assembly."
         },
         {
           "id": "EMPIRICAL_COMPARISON",
@@ -3624,11 +4143,36 @@
     ],
     "records": []
   },
+  "numerical_reproducibility_ledger": {
+    "unit": "Independent algorithmic reproduction of a mathematical/numerical calculation; this is distinct from empirical comparison and out-of-sample robustness.",
+    "records": [
+      {
+        "id": "BT_L4_L6_INDEPENDENT_SAMPLER_REPRODUCTION",
+        "assembly": "BT_EUCLIDEAN_LATTICE_PROGRAMME",
+        "dependency_tag": "EUCLIDEAN-SPECTRAL",
+        "status": "COARSE_REPRODUCTION_ONLY",
+        "algorithms": [
+          "zero-mode-projected HMC",
+          "independent local random-scan Metropolis"
+        ],
+        "gate_passed": "all declared finite-volume observables agree within four combined standard errors",
+        "precision_gate": "not all declared observables agree within two combined standard errors",
+        "maximum_absolute_cross_sampler_z": 3.0404583746200773,
+        "finite_size_change_cross_algorithm_z": 1.577545278876236,
+        "continuum_status": "NOT_ESTABLISHED",
+        "evidence": [
+          "REVERSE_PHYSICS_BT_EUCLIDEAN_STEP_SCALING_PREFLIGHT_V1"
+        ]
+      }
+    ]
+  },
   "claim_flags": {
     "prototype_assemblies_generated": true,
     "selected_cells_content_addressed": true,
     "interface_and_coverage_states_separated": true,
     "at_least_one_cross_cell_interface_certified": true,
+    "scoped_carrier_interface_registered": true,
+    "numerical_reproducibility_rail_declared": true,
     "empirical_record_schema_declared": true,
     "external_positive_control_registered": true,
     "missing_and_failed_states_separated": true,
@@ -3645,11 +4189,13 @@
     "that either certified scoped bridge supplies any unregistered carrier or foundation translation",
     "that direct coverage composes into an end-to-end prediction",
     "that a reduced or finite construction has a controlled continuum limit",
+    "that coarse independent-sampler compatibility is precision equivalence, empirical validation, or out-of-sample robustness",
+    "that the scoped Euclidean/Krein carrier non-identity forbids every conditional bridge",
     "that any prototype agrees with observations",
     "that the external standard-GR control is selected from the cube or transfers empirical support to a prototype",
     "that the benchmark catalogue is a complete set of physical tests",
     "a complete theory, a new Lorentzian-causal result, or a quantum lifecycle promotion"
   ],
-  "source_atlas_digest": "4ba28f1320371b129b8f97dca3668acd02711ab4aefb980d21964cd90cefd30d",
-  "canonical_digest": "823418839c58fb4efdeae7448fe18555f88e758a15ba569c2013aa1a656ee736"
+  "source_atlas_digest": "e4c79e8ec537c2d9f9271d9ccbd042da2a5529b0b5f0f11fa6917cc3af0386cd",
+  "canonical_digest": "3edb5b9829b81f727cc8bdf4d11231192f54c20266e3db625391294af3361c62"
 }

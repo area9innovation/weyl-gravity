@@ -103,7 +103,7 @@ def build() -> dict[str, Any]:
         "lifecycle": "EVIDENCE_AUGMENTED_FULL_CARTESIAN_SURFACE",
         "created": "2026-08-14",
         "repository_base_commit": "be5b23b72ea73f6b5dd099e9a3bd3126e6778922",
-        "dependency_tags": old["dependency_tags"],
+        "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
         "purpose": "Preserve the complete cube-v9 surface while importing the certified finite Euclidean BT capabilities, numerical-reproduction boundary, and scoped Euclidean/Krein carrier non-identity.",
         "compatibility": {
             **old["compatibility"],
@@ -149,10 +149,12 @@ def build() -> dict[str, Any]:
         },
         "claim_flags": {
             "v9_surface_preserved": True,
+            "all_576_coordinates_assessed": True,
             "five_finite_euclidean_capabilities_imported": True,
             "reconstruction_priority_gap_preserved": True,
             "coarse_numerical_reproduction_separated": True,
             "all_obligations_solved": False,
+            "literature_complete": False,
             "continuum_reconstruction_established": False,
             "empirical_agreement_assessed": False,
             "complete_physical_theory_established": False,

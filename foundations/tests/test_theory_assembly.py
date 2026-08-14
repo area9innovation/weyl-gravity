@@ -15,12 +15,18 @@ ROOT = Path(__file__).resolve().parents[2]
 class TheoryAssemblyTests(unittest.TestCase):
     def test_prototypes_fail_closed(self):
         value = build_assembly_assessment(build_dataset())
-        self.assertEqual(len(value["assemblies"]), 7)
+        self.assertEqual(len(value["assemblies"]), 8)
         self.assertTrue(all(not item["complete_theory"] for item in value["assemblies"]))
         certified = [interface for item in value["assemblies"] for interface in item["interfaces"] if interface["certification_status"] == "CERTIFIED"]
         self.assertEqual(len(certified), 4)
         self.assertTrue(all(interface["relation"] == "CONDITIONAL_BRIDGE" for interface in certified))
         self.assertEqual(value["empirical_ledger"]["records"], [])
+        self.assertEqual(len(value["numerical_reproducibility_ledger"]["records"]), 1)
+        euclidean = next(item for item in value["assemblies"] if item["id"] == "BT_EUCLIDEAN_LATTICE_PROGRAMME")
+        rails = {item["id"]: item["status"] for item in euclidean["maturity_rails"]}
+        self.assertEqual(rails["NUMERICAL_REPRODUCIBILITY"], "COARSE_REPRODUCTION_ONLY")
+        self.assertEqual(rails["EMPIRICAL_COMPARISON"], "NO_RECORDS")
+        self.assertEqual(rails["ROBUSTNESS_OUT_OF_SAMPLE"], "NO_RECORDS")
         self.assertEqual(len(value["calibration_controls"]), 1)
         self.assertEqual(len(value["calibration_controls"][0]["records"]), 4)
         self.assertEqual(len(value["model_scoped_assemblies"]), 1)

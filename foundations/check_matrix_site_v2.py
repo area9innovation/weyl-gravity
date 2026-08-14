@@ -15,7 +15,7 @@ MANIFEST = SITE / "manifest.json"
 RESULT = ROOT / "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json"
 VIABILITY = ROOT / "foundations/site/viability.json"
 ASSEMBLIES = ROOT / "foundations/site/assemblies.json"
-CUBE = ROOT / "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V9.json"
+CUBE = ROOT / "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V10.json"
 LADDER = ROOT / "foundations/results/FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V2.json"
 STATUSES = {"LOCAL_RESULT", "LITERATURE_RESULT", "PIECES_ONLY", "PRIORITY_GAP", "REVIEWED_GAP", "NOT_MAPPED"}
 MIGRATIONS = {"EXACT_PARENT_TRANSFER", "CAPABILITY_QUALIFIED", "REVIEWED_OVERLAY", "REVIEWED_NO_TRANSFER", "REVIEWED_CHILD_GAP", "DIRECT_COORDINATE_REVIEW", "NOT_REVIEWED"}
@@ -30,7 +30,7 @@ def sha(path: Path) -> str:
 
 
 def digest(data: dict[str, Any]) -> str:
-    projection = {key: data[key] for key in ("axes", "cells", "evidence", "ladder", "graph", "cross_cell_interfaces")}
+    projection = {key: data[key] for key in ("axes", "cells", "evidence", "ladder", "graph", "cross_cell_interfaces", "carrier_interfaces", "numerical_reproducibility_records")}
     return hashlib.sha256(json.dumps(projection, sort_keys=True, separators=(",", ":"), ensure_ascii=False).encode()).hexdigest()
 
 
@@ -131,7 +131,7 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
             break
 
     used = {item for cell in emitted for field in ("evidence", "migration_evidence") for item in cell.get(field, [])}
-    if set(evidence) != used or len(evidence) != 74:
+    if set(evidence) != used or len(evidence) != 75:
         errors.append("coverage and migration evidence resolution")
     for item in evidence.values():
         for field in ("result_link", "report_link", "ledger_link"):
@@ -156,10 +156,18 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
     interfaces = data.get("cross_cell_interfaces", [])
     if [item.get("id") for item in interfaces] != ["STATE_TO_PROBABILITY", "SELECTION_TO_DYNAMICS"] or any(item.get("status") != "CERTIFIED" or item.get("relation") != "CONDITIONAL_BRIDGE" for item in interfaces):
         errors.append("certified cross-cell interface projection")
+    carrier_interfaces = data.get("carrier_interfaces", [])
+    if [item.get("id") for item in carrier_interfaces] != ["EUCLIDEAN_TO_KREIN_CARRIER"] or carrier_interfaces[0].get("relation") != "INCOMPATIBLE" or carrier_interfaces[0].get("status") != "CERTIFIED":
+        errors.append("certified carrier interface projection")
+    numerical_records = data.get("numerical_reproducibility_records", [])
+    if len(numerical_records) != 1 or numerical_records[0].get("status") != "COARSE_REPRODUCTION_ONLY" or numerical_records[0].get("continuum_status") != "NOT_ESTABLISHED":
+        errors.append("numerical reproduction boundary")
     if assemblies.get("source_atlas_digest") != data.get("canonical_digest") or assemblies.get("canonical_digest") != result.get("independent_checker", {}).get("expected_assembly_digest"):
         errors.append("theory assembly source/digest pin")
-    if len(assemblies.get("assemblies", [])) != 7 or any(len(item.get("selected_cells", [])) != 16 or len(item.get("interfaces", [])) != 7 for item in assemblies.get("assemblies", [])):
+    if len(assemblies.get("assemblies", [])) != 8 or any(len(item.get("selected_cells", [])) != 16 or len(item.get("interfaces", [])) != 7 or len(item.get("maturity_rails", [])) != 7 for item in assemblies.get("assemblies", [])):
         errors.append("theory assembly prototype/cell/interface closure")
+    if assemblies.get("certified_carrier_interface_records") != carrier_interfaces or assemblies.get("numerical_reproducibility_ledger", {}).get("records") != numerical_records:
+        errors.append("carrier/numerical assembly projection")
     if assemblies.get("empirical_ledger", {}).get("records") != [] or any(item.get("complete_theory") is not False or item.get("empirically_supported") is not False for item in assemblies.get("assemblies", [])):
         errors.append("theory assembly fail-closed boundary")
     controls = assemblies.get("calibration_controls", [])
@@ -191,7 +199,7 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
     app = (SITE / "app.js").read_text() + (SITE / "migration-review.js").read_text() + (SITE / "assemblies.js").read_text()
     if "https://" in html or "http://" in html or '<script src="data.js"></script>' not in html or '<script src="viability.js"></script>' not in html or '<script src="assemblies.js"></script>' not in html or '<script src="migration-review.js"></script>' not in html:
         errors.append("offline/no-remote-code shell")
-    for token in ("matrixGroups", "viabilityView", "Theory profiles", "Coverage readiness map", "Coverage envelope, not a composed theory", "No complete observationally validated theory is certified", "paretoProfiles", "assembliesView", "Bounded assembly complete", "Field equations to Cassini", "Applicability mask", "Six independent maturity rails", "External positive control", "Typed interface ledger", "Empirical benchmark ledger", "NOT_ASSESSED", "guideView", "dimensionGuide", "Regime × carrier × obligation", "Reviewed open gap", "Reviewed gap versus priority gap", "graphView", "GRAPH_PATHWAYS", "Relation ledger", "graph-edge-hit", "No direct certificate yet", "ladderView", "evidenceView", "compareDialog", "exportJson", "exportCsv", "downloadBrief", "column-label", "Migration review", "migration_evidence", "175-coordinate surface audit", "data-dual", "directKinds", "role-badge", "Local + literature result", "Directness unreviewed", "Why some cells are marked", "is not a finding that the record fails to support the cell", "data-marklen", "supportingKinds", "legend-note", "Upper case is a certified direct grade", "An ingredient is not a result", "Ingredients never promote a cell"):
+    for token in ("matrixGroups", "viabilityView", "Theory profiles", "Coverage readiness map", "Coverage envelope, not a composed theory", "No complete observationally validated theory is certified", "paretoProfiles", "assembliesView", "Bounded assembly complete", "Field equations to Cassini", "Applicability mask", "Seven independent maturity rails", "Numerical reproduction is not empirical validation", "Euclidean/Krein carrier boundary", "External positive control", "Typed interface ledger", "Empirical benchmark ledger", "NOT_ASSESSED", "guideView", "dimensionGuide", "Regime × carrier × obligation", "Reviewed open gap", "Reviewed gap versus priority gap", "graphView", "GRAPH_PATHWAYS", "Relation ledger", "graph-edge-hit", "No direct certificate yet", "ladderView", "evidenceView", "compareDialog", "exportJson", "exportCsv", "downloadBrief", "column-label", "Migration review", "migration_evidence", "175-coordinate surface audit", "data-dual", "directKinds", "role-badge", "Local + literature result", "Directness unreviewed", "Why some cells are marked", "is not a finding that the record fails to support the cell", "data-marklen", "supportingKinds", "legend-note", "Upper case is a certified direct grade", "An ingredient is not a result", "Ingredients never promote a cell"):
         if token not in html + app:
             errors.append("interface token " + token)
     if "No stronger interpretation is licensed" in app:
@@ -203,7 +211,7 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
     normalized_status_counts = {status: status_counts.get(status, 0) for status in sorted(STATUSES)}
     if counts.get("status_counts") != normalized_status_counts or counts.get("migration_status_counts") != dict(sorted(all_migrations.items())):
         errors.append("coverage/migration counts")
-    if counts.get("coverage_classified") != 576 or counts.get("migration_reviewed") != 576 or counts.get("migration_pending") != 0 or counts.get("reviewed_gap") != 175 or counts.get("not_mapped") != 0 or counts.get("evidence_records") != 74:
+    if counts.get("coverage_classified") != 576 or counts.get("migration_reviewed") != 576 or counts.get("migration_pending") != 0 or counts.get("reviewed_gap") != 172 or counts.get("not_mapped") != 0 or counts.get("evidence_records") != 75:
         errors.append("review count summary")
     summary = {
         "digest": calculated_digest,
@@ -231,6 +239,8 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
         "model_scoped_interfaces": sum(len(item.get("interfaces", [])) for item in assemblies.get("model_scoped_assemblies", [])),
         "bounded_complete_assemblies": sum(item.get("assembly_disposition", {}).get("complete_within_declared_scope") is True for item in assemblies.get("model_scoped_assemblies", [])),
         "certified_cross_cell_interfaces": len(interfaces),
+        "certified_carrier_interfaces": len(carrier_interfaces),
+        "numerical_reproduction_records": len(numerical_records),
         "certified_assembly_interface_instances": sum(interface.get("certification_status") == "CERTIFIED" for assembly in assemblies.get("assemblies", []) for interface in assembly.get("interfaces", [])),
         "dual_direct_cells": dual,
         "mark_counts": dict(sorted(marks.items())),

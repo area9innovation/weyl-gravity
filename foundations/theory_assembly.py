@@ -81,6 +81,13 @@ ASSEMBLY_CONFIGS = [
         "carriers": ["FINITE_EXACT"],
     },
     {
+        "id": "BT_EUCLIDEAN_LATTICE_PROGRAMME",
+        "label": "BT positive Euclidean lattice programme",
+        "aim": "Track the exact finite-volume Gibbs construction and its numerical reproduction without importing continuum, Krein, or empirical claims.",
+        "foundations": ["FINITE_DISCRETE"],
+        "carriers": ["SMOOTH_DISTRIBUTIONAL"],
+    },
+    {
         "id": "WEAK_BASE_FINITE_EXACT",
         "label": "Weak-base finite-exact programme",
         "aim": "Expose the arithmetic or Choice strength of finite exact constructions without identifying distinct weak bases.",
@@ -134,6 +141,7 @@ def _assembly(
     obligations: list[str],
     cell_map: dict[tuple[str, str, str], dict[str, Any]],
     certified_interfaces: list[dict[str, Any]],
+    numerical_records: list[dict[str, Any]],
 ) -> dict[str, Any]:
     selected = []
     for obligation in obligations:
@@ -187,6 +195,7 @@ def _assembly(
     direct = sum(item["status"] in DIRECT for item in selected)
     assessed = sum(item["status"] != "NOT_MAPPED" for item in selected)
     certified_count = sum(item["certification_status"] == "CERTIFIED" for item in interfaces)
+    numerical = next((item for item in numerical_records if item.get("assembly") == config["id"]), None)
     return {
         **config,
         "kind": "NAVIGATIONAL_PROTOTYPE",
@@ -199,6 +208,7 @@ def _assembly(
             {"id": "CROSS_CELL_COMPOSITION", "label": "Cross-cell composition", "status": "PARTIALLY_CERTIFIED" if certified_count else "NOT_ASSESSED", "basis": f"{certified_count}/{len(interfaces)} required interfaces are certified; unassessed joins are missing work, not incompatibility results."},
             {"id": "PREDICTION_DERIVATION", "label": "Prediction derivation", "status": "NOT_EVALUABLE", "basis": "An end-to-end prediction test is premature until the required cross-cell joins are registered."},
             {"id": "OBSERVABLE_IDENTIFICATION", "label": "Observable identification", "status": "NOT_REGISTERED", "basis": "No assembly-level map from formal quantities to measured observables is registered."},
+            {"id": "NUMERICAL_REPRODUCIBILITY", "label": "Numerical reproducibility", "status": numerical["status"] if numerical else "NO_RECORDS", "basis": numerical["gate_passed"] + "; " + numerical["precision_gate"] + ". This is algorithmic reproduction, not empirical validation." if numerical else "No independent numerical reproduction record is registered for this assembly."},
             {"id": "EMPIRICAL_COMPARISON", "label": "Empirical comparison", "status": "NO_RECORDS", "basis": "The empirical ledger contains no comparison for this assembly."},
             {"id": "ROBUSTNESS_OUT_OF_SAMPLE", "label": "Robustness / out-of-sample", "status": "NO_RECORDS", "basis": "No robustness or held-out prediction record is registered."},
         ],
@@ -212,7 +222,9 @@ def build_assembly_assessment(dataset: dict[str, Any]) -> dict[str, Any]:
     obligations = [item["id"] for item in axes["REFINED_OBLIGATION"]["keys"]]
     cell_map = {(cell["foundation"], cell["carrier"], cell["obligation"]): cell for cell in dataset["cells"]}
     certified_interfaces = dataset.get("cross_cell_interfaces", [])
-    assemblies = [_assembly(config, obligations, cell_map, certified_interfaces) for config in ASSEMBLY_CONFIGS]
+    carrier_interfaces = dataset.get("carrier_interfaces", [])
+    numerical_records = dataset.get("numerical_reproducibility_records", [])
+    assemblies = [_assembly(config, obligations, cell_map, certified_interfaces, numerical_records) for config in ASSEMBLY_CONFIGS]
     calibration_control = json.loads(GR_CONTROL.read_text())
     gr_cassini = json.loads(GR_CASSINI_ASSEMBLY.read_text())
     value = {
@@ -222,10 +234,11 @@ def build_assembly_assessment(dataset: dict[str, Any]) -> dict[str, Any]:
         "lifecycle": "VERIFIED_NAVIGATION_ARTIFACT",
         "title": "Model-scoped prediction assemblies, theory prototypes, maturity rails, and calibration controls",
         "created": dataset["created"],
-        "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
+        "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
         "unit": "A prototype assembly is a deterministic coverage envelope over selected cells, not a composed theory.",
         "interface_vocabulary": INTERFACE_VOCABULARY,
         "certified_interface_records": certified_interfaces,
+        "certified_carrier_interface_records": carrier_interfaces,
         "assemblies": assemblies,
         "model_scoped_assemblies": [gr_cassini],
         "model_scoped_sources": [
@@ -244,11 +257,17 @@ def build_assembly_assessment(dataset: dict[str, Any]) -> dict[str, Any]:
             "benchmarks": [{**item, "status": "NOT_REGISTERED"} for item in BENCHMARKS],
             "records": [],
         },
+        "numerical_reproducibility_ledger": {
+            "unit": "Independent algorithmic reproduction of a mathematical/numerical calculation; this is distinct from empirical comparison and out-of-sample robustness.",
+            "records": numerical_records,
+        },
         "claim_flags": {
             "prototype_assemblies_generated": True,
             "selected_cells_content_addressed": True,
             "interface_and_coverage_states_separated": True,
             "at_least_one_cross_cell_interface_certified": bool(certified_interfaces),
+            "scoped_carrier_interface_registered": bool(carrier_interfaces),
+            "numerical_reproducibility_rail_declared": True,
             "empirical_record_schema_declared": True,
             "external_positive_control_registered": True,
             "missing_and_failed_states_separated": True,
@@ -265,6 +284,8 @@ def build_assembly_assessment(dataset: dict[str, Any]) -> dict[str, Any]:
             "that either certified scoped bridge supplies any unregistered carrier or foundation translation",
             "that direct coverage composes into an end-to-end prediction",
             "that a reduced or finite construction has a controlled continuum limit",
+            "that coarse independent-sampler compatibility is precision equivalence, empirical validation, or out-of-sample robustness",
+            "that the scoped Euclidean/Krein carrier non-identity forbids every conditional bridge",
             "that any prototype agrees with observations",
             "that the external standard-GR control is selected from the cube or transfers empirical support to a prototype",
             "that the benchmark catalogue is a complete set of physical tests",

@@ -45,14 +45,14 @@ def verify(*, result=None, report=None) -> tuple[list[str], list[str]]:
         "migration_reviewed": 576,
         "migration_pending": 0,
         "reviewed_no_transfer": 88,
-        "evidence_records": 74,
+        "evidence_records": 75,
         "graph_edges": 10,
         "ladder_levels": 6,
         "theory_profiles": 36,
         "carrier_envelopes": 6,
         "pareto_profiles": 4,
-        "prototype_assemblies": 7,
-        "assembly_interfaces": 49,
+        "prototype_assemblies": 8,
+        "assembly_interfaces": 56,
         "empirical_comparisons": 0,
         "calibration_comparisons": 4,
         "calibration_benchmark_families": 3,
@@ -61,9 +61,11 @@ def verify(*, result=None, report=None) -> tuple[list[str], list[str]]:
         "model_scoped_interfaces": 5,
         "bounded_complete_assemblies": 1,
         "certified_cross_cell_interfaces": 2,
+        "certified_carrier_interfaces": 1,
+        "numerical_reproduction_records": 1,
         "certified_assembly_interface_instances": 4,
-        "dual_direct_cells": 7,
-        "mark_counts": {"G": 30, "L": 102, "LR": 7, "Lr": 6, "Ol": 175, "P": 20, "Pl": 79, "Plr": 13, "Pr": 51, "R": 90, "Rl": 3},
+        "dual_direct_cells": 8,
+        "mark_counts": {"G": 29, "Gl": 1, "L": 106, "LR": 8, "Lr": 6, "Ol": 172, "P": 20, "Pl": 79, "Plr": 13, "Pr": 51, "R": 88, "Rl": 3},
     }
     if summary != expected_summary:
         errors.append("expected independent summary")
@@ -83,7 +85,7 @@ def verify(*, result=None, report=None) -> tuple[list[str], list[str]]:
         if flags.get(key) is not False:
             errors.append("boundary flag " + key)
     checks.append("fail-closed claim flags")
-    for token in ("576", "175 `REVIEWED_GAP`", "0\n`NOT_MAPPED`", "not a result", "selected priority", "literature-absence claim", "all 401 prior", "51 emitted blanks", "124", "without transferring evidence", "exactly twenty additional empty cells", "seventeen", "three pieces-only", "classification before QME restoration", "none of those toy-model statements is a Weyl-BV promotion", "two certified", "CONDITIONAL_BRIDGE", "unique normal", "separate coverage and migration", "Earlier cubes remain unchanged", "does not establish"):
+    for token in ("576", "172 `REVIEWED_GAP`", "0\n`NOT_MAPPED`", "not a result", "selected priority", "literature-absence claim", "all 401 prior", "51 emitted blanks", "124", "without transferring evidence", "exactly twenty additional empty cells", "seventeen", "three pieces-only", "classification before QME restoration", "none of those toy-model statements is a Weyl-BV promotion", "two certified", "CONDITIONAL_BRIDGE", "unique normal", "coarse numerical reproduction", "not empirical validation", "conditional bridges remain open", "separate coverage and migration", "Earlier cubes remain unchanged", "does not establish"):
         if token not in text:
             errors.append("report token " + token)
     checks.append("human-readable migration and deployment report")
