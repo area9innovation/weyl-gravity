@@ -811,6 +811,26 @@ directional Hessian below \(-31/3\) for the actual action minus the reference
 action.  Thus convex-perturbation transfer is obstructed; a genuinely
 nonconvex, annealed, coarea, or direct-marginal bridge remains open.
 
+The Hessian obstruction persists even if curvature is requested only in one
+lowest mode.  Certificate
+\cert{REVERSE_PHYSICS_BT_EUCLIDEAN_LOW_MODE_UV_SCHUR_OBSTRUCTION_V1}
+decomposes the earlier degenerating direction exactly as
+\[
+ v=-\frac23h+\frac13g,
+\]
+where \((-\Delta_6)h=h\) and \((-\Delta_6)g=4g\).  At the center family
+\(k(a)=(-a,0,0,-a,a,a)\), \(x=2^a\), eliminating the alternating mode \(g\)
+gives a lowest-mode Hessian Schur complement
+\[
+ 0<\kappa(x)\leq\frac{72}{x},\qquad
+ \lim_{x\to\infty}x\kappa(x)=18.
+\]
+Thus no field-independent pointwise Hessian estimate controls even this
+single infrared mode.  The same centers have action \(A(x)\sim x^4\), with
+\(\kappa(x)A(x)^{1/4}\to18\).  This leaves action-weighted or annealed
+curvature control viable and fixes the quarter-power behavior that the next
+candidate inequality must accommodate.
+
 \subsection{A finite BV contraction does not freeze the quantum theory}
 
 The energy-two free BV block provides another finite exact case.  The
@@ -1102,7 +1122,12 @@ action confinement of each lowest normalized Fourier mode.  The remaining
 gate is specifically annealed or normalized-marginal control.  A sharper
 bilaplacian envelope already gives the required uniform \(H^{-1}\) bound for
 its normalized radial reference measure, but an exact negative Hessian rules
-out transferring that bound by standard convex-perturbation comparison.
+out transferring that bound by standard convex-perturbation comparison.  A
+mode-specific repair also fails: ultraviolet relaxation drives the exact
+lowest-mode Hessian Schur complement to zero.  Because the degenerating
+backgrounds have quartically growing action, the next live route is an
+action-weighted annealed inverse-Hessian estimate, with direct marginal
+control as the fallback.
 
 \section{Limits of the present paper}
 \label{sec:limits}

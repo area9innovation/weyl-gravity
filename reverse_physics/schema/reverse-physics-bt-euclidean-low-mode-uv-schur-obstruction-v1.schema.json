@@ -1,0 +1,118 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-low-mode-uv-schur-obstruction-v1.schema.json",
+  "title": "BT lowest-mode ultraviolet Schur obstruction certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["certificate", "schema_version", "created", "dependency_tags", "lifecycle_state", "result_kind", "question", "answer", "lattice_and_modes", "exact_two_mode_hessian", "direct_projected_curvature_obstruction", "action_curvature_tradeoff", "method_disposition", "missing_object_ledger", "next_gate", "does_not_establish", "provenance", "verification_commands", "tier_receipt", "checks", "report", "schema"],
+  "$defs": {
+    "fraction": {
+      "type": "object", "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {"numerator": {"type": "integer"}, "denominator": {"type": "integer", "minimum": 1}}
+    },
+    "text": {"type": "string", "minLength": 1},
+    "six_vector": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"type": "integer"}},
+    "laurent": {"type": "object", "minProperties": 1, "patternProperties": {"^-?[0-9]+$": {"type": "integer"}}, "additionalProperties": false}
+  },
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_EUCLIDEAN_LOW_MODE_UV_SCHUR_OBSTRUCTION_V1"},
+    "schema_version": {"const": "reverse-physics-bt-euclidean-low-mode-uv-schur-obstruction-v1"},
+    "created": {"const": "2026-08-14"},
+    "dependency_tags": {"type": "array", "prefixItems": [{"const": "LOCAL-ALGEBRAIC"}, {"const": "EUCLIDEAN-SPECTRAL"}], "items": false},
+    "lifecycle_state": {"const": "OBSTRUCTION_PROVED"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "lattice_and_modes": {
+      "type": "object", "additionalProperties": false,
+      "required": ["lattice", "coordinates", "center_family", "lowest_mode_h", "lowest_mode_eigenvalue", "lowest_mode_norm_squared_per_spatial_site", "alternating_mode_g", "alternating_mode_eigenvalue", "alternating_mode_norm_squared_per_spatial_site", "mode_inner_product", "degenerating_direction_v", "decomposition", "v_dot_h", "v_lowest_mode_projection_norm_squared"],
+      "properties": {
+        "lattice": {"type": "object", "additionalProperties": false, "required": ["length", "dimensions", "spatial_volume"], "properties": {"length": {"const": 6}, "dimensions": {"const": 4}, "spatial_volume": {"const": 216}}},
+        "coordinates": {"$ref": "#/$defs/text"},
+        "center_family": {"$ref": "#/$defs/text"},
+        "lowest_mode_h": {"$ref": "#/$defs/six_vector"},
+        "lowest_mode_eigenvalue": {"const": 1},
+        "lowest_mode_norm_squared_per_spatial_site": {"const": 12},
+        "alternating_mode_g": {"$ref": "#/$defs/six_vector"},
+        "alternating_mode_eigenvalue": {"const": 4},
+        "alternating_mode_norm_squared_per_spatial_site": {"const": 6},
+        "mode_inner_product": {"const": 0},
+        "degenerating_direction_v": {"$ref": "#/$defs/six_vector"},
+        "decomposition": {"const": "v=-(2/3)*h+(1/3)*g"},
+        "v_dot_h": {"const": -8},
+        "v_lowest_mode_projection_norm_squared": {"$ref": "#/$defs/fraction"}
+      }
+    },
+    "exact_two_mode_hessian": {
+      "type": "object", "additionalProperties": false,
+      "required": ["action", "coupling_cancellation", "basis_order", "h_h_laurent_coefficients", "h_g_laurent_coefficients", "g_g_laurent_coefficients", "determinant_laurent_coefficients", "schur_complement", "positivity_and_bound", "exact_limit", "full_lattice_scaling", "fixtures"],
+      "properties": {
+        "action": {"$ref": "#/$defs/text"},
+        "coupling_cancellation": {"$ref": "#/$defs/text"},
+        "basis_order": {"type": "array", "prefixItems": [{"const": "h"}, {"const": "g"}], "items": false},
+        "h_h_laurent_coefficients": {"$ref": "#/$defs/laurent"},
+        "h_g_laurent_coefficients": {"$ref": "#/$defs/laurent"},
+        "g_g_laurent_coefficients": {"$ref": "#/$defs/laurent"},
+        "determinant_laurent_coefficients": {"$ref": "#/$defs/laurent"},
+        "schur_complement": {"$ref": "#/$defs/text"},
+        "positivity_and_bound": {"const": "for x>=2, 0<kappa(x)<=72/x"},
+        "exact_limit": {"const": "lim_(x->infinity) x*kappa(x)=18"},
+        "full_lattice_scaling": {"$ref": "#/$defs/text"},
+        "fixtures": {
+          "type": "array", "minItems": 12, "maxItems": 12,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["parameter", "x", "center_time_exponents", "h_hessian_per_spatial_site", "h_g_hessian_per_spatial_site", "g_g_hessian_per_spatial_site", "determinant_per_spatial_site_squared", "low_mode_schur_complement_per_spatial_site", "x_times_schur_complement", "degenerating_direction_hessian_per_spatial_site", "low_mode_projection_norm_per_spatial_site", "projected_curvature_ratio", "center_action_per_spatial_site", "formula_matches", "strict_schur_bound"],
+            "properties": {
+              "parameter": {"type": "integer", "minimum": 1, "maximum": 12},
+              "x": {"type": "integer", "minimum": 2},
+              "center_time_exponents": {"$ref": "#/$defs/six_vector"},
+              "h_hessian_per_spatial_site": {"$ref": "#/$defs/fraction"},
+              "h_g_hessian_per_spatial_site": {"$ref": "#/$defs/fraction"},
+              "g_g_hessian_per_spatial_site": {"$ref": "#/$defs/fraction"},
+              "determinant_per_spatial_site_squared": {"$ref": "#/$defs/fraction"},
+              "low_mode_schur_complement_per_spatial_site": {"$ref": "#/$defs/fraction"},
+              "x_times_schur_complement": {"$ref": "#/$defs/fraction"},
+              "degenerating_direction_hessian_per_spatial_site": {"$ref": "#/$defs/fraction"},
+              "low_mode_projection_norm_per_spatial_site": {"$ref": "#/$defs/fraction"},
+              "projected_curvature_ratio": {"$ref": "#/$defs/fraction"},
+              "center_action_per_spatial_site": {"$ref": "#/$defs/fraction"},
+              "formula_matches": {"const": true},
+              "strict_schur_bound": {"const": true}
+            }
+          }
+        }
+      }
+    },
+    "direct_projected_curvature_obstruction": {"type": "object", "additionalProperties": false, "required": ["directional_hessian", "lowest_projection_norm_squared", "ratio", "limit_bound", "conclusion", "status"], "properties": {"directional_hessian": {"$ref": "#/$defs/text"}, "lowest_projection_norm_squared": {"$ref": "#/$defs/text"}, "ratio": {"$ref": "#/$defs/text"}, "limit_bound": {"$ref": "#/$defs/text"}, "conclusion": {"$ref": "#/$defs/text"}, "status": {"const": "LOWEST_MODE_PROJECTED_STRONG_CONVEXITY_OBSTRUCTED"}}},
+    "action_curvature_tradeoff": {"type": "object", "additionalProperties": false, "required": ["center_action_laurent_coefficients", "action_asymptotic", "inverse_schur_asymptotic", "combined_asymptotic", "interpretation"], "properties": {"center_action_laurent_coefficients": {"$ref": "#/$defs/laurent"}, "action_asymptotic": {"const": "lim_(x->infinity) A(k(a)*log(2))/x^4=1"}, "inverse_schur_asymptotic": {"const": "lim_(x->infinity) 1/(x*kappa(x))=1/18"}, "combined_asymptotic": {"$ref": "#/$defs/text"}, "interpretation": {"$ref": "#/$defs/text"}}},
+    "method_disposition": {
+      "type": "object", "additionalProperties": false,
+      "required": ["global_bilaplacian_strong_convexity", "lowest_mode_projected_strong_convexity", "lowest_mode_uv_schur_uniform_curvature", "ordinary_convexity_of_full_action", "action_weighted_or_annealed_inverse_hessian", "direct_normalized_mode_marginal", "actual_interacting_h_minus_one_second_moment_bound", "interacting_tightness", "continuum_limit", "born_rule", "krein_reconstruction", "lorentzian_transfer"],
+      "properties": {
+        "global_bilaplacian_strong_convexity": {"const": "OBSTRUCTED_PREVIOUSLY"},
+        "lowest_mode_projected_strong_convexity": {"const": "OBSTRUCTED"},
+        "lowest_mode_uv_schur_uniform_curvature": {"const": "OBSTRUCTED"},
+        "ordinary_convexity_of_full_action": {"const": "NOT_DECIDED"},
+        "action_weighted_or_annealed_inverse_hessian": {"const": "OPEN"},
+        "direct_normalized_mode_marginal": {"const": "OPEN"},
+        "actual_interacting_h_minus_one_second_moment_bound": {"const": "OPEN"},
+        "interacting_tightness": {"const": "NOT_ESTABLISHED"},
+        "continuum_limit": {"const": "NOT_ESTABLISHED"},
+        "born_rule": {"const": "NOT_ESTABLISHED"},
+        "krein_reconstruction": {"const": "NOT_ASSESSED"},
+        "lorentzian_transfer": {"const": "NOT_ESTABLISHED"}
+      }
+    },
+    "missing_object_ledger": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/text"}},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "does_not_establish": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/text"}},
+    "provenance": {"type": "object", "additionalProperties": false, "required": ["repository_base_commit", "inputs", "arithmetic"], "properties": {"repository_base_commit": {"const": "f4aeebb11a70203360007a961f55d1680beca749"}, "inputs": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "object", "additionalProperties": false, "required": ["path", "sha256"], "properties": {"path": {"$ref": "#/$defs/text"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}}}, "arithmetic": {"$ref": "#/$defs/text"}}},
+    "verification_commands": {"type": "array", "minItems": 3, "items": {"$ref": "#/$defs/text"}},
+    "tier_receipt": {"type": "object", "minProperties": 5},
+    "checks": {"type": "object", "additionalProperties": false, "required": ["ok", "passed", "total", "failures", "details"], "properties": {"ok": {"const": true}, "passed": {"const": 16}, "total": {"const": 16}, "failures": {"type": "array", "maxItems": 0}, "details": {"type": "object", "minProperties": 16, "maxProperties": 16, "additionalProperties": {"const": true}}}},
+    "report": {"const": "reverse_physics/reports/bt-euclidean-low-mode-uv-schur-obstruction.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-euclidean-low-mode-uv-schur-obstruction-v1.schema.json"}
+  }
+}

@@ -1,0 +1,863 @@
+{
+  "certificate": "REVERSE_PHYSICS_BT_EUCLIDEAN_LOW_MODE_UV_SCHUR_OBSTRUCTION_V1",
+  "schema_version": "reverse-physics-bt-euclidean-low-mode-uv-schur-obstruction-v1",
+  "created": "2026-08-14",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "lifecycle_state": "OBSTRUCTION_PROVED",
+  "result_kind": "exact obstruction to a field-independent lowest-mode Hessian or Schur-complement covariance proof",
+  "question": "After global bilaplacian strong convexity fails, can a weaker field-independent Hessian estimate targeted only at a lowest Fourier mode prove the interacting H^-1 bound?",
+  "answer": "No. The certified degenerating direction contains a fixed nonzero lowest-mode component and an alternating ultraviolet component. Its curvature divided by the squared lowest-mode projection tends to zero. More sharply, the exact two-mode Hessian Schur complement tends to zero as 18/2^a. Thus a pointwise field-independent curvature estimate still cannot control even this one lowest mode. The bad backgrounds cost action asymptotic to 2^(4a), so an action-weighted or annealed estimate is not obstructed and remains the next gate.",
+  "lattice_and_modes": {
+    "lattice": {
+      "length": 6,
+      "dimensions": 4,
+      "spatial_volume": 216
+    },
+    "coordinates": "psi=lambda*phi=k*log(2), with all displayed time vectors constant on each spatial slice",
+    "center_family": "k(a)=a*(-1,0,0,-1,1,1), x=2^a, a>=1",
+    "lowest_mode_h": [
+      2,
+      1,
+      -1,
+      -2,
+      -1,
+      1
+    ],
+    "lowest_mode_eigenvalue": 1,
+    "lowest_mode_norm_squared_per_spatial_site": 12,
+    "alternating_mode_g": [
+      1,
+      -1,
+      1,
+      -1,
+      1,
+      -1
+    ],
+    "alternating_mode_eigenvalue": 4,
+    "alternating_mode_norm_squared_per_spatial_site": 6,
+    "mode_inner_product": 0,
+    "degenerating_direction_v": [
+      -1,
+      -1,
+      1,
+      1,
+      1,
+      -1
+    ],
+    "decomposition": "v=-(2/3)*h+(1/3)*g",
+    "v_dot_h": -8,
+    "v_lowest_mode_projection_norm_squared": {
+      "numerator": 16,
+      "denominator": 3
+    }
+  },
+  "exact_two_mode_hessian": {
+    "action": "A(psi)=(1/2)*sum_x[sum_(y~x)exp(psi_y-psi_x)-8]^2",
+    "coupling_cancellation": "For S_lambda(phi)=A(lambda*phi)/lambda^2, its phi-Hessian equals the psi-Hessian of A; the obstruction applies at lambda=2/5.",
+    "basis_order": [
+      "h",
+      "g"
+    ],
+    "h_h_laurent_coefficients": {
+      "-4": 4,
+      "-2": 2,
+      "-1": -2,
+      "1": -4,
+      "3": 8,
+      "4": 4
+    },
+    "h_g_laurent_coefficients": {
+      "-4": 8,
+      "-2": -8,
+      "-1": -16,
+      "1": -8,
+      "3": 16,
+      "4": 8
+    },
+    "g_g_laurent_coefficients": {
+      "-4": 16,
+      "-2": 32,
+      "-1": 16,
+      "1": -16,
+      "3": 32,
+      "4": 16
+    },
+    "determinant_laurent_coefficients": {
+      "-6": 288,
+      "-5": 288,
+      "-3": -288,
+      "-2": -288,
+      "-1": -288,
+      "0": -288,
+      "1": 576,
+      "2": 864,
+      "3": 288
+    },
+    "schur_complement": "kappa(x)=det(H_hg(x))/H_gg(x)",
+    "positivity_and_bound": "for x>=2, 0<kappa(x)<=72/x",
+    "exact_limit": "lim_(x->infinity) x*kappa(x)=18",
+    "full_lattice_scaling": "Every Hessian entry and kappa acquire the common factor 216; all curvature ratios are unchanged.",
+    "fixtures": [
+      {
+        "parameter": 1,
+        "x": 2,
+        "center_time_exponents": [
+          -1,
+          0,
+          0,
+          -1,
+          1,
+          1
+        ],
+        "h_hessian_per_spatial_site": {
+          "numerator": 479,
+          "denominator": 4
+        },
+        "h_g_hessian_per_spatial_site": {
+          "numerator": 461,
+          "denominator": 2
+        },
+        "g_g_hessian_per_spatial_site": {
+          "numerator": 497,
+          "denominator": 1
+        },
+        "determinant_per_spatial_site_squared": {
+          "numerator": 12771,
+          "denominator": 2
+        },
+        "low_mode_schur_complement_per_spatial_site": {
+          "numerator": 12771,
+          "denominator": 994
+        },
+        "x_times_schur_complement": {
+          "numerator": 12771,
+          "denominator": 497
+        },
+        "degenerating_direction_hessian_per_spatial_site": {
+          "numerator": 6,
+          "denominator": 1
+        },
+        "low_mode_projection_norm_per_spatial_site": {
+          "numerator": 16,
+          "denominator": 3
+        },
+        "projected_curvature_ratio": {
+          "numerator": 9,
+          "denominator": 8
+        },
+        "center_action_per_spatial_site": {
+          "numerator": 269,
+          "denominator": 16
+        },
+        "formula_matches": true,
+        "strict_schur_bound": true
+      },
+      {
+        "parameter": 2,
+        "x": 4,
+        "center_time_exponents": [
+          -2,
+          0,
+          0,
+          -2,
+          2,
+          2
+        ],
+        "h_hessian_per_spatial_site": {
+          "numerator": 97257,
+          "denominator": 64
+        },
+        "h_g_hessian_per_spatial_site": {
+          "numerator": 97137,
+          "denominator": 32
+        },
+        "g_g_hessian_per_spatial_site": {
+          "numerator": 97377,
+          "denominator": 16
+        },
+        "determinant_per_spatial_site_squared": {
+          "numerator": 4374765,
+          "denominator": 128
+        },
+        "low_mode_schur_complement_per_spatial_site": {
+          "numerator": 1458255,
+          "denominator": 259672
+        },
+        "x_times_schur_complement": {
+          "numerator": 1458255,
+          "denominator": 64918
+        },
+        "degenerating_direction_hessian_per_spatial_site": {
+          "numerator": 5,
+          "denominator": 2
+        },
+        "low_mode_projection_norm_per_spatial_site": {
+          "numerator": 16,
+          "denominator": 3
+        },
+        "projected_curvature_ratio": {
+          "numerator": 15,
+          "denominator": 32
+        },
+        "center_action_per_spatial_site": {
+          "numerator": 83313,
+          "denominator": 256
+        },
+        "formula_matches": true,
+        "strict_schur_bound": true
+      },
+      {
+        "parameter": 3,
+        "x": 8,
+        "center_time_exponents": [
+          -3,
+          0,
+          0,
+          -3,
+          3,
+          3
+        ],
+        "h_hessian_per_spatial_site": {
+          "numerator": 20938529,
+          "denominator": 1024
+        },
+        "h_g_hessian_per_spatial_site": {
+          "numerator": 20937665,
+          "denominator": 512
+        },
+        "g_g_hessian_per_spatial_site": {
+          "numerator": 20939393,
+          "denominator": 256
+        },
+        "determinant_per_spatial_site_squared": {
+          "numerator": 1695997521,
+          "denominator": 8192
+        },
+        "low_mode_schur_complement_per_spatial_site": {
+          "numerator": 1695997521,
+          "denominator": 670060576
+        },
+        "x_times_schur_complement": {
+          "numerator": 1695997521,
+          "denominator": 83757572
+        },
+        "degenerating_direction_hessian_per_spatial_site": {
+          "numerator": 9,
+          "denominator": 8
+        },
+        "low_mode_projection_norm_per_spatial_site": {
+          "numerator": 16,
+          "denominator": 3
+        },
+        "projected_curvature_ratio": {
+          "numerator": 27,
+          "denominator": 128
+        },
+        "center_action_per_spatial_site": {
+          "numerator": 20077505,
+          "denominator": 4096
+        },
+        "formula_matches": true,
+        "strict_schur_bound": true
+      },
+      {
+        "parameter": 4,
+        "x": 16,
+        "center_time_exponents": [
+          -4,
+          0,
+          0,
+          -4,
+          4,
+          4
+        ],
+        "h_hessian_per_spatial_site": {
+          "numerator": 4830787713,
+          "denominator": 16384
+        },
+        "h_g_hessian_per_spatial_site": {
+          "numerator": 4830781185,
+          "denominator": 8192
+        },
+        "g_g_hessian_per_spatial_site": {
+          "numerator": 4830794241,
+          "denominator": 4096
+        },
+        "determinant_per_spatial_site_squared": {
+          "numerator": 739110187161,
+          "denominator": 524288
+        },
+        "low_mode_schur_complement_per_spatial_site": {
+          "numerator": 246370062387,
+          "denominator": 206113887616
+        },
+        "x_times_schur_complement": {
+          "numerator": 246370062387,
+          "denominator": 12882117976
+        },
+        "degenerating_direction_hessian_per_spatial_site": {
+          "numerator": 17,
+          "denominator": 32
+        },
+        "low_mode_projection_norm_per_spatial_site": {
+          "numerator": 16,
+          "denominator": 3
+        },
+        "projected_curvature_ratio": {
+          "numerator": 51,
+          "denominator": 512
+        },
+        "center_action_per_spatial_site": {
+          "numerator": 4777697025,
+          "denominator": 65536
+        },
+        "formula_matches": true,
+        "strict_schur_bound": true
+      },
+      {
+        "parameter": 5,
+        "x": 32,
+        "center_time_exponents": [
+          -5,
+          0,
+          0,
+          -5,
+          5,
+          5
+        ],
+        "h_hessian_per_spatial_site": {
+          "numerator": 1168197534209,
+          "denominator": 262144
+        },
+        "h_g_hessian_per_spatial_site": {
+          "numerator": 1168197483521,
+          "denominator": 131072
+        },
+        "g_g_hessian_per_spatial_site": {
+          "numerator": 1168197584897,
+          "denominator": 65536
+        },
+        "determinant_per_spatial_site_squared": {
+          "numerator": 346954662641961,
+          "denominator": 33554432
+        },
+        "low_mode_schur_complement_per_spatial_site": {
+          "numerator": 346954662641961,
+          "denominator": 598117163467264
+        },
+        "x_times_schur_complement": {
+          "numerator": 346954662641961,
+          "denominator": 18691161358352
+        },
+        "degenerating_direction_hessian_per_spatial_site": {
+          "numerator": 33,
+          "denominator": 128
+        },
+        "low_mode_projection_norm_per_spatial_site": {
+          "numerator": 16,
+          "denominator": 3
+        },
+        "projected_curvature_ratio": {
+          "numerator": 99,
+          "denominator": 2048
+        },
+        "center_action_per_spatial_site": {
+          "numerator": 1164881886209,
+          "denominator": 1048576
+        },
+        "formula_matches": true,
+        "strict_schur_bound": true
+      },
+      {
+        "parameter": 6,
+        "x": 64,
+        "center_time_exponents": [
+          -6,
+          0,
+          0,
+          -6,
+          6,
+          6
+        ],
+        "h_hessian_per_spatial_site": {
+          "numerator": 290269995862017,
+          "denominator": 4194304
+        },
+        "h_g_hessian_per_spatial_site": {
+          "numerator": 290269995462657,
+          "denominator": 2097152
+        },
+        "g_g_hessian_per_spatial_site": {
+          "numerator": 290269996261377,
+          "denominator": 1048576
+        },
+        "determinant_per_spatial_site_squared": {
+          "numerator": 169807947501404745,
+          "denominator": 2147483648
+        },
+        "low_mode_schur_complement_per_spatial_site": {
+          "numerator": 56602649167134915,
+          "denominator": 198157650781100032
+        },
+        "x_times_schur_complement": {
+          "numerator": 56602649167134915,
+          "denominator": 3096213293454688
+        },
+        "degenerating_direction_hessian_per_spatial_site": {
+          "numerator": 65,
+          "denominator": 512
+        },
+        "low_mode_projection_norm_per_spatial_site": {
+          "numerator": 16,
+          "denominator": 3
+        },
+        "projected_curvature_ratio": {
+          "numerator": 195,
+          "denominator": 8192
+        },
+        "center_action_per_spatial_site": {
+          "numerator": 290060716470273,
+          "denominator": 16777216
+        },
+        "formula_matches": true,
+        "strict_schur_bound": true
+      },
+      {
+        "parameter": 7,
+        "x": 128,
+        "center_time_exponents": [
+          -7,
+          0,
+          0,
+          -7,
+          7,
+          7
+        ],
+        "h_hessian_per_spatial_site": {
+          "numerator": 73183459583991809,
+          "denominator": 67108864
+        },
+        "h_g_hessian_per_spatial_site": {
+          "numerator": 73183459580821505,
+          "denominator": 33554432
+        },
+        "g_g_hessian_per_spatial_site": {
+          "numerator": 73183459587162113,
+          "denominator": 16777216
+        },
+        "determinant_per_spatial_site_squared": {
+          "numerator": 84965996575787582601,
+          "denominator": 137438953472
+        },
+        "low_mode_schur_complement_per_spatial_site": {
+          "numerator": 84965996575787582601,
+          "denominator": 599518900938032029696
+        },
+        "x_times_schur_complement": {
+          "numerator": 84965996575787582601,
+          "denominator": 4683741413578375232
+        },
+        "degenerating_direction_hessian_per_spatial_site": {
+          "numerator": 129,
+          "denominator": 2048
+        },
+        "low_mode_projection_norm_per_spatial_site": {
+          "numerator": 16,
+          "denominator": 3
+        },
+        "projected_curvature_ratio": {
+          "numerator": 387,
+          "denominator": 32768
+        },
+        "center_action_per_spatial_site": {
+          "numerator": 73170163972685825,
+          "denominator": 268435456
+        },
+        "formula_matches": true,
+        "strict_schur_bound": true
+      },
+      {
+        "parameter": 8,
+        "x": 256,
+        "center_time_exponents": [
+          -8,
+          0,
+          0,
+          -8,
+          8,
+          8
+        ],
+        "h_hessian_per_spatial_site": {
+          "numerator": 18590858162265423873,
+          "denominator": 1073741824
+        },
+        "h_g_hessian_per_spatial_site": {
+          "numerator": 18590858162240159745,
+          "denominator": 536870912
+        },
+        "g_g_hessian_per_spatial_site": {
+          "numerator": 18590858162290688001,
+          "denominator": 268435456
+        },
+        "determinant_per_spatial_site_squared": {
+          "numerator": 43000654929300446775561,
+          "denominator": 8796093022208
+        },
+        "low_mode_schur_complement_per_spatial_site": {
+          "numerator": 14333551643100148925187,
+          "denominator": 203061746753980421472256
+        },
+        "x_times_schur_complement": {
+          "numerator": 14333551643100148925187,
+          "denominator": 793209948257736021376
+        },
+        "degenerating_direction_hessian_per_spatial_site": {
+          "numerator": 257,
+          "denominator": 8192
+        },
+        "low_mode_projection_norm_per_spatial_site": {
+          "numerator": 16,
+          "denominator": 3
+        },
+        "projected_curvature_ratio": {
+          "numerator": 771,
+          "denominator": 131072
+        },
+        "center_action_per_spatial_site": {
+          "numerator": 18590010464544948225,
+          "denominator": 4294967296
+        },
+        "formula_matches": true,
+        "strict_schur_bound": true
+      },
+      {
+        "parameter": 9,
+        "x": 512,
+        "center_time_exponents": [
+          -9,
+          0,
+          0,
+          -9,
+          9,
+          9
+        ],
+        "h_hessian_per_spatial_site": {
+          "numerator": 4740813191758915698689,
+          "denominator": 17179869184
+        },
+        "h_g_hessian_per_spatial_site": {
+          "numerator": 4740813191758713978881,
+          "denominator": 8589934592
+        },
+        "g_g_hessian_per_spatial_site": {
+          "numerator": 4740813191759117418497,
+          "denominator": 4294967296
+        },
+        "determinant_per_spatial_site_squared": {
+          "numerator": 21888334506350603334062601,
+          "denominator": 562949953421312
+        },
+        "low_mode_schur_complement_per_spatial_site": {
+          "numerator": 21888334506350603334062601,
+          "denominator": 621387866670251038277238784
+        },
+        "x_times_schur_complement": {
+          "numerator": 21888334506350603334062601,
+          "denominator": 1213648177090334059135232
+        },
+        "degenerating_direction_hessian_per_spatial_site": {
+          "numerator": 513,
+          "denominator": 32768
+        },
+        "low_mode_projection_norm_per_spatial_site": {
+          "numerator": 16,
+          "denominator": 3
+        },
+        "projected_curvature_ratio": {
+          "numerator": 1539,
+          "denominator": 524288
+        },
+        "center_action_per_spatial_site": {
+          "numerator": 4740759043422386126849,
+          "denominator": 68719476736
+        },
+        "formula_matches": true,
+        "strict_schur_bound": true
+      },
+      {
+        "parameter": 10,
+        "x": 1024,
+        "center_time_exponents": [
+          -10,
+          0,
+          0,
+          -10,
+          10,
+          10
+        ],
+        "h_hessian_per_spatial_site": {
+          "numerator": 1211287001730163554123777,
+          "denominator": 274877906944
+        },
+        "h_g_hessian_per_spatial_site": {
+          "numerator": 1211287001730161941938177,
+          "denominator": 137438953472
+        },
+        "g_g_hessian_per_spatial_site": {
+          "numerator": 1211287001730165166309377,
+          "denominator": 68719476736
+        },
+        "determinant_per_spatial_site_squared": {
+          "numerator": 11174122590960753829321122825,
+          "denominator": 36028797018963968
+        },
+        "low_mode_schur_complement_per_spatial_site": {
+          "numerator": 3724707530320251276440374275,
+          "denominator": 211687746521034944904670216192
+        },
+        "x_times_schur_complement": {
+          "numerator": 3724707530320251276440374275,
+          "denominator": 206726314961948188383467008
+        },
+        "degenerating_direction_hessian_per_spatial_site": {
+          "numerator": 1025,
+          "denominator": 131072
+        },
+        "low_mode_projection_norm_per_spatial_site": {
+          "numerator": 16,
+          "denominator": 3
+        },
+        "projected_curvature_ratio": {
+          "numerator": 3075,
+          "denominator": 2097152
+        },
+        "center_action_per_spatial_site": {
+          "numerator": 1211283539594545470636033,
+          "denominator": 1099511627776
+        },
+        "formula_matches": true,
+        "strict_schur_bound": true
+      },
+      {
+        "parameter": 11,
+        "x": 2048,
+        "center_time_exponents": [
+          -11,
+          0,
+          0,
+          -11,
+          11,
+          11
+        ],
+        "h_hessian_per_spatial_site": {
+          "numerator": 309787241240219924706623489,
+          "denominator": 4398046511104
+        },
+        "h_g_hessian_per_spatial_site": {
+          "numerator": 309787241240219911815430145,
+          "denominator": 2199023255552
+        },
+        "g_g_hessian_per_spatial_site": {
+          "numerator": 309787241240219937597816833,
+          "denominator": 1099511627776
+        },
+        "determinant_per_spatial_site_squared": {
+          "numerator": 5712786515710895552272678275081,
+          "denominator": 2305843009213693952
+        },
+        "low_mode_schur_complement_per_spatial_site": {
+          "numerator": 5712786515710895552272678275081,
+          "denominator": 649670932541409722573136766959616
+        },
+        "x_times_schur_complement": {
+          "numerator": 5712786515710895552272678275081,
+          "denominator": 317222135029985216100164436992
+        },
+        "degenerating_direction_hessian_per_spatial_site": {
+          "numerator": 2049,
+          "denominator": 524288
+        },
+        "low_mode_projection_norm_per_spatial_site": {
+          "numerator": 16,
+          "denominator": 3
+        },
+        "projected_curvature_ratio": {
+          "numerator": 6147,
+          "denominator": 8388608
+        },
+        "center_action_per_spatial_site": {
+          "numerator": 309787019771310189360185345,
+          "denominator": 17592186044416
+        },
+        "formula_matches": true,
+        "strict_schur_bound": true
+      },
+      {
+        "parameter": 12,
+        "x": 4096,
+        "center_time_exponents": [
+          -12,
+          0,
+          0,
+          -12,
+          12,
+          12
+        ],
+        "h_hessian_per_spatial_site": {
+          "numerator": 79266848139339084188176351233,
+          "denominator": 70368744177664
+        },
+        "h_g_hessian_per_spatial_site": {
+          "numerator": 79266848139339084085071970305,
+          "denominator": 35184372088832
+        },
+        "g_g_hessian_per_spatial_site": {
+          "numerator": 79266848139339084291280732161,
+          "denominator": 17592186044416
+        },
+        "determinant_per_spatial_site_squared": {
+          "numerator": 2922806491441850050003370653028361,
+          "denominator": 147573952589676412928
+        },
+        "low_mode_schur_complement_per_spatial_site": {
+          "numerator": 974268830480616683334456884342787,
+          "denominator": 221646172145481652399503960017207296
+        },
+        "x_times_schur_complement": {
+          "numerator": 974268830480616683334456884342787,
+          "denominator": 54112834996455481542847646488576
+        },
+        "degenerating_direction_hessian_per_spatial_site": {
+          "numerator": 4097,
+          "denominator": 2097152
+        },
+        "low_mode_projection_norm_per_spatial_site": {
+          "numerator": 16,
+          "denominator": 3
+        },
+        "projected_curvature_ratio": {
+          "numerator": 12291,
+          "denominator": 33554432
+        },
+        "center_action_per_spatial_site": {
+          "numerator": 79266833968782559812176052225,
+          "denominator": 281474976710656
+        },
+        "formula_matches": true,
+        "strict_schur_bound": true
+      }
+    ]
+  },
+  "direct_projected_curvature_obstruction": {
+    "directional_hessian": "H_A[v,v]=8*(x+1)/x^2 per spatial site",
+    "lowest_projection_norm_squared": "||P_h v||^2=16/3 per spatial site",
+    "ratio": "H_A[v,v]/||P_h v||^2=(3/2)*(x+1)/x^2",
+    "limit_bound": "0<ratio<=3/x, hence ratio tends to zero",
+    "conclusion": "No c>0 can make Hess A(psi)[w,w]>=c*||P_h w||^2 for every field psi and direction w, even on the fixed 6^4 lattice.",
+    "status": "LOWEST_MODE_PROJECTED_STRONG_CONVEXITY_OBSTRUCTED"
+  },
+  "action_curvature_tradeoff": {
+    "center_action_laurent_coefficients": {
+      "-4": 1,
+      "-2": -1,
+      "-1": -2,
+      "0": 6,
+      "1": -4,
+      "2": -3,
+      "3": 2,
+      "4": 1
+    },
+    "action_asymptotic": "lim_(x->infinity) A(k(a)*log(2))/x^4=1",
+    "inverse_schur_asymptotic": "lim_(x->infinity) 1/(x*kappa(x))=1/18",
+    "combined_asymptotic": "kappa(x)*A(k(a)*log(2))^(1/4) tends to 18",
+    "interpretation": "The pointwise curvature degeneracy occurs only along this family of exponentially suppressed high-action backgrounds. This does not prove an annealed bound, but identifies an action-weighted inverse-Hessian estimate as the live route."
+  },
+  "method_disposition": {
+    "global_bilaplacian_strong_convexity": "OBSTRUCTED_PREVIOUSLY",
+    "lowest_mode_projected_strong_convexity": "OBSTRUCTED",
+    "lowest_mode_uv_schur_uniform_curvature": "OBSTRUCTED",
+    "ordinary_convexity_of_full_action": "NOT_DECIDED",
+    "action_weighted_or_annealed_inverse_hessian": "OPEN",
+    "direct_normalized_mode_marginal": "OPEN",
+    "actual_interacting_h_minus_one_second_moment_bound": "OPEN",
+    "interacting_tightness": "NOT_ESTABLISHED",
+    "continuum_limit": "NOT_ESTABLISHED",
+    "born_rule": "NOT_ESTABLISHED",
+    "krein_reconstruction": "NOT_ASSESSED",
+    "lorentzian_transfer": "NOT_ESTABLISHED"
+  },
+  "missing_object_ledger": [
+    "a global action-weighted bound for the inverse low-mode Schur complement",
+    "or a direct normalized lowest-mode marginal estimate",
+    "an L-uniform actual interacting H^-1 second moment",
+    "tightness and identification of any Euclidean limit"
+  ],
+  "next_gate": "Test whether the low-mode Schur complement obeys a global action-weighted lower bound with the family-sharp quarter-power weight, then integrate that weight under the Gibbs measure; otherwise attack the normalized marginal directly.",
+  "does_not_establish": [
+    "nonconvexity of the full finite-volume action",
+    "failure of an action-weighted or annealed covariance estimate",
+    "failure of the actual interacting H^-1 moment bound",
+    "tightness or a continuum Euclidean BT measure",
+    "a Born rule or Krein reconstruction",
+    "anything LORENTZIAN-CAUSAL"
+  ],
+  "provenance": {
+    "repository_base_commit": "f4aeebb11a70203360007a961f55d1680beca749",
+    "inputs": [
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_UNIFORM_CONVEXITY_OBSTRUCTION_V1.json",
+        "sha256": "c6aeb2e6cbb7bd6066534304a76a977f9efec57b52d145bd9bfaae438e51f550"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_SCHWINGER_DYSON_MODE_OBSTRUCTION_V1.json",
+        "sha256": "939bc4d65cd7c9c7e677eea2ac072cf9fe3efb2c91451a4ca5c9994fb1f90776"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_BILAPLACIAN_REFERENCE_BRIDGE_V1.json",
+        "sha256": "b96b3aba94374af4351c4e4609cc5f86eeb96562b189a527fdea65bc2bb7d559"
+      }
+    ],
+    "arithmetic": "Exact Python Fraction arithmetic for dyadic weights, mixed Hessians, determinants, Schur complements, projections, and Laurent-polynomial fixtures"
+  },
+  "verification_commands": [
+    "python3 reverse_physics/bt_euclidean_low_mode_uv_schur_obstruction.py --check",
+    "python3 reverse_physics/verify_bt_euclidean_low_mode_uv_schur_obstruction.py",
+    "python3 -m unittest -v reverse_physics.tests.test_bt_euclidean_low_mode_uv_schur_obstruction"
+  ],
+  "tier_receipt": {
+    "tier_0": "parse changed Python and JSON, deterministic generation, strict schema, scoped diff check, and staged-diff inspection",
+    "tier_1": "exact producer, independent full-6^4 enumeration, unit tests, and mutation rejection",
+    "tier_2": "three predecessor certificates checked by content hash; no sampler rerun because the result is exact and algebraic",
+    "tier_3": "not run: no freeze, release, shared classical operator, quantum lifecycle, or Lorentzian claim changes",
+    "memory_policy": "all commands sequential under a 500000 KiB virtual-memory ceiling where relevant"
+  },
+  "checks": {
+    "ok": true,
+    "passed": 16,
+    "total": 16,
+    "failures": [],
+    "details": {
+      "coupling_is_two_fifths": true,
+      "lowest_mode_has_eigenvalue_one": true,
+      "alternating_mode_has_eigenvalue_four": true,
+      "modes_are_orthogonal": true,
+      "mode_norms_are_twelve_and_six": true,
+      "degenerating_direction_decomposition_is_exact": true,
+      "low_mode_projection_is_nonzero": true,
+      "all_laurent_formulas_match": true,
+      "all_schur_complements_are_positive_and_bounded": true,
+      "projected_curvature_has_zero_limit_bound": true,
+      "schur_complement_has_zero_limit": true,
+      "action_cost_has_quartic_asymptotic": true,
+      "weighted_schur_asymptotic_is_eighteen": true,
+      "mode_targeted_pointwise_hessian_route_is_obstructed": true,
+      "annealed_interacting_bound_remains_open": true,
+      "no_continuum_born_krein_or_lorentzian_promotion": true
+    }
+  },
+  "report": "reverse_physics/reports/bt-euclidean-low-mode-uv-schur-obstruction.md",
+  "schema": "reverse_physics/schema/reverse-physics-bt-euclidean-low-mode-uv-schur-obstruction-v1.schema.json"
+}
