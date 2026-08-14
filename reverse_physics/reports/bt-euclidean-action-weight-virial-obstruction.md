@@ -189,15 +189,16 @@ Gibbs integration by parts.
 
 The actual action density and its annealed half weight are now uniformly
 bounded, but the requested interacting \(H^{-1}\) estimate remains open.  The
-next exact calculation is sharply formulated:
+successor certificate
+`REVERSE_PHYSICS_BT_EUCLIDEAN_ORTHOGONAL_HESSIAN_BLOCK_OBSTRUCTION_V1`
+has now decided the first item below negatively:
 
-1. prove or obstruct positivity of the orthogonal Hessian block needed to
-   define the lowest-mode Schur complement globally;
-2. prove or obstruct the normalized half-action-density curvature bound;
-3. combine those curvature facts with the certified annealed half-action
-   factor; or
-4. if the pointwise curvature route fails, estimate the normalized low-mode
-   marginal directly.
+1. the orthogonal Hessian block is indefinite on an exact period-four,
+   unbounded-volume sequence;
+2. the positive global Schur complement and its pointwise half-action
+   curvature refinement are therefore obstructed as formulated;
+3. the next live calculation is the normalized low-frequency marginal
+   directly, followed by Fourier-shell control.
 
 No result here establishes tightness, a continuum Euclidean measure, a Born
 rule, Krein reconstruction, analytic continuation, or anything

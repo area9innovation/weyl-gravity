@@ -1,0 +1,300 @@
+{
+  "answer": "No. On every four-dimensional periodic lattice with length divisible by four, the period-four background psi_x=log(4/3)*sum_mu(-1)^x_mu has a direction v_x=product_mu cos(pi*x_mu/2) orthogonal to the entire lowest axial Fourier eigenspace. Exact rational differentiation gives Hess A[v,v]=-(13880/81)*(L/4)^4. Hence the orthogonal block is indefinite and the proposed global Schur/half-action-curvature route is obstructed. This is a method obstruction, not failure of the actual interacting H^-1 moment.",
+  "cell_calculation": {
+    "action": {
+      "denominator": 81,
+      "numerator": 80458
+    },
+    "action_density": {
+      "denominator": 10368,
+      "numerator": 40229
+    },
+    "direction_negative_laplacian_eigenvalue": 8,
+    "direction_norm_squared": 16,
+    "directional_hessian": {
+      "denominator": 81,
+      "numerator": -13880
+    },
+    "directional_hessian_decomposition": {
+      "all_even_vertices": {
+        "count": 16,
+        "first_variation_square_per_vertex": {
+          "denominator": 4,
+          "numerator": 81
+        },
+        "residual": {
+          "denominator": 2,
+          "numerator": -7
+        },
+        "second_variation_per_vertex": {
+          "denominator": 2,
+          "numerator": 9
+        },
+        "total_contribution": {
+          "denominator": 1,
+          "numerator": 72
+        }
+      },
+      "exactly_one_odd_coordinate_vertices": {
+        "count": 64,
+        "first_variation_square_per_vertex": {
+          "denominator": 1,
+          "numerator": 0
+        },
+        "residual": {
+          "denominator": 72,
+          "numerator": -77
+        },
+        "second_variation_per_vertex": {
+          "denominator": 9,
+          "numerator": 32
+        },
+        "total_contribution": {
+          "denominator": 81,
+          "numerator": -19712
+        }
+      },
+      "two_or_more_odd_coordinate_vertices": "The direction and all one-link variations vanish, so their Hessian contribution is zero."
+    },
+    "free_bilaplacian_form": 1024,
+    "rayleigh_quotient": {
+      "denominator": 162,
+      "numerator": -1735
+    },
+    "residual_classes": [
+      {
+        "action_contribution": {
+          "denominator": 1,
+          "numerator": 98
+        },
+        "odd_coordinate_count": 0,
+        "residual": {
+          "denominator": 2,
+          "numerator": -7
+        },
+        "vertex_count": 16
+      },
+      {
+        "action_contribution": {
+          "denominator": 162,
+          "numerator": 5929
+        },
+        "odd_coordinate_count": 1,
+        "residual": {
+          "denominator": 72,
+          "numerator": -77
+        },
+        "vertex_count": 64
+      },
+      {
+        "action_contribution": {
+          "denominator": 27,
+          "numerator": 2401
+        },
+        "odd_coordinate_count": 2,
+        "residual": {
+          "denominator": 36,
+          "numerator": 49
+        },
+        "vertex_count": 96
+      },
+      {
+        "action_contribution": {
+          "denominator": 18,
+          "numerator": 8281
+        },
+        "odd_coordinate_count": 3,
+        "residual": {
+          "denominator": 24,
+          "numerator": 91
+        },
+        "vertex_count": 64
+      },
+      {
+        "action_contribution": {
+          "denominator": 81,
+          "numerator": 25088
+        },
+        "odd_coordinate_count": 4,
+        "residual": {
+          "denominator": 9,
+          "numerator": 56
+        },
+        "vertex_count": 16
+      }
+    ],
+    "status": "STRICTLY_NEGATIVE"
+  },
+  "certificate": "REVERSE_PHYSICS_BT_EUCLIDEAN_ORTHOGONAL_HESSIAN_BLOCK_OBSTRUCTION_V1",
+  "checks": {
+    "details": {
+      "actual_h_minus_one_moment_remains_open": true,
+      "cell_action_is_80458_over_81": true,
+      "center_and_direction_are_mean_zero": true,
+      "dimension_degree_and_coupling_are_exact": true,
+      "direction_is_orthogonal_to_full_lowest_axial_eigenspace": true,
+      "direction_norm_and_eigenvalue_are_exact": true,
+      "directional_hessian_is_strictly_negative": true,
+      "even_vertex_hessian_contribution_is_72": true,
+      "free_bilaplacian_form_is_1024": true,
+      "global_orthogonal_block_route_is_obstructed": true,
+      "no_continuum_born_krein_or_lorentzian_promotion": true,
+      "one_odd_hessian_contribution_is_minus_19712_over_81": true,
+      "period_four_replication_preserves_negative_sign": true,
+      "rational_base_is_four_thirds": true,
+      "rayleigh_quotient_is_minus_1735_over_162": true,
+      "residual_class_counts_sum_to_256": true,
+      "residuals_are_exact": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 17,
+    "total": 17
+  },
+  "created": "2026-08-14",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "does_not_establish": [
+    "failure of every local, annealed, or variational covariance method",
+    "failure or divergence of the actual interacting H^-1 moment",
+    "absence of interacting Euclidean subsequential or continuum limits",
+    "a Born rule or Krein reconstruction",
+    "anything LORENTZIAN-CAUSAL"
+  ],
+  "lifecycle_state": "OBSTRUCTION_PROVED",
+  "lowest_mode_orthogonality": {
+    "conclusion": "v lies in the Euclidean orthogonal complement of the full lowest axial eigenspace",
+    "full_real_eigenspace_dimension": 8,
+    "lowest_axial_eigenvalue": "4*sin(pi/L)^2 for each sine/cosine pair in one axis",
+    "proof": "Every axial lowest mode depends on one coordinate only. The inner product with v factorizes and contains sum c=0 in each of the other three coordinates.",
+    "status": "PROVED"
+  },
+  "method_disposition": {
+    "actual_annealed_half_action_density_factor": "PROVED_BY_PREDECESSOR",
+    "actual_interacting_h_minus_one_second_moment_bound": "OPEN",
+    "actual_uniform_action_density_moment": "PROVED_BY_PREDECESSOR",
+    "born_rule": "NOT_ESTABLISHED",
+    "continuum_limit": "NOT_ESTABLISHED",
+    "direct_normalized_low_mode_marginal": "OPEN",
+    "global_lowest_mode_schur_complement_definition": "OBSTRUCTED",
+    "global_orthogonal_hessian_block_positivity": "OBSTRUCTED",
+    "interacting_tightness": "NOT_ESTABLISHED",
+    "krein_reconstruction": "NOT_ASSESSED",
+    "lorentzian_transfer": "NOT_ESTABLISHED",
+    "pointwise_half_action_curvature_route": "OBSTRUCTED_AS_FORMULATED"
+  },
+  "missing_object_ledger": [
+    "a direct normalized low-frequency marginal or multiscale shell estimate",
+    "an L-uniform actual interacting H^-1 second moment or divergence theorem",
+    "tightness in a topology compactly weaker than the moment bound",
+    "identification and uniqueness of any Euclidean subsequential limit"
+  ],
+  "next_gate": "Abandon the global Schur-complement route. Bound the normalized lowest-mode marginal directly, then extend the estimate over dyadic Fourier shells; alternatively exhibit a controlled volume sequence on which the actual Gibbs H^-1 moment diverges.",
+  "period_four_family": {
+    "cell_length": 4,
+    "cell_volume": 256,
+    "center": "psi_x=log(4/3)*k_x, k_x=sum_(mu=1)^4 (-1)^(x_mu)",
+    "coordinates": "psi=lambda*phi",
+    "coupling": {
+      "denominator": 5,
+      "numerator": 2
+    },
+    "degree": 8,
+    "dimension": 4,
+    "direction": "v_x=product_(mu=1)^4 c(x_mu), c=(1,0,-1,0) periodically",
+    "mean_zero_proof": "sum_(j=0)^3 (-1)^j=0 and sum_(j=0)^3 c(j)=0; tensor factorization gives zero means on every replicated cell",
+    "neighbor_weights": "flipping coordinate mu changes k by -2*(-1)^x_mu, so the directed weight is 9/16 at an even coordinate and 16/9 at an odd coordinate",
+    "rational_exponential_base": {
+      "denominator": 3,
+      "numerator": 4
+    },
+    "scope": "L^4 periodic lattices with L=4m and integer m>=1",
+    "status": "EXACT_RATIONAL_FAMILY"
+  },
+  "provenance": {
+    "arithmetic": "Python Fraction arithmetic; the producer uses five exact parity classes and the independent verifier enumerates the full 4^4 graph vertex by vertex",
+    "inputs": [
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_LOW_MODE_UV_SCHUR_OBSTRUCTION_V1.json",
+        "sha256": "7284cc2e295449465d10c4de4ee1f47d73b4d2ea7b3ce36f9d208f4089629651"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_ACTION_WEIGHT_VIRIAL_OBSTRUCTION_V1.json",
+        "sha256": "65e93f1948c5f449c42700e4c8b9865d193f48be0c0f22fb7cb25cb8e8c8a04d"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_AFFINE_VIRIAL_ACTION_DENSITY_V1.json",
+        "sha256": "5ca8a2a7bc0d48300b0af031990e3c9c177fdec0d35f763666d2e397b495e1e0"
+      }
+    ],
+    "repository_base_commit": "ee90495d73f5dcee04bcda6db41a854acc9cea80"
+  },
+  "question": "Is the BT action Hessian block orthogonal to a lowest Fourier mode globally positive, so that its Schur complement and the half-action curvature route are defined at every field?",
+  "replication": {
+    "action": "A_L=(80458/81)*m^4",
+    "action_density": {
+      "denominator": 10368,
+      "numerator": 40229
+    },
+    "cell_multiplier": "m^4=(L/4)^4",
+    "directional_hessian": "Hess A_L[v,v]=-(13880/81)*m^4",
+    "lambda_point_four_statement": "For S_lambda(phi)=A(lambda*phi)/lambda^2 at lambda=2/5, the phi-directional Hessian equals the displayed Hessian of A.",
+    "status": "NEGATIVE_ON_AN_UNBOUNDED_VOLUME_SEQUENCE"
+  },
+  "report": "reverse_physics/reports/bt-euclidean-orthogonal-hessian-block-obstruction.md",
+  "result_kind": "exact all-volume-sequence obstruction to positivity of the Hessian block orthogonal to the lowest axial Fourier modes",
+  "schema": "reverse_physics/schema/reverse-physics-bt-euclidean-orthogonal-hessian-block-obstruction-v1.schema.json",
+  "schema_version": "reverse-physics-bt-euclidean-orthogonal-hessian-block-obstruction-v1",
+  "tier_receipt": {
+    "command_results": [
+      {
+        "command": "ulimit -v 500000; python3 reverse_physics/bt_euclidean_orthogonal_hessian_block_obstruction.py --check",
+        "elapsed_seconds": "0.03",
+        "peak_rss_kib": 20444,
+        "status": "PASS_17_OF_17"
+      },
+      {
+        "command": "ulimit -v 500000; python3 reverse_physics/verify_bt_euclidean_orthogonal_hessian_block_obstruction.py",
+        "elapsed_seconds": "0.28",
+        "peak_rss_kib": 30952,
+        "status": "PASS_13_OF_13"
+      },
+      {
+        "command": "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_euclidean_orthogonal_hessian_block_obstruction",
+        "elapsed_seconds": "1.58",
+        "peak_rss_kib": 31468,
+        "status": "PASS_11_TESTS"
+      },
+      {
+        "command": "ulimit -v 500000; python3 paper/generate_21_reverse_foundations_claim_map.py --check && python3 paper/verify_21_reverse_foundations_claim_map.py",
+        "elapsed_seconds": "0.12",
+        "peak_rss_kib": 29392,
+        "status": "PASS"
+      },
+      {
+        "command": "ulimit -v 500000; pdflatex -interaction=nonstopmode -halt-on-error paper/21-reverse-foundations-of-physics.tex (twice)",
+        "elapsed_seconds": "1.54",
+        "peak_rss_kib": 53148,
+        "status": "PASS_42_PAGES"
+      },
+      {
+        "command": "GOMEMLIMIT=300MiB GOGC=50 /home/alstrup/tmp/sf-sfc-1000 conform planning/work-items",
+        "elapsed_seconds": "1.10",
+        "peak_rss_kib": 7232,
+        "status": "PASS_CLEAN"
+      }
+    ],
+    "resource_policy": "all scientific commands run sequentially under ulimit -v 500000",
+    "tier_0": "parse, strict schema, deterministic generation, scoped git diff --check, and staged-diff inspection",
+    "tier_1": "producer, independent full-graph verifier, and mutation tests",
+    "tier_2": "Paper 21 claim-map generator and independent verifier; predecessors reused by content hash",
+    "tier_3": "NOT_RUN: no freeze, release, shared core algebra, continuum, quantum lifecycle, or Lorentzian promotion"
+  },
+  "verification_commands": [
+    "python3 reverse_physics/bt_euclidean_orthogonal_hessian_block_obstruction.py --check",
+    "python3 reverse_physics/verify_bt_euclidean_orthogonal_hessian_block_obstruction.py",
+    "python3 -m unittest -v reverse_physics.tests.test_bt_euclidean_orthogonal_hessian_block_obstruction"
+  ]
+}

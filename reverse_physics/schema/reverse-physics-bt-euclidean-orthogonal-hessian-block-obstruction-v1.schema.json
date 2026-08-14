@@ -1,0 +1,331 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-orthogonal-hessian-block-obstruction-v1.schema.json",
+  "title": "BT orthogonal Hessian block obstruction certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "certificate",
+    "schema_version",
+    "created",
+    "dependency_tags",
+    "lifecycle_state",
+    "result_kind",
+    "question",
+    "answer",
+    "period_four_family",
+    "cell_calculation",
+    "lowest_mode_orthogonality",
+    "replication",
+    "method_disposition",
+    "missing_object_ledger",
+    "next_gate",
+    "does_not_establish",
+    "provenance",
+    "verification_commands",
+    "tier_receipt",
+    "checks",
+    "report",
+    "schema"
+  ],
+  "$defs": {
+    "fraction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      }
+    },
+    "text": {"type": "string", "minLength": 1},
+    "text_array": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/text"}
+    },
+    "residual_row": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "odd_coordinate_count",
+        "vertex_count",
+        "residual",
+        "action_contribution"
+      ],
+      "properties": {
+        "odd_coordinate_count": {"type": "integer", "minimum": 0, "maximum": 4},
+        "vertex_count": {"type": "integer", "minimum": 1},
+        "residual": {"$ref": "#/$defs/fraction"},
+        "action_contribution": {"$ref": "#/$defs/fraction"}
+      }
+    },
+    "hessian_class": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "count",
+        "residual",
+        "first_variation_square_per_vertex",
+        "second_variation_per_vertex",
+        "total_contribution"
+      ],
+      "properties": {
+        "count": {"type": "integer", "minimum": 1},
+        "residual": {"$ref": "#/$defs/fraction"},
+        "first_variation_square_per_vertex": {"$ref": "#/$defs/fraction"},
+        "second_variation_per_vertex": {"$ref": "#/$defs/fraction"},
+        "total_contribution": {"$ref": "#/$defs/fraction"}
+      }
+    }
+  },
+  "properties": {
+    "certificate": {
+      "const": "REVERSE_PHYSICS_BT_EUCLIDEAN_ORTHOGONAL_HESSIAN_BLOCK_OBSTRUCTION_V1"
+    },
+    "schema_version": {
+      "const": "reverse-physics-bt-euclidean-orthogonal-hessian-block-obstruction-v1"
+    },
+    "created": {"const": "2026-08-14"},
+    "dependency_tags": {
+      "type": "array",
+      "prefixItems": [
+        {"const": "LOCAL-ALGEBRAIC"},
+        {"const": "EUCLIDEAN-SPECTRAL"}
+      ],
+      "items": false
+    },
+    "lifecycle_state": {"const": "OBSTRUCTION_PROVED"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "period_four_family": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scope",
+        "dimension",
+        "degree",
+        "cell_length",
+        "cell_volume",
+        "coupling",
+        "coordinates",
+        "rational_exponential_base",
+        "center",
+        "direction",
+        "mean_zero_proof",
+        "neighbor_weights",
+        "status"
+      ],
+      "properties": {
+        "scope": {"const": "L^4 periodic lattices with L=4m and integer m>=1"},
+        "dimension": {"const": 4},
+        "degree": {"const": 8},
+        "cell_length": {"const": 4},
+        "cell_volume": {"const": 256},
+        "coupling": {"$ref": "#/$defs/fraction"},
+        "coordinates": {"const": "psi=lambda*phi"},
+        "rational_exponential_base": {"$ref": "#/$defs/fraction"},
+        "center": {"$ref": "#/$defs/text"},
+        "direction": {"$ref": "#/$defs/text"},
+        "mean_zero_proof": {"$ref": "#/$defs/text"},
+        "neighbor_weights": {"$ref": "#/$defs/text"},
+        "status": {"const": "EXACT_RATIONAL_FAMILY"}
+      }
+    },
+    "cell_calculation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "residual_classes",
+        "action",
+        "action_density",
+        "direction_norm_squared",
+        "direction_negative_laplacian_eigenvalue",
+        "free_bilaplacian_form",
+        "directional_hessian_decomposition",
+        "directional_hessian",
+        "rayleigh_quotient",
+        "status"
+      ],
+      "properties": {
+        "residual_classes": {
+          "type": "array",
+          "minItems": 5,
+          "maxItems": 5,
+          "items": {"$ref": "#/$defs/residual_row"}
+        },
+        "action": {"$ref": "#/$defs/fraction"},
+        "action_density": {"$ref": "#/$defs/fraction"},
+        "direction_norm_squared": {"const": 16},
+        "direction_negative_laplacian_eigenvalue": {"const": 8},
+        "free_bilaplacian_form": {"const": 1024},
+        "directional_hessian_decomposition": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "all_even_vertices",
+            "exactly_one_odd_coordinate_vertices",
+            "two_or_more_odd_coordinate_vertices"
+          ],
+          "properties": {
+            "all_even_vertices": {"$ref": "#/$defs/hessian_class"},
+            "exactly_one_odd_coordinate_vertices": {"$ref": "#/$defs/hessian_class"},
+            "two_or_more_odd_coordinate_vertices": {"$ref": "#/$defs/text"}
+          }
+        },
+        "directional_hessian": {"$ref": "#/$defs/fraction"},
+        "rayleigh_quotient": {"$ref": "#/$defs/fraction"},
+        "status": {"const": "STRICTLY_NEGATIVE"}
+      }
+    },
+    "lowest_mode_orthogonality": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "lowest_axial_eigenvalue",
+        "full_real_eigenspace_dimension",
+        "proof",
+        "conclusion",
+        "status"
+      ],
+      "properties": {
+        "lowest_axial_eigenvalue": {"$ref": "#/$defs/text"},
+        "full_real_eigenspace_dimension": {"const": 8},
+        "proof": {"$ref": "#/$defs/text"},
+        "conclusion": {"$ref": "#/$defs/text"},
+        "status": {"const": "PROVED"}
+      }
+    },
+    "replication": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "cell_multiplier",
+        "action",
+        "directional_hessian",
+        "action_density",
+        "lambda_point_four_statement",
+        "status"
+      ],
+      "properties": {
+        "cell_multiplier": {"$ref": "#/$defs/text"},
+        "action": {"$ref": "#/$defs/text"},
+        "directional_hessian": {"$ref": "#/$defs/text"},
+        "action_density": {"$ref": "#/$defs/fraction"},
+        "lambda_point_four_statement": {"$ref": "#/$defs/text"},
+        "status": {"const": "NEGATIVE_ON_AN_UNBOUNDED_VOLUME_SEQUENCE"}
+      }
+    },
+    "method_disposition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "global_orthogonal_hessian_block_positivity",
+        "global_lowest_mode_schur_complement_definition",
+        "pointwise_half_action_curvature_route",
+        "actual_uniform_action_density_moment",
+        "actual_annealed_half_action_density_factor",
+        "direct_normalized_low_mode_marginal",
+        "actual_interacting_h_minus_one_second_moment_bound",
+        "interacting_tightness",
+        "continuum_limit",
+        "born_rule",
+        "krein_reconstruction",
+        "lorentzian_transfer"
+      ],
+      "properties": {
+        "global_orthogonal_hessian_block_positivity": {"const": "OBSTRUCTED"},
+        "global_lowest_mode_schur_complement_definition": {"const": "OBSTRUCTED"},
+        "pointwise_half_action_curvature_route": {"const": "OBSTRUCTED_AS_FORMULATED"},
+        "actual_uniform_action_density_moment": {"const": "PROVED_BY_PREDECESSOR"},
+        "actual_annealed_half_action_density_factor": {"const": "PROVED_BY_PREDECESSOR"},
+        "direct_normalized_low_mode_marginal": {"const": "OPEN"},
+        "actual_interacting_h_minus_one_second_moment_bound": {"const": "OPEN"},
+        "interacting_tightness": {"const": "NOT_ESTABLISHED"},
+        "continuum_limit": {"const": "NOT_ESTABLISHED"},
+        "born_rule": {"const": "NOT_ESTABLISHED"},
+        "krein_reconstruction": {"const": "NOT_ASSESSED"},
+        "lorentzian_transfer": {"const": "NOT_ESTABLISHED"}
+      }
+    },
+    "missing_object_ledger": {"$ref": "#/$defs/text_array"},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "does_not_establish": {"$ref": "#/$defs/text_array"},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["repository_base_commit", "inputs", "arithmetic"],
+      "properties": {
+        "repository_base_commit": {"pattern": "^[0-9a-f]{40}$"},
+        "inputs": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["path", "sha256"],
+            "properties": {
+              "path": {"$ref": "#/$defs/text"},
+              "sha256": {"pattern": "^[0-9a-f]{64}$"}
+            }
+          }
+        },
+        "arithmetic": {"$ref": "#/$defs/text"}
+      }
+    },
+    "verification_commands": {"$ref": "#/$defs/text_array"},
+    "tier_receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["command_results", "tier_0", "tier_1", "tier_2", "tier_3", "resource_policy"],
+      "properties": {
+        "command_results": {
+          "type": "array",
+          "minItems": 6,
+          "maxItems": 6,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["command", "elapsed_seconds", "peak_rss_kib", "status"],
+            "properties": {
+              "command": {"$ref": "#/$defs/text"},
+              "elapsed_seconds": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+$"},
+              "peak_rss_kib": {"type": "integer", "minimum": 1},
+              "status": {"$ref": "#/$defs/text"}
+            }
+          }
+        },
+        "tier_0": {"$ref": "#/$defs/text"},
+        "tier_1": {"$ref": "#/$defs/text"},
+        "tier_2": {"$ref": "#/$defs/text"},
+        "tier_3": {"$ref": "#/$defs/text"},
+        "resource_policy": {"$ref": "#/$defs/text"}
+      }
+    },
+    "checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"const": 17},
+        "total": {"const": 17},
+        "failures": {"type": "array", "maxItems": 0},
+        "details": {
+          "type": "object",
+          "minProperties": 17,
+          "maxProperties": 17,
+          "additionalProperties": {"const": true}
+        }
+      }
+    },
+    "report": {
+      "const": "reverse_physics/reports/bt-euclidean-orthogonal-hessian-block-obstruction.md"
+    },
+    "schema": {
+      "const": "reverse_physics/schema/reverse-physics-bt-euclidean-orthogonal-hessian-block-obstruction-v1.schema.json"
+    }
+  }
+}

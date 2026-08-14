@@ -151,11 +151,14 @@ Bilaplacian energy density can concentrate in the lowest lattice modes, and
 the deterministic comparison to the continuum (H^{-1}) norm then loses a
 power of the lattice length.
 
-The remaining live route is therefore sharply isolated.  One must prove
-global positivity or supply a variational replacement for the orthogonal
-Hessian block, and then prove the surviving half-action-density curvature
-bound.  The present theorem already controls its annealed weight.  If that
-curvature route fails, the next object is the normalized lowest-mode marginal.
+The successor certificate
+`REVERSE_PHYSICS_BT_EUCLIDEAN_ORTHOGONAL_HESSIAN_BLOCK_OBSTRUCTION_V1`
+now proves that the global orthogonal block is indefinite on a period-four,
+unbounded-volume sequence.  Hence the positive inverse-block/Schur route and
+its pointwise half-action curvature refinement fail as formulated, even though
+the present theorem still controls the annealed weight.  The next object is
+the normalized low-frequency marginal itself, first for one axial mode and
+then across Fourier shells.
 
 ## Boundaries
 

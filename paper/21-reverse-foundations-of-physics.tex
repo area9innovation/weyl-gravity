@@ -923,10 +923,36 @@ certified bilaplacian envelope give genuine actual-measure bounds
 \(\mathbb E[B_\psi^2]/N^2\leq1251328/25\) and
 \(\mathbb E[B_\phi]/N\leq40\sqrt{1222}\).  These bounds do not control how
 bilaplacian energy is distributed among the lowest modes.  Consequently the
-annealed half-action factor is established, but the orthogonal-Hessian
-curvature gate, the interacting \(H^{-1}\) moment, tightness, continuum
-measure, positive-Hilbert reconstruction, Krein bridge, Born rule, and every
-Lorentzian statement remain open.
+annealed half-action factor is established, but this is not yet an
+\(H^{-1}\) theorem.
+
+The remaining global curvature gate is now exactly obstructed.  Certificate
+\cert{REVERSE_PHYSICS_BT_EUCLIDEAN_ORTHOGONAL_HESSIAN_BLOCK_OBSTRUCTION_V1}
+uses, on every \(L^4\) torus with \(4\mid L\), the period-four background and
+direction
+
+\[
+ \psi_x=\log(4/3)\sum_{\mu=1}^4(-1)^{x_\mu},\qquad
+ v_x=\prod_{\mu=1}^4(1,0,-1,0)_{x_\mu}.
+\]
+
+The direction is orthogonal to the full eight-dimensional lowest axial
+Fourier eigenspace.  Exact rational differentiation on one \(4^4\) cell gives
+
+\[
+ A=\frac{80458}{81},\qquad
+ \operatorname{Hess}A[v,v]=72-\frac{19712}{81}
+ =-\frac{13880}{81}<0.
+\]
+
+Period-four replication multiplies both quantities by \((L/4)^4\).  Thus the
+orthogonal Hessian block is indefinite on an unbounded volume sequence, so a
+globally positive inverse block and the proposed pointwise half-action Schur
+curvature do not exist as formulated.  This closes a proof route, not the
+probabilistic question.  The direct normalized low-frequency marginal, the
+interacting \(H^{-1}\) moment, tightness, continuum measure, positive-Hilbert
+reconstruction, Krein bridge, Born rule, and every Lorentzian statement remain
+open.
 
 \subsection{A finite BV contraction does not freeze the quantum theory}
 
@@ -1239,11 +1265,13 @@ out transferring that bound by standard convex-perturbation comparison.  A
 mode-specific repair also fails: ultraviolet relaxation drives the exact
 lowest-mode Hessian Schur complement to zero.  The exact affine virial theorem
 now supplies the previously missing volume-uniform expectation of the
-half-action-density weight under the actual Gibbs measure.  The remaining
-inverse-Hessian route is therefore narrower: prove global positivity or a
-variational replacement for the orthogonal Hessian block and a pointwise
-half-action-density curvature lower bound.  If either fails, direct normalized
-lowest-mode marginal control is the fallback.  Neither the action-density nor
+half-action-density weight under the actual Gibbs measure.  But an exact
+period-four family makes the entire Hessian block orthogonal to the lowest
+axial eigenspace indefinite on every volume \(L^4\) with \(4\mid L\).  Hence
+the global inverse-Hessian/Schur route, including its pointwise half-action
+curvature refinement, is obstructed as formulated.  The live gate is now a
+direct normalized low-frequency marginal estimate, first for one axial mode
+and then across Fourier shells.  Neither the action-density nor
 bilaplacian-density theorem alone is an \(H^{-1}\) estimate because energy may
 concentrate in the infrared modes.
 

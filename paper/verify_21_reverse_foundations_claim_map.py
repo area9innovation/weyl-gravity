@@ -92,6 +92,7 @@ def main() -> int:
     bt_lambda04_os = json.loads((ROOT / data["authorities"]["bt_lambda04_os_kernel_obstruction"]["path"]).read_text())
     bt_action_weight = json.loads((ROOT / data["authorities"]["bt_action_weight_virial_obstruction"]["path"]).read_text())
     bt_affine_virial = json.loads((ROOT / data["authorities"]["bt_affine_virial_action_density"]["path"]).read_text())
+    bt_orthogonal_hessian = json.loads((ROOT / data["authorities"]["bt_orthogonal_hessian_block_obstruction"]["path"]).read_text())
     dims = cube["dimensions"]
     atlas = data["atlas_snapshot"]
     require(atlas["axis_sizes"] == [6, 6, 16], "unexpected axis sizes")
@@ -135,6 +136,11 @@ def main() -> int:
     require(atlas["bt_actual_half_action_factor_status"] == bt_affine_virial["method_disposition"]["actual_annealed_half_action_density_factor"] == "PROVED", "BT annealed half-action theorem drift")
     require(atlas["bt_lambda_0p4_action_density_bound"] == {"numerator": 1222, "denominator": 25}, "BT action-density constant drift")
     require(bt_affine_virial["method_disposition"]["actual_interacting_h_minus_one_second_moment_bound"] == "OPEN", "BT affine theorem promoted to H^-1")
+    require(atlas["bt_global_orthogonal_hessian_block_status"] == bt_orthogonal_hessian["method_disposition"]["global_orthogonal_hessian_block_positivity"] == "OBSTRUCTED", "BT orthogonal Hessian obstruction drift")
+    require(atlas["bt_pointwise_half_action_curvature_route_status"] == bt_orthogonal_hessian["method_disposition"]["pointwise_half_action_curvature_route"] == "OBSTRUCTED_AS_FORMULATED", "BT half-action curvature disposition drift")
+    require(atlas["bt_orthogonal_hessian_cell_value"] == {"numerator": -13880, "denominator": 81}, "BT orthogonal Hessian value drift")
+    require(bt_orthogonal_hessian["method_disposition"]["direct_normalized_low_mode_marginal"] == "OPEN", "BT direct marginal promoted")
+    require(bt_orthogonal_hessian["method_disposition"]["actual_interacting_h_minus_one_second_moment_bound"] == "OPEN", "BT Hessian obstruction promoted to H^-1 failure")
 
     allowed_tags = {"LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE", "LORENTZIAN-CAUSAL"}
     claim_ids = set()
@@ -181,6 +187,8 @@ def main() -> int:
     require(flags["bt_half_action_density_candidate_established"] is False, "BT half-action-density candidate promoted")
     require(flags["bt_actual_interacting_action_density_established"] is True, "BT actual action-density theorem missing")
     require(flags["bt_actual_annealed_half_action_factor_established"] is True, "BT annealed half-action theorem missing")
+    require(flags["bt_global_orthogonal_hessian_block_obstructed"] is True, "BT orthogonal Hessian obstruction flag missing")
+    require(flags["bt_pointwise_half_action_curvature_route_obstructed"] is True, "BT half-action curvature obstruction flag missing")
     require(flags["research_programme_lenses_explained"] is True, "research-programme exposition flag is not certified")
     for false_flag in [
         "weakest_foundation_proved",
@@ -388,6 +396,8 @@ def main() -> int:
         r"reverse-foundations-of-physics-appendices.tex",
         r"D\geq2A-\frac{488}{5}N",
         r"\mathbb E\sqrt{1+\frac AN}\leq\frac{\sqrt{1247}}5",
+        r"\operatorname{Hess}A[v,v]=72-\frac{19712}{81}",
+        r"=-\frac{13880}{81}<0",
     ]:
         require(phrase in prose, f"required boundary missing from paper: {phrase}")
     for citation in [
