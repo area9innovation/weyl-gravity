@@ -1,0 +1,143 @@
+{
+  "schema_version": "science-forge-tier-receipt-v1",
+  "receipt_id": "BT_ALL_BACKGROUND_LOWEST_MODE_CURVATURE_V1_TIER_RECEIPT",
+  "result_id": "REVERSE_PHYSICS_BT_EUCLIDEAN_ALL_BACKGROUND_LOWEST_MODE_CURVATURE_V1",
+  "created": "2026-08-14",
+  "source_base_commit": "8d2ceae41e73b748f4f6ca53277423e82697a29c",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "scope": "Prove an all-background, all-phase, all-axis lowest-mode BT action-curvature bound on every periodic four-dimensional L^4 lattice with L>=4; derive the resulting volume-uniform recentered conditional-variance estimate; update the active continuum-reconstruction work item; and preserve the open annealed-center, integrated-marginal, interacting H-minus-one, continuum, Born, Krein, and Lorentzian boundaries. Paper 21 integration is deferred because a concurrent foundations authority regeneration changed the shared manuscript inputs after the scoped paper check.",
+  "inputs": [
+    {
+      "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_SEPARABLE_LOWEST_MODE_CURVATURE_V1.json",
+      "sha256": "113eb734688dd2163304398043a9ab680cd0fa4ccb5f08b059e808dce9fdf8a7",
+      "role": "predecessor separable-background theorem and exact correlated-remainder obstruction"
+    },
+    {
+      "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_CONDITIONAL_MASS_ESCAPE_OBSTRUCTION_V1.json",
+      "sha256": "3b5a231046ef56cd6d2459f5bd93b6785bf00463c9d3ddb9c5cc162a118dea76",
+      "role": "predecessor moving-center obstruction and conditional-law normalization"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "reverse_physics/bt_euclidean_all_background_lowest_mode_curvature.py",
+      "sha256": "399263618b8dbce75a1e7196aa0803b2c197dec8b0b7fef9d4fa85acdc1ed238"
+    },
+    {
+      "path": "reverse_physics/verify_bt_euclidean_all_background_lowest_mode_curvature.py",
+      "sha256": "d65609f18a466e4a5bb12f41ed9195b16e0034c4bf7e7e7d11539178f4d25883"
+    },
+    {
+      "path": "reverse_physics/tests/test_bt_euclidean_all_background_lowest_mode_curvature.py",
+      "sha256": "34d81eefd219e152b729561c3a1f08197a1fd2e45a1f50447502fcc079917899"
+    },
+    {
+      "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_ALL_BACKGROUND_LOWEST_MODE_CURVATURE_V1.json",
+      "sha256": "49e2d144667818f57e4d994a7e41534e6ded204b52eaa6f35b8923f30907e6d0"
+    },
+    {
+      "path": "reverse_physics/schema/reverse-physics-bt-euclidean-all-background-lowest-mode-curvature-v1.schema.json",
+      "sha256": "f02c47f882dbd3ca43f0cb7d3e362ed5a00907db98c79369db646db4868cf531"
+    },
+    {
+      "path": "reverse_physics/reports/bt-euclidean-all-background-lowest-mode-curvature.md",
+      "sha256": "0b1ce49a824d49b0c6bbd527e35e3574cef709ab35303b4da56970b3b51fdaa3"
+    },
+    {
+      "path": "planning/events/reverse-physics-bateman-euclidean-continuum-reconstruction-ACTIVE-9226feda0ff0a659.json",
+      "sha256": "48e7f561abd7d4c23c0c339d13be256cda7489a3da2e185353a260fc444ce645"
+    }
+  ],
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "ulimit -v 500000; python3 -m py_compile <five scoped Python paths>",
+          "status": "PASS"
+        },
+        {
+          "command": "parse <certificate, schema, planning event, Paper 21 claim map, and receipt> with Python json",
+          "status": "PASS"
+        },
+        {
+          "command": "git diff --check -- <eight scoped theorem, planning, and receipt paths>",
+          "status": "PASS"
+        }
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "ulimit -v 500000; python3 reverse_physics/bt_euclidean_all_background_lowest_mode_curvature.py --check",
+          "status": "PASS"
+        },
+        {
+          "command": "ulimit -v 500000; python3 reverse_physics/verify_bt_euclidean_all_background_lowest_mode_curvature.py",
+          "status": "PASS",
+          "output": "strict schema, independent exact edge fixtures, independent Bernstein conversion, direct exact full-lattice Hessian fixture, provenance hashes, and fail-closed claim boundaries"
+        },
+        {
+          "command": "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_euclidean_all_background_lowest_mode_curvature",
+          "status": "PASS",
+          "output": "8 tests including five fail-closed mutations"
+        },
+        {
+          "command": "GOMEMLIMIT=300MiB GOGC=50 sfc conform planning/work-items",
+          "elapsed_seconds": 10.2,
+          "status": "PASS",
+          "output": "CLEAN"
+        }
+      ]
+    },
+    "tier_2": {
+      "status": "DEFERRED_DUE_TO_CONCURRENT_AUTHORITY_EDITS",
+      "criterion": "The BT theorem changes no predecessor mathematical input or shared operator. A Paper 21 claim-map and two-pass TeX check passed on the initial combined working tree, but a concurrent foundations stream then changed the atlas authorities, appendix, manuscript, generators, claim map, and PDF. That later combined state is not owned or certified by this receipt and must be regenerated and verified after the foundations commit lands."
+    },
+    "tier_3": {
+      "status": "NOT_PASS",
+      "command": "ulimit -v 500000; python3 -m unittest discover -s reverse_physics/tests -t .",
+      "elapsed_seconds": 494.56,
+      "peak_rss_kb": 391032,
+      "outcome": "The programme-wide rail exposed multiple pre-existing or unrelated failures and errors and was interrupted during reverse_physics.tests.test_hamiltonian_privilege_general_n after entering a long exact-matrix calculation; exit 130. A fail-first rerun stopped after 35 tests at the unrelated reverse_physics.tests.test_bt_abel_fock_physical_intertwiner independent-verifier failure. No suite-pass, freeze, release, or repository-wide health claim is made.",
+      "criterion": "This working-draft theorem update changes no shared classical or quantum algebra and makes no freeze or release. The scoped theorem and its complete affected Paper 21 authority chain passed; the broad nonpass is retained as a fail-closed release blocker rather than treated as evidence against or for the isolated theorem."
+    }
+  },
+  "memory_receipt": {
+    "python_and_latex_policy": "Python and TeX commands ran sequentially under a 500000 KiB virtual-memory ceiling.",
+    "go_policy": "The Go conformance audit ran with GOMEMLIMIT=300MiB and GOGC=50 and without the incompatible shell virtual-address cap.",
+    "oom_or_timeout": false,
+    "maximum_observed_rss_kb": 391032,
+    "interruption": "The broad reverse-physics suite was stopped deliberately after 494.56 seconds because it had already exposed unrelated baseline failures and entered a long exact calculation; the process remained below the memory ceiling."
+  },
+  "paper_integration": {
+    "status": "DEFERRED_DUE_TO_CONCURRENT_AUTHORITY_EDITS",
+    "reason": "A substantial concurrent foundations update changed the generated Paper 21 appendix, authorities, manuscript, generator, verifier, claim map, and PDF after the BT-only paper check. Those paths remain outside this scoped commit; no current paper hash or compilation claim is made.",
+    "release_or_freeze_promoted": false
+  },
+  "claim_flags": {
+    "signed_spatial_correlation_absorption_established": true,
+    "all_background_lowest_mode_curvature_established": true,
+    "all_background_recentered_conditional_variance_established": true,
+    "annealed_center_second_moment_established": false,
+    "normalized_lowest_mode_second_moment_established": false,
+    "bt_interacting_h_minus_one_established": false,
+    "continuum_measure_established": false,
+    "born_rule_established": false,
+    "krein_reconstruction_established": false,
+    "new_lorentzian_claim": false,
+    "repository_wide_test_suite_passed": false,
+    "paper_release_or_freeze_established": false
+  },
+  "does_not_establish": [
+    "a Gibbs-weighted second-moment bound for the moving conditional centers",
+    "a normalized integrated BT lowest-mode second moment",
+    "an interacting H-minus-one moment, tightness, or continuum-limit theorem",
+    "a Born rule, Krein reconstruction, gravitational lift, empirical result, or LORENTZIAN-CAUSAL promotion",
+    "a repository-wide test-suite pass, paper release, or classical/quantum freeze"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-all-background-lowest-mode-curvature-v1.schema.json",
+  "type": "object",
+  "required": ["certificate", "schema_version", "created", "dependency_tags", "lifecycle_state", "result_kind", "answer", "theorem", "plaquette_absorption", "cycle_completion", "exact_full_lattice_fixture", "method_disposition", "foundational_dependency_cut", "checks", "does_not_establish", "missing_object_ledger", "next_gate", "provenance", "report", "schema", "verification_commands"],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_EUCLIDEAN_ALL_BACKGROUND_LOWEST_MODE_CURVATURE_V1"},
+    "schema_version": {"const": "reverse-physics-bt-euclidean-all-background-lowest-mode-curvature-v1"},
+    "created": {"const": "2026-08-14"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "lifecycle_state": {"const": "VOLUME_UNIFORM_CONDITIONAL_ESTIMATE_PROVED"},
+    "result_kind": {"type": "string"}, "answer": {"type": "string"},
+    "theorem": {"type": "object"}, "plaquette_absorption": {"type": "object"},
+    "cycle_completion": {"type": "object"}, "exact_full_lattice_fixture": {"type": "object"}, "method_disposition": {"type": "object"},
+    "foundational_dependency_cut": {"type": "object"},
+    "checks": {"type": "object", "additionalProperties": {"const": true}},
+    "does_not_establish": {"type": "array", "items": {"type": "string"}},
+    "missing_object_ledger": {"type": "array", "items": {"type": "string"}},
+    "next_gate": {"type": "string"}, "provenance": {"type": "object"},
+    "report": {"type": "string"}, "schema": {"type": "string"},
+    "verification_commands": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": false
+}

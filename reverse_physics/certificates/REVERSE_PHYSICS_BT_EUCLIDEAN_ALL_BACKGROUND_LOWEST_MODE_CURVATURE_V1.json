@@ -1,0 +1,295 @@
+{
+  "answer": "Yes for the recentered conditional-width component. On every periodic four-dimensional L^4 lattice with L>=4, every field background, and every real phase of a lowest axial Fourier mode, Hess A[h,h]>=(2/9)*N*omega_L^2. Therefore every normalized one-mode conditional law obeys Var(t|eta)<=9/(2*N*omega_L^2), uniformly in the orthogonal background, volume, and coupling. A new plaquette inequality absorbs the signed time-space correlation remainder that obstructed the separable proof. This does not control the annealed motion of conditional centers, the integrated lowest-mode marginal, H^-1 tightness, or a continuum limit.",
+  "certificate": "REVERSE_PHYSICS_BT_EUCLIDEAN_ALL_BACKGROUND_LOWEST_MODE_CURVATURE_V1",
+  "checks": {
+    "action_curvature_constant_is_two_ninths": true,
+    "all_background_recentered_width_is_now_proved": true,
+    "all_derivative_bernstein_coefficients_are_positive": true,
+    "all_exact_edge_fixtures_pass": true,
+    "annealed_center_and_integrated_marginal_remain_open": true,
+    "conditional_variance_constant_is_nine_halves": true,
+    "derivative_polynomial_power_coefficients_are_exact": true,
+    "exact_full_lattice_fixture_passes_both_inequalities": true,
+    "four_dimensional_spatial_degree_is_six": true,
+    "maximum_trigonometric_factor_is_two": true,
+    "no_continuum_born_krein_or_lorentzian_promotion": true,
+    "quadratic_u_coefficient_is_eighteen_fifths": true,
+    "relative_completion_loss_is_five_ninths": true,
+    "retained_cycle_coefficient_is_six_fifths": true,
+    "retained_free_curvature_fraction_is_four_ninths": true
+  },
+  "created": "2026-08-14",
+  "cycle_completion": {
+    "completion_coefficient": {
+      "denominator": 5,
+      "numerator": 18
+    },
+    "definitions": "d_t=h_(t+1)-h_t, e_t=d_t-d_(t-1)=-omega_L*h_t",
+    "final_action_curvature_constant": {
+      "denominator": 9,
+      "numerator": 2
+    },
+    "post_absorption_bound": "Hess A[h,h]>=sum_spatial_lines[(6/5)*sum_t f(exp(u_t))*d_t^2+sum_t exp(u_t-u_(t-1))*e_t^2]",
+    "relative_loss_bound": {
+      "denominator": 9,
+      "numerator": 5
+    },
+    "retained_free_fraction": {
+      "denominator": 9,
+      "numerator": 4
+    },
+    "scalar_bounds": [
+      "f(exp(u))>=3*u^2",
+      "exp(v)>=1+v"
+    ],
+    "trigonometric_identity": "sum_t(e_t^2-e_(t+1)^2)^2/d_t^2=2*L*omega_L^4*cos(pi/L)^2, by continuity when d_t=0"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "does_not_establish": [
+    "a bound on the Gibbs-weighted distribution of background-dependent conditional centers",
+    "the normalized integrated lowest-mode second moment",
+    "an interacting H^-1 estimate, tightness, or continuum Euclidean measure",
+    "a Born rule, Krein reconstruction, gravitational lift, or anything LORENTZIAN-CAUSAL"
+  ],
+  "exact_full_lattice_fixture": {
+    "absorbed_dominates_target": true,
+    "absorbed_full_4d_lower_expression": {
+      "denominator": 81920,
+      "numerator": 4246801242319
+    },
+    "direct_dominates_absorbed": true,
+    "direct_full_4d_hessian": {
+      "denominator": 8192,
+      "numerator": 702695317615
+    },
+    "inert_spatial_replication_factor": 16,
+    "integer_exponents_by_time_and_first_space": [
+      [
+        -3,
+        -5,
+        -5,
+        -6
+      ],
+      [
+        -5,
+        -2,
+        -2,
+        -1
+      ],
+      [
+        -4,
+        -5,
+        -4,
+        -6
+      ],
+      [
+        6,
+        2,
+        5,
+        -2
+      ]
+    ],
+    "universal_target": {
+      "denominator": 9,
+      "numerator": 2048
+    }
+  },
+  "foundational_dependency_cut": {
+    "analytic_layer": "AM-GM, elementary exponential/hyperbolic inequalities, trigonometric identities, completion of squares, and one-dimensional Brascamp-Lieb",
+    "finite_exact_layer": "rational plaquette identities, exact Bernstein positivity, degree counting, and certificate fixtures",
+    "weakest_base_or_reversal": "NOT_ESTABLISHED"
+  },
+  "lifecycle_state": "VOLUME_UNIFORM_CONDITIONAL_ESTIMATE_PROVED",
+  "method_disposition": {
+    "actual_interacting_h_minus_one_second_moment": "OPEN",
+    "all_background_lowest_mode_strong_convexity": "PROVED",
+    "all_background_uniform_recentered_conditional_variance": "PROVED",
+    "annealed_center_second_moment": "OPEN",
+    "born_rule": "NOT_ESTABLISHED",
+    "continuum_limit": "NOT_ESTABLISHED",
+    "interacting_tightness": "NOT_ESTABLISHED",
+    "krein_reconstruction": "NOT_ASSESSED",
+    "lorentzian_transfer": "NOT_ESTABLISHED",
+    "normalized_lowest_mode_second_moment": "OPEN",
+    "signed_spatial_correlation_absorption": "PROVED"
+  },
+  "missing_object_ledger": [
+    "an annealed second-moment estimate for the unique conditional fiber centers",
+    "a normalized lowest-mode marginal estimate combining center and recentered width",
+    "uniform Fourier-shell summation in a declared negative-Sobolev topology"
+  ],
+  "next_gate": "Use the now-uniform conditional strong convexity and the exact affine virial/action-density identity to bound the Gibbs-weighted second moment of the unique fiber centers; then sum the normalized lowest-mode and shell estimates.",
+  "plaquette_absorption": {
+    "amgm_reduction": "With U=pr, V=p/r, P=p+p^-1, R=r+r^-1, minimizing C over A gives C>=2*sqrt(P^2+R^4-4R^2). The desired inequality is 2*(P^2-2)*(R^2-2)+30*sqrt(P^2+R^4-4R^2)>=17*P*R.",
+    "boundary": "At P=2 the reduced gap is 34*(R-2)*(R+1)>=0.",
+    "derivative_polynomial_bernstein_coefficients": [
+      {
+        "denominator": 1,
+        "numerator": 24
+      },
+      {
+        "denominator": 2,
+        "numerator": 27
+      },
+      {
+        "denominator": 3,
+        "numerator": 38
+      },
+      {
+        "denominator": 4,
+        "numerator": 133
+      },
+      {
+        "denominator": 1,
+        "numerator": 95
+      }
+    ],
+    "derivative_polynomial_power_coefficients_on_R_equals_2_plus_s": [
+      24,
+      -42,
+      58,
+      47,
+      8
+    ],
+    "edge_surplus": "E=(1/3)Q+C-(4/3)S, Q=U^2+V^2+U^-2+V^-2, S=U+V+U^-1+V^-1, C=UA+V/A+VA/U^2+U/(V^2 A)",
+    "exact_edge_fixtures": [
+      {
+        "A": {
+          "denominator": 2,
+          "numerator": 1
+        },
+        "U": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "V": {
+          "denominator": 1,
+          "numerator": 4
+        },
+        "gap": {
+          "denominator": 120,
+          "numerator": 577
+        },
+        "passes": true,
+        "retained_fifth": {
+          "denominator": 80,
+          "numerator": 217
+        },
+        "surplus": {
+          "denominator": 48,
+          "numerator": 361
+        }
+      },
+      {
+        "A": {
+          "denominator": 1,
+          "numerator": 4
+        },
+        "U": {
+          "denominator": 2,
+          "numerator": 1
+        },
+        "V": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "gap": {
+          "denominator": 480,
+          "numerator": 14399
+        },
+        "passes": true,
+        "retained_fifth": {
+          "denominator": 10,
+          "numerator": 7
+        },
+        "surplus": {
+          "denominator": 96,
+          "numerator": 2947
+        }
+      },
+      {
+        "A": {
+          "denominator": 4,
+          "numerator": 7
+        },
+        "U": {
+          "denominator": 2,
+          "numerator": 3
+        },
+        "V": {
+          "denominator": 3,
+          "numerator": 5
+        },
+        "gap": {
+          "denominator": 189000,
+          "numerator": 176797
+        },
+        "passes": true,
+        "retained_fifth": {
+          "denominator": 4500,
+          "numerator": 1259
+        },
+        "surplus": {
+          "denominator": 7560,
+          "numerator": 9187
+        }
+      }
+    ],
+    "inequality": "E>=(1/5)*(f(U)+f(V)), f(z)=z^2+z^-2-z-z^-1",
+    "monotonicity": "Writing Y=R^2-2, the derivative in P is at least 8Y+60/Y-17R. For R>=3, 8Y-17R>=5. For 2<=R<=3, multiplication by Y gives the polynomial 8Y^2-17RY+60 with the positive Bernstein coefficients recorded below.",
+    "spatial_degree": 6,
+    "variables": "For one temporal edge and one spatial edge, U and V are the forward temporal weights at the two spatial endpoints and A is the spatial weight on the earlier slice."
+  },
+  "provenance": {
+    "arithmetic": "Python Fraction arithmetic for all constants, Bernstein coefficients, and rational edge fixtures",
+    "inputs": [
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_SEPARABLE_LOWEST_MODE_CURVATURE_V1.json",
+        "sha256": "113eb734688dd2163304398043a9ab680cd0fa4ccb5f08b059e808dce9fdf8a7"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_CONDITIONAL_MASS_ESCAPE_OBSTRUCTION_V1.json",
+        "sha256": "3b5a231046ef56cd6d2459f5bd93b6785bf00463c9d3ddb9c5cc162a118dea76"
+      }
+    ],
+    "repository_base_commit": "ab7a1796c63bd3420165af40da05227b0bace343"
+  },
+  "report": "reverse_physics/reports/bt-euclidean-all-background-lowest-mode-curvature.md",
+  "result_kind": "all-background interacting lowest-mode strong-convexity and conditional-variance theorem",
+  "schema": "reverse_physics/schema/reverse-physics-bt-euclidean-all-background-lowest-mode-curvature-v1.schema.json",
+  "schema_version": "reverse-physics-bt-euclidean-all-background-lowest-mode-curvature-v1",
+  "theorem": {
+    "action": "A(psi)=(1/2)*sum_x[sum_(y~x)exp(psi_y-psi_x)-8]^2",
+    "conditional_variance_bound": "Var(t|eta)<=9/(2*N*omega_L^2)",
+    "coupling_cancellation": "For S_lambda(phi)=A(lambda*phi)/lambda^2, Hess_phi S_lambda[h,h]=Hess_psi A[h,h].",
+    "curvature_bound": "Hess A_psi[h,h]>=(2/9)*N*omega_L^2",
+    "direction": "h_x=cos(2*pi*x_mu/L+alpha) for any axis mu and phase alpha",
+    "free_curvature": "Hess A_0[h,h]=(1/2)*N*omega_L^2",
+    "omega": "omega_L=4*sin(pi/L)^2",
+    "retained_free_fraction": {
+      "denominator": 9,
+      "numerator": 4
+    },
+    "scope": "periodic four-dimensional L^4 lattices, integer L>=4, arbitrary mean-zero field background",
+    "uniformities": [
+      "orthogonal background eta",
+      "mode coordinate t",
+      "phase alpha",
+      "axis mu",
+      "integer L>=4",
+      "nonzero coupling lambda"
+    ],
+    "variance_constant": {
+      "denominator": 2,
+      "numerator": 9
+    }
+  },
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_euclidean_all_background_lowest_mode_curvature.py --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_euclidean_all_background_lowest_mode_curvature.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_euclidean_all_background_lowest_mode_curvature"
+  ]
+}
