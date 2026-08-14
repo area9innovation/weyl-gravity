@@ -156,6 +156,10 @@ def build() -> dict:
             "literature_complete": cube["claim_flags"]["literature_complete"],
             "all_cells_assessed": cube["claim_flags"]["all_576_coordinates_assessed"],
             "prototype_assemblies": len(assembly_data["assemblies"]),
+            "research_programme_lenses": sum(
+                bool(item.get("camp_summary") and item.get("scope_note"))
+                for item in assembly_data["assemblies"]
+            ),
             "model_scoped_assemblies": len(assembly_data["model_scoped_assemblies"]),
             "gr_cassini_stages": len(gr_cassini["stages"]),
             "gr_cassini_interfaces": len(gr_cassini["interfaces"]),
@@ -273,6 +277,7 @@ def build() -> dict:
             "bounded_empirical_comparison_registered": True,
             "bt_euclidean_finite_capabilities_imported": True,
             "bt_euclidean_coarse_reproduction_separated": True,
+            "research_programme_lenses_explained": True,
             "weakest_foundation_proved": False,
             "global_physics_implies_choice_theorem": False,
             "axes_independent_proved": False,

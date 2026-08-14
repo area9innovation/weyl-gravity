@@ -15,10 +15,10 @@ ROOT = Path(__file__).resolve().parents[2]
 class TheoryAssemblyTests(unittest.TestCase):
     def test_prototypes_fail_closed(self):
         value = build_assembly_assessment(build_dataset())
-        self.assertEqual(len(value["assemblies"]), 8)
+        self.assertEqual(len(value["assemblies"]), 9)
         self.assertTrue(all(not item["complete_theory"] for item in value["assemblies"]))
         certified = [interface for item in value["assemblies"] for interface in item["interfaces"] if interface["certification_status"] == "CERTIFIED"]
-        self.assertEqual(len(certified), 4)
+        self.assertEqual(len(certified), 5)
         self.assertTrue(all(interface["relation"] == "CONDITIONAL_BRIDGE" for interface in certified))
         self.assertEqual(value["empirical_ledger"]["records"], [])
         self.assertEqual(len(value["numerical_reproducibility_ledger"]["records"]), 1)
@@ -33,6 +33,21 @@ class TheoryAssemblyTests(unittest.TestCase):
         self.assertTrue(value["model_scoped_assemblies"][0]["assembly_disposition"]["complete_within_declared_scope"])
         self.assertFalse(value["model_scoped_assemblies"][0]["assembly_disposition"]["complete_theory"])
         self.assertTrue(all(rail["status"] not in {"BLOCKED", "FAILED"} for item in value["assemblies"] for rail in item["maturity_rails"]))
+
+    def test_named_programme_lenses_are_explanatory_and_bounded(self):
+        value = build_assembly_assessment(build_dataset())
+        camps = {item["id"]: item for item in value["assemblies"]}
+        for item in camps.values():
+            self.assertEqual(len(item["lineage"]), 3)
+            self.assertEqual(len(item["signature_ideas"]), 3)
+            self.assertTrue(item["central_question"].endswith("?"))
+            self.assertTrue(item["atlas_window"])
+            self.assertTrue(item["scope_note"])
+        self.assertIn("Bateman", camps["BT_EUCLIDEAN_LATTICE_PROGRAMME"]["label"])
+        self.assertIn("Mannheim", camps["KREIN_ALGEBRAIC_PROGRAMME"]["label"])
+        self.assertIn("Pure-Weyl", camps["PURE_WEYL_BV_BFV_PROGRAMME"]["label"])
+        self.assertIn("not the full Lorentzian/Krein", camps["BT_EUCLIDEAN_LATTICE_PROGRAMME"]["atlas_window"])
+        self.assertIn("not Mannheim's field-theoretic C", camps["KREIN_ALGEBRAIC_PROGRAMME"]["scope_note"])
 
     def test_classical_reference_reports_complete_coverage_and_partial_composition(self):
         value = build_assembly_assessment(build_dataset())

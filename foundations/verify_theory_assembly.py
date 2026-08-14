@@ -98,9 +98,21 @@ def verify(*, value: dict[str, Any] | None = None) -> tuple[list[str], list[str]
     numerical_records = atlas.get("numerical_reproducibility_records", [])
     if result.get("numerical_reproducibility_ledger", {}).get("records") != numerical_records or len(numerical_records) != 1:
         errors.append("numerical reproduction record projection")
-    if len(assemblies) != 8 or len({item.get("id") for item in assemblies}) != 8:
-        errors.append("eight unique prototype assemblies")
+    expected_ids = {
+        "STANDARD_MIXED_REFERENCE", "STANDARD_ALGEBRAIC_PROFILE",
+        "FINITE_EXACT_PROGRAMME", "BT_EUCLIDEAN_LATTICE_PROGRAMME",
+        "WEAK_BASE_FINITE_EXACT", "KREIN_ALGEBRAIC_PROGRAMME",
+        "PURE_WEYL_BV_BFV_PROGRAMME", "CONSTRUCTIVE_PROGRAMME",
+        "TOPOS_INTERNAL_PROGRAMME",
+    }
+    if len(assemblies) != 9 or {item.get("id") for item in assemblies} != expected_ids:
+        errors.append("nine named research-camp prototype assemblies")
     for assembly in assemblies:
+        for field in ("short_label", "camp_kind", "camp_summary", "central_question", "atlas_window", "scope_note"):
+            if not assembly.get(field):
+                errors.append("camp metadata " + assembly.get("id", "?") + "/" + field)
+        if len(assembly.get("lineage", [])) != 3 or len(assembly.get("signature_ideas", [])) != 3:
+            errors.append("camp lineage/signature closure " + assembly.get("id", "?"))
         selected = {item.get("obligation"): item for item in assembly.get("selected_cells", [])}
         if set(selected) != set(obligations):
             errors.append("obligation closure " + assembly.get("id", "?"))
@@ -148,15 +160,15 @@ def verify(*, value: dict[str, Any] | None = None) -> tuple[list[str], list[str]
         if gates != expected_gates or assembly.get("complete_theory") is not False or assembly.get("empirically_supported") is not False:
             errors.append("maturity-rail closure " + assembly["id"])
     certified_instances = sum(interface.get("certification_status") == "CERTIFIED" for assembly in assemblies for interface in assembly.get("interfaces", []))
-    if certified_instances != 4:
-        errors.append("four assembly projections of two certified relations")
+    if certified_instances != 5:
+        errors.append("five assembly projections of two certified relations")
     checks.append("independent cell selection, certified-interface projection, coverage, and maturity rails")
 
     ledger = result.get("empirical_ledger", {})
     if ledger.get("records") != [] or len(ledger.get("benchmarks", [])) != 6 or any(item.get("status") != "NOT_REGISTERED" for item in ledger.get("benchmarks", [])):
         errors.append("empty empirical ledger and benchmark closure")
     flags = result.get("claim_flags", {})
-    for name in ("prototype_assemblies_generated", "selected_cells_content_addressed", "interface_and_coverage_states_separated", "at_least_one_cross_cell_interface_certified", "scoped_carrier_interface_registered", "numerical_reproducibility_rail_declared", "empirical_record_schema_declared", "external_positive_control_registered", "missing_and_failed_states_separated", "model_scoped_prediction_assembly_registered", "bounded_prediction_chain_established", "bounded_empirical_agreement_assessed"):
+    for name in ("prototype_assemblies_generated", "research_camp_lenses_declared", "selected_cells_content_addressed", "interface_and_coverage_states_separated", "at_least_one_cross_cell_interface_certified", "scoped_carrier_interface_registered", "numerical_reproducibility_rail_declared", "empirical_record_schema_declared", "external_positive_control_registered", "missing_and_failed_states_separated", "model_scoped_prediction_assembly_registered", "bounded_prediction_chain_established", "bounded_empirical_agreement_assessed"):
         if flags.get(name) is not True:
             errors.append("positive flag " + name)
     for name in ("cross_cell_composability_established", "prediction_chain_established", "empirical_agreement_assessed", "complete_observationally_valid_theory_identified"):
@@ -170,10 +182,10 @@ def verify(*, value: dict[str, Any] | None = None) -> tuple[list[str], list[str]
         if SITE_JS.read_bytes() != b"window.THEORY_ASSEMBLY_DATA = " + SITE_JSON.read_bytes().rstrip() + b";\n":
             errors.append("offline assembly assignment")
         combined = (ROOT / "foundations/site/index.html").read_text() + (ROOT / "foundations/site/app.js").read_text()
-        for token in ("Assemblies", "assembliesView", "Bounded assembly complete", "Field equations to Cassini", "Seven independent maturity rails", "Numerical reproduction is not empirical validation", "Euclidean/Krein carrier boundary", "External positive control", "Typed interface ledger", "Empirical benchmark ledger", "NOT_ASSESSED"):
+        for token in ("Assemblies", "assembliesView", "Bounded assembly complete", "Field equations to Cassini", "Meet the research programmes", "Bateman–Turok", "Mannheim conformal gravity", "Pure-Weyl BV–BFV", "Seven independent maturity rails", "Numerical reproduction is not empirical validation", "Euclidean/Krein carrier boundary", "External positive control", "Typed interface ledger", "Empirical benchmark ledger", "NOT_ASSESSED"):
             if token not in combined + SITE_JS.read_text():
                 errors.append("interface token " + token)
-        for token in ("eight", "coverage envelope", "model-scoped", "Cassini", "COARSE_REPRODUCTION_ONLY", "Euclidean", "NOT_ASSESSED", "positive control", "does not establish"):
+        for token in ("nine", "research-programme lenses", "Bateman–Turok", "Mannheim", "Pure-Weyl", "coverage envelope", "model-scoped", "Cassini", "COARSE_REPRODUCTION_ONLY", "Euclidean", "NOT_ASSESSED", "positive control", "does not establish"):
             if token not in REPORT.read_text():
                 errors.append("report token " + token)
     checks.append("offline assembly interface, parity, and report")

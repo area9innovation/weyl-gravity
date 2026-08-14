@@ -139,6 +139,7 @@ def main() -> int:
     require(flags["bounded_empirical_comparison_registered"] is True, "bounded empirical comparison flag is not certified")
     require(flags["bt_euclidean_finite_capabilities_imported"] is True, "BT finite import flag is not certified")
     require(flags["bt_euclidean_coarse_reproduction_separated"] is True, "BT numerical separation flag is not certified")
+    require(flags["research_programme_lenses_explained"] is True, "research-programme exposition flag is not certified")
     for false_flag in [
         "weakest_foundation_proved",
         "global_physics_implies_choice_theorem",
@@ -170,7 +171,8 @@ def main() -> int:
     require(atlas["implication_nodes"] == len(atlas_data["graph"]["nodes"]) == 12, "appendix implication-node mismatch")
     require(atlas["implication_edges"] == len(atlas_data["graph"]["edges"]) == 10, "appendix implication-edge mismatch")
     require(atlas["strength_ladder_levels"] == len(atlas_data["ladder"]) == 6, "appendix ladder-level mismatch")
-    require(atlas["prototype_assemblies"] == len(assembly_data["assemblies"]) == 8, "appendix assembly-count mismatch")
+    require(atlas["prototype_assemblies"] == len(assembly_data["assemblies"]) == 9, "appendix assembly-count mismatch")
+    require(atlas["research_programme_lenses"] == 9, "research-programme lens metadata mismatch")
     require(atlas["model_scoped_assemblies"] == len(assembly_data["model_scoped_assemblies"]) == 1, "model-scoped assembly-count mismatch")
     model = assembly_data["model_scoped_assemblies"][0]
     require(model["result_id"] == gr_cassini["result_id"], "GR/Cassini model assembly identity drift")
@@ -190,6 +192,8 @@ def main() -> int:
     require(atlas["external_calibration_benchmark_families"] == sum(item["status"] == "SUPPORTED_CONTROL" for item in control["benchmark_coverage"]) == 3, "calibration benchmark mismatch")
 
     appendix = appendix_path.read_text()
+    for token in ("Bateman--Turok", "Mannheim conformal-gravity programme", "Pure-Weyl BV--BFV"):
+        require(token in appendix, f"research-programme lens missing from appendix: {token}")
     require(r"All obligations & 120 & 91 & 163 & 30 & 172 & 0 & 576" in appendix, "appendix coverage totals drift")
     require("contains 75 evidence records: 24 local result records and 51 literature records" in appendix, "appendix evidence summary drift")
     require("BT positive Euclidean lattice programme" in appendix, "BT Euclidean prototype missing")

@@ -6,15 +6,23 @@
 
 ## Outcome
 
-The atlas generates eight named prototype assemblies. Each is a deterministic
+The atlas generates nine named research-programme lenses. Each is a deterministic
 coverage envelope: it selects the strongest recorded cell for every obligation
-inside a declared regime/carrier region. It is not a composed theory.
+inside a declared regime/carrier region. It is not a composed theory or a claim
+that every researcher in the named tradition endorses every selected cell.
+
+The lenses make the larger conversations recognizable: mainstream GR/QFT,
+algebraic QFT, finite/discrete exact models, Bateman–Turok, reverse mathematics,
+Mannheim conformal gravity, this repository's Pure-Weyl BV–BFV programme,
+constructive/computable physics, and topos/internal quantum foundations. Each
+records a central question, lineage, signature ideas, the narrower atlas window
+currently sampled, and an explicit scope caution.
 
 The crucial new object is the interface ledger. Seven joins in each prototype
 must separately record whether the linked objects are identical, exactly
 translated, conditionally bridged, approximated with a bound, conjecturally
 linked, incompatible, or not assessed. Two scoped relations are now
-certified and produce 4 compatible prototype-interface instances; the other
+certified and produce 5 compatible prototype-interface instances; the other
 required joins remain `NOT_ASSESSED`, so coverage cannot silently promote them.
 
 ## First model-scoped assembly
@@ -65,6 +73,7 @@ Each selected cell links back to the exact matrix coordinate.
 
 ## Boundaries
 
+- This does not establish that a research tradition is exhausted by its displayed atlas window or that every researcher named in a lineage endorses every selected cell.
 - This does not establish that selected cells concern the same physical model or scope.
 - This does not establish that either certified scoped bridge supplies any unregistered carrier or foundation translation.
 - This does not establish that direct coverage composes into an end-to-end prediction.

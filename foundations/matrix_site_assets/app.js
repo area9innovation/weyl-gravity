@@ -85,6 +85,43 @@
       edges: [["L-WEIHRAUCH-ZHONG", "L-POUR-EL-RICHARDS"]],
     },
   ];
+  const CAMP_KIND_LABEL = {
+    REFERENCE_TRADITION: "Reference tradition",
+    RESEARCH_TRADITION: "Research tradition",
+    NAMED_RESEARCH_PROGRAMME: "Named programme",
+    METHODOLOGICAL_TRADITION: "Methodological tradition",
+    REPOSITORY_PROGRAMME: "This repository's programme",
+  };
+  const GUIDE_GROUPS = {
+    FOUNDATION: [
+      {title: "The familiar baseline", summary: "Use the ordinary classical mathematics found in most physics textbooks.", ids: ["CLASSICAL_STANDARD"]},
+      {title: "Audit the hidden axioms", summary: "Keep classical reasoning, but ask how much arithmetic, set existence, or Choice a proof actually consumes.", ids: ["WEAK_ARITHMETIC", "WEAK_CHOICE_ZF"]},
+      {title: "Change what proof or truth means", summary: "Demand constructions, algorithms, or truth interpreted inside a different logical universe.", ids: ["CONSTRUCTIVE_COMPUTABLE", "TOPOS_INTERNAL"]},
+      {title: "Restrict the size of the world", summary: "Work with finite data or finitely many modes and separately account for any return to an infinite continuum.", ids: ["FINITE_DISCRETE"]},
+    ],
+    CARRIER: [
+      {title: "Small enough to check exactly", summary: "Use finite matrices and algebraic data whose identities can be decided without approximation.", ids: ["FINITE_EXACT"]},
+      {title: "States as vectors with geometry", summary: "Use positive or indefinite inner products to encode amplitudes, norms, gauge directions, and evolution.", ids: ["HILBERT_OPERATOR", "KREIN_INDEFINITE"]},
+      {title: "Observables and regions first", summary: "Begin with algebras, regions, or logical relations instead of a preferred wavefunction or set of points.", ids: ["ALGEBRAIC_CSTAR", "LOCALIC_SYNTHETIC"]},
+      {title: "Continuum fields on spacetime", summary: "Use geometry, differential equations, distributions, and response operators for fields that vary continuously.", ids: ["SMOOTH_DISTRIBUTIONAL"]},
+    ],
+    REFINED_OBLIGATION: [
+      {title: "1. Define the physical possibilities", summary: "Specify what exists, how states are encoded, what can be measured, and how probabilities arise.", ids: ["KINEMATICS_OBSERVABLES", "STATE_EXISTENCE", "STATE_REPRESENTATION", "PROBABILITY_RULE", "PHYSICAL_STATE_SELECTION"]},
+      {title: "2. Make the theory evolve and carry signals", summary: "Construct time evolution, prove it behaves well, and identify causal response.", ids: ["GENERATOR_SPECTRAL_DYNAMICS", "EVOLUTION_WELLPOSEDNESS", "CAUSAL_PROPAGATION_GREEN"]},
+      {title: "3. Handle redundancy and genuine coupling", summary: "Separate gauge description from physical content and build nontrivial interactions.", ids: ["GAUGE_BV_COHOMOLOGY", "INTERACTION_CONSTRUCTION"]},
+      {title: "4. Keep an interacting quantum theory consistent", summary: "Classify possible corrections and failures, renormalize singular products, and restore quantum gauge consistency before transferring corrections.", ids: ["COUNTERTERM_CLASSIFICATION", "ANOMALY_CLASSIFICATION", "RENORMALIZED_PRODUCTS", "QME_RESTORATION", "RESIDUAL_QUANTUM_TRANSFER"]},
+      {title: "5. Return to observation or a known limit", summary: "Connect the formal construction to measured quantities, a continuum limit, or an established theory.", ids: ["RECONSTRUCTION_LIMITS"]},
+    ],
+  };
+  const GUIDE_GLOSSARY = [
+    ["Axiom of Choice", "A principle that permits simultaneous selections from many nonempty sets. Ordinary physics mathematics often uses it indirectly through bases, compactness, or extension theorems."],
+    ["Hilbert space", "A complete positive-inner-product vector space: the standard home for quantum states and spectral operators."],
+    ["Krein space", "An inner-product space with positive and negative directions. It can retain gauge or ghost structure, but needs extra work to identify physical probabilities."],
+    ["PDE / Green operator", "A partial differential equation governs a continuum field; a retarded or advanced Green operator describes its response to a source."],
+    ["Gauge / BV / BRST", "Tools for theories with redundant descriptions. They organize the physical content and the consistency conditions of interactions and quantization."],
+    ["QME", "The quantum master equation: the BV condition that quantum corrections still respect gauge consistency."],
+    ["Topos", "A mathematical universe with its own internal logic, often used to express contextual or point-free versions of spaces and observables."],
+  ];
   const axis = Object.fromEntries(DATA.axes.map(a => [a.id, a]));
   const labels = Object.fromEntries(DATA.axes.flatMap(a => a.keys.map(k => [k.id, k])));
   const cellByKey = new Map(DATA.cells.map(c => [key(c), c]));
@@ -456,11 +493,23 @@
   }
 
   function renderGuide() {
-    const dimensions = DATA.axes.map((dimension, index) => `<section class="guide-dimension">
-      <div class="guide-heading"><span>${index + 1}</span><div><p class="eyebrow">${esc(dimension.plain_name)}</p><h3>${esc(dimension.guide_question)}</h3><p>${dimension.keys.length} choices—select exactly one to define this part of a cell.</p></div></div>
-      <div class="guide-options">${dimension.keys.map(option => `<article><h4>${esc(option.label)}</h4><p>${esc(option.plain_meaning)}</p><details><summary>Technical scope</summary><p>${esc(option.meaning)}</p>${list(option.includes).length ? `<p><b>Includes:</b> ${esc(option.includes.join(", "))}</p>` : ""}${option.warning ? `<p class="boundary">${esc(option.warning)}</p>` : ""}</details></article>`).join("")}</div>
-    </section>`).join("");
-    document.getElementById("dimensionGuide").innerHTML = `<article class="guide-intro"><p class="eyebrow">How to read one coordinate</p><h3>Regime × carrier × obligation = one research question</h3><p>For example: <b>constructive/computable × smooth/PDE/distributional × causal propagation/Green</b> asks whether causal response maps can be built with explicit computational content for continuum fields.</p><p>The cell color reports the evidence currently recorded for that precise combination. It does not say whether the idea is true, important, or impossible.</p></article>${dimensions}<article class="guide-intro"><p class="eyebrow">Open does not mean unknown</p><h3>Reviewed gap versus priority gap</h3><p>A <b>reviewed open gap (O)</b> is a formulated research question with a typed missing certificate, but no direct result. A <b>priority gap (G)</b> is an open question selected for the current programme. Neither means that the literature is empty, the idea is impossible, or the theory is false.</p></article><article class="guide-intro"><p class="eyebrow">One cell, two kinds of direct support</p><h3>Why some cells are marked <b>LR</b></h3><p>A cell's colour reports a single status, and a direct local result outranks a direct literature result. Some coordinates hold both at once. Those carry the <b>LR</b> mark and a corner wedge in the second grade's colour, and the status filter finds them under either grade.</p><p>Each attached record also carries a role for that obligation alone: a direct support, a supporting ingredient, or not yet reviewed for directness. <b>Unreviewed is not a finding that the record fails to support the cell.</b> Only records registered as direct in the capability registry can raise the <b>LR</b> mark.</p><p>Case separates the two ideas. An <b>upper-case</b> letter is a certified direct grade; a <b>lower-case</b> letter is a supporting ingredient of that kind. A pieces-only cell holding local ingredients reads <b>Pl</b>, one holding literature ingredients <b>Pr</b>, and one holding both <b>Plr</b>. A result of one kind carrying ingredients of the other reads <b>Lr</b> or <b>Rl</b>. Ingredients never promote a cell: <b>Plr</b> is still pieces-only, and the status colour never changes because of a lower-case letter.</p></article><article class="guide-intro"><p class="eyebrow">Two records, two questions</p><h3>Coverage is not migration</h3><p><b>Coverage status</b> says what direct result, literature result, partial ingredients, or gap is recorded now. <b>Migration review</b> says whether evidence attached to an older, broader category was checked for transfer into this more precise cell. A reviewed migration is an audit fact, not additional physical evidence.</p></article>`;
+    const dimensions = DATA.axes.map((dimension, index) => {
+      const optionById = new Map(dimension.keys.map(option => [option.id, option]));
+      const groups = GUIDE_GROUPS[dimension.id].map(group => `<section class="guide-option-group"><div class="guide-group-heading"><h4>${esc(group.title)}</h4><p>${esc(group.summary)}</p></div><div class="guide-options">${group.ids.map(id => {
+        const option = optionById.get(id);
+        return `<article><h4>${esc(option.label)}</h4><p>${esc(option.plain_meaning)}</p><details><summary>Technical scope and cautions</summary><p>${esc(option.meaning)}</p>${list(option.includes).length ? `<p><b>Includes:</b> ${esc(option.includes.join(", "))}</p>` : ""}${option.warning ? `<p class="boundary">${esc(option.warning)}</p>` : ""}</details></article>`;
+      }).join("")}</div></section>`).join("");
+      return `<section class="guide-dimension"><div class="guide-heading"><span>${index + 1}</span><div><p class="eyebrow">${esc(dimension.plain_name)}</p><h3>${esc(dimension.guide_question)}</h3><p class="guide-axis-answer"><b>In this atlas:</b> ${esc(dimension.question)} Select exactly one option to define this part of a cell.</p></div></div>${groups}</section>`;
+    }).join("");
+    const glossary = GUIDE_GLOSSARY.map(([term, meaning]) => `<article><h4>${esc(term)}</h4><p>${esc(meaning)}</p></article>`).join("");
+    document.getElementById("dimensionGuide").innerHTML = `
+      <article class="guide-hero"><p class="eyebrow">The idea without the jargon</p><h2>Every result answers three different questions</h2><p>A physical conclusion never comes from equations alone. It also depends on what counts as a valid proof, what mathematical objects are allowed, and which physical job has actually been completed.</p><div class="guide-equation"><div><span>1</span><b>Rules</b><small>What may exist, and what counts as proof?</small></div><i>×</i><div><span>2</span><b>Container</b><small>What kind of object carries the physics?</small></div><i>×</i><div><span>3</span><b>Job</b><small>What must this piece of the theory accomplish?</small></div></div><p class="guide-caution">The three axes are disciplined bookkeeping questions. The atlas does not claim that they are mathematically independent, exhaustive, or the only possible way to organize foundational physics.</p></article>
+      <section class="guide-examples"><article><p class="eyebrow">A familiar example</p><h3>Why “general relativity works” is too compressed</h3><p>The Cassini assembly uses <b>classical-standard rules</b>, <b>smooth continuum geometry</b>, and a bounded chain of jobs from field equations to a measured delay parameter. It succeeds in that declared sector without claiming that every quantum, cosmological, or ultraviolet job is complete.</p></article><article><p class="eyebrow">Change one coordinate</p><h3>The question changes even when the equation does not</h3><p><b>Classical-standard × continuum fields × causal propagation</b> asks whether a Green operator exists. Replacing the first coordinate by <b>constructive/computable</b> asks for an explicit algorithm and represented input-output control as well. Those are related but different theorems.</p></article></section>
+      <article class="guide-intro"><p class="eyebrow">How to read one cell</p><h3>Regime × carrier × obligation = one precise research question</h3><p>A cell is not a miniature theory and its color is not a score. It records the strongest evidence currently registered for one exact combination of rules, mathematical container, and physical job.</p></article>
+      ${dimensions}
+      <section class="guide-glossary"><div class="section-head compact-head"><div><p class="eyebrow">Small glossary</p><h2>Seven terms that unlock the map</h2></div><p>These are orientation-level descriptions. Open each option's technical scope for the research boundary used by the atlas.</p></div><div>${glossary}</div></section>
+      <article class="guide-intro"><p class="eyebrow">Open does not mean impossible</p><h3>Reviewed gap versus priority gap</h3><p>A <b>reviewed open gap (O)</b> is a formulated research question with a typed missing certificate, but no direct result. A <b>priority gap (G)</b> is an open question selected for the current programme. Neither says that the literature is empty, the idea is false, or no proof can exist.</p></article>
+      <details class="guide-reviewer"><summary>For reviewers: how the evidence letters and migration audit work</summary><div><h3>Why some cells are marked LR, Plr, Lr, or Rl</h3><p>A cell color reports one strongest status. A direct local result outranks a direct literature result, while an <b>LR</b> corner mark preserves the fact that both exist. Upper-case letters are direct grades; lower-case letters are supporting ingredients. Thus <b>Plr</b> is still pieces-only, not a result. <b>Unreviewed directness is not a finding that evidence fails to support a cell.</b></p><h3>Coverage is not migration</h3><p><b>Coverage status</b> records the present result, ingredient, or gap. <b>Migration review</b> records whether evidence from an older broad category was checked before transfer into this finer cell. Migration review is an audit fact, not extra physical evidence.</p></div></details>`;
   }
 
   const READINESS_RANK = {NOT_MAPPED: 0, REVIEWED_GAP: 1, PRIORITY_GAP: 1, PIECES_ONLY: 2, LOCAL_RESULT: 3, LITERATURE_RESULT: 3};
@@ -575,7 +624,10 @@
   function renderAssemblies() {
     const assembly = ASSEMBLIES.assemblies.find(item => item.id === state.assembly) || ASSEMBLIES.assemblies[0];
     state.assembly = assembly.id;
-    const options = ASSEMBLIES.assemblies.map(item => `<option value="${item.id}" ${item.id === assembly.id ? "selected" : ""}>${esc(item.label)}</option>`).join("");
+    const options = ASSEMBLIES.assemblies.map(item => `<option value="${item.id}" ${item.id === assembly.id ? "selected" : ""}>${esc(item.short_label)}</option>`).join("");
+    const campCards = ASSEMBLIES.assemblies.map(item => `<button class="camp-card ${item.id === assembly.id ? "selected" : ""}" data-camp="${esc(item.id)}"><small>${esc(CAMP_KIND_LABEL[item.camp_kind] || item.camp_kind)}</small><b>${esc(item.short_label)}</b><span>${esc(item.camp_summary)}</span><em>${item.coverage.direct}/${item.coverage.total} jobs have direct records</em></button>`).join("");
+    const campLineage = assembly.lineage.map(item => `<li>${esc(item)}</li>`).join("");
+    const campIdeas = assembly.signature_ideas.map(item => `<li>${esc(item)}</li>`).join("");
     const gates = assembly.maturity_rails.map((gate, index) => `<article class="assembly-gate ${ASSEMBLY_GATE_STYLE[gate.status] || "missing"}"><span>${index + 1}</span><div><small>${esc(gate.status.replaceAll("_", " "))}</small><h3>${esc(gate.label)}</h3><p>${esc(gate.basis)}</p></div></article>`).join("");
     const cells = assembly.selected_cells.map(cell => {
       const source = cellByKey.get(`${cell.foundation}|${cell.carrier}|${cell.obligation}`);
@@ -620,8 +672,10 @@
       <details class="applicability-details"><summary>Applicability mask: ${model.applicability_summary.required_satisfied}/${model.applicability_summary.required} required obligations satisfied</summary><p>Out-of-scope obligations are not failed tests. “Touched, not required” records a nearby concept without claiming its full atlas theorem.</p><div class="assembly-table-wrap"><table class="assembly-table applicability-table"><thead><tr><th>Atlas obligation</th><th>Role in this assembly</th><th>Reason</th></tr></thead><tbody>${applicability}</tbody></table></div></details>
       <p class="model-boundary"><b>Boundary:</b> ${esc(model.empirical_comparison_rail.boundary)} <a href="sources/foundations/results/FOUNDATIONAL_GR_CASSINI_MODEL_ASSEMBLY_V1.json">Open certificate</a>.</p></section>
       <div class="section-head"><div><p class="eyebrow">Coverage envelopes</p><h2>Prototype assemblies are still not composed theories</h2></div><p>The bounded GR/Cassini result above succeeds because it declares one model and one applicable sector. The selectors below maximize atlas coverage across records and therefore remain navigational prototypes.</p></div>
-      <article class="assembly-boundary calibrated"><p class="eyebrow">Calibrated reading</p><h3>${esc(completeCoverage)}: ${assembly.coverage.direct}/${assembly.coverage.total} obligations have direct results; composition is ${certifiedCount}/${assembly.interfaces.length} certified.</h3><p>These are separate maturity statements. Grey means unregistered or not yet evaluable, not failure. Orange means partial/open. Red is reserved for an explicit incompatibility, obstruction, or failed comparison; none is currently registered for this prototype.</p></article>
-      <section class="assembly-selector"><label><b>Prototype assembly</b><select id="assemblySelect">${options}</select></label><div><p class="eyebrow">Aim</p><p>${esc(assembly.aim)}</p></div><div class="assembly-score"><b>${assembly.coverage.direct}/${assembly.coverage.total}</b><span>obligations direct</span><strong>End-to-end status: NOT ESTABLISHED</strong></div></section>
+      <div class="section-head compact-head"><div><p class="eyebrow">People organize around questions, not axis codes</p><h2>Meet the research programmes</h2></div><p>Each card is a fair explanatory lens over the evidence cube: what the programme is trying to do, which ideas distinguish it, what this atlas currently samples, and where the analogy stops.</p></div>
+      <div class="camp-gallery">${campCards}</div>
+      <section class="camp-profile"><header><div><p class="eyebrow">${esc(CAMP_KIND_LABEL[assembly.camp_kind] || assembly.camp_kind)}</p><h2>${esc(assembly.label)}</h2><p>${esc(assembly.camp_summary)}</p></div><label><b>Choose another programme</b><select id="assemblySelect">${options}</select></label></header><div class="camp-question"><small>Central question</small><b>${esc(assembly.central_question)}</b></div><div class="camp-profile-grid"><article><h3>Lineage and conversation</h3><ul>${campLineage}</ul></article><article><h3>Signature ideas</h3><ul>${campIdeas}</ul></article><article><h3>What this atlas samples</h3><p>${esc(assembly.atlas_window)}</p></article></div><p class="camp-scope"><b>Important boundary:</b> ${esc(assembly.scope_note)}</p></section>
+      <article class="assembly-boundary calibrated"><p class="eyebrow">How to read this programme's envelope</p><h3>${esc(completeCoverage)}: ${assembly.coverage.direct}/${assembly.coverage.total} obligations have direct results; composition is ${certifiedCount}/${assembly.interfaces.length} certified.</h3><p>${esc(assembly.aim)} These are separate maturity statements. Grey means unregistered or not yet evaluable, not failure. Orange means partial/open. Red is reserved for an explicit incompatibility, obstruction, or failed comparison.</p></article>
       <div class="section-head compact-head"><div><p class="eyebrow">Do not collapse distinct questions</p><h2>Seven independent maturity rails</h2></div><p>The rails have dependencies, but they are reported separately. Numerical reproduction is not empirical validation. Missing records are neutral; they are not failed tests.</p></div>
       <div class="assembly-gates">${gates}</div>
       <div class="section-head compact-head"><div><p class="eyebrow">Inputs selected from the cube</p><h2>Obligation source map</h2></div><p>The deterministic selector uses the strongest recorded status inside this prototype's declared region. Open any grade to inspect its exact boundary and evidence.</p></div>
@@ -636,6 +690,7 @@
       <article class="positive-control"><p class="eyebrow">External positive control — not a candidate assembly</p><h2>${esc(control.label)}</h2><p>${esc(control.scope)}</p><div class="control-rails">${controlRails}</div><div class="section-head compact-head"><div><p class="eyebrow">Domain-specific evidence</p><h3>What a populated empirical rail looks like</h3></div><p>${control.records.length} primary-source comparison records support ${control.benchmark_coverage.filter(item => item.status === "SUPPORTED_CONTROL").length}/${control.benchmark_coverage.length} benchmark families. Unregistered domains remain grey.</p></div><div class="benchmark-grid control-grid">${controlBenchmarks}</div><p class="control-boundary"><b>Boundary:</b> ${esc(control.does_not_establish[4])}. ${esc(control.does_not_establish[0])}.</p></article>
       <article class="viability-warning boundary"><b>Fail-closed boundary.</b> ${esc(ASSEMBLIES.unit)} ${esc(ASSEMBLIES.does_not_establish[4])}.</article>`;
     document.getElementById("assemblySelect").addEventListener("change", event => { state.assembly = event.target.value; renderAssemblies(); updateHash(); });
+    document.querySelectorAll("[data-camp]").forEach(button => button.addEventListener("click", () => { state.assembly = button.dataset.camp; renderAssemblies(); updateHash(); document.querySelector(".camp-profile")?.scrollIntoView({behavior: "smooth", block: "start"}); }));
     document.querySelectorAll(".assembly-cell-jump").forEach(button => button.addEventListener("click", () => openCell(button.dataset.cellJump)));
   }
 
@@ -643,7 +698,7 @@
     state.view = view;
     document.querySelectorAll(".tab").forEach(x => x.classList.toggle("active", x.dataset.view === view));
     document.querySelectorAll(".view").forEach(x => x.classList.toggle("active", x.id === `${view}View`));
-    document.querySelector(".controls").hidden = ["viability", "assemblies"].includes(view);
+    document.querySelector(".controls").hidden = ["viability", "assemblies", "guide", "graph", "ladder"].includes(view);
     updateHash();
   }
 

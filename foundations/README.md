@@ -278,18 +278,27 @@ foundation-specific carrier envelopes, and a non-scalar Pareto view. It keeps
 three rails separate: obligation coverage is computed; cross-cell composition
 is partially assessed; and observational agreement is not registered for those
 cross-cell profiles. A multi-carrier maximum is therefore labelled a coverage envelope, not
-a completed theory. The **Assemblies** view adds eight named prototype
-envelopes, seven separately reported maturity rails, and 56 explicitly typed
+a completed theory. The **Assemblies** view adds nine named research-programme
+lenses, seven separately reported maturity rails, and 63 explicitly typed
 cross-cell joins. Missing, premature, blocked, and failed work are distinct
 states: red is reserved for an explicit obstruction or failed comparison.
 Two scoped joins are now certified
 `CONDITIONAL_BRIDGE` relations: finite-corner state-to-probability and free
-ground-state-to-dynamics. Each appears in two compatible prototypes. The other
+ground-state-to-dynamics. They produce five compatible programme-interface
+projections. The other
 joins remain `NOT_ASSESSED`, and the candidate empirical ledger is empty, so
 every cube-selected prototype remains fail-closed before theory or observational
 completion.
 
-The eighth prototype is the positive Bateman--Turok Euclidean finite lattice.
+The lenses make the larger conversations recognizable: mainstream GR/QFT,
+algebraic QFT, finite/discrete exact models, Bateman--Turok, reverse mathematics,
+Mannheim conformal gravity, this repository's pure-Weyl BV--BFV programme,
+constructive/computable physics, and topos/internal quantum foundations. Each
+profile states a central question, lineage, signature ideas, the narrower atlas
+window actually sampled, and a caution against treating the map as an
+endorsement or exhaustive account of that community.
+
+The Bateman--Turok lens currently samples the positive Euclidean finite lattice.
 Its exact import supplies five direct capabilities in
 `FINITE_DISCRETE × SMOOTH_DISTRIBUTIONAL`, while reconstruction stays a
 `PRIORITY_GAP`. A separate numerical rail records only coarse HMC/Metropolis
@@ -305,6 +314,16 @@ python3 foundations/refine_intersection_cube_v10.py --check
 python3 foundations/check_refined_intersection_cube_v10.py
 python3 foundations/verify_refined_intersection_cube_v10.py
 ```
+
+The **Dimensions guide** begins one level earlier than the matrix. It explains
+the cube as three public-facing questions---what rules count as proof and
+existence, what kind of mathematical object carries the physics, and which
+physical job has been completed. Regimes and carriers are grouped by motivation;
+the sixteen obligations are arranged as a five-part journey from defining a
+theory through dynamics, gauge/interactions, quantum consistency, and return to
+observation. Worked GR and constructive-causality examples, a short glossary,
+and a collapsed reviewer section keep the conceptual story separate from the
+evidence-code mechanics.
 
 The view now leads with the first model-scoped vertical slice:
 [`FOUNDATIONAL_GR_CASSINI_MODEL_ASSEMBLY_V1`](reports/gr-cassini-model-assembly-v1.md).

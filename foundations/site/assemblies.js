@@ -130,8 +130,24 @@ window.THEORY_ASSEMBLY_DATA = {
   "assemblies": [
     {
       "id": "STANDARD_MIXED_REFERENCE",
-      "label": "Classical-standard mixed-carrier reference",
-      "aim": "Ask how far mainstream mathematics reaches when every registered carrier is available.",
+      "label": "Mainstream GR and quantum-field-theory reference",
+      "short_label": "Mainstream GR / QFT",
+      "camp_kind": "REFERENCE_TRADITION",
+      "camp_summary": "The conventional reference combines classical spacetime geometry, standard quantum mechanics, continuum field theory, and the ordinary mathematical toolkit used across modern physics.",
+      "central_question": "How much of a complete predictive theory is already covered by the mainstream GR/QFT toolkit, and which joins are still merely assumed?",
+      "lineage": [
+        "Einstein–Hilbert gravity",
+        "standard quantum mechanics",
+        "perturbative and curved-spacetime QFT"
+      ],
+      "signature_ideas": [
+        "classical spacetime geometry",
+        "positive Hilbert-space quantum theory",
+        "continuum fields and local operators"
+      ],
+      "atlas_window": "A deliberately broad reference envelope that may select a different carrier for each physical job.",
+      "scope_note": "This is a calibration baseline, not one historical school, one model, or proof that the selected mainstream ingredients compose.",
+      "aim": "Use mainstream mathematical practice as a generous reference, while exposing every unregistered composition step.",
       "foundations": [
         "CLASSICAL_STANDARD"
       ],
@@ -558,8 +574,24 @@ window.THEORY_ASSEMBLY_DATA = {
     },
     {
       "id": "STANDARD_ALGEBRAIC_PROFILE",
-      "label": "Classical-standard algebraic profile",
-      "aim": "Use the present algebraic/C* profile as a single-carrier reference case.",
+      "label": "Algebraic QFT and local-covariance tradition",
+      "short_label": "Algebraic QFT",
+      "camp_kind": "RESEARCH_TRADITION",
+      "camp_summary": "Algebraic quantum field theory starts from observable algebras and their states, emphasizing locality, representation independence, and structural relations between spacetime regions.",
+      "central_question": "Can a theory be built from observables, states, and locality before choosing a preferred particle or wavefunction representation?",
+      "lineage": [
+        "Haag–Kastler algebraic QFT",
+        "locally covariant QFT",
+        "operator-algebraic quantum theory"
+      ],
+      "signature_ideas": [
+        "observables before wavefunctions",
+        "local nets of algebras",
+        "states as positive expectation-value rules"
+      ],
+      "atlas_window": "The classical-standard algebraic C*-carrier column only.",
+      "scope_note": "A C*-algebra coverage profile does not by itself supply curved-spacetime dynamics, renormalized interactions, or a preferred physical state.",
+      "aim": "Show what the present algebra-first evidence covers without silently importing Hilbert, PDE, or particle assumptions.",
       "foundations": [
         "CLASSICAL_STANDARD"
       ],
@@ -967,8 +999,24 @@ window.THEORY_ASSEMBLY_DATA = {
     },
     {
       "id": "FINITE_EXACT_PROGRAMME",
-      "label": "Finite exact programme",
-      "aim": "Test how much of the physics chain survives in finite, exactly checkable data.",
+      "label": "Finite, discrete, and exactly checkable models",
+      "short_label": "Finite / discrete",
+      "camp_kind": "METHODOLOGICAL_TRADITION",
+      "camp_summary": "Finite and discrete programmes replace a continuum or infinite construction by exact matrices, graphs, modes, or algebraic data that can be exhaustively checked.",
+      "central_question": "Which parts of physics are genuinely finite and algebraic, and which require a controlled passage back to a continuum?",
+      "lineage": [
+        "lattice and finite-mode models",
+        "finite quantum systems",
+        "exact computer-assisted mathematics"
+      ],
+      "signature_ideas": [
+        "finite carriers",
+        "exact arithmetic",
+        "explicit refinement or continuum-limit obligations"
+      ],
+      "atlas_window": "The finite/discrete regime with the finite exact-algebra carrier.",
+      "scope_note": "A finite regulator, a finite physical ontology, and a rejection of actual infinity are three different claims; this lens does not identify them.",
+      "aim": "Separate exactly checkable finite physics from the additional estimates and limit theorems needed for continuum claims.",
       "foundations": [
         "FINITE_DISCRETE"
       ],
@@ -1330,8 +1378,24 @@ window.THEORY_ASSEMBLY_DATA = {
     },
     {
       "id": "BT_EUCLIDEAN_LATTICE_PROGRAMME",
-      "label": "BT positive Euclidean lattice programme",
-      "aim": "Track the exact finite-volume Gibbs construction and its numerical reproduction without importing continuum, Krein, or empirical claims.",
+      "label": "Bateman–Turok hidden-ghost-parity programme",
+      "short_label": "Bateman–Turok",
+      "camp_kind": "NAMED_RESEARCH_PROGRAMME",
+      "camp_summary": "Bateman and Turok seek a higher-derivative quantum theory whose hidden ghost-parity structure yields positive physical probabilities without simply discarding the ghost sector.",
+      "central_question": "Can hidden ghost parity and a generalized Born construction make a higher-derivative interacting theory probabilistically consistent?",
+      "lineage": [
+        "Sam Bateman",
+        "Neil Turok",
+        "hidden ghost parity and perfect-square scalar models"
+      ],
+      "signature_ideas": [
+        "one-sided ghost charge",
+        "generalized Born probabilities",
+        "positive Euclidean finite-volume control"
+      ],
+      "atlas_window": "The currently imported window is the positive finite Euclidean lattice and its coarse two-algorithm reproduction, not the full Lorentzian/Krein scattering proposal.",
+      "scope_note": "This profile neither proves the all-order Bateman–Turok construction nor treats a Euclidean Gibbs measure as identical to the proposed Lorentzian Krein carrier.",
+      "aim": "Make the certified positive Euclidean slice visible inside the broader Bateman–Turok programme while keeping its unbuilt Lorentzian and continuum bridges explicit.",
       "foundations": [
         "FINITE_DISCRETE"
       ],
@@ -1773,8 +1837,24 @@ window.THEORY_ASSEMBLY_DATA = {
     },
     {
       "id": "WEAK_BASE_FINITE_EXACT",
-      "label": "Weak-base finite-exact programme",
-      "aim": "Expose the arithmetic or Choice strength of finite exact constructions without identifying distinct weak bases.",
+      "label": "Reverse mathematics and weak-foundation programme",
+      "short_label": "Reverse mathematics",
+      "camp_kind": "METHODOLOGICAL_TRADITION",
+      "camp_summary": "Reverse mathematics and Choice audits ask which axioms are actually needed for a theorem, rather than accepting the usual background foundation as an invisible package.",
+      "central_question": "What is the weakest explicit logical or set-existence base that still proves each physical construction?",
+      "lineage": [
+        "proof theory",
+        "reverse mathematics",
+        "ZF without full Choice"
+      ],
+      "signature_ideas": [
+        "calibrate theorem strength",
+        "separate sufficiency from necessity",
+        "track representation dependence"
+      ],
+      "atlas_window": "Finite exact carriers over weak arithmetic and ZF with weakened Choice.",
+      "scope_note": "Combining two weak bases in one navigation lens does not identify them or prove a weakest-foundation theorem.",
+      "aim": "Expose arithmetic and Choice dependencies of exact constructions without collapsing distinct foundational systems.",
       "foundations": [
         "WEAK_ARITHMETIC",
         "WEAK_CHOICE_ZF"
@@ -2165,31 +2245,492 @@ window.THEORY_ASSEMBLY_DATA = {
     },
     {
       "id": "KREIN_ALGEBRAIC_PROGRAMME",
-      "label": "Krein and algebraic programme",
-      "aim": "Explore indefinite state spaces together with algebraic state and observable constructions.",
+      "label": "Mannheim conformal-gravity programme",
+      "short_label": "Mannheim conformal gravity",
+      "camp_kind": "NAMED_RESEARCH_PROGRAMME",
+      "camp_summary": "The Mannheim programme combines fourth-order conformal gravity, Mannheim–Kazanas phenomenology, and a Bender–Mannheim PT/quasi-Hermitian response to the ghost and unitarity problem.",
+      "central_question": "Can conformal gravity provide a viable classical phenomenology and a positive quantum interpretation once the inner product is chosen dynamically?",
+      "lineage": [
+        "Philip Mannheim",
+        "Mannheim–Kazanas phenomenology",
+        "Bender–Mannheim PT-symmetric quantization"
+      ],
+      "signature_ideas": [
+        "Weyl-invariant fourth-order gravity",
+        "PT/quasi-Hermitian positive metric",
+        "galactic and cosmological phenomenology"
+      ],
+      "atlas_window": "Comparison-relevant Hilbert/operator, Krein/indefinite, and smooth continuum cells under classical mathematics.",
+      "scope_note": "A generic Krein fundamental symmetry is not Mannheim's field-theoretic C operator, and this mixed-carrier lens does not certify his unitarity or phenomenological claims.",
+      "aim": "Display where the atlas can engage Mannheim's classical and quantum questions without identifying adjacent indefinite-space results with the programme's missing positive metric.",
       "foundations": [
-        "CLASSICAL_STANDARD",
-        "WEAK_CHOICE_ZF"
+        "CLASSICAL_STANDARD"
       ],
       "carriers": [
+        "HILBERT_OPERATOR",
         "KREIN_INDEFINITE",
-        "ALGEBRAIC_CSTAR"
+        "SMOOTH_DISTRIBUTIONAL"
       ],
       "kind": "NAVIGATIONAL_PROTOTYPE",
       "selection_rule": "DETERMINISTIC_COVERAGE_ENVELOPE",
       "selected_cells": [
         {
           "obligation": "KINEMATICS_OBSERVABLES",
-          "foundation": "WEAK_CHOICE_ZF",
-          "carrier": "ALGEBRAIC_CSTAR",
-          "status": "LOCAL_RESULT",
+          "foundation": "CLASSICAL_STANDARD",
+          "carrier": "SMOOTH_DISTRIBUTIONAL",
+          "status": "LITERATURE_RESULT",
           "evidence": [
-            "blackadar-farah-2026",
-            "FOUNDATIONAL_BT_SEPARABLE_STATE_CHAIN_ZF_V1"
+            "barnich-brandt-henneaux-2000",
+            "brunetti-fredenhagen-verch-2001",
+            "fredenhagen-rejzner-2011",
+            "brunetti-fredenhagen-rejzner-2013"
           ],
           "evidence_roles": {
-            "blackadar-farah-2026": "UNREVIEWED",
-            "FOUNDATIONAL_BT_SEPARABLE_STATE_CHAIN_ZF_V1": "UNREVIEWED"
+            "barnich-brandt-henneaux-2000": "UNREVIEWED",
+            "brunetti-fredenhagen-verch-2001": "UNREVIEWED",
+            "fredenhagen-rejzner-2011": "UNREVIEWED",
+            "brunetti-fredenhagen-rejzner-2013": "UNREVIEWED"
+          },
+          "selection_basis": "Strongest recorded status in the declared admissible region; ties prefer more reviewed direct kinds, local grade, more evidence, then declared order."
+        },
+        {
+          "obligation": "STATE_EXISTENCE",
+          "foundation": "CLASSICAL_STANDARD",
+          "carrier": "KREIN_INDEFINITE",
+          "status": "LOCAL_RESULT",
+          "evidence": [
+            "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1",
+            "FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1",
+            "bateman-turok-2026"
+          ],
+          "evidence_roles": {
+            "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1": "DIRECT_LOCAL",
+            "FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1": "DIRECT_LOCAL",
+            "bateman-turok-2026": "DIRECT_LITERATURE"
+          },
+          "selection_basis": "Strongest recorded status in the declared admissible region; ties prefer more reviewed direct kinds, local grade, more evidence, then declared order."
+        },
+        {
+          "obligation": "STATE_REPRESENTATION",
+          "foundation": "CLASSICAL_STANDARD",
+          "carrier": "HILBERT_OPERATOR",
+          "status": "LITERATURE_RESULT",
+          "evidence": [
+            "hardy-2001",
+            "chiribella-dariano-perinotti-2011"
+          ],
+          "evidence_roles": {
+            "hardy-2001": "DIRECT_LITERATURE",
+            "chiribella-dariano-perinotti-2011": "DIRECT_LITERATURE"
+          },
+          "selection_basis": "Strongest recorded status in the declared admissible region; ties prefer more reviewed direct kinds, local grade, more evidence, then declared order."
+        },
+        {
+          "obligation": "PROBABILITY_RULE",
+          "foundation": "CLASSICAL_STANDARD",
+          "carrier": "KREIN_INDEFINITE",
+          "status": "LOCAL_RESULT",
+          "evidence": [
+            "bateman-turok-2026",
+            "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1",
+            "FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1",
+            "FOUNDATIONAL_BT_CORNER_BORN_INTERFACE_V1"
+          ],
+          "evidence_roles": {
+            "bateman-turok-2026": "SUPPORTING",
+            "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1": "SUPPORTING",
+            "FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1": "SUPPORTING",
+            "FOUNDATIONAL_BT_CORNER_BORN_INTERFACE_V1": "DIRECT_LOCAL"
+          },
+          "selection_basis": "Strongest recorded status in the declared admissible region; ties prefer more reviewed direct kinds, local grade, more evidence, then declared order."
+        },
+        {
+          "obligation": "PHYSICAL_STATE_SELECTION",
+          "foundation": "CLASSICAL_STANDARD",
+          "carrier": "KREIN_INDEFINITE",
+          "status": "LOCAL_RESULT",
+          "evidence": [
+            "FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1",
+            "bateman-turok-2026",
+            "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1",
+            "FOUNDATIONAL_KREIN_FOCK_GROUND_STATE_DYNAMICS_INTERFACE_V1"
+          ],
+          "evidence_roles": {
+            "FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1": "DIRECT_LOCAL",
+            "bateman-turok-2026": "SUPPORTING",
+            "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1": "SUPPORTING",
+            "FOUNDATIONAL_KREIN_FOCK_GROUND_STATE_DYNAMICS_INTERFACE_V1": "DIRECT_LOCAL"
+          },
+          "selection_basis": "Strongest recorded status in the declared admissible region; ties prefer more reviewed direct kinds, local grade, more evidence, then declared order."
+        },
+        {
+          "obligation": "GENERATOR_SPECTRAL_DYNAMICS",
+          "foundation": "CLASSICAL_STANDARD",
+          "carrier": "KREIN_INDEFINITE",
+          "status": "LOCAL_RESULT",
+          "evidence": [
+            "FOUNDATIONAL_EXPLICIT_ENERGY_SPECTRAL_FRAGMENT_ZF_V1",
+            "FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1",
+            "FOUNDATIONAL_KREIN_FOCK_GROUND_STATE_DYNAMICS_INTERFACE_V1"
+          ],
+          "evidence_roles": {
+            "FOUNDATIONAL_EXPLICIT_ENERGY_SPECTRAL_FRAGMENT_ZF_V1": "DIRECT_LOCAL",
+            "FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1": "DIRECT_LOCAL",
+            "FOUNDATIONAL_KREIN_FOCK_GROUND_STATE_DYNAMICS_INTERFACE_V1": "DIRECT_LOCAL"
+          },
+          "selection_basis": "Strongest recorded status in the declared admissible region; ties prefer more reviewed direct kinds, local grade, more evidence, then declared order."
+        },
+        {
+          "obligation": "EVOLUTION_WELLPOSEDNESS",
+          "foundation": "CLASSICAL_STANDARD",
+          "carrier": "KREIN_INDEFINITE",
+          "status": "LOCAL_RESULT",
+          "evidence": [
+            "FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1",
+            "FOUNDATIONAL_EXPLICIT_ENERGY_SPECTRAL_FRAGMENT_ZF_V1"
+          ],
+          "evidence_roles": {
+            "FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1": "DIRECT_LOCAL",
+            "FOUNDATIONAL_EXPLICIT_ENERGY_SPECTRAL_FRAGMENT_ZF_V1": "SUPPORTING"
+          },
+          "selection_basis": "Strongest recorded status in the declared admissible region; ties prefer more reviewed direct kinds, local grade, more evidence, then declared order."
+        },
+        {
+          "obligation": "CAUSAL_PROPAGATION_GREEN",
+          "foundation": "CLASSICAL_STANDARD",
+          "carrier": "SMOOTH_DISTRIBUTIONAL",
+          "status": "LOCAL_RESULT",
+          "evidence": [
+            "FOUNDATIONAL_TYPED_BIWAVE_GREEN_DEPENDENCY_AUDIT_V1",
+            "baer-2015",
+            "muehlhoff-2010"
+          ],
+          "evidence_roles": {
+            "FOUNDATIONAL_TYPED_BIWAVE_GREEN_DEPENDENCY_AUDIT_V1": "DIRECT_LOCAL",
+            "baer-2015": "UNREVIEWED",
+            "muehlhoff-2010": "UNREVIEWED"
+          },
+          "selection_basis": "Strongest recorded status in the declared admissible region; ties prefer more reviewed direct kinds, local grade, more evidence, then declared order."
+        },
+        {
+          "obligation": "GAUGE_BV_COHOMOLOGY",
+          "foundation": "CLASSICAL_STANDARD",
+          "carrier": "SMOOTH_DISTRIBUTIONAL",
+          "status": "LOCAL_RESULT",
+          "evidence": [
+            "FOUNDATIONAL_LOW_HANGING_CELL_CLOSURE_AUDIT_V1"
+          ],
+          "evidence_roles": {
+            "FOUNDATIONAL_LOW_HANGING_CELL_CLOSURE_AUDIT_V1": "UNREVIEWED"
+          },
+          "selection_basis": "Strongest recorded status in the declared admissible region; ties prefer more reviewed direct kinds, local grade, more evidence, then declared order."
+        },
+        {
+          "obligation": "INTERACTION_CONSTRUCTION",
+          "foundation": "CLASSICAL_STANDARD",
+          "carrier": "HILBERT_OPERATOR",
+          "status": "LOCAL_RESULT",
+          "evidence": [
+            "FOUNDATIONAL_FINITE_OPERATOR_TEN_CELL_CLOSURE_V1"
+          ],
+          "evidence_roles": {
+            "FOUNDATIONAL_FINITE_OPERATOR_TEN_CELL_CLOSURE_V1": "DIRECT_LOCAL"
+          },
+          "selection_basis": "Strongest recorded status in the declared admissible region; ties prefer more reviewed direct kinds, local grade, more evidence, then declared order."
+        },
+        {
+          "obligation": "COUNTERTERM_CLASSIFICATION",
+          "foundation": "CLASSICAL_STANDARD",
+          "carrier": "HILBERT_OPERATOR",
+          "status": "LOCAL_RESULT",
+          "evidence": [
+            "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1"
+          ],
+          "evidence_roles": {
+            "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1": "DIRECT_LOCAL"
+          },
+          "selection_basis": "Strongest recorded status in the declared admissible region; ties prefer more reviewed direct kinds, local grade, more evidence, then declared order."
+        },
+        {
+          "obligation": "ANOMALY_CLASSIFICATION",
+          "foundation": "CLASSICAL_STANDARD",
+          "carrier": "HILBERT_OPERATOR",
+          "status": "LOCAL_RESULT",
+          "evidence": [
+            "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1"
+          ],
+          "evidence_roles": {
+            "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1": "DIRECT_LOCAL"
+          },
+          "selection_basis": "Strongest recorded status in the declared admissible region; ties prefer more reviewed direct kinds, local grade, more evidence, then declared order."
+        },
+        {
+          "obligation": "RENORMALIZED_PRODUCTS",
+          "foundation": "CLASSICAL_STANDARD",
+          "carrier": "HILBERT_OPERATOR",
+          "status": "PIECES_ONLY",
+          "evidence": [
+            "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1"
+          ],
+          "evidence_roles": {
+            "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1": "SUPPORTING"
+          },
+          "selection_basis": "Strongest recorded status in the declared admissible region; ties prefer more reviewed direct kinds, local grade, more evidence, then declared order."
+        },
+        {
+          "obligation": "QME_RESTORATION",
+          "foundation": "CLASSICAL_STANDARD",
+          "carrier": "HILBERT_OPERATOR",
+          "status": "LOCAL_RESULT",
+          "evidence": [
+            "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1"
+          ],
+          "evidence_roles": {
+            "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1": "DIRECT_LOCAL"
+          },
+          "selection_basis": "Strongest recorded status in the declared admissible region; ties prefer more reviewed direct kinds, local grade, more evidence, then declared order."
+        },
+        {
+          "obligation": "RESIDUAL_QUANTUM_TRANSFER",
+          "foundation": "CLASSICAL_STANDARD",
+          "carrier": "HILBERT_OPERATOR",
+          "status": "LOCAL_RESULT",
+          "evidence": [
+            "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1"
+          ],
+          "evidence_roles": {
+            "FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1": "DIRECT_LOCAL"
+          },
+          "selection_basis": "Strongest recorded status in the declared admissible region; ties prefer more reviewed direct kinds, local grade, more evidence, then declared order."
+        },
+        {
+          "obligation": "RECONSTRUCTION_LIMITS",
+          "foundation": "CLASSICAL_STANDARD",
+          "carrier": "SMOOTH_DISTRIBUTIONAL",
+          "status": "LITERATURE_RESULT",
+          "evidence": [
+            "barnich-brandt-henneaux-2000",
+            "brunetti-fredenhagen-verch-2001",
+            "fredenhagen-rejzner-2011",
+            "brunetti-fredenhagen-rejzner-2013"
+          ],
+          "evidence_roles": {
+            "barnich-brandt-henneaux-2000": "UNREVIEWED",
+            "brunetti-fredenhagen-verch-2001": "UNREVIEWED",
+            "fredenhagen-rejzner-2011": "UNREVIEWED",
+            "brunetti-fredenhagen-rejzner-2013": "UNREVIEWED"
+          },
+          "selection_basis": "Strongest recorded status in the declared admissible region; ties prefer more reviewed direct kinds, local grade, more evidence, then declared order."
+        }
+      ],
+      "coverage": {
+        "direct": 15,
+        "assessed": 16,
+        "total": 16,
+        "complete_direct": false
+      },
+      "interfaces": [
+        {
+          "id": "STATE_TO_PROBABILITY",
+          "label": "State encoding → probability rule",
+          "source_obligations": [
+            "STATE_REPRESENTATION"
+          ],
+          "target_obligations": [
+            "PROBABILITY_RULE"
+          ],
+          "relation": "NOT_ASSESSED",
+          "certification_status": "NOT_ASSESSED",
+          "evidence": [],
+          "rationale": "Coverage records do not by themselves prove that these selected objects share a model, scope, or translation."
+        },
+        {
+          "id": "SELECTION_TO_DYNAMICS",
+          "label": "Physical state selection → dynamics",
+          "source_obligations": [
+            "PHYSICAL_STATE_SELECTION"
+          ],
+          "target_obligations": [
+            "GENERATOR_SPECTRAL_DYNAMICS"
+          ],
+          "relation": "CONDITIONAL_BRIDGE",
+          "certification_status": "CERTIFIED",
+          "evidence": [
+            "FOUNDATIONAL_KREIN_FOCK_GROUND_STATE_DYNAMICS_INTERFACE_V1"
+          ],
+          "rationale": "The explicit free reduced-mode bosonic Fock carrier, its diagonal total-occupation energy, and normal zero-energy states."
+        },
+        {
+          "id": "DYNAMICS_TO_CAUSALITY",
+          "label": "Evolution → causal response",
+          "source_obligations": [
+            "GENERATOR_SPECTRAL_DYNAMICS",
+            "EVOLUTION_WELLPOSEDNESS"
+          ],
+          "target_obligations": [
+            "CAUSAL_PROPAGATION_GREEN"
+          ],
+          "relation": "NOT_ASSESSED",
+          "certification_status": "NOT_ASSESSED",
+          "evidence": [],
+          "rationale": "Coverage records do not by themselves prove that these selected objects share a model, scope, or translation."
+        },
+        {
+          "id": "GAUGE_TO_INTERACTION",
+          "label": "Gauge content → interaction",
+          "source_obligations": [
+            "KINEMATICS_OBSERVABLES",
+            "GAUGE_BV_COHOMOLOGY"
+          ],
+          "target_obligations": [
+            "INTERACTION_CONSTRUCTION"
+          ],
+          "relation": "NOT_ASSESSED",
+          "certification_status": "NOT_ASSESSED",
+          "evidence": [],
+          "rationale": "Coverage records do not by themselves prove that these selected objects share a model, scope, or translation."
+        },
+        {
+          "id": "RENORMALIZATION_TO_QME",
+          "label": "Classifications and products → restored QME",
+          "source_obligations": [
+            "COUNTERTERM_CLASSIFICATION",
+            "ANOMALY_CLASSIFICATION",
+            "RENORMALIZED_PRODUCTS"
+          ],
+          "target_obligations": [
+            "QME_RESTORATION"
+          ],
+          "relation": "NOT_ASSESSED",
+          "certification_status": "NOT_ASSESSED",
+          "evidence": [],
+          "rationale": "Coverage records do not by themselves prove that these selected objects share a model, scope, or translation."
+        },
+        {
+          "id": "QME_TO_RESIDUAL",
+          "label": "Restored QME → residual correction",
+          "source_obligations": [
+            "QME_RESTORATION"
+          ],
+          "target_obligations": [
+            "RESIDUAL_QUANTUM_TRANSFER"
+          ],
+          "relation": "NOT_ASSESSED",
+          "certification_status": "NOT_ASSESSED",
+          "evidence": [],
+          "rationale": "Coverage records do not by themselves prove that these selected objects share a model, scope, or translation."
+        },
+        {
+          "id": "PREDICTION_TO_RECONSTRUCTION",
+          "label": "Prediction chain → standard or operational interpretation",
+          "source_obligations": [
+            "PROBABILITY_RULE",
+            "CAUSAL_PROPAGATION_GREEN",
+            "INTERACTION_CONSTRUCTION"
+          ],
+          "target_obligations": [
+            "RECONSTRUCTION_LIMITS"
+          ],
+          "relation": "NOT_ASSESSED",
+          "certification_status": "NOT_ASSESSED",
+          "evidence": [],
+          "rationale": "Coverage records do not by themselves prove that these selected objects share a model, scope, or translation."
+        }
+      ],
+      "maturity_rails": [
+        {
+          "id": "OBLIGATION_COVERAGE",
+          "label": "Obligation coverage",
+          "status": "OPEN",
+          "basis": "15/16 obligations have a direct recorded result."
+        },
+        {
+          "id": "CROSS_CELL_COMPOSITION",
+          "label": "Cross-cell composition",
+          "status": "PARTIALLY_CERTIFIED",
+          "basis": "1/7 required interfaces are certified; unassessed joins are missing work, not incompatibility results."
+        },
+        {
+          "id": "PREDICTION_DERIVATION",
+          "label": "Prediction derivation",
+          "status": "NOT_EVALUABLE",
+          "basis": "An end-to-end prediction test is premature until the required cross-cell joins are registered."
+        },
+        {
+          "id": "OBSERVABLE_IDENTIFICATION",
+          "label": "Observable identification",
+          "status": "NOT_REGISTERED",
+          "basis": "No assembly-level map from formal quantities to measured observables is registered."
+        },
+        {
+          "id": "NUMERICAL_REPRODUCIBILITY",
+          "label": "Numerical reproducibility",
+          "status": "NO_RECORDS",
+          "basis": "No independent numerical reproduction record is registered for this assembly."
+        },
+        {
+          "id": "EMPIRICAL_COMPARISON",
+          "label": "Empirical comparison",
+          "status": "NO_RECORDS",
+          "basis": "The empirical ledger contains no comparison for this assembly."
+        },
+        {
+          "id": "ROBUSTNESS_OUT_OF_SAMPLE",
+          "label": "Robustness / out-of-sample",
+          "status": "NO_RECORDS",
+          "basis": "No robustness or held-out prediction record is registered."
+        }
+      ],
+      "complete_theory": false,
+      "empirically_supported": false
+    },
+    {
+      "id": "PURE_WEYL_BV_BFV_PROGRAMME",
+      "label": "Pure-Weyl BV–BFV and causal programme",
+      "short_label": "Pure-Weyl BV–BFV",
+      "camp_kind": "REPOSITORY_PROGRAMME",
+      "camp_summary": "This repository's pure-Weyl programme starts from the classical BV–BFV gauge complex, then keeps local quantum algebra, Euclidean spectral work, reduced modes, and Lorentzian causal claims on separate evidence rails.",
+      "central_question": "Can pure Weyl gravity be carried from its classical gauge complex to a local quantum theory and a physically admissible Lorentzian state without crossing an uncertified bridge?",
+      "lineage": [
+        "classical BV–BFV gauge theory",
+        "local BRST cohomology",
+        "Euclidean spectral and Lorentzian causal analysis"
+      ],
+      "signature_ideas": [
+        "classical complex as import authority",
+        "classify anomalies before coefficients",
+        "restore QME before residual transfer"
+      ],
+      "atlas_window": "Classical-standard smooth/PDE, Krein, and algebraic carriers that contain the programme's present classical, reduced, and local-quantum ingredients.",
+      "scope_note": "Coverage across these carriers is not a full-complex Lorentzian propagator, Hadamard state, causal perturbative QFT, or restored Lorentzian QME.",
+      "aim": "Expose the programme's strong local pieces and the exact typed joins still missing between classical, Euclidean, reduced-mode, and Lorentzian work.",
+      "foundations": [
+        "CLASSICAL_STANDARD"
+      ],
+      "carriers": [
+        "KREIN_INDEFINITE",
+        "ALGEBRAIC_CSTAR",
+        "SMOOTH_DISTRIBUTIONAL"
+      ],
+      "kind": "NAVIGATIONAL_PROTOTYPE",
+      "selection_rule": "DETERMINISTIC_COVERAGE_ENVELOPE",
+      "selected_cells": [
+        {
+          "obligation": "KINEMATICS_OBSERVABLES",
+          "foundation": "CLASSICAL_STANDARD",
+          "carrier": "SMOOTH_DISTRIBUTIONAL",
+          "status": "LITERATURE_RESULT",
+          "evidence": [
+            "barnich-brandt-henneaux-2000",
+            "brunetti-fredenhagen-verch-2001",
+            "fredenhagen-rejzner-2011",
+            "brunetti-fredenhagen-rejzner-2013"
+          ],
+          "evidence_roles": {
+            "barnich-brandt-henneaux-2000": "UNREVIEWED",
+            "brunetti-fredenhagen-verch-2001": "UNREVIEWED",
+            "fredenhagen-rejzner-2011": "UNREVIEWED",
+            "brunetti-fredenhagen-rejzner-2013": "UNREVIEWED"
           },
           "selection_basis": "Strongest recorded status in the declared admissible region; ties prefer more reviewed direct kinds, local grade, more evidence, then declared order."
         },
@@ -2302,30 +2843,30 @@ window.THEORY_ASSEMBLY_DATA = {
         {
           "obligation": "CAUSAL_PROPAGATION_GREEN",
           "foundation": "CLASSICAL_STANDARD",
-          "carrier": "KREIN_INDEFINITE",
-          "status": "PIECES_ONLY",
+          "carrier": "SMOOTH_DISTRIBUTIONAL",
+          "status": "LOCAL_RESULT",
           "evidence": [
-            "FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1"
+            "FOUNDATIONAL_TYPED_BIWAVE_GREEN_DEPENDENCY_AUDIT_V1",
+            "baer-2015",
+            "muehlhoff-2010"
           ],
           "evidence_roles": {
-            "FOUNDATIONAL_EXPLICIT_MODE_DYNAMICS_ZF_V1": "SUPPORTING"
+            "FOUNDATIONAL_TYPED_BIWAVE_GREEN_DEPENDENCY_AUDIT_V1": "DIRECT_LOCAL",
+            "baer-2015": "UNREVIEWED",
+            "muehlhoff-2010": "UNREVIEWED"
           },
           "selection_basis": "Strongest recorded status in the declared admissible region; ties prefer more reviewed direct kinds, local grade, more evidence, then declared order."
         },
         {
           "obligation": "GAUGE_BV_COHOMOLOGY",
           "foundation": "CLASSICAL_STANDARD",
-          "carrier": "ALGEBRAIC_CSTAR",
-          "status": "LITERATURE_RESULT",
+          "carrier": "SMOOTH_DISTRIBUTIONAL",
+          "status": "LOCAL_RESULT",
           "evidence": [
-            "brunetti-fredenhagen-verch-2001",
-            "fewster-verch-2011",
-            "fredenhagen-rejzner-2011"
+            "FOUNDATIONAL_LOW_HANGING_CELL_CLOSURE_AUDIT_V1"
           ],
           "evidence_roles": {
-            "brunetti-fredenhagen-verch-2001": "UNREVIEWED",
-            "fewster-verch-2011": "UNREVIEWED",
-            "fredenhagen-rejzner-2011": "UNREVIEWED"
+            "FOUNDATIONAL_LOW_HANGING_CELL_CLOSURE_AUDIT_V1": "UNREVIEWED"
           },
           "selection_basis": "Strongest recorded status in the declared admissible region; ties prefer more reviewed direct kinds, local grade, more evidence, then declared order."
         },
@@ -2345,26 +2886,26 @@ window.THEORY_ASSEMBLY_DATA = {
         {
           "obligation": "COUNTERTERM_CLASSIFICATION",
           "foundation": "CLASSICAL_STANDARD",
-          "carrier": "ALGEBRAIC_CSTAR",
-          "status": "LITERATURE_RESULT",
+          "carrier": "SMOOTH_DISTRIBUTIONAL",
+          "status": "LOCAL_RESULT",
           "evidence": [
-            "fredenhagen-rejzner-2011"
+            "FOUNDATIONAL_LOW_HANGING_CELL_CLOSURE_AUDIT_V1"
           ],
           "evidence_roles": {
-            "fredenhagen-rejzner-2011": "DIRECT_LITERATURE"
+            "FOUNDATIONAL_LOW_HANGING_CELL_CLOSURE_AUDIT_V1": "DIRECT_LOCAL"
           },
           "selection_basis": "Strongest recorded status in the declared admissible region; ties prefer more reviewed direct kinds, local grade, more evidence, then declared order."
         },
         {
           "obligation": "ANOMALY_CLASSIFICATION",
           "foundation": "CLASSICAL_STANDARD",
-          "carrier": "ALGEBRAIC_CSTAR",
-          "status": "LITERATURE_RESULT",
+          "carrier": "SMOOTH_DISTRIBUTIONAL",
+          "status": "LOCAL_RESULT",
           "evidence": [
-            "fredenhagen-rejzner-2011"
+            "FOUNDATIONAL_LOW_HANGING_CELL_CLOSURE_AUDIT_V1"
           ],
           "evidence_roles": {
-            "fredenhagen-rejzner-2011": "DIRECT_LITERATURE"
+            "FOUNDATIONAL_LOW_HANGING_CELL_CLOSURE_AUDIT_V1": "DIRECT_LOCAL"
           },
           "selection_basis": "Strongest recorded status in the declared admissible region; ties prefer more reviewed direct kinds, local grade, more evidence, then declared order."
         },
@@ -2410,23 +2951,25 @@ window.THEORY_ASSEMBLY_DATA = {
         {
           "obligation": "RECONSTRUCTION_LIMITS",
           "foundation": "CLASSICAL_STANDARD",
-          "carrier": "KREIN_INDEFINITE",
+          "carrier": "SMOOTH_DISTRIBUTIONAL",
           "status": "LITERATURE_RESULT",
           "evidence": [
-            "bender-boettcher-1998",
-            "mostafazadeh-2001",
-            "gottschalk-2004"
+            "barnich-brandt-henneaux-2000",
+            "brunetti-fredenhagen-verch-2001",
+            "fredenhagen-rejzner-2011",
+            "brunetti-fredenhagen-rejzner-2013"
           ],
           "evidence_roles": {
-            "bender-boettcher-1998": "UNREVIEWED",
-            "mostafazadeh-2001": "UNREVIEWED",
-            "gottschalk-2004": "UNREVIEWED"
+            "barnich-brandt-henneaux-2000": "UNREVIEWED",
+            "brunetti-fredenhagen-verch-2001": "UNREVIEWED",
+            "fredenhagen-rejzner-2011": "UNREVIEWED",
+            "brunetti-fredenhagen-rejzner-2013": "UNREVIEWED"
           },
           "selection_basis": "Strongest recorded status in the declared admissible region; ties prefer more reviewed direct kinds, local grade, more evidence, then declared order."
         }
       ],
       "coverage": {
-        "direct": 14,
+        "direct": 15,
         "assessed": 16,
         "total": 16,
         "complete_direct": false
@@ -2546,7 +3089,7 @@ window.THEORY_ASSEMBLY_DATA = {
           "id": "OBLIGATION_COVERAGE",
           "label": "Obligation coverage",
           "status": "OPEN",
-          "basis": "14/16 obligations have a direct recorded result."
+          "basis": "15/16 obligations have a direct recorded result."
         },
         {
           "id": "CROSS_CELL_COMPOSITION",
@@ -2590,8 +3133,24 @@ window.THEORY_ASSEMBLY_DATA = {
     },
     {
       "id": "CONSTRUCTIVE_PROGRAMME",
-      "label": "Constructive/computable programme",
-      "aim": "Track which parts of a predictive theory can be supplied with witnesses or algorithms.",
+      "label": "Constructive and computable physics tradition",
+      "short_label": "Constructive / computable",
+      "camp_kind": "METHODOLOGICAL_TRADITION",
+      "camp_summary": "Constructive and computable approaches require existence claims to carry witnesses, algorithms, convergence data, or other operational mathematical content.",
+      "central_question": "Which parts of a physical theory can actually be constructed or computed from represented inputs?",
+      "lineage": [
+        "Bishop-style constructivism",
+        "computable analysis",
+        "proof mining and represented spaces"
+      ],
+      "signature_ideas": [
+        "witness-producing existence",
+        "algorithms with represented inputs",
+        "explicit rates and error control"
+      ],
+      "atlas_window": "All carrier types under the constructive/computable regime.",
+      "scope_note": "Computability depends on representation, and a constructive upper bound is not automatically a reverse-mathematical necessity result.",
+      "aim": "Track which parts of a predictive theory can be supplied with witnesses, algorithms, and controlled approximation data.",
       "foundations": [
         "CONSTRUCTIVE_COMPUTABLE"
       ],
@@ -3000,8 +3559,24 @@ window.THEORY_ASSEMBLY_DATA = {
     },
     {
       "id": "TOPOS_INTERNAL_PROGRAMME",
-      "label": "Topos/internal programme",
-      "aim": "Map a physics construction performed inside an alternative logical or geometric universe.",
+      "label": "Topos and internal quantum-foundations tradition",
+      "short_label": "Topos / internal",
+      "camp_kind": "RESEARCH_TRADITION",
+      "camp_summary": "Topos approaches reformulate spaces, observables, and truth inside an alternative logical universe where propositions may be contextual or local rather than globally Boolean.",
+      "central_question": "What changes when the logical universe of the theory is altered instead of merely changing an equation inside ordinary set theory?",
+      "lineage": [
+        "Isham–Butterfield contextual logic",
+        "Döring–Isham topos quantum theory",
+        "Heunen–Landsman–Spitters internal algebra"
+      ],
+      "signature_ideas": [
+        "contextual truth values",
+        "point-free or internal spaces",
+        "intuitionistic logic"
+      ],
+      "atlas_window": "All carrier types interpreted under the topos/internal regime.",
+      "scope_note": "This is a family of non-equivalent approaches; one internal construction does not transfer automatically to every topos or recover empirical quantum theory.",
+      "aim": "Map what can be formulated inside alternative logical and geometric universes and which bridges back to ordinary predictions remain open.",
       "foundations": [
         "TOPOS_INTERNAL"
       ],
@@ -4168,6 +4743,7 @@ window.THEORY_ASSEMBLY_DATA = {
   },
   "claim_flags": {
     "prototype_assemblies_generated": true,
+    "research_camp_lenses_declared": true,
     "selected_cells_content_addressed": true,
     "interface_and_coverage_states_separated": true,
     "at_least_one_cross_cell_interface_certified": true,
@@ -4185,6 +4761,7 @@ window.THEORY_ASSEMBLY_DATA = {
     "complete_observationally_valid_theory_identified": false
   },
   "does_not_establish": [
+    "that a research tradition is exhausted by its displayed atlas window or that every researcher named in a lineage endorses every selected cell",
     "that selected cells concern the same physical model or scope",
     "that either certified scoped bridge supplies any unregistered carrier or foundation translation",
     "that direct coverage composes into an end-to-end prediction",
@@ -4197,5 +4774,5 @@ window.THEORY_ASSEMBLY_DATA = {
     "a complete theory, a new Lorentzian-causal result, or a quantum lifecycle promotion"
   ],
   "source_atlas_digest": "e4c79e8ec537c2d9f9271d9ccbd042da2a5529b0b5f0f11fa6917cc3af0386cd",
-  "canonical_digest": "3edb5b9829b81f727cc8bdf4d11231192f54c20266e3db625391294af3361c62"
+  "canonical_digest": "0911e53250de46266bf587feda146df9321d7da87bef1628eb1ccc7e028da608"
 };
