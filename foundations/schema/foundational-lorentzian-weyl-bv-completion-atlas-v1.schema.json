@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "foundational-lorentzian-weyl-bv-completion-atlas-v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "result_id", "result_kind", "lifecycle", "created", "repository_base_commit", "dependency_tags", "question", "answer", "status_vocabulary", "stages", "branches", "frontier_summary", "classical_import_reconciliation", "research_queue", "provenance", "claim_flags", "does_not_establish", "independent_checker", "human_report"],
+  "properties": {
+    "schema_version": {"const": "foundational-lorentzian-weyl-bv-completion-atlas-v1"},
+    "result_id": {"const": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V1"},
+    "result_kind": {"const": "BRANCH_BY_STAGE_COMPLETION_ATLAS"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "created": {"type": "string", "format": "date"},
+    "repository_base_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "dependency_tags": {"type": "array", "minItems": 4, "uniqueItems": true, "items": {"enum": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]}},
+    "question": {"type": "string", "minLength": 80},
+    "answer": {"type": "string", "minLength": 600},
+    "status_vocabulary": {"type": "array", "minItems": 9, "maxItems": 9, "items": {"type": "object", "additionalProperties": false, "required": ["id", "meaning"], "properties": {"id": {"type": "string"}, "meaning": {"type": "string", "minLength": 40}}}},
+    "stages": {"type": "array", "minItems": 11, "maxItems": 11, "items": {"type": "object", "additionalProperties": false, "required": ["id", "name", "completion_test"], "properties": {"id": {"type": "string", "pattern": "^S[0-9]+_"}, "name": {"type": "string"}, "completion_test": {"type": "string", "minLength": 80}}}},
+    "branches": {"type": "array", "minItems": 7, "maxItems": 7, "items": {"$ref": "#/$defs/branch"}},
+    "frontier_summary": {"type": "object", "minProperties": 4},
+    "classical_import_reconciliation": {"type": "object", "required": ["historical_gate", "later_certified_repairs", "current_disposition", "rule"]},
+    "research_queue": {"type": "array", "minItems": 5, "items": {"type": "object", "additionalProperties": false, "required": ["priority", "branch", "object", "why"], "properties": {"priority": {"type": "integer", "minimum": 1}, "branch": {"type": "string"}, "object": {"type": "string"}, "why": {"type": "string", "minLength": 60}}}},
+    "provenance": {"type": "object", "additionalProperties": false, "required": ["inputs"], "properties": {"inputs": {"type": "array", "minItems": 20, "maxItems": 20, "items": {"type": "object", "additionalProperties": false, "required": ["path", "sha256", "role"], "properties": {"path": {"type": "string"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "role": {"type": "string"}}}}}},
+    "claim_flags": {"type": "object", "additionalProperties": {"type": "boolean"}},
+    "does_not_establish": {"type": "array", "minItems": 11, "items": {"type": "string", "minLength": 20}},
+    "independent_checker": {"type": "object", "additionalProperties": false, "required": ["path", "checks", "expected_digest"], "properties": {"path": {"const": "foundations/check_lorentzian_weyl_bv_completion_atlas.py"}, "checks": {"type": "array", "minItems": 7}, "expected_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}},
+    "human_report": {"const": "foundations/reports/lorentzian-weyl-bv-completion-atlas-v1.md"}
+  },
+  "$defs": {
+    "cell": {"type": "object", "additionalProperties": false, "required": ["stage", "status", "statement", "evidence", "boundary"], "properties": {"stage": {"type": "string"}, "status": {"enum": ["CERTIFIED", "SCOPED_CERTIFIED", "PARTIAL_CERTIFIED", "CONDITIONAL", "OPEN_SEEDED", "OBSTRUCTED_SCOPED", "FAIL_CLOSED", "FORBIDDEN_TRANSFER", "NOT_APPLICABLE"]}, "statement": {"type": "string", "minLength": 20}, "evidence": {"type": "array", "items": {"type": "string"}}, "boundary": {"type": "string", "minLength": 20}}},
+    "branch": {"type": "object", "additionalProperties": false, "required": ["id", "name", "relation_to_target", "scope", "stages", "first_unclosed_gate", "next_decisive_object"], "properties": {"id": {"type": "string"}, "name": {"type": "string"}, "relation_to_target": {"type": "string"}, "scope": {"type": "string", "minLength": 50}, "stages": {"type": "array", "minItems": 11, "maxItems": 11, "items": {"$ref": "#/$defs/cell"}}, "first_unclosed_gate": {"type": "string"}, "next_decisive_object": {"type": "string", "minLength": 100}}}
+  }
+}

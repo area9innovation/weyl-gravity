@@ -1,0 +1,52 @@
+{
+  "receipt_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V1_TIER_RECEIPT",
+  "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V1",
+  "created": "2026-08-15",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "scope": "A generated, independently checked branch-by-stage atlas of seven strict, scoped, reduced and changed-theory Weyl BV architectures across eleven lifecycle gates. It reconciles the historical fail-closed classical import certificate with later exact repairs, records the strict 386-row and Berger 26/54-row causal advances, and identifies the Berger nonstationary H26/C26 BRST Ward construction as the analytic-maturity frontier without promoting any Hadamard, QME, positivity or residual-transfer claim.",
+  "test_tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "command": "python3 -m py_compile foundations/build_lorentzian_weyl_bv_completion_atlas.py foundations/check_lorentzian_weyl_bv_completion_atlas.py foundations/verify_lorentzian_weyl_bv_completion_atlas.py foundations/tests/test_lorentzian_weyl_bv_completion_atlas.py && git diff --check -- <nine scoped foundations paths>",
+      "elapsed_seconds": 0.1,
+      "result": "All changed Python sources parse and the scoped diff has no whitespace errors."
+    },
+    "tier_1": {
+      "status": "PASS",
+      "command": "python3 foundations/build_lorentzian_weyl_bv_completion_atlas.py --check && python3 foundations/check_lorentzian_weyl_bv_completion_atlas.py && python3 foundations/verify_lorentzian_weyl_bv_completion_atlas.py && python3 -m unittest foundations.tests.test_lorentzian_weyl_bv_completion_atlas",
+      "elapsed_seconds": 0.8,
+      "result": "Deterministic generator current; independent checker passes 7 branches x 11 stages = 77 gates; Draft 2020-12 schema and 20 evidence hashes pass; eight tests including six decisive boundary mutations pass."
+    },
+    "tier_2": {
+      "status": "NOT_RUN",
+      "criterion": "The result is a new read-only aggregate over unchanged, content-addressed certificates and has no existing generated explorer, paper or certificate-chain consumer in this checkpoint."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No freeze, lifecycle promotion, shared algebra change or release was requested."
+    }
+  },
+  "artifacts": {
+    "foundations/README.md": "37871d72abfa14b6ed2dd35fd506cd40333783271292f02bf644a901314a7ca6",
+    "foundations/build_lorentzian_weyl_bv_completion_atlas.py": "d6c8163d96ae00774edf7d3ff3a3e2b5647f24bf22cce7eefe495e5f2723c828",
+    "foundations/check_lorentzian_weyl_bv_completion_atlas.py": "b5899ca1f73fb3161faeb2b8fd7b66464779a0df872be4e6b356d1ce0d80b91b",
+    "foundations/verify_lorentzian_weyl_bv_completion_atlas.py": "9eeefdd7669c29d88ab7c8902d0a8c43f2fd6b686f9a2182c892f4a072e37896",
+    "foundations/schema/foundational-lorentzian-weyl-bv-completion-atlas-v1.schema.json": "9f33d6c70a434149383e2656ad6c0a4d99c2c9e88018629f0dacdfcf1361ec06",
+    "foundations/tests/test_lorentzian_weyl_bv_completion_atlas.py": "8c2054af24bc4b09cbfa3ead3f2ba9717998af1d9c86f3a7907c4080ad0fbd03",
+    "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V1.json": "2f3eb34cac43c3d873946d9a48c70e1b3eb6c2ba6be89b36cd77c393a2be6c10",
+    "foundations/reports/lorentzian-weyl-bv-completion-atlas-v1.md": "e03bd7ed99fc0cfa30429302656ee3e27cc6fc67f5a6db88ea781a6fdf576a3c"
+  },
+  "claim_flags": {
+    "ATLAS_CLASSIFIED": true,
+    "CLASSICAL_IMPORT_GATE_PASSED": false,
+    "BRST_HADAMARD_STATE_CONSTRUCTED": false,
+    "LORENTZIAN_QME_RESTORED": false,
+    "RESIDUAL_QUANTUM_TRANSFERRED": false,
+    "LORENTZIAN_FULL_THEORY_CERTIFIED": false
+  }
+}

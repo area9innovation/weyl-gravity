@@ -722,6 +722,27 @@ filed in
 [`foundations-scope-frontier-importer.json`](../planning/forge-requests/foundations-scope-frontier-importer.json);
 the local analyzer remains the independent comparison rail.
 
+## Lorentzian Weyl BV completion atlas
+
+The
+[`branch-by-stage completion atlas`](reports/lorentzian-weyl-bv-completion-atlas-v1.md)
+compares seven physically distinct routes across eleven causal quantum gates.
+It records two fronts instead of manufacturing one score: strict pure Weyl is
+the identity-preserving target and already has a scoped 386-row classical
+causal homotopy, while the Berger positive-clock branch is furthest along the
+analytic lifecycle with a complete 54-row causal complex, cyclic D-Cartan
+closure through arity three, and a 26-row exact-CCR Hadamard candidate whose
+remaining Ward defect is smooth.  The atlas also reconciles the historical
+fail-closed import gate with later exact repair receipts without treating those
+receipts as an implicit replacement freeze certificate.
+
+```bash
+python3 foundations/build_lorentzian_weyl_bv_completion_atlas.py --check
+python3 foundations/check_lorentzian_weyl_bv_completion_atlas.py
+python3 foundations/verify_lorentzian_weyl_bv_completion_atlas.py
+python3 -m unittest foundations.tests.test_lorentzian_weyl_bv_completion_atlas
+```
+
 ## Lifecycle
 
 This stream uses a literature/research lifecycle, not the quantum lifecycle:
