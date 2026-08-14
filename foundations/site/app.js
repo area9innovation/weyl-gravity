@@ -143,6 +143,7 @@
       paretoOnly: false,
     },
     assembly: ASSEMBLIES.assemblies[0].id,
+    assemblyPanel: "models",
   };
 
   function key(c) { return `${c.foundation}|${c.carrier}|${c.obligation}`; }
@@ -201,6 +202,7 @@
     const params = new URLSearchParams(location.hash.slice(1));
     if (params.get("view") && ["matrix", "viability", "assemblies", "guide", "graph", "ladder", "evidence"].includes(params.get("view"))) state.view = params.get("view");
     if (ASSEMBLIES.assemblies.some(item => item.id === params.get("assembly"))) state.assembly = params.get("assembly");
+    if (["models", "programmes", "ledgers"].includes(params.get("panel"))) state.assemblyPanel = params.get("panel");
     state.q = params.get("q") || "";
     state.seededOnly = params.get("seeded") === "1";
     state.cell = params.get("cell") || null;
@@ -218,7 +220,10 @@
     if (state.q) params.set("q", state.q);
     if (state.seededOnly) params.set("seeded", "1");
     if (state.cell) params.set("cell", state.cell);
-    if (state.view === "assemblies") params.set("assembly", state.assembly);
+    if (state.view === "assemblies") {
+      params.set("assembly", state.assembly);
+      if (state.assemblyPanel !== "models") params.set("panel", state.assemblyPanel);
+    }
     const mapping = {f: "FOUNDATION", c: "CARRIER", o: "REFINED_OBLIGATION", s: "STATUS"};
     for (const [param, axisId] of Object.entries(mapping)) {
       const allowed = axisId === "STATUS" ? Object.keys(STATUS) : axis[axisId].keys.map(x => x.id);
@@ -689,7 +694,8 @@
     const completeCoverage = assembly.coverage.complete_direct ? "Coverage complete" : "Coverage still open";
     const certifiedCount = assembly.interfaces.filter(item => item.certification_status === "CERTIFIED").length;
     document.getElementById("assemblyExplorer").innerHTML = `
-      <section class="model-assembly"><div class="model-assembly-head"><div><p class="eyebrow">First model-scoped end-to-end result</p><h2>Field equations to Cassini</h2><p>${esc(model.title)}</p></div><div class="model-disposition"><b>Bounded assembly complete</b><span>Empirically supported in its declared scope</span><small>Complete theory: NO</small></div></div>
+      <nav class="assembly-subtabs" aria-label="Assembly explorer sections"><button data-assembly-panel="models" class="${state.assemblyPanel === "models" ? "active" : ""}"><b>Bounded model tests</b><span>Two single-model chains and their observational gates</span></button><button data-assembly-panel="programmes" class="${state.assemblyPanel === "programmes" ? "active" : ""}"><b>Research programmes</b><span>Nine coverage prototypes and the selected source map</span></button><button data-assembly-panel="ledgers" class="${state.assemblyPanel === "ledgers" ? "active" : ""}"><b>Interfaces & calibration</b><span>Typed joins, benchmark records, and positive controls</span></button></nav>
+      <div id="assemblyPanelModels" class="assembly-panel ${state.assemblyPanel === "models" ? "active" : ""}" data-assembly-panel-body="models"><section class="model-assembly"><div class="model-assembly-head"><div><p class="eyebrow">First model-scoped end-to-end result</p><h2>Field equations to Cassini</h2><p>${esc(model.title)}</p></div><div class="model-disposition"><b>Bounded assembly complete</b><span>Empirically supported in its declared scope</span><small>Complete theory: NO</small></div></div>
       <div class="model-scope"><p><b>One model:</b> ${esc(model.model_identity.theory)} — ${esc(model.model_identity.sector)}.</p><p><b>Declared coupling:</b> ${esc(model.model_identity.matter_coupling)}.</p></div>
       <div class="section-head compact-head"><div><p class="eyebrow">One object chain, not a coverage maximum</p><h3>Six composed stages</h3></div><p>Three joins are certified exactly; two operational and empirical joins are registered with literature-scoped boundaries.</p></div><div class="model-stages">${modelStages}</div>
       <div class="model-comparison"><div><p class="eyebrow">Exact prediction</p><b>PPN γ = ${assemblyFraction(model.exact_prediction_rail.ppn_identification.gamma)}</b><span>Null-delay coefficient 1 + γ = ${assemblyFraction(model.exact_prediction_rail.null_delay.first_order_delay_coefficient)}</span></div><div><p class="eyebrow">Published Cassini estimate</p><b>${esc(empirical.publisher_reported_expression)}</b><span>Exact prediction lies inside the displayed band; normalized distance ${assemblyFraction(empirical.absolute_standardized_distance)}.</span></div><div><p class="eyebrow">Evidence type</p><b>Literature-scoped comparison</b><span>Arithmetic rechecked; raw spacecraft reduction and likelihood not reproduced.</span></div></div>
@@ -702,8 +708,8 @@
       ${mannheimCurveSvg(mannheim)}
       <div class="model-comparison mannheim-metrics"><div><p class="eyebrow">Published endpoint</p><b>${mannheimNumeric.predicted_endpoint.velocity_km_s.toFixed(1)} vs ${mannheimNumeric.observed_endpoint_velocity_reconstructed_km_s.toFixed(1)} km/s</b><span>${(100 * mannheimNumeric.endpoint_relative_velocity_residual).toFixed(2)}% relative residual; passes the declared 5% coarse audit gate.</span></div><div><p class="eyebrow">Later SPARC curve</p><b>RMS ${mannheimEmpirical.unweighted_rms_residual_km_s.toFixed(3)} km/s</b><span>Passes the declared 5 km/s coarse shape gate across ${mannheimEmpirical.points_inside_published_radius} points.</span></div><div class="failed-metric"><p class="eyebrow">Random-error gate</p><b>Reduced χ² ${mannheimEmpirical.reduced_chi_squared_no_refit.toFixed(3)}</b><span>Fails the declared ≤2 gate using SPARC random errors alone. This blocks empirical promotion.</span></div></div>
       <div class="section-head compact-head"><div><p class="eyebrow">No averaged verdict</p><h3>Eight independent maturity rails</h3></div><p>The green, orange, grey, and red states are not collapsed into a score. A close-looking curve does not erase a failed uncertainty-sensitive comparison.</p></div><div class="model-rails mannheim-rails">${mannheimRails}</div>
-      <p class="model-boundary"><b>Boundary:</b> No parameter is refitted. SPARC is a later 3.6 μm reduction, not the paper's original heterogeneous blue-band dataset; the comparison is therefore an external stress test, not an original likelihood reproduction. ${esc(mannheimEmpirical.boundary)} <a href="sources/foundations/results/FOUNDATIONAL_MANNHEIM_NGC3198_MODEL_ASSEMBLY_V1.json">Open certificate</a>.</p></section>
-      <div class="section-head"><div><p class="eyebrow">Coverage envelopes</p><h2>Prototype assemblies are still not composed theories</h2></div><p>The two bounded chains above keep their model identities and gate outcomes intact: GR/Cassini is complete only in its declared sector, while Mannheim/NGC 3198 remains partial after a failed comparison gate. The selectors below instead maximize atlas coverage and remain navigational prototypes.</p></div>
+      <p class="model-boundary"><b>Boundary:</b> No parameter is refitted. SPARC is a later 3.6 μm reduction, not the paper's original heterogeneous blue-band dataset; the comparison is therefore an external stress test, not an original likelihood reproduction. ${esc(mannheimEmpirical.boundary)} <a href="sources/foundations/results/FOUNDATIONAL_MANNHEIM_NGC3198_MODEL_ASSEMBLY_V1.json">Open certificate</a>.</p></section></div>
+      <div id="assemblyPanelProgrammes" class="assembly-panel ${state.assemblyPanel === "programmes" ? "active" : ""}" data-assembly-panel-body="programmes"><div class="section-head"><div><p class="eyebrow">Coverage envelopes</p><h2>Prototype assemblies are still not composed theories</h2></div><p>The two bounded chains keep their model identities and gate outcomes intact. The selectors here instead maximize atlas coverage and remain navigational prototypes.</p></div>
       <div class="section-head compact-head"><div><p class="eyebrow">People organize around questions, not axis codes</p><h2>Meet the research programmes</h2></div><p>Each card is a fair explanatory lens over the evidence cube: what the programme is trying to do, which ideas distinguish it, what this atlas currently samples, and where the analogy stops.</p></div>
       <div class="camp-gallery">${campCards}</div>
       <section class="camp-profile"><header><div><p class="eyebrow">${esc(CAMP_KIND_LABEL[assembly.camp_kind] || assembly.camp_kind)}</p><h2>${esc(assembly.label)}</h2><p>${esc(assembly.camp_summary)}</p></div><label><b>Choose another programme</b><select id="assemblySelect">${options}</select></label></header><div class="camp-question"><small>Central question</small><b>${esc(assembly.central_question)}</b></div><div class="camp-profile-grid"><article><h3>Lineage and conversation</h3><ul>${campLineage}</ul></article><article><h3>Signature ideas</h3><ul>${campIdeas}</ul></article><article><h3>What this atlas samples</h3><p>${esc(assembly.atlas_window)}</p></article></div><p class="camp-scope"><b>Important boundary:</b> ${esc(assembly.scope_note)}</p></section>
@@ -711,8 +717,8 @@
       <div class="section-head compact-head"><div><p class="eyebrow">Do not collapse distinct questions</p><h2>Seven independent maturity rails</h2></div><p>The rails have dependencies, but they are reported separately. Numerical reproduction is not empirical validation. Missing records are neutral; they are not failed tests.</p></div>
       <div class="assembly-gates">${gates}</div>
       <div class="section-head compact-head"><div><p class="eyebrow">Inputs selected from the cube</p><h2>Obligation source map</h2></div><p>The deterministic selector uses the strongest recorded status inside this prototype's declared region. Open any grade to inspect its exact boundary and evidence.</p></div>
-      <div class="assembly-table-wrap"><table class="assembly-table"><thead><tr><th>Physical obligation</th><th>Selected regime / carrier</th><th>Recorded grade</th><th>Reviewed direct kind</th><th>Records</th></tr></thead><tbody>${cells}</tbody></table></div>
-      <div class="section-head compact-head"><div><p class="eyebrow">The missing middle</p><h2>Typed interface ledger</h2></div><p>Coverage becomes a theory only through explicit joins. “Not assessed” means the atlas has no registered relation; it is neither compatibility nor incompatibility.</p></div>
+      <div class="assembly-table-wrap"><table class="assembly-table"><thead><tr><th>Physical obligation</th><th>Selected regime / carrier</th><th>Recorded grade</th><th>Reviewed direct kind</th><th>Records</th></tr></thead><tbody>${cells}</tbody></table></div></div>
+      <div id="assemblyPanelLedgers" class="assembly-panel ${state.assemblyPanel === "ledgers" ? "active" : ""}" data-assembly-panel-body="ledgers"><div class="section-head compact-head"><div><p class="eyebrow">The missing middle</p><h2>Typed interface ledger</h2></div><p>Coverage becomes a theory only through explicit joins. “Not assessed” means the atlas has no registered relation; it is neither compatibility nor incompatibility.</p></div>
       <div class="interface-vocabulary">${vocabulary}</div>
       <div class="assembly-table-wrap"><table class="assembly-table interface-table"><thead><tr><th>Join</th><th>From</th><th>Relation</th><th>To</th><th>Why this state</th></tr></thead><tbody>${interfaces}</tbody></table></div>
       <div class="section-head compact-head"><div><p class="eyebrow">Scoped non-identity, not a universal no-go</p><h2>Euclidean/Krein carrier boundary</h2></div><p>The positive finite-lattice measure and the all-real two-field path integral are not the same full carrier. Conditional perturbative or analytic bridges remain open.</p></div>
@@ -720,7 +726,14 @@
       <div class="section-head compact-head"><div><p class="eyebrow">No benchmark name is evidence</p><h2>Empirical benchmark ledger</h2></div><p>A future record must identify observables, data, prediction, comparison method, uncertainty, fit scope, and out-of-sample status. The ledger currently contains ${ASSEMBLIES.empirical_ledger.records.length} comparison records.</p></div>
       <div class="benchmark-grid">${benchmarks}</div>
       <article class="positive-control"><p class="eyebrow">External positive control — not a candidate assembly</p><h2>${esc(control.label)}</h2><p>${esc(control.scope)}</p><div class="control-rails">${controlRails}</div><div class="section-head compact-head"><div><p class="eyebrow">Domain-specific evidence</p><h3>What a populated empirical rail looks like</h3></div><p>${control.records.length} primary-source comparison records support ${control.benchmark_coverage.filter(item => item.status === "SUPPORTED_CONTROL").length}/${control.benchmark_coverage.length} benchmark families. Unregistered domains remain grey.</p></div><div class="benchmark-grid control-grid">${controlBenchmarks}</div><p class="control-boundary"><b>Boundary:</b> ${esc(control.does_not_establish[4])}. ${esc(control.does_not_establish[0])}.</p></article>
-      <article class="viability-warning boundary"><b>Fail-closed boundary.</b> ${esc(ASSEMBLIES.unit)} ${esc(ASSEMBLIES.does_not_establish[4])}.</article>`;
+      <article class="viability-warning boundary"><b>Fail-closed boundary.</b> ${esc(ASSEMBLIES.unit)} ${esc(ASSEMBLIES.does_not_establish[4])}.</article></div>`;
+    document.querySelectorAll("[data-assembly-panel]").forEach(button => button.addEventListener("click", () => {
+      state.assemblyPanel = button.dataset.assemblyPanel;
+      document.querySelectorAll("[data-assembly-panel]").forEach(item => item.classList.toggle("active", item.dataset.assemblyPanel === state.assemblyPanel));
+      document.querySelectorAll("[data-assembly-panel-body]").forEach(item => item.classList.toggle("active", item.dataset.assemblyPanelBody === state.assemblyPanel));
+      updateHash();
+      document.getElementById(`assemblyPanel${state.assemblyPanel[0].toUpperCase()}${state.assemblyPanel.slice(1)}`)?.scrollIntoView({behavior: "smooth", block: "start"});
+    }));
     document.getElementById("assemblySelect").addEventListener("change", event => { state.assembly = event.target.value; renderAssemblies(); updateHash(); });
     document.querySelectorAll("[data-camp]").forEach(button => button.addEventListener("click", () => { state.assembly = button.dataset.camp; renderAssemblies(); updateHash(); document.querySelector(".camp-profile")?.scrollIntoView({behavior: "smooth", block: "start"}); }));
     document.querySelectorAll(".assembly-cell-jump").forEach(button => button.addEventListener("click", () => openCell(button.dataset.cellJump)));

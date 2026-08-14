@@ -1,0 +1,113 @@
+{
+  "schema_version": "science-forge-tier-receipt-v1",
+  "receipt_id": "FOUNDATIONAL_ASSEMBLY_VIEW_SPLIT_V1_TIER_RECEIPT",
+  "result_id": "FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2",
+  "created": "2026-08-14",
+  "source_base_commit": "02a16aafc02061bb0f807722d4b6367f963337ce",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "scope": "Split the long Assemblies explorer into three permalink-addressable subviews: bounded model tests, research-programme prototypes, and interface/calibration ledgers. This is a generated presentation change over unchanged scientific assembly data.",
+  "artifacts": [
+    {
+      "path": "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json",
+      "sha256": "48ee638592aee273e64d6deb14c543430d33a7dd917ff8065c21653b989d15e9",
+      "role": "generated static-site result with three-way assembly subnavigation"
+    },
+    {
+      "path": "foundations/site/app.js",
+      "sha256": "cd820798f209ff4055097e5e8adbf48fdbf2d82767d834d043e965ace57a5ed2",
+      "role": "generated panel state, URL serialization, and visibility controls"
+    },
+    {
+      "path": "foundations/site/styles.css",
+      "sha256": "2286e30cf7a401cbcc9a7ce9418f497f4679663ea449a983455da71e1006b122",
+      "role": "generated responsive subnavigation and panel layout"
+    },
+    {
+      "path": "foundations/site/index.html",
+      "sha256": "4bfb361601f9e4dbb32387c2ee799b3aeec92617353db3386e3d952efb8518d3",
+      "role": "generated offline explorer shell"
+    },
+    {
+      "path": "foundations/site/manifest.json",
+      "sha256": "7915716ff9a1f60e23d06ae8e353069bd3e05c38a9a302b9543c04ace5b4e56a",
+      "role": "content-addressed site input/output manifest"
+    },
+    {
+      "path": "paper/21-reverse-foundations-of-physics-claim-map.json",
+      "sha256": "e8b8e6257378c3fca668768d8fafbcf32bd634bdaf37f6b457f2b411c8c24d81",
+      "role": "refreshed Paper 21 authority hash for the explorer result"
+    }
+  ],
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "python3 -m py_compile foundations/build_matrix_site_v2.py foundations/check_matrix_site_v2.py foundations/verify_matrix_site_v2.py foundations/tests/test_matrix_site.py; python3 -m json.tool on changed JSON and receipt; git diff --check",
+          "status": "PASS"
+        },
+        {
+          "command": "google-chrome headless screenshots at 1440x1600 for models/programmes and 390x1800 for ledgers",
+          "status": "PASS",
+          "output": "all three URL-selected panels rendered independently; active states, desktop sticky navigation, mobile stacked navigation, and hidden-panel behavior were visually inspected"
+        },
+        {
+          "command": "node --check foundations/matrix_site_assets/app.js foundations/site/app.js",
+          "status": "NOT_RUN",
+          "criterion": "node is not installed; both JavaScript copies executed successfully in headless Chrome"
+        }
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "python3 foundations/build_matrix_site_v2.py --check; python3 foundations/check_matrix_site_v2.py; python3 foundations/verify_matrix_site_v2.py",
+          "status": "PASS",
+          "output": "deterministic 93-artifact site, 576 assessed coordinates, two model assemblies, and three assembly subviews"
+        },
+        {
+          "command": "python3 -m unittest foundations.tests.test_matrix_site",
+          "status": "PASS",
+          "output": "9 tests"
+        }
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "criterion": "The generated explorer result is a Paper 21 authority, so its claim-map consumer was regenerated and independently checked.",
+      "commands": [
+        {
+          "command": "python3 paper/generate_21_reverse_foundations_claim_map.py --check; python3 paper/verify_21_reverse_foundations_claim_map.py",
+          "status": "PASS"
+        }
+      ]
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "This is a presentation and navigation change over unchanged scientific data, not a freeze, release, shared algebra change, or lifecycle promotion."
+    }
+  },
+  "claim_flags": {
+    "bounded_models_panel_generated": true,
+    "research_programmes_panel_generated": true,
+    "interface_calibration_panel_generated": true,
+    "panel_permalinks_generated": true,
+    "existing_site_updated_in_place": true,
+    "scientific_assembly_data_changed": false,
+    "complete_observationally_valid_theory_identified": false,
+    "new_lorentzian_claim": false,
+    "quantum_lifecycle_promoted": false
+  },
+  "does_not_establish": [
+    "a change to any model, comparison gate, evidence record, or assembly disposition",
+    "that coverage prototypes compose into physical theories",
+    "a complete observationally validated theory",
+    "a new Lorentzian-causal or quantum result"
+  ]
+}
