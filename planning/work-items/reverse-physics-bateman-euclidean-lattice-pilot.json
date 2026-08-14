@@ -1,0 +1,31 @@
+{
+  "id": "sf:program/work/reverse-physics-bateman-euclidean-lattice-pilot",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "reverse-physics",
+    "state": "ACTIVE",
+    "objective": "Construct and audit the first finite positive Euclidean lattice pilot for the Bateman--Turok perfect-square scalar, including the auxiliary-field normalization, exact finite-lattice invariants and a bounded deterministic sampler calibration.",
+    "depends_on": [
+      "REVERSE_PHYSICS_BT_PERFECT_SQUARE_RG_SEPARATRIX_V1",
+      "REVERSE_PHYSICS_BT_FULLY_REARRANGED_RIGGED_ALL_TIME_PHYSICAL_JET_V1"
+    ],
+    "activates": [
+      "a nonperturbative Euclidean computational experiment with an exact finite-spacing definition",
+      "a step-scaling continuum-limit study after independent sampler and finite-size validation",
+      "a precise separation between positive Euclidean weight and Lorentzian probability"
+    ],
+    "current_gate": "Derive the Omega/Upsilon Gaussian-elimination coefficient from the published O(1,1) action, choose a shift-exact positive finite lattice on Omega>0 with the D Omega/Omega measure, prove its vacuum and free-spectrum properties, and calibrate a deterministic zero-mode-fixed HMC pilot against exact free and Schwinger--Dyson checks.",
+    "stop_condition": "Certify either a finite positive lattice action with a bounded numerical pilot and explicit continuum/Lorentzian nonclaims, or the first exact normalization, measure, zero-mode, stability or sampling obstruction. Do not infer a continuum QFT or a Lorentzian scattering theorem from finite Euclidean data.",
+    "forbid": "no claim of Osterwalder--Schrader positivity; no continuum-limit claim; no analytic-continuation claim; no identification of lattice correlators with q8 or q10; no laboratory, gravity, BV--BRST, QME or LORENTZIAN-CAUSAL promotion",
+    "allowed_paths": [
+      "reverse_physics/",
+      "planning/work-items/reverse-physics-bateman-euclidean-lattice-pilot.json",
+      "planning/events/",
+      "notes/bateman-turok-embedding.md",
+      "paper/05-interaction-obstructions.tex",
+      "paper/05-interaction-obstructions.pdf"
+    ],
+    "resource_hint": "Use Omega=exp(lambda*phi)>0 and S_E=(2*lambda^2)^-1 sum_x[(Delta_L Omega)_x/Omega_x]^2 on a periodic connected graph, with sum_x phi_x=0. Keep the exact algebra and numerical observations as distinct evidence types. Run all numerical processes sequentially below the 500 MB virtual-memory cap."
+  }
+}

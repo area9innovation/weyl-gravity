@@ -1002,6 +1002,33 @@ Statements about the mirror background $(0,1)$ are therefore
 statements about the extended theory; whether both null branches are
 physical sectors of one completion is open.
 
+The positive branch does nevertheless define a direct Euclidean experiment.
+Writing $U_x=e^{\lambda\phi_x}>0$ on a connected periodic graph, the
+finite-spacing action
+\begin{equation}\label{eq:bt-euclidean-lattice}
+ S_{E,L}=\frac{1}{2\lambda^2}\sum_x
+ \left(\frac{(\Delta_LU)_x}{U_x}\right)^2,
+ \qquad \sum_x\phi_x=0,
+\end{equation}
+is a nonnegative sum of squares, preserves the constant shift exactly, has
+the unique gauge-fixed zero $\phi=0$, and has vacuum Hessian
+$\Delta_L^2$.  A shortest-path bound makes the gauge-fixed action coercive,
+so the finite-dimensional partition function is finite.  A
+zero-mode-projected $4^4$ HMC pilot passes its exact free
+action, free propagator, reversibility, and finite-volume Schwinger--Dyson
+checks; the certificate is
+\texttt{REVERSE\_PHYSICS\_BT\_EUCLIDEAN\_LATTICE\_PILOT\_V1}.
+This is finite-volume \texttt{EUCLIDEAN-SPECTRAL} evidence, not reflection
+positivity, a continuum limit, analytic continuation, or Lorentzian
+scattering.  The recent all-order renormalization analysis explicitly names
+the lattice continuum limit as the next nonperturbative test
+\cite{ABHT2026}.  Its displayed Eq.~(52) has a normalization inconsistency:
+Gaussian elimination of its Eq.~(51) gives
+$3(\Box U/U)^2/(2g)$, not $(\Box U/U)^2/(2g)$.  The factor three is required
+for the same paper's $g=-3\lambda^2$ to reproduce the perfect-square action,
+so this is naturally a display typo rather than a conflict with its
+beta-function map.
+
 \begin{proposition}[Null sectors and interaction-generated Jordan
 dynamics]\label{prop:sectors}
 The constant zero-action stationary backgrounds form the two null
@@ -5691,6 +5718,11 @@ Phys.\ Rev.\ D \textbf{98} (2018) 045014, arXiv:1801.03220.
 S.~Bateman and N.~Turok,
 \emph{Escape from Ostrogradsky via hidden ghost parity},
 arXiv:2607.00096.
+
+\bibitem{ABHT2026}
+M.~Anderson, S.~Bateman, F.~Herzog and N.~Turok,
+\emph{On divergences in a four-derivative scalar field theory},
+arXiv:2608.12210.
 
 \bibitem{HudsonParthasarathy1984}
 R.~L.~Hudson and K.~R.~Parthasarathy,

@@ -1,0 +1,238 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-lattice-pilot-v1.schema.json",
+  "title": "BT finite positive Euclidean lattice pilot",
+  "$defs": {
+    "string": {"type": "string", "minLength": 1},
+    "strings": {"type": "array", "items": {"$ref": "#/$defs/string"}},
+    "rational": {
+      "type": "object",
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      },
+      "additionalProperties": false
+    },
+    "input": {
+      "type": "object",
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {"$ref": "#/$defs/string"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      },
+      "additionalProperties": false
+    },
+    "summary": {
+      "type": "object",
+      "required": ["mean", "blocked_standard_error", "lag1_autocorrelation", "minimum", "maximum"],
+      "properties": {
+        "mean": {"type": "number"},
+        "blocked_standard_error": {"type": "number", "exclusiveMinimum": 0},
+        "lag1_autocorrelation": {"type": "number", "exclusiveMinimum": -1, "exclusiveMaximum": 1},
+        "minimum": {"type": "number"},
+        "maximum": {"type": "number"}
+      },
+      "additionalProperties": false
+    },
+    "run": {
+      "type": "object",
+      "required": ["coupling", "seed", "lattice", "zero_mode_constraint", "algorithm", "acceptance_rate", "finite_energy_error_count", "mean_delta_h", "max_abs_delta_h", "action_density_split_z", "observables"],
+      "properties": {
+        "coupling": {"type": "number", "minimum": 0, "maximum": 0.4},
+        "seed": {"type": "integer"},
+        "lattice": {
+          "type": "object",
+          "required": ["length", "dimensions", "volume", "boundary"],
+          "properties": {
+            "length": {"const": 4},
+            "dimensions": {"const": 4},
+            "volume": {"const": 256},
+            "boundary": {"const": "PERIODIC"}
+          },
+          "additionalProperties": false
+        },
+        "zero_mode_constraint": {"const": "sum_x phi_x=0 on every trajectory"},
+        "algorithm": {
+          "type": "object",
+          "required": ["name", "warmup_trajectories", "recorded_samples", "thinning_trajectories", "step_size", "leapfrog_steps", "block_count"],
+          "properties": {
+            "name": {"const": "zero-mode-projected HMC"},
+            "warmup_trajectories": {"const": 400},
+            "recorded_samples": {"const": 800},
+            "thinning_trajectories": {"const": 2},
+            "step_size": {"const": 0.035},
+            "leapfrog_steps": {"const": 18},
+            "block_count": {"const": 20}
+          },
+          "additionalProperties": false
+        },
+        "acceptance_rate": {"type": "number", "minimum": 0.7, "maximum": 1},
+        "finite_energy_error_count": {"const": 2000},
+        "mean_delta_h": {"type": "number"},
+        "max_abs_delta_h": {"type": "number", "minimum": 0},
+        "action_density_split_z": {"type": "number", "minimum": 0, "exclusiveMaximum": 4},
+        "observables": {
+          "type": "object",
+          "required": ["action_density", "virial_ratio", "lowest_mode_ratio", "field_variance", "curvature_density"],
+          "properties": {
+            "action_density": {"$ref": "#/$defs/summary"},
+            "virial_ratio": {"$ref": "#/$defs/summary"},
+            "lowest_mode_ratio": {"$ref": "#/$defs/summary"},
+            "field_variance": {"$ref": "#/$defs/summary"},
+            "curvature_density": {"$ref": "#/$defs/summary"}
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "type": "object",
+  "required": [
+    "certificate", "schema_version", "dependency_tags", "lifecycle_state",
+    "result_kind", "question", "answer", "auxiliary_normalization_audit",
+    "finite_lattice_definition", "numerical_pilot", "disposition",
+    "missing_object_ledger", "next_gate", "does_not_establish", "provenance",
+    "verification_commands", "checks", "report", "schema"
+  ],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_EUCLIDEAN_LATTICE_PILOT_V1"},
+    "schema_version": {"const": "reverse-physics-bt-euclidean-lattice-pilot-v1"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "result_kind": {"const": "exact finite Euclidean lattice construction and numerical pilot"},
+    "question": {"$ref": "#/$defs/string"},
+    "answer": {"$ref": "#/$defs/string"},
+    "auxiliary_normalization_audit": {
+      "type": "object",
+      "required": ["published_inputs", "completion_of_square", "stationary_solution", "derived_effective_coefficient_over_g", "displayed_effective_coefficient_over_g", "derived_to_displayed_ratio", "with_equation_54_derived_lorentzian_coefficient", "with_equation_54_displayed_lorentzian_coefficient", "classification", "interpretation"],
+      "properties": {
+        "published_inputs": {"type": "object"},
+        "completion_of_square": {"$ref": "#/$defs/string"},
+        "stationary_solution": {"const": "Upsilon=-3*A/(g*B)"},
+        "derived_effective_coefficient_over_g": {"const": {"numerator": 3, "denominator": 2}},
+        "displayed_effective_coefficient_over_g": {"const": {"numerator": 1, "denominator": 2}},
+        "derived_to_displayed_ratio": {"const": {"numerator": 3, "denominator": 1}},
+        "with_equation_54_derived_lorentzian_coefficient": {"const": "-1/(2*lambda^2)"},
+        "with_equation_54_displayed_lorentzian_coefficient": {"const": "-1/(6*lambda^2)"},
+        "classification": {"const": "DISPLAYED_NORMALIZATION_INCONSISTENCY"},
+        "interpretation": {"$ref": "#/$defs/string"}
+      },
+      "additionalProperties": false
+    },
+    "finite_lattice_definition": {
+      "type": "object",
+      "required": ["carrier", "positive_variable", "graph_laplacian", "action", "measure", "zero_mode_constraint", "exact_properties", "normalizability", "four_cube_free_spectrum", "continuum_tree_limit"],
+      "properties": {
+        "carrier": {"$ref": "#/$defs/string"},
+        "positive_variable": {"const": "Omega_x=exp(lambda*phi_x)>0"},
+        "graph_laplacian": {"$ref": "#/$defs/string"},
+        "action": {"$ref": "#/$defs/string"},
+        "measure": {"$ref": "#/$defs/string"},
+        "zero_mode_constraint": {"const": "sum_x phi_x=0"},
+        "exact_properties": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"$ref": "#/$defs/string"}},
+        "normalizability": {
+          "type": "object",
+          "required": ["field_range", "graph_degree", "graph_diameter", "path_edge_bound", "action_lower_bound", "pilot_diameter", "conclusion", "classification"],
+          "properties": {
+            "field_range": {"$ref": "#/$defs/string"},
+            "graph_degree": {"const": "q=2*d"},
+            "graph_diameter": {"const": "D"},
+            "path_edge_bound": {"$ref": "#/$defs/string"},
+            "action_lower_bound": {"$ref": "#/$defs/string"},
+            "pilot_diameter": {"const": 8},
+            "conclusion": {"$ref": "#/$defs/string"},
+            "classification": {"const": "FINITE_PARTITION_FUNCTION"}
+          },
+          "additionalProperties": false
+        },
+        "four_cube_free_spectrum": {
+          "type": "array",
+          "minItems": 9,
+          "maxItems": 9,
+          "items": {
+            "type": "object",
+            "required": ["laplacian_eigenvalue", "hessian_eigenvalue", "multiplicity"],
+            "properties": {
+              "laplacian_eigenvalue": {"type": "integer", "minimum": 0},
+              "hessian_eigenvalue": {"type": "integer", "minimum": 0},
+              "multiplicity": {"type": "integer", "minimum": 1}
+            },
+            "additionalProperties": false
+          }
+        },
+        "continuum_tree_limit": {"$ref": "#/$defs/string"}
+      },
+      "additionalProperties": false
+    },
+    "numerical_pilot": {
+      "type": "object",
+      "required": ["evidence_type", "arithmetic", "free_calibration", "interacting_observation", "reversibility_check", "interpretation"],
+      "properties": {
+        "evidence_type": {"const": "NUMERICAL_PILOT_OBSERVED"},
+        "arithmetic": {"$ref": "#/$defs/string"},
+        "free_calibration": {"$ref": "#/$defs/run"},
+        "interacting_observation": {"$ref": "#/$defs/run"},
+        "reversibility_check": {
+          "type": "object",
+          "required": ["max_position_residual", "max_momentum_residual"],
+          "properties": {
+            "max_position_residual": {"type": "number", "minimum": 0, "exclusiveMaximum": 1e-11},
+            "max_momentum_residual": {"type": "number", "minimum": 0, "exclusiveMaximum": 1e-11}
+          },
+          "additionalProperties": false
+        },
+        "interpretation": {"$ref": "#/$defs/string"}
+      },
+      "additionalProperties": false
+    },
+    "disposition": {
+      "type": "object",
+      "required": ["auxiliary_gaussian_normalization", "positive_finite_euclidean_lattice", "finite_lattice_vacuum_and_free_spectrum", "bounded_hmc_sampler", "nonperturbative_finite_volume_observables", "continuum_limit", "osterwalder_schrader_reflection_positivity", "analytic_continuation", "lorentzian_scattering", "gravitational_transfer"],
+      "properties": {
+        "auxiliary_gaussian_normalization": {"const": "EXACT_FACTOR_THREE_CORRECTION"},
+        "positive_finite_euclidean_lattice": {"const": "CONSTRUCTED"},
+        "finite_lattice_vacuum_and_free_spectrum": {"const": "PROVED"},
+        "bounded_hmc_sampler": {"const": "CALIBRATED_ON_4_POWER_4"},
+        "nonperturbative_finite_volume_observables": {"const": "OBSERVED_PILOT_ONLY"},
+        "continuum_limit": {"const": "NOT_ESTABLISHED"},
+        "osterwalder_schrader_reflection_positivity": {"const": "NOT_ESTABLISHED"},
+        "analytic_continuation": {"const": "NOT_ESTABLISHED"},
+        "lorentzian_scattering": {"const": "NOT_ESTABLISHED"},
+        "gravitational_transfer": {"const": "NOT_ESTABLISHED"}
+      },
+      "additionalProperties": false
+    },
+    "missing_object_ledger": {"type": "array", "minItems": 10, "items": {"$ref": "#/$defs/string"}},
+    "next_gate": {"$ref": "#/$defs/string"},
+    "does_not_establish": {"type": "array", "minItems": 13, "items": {"$ref": "#/$defs/string"}},
+    "provenance": {
+      "type": "object",
+      "required": ["source_commit", "retrieval_date", "inputs", "primary_sources"],
+      "properties": {
+        "source_commit": {"const": "3b4c7dfa3506baeef447ba97038f5f6f9f807a75"},
+        "retrieval_date": {"const": "2026-08-14"},
+        "inputs": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/input"}},
+        "primary_sources": {"type": "array", "minItems": 2, "maxItems": 2}
+      },
+      "additionalProperties": false
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/string"}},
+    "checks": {
+      "type": "object",
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"const": 24},
+        "total": {"const": 24},
+        "failures": {"type": "array", "maxItems": 0},
+        "details": {"type": "object", "minProperties": 24, "maxProperties": 24, "additionalProperties": {"const": true}}
+      },
+      "additionalProperties": false
+    },
+    "report": {"const": "reverse_physics/reports/bt-euclidean-lattice-pilot.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-euclidean-lattice-pilot-v1.schema.json"}
+  },
+  "additionalProperties": false
+}

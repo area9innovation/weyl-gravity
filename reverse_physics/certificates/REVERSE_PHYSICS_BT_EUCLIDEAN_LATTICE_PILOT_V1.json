@@ -1,0 +1,373 @@
+{
+  "answer": "Yes at pilot level. The positive Omega>0 path integral defines a shift-exact periodic finite lattice with a unique gauge-fixed vacuum and discrete bilaplacian free spectrum. A bounded 4^4 HMC run passes free-field, reversibility and Schwinger--Dyson calibration checks. This starts a nonperturbative Euclidean experiment; it does not yet establish a continuum limit, reflection positivity, analytic continuation, Lorentzian scattering or gravity.",
+  "auxiliary_normalization_audit": {
+    "classification": "DISPLAYED_NORMALIZATION_INCONSISTENCY",
+    "completion_of_square": "L=-(g*B/6)*(Upsilon+3*A/(g*B))^2+3*A^2/(2*g*B)",
+    "derived_effective_coefficient_over_g": {
+      "denominator": 2,
+      "numerator": 3
+    },
+    "derived_to_displayed_ratio": {
+      "denominator": 1,
+      "numerator": 3
+    },
+    "displayed_effective_coefficient_over_g": {
+      "denominator": 2,
+      "numerator": 1
+    },
+    "interpretation": "The factor three is required for Eqs. 49, 53 and 54 to agree. This is consistent with a typographical omission in displayed Eq. 52; it is not evidence against the beta-function relation.",
+    "published_inputs": {
+      "A": "Box(Omega)",
+      "B": "Omega^2",
+      "equation_51_after_parts": "L=-A*Upsilon-(g/6)*B*Upsilon^2",
+      "equation_52_displayed_coefficient": {
+        "denominator": 2,
+        "numerator": 1
+      },
+      "equation_54": "g=-3*lambda^2"
+    },
+    "stationary_solution": "Upsilon=-3*A/(g*B)",
+    "with_equation_54_derived_lorentzian_coefficient": "-1/(2*lambda^2)",
+    "with_equation_54_displayed_lorentzian_coefficient": "-1/(6*lambda^2)"
+  },
+  "certificate": "REVERSE_PHYSICS_BT_EUCLIDEAN_LATTICE_PILOT_V1",
+  "checks": {
+    "details": {
+      "auxiliary_stationary_solution_is_minus_3A_over_gB": true,
+      "both_action_split_z_scores_below_four": true,
+      "coercivity_bound_proves_finite_partition_function": true,
+      "connected_periodic_lattice_has_unique_zero_after_fix": true,
+      "corrected_coefficient_and_equation_54_recover_ps_action": true,
+      "displayed_coefficient_and_equation_54_leave_factor_one_third": true,
+      "four_cube_spectrum_counts_256_modes": true,
+      "four_cube_spectrum_has_one_zero_mode": true,
+      "free_acceptance_above_70_percent": true,
+      "free_action_density_matches_255_over_512_within_5sigma": true,
+      "free_lowest_mode_ratio_matches_one_within_5sigma": true,
+      "gaussian_elimination_coefficient_is_3_over_2g": true,
+      "hmc_reversibility_residual_below_1e_11": true,
+      "interacting_acceptance_above_70_percent": true,
+      "interacting_schwinger_dyson_virial_matches_one_within_5sigma": true,
+      "lattice_action_is_exactly_constant_shift_invariant": true,
+      "lattice_action_is_sum_of_real_squares": true,
+      "no_lorentzian_causal_claim": true,
+      "numerical_evidence_is_explicitly_observed_not_certified_continuum": true,
+      "pilot_graph_diameter_is_8": true,
+      "positive_omega_measure_maps_to_flat_phi_measure": true,
+      "published_equation_52_display_differs_by_factor_three": true,
+      "vacuum_hessian_is_discrete_bilaplacian": true,
+      "zero_mode_fix_removes_only_global_scale_volume": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 24,
+    "total": 24
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "disposition": {
+    "analytic_continuation": "NOT_ESTABLISHED",
+    "auxiliary_gaussian_normalization": "EXACT_FACTOR_THREE_CORRECTION",
+    "bounded_hmc_sampler": "CALIBRATED_ON_4_POWER_4",
+    "continuum_limit": "NOT_ESTABLISHED",
+    "finite_lattice_vacuum_and_free_spectrum": "PROVED",
+    "gravitational_transfer": "NOT_ESTABLISHED",
+    "lorentzian_scattering": "NOT_ESTABLISHED",
+    "nonperturbative_finite_volume_observables": "OBSERVED_PILOT_ONLY",
+    "osterwalder_schrader_reflection_positivity": "NOT_ESTABLISHED",
+    "positive_finite_euclidean_lattice": "CONSTRUCTED"
+  },
+  "does_not_establish": [
+    "that the finite lattice has a nontrivial continuum limit",
+    "that a positive Euclidean Boltzmann weight is reflection positivity",
+    "that Euclidean correlators analytically continue to the BT Krein theory",
+    "a BRST-compatible Hadamard state",
+    "renormalized Lorentzian time-ordered products",
+    "a causal perturbative AQFT construction",
+    "a Lorentzian quantum-master-equation theorem",
+    "the all-channel Bateman--Turok Eq. 19 projector theorem",
+    "the selected q8-q10 coefficient from Euclidean data",
+    "beyond-tree Lorentzian positivity",
+    "a laboratory event rate",
+    "a graviton or full Weyl-gravity lattice theory",
+    "anything LORENTZIAN-CAUSAL"
+  ],
+  "finite_lattice_definition": {
+    "action": "S_E,L=(1/(2*lambda^2))*sum_x[((Delta_L Omega)_x/Omega_x)^2]",
+    "carrier": "real phi on a connected periodic L^4 hypercubic graph",
+    "continuum_tree_limit": "Delta_L exp(lambda*phi)/(lambda*exp(lambda*phi)) tends to partial^2 phi+lambda*(partial phi)^2",
+    "exact_properties": [
+      "S_E,L>=0 for every real configuration",
+      "phi_x -> phi_x+c leaves every Delta_L Omega/Omega ratio invariant",
+      "on a connected graph S_E,L=0 iff Omega is constant",
+      "after sum_x phi_x=0 the unique zero is phi_x=0",
+      "the vacuum Hessian is Delta_L^T Delta_L=Delta_L^2",
+      "after zero-mode fixing the action is coercive and the partition function is finite"
+    ],
+    "four_cube_free_spectrum": [
+      {
+        "hessian_eigenvalue": 0,
+        "laplacian_eigenvalue": 0,
+        "multiplicity": 1
+      },
+      {
+        "hessian_eigenvalue": 4,
+        "laplacian_eigenvalue": 2,
+        "multiplicity": 8
+      },
+      {
+        "hessian_eigenvalue": 16,
+        "laplacian_eigenvalue": 4,
+        "multiplicity": 28
+      },
+      {
+        "hessian_eigenvalue": 36,
+        "laplacian_eigenvalue": 6,
+        "multiplicity": 56
+      },
+      {
+        "hessian_eigenvalue": 64,
+        "laplacian_eigenvalue": 8,
+        "multiplicity": 70
+      },
+      {
+        "hessian_eigenvalue": 100,
+        "laplacian_eigenvalue": 10,
+        "multiplicity": 56
+      },
+      {
+        "hessian_eigenvalue": 144,
+        "laplacian_eigenvalue": 12,
+        "multiplicity": 28
+      },
+      {
+        "hessian_eigenvalue": 196,
+        "laplacian_eigenvalue": 14,
+        "multiplicity": 8
+      },
+      {
+        "hessian_eigenvalue": 256,
+        "laplacian_eigenvalue": 16,
+        "multiplicity": 1
+      }
+    ],
+    "graph_laplacian": "(Delta_L Omega)_x=sum_{y~x}Omega_y-2*d*Omega_x",
+    "measure": "product_x dOmega_x/Omega_x proportional to product_x dphi_x",
+    "normalizability": {
+      "action_lower_bound": "S_E,L>=(exp(R/D)-q)^2/(2*lambda^2) once exp(R/D)>=q",
+      "classification": "FINITE_PARTITION_FUNCTION",
+      "conclusion": "On the mean-zero hyperplane R tends to infinity with the field norm, so exp(-S_E,L) is Lebesgue integrable.",
+      "field_range": "R=max_x(lambda*phi_x)-min_x(lambda*phi_x)",
+      "graph_degree": "q=2*d",
+      "graph_diameter": "D",
+      "path_edge_bound": "some oriented edge u->v has x_v-x_u>=R/D",
+      "pilot_diameter": 8
+    },
+    "positive_variable": "Omega_x=exp(lambda*phi_x)>0",
+    "zero_mode_constraint": "sum_x phi_x=0"
+  },
+  "lifecycle_state": "CLASSIFIED",
+  "missing_object_ledger": [
+    "an independent sampler implementation and cross-chain comparison",
+    "thermalisation and autocorrelation studies at multiple trajectory lengths",
+    "finite-volume sequence beyond L=4",
+    "a renormalised finite-volume coupling observable",
+    "step scaling at matched physical volumes",
+    "continuum extrapolation controlled by the six-loop beta function",
+    "an Osterwalder--Schrader or alternative reconstruction analysis",
+    "a justified analytic-continuation map to Lorentzian observables",
+    "a lattice observable matched to the selected q8-q10 packet jet",
+    "the conformally-flat gravity measure and its Jacobian/gauge treatment"
+  ],
+  "next_gate": "Implement an independent sampler and a two-volume step-scaling observable. Require agreement on free calibration and interacting finite-volume correlators before attempting a continuum extrapolation.",
+  "numerical_pilot": {
+    "arithmetic": "IEEE-754 binary64; deterministic Python random seed",
+    "evidence_type": "NUMERICAL_PILOT_OBSERVED",
+    "free_calibration": {
+      "acceptance_rate": 0.8755,
+      "action_density_split_z": 0.976298320891601,
+      "algorithm": {
+        "block_count": 20,
+        "leapfrog_steps": 18,
+        "name": "zero-mode-projected HMC",
+        "recorded_samples": 800,
+        "step_size": 0.035,
+        "thinning_trajectories": 2,
+        "warmup_trajectories": 400
+      },
+      "coupling": 0.0,
+      "finite_energy_error_count": 2000,
+      "lattice": {
+        "boundary": "PERIODIC",
+        "dimensions": 4,
+        "length": 4,
+        "volume": 256
+      },
+      "max_abs_delta_h": 1.708038106153964,
+      "mean_delta_h": 0.05066343318788798,
+      "observables": {
+        "action_density": {
+          "blocked_standard_error": 0.0032821103830141924,
+          "lag1_autocorrelation": 0.31770687989611324,
+          "maximum": 0.6624878849274938,
+          "mean": 0.500604046703593,
+          "minimum": 0.3756776293131687
+        },
+        "curvature_density": {
+          "blocked_standard_error": 0.006564220766028385,
+          "lag1_autocorrelation": 0.31770687989611324,
+          "maximum": 1.3249757698549876,
+          "mean": 1.001208093407186,
+          "minimum": 0.7513552586263375
+        },
+        "field_variance": {
+          "blocked_standard_error": 0.00025973064005585766,
+          "lag1_autocorrelation": 0.1220468454052367,
+          "maximum": 0.04661235472906534,
+          "mean": 0.02825811056774865,
+          "minimum": 0.018695657745109524
+        },
+        "lowest_mode_ratio": {
+          "blocked_standard_error": 0.026820409349000915,
+          "lag1_autocorrelation": 0.08097766741168894,
+          "maximum": 3.053258312277522,
+          "mean": 1.0014208203689812,
+          "minimum": 0.12704754417300226
+        },
+        "virial_ratio": {
+          "blocked_standard_error": 0.006589962808248101,
+          "lag1_autocorrelation": 0.31770687989611324,
+          "maximum": 1.3301717532661836,
+          "mean": 1.0051343996558417,
+          "minimum": 0.7543017498366368
+        }
+      },
+      "seed": 260812210,
+      "zero_mode_constraint": "sum_x phi_x=0 on every trajectory"
+    },
+    "interacting_observation": {
+      "acceptance_rate": 0.8675,
+      "action_density_split_z": 0.2007638498097734,
+      "algorithm": {
+        "block_count": 20,
+        "leapfrog_steps": 18,
+        "name": "zero-mode-projected HMC",
+        "recorded_samples": 800,
+        "step_size": 0.035,
+        "thinning_trajectories": 2,
+        "warmup_trajectories": 400
+      },
+      "coupling": 0.4,
+      "finite_energy_error_count": 2000,
+      "lattice": {
+        "boundary": "PERIODIC",
+        "dimensions": 4,
+        "length": 4,
+        "volume": 256
+      },
+      "max_abs_delta_h": 1.7740098060323817,
+      "mean_delta_h": 0.05289081492792032,
+      "observables": {
+        "action_density": {
+          "blocked_standard_error": 0.003322623792421061,
+          "lag1_autocorrelation": 0.3763118779357541,
+          "maximum": 0.6401978223283149,
+          "mean": 0.49331895269573633,
+          "minimum": 0.3865018298095183
+        },
+        "curvature_density": {
+          "blocked_standard_error": 0.001063239613574741,
+          "lag1_autocorrelation": 0.37631187793575416,
+          "maximum": 0.2048633031450608,
+          "mean": 0.15786206486263565,
+          "minimum": 0.12368058553904587
+        },
+        "field_variance": {
+          "blocked_standard_error": 0.0001687030177642994,
+          "lag1_autocorrelation": 0.06897472185209959,
+          "maximum": 0.046711141162341374,
+          "mean": 0.027812905244807444,
+          "minimum": 0.016892529085321725
+        },
+        "lowest_mode_ratio": {
+          "blocked_standard_error": 0.013440202601058784,
+          "lag1_autocorrelation": -0.023306393402847115,
+          "maximum": 3.1803947987014705,
+          "mean": 0.976592105002726,
+          "minimum": 0.09112496465550285
+        },
+        "virial_ratio": {
+          "blocked_standard_error": 0.006736865993507804,
+          "lag1_autocorrelation": 0.37276634134084996,
+          "maximum": 1.2986031051573155,
+          "mean": 0.9974759093100988,
+          "minimum": 0.7819108623873094
+        }
+      },
+      "seed": 260812211,
+      "zero_mode_constraint": "sum_x phi_x=0 on every trajectory"
+    },
+    "interpretation": "The sampler is operational on 4^4 and reproduces internal finite-volume calibration identities. The interacting numbers are pilot observations only; no infinite-volume or continuum extrapolation has been attempted.",
+    "reversibility_check": {
+      "max_momentum_residual": 1.3877787807814457e-17,
+      "max_position_residual": 1.0408340855860843e-17
+    }
+  },
+  "provenance": {
+    "inputs": [
+      {
+        "path": "planning/work-items/reverse-physics-bateman-euclidean-lattice-pilot.json",
+        "sha256": "ac25ce125568a79bd5c9b162852b88f75f3ee2622ff6ea89d852b88f93fd8652"
+      },
+      {
+        "path": "reverse_physics/data/anderson_bateman_herzog_turok_divergences_source_v1.json",
+        "sha256": "dd157f5f83d5aec974c8c22c9854fdde4fc985841b30d341b90b207413d74ab3"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_PERFECT_SQUARE_RG_SEPARATRIX_V1.json",
+        "sha256": "5c2433142adbab422d8737ac0638a0f38aa0562bce178a08bd3b02361cbbc14f"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_FULLY_REARRANGED_RIGGED_ALL_TIME_PHYSICAL_JET_V1.json",
+        "sha256": "6a104aecb78faedd61255f530cec10701a72066cb33d7bb31bcfb48508f9a0cf"
+      }
+    ],
+    "primary_sources": [
+      {
+        "equations": [
+          "49",
+          "51",
+          "52",
+          "53",
+          "54",
+          "55",
+          "73"
+        ],
+        "source": "Anderson--Bateman--Herzog--Turok arXiv:2608.12210v1",
+        "url": "https://arxiv.org/abs/2608.12210"
+      },
+      {
+        "equations": [
+          "2",
+          "14"
+        ],
+        "source": "Bateman--Turok arXiv:2607.00096v1",
+        "url": "https://arxiv.org/abs/2607.00096"
+      }
+    ],
+    "retrieval_date": "2026-08-14",
+    "source_commit": "3b4c7dfa3506baeef447ba97038f5f6f9f807a75"
+  },
+  "question": "Can the positive Euclidean Bateman--Turok perfect-square scalar be turned into a concrete, auditable finite-lattice experiment without silently importing a Lorentzian or continuum conclusion?",
+  "report": "reverse_physics/reports/bt-euclidean-lattice-pilot.md",
+  "result_kind": "exact finite Euclidean lattice construction and numerical pilot",
+  "schema": "reverse_physics/schema/reverse-physics-bt-euclidean-lattice-pilot-v1.schema.json",
+  "schema_version": "reverse-physics-bt-euclidean-lattice-pilot-v1",
+  "verification_commands": [
+    "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/bt_euclidean_lattice_pilot.py --check",
+    "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/verify_bt_euclidean_lattice_pilot.py",
+    "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 -m unittest -v reverse_physics.tests.test_bt_euclidean_lattice_pilot"
+  ]
+}

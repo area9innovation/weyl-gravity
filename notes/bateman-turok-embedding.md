@@ -1,6 +1,6 @@
 # Digest: Bateman & Turok, "Escape from Ostrogradsky via Hidden Ghost Parity"
 
-**arXiv:2607.00096v1 [hep-th], 30 Jun 2026.** Sam Bateman (Higgs Centre, Edinburgh), Neil Turok (Higgs Centre + Perimeter). 6-page Letter. Companion long paper: [17] Bateman & Turok, *Unitarity and Positivity in Higher Derivative QFTs from Hidden Ghost Parity* (2026), **to appear** — several key proofs (notably the decomposition Eq. (19)) are deferred to it. Related: [23] Anderson, Bateman, Herzog, Turok, *Renormalization of a Four-Derivative Theory* (to appear); [25] same authors, *Conformally Flat Limit of Quadratic Gravity* (to appear).
+**arXiv:2607.00096v1 [hep-th], 30 Jun 2026.** Sam Bateman (Higgs Centre, Edinburgh), Neil Turok (Higgs Centre + Perimeter). 6-page Letter. Companion long paper: [17] Bateman & Turok, *Unitarity and Positivity in Higher Derivative QFTs from Hidden Ghost Parity* (2026), **to appear** — several key proofs (notably the decomposition Eq. (19)) are deferred to it. Related: the announced renormalization work has appeared as Anderson, Bateman, Herzog and Turok, *On divergences in a four-derivative scalar field theory*, arXiv:2608.12210v1 (12 Aug 2026); [25], *Conformally Flat Limit of Quadratic Gravity*, remains to appear.
 
 Source of this digest: full arXiv LaTeX source (`main.tex`) of v1; all equations below are verbatim, with the equation numbers as they appear in the published PDF (revtex sequential numbering (1)–(21), appendix numbering (A1)–(A2), (B1)–(B5), (C1)–(C6)).
 
@@ -334,6 +334,26 @@ open.  None of these scalar results is a tensor/BRST or
 > "While the former [PS theory] has a positive Euclidean action, the latter [O(1,1) model] does not. Its kinetic term is indefinite and its potential has the wrong sign. Similarly, the $\phi$ and $\Omega,\Upsilon$ path integrals are inequivalent. **The former integrates over $\Omega > 0$ whereas the latter integrates over all $\Omega$. Although $\mathcal{S}_{1,1}$ does not define a meaningful theory, it has a well-defined perturbative expansion** [23, 25]. In fact, this exactly matches a complex two-derivative scalar field $\varphi$, with a negative quartic potential $-\frac12\lambda^2(\varphi^*\varphi)^2$, long-known to be asymptotically free [26]."
 
 So the embedding, and everything built on $R$ (Eqs. (16)–(21)), is a statement about **perturbative expansions around the free theories**, order by order. The two-field model is a scaffold: it "does not define a meaningful [nonperturbative] theory" (indefinite kinetic term, wrong-sign potential, no positive Euclidean action), and its configuration space ($\Omega \in \mathbb{R}$) differs from the image of the field redefinition ($\Omega = \lambda^{-1}e^{\lambda\phi} > 0$). The only other domain/boundary remarks in the paper: the unspecified "spatial boundary term" in $R^\dagger H_{1,1} R = H_\phi$, and the functional-measure statement $\mathcal{D}\Omega/\Omega \propto \mathcal{D}\phi$. Nonperturbative physics of PS theory itself (positive Euclidean action) is deferred to the lattice: mass gap and $\langle(\partial\phi)^2\rangle \neq 0$ generation "in a manner similar to QCD" (initial investigations with P. Morandes), dynamical breaking of scale symmetry, "PS theory may be the simplest nontrivial four dimensional scalar QFT with a continuum limit."
+
+**Renormalization-paper and lattice update (14 Aug 2026).**  The new
+arXiv:2608.12210v1 proves all-order Euclidean off-shell IR finiteness and
+perfect-square RG preservation, checks the beta function through three loops,
+and imports the $O(2)$ result to six loops.  It explicitly proposes using the
+positive Euclidean action to test whether a lattice continuum limit exists.
+An exact audit finds a factor-three display inconsistency in its Eq. (52):
+integrating $L=-\Upsilon\Box\Omega-(g/6)\Omega^2\Upsilon^2$ over $\Upsilon$
+gives $3(\Box\Omega/\Omega)^2/(2g)$, not the displayed coefficient $1/(2g)$.
+The derived factor, together with their $g=-3\lambda^2$, correctly recovers
+the PS coefficient $-1/(2\lambda^2)$; the displayed factor would give one
+third of it.  This is naturally a typographical omission and does not oppose
+their beta-function map.  The repository's finite lattice
+$S_{E,L}=(2\lambda^2)^{-1}\sum_x[(\Delta_L\Omega)_x/\Omega_x]^2$,
+$\Omega_x=e^{\lambda\phi_x}>0$, preserves positivity and constant-shift
+symmetry exactly, has one gauge-fixed vacuum, and now has a calibrated $4^4$
+HMC pilot (`REVERSE_PHYSICS_BT_EUCLIDEAN_LATTICE_PILOT_V1`).  The pilot is
+finite-volume `EUCLIDEAN-SPECTRAL` evidence only: it does not establish a
+continuum limit, reflection positivity, analytic continuation, Lorentzian
+scattering or gravity.
 
 ---
 
