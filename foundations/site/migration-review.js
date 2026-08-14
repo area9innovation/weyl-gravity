@@ -67,7 +67,7 @@
       <p>${esc(cell.migration_rationale)}</p>
       <p><b>Evidence inspected for migration (${(cell.migration_evidence || []).length})</b></p>
       ${(cell.migration_evidence || []).length ? `<ul>${cell.migration_evidence.map(evidenceLink).join("")}</ul>` : "<p>No parent evidence was assigned. This is not an absence claim.</p>"}
-      <p><a href="${esc(DATA.source_links.migration_audit)}">112-decision audit JSON</a> · <a href="${esc(DATA.source_links.migration_audit_report)}">Audit report</a></p>`;
+      <p><a href="${esc(DATA.source_links.migration_audit)}">112-decision migration audit</a> · <a href="${esc(DATA.source_links.full_surface_audit)}">175-coordinate surface audit</a> · <a href="${esc(DATA.source_links.full_surface_audit_report)}">Surface-audit report</a></p>`;
     body.insertBefore(section, anchor);
   }
 

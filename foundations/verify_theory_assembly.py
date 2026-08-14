@@ -18,7 +18,7 @@ REPORT = ROOT / "foundations/reports/theory-assembly-atlas-v1.md"
 SITE_JSON = ROOT / "foundations/site/assemblies.json"
 SITE_JS = ROOT / "foundations/site/assemblies.js"
 DIRECT = {"LOCAL_RESULT", "LITERATURE_RESULT"}
-RANK = {"NOT_MAPPED": 0, "PRIORITY_GAP": 1, "PIECES_ONLY": 2, "LITERATURE_RESULT": 3, "LOCAL_RESULT": 3}
+RANK = {"NOT_MAPPED": 0, "REVIEWED_GAP": 1, "PRIORITY_GAP": 1, "PIECES_ONLY": 2, "LITERATURE_RESULT": 3, "LOCAL_RESULT": 3}
 
 
 def load(path: Path) -> dict[str, Any]:

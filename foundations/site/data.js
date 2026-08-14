@@ -306,6 +306,10 @@ window.MATRIX_EXPLORER_DATA = {
     {
       "id": "NOT_MAPPED",
       "meaning": "No coverage classification is made; this is not a literature-absence claim."
+    },
+    {
+      "id": "REVIEWED_GAP",
+      "meaning": "An explicitly formulated and reviewed open question with no direct result; it is not a priority, absence, or no-go claim."
     }
   ],
   "evidence_role_vocabulary": [
@@ -349,57 +353,63 @@ window.MATRIX_EXPLORER_DATA = {
       "meaning": "An evidence-free broad parent gap was decomposed into this explicit child gap."
     },
     {
+      "id": "DIRECT_COORDINATE_REVIEW",
+      "meaning": "A previously un-emitted Cartesian coordinate was formulated and assessed directly; no parent transfer is implied."
+    },
+    {
       "id": "NOT_REVIEWED",
       "meaning": "The coordinate was not emitted by cube v2, so no migration review was required."
     }
   ],
   "counts": {
     "cartesian_total": 576,
-    "emitted": 452,
-    "coverage_classified": 401,
-    "qualified": 401,
-    "migration_reviewed": 452,
+    "emitted": 576,
+    "coverage_classified": 576,
+    "qualified": 576,
+    "migration_reviewed": 576,
     "migration_pending": 0,
     "migration_unresolved": 0,
     "reviewed_no_transfer": 88,
-    "not_mapped": 175,
+    "reviewed_gap": 175,
+    "not_mapped": 0,
     "dual_direct": 7,
     "mark_counts": {
       "G": 30,
       "L": 102,
       "LR": 7,
       "Lr": 6,
+      "Ol": 175,
       "P": 20,
       "Pl": 79,
       "Plr": 13,
       "Pr": 51,
       "R": 90,
-      "Rl": 3,
-      "·": 175
+      "Rl": 3
     },
     "evidence_role_counts": {
       "DIRECT_LITERATURE": 84,
       "DIRECT_LOCAL": 106,
-      "SUPPORTING": 271,
+      "SUPPORTING": 446,
       "UNREVIEWED": 191
     },
-    "synthetic_not_mapped": 124,
+    "synthetic_not_mapped": 0,
     "status_counts": {
       "LITERATURE_RESULT": 93,
       "LOCAL_RESULT": 115,
-      "NOT_MAPPED": 175,
+      "NOT_MAPPED": 0,
       "PIECES_ONLY": 163,
-      "PRIORITY_GAP": 30
+      "PRIORITY_GAP": 30,
+      "REVIEWED_GAP": 175
     },
     "migration_status_counts": {
       "CAPABILITY_QUALIFIED": 257,
+      "DIRECT_COORDINATE_REVIEW": 124,
       "EXACT_PARENT_TRANSFER": 72,
-      "NOT_REVIEWED": 124,
       "REVIEWED_CHILD_GAP": 24,
       "REVIEWED_NO_TRANSFER": 88,
       "REVIEWED_OVERLAY": 11
     },
-    "evidence_records": 73
+    "evidence_records": 74
   },
   "cells": [
     {
@@ -631,49 +641,88 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "WEAK_ARITHMETIC",
       "carrier": "ALGEBRAIC_CSTAR",
       "obligation": "KINEMATICS_OBSERVABLES",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "WEAK_ARITHMETIC",
       "carrier": "SMOOTH_DISTRIBUTIONAL",
       "obligation": "KINEMATICS_OBSERVABLES",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "WEAK_ARITHMETIC",
       "carrier": "LOCALIC_SYNTHETIC",
       "obligation": "KINEMATICS_OBSERVABLES",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "WEAK_CHOICE_ZF",
@@ -773,33 +822,59 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "WEAK_CHOICE_ZF",
       "carrier": "SMOOTH_DISTRIBUTIONAL",
       "obligation": "KINEMATICS_OBSERVABLES",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "WEAK_CHOICE_ZF",
       "carrier": "LOCALIC_SYNTHETIC",
       "obligation": "KINEMATICS_OBSERVABLES",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "CONSTRUCTIVE_COMPUTABLE",
@@ -852,17 +927,30 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "CONSTRUCTIVE_COMPUTABLE",
       "carrier": "KREIN_INDEFINITE",
       "obligation": "KINEMATICS_OBSERVABLES",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "CONSTRUCTIVE_COMPUTABLE",
@@ -893,17 +981,30 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "CONSTRUCTIVE_COMPUTABLE",
       "carrier": "SMOOTH_DISTRIBUTIONAL",
       "obligation": "KINEMATICS_OBSERVABLES",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "CONSTRUCTIVE_COMPUTABLE",
@@ -937,49 +1038,88 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "TOPOS_INTERNAL",
       "carrier": "FINITE_EXACT",
       "obligation": "KINEMATICS_OBSERVABLES",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "TOPOS_INTERNAL",
       "carrier": "HILBERT_OPERATOR",
       "obligation": "KINEMATICS_OBSERVABLES",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "TOPOS_INTERNAL",
       "carrier": "KREIN_INDEFINITE",
       "obligation": "KINEMATICS_OBSERVABLES",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "TOPOS_INTERNAL",
@@ -1391,81 +1531,146 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "WEAK_ARITHMETIC",
       "carrier": "HILBERT_OPERATOR",
       "obligation": "STATE_EXISTENCE",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "WEAK_ARITHMETIC",
       "carrier": "KREIN_INDEFINITE",
       "obligation": "STATE_EXISTENCE",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "WEAK_ARITHMETIC",
       "carrier": "ALGEBRAIC_CSTAR",
       "obligation": "STATE_EXISTENCE",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "WEAK_ARITHMETIC",
       "carrier": "SMOOTH_DISTRIBUTIONAL",
       "obligation": "STATE_EXISTENCE",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "WEAK_ARITHMETIC",
       "carrier": "LOCALIC_SYNTHETIC",
       "obligation": "STATE_EXISTENCE",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "WEAK_CHOICE_ZF",
@@ -1568,17 +1773,30 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "WEAK_CHOICE_ZF",
       "carrier": "SMOOTH_DISTRIBUTIONAL",
       "obligation": "STATE_EXISTENCE",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "WEAK_CHOICE_ZF",
@@ -1703,17 +1921,30 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "CONSTRUCTIVE_COMPUTABLE",
       "carrier": "SMOOTH_DISTRIBUTIONAL",
       "obligation": "STATE_EXISTENCE",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "CONSTRUCTIVE_COMPUTABLE",
@@ -1847,19 +2078,30 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "TOPOS_INTERNAL",
       "carrier": "SMOOTH_DISTRIBUTIONAL",
       "obligation": "STATE_EXISTENCE",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: Synthetic classical geometry and local BRST classification do not construct or represent states, probabilities, or a physical state-selection rule. No reviewed record in the batch constructs a state in this refined coordinate.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "grinkevich-1996",
         "barnich-brandt-henneaux-2000"
       ],
       "migration_rationale": "Synthetic classical geometry and local BRST classification do not construct or represent states, probabilities, or a physical state-selection rule. No reviewed record in the batch constructs a state in this refined coordinate.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_MAPPED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
       "emitted": true
     },
     {
@@ -1985,13 +2227,17 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "FINITE_DISCRETE",
       "carrier": "SMOOTH_DISTRIBUTIONAL",
       "obligation": "STATE_EXISTENCE",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: Lattice constraints and continuum-comparison programmes do not by themselves construct the four unresolved state/probability children. No reviewed record in the batch constructs a state in this refined coordinate.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "kogut-susskind-1975",
@@ -2000,6 +2246,13 @@ window.MATRIX_EXPLORER_DATA = {
         "dittrich-2012"
       ],
       "migration_rationale": "Lattice constraints and continuum-comparison programmes do not by themselves construct the four unresolved state/probability children. No reviewed record in the batch constructs a state in this refined coordinate.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_MAPPED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
       "emitted": true
     },
     {
@@ -2216,81 +2469,146 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "WEAK_ARITHMETIC",
       "carrier": "HILBERT_OPERATOR",
       "obligation": "STATE_REPRESENTATION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "WEAK_ARITHMETIC",
       "carrier": "KREIN_INDEFINITE",
       "obligation": "STATE_REPRESENTATION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "WEAK_ARITHMETIC",
       "carrier": "ALGEBRAIC_CSTAR",
       "obligation": "STATE_REPRESENTATION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "WEAK_ARITHMETIC",
       "carrier": "SMOOTH_DISTRIBUTIONAL",
       "obligation": "STATE_REPRESENTATION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "WEAK_ARITHMETIC",
       "carrier": "LOCALIC_SYNTHETIC",
       "obligation": "STATE_REPRESENTATION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "WEAK_CHOICE_ZF",
@@ -2393,17 +2711,30 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "WEAK_CHOICE_ZF",
       "carrier": "SMOOTH_DISTRIBUTIONAL",
       "obligation": "STATE_REPRESENTATION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "WEAK_CHOICE_ZF",
@@ -2533,17 +2864,30 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "CONSTRUCTIVE_COMPUTABLE",
       "carrier": "SMOOTH_DISTRIBUTIONAL",
       "obligation": "STATE_REPRESENTATION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "CONSTRUCTIVE_COMPUTABLE",
@@ -2680,19 +3024,30 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "TOPOS_INTERNAL",
       "carrier": "SMOOTH_DISTRIBUTIONAL",
       "obligation": "STATE_REPRESENTATION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: Synthetic classical geometry and local BRST classification do not construct or represent states, probabilities, or a physical state-selection rule. No reviewed record in the batch supplies the required state representation in this refined coordinate.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "grinkevich-1996",
         "barnich-brandt-henneaux-2000"
       ],
       "migration_rationale": "Synthetic classical geometry and local BRST classification do not construct or represent states, probabilities, or a physical state-selection rule. No reviewed record in the batch supplies the required state representation in this refined coordinate.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_MAPPED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
       "emitted": true
     },
     {
@@ -2821,13 +3176,17 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "FINITE_DISCRETE",
       "carrier": "SMOOTH_DISTRIBUTIONAL",
       "obligation": "STATE_REPRESENTATION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: Lattice constraints and continuum-comparison programmes do not by themselves construct the four unresolved state/probability children. No reviewed record in the batch supplies the required state representation in this refined coordinate.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "kogut-susskind-1975",
@@ -2836,6 +3195,13 @@ window.MATRIX_EXPLORER_DATA = {
         "dittrich-2012"
       ],
       "migration_rationale": "Lattice constraints and continuum-comparison programmes do not by themselves construct the four unresolved state/probability children. No reviewed record in the batch supplies the required state representation in this refined coordinate.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_MAPPED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
       "emitted": true
     },
     {
@@ -2983,13 +3349,17 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "CLASSICAL_STANDARD",
       "carrier": "SMOOTH_DISTRIBUTIONAL",
       "obligation": "PROBABILITY_RULE",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: AQFT state-space and BV-renormalization architecture does not derive a normalized probability rule for the Weyl metric theory. No reviewed record in the batch derives the required normalized event-probability rule.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "barnich-brandt-henneaux-2000",
@@ -2998,6 +3368,13 @@ window.MATRIX_EXPLORER_DATA = {
         "brunetti-fredenhagen-rejzner-2013"
       ],
       "migration_rationale": "AQFT state-space and BV-renormalization architecture does not derive a normalized probability rule for the Weyl metric theory. No reviewed record in the batch derives the required normalized event-probability rule.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_MAPPED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
       "emitted": true
     },
     {
@@ -3054,81 +3431,146 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "WEAK_ARITHMETIC",
       "carrier": "HILBERT_OPERATOR",
       "obligation": "PROBABILITY_RULE",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "WEAK_ARITHMETIC",
       "carrier": "KREIN_INDEFINITE",
       "obligation": "PROBABILITY_RULE",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "WEAK_ARITHMETIC",
       "carrier": "ALGEBRAIC_CSTAR",
       "obligation": "PROBABILITY_RULE",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "WEAK_ARITHMETIC",
       "carrier": "SMOOTH_DISTRIBUTIONAL",
       "obligation": "PROBABILITY_RULE",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "WEAK_ARITHMETIC",
       "carrier": "LOCALIC_SYNTHETIC",
       "obligation": "PROBABILITY_RULE",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "WEAK_CHOICE_ZF",
@@ -3228,17 +3670,30 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "WEAK_CHOICE_ZF",
       "carrier": "SMOOTH_DISTRIBUTIONAL",
       "obligation": "PROBABILITY_RULE",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "WEAK_CHOICE_ZF",
@@ -3368,17 +3823,30 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "CONSTRUCTIVE_COMPUTABLE",
       "carrier": "SMOOTH_DISTRIBUTIONAL",
       "obligation": "PROBABILITY_RULE",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "CONSTRUCTIVE_COMPUTABLE",
@@ -3515,19 +3983,30 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "TOPOS_INTERNAL",
       "carrier": "SMOOTH_DISTRIBUTIONAL",
       "obligation": "PROBABILITY_RULE",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: Synthetic classical geometry and local BRST classification do not construct or represent states, probabilities, or a physical state-selection rule. No reviewed record in the batch derives the required normalized event-probability rule.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "grinkevich-1996",
         "barnich-brandt-henneaux-2000"
       ],
       "migration_rationale": "Synthetic classical geometry and local BRST classification do not construct or represent states, probabilities, or a physical state-selection rule. No reviewed record in the batch derives the required normalized event-probability rule.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_MAPPED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
       "emitted": true
     },
     {
@@ -3656,13 +4135,17 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "FINITE_DISCRETE",
       "carrier": "SMOOTH_DISTRIBUTIONAL",
       "obligation": "PROBABILITY_RULE",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: Lattice constraints and continuum-comparison programmes do not by themselves construct the four unresolved state/probability children. No reviewed record in the batch derives the required normalized event-probability rule.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "kogut-susskind-1975",
@@ -3671,6 +4154,13 @@ window.MATRIX_EXPLORER_DATA = {
         "dittrich-2012"
       ],
       "migration_rationale": "Lattice constraints and continuum-comparison programmes do not by themselves construct the four unresolved state/probability children. No reviewed record in the batch derives the required normalized event-probability rule.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_MAPPED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
       "emitted": true
     },
     {
@@ -3890,81 +4380,146 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "WEAK_ARITHMETIC",
       "carrier": "HILBERT_OPERATOR",
       "obligation": "PHYSICAL_STATE_SELECTION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "WEAK_ARITHMETIC",
       "carrier": "KREIN_INDEFINITE",
       "obligation": "PHYSICAL_STATE_SELECTION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "WEAK_ARITHMETIC",
       "carrier": "ALGEBRAIC_CSTAR",
       "obligation": "PHYSICAL_STATE_SELECTION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "WEAK_ARITHMETIC",
       "carrier": "SMOOTH_DISTRIBUTIONAL",
       "obligation": "PHYSICAL_STATE_SELECTION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "WEAK_ARITHMETIC",
       "carrier": "LOCALIC_SYNTHETIC",
       "obligation": "PHYSICAL_STATE_SELECTION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "WEAK_CHOICE_ZF",
@@ -4061,17 +4616,30 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "WEAK_CHOICE_ZF",
       "carrier": "SMOOTH_DISTRIBUTIONAL",
       "obligation": "PHYSICAL_STATE_SELECTION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "WEAK_CHOICE_ZF",
@@ -4190,17 +4758,30 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "CONSTRUCTIVE_COMPUTABLE",
       "carrier": "SMOOTH_DISTRIBUTIONAL",
       "obligation": "PHYSICAL_STATE_SELECTION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "CONSTRUCTIVE_COMPUTABLE",
@@ -4334,19 +4915,30 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "TOPOS_INTERNAL",
       "carrier": "SMOOTH_DISTRIBUTIONAL",
       "obligation": "PHYSICAL_STATE_SELECTION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: Synthetic classical geometry and local BRST classification do not construct or represent states, probabilities, or a physical state-selection rule. No reviewed record in the batch selects a vacuum, thermal, Hadamard, or other physical state.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "grinkevich-1996",
         "barnich-brandt-henneaux-2000"
       ],
       "migration_rationale": "Synthetic classical geometry and local BRST classification do not construct or represent states, probabilities, or a physical state-selection rule. No reviewed record in the batch selects a vacuum, thermal, Hadamard, or other physical state.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_MAPPED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
       "emitted": true
     },
     {
@@ -4475,13 +5067,17 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "FINITE_DISCRETE",
       "carrier": "SMOOTH_DISTRIBUTIONAL",
       "obligation": "PHYSICAL_STATE_SELECTION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": "STATES_PROBABILITY",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: Lattice constraints and continuum-comparison programmes do not by themselves construct the four unresolved state/probability children. No reviewed record in the batch selects a vacuum, thermal, Hadamard, or other physical state.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "kogut-susskind-1975",
@@ -4490,6 +5086,13 @@ window.MATRIX_EXPLORER_DATA = {
         "dittrich-2012"
       ],
       "migration_rationale": "Lattice constraints and continuum-comparison programmes do not by themselves construct the four unresolved state/probability children. No reviewed record in the batch selects a vacuum, thermal, Hadamard, or other physical state.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_MAPPED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
       "emitted": true
     },
     {
@@ -4811,17 +5414,30 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "WEAK_ARITHMETIC",
       "carrier": "LOCALIC_SYNTHETIC",
       "obligation": "GENERATOR_SPECTRAL_DYNAMICS",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "WEAK_CHOICE_ZF",
@@ -4940,17 +5556,30 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "WEAK_CHOICE_ZF",
       "carrier": "LOCALIC_SYNTHETIC",
       "obligation": "GENERATOR_SPECTRAL_DYNAMICS",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "CONSTRUCTIVE_COMPUTABLE",
@@ -5202,18 +5831,29 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "TOPOS_INTERNAL",
       "carrier": "SMOOTH_DISTRIBUTIONAL",
       "obligation": "GENERATOR_SPECTRAL_DYNAMICS",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: The reviewed synthetic Einstein-equation formulation does not construct spectral generators, prove evolution well-posedness, or provide causal Green maps. No reviewed record in the batch constructs the required generator or spectral dynamics in this refined coordinate.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "grinkevich-1996"
       ],
       "migration_rationale": "The reviewed synthetic Einstein-equation formulation does not construct spectral generators, prove evolution well-posedness, or provide causal Green maps. No reviewed record in the batch constructs the required generator or spectral dynamics in this refined coordinate.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_MAPPED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
       "emitted": true
     },
     {
@@ -5682,17 +6322,30 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "WEAK_ARITHMETIC",
       "carrier": "LOCALIC_SYNTHETIC",
       "obligation": "EVOLUTION_WELLPOSEDNESS",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "WEAK_CHOICE_ZF",
@@ -5811,17 +6464,30 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "WEAK_CHOICE_ZF",
       "carrier": "LOCALIC_SYNTHETIC",
       "obligation": "EVOLUTION_WELLPOSEDNESS",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "CONSTRUCTIVE_COMPUTABLE",
@@ -6092,18 +6758,29 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "TOPOS_INTERNAL",
       "carrier": "SMOOTH_DISTRIBUTIONAL",
       "obligation": "EVOLUTION_WELLPOSEDNESS",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: The reviewed synthetic Einstein-equation formulation does not construct spectral generators, prove evolution well-posedness, or provide causal Green maps. No reviewed record in the batch proves existence, uniqueness, stability, or computability of the required evolution.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "grinkevich-1996"
       ],
       "migration_rationale": "The reviewed synthetic Einstein-equation formulation does not construct spectral generators, prove evolution well-posedness, or provide causal Green maps. No reviewed record in the batch proves existence, uniqueness, stability, or computability of the required evolution.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_MAPPED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
       "emitted": true
     },
     {
@@ -6404,13 +7081,17 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "CLASSICAL_STANDARD",
       "carrier": "LOCALIC_SYNTHETIC",
       "obligation": "CAUSAL_PROPAGATION_GREEN",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: Internal spectra, state measures, and one-parameter dynamics are reviewed; the records explicitly exclude causal propagation and interacting/renormalized field theory. No reviewed record in the batch constructs advanced/retarded maps with causal support.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "heunen-landsman-spitters-2009",
@@ -6419,6 +7100,13 @@ window.MATRIX_EXPLORER_DATA = {
         "harding-heunen-2019"
       ],
       "migration_rationale": "Internal spectra, state measures, and one-parameter dynamics are reviewed; the records explicitly exclude causal propagation and interacting/renormalized field theory. No reviewed record in the batch constructs advanced/retarded maps with causal support.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_MAPPED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
       "emitted": true
     },
     {
@@ -6546,17 +7234,30 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "WEAK_ARITHMETIC",
       "carrier": "LOCALIC_SYNTHETIC",
       "obligation": "CAUSAL_PROPAGATION_GREEN",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "WEAK_CHOICE_ZF",
@@ -6679,17 +7380,30 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "WEAK_CHOICE_ZF",
       "carrier": "LOCALIC_SYNTHETIC",
       "obligation": "CAUSAL_PROPAGATION_GREEN",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "CONSTRUCTIVE_COMPUTABLE",
@@ -6739,32 +7453,47 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "CONSTRUCTIVE_COMPUTABLE",
       "carrier": "KREIN_INDEFINITE",
       "obligation": "CAUSAL_PROPAGATION_GREEN",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: PT-symmetric and pseudo-Hermitian spectral structure does not supply state representation, normalized probabilities, or causal Green propagation. No reviewed record in the batch constructs advanced/retarded maps with causal support.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "bender-boettcher-1998",
         "mostafazadeh-2001"
       ],
       "migration_rationale": "PT-symmetric and pseudo-Hermitian spectral structure does not supply state representation, normalized probabilities, or causal Green propagation. No reviewed record in the batch constructs advanced/retarded maps with causal support.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_MAPPED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
       "emitted": true
     },
     {
       "foundation": "CONSTRUCTIVE_COMPUTABLE",
       "carrier": "ALGEBRAIC_CSTAR",
       "obligation": "CAUSAL_PROPAGATION_GREEN",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: Localic duality and effective spectral representation do not construct localized causal Green propagation. No reviewed record in the batch constructs advanced/retarded maps with causal support.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "coquand-spitters-2009",
@@ -6772,6 +7501,13 @@ window.MATRIX_EXPLORER_DATA = {
         "neumann-pape-streicher-2018"
       ],
       "migration_rationale": "Localic duality and effective spectral representation do not construct localized causal Green propagation. No reviewed record in the batch constructs advanced/retarded maps with causal support.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_MAPPED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
       "emitted": true
     },
     {
@@ -6823,13 +7559,17 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "CONSTRUCTIVE_COMPUTABLE",
       "carrier": "LOCALIC_SYNTHETIC",
       "obligation": "CAUSAL_PROPAGATION_GREEN",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: Constructive duality and internal one-parameter dynamics do not transfer to causal Green theory or interacting/renormalized field theory. No reviewed record in the batch constructs advanced/retarded maps with causal support.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "coquand-spitters-2009",
@@ -6837,6 +7577,13 @@ window.MATRIX_EXPLORER_DATA = {
         "brenna-flori-2012"
       ],
       "migration_rationale": "Constructive duality and internal one-parameter dynamics do not transfer to causal Green theory or interacting/renormalized field theory. No reviewed record in the batch constructs advanced/retarded maps with causal support.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_MAPPED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
       "emitted": true
     },
     {
@@ -6865,13 +7612,17 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "TOPOS_INTERNAL",
       "carrier": "HILBERT_OPERATOR",
       "obligation": "CAUSAL_PROPAGATION_GREEN",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: State measures and internal one-parameter groups do not establish spacetime support or causal Green propagation. No reviewed record in the batch constructs advanced/retarded maps with causal support.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "doring-2008",
@@ -6879,6 +7630,13 @@ window.MATRIX_EXPLORER_DATA = {
         "harding-heunen-2019"
       ],
       "migration_rationale": "State measures and internal one-parameter groups do not establish spacetime support or causal Green propagation. No reviewed record in the batch constructs advanced/retarded maps with causal support.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_MAPPED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
       "emitted": true
     },
     {
@@ -6907,13 +7665,17 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "TOPOS_INTERNAL",
       "carrier": "ALGEBRAIC_CSTAR",
       "obligation": "CAUSAL_PROPAGATION_GREEN",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: Internal spectra, state measures, and one-parameter dynamics are reviewed; the records explicitly exclude causal propagation and interacting/renormalized field theory. No reviewed record in the batch constructs advanced/retarded maps with causal support.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "heunen-landsman-spitters-2009",
@@ -6922,24 +7684,42 @@ window.MATRIX_EXPLORER_DATA = {
         "harding-heunen-2019"
       ],
       "migration_rationale": "Internal spectra, state measures, and one-parameter dynamics are reviewed; the records explicitly exclude causal propagation and interacting/renormalized field theory. No reviewed record in the batch constructs advanced/retarded maps with causal support.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_MAPPED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
       "emitted": true
     },
     {
       "foundation": "TOPOS_INTERNAL",
       "carrier": "SMOOTH_DISTRIBUTIONAL",
       "obligation": "CAUSAL_PROPAGATION_GREEN",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: The reviewed synthetic Einstein-equation formulation does not construct spectral generators, prove evolution well-posedness, or provide causal Green maps. No reviewed record in the batch constructs advanced/retarded maps with causal support.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "grinkevich-1996"
       ],
       "migration_rationale": "The reviewed synthetic Einstein-equation formulation does not construct spectral generators, prove evolution well-posedness, or provide causal Green maps. No reviewed record in the batch constructs advanced/retarded maps with causal support.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_MAPPED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
       "emitted": true
     },
     {
@@ -7105,13 +7885,17 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "FINITE_DISCRETE",
       "carrier": "LOCALIC_SYNTHETIC",
       "obligation": "CAUSAL_PROPAGATION_GREEN",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: Finite contextual and categorical structures do not establish causal propagation or the six quantum-consistency children. No reviewed record in the batch constructs advanced/retarded maps with causal support.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "harding-heunen-2019",
@@ -7119,6 +7903,13 @@ window.MATRIX_EXPLORER_DATA = {
         "abramsky-coecke-2004"
       ],
       "migration_rationale": "Finite contextual and categorical structures do not establish causal propagation or the six quantum-consistency children. No reviewed record in the batch constructs advanced/retarded maps with causal support.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_MAPPED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
       "emitted": true
     },
     {
@@ -7303,49 +8094,88 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "WEAK_ARITHMETIC",
       "carrier": "HILBERT_OPERATOR",
       "obligation": "GAUGE_BV_COHOMOLOGY",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "WEAK_ARITHMETIC",
       "carrier": "KREIN_INDEFINITE",
       "obligation": "GAUGE_BV_COHOMOLOGY",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "WEAK_ARITHMETIC",
       "carrier": "ALGEBRAIC_CSTAR",
       "obligation": "GAUGE_BV_COHOMOLOGY",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "WEAK_ARITHMETIC",
@@ -7367,17 +8197,30 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "WEAK_ARITHMETIC",
       "carrier": "LOCALIC_SYNTHETIC",
       "obligation": "GAUGE_BV_COHOMOLOGY",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "WEAK_CHOICE_ZF",
@@ -7508,17 +8351,30 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "WEAK_CHOICE_ZF",
       "carrier": "LOCALIC_SYNTHETIC",
       "obligation": "GAUGE_BV_COHOMOLOGY",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "CONSTRUCTIVE_COMPUTABLE",
@@ -7577,33 +8433,59 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "CONSTRUCTIVE_COMPUTABLE",
       "carrier": "KREIN_INDEFINITE",
       "obligation": "GAUGE_BV_COHOMOLOGY",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "CONSTRUCTIVE_COMPUTABLE",
       "carrier": "ALGEBRAIC_CSTAR",
       "obligation": "GAUGE_BV_COHOMOLOGY",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "CONSTRUCTIVE_COMPUTABLE",
@@ -7653,49 +8535,88 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "TOPOS_INTERNAL",
       "carrier": "FINITE_EXACT",
       "obligation": "GAUGE_BV_COHOMOLOGY",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "TOPOS_INTERNAL",
       "carrier": "HILBERT_OPERATOR",
       "obligation": "GAUGE_BV_COHOMOLOGY",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "TOPOS_INTERNAL",
       "carrier": "KREIN_INDEFINITE",
       "obligation": "GAUGE_BV_COHOMOLOGY",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "TOPOS_INTERNAL",
@@ -8065,13 +8986,17 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "CLASSICAL_STANDARD",
       "carrier": "LOCALIC_SYNTHETIC",
       "obligation": "INTERACTION_CONSTRUCTION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: Internal spectra, state measures, and one-parameter dynamics are reviewed; the records explicitly exclude causal propagation and interacting/renormalized field theory. No reviewed record in the batch constructs the required interaction in this refined coordinate.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "heunen-landsman-spitters-2009",
@@ -8080,6 +9005,13 @@ window.MATRIX_EXPLORER_DATA = {
         "harding-heunen-2019"
       ],
       "migration_rationale": "Internal spectra, state measures, and one-parameter dynamics are reviewed; the records explicitly exclude causal propagation and interacting/renormalized field theory. No reviewed record in the batch constructs the required interaction in this refined coordinate.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_MAPPED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
       "emitted": true
     },
     {
@@ -8108,49 +9040,88 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "WEAK_ARITHMETIC",
       "carrier": "HILBERT_OPERATOR",
       "obligation": "INTERACTION_CONSTRUCTION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "WEAK_ARITHMETIC",
       "carrier": "KREIN_INDEFINITE",
       "obligation": "INTERACTION_CONSTRUCTION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "WEAK_ARITHMETIC",
       "carrier": "ALGEBRAIC_CSTAR",
       "obligation": "INTERACTION_CONSTRUCTION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "WEAK_ARITHMETIC",
@@ -8172,17 +9143,30 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "WEAK_ARITHMETIC",
       "carrier": "LOCALIC_SYNTHETIC",
       "obligation": "INTERACTION_CONSTRUCTION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "WEAK_CHOICE_ZF",
@@ -8310,17 +9294,30 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "WEAK_CHOICE_ZF",
       "carrier": "LOCALIC_SYNTHETIC",
       "obligation": "INTERACTION_CONSTRUCTION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "CONSTRUCTIVE_COMPUTABLE",
@@ -8380,33 +9377,59 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "CONSTRUCTIVE_COMPUTABLE",
       "carrier": "KREIN_INDEFINITE",
       "obligation": "INTERACTION_CONSTRUCTION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "CONSTRUCTIVE_COMPUTABLE",
       "carrier": "ALGEBRAIC_CSTAR",
       "obligation": "INTERACTION_CONSTRUCTION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "CONSTRUCTIVE_COMPUTABLE",
@@ -8428,13 +9451,17 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "CONSTRUCTIVE_COMPUTABLE",
       "carrier": "LOCALIC_SYNTHETIC",
       "obligation": "INTERACTION_CONSTRUCTION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: Constructive duality and internal one-parameter dynamics do not transfer to causal Green theory or interacting/renormalized field theory. No reviewed record in the batch constructs the required interaction in this refined coordinate.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "coquand-spitters-2009",
@@ -8442,6 +9469,13 @@ window.MATRIX_EXPLORER_DATA = {
         "brenna-flori-2012"
       ],
       "migration_rationale": "Constructive duality and internal one-parameter dynamics do not transfer to causal Green theory or interacting/renormalized field theory. No reviewed record in the batch constructs the required interaction in this refined coordinate.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_MAPPED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
       "emitted": true
     },
     {
@@ -8470,45 +9504,75 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "TOPOS_INTERNAL",
       "carrier": "HILBERT_OPERATOR",
       "obligation": "INTERACTION_CONSTRUCTION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "TOPOS_INTERNAL",
       "carrier": "KREIN_INDEFINITE",
       "obligation": "INTERACTION_CONSTRUCTION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "TOPOS_INTERNAL",
       "carrier": "ALGEBRAIC_CSTAR",
       "obligation": "INTERACTION_CONSTRUCTION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: Internal spectra, state measures, and one-parameter dynamics are reviewed; the records explicitly exclude causal propagation and interacting/renormalized field theory. No reviewed record in the batch constructs the required interaction in this refined coordinate.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "heunen-landsman-spitters-2009",
@@ -8517,6 +9581,13 @@ window.MATRIX_EXPLORER_DATA = {
         "harding-heunen-2019"
       ],
       "migration_rationale": "Internal spectra, state measures, and one-parameter dynamics are reviewed; the records explicitly exclude causal propagation and interacting/renormalized field theory. No reviewed record in the batch constructs the required interaction in this refined coordinate.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_MAPPED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
       "emitted": true
     },
     {
@@ -8698,13 +9769,17 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "FINITE_DISCRETE",
       "carrier": "LOCALIC_SYNTHETIC",
       "obligation": "INTERACTION_CONSTRUCTION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: Finite contextual and categorical structures do not establish causal propagation or the six quantum-consistency children. No reviewed record in the batch constructs the required interaction in this refined coordinate.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "harding-heunen-2019",
@@ -8712,6 +9787,13 @@ window.MATRIX_EXPLORER_DATA = {
         "abramsky-coecke-2004"
       ],
       "migration_rationale": "Finite contextual and categorical structures do not establish causal propagation or the six quantum-consistency children. No reviewed record in the batch constructs the required interaction in this refined coordinate.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_MAPPED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
       "emitted": true
     },
     {
@@ -8770,13 +9852,17 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "CLASSICAL_STANDARD",
       "carrier": "KREIN_INDEFINITE",
       "obligation": "COUNTERTERM_CLASSIFICATION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: Real-spectrum and indefinite-metric QFT results do not establish the unresolved interaction or quantum-consistency children. No reviewed record in the batch classifies counterterms in this refined coordinate.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "bender-boettcher-1998",
@@ -8784,6 +9870,13 @@ window.MATRIX_EXPLORER_DATA = {
         "gottschalk-2004"
       ],
       "migration_rationale": "Real-spectrum and indefinite-metric QFT results do not establish the unresolved interaction or quantum-consistency children. No reviewed record in the batch classifies counterterms in this refined coordinate.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_MAPPED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
       "emitted": true
     },
     {
@@ -8834,13 +9927,17 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "CLASSICAL_STANDARD",
       "carrier": "LOCALIC_SYNTHETIC",
       "obligation": "COUNTERTERM_CLASSIFICATION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: Internal spectra, state measures, and one-parameter dynamics are reviewed; the records explicitly exclude causal propagation and interacting/renormalized field theory. No reviewed record in the batch classifies counterterms in this refined coordinate.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "heunen-landsman-spitters-2009",
@@ -8849,6 +9946,13 @@ window.MATRIX_EXPLORER_DATA = {
         "harding-heunen-2019"
       ],
       "migration_rationale": "Internal spectra, state measures, and one-parameter dynamics are reviewed; the records explicitly exclude causal propagation and interacting/renormalized field theory. No reviewed record in the batch classifies counterterms in this refined coordinate.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_MAPPED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
       "emitted": true
     },
     {
@@ -8877,49 +9981,88 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "WEAK_ARITHMETIC",
       "carrier": "HILBERT_OPERATOR",
       "obligation": "COUNTERTERM_CLASSIFICATION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "WEAK_ARITHMETIC",
       "carrier": "KREIN_INDEFINITE",
       "obligation": "COUNTERTERM_CLASSIFICATION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "WEAK_ARITHMETIC",
       "carrier": "ALGEBRAIC_CSTAR",
       "obligation": "COUNTERTERM_CLASSIFICATION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "WEAK_ARITHMETIC",
@@ -8941,17 +10084,30 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "WEAK_ARITHMETIC",
       "carrier": "LOCALIC_SYNTHETIC",
       "obligation": "COUNTERTERM_CLASSIFICATION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "WEAK_CHOICE_ZF",
@@ -9013,13 +10169,17 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "WEAK_CHOICE_ZF",
       "carrier": "KREIN_INDEFINITE",
       "obligation": "COUNTERTERM_CLASSIFICATION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: The explicit Krein carrier, pseudo-Hermitian structure, and axiomatic indefinite-metric QFT do not construct the unresolved interaction or quantum-consistency children. No reviewed record in the batch classifies counterterms in this refined coordinate.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1",
@@ -9027,6 +10187,13 @@ window.MATRIX_EXPLORER_DATA = {
         "gottschalk-2004"
       ],
       "migration_rationale": "The explicit Krein carrier, pseudo-Hermitian structure, and axiomatic indefinite-metric QFT do not construct the unresolved interaction or quantum-consistency children. No reviewed record in the batch classifies counterterms in this refined coordinate.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_MAPPED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
       "emitted": true
     },
     {
@@ -9071,17 +10238,30 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "WEAK_CHOICE_ZF",
       "carrier": "LOCALIC_SYNTHETIC",
       "obligation": "COUNTERTERM_CLASSIFICATION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "CONSTRUCTIVE_COMPUTABLE",
@@ -9144,33 +10324,59 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "CONSTRUCTIVE_COMPUTABLE",
       "carrier": "KREIN_INDEFINITE",
       "obligation": "COUNTERTERM_CLASSIFICATION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "CONSTRUCTIVE_COMPUTABLE",
       "carrier": "ALGEBRAIC_CSTAR",
       "obligation": "COUNTERTERM_CLASSIFICATION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "CONSTRUCTIVE_COMPUTABLE",
@@ -9192,13 +10398,17 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "CONSTRUCTIVE_COMPUTABLE",
       "carrier": "LOCALIC_SYNTHETIC",
       "obligation": "COUNTERTERM_CLASSIFICATION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: Constructive duality and internal one-parameter dynamics do not transfer to causal Green theory or interacting/renormalized field theory. No reviewed record in the batch classifies counterterms in this refined coordinate.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "coquand-spitters-2009",
@@ -9206,6 +10416,13 @@ window.MATRIX_EXPLORER_DATA = {
         "brenna-flori-2012"
       ],
       "migration_rationale": "Constructive duality and internal one-parameter dynamics do not transfer to causal Green theory or interacting/renormalized field theory. No reviewed record in the batch classifies counterterms in this refined coordinate.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_MAPPED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
       "emitted": true
     },
     {
@@ -9234,45 +10451,75 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "TOPOS_INTERNAL",
       "carrier": "HILBERT_OPERATOR",
       "obligation": "COUNTERTERM_CLASSIFICATION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "TOPOS_INTERNAL",
       "carrier": "KREIN_INDEFINITE",
       "obligation": "COUNTERTERM_CLASSIFICATION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "TOPOS_INTERNAL",
       "carrier": "ALGEBRAIC_CSTAR",
       "obligation": "COUNTERTERM_CLASSIFICATION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: Internal spectra, state measures, and one-parameter dynamics are reviewed; the records explicitly exclude causal propagation and interacting/renormalized field theory. No reviewed record in the batch classifies counterterms in this refined coordinate.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "heunen-landsman-spitters-2009",
@@ -9281,6 +10528,13 @@ window.MATRIX_EXPLORER_DATA = {
         "harding-heunen-2019"
       ],
       "migration_rationale": "Internal spectra, state measures, and one-parameter dynamics are reviewed; the records explicitly exclude causal propagation and interacting/renormalized field theory. No reviewed record in the batch classifies counterterms in this refined coordinate.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_MAPPED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
       "emitted": true
     },
     {
@@ -9453,13 +10707,17 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "FINITE_DISCRETE",
       "carrier": "LOCALIC_SYNTHETIC",
       "obligation": "COUNTERTERM_CLASSIFICATION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: Finite contextual and categorical structures do not establish causal propagation or the six quantum-consistency children. No reviewed record in the batch classifies counterterms in this refined coordinate.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "harding-heunen-2019",
@@ -9467,6 +10725,13 @@ window.MATRIX_EXPLORER_DATA = {
         "abramsky-coecke-2004"
       ],
       "migration_rationale": "Finite contextual and categorical structures do not establish causal propagation or the six quantum-consistency children. No reviewed record in the batch classifies counterterms in this refined coordinate.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_MAPPED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
       "emitted": true
     },
     {
@@ -9525,13 +10790,17 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "CLASSICAL_STANDARD",
       "carrier": "KREIN_INDEFINITE",
       "obligation": "ANOMALY_CLASSIFICATION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: Real-spectrum and indefinite-metric QFT results do not establish the unresolved interaction or quantum-consistency children. No reviewed record in the batch classifies anomalies in this refined coordinate.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "bender-boettcher-1998",
@@ -9539,6 +10808,13 @@ window.MATRIX_EXPLORER_DATA = {
         "gottschalk-2004"
       ],
       "migration_rationale": "Real-spectrum and indefinite-metric QFT results do not establish the unresolved interaction or quantum-consistency children. No reviewed record in the batch classifies anomalies in this refined coordinate.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_MAPPED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
       "emitted": true
     },
     {
@@ -9589,13 +10865,17 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "CLASSICAL_STANDARD",
       "carrier": "LOCALIC_SYNTHETIC",
       "obligation": "ANOMALY_CLASSIFICATION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: Internal spectra, state measures, and one-parameter dynamics are reviewed; the records explicitly exclude causal propagation and interacting/renormalized field theory. No reviewed record in the batch classifies anomalies in this refined coordinate.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "heunen-landsman-spitters-2009",
@@ -9604,6 +10884,13 @@ window.MATRIX_EXPLORER_DATA = {
         "harding-heunen-2019"
       ],
       "migration_rationale": "Internal spectra, state measures, and one-parameter dynamics are reviewed; the records explicitly exclude causal propagation and interacting/renormalized field theory. No reviewed record in the batch classifies anomalies in this refined coordinate.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_MAPPED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
       "emitted": true
     },
     {
@@ -9632,49 +10919,88 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "WEAK_ARITHMETIC",
       "carrier": "HILBERT_OPERATOR",
       "obligation": "ANOMALY_CLASSIFICATION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "WEAK_ARITHMETIC",
       "carrier": "KREIN_INDEFINITE",
       "obligation": "ANOMALY_CLASSIFICATION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "WEAK_ARITHMETIC",
       "carrier": "ALGEBRAIC_CSTAR",
       "obligation": "ANOMALY_CLASSIFICATION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "WEAK_ARITHMETIC",
@@ -9696,17 +11022,30 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "WEAK_ARITHMETIC",
       "carrier": "LOCALIC_SYNTHETIC",
       "obligation": "ANOMALY_CLASSIFICATION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "WEAK_CHOICE_ZF",
@@ -9768,13 +11107,17 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "WEAK_CHOICE_ZF",
       "carrier": "KREIN_INDEFINITE",
       "obligation": "ANOMALY_CLASSIFICATION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: The explicit Krein carrier, pseudo-Hermitian structure, and axiomatic indefinite-metric QFT do not construct the unresolved interaction or quantum-consistency children. No reviewed record in the batch classifies anomalies in this refined coordinate.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1",
@@ -9782,6 +11125,13 @@ window.MATRIX_EXPLORER_DATA = {
         "gottschalk-2004"
       ],
       "migration_rationale": "The explicit Krein carrier, pseudo-Hermitian structure, and axiomatic indefinite-metric QFT do not construct the unresolved interaction or quantum-consistency children. No reviewed record in the batch classifies anomalies in this refined coordinate.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_MAPPED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
       "emitted": true
     },
     {
@@ -9826,17 +11176,30 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "WEAK_CHOICE_ZF",
       "carrier": "LOCALIC_SYNTHETIC",
       "obligation": "ANOMALY_CLASSIFICATION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "CONSTRUCTIVE_COMPUTABLE",
@@ -9899,33 +11262,59 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "CONSTRUCTIVE_COMPUTABLE",
       "carrier": "KREIN_INDEFINITE",
       "obligation": "ANOMALY_CLASSIFICATION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "CONSTRUCTIVE_COMPUTABLE",
       "carrier": "ALGEBRAIC_CSTAR",
       "obligation": "ANOMALY_CLASSIFICATION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "CONSTRUCTIVE_COMPUTABLE",
@@ -9947,13 +11336,17 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "CONSTRUCTIVE_COMPUTABLE",
       "carrier": "LOCALIC_SYNTHETIC",
       "obligation": "ANOMALY_CLASSIFICATION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: Constructive duality and internal one-parameter dynamics do not transfer to causal Green theory or interacting/renormalized field theory. No reviewed record in the batch classifies anomalies in this refined coordinate.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "coquand-spitters-2009",
@@ -9961,6 +11354,13 @@ window.MATRIX_EXPLORER_DATA = {
         "brenna-flori-2012"
       ],
       "migration_rationale": "Constructive duality and internal one-parameter dynamics do not transfer to causal Green theory or interacting/renormalized field theory. No reviewed record in the batch classifies anomalies in this refined coordinate.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_MAPPED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
       "emitted": true
     },
     {
@@ -9989,45 +11389,75 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "TOPOS_INTERNAL",
       "carrier": "HILBERT_OPERATOR",
       "obligation": "ANOMALY_CLASSIFICATION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "TOPOS_INTERNAL",
       "carrier": "KREIN_INDEFINITE",
       "obligation": "ANOMALY_CLASSIFICATION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "TOPOS_INTERNAL",
       "carrier": "ALGEBRAIC_CSTAR",
       "obligation": "ANOMALY_CLASSIFICATION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: Internal spectra, state measures, and one-parameter dynamics are reviewed; the records explicitly exclude causal propagation and interacting/renormalized field theory. No reviewed record in the batch classifies anomalies in this refined coordinate.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "heunen-landsman-spitters-2009",
@@ -10036,6 +11466,13 @@ window.MATRIX_EXPLORER_DATA = {
         "harding-heunen-2019"
       ],
       "migration_rationale": "Internal spectra, state measures, and one-parameter dynamics are reviewed; the records explicitly exclude causal propagation and interacting/renormalized field theory. No reviewed record in the batch classifies anomalies in this refined coordinate.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_MAPPED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
       "emitted": true
     },
     {
@@ -10208,13 +11645,17 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "FINITE_DISCRETE",
       "carrier": "LOCALIC_SYNTHETIC",
       "obligation": "ANOMALY_CLASSIFICATION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: Finite contextual and categorical structures do not establish causal propagation or the six quantum-consistency children. No reviewed record in the batch classifies anomalies in this refined coordinate.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "harding-heunen-2019",
@@ -10222,6 +11663,13 @@ window.MATRIX_EXPLORER_DATA = {
         "abramsky-coecke-2004"
       ],
       "migration_rationale": "Finite contextual and categorical structures do not establish causal propagation or the six quantum-consistency children. No reviewed record in the batch classifies anomalies in this refined coordinate.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_MAPPED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
       "emitted": true
     },
     {
@@ -10280,13 +11728,17 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "CLASSICAL_STANDARD",
       "carrier": "KREIN_INDEFINITE",
       "obligation": "RENORMALIZED_PRODUCTS",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: Real-spectrum and indefinite-metric QFT results do not establish the unresolved interaction or quantum-consistency children. No reviewed record in the batch constructs renormalized products in this refined coordinate.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "bender-boettcher-1998",
@@ -10294,6 +11746,13 @@ window.MATRIX_EXPLORER_DATA = {
         "gottschalk-2004"
       ],
       "migration_rationale": "Real-spectrum and indefinite-metric QFT results do not establish the unresolved interaction or quantum-consistency children. No reviewed record in the batch constructs renormalized products in this refined coordinate.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_MAPPED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
       "emitted": true
     },
     {
@@ -10344,13 +11803,17 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "CLASSICAL_STANDARD",
       "carrier": "LOCALIC_SYNTHETIC",
       "obligation": "RENORMALIZED_PRODUCTS",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: Internal spectra, state measures, and one-parameter dynamics are reviewed; the records explicitly exclude causal propagation and interacting/renormalized field theory. No reviewed record in the batch constructs renormalized products in this refined coordinate.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "heunen-landsman-spitters-2009",
@@ -10359,6 +11822,13 @@ window.MATRIX_EXPLORER_DATA = {
         "harding-heunen-2019"
       ],
       "migration_rationale": "Internal spectra, state measures, and one-parameter dynamics are reviewed; the records explicitly exclude causal propagation and interacting/renormalized field theory. No reviewed record in the batch constructs renormalized products in this refined coordinate.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_MAPPED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
       "emitted": true
     },
     {
@@ -10387,49 +11857,88 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "WEAK_ARITHMETIC",
       "carrier": "HILBERT_OPERATOR",
       "obligation": "RENORMALIZED_PRODUCTS",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "WEAK_ARITHMETIC",
       "carrier": "KREIN_INDEFINITE",
       "obligation": "RENORMALIZED_PRODUCTS",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "WEAK_ARITHMETIC",
       "carrier": "ALGEBRAIC_CSTAR",
       "obligation": "RENORMALIZED_PRODUCTS",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "WEAK_ARITHMETIC",
@@ -10451,17 +11960,30 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "WEAK_ARITHMETIC",
       "carrier": "LOCALIC_SYNTHETIC",
       "obligation": "RENORMALIZED_PRODUCTS",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "WEAK_CHOICE_ZF",
@@ -10520,13 +12042,17 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "WEAK_CHOICE_ZF",
       "carrier": "KREIN_INDEFINITE",
       "obligation": "RENORMALIZED_PRODUCTS",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: The explicit Krein carrier, pseudo-Hermitian structure, and axiomatic indefinite-metric QFT do not construct the unresolved interaction or quantum-consistency children. No reviewed record in the batch constructs renormalized products in this refined coordinate.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1",
@@ -10534,6 +12060,13 @@ window.MATRIX_EXPLORER_DATA = {
         "gottschalk-2004"
       ],
       "migration_rationale": "The explicit Krein carrier, pseudo-Hermitian structure, and axiomatic indefinite-metric QFT do not construct the unresolved interaction or quantum-consistency children. No reviewed record in the batch constructs renormalized products in this refined coordinate.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_MAPPED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
       "emitted": true
     },
     {
@@ -10578,17 +12111,30 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "WEAK_CHOICE_ZF",
       "carrier": "LOCALIC_SYNTHETIC",
       "obligation": "RENORMALIZED_PRODUCTS",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "CONSTRUCTIVE_COMPUTABLE",
@@ -10648,33 +12194,59 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "CONSTRUCTIVE_COMPUTABLE",
       "carrier": "KREIN_INDEFINITE",
       "obligation": "RENORMALIZED_PRODUCTS",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "CONSTRUCTIVE_COMPUTABLE",
       "carrier": "ALGEBRAIC_CSTAR",
       "obligation": "RENORMALIZED_PRODUCTS",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "CONSTRUCTIVE_COMPUTABLE",
@@ -10696,13 +12268,17 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "CONSTRUCTIVE_COMPUTABLE",
       "carrier": "LOCALIC_SYNTHETIC",
       "obligation": "RENORMALIZED_PRODUCTS",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: Constructive duality and internal one-parameter dynamics do not transfer to causal Green theory or interacting/renormalized field theory. No reviewed record in the batch constructs renormalized products in this refined coordinate.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "coquand-spitters-2009",
@@ -10710,6 +12286,13 @@ window.MATRIX_EXPLORER_DATA = {
         "brenna-flori-2012"
       ],
       "migration_rationale": "Constructive duality and internal one-parameter dynamics do not transfer to causal Green theory or interacting/renormalized field theory. No reviewed record in the batch constructs renormalized products in this refined coordinate.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_MAPPED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
       "emitted": true
     },
     {
@@ -10738,45 +12321,75 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "TOPOS_INTERNAL",
       "carrier": "HILBERT_OPERATOR",
       "obligation": "RENORMALIZED_PRODUCTS",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "TOPOS_INTERNAL",
       "carrier": "KREIN_INDEFINITE",
       "obligation": "RENORMALIZED_PRODUCTS",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "TOPOS_INTERNAL",
       "carrier": "ALGEBRAIC_CSTAR",
       "obligation": "RENORMALIZED_PRODUCTS",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: Internal spectra, state measures, and one-parameter dynamics are reviewed; the records explicitly exclude causal propagation and interacting/renormalized field theory. No reviewed record in the batch constructs renormalized products in this refined coordinate.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "heunen-landsman-spitters-2009",
@@ -10785,6 +12398,13 @@ window.MATRIX_EXPLORER_DATA = {
         "harding-heunen-2019"
       ],
       "migration_rationale": "Internal spectra, state measures, and one-parameter dynamics are reviewed; the records explicitly exclude causal propagation and interacting/renormalized field theory. No reviewed record in the batch constructs renormalized products in this refined coordinate.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_MAPPED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
       "emitted": true
     },
     {
@@ -10957,13 +12577,17 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "FINITE_DISCRETE",
       "carrier": "LOCALIC_SYNTHETIC",
       "obligation": "RENORMALIZED_PRODUCTS",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: Finite contextual and categorical structures do not establish causal propagation or the six quantum-consistency children. No reviewed record in the batch constructs renormalized products in this refined coordinate.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "harding-heunen-2019",
@@ -10971,6 +12595,13 @@ window.MATRIX_EXPLORER_DATA = {
         "abramsky-coecke-2004"
       ],
       "migration_rationale": "Finite contextual and categorical structures do not establish causal propagation or the six quantum-consistency children. No reviewed record in the batch constructs renormalized products in this refined coordinate.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_MAPPED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
       "emitted": true
     },
     {
@@ -11104,13 +12735,17 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "CLASSICAL_STANDARD",
       "carrier": "LOCALIC_SYNTHETIC",
       "obligation": "QME_RESTORATION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: Internal spectra, state measures, and one-parameter dynamics are reviewed; the records explicitly exclude causal propagation and interacting/renormalized field theory. No reviewed record in the batch restores the quantum master equation in this refined coordinate.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "heunen-landsman-spitters-2009",
@@ -11119,6 +12754,13 @@ window.MATRIX_EXPLORER_DATA = {
         "harding-heunen-2019"
       ],
       "migration_rationale": "Internal spectra, state measures, and one-parameter dynamics are reviewed; the records explicitly exclude causal propagation and interacting/renormalized field theory. No reviewed record in the batch restores the quantum master equation in this refined coordinate.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_MAPPED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
       "emitted": true
     },
     {
@@ -11147,49 +12789,88 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "WEAK_ARITHMETIC",
       "carrier": "HILBERT_OPERATOR",
       "obligation": "QME_RESTORATION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "WEAK_ARITHMETIC",
       "carrier": "KREIN_INDEFINITE",
       "obligation": "QME_RESTORATION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "WEAK_ARITHMETIC",
       "carrier": "ALGEBRAIC_CSTAR",
       "obligation": "QME_RESTORATION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "WEAK_ARITHMETIC",
@@ -11211,17 +12892,30 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "WEAK_ARITHMETIC",
       "carrier": "LOCALIC_SYNTHETIC",
       "obligation": "QME_RESTORATION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "WEAK_CHOICE_ZF",
@@ -11352,17 +13046,30 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "WEAK_CHOICE_ZF",
       "carrier": "LOCALIC_SYNTHETIC",
       "obligation": "QME_RESTORATION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "CONSTRUCTIVE_COMPUTABLE",
@@ -11425,33 +13132,59 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "CONSTRUCTIVE_COMPUTABLE",
       "carrier": "KREIN_INDEFINITE",
       "obligation": "QME_RESTORATION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "CONSTRUCTIVE_COMPUTABLE",
       "carrier": "ALGEBRAIC_CSTAR",
       "obligation": "QME_RESTORATION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "CONSTRUCTIVE_COMPUTABLE",
@@ -11473,13 +13206,17 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "CONSTRUCTIVE_COMPUTABLE",
       "carrier": "LOCALIC_SYNTHETIC",
       "obligation": "QME_RESTORATION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: Constructive duality and internal one-parameter dynamics do not transfer to causal Green theory or interacting/renormalized field theory. No reviewed record in the batch restores the quantum master equation in this refined coordinate.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "coquand-spitters-2009",
@@ -11487,6 +13224,13 @@ window.MATRIX_EXPLORER_DATA = {
         "brenna-flori-2012"
       ],
       "migration_rationale": "Constructive duality and internal one-parameter dynamics do not transfer to causal Green theory or interacting/renormalized field theory. No reviewed record in the batch restores the quantum master equation in this refined coordinate.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_MAPPED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
       "emitted": true
     },
     {
@@ -11515,45 +13259,75 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "TOPOS_INTERNAL",
       "carrier": "HILBERT_OPERATOR",
       "obligation": "QME_RESTORATION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "TOPOS_INTERNAL",
       "carrier": "KREIN_INDEFINITE",
       "obligation": "QME_RESTORATION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "TOPOS_INTERNAL",
       "carrier": "ALGEBRAIC_CSTAR",
       "obligation": "QME_RESTORATION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: Internal spectra, state measures, and one-parameter dynamics are reviewed; the records explicitly exclude causal propagation and interacting/renormalized field theory. No reviewed record in the batch restores the quantum master equation in this refined coordinate.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "heunen-landsman-spitters-2009",
@@ -11562,6 +13336,13 @@ window.MATRIX_EXPLORER_DATA = {
         "harding-heunen-2019"
       ],
       "migration_rationale": "Internal spectra, state measures, and one-parameter dynamics are reviewed; the records explicitly exclude causal propagation and interacting/renormalized field theory. No reviewed record in the batch restores the quantum master equation in this refined coordinate.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_MAPPED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
       "emitted": true
     },
     {
@@ -11734,13 +13515,17 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "FINITE_DISCRETE",
       "carrier": "LOCALIC_SYNTHETIC",
       "obligation": "QME_RESTORATION",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: Finite contextual and categorical structures do not establish causal propagation or the six quantum-consistency children. No reviewed record in the batch restores the quantum master equation in this refined coordinate.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "harding-heunen-2019",
@@ -11748,6 +13533,13 @@ window.MATRIX_EXPLORER_DATA = {
         "abramsky-coecke-2004"
       ],
       "migration_rationale": "Finite contextual and categorical structures do not establish causal propagation or the six quantum-consistency children. No reviewed record in the batch restores the quantum master equation in this refined coordinate.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_MAPPED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
       "emitted": true
     },
     {
@@ -11806,13 +13598,17 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "CLASSICAL_STANDARD",
       "carrier": "KREIN_INDEFINITE",
       "obligation": "RESIDUAL_QUANTUM_TRANSFER",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: Real-spectrum and indefinite-metric QFT results do not establish the unresolved interaction or quantum-consistency children. No reviewed record in the batch transfers a restored quantum correction to the residual complex.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "bender-boettcher-1998",
@@ -11820,6 +13616,13 @@ window.MATRIX_EXPLORER_DATA = {
         "gottschalk-2004"
       ],
       "migration_rationale": "Real-spectrum and indefinite-metric QFT results do not establish the unresolved interaction or quantum-consistency children. No reviewed record in the batch transfers a restored quantum correction to the residual complex.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_MAPPED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
       "emitted": true
     },
     {
@@ -11870,13 +13673,17 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "CLASSICAL_STANDARD",
       "carrier": "LOCALIC_SYNTHETIC",
       "obligation": "RESIDUAL_QUANTUM_TRANSFER",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: Internal spectra, state measures, and one-parameter dynamics are reviewed; the records explicitly exclude causal propagation and interacting/renormalized field theory. No reviewed record in the batch transfers a restored quantum correction to the residual complex.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "heunen-landsman-spitters-2009",
@@ -11885,6 +13692,13 @@ window.MATRIX_EXPLORER_DATA = {
         "harding-heunen-2019"
       ],
       "migration_rationale": "Internal spectra, state measures, and one-parameter dynamics are reviewed; the records explicitly exclude causal propagation and interacting/renormalized field theory. No reviewed record in the batch transfers a restored quantum correction to the residual complex.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_MAPPED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
       "emitted": true
     },
     {
@@ -11913,49 +13727,88 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "WEAK_ARITHMETIC",
       "carrier": "HILBERT_OPERATOR",
       "obligation": "RESIDUAL_QUANTUM_TRANSFER",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "WEAK_ARITHMETIC",
       "carrier": "KREIN_INDEFINITE",
       "obligation": "RESIDUAL_QUANTUM_TRANSFER",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "WEAK_ARITHMETIC",
       "carrier": "ALGEBRAIC_CSTAR",
       "obligation": "RESIDUAL_QUANTUM_TRANSFER",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "WEAK_ARITHMETIC",
@@ -11977,17 +13830,30 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "WEAK_ARITHMETIC",
       "carrier": "LOCALIC_SYNTHETIC",
       "obligation": "RESIDUAL_QUANTUM_TRANSFER",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "WEAK_CHOICE_ZF",
@@ -12049,13 +13915,17 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "WEAK_CHOICE_ZF",
       "carrier": "KREIN_INDEFINITE",
       "obligation": "RESIDUAL_QUANTUM_TRANSFER",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: The explicit Krein carrier, pseudo-Hermitian structure, and axiomatic indefinite-metric QFT do not construct the unresolved interaction or quantum-consistency children. No reviewed record in the batch transfers a restored quantum correction to the residual complex.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1",
@@ -12063,6 +13933,13 @@ window.MATRIX_EXPLORER_DATA = {
         "gottschalk-2004"
       ],
       "migration_rationale": "The explicit Krein carrier, pseudo-Hermitian structure, and axiomatic indefinite-metric QFT do not construct the unresolved interaction or quantum-consistency children. No reviewed record in the batch transfers a restored quantum correction to the residual complex.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_MAPPED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
       "emitted": true
     },
     {
@@ -12107,17 +13984,30 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "WEAK_CHOICE_ZF",
       "carrier": "LOCALIC_SYNTHETIC",
       "obligation": "RESIDUAL_QUANTUM_TRANSFER",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "CONSTRUCTIVE_COMPUTABLE",
@@ -12180,33 +14070,59 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "CONSTRUCTIVE_COMPUTABLE",
       "carrier": "KREIN_INDEFINITE",
       "obligation": "RESIDUAL_QUANTUM_TRANSFER",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "CONSTRUCTIVE_COMPUTABLE",
       "carrier": "ALGEBRAIC_CSTAR",
       "obligation": "RESIDUAL_QUANTUM_TRANSFER",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "CONSTRUCTIVE_COMPUTABLE",
@@ -12228,13 +14144,17 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "CONSTRUCTIVE_COMPUTABLE",
       "carrier": "LOCALIC_SYNTHETIC",
       "obligation": "RESIDUAL_QUANTUM_TRANSFER",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: Constructive duality and internal one-parameter dynamics do not transfer to causal Green theory or interacting/renormalized field theory. No reviewed record in the batch transfers a restored quantum correction to the residual complex.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "coquand-spitters-2009",
@@ -12242,6 +14162,13 @@ window.MATRIX_EXPLORER_DATA = {
         "brenna-flori-2012"
       ],
       "migration_rationale": "Constructive duality and internal one-parameter dynamics do not transfer to causal Green theory or interacting/renormalized field theory. No reviewed record in the batch transfers a restored quantum correction to the residual complex.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_MAPPED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
       "emitted": true
     },
     {
@@ -12270,45 +14197,75 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "TOPOS_INTERNAL",
       "carrier": "HILBERT_OPERATOR",
       "obligation": "RESIDUAL_QUANTUM_TRANSFER",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "TOPOS_INTERNAL",
       "carrier": "KREIN_INDEFINITE",
       "obligation": "RESIDUAL_QUANTUM_TRANSFER",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "TOPOS_INTERNAL",
       "carrier": "ALGEBRAIC_CSTAR",
       "obligation": "RESIDUAL_QUANTUM_TRANSFER",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: Internal spectra, state measures, and one-parameter dynamics are reviewed; the records explicitly exclude causal propagation and interacting/renormalized field theory. No reviewed record in the batch transfers a restored quantum correction to the residual complex.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "heunen-landsman-spitters-2009",
@@ -12317,6 +14274,13 @@ window.MATRIX_EXPLORER_DATA = {
         "harding-heunen-2019"
       ],
       "migration_rationale": "Internal spectra, state measures, and one-parameter dynamics are reviewed; the records explicitly exclude causal propagation and interacting/renormalized field theory. No reviewed record in the batch transfers a restored quantum correction to the residual complex.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_MAPPED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
       "emitted": true
     },
     {
@@ -12492,13 +14456,17 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "FINITE_DISCRETE",
       "carrier": "LOCALIC_SYNTHETIC",
       "obligation": "RESIDUAL_QUANTUM_TRANSFER",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": "INTERACTION_RENORMALIZATION_QME",
       "migration_relation": "NO_REGISTERED_DESCENT",
-      "summary": "Reviewed parent-evidence transfer: Finite contextual and categorical structures do not establish causal propagation or the six quantum-consistency children. No reviewed record in the batch transfers a restored quantum correction to the residual complex.",
-      "boundary": "This reviews only transfer of the named parent evidence. NOT_MAPPED is not a literature-absence claim and does not show that the coordinate is incoherent.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
       "migration_status": "REVIEWED_NO_TRANSFER",
       "migration_evidence": [
         "harding-heunen-2019",
@@ -12506,23 +14474,43 @@ window.MATRIX_EXPLORER_DATA = {
         "abramsky-coecke-2004"
       ],
       "migration_rationale": "Finite contextual and categorical structures do not establish causal propagation or the six quantum-consistency children. No reviewed record in the batch transfers a restored quantum correction to the residual complex.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_MAPPED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
       "emitted": true
     },
     {
       "foundation": "CLASSICAL_STANDARD",
       "carrier": "FINITE_EXACT",
       "obligation": "RECONSTRUCTION_LIMITS",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "CLASSICAL_STANDARD",
@@ -12724,81 +14712,146 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "WEAK_ARITHMETIC",
       "carrier": "KREIN_INDEFINITE",
       "obligation": "RECONSTRUCTION_LIMITS",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "WEAK_ARITHMETIC",
       "carrier": "ALGEBRAIC_CSTAR",
       "obligation": "RECONSTRUCTION_LIMITS",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "WEAK_ARITHMETIC",
       "carrier": "SMOOTH_DISTRIBUTIONAL",
       "obligation": "RECONSTRUCTION_LIMITS",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "WEAK_ARITHMETIC",
       "carrier": "LOCALIC_SYNTHETIC",
       "obligation": "RECONSTRUCTION_LIMITS",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "WEAK_CHOICE_ZF",
       "carrier": "FINITE_EXACT",
       "obligation": "RECONSTRUCTION_LIMITS",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "WEAK_CHOICE_ZF",
@@ -12832,17 +14885,30 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "WEAK_CHOICE_ZF",
       "carrier": "KREIN_INDEFINITE",
       "obligation": "RECONSTRUCTION_LIMITS",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "WEAK_CHOICE_ZF",
@@ -12876,49 +14942,88 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "WEAK_CHOICE_ZF",
       "carrier": "SMOOTH_DISTRIBUTIONAL",
       "obligation": "RECONSTRUCTION_LIMITS",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "WEAK_CHOICE_ZF",
       "carrier": "LOCALIC_SYNTHETIC",
       "obligation": "RECONSTRUCTION_LIMITS",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "CONSTRUCTIVE_COMPUTABLE",
       "carrier": "FINITE_EXACT",
       "obligation": "RECONSTRUCTION_LIMITS",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "CONSTRUCTIVE_COMPUTABLE",
@@ -12952,17 +15057,30 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "CONSTRUCTIVE_COMPUTABLE",
       "carrier": "KREIN_INDEFINITE",
       "obligation": "RECONSTRUCTION_LIMITS",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "CONSTRUCTIVE_COMPUTABLE",
@@ -12996,17 +15114,30 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "CONSTRUCTIVE_COMPUTABLE",
       "carrier": "SMOOTH_DISTRIBUTIONAL",
       "obligation": "RECONSTRUCTION_LIMITS",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "CONSTRUCTIVE_COMPUTABLE",
@@ -13068,33 +15199,59 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "TOPOS_INTERNAL",
       "carrier": "HILBERT_OPERATOR",
       "obligation": "RECONSTRUCTION_LIMITS",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "TOPOS_INTERNAL",
       "carrier": "KREIN_INDEFINITE",
       "obligation": "RECONSTRUCTION_LIMITS",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "TOPOS_INTERNAL",
@@ -13222,33 +15379,59 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "FINITE_DISCRETE",
       "carrier": "KREIN_INDEFINITE",
       "obligation": "RECONSTRUCTION_LIMITS",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "FINITE_DISCRETE",
       "carrier": "ALGEBRAIC_CSTAR",
       "obligation": "RECONSTRUCTION_LIMITS",
-      "status": "NOT_MAPPED",
-      "evidence": [],
-      "evidence_roles": {},
+      "status": "REVIEWED_GAP",
+      "evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+      },
       "parent_obligation": null,
-      "migration_relation": "NOT_EMITTED",
-      "migration_status": "NOT_REVIEWED",
-      "migration_evidence": [],
-      "migration_rationale": "This coordinate was not emitted by the cube, so no parent-evidence migration decision exists.",
-      "summary": "This Cartesian coordinate has not yet been assessed in the refined evidence projection.",
-      "boundary": "NOT_MAPPED is not a literature-absence claim, a no-go theorem, or evidence that the coordinate is coherent.",
-      "emitted": false
+      "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
+      "migration_status": "DIRECT_COORDINATE_REVIEW",
+      "migration_evidence": [
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+      ],
+      "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
+      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
+      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "classification_revision": {
+        "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "previous_status": "NOT_EMITTED",
+        "new_status": "REVIEWED_GAP",
+        "evidence_role": "SUPPORTING",
+        "status_change": true
+      },
+      "emitted": true
     },
     {
       "foundation": "FINITE_DISCRETE",
@@ -13827,6 +16010,46 @@ window.MATRIX_EXPLORER_DATA = {
       "report_path": "foundations/reports/free-bv-energy2-pra-sdr.md",
       "report_link": "sources/foundations/reports/free-bv-energy2-pra-sdr.md",
       "sha256": "d0943e804f386155ac635f027101912b6d0c0385d1c10a6c6e0daf1c3399a3e5"
+    },
+    "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": {
+      "id": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+      "kind": "LOCAL_RESULT",
+      "result_kind": "TYPED_FULL_CARTESIAN_GAP_ASSESSMENT",
+      "lifecycle": "CLASSIFIED",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL",
+        "REDUCED-MODE",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "claim_flags": {
+        "all_175_remaining_coordinates_reviewed": true,
+        "all_576_coordinates_formulated": true,
+        "new_reviewed_gap_status_defined": true,
+        "direct_results_added": false,
+        "pieces_only_results_added": false,
+        "priority_assignments_added": false,
+        "literature_complete": false,
+        "literature_absence_proved": false,
+        "all_physical_obligations_solved": false,
+        "complete_theory_identified": false,
+        "new_lorentzian_claim": false
+      },
+      "does_not_establish": [
+        "a direct mathematical or physical result for any of the 175 coordinates",
+        "that every formulated coordinate is realizable in one common physical theory",
+        "that adjacent evidence transfers across a foundation, carrier, or obligation axis",
+        "that any newly reviewed gap is a programme priority",
+        "literature completeness or absence of relevant literature",
+        "impossibility, independence, inconsistency, or a no-go theorem",
+        "a weakest foundation, carrier equivalence, or continuum limit",
+        "a complete Weyl theory, quantum completion, empirical agreement, or LORENTZIAN-CAUSAL result"
+      ],
+      "result_path": "foundations/results/FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1.json",
+      "result_link": "sources/foundations/results/FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1.json",
+      "report_path": "foundations/reports/full-surface-gap-audit.md",
+      "report_link": "sources/foundations/reports/full-surface-gap-audit.md",
+      "sha256": "7c3d467e07b07ca54b0d875c08a7cac5769fab769c412e8e71fc823f515669fd"
     },
     "FOUNDATIONAL_HARDY_CONTINUITY_KN_AUDIT_V1": {
       "id": "FOUNDATIONAL_HARDY_CONTINUITY_KN_AUDIT_V1",
@@ -15284,15 +17507,15 @@ window.MATRIX_EXPLORER_DATA = {
   ],
   "boundaries": {
     "cube": [
-      "that the finite toy BRST complex is the Weyl BV complex",
-      "Weyl counterterm or anomaly classification",
-      "a continuum renormalized product",
-      "an all-loop or Lorentzian QME",
-      "transfer to the Weyl residual complex",
-      "equivalence of general carrier categories",
-      "coverage of 124 un-emitted Cartesian coordinates",
-      "literature completeness or a weakest base",
-      "empirical agreement or a complete physical theory",
+      "a result for any REVIEWED_GAP coordinate",
+      "that a reviewed gap is a programme priority",
+      "literature completeness or absence",
+      "that all 576 coordinates are jointly realizable",
+      "evidence transfer from a one-axis neighbor",
+      "impossibility, independence, inconsistency, or a no-go theorem",
+      "a weakest foundation or equivalence of carrier categories",
+      "a continuum limit or empirical equivalence",
+      "a complete Weyl theory or quantum completion",
       "a new LORENTZIAN-CAUSAL conclusion"
     ],
     "migration_audit": [
@@ -15317,18 +17540,21 @@ window.MATRIX_EXPLORER_DATA = {
     ],
     "navigation": [
       "Coverage status and migration-review status answer different questions.",
-      "REVIEWED_NO_TRANSFER and NOT_MAPPED are not literature-absence claims.",
-      "The 124 synthetic coordinates have not received the migration review applied to the 452 emitted coordinates.",
+      "REVIEWED_NO_TRANSFER, REVIEWED_GAP, and NOT_MAPPED are not literature-absence claims.",
+      "All 576 coordinates are emitted and directly assessed; zero browser-only synthetic complements remain.",
+      "A REVIEWED_GAP is an explicit open question with a typed missing certificate, not a result or a selected priority.",
       "Neighbor counts and candidate views are navigation aids, not theorem rankings.",
       "An UNREVIEWED evidence role means the record has not been reviewed for directness at that obligation; it is not a finding that the record fails to support the cell.",
       "The LR mark reports two certified direct evidence kinds at one coordinate. It does not merge them into a stronger single result."
     ]
   },
   "source_links": {
-    "cube": "sources/foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V8.json",
+    "cube": "sources/foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V9.json",
+    "full_surface_audit": "sources/foundations/results/FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1.json",
     "migration_audit": "sources/foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_MIGRATION_AUDIT_V2.json",
     "ladder": "sources/foundations/results/FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V2.json",
-    "cube_report": "sources/foundations/reports/refined-intersection-cube-v8.md",
+    "cube_report": "sources/foundations/reports/refined-intersection-cube-v9.md",
+    "full_surface_audit_report": "sources/foundations/reports/full-surface-gap-audit.md",
     "twenty_cell_closure": "sources/foundations/results/FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1.json",
     "twenty_cell_closure_report": "sources/foundations/reports/finite-brst-twenty-cell-closure.md",
     "ten_cell_closure": "sources/foundations/results/FOUNDATIONAL_FINITE_OPERATOR_TEN_CELL_CLOSURE_V1.json",
@@ -15340,5 +17566,5 @@ window.MATRIX_EXPLORER_DATA = {
     "migration_audit_report": "sources/foundations/reports/intersection-cube-migration-audit-v2.md",
     "ladder_report": "sources/foundations/reports/cylinder-wave-strength-ladder-v2.md"
   },
-  "canonical_digest": "784e40266f584374492423625e1218254caa7af6b1a387885bbca195a1e8878a"
+  "canonical_digest": "4ba28f1320371b129b8f97dca3668acd02711ab4aefb980d21964cd90cefd30d"
 };

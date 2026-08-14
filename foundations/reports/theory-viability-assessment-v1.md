@@ -45,5 +45,6 @@ profiles, exact blockers, and the default Pareto set. No scalar winner is emitte
 - This does not establish that a finite or reduced model has a controlled continuum limit.
 - This does not establish that reconstruction/limits coverage demonstrates agreement with observations.
 - This does not establish that NOT_MAPPED is failure, incoherence, or absence from the literature.
+- This does not establish that REVIEWED_GAP is a result, selected priority, or literature-absence finding.
 - This does not establish that Pareto-frontier profiles are physically preferred or more likely true.
 - This does not establish a complete observationally validated theory under any regime or carrier portfolio.

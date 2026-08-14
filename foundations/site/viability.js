@@ -22,6 +22,9 @@ window.THEORY_VIABILITY_DATA = {
     "explicit_gap": [
       "PRIORITY_GAP"
     ],
+    "reviewed_open_gap": [
+      "REVIEWED_GAP"
+    ],
     "unknown": [
       "NOT_MAPPED"
     ],
@@ -146,14 +149,15 @@ window.THEORY_VIABILITY_DATA = {
         "LITERATURE_RESULT": 0,
         "PIECES_ONLY": 7,
         "PRIORITY_GAP": 0,
-        "NOT_MAPPED": 1
+        "REVIEWED_GAP": 1,
+        "NOT_MAPPED": 0
       },
       "direct": 8,
-      "assessed": 15,
+      "assessed": 16,
       "default_gate": {
         "preset": "PREDICTIVE_PHYSICS",
         "direct": 7,
-        "assessed": 9,
+        "assessed": 10,
         "total": 10,
         "complete_direct": false,
         "blockers": [
@@ -167,11 +171,11 @@ window.THEORY_VIABILITY_DATA = {
           },
           {
             "obligation": "RECONSTRUCTION_LIMITS",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           }
         ]
       },
-      "reconstruction_status": "NOT_MAPPED",
+      "reconstruction_status": "REVIEWED_GAP",
       "bundles": [
         {
           "bundle": "KINEMATICS_STATES",
@@ -180,6 +184,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 0,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 3,
@@ -192,7 +197,8 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 1
+            "REVIEWED_GAP": 1,
+            "NOT_MAPPED": 0
           },
           "direct": 1,
           "total": 3
@@ -204,6 +210,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 2,
@@ -216,6 +223,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 0,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 2,
@@ -228,6 +236,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 5,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 0,
@@ -244,6 +253,7 @@ window.THEORY_VIABILITY_DATA = {
         "LITERATURE_RESULT": 6,
         "PIECES_ONLY": 4,
         "PRIORITY_GAP": 0,
+        "REVIEWED_GAP": 0,
         "NOT_MAPPED": 0
       },
       "direct": 12,
@@ -274,6 +284,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 3,
             "PIECES_ONLY": 0,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 3,
@@ -286,6 +297,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 2,
             "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 2,
@@ -298,6 +310,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 1,
             "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 2,
@@ -310,6 +323,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 1,
@@ -322,6 +336,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 4,
@@ -338,10 +353,11 @@ window.THEORY_VIABILITY_DATA = {
         "LITERATURE_RESULT": 2,
         "PIECES_ONLY": 3,
         "PRIORITY_GAP": 0,
-        "NOT_MAPPED": 4
+        "REVIEWED_GAP": 4,
+        "NOT_MAPPED": 0
       },
       "direct": 9,
-      "assessed": 12,
+      "assessed": 16,
       "default_gate": {
         "preset": "PREDICTIVE_PHYSICS",
         "direct": 8,
@@ -368,6 +384,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 1,
             "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 2,
@@ -380,6 +397,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 1,
             "PIECES_ONLY": 0,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 3,
@@ -392,6 +410,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 2,
@@ -404,6 +423,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 1,
@@ -416,7 +436,8 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 0,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 4
+            "REVIEWED_GAP": 4,
+            "NOT_MAPPED": 0
           },
           "direct": 1,
           "total": 5
@@ -432,6 +453,7 @@ window.THEORY_VIABILITY_DATA = {
         "LITERATURE_RESULT": 7,
         "PIECES_ONLY": 4,
         "PRIORITY_GAP": 0,
+        "REVIEWED_GAP": 0,
         "NOT_MAPPED": 0
       },
       "direct": 12,
@@ -462,6 +484,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 1,
             "PIECES_ONLY": 0,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 3,
@@ -474,6 +497,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 1,
             "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 2,
@@ -486,6 +510,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 2,
@@ -498,6 +523,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 2,
             "PIECES_ONLY": 0,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 2,
@@ -510,6 +536,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 3,
             "PIECES_ONLY": 2,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 3,
@@ -526,20 +553,21 @@ window.THEORY_VIABILITY_DATA = {
         "LITERATURE_RESULT": 4,
         "PIECES_ONLY": 6,
         "PRIORITY_GAP": 0,
-        "NOT_MAPPED": 1
+        "REVIEWED_GAP": 1,
+        "NOT_MAPPED": 0
       },
       "direct": 9,
-      "assessed": 15,
+      "assessed": 16,
       "default_gate": {
         "preset": "PREDICTIVE_PHYSICS",
         "direct": 6,
-        "assessed": 9,
+        "assessed": 10,
         "total": 10,
         "complete_direct": false,
         "blockers": [
           {
             "obligation": "PROBABILITY_RULE",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           },
           {
             "obligation": "PHYSICAL_STATE_SELECTION",
@@ -564,6 +592,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 3,
             "PIECES_ONLY": 0,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 3,
@@ -576,7 +605,8 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 1,
             "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 1
+            "REVIEWED_GAP": 1,
+            "NOT_MAPPED": 0
           },
           "direct": 1,
           "total": 3
@@ -588,6 +618,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 2,
@@ -600,6 +631,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 1,
@@ -612,6 +644,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 3,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 2,
@@ -628,14 +661,15 @@ window.THEORY_VIABILITY_DATA = {
         "LITERATURE_RESULT": 5,
         "PIECES_ONLY": 4,
         "PRIORITY_GAP": 0,
-        "NOT_MAPPED": 7
+        "REVIEWED_GAP": 7,
+        "NOT_MAPPED": 0
       },
       "direct": 5,
-      "assessed": 9,
+      "assessed": 16,
       "default_gate": {
         "preset": "PREDICTIVE_PHYSICS",
         "direct": 5,
-        "assessed": 8,
+        "assessed": 10,
         "total": 10,
         "complete_direct": false,
         "blockers": [
@@ -653,11 +687,11 @@ window.THEORY_VIABILITY_DATA = {
           },
           {
             "obligation": "CAUSAL_PROPAGATION_GREEN",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           },
           {
             "obligation": "INTERACTION_CONSTRUCTION",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           }
         ]
       },
@@ -670,6 +704,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 3,
             "PIECES_ONLY": 0,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 3,
@@ -682,6 +717,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 1,
             "PIECES_ONLY": 2,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 1,
@@ -694,7 +730,8 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 1,
             "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 1
+            "REVIEWED_GAP": 1,
+            "NOT_MAPPED": 0
           },
           "direct": 1,
           "total": 3
@@ -706,7 +743,8 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 1
+            "REVIEWED_GAP": 1,
+            "NOT_MAPPED": 0
           },
           "direct": 0,
           "total": 2
@@ -718,7 +756,8 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 0,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 5
+            "REVIEWED_GAP": 5,
+            "NOT_MAPPED": 0
           },
           "direct": 0,
           "total": 5
@@ -734,6 +773,7 @@ window.THEORY_VIABILITY_DATA = {
         "LITERATURE_RESULT": 0,
         "PIECES_ONLY": 7,
         "PRIORITY_GAP": 0,
+        "REVIEWED_GAP": 0,
         "NOT_MAPPED": 0
       },
       "direct": 9,
@@ -764,6 +804,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 0,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 3,
@@ -776,6 +817,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 2,
@@ -788,6 +830,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 2,
@@ -800,6 +843,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 0,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 2,
@@ -812,6 +856,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 5,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 0,
@@ -828,14 +873,15 @@ window.THEORY_VIABILITY_DATA = {
         "LITERATURE_RESULT": 1,
         "PIECES_ONLY": 2,
         "PRIORITY_GAP": 0,
-        "NOT_MAPPED": 11
+        "REVIEWED_GAP": 11,
+        "NOT_MAPPED": 0
       },
       "direct": 3,
-      "assessed": 5,
+      "assessed": 16,
       "default_gate": {
         "preset": "PREDICTIVE_PHYSICS",
         "direct": 3,
-        "assessed": 5,
+        "assessed": 10,
         "total": 10,
         "complete_direct": false,
         "blockers": [
@@ -845,19 +891,19 @@ window.THEORY_VIABILITY_DATA = {
           },
           {
             "obligation": "STATE_EXISTENCE",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           },
           {
             "obligation": "STATE_REPRESENTATION",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           },
           {
             "obligation": "PROBABILITY_RULE",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           },
           {
             "obligation": "PHYSICAL_STATE_SELECTION",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           },
           {
             "obligation": "CAUSAL_PROPAGATION_GREEN",
@@ -865,7 +911,7 @@ window.THEORY_VIABILITY_DATA = {
           },
           {
             "obligation": "INTERACTION_CONSTRUCTION",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           }
         ]
       },
@@ -878,7 +924,8 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 2
+            "REVIEWED_GAP": 2,
+            "NOT_MAPPED": 0
           },
           "direct": 0,
           "total": 3
@@ -890,7 +937,8 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 1,
             "PIECES_ONLY": 0,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 2
+            "REVIEWED_GAP": 2,
+            "NOT_MAPPED": 0
           },
           "direct": 1,
           "total": 3
@@ -902,6 +950,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 2,
@@ -914,7 +963,8 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 0,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 2
+            "REVIEWED_GAP": 2,
+            "NOT_MAPPED": 0
           },
           "direct": 0,
           "total": 2
@@ -926,7 +976,8 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 0,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 5
+            "REVIEWED_GAP": 5,
+            "NOT_MAPPED": 0
           },
           "direct": 0,
           "total": 5
@@ -942,32 +993,33 @@ window.THEORY_VIABILITY_DATA = {
         "LITERATURE_RESULT": 2,
         "PIECES_ONLY": 1,
         "PRIORITY_GAP": 0,
-        "NOT_MAPPED": 12
+        "REVIEWED_GAP": 12,
+        "NOT_MAPPED": 0
       },
       "direct": 3,
-      "assessed": 4,
+      "assessed": 16,
       "default_gate": {
         "preset": "PREDICTIVE_PHYSICS",
         "direct": 3,
-        "assessed": 4,
+        "assessed": 10,
         "total": 10,
         "complete_direct": false,
         "blockers": [
           {
             "obligation": "STATE_EXISTENCE",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           },
           {
             "obligation": "STATE_REPRESENTATION",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           },
           {
             "obligation": "PROBABILITY_RULE",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           },
           {
             "obligation": "PHYSICAL_STATE_SELECTION",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           },
           {
             "obligation": "CAUSAL_PROPAGATION_GREEN",
@@ -975,15 +1027,15 @@ window.THEORY_VIABILITY_DATA = {
           },
           {
             "obligation": "INTERACTION_CONSTRUCTION",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           },
           {
             "obligation": "RECONSTRUCTION_LIMITS",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           }
         ]
       },
-      "reconstruction_status": "NOT_MAPPED",
+      "reconstruction_status": "REVIEWED_GAP",
       "bundles": [
         {
           "bundle": "KINEMATICS_STATES",
@@ -992,7 +1044,8 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 0,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 2
+            "REVIEWED_GAP": 2,
+            "NOT_MAPPED": 0
           },
           "direct": 1,
           "total": 3
@@ -1004,7 +1057,8 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 0,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 3
+            "REVIEWED_GAP": 3,
+            "NOT_MAPPED": 0
           },
           "direct": 0,
           "total": 3
@@ -1016,6 +1070,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 2,
             "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 2,
@@ -1028,7 +1083,8 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 0,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 2
+            "REVIEWED_GAP": 2,
+            "NOT_MAPPED": 0
           },
           "direct": 0,
           "total": 2
@@ -1040,7 +1096,8 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 0,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 5
+            "REVIEWED_GAP": 5,
+            "NOT_MAPPED": 0
           },
           "direct": 0,
           "total": 5
@@ -1056,36 +1113,37 @@ window.THEORY_VIABILITY_DATA = {
         "LITERATURE_RESULT": 0,
         "PIECES_ONLY": 3,
         "PRIORITY_GAP": 0,
-        "NOT_MAPPED": 13
+        "REVIEWED_GAP": 13,
+        "NOT_MAPPED": 0
       },
       "direct": 0,
-      "assessed": 3,
+      "assessed": 16,
       "default_gate": {
         "preset": "PREDICTIVE_PHYSICS",
         "direct": 0,
-        "assessed": 3,
+        "assessed": 10,
         "total": 10,
         "complete_direct": false,
         "blockers": [
           {
             "obligation": "KINEMATICS_OBSERVABLES",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           },
           {
             "obligation": "STATE_EXISTENCE",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           },
           {
             "obligation": "STATE_REPRESENTATION",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           },
           {
             "obligation": "PROBABILITY_RULE",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           },
           {
             "obligation": "PHYSICAL_STATE_SELECTION",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           },
           {
             "obligation": "GENERATOR_SPECTRAL_DYNAMICS",
@@ -1101,15 +1159,15 @@ window.THEORY_VIABILITY_DATA = {
           },
           {
             "obligation": "INTERACTION_CONSTRUCTION",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           },
           {
             "obligation": "RECONSTRUCTION_LIMITS",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           }
         ]
       },
-      "reconstruction_status": "NOT_MAPPED",
+      "reconstruction_status": "REVIEWED_GAP",
       "bundles": [
         {
           "bundle": "KINEMATICS_STATES",
@@ -1118,7 +1176,8 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 0,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 3
+            "REVIEWED_GAP": 3,
+            "NOT_MAPPED": 0
           },
           "direct": 0,
           "total": 3
@@ -1130,7 +1189,8 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 0,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 3
+            "REVIEWED_GAP": 3,
+            "NOT_MAPPED": 0
           },
           "direct": 0,
           "total": 3
@@ -1142,6 +1202,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 3,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 0,
@@ -1154,7 +1215,8 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 0,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 2
+            "REVIEWED_GAP": 2,
+            "NOT_MAPPED": 0
           },
           "direct": 0,
           "total": 2
@@ -1166,7 +1228,8 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 0,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 5
+            "REVIEWED_GAP": 5,
+            "NOT_MAPPED": 0
           },
           "direct": 0,
           "total": 5
@@ -1182,36 +1245,37 @@ window.THEORY_VIABILITY_DATA = {
         "LITERATURE_RESULT": 0,
         "PIECES_ONLY": 3,
         "PRIORITY_GAP": 7,
-        "NOT_MAPPED": 6
+        "REVIEWED_GAP": 6,
+        "NOT_MAPPED": 0
       },
       "direct": 0,
-      "assessed": 10,
+      "assessed": 16,
       "default_gate": {
         "preset": "PREDICTIVE_PHYSICS",
         "direct": 0,
-        "assessed": 4,
+        "assessed": 10,
         "total": 10,
         "complete_direct": false,
         "blockers": [
           {
             "obligation": "KINEMATICS_OBSERVABLES",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           },
           {
             "obligation": "STATE_EXISTENCE",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           },
           {
             "obligation": "STATE_REPRESENTATION",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           },
           {
             "obligation": "PROBABILITY_RULE",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           },
           {
             "obligation": "PHYSICAL_STATE_SELECTION",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           },
           {
             "obligation": "GENERATOR_SPECTRAL_DYNAMICS",
@@ -1231,11 +1295,11 @@ window.THEORY_VIABILITY_DATA = {
           },
           {
             "obligation": "RECONSTRUCTION_LIMITS",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           }
         ]
       },
-      "reconstruction_status": "NOT_MAPPED",
+      "reconstruction_status": "REVIEWED_GAP",
       "bundles": [
         {
           "bundle": "KINEMATICS_STATES",
@@ -1244,7 +1308,8 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 0,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 3
+            "REVIEWED_GAP": 3,
+            "NOT_MAPPED": 0
           },
           "direct": 0,
           "total": 3
@@ -1256,7 +1321,8 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 0,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 3
+            "REVIEWED_GAP": 3,
+            "NOT_MAPPED": 0
           },
           "direct": 0,
           "total": 3
@@ -1268,6 +1334,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 3,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 0,
@@ -1280,6 +1347,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 0,
             "PRIORITY_GAP": 2,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 0,
@@ -1292,6 +1360,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 0,
             "PRIORITY_GAP": 5,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 0,
@@ -1308,60 +1377,61 @@ window.THEORY_VIABILITY_DATA = {
         "LITERATURE_RESULT": 0,
         "PIECES_ONLY": 0,
         "PRIORITY_GAP": 0,
-        "NOT_MAPPED": 16
+        "REVIEWED_GAP": 16,
+        "NOT_MAPPED": 0
       },
       "direct": 0,
-      "assessed": 0,
+      "assessed": 16,
       "default_gate": {
         "preset": "PREDICTIVE_PHYSICS",
         "direct": 0,
-        "assessed": 0,
+        "assessed": 10,
         "total": 10,
         "complete_direct": false,
         "blockers": [
           {
             "obligation": "KINEMATICS_OBSERVABLES",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           },
           {
             "obligation": "STATE_EXISTENCE",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           },
           {
             "obligation": "STATE_REPRESENTATION",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           },
           {
             "obligation": "PROBABILITY_RULE",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           },
           {
             "obligation": "PHYSICAL_STATE_SELECTION",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           },
           {
             "obligation": "GENERATOR_SPECTRAL_DYNAMICS",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           },
           {
             "obligation": "EVOLUTION_WELLPOSEDNESS",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           },
           {
             "obligation": "CAUSAL_PROPAGATION_GREEN",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           },
           {
             "obligation": "INTERACTION_CONSTRUCTION",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           },
           {
             "obligation": "RECONSTRUCTION_LIMITS",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           }
         ]
       },
-      "reconstruction_status": "NOT_MAPPED",
+      "reconstruction_status": "REVIEWED_GAP",
       "bundles": [
         {
           "bundle": "KINEMATICS_STATES",
@@ -1370,7 +1440,8 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 0,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 3
+            "REVIEWED_GAP": 3,
+            "NOT_MAPPED": 0
           },
           "direct": 0,
           "total": 3
@@ -1382,7 +1453,8 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 0,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 3
+            "REVIEWED_GAP": 3,
+            "NOT_MAPPED": 0
           },
           "direct": 0,
           "total": 3
@@ -1394,7 +1466,8 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 0,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 3
+            "REVIEWED_GAP": 3,
+            "NOT_MAPPED": 0
           },
           "direct": 0,
           "total": 3
@@ -1406,7 +1479,8 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 0,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 2
+            "REVIEWED_GAP": 2,
+            "NOT_MAPPED": 0
           },
           "direct": 0,
           "total": 2
@@ -1418,7 +1492,8 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 0,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 5
+            "REVIEWED_GAP": 5,
+            "NOT_MAPPED": 0
           },
           "direct": 0,
           "total": 5
@@ -1434,14 +1509,15 @@ window.THEORY_VIABILITY_DATA = {
         "LITERATURE_RESULT": 0,
         "PIECES_ONLY": 8,
         "PRIORITY_GAP": 0,
-        "NOT_MAPPED": 1
+        "REVIEWED_GAP": 1,
+        "NOT_MAPPED": 0
       },
       "direct": 7,
-      "assessed": 15,
+      "assessed": 16,
       "default_gate": {
         "preset": "PREDICTIVE_PHYSICS",
         "direct": 7,
-        "assessed": 9,
+        "assessed": 10,
         "total": 10,
         "complete_direct": false,
         "blockers": [
@@ -1455,11 +1531,11 @@ window.THEORY_VIABILITY_DATA = {
           },
           {
             "obligation": "RECONSTRUCTION_LIMITS",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           }
         ]
       },
-      "reconstruction_status": "NOT_MAPPED",
+      "reconstruction_status": "REVIEWED_GAP",
       "bundles": [
         {
           "bundle": "KINEMATICS_STATES",
@@ -1468,6 +1544,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 0,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 3,
@@ -1480,7 +1557,8 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 1
+            "REVIEWED_GAP": 1,
+            "NOT_MAPPED": 0
           },
           "direct": 1,
           "total": 3
@@ -1492,6 +1570,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 2,
@@ -1504,6 +1583,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 1,
@@ -1516,6 +1596,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 5,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 0,
@@ -1532,6 +1613,7 @@ window.THEORY_VIABILITY_DATA = {
         "LITERATURE_RESULT": 4,
         "PIECES_ONLY": 6,
         "PRIORITY_GAP": 0,
+        "REVIEWED_GAP": 0,
         "NOT_MAPPED": 0
       },
       "direct": 10,
@@ -1570,6 +1652,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 3,
             "PIECES_ONLY": 0,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 3,
@@ -1582,6 +1665,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 1,
             "PIECES_ONLY": 2,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 1,
@@ -1594,6 +1678,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 2,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 1,
@@ -1606,6 +1691,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 1,
@@ -1618,6 +1704,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 4,
@@ -1634,14 +1721,15 @@ window.THEORY_VIABILITY_DATA = {
         "LITERATURE_RESULT": 0,
         "PIECES_ONLY": 4,
         "PRIORITY_GAP": 0,
-        "NOT_MAPPED": 5
+        "REVIEWED_GAP": 5,
+        "NOT_MAPPED": 0
       },
       "direct": 7,
-      "assessed": 11,
+      "assessed": 16,
       "default_gate": {
         "preset": "PREDICTIVE_PHYSICS",
         "direct": 6,
-        "assessed": 9,
+        "assessed": 10,
         "total": 10,
         "complete_direct": false,
         "blockers": [
@@ -1659,11 +1747,11 @@ window.THEORY_VIABILITY_DATA = {
           },
           {
             "obligation": "RECONSTRUCTION_LIMITS",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           }
         ]
       },
-      "reconstruction_status": "NOT_MAPPED",
+      "reconstruction_status": "REVIEWED_GAP",
       "bundles": [
         {
           "bundle": "KINEMATICS_STATES",
@@ -1672,6 +1760,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 2,
@@ -1684,7 +1773,8 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 1
+            "REVIEWED_GAP": 1,
+            "NOT_MAPPED": 0
           },
           "direct": 1,
           "total": 3
@@ -1696,6 +1786,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 2,
@@ -1708,6 +1799,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 1,
@@ -1720,7 +1812,8 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 0,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 4
+            "REVIEWED_GAP": 4,
+            "NOT_MAPPED": 0
           },
           "direct": 1,
           "total": 5
@@ -1736,6 +1829,7 @@ window.THEORY_VIABILITY_DATA = {
         "LITERATURE_RESULT": 5,
         "PIECES_ONLY": 6,
         "PRIORITY_GAP": 0,
+        "REVIEWED_GAP": 0,
         "NOT_MAPPED": 0
       },
       "direct": 10,
@@ -1770,6 +1864,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 0,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 3,
@@ -1782,6 +1877,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 1,
             "PIECES_ONLY": 2,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 1,
@@ -1794,6 +1890,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 2,
@@ -1806,6 +1903,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 1,
             "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 1,
@@ -1818,6 +1916,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 3,
             "PIECES_ONLY": 2,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 3,
@@ -1834,36 +1933,37 @@ window.THEORY_VIABILITY_DATA = {
         "LITERATURE_RESULT": 0,
         "PIECES_ONLY": 1,
         "PRIORITY_GAP": 7,
-        "NOT_MAPPED": 6
+        "REVIEWED_GAP": 6,
+        "NOT_MAPPED": 0
       },
       "direct": 2,
-      "assessed": 10,
+      "assessed": 16,
       "default_gate": {
         "preset": "PREDICTIVE_PHYSICS",
         "direct": 2,
-        "assessed": 4,
+        "assessed": 10,
         "total": 10,
         "complete_direct": false,
         "blockers": [
           {
             "obligation": "KINEMATICS_OBSERVABLES",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           },
           {
             "obligation": "STATE_EXISTENCE",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           },
           {
             "obligation": "STATE_REPRESENTATION",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           },
           {
             "obligation": "PROBABILITY_RULE",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           },
           {
             "obligation": "PHYSICAL_STATE_SELECTION",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           },
           {
             "obligation": "GENERATOR_SPECTRAL_DYNAMICS",
@@ -1875,11 +1975,11 @@ window.THEORY_VIABILITY_DATA = {
           },
           {
             "obligation": "RECONSTRUCTION_LIMITS",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           }
         ]
       },
-      "reconstruction_status": "NOT_MAPPED",
+      "reconstruction_status": "REVIEWED_GAP",
       "bundles": [
         {
           "bundle": "KINEMATICS_STATES",
@@ -1888,7 +1988,8 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 0,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 3
+            "REVIEWED_GAP": 3,
+            "NOT_MAPPED": 0
           },
           "direct": 0,
           "total": 3
@@ -1900,7 +2001,8 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 0,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 3
+            "REVIEWED_GAP": 3,
+            "NOT_MAPPED": 0
           },
           "direct": 0,
           "total": 3
@@ -1912,6 +2014,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 2,
@@ -1924,6 +2027,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 0,
             "PRIORITY_GAP": 2,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 0,
@@ -1936,6 +2040,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 0,
             "PRIORITY_GAP": 5,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 0,
@@ -1952,20 +2057,21 @@ window.THEORY_VIABILITY_DATA = {
         "LITERATURE_RESULT": 2,
         "PIECES_ONLY": 2,
         "PRIORITY_GAP": 0,
-        "NOT_MAPPED": 12
+        "REVIEWED_GAP": 12,
+        "NOT_MAPPED": 0
       },
       "direct": 2,
-      "assessed": 4,
+      "assessed": 16,
       "default_gate": {
         "preset": "PREDICTIVE_PHYSICS",
         "direct": 2,
-        "assessed": 4,
+        "assessed": 10,
         "total": 10,
         "complete_direct": false,
         "blockers": [
           {
             "obligation": "KINEMATICS_OBSERVABLES",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           },
           {
             "obligation": "PROBABILITY_RULE",
@@ -1977,27 +2083,27 @@ window.THEORY_VIABILITY_DATA = {
           },
           {
             "obligation": "GENERATOR_SPECTRAL_DYNAMICS",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           },
           {
             "obligation": "EVOLUTION_WELLPOSEDNESS",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           },
           {
             "obligation": "CAUSAL_PROPAGATION_GREEN",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           },
           {
             "obligation": "INTERACTION_CONSTRUCTION",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           },
           {
             "obligation": "RECONSTRUCTION_LIMITS",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           }
         ]
       },
-      "reconstruction_status": "NOT_MAPPED",
+      "reconstruction_status": "REVIEWED_GAP",
       "bundles": [
         {
           "bundle": "KINEMATICS_STATES",
@@ -2006,7 +2112,8 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 2,
             "PIECES_ONLY": 0,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 1
+            "REVIEWED_GAP": 1,
+            "NOT_MAPPED": 0
           },
           "direct": 2,
           "total": 3
@@ -2018,7 +2125,8 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 2,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 1
+            "REVIEWED_GAP": 1,
+            "NOT_MAPPED": 0
           },
           "direct": 0,
           "total": 3
@@ -2030,7 +2138,8 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 0,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 3
+            "REVIEWED_GAP": 3,
+            "NOT_MAPPED": 0
           },
           "direct": 0,
           "total": 3
@@ -2042,7 +2151,8 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 0,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 2
+            "REVIEWED_GAP": 2,
+            "NOT_MAPPED": 0
           },
           "direct": 0,
           "total": 2
@@ -2054,7 +2164,8 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 0,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 5
+            "REVIEWED_GAP": 5,
+            "NOT_MAPPED": 0
           },
           "direct": 0,
           "total": 5
@@ -2070,14 +2181,15 @@ window.THEORY_VIABILITY_DATA = {
         "LITERATURE_RESULT": 0,
         "PIECES_ONLY": 8,
         "PRIORITY_GAP": 0,
-        "NOT_MAPPED": 1
+        "REVIEWED_GAP": 1,
+        "NOT_MAPPED": 0
       },
       "direct": 7,
-      "assessed": 15,
+      "assessed": 16,
       "default_gate": {
         "preset": "PREDICTIVE_PHYSICS",
         "direct": 7,
-        "assessed": 9,
+        "assessed": 10,
         "total": 10,
         "complete_direct": false,
         "blockers": [
@@ -2091,11 +2203,11 @@ window.THEORY_VIABILITY_DATA = {
           },
           {
             "obligation": "RECONSTRUCTION_LIMITS",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           }
         ]
       },
-      "reconstruction_status": "NOT_MAPPED",
+      "reconstruction_status": "REVIEWED_GAP",
       "bundles": [
         {
           "bundle": "KINEMATICS_STATES",
@@ -2104,6 +2216,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 0,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 3,
@@ -2116,7 +2229,8 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 1
+            "REVIEWED_GAP": 1,
+            "NOT_MAPPED": 0
           },
           "direct": 1,
           "total": 3
@@ -2128,6 +2242,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 2,
@@ -2140,6 +2255,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 1,
@@ -2152,6 +2268,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 5,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 0,
@@ -2168,6 +2285,7 @@ window.THEORY_VIABILITY_DATA = {
         "LITERATURE_RESULT": 5,
         "PIECES_ONLY": 6,
         "PRIORITY_GAP": 0,
+        "REVIEWED_GAP": 0,
         "NOT_MAPPED": 0
       },
       "direct": 10,
@@ -2206,6 +2324,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 2,
             "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 2,
@@ -2218,6 +2337,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 1,
             "PIECES_ONLY": 2,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 1,
@@ -2230,6 +2350,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 2,
             "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 2,
@@ -2242,6 +2363,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 1,
@@ -2254,6 +2376,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 4,
@@ -2270,20 +2393,21 @@ window.THEORY_VIABILITY_DATA = {
         "LITERATURE_RESULT": 1,
         "PIECES_ONLY": 3,
         "PRIORITY_GAP": 0,
-        "NOT_MAPPED": 10
+        "REVIEWED_GAP": 10,
+        "NOT_MAPPED": 0
       },
       "direct": 3,
-      "assessed": 6,
+      "assessed": 16,
       "default_gate": {
         "preset": "PREDICTIVE_PHYSICS",
         "direct": 3,
-        "assessed": 6,
+        "assessed": 10,
         "total": 10,
         "complete_direct": false,
         "blockers": [
           {
             "obligation": "KINEMATICS_OBSERVABLES",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           },
           {
             "obligation": "STATE_EXISTENCE",
@@ -2299,19 +2423,19 @@ window.THEORY_VIABILITY_DATA = {
           },
           {
             "obligation": "CAUSAL_PROPAGATION_GREEN",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           },
           {
             "obligation": "INTERACTION_CONSTRUCTION",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           },
           {
             "obligation": "RECONSTRUCTION_LIMITS",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           }
         ]
       },
-      "reconstruction_status": "NOT_MAPPED",
+      "reconstruction_status": "REVIEWED_GAP",
       "bundles": [
         {
           "bundle": "KINEMATICS_STATES",
@@ -2320,7 +2444,8 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 1
+            "REVIEWED_GAP": 1,
+            "NOT_MAPPED": 0
           },
           "direct": 1,
           "total": 3
@@ -2332,7 +2457,8 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 1
+            "REVIEWED_GAP": 1,
+            "NOT_MAPPED": 0
           },
           "direct": 1,
           "total": 3
@@ -2344,7 +2470,8 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 1,
             "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 1
+            "REVIEWED_GAP": 1,
+            "NOT_MAPPED": 0
           },
           "direct": 1,
           "total": 3
@@ -2356,7 +2483,8 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 0,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 2
+            "REVIEWED_GAP": 2,
+            "NOT_MAPPED": 0
           },
           "direct": 0,
           "total": 2
@@ -2368,7 +2496,8 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 0,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 5
+            "REVIEWED_GAP": 5,
+            "NOT_MAPPED": 0
           },
           "direct": 0,
           "total": 5
@@ -2384,14 +2513,15 @@ window.THEORY_VIABILITY_DATA = {
         "LITERATURE_RESULT": 5,
         "PIECES_ONLY": 3,
         "PRIORITY_GAP": 0,
-        "NOT_MAPPED": 8
+        "REVIEWED_GAP": 8,
+        "NOT_MAPPED": 0
       },
       "direct": 5,
-      "assessed": 8,
+      "assessed": 16,
       "default_gate": {
         "preset": "PREDICTIVE_PHYSICS",
         "direct": 5,
-        "assessed": 8,
+        "assessed": 10,
         "total": 10,
         "complete_direct": false,
         "blockers": [
@@ -2409,11 +2539,11 @@ window.THEORY_VIABILITY_DATA = {
           },
           {
             "obligation": "CAUSAL_PROPAGATION_GREEN",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           },
           {
             "obligation": "INTERACTION_CONSTRUCTION",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           }
         ]
       },
@@ -2426,6 +2556,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 2,
             "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 2,
@@ -2438,6 +2569,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 2,
             "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 2,
@@ -2450,7 +2582,8 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 1,
             "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 1
+            "REVIEWED_GAP": 1,
+            "NOT_MAPPED": 0
           },
           "direct": 1,
           "total": 3
@@ -2462,7 +2595,8 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 0,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 2
+            "REVIEWED_GAP": 2,
+            "NOT_MAPPED": 0
           },
           "direct": 0,
           "total": 2
@@ -2474,7 +2608,8 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 0,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 5
+            "REVIEWED_GAP": 5,
+            "NOT_MAPPED": 0
           },
           "direct": 0,
           "total": 5
@@ -2490,36 +2625,37 @@ window.THEORY_VIABILITY_DATA = {
         "LITERATURE_RESULT": 1,
         "PIECES_ONLY": 2,
         "PRIORITY_GAP": 7,
-        "NOT_MAPPED": 6
+        "REVIEWED_GAP": 6,
+        "NOT_MAPPED": 0
       },
       "direct": 1,
-      "assessed": 10,
+      "assessed": 16,
       "default_gate": {
         "preset": "PREDICTIVE_PHYSICS",
         "direct": 1,
-        "assessed": 4,
+        "assessed": 10,
         "total": 10,
         "complete_direct": false,
         "blockers": [
           {
             "obligation": "KINEMATICS_OBSERVABLES",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           },
           {
             "obligation": "STATE_EXISTENCE",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           },
           {
             "obligation": "STATE_REPRESENTATION",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           },
           {
             "obligation": "PROBABILITY_RULE",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           },
           {
             "obligation": "PHYSICAL_STATE_SELECTION",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           },
           {
             "obligation": "GENERATOR_SPECTRAL_DYNAMICS",
@@ -2535,11 +2671,11 @@ window.THEORY_VIABILITY_DATA = {
           },
           {
             "obligation": "RECONSTRUCTION_LIMITS",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           }
         ]
       },
-      "reconstruction_status": "NOT_MAPPED",
+      "reconstruction_status": "REVIEWED_GAP",
       "bundles": [
         {
           "bundle": "KINEMATICS_STATES",
@@ -2548,7 +2684,8 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 0,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 3
+            "REVIEWED_GAP": 3,
+            "NOT_MAPPED": 0
           },
           "direct": 0,
           "total": 3
@@ -2560,7 +2697,8 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 0,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 3
+            "REVIEWED_GAP": 3,
+            "NOT_MAPPED": 0
           },
           "direct": 0,
           "total": 3
@@ -2572,6 +2710,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 1,
             "PIECES_ONLY": 2,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 1,
@@ -2584,6 +2723,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 0,
             "PRIORITY_GAP": 2,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 0,
@@ -2596,6 +2736,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 0,
             "PRIORITY_GAP": 5,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 0,
@@ -2612,14 +2753,15 @@ window.THEORY_VIABILITY_DATA = {
         "LITERATURE_RESULT": 5,
         "PIECES_ONLY": 4,
         "PRIORITY_GAP": 0,
-        "NOT_MAPPED": 7
+        "REVIEWED_GAP": 7,
+        "NOT_MAPPED": 0
       },
       "direct": 5,
-      "assessed": 9,
+      "assessed": 16,
       "default_gate": {
         "preset": "PREDICTIVE_PHYSICS",
         "direct": 5,
-        "assessed": 8,
+        "assessed": 10,
         "total": 10,
         "complete_direct": false,
         "blockers": [
@@ -2637,11 +2779,11 @@ window.THEORY_VIABILITY_DATA = {
           },
           {
             "obligation": "CAUSAL_PROPAGATION_GREEN",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           },
           {
             "obligation": "INTERACTION_CONSTRUCTION",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           }
         ]
       },
@@ -2654,6 +2796,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 3,
             "PIECES_ONLY": 0,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 3,
@@ -2666,6 +2809,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 1,
             "PIECES_ONLY": 2,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 1,
@@ -2678,7 +2822,8 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 1,
             "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 1
+            "REVIEWED_GAP": 1,
+            "NOT_MAPPED": 0
           },
           "direct": 1,
           "total": 3
@@ -2690,7 +2835,8 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 1
+            "REVIEWED_GAP": 1,
+            "NOT_MAPPED": 0
           },
           "direct": 0,
           "total": 2
@@ -2702,7 +2848,8 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 0,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 5
+            "REVIEWED_GAP": 5,
+            "NOT_MAPPED": 0
           },
           "direct": 0,
           "total": 5
@@ -2718,20 +2865,21 @@ window.THEORY_VIABILITY_DATA = {
         "LITERATURE_RESULT": 1,
         "PIECES_ONLY": 7,
         "PRIORITY_GAP": 0,
-        "NOT_MAPPED": 2
+        "REVIEWED_GAP": 2,
+        "NOT_MAPPED": 0
       },
       "direct": 7,
-      "assessed": 14,
+      "assessed": 16,
       "default_gate": {
         "preset": "PREDICTIVE_PHYSICS",
         "direct": 7,
-        "assessed": 9,
+        "assessed": 10,
         "total": 10,
         "complete_direct": false,
         "blockers": [
           {
             "obligation": "KINEMATICS_OBSERVABLES",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           },
           {
             "obligation": "PHYSICAL_STATE_SELECTION",
@@ -2752,7 +2900,8 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 0,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 1
+            "REVIEWED_GAP": 1,
+            "NOT_MAPPED": 0
           },
           "direct": 2,
           "total": 3
@@ -2764,6 +2913,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 1,
             "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 2,
@@ -2776,6 +2926,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 2,
@@ -2788,7 +2939,8 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 0,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 1
+            "REVIEWED_GAP": 1,
+            "NOT_MAPPED": 0
           },
           "direct": 1,
           "total": 2
@@ -2800,6 +2952,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 5,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 0,
@@ -2816,20 +2969,21 @@ window.THEORY_VIABILITY_DATA = {
         "LITERATURE_RESULT": 2,
         "PIECES_ONLY": 4,
         "PRIORITY_GAP": 0,
-        "NOT_MAPPED": 10
+        "REVIEWED_GAP": 10,
+        "NOT_MAPPED": 0
       },
       "direct": 2,
-      "assessed": 6,
+      "assessed": 16,
       "default_gate": {
         "preset": "PREDICTIVE_PHYSICS",
         "direct": 2,
-        "assessed": 6,
+        "assessed": 10,
         "total": 10,
         "complete_direct": false,
         "blockers": [
           {
             "obligation": "KINEMATICS_OBSERVABLES",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           },
           {
             "obligation": "STATE_EXISTENCE",
@@ -2849,19 +3003,19 @@ window.THEORY_VIABILITY_DATA = {
           },
           {
             "obligation": "CAUSAL_PROPAGATION_GREEN",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           },
           {
             "obligation": "INTERACTION_CONSTRUCTION",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           },
           {
             "obligation": "RECONSTRUCTION_LIMITS",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           }
         ]
       },
-      "reconstruction_status": "NOT_MAPPED",
+      "reconstruction_status": "REVIEWED_GAP",
       "bundles": [
         {
           "bundle": "KINEMATICS_STATES",
@@ -2870,7 +3024,8 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 1,
             "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 1
+            "REVIEWED_GAP": 1,
+            "NOT_MAPPED": 0
           },
           "direct": 1,
           "total": 3
@@ -2882,7 +3037,8 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 2,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 1
+            "REVIEWED_GAP": 1,
+            "NOT_MAPPED": 0
           },
           "direct": 0,
           "total": 3
@@ -2894,7 +3050,8 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 1,
             "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 1
+            "REVIEWED_GAP": 1,
+            "NOT_MAPPED": 0
           },
           "direct": 1,
           "total": 3
@@ -2906,7 +3063,8 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 0,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 2
+            "REVIEWED_GAP": 2,
+            "NOT_MAPPED": 0
           },
           "direct": 0,
           "total": 2
@@ -2918,7 +3076,8 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 0,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 5
+            "REVIEWED_GAP": 5,
+            "NOT_MAPPED": 0
           },
           "direct": 0,
           "total": 5
@@ -2934,20 +3093,21 @@ window.THEORY_VIABILITY_DATA = {
         "LITERATURE_RESULT": 4,
         "PIECES_ONLY": 3,
         "PRIORITY_GAP": 0,
-        "NOT_MAPPED": 9
+        "REVIEWED_GAP": 9,
+        "NOT_MAPPED": 0
       },
       "direct": 4,
-      "assessed": 7,
+      "assessed": 16,
       "default_gate": {
         "preset": "PREDICTIVE_PHYSICS",
         "direct": 4,
-        "assessed": 7,
+        "assessed": 10,
         "total": 10,
         "complete_direct": false,
         "blockers": [
           {
             "obligation": "KINEMATICS_OBSERVABLES",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           },
           {
             "obligation": "STATE_EXISTENCE",
@@ -2963,15 +3123,15 @@ window.THEORY_VIABILITY_DATA = {
           },
           {
             "obligation": "INTERACTION_CONSTRUCTION",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           },
           {
             "obligation": "RECONSTRUCTION_LIMITS",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           }
         ]
       },
-      "reconstruction_status": "NOT_MAPPED",
+      "reconstruction_status": "REVIEWED_GAP",
       "bundles": [
         {
           "bundle": "KINEMATICS_STATES",
@@ -2980,7 +3140,8 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 1,
             "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 1
+            "REVIEWED_GAP": 1,
+            "NOT_MAPPED": 0
           },
           "direct": 1,
           "total": 3
@@ -2992,7 +3153,8 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 1,
             "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 1
+            "REVIEWED_GAP": 1,
+            "NOT_MAPPED": 0
           },
           "direct": 1,
           "total": 3
@@ -3004,6 +3166,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 2,
             "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 2,
@@ -3016,7 +3179,8 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 0,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 2
+            "REVIEWED_GAP": 2,
+            "NOT_MAPPED": 0
           },
           "direct": 0,
           "total": 2
@@ -3028,7 +3192,8 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 0,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 5
+            "REVIEWED_GAP": 5,
+            "NOT_MAPPED": 0
           },
           "direct": 0,
           "total": 5
@@ -3044,14 +3209,15 @@ window.THEORY_VIABILITY_DATA = {
         "LITERATURE_RESULT": 5,
         "PIECES_ONLY": 4,
         "PRIORITY_GAP": 0,
-        "NOT_MAPPED": 7
+        "REVIEWED_GAP": 7,
+        "NOT_MAPPED": 0
       },
       "direct": 5,
-      "assessed": 9,
+      "assessed": 16,
       "default_gate": {
         "preset": "PREDICTIVE_PHYSICS",
         "direct": 5,
-        "assessed": 8,
+        "assessed": 10,
         "total": 10,
         "complete_direct": false,
         "blockers": [
@@ -3069,11 +3235,11 @@ window.THEORY_VIABILITY_DATA = {
           },
           {
             "obligation": "CAUSAL_PROPAGATION_GREEN",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           },
           {
             "obligation": "INTERACTION_CONSTRUCTION",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           }
         ]
       },
@@ -3086,6 +3252,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 3,
             "PIECES_ONLY": 0,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 3,
@@ -3098,6 +3265,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 1,
             "PIECES_ONLY": 2,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 1,
@@ -3110,7 +3278,8 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 1,
             "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 1
+            "REVIEWED_GAP": 1,
+            "NOT_MAPPED": 0
           },
           "direct": 1,
           "total": 3
@@ -3122,7 +3291,8 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 1
+            "REVIEWED_GAP": 1,
+            "NOT_MAPPED": 0
           },
           "direct": 0,
           "total": 2
@@ -3134,7 +3304,8 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 0,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 5
+            "REVIEWED_GAP": 5,
+            "NOT_MAPPED": 0
           },
           "direct": 0,
           "total": 5
@@ -3150,44 +3321,45 @@ window.THEORY_VIABILITY_DATA = {
         "LITERATURE_RESULT": 2,
         "PIECES_ONLY": 6,
         "PRIORITY_GAP": 1,
-        "NOT_MAPPED": 7
+        "REVIEWED_GAP": 7,
+        "NOT_MAPPED": 0
       },
       "direct": 2,
-      "assessed": 9,
+      "assessed": 16,
       "default_gate": {
         "preset": "PREDICTIVE_PHYSICS",
         "direct": 2,
-        "assessed": 3,
+        "assessed": 10,
         "total": 10,
         "complete_direct": false,
         "blockers": [
           {
             "obligation": "STATE_EXISTENCE",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           },
           {
             "obligation": "STATE_REPRESENTATION",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           },
           {
             "obligation": "PROBABILITY_RULE",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           },
           {
             "obligation": "PHYSICAL_STATE_SELECTION",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           },
           {
             "obligation": "GENERATOR_SPECTRAL_DYNAMICS",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           },
           {
             "obligation": "EVOLUTION_WELLPOSEDNESS",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           },
           {
             "obligation": "CAUSAL_PROPAGATION_GREEN",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           },
           {
             "obligation": "INTERACTION_CONSTRUCTION",
@@ -3204,7 +3376,8 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 1,
             "PIECES_ONLY": 0,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 2
+            "REVIEWED_GAP": 2,
+            "NOT_MAPPED": 0
           },
           "direct": 1,
           "total": 3
@@ -3216,7 +3389,8 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 1,
             "PIECES_ONLY": 0,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 2
+            "REVIEWED_GAP": 2,
+            "NOT_MAPPED": 0
           },
           "direct": 1,
           "total": 3
@@ -3228,7 +3402,8 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 0,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 3
+            "REVIEWED_GAP": 3,
+            "NOT_MAPPED": 0
           },
           "direct": 0,
           "total": 3
@@ -3240,6 +3415,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 1,
             "PRIORITY_GAP": 1,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 0,
@@ -3252,6 +3428,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 5,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 0,
@@ -3268,6 +3445,7 @@ window.THEORY_VIABILITY_DATA = {
         "LITERATURE_RESULT": 3,
         "PIECES_ONLY": 11,
         "PRIORITY_GAP": 2,
+        "REVIEWED_GAP": 0,
         "NOT_MAPPED": 0
       },
       "direct": 3,
@@ -3318,6 +3496,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 3,
             "PIECES_ONLY": 0,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 3,
@@ -3330,6 +3509,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 2,
             "PRIORITY_GAP": 1,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 0,
@@ -3342,6 +3522,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 3,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 0,
@@ -3354,6 +3535,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 1,
             "PRIORITY_GAP": 1,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 0,
@@ -3366,6 +3548,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 5,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 0,
@@ -3382,6 +3565,7 @@ window.THEORY_VIABILITY_DATA = {
         "LITERATURE_RESULT": 4,
         "PIECES_ONLY": 1,
         "PRIORITY_GAP": 5,
+        "REVIEWED_GAP": 0,
         "NOT_MAPPED": 0
       },
       "direct": 10,
@@ -3408,6 +3592,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 3,
             "PIECES_ONLY": 0,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 3,
@@ -3420,6 +3605,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 1,
             "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 2,
@@ -3432,6 +3618,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 0,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 3,
@@ -3444,6 +3631,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 0,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 2,
@@ -3456,6 +3644,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 0,
             "PRIORITY_GAP": 5,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 0,
@@ -3472,6 +3661,7 @@ window.THEORY_VIABILITY_DATA = {
         "LITERATURE_RESULT": 6,
         "PIECES_ONLY": 4,
         "PRIORITY_GAP": 0,
+        "REVIEWED_GAP": 0,
         "NOT_MAPPED": 0
       },
       "direct": 12,
@@ -3502,6 +3692,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 3,
             "PIECES_ONLY": 0,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 3,
@@ -3514,6 +3705,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 1,
             "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 2,
@@ -3526,6 +3718,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 2,
             "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 2,
@@ -3538,6 +3731,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 1,
@@ -3550,6 +3744,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 4,
@@ -3566,14 +3761,15 @@ window.THEORY_VIABILITY_DATA = {
         "LITERATURE_RESULT": 0,
         "PIECES_ONLY": 8,
         "PRIORITY_GAP": 0,
-        "NOT_MAPPED": 1
+        "REVIEWED_GAP": 1,
+        "NOT_MAPPED": 0
       },
       "direct": 7,
-      "assessed": 15,
+      "assessed": 16,
       "default_gate": {
         "preset": "PREDICTIVE_PHYSICS",
         "direct": 7,
-        "assessed": 9,
+        "assessed": 10,
         "total": 10,
         "complete_direct": false,
         "blockers": [
@@ -3587,11 +3783,11 @@ window.THEORY_VIABILITY_DATA = {
           },
           {
             "obligation": "RECONSTRUCTION_LIMITS",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           }
         ]
       },
-      "reconstruction_status": "NOT_MAPPED",
+      "reconstruction_status": "REVIEWED_GAP",
       "bundles": [
         {
           "bundle": "KINEMATICS_STATES",
@@ -3600,6 +3796,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 0,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 3,
@@ -3612,7 +3809,8 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 1
+            "REVIEWED_GAP": 1,
+            "NOT_MAPPED": 0
           },
           "direct": 1,
           "total": 3
@@ -3624,6 +3822,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 2,
@@ -3636,6 +3835,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 1,
@@ -3648,6 +3848,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 5,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 0,
@@ -3664,14 +3865,15 @@ window.THEORY_VIABILITY_DATA = {
         "LITERATURE_RESULT": 1,
         "PIECES_ONLY": 8,
         "PRIORITY_GAP": 0,
-        "NOT_MAPPED": 1
+        "REVIEWED_GAP": 1,
+        "NOT_MAPPED": 0
       },
       "direct": 7,
-      "assessed": 15,
+      "assessed": 16,
       "default_gate": {
         "preset": "PREDICTIVE_PHYSICS",
         "direct": 7,
-        "assessed": 9,
+        "assessed": 10,
         "total": 10,
         "complete_direct": false,
         "blockers": [
@@ -3685,11 +3887,11 @@ window.THEORY_VIABILITY_DATA = {
           },
           {
             "obligation": "RECONSTRUCTION_LIMITS",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           }
         ]
       },
-      "reconstruction_status": "NOT_MAPPED",
+      "reconstruction_status": "REVIEWED_GAP",
       "bundles": [
         {
           "bundle": "KINEMATICS_STATES",
@@ -3698,6 +3900,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 1,
             "PIECES_ONLY": 0,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 3,
@@ -3710,7 +3913,8 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 1
+            "REVIEWED_GAP": 1,
+            "NOT_MAPPED": 0
           },
           "direct": 1,
           "total": 3
@@ -3722,6 +3926,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 2,
@@ -3734,6 +3939,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 1,
@@ -3746,6 +3952,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 5,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 0,
@@ -3762,32 +3969,33 @@ window.THEORY_VIABILITY_DATA = {
         "LITERATURE_RESULT": 5,
         "PIECES_ONLY": 6,
         "PRIORITY_GAP": 1,
-        "NOT_MAPPED": 4
+        "REVIEWED_GAP": 4,
+        "NOT_MAPPED": 0
       },
       "direct": 5,
-      "assessed": 12,
+      "assessed": 16,
       "default_gate": {
         "preset": "PREDICTIVE_PHYSICS",
         "direct": 4,
-        "assessed": 6,
+        "assessed": 10,
         "total": 10,
         "complete_direct": false,
         "blockers": [
           {
             "obligation": "STATE_EXISTENCE",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           },
           {
             "obligation": "STATE_REPRESENTATION",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           },
           {
             "obligation": "PROBABILITY_RULE",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           },
           {
             "obligation": "PHYSICAL_STATE_SELECTION",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           },
           {
             "obligation": "CAUSAL_PROPAGATION_GREEN",
@@ -3808,7 +4016,8 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 1,
             "PIECES_ONLY": 0,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 2
+            "REVIEWED_GAP": 2,
+            "NOT_MAPPED": 0
           },
           "direct": 1,
           "total": 3
@@ -3820,7 +4029,8 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 0,
             "PRIORITY_GAP": 1,
-            "NOT_MAPPED": 2
+            "REVIEWED_GAP": 2,
+            "NOT_MAPPED": 0
           },
           "direct": 0,
           "total": 3
@@ -3832,6 +4042,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 2,
             "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 2,
@@ -3844,6 +4055,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 2,
             "PIECES_ONLY": 0,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 2,
@@ -3856,6 +4068,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 5,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 0,
@@ -3872,14 +4085,15 @@ window.THEORY_VIABILITY_DATA = {
         "LITERATURE_RESULT": 5,
         "PIECES_ONLY": 4,
         "PRIORITY_GAP": 0,
-        "NOT_MAPPED": 7
+        "REVIEWED_GAP": 7,
+        "NOT_MAPPED": 0
       },
       "direct": 5,
-      "assessed": 9,
+      "assessed": 16,
       "default_gate": {
         "preset": "PREDICTIVE_PHYSICS",
         "direct": 5,
-        "assessed": 8,
+        "assessed": 10,
         "total": 10,
         "complete_direct": false,
         "blockers": [
@@ -3897,11 +4111,11 @@ window.THEORY_VIABILITY_DATA = {
           },
           {
             "obligation": "CAUSAL_PROPAGATION_GREEN",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           },
           {
             "obligation": "INTERACTION_CONSTRUCTION",
-            "status": "NOT_MAPPED"
+            "status": "REVIEWED_GAP"
           }
         ]
       },
@@ -3914,6 +4128,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 2,
             "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 2,
@@ -3926,6 +4141,7 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 2,
             "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
+            "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
           "direct": 2,
@@ -3938,7 +4154,8 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 1,
             "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 1
+            "REVIEWED_GAP": 1,
+            "NOT_MAPPED": 0
           },
           "direct": 1,
           "total": 3
@@ -3950,7 +4167,8 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 1
+            "REVIEWED_GAP": 1,
+            "NOT_MAPPED": 0
           },
           "direct": 0,
           "total": 2
@@ -3962,7 +4180,8 @@ window.THEORY_VIABILITY_DATA = {
             "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 0,
             "PRIORITY_GAP": 0,
-            "NOT_MAPPED": 5
+            "REVIEWED_GAP": 5,
+            "NOT_MAPPED": 0
           },
           "direct": 0,
           "total": 5
@@ -5246,7 +5465,7 @@ window.THEORY_VIABILITY_DATA = {
       "id": "OBLIGATION_COVERAGE",
       "label": "Obligation coverage",
       "status": "COMPUTED_FROM_ATLAS",
-      "meaning": "The tables can show where direct results, partial ingredients, explicit gaps, and unmapped cells occur."
+      "meaning": "The tables can show where direct results, partial ingredients, selected priority gaps, reviewed open gaps, and unmapped cells occur."
     },
     {
       "id": "CROSS_OBLIGATION_COMPOSITION",
@@ -5285,9 +5504,10 @@ window.THEORY_VIABILITY_DATA = {
     "that a finite or reduced model has a controlled continuum limit",
     "that reconstruction/limits coverage demonstrates agreement with observations",
     "that NOT_MAPPED is failure, incoherence, or absence from the literature",
+    "that REVIEWED_GAP is a result, selected priority, or literature-absence finding",
     "that Pareto-frontier profiles are physically preferred or more likely true",
     "a complete observationally validated theory under any regime or carrier portfolio"
   ],
-  "source_atlas_digest": "784e40266f584374492423625e1218254caa7af6b1a387885bbca195a1e8878a",
-  "canonical_digest": "760ebe0d95de5a099833d38a6368d9827e69caf7a06bb2f289143ff6e9d1d318"
+  "source_atlas_digest": "4ba28f1320371b129b8f97dca3668acd02711ab4aefb980d21964cd90cefd30d",
+  "canonical_digest": "4ac8b7c724f108487c21151468adcf671bd6108e24a428f236061e87dd268a29"
 };

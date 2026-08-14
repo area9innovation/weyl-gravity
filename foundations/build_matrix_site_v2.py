@@ -28,22 +28,24 @@ VIABILITY_RESULT = FOUNDATIONS / "results/FOUNDATIONAL_THEORY_VIABILITY_ASSESSME
 VIABILITY_REPORT = FOUNDATIONS / "reports/theory-viability-assessment-v1.md"
 ASSEMBLY_RESULT = FOUNDATIONS / "results/FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1.json"
 ASSEMBLY_REPORT = FOUNDATIONS / "reports/theory-assembly-atlas-v1.md"
-CUBE = FOUNDATIONS / "results/FOUNDATIONAL_INTERSECTION_CUBE_V8.json"
+CUBE = FOUNDATIONS / "results/FOUNDATIONAL_INTERSECTION_CUBE_V9.json"
 PREVIOUS_CUBES = [
     FOUNDATIONS / "results/FOUNDATIONAL_INTERSECTION_CUBE_V4.json",
     FOUNDATIONS / "results/FOUNDATIONAL_INTERSECTION_CUBE_V5.json",
     FOUNDATIONS / "results/FOUNDATIONAL_INTERSECTION_CUBE_V6.json",
     FOUNDATIONS / "results/FOUNDATIONAL_INTERSECTION_CUBE_V7.json",
+    FOUNDATIONS / "results/FOUNDATIONAL_INTERSECTION_CUBE_V8.json",
 ]
 TEN_CELL_CLOSURE = FOUNDATIONS / "results/FOUNDATIONAL_FINITE_OPERATOR_TEN_CELL_CLOSURE_V1.json"
 TWENTY_CELL_CLOSURE = FOUNDATIONS / "results/FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1.json"
 CORNER_BORN_INTERFACE = FOUNDATIONS / "results/FOUNDATIONAL_BT_CORNER_BORN_INTERFACE_V1.json"
 GROUND_STATE_DYNAMICS_INTERFACE = FOUNDATIONS / "results/FOUNDATIONAL_KREIN_FOCK_GROUND_STATE_DYNAMICS_INTERFACE_V1.json"
 AUDIT = FOUNDATIONS / "results/FOUNDATIONAL_INTERSECTION_CUBE_MIGRATION_AUDIT_V2.json"
+FULL_SURFACE_AUDIT = FOUNDATIONS / "results/FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1.json"
 LADDER = FOUNDATIONS / "results/FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V2.json"
 LEDGERS = v1.LEDGERS
 CREATED = "2026-08-14"
-BASE_COMMIT = "d617eab947813e48afebdd1ed2462012e955360e"
+BASE_COMMIT = "3b4c7dfa3506baeef447ba97038f5f6f9f807a75"
 
 PLAIN_AXIS_GUIDE = {
     "FOUNDATION": {
@@ -153,7 +155,7 @@ def complete_surface(cube: dict[str, Any]) -> list[dict[str, Any]]:
     return cells
 
 
-STATUS_MARK = {"LOCAL_RESULT": "L", "LITERATURE_RESULT": "R", "PIECES_ONLY": "P", "PRIORITY_GAP": "G", "NOT_MAPPED": "\u00b7"}
+STATUS_MARK = {"LOCAL_RESULT": "L", "LITERATURE_RESULT": "R", "PIECES_ONLY": "P", "PRIORITY_GAP": "G", "REVIEWED_GAP": "O", "NOT_MAPPED": "\u00b7"}
 KIND_UPPER = {"DIRECT_LOCAL": "L", "DIRECT_LITERATURE": "R"}
 KIND_LOWER = {"LOCAL_RESULT": "l", "LITERATURE": "r"}
 
@@ -179,6 +181,8 @@ def build_dataset() -> dict[str, Any]:
     for cell in cells:
         status_counts[cell["status"]] = status_counts.get(cell["status"], 0) + 1
         migration_counts[cell["migration_status"]] = migration_counts.get(cell["migration_status"], 0) + 1
+    for status in ("LOCAL_RESULT", "LITERATURE_RESULT", "PIECES_ONLY", "PRIORITY_GAP", "REVIEWED_GAP", "NOT_MAPPED"):
+        status_counts.setdefault(status, 0)
     dataset = {
         "schema_version": "foundational-matrix-explorer-data-v2",
         "title": "Reverse Mathematics × Physics Atlas",
@@ -199,6 +203,7 @@ def build_dataset() -> dict[str, Any]:
             "migration_pending": cube["dimensions"]["migration_pending_cells"],
             "migration_unresolved": cube["dimensions"]["migration_pending_cells"],
             "reviewed_no_transfer": cube["dimensions"]["reviewed_no_transfer_cells"],
+            "reviewed_gap": status_counts["REVIEWED_GAP"],
             "not_mapped": status_counts["NOT_MAPPED"],
             "dual_direct": sum({"DIRECT_LOCAL", "DIRECT_LITERATURE"} <= set(cell["evidence_roles"].values()) for cell in cells),
             "mark_counts": dict(sorted(Counter(cell_mark(cell, evidence) for cell in cells).items())),
@@ -219,8 +224,9 @@ def build_dataset() -> dict[str, Any]:
             "ladder": ladder["does_not_establish"],
             "navigation": [
                 "Coverage status and migration-review status answer different questions.",
-                "REVIEWED_NO_TRANSFER and NOT_MAPPED are not literature-absence claims.",
-                "The 124 synthetic coordinates have not received the migration review applied to the 452 emitted coordinates.",
+                "REVIEWED_NO_TRANSFER, REVIEWED_GAP, and NOT_MAPPED are not literature-absence claims.",
+                "All 576 coordinates are emitted and directly assessed; zero browser-only synthetic complements remain.",
+                "A REVIEWED_GAP is an explicit open question with a typed missing certificate, not a result or a selected priority.",
                 "Neighbor counts and candidate views are navigation aids, not theorem rankings.",
                 "An UNREVIEWED evidence role means the record has not been reviewed for directness at that obligation; it is not a finding that the record fails to support the cell.",
                 "The LR mark reports two certified direct evidence kinds at one coordinate. It does not merge them into a stronger single result.",
@@ -228,9 +234,11 @@ def build_dataset() -> dict[str, Any]:
         },
         "source_links": {
             "cube": site_link(rel(CUBE)),
+            "full_surface_audit": site_link(rel(FULL_SURFACE_AUDIT)),
             "migration_audit": site_link(rel(AUDIT)),
             "ladder": site_link(rel(LADDER)),
-            "cube_report": site_link("foundations/reports/refined-intersection-cube-v8.md"),
+            "cube_report": site_link("foundations/reports/refined-intersection-cube-v9.md"),
+            "full_surface_audit_report": site_link("foundations/reports/full-surface-gap-audit.md"),
             "twenty_cell_closure": site_link(rel(TWENTY_CELL_CLOSURE)),
             "twenty_cell_closure_report": site_link("foundations/reports/finite-brst-twenty-cell-closure.md"),
             "ten_cell_closure": site_link(rel(TEN_CELL_CLOSURE)),
@@ -260,21 +268,24 @@ def render_report(result: dict[str, Any]) -> str:
 ## Outcome
 
 `foundations/site/index.html` presents all **576** Cartesian coordinates.
-The **452** cube-emitted coordinates now have separate coverage and migration
+All **576** are now emitted by cube v9 and have separate coverage and migration
 review fields: **{counts['migration_reviewed']} reviewed**, **{counts['migration_pending']} pending**.
-Of those, **{counts['reviewed_no_transfer']}** parent-evidence reviews found no
-licensed transfer to the refined child. Thirty-seven now have independent child-specific
-coverage; **51 remain `NOT_MAPPED`**, which is not a literature-absence claim.
-The remaining **{counts['synthetic_not_mapped']}**
-coordinates are browser-visible complements that have not been assessed.
+The surface has **{counts['reviewed_gap']} `REVIEWED_GAP`** cells and **{counts['not_mapped']}
+`NOT_MAPPED`** cells. A reviewed gap is a formulated open question with a typed
+missing certificate; it is not a result, a selected priority, or a literature-absence claim.
+There are **{counts['synthetic_not_mapped']}** browser-only complements.
 
-Cube v8 preserves two certified `CONDITIONAL_BRIDGE` relations. The first maps an
+The full-surface audit preserves all 401 prior positive, partial, and priority
+classifications. It revises 51 emitted blanks and directly assesses the 124
+formerly synthetic coordinates without transferring evidence from neighbors.
+
+Cube v9 preserves two certified `CONDITIONAL_BRIDGE` relations. The first maps an
 algebraic finite-corner state to a Krein probability rule under five explicit
 hypotheses. The second uses the free Fock energy gap to select the unique normal
 zero-energy vacuum state and proves that the same state is invariant under the
 generated Krein--Fock dynamics. The other assembly interfaces remain open.
 
-Coverage is classified for **{counts['coverage_classified']}** emitted cells. The
+Coverage is assessed for **{counts['coverage_classified']}** emitted cells. The
 finite-BRST pass classifies exactly twenty additional empty cells: seventeen
 direct local results and three pieces-only regulated-product results. Its exact
 lifecycle orders cohomology classification before QME restoration and residual
@@ -297,7 +308,7 @@ python3 foundations/build_matrix_site_v2.py
 python3 foundations/build_matrix_site_v2.py --check
 python3 foundations/check_matrix_site_v2.py
 python3 foundations/verify_matrix_site_v2.py
-python3 -m unittest foundations.tests.test_matrix_site_v2
+python3 -m unittest foundations.tests.test_matrix_site
 ```
 
 Earlier cubes remain unchanged as historical artifacts. The existing-site build
@@ -453,6 +464,7 @@ def generated() -> dict[Path, bytes]:
     local_evidence_paths = [ROOT / item["result_path"] for item in dataset["evidence"].values() if item["kind"] == "LOCAL_RESULT"]
     local_report_paths = [ROOT / item["report_path"] for item in dataset["evidence"].values() if item["kind"] == "LOCAL_RESULT" and item.get("report_path")]
     reports = [
+        FOUNDATIONS / "reports/refined-intersection-cube-v9.md",
         FOUNDATIONS / "reports/refined-intersection-cube-v8.md",
         FOUNDATIONS / "reports/refined-intersection-cube-v7.md",
         FOUNDATIONS / "reports/refined-intersection-cube-v6.md",
@@ -461,8 +473,9 @@ def generated() -> dict[Path, bytes]:
         FOUNDATIONS / "reports/krein-fock-ground-state-dynamics-interface.md",
         FOUNDATIONS / "reports/intersection-cube-migration-audit-v2.md",
         FOUNDATIONS / "reports/cylinder-wave-strength-ladder.md",
+        FOUNDATIONS / "reports/full-surface-gap-audit.md",
     ]
-    bundled_sources = sorted(set([CUBE, *PREVIOUS_CUBES, CORNER_BORN_INTERFACE, GROUND_STATE_DYNAMICS_INTERFACE, AUDIT, LADDER, *LEDGERS, *local_evidence_paths, *local_report_paths, *reports]))
+    bundled_sources = sorted(set([CUBE, *PREVIOUS_CUBES, FULL_SURFACE_AUDIT, CORNER_BORN_INTERFACE, GROUND_STATE_DYNAMICS_INTERFACE, AUDIT, LADDER, *LEDGERS, *local_evidence_paths, *local_report_paths, *reports]))
     for source in bundled_sources:
         outputs[SITE / "sources" / source.relative_to(ROOT)] = source.read_bytes()
     input_paths = sorted(set([Path(__file__).resolve(), FOUNDATIONS / "theory_viability.py", FOUNDATIONS / "theory_assembly.py", *bundled_sources, ASSETS / "index.html", ASSETS / "styles.css", ASSETS / "app.js", V2_ASSETS / "app-v2.js"]))
@@ -486,11 +499,11 @@ def generated() -> dict[Path, bytes]:
         "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
         "scope": "Deterministic static exploration surface over the migration-reviewed foundations cube and cylinder implication ladder.",
         "counts": dataset["counts"],
-        "features": ["sixteen 6x6 heatmaps", "dual local+literature cell marks", "per-evidence directness roles", "plain-language guide for all 28 axis options", "separate coverage and migration-review states", "migration evidence inspector", "multi-select filters", "full-text search", "cell inspector", "one-axis neighbors", "two-cell comparison", "URL permalinks", "filtered JSON and CSV export", "research-brief export", "three-pathway typed argument map with linked relation ledger", "strength ladder", "evidence catalogue", "theory-profile readiness map", "researcher-selectable obligation gates", "multi-carrier coverage-envelope composer", "non-scalar Pareto navigation", "separate composition and empirical-agreement rails", "seven named prototype assemblies", "typed cross-cell interface ledger", "two certified scoped cross-cell bridges", "six-stage theory hard-gate chain", "empty fail-closed empirical benchmark ledger", "ten-cell exact finite-operator closure", "twenty-cell exact finite-BRST closure"],
+        "features": ["sixteen 6x6 heatmaps", "complete 576-coordinate assessment surface", "reviewed-open-gap state distinct from priority and result", "dual local+literature cell marks", "per-evidence directness roles", "plain-language guide for all 28 axis options", "separate coverage and migration-review states", "migration evidence inspector", "multi-select filters", "full-text search", "cell inspector", "one-axis neighbors", "two-cell comparison", "URL permalinks", "filtered JSON and CSV export", "research-brief export", "three-pathway typed argument map with linked relation ledger", "strength ladder", "evidence catalogue", "theory-profile readiness map", "researcher-selectable obligation gates", "multi-carrier coverage-envelope composer", "non-scalar Pareto navigation", "separate composition and empirical-agreement rails", "seven named prototype assemblies", "typed cross-cell interface ledger", "two certified scoped cross-cell bridges", "six-stage theory hard-gate chain", "empty fail-closed empirical benchmark ledger", "ten-cell exact finite-operator closure", "twenty-cell exact finite-BRST closure"],
         "provenance": {"manifest": rel(SITE / "manifest.json"), "manifest_sha256": v1.sha_bytes(manifest_bytes), "canonical_data_digest": dataset["canonical_digest"], "viability_digest": viability["canonical_digest"], "assembly_digest": assemblies["canonical_digest"]},
-        "independent_checker": {"path": "foundations/check_matrix_site_v2.py", "expected_cells": 576, "expected_emitted": 452, "expected_synthetic_not_mapped": 124, "expected_total_not_mapped": 175, "expected_evidence_records": 73, "expected_digest": dataset["canonical_digest"], "expected_viability_digest": viability["canonical_digest"], "expected_assembly_digest": assemblies["canonical_digest"]},
-        "claim_flags": {"static_site_generated": True, "all_cartesian_coordinates_visible": True, "all_emitted_migrations_reviewed": True, "coverage_and_migration_separated": True, "all_used_evidence_resolved": True, "theory_profiles_generated": True, "theory_assembly_atlas_generated": True, "at_least_one_cross_cell_interface_certified": True, "composition_and_observation_rails_separated": True, "scientific_claims_duplicated_by_hand": False, "literature_complete": False, "unmapped_means_absent": False, "reviewed_no_transfer_means_absent": False, "priority_score_is_theorem": False, "complete_observationally_valid_theory_identified": False, "new_lorentzian_claim": False},
-        "does_not_establish": ["literature completeness", "coverage for the 51 still-unmapped reviewed-no-transfer coordinates", "that NOT_MAPPED means no literature exists", "that an UNREVIEWED evidence role is an absence of direct support", "that a dual LR mark composes its two records into a stronger result", "that the 124 synthetic coordinates are coherent", "a weakest mathematical base", "continuum renormalized products from finite regulated-product closure", "a Weyl QME or Weyl residual transfer from a finite toy BRST complex", "equivalence of carrier categories from one finite realization", "a theorem ranking from interface order, Pareto membership, or neighbor counts", "composition beyond the two certified scoped interfaces", "agreement with observations", "a complete observationally validated theory", "a new Lorentzian-causal result"],
+        "independent_checker": {"path": "foundations/check_matrix_site_v2.py", "expected_cells": 576, "expected_emitted": 576, "expected_synthetic_not_mapped": 0, "expected_total_not_mapped": 0, "expected_reviewed_gaps": 175, "expected_evidence_records": 74, "expected_digest": dataset["canonical_digest"], "expected_viability_digest": viability["canonical_digest"], "expected_assembly_digest": assemblies["canonical_digest"]},
+        "claim_flags": {"static_site_generated": True, "all_cartesian_coordinates_visible": True, "all_cartesian_coordinates_assessed": True, "zero_not_mapped": True, "reviewed_gaps_distinguished_from_results": True, "all_emitted_migrations_reviewed": True, "coverage_and_migration_separated": True, "all_used_evidence_resolved": True, "theory_profiles_generated": True, "theory_assembly_atlas_generated": True, "at_least_one_cross_cell_interface_certified": True, "composition_and_observation_rails_separated": True, "scientific_claims_duplicated_by_hand": False, "literature_complete": False, "unmapped_means_absent": False, "reviewed_gap_means_absent": False, "reviewed_no_transfer_means_absent": False, "priority_score_is_theorem": False, "complete_observationally_valid_theory_identified": False, "new_lorentzian_claim": False},
+        "does_not_establish": ["literature completeness", "a result for any of the 175 reviewed open gaps", "that REVIEWED_GAP or NOT_MAPPED means no literature exists", "that an UNREVIEWED evidence role is an absence of direct support", "that a dual LR mark composes its two records into a stronger result", "that all 576 coordinates are jointly realizable", "a weakest mathematical base", "continuum renormalized products from finite regulated-product closure", "a Weyl QME or Weyl residual transfer from a finite toy BRST complex", "equivalence of carrier categories from one finite realization", "a theorem ranking from interface order, Pareto membership, or neighbor counts", "composition beyond the two certified scoped interfaces", "agreement with observations", "a complete observationally validated theory", "a new Lorentzian-causal result"],
         "human_report": "foundations/reports/matrix-explorer-site-v2.md",
     }
     outputs[RESULT] = (json.dumps(result, indent=2) + "\n").encode()

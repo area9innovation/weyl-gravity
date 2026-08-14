@@ -12,6 +12,7 @@
     LITERATURE_RESULT: {label: "Literature result", mark: "R", color: "#2776a8"},
     PIECES_ONLY: {label: "Pieces only", mark: "P", color: "#c17b14"},
     PRIORITY_GAP: {label: "Priority gap", mark: "G", color: "#b94040"},
+    REVIEWED_GAP: {label: "Reviewed open gap", mark: "O", color: "#6f5b9a"},
     MIGRATION_UNRESOLVED: {label: "Migration unresolved", mark: "?", color: "#7651a8"},
     NOT_MAPPED: {label: "Not mapped", mark: "·", color: "#87918c"},
   };
@@ -216,9 +217,10 @@
       [DATA.counts.emitted, "Emitted assessments", "#1c6b5a"],
       [DATA.counts.qualified, "Evidence-qualified", "#167958"],
       [DATA.counts.migration_unresolved, "Migration unresolved", STATUS.MIGRATION_UNRESOLVED.color],
+      [DATA.counts.reviewed_gap, "Reviewed open gaps", STATUS.REVIEWED_GAP.color],
       [DATA.counts.not_mapped, "Not mapped", STATUS.NOT_MAPPED.color],
       [DATA.counts.evidence_records, "Evidence records", "#2776a8"],
-    ].filter(([count, label]) => label !== "Migration unresolved" || count > 0);
+    ].filter(([count, label]) => !["Migration unresolved", "Not mapped"].includes(label) || count > 0);
     document.getElementById("stats").innerHTML = items.map(([n, label, color]) => `<div class="stat" style="--tone:${color}"><b>${n}</b><span>${label}</span></div>`).join("");
   }
 
@@ -458,10 +460,10 @@
       <div class="guide-heading"><span>${index + 1}</span><div><p class="eyebrow">${esc(dimension.plain_name)}</p><h3>${esc(dimension.guide_question)}</h3><p>${dimension.keys.length} choices—select exactly one to define this part of a cell.</p></div></div>
       <div class="guide-options">${dimension.keys.map(option => `<article><h4>${esc(option.label)}</h4><p>${esc(option.plain_meaning)}</p><details><summary>Technical scope</summary><p>${esc(option.meaning)}</p>${list(option.includes).length ? `<p><b>Includes:</b> ${esc(option.includes.join(", "))}</p>` : ""}${option.warning ? `<p class="boundary">${esc(option.warning)}</p>` : ""}</details></article>`).join("")}</div>
     </section>`).join("");
-    document.getElementById("dimensionGuide").innerHTML = `<article class="guide-intro"><p class="eyebrow">How to read one coordinate</p><h3>Regime × carrier × obligation = one research question</h3><p>For example: <b>constructive/computable × smooth/PDE/distributional × causal propagation/Green</b> asks whether causal response maps can be built with explicit computational content for continuum fields.</p><p>The cell color reports the evidence currently recorded for that precise combination. It does not say whether the idea is true, important, or impossible.</p></article>${dimensions}<article class="guide-intro"><p class="eyebrow">One cell, two kinds of direct support</p><h3>Why some cells are marked <b>LR</b></h3><p>A cell's colour reports a single status, and a direct local result outranks a direct literature result. Some coordinates hold both at once. Those carry the <b>LR</b> mark and a corner wedge in the second grade's colour, and the status filter finds them under either grade.</p><p>Each attached record also carries a role for that obligation alone: a direct support, a supporting ingredient, or not yet reviewed for directness. <b>Unreviewed is not a finding that the record fails to support the cell.</b> Only records registered as direct in the capability registry can raise the <b>LR</b> mark.</p><p>Case separates the two ideas. An <b>upper-case</b> letter is a certified direct grade; a <b>lower-case</b> letter is a supporting ingredient of that kind. A pieces-only cell holding local ingredients reads <b>Pl</b>, one holding literature ingredients <b>Pr</b>, and one holding both <b>Plr</b>. A result of one kind carrying ingredients of the other reads <b>Lr</b> or <b>Rl</b>. Ingredients never promote a cell: <b>Plr</b> is still pieces-only, and the status colour never changes because of a lower-case letter.</p></article><article class="guide-intro"><p class="eyebrow">Two records, two questions</p><h3>Coverage is not migration</h3><p><b>Coverage status</b> says what direct result, literature result, partial ingredients, or gap is recorded now. <b>Migration review</b> says whether evidence attached to an older, broader category was checked for transfer into this more precise cell. A reviewed migration is an audit fact, not additional physical evidence.</p></article>`;
+    document.getElementById("dimensionGuide").innerHTML = `<article class="guide-intro"><p class="eyebrow">How to read one coordinate</p><h3>Regime × carrier × obligation = one research question</h3><p>For example: <b>constructive/computable × smooth/PDE/distributional × causal propagation/Green</b> asks whether causal response maps can be built with explicit computational content for continuum fields.</p><p>The cell color reports the evidence currently recorded for that precise combination. It does not say whether the idea is true, important, or impossible.</p></article>${dimensions}<article class="guide-intro"><p class="eyebrow">Open does not mean unknown</p><h3>Reviewed gap versus priority gap</h3><p>A <b>reviewed open gap (O)</b> is a formulated research question with a typed missing certificate, but no direct result. A <b>priority gap (G)</b> is an open question selected for the current programme. Neither means that the literature is empty, the idea is impossible, or the theory is false.</p></article><article class="guide-intro"><p class="eyebrow">One cell, two kinds of direct support</p><h3>Why some cells are marked <b>LR</b></h3><p>A cell's colour reports a single status, and a direct local result outranks a direct literature result. Some coordinates hold both at once. Those carry the <b>LR</b> mark and a corner wedge in the second grade's colour, and the status filter finds them under either grade.</p><p>Each attached record also carries a role for that obligation alone: a direct support, a supporting ingredient, or not yet reviewed for directness. <b>Unreviewed is not a finding that the record fails to support the cell.</b> Only records registered as direct in the capability registry can raise the <b>LR</b> mark.</p><p>Case separates the two ideas. An <b>upper-case</b> letter is a certified direct grade; a <b>lower-case</b> letter is a supporting ingredient of that kind. A pieces-only cell holding local ingredients reads <b>Pl</b>, one holding literature ingredients <b>Pr</b>, and one holding both <b>Plr</b>. A result of one kind carrying ingredients of the other reads <b>Lr</b> or <b>Rl</b>. Ingredients never promote a cell: <b>Plr</b> is still pieces-only, and the status colour never changes because of a lower-case letter.</p></article><article class="guide-intro"><p class="eyebrow">Two records, two questions</p><h3>Coverage is not migration</h3><p><b>Coverage status</b> says what direct result, literature result, partial ingredients, or gap is recorded now. <b>Migration review</b> says whether evidence attached to an older, broader category was checked for transfer into this more precise cell. A reviewed migration is an audit fact, not additional physical evidence.</p></article>`;
   }
 
-  const READINESS_RANK = {NOT_MAPPED: 0, PRIORITY_GAP: 1, PIECES_ONLY: 2, LOCAL_RESULT: 3, LITERATURE_RESULT: 3};
+  const READINESS_RANK = {NOT_MAPPED: 0, REVIEWED_GAP: 1, PRIORITY_GAP: 1, PIECES_ONLY: 2, LOCAL_RESULT: 3, LITERATURE_RESULT: 3};
   const DIRECT = new Set(["LOCAL_RESULT", "LITERATURE_RESULT"]);
 
   function profileCells(profile, obligations = axis.REFINED_OBLIGATION.keys.map(x => x.id)) {
@@ -474,7 +476,7 @@
       direct: cells.filter(cell => DIRECT.has(cell.status)).length,
       assessed: cells.filter(cell => cell.status !== "NOT_MAPPED").length,
       partial: cells.filter(cell => cell.status === "PIECES_ONLY").length,
-      gap: cells.filter(cell => cell.status === "PRIORITY_GAP").length,
+      gap: cells.filter(cell => ["PRIORITY_GAP", "REVIEWED_GAP"].includes(cell.status)).length,
       unknown: cells.filter(cell => cell.status === "NOT_MAPPED").length,
       total: cells.length,
       allDirect: profile.direct,
@@ -520,7 +522,7 @@
       const metrics = profileMetrics(profile, obligations);
       const key = `${foundation.id}|${carrier.id}`;
       const tone = metrics.total ? Math.round(18 + 72 * metrics.direct / metrics.total) : 18;
-      return `<td><button class="profile-cell${key === state.viability.profile ? " selected" : ""}" data-profile="${key}" style="--readiness:${tone}%" title="${esc(`${foundation.label} × ${carrier.label}: ${metrics.direct}/${metrics.total} selected obligations direct; ${metrics.unknown} unknown`)}"><b>${metrics.direct}/${metrics.total}</b><small>${frontier.has(key) ? "Pareto" : `${metrics.unknown} ?`}</small></button></td>`;
+      return `<td><button class="profile-cell${key === state.viability.profile ? " selected" : ""}" data-profile="${key}" style="--readiness:${tone}%" title="${esc(`${foundation.label} × ${carrier.label}: ${metrics.direct}/${metrics.total} selected obligations direct; ${metrics.gap} reviewed or priority gaps; ${metrics.unknown} unknown`)}"><b>${metrics.direct}/${metrics.total}</b><small>${frontier.has(key) ? "Pareto" : metrics.unknown ? `${metrics.unknown} ?` : `${metrics.gap} open`}</small></button></td>`;
     }).join("")}</tr>`).join("");
     const obligationChecks = axis.REFINED_OBLIGATION.keys.map(obligation => `<label><input type="checkbox" data-viability-obligation="${obligation.id}" ${state.viability.obligations.has(obligation.id) ? "checked" : ""}>${esc(obligation.label)}</label>`).join("");
     const carrierChecks = axis.CARRIER.keys.map(carrier => `<label><input type="checkbox" data-portfolio-carrier="${carrier.id}" ${state.viability.carriers.has(carrier.id) ? "checked" : ""}>${esc(carrier.label)}</label>`).join("");
@@ -547,7 +549,7 @@
       <div class="section-head compact-head"><div><p class="eyebrow">Carrier portfolio composer</p><h2>Coverage envelope, not a composed theory</h2></div><p>Choose carriers under one mathematical regime. For each obligation the table shows the strongest recorded cell and its source carrier. Taking maxima does not prove the pieces coexist consistently.</p></div>
       <section class="portfolio-controls"><label><b>Mathematical regime</b><select id="portfolioFoundation">${axis.FOUNDATION.keys.map(item => `<option value="${item.id}" ${item.id === state.viability.foundation ? "selected" : ""}>${esc(item.label)}</option>`).join("")}</select></label><fieldset><legend>Carriers in envelope</legend>${carrierChecks}</fieldset><div class="portfolio-summary"><b>${envelopeDirect}/${obligations.length}</b><span>selected gates direct somewhere in the envelope</span><strong>Composition: NOT ASSESSED</strong></div></section>
       <div class="envelope-table-wrap"><table class="envelope-table"><thead><tr><th>Obligation</th><th>Best recorded state</th><th>Contributing carrier(s)</th></tr></thead><tbody>${envelopeRows}</tbody></table></div>
-      <details class="ranking-details"><summary>Show all formulation profiles as a coverage-ranked research table (${profiles.length})</summary><div class="ranking-wrap"><table class="profile-ranking"><thead><tr><th>Profile</th><th>Selected direct</th><th>Partial</th><th>Gap</th><th>Unknown</th><th>All direct</th><th>Reconstruction proxy</th><th>Pareto</th></tr></thead><tbody>${rankingRows}</tbody></table></div></details>
+      <details class="ranking-details"><summary>Show all formulation profiles as a coverage-ranked research table (${profiles.length})</summary><div class="ranking-wrap"><table class="profile-ranking"><thead><tr><th>Profile</th><th>Selected direct</th><th>Partial</th><th>Open gaps</th><th>Unknown</th><th>All direct</th><th>Reconstruction proxy</th><th>Pareto</th></tr></thead><tbody>${rankingRows}</tbody></table></div></details>
       <article class="viability-warning boundary"><b>Fail-closed boundary.</b> ${esc(VIABILITY.pareto_definition.warning)} ${esc(VIABILITY.unit)}</article>`;
     document.querySelectorAll("[data-profile]").forEach(button => button.addEventListener("click", () => { state.viability.profile = button.dataset.profile; const [foundation, carrier] = button.dataset.profile.split("|"); state.viability.foundation = foundation; state.viability.carriers = new Set([carrier]); renderTheoryProfiles(); }));
     document.querySelectorAll("[data-cell-jump]").forEach(button => button.addEventListener("click", () => openCell(button.dataset.cellJump)));
@@ -605,7 +607,7 @@
   function refresh() {
     renderMatrix(); renderEvidence();
     const cells = filteredCells();
-    document.getElementById("filterSummary").textContent = `${cells.length} of ${DATA.cells.length} coordinates match. NOT_MAPPED remains an assessment state, not an absence claim.`;
+    document.getElementById("filterSummary").textContent = `${cells.length} of ${DATA.cells.length} coordinates match. Every coordinate has a recorded assessment; reviewed gaps are open questions, not results or absence claims.`;
     updateHash();
   }
 

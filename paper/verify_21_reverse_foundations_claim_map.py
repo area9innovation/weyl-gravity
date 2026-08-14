@@ -73,18 +73,20 @@ def main() -> int:
     atlas = data["atlas_snapshot"]
     require(atlas["axis_sizes"] == [6, 6, 16], "unexpected axis sizes")
     require(atlas["cartesian_total"] == 576, "unexpected Cartesian total")
-    require(atlas["emitted_cells"] == dims["emitted_cells"] == 452, "emitted-cell mismatch")
-    require(atlas["coverage_classified_cells"] == dims["coverage_classified_cells"] == 401, "classified-cell mismatch")
+    require(atlas["emitted_cells"] == dims["emitted_cells"] == 576, "emitted-cell mismatch")
+    require(atlas["coverage_classified_cells"] == dims["coverage_classified_cells"] == 576, "classified-cell mismatch")
     require(sum(atlas["emitted_status_counts"].values()) == atlas["emitted_cells"], "status counts do not cover emitted cells")
-    require(atlas["synthetic_complements"] == 124, "synthetic complement mismatch")
-    require(atlas["total_not_mapped_in_explorer"] == site["counts"]["not_mapped"] == 175, "explorer not-mapped mismatch")
-    require(atlas["evidence_records"] == site["counts"]["evidence_records"] == 73, "evidence-record mismatch")
+    require(atlas["synthetic_complements"] == 0, "synthetic complement mismatch")
+    require(atlas["total_not_mapped_in_explorer"] == site["counts"]["not_mapped"] == 0, "explorer not-mapped mismatch")
+    require(atlas["reviewed_open_gaps"] == site["counts"]["reviewed_gap"] == 175, "reviewed-gap mismatch")
+    require(atlas["evidence_records"] == site["counts"]["evidence_records"] == 74, "evidence-record mismatch")
     require(atlas["literature_records"] == 51, "literature-record mismatch")
-    require(atlas["local_result_records"] == 22, "local-result-record mismatch")
+    require(atlas["local_result_records"] == 23, "local-result-record mismatch")
     require(atlas["content_pinned_literature"] == 39, "content-pinned literature mismatch")
     require(atlas["metadata_only_literature"] == 12, "metadata-only literature mismatch")
-    require(atlas["evidence_records_used_by_matrix"] == 73, "matrix evidence usage is incomplete")
+    require(atlas["evidence_records_used_by_matrix"] == 74, "matrix evidence usage is incomplete")
     require(atlas["migration_pending_cells"] == 0, "migration must remain fully reviewed")
+    require(atlas["all_cells_assessed"] is True, "full-surface assessment flag is not certified")
 
     allowed_tags = {"LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE", "LORENTZIAN-CAUSAL"}
     claim_ids = set()
@@ -139,8 +141,8 @@ def main() -> int:
     require(atlas["strength_ladder_levels"] == len(atlas_data["ladder"]) == 6, "appendix ladder-level mismatch")
 
     appendix = appendix_path.read_text()
-    require(r"All obligations & 115 & 93 & 163 & 30 & 175 & 576" in appendix, "appendix coverage totals drift")
-    require("contains 73 evidence records: 22 local result records and 51 literature records" in appendix, "appendix evidence summary drift")
+    require(r"All obligations & 115 & 93 & 163 & 30 & 175 & 0 & 576" in appendix, "appendix coverage totals drift")
+    require("contains 74 evidence records: 23 local result records and 51 literature records" in appendix, "appendix evidence summary drift")
     for axis in atlas_data["axes"]:
         for option in axis["keys"]:
             require(option["label"] in appendix, f"axis option missing from appendix: {option['id']}")
@@ -158,8 +160,8 @@ def main() -> int:
         require(rf"\cert{{{evidence_id}}}" in appendix, f"linked evidence missing from appendix: {evidence_id}")
 
     evidence = atlas_data["evidence"]
-    require(appendix.count(r"\hypertarget{atlas-evidence-") == 73, "evidence-register anchor count drift")
-    require(appendix.count(r"\hyperlink{atlas-evidence-") == 73, "evidence-crosswalk link count drift")
+    require(appendix.count(r"\hypertarget{atlas-evidence-") == 74, "evidence-register anchor count drift")
+    require(appendix.count(r"\hyperlink{atlas-evidence-") == 74, "evidence-crosswalk link count drift")
     cell_usage = {evidence_id: [] for evidence_id in evidence}
     for cell in atlas_data["cells"]:
         for evidence_id in cell.get("evidence", []):
@@ -175,12 +177,13 @@ def main() -> int:
         if step.get("source"):
             require(step["source"] in evidence, f"ladder references unknown evidence: {step['source']}")
             ladder_usage[step["source"]].append(step["level"])
-    status_order = ["LOCAL_RESULT", "LITERATURE_RESULT", "PIECES_ONLY", "PRIORITY_GAP", "NOT_MAPPED"]
+    status_order = ["LOCAL_RESULT", "LITERATURE_RESULT", "PIECES_ONLY", "PRIORITY_GAP", "REVIEWED_GAP", "NOT_MAPPED"]
     status_short = {
         "LOCAL_RESULT": "Local",
         "LITERATURE_RESULT": "Literature",
         "PIECES_ONLY": "Pieces",
         "PRIORITY_GAP": "Priority gap",
+        "REVIEWED_GAP": "Reviewed gap",
         "NOT_MAPPED": "Not mapped",
     }
 

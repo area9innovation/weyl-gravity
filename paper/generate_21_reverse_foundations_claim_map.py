@@ -21,7 +21,8 @@ APPENDIX_GENERATOR = "paper/generate_21_reverse_foundations_appendices.py"
 ATLAS_DATA = "foundations/site/data.json"
 
 AUTHORITY_PATHS = {
-    "intersection_cube": "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V8.json",
+    "intersection_cube": "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V9.json",
+    "full_surface_gap_audit": "foundations/results/FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1.json",
     "explorer_snapshot": "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json",
     "explicit_krein": "foundations/results/FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1.json",
     "krein_state_selection": "foundations/results/FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1.json",
@@ -122,6 +123,7 @@ def build() -> dict:
             "emitted_status_counts": dimensions["status_counts"],
             "synthetic_complements": dimensions["cartesian_total"] - dimensions["emitted_cells"],
             "total_not_mapped_in_explorer": site["counts"]["not_mapped"],
+            "reviewed_open_gaps": site["counts"]["reviewed_gap"],
             "evidence_records": site["counts"]["evidence_records"],
             "literature_records": len(literature),
             "local_result_records": len(local_results),
@@ -141,7 +143,7 @@ def build() -> dict:
             "implication_edges": len(atlas_data["graph"]["edges"]),
             "strength_ladder_levels": len(atlas_data["ladder"]),
             "literature_complete": cube["claim_flags"]["literature_complete"],
-            "all_cells_assessed": cube["claim_flags"]["all_576_cells_assessed"],
+            "all_cells_assessed": cube["claim_flags"]["all_576_coordinates_assessed"],
         },
         "claims": [
             {
@@ -155,7 +157,7 @@ def build() -> dict:
                 "claim_id": "RF-02-NAVIGATIONAL-ATLAS",
                 "statement": "The current 6 x 6 x 16 atlas is a navigational projection with 576 coordinates, not an ontology or an independence theorem.",
                 "status": "CORPUS_SYNTHESIS",
-                "authorities": ["intersection_cube", "explorer_snapshot"],
+                "authorities": ["intersection_cube", "full_surface_gap_audit", "explorer_snapshot"],
                 "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
             },
             {
@@ -235,7 +237,7 @@ def build() -> dict:
             "a universal weakest foundation for physics or Weyl gravity",
             "that physical evidence implies the Axiom of Choice or its negation",
             "that the atlas axes are independent or every coordinate is coherent",
-            "literature completeness or absence theorems for unmapped cells",
+            "literature completeness or absence theorems for reviewed open gaps",
             "representation invariance of the RCA_0 coded-wave upper bound",
             "a complete Lorentzian off-shell BV propagator",
             "a BRST-compatible Hadamard state for the full metric BV complex",

@@ -38,14 +38,14 @@ def verify(*, result=None, report=None) -> tuple[list[str], list[str]]:
     expected_summary = {
         "digest": value.get("provenance", {}).get("canonical_data_digest"),
         "cells": 576,
-        "emitted": 452,
-        "synthetic_not_mapped": 124,
-        "total_not_mapped": 175,
-        "coverage_classified": 401,
-        "migration_reviewed": 452,
+        "emitted": 576,
+        "synthetic_not_mapped": 0,
+        "total_not_mapped": 0,
+        "coverage_classified": 576,
+        "migration_reviewed": 576,
         "migration_pending": 0,
         "reviewed_no_transfer": 88,
-        "evidence_records": 73,
+        "evidence_records": 74,
         "graph_edges": 10,
         "ladder_levels": 6,
         "theory_profiles": 36,
@@ -57,7 +57,7 @@ def verify(*, result=None, report=None) -> tuple[list[str], list[str]]:
         "certified_cross_cell_interfaces": 2,
         "certified_assembly_interface_instances": 4,
         "dual_direct_cells": 7,
-        "mark_counts": {"G": 30, "L": 102, "LR": 7, "Lr": 6, "P": 20, "Pl": 79, "Plr": 13, "Pr": 51, "R": 90, "Rl": 3, "\u00b7": 175},
+        "mark_counts": {"G": 30, "L": 102, "LR": 7, "Lr": 6, "Ol": 175, "P": 20, "Pl": 79, "Plr": 13, "Pr": 51, "R": 90, "Rl": 3},
     }
     if summary != expected_summary:
         errors.append("expected independent summary")
@@ -70,14 +70,14 @@ def verify(*, result=None, report=None) -> tuple[list[str], list[str]]:
         errors.append("manifest pin")
     checks.append("content-addressed manifest")
     flags = value.get("claim_flags", {})
-    for key in ("static_site_generated", "all_cartesian_coordinates_visible", "all_emitted_migrations_reviewed", "coverage_and_migration_separated", "all_used_evidence_resolved", "theory_profiles_generated", "theory_assembly_atlas_generated", "at_least_one_cross_cell_interface_certified", "composition_and_observation_rails_separated"):
+    for key in ("static_site_generated", "all_cartesian_coordinates_visible", "all_cartesian_coordinates_assessed", "zero_not_mapped", "reviewed_gaps_distinguished_from_results", "all_emitted_migrations_reviewed", "coverage_and_migration_separated", "all_used_evidence_resolved", "theory_profiles_generated", "theory_assembly_atlas_generated", "at_least_one_cross_cell_interface_certified", "composition_and_observation_rails_separated"):
         if flags.get(key) is not True:
             errors.append("positive flag " + key)
-    for key in ("scientific_claims_duplicated_by_hand", "literature_complete", "unmapped_means_absent", "reviewed_no_transfer_means_absent", "priority_score_is_theorem", "complete_observationally_valid_theory_identified", "new_lorentzian_claim"):
+    for key in ("scientific_claims_duplicated_by_hand", "literature_complete", "unmapped_means_absent", "reviewed_gap_means_absent", "reviewed_no_transfer_means_absent", "priority_score_is_theorem", "complete_observationally_valid_theory_identified", "new_lorentzian_claim"):
         if flags.get(key) is not False:
             errors.append("boundary flag " + key)
     checks.append("fail-closed claim flags")
-    for token in ("576", "452", "reviewed", "0 pending", "88", "51", "124", "401", "exactly twenty additional empty cells", "seventeen", "three pieces-only", "classification before QME restoration", "none of those toy-model statements is a Weyl-BV promotion", "two certified", "CONDITIONAL_BRIDGE", "unique normal", "NOT_MAPPED", "not a literature-absence claim", "separate coverage and migration", "Earlier cubes remain unchanged", "does not establish"):
+    for token in ("576", "175 `REVIEWED_GAP`", "0\n`NOT_MAPPED`", "not a result", "selected priority", "literature-absence claim", "all 401 prior", "51 emitted blanks", "124", "without transferring evidence", "exactly twenty additional empty cells", "seventeen", "three pieces-only", "classification before QME restoration", "none of those toy-model statements is a Weyl-BV promotion", "two certified", "CONDITIONAL_BRIDGE", "unique normal", "separate coverage and migration", "Earlier cubes remain unchanged", "does not establish"):
         if token not in text:
             errors.append("report token " + token)
     checks.append("human-readable migration and deployment report")

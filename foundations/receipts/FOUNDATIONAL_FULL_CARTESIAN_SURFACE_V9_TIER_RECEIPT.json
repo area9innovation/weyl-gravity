@@ -1,0 +1,85 @@
+{
+  "receipt_id": "FOUNDATIONAL_FULL_CARTESIAN_SURFACE_V9_TIER_RECEIPT",
+  "schema_version": "foundational-tier-receipt-v0",
+  "created": "2026-08-14",
+  "result_id": "FOUNDATIONAL_INTERSECTION_CUBE_V9",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "base_commit": "3b4c7dfa3506baeef447ba97038f5f6f9f807a75",
+  "scope": "Formulate and assess the exact 175-coordinate complement of cube v8, emit the full 6x6x16 Cartesian cube, preserve all 401 prior classifications and two certified interfaces, regenerate the existing explorer and Paper 21 appendices, and keep reviewed open questions distinct from results and selected priorities.",
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile <changed foundations and Paper 21 Python sources>",
+        "parse changed and generated JSON artifacts with Python json.load",
+        "git diff --check -- <explicit foundations and Paper 21 paths>",
+        "inspect exact scoped diff before commit"
+      ]
+    },
+    "tier_1_scoped_tests": {
+      "status": "PASS",
+      "elapsed_seconds": 1.53,
+      "command": "python3 -m unittest foundations.tests.test_full_surface_gap_audit foundations.tests.test_refined_intersection_cube_v9 foundations.tests.test_matrix_site foundations.tests.test_theory_viability foundations.tests.test_theory_assembly",
+      "result": "29 tests pass, including missing-coordinate, prior-result-drift, reviewed-gap-promotion, claim-flag, empirical-promotion, and deterministic-artifact mutations."
+    },
+    "tier_2_affected_chain": {
+      "status": "PASS",
+      "elapsed_seconds": 2.27,
+      "command": "gap-audit build/check/verify; cube-v9 build/check/verify; explorer-v2 build/check/verify; theory viability and assembly verifiers; Paper 21 appendix freshness, claim-map freshness, and independent claim-map verifier",
+      "result": "576 unique coordinates; 51 emitted gaps revised; 124 direct coordinate reviews added; 115 local results, 93 literature results, 163 pieces-only cells, 30 priority gaps, 175 reviewed gaps, and zero NOT_MAPPED; explorer has 74 resolved evidence records and zero synthetic complements."
+    },
+    "paper_render": {
+      "status": "PASS",
+      "elapsed_seconds": 1.7,
+      "command": "two pdflatex -interaction=nonstopmode -halt-on-error passes for paper/21-reverse-foundations-of-physics.tex, followed by an Overfull/undefined-reference/Rerun log scan",
+      "result": "33-page PDF; no overfull boxes, undefined references, or rerun warning after the final pass; matrix table visually inspected."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No classical or quantum freeze, paper theorem promotion, release, or shared core algebra change."
+    }
+  },
+  "repository_wide_diagnostic": {
+    "status": "FAIL_UNRELATED_DIRTY_INPUT",
+    "elapsed_seconds": 7.03,
+    "command": "python3 -m unittest discover -s foundations/tests -p 'test_*.py'",
+    "result": "328 of 329 tests pass. test_bt_corner_born_interface fails because the pre-existing concurrent edit to notes/bateman-turok-embedding.md invalidates that older certificate's pinned input and deterministic projection. The file and its dependent Bateman/Turok edits are outside this commit; the failure is not treated as a pass."
+  },
+  "counts": {
+    "cartesian_coordinates": 576,
+    "prior_classified_cells_preserved": 401,
+    "emitted_not_mapped_revised": 51,
+    "previously_unemitted_coordinates_added": 124,
+    "local_results": 115,
+    "literature_results": 93,
+    "pieces_only": 163,
+    "priority_gaps": 30,
+    "reviewed_gaps": 175,
+    "not_mapped": 0,
+    "evidence_records": 74
+  },
+  "canonical_digests": {
+    "gap_audit": "92bc6aba9912118f3112be1c8b043ab1df73ae6736f69fecc43caebf62357478",
+    "cube_v9": "7d71439dafbde48ef83fd8818f2e376110b9dbbec9324b4218dd791bbb80e731",
+    "explorer_data": "4ba28f1320371b129b8f97dca3668acd02711ab4aefb980d21964cd90cefd30d",
+    "theory_viability": "4ac8b7c724f108487c21151468adcf671bd6108e24a428f236061e87dd268a29",
+    "theory_assembly": "2e6223e1620ecfac7e2a4c32e10005b1ecaab0b523108e0f6155b718567b9493",
+    "paper_21_claim_map": "2c45e1991140ff11e9bbb2ecadda551b2b25465aa25df4085cb653171defe567"
+  },
+  "content_hashes": {
+    "foundations/results/FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1.json": "7c3d467e07b07ca54b0d875c08a7cac5769fab769c412e8e71fc823f515669fd",
+    "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V9.json": "a6c2d08940ba7112202ed33ca64b581fd886b07b53eb553c24321578feb08269",
+    "foundations/site/manifest.json": "cb204988a487d47eb6f30248ca2f10e3f03d43017b028ea0bf1234207ef2a710",
+    "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json": "a0c047e7b26f17f734661b735e67dc4a2e4fd7ab60b173c49c5b10154f7acbf0",
+    "foundations/results/FOUNDATIONAL_THEORY_VIABILITY_ASSESSMENT_V1.json": "cc1939aa176245d93f4576287266a75d21f3bc0638ebab18b0d5005dbbf5b39a",
+    "foundations/results/FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1.json": "96d9749210d2229d58225419099546f3bc7620ec66db44890f5aeef236511127",
+    "paper/21-reverse-foundations-of-physics-claim-map.json": "d75f9f5390fee7ff8dda2e78258b0ad8d580c2c9677276004435b8f22d1bd76e",
+    "paper/21-reverse-foundations-of-physics.pdf": "75d47e618a2b97517423796c1d02932cff385ec045c0e603e8cc875db7f7b958"
+  },
+  "claim_boundary": "This receipt establishes complete coordinate assessment, not a result in every cell. REVIEWED_GAP is not a theorem, priority, literature-absence finding, no-go result, or evidence-transfer license. The work establishes no weakest foundation, carrier equivalence, continuum limit, complete theory, empirical agreement, Weyl QME, Weyl residual transfer, or new LORENTZIAN-CAUSAL claim."
+}

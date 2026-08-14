@@ -15,10 +15,10 @@ MANIFEST = SITE / "manifest.json"
 RESULT = ROOT / "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json"
 VIABILITY = ROOT / "foundations/site/viability.json"
 ASSEMBLIES = ROOT / "foundations/site/assemblies.json"
-CUBE = ROOT / "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V8.json"
+CUBE = ROOT / "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V9.json"
 LADDER = ROOT / "foundations/results/FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V2.json"
-STATUSES = {"LOCAL_RESULT", "LITERATURE_RESULT", "PIECES_ONLY", "PRIORITY_GAP", "NOT_MAPPED"}
-MIGRATIONS = {"EXACT_PARENT_TRANSFER", "CAPABILITY_QUALIFIED", "REVIEWED_OVERLAY", "REVIEWED_NO_TRANSFER", "REVIEWED_CHILD_GAP", "NOT_REVIEWED"}
+STATUSES = {"LOCAL_RESULT", "LITERATURE_RESULT", "PIECES_ONLY", "PRIORITY_GAP", "REVIEWED_GAP", "NOT_MAPPED"}
+MIGRATIONS = {"EXACT_PARENT_TRANSFER", "CAPABILITY_QUALIFIED", "REVIEWED_OVERLAY", "REVIEWED_NO_TRANSFER", "REVIEWED_CHILD_GAP", "DIRECT_COORDINATE_REVIEW", "NOT_REVIEWED"}
 
 
 def load(path: Path) -> dict[str, Any]:
@@ -54,7 +54,7 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
 
     emitted = [x for x in cells if x.get("emitted")]
     synthetic = [x for x in cells if not x.get("emitted")]
-    if len(emitted) != 452 or len(synthetic) != 124:
+    if len(emitted) != 576 or len(synthetic) != 0:
         errors.append("emitted/complement partition")
     if any(x.get("status") != "NOT_MAPPED" or x.get("migration_status") != "NOT_REVIEWED" for x in synthetic):
         errors.append("synthetic fail-closed states")
@@ -68,12 +68,12 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
             errors.append("authoritative emitted-cell copy")
             break
     migration_counts = Counter(x.get("migration_status") for x in emitted)
-    if migration_counts.get("REVIEWED_NO_TRANSFER") != 88 or migration_counts.get("REVIEWED_CHILD_GAP") != 24 or "NOT_REVIEWED" in migration_counts:
+    if migration_counts.get("REVIEWED_NO_TRANSFER") != 88 or migration_counts.get("REVIEWED_CHILD_GAP") != 24 or migration_counts.get("DIRECT_COORDINATE_REVIEW") != 124 or "NOT_REVIEWED" in migration_counts:
         errors.append("emitted migration review closure")
     no_transfer = [x for x in emitted if x.get("migration_status") == "REVIEWED_NO_TRANSFER"]
     still_unmapped = [x for x in no_transfer if x.get("status") == "NOT_MAPPED"]
     newly_covered = [x for x in no_transfer if x.get("status") != "NOT_MAPPED"]
-    if len(still_unmapped) != 51 or len(newly_covered) != 37 or any(x.get("evidence") or not x.get("migration_evidence") for x in still_unmapped) or any(not x.get("evidence") or not x.get("migration_evidence") for x in newly_covered):
+    if len(still_unmapped) != 0 or len(newly_covered) != 88 or any(not x.get("evidence") or not x.get("migration_evidence") for x in newly_covered):
         errors.append("reviewed no-transfer separation")
 
     evidence = data.get("evidence", {})
@@ -106,7 +106,7 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
     # Recompute the displayed mark independently of the generator: upper case is a
     # certified direct grade, lower case a supporting ingredient of that kind, and
     # a lower-case letter is suppressed when its kind already shows as a grade.
-    status_mark = {"LOCAL_RESULT": "L", "LITERATURE_RESULT": "R", "PIECES_ONLY": "P", "PRIORITY_GAP": "G", "NOT_MAPPED": "\u00b7"}
+    status_mark = {"LOCAL_RESULT": "L", "LITERATURE_RESULT": "R", "PIECES_ONLY": "P", "PRIORITY_GAP": "G", "REVIEWED_GAP": "O", "NOT_MAPPED": "\u00b7"}
     upper_of = {"DIRECT_LOCAL": "L", "DIRECT_LITERATURE": "R"}
     lower_of = {"LOCAL_RESULT": "l", "LITERATURE": "r"}
     marks: Counter = Counter()
@@ -123,7 +123,7 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
     # A lower-case letter must never move a cell out of its status family: the
     # upper-case part of every mark has to agree with the cell's scalar status.
     family_status = {"L": "LOCAL_RESULT", "LR": "LOCAL_RESULT", "R": "LITERATURE_RESULT",
-                     "P": "PIECES_ONLY", "G": "PRIORITY_GAP", "\u00b7": "NOT_MAPPED"}
+                     "P": "PIECES_ONLY", "G": "PRIORITY_GAP", "O": "REVIEWED_GAP", "\u00b7": "NOT_MAPPED"}
     for cell, mark in zip(cells, cell_marks):
         family = mark.rstrip("lr")
         if family_status.get(family) != cell.get("status"):
@@ -131,7 +131,7 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
             break
 
     used = {item for cell in emitted for field in ("evidence", "migration_evidence") for item in cell.get(field, [])}
-    if set(evidence) != used or len(evidence) != 73:
+    if set(evidence) != used or len(evidence) != 74:
         errors.append("coverage and migration evidence resolution")
     for item in evidence.values():
         for field in ("result_link", "report_link", "ledger_link"):
@@ -181,7 +181,7 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
     app = (SITE / "app.js").read_text() + (SITE / "migration-review.js").read_text() + (SITE / "assemblies.js").read_text()
     if "https://" in html or "http://" in html or '<script src="data.js"></script>' not in html or '<script src="viability.js"></script>' not in html or '<script src="assemblies.js"></script>' not in html or '<script src="migration-review.js"></script>' not in html:
         errors.append("offline/no-remote-code shell")
-    for token in ("matrixGroups", "viabilityView", "Theory profiles", "Coverage readiness map", "Coverage envelope, not a composed theory", "No complete observationally validated theory is certified", "paretoProfiles", "assembliesView", "Assembly hard-gate chain", "Typed interface ledger", "Empirical benchmark ledger", "NOT_ASSESSED", "guideView", "dimensionGuide", "Regime × carrier × obligation", "graphView", "GRAPH_PATHWAYS", "Relation ledger", "graph-edge-hit", "No direct certificate yet", "ladderView", "evidenceView", "compareDialog", "exportJson", "exportCsv", "downloadBrief", "column-label", "Migration review", "migration_evidence", "112-decision audit JSON", "data-dual", "directKinds", "role-badge", "Local + literature result", "Directness unreviewed", "Why some cells are marked", "is not a finding that the record fails to support the cell", "data-marklen", "supportingKinds", "legend-note", "Upper case is a certified direct grade", "An ingredient is not a result", "Ingredients never promote a cell"):
+    for token in ("matrixGroups", "viabilityView", "Theory profiles", "Coverage readiness map", "Coverage envelope, not a composed theory", "No complete observationally validated theory is certified", "paretoProfiles", "assembliesView", "Assembly hard-gate chain", "Typed interface ledger", "Empirical benchmark ledger", "NOT_ASSESSED", "guideView", "dimensionGuide", "Regime × carrier × obligation", "Reviewed open gap", "Reviewed gap versus priority gap", "graphView", "GRAPH_PATHWAYS", "Relation ledger", "graph-edge-hit", "No direct certificate yet", "ladderView", "evidenceView", "compareDialog", "exportJson", "exportCsv", "downloadBrief", "column-label", "Migration review", "migration_evidence", "175-coordinate surface audit", "data-dual", "directKinds", "role-badge", "Local + literature result", "Directness unreviewed", "Why some cells are marked", "is not a finding that the record fails to support the cell", "data-marklen", "supportingKinds", "legend-note", "Upper case is a certified direct grade", "An ingredient is not a result", "Ingredients never promote a cell"):
         if token not in html + app:
             errors.append("interface token " + token)
     if "No stronger interpretation is licensed" in app:
@@ -190,9 +190,10 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
     status_counts = Counter(x.get("status") for x in cells)
     all_migrations = Counter(x.get("migration_status") for x in cells)
     counts = data.get("counts", {})
-    if counts.get("status_counts") != dict(sorted(status_counts.items())) or counts.get("migration_status_counts") != dict(sorted(all_migrations.items())):
+    normalized_status_counts = {status: status_counts.get(status, 0) for status in sorted(STATUSES)}
+    if counts.get("status_counts") != normalized_status_counts or counts.get("migration_status_counts") != dict(sorted(all_migrations.items())):
         errors.append("coverage/migration counts")
-    if counts.get("coverage_classified") != 401 or counts.get("migration_reviewed") != 452 or counts.get("migration_pending") != 0 or counts.get("not_mapped") != 175 or counts.get("evidence_records") != 73:
+    if counts.get("coverage_classified") != 576 or counts.get("migration_reviewed") != 576 or counts.get("migration_pending") != 0 or counts.get("reviewed_gap") != 175 or counts.get("not_mapped") != 0 or counts.get("evidence_records") != 74:
         errors.append("review count summary")
     summary = {
         "digest": calculated_digest,

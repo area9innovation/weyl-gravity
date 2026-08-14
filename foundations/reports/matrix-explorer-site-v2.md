@@ -9,21 +9,24 @@
 ## Outcome
 
 `foundations/site/index.html` presents all **576** Cartesian coordinates.
-The **452** cube-emitted coordinates now have separate coverage and migration
-review fields: **452 reviewed**, **0 pending**.
-Of those, **88** parent-evidence reviews found no
-licensed transfer to the refined child. Thirty-seven now have independent child-specific
-coverage; **51 remain `NOT_MAPPED`**, which is not a literature-absence claim.
-The remaining **124**
-coordinates are browser-visible complements that have not been assessed.
+All **576** are now emitted by cube v9 and have separate coverage and migration
+review fields: **576 reviewed**, **0 pending**.
+The surface has **175 `REVIEWED_GAP`** cells and **0
+`NOT_MAPPED`** cells. A reviewed gap is a formulated open question with a typed
+missing certificate; it is not a result, a selected priority, or a literature-absence claim.
+There are **0** browser-only complements.
 
-Cube v8 preserves two certified `CONDITIONAL_BRIDGE` relations. The first maps an
+The full-surface audit preserves all 401 prior positive, partial, and priority
+classifications. It revises 51 emitted blanks and directly assesses the 124
+formerly synthetic coordinates without transferring evidence from neighbors.
+
+Cube v9 preserves two certified `CONDITIONAL_BRIDGE` relations. The first maps an
 algebraic finite-corner state to a Krein probability rule under five explicit
 hypotheses. The second uses the free Fock energy gap to select the unique normal
 zero-energy vacuum state and proves that the same state is invariant under the
 generated Krein--Fock dynamics. The other assembly interfaces remain open.
 
-Coverage is classified for **401** emitted cells. The
+Coverage is assessed for **576** emitted cells. The
 finite-BRST pass classifies exactly twenty additional empty cells: seventeen
 direct local results and three pieces-only regulated-product results. Its exact
 lifecycle orders cohomology classification before QME restoration and residual
@@ -46,7 +49,7 @@ python3 foundations/build_matrix_site_v2.py
 python3 foundations/build_matrix_site_v2.py --check
 python3 foundations/check_matrix_site_v2.py
 python3 foundations/verify_matrix_site_v2.py
-python3 -m unittest foundations.tests.test_matrix_site_v2
+python3 -m unittest foundations.tests.test_matrix_site
 ```
 
 Earlier cubes remain unchanged as historical artifacts. The existing-site build
@@ -63,11 +66,11 @@ All source links resolve inside the standalone directory; no remote code is used
 This site does not establish:
 
 - literature completeness
-- coverage for the 51 still-unmapped reviewed-no-transfer coordinates
-- that NOT_MAPPED means no literature exists
+- a result for any of the 175 reviewed open gaps
+- that REVIEWED_GAP or NOT_MAPPED means no literature exists
 - that an UNREVIEWED evidence role is an absence of direct support
 - that a dual LR mark composes its two records into a stronger result
-- that the 124 synthetic coordinates are coherent
+- that all 576 coordinates are jointly realizable
 - a weakest mathematical base
 - continuum renormalized products from finite regulated-product closure
 - a Weyl QME or Weyl residual transfer from a finite toy BRST complex

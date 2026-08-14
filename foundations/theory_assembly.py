@@ -16,6 +16,7 @@ from typing import Any
 DIRECT = {"LOCAL_RESULT", "LITERATURE_RESULT"}
 STATUS_RANK = {
     "NOT_MAPPED": 0,
+    "REVIEWED_GAP": 1,
     "PRIORITY_GAP": 1,
     "PIECES_ONLY": 2,
     "LITERATURE_RESULT": 3,

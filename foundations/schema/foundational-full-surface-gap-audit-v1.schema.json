@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "result_id", "result_kind", "lifecycle", "created", "repository_base_commit", "dependency_tags", "question", "answer", "status_definition", "method", "decisions", "proof_obligations", "proof_authority", "provenance", "independent_checker", "claim_flags", "does_not_establish", "human_report", "canonical_digest"],
+  "properties": {
+    "schema_version": {"const": "foundational-full-surface-gap-audit-v1"},
+    "result_id": {"const": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"},
+    "result_kind": {"const": "TYPED_FULL_CARTESIAN_GAP_ASSESSMENT"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "created": {"type": "string", "format": "date"},
+    "repository_base_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]},
+    "question": {"type": "string", "minLength": 1},
+    "answer": {"type": "string", "minLength": 1},
+    "status_definition": {"type": "object", "required": ["id", "short_label", "mark", "meaning", "rank", "distinguished_from"], "properties": {"id": {"const": "REVIEWED_GAP"}, "mark": {"const": "O"}}},
+    "method": {"type": "object", "required": ["cartesian_axes", "cartesian_total", "source_emitted_cells", "source_not_mapped_cells", "synthetic_complements", "newly_reviewed_coordinates", "foundation_templates", "carrier_templates", "obligation_templates", "neighbor_policy"]},
+    "decisions": {
+      "type": "array", "minItems": 175, "maxItems": 175,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["coordinate", "prior_surface_state", "review_class", "new_status", "evidence_role", "research_question", "foundation_requirement", "carrier_requirement", "missing_certificate", "nearest_assessed_coordinates", "nearest_neighbor_count", "finding", "boundary"],
+        "properties": {
+          "coordinate": {"type": "object", "additionalProperties": false, "required": ["foundation", "carrier", "obligation"], "properties": {"foundation": {"type": "string"}, "carrier": {"type": "string"}, "obligation": {"type": "string"}}},
+          "prior_surface_state": {"enum": ["EMITTED_NOT_MAPPED", "SYNTHETIC_NOT_EMITTED"]},
+          "review_class": {"const": "COHERENT_TYPED_GAP"},
+          "new_status": {"const": "REVIEWED_GAP"},
+          "evidence_role": {"const": "SUPPORTING"},
+          "research_question": {"type": "string", "minLength": 1},
+          "foundation_requirement": {"type": "string", "minLength": 1},
+          "carrier_requirement": {"type": "string", "minLength": 1},
+          "missing_certificate": {"type": "string", "minLength": 1},
+          "nearest_assessed_coordinates": {"type": "array", "items": {"type": "string"}},
+          "nearest_neighbor_count": {"type": "integer", "minimum": 0},
+          "finding": {"type": "string", "minLength": 1},
+          "boundary": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "proof_obligations": {"type": "array", "minItems": 10, "maxItems": 10, "items": {"type": "object", "required": ["id", "status", "evidence"], "properties": {"status": {"const": "PASS"}}}},
+    "proof_authority": {"type": "object", "required": ["status", "meaning"]},
+    "provenance": {"type": "object", "required": ["inputs"]},
+    "independent_checker": {"type": "object", "required": ["path", "expected_digest", "checks"], "properties": {"expected_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}},
+    "claim_flags": {"type": "object"},
+    "does_not_establish": {"type": "array", "minItems": 8, "items": {"type": "string", "minLength": 1}},
+    "human_report": {"const": "foundations/reports/full-surface-gap-audit.md"},
+    "canonical_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

@@ -17,6 +17,7 @@ from typing import Any
 DIRECT = {"LOCAL_RESULT", "LITERATURE_RESULT"}
 STATUS_RANK = {
     "NOT_MAPPED": 0,
+    "REVIEWED_GAP": 1,
     "PRIORITY_GAP": 1,
     "PIECES_ONLY": 2,
     "LOCAL_RESULT": 3,
@@ -27,6 +28,7 @@ STATUS_ORDER = [
     "LITERATURE_RESULT",
     "PIECES_ONLY",
     "PRIORITY_GAP",
+    "REVIEWED_GAP",
     "NOT_MAPPED",
 ]
 
@@ -258,6 +260,7 @@ def build_assessment(dataset: dict[str, Any]) -> dict[str, Any]:
             "direct": ["LOCAL_RESULT", "LITERATURE_RESULT"],
             "partial": ["PIECES_ONLY"],
             "explicit_gap": ["PRIORITY_GAP"],
+            "reviewed_open_gap": ["REVIEWED_GAP"],
             "unknown": ["NOT_MAPPED"],
             "tie_rule": "Local and literature results are equally direct but remain visibly distinct evidence types.",
         },
@@ -270,7 +273,7 @@ def build_assessment(dataset: dict[str, Any]) -> dict[str, Any]:
                 "id": "OBLIGATION_COVERAGE",
                 "label": "Obligation coverage",
                 "status": "COMPUTED_FROM_ATLAS",
-                "meaning": "The tables can show where direct results, partial ingredients, explicit gaps, and unmapped cells occur.",
+                "meaning": "The tables can show where direct results, partial ingredients, selected priority gaps, reviewed open gaps, and unmapped cells occur.",
             },
             {
                 "id": "CROSS_OBLIGATION_COMPOSITION",
@@ -309,6 +312,7 @@ def build_assessment(dataset: dict[str, Any]) -> dict[str, Any]:
             "that a finite or reduced model has a controlled continuum limit",
             "that reconstruction/limits coverage demonstrates agreement with observations",
             "that NOT_MAPPED is failure, incoherence, or absence from the literature",
+            "that REVIEWED_GAP is a result, selected priority, or literature-absence finding",
             "that Pareto-frontier profiles are physically preferred or more likely true",
             "a complete observationally validated theory under any regime or carrier portfolio",
         ],

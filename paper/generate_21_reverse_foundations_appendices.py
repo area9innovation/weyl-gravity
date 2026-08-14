@@ -19,6 +19,7 @@ STATUS_ORDER = [
     "LITERATURE_RESULT",
     "PIECES_ONLY",
     "PRIORITY_GAP",
+    "REVIEWED_GAP",
     "NOT_MAPPED",
 ]
 STATUS_SHORT = {
@@ -26,6 +27,7 @@ STATUS_SHORT = {
     "LITERATURE_RESULT": "Literature",
     "PIECES_ONLY": "Pieces",
     "PRIORITY_GAP": "Priority gap",
+    "REVIEWED_GAP": "Reviewed gap",
     "NOT_MAPPED": "Not mapped",
 }
 RELATION_LABEL = {
@@ -185,7 +187,7 @@ def build(data: dict) -> str:
         [
             r"\subsection{Matrix overview}",
             r"\label{app:matrix-overview}",
-            r"The full atlas has 576 coordinates.  The website exposes sixteen \(6\times6\) slices, one for each obligation.  For print, Table~\ref{tab:aggregate-matrix} aggregates those slices without implying that the statuses are truth values.  Each entry is \emph{direct / seeded / unmapped}: direct combines local and reviewed literature results; seeded combines pieces-only and priority-gap cells; unmapped means that no coverage classification is made.",
+            r"The full atlas has 576 coordinates.  The website exposes sixteen \(6\times6\) slices, one for each obligation.  For print, Table~\ref{tab:aggregate-matrix} aggregates those slices without implying that the statuses are truth values.  Each entry is \emph{direct / seeded / reviewed / unmapped}: direct combines local and reviewed literature results; seeded combines pieces-only and priority-gap cells; reviewed means a formulated open question with a typed missing certificate but no direct result; unmapped means that no coverage classification is made.",
             "",
             r"\begin{table}[htbp]",
             r"\centering",
@@ -209,24 +211,27 @@ def build(data: dict) -> str:
             counts = collections.Counter(c["status"] for c in subset)
             direct = counts["LOCAL_RESULT"] + counts["LITERATURE_RESULT"]
             seeded = counts["PIECES_ONLY"] + counts["PRIORITY_GAP"]
-            row.append(f"{direct}/{seeded}/{counts['NOT_MAPPED']}")
+            row.append(f"{direct}/{seeded}/{counts['REVIEWED_GAP']}/{counts['NOT_MAPPED']}")
         lines.append(" & ".join(row) + r" \\")
     lines.extend(
         [
             r"\bottomrule",
             r"\end{tabular}",
-            r"\caption{Aggregate coverage matrix.  Each cell reports direct results / open cells with a starting point / not mapped, across all sixteen obligations.}",
+            r"\caption{Aggregate coverage matrix.  Each cell reports direct results / open cells with a starting point / reviewed open gaps / not mapped, across all sixteen obligations.}",
             r"\label{tab:aggregate-matrix}",
             r"\end{table}",
             "",
-            r"\begin{longtable}{@{}p{0.29\textwidth}rrrrrr@{}}",
+            r"\begingroup",
+            r"\scriptsize",
+            r"\setlength{\tabcolsep}{3pt}",
+            r"\begin{longtable}{@{}p{0.27\textwidth}rrrrrrr@{}}",
             r"\caption{Coverage status by physical obligation.  Every row sums to 36.}\label{tab:obligation-coverage}\\",
             r"\toprule",
-            r"Obligation & Local & Literature & Pieces & Priority gap & Not mapped & Total \\",
+            r"Obligation & Local & Literature & Pieces & \shortstack{Priority\\gap} & \shortstack{Reviewed\\gap} & \shortstack{Not\\mapped} & Total \\",
             r"\midrule",
             r"\endfirsthead",
             r"\toprule",
-            r"Obligation & Local & Literature & Pieces & Priority gap & Not mapped & Total \\",
+            r"Obligation & Local & Literature & Pieces & \shortstack{Priority\\gap} & \shortstack{Reviewed\\gap} & \shortstack{Not\\mapped} & Total \\",
             r"\midrule",
             r"\endhead",
         ]
@@ -245,8 +250,9 @@ def build(data: dict) -> str:
             "All obligations & " + " & ".join(str(v) for v in values) + f" & {sum(values)}" + r" \\",
             r"\bottomrule",
             r"\end{longtable}",
+            r"\endgroup",
             "",
-            f"A local or literature result remains bounded by its attached claim boundary.  Pieces-only means relevant ingredients do not yet compose the target.  Priority gap marks a coherent current-programme gap.  Not mapped is not an absence theorem.  Of the {total['NOT_MAPPED']} not-mapped coordinates, {sum(c['status'] == 'NOT_MAPPED' and c['emitted'] for c in cells)} are emitted coordinates reviewed without a substantive transfer and {sum(c['status'] == 'NOT_MAPPED' and not c['emitted'] for c in cells)} are synthetic complements used to expose the full surface.",
+            f"A local or literature result remains bounded by its attached claim boundary.  Pieces-only means relevant ingredients do not yet compose the target.  Priority gap marks a selected current-programme gap.  Reviewed gap marks an explicitly formulated open question with a typed missing certificate, not a result or literature-absence claim.  The atlas has {total['REVIEWED_GAP']} reviewed gaps and {total['NOT_MAPPED']} not-mapped coordinates; all {len(cells)} coordinates are emitted by the authoritative cube.",
             "",
             r"\subsection{Typed implication ledger}",
             r"\label{app:implication-ledger}",

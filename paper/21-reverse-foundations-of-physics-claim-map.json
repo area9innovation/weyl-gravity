@@ -1,6 +1,6 @@
 {
   "atlas_snapshot": {
-    "all_cells_assessed": false,
+    "all_cells_assessed": true,
     "axis_options": 28,
     "axis_sizes": [
       6,
@@ -9,27 +9,29 @@
     ],
     "cartesian_total": 576,
     "content_pinned_literature": 39,
-    "coverage_classified_cells": 401,
-    "emitted_cells": 452,
+    "coverage_classified_cells": 576,
+    "emitted_cells": 576,
     "emitted_status_counts": {
       "LITERATURE_RESULT": 93,
       "LOCAL_RESULT": 115,
-      "NOT_MAPPED": 51,
+      "NOT_MAPPED": 0,
       "PIECES_ONLY": 163,
-      "PRIORITY_GAP": 30
+      "PRIORITY_GAP": 30,
+      "REVIEWED_GAP": 175
     },
-    "evidence_records": 73,
-    "evidence_records_used_by_matrix": 73,
+    "evidence_records": 74,
+    "evidence_records_used_by_matrix": 74,
     "implication_edges": 10,
     "implication_nodes": 12,
     "literature_complete": false,
     "literature_records": 51,
-    "local_result_records": 22,
+    "local_result_records": 23,
     "metadata_only_literature": 12,
     "migration_pending_cells": 0,
+    "reviewed_open_gaps": 175,
     "strength_ladder_levels": 6,
-    "synthetic_complements": 124,
-    "total_not_mapped_in_explorer": 175
+    "synthetic_complements": 0,
+    "total_not_mapped_in_explorer": 0
   },
   "authorities": {
     "coded_wave": {
@@ -61,7 +63,7 @@
       "lifecycle": "VERIFIED_NAVIGATION_ARTIFACT",
       "path": "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json",
       "result_id": "FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2",
-      "sha256": "4db8b48be69e1e8c44257c6025f6072e82e0da25f423da55c1acad596dbd4629"
+      "sha256": "a0c047e7b26f17f734661b735e67dc4a2e4fd7ab60b173c49c5b10154f7acbf0"
     },
     "finite_bv": {
       "dependency_tags": [
@@ -82,16 +84,28 @@
       "result_id": "FOUNDATIONAL_FINITE_GRAPH_WAVE_CAUSALITY_V1",
       "sha256": "2790e43f566c86e07f7b452fdfac516c59d319df4fd2e410664e7ff130396e79"
     },
+    "full_surface_gap_audit": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL",
+        "REDUCED-MODE",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "lifecycle": "CLASSIFIED",
+      "path": "foundations/results/FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1.json",
+      "result_id": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+      "sha256": "7c3d467e07b07ca54b0d875c08a7cac5769fab769c412e8e71fc823f515669fd"
+    },
     "intersection_cube": {
       "dependency_tags": [
         "LOCAL-ALGEBRAIC",
         "REDUCED-MODE",
         "LORENTZIAN-CAUSAL"
       ],
-      "lifecycle": "TWENTY_EMPTY_CELLS_CLASSIFIED",
-      "path": "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V8.json",
-      "result_id": "FOUNDATIONAL_INTERSECTION_CUBE_V8",
-      "sha256": "1066c076a1c90fb5b5f7fac9e97c870434f8b5a9ade07f133cda609a81b43b7b"
+      "lifecycle": "FULL_CARTESIAN_SURFACE_ASSESSED",
+      "path": "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V9.json",
+      "result_id": "FOUNDATIONAL_INTERSECTION_CUBE_V9",
+      "sha256": "a6c2d08940ba7112202ed33ca64b581fd886b07b53eb553c24321578feb08269"
     },
     "krein_state_selection": {
       "dependency_tags": [
@@ -114,7 +128,7 @@
       "sha256": "08389e96d349766e29a34cde8109d4b1271288b59d44f3b29fcb456065641998"
     }
   },
-  "canonical_digest": "eb74fd0a001c44366ca2a3e290579ee19f51646aa76c07a07be5540e06efdfce",
+  "canonical_digest": "2c45e1991140ff11e9bbb2ecadda551b2b25465aa25df4085cb653171defe567",
   "claim_flags": {
     "atlas_exhaustive": false,
     "axes_independent_proved": false,
@@ -144,6 +158,7 @@
     {
       "authorities": [
         "intersection_cube",
+        "full_surface_gap_audit",
         "explorer_snapshot"
       ],
       "claim_id": "RF-02-NAVIGATIONAL-ATLAS",
@@ -239,7 +254,7 @@
     "a universal weakest foundation for physics or Weyl gravity",
     "that physical evidence implies the Axiom of Choice or its negation",
     "that the atlas axes are independent or every coordinate is coherent",
-    "literature completeness or absence theorems for unmapped cells",
+    "literature completeness or absence theorems for reviewed open gaps",
     "representation invariance of the RCA_0 coded-wave upper bound",
     "a complete Lorentzian off-shell BV propagator",
     "a BRST-compatible Hadamard state for the full metric BV complex",
@@ -348,15 +363,15 @@
   "paper": {
     "appendix": {
       "generator_path": "paper/generate_21_reverse_foundations_appendices.py",
-      "generator_sha256": "ed24c035ecc9cccd535a4796c1827e06e69e1eb4efc4612db7878af71ec04ee2",
+      "generator_sha256": "e15e870a4989e0b8db6a44af3e39fa636712a7a0fb57dd97711c2ee235d8de0d",
       "path": "paper/21-reverse-foundations-of-physics-appendices.tex",
-      "sha256": "60c279f35d4a1a6cf7d7a9f3a54ccd1ba4eba33d461ecb10a5d17153014bdc04",
-      "source_canonical_digest": "784e40266f584374492423625e1218254caa7af6b1a387885bbca195a1e8878a",
+      "sha256": "a9edf9fcef8693c59a4998917d34ae8805c0ccd691409fe17f6cd041ddd8213d",
+      "source_canonical_digest": "4ba28f1320371b129b8f97dca3668acd02711ab4aefb980d21964cd90cefd30d",
       "source_path": "foundations/site/data.json",
-      "source_sha256": "7cf2052a612add22361ebd6e49b99ff3625318a8068870a8d345561260bd07f1"
+      "source_sha256": "9e2dcefdc4eb94e32e9d08b81bd7cbf16916a5ed2bf8f8d18275908472b842d5"
     },
     "path": "paper/21-reverse-foundations-of-physics.tex",
-    "sha256": "516d25338f5a2b4816661895be0a7f65ed22f4ed8e3d88be25bbd64261518a98"
+    "sha256": "59f2c0a9fdd457b3ebbf46b72f12b9425e2c8f086198eb76109795c8dbd884ce"
   },
   "result_id": "PAPER21_REVERSE_FOUNDATIONS_INTRODUCTION_V1",
   "result_kind": "PROGRAMME_SYNTHESIS_AND_TYPED_CASE_STUDY_MAP",

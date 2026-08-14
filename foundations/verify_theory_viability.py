@@ -20,7 +20,7 @@ REPORT = ROOT / "foundations/reports/theory-viability-assessment-v1.md"
 SITE_JSON = ROOT / "foundations/site/viability.json"
 SITE_JS = ROOT / "foundations/site/viability.js"
 DIRECT = {"LOCAL_RESULT", "LITERATURE_RESULT"}
-RANK = {"NOT_MAPPED": 0, "PRIORITY_GAP": 1, "PIECES_ONLY": 2, "LOCAL_RESULT": 3, "LITERATURE_RESULT": 3}
+RANK = {"NOT_MAPPED": 0, "REVIEWED_GAP": 1, "PRIORITY_GAP": 1, "PIECES_ONLY": 2, "LOCAL_RESULT": 3, "LITERATURE_RESULT": 3}
 DEFAULT_GATE = [
     "KINEMATICS_OBSERVABLES",
     "STATE_EXISTENCE",

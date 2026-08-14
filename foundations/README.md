@@ -263,12 +263,12 @@ python3 foundations/verify_cylinder_wave_strength_ladder_v2.py
 The generated
 [`static matrix explorer`](site/index.html) turns the complete refined surface
 into a browser-based research instrument. It displays all 576 coordinates as
-sixteen coordinated heatmaps. Coverage is classified for 401 emitted cells;
-all 452 emitted cells have completed migration review. Of the 88 historical
-`REVIEWED_NO_TRANSFER` decisions, thirty-seven now have independent child-specific
-coverage and 51 remain `NOT_MAPPED`. The other 124 Cartesian coordinates remain
-unassessed. Both kinds of `NOT_MAPPED` forbid an interpretation as literature
-absence. The inspector separates positive coverage evidence from evidence
+sixteen coordinated heatmaps. Cube v9 emits and assesses all 576 coordinates:
+115 carry local results, 93 literature results, 163 partial ingredients, 30
+selected priority gaps, and 175 reviewed open gaps; zero remain `NOT_MAPPED`.
+A `REVIEWED_GAP` is a formulated question with a typed missing certificate,
+not a result, priority assignment, or literature-absence claim. The inspector
+separates positive coverage evidence from evidence
 reviewed only for migration. The bundle also provides multi-select filters,
 evidence-aware search, comparison, one-axis neighbors, permalinks, filtered
 exports, investigation briefs, the typed implication graph, the cylinder
@@ -290,8 +290,8 @@ completion:
 ```bash
 python3 foundations/build_matrix_site.py
 python3 foundations/build_matrix_site.py --check
-python3 foundations/check_matrix_site.py
-python3 foundations/verify_matrix_site.py
+python3 foundations/check_matrix_site_v2.py
+python3 foundations/verify_matrix_site_v2.py
 python3 foundations/verify_theory_viability.py
 python3 foundations/verify_theory_assembly.py
 python3 foundations/verify_bt_corner_born_interface.py
@@ -302,6 +302,8 @@ python3 foundations/verify_finite_operator_ten_cell_closure.py
 python3 foundations/verify_refined_intersection_cube_v7.py
 python3 foundations/verify_finite_brst_twenty_cell_closure.py
 python3 foundations/verify_refined_intersection_cube_v8.py
+python3 foundations/verify_full_surface_gap_audit.py
+python3 foundations/verify_refined_intersection_cube_v9.py
 python3 -m unittest foundations.tests.test_matrix_site
 python3 -m unittest foundations.tests.test_theory_viability
 python3 -m unittest foundations.tests.test_theory_assembly
@@ -313,6 +315,8 @@ python3 -m unittest foundations.tests.test_finite_operator_ten_cell_closure
 python3 -m unittest foundations.tests.test_refined_intersection_cube_v7
 python3 -m unittest foundations.tests.test_finite_brst_twenty_cell_closure
 python3 -m unittest foundations.tests.test_refined_intersection_cube_v8
+python3 -m unittest foundations.tests.test_full_surface_gap_audit
+python3 -m unittest foundations.tests.test_refined_intersection_cube_v9
 python3 -m http.server 8000 --directory foundations/site
 ```
 
@@ -435,6 +439,27 @@ python3 foundations/verify_finite_brst_twenty_cell_closure.py
 python3 foundations/refine_intersection_cube_v8.py --check
 python3 foundations/check_refined_intersection_cube_v8.py
 python3 foundations/verify_refined_intersection_cube_v8.py
+```
+
+The
+[`full 576-coordinate gap audit`](reports/full-surface-gap-audit.md) identifies
+the exact complement left by cube v8: 51 emitted blanks and 124 previously
+browser-only coordinates. It formulates each as a coherent research question,
+records the foundation and carrier requirements and missing theorem-level
+certificate, and classifies all 175 as `REVIEWED_GAP`. The append-only
+[`cube v9`](reports/refined-intersection-cube-v9.md) applies that audit while
+preserving all 401 earlier classifications and both certified interfaces. Full
+assessment is explicitly not full scientific or literature coverage:
+
+```bash
+python3 foundations/build_full_surface_gap_audit.py --check
+python3 foundations/check_full_surface_gap_audit.py
+python3 foundations/verify_full_surface_gap_audit.py
+python3 foundations/refine_intersection_cube_v9.py --check
+python3 foundations/check_refined_intersection_cube_v9.py
+python3 foundations/verify_refined_intersection_cube_v9.py
+python3 -m unittest foundations.tests.test_full_surface_gap_audit \
+  foundations.tests.test_refined_intersection_cube_v9
 ```
 
 The append-only
