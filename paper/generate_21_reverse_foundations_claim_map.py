@@ -52,6 +52,7 @@ AUTHORITY_PATHS = {
     "bt_complete_g4_effective_hessian": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_COMPLETE_G4_EFFECTIVE_HESSIAN_V1.json",
     "bt_complete_g4_connected_normalization": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_COMPLETE_G4_CONNECTED_NORMALIZATION_V1.json",
     "bt_complete_g4_l4_decision": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_COMPLETE_G4_L4_DECISION_V1.json",
+    "bt_complete_g4_general_l_two_loop": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_COMPLETE_G4_GENERAL_L_TWO_LOOP_V1.json",
     "full_surface_gap_audit": "foundations/results/FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1.json",
     "explorer_snapshot": "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json",
     "theory_assembly": "foundations/results/FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1.json",
@@ -131,6 +132,7 @@ def build() -> dict:
     bt_g4_hessian = loaded["bt_complete_g4_effective_hessian"]
     bt_g4_connected = loaded["bt_complete_g4_connected_normalization"]
     bt_g4_l4 = loaded["bt_complete_g4_l4_decision"]
+    bt_g4_general_l = loaded["bt_complete_g4_general_l_two_loop"]
     site = loaded["explorer_snapshot"]
     gr_cassini = loaded["gr_cassini_assembly"]
     mannheim_ngc3198 = loaded["mannheim_ngc3198_assembly"]
@@ -387,6 +389,12 @@ def build() -> dict:
             "bt_g4_l4_complete_M4": bt_g4_l4["exact_L4_decision"]["M4"],
             "bt_g4_all_volume_zero_identity_status": bt_g4_l4["method_disposition"]["all_volume_exact_M4_zero_identity"],
             "bt_g4_large_volume_sign_and_scaling_status": bt_g4_l4["method_disposition"]["large_volume_M4_sign_and_scaling"],
+            "bt_g4_general_l_two_loop_formula_status": bt_g4_general_l["method_disposition"]["generic_L_at_least_five_complete_two_loop_formula"],
+            "bt_g4_power_tadpole_survival_status": bt_g4_general_l["method_disposition"]["power_sized_Y_squared_and_XY_tadpole_survival"],
+            "bt_g4_factorized_conditioning_status": bt_g4_general_l["method_disposition"]["factorized_conditioning_sector"],
+            "bt_g4_factorized_tuned_branch_status": bt_g4_general_l["method_disposition"]["factorized_conditioning_sector_on_tuned_running_branch"],
+            "bt_g4_remaining_fourteen_kernel_status": bt_g4_general_l["method_disposition"]["remaining_fourteen_unfactorized_two_loop_kernel_bound"],
+            "bt_g4_general_l_surviving_integrands": bt_g4_general_l["two_loop_atlas"]["statistics"]["surviving_integrand_count"],
             "standard_reference_direct_obligations": next(item for item in assembly_data["assemblies"] if item["id"] == "STANDARD_MIXED_REFERENCE")["coverage"]["direct"],
             "external_calibration_records": len(assembly_data["calibration_controls"][0]["records"]),
             "external_calibration_benchmark_families": sum(item["status"] == "SUPPORTED_CONTROL" for item in assembly_data["calibration_controls"][0]["benchmark_coverage"]),
@@ -479,7 +487,7 @@ def build() -> dict:
             {
                 "claim_id": "RF-13-BT-INTERACTING-RECONSTRUCTION-FRONTIER",
                 "statement": "At lambda=0.4 on the 6^4 lattice, an exact two-point reflected density-kernel minor obstructs ordinary OS positivity. The affine virial theorem proves a volume-uniform actual Gibbs action-density bound and annealed half-action factor. Exact period-four data obstruct the global Schur route. The residual map identifies positive fields modulo scale with a Schrödinger spectrahedral boundary and gives the exact normalized Gaussian-surface/tree-Jacobian pushforward. Its curvature and tree-Jacobian shortcuts are obstructed. An exact orthogonal-background family makes centered pointwise relative-action domination fail. On the subsequence eta_m=4m log(2) a, every global fiber minimizer lies below u=-m and the conditional probability of u>=-m is at most 2^-m, so the background-uniform raw conditional second moment is obstructed. On that same runaway family, however, K_m(2^u)>=115/4 proves a uniform recentered conditional-variance bound and E_qm[u]<-m/2: the obstruction is moving center rather than widening fiber. A plaquette absorption theorem proves for every background and L>=4 that the lowest axial curvature is at least (2/9)*N*omega_L^2 and conditional variance is at most 9/(2*N*omega_L^2). Strong convexity reduces the annealed center to one zero-fiber-score estimate. Its leading free orthogonal-background coefficient has residue 5/(16*pi^2) times log L, obstructing fixed-bare coefficientwise uniformity. On a fixed-physical-volume asymptotically free trajectory, however, g_L^2 log L tends to 8*pi^2/5 and the leading normalized score coefficient tends exactly to 1/2. This restores leading-log uniformity only on the tuned refinement branch. The exact ordinary equation-of-motion Ward identity controls the sampled full score, and a shifted-Gaussian fixture with full-score variance 2 but zero-fiber-score variance 100 obstructs its general transfer to the missing target. Exact disintegration further proves that constrained and integrated-marginal identities weight backgrounds by q_eta(0), while the target requires division by q_eta(0). On the actual BT runaway family the u-density obeys q_m^(u)(0)<=2^-m/m; the t-density differs only by the fixed factor 1/log(2), so no pointwise uniform lower bound can remove that weight. The annealed estimate may still succeed by exploiting the Gibbs rarity of those backgrounds. Fixed-spacing large volume, all-order resummation, and the nonperturbative Gibbs score remain open. Half-period translation proves the fully integrated marginal is even. The all-background width is closed; a nonperturbative center estimate and the actual interacting H^-1 moment remain open.",
-                "status": "EXACT_FINITE_OS_AND_METHOD_OBSTRUCTIONS_WITH_ALL_BACKGROUND_WIDTH_RG_MATCHED_LEADING_LOG_WARD_WEIGHT_QUARTIC_POWER_UV_G4_NONCANCELLATION_CHAOS_HESSIAN_CONNECTED_AND_L4_DECISION_GATES",
+                "status": "EXACT_FINITE_OS_AND_METHOD_OBSTRUCTIONS_WITH_ALL_BACKGROUND_WIDTH_RG_MATCHED_LEADING_LOG_WARD_WEIGHT_QUARTIC_POWER_UV_G4_NONCANCELLATION_CHAOS_HESSIAN_CONNECTED_L4_AND_GENERAL_L_TWO_LOOP_GATES",
                 "authorities": [
                     "bt_lambda04_os_kernel_obstruction",
                     "bt_uniform_convexity_obstruction",
@@ -507,6 +515,7 @@ def build() -> dict:
                     "bt_complete_g4_effective_hessian",
                     "bt_complete_g4_connected_normalization",
                     "bt_complete_g4_l4_decision",
+                    "bt_complete_g4_general_l_two_loop",
                 ],
                 "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"],
             },
@@ -681,6 +690,11 @@ def build() -> dict:
             "bt_complete_order_g_four_l4_negative_nonzero_established": True,
             "bt_complete_order_g_four_all_volume_zero_identity_obstructed": True,
             "bt_complete_order_g_four_large_volume_scaling_established": False,
+            "bt_complete_order_g_four_general_l_two_loop_formula_established": True,
+            "bt_complete_order_g_four_power_tadpoles_canceled": True,
+            "bt_complete_order_g_four_factorized_conditioning_log_squared_bound_established": True,
+            "bt_complete_order_g_four_factorized_tuned_branch_uniformity_established": True,
+            "bt_complete_order_g_four_remaining_fourteen_kernel_bound_established": False,
             "bt_complete_order_g_four_explicit_momentum_kernel_established": False,
             "bt_complete_order_g_four_effective_kernel_bound_established": False,
             "bt_complete_order_g_four_power_survival_established": False,
@@ -745,6 +759,7 @@ def build() -> dict:
             "the effective second-chaos kernel bound from the exact Wiener-chaos reduction alone",
             "the explicit BT lattice momentum kernel or its norm bound from the expected-Hessian formula alone",
             "a large-volume M4 sign or scaling law from the exact finite-volume L=4 decision",
+            "a bound for the 14 unfactorized two-loop kernels, the full M4 asymptotics, or the interacting H^-1 moment from the factorized log-squared bound",
         ],
         "authorities": authorities,
         "independent_checker": {
@@ -801,9 +816,18 @@ def build() -> dict:
                 "still has maximum loop rank two. Exact rational evaluation gives "
                 "M4(4)=-338835474713437/204838502400000, and an independent modular "
                 "enumeration proves the same value. This refutes an all-volume zero "
-                "identity but does not decide the large-volume sign or scaling; the "
-                "active gate is a combined general-L kernel for the dominant bulk "
-                "and single-rank two-loop sectors."
+                "identity but does not decide the large-volume sign or scaling."
+                " For every integer L>=5, an exact affine-flow atlas combines 96 "
+                "source-conserving oriented topology flows into 21 common integrands after "
+                "zero-mode removal. Five cancel exactly. In particular, every "
+                "power-sized quartic-tadpole square Y_L^2 and bubble-tadpole cross "
+                "X_L*Y_L cancels between fixed-p bulk propagators and rank-one "
+                "covariances before absolute values. The conditioning-scale "
+                "remainder is the positive 162*X_L^2/[N*omega(p)^2], with an exact "
+                "O(log(L)^2) bound, so g_L^4 times this sector is bounded on the "
+                "certified tuned refinement branch. Fourteen unfactorized two-loop "
+                "kernels, lower-loop recombination, full M4 asymptotics, and the "
+                "interacting H^-1 moment remain open."
             )
             break
     payload["canonical_digest"] = canonical_digest(payload)

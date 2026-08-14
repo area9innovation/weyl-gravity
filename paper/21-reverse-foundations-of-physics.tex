@@ -1668,11 +1668,26 @@ exceeds twice a rigorous bound on the cleared integer difference.  Thus this
 is an exact rational decision, not a numerical sign test, and it refutes the
 proposed all-volume identity \(M_4(L)=0\).  The dominant bulk two-loop sector
 \((+21.490\ldots)\) nearly cancels the dominant single-rank two-loop sector
-\((-23.376\ldots)\), leaving the finite negative remainder.  This identifies
-the next calculation: combine those signed sectors into one general-\(L\)
-kernel before estimating it.  The large-volume sign and scaling, a weighted
-kernel bound, the nonperturbative score, and the interacting \(H^{-1}\) moment
-remain open.
+\((-23.376\ldots)\), leaving the finite negative remainder.  Certificate
+\cert{REVERSE_PHYSICS_BT_EUCLIDEAN_COMPLETE_G4_GENERAL_L_TWO_LOOP_V1}
+now performs the required recombination for every integer \(L\geq5\).  Of 96
+source-conserving oriented topology flows, 48 contain an identically zero
+propagator; the rest reduce to 21 common integrands, five of which cancel
+exactly.  If
+\(X_L\) is the cubic one-loop bubble and \(Y_L\) the quartic tadpole, all
+\(Y_L^2\) and \(X_LY_L\) contributions cancel between fixed-\(p\) bulk lines
+and rank-one covariance terms.  The conditioning-scale remainder is
+
+\[
+ R_L=\frac{162X_L^2}{N\omega_p^2}
+     =O\!\left((1+\log L)^2\right).
+\]
+
+Consequently \(g_L^4R_L\) is bounded on the already certified tuned
+asymptotically free refinement branch.  This closes only the factorized
+conditioning sector.  Fourteen unfactorized two-loop kernels, the lower-loop
+recombination, the large-volume sign and scaling, the nonperturbative score,
+and the interacting \(H^{-1}\) moment remain open.
 
 \subsection{A finite BV contraction does not freeze the quantum theory}
 
@@ -2097,10 +2112,14 @@ coefficient.  A bulk Wick table plus an exact all-volume rank-insertion audit
 reduces that form to at most two loop sums.  Exact rational evaluation gives
 \(M_4(4)=-338835474713437/204838502400000\), independently certified by modular
 enumeration.  This refutes an exact all-volume zero identity, but does not
-decide the large-volume sign or scaling.  The active fixed-order gate is a
-combined general-\(L\) representation of the dominant bulk and single-rank
-two-loop sectors; the weighted bound and interacting \(H^{-1}\) estimate remain
-open.
+decide the large-volume sign or scaling.  For every \(L\geq5\), an exact
+affine-flow atlas now combines the bulk and rank-one two-loop sectors into 21
+common integrands.  Five cancel before absolute values, including every
+power-sized quartic-tadpole square and cubic-bubble--quartic-tadpole cross.
+The remaining conditioning factor is the positive
+\(162X_L^2/(N\omega_p^2)=O((1+\log L)^2)\), which is controlled by \(g_L^4\)
+on the tuned refinement branch.  Fourteen unfactorized two-loop kernels, the
+lower-loop recombination, and the interacting \(H^{-1}\) estimate remain open.
 The logarithmic coefficient is not evidence that the resummed interacting
 moment diverges.  Only after the normalized marginal closes should the
 programme sum Fourier shells.  Another fixed-origin, pointwise,

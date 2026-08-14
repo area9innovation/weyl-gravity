@@ -154,8 +154,11 @@ Certificate
 `REVERSE_PHYSICS_BT_EUCLIDEAN_COMPLETE_G4_L4_DECISION_V1` now closes the
 first decisive test: \(M_4(4)\) is exactly negative and nonzero, so an
 all-volume zero identity is obstructed.  Its sector ledger shows dominant
-bulk and single-rank two-loop contributions of opposite sign.  The next gate
-is their combined general-\(L\) kernel and hard/one-soft/all-soft bound.
+bulk and single-rank two-loop contributions of opposite sign.  The general-
+volume successor now combines those contributions exactly for every
+\(L\geq5\): five common integrands cancel, the factorized conditioning
+remainder has a logarithm-squared bound, and 14 unfactorized two-loop kernels
+remain for a joint hard/one-soft/all-soft estimate.
 
 No large-volume sign or scaling decision, whole-lattice power-survival
 theorem, nonperturbative score theorem, interacting $H^{-1}$ moment,

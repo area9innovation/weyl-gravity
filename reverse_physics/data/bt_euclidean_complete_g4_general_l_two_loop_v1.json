@@ -1,0 +1,2425 @@
+{
+  "affine_notation": {
+    "form": "[a,b,c] denotes a*q+b*r+c*p in Z_L^4",
+    "formula": "M4_two_loop(L)=N^(-1)*sum_entries coefficient*omega(p)^(-2*s)*sum_(q,r in Z_L^4) 1_(all listed propagators nonzero)*product_vertices K_d(arguments)/product_listed omega(k)^2",
+    "kernel": "K_d is the normalized symmetric degree-d lattice action kernel used in the exact L=4 certificate",
+    "normalization": "N=L^4; explicit fiber variances and rank-one conditioned covariances have already been absorbed into coefficient and s",
+    "propagator": "each listed form k contributes 1/omega(k)^2 and the summand is zero unless every listed k is nonzero"
+  },
+  "checks": {
+    "all_kernel_arguments_conserve_symbolic_momentum": true,
+    "all_propagator_constraints_are_explicit": true,
+    "both_conditioning_scale_survivors_are_exact_bubble_squares": true,
+    "every_two_loop_normalization_is_one_over_volume": true,
+    "factorized_conditioning_sector_has_log_squared_upper_bound": true,
+    "five_integrands_cancel_before_summation": true,
+    "forty_eight_contributing_orientations_reduce_to_twenty_one_integrands": true,
+    "generic_source_conservation_is_exact_for_every_L_at_least_five": true,
+    "large_volume_sum_and_H_minus_one_estimate_remain_open": true,
+    "maximum_integer_component_source_is_four": true,
+    "ninety_six_source_conserving_orientations_include_forty_eight_zero_mode_flows": true,
+    "no_continuum_born_krein_or_lorentzian_promotion": true,
+    "power_tadpole_Y_square_and_XY_terms_cancel_exactly": true,
+    "running_g_four_controls_only_that_factorized_sector": true,
+    "sixteen_combined_integrands_survive": true,
+    "survivors_split_into_fourteen_unfactorized_and_two_factorized_bubble_squares": true
+  },
+  "created": "2026-08-15",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "does_not_establish": [
+    "the sign, asymptotic coefficient, or growth rate of the 14 unfactorized surviving integrands",
+    "that lower-loop sectors are negligible",
+    "a whole-order or nonperturbative annealed score bound",
+    "boundedness or divergence of the actual interacting H^-1 moment",
+    "continuum identification, a Born rule, Krein reconstruction, or any LORENTZIAN-CAUSAL statement"
+  ],
+  "exact_cancellations": [
+    {
+      "coefficient": {
+        "denominator": 1,
+        "numerator": 0
+      },
+      "kernels": [
+        {
+          "arguments": [
+            [
+              -1,
+              0,
+              -1
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0
+            ]
+          ],
+          "degree": 3
+        },
+        {
+          "arguments": [
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              1,
+              0,
+              1
+            ]
+          ],
+          "degree": 3
+        },
+        {
+          "arguments": [
+            [
+              0,
+              -1,
+              -1
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ],
+          "degree": 3
+        },
+        {
+          "arguments": [
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              0,
+              1,
+              1
+            ]
+          ],
+          "degree": 3
+        }
+      ],
+      "omega_p_inverse_square_power": 1,
+      "origins": [
+        {
+          "coefficient": {
+            "denominator": 2,
+            "numerator": -81
+          },
+          "rank_insertions": 1,
+          "term": "Cov(U31^2,U30^2)"
+        },
+        {
+          "coefficient": {
+            "denominator": 2,
+            "numerator": 81
+          },
+          "rank_insertions": 0,
+          "term": "Cov(U31^2,v*U31^2/2)"
+        }
+      ],
+      "propagators": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "coefficient": {
+        "denominator": 1,
+        "numerator": 0
+      },
+      "kernels": [
+        {
+          "arguments": [
+            [
+              -1,
+              0,
+              -1
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0
+            ]
+          ],
+          "degree": 3
+        },
+        {
+          "arguments": [
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              1,
+              0,
+              1
+            ]
+          ],
+          "degree": 3
+        },
+        {
+          "arguments": [
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ],
+          "degree": 4
+        }
+      ],
+      "omega_p_inverse_square_power": 1,
+      "origins": [
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": -108
+          },
+          "rank_insertions": 0,
+          "term": "-2*U31*U41*U30"
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 108
+          },
+          "rank_insertions": 1,
+          "term": "-2*U31*U41*U30"
+        }
+      ],
+      "propagators": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "coefficient": {
+        "denominator": 1,
+        "numerator": 0
+      },
+      "kernels": [
+        {
+          "arguments": [
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              -1
+            ]
+          ],
+          "degree": 3
+        },
+        {
+          "arguments": [
+            [
+              -1,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              1,
+              0,
+              0
+            ]
+          ],
+          "degree": 3
+        },
+        {
+          "arguments": [
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              1,
+              -1
+            ]
+          ],
+          "degree": 3
+        },
+        {
+          "arguments": [
+            [
+              0,
+              -1,
+              1
+            ],
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ],
+          "degree": 3
+        }
+      ],
+      "omega_p_inverse_square_power": 1,
+      "origins": [
+        {
+          "coefficient": {
+            "denominator": 2,
+            "numerator": -81
+          },
+          "rank_insertions": 1,
+          "term": "Cov(U31^2,U30^2)"
+        },
+        {
+          "coefficient": {
+            "denominator": 2,
+            "numerator": 81
+          },
+          "rank_insertions": 0,
+          "term": "Cov(U31^2,v*U31^2/2)"
+        }
+      ],
+      "propagators": [
+        [
+          0,
+          1,
+          -1
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          -1
+        ],
+        [
+          1,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "coefficient": {
+        "denominator": 1,
+        "numerator": 0
+      },
+      "kernels": [
+        {
+          "arguments": [
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              -1
+            ]
+          ],
+          "degree": 3
+        },
+        {
+          "arguments": [
+            [
+              -1,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              1,
+              0,
+              0
+            ]
+          ],
+          "degree": 3
+        },
+        {
+          "arguments": [
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ],
+          "degree": 4
+        }
+      ],
+      "omega_p_inverse_square_power": 1,
+      "origins": [
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": -108
+          },
+          "rank_insertions": 0,
+          "term": "-2*U31*U41*U30"
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 108
+          },
+          "rank_insertions": 1,
+          "term": "-2*U31*U41*U30"
+        }
+      ],
+      "propagators": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          -1
+        ],
+        [
+          1,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "coefficient": {
+        "denominator": 1,
+        "numerator": 0
+      },
+      "kernels": [
+        {
+          "arguments": [
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0
+            ]
+          ],
+          "degree": 4
+        },
+        {
+          "arguments": [
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ],
+          "degree": 4
+        }
+      ],
+      "omega_p_inverse_square_power": 1,
+      "origins": [
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 72
+          },
+          "rank_insertions": 0,
+          "term": "U41^2"
+        },
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": -72
+          },
+          "rank_insertions": 1,
+          "term": "U41^2"
+        }
+      ],
+      "propagators": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ]
+      ]
+    }
+  ],
+  "factorized_conditioning_sector": {
+    "bubble": "X_L=sum_(q != 0,-p) K3(p,q,-p-q)^2/[omega(q)^2*omega(p+q)^2]",
+    "bubble_bound": "0<=X_L<=(64*pi^4/9)*[11/32+(1/4)*log(floor(L/2))]",
+    "canceled_tadpole": "Y_L=sum_(q != 0) K4(p,-p,q,-q)/omega(q)^2; all Y_L^2 and X_L*Y_L terms cancel before absolute values",
+    "derivation": "After fixed +/-p bulk propagators are absorbed into the same omega(p)^(-2) scale as rank-one covariance factors, the U41^2 Y_L^2 pair cancels, the two U31*U41*U30 X_L*Y_L pairs cancel, and the two remaining coefficient-81 entries each factor as X_L*X_L.",
+    "exact_L4_normalization_crosscheck": {
+      "X_4": {
+        "denominator": 7560,
+        "numerator": 56533
+      },
+      "Y_4": {
+        "denominator": 3360,
+        "numerator": 98953
+      },
+      "canceled_72_Y_squared_over_N_omega_p_squared": {
+        "denominator": 160563200,
+        "numerator": 9791696209
+      },
+      "each_canceled_108_XY_over_N_omega_p_squared": {
+        "denominator": 240844800,
+        "numerator": 5594109949
+      },
+      "scope": "The factor algebra also applies to the generic-source subset at L=4; this is a normalization crosscheck, not an extension of the atlas volume scope across the additional L=4 resonances.",
+      "status": "MATCHES_EXACT_L4_RANK_LOOP_LEDGER",
+      "surviving_R_4": {
+        "denominator": 361267200,
+        "numerator": 3195980089
+      }
+    },
+    "exact_formula": "R_L=162*X_L^2/[N*omega(p)^2]",
+    "four_dimensional_green_bound": "sum_(q != 0) omega(q)^(-2) <= N*[11/32+(1/4)*log(floor(L/2))]",
+    "normalization_bound": "256<=N*omega(p)^2<=16*pi^4 for L>=5",
+    "running_coupling_consequence": "On the certified tuned refinement branch g_L^2*log(L)->8*pi^2/5, g_L^4*R_L is bounded. This statement concerns only R_L, not the 14 remaining integrands or the full M4 coefficient.",
+    "sector_bound": "0<=R_L<=(81/128)*{(64*pi^4/9)*[11/32+(1/4)*log(floor(L/2))]}^2",
+    "status": "EXACT_POWER_TADPOLE_CANCELLATION_AND_LOG_SQUARED_BOUND_PROVED",
+    "vertex_bound": "K3=V3/6 and |V3(p,q,-p-q)|<=4*omega(p)*min(omega(q),omega(p+q))"
+  },
+  "next_gate": "Estimate the 14 unfactorized s=0 integrands by hard, one-soft, and all-soft regions. The exact five-integrand cancellation and the positive 162*X_L^2/[N*omega(p)^2] factor must be retained before absolute values. A validated evaluator at L>=5 may guide, but cannot replace, the uniform analytic bound.",
+  "result_id": "REVERSE_PHYSICS_BT_EUCLIDEAN_COMPLETE_G4_GENERAL_L_TWO_LOOP_ATLAS_V1",
+  "result_kind": "exact generic-volume affine momentum-flow representation of the complete BT order-g^4 two-loop sector",
+  "statistics": {
+    "exactly_canceled_integrand_count": 5,
+    "identically_zero_oriented_flow_count": 48,
+    "maximum_component_source_absolute_value": 4,
+    "precombination_integrand_count": 21,
+    "raw_oriented_flow_count": 48,
+    "source_conserving_oriented_flow_count": 96,
+    "surviving_by_omega_p_inverse_square_power": {
+      "0": 14,
+      "1": 2
+    },
+    "surviving_integrand_count": 16
+  },
+  "status": "EXACT_GENERAL_L_TWO_LOOP_FORMULA_PROVED_ASYMPTOTIC_ESTIMATE_OPEN",
+  "surviving_integrands": [
+    {
+      "coefficient": {
+        "denominator": 1,
+        "numerator": 162
+      },
+      "kernels": [
+        {
+          "arguments": [
+            [
+              -1,
+              -1,
+              -1
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              1,
+              0
+            ]
+          ],
+          "degree": 3
+        },
+        {
+          "arguments": [
+            [
+              -1,
+              -1,
+              0
+            ],
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              1,
+              1,
+              1
+            ]
+          ],
+          "degree": 3
+        },
+        {
+          "arguments": [
+            [
+              -1,
+              -1,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              1,
+              0,
+              0
+            ]
+          ],
+          "degree": 3
+        },
+        {
+          "arguments": [
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              1,
+              1,
+              0
+            ]
+          ],
+          "degree": 3
+        }
+      ],
+      "omega_p_inverse_square_power": 0,
+      "origins": [
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 162
+          },
+          "rank_insertions": 0,
+          "term": "Cov(U31^2,U30^2)"
+        }
+      ],
+      "propagators": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          0
+        ],
+        [
+          1,
+          1,
+          0
+        ],
+        [
+          1,
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "coefficient": {
+        "denominator": 1,
+        "numerator": 162
+      },
+      "kernels": [
+        {
+          "arguments": [
+            [
+              -1,
+              -1,
+              -1
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              1,
+              0,
+              1
+            ]
+          ],
+          "degree": 3
+        },
+        {
+          "arguments": [
+            [
+              -1,
+              -1,
+              0
+            ],
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              1,
+              1,
+              1
+            ]
+          ],
+          "degree": 3
+        },
+        {
+          "arguments": [
+            [
+              -1,
+              0,
+              -1
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0
+            ]
+          ],
+          "degree": 3
+        },
+        {
+          "arguments": [
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              1,
+              1,
+              0
+            ]
+          ],
+          "degree": 3
+        }
+      ],
+      "omega_p_inverse_square_power": 0,
+      "origins": [
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 162
+          },
+          "rank_insertions": 0,
+          "term": "Cov(U31^2,U30^2)"
+        }
+      ],
+      "propagators": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          1
+        ],
+        [
+          1,
+          1,
+          0
+        ],
+        [
+          1,
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "coefficient": {
+        "denominator": 1,
+        "numerator": -216
+      },
+      "kernels": [
+        {
+          "arguments": [
+            [
+              -1,
+              -1,
+              0
+            ],
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              1,
+              1,
+              1
+            ]
+          ],
+          "degree": 3
+        },
+        {
+          "arguments": [
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              1,
+              1,
+              0
+            ]
+          ],
+          "degree": 3
+        },
+        {
+          "arguments": [
+            [
+              -1,
+              -1,
+              -1
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              1,
+              0,
+              0
+            ]
+          ],
+          "degree": 4
+        }
+      ],
+      "omega_p_inverse_square_power": 0,
+      "origins": [
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": -216
+          },
+          "rank_insertions": 0,
+          "term": "-2*U31*U41*U30"
+        }
+      ],
+      "propagators": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          0
+        ],
+        [
+          1,
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "coefficient": {
+        "denominator": 1,
+        "numerator": 162
+      },
+      "kernels": [
+        {
+          "arguments": [
+            [
+              -1,
+              -1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              1,
+              -1
+            ]
+          ],
+          "degree": 3
+        },
+        {
+          "arguments": [
+            [
+              -1,
+              -1,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              1,
+              0,
+              0
+            ]
+          ],
+          "degree": 3
+        },
+        {
+          "arguments": [
+            [
+              -1,
+              -1,
+              1
+            ],
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              1,
+              1,
+              0
+            ]
+          ],
+          "degree": 3
+        },
+        {
+          "arguments": [
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              1,
+              1,
+              0
+            ]
+          ],
+          "degree": 3
+        }
+      ],
+      "omega_p_inverse_square_power": 0,
+      "origins": [
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 162
+          },
+          "rank_insertions": 0,
+          "term": "Cov(U31^2,U30^2)"
+        }
+      ],
+      "propagators": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          -1
+        ],
+        [
+          1,
+          1,
+          0
+        ],
+        [
+          1,
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "coefficient": {
+        "denominator": 1,
+        "numerator": 162
+      },
+      "kernels": [
+        {
+          "arguments": [
+            [
+              -1,
+              -1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              1,
+              -1
+            ]
+          ],
+          "degree": 3
+        },
+        {
+          "arguments": [
+            [
+              -1,
+              -1,
+              1
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              1,
+              0,
+              -1
+            ]
+          ],
+          "degree": 3
+        },
+        {
+          "arguments": [
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              1,
+              1,
+              0
+            ]
+          ],
+          "degree": 3
+        },
+        {
+          "arguments": [
+            [
+              -1,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              1,
+              0,
+              0
+            ]
+          ],
+          "degree": 3
+        }
+      ],
+      "omega_p_inverse_square_power": 0,
+      "origins": [
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 162
+          },
+          "rank_insertions": 0,
+          "term": "Cov(U31^2,U30^2)"
+        }
+      ],
+      "propagators": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          -1
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          -1
+        ],
+        [
+          1,
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "coefficient": {
+        "denominator": 1,
+        "numerator": -216
+      },
+      "kernels": [
+        {
+          "arguments": [
+            [
+              -1,
+              -1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              1,
+              -1
+            ]
+          ],
+          "degree": 3
+        },
+        {
+          "arguments": [
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              1,
+              1,
+              0
+            ]
+          ],
+          "degree": 3
+        },
+        {
+          "arguments": [
+            [
+              -1,
+              -1,
+              1
+            ],
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              1,
+              0,
+              0
+            ]
+          ],
+          "degree": 4
+        }
+      ],
+      "omega_p_inverse_square_power": 0,
+      "origins": [
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": -216
+          },
+          "rank_insertions": 0,
+          "term": "-2*U31*U41*U30"
+        }
+      ],
+      "propagators": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          -1
+        ],
+        [
+          1,
+          1,
+          0
+        ]
+      ]
+    },
+    {
+      "coefficient": {
+        "denominator": 1,
+        "numerator": -108
+      },
+      "kernels": [
+        {
+          "arguments": [
+            [
+              -1,
+              0,
+              -1
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0
+            ]
+          ],
+          "degree": 3
+        },
+        {
+          "arguments": [
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              1,
+              0,
+              1
+            ]
+          ],
+          "degree": 3
+        },
+        {
+          "arguments": [
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              1,
+              0,
+              0
+            ]
+          ],
+          "degree": 4
+        }
+      ],
+      "omega_p_inverse_square_power": 0,
+      "origins": [
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": -108
+          },
+          "rank_insertions": 0,
+          "term": "Cov(U31^2,-U40)"
+        }
+      ],
+      "propagators": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "coefficient": {
+        "denominator": 1,
+        "numerator": -54
+      },
+      "kernels": [
+        {
+          "arguments": [
+            [
+              -1,
+              0,
+              -1
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0
+            ]
+          ],
+          "degree": 3
+        },
+        {
+          "arguments": [
+            [
+              0,
+              -1,
+              1
+            ],
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ],
+          "degree": 3
+        },
+        {
+          "arguments": [
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              0,
+              1,
+              -1
+            ],
+            [
+              1,
+              0,
+              1
+            ]
+          ],
+          "degree": 4
+        }
+      ],
+      "omega_p_inverse_square_power": 0,
+      "origins": [
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": -54
+          },
+          "rank_insertions": 0,
+          "term": "Cov(U31^2,-U40)"
+        }
+      ],
+      "propagators": [
+        [
+          0,
+          1,
+          -1
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "coefficient": {
+        "denominator": 1,
+        "numerator": 90
+      },
+      "kernels": [
+        {
+          "arguments": [
+            [
+              -1,
+              0,
+              -1
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0
+            ]
+          ],
+          "degree": 3
+        },
+        {
+          "arguments": [
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              1,
+              0,
+              1
+            ]
+          ],
+          "degree": 5
+        }
+      ],
+      "omega_p_inverse_square_power": 0,
+      "origins": [
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 90
+          },
+          "rank_insertions": 0,
+          "term": "2*U31*U51"
+        }
+      ],
+      "propagators": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "coefficient": {
+        "denominator": 1,
+        "numerator": -108
+      },
+      "kernels": [
+        {
+          "arguments": [
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              -1
+            ]
+          ],
+          "degree": 3
+        },
+        {
+          "arguments": [
+            [
+              -1,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              1,
+              0,
+              0
+            ]
+          ],
+          "degree": 3
+        },
+        {
+          "arguments": [
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              1,
+              0,
+              0
+            ]
+          ],
+          "degree": 4
+        }
+      ],
+      "omega_p_inverse_square_power": 0,
+      "origins": [
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": -108
+          },
+          "rank_insertions": 0,
+          "term": "Cov(U31^2,-U40)"
+        }
+      ],
+      "propagators": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          -1
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "coefficient": {
+        "denominator": 1,
+        "numerator": -54
+      },
+      "kernels": [
+        {
+          "arguments": [
+            [
+              -1,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              1,
+              0,
+              0
+            ]
+          ],
+          "degree": 3
+        },
+        {
+          "arguments": [
+            [
+              0,
+              -1,
+              -1
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ],
+          "degree": 3
+        },
+        {
+          "arguments": [
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              0,
+              1,
+              1
+            ],
+            [
+              1,
+              0,
+              -1
+            ]
+          ],
+          "degree": 4
+        }
+      ],
+      "omega_p_inverse_square_power": 0,
+      "origins": [
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": -54
+          },
+          "rank_insertions": 0,
+          "term": "Cov(U31^2,-U40)"
+        }
+      ],
+      "propagators": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          0,
+          -1
+        ],
+        [
+          1,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "coefficient": {
+        "denominator": 1,
+        "numerator": 90
+      },
+      "kernels": [
+        {
+          "arguments": [
+            [
+              -1,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              1,
+              0,
+              0
+            ]
+          ],
+          "degree": 3
+        },
+        {
+          "arguments": [
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              1,
+              0,
+              -1
+            ]
+          ],
+          "degree": 5
+        }
+      ],
+      "omega_p_inverse_square_power": 0,
+      "origins": [
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 90
+          },
+          "rank_insertions": 0,
+          "term": "2*U31*U51"
+        }
+      ],
+      "propagators": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          -1
+        ],
+        [
+          1,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "coefficient": {
+        "denominator": 1,
+        "numerator": 24
+      },
+      "kernels": [
+        {
+          "arguments": [
+            [
+              -1,
+              -1,
+              -1
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              1,
+              0,
+              0
+            ]
+          ],
+          "degree": 4
+        },
+        {
+          "arguments": [
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              1,
+              1,
+              1
+            ]
+          ],
+          "degree": 4
+        }
+      ],
+      "omega_p_inverse_square_power": 0,
+      "origins": [
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 24
+          },
+          "rank_insertions": 0,
+          "term": "U41^2"
+        }
+      ],
+      "propagators": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "coefficient": {
+        "denominator": 1,
+        "numerator": 24
+      },
+      "kernels": [
+        {
+          "arguments": [
+            [
+              -1,
+              -1,
+              1
+            ],
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              1,
+              0,
+              0
+            ]
+          ],
+          "degree": 4
+        },
+        {
+          "arguments": [
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              1,
+              -1
+            ]
+          ],
+          "degree": 4
+        }
+      ],
+      "omega_p_inverse_square_power": 0,
+      "origins": [
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 24
+          },
+          "rank_insertions": 0,
+          "term": "U41^2"
+        }
+      ],
+      "propagators": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          -1
+        ]
+      ]
+    },
+    {
+      "coefficient": {
+        "denominator": 1,
+        "numerator": 81
+      },
+      "kernels": [
+        {
+          "arguments": [
+            [
+              -1,
+              0,
+              -1
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0
+            ]
+          ],
+          "degree": 3
+        },
+        {
+          "arguments": [
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              1,
+              0,
+              1
+            ]
+          ],
+          "degree": 3
+        },
+        {
+          "arguments": [
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              1,
+              -1
+            ]
+          ],
+          "degree": 3
+        },
+        {
+          "arguments": [
+            [
+              0,
+              -1,
+              1
+            ],
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ],
+          "degree": 3
+        }
+      ],
+      "omega_p_inverse_square_power": 1,
+      "origins": [
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 81
+          },
+          "rank_insertions": 0,
+          "term": "Cov(U31^2,U30^2)"
+        },
+        {
+          "coefficient": {
+            "denominator": 2,
+            "numerator": -81
+          },
+          "rank_insertions": 1,
+          "term": "Cov(U31^2,U30^2)"
+        },
+        {
+          "coefficient": {
+            "denominator": 2,
+            "numerator": 81
+          },
+          "rank_insertions": 0,
+          "term": "Cov(U31^2,v*U31^2/2)"
+        }
+      ],
+      "propagators": [
+        [
+          0,
+          1,
+          -1
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "coefficient": {
+        "denominator": 1,
+        "numerator": 81
+      },
+      "kernels": [
+        {
+          "arguments": [
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              -1
+            ]
+          ],
+          "degree": 3
+        },
+        {
+          "arguments": [
+            [
+              -1,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              1,
+              0,
+              0
+            ]
+          ],
+          "degree": 3
+        },
+        {
+          "arguments": [
+            [
+              0,
+              -1,
+              -1
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ],
+          "degree": 3
+        },
+        {
+          "arguments": [
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              0,
+              0,
+              -1
+            ],
+            [
+              0,
+              1,
+              1
+            ]
+          ],
+          "degree": 3
+        }
+      ],
+      "omega_p_inverse_square_power": 1,
+      "origins": [
+        {
+          "coefficient": {
+            "denominator": 1,
+            "numerator": 81
+          },
+          "rank_insertions": 0,
+          "term": "Cov(U31^2,U30^2)"
+        },
+        {
+          "coefficient": {
+            "denominator": 2,
+            "numerator": -81
+          },
+          "rank_insertions": 1,
+          "term": "Cov(U31^2,U30^2)"
+        },
+        {
+          "coefficient": {
+            "denominator": 2,
+            "numerator": 81
+          },
+          "rank_insertions": 0,
+          "term": "Cov(U31^2,v*U31^2/2)"
+        }
+      ],
+      "propagators": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          0,
+          -1
+        ],
+        [
+          1,
+          0,
+          0
+        ]
+      ]
+    }
+  ],
+  "volume_scope": {
+    "external_momentum": "p=(1,0,0,0) in Z_L^4",
+    "lengths": "every integer L>=5",
+    "reason": "Every component source is m*p with |m|<=4, so modular conservation is equivalent to integer source zero when L>=5. L=4 has additional resonant source sectors and is governed by the separate exact certificate."
+  }
+}

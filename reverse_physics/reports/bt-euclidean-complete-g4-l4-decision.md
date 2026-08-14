@@ -138,12 +138,15 @@ is supporting only; exactness comes from the two arithmetic rails.
 
 ## Consequence and next calculation
 
-An all-volume \(M_4=0\) identity is no longer a viable route.  The correct
-next calculation is a general-\(L\) common-kernel formula for the positive
-bulk two-loop and negative single-rank two-loop sectors, retaining their
-cancellation before absolute values.  Its hard, one-soft, and all-soft regions
-must decide whether the \(L=4\) remainder is finite-volume only, logarithmic,
-or retains the previously certified \(N\omega_p\) power.
+An all-volume \(M_4=0\) identity is no longer a viable route.  The successor
+certificate
+`REVERSE_PHYSICS_BT_EUCLIDEAN_COMPLETE_G4_GENERAL_L_TWO_LOOP_V1`
+now supplies the general-\(L\) common-kernel formula for every \(L\geq5\).
+After fixed-\(p\) bulk propagators and rank-one covariances are put on one
+scale, all factorized power-sized tadpoles cancel and their remainder has an
+explicit logarithm-squared bound.  Fourteen unfactorized kernels still require
+a joint hard, one-soft, and all-soft estimate before the large-volume behavior
+can be decided.
 
 No large-volume sign or scaling theorem, whole-lattice power-survival result,
 nonperturbative annealed score bound, interacting \(H^{-1}\) moment, tightness,

@@ -236,6 +236,10 @@ bt_euclidean_complete_g4_l4_decision.py
                                        proves M4(4) is negative and nonzero,
                                        refuting an all-volume zero identity;
                                        general-L sign and scaling remain open
+bt_euclidean_complete_g4_general_l_two_loop.py
+                                       exact affine-flow atlas for every L>=5;
+                                       cancels power-sized factorized tadpoles
+                                       and isolates 14 unfactorized kernels
 bt_four_point_bubble_log_jet.py        first virtual coefficient: arbitrary-mass
                                        bubble logarithm and four-leg interference jet
 bt_triangle_box_log_jet.py             complete triangle and box logarithmic jets;
