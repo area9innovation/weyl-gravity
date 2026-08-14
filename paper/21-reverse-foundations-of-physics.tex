@@ -1440,6 +1440,48 @@ Gaussian fixture has full-score variance (2) and zero-fiber-score variance
 followed by all-order and nonperturbative control on the declared
 scale-setting branch, remains necessary.
 
+The constrained version of that proposed identity has now been classified.
+Certificate
+\cert{REVERSE_PHYSICS_BT_EUCLIDEAN_ZERO_FIBER_WARD_WEIGHT_OBSTRUCTION_V1}
+uses the exact disintegration
+$\nu(d\eta)=Z_\eta d\eta/Z$ and
+$q_\eta(t)=e^{-V_\eta(t)}/Z_\eta$.  If $\rho$ is the integrated mode density,
+$s_\eta=V_\eta'(0)$, and $H_\eta=V_\eta''(0)$, then
+
+\[
+ \rho''(0)=
+ \mathbb E_\nu[q_\eta(0)(s_\eta^2-H_\eta)].
+\]
+
+The background measure constrained to $t=0$ satisfies
+
+\[
+ \frac{d\mu_0}{d\nu}=\frac{q_\eta(0)}{\rho(0)},
+ \qquad
+ \mathbb E_\nu[s_\eta^2]
+ =\rho(0)\mathbb E_{\mu_0}
+   \left[\frac{s_\eta^2}{q_\eta(0)}\right].
+\]
+
+Thus every local constrained Ward insertion carries the wrong background
+weight for the annealed-center target.  This weight cannot be removed by a
+pointwise BT bound.  On the already certified fixed-$6^4$ runaway family,
+strict convexity, a unique mode below $-m$, and
+$q_m^{(u)}\{u\geq-m\}\leq2^{-m}$ imply
+
+\[
+                    q_m^{(u)}(0)\leq\frac{2^{-m}}m.
+\]
+
+Here $q_m^{(u)}$ is the density with respect to $du$; since $t=u\log2$,
+$q_{\eta_m}^{(t)}(0)=q_m^{(u)}(0)/\log2$.  Hence no positive
+background-uniform lower bound on $q_\eta(0)$ exists even
+inside the BT lattice.  This obstructs a purely local constrained-Ward
+transfer as formulated; it does not obstruct an annealed theorem, because
+the same runaway backgrounds may be exponentially rare under $\nu$.  The
+next viable estimate must retain their Gibbs weight and jointly control
+center displacement, score size, and inverse conditional density.
+
 \subsection{A finite BV contraction does not freeze the quantum theory}
 
 The energy-two free BV block provides another finite exact case.  The
@@ -1801,10 +1843,16 @@ spacing, increasing $L$ instead sends the lowest external momentum to zero
 without the same coupling tuning, so that conclusion does not transfer.
 The ordinary finite-lattice equation-of-motion Ward identity controls the
 sampled full score, not the zero-fiber score, and an exact shifted-Gaussian
-fixture obstructs any general transfer between them.  The next viable route
-is therefore a BT-specific projected Ward/RG equation for the conditional
-zero-fiber composite, followed by a genuinely nonperturbative multiscale
-estimate on the declared branch.
+fixture obstructs any general transfer between them.  Exact disintegration
+now sharpens the barrier: a constrained zero-fiber identity weights every
+background by its conditional density $q_\eta(0)$, whereas the target requires
+the inverse of that weight under the constrained measure.  On the actual BT
+runaway family $q_m^{(u)}(0)\leq2^{-m}/m$ (and the $t$ density differs only
+by the fixed factor $1/\log2$), so no pointwise uniform density lower
+bound can repair the transfer.  The next viable route is therefore a
+genuinely annealed BT multiscale estimate coupling center displacement to the
+Gibbs rarity of its background, with the RG normalization retained on the
+declared refinement branch.
 The logarithmic coefficient is not evidence that the resummed interacting
 moment diverges.  Only after the normalized marginal closes should the
 programme sum Fourier shells.  Another fixed-origin, pointwise,

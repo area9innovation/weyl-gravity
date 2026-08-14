@@ -23,6 +23,7 @@
     },
     "bt_annealed_center_after_width_status": "OPEN",
     "bt_annealed_center_second_moment_status": "OPEN",
+    "bt_annealed_inverse_density_status": "OPEN",
     "bt_annealed_recentered_fiber_status": "OPEN",
     "bt_center_score_bound_status": "OPEN",
     "bt_center_score_integrated_moment_status": "OPEN",
@@ -36,6 +37,7 @@
     "bt_centered_fiber_relative_domination_status": "OBSTRUCTED",
     "bt_conditional_escape_m2_tail_exponent": -439021411393052584794547814301,
     "bt_conditional_mass_escape_status": "PROVED",
+    "bt_constrained_ward_to_annealed_score_status": "OBSTRUCTED_AS_FORMULATED",
     "bt_correlated_spatial_remainder_fixture": {
       "denominator": 262144,
       "numerator": -456623975
@@ -87,6 +89,7 @@
     "bt_pointwise_action_weight_necessary_exponent": "AT_LEAST_ONE_HALF",
     "bt_pointwise_half_action_curvature_route_status": "OBSTRUCTED_AS_FORMULATED",
     "bt_pointwise_virial_constant_two_status": "POINTWISE_VIRIAL_CONSTANT_TWO_OBSTRUCTED",
+    "bt_q_zero_uniform_lower_bound_status": "OBSTRUCTED",
     "bt_residual_boundary_coordinate_status": "PROVED",
     "bt_residual_cycle_jacobian": {
       "denominator": 2,
@@ -138,6 +141,7 @@
     "bt_specific_zero_fiber_ward_status": "OPEN",
     "bt_uniform_raw_conditional_moment_status": "OBSTRUCTED",
     "bt_uniform_recentered_conditional_variance_status": "OPEN",
+    "bt_zero_fiber_change_of_measure_status": "PROVED",
     "cartesian_total": 576,
     "coded_h2_arbitrary_distribution_uniqueness": false,
     "coded_h2_causal_support": false,
@@ -446,6 +450,16 @@
       "result_id": "REVERSE_PHYSICS_BT_EUCLIDEAN_UNIFORM_CONVEXITY_OBSTRUCTION_V1",
       "sha256": "c6aeb2e6cbb7bd6066534304a76a977f9efec57b52d145bd9bfaae438e51f550"
     },
+    "bt_zero_fiber_ward_weight_obstruction": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL"
+      ],
+      "lifecycle": "CLASSIFIED",
+      "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_ZERO_FIBER_WARD_WEIGHT_OBSTRUCTION_V1.json",
+      "result_id": "REVERSE_PHYSICS_BT_EUCLIDEAN_ZERO_FIBER_WARD_WEIGHT_OBSTRUCTION_V1",
+      "sha256": "0d7cae4aa000cf6cf6ea8e75aa57472a4fcb72d95cd8d71811c96a7c8ab9b446"
+    },
     "coded_local_weak_wave_test_class": {
       "dependency_tags": [
         "LOCAL-ALGEBRAIC",
@@ -642,7 +656,7 @@
       "sha256": "3182339b6fc77d8652204cc115d87cd4afc4dea193cd48cf189f153cf59718d6"
     }
   },
-  "canonical_digest": "8f0a3b02245eba131ca16ac9cf5439a508a69932490727846cb94f56186bf73e",
+  "canonical_digest": "a1e29dd675ac18d046295895dc41e494f67e91ca19be3969aaf559cf8f68daba",
   "claim_flags": {
     "atlas_exhaustive": false,
     "axes_independent_proved": false,
@@ -890,15 +904,16 @@
         "bt_all_background_lowest_mode_curvature",
         "bt_annealed_center_score_reduction",
         "bt_cubic_score_log_obstruction",
-        "bt_score_rg_matching"
+        "bt_score_rg_matching",
+        "bt_zero_fiber_ward_weight_obstruction"
       ],
       "claim_id": "RF-13-BT-INTERACTING-RECONSTRUCTION-FRONTIER",
       "dependency_tags": [
         "LOCAL-ALGEBRAIC",
         "EUCLIDEAN-SPECTRAL"
       ],
-      "statement": "At lambda=0.4 on the 6^4 lattice, an exact two-point reflected density-kernel minor obstructs ordinary OS positivity. The affine virial theorem proves a volume-uniform actual Gibbs action-density bound and annealed half-action factor. Exact period-four data obstruct the global Schur route. The residual map identifies positive fields modulo scale with a Schr\u00f6dinger spectrahedral boundary and gives the exact normalized Gaussian-surface/tree-Jacobian pushforward. Its curvature and tree-Jacobian shortcuts are obstructed. An exact orthogonal-background family makes centered pointwise relative-action domination fail. On the subsequence eta_m=4m log(2) a, every global fiber minimizer lies below u=-m and the conditional probability of u>=-m is at most 2^-m, so the background-uniform raw conditional second moment is obstructed. On that same runaway family, however, K_m(2^u)>=115/4 proves a uniform recentered conditional-variance bound and E_qm[u]<-m/2: the obstruction is moving center rather than widening fiber. A plaquette absorption theorem proves for every background and L>=4 that the lowest axial curvature is at least (2/9)*N*omega_L^2 and conditional variance is at most 9/(2*N*omega_L^2). Strong convexity reduces the annealed center to one zero-fiber-score estimate. Its leading free orthogonal-background coefficient has residue 5/(16*pi^2) times log L, obstructing fixed-bare coefficientwise uniformity. On a fixed-physical-volume asymptotically free trajectory, however, g_L^2 log L tends to 8*pi^2/5 and the leading normalized score coefficient tends exactly to 1/2. This restores leading-log uniformity only on the tuned refinement branch. The exact ordinary equation-of-motion Ward identity controls the sampled full score, and a shifted-Gaussian fixture with full-score variance 2 but zero-fiber-score variance 100 obstructs its general transfer to the missing target. Fixed-spacing large volume, a BT-specific projected Ward identity, all-order resummation, and the nonperturbative Gibbs score remain open. Half-period translation proves the fully integrated marginal is even. The all-background width is closed; a nonperturbative center estimate and the actual interacting H^-1 moment remain open.",
-      "status": "EXACT_FINITE_OS_AND_METHOD_OBSTRUCTIONS_WITH_ALL_BACKGROUND_WIDTH_CENTER_SCORE_REDUCTION_AND_RG_MATCHED_LEADING_LOG"
+      "statement": "At lambda=0.4 on the 6^4 lattice, an exact two-point reflected density-kernel minor obstructs ordinary OS positivity. The affine virial theorem proves a volume-uniform actual Gibbs action-density bound and annealed half-action factor. Exact period-four data obstruct the global Schur route. The residual map identifies positive fields modulo scale with a Schr\u00f6dinger spectrahedral boundary and gives the exact normalized Gaussian-surface/tree-Jacobian pushforward. Its curvature and tree-Jacobian shortcuts are obstructed. An exact orthogonal-background family makes centered pointwise relative-action domination fail. On the subsequence eta_m=4m log(2) a, every global fiber minimizer lies below u=-m and the conditional probability of u>=-m is at most 2^-m, so the background-uniform raw conditional second moment is obstructed. On that same runaway family, however, K_m(2^u)>=115/4 proves a uniform recentered conditional-variance bound and E_qm[u]<-m/2: the obstruction is moving center rather than widening fiber. A plaquette absorption theorem proves for every background and L>=4 that the lowest axial curvature is at least (2/9)*N*omega_L^2 and conditional variance is at most 9/(2*N*omega_L^2). Strong convexity reduces the annealed center to one zero-fiber-score estimate. Its leading free orthogonal-background coefficient has residue 5/(16*pi^2) times log L, obstructing fixed-bare coefficientwise uniformity. On a fixed-physical-volume asymptotically free trajectory, however, g_L^2 log L tends to 8*pi^2/5 and the leading normalized score coefficient tends exactly to 1/2. This restores leading-log uniformity only on the tuned refinement branch. The exact ordinary equation-of-motion Ward identity controls the sampled full score, and a shifted-Gaussian fixture with full-score variance 2 but zero-fiber-score variance 100 obstructs its general transfer to the missing target. Exact disintegration further proves that constrained and integrated-marginal identities weight backgrounds by q_eta(0), while the target requires division by q_eta(0). On the actual BT runaway family the u-density obeys q_m^(u)(0)<=2^-m/m; the t-density differs only by the fixed factor 1/log(2), so no pointwise uniform lower bound can remove that weight. The annealed estimate may still succeed by exploiting the Gibbs rarity of those backgrounds. Fixed-spacing large volume, all-order resummation, and the nonperturbative Gibbs score remain open. Half-period translation proves the fully integrated marginal is even. The all-background width is closed; a nonperturbative center estimate and the actual interacting H^-1 moment remain open.",
+      "status": "EXACT_FINITE_OS_AND_METHOD_OBSTRUCTIONS_WITH_ALL_BACKGROUND_WIDTH_RG_MATCHED_LEADING_LOG_AND_WARD_WEIGHT_CLASSIFICATION"
     },
     {
       "authorities": [
@@ -1187,7 +1202,7 @@
       "source_sha256": "a1f9eaee9ab4099cfa41bd947b9d74801fa2fe783adfd2a00bbf7b0fb56d1229"
     },
     "path": "paper/21-reverse-foundations-of-physics.tex",
-    "sha256": "a0892f2a8fba86ed1792fe77a9dae4bc865dab54d75965cac48e41c47c25afd0"
+    "sha256": "57ca0767b60ef0c99765e9cd1089dcd44279c04699b7103050c24f4155154970"
   },
   "result_id": "PAPER21_REVERSE_FOUNDATIONS_INTRODUCTION_V1",
   "result_kind": "PROGRAMME_SYNTHESIS_AND_TYPED_CASE_STUDY_MAP",
