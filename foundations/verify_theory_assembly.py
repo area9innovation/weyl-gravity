@@ -18,6 +18,7 @@ CONTROL = ROOT / "foundations/standard-gr-observational-control-v1.json"
 CONTROL_SCHEMA = ROOT / "foundations/schema/standard-gr-observational-control-v1.schema.json"
 MODEL_ASSEMBLY = ROOT / "foundations/results/FOUNDATIONAL_GR_CASSINI_MODEL_ASSEMBLY_V1.json"
 MANNHEIM_MODEL_ASSEMBLY = ROOT / "foundations/results/FOUNDATIONAL_MANNHEIM_NGC3198_MODEL_ASSEMBLY_V1.json"
+MODEL_COMPARISON = ROOT / "foundations/results/FOUNDATIONAL_NGC3198_COMMON_FIT_COMPARISON_V1.json"
 REPORT = ROOT / "foundations/reports/theory-assembly-atlas-v1.md"
 SITE_JSON = ROOT / "foundations/site/assemblies.json"
 SITE_JS = ROOT / "foundations/site/assemblies.js"
@@ -88,6 +89,13 @@ def verify(*, value: dict[str, Any] | None = None) -> tuple[list[str], list[str]
     if mannheim_model.get("assembly_disposition", {}).get("status") != "BOUNDED_ASSEMBLY_PARTIAL_MIXED_COMPARISON" or mannheim_model.get("assembly_disposition", {}).get("complete_within_declared_scope") is not False or mannheim_model.get("assembly_disposition", {}).get("cross_dataset_random_error_gate_passed") is not False:
         errors.append("Mannheim mixed model-scoped disposition")
     checks.append("complete GR and mixed Mannheim model-scoped assembly projections")
+    comparison = load(MODEL_COMPARISON)
+    comparison_source = [{"path": "foundations/results/FOUNDATIONAL_NGC3198_COMMON_FIT_COMPARISON_V1.json", "sha256": hashlib.sha256(MODEL_COMPARISON.read_bytes()).hexdigest()}]
+    if result.get("model_comparisons") != [comparison] or result.get("model_comparison_sources") != comparison_source:
+        errors.append("common-protocol model comparison projection and source pin")
+    if comparison.get("ranking_by_AICc", [None])[0] != "GR_NFW_DARK_HALO" or comparison.get("claim_flags", {}).get("complete_theory_selected") is not False:
+        errors.append("common-protocol comparison scope")
+    checks.append("NGC 3198 common-protocol comparison projection")
     if digest(result) != result.get("canonical_digest") or result.get("source_atlas_digest") != atlas.get("canonical_digest"):
         errors.append("content digest or source-atlas pin")
     checks.append("content-addressed assembly and source atlas")

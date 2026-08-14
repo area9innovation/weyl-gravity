@@ -189,6 +189,21 @@ main { padding: 1.6rem max(4vw, 1.2rem) 6rem; }
 .mannheim-metrics .failed-metric { border-top: 5px solid #a8492f; background: #fff5f2; }
 .curve-panel { margin: 1rem 0; padding: .8rem; background: white; border: 1px solid var(--line); border-radius: .65rem; overflow-x: auto; }
 .curve-panel svg { display: block; min-width: 44rem; width: 100%; height: auto; }
+.fit-comparison-assembly { background: #f7f8fb; border-color: #8797ae; border-left-color: #496681; }
+.model-disposition.comparative { background: #315d7a; }
+.fit-curve { fill: none; stroke-width: 3.2; stroke-linecap: round; stroke-linejoin: round; }
+.fit-curve.baryons { stroke: #a8492f; }
+.fit-curve.nfw { stroke: #226b9a; }
+.fit-curve.mannheim { stroke: #26835f; }
+.fit-swatch { display: inline-block; width: 1.6rem; height: .22rem; margin-right: .1rem; }
+.fit-swatch.baryons { background: #a8492f; }
+.fit-swatch.nfw { background: #226b9a; }
+.fit-swatch.mannheim { background: #26835f; }
+.fit-table .fit-pass td:last-child { color: #176443; }
+.fit-table .fit-fail td:last-child { color: #9b3928; }
+.metric-reading { display: grid; grid-template-columns: repeat(3, 1fr); gap: .8rem; margin: 1rem 0; }
+.metric-reading article { padding: .85rem; border: 1px solid var(--line); background: white; border-radius: .6rem; }
+.metric-reading article p { margin: .35rem 0 0; }
 .curve-legend { display: flex; flex-wrap: wrap; gap: 1rem; color: var(--muted); font-size: .72rem; }
 .curve-legend span { display: inline-flex; gap: .35rem; align-items: center; }
 .curve-line { width: 1.5rem; border-top: 3px solid #a8492f; }
@@ -378,4 +393,5 @@ footer a { color: #f2c66d; }
 footer #digest { font: .72rem ui-monospace, monospace; overflow-wrap: anywhere; }
 @media (max-width: 900px) { .hero, .section-head, .profile-detail, .viability-controls, .portfolio-controls, .assembly-selector, .model-assembly-head, .model-scope, .model-comparison, .camp-profile > header, .camp-profile-grid, .guide-examples, .guide-group-heading { grid-template-columns: 1fr; gap: .6rem; } .guide-equation { grid-template-columns: 1fr; } .guide-equation > i { text-align: center; line-height: .7; } .rail-grid { grid-template-columns: 1fr; } .stats { grid-template-columns: repeat(3, 1fr); } .search { grid-template-columns: 1fr; gap: .3rem; } .ladder-step { grid-template-columns: 1fr; } .ladder-step:not(:last-child)::after { left: 2.7rem; } .ladder-columns { grid-template-columns: 1fr; } }
 @media (max-width: 560px) { .stats { grid-template-columns: repeat(2, 1fr); } .tabs { overflow-x: auto; } .tabs a { display: none; } .comparison { grid-template-columns: 1fr; } .assembly-subtabs { position: static; grid-template-columns: 1fr; } }
+@media (max-width: 900px) { .metric-reading { grid-template-columns: 1fr; gap: .6rem; } }
 @media print { .tabs, .controls, .inspector, .compare-tray, .assembly-subtabs { display: none !important; } .view, .assembly-panel { display: block !important; break-before: page; } }

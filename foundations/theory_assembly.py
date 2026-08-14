@@ -18,6 +18,7 @@ ROOT = Path(__file__).resolve().parents[1]
 GR_CONTROL = ROOT / "foundations/standard-gr-observational-control-v1.json"
 GR_CASSINI_ASSEMBLY = ROOT / "foundations/results/FOUNDATIONAL_GR_CASSINI_MODEL_ASSEMBLY_V1.json"
 MANNHEIM_NGC3198_ASSEMBLY = ROOT / "foundations/results/FOUNDATIONAL_MANNHEIM_NGC3198_MODEL_ASSEMBLY_V1.json"
+NGC3198_COMMON_FIT_COMPARISON = ROOT / "foundations/results/FOUNDATIONAL_NGC3198_COMMON_FIT_COMPARISON_V1.json"
 
 
 DIRECT = {"LOCAL_RESULT", "LITERATURE_RESULT"}
@@ -308,6 +309,7 @@ def build_assembly_assessment(dataset: dict[str, Any]) -> dict[str, Any]:
     calibration_control = json.loads(GR_CONTROL.read_text())
     gr_cassini = json.loads(GR_CASSINI_ASSEMBLY.read_text())
     mannheim_ngc3198 = json.loads(MANNHEIM_NGC3198_ASSEMBLY.read_text())
+    ngc3198_comparison = json.loads(NGC3198_COMMON_FIT_COMPARISON.read_text())
     value = {
         "schema_version": "foundational-theory-assembly-atlas-v1",
         "result_id": "FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1",
@@ -332,6 +334,11 @@ def build_assembly_assessment(dataset: dict[str, Any]) -> dict[str, Any]:
                 "sha256": hashlib.sha256(MANNHEIM_NGC3198_ASSEMBLY.read_bytes()).hexdigest(),
             },
         ],
+        "model_comparisons": [ngc3198_comparison],
+        "model_comparison_sources": [{
+            "path": "foundations/results/FOUNDATIONAL_NGC3198_COMMON_FIT_COMPARISON_V1.json",
+            "sha256": hashlib.sha256(NGC3198_COMMON_FIT_COMPARISON.read_bytes()).hexdigest(),
+        }],
         "calibration_controls": [calibration_control],
         "calibration_source": {
             "path": "foundations/standard-gr-observational-control-v1.json",
@@ -360,6 +367,7 @@ def build_assembly_assessment(dataset: dict[str, Any]) -> dict[str, Any]:
             "model_scoped_prediction_assembly_registered": True,
             "second_model_scoped_mannheim_assembly_registered": True,
             "mixed_empirical_result_preserved": True,
+            "common_protocol_model_comparison_registered": True,
             "bounded_prediction_chain_established": True,
             "bounded_empirical_agreement_assessed": True,
             "cross_cell_composability_established": False,
@@ -377,6 +385,7 @@ def build_assembly_assessment(dataset: dict[str, Any]) -> dict[str, Any]:
             "that the scoped Euclidean/Krein carrier non-identity forbids every conditional bridge",
             "that any prototype agrees with observations",
             "that the Mannheim NGC 3198 coarse endpoint reproduction or RMS gate overrules its failed SPARC random-error gate",
+            "that the NGC 3198 common-protocol ranking selects a complete theory, includes observational systematics, or generalizes beyond one galaxy",
             "that the external standard-GR control is selected from the cube or transfers empirical support to a prototype",
             "that the benchmark catalogue is a complete set of physical tests",
             "a complete theory, a new Lorentzian-causal result, or a quantum lifecycle promotion",

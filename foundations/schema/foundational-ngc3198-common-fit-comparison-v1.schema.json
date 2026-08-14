@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "result_id", "result_kind", "created", "dependency_tags", "protocol", "protocol_sha256", "input_hashes", "models", "ranking_by_AICc", "scoped_finding", "does_not_establish", "claim_flags", "human_report", "independent_checker", "canonical_digest"],
+  "properties": {
+    "schema_version": {"const": "foundational-ngc3198-common-fit-comparison-v1"},
+    "result_id": {"const": "FOUNDATIONAL_NGC3198_COMMON_FIT_COMPARISON_V1"},
+    "result_kind": {"const": "BOUNDED_SINGLE_GALAXY_COMMON_PROTOCOL_MODEL_COMPARISON"},
+    "created": {"type": "string", "format": "date"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "protocol": {"const": "foundations/data/ngc3198-common-fit-protocol-v1.json"},
+    "protocol_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "input_hashes": {"type": "object", "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "minProperties": 2},
+    "models": {
+      "type": "array", "minItems": 3, "maxItems": 3,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["model_id", "fitted_parameters", "parameter_count", "metrics", "random_error_gate", "parameter_boundary_hit", "predictions"],
+        "properties": {
+          "model_id": {"enum": ["NEWTONIAN_BARYONS_ONLY", "GR_NFW_DARK_HALO", "MANNHEIM_CONFORMAL_GRAVITY"]},
+          "fitted_parameters": {"type": "object", "required": ["q_star"], "properties": {"q_star": {"type": "number", "minimum": 0.1, "maximum": 3.0}, "V200_km_s": {"type": "number", "minimum": 20, "maximum": 500}, "concentration_c200": {"type": "number", "minimum": 1, "maximum": 40}}},
+          "parameter_count": {"enum": [1, 3]},
+          "metrics": {"type": "object", "required": ["point_count", "chi_squared", "degrees_of_freedom", "reduced_chi_squared", "unweighted_rms_residual_km_s", "maximum_absolute_residual_km_s", "AIC", "AICc", "BIC"], "properties": {"point_count": {"const": 39}, "chi_squared": {"type": "number", "minimum": 0}, "degrees_of_freedom": {"enum": [36, 38]}, "reduced_chi_squared": {"type": "number", "minimum": 0}}},
+          "random_error_gate": {"type": "object", "required": ["threshold_reduced_chi_squared", "passed"], "properties": {"threshold_reduced_chi_squared": {"const": 2.0}, "passed": {"type": "boolean"}}},
+          "parameter_boundary_hit": {"const": false},
+          "predictions": {"type": "array", "minItems": 39, "maxItems": 39}
+        }
+      }
+    },
+    "ranking_by_AICc": {"const": ["GR_NFW_DARK_HALO", "MANNHEIM_CONFORMAL_GRAVITY", "NEWTONIAN_BARYONS_ONLY"]},
+    "scoped_finding": {"type": "string", "minLength": 1},
+    "does_not_establish": {"type": "array", "minItems": 5, "items": {"type": "string", "minLength": 1}},
+    "claim_flags": {"const": {"common_observations_used": true, "common_baryonic_geometry_used": true, "independent_optimizer_agreement_required": true, "single_galaxy_only": true, "systematic_uncertainties_marginalized": false, "population_or_heldout_validation": false, "complete_theory_selected": false}},
+    "human_report": {"const": "foundations/reports/ngc3198-common-fit-comparison-v1.md"},
+    "independent_checker": {"const": "foundations/check_ngc3198_common_fit_comparison.py"},
+    "canonical_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

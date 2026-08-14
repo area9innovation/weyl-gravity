@@ -187,6 +187,9 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
         mannheim_disposition = model_by_id["FOUNDATIONAL_MANNHEIM_NGC3198_MODEL_ASSEMBLY_V1"].get("assembly_disposition", {})
         if mannheim_disposition.get("status") != "BOUNDED_ASSEMBLY_PARTIAL_MIXED_COMPARISON" or mannheim_disposition.get("formula_endpoint_coarsely_reproduced") is not True or mannheim_disposition.get("cross_dataset_coarse_shape_gate_passed") is not True or mannheim_disposition.get("cross_dataset_random_error_gate_passed") is not False or mannheim_disposition.get("empirically_supported_within_declared_scope") is not False:
             errors.append("Mannheim mixed bounded disposition")
+    comparisons = assemblies.get("model_comparisons", [])
+    if len(comparisons) != 1 or comparisons[0].get("result_id") != "FOUNDATIONAL_NGC3198_COMMON_FIT_COMPARISON_V1" or comparisons[0].get("ranking_by_AICc", [None])[0] != "GR_NFW_DARK_HALO" or comparisons[0].get("claim_flags", {}).get("complete_theory_selected") is not False:
+        errors.append("common-protocol model comparison closure")
 
     calculated_digest = digest(data)
     if calculated_digest != data.get("canonical_digest") or calculated_digest != result.get("independent_checker", {}).get("expected_digest"):
@@ -211,6 +214,9 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
             errors.append("interface token " + token)
     if "No stronger interpretation is licensed" in app:
         errors.append("legacy graph fallback")
+    for token in ("NGC 3198 head-to-head control", "Scoped winner: GR + NFW", "Why RMS and χ² disagree", "FOUNDATIONAL_NGC3198_COMMON_FIT_COMPARISON_V1"):
+        if token not in app:
+            errors.append("common-fit interface token " + token)
 
     status_counts = Counter(x.get("status") for x in cells)
     all_migrations = Counter(x.get("migration_status") for x in cells)

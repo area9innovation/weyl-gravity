@@ -362,6 +362,22 @@ python3 foundations/verify_mannheim_ngc3198_assembly.py
 python3 -m unittest foundations.tests.test_mannheim_ngc3198_assembly
 ```
 
+The follow-on [common-protocol comparison](reports/ngc3198-common-fit-comparison-v1.md)
+fits Newtonian baryons-only, GR plus an NFW halo, and Mannheim conformal
+gravity to the same 39 NGC 3198 velocities and analytic baryonic geometry.
+The independent C++ checker uses standard-library Bessel functions and a
+Nelder--Mead optimizer, distinct from the producer's quadrature and nested
+grid. GR+NFW is the only family passing the declared random-error gate and
+retains the best AICc after its extra parameters are penalized. This remains a
+one-galaxy, random-error-only control, not a complete-theory selection:
+
+```bash
+python3 foundations/build_ngc3198_common_fit_comparison.py --write
+python3 foundations/check_ngc3198_common_fit_comparison.py
+python3 foundations/verify_ngc3198_common_fit_comparison.py
+python3 -m unittest foundations.tests.test_ngc3198_common_fit_comparison
+```
+
 A separately labelled external standard-GR positive control supplies four
 primary-source comparison records across three benchmark families; it
 calibrates the display and is neither a cube-selected assembly nor evidence

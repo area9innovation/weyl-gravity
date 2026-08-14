@@ -36,6 +36,9 @@ class TheoryAssemblyTests(unittest.TestCase):
         self.assertFalse(mannheim["assembly_disposition"]["complete_within_declared_scope"])
         self.assertTrue(mannheim["assembly_disposition"]["formula_endpoint_coarsely_reproduced"])
         self.assertFalse(mannheim["assembly_disposition"]["cross_dataset_random_error_gate_passed"])
+        comparison = value["model_comparisons"][0]
+        self.assertEqual(comparison["ranking_by_AICc"][0], "GR_NFW_DARK_HALO")
+        self.assertFalse(comparison["claim_flags"]["complete_theory_selected"])
         self.assertTrue(all(rail["status"] not in {"BLOCKED", "FAILED"} for item in value["assemblies"] for rail in item["maturity_rails"]))
 
     def test_named_programme_lenses_are_explanatory_and_bounded(self):

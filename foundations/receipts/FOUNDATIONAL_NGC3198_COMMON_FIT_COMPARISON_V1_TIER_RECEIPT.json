@@ -1,0 +1,94 @@
+{
+  "schema_version": "science-forge-tier-receipt-v1",
+  "result_id": "FOUNDATIONAL_NGC3198_COMMON_FIT_COMPARISON_V1",
+  "created": "2026-08-14",
+  "dependency_tags": ["LOCAL-ALGEBRAIC"],
+  "scope": "A bounded one-galaxy comparison of Newtonian baryons-only, weak-field GR plus an NFW halo, and Mannheim conformal gravity using the same 39 NGC 3198 velocities, analytic thin-disk baryonic geometry, random-error objective, and explicit parameter penalty.",
+  "inputs": [
+    {"path": "foundations/data/ngc3198-common-fit-protocol-v1.json", "sha256": "670bba7e3fbda35af0a7566d05c9263da110f681de555bef9dbb44055cb43752"},
+    {"path": "foundations/data/mannheim-ngc3198-parameters-v1.json", "sha256": "4297b3bdf9c1bf1fff0a1d44a26941aacdb3d98bd3729b9134b8f187a924f6e5"},
+    {"path": "foundations/data/ngc3198-sparc-mass-model-v1.tsv", "sha256": "0c84615d0df5792dfbb0d7ee4f1ed71bffc180a7b8505e0a6614d6947a4f6315"}
+  ],
+  "remote_source_pins": [
+    {"source": "Navarro--Frenk--White arXiv source archive astro-ph/9611107", "sha256": "069d96adee9ce3ff4bc5b7d61d54bbce2d876655c8019af427d2e1e6cfc7b58c", "member": "dprof.tex", "equations": ["1", "2", "3"]},
+    {"source": "Mannheim--O'Brien arXiv source archive 1011.3495", "sha256": "e366db37bc99ce08c96609f751d9b0ffb779dd4ce1c0140a2e226c1aefc075c1"},
+    {"source": "official SPARC full table", "sha256": "9108994b12cc401b94a1768beca61c53ec354779385c9c9cc571049f3043244c"}
+  ],
+  "result": {
+    "path": "foundations/results/FOUNDATIONAL_NGC3198_COMMON_FIT_COMPARISON_V1.json",
+    "sha256": "e9c9ecd8e6778a98cf15754970ac2e8fa6c117edca630f3a89b30aea1a03eaeb",
+    "canonical_digest": "82974c6b7f17b8a2a4cc715013ca63d7a170d21aec7c74a1174d9a063b7592b4",
+    "ranking_by_AICc": ["GR_NFW_DARK_HALO", "MANNHEIM_CONFORMAL_GRAVITY", "NEWTONIAN_BARYONS_ONLY"],
+    "random_error_gate_passes": ["GR_NFW_DARK_HALO"]
+  },
+  "independent_rail": {
+    "producer": "Python binary64: direct Bessel-I series, Simpson Bessel-K quadrature, golden one-parameter fits, and an overlapping nested log-grid NFW fit",
+    "checker": "C++17 binary64: std::cyl_bessel_i/k, golden one-parameter fits, and dispersed-start Nelder--Mead NFW fits",
+    "checker_source_sha256": "b8589f4ecb26baf94533a0bc5a06737879796cff71c404c59159c2e726ec5c0e",
+    "parameter_relative_tolerance": 0.00005,
+    "chi_squared_absolute_tolerance": 0.000001,
+    "status": "PASS"
+  },
+  "test_tiers": [
+    {
+      "tier": 0,
+      "commands": [
+        "python3 -m py_compile foundations/build_ngc3198_common_fit_comparison.py foundations/check_ngc3198_common_fit_comparison.py foundations/verify_ngc3198_common_fit_comparison.py foundations/theory_assembly.py foundations/build_matrix_site_v2.py",
+        "node --check foundations/matrix_site_assets/app.js",
+        "git diff --check -- <scoped paths>"
+      ],
+      "elapsed_seconds": 0.3,
+      "status": "PASS_WITH_DECLARED_SUBSTITUTION",
+      "note": "Node.js is not installed. The generated JavaScript was instead loaded and exercised by headless Google Chrome at desktop and mobile viewport widths. JSON files parsed successfully."
+    },
+    {
+      "tier": 1,
+      "commands": [
+        "python3 foundations/check_ngc3198_common_fit_comparison.py",
+        "python3 foundations/verify_ngc3198_common_fit_comparison.py",
+        "python3 -m unittest foundations.tests.test_ngc3198_common_fit_comparison foundations.tests.test_theory_assembly foundations.tests.test_matrix_site"
+      ],
+      "elapsed_seconds": 45.0,
+      "status": "PASS"
+    },
+    {
+      "tier": 2,
+      "commands": [
+        "python3 foundations/build_matrix_site_v2.py --check",
+        "python3 foundations/verify_theory_assembly.py",
+        "python3 foundations/check_matrix_site_v2.py",
+        "python3 foundations/verify_matrix_site_v2.py",
+        "python3 paper/generate_21_reverse_foundations_appendices.py --check",
+        "python3 paper/generate_21_reverse_foundations_claim_map.py --check",
+        "python3 paper/verify_21_reverse_foundations_claim_map.py"
+      ],
+      "elapsed_seconds": 2.0,
+      "status": "PASS"
+    },
+    {
+      "tier": 3,
+      "status": "NOT_RUN",
+      "criterion": "No freeze, lifecycle promotion, shared core-algebra change, or release was requested. The affected certificate and generated-consumer chain was run instead."
+    }
+  ],
+  "visual_checks": [
+    {"artifact": "foundations/site", "viewports": ["1500x6000", "430x5200"], "status": "PASS", "note": "Headless Chromium rendered the assembly view; the three curves, metric table, scope warning, and responsive stacking were inspected."},
+    {"artifact": "paper/21-reverse-foundations-of-physics.pdf", "page": 39, "status": "PASS", "note": "The generated comparison table and its boundary text are readable without clipping."}
+  ],
+  "does_not_establish": [
+    "a likelihood including distance, inclination, beam-smearing, photometric, gas-profile, or other systematic uncertainties",
+    "identity with the full SPARC numerical baryonic mass model or the original Mannheim fitting dataset",
+    "a cosmological concentration--mass prior or posterior model probability",
+    "population-level or held-out performance",
+    "selection or validation of a complete physical theory"
+  ],
+  "claim_flags": {
+    "common_protocol_comparison_certified": true,
+    "independent_optimizer_agreement": true,
+    "website_comparison_generated": true,
+    "paper_comparison_generated": true,
+    "systematic_uncertainties_marginalized": false,
+    "population_validation": false,
+    "complete_theory_selected": false
+  }
+}

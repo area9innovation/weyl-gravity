@@ -14,7 +14,11 @@
     },
     {
       "path": "foundations/build_matrix_site_v2.py",
-      "sha256": "d93a4403dd2ffdca8a4a95dcf3015384cbbb9bbb807378a7710842f9757a7ab8"
+      "sha256": "95d457bce0e00900188d417a67704eb40b330b026946b52af7682a9746998124"
+    },
+    {
+      "path": "foundations/build_ngc3198_common_fit_comparison.py",
+      "sha256": "8ae36dd003527271038b67b6c51fed447e7f6b44ecd8a7ec9238ace107a869c2"
     },
     {
       "path": "foundations/check_gr_cassini_assembly.py",
@@ -25,8 +29,16 @@
       "sha256": "01127e181d290ffce015dffdc6d0964ee72d18957613945b04d71eccb42bb44d"
     },
     {
+      "path": "foundations/check_ngc3198_common_fit_comparison.py",
+      "sha256": "2d48f4c61497be56634fe68517c67653d8baa9f8b431d3c87e0dbb1451f67129"
+    },
+    {
       "path": "foundations/data/mannheim-ngc3198-parameters-v1.json",
       "sha256": "4297b3bdf9c1bf1fff0a1d44a26941aacdb3d98bd3729b9134b8f187a924f6e5"
+    },
+    {
+      "path": "foundations/data/ngc3198-common-fit-protocol-v1.json",
+      "sha256": "670bba7e3fbda35af0a7566d05c9263da110f681de555bef9dbb44055cb43752"
     },
     {
       "path": "foundations/data/ngc3198-sparc-mass-model-v1.tsv",
@@ -58,7 +70,7 @@
     },
     {
       "path": "foundations/matrix_site_assets/app.js",
-      "sha256": "cd820798f209ff4055097e5e8adbf48fdbf2d82767d834d043e965ace57a5ed2"
+      "sha256": "3dd5837adb32242e7fa3b73943ef53bf99dc46bcb3856b8dcb309b8026718526"
     },
     {
       "path": "foundations/matrix_site_assets/index.html",
@@ -66,11 +78,15 @@
     },
     {
       "path": "foundations/matrix_site_assets/styles.css",
-      "sha256": "2286e30cf7a401cbcc9a7ce9418f497f4679663ea449a983455da71e1006b122"
+      "sha256": "d4160c165d51f2de1e1ce4ddb5565bdb4c4061290e32c679f9162c7586903092"
     },
     {
       "path": "foundations/matrix_site_v2_assets/app-v2.js",
       "sha256": "07bf0d4ddbe5c187ac083526680831133f83a842e9fdcbb4c78a443d1590d426"
+    },
+    {
+      "path": "foundations/ngc3198_common_fit_checker.cpp",
+      "sha256": "b8589f4ecb26baf94533a0bc5a06737879796cff71c404c59159c2e726ec5c0e"
     },
     {
       "path": "foundations/reports/bt-corner-born-interface.md",
@@ -167,6 +183,10 @@
     {
       "path": "foundations/reports/mannheim-ngc3198-model-assembly-v1.md",
       "sha256": "2d4187e5b151b8c03dccb0be226dfda65a69128b65146be860e45c0734dd7052"
+    },
+    {
+      "path": "foundations/reports/ngc3198-common-fit-comparison-v1.md",
+      "sha256": "00d453ea8adf146e04a33751bdbf0d7387d9dfae492490f23103d07724893842"
     },
     {
       "path": "foundations/reports/normal-hyperbolic-factor-foundations.md",
@@ -325,6 +345,10 @@
       "sha256": "d4e7b8774f6593136b512453108a2d39396cd91969fdfc73681ee14d936e0154"
     },
     {
+      "path": "foundations/results/FOUNDATIONAL_NGC3198_COMMON_FIT_COMPARISON_V1.json",
+      "sha256": "e9c9ecd8e6778a98cf15754970ac2e8fa6c117edca630f3a89b30aea1a03eaeb"
+    },
+    {
       "path": "foundations/results/FOUNDATIONAL_NORMAL_HYPERBOLIC_FACTOR_ATLAS_V1.json",
       "sha256": "40836e986d2ba7b957cc51298c1bd724ace32ef59f846a7abc63b8980143a6c4"
     },
@@ -345,6 +369,10 @@
       "sha256": "0a79382d7aa2db13396fb748721134ae749f413d3f4af748b5180e9d1b1684fc"
     },
     {
+      "path": "foundations/schema/foundational-ngc3198-common-fit-comparison-v1.schema.json",
+      "sha256": "e61eb2a0033be9af0f9a2819922701b469a0708b14594f0261c1cb20c3ccd938"
+    },
+    {
       "path": "foundations/schema/standard-gr-observational-control-v1.schema.json",
       "sha256": "f70cfa44fbd22ce76b12217291924fc35caf1fd20bfe73e86ba014a122f8bba3"
     },
@@ -354,7 +382,7 @@
     },
     {
       "path": "foundations/theory_assembly.py",
-      "sha256": "827d8efa69bf906ef42b3c84fab5251609686403b61a6c6a682892500ea850ec"
+      "sha256": "1a7df0fc0ef255f6d77d71f94caa657fb5ff4ca938a3d27bb5eddac55c8bdde8"
     },
     {
       "path": "foundations/theory_viability.py",
@@ -367,23 +395,27 @@
     {
       "path": "foundations/verify_mannheim_ngc3198_assembly.py",
       "sha256": "a2ed0ae2137f25bb0f72a9937514c7196253e7c413d3c8930b2c389318c1dfaa"
+    },
+    {
+      "path": "foundations/verify_ngc3198_common_fit_comparison.py",
+      "sha256": "31812f1098d74c99a5c50e9480617ee0bd4ec3b3eac89bad30dc9dae5cf7980e"
     }
   ],
   "outputs": [
     {
       "path": "foundations/site/app.js",
-      "sha256": "cd820798f209ff4055097e5e8adbf48fdbf2d82767d834d043e965ace57a5ed2",
-      "bytes": 90493
+      "sha256": "3dd5837adb32242e7fa3b73943ef53bf99dc46bcb3856b8dcb309b8026718526",
+      "bytes": 96029
     },
     {
       "path": "foundations/site/assemblies.js",
-      "sha256": "c16b98f14a0adc4623bc8c6b2cb220a17784fb40f231e036b9d0baf053b82279",
-      "bytes": 245607
+      "sha256": "cd0ee02c421c29f736da8922857c390e76c0ecdc11b819ff0086977e82b91333",
+      "bytes": 286998
     },
     {
       "path": "foundations/site/assemblies.json",
-      "sha256": "5ff1b8fec12baf9d72758dd18eb04e695e9efa4444a722e5d008abea26d6b4b3",
-      "bytes": 245576
+      "sha256": "0bd9f6adf1907cd25928a479e12e95e6c994659aa0100cf4b5363a86d5005e7b",
+      "bytes": 286967
     },
     {
       "path": "foundations/site/data.js",
@@ -409,6 +441,11 @@
       "path": "foundations/site/sources/foundations/data/mannheim-ngc3198-parameters-v1.json",
       "sha256": "4297b3bdf9c1bf1fff0a1d44a26941aacdb3d98bd3729b9134b8f187a924f6e5",
       "bytes": 3542
+    },
+    {
+      "path": "foundations/site/sources/foundations/data/ngc3198-common-fit-protocol-v1.json",
+      "sha256": "670bba7e3fbda35af0a7566d05c9263da110f681de555bef9dbb44055cb43752",
+      "bytes": 4644
     },
     {
       "path": "foundations/site/sources/foundations/data/ngc3198-sparc-mass-model-v1.tsv",
@@ -444,6 +481,11 @@
       "path": "foundations/site/sources/foundations/mannheim_ngc3198_numeric_checker.cpp",
       "sha256": "9a5211e29b4da8491050a873470d750c5bbe5ab3d0abadcbd78557c31fa1356a",
       "bytes": 4024
+    },
+    {
+      "path": "foundations/site/sources/foundations/ngc3198_common_fit_checker.cpp",
+      "sha256": "b8589f4ecb26baf94533a0bc5a06737879796cff71c404c59159c2e726ec5c0e",
+      "bytes": 7844
     },
     {
       "path": "foundations/site/sources/foundations/reports/bt-corner-born-interface.md",
@@ -564,6 +606,11 @@
       "path": "foundations/site/sources/foundations/reports/mannheim-ngc3198-model-assembly-v1.md",
       "sha256": "2d4187e5b151b8c03dccb0be226dfda65a69128b65146be860e45c0734dd7052",
       "bytes": 5224
+    },
+    {
+      "path": "foundations/site/sources/foundations/reports/ngc3198-common-fit-comparison-v1.md",
+      "sha256": "00d453ea8adf146e04a33751bdbf0d7387d9dfae492490f23103d07724893842",
+      "bytes": 2318
     },
     {
       "path": "foundations/site/sources/foundations/reports/normal-hyperbolic-factor-foundations.md",
@@ -761,6 +808,11 @@
       "bytes": 35202
     },
     {
+      "path": "foundations/site/sources/foundations/results/FOUNDATIONAL_NGC3198_COMMON_FIT_COMPARISON_V1.json",
+      "sha256": "e9c9ecd8e6778a98cf15754970ac2e8fa6c117edca630f3a89b30aea1a03eaeb",
+      "bytes": 36719
+    },
+    {
       "path": "foundations/site/sources/foundations/results/FOUNDATIONAL_NORMAL_HYPERBOLIC_FACTOR_ATLAS_V1.json",
       "sha256": "40836e986d2ba7b957cc51298c1bd724ace32ef59f846a7abc63b8980143a6c4",
       "bytes": 14943
@@ -786,9 +838,14 @@
       "bytes": 8236
     },
     {
+      "path": "foundations/site/sources/foundations/schema/foundational-ngc3198-common-fit-comparison-v1.schema.json",
+      "sha256": "e61eb2a0033be9af0f9a2819922701b469a0708b14594f0261c1cb20c3ccd938",
+      "bytes": 3432
+    },
+    {
       "path": "foundations/site/styles.css",
-      "sha256": "2286e30cf7a401cbcc9a7ce9418f497f4679663ea449a983455da71e1006b122",
-      "bytes": 36912
+      "sha256": "d4160c165d51f2de1e1ce4ddb5565bdb4c4061290e32c679f9162c7586903092",
+      "bytes": 37971
     },
     {
       "path": "foundations/site/viability.js",

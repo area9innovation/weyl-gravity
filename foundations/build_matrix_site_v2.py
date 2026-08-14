@@ -37,6 +37,11 @@ MANNHEIM_NGC3198_SCHEMA = FOUNDATIONS / "schema/foundational-mannheim-ngc3198-mo
 MANNHEIM_NGC3198_PARAMETERS = FOUNDATIONS / "data/mannheim-ngc3198-parameters-v1.json"
 MANNHEIM_NGC3198_SPARC = FOUNDATIONS / "data/ngc3198-sparc-mass-model-v1.tsv"
 MANNHEIM_NGC3198_CPP = FOUNDATIONS / "mannheim_ngc3198_numeric_checker.cpp"
+NGC3198_COMMON_FIT_RESULT = FOUNDATIONS / "results/FOUNDATIONAL_NGC3198_COMMON_FIT_COMPARISON_V1.json"
+NGC3198_COMMON_FIT_REPORT = FOUNDATIONS / "reports/ngc3198-common-fit-comparison-v1.md"
+NGC3198_COMMON_FIT_SCHEMA = FOUNDATIONS / "schema/foundational-ngc3198-common-fit-comparison-v1.schema.json"
+NGC3198_COMMON_FIT_PROTOCOL = FOUNDATIONS / "data/ngc3198-common-fit-protocol-v1.json"
+NGC3198_COMMON_FIT_CPP = FOUNDATIONS / "ngc3198_common_fit_checker.cpp"
 CUBE = FOUNDATIONS / "results/FOUNDATIONAL_INTERSECTION_CUBE_V10.json"
 PREVIOUS_CUBES = [
     FOUNDATIONS / "results/FOUNDATIONAL_INTERSECTION_CUBE_V4.json",
@@ -420,6 +425,7 @@ def render_assembly_report(assessment: dict[str, Any]) -> str:
     )
     model_assembly = next(item for item in assessment["model_scoped_assemblies"] if item["result_id"] == "FOUNDATIONAL_GR_CASSINI_MODEL_ASSEMBLY_V1")
     mannheim_assembly = next(item for item in assessment["model_scoped_assemblies"] if item["result_id"] == "FOUNDATIONAL_MANNHEIM_NGC3198_MODEL_ASSEMBLY_V1")
+    common_fit = assessment["model_comparisons"][0]
     lines = [
         "# Candidate theory assembly atlas v1",
         "",
@@ -470,6 +476,15 @@ def render_assembly_report(assessment: dict[str, Any]) -> str:
         "The reduced chi-squared using SPARC random errors alone is " + format(mannheim_assembly["empirical_comparison_rail"]["reduced_chi_squared_no_refit"], ".3f") + ", which fails the declared gate of 2.",
         "No parameter is refitted, and SPARC is a later non-identical data reduction, so the",
         "mixed disposition remains partial and does not establish empirical support.",
+        "",
+        "## Common-protocol NGC 3198 control",
+        "",
+        "`FOUNDATIONAL_NGC3198_COMMON_FIT_COMPARISON_V1` fits Newtonian baryons-only,",
+        "GR plus NFW, and Mannheim to the same 39 velocities and analytic baryonic geometry.",
+        "The AICc order is " + " > ".join(common_fit["ranking_by_AICc"]) + ". GR plus NFW is the only family",
+        "passing the declared reduced-chi-squared gate. Mannheim nevertheless has the lower",
+        "unweighted RMS, so the explorer displays both metrics rather than collapsing them.",
+        "This one-galaxy random-error-only ranking is not a complete-theory selection.",
         "",
         "## Independent maturity rails",
         "",
@@ -556,11 +571,12 @@ def generated() -> dict[Path, bytes]:
         FOUNDATIONS / "reports/full-surface-gap-audit.md",
         GR_CASSINI_REPORT,
         MANNHEIM_NGC3198_REPORT,
+        NGC3198_COMMON_FIT_REPORT,
     ]
-    bundled_sources = sorted(set([CUBE, *PREVIOUS_CUBES, FULL_SURFACE_AUDIT, CORNER_BORN_INTERFACE, GROUND_STATE_DYNAMICS_INTERFACE, BT_EUCLIDEAN_IMPORT, GR_CASSINI_RESULT, GR_CASSINI_SCHEMA, MANNHEIM_NGC3198_RESULT, MANNHEIM_NGC3198_SCHEMA, MANNHEIM_NGC3198_PARAMETERS, MANNHEIM_NGC3198_SPARC, MANNHEIM_NGC3198_CPP, AUDIT, LADDER, *LEDGERS, *local_evidence_paths, *local_report_paths, *reports]))
+    bundled_sources = sorted(set([CUBE, *PREVIOUS_CUBES, FULL_SURFACE_AUDIT, CORNER_BORN_INTERFACE, GROUND_STATE_DYNAMICS_INTERFACE, BT_EUCLIDEAN_IMPORT, GR_CASSINI_RESULT, GR_CASSINI_SCHEMA, MANNHEIM_NGC3198_RESULT, MANNHEIM_NGC3198_SCHEMA, MANNHEIM_NGC3198_PARAMETERS, MANNHEIM_NGC3198_SPARC, MANNHEIM_NGC3198_CPP, NGC3198_COMMON_FIT_RESULT, NGC3198_COMMON_FIT_SCHEMA, NGC3198_COMMON_FIT_PROTOCOL, NGC3198_COMMON_FIT_CPP, AUDIT, LADDER, *LEDGERS, *local_evidence_paths, *local_report_paths, *reports]))
     for source in bundled_sources:
         outputs[SITE / "sources" / source.relative_to(ROOT)] = source.read_bytes()
-    input_paths = sorted(set([Path(__file__).resolve(), FOUNDATIONS / "theory_viability.py", FOUNDATIONS / "theory_assembly.py", FOUNDATIONS / "build_gr_cassini_assembly.py", FOUNDATIONS / "check_gr_cassini_assembly.py", FOUNDATIONS / "verify_gr_cassini_assembly.py", FOUNDATIONS / "build_mannheim_ngc3198_assembly.py", FOUNDATIONS / "check_mannheim_ngc3198_assembly.py", FOUNDATIONS / "verify_mannheim_ngc3198_assembly.py", FOUNDATIONS / "standard-gr-observational-control-v1.json", FOUNDATIONS / "schema/standard-gr-observational-control-v1.schema.json", *bundled_sources, ASSETS / "index.html", ASSETS / "styles.css", ASSETS / "app.js", V2_ASSETS / "app-v2.js"]))
+    input_paths = sorted(set([Path(__file__).resolve(), FOUNDATIONS / "theory_viability.py", FOUNDATIONS / "theory_assembly.py", FOUNDATIONS / "build_gr_cassini_assembly.py", FOUNDATIONS / "check_gr_cassini_assembly.py", FOUNDATIONS / "verify_gr_cassini_assembly.py", FOUNDATIONS / "build_mannheim_ngc3198_assembly.py", FOUNDATIONS / "check_mannheim_ngc3198_assembly.py", FOUNDATIONS / "verify_mannheim_ngc3198_assembly.py", FOUNDATIONS / "build_ngc3198_common_fit_comparison.py", FOUNDATIONS / "check_ngc3198_common_fit_comparison.py", FOUNDATIONS / "verify_ngc3198_common_fit_comparison.py", FOUNDATIONS / "standard-gr-observational-control-v1.json", FOUNDATIONS / "schema/standard-gr-observational-control-v1.schema.json", *bundled_sources, ASSETS / "index.html", ASSETS / "styles.css", ASSETS / "app.js", V2_ASSETS / "app-v2.js"]))
     manifest = {
         "schema_version": "foundational-matrix-explorer-manifest-v2",
         "created": CREATED,

@@ -1,0 +1,90 @@
+{
+  "schema_version": "ngc3198-common-fit-protocol-v1",
+  "created": "2026-08-14",
+  "observations": {
+    "source": "foundations/data/ngc3198-sparc-mass-model-v1.tsv",
+    "full_official_source_sha256": "9108994b12cc401b94a1768beca61c53ec354779385c9c9cc571049f3043244c",
+    "radius_rule": "Multiply SPARC radii by 14.1/13.8 and retain rescaled radii at or below 38.6 kpc.",
+    "velocity_rule": "Use Vobs without rescaling.",
+    "uncertainty_rule": "Use the tabulated SPARC e_Vobs random errors as independent Gaussian standard deviations.",
+    "selected_points": 39
+  },
+  "shared_baryonic_input": {
+    "source": "foundations/data/mannheim-ngc3198-parameters-v1.json",
+    "stellar_geometry": "Infinitesimally thin exponential disk with published scale length 4.0 kpc and published fitted stellar disk mass 3.644e10 solar masses at unit scale.",
+    "gas_geometry": "Infinitesimally thin exponential disk with scale length four times the stellar scale and 1.4 times the published HI mass.",
+    "stellar_scale_parameter": "q_star multiplies the published stellar disk mass and every stellar term; gas terms remain fixed.",
+    "boundary": "This common analytic geometry makes the three model families comparable to one another, but it is not the SPARC numerical 3.6-micron baryonic mass model and is not identical to the original heterogeneous blue-band fitting dataset."
+  },
+  "models": [
+    {
+      "id": "NEWTONIAN_BARYONS_ONLY",
+      "parameters": ["q_star"],
+      "prediction": "v2=q_star*v2_stellar_Newtonian+v2_gas_Newtonian"
+    },
+    {
+      "id": "GR_NFW_DARK_HALO",
+      "parameters": ["q_star", "V200_km_s", "concentration_c200"],
+      "prediction": "Newtonian baryons plus the NFW circular-speed formula with r200=100*V200/H0 kpc."
+    },
+    {
+      "id": "MANNHEIM_CONFORMAL_GRAVITY",
+      "parameters": ["q_star"],
+      "prediction": "Published Mannheim--O'Brien stellar/gas Newtonian and linear disk terms plus fixed gamma0 and kappa terms."
+    }
+  ],
+  "parameter_bounds": {
+    "q_star": ["0.1", "3.0"],
+    "V200_km_s": ["20.0", "500.0"],
+    "concentration_c200": ["1.0", "40.0"]
+  },
+  "fixed_constants": {
+    "H0_km_s_Mpc": "70.0",
+    "distance_mpc": "14.1"
+  },
+  "fit_objective": "Minimize chi-squared=sum(((v_model-v_obs)/e_Vobs)^2) over the declared closed parameter box.",
+  "reported_metrics": [
+    "unweighted RMS residual",
+    "maximum absolute residual",
+    "chi-squared",
+    "degrees of freedom N-k",
+    "reduced chi-squared",
+    "AIC",
+    "AICc",
+    "BIC"
+  ],
+  "primary_sources": [
+    {
+      "citation": "J. F. Navarro, C. S. Frenk, and S. D. M. White, A Universal Density Profile from Hierarchical Clustering, Astrophys. J. 490 (1997) 493",
+      "arxiv": "https://arxiv.org/abs/astro-ph/9611107",
+      "source_archive": "https://export.arxiv.org/e-print/astro-ph/9611107",
+      "source_archive_sha256": "069d96adee9ce3ff4bc5b7d61d54bbce2d876655c8019af427d2e1e6cfc7b58c",
+      "source_member": "dprof.tex",
+      "equations": ["(1)", "(2)", "(3)"],
+      "retrieved": "2026-08-14"
+    },
+    {
+      "citation": "F. Lelli, S. S. McGaugh, and J. M. Schombert, SPARC: Mass Models for 175 Disk Galaxies with Spitzer Photometry and Accurate Rotation Curves, Astron. J. 152 (2016) 157",
+      "url": "https://astroweb.case.edu/SPARC/",
+      "role": "observed rotation curve, random velocity errors, and the distinction between observed-profile SPARC components and the common analytic geometry"
+    },
+    {
+      "citation": "P. D. Mannheim and J. G. O'Brien, Fitting galactic rotation curves with conformal gravity and a global quadratic potential, Phys. Rev. D 85 (2012) 124020",
+      "arxiv": "https://arxiv.org/abs/1011.3495",
+      "source_archive_sha256": "e366db37bc99ce08c96609f751d9b0ffb779dd4ce1c0140a2e226c1aefc075c1",
+      "role": "common exponential baryonic geometry and conformal-gravity prediction"
+    }
+  ],
+  "comparison_gates": {
+    "random_error_reduced_chi2": "2.0",
+    "optimizer_parameter_relative_agreement": "5e-5",
+    "optimizer_chi2_absolute_agreement": "1e-6"
+  },
+  "does_not_establish": [
+    "a likelihood with distance, inclination, beam-smearing, stellar-population, gas-profile, or other systematic uncertainties",
+    "identity of the analytic baryonic geometry with the SPARC numerical mass components or the original Mannheim fitting data",
+    "a cosmological concentration--mass prior or a posterior probability for an NFW halo",
+    "population-level performance, held-out prediction, or model selection beyond NGC 3198",
+    "that the best score in this bounded protocol validates a complete theory or refutes another theory"
+  ]
+}

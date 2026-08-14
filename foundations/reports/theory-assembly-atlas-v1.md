@@ -48,6 +48,15 @@ The reduced chi-squared using SPARC random errors alone is 5.592, which fails th
 No parameter is refitted, and SPARC is a later non-identical data reduction, so the
 mixed disposition remains partial and does not establish empirical support.
 
+## Common-protocol NGC 3198 control
+
+`FOUNDATIONAL_NGC3198_COMMON_FIT_COMPARISON_V1` fits Newtonian baryons-only,
+GR plus NFW, and Mannheim to the same 39 velocities and analytic baryonic geometry.
+The AICc order is GR_NFW_DARK_HALO > MANNHEIM_CONFORMAL_GRAVITY > NEWTONIAN_BARYONS_ONLY. GR plus NFW is the only family
+passing the declared reduced-chi-squared gate. Mannheim nevertheless has the lower
+unweighted RMS, so the explorer displays both metrics rather than collapsing them.
+This one-galaxy random-error-only ranking is not a complete-theory selection.
+
 ## Independent maturity rails
 
 Every prototype is displayed against seven separately reported rails: obligation coverage,
@@ -94,6 +103,7 @@ Each selected cell links back to the exact matrix coordinate.
 - This does not establish that the scoped Euclidean/Krein carrier non-identity forbids every conditional bridge.
 - This does not establish that any prototype agrees with observations.
 - This does not establish that the Mannheim NGC 3198 coarse endpoint reproduction or RMS gate overrules its failed SPARC random-error gate.
+- This does not establish that the NGC 3198 common-protocol ranking selects a complete theory, includes observational systematics, or generalizes beyond one galaxy.
 - This does not establish that the external standard-GR control is selected from the cube or transfers empirical support to a prototype.
 - This does not establish that the benchmark catalogue is a complete set of physical tests.
 - This does not establish a complete theory, a new Lorentzian-causal result, or a quantum lifecycle promotion.

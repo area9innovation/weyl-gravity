@@ -5287,6 +5287,1069 @@ window.THEORY_ASSEMBLY_DATA = {
       "sha256": "d4e7b8774f6593136b512453108a2d39396cd91969fdfc73681ee14d936e0154"
     }
   ],
+  "model_comparisons": [
+    {
+      "schema_version": "foundational-ngc3198-common-fit-comparison-v1",
+      "result_id": "FOUNDATIONAL_NGC3198_COMMON_FIT_COMPARISON_V1",
+      "result_kind": "BOUNDED_SINGLE_GALAXY_COMMON_PROTOCOL_MODEL_COMPARISON",
+      "created": "2026-08-14",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC"
+      ],
+      "protocol": "foundations/data/ngc3198-common-fit-protocol-v1.json",
+      "protocol_sha256": "670bba7e3fbda35af0a7566d05c9263da110f681de555bef9dbb44055cb43752",
+      "input_hashes": {
+        "mannheim_parameters": "4297b3bdf9c1bf1fff0a1d44a26941aacdb3d98bd3729b9134b8f187a924f6e5",
+        "sparc_extract": "0c84615d0df5792dfbb0d7ee4f1ed71bffc180a7b8505e0a6614d6947a4f6315"
+      },
+      "models": [
+        {
+          "model_id": "NEWTONIAN_BARYONS_ONLY",
+          "fitted_parameters": {
+            "q_star": 1.6321223695494784
+          },
+          "parameter_count": 1,
+          "metrics": {
+            "point_count": 39,
+            "chi_squared": 4891.449347513035,
+            "degrees_of_freedom": 38,
+            "reduced_chi_squared": 128.72235125034302,
+            "unweighted_rms_residual_km_s": 23.896205433040972,
+            "maximum_absolute_residual_km_s": 53.21867393486717,
+            "AIC": 4893.449347513035,
+            "AICc": 4893.557455621143,
+            "BIC": 4895.112909159165
+          },
+          "random_error_gate": {
+            "threshold_reduced_chi_squared": 2.0,
+            "passed": false
+          },
+          "parameter_boundary_hit": false,
+          "predictions": [
+            {
+              "radius_kpc": 0.32695652173913037,
+              "observed_km_s": 24.4,
+              "error_km_s": 35.9,
+              "predicted_km_s": 24.635059275766015,
+              "residual_km_s": 0.23505927576601593,
+              "standardized_residual": 0.006547612138329135
+            },
+            {
+              "radius_kpc": 0.6539130434782607,
+              "observed_km_s": 43.3,
+              "error_km_s": 16.3,
+              "predicted_km_s": 42.90247218246211,
+              "residual_km_s": -0.3975278175378847,
+              "standardized_residual": -0.0243882096649009
+            },
+            {
+              "radius_kpc": 0.9808695652173912,
+              "observed_km_s": 45.5,
+              "error_km_s": 16.1,
+              "predicted_km_s": 58.18090411751911,
+              "residual_km_s": 12.680904117519113,
+              "standardized_residual": 0.7876337961191995
+            },
+            {
+              "radius_kpc": 1.3078260869565215,
+              "observed_km_s": 58.5,
+              "error_km_s": 15.4,
+              "predicted_km_s": 71.33318336665288,
+              "residual_km_s": 12.833183366652875,
+              "standardized_residual": 0.8333235952371997
+            },
+            {
+              "radius_kpc": 1.645,
+              "observed_km_s": 68.8,
+              "error_km_s": 7.61,
+              "predicted_km_s": 83.14647565762453,
+              "residual_km_s": 14.346475657624538,
+              "standardized_residual": 1.8852136212384412
+            },
+            {
+              "radius_kpc": 1.9719565217391302,
+              "observed_km_s": 76.9,
+              "error_km_s": 10.3,
+              "predicted_km_s": 93.20015897323863,
+              "residual_km_s": 16.300158973238624,
+              "standardized_residual": 1.582539706139672
+            },
+            {
+              "radius_kpc": 2.2886956521739132,
+              "observed_km_s": 82.0,
+              "error_km_s": 8.09,
+              "predicted_km_s": 101.81897470219266,
+              "residual_km_s": 19.818974702192662,
+              "standardized_residual": 2.4498114588618867
+            },
+            {
+              "radius_kpc": 2.625869565217391,
+              "observed_km_s": 86.9,
+              "error_km_s": 7.6,
+              "predicted_km_s": 109.9422032627559,
+              "residual_km_s": 23.04220326275589,
+              "standardized_residual": 3.0318688503626174
+            },
+            {
+              "radius_kpc": 2.952826086956522,
+              "observed_km_s": 97.6,
+              "error_km_s": 3.03,
+              "predicted_km_s": 116.90904797897753,
+              "residual_km_s": 19.30904797897753,
+              "standardized_residual": 6.3726230953721235
+            },
+            {
+              "radius_kpc": 3.2797826086956516,
+              "observed_km_s": 100.0,
+              "error_km_s": 5.31,
+              "predicted_km_s": 123.08205486043,
+              "residual_km_s": 23.082054860430006,
+              "standardized_residual": 4.346902986898306
+            },
+            {
+              "radius_kpc": 3.61695652173913,
+              "observed_km_s": 107.0,
+              "error_km_s": 7.51,
+              "predicted_km_s": 128.70630074609912,
+              "residual_km_s": 21.706300746099117,
+              "standardized_residual": 2.890319673248884
+            },
+            {
+              "radius_kpc": 3.933695652173913,
+              "observed_km_s": 113.0,
+              "error_km_s": 7.32,
+              "predicted_km_s": 133.37390218648676,
+              "residual_km_s": 20.37390218648676,
+              "standardized_residual": 2.7833199708315246
+            },
+            {
+              "radius_kpc": 4.260652173913043,
+              "observed_km_s": 117.0,
+              "error_km_s": 5.21,
+              "predicted_km_s": 137.6281736136232,
+              "residual_km_s": 20.628173613623204,
+              "standardized_residual": 3.9593423442654903
+            },
+            {
+              "radius_kpc": 4.5978260869565215,
+              "observed_km_s": 119.0,
+              "error_km_s": 5.67,
+              "predicted_km_s": 141.4729649627296,
+              "residual_km_s": 22.472964962729606,
+              "standardized_residual": 3.9634858840792955
+            },
+            {
+              "radius_kpc": 4.9247826086956525,
+              "observed_km_s": 127.0,
+              "error_km_s": 5.39,
+              "predicted_km_s": 144.72509879917337,
+              "residual_km_s": 17.725098799173367,
+              "standardized_residual": 3.288515547156469
+            },
+            {
+              "radius_kpc": 5.261956521739131,
+              "observed_km_s": 132.0,
+              "error_km_s": 4.34,
+              "predicted_km_s": 147.63397567747444,
+              "residual_km_s": 15.633975677474439,
+              "standardized_residual": 3.6022985431968753
+            },
+            {
+              "radius_kpc": 5.578695652173913,
+              "observed_km_s": 134.0,
+              "error_km_s": 2.36,
+              "predicted_km_s": 149.99246857518287,
+              "residual_km_s": 15.992468575182869,
+              "standardized_residual": 6.7764697352469785
+            },
+            {
+              "radius_kpc": 5.905652173913044,
+              "observed_km_s": 137.0,
+              "error_km_s": 0.89,
+              "predicted_km_s": 152.08112559712916,
+              "residual_km_s": 15.081125597129159,
+              "standardized_residual": 16.945084940594562
+            },
+            {
+              "radius_kpc": 6.232608695652173,
+              "observed_km_s": 140.0,
+              "error_km_s": 2.84,
+              "predicted_km_s": 153.84944979119678,
+              "residual_km_s": 13.849449791196776,
+              "standardized_residual": 4.8765668278861884
+            },
+            {
+              "radius_kpc": 6.569782608695651,
+              "observed_km_s": 142.0,
+              "error_km_s": 0.88,
+              "predicted_km_s": 155.36766602844185,
+              "residual_km_s": 13.367666028441846,
+              "standardized_residual": 15.190529577774825
+            },
+            {
+              "radius_kpc": 6.886521739130435,
+              "observed_km_s": 144.0,
+              "error_km_s": 1.23,
+              "predicted_km_s": 156.53651156066957,
+              "residual_km_s": 12.536511560669567,
+              "standardized_residual": 10.192285821682574
+            },
+            {
+              "radius_kpc": 7.2134782608695645,
+              "observed_km_s": 146.0,
+              "error_km_s": 1.57,
+              "predicted_km_s": 157.50479799090945,
+              "residual_km_s": 11.504797990909452,
+              "standardized_residual": 7.327896809496466
+            },
+            {
+              "radius_kpc": 8.214782608695652,
+              "observed_km_s": 147.0,
+              "error_km_s": 3.0,
+              "predicted_km_s": 159.17994627809028,
+              "residual_km_s": 12.179946278090284,
+              "standardized_residual": 4.059982092696761
+            },
+            {
+              "radius_kpc": 9.236521739130433,
+              "observed_km_s": 148.0,
+              "error_km_s": 3.0,
+              "predicted_km_s": 159.28611142401292,
+              "residual_km_s": 11.286111424012915,
+              "standardized_residual": 3.7620371413376383
+            },
+            {
+              "radius_kpc": 10.258260869565216,
+              "observed_km_s": 152.0,
+              "error_km_s": 2.0,
+              "predicted_km_s": 158.19741896595403,
+              "residual_km_s": 6.197418965954029,
+              "standardized_residual": 3.0987094829770143
+            },
+            {
+              "radius_kpc": 11.28,
+              "observed_km_s": 155.0,
+              "error_km_s": 2.0,
+              "predicted_km_s": 156.24439619913315,
+              "residual_km_s": 1.2443961991331491,
+              "standardized_residual": 0.6221980995665746
+            },
+            {
+              "radius_kpc": 12.31195652173913,
+              "observed_km_s": 156.0,
+              "error_km_s": 2.0,
+              "predicted_km_s": 153.65509476859765,
+              "residual_km_s": -2.3449052314023504,
+              "standardized_residual": -1.1724526157011752
+            },
+            {
+              "radius_kpc": 14.355434782608697,
+              "observed_km_s": 157.0,
+              "error_km_s": 2.0,
+              "predicted_km_s": 147.44974842625,
+              "residual_km_s": -9.55025157374999,
+              "standardized_residual": -4.775125786874995
+            },
+            {
+              "radius_kpc": 16.419347826086955,
+              "observed_km_s": 153.0,
+              "error_km_s": 2.0,
+              "predicted_km_s": 140.59078327084842,
+              "residual_km_s": -12.40921672915158,
+              "standardized_residual": -6.20460836457579
+            },
+            {
+              "radius_kpc": 18.524130434782606,
+              "observed_km_s": 153.0,
+              "error_km_s": 2.0,
+              "predicted_km_s": 133.64809988473834,
+              "residual_km_s": -19.351900115261657,
+              "standardized_residual": -9.675950057630828
+            },
+            {
+              "radius_kpc": 20.48586956521739,
+              "observed_km_s": 154.0,
+              "error_km_s": 2.0,
+              "predicted_km_s": 127.54303237975964,
+              "residual_km_s": -26.456967620240363,
+              "standardized_residual": -13.228483810120181
+            },
+            {
+              "radius_kpc": 22.60086956521739,
+              "observed_km_s": 153.0,
+              "error_km_s": 2.0,
+              "predicted_km_s": 121.51473142939496,
+              "residual_km_s": -31.485268570605044,
+              "standardized_residual": -15.742634285302522
+            },
+            {
+              "radius_kpc": 24.55239130434782,
+              "observed_km_s": 150.0,
+              "error_km_s": 2.0,
+              "predicted_km_s": 116.50382669401974,
+              "residual_km_s": -33.496173305980264,
+              "standardized_residual": -16.748086652990132
+            },
+            {
+              "radius_kpc": 26.667391304347824,
+              "observed_km_s": 149.0,
+              "error_km_s": 2.0,
+              "predicted_km_s": 111.65402074243386,
+              "residual_km_s": -37.34597925756614,
+              "standardized_residual": -18.67298962878307
+            },
+            {
+              "radius_kpc": 28.772173913043474,
+              "observed_km_s": 148.0,
+              "error_km_s": 2.0,
+              "predicted_km_s": 107.37631061501929,
+              "residual_km_s": -40.62368938498071,
+              "standardized_residual": -20.311844692490354
+            },
+            {
+              "radius_kpc": 30.733913043478257,
+              "observed_km_s": 146.0,
+              "error_km_s": 2.0,
+              "predicted_km_s": 103.82394944739879,
+              "residual_km_s": -42.17605055260121,
+              "standardized_residual": -21.088025276300606
+            },
+            {
+              "radius_kpc": 32.83869565217391,
+              "observed_km_s": 147.0,
+              "error_km_s": 2.0,
+              "predicted_km_s": 100.41465445425571,
+              "residual_km_s": -46.58534554574429,
+              "standardized_residual": -23.292672772872145
+            },
+            {
+              "radius_kpc": 34.8004347826087,
+              "observed_km_s": 148.0,
+              "error_km_s": 2.0,
+              "predicted_km_s": 97.55710349220688,
+              "residual_km_s": -50.44289650779312,
+              "standardized_residual": -25.22144825389656
+            },
+            {
+              "radius_kpc": 36.90521739130435,
+              "observed_km_s": 148.0,
+              "error_km_s": 2.0,
+              "predicted_km_s": 94.78132606513283,
+              "residual_km_s": -53.21867393486717,
+              "standardized_residual": -26.609336967433585
+            }
+          ]
+        },
+        {
+          "model_id": "GR_NFW_DARK_HALO",
+          "fitted_parameters": {
+            "q_star": 0.8253897969532975,
+            "V200_km_s": 116.31597312471598,
+            "concentration_c200": 6.802200504154277
+          },
+          "parameter_count": 3,
+          "metrics": {
+            "point_count": 39,
+            "chi_squared": 34.749485687661654,
+            "degrees_of_freedom": 36,
+            "reduced_chi_squared": 0.9652634913239349,
+            "unweighted_rms_residual_km_s": 5.147987363846723,
+            "maximum_absolute_residual_km_s": 12.184058969636808,
+            "AIC": 40.749485687661654,
+            "AICc": 41.43519997337594,
+            "BIC": 45.74017062605059
+          },
+          "random_error_gate": {
+            "threshold_reduced_chi_squared": 2.0,
+            "passed": true
+          },
+          "parameter_boundary_hit": false,
+          "predictions": [
+            {
+              "radius_kpc": 0.32695652173913037,
+              "observed_km_s": 24.4,
+              "error_km_s": 35.9,
+              "predicted_km_s": 28.640614105516736,
+              "residual_km_s": 4.2406141055167375,
+              "standardized_residual": 0.11812295558542445
+            },
+            {
+              "radius_kpc": 0.6539130434782607,
+              "observed_km_s": 43.3,
+              "error_km_s": 16.3,
+              "predicted_km_s": 44.069551394892095,
+              "residual_km_s": 0.7695513948920976,
+              "standardized_residual": 0.0472117420179201
+            },
+            {
+              "radius_kpc": 0.9808695652173912,
+              "observed_km_s": 45.5,
+              "error_km_s": 16.1,
+              "predicted_km_s": 56.619321123541106,
+              "residual_km_s": 11.119321123541106,
+              "standardized_residual": 0.6906410635739817
+            },
+            {
+              "radius_kpc": 1.3078260869565215,
+              "observed_km_s": 58.5,
+              "error_km_s": 15.4,
+              "predicted_km_s": 67.34130008517072,
+              "residual_km_s": 8.841300085170715,
+              "standardized_residual": 0.5741103951409555
+            },
+            {
+              "radius_kpc": 1.645,
+              "observed_km_s": 68.8,
+              "error_km_s": 7.61,
+              "predicted_km_s": 76.97311920415785,
+              "residual_km_s": 8.173119204157857,
+              "standardized_residual": 1.0739972673006382
+            },
+            {
+              "radius_kpc": 1.9719565217391302,
+              "observed_km_s": 76.9,
+              "error_km_s": 10.3,
+              "predicted_km_s": 85.20693913029743,
+              "residual_km_s": 8.306939130297422,
+              "standardized_residual": 0.8064989446890701
+            },
+            {
+              "radius_kpc": 2.2886956521739132,
+              "observed_km_s": 82.0,
+              "error_km_s": 8.09,
+              "predicted_km_s": 92.31692039622249,
+              "residual_km_s": 10.316920396222486,
+              "standardized_residual": 1.2752682813624827
+            },
+            {
+              "radius_kpc": 2.625869565217391,
+              "observed_km_s": 86.9,
+              "error_km_s": 7.6,
+              "predicted_km_s": 99.08405896963681,
+              "residual_km_s": 12.184058969636808,
+              "standardized_residual": 1.6031656538995802
+            },
+            {
+              "radius_kpc": 2.952826086956522,
+              "observed_km_s": 97.6,
+              "error_km_s": 3.03,
+              "predicted_km_s": 104.95975877917017,
+              "residual_km_s": 7.359758779170178,
+              "standardized_residual": 2.4289632934555048
+            },
+            {
+              "radius_kpc": 3.2797826086956516,
+              "observed_km_s": 100.0,
+              "error_km_s": 5.31,
+              "predicted_km_s": 110.24186854152782,
+              "residual_km_s": 10.241868541527822,
+              "standardized_residual": 1.9287888025476125
+            },
+            {
+              "radius_kpc": 3.61695652173913,
+              "observed_km_s": 107.0,
+              "error_km_s": 7.51,
+              "predicted_km_s": 115.13817635633879,
+              "residual_km_s": 8.13817635633879,
+              "standardized_residual": 1.083645320417948
+            },
+            {
+              "radius_kpc": 3.933695652173913,
+              "observed_km_s": 113.0,
+              "error_km_s": 7.32,
+              "predicted_km_s": 119.28286291887446,
+              "residual_km_s": 6.282862918874457,
+              "standardized_residual": 0.8583146064036143
+            },
+            {
+              "radius_kpc": 4.260652173913043,
+              "observed_km_s": 117.0,
+              "error_km_s": 5.21,
+              "predicted_km_s": 123.14659738249361,
+              "residual_km_s": 6.14659738249361,
+              "standardized_residual": 1.1797691713039558
+            },
+            {
+              "radius_kpc": 4.5978260869565215,
+              "observed_km_s": 119.0,
+              "error_km_s": 5.67,
+              "predicted_km_s": 126.73374600762067,
+              "residual_km_s": 7.733746007620667,
+              "standardized_residual": 1.3639763681870665
+            },
+            {
+              "radius_kpc": 4.9247826086956525,
+              "observed_km_s": 127.0,
+              "error_km_s": 5.39,
+              "predicted_km_s": 129.86457394541065,
+              "residual_km_s": 2.8645739454106547,
+              "standardized_residual": 0.5314608433043887
+            },
+            {
+              "radius_kpc": 5.261956521739131,
+              "observed_km_s": 132.0,
+              "error_km_s": 4.34,
+              "predicted_km_s": 132.7693773882881,
+              "residual_km_s": 0.7693773882880919,
+              "standardized_residual": 0.17727589591891518
+            },
+            {
+              "radius_kpc": 5.578695652173913,
+              "observed_km_s": 134.0,
+              "error_km_s": 2.36,
+              "predicted_km_s": 135.22646109299808,
+              "residual_km_s": 1.226461092998079,
+              "standardized_residual": 0.5196869038127454
+            },
+            {
+              "radius_kpc": 5.905652173913044,
+              "observed_km_s": 137.0,
+              "error_km_s": 0.89,
+              "predicted_km_s": 137.5121024640442,
+              "residual_km_s": 0.5121024640442045,
+              "standardized_residual": 0.57539602701596
+            },
+            {
+              "radius_kpc": 6.232608695652173,
+              "observed_km_s": 140.0,
+              "error_km_s": 2.84,
+              "predicted_km_s": 139.56596606445848,
+              "residual_km_s": -0.43403393554152103,
+              "standardized_residual": -0.1528288505427891
+            },
+            {
+              "radius_kpc": 6.569782608695651,
+              "observed_km_s": 142.0,
+              "error_km_s": 0.88,
+              "predicted_km_s": 141.4633585303677,
+              "residual_km_s": -0.5366414696322863,
+              "standardized_residual": -0.6098198518548709
+            },
+            {
+              "radius_kpc": 6.886521739130435,
+              "observed_km_s": 144.0,
+              "error_km_s": 1.23,
+              "predicted_km_s": 143.0599759074669,
+              "residual_km_s": -0.9400240925330934,
+              "standardized_residual": -0.7642472297017019
+            },
+            {
+              "radius_kpc": 7.2134782608695645,
+              "observed_km_s": 146.0,
+              "error_km_s": 1.57,
+              "predicted_km_s": 144.5362033014006,
+              "residual_km_s": -1.4637966985993955,
+              "standardized_residual": -0.9323545850951563
+            },
+            {
+              "radius_kpc": 8.214782608695652,
+              "observed_km_s": 147.0,
+              "error_km_s": 3.0,
+              "predicted_km_s": 148.12632447093137,
+              "residual_km_s": 1.1263244709313653,
+              "standardized_residual": 0.3754414903104551
+            },
+            {
+              "radius_kpc": 9.236521739130433,
+              "observed_km_s": 148.0,
+              "error_km_s": 3.0,
+              "predicted_km_s": 150.6305094640626,
+              "residual_km_s": 2.6305094640626123,
+              "standardized_residual": 0.8768364880208708
+            },
+            {
+              "radius_kpc": 10.258260869565216,
+              "observed_km_s": 152.0,
+              "error_km_s": 2.0,
+              "predicted_km_s": 152.26369368605663,
+              "residual_km_s": 0.2636936860566266,
+              "standardized_residual": 0.1318468430283133
+            },
+            {
+              "radius_kpc": 11.28,
+              "observed_km_s": 155.0,
+              "error_km_s": 2.0,
+              "predicted_km_s": 153.25576000802099,
+              "residual_km_s": -1.7442399919790148,
+              "standardized_residual": -0.8721199959895074
+            },
+            {
+              "radius_kpc": 12.31195652173913,
+              "observed_km_s": 156.0,
+              "error_km_s": 2.0,
+              "predicted_km_s": 153.78511895949384,
+              "residual_km_s": -2.2148810405061568,
+              "standardized_residual": -1.1074405202530784
+            },
+            {
+              "radius_kpc": 14.355434782608697,
+              "observed_km_s": 157.0,
+              "error_km_s": 2.0,
+              "predicted_km_s": 153.93343130726507,
+              "residual_km_s": -3.0665686927349327,
+              "standardized_residual": -1.5332843463674664
+            },
+            {
+              "radius_kpc": 16.419347826086955,
+              "observed_km_s": 153.0,
+              "error_km_s": 2.0,
+              "predicted_km_s": 153.4285420989113,
+              "residual_km_s": 0.4285420989112936,
+              "standardized_residual": 0.2142710494556468
+            },
+            {
+              "radius_kpc": 18.524130434782606,
+              "observed_km_s": 153.0,
+              "error_km_s": 2.0,
+              "predicted_km_s": 152.6512337395939,
+              "residual_km_s": -0.3487662604061086,
+              "standardized_residual": -0.1743831302030543
+            },
+            {
+              "radius_kpc": 20.48586956521739,
+              "observed_km_s": 154.0,
+              "error_km_s": 2.0,
+              "predicted_km_s": 151.87972335927432,
+              "residual_km_s": -2.1202766407256775,
+              "standardized_residual": -1.0601383203628387
+            },
+            {
+              "radius_kpc": 22.60086956521739,
+              "observed_km_s": 153.0,
+              "error_km_s": 2.0,
+              "predicted_km_s": 151.09187991532278,
+              "residual_km_s": -1.908120084677222,
+              "standardized_residual": -0.954060042338611
+            },
+            {
+              "radius_kpc": 24.55239130434782,
+              "observed_km_s": 150.0,
+              "error_km_s": 2.0,
+              "predicted_km_s": 150.4351873003968,
+              "residual_km_s": 0.435187300396791,
+              "standardized_residual": 0.2175936501983955
+            },
+            {
+              "radius_kpc": 26.667391304347824,
+              "observed_km_s": 149.0,
+              "error_km_s": 2.0,
+              "predicted_km_s": 149.80169126323196,
+              "residual_km_s": 0.8016912632319588,
+              "standardized_residual": 0.4008456316159794
+            },
+            {
+              "radius_kpc": 28.772173913043474,
+              "observed_km_s": 148.0,
+              "error_km_s": 2.0,
+              "predicted_km_s": 149.23977953009046,
+              "residual_km_s": 1.239779530090459,
+              "standardized_residual": 0.6198897650452295
+            },
+            {
+              "radius_kpc": 30.733913043478257,
+              "observed_km_s": 146.0,
+              "error_km_s": 2.0,
+              "predicted_km_s": 148.76263533238168,
+              "residual_km_s": 2.7626353323816772,
+              "standardized_residual": 1.3813176661908386
+            },
+            {
+              "radius_kpc": 32.83869565217391,
+              "observed_km_s": 147.0,
+              "error_km_s": 2.0,
+              "predicted_km_s": 148.28503141796443,
+              "residual_km_s": 1.2850314179644329,
+              "standardized_residual": 0.6425157089822164
+            },
+            {
+              "radius_kpc": 34.8004347826087,
+              "observed_km_s": 148.0,
+              "error_km_s": 2.0,
+              "predicted_km_s": 147.85979468472232,
+              "residual_km_s": -0.14020531527768298,
+              "standardized_residual": -0.07010265763884149
+            },
+            {
+              "radius_kpc": 36.90521739130435,
+              "observed_km_s": 148.0,
+              "error_km_s": 2.0,
+              "predicted_km_s": 147.41455073348493,
+              "residual_km_s": -0.5854492665150701,
+              "standardized_residual": -0.29272463325753506
+            }
+          ]
+        },
+        {
+          "model_id": "MANNHEIM_CONFORMAL_GRAVITY",
+          "fitted_parameters": {
+            "q_star": 1.0645429990794995
+          },
+          "parameter_count": 1,
+          "metrics": {
+            "point_count": 39,
+            "chi_squared": 121.66755195704582,
+            "degrees_of_freedom": 38,
+            "reduced_chi_squared": 3.201777683080153,
+            "unweighted_rms_residual_km_s": 4.694475967312153,
+            "maximum_absolute_residual_km_s": 9.20389962213413,
+            "AIC": 123.66755195704582,
+            "AICc": 123.77566006515393,
+            "BIC": 125.33111360317547
+          },
+          "random_error_gate": {
+            "threshold_reduced_chi_squared": 2.0,
+            "passed": false
+          },
+          "parameter_boundary_hit": false,
+          "predictions": [
+            {
+              "radius_kpc": 0.32695652173913037,
+              "observed_km_s": 24.4,
+              "error_km_s": 35.9,
+              "predicted_km_s": 23.22008570676307,
+              "residual_km_s": -1.17991429323693,
+              "standardized_residual": -0.03286669340492841
+            },
+            {
+              "radius_kpc": 0.6539130434782607,
+              "observed_km_s": 43.3,
+              "error_km_s": 16.3,
+              "predicted_km_s": 38.67172864923142,
+              "residual_km_s": -4.628271350768578,
+              "standardized_residual": -0.283943027654514
+            },
+            {
+              "radius_kpc": 0.9808695652173912,
+              "observed_km_s": 45.5,
+              "error_km_s": 16.1,
+              "predicted_km_s": 51.5951919577991,
+              "residual_km_s": 6.095191957799102,
+              "standardized_residual": 0.3785833514160933
+            },
+            {
+              "radius_kpc": 1.3078260869565215,
+              "observed_km_s": 58.5,
+              "error_km_s": 15.4,
+              "predicted_km_s": 62.76458481640087,
+              "residual_km_s": 4.26458481640087,
+              "standardized_residual": 0.27692109197408243
+            },
+            {
+              "radius_kpc": 1.645,
+              "observed_km_s": 68.8,
+              "error_km_s": 7.61,
+              "predicted_km_s": 72.85611139999047,
+              "residual_km_s": 4.0561113999904705,
+              "standardized_residual": 0.5329975558463167
+            },
+            {
+              "radius_kpc": 1.9719565217391302,
+              "observed_km_s": 76.9,
+              "error_km_s": 10.3,
+              "predicted_km_s": 81.50732876555263,
+              "residual_km_s": 4.607328765552623,
+              "standardized_residual": 0.44731347238374974
+            },
+            {
+              "radius_kpc": 2.2886956521739132,
+              "observed_km_s": 82.0,
+              "error_km_s": 8.09,
+              "predicted_km_s": 88.98590474554521,
+              "residual_km_s": 6.985904745545213,
+              "standardized_residual": 0.8635234543319176
+            },
+            {
+              "radius_kpc": 2.625869565217391,
+              "observed_km_s": 86.9,
+              "error_km_s": 7.6,
+              "predicted_km_s": 96.10389962213414,
+              "residual_km_s": 9.20389962213413,
+              "standardized_residual": 1.2110394239650173
+            },
+            {
+              "radius_kpc": 2.952826086956522,
+              "observed_km_s": 97.6,
+              "error_km_s": 3.03,
+              "predicted_km_s": 102.2792129381094,
+              "residual_km_s": 4.679212938109401,
+              "standardized_residual": 1.5442946990460071
+            },
+            {
+              "radius_kpc": 3.2797826086956516,
+              "observed_km_s": 100.0,
+              "error_km_s": 5.31,
+              "predicted_km_s": 107.82268233785022,
+              "residual_km_s": 7.822682337850225,
+              "standardized_residual": 1.4731981803861065
+            },
+            {
+              "radius_kpc": 3.61695652173913,
+              "observed_km_s": 107.0,
+              "error_km_s": 7.51,
+              "predicted_km_s": 112.95099065460846,
+              "residual_km_s": 5.950990654608461,
+              "standardized_residual": 0.7924088754471985
+            },
+            {
+              "radius_kpc": 3.933695652173913,
+              "observed_km_s": 113.0,
+              "error_km_s": 7.32,
+              "predicted_km_s": 117.28150839458051,
+              "residual_km_s": 4.281508394580513,
+              "standardized_residual": 0.5849055183853159
+            },
+            {
+              "radius_kpc": 4.260652173913043,
+              "observed_km_s": 117.0,
+              "error_km_s": 5.21,
+              "predicted_km_s": 121.30716673765663,
+              "residual_km_s": 4.30716673765663,
+              "standardized_residual": 0.8267114659609653
+            },
+            {
+              "radius_kpc": 4.5978260869565215,
+              "observed_km_s": 119.0,
+              "error_km_s": 5.67,
+              "predicted_km_s": 125.03235453142864,
+              "residual_km_s": 6.032354531428638,
+              "standardized_residual": 1.0639073247669555
+            },
+            {
+              "radius_kpc": 4.9247826086956525,
+              "observed_km_s": 127.0,
+              "error_km_s": 5.39,
+              "predicted_km_s": 128.27169468912834,
+              "residual_km_s": 1.2716946891283385,
+              "standardized_residual": 0.2359359349032168
+            },
+            {
+              "radius_kpc": 5.261956521739131,
+              "observed_km_s": 132.0,
+              "error_km_s": 4.34,
+              "predicted_km_s": 131.26497600132072,
+              "residual_km_s": -0.7350239986792815,
+              "standardized_residual": -0.16936036835928145
+            },
+            {
+              "radius_kpc": 5.578695652173913,
+              "observed_km_s": 134.0,
+              "error_km_s": 2.36,
+              "predicted_km_s": 133.78583521938884,
+              "residual_km_s": -0.2141647806111564,
+              "standardized_residual": -0.0907477883945578
+            },
+            {
+              "radius_kpc": 5.905652173913044,
+              "observed_km_s": 137.0,
+              "error_km_s": 0.89,
+              "predicted_km_s": 136.11988645307852,
+              "residual_km_s": -0.8801135469214785,
+              "standardized_residual": -0.9888916257544702
+            },
+            {
+              "radius_kpc": 6.232608695652173,
+              "observed_km_s": 140.0,
+              "error_km_s": 2.84,
+              "predicted_km_s": 138.20656489366135,
+              "residual_km_s": -1.7934351063386487,
+              "standardized_residual": -0.6314912346262848
+            },
+            {
+              "radius_kpc": 6.569782608695651,
+              "observed_km_s": 142.0,
+              "error_km_s": 0.88,
+              "predicted_km_s": 140.12357169037406,
+              "residual_km_s": -1.8764283096259362,
+              "standardized_residual": -2.1323048973022
+            },
+            {
+              "radius_kpc": 6.886521739130435,
+              "observed_km_s": 144.0,
+              "error_km_s": 1.23,
+              "predicted_km_s": 141.72725941867765,
+              "residual_km_s": -2.2727405813223527,
+              "standardized_residual": -1.8477565701807745
+            },
+            {
+              "radius_kpc": 7.2134782608695645,
+              "observed_km_s": 146.0,
+              "error_km_s": 1.57,
+              "predicted_km_s": 143.2009557332161,
+              "residual_km_s": -2.799044266783909,
+              "standardized_residual": -1.7828307431744643
+            },
+            {
+              "radius_kpc": 8.214782608695652,
+              "observed_km_s": 147.0,
+              "error_km_s": 3.0,
+              "predicted_km_s": 146.73746973182466,
+              "residual_km_s": -0.26253026817533964,
+              "standardized_residual": -0.08751008939177989
+            },
+            {
+              "radius_kpc": 9.236521739130433,
+              "observed_km_s": 148.0,
+              "error_km_s": 3.0,
+              "predicted_km_s": 149.14675699611286,
+              "residual_km_s": 1.146756996112856,
+              "standardized_residual": 0.3822523320376187
+            },
+            {
+              "radius_kpc": 10.258260869565216,
+              "observed_km_s": 152.0,
+              "error_km_s": 2.0,
+              "predicted_km_s": 150.67769891354834,
+              "residual_km_s": -1.3223010864516596,
+              "standardized_residual": -0.6611505432258298
+            },
+            {
+              "radius_kpc": 11.28,
+              "observed_km_s": 155.0,
+              "error_km_s": 2.0,
+              "predicted_km_s": 151.5858482028868,
+              "residual_km_s": -3.414151797113192,
+              "standardized_residual": -1.707075898556596
+            },
+            {
+              "radius_kpc": 12.31195652173913,
+              "observed_km_s": 156.0,
+              "error_km_s": 2.0,
+              "predicted_km_s": 152.06839156416927,
+              "residual_km_s": -3.931608435830725,
+              "standardized_residual": -1.9658042179153625
+            },
+            {
+              "radius_kpc": 14.355434782608697,
+              "observed_km_s": 157.0,
+              "error_km_s": 2.0,
+              "predicted_km_s": 152.28538374915263,
+              "residual_km_s": -4.714616250847371,
+              "standardized_residual": -2.3573081254236854
+            },
+            {
+              "radius_kpc": 16.419347826086955,
+              "observed_km_s": 153.0,
+              "error_km_s": 2.0,
+              "predicted_km_s": 152.10647345789886,
+              "residual_km_s": -0.8935265421011422,
+              "standardized_residual": -0.4467632710505711
+            },
+            {
+              "radius_kpc": 18.524130434782606,
+              "observed_km_s": 153.0,
+              "error_km_s": 2.0,
+              "predicted_km_s": 151.92930932729809,
+              "residual_km_s": -1.0706906727019145,
+              "standardized_residual": -0.5353453363509573
+            },
+            {
+              "radius_kpc": 20.48586956521739,
+              "observed_km_s": 154.0,
+              "error_km_s": 2.0,
+              "predicted_km_s": 151.93215644466378,
+              "residual_km_s": -2.067843555336225,
+              "standardized_residual": -1.0339217776681124
+            },
+            {
+              "radius_kpc": 22.60086956521739,
+              "observed_km_s": 153.0,
+              "error_km_s": 2.0,
+              "predicted_km_s": 152.16358476138154,
+              "residual_km_s": -0.8364152386184571,
+              "standardized_residual": -0.41820761930922856
+            },
+            {
+              "radius_kpc": 24.55239130434782,
+              "observed_km_s": 150.0,
+              "error_km_s": 2.0,
+              "predicted_km_s": 152.56909241268085,
+              "residual_km_s": 2.5690924126808454,
+              "standardized_residual": 1.2845462063404227
+            },
+            {
+              "radius_kpc": 26.667391304347824,
+              "observed_km_s": 149.0,
+              "error_km_s": 2.0,
+              "predicted_km_s": 153.16678722823352,
+              "residual_km_s": 4.166787228233517,
+              "standardized_residual": 2.0833936141167584
+            },
+            {
+              "radius_kpc": 28.772173913043474,
+              "observed_km_s": 148.0,
+              "error_km_s": 2.0,
+              "predicted_km_s": 153.86461877884227,
+              "residual_km_s": 5.864618778842271,
+              "standardized_residual": 2.9323093894211354
+            },
+            {
+              "radius_kpc": 30.733913043478257,
+              "observed_km_s": 146.0,
+              "error_km_s": 2.0,
+              "predicted_km_s": 154.55533680128204,
+              "residual_km_s": 8.555336801282039,
+              "standardized_residual": 4.277668400641019
+            },
+            {
+              "radius_kpc": 32.83869565217391,
+              "observed_km_s": 147.0,
+              "error_km_s": 2.0,
+              "predicted_km_s": 155.29073993927597,
+              "residual_km_s": 8.290739939275966,
+              "standardized_residual": 4.145369969637983
+            },
+            {
+              "radius_kpc": 34.8004347826087,
+              "observed_km_s": 148.0,
+              "error_km_s": 2.0,
+              "predicted_km_s": 155.9337930175309,
+              "residual_km_s": 7.933793017530888,
+              "standardized_residual": 3.966896508765444
+            },
+            {
+              "radius_kpc": 36.90521739130435,
+              "observed_km_s": 148.0,
+              "error_km_s": 2.0,
+              "predicted_km_s": 156.54539474050685,
+              "residual_km_s": 8.54539474050685,
+              "standardized_residual": 4.272697370253425
+            }
+          ]
+        }
+      ],
+      "ranking_by_AICc": [
+        "GR_NFW_DARK_HALO",
+        "MANNHEIM_CONFORMAL_GRAVITY",
+        "NEWTONIAN_BARYONS_ONLY"
+      ],
+      "scoped_finding": "GR_NFW_DARK_HALO has the lowest AICc and is the only family that passes the declared random-error gate within this common analytic, single-galaxy protocol.",
+      "does_not_establish": [
+        "a likelihood with distance, inclination, beam-smearing, stellar-population, gas-profile, or other systematic uncertainties",
+        "identity of the analytic baryonic geometry with the SPARC numerical mass components or the original Mannheim fitting data",
+        "a cosmological concentration--mass prior or a posterior probability for an NFW halo",
+        "population-level performance, held-out prediction, or model selection beyond NGC 3198",
+        "that the best score in this bounded protocol validates a complete theory or refutes another theory"
+      ],
+      "claim_flags": {
+        "common_observations_used": true,
+        "common_baryonic_geometry_used": true,
+        "independent_optimizer_agreement_required": true,
+        "single_galaxy_only": true,
+        "systematic_uncertainties_marginalized": false,
+        "population_or_heldout_validation": false,
+        "complete_theory_selected": false
+      },
+      "human_report": "foundations/reports/ngc3198-common-fit-comparison-v1.md",
+      "independent_checker": "foundations/check_ngc3198_common_fit_comparison.py",
+      "canonical_digest": "82974c6b7f17b8a2a4cc715013ca63d7a170d21aec7c74a1174d9a063b7592b4"
+    }
+  ],
+  "model_comparison_sources": [
+    {
+      "path": "foundations/results/FOUNDATIONAL_NGC3198_COMMON_FIT_COMPARISON_V1.json",
+      "sha256": "e9c9ecd8e6778a98cf15754970ac2e8fa6c117edca630f3a89b30aea1a03eaeb"
+    }
+  ],
   "calibration_controls": [
     {
       "schema_version": "standard-gr-observational-control-v1",
@@ -5554,6 +6617,7 @@ window.THEORY_ASSEMBLY_DATA = {
     "model_scoped_prediction_assembly_registered": true,
     "second_model_scoped_mannheim_assembly_registered": true,
     "mixed_empirical_result_preserved": true,
+    "common_protocol_model_comparison_registered": true,
     "bounded_prediction_chain_established": true,
     "bounded_empirical_agreement_assessed": true,
     "cross_cell_composability_established": false,
@@ -5571,10 +6635,11 @@ window.THEORY_ASSEMBLY_DATA = {
     "that the scoped Euclidean/Krein carrier non-identity forbids every conditional bridge",
     "that any prototype agrees with observations",
     "that the Mannheim NGC 3198 coarse endpoint reproduction or RMS gate overrules its failed SPARC random-error gate",
+    "that the NGC 3198 common-protocol ranking selects a complete theory, includes observational systematics, or generalizes beyond one galaxy",
     "that the external standard-GR control is selected from the cube or transfers empirical support to a prototype",
     "that the benchmark catalogue is a complete set of physical tests",
     "a complete theory, a new Lorentzian-causal result, or a quantum lifecycle promotion"
   ],
   "source_atlas_digest": "e4c79e8ec537c2d9f9271d9ccbd042da2a5529b0b5f0f11fa6917cc3af0386cd",
-  "canonical_digest": "ad3ed091a3a1cc12e0748c27029933e6e2c2629a776843585b9902194d1fcab4"
+  "canonical_digest": "fde8c31dd5b414e65d0b5e9a1e3bd1b6d8519c68774bb62649e308926372b0bf"
 };
