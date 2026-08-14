@@ -1482,6 +1482,57 @@ the same runaway backgrounds may be exponentially rare under $\nu$.  The
 next viable estimate must retain their Gibbs weight and jointly control
 center displacement, score size, and inverse conditional density.
 
+The next fixed-order calculation exposes a separate power-counting barrier.
+Certificate
+\cert{REVERSE_PHYSICS_BT_EUCLIDEAN_QUARTIC_SCORE_POWER_OBSTRUCTION_V1}
+extracts the quartic zero-fiber-score polynomial directly from the positive
+exponential lattice action.  If
+
+\[
+ d_\delta(k)=e^{ik\cdot\delta}-1,
+ \qquad
+ B_j(k_1,\ldots,k_j)=\sum_\delta\prod_{a=1}^j d_\delta(k_a),
+\]
+
+then its fully symmetric four-leg kernel is
+
+\[
+ K_4=\frac1{24}\left[
+ \sum_i B_1(k_i)B_3(k_{\widehat i})
+ +B_2(k_1,k_2)B_2(k_3,k_4)+\text{two pairings}\right].
+\]
+
+At
+$p=(\varepsilon,0,0,0)$,
+$q=(\pi/2,0,0,0)$,
+$r=(0,\pi/2,0,0)$, and $s=-p-q-r$, exact Gaussian-rational
+dual-number arithmetic gives
+
+\[
+ K_4(0,q,r,-q-r)=0,
+ \qquad
+ \left.\partial_\varepsilon K_4\right|_{\varepsilon=0}=-\frac13.
+\]
+
+The external soft degree is therefore genuinely linear.  Fixed disjoint
+ultraviolet boxes around this fixture and positivity of the corresponding
+third-Wiener-chaos block imply, for all sufficiently large $L$,
+
+\[
+ \frac{\mathbb E_0[Q_L^2]}{N\omega_L^2}
+ \geq\frac{c}{\omega_L}\geq c'L^2.
+\]
+
+Thus the isolated quartic-score square cannot be bounded uniformly term by
+term.  On the tuned refinement trajectory $g_L^4$ is only of order
+$(\log L)^{-2}$, so running of the coupling does not by itself suppress this
+power.  This is not a divergence theorem for the interacting score.  The
+complete order-$g^4$ coefficient also contains signed measure, normalization,
+projection, and higher Taylor terms, and those terms may cancel the displayed
+$L^2$ sector.  The immediate gate is to put every order-$g^4$ contribution in
+one Wiener-chaos basis and decide that exact cancellation before attempting a
+whole-composite or nonperturbative annealed bound.
+
 \subsection{A finite BV contraction does not freeze the quantum theory}
 
 The energy-two free BV block provides another finite exact case.  The
@@ -1853,6 +1904,14 @@ bound can repair the transfer.  The next viable route is therefore a
 genuinely annealed BT multiscale estimate coupling center displacement to the
 Gibbs rarity of its background, with the RG normalization retained on the
 declared refinement branch.
+The next quartic calculation also proves that the isolated free square of the
+quartic zero-fiber score grows at least as $L^2$: its exact four-leg kernel is
+only linearly soft, with derivative $-1/3$ at a quarter-period fixture.
+Running $g_L^4$ is only logarithmically small and cannot suppress that power
+by itself.  The full order-$g^4$ coefficient is nevertheless a signed
+composite and remains open; an exact cancellation among score, measure,
+normalization, projection, and higher-Taylor pieces must now be decided in a
+common Wiener-chaos basis.
 The logarithmic coefficient is not evidence that the resummed interacting
 moment diverges.  Only after the normalized marginal closes should the
 programme sum Fourier shells.  Another fixed-origin, pointwise,

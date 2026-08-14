@@ -198,6 +198,12 @@ bt_euclidean_cubic_score_log_obstruction.py
 bt_euclidean_score_rg_matching.py      exact logarithmic residue 5/(16*pi^2),
                                        physical/MS coupling conversion, and the
                                        RG-matched leading score limit 1/2
+bt_euclidean_quartic_score_power_obstruction.py
+                                       exact quartic score kernel with a
+                                       nonzero linearly soft fixture and an
+                                       L^2 lower bound for its isolated free
+                                       square; the complete order-g^4
+                                       cancellation remains open
 bt_four_point_bubble_log_jet.py        first virtual coefficient: arbitrary-mass
                                        bubble logarithm and four-leg interference jet
 bt_triangle_box_log_jet.py             complete triangle and box logarithmic jets;

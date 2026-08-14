@@ -110,6 +110,8 @@ def main() -> int:
     bt_center_score = json.loads((ROOT / data["authorities"]["bt_annealed_center_score_reduction"]["path"]).read_text())
     bt_cubic_score = json.loads((ROOT / data["authorities"]["bt_cubic_score_log_obstruction"]["path"]).read_text())
     bt_score_rg = json.loads((ROOT / data["authorities"]["bt_score_rg_matching"]["path"]).read_text())
+    bt_ward_weight = json.loads((ROOT / data["authorities"]["bt_zero_fiber_ward_weight_obstruction"]["path"]).read_text())
+    bt_quartic_score = json.loads((ROOT / data["authorities"]["bt_quartic_score_power_obstruction"]["path"]).read_text())
     dims = cube["dimensions"]
     atlas = data["atlas_snapshot"]
     require(atlas["axis_sizes"] == [6, 6, 16], "unexpected axis sizes")
@@ -257,6 +259,15 @@ def main() -> int:
     require(atlas["bt_ordinary_eom_score_identity_status"] == bt_score_rg["method_disposition"]["ordinary_finite_lattice_eom_score_identity"] == "PROVED", "BT ordinary EOM score identity drift")
     require(atlas["bt_eom_to_zero_fiber_transfer_status"] == bt_score_rg["method_disposition"]["ordinary_eom_to_zero_fiber_score_transfer"] == "OBSTRUCTED_AS_A_LOGICAL_INFERENCE", "BT EOM score transferred to zero fiber")
     require(atlas["bt_specific_zero_fiber_ward_status"] == bt_score_rg["method_disposition"]["bt_specific_zero_fiber_ward_identity"] == "OPEN", "BT-specific zero-fiber Ward identity promoted")
+    require(atlas["bt_zero_fiber_change_of_measure_status"] == bt_ward_weight["method_disposition"]["zero_fiber_constrained_change_of_measure"] == "PROVED", "BT zero-fiber change of measure drift")
+    require(atlas["bt_q_zero_uniform_lower_bound_status"] == bt_ward_weight["method_disposition"]["bt_background_uniform_q_zero_lower_bound"] == "OBSTRUCTED", "BT conditional-density lower-bound obstruction drift")
+    require(atlas["bt_constrained_ward_to_annealed_score_status"] == bt_ward_weight["method_disposition"]["pointwise_constrained_ward_to_annealed_score_transfer"] == "OBSTRUCTED_AS_FORMULATED", "BT constrained-Ward transfer disposition drift")
+    require(atlas["bt_annealed_inverse_density_status"] == bt_ward_weight["method_disposition"]["annealed_inverse_density_or_center_bound"] == "OPEN", "BT Ward-weight obstruction promoted to an annealed theorem")
+    require(atlas["bt_quartic_kernel_status"] == bt_quartic_score["method_disposition"]["exact_quartic_score_kernel"] == "PROVED", "BT quartic score kernel drift")
+    require(atlas["bt_quartic_soft_degree"] == bt_quartic_score["method_disposition"]["quartic_external_soft_degree"] == "LINEAR_NONZERO", "BT quartic soft degree drift")
+    require(atlas["bt_isolated_quartic_square_status"] == bt_quartic_score["method_disposition"]["isolated_quartic_score_square_uniform_in_L"] == "OBSTRUCTED", "BT isolated quartic-square obstruction drift")
+    require(atlas["bt_complete_order_g_four_score_status"] == bt_quartic_score["method_disposition"]["complete_order_g_four_score_coefficient"] == "OPEN", "BT isolated quartic result promoted to complete order g4")
+    require(atlas["bt_quartic_power_cancellation_status"] == bt_quartic_score["method_disposition"]["power_cancellation_in_renormalized_zero_fiber_composite"] == "OPEN", "BT quartic power cancellation promoted")
 
     allowed_tags = {"LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE", "LORENTZIAN-CAUSAL"}
     claim_ids = set()
@@ -340,6 +351,10 @@ def main() -> int:
     require(flags["bt_ordinary_eom_score_identity_established"] is True, "BT ordinary EOM score identity omitted")
     require(flags["bt_eom_to_zero_fiber_general_transfer_obstructed"] is True, "BT EOM-to-zero-fiber no-transfer omitted")
     require(flags["bt_specific_zero_fiber_ward_identity_established"] is False, "BT-specific zero-fiber Ward identity promoted")
+    require(flags["bt_quartic_score_kernel_established"] is True, "BT quartic score kernel omitted")
+    require(flags["bt_isolated_quartic_score_square_uniformity_obstructed"] is True, "BT isolated quartic-square obstruction omitted")
+    require(flags["bt_complete_order_g_four_score_established"] is False, "BT isolated quartic result promoted to complete order g4")
+    require(flags["bt_quartic_power_cancellation_established"] is False, "BT quartic power cancellation promoted")
     require(flags["bt_runaway_family_recentered_conditional_variance_established"] is True, "BT runaway-family recentered variance flag missing")
     require(flags["bt_runaway_family_conditional_mean_escape_established"] is True, "BT runaway-family conditional-mean escape flag missing")
     require(flags["bt_annealed_center_second_moment_established"] is False, "BT annealed center moment promoted")

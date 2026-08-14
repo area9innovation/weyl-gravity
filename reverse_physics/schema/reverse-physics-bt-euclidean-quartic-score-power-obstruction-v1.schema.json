@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-quartic-score-power-obstruction-v1.schema.json",
+  "type": "object",
+  "required": ["certificate", "schema_version", "created", "dependency_tags", "lifecycle_state", "result_kind", "question", "answer", "exact_lattice_expansion", "fourier_kernel", "exact_soft_fixture", "wiener_chaos_lower_bound", "cancellation_boundary", "numerical_preflight", "method_disposition", "checks", "does_not_establish", "missing_object_ledger", "next_gate", "provenance", "report", "schema", "verification_commands"],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_EUCLIDEAN_QUARTIC_SCORE_POWER_OBSTRUCTION_V1"},
+    "schema_version": {"const": "reverse-physics-bt-euclidean-quartic-score-power-obstruction-v1"},
+    "created": {"const": "2026-08-14"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "lifecycle_state": {"const": "ISOLATED_FIXED_ORDER_ROUTE_OBSTRUCTED"},
+    "result_kind": {"type": "string"},
+    "question": {"type": "string"},
+    "answer": {"type": "string"},
+    "exact_lattice_expansion": {"type": "object"},
+    "fourier_kernel": {"type": "object"},
+    "exact_soft_fixture": {"type": "object"},
+    "wiener_chaos_lower_bound": {"type": "object"},
+    "cancellation_boundary": {"type": "object"},
+    "numerical_preflight": {"type": "object"},
+    "method_disposition": {"type": "object"},
+    "checks": {"type": "object", "additionalProperties": {"const": true}},
+    "does_not_establish": {"type": "array", "items": {"type": "string"}},
+    "missing_object_ledger": {"type": "array", "items": {"type": "string"}},
+    "next_gate": {"type": "string"},
+    "provenance": {"type": "object"},
+    "report": {"const": "reverse_physics/reports/bt-euclidean-quartic-score-power-obstruction.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-euclidean-quartic-score-power-obstruction-v1.schema.json"},
+    "verification_commands": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": false
+}

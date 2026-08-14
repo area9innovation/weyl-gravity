@@ -1,0 +1,69 @@
+{
+  "schema_version": "bt-euclidean-quartic-score-preflight-v1",
+  "created": "2026-08-14",
+  "evidence_type": "BINARY64_FREE_GAUSSIAN_MONTE_CARLO_SUPPORTING_ONLY",
+  "dependency_tags": [
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "source": "reverse_physics/bt_euclidean_quartic_score_preflight.c",
+  "compiler_command": "cc -O3 -std=c11 -Wall -Wextra -pedantic reverse_physics/bt_euclidean_quartic_score_preflight.c -lm -o /tmp/bt_quartic_score_preflight",
+  "sampling_law": "A real iid standard Gaussian white-noise field is projected off the constant mode and solved through the periodic lattice Laplacian. The real lowest cosine is then projected out exactly in binary64.",
+  "observable": "The coefficient Q3=D_h S2 of g^2 in the zero-fiber score, where S2=sum_x[(Delta phi)_x E3_x/6+E2_x^2/8], E_j,x=sum_(delta directed nearest neighbor)(phi_(x+delta)-phi_x)^j.",
+  "rows": [
+    {
+      "length": 4,
+      "volume": 256,
+      "samples": 20000,
+      "seed": 814004,
+      "mean": 0.0064765236440073454,
+      "variance": 2.5929966778119424,
+      "variance_over_N_omega_squared": 0.0025322233181757263,
+      "variance_over_N_omega_squared_L_squared": 0.0001582639573859829,
+      "elapsed_seconds": 0.98,
+      "peak_rss_kb": 2352
+    },
+    {
+      "length": 8,
+      "volume": 4096,
+      "samples": 5000,
+      "seed": 814008,
+      "mean": -0.022124221587085623,
+      "variance": 11.792462608756304,
+      "variance_over_N_omega_squared": 0.008390076774466609,
+      "variance_over_N_omega_squared_L_squared": 0.00013109494960104076,
+      "elapsed_seconds": 4.2,
+      "peak_rss_kb": 2660
+    },
+    {
+      "length": 16,
+      "volume": 65536,
+      "samples": 500,
+      "seed": 814016,
+      "mean": -0.25349313273394353,
+      "variance": 50.99760545256809,
+      "variance_over_N_omega_squared": 0.0335743001837958,
+      "variance_over_N_omega_squared_L_squared": 0.00013114961009295234,
+      "elapsed_seconds": 9.14,
+      "peak_rss_kb": 3404
+    },
+    {
+      "length": 32,
+      "volume": 1048576,
+      "samples": 40,
+      "seed": 814032,
+      "mean": -1.2862878539649383,
+      "variance": 166.3087306968971,
+      "variance_over_N_omega_squared": 0.10739573685257571,
+      "variance_over_N_omega_squared_L_squared": 0.00010487864927009347,
+      "elapsed_seconds": 14.49,
+      "peak_rss_kb": 18668
+    }
+  ],
+  "interpretation": "The normalized isolated quartic-score square grows approximately like L^2; division by L^2 is stable over L=4,8,16 and remains comparable in the low-statistics L=32 row. The analytic open-box/Wiener-chaos lower bound, not these samples, establishes power nonuniformity.",
+  "does_not_establish": [
+    "the complete order-g^4 coefficient after measure and lower-score cross terms",
+    "divergence of the resummed or nonperturbative annealed score",
+    "a volume-uniform interacting lowest-mode or H^-1 moment",
+    "continuum, Born, Krein, or LORENTZIAN-CAUSAL physics"
+  ]
+}
