@@ -49,6 +49,7 @@ AUTHORITY_PATHS = {
     "bt_quartic_score_power_obstruction": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_QUARTIC_SCORE_POWER_OBSTRUCTION_V1.json",
     "bt_complete_g4_uv_noncancellation": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_COMPLETE_G4_UV_NONCANCELLATION_V1.json",
     "bt_complete_g4_chaos_gate": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_COMPLETE_G4_CHAOS_GATE_V1.json",
+    "bt_complete_g4_effective_hessian": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_COMPLETE_G4_EFFECTIVE_HESSIAN_V1.json",
     "full_surface_gap_audit": "foundations/results/FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1.json",
     "explorer_snapshot": "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json",
     "theory_assembly": "foundations/results/FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1.json",
@@ -123,6 +124,7 @@ def build() -> dict:
     bt_quartic_score = loaded["bt_quartic_score_power_obstruction"]
     bt_complete_g4 = loaded["bt_complete_g4_uv_noncancellation"]
     bt_g4_chaos = loaded["bt_complete_g4_chaos_gate"]
+    bt_g4_hessian = loaded["bt_complete_g4_effective_hessian"]
     site = loaded["explorer_snapshot"]
     gr_cassini = loaded["gr_cassini_assembly"]
     mannheim_ngc3198 = loaded["mannheim_ngc3198_assembly"]
@@ -363,6 +365,10 @@ def build() -> dict:
             "bt_g4_positive_norm_power_status": bt_g4_chaos["method_disposition"]["positive_norm_uv_power_lower_bound"],
             "bt_g4_effective_kernel_bound_status": bt_g4_chaos["method_disposition"]["effective_second_chaos_kernel_norm_bound"],
             "bt_g4_whole_lattice_survival_status": bt_g4_chaos["method_disposition"]["whole_lattice_order_g_four_power_survival"],
+            "bt_g4_expected_hessian_status": bt_g4_hessian["method_disposition"]["second_chaos_expected_hessian_representation"],
+            "bt_g4_conditioned_covariance_decomposition_status": bt_g4_hessian["method_disposition"]["conditioned_bulk_plus_rank_one_decomposition"],
+            "bt_g4_explicit_momentum_kernel_status": bt_g4_hessian["method_disposition"]["explicit_lattice_momentum_kernel"],
+            "bt_g4_hessian_kernel_bound_status": bt_g4_hessian["method_disposition"]["effective_second_chaos_kernel_norm_bound"],
             "standard_reference_direct_obligations": next(item for item in assembly_data["assemblies"] if item["id"] == "STANDARD_MIXED_REFERENCE")["coverage"]["direct"],
             "external_calibration_records": len(assembly_data["calibration_controls"][0]["records"]),
             "external_calibration_benchmark_families": sum(item["status"] == "SUPPORTED_CONTROL" for item in assembly_data["calibration_controls"][0]["benchmark_coverage"]),
@@ -455,7 +461,7 @@ def build() -> dict:
             {
                 "claim_id": "RF-13-BT-INTERACTING-RECONSTRUCTION-FRONTIER",
                 "statement": "At lambda=0.4 on the 6^4 lattice, an exact two-point reflected density-kernel minor obstructs ordinary OS positivity. The affine virial theorem proves a volume-uniform actual Gibbs action-density bound and annealed half-action factor. Exact period-four data obstruct the global Schur route. The residual map identifies positive fields modulo scale with a Schrödinger spectrahedral boundary and gives the exact normalized Gaussian-surface/tree-Jacobian pushforward. Its curvature and tree-Jacobian shortcuts are obstructed. An exact orthogonal-background family makes centered pointwise relative-action domination fail. On the subsequence eta_m=4m log(2) a, every global fiber minimizer lies below u=-m and the conditional probability of u>=-m is at most 2^-m, so the background-uniform raw conditional second moment is obstructed. On that same runaway family, however, K_m(2^u)>=115/4 proves a uniform recentered conditional-variance bound and E_qm[u]<-m/2: the obstruction is moving center rather than widening fiber. A plaquette absorption theorem proves for every background and L>=4 that the lowest axial curvature is at least (2/9)*N*omega_L^2 and conditional variance is at most 9/(2*N*omega_L^2). Strong convexity reduces the annealed center to one zero-fiber-score estimate. Its leading free orthogonal-background coefficient has residue 5/(16*pi^2) times log L, obstructing fixed-bare coefficientwise uniformity. On a fixed-physical-volume asymptotically free trajectory, however, g_L^2 log L tends to 8*pi^2/5 and the leading normalized score coefficient tends exactly to 1/2. This restores leading-log uniformity only on the tuned refinement branch. The exact ordinary equation-of-motion Ward identity controls the sampled full score, and a shifted-Gaussian fixture with full-score variance 2 but zero-fiber-score variance 100 obstructs its general transfer to the missing target. Exact disintegration further proves that constrained and integrated-marginal identities weight backgrounds by q_eta(0), while the target requires division by q_eta(0). On the actual BT runaway family the u-density obeys q_m^(u)(0)<=2^-m/m; the t-density differs only by the fixed factor 1/log(2), so no pointwise uniform lower bound can remove that weight. The annealed estimate may still succeed by exploiting the Gibbs rarity of those backgrounds. Fixed-spacing large volume, all-order resummation, and the nonperturbative Gibbs score remain open. Half-period translation proves the fully integrated marginal is even. The all-background width is closed; a nonperturbative center estimate and the actual interacting H^-1 moment remain open.",
-                "status": "EXACT_FINITE_OS_AND_METHOD_OBSTRUCTIONS_WITH_ALL_BACKGROUND_WIDTH_RG_MATCHED_LEADING_LOG_WARD_WEIGHT_QUARTIC_POWER_UV_G4_NONCANCELLATION_AND_CHAOS_GATE",
+                "status": "EXACT_FINITE_OS_AND_METHOD_OBSTRUCTIONS_WITH_ALL_BACKGROUND_WIDTH_RG_MATCHED_LEADING_LOG_WARD_WEIGHT_QUARTIC_POWER_UV_G4_NONCANCELLATION_CHAOS_AND_HESSIAN_GATES",
                 "authorities": [
                     "bt_lambda04_os_kernel_obstruction",
                     "bt_uniform_convexity_obstruction",
@@ -480,6 +486,7 @@ def build() -> dict:
                     "bt_quartic_score_power_obstruction",
                     "bt_complete_g4_uv_noncancellation",
                     "bt_complete_g4_chaos_gate",
+                    "bt_complete_g4_effective_hessian",
                 ],
                 "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"],
             },
@@ -629,6 +636,9 @@ def build() -> dict:
             "bt_complete_order_g_four_ir_complement_bounded": False,
             "bt_complete_order_g_four_chaos_decomposition_established": True,
             "bt_complete_order_g_four_signed_gate_reduced_to_second_chaos": True,
+            "bt_complete_order_g_four_expected_hessian_formula_established": True,
+            "bt_complete_order_g_four_conditioning_finite_rank_decomposition_established": True,
+            "bt_complete_order_g_four_explicit_momentum_kernel_established": False,
             "bt_complete_order_g_four_effective_kernel_bound_established": False,
             "bt_complete_order_g_four_power_survival_established": False,
             "research_programme_lenses_explained": True,
@@ -685,6 +695,7 @@ def build() -> dict:
             "divergence of the full interacting BT score or moment from the isolated quartic-score square",
             "the unrestricted whole-lattice order-g^4 sign or scaling from fixed-carrier ultraviolet noncancellation",
             "the effective second-chaos kernel bound from the exact Wiener-chaos reduction alone",
+            "the explicit BT lattice momentum kernel or its norm bound from the expected-Hessian formula alone",
         ],
         "authorities": authorities,
         "independent_checker": {
@@ -723,6 +734,13 @@ def build() -> dict:
                 "effective three-leg kernel; a linear-soft weighted norm bound for "
                 "that kernel would make the signed cross term negligible and decide "
                 "survival of the full power. That norm bound remains open."
+                " The remaining projection is now represented by the single expected "
+                "Hessian K_E=E_0[D^2E]. The conditioned covariance splits exactly "
+                "into a translation-invariant bulk and a rank-one real-cosine "
+                "correction: the bulk selects transfer p, the single-rank terms can "
+                "also sample transfer 3p, and the double-rank cross term vanishes for "
+                "L>=4. This removes the Wick-pairing inventory but does not evaluate "
+                "the Fourier kernel or prove its norm bound."
             )
             break
     payload["canonical_digest"] = canonical_digest(payload)

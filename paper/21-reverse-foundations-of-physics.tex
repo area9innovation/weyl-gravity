@@ -1613,6 +1613,27 @@ $W_1$, $W_2$, and normalization terms together before splitting the resulting
 kernel into hard, one-soft, and all-soft regions.  Ordinary continuum
 off-shell IR finiteness is not itself this projected lattice-composite bound.
 
+The remaining projection can nevertheless be compressed one step further.
+Certificate
+\cert{REVERSE_PHYSICS_BT_EUCLIDEAN_COMPLETE_G4_EFFECTIVE_HESSIAN_V1}
+uses Gaussian integration by parts to represent it by the expected Hessian
+
+\[
+ K_E=\mathbb E_0[D^2E],
+ \qquad
+ \|\Pi_2E\|_0^2=\frac12\operatorname{Tr}(C K_E C K_E).
+\]
+
+This expression retains the $W_1$, $W_2$, and normalization terms in one
+product-rule kernel, so they need not be expanded into a separate Wick-diagram
+inventory.  The real-cosine-conditioned covariance is
+$C=C_0-R_h$: a translation-invariant bulk minus one rank-one covariance.
+The bulk cross trace selects transfer $\pm p$; a single rank-one insertion can
+also sample $\pm3p$; and the double-rank cross term vanishes for $L\geq4$.
+Thus the open calculation is an explicit momentum-diagonal bulk plus a
+finite-mode correction.  The Fourier sums and their weighted norm bound have
+not been evaluated, so the whole-lattice order-$g^4$ decision remains open.
+
 \subsection{A finite BV contraction does not freeze the quantum theory}
 
 The energy-two free BV block provides another finite exact case.  The
@@ -1997,7 +2018,9 @@ summation.  Bounding or computing that complement is now the precise
 fixed-order gate.  Wiener-chaos orthogonality reduces this signed complement
 to one effective second-chaos three-leg kernel: a linear-soft weighted norm
 bound for that kernel would make the only negative cross term negligible.
-That norm bound is the active calculation and remains open.
+Its expected-Hessian formula is now exact, and real-cosine conditioning has
+been isolated as a rank-one correction.  The explicit Fourier kernel and its
+norm bound are the active calculation and remain open.
 The logarithmic coefficient is not evidence that the resummed interacting
 moment diverges.  Only after the normalized marginal closes should the
 programme sum Fourier shells.  Another fixed-origin, pointwise,

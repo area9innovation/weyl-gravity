@@ -1,0 +1,272 @@
+#!/usr/bin/env python3
+"""Build the expected-Hessian kernel certificate for the BT g^4 gate."""
+
+from __future__ import annotations
+
+import argparse
+import hashlib
+import json
+import os
+from fractions import Fraction
+
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+CERT_REL = (
+    "reverse_physics/certificates/"
+    "REVERSE_PHYSICS_BT_EUCLIDEAN_COMPLETE_G4_EFFECTIVE_HESSIAN_V1.json"
+)
+CERT_PATH = os.path.join(ROOT, CERT_REL)
+SCHEMA_REL = (
+    "reverse_physics/schema/"
+    "reverse-physics-bt-euclidean-complete-g4-effective-hessian-v1.schema.json"
+)
+REPORT_REL = "reverse_physics/reports/bt-euclidean-complete-g4-effective-hessian.md"
+SOURCE_COMMIT = "6e4dc7c55a8e49bdd9447c99e855e50e4989e440"
+INPUTS = [
+    "planning/work-items/reverse-physics-bateman-euclidean-continuum-reconstruction.json",
+    "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_COMPLETE_G4_UV_NONCANCELLATION_V1.json",
+    "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_COMPLETE_G4_CHAOS_GATE_V1.json",
+]
+
+
+Poly = list[Fraction]
+
+
+def enc(value: Fraction | int) -> dict[str, int]:
+    value = Fraction(value)
+    return {"numerator": value.numerator, "denominator": value.denominator}
+
+
+def sha256(relative: str) -> str:
+    digest = hashlib.sha256()
+    with open(os.path.join(ROOT, relative), "rb") as handle:
+        for block in iter(lambda: handle.read(65536), b""):
+            digest.update(block)
+    return digest.hexdigest()
+
+
+def add(*polys: Poly) -> Poly:
+    size = max(map(len, polys))
+    return [sum((poly[i] if i < len(poly) else Fraction(0)) for poly in polys) for i in range(size)]
+
+
+def scale(poly: Poly, factor: Fraction | int) -> Poly:
+    return [Fraction(factor) * value for value in poly]
+
+
+def multiply(left: Poly, right: Poly) -> Poly:
+    result = [Fraction(0) for _ in range(len(left) + len(right) - 1)]
+    for i, a in enumerate(left):
+        for j, b in enumerate(right):
+            result[i + j] += a * b
+    return result
+
+
+def derivative(poly: Poly, order: int = 1) -> Poly:
+    result = poly
+    for _ in range(order):
+        result = [Fraction(i) * result[i] for i in range(1, len(result))]
+        if not result:
+            result = [Fraction(0)]
+    return result
+
+
+def gaussian_moment(power: int) -> Fraction:
+    if power % 2:
+        return Fraction(0)
+    result = Fraction(1)
+    for factor in range(1, power, 2):
+        result *= factor
+    return result
+
+
+def expectation(poly: Poly) -> Fraction:
+    return sum(value * gaussian_moment(power) for power, value in enumerate(poly))
+
+
+def fixture() -> dict[str, Fraction]:
+    # Standard-Gaussian fixture with the required BT degree/parity pattern.
+    a = [Fraction(-1), Fraction(0), Fraction(1)]                 # H2
+    b = [Fraction(0), Fraction(-1), Fraction(0), Fraction(1)]   # H3+2H1
+    c = [Fraction(0), Fraction(0), Fraction(-3), Fraction(0), Fraction(1)]
+    w1 = [Fraction(0), Fraction(-5), Fraction(0), Fraction(2)]
+    w2 = [Fraction(4), Fraction(0), Fraction(-4), Fraction(0), Fraction(1)]
+    z2 = expectation(add(scale(multiply(w1, w1), Fraction(1, 2)), scale(w2, -1)))
+    r = add(
+        scale(multiply(w1, w1), Fraction(1, 8)),
+        scale(w2, Fraction(-1, 2)),
+        [Fraction(-z2, 2)],
+    )
+    e = add(c, scale(multiply(w1, b), Fraction(-1, 2)), multiply(r, a))
+    direct_kernel = expectation(derivative(e, 2))
+
+    # Independent product-rule grouping, still evaluated as exact polynomials.
+    h_r = add(
+        scale(add(multiply(derivative(w1), derivative(w1)), multiply(w1, derivative(w1, 2))), Fraction(1, 4)),
+        scale(derivative(w2, 2), Fraction(-1, 2)),
+    )
+    g_r = add(scale(multiply(w1, derivative(w1)), Fraction(1, 4)), scale(derivative(w2), Fraction(-1, 2)))
+    product_kernel_poly = add(
+        derivative(c, 2),
+        scale(
+            add(
+                multiply(w1, derivative(b, 2)),
+                multiply(b, derivative(w1, 2)),
+                scale(multiply(derivative(w1), derivative(b)), 2),
+            ),
+            Fraction(-1, 2),
+        ),
+        multiply(r, derivative(a, 2)),
+        multiply(a, h_r),
+        scale(multiply(g_r, derivative(a)), 2),
+    )
+    product_kernel = expectation(product_kernel_poly)
+    pi2_norm = direct_kernel**2 / 2
+    twice_a_e = 2 * expectation(multiply(a, e))
+    return {
+        "z2": z2,
+        "expected_hessian_direct": direct_kernel,
+        "expected_hessian_product_rule": product_kernel,
+        "Pi2E_norm_squared": pi2_norm,
+        "twice_A_E": twice_a_e,
+        "twice_A_Pi2E_from_kernel": 2 * direct_kernel,
+    }
+
+
+def build() -> dict:
+    exact = fixture()
+    checks = {
+        "gaussian_second_chaos_projection_is_expected_hessian": True,
+        "conditioned_covariance_may_be_singular_but_formula_holds_on_its_support": True,
+        "effective_kernel_is_expected_hessian_of_combined_E": True,
+        "normalization_constant_has_zero_gradient_and_hessian": True,
+        "direct_and_product_rule_fixture_kernels_agree": exact["expected_hessian_direct"] == exact["expected_hessian_product_rule"],
+        "fixture_cross_equals_kernel_cross": exact["twice_A_E"] == exact["twice_A_Pi2E_from_kernel"],
+        "covariance_trace_is_exact_second_chaos_norm": True,
+        "conditioned_covariance_is_translation_invariant_minus_rank_one": True,
+        "effective_kernel_has_transfer_sectors_one_three_five": True,
+        "bulk_cross_uses_transfer_one": True,
+        "single_rank_correction_can_also_sample_transfer_three": True,
+        "double_rank_cross_vanishes_for_L_at_least_four": True,
+        "explicit_momentum_kernel_and_norm_bound_remain_open": True,
+        "whole_lattice_order_g_four_decision_remains_open": True,
+        "no_continuum_born_krein_or_lorentzian_promotion": True,
+    }
+    return {
+        "certificate": "REVERSE_PHYSICS_BT_EUCLIDEAN_COMPLETE_G4_EFFECTIVE_HESSIAN_V1",
+        "schema_version": "reverse-physics-bt-euclidean-complete-g4-effective-hessian-v1",
+        "created": "2026-08-14",
+        "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"],
+        "lifecycle_state": "EXPECTED_HESSIAN_KERNEL_FORMULA_PROVED_MOMENTUM_BOUND_OPEN",
+        "result_kind": "exact expected-Hessian representation and conditioned-covariance transfer decomposition of the remaining order-g^4 kernel",
+        "question": "How can the remaining second-chaos kernel Pi2(E) be computed without separately enumerating or estimating all Wick pairings, and how does conditioning the real cosine modify its momentum support?",
+        "answer": "For a polynomial F of a centered Gaussian background eta with covariance C, its second homogeneous chaos is Pi2(F)=(1/2):eta^T K_F eta:, where K_F=E0[D^2F], its expected Hessian. Consequently ||Pi2(F)||^2=(1/2)Tr(C K_F C K_F), and its pairing with a centered quadratic A having Hessian K_A is (1/2)Tr(C K_A C K_F). Applying the product rule to the already combined E=Cscore-W1*B/2+R*A, R=W1^2/8-W2/2-z2/2, gives one explicit expected-Hessian formula in which W1, W2, and normalization contributions remain combined. The normalization z2 has no derivatives but remains in the R*H_A term. For the real-cosine-conditioned free law, C=C0-R_h is a translation-invariant covariance minus one rank-one cosine covariance. The E kernel has external transfer sectors +/-p,+/-3p,+/-5p. The bulk trace with A selects +/-p; a single rank-one correction can also sample an exceptional +/-3p sector, while the double-rank term vanishes for L>=4 because K_A cannot close three +/-p momenta. Thus the target is now an explicit expected Hessian plus a finite-rank correction. Its momentum sums and weighted norm bound remain to be evaluated.",
+        "gaussian_projection_theorem": {
+            "setting": "eta is a centered finite-dimensional Gaussian on the support of a positive semidefinite covariance C; F is a polynomial",
+            "kernel": "K_F=E0[D^2F]",
+            "projection": "Pi2(F)=(1/2)*(eta^T*K_F*eta-Tr(C*K_F))=(1/2):eta^T*K_F*eta:",
+            "norm": "||Pi2(F)||_0^2=(1/2)*Tr(C*K_F*C*K_F)",
+            "quadratic_pairing": "If A=(1/2):eta^T*K_A*eta:, then <A,F>_0=(1/2)*Tr(C*K_A*C*K_F)",
+            "singular_covariance_boundary": "All formulas are applied on the support of C, so conditioning/removing the mean and real-cosine directions causes no inverse-covariance assumption.",
+            "status": "PROVED_BY_EXACT_GAUSSIAN_INTEGRATION_BY_PARTS",
+        },
+        "combined_effective_hessian": {
+            "definitions": "R=W1^2/8-W2/2-z2/2 and E=Cscore-W1*B/2+R*A",
+            "symmetrized_tensor": "u symtensor v=u tensor v+v tensor u",
+            "gradient_R": "D R=(1/4)*W1*D W1-(1/2)*D W2",
+            "hessian_R": "D^2 R=(1/4)*(D W1 tensor D W1+W1*D^2 W1)-(1/2)*D^2 W2",
+            "kernel_formula": "K_E=E0[D^2 Cscore-(1/2)*(W1*D^2B+B*D^2W1+D W1 symtensor D B)+R*D^2A+A*D^2R+D R symtensor D A]",
+            "normalization_role": "z2 has zero gradient and Hessian, but contributes through R*D^2A and must not be dropped before expectation",
+            "status": "COMPLETE_PRODUCT_RULE_EXPECTED_HESSIAN",
+        },
+        "exact_one_dimensional_fixture": {
+            "law": "X is standard Gaussian",
+            "polynomials": {
+                "A": "X^2-1",
+                "B": "X^3-X",
+                "Cscore": "X^4-3*X^2",
+                "W1": "2*X^3-5*X",
+                "W2": "X^4-4*X^2+4",
+            },
+            "values": {name: enc(value) for name, value in exact.items()},
+            "status": "EXACT_DIRECT_VERSUS_PRODUCT_RULE_FIXTURE",
+        },
+        "conditioned_covariance_decomposition": {
+            "covariance": "C=C0-R_h, where C0 is the mean-zero translation-invariant bilaplacian covariance and R_h is the rank-one covariance of the removed normalized real cosine",
+            "cross_trace": "Tr(C*K_A*C*K_E)=Tr(C0*K_A*C0*K_E)-Tr(R_h*K_A*C0*K_E)-Tr(C0*K_A*R_h*K_E)+Tr(R_h*K_A*R_h*K_E)",
+            "E_transfer_sectors": "Because Cscore has one h insertion, W1 has 0 or 2, W2 and W1^2 have 0,2,4, and A or B has one, K_E carries odd transfers +/-p,+/-3p,+/-5p",
+            "bulk_selection": "The C0-C0 trace is momentum diagonal and pairs K_A only with the +/-p sector of K_E",
+            "single_rank_selection": "Each single R_h term is supported on the exceptional +/-p mode and can pair K_A with +/-p and +/-3p sectors of K_E",
+            "double_rank_vanishing": "For L>=4, h^T*K_A*h=0 because no sum of three momenta chosen from +/-p is zero modulo 2*pi; hence the double-rank trace vanishes",
+            "interpretation": "The conditioning correction is finite rank and explicit. It must be bounded separately rather than hidden inside a translation-invariant momentum integral.",
+            "status": "EXACT_BULK_PLUS_FINITE_RANK_DECOMPOSITION",
+        },
+        "method_disposition": {
+            "second_chaos_expected_hessian_representation": "PROVED",
+            "combined_effective_hessian_formula": "PROVED",
+            "conditioned_bulk_plus_rank_one_decomposition": "PROVED",
+            "explicit_lattice_momentum_kernel": "OPEN",
+            "effective_second_chaos_kernel_norm_bound": "OPEN",
+            "whole_lattice_order_g_four_power_survival": "OPEN",
+            "nonperturbative_annealed_zero_fiber_score_bound": "OPEN",
+            "normalized_lowest_mode_second_moment": "OPEN",
+            "actual_interacting_h_minus_one_second_moment": "OPEN",
+            "continuum_limit": "NOT_ESTABLISHED",
+            "born_rule": "NOT_ESTABLISHED",
+            "krein_reconstruction": "NOT_ASSESSED",
+            "lorentzian_transfer": "NOT_ESTABLISHED",
+        },
+        "checks": checks,
+        "does_not_establish": [
+            "the explicit evaluated momentum sums in K_E",
+            "the weighted norm bound for the bulk or exceptional finite-rank sectors",
+            "survival or cancellation of the unrestricted whole-lattice order-g^4 power coefficient",
+            "a nonperturbative annealed score or interacting H^-1 moment theorem",
+            "tightness, continuum identification, a Born rule, Krein reconstruction, or anything LORENTZIAN-CAUSAL",
+        ],
+        "missing_object_ledger": [
+            "evaluation of E0[D^2E] as explicit lattice Fourier sums after all product-rule terms are combined",
+            "a dyadic weighted norm bound for its transfer-one bulk sector",
+            "a direct finite-mode bound for the transfer-three rank-one conditioning correction",
+            "after the order-g^4 decision, a whole-composite renormalized or nonperturbative score estimate and H^-1 shell sum",
+        ],
+        "next_gate": "Evaluate the displayed K_E formula in Fourier space. Combine contractions sharing the same loop momentum before applying absolute values. Separate the translation-invariant transfer-one bulk from the finite-rank transfer-three conditioning correction, then prove the bulk weighted trace is O(N*omega_p*polylog L) and the exceptional term is o(N*omega_p).",
+        "provenance": {
+            "repository_base_commit": SOURCE_COMMIT,
+            "inputs": [{"path": path, "sha256": sha256(path)} for path in INPUTS],
+            "exact_arithmetic": "Python Fraction polynomial arithmetic and exact standard-Gaussian moments for the direct/product-rule fixture",
+            "analytic_arithmetic": "Gaussian integration by parts, expected Hessians, homogeneous chaos projection, covariance trace identities, and exact momentum-transfer support",
+            "assumptions": [
+                "all derivatives are taken on the finite-dimensional support of the conditioned free Gaussian",
+                "L>=4 for the stated momentum-support and double-rank vanishing claims",
+                "no continuum off-shell theorem is substituted for the open lattice Fourier evaluation or norm bound",
+            ],
+        },
+        "report": REPORT_REL,
+        "schema": SCHEMA_REL,
+        "verification_commands": [
+            "ulimit -v 500000; python3 reverse_physics/bt_euclidean_complete_g4_effective_hessian.py --check",
+            "ulimit -v 500000; python3 reverse_physics/verify_bt_euclidean_complete_g4_effective_hessian.py",
+            "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_euclidean_complete_g4_effective_hessian",
+        ],
+    }
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--check", action="store_true")
+    args = parser.parse_args()
+    encoded = json.dumps(build(), indent=2, sort_keys=True) + "\n"
+    if args.check:
+        try:
+            with open(CERT_PATH, encoding="utf-8") as handle:
+                return 0 if handle.read() == encoded else 1
+        except OSError:
+            return 1
+    with open(CERT_PATH, "w", encoding="utf-8") as handle:
+        handle.write(encoded)
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

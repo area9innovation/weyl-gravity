@@ -215,6 +215,13 @@ bt_euclidean_complete_g4_chaos_gate.py
                                        signed cancellation is localized to
                                        one effective second-chaos three-leg
                                        kernel norm, now the active bound
+bt_euclidean_complete_g4_effective_hessian.py
+                                       replaces the remaining Wick-pairing
+                                       inventory by one expected Hessian and
+                                       splits real-cosine conditioning into a
+                                       momentum-diagonal bulk plus finite-rank
+                                       correction; Fourier evaluation and the
+                                       norm bound remain open
 bt_four_point_bubble_log_jet.py        first virtual coefficient: arbitrary-mass
                                        bubble logarithm and four-leg interference jet
 bt_triangle_box_log_jet.py             complete triangle and box logarithmic jets;

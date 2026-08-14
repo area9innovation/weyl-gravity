@@ -1,0 +1,114 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-complete-g4-effective-hessian-v1.schema.json",
+  "type": "object",
+  "required": [
+    "certificate",
+    "schema_version",
+    "created",
+    "dependency_tags",
+    "lifecycle_state",
+    "result_kind",
+    "question",
+    "answer",
+    "gaussian_projection_theorem",
+    "combined_effective_hessian",
+    "exact_one_dimensional_fixture",
+    "conditioned_covariance_decomposition",
+    "method_disposition",
+    "checks",
+    "does_not_establish",
+    "missing_object_ledger",
+    "next_gate",
+    "provenance",
+    "report",
+    "schema",
+    "verification_commands"
+  ],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_EUCLIDEAN_COMPLETE_G4_EFFECTIVE_HESSIAN_V1"},
+    "schema_version": {"const": "reverse-physics-bt-euclidean-complete-g4-effective-hessian-v1"},
+    "created": {"const": "2026-08-14"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "lifecycle_state": {"const": "EXPECTED_HESSIAN_KERNEL_FORMULA_PROVED_MOMENTUM_BOUND_OPEN"},
+    "result_kind": {"type": "string"},
+    "question": {"type": "string"},
+    "answer": {"type": "string"},
+    "gaussian_projection_theorem": {
+      "type": "object",
+      "required": ["setting", "kernel", "projection", "norm", "quadratic_pairing", "singular_covariance_boundary", "status"],
+      "properties": {
+        "setting": {"type": "string"},
+        "kernel": {"const": "K_F=E0[D^2F]"},
+        "projection": {"type": "string"},
+        "norm": {"const": "||Pi2(F)||_0^2=(1/2)*Tr(C*K_F*C*K_F)"},
+        "quadratic_pairing": {"type": "string"},
+        "singular_covariance_boundary": {"type": "string"},
+        "status": {"const": "PROVED_BY_EXACT_GAUSSIAN_INTEGRATION_BY_PARTS"}
+      },
+      "additionalProperties": false
+    },
+    "combined_effective_hessian": {
+      "type": "object",
+      "required": ["definitions", "symmetrized_tensor", "gradient_R", "hessian_R", "kernel_formula", "normalization_role", "status"],
+      "properties": {
+        "definitions": {"type": "string"},
+        "symmetrized_tensor": {"type": "string"},
+        "gradient_R": {"type": "string"},
+        "hessian_R": {"type": "string"},
+        "kernel_formula": {"type": "string"},
+        "normalization_role": {"type": "string"},
+        "status": {"const": "COMPLETE_PRODUCT_RULE_EXPECTED_HESSIAN"}
+      },
+      "additionalProperties": false
+    },
+    "exact_one_dimensional_fixture": {
+      "type": "object",
+      "required": ["law", "polynomials", "values", "status"],
+      "properties": {
+        "law": {"const": "X is standard Gaussian"},
+        "polynomials": {"type": "object"},
+        "values": {
+          "type": "object",
+          "required": ["z2", "expected_hessian_direct", "expected_hessian_product_rule", "Pi2E_norm_squared", "twice_A_E", "twice_A_Pi2E_from_kernel"],
+          "additionalProperties": {
+            "type": "object",
+            "required": ["numerator", "denominator"],
+            "properties": {
+              "numerator": {"type": "integer"},
+              "denominator": {"type": "integer", "minimum": 1}
+            },
+            "additionalProperties": false
+          }
+        },
+        "status": {"const": "EXACT_DIRECT_VERSUS_PRODUCT_RULE_FIXTURE"}
+      },
+      "additionalProperties": false
+    },
+    "conditioned_covariance_decomposition": {
+      "type": "object",
+      "required": ["covariance", "cross_trace", "E_transfer_sectors", "bulk_selection", "single_rank_selection", "double_rank_vanishing", "interpretation", "status"],
+      "properties": {
+        "covariance": {"type": "string"},
+        "cross_trace": {"type": "string"},
+        "E_transfer_sectors": {"type": "string"},
+        "bulk_selection": {"type": "string"},
+        "single_rank_selection": {"type": "string"},
+        "double_rank_vanishing": {"type": "string"},
+        "interpretation": {"type": "string"},
+        "status": {"const": "EXACT_BULK_PLUS_FINITE_RANK_DECOMPOSITION"}
+      },
+      "additionalProperties": false
+    },
+    "method_disposition": {"type": "object"},
+    "checks": {"type": "object", "additionalProperties": {"const": true}},
+    "does_not_establish": {"type": "array", "items": {"type": "string"}},
+    "missing_object_ledger": {"type": "array", "items": {"type": "string"}},
+    "next_gate": {"type": "string"},
+    "provenance": {"type": "object"},
+    "report": {"const": "reverse_physics/reports/bt-euclidean-complete-g4-effective-hessian.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-euclidean-complete-g4-effective-hessian-v1.schema.json"},
+    "verification_commands": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": false
+}
