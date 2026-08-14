@@ -1,0 +1,158 @@
+{
+  "schema_version": "science-forge-tier-receipt-v1",
+  "receipt_id": "PAPER21_REVERSE_FOUNDATIONS_V12_BT_TILT_INTEGRATION_V1_TIER_RECEIPT",
+  "result_id": "PAPER21_REVERSE_FOUNDATIONS_INTRODUCTION_V1",
+  "created": "2026-08-14",
+  "source_base_commit": "b18f04774609bf0e83976e59c20f206c7ba3619c",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "scope": "Regenerate and verify Paper 21 against foundations cube v12, add the localized coded weak-wave authorities, and integrate the exact BT residual-tilt Jacobian cancellation while preserving the open action-weighted conditional-fiber, interacting H-minus-one, continuum, Born, Krein, and Lorentzian gates.",
+  "inputs": [
+    {
+      "path": "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V12.json",
+      "sha256": "5a93c5d2661f2a5591db75b60e72da3dccd0f3587b75f67dddc2c19c71a84f05",
+      "role": "current 576-coordinate foundations authority"
+    },
+    {
+      "path": "foundations/site/data.json",
+      "sha256": "4f5cbd42e41ad98361b769caea36cca2879f4c3a74fbe058d83bfce2fb6af222",
+      "role": "normalized appendix dataset"
+    },
+    {
+      "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_RESIDUAL_TILT_JACOBIAN_CANCELLATION_V1.json",
+      "sha256": "04f79c742344a615b82275850c7e90deb73cf81423847c985f166e0d5edda057",
+      "role": "exact BT tilt and coarea-cancellation authority"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "paper/21-reverse-foundations-of-physics.tex",
+      "sha256": "f9b1af7d0a2b2881ce602ab27ff21bca9092d878f1618b8adabd43f2b510c137"
+    },
+    {
+      "path": "paper/21-reverse-foundations-of-physics-appendices.tex",
+      "sha256": "57f976665d33deedbcdae11c4bea18c8aa7410442de1221cecad255124298c1c"
+    },
+    {
+      "path": "paper/21-reverse-foundations-of-physics.pdf",
+      "sha256": "6639363419f6349c00caed343016bdbbf9f35fd7a529b93df6be42f4f7a46e6b"
+    },
+    {
+      "path": "paper/21-reverse-foundations-of-physics-claim-map.json",
+      "sha256": "5d3ba9d61d9f5e3e81dbfc772d7bab2ae5fd20617a7bbcf936a3562951d4b0f5"
+    },
+    {
+      "path": "paper/generate_21_reverse_foundations_claim_map.py",
+      "sha256": "1de1e4ab1466e4cba6c9a37adb9f8367cd486a20b99f484904f48aedd89b767b"
+    },
+    {
+      "path": "paper/verify_21_reverse_foundations_claim_map.py",
+      "sha256": "01b75e5aa2463fadda05b0511f95e3d9483164c0fb7a0b1f33f5b7593078ec4d"
+    }
+  ],
+  "atlas_snapshot": {
+    "coordinates": 576,
+    "local_results": 123,
+    "literature_results": 90,
+    "pieces_only": 163,
+    "priority_gaps": 30,
+    "reviewed_gaps": 170,
+    "not_mapped": 0,
+    "evidence_records": 77,
+    "local_evidence_records": 26,
+    "literature_evidence_records": 51
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "python3 -W error::SyntaxWarning -m py_compile paper/generate_21_reverse_foundations_claim_map.py paper/verify_21_reverse_foundations_claim_map.py",
+          "elapsed_seconds": 0.04,
+          "peak_rss_kb": 18180,
+          "status": "PASS"
+        },
+        {
+          "command": "cd paper && pdflatex -interaction=nonstopmode -halt-on-error 21-reverse-foundations-of-physics.tex (twice)",
+          "elapsed_seconds": 1.41,
+          "peak_rss_kb": 53288,
+          "status": "PASS",
+          "output": "45 pages; no compile error, undefined citation/reference, overfull box, or final-pass rerun warning. Generated appendix tables retain underfull-box notices."
+        },
+        {
+          "command": "git diff --check -- <seven scoped Paper 21 integration paths>",
+          "status": "PASS"
+        }
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "python3 paper/generate_21_reverse_foundations_appendices.py --check",
+          "elapsed_seconds": 0.05,
+          "peak_rss_kb": 24832,
+          "status": "PASS"
+        },
+        {
+          "command": "python3 paper/generate_21_reverse_foundations_claim_map.py --check",
+          "elapsed_seconds": 0.06,
+          "peak_rss_kb": 29604,
+          "status": "PASS"
+        },
+        {
+          "command": "python3 paper/verify_21_reverse_foundations_claim_map.py",
+          "elapsed_seconds": 0.06,
+          "peak_rss_kb": 25692,
+          "status": "PASS"
+        },
+        {
+          "command": "python3 ci/verify_paper_manuscript_pins.py",
+          "elapsed_seconds": 0.02,
+          "peak_rss_kb": 17880,
+          "status": "PASS",
+          "output": "7 explicit manuscript/PDF bindings pass"
+        }
+      ]
+    },
+    "tier_2": {
+      "status": "NOT_RUN",
+      "criterion": "The mathematical producers, shared operators, source certificates, cube v12, and normalized atlas dataset are unchanged and content-addressed. This integration changes their generated publication consumer only; their existing independent certificate chains remain authoritative."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "Paper 21 remains a working draft; this change performs no classical or quantum freeze, lifecycle promotion, shared-core algebra change, or release preparation."
+    }
+  },
+  "advisory": {
+    "kind": "ADVISORY_FINDING",
+    "certifying": false,
+    "command": "forge/tools/science-forge/paper_prose_advisory.sh paper/21-reverse-foundations-of-physics.tex",
+    "result": "Emphasis, em-dash, sentence-length, novelty, and vocabulary rails are within advisory budgets. Parenthetical density and abstract length remain over the non-gating advisory budgets; the abstract also contains one numeric group."
+  },
+  "claim_flags": {
+    "cube_v12_is_principal_authority": true,
+    "localized_weak_wave_results_integrated": true,
+    "bt_tilt_jacobian_cancellation_integrated": true,
+    "paper_claim_map_current": true,
+    "paper_compiles": true,
+    "bt_action_weighted_conditional_fiber_bound_established": false,
+    "bt_interacting_h_minus_one_established": false,
+    "continuum_measure_established": false,
+    "born_rule_established": false,
+    "krein_reconstruction_established": false,
+    "new_lorentzian_claim": false
+  },
+  "does_not_establish": [
+    "a volume-uniform BT action-weighted conditional-fiber bound",
+    "an interacting H-minus-one moment estimate or continuum measure",
+    "reflection positivity beyond the already scoped finite-volume obstruction",
+    "a Born, Krein, gravitational, empirical, or LORENTZIAN-CAUSAL promotion",
+    "that the finite localized weak-test span covers every smooth compactly supported test",
+    "a weakest-foundation reversal"
+  ]
+}

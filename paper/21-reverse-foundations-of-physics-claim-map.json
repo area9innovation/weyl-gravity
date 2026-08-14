@@ -10,6 +10,7 @@
     "bt_actual_action_density_status": "PROVED",
     "bt_actual_half_action_factor_status": "PROVED",
     "bt_affine_virial_status": "PROVED",
+    "bt_direct_action_fiber_bound_status": "OPEN",
     "bt_euclidean_carrier_relation": "INCOMPATIBLE",
     "bt_euclidean_direct_capabilities": 5,
     "bt_euclidean_numerical_status": "COARSE_REPRODUCTION_ONLY",
@@ -50,8 +51,23 @@
       "numerator": 85
     },
     "bt_residual_entropy_jacobian_minimum_status": "PROVED",
+    "bt_residual_induced_tilt_surface_jacobian_status": "PROVED",
+    "bt_residual_inverse_tree_jacobian_cancellation_status": "PROVED",
     "bt_residual_pointwise_strict_convexity_status": "PROVED",
+    "bt_residual_tilt_boltzmann_gap_c4": {
+      "denominator": 128,
+      "numerator": 5325
+    },
+    "bt_residual_tilt_inverse_density_ratio_c4": {
+      "denominator": 9,
+      "numerator": 10
+    },
+    "bt_residual_tilt_surface_ratio_c4": {
+      "denominator": 10,
+      "numerator": 9
+    },
     "bt_residual_tree_jacobian_status": "PROVED",
+    "bt_residual_tree_log_convexity_tilt_status": "OBSTRUCTED",
     "bt_residual_trial_curvature_q2": {
       "denominator": 2601,
       "numerator": 80
@@ -63,19 +79,25 @@
     },
     "bt_residual_weighted_mean_curvature_status": "OBSTRUCTED_AT_LAMBDA_0P4",
     "cartesian_total": 576,
+    "coded_local_weak_wave_all_smooth_tests": false,
+    "coded_local_weak_wave_basis_tests": 10,
+    "coded_local_weak_wave_causal_support": false,
+    "coded_local_weak_wave_separation_rank": 10,
+    "coded_wave_observable_cutoff": "N(k)=k+ell(K)+1",
+    "coded_wave_observable_full_state_reconstruction": false,
     "content_pinned_literature": 39,
     "coverage_classified_cells": 576,
     "emitted_cells": 576,
     "emitted_status_counts": {
-      "LITERATURE_RESULT": 91,
-      "LOCAL_RESULT": 120,
+      "LITERATURE_RESULT": 90,
+      "LOCAL_RESULT": 123,
       "NOT_MAPPED": 0,
       "PIECES_ONLY": 163,
       "PRIORITY_GAP": 30,
-      "REVIEWED_GAP": 172
+      "REVIEWED_GAP": 170
     },
-    "evidence_records": 76,
-    "evidence_records_used_by_matrix": 76,
+    "evidence_records": 77,
+    "evidence_records_used_by_matrix": 77,
     "external_calibration_benchmark_families": 3,
     "external_calibration_records": 4,
     "gr_cassini_bounded_complete": true,
@@ -88,7 +110,7 @@
     "implication_nodes": 12,
     "literature_complete": false,
     "literature_records": 51,
-    "local_result_records": 25,
+    "local_result_records": 26,
     "mannheim_ngc3198_empirically_supported": false,
     "mannheim_ngc3198_endpoint_coarse_gate_passed": true,
     "mannheim_ngc3198_interfaces": 6,
@@ -112,7 +134,7 @@
     ],
     "prototype_assemblies": 9,
     "research_programme_lenses": 9,
-    "reviewed_open_gaps": 172,
+    "reviewed_open_gaps": 170,
     "standard_reference_direct_obligations": 16,
     "strength_ladder_levels": 6,
     "synthetic_complements": 0,
@@ -229,6 +251,16 @@
       "result_id": "REVERSE_PHYSICS_BT_EUCLIDEAN_RESIDUAL_SPECTRAHEDRAL_PUSHFORWARD_V1",
       "sha256": "31bc26ff9822cdfc663b5fb0fc47e7970f592afbc6526f1aadf2e4447dd324e0"
     },
+    "bt_residual_tilt_jacobian_cancellation": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL"
+      ],
+      "lifecycle": "EXACT_REDUCTION_PROVED",
+      "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_RESIDUAL_TILT_JACOBIAN_CANCELLATION_V1.json",
+      "result_id": "REVERSE_PHYSICS_BT_EUCLIDEAN_RESIDUAL_TILT_JACOBIAN_CANCELLATION_V1",
+      "sha256": "04f79c742344a615b82275850c7e90deb73cf81423847c985f166e0d5edda057"
+    },
     "bt_schwinger_dyson_mode_obstruction": {
       "dependency_tags": [
         "LOCAL-ALGEBRAIC",
@@ -249,6 +281,16 @@
       "result_id": "REVERSE_PHYSICS_BT_EUCLIDEAN_UNIFORM_CONVEXITY_OBSTRUCTION_V1",
       "sha256": "c6aeb2e6cbb7bd6066534304a76a977f9efec57b52d145bd9bfaae438e51f550"
     },
+    "coded_local_weak_wave_test_class": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE"
+      ],
+      "lifecycle": "CERTIFIED",
+      "path": "foundations/results/FOUNDATIONAL_CODED_LOCAL_WEAK_WAVE_TEST_CLASS_V1.json",
+      "result_id": "FOUNDATIONAL_CODED_LOCAL_WEAK_WAVE_TEST_CLASS_V1",
+      "sha256": "ee6591f100f7f73aaf3462949a6c4ce27e6f090cfcced51e5e7e4c20fd28281c"
+    },
     "coded_wave": {
       "dependency_tags": [
         "LOCAL-ALGEBRAIC",
@@ -258,6 +300,16 @@
       "path": "foundations/results/FOUNDATIONAL_CODED_POLYGONAL_WAVE_RCA0_V1.json",
       "result_id": "FOUNDATIONAL_CODED_POLYGONAL_WAVE_RCA0_V1",
       "sha256": "4138c860c53fe85ba4fa1f2ece93cc5b6c0fce9468c7e5dfa69e314663b56ac7"
+    },
+    "coded_wave_observable_reconstruction": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE"
+      ],
+      "lifecycle": "CERTIFIED",
+      "path": "foundations/results/FOUNDATIONAL_CODED_WAVE_OBSERVABLE_RECONSTRUCTION_V1.json",
+      "result_id": "FOUNDATIONAL_CODED_WAVE_OBSERVABLE_RECONSTRUCTION_V1",
+      "sha256": "cf90e90abb824e19a2a0e7caf2d32c4772f408a70107e4c9ea6013edc0e8e215"
     },
     "explicit_krein": {
       "dependency_tags": [
@@ -279,7 +331,7 @@
       "lifecycle": "VERIFIED_NAVIGATION_ARTIFACT",
       "path": "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json",
       "result_id": "FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2",
-      "sha256": "c27cdde4ab6759f732784a840b41c357fb20acce3ac1ff9180c33ceaa683e207"
+      "sha256": "863f59b38f46b7434e95c4808bcbf880680ec4b0993dd153909d764b45cfc55e"
     },
     "finite_bv": {
       "dependency_tags": [
@@ -330,9 +382,9 @@
         "LORENTZIAN-CAUSAL"
       ],
       "lifecycle": "EVIDENCE_AUGMENTED_FULL_CARTESIAN_SURFACE",
-      "path": "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V10.json",
-      "result_id": "FOUNDATIONAL_INTERSECTION_CUBE_V10",
-      "sha256": "ca02630b494fe664a4f679708f376a9f4540eb858772e25e19486e695ec13e91"
+      "path": "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V12.json",
+      "result_id": "FOUNDATIONAL_INTERSECTION_CUBE_V12",
+      "sha256": "5a93c5d2661f2a5591db75b60e72da3dccd0f3587b75f67dddc2c19c71a84f05"
     },
     "krein_state_selection": {
       "dependency_tags": [
@@ -382,16 +434,17 @@
       "lifecycle": "VERIFIED_NAVIGATION_ARTIFACT",
       "path": "foundations/results/FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1.json",
       "result_id": "FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1",
-      "sha256": "67b04f749d17f4e40c25ebaa06e75a1d0fc66770cf3a544b1630595ee6ca54ba"
+      "sha256": "8655e099904efff61a80cd4e140e7c070dbae31a13f4499309b38249edf3fef3"
     }
   },
-  "canonical_digest": "ca94caac6f5c8f4f3c7d9c9199d121e8373c416e03dc709ba1942fb22bdb3ab5",
+  "canonical_digest": "b7b9a49346d5110df0591bd58179185b21c4df4c426c320a3f153d517ea34d86",
   "claim_flags": {
     "atlas_exhaustive": false,
     "axes_independent_proved": false,
     "bounded_empirical_comparison_registered": true,
     "bt_actual_annealed_half_action_factor_established": true,
     "bt_actual_interacting_action_density_established": true,
+    "bt_direct_action_fiber_bound_established": false,
     "bt_euclidean_coarse_reproduction_separated": true,
     "bt_euclidean_finite_capabilities_imported": true,
     "bt_free_h_minus_one_estimate_certified": true,
@@ -406,10 +459,16 @@
     "bt_residual_pointwise_strict_convexity_established": true,
     "bt_residual_positive_weighted_mean_curvature_established": false,
     "bt_residual_spectrahedral_pushforward_established": true,
+    "bt_residual_tilt_jacobian_cancellation_established": true,
     "bt_residual_uniform_positive_curvature_established": false,
     "bt_standard_boundary_curvature_spectral_gap_route_obstructed": true,
+    "bt_tree_log_convexity_extra_tilt_confinement_obstructed": true,
     "bt_vertex_transitive_entropy_jacobian_minimum_established": true,
     "case_study_authorities_pinned": true,
+    "coded_local_weak_wave_all_smooth_tests_covered": false,
+    "coded_local_weak_wave_causal_support_proved": false,
+    "coded_local_weak_wave_test_class_certified": true,
+    "coded_wave_observable_reconstruction_certified": true,
     "complete_evidence_register_generated": true,
     "complete_literature_register_generated": true,
     "evidence_usage_crosswalk_generated": true,
@@ -583,15 +642,16 @@
         "bt_affine_virial_action_density",
         "bt_orthogonal_hessian_block_obstruction",
         "bt_residual_spectrahedral_pushforward",
-        "bt_residual_boundary_curvature_obstruction"
+        "bt_residual_boundary_curvature_obstruction",
+        "bt_residual_tilt_jacobian_cancellation"
       ],
       "claim_id": "RF-13-BT-INTERACTING-RECONSTRUCTION-FRONTIER",
       "dependency_tags": [
         "LOCAL-ALGEBRAIC",
         "EUCLIDEAN-SPECTRAL"
       ],
-      "statement": "At lambda=0.4 on the 6^4 lattice, an exact two-point reflected density-kernel minor obstructs ordinary OS positivity. The affine virial theorem proves a volume-uniform actual Gibbs action-density bound and annealed half-action factor. Exact period-four data obstruct the global Schur route. The residual map identifies positive fields modulo scale with a Schr\u00f6dinger spectrahedral boundary and gives the exact normalized Gaussian-surface/tree-Jacobian pushforward. That boundary is pointwise strictly convex, but an exact C4 family has trial curvature tending to zero and negative Gaussian weighted mean curvature at lambda=0.4, obstructing the standard uniform positive-curvature spectral-gap route. The lowest log-ground-state marginal and actual interacting H^-1 moment remain open.",
-      "status": "EXACT_FINITE_OS_HESSIAN_AND_BOUNDARY_CURVATURE_ROUTE_OBSTRUCTIONS_WITH_ACTION_DENSITY_AND_NORMALIZED_RESIDUAL_REFORMULATION"
+      "statement": "At lambda=0.4 on the 6^4 lattice, an exact two-point reflected density-kernel minor obstructs ordinary OS positivity. The affine virial theorem proves a volume-uniform actual Gibbs action-density bound and annealed half-action factor. Exact period-four data obstruct the global Schur route. The residual map identifies positive fields modulo scale with a Schr\u00f6dinger spectrahedral boundary and gives the exact normalized Gaussian-surface/tree-Jacobian pushforward. That boundary is pointwise strictly convex, but an exact C4 family has trial curvature tending to zero and negative Gaussian weighted mean curvature at lambda=0.4, obstructing the standard uniform positive-curvature spectral-gap route. Under the natural boundary map induced by a multiplicative lowest-mode tilt, the surface Jacobian exactly cancels the reciprocal tree coarea factor, so tree-Jacobian log convexity is not extra tilt confinement. The resulting action-weighted conditional-fiber marginal and actual interacting H^-1 moment remain open.",
+      "status": "EXACT_FINITE_OS_HESSIAN_BOUNDARY_CURVATURE_AND_TREE_TILT_ROUTE_OBSTRUCTIONS_WITH_ACTION_DENSITY_AND_NORMALIZED_RESIDUAL_REFORMULATION"
     },
     {
       "authorities": [
@@ -615,6 +675,30 @@
       ],
       "statement": "Under one bounded NGC 3198 protocol with common velocities and analytic baryonic geometry, GR plus NFW has the lowest AICc and is the only tested family passing the declared random-error gate; this does not select a complete theory or generalize beyond one galaxy.",
       "status": "BOUNDED_SINGLE_GALAXY_COMMON_PROTOCOL_MODEL_COMPARISON"
+    },
+    {
+      "authorities": [
+        "coded_wave_observable_reconstruction"
+      ],
+      "claim_id": "RF-16-CODED-OBSERVABLE-RECONSTRUCTION",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE"
+      ],
+      "statement": "For the declared rational wave fixtures and periodic detector, RCA_0 proves uniform reconstruction of one smeared observable from finite rational dyadic interpolants with explicit cutoff N(k)=k+ell(K)+1; no full-state or causal reconstruction follows.",
+      "status": "SUFFICIENT_OVER_BASE_WITH_RECONSTRUCTION_BOUNDARY"
+    },
+    {
+      "authorities": [
+        "coded_local_weak_wave_test_class"
+      ],
+      "claim_id": "RF-17-LOCALIZED-COEFFICIENT-WEAK-WAVE",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE"
+      ],
+      "statement": "Ten characteristic-localized rational polynomial tests have an exact rank-10 labelled chiral measurement matrix and certify the weak transport and derived scalar wave identities coefficient by coefficient; the finite span is not every smooth test and proves no causal support.",
+      "status": "FINITE_LOCALIZED_TEST_THEOREM_WITH_DISTRIBUTIONAL_BOUNDARY"
     }
   ],
   "created": "2026-08-14",
@@ -630,6 +714,9 @@
     "that the atlas axes are independent or every coordinate is coherent",
     "literature completeness or absence theorems for reviewed open gaps",
     "representation invariance of the RCA_0 coded-wave upper bound",
+    "full-state reconstruction from the single coded wave observable",
+    "a weak wave theorem against every smooth compactly supported test from the finite localized test span",
+    "strict causal support or a Green operator from the coefficient-wise weak identities",
     "a complete Lorentzian off-shell BV propagator",
     "a BRST-compatible Hadamard state for the full metric BV complex",
     "renormalized Lorentzian time-ordered products or causal perturbative AQFT",
@@ -639,7 +726,8 @@
     "a complete standard-GR theory or empirical support for a Weyl-gravity model",
     "a population-level model ranking or complete-theory selection from the NGC 3198 common-fit control",
     "a continuum, empirical, Born-rule, or Lorentzian promotion from the BT Euclidean finite lattice",
-    "reflection-positivity failure at every nonzero coupling or in a continuum limit"
+    "reflection-positivity failure at every nonzero coupling or in a continuum limit",
+    "a volume-uniform BT action-weighted conditional-fiber or one-mode marginal bound"
   ],
   "formal_object": {
     "coordinates": {
@@ -771,19 +859,19 @@
   ],
   "paper": {
     "appendix": {
-      "assembly_source_canonical_digest": "758f507751da155b7d7b0c0cccf61b09013d1ebd69c9dce9c6d028fe44c5c411",
+      "assembly_source_canonical_digest": "eadfd095860843a43908d2f848370533718cda9e1251944af0b6b4b92e0f72d3",
       "assembly_source_path": "foundations/site/assemblies.json",
-      "assembly_source_sha256": "67b04f749d17f4e40c25ebaa06e75a1d0fc66770cf3a544b1630595ee6ca54ba",
+      "assembly_source_sha256": "8655e099904efff61a80cd4e140e7c070dbae31a13f4499309b38249edf3fef3",
       "generator_path": "paper/generate_21_reverse_foundations_appendices.py",
       "generator_sha256": "f46fd7cd15f93d83c0f2ec292fa9e0cbae6bdc9f7a503dd39ff61565424db364",
       "path": "paper/21-reverse-foundations-of-physics-appendices.tex",
-      "sha256": "584ac0e2c140e25e722adfd96ca274327c736ea7f056730a40b9d3e117c33219",
-      "source_canonical_digest": "65c1967435f8a4d87c47143dc948ad039eb5906da00dfcac2ecc2883d6988911",
+      "sha256": "57f976665d33deedbcdae11c4bea18c8aa7410442de1221cecad255124298c1c",
+      "source_canonical_digest": "8e0ebd6ce6e0d62b1ef5881df70bb289f0747d5fafce8f7f99b0237e33058849",
       "source_path": "foundations/site/data.json",
-      "source_sha256": "bdd74ad5edb31df891704b25667e58bdcf4eb8d798afa039b607677843f9ff38"
+      "source_sha256": "4f5cbd42e41ad98361b769caea36cca2879f4c3a74fbe058d83bfce2fb6af222"
     },
     "path": "paper/21-reverse-foundations-of-physics.tex",
-    "sha256": "c42efd66a13656f3aa4111b104faaafa7c71650b2a20d48088460a6fbfd1415c"
+    "sha256": "f9b1af7d0a2b2881ce602ab27ff21bca9092d878f1618b8adabd43f2b510c137"
   },
   "result_id": "PAPER21_REVERSE_FOUNDATIONS_INTRODUCTION_V1",
   "result_kind": "PROGRAMME_SYNTHESIS_AND_TYPED_CASE_STUDY_MAP",

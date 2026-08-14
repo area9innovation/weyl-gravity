@@ -22,7 +22,7 @@ ATLAS_DATA = "foundations/site/data.json"
 ASSEMBLY_DATA = "foundations/site/assemblies.json"
 
 AUTHORITY_PATHS = {
-    "intersection_cube": "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V10.json",
+    "intersection_cube": "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V12.json",
     "bt_euclidean_import": "foundations/results/FOUNDATIONAL_BT_EUCLIDEAN_LATTICE_IMPORT_V1.json",
     "bt_free_reconstruction_obstruction": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_FREE_RECONSTRUCTION_OBSTRUCTION_V1.json",
     "bt_interacting_os_preflight": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_OS_WITNESS_PREFLIGHT_V1.json",
@@ -36,6 +36,7 @@ AUTHORITY_PATHS = {
     "bt_orthogonal_hessian_block_obstruction": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_ORTHOGONAL_HESSIAN_BLOCK_OBSTRUCTION_V1.json",
     "bt_residual_spectrahedral_pushforward": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_RESIDUAL_SPECTRAHEDRAL_PUSHFORWARD_V1.json",
     "bt_residual_boundary_curvature_obstruction": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_RESIDUAL_BOUNDARY_CURVATURE_OBSTRUCTION_V1.json",
+    "bt_residual_tilt_jacobian_cancellation": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_RESIDUAL_TILT_JACOBIAN_CANCELLATION_V1.json",
     "full_surface_gap_audit": "foundations/results/FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1.json",
     "explorer_snapshot": "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json",
     "theory_assembly": "foundations/results/FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1.json",
@@ -46,6 +47,8 @@ AUTHORITY_PATHS = {
     "krein_state_selection": "foundations/results/FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1.json",
     "separable_cstar_state_chain": "foundations/results/FOUNDATIONAL_BT_SEPARABLE_STATE_CHAIN_ZF_V1.json",
     "coded_wave": "foundations/results/FOUNDATIONAL_CODED_POLYGONAL_WAVE_RCA0_V1.json",
+    "coded_wave_observable_reconstruction": "foundations/results/FOUNDATIONAL_CODED_WAVE_OBSERVABLE_RECONSTRUCTION_V1.json",
+    "coded_local_weak_wave_test_class": "foundations/results/FOUNDATIONAL_CODED_LOCAL_WEAK_WAVE_TEST_CLASS_V1.json",
     "finite_graph_causality": "foundations/results/FOUNDATIONAL_FINITE_GRAPH_WAVE_CAUSALITY_V1.json",
     "finite_bv": "foundations/results/FOUNDATIONAL_FREE_BV_ENERGY2_PRA_SDR_V1.json",
 }
@@ -91,10 +94,13 @@ def build() -> dict:
     bt_orthogonal_hessian = loaded["bt_orthogonal_hessian_block_obstruction"]
     bt_residual_pushforward = loaded["bt_residual_spectrahedral_pushforward"]
     bt_residual_curvature = loaded["bt_residual_boundary_curvature_obstruction"]
+    bt_residual_tilt = loaded["bt_residual_tilt_jacobian_cancellation"]
     site = loaded["explorer_snapshot"]
     gr_cassini = loaded["gr_cassini_assembly"]
     mannheim_ngc3198 = loaded["mannheim_ngc3198_assembly"]
     ngc3198_common_fit = loaded["ngc3198_common_fit_comparison"]
+    coded_wave_observable = loaded["coded_wave_observable_reconstruction"]
+    coded_local_weak_wave = loaded["coded_local_weak_wave_test_class"]
     atlas_data = json.loads((ROOT / ATLAS_DATA).read_text())
     assembly_data = json.loads((ROOT / ASSEMBLY_DATA).read_text())
     evidence = atlas_data["evidence"]
@@ -177,7 +183,7 @@ def build() -> dict:
             "implication_nodes": len(atlas_data["graph"]["nodes"]),
             "implication_edges": len(atlas_data["graph"]["edges"]),
             "strength_ladder_levels": len(atlas_data["ladder"]),
-            "literature_complete": cube["claim_flags"]["literature_complete"],
+            "literature_complete": site["claim_flags"]["literature_complete"],
             "all_cells_assessed": cube["claim_flags"]["all_576_coordinates_assessed"],
             "prototype_assemblies": len(assembly_data["assemblies"]),
             "research_programme_lenses": sum(
@@ -203,6 +209,12 @@ def build() -> dict:
             "ngc3198_common_fit_ranking_AICc": ngc3198_common_fit["ranking_by_AICc"],
             "ngc3198_common_fit_random_error_passes": [item["model_id"] for item in ngc3198_common_fit["models"] if item["random_error_gate"]["passed"]],
             "ngc3198_common_fit_complete_theory_selected": ngc3198_common_fit["claim_flags"]["complete_theory_selected"],
+            "coded_wave_observable_cutoff": coded_wave_observable["cutoff_theorem"]["cutoff"],
+            "coded_wave_observable_full_state_reconstruction": coded_wave_observable["claim_flags"]["full_state_reconstruction_proved"],
+            "coded_local_weak_wave_basis_tests": coded_local_weak_wave["localized_test_class"]["basis_size"],
+            "coded_local_weak_wave_separation_rank": coded_local_weak_wave["separation"]["rank"],
+            "coded_local_weak_wave_all_smooth_tests": coded_local_weak_wave["claim_flags"]["all_smooth_tests_covered"],
+            "coded_local_weak_wave_causal_support": coded_local_weak_wave["claim_flags"]["strict_causal_support_proved"],
             "bt_euclidean_direct_capabilities": sum(item["evidence_role"] == "DIRECT_LOCAL" for item in bt_euclidean["capability_decisions"]),
             "bt_euclidean_reconstruction_status": next(item["new_status"] for item in bt_euclidean["capability_decisions"] if item["coordinate"]["obligation"] == "RECONSTRUCTION_LIMITS"),
             "bt_euclidean_numerical_status": bt_euclidean["numerical_reproducibility_records"][0]["status"],
@@ -237,6 +249,13 @@ def build() -> dict:
             "bt_residual_weighted_mean_curvature_status": bt_residual_curvature["method_disposition"]["global_positive_gaussian_weighted_mean_curvature"],
             "bt_residual_trial_curvature_q2": bt_residual_curvature["lambda_point_four_fixture"]["trial_normal_curvature"],
             "bt_residual_weighted_mean_curvature_q2": bt_residual_curvature["lambda_point_four_fixture"]["gaussian_weighted_mean_curvature"],
+            "bt_residual_induced_tilt_surface_jacobian_status": bt_residual_tilt["method_disposition"]["induced_tilt_surface_jacobian"],
+            "bt_residual_inverse_tree_jacobian_cancellation_status": bt_residual_tilt["method_disposition"]["inverse_tree_jacobian_cancellation"],
+            "bt_residual_tree_log_convexity_tilt_status": bt_residual_tilt["method_disposition"]["tree_log_convexity_as_extra_tilt_confinement"],
+            "bt_direct_action_fiber_bound_status": bt_residual_tilt["method_disposition"]["direct_action_difference_or_fiber_ratio_bound"],
+            "bt_residual_tilt_surface_ratio_c4": bt_residual_tilt["exact_cycle_tilt"]["surface_jacobian_ratio"],
+            "bt_residual_tilt_inverse_density_ratio_c4": bt_residual_tilt["exact_cycle_tilt"]["inverse_density_jacobian_ratio"],
+            "bt_residual_tilt_boltzmann_gap_c4": bt_residual_tilt["exact_cycle_tilt"]["boltzmann_exponent_gap"],
             "standard_reference_direct_obligations": next(item for item in assembly_data["assemblies"] if item["id"] == "STANDARD_MIXED_REFERENCE")["coverage"]["direct"],
             "external_calibration_records": len(assembly_data["calibration_controls"][0]["records"]),
             "external_calibration_benchmark_families": sum(item["status"] == "SUPPORTED_CONTROL" for item in assembly_data["calibration_controls"][0]["benchmark_coverage"]),
@@ -328,8 +347,8 @@ def build() -> dict:
             },
             {
                 "claim_id": "RF-13-BT-INTERACTING-RECONSTRUCTION-FRONTIER",
-                "statement": "At lambda=0.4 on the 6^4 lattice, an exact two-point reflected density-kernel minor obstructs ordinary OS positivity. The affine virial theorem proves a volume-uniform actual Gibbs action-density bound and annealed half-action factor. Exact period-four data obstruct the global Schur route. The residual map identifies positive fields modulo scale with a Schrödinger spectrahedral boundary and gives the exact normalized Gaussian-surface/tree-Jacobian pushforward. That boundary is pointwise strictly convex, but an exact C4 family has trial curvature tending to zero and negative Gaussian weighted mean curvature at lambda=0.4, obstructing the standard uniform positive-curvature spectral-gap route. The lowest log-ground-state marginal and actual interacting H^-1 moment remain open.",
-                "status": "EXACT_FINITE_OS_HESSIAN_AND_BOUNDARY_CURVATURE_ROUTE_OBSTRUCTIONS_WITH_ACTION_DENSITY_AND_NORMALIZED_RESIDUAL_REFORMULATION",
+                "statement": "At lambda=0.4 on the 6^4 lattice, an exact two-point reflected density-kernel minor obstructs ordinary OS positivity. The affine virial theorem proves a volume-uniform actual Gibbs action-density bound and annealed half-action factor. Exact period-four data obstruct the global Schur route. The residual map identifies positive fields modulo scale with a Schrödinger spectrahedral boundary and gives the exact normalized Gaussian-surface/tree-Jacobian pushforward. That boundary is pointwise strictly convex, but an exact C4 family has trial curvature tending to zero and negative Gaussian weighted mean curvature at lambda=0.4, obstructing the standard uniform positive-curvature spectral-gap route. Under the natural boundary map induced by a multiplicative lowest-mode tilt, the surface Jacobian exactly cancels the reciprocal tree coarea factor, so tree-Jacobian log convexity is not extra tilt confinement. The resulting action-weighted conditional-fiber marginal and actual interacting H^-1 moment remain open.",
+                "status": "EXACT_FINITE_OS_HESSIAN_BOUNDARY_CURVATURE_AND_TREE_TILT_ROUTE_OBSTRUCTIONS_WITH_ACTION_DENSITY_AND_NORMALIZED_RESIDUAL_REFORMULATION",
                 "authorities": [
                     "bt_lambda04_os_kernel_obstruction",
                     "bt_uniform_convexity_obstruction",
@@ -341,6 +360,7 @@ def build() -> dict:
                     "bt_orthogonal_hessian_block_obstruction",
                     "bt_residual_spectrahedral_pushforward",
                     "bt_residual_boundary_curvature_obstruction",
+                    "bt_residual_tilt_jacobian_cancellation",
                 ],
                 "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"],
             },
@@ -357,6 +377,20 @@ def build() -> dict:
                 "status": "BOUNDED_SINGLE_GALAXY_COMMON_PROTOCOL_MODEL_COMPARISON",
                 "authorities": ["ngc3198_common_fit_comparison"],
                 "dependency_tags": ["LOCAL-ALGEBRAIC"],
+            },
+            {
+                "claim_id": "RF-16-CODED-OBSERVABLE-RECONSTRUCTION",
+                "statement": "For the declared rational wave fixtures and periodic detector, RCA_0 proves uniform reconstruction of one smeared observable from finite rational dyadic interpolants with explicit cutoff N(k)=k+ell(K)+1; no full-state or causal reconstruction follows.",
+                "status": "SUFFICIENT_OVER_BASE_WITH_RECONSTRUCTION_BOUNDARY",
+                "authorities": ["coded_wave_observable_reconstruction"],
+                "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+            },
+            {
+                "claim_id": "RF-17-LOCALIZED-COEFFICIENT-WEAK-WAVE",
+                "statement": "Ten characteristic-localized rational polynomial tests have an exact rank-10 labelled chiral measurement matrix and certify the weak transport and derived scalar wave identities coefficient by coefficient; the finite span is not every smooth test and proves no causal support.",
+                "status": "FINITE_LOCALIZED_TEST_THEOREM_WITH_DISTRIBUTIONAL_BOUNDARY",
+                "authorities": ["coded_local_weak_wave_test_class"],
+                "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
             },
         ],
         "literature_scope": [
@@ -410,7 +444,14 @@ def build() -> dict:
             "bt_residual_uniform_positive_curvature_established": False,
             "bt_residual_positive_weighted_mean_curvature_established": False,
             "bt_standard_boundary_curvature_spectral_gap_route_obstructed": True,
+            "bt_residual_tilt_jacobian_cancellation_established": True,
+            "bt_tree_log_convexity_extra_tilt_confinement_obstructed": True,
+            "bt_direct_action_fiber_bound_established": False,
             "research_programme_lenses_explained": True,
+            "coded_wave_observable_reconstruction_certified": True,
+            "coded_local_weak_wave_test_class_certified": True,
+            "coded_local_weak_wave_all_smooth_tests_covered": False,
+            "coded_local_weak_wave_causal_support_proved": False,
             "weakest_foundation_proved": False,
             "global_physics_implies_choice_theorem": False,
             "axes_independent_proved": False,
@@ -425,6 +466,9 @@ def build() -> dict:
             "that the atlas axes are independent or every coordinate is coherent",
             "literature completeness or absence theorems for reviewed open gaps",
             "representation invariance of the RCA_0 coded-wave upper bound",
+            "full-state reconstruction from the single coded wave observable",
+            "a weak wave theorem against every smooth compactly supported test from the finite localized test span",
+            "strict causal support or a Green operator from the coefficient-wise weak identities",
             "a complete Lorentzian off-shell BV propagator",
             "a BRST-compatible Hadamard state for the full metric BV complex",
             "renormalized Lorentzian time-ordered products or causal perturbative AQFT",
@@ -435,6 +479,7 @@ def build() -> dict:
             "a population-level model ranking or complete-theory selection from the NGC 3198 common-fit control",
             "a continuum, empirical, Born-rule, or Lorentzian promotion from the BT Euclidean finite lattice",
             "reflection-positivity failure at every nonzero coupling or in a continuum limit",
+            "a volume-uniform BT action-weighted conditional-fiber or one-mode marginal bound",
         ],
         "authorities": authorities,
         "independent_checker": {
