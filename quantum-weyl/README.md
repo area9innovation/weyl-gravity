@@ -125,6 +125,14 @@ or quantum-master-equation result.
   [`Gate-A V3 reconciliation`](classical_import/REPORT_GATE_V3.md) promotes
   exactly three exports and four historical checks within that finite scope,
   while retaining the full support-local Gate A as `FAIL_CLOSED`.
+- [`classical_import/REPORT_STRICT_SUPPORT_LOCAL_Q2_D_READINESS_V1.md`](classical_import/REPORT_STRICT_SUPPORT_LOCAL_Q2_D_READINESS_V1.md)
+  audits the top-ranked strict support-local `q2/D` route against the existing
+  seven-check receiver contract. It separates five gauge/cotangent rows that
+  require portable serialization from the metric-antifield row's genuinely
+  hard polarized second Bach variation, and proves that the rank-64
+  energy-five obstruction belongs to the old finite time-slice receiver rather
+  than to an all-energy support-local `q2`. No interaction identity or Gate-A
+  promotion is inferred from this classification.
 - [`reports/branch-a-local-bv-bootstrap.md`](reports/branch-a-local-bv-bootstrap.md)
   records the exact minimal jet/BRST substrate and its uncomputed quotients.
 - [`reports/local-curvature-canonicalization.md`](reports/local-curvature-canonicalization.md)

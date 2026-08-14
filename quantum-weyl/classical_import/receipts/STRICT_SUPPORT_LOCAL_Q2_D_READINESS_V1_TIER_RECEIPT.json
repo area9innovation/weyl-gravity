@@ -1,0 +1,63 @@
+{
+  "receipt_id": "STRICT_SUPPORT_LOCAL_Q2_D_READINESS_V1_TIER_RECEIPT",
+  "result_ids": [
+    "STRICT_SUPPORT_LOCAL_Q2_D_READINESS_V1"
+  ],
+  "recorded_at": "2026-08-15",
+  "base_commit": "32ae3f3a890bcda07d2f51641ff0fa8f156be325",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "output_hashes": {
+    "certificate": "acfab7cf00c28c17f5220d969ea126978ce2f7d32ffb27357d0a52c283447219",
+    "human_report": "7ca4a7e364e43d29fa9efb5848b5c7f05abd247dcd52e52db21088424f606c99",
+    "builder": "3172fea22d42617305dc6df03677a833caec7387a1f0ef3fc7dc4b10b3e17802",
+    "independent_checker": "7b16128d97bf7942967aa7d5d2d26214c21f2316680a737a88c3629395a92fdc",
+    "schema_verifier": "910ae5c6b1c39bad9ed3d1f7f0ed931ac1a0a68eae94c8a238d3ed5d3eddf5a5",
+    "schema": "2fa421402af34db6c9ea5347ca67bb6b9bc5e653faf4a938f66dc4025d63838e",
+    "mutation_tests": "1da63c6dc10f83b67923b4ce9d3332418b53e59089eaf1f75c9a20c5c7738bcc"
+  },
+  "test_tiers": [
+    {
+      "tier": 0,
+      "command": "python3 -m py_compile quantum-weyl/classical_import/build_strict_support_local_q2_d_readiness.py quantum-weyl/classical_import/check_strict_support_local_q2_d_readiness.py quantum-weyl/classical_import/verify_strict_support_local_q2_d_readiness.py quantum-weyl/classical_import/tests/test_strict_support_local_q2_d_readiness.py",
+      "elapsed_seconds": 0.03,
+      "status": "PASS"
+    },
+    {
+      "tier": 0,
+      "command": "jq empty quantum-weyl/classical_import/schema/strict-support-local-q2-d-readiness-v1.schema.json quantum-weyl/classical_import/certificates/STRICT_SUPPORT_LOCAL_Q2_D_READINESS_V1.json",
+      "elapsed_seconds": 0.0,
+      "status": "PASS"
+    },
+    {
+      "tier": 1,
+      "command": "python3 quantum-weyl/classical_import/build_strict_support_local_q2_d_readiness.py --check",
+      "elapsed_seconds": 0.04,
+      "status": "PASS_GENERATED_ARTIFACTS_CURRENT"
+    },
+    {
+      "tier": 1,
+      "command": "python3 quantum-weyl/classical_import/check_strict_support_local_q2_d_readiness.py",
+      "elapsed_seconds": 0.02,
+      "status": "PASS_INDEPENDENT_SOURCE_CROSSWALK"
+    },
+    {
+      "tier": 1,
+      "command": "python3 quantum-weyl/classical_import/verify_strict_support_local_q2_d_readiness.py",
+      "elapsed_seconds": 0.11,
+      "status": "PASS_SCHEMA_PROVENANCE_AND_NO_PROMOTION_FIREWALL"
+    },
+    {
+      "tier": 1,
+      "command": "python3 -m unittest quantum-weyl/classical_import/tests/test_strict_support_local_q2_d_readiness.py -v",
+      "elapsed_seconds": 0.27,
+      "status": "PASS_9_TESTS"
+    }
+  ],
+  "tier_2_not_run": "No mathematical input, shared operator, schema consumed by an existing certificate chain, or claim used by that chain changed. The result is a content-pinned classification of unchanged inputs; all direct producer, checker, schema and mutation-test consumers ran.",
+  "tier_3_not_run": "No freeze, theorem lifecycle promotion, shared core algebra change, release or tag is made. Gate A remains FAIL_CLOSED.",
+  "claim_boundary": "This CLASSIFIED audit identifies six action-defined strict minimal q2 output roles, isolates the polarized second Bach variation as the unique hard coefficient kernel, and separates the rank-64 energy-five finite-receiver obstruction from all-energy support-local q2. It does not serialize a portable q2 component, certify full local D, replay an interaction identity, pass Gate A, construct a Hadamard state, restore a QME, or establish a Lorentzian quantum theory."
+}

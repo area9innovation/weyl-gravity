@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "strict-support-local-q2-d-readiness-v1.schema.json",
+  "title": "Strict support-local q2/D readiness audit v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_kind", "lifecycle", "created", "repository_base_commit", "dependency_tags", "question", "answer", "scope", "source_completeness", "q2_row_readiness", "proof_gate_readiness", "D_action_readiness", "finite_receiver_obstruction", "next_executable_cut", "provenance", "claim_flags", "does_not_establish", "independent_checker", "human_report"],
+  "properties": {
+    "schema": {"const": "strict-support-local-q2-d-readiness-v1"},
+    "result_id": {"const": "STRICT_SUPPORT_LOCAL_Q2_D_READINESS_V1"},
+    "result_kind": {"const": "SOURCE_TO_RECEIVER_READINESS_AUDIT"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "created": {"type": "string", "format": "date"},
+    "repository_base_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]},
+    "question": {"type": "string", "minLength": 120},
+    "answer": {"type": "string", "minLength": 900},
+    "scope": {"type": "object", "minProperties": 5},
+    "source_completeness": {"type": "object", "additionalProperties": false, "required": ["master_action", "vector_field", "minimal_output_roles", "maximum_metric_derivative_order", "support_rule", "status"], "properties": {"master_action": {"type": "array", "minItems": 4, "maxItems": 4}, "vector_field": {"type": "string"}, "minimal_output_roles": {"const": 6}, "maximum_metric_derivative_order": {"const": 4}, "support_rule": {"type": "string", "minLength": 50}, "status": {"const": "COMPLETE_ACTION_DEFINED_ANSATZ_NOT_SERIALIZED_AS_PORTABLE_COMPONENT_PAYLOAD"}}},
+    "q2_row_readiness": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"type": "object", "additionalProperties": false, "required": ["symbol", "role", "degree", "source_terms", "source_status", "portable_component_status", "remaining"], "properties": {"symbol": {"type": "string"}, "role": {"type": "string"}, "degree": {"type": "integer"}, "source_terms": {"type": "array", "minItems": 1}, "source_status": {"const": "ACTION_DEFINED_COMPLETE_ROLE"}, "portable_component_status": {"enum": ["NOT_COMPONENT_SERIALIZED", "HARD_COEFFICIENT_KERNEL_OPEN"]}, "remaining": {"type": "string", "minLength": 80}}}},
+    "proof_gate_readiness": {"type": "array", "minItems": 7, "maxItems": 7, "items": {"type": "object", "additionalProperties": false, "required": ["check_id", "status", "boundary"], "properties": {"check_id": {"type": "string"}, "status": {"type": "string"}, "boundary": {"type": "string", "minLength": 80}}}},
+    "D_action_readiness": {"type": "object", "additionalProperties": false, "required": ["full_local_status", "finite_control", "boundary"], "properties": {"full_local_status": {"const": "NOT_SERIALIZED_OR_REPLAYED"}, "finite_control": {"type": "object"}, "boundary": {"type": "string", "minLength": 100}}},
+    "finite_receiver_obstruction": {"type": "object", "additionalProperties": false, "required": ["status", "kind", "energy", "family", "source_cohomology_dimension", "selected_target_dimension", "minimum_sdr_defect_rank", "does_not_obstruct"], "properties": {"status": {"const": "OBSTRUCTED_BEFORE_Q2"}, "kind": {"type": "string"}, "energy": {"const": 5}, "family": {"const": "E"}, "source_cohomology_dimension": {"const": 64}, "selected_target_dimension": {"const": 0}, "minimum_sdr_defect_rank": {"const": 64}, "does_not_obstruct": {"const": "support-local full-BV q2 on the all-energy local carrier"}}},
+    "next_executable_cut": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"type": "object", "additionalProperties": false, "required": ["order", "object", "deliverable"], "properties": {"order": {"type": "integer", "minimum": 1, "maximum": 5}, "object": {"type": "string"}, "deliverable": {"type": "string", "minLength": 100}}}},
+    "provenance": {"type": "object", "additionalProperties": false, "required": ["inputs"], "properties": {"inputs": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"$ref": "#/$defs/input"}}}},
+    "claim_flags": {"type": "object", "additionalProperties": {"type": "boolean"}},
+    "does_not_establish": {"type": "array", "minItems": 7, "items": {"type": "string", "minLength": 25}},
+    "independent_checker": {"type": "object", "additionalProperties": false, "required": ["path", "checks", "expected_digest"], "properties": {"path": {"const": "quantum-weyl/classical_import/check_strict_support_local_q2_d_readiness.py"}, "checks": {"type": "array", "minItems": 8, "maxItems": 8}, "expected_digest": {"$ref": "#/$defs/hash"}}},
+    "human_report": {"const": "quantum-weyl/classical_import/REPORT_STRICT_SUPPORT_LOCAL_Q2_D_READINESS_V1.md"}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "input": {"type": "object", "additionalProperties": false, "required": ["path", "result_or_artifact_id", "sha256", "role"], "properties": {"path": {"type": "string"}, "result_or_artifact_id": {"type": "string"}, "sha256": {"$ref": "#/$defs/hash"}, "role": {"type": "string"}}}
+  }
+}

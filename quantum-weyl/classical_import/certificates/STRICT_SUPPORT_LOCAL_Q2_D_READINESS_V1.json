@@ -1,0 +1,274 @@
+{
+  "schema": "strict-support-local-q2-d-readiness-v1",
+  "result_id": "STRICT_SUPPORT_LOCAL_Q2_D_READINESS_V1",
+  "result_kind": "SOURCE_TO_RECEIVER_READINESS_AUDIT",
+  "lifecycle": "CLASSIFIED",
+  "created": "2026-08-15",
+  "repository_base_commit": "32ae3f3a890bcda07d2f51641ff0fa8f156be325",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "question": "Does existing repository evidence already close strict pure-Weyl M2, and if not, which part is an absent formula, which part is absent serialization or verification, and which apparent obstruction belongs only to the old finite time-slice receiver?",
+  "answer": "No existing artifact closes M2, but the deficit is substantially narrower than an unknown interaction. The strict minimal master action is fixed, and an earlier all-energy audit declares a complete six-role action-defined q2 ansatz with maximum metric derivative order four and the correct support-intersection rule. What is absent is the portable component payload: no receiver-evaluable tensor-natural AST, complete component hashes, or independent q1q2, D-derivation and cyclicity replay exists. Five rows are gauge-algebra or cotangent-lift serialization tasks. The unique hard coefficient kernel is the metric-antifield row, which contains the polarized second variation of the Bach equation together with cotangent Diff/Weyl terms. The full local D action is also absent; a raw-D result on a selected finite intrinsic carrier is only a control. Separately, the known rank-64 E_5 obstruction rules out an SO(4,2)-equivariant SDR from the all-energy causal source to the old weights-2,3,4 receiver. It does not obstruct support-local q2 on the all-energy carrier. The correct route is therefore to export q2 and D on an all-energy rapid-decay or support-local carrier first, and only then build a compatible completed time-slice receiver.",
+  "scope": {
+    "theory": "strict pure-Weyl minimal Diff x Weyl BV theory",
+    "background": "g=gbar, c=omega=gstar=cstar=omegastar=0 on the unit vacuum conformal cylinder",
+    "source_domain": {
+      "coefficient_ring": "real rational tensor-natural coefficients in the unit-cylinder curvature normalization",
+      "local_inputs": "Gamma_c(E_min) tensor Gamma_c(E_min), polarized by bilinearity; one compact and one smooth input is also allowed",
+      "local_output": "Gamma_c(E_min)",
+      "maximum_metric_derivative_order": 4,
+      "support_rule": "supp q2(u,v) subset supp(u) intersection supp(v) for two compact inputs"
+    },
+    "taylor_convention": "Q(epsilon Phi)=epsilon q1(Phi)+epsilon^2 q2(Phi,Phi)+O(epsilon^3); q2=(1/2)D^2Q at the background",
+    "receiver_contract": "quantum-weyl/classical_import/verify_support_local_q2_export.py"
+  },
+  "source_completeness": {
+    "master_action": [
+      "S_W[g]",
+      "integral gstar^(mu nu)(L_c g_(mu nu)+2 omega g_(mu nu))",
+      "integral cstar_mu [c,c]^mu/2",
+      "integral omegastar L_c omega"
+    ],
+    "vector_field": "Q=(S_min,-)_BV",
+    "minimal_output_roles": 6,
+    "maximum_metric_derivative_order": 4,
+    "support_rule": "supp q2(u,v) subset supp(u) intersection supp(v) for two compact inputs",
+    "status": "COMPLETE_ACTION_DEFINED_ANSATZ_NOT_SERIALIZED_AS_PORTABLE_COMPONENT_PAYLOAD"
+  },
+  "q2_row_readiness": [
+    {
+      "symbol": "c_mu",
+      "role": "Diff ghost",
+      "degree": -1,
+      "source_terms": [
+        "cstar[c,c]/2"
+      ],
+      "source_status": "ACTION_DEFINED_COMPLETE_ROLE",
+      "portable_component_status": "NOT_COMPONENT_SERIALIZED",
+      "remaining": "Serialize the displayed gauge-algebra or cotangent-lift term with exact factorial and sign conventions in the receiver AST."
+    },
+    {
+      "symbol": "omega",
+      "role": "Weyl ghost",
+      "degree": -1,
+      "source_terms": [
+        "omegastar L_c omega"
+      ],
+      "source_status": "ACTION_DEFINED_COMPLETE_ROLE",
+      "portable_component_status": "NOT_COMPONENT_SERIALIZED",
+      "remaining": "Serialize the displayed gauge-algebra or cotangent-lift term with exact factorial and sign conventions in the receiver AST."
+    },
+    {
+      "symbol": "h_mu_nu",
+      "role": "metric",
+      "degree": 0,
+      "source_terms": [
+        "gstar L_c g",
+        "2 gstar omega g"
+      ],
+      "source_status": "ACTION_DEFINED_COMPLETE_ROLE",
+      "portable_component_status": "NOT_COMPONENT_SERIALIZED",
+      "remaining": "Serialize the displayed gauge-algebra or cotangent-lift term with exact factorial and sign conventions in the receiver AST."
+    },
+    {
+      "symbol": "hstar_mu_nu",
+      "role": "metric antifield/equation",
+      "degree": 1,
+      "source_terms": [
+        "D^2 Bach[h,h]",
+        "cotangent Diff/Weyl action"
+      ],
+      "source_status": "ACTION_DEFINED_COMPLETE_ROLE",
+      "portable_component_status": "HARD_COEFFICIENT_KERNEL_OPEN",
+      "remaining": "Serialize the polarized second Bach variation together with the metric-antifield cotangent Diff/Weyl action in a receiver-evaluable tensor-natural AST."
+    },
+    {
+      "symbol": "cstar_mu",
+      "role": "Diff-ghost antifield/identity",
+      "degree": 2,
+      "source_terms": [
+        "metric-antifield Noether Hessian",
+        "ad_c^star cstar",
+        "omega-antifield transport"
+      ],
+      "source_status": "ACTION_DEFINED_COMPLETE_ROLE",
+      "portable_component_status": "NOT_COMPONENT_SERIALIZED",
+      "remaining": "Serialize the displayed gauge-algebra or cotangent-lift term with exact factorial and sign conventions in the receiver AST."
+    },
+    {
+      "symbol": "omegastar",
+      "role": "Weyl-ghost antifield/identity",
+      "degree": 2,
+      "source_terms": [
+        "2 h.hstar",
+        "Diff cotangent transport"
+      ],
+      "source_status": "ACTION_DEFINED_COMPLETE_ROLE",
+      "portable_component_status": "NOT_COMPONENT_SERIALIZED",
+      "remaining": "Serialize the displayed gauge-algebra or cotangent-lift term with exact factorial and sign conventions in the receiver AST."
+    }
+  ],
+  "proof_gate_readiness": [
+    {
+      "check_id": "q1_squared_zero",
+      "status": "SCOPED_VERIFIED_INPUT",
+      "boundary": "The exact finite minimal chain and all-energy causal unary complex are existing controls; the future common payload must still replay its own q1 bytes."
+    },
+    {
+      "check_id": "q1_q2_arity_two_nilpotency",
+      "status": "NOT_COMPUTED_FOR_PORTABLE_STRICT_PAYLOAD",
+      "boundary": "No strict component payload exists on which the receiver can evaluate the arity-two master identity."
+    },
+    {
+      "check_id": "q2_koszul_symmetry",
+      "status": "TAYLOR_CONVENTION_DECLARED_NOT_REPLAYED",
+      "boundary": "The action source declares q2=(1/2)D^2Q, but no receiver checks the serialized polarized components."
+    },
+    {
+      "check_id": "q2_row_completeness",
+      "status": "SOURCE_ANSATZ_DECLARED_PAYLOAD_ABSENT",
+      "boundary": "All six minimal output roles are named, but complete component ledgers and hashes are absent."
+    },
+    {
+      "check_id": "D_q1_commutator_zero",
+      "status": "NOT_COMPUTED_ON_FULL_LOCAL_CARRIER",
+      "boundary": "Raw D is controlled on a selected intrinsic finite carrier, not on every local field, ghost and antifield row."
+    },
+    {
+      "check_id": "D_q2_derivation",
+      "status": "NOT_COMPUTED",
+      "boundary": "Neither a complete strict q2 payload nor the matching full local D action is available."
+    },
+    {
+      "check_id": "BV_cyclicity_q2",
+      "status": "ACTION_DERIVED_EXPECTED_NOT_REPLAYED",
+      "boundary": "The BV master action fixes a canonical cyclic origin, but the receiver has no component payload and pairing on which to replay cyclicity."
+    }
+  ],
+  "D_action_readiness": {
+    "full_local_status": "NOT_SERIALIZED_OR_REPLAYED",
+    "finite_control": {
+      "artifact": "COMPACT_CYLINDER_D_CHARGE_AUDIT",
+      "intrinsic_derived_carrier_preserved": true,
+      "verdict": "D_GAUGE"
+    },
+    "boundary": "A finite residual raw-D action is not the local action on every strict field, ghost, antifield and nonminimal generator required by Gate A."
+  },
+  "finite_receiver_obstruction": {
+    "status": "OBSTRUCTED_BEFORE_Q2",
+    "kind": "COHOMOLOGY_COKERNEL_AND_WEIGHT_SUPPORT_WITNESS",
+    "energy": 5,
+    "family": "E",
+    "source_cohomology_dimension": 64,
+    "selected_target_dimension": 0,
+    "minimum_sdr_defect_rank": 64,
+    "does_not_obstruct": "support-local full-BV q2 on the all-energy local carrier"
+  },
+  "next_executable_cut": [
+    {
+      "order": 1,
+      "object": "STRICT_Q2_KINEMATIC_AND_COTANGENT_COMPONENT_AST",
+      "deliverable": "Serialize the five non-Bach output rows with exact local tensor operations, signs, factorial convention, complete row ledgers and hashes."
+    },
+    {
+      "order": 2,
+      "object": "STRICT_POLARIZED_SECOND_BACH_VARIATION",
+      "deliverable": "Derive and serialize the metric-antifield D^2 Bach kernel through fourth metric-jet order, separately from the gauge-cotangent terms."
+    },
+    {
+      "order": 3,
+      "object": "STRICT_FULL_LOCAL_D_ACTION",
+      "deliverable": "Serialize raw D on the same all-energy field/ghost/antifield carrier and distinguish it from compact weights and Berger K."
+    },
+    {
+      "order": 4,
+      "object": "STRICT_Q2_D_INDEPENDENT_RECEIVER",
+      "deliverable": "Replay q1q2=0, Koszul symmetry, row completeness, [D,q1]=0, D derivation and BV cyclicity on the exact exported bytes."
+    },
+    {
+      "order": 5,
+      "object": "ALL_ENERGY_COMPLETED_TIME_SLICE_RECEIVER",
+      "deliverable": "Only after the local export, construct a rapid-decay/Sobolev all-energy receiver retaining E_n for every n>=2 and the corresponding A/L towers."
+    }
+  ],
+  "provenance": {
+    "inputs": [
+      {
+        "path": "field_bv_identification/certificates/minimal_bv_chain.json",
+        "result_or_artifact_id": "pure-weyl-field-bv-minimal-chain-v1",
+        "sha256": "3f9d04dd729c911fbe07768158d96ae411634b7a91bf70a139e8c7cf1dcd8c64",
+        "role": "strict minimal master action and exact unary finite-chain control"
+      },
+      {
+        "path": "bridge/certificates/CYLINDER_ARBITRARY_SUPPORT_FULL_BV_Q2_TIME_SLICE_CHAIN_MAP_OBSTRUCTION_V1.json",
+        "result_or_artifact_id": "CYLINDER_ARBITRARY_SUPPORT_FULL_BV_Q2_TIME_SLICE_CHAIN_MAP_OBSTRUCTION_V1",
+        "sha256": "f956ad6b5e68ccf7980935d4b6b1defc13b0a7bce8357b8b4cbc21bbb4c72692",
+        "role": "complete minimal q2 source ansatz and finite-receiver unary obstruction"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/SUPPORT_LOCAL_Q2_EXPORT_CONTRACT.json",
+        "result_or_artifact_id": "SUPPORT_LOCAL_Q2_EXPORT_CONTRACT",
+        "sha256": "d673ae449910bcfc97f219c35660508a99f33f1eb396a38ee36510a3b1c6995c",
+        "role": "existing receiver contract and seven required proof checks"
+      },
+      {
+        "path": "quantum-weyl/classical_import/schema/support_local_q2_export.schema.json",
+        "result_or_artifact_id": "SUPPORT_LOCAL_Q2_EXPORT_SCHEMA_V1",
+        "sha256": "e93a67cb0311b98e9c57022fa111dff62cd743d27a6c8dd30d3d9eadd05cf88d",
+        "role": "portable component and complete-row format"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V3_RECONCILIATION.json",
+        "result_or_artifact_id": "CLASSICAL_IMPORT_GATE_V3_RECONCILIATION",
+        "sha256": "b57f9a80b8fbed5f49cebe9e160a09046a73e8882d6e5c066fe4150c2c2001c8",
+        "role": "current fail-closed M2 disposition"
+      },
+      {
+        "path": "d_quotient_classical/certificates/compact_cylinder_d_charge_audit.json",
+        "result_or_artifact_id": "COMPACT_CYLINDER_D_CHARGE_AUDIT",
+        "sha256": "6e609dd850049fb7b85867033dbdce0b2b214f2d5196665015f8e2b552d493e4",
+        "role": "finite residual raw-D control only"
+      }
+    ]
+  },
+  "claim_flags": {
+    "STRICT_MINIMAL_Q2_SOURCE_ANSATZ_COMPLETE": true,
+    "STRICT_SUPPORT_LOCAL_Q2_COMPONENT_PAYLOAD_CERTIFIED": false,
+    "STRICT_FULL_LOCAL_D_ACTION_CERTIFIED": false,
+    "STRICT_Q1_Q2_IDENTITY_REPLAYED": false,
+    "STRICT_D_Q2_DERIVATION_REPLAYED": false,
+    "STRICT_BV_CYCLICITY_Q2_REPLAYED": false,
+    "FINITE_SELECTED_RECEIVER_EQUIVARIANT_SDR_OBSTRUCTED": true,
+    "ALL_ENERGY_SUPPORT_LOCAL_Q2_OBSTRUCTED": false,
+    "CLASSICAL_IMPORT_GATE_PASSED": false,
+    "LORENTZIAN_QUANTUM_THEORY": false,
+    "QME_RESTORED": false
+  },
+  "does_not_establish": [
+    "a portable strict support-local q2 component payload",
+    "the polarized second variation of the Bach equation",
+    "a full local D action or D-Cartan homotopy",
+    "any of the six interaction-side receiver identities",
+    "an obstruction to strict support-local q2 on the all-energy carrier",
+    "an all-energy completed time-slice receiver or residual SDR",
+    "a passed classical import gate, Hadamard state, QME restoration or Lorentzian quantum theory"
+  ],
+  "independent_checker": {
+    "path": "quantum-weyl/classical_import/check_strict_support_local_q2_d_readiness.py",
+    "checks": [
+      "six action-defined role rows",
+      "unique D2-Bach hard kernel",
+      "seven proof-gate dispositions",
+      "rank-64 E5 receiver obstruction",
+      "all-energy q2 non-obstruction firewall",
+      "finite-D versus local-D firewall",
+      "content-pinned provenance",
+      "canonical digest"
+    ],
+    "expected_digest": "9c2223fac7cb77296ef2ee068c1d348adac42028e08d1ac83510302ae0e90977"
+  },
+  "human_report": "quantum-weyl/classical_import/REPORT_STRICT_SUPPORT_LOCAL_Q2_D_READINESS_V1.md"
+}

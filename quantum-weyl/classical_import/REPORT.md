@@ -90,6 +90,17 @@ Koszul symmetry, row completeness, `[D,q1]=0`, the `D`-derivation identity for
 `CONTRACT_READY_AWAITING_CLASSICAL_EXPORT`; it does not certify any missing
 coefficient or replace independent quantum-side evaluation of the expressions.
 
+The subsequent
+[`STRICT_SUPPORT_LOCAL_Q2_D_READINESS_V1`](REPORT_STRICT_SUPPORT_LOCAL_Q2_D_READINESS_V1.md)
+audit crosswalks the strict minimal master action to that receiver. All six
+minimal output roles are action-defined, but none is yet a portable component
+row. Five rows are gauge-algebra or cotangent-lift serialization tasks; the
+metric-antifield row additionally requires the polarized second Bach variation
+through fourth metric-jet order. The separate rank-64 energy-five result is a
+unary obstruction to the old weights-2,3,4 receiver, not an obstruction to the
+all-energy local `q2`. Consequently the next admissible construction is the
+all-energy component export, not projection into the finite receiver.
+
 ## Antifield/Koszul--Tate handoff contract
 
 The required shape of the local antifield export is now executable rather
