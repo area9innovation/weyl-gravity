@@ -37,6 +37,7 @@ AUTHORITY_PATHS = {
     "bt_residual_spectrahedral_pushforward": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_RESIDUAL_SPECTRAHEDRAL_PUSHFORWARD_V1.json",
     "bt_residual_boundary_curvature_obstruction": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_RESIDUAL_BOUNDARY_CURVATURE_OBSTRUCTION_V1.json",
     "bt_residual_tilt_jacobian_cancellation": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_RESIDUAL_TILT_JACOBIAN_CANCELLATION_V1.json",
+    "bt_centered_fiber_domination_obstruction": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_CENTERED_FIBER_DOMINATION_OBSTRUCTION_V1.json",
     "full_surface_gap_audit": "foundations/results/FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1.json",
     "explorer_snapshot": "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json",
     "theory_assembly": "foundations/results/FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1.json",
@@ -95,6 +96,7 @@ def build() -> dict:
     bt_residual_pushforward = loaded["bt_residual_spectrahedral_pushforward"]
     bt_residual_curvature = loaded["bt_residual_boundary_curvature_obstruction"]
     bt_residual_tilt = loaded["bt_residual_tilt_jacobian_cancellation"]
+    bt_centered_fiber = loaded["bt_centered_fiber_domination_obstruction"]
     site = loaded["explorer_snapshot"]
     gr_cassini = loaded["gr_cassini_assembly"]
     mannheim_ngc3198 = loaded["mannheim_ngc3198_assembly"]
@@ -256,6 +258,12 @@ def build() -> dict:
             "bt_residual_tilt_surface_ratio_c4": bt_residual_tilt["exact_cycle_tilt"]["surface_jacobian_ratio"],
             "bt_residual_tilt_inverse_density_ratio_c4": bt_residual_tilt["exact_cycle_tilt"]["inverse_density_jacobian_ratio"],
             "bt_residual_tilt_boltzmann_gap_c4": bt_residual_tilt["exact_cycle_tilt"]["boltzmann_exponent_gap"],
+            "bt_centered_fiber_relative_domination_status": bt_centered_fiber["method_disposition"]["centered_pointwise_relative_action_domination"],
+            "bt_centered_fiber_boltzmann_status": bt_centered_fiber["method_disposition"]["centered_pointwise_boltzmann_ratio_bound"],
+            "bt_integrated_lowest_mode_marginal_evenness_status": bt_centered_fiber["method_disposition"]["integrated_lowest_mode_marginal_evenness"],
+            "bt_annealed_recentered_fiber_status": bt_centered_fiber["method_disposition"]["annealed_or_recentered_fiber_ratio_bound"],
+            "bt_centered_fiber_n1_action_ratio": bt_centered_fiber["exact_n1_fixture"]["per_spatial_site_action_ratio"],
+            "bt_centered_fiber_all_n_ratio_bound": bt_centered_fiber["scalable_action_obstruction"]["action_ratio_bound"],
             "standard_reference_direct_obligations": next(item for item in assembly_data["assemblies"] if item["id"] == "STANDARD_MIXED_REFERENCE")["coverage"]["direct"],
             "external_calibration_records": len(assembly_data["calibration_controls"][0]["records"]),
             "external_calibration_benchmark_families": sum(item["status"] == "SUPPORTED_CONTROL" for item in assembly_data["calibration_controls"][0]["benchmark_coverage"]),
@@ -347,8 +355,8 @@ def build() -> dict:
             },
             {
                 "claim_id": "RF-13-BT-INTERACTING-RECONSTRUCTION-FRONTIER",
-                "statement": "At lambda=0.4 on the 6^4 lattice, an exact two-point reflected density-kernel minor obstructs ordinary OS positivity. The affine virial theorem proves a volume-uniform actual Gibbs action-density bound and annealed half-action factor. Exact period-four data obstruct the global Schur route. The residual map identifies positive fields modulo scale with a Schrödinger spectrahedral boundary and gives the exact normalized Gaussian-surface/tree-Jacobian pushforward. That boundary is pointwise strictly convex, but an exact C4 family has trial curvature tending to zero and negative Gaussian weighted mean curvature at lambda=0.4, obstructing the standard uniform positive-curvature spectral-gap route. Under the natural boundary map induced by a multiplicative lowest-mode tilt, the surface Jacobian exactly cancels the reciprocal tree coarea factor, so tree-Jacobian log convexity is not extra tilt confinement. The resulting action-weighted conditional-fiber marginal and actual interacting H^-1 moment remain open.",
-                "status": "EXACT_FINITE_OS_HESSIAN_BOUNDARY_CURVATURE_AND_TREE_TILT_ROUTE_OBSTRUCTIONS_WITH_ACTION_DENSITY_AND_NORMALIZED_RESIDUAL_REFORMULATION",
+                "statement": "At lambda=0.4 on the 6^4 lattice, an exact two-point reflected density-kernel minor obstructs ordinary OS positivity. The affine virial theorem proves a volume-uniform actual Gibbs action-density bound and annealed half-action factor. Exact period-four data obstruct the global Schur route. The residual map identifies positive fields modulo scale with a Schrödinger spectrahedral boundary and gives the exact normalized Gaussian-surface/tree-Jacobian pushforward. Its curvature and tree-Jacobian shortcuts are obstructed. On a fixed 6^4 lattice, an exact orthogonal-background family also makes the action after an unbounded lowest-mode shift smaller than the centered action by a factor at most 9/(4*4^n), obstructing every centered pointwise relative-action and Boltzmann comparison. Half-period translation nevertheless proves the fully integrated marginal is even. The annealed or recentered fiber bound and actual interacting H^-1 moment remain open.",
+                "status": "EXACT_FINITE_OS_GLOBAL_CURVATURE_TREE_TILT_AND_CENTERED_FIBER_ROUTE_OBSTRUCTIONS_WITH_ACTION_DENSITY_EVEN_MARGINAL_AND_NORMALIZED_RESIDUAL_REFORMULATION",
                 "authorities": [
                     "bt_lambda04_os_kernel_obstruction",
                     "bt_uniform_convexity_obstruction",
@@ -361,6 +369,7 @@ def build() -> dict:
                     "bt_residual_spectrahedral_pushforward",
                     "bt_residual_boundary_curvature_obstruction",
                     "bt_residual_tilt_jacobian_cancellation",
+                    "bt_centered_fiber_domination_obstruction",
                 ],
                 "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"],
             },
@@ -447,6 +456,9 @@ def build() -> dict:
             "bt_residual_tilt_jacobian_cancellation_established": True,
             "bt_tree_log_convexity_extra_tilt_confinement_obstructed": True,
             "bt_direct_action_fiber_bound_established": False,
+            "bt_centered_pointwise_fiber_domination_obstructed": True,
+            "bt_integrated_lowest_mode_marginal_evenness_established": True,
+            "bt_annealed_recentered_fiber_bound_established": False,
             "research_programme_lenses_explained": True,
             "coded_wave_observable_reconstruction_certified": True,
             "coded_local_weak_wave_test_class_certified": True,
@@ -480,6 +492,7 @@ def build() -> dict:
             "a continuum, empirical, Born-rule, or Lorentzian promotion from the BT Euclidean finite lattice",
             "reflection-positivity failure at every nonzero coupling or in a continuum limit",
             "a volume-uniform BT action-weighted conditional-fiber or one-mode marginal bound",
+            "divergence of the BT lowest-mode second moment from the centered pointwise fiber obstruction",
         ],
         "authorities": authorities,
         "independent_checker": {

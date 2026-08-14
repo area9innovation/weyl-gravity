@@ -1,0 +1,163 @@
+{
+  "schema_version": "science-forge-tier-receipt-v1",
+  "receipt_id": "PAPER21_BT_CENTERED_FIBER_OBSTRUCTION_INTEGRATION_V1_TIER_RECEIPT",
+  "result_id": "REVERSE_PHYSICS_BT_EUCLIDEAN_CENTERED_FIBER_DOMINATION_OBSTRUCTION_V1",
+  "created": "2026-08-14",
+  "source_base_commit": "84590a9308e0bf7aaa27075e6637d5317adfcfbd",
+  "dependency_tags": [
+    "EUCLIDEAN-SPECTRAL",
+    "REDUCED-MODE"
+  ],
+  "scope": "Integrate the exact fixed-volume BT centered-fiber domination obstruction into Paper 21 while preserving the open annealed or background-recentered marginal, interacting H-minus-one, continuum, Born, Krein, and Lorentzian gates.",
+  "inputs": [
+    {
+      "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_CENTERED_FIBER_DOMINATION_OBSTRUCTION_V1.json",
+      "sha256": "d889a559d0b334492f85fc86be4ba5084311f718017b526104f0cd8f1f279467",
+      "role": "exact obstruction and integrated-evenness authority"
+    },
+    {
+      "path": "reverse_physics/schema/reverse-physics-bt-euclidean-centered-fiber-domination-obstruction-v1.schema.json",
+      "sha256": "d4208f3a53ea124c9029635c9640bb00c3180fd64cf31d164fcb397af99dac67",
+      "role": "strict fail-closed certificate schema"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "paper/21-reverse-foundations-of-physics.tex",
+      "sha256": "1b980c15add5bc44985bee6096b5837252e0fa723b8f88aa535b449148df3e76"
+    },
+    {
+      "path": "paper/21-reverse-foundations-of-physics.pdf",
+      "sha256": "5fcecc50e60427a1df08a4d296f1e6695bf20bce9517a74e3a18a88ce0416975"
+    },
+    {
+      "path": "paper/21-reverse-foundations-of-physics-claim-map.json",
+      "sha256": "dd4885852522f2a45725c6445cca6f8ee5f59737885a2dc2e5fc814d75f29a7b"
+    },
+    {
+      "path": "paper/generate_21_reverse_foundations_claim_map.py",
+      "sha256": "7cd95b60b51431f003740cb9e46a72aeb8a7e094dceccbbc92e0b7c8c64dcb20"
+    },
+    {
+      "path": "paper/verify_21_reverse_foundations_claim_map.py",
+      "sha256": "de04704b673699ea1abf3708d905870fb43255664e1a0fa3f07e3c8b37216193"
+    }
+  ],
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "python3 -m py_compile <three obstruction Python paths> paper/generate_21_reverse_foundations_claim_map.py paper/verify_21_reverse_foundations_claim_map.py",
+          "status": "PASS"
+        },
+        {
+          "command": "python3 -m json.tool <obstruction certificate, schema, and Paper 21 claim map>",
+          "status": "PASS"
+        },
+        {
+          "command": "cd paper && pdflatex -interaction=nonstopmode -halt-on-error 21-reverse-foundations-of-physics.tex (twice)",
+          "elapsed_seconds": 1.41,
+          "peak_rss_kb": 53052,
+          "status": "PASS",
+          "output": "46 pages; no compile error."
+        },
+        {
+          "command": "git diff --check -- <twelve scoped scientific, receipt, and Paper 21 paths>",
+          "status": "PASS"
+        }
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "python3 reverse_physics/bt_euclidean_centered_fiber_domination_obstruction.py --check",
+          "elapsed_seconds": 0.05,
+          "peak_rss_kb": 21056,
+          "status": "PASS",
+          "output": "24/24 exact producer checks"
+        },
+        {
+          "command": "python3 reverse_physics/verify_bt_euclidean_centered_fiber_domination_obstruction.py",
+          "elapsed_seconds": 0.13,
+          "peak_rss_kb": 30556,
+          "status": "PASS",
+          "output": "18/18 independent checks"
+        },
+        {
+          "command": "python3 -m unittest reverse_physics.tests.test_bt_euclidean_centered_fiber_domination_obstruction",
+          "elapsed_seconds": 0.52,
+          "peak_rss_kb": 30728,
+          "status": "PASS",
+          "output": "17 tests, including fail-closed mutations"
+        },
+        {
+          "command": "python3 paper/generate_21_reverse_foundations_appendices.py --check",
+          "elapsed_seconds": 0.05,
+          "peak_rss_kb": 25104,
+          "status": "PASS"
+        },
+        {
+          "command": "python3 paper/generate_21_reverse_foundations_claim_map.py --check",
+          "elapsed_seconds": 0.06,
+          "peak_rss_kb": 29504,
+          "status": "PASS"
+        },
+        {
+          "command": "python3 paper/verify_21_reverse_foundations_claim_map.py",
+          "elapsed_seconds": 0.06,
+          "peak_rss_kb": 25860,
+          "status": "PASS"
+        },
+        {
+          "command": "python3 ci/verify_paper_manuscript_pins.py",
+          "elapsed_seconds": 0.02,
+          "peak_rss_kb": 17884,
+          "status": "PASS",
+          "output": "7 explicit manuscript/PDF bindings"
+        },
+        {
+          "command": "GOMEMLIMIT=300MiB GOGC=50 sfc conform planning/work-items",
+          "elapsed_seconds": 1.14,
+          "peak_rss_kb": 5388,
+          "status": "PASS",
+          "output": "CLEAN"
+        }
+      ]
+    },
+    "tier_2": {
+      "status": "NOT_RUN",
+      "criterion": "The new result is an isolated exact fixed-lattice certificate. It changes no shared operator or imported classical datum, and the direct 6^4 enumeration is independently rederived by the scoped verifier."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "The obstruction promotes no continuum theorem, lifecycle state, freeze, shared-core algebra, or release."
+    }
+  },
+  "advisory": {
+    "kind": "ADVISORY_FINDING",
+    "certifying": false,
+    "command": "forge/tools/science-forge/paper_prose_advisory.sh paper/21-reverse-foundations-of-physics.tex",
+    "result": "Emphasis, em-dash, sentence-length, novelty, and vocabulary rails are within advisory budgets. Parenthetical density and abstract length remain over their non-gating advisory budgets; the abstract contains one numeric group."
+  },
+  "claim_flags": {
+    "fixed_volume_centered_pointwise_domination_obstructed": true,
+    "integrated_lowest_mode_marginal_evenness_established": true,
+    "paper_claim_map_current": true,
+    "paper_compiles": true,
+    "annealed_or_background_recentered_bound_established": false,
+    "bt_interacting_h_minus_one_established": false,
+    "continuum_measure_established": false,
+    "born_rule_established": false,
+    "krein_reconstruction_established": false,
+    "new_lorentzian_claim": false
+  },
+  "does_not_establish": [
+    "divergence of the integrated BT lowest-mode marginal",
+    "a volume-uniform annealed or background-recentered conditional-fiber estimate",
+    "an interacting H-minus-one moment estimate or continuum measure",
+    "reflection positivity beyond the already scoped finite-volume obstruction",
+    "a Born, Krein, gravitational, empirical, or LORENTZIAN-CAUSAL promotion"
+  ]
+}

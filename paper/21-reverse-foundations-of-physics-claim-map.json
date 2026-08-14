@@ -10,6 +10,14 @@
     "bt_actual_action_density_status": "PROVED",
     "bt_actual_half_action_factor_status": "PROVED",
     "bt_affine_virial_status": "PROVED",
+    "bt_annealed_recentered_fiber_status": "OPEN",
+    "bt_centered_fiber_all_n_ratio_bound": "A(eta_n+t_n h)/A(eta_n)<=9/(4*x^2)=9/(4*4^n)",
+    "bt_centered_fiber_boltzmann_status": "OBSTRUCTED",
+    "bt_centered_fiber_n1_action_ratio": {
+      "denominator": 8346171,
+      "numerator": 2627836
+    },
+    "bt_centered_fiber_relative_domination_status": "OBSTRUCTED",
     "bt_direct_action_fiber_bound_status": "OPEN",
     "bt_euclidean_carrier_relation": "INCOMPATIBLE",
     "bt_euclidean_direct_capabilities": 5,
@@ -27,6 +35,7 @@
       "numerator": -1
     },
     "bt_global_orthogonal_hessian_block_status": "OBSTRUCTED",
+    "bt_integrated_lowest_mode_marginal_evenness_status": "PROVED",
     "bt_interacting_os_cross_sampler_z": -0.6439112862910602,
     "bt_interacting_os_hmc_z": -6.254432004803571,
     "bt_interacting_os_local_z": -2.5326776073871837,
@@ -170,6 +179,16 @@
       "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_BILAPLACIAN_REFERENCE_BRIDGE_V1.json",
       "result_id": "REVERSE_PHYSICS_BT_EUCLIDEAN_BILAPLACIAN_REFERENCE_BRIDGE_V1",
       "sha256": "b96b3aba94374af4351c4e4609cc5f86eeb96562b189a527fdea65bc2bb7d559"
+    },
+    "bt_centered_fiber_domination_obstruction": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL"
+      ],
+      "lifecycle": "OBSTRUCTION_PROVED",
+      "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_CENTERED_FIBER_DOMINATION_OBSTRUCTION_V1.json",
+      "result_id": "REVERSE_PHYSICS_BT_EUCLIDEAN_CENTERED_FIBER_DOMINATION_OBSTRUCTION_V1",
+      "sha256": "d889a559d0b334492f85fc86be4ba5084311f718017b526104f0cd8f1f279467"
     },
     "bt_euclidean_import": {
       "dependency_tags": [
@@ -437,13 +456,15 @@
       "sha256": "8655e099904efff61a80cd4e140e7c070dbae31a13f4499309b38249edf3fef3"
     }
   },
-  "canonical_digest": "b7b9a49346d5110df0591bd58179185b21c4df4c426c320a3f153d517ea34d86",
+  "canonical_digest": "ba6f52002d0b6e76d37c6f7181f93e31f1e72290ea38575eccc60283f8927717",
   "claim_flags": {
     "atlas_exhaustive": false,
     "axes_independent_proved": false,
     "bounded_empirical_comparison_registered": true,
     "bt_actual_annealed_half_action_factor_established": true,
     "bt_actual_interacting_action_density_established": true,
+    "bt_annealed_recentered_fiber_bound_established": false,
+    "bt_centered_pointwise_fiber_domination_obstructed": true,
     "bt_direct_action_fiber_bound_established": false,
     "bt_euclidean_coarse_reproduction_separated": true,
     "bt_euclidean_finite_capabilities_imported": true,
@@ -451,6 +472,7 @@
     "bt_free_os_obstruction_certified": true,
     "bt_global_orthogonal_hessian_block_obstructed": true,
     "bt_half_action_density_candidate_established": false,
+    "bt_integrated_lowest_mode_marginal_evenness_established": true,
     "bt_interacting_uniform_h_minus_one_established": false,
     "bt_lambda_0p4_os_status_decided": true,
     "bt_lambda_0p4_two_sampler_sign_support": true,
@@ -643,15 +665,16 @@
         "bt_orthogonal_hessian_block_obstruction",
         "bt_residual_spectrahedral_pushforward",
         "bt_residual_boundary_curvature_obstruction",
-        "bt_residual_tilt_jacobian_cancellation"
+        "bt_residual_tilt_jacobian_cancellation",
+        "bt_centered_fiber_domination_obstruction"
       ],
       "claim_id": "RF-13-BT-INTERACTING-RECONSTRUCTION-FRONTIER",
       "dependency_tags": [
         "LOCAL-ALGEBRAIC",
         "EUCLIDEAN-SPECTRAL"
       ],
-      "statement": "At lambda=0.4 on the 6^4 lattice, an exact two-point reflected density-kernel minor obstructs ordinary OS positivity. The affine virial theorem proves a volume-uniform actual Gibbs action-density bound and annealed half-action factor. Exact period-four data obstruct the global Schur route. The residual map identifies positive fields modulo scale with a Schr\u00f6dinger spectrahedral boundary and gives the exact normalized Gaussian-surface/tree-Jacobian pushforward. That boundary is pointwise strictly convex, but an exact C4 family has trial curvature tending to zero and negative Gaussian weighted mean curvature at lambda=0.4, obstructing the standard uniform positive-curvature spectral-gap route. Under the natural boundary map induced by a multiplicative lowest-mode tilt, the surface Jacobian exactly cancels the reciprocal tree coarea factor, so tree-Jacobian log convexity is not extra tilt confinement. The resulting action-weighted conditional-fiber marginal and actual interacting H^-1 moment remain open.",
-      "status": "EXACT_FINITE_OS_HESSIAN_BOUNDARY_CURVATURE_AND_TREE_TILT_ROUTE_OBSTRUCTIONS_WITH_ACTION_DENSITY_AND_NORMALIZED_RESIDUAL_REFORMULATION"
+      "statement": "At lambda=0.4 on the 6^4 lattice, an exact two-point reflected density-kernel minor obstructs ordinary OS positivity. The affine virial theorem proves a volume-uniform actual Gibbs action-density bound and annealed half-action factor. Exact period-four data obstruct the global Schur route. The residual map identifies positive fields modulo scale with a Schr\u00f6dinger spectrahedral boundary and gives the exact normalized Gaussian-surface/tree-Jacobian pushforward. Its curvature and tree-Jacobian shortcuts are obstructed. On a fixed 6^4 lattice, an exact orthogonal-background family also makes the action after an unbounded lowest-mode shift smaller than the centered action by a factor at most 9/(4*4^n), obstructing every centered pointwise relative-action and Boltzmann comparison. Half-period translation nevertheless proves the fully integrated marginal is even. The annealed or recentered fiber bound and actual interacting H^-1 moment remain open.",
+      "status": "EXACT_FINITE_OS_GLOBAL_CURVATURE_TREE_TILT_AND_CENTERED_FIBER_ROUTE_OBSTRUCTIONS_WITH_ACTION_DENSITY_EVEN_MARGINAL_AND_NORMALIZED_RESIDUAL_REFORMULATION"
     },
     {
       "authorities": [
@@ -727,7 +750,8 @@
     "a population-level model ranking or complete-theory selection from the NGC 3198 common-fit control",
     "a continuum, empirical, Born-rule, or Lorentzian promotion from the BT Euclidean finite lattice",
     "reflection-positivity failure at every nonzero coupling or in a continuum limit",
-    "a volume-uniform BT action-weighted conditional-fiber or one-mode marginal bound"
+    "a volume-uniform BT action-weighted conditional-fiber or one-mode marginal bound",
+    "divergence of the BT lowest-mode second moment from the centered pointwise fiber obstruction"
   ],
   "formal_object": {
     "coordinates": {
@@ -871,7 +895,7 @@
       "source_sha256": "4f5cbd42e41ad98361b769caea36cca2879f4c3a74fbe058d83bfce2fb6af222"
     },
     "path": "paper/21-reverse-foundations-of-physics.tex",
-    "sha256": "f9b1af7d0a2b2881ce602ab27ff21bca9092d878f1618b8adabd43f2b510c137"
+    "sha256": "1b980c15add5bc44985bee6096b5837252e0fa723b8f88aa535b449148df3e76"
   },
   "result_id": "PAPER21_REVERSE_FOUNDATIONS_INTRODUCTION_V1",
   "result_kind": "PROGRAMME_SYNTHESIS_AND_TYPED_CASE_STUDY_MAP",

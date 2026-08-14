@@ -1113,6 +1113,42 @@ remain open.  Foundationally, the chart cancellation is finite exact algebra
 plus finite-dimensional change of variables; the all-volume estimate is still
 an unsupplied analytic layer, and no weakest-base reversal is claimed.
 
+The centered pointwise fiber comparison is now also decided negatively.
+Certificate
+\cert{REVERSE_PHYSICS_BT_EUCLIDEAN_CENTERED_FIBER_DOMINATION_OBSTRUCTION_V1}
+works on the fixed $6^4$ lattice with the lowest time-circle mode
+$h=(2,1,-1,-2,-1,1)$.  For
+
+\[
+ \eta_n=n\log2\,(-1,-1,1,-3,3,1),
+ \qquad t_n=-n\log2,
+\]
+
+one has $\eta_n\perp h$ and the exact all-$n$ estimate
+
+\[
+ \frac{A(\eta_n+t_nh)}{A(\eta_n)}
+ \leq\frac{9}{4\,4^n}\longrightarrow0.
+\]
+
+Thus no fixed $c>0$ and finite $C$ can make
+$A(\eta+t h)\geq cA(\eta)-C$ on every centered orthogonal fiber, and the
+corresponding centered Boltzmann ratio is unbounded.  This is not marginal
+divergence: translation by three time sites preserves the action and the
+orthogonal fiber while sending $h$ to $-h$, so the fully integrated
+marginal satisfies
+
+\[
+                         m_h(t)=m_h(-t).
+\]
+
+The result separates two claims that a pointwise proof would conflate.
+Individual fibers can contain arbitrarily distant points whose action is
+smaller than at their centered point by an exponentially vanishing ratio,
+while the annealed marginal remains centered by symmetry.  The live gate is
+an annealed or background-recentered fiber estimate; marginal evenness alone
+does not bound its second moment.
+
 \subsection{A finite BV contraction does not freeze the quantum theory}
 
 The energy-two free BV block provides another finite exact case.  The
@@ -1447,8 +1483,12 @@ weighted mean curvature negative at \(\lambda=0.4\).  Hence a global
 positive-curvature boundary spectral gap cannot supply the estimate.  The
 tree-Jacobian factor also cancels exactly under the induced multiplicative
 tilt, so its log convexity supplies no extra confinement.  The live gate is
-the action-weighted conditional-fiber integral in the flat log-field chart,
-not another global curvature or coarea comparison.
+not a comparison of each orthogonal background with its mode-zero value: an
+exact fixed-volume family makes the centered action ratio tend to zero under
+unbounded lowest-mode shifts.  Half-period translation keeps the integrated
+marginal even.  The remaining object is therefore an annealed or recentered
+action-weighted conditional-fiber estimate in the flat log-field chart, not
+another pointwise, global-curvature, or coarea comparison.
 
 \section{Limits of the present paper}
 \label{sec:limits}
@@ -1509,6 +1549,7 @@ The principal machine-readable authorities are
 \cert{REVERSE_PHYSICS_BT_EUCLIDEAN_FREE_RECONSTRUCTION_OBSTRUCTION_V1},
 \cert{REVERSE_PHYSICS_BT_EUCLIDEAN_OS_WITNESS_PREFLIGHT_V1},
 \cert{REVERSE_PHYSICS_BT_EUCLIDEAN_RESIDUAL_TILT_JACOBIAN_CANCELLATION_V1},
+\cert{REVERSE_PHYSICS_BT_EUCLIDEAN_CENTERED_FIBER_DOMINATION_OBSTRUCTION_V1},
 \cert{FOUNDATIONAL_CODED_POLYGONAL_WAVE_RCA0_V1},
 \cert{FOUNDATIONAL_FINITE_GRAPH_WAVE_CAUSALITY_V1}, and
 \cert{FOUNDATIONAL_FREE_BV_ENERGY2_PRA_SDR_V1}.  The static atlas appendices

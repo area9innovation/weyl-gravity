@@ -1,0 +1,297 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-centered-fiber-domination-obstruction-v1.schema.json",
+  "title": "BT centered conditional-fiber domination obstruction certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "certificate", "schema_version", "created", "dependency_tags",
+    "lifecycle_state", "result_kind", "question", "answer",
+    "finite_volume_carrier", "exact_orthogonal_family",
+    "scalable_action_obstruction", "exact_n1_fixture",
+    "integrated_marginal_symmetry", "method_disposition",
+    "foundational_dependency_cut", "missing_object_ledger", "next_gate",
+    "does_not_establish", "provenance", "verification_commands",
+    "tier_receipt", "checks", "report", "schema"
+  ],
+  "$defs": {
+    "fraction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      }
+    },
+    "text": {"type": "string", "minLength": 1},
+    "text_array": {
+      "type": "array", "minItems": 1,
+      "items": {"$ref": "#/$defs/text"}
+    },
+    "vector6": {
+      "type": "array", "minItems": 6, "maxItems": 6,
+      "items": {"type": "integer"}
+    },
+    "term": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["exponent", "coefficient"],
+      "properties": {
+        "exponent": {"type": "integer"},
+        "coefficient": {"$ref": "#/$defs/fraction"}
+      }
+    },
+    "polynomial": {
+      "type": "array", "minItems": 1,
+      "items": {"$ref": "#/$defs/term"}
+    },
+    "residual_rows": {
+      "type": "array", "minItems": 6, "maxItems": 6,
+      "items": {"$ref": "#/$defs/polynomial"}
+    },
+    "input": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {"$ref": "#/$defs/text"},
+        "sha256": {"pattern": "^[0-9a-f]{64}$"}
+      }
+    }
+  },
+  "properties": {
+    "certificate": {
+      "const": "REVERSE_PHYSICS_BT_EUCLIDEAN_CENTERED_FIBER_DOMINATION_OBSTRUCTION_V1"
+    },
+    "schema_version": {
+      "const": "reverse-physics-bt-euclidean-centered-fiber-domination-obstruction-v1"
+    },
+    "created": {"const": "2026-08-14"},
+    "dependency_tags": {
+      "type": "array",
+      "prefixItems": [
+        {"const": "LOCAL-ALGEBRAIC"},
+        {"const": "EUCLIDEAN-SPECTRAL"}
+      ],
+      "items": false
+    },
+    "lifecycle_state": {"const": "OBSTRUCTION_PROVED"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "finite_volume_carrier": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "lattice", "degree", "volume", "spatially_constant_reduction",
+        "spatial_replication_factor", "coupling", "action", "gibbs_weight"
+      ],
+      "properties": {
+        "lattice": {"const": "periodic 6^4 lattice"},
+        "degree": {"const": 8},
+        "volume": {"const": 1296},
+        "spatially_constant_reduction": {"$ref": "#/$defs/text"},
+        "spatial_replication_factor": {"const": 216},
+        "coupling": {"$ref": "#/$defs/fraction"},
+        "action": {"$ref": "#/$defs/text"},
+        "gibbs_weight": {"$ref": "#/$defs/text"}
+      }
+    },
+    "exact_orthogonal_family": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "parameter", "lowest_mode_coefficients",
+        "lowest_mode_cycle_eigenvalue",
+        "lowest_mode_per_spatial_site_norm_squared",
+        "background_coefficients", "background_field", "orthogonality",
+        "fiber_shift", "shifted_coefficients", "shifted_field",
+        "background_residual_polynomials", "shifted_residual_polynomials",
+        "background_action_laurent_polynomial",
+        "shifted_action_laurent_polynomial", "status"
+      ],
+      "properties": {
+        "parameter": {"const": "n>=1 integer, x=2^n"},
+        "lowest_mode_coefficients": {"$ref": "#/$defs/vector6"},
+        "lowest_mode_cycle_eigenvalue": {"const": 1},
+        "lowest_mode_per_spatial_site_norm_squared": {"const": 12},
+        "background_coefficients": {"$ref": "#/$defs/vector6"},
+        "background_field": {"$ref": "#/$defs/text"},
+        "orthogonality": {"$ref": "#/$defs/text"},
+        "fiber_shift": {"const": "t_n=-n*log(2)"},
+        "shifted_coefficients": {"$ref": "#/$defs/vector6"},
+        "shifted_field": {"$ref": "#/$defs/text"},
+        "background_residual_polynomials": {"$ref": "#/$defs/residual_rows"},
+        "shifted_residual_polynomials": {"$ref": "#/$defs/residual_rows"},
+        "background_action_laurent_polynomial": {"$ref": "#/$defs/polynomial"},
+        "shifted_action_laurent_polynomial": {"$ref": "#/$defs/polynomial"},
+        "status": {"const": "EXACT_UNBOUNDED_ORTHOGONAL_FIBER_SHIFT_FAMILY"}
+      }
+    },
+    "scalable_action_obstruction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "background_lower_bound", "shifted_residual_absolute_bounds",
+        "raw_shifted_upper_bound", "scaled_upper_coefficient",
+        "strict_upper_coefficient", "shifted_upper_bound",
+        "action_ratio_bound", "ratio_limit",
+        "relative_domination_consequence", "boltzmann_consequence", "status"
+      ],
+      "properties": {
+        "background_lower_bound": {"$ref": "#/$defs/text"},
+        "shifted_residual_absolute_bounds": {
+          "type": "array", "minItems": 6, "maxItems": 6,
+          "items": {"$ref": "#/$defs/text"}
+        },
+        "raw_shifted_upper_bound": {"$ref": "#/$defs/text"},
+        "scaled_upper_coefficient": {"$ref": "#/$defs/fraction"},
+        "strict_upper_coefficient": {"$ref": "#/$defs/fraction"},
+        "shifted_upper_bound": {"$ref": "#/$defs/text"},
+        "action_ratio_bound": {"$ref": "#/$defs/text"},
+        "ratio_limit": {"$ref": "#/$defs/text"},
+        "relative_domination_consequence": {"$ref": "#/$defs/text"},
+        "boltzmann_consequence": {"$ref": "#/$defs/text"},
+        "status": {"const": "CENTERED_POINTWISE_FIBER_DOMINATION_OBSTRUCTED"}
+      }
+    },
+    "exact_n1_fixture": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "x", "per_spatial_site_background_action",
+        "per_spatial_site_shifted_action", "per_spatial_site_action_ratio",
+        "per_spatial_site_action_gap", "full_lattice_background_action",
+        "full_lattice_shifted_action", "full_lattice_boltzmann_exponent_gap",
+        "status"
+      ],
+      "properties": {
+        "x": {"$ref": "#/$defs/fraction"},
+        "per_spatial_site_background_action": {"$ref": "#/$defs/fraction"},
+        "per_spatial_site_shifted_action": {"$ref": "#/$defs/fraction"},
+        "per_spatial_site_action_ratio": {"$ref": "#/$defs/fraction"},
+        "per_spatial_site_action_gap": {"$ref": "#/$defs/fraction"},
+        "full_lattice_background_action": {"$ref": "#/$defs/fraction"},
+        "full_lattice_shifted_action": {"$ref": "#/$defs/fraction"},
+        "full_lattice_boltzmann_exponent_gap": {"$ref": "#/$defs/fraction"},
+        "status": {"const": "EXACT_RATIONAL_FIXED_VOLUME_FIXTURE"}
+      }
+    },
+    "integrated_marginal_symmetry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "orthogonal_fiber", "marginal", "half_period_translation", "theorem",
+        "consequence", "shortfall", "status"
+      ],
+      "properties": {
+        "orthogonal_fiber": {"$ref": "#/$defs/text"},
+        "marginal": {"$ref": "#/$defs/text"},
+        "half_period_translation": {"$ref": "#/$defs/text"},
+        "theorem": {"const": "m_h(t)=m_h(-t)"},
+        "consequence": {"$ref": "#/$defs/text"},
+        "shortfall": {"$ref": "#/$defs/text"},
+        "status": {"const": "EVEN_MARGINAL_PROVED"}
+      }
+    },
+    "method_disposition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "centered_pointwise_action_increment",
+        "centered_pointwise_relative_action_domination",
+        "centered_pointwise_boltzmann_ratio_bound",
+        "integrated_lowest_mode_marginal_evenness",
+        "annealed_or_recentered_fiber_ratio_bound",
+        "normalized_lowest_mode_second_moment_bound",
+        "actual_interacting_h_minus_one_second_moment_bound",
+        "interacting_tightness", "continuum_limit", "born_rule",
+        "krein_reconstruction", "lorentzian_transfer"
+      ],
+      "properties": {
+        "centered_pointwise_action_increment": {"const": "OBSTRUCTED"},
+        "centered_pointwise_relative_action_domination": {"const": "OBSTRUCTED"},
+        "centered_pointwise_boltzmann_ratio_bound": {"const": "OBSTRUCTED"},
+        "integrated_lowest_mode_marginal_evenness": {"const": "PROVED"},
+        "annealed_or_recentered_fiber_ratio_bound": {"const": "OPEN"},
+        "normalized_lowest_mode_second_moment_bound": {"const": "OPEN"},
+        "actual_interacting_h_minus_one_second_moment_bound": {"const": "OPEN"},
+        "interacting_tightness": {"const": "NOT_ESTABLISHED"},
+        "continuum_limit": {"const": "NOT_ESTABLISHED"},
+        "born_rule": {"const": "NOT_ESTABLISHED"},
+        "krein_reconstruction": {"const": "NOT_ASSESSED"},
+        "lorentzian_transfer": {"const": "NOT_ESTABLISHED"}
+      }
+    },
+    "foundational_dependency_cut": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "finite_exact_layer", "finite_analytic_layer", "uniform_limit_layer",
+        "classification", "weakest_base_or_reversal"
+      ],
+      "properties": {
+        "finite_exact_layer": {"$ref": "#/$defs/text"},
+        "finite_analytic_layer": {"$ref": "#/$defs/text"},
+        "uniform_limit_layer": {"$ref": "#/$defs/text"},
+        "classification": {"const": "USED_BY_DISPLAYED_PROOF"},
+        "weakest_base_or_reversal": {"const": "NOT_ESTABLISHED"}
+      }
+    },
+    "missing_object_ledger": {"$ref": "#/$defs/text_array"},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "does_not_establish": {"$ref": "#/$defs/text_array"},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["repository_base_commit", "inputs", "arithmetic"],
+      "properties": {
+        "repository_base_commit": {"pattern": "^[0-9a-f]{40}$"},
+        "inputs": {
+          "type": "array", "minItems": 2, "maxItems": 2,
+          "items": {"$ref": "#/$defs/input"}
+        },
+        "arithmetic": {"$ref": "#/$defs/text"}
+      }
+    },
+    "verification_commands": {"$ref": "#/$defs/text_array"},
+    "tier_receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "command_results", "tier_0", "tier_1", "tier_2", "tier_3",
+        "resource_policy"
+      ],
+      "properties": {
+        "command_results": {"type": "array"},
+        "tier_0": {"$ref": "#/$defs/text"},
+        "tier_1": {"$ref": "#/$defs/text"},
+        "tier_2": {"$ref": "#/$defs/text"},
+        "tier_3": {"$ref": "#/$defs/text"},
+        "resource_policy": {"$ref": "#/$defs/text"}
+      }
+    },
+    "checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"const": 24},
+        "total": {"const": 24},
+        "failures": {"type": "array", "maxItems": 0},
+        "details": {
+          "type": "object", "minProperties": 24, "maxProperties": 24,
+          "additionalProperties": {"const": true}
+        }
+      }
+    },
+    "report": {
+      "const": "reverse_physics/reports/bt-euclidean-centered-fiber-domination-obstruction.md"
+    },
+    "schema": {
+      "const": "reverse_physics/schema/reverse-physics-bt-euclidean-centered-fiber-domination-obstruction-v1.schema.json"
+    }
+  }
+}

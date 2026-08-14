@@ -98,6 +98,7 @@ def main() -> int:
     bt_residual_pushforward = json.loads((ROOT / data["authorities"]["bt_residual_spectrahedral_pushforward"]["path"]).read_text())
     bt_residual_curvature = json.loads((ROOT / data["authorities"]["bt_residual_boundary_curvature_obstruction"]["path"]).read_text())
     bt_residual_tilt = json.loads((ROOT / data["authorities"]["bt_residual_tilt_jacobian_cancellation"]["path"]).read_text())
+    bt_centered_fiber = json.loads((ROOT / data["authorities"]["bt_centered_fiber_domination_obstruction"]["path"]).read_text())
     dims = cube["dimensions"]
     atlas = data["atlas_snapshot"]
     require(atlas["axis_sizes"] == [6, 6, 16], "unexpected axis sizes")
@@ -177,6 +178,14 @@ def main() -> int:
     require(bt_residual_tilt["method_disposition"]["normalized_lowest_mode_marginal_bound"] == "OPEN", "BT tilt reduction promoted to marginal theorem")
     require(bt_residual_tilt["method_disposition"]["actual_interacting_h_minus_one_second_moment_bound"] == "OPEN", "BT tilt reduction promoted to H^-1 theorem")
     require(bt_residual_tilt["foundational_dependency_cut"]["weakest_base_or_reversal"] == "NOT_ESTABLISHED", "BT tilt dependency cut promoted to reversal")
+    require(atlas["bt_centered_fiber_relative_domination_status"] == bt_centered_fiber["method_disposition"]["centered_pointwise_relative_action_domination"] == "OBSTRUCTED", "BT centered relative-action obstruction drift")
+    require(atlas["bt_centered_fiber_boltzmann_status"] == bt_centered_fiber["method_disposition"]["centered_pointwise_boltzmann_ratio_bound"] == "OBSTRUCTED", "BT centered Boltzmann obstruction drift")
+    require(atlas["bt_integrated_lowest_mode_marginal_evenness_status"] == bt_centered_fiber["method_disposition"]["integrated_lowest_mode_marginal_evenness"] == "PROVED", "BT integrated marginal evenness drift")
+    require(atlas["bt_annealed_recentered_fiber_status"] == bt_centered_fiber["method_disposition"]["annealed_or_recentered_fiber_ratio_bound"] == "OPEN", "BT annealed fiber bound promoted")
+    require(atlas["bt_centered_fiber_n1_action_ratio"] == bt_centered_fiber["exact_n1_fixture"]["per_spatial_site_action_ratio"] == {"numerator": 2627836, "denominator": 8346171}, "BT centered n=1 action ratio drift")
+    require(atlas["bt_centered_fiber_all_n_ratio_bound"] == "A(eta_n+t_n h)/A(eta_n)<=9/(4*x^2)=9/(4*4^n)", "BT all-n centered fiber bound drift")
+    require(bt_centered_fiber["method_disposition"]["normalized_lowest_mode_second_moment_bound"] == "OPEN", "BT centered fiber obstruction promoted to a marginal moment theorem")
+    require(bt_centered_fiber["method_disposition"]["actual_interacting_h_minus_one_second_moment_bound"] == "OPEN", "BT centered fiber obstruction promoted to H^-1")
 
     allowed_tags = {"LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE", "LORENTZIAN-CAUSAL"}
     claim_ids = set()
@@ -237,6 +246,9 @@ def main() -> int:
     require(flags["bt_residual_tilt_jacobian_cancellation_established"] is True, "BT residual tilt cancellation flag missing")
     require(flags["bt_tree_log_convexity_extra_tilt_confinement_obstructed"] is True, "BT tree tilt confinement obstruction flag missing")
     require(flags["bt_direct_action_fiber_bound_established"] is False, "BT action-fiber bound promoted")
+    require(flags["bt_centered_pointwise_fiber_domination_obstructed"] is True, "BT centered fiber obstruction flag missing")
+    require(flags["bt_integrated_lowest_mode_marginal_evenness_established"] is True, "BT marginal evenness flag missing")
+    require(flags["bt_annealed_recentered_fiber_bound_established"] is False, "BT annealed fiber bound promoted")
     require(flags["research_programme_lenses_explained"] is True, "research-programme exposition flag is not certified")
     require(flags["coded_wave_observable_reconstruction_certified"] is True, "coded observable reconstruction flag is not certified")
     require(flags["coded_local_weak_wave_test_class_certified"] is True, "localized weak-wave flag is not certified")
@@ -466,6 +478,10 @@ def main() -> int:
         r"=e^{-S(\psi+th)+S(\psi)}",
         r"\frac9{10}\frac{10}9=1",
         r"conditional-fiber integral",
+        r"\frac{A(\eta_n+t_nh)}{A(\eta_n)}",
+        r"\frac{9}{4\,4^n}",
+        r"m_h(t)=m_h(-t)",
+        r"annealed or background-recentered",
     ]:
         require(phrase in prose, f"required boundary missing from paper: {phrase}")
     for citation in [
