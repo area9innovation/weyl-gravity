@@ -32,10 +32,10 @@ is coarse numerical reproduction, not empirical validation. A separate carrier
 interface refuses only identification of the positive Euclidean measure with the
 all-real BT/Krein path integral; controlled conditional bridges remain open.
 
-The **Weyl BV routes** view projects the audited Lorentzian completion atlas as
+The **Weyl BV routes** view projects the current audited Lorentzian completion atlas as
 seven architectures across eleven ordered gates, for 77 separately typed cells.
-It also exposes five ranked next constructions and the eleven-step Berger H26/C26
-decision chain.  The ranking is a planning aid, not a theorem; in particular,
+It exposes the finite residual-SDR repair, five ranked next constructions and the
+eleven-step Berger H26/C26 decision chain.  The ranking is a planning aid, not a theorem; in particular,
 the rational non-cone feasibility control prevents the scoped 104-row failures
 from being promoted to a general non-cone no-go.
 

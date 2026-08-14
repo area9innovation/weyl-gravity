@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "classical-import-gate-v3-reconciliation-v1.schema.json",
+  "title": "Classical import Gate-A reconciliation v3",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "result_state", "lifecycle", "created",
+    "repository_base_commit", "dependency_tags", "question", "answer",
+    "supersedes_for_current_status", "historical_certificate_preserved",
+    "standalone_history_replay", "status_vocabulary", "export_reconciliation",
+    "freeze_check_reconciliation", "required_hash_disposition",
+    "minimal_missing_bundle", "gate_disposition", "m3_scoped_resolution",
+    "provenance", "claim_flags", "does_not_establish", "next_gate",
+    "independent_checker", "human_report"
+  ],
+  "properties": {
+    "schema": {"const": "quantum-weyl-classical-import-gate-v3-reconciliation-v1"},
+    "result_id": {"const": "CLASSICAL_IMPORT_GATE_V3_RECONCILIATION"},
+    "result_state": {"const": "DFINITE_RESIDUAL_SDR_PORTABLE_COMMON_SUPPORT_LOCAL_FREEZE_OPEN"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "created": {"type": "string", "format": "date"},
+    "repository_base_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "question": {"type": "string", "minLength": 100},
+    "answer": {"type": "string", "minLength": 700},
+    "supersedes_for_current_status": {"const": "CLASSICAL_IMPORT_GATE_V2_RECONCILIATION"},
+    "historical_certificate_preserved": {"const": true},
+    "standalone_history_replay": {
+      "type": "object", "additionalProperties": false,
+      "required": ["status", "historical_commits", "proof_strategy", "historical_identifiers_preserved", "historical_paths_preserved", "verifier_sources", "replayed_results", "boundary"],
+      "properties": {
+        "status": {"const": "VERIFIED_BY_EXACT_CONTENT"},
+        "historical_commits": {"type": "array", "minItems": 3, "maxItems": 3, "uniqueItems": true, "items": {"type": "string", "pattern": "^[0-9a-f]{40}$"}},
+        "proof_strategy": {"type": "string", "minLength": 100},
+        "historical_identifiers_preserved": {"const": true},
+        "historical_paths_preserved": {"const": true},
+        "verifier_sources": {"type": "array", "minItems": 7, "maxItems": 7, "items": {"$ref": "#/$defs/path_hash"}},
+        "replayed_results": {"type": "array", "minItems": 5, "uniqueItems": true, "items": {"type": "string"}},
+        "boundary": {"type": "string", "minLength": 100}
+      }
+    },
+    "status_vocabulary": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"type": "object", "additionalProperties": false, "required": ["id", "meaning"], "properties": {"id": {"type": "string"}, "meaning": {"type": "string", "minLength": 80}}}},
+    "export_reconciliation": {"type": "array", "minItems": 20, "maxItems": 20, "items": {"$ref": "#/$defs/export"}},
+    "freeze_check_reconciliation": {"type": "array", "minItems": 10, "maxItems": 10, "items": {"$ref": "#/$defs/check"}},
+    "required_hash_disposition": {"type": "object", "minProperties": 7, "maxProperties": 7, "additionalProperties": {"type": "object", "additionalProperties": false, "required": ["accepted", "candidate", "candidate_scope"], "properties": {"accepted": {"type": "null"}, "candidate": {"type": ["string", "null"]}, "candidate_scope": {"type": "string"}}}},
+    "minimal_missing_bundle": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"type": "object", "additionalProperties": false, "required": ["id", "object", "unlocks"], "properties": {"id": {"type": "string", "pattern": "^M[1-6]_"}, "object": {"type": "string", "minLength": 100}, "unlocks": {"type": "array", "minItems": 2, "items": {"type": "string"}}}}},
+    "gate_disposition": {
+      "type": "object", "additionalProperties": false,
+      "required": ["gate_a_status", "claim_state", "publishable_quantum_results_allowed_by_gate_a", "exports_total", "same_theory_receiver_verified_scoped", "different_theory_controls", "legacy_accepted_scoped", "supporting_evidence_only", "missing_portable_objects", "freeze_checks_total", "freeze_checks_receiver_verified_scoped", "freeze_checks_different_theory", "freeze_checks_blocked", "accepted_common_snapshot_hashes", "rule"],
+      "properties": {
+        "gate_a_status": {"const": "FAIL_CLOSED"},
+        "claim_state": {"const": "CLASSICAL_IMPORT_DFINITE_SDR_REPAIRED_FULL_CARRIER_OPEN"},
+        "publishable_quantum_results_allowed_by_gate_a": {"const": false},
+        "exports_total": {"const": 20},
+        "same_theory_receiver_verified_scoped": {"const": 8},
+        "different_theory_controls": {"const": 2},
+        "legacy_accepted_scoped": {"const": 3},
+        "supporting_evidence_only": {"const": 7},
+        "missing_portable_objects": {"const": 0},
+        "freeze_checks_total": {"const": 10},
+        "freeze_checks_receiver_verified_scoped": {"const": 5},
+        "freeze_checks_different_theory": {"const": 4},
+        "freeze_checks_blocked": {"const": 1},
+        "accepted_common_snapshot_hashes": {"const": 0},
+        "rule": {"type": "string", "minLength": 100}
+      }
+    },
+    "m3_scoped_resolution": {
+      "type": "object", "additionalProperties": false,
+      "required": ["status", "evidence", "full_coordinates", "residual_coordinates", "energies", "residual_sdr_hash", "remaining", "boundary"],
+      "properties": {
+        "status": {"const": "SCOPED_PORTABILITY_AND_IDENTITIES_CERTIFIED"},
+        "evidence": {"const": "STRICT_DFINITE_RESIDUAL_SDR_V1"},
+        "full_coordinates": {"const": 4490},
+        "residual_coordinates": {"const": 470},
+        "energies": {"const": [2, 3, 4, 5, 6]},
+        "residual_sdr_hash": {"$ref": "#/$defs/hash"},
+        "remaining": {"type": "string", "minLength": 100},
+        "boundary": {"type": "string", "minLength": 100}
+      }
+    },
+    "provenance": {"type": "object", "additionalProperties": false, "required": ["inputs"], "properties": {"inputs": {"type": "array", "minItems": 15, "maxItems": 15, "items": {"type": "object", "additionalProperties": false, "required": ["path", "result_or_artifact_id", "sha256", "role"], "properties": {"path": {"type": "string"}, "result_or_artifact_id": {"type": "string"}, "sha256": {"$ref": "#/$defs/hash"}, "role": {"type": "string"}}}}}},
+    "claim_flags": {"type": "object", "additionalProperties": {"type": "boolean"}},
+    "does_not_establish": {"type": "array", "minItems": 12, "items": {"type": "string", "minLength": 25}},
+    "next_gate": {"type": "string", "minLength": 300},
+    "independent_checker": {"type": "object", "additionalProperties": false, "required": ["path", "checks", "expected_digest"], "properties": {"path": {"const": "quantum-weyl/classical_import/check_classical_import_gate_v3_reconciliation.py"}, "checks": {"type": "array", "minItems": 8}, "expected_digest": {"$ref": "#/$defs/hash"}}},
+    "human_report": {"const": "quantum-weyl/classical_import/REPORT_GATE_V3.md"}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "path_hash": {"type": "object", "additionalProperties": false, "required": ["path", "sha256"], "properties": {"path": {"type": "string", "minLength": 1}, "sha256": {"$ref": "#/$defs/hash"}}},
+    "export": {"type": "object", "additionalProperties": false, "required": ["export_id", "status", "evidence", "established", "remaining_for_gate_a", "boundary"], "properties": {"export_id": {"type": "string"}, "status": {"enum": ["RECEIVER_VERIFIED_SCOPED", "CERTIFIED_DIFFERENT_THEORY", "LEGACY_ACCEPTED_SCOPED", "SUPPORTING_EVIDENCE_ONLY", "MISSING_PORTABLE_OBJECT"]}, "evidence": {"type": "array", "items": {"type": "string"}}, "established": {"type": "string", "minLength": 50}, "remaining_for_gate_a": {"type": "string", "minLength": 50}, "boundary": {"type": "string", "minLength": 50}}},
+    "check": {"type": "object", "additionalProperties": false, "required": ["check_id", "status", "evidence", "established", "remaining_for_gate_a", "boundary"], "properties": {"check_id": {"type": "string"}, "status": {"enum": ["RECEIVER_VERIFIED_SCOPED", "CERTIFIED_DIFFERENT_THEORY", "BLOCKED_MISSING_COMMON_SNAPSHOT"]}, "evidence": {"type": "array", "items": {"type": "string"}}, "established": {"type": "string", "minLength": 50}, "remaining_for_gate_a": {"type": "string", "minLength": 50}, "boundary": {"type": "string", "minLength": 50}}}
+  }
+}

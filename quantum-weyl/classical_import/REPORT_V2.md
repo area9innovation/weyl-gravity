@@ -65,12 +65,16 @@ minimal-BV relative-cohomology quotient.
 ## Current Gate-A disposition
 
 The broader twenty-export and ten-identity receiver gate is now reconciled in
-[`CLASSICAL_IMPORT_GATE_V2_RECONCILIATION.json`](certificates/CLASSICAL_IMPORT_GATE_V2_RECONCILIATION.json)
-and its readable [`Gate-A report`](REPORT_GATE_V2.md). The minimal-BV import
-above is one same-theory scoped repair, not a complete freeze. The current
-gate remains fail-closed because no single strict pure-Weyl snapshot yet
-contains the support-local `q2` and `D`, residual `iota_cl`, `pi_cl` and
-`s_cl`, full cyclic pairing, exact residual tensors, and normalized centered
-representatives required for all ten independent receiver checks. Exact
-Berger interaction data and strict causal/auxiliary homotopies are retained as
-controls but are not relabelled as those missing strict residual objects.
+[`CLASSICAL_IMPORT_GATE_V3_RECONCILIATION.json`](certificates/CLASSICAL_IMPORT_GATE_V3_RECONCILIATION.json)
+and its readable [`Gate-A V3 report`](REPORT_GATE_V3.md). The strict
+`D x SO(4)`-finite residual maps are no longer missing serialized objects:
+[`STRICT_DFINITE_RESIDUAL_SDR_V1.json`](certificates/STRICT_DFINITE_RESIDUAL_SDR_V1.json)
+exports `iota_cl`, `pi_cl`, and `s_cl` on 4,490 full and 470 residual
+coordinates and independently replays all eight SDR identities. This is a
+same-theory finite control, not a complete freeze. The current gate remains
+fail-closed because no single full support-local strict pure-Weyl snapshot yet
+contains those maps together with support-local `q2` and `D`, the complete
+nonminimal carrier and cyclic pairing, exact residual tensors, and normalized
+centered representatives required for all ten receiver checks. Exact Berger
+interaction data and causal Green homotopies remain controls and are not
+relabelled as strict target-theory payloads.

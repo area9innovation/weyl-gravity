@@ -18030,24 +18030,24 @@ window.MATRIX_EXPLORER_DATA = {
     ]
   },
   "completion_atlas": {
-    "schema_version": "foundational-lorentzian-weyl-bv-completion-atlas-v2",
-    "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V2",
+    "schema_version": "foundational-lorentzian-weyl-bv-completion-atlas-v3",
+    "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V3",
     "result_kind": "BRANCH_BY_STAGE_COMPLETION_ATLAS",
     "lifecycle": "CLASSIFIED",
     "created": "2026-08-15",
-    "repository_base_commit": "940f680da46eb1d4ebecf210472ee2192e90bccc",
+    "repository_base_commit": "1ffc17e215f5a5e55ce7c095bccd25210af0698c",
     "dependency_tags": [
       "LOCAL-ALGEBRAIC",
       "EUCLIDEAN-SPECTRAL",
       "REDUCED-MODE",
       "LORENTZIAN-CAUSAL"
     ],
-    "question": "After repairing standalone classical-import replay and incorporating the complete Berger H26/C26 Cauchy-carrier decision chain, which Lorentzian Weyl BV architectures are strongest, what is actually blocked, and which next exact constructions are both scientifically decisive and tractable?",
-    "answer": "Strict pure Weyl remains the theory-identity front: its 386-row scoped causal homotopy is real, standalone provenance now replays, and Gate A is reduced to six explicit missing payload families, but the common authoritative snapshot still fails closed. Berger remains the analytic-maturity front through complete 54-row causal propagation and cyclic D-Cartan closure through arity three. Its apparent short path from an exact-CCR candidate to BRST Hadamard data has, however, split into a substantial decision chain dominated by scoped obstructions. Stationary normalization is empty; the frozen Cauchy graph fails; six-row cyclic repair is impossible; free-module closure requires at least 104 added rows; and several canonical cone and fixed non-cone 104-row families fail. A rational non-cone rank-feasibility control also proves that nilpotence and cohomology ranks alone are not a global obstruction. None of these scoped results is a theorem against the complete general non-cone class, non-free carriers, alternative companions or a direct spacetime q26-equivariant selection. The best near-term target-theory task is therefore the strict residual-SDR payload, while the best high-risk analytic experiment is a direct nonstationary q26-equivariant Hadamard selection. A general 104-row completion remains important but tooling-heavy and is no longer described as low-hanging fruit.",
+    "question": "After exporting and independently replaying the strict D-finite residual contraction, how has the Lorentzian Weyl BV completion frontier changed, which Gate-A defect is actually closed, and which target-theory construction should be attempted next?",
+    "answer": "The strict pure-Weyl front has made a real but deliberately scoped advance. The historical absence of portable residual maps is closed on the BGG-adapted D x SO(4)-finite carrier at energies two through six: 4,490 ordered full coordinates and 470 W+/W- residual coordinates now carry exact serialized q0, q_res^(0), iota_cl, pi_cl and s_cl, and an independent standard-library receiver proves all eight SDR identities and normalized side conditions. Gate A nevertheless remains fail-closed. The finite split carrier is not the common arbitrary-support local carrier required by the twenty-export freeze; it omits the complete nonminimal domain, full cyclic pairing, target-action q2 and D, noncompact residual action and centered representatives. Thus M3 has changed character—from missing serialization to a precise full-carrier extension problem—but has not disappeared. The route ranking changes accordingly. The best next irreducible target-theory task is strict support-local q2/D on the common carrier, closely followed by lifting the now-controlled residual SDR to that carrier. Berger remains the analytic-maturity front and its eleven-step Hadamard/Ward decision chain is unchanged: several stationary, cone and fixed non-cone architectures are obstructed, while direct nonstationary q26-equivariant selection and the complete general non-cone class remain open. No Hadamard, renormalized-product, QME, residual-transfer or full Lorentzian theory claim is promoted.",
     "predecessor": {
-      "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V1",
-      "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V1.json",
-      "sha256": "2f3eb34cac43c3d873946d9a48c70e1b3eb6c2ba6be89b36cd77c393a2be6c10",
+      "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V2",
+      "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V2.json",
+      "sha256": "f33324484ac15569be78b1a4ff1371c2b103165a91a284ac81383f68c74036f9",
       "preserved": true
     },
     "status_vocabulary": [
@@ -18155,11 +18155,11 @@ window.MATRIX_EXPLORER_DATA = {
           {
             "stage": "S0_CLASSICAL_AUTHORITY",
             "status": "FAIL_CLOSED",
-            "statement": "Standalone replay is repaired and the historical twenty-export/ten-identity gate is reconciled into six missing payload families, but no common strict pure-Weyl snapshot passes Gate A.",
+            "statement": "The previously absent finite residual maps are now portable: a receiver replays q0, q_res^(0), iota_cl, pi_cl and s_cl on 4,490 full and 470 residual coordinates. Gate A still lacks one common full support-local strict snapshot.",
             "evidence": [
-              "CLASSICAL_IMPORT_GATE_V2_RECONCILIATION"
+              "CLASSICAL_IMPORT_GATE_V3_RECONCILIATION"
             ],
-            "boundary": "Five same-theory scoped repairs and exact neighboring-theory controls do not supply the three missing residual maps or the common full snapshot."
+            "boundary": "The finite D x SO(4) split control has no missing serialized maps, but it is not the arbitrary-support carrier with complete nonminimal rows, full cyclic pairing, q2, D and residual SO(4,2) data."
           },
           {
             "stage": "S1_OFF_SHELL_BV",
@@ -18245,7 +18245,7 @@ window.MATRIX_EXPLORER_DATA = {
           }
         ],
         "first_unclosed_gate": "S0_CLASSICAL_AUTHORITY",
-        "next_decisive_object": "First serialize the strict residual SDR iota_cl, pi_cl and s_cl on one ordered carrier, then produce strict support-local q2 and D. These are target-theory gates and must not be filled by the auxiliary retract, causal Green homotopy or Berger tensors."
+        "next_decisive_object": "Construct the common full support-local strict carrier and derive its target-action q2 and D. In parallel, extend or reconstruct iota_cl, pi_cl and s_cl on that same carrier, using the certified 4,490-by-470 finite SDR as an exact receiver control rather than as continuum evidence."
       },
       {
         "id": "PURE_WEYL_BACH_FLAT_RANK310",
@@ -18850,8 +18850,8 @@ window.MATRIX_EXPLORER_DATA = {
       "theory_identity_front": {
         "branch": "STRICT_PURE_WEYL_386",
         "first_gate": "S0_CLASSICAL_AUTHORITY",
-        "current_fact": "Gate A is partially repaired and replayable but still lacks one common strict snapshot.",
-        "best_next_object": "M3 residual iota_cl/pi_cl/s_cl payload, followed by M2 strict q2/D."
+        "current_fact": "Three residual maps and four historical identities are portable and replayed in the exact finite split scope; the common support-local freeze remains open.",
+        "best_next_object": "M2 strict support-local q2/D on the common carrier, with the M3 full-carrier residual-SDR lift as the coupled second rail."
       },
       "analytic_maturity_front": {
         "branch": "BERGER_POSITIVE_CLOCK_54",
@@ -18871,11 +18871,11 @@ window.MATRIX_EXPLORER_DATA = {
       }
     },
     "classical_import_reconciliation": {
-      "result_id": "CLASSICAL_IMPORT_GATE_V2_RECONCILIATION",
+      "result_id": "CLASSICAL_IMPORT_GATE_V3_RECONCILIATION",
       "gate": "FAIL_CLOSED",
-      "claim_state": "CLASSICAL_IMPORT_PARTIALLY_REPAIRED",
+      "claim_state": "CLASSICAL_IMPORT_DFINITE_SDR_REPAIRED_FULL_CARRIER_OPEN",
       "standalone_history_replay": "VERIFIED_BY_EXACT_CONTENT",
-      "missing_payload_families": [
+      "open_payload_families": [
         "M1_COMMON_STRICT_SNAPSHOT",
         "M2_STRICT_Q2_D",
         "M3_RESIDUAL_SDR",
@@ -18883,6 +18883,10 @@ window.MATRIX_EXPLORER_DATA = {
         "M5_RESIDUAL_EXACT_PAYLOAD",
         "M6_CENTERED_REPRESENTATIVES"
       ],
+      "missing_portable_objects": 0,
+      "receiver_verified_scoped_exports": 8,
+      "receiver_verified_scoped_checks": 5,
+      "accepted_common_snapshot_hashes": 0,
       "rule": "Gate A may become VERIFIED only when all twenty exports and seven hashes belong to one strict pure-Weyl snapshot and the receiver independently replays all ten identities on those exact bytes."
     },
     "berger_h26_c26_decision_chain": [
@@ -18989,30 +18993,30 @@ window.MATRIX_EXPLORER_DATA = {
     "route_selection": [
       {
         "rank": 1,
-        "route": "STRICT_RESIDUAL_SDR",
+        "route": "STRICT_SUPPORT_LOCAL_Q2_D",
         "branch": "STRICT_PURE_WEYL_386",
         "scientific_leverage": "VERY_HIGH",
-        "tractability": "MEDIUM",
-        "dependency_depth": "LOW",
-        "recommendation": "Serialize exact iota_cl, pi_cl and s_cl on one ordered authoritative carrier and replay the four residual identities."
+        "tractability": "LOW",
+        "dependency_depth": "MEDIUM",
+        "recommendation": "Derive the strict target-action q2 and local D on the common support-local carrier; this is now the first irreducible coefficient deficit rather than a map-serialization task."
       },
       {
         "rank": 2,
+        "route": "STRICT_FULL_SUPPORT_LOCAL_RESIDUAL_SDR",
+        "branch": "STRICT_PURE_WEYL_386",
+        "scientific_leverage": "VERY_HIGH",
+        "tractability": "LOW",
+        "dependency_depth": "MEDIUM",
+        "recommendation": "Extend or reconstruct iota_cl, pi_cl and s_cl on the same full carrier, with the finite 4,490-by-470 payload serving as an exact regression control."
+      },
+      {
+        "rank": 3,
         "route": "DIRECT_SPACETIME_Q26_HADAMARD",
         "branch": "BERGER_POSITIVE_CLOCK_54",
         "scientific_leverage": "VERY_HIGH",
         "tractability": "LOW",
         "dependency_depth": "MEDIUM",
         "recommendation": "Attempt a direct nonstationary q26-equivariant global distributional selection without reusing the rejected stationary A104 graph."
-      },
-      {
-        "rank": 3,
-        "route": "STRICT_SUPPORT_LOCAL_Q2_D",
-        "branch": "STRICT_PURE_WEYL_386",
-        "scientific_leverage": "VERY_HIGH",
-        "tractability": "LOW",
-        "dependency_depth": "MEDIUM",
-        "recommendation": "Export the target-action support-local q2 and D on the common full carrier; do not import Berger coefficients."
       },
       {
         "rank": 4,
@@ -19030,27 +19034,27 @@ window.MATRIX_EXPLORER_DATA = {
         "scientific_leverage": "HIGH",
         "tractability": "VERY_LOW",
         "dependency_depth": "HIGH",
-        "recommendation": "Resume only with a characteristic-zero simultaneous two-free-differential/cyclic/SDR solver; architecture-specific failures are controls, not a global no-go."
+        "recommendation": "Resume only with a characteristic-zero simultaneous two-free-differential, cyclic and SDR solver; bounded architecture failures remain controls, not a global no-go."
       }
     ],
     "research_queue": [
       {
         "priority": 1,
         "branch": "STRICT_PURE_WEYL_386",
-        "object": "M3 residual SDR exact payload",
-        "why": "It is the smallest high-leverage target-theory object and unlocks four of the five blocked common-snapshot identities without changing the action."
+        "object": "M1/M2 common support-local carrier with strict q2 and D",
+        "why": "It is the first remaining target-action coefficient task and binds the interaction data to the carrier on which Gate A must actually close."
       },
       {
         "priority": 2,
-        "branch": "BERGER_POSITIVE_CLOCK_54",
-        "object": "direct spacetime q26-equivariant nonstationary Hadamard selection",
-        "why": "It tests whether the Ward problem can be solved without committing to the now heavily obstructed stationary Cauchy-graph completion route."
+        "branch": "STRICT_PURE_WEYL_386",
+        "object": "M3 full support-local residual SDR",
+        "why": "The finite maps and eight replayed identities now provide a strong exact control, turning an unspecified absence into a sharply testable lift problem."
       },
       {
         "priority": 3,
-        "branch": "STRICT_PURE_WEYL_386",
-        "object": "M2 support-local strict q2 and D",
-        "why": "It closes the irreducible interaction-side deficit in the authoritative target theory and separates strict coefficients from the Berger control."
+        "branch": "BERGER_POSITIVE_CLOCK_54",
+        "object": "direct spacetime q26-equivariant nonstationary Hadamard selection",
+        "why": "It tests the strongest causal branch without committing to the heavily obstructed stationary Cauchy-graph route."
       },
       {
         "priority": 4,
@@ -19062,7 +19066,7 @@ window.MATRIX_EXPLORER_DATA = {
         "priority": 5,
         "branch": "BERGER_POSITIVE_CLOCK_54",
         "object": "complete general non-cone 104-row completion",
-        "why": "It remains mathematically decisive but should wait for the exact simultaneous solver required to make a completeness claim rather than another bounded ansatz obstruction."
+        "why": "It remains decisive but requires a completeness-capable exact simultaneous solver rather than another bounded ansatz."
       }
     ],
     "provenance": {
@@ -19221,6 +19225,21 @@ window.MATRIX_EXPLORER_DATA = {
           "path": "quantum-weyl/transfer/certificates/BERGER_SUPPORT_LOCAL_Q2_SCIENTIFIC_REPLAY.json",
           "sha256": "5367b4d5b3dcea2cd63f8087de26722a7f624c072e2acd3a21bae2daead3de7f",
           "role": "independent Berger q2 replay"
+        },
+        {
+          "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V2.json",
+          "sha256": "f33324484ac15569be78b1a4ff1371c2b103165a91a284ac81383f68c74036f9",
+          "role": "immutable V2 atlas predecessor"
+        },
+        {
+          "path": "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V3_RECONCILIATION.json",
+          "sha256": "b57f9a80b8fbed5f49cebe9e160a09046a73e8882d6e5c066fe4150c2c2001c8",
+          "role": "append-only Gate-A V3 reconciliation"
+        },
+        {
+          "path": "quantum-weyl/classical_import/certificates/STRICT_DFINITE_RESIDUAL_SDR_V1.json",
+          "sha256": "1816a7fb98cb7a844cade72fa8d2ee8de3e858540d5c932d93a5f68b37235c08",
+          "role": "exact finite residual-SDR map payload and receiver control"
         }
       ]
     },
@@ -19234,7 +19253,11 @@ window.MATRIX_EXPLORER_DATA = {
       "renormalized_lorentzian_products_constructed": false,
       "strict_pure_weyl_qme_restored": false,
       "residual_quantum_transfer_authorized": false,
-      "lorentzian_full_theory_certified": false
+      "lorentzian_full_theory_certified": false,
+      "v2_preserved": true,
+      "strict_dfinite_residual_sdr_portable": true,
+      "strict_dfinite_sdr_identities_replayed": true,
+      "strict_full_support_local_residual_sdr_constructed": false
     },
     "does_not_establish": [
       "a passed strict pure-Weyl classical import gate",
@@ -19248,23 +19271,60 @@ window.MATRIX_EXPLORER_DATA = {
       "renormalized Lorentzian time-ordered products",
       "a Lorentzian QME theorem or residual quantum transfer",
       "equivalence between strict pure Weyl and the positive-clock Berger theory",
-      "that a numerical route rank is a theorem or proof of eventual success"
+      "that a numerical route rank is a theorem or proof of eventual success",
+      "that the finite D x SO(4) residual contraction is an arbitrary-support or causal Green homotopy",
+      "that zero missing serialized objects means the common full-carrier Gate A has passed"
     ],
     "independent_checker": {
-      "path": "foundations/check_lorentzian_weyl_bv_completion_atlas_v2.py",
+      "path": "foundations/check_lorentzian_weyl_bv_completion_atlas_v3.py",
       "checks": [
-        "V1 preservation",
+        "V2 preservation",
         "seven-by-eleven stage closure",
         "Gate-A fail-closed firewall",
+        "finite-versus-full-carrier SDR boundary",
         "ordered eleven-step Berger decision chain",
         "scoped-no-go firewall",
-        "route ranking identity",
+        "updated five-route ranking",
         "content hashes",
         "canonical digest"
       ],
-      "expected_digest": "0ebc089a7d9c16e2c85c2ff6f2328114947819db8189827acbc6c1bf8a725dd0"
+      "expected_digest": "80323761eb76b2b44e8bad8740a3fe00eb9337a931c22b3ff8bf65cc9f025b80"
     },
-    "human_report": "foundations/reports/lorentzian-weyl-bv-completion-atlas-v2.md"
+    "human_report": "foundations/reports/lorentzian-weyl-bv-completion-atlas-v3.md",
+    "strict_gate_a_progress": {
+      "status": "FINITE_RESIDUAL_MAP_PORTABILITY_CLOSED_FULL_CARRIER_OPEN",
+      "evidence": [
+        "CLASSICAL_IMPORT_GATE_V3_RECONCILIATION",
+        "STRICT_DFINITE_RESIDUAL_SDR_V1"
+      ],
+      "finite_control": {
+        "energies": [
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "full_coordinates": 4490,
+        "residual_coordinates": 470,
+        "portable_maps": [
+          "classical_inclusion_iota_cl",
+          "classical_projection_pi_cl",
+          "classical_homotopy_s_cl"
+        ],
+        "replayed_historical_checks": [
+          "pi_cl_iota_cl_identity",
+          "classical_contraction_identity",
+          "q0_iota_intertwining",
+          "pi_q0_intertwining"
+        ],
+        "all_sdr_identities": 8,
+        "foundational_strength": "FINITE_EXACT_INTEGER_SPARSE_LINEAR_ALGEBRA",
+        "choice_dependency": "No choice principle is used by the serialized finite matrices or receiver."
+      },
+      "remaining_common_carrier": "Extend or reconstruct these maps on the one common authoritative support-local strict carrier, including the complete nonminimal sector and common pairing conventions.",
+      "boundary": "This resolves the missing portable object in a finite split scope, not the common full support-local M3 gate."
+    }
   },
   "cross_cell_interfaces": [
     {
@@ -19433,8 +19493,12 @@ window.MATRIX_EXPLORER_DATA = {
     "ground_state_dynamics_interface_report": "sources/foundations/reports/krein-fock-ground-state-dynamics-interface.md",
     "migration_audit_report": "sources/foundations/reports/intersection-cube-migration-audit-v2.md",
     "ladder_report": "sources/foundations/reports/cylinder-wave-strength-ladder-v2.md",
-    "completion_atlas": "sources/foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V2.json",
-    "completion_atlas_report": "sources/foundations/reports/lorentzian-weyl-bv-completion-atlas-v2.md"
+    "completion_atlas": "sources/foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V3.json",
+    "completion_atlas_report": "sources/foundations/reports/lorentzian-weyl-bv-completion-atlas-v3.md",
+    "completion_gate": "sources/quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V3_RECONCILIATION.json",
+    "completion_gate_report": "sources/quantum-weyl/classical_import/REPORT_GATE_V3.md",
+    "completion_sdr": "sources/quantum-weyl/classical_import/certificates/STRICT_DFINITE_RESIDUAL_SDR_V1.json",
+    "completion_sdr_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_DFINITE_RESIDUAL_SDR_V1.md"
   },
-  "canonical_digest": "95bfac9a0ad10263a0fdf7cd6e0c378f4e69a7e6135a7a0952b5680827f644d4"
+  "canonical_digest": "102a164cd77a7ea9edc5aa201fc4eb9614e681d652e4fec8a519c7bb950abfd3"
 };

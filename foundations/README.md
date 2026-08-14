@@ -747,6 +747,18 @@ gate and direct nonstationary q26-equivariant Hadamard selection as the leading
 high-risk analytic experiment.  The existing static explorer exposes the same
 seven-by-eleven route surface under **Weyl BV routes**.
 
+The append-only
+[`V3 completion atlas`](reports/lorentzian-weyl-bv-completion-atlas-v3.md)
+records the first completed item from that queue.  Exact sparse matrices now
+export the strict finite residual `iota_cl`, `pi_cl`, and `s_cl` on 4,490 full
+and 470 residual coordinates, and an independent receiver replays all eight
+SDR identities.  The atlas does not call this the continuum contraction:
+Gate A retains zero accepted common-snapshot hashes, and M3 is narrowed to a
+full support-local carrier extension.  The route queue therefore puts strict
+support-local `q2`/`D` first, the full-carrier residual-SDR lift second, and
+the direct nonstationary Berger selection third.  The existing explorer is
+regenerated in place and presents both the progress and its boundary.
+
 ```bash
 python3 foundations/build_lorentzian_weyl_bv_completion_atlas.py --check
 python3 foundations/check_lorentzian_weyl_bv_completion_atlas.py
@@ -756,6 +768,10 @@ python3 foundations/build_lorentzian_weyl_bv_completion_atlas_v2.py --check
 python3 foundations/check_lorentzian_weyl_bv_completion_atlas_v2.py
 python3 foundations/verify_lorentzian_weyl_bv_completion_atlas_v2.py
 python3 -m unittest foundations.tests.test_lorentzian_weyl_bv_completion_atlas_v2
+python3 foundations/build_lorentzian_weyl_bv_completion_atlas_v3.py --check
+python3 foundations/check_lorentzian_weyl_bv_completion_atlas_v3.py
+python3 foundations/verify_lorentzian_weyl_bv_completion_atlas_v3.py
+python3 -m unittest foundations.tests.test_lorentzian_weyl_bv_completion_atlas_v3
 ```
 
 ## Lifecycle

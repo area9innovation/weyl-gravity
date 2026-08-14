@@ -93,9 +93,9 @@ schema/             machine-readable result contracts
 
 | Gate | Deliverable | Bootstrap status |
 |---|---|---|
-| A | `CLASSICAL_IMPORT_CERTIFICATE` | `FAIL_CLOSED`; artifact integrity verified, but 15 of 18 export categories remain incomplete or unavailable |
+| A | `CLASSICAL_IMPORT_GATE_V3_RECONCILIATION` | `FAIL_CLOSED`; the strict finite residual `iota_cl`, `pi_cl`, and `s_cl` are now portable on 4,490 full and 470 residual coordinates, and all eight SDR identities replay exactly. This closes missing serialization only in the `D x SO(4)`-finite split scope: no common full support-local snapshot or accepted top-level hash exists, and strict `q2`, `D`, full pairing, residual tensors, and centered representatives remain open |
 | B | counterterm/anomaly bases and descent database | `FULL_LOCAL_BV_G2_COMPLETE_ON_REGULAR_BACH_LOCUS_ANALYTIC_QME_OPEN`; the ghost-zero and ghost-one quotients both have even/odd dimensions `2/1`; the exact small-algebra calculation eliminates independent pure-Diff and mixed Diff--Weyl classes, ten general nonminimal pairs contract, and exact BV-canonical transport proves gauge-fixed invariance |
-| C | local-to-cylinder map and `H3_H4_H5_LEDGER` | `STRUCTURAL_PREFLIGHT_VERIFIED_PROJECTION_BLOCKED`; conformal-flat order counting and even/odd support are exact, but normalized `pi_cl` projection and adjacent H3/H5 bases remain unavailable |
+| C | local-to-cylinder map and `H3_H4_H5_LEDGER` | `STRUCTURAL_PREFLIGHT_VERIFIED_FULL_PROJECTION_BLOCKED`; conformal-flat order counting and even/odd support are exact, and a normalized finite split `pi_cl` now replays, but the common support-local projection and adjacent H3/H5 bases remain unavailable |
 | D | reduced and Euclidean coefficient ledgers | `REPOSITORY_C2_VISIBLE_FULL_BV_LOCAL_COEFFICIENT_MATCHED`; the exact factorwise local calculation gives `(C2,E4,CdualC,BoxR)=(199/30,-87/20,0,0)`. Separately, the published raw zeta/proper-time `BoxR` coefficient `(7/2)log(3/2)-159/80` is imported and independently replayed, and the exact strict-metric `R2` counterterm `(7/24)log(3/2)-53/320` converts it to the repository `BoxR=0` convention. This is a one-loop local scheme conversion, not the nonlocal `R2` form factor or an absolute dressed normalization |
 | E | Euclidean elliptic or generalized block-Green/Hadamard certificate | `REPOSITORY_EUCLIDEAN_ELLIPTIC_COMPLEX_CERTIFIED`; the complete `5 -> 10 -> 5` physical symbol sequence, formal adjoint, Diff/Weyl nonminimal doublets and four kinetic blocks replay exactly. Separately, reduced vacuum-cylinder Bridge 4 is certified on the E/A/L Krein carrier; a global full-BV BRST Hadamard state and renormalized Lorentzian products remain open |
 | F | one-loop Slavnov breaking and QME status | `STRICT_OBSTRUCTED; TAU_ADIC_EXTENDED_ONE_LOOP_LOCAL_EUCLIDEAN_QME_RESTORED`; the regulated insertion is `(199/30)[omega C2]-(87/20)[omega E4]`, nonzero in the complete strict gauge-fixed quotient. Standard unitary free matter cannot cancel it. In the formal tau-adic compensator extension the exact cotangent lift contracts the Weyl quartet, the extended quotient has `dim H04=(3 even,1 odd)` and `H14=0`, and the coefficient-bearing Wess--Zumino counterterm restores the local Euclidean QME at one loop. This is neither an all-loop nor Lorentzian theorem |
@@ -118,6 +118,13 @@ or quantum-master-equation result.
   missing export keeping Gate A closed. The v2 consumer independently replays
   `delta`, `gamma`, and `Q` and dry-runs the filtered-complex adapter before
   any production quotient is authorized.
+- [`classical_import/REPORT_STRICT_DFINITE_RESIDUAL_SDR_V1.md`](classical_import/REPORT_STRICT_DFINITE_RESIDUAL_SDR_V1.md)
+  serializes the previously internal finite residual maps at energies two
+  through six and independently replays all eight exact SDR identities using
+  standard-library rational arithmetic.  The successor
+  [`Gate-A V3 reconciliation`](classical_import/REPORT_GATE_V3.md) promotes
+  exactly three exports and four historical checks within that finite scope,
+  while retaining the full support-local Gate A as `FAIL_CLOSED`.
 - [`reports/branch-a-local-bv-bootstrap.md`](reports/branch-a-local-bv-bootstrap.md)
   records the exact minimal jet/BRST substrate and its uncomputed quotients.
 - [`reports/local-curvature-canonicalization.md`](reports/local-curvature-canonicalization.md)

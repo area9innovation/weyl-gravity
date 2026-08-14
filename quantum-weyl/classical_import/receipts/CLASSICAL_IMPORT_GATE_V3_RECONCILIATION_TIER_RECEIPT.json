@@ -1,0 +1,63 @@
+{
+  "receipt_id": "CLASSICAL_IMPORT_GATE_V3_RECONCILIATION_TIER_RECEIPT",
+  "result_ids": [
+    "STRICT_DFINITE_RESIDUAL_SDR_V1",
+    "CLASSICAL_IMPORT_GATE_V3_RECONCILIATION",
+    "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V3",
+    "FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2"
+  ],
+  "recorded_at": "2026-08-15",
+  "base_commit": "1ffc17e215f5a5e55ce7c095bccd25210af0698c",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "output_hashes": {
+    "strict_dfinite_residual_sdr": "1816a7fb98cb7a844cade72fa8d2ee8de3e858540d5c932d93a5f68b37235c08",
+    "gate_v3_reconciliation": "b57f9a80b8fbed5f49cebe9e160a09046a73e8882d6e5c066fe4150c2c2001c8",
+    "completion_atlas_v3": "71a1daa873437e4f786230fbd7117966ade64d886578314deffa27e324fe8fce",
+    "site_manifest": "92044e045c669d5800a2b3b8b8febb6456675d3909d7c2f25ca55681fe5d92cb",
+    "site_dataset": "e0ae0418b415f4a7b6cd8d0968316b537755fa091135d8d7cd35d6fc25927d2a"
+  },
+  "test_tiers": [
+    {
+      "tier": 0,
+      "command": "python3 -m py_compile on 15 changed producer/checker/verifier/test modules",
+      "elapsed_seconds": 0.06,
+      "status": "PASS"
+    },
+    {
+      "tier": 0,
+      "command": "jq empty on three changed schemas and six generated JSON artifacts",
+      "elapsed_seconds": 0.04,
+      "status": "PASS"
+    },
+    {
+      "tier": 0,
+      "command": "git diff --check -- <all explicitly scoped Gate-V3, atlas-V3, explorer and documentation paths>",
+      "elapsed_seconds": 0.1,
+      "status": "PASS"
+    },
+    {
+      "tier": 1,
+      "command": "four producer --check commands for the strict SDR, Gate V3, atlas V3 and existing explorer",
+      "elapsed_seconds": 0.3,
+      "status": "PASS_GENERATED_ARTIFACTS_CURRENT"
+    },
+    {
+      "tier": 1,
+      "command": "verify_strict_dfinite_residual_sdr.py && verify_classical_import_gate_v3_reconciliation.py && verify_lorentzian_weyl_bv_completion_atlas_v3.py && verify_matrix_site_v2.py",
+      "elapsed_seconds": 0.79,
+      "status": "PASS_FOUR_INDEPENDENT_VERIFIERS"
+    },
+    {
+      "tier": 2,
+      "command": "python3 -m unittest on the two import packages, atlas V3 and explorer",
+      "elapsed_seconds": 3.2,
+      "status": "PASS_38_TESTS"
+    }
+  ],
+  "tier_3_not_run": "No classical or quantum freeze, theorem lifecycle promotion, shared core algebra change, release, or tag is made. Gate A remains FAIL_CLOSED. The changed certificate chain and its direct explorer consumer are covered by tiers 0-2.",
+  "claim_boundary": "The result closes residual-map serialization and replays eight exact SDR identities only on the strict D-finite SO(4)-finite split carrier at energies two through six. It does not construct the common full support-local Gate-A carrier, strict q2 or D, a causal Green homotopy, a BRST-compatible Hadamard state, renormalized Lorentzian products, QME restoration, residual quantum transfer, or a Lorentzian quantum theory."
+}

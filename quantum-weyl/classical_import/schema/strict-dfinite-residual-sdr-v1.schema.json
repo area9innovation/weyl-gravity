@@ -1,0 +1,150 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9innovation.github.io/weyl-gravity/strict-dfinite-residual-sdr-v1.schema.json",
+  "title": "Strict D-finite pure-Weyl residual SDR export v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "result_kind", "lifecycle", "created",
+    "repository_base_commit", "dependency_tags", "question", "answer", "scope",
+    "conventions", "global_direct_sum", "blocks", "independent_identity_contract",
+    "foundational_strength", "gate_a_effect", "provenance", "claim_flags",
+    "does_not_establish", "next_gate", "independent_checker", "human_report"
+  ],
+  "properties": {
+    "schema": {"const": "strict-dfinite-residual-sdr-v1"},
+    "result_id": {"const": "STRICT_DFINITE_RESIDUAL_SDR_V1"},
+    "result_kind": {"const": "SCOPED_CLASSICAL_RESIDUAL_SDR_EXPORT"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "created": {"type": "string", "format": "date"},
+    "repository_base_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]
+    },
+    "question": {"type": "string", "minLength": 80},
+    "answer": {"type": "string", "minLength": 500},
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["theory", "carrier", "energies", "support", "residual"],
+      "properties": {
+        "theory": {"type": "string"},
+        "carrier": {"type": "string"},
+        "energies": {"const": [2, 3, 4, 5, 6]},
+        "support": {"type": "string"},
+        "residual": {"type": "string"}
+      }
+    },
+    "conventions": {"type": "object", "minProperties": 5},
+    "global_direct_sum": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ordered_block_energies", "full_dimension", "residual_dimension", "block_offsets", "field_dictionary_hash", "residual_basis_hash", "differential_hash", "residual_sdr_hash"],
+      "properties": {
+        "ordered_block_energies": {"const": [2, 3, 4, 5, 6]},
+        "full_dimension": {"const": 4490},
+        "residual_dimension": {"const": 470},
+        "block_offsets": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"type": "object"}},
+        "field_dictionary_hash": {"$ref": "#/$defs/hash"},
+        "residual_basis_hash": {"$ref": "#/$defs/hash"},
+        "differential_hash": {"$ref": "#/$defs/hash"},
+        "residual_sdr_hash": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "blocks": {
+      "type": "array", "minItems": 5, "maxItems": 5,
+      "items": {"$ref": "#/$defs/block"}
+    },
+    "independent_identity_contract": {
+      "type": "array", "minItems": 8, "maxItems": 8,
+      "items": {"type": "string"}, "uniqueItems": true
+    },
+    "foundational_strength": {
+      "type": "object", "additionalProperties": false,
+      "required": ["exactness_type", "fixed_fixture_base", "choice_dependency", "infinity_dependency", "constructive_content"],
+      "properties": {
+        "exactness_type": {"const": "FINITE_EXACT_INTEGER_SPARSE_LINEAR_ALGEBRA"},
+        "fixed_fixture_base": {"type": "string"},
+        "choice_dependency": {"type": "string"},
+        "infinity_dependency": {"type": "string"},
+        "constructive_content": {"type": "string"}
+      }
+    },
+    "gate_a_effect": {"type": "object", "required": ["historical_missing_exports_scoped_now_portable", "historical_checks_scoped_now_replayed", "gate_a_status", "remaining_m3_gap"]},
+    "provenance": {
+      "type": "object", "additionalProperties": false, "required": ["inputs"],
+      "properties": {"inputs": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"$ref": "#/$defs/input"}}}
+    },
+    "claim_flags": {"type": "object", "minProperties": 11, "additionalProperties": {"type": "boolean"}},
+    "does_not_establish": {"type": "array", "minItems": 7, "items": {"type": "string", "minLength": 20}},
+    "next_gate": {"type": "string", "minLength": 150},
+    "independent_checker": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "expected_blocks", "expected_full_dimension", "expected_residual_dimension", "expected_digest"],
+      "properties": {
+        "path": {"const": "quantum-weyl/classical_import/check_strict_dfinite_residual_sdr.py"},
+        "expected_blocks": {"const": 5},
+        "expected_full_dimension": {"const": 4490},
+        "expected_residual_dimension": {"const": 470},
+        "expected_digest": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "human_report": {"const": "quantum-weyl/classical_import/REPORT_STRICT_DFINITE_RESIDUAL_SDR_V1.md"}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "entry": {
+      "type": "array", "minItems": 3, "maxItems": 3,
+      "prefixItems": [
+        {"type": "integer", "minimum": 0},
+        {"type": "integer", "minimum": 0},
+        {"type": "string", "pattern": "^-?[0-9]+(?:/[1-9][0-9]*)?$"}
+      ],
+      "items": false
+    },
+    "matrix": {
+      "type": "object", "additionalProperties": false,
+      "required": ["name", "rows", "columns", "entries", "sha256"],
+      "properties": {
+        "name": {"enum": ["q0", "iota_cl", "pi_cl", "s_cl", "q_res_0"]},
+        "rows": {"type": "integer", "minimum": 0},
+        "columns": {"type": "integer", "minimum": 0},
+        "entries": {"type": "array", "items": {"$ref": "#/$defs/entry"}},
+        "sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "sector": {
+      "type": "object", "additionalProperties": false,
+      "required": ["name", "start", "stop", "dimension", "ghost_number", "antifield_number", "role"],
+      "properties": {
+        "name": {"type": "string"}, "start": {"type": "integer", "minimum": 0},
+        "stop": {"type": "integer", "minimum": 0}, "dimension": {"type": "integer", "minimum": 0},
+        "ghost_number": {"type": "integer"}, "antifield_number": {"type": "integer"}, "role": {"type": "string"}
+      }
+    },
+    "block": {
+      "type": "object", "additionalProperties": false,
+      "required": ["energy", "full_offset", "residual_offset", "full_dimension", "residual_dimension", "dimensions", "full_sectors", "full_basis", "residual_basis", "basis_hashes", "matrices"],
+      "properties": {
+        "energy": {"type": "integer", "minimum": 2, "maximum": 6},
+        "full_offset": {"type": "integer", "minimum": 0}, "residual_offset": {"type": "integer", "minimum": 0},
+        "full_dimension": {"type": "integer", "minimum": 1}, "residual_dimension": {"type": "integer", "minimum": 1},
+        "dimensions": {"type": "object", "additionalProperties": {"type": "integer", "minimum": 0}},
+        "full_sectors": {"type": "array", "minItems": 10, "maxItems": 10, "items": {"$ref": "#/$defs/sector"}},
+        "full_basis": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+        "residual_basis": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+        "basis_hashes": {"type": "object", "required": ["full", "residual"], "properties": {"full": {"$ref": "#/$defs/hash"}, "residual": {"$ref": "#/$defs/hash"}}},
+        "matrices": {
+          "type": "object", "additionalProperties": false,
+          "required": ["q0", "iota_cl", "pi_cl", "s_cl", "q_res_0"],
+          "properties": {"q0": {"$ref": "#/$defs/matrix"}, "iota_cl": {"$ref": "#/$defs/matrix"}, "pi_cl": {"$ref": "#/$defs/matrix"}, "s_cl": {"$ref": "#/$defs/matrix"}, "q_res_0": {"$ref": "#/$defs/matrix"}}
+        }
+      }
+    },
+    "input": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "result_or_artifact_id", "sha256", "role"],
+      "properties": {"path": {"type": "string"}, "result_or_artifact_id": {"type": "string"}, "sha256": {"$ref": "#/$defs/hash"}, "role": {"type": "string"}}
+    }
+  }
+}
