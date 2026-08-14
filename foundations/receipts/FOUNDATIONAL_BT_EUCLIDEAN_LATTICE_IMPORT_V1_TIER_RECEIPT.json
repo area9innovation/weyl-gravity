@@ -1,0 +1,107 @@
+{
+  "schema_version": "science-forge-tier-receipt-v1",
+  "result_id": "FOUNDATIONAL_BT_EUCLIDEAN_LATTICE_IMPORT_V1_TIER_RECEIPT",
+  "result_kind": "FOUNDATIONAL_EVIDENCE_IMPORT_RECEIPT",
+  "lifecycle": "CLASSIFIED",
+  "created": "2026-08-14",
+  "repository_base_commit": "be5b23b72ea73f6b5dd099e9a3bd3126e6778922",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "scope": "Imported five exact finite Euclidean capabilities, one supporting-only reconstruction record, one coarse independent-sampler reproduction record, and one scoped positive-Euclidean versus all-real-Krein carrier non-identity into a preserved 576-cell cube v10.",
+  "inputs": [
+    {
+      "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_LATTICE_PILOT_V1.json",
+      "sha256": "4171ff54d9a92f7555337e8865029a7dbb65aaf0b4cf930017732fb0c6051320",
+      "role": "exact positive finite-lattice construction"
+    },
+    {
+      "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_STEP_SCALING_PREFLIGHT_V1.json",
+      "sha256": "e5beb28e078ae7b389bcedef28cd01bf17873247f91a748a5aa4dab5807a2311",
+      "role": "coarse independent-sampler reproduction preflight"
+    },
+    {
+      "path": "reverse_physics/certificates/REVERSE_PHYSICS_GHOST_PARITY_DOUBLE_POLE_V1.json",
+      "sha256": "6472608e92db1528d057b2d2c569ebc5637e412b1c8d66eb17cf42ea7889d5e0",
+      "role": "positive-domain versus all-real-domain source caveat"
+    },
+    {
+      "path": "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V9.json",
+      "sha256": "a6c2d08940ba7112202ed33ca64b581fd886b07b53eb553c24321578feb08269",
+      "role": "preserved full Cartesian source surface"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "foundations/results/FOUNDATIONAL_BT_EUCLIDEAN_LATTICE_IMPORT_V1.json",
+      "sha256": "f8791f9209682cd01b29a5868ea8f353b958f9fb8ce24d77d9b8af6bc92b7f94"
+    },
+    {
+      "path": "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V10.json",
+      "sha256": "517cef5225937a256ddbfdfce71604d4c0ace9067f0f196e03d0e63377ed3cb9"
+    }
+  ],
+  "assessment": {
+    "finite_euclidean_direct_capabilities": 5,
+    "supporting_only_reconstruction_records": 1,
+    "cube_v9_cells_preserved_without_change": 570,
+    "local_result_cells_after_import": 120,
+    "reviewed_gap_cells_after_import": 172,
+    "coarse_numerical_reproduction_records": 1,
+    "empirical_records": 0,
+    "continuum_reconstruction_status": "PRIORITY_GAP"
+  },
+  "tests": {
+    "tier_0": [
+      {
+        "command": "python3 -m py_compile on the six producer/checker/verifier source files; python3 -m json.tool on the two schemas, two results, receipt, and work item; git diff --check on scoped paths",
+        "status": "PASS"
+      }
+    ],
+    "tier_1": [
+      {
+        "command": "python3 foundations/build_bt_euclidean_lattice_import.py --check && python3 foundations/check_bt_euclidean_lattice_import.py && python3 foundations/verify_bt_euclidean_lattice_import.py && python3 -m unittest foundations.tests.test_bt_euclidean_lattice_import",
+        "elapsed_seconds": 0.8,
+        "status": "PASS",
+        "output": "6 tests passed"
+      },
+      {
+        "command": "python3 foundations/refine_intersection_cube_v10.py --check && python3 foundations/check_refined_intersection_cube_v10.py && python3 foundations/verify_refined_intersection_cube_v10.py && python3 -m unittest foundations.tests.test_refined_intersection_cube_v10",
+        "elapsed_seconds": 1.2,
+        "status": "PASS",
+        "output": "5 tests passed"
+      }
+    ],
+    "tier_2": {
+      "status": "NOT_RUN",
+      "criterion": "The import changes a derived foundations evidence projection but no classical/quantum operator, schema, generated artifact, or lifecycle used by a certificate chain outside the foundations atlas. Assembly/site/paper consumers are a separate pending projection step."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No freeze, release, quantum theorem promotion, shared core algebra change, or Lorentzian certification was requested."
+    }
+  },
+  "claim_flags": {
+    "five_finite_euclidean_capabilities_imported": true,
+    "coarse_numerical_reproduction_recorded": true,
+    "scoped_carrier_nonidentity_recorded": true,
+    "continuum_reconstruction_established": false,
+    "empirical_agreement_assessed": false,
+    "new_lorentzian_claim": false,
+    "quantum_lifecycle_promoted": false
+  },
+  "does_not_establish": [
+    "a finite exact state carrier",
+    "physical state selection",
+    "reflection positivity or a Born rule",
+    "a continuum or infinite-volume limit",
+    "analytic continuation to the Krein theory",
+    "empirical support or out-of-sample robustness",
+    "a full Weyl-gravity construction",
+    "a new Lorentzian-causal result or quantum lifecycle promotion"
+  ],
+  "unrelated_worktree_changes_excluded": [
+    "the concurrent GR/Cassini model-scoped assembly and its uncommitted site/Paper 21 projection"
+  ]
+}

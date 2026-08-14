@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "result_id", "result_kind", "lifecycle", "created", "dependency_tags", "source_classification", "capability_decisions", "exact_evidence", "numerical_reproducibility_records", "carrier_interface", "claim_flags", "does_not_establish", "provenance", "independent_checker", "human_report", "canonical_digest"],
+  "properties": {
+    "schema_version": {"const": "foundational-bt-euclidean-lattice-import-v1"},
+    "result_id": {"const": "FOUNDATIONAL_BT_EUCLIDEAN_LATTICE_IMPORT_V1"},
+    "result_kind": {"const": "FOUNDATIONAL_EVIDENCE_IMPORT_AND_SCOPED_CARRIER_INTERFACE"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "created": {"type": "string", "format": "date"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "source_classification": {
+      "type": "object",
+      "required": ["foundation", "carrier", "reason"],
+      "properties": {"foundation": {"const": "FINITE_DISCRETE"}, "carrier": {"const": "SMOOTH_DISTRIBUTIONAL"}, "reason": {"type": "string", "minLength": 1}}
+    },
+    "capability_decisions": {
+      "type": "array", "minItems": 6, "maxItems": 6,
+      "items": {
+        "type": "object",
+        "required": ["coordinate", "evidence_role", "new_status", "status_change", "finding", "boundary"],
+        "properties": {
+          "coordinate": {"type": "object", "required": ["foundation", "carrier", "obligation"]},
+          "evidence_role": {"enum": ["DIRECT_LOCAL", "SUPPORTING"]},
+          "new_status": {"enum": ["LOCAL_RESULT", "PRIORITY_GAP"]},
+          "status_change": {"type": "boolean"},
+          "finding": {"type": "string", "minLength": 1},
+          "boundary": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "exact_evidence": {"type": "object", "required": ["configuration", "positive_variable", "zero_mode_constraint", "action", "measure", "normalizability", "interaction_witness", "probability_rule"]},
+    "numerical_reproducibility_records": {
+      "type": "array", "minItems": 1, "maxItems": 1,
+      "items": {"type": "object", "required": ["id", "assembly", "dependency_tag", "status", "algorithms", "gate_passed", "precision_gate", "maximum_absolute_cross_sampler_z", "finite_size_change_cross_algorithm_z", "continuum_status", "evidence"], "properties": {"status": {"const": "COARSE_REPRODUCTION_ONLY"}, "dependency_tag": {"const": "EUCLIDEAN-SPECTRAL"}, "continuum_status": {"const": "NOT_ESTABLISHED"}}}
+    },
+    "carrier_interface": {
+      "type": "object",
+      "required": ["id", "label", "status", "relation", "source_coordinates", "target_coordinates", "scope", "witness", "evidence", "does_not_establish"],
+      "properties": {"id": {"const": "EUCLIDEAN_TO_KREIN_CARRIER"}, "status": {"const": "CERTIFIED"}, "relation": {"const": "INCOMPATIBLE"}}
+    },
+    "claim_flags": {"type": "object"},
+    "does_not_establish": {"type": "array", "minItems": 10, "items": {"type": "string", "minLength": 1}},
+    "provenance": {"type": "object", "required": ["inputs"]},
+    "independent_checker": {"type": "object", "required": ["path", "checks"]},
+    "human_report": {"const": "foundations/reports/bt-euclidean-lattice-foundational-import.md"},
+    "canonical_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}
