@@ -1,0 +1,179 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-complete-g4-l4-decision-v1.schema.json",
+  "$defs": {
+    "rational": {
+      "type": "object",
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      },
+      "additionalProperties": false
+    },
+    "sector": {
+      "type": "object",
+      "required": ["rank_insertions", "loop_rank", "value", "decimal"],
+      "properties": {
+        "rank_insertions": {"type": "integer", "minimum": 0, "maximum": 5},
+        "loop_rank": {"type": "integer", "minimum": 0, "maximum": 2},
+        "value": {"$ref": "#/$defs/rational"},
+        "decimal": {"type": "number"}
+      },
+      "additionalProperties": false
+    }
+  },
+  "type": "object",
+  "required": [
+    "certificate", "schema_version", "created", "dependency_tags",
+    "lifecycle_state", "result_kind", "question", "answer",
+    "exact_L4_decision", "independent_modular_verification",
+    "normalization_crosschecks", "conditioning_scope_correction",
+    "method_disposition", "checks", "does_not_establish",
+    "missing_object_ledger", "next_gate", "provenance", "data",
+    "data_sha256", "report", "schema", "verification_commands"
+  ],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_EUCLIDEAN_COMPLETE_G4_L4_DECISION_V1"},
+    "schema_version": {"const": "reverse-physics-bt-euclidean-complete-g4-l4-decision-v1"},
+    "created": {"const": "2026-08-15"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "lifecycle_state": {"const": "EXACT_L4_COMPLETE_G4_NEGATIVE_NONZERO_PROVED_ASYMPTOTIC_SCALING_OPEN"},
+    "result_kind": {"type": "string"},
+    "question": {"type": "string"},
+    "answer": {"type": "string"},
+    "exact_L4_decision": {
+      "type": "object",
+      "required": ["lattice", "M4", "decimal", "term_ledger", "rank_loop_sector_totals", "status"],
+      "properties": {
+        "lattice": {
+          "type": "object",
+          "required": ["length", "volume", "external_momentum", "external_dispersion", "fiber_variance", "propagator_denominator_lcm"],
+          "properties": {
+            "length": {"const": 4},
+            "volume": {"const": 256},
+            "external_momentum": {"const": [1, 0, 0, 0]},
+            "external_dispersion": {"const": 2},
+            "fiber_variance": {"$ref": "#/$defs/rational"},
+            "propagator_denominator_lcm": {"const": 2822400}
+          },
+          "additionalProperties": false
+        },
+        "M4": {
+          "type": "object",
+          "required": ["numerator", "denominator"],
+          "properties": {
+            "numerator": {"const": -338835474713437},
+            "denominator": {"const": 204838502400000}
+          },
+          "additionalProperties": false
+        },
+        "decimal": {"type": "number", "exclusiveMaximum": 0},
+        "term_ledger": {
+          "type": "array", "minItems": 13, "maxItems": 13,
+          "items": {
+            "type": "object",
+            "required": ["name", "topology_count", "labeled_pairings", "value", "decimal", "rank_loop_sectors", "reason"],
+            "properties": {
+              "name": {"type": "string"},
+              "topology_count": {"type": "integer", "minimum": 0},
+              "labeled_pairings": {"type": "integer", "minimum": 0},
+              "value": {"$ref": "#/$defs/rational"},
+              "decimal": {"type": "number"},
+              "rank_loop_sectors": {"type": "array", "items": {"$ref": "#/$defs/sector"}},
+              "reason": {"enum": ["EXACT_CONDITIONED_WICK_SUM", "U33_IS_ZERO"]}
+            },
+            "additionalProperties": false
+          }
+        },
+        "rank_loop_sector_totals": {"type": "array", "items": {"$ref": "#/$defs/sector"}},
+        "status": {"const": "PROVED_EXACT_NEGATIVE_NONZERO"}
+      },
+      "additionalProperties": false
+    },
+    "independent_modular_verification": {
+      "type": "object",
+      "required": ["source", "source_sha256", "method", "common_expression_denominator", "covariance_expansion_absolute_sum", "expression_absolute_bound", "term_bounds", "integer_difference_bound", "integer_difference_bound_denominator", "integer_difference_bound_bits", "primes", "prime_product", "prime_product_bits", "uniqueness_inequality", "status"],
+      "properties": {
+        "source": {"const": "reverse_physics/bt_euclidean_complete_g4_l4_modular_verify.cpp"},
+        "source_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "method": {"type": "string"},
+        "common_expression_denominator": {"type": "integer", "minimum": 1},
+        "covariance_expansion_absolute_sum": {"$ref": "#/$defs/rational"},
+        "expression_absolute_bound": {"$ref": "#/$defs/rational"},
+        "term_bounds": {
+          "type": "array", "minItems": 13, "maxItems": 13,
+          "items": {
+            "type": "object",
+            "required": ["name", "absolute_bound"],
+            "properties": {"name": {"type": "string"}, "absolute_bound": {"$ref": "#/$defs/rational"}},
+            "additionalProperties": false
+          }
+        },
+        "integer_difference_bound": {"type": "integer", "minimum": 1},
+        "integer_difference_bound_denominator": {"const": 1},
+        "integer_difference_bound_bits": {"const": 227},
+        "primes": {"const": [2305843009213693951, 2305843009213693921, 2305843009213693907, 2305843009213693723]},
+        "prime_product": {"type": "integer", "minimum": 1},
+        "prime_product_bits": {"const": 244},
+        "uniqueness_inequality": {"const": true},
+        "status": {"const": "EXACT_BY_RESIDUES_PLUS_RIGOROUS_INTEGER_BOUND"}
+      },
+      "additionalProperties": false
+    },
+    "normalization_crosschecks": {
+      "type": "object",
+      "required": ["A2_from_independent_certified_cubic_sum", "B2_from_exact_quartic_Wick_sum", "numerical_L4_M4", "numerical_L4_standard_error", "exact_minus_numerical_in_standard_errors", "status"],
+      "properties": {
+        "A2_from_independent_certified_cubic_sum": {"$ref": "#/$defs/rational"},
+        "B2_from_exact_quartic_Wick_sum": {"$ref": "#/$defs/rational"},
+        "numerical_L4_M4": {"type": "number"},
+        "numerical_L4_standard_error": {"type": "number", "exclusiveMinimum": 0},
+        "exact_minus_numerical_in_standard_errors": {"type": "number"},
+        "status": {"const": "EXACT_A2_MATCH_AND_SUPPORTING_NUMERICAL_CONSISTENCY"}
+      },
+      "additionalProperties": false
+    },
+    "conditioning_scope_correction": {
+      "type": "object",
+      "required": ["predecessor_bulk_table", "all_volume_rank_audit", "impact", "status"],
+      "properties": {
+        "predecessor_bulk_table": {"type": "string"},
+        "all_volume_rank_audit": {"type": "object"},
+        "impact": {"type": "string"},
+        "status": {"const": "SCOPE_CORRECTED_WITH_CONCLUSION_PRESERVED"}
+      },
+      "additionalProperties": false
+    },
+    "method_disposition": {
+      "type": "object",
+      "required": ["finite_L4_complete_M4", "all_volume_exact_M4_zero_identity", "conditioned_connected_maximum_loop_rank", "large_volume_M4_sign_and_scaling", "whole_lattice_order_g_four_power_survival", "nonperturbative_annealed_zero_fiber_score_bound", "normalized_lowest_mode_second_moment", "actual_interacting_h_minus_one_second_moment", "continuum_limit", "born_rule", "krein_reconstruction", "lorentzian_transfer"],
+      "properties": {
+        "finite_L4_complete_M4": {"const": "NEGATIVE_NONZERO_EXACT"},
+        "all_volume_exact_M4_zero_identity": {"const": "OBSTRUCTED_BY_L4_COUNTEREXAMPLE"},
+        "conditioned_connected_maximum_loop_rank": {"const": "TWO"},
+        "large_volume_M4_sign_and_scaling": {"const": "OPEN"},
+        "whole_lattice_order_g_four_power_survival": {"const": "OPEN"},
+        "nonperturbative_annealed_zero_fiber_score_bound": {"const": "OPEN"},
+        "normalized_lowest_mode_second_moment": {"const": "OPEN"},
+        "actual_interacting_h_minus_one_second_moment": {"const": "OPEN"},
+        "continuum_limit": {"const": "NOT_ESTABLISHED"},
+        "born_rule": {"const": "NOT_ESTABLISHED"},
+        "krein_reconstruction": {"const": "NOT_ASSESSED"},
+        "lorentzian_transfer": {"const": "NOT_ESTABLISHED"}
+      },
+      "additionalProperties": false
+    },
+    "checks": {"type": "object", "additionalProperties": {"const": true}},
+    "does_not_establish": {"type": "array", "minItems": 4, "items": {"type": "string"}},
+    "missing_object_ledger": {"type": "array", "minItems": 4, "items": {"type": "string"}},
+    "next_gate": {"type": "string"},
+    "provenance": {"type": "object"},
+    "data": {"const": "reverse_physics/data/bt_euclidean_complete_g4_l4_exact_v1.json"},
+    "data_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "report": {"const": "reverse_physics/reports/bt-euclidean-complete-g4-l4-decision.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-euclidean-complete-g4-l4-decision-v1.schema.json"},
+    "verification_commands": {"type": "array", "minItems": 4, "items": {"type": "string"}}
+  },
+  "additionalProperties": false
+}

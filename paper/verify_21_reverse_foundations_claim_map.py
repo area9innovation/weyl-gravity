@@ -116,6 +116,7 @@ def main() -> int:
     bt_g4_chaos = json.loads((ROOT / data["authorities"]["bt_complete_g4_chaos_gate"]["path"]).read_text())
     bt_g4_hessian = json.loads((ROOT / data["authorities"]["bt_complete_g4_effective_hessian"]["path"]).read_text())
     bt_g4_connected = json.loads((ROOT / data["authorities"]["bt_complete_g4_connected_normalization"]["path"]).read_text())
+    bt_g4_l4 = json.loads((ROOT / data["authorities"]["bt_complete_g4_l4_decision"]["path"]).read_text())
     dims = cube["dimensions"]
     atlas = data["atlas_snapshot"]
     require(atlas["axis_sizes"] == [6, 6, 16], "unexpected axis sizes")
@@ -291,6 +292,11 @@ def main() -> int:
     require(atlas["bt_g4_termwise_alignment_bound_status"] == bt_g4_connected["method_disposition"]["separate_or_triangle_bound_on_aligned_sector"] == "OBSTRUCTED_AS_FORMULATED", "BT termwise alignment-bound obstruction drift")
     require(atlas["bt_g4_connected_maximum_loop_rank"] == bt_g4_connected["method_disposition"]["complete_connected_M4_maximum_loop_rank"] == "TWO", "BT connected loop-rank drift")
     require(atlas["bt_g4_exact_cancellation_status"] == bt_g4_connected["method_disposition"]["exact_whole_lattice_M4_cancellation"] == "OPEN_NUMERICALLY_SUPPORTED", "BT numerical preflight promoted to exact cancellation")
+    require(atlas["bt_g4_conditioned_maximum_loop_rank"] == bt_g4_l4["method_disposition"]["conditioned_connected_maximum_loop_rank"] == "TWO", "BT conditioned loop-rank drift")
+    require(atlas["bt_g4_l4_complete_M4_status"] == bt_g4_l4["method_disposition"]["finite_L4_complete_M4"] == "NEGATIVE_NONZERO_EXACT", "BT exact L4 decision drift")
+    require(atlas["bt_g4_l4_complete_M4"] == bt_g4_l4["exact_L4_decision"]["M4"] == {"numerator": -338835474713437, "denominator": 204838502400000}, "BT exact L4 rational drift")
+    require(atlas["bt_g4_all_volume_zero_identity_status"] == bt_g4_l4["method_disposition"]["all_volume_exact_M4_zero_identity"] == "OBSTRUCTED_BY_L4_COUNTEREXAMPLE", "BT all-volume zero-identity obstruction drift")
+    require(atlas["bt_g4_large_volume_sign_and_scaling_status"] == bt_g4_l4["method_disposition"]["large_volume_M4_sign_and_scaling"] == "OPEN", "BT finite L4 decision promoted to a large-volume theorem")
 
     allowed_tags = {"LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE", "LORENTZIAN-CAUSAL"}
     claim_ids = set()
@@ -393,6 +399,10 @@ def main() -> int:
     require(flags["bt_complete_order_g_four_termwise_alignment_bound_obstructed"] is True, "BT termwise alignment obstruction omitted")
     require(flags["bt_complete_order_g_four_connected_maximum_loop_rank_two"] is True, "BT connected loop-rank result omitted")
     require(flags["bt_complete_order_g_four_exact_cancellation_established"] is False, "BT connected preflight promoted to exact cancellation")
+    require(flags["bt_complete_order_g_four_conditioned_maximum_loop_rank_two"] is True, "BT conditioned loop-rank result omitted")
+    require(flags["bt_complete_order_g_four_l4_negative_nonzero_established"] is True, "BT exact L4 result omitted")
+    require(flags["bt_complete_order_g_four_all_volume_zero_identity_obstructed"] is True, "BT all-volume zero-identity obstruction omitted")
+    require(flags["bt_complete_order_g_four_large_volume_scaling_established"] is False, "BT finite L4 result promoted to large-volume scaling")
     require(flags["bt_complete_order_g_four_explicit_momentum_kernel_established"] is False, "BT expected-Hessian formula promoted to explicit momentum kernel")
     require(flags["bt_complete_order_g_four_effective_kernel_bound_established"] is False, "BT effective second-chaos kernel bound promoted")
     require(flags["bt_complete_order_g_four_power_survival_established"] is False, "BT chaos reduction promoted to whole-lattice power survival")

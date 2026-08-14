@@ -5,7 +5,9 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import itertools
 import json
+import math
 import os
 from collections import Counter
 from fractions import Fraction
@@ -234,6 +236,105 @@ def connected_pairing_table() -> list[dict]:
     ]
 
 
+def pairing_topologies(atoms: list[Atom]) -> Counter[tuple]:
+    slots = tuple(
+        (vertex, slot)
+        for vertex, atom in enumerate(atoms)
+        for slot in range(eta_degree(atom))
+    )
+    result: Counter[tuple] = Counter()
+    for pairing in pairings(slots):
+        adjacency = Counter(
+            tuple(sorted((left[0], right[0]))) for left, right in pairing
+        )
+        result[tuple(sorted(adjacency.items()))] += 1
+    return result
+
+
+def conditioned_rank_audit() -> dict:
+    counts: Counter[str] = Counter()
+    for term in connected_monomials():
+        atoms: list[Atom] = term["atoms"]
+        if (3, 3) in atoms:
+            continue
+        vertex_count = len(atoms)
+        for signature, pairing_multiplicity in pairing_topologies(atoms).items():
+            cut = term["covariance_cut"]
+            if cut is not None:
+                left, right = cut
+                if not any(
+                    multiplicity
+                    and (
+                        (u in left and v in right)
+                        or (v in left and u in right)
+                    )
+                    for (u, v), multiplicity in signature
+                ):
+                    continue
+            edges = [
+                edge
+                for edge, multiplicity in signature
+                for _ in range(multiplicity)
+            ]
+            for rank_mask in range(1 << len(edges)):
+                bulk_edges = [
+                    edge
+                    for index, edge in enumerate(edges)
+                    if not rank_mask & (1 << index)
+                ]
+                parent = list(range(vertex_count))
+
+                def find(vertex: int) -> int:
+                    while parent[vertex] != vertex:
+                        parent[vertex] = parent[parent[vertex]]
+                        vertex = parent[vertex]
+                    return vertex
+
+                for u, v in bulk_edges:
+                    ru, rv = find(u), find(v)
+                    if ru != rv:
+                        parent[rv] = ru
+                components: dict[int, list[int]] = {}
+                for vertex in range(vertex_count):
+                    components.setdefault(find(vertex), []).append(vertex)
+                loop_rank = len(bulk_edges) - vertex_count + len(components)
+                endpoint_vertices = [
+                    vertex
+                    for vertex, atom in enumerate(atoms)
+                    for _ in range(atom[1])
+                ]
+                for index, (u, v) in enumerate(edges):
+                    if rank_mask & (1 << index):
+                        endpoint_vertices.extend((u, v))
+                for signs in itertools.product((-1, 1), repeat=len(endpoint_vertices)):
+                    sources = [0] * vertex_count
+                    for vertex, sign in zip(endpoint_vertices, signs):
+                        sources[vertex] += sign
+                    component_sources = [
+                        sum(sources[vertex] for vertex in component)
+                        for component in components.values()
+                    ]
+                    nonzero = [abs(source) for source in component_sources if source]
+                    # At lowest momentum p=2*pi/L, a component is conserved for
+                    # some integer L>=4 iff all sources vanish or their gcd is
+                    # at least four (choose a divisor L>=4 of that gcd).
+                    viable = not nonzero or math.gcd(*nonzero) >= 4
+                    counts[
+                        ("VIABLE" if viable else "FORBIDDEN")
+                        + f"_LOOP_{loop_rank}"
+                    ] += pairing_multiplicity
+    viable_ranks = sorted(
+        int(label.rsplit("_", 1)[1])
+        for label, count in counts.items()
+        if label.startswith("VIABLE_LOOP_") and count
+    )
+    return {
+        "classification": dict(sorted(counts.items())),
+        "viable_loop_ranks": viable_ranks,
+        "maximum_viable_loop_rank": max(viable_ranks),
+    }
+
+
 def fixture() -> dict[str, Fraction]:
     a = [Fraction(-1), Fraction(0), Fraction(1)]
     b = [Fraction(0), Fraction(-1), Fraction(0), Fraction(1)]
@@ -297,6 +398,7 @@ def fixture() -> dict[str, Fraction]:
 def build() -> dict:
     exact = fixture()
     pairing_rows = connected_pairing_table()
+    rank_audit = conditioned_rank_audit()
     surviving_loop_ranks = {
         int(label.rsplit("_", 1)[1])
         for row in pairing_rows
@@ -321,6 +423,8 @@ def build() -> dict:
         "whole_lattice_order_g_four_decision_remains_open": True,
         "connected_pairing_loop_ranks_are_zero_one_two": surviving_loop_ranks == {0, 1, 2},
         "connected_pairing_has_no_three_loop_sum": max(surviving_loop_ranks) == 2,
+        "bulk_table_is_not_promoted_to_conditioned_momentum_zeros": True,
+        "conditioned_rank_corrections_have_no_viable_three_loop_sum": rank_audit["maximum_viable_loop_rank"] == 2,
         "no_continuum_born_krein_or_lorentzian_promotion": True,
     }
     return {
@@ -352,12 +456,22 @@ def build() -> dict:
         "connected_pairing_audit": {
             "homogeneous_dictionary": "U_nr is the coefficient of t^r in S_(n-2)(eta+t*h), with eta degree n-r; A=U31, B=U41, Cscore=U51, W1=U30+v*U32",
             "covariance_rule": "In Cov0(U31^2,R0), discard exactly the Wick pairings with no covariance edge crossing from either U31 factor to an R0 vertex",
-            "momentum_rule": "Each Wick component vanishes unless its signed fixed-h transfer contains zero; U33 terms vanish identically for L>=4",
+            "table_scope": "The labeled table classifies the translation-invariant C0 bulk contractions only. A row marked VANISHES_BY_COMPONENT_MOMENTUM can be revived after a conditioned-covariance rank-one insertion and is not a zero of the full conditioned expectation.",
+            "momentum_rule": "For a C0 bulk contraction, each Wick component vanishes unless its signed fixed-h transfer contains zero; U33 terms vanish identically for L>=4",
             "loop_rank": "beta=sum_components(E_component-V_component+1), ignoring eta-degree-zero constants",
             "surviving_loop_ranks": sorted(surviving_loop_ranks),
             "labeled_pairing_table": pairing_rows,
-            "result": "After the covariance subtraction and exact momentum-support zeros, every complete-M4 graph has at most two freely summed lattice momenta. The next exact object is therefore a finite two-loop connected kernel, not the standalone expected-Hessian norm.",
+            "result": "After covariance subtraction, every surviving translation-invariant bulk graph has at most two freely summed lattice momenta. Conditioned rank-one corrections require the separate audit below; bulk momentum-forbidden labels are not promoted to full conditioned zeros.",
             "status": "PROVED_BY_EXHAUSTIVE_EXACT_LABELED_WICK_ENUMERATION",
+        },
+        "conditioned_rank_correction_audit": {
+            "covariance_split": "C=C0-v*h tensor h; every rank endpoint carries signed momentum +/-p and every remaining C0 edge carries one freely oriented lattice momentum",
+            "volume_criterion": "For component source integers s_j in units of p=2*pi/L, conservation holds for some L>=4 iff all s_j vanish or gcd of the nonzero abs(s_j) is at least four",
+            "classification": rank_audit["classification"],
+            "viable_loop_ranks": rank_audit["viable_loop_ranks"],
+            "maximum_viable_loop_rank": rank_audit["maximum_viable_loop_rank"],
+            "result": "Exhausting every bulk/rank choice and every signed external/rank endpoint proves that no conditioned connected topology viable at any integer L>=4 has more than two free C0 loop momenta.",
+            "status": "PROVED_BY_EXACT_ALL_VOLUME_SIGNED_SOURCE_ENUMERATION",
         },
         "BT_extensive_W1_variance": {
             "third_chaos": "W1=U30+v*U32, with U30=S1(eta) cubic and v*U32 linear; therefore Pi3(W1)=Pi3(U30)",

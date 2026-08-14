@@ -120,12 +120,15 @@ edge joining \(U_{31}^2\) to the \(R_0\) factor, and fixed-\(h\) momentum
 support removes components whose external transfer cannot total zero.
 \(U_{33}\) vanishes identically for \(L\geq4\).
 
-The surviving connected components have loop ranks exactly \(0,1,2\); none
-has rank three or higher.  Thus the unresolved object is a finite sum of
-explicit zero-, one-, and two-loop lattice kernels.  This is a genuine
-reduction from the standalone expected-Hessian norm, but it is not an
-evaluation or bound of those kernels.  The complete labeled table and an
-independent pairing enumerator are in the certificate and verifier.
+This labeled table concerns the translation-invariant \(C_0\) contractions.
+A component marked momentum-forbidden there can be revived when a covariance
+is replaced by the real-cosine rank-one term.  It must not be read as a zero
+of the full conditioned expectation.  A separate exact signed-source audit
+now expands every choice in \(C=C_0-vh\otimes h\).  The viable conditioned
+components still have loop ranks exactly \(0,1,2\), and none has rank three or
+higher for any integer \(L\geq4\).  Thus the unresolved object remains a
+finite sum of zero-, one-, and two-loop lattice kernels, but rank corrections
+must be included.
 
 ## Controlled numerical preflight
 
@@ -140,23 +143,24 @@ supporting only:
 | 8 | 30,000 | 3315.554 | -3383.745 | -68.191 | 80.150 |
 
 At both volumes $M_4$ is within one standard error of zero, while its two
-square-root pieces are individually much larger and nearly opposite.  This
-motivates an exact-cancellation search.  It is not evidence for a certified
-zero, sign, asymptotic scaling, interacting moment, or continuum limit.
+square-root pieces are individually much larger and nearly opposite.  The
+successor exact calculation finds
+\(M_4(4)=-338835474713437/204838502400000\), within one reported standard
+error of the \(L=4\) estimate.  The numerical rows remain supporting only.
 
 ## Next calculation
 
-The connected Wick topologies of the boxed formula are now exhaustively
-classified.  The first decisive test is exact rational evaluation of their
-zero-, one-, and two-loop sums on $L=4$, where all dispersions and selected
-cosine values are rational.  If the sum vanishes, the task is to find the
-vertex or Ward identity that explains the cancellation for every volume.  If
-it does not, its first nonzero connected topology determines the correct
-hard/one-soft/all-soft bound.
+Certificate
+`REVERSE_PHYSICS_BT_EUCLIDEAN_COMPLETE_G4_L4_DECISION_V1` now closes the
+first decisive test: \(M_4(4)\) is exactly negative and nonzero, so an
+all-volume zero identity is obstructed.  Its sector ledger shows dominant
+bulk and single-rank two-loop contributions of opposite sign.  The next gate
+is their combined general-\(L\) kernel and hard/one-soft/all-soft bound.
 
-No exact $M_4$ cancellation, whole-lattice power decision, nonperturbative
-score theorem, interacting $H^{-1}$ moment, continuum identification, Born
-rule, Krein reconstruction, or `LORENTZIAN-CAUSAL` statement is established.
+No large-volume sign or scaling decision, whole-lattice power-survival
+theorem, nonperturbative score theorem, interacting $H^{-1}$ moment,
+continuum identification, Born rule, Krein reconstruction, or
+`LORENTZIAN-CAUSAL` statement is established.
 
 ## Verification
 
@@ -169,23 +173,17 @@ cc -std=c11 -O2 -Wall -Wextra -Werror reverse_physics/bt_euclidean_complete_g4_p
 
 ## Verification receipt
 
-Tier 0: Python compilation and the strict C build passed in 0.04 s and 0.15 s
-(16,328 KB and 41,452 KB maximum RSS).  Tier 1: generation, independent
-verification, and 10 unit/mutation tests passed in 0.05 s, 0.12 s, and 0.26 s
-(21,732 KB, 30,092 KB, and 31,344 KB maximum RSS).  The paper claim-map and
-independent verifier passed in 0.15 s (30,516 KB maximum RSS).  The planning
-import accepted 1,616 nodes with no invalid item or malformed event in 7.19 s
-(225,952 KB maximum RSS under `GOMEMLIMIT=300MiB`).  Two bounded LaTeX passes
-completed in 1.58 s (53,732 KB maximum RSS).  The prose advisory remained
-non-certifying and reported the pre-existing parenthetical and abstract-word
-budget findings.  Tier 3 was not run because no shared core algebra, freeze,
-release, theorem lifecycle, exact cancellation, weighted estimate, or
-continuum lifecycle changed.
-
-The advisory `ci/science-forge-shadow.sh` rail exited zero by design but did
-not pass: its Forge 0.0.2 binary and current stdlib hashes disagree, the bridge
-audit fails closed at substrate diagnostic `E9118`, and the July corpus census
-baseline records 976 certificates versus 1,666 now present.  Diagnostics are
-in `/tmp/sf-shadow.cBDj0k`.  These are reported external substrate/baseline
-findings, not evidence for or against this certificate; the scoped planning
-import above is the applicable fail-closed event/schema check.
+The scope correction and conditioned rank audit are in the affected chain of
+the exact \(L=4\) successor.  The regenerated predecessor, independent
+verifier, and 12 unit/adversarial-mutation tests passed in 1.32 s, 1.10 s, and
+2.32 s (22,072 KB, 30,424 KB, and 31,148 KB maximum RSS).  The two added
+mutations independently reject promotion of the bulk table to all conditioned
+contractions and a false rank-three conclusion.  Python compilation passed as
+part of the successor Tier-0 rail; the Paper 21 claim-map check and verifier
+each passed in 0.07 s.  The append-only planning import accepted 1,618 nodes
+with no invalid item or malformed event in 7.80 s under
+`GOMEMLIMIT=300MiB`.  Tier 3 was not run because the corrected table scope
+preserves the connected identity and maximum-two-loop theorem and introduces
+no freeze, release, shared-core change, continuum theorem, or lifecycle
+promotion.  Full timings and the independent exact-evaluation receipt are in
+the successor \(L=4\) decision report.

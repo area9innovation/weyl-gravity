@@ -64,6 +64,12 @@ class MutationTests(unittest.TestCase):
     def test_rejects_h_minus_one_promotion(self) -> None:
         self.reject(lambda data: data["method_disposition"].__setitem__("actual_interacting_h_minus_one_second_moment", "DIVERGENT"))
 
+    def test_rejects_conditioned_rank_audit_mutation(self) -> None:
+        self.reject(lambda data: data["conditioned_rank_correction_audit"].__setitem__("maximum_viable_loop_rank", 3))
+
+    def test_rejects_bulk_table_scope_mutation(self) -> None:
+        self.reject(lambda data: data["connected_pairing_audit"].__setitem__("table_scope", "all conditioned contractions"))
+
     def test_rejects_extra_field(self) -> None:
         self.reject(lambda data: data.__setitem__("claim", "too broad"))
 

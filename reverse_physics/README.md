@@ -227,7 +227,15 @@ bt_euclidean_complete_g4_connected_normalization.py
                                        aligned sector into the connected M4
                                        covariance and exhaustively reduces its
                                        surviving Wick graphs to at most two
-                                       loop sums; exact evaluation remains open
+                                       loop sums, including a separate audit of
+                                       conditioned rank corrections
+bt_euclidean_complete_g4_l4_exact.py   bounded-memory exact rational evaluation
+                                       of every connected bulk/rank topology on
+                                       the 4^4 lattice
+bt_euclidean_complete_g4_l4_decision.py
+                                       proves M4(4) is negative and nonzero,
+                                       refuting an all-volume zero identity;
+                                       general-L sign and scaling remain open
 bt_four_point_bubble_log_jet.py        first virtual coefficient: arbitrary-mass
                                        bubble logarithm and four-leg interference jet
 bt_triangle_box_log_jet.py             complete triangle and box logarithmic jets;

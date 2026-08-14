@@ -1,0 +1,940 @@
+{
+  "answer": "No. On the 4^4 lattice with the lowest real axial cosine conditioned out, exact rational Wick contraction of every score, density, normalization, and rank-one covariance term gives M4=-338835474713437/204838502400000<0. This single exact counterexample refutes an all-volume identity M4=0. The two large square-root-density pieces do cancel strongly, but leave a nonzero connected remainder. A separate C++ implementation independently enumerates the pairings and momentum flows modulo four 61-bit primes. Their 244-bit product exceeds twice a rigorous 227-bit bound for the cleared integer difference, so residue agreement proves the rational equality rather than merely sampling it. This finite-volume negative coefficient does not determine the large-L sign or scaling, the resummed score, or the interacting H^-1 moment.",
+  "certificate": "REVERSE_PHYSICS_BT_EUCLIDEAN_COMPLETE_G4_L4_DECISION_V1",
+  "checks": {
+    "M4_equals_certified_negative_fraction": true,
+    "M4_is_strictly_negative_and_nonzero": true,
+    "actual_interacting_H_minus_one_estimate_remains_open": true,
+    "all_volume_M4_zero_identity_is_refuted_by_L4": true,
+    "asymptotic_whole_lattice_scaling_remains_open": true,
+    "bulk_only_momentum_zero_labels_are_not_promoted_to_conditioned_zeros": true,
+    "conditioned_rank_audit_has_maximum_two_loops": true,
+    "cubic_A2_crosscheck_is_54853_over_840": true,
+    "exact_term_ledger_sums_to_M4": true,
+    "four_prime_product_exceeds_twice_rigorous_difference_bound": true,
+    "independent_modular_residue_rail_is_fail_closed": true,
+    "no_continuum_born_krein_or_lorentzian_promotion": true,
+    "numerical_preflight_is_within_one_standard_error_of_exact_value": true,
+    "quartic_B2_crosscheck_is_first_connected_term": true
+  },
+  "conditioning_scope_correction": {
+    "all_volume_rank_audit": {
+      "classification": {
+        "FORBIDDEN_LOOP_0": 11135722,
+        "FORBIDDEN_LOOP_1": 2204416,
+        "FORBIDDEN_LOOP_2": 172102,
+        "FORBIDDEN_LOOP_3": 5768,
+        "VIABLE_LOOP_0": 264662,
+        "VIABLE_LOOP_1": 51648,
+        "VIABLE_LOOP_2": 3182
+      },
+      "covariance_split": "C=C0-v*h tensor h; every rank endpoint carries signed momentum +/-p and every remaining C0 edge carries one freely oriented lattice momentum",
+      "maximum_viable_loop_rank": 2,
+      "result": "Exhausting every bulk/rank choice and every signed external/rank endpoint proves that no conditioned connected topology viable at any integer L>=4 has more than two free C0 loop momenta.",
+      "status": "PROVED_BY_EXACT_ALL_VOLUME_SIGNED_SOURCE_ENUMERATION",
+      "viable_loop_ranks": [
+        0,
+        1,
+        2
+      ],
+      "volume_criterion": "For component source integers s_j in units of p=2*pi/L, conservation holds for some L>=4 iff all s_j vanish or gcd of the nonzero abs(s_j) is at least four"
+    },
+    "impact": "The connected identity and maximum-two-loop conclusion survive. The exact L4 evaluator includes every rank correction; only the earlier interpretation of bulk-forbidden labels required narrowing.",
+    "predecessor_bulk_table": "The predecessor labeled momentum table concerns C0 bulk contractions. Entries marked momentum-forbidden are not full conditioned zeros because C=C0-v*h tensor h can revive them.",
+    "status": "SCOPE_CORRECTED_WITH_CONCLUSION_PRESERVED"
+  },
+  "created": "2026-08-15",
+  "data": "reverse_physics/data/bt_euclidean_complete_g4_l4_exact_v1.json",
+  "data_sha256": "b7d7ce4abbfb8f3b6746df05085cecc2990df302b040b8790506e43f90a9db37",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "does_not_establish": [
+    "the sign, nonzero limit, or power/logarithmic scaling of M4 as L tends to infinity",
+    "failure of an all-order or nonperturbative cancellation in the annealed score",
+    "divergence or boundedness of the actual interacting H^-1 moment",
+    "tightness, continuum identification, a Born rule, Krein reconstruction, or anything LORENTZIAN-CAUSAL"
+  ],
+  "exact_L4_decision": {
+    "M4": {
+      "denominator": 204838502400000,
+      "numerator": -338835474713437
+    },
+    "decimal": -1.6541591094616253,
+    "lattice": {
+      "external_dispersion": 2,
+      "external_momentum": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "fiber_variance": {
+        "denominator": 512,
+        "numerator": 1
+      },
+      "length": 4,
+      "propagator_denominator_lcm": 2822400,
+      "volume": 256
+    },
+    "rank_loop_sector_totals": [
+      {
+        "decimal": 0.005859375,
+        "loop_rank": 0,
+        "rank_insertions": 0,
+        "value": {
+          "denominator": 512,
+          "numerator": 3
+        }
+      },
+      {
+        "decimal": -0.1312837134055321,
+        "loop_rank": 1,
+        "rank_insertions": 0,
+        "value": {
+          "denominator": 15173222400,
+          "numerator": -1991996981
+        }
+      },
+      {
+        "decimal": 21.49015298500158,
+        "loop_rank": 2,
+        "rank_insertions": 0,
+        "value": {
+          "denominator": 204838502400000,
+          "numerator": 4402010753794613
+        }
+      },
+      {
+        "decimal": 0.015625,
+        "loop_rank": 0,
+        "rank_insertions": 1,
+        "value": {
+          "denominator": 64,
+          "numerator": 1
+        }
+      },
+      {
+        "decimal": -0.024052375901377415,
+        "loop_rank": 1,
+        "rank_insertions": 1,
+        "value": {
+          "denominator": 18966528000,
+          "numerator": -456190061
+        }
+      },
+      {
+        "decimal": -23.375957496971772,
+        "loop_rank": 2,
+        "rank_insertions": 1,
+        "value": {
+          "denominator": 1445068800,
+          "numerator": -33779866849
+        }
+      },
+      {
+        "decimal": -0.056640625,
+        "loop_rank": 0,
+        "rank_insertions": 2,
+        "value": {
+          "denominator": 512,
+          "numerator": -29
+        }
+      },
+      {
+        "decimal": 0.4273460751488095,
+        "loop_rank": 1,
+        "rank_insertions": 2,
+        "value": {
+          "denominator": 430080,
+          "numerator": 183793
+        }
+      },
+      {
+        "decimal": -0.005208333333333333,
+        "loop_rank": 0,
+        "rank_insertions": 3,
+        "value": {
+          "denominator": 192,
+          "numerator": -1
+        }
+      }
+    ],
+    "status": "PROVED_EXACT_NEGATIVE_NONZERO",
+    "term_ledger": [
+      {
+        "decimal": 2.578256227794219,
+        "labeled_pairings": 15,
+        "name": "U41^2",
+        "rank_loop_sectors": [
+          {
+            "decimal": 64.18587525946506,
+            "loop_rank": 2,
+            "rank_insertions": 0,
+            "value": {
+              "denominator": 102419251200000,
+              "numerator": 6573869281691017
+            }
+          },
+          {
+            "decimal": -4.140490351707643,
+            "loop_rank": 1,
+            "rank_insertions": 1,
+            "value": {
+              "denominator": 531062784000,
+              "numerator": -2198860333303
+            }
+          },
+          {
+            "decimal": -60.983439598862006,
+            "loop_rank": 2,
+            "rank_insertions": 1,
+            "value": {
+              "denominator": 160563200,
+              "numerator": -9791696209
+            }
+          },
+          {
+            "decimal": 0.146484375,
+            "loop_rank": 0,
+            "rank_insertions": 2,
+            "value": {
+              "denominator": 512,
+              "numerator": 75
+            }
+          },
+          {
+            "decimal": 3.451206752232143,
+            "loop_rank": 1,
+            "rank_insertions": 2,
+            "value": {
+              "denominator": 28672,
+              "numerator": 98953
+            }
+          },
+          {
+            "decimal": -0.08138020833333333,
+            "loop_rank": 0,
+            "rank_insertions": 3,
+            "value": {
+              "denominator": 1536,
+              "numerator": -125
+            }
+          }
+        ],
+        "reason": "EXACT_CONDITIONED_WICK_SUM",
+        "topology_count": 2,
+        "value": {
+          "denominator": 22404211200000,
+          "numerator": 57763797055217
+        }
+      },
+      {
+        "decimal": 6.266925789079583,
+        "labeled_pairings": 15,
+        "name": "2*U31*U51",
+        "rank_loop_sectors": [
+          {
+            "decimal": 6.636294942991148,
+            "loop_rank": 2,
+            "rank_insertions": 0,
+            "value": {
+              "denominator": 842956800,
+              "numerator": 5594109949
+            }
+          },
+          {
+            "decimal": -0.3849941539115646,
+            "loop_rank": 1,
+            "rank_insertions": 1,
+            "value": {
+              "denominator": 376320,
+              "numerator": -144881
+            }
+          },
+          {
+            "decimal": 0.015625,
+            "loop_rank": 0,
+            "rank_insertions": 2,
+            "value": {
+              "denominator": 64,
+              "numerator": 1
+            }
+          }
+        ],
+        "reason": "EXACT_CONDITIONED_WICK_SUM",
+        "topology_count": 2,
+        "value": {
+          "denominator": 280985600,
+          "numerator": 1760915903
+        }
+      },
+      {
+        "decimal": -11.028428750709287,
+        "labeled_pairings": 105,
+        "name": "-2*U31*U41*U30",
+        "rank_loop_sectors": [
+          {
+            "decimal": -58.957942148820045,
+            "loop_rank": 2,
+            "rank_insertions": 0,
+            "value": {
+              "denominator": 8534937600000,
+              "numerator": -503202357264589
+            }
+          },
+          {
+            "decimal": 4.997367975000109,
+            "loop_rank": 1,
+            "rank_insertions": 1,
+            "value": {
+              "denominator": 14751744000,
+              "numerator": 73719893041
+            }
+          },
+          {
+            "decimal": 46.45406460093803,
+            "loop_rank": 2,
+            "rank_insertions": 1,
+            "value": {
+              "denominator": 120422400,
+              "numerator": 5594109949
+            }
+          },
+          {
+            "decimal": -0.234375,
+            "loop_rank": 0,
+            "rank_insertions": 2,
+            "value": {
+              "denominator": 64,
+              "numerator": -15
+            }
+          },
+          {
+            "decimal": -3.385200427827381,
+            "loop_rank": 1,
+            "rank_insertions": 2,
+            "value": {
+              "denominator": 430080,
+              "numerator": -1455907
+            }
+          },
+          {
+            "decimal": 0.09765625,
+            "loop_rank": 0,
+            "rank_insertions": 3,
+            "value": {
+              "denominator": 256,
+              "numerator": 25
+            }
+          }
+        ],
+        "reason": "EXACT_CONDITIONED_WICK_SUM",
+        "topology_count": 6,
+        "value": {
+          "denominator": 7468070400000,
+          "numerator": -82361082311681
+        }
+      },
+      {
+        "decimal": -0.1620555644132653,
+        "labeled_pairings": 15,
+        "name": "-2*v*U31*U41*U32",
+        "rank_loop_sectors": [
+          {
+            "decimal": -0.8718281648596938,
+            "loop_rank": 1,
+            "rank_insertions": 0,
+            "value": {
+              "denominator": 1003520,
+              "numerator": -874897
+            }
+          },
+          {
+            "decimal": 0.0390625,
+            "loop_rank": 0,
+            "rank_insertions": 1,
+            "value": {
+              "denominator": 128,
+              "numerator": 5
+            }
+          },
+          {
+            "decimal": 0.6902413504464285,
+            "loop_rank": 1,
+            "rank_insertions": 1,
+            "value": {
+              "denominator": 143360,
+              "numerator": 98953
+            }
+          },
+          {
+            "decimal": -0.01953125,
+            "loop_rank": 0,
+            "rank_insertions": 2,
+            "value": {
+              "denominator": 256,
+              "numerator": -5
+            }
+          }
+        ],
+        "reason": "EXACT_CONDITIONED_WICK_SUM",
+        "topology_count": 3,
+        "value": {
+          "denominator": 501760,
+          "numerator": -81313
+        }
+      },
+      {
+        "decimal": 20.2732799102868,
+        "labeled_pairings": 900,
+        "name": "Cov(U31^2,U30^2)",
+        "rank_loop_sectors": [
+          {
+            "decimal": 30.820430423202424,
+            "loop_rank": 2,
+            "rank_insertions": 0,
+            "value": {
+              "denominator": 2987228160000,
+              "numerator": 92067657663511
+            }
+          },
+          {
+            "decimal": -2.7873053650583053,
+            "loop_rank": 1,
+            "rank_insertions": 1,
+            "value": {
+              "denominator": 88510464000,
+              "numerator": -246705691171
+            }
+          },
+          {
+            "decimal": -8.846582499047797,
+            "loop_rank": 2,
+            "rank_insertions": 1,
+            "value": {
+              "denominator": 361267200,
+              "numerator": -3195980089
+            }
+          },
+          {
+            "decimal": 0.076171875,
+            "loop_rank": 0,
+            "rank_insertions": 2,
+            "value": {
+              "denominator": 512,
+              "numerator": 39
+            }
+          },
+          {
+            "decimal": 1.051581101190476,
+            "loop_rank": 1,
+            "rank_insertions": 2,
+            "value": {
+              "denominator": 53760,
+              "numerator": 56533
+            }
+          },
+          {
+            "decimal": -0.041015625,
+            "loop_rank": 0,
+            "rank_insertions": 3,
+            "value": {
+              "denominator": 512,
+              "numerator": -21
+            }
+          }
+        ],
+        "reason": "EXACT_CONDITIONED_WICK_SUM",
+        "topology_count": 21,
+        "value": {
+          "denominator": 2987228160000,
+          "numerator": 60560912643571
+        }
+      },
+      {
+        "decimal": 0.12874629470552393,
+        "labeled_pairings": 96,
+        "name": "Cov(U31^2,U30*U32)",
+        "rank_loop_sectors": [
+          {
+            "decimal": 0.395547820003143,
+            "loop_rank": 1,
+            "rank_insertions": 0,
+            "value": {
+              "denominator": 16595712000,
+              "numerator": 6564397703
+            }
+          },
+          {
+            "decimal": -0.01953125,
+            "loop_rank": 0,
+            "rank_insertions": 1,
+            "value": {
+              "denominator": 256,
+              "numerator": -5
+            }
+          },
+          {
+            "decimal": -0.262895275297619,
+            "loop_rank": 1,
+            "rank_insertions": 1,
+            "value": {
+              "denominator": 215040,
+              "numerator": -56533
+            }
+          },
+          {
+            "decimal": 0.015625,
+            "loop_rank": 0,
+            "rank_insertions": 2,
+            "value": {
+              "denominator": 64,
+              "numerator": 1
+            }
+          }
+        ],
+        "reason": "EXACT_CONDITIONED_WICK_SUM",
+        "topology_count": 9,
+        "value": {
+          "denominator": 4148928000,
+          "numerator": 534159107
+        }
+      },
+      {
+        "decimal": 0.0,
+        "labeled_pairings": 12,
+        "name": "Cov(U31^2,U32^2)",
+        "rank_loop_sectors": [
+          {
+            "decimal": 0.005859375,
+            "loop_rank": 0,
+            "rank_insertions": 0,
+            "value": {
+              "denominator": 512,
+              "numerator": 3
+            }
+          },
+          {
+            "decimal": -0.005859375,
+            "loop_rank": 0,
+            "rank_insertions": 1,
+            "value": {
+              "denominator": 512,
+              "numerator": -3
+            }
+          }
+        ],
+        "reason": "EXACT_CONDITIONED_WICK_SUM",
+        "topology_count": 4,
+        "value": {
+          "denominator": 1,
+          "numerator": 0
+        }
+      },
+      {
+        "decimal": -28.390343471108775,
+        "labeled_pairings": 96,
+        "name": "Cov(U31^2,-U40)",
+        "rank_loop_sectors": [
+          {
+            "decimal": -30.041087990884805,
+            "loop_rank": 2,
+            "rank_insertions": 0,
+            "value": {
+              "denominator": 2124251136000,
+              "numerator": -63814815291313
+            }
+          },
+          {
+            "decimal": 2.3898139952224557,
+            "loop_rank": 1,
+            "rank_insertions": 1,
+            "value": {
+              "denominator": 106212556800,
+              "numerator": 253828254709
+            }
+          },
+          {
+            "decimal": -0.068359375,
+            "loop_rank": 0,
+            "rank_insertions": 2,
+            "value": {
+              "denominator": 512,
+              "numerator": -35
+            }
+          },
+          {
+            "decimal": -0.6902413504464285,
+            "loop_rank": 1,
+            "rank_insertions": 2,
+            "value": {
+              "denominator": 143360,
+              "numerator": -98953
+            }
+          },
+          {
+            "decimal": 0.01953125,
+            "loop_rank": 0,
+            "rank_insertions": 3,
+            "value": {
+              "denominator": 256,
+              "numerator": 5
+            }
+          }
+        ],
+        "reason": "EXACT_CONDITIONED_WICK_SUM",
+        "topology_count": 4,
+        "value": {
+          "denominator": 2124251136000,
+          "numerator": -60308219369933
+        }
+      },
+      {
+        "decimal": -0.2224371616765373,
+        "labeled_pairings": 12,
+        "name": "Cov(U31^2,-v*U42)",
+        "rank_loop_sectors": [
+          {
+            "decimal": -0.25173403667653727,
+            "loop_rank": 1,
+            "rank_insertions": 0,
+            "value": {
+              "denominator": 106212556800,
+              "numerator": -26737315669
+            }
+          },
+          {
+            "decimal": 0.048828125,
+            "loop_rank": 0,
+            "rank_insertions": 1,
+            "value": {
+              "denominator": 512,
+              "numerator": 25
+            }
+          },
+          {
+            "decimal": -0.01953125,
+            "loop_rank": 0,
+            "rank_insertions": 2,
+            "value": {
+              "denominator": 256,
+              "numerator": -5
+            }
+          }
+        ],
+        "reason": "EXACT_CONDITIONED_WICK_SUM",
+        "topology_count": 3,
+        "value": {
+          "denominator": 106212556800,
+          "numerator": -23625619669
+        }
+      },
+      {
+        "decimal": 0.0,
+        "labeled_pairings": 0,
+        "name": "Cov(U31^2,-3*v^2*U44)",
+        "rank_loop_sectors": [],
+        "reason": "EXACT_CONDITIONED_WICK_SUM",
+        "topology_count": 0,
+        "value": {
+          "denominator": 1,
+          "numerator": 0
+        }
+      },
+      {
+        "decimal": 8.901897616580115,
+        "labeled_pairings": 96,
+        "name": "Cov(U31^2,v*U31^2/2)",
+        "rank_loop_sectors": [
+          {
+            "decimal": 0.596730668127556,
+            "loop_rank": 1,
+            "rank_insertions": 0,
+            "value": {
+              "denominator": 12644352000,
+              "numerator": 7545272617
+            }
+          },
+          {
+            "decimal": 8.846582499047797,
+            "loop_rank": 2,
+            "rank_insertions": 0,
+            "value": {
+              "denominator": 361267200,
+              "numerator": 3195980089
+            }
+          },
+          {
+            "decimal": -0.046875,
+            "loop_rank": 0,
+            "rank_insertions": 1,
+            "value": {
+              "denominator": 64,
+              "numerator": -3
+            }
+          },
+          {
+            "decimal": -0.525790550595238,
+            "loop_rank": 1,
+            "rank_insertions": 1,
+            "value": {
+              "denominator": 107520,
+              "numerator": -56533
+            }
+          },
+          {
+            "decimal": 0.03125,
+            "loop_rank": 0,
+            "rank_insertions": 2,
+            "value": {
+              "denominator": 32,
+              "numerator": 1
+            }
+          }
+        ],
+        "reason": "EXACT_CONDITIONED_WICK_SUM",
+        "topology_count": 13,
+        "value": {
+          "denominator": 1053696000,
+          "numerator": 9379893911
+        }
+      },
+      {
+        "decimal": 0.0,
+        "labeled_pairings": 0,
+        "name": "Cov(U31^2,3*v^2*U31*U33)",
+        "rank_loop_sectors": [],
+        "reason": "U33_IS_ZERO",
+        "topology_count": 0,
+        "value": {
+          "denominator": 1,
+          "numerator": 0
+        }
+      },
+      {
+        "decimal": 0.0,
+        "labeled_pairings": 0,
+        "name": "Cov(U31^2,15*v^3*U33^2/2)",
+        "rank_loop_sectors": [],
+        "reason": "U33_IS_ZERO",
+        "topology_count": 0,
+        "value": {
+          "denominator": 1,
+          "numerator": 0
+        }
+      }
+    ]
+  },
+  "independent_modular_verification": {
+    "common_expression_denominator": 475365622374908600080316497920000000000,
+    "covariance_expansion_absolute_sum": {
+      "denominator": 313600,
+      "numerator": 2414241
+    },
+    "expression_absolute_bound": {
+      "denominator": 5165261696000000000,
+      "numerator": 11078862877892855257890842580622659
+    },
+    "integer_difference_bound": 208853722588463629151401369606848823064735181651173093022892032000000,
+    "integer_difference_bound_bits": 227,
+    "integer_difference_bound_denominator": 1,
+    "method": "Independent C++17 labeled-pairing enumeration, bulk/rank covariance expansion, Z_4^4 spanning-forest flow solve, and four-prime residue evaluation",
+    "prime_product": 28269553036454145521783675972190872566292745786183585687971407929201188831,
+    "prime_product_bits": 244,
+    "primes": [
+      2305843009213693951,
+      2305843009213693921,
+      2305843009213693907,
+      2305843009213693723
+    ],
+    "source": "reverse_physics/bt_euclidean_complete_g4_l4_modular_verify.cpp",
+    "source_sha256": "7d2a9abbe0040659b6e3e634ce5c6fdaf7e64c61862ecc576842f7a5b22bb3d3",
+    "status": "EXACT_BY_RESIDUES_PLUS_RIGOROUS_INTEGER_BOUND",
+    "term_bounds": [
+      {
+        "absolute_bound": {
+          "denominator": 122931200000,
+          "numerator": 4690515857314866507
+        },
+        "name": "U41^2"
+      },
+      {
+        "absolute_bound": {
+          "denominator": 2409451520000,
+          "numerator": 126643928147501395689
+        },
+        "name": "2*U31*U51"
+      },
+      {
+        "absolute_bound": {
+          "denominator": 150590720000000,
+          "numerator": 101916321244917305676535683
+        },
+        "name": "-2*U31*U41*U30"
+      },
+      {
+        "absolute_bound": {
+          "denominator": 6722800000,
+          "numerator": 126643928147501395689
+        },
+        "name": "-2*v*U31*U41*U32"
+      },
+      {
+        "absolute_bound": {
+          "denominator": 10330523392000000000,
+          "numerator": 19930095466810682478879839892789843
+        },
+        "name": "Cov(U31^2,U30^2)"
+      },
+      {
+        "absolute_bound": {
+          "denominator": 32941720000000,
+          "numerator": 2751740673612767253266463441
+        },
+        "name": "Cov(U31^2,U30*U32)"
+      },
+      {
+        "absolute_bound": {
+          "denominator": 2941225000,
+          "numerator": 10258158179947613050809
+        },
+        "name": "Cov(U31^2,U32^2)"
+      },
+      {
+        "absolute_bound": {
+          "denominator": 1204725760000000,
+          "numerator": 305748963734751917029607049
+        },
+        "name": "Cov(U31^2,-U40)"
+      },
+      {
+        "absolute_bound": {
+          "denominator": 26891200000,
+          "numerator": 379931784442504187067
+        },
+        "name": "Cov(U31^2,-v*U42)"
+      },
+      {
+        "absolute_bound": {
+          "denominator": 1715000,
+          "numerator": 157371109364187
+        },
+        "name": "Cov(U31^2,-3*v^2*U44)"
+      },
+      {
+        "absolute_bound": {
+          "denominator": 65883440000000,
+          "numerator": 8255222020838301759799390323
+        },
+        "name": "Cov(U31^2,v*U31^2/2)"
+      },
+      {
+        "absolute_bound": {
+          "denominator": 1470612500,
+          "numerator": 3419386059982537683603
+        },
+        "name": "Cov(U31^2,3*v^2*U31*U33)"
+      },
+      {
+        "absolute_bound": {
+          "denominator": 300125,
+          "numerator": 7553813249480976
+        },
+        "name": "Cov(U31^2,15*v^3*U33^2/2)"
+      }
+    ],
+    "uniqueness_inequality": true
+  },
+  "lifecycle_state": "EXACT_L4_COMPLETE_G4_NEGATIVE_NONZERO_PROVED_ASYMPTOTIC_SCALING_OPEN",
+  "method_disposition": {
+    "actual_interacting_h_minus_one_second_moment": "OPEN",
+    "all_volume_exact_M4_zero_identity": "OBSTRUCTED_BY_L4_COUNTEREXAMPLE",
+    "born_rule": "NOT_ESTABLISHED",
+    "conditioned_connected_maximum_loop_rank": "TWO",
+    "continuum_limit": "NOT_ESTABLISHED",
+    "finite_L4_complete_M4": "NEGATIVE_NONZERO_EXACT",
+    "krein_reconstruction": "NOT_ASSESSED",
+    "large_volume_M4_sign_and_scaling": "OPEN",
+    "lorentzian_transfer": "NOT_ESTABLISHED",
+    "nonperturbative_annealed_zero_fiber_score_bound": "OPEN",
+    "normalized_lowest_mode_second_moment": "OPEN",
+    "whole_lattice_order_g_four_power_survival": "OPEN"
+  },
+  "missing_object_ledger": [
+    "a combined momentum formula for the nonzero rank/loop sectors valid at general L",
+    "a hard/one-soft/all-soft estimate or asymptotic coefficient for that combined general-L kernel",
+    "after the fixed-order scaling decision, a whole-composite nonperturbative score estimate",
+    "after the one-mode theorem, dyadic Fourier-shell control of the actual interacting H^-1 moment"
+  ],
+  "next_gate": "Do not search for an exact M4=0 Ward identity. Combine the surviving rank/loop sectors into a general-L momentum kernel and determine whether its nonzero L=4 remainder is finite-volume only, logarithmic, or retains the certified N*omega_p power. Apply absolute values only after cancellations within each common kernel. Then return to the whole-composite nonperturbative score and H^-1 shell sum.",
+  "normalization_crosschecks": {
+    "A2_from_independent_certified_cubic_sum": {
+      "denominator": 840,
+      "numerator": 54853
+    },
+    "B2_from_exact_quartic_Wick_sum": {
+      "denominator": 22404211200000,
+      "numerator": 57763797055217
+    },
+    "exact_minus_numerical_in_standard_errors": -0.6388823589642312,
+    "numerical_L4_M4": -0.5252140302801828,
+    "numerical_L4_standard_error": 1.7670625324695315,
+    "status": "EXACT_A2_MATCH_AND_SUPPORTING_NUMERICAL_CONSISTENCY"
+  },
+  "provenance": {
+    "assumptions": [
+      "the finite L=4 coefficient is a fixed-order free-background coefficient and is not promoted to the resummed interacting theory",
+      "the four-prime uniqueness proof applies only after every denominator and the absolute expression bound are checked independently",
+      "no finite-volume sign is extrapolated to large volume without a general-L estimate"
+    ],
+    "exact_arithmetic": "Python arbitrary-precision integers/Fraction and Gaussian-integer quarter-period kernels for the producer; independent four-prime C++17 arithmetic plus a rigorous uniqueness bound for verification",
+    "inputs": [
+      {
+        "path": "planning/work-items/reverse-physics-bateman-euclidean-continuum-reconstruction.json",
+        "sha256": "6e7146c21f056740edf9fe6feaaa8a14aaab945fe11f1b6a23110ecd5b85bf5a"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_CUBIC_SCORE_LOG_OBSTRUCTION_V1.json",
+        "sha256": "dc69e440ea9608c0bd94622e306501c819695877647d27c9481e88ab691cb7c7"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_QUARTIC_SCORE_POWER_OBSTRUCTION_V1.json",
+        "sha256": "a4f3924ed977a33446e2f4b84c0f88c7c776ad0ca564b620d133132cde6a6d1d"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_COMPLETE_G4_CONNECTED_NORMALIZATION_V1.json",
+        "sha256": "2c0e3808b931150272230d6da3e1523333c32eae7d4e73d467a69f13150ba1a5"
+      },
+      {
+        "path": "reverse_physics/bt_euclidean_complete_g4_l4_exact.py",
+        "sha256": "0a936a131b80b58e8080ebc10ce64110878ec640b7616fb90aa3521708f9d1a6"
+      },
+      {
+        "path": "reverse_physics/bt_euclidean_complete_g4_l4_modular_verify.cpp",
+        "sha256": "7d2a9abbe0040659b6e3e634ce5c6fdaf7e64c61862ecc576842f7a5b22bb3d3"
+      },
+      {
+        "path": "reverse_physics/data/bt_euclidean_complete_g4_l4_exact_v1.json",
+        "sha256": "b7d7ce4abbfb8f3b6746df05085cecc2990df302b040b8790506e43f90a9db37"
+      },
+      {
+        "path": "reverse_physics/data/bt_euclidean_complete_g4_preflight_v1.json",
+        "sha256": "af6d8e5a15d1e80645888ff5ce32d46c559826b8045084587dd74923ac5e3b0e"
+      }
+    ],
+    "repository_base_commit": "3cd7ba62550edc5d19dabd7099fe31dc15d0db38"
+  },
+  "question": "Does the complete connected order-g^4 coefficient vanish exactly after the large square-root-density pieces are recombined?",
+  "report": "reverse_physics/reports/bt-euclidean-complete-g4-l4-decision.md",
+  "result_kind": "exact finite-volume decision of the complete connected BT order-g^4 coefficient",
+  "schema": "reverse_physics/schema/reverse-physics-bt-euclidean-complete-g4-l4-decision-v1.schema.json",
+  "schema_version": "reverse-physics-bt-euclidean-complete-g4-l4-decision-v1",
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_euclidean_complete_g4_l4_decision.py --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_euclidean_complete_g4_l4_decision.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_euclidean_complete_g4_l4_decision",
+    "g++ -std=c++17 -O3 -Wall -Wextra -Werror reverse_physics/bt_euclidean_complete_g4_l4_modular_verify.cpp -o /tmp/bt-g4-l4-modverify"
+  ]
+}

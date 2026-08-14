@@ -4,12 +4,14 @@
 from __future__ import annotations
 
 import hashlib
+import itertools
 import json
 import math
 import os
 import sys
 from collections import Counter
 from fractions import Fraction
+from functools import lru_cache
 
 from jsonschema import Draft202012Validator
 
@@ -234,6 +236,96 @@ def expected_connected_terms():
     return result
 
 
+@lru_cache(maxsize=1)
+def independent_conditioned_rank_counts():
+    totals = Counter()
+    for _, _, _, atoms, cut in expected_connected_terms():
+        if (3, 3) in atoms:
+            continue
+        vertex_count = len(atoms)
+        slots = tuple(
+            (vertex, slot)
+            for vertex, (degree, h_legs) in enumerate(atoms)
+            for slot in range(degree - h_legs)
+        )
+        topologies = Counter()
+        for matching in perfect_matchings(slots):
+            signature = tuple(
+                sorted(
+                    Counter(
+                        tuple(sorted((left[0], right[0])))
+                        for left, right in matching
+                    ).items()
+                )
+            )
+            topologies[signature] += 1
+        for signature, pairing_multiplicity in topologies.items():
+            if cut is not None:
+                left, right = cut
+                if not any(
+                    multiplicity
+                    and (
+                        (u in left and v in right)
+                        or (v in left and u in right)
+                    )
+                    for (u, v), multiplicity in signature
+                ):
+                    continue
+            edges = [
+                edge
+                for edge, multiplicity in signature
+                for _ in range(multiplicity)
+            ]
+            for mask in range(1 << len(edges)):
+                bulk = [
+                    edge
+                    for index, edge in enumerate(edges)
+                    if not mask & (1 << index)
+                ]
+                adjacency = [set() for _ in range(vertex_count)]
+                for u, v in bulk:
+                    adjacency[u].add(v)
+                    adjacency[v].add(u)
+                unseen = set(range(vertex_count))
+                components = []
+                while unseen:
+                    seed = unseen.pop()
+                    component = {seed}
+                    stack = [seed]
+                    while stack:
+                        vertex = stack.pop()
+                        for neighbor in adjacency[vertex]:
+                            if neighbor in unseen:
+                                unseen.remove(neighbor)
+                                component.add(neighbor)
+                                stack.append(neighbor)
+                    components.append(component)
+                loop_rank = len(bulk) - vertex_count + len(components)
+                endpoints = [
+                    vertex
+                    for vertex, (_, h_legs) in enumerate(atoms)
+                    for _ in range(h_legs)
+                ]
+                for index, (u, v) in enumerate(edges):
+                    if mask & (1 << index):
+                        endpoints.extend((u, v))
+                for signs in itertools.product((-1, 1), repeat=len(endpoints)):
+                    source = [0] * vertex_count
+                    for vertex, sign in zip(endpoints, signs):
+                        source[vertex] += sign
+                    component_source = [
+                        sum(source[vertex] for vertex in component)
+                        for component in components
+                    ]
+                    nonzero = [abs(value) for value in component_source if value]
+                    viable = not nonzero or math.gcd(*nonzero) >= 4
+                    totals[
+                        ("VIABLE" if viable else "FORBIDDEN")
+                        + f"_LOOP_{loop_rank}"
+                    ] += pairing_multiplicity
+    return dict(sorted(totals.items()))
+
+
 def verify(path: str = CERT_PATH) -> bool:
     try:
         with open(path, encoding="utf-8") as handle:
@@ -291,6 +383,19 @@ def verify(path: str = CERT_PATH) -> bool:
             if label.startswith("SURVIVING_LOOP_") and count
         }
         if loop_ranks != {0, 1, 2}:
+            return False
+        rank_audit = data["conditioned_rank_correction_audit"]
+        rank_counts = independent_conditioned_rank_counts()
+        if rank_audit["classification"] != rank_counts:
+            return False
+        viable_rank = {
+            int(label.rsplit("_", 1)[1])
+            for label, count in rank_counts.items()
+            if label.startswith("VIABLE_LOOP_") and count
+        }
+        if viable_rank != {0, 1, 2} or rank_audit["maximum_viable_loop_rank"] != 2:
+            return False
+        if "translation-invariant C0 bulk" not in data["connected_pairing_audit"]["table_scope"]:
             return False
 
         with open(CUBIC_PATH, encoding="utf-8") as handle:

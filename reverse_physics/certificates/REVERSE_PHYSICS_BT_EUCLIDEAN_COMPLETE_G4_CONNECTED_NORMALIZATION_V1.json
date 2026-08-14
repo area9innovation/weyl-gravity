@@ -14,8 +14,10 @@
     "BT_W1_variance_has_extensive_fixed_UV_lower_bound": true,
     "H_mean_is_minus_one_eighth_E_W1_squared": true,
     "aligned_disconnected_terms_cancel_only_after_D_norm_is_recombined": true,
+    "bulk_table_is_not_promoted_to_conditioned_momentum_zeros": true,
     "centered_H_has_zero_mean": true,
     "complete_M4_is_exact_connected_covariance": true,
+    "conditioned_rank_corrections_have_no_viable_three_loop_sum": true,
     "connected_pairing_has_no_three_loop_sum": true,
     "connected_pairing_loop_ranks_are_zero_one_two": true,
     "effective_E_has_explicit_A_aligned_normalization_sector": true,
@@ -26,6 +28,27 @@
     "preflight_rows_are_within_two_standard_errors_of_zero": true,
     "termwise_bound_on_aligned_sector_is_power_large": true,
     "whole_lattice_order_g_four_decision_remains_open": true
+  },
+  "conditioned_rank_correction_audit": {
+    "classification": {
+      "FORBIDDEN_LOOP_0": 11135722,
+      "FORBIDDEN_LOOP_1": 2204416,
+      "FORBIDDEN_LOOP_2": 172102,
+      "FORBIDDEN_LOOP_3": 5768,
+      "VIABLE_LOOP_0": 264662,
+      "VIABLE_LOOP_1": 51648,
+      "VIABLE_LOOP_2": 3182
+    },
+    "covariance_split": "C=C0-v*h tensor h; every rank endpoint carries signed momentum +/-p and every remaining C0 edge carries one freely oriented lattice momentum",
+    "maximum_viable_loop_rank": 2,
+    "result": "Exhausting every bulk/rank choice and every signed external/rank endpoint proves that no conditioned connected topology viable at any integer L>=4 has more than two free C0 loop momenta.",
+    "status": "PROVED_BY_EXACT_ALL_VOLUME_SIGNED_SOURCE_ENUMERATION",
+    "viable_loop_ranks": [
+      0,
+      1,
+      2
+    ],
+    "volume_criterion": "For component source integers s_j in units of p=2*pi/L, conservation holds for some L>=4 iff all s_j vanish or gcd of the nonzero abs(s_j) is at least four"
   },
   "connected_identity": {
     "definitions": "R0=W1^2/2-W2 and z2=E0[R0]",
@@ -269,14 +292,15 @@
       }
     ],
     "loop_rank": "beta=sum_components(E_component-V_component+1), ignoring eta-degree-zero constants",
-    "momentum_rule": "Each Wick component vanishes unless its signed fixed-h transfer contains zero; U33 terms vanish identically for L>=4",
-    "result": "After the covariance subtraction and exact momentum-support zeros, every complete-M4 graph has at most two freely summed lattice momenta. The next exact object is therefore a finite two-loop connected kernel, not the standalone expected-Hessian norm.",
+    "momentum_rule": "For a C0 bulk contraction, each Wick component vanishes unless its signed fixed-h transfer contains zero; U33 terms vanish identically for L>=4",
+    "result": "After covariance subtraction, every surviving translation-invariant bulk graph has at most two freely summed lattice momenta. Conditioned rank-one corrections require the separate audit below; bulk momentum-forbidden labels are not promoted to full conditioned zeros.",
     "status": "PROVED_BY_EXHAUSTIVE_EXACT_LABELED_WICK_ENUMERATION",
     "surviving_loop_ranks": [
       0,
       1,
       2
-    ]
+    ],
+    "table_scope": "The labeled table classifies the translation-invariant C0 bulk contractions only. A row marked VANISHES_BY_COMPONENT_MOMENTUM can be revived after a conditioned-covariance rank-one insertion and is not a zero of the full conditioned expectation."
   },
   "created": "2026-08-14",
   "dependency_tags": [
