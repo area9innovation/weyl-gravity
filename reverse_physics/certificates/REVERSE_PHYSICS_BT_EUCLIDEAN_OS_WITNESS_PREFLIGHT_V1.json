@@ -1,0 +1,287 @@
+{
+  "algorithm_summaries": {
+    "hmc": {
+      "all_replica_means_negative": true,
+      "equal_replica_mean": -0.0005515540425671719,
+      "maximum_iat": 2.459375424877612,
+      "minimum_iat": 1.234649027833559,
+      "replica_standard_error": 8.81861122070819e-05,
+      "replicas": 4,
+      "total_retained_samples": 3200,
+      "z_from_zero": -6.254432004803571
+    },
+    "local_metropolis": {
+      "all_replica_means_negative": true,
+      "equal_replica_mean": -0.0007506749515594954,
+      "maximum_iat": 34.748171558581205,
+      "minimum_iat": 16.78445881390458,
+      "replica_standard_error": 0.00029639577866917024,
+      "replicas": 4,
+      "total_retained_samples": 6400,
+      "z_from_zero": -2.5326776073871837
+    }
+  },
+  "answer": "Yes as numerical support, not as an exact decision. All eight independent chain means are negative. Equal-replica pooling gives -6.25 sigma for HMC and -2.53 sigma for local Metropolis; their means differ by only 0.64 combined standard errors. The local chain has much larger integrated autocorrelation and does not cross a three-sigma sign gate, so ordinary OS failure at lambda=0.4 remains unproved.",
+  "barrier_analysis": {
+    "next_method": "Quantify the analytic near-zero interval or use a rigorous finite-volume integration bound; do not convert significance chasing into an exact claim.",
+    "remaining": "Local lowest-mode mixing inflates the replica uncertainty; a numerical sign is not an all-observable reflection-positivity theorem.",
+    "resolved": "The exact free witness remains negative in central value for every independent interacting chain and both algorithms."
+  },
+  "certificate": "REVERSE_PHYSICS_BT_EUCLIDEAN_OS_WITNESS_PREFLIGHT_V1",
+  "checks": {
+    "details": {
+      "all_acceptance_rates_between_65_and_96_percent": true,
+      "all_eight_replica_means_are_negative": true,
+      "all_iats_are_finite_and_at_least_one": true,
+      "all_raw_products_recompute_below_1e_15": true,
+      "all_seeds_are_unique": true,
+      "cross_sampler_means_agree_within_2sigma": true,
+      "dependency_is_euclidean_spectral": true,
+      "four_independent_replicas_per_algorithm": true,
+      "hmc_negative_sign_exceeds_3sigma": true,
+      "lambda_0p4_exact_status_remains_open": true,
+      "local_iat_is_larger_than_hmc_iat": true,
+      "local_negative_sign_exceeds_2sigma_but_not_3sigma": true,
+      "no_continuum_born_krein_or_lorentzian_promotion": true,
+      "observation_is_production_not_smoke": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 14,
+    "total": 14
+  },
+  "created": "2026-08-14",
+  "cross_sampler_mean_z": -0.6439112862910602,
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "disposition": {
+    "born_rule": "NOT_ESTABLISHED",
+    "continuum_limit": "NOT_ESTABLISHED",
+    "cross_sampler_agreement": "WITHIN_TWO_COMBINED_STANDARD_ERRORS",
+    "hmc_precision_gate": "THREE_SIGMA_PASSED",
+    "krein_compatible_reconstruction": "NOT_ASSESSED",
+    "lambda_0p4_reflected_witness": "TWO_SAMPLER_NEGATIVE_SIGN_SUPPORT_NOT_EXACT",
+    "local_precision_gate": "TWO_SIGMA_PASS_THREE_SIGMA_NOT_PASSED",
+    "lorentzian_transfer": "NOT_ESTABLISHED",
+    "ordinary_os_reflection_positivity_at_lambda_0p4": "OPEN"
+  },
+  "does_not_establish": [
+    "an exact sign at lambda=0.4",
+    "ordinary reflection positivity or its failure for all observables",
+    "a continuum or infinite-volume limit",
+    "a Krein-compatible reconstruction",
+    "anything LORENTZIAN-CAUSAL",
+    "that a two- or three-sigma numerical sign is an exact obstruction",
+    "that the witness sign decides every positive-time observable",
+    "a Born rule, scattering probability, or empirical event rate"
+  ],
+  "lifecycle_state": "CLASSIFIED",
+  "maximum_raw_product_residual": 0.0,
+  "missing_object_ledger": [
+    "an explicit analytic lower bound on the near-zero obstruction interval",
+    "a rigorous sign bound at lambda=0.4",
+    "an all-observable reflection-positivity classification at lambda=0.4",
+    "an interacting L-uniform negative-Sobolev estimate",
+    "tightness, represented convergence and limit identification",
+    "a Krein-compatible reconstruction and Lorentzian observable map"
+  ],
+  "observable": {
+    "F": "-A_1+2*A_2-A_3 with A_t the spatial slice average",
+    "exact_free_expectation": {
+      "denominator": 1296,
+      "numerator": -1
+    },
+    "measurement": "theta_F*F for every retained configuration",
+    "positive_half": [
+      1,
+      2,
+      3
+    ],
+    "reflection": "theta(t,x)=(1-t mod 6,x)",
+    "theta_F": "-A_0+2*A_5-A_4"
+  },
+  "provenance": {
+    "inputs": [
+      {
+        "path": "reverse_physics/data/bt_euclidean_os_witness_observations_v1.json",
+        "sha256": "74b80f56a876eb4848faffc3820ba54c02e83cab7fd32fb266a8e84d803d89d8"
+      },
+      {
+        "path": "reverse_physics/bt_euclidean_os_witness_experiment.py",
+        "sha256": "3c054baa100541f765edc2e7974c5ca3f241626158390c1ea95ec8e93563f30a"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_FREE_RECONSTRUCTION_OBSTRUCTION_V1.json",
+        "sha256": "3ff1ba1578d5bc11ea7f2a6fc806fedb49d127a0f3f29fc220d987d9305371a9"
+      }
+    ],
+    "memory_ceiling_kib": 500000,
+    "peak_rss_kib": "NOT_RECORDED",
+    "production_command": "ulimit -v 500000; single-thread numerical-library settings; python3 reverse_physics/bt_euclidean_os_witness_experiment.py --write",
+    "production_elapsed_seconds_observed_sum": 577.8067761680577
+  },
+  "question": "Do independent bounded samplers support a negative reflected BT witness at lambda=0.4 on the finite 6^4 lattice?",
+  "report": "reverse_physics/reports/bt-euclidean-os-witness-preflight.md",
+  "result_kind": "independent-sampler reflected-witness sign preflight",
+  "runs": [
+    {
+      "acceptance_rate": 0.7074146309429997,
+      "algorithm": "independent local random-scan Metropolis",
+      "effective_sample_size": 46.045588249229,
+      "elapsed_seconds_observed": 51.82060428202385,
+      "iat_standard_error": 0.0006543173054576543,
+      "integrated_autocorrelation_time_retained_samples": 34.748171558581205,
+      "mean_reflected_product": -0.0015527627477233664,
+      "positive_sequence_lags_used": 76,
+      "sample_variance": 1.9713550015123553e-05,
+      "samples": 1600,
+      "seed": 2608146101,
+      "z_from_zero_iat": -2.3731035917463705
+    },
+    {
+      "acceptance_rate": 0.707589719595482,
+      "algorithm": "independent local random-scan Metropolis",
+      "effective_sample_size": 91.01461565592112,
+      "elapsed_seconds_observed": 52.46567570796469,
+      "iat_standard_error": 0.0004131810743096556,
+      "integrated_autocorrelation_time_retained_samples": 17.5795940956205,
+      "mean_reflected_product": -0.0006242051712302968,
+      "positive_sequence_lags_used": 58,
+      "sample_variance": 1.5537887779578367e-05,
+      "samples": 1600,
+      "seed": 2608146102,
+      "z_from_zero_iat": -1.5107303069803502
+    },
+    {
+      "acceptance_rate": 0.7072464374835828,
+      "algorithm": "independent local random-scan Metropolis",
+      "effective_sample_size": 95.3262787760859,
+      "elapsed_seconds_observed": 52.77917902398622,
+      "iat_standard_error": 0.00032745360321985575,
+      "integrated_autocorrelation_time_retained_samples": 16.78445881390458,
+      "mean_reflected_product": -0.0001242171937720757,
+      "positive_sequence_lags_used": 72,
+      "sample_variance": 1.0221442437961833e-05,
+      "samples": 1600,
+      "seed": 2608146103,
+      "z_from_zero_iat": -0.3793428826271763
+    },
+    {
+      "acceptance_rate": 0.7073828638035198,
+      "algorithm": "independent local random-scan Metropolis",
+      "effective_sample_size": 62.03403089216017,
+      "elapsed_seconds_observed": 52.76164077402791,
+      "iat_standard_error": 0.0005385862496873246,
+      "integrated_autocorrelation_time_retained_samples": 25.792294600062935,
+      "mean_reflected_product": -0.0007015146935122426,
+      "positive_sequence_lags_used": 68,
+      "sample_variance": 1.799453071393186e-05,
+      "samples": 1600,
+      "seed": 2608146104,
+      "z_from_zero_iat": -1.3025113320652093
+    },
+    {
+      "acceptance_rate": 0.9105263157894737,
+      "algorithm": "zero-mode-projected HMC",
+      "effective_sample_size": 325.28583961101066,
+      "elapsed_seconds_observed": 91.71718331699958,
+      "iat_standard_error": 0.00020193718260139919,
+      "integrated_autocorrelation_time_retained_samples": 2.459375424877612,
+      "mean_reflected_product": -0.0007745181869930538,
+      "positive_sequence_lags_used": 10,
+      "sample_variance": 1.3264709504534516e-05,
+      "samples": 800,
+      "seed": 2608146201,
+      "z_from_zero_iat": -3.8354411853009944
+    },
+    {
+      "acceptance_rate": 0.9326315789473684,
+      "algorithm": "zero-mode-projected HMC",
+      "effective_sample_size": 359.164489206331,
+      "elapsed_seconds_observed": 92.13077324902406,
+      "iat_standard_error": 0.00020989826065294948,
+      "integrated_autocorrelation_time_retained_samples": 2.227391693894382,
+      "mean_reflected_product": -0.0006045158002595858,
+      "positive_sequence_lags_used": 6,
+      "sample_variance": 1.5823810404214473e-05,
+      "samples": 800,
+      "seed": 2608146202,
+      "z_from_zero_iat": -2.880041970710305
+    },
+    {
+      "acceptance_rate": 0.9389473684210526,
+      "algorithm": "zero-mode-projected HMC",
+      "effective_sample_size": 647.9574210686916,
+      "elapsed_seconds_observed": 92.24108462000731,
+      "iat_standard_error": 0.0001427598937513511,
+      "integrated_autocorrelation_time_retained_samples": 1.234649027833559,
+      "mean_reflected_product": -0.0003766047735845863,
+      "positive_sequence_lags_used": 4,
+      "sample_variance": 1.3205623171895942e-05,
+      "samples": 800,
+      "seed": 2608146203,
+      "z_from_zero_iat": -2.6380292369825478
+    },
+    {
+      "acceptance_rate": 0.9231578947368421,
+      "algorithm": "zero-mode-projected HMC",
+      "effective_sample_size": 346.9520420121155,
+      "elapsed_seconds_observed": 91.89063519402407,
+      "iat_standard_error": 0.00018007022190326657,
+      "integrated_autocorrelation_time_retained_samples": 2.3057941822750943,
+      "mean_reflected_product": -0.0004505774094314614,
+      "positive_sequence_lags_used": 12,
+      "sample_variance": 1.1250018779836836e-05,
+      "samples": 800,
+      "seed": 2608146204,
+      "z_from_zero_iat": -2.5022316553456068
+    }
+  ],
+  "schema": "reverse_physics/schema/reverse-physics-bt-euclidean-os-witness-preflight-v1.schema.json",
+  "schema_version": "reverse-physics-bt-euclidean-os-witness-preflight-v1",
+  "tier_receipt": {
+    "tier_0": {
+      "commands": [
+        "python3 -m py_compile <four changed Python files>",
+        "python3 -m json.tool <observation, certificate and schema JSON>",
+        "git diff --check -- <scoped paths>"
+      ],
+      "status": "PASS"
+    },
+    "tier_1": [
+      {
+        "elapsed_seconds": 0.36,
+        "peak_rss_kib": 25572,
+        "rail": "deterministic producer check",
+        "status": "PASS_14_OF_14"
+      },
+      {
+        "elapsed_seconds": 0.14,
+        "peak_rss_kib": 34468,
+        "rail": "independent raw-data verifier",
+        "status": "PASS_14_OF_14"
+      },
+      {
+        "elapsed_seconds": 0.73,
+        "peak_rss_kib": 37252,
+        "rail": "unit and six-mutation suite",
+        "status": "PASS_9_TESTS"
+      }
+    ],
+    "tier_2": {
+      "criterion": "the exact predecessor certificate is unchanged and its content hash is checked by the independent verifier",
+      "status": "PASS_HASH_ONLY"
+    },
+    "tier_3": {
+      "criterion": "CLASSIFIED finite-volume numerical preflight with no shared operator, continuum theorem, quantum lifecycle or Lorentzian promotion",
+      "status": "NOT_RUN"
+    }
+  },
+  "verification_commands": [
+    "python3 reverse_physics/bt_euclidean_os_witness_preflight.py --check",
+    "python3 reverse_physics/verify_bt_euclidean_os_witness_preflight.py",
+    "python3 -m unittest -v reverse_physics.tests.test_bt_euclidean_os_witness_preflight"
+  ]
+}

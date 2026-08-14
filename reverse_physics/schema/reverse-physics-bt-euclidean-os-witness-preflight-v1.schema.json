@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-os-witness-preflight-v1.schema.json",
+  "title": "BT Euclidean OS witness numerical preflight",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "certificate",
+    "schema_version",
+    "created",
+    "dependency_tags",
+    "lifecycle_state",
+    "result_kind",
+    "question",
+    "answer",
+    "observable",
+    "runs",
+    "algorithm_summaries",
+    "cross_sampler_mean_z",
+    "maximum_raw_product_residual",
+    "disposition",
+    "barrier_analysis",
+    "missing_object_ledger",
+    "does_not_establish",
+    "provenance",
+    "verification_commands",
+    "tier_receipt",
+    "checks",
+    "report",
+    "schema"
+  ],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_EUCLIDEAN_OS_WITNESS_PREFLIGHT_V1"},
+    "schema_version": {"const": "reverse-physics-bt-euclidean-os-witness-preflight-v1"},
+    "created": {"const": "2026-08-14"},
+    "dependency_tags": {
+      "type": "array",
+      "prefixItems": [
+        {"const": "LOCAL-ALGEBRAIC"},
+        {"const": "EUCLIDEAN-SPECTRAL"}
+      ],
+      "items": false
+    },
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "result_kind": {"type": "string"},
+    "question": {"type": "string"},
+    "answer": {"type": "string"},
+    "observable": {"type": "object"},
+    "runs": {
+      "type": "array",
+      "minItems": 8,
+      "maxItems": 8,
+      "items": {
+        "type": "object",
+        "required": [
+          "algorithm",
+          "seed",
+          "samples",
+          "mean_reflected_product",
+          "sample_variance",
+          "integrated_autocorrelation_time_retained_samples",
+          "effective_sample_size",
+          "iat_standard_error",
+          "z_from_zero_iat",
+          "acceptance_rate"
+        ]
+      }
+    },
+    "algorithm_summaries": {"type": "object"},
+    "cross_sampler_mean_z": {"type": "number"},
+    "maximum_raw_product_residual": {"type": "number"},
+    "disposition": {"type": "object"},
+    "barrier_analysis": {"type": "object"},
+    "missing_object_ledger": {"type": "array", "items": {"type": "string"}},
+    "does_not_establish": {"type": "array", "items": {"type": "string"}},
+    "provenance": {"type": "object"},
+    "verification_commands": {"type": "array", "items": {"type": "string"}},
+    "tier_receipt": {"type": "object"},
+    "checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"type": "boolean"},
+        "passed": {"type": "integer"},
+        "total": {"type": "integer"},
+        "failures": {"type": "array", "items": {"type": "string"}},
+        "details": {"type": "object", "additionalProperties": {"type": "boolean"}}
+      }
+    },
+    "report": {"const": "reverse_physics/reports/bt-euclidean-os-witness-preflight.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-euclidean-os-witness-preflight-v1.schema.json"}
+  }
+}
