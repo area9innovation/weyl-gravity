@@ -180,20 +180,24 @@ gives the completely rational certificate
 Spatial replication multiplies both \(D\) and \(A\) by \(216\), so this is a
 full \(6^4\) obstruction as well. It rules out only the constant two. A
 universal inequality \(D\geq cA\) for some explicit \(0<c<2\) remains open
-and would still be enough for a uniform action-density moment via Gibbs
-integration by parts.
+but is no longer needed for action-density control.  The successor certificate
+`REVERSE_PHYSICS_BT_EUCLIDEAN_AFFINE_VIRIAL_ACTION_DENSITY_V1` proves the
+affine inequality \(D\geq2A-(488/5)N\) for \(q=8\), which is sufficient after
+Gibbs integration by parts.
 
 ## Continuum disposition
 
-The first volume-uniform interacting estimate is still open. The next exact
-calculation is now sharply formulated:
+The actual action density and its annealed half weight are now uniformly
+bounded, but the requested interacting \(H^{-1}\) estimate remains open.  The
+next exact calculation is sharply formulated:
 
 1. prove or obstruct positivity of the orthogonal Hessian block needed to
    define the lowest-mode Schur complement globally;
 2. prove or obstruct the normalized half-action-density curvature bound;
-3. prove or obstruct a weaker positive radial virial constant;
-4. if both pointwise routes fail, estimate the normalized low-mode marginal
-   or the action density directly under the Gibbs measure.
+3. combine those curvature facts with the certified annealed half-action
+   factor; or
+4. if the pointwise curvature route fails, estimate the normalized low-mode
+   marginal directly.
 
 No result here establishes tightness, a continuum Euclidean measure, a Born
 rule, Krein reconstruction, analytic continuation, or anything

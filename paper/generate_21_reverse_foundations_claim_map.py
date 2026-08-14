@@ -32,6 +32,7 @@ AUTHORITY_PATHS = {
     "bt_bilaplacian_reference_bridge": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_BILAPLACIAN_REFERENCE_BRIDGE_V1.json",
     "bt_low_mode_uv_schur_obstruction": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_LOW_MODE_UV_SCHUR_OBSTRUCTION_V1.json",
     "bt_action_weight_virial_obstruction": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_ACTION_WEIGHT_VIRIAL_OBSTRUCTION_V1.json",
+    "bt_affine_virial_action_density": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_AFFINE_VIRIAL_ACTION_DENSITY_V1.json",
     "full_surface_gap_audit": "foundations/results/FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1.json",
     "explorer_snapshot": "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json",
     "theory_assembly": "foundations/results/FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1.json",
@@ -83,6 +84,7 @@ def build() -> dict:
     bt_interacting_os = loaded["bt_interacting_os_preflight"]
     bt_lambda04_os = loaded["bt_lambda04_os_kernel_obstruction"]
     bt_action_weight = loaded["bt_action_weight_virial_obstruction"]
+    bt_affine_virial = loaded["bt_affine_virial_action_density"]
     site = loaded["explorer_snapshot"]
     gr_cassini = loaded["gr_cassini_assembly"]
     mannheim_ngc3198 = loaded["mannheim_ngc3198_assembly"]
@@ -212,6 +214,10 @@ def build() -> dict:
             "bt_interacting_uniform_h_minus_one_status": bt_action_weight["method_disposition"]["actual_interacting_h_minus_one_second_moment_bound"],
             "bt_pointwise_action_weight_necessary_exponent": "AT_LEAST_ONE_HALF",
             "bt_pointwise_virial_constant_two_status": bt_action_weight["radial_virial_obstruction"]["status"],
+            "bt_affine_virial_status": bt_affine_virial["method_disposition"]["affine_pointwise_virial_bound"],
+            "bt_actual_action_density_status": bt_affine_virial["method_disposition"]["actual_uniform_action_density_moment"],
+            "bt_actual_half_action_factor_status": bt_affine_virial["method_disposition"]["actual_annealed_half_action_density_factor"],
+            "bt_lambda_0p4_action_density_bound": bt_affine_virial["actual_gibbs_action_density"]["lambda_point_four_uniform_action_density_bound"],
             "standard_reference_direct_obligations": next(item for item in assembly_data["assemblies"] if item["id"] == "STANDARD_MIXED_REFERENCE")["coverage"]["direct"],
             "external_calibration_records": len(assembly_data["calibration_controls"][0]["records"]),
             "external_calibration_benchmark_families": sum(item["status"] == "SUPPORTED_CONTROL" for item in assembly_data["calibration_controls"][0]["benchmark_coverage"]),
@@ -303,8 +309,8 @@ def build() -> dict:
             },
             {
                 "claim_id": "RF-13-BT-INTERACTING-RECONSTRUCTION-FRONTIER",
-                "statement": "At lambda=0.4 on the 6^4 lattice, an exact two-point reflected density-kernel minor obstructs ordinary OS positivity. The first interacting uniform-estimate routes are also sharply classified: field-independent lowest-mode curvature and every pointwise action-weight exponent below one half are obstructed, while a volume-normalized half-action-density bound remains open; the coefficient-two radial virial shortcut is exactly obstructed.",
-                "status": "EXACT_FINITE_OS_AND_UNIFORM_ESTIMATE_METHOD_OBSTRUCTIONS",
+                "statement": "At lambda=0.4 on the 6^4 lattice, an exact two-point reflected density-kernel minor obstructs ordinary OS positivity. Field-independent lowest-mode curvature and every pointwise action-weight exponent below one half are obstructed. The homogeneous coefficient-two virial shortcut fails, but an exact affine virial theorem now proves a volume-uniform actual Gibbs action-density bound and the annealed half-action factor; orthogonal-Hessian curvature and the interacting H^-1 moment remain open.",
+                "status": "EXACT_FINITE_OS_OBSTRUCTION_AND_ACTUAL_ACTION_DENSITY_BOUND",
                 "authorities": [
                     "bt_lambda04_os_kernel_obstruction",
                     "bt_uniform_convexity_obstruction",
@@ -312,6 +318,7 @@ def build() -> dict:
                     "bt_bilaplacian_reference_bridge",
                     "bt_low_mode_uv_schur_obstruction",
                     "bt_action_weight_virial_obstruction",
+                    "bt_affine_virial_action_density",
                 ],
                 "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"],
             },
@@ -370,6 +377,8 @@ def build() -> dict:
             "bt_lambda_0p4_two_sampler_sign_support": True,
             "bt_interacting_uniform_h_minus_one_established": False,
             "bt_half_action_density_candidate_established": False,
+            "bt_actual_interacting_action_density_established": True,
+            "bt_actual_annealed_half_action_factor_established": True,
             "research_programme_lenses_explained": True,
             "weakest_foundation_proved": False,
             "global_physics_implies_choice_theorem": False,

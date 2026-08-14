@@ -91,6 +91,7 @@ def main() -> int:
     bt_interacting_os = json.loads((ROOT / data["authorities"]["bt_interacting_os_preflight"]["path"]).read_text())
     bt_lambda04_os = json.loads((ROOT / data["authorities"]["bt_lambda04_os_kernel_obstruction"]["path"]).read_text())
     bt_action_weight = json.loads((ROOT / data["authorities"]["bt_action_weight_virial_obstruction"]["path"]).read_text())
+    bt_affine_virial = json.loads((ROOT / data["authorities"]["bt_affine_virial_action_density"]["path"]).read_text())
     dims = cube["dimensions"]
     atlas = data["atlas_snapshot"]
     require(atlas["axis_sizes"] == [6, 6, 16], "unexpected axis sizes")
@@ -129,6 +130,11 @@ def main() -> int:
     require(atlas["bt_interacting_uniform_h_minus_one_status"] == bt_action_weight["method_disposition"]["actual_interacting_h_minus_one_second_moment_bound"] == "OPEN", "BT interacting uniform estimate promoted")
     require(atlas["bt_pointwise_action_weight_necessary_exponent"] == "AT_LEAST_ONE_HALF", "BT necessary action-weight exponent drift")
     require(atlas["bt_pointwise_virial_constant_two_status"] == "POINTWISE_VIRIAL_CONSTANT_TWO_OBSTRUCTED", "BT virial obstruction drift")
+    require(atlas["bt_affine_virial_status"] == bt_affine_virial["method_disposition"]["affine_pointwise_virial_bound"] == "PROVED", "BT affine virial theorem drift")
+    require(atlas["bt_actual_action_density_status"] == bt_affine_virial["method_disposition"]["actual_uniform_action_density_moment"] == "PROVED", "BT actual action-density theorem drift")
+    require(atlas["bt_actual_half_action_factor_status"] == bt_affine_virial["method_disposition"]["actual_annealed_half_action_density_factor"] == "PROVED", "BT annealed half-action theorem drift")
+    require(atlas["bt_lambda_0p4_action_density_bound"] == {"numerator": 1222, "denominator": 25}, "BT action-density constant drift")
+    require(bt_affine_virial["method_disposition"]["actual_interacting_h_minus_one_second_moment_bound"] == "OPEN", "BT affine theorem promoted to H^-1")
 
     allowed_tags = {"LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE", "LORENTZIAN-CAUSAL"}
     claim_ids = set()
@@ -173,6 +179,8 @@ def main() -> int:
     require(flags["bt_lambda_0p4_two_sampler_sign_support"] is True, "BT interacting sign-support flag missing")
     require(flags["bt_interacting_uniform_h_minus_one_established"] is False, "BT interacting H^-1 bound promoted")
     require(flags["bt_half_action_density_candidate_established"] is False, "BT half-action-density candidate promoted")
+    require(flags["bt_actual_interacting_action_density_established"] is True, "BT actual action-density theorem missing")
+    require(flags["bt_actual_annealed_half_action_factor_established"] is True, "BT annealed half-action theorem missing")
     require(flags["research_programme_lenses_explained"] is True, "research-programme exposition flag is not certified")
     for false_flag in [
         "weakest_foundation_proved",
@@ -378,6 +386,8 @@ def main() -> int:
         r"none of the case studies constructs a complete Lorentzian off-shell",
         r"bounded prediction assembly",
         r"reverse-foundations-of-physics-appendices.tex",
+        r"D\geq2A-\frac{488}{5}N",
+        r"\mathbb E\sqrt{1+\frac AN}\leq\frac{\sqrt{1247}}5",
     ]:
         require(phrase in prose, f"required boundary missing from paper: {phrase}")
     for citation in [

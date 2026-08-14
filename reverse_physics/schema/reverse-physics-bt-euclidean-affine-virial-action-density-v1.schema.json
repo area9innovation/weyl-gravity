@@ -1,0 +1,274 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-affine-virial-action-density-v1.schema.json",
+  "title": "BT affine virial and actual action-density certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "certificate",
+    "schema_version",
+    "created",
+    "dependency_tags",
+    "lifecycle_state",
+    "result_kind",
+    "question",
+    "answer",
+    "pointwise_affine_virial_theorem",
+    "actual_gibbs_action_density",
+    "actual_bilaplacian_consequence",
+    "method_disposition",
+    "missing_object_ledger",
+    "next_gate",
+    "does_not_establish",
+    "provenance",
+    "verification_commands",
+    "tier_receipt",
+    "checks",
+    "report",
+    "schema"
+  ],
+  "$defs": {
+    "fraction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      }
+    },
+    "text": {"type": "string", "minLength": 1},
+    "text_array": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/text"}
+    },
+    "fixture": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "weights",
+        "sum_s",
+        "residual_r",
+        "t_log_two_coefficient",
+        "r_times_t_log_two_coefficient"
+      ],
+      "properties": {
+        "weights": {
+          "type": "array",
+          "minItems": 8,
+          "maxItems": 8,
+          "items": {"$ref": "#/$defs/fraction"}
+        },
+        "sum_s": {"$ref": "#/$defs/fraction"},
+        "residual_r": {"$ref": "#/$defs/fraction"},
+        "t_log_two_coefficient": {"$ref": "#/$defs/fraction"},
+        "r_times_t_log_two_coefficient": {"$ref": "#/$defs/fraction"}
+      }
+    }
+  },
+  "properties": {
+    "certificate": {
+      "const": "REVERSE_PHYSICS_BT_EUCLIDEAN_AFFINE_VIRIAL_ACTION_DENSITY_V1"
+    },
+    "schema_version": {
+      "const": "reverse-physics-bt-euclidean-affine-virial-action-density-v1"
+    },
+    "created": {"const": "2026-08-14"},
+    "dependency_tags": {
+      "type": "array",
+      "prefixItems": [
+        {"const": "LOCAL-ALGEBRAIC"},
+        {"const": "EUCLIDEAN-SPECTRAL"}
+      ],
+      "items": false
+    },
+    "lifecycle_state": {"const": "BOUND_PROVED"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "pointwise_affine_virial_theorem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scope",
+        "definitions",
+        "positive_residual_case",
+        "negative_residual_case",
+        "negative_square_bound",
+        "general_bound",
+        "q8_log_certificate",
+        "q8_rational_bound",
+        "scalar_regime_fixtures",
+        "status"
+      ],
+      "properties": {
+        "scope": {"const": "every connected finite q-regular undirected graph"},
+        "definitions": {"$ref": "#/$defs/text_array"},
+        "positive_residual_case": {"$ref": "#/$defs/text"},
+        "negative_residual_case": {"$ref": "#/$defs/text"},
+        "negative_square_bound": {"$ref": "#/$defs/text"},
+        "general_bound": {"const": "D>=2A-N*q^2*(1+log(q)/4)"},
+        "q8_log_certificate": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "log_two_lower_bound",
+            "exp_7_over_10_degree_four_lower_bound",
+            "exp_lower_bound_exceeds_two",
+            "consequence"
+          ],
+          "properties": {
+            "log_two_lower_bound": {"$ref": "#/$defs/fraction"},
+            "exp_7_over_10_degree_four_lower_bound": {"$ref": "#/$defs/fraction"},
+            "exp_lower_bound_exceeds_two": {"const": true},
+            "consequence": {"const": "log(2)<7/10 and log(8)<21/10"}
+          }
+        },
+        "q8_rational_bound": {"const": "D>=2A-(488/5)*N"},
+        "scalar_regime_fixtures": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {"$ref": "#/$defs/fixture"}
+        },
+        "status": {"const": "PROVED"}
+      }
+    },
+    "actual_gibbs_action_density": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "measure",
+        "radial_integration_by_parts",
+        "general_q8_bound",
+        "lambda",
+        "lambda_point_four_uniform_action_density_bound",
+        "annealed_half_action_density",
+        "half_weight_squarefree_radicand",
+        "half_weight_rational_denominator",
+        "status"
+      ],
+      "properties": {
+        "measure": {"$ref": "#/$defs/text"},
+        "radial_integration_by_parts": {"$ref": "#/$defs/text"},
+        "general_q8_bound": {"$ref": "#/$defs/text"},
+        "lambda": {"$ref": "#/$defs/fraction"},
+        "lambda_point_four_uniform_action_density_bound": {"$ref": "#/$defs/fraction"},
+        "annealed_half_action_density": {"$ref": "#/$defs/text"},
+        "half_weight_squarefree_radicand": {"const": 1247},
+        "half_weight_rational_denominator": {"const": 5},
+        "status": {"const": "PROVED_FOR_ACTUAL_INTERACTING_GIBBS_MEASURE"}
+      }
+    },
+    "actual_bilaplacian_consequence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "imported_envelope",
+        "second_moment_density_bound",
+        "second_moment_density_bound_rational",
+        "first_moment_density_bound",
+        "phi_conversion",
+        "lambda_point_four_phi_bound",
+        "continuum_shortfall",
+        "status"
+      ],
+      "properties": {
+        "imported_envelope": {"const": "A>=B_psi^2/(16*q^2*N)"},
+        "second_moment_density_bound": {"$ref": "#/$defs/text"},
+        "second_moment_density_bound_rational": {"$ref": "#/$defs/fraction"},
+        "first_moment_density_bound": {"$ref": "#/$defs/text"},
+        "phi_conversion": {"const": "B_psi=lambda^2*B_phi"},
+        "lambda_point_four_phi_bound": {"const": "E_mu[B_phi]/N<=40*sqrt(1222)"},
+        "continuum_shortfall": {"$ref": "#/$defs/text"},
+        "status": {"const": "PROVED_BUT_INSUFFICIENT_FOR_H_MINUS_ONE"}
+      }
+    },
+    "method_disposition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "homogeneous_pointwise_D_ge_2A",
+        "affine_pointwise_virial_bound",
+        "actual_uniform_action_density_moment",
+        "actual_annealed_half_action_density_factor",
+        "actual_uniform_bilaplacian_density_moment",
+        "global_orthogonal_hessian_block_positivity",
+        "pointwise_half_action_density_curvature",
+        "actual_interacting_h_minus_one_second_moment_bound",
+        "interacting_tightness",
+        "continuum_limit",
+        "born_rule",
+        "krein_reconstruction",
+        "lorentzian_transfer"
+      ],
+      "properties": {
+        "homogeneous_pointwise_D_ge_2A": {"const": "OBSTRUCTED_BY_PREDECESSOR"},
+        "affine_pointwise_virial_bound": {"const": "PROVED"},
+        "actual_uniform_action_density_moment": {"const": "PROVED"},
+        "actual_annealed_half_action_density_factor": {"const": "PROVED"},
+        "actual_uniform_bilaplacian_density_moment": {"const": "PROVED"},
+        "global_orthogonal_hessian_block_positivity": {"const": "OPEN"},
+        "pointwise_half_action_density_curvature": {"const": "OPEN"},
+        "actual_interacting_h_minus_one_second_moment_bound": {"const": "OPEN"},
+        "interacting_tightness": {"const": "NOT_ESTABLISHED"},
+        "continuum_limit": {"const": "NOT_ESTABLISHED"},
+        "born_rule": {"const": "NOT_ESTABLISHED"},
+        "krein_reconstruction": {"const": "NOT_ASSESSED"},
+        "lorentzian_transfer": {"const": "NOT_ESTABLISHED"}
+      }
+    },
+    "missing_object_ledger": {"$ref": "#/$defs/text_array"},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "does_not_establish": {"$ref": "#/$defs/text_array"},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["repository_base_commit", "inputs", "arithmetic"],
+      "properties": {
+        "repository_base_commit": {"const": "a7664a0a6465c17965e0f8e2c654ec4a3a5355d9"},
+        "inputs": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["path", "sha256"],
+            "properties": {
+              "path": {"$ref": "#/$defs/text"},
+              "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+            }
+          }
+        },
+        "arithmetic": {"$ref": "#/$defs/text"}
+      }
+    },
+    "verification_commands": {
+      "type": "array",
+      "minItems": 3,
+      "items": {"$ref": "#/$defs/text"}
+    },
+    "tier_receipt": {"type": "object", "minProperties": 5},
+    "checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"const": 15},
+        "total": {"const": 15},
+        "failures": {"type": "array", "maxItems": 0},
+        "details": {
+          "type": "object",
+          "minProperties": 15,
+          "maxProperties": 15,
+          "additionalProperties": {"const": true}
+        }
+      }
+    },
+    "report": {"const": "reverse_physics/reports/bt-euclidean-affine-virial-action-density.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-euclidean-affine-virial-action-density-v1.schema.json"}
+  }
+}
