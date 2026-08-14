@@ -7,8 +7,12 @@ import hashlib
 import json
 from pathlib import Path
 import subprocess
+import sys
 from typing import Any
 
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+
+from ci.standalone_provenance import read_attached_blob
 from jsonschema import Draft202012Validator
 
 
@@ -51,10 +55,16 @@ def _git(*args: str) -> bytes:
 
 
 def _tree_identity(commit: str) -> dict[str, str]:
-    prefix = _git("rev-parse", "--show-prefix").decode().strip()
-    tree_path = prefix + str(SOURCE_EXPORT.relative_to(ROOT))
-    committed = _git("show", f"{commit}:{tree_path}")
-    blob_sha1 = _git("rev-parse", f"{commit}:{tree_path}").decode().strip()
+    standalone_path = str(SOURCE_EXPORT.relative_to(ROOT))
+    tree_path = "physics/symplectic-reconstruction/" + standalone_path
+    expected_sha256 = _sha256(SOURCE_EXPORT)
+    ref, committed = read_attached_blob(
+        commit,
+        tree_path,
+        expected_sha256,
+        root=ROOT,
+    )
+    blob_sha1 = _git("rev-parse", ref.object_spec).decode().strip()
     return {
         "path": tree_path,
         "blob_sha1": blob_sha1,

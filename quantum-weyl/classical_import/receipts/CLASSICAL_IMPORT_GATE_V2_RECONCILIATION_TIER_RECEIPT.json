@@ -1,0 +1,77 @@
+{
+  "receipt_id": "CLASSICAL_IMPORT_GATE_V2_RECONCILIATION_TIER_RECEIPT",
+  "result_id": "CLASSICAL_IMPORT_GATE_V2_RECONCILIATION",
+  "recorded_at": "2026-08-15",
+  "base_commit": "54b46fdaabb3135822c7035e6f640940a66b0a29",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "input_hashes": {
+    "historical_gate_certificate": "eb48675fb36489e7d33724b2d06f1f0ebfe6867d043bf71d1536015f9862b2d6",
+    "standalone_history_crosswalk": "a3c63b4c4b1801972114e89100fff9937eaf6c2feaf7e653fd01fca8dde206cd"
+  },
+  "output_hashes": {
+    "gate_v2_reconciliation": "3e7944f31a932b66bddfde23e319ed78e87c07510cdaab785969c6e19fffdd11",
+    "gate_v2_report": "2272fa3501686a750e9d5f689917a43fd6976f5db73f898a7fff7e06a4aca3cd",
+    "antifield_v1_contract": "4e48c6222b33e5fe4264f656d5b8e5efd595faab53997022ece1222e7e598dd5",
+    "antifield_v2_contract": "11d793000b7288ea60f0e5408e1a4860e172548c399e64591e0e2b3cbeb4ff2a",
+    "minimal_bv_import_v2": "7d3bb260a0da31b1d1e3323f9e20b96b43a07e7d54142a04f6975fd26f33c028",
+    "analytic_snapshot_attestation": "b79bd44d7d1ff87333f9265e44402bb0abbd7056a953a8b32493a9205fe0bab9",
+    "repository_snapshot_compatibility": "07272161ca57a8e70bbbcaadda3ea7be892a58276e9d7d5694d7f5cbe184b096",
+    "snapshot_receiver_readiness": "717da7ed7dee35238f9bbefb523c61574bfb8c577daaa078ec0c007138f614f9",
+    "support_local_q2_contract": "d673ae449910bcfc97f219c35660508a99f33f1eb396a38ee36510a3b1c6995c"
+  },
+  "test_tiers": [
+    {
+      "tier": 0,
+      "command": "python3 -m py_compile quantum-weyl/classical_import/build_classical_import_gate_v2_reconciliation.py quantum-weyl/classical_import/check_classical_import_gate_v2_reconciliation.py quantum-weyl/classical_import/verify_classical_import_gate_v2_reconciliation.py quantum-weyl/classical_import/verify_snapshot.py quantum-weyl/classical_import/verify_antifield_export.py quantum-weyl/classical_import/verify_antifield_export_v2.py quantum-weyl/classical_import/verify_support_local_q2_export.py quantum-weyl/classical_import/analytic_operator_snapshot_attribution.py && jq empty quantum-weyl/classical_import/schema/classical-import-gate-v2-reconciliation-v1.schema.json && git diff --check",
+      "elapsed_seconds": 0.3,
+      "status": "PASS"
+    },
+    {
+      "tier": 1,
+      "command": "python3 quantum-weyl/classical_import/build_classical_import_gate_v2_reconciliation.py --check && python3 quantum-weyl/classical_import/check_classical_import_gate_v2_reconciliation.py && python3 quantum-weyl/classical_import/verify_classical_import_gate_v2_reconciliation.py",
+      "elapsed_seconds": 0.5,
+      "status": "PASS_GENERATOR_INDEPENDENT_CHECKER_AND_SCHEMA_VERIFIER"
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=quantum-weyl /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 -m unittest discover -s quantum-weyl/classical_import/tests -p 'test_*.py'",
+      "elapsed_seconds": 4.092,
+      "status": "PASS_63_TESTS"
+    },
+    {
+      "tier": 1,
+      "command": "PYTHONPATH=ci python3 -m unittest ci/test_standalone_provenance.py -v",
+      "elapsed_seconds": 0.539,
+      "status": "PASS_10_FAIL_CLOSED_PROVENANCE_TESTS"
+    },
+    {
+      "tier": 2,
+      "command": "PY312=/home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3; PYTHONPATH=quantum-weyl \"$PY312\" -m classical_import.antifield_contract_certificate --emit --check && PYTHONPATH=quantum-weyl \"$PY312\" -m classical_import.support_local_q2_contract_certificate --emit --check && PYTHONPATH=quantum-weyl \"$PY312\" -m classical_import.classical_snapshot_compatibility_readiness --emit --check",
+      "elapsed_seconds": 0.3,
+      "status": "PASS_LEGACY_RECEIVER_RECEIPTS_REGENERATED"
+    },
+    {
+      "tier": 2,
+      "command": "PY312=/home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3; PYTHONPATH=quantum-weyl \"$PY312\" -m classical_import.antifield_contract_v2_certificate --emit --check && PYTHONPATH=quantum-weyl \"$PY312\" -m classical_import.minimal_bv_antifield_import_v2_certificate --emit --check && PYTHONPATH=quantum-weyl \"$PY312\" quantum-weyl/classical_import/analytic_operator_snapshot_attribution.py --emit --check && PYTHONPATH=quantum-weyl \"$PY312\" -m classical_import.repository_classical_snapshot_compatibility --emit --check && PYTHONPATH=quantum-weyl \"$PY312\" -m classical_import.classical_snapshot_compatibility_readiness --emit --check && python3 quantum-weyl/classical_import/build_classical_import_gate_v2_reconciliation.py",
+      "elapsed_seconds": 2.1,
+      "status": "PASS_AFFECTED_CERTIFICATE_CHAIN_REGENERATED_IN_DEPENDENCY_ORDER"
+    },
+    {
+      "tier": 2,
+      "command": "PY312=/home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3; PYTHONPATH=quantum-weyl \"$PY312\" -m classical_import.verify_antifield_contract_v2 && PYTHONPATH=quantum-weyl \"$PY312\" -m classical_import.verify_minimal_bv_antifield_import_v2 && PYTHONPATH=quantum-weyl \"$PY312\" -m classical_import.verify_analytic_operator_snapshot_attribution && PYTHONPATH=quantum-weyl \"$PY312\" -m classical_import.verify_repository_classical_snapshot_compatibility && PYTHONPATH=quantum-weyl \"$PY312\" -m classical_import.verify_classical_snapshot_compatibility_readiness",
+      "elapsed_seconds": 2.2,
+      "status": "PASS_FIVE_INDEPENDENT_DOWNSTREAM_VERIFIERS"
+    },
+    {
+      "tier": 2,
+      "command": "python3 ci/standalone_history_crosswalk.py --check",
+      "elapsed_seconds": 61.0,
+      "status": "PASS_244_RESOLVED_2_EXTERNAL_0_UNRESOLVED"
+    }
+  ],
+  "tier_3_not_run": "No classical or quantum freeze, theorem lifecycle promotion, shared core algebra change, release, or tag is made. Gate A remains FAIL_CLOSED and the affected import and provenance certificate chains are covered by tiers 0-2.",
+  "claim_boundary": "The standalone migration repair authenticates the same historically pinned bytes and restores receiver replay. It does not establish a complete classical freeze, strict pure-Weyl q2 or D, the residual SDR, a Hadamard state, QME restoration, residual transfer, or any Lorentzian quantum theorem."
+}

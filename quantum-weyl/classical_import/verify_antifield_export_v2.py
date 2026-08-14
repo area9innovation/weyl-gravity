@@ -18,10 +18,15 @@ from fractions import Fraction
 import hashlib
 import json
 from pathlib import Path
-import subprocess
 import sys
 from typing import Any, Iterable, Mapping
 
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+
+from ci.standalone_provenance import (
+    ProvenanceResolutionError,
+    read_attached_blob,
+)
 from local_bv.filtered_complex import FilteredDegree, FilteredLocalComplex
 from local_bv.relative_cohomology import SparseMatrix
 
@@ -298,26 +303,18 @@ def _verify_pinned(
         raise AntifieldExportV2Error(f"missing pinned artifact: {relative}") from exc
     if hashlib.sha256(data).hexdigest() != reference["sha256"]:
         raise AntifieldExportV2Error(f"working-tree artifact hash mismatch: {relative}")
-    prefix = subprocess.run(
-        ["git", "rev-parse", "--show-prefix"],
-        cwd=root,
-        check=False,
-        capture_output=True,
-        text=True,
-    )
-    committed = subprocess.run(
-        [
-            "git",
-            "show",
-            f"{classical_commit}:{prefix.stdout.strip()}{relative}",
-        ],
-        cwd=root,
-        check=False,
-        capture_output=True,
-    )
-    if prefix.returncode or committed.returncode:
-        raise AntifieldExportV2Error(f"artifact absent at classical commit: {relative}")
-    if hashlib.sha256(committed.stdout).hexdigest() != reference["sha256"]:
+    try:
+        _, committed = read_attached_blob(
+            classical_commit,
+            relative,
+            reference["sha256"],
+            root=root,
+        )
+    except ProvenanceResolutionError as exc:
+        raise AntifieldExportV2Error(
+            f"artifact absent at classical commit: {relative}: {exc}"
+        ) from exc
+    if hashlib.sha256(committed).hexdigest() != reference["sha256"]:
         raise AntifieldExportV2Error(f"classical-commit artifact hash mismatch: {relative}")
 
 

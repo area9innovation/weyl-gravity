@@ -1,5 +1,5 @@
 {
- "distinct_dangling_commits": 245,
+ "distinct_dangling_commits": 246,
  "external": [
   {
    "old_commit": "972aa4337b73cc0f632d9599fb345098bc8ccce8",
@@ -27,9 +27,19 @@
     "black_hole_programme/phase4/axial_explicit_tplus_band_v1/amplitude_stages/q00-stage5.json::/ivtaylor",
     "black_hole_programme/phase4/axial_explicit_tplus_band_v1/amplitude_stages/q00-stage6.json::/ivtaylor"
    ]
+  },
+  {
+   "old_commit": "a6945d0e50c06ab970f5957fb56f18146c72e4d9",
+   "paths": [
+    "forge/examples/reverse_physics_torus_gate.forge"
+   ],
+   "reason": "pins the external tango/forge substrate repository, which was never part of this subtree",
+   "sites": [
+    "reverse_physics/certificates/REVERSE_PHYSICS_HAMILTONIAN_PRIVILEGE_TORUS_G1_V1.json::/upstream_computation"
+   ]
   }
  ],
- "external_count": 1,
+ "external_count": 2,
  "mapping": {
   "014f10b9477d762222c724b9eb61ce0d1c46128d": {
    "new_commit": "ce0122d8672f59070348c30f15077725cac565da",
@@ -2822,7 +2832,7 @@
    "witness_sha256": "4f936ceb99a73e3f9b32f3faabd90320feee4e076dc0fd359abb8592ff15dbdc"
   }
  },
- "pins_examined": 858,
+ "pins_examined": 859,
  "pins_with_live_commit": 2,
  "prefix_stripped": "physics/symplectic-reconstruction/",
  "resolved_count": 244,

@@ -6,10 +6,16 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
-import subprocess
 import sys
 from pathlib import Path
 from typing import Any
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+
+from ci.standalone_provenance import (
+    ProvenanceResolutionError,
+    read_attached_blob,
+)
 
 
 REQUIRED_ROLES = {
@@ -108,27 +114,18 @@ def _verify_pinned_artifact(
     if hashlib.sha256(working_data).hexdigest() != expected_sha256:
         raise AntifieldExportError(f"working-tree proof hash mismatch: {relative}")
 
-    prefix = subprocess.run(
-        ["git", "rev-parse", "--show-prefix"],
-        cwd=root,
-        check=False,
-        capture_output=True,
-        text=True,
-    )
-    if prefix.returncode != 0:
-        raise AntifieldExportError("repository_root is not inside a Git worktree")
-    git_relative = prefix.stdout.strip() + relative
-    committed = subprocess.run(
-        ["git", "show", f"{classical_commit}:{git_relative}"],
-        cwd=root,
-        check=False,
-        capture_output=True,
-    )
-    if committed.returncode != 0:
-        raise AntifieldExportError(
-            f"proof artifact is absent at classical_commit: {relative}"
+    try:
+        _, committed = read_attached_blob(
+            classical_commit,
+            relative,
+            expected_sha256,
+            root=root,
         )
-    if hashlib.sha256(committed.stdout).hexdigest() != expected_sha256:
+    except ProvenanceResolutionError as exc:
+        raise AntifieldExportError(
+            f"proof artifact is absent at classical_commit: {relative}: {exc}"
+        ) from exc
+    if hashlib.sha256(committed).hexdigest() != expected_sha256:
         raise AntifieldExportError(f"classical-commit proof hash mismatch: {relative}")
 
 

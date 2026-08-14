@@ -61,3 +61,16 @@ and the pinned dependency/proof artifacts. The finite scope contains 28
 monomials in twelve filtered spaces; seven generated monomials outside the
 declared window are recorded and projected. The next gate is the actual
 minimal-BV relative-cohomology quotient.
+
+## Current Gate-A disposition
+
+The broader twenty-export and ten-identity receiver gate is now reconciled in
+[`CLASSICAL_IMPORT_GATE_V2_RECONCILIATION.json`](certificates/CLASSICAL_IMPORT_GATE_V2_RECONCILIATION.json)
+and its readable [`Gate-A report`](REPORT_GATE_V2.md). The minimal-BV import
+above is one same-theory scoped repair, not a complete freeze. The current
+gate remains fail-closed because no single strict pure-Weyl snapshot yet
+contains the support-local `q2` and `D`, residual `iota_cl`, `pi_cl` and
+`s_cl`, full cyclic pairing, exact residual tensors, and normalized centered
+representatives required for all ten independent receiver checks. Exact
+Berger interaction data and strict causal/auxiliary homotopies are retained as
+controls but are not relabelled as those missing strict residual objects.

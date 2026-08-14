@@ -11,10 +11,16 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
-import subprocess
 import sys
 from pathlib import Path
 from typing import Any
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+
+from ci.standalone_provenance import (
+    ProvenanceResolutionError,
+    read_attached_blob,
+)
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
@@ -108,29 +114,19 @@ def _safe_repo_path(relative: str) -> Path:
     return resolved
 
 
-def _git_blob(commit: str, relative: str) -> bytes:
-    prefix_proc = subprocess.run(
-        ["git", "rev-parse", "--show-prefix"],
-        cwd=REPO_ROOT,
-        check=False,
-        capture_output=True,
-        text=True,
-    )
-    if prefix_proc.returncode != 0:
-        raise SnapshotError("cannot determine the workspace prefix inside the Git repository")
-    git_relative = prefix_proc.stdout.strip() + relative
-    proc = subprocess.run(
-        ["git", "show", f"{commit}:{git_relative}"],
-        cwd=REPO_ROOT,
-        check=False,
-        capture_output=True,
-    )
-    if proc.returncode != 0:
-        message = proc.stderr.decode("utf-8", errors="replace").strip()
-        raise SnapshotError(
-            f"artifact is unavailable at classical commit {commit}: {relative}: {message}"
+def _git_blob(commit: str, relative: str, expected_sha256: str) -> bytes:
+    try:
+        _, payload = read_attached_blob(
+            commit,
+            relative,
+            expected_sha256,
+            root=REPO_ROOT,
         )
-    return proc.stdout
+    except ProvenanceResolutionError as exc:
+        raise SnapshotError(
+            f"artifact is unavailable at classical commit {commit}: {relative}: {exc}"
+        ) from exc
+    return payload
 
 
 def _validate_shape(snapshot: dict[str, Any]) -> None:
@@ -227,7 +223,7 @@ def _verify_artifacts(snapshot: dict[str, Any]) -> dict[str, dict[str, Any]]:
                     f"working-tree hash mismatch for {relative}: {working_hash} != {expected}"
                 )
 
-            commit_hash = _sha256(_git_blob(commit, relative))
+            commit_hash = _sha256(_git_blob(commit, relative, expected))
             if commit_hash != expected:
                 raise SnapshotError(
                     f"classical-commit hash mismatch for {relative}: {commit_hash} != {expected}"
