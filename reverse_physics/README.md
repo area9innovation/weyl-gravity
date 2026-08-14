@@ -204,6 +204,12 @@ bt_euclidean_quartic_score_power_obstruction.py
                                        L^2 lower bound for its isolated free
                                        square; the complete order-g^4
                                        cancellation remains open
+bt_euclidean_complete_g4_uv_noncancellation.py
+                                       complete signed order-g^4 background-
+                                       score formula and proof that its p^2
+                                       sector cannot cancel on fixed UV
+                                       carriers; the infrared complement is
+                                       the remaining whole-lattice gate
 bt_four_point_bubble_log_jet.py        first virtual coefficient: arbitrary-mass
                                        bubble logarithm and four-leg interference jet
 bt_triangle_box_log_jet.py             complete triangle and box logarithmic jets;

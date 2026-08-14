@@ -1533,6 +1533,49 @@ $L^2$ sector.  The immediate gate is to put every order-$g^4$ contribution in
 one Wiener-chaos basis and decide that exact cancellation before attempting a
 whole-composite or nonperturbative annealed bound.
 
+That complete fixed-order bookkeeping is now available.  Certificate
+\cert{REVERSE_PHYSICS_BT_EUCLIDEAN_COMPLETE_G4_UV_NONCANCELLATION_V1}
+first integrates the free lowest-mode fiber.  With
+$A=D_hS_1$, $B=D_hS_2$, $C=D_hS_3$ and effective background-action
+coefficients
+
+\[
+ W_1=\mathbb E_T[S_1],\qquad
+ W_2=\mathbb E_T[S_2]-\frac12\operatorname{Var}_T(S_1),
+\]
+
+normalization of the background measure gives the exact coefficient
+
+\[
+ M_4=\mathbb E_0\left[
+ B^2+2AC-2ABW_1
+ +A^2\left(\frac12W_1^2-W_2
+ -\mathbb E_0\left[\frac12W_1^2-W_2\right]\right)
+ \right].
+\]
+
+Equivalently, this is obtained by multiplying the score by
+$\sqrt{d\nu_g/d\nu_0}$ and expanding its free squared norm.  This second
+form checks that the Gibbs-density and partition-function terms have not been
+omitted.
+
+On fixed inversion-symmetric ultraviolet carriers, the formula decides the
+cancellation question.  The exact cubic score is $O(p^2)$, the quartic score
+is $O(p)$ with the nonzero derivative above, and the quintic score is at least
+$O(p)$ because each field leg occurs in a directed-edge factor.  The effective
+density introduces no inverse external power.  Hence $B^2$ has a positive
+$p^2$ third-chaos coefficient, while the apparent $p^3$ cross terms vanish by
+real-cosine parity and begin at $p^4$.  No local, fixed-UV, or
+diagram-by-diagram cancellation of the power sector is possible.
+
+The unrestricted lattice coefficient nevertheless remains open.  The fixed-
+carrier Taylor expansion is not uniform in momentum regions that shrink
+toward zero with $p$.  Any cancellation must now come from that infrared
+complement and occur only after summation across regions.  The next gate is a
+polylogarithmic bound on the signed complement, or an exact computation of its
+$N\omega_p$ coefficient.  The UV theorem alone is not an interacting
+divergence or continuum result.
+
 \subsection{A finite BV contraction does not freeze the quantum theory}
 
 The energy-two free BV block provides another finite exact case.  The
@@ -1908,10 +1951,13 @@ The next quartic calculation also proves that the isolated free square of the
 quartic zero-fiber score grows at least as $L^2$: its exact four-leg kernel is
 only linearly soft, with derivative $-1/3$ at a quarter-period fixture.
 Running $g_L^4$ is only logarithmically small and cannot suppress that power
-by itself.  The full order-$g^4$ coefficient is nevertheless a signed
-composite and remains open; an exact cancellation among score, measure,
-normalization, projection, and higher-Taylor pieces must now be decided in a
-common Wiener-chaos basis.
+by itself.  The complete order-$g^4$ formula is now assembled, and its signed
+corrections cannot cancel the positive $p^2$ term on any fixed ultraviolet
+carrier: they begin at $p^4$ after real-cosine parity.  The unrestricted
+coefficient still remains open because a nonuniform contribution from the
+shrinking infrared complement could cancel the UV sector only after
+summation.  Bounding or computing that complement is now the precise
+fixed-order gate.
 The logarithmic coefficient is not evidence that the resummed interacting
 moment diverges.  Only after the normalized marginal closes should the
 programme sum Fourier shells.  Another fixed-origin, pointwise,

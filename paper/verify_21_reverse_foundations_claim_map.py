@@ -112,6 +112,7 @@ def main() -> int:
     bt_score_rg = json.loads((ROOT / data["authorities"]["bt_score_rg_matching"]["path"]).read_text())
     bt_ward_weight = json.loads((ROOT / data["authorities"]["bt_zero_fiber_ward_weight_obstruction"]["path"]).read_text())
     bt_quartic_score = json.loads((ROOT / data["authorities"]["bt_quartic_score_power_obstruction"]["path"]).read_text())
+    bt_complete_g4 = json.loads((ROOT / data["authorities"]["bt_complete_g4_uv_noncancellation"]["path"]).read_text())
     dims = cube["dimensions"]
     atlas = data["atlas_snapshot"]
     require(atlas["axis_sizes"] == [6, 6, 16], "unexpected axis sizes")
@@ -268,6 +269,11 @@ def main() -> int:
     require(atlas["bt_isolated_quartic_square_status"] == bt_quartic_score["method_disposition"]["isolated_quartic_score_square_uniform_in_L"] == "OBSTRUCTED", "BT isolated quartic-square obstruction drift")
     require(atlas["bt_complete_order_g_four_score_status"] == bt_quartic_score["method_disposition"]["complete_order_g_four_score_coefficient"] == "OPEN", "BT isolated quartic result promoted to complete order g4")
     require(atlas["bt_quartic_power_cancellation_status"] == bt_quartic_score["method_disposition"]["power_cancellation_in_renormalized_zero_fiber_composite"] == "OPEN", "BT quartic power cancellation promoted")
+    require(atlas["bt_complete_g4_formula_status"] == bt_complete_g4["method_disposition"]["complete_order_g_four_background_score_formula"] == "PROVED", "BT complete order-g4 formula drift")
+    require(atlas["bt_complete_g4_uv_coefficient_status"] == bt_complete_g4["method_disposition"]["complete_order_g_four_uv_local_p_squared_coefficient"] == "POSITIVE_NONZERO", "BT complete order-g4 UV coefficient drift")
+    require(atlas["bt_complete_g4_uv_cancellation_status"] == bt_complete_g4["method_disposition"]["uv_local_or_diagramwise_power_cancellation"] == "OBSTRUCTED", "BT complete order-g4 UV noncancellation drift")
+    require(atlas["bt_complete_g4_whole_lattice_cancellation_status"] == bt_complete_g4["method_disposition"]["whole_lattice_order_g_four_power_cancellation"] == "OPEN", "BT UV-local result promoted to whole-lattice cancellation decision")
+    require(atlas["bt_complete_g4_ir_complement_status"] == bt_complete_g4["method_disposition"]["infrared_complement_power_bound"] == "OPEN", "BT infrared complement promoted")
 
     allowed_tags = {"LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE", "LORENTZIAN-CAUSAL"}
     claim_ids = set()
@@ -355,6 +361,10 @@ def main() -> int:
     require(flags["bt_isolated_quartic_score_square_uniformity_obstructed"] is True, "BT isolated quartic-square obstruction omitted")
     require(flags["bt_complete_order_g_four_score_established"] is False, "BT isolated quartic result promoted to complete order g4")
     require(flags["bt_quartic_power_cancellation_established"] is False, "BT quartic power cancellation promoted")
+    require(flags["bt_complete_order_g_four_formula_established"] is True, "BT complete order-g4 formula omitted")
+    require(flags["bt_complete_order_g_four_uv_noncancellation_established"] is True, "BT complete order-g4 UV noncancellation omitted")
+    require(flags["bt_complete_order_g_four_whole_lattice_decided"] is False, "BT UV-local result promoted to whole-lattice decision")
+    require(flags["bt_complete_order_g_four_ir_complement_bounded"] is False, "BT infrared complement promoted")
     require(flags["bt_runaway_family_recentered_conditional_variance_established"] is True, "BT runaway-family recentered variance flag missing")
     require(flags["bt_runaway_family_conditional_mean_escape_established"] is True, "BT runaway-family conditional-mean escape flag missing")
     require(flags["bt_annealed_center_second_moment_established"] is False, "BT annealed center moment promoted")

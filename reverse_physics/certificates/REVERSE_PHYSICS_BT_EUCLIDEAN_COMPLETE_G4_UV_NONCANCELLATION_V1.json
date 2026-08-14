@@ -1,0 +1,212 @@
+{
+  "answer": "No. Integrating the free lowest-mode fiber gives effective background coefficients W1=<S1>_t and W2=<S2>_t-(1/2)Var_t(S1). If A=D_hS1, B=D_hS2, and C=D_hS3 at zero fiber, the exact normalized order-g^4 coefficient is E0[B^2+2AC-2ABW1+A^2*(W1^2/2-W2-E0[W1^2/2-W2])]. Equivalently it is the order-g^4 norm coefficient after multiplying the score by the square root of the normalized background density. On any inversion-symmetric compact internal-momentum carrier separated from all soft singular sets, A is O(p^2), B is O(p) with exact nonzero derivative -1/3 at the certified quarter-period fixture, C is O(p), and W1,W2 introduce no inverse external power. Real-cosine parity removes the apparent O(p^3) cross terms. Hence every signed correction starts at O(p^4), while B^2 has a strictly positive O(p^2) third-Wiener-chaos block. The power sector therefore cannot cancel locally or diagram by diagram in the ultraviolet. This does not yet decide the complete lattice sum: cancellation could only be nonuniform across momentum regions, through the infrared complement as p tends to zero.",
+  "certificate": "REVERSE_PHYSICS_BT_EUCLIDEAN_COMPLETE_G4_UV_NONCANCELLATION_V1",
+  "checks": {
+    "action_S1_fixture_is_three": true,
+    "action_S2_fixture_is_sixty_seven_over_twenty_four": true,
+    "action_S3_fixture_is_eleven_over_six": true,
+    "complete_order_g_four_formula_includes_all_density_terms": true,
+    "cubic_score_is_quadratically_soft_on_fixed_uv_carriers": true,
+    "density_coefficients_have_no_inverse_external_power_on_fixed_uv_carriers": true,
+    "direct_and_square_root_M4_forms_agree": true,
+    "fiber_W1_fixture_is_seven": true,
+    "fiber_W2_fixture_is_minus_nine_hundred_sixty_nine": true,
+    "fiber_variance_fixture_is_two_thousand_one_hundred_ninety_two": true,
+    "no_continuum_born_krein_or_lorentzian_promotion": true,
+    "normalization_fixture_has_centered_W1": true,
+    "only_quartic_square_contributes_to_uv_local_p_squared_coefficient": true,
+    "quartic_score_is_linearly_soft_with_nonzero_exact_fixture": true,
+    "quintic_score_is_at_least_linearly_soft_on_fixed_uv_carriers": true,
+    "real_cosine_score_moment_is_even_in_external_momentum": true,
+    "whole_lattice_order_g_four_coefficient_remains_uncomputed": true
+  },
+  "complete_order_g_four": {
+    "base_law": "nu0 is the free orthogonal-background Gaussian probability measure",
+    "centered_first_density": "E0[W1]=0 by phi-to-minus-phi parity",
+    "density_second_coefficient": "r2=W1^2/2-W2 and z2=E0[r2]",
+    "direct_formula": "M4=E0[B^2+2*A*C-2*A*B*W1+A^2*(W1^2/2-W2-z2)]",
+    "exact_normalization_fixture": {
+      "M2": {
+        "denominator": 1,
+        "numerator": 3
+      },
+      "M3": {
+        "denominator": 3,
+        "numerator": 5
+      },
+      "M4_direct": {
+        "denominator": 12,
+        "numerator": -211
+      },
+      "M4_square_root": {
+        "denominator": 12,
+        "numerator": -211
+      },
+      "mean_W1": {
+        "denominator": 1,
+        "numerator": 0
+      },
+      "normalization_z2": {
+        "denominator": 4,
+        "numerator": 13
+      }
+    },
+    "fixed_space_score": "sqrt(dnu_g/dnu0)*s_g=g*A+g^2*(B-W1*A/2)+g^3*(C-W1*B/2+(W1^2/8-W2/2-z2/2)*A)+O(g^4)",
+    "norm_formula": "M4=||B-W1*A/2||_0^2+2*<A,C-W1*B/2+(W1^2/8-W2/2-z2/2)*A>_0",
+    "square_root_density": "sqrt(dnu_g/dnu0)=1-g*W1/2+g^2*(W1^2/8-W2/2-z2/2)+O(g^3)",
+    "status": "COMPLETE_THROUGH_ORDER_G_FOUR"
+  },
+  "created": "2026-08-14",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "does_not_establish": [
+    "the sign or scaling of the unrestricted whole-lattice order-g^4 coefficient",
+    "a bound on the p-dependent infrared complement of the fixed ultraviolet carriers",
+    "divergence of the resummed or nonperturbative annealed score or interacting H^-1 moment",
+    "tightness, continuum identification, a Born rule, Krein reconstruction, or anything LORENTZIAN-CAUSAL"
+  ],
+  "exact_action_expansion": {
+    "S1": "S1=(1/2)*sum_x a_x*b_x",
+    "S2": "S2=sum_x(a_x*c_x/6+b_x^2/8)",
+    "S3": "S3=sum_x(a_x*d_x/24+b_x*c_x/12)",
+    "action": "S_g=S0+g*S1+g^2*S2+g^3*S3+O(g^4)",
+    "edge_powers": "a_x=sum_delta y_delta, b_x=sum_delta y_delta^2, c_x=sum_delta y_delta^3, d_x=sum_delta y_delta^4",
+    "exact_fixture": {
+      "S1": {
+        "denominator": 1,
+        "numerator": 3
+      },
+      "S2": {
+        "denominator": 24,
+        "numerator": 67
+      },
+      "S3": {
+        "denominator": 6,
+        "numerator": 11
+      }
+    },
+    "residual": "g^-1*R_x(g*phi)=a_x+(g/2)*b_x+(g^2/6)*c_x+(g^3/24)*d_x+O(g^4)",
+    "score_coefficients": "s_g(eta)=D_hS_g(eta)=g*A+g^2*B+g^3*C+O(g^4), with A=D_hS1, B=D_hS2, C=D_hS3",
+    "status": "PROVED_BY_EXACT_TAYLOR_EXTRACTION"
+  },
+  "free_fiber_effective_action": {
+    "W1": "W1=alpha0+v*alpha2",
+    "W2": "W2=E_T[S2]-(1/2)*Var_T(S1)",
+    "derivation": "-log E_T[exp(-g*S1-g^2*S2+O(g^3))]=g*W1+g^2*W2+O(g^3)",
+    "exact_fixture": {
+      "MeanS2": {
+        "denominator": 1,
+        "numerator": 127
+      },
+      "VarS1": {
+        "denominator": 1,
+        "numerator": 2192
+      },
+      "W1": {
+        "denominator": 1,
+        "numerator": 7
+      },
+      "W2": {
+        "denominator": 1,
+        "numerator": -969
+      },
+      "variance": {
+        "denominator": 1,
+        "numerator": 2
+      }
+    },
+    "fiber_polynomials": "S1(eta+T*h)=alpha0+alpha1*T+alpha2*T^2+alpha3*T^3 and S2(eta+T*h)=beta0+beta1*T+beta2*T^2+beta3*T^3+beta4*T^4",
+    "free_coordinate_law": "T is centered Gaussian with variance v=2/(N*omega_p^2)",
+    "mean_S2": "E_T[S2]=beta0+v*beta2+3*v^2*beta4",
+    "status": "PROVED_BY_EXACT_GAUSSIAN_MOMENTS",
+    "variance_S1": "Var_T(S1)=v*alpha1^2+v^2*(2*alpha2^2+6*alpha1*alpha3)+15*v^3*alpha3^2"
+  },
+  "global_cancellation_boundary": {
+    "not_decided": "The unrestricted lattice momentum sums include regions whose distance from zero shrinks with p. Taylor expansion on a fixed compact carrier is not uniform there.",
+    "only_remaining_cancellation_architecture": "A cancellation of the full M4 power term would have to come from the infrared complement or another p-dependent momentum region and cancel the fixed UV contribution only after summation; it cannot be pointwise, local in momentum, or a cancellation among the displayed UV Taylor coefficients.",
+    "required_next_estimate": "Prove that the complement of fixed UV carriers is o(N*omega_p), or compute its exact N*omega_p coefficient. A polylogarithmic bound after extracting the cubic soft factors would suffice to show that the positive UV power survives.",
+    "status": "WHOLE_LATTICE_COEFFICIENT_OPEN_IR_COMPLEMENT_ISOLATED"
+  },
+  "lifecycle_state": "COMPLETE_ORDER_G4_UV_LOCAL_CANCELLATION_OBSTRUCTED",
+  "method_disposition": {
+    "actual_interacting_h_minus_one_second_moment": "OPEN",
+    "born_rule": "NOT_ESTABLISHED",
+    "complete_order_g_four_background_score_formula": "PROVED",
+    "complete_order_g_four_uv_local_p_squared_coefficient": "POSITIVE_NONZERO",
+    "continuum_limit": "NOT_ESTABLISHED",
+    "infrared_complement_power_bound": "OPEN",
+    "krein_reconstruction": "NOT_ASSESSED",
+    "lorentzian_transfer": "NOT_ESTABLISHED",
+    "nonperturbative_annealed_zero_fiber_score_bound": "OPEN",
+    "normalized_lowest_mode_second_moment": "OPEN",
+    "uv_local_or_diagramwise_power_cancellation": "OBSTRUCTED",
+    "whole_lattice_order_g_four_power_cancellation": "OPEN"
+  },
+  "missing_object_ledger": [
+    "an exact or rigorous asymptotic evaluation of the infrared complement of the complete M4 formula",
+    "a decision whether the unrestricted N*omega_p power coefficient survives after all momentum regions are summed",
+    "after that decision, a whole-composite renormalized or nonperturbative annealed score estimate",
+    "after the one-mode theorem, dyadic Fourier-shell control of the actual interacting H^-1 moment"
+  ],
+  "next_gate": "Use the complete M4 formula rather than another isolated summand. Decompose its Wick contractions into fixed UV carriers and a p-dependent infrared complement. Prove a polylogarithmic bound on every signed complement term after its exact soft factors are extracted, or compute the complement's N*omega_p coefficient. This decides whether the certified positive UV power survives in the unrestricted order-g^4 coefficient.",
+  "provenance": {
+    "analytic_arithmetic": "exact finite-volume perturbative disintegration plus analytic soft filtration on compact momentum carriers",
+    "assumptions": [
+      "finite-volume coercivity permits the displayed Taylor expansion under the one-dimensional fiber integral",
+      "the UV-local carrier remains a positive distance from all internal soft singular sets as p tends to zero",
+      "the unrestricted infrared complement is not silently identified with the proved compact-carrier result"
+    ],
+    "exact_arithmetic": "Python Fraction arithmetic for the action, Gaussian-fiber, normalization, and square-root-density fixtures",
+    "inputs": [
+      {
+        "path": "planning/work-items/reverse-physics-bateman-euclidean-continuum-reconstruction.json",
+        "sha256": "6e7146c21f056740edf9fe6feaaa8a14aaab945fe11f1b6a23110ecd5b85bf5a"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_CUBIC_SCORE_LOG_OBSTRUCTION_V1.json",
+        "sha256": "dc69e440ea9608c0bd94622e306501c819695877647d27c9481e88ab691cb7c7"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_SCORE_RG_MATCHING_V1.json",
+        "sha256": "4b73733c56953bda240f4d3c55bdf8cf2616ae222fea2c79c197f8feb9fd28a8"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_QUARTIC_SCORE_POWER_OBSTRUCTION_V1.json",
+        "sha256": "a4f3924ed977a33446e2f4b84c0f88c7c776ad0ca564b620d133132cde6a6d1d"
+      },
+      {
+        "path": "reverse_physics/data/anderson_bateman_herzog_turok_quartic_soft_source_v1.json",
+        "sha256": "f98ad7588bf9dacdb66d30d0cae18179a22e29549d3d833fc5858b594143ba44"
+      }
+    ],
+    "repository_base_commit": "a3c3a6f3a13357e7b0f42c1cfe60a6ddf03f5b1f"
+  },
+  "question": "Can the signed measure, normalization, projection, and higher-score terms in the complete order-g^4 coefficient cancel the quartic-score p^2 sector locally on the same fixed ultraviolet momentum carrier?",
+  "report": "reverse_physics/reports/bt-euclidean-complete-g4-uv-noncancellation.md",
+  "result_kind": "exact complete order-g^4 background-score expansion and UV-local power noncancellation theorem",
+  "schema": "reverse_physics/schema/reverse-physics-bt-euclidean-complete-g4-uv-noncancellation-v1.schema.json",
+  "schema_version": "reverse-physics-bt-euclidean-complete-g4-uv-noncancellation-v1",
+  "uv_local_soft_filtration": {
+    "carrier": "all internal momenta lie in fixed inversion-symmetric compact sets separated from zero, the conditioned +/-p block, and every internal soft singular set",
+    "conclusion": "The complete UV-local p^2 coefficient equals the positive third-Wiener-chaos coefficient of B^2 and cannot be canceled by any other order-g^4 term on the same fixed carrier.",
+    "cubic_score": "A=O(|p|^2), from the exact lattice cubic/Heron soft-leg identity",
+    "effective_density": "W1 and W2 have analytic fixed-carrier kernels and introduce no inverse external power; in d=4, v=2/(N*omega_p^2) stays bounded on the refinement sequence",
+    "parity": "the real-cosine score moment is invariant under p-to-minus-p, so analytic O(|p|^3) cross terms start at O(|p|^4)",
+    "quartic_score": "B=O(|p|), and dK4/dp0=-1/3 at the exact quarter-period fixture",
+    "quintic_score": "C=O(|p|), because every leg of every S3 Fourier monomial occurs in a directed-edge factor exp(i*k dot delta)-1",
+    "status": "UV_LOCAL_POWER_CANCELLATION_OBSTRUCTED",
+    "term_orders": {
+      "A_squared_density_terms": "O(|p|^4)",
+      "A_times_B_times_W1": "O(|p|^3), hence O(|p|^4) after parity",
+      "A_times_C": "O(|p|^3), hence O(|p|^4) after parity",
+      "B_squared": "O(|p|^2) with a strictly positive coefficient on an open neighborhood of the exact fixture"
+    }
+  },
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_euclidean_complete_g4_uv_noncancellation.py --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_euclidean_complete_g4_uv_noncancellation.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_euclidean_complete_g4_uv_noncancellation"
+  ]
+}

@@ -35,6 +35,11 @@
       "numerator": 2627836
     },
     "bt_centered_fiber_relative_domination_status": "OBSTRUCTED",
+    "bt_complete_g4_formula_status": "PROVED",
+    "bt_complete_g4_ir_complement_status": "OPEN",
+    "bt_complete_g4_uv_cancellation_status": "OBSTRUCTED",
+    "bt_complete_g4_uv_coefficient_status": "POSITIVE_NONZERO",
+    "bt_complete_g4_whole_lattice_cancellation_status": "OPEN",
     "bt_complete_order_g_four_score_status": "OPEN",
     "bt_conditional_escape_m2_tail_exponent": -439021411393052584794547814301,
     "bt_conditional_mass_escape_status": "PROVED",
@@ -294,6 +299,16 @@
       "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_CENTERED_FIBER_DOMINATION_OBSTRUCTION_V1.json",
       "result_id": "REVERSE_PHYSICS_BT_EUCLIDEAN_CENTERED_FIBER_DOMINATION_OBSTRUCTION_V1",
       "sha256": "d889a559d0b334492f85fc86be4ba5084311f718017b526104f0cd8f1f279467"
+    },
+    "bt_complete_g4_uv_noncancellation": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL"
+      ],
+      "lifecycle": "COMPLETE_ORDER_G4_UV_LOCAL_CANCELLATION_OBSTRUCTED",
+      "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_COMPLETE_G4_UV_NONCANCELLATION_V1.json",
+      "result_id": "REVERSE_PHYSICS_BT_EUCLIDEAN_COMPLETE_G4_UV_NONCANCELLATION_V1",
+      "sha256": "3a3e2c87161689224cc66d644b558e870901d6e5aae496e320df87855b6dda1e"
     },
     "bt_conditional_mass_escape_obstruction": {
       "dependency_tags": [
@@ -671,7 +686,7 @@
       "sha256": "3182339b6fc77d8652204cc115d87cd4afc4dea193cd48cf189f153cf59718d6"
     }
   },
-  "canonical_digest": "e31d48f7fa229cb7698c29d5353b9c9bd67335cbe15bb21e9cff177f3f640c52",
+  "canonical_digest": "eb2db417744dd4f1f8144aecc0986967c207d7d6bd27a0e614d5ee4b7be6f0d5",
   "claim_flags": {
     "atlas_exhaustive": false,
     "axes_independent_proved": false,
@@ -685,7 +700,11 @@
     "bt_annealed_recentered_fiber_bound_established": false,
     "bt_center_to_zero_fiber_score_reduction_established": true,
     "bt_centered_pointwise_fiber_domination_obstructed": true,
+    "bt_complete_order_g_four_formula_established": true,
+    "bt_complete_order_g_four_ir_complement_bounded": false,
     "bt_complete_order_g_four_score_established": false,
+    "bt_complete_order_g_four_uv_noncancellation_established": true,
+    "bt_complete_order_g_four_whole_lattice_decided": false,
     "bt_conditional_mass_escape_established": true,
     "bt_direct_action_fiber_bound_established": false,
     "bt_eom_to_zero_fiber_general_transfer_obstructed": true,
@@ -925,15 +944,16 @@
         "bt_cubic_score_log_obstruction",
         "bt_score_rg_matching",
         "bt_zero_fiber_ward_weight_obstruction",
-        "bt_quartic_score_power_obstruction"
+        "bt_quartic_score_power_obstruction",
+        "bt_complete_g4_uv_noncancellation"
       ],
       "claim_id": "RF-13-BT-INTERACTING-RECONSTRUCTION-FRONTIER",
       "dependency_tags": [
         "LOCAL-ALGEBRAIC",
         "EUCLIDEAN-SPECTRAL"
       ],
-      "statement": "At lambda=0.4 on the 6^4 lattice, an exact two-point reflected density-kernel minor obstructs ordinary OS positivity. The affine virial theorem proves a volume-uniform actual Gibbs action-density bound and annealed half-action factor. Exact period-four data obstruct the global Schur route. The residual map identifies positive fields modulo scale with a Schr\u00f6dinger spectrahedral boundary and gives the exact normalized Gaussian-surface/tree-Jacobian pushforward. Its curvature and tree-Jacobian shortcuts are obstructed. An exact orthogonal-background family makes centered pointwise relative-action domination fail. On the subsequence eta_m=4m log(2) a, every global fiber minimizer lies below u=-m and the conditional probability of u>=-m is at most 2^-m, so the background-uniform raw conditional second moment is obstructed. On that same runaway family, however, K_m(2^u)>=115/4 proves a uniform recentered conditional-variance bound and E_qm[u]<-m/2: the obstruction is moving center rather than widening fiber. A plaquette absorption theorem proves for every background and L>=4 that the lowest axial curvature is at least (2/9)*N*omega_L^2 and conditional variance is at most 9/(2*N*omega_L^2). Strong convexity reduces the annealed center to one zero-fiber-score estimate. Its leading free orthogonal-background coefficient has residue 5/(16*pi^2) times log L, obstructing fixed-bare coefficientwise uniformity. On a fixed-physical-volume asymptotically free trajectory, however, g_L^2 log L tends to 8*pi^2/5 and the leading normalized score coefficient tends exactly to 1/2. This restores leading-log uniformity only on the tuned refinement branch. The exact ordinary equation-of-motion Ward identity controls the sampled full score, and a shifted-Gaussian fixture with full-score variance 2 but zero-fiber-score variance 100 obstructs its general transfer to the missing target. Exact disintegration further proves that constrained and integrated-marginal identities weight backgrounds by q_eta(0), while the target requires division by q_eta(0). On the actual BT runaway family the u-density obeys q_m^(u)(0)<=2^-m/m; the t-density differs only by the fixed factor 1/log(2), so no pointwise uniform lower bound can remove that weight. The annealed estimate may still succeed by exploiting the Gibbs rarity of those backgrounds. Fixed-spacing large volume, all-order resummation, and the nonperturbative Gibbs score remain open. Half-period translation proves the fully integrated marginal is even. The all-background width is closed; a nonperturbative center estimate and the actual interacting H^-1 moment remain open. The exact quartic zero-fiber-score kernel is linearly soft, with derivative -1/3 at a quarter-period fixture, and its isolated free square grows at least as L^2 after normalization. Since g_L^4 is only logarithmically small, cubic RG matching alone cannot control this term. This does not prove divergence: exact cancellation in the complete order-g^4 composite remains the next gate.",
-      "status": "EXACT_FINITE_OS_AND_METHOD_OBSTRUCTIONS_WITH_ALL_BACKGROUND_WIDTH_RG_MATCHED_LEADING_LOG_WARD_WEIGHT_AND_QUARTIC_POWER_CLASSIFICATION"
+      "statement": "At lambda=0.4 on the 6^4 lattice, an exact two-point reflected density-kernel minor obstructs ordinary OS positivity. The affine virial theorem proves a volume-uniform actual Gibbs action-density bound and annealed half-action factor. Exact period-four data obstruct the global Schur route. The residual map identifies positive fields modulo scale with a Schr\u00f6dinger spectrahedral boundary and gives the exact normalized Gaussian-surface/tree-Jacobian pushforward. Its curvature and tree-Jacobian shortcuts are obstructed. An exact orthogonal-background family makes centered pointwise relative-action domination fail. On the subsequence eta_m=4m log(2) a, every global fiber minimizer lies below u=-m and the conditional probability of u>=-m is at most 2^-m, so the background-uniform raw conditional second moment is obstructed. On that same runaway family, however, K_m(2^u)>=115/4 proves a uniform recentered conditional-variance bound and E_qm[u]<-m/2: the obstruction is moving center rather than widening fiber. A plaquette absorption theorem proves for every background and L>=4 that the lowest axial curvature is at least (2/9)*N*omega_L^2 and conditional variance is at most 9/(2*N*omega_L^2). Strong convexity reduces the annealed center to one zero-fiber-score estimate. Its leading free orthogonal-background coefficient has residue 5/(16*pi^2) times log L, obstructing fixed-bare coefficientwise uniformity. On a fixed-physical-volume asymptotically free trajectory, however, g_L^2 log L tends to 8*pi^2/5 and the leading normalized score coefficient tends exactly to 1/2. This restores leading-log uniformity only on the tuned refinement branch. The exact ordinary equation-of-motion Ward identity controls the sampled full score, and a shifted-Gaussian fixture with full-score variance 2 but zero-fiber-score variance 100 obstructs its general transfer to the missing target. Exact disintegration further proves that constrained and integrated-marginal identities weight backgrounds by q_eta(0), while the target requires division by q_eta(0). On the actual BT runaway family the u-density obeys q_m^(u)(0)<=2^-m/m; the t-density differs only by the fixed factor 1/log(2), so no pointwise uniform lower bound can remove that weight. The annealed estimate may still succeed by exploiting the Gibbs rarity of those backgrounds. Fixed-spacing large volume, all-order resummation, and the nonperturbative Gibbs score remain open. Half-period translation proves the fully integrated marginal is even. The all-background width is closed; a nonperturbative center estimate and the actual interacting H^-1 moment remain open. The exact quartic zero-fiber-score kernel is linearly soft, with derivative -1/3 at a quarter-period fixture, and its isolated free square grows at least as L^2 after normalization. Since g_L^4 is only logarithmically small, cubic RG matching alone cannot control this term. This does not prove divergence: exact cancellation in the complete order-g^4 composite remains the next gate. The complete normalized order-g^4 background-score formula is now assembled. On fixed ultraviolet carriers its signed corrections start at p^4, so they cannot cancel the positive p^2 quartic-square sector. The unrestricted coefficient remains open because such a cancellation could still be nonuniform and arise from the shrinking infrared complement.",
+      "status": "EXACT_FINITE_OS_AND_METHOD_OBSTRUCTIONS_WITH_ALL_BACKGROUND_WIDTH_RG_MATCHED_LEADING_LOG_WARD_WEIGHT_QUARTIC_POWER_AND_UV_G4_NONCANCELLATION"
     },
     {
       "authorities": [
@@ -1064,7 +1084,8 @@
     "divergence of the BT lowest-mode second moment from the centered pointwise fiber obstruction",
     "divergence of the integrated BT lowest-mode marginal from conditional mass escape on exceptional backgrounds",
     "divergence of the full interacting BT score or moment from the logarithmic leading perturbative coefficient",
-    "divergence of the full interacting BT score or moment from the isolated quartic-score square"
+    "divergence of the full interacting BT score or moment from the isolated quartic-score square",
+    "the unrestricted whole-lattice order-g^4 sign or scaling from fixed-carrier ultraviolet noncancellation"
   ],
   "formal_object": {
     "coordinates": {
@@ -1223,7 +1244,7 @@
       "source_sha256": "a1f9eaee9ab4099cfa41bd947b9d74801fa2fe783adfd2a00bbf7b0fb56d1229"
     },
     "path": "paper/21-reverse-foundations-of-physics.tex",
-    "sha256": "e5d0aa84e7cd79035562820ee034cb8d31e408a7e48a869a7ddaa3e8b7a91f66"
+    "sha256": "e395ad93eb4b451f8543788071a10c55f8408cb7113200f0052cf7d9ff338617"
   },
   "result_id": "PAPER21_REVERSE_FOUNDATIONS_INTRODUCTION_V1",
   "result_kind": "PROGRAMME_SYNTHESIS_AND_TYPED_CASE_STUDY_MAP",
