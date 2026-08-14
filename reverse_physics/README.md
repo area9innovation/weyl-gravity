@@ -210,6 +210,11 @@ bt_euclidean_complete_g4_uv_noncancellation.py
                                        sector cannot cancel on fixed UV
                                        carriers; the infrared complement is
                                        the remaining whole-lattice gate
+bt_euclidean_complete_g4_chaos_gate.py
+                                       exact Wiener-chaos reduction: every
+                                       signed cancellation is localized to
+                                       one effective second-chaos three-leg
+                                       kernel norm, now the active bound
 bt_four_point_bubble_log_jet.py        first virtual coefficient: arbitrary-mass
                                        bubble logarithm and four-leg interference jet
 bt_triangle_box_log_jet.py             complete triangle and box logarithmic jets;

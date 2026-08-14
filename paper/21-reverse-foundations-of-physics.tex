@@ -1576,6 +1576,43 @@ polylogarithmic bound on the signed complement, or an exact computation of its
 $N\omega_p$ coefficient.  The UV theorem alone is not an interacting
 divergence or continuum result.
 
+The signed complement has now been reduced to one kernel.  Certificate
+\cert{REVERSE_PHYSICS_BT_EUCLIDEAN_COMPLETE_G4_CHAOS_GATE_V1}
+uses the square-root-density normal form to write
+
+\[
+ M_4=\|D\|_0^2+2\langle A,E\rangle_0.
+\]
+
+For $L\geq4$, the actual real-cosine-conditioned covariance cannot close the
+external $\pm p$ momentum of the quadratic score $A$, so $A$ is centered and
+belongs entirely to second homogeneous Wiener chaos.  Polynomial degree and
+parity put
+$D$ in chaoses $1,3,5$ and $E$ in chaoses $0,2,4,6,8$.  Orthogonality thus
+gives the exact identity
+
+\[
+ M_4=\|D\|_0^2+2\langle A,\Pi_2E\rangle_0.
+\]
+
+All possible negative cancellation is concentrated in the effective
+three-leg kernel $\Pi_2E$; every other contribution is part of the
+nonnegative norm.  Since
+$\|A\|_0^2=O(N\omega_p^2\log L)$, a single estimate
+
+\[
+ \|\Pi_2E\|_0^2
+ \leq C_EN\omega_p(1+\log L)^b
+\]
+
+for any fixed finite $b$ would make the cross term $o(N\omega_p)$ by
+Cauchy--Schwarz.  Combined with the certified positive UV block of
+$\|D\|_0^2$, this would prove survival of the full order-$g^4$ power.  The
+estimate has not yet been proved.  Its derivation must Wick-contract the
+$W_1$, $W_2$, and normalization terms together before splitting the resulting
+kernel into hard, one-soft, and all-soft regions.  Ordinary continuum
+off-shell IR finiteness is not itself this projected lattice-composite bound.
+
 \subsection{A finite BV contraction does not freeze the quantum theory}
 
 The energy-two free BV block provides another finite exact case.  The
@@ -1957,7 +1994,10 @@ carrier: they begin at $p^4$ after real-cosine parity.  The unrestricted
 coefficient still remains open because a nonuniform contribution from the
 shrinking infrared complement could cancel the UV sector only after
 summation.  Bounding or computing that complement is now the precise
-fixed-order gate.
+fixed-order gate.  Wiener-chaos orthogonality reduces this signed complement
+to one effective second-chaos three-leg kernel: a linear-soft weighted norm
+bound for that kernel would make the only negative cross term negligible.
+That norm bound is the active calculation and remains open.
 The logarithmic coefficient is not evidence that the resummed interacting
 moment diverges.  Only after the normalized marginal closes should the
 programme sum Fourier shells.  Another fixed-origin, pointwise,

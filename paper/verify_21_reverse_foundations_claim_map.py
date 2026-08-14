@@ -113,6 +113,7 @@ def main() -> int:
     bt_ward_weight = json.loads((ROOT / data["authorities"]["bt_zero_fiber_ward_weight_obstruction"]["path"]).read_text())
     bt_quartic_score = json.loads((ROOT / data["authorities"]["bt_quartic_score_power_obstruction"]["path"]).read_text())
     bt_complete_g4 = json.loads((ROOT / data["authorities"]["bt_complete_g4_uv_noncancellation"]["path"]).read_text())
+    bt_g4_chaos = json.loads((ROOT / data["authorities"]["bt_complete_g4_chaos_gate"]["path"]).read_text())
     dims = cube["dimensions"]
     atlas = data["atlas_snapshot"]
     require(atlas["axis_sizes"] == [6, 6, 16], "unexpected axis sizes")
@@ -274,6 +275,11 @@ def main() -> int:
     require(atlas["bt_complete_g4_uv_cancellation_status"] == bt_complete_g4["method_disposition"]["uv_local_or_diagramwise_power_cancellation"] == "OBSTRUCTED", "BT complete order-g4 UV noncancellation drift")
     require(atlas["bt_complete_g4_whole_lattice_cancellation_status"] == bt_complete_g4["method_disposition"]["whole_lattice_order_g_four_power_cancellation"] == "OPEN", "BT UV-local result promoted to whole-lattice cancellation decision")
     require(atlas["bt_complete_g4_ir_complement_status"] == bt_complete_g4["method_disposition"]["infrared_complement_power_bound"] == "OPEN", "BT infrared complement promoted")
+    require(atlas["bt_g4_chaos_decomposition_status"] == bt_g4_chaos["method_disposition"]["complete_order_g_four_chaos_decomposition"] == "PROVED", "BT order-g4 chaos decomposition drift")
+    require(atlas["bt_g4_signed_second_chaos_status"] == bt_g4_chaos["method_disposition"]["all_signed_cancellation_localized_to_second_chaos"] == "PROVED", "BT signed second-chaos reduction drift")
+    require(atlas["bt_g4_positive_norm_power_status"] == bt_g4_chaos["method_disposition"]["positive_norm_uv_power_lower_bound"] == "PROVED", "BT positive norm power lower bound drift")
+    require(atlas["bt_g4_effective_kernel_bound_status"] == bt_g4_chaos["method_disposition"]["effective_second_chaos_kernel_norm_bound"] == "OPEN", "BT effective second-chaos kernel bound promoted")
+    require(atlas["bt_g4_whole_lattice_survival_status"] == bt_g4_chaos["method_disposition"]["whole_lattice_order_g_four_power_survival"] == "OPEN", "BT chaos reduction promoted to whole-lattice power survival")
 
     allowed_tags = {"LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE", "LORENTZIAN-CAUSAL"}
     claim_ids = set()
@@ -365,6 +371,10 @@ def main() -> int:
     require(flags["bt_complete_order_g_four_uv_noncancellation_established"] is True, "BT complete order-g4 UV noncancellation omitted")
     require(flags["bt_complete_order_g_four_whole_lattice_decided"] is False, "BT UV-local result promoted to whole-lattice decision")
     require(flags["bt_complete_order_g_four_ir_complement_bounded"] is False, "BT infrared complement promoted")
+    require(flags["bt_complete_order_g_four_chaos_decomposition_established"] is True, "BT order-g4 chaos decomposition omitted")
+    require(flags["bt_complete_order_g_four_signed_gate_reduced_to_second_chaos"] is True, "BT signed second-chaos reduction omitted")
+    require(flags["bt_complete_order_g_four_effective_kernel_bound_established"] is False, "BT effective second-chaos kernel bound promoted")
+    require(flags["bt_complete_order_g_four_power_survival_established"] is False, "BT chaos reduction promoted to whole-lattice power survival")
     require(flags["bt_runaway_family_recentered_conditional_variance_established"] is True, "BT runaway-family recentered variance flag missing")
     require(flags["bt_runaway_family_conditional_mean_escape_established"] is True, "BT runaway-family conditional-mean escape flag missing")
     require(flags["bt_annealed_center_second_moment_established"] is False, "BT annealed center moment promoted")
