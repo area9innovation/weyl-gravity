@@ -1,0 +1,304 @@
+{
+  "answer": "No. If R maps the mean-zero log field psi to the residual boundary and T_(t,h)=R o (psi->psi+t h) o R^(-1), then the surface Jacobian of T is Jac_H(psi+t h)/Jac_H(psi). This exactly cancels the reciprocal coarea factor in the pushed BT density. The pullback Radon--Nikodym ratio is only exp[-S(psi+t h)+S(psi)]. Equivalently, the normalized one-mode marginal is the original orthogonal fiber integral of exp(-S), with no extra tree factor. Thus tree-Jacobian log convexity is not an additional source of tilt confinement. The action/fiber ratio remains open.",
+  "certificate": "REVERSE_PHYSICS_BT_EUCLIDEAN_RESIDUAL_TILT_JACOBIAN_CANCELLATION_V1",
+  "checks": {
+    "details": {
+      "action_gap_is_213_over_32": true,
+      "actual_one_mode_and_h_minus_one_moments_remain_open": true,
+      "base_coarea_jacobian_is_eighty_five_halves": true,
+      "base_positive_section_has_unit_product": true,
+      "base_residual_and_action_are_exact": true,
+      "base_tree_density_is_five": true,
+      "boltzmann_exponent_gap_is_5325_over_128": true,
+      "coarea_factors_cancel_exactly": true,
+      "conditional_fiber_marginal_has_no_coarea_factor": true,
+      "inverse_density_jacobian_ratio_is_ten_ninths": true,
+      "log_two_tilt_gives_shifted_fixture": true,
+      "no_continuum_born_krein_or_lorentzian_promotion": true,
+      "omega_square_norms_are_seventeen_fourths": true,
+      "shift_direction_is_mean_zero": true,
+      "shifted_coarea_jacobian_is_153_fourths": true,
+      "shifted_residual_and_action_are_exact": true,
+      "shifted_tree_density_is_nine_halves": true,
+      "surface_jacobian_ratio_is_nine_tenths": true,
+      "tree_log_convexity_is_not_extra_tilt_confinement": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 19,
+    "total": 19
+  },
+  "conditional_marginal_reduction": {
+    "marginal": "m_h(s)=Z^(-1) integral_(eta in H intersect h^perp) exp[-S(eta+s h)] d eta",
+    "orthogonal_decomposition": "for unit h in H, write psi=eta+s h with eta in H intersect h^perp",
+    "remaining_problem": "bound the ratio of these action-weighted fiber integrals uniformly in lattice volume, or prove controlled divergence",
+    "status": "EXACT_ACTION_FIBER_REDUCTION_ONLY",
+    "tree_factor": "CANCELLED_EXACTLY"
+  },
+  "created": "2026-08-14",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "does_not_establish": [
+    "a direct action-difference or conditional-fiber ratio bound",
+    "a normalized lowest-mode moment bound or its divergence",
+    "the actual interacting H^-1 moment bound or its divergence",
+    "tightness or a continuum Euclidean BT measure",
+    "a Born rule or Krein reconstruction",
+    "anything LORENTZIAN-CAUSAL",
+    "a literature-priority claim"
+  ],
+  "exact_cycle_tilt": {
+    "action_gap": {
+      "denominator": 32,
+      "numerator": 213
+    },
+    "base_action": {
+      "denominator": 4,
+      "numerator": 11
+    },
+    "base_coarea_jacobian": {
+      "denominator": 2,
+      "numerator": 85
+    },
+    "base_omega": [
+      {
+        "denominator": 1,
+        "numerator": 1
+      },
+      {
+        "denominator": 1,
+        "numerator": 2
+      },
+      {
+        "denominator": 1,
+        "numerator": 1
+      },
+      {
+        "denominator": 2,
+        "numerator": 1
+      }
+    ],
+    "base_residual": [
+      {
+        "denominator": 2,
+        "numerator": 1
+      },
+      {
+        "denominator": 1,
+        "numerator": -1
+      },
+      {
+        "denominator": 2,
+        "numerator": 1
+      },
+      {
+        "denominator": 1,
+        "numerator": 2
+      }
+    ],
+    "base_tree_density": {
+      "denominator": 1,
+      "numerator": 5
+    },
+    "base_tree_terms": [
+      {
+        "denominator": 2,
+        "numerator": 1
+      },
+      {
+        "denominator": 2,
+        "numerator": 1
+      },
+      {
+        "denominator": 1,
+        "numerator": 2
+      },
+      {
+        "denominator": 1,
+        "numerator": 2
+      }
+    ],
+    "boltzmann_exponent_gap": {
+      "denominator": 128,
+      "numerator": 5325
+    },
+    "cancellation_product": {
+      "denominator": 1,
+      "numerator": 1
+    },
+    "coupling": {
+      "denominator": 5,
+      "numerator": 2
+    },
+    "graph": "four-cycle C4 with degree two",
+    "inverse_density_jacobian_ratio": {
+      "denominator": 9,
+      "numerator": 10
+    },
+    "shifted_action": {
+      "denominator": 32,
+      "numerator": 301
+    },
+    "shifted_coarea_jacobian": {
+      "denominator": 4,
+      "numerator": 153
+    },
+    "shifted_omega": [
+      {
+        "denominator": 1,
+        "numerator": 2
+      },
+      {
+        "denominator": 1,
+        "numerator": 1
+      },
+      {
+        "denominator": 1,
+        "numerator": 1
+      },
+      {
+        "denominator": 2,
+        "numerator": 1
+      }
+    ],
+    "shifted_residual": [
+      {
+        "denominator": 4,
+        "numerator": -5
+      },
+      {
+        "denominator": 1,
+        "numerator": 1
+      },
+      {
+        "denominator": 2,
+        "numerator": -1
+      },
+      {
+        "denominator": 1,
+        "numerator": 4
+      }
+    ],
+    "shifted_tree_density": {
+      "denominator": 2,
+      "numerator": 9
+    },
+    "shifted_tree_terms": [
+      {
+        "denominator": 2,
+        "numerator": 1
+      },
+      {
+        "denominator": 1,
+        "numerator": 1
+      },
+      {
+        "denominator": 1,
+        "numerator": 2
+      },
+      {
+        "denominator": 1,
+        "numerator": 1
+      }
+    ],
+    "status": "EXACT_RATIONAL_JACOBIAN_CANCELLATION_FIXTURE",
+    "surface_jacobian_ratio": {
+      "denominator": 10,
+      "numerator": 9
+    },
+    "tilt": "h=(1,-1,0,0), t=log(2)",
+    "weighted_pullback_ratio": "exp(-5325/128)"
+  },
+  "foundational_dependency_cut": {
+    "classification": "USED_BY_DISPLAYED_PROOF",
+    "finite_analytic_layer": "the surface change-of-variables theorem supplies the general Radon--Nikodym interpretation",
+    "finite_exact_layer": "the chart chain rule, C4 tree sums, coarea ratios, and cancellation use finite exact algebra",
+    "uniform_limit_layer": "the all-volume action-weighted fiber ratio remains unsupplied",
+    "weakest_base_or_reversal": "NOT_ESTABLISHED"
+  },
+  "general_tilt_theorem": {
+    "bt_surface_density": "rho(R(psi))=Z^(-1) exp[-S(psi)]/Jac_H(psi)",
+    "carrier": "H={psi in R^N: sum_x psi_x=0}",
+    "induced_boundary_map": "T_(t,h)=R o tau_(t,h) o R^(-1)",
+    "proof": "The chain rule gives the ratio of chart Jacobians because translation on H has determinant one; substitution cancels Jac_H(psi+t h) and Jac_H(psi) algebraically.",
+    "pullback_ratio": "rho(T R(psi))*Jac_boundary(T)(R(psi))/rho(R(psi))=exp[-S(psi+t h)+S(psi)]",
+    "residual_chart": "R:H->boundary(C_G), with surface Jacobian Jac_H(psi)",
+    "status": "PROVED",
+    "surface_jacobian": "Jac_boundary(T_(t,h))(R(psi))=Jac_H(psi+t h)/Jac_H(psi)",
+    "translation": "tau_(t,h)(psi)=psi+t h for h in H"
+  },
+  "lifecycle_state": "EXACT_REDUCTION_PROVED",
+  "method_disposition": {
+    "actual_interacting_h_minus_one_second_moment_bound": "OPEN",
+    "born_rule": "NOT_ESTABLISHED",
+    "continuum_limit": "NOT_ESTABLISHED",
+    "direct_action_difference_or_fiber_ratio_bound": "OPEN",
+    "induced_tilt_surface_jacobian": "PROVED",
+    "interacting_tightness": "NOT_ESTABLISHED",
+    "inverse_tree_jacobian_cancellation": "PROVED",
+    "krein_reconstruction": "NOT_ASSESSED",
+    "lorentzian_transfer": "NOT_ESTABLISHED",
+    "normalized_lowest_mode_marginal_bound": "OPEN",
+    "residual_coarea_pushforward": "PROVED_BY_PREDECESSOR",
+    "tree_log_convexity_as_extra_tilt_confinement": "OBSTRUCTED"
+  },
+  "missing_object_ledger": [
+    "a volume-uniform action-difference or conditional-fiber inequality for one lowest Fourier mode",
+    "a normalized one-mode moment theorem or controlled actual-marginal divergence sequence",
+    "a dyadic-shell summation proving or obstructing the interacting H^-1 moment",
+    "tightness in a compactly weaker topology after a positive moment theorem"
+  ],
+  "next_gate": "Work in the flat mean-zero log-field chart. Derive a direct one-mode action/fiber ratio bound under psi=eta+s h; do not count the tree Jacobian as additional confinement because it cancels.",
+  "provenance": {
+    "arithmetic": "Exact Fraction arithmetic for the C4 tree, coarea, action, and ratio fixture; no floating-point value enters the claim",
+    "inputs": [
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_RESIDUAL_SPECTRAHEDRAL_PUSHFORWARD_V1.json",
+        "sha256": "31bc26ff9822cdfc663b5fb0fc47e7970f592afbc6526f1aadf2e4447dd324e0"
+      }
+    ],
+    "repository_base_commit": "3c295ffacc222271143df0018bdae167eae87a81"
+  },
+  "question": "Does the inverse spanning-tree coarea Jacobian add usable confinement when the positive ground state is tilted in one lowest Fourier direction?",
+  "report": "reverse_physics/reports/bt-euclidean-residual-tilt-jacobian-cancellation.md",
+  "result_kind": "exact quasi-invariance reduction for induced multiplicative tilts of the residual-boundary BT measure",
+  "schema": "reverse_physics/schema/reverse-physics-bt-euclidean-residual-tilt-jacobian-cancellation-v1.schema.json",
+  "schema_version": "reverse-physics-bt-euclidean-residual-tilt-jacobian-cancellation-v1",
+  "tier_receipt": {
+    "command_results": [
+      {
+        "command": "ulimit -v 500000; python3 reverse_physics/bt_euclidean_residual_tilt_jacobian_cancellation.py --check",
+        "elapsed_seconds": "0.03",
+        "max_rss_kb": 20700,
+        "status": "PASS_19_OF_19",
+        "tier": 1
+      },
+      {
+        "command": "ulimit -v 500000; python3 reverse_physics/verify_bt_euclidean_residual_tilt_jacobian_cancellation.py",
+        "elapsed_seconds": "0.09",
+        "max_rss_kb": 30360,
+        "status": "PASS_16_OF_16",
+        "tier": 1
+      },
+      {
+        "command": "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_euclidean_residual_tilt_jacobian_cancellation",
+        "elapsed_seconds": "0.12",
+        "max_rss_kb": 30712,
+        "status": "PASS_13_TESTS",
+        "tier": 1
+      }
+    ],
+    "resource_policy": "all scientific commands run sequentially under ulimit -v 500000",
+    "tier_0": "PASS: changed Python files compile; certificate and schema parse; scoped git diff --check is recorded before commit",
+    "tier_1": "PASS: producer 19/19, independent verifier 16/16, and 13 unit/mutation tests",
+    "tier_2": "predecessor residual-pushforward input reused by content hash; its independent certificate chain was not regenerated",
+    "tier_3": "NOT_RUN: no freeze, release, continuum, quantum lifecycle, or Lorentzian promotion"
+  },
+  "verification_commands": [
+    "python3 reverse_physics/bt_euclidean_residual_tilt_jacobian_cancellation.py --check",
+    "python3 reverse_physics/verify_bt_euclidean_residual_tilt_jacobian_cancellation.py",
+    "python3 -m unittest -v reverse_physics.tests.test_bt_euclidean_residual_tilt_jacobian_cancellation"
+  ]
+}
