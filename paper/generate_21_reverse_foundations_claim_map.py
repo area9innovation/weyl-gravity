@@ -24,6 +24,7 @@ ASSEMBLY_DATA = "foundations/site/assemblies.json"
 AUTHORITY_PATHS = {
     "intersection_cube": "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V10.json",
     "bt_euclidean_import": "foundations/results/FOUNDATIONAL_BT_EUCLIDEAN_LATTICE_IMPORT_V1.json",
+    "bt_free_reconstruction_obstruction": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_FREE_RECONSTRUCTION_OBSTRUCTION_V1.json",
     "full_surface_gap_audit": "foundations/results/FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1.json",
     "explorer_snapshot": "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json",
     "theory_assembly": "foundations/results/FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1.json",
@@ -54,8 +55,8 @@ def load_authority(relative: str) -> tuple[dict, dict]:
     record = {
         "path": relative,
         "sha256": sha256(path),
-        "result_id": data["result_id"],
-        "lifecycle": data["lifecycle"],
+        "result_id": data.get("result_id", data.get("certificate")),
+        "lifecycle": data.get("lifecycle", data.get("lifecycle_state")),
         "dependency_tags": data.get("dependency_tags", []),
     }
     return data, record
@@ -69,6 +70,7 @@ def build() -> dict:
 
     cube = loaded["intersection_cube"]
     bt_euclidean = loaded["bt_euclidean_import"]
+    bt_free_obstruction = loaded["bt_free_reconstruction_obstruction"]
     site = loaded["explorer_snapshot"]
     gr_cassini = loaded["gr_cassini_assembly"]
     atlas_data = json.loads((ROOT / ATLAS_DATA).read_text())
@@ -171,6 +173,11 @@ def build() -> dict:
             "bt_euclidean_reconstruction_status": next(item["new_status"] for item in bt_euclidean["capability_decisions"] if item["coordinate"]["obligation"] == "RECONSTRUCTION_LIMITS"),
             "bt_euclidean_numerical_status": bt_euclidean["numerical_reproducibility_records"][0]["status"],
             "bt_euclidean_carrier_relation": bt_euclidean["carrier_interface"]["relation"],
+            "bt_free_os_reflected_norm": bt_free_obstruction["finite_volume_os_obstruction"]["four_dimensional_slice_average_reflected_norm"],
+            "bt_free_os_near_zero_status": bt_free_obstruction["disposition"]["ordinary_os_reflection_positivity_near_lambda_zero"],
+            "bt_free_os_lambda_0p4_status": bt_free_obstruction["disposition"]["ordinary_os_reflection_positivity_at_lambda_0p4"],
+            "bt_free_h_minus_one_bound": bt_free_obstruction["free_volume_uniform_estimate"]["uniform_result"]["bound"],
+            "bt_free_l2_status": bt_free_obstruction["disposition"]["free_uniform_l2_estimate"],
             "standard_reference_direct_obligations": next(item for item in assembly_data["assemblies"] if item["id"] == "STANDARD_MIXED_REFERENCE")["coverage"]["direct"],
             "external_calibration_records": len(assembly_data["calibration_controls"][0]["records"]),
             "external_calibration_benchmark_families": sum(item["status"] == "SUPPORTED_CONTROL" for item in assembly_data["calibration_controls"][0]["benchmark_coverage"]),
@@ -246,6 +253,13 @@ def build() -> dict:
                 "authorities": ["bt_euclidean_import"],
                 "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"],
             },
+            {
+                "claim_id": "RF-11-BT-FREE-RECONSTRUCTION-OBSTRUCTION",
+                "statement": "On the zero-mode-fixed 6^4 free BT lattice, a shift-invariant positive-time slice observable has exact reflected norm -1/1296; fixed-volume continuity extends the ordinary-OS obstruction to some open coupling interval around zero, while lambda=0.4 remains open. The free L^4 family has a uniform H^-1 second-moment bound 15/32 and a logarithmically divergent L2 second moment.",
+                "status": "SCOPED_OS_OBSTRUCTION_AND_FREE_UNIFORM_ESTIMATE",
+                "authorities": ["bt_free_reconstruction_obstruction"],
+                "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"],
+            },
         ],
         "literature_scope": [
             {"source_id": "simpson-2009", "url": "https://doi.org/10.1017/CBO9780511581007", "role": "reverse mathematics and subsystem calibration"},
@@ -277,6 +291,9 @@ def build() -> dict:
             "bounded_empirical_comparison_registered": True,
             "bt_euclidean_finite_capabilities_imported": True,
             "bt_euclidean_coarse_reproduction_separated": True,
+            "bt_free_os_obstruction_certified": True,
+            "bt_free_h_minus_one_estimate_certified": True,
+            "bt_lambda_0p4_os_status_decided": False,
             "research_programme_lenses_explained": True,
             "weakest_foundation_proved": False,
             "global_physics_implies_choice_theorem": False,
@@ -300,6 +317,7 @@ def build() -> dict:
             "reproduction of the Cassini raw-data reduction, likelihood, covariance analysis, or systematic-error budget",
             "a complete standard-GR theory or empirical support for a Weyl-gravity model",
             "a continuum, empirical, Born-rule, or Lorentzian promotion from the BT Euclidean finite lattice",
+            "reflection-positivity failure at lambda=0.4 or every nonzero coupling",
         ],
         "authorities": authorities,
         "independent_checker": {

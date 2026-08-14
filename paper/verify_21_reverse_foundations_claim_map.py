@@ -77,14 +77,15 @@ def main() -> int:
         require(path.is_file(), f"missing authority {name}: {path}")
         require(sha256(path) == authority["sha256"], f"authority hash drift: {name}")
         source = json.loads(path.read_text())
-        require(source["result_id"] == authority["result_id"], f"authority result drift: {name}")
-        require(source["lifecycle"] == authority["lifecycle"], f"authority lifecycle drift: {name}")
+        require(source.get("result_id", source.get("certificate")) == authority["result_id"], f"authority result drift: {name}")
+        require(source.get("lifecycle", source.get("lifecycle_state")) == authority["lifecycle"], f"authority lifecycle drift: {name}")
         require(source.get("dependency_tags", []) == authority["dependency_tags"], f"authority tag drift: {name}")
 
     cube = json.loads((ROOT / data["authorities"]["intersection_cube"]["path"]).read_text())
     site = json.loads((ROOT / data["authorities"]["explorer_snapshot"]["path"]).read_text())
     gr_cassini = json.loads((ROOT / data["authorities"]["gr_cassini_assembly"]["path"]).read_text())
     bt_euclidean = json.loads((ROOT / data["authorities"]["bt_euclidean_import"]["path"]).read_text())
+    bt_free_obstruction = json.loads((ROOT / data["authorities"]["bt_free_reconstruction_obstruction"]["path"]).read_text())
     dims = cube["dimensions"]
     atlas = data["atlas_snapshot"]
     require(atlas["axis_sizes"] == [6, 6, 16], "unexpected axis sizes")
@@ -108,6 +109,12 @@ def main() -> int:
     require(atlas["bt_euclidean_numerical_status"] == "COARSE_REPRODUCTION_ONLY", "BT numerical status mismatch")
     require(atlas["bt_euclidean_carrier_relation"] == "INCOMPATIBLE", "BT carrier relation mismatch")
     require(bt_euclidean["claim_flags"]["continuum_reconstruction_established"] is False, "BT continuum claim promoted")
+    require(atlas["bt_free_os_reflected_norm"] == {"numerator": -1, "denominator": 1296}, "BT reflected norm drift")
+    require(atlas["bt_free_os_near_zero_status"] == "OBSTRUCTED_ON_SOME_OPEN_INTERVAL", "BT near-zero OS status drift")
+    require(atlas["bt_free_os_lambda_0p4_status"] == "OPEN", "BT lambda=0.4 status promoted")
+    require(atlas["bt_free_h_minus_one_bound"] == {"numerator": 15, "denominator": 32}, "BT H^-1 bound drift")
+    require(atlas["bt_free_l2_status"] == "OBSTRUCTED", "BT L2 obstruction drift")
+    require(bt_free_obstruction["disposition"]["continuum_limit"] == "NOT_ESTABLISHED", "BT free estimate promoted to continuum")
 
     allowed_tags = {"LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE", "LORENTZIAN-CAUSAL"}
     claim_ids = set()
@@ -128,6 +135,7 @@ def main() -> int:
         (8, "FINITE-BV-BOUNDARY"),
         (9, "GR-CASSINI-ASSEMBLY"),
         (10, "BT-EUCLIDEAN-LATTICE"),
+        (11, "BT-FREE-RECONSTRUCTION-OBSTRUCTION"),
     ]}, "claim set drift")
 
     flags = data["claim_flags"]
@@ -139,6 +147,9 @@ def main() -> int:
     require(flags["bounded_empirical_comparison_registered"] is True, "bounded empirical comparison flag is not certified")
     require(flags["bt_euclidean_finite_capabilities_imported"] is True, "BT finite import flag is not certified")
     require(flags["bt_euclidean_coarse_reproduction_separated"] is True, "BT numerical separation flag is not certified")
+    require(flags["bt_free_os_obstruction_certified"] is True, "BT OS obstruction flag is not certified")
+    require(flags["bt_free_h_minus_one_estimate_certified"] is True, "BT free uniform estimate flag is not certified")
+    require(flags["bt_lambda_0p4_os_status_decided"] is False, "BT lambda=0.4 OS status promoted")
     require(flags["research_programme_lenses_explained"] is True, "research-programme exposition flag is not certified")
     for false_flag in [
         "weakest_foundation_proved",

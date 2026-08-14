@@ -693,6 +693,35 @@ bridge would still have to supply the missing uniform estimates, represented
 convergence, limit identification, and Lorentzian observable map.  The
 reconstruction cell therefore remains a priority gap.
 
+The first reconstruction decision is now exact at the free endpoint.  On the
+periodic \(6^4\) lattice with link reflection
+\(\theta(t,\mathbf x)=(1-t,\mathbf x)\), let \(A_t\) be the spatial slice
+average and take the shift-invariant positive-time observable
+\(F=-A_1+2A_2-A_3\).  Certificate
+\cert{REVERSE_PHYSICS_BT_EUCLIDEAN_FREE_RECONSTRUCTION_OBSTRUCTION_V1}
+computes
+\[
+                 \langle(\theta F)F\rangle_{0,6}=-\frac1{1296}.
+\]
+Thus the positive density fails ordinary Osterwalder--Schrader reflection
+positivity on this finite free lattice.  Fixed-volume coercivity supplies a
+common Gaussian dominating function, so continuity preserves the strict
+negative sign on some unquantified open coupling interval around zero.
+This does not decide \(\lambda=0.4\), and it does not obstruct a specifically
+Krein-compatible reconstruction.
+
+The same certificate also isolates the first viable free continuum topology.
+For trigonometric interpolation on the unit four-torus,
+\[
+ \sup_L\mathbb E\|\Phi_L\|_{H^{-1}}^2\leq\frac{15}{32},
+ \qquad
+ \mathbb E\|\Phi_L\|_{L^2}^2
+ \geq\frac{H_{\lfloor(L-1)/2\rfloor}}{4\pi^4}.
+\]
+The \(L^2\) second moment therefore diverges logarithmically, while a negative
+Sobolev estimate survives.  This is a free-family uniform estimate, not
+interacting tightness, represented convergence, or limit identification.
+
 \subsection{A finite BV contraction does not freeze the quantum theory}
 
 The energy-two free BV block provides another finite exact case.  The
@@ -945,6 +974,17 @@ foundational strength, and compatibility with gauge structure.  A no-selection
 theorem is valuable only when its symmetry and state class are physically
 justified.
 
+\subsection{The BT reconstruction fork}
+
+The next BT question is no longer whether a positive finite measure exists.
+Ordinary OS reconstruction is obstructed near the free endpoint, while the
+interacting coupling and an indefinite-metric replacement remain open.  The
+near-term fork is therefore explicit: quantify the finite-volume obstruction
+interval or decide the reflected witness at \(\lambda=0.4\), and independently
+seek an \(L\)-uniform interacting negative-Sobolev estimate.  Only after those
+gates should one attempt tightness, Schwinger-function convergence, or a
+Krein/Lorentzian observable map.
+
 \section{Limits of the present paper}
 \label{sec:limits}
 
@@ -999,6 +1039,7 @@ The principal machine-readable authorities are
 \cert{FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1},
 \cert{FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1},
 \cert{FOUNDATIONAL_BT_SEPARABLE_STATE_CHAIN_ZF_V1},
+\cert{REVERSE_PHYSICS_BT_EUCLIDEAN_FREE_RECONSTRUCTION_OBSTRUCTION_V1},
 \cert{FOUNDATIONAL_CODED_POLYGONAL_WAVE_RCA0_V1},
 \cert{FOUNDATIONAL_FINITE_GRAPH_WAVE_CAUSALITY_V1}, and
 \cert{FOUNDATIONAL_FREE_BV_ENERGY2_PRA_SDR_V1}.  The static atlas appendices

@@ -1,0 +1,282 @@
+{
+  "answer": "No for ordinary OS positivity at the free endpoint. On the 6^4 periodic lattice a shift-invariant positive-time slice observable has exact reflected norm -1/1296. For the free L^4 family, the trigonometric interpolation has a uniform H^-1 second-moment bound 15/32, while its L2 second moment grows at least as the harmonic number H_floor((L-1)/2)/(4*pi^4). Thus L2 is obstructed as a uniform topology and a negative Sobolev topology is the first viable rail. Fixed-volume dominated convergence extends the OS obstruction to some nonzero open coupling interval around zero, but does not locate its endpoint or decide lambda=0.4.",
+  "certificate": "REVERSE_PHYSICS_BT_EUCLIDEAN_FREE_RECONSTRUCTION_OBSTRUCTION_V1",
+  "checks": {
+    "details": {
+      "continuum_limit_not_promoted": true,
+      "cycle_covariance_has_zero_row_sums": true,
+      "cycle_covariance_inverts_bilaplacian_on_mean_zero_subspace": true,
+      "fixed_graph_action_has_unique_zero_and_coercive_tail": true,
+      "fixed_graph_uniform_gaussian_dominating_function_exists": true,
+      "four_dimensional_slice_average_norm_is_minus_one_over_1296": true,
+      "four_dimensional_sup_shell_count_identity": true,
+      "h_minus_one_shell_majorant_is_five_over_sixteen_m_cubed": true,
+      "interacting_nonzero_coupling_status_left_open": true,
+      "inverse_cube_series_elementary_bound_is_three_halves": true,
+      "l2_shell_lower_bound_coefficient_is_one_over_four": true,
+      "link_reflection_maps_positive_half_to_complement": true,
+      "no_born_krein_or_lorentzian_promotion": true,
+      "one_dimensional_reflected_norm_is_minus_one_sixth": true,
+      "ordinary_os_route_only_is_obstructed": true,
+      "reflected_norm_is_strictly_negative": true,
+      "shell_count_lower_bound": true,
+      "shell_count_upper_bound": true,
+      "strict_negative_witness_persists_on_some_open_coupling_interval": true,
+      "uniform_h_minus_one_second_moment_bound_is_fifteen_over_32": true,
+      "witness_is_constant_shift_invariant": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 21,
+    "total": 21
+  },
+  "created": "2026-08-14",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "disposition": {
+    "born_rule": "NOT_ESTABLISHED",
+    "continuum_limit": "NOT_ESTABLISHED",
+    "free_uniform_h_minus_one_estimate": "PROVED",
+    "free_uniform_l2_estimate": "OBSTRUCTED",
+    "interacting_uniform_estimate": "OPEN",
+    "krein_compatible_reconstruction": "NOT_ASSESSED",
+    "lorentzian_transfer": "NOT_ESTABLISHED",
+    "ordinary_os_reflection_positivity_at_lambda_0p4": "OPEN",
+    "ordinary_os_reflection_positivity_at_lambda_zero": "OBSTRUCTED",
+    "ordinary_os_reflection_positivity_near_lambda_zero": "OBSTRUCTED_ON_SOME_OPEN_INTERVAL"
+  },
+  "does_not_establish": [
+    "failure of reflection positivity at lambda=0.4 or every nonzero coupling",
+    "failure of every possible Euclidean reconstruction",
+    "failure of a Krein or indefinite-metric reconstruction",
+    "a continuum or infinite-volume BT measure",
+    "tightness or convergence from the H^-1 moment estimate alone",
+    "a Born rule, scattering probability, or laboratory event rate",
+    "a graviton or full Weyl-gravity lattice theory",
+    "anything LORENTZIAN-CAUSAL"
+  ],
+  "finite_volume_os_obstruction": {
+    "coefficients": [
+      -1,
+      2,
+      -1
+    ],
+    "constant_shift_invariant": true,
+    "coupling": 0,
+    "criterion": "integral conjugate(F(theta phi))*F(phi) dmu_0(phi)>=0",
+    "disposition": "STRICT_NEGATIVE_WITNESS",
+    "four_dimensional_slice_average_reflected_norm": {
+      "denominator": 1296,
+      "numerator": -1
+    },
+    "free_action": "S_0(phi)=(1/2)*sum_x (Delta_L phi_x)^2",
+    "lattice": {
+      "dimensions": 4,
+      "length": 6
+    },
+    "mean_zero_cycle_covariance_first_row": [
+      {
+        "denominator": 864,
+        "numerator": 329
+      },
+      {
+        "denominator": 864,
+        "numerator": 119
+      },
+      {
+        "denominator": 864,
+        "numerator": -151
+      },
+      {
+        "denominator": 864,
+        "numerator": -265
+      },
+      {
+        "denominator": 864,
+        "numerator": -151
+      },
+      {
+        "denominator": 864,
+        "numerator": 119
+      }
+    ],
+    "one_dimensional_reflected_norm": {
+      "denominator": 6,
+      "numerator": -1
+    },
+    "persistence_lemma": {
+      "basis": "A has a unique zero at psi=0, a positive bilaplacian Hessian on the mean-zero subspace, and an exponential coercive tail on the fixed connected graph",
+      "consequence": "normalized polynomial expectations are continuous at lambda=0 by dominated convergence",
+      "epsilon": "EXISTS_NOT_QUANTIFIED",
+      "rescaled_action": "S_lambda(phi)=A(lambda*phi)/lambda^2 on the mean-zero hyperplane, with A(psi)=(1/2)*sum_x r_x(psi)^2",
+      "result": "the strict negative reflected norm persists for all |lambda|<epsilon_G for some epsilon_G>0",
+      "uniform_fixed_graph_bound": "there is c_G>0 such that A(psi)>=c_G*||psi||_2^2, hence S_lambda(phi)>=c_G*||phi||_2^2"
+    },
+    "positive_time_half": [
+      1,
+      2,
+      3
+    ],
+    "reflected_time_half": [
+      0,
+      5,
+      4
+    ],
+    "reflection": "theta(t,x)=(1-t mod 6,x)",
+    "reflection_kernel_one_dimensional": [
+      [
+        {
+          "denominator": 864,
+          "numerator": 119
+        },
+        {
+          "denominator": 864,
+          "numerator": -151
+        },
+        {
+          "denominator": 864,
+          "numerator": -265
+        }
+      ],
+      [
+        {
+          "denominator": 864,
+          "numerator": -151
+        },
+        {
+          "denominator": 864,
+          "numerator": -265
+        },
+        {
+          "denominator": 864,
+          "numerator": -151
+        }
+      ],
+      [
+        {
+          "denominator": 864,
+          "numerator": -265
+        },
+        {
+          "denominator": 864,
+          "numerator": -151
+        },
+        {
+          "denominator": 864,
+          "numerator": 119
+        }
+      ]
+    ],
+    "slice_average": "A_t=6^-3*sum_spatial phi_(t,x)",
+    "spatial_volume": 216,
+    "witness": "F=-A_1+2*A_2-A_3",
+    "zero_mode_constraint": "sum_x phi_x=0"
+  },
+  "free_volume_uniform_estimate": {
+    "coefficient_variance": "E|hat(Phi_L)(n)|^2=L^-4/omega_L(n)^2",
+    "continuum_consequence": "H^-1 is a viable first bounded topology for the free family; this estimate alone is not tightness, convergence, limit identification, or an interacting estimate.",
+    "elementary_spectral_bounds": [
+      "16*|n|_2^2/L^2 <= omega_L(n)",
+      "omega_L(n) <= 4*pi^2*|n|_2^2/L^2"
+    ],
+    "family": "periodic L^4 mean-zero free BT Gaussian measures",
+    "interpolation": "Phi_L on the unit four-torus has Fourier coefficient hat(Phi_L)(n)=L^-4*sum_x phi_x exp(-2*pi*i*n.x/L)",
+    "lattice_eigenvalue": "omega_L(n)=4*sum_j sin(pi*n_j/L)^2",
+    "obstruction": {
+      "consequence": "no L-uniform L2 second-moment estimate exists for the unrenormalized free family",
+      "statement": "E||Phi_L||_L2^2 >= H_floor((L-1)/2)/(4*pi^4)",
+      "status": "LOGARITHMIC_DIVERGENCE_PROVED",
+      "topology": "L2(T^4)"
+    },
+    "uniform_result": {
+      "bound": {
+        "denominator": 32,
+        "numerator": 15
+      },
+      "series_bound": "sum_(m>=1) m^-3 <= 3/2",
+      "shell_majorant": "(5/16)*sum_(m>=1) m^-3",
+      "statement": "sup_L E||Phi_L||_H^-1^2 <= 15/32",
+      "status": "PROVED_FOR_FREE_FAMILY",
+      "topology": "H^-1(T^4)"
+    }
+  },
+  "lifecycle_state": "OBSTRUCTION_PROVED",
+  "missing_object_ledger": [
+    "an explicit lower bound on the obstructed coupling interval",
+    "a reflection-positivity decision at lambda=0.4",
+    "a Krein-compatible replacement for ordinary OS reconstruction",
+    "a volume-uniform negative-Sobolev estimate at interacting coupling",
+    "tightness in a topology compactly weaker than the uniform estimate",
+    "represented convergence and limit identification",
+    "a justified Lorentzian map and operational observable matching"
+  ],
+  "next_gate": "Quantify the fixed-volume persistence interval or directly decide the witness sign at lambda=0.4; independently seek an L-uniform interacting H^-1 moment bound.",
+  "provenance": {
+    "arithmetic": "exact integers and fractions for the finite witness and shell constants; analytic inequalities for the family; no floating point",
+    "inputs": [
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_LATTICE_PILOT_V1.json",
+        "sha256": "4171ff54d9a92f7555337e8865029a7dbb65aaf0b4cf930017732fb0c6051320"
+      }
+    ],
+    "repository_base_commit": "43b7605b62b92ffa701b86e8487c431b0920bb42"
+  },
+  "question": "Does the zero-mode-fixed positive BT Euclidean lattice satisfy ordinary Osterwalder-Schrader reflection positivity at its free endpoint, and which first volume-uniform field topology survives?",
+  "report": "reverse_physics/reports/bt-euclidean-free-reconstruction-obstruction.md",
+  "result_kind": "finite-volume OS obstruction and free uniform estimate",
+  "schema": "reverse_physics/schema/reverse-physics-bt-euclidean-free-reconstruction-obstruction-v1.schema.json",
+  "schema_version": "reverse-physics-bt-euclidean-free-reconstruction-obstruction-v1",
+  "tier_receipt": {
+    "paper_advisory": "NON_CERTIFYING: body prose budgets pass; the pre-existing abstract remains over its advisory word and numeric budgets",
+    "tier_0": {
+      "commands": [
+        "python3 -m py_compile <three changed Python files>",
+        "python3 -m json.tool <changed schema>",
+        "git diff --check -- <scoped paths>"
+      ],
+      "criterion": "changed source, schema and generated JSON parse cleanly",
+      "status": "PASS"
+    },
+    "tier_1": [
+      {
+        "elapsed_seconds": 0.04,
+        "peak_rss_kib": 20736,
+        "rail": "deterministic producer check",
+        "status": "PASS_21_OF_21"
+      },
+      {
+        "elapsed_seconds": 0.1,
+        "peak_rss_kib": 30244,
+        "rail": "method-distinct exact verifier",
+        "status": "PASS_19_OF_19"
+      },
+      {
+        "elapsed_seconds": 0.11,
+        "peak_rss_kib": 30408,
+        "rail": "unit and six-mutation suite",
+        "status": "PASS_10_TESTS"
+      },
+      {
+        "elapsed_seconds": 0.73,
+        "peak_rss_kib": 53020,
+        "rail": "Paper 21 bounded pdflatex pass",
+        "status": "PASS_38_PAGES"
+      }
+    ],
+    "tier_2": {
+      "criterion": "the imported numerical pilot is unchanged and content-addressed; the independent verifier checks its current hash",
+      "status": "PASS_HASH_ONLY"
+    },
+    "tier_3": {
+      "criterion": "scoped free-endpoint obstruction and analytic estimate; no shared classical operator, freeze, release, quantum lifecycle, or Lorentzian promotion changed",
+      "status": "NOT_RUN"
+    }
+  },
+  "verification_commands": [
+    "python3 reverse_physics/bt_euclidean_free_reconstruction_obstruction.py --check",
+    "python3 reverse_physics/verify_bt_euclidean_free_reconstruction_obstruction.py",
+    "python3 -m unittest -v reverse_physics.tests.test_bt_euclidean_free_reconstruction_obstruction"
+  ]
+}

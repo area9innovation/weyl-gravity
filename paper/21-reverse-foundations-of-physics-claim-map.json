@@ -11,6 +11,17 @@
     "bt_euclidean_direct_capabilities": 5,
     "bt_euclidean_numerical_status": "COARSE_REPRODUCTION_ONLY",
     "bt_euclidean_reconstruction_status": "PRIORITY_GAP",
+    "bt_free_h_minus_one_bound": {
+      "denominator": 32,
+      "numerator": 15
+    },
+    "bt_free_l2_status": "OBSTRUCTED",
+    "bt_free_os_lambda_0p4_status": "OPEN",
+    "bt_free_os_near_zero_status": "OBSTRUCTED_ON_SOME_OPEN_INTERVAL",
+    "bt_free_os_reflected_norm": {
+      "denominator": 1296,
+      "numerator": -1
+    },
     "cartesian_total": 576,
     "content_pinned_literature": 39,
     "coverage_classified_cells": 576,
@@ -59,6 +70,16 @@
       "path": "foundations/results/FOUNDATIONAL_BT_EUCLIDEAN_LATTICE_IMPORT_V1.json",
       "result_id": "FOUNDATIONAL_BT_EUCLIDEAN_LATTICE_IMPORT_V1",
       "sha256": "f8791f9209682cd01b29a5868ea8f353b958f9fb8ce24d77d9b8af6bc92b7f94"
+    },
+    "bt_free_reconstruction_obstruction": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL"
+      ],
+      "lifecycle": "OBSTRUCTION_PROVED",
+      "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_FREE_RECONSTRUCTION_OBSTRUCTION_V1.json",
+      "result_id": "REVERSE_PHYSICS_BT_EUCLIDEAN_FREE_RECONSTRUCTION_OBSTRUCTION_V1",
+      "sha256": "3ff1ba1578d5bc11ea7f2a6fc806fedb49d127a0f3f29fc220d987d9305371a9"
     },
     "coded_wave": {
       "dependency_tags": [
@@ -178,13 +199,16 @@
       "sha256": "288fb963d20f1e2caa41ff436512a02fcdd186d6506ff451ee4b321fc5c801d6"
     }
   },
-  "canonical_digest": "838f7dcee708d71a6a3a7b38012df85eb007f2b61452d88abba8ddc85db1cc4f",
+  "canonical_digest": "da8cd0f3fa4494f0254815749ecfff9d99eefea14b9aa521a90f5bded7572492",
   "claim_flags": {
     "atlas_exhaustive": false,
     "axes_independent_proved": false,
     "bounded_empirical_comparison_registered": true,
     "bt_euclidean_coarse_reproduction_separated": true,
     "bt_euclidean_finite_capabilities_imported": true,
+    "bt_free_h_minus_one_estimate_certified": true,
+    "bt_free_os_obstruction_certified": true,
+    "bt_lambda_0p4_os_status_decided": false,
     "case_study_authorities_pinned": true,
     "complete_evidence_register_generated": true,
     "complete_literature_register_generated": true,
@@ -321,6 +345,18 @@
       ],
       "statement": "The positive finite BT Euclidean lattice supplies five direct finite-volume capabilities and a coarse independent-sampler reproduction record; reconstruction remains open, and its full nonperturbative carrier is not identical to the all-real BT/Krein carrier.",
       "status": "LOCAL_RESULT_WITH_NUMERICAL_AND_CARRIER_BOUNDARIES"
+    },
+    {
+      "authorities": [
+        "bt_free_reconstruction_obstruction"
+      ],
+      "claim_id": "RF-11-BT-FREE-RECONSTRUCTION-OBSTRUCTION",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL"
+      ],
+      "statement": "On the zero-mode-fixed 6^4 free BT lattice, a shift-invariant positive-time slice observable has exact reflected norm -1/1296; fixed-volume continuity extends the ordinary-OS obstruction to some open coupling interval around zero, while lambda=0.4 remains open. The free L^4 family has a uniform H^-1 second-moment bound 15/32 and a logarithmically divergent L2 second moment.",
+      "status": "SCOPED_OS_OBSTRUCTION_AND_FREE_UNIFORM_ESTIMATE"
     }
   ],
   "created": "2026-08-14",
@@ -343,7 +379,8 @@
     "promotion of any quantum lifecycle state",
     "reproduction of the Cassini raw-data reduction, likelihood, covariance analysis, or systematic-error budget",
     "a complete standard-GR theory or empirical support for a Weyl-gravity model",
-    "a continuum, empirical, Born-rule, or Lorentzian promotion from the BT Euclidean finite lattice"
+    "a continuum, empirical, Born-rule, or Lorentzian promotion from the BT Euclidean finite lattice",
+    "reflection-positivity failure at lambda=0.4 or every nonzero coupling"
   ],
   "formal_object": {
     "coordinates": {
@@ -477,7 +514,7 @@
       "source_sha256": "c8ecc8ea14f565cb32ed9e9d6f22b26335a27c01a54cf3129dfbdbff8b83475b"
     },
     "path": "paper/21-reverse-foundations-of-physics.tex",
-    "sha256": "e7ea47e28306c1d31b5119966481c6c77471a5ebe198e14d97d040aa3136e20f"
+    "sha256": "8ecd6759cda3df3d7c53b65047f32d441fa62c618905daff208ac2321071e8a7"
   },
   "result_id": "PAPER21_REVERSE_FOUNDATIONS_INTRODUCTION_V1",
   "result_kind": "PROGRAMME_SYNTHESIS_AND_TYPED_CASE_STUDY_MAP",
