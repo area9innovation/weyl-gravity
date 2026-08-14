@@ -1,0 +1,181 @@
+{
+  "answer": "For every L>=4 and every separable background psi(t,x)=a_t+b_x on the four-dimensional periodic lattice, the BT action Hessian in any real lowest temporal Fourier direction is at least N*omega_L^2/3. Hence the one-dimensional conditional variance is at most 3/(N*omega_L^2). An exact centered, mode-orthogonal, nonseparable L=4 fixture has a strictly negative spatial-correlation remainder, so the proof cannot be extended by declaring that remainder positive. The all-background conditional width, annealed center, interacting H^-1 estimate, and continuum limit remain open.",
+  "certificate": "REVERSE_PHYSICS_BT_EUCLIDEAN_SEPARABLE_LOWEST_MODE_CURVATURE_V1",
+  "checks": {
+    "all_background_extension_remains_open": true,
+    "centering_constant_does_not_change_weights": true,
+    "conditional_variance_constant_is_three": true,
+    "correlated_fixture_is_mode_orthogonal": true,
+    "correlated_total_hessian_remains_positive": true,
+    "correlation_remainder_is_strictly_negative": true,
+    "general_curvature_fraction_is_two_thirds": true,
+    "interacting_h_minus_one_bound_remains_open": true,
+    "mode_is_lowest_axial_eigenvector_at_L4": true,
+    "no_continuum_born_krein_or_lorentzian_promotion": true,
+    "separable_spatial_remainder_is_nonnegative": true
+  },
+  "created": "2026-08-14",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "does_not_establish": [
+    "an all-background conditional variance bound",
+    "an annealed bound on moving conditional centers",
+    "the normalized interacting lowest-mode second moment",
+    "an interacting H^-1 estimate or tightness",
+    "a continuum Euclidean measure, Born rule, Krein reconstruction, or anything LORENTZIAN-CAUSAL"
+  ],
+  "exact_correlated_fixture": {
+    "L": 4,
+    "conclusion": "The spatial-correlation remainder has no all-background nonnegative sign, even on a centered background orthogonal to the selected lowest mode.",
+    "coordinates": "psi=(k+37/16)*log(2), repeated in the other two spatial axes",
+    "full_4d_replication_factor": 16,
+    "full_hessian_per_inert_spatial_cell": {
+      "denominator": 131072,
+      "numerator": 702695317615
+    },
+    "integer_exponents_k_by_time_and_first_space": [
+      [
+        -3,
+        -5,
+        -5,
+        -6
+      ],
+      [
+        -5,
+        -2,
+        -2,
+        -1
+      ],
+      [
+        -4,
+        -5,
+        -4,
+        -6
+      ],
+      [
+        6,
+        2,
+        5,
+        -2
+      ]
+    ],
+    "mean_before_centering_per_inert_spatial_cell": -37,
+    "mode": [
+      1,
+      0,
+      -1,
+      0
+    ],
+    "mode_pairing_per_inert_spatial_cell": 0,
+    "spatial_correlation_remainder_per_inert_spatial_cell": {
+      "denominator": 262144,
+      "numerator": -456623975
+    },
+    "temporal_line_part_per_inert_spatial_cell": {
+      "denominator": 262144,
+      "numerator": 1405847259205
+    }
+  },
+  "exact_separable_fixture": {
+    "L": 4,
+    "full_hessian": {
+      "denominator": 1,
+      "numerator": 5105
+    },
+    "one_spatial_axis_exponents": [
+      0,
+      1,
+      -1,
+      0
+    ],
+    "other_two_spatial_axes": "constant",
+    "spatial_remainder": {
+      "denominator": 1,
+      "numerator": 585
+    },
+    "temporal_line_part": {
+      "denominator": 1,
+      "numerator": 4520
+    },
+    "time_exponents": [
+      0,
+      1,
+      -1,
+      0
+    ]
+  },
+  "foundational_dependency_cut": {
+    "analytic_layer": "elementary real exponential, hyperbolic, trigonometric, and one-dimensional Brascamp-Lieb inequalities",
+    "finite_exact_layer": "rational power-of-two fixture arithmetic and finite edge pairing",
+    "weakest_base_or_reversal": "NOT_ESTABLISHED"
+  },
+  "lifecycle_state": "SCOPED_THEOREM_PROVED",
+  "method_disposition": {
+    "actual_interacting_h_minus_one_second_moment": "OPEN",
+    "all_background_recentered_conditional_variance": "OPEN",
+    "all_background_spatial_remainder_nonnegative": "OBSTRUCTED",
+    "annealed_center_second_moment": "OPEN",
+    "born_rule": "NOT_ESTABLISHED",
+    "continuum_limit": "NOT_ESTABLISHED",
+    "krein_reconstruction": "NOT_ASSESSED",
+    "lorentzian_transfer": "NOT_ESTABLISHED",
+    "normalized_lowest_mode_second_moment": "OPEN",
+    "separable_background_conditional_variance": "PROVED",
+    "separable_background_lowest_mode_curvature": "PROVED"
+  },
+  "missing_object_ledger": [
+    "an inequality absorbing the signed correlation remainder into positive temporal curvature or Gibbs weight",
+    "an annealed second-moment bound for background-dependent fiber centers",
+    "a volume-uniform normalized lowest-mode estimate followed by Fourier-shell summation"
+  ],
+  "next_gate": "Prove an all-background correlation-absorption inequality, or construct a periodic family where the complete lowest-mode fiber curvature/normalized marginal fails; then combine recentered width with annealed center control.",
+  "proof_ledger": {
+    "completion_of_squares": "6*d_t^2*u_t^2+(e_t^2-e_(t+1)^2)*u_t>=-(e_t^2-e_(t+1)^2)^2/(24*d_t^2)",
+    "cycle_identity": "H=2*sum_t f(exp(u_t))*d_t^2+sum_t exp(u_t-u_(t-1))*e_t^2, where f(x)=x^2+x^-2-x-x^-1, d_t=h_(t+1)-h_t, e_t=d_t-d_(t-1)",
+    "exponential_tangent": "exp(v)>=1+v",
+    "relative_loss": "omega_L^2*cos(pi/L)^2/6=(8/3)*sin(pi/L)^4*cos(pi/L)^2<=1/3",
+    "scalar_inequality": "f(exp(u))=2*cosh(2u)-2*cosh(u)>=3*u^2",
+    "spatial_term": "separability makes c_t independent of x and sum_x[sum_(y~x)exp(b_y-b_x)-6]>=0 by pairing every undirected edge as exp(delta)+exp(-delta)-2",
+    "trigonometric_sum": "sum_t (e_t^2-e_(t+1)^2)^2/d_t^2=2*L*omega_L^4*cos(pi/L)^2"
+  },
+  "provenance": {
+    "arithmetic": "Python Fraction arithmetic for every lattice fixture",
+    "inputs": [
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_RUNAWAY_FIBER_WIDTH_BOUND_V1.json",
+        "sha256": "96667b3b3f38bbdc8f9981b2615a9b3165e0c4e6a6654eecc7a96d7e23ca2ecf"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_CENTERED_FIBER_DOMINATION_OBSTRUCTION_V1.json",
+        "sha256": "d889a559d0b334492f85fc86be4ba5084311f718017b526104f0cd8f1f279467"
+      }
+    ],
+    "repository_base_commit": "e75bac393108c75601a84f9b0931050a8a1f816d"
+  },
+  "report": "reverse_physics/reports/bt-euclidean-separable-lowest-mode-curvature.md",
+  "result_kind": "exact separable-background curvature theorem and correlated-remainder obstruction",
+  "schema": "reverse_physics/schema/reverse-physics-bt-euclidean-separable-lowest-mode-curvature-v1.schema.json",
+  "schema_version": "reverse-physics-bt-euclidean-separable-lowest-mode-curvature-v1",
+  "theorem": {
+    "action": "A(psi)=(1/2)*sum_x[sum_(y~x) exp(psi_y-psi_x)-8]^2",
+    "background": "psi(t,x)=a_t+b_x, with arbitrary real periodic a and b",
+    "conditional_variance_bound": "Var(t|separable background)<=3/(N*omega_L^2)",
+    "coupling_cancellation": "For S_lambda(phi)=A(lambda*phi)/lambda^2, its phi-Hessian along h equals the psi-Hessian of A.",
+    "curvature_bound": "Hess A_psi[h,h]>=N*omega_L^2/3",
+    "direction": "h_t=cos(2*pi*t/L+alpha), with arbitrary phase alpha",
+    "free_curvature": "Hess A_0[h,h]=N*omega_L^2/2",
+    "lattice": "four-dimensional periodic L^4 lattice, integer L>=4",
+    "omega": "omega_L=4*sin(pi/L)^2",
+    "retained_fraction_of_free_curvature": {
+      "denominator": 3,
+      "numerator": 2
+    }
+  },
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_euclidean_separable_lowest_mode_curvature.py --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_euclidean_separable_lowest_mode_curvature.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_euclidean_separable_lowest_mode_curvature"
+  ]
+}

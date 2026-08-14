@@ -1,0 +1,78 @@
+{
+  "schema_version": "science-forge-tier-receipt-v1",
+  "receipt_id": "BT_SEPARABLE_LOWEST_MODE_CURVATURE_V1_TIER_RECEIPT",
+  "result_id": "REVERSE_PHYSICS_BT_EUCLIDEAN_SEPARABLE_LOWEST_MODE_CURVATURE_V1",
+  "created": "2026-08-14",
+  "source_base_commit": "e75bac393108c75601a84f9b0931050a8a1f816d",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"],
+  "scope": "Prove a volume-scaled lowest-mode conditional curvature theorem on all separable BT backgrounds, exhibit an exact orthogonal correlated fixture obstructing the naive all-background remainder-sign extension, and preserve the open all-background, annealed-center, interacting H-minus-one, continuum, Born, Krein, and Lorentzian boundaries.",
+  "artifacts": [
+    {"path": "reverse_physics/bt_euclidean_separable_lowest_mode_curvature.py", "sha256": "bc52257a2b1fbc7f075a17e0eec127c565a094c5c23d5cc83637846599252ad9"},
+    {"path": "reverse_physics/verify_bt_euclidean_separable_lowest_mode_curvature.py", "sha256": "3f770d2f17cd865554e2b92900a57a9eb47922f2628bc0bc6cb251b87a440051"},
+    {"path": "reverse_physics/tests/test_bt_euclidean_separable_lowest_mode_curvature.py", "sha256": "59d177bc6e25a8f54825e25b04770a6d9c8480dd0ff11dbd267be438b046a584"},
+    {"path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_SEPARABLE_LOWEST_MODE_CURVATURE_V1.json", "sha256": "113eb734688dd2163304398043a9ab680cd0fa4ccb5f08b059e808dce9fdf8a7"},
+    {"path": "reverse_physics/schema/reverse-physics-bt-euclidean-separable-lowest-mode-curvature-v1.schema.json", "sha256": "77bc22e46631aaf454739f6bd790be645aa6c8c7f51ea1fad90b6ff2e69d06b7"},
+    {"path": "reverse_physics/reports/bt-euclidean-separable-lowest-mode-curvature.md", "sha256": "7540c61b177ce5db42946be87c2240ef97adfbf9bc0901edca3f9c54a0e3c30a"},
+    {"path": "planning/events/reverse-physics-bateman-euclidean-continuum-reconstruction-ACTIVE-1c9a3031c27b9c1f.json", "sha256": "3d4c2ec2a32731d8f97b751875e8667497fb0de3348232c02c55d750fb883186"}
+  ],
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        {"command": "ulimit -v 500000; python3 -m py_compile <three scoped Python paths>", "status": "PASS"},
+        {"command": "python3 -m json.tool <certificate, schema, event, receipt>", "status": "PASS"},
+        {"command": "git diff --check -- <eight scoped paths>", "status": "PASS"}
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "commands": [
+        {"command": "ulimit -v 500000; python3 reverse_physics/bt_euclidean_separable_lowest_mode_curvature.py --check", "status": "PASS"},
+        {"command": "ulimit -v 500000; python3 reverse_physics/verify_bt_euclidean_separable_lowest_mode_curvature.py", "status": "PASS", "output": "independent exact enumeration, strict schema, provenance hashes, and boundary checks"},
+        {"command": "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_euclidean_separable_lowest_mode_curvature", "status": "PASS", "output": "6 tests including fail-closed mutations"},
+        {"command": "GOMEMLIMIT=300MiB GOGC=50 sfc conform planning/work-items", "status": "PASS", "output": "CLEAN"}
+      ]
+    },
+    "tier_2": {
+      "status": "NOT_RUN",
+      "criterion": "The change introduces an isolated action-Hessian theorem and exact finite fixture. It changes no shared operator, classical import, sampler, schema consumed by another certificate chain, or generated foundational input."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No all-background estimate, integrated Gibbs marginal, interacting H-minus-one estimate, tightness, continuum theorem, lifecycle promotion, freeze, shared-core algebra, or release is claimed."
+    }
+  },
+  "memory_receipt": {
+    "policy": "All Python and TeX commands ran sequentially under a 500000 KiB virtual-memory ceiling; the Go conformance rail uses GOMEMLIMIT=300MiB and GOGC=50 without the incompatible shell virtual-address cap.",
+    "oom_or_timeout": false,
+    "recorded_nonpass": {
+      "command": "ulimit -v 500000; GOMEMLIMIT=300MiB GOGC=50 sfc conform planning/work-items",
+      "status": "FAIL",
+      "reason": "The Go runtime could not reserve page-summary virtual address space because the preceding Python JSON checks shared the same shell virtual-memory ceiling; no repository write occurred.",
+      "disposition": "Reran in a fresh shell with the Go heap controls and without the incompatible virtual-address cap; the rerun passed CLEAN."
+    }
+  },
+  "paper_integration": {
+    "status": "DEFERRED_DUE_TO_CONCURRENT_AUTHORITY_EDITS",
+    "reason": "A substantial concurrent foundations update changed the generated Paper 21 appendix and authority files while this slice was being compiled. The paper source changes remain unstaged so the core theorem can be committed without absorbing another team's uncommitted work; the claim map and PDF must be regenerated after that authority update lands."
+  },
+  "claim_flags": {
+    "separable_background_lowest_mode_curvature_established": true,
+    "separable_background_conditional_variance_established": true,
+    "all_background_spatial_remainder_nonnegative": false,
+    "all_background_recentered_conditional_variance_established": false,
+    "annealed_center_second_moment_established": false,
+    "normalized_lowest_mode_second_moment_established": false,
+    "bt_interacting_h_minus_one_established": false,
+    "continuum_measure_established": false,
+    "born_rule_established": false,
+    "krein_reconstruction_established": false,
+    "new_lorentzian_claim": false
+  },
+  "does_not_establish": [
+    "an all-background conditional variance or complete lowest-mode curvature theorem",
+    "an annealed bound for background-dependent fiber centers",
+    "a normalized interacting lowest-mode or H-minus-one moment bound",
+    "tightness, a continuum measure, a Born rule, Krein reconstruction, or anything LORENTZIAN-CAUSAL"
+  ]
+}
