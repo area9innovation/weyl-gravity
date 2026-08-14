@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/reverse-physics-bateman-euclidean-continuum-reconstruction-ACTIVE-802ad3f78614f120",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work item transitioned",
+  "source": {"path": "tools/science-forge/program/events/reverse-physics-bateman-euclidean-continuum-reconstruction-ACTIVE-802ad3f78614f120.json", "span": null},
+  "body": {"event_kind": "WORK_ITEM_TRANSITIONED", "actor": "codex", "base_revision": "science-forge-ir-v0", "predecessors": [], "when": "2026-08-14", "seq": 7, "predecessor": "sf:program/event/reverse-physics-bateman-euclidean-continuum-reconstruction-ACTIVE-53b7491433ecf0ab", "payload": {"target": "sf:program/work/reverse-physics-bateman-euclidean-continuum-reconstruction", "to_state": "ACTIVE", "note": "The leading score logarithm is now normalized exactly. Its lattice residue is 5/(16*pi^2). Converting the source's 4*pi-rescaled MS coupling gives beta_g=-(5/(16*pi^2))*g^3-(15/(128*pi^4))*g^5+..., so on a fixed-physical-volume asymptotically free refinement g_L^2 log L tends to 8*pi^2/5 and the leading normalized score coefficient g_L^2 C_L tends to 1/2. This restores leading-log uniformity only on the tuned branch. Fixed-spacing large volume, finite lattice-to-MS matching beyond universal coefficients, all-order resummation, the nonperturbative Gibbs score, the integrated marginal, and H^-1 remain open."}, "native": {"authored_by": "sfc work-event", "policy": "append-only (SPEC 4.5); one content-addressed file per event; the work-item file is never rewritten — the effective state is the fold of these events over the base state."}},
+  "edges": [{"rel": "TRANSITIONS", "to": "sf:program/work/reverse-physics-bateman-euclidean-continuum-reconstruction"}]
+}

@@ -1399,6 +1399,47 @@ annealed estimate.  At fixed physical torus size the logarithm is read along
 the ultraviolet refinement; at fixed lattice spacing it accompanies the
 soft lowest-momentum/large-volume limit.
 
+Certificate
+\cert{REVERSE_PHYSICS_BT_EUCLIDEAN_SCORE_RG_MATCHING_V1}
+now computes that normalization.  The lattice annulus has exact logarithmic
+residue
+
+\[
+ C_L=\frac{5}{16\pi^2}\log L+O(1).
+\]
+
+The continuum source defines its MS coupling with an explicit $4\pi$ factor.
+For the unrescaled perfect-square coefficient $g$ used by the lattice,
+
+\[
+ \beta_g=-\frac{5}{16\pi^2}g^3
+          -\frac{15}{128\pi^4}g^5+O(g^7).
+\]
+
+On a fixed-physical-volume refinement, where the cutoff scale grows
+proportionally to $L$, asymptotic freedom therefore gives
+
+\[
+ g_L^2\log L\longrightarrow\frac{8\pi^2}{5},
+ \qquad g_L^2C_L\longrightarrow\frac12.
+\]
+
+The leading logarithmic nonuniformity is thus restored to a finite nonzero
+coefficient on the tuned trajectory.  The Ward relation
+$\gamma_\sigma=\beta_g/g$ also makes $g\sigma$, the exponential lattice
+field, RG invariant.  Neither fact is an all-order lattice score bound or a
+nonperturbative Gibbs theorem.  Fixed lattice spacing and growing physical
+volume is a distinct limit: there the cutoff coupling is not tuned with $L$,
+so this cancellation cannot be imported.  The next gate is the finite-lattice
+Ward identity for the conditional score composite.  The ordinary
+equation-of-motion identity
+$\mathbb E[(D_hS)^2]=\mathbb E[D_h^2S]$ is exact, but evaluates the score at
+the sampled field rather than at zero fiber coordinate.  The same shifted-
+Gaussian fixture has full-score variance (2) and zero-fiber-score variance
+(100), so no general transfer exists.  A BT-specific projected identity,
+followed by all-order and nonperturbative control on the declared
+scale-setting branch, remains necessary.
+
 \subsection{A finite BV contraction does not freeze the quantum theory}
 
 The energy-two free BV block provides another finite exact case.  The
@@ -1751,11 +1792,19 @@ does retain a soft factor on every leg, but its free orthogonal-background
 coefficient has an exact logarithmic lower bound in the lattice-size limit.
 Therefore a
 fixed-bare-coupling, coefficient-by-coefficient estimate cannot close the
-gate.  The next viable route must first declare the physical scale setting,
-then derive the score's finite-volume Ward/RG identity, test its running
-normalization on the matched-volume asymptotically free trajectory or its
-soft-volume normalization at fixed spacing, and finally prove a genuinely
-nonperturbative multiscale estimate.
+gate.  The physical scale setting now gives a precise fork.  On a
+fixed-physical-volume refinement the logarithmic residue is
+$5/(16\pi^2)$, asymptotic freedom gives
+$g_L^2\log L\to8\pi^2/5$, and the leading score coefficient tends to $1/2$.
+This restores leading-log uniformity on the tuned branch.  At fixed lattice
+spacing, increasing $L$ instead sends the lowest external momentum to zero
+without the same coupling tuning, so that conclusion does not transfer.
+The ordinary finite-lattice equation-of-motion Ward identity controls the
+sampled full score, not the zero-fiber score, and an exact shifted-Gaussian
+fixture obstructs any general transfer between them.  The next viable route
+is therefore a BT-specific projected Ward/RG equation for the conditional
+zero-fiber composite, followed by a genuinely nonperturbative multiscale
+estimate on the declared branch.
 The logarithmic coefficient is not evidence that the resummed interacting
 moment diverges.  Only after the normalized marginal closes should the
 programme sum Fourier shells.  Another fixed-origin, pointwise,

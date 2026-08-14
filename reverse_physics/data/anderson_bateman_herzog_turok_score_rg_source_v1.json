@@ -1,0 +1,33 @@
+{
+  "source_id": "ABHT_2026_SCORE_RG_NORMALIZATION_V1",
+  "title": "On divergences in a four-derivative scalar field theory",
+  "authors": [
+    "Maegan Anderson",
+    "Sam Bateman",
+    "Franz Herzog",
+    "Neil Turok"
+  ],
+  "arxiv_id": "2608.12210v1",
+  "arxiv_url": "https://arxiv.org/abs/2608.12210",
+  "version_date": "2026-08-12",
+  "retrieved": "2026-08-14",
+  "source_archive_sha256": "e3f1a65d9dbc2d98cb428e57ac4f54ae8443421fdf1491423c8a3316b904595a",
+  "equations_transcribed": {
+    "field_and_coupling_renormalization": "sigma_b=Z_sigma^(1/2)*sigma_r; lambda_3_b=(4*pi)*mu^(epsilon/2)*Z_3*lambda_3_r; lambda_4_b=(4*pi)^2*mu^epsilon*Z_4*lambda_4_r",
+    "perfect_square": "L_PS=-(1/2)*(Box(sigma)+lambda*(partial(sigma))^2)^2",
+    "perfect_square_trajectory": "lambda_3=-lambda; lambda_4=-(1/2)*lambda^2",
+    "ward_identity": "Z_3*Z_sigma^(1/2)=Z_4*Z_sigma=1",
+    "three_loop_beta": "beta_lambda=-(epsilon/2)*lambda-5*lambda^3-30*lambda^5-(192*zeta(3)+617/2)*lambda^7+...",
+    "three_loop_anomalous_dimension": "gamma_sigma=-5*lambda^2-30*lambda^4-(192*zeta(3)+617/2)*lambda^6+...",
+    "all_order_relation": "gamma_sigma=epsilon/2+beta_lambda/lambda",
+    "field_redefinition": "Omega=exp(lambda*sigma)"
+  },
+  "normalization_reading": "At epsilon=0, the coefficient multiplying (partial sigma)^2 in the bare perfect-square operator is g_PS=4*pi*lambda_MS at leading matching order. Therefore beta_gPS=-(5/(16*pi^2))*g_PS^3-(15/(128*pi^4))*g_PS^5+... .",
+  "source_statements": [
+    "The perfect-square trajectory is preserved under renormalization.",
+    "The beta function is asymptotically free and is related to O(2) phi^4 at negative coupling.",
+    "The Ward identity ties coupling and field renormalization.",
+    "Off-shell Euclidean correlators are perturbatively infrared finite at fixed nonzero external momenta."
+  ],
+  "transcription_boundary": "This record transcribes the continuum dimensional-regularization/minimal-subtraction normalization needed for the lattice score comparison. It does not prove a lattice-to-MS matching theorem, an all-order lattice score estimate, a nonperturbative Gibbs bound, or a continuum limit."
+}

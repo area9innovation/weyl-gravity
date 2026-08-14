@@ -109,6 +109,7 @@ def main() -> int:
     bt_all_background_curvature = json.loads((ROOT / data["authorities"]["bt_all_background_lowest_mode_curvature"]["path"]).read_text())
     bt_center_score = json.loads((ROOT / data["authorities"]["bt_annealed_center_score_reduction"]["path"]).read_text())
     bt_cubic_score = json.loads((ROOT / data["authorities"]["bt_cubic_score_log_obstruction"]["path"]).read_text())
+    bt_score_rg = json.loads((ROOT / data["authorities"]["bt_score_rg_matching"]["path"]).read_text())
     dims = cube["dimensions"]
     atlas = data["atlas_snapshot"]
     require(atlas["axis_sizes"] == [6, 6, 16], "unexpected axis sizes")
@@ -247,6 +248,15 @@ def main() -> int:
     require(atlas["bt_cubic_nonperturbative_score_status"] == bt_cubic_score["method_disposition"]["nonperturbative_annealed_zero_fiber_score_bound"] == "OPEN", "BT fixed-order obstruction promoted to nonperturbative failure")
     require(atlas["bt_cubic_dyadic_block_lower_bound"] == {"numerator": 1, "denominator": 4665600}, "BT cubic dyadic lower-bound constant drift")
     require(bt_cubic_score["method_disposition"]["actual_interacting_h_minus_one_second_moment"] == "OPEN", "BT cubic coefficient obstruction promoted to H^-1 failure")
+    require(atlas["bt_score_log_residue_status"] == bt_score_rg["method_disposition"]["lattice_score_logarithmic_residue"] == "PROVED", "BT score logarithmic residue drift")
+    require(atlas["bt_rg_matched_leading_score_status"] == bt_score_rg["method_disposition"]["rg_matched_leading_score_uniformity"] == "RESTORED_AT_LEADING_LOG", "BT RG-matched leading score status drift")
+    require(atlas["bt_rg_matched_leading_score_limit"] == bt_score_rg["matched_refinement"]["score_limit_exact"] == {"numerator": 1, "denominator": 2}, "BT RG-matched score limit drift")
+    require(atlas["bt_fixed_spacing_large_volume_score_status"] == bt_score_rg["method_disposition"]["fixed_spacing_large_volume_score_bound"] == "OPEN", "BT matched refinement imported into fixed-spacing volume")
+    require(atlas["bt_rg_nonperturbative_score_status"] == bt_score_rg["method_disposition"]["nonperturbative_annealed_zero_fiber_score_bound"] == "OPEN", "BT leading RG match promoted to a Gibbs theorem")
+    require(bt_score_rg["method_disposition"]["actual_interacting_h_minus_one_second_moment"] == "OPEN", "BT leading RG match promoted to H^-1")
+    require(atlas["bt_ordinary_eom_score_identity_status"] == bt_score_rg["method_disposition"]["ordinary_finite_lattice_eom_score_identity"] == "PROVED", "BT ordinary EOM score identity drift")
+    require(atlas["bt_eom_to_zero_fiber_transfer_status"] == bt_score_rg["method_disposition"]["ordinary_eom_to_zero_fiber_score_transfer"] == "OBSTRUCTED_AS_A_LOGICAL_INFERENCE", "BT EOM score transferred to zero fiber")
+    require(atlas["bt_specific_zero_fiber_ward_status"] == bt_score_rg["method_disposition"]["bt_specific_zero_fiber_ward_identity"] == "OPEN", "BT-specific zero-fiber Ward identity promoted")
 
     allowed_tags = {"LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE", "LORENTZIAN-CAUSAL"}
     claim_ids = set()
@@ -324,6 +334,12 @@ def main() -> int:
     require(flags["bt_center_to_zero_fiber_score_reduction_established"] is True, "BT center-to-score reduction omitted")
     require(flags["bt_fixed_bare_coefficientwise_score_route_obstructed"] is True, "BT fixed-order score obstruction omitted")
     require(flags["bt_nonperturbative_annealed_score_established"] is False, "BT fixed-order obstruction promoted to a nonperturbative result")
+    require(flags["bt_score_log_residue_established"] is True, "BT score logarithmic residue omitted")
+    require(flags["bt_rg_matched_leading_score_uniformity_restored"] is True, "BT RG-matched leading score result omitted")
+    require(flags["bt_fixed_spacing_large_volume_score_established"] is False, "BT RG refinement result promoted to fixed-spacing large volume")
+    require(flags["bt_ordinary_eom_score_identity_established"] is True, "BT ordinary EOM score identity omitted")
+    require(flags["bt_eom_to_zero_fiber_general_transfer_obstructed"] is True, "BT EOM-to-zero-fiber no-transfer omitted")
+    require(flags["bt_specific_zero_fiber_ward_identity_established"] is False, "BT-specific zero-fiber Ward identity promoted")
     require(flags["bt_runaway_family_recentered_conditional_variance_established"] is True, "BT runaway-family recentered variance flag missing")
     require(flags["bt_runaway_family_conditional_mean_escape_established"] is True, "BT runaway-family conditional-mean escape flag missing")
     require(flags["bt_annealed_center_second_moment_established"] is False, "BT annealed center moment promoted")

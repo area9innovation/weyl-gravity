@@ -44,6 +44,7 @@ AUTHORITY_PATHS = {
     "bt_all_background_lowest_mode_curvature": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_ALL_BACKGROUND_LOWEST_MODE_CURVATURE_V1.json",
     "bt_annealed_center_score_reduction": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_ANNEALED_CENTER_SCORE_REDUCTION_V1.json",
     "bt_cubic_score_log_obstruction": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_CUBIC_SCORE_LOG_OBSTRUCTION_V1.json",
+    "bt_score_rg_matching": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_SCORE_RG_MATCHING_V1.json",
     "full_surface_gap_audit": "foundations/results/FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1.json",
     "explorer_snapshot": "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json",
     "theory_assembly": "foundations/results/FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1.json",
@@ -113,6 +114,7 @@ def build() -> dict:
     bt_all_background_curvature = loaded["bt_all_background_lowest_mode_curvature"]
     bt_center_score = loaded["bt_annealed_center_score_reduction"]
     bt_cubic_score = loaded["bt_cubic_score_log_obstruction"]
+    bt_score_rg = loaded["bt_score_rg_matching"]
     site = loaded["explorer_snapshot"]
     gr_cassini = loaded["gr_cassini_assembly"]
     mannheim_ngc3198 = loaded["mannheim_ngc3198_assembly"]
@@ -326,6 +328,14 @@ def build() -> dict:
             "bt_cubic_fixed_order_uniform_score_status": bt_cubic_score["method_disposition"]["fixed_bare_coupling_coefficientwise_uniform_score_proof"],
             "bt_cubic_nonperturbative_score_status": bt_cubic_score["method_disposition"]["nonperturbative_annealed_zero_fiber_score_bound"],
             "bt_cubic_dyadic_block_lower_bound": bt_cubic_score["rigorous_logarithmic_lower_bound"]["lower_bound_per_block"],
+            "bt_score_log_residue_status": bt_score_rg["method_disposition"]["lattice_score_logarithmic_residue"],
+            "bt_rg_matched_leading_score_status": bt_score_rg["method_disposition"]["rg_matched_leading_score_uniformity"],
+            "bt_rg_matched_leading_score_limit": bt_score_rg["matched_refinement"]["score_limit_exact"],
+            "bt_fixed_spacing_large_volume_score_status": bt_score_rg["method_disposition"]["fixed_spacing_large_volume_score_bound"],
+            "bt_rg_nonperturbative_score_status": bt_score_rg["method_disposition"]["nonperturbative_annealed_zero_fiber_score_bound"],
+            "bt_ordinary_eom_score_identity_status": bt_score_rg["method_disposition"]["ordinary_finite_lattice_eom_score_identity"],
+            "bt_eom_to_zero_fiber_transfer_status": bt_score_rg["method_disposition"]["ordinary_eom_to_zero_fiber_score_transfer"],
+            "bt_specific_zero_fiber_ward_status": bt_score_rg["method_disposition"]["bt_specific_zero_fiber_ward_identity"],
             "standard_reference_direct_obligations": next(item for item in assembly_data["assemblies"] if item["id"] == "STANDARD_MIXED_REFERENCE")["coverage"]["direct"],
             "external_calibration_records": len(assembly_data["calibration_controls"][0]["records"]),
             "external_calibration_benchmark_families": sum(item["status"] == "SUPPORTED_CONTROL" for item in assembly_data["calibration_controls"][0]["benchmark_coverage"]),
@@ -417,8 +427,8 @@ def build() -> dict:
             },
             {
                 "claim_id": "RF-13-BT-INTERACTING-RECONSTRUCTION-FRONTIER",
-                "statement": "At lambda=0.4 on the 6^4 lattice, an exact two-point reflected density-kernel minor obstructs ordinary OS positivity. The affine virial theorem proves a volume-uniform actual Gibbs action-density bound and annealed half-action factor. Exact period-four data obstruct the global Schur route. The residual map identifies positive fields modulo scale with a Schrödinger spectrahedral boundary and gives the exact normalized Gaussian-surface/tree-Jacobian pushforward. Its curvature and tree-Jacobian shortcuts are obstructed. An exact orthogonal-background family makes centered pointwise relative-action domination fail. On the subsequence eta_m=4m log(2) a, every global fiber minimizer lies below u=-m and the conditional probability of u>=-m is at most 2^-m, so the background-uniform raw conditional second moment is obstructed. On that same runaway family, however, K_m(2^u)>=115/4 proves a uniform recentered conditional-variance bound and E_qm[u]<-m/2: the obstruction is moving center rather than widening fiber. A plaquette absorption theorem proves for every background and L>=4 that the lowest axial curvature is at least (2/9)*N*omega_L^2 and conditional variance is at most 9/(2*N*omega_L^2). Strong convexity reduces the annealed center to one zero-fiber-score estimate, but an exact cubic-vertex calculation proves that the leading free orthogonal-background coefficient of that score grows at least logarithmically with lattice size. This obstructs the fixed-bare-coupling coefficientwise proof route, not the resummed Gibbs score or actual interacting moment; its ultraviolet-refinement versus soft-large-volume interpretation depends on scale setting. Half-period translation proves the fully integrated marginal is even. The all-background width is closed; a renormalized or nonperturbative center estimate and the actual interacting H^-1 moment remain open.",
-                "status": "EXACT_FINITE_OS_AND_METHOD_OBSTRUCTIONS_WITH_ALL_BACKGROUND_WIDTH_CENTER_SCORE_REDUCTION_AND_FIXED_ORDER_LOG_OBSTRUCTION",
+                "statement": "At lambda=0.4 on the 6^4 lattice, an exact two-point reflected density-kernel minor obstructs ordinary OS positivity. The affine virial theorem proves a volume-uniform actual Gibbs action-density bound and annealed half-action factor. Exact period-four data obstruct the global Schur route. The residual map identifies positive fields modulo scale with a Schrödinger spectrahedral boundary and gives the exact normalized Gaussian-surface/tree-Jacobian pushforward. Its curvature and tree-Jacobian shortcuts are obstructed. An exact orthogonal-background family makes centered pointwise relative-action domination fail. On the subsequence eta_m=4m log(2) a, every global fiber minimizer lies below u=-m and the conditional probability of u>=-m is at most 2^-m, so the background-uniform raw conditional second moment is obstructed. On that same runaway family, however, K_m(2^u)>=115/4 proves a uniform recentered conditional-variance bound and E_qm[u]<-m/2: the obstruction is moving center rather than widening fiber. A plaquette absorption theorem proves for every background and L>=4 that the lowest axial curvature is at least (2/9)*N*omega_L^2 and conditional variance is at most 9/(2*N*omega_L^2). Strong convexity reduces the annealed center to one zero-fiber-score estimate. Its leading free orthogonal-background coefficient has residue 5/(16*pi^2) times log L, obstructing fixed-bare coefficientwise uniformity. On a fixed-physical-volume asymptotically free trajectory, however, g_L^2 log L tends to 8*pi^2/5 and the leading normalized score coefficient tends exactly to 1/2. This restores leading-log uniformity only on the tuned refinement branch. The exact ordinary equation-of-motion Ward identity controls the sampled full score, and a shifted-Gaussian fixture with full-score variance 2 but zero-fiber-score variance 100 obstructs its general transfer to the missing target. Fixed-spacing large volume, a BT-specific projected Ward identity, all-order resummation, and the nonperturbative Gibbs score remain open. Half-period translation proves the fully integrated marginal is even. The all-background width is closed; a nonperturbative center estimate and the actual interacting H^-1 moment remain open.",
+                "status": "EXACT_FINITE_OS_AND_METHOD_OBSTRUCTIONS_WITH_ALL_BACKGROUND_WIDTH_CENTER_SCORE_REDUCTION_AND_RG_MATCHED_LEADING_LOG",
                 "authorities": [
                     "bt_lambda04_os_kernel_obstruction",
                     "bt_uniform_convexity_obstruction",
@@ -438,6 +448,7 @@ def build() -> dict:
                     "bt_all_background_lowest_mode_curvature",
                     "bt_annealed_center_score_reduction",
                     "bt_cubic_score_log_obstruction",
+                    "bt_score_rg_matching",
                 ],
                 "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"],
             },
@@ -571,6 +582,12 @@ def build() -> dict:
             "bt_center_to_zero_fiber_score_reduction_established": True,
             "bt_fixed_bare_coefficientwise_score_route_obstructed": True,
             "bt_nonperturbative_annealed_score_established": False,
+            "bt_score_log_residue_established": True,
+            "bt_rg_matched_leading_score_uniformity_restored": True,
+            "bt_fixed_spacing_large_volume_score_established": False,
+            "bt_ordinary_eom_score_identity_established": True,
+            "bt_eom_to_zero_fiber_general_transfer_obstructed": True,
+            "bt_specific_zero_fiber_ward_identity_established": False,
             "research_programme_lenses_explained": True,
             "coded_wave_observable_reconstruction_certified": True,
             "coded_local_weak_wave_test_class_certified": True,
