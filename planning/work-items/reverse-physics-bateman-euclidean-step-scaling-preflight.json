@@ -1,0 +1,30 @@
+{
+  "id": "sf:program/work/reverse-physics-bateman-euclidean-step-scaling-preflight",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "reverse-physics",
+    "state": "ACTIVE",
+    "objective": "Break sampler monoculture for the positive Bateman--Turok Euclidean lattice and test whether a lowest-mode interaction proxy has a reproducible finite-size change from L=4 to L=6.",
+    "depends_on": [
+      "REVERSE_PHYSICS_BT_EUCLIDEAN_LATTICE_PILOT_V1"
+    ],
+    "activates": [
+      "replicated L=6 autocorrelation measurements after the precision gate is specified",
+      "an L=8 finite-volume point only after cross-sampler precision agreement",
+      "matched-coupling continuum step scaling if the finite-volume sequence stabilizes"
+    ],
+    "current_gate": "Implement a local detailed-balance sampler independently of the HMC force, calibrate it against the exact free theory, compare action and lowest-mode moments at L=4 and L=6, and decide whether the two-volume interaction-proxy step is resolved by both algorithms.",
+    "stop_condition": "Land a block-level observation artifact, strict certificate and method-distinct verifier that either establish coarse independent reproduction and a resolved two-volume proxy step, or classify the sampling or precision obstruction without promoting a continuum claim.",
+    "forbid": "no four-sigma compatibility called precision equivalence; no finite-volume proxy called a renormalized continuum coupling; no continuum-limit, reflection-positivity, analytic-continuation, q8-q10, gravity, BV--BRST, QME or LORENTZIAN-CAUSAL promotion",
+    "allowed_paths": [
+      "reverse_physics/",
+      "planning/work-items/reverse-physics-bateman-euclidean-step-scaling-preflight.json",
+      "planning/events/",
+      "notes/bateman-turok-embedding.md",
+      "paper/05-interaction-obstructions.tex",
+      "paper/05-interaction-obstructions.pdf"
+    ],
+    "resource_hint": "Use u_L=2-M4/M2^2 for the axis-pooled lowest complex Fourier mode. Store block sufficient statistics and compute delete-one-block errors without rerunning the chains. Require exact local-delta checks and a free Gaussian calibration. Keep all runs sequential under the 500 MB virtual-memory cap."
+  }
+}

@@ -1029,6 +1029,21 @@ for the same paper's $g=-3\lambda^2$ to reproduce the perfect-square action,
 so this is naturally a display typo rather than a conflict with its
 beta-function map.
 
+An independent local Metropolis implementation now checks whether the HMC
+pilot is sampler-specific.  For the lowest axial Fourier modes define
+$M_n=\langle|z_\mu|^n\rangle$ and
+$u_L=2-M_4/M_2^2$, which vanishes for a centered complex Gaussian.  The local
+action difference agrees with full recomputation, and its free $4^4$
+calibration passes.  At $\lambda=0.4$, Metropolis and HMC agree on four declared
+observables within four combined standard errors at both $L=4$ and $L=6$, but
+the largest discrepancy is $3.04$ standard errors.  They give
+$u_6-u_4=0.193\pm0.082$ and $0.025\pm0.067$, respectively.  Thus the
+independent-sampler preflight removes reliance on one algorithm without
+resolving a nonzero finite-size step.  The certificate
+\texttt{REVERSE\_PHYSICS\_BT\_EUCLIDEAN\_STEP\_SCALING\_PREFLIGHT\_V1}
+requires replicated $L=6$ autocorrelation measurements before an $L=8$ run;
+it does not promote $u_L$ to a renormalized continuum coupling.
+
 \begin{proposition}[Null sectors and interaction-generated Jordan
 dynamics]\label{prop:sectors}
 The constant zero-action stationary backgrounds form the two null

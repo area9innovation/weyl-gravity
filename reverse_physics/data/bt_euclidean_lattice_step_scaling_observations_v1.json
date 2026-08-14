@@ -1,0 +1,933 @@
+{
+  "action": "S_E,L=(2*lambda^2)^-1 sum_x [sum_(y~x) exp(lambda*(phi_y-phi_x))-2*d]^2 for lambda!=0; the lambda=0 calibration uses its continuous limit S_E,L=(1/2) sum_x (Delta_L phi_x)^2",
+  "arithmetic": "IEEE-754 binary64; Python random.Random deterministic seeds",
+  "dependency_tags": [
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "does_not_establish": [
+    "a renormalized continuum coupling",
+    "matched physical volumes",
+    "a continuum or infinite-volume limit",
+    "Osterwalder--Schrader reflection positivity",
+    "analytic continuation or Lorentzian scattering",
+    "a q8-q10 observable or Weyl-gravity transfer"
+  ],
+  "evidence_type": "NUMERICAL_FINITE_VOLUME_OBSERVED",
+  "local_delta_direct_check_max_residual": 5.204170427930421e-16,
+  "mode_scheme": {
+    "M2": "ensemble-and-axis average of |z_mu|^2",
+    "M4": "ensemble-and-axis average of |z_mu|^4",
+    "gaussian_reference": "u_L=0 for a centered complex Gaussian mode",
+    "u_L": "2-M4/M2^2",
+    "z_mu": "V^-1/2 sum_x phi_x exp(-2*pi*i*x_mu/L), mu=1,...,d"
+  },
+  "runs": [
+    {
+      "acceptance_rate": 0.7095,
+      "algorithm": "independent local random-scan Metropolis",
+      "block_count": 20,
+      "blocks": [
+        {
+          "axis_count": 320,
+          "sample_count": 80,
+          "sum_action_density": 40.788114675380584,
+          "sum_field_variance": 2.554969874227352,
+          "sum_mode2": 120.82874714961294,
+          "sum_mode4": 89.64103034301155
+        },
+        {
+          "axis_count": 320,
+          "sample_count": 80,
+          "sum_action_density": 39.07103583012022,
+          "sum_field_variance": 2.0895215760256693,
+          "sum_mode2": 61.18112186608724,
+          "sum_mode4": 36.732875730612726
+        },
+        {
+          "axis_count": 320,
+          "sample_count": 80,
+          "sum_action_density": 39.91182907031551,
+          "sum_field_variance": 2.128080799651084,
+          "sum_mode2": 60.15836417267485,
+          "sum_mode4": 18.770627389644204
+        },
+        {
+          "axis_count": 320,
+          "sample_count": 80,
+          "sum_action_density": 39.3981736956644,
+          "sum_field_variance": 2.2294869796006713,
+          "sum_mode2": 71.89833076647643,
+          "sum_mode4": 30.1512733796705
+        },
+        {
+          "axis_count": 320,
+          "sample_count": 80,
+          "sum_action_density": 39.283596203544995,
+          "sum_field_variance": 2.1310129754240164,
+          "sum_mode2": 65.08656083972541,
+          "sum_mode4": 23.735956614273505
+        },
+        {
+          "axis_count": 320,
+          "sample_count": 80,
+          "sum_action_density": 39.381769364258275,
+          "sum_field_variance": 2.019096705945283,
+          "sum_mode2": 51.749725554530976,
+          "sum_mode4": 16.10412907689569
+        },
+        {
+          "axis_count": 320,
+          "sample_count": 80,
+          "sum_action_density": 39.273109861964166,
+          "sum_field_variance": 1.9489046769291878,
+          "sum_mode2": 43.11498973954755,
+          "sum_mode4": 11.798116528661502
+        },
+        {
+          "axis_count": 320,
+          "sample_count": 80,
+          "sum_action_density": 39.65317676030204,
+          "sum_field_variance": 2.227735802930807,
+          "sum_mode2": 83.22468674201882,
+          "sum_mode4": 46.34149080241785
+        },
+        {
+          "axis_count": 320,
+          "sample_count": 80,
+          "sum_action_density": 39.704178954576975,
+          "sum_field_variance": 2.2322644748862723,
+          "sum_mode2": 77.00929155899011,
+          "sum_mode4": 35.7747711557649
+        },
+        {
+          "axis_count": 320,
+          "sample_count": 80,
+          "sum_action_density": 39.761057854318594,
+          "sum_field_variance": 2.191460978770181,
+          "sum_mode2": 71.56997134020375,
+          "sum_mode4": 31.846462442544432
+        },
+        {
+          "axis_count": 320,
+          "sample_count": 80,
+          "sum_action_density": 39.62975100562733,
+          "sum_field_variance": 2.218396399733817,
+          "sum_mode2": 82.52062424725526,
+          "sum_mode4": 48.24450553620792
+        },
+        {
+          "axis_count": 320,
+          "sample_count": 80,
+          "sum_action_density": 40.53361415680104,
+          "sum_field_variance": 2.2784445946290517,
+          "sum_mode2": 78.34589096051958,
+          "sum_mode4": 43.19903721845438
+        },
+        {
+          "axis_count": 320,
+          "sample_count": 80,
+          "sum_action_density": 39.77508527990839,
+          "sum_field_variance": 2.1638244392305563,
+          "sum_mode2": 69.8553721594154,
+          "sum_mode4": 27.466881502649308
+        },
+        {
+          "axis_count": 320,
+          "sample_count": 80,
+          "sum_action_density": 40.78793477540149,
+          "sum_field_variance": 2.5146343074786808,
+          "sum_mode2": 112.05072432378854,
+          "sum_mode4": 80.28047042363069
+        },
+        {
+          "axis_count": 320,
+          "sample_count": 80,
+          "sum_action_density": 39.62349732957667,
+          "sum_field_variance": 2.2347028772155464,
+          "sum_mode2": 78.0956893791228,
+          "sum_mode4": 38.289203207609475
+        },
+        {
+          "axis_count": 320,
+          "sample_count": 80,
+          "sum_action_density": 39.5230196336112,
+          "sum_field_variance": 2.1501229433682036,
+          "sum_mode2": 65.02678566081693,
+          "sum_mode4": 24.741445913733166
+        },
+        {
+          "axis_count": 320,
+          "sample_count": 80,
+          "sum_action_density": 40.13164363182696,
+          "sum_field_variance": 2.265120004667592,
+          "sum_mode2": 83.73475610463349,
+          "sum_mode4": 36.97446849240595
+        },
+        {
+          "axis_count": 320,
+          "sample_count": 80,
+          "sum_action_density": 40.34386757138013,
+          "sum_field_variance": 2.092986980634694,
+          "sum_mode2": 56.984607572538614,
+          "sum_mode4": 18.10939229782394
+        },
+        {
+          "axis_count": 320,
+          "sample_count": 80,
+          "sum_action_density": 40.17262428965148,
+          "sum_field_variance": 2.2670278058127775,
+          "sum_mode2": 82.00727836445708,
+          "sum_mode4": 45.58037138679741
+        },
+        {
+          "axis_count": 320,
+          "sample_count": 80,
+          "sum_action_density": 40.01624212090091,
+          "sum_field_variance": 2.257728967893067,
+          "sum_mode2": 80.3479192331358,
+          "sum_mode4": 40.386514976416855
+        }
+      ],
+      "coupling": 0.0,
+      "elapsed_seconds": 7.026377620990388,
+      "final_action_recompute_residual": 4.590106073010247e-12,
+      "lattice": {
+        "boundary": "PERIODIC",
+        "dimensions": 4,
+        "length": 4,
+        "volume": 256
+      },
+      "proposal_width": 0.18,
+      "recorded_samples": 1600,
+      "seed": 260814400,
+      "thinning_sweeps": 4,
+      "warmup_sweeps": 1600
+    },
+    {
+      "acceptance_rate": 0.7074306640625,
+      "algorithm": "independent local random-scan Metropolis",
+      "block_count": 20,
+      "blocks": [
+        {
+          "axis_count": 320,
+          "sample_count": 80,
+          "sum_action_density": 38.73376706028781,
+          "sum_field_variance": 2.219214821947972,
+          "sum_mode2": 88.99724572599737,
+          "sum_mode4": 44.598378432623015
+        },
+        {
+          "axis_count": 320,
+          "sample_count": 80,
+          "sum_action_density": 40.16556665931016,
+          "sum_field_variance": 2.3202986376657937,
+          "sum_mode2": 85.99172270954001,
+          "sum_mode4": 45.33200680270688
+        },
+        {
+          "axis_count": 320,
+          "sample_count": 80,
+          "sum_action_density": 38.39542675633806,
+          "sum_field_variance": 1.976908080161654,
+          "sum_mode2": 53.41533688712954,
+          "sum_mode4": 16.827181885968233
+        },
+        {
+          "axis_count": 320,
+          "sample_count": 80,
+          "sum_action_density": 38.62878227115918,
+          "sum_field_variance": 2.0543385307511146,
+          "sum_mode2": 65.36704077612139,
+          "sum_mode4": 24.448418350867215
+        },
+        {
+          "axis_count": 320,
+          "sample_count": 80,
+          "sum_action_density": 39.895760382003914,
+          "sum_field_variance": 2.2195852303955355,
+          "sum_mode2": 79.86530909177881,
+          "sum_mode4": 38.543965333720685
+        },
+        {
+          "axis_count": 320,
+          "sample_count": 80,
+          "sum_action_density": 39.71253702053319,
+          "sum_field_variance": 2.2083075180885436,
+          "sum_mode2": 76.21454962626207,
+          "sum_mode4": 37.195358051885634
+        },
+        {
+          "axis_count": 320,
+          "sample_count": 80,
+          "sum_action_density": 40.01632400996096,
+          "sum_field_variance": 2.2031693415569444,
+          "sum_mode2": 69.48307466838928,
+          "sum_mode4": 33.93148563767218
+        },
+        {
+          "axis_count": 320,
+          "sample_count": 80,
+          "sum_action_density": 39.540144185454245,
+          "sum_field_variance": 2.1982025735647004,
+          "sum_mode2": 79.561032296951,
+          "sum_mode4": 35.53631240748952
+        },
+        {
+          "axis_count": 320,
+          "sample_count": 80,
+          "sum_action_density": 40.18706960637601,
+          "sum_field_variance": 2.333899827908206,
+          "sum_mode2": 95.15982108342578,
+          "sum_mode4": 47.14428220569762
+        },
+        {
+          "axis_count": 320,
+          "sample_count": 80,
+          "sum_action_density": 39.24895169890043,
+          "sum_field_variance": 2.1507407806173435,
+          "sum_mode2": 74.13303175346266,
+          "sum_mode4": 36.00964788192264
+        },
+        {
+          "axis_count": 320,
+          "sample_count": 80,
+          "sum_action_density": 39.79450179827766,
+          "sum_field_variance": 2.242937373899424,
+          "sum_mode2": 80.53397225681476,
+          "sum_mode4": 36.083984957949966
+        },
+        {
+          "axis_count": 320,
+          "sample_count": 80,
+          "sum_action_density": 38.77104987054095,
+          "sum_field_variance": 2.223545477931968,
+          "sum_mode2": 86.03471580180329,
+          "sum_mode4": 41.42497504036645
+        },
+        {
+          "axis_count": 320,
+          "sample_count": 80,
+          "sum_action_density": 39.428776924514246,
+          "sum_field_variance": 2.2077978698800034,
+          "sum_mode2": 84.1208744755666,
+          "sum_mode4": 41.63581626333178
+        },
+        {
+          "axis_count": 320,
+          "sample_count": 80,
+          "sum_action_density": 39.576581114448814,
+          "sum_field_variance": 2.2296347541215153,
+          "sum_mode2": 82.42310441938392,
+          "sum_mode4": 38.05240808700879
+        },
+        {
+          "axis_count": 320,
+          "sample_count": 80,
+          "sum_action_density": 39.31967173205346,
+          "sum_field_variance": 2.2709875522408733,
+          "sum_mode2": 87.85399769327256,
+          "sum_mode4": 54.99888699190856
+        },
+        {
+          "axis_count": 320,
+          "sample_count": 80,
+          "sum_action_density": 40.49020942532034,
+          "sum_field_variance": 2.3103345311342323,
+          "sum_mode2": 86.35382159119406,
+          "sum_mode4": 41.36819122751697
+        },
+        {
+          "axis_count": 320,
+          "sample_count": 80,
+          "sum_action_density": 38.61096710737997,
+          "sum_field_variance": 2.0836880399666127,
+          "sum_mode2": 68.40935833333374,
+          "sum_mode4": 25.34238347007522
+        },
+        {
+          "axis_count": 320,
+          "sample_count": 80,
+          "sum_action_density": 39.51000324629017,
+          "sum_field_variance": 2.1603901019871645,
+          "sum_mode2": 69.32363666296153,
+          "sum_mode4": 27.99877378443569
+        },
+        {
+          "axis_count": 320,
+          "sample_count": 80,
+          "sum_action_density": 39.316255019587445,
+          "sum_field_variance": 2.1006007471987043,
+          "sum_mode2": 62.676003092710744,
+          "sum_mode4": 22.30656053216874
+        },
+        {
+          "axis_count": 320,
+          "sample_count": 80,
+          "sum_action_density": 39.20071239301255,
+          "sum_field_variance": 2.1404698149621315,
+          "sum_mode2": 71.80476004619358,
+          "sum_mode4": 40.81319233430291
+        }
+      ],
+      "coupling": 0.4,
+      "elapsed_seconds": 8.208794354985002,
+      "final_action_recompute_residual": 1.0061285138363019e-11,
+      "lattice": {
+        "boundary": "PERIODIC",
+        "dimensions": 4,
+        "length": 4,
+        "volume": 256
+      },
+      "proposal_width": 0.18,
+      "recorded_samples": 1600,
+      "seed": 260814401,
+      "thinning_sweeps": 4,
+      "warmup_sweeps": 1600
+    },
+    {
+      "acceptance_rate": 0.874,
+      "algorithm": "zero-mode-projected HMC",
+      "block_count": 20,
+      "blocks": [
+        {
+          "axis_count": 120,
+          "sample_count": 30,
+          "sum_action_density": 14.009508354450361,
+          "sum_field_variance": 0.8070368775333803,
+          "sum_mode2": 29.410857990915794,
+          "sum_mode4": 14.187981882705625
+        },
+        {
+          "axis_count": 120,
+          "sample_count": 30,
+          "sum_action_density": 14.303089394920669,
+          "sum_field_variance": 0.8252574765924405,
+          "sum_mode2": 31.577088583756275,
+          "sum_mode4": 14.820872883445055
+        },
+        {
+          "axis_count": 120,
+          "sample_count": 30,
+          "sum_action_density": 14.38832567974337,
+          "sum_field_variance": 0.7990147862112671,
+          "sum_mode2": 28.31568977949749,
+          "sum_mode4": 12.304405258816006
+        },
+        {
+          "axis_count": 120,
+          "sample_count": 30,
+          "sum_action_density": 14.230544738121345,
+          "sum_field_variance": 0.8229447603214652,
+          "sum_mode2": 28.755556428239192,
+          "sum_mode4": 14.534986828691002
+        },
+        {
+          "axis_count": 120,
+          "sample_count": 30,
+          "sum_action_density": 14.689300437364421,
+          "sum_field_variance": 0.8093860941366506,
+          "sum_mode2": 30.035240177224296,
+          "sum_mode4": 14.519489317015125
+        },
+        {
+          "axis_count": 120,
+          "sample_count": 30,
+          "sum_action_density": 16.049501812375503,
+          "sum_field_variance": 0.8652709620279158,
+          "sum_mode2": 33.07358187504364,
+          "sum_mode4": 17.496817545058846
+        },
+        {
+          "axis_count": 120,
+          "sample_count": 30,
+          "sum_action_density": 15.694491350345592,
+          "sum_field_variance": 0.8526816828208298,
+          "sum_mode2": 26.69553391840093,
+          "sum_mode4": 10.902063523500743
+        },
+        {
+          "axis_count": 120,
+          "sample_count": 30,
+          "sum_action_density": 15.191411348059917,
+          "sum_field_variance": 0.8713838398983188,
+          "sum_mode2": 33.93915179459376,
+          "sum_mode4": 17.58122078125137
+        },
+        {
+          "axis_count": 120,
+          "sample_count": 30,
+          "sum_action_density": 14.710594135430753,
+          "sum_field_variance": 0.8719914246827594,
+          "sum_mode2": 35.0997565060608,
+          "sum_mode4": 17.807569504616282
+        },
+        {
+          "axis_count": 120,
+          "sample_count": 30,
+          "sum_action_density": 15.398476694071944,
+          "sum_field_variance": 0.8748742892937058,
+          "sum_mode2": 32.4398334895429,
+          "sum_mode4": 20.970207404612417
+        },
+        {
+          "axis_count": 120,
+          "sample_count": 30,
+          "sum_action_density": 15.178302020802057,
+          "sum_field_variance": 0.8352464892103065,
+          "sum_mode2": 26.312853552900677,
+          "sum_mode4": 12.262621043341765
+        },
+        {
+          "axis_count": 120,
+          "sample_count": 30,
+          "sum_action_density": 15.001917240691625,
+          "sum_field_variance": 0.8194537277699945,
+          "sum_mode2": 27.47781930564806,
+          "sum_mode4": 12.998423226311907
+        },
+        {
+          "axis_count": 120,
+          "sample_count": 30,
+          "sum_action_density": 14.466725716573507,
+          "sum_field_variance": 0.8203170195732655,
+          "sum_mode2": 28.247717858284314,
+          "sum_mode4": 13.10855544740112
+        },
+        {
+          "axis_count": 120,
+          "sample_count": 30,
+          "sum_action_density": 14.466482333989573,
+          "sum_field_variance": 0.8040314645856392,
+          "sum_mode2": 28.181914877252886,
+          "sum_mode4": 15.76570318379076
+        },
+        {
+          "axis_count": 120,
+          "sample_count": 30,
+          "sum_action_density": 13.770299406967483,
+          "sum_field_variance": 0.7752525646435706,
+          "sum_mode2": 25.590798761588704,
+          "sum_mode4": 9.901049239951309
+        },
+        {
+          "axis_count": 120,
+          "sample_count": 30,
+          "sum_action_density": 14.124119029392,
+          "sum_field_variance": 0.8381106598974956,
+          "sum_mode2": 33.495933755233885,
+          "sum_mode4": 17.02915108175238
+        },
+        {
+          "axis_count": 120,
+          "sample_count": 30,
+          "sum_action_density": 15.202130014437742,
+          "sum_field_variance": 0.8788668114877044,
+          "sum_mode2": 30.291443838508755,
+          "sum_mode4": 16.28633317930948
+        },
+        {
+          "axis_count": 120,
+          "sample_count": 30,
+          "sum_action_density": 15.369745276384739,
+          "sum_field_variance": 0.8493848679045517,
+          "sum_mode2": 29.749684422030843,
+          "sum_mode4": 14.805833758995451
+        },
+        {
+          "axis_count": 120,
+          "sample_count": 30,
+          "sum_action_density": 15.488377672844397,
+          "sum_field_variance": 0.8389566381605214,
+          "sum_mode2": 27.51519571445916,
+          "sum_mode4": 11.560308426804129
+        },
+        {
+          "axis_count": 120,
+          "sample_count": 30,
+          "sum_action_density": 14.553744186710079,
+          "sum_field_variance": 0.8503328757911,
+          "sum_mode2": 34.988029170747474,
+          "sum_mode4": 18.193284667084868
+        }
+      ],
+      "coupling": 0.4,
+      "elapsed_seconds": 10.798647857038304,
+      "lattice": {
+        "boundary": "PERIODIC",
+        "dimensions": 4,
+        "length": 4,
+        "volume": 256
+      },
+      "leapfrog_steps": 18,
+      "recorded_samples": 600,
+      "seed": 260814402,
+      "step_size": 0.035,
+      "thinning_trajectories": 2,
+      "warmup_trajectories": 300
+    },
+    {
+      "acceptance_rate": 0.7073244949494949,
+      "algorithm": "independent local random-scan Metropolis",
+      "block_count": 20,
+      "blocks": [
+        {
+          "axis_count": 400,
+          "sample_count": 100,
+          "sum_action_density": 49.733608606802854,
+          "sum_field_variance": 3.134777116259883,
+          "sum_mode2": 387.9148017796921,
+          "sum_mode4": 595.8081079324247
+        },
+        {
+          "axis_count": 400,
+          "sample_count": 100,
+          "sum_action_density": 49.779816864608414,
+          "sum_field_variance": 3.128532061996089,
+          "sum_mode2": 319.2873252841677,
+          "sum_mode4": 410.5157834725175
+        },
+        {
+          "axis_count": 400,
+          "sample_count": 100,
+          "sum_action_density": 49.30116227034972,
+          "sum_field_variance": 3.0213995440894603,
+          "sum_mode2": 263.95831622275983,
+          "sum_mode4": 293.4996040121643
+        },
+        {
+          "axis_count": 400,
+          "sample_count": 100,
+          "sum_action_density": 49.52942710149382,
+          "sum_field_variance": 3.204791318212514,
+          "sum_mode2": 339.63276877546195,
+          "sum_mode4": 477.40108255216563
+        },
+        {
+          "axis_count": 400,
+          "sample_count": 100,
+          "sum_action_density": 50.14819260820347,
+          "sum_field_variance": 3.377203236173386,
+          "sum_mode2": 442.43930207600175,
+          "sum_mode4": 1011.4966042720168
+        },
+        {
+          "axis_count": 400,
+          "sample_count": 100,
+          "sum_action_density": 49.71444089746796,
+          "sum_field_variance": 3.1633813011550145,
+          "sum_mode2": 320.5806566199226,
+          "sum_mode4": 434.4183176968447
+        },
+        {
+          "axis_count": 400,
+          "sample_count": 100,
+          "sum_action_density": 49.21331669959414,
+          "sum_field_variance": 2.9617675590393997,
+          "sum_mode2": 244.2939095597673,
+          "sum_mode4": 287.72136336040137
+        },
+        {
+          "axis_count": 400,
+          "sample_count": 100,
+          "sum_action_density": 49.701796818642535,
+          "sum_field_variance": 3.0597144330167976,
+          "sum_mode2": 241.2922587846313,
+          "sum_mode4": 262.29522426496203
+        },
+        {
+          "axis_count": 400,
+          "sample_count": 100,
+          "sum_action_density": 49.382212110262515,
+          "sum_field_variance": 3.0769117539359225,
+          "sum_mode2": 296.4828129739253,
+          "sum_mode4": 335.7868022322761
+        },
+        {
+          "axis_count": 400,
+          "sample_count": 100,
+          "sum_action_density": 49.350762645587736,
+          "sum_field_variance": 3.0841386247088614,
+          "sum_mode2": 293.22540520213937,
+          "sum_mode4": 381.7139459946104
+        },
+        {
+          "axis_count": 400,
+          "sample_count": 100,
+          "sum_action_density": 49.53667637990607,
+          "sum_field_variance": 3.453851815451475,
+          "sum_mode2": 542.258777751342,
+          "sum_mode4": 973.8491568409468
+        },
+        {
+          "axis_count": 400,
+          "sample_count": 100,
+          "sum_action_density": 49.36198863588979,
+          "sum_field_variance": 3.13957196623137,
+          "sum_mode2": 394.46135911355356,
+          "sum_mode4": 628.6095606582076
+        },
+        {
+          "axis_count": 400,
+          "sample_count": 100,
+          "sum_action_density": 49.457127520169195,
+          "sum_field_variance": 2.850215085551035,
+          "sum_mode2": 184.98897291332577,
+          "sum_mode4": 143.42746412017087
+        },
+        {
+          "axis_count": 400,
+          "sample_count": 100,
+          "sum_action_density": 49.36807791752776,
+          "sum_field_variance": 2.8556222296032154,
+          "sum_mode2": 169.89011356305835,
+          "sum_mode4": 116.43300917135207
+        },
+        {
+          "axis_count": 400,
+          "sample_count": 100,
+          "sum_action_density": 49.53762579856916,
+          "sum_field_variance": 3.3460878965832377,
+          "sum_mode2": 477.136196828074,
+          "sum_mode4": 863.5442670703512
+        },
+        {
+          "axis_count": 400,
+          "sample_count": 100,
+          "sum_action_density": 48.85989006274312,
+          "sum_field_variance": 2.9275325767111657,
+          "sum_mode2": 262.4393374209926,
+          "sum_mode4": 320.4424221241503
+        },
+        {
+          "axis_count": 400,
+          "sample_count": 100,
+          "sum_action_density": 49.16610443645225,
+          "sum_field_variance": 3.004926846690548,
+          "sum_mode2": 252.93894897557607,
+          "sum_mode4": 309.6484538022444
+        },
+        {
+          "axis_count": 400,
+          "sample_count": 100,
+          "sum_action_density": 49.50851753652779,
+          "sum_field_variance": 3.251712610435092,
+          "sum_mode2": 433.5518413716445,
+          "sum_mode4": 765.2768889787457
+        },
+        {
+          "axis_count": 400,
+          "sample_count": 100,
+          "sum_action_density": 49.68718879543868,
+          "sum_field_variance": 3.3042954066572294,
+          "sum_mode2": 450.57329811199486,
+          "sum_mode4": 696.002086155446
+        },
+        {
+          "axis_count": 400,
+          "sample_count": 100,
+          "sum_action_density": 49.16293673453788,
+          "sum_field_variance": 3.108899819547771,
+          "sum_mode2": 377.3404874111977,
+          "sum_mode4": 531.4418097609316
+        }
+      ],
+      "coupling": 0.4,
+      "elapsed_seconds": 60.55504240200389,
+      "final_action_recompute_residual": 2.2237145458348095e-10,
+      "lattice": {
+        "boundary": "PERIODIC",
+        "dimensions": 4,
+        "length": 6,
+        "volume": 1296
+      },
+      "proposal_width": 0.18,
+      "recorded_samples": 2000,
+      "seed": 260814601,
+      "thinning_sweeps": 4,
+      "warmup_sweeps": 3000
+    },
+    {
+      "acceptance_rate": 0.9146666666666666,
+      "algorithm": "zero-mode-projected HMC",
+      "block_count": 20,
+      "blocks": [
+        {
+          "axis_count": 120,
+          "sample_count": 30,
+          "sum_action_density": 15.108260156782979,
+          "sum_field_variance": 0.9828245296849336,
+          "sum_mode2": 128.81229278741142,
+          "sum_mode4": 262.2156530674959
+        },
+        {
+          "axis_count": 120,
+          "sample_count": 30,
+          "sum_action_density": 15.39742304770822,
+          "sum_field_variance": 1.0117116130110082,
+          "sum_mode2": 132.43151697735948,
+          "sum_mode4": 267.7568215219661
+        },
+        {
+          "axis_count": 120,
+          "sample_count": 30,
+          "sum_action_density": 15.005375595988307,
+          "sum_field_variance": 0.9314493233535136,
+          "sum_mode2": 89.47880602853775,
+          "sum_mode4": 139.92543705129304
+        },
+        {
+          "axis_count": 120,
+          "sample_count": 30,
+          "sum_action_density": 14.885996277029342,
+          "sum_field_variance": 0.9511912881667246,
+          "sum_mode2": 112.11383891053434,
+          "sum_mode4": 169.25845535235368
+        },
+        {
+          "axis_count": 120,
+          "sample_count": 30,
+          "sum_action_density": 14.950003726672973,
+          "sum_field_variance": 0.9217463936256919,
+          "sum_mode2": 97.5302201419197,
+          "sum_mode4": 152.77301164997425
+        },
+        {
+          "axis_count": 120,
+          "sample_count": 30,
+          "sum_action_density": 15.008500798988528,
+          "sum_field_variance": 0.9813005244677304,
+          "sum_mode2": 118.57411334859934,
+          "sum_mode4": 199.56212826983432
+        },
+        {
+          "axis_count": 120,
+          "sample_count": 30,
+          "sum_action_density": 14.89836987357654,
+          "sum_field_variance": 1.0127472609650428,
+          "sum_mode2": 139.1503535229985,
+          "sum_mode4": 334.8246342075914
+        },
+        {
+          "axis_count": 120,
+          "sample_count": 30,
+          "sum_action_density": 14.820045878420224,
+          "sum_field_variance": 0.9383814565768877,
+          "sum_mode2": 93.24659441382227,
+          "sum_mode4": 121.28350836062408
+        },
+        {
+          "axis_count": 120,
+          "sample_count": 30,
+          "sum_action_density": 15.063805688449047,
+          "sum_field_variance": 0.9643739587185206,
+          "sum_mode2": 109.6308697541414,
+          "sum_mode4": 212.03639350099692
+        },
+        {
+          "axis_count": 120,
+          "sample_count": 30,
+          "sum_action_density": 14.610860651095331,
+          "sum_field_variance": 0.9387534211992975,
+          "sum_mode2": 104.64330820285232,
+          "sum_mode4": 214.15550937340382
+        },
+        {
+          "axis_count": 120,
+          "sample_count": 30,
+          "sum_action_density": 14.894869576296152,
+          "sum_field_variance": 0.9518548713177734,
+          "sum_mode2": 97.00610059264253,
+          "sum_mode4": 180.1056811492486
+        },
+        {
+          "axis_count": 120,
+          "sample_count": 30,
+          "sum_action_density": 14.998990721640682,
+          "sum_field_variance": 0.93261881498786,
+          "sum_mode2": 95.94943478711295,
+          "sum_mode4": 164.8852934533566
+        },
+        {
+          "axis_count": 120,
+          "sample_count": 30,
+          "sum_action_density": 15.366546159306312,
+          "sum_field_variance": 0.9258758364742519,
+          "sum_mode2": 80.32163580651661,
+          "sum_mode4": 99.03914898235384
+        },
+        {
+          "axis_count": 120,
+          "sample_count": 30,
+          "sum_action_density": 14.924992448185805,
+          "sum_field_variance": 0.962085786893762,
+          "sum_mode2": 123.21844892579611,
+          "sum_mode4": 246.85950633179067
+        },
+        {
+          "axis_count": 120,
+          "sample_count": 30,
+          "sum_action_density": 15.281877482601514,
+          "sum_field_variance": 1.0772649777926768,
+          "sum_mode2": 177.72221647214204,
+          "sum_mode4": 407.18768645764874
+        },
+        {
+          "axis_count": 120,
+          "sample_count": 30,
+          "sum_action_density": 14.938518322953257,
+          "sum_field_variance": 0.9688870147249466,
+          "sum_mode2": 113.33700876830058,
+          "sum_mode4": 198.00070327011738
+        },
+        {
+          "axis_count": 120,
+          "sample_count": 30,
+          "sum_action_density": 15.189516040106128,
+          "sum_field_variance": 0.9525639402269996,
+          "sum_mode2": 98.26912640028218,
+          "sum_mode4": 180.0329971748925
+        },
+        {
+          "axis_count": 120,
+          "sample_count": 30,
+          "sum_action_density": 14.858062141040357,
+          "sum_field_variance": 0.9873228246913732,
+          "sum_mode2": 136.49360899888129,
+          "sum_mode4": 285.71741818916513
+        },
+        {
+          "axis_count": 120,
+          "sample_count": 30,
+          "sum_action_density": 14.829419128565421,
+          "sum_field_variance": 0.9284998309873174,
+          "sum_mode2": 95.85016131014996,
+          "sum_mode4": 139.58477392607924
+        },
+        {
+          "axis_count": 120,
+          "sample_count": 30,
+          "sum_action_density": 14.763860897476308,
+          "sum_field_variance": 1.0079794509894269,
+          "sum_mode2": 157.6485958430511,
+          "sum_mode4": 322.3653951535758
+        }
+      ],
+      "coupling": 0.4,
+      "elapsed_seconds": 76.84793638100382,
+      "lattice": {
+        "boundary": "PERIODIC",
+        "dimensions": 4,
+        "length": 6,
+        "volume": 1296
+      },
+      "leapfrog_steps": 24,
+      "recorded_samples": 600,
+      "seed": 260814602,
+      "step_size": 0.018,
+      "thinning_trajectories": 2,
+      "warmup_trajectories": 300
+    }
+  ],
+  "schema_version": "bt-euclidean-step-scaling-observations-v1",
+  "smoke": false
+}

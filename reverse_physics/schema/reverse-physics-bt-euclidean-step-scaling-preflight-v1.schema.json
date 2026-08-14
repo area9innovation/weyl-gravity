@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-step-scaling-preflight-v1.schema.json",
+  "title": "BT Euclidean step-scaling preflight certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "certificate",
+    "schema_version",
+    "dependency_tags",
+    "lifecycle_state",
+    "result_kind",
+    "question",
+    "answer",
+    "observable_scheme",
+    "free_calibration",
+    "runs",
+    "cross_sampler_z_scores",
+    "maximum_absolute_cross_sampler_z",
+    "finite_size_changes",
+    "finite_size_change_cross_algorithm_z",
+    "disposition",
+    "barrier_analysis",
+    "missing_object_ledger",
+    "next_gate",
+    "does_not_establish",
+    "provenance",
+    "verification_commands",
+    "tier_receipt",
+    "checks",
+    "report",
+    "schema"
+  ],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_EUCLIDEAN_STEP_SCALING_PREFLIGHT_V1"},
+    "schema_version": {"const": "reverse-physics-bt-euclidean-step-scaling-preflight-v1"},
+    "dependency_tags": {
+      "type": "array",
+      "prefixItems": [
+        {"const": "LOCAL-ALGEBRAIC"},
+        {"const": "EUCLIDEAN-SPECTRAL"}
+      ],
+      "items": false
+    },
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "result_kind": {"type": "string"},
+    "question": {"type": "string"},
+    "answer": {"type": "string"},
+    "observable_scheme": {"type": "object"},
+    "free_calibration": {"type": "object"},
+    "runs": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "required": [
+          "key", "algorithm", "coupling", "lattice", "acceptance_rate",
+          "recorded_samples", "block_count", "elapsed_seconds_observed",
+          "final_action_recompute_residual", "summary"
+        ]
+      }
+    },
+    "cross_sampler_z_scores": {"type": "object"},
+    "maximum_absolute_cross_sampler_z": {"type": "number"},
+    "finite_size_changes": {"type": "object"},
+    "finite_size_change_cross_algorithm_z": {"type": "number"},
+    "disposition": {"type": "object"},
+    "barrier_analysis": {"type": "object"},
+    "missing_object_ledger": {"type": "array", "items": {"type": "string"}},
+    "next_gate": {"type": "string"},
+    "does_not_establish": {"type": "array", "items": {"type": "string"}},
+    "provenance": {"type": "object"},
+    "verification_commands": {"type": "array", "items": {"type": "string"}},
+    "tier_receipt": {"type": "object"},
+    "checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"type": "boolean"},
+        "passed": {"type": "integer"},
+        "total": {"type": "integer"},
+        "failures": {"type": "array", "items": {"type": "string"}},
+        "details": {
+          "type": "object",
+          "additionalProperties": {"type": "boolean"}
+        }
+      }
+    },
+    "report": {"type": "string"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-euclidean-step-scaling-preflight-v1.schema.json"}
+  }
+}

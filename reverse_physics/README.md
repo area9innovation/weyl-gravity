@@ -182,6 +182,12 @@ bt_perfect_square_rg_separatrix.py     PS is an exact one-loop RG separatrix;
 bt_euclidean_lattice_pilot.py          positive shift-exact finite PS lattice,
                                        factor-three auxiliary normalization audit,
                                        and calibrated bounded 4^4 HMC pilot
+bt_euclidean_lattice_step_scaling_experiment.py
+                                       independent local Metropolis rail and
+                                       L=4,6 lowest-mode block observations
+bt_euclidean_lattice_step_scaling_preflight.py
+                                       coarse cross-sampler reproduction passes;
+                                       precision continuum step remains unresolved
 bt_four_point_bubble_log_jet.py        first virtual coefficient: arbitrary-mass
                                        bubble logarithm and four-leg interference jet
 bt_triangle_box_log_jet.py             complete triangle and box logarithmic jets;

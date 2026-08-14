@@ -1,0 +1,349 @@
+{
+  "answer": "The independent local action change is exact and its free-field calibration passes. At lambda=0.4, local Metropolis and HMC agree on the declared bulk and lowest-mode observables at the conservative four-sigma gate, but not at a two-sigma precision gate. Their L=4 to L=6 changes of u_L are statistically compatible, yet a nonzero change is not resolved by both algorithms. The independent-sampler preflight therefore passes only as a coarse reproduction; continuum step scaling remains inconclusive.",
+  "barrier_analysis": {
+    "observed_barrier": "The fourth-moment proxy is tail-sensitive and the local chain mixes the lowest mode slowly as L grows; current block errors are too large for a precision two-volume step.",
+    "what_remains": "Precision, not existence, is now the barrier. Independent replicas and explicit integrated-autocorrelation estimates must agree at L=6 before adding L=8 or tuning a matched coupling.",
+    "what_was_broken": "Sampler monoculture was broken: HMC and a local detailed-balance chain now provide independent numerical implementations."
+  },
+  "certificate": "REVERSE_PHYSICS_BT_EUCLIDEAN_STEP_SCALING_PREFLIGHT_V1",
+  "checks": {
+    "details": {
+      "all_acceptance_rates_between_60_and_98_percent": true,
+      "all_runs_have_twenty_nonempty_blocks": true,
+      "finite_size_change_not_resolved_by_both_algorithms_at_3sigma": true,
+      "five_required_runs_are_present": true,
+      "free_action_density_within_4sigma": true,
+      "free_connected_mode_proxy_within_4sigma_of_zero": true,
+      "free_lowest_mode_second_moment_within_4sigma": true,
+      "interacting_cross_sampler_not_claimed_precision_matched": true,
+      "interacting_cross_sampler_observables_within_4sigma": true,
+      "local_delta_matches_direct_action_below_1e_12": true,
+      "local_final_actions_recompute_below_1e_8": true,
+      "no_lorentzian_causal_claim": true,
+      "observation_artifact_is_production_not_smoke": true,
+      "observation_dependency_is_euclidean_spectral": true,
+      "step_scaling_is_explicitly_preflight_not_continuum": true,
+      "two_algorithm_finite_size_changes_agree_within_3sigma": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 16,
+    "total": 16
+  },
+  "cross_sampler_z_scores": {
+    "L4": {
+      "action_density": -0.1997162449305472,
+      "connected_mode_proxy_u": 0.3539135338000555,
+      "field_variance": -1.327623236490049,
+      "mode_second_moment": -0.9503702786986348
+    },
+    "L6": {
+      "action_density": -3.0404583746200773,
+      "connected_mode_proxy_u": 2.272433596368278,
+      "field_variance": -2.0962364269151594,
+      "mode_second_moment": -1.680191353730933
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "disposition": {
+    "continuum_limit": "NOT_ESTABLISHED",
+    "continuum_step_scaling": "NOT_ESTABLISHED",
+    "independent_free_calibration": "PASSED",
+    "independent_local_action_delta": "EXACTLY_CROSS_CHECKED",
+    "interacting_independent_reproduction": "COARSE_4SIGMA_PASS_NOT_2SIGMA_PRECISION_MATCH",
+    "lorentzian_transfer": "NOT_ESTABLISHED",
+    "two_volume_interaction_proxy": "OBSERVED_BUT_STEP_UNRESOLVED"
+  },
+  "does_not_establish": [
+    "a renormalized continuum coupling",
+    "matched physical volumes",
+    "a continuum or infinite-volume limit",
+    "Osterwalder--Schrader reflection positivity",
+    "analytic continuation or Lorentzian scattering",
+    "a q8-q10 observable or Weyl-gravity transfer",
+    "that four-sigma compatibility is a precision sampler equivalence",
+    "that the observed two-volume difference is nonzero",
+    "a beta function or asymptotically safe fixed point",
+    "anything LORENTZIAN-CAUSAL"
+  ],
+  "finite_size_change_cross_algorithm_z": 1.577545278876236,
+  "finite_size_changes": {
+    "hmc": {
+      "standard_error": 0.067455615566637,
+      "u_L6_minus_u_L4": 0.025061004741941284,
+      "z_from_zero": 0.37151843521736766
+    },
+    "metropolis": {
+      "standard_error": 0.08235144787662424,
+      "u_L6_minus_u_L4": 0.19299380093660967,
+      "z_from_zero": 2.3435386494448225
+    }
+  },
+  "free_calibration": {
+    "exact_targets": {
+      "action_density": 0.498046875,
+      "connected_mode_proxy_u": 0.0,
+      "mode_second_moment": 0.25
+    },
+    "z_scores": {
+      "action_density": -0.050493675987375565,
+      "connected_mode_proxy_u": -1.9523815138757235,
+      "mode_second_moment": -1.2905786570081275
+    }
+  },
+  "lifecycle_state": "CLASSIFIED",
+  "maximum_absolute_cross_sampler_z": 3.0404583746200773,
+  "missing_object_ledger": [
+    "raw per-measurement records for integrated-autocorrelation analysis",
+    "multiple independent seeds per algorithm and volume",
+    "a precision cross-sampler agreement gate at L=6",
+    "a matched-renormalized-coupling finite-volume scheme",
+    "an L=8 point after the L=6 precision gate passes",
+    "a controlled continuum extrapolation",
+    "Osterwalder--Schrader or alternative reconstruction",
+    "a justified Lorentzian map and q8-q10 observable matching"
+  ],
+  "next_gate": "Run at least four independent replicas of each algorithm at L=6, retain raw lowest-mode powers, estimate integrated autocorrelation times, and require action, variance, M2 and u_L agreement within two combined standard errors before spending on L=8.",
+  "observable_scheme": {
+    "M2": "ensemble-and-axis average of |z_mu|^2",
+    "M4": "ensemble-and-axis average of |z_mu|^4",
+    "gaussian_reference": "u_L=0 for a centered complex Gaussian mode",
+    "u_L": "2-M4/M2^2",
+    "z_mu": "V^-1/2 sum_x phi_x exp(-2*pi*i*x_mu/L), mu=1,...,d"
+  },
+  "provenance": {
+    "inputs": [
+      {
+        "path": "reverse_physics/data/bt_euclidean_lattice_step_scaling_observations_v1.json",
+        "sha256": "8cfa732b3ee61ec28d2786a6ae4e6236271adf1d2755281191fb931aada73c96"
+      },
+      {
+        "path": "reverse_physics/bt_euclidean_lattice_step_scaling_experiment.py",
+        "sha256": "befd0b1ff0d690b82d3d745f06f67283eaaf766432a1d853520a6d56d1b27d8a"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_LATTICE_PILOT_V1.json",
+        "sha256": "4171ff54d9a92f7555337e8865029a7dbb65aaf0b4cf930017732fb0c6051320"
+      }
+    ],
+    "observation_commands": [
+      "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 NUMEXPR_NUM_THREADS=1; ulimit -v 500000; /home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/bt_euclidean_lattice_step_scaling_experiment.py --write",
+      "same bounded environment; bt_euclidean_lattice_step_scaling_experiment.py --refresh-metropolis --write",
+      "same bounded environment; bt_euclidean_lattice_step_scaling_experiment.py --add-free-calibration --write"
+    ],
+    "peak_rss_kib": 18844,
+    "retrieval_date": "2026-08-14",
+    "source_commit": "bb903e5cd8713832b3871fe637405e0142139db2"
+  },
+  "question": "Does an independently implemented local sampler reproduce the BT Euclidean lattice pilot at L=4 and L=6 well enough to infer a nonzero finite-size step of a lowest-mode interaction proxy?",
+  "report": "reverse_physics/reports/bt-euclidean-lattice-step-scaling-preflight.md",
+  "result_kind": "finite-volume independent-sampler reproduction preflight",
+  "runs": [
+    {
+      "acceptance_rate": 0.7095,
+      "algorithm": "independent local random-scan Metropolis",
+      "block_count": 20,
+      "coupling": 0.0,
+      "elapsed_seconds_observed": 7.026377620990388,
+      "final_action_recompute_residual": 4.590106073010247e-12,
+      "key": "free_metropolis",
+      "lattice": {
+        "boundary": "PERIODIC",
+        "dimensions": 4,
+        "length": 4,
+        "volume": 256
+      },
+      "recorded_samples": 1600,
+      "summary": {
+        "action_density": {
+          "estimate": 0.4979770762907071,
+          "jackknife_standard_error": 0.0013823257651188452
+        },
+        "connected_mode_proxy_u": {
+          "estimate": -0.13152465177514605,
+          "jackknife_standard_error": 0.06736626568136933
+        },
+        "field_variance": {
+          "estimate": 0.027622202603159073,
+          "jackknife_standard_error": 0.0003946402288330644
+        },
+        "mode_fourth_moment": {
+          "estimate": 0.11627641006550406,
+          "jackknife_standard_error": 0.013636035125787026
+        },
+        "mode_second_moment": {
+          "estimate": 0.23356116214617995,
+          "jackknife_standard_error": 0.012737571448709096
+        }
+      }
+    },
+    {
+      "acceptance_rate": 0.7074306640625,
+      "algorithm": "independent local random-scan Metropolis",
+      "block_count": 20,
+      "coupling": 0.4,
+      "elapsed_seconds_observed": 8.208794354985002,
+      "final_action_recompute_residual": 1.0061285138363019e-11,
+      "key": "lambda_0p4_L4_metropolis",
+      "lattice": {
+        "boundary": "PERIODIC",
+        "dimensions": 4,
+        "length": 4,
+        "volume": 256
+      },
+      "recorded_samples": 1600,
+      "summary": {
+        "action_density": {
+          "estimate": 0.4928394114260935,
+          "jackknife_standard_error": 0.0016303095619556228
+        },
+        "connected_mode_proxy_u": {
+          "estimate": 0.050720924975489634,
+          "jackknife_standard_error": 0.0491130499662829
+        },
+        "field_variance": {
+          "estimate": 0.02740940725373777,
+          "jackknife_standard_error": 0.00025218672681968875
+        },
+        "mode_fourth_moment": {
+          "estimate": 0.11399878276244042,
+          "jackknife_standard_error": 0.006487098865436559
+        },
+        "mode_second_moment": {
+          "estimate": 0.24183162640504574,
+          "jackknife_standard_error": 0.007289539835892506
+        }
+      }
+    },
+    {
+      "acceptance_rate": 0.874,
+      "algorithm": "zero-mode-projected HMC",
+      "block_count": 20,
+      "coupling": 0.4,
+      "elapsed_seconds_observed": 10.798647857038304,
+      "final_action_recompute_residual": null,
+      "key": "lambda_0p4_L4_hmc",
+      "lattice": {
+        "boundary": "PERIODIC",
+        "dimensions": 4,
+        "length": 4,
+        "volume": 256
+      },
+      "recorded_samples": 600,
+      "summary": {
+        "action_density": {
+          "estimate": 0.49381181140612845,
+          "jackknife_standard_error": 0.004587848489841119
+        },
+        "connected_mode_proxy_u": {
+          "estimate": 0.027609972397131033,
+          "jackknife_standard_error": 0.04303655999220942
+        },
+        "field_variance": {
+          "estimate": 0.027849658854238138,
+          "jackknife_standard_error": 0.00021532830080589087
+        },
+        "mode_fourth_moment": {
+          "estimate": 0.12376536591018986,
+          "jackknife_standard_error": 0.00524757302082629
+        },
+        "mode_second_moment": {
+          "estimate": 0.2504973674166375,
+          "jackknife_standard_error": 0.005477738066309204
+        }
+      }
+    },
+    {
+      "acceptance_rate": 0.7073244949494949,
+      "algorithm": "independent local random-scan Metropolis",
+      "block_count": 20,
+      "coupling": 0.4,
+      "elapsed_seconds_observed": 60.55504240200389,
+      "final_action_recompute_residual": 2.2237145458348095e-10,
+      "key": "lambda_0p4_L6_metropolis",
+      "lattice": {
+        "boundary": "PERIODIC",
+        "dimensions": 4,
+        "length": 6,
+        "volume": 1296
+      },
+      "recorded_samples": 2000,
+      "summary": {
+        "action_density": {
+          "estimate": 0.4947504352203874,
+          "jackknife_standard_error": 0.0006276544135367317
+        },
+        "connected_mode_proxy_u": {
+          "estimate": 0.2437147259120993,
+          "jackknife_standard_error": 0.06610347411736965
+        },
+        "field_variance": {
+          "estimate": 0.031227666601024735,
+          "jackknife_standard_error": 0.0003714327601345904
+        },
+        "mode_fourth_moment": {
+          "estimate": 1.229916494309116,
+          "jackknife_standard_error": 0.14584483151028937
+        },
+        "mode_second_moment": {
+          "estimate": 0.8368358613424036,
+          "jackknife_standard_error": 0.056403001617567665
+        }
+      }
+    },
+    {
+      "acceptance_rate": 0.9146666666666666,
+      "algorithm": "zero-mode-projected HMC",
+      "block_count": 20,
+      "coupling": 0.4,
+      "elapsed_seconds_observed": 76.84793638100382,
+      "final_action_recompute_residual": null,
+      "key": "lambda_0p4_L6_hmc",
+      "lattice": {
+        "boundary": "PERIODIC",
+        "dimensions": 4,
+        "length": 6,
+        "volume": 1296
+      },
+      "recorded_samples": 600,
+      "summary": {
+        "action_density": {
+          "estimate": 0.4996588243548057,
+          "jackknife_standard_error": 0.001487347496261343
+        },
+        "connected_mode_proxy_u": {
+          "estimate": 0.05267097713907232,
+          "jackknife_standard_error": 0.05194337855310221
+        },
+        "field_variance": {
+          "estimate": 0.032215721864759565,
+          "jackknife_standard_error": 0.0002901825798287125
+        },
+        "mode_fourth_moment": {
+          "estimate": 1.7906542318515677,
+          "jackknife_standard_error": 0.14737969987789543
+        },
+        "mode_second_moment": {
+          "estimate": 0.9589284383304384,
+          "jackknife_standard_error": 0.0458151828528378
+        }
+      }
+    }
+  ],
+  "schema": "reverse_physics/schema/reverse-physics-bt-euclidean-step-scaling-preflight-v1.schema.json",
+  "schema_version": "reverse-physics-bt-euclidean-step-scaling-preflight-v1",
+  "tier_receipt": {
+    "tier_0": "parse/schema/diff checks required",
+    "tier_1": "producer, independent verifier, smoke and mutation tests required",
+    "tier_2": "prior lattice certificate hash checked; no prior mathematical input changed",
+    "tier_3": "not run: CLASSIFIED numerical preflight with no theorem or lifecycle promotion"
+  },
+  "verification_commands": [
+    "/home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/bt_euclidean_lattice_step_scaling_preflight.py --check",
+    "/home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 reverse_physics/verify_bt_euclidean_lattice_step_scaling_preflight.py",
+    "/home/alstrup/.local/share/mise/installs/python/3.12.13/bin/python3 -m unittest -v reverse_physics.tests.test_bt_euclidean_lattice_step_scaling_preflight"
+  ]
+}
