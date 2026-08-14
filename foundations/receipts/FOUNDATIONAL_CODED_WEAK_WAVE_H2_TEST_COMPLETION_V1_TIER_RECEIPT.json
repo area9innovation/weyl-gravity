@@ -1,0 +1,90 @@
+{
+  "schema_version": "science-forge-tier-receipt-v1",
+  "receipt_id": "FOUNDATIONAL_CODED_WEAK_WAVE_H2_TEST_COMPLETION_V1_TIER_RECEIPT",
+  "created": "2026-08-14",
+  "repository_base_commit": "e75bac393108c75601a84f9b0931050a8a1f816d",
+  "integration_head_observed": "e75bac393108c75601a84f9b0931050a8a1f816d",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "scope": "Construct a countable rational periodic compact-time C1 piecewise-polynomial test-code carrier on the unit cylinder, define its supplied-fast-name H2 completion over RCA_0, extend the coded energy solution and exact weak transport/wave identities with explicit continuity cutoffs, refine exactly four weak-arithmetic/smooth-distributional cube cells, regenerate the explorer and assessments, and update the working introduction paper without promoting the unrestricted LF test topology, arbitrary-distribution uniqueness, or causality.",
+  "tiers": {
+    "tier_0_compile": {
+      "status": "PASS",
+      "command": "python3 -m py_compile foundations/build_coded_weak_wave_h2_test_completion.py foundations/check_coded_weak_wave_h2_test_completion.py foundations/verify_coded_weak_wave_h2_test_completion.py foundations/refine_intersection_cube_v13.py foundations/check_refined_intersection_cube_v13.py foundations/verify_refined_intersection_cube_v13.py foundations/build_matrix_site_v2.py foundations/check_matrix_site_v2.py foundations/verify_matrix_site_v2.py paper/generate_21_reverse_foundations_claim_map.py paper/verify_21_reverse_foundations_claim_map.py",
+      "elapsed_seconds": 0.06
+    },
+    "tier_0_json": {
+      "status": "PASS",
+      "command": "parse every foundations/**/*.json and the paper claim map with json.loads",
+      "result": "239 scoped JSON files parsed after adding this receipt."
+    },
+    "tier_0_diff_check": {"status": "PASS", "command": "git diff --check on every scoped foundations and paper path"},
+    "tier_1_h2_test_completion": {
+      "status": "PASS",
+      "command": "python3 foundations/build_coded_weak_wave_h2_test_completion.py --check && python3 foundations/check_coded_weak_wave_h2_test_completion.py && python3 foundations/verify_coded_weak_wave_h2_test_completion.py && python3 -m unittest foundations.tests.test_coded_weak_wave_h2_test_completion",
+      "result": "Six H2 derivative multiindices, three exact energy fixtures, 12 minimal binary-cutoff checks, 96 exact residual-modulus inequalities, and eight mutation tests pass; independent digest a5a788036ba5e8500d14ff91f14cd9f52c28ad2fce5ccdbeea9634482280254f."
+    },
+    "tier_1_cube": {
+      "status": "PASS",
+      "command": "python3 foundations/refine_intersection_cube_v13.py --check && python3 foundations/check_refined_intersection_cube_v13.py && python3 foundations/verify_refined_intersection_cube_v13.py && python3 -m unittest foundations.tests.test_refined_intersection_cube_v13",
+      "result": "All 576 v12 coordinates and every interface are preserved except four declared H2 evidence augmentations. State representation and scoped energy-image well-posedness become local results; reconstruction remains pieces-only. Eight tests pass; independent digest 1429b9190a83874b71b469c3e7d8251dbe2f91580df6cd6570164777ac46c4b2."
+    },
+    "tier_2_direct_consumers": {
+      "status": "PASS",
+      "command": "regenerate and verify the matrix explorer, theory viability assessment, theory assembly atlas, and run their 22 direct-consumer tests",
+      "result": "The explorer contains 576 classified cells, 78 evidence records, zero migration-pending cells, and the expected v13 counts: 125 local, 90 literature, 162 pieces-only, 30 priority gaps, and 169 reviewed gaps."
+    },
+    "tier_2_paper": {
+      "status": "PASS",
+      "command": "regenerate the atlas appendices and paper claim map; verify the claim map; compile two pdflatex passes; run ci/verify_paper_manuscript_pins.py",
+      "result": "The 48-page working draft imports RF-18, the v13 counts, two contextual primary references, the named-versus-LF boundary, and all authority hashes; seven manuscript/PDF bindings pass."
+    },
+    "tier_2_complete_foundations_suite": {
+      "status": "PASS",
+      "command": "python3 -m unittest discover -s foundations/tests -p 'test_*.py'",
+      "elapsed_seconds": 63.07,
+      "result": "405/405 tests pass."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No classical or quantum freeze/tag, quantum lifecycle promotion, shared core-algebra change, release preparation, or explicit full-repository-suite request applies. The paper remains a working draft; its full direct authority and PDF rails and the complete foundations suite were run."
+    }
+  },
+  "literature_context": [
+    {
+      "citation": "Arno Pauly and Florian Steinberg, Comparing Representations for Function Spaces in Computable Analysis, Theory of Computing Systems 62 (2018), 557-582",
+      "url": "https://doi.org/10.1007/s00224-016-9745-6",
+      "use": "Supports the distinction between represented smooth/bump functions, support advice, and the nonmetrizable classical test-function topology; it is not imported as proof of the local RCA_0 theorem."
+    },
+    {
+      "citation": "Jean Van Schaftingen, Approximation in Sobolev spaces by piecewise affine interpolation, JMAA 420 (2014), 40-47",
+      "url": "https://doi.org/10.1016/j.jmaa.2014.05.036",
+      "use": "Provides classical context for direct piecewise-polynomial Sobolev approximation; no uniform H2-name translator or reverse-mathematical strength is imported."
+    }
+  ],
+  "artifact_hashes": {
+    "foundations/build_coded_weak_wave_h2_test_completion.py": "737f80ab9c34491d5159f76ec13bd062f54c3d11d47f711ac5b0cda38b2f6d54",
+    "foundations/check_coded_weak_wave_h2_test_completion.py": "9173b08dacf995c49e214ecb241d99d7a3e56c7129f13334fe0016bc94cf17f9",
+    "foundations/verify_coded_weak_wave_h2_test_completion.py": "c82f2a47eaf833690396cfa2049d1be412a6e296814f957b1caa4c9d4b1edadc",
+    "foundations/results/FOUNDATIONAL_CODED_WEAK_WAVE_H2_TEST_COMPLETION_V1.json": "d61f1be5be86a3e756b0e448c5d559d76664f76ddd9a58b5099b22c3a6c0be6d",
+    "foundations/reports/coded-weak-wave-h2-test-completion-v1.md": "38af76385e867acb4d4d65d4cac6eafc54030fa083b3db4084502577e3fff58c",
+    "foundations/schema/foundational-coded-weak-wave-h2-test-completion-v1.schema.json": "f8ad11903ad57c9d03594a0e363e9aa826e2ba4b618ea671104eee21467a3c30",
+    "foundations/tests/test_coded_weak_wave_h2_test_completion.py": "50d02b5d82232f1034dcd8a589fe989ebbbefad58d6ddeff1c3a00111351564d",
+    "foundations/refine_intersection_cube_v13.py": "577af4e18e4a63f25db995cd341e958578f421f0fd6b28db1136ada56ff395d4",
+    "foundations/check_refined_intersection_cube_v13.py": "d683dcb77af7d5e26ff52e0b12917b26c4f89a9a7aafe550366bdafef587aeda",
+    "foundations/verify_refined_intersection_cube_v13.py": "6eb2c3923f89553ade3a9405c2f21240444e0b5de5706a32afdc307bdc364adc",
+    "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V13.json": "6f68214a586a81120b482f21d6c3499c3d38bb0087535113725f3b496c4c93d6",
+    "foundations/site/data.json": "666472dc3323a17e3d9be456fa0122210cb9458963e6eadcb3918d2e056ff5f8",
+    "foundations/site/manifest.json": "4ebf39da024d3df8d0d510655ce9b4ec90dd8faba6f1d5f3cc0f7bcb6dbea27d",
+    "paper/21-reverse-foundations-of-physics.tex": "a117b618656b99c1d2071f264741988766a2c62e7e6fb155924cd299acc4f03f",
+    "paper/21-reverse-foundations-of-physics-claim-map.json": "017187dc61f97f8b81f9b22bc47a52f0bf34d00a79b87731613057f0d233a8cf",
+    "paper/21-reverse-foundations-of-physics.pdf": "1dfc812f2fd5350f1ea11a524c001c5375aa87f06f81aa25dfa70e52c66e1c0d"
+  },
+  "unresolved": [
+    "Density is certified by the declared fast H2 name, not by a uniform constructor from every bare extensional smooth test.",
+    "The fixed unit slab and H2 topology do not reconstruct the unrestricted nonmetrizable LF topology of all compactly supported smooth tests.",
+    "Evolution uniqueness is scoped to the represented coded energy-solution image, not all abstract distributional weak solutions.",
+    "No strict finite propagation, causal support, advanced/retarded Green map, curved-background, Weyl/BV, interacting, quantum, or empirical theorem follows.",
+    "The next gate is a uniform translator from a conventional fixed-support smooth-test name with derivative/support advice to the rational H2 code name, with an explicit modulus and calibrated base."
+  ],
+  "claim_boundary": "This receipt certifies a representation-aware fixed-slab H2 test completion, continuous distributional field-state map, and explicit weak-residual extension for the coded reduced wave. It does not certify the classical LF test space, arbitrary-distribution uniqueness, a new LORENTZIAN-CAUSAL result, or a complete physical theory."
+}

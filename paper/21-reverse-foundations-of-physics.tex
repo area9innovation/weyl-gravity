@@ -362,12 +362,12 @@ local anomaly classification does not restore a quantum master equation.
 \subsection{Coverage is metadata, not truth}
 
 In the current evidence snapshot, all 576 coordinates are emitted and assessed.
-Of these, 90 are marked as literature results, 123 as local results, 163 as
-having only pieces, 30 as selected priority gaps, and 170 as reviewed open
+Of these, 90 are marked as literature results, 125 as local results, 162 as
+having only pieces, 30 as selected priority gaps, and 169 as reviewed open
 gaps; zero remain not mapped.  A reviewed open gap is a formulated research
 question with a foundation requirement, carrier requirement, and typed missing
 certificate, but no direct local or literature result.  The evidence interface
-contains 77 source or certificate records.
+contains 78 source or certificate records.
 
 Those numbers measure the state of a corpus and classification scheme.  They
 do not measure how much humanity knows, and a reviewed gap is not evidence of
@@ -380,7 +380,7 @@ reviewed open gap has been made precise enough to investigate, but is not
 promoted to a programme priority or scientific result.
 
 The counts are reproducible from
-\cert{FOUNDATIONAL_INTERSECTION_CUBE_V12},
+\cert{FOUNDATIONAL_INTERSECTION_CUBE_V13},
 \cert{FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1}, and
 \cert{FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2}.  The cube explicitly records that
 complete assessment is not literature completeness, does not make every
@@ -654,6 +654,33 @@ right/left carrier, and the result does not cover every smooth compactly
 supported test, an unlabelled scalar-field quotient, strict causal support, or
 a Green operator.  It closes a finite coefficient-wise gate while leaving the
 full distributional and causal gates open.
+
+The next certificate makes the representation choice explicit rather than
+silently identifying that finite span with the classical test-function space.
+Let rational periodic compact-time \(C^1\) piecewise-polynomial codes on the
+unit cylinder carry the squared \(H^2\) norm, and define a completed test to be
+a supplied fast Cauchy name \(q_i\) with
+\(\lVert q_i-q_j\rVert_{H^2}^2\leq4^{-i}\) for \(i\leq j\).  Then
+\cert{FOUNDATIONAL_CODED_WEAK_WAVE_H2_TEST_COMPLETION_V1} proves over \(\RCA\)
+that the coded energy solution defines a continuous spacetime functional on
+this completion and that all three weak residuals extend from exact zero on
+the rational codes to exact zero on every named test.  For example,
+\[
+ |W(u;\delta\phi)|^2\leq 4E
+       \lVert\delta\phi\rVert_{H^2}^2,
+ \qquad N_W(k)=k+\ell(\lceil4E\rceil).
+\]
+The rate is part of the test name.  This covers a smooth periodic compact-time
+test when such a name is supplied; it does not uniformly manufacture names
+from bare extensional smooth functions.  That boundary matters because the
+unrestricted space of compactly supported smooth tests has a nonmetrizable LF
+topology, while represented smooth and bump functions require derivative and
+support advice~\cite{PaulySteinberg2018}.  Classical direct approximation by
+piecewise polynomials in Sobolev norms supplies useful comparison context
+\cite{VanSchaftingen2014}, but is not imported here as a uniform \(\RCA\) name
+translator.  The theorem proves uniqueness only inside the represented energy
+solution image, not among arbitrary distributions, and supplies no causal
+support or Green operator.
 
 The literature makes the missing bridge visible.  Normally hyperbolic
 operators on globally hyperbolic spacetimes have advanced and retarded Green
@@ -1209,6 +1236,33 @@ in $m$ on the declared exact family.  It neither proves an all-background
 recentered-width estimate nor controls the Gibbs-weighted distribution of
 centers.
 
+A complementary theorem now reaches the correct volume scaling on a larger,
+but still nongeneric, carrier.  Certificate
+\cert{REVERSE_PHYSICS_BT_EUCLIDEAN_SEPARABLE_LOWEST_MODE_CURVATURE_V1}
+considers every separable background $\psi(t,x)=a_t+b_x$ on the periodic
+$L^4$ lattice, $L\geq4$.  For any phase of the real lowest temporal mode,
+$h_t=\cos(2\pi t/L+\alpha)$, and
+$\omega_L=4\sin^2(\pi/L)$, it proves
+
+\[
+ \operatorname{Hess}A_\psi[h,h]\geq\frac{N\omega_L^2}{3},
+ \qquad
+ \operatorname{Var}(t\mid a+b)\leq\frac{3}{N\omega_L^2}.
+\]
+
+The free curvature is $N\omega_L^2/2$, so at least two thirds survives.
+The proof reduces each temporal line exactly, uses
+$2\cosh(2u)-2\cosh u\geq3u^2$, and pairs every spatial edge as
+$e^\delta+e^{-\delta}-2\geq0$.  This is the first interacting conditional
+bound in this line with the desired $N^{-1}\omega_L^{-2}$ scaling across all
+volumes.  It is not yet a Gibbs estimate: separable backgrounds form only a
+special sector.  Indeed the same certificate gives an exact centered,
+mode-orthogonal, correlated $L=4$ fixture whose spatial correlation remainder
+is $-456623975/262144$.  Thus the next missing lemma must absorb the signed
+correlation term rather than assume it is positive.  All-background width,
+the annealed center moment, the normalized marginal, and interacting
+$H^{-1}$ tightness remain open.
+
 \subsection{A finite BV contraction does not freeze the quantum theory}
 
 The energy-two free BV block provides another finite exact case.  The
@@ -1448,16 +1502,15 @@ The most valuable next problems are not simply the emptiest cells.  They are
 cells for which one can isolate a small theorem that connects two mature
 literatures.
 
-\subsection{Density of localized weak tests}
+\subsection{Compare represented and classical test spaces}
 
-The finite localized coefficient identity is now established, but it covers a
-ten-dimensional rational test span rather than a completed test-function
-space.  The next target is an explicit density theorem with a supplied
-approximation modulus in a named topology, followed by bounded extension of
-the weak residual to every test in that completion.  Only after that should a
-support statement be attempted for the coded \(1+1\)-dimensional model.
-Density, weak solution, and causal support remain three separate gates; none
-requires beginning with the full metric BV propagator.
+The finite localized coefficient identity and its named \(H^2\) completion are
+now established.  The next target is a uniform translator from a conventional
+fixed-support smooth-test name---including derivative and support advice---to
+the rational \(H^2\) code name, with an explicit modulus and a calibrated weak
+base.  The unrestricted LF support topology is a separate comparison, as are
+uniqueness among arbitrary distributions and causal support.  Completing one
+of these gates must not promote the others.
 
 \subsection{A ZF audit of one Green construction}
 
@@ -1553,7 +1606,11 @@ is therefore an all-background recentered width together with an annealed
 bound on the moving center in the flat log-field chart.  On the exact runaway
 family the first term is now uniformly bounded, proving that its obstruction
 comes entirely from center motion; the corresponding all-background theorem
-remains open.  Another fixed-origin, pointwise, global-curvature, or coarea
+remains open.  On every separable background, however, the lowest-mode
+conditional variance now has the correct $3/(N\omega_L^2)$ scaling.  An exact
+orthogonal correlated fixture makes the discarded spatial remainder negative,
+so extending that estimate requires a correlation-absorption theorem, not a
+sign assertion.  Another fixed-origin, pointwise, global-curvature, or coarea
 comparison cannot close that gate.
 
 \section{Limits of the present paper}
@@ -1603,7 +1660,7 @@ pdflatex -interaction=nonstopmode -halt-on-error \
 \end{verbatim}
 
 The principal machine-readable authorities are
-\cert{FOUNDATIONAL_INTERSECTION_CUBE_V12},
+\cert{FOUNDATIONAL_INTERSECTION_CUBE_V13},
 \cert{FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1},
 \cert{FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2},
 \cert{FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1},
@@ -1612,6 +1669,7 @@ The principal machine-readable authorities are
 \cert{FOUNDATIONAL_BT_SEPARABLE_STATE_CHAIN_ZF_V1},
 \cert{FOUNDATIONAL_CODED_WAVE_OBSERVABLE_RECONSTRUCTION_V1},
 \cert{FOUNDATIONAL_CODED_LOCAL_WEAK_WAVE_TEST_CLASS_V1},
+\cert{FOUNDATIONAL_CODED_WEAK_WAVE_H2_TEST_COMPLETION_V1},
 \cert{REVERSE_PHYSICS_BT_EUCLIDEAN_FREE_RECONSTRUCTION_OBSTRUCTION_V1},
 \cert{REVERSE_PHYSICS_BT_EUCLIDEAN_OS_WITNESS_PREFLIGHT_V1},
 \cert{REVERSE_PHYSICS_BT_EUCLIDEAN_RESIDUAL_TILT_JACOBIAN_CANCELLATION_V1},
@@ -1749,6 +1807,12 @@ accretive operator and applications,''
 \emph{Selecta Mathematica} \textbf{31} (2025), 32.
 \url{https://arxiv.org/abs/2304.01723}.
 
+\bibitem{PaulySteinberg2018}
+A.~Pauly and F.~Steinberg,
+``Comparing representations for function spaces in computable analysis,''
+\emph{Theory of Computing Systems} \textbf{62} (2018), 557--582.
+\url{https://doi.org/10.1007/s00224-016-9745-6}.
+
 \bibitem{Simpson1984}
 S.~G.~Simpson,
 ``Which set existence axioms are needed to prove the Cauchy/Peano theorem for
@@ -1761,6 +1825,13 @@ S.~G.~Simpson,
 \emph{Subsystems of Second Order Arithmetic}, 2nd ed., Cambridge University
 Press, 2009.
 \url{https://doi.org/10.1017/CBO9780511581007}.
+
+\bibitem{VanSchaftingen2014}
+J.~Van Schaftingen,
+``Approximation in Sobolev spaces by piecewise affine interpolation,''
+\emph{Journal of Mathematical Analysis and Applications} \textbf{420}
+(2014), 40--47.
+\url{https://doi.org/10.1016/j.jmaa.2014.05.036}.
 
 \bibitem{Weihrauch2000}
 K.~Weihrauch,

@@ -22,7 +22,7 @@ ATLAS_DATA = "foundations/site/data.json"
 ASSEMBLY_DATA = "foundations/site/assemblies.json"
 
 AUTHORITY_PATHS = {
-    "intersection_cube": "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V12.json",
+    "intersection_cube": "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V13.json",
     "bt_euclidean_import": "foundations/results/FOUNDATIONAL_BT_EUCLIDEAN_LATTICE_IMPORT_V1.json",
     "bt_free_reconstruction_obstruction": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_FREE_RECONSTRUCTION_OBSTRUCTION_V1.json",
     "bt_interacting_os_preflight": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_OS_WITNESS_PREFLIGHT_V1.json",
@@ -40,6 +40,7 @@ AUTHORITY_PATHS = {
     "bt_centered_fiber_domination_obstruction": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_CENTERED_FIBER_DOMINATION_OBSTRUCTION_V1.json",
     "bt_conditional_mass_escape_obstruction": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_CONDITIONAL_MASS_ESCAPE_OBSTRUCTION_V1.json",
     "bt_runaway_fiber_width_bound": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_RUNAWAY_FIBER_WIDTH_BOUND_V1.json",
+    "bt_separable_lowest_mode_curvature": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_SEPARABLE_LOWEST_MODE_CURVATURE_V1.json",
     "full_surface_gap_audit": "foundations/results/FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1.json",
     "explorer_snapshot": "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json",
     "theory_assembly": "foundations/results/FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1.json",
@@ -52,6 +53,7 @@ AUTHORITY_PATHS = {
     "coded_wave": "foundations/results/FOUNDATIONAL_CODED_POLYGONAL_WAVE_RCA0_V1.json",
     "coded_wave_observable_reconstruction": "foundations/results/FOUNDATIONAL_CODED_WAVE_OBSERVABLE_RECONSTRUCTION_V1.json",
     "coded_local_weak_wave_test_class": "foundations/results/FOUNDATIONAL_CODED_LOCAL_WEAK_WAVE_TEST_CLASS_V1.json",
+    "coded_weak_wave_h2_test_completion": "foundations/results/FOUNDATIONAL_CODED_WEAK_WAVE_H2_TEST_COMPLETION_V1.json",
     "finite_graph_causality": "foundations/results/FOUNDATIONAL_FINITE_GRAPH_WAVE_CAUSALITY_V1.json",
     "finite_bv": "foundations/results/FOUNDATIONAL_FREE_BV_ENERGY2_PRA_SDR_V1.json",
 }
@@ -101,12 +103,14 @@ def build() -> dict:
     bt_centered_fiber = loaded["bt_centered_fiber_domination_obstruction"]
     bt_conditional_escape = loaded["bt_conditional_mass_escape_obstruction"]
     bt_runaway_width = loaded["bt_runaway_fiber_width_bound"]
+    bt_separable_curvature = loaded["bt_separable_lowest_mode_curvature"]
     site = loaded["explorer_snapshot"]
     gr_cassini = loaded["gr_cassini_assembly"]
     mannheim_ngc3198 = loaded["mannheim_ngc3198_assembly"]
     ngc3198_common_fit = loaded["ngc3198_common_fit_comparison"]
     coded_wave_observable = loaded["coded_wave_observable_reconstruction"]
     coded_local_weak_wave = loaded["coded_local_weak_wave_test_class"]
+    coded_h2_test = loaded["coded_weak_wave_h2_test_completion"]
     atlas_data = json.loads((ROOT / ATLAS_DATA).read_text())
     assembly_data = json.loads((ROOT / ASSEMBLY_DATA).read_text())
     evidence = atlas_data["evidence"]
@@ -221,6 +225,13 @@ def build() -> dict:
             "coded_local_weak_wave_separation_rank": coded_local_weak_wave["separation"]["rank"],
             "coded_local_weak_wave_all_smooth_tests": coded_local_weak_wave["claim_flags"]["all_smooth_tests_covered"],
             "coded_local_weak_wave_causal_support": coded_local_weak_wave["claim_flags"]["strict_causal_support_proved"],
+            "coded_h2_test_derivatives": len(coded_h2_test["rational_test_codes"]["derivative_multiindices"]),
+            "coded_h2_test_density_status": coded_h2_test["named_completion"]["density_status"],
+            "coded_h2_represented_smooth_tests_covered": coded_h2_test["claim_flags"]["represented_smooth_tests_covered"],
+            "coded_h2_full_lf_topology": coded_h2_test["claim_flags"]["full_lf_test_topology_reconstructed"],
+            "coded_h2_arbitrary_distribution_uniqueness": coded_h2_test["claim_flags"]["uniqueness_among_arbitrary_distributions_proved"],
+            "coded_h2_causal_support": coded_h2_test["claim_flags"]["strict_causal_support_proved"],
+            "coded_h2_fixture_wave_offsets": {item["id"]: item["binary_cutoff_offsets"]["scalar_wave"] for item in coded_h2_test["fixtures"]},
             "bt_euclidean_direct_capabilities": sum(item["evidence_role"] == "DIRECT_LOCAL" for item in bt_euclidean["capability_decisions"]),
             "bt_euclidean_reconstruction_status": next(item["new_status"] for item in bt_euclidean["capability_decisions"] if item["coordinate"]["obligation"] == "RECONSTRUCTION_LIMITS"),
             "bt_euclidean_numerical_status": bt_euclidean["numerical_reproducibility_records"][0]["status"],
@@ -277,6 +288,10 @@ def build() -> dict:
             "bt_runaway_family_curvature_lower_bound": bt_runaway_width["uniform_lower_bound"]["lower_bound"],
             "bt_runaway_family_conditional_mean_escape_status": bt_runaway_width["method_disposition"]["runaway_family_conditional_mean_escape"],
             "bt_all_background_recentered_variance_status": bt_runaway_width["method_disposition"]["all_background_uniform_recentered_conditional_variance"],
+            "bt_separable_lowest_mode_curvature_status": bt_separable_curvature["method_disposition"]["separable_background_lowest_mode_curvature"],
+            "bt_separable_conditional_variance_status": bt_separable_curvature["method_disposition"]["separable_background_conditional_variance"],
+            "bt_correlated_spatial_remainder_status": bt_separable_curvature["method_disposition"]["all_background_spatial_remainder_nonnegative"],
+            "bt_correlated_spatial_remainder_fixture": bt_separable_curvature["exact_correlated_fixture"]["spatial_correlation_remainder_per_inert_spatial_cell"],
             "standard_reference_direct_obligations": next(item for item in assembly_data["assemblies"] if item["id"] == "STANDARD_MIXED_REFERENCE")["coverage"]["direct"],
             "external_calibration_records": len(assembly_data["calibration_controls"][0]["records"]),
             "external_calibration_benchmark_families": sum(item["status"] == "SUPPORTED_CONTROL" for item in assembly_data["calibration_controls"][0]["benchmark_coverage"]),
@@ -368,7 +383,7 @@ def build() -> dict:
             },
             {
                 "claim_id": "RF-13-BT-INTERACTING-RECONSTRUCTION-FRONTIER",
-                "statement": "At lambda=0.4 on the 6^4 lattice, an exact two-point reflected density-kernel minor obstructs ordinary OS positivity. The affine virial theorem proves a volume-uniform actual Gibbs action-density bound and annealed half-action factor. Exact period-four data obstruct the global Schur route. The residual map identifies positive fields modulo scale with a Schrödinger spectrahedral boundary and gives the exact normalized Gaussian-surface/tree-Jacobian pushforward. Its curvature and tree-Jacobian shortcuts are obstructed. An exact orthogonal-background family makes centered pointwise relative-action domination fail. On the subsequence eta_m=4m log(2) a, every global fiber minimizer lies below u=-m and the conditional probability of u>=-m is at most 2^-m, so the background-uniform raw conditional second moment is obstructed. On that same runaway family, however, K_m(2^u)>=115/4 proves a uniform recentered conditional-variance bound and E_qm[u]<-m/2: the obstruction is moving center rather than widening fiber. Half-period translation proves the fully integrated marginal is even. All-background recentered width, the annealed center moment, and the actual interacting H^-1 moment remain open.",
+                "statement": "At lambda=0.4 on the 6^4 lattice, an exact two-point reflected density-kernel minor obstructs ordinary OS positivity. The affine virial theorem proves a volume-uniform actual Gibbs action-density bound and annealed half-action factor. Exact period-four data obstruct the global Schur route. The residual map identifies positive fields modulo scale with a Schrödinger spectrahedral boundary and gives the exact normalized Gaussian-surface/tree-Jacobian pushforward. Its curvature and tree-Jacobian shortcuts are obstructed. An exact orthogonal-background family makes centered pointwise relative-action domination fail. On the subsequence eta_m=4m log(2) a, every global fiber minimizer lies below u=-m and the conditional probability of u>=-m is at most 2^-m, so the background-uniform raw conditional second moment is obstructed. On that same runaway family, however, K_m(2^u)>=115/4 proves a uniform recentered conditional-variance bound and E_qm[u]<-m/2: the obstruction is moving center rather than widening fiber. On every separable background and every L>=4, the lowest temporal mode has curvature at least N*omega_L^2/3 and conditional variance at most 3/(N*omega_L^2); an exact orthogonal correlated fixture makes the spatial remainder negative, so this does not extend by a sign argument. Half-period translation proves the fully integrated marginal is even. All-background recentered width, the annealed center moment, and the actual interacting H^-1 moment remain open.",
                 "status": "EXACT_FINITE_OS_GLOBAL_CURVATURE_TREE_TILT_CENTERED_FIBER_AND_RAW_CONDITIONAL_MOMENT_ROUTE_OBSTRUCTIONS_WITH_RUNAWAY_FAMILY_WIDTH_BOUND_ACTION_DENSITY_EVEN_MARGINAL_AND_NORMALIZED_RESIDUAL_REFORMULATION",
                 "authorities": [
                     "bt_lambda04_os_kernel_obstruction",
@@ -385,6 +400,7 @@ def build() -> dict:
                     "bt_centered_fiber_domination_obstruction",
                     "bt_conditional_mass_escape_obstruction",
                     "bt_runaway_fiber_width_bound",
+                    "bt_separable_lowest_mode_curvature",
                 ],
                 "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"],
             },
@@ -416,6 +432,13 @@ def build() -> dict:
                 "authorities": ["coded_local_weak_wave_test_class"],
                 "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
             },
+            {
+                "claim_id": "RF-18-NAMED-H2-WEAK-WAVE-COMPLETION",
+                "statement": "Over RCA_0, fast H2 names of rational periodic compact-time C1 piecewise-polynomial tests carry an explicit weak-residual modulus, so the coded energy solution defines a continuous distributional field-state functional and satisfies the weak wave equation on every represented test; this does not reconstruct the unrestricted LF test topology or prove uniqueness among arbitrary distributions or causal support.",
+                "status": "REPRESENTATION_AWARE_WEAK_SOLUTION_COMPLETION_WITH_LF_AND_CAUSAL_BOUNDARIES",
+                "authorities": ["coded_weak_wave_h2_test_completion"],
+                "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+            },
         ],
         "literature_scope": [
             {"source_id": "simpson-2009", "url": "https://doi.org/10.1017/CBO9780511581007", "role": "reverse mathematics and subsystem calibration"},
@@ -428,6 +451,8 @@ def build() -> dict:
             {"source_id": "heunen-landsman-spitters-2009", "url": "https://arxiv.org/abs/0709.4364", "role": "topos algebraic quantum theory"},
             {"source_id": "gibbons-hoffman-wootters-2004", "url": "https://arxiv.org/abs/quant-ph/0401155", "role": "finite-field phase-space construction"},
             {"source_id": "baer-2015", "url": "https://arxiv.org/abs/1310.0738", "role": "classical Green-hyperbolic theory"},
+            {"source_id": "pauly-steinberg-2018", "url": "https://doi.org/10.1007/s00224-016-9745-6", "role": "represented smooth and compactly supported test-function spaces"},
+            {"source_id": "van-schaftingen-2014", "url": "https://doi.org/10.1016/j.jmaa.2014.05.036", "role": "piecewise-polynomial approximation in Sobolev norms"},
             {"source_id": "weihrauch-zhong-2006", "url": "https://doi.org/10.1137/S0097539704446360", "role": "computable fundamental solutions"},
             {"source_id": "pischke-2025", "url": "https://arxiv.org/abs/2304.01723", "role": "proof mining for nonlinear semigroups"},
             {"source_id": "bertotti-iess-tortora-2003", "url": "https://doi.org/10.1038/nature01997", "role": "standard-GR solar-system positive control"},
@@ -479,12 +504,19 @@ def build() -> dict:
             "bt_uniform_recentered_conditional_variance_established": False,
             "bt_runaway_family_recentered_conditional_variance_established": True,
             "bt_runaway_family_conditional_mean_escape_established": True,
+            "bt_separable_lowest_mode_curvature_established": True,
+            "bt_all_background_lowest_mode_curvature_established": False,
             "bt_annealed_center_second_moment_established": False,
             "research_programme_lenses_explained": True,
             "coded_wave_observable_reconstruction_certified": True,
             "coded_local_weak_wave_test_class_certified": True,
             "coded_local_weak_wave_all_smooth_tests_covered": False,
             "coded_local_weak_wave_causal_support_proved": False,
+            "coded_h2_test_completion_certified": True,
+            "coded_h2_represented_smooth_tests_covered": True,
+            "coded_h2_full_lf_topology_reconstructed": False,
+            "coded_h2_arbitrary_distribution_uniqueness_proved": False,
+            "coded_h2_causal_support_proved": False,
             "weakest_foundation_proved": False,
             "global_physics_implies_choice_theorem": False,
             "axes_independent_proved": False,
@@ -500,8 +532,9 @@ def build() -> dict:
             "literature completeness or absence theorems for reviewed open gaps",
             "representation invariance of the RCA_0 coded-wave upper bound",
             "full-state reconstruction from the single coded wave observable",
-            "a weak wave theorem against every smooth compactly supported test from the finite localized test span",
-            "strict causal support or a Green operator from the coefficient-wise weak identities",
+            "a uniform H2 name constructor for every bare extensional smooth test",
+            "the unrestricted LF smooth-test topology from the named fixed-slab H2 completion",
+            "uniqueness among arbitrary distributional weak solutions or causal support from the energy-image weak representation",
             "a complete Lorentzian off-shell BV propagator",
             "a BRST-compatible Hadamard state for the full metric BV complex",
             "renormalized Lorentzian time-ordered products or causal perturbative AQFT",

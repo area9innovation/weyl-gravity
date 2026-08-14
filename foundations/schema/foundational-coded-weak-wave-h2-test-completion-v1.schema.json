@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "foundational-coded-weak-wave-h2-test-completion-v1.schema.json",
+  "type": "object",
+  "required": ["schema_version", "result_id", "result_kind", "lifecycle", "created", "repository_base_commit", "dependency_tags", "theorem", "rational_test_codes", "named_completion", "state_distribution_map", "continuity_bounds", "extension_theorem", "formal_proof", "fixtures", "literature_context", "provenance", "independent_checker", "claim_flags", "does_not_establish", "next_gate", "human_report"],
+  "properties": {
+    "schema_version": {"const": "foundational-coded-weak-wave-h2-test-completion-v1"},
+    "result_id": {"const": "FOUNDATIONAL_CODED_WEAK_WAVE_H2_TEST_COMPLETION_V1"},
+    "result_kind": {"const": "REPRESENTATION_AWARE_SOBOLEV_TEST_COMPLETION_AND_WEAK_SOLUTION_EXTENSION"},
+    "lifecycle": {"const": "CERTIFIED"},
+    "created": {"type": "string", "format": "date"},
+    "repository_base_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "theorem": {"type": "string", "minLength": 120},
+    "rational_test_codes": {
+      "type": "object",
+      "required": ["domain", "partition", "pieces", "matching", "temporal_support", "regularity", "h2_squared_norm", "derivative_multiindices", "exact_arithmetic", "countable", "prior_ten_tests_embedded"],
+      "properties": {
+        "derivative_multiindices": {"const": [[0, 0], [1, 0], [0, 1], [2, 0], [1, 1], [0, 2]]},
+        "countable": {"const": true},
+        "prior_ten_tests_embedded": {"const": "FOUNDATIONAL_CODED_LOCAL_WEAK_WAVE_TEST_CLASS_V1"}
+      }
+    },
+    "named_completion": {
+      "type": "object",
+      "required": ["id", "name", "equality", "dense_embedding", "density_status", "smooth_test_admission", "excluded_inference"],
+      "properties": {"density_status": {"const": "BY_DECLARED_REPRESENTATION"}}
+    },
+    "state_distribution_map": {"type": "object", "required": ["formula", "state_input", "target", "squared_bound", "well_defined_on_names", "evolution_compatibility", "uniqueness_scope"], "properties": {"well_defined_on_names": {"const": true}}},
+    "continuity_bounds": {"type": "object", "required": ["right_transport", "left_transport", "scalar_wave", "distribution_pairing", "cutoff"]},
+    "extension_theorem": {"type": "object", "required": ["finite_code_residuals", "completed_right_transport", "completed_left_transport", "completed_scalar_wave", "covered_smooth_tests", "not_covered"]},
+    "formal_proof": {"type": "array", "minItems": 7, "maxItems": 7, "items": {"type": "object", "required": ["id", "base", "statement"]}},
+    "fixtures": {
+      "type": "array", "minItems": 3, "maxItems": 3,
+      "items": {"type": "object", "required": ["id", "right_energy", "left_energy", "total_energy", "integer_continuity_factors", "binary_cutoff_offsets", "cutoff_rule", "precision_samples"], "properties": {"precision_samples": {"type": "array", "minItems": 8, "maxItems": 8}}}
+    },
+    "literature_context": {"type": "array", "minItems": 2, "items": {"type": "object", "required": ["id", "citation", "doi", "url", "role", "import_boundary"]}},
+    "provenance": {"type": "object", "required": ["inputs"]},
+    "independent_checker": {"type": "object", "required": ["path", "checks", "expected_digest"]},
+    "claim_flags": {
+      "type": "object",
+      "required": ["rational_h2_test_code_carrier_constructed", "named_h2_test_completion_constructed", "explicit_residual_modulus_proved", "weak_solution_extended_to_every_named_h2_test", "represented_smooth_tests_covered", "continuous_distributional_state_map_constructed", "energy_image_evolution_wellposed", "bare_extensional_smooth_tests_uniformly_named", "full_lf_test_topology_reconstructed", "uniqueness_among_arbitrary_distributions_proved", "strict_causal_support_proved", "green_operator_constructed", "weyl_or_metric_bv_equation_proved", "empirical_calibration_proved", "new_lorentzian_claim"]
+    },
+    "does_not_establish": {"type": "array", "minItems": 10, "items": {"type": "string", "minLength": 10}},
+    "next_gate": {"type": "string", "minLength": 80},
+    "human_report": {"const": "foundations/reports/coded-weak-wave-h2-test-completion-v1.md"}
+  }
+}

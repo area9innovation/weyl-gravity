@@ -88,6 +88,7 @@ def main() -> int:
     ngc3198_common_fit = json.loads((ROOT / data["authorities"]["ngc3198_common_fit_comparison"]["path"]).read_text())
     coded_wave_observable = json.loads((ROOT / data["authorities"]["coded_wave_observable_reconstruction"]["path"]).read_text())
     coded_local_weak_wave = json.loads((ROOT / data["authorities"]["coded_local_weak_wave_test_class"]["path"]).read_text())
+    coded_h2_test = json.loads((ROOT / data["authorities"]["coded_weak_wave_h2_test_completion"]["path"]).read_text())
     bt_euclidean = json.loads((ROOT / data["authorities"]["bt_euclidean_import"]["path"]).read_text())
     bt_free_obstruction = json.loads((ROOT / data["authorities"]["bt_free_reconstruction_obstruction"]["path"]).read_text())
     bt_interacting_os = json.loads((ROOT / data["authorities"]["bt_interacting_os_preflight"]["path"]).read_text())
@@ -101,6 +102,7 @@ def main() -> int:
     bt_centered_fiber = json.loads((ROOT / data["authorities"]["bt_centered_fiber_domination_obstruction"]["path"]).read_text())
     bt_conditional_escape = json.loads((ROOT / data["authorities"]["bt_conditional_mass_escape_obstruction"]["path"]).read_text())
     bt_runaway_width = json.loads((ROOT / data["authorities"]["bt_runaway_fiber_width_bound"]["path"]).read_text())
+    bt_separable_curvature = json.loads((ROOT / data["authorities"]["bt_separable_lowest_mode_curvature"]["path"]).read_text())
     dims = cube["dimensions"]
     atlas = data["atlas_snapshot"]
     require(atlas["axis_sizes"] == [6, 6, 16], "unexpected axis sizes")
@@ -110,13 +112,13 @@ def main() -> int:
     require(sum(atlas["emitted_status_counts"].values()) == atlas["emitted_cells"], "status counts do not cover emitted cells")
     require(atlas["synthetic_complements"] == 0, "synthetic complement mismatch")
     require(atlas["total_not_mapped_in_explorer"] == site["counts"]["not_mapped"] == 0, "explorer not-mapped mismatch")
-    require(atlas["reviewed_open_gaps"] == site["counts"]["reviewed_gap"] == 170, "reviewed-gap mismatch")
-    require(atlas["evidence_records"] == site["counts"]["evidence_records"] == 77, "evidence-record mismatch")
+    require(atlas["reviewed_open_gaps"] == site["counts"]["reviewed_gap"] == 169, "reviewed-gap mismatch")
+    require(atlas["evidence_records"] == site["counts"]["evidence_records"] == 78, "evidence-record mismatch")
     require(atlas["literature_records"] == 51, "literature-record mismatch")
-    require(atlas["local_result_records"] == 26, "local-result-record mismatch")
+    require(atlas["local_result_records"] == 27, "local-result-record mismatch")
     require(atlas["content_pinned_literature"] == 39, "content-pinned literature mismatch")
     require(atlas["metadata_only_literature"] == 12, "metadata-only literature mismatch")
-    require(atlas["evidence_records_used_by_matrix"] == 77, "matrix evidence usage is incomplete")
+    require(atlas["evidence_records_used_by_matrix"] == 78, "matrix evidence usage is incomplete")
     require(atlas["migration_pending_cells"] == 0, "migration must remain fully reviewed")
     require(atlas["all_cells_assessed"] is True, "full-surface assessment flag is not certified")
     require(atlas["coded_wave_observable_cutoff"] == coded_wave_observable["cutoff_theorem"]["cutoff"] == "N(k)=k+ell(K)+1", "coded observable cutoff drift")
@@ -125,6 +127,13 @@ def main() -> int:
     require(atlas["coded_local_weak_wave_separation_rank"] == coded_local_weak_wave["separation"]["rank"] == 10, "localized weak-wave rank drift")
     require(atlas["coded_local_weak_wave_all_smooth_tests"] is coded_local_weak_wave["claim_flags"]["all_smooth_tests_covered"] is False, "finite test span promoted to all smooth tests")
     require(atlas["coded_local_weak_wave_causal_support"] is coded_local_weak_wave["claim_flags"]["strict_causal_support_proved"] is False, "coefficient weak identity promoted to causal support")
+    require(atlas["coded_h2_test_derivatives"] == len(coded_h2_test["rational_test_codes"]["derivative_multiindices"]) == 6, "H2 derivative carrier drift")
+    require(atlas["coded_h2_test_density_status"] == coded_h2_test["named_completion"]["density_status"] == "BY_DECLARED_REPRESENTATION", "H2 density status drift")
+    require(atlas["coded_h2_represented_smooth_tests_covered"] is coded_h2_test["claim_flags"]["represented_smooth_tests_covered"] is True, "represented smooth-test coverage missing")
+    require(atlas["coded_h2_full_lf_topology"] is coded_h2_test["claim_flags"]["full_lf_test_topology_reconstructed"] is False, "named H2 completion promoted to LF topology")
+    require(atlas["coded_h2_arbitrary_distribution_uniqueness"] is coded_h2_test["claim_flags"]["uniqueness_among_arbitrary_distributions_proved"] is False, "energy-image uniqueness promoted to arbitrary distributions")
+    require(atlas["coded_h2_causal_support"] is coded_h2_test["claim_flags"]["strict_causal_support_proved"] is False, "named weak solution promoted to causal support")
+    require(atlas["coded_h2_fixture_wave_offsets"] == {item["id"]: item["binary_cutoff_offsets"]["scalar_wave"] for item in coded_h2_test["fixtures"]}, "H2 fixture cutoff drift")
     require(atlas["bt_euclidean_direct_capabilities"] == 5, "BT direct-capability count mismatch")
     require(atlas["bt_euclidean_reconstruction_status"] == "PRIORITY_GAP", "BT reconstruction boundary mismatch")
     require(atlas["bt_euclidean_numerical_status"] == "COARSE_REPRODUCTION_ONLY", "BT numerical status mismatch")
@@ -201,6 +210,12 @@ def main() -> int:
     require(atlas["bt_all_background_recentered_variance_status"] == bt_runaway_width["method_disposition"]["all_background_uniform_recentered_conditional_variance"] == "OPEN", "BT exact-family width theorem widened to all backgrounds")
     require(bt_runaway_width["method_disposition"]["annealed_center_second_moment"] == "OPEN", "BT runaway-family theorem promoted to annealed center bound")
     require(bt_runaway_width["method_disposition"]["actual_interacting_h_minus_one_second_moment"] == "OPEN", "BT runaway-family theorem promoted to H^-1")
+    require(atlas["bt_separable_lowest_mode_curvature_status"] == bt_separable_curvature["method_disposition"]["separable_background_lowest_mode_curvature"] == "PROVED", "BT separable curvature theorem drift")
+    require(atlas["bt_separable_conditional_variance_status"] == bt_separable_curvature["method_disposition"]["separable_background_conditional_variance"] == "PROVED", "BT separable conditional variance drift")
+    require(atlas["bt_correlated_spatial_remainder_status"] == bt_separable_curvature["method_disposition"]["all_background_spatial_remainder_nonnegative"] == "OBSTRUCTED", "BT correlated remainder obstruction drift")
+    require(atlas["bt_correlated_spatial_remainder_fixture"] == {"numerator": -456623975, "denominator": 262144}, "BT correlated remainder fixture drift")
+    require(bt_separable_curvature["method_disposition"]["all_background_recentered_conditional_variance"] == "OPEN", "BT separable theorem widened to all backgrounds")
+    require(bt_separable_curvature["method_disposition"]["actual_interacting_h_minus_one_second_moment"] == "OPEN", "BT separable theorem promoted to H^-1")
 
     allowed_tags = {"LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE", "LORENTZIAN-CAUSAL"}
     claim_ids = set()
@@ -228,6 +243,7 @@ def main() -> int:
         (15, "NGC3198-COMMON-FIT-CONTROL"),
         (16, "CODED-OBSERVABLE-RECONSTRUCTION"),
         (17, "LOCALIZED-COEFFICIENT-WEAK-WAVE"),
+        (18, "NAMED-H2-WEAK-WAVE-COMPLETION"),
     ]}, "claim set drift")
 
     flags = data["claim_flags"]
@@ -275,6 +291,11 @@ def main() -> int:
     require(flags["coded_local_weak_wave_test_class_certified"] is True, "localized weak-wave flag is not certified")
     require(flags["coded_local_weak_wave_all_smooth_tests_covered"] is False, "finite localized span promoted to every smooth test")
     require(flags["coded_local_weak_wave_causal_support_proved"] is False, "localized weak identity promoted to causal support")
+    require(flags["coded_h2_test_completion_certified"] is True, "named H2 completion flag is not certified")
+    require(flags["coded_h2_represented_smooth_tests_covered"] is True, "represented smooth-test flag missing")
+    require(flags["coded_h2_full_lf_topology_reconstructed"] is False, "named H2 completion promoted to LF topology")
+    require(flags["coded_h2_arbitrary_distribution_uniqueness_proved"] is False, "energy-image uniqueness promoted")
+    require(flags["coded_h2_causal_support_proved"] is False, "named weak solution promoted to causal support")
     for false_flag in [
         "weakest_foundation_proved",
         "global_physics_implies_choice_theorem",
@@ -343,8 +364,8 @@ def main() -> int:
     appendix = appendix_path.read_text()
     for token in ("Bateman--Turok", "Mannheim conformal-gravity programme", "Pure-Weyl BV--BFV"):
         require(token in appendix, f"research-programme lens missing from appendix: {token}")
-    require(r"All obligations & 123 & 90 & 163 & 30 & 170 & 0 & 576" in appendix, "appendix coverage totals drift")
-    require("contains 77 evidence records: 26 local result records and 51 literature records" in appendix, "appendix evidence summary drift")
+    require(r"All obligations & 125 & 90 & 162 & 30 & 169 & 0 & 576" in appendix, "appendix coverage totals drift")
+    require("contains 78 evidence records: 27 local result records and 51 literature records" in appendix, "appendix evidence summary drift")
     require("BT positive Euclidean lattice programme" in appendix, "BT Euclidean prototype missing")
     require("COARSE REPRODUCTION ONLY" in appendix, "BT numerical boundary missing")
     require("The classical-standard mixed-carrier reference has complete direct coverage" in appendix, "classical reference calibration missing")
@@ -385,8 +406,8 @@ def main() -> int:
         require(rf"\cert{{{evidence_id}}}" in appendix, f"linked evidence missing from appendix: {evidence_id}")
 
     evidence = atlas_data["evidence"]
-    require(appendix.count(r"\hypertarget{atlas-evidence-") == 77, "evidence-register anchor count drift")
-    require(appendix.count(r"\hyperlink{atlas-evidence-") == 77, "evidence-crosswalk link count drift")
+    require(appendix.count(r"\hypertarget{atlas-evidence-") == 78, "evidence-register anchor count drift")
+    require(appendix.count(r"\hyperlink{atlas-evidence-") == 78, "evidence-crosswalk link count drift")
     cell_usage = {evidence_id: [] for evidence_id in evidence}
     for cell in atlas_data["cells"]:
         for evidence_id in cell.get("evidence", []):
@@ -478,7 +499,10 @@ def main() -> int:
         r"N(k)=k+\ell(K)+1",
         r"diagonal of exact rank ten",
         r"does not cover every smooth compactly supported test",
-        r"Density of localized weak tests",
+        r"Compare represented and classical test spaces",
+        r"N_W(k)=k+\ell(\lceil4E\rceil)",
+        r"nonmetrizable LF",
+        r"uniqueness only inside the represented energy solution image",
         r"Exact finite causality is not continuum causality",
         r"none of the case studies constructs a complete Lorentzian off-shell",
         r"bounded prediction assembly",
@@ -524,6 +548,8 @@ def main() -> int:
         "Kramer2021",
         "LVKGWTC32021",
         "AbbottGW1708172017",
+        "PaulySteinberg2018",
+        "VanSchaftingen2014",
     ]:
         require(f"bibitem{{{citation}}}" in paper, f"missing bibliography entry: {citation}")
 

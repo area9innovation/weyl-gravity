@@ -1,0 +1,861 @@
+{
+  "schema_version": "foundational-coded-weak-wave-h2-test-completion-v1",
+  "result_id": "FOUNDATIONAL_CODED_WEAK_WAVE_H2_TEST_COMPLETION_V1",
+  "result_kind": "REPRESENTATION_AWARE_SOBOLEV_TEST_COMPLETION_AND_WEAK_SOLUTION_EXTENSION",
+  "lifecycle": "CERTIFIED",
+  "created": "2026-08-14",
+  "repository_base_commit": "e75bac393108c75601a84f9b0931050a8a1f816d",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "theorem": "Over RCA_0, rational periodic compact-time C1 piecewise-polynomial test codes admit a named H2 completion. The coded-circle energy solution defines a continuous spacetime functional on that completion, and the exact finite-code transport and scalar weak-wave identities extend to every supplied fast H2 test name with an explicit primitive-recursive cutoff.",
+  "rational_test_codes": {
+    "domain": "unit time slab [0,1] times the rational circle R/Z",
+    "partition": "finite rational polyhedral partition compatible with the periodic spatial seam",
+    "pieces": "bivariate polynomials with rational coefficients",
+    "matching": "value and first weak-derivative traces match on every interior face; value and first-derivative traces match periodically at x=0 and x=1",
+    "temporal_support": "the code is identically zero on supplied rational collars [0,epsilon_0] and [epsilon_1,1] with 0<epsilon_0<epsilon_1<1",
+    "regularity": "global C1 with piecewise-polynomial weak derivatives through order two",
+    "h2_squared_norm": "sum over (a,b) with a+b<=2 of integral |partial_t^a partial_x^b phi|^2",
+    "derivative_multiindices": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        0,
+        2
+      ]
+    ],
+    "exact_arithmetic": "rational polygon triangulation and monomial integration",
+    "countable": true,
+    "prior_ten_tests_embedded": "FOUNDATIONAL_CODED_LOCAL_WEAK_WAVE_TEST_CLASS_V1"
+  },
+  "named_completion": {
+    "id": "H2_TEST_NAME_UNIT_CYLINDER_V1",
+    "name": "a sequence q_i of rational test codes satisfying ||q_i-q_j||_H2^2<=4^-i whenever i<=j",
+    "equality": "two names are equal when their cross-distance tends to zero with a supplied diagonal rate",
+    "dense_embedding": "the constant fast name embeds every rational test code",
+    "density_status": "BY_DECLARED_REPRESENTATION",
+    "smooth_test_admission": "a conventional smooth periodic compact-time test is covered when supplied with such a fast H2 code name",
+    "excluded_inference": "no H2 name is extracted uniformly from an extensional smooth test without representation data"
+  },
+  "state_distribution_map": {
+    "formula": "J_z(phi)=integral_[0,1]x(R/Z) u_z(t,x) phi(t,x) dt dx",
+    "state_input": "A fast Cauchy sequence of dense pairs in the chiral L2 energy metric, coded by the rational condition d(p_i,p_j)^2<=4^-i for i<=j, supplied as part of the name.",
+    "target": "continuous linear functionals on the named H2 test completion",
+    "squared_bound": "|J_z(phi)|^2<=2 E(z) ||phi||_H2^2",
+    "well_defined_on_names": true,
+    "evolution_compatibility": "the unique coded energy evolution from the source certificate has the displayed weak representation",
+    "uniqueness_scope": "unique inside the represented coded energy-solution image, not among every abstract distributional solution"
+  },
+  "continuity_bounds": {
+    "right_transport": "|R_plus(r;delta phi)|^2<=2 E_right ||delta phi||_H2^2",
+    "left_transport": "|R_minus(l;delta phi)|^2<=2 E_left ||delta phi||_H2^2",
+    "scalar_wave": "|W(u;delta phi)|^2<=4 E_total ||delta phi||_H2^2",
+    "distribution_pairing": "|J_z(delta phi)|^2<=2 E_total ||delta phi||_H2^2",
+    "cutoff": "For integer A bounding the displayed rational factor, N_F(k)=k+ell(A) ensures squared residual error <=4^-k."
+  },
+  "extension_theorem": {
+    "finite_code_residuals": "exactly zero",
+    "completed_right_transport": "zero for every declared H2 test name",
+    "completed_left_transport": "zero for every declared H2 test name",
+    "completed_scalar_wave": "zero for every declared H2 test name",
+    "covered_smooth_tests": "every smooth periodic compact-time test supplied with a declared fast H2 name",
+    "not_covered": "bare extensional C_c-infinity tests without a name, the full LF topology of all compact supports, arbitrary distributional solutions, causal support, or Green operators"
+  },
+  "formal_proof": [
+    {
+      "id": "RATIONAL_TEST_CODE",
+      "base": "PRA",
+      "statement": "A finite rational polyhedral partition of the unit time cylinder, rational polynomial pieces, exact C1 matching equations, periodic spatial traces, and a supplied rational zero collar at both temporal faces form a primitive-recursively enumerable test-code carrier. Every derivative-square integral through order two is rational and exactly decidable by triangulation and polynomial integration."
+    },
+    {
+      "id": "FINITE_CODE_WEAK_IDENTITY",
+      "base": "PRA",
+      "depends_on": [
+        "RATIONAL_TEST_CODE"
+      ],
+      "statement": "On every cell the characteristic chain rules are polynomial identities. Interior C1 traces cancel, periodic spatial faces cancel, and both temporal traces vanish. Hence every rational test code has exact right/left transport residual zero and exact scalar weak-wave residual zero for every rational polygonal state code."
+    },
+    {
+      "id": "NAMED_H2_COMPLETION",
+      "base": "RCA_0",
+      "depends_on": [
+        "RATIONAL_TEST_CODE"
+      ],
+      "statement": "A completed test is a supplied fast Cauchy name of rational test codes with squared H2 distance at most 4^-i for all later indices. The dense embedding and its modulus are therefore part of the representation, not extracted from bare convergence."
+    },
+    {
+      "id": "ENERGY_TO_SPACETIME_BOUND",
+      "base": "RCA_0",
+      "statement": "For mean-zero chiral derivatives of total energy E, their anchored primitives obey ||f||_2^2<=||f'||_2^2 and ||g||_2^2<=||g'||_2^2. On a unit slab, ||u||_2^2<=2E, while the right and left transported derivatives have squared spacetime norms E_right and E_left."
+    },
+    {
+      "id": "EXPLICIT_RESIDUAL_MODULUS",
+      "base": "RCA_0",
+      "depends_on": [
+        "NAMED_H2_COMPLETION",
+        "ENERGY_TO_SPACETIME_BOUND"
+      ],
+      "statement": "Cauchy-Schwarz gives |R_plus(delta phi)|^2<=2 E_right ||delta phi||_H2^2, |R_minus(delta phi)|^2<=2 E_left ||delta phi||_H2^2, and |W(delta phi)|^2<=4 E ||delta phi||_H2^2. Replacing each rational factor by its integer ceiling A gives the primitive-recursive cutoff N_F(k)=k+ell(A)."
+    },
+    {
+      "id": "WEAK_EXTENSION",
+      "base": "RCA_0",
+      "depends_on": [
+        "FINITE_CODE_WEAK_IDENTITY",
+        "EXPLICIT_RESIDUAL_MODULUS"
+      ],
+      "statement": "Every approximating code has residual exactly zero and the displayed modulus makes the residual sequence fast Cauchy with zero limit. Thus the transport and scalar weak-wave identities hold for every test carrying the declared H2 name."
+    },
+    {
+      "id": "REPRESENTATION_BOUNDARY",
+      "base": "RCA_0",
+      "depends_on": [
+        "WEAK_EXTENSION"
+      ],
+      "statement": "The result covers a smooth periodic compact-time test whenever an H2 fast name is supplied. It does not uniformly manufacture such a name from an extensional smooth function, identify the nonmetrizable global test-function topology, or prove uniqueness among arbitrary distributions outside the represented energy image."
+    }
+  ],
+  "fixtures": [
+    {
+      "id": "TRIANGLE_RIGHT",
+      "right_energy": [
+        1,
+        1
+      ],
+      "left_energy": [
+        0,
+        1
+      ],
+      "total_energy": [
+        1,
+        1
+      ],
+      "integer_continuity_factors": {
+        "right_transport": 2,
+        "left_transport": 1,
+        "scalar_wave": 4,
+        "state_distribution_pairing": 2
+      },
+      "binary_cutoff_offsets": {
+        "right_transport": 1,
+        "left_transport": 0,
+        "scalar_wave": 2,
+        "state_distribution_pairing": 1
+      },
+      "cutoff_rule": "N_F(k)=k+ell(A_F), where ell(A) is least e with A<=2^e",
+      "precision_samples": [
+        {
+          "precision": 1,
+          "right_transport_index": 2,
+          "right_transport_squared_error_bound": [
+            1,
+            8
+          ],
+          "left_transport_index": 1,
+          "left_transport_squared_error_bound": [
+            1,
+            4
+          ],
+          "scalar_wave_index": 3,
+          "scalar_wave_squared_error_bound": [
+            1,
+            16
+          ],
+          "state_distribution_pairing_index": 2,
+          "state_distribution_pairing_squared_error_bound": [
+            1,
+            8
+          ]
+        },
+        {
+          "precision": 2,
+          "right_transport_index": 3,
+          "right_transport_squared_error_bound": [
+            1,
+            32
+          ],
+          "left_transport_index": 2,
+          "left_transport_squared_error_bound": [
+            1,
+            16
+          ],
+          "scalar_wave_index": 4,
+          "scalar_wave_squared_error_bound": [
+            1,
+            64
+          ],
+          "state_distribution_pairing_index": 3,
+          "state_distribution_pairing_squared_error_bound": [
+            1,
+            32
+          ]
+        },
+        {
+          "precision": 3,
+          "right_transport_index": 4,
+          "right_transport_squared_error_bound": [
+            1,
+            128
+          ],
+          "left_transport_index": 3,
+          "left_transport_squared_error_bound": [
+            1,
+            64
+          ],
+          "scalar_wave_index": 5,
+          "scalar_wave_squared_error_bound": [
+            1,
+            256
+          ],
+          "state_distribution_pairing_index": 4,
+          "state_distribution_pairing_squared_error_bound": [
+            1,
+            128
+          ]
+        },
+        {
+          "precision": 4,
+          "right_transport_index": 5,
+          "right_transport_squared_error_bound": [
+            1,
+            512
+          ],
+          "left_transport_index": 4,
+          "left_transport_squared_error_bound": [
+            1,
+            256
+          ],
+          "scalar_wave_index": 6,
+          "scalar_wave_squared_error_bound": [
+            1,
+            1024
+          ],
+          "state_distribution_pairing_index": 5,
+          "state_distribution_pairing_squared_error_bound": [
+            1,
+            512
+          ]
+        },
+        {
+          "precision": 5,
+          "right_transport_index": 6,
+          "right_transport_squared_error_bound": [
+            1,
+            2048
+          ],
+          "left_transport_index": 5,
+          "left_transport_squared_error_bound": [
+            1,
+            1024
+          ],
+          "scalar_wave_index": 7,
+          "scalar_wave_squared_error_bound": [
+            1,
+            4096
+          ],
+          "state_distribution_pairing_index": 6,
+          "state_distribution_pairing_squared_error_bound": [
+            1,
+            2048
+          ]
+        },
+        {
+          "precision": 6,
+          "right_transport_index": 7,
+          "right_transport_squared_error_bound": [
+            1,
+            8192
+          ],
+          "left_transport_index": 6,
+          "left_transport_squared_error_bound": [
+            1,
+            4096
+          ],
+          "scalar_wave_index": 8,
+          "scalar_wave_squared_error_bound": [
+            1,
+            16384
+          ],
+          "state_distribution_pairing_index": 7,
+          "state_distribution_pairing_squared_error_bound": [
+            1,
+            8192
+          ]
+        },
+        {
+          "precision": 7,
+          "right_transport_index": 8,
+          "right_transport_squared_error_bound": [
+            1,
+            32768
+          ],
+          "left_transport_index": 7,
+          "left_transport_squared_error_bound": [
+            1,
+            16384
+          ],
+          "scalar_wave_index": 9,
+          "scalar_wave_squared_error_bound": [
+            1,
+            65536
+          ],
+          "state_distribution_pairing_index": 8,
+          "state_distribution_pairing_squared_error_bound": [
+            1,
+            32768
+          ]
+        },
+        {
+          "precision": 8,
+          "right_transport_index": 9,
+          "right_transport_squared_error_bound": [
+            1,
+            131072
+          ],
+          "left_transport_index": 8,
+          "left_transport_squared_error_bound": [
+            1,
+            65536
+          ],
+          "scalar_wave_index": 10,
+          "scalar_wave_squared_error_bound": [
+            1,
+            262144
+          ],
+          "state_distribution_pairing_index": 9,
+          "state_distribution_pairing_squared_error_bound": [
+            1,
+            131072
+          ]
+        }
+      ]
+    },
+    {
+      "id": "QUARTER_MIXED",
+      "right_energy": [
+        3,
+        2
+      ],
+      "left_energy": [
+        1,
+        1
+      ],
+      "total_energy": [
+        5,
+        2
+      ],
+      "integer_continuity_factors": {
+        "right_transport": 3,
+        "left_transport": 2,
+        "scalar_wave": 10,
+        "state_distribution_pairing": 5
+      },
+      "binary_cutoff_offsets": {
+        "right_transport": 2,
+        "left_transport": 1,
+        "scalar_wave": 4,
+        "state_distribution_pairing": 3
+      },
+      "cutoff_rule": "N_F(k)=k+ell(A_F), where ell(A) is least e with A<=2^e",
+      "precision_samples": [
+        {
+          "precision": 1,
+          "right_transport_index": 3,
+          "right_transport_squared_error_bound": [
+            3,
+            64
+          ],
+          "left_transport_index": 2,
+          "left_transport_squared_error_bound": [
+            1,
+            8
+          ],
+          "scalar_wave_index": 5,
+          "scalar_wave_squared_error_bound": [
+            5,
+            512
+          ],
+          "state_distribution_pairing_index": 4,
+          "state_distribution_pairing_squared_error_bound": [
+            5,
+            256
+          ]
+        },
+        {
+          "precision": 2,
+          "right_transport_index": 4,
+          "right_transport_squared_error_bound": [
+            3,
+            256
+          ],
+          "left_transport_index": 3,
+          "left_transport_squared_error_bound": [
+            1,
+            32
+          ],
+          "scalar_wave_index": 6,
+          "scalar_wave_squared_error_bound": [
+            5,
+            2048
+          ],
+          "state_distribution_pairing_index": 5,
+          "state_distribution_pairing_squared_error_bound": [
+            5,
+            1024
+          ]
+        },
+        {
+          "precision": 3,
+          "right_transport_index": 5,
+          "right_transport_squared_error_bound": [
+            3,
+            1024
+          ],
+          "left_transport_index": 4,
+          "left_transport_squared_error_bound": [
+            1,
+            128
+          ],
+          "scalar_wave_index": 7,
+          "scalar_wave_squared_error_bound": [
+            5,
+            8192
+          ],
+          "state_distribution_pairing_index": 6,
+          "state_distribution_pairing_squared_error_bound": [
+            5,
+            4096
+          ]
+        },
+        {
+          "precision": 4,
+          "right_transport_index": 6,
+          "right_transport_squared_error_bound": [
+            3,
+            4096
+          ],
+          "left_transport_index": 5,
+          "left_transport_squared_error_bound": [
+            1,
+            512
+          ],
+          "scalar_wave_index": 8,
+          "scalar_wave_squared_error_bound": [
+            5,
+            32768
+          ],
+          "state_distribution_pairing_index": 7,
+          "state_distribution_pairing_squared_error_bound": [
+            5,
+            16384
+          ]
+        },
+        {
+          "precision": 5,
+          "right_transport_index": 7,
+          "right_transport_squared_error_bound": [
+            3,
+            16384
+          ],
+          "left_transport_index": 6,
+          "left_transport_squared_error_bound": [
+            1,
+            2048
+          ],
+          "scalar_wave_index": 9,
+          "scalar_wave_squared_error_bound": [
+            5,
+            131072
+          ],
+          "state_distribution_pairing_index": 8,
+          "state_distribution_pairing_squared_error_bound": [
+            5,
+            65536
+          ]
+        },
+        {
+          "precision": 6,
+          "right_transport_index": 8,
+          "right_transport_squared_error_bound": [
+            3,
+            65536
+          ],
+          "left_transport_index": 7,
+          "left_transport_squared_error_bound": [
+            1,
+            8192
+          ],
+          "scalar_wave_index": 10,
+          "scalar_wave_squared_error_bound": [
+            5,
+            524288
+          ],
+          "state_distribution_pairing_index": 9,
+          "state_distribution_pairing_squared_error_bound": [
+            5,
+            262144
+          ]
+        },
+        {
+          "precision": 7,
+          "right_transport_index": 9,
+          "right_transport_squared_error_bound": [
+            3,
+            262144
+          ],
+          "left_transport_index": 8,
+          "left_transport_squared_error_bound": [
+            1,
+            32768
+          ],
+          "scalar_wave_index": 11,
+          "scalar_wave_squared_error_bound": [
+            5,
+            2097152
+          ],
+          "state_distribution_pairing_index": 10,
+          "state_distribution_pairing_squared_error_bound": [
+            5,
+            1048576
+          ]
+        },
+        {
+          "precision": 8,
+          "right_transport_index": 10,
+          "right_transport_squared_error_bound": [
+            3,
+            1048576
+          ],
+          "left_transport_index": 9,
+          "left_transport_squared_error_bound": [
+            1,
+            131072
+          ],
+          "scalar_wave_index": 12,
+          "scalar_wave_squared_error_bound": [
+            5,
+            8388608
+          ],
+          "state_distribution_pairing_index": 11,
+          "state_distribution_pairing_squared_error_bound": [
+            5,
+            4194304
+          ]
+        }
+      ]
+    },
+    {
+      "id": "NONUNIFORM_MIXED",
+      "right_energy": [
+        9,
+        4
+      ],
+      "left_energy": [
+        5,
+        1
+      ],
+      "total_energy": [
+        29,
+        4
+      ],
+      "integer_continuity_factors": {
+        "right_transport": 5,
+        "left_transport": 10,
+        "scalar_wave": 29,
+        "state_distribution_pairing": 15
+      },
+      "binary_cutoff_offsets": {
+        "right_transport": 3,
+        "left_transport": 4,
+        "scalar_wave": 5,
+        "state_distribution_pairing": 4
+      },
+      "cutoff_rule": "N_F(k)=k+ell(A_F), where ell(A) is least e with A<=2^e",
+      "precision_samples": [
+        {
+          "precision": 1,
+          "right_transport_index": 4,
+          "right_transport_squared_error_bound": [
+            5,
+            256
+          ],
+          "left_transport_index": 5,
+          "left_transport_squared_error_bound": [
+            5,
+            512
+          ],
+          "scalar_wave_index": 6,
+          "scalar_wave_squared_error_bound": [
+            29,
+            4096
+          ],
+          "state_distribution_pairing_index": 5,
+          "state_distribution_pairing_squared_error_bound": [
+            15,
+            1024
+          ]
+        },
+        {
+          "precision": 2,
+          "right_transport_index": 5,
+          "right_transport_squared_error_bound": [
+            5,
+            1024
+          ],
+          "left_transport_index": 6,
+          "left_transport_squared_error_bound": [
+            5,
+            2048
+          ],
+          "scalar_wave_index": 7,
+          "scalar_wave_squared_error_bound": [
+            29,
+            16384
+          ],
+          "state_distribution_pairing_index": 6,
+          "state_distribution_pairing_squared_error_bound": [
+            15,
+            4096
+          ]
+        },
+        {
+          "precision": 3,
+          "right_transport_index": 6,
+          "right_transport_squared_error_bound": [
+            5,
+            4096
+          ],
+          "left_transport_index": 7,
+          "left_transport_squared_error_bound": [
+            5,
+            8192
+          ],
+          "scalar_wave_index": 8,
+          "scalar_wave_squared_error_bound": [
+            29,
+            65536
+          ],
+          "state_distribution_pairing_index": 7,
+          "state_distribution_pairing_squared_error_bound": [
+            15,
+            16384
+          ]
+        },
+        {
+          "precision": 4,
+          "right_transport_index": 7,
+          "right_transport_squared_error_bound": [
+            5,
+            16384
+          ],
+          "left_transport_index": 8,
+          "left_transport_squared_error_bound": [
+            5,
+            32768
+          ],
+          "scalar_wave_index": 9,
+          "scalar_wave_squared_error_bound": [
+            29,
+            262144
+          ],
+          "state_distribution_pairing_index": 8,
+          "state_distribution_pairing_squared_error_bound": [
+            15,
+            65536
+          ]
+        },
+        {
+          "precision": 5,
+          "right_transport_index": 8,
+          "right_transport_squared_error_bound": [
+            5,
+            65536
+          ],
+          "left_transport_index": 9,
+          "left_transport_squared_error_bound": [
+            5,
+            131072
+          ],
+          "scalar_wave_index": 10,
+          "scalar_wave_squared_error_bound": [
+            29,
+            1048576
+          ],
+          "state_distribution_pairing_index": 9,
+          "state_distribution_pairing_squared_error_bound": [
+            15,
+            262144
+          ]
+        },
+        {
+          "precision": 6,
+          "right_transport_index": 9,
+          "right_transport_squared_error_bound": [
+            5,
+            262144
+          ],
+          "left_transport_index": 10,
+          "left_transport_squared_error_bound": [
+            5,
+            524288
+          ],
+          "scalar_wave_index": 11,
+          "scalar_wave_squared_error_bound": [
+            29,
+            4194304
+          ],
+          "state_distribution_pairing_index": 10,
+          "state_distribution_pairing_squared_error_bound": [
+            15,
+            1048576
+          ]
+        },
+        {
+          "precision": 7,
+          "right_transport_index": 10,
+          "right_transport_squared_error_bound": [
+            5,
+            1048576
+          ],
+          "left_transport_index": 11,
+          "left_transport_squared_error_bound": [
+            5,
+            2097152
+          ],
+          "scalar_wave_index": 12,
+          "scalar_wave_squared_error_bound": [
+            29,
+            16777216
+          ],
+          "state_distribution_pairing_index": 11,
+          "state_distribution_pairing_squared_error_bound": [
+            15,
+            4194304
+          ]
+        },
+        {
+          "precision": 8,
+          "right_transport_index": 11,
+          "right_transport_squared_error_bound": [
+            5,
+            4194304
+          ],
+          "left_transport_index": 12,
+          "left_transport_squared_error_bound": [
+            5,
+            8388608
+          ],
+          "scalar_wave_index": 13,
+          "scalar_wave_squared_error_bound": [
+            29,
+            67108864
+          ],
+          "state_distribution_pairing_index": 12,
+          "state_distribution_pairing_squared_error_bound": [
+            15,
+            16777216
+          ]
+        }
+      ]
+    }
+  ],
+  "literature_context": [
+    {
+      "id": "pauly-steinberg-2018-representations",
+      "citation": "Arno Pauly and Florian Steinberg, Comparing Representations for Function Spaces in Computable Analysis, Theory of Computing Systems 62 (2018), 557-582",
+      "doi": "10.1007/s00224-016-9745-6",
+      "url": "https://link.springer.com/article/10.1007/s00224-016-9745-6",
+      "role": "Representation context: names determine the effective topology; compact support is additional discrete advice, and the full test-function space is not metrizable.",
+      "import_boundary": "Context only; it does not prove this cylinder certificate or an RCA_0 reversal."
+    },
+    {
+      "id": "van-schaftingen-2014-sobolev-interpolation",
+      "citation": "Jean Van Schaftingen, Approximation in Sobolev spaces by piecewise affine interpolation, Journal of Mathematical Analysis and Applications 420 (2014), 40-47",
+      "doi": "10.1016/j.jmaa.2014.05.036",
+      "url": "https://arxiv.org/abs/1312.5986",
+      "role": "Classical context: direct piecewise-polynomial approximation in Sobolev norms is available without first invoking smooth density.",
+      "import_boundary": "The local theorem defines its completion by supplied names; it does not import a uniform H2 name constructor from this paper."
+    }
+  ],
+  "provenance": {
+    "inputs": [
+      {
+        "path": "foundations/results/FOUNDATIONAL_CODED_POLYGONAL_WAVE_RCA0_V1.json",
+        "sha256": "4138c860c53fe85ba4fa1f2ece93cc5b6c0fce9468c7e5dfa69e314663b56ac7",
+        "role": "coded energy solution and exact fixture energies"
+      },
+      {
+        "path": "foundations/results/FOUNDATIONAL_CODED_LOCAL_WEAK_WAVE_TEST_CLASS_V1.json",
+        "sha256": "ee6591f100f7f73aaf3462949a6c4ce27e6f090cfcced51e5e7e4c20fd28281c",
+        "role": "finite localized test class and exact finite-code weak identity"
+      }
+    ]
+  },
+  "independent_checker": {
+    "path": "foundations/check_coded_weak_wave_h2_test_completion.py",
+    "checks": [
+      "test-code vocabulary",
+      "H2 multiindices",
+      "proof DAG",
+      "source energy closure",
+      "continuity factors",
+      "binary cutoff minimality",
+      "96 exact modulus inequalities",
+      "representation and causal boundaries",
+      "source hashes",
+      "canonical digest"
+    ],
+    "expected_digest": "a5a788036ba5e8500d14ff91f14cd9f52c28ad2fce5ccdbeea9634482280254f"
+  },
+  "claim_flags": {
+    "rational_h2_test_code_carrier_constructed": true,
+    "named_h2_test_completion_constructed": true,
+    "explicit_residual_modulus_proved": true,
+    "weak_solution_extended_to_every_named_h2_test": true,
+    "represented_smooth_tests_covered": true,
+    "continuous_distributional_state_map_constructed": true,
+    "energy_image_evolution_wellposed": true,
+    "bare_extensional_smooth_tests_uniformly_named": false,
+    "full_lf_test_topology_reconstructed": false,
+    "uniqueness_among_arbitrary_distributions_proved": false,
+    "strict_causal_support_proved": false,
+    "green_operator_constructed": false,
+    "weyl_or_metric_bv_equation_proved": false,
+    "empirical_calibration_proved": false,
+    "new_lorentzian_claim": false
+  },
+  "does_not_establish": [
+    "a uniform algorithm assigning an H2 name to every bare extensional smooth test",
+    "the nonmetrizable LF topology of the unrestricted classical test-function space",
+    "a representation-independent distribution theory or weakest-base reversal",
+    "uniqueness among arbitrary distributional weak solutions outside the coded energy image",
+    "pointwise differentiability of the step chiral derivatives",
+    "strict finite propagation or causal support",
+    "an advanced or retarded Green operator",
+    "a variable-coefficient, curved-spacetime, Weyl, or metric-BV equation",
+    "a probability rule or empirical calibration",
+    "a new LORENTZIAN-CAUSAL result"
+  ],
+  "next_gate": "Compare the named H2 representation with the conventional fixed-support smooth-test representation by constructing a uniform name translator under explicit derivative/modulus advice; treat the global LF support topology and causal Green support as separate gates.",
+  "human_report": "foundations/reports/coded-weak-wave-h2-test-completion-v1.md"
+}

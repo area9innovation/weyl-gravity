@@ -371,37 +371,37 @@ window.MATRIX_EXPLORER_DATA = {
     "migration_pending": 0,
     "migration_unresolved": 0,
     "reviewed_no_transfer": 88,
-    "reviewed_gap": 170,
+    "reviewed_gap": 169,
     "not_mapped": 0,
     "dual_direct": 8,
     "mark_counts": {
       "G": 29,
       "Gl": 1,
-      "L": 109,
+      "L": 110,
       "LR": 8,
-      "Lr": 6,
-      "Ol": 170,
+      "Lr": 7,
+      "Ol": 169,
       "P": 19,
       "Pl": 80,
-      "Plr": 13,
+      "Plr": 12,
       "Pr": 51,
       "R": 87,
       "Rl": 3
     },
     "evidence_role_counts": {
       "DIRECT_LITERATURE": 84,
-      "DIRECT_LOCAL": 114,
-      "SUPPORTING": 449,
+      "DIRECT_LOCAL": 117,
+      "SUPPORTING": 450,
       "UNREVIEWED": 191
     },
     "synthetic_not_mapped": 0,
     "status_counts": {
       "LITERATURE_RESULT": 90,
-      "LOCAL_RESULT": 123,
+      "LOCAL_RESULT": 125,
       "NOT_MAPPED": 0,
-      "PIECES_ONLY": 163,
+      "PIECES_ONLY": 162,
       "PRIORITY_GAP": 30,
-      "REVIEWED_GAP": 170
+      "REVIEWED_GAP": 169
     },
     "migration_status_counts": {
       "CAPABILITY_QUALIFIED": 257,
@@ -411,7 +411,7 @@ window.MATRIX_EXPLORER_DATA = {
       "REVIEWED_NO_TRANSFER": 88,
       "REVIEWED_OVERLAY": 11
     },
-    "evidence_records": 77
+    "evidence_records": 78
   },
   "cells": [
     {
@@ -683,11 +683,13 @@ window.MATRIX_EXPLORER_DATA = {
       "status": "LOCAL_RESULT",
       "evidence": [
         "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
-        "FOUNDATIONAL_CODED_LOCAL_WEAK_WAVE_TEST_CLASS_V1"
+        "FOUNDATIONAL_CODED_LOCAL_WEAK_WAVE_TEST_CLASS_V1",
+        "FOUNDATIONAL_CODED_WEAK_WAVE_H2_TEST_COMPLETION_V1"
       ],
       "evidence_roles": {
         "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING",
-        "FOUNDATIONAL_CODED_LOCAL_WEAK_WAVE_TEST_CLASS_V1": "DIRECT_LOCAL"
+        "FOUNDATIONAL_CODED_LOCAL_WEAK_WAVE_TEST_CLASS_V1": "DIRECT_LOCAL",
+        "FOUNDATIONAL_CODED_WEAK_WAVE_H2_TEST_COMPLETION_V1": "DIRECT_LOCAL"
       },
       "parent_obligation": null,
       "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
@@ -696,8 +698,8 @@ window.MATRIX_EXPLORER_DATA = {
         "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
       ],
       "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
-      "summary": "A ten-element characteristic-localized rational polynomial test family separates the declared labelled finite chiral carrier, and all pairings are exact rational data.",
-      "boundary": "Separation retains the right/left labels and fixed rational resolution. It is not separation of arbitrary scalar distributions, gauge classes, or a continuum observable algebra.",
+      "summary": "The finite localized tests now embed in a countable rational C1 piecewise-polynomial test carrier with an explicit H2 name and exact derivative-square arithmetic.",
+      "boundary": "The named fixed-slab H2 carrier is not the unrestricted nonmetrizable LF topology of all compactly supported smooth tests.",
       "classification_revision": {
         "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
         "previous_status": "NOT_EMITTED",
@@ -710,6 +712,12 @@ window.MATRIX_EXPLORER_DATA = {
         "previous_status": "REVIEWED_GAP",
         "new_status": "LOCAL_RESULT",
         "evidence_role": "DIRECT_LOCAL"
+      },
+      "h2_test_completion_revision": {
+        "previous_status": "LOCAL_RESULT",
+        "new_status": "LOCAL_RESULT",
+        "evidence_role": "DIRECT_LOCAL",
+        "certificate": "FOUNDATIONAL_CODED_WEAK_WAVE_H2_TEST_COMPLETION_V1"
       },
       "emitted": true
     },
@@ -2592,12 +2600,14 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "WEAK_ARITHMETIC",
       "carrier": "SMOOTH_DISTRIBUTIONAL",
       "obligation": "STATE_REPRESENTATION",
-      "status": "REVIEWED_GAP",
+      "status": "LOCAL_RESULT",
       "evidence": [
-        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "FOUNDATIONAL_CODED_WEAK_WAVE_H2_TEST_COMPLETION_V1"
       ],
       "evidence_roles": {
-        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING",
+        "FOUNDATIONAL_CODED_WEAK_WAVE_H2_TEST_COMPLETION_V1": "DIRECT_LOCAL"
       },
       "parent_obligation": null,
       "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
@@ -2606,14 +2616,20 @@ window.MATRIX_EXPLORER_DATA = {
         "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
       ],
       "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
-      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
-      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "summary": "Every represented coded energy state now defines a continuous spacetime functional on the named H2 test completion, with squared pairing bound 2E times the H2 squared norm.",
+      "boundary": "This is a distributional field-state representation, not a probability state, density operator, representation-independent distribution theory, or arbitrary-distribution classification.",
       "classification_revision": {
         "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
         "previous_status": "NOT_EMITTED",
         "new_status": "REVIEWED_GAP",
         "evidence_role": "SUPPORTING",
         "status_change": true
+      },
+      "h2_test_completion_revision": {
+        "previous_status": "REVIEWED_GAP",
+        "new_status": "LOCAL_RESULT",
+        "evidence_role": "DIRECT_LOCAL",
+        "certificate": "FOUNDATIONAL_CODED_WEAK_WAVE_H2_TEST_COMPLETION_V1"
       },
       "emitted": true
     },
@@ -6341,22 +6357,24 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "WEAK_ARITHMETIC",
       "carrier": "SMOOTH_DISTRIBUTIONAL",
       "obligation": "EVOLUTION_WELLPOSEDNESS",
-      "status": "PIECES_ONLY",
+      "status": "LOCAL_RESULT",
       "evidence": [
         "FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V1",
         "weihrauch-zhong-2002",
         "FOUNDATIONAL_CODED_POLYGONAL_WAVE_RCA0_V1",
         "simpson-1984-ode",
-        "FOUNDATIONAL_CODED_LOCAL_WEAK_WAVE_TEST_CLASS_V1"
+        "FOUNDATIONAL_CODED_LOCAL_WEAK_WAVE_TEST_CLASS_V1",
+        "FOUNDATIONAL_CODED_WEAK_WAVE_H2_TEST_COMPLETION_V1"
       ],
-      "summary": "The existing RCA_0 coded energy evolution now has a finite localized weak-equation compatibility certificate, but no independent distributional existence/uniqueness theorem is added.",
-      "boundary": "Coefficient-wise compatibility with ten tests does not prove well-posedness in a distribution topology or against every smooth test.",
+      "summary": "The unique coded energy evolution has a continuous weak representation on every supplied fast H2 test name, with explicit primitive-recursive transport and wave-residual cutoffs.",
+      "boundary": "Uniqueness is inside the represented energy-solution image; no uniqueness theorem is claimed among all abstract distributional weak solutions.",
       "evidence_roles": {
         "FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V1": "SUPPORTING",
         "weihrauch-zhong-2002": "SUPPORTING",
         "FOUNDATIONAL_CODED_POLYGONAL_WAVE_RCA0_V1": "UNREVIEWED",
         "simpson-1984-ode": "UNREVIEWED",
-        "FOUNDATIONAL_CODED_LOCAL_WEAK_WAVE_TEST_CLASS_V1": "SUPPORTING"
+        "FOUNDATIONAL_CODED_LOCAL_WEAK_WAVE_TEST_CLASS_V1": "SUPPORTING",
+        "FOUNDATIONAL_CODED_WEAK_WAVE_H2_TEST_COMPLETION_V1": "DIRECT_LOCAL"
       },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "REVIEWED_V1_OVERLAY",
@@ -6377,6 +6395,12 @@ window.MATRIX_EXPLORER_DATA = {
         "previous_status": "PIECES_ONLY",
         "new_status": "PIECES_ONLY",
         "evidence_role": "SUPPORTING"
+      },
+      "h2_test_completion_revision": {
+        "previous_status": "PIECES_ONLY",
+        "new_status": "LOCAL_RESULT",
+        "evidence_role": "DIRECT_LOCAL",
+        "certificate": "FOUNDATIONAL_CODED_WEAK_WAVE_H2_TEST_COMPLETION_V1"
       },
       "emitted": true
     },
@@ -14852,11 +14876,13 @@ window.MATRIX_EXPLORER_DATA = {
       "status": "PIECES_ONLY",
       "evidence": [
         "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
-        "FOUNDATIONAL_CODED_LOCAL_WEAK_WAVE_TEST_CLASS_V1"
+        "FOUNDATIONAL_CODED_LOCAL_WEAK_WAVE_TEST_CLASS_V1",
+        "FOUNDATIONAL_CODED_WEAK_WAVE_H2_TEST_COMPLETION_V1"
       ],
       "evidence_roles": {
         "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING",
-        "FOUNDATIONAL_CODED_LOCAL_WEAK_WAVE_TEST_CLASS_V1": "SUPPORTING"
+        "FOUNDATIONAL_CODED_LOCAL_WEAK_WAVE_TEST_CLASS_V1": "SUPPORTING",
+        "FOUNDATIONAL_CODED_WEAK_WAVE_H2_TEST_COMPLETION_V1": "SUPPORTING"
       },
       "parent_obligation": null,
       "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
@@ -14865,8 +14891,8 @@ window.MATRIX_EXPLORER_DATA = {
         "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
       ],
       "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
-      "summary": "The localized measurements exactly reconstruct the ten labelled coefficients at the declared finite resolution, exposing the next density/modulus gate toward a distributional reconstruction theorem.",
-      "boundary": "This finite labelled separation is not full-state reconstruction, representation invariance, or separation after forgetting chirality labels.",
+      "summary": "A named H2 completion closes the finite-to-completed weak-test extension, while the translator from conventional smooth-test names and the global support topology remain explicit reconstruction gates.",
+      "boundary": "Density is by declared fast-name representation; no uniform name is extracted from a bare extensional smooth function.",
       "classification_revision": {
         "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
         "previous_status": "NOT_EMITTED",
@@ -14879,6 +14905,12 @@ window.MATRIX_EXPLORER_DATA = {
         "previous_status": "REVIEWED_GAP",
         "new_status": "PIECES_ONLY",
         "evidence_role": "SUPPORTING"
+      },
+      "h2_test_completion_revision": {
+        "previous_status": "PIECES_ONLY",
+        "new_status": "PIECES_ONLY",
+        "evidence_role": "SUPPORTING",
+        "certificate": "FOUNDATIONAL_CODED_WEAK_WAVE_H2_TEST_COMPLETION_V1"
       },
       "emitted": true
     },
@@ -15853,6 +15885,50 @@ window.MATRIX_EXPLORER_DATA = {
       "report_path": "foundations/reports/coded-wave-observable-reconstruction-v1.md",
       "report_link": "sources/foundations/reports/coded-wave-observable-reconstruction-v1.md",
       "sha256": "cf90e90abb824e19a2a0e7caf2d32c4772f408a70107e4c9ea6013edc0e8e215"
+    },
+    "FOUNDATIONAL_CODED_WEAK_WAVE_H2_TEST_COMPLETION_V1": {
+      "id": "FOUNDATIONAL_CODED_WEAK_WAVE_H2_TEST_COMPLETION_V1",
+      "kind": "LOCAL_RESULT",
+      "result_kind": "REPRESENTATION_AWARE_SOBOLEV_TEST_COMPLETION_AND_WEAK_SOLUTION_EXTENSION",
+      "lifecycle": "CERTIFIED",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE"
+      ],
+      "claim_flags": {
+        "rational_h2_test_code_carrier_constructed": true,
+        "named_h2_test_completion_constructed": true,
+        "explicit_residual_modulus_proved": true,
+        "weak_solution_extended_to_every_named_h2_test": true,
+        "represented_smooth_tests_covered": true,
+        "continuous_distributional_state_map_constructed": true,
+        "energy_image_evolution_wellposed": true,
+        "bare_extensional_smooth_tests_uniformly_named": false,
+        "full_lf_test_topology_reconstructed": false,
+        "uniqueness_among_arbitrary_distributions_proved": false,
+        "strict_causal_support_proved": false,
+        "green_operator_constructed": false,
+        "weyl_or_metric_bv_equation_proved": false,
+        "empirical_calibration_proved": false,
+        "new_lorentzian_claim": false
+      },
+      "does_not_establish": [
+        "a uniform algorithm assigning an H2 name to every bare extensional smooth test",
+        "the nonmetrizable LF topology of the unrestricted classical test-function space",
+        "a representation-independent distribution theory or weakest-base reversal",
+        "uniqueness among arbitrary distributional weak solutions outside the coded energy image",
+        "pointwise differentiability of the step chiral derivatives",
+        "strict finite propagation or causal support",
+        "an advanced or retarded Green operator",
+        "a variable-coefficient, curved-spacetime, Weyl, or metric-BV equation",
+        "a probability rule or empirical calibration",
+        "a new LORENTZIAN-CAUSAL result"
+      ],
+      "result_path": "foundations/results/FOUNDATIONAL_CODED_WEAK_WAVE_H2_TEST_COMPLETION_V1.json",
+      "result_link": "sources/foundations/results/FOUNDATIONAL_CODED_WEAK_WAVE_H2_TEST_COMPLETION_V1.json",
+      "report_path": "foundations/reports/coded-weak-wave-h2-test-completion-v1.md",
+      "report_link": "sources/foundations/reports/coded-weak-wave-h2-test-completion-v1.md",
+      "sha256": "d61f1be5be86a3e756b0e448c5d559d76664f76ddd9a58b5099b22c3a6c0be6d"
     },
     "FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V1": {
       "id": "FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V1",
@@ -17779,10 +17855,9 @@ window.MATRIX_EXPLORER_DATA = {
   ],
   "boundaries": {
     "cube": [
-      "a weak equation against every smooth compactly supported test",
-      "separation of arbitrary scalar distributions or gauge classes",
-      "full state or representation-independent field reconstruction",
-      "well-posedness in a distribution topology from coefficient compatibility alone",
+      "a uniform H2 name constructor for every bare extensional smooth test",
+      "the unrestricted LF topology of compactly supported smooth tests",
+      "uniqueness among arbitrary distributional weak solutions",
       "strict finite propagation or causal Green support",
       "an advanced or retarded Green operator",
       "a Weyl, Bateman-Turok, metric-BV, or interacting equation",
@@ -17821,11 +17896,11 @@ window.MATRIX_EXPLORER_DATA = {
     ]
   },
   "source_links": {
-    "cube": "sources/foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V12.json",
+    "cube": "sources/foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V13.json",
     "full_surface_audit": "sources/foundations/results/FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1.json",
     "migration_audit": "sources/foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_MIGRATION_AUDIT_V2.json",
     "ladder": "sources/foundations/results/FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V2.json",
-    "cube_report": "sources/foundations/reports/refined-intersection-cube-v12.md",
+    "cube_report": "sources/foundations/reports/refined-intersection-cube-v13.md",
     "bt_euclidean_import": "sources/foundations/results/FOUNDATIONAL_BT_EUCLIDEAN_LATTICE_IMPORT_V1.json",
     "bt_euclidean_import_report": "sources/foundations/reports/bt-euclidean-lattice-foundational-import.md",
     "full_surface_audit_report": "sources/foundations/reports/full-surface-gap-audit.md",
@@ -17840,5 +17915,5 @@ window.MATRIX_EXPLORER_DATA = {
     "migration_audit_report": "sources/foundations/reports/intersection-cube-migration-audit-v2.md",
     "ladder_report": "sources/foundations/reports/cylinder-wave-strength-ladder-v2.md"
   },
-  "canonical_digest": "8e0ebd6ce6e0d62b1ef5881df70bb289f0747d5fafce8f7f99b0237e33058849"
+  "canonical_digest": "c0783aa221f774c07b556b006841d12c0f5c87504ce715d3674b0577e6788766"
 };

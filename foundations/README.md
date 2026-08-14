@@ -293,6 +293,24 @@ python3 foundations/verify_coded_local_weak_wave_test_class.py
 python3 -m unittest foundations.tests.test_coded_local_weak_wave_test_class
 ```
 
+The representation-aware
+[`named H2 test completion`](reports/coded-weak-wave-h2-test-completion-v1.md)
+closes the next finite-to-completed weak-equation gate.  Rational periodic
+compact-time `C1` piecewise-polynomial codes are completed under a supplied
+fast `H2` Cauchy name.  Exact Cauchy--Schwarz bounds give a
+primitive-recursive residual cutoff for every declared energy fixture, so the
+transport and scalar weak-wave identities extend to every represented test.
+The fixed-slab name is a mathematical assumption: it neither constructs names
+for bare extensional smooth tests nor recovers the unrestricted nonmetrizable
+LF test-function topology.
+
+```bash
+python3 foundations/build_coded_weak_wave_h2_test_completion.py --check
+python3 foundations/check_coded_weak_wave_h2_test_completion.py
+python3 foundations/verify_coded_weak_wave_h2_test_completion.py
+python3 -m unittest foundations.tests.test_coded_weak_wave_h2_test_completion
+```
+
 The generated
 [`static matrix explorer`](site/index.html) turns the complete refined surface
 into a browser-based research instrument. It displays all 576 coordinates as
@@ -600,6 +618,13 @@ local result; reconstruction moves to pieces-only; distributional
 well-posedness remains pieces-only because a finite test span is compatibility
 evidence, not an existence-and-uniqueness theorem.
 
+The append-only [`cube v13`](reports/refined-intersection-cube-v13.md) imports
+the named `H2` completion into exactly four weak-arithmetic
+smooth/distributional coordinates.  State representation and scoped
+energy-image well-posedness become direct local results.  Reconstruction stays
+pieces-only because the conventional smooth-name translator, unrestricted LF
+support topology, and uniqueness among arbitrary distributions remain open.
+
 ```bash
 python3 foundations/build_full_surface_gap_audit.py --check
 python3 foundations/check_full_surface_gap_audit.py
@@ -616,11 +641,15 @@ python3 foundations/verify_refined_intersection_cube_v11.py
 python3 foundations/refine_intersection_cube_v12.py --check
 python3 foundations/check_refined_intersection_cube_v12.py
 python3 foundations/verify_refined_intersection_cube_v12.py
+python3 foundations/refine_intersection_cube_v13.py --check
+python3 foundations/check_refined_intersection_cube_v13.py
+python3 foundations/verify_refined_intersection_cube_v13.py
 python3 -m unittest foundations.tests.test_full_surface_gap_audit \
   foundations.tests.test_refined_intersection_cube_v9 \
   foundations.tests.test_refined_intersection_cube_v10 \
   foundations.tests.test_refined_intersection_cube_v11 \
-  foundations.tests.test_refined_intersection_cube_v12
+  foundations.tests.test_refined_intersection_cube_v12 \
+  foundations.tests.test_refined_intersection_cube_v13
 ```
 
 The append-only
