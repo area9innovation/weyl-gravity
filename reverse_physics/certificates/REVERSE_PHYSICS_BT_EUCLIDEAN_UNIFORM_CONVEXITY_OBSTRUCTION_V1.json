@@ -1,0 +1,506 @@
+{
+  "certificate": "REVERSE_PHYSICS_BT_EUCLIDEAN_UNIFORM_CONVEXITY_OBSTRUCTION_V1",
+  "schema_version": "reverse-physics-bt-euclidean-uniform-convexity-obstruction-v1",
+  "created": "2026-08-14",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "lifecycle_state": "OBSTRUCTION_PROVED",
+  "result_kind": "exact obstruction to a uniform-estimate proof route",
+  "question": "Can the interacting BT negative-Sobolev moment bound be obtained from a field-independent strong-convexity comparison between the nonlinear action Hessian and the free bilaplacian?",
+  "answer": "No. Already on the spatially constant sector of the 6^4 lattice, an exact mean-zero center and direction family has Hessian-to-bilaplacian ratio (2^a+1)/2^(2a+1), which tends to zero. Hence no positive field-independent comparison constant exists, even at fixed volume. This blocks standard global Brascamp-Lieb Gaussian domination but does not disprove the interacting moment bound.",
+  "exact_degenerating_family": {
+    "coupling": {
+      "numerator": 2,
+      "denominator": 5
+    },
+    "lattice": {
+      "length": 6,
+      "dimensions": 4
+    },
+    "spatial_volume": 216,
+    "coordinates": "psi=lambda*phi; each integer k denotes psi=k*log(2)",
+    "center_family": "k(a)=(-a,0,0,-a,a,a), a positive integer",
+    "direction": [
+      -1,
+      -1,
+      1,
+      1,
+      1,
+      -1
+    ],
+    "direction_mean": 0,
+    "nonlinear_action": "A(psi)=(1/2)*sum_x[sum_(y~x) exp(psi_y-psi_x)-8]^2",
+    "coupling_cancellation": "For S_lambda(phi)=A(lambda*phi)/lambda^2, the phi-Hessian equals the psi-Hessian of A at psi=lambda*phi.",
+    "directional_hessian_formula_per_spatial_site": "H_a=8*(2^a+1)/4^a",
+    "free_bilaplacian_form_per_spatial_site": 16,
+    "ratio_formula": "H_a/B=(2^a+1)/2^(2a+1)",
+    "limit_bound": "0 < H_a/B <= 2^(-a), hence H_a/B tends to 0",
+    "full_lattice_scaling": "Both forms acquire the same spatial factor 216, so the ratio is unchanged on the full 6^4 lattice.",
+    "fixtures": [
+      {
+        "parameter": 1,
+        "time_center": [
+          -1,
+          0,
+          0,
+          -1,
+          1,
+          1
+        ],
+        "direction": [
+          -1,
+          -1,
+          1,
+          1,
+          1,
+          -1
+        ],
+        "hessian_per_spatial_site": {
+          "numerator": 6,
+          "denominator": 1
+        },
+        "free_bilaplacian_form_per_spatial_site": {
+          "numerator": 16,
+          "denominator": 1
+        },
+        "ratio": {
+          "numerator": 3,
+          "denominator": 8
+        },
+        "formula_matches": true
+      },
+      {
+        "parameter": 2,
+        "time_center": [
+          -2,
+          0,
+          0,
+          -2,
+          2,
+          2
+        ],
+        "direction": [
+          -1,
+          -1,
+          1,
+          1,
+          1,
+          -1
+        ],
+        "hessian_per_spatial_site": {
+          "numerator": 5,
+          "denominator": 2
+        },
+        "free_bilaplacian_form_per_spatial_site": {
+          "numerator": 16,
+          "denominator": 1
+        },
+        "ratio": {
+          "numerator": 5,
+          "denominator": 32
+        },
+        "formula_matches": true
+      },
+      {
+        "parameter": 3,
+        "time_center": [
+          -3,
+          0,
+          0,
+          -3,
+          3,
+          3
+        ],
+        "direction": [
+          -1,
+          -1,
+          1,
+          1,
+          1,
+          -1
+        ],
+        "hessian_per_spatial_site": {
+          "numerator": 9,
+          "denominator": 8
+        },
+        "free_bilaplacian_form_per_spatial_site": {
+          "numerator": 16,
+          "denominator": 1
+        },
+        "ratio": {
+          "numerator": 9,
+          "denominator": 128
+        },
+        "formula_matches": true
+      },
+      {
+        "parameter": 4,
+        "time_center": [
+          -4,
+          0,
+          0,
+          -4,
+          4,
+          4
+        ],
+        "direction": [
+          -1,
+          -1,
+          1,
+          1,
+          1,
+          -1
+        ],
+        "hessian_per_spatial_site": {
+          "numerator": 17,
+          "denominator": 32
+        },
+        "free_bilaplacian_form_per_spatial_site": {
+          "numerator": 16,
+          "denominator": 1
+        },
+        "ratio": {
+          "numerator": 17,
+          "denominator": 512
+        },
+        "formula_matches": true
+      },
+      {
+        "parameter": 5,
+        "time_center": [
+          -5,
+          0,
+          0,
+          -5,
+          5,
+          5
+        ],
+        "direction": [
+          -1,
+          -1,
+          1,
+          1,
+          1,
+          -1
+        ],
+        "hessian_per_spatial_site": {
+          "numerator": 33,
+          "denominator": 128
+        },
+        "free_bilaplacian_form_per_spatial_site": {
+          "numerator": 16,
+          "denominator": 1
+        },
+        "ratio": {
+          "numerator": 33,
+          "denominator": 2048
+        },
+        "formula_matches": true
+      },
+      {
+        "parameter": 6,
+        "time_center": [
+          -6,
+          0,
+          0,
+          -6,
+          6,
+          6
+        ],
+        "direction": [
+          -1,
+          -1,
+          1,
+          1,
+          1,
+          -1
+        ],
+        "hessian_per_spatial_site": {
+          "numerator": 65,
+          "denominator": 512
+        },
+        "free_bilaplacian_form_per_spatial_site": {
+          "numerator": 16,
+          "denominator": 1
+        },
+        "ratio": {
+          "numerator": 65,
+          "denominator": 8192
+        },
+        "formula_matches": true
+      },
+      {
+        "parameter": 7,
+        "time_center": [
+          -7,
+          0,
+          0,
+          -7,
+          7,
+          7
+        ],
+        "direction": [
+          -1,
+          -1,
+          1,
+          1,
+          1,
+          -1
+        ],
+        "hessian_per_spatial_site": {
+          "numerator": 129,
+          "denominator": 2048
+        },
+        "free_bilaplacian_form_per_spatial_site": {
+          "numerator": 16,
+          "denominator": 1
+        },
+        "ratio": {
+          "numerator": 129,
+          "denominator": 32768
+        },
+        "formula_matches": true
+      },
+      {
+        "parameter": 8,
+        "time_center": [
+          -8,
+          0,
+          0,
+          -8,
+          8,
+          8
+        ],
+        "direction": [
+          -1,
+          -1,
+          1,
+          1,
+          1,
+          -1
+        ],
+        "hessian_per_spatial_site": {
+          "numerator": 257,
+          "denominator": 8192
+        },
+        "free_bilaplacian_form_per_spatial_site": {
+          "numerator": 16,
+          "denominator": 1
+        },
+        "ratio": {
+          "numerator": 257,
+          "denominator": 131072
+        },
+        "formula_matches": true
+      },
+      {
+        "parameter": 9,
+        "time_center": [
+          -9,
+          0,
+          0,
+          -9,
+          9,
+          9
+        ],
+        "direction": [
+          -1,
+          -1,
+          1,
+          1,
+          1,
+          -1
+        ],
+        "hessian_per_spatial_site": {
+          "numerator": 513,
+          "denominator": 32768
+        },
+        "free_bilaplacian_form_per_spatial_site": {
+          "numerator": 16,
+          "denominator": 1
+        },
+        "ratio": {
+          "numerator": 513,
+          "denominator": 524288
+        },
+        "formula_matches": true
+      },
+      {
+        "parameter": 10,
+        "time_center": [
+          -10,
+          0,
+          0,
+          -10,
+          10,
+          10
+        ],
+        "direction": [
+          -1,
+          -1,
+          1,
+          1,
+          1,
+          -1
+        ],
+        "hessian_per_spatial_site": {
+          "numerator": 1025,
+          "denominator": 131072
+        },
+        "free_bilaplacian_form_per_spatial_site": {
+          "numerator": 16,
+          "denominator": 1
+        },
+        "ratio": {
+          "numerator": 1025,
+          "denominator": 2097152
+        },
+        "formula_matches": true
+      },
+      {
+        "parameter": 11,
+        "time_center": [
+          -11,
+          0,
+          0,
+          -11,
+          11,
+          11
+        ],
+        "direction": [
+          -1,
+          -1,
+          1,
+          1,
+          1,
+          -1
+        ],
+        "hessian_per_spatial_site": {
+          "numerator": 2049,
+          "denominator": 524288
+        },
+        "free_bilaplacian_form_per_spatial_site": {
+          "numerator": 16,
+          "denominator": 1
+        },
+        "ratio": {
+          "numerator": 2049,
+          "denominator": 8388608
+        },
+        "formula_matches": true
+      },
+      {
+        "parameter": 12,
+        "time_center": [
+          -12,
+          0,
+          0,
+          -12,
+          12,
+          12
+        ],
+        "direction": [
+          -1,
+          -1,
+          1,
+          1,
+          1,
+          -1
+        ],
+        "hessian_per_spatial_site": {
+          "numerator": 4097,
+          "denominator": 2097152
+        },
+        "free_bilaplacian_form_per_spatial_site": {
+          "numerator": 16,
+          "denominator": 1
+        },
+        "ratio": {
+          "numerator": 4097,
+          "denominator": 33554432
+        },
+        "formula_matches": true
+      }
+    ]
+  },
+  "method_disposition": {
+    "global_strong_convexity_in_bilaplacian_metric": "OBSTRUCTED",
+    "field_independent_brascamp_lieb_free_covariance_domination": "OBSTRUCTED",
+    "ordinary_convexity_of_the_full_action": "NOT_DECIDED",
+    "annealed_or_localized_covariance_estimate": "OPEN",
+    "interacting_h_minus_one_second_moment_bound": "OPEN",
+    "interacting_tightness": "NOT_ESTABLISHED",
+    "continuum_limit": "NOT_ESTABLISHED",
+    "born_rule": "NOT_ESTABLISHED",
+    "krein_reconstruction": "NOT_ASSESSED",
+    "lorentzian_transfer": "NOT_ESTABLISHED"
+  },
+  "missing_object_ledger": [
+    "a direct or annealed interacting covariance inequality",
+    "an L-uniform interacting negative-Sobolev second-moment estimate",
+    "tightness in a declared negative-Sobolev topology",
+    "identification and uniqueness of any Euclidean limit"
+  ],
+  "next_gate": "Seek a direct Schwinger-Dyson, multiscale, or annealed Hessian estimate; do not assume a global field-independent bilaplacian convexity constant.",
+  "does_not_establish": [
+    "nonconvexity of the full finite-volume action",
+    "failure of every Brascamp-Lieb or covariance method",
+    "failure of an interacting H^-1 moment bound",
+    "failure of a continuum or infinite-volume BT measure",
+    "failure of a Krein or other indefinite-metric reconstruction",
+    "anything LORENTZIAN-CAUSAL"
+  ],
+  "provenance": {
+    "repository_base_commit": "ef209f69fc9d80f55069f7c39e004eed9fdcdf22",
+    "inputs": [
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_LATTICE_PILOT_V1.json",
+        "sha256": "4171ff54d9a92f7555337e8865029a7dbb65aaf0b4cf930017732fb0c6051320"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_FREE_RECONSTRUCTION_OBSTRUCTION_V1.json",
+        "sha256": "3ff1ba1578d5bc11ea7f2a6fc806fedb49d127a0f3f29fc220d987d9305371a9"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_LAMBDA04_OS_KERNEL_OBSTRUCTION_V1.json",
+        "sha256": "9872d3d610daf5146fee84e19246319a7bcfa72748be116a2a8caa7b9f57f40b"
+      }
+    ],
+    "arithmetic": "Python Fraction arithmetic for powers, curvatures, Hessian forms, bilaplacian forms, and ratios"
+  },
+  "verification_commands": [
+    "python3 reverse_physics/bt_euclidean_uniform_convexity_obstruction.py --check",
+    "python3 reverse_physics/verify_bt_euclidean_uniform_convexity_obstruction.py",
+    "python3 -m unittest -v reverse_physics.tests.test_bt_euclidean_uniform_convexity_obstruction"
+  ],
+  "tier_receipt": {
+    "tier_0": "parse, strict schema, deterministic generation, scoped git diff --check, and staged-diff inspection",
+    "tier_1": "exact producer, method-distinct full-lattice verifier, unit tests, and mutation rejection",
+    "tier_2": "predecessors checked by content hash; no sampler rerun because the result is an exact action-Hessian statement",
+    "tier_3": "not run: no shared classical operator, freeze, release, quantum lifecycle, or Lorentzian claim changes",
+    "memory_policy": "all commands sequential and bounded by a 500000 KiB virtual-memory ceiling where relevant"
+  },
+  "checks": {
+    "ok": true,
+    "passed": 11,
+    "total": 11,
+    "failures": [],
+    "details": {
+      "coupling_is_exactly_two_fifths": true,
+      "direction_is_mean_zero": true,
+      "all_centers_are_mean_zero": true,
+      "all_exact_formula_checks_pass": true,
+      "free_form_is_constant_sixteen": true,
+      "ratio_sequence_is_strictly_decreasing": true,
+      "ratio_has_elementary_zero_limit_bound": true,
+      "no_positive_global_bilaplacian_convexity_constant_exists": true,
+      "standard_uniform_brascamp_lieb_route_is_obstructed": true,
+      "interacting_h_minus_one_moment_bound_remains_open": true,
+      "no_continuum_born_krein_or_lorentzian_promotion": true
+    }
+  },
+  "report": "reverse_physics/reports/bt-euclidean-uniform-convexity-obstruction.md",
+  "schema": "reverse_physics/schema/reverse-physics-bt-euclidean-uniform-convexity-obstruction-v1.schema.json"
+}

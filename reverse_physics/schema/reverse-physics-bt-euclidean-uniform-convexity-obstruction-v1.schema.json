@@ -1,0 +1,164 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-uniform-convexity-obstruction-v1.schema.json",
+  "title": "BT Euclidean uniform-convexity proof-route obstruction certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "certificate", "schema_version", "created", "dependency_tags",
+    "lifecycle_state", "result_kind", "question", "answer",
+    "exact_degenerating_family", "method_disposition",
+    "missing_object_ledger", "next_gate", "does_not_establish",
+    "provenance", "verification_commands", "tier_receipt", "checks",
+    "report", "schema"
+  ],
+  "$defs": {
+    "fraction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      }
+    },
+    "integerVector6": {
+      "type": "array", "minItems": 6, "maxItems": 6,
+      "items": {"type": "integer"}
+    }
+  },
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_EUCLIDEAN_UNIFORM_CONVEXITY_OBSTRUCTION_V1"},
+    "schema_version": {"const": "reverse-physics-bt-euclidean-uniform-convexity-obstruction-v1"},
+    "created": {"const": "2026-08-14"},
+    "dependency_tags": {
+      "type": "array",
+      "prefixItems": [
+        {"const": "LOCAL-ALGEBRAIC"},
+        {"const": "EUCLIDEAN-SPECTRAL"}
+      ],
+      "items": false
+    },
+    "lifecycle_state": {"const": "OBSTRUCTION_PROVED"},
+    "result_kind": {"const": "exact obstruction to a uniform-estimate proof route"},
+    "question": {"type": "string", "minLength": 1},
+    "answer": {"type": "string", "minLength": 1},
+    "exact_degenerating_family": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "coupling", "lattice", "spatial_volume", "coordinates",
+        "center_family", "direction", "direction_mean", "nonlinear_action",
+        "coupling_cancellation", "directional_hessian_formula_per_spatial_site",
+        "free_bilaplacian_form_per_spatial_site", "ratio_formula", "limit_bound",
+        "full_lattice_scaling", "fixtures"
+      ],
+      "properties": {
+        "coupling": {"$ref": "#/$defs/fraction"},
+        "lattice": {
+          "type": "object", "additionalProperties": false,
+          "required": ["length", "dimensions"],
+          "properties": {"length": {"const": 6}, "dimensions": {"const": 4}}
+        },
+        "spatial_volume": {"const": 216},
+        "coordinates": {"type": "string"},
+        "center_family": {"const": "k(a)=(-a,0,0,-a,a,a), a positive integer"},
+        "direction": {"$ref": "#/$defs/integerVector6"},
+        "direction_mean": {"const": 0},
+        "nonlinear_action": {"type": "string"},
+        "coupling_cancellation": {"type": "string"},
+        "directional_hessian_formula_per_spatial_site": {"const": "H_a=8*(2^a+1)/4^a"},
+        "free_bilaplacian_form_per_spatial_site": {"const": 16},
+        "ratio_formula": {"const": "H_a/B=(2^a+1)/2^(2a+1)"},
+        "limit_bound": {"const": "0 < H_a/B <= 2^(-a), hence H_a/B tends to 0"},
+        "full_lattice_scaling": {"type": "string"},
+        "fixtures": {
+          "type": "array", "minItems": 12, "maxItems": 12,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": [
+              "parameter", "time_center", "direction",
+              "hessian_per_spatial_site", "free_bilaplacian_form_per_spatial_site",
+              "ratio", "formula_matches"
+            ],
+            "properties": {
+              "parameter": {"type": "integer", "minimum": 1, "maximum": 12},
+              "time_center": {"$ref": "#/$defs/integerVector6"},
+              "direction": {"$ref": "#/$defs/integerVector6"},
+              "hessian_per_spatial_site": {"$ref": "#/$defs/fraction"},
+              "free_bilaplacian_form_per_spatial_site": {"$ref": "#/$defs/fraction"},
+              "ratio": {"$ref": "#/$defs/fraction"},
+              "formula_matches": {"const": true}
+            }
+          }
+        }
+      }
+    },
+    "method_disposition": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "global_strong_convexity_in_bilaplacian_metric",
+        "field_independent_brascamp_lieb_free_covariance_domination",
+        "ordinary_convexity_of_the_full_action", "annealed_or_localized_covariance_estimate",
+        "interacting_h_minus_one_second_moment_bound", "interacting_tightness",
+        "continuum_limit", "born_rule", "krein_reconstruction", "lorentzian_transfer"
+      ],
+      "properties": {
+        "global_strong_convexity_in_bilaplacian_metric": {"const": "OBSTRUCTED"},
+        "field_independent_brascamp_lieb_free_covariance_domination": {"const": "OBSTRUCTED"},
+        "ordinary_convexity_of_the_full_action": {"const": "NOT_DECIDED"},
+        "annealed_or_localized_covariance_estimate": {"const": "OPEN"},
+        "interacting_h_minus_one_second_moment_bound": {"const": "OPEN"},
+        "interacting_tightness": {"const": "NOT_ESTABLISHED"},
+        "continuum_limit": {"const": "NOT_ESTABLISHED"},
+        "born_rule": {"const": "NOT_ESTABLISHED"},
+        "krein_reconstruction": {"const": "NOT_ASSESSED"},
+        "lorentzian_transfer": {"const": "NOT_ESTABLISHED"}
+      }
+    },
+    "missing_object_ledger": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "next_gate": {"type": "string", "minLength": 1},
+    "does_not_establish": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["repository_base_commit", "inputs", "arithmetic"],
+      "properties": {
+        "repository_base_commit": {"const": "ef209f69fc9d80f55069f7c39e004eed9fdcdf22"},
+        "inputs": {
+          "type": "array", "minItems": 3, "maxItems": 3,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["path", "sha256"],
+            "properties": {
+              "path": {"type": "string", "minLength": 1},
+              "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+            }
+          }
+        },
+        "arithmetic": {"type": "string", "minLength": 1}
+      }
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "items": {"type": "string"}},
+    "tier_receipt": {
+      "type": "object", "additionalProperties": false,
+      "required": ["tier_0", "tier_1", "tier_2", "tier_3", "memory_policy"],
+      "properties": {
+        "tier_0": {"type": "string"}, "tier_1": {"type": "string"},
+        "tier_2": {"type": "string"}, "tier_3": {"type": "string"},
+        "memory_policy": {"type": "string"}
+      }
+    },
+    "checks": {
+      "type": "object", "additionalProperties": false,
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true}, "passed": {"type": "integer", "minimum": 1},
+        "total": {"type": "integer", "minimum": 1},
+        "failures": {"type": "array", "maxItems": 0},
+        "details": {"type": "object", "minProperties": 1, "additionalProperties": {"const": true}}
+      }
+    },
+    "report": {"const": "reverse_physics/reports/bt-euclidean-uniform-convexity-obstruction.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-euclidean-uniform-convexity-obstruction-v1.schema.json"}
+  }
+}

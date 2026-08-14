@@ -749,6 +749,23 @@ declared \(6^4\) lattice; the numerical preflight is supporting only.  This
 does not decide every nonzero coupling, construct an interacting uniform
 estimate, or obstruct an indefinite-metric reconstruction.
 
+The first natural route to that interacting estimate is itself now exactly
+obstructed.  Certificate
+\cert{REVERSE_PHYSICS_BT_EUCLIDEAN_UNIFORM_CONVEXITY_OBSTRUCTION_V1}
+uses the spatially constant mean-zero family
+\(k(a)=(-a,0,0,-a,a,a)\) and direction
+\(v=(-1,-1,1,1,1,-1)\).  The ratio of the nonlinear directional Hessian to
+the free bilaplacian form is
+\[
+                  \frac{2^a+1}{2^{2a+1}}\longrightarrow0.
+\]
+Hence no positive field-independent bilaplacian strong-convexity constant
+exists, even at fixed volume, and the standard global Brascamp--Lieb
+comparison cannot prove the desired bound.  This does not establish
+nonconvexity or failure of the interacting \(H^{-1}\) estimate; it directs the
+next analysis toward Schwinger--Dyson, annealed-Hessian, or multiscale
+control.
+
 \subsection{A finite BV contraction does not freeze the quantum theory}
 
 The energy-two free BV block provides another finite exact case.  The
@@ -1031,7 +1048,10 @@ negative-Sobolev estimate.  Only after that estimate should one attempt
 tightness and Schwinger-function convergence.  A specifically
 indefinite-metric reconstruction is a separate branch requiring its own
 axioms and carrier-matching theorem; no Euclidean result here supplies a
-Krein/Lorentzian observable map.
+Krein/Lorentzian observable map.  Global bilaplacian strong convexity cannot
+supply the estimate: an exact fixed-volume family makes its comparison ratio
+tend to zero.  A direct or annealed covariance estimate is therefore the next
+analytic gate.
 
 \section{Limits of the present paper}
 \label{sec:limits}
