@@ -1,0 +1,376 @@
+{
+  "schema_version": "foundational-scalar-biwave-to-weyl-bv-dependency-delta-v1",
+  "result_id": "FOUNDATIONAL_SCALAR_BIWAVE_TO_WEYL_BV_DEPENDENCY_DELTA_V1",
+  "result_kind": "FAIL_CLOSED_CROSS_THEORY_DEPENDENCY_DELTA",
+  "lifecycle": "CERTIFIED_DEPENDENCY_DELTA",
+  "created": "2026-08-14",
+  "repository_base_commit": "b5601e3e7f616cc03ea094be3ea6cc577043931d",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "question": "What, exactly, must be added before the certified flat scalar Box^2 Green construction supports a Lorentzian Weyl BV propagator claim?",
+  "answer": "The scalar construction supplies an exact causal fourth-order benchmark, not a transfer theorem. Sixteen typed gates separate it from the target. Two are proved only in the scalar source, one is a positive but background-scoped Nariai Weyl result, one is an open-but-seeded Berger route, two are scoped architectural no-go theorems, one is a forbidden particle reinterpretation, and the remaining target gates are missing or fail closed. The authoritative classical import gate itself remains pending, so no full-complex Lorentzian or quantum lifecycle promotion is permitted.",
+  "status_vocabulary": [
+    {
+      "id": "PROVED_SCALAR",
+      "meaning": "Proved exactly for the displayed flat scalar carrier only."
+    },
+    {
+      "id": "SCOPED_WEYL_RESULT",
+      "meaning": "A genuine Weyl/BV result exists, but only for the explicitly named background and subcomplex."
+    },
+    {
+      "id": "OPEN_SEEDED",
+      "meaning": "Concrete operators or contracts exist, but the stated target theorem is still absent."
+    },
+    {
+      "id": "MISSING_CERTIFICATE",
+      "meaning": "The target requires a new object or proof not supplied by current evidence."
+    },
+    {
+      "id": "FAIL_CLOSED_IMPORT",
+      "meaning": "Inputs exist, but the authoritative acceptance gate explicitly fails closed."
+    },
+    {
+      "id": "SCOPED_NO_GO",
+      "meaning": "A precisely named architecture is ruled out; neighboring architectures remain open."
+    },
+    {
+      "id": "FORBIDDEN_TRANSFER",
+      "meaning": "The proposed interpretation conflicts with an explicit scientific scope boundary."
+    }
+  ],
+  "dependency_delta": [
+    {
+      "id": "D01_SCALAR_FACTOR",
+      "scalar_source_capability": "explicit flat scalar P Green maps",
+      "weyl_bv_target_requirement": "normally-hyperbolic factor Green maps on the target bundle",
+      "status": "PROVED_SCALAR",
+      "missing_certificate": "variable-coefficient bundle factor theorem",
+      "evidence": [
+        "FOUNDATIONAL_SCALAR_MINKOWSKI_BIWAVE_GREEN_V1"
+      ],
+      "does_not_establish": "A scalar line-bundle formula is not a tensor-bundle theorem."
+    },
+    {
+      "id": "D02_FOURTH_ORDER_COMPOSITION",
+      "scalar_source_capability": "canonical H=G o G for P^2",
+      "weyl_bv_target_requirement": "factorization or direct Green theorem for the gauge-fixed fourth-order metric operator",
+      "status": "PROVED_SCALAR",
+      "missing_certificate": "principal and lower-order Weyl operator identification",
+      "evidence": [
+        "FOUNDATIONAL_SCALAR_MINKOWSKI_BIWAVE_GREEN_V1",
+        "FOUNDATIONAL_TYPED_BIWAVE_GREEN_DEPENDENCY_AUDIT_V1"
+      ],
+      "does_not_establish": "Matching differential order does not identify operators."
+    },
+    {
+      "id": "D03_TENSOR_CARRIER",
+      "scalar_source_capability": "scalar functions with scalar pairing",
+      "weyl_bv_target_requirement": "symmetric-tensor, ghost, antifield, and nonminimal bundles with graded pairing",
+      "status": "MISSING_CERTIFICATE",
+      "missing_certificate": "complete degreewise carrier and nondegenerate graded pairing",
+      "evidence": [],
+      "does_not_establish": "No tensor or graded structure transfers from the scalar carrier."
+    },
+    {
+      "id": "D04_GAUGE_FIXING",
+      "scalar_source_capability": "no gauge symmetry",
+      "weyl_bv_target_requirement": "gauge fixing whose full kinetic complex is Green-hyperbolic",
+      "status": "MISSING_CERTIFICATE",
+      "missing_certificate": "full off-shell gauge-fixed Weyl BV operator and gauge-fixing independence",
+      "evidence": [
+        "CLASSICAL_IMPORT_CERTIFICATE"
+      ],
+      "does_not_establish": "A metric-sector or reduced-row inverse is not a full BV inverse."
+    },
+    {
+      "id": "D05_CURVED_LOWER_ORDER",
+      "scalar_source_capability": "zero lower-order couplings in flat space",
+      "weyl_bv_target_requirement": "curvature-dependent subprincipal and lower-order terms controlled on a globally hyperbolic background",
+      "status": "MISSING_CERTIFICATE",
+      "missing_certificate": "bundle energy estimates and Volterra convergence for the chosen Weyl background",
+      "evidence": [
+        "FOUNDATIONAL_TYPED_BIWAVE_GREEN_DEPENDENCY_AUDIT_V1"
+      ],
+      "does_not_establish": "Flat causal support does not prove curved well-posedness."
+    },
+    {
+      "id": "D06_CONSTRAINT_PROPAGATION",
+      "scalar_source_capability": "none",
+      "weyl_bv_target_requirement": "gauge constraints and subsidiary equations preserved by evolution",
+      "status": "MISSING_CERTIFICATE",
+      "missing_certificate": "constraint-propagation chain theorem",
+      "evidence": [],
+      "does_not_establish": "Solving the metric equation alone need not preserve the BV constraint surface."
+    },
+    {
+      "id": "D07_DEGREEWISE_INVERSES",
+      "scalar_source_capability": "B H=H B=id on scalar code domains",
+      "weyl_bv_target_requirement": "degreewise P_BV G=id and G P_BV=id on declared compact section domains",
+      "status": "MISSING_CERTIFICATE",
+      "missing_certificate": "full-complex two-sided Green identities",
+      "evidence": [
+        "CLASSICAL_IMPORT_CERTIFICATE"
+      ],
+      "does_not_establish": "Partial rows and principal symbols cannot be assembled implicitly."
+    },
+    {
+      "id": "D08_BRST_COMPATIBILITY",
+      "scalar_source_capability": "no BRST differential",
+      "weyl_bv_target_requirement": "[q,G]=0 or a certified causal homotopy identity compatible with the BV differential",
+      "status": "MISSING_CERTIFICATE",
+      "missing_certificate": "BRST-compatible causal Green homotopy",
+      "evidence": [],
+      "does_not_establish": "Causal inversion without a chain identity does not descend to cohomology."
+    },
+    {
+      "id": "D09_SUPPORT_MICROLOCAL",
+      "scalar_source_capability": "exact flat cone support",
+      "weyl_bv_target_requirement": "curved causal support plus wavefront-set and microlocal compatibility",
+      "status": "MISSING_CERTIFICATE",
+      "missing_certificate": "full-complex support and microlocal spectrum certificate",
+      "evidence": [],
+      "does_not_establish": "Support control alone is not a Hadamard or wavefront-set theorem."
+    },
+    {
+      "id": "D10_CLASSICAL_FREEZE",
+      "scalar_source_capability": "no classical BV import",
+      "weyl_bv_target_requirement": "nilpotency, contraction, chain maps, cyclicity, residual cohomology, and pairing independently frozen",
+      "status": "FAIL_CLOSED_IMPORT",
+      "missing_certificate": "all missing exports and ten blocked checks listed by CLASSICAL_IMPORT_CERTIFICATE",
+      "evidence": [
+        "CLASSICAL_IMPORT_CERTIFICATE"
+      ],
+      "does_not_establish": "Integrity of a partial snapshot is not the classical freeze gate."
+    },
+    {
+      "id": "D11_NARIAI_POSITIVE_SLICE",
+      "scalar_source_capability": "no curved example",
+      "weyl_bv_target_requirement": "complete four-row metric Bach BV Green homotopy on unit Nariai",
+      "status": "SCOPED_WEYL_RESULT",
+      "missing_certificate": "extension from the certified four-row Nariai complex to the full off-shell metric BV complex",
+      "evidence": [
+        "NARIAI_METRIC_BIWAVE_GREEN_HOMOTOPY_V1"
+      ],
+      "does_not_establish": "This positive curved result is background- and carrier-scoped and has no Hadamard or quantum promotion."
+    },
+    {
+      "id": "D12_BERGER_ROUTE",
+      "scalar_source_capability": "scalar composition suggests a factor route",
+      "weyl_bv_target_requirement": "Berger hybrid retained chain with convergent causal Volterra resolvent",
+      "status": "OPEN_SEEDED",
+      "missing_certificate": "causal Volterra resolvent and full 26-row homotopy",
+      "evidence": [
+        "BERGER_METRIC_MIXED_ORDER_GREEN_REALIZATION_CONTRACT"
+      ],
+      "does_not_establish": "The contract explicitly constructs no advanced or retarded Green operator."
+    },
+    {
+      "id": "D13_24_FIELD_NO_GO",
+      "scalar_source_capability": "scalar P^2 has a scalar principal symbol",
+      "weyl_bv_target_requirement": "24-field pointwise-pairing first-order companion with scalar normally-hyperbolic symbol",
+      "status": "SCOPED_NO_GO",
+      "missing_certificate": "a materially different bundle, gauge, pairing, or architecture",
+      "evidence": [
+        "PURE_WEYL_FINAL_COVARIANT_CLAIM_DEPENDENCIES"
+      ],
+      "does_not_establish": "The rank 11>9 obstruction rules out only the declared 24-field scalar-symbol architecture."
+    },
+    {
+      "id": "D14_46_PARAMETER_NO_GO",
+      "scalar_source_capability": "scalar factorization is semisimple",
+      "weyl_bv_target_requirement": "fixed-temporal cyclic 46-parameter first-order strongly-hyperbolic family",
+      "status": "SCOPED_NO_GO",
+      "missing_certificate": "changed temporal normalization, incidence, scalar branch, or enlarged prolongation",
+      "evidence": [
+        "CURVED_EXPANDED_RELATIVE_WITNESS_R6_FIRST_ORDER_NO_GO"
+      ],
+      "does_not_establish": "The persistent Jordan chain rules out only this fixed-temporal family."
+    },
+    {
+      "id": "D15_RESIDUAL_CLASSES",
+      "scalar_source_capability": "scalar solutions can be viewed as states only in the scalar model",
+      "weyl_bv_target_requirement": "[W_+^2] and [W_-^2] retain their certified deformation/vertex meaning",
+      "status": "FORBIDDEN_TRANSFER",
+      "missing_certificate": "a separate one-particle cohomology and positivity construction",
+      "evidence": [
+        "CURVATURE_IMAGE_PRESYMPLECTIC_CCR_ALGEBRA"
+      ],
+      "does_not_establish": "The centered Weyl-square classes are not one-particle gravitons."
+    },
+    {
+      "id": "D16_QUANTUM_CAUSAL",
+      "scalar_source_capability": "classical scalar Green maps only",
+      "weyl_bv_target_requirement": "BRST-compatible Hadamard state, renormalized time-ordered products, causal pAQFT, and Lorentzian QME",
+      "status": "MISSING_CERTIFICATE",
+      "missing_certificate": "all four quantum causal constructions in lifecycle order",
+      "evidence": [],
+      "does_not_establish": "No classical Green map, including a full one, automatically establishes quantum causal theory."
+    }
+  ],
+  "existing_scoped_architectures": [
+    {
+      "id": "NARIAI_FOUR_ROW",
+      "status": "SCOPED_WEYL_RESULT",
+      "establishes": "The complete four-row metric Bach BV complex on global unit Nariai has advanced and retarded Green homotopies obtained from exact commuting normally hyperbolic ghost and metric factors.",
+      "next_missing": "full off-shell BV carrier, Hadamard control, and quantum lifecycle"
+    },
+    {
+      "id": "BERGER_HYBRID_RETAINED",
+      "status": "OPEN_SEEDED",
+      "establishes": "exact realization contract, normalized tensor-biwave form, companion SDR, and route selection",
+      "next_missing": "causal Volterra convergence and full 26-row Green homotopy"
+    }
+  ],
+  "classical_import_gate": {
+    "source": "CLASSICAL_IMPORT_CERTIFICATE",
+    "status": "FAIL_CLOSED",
+    "claim_state": "CLASSICAL_IMPORT_PENDING",
+    "publishable_quantum_results_allowed": false,
+    "blocked_or_failed_checks": [
+      "D_q1_commutator_zero",
+      "D_q2_derivation",
+      "classical_contraction_identity",
+      "cyclic_compatibility",
+      "pi_cl_iota_cl_identity",
+      "pi_q0_intertwining",
+      "q0_iota_intertwining",
+      "q0_squared_zero",
+      "q1_q2_arity_two_nilpotency",
+      "q2_cyclic_compatibility"
+    ],
+    "missing_exports": [
+      "centered_cohomology_bases_h3_h4_h5",
+      "classical_homotopy_s_cl",
+      "classical_inclusion_iota_cl",
+      "classical_projection_pi_cl",
+      "conformal_killing_zero_modes_15",
+      "cyclic_pairing",
+      "field_ghost_antifield_dictionary",
+      "field_gradings",
+      "gauge_fixed_nonminimal_contractions",
+      "local_D_action_on_bv_generators",
+      "local_classical_bv_differential_q0",
+      "normalized_weyl_square_representatives",
+      "residual_differential_q_res_0",
+      "residual_representation_matrices",
+      "so42_structure_constants",
+      "support_local_classical_bv_q2",
+      "trace_sector_contraction"
+    ]
+  },
+  "lifecycle_gate": {
+    "current_highest": "CLASSICAL_SCALAR_GREEN_ONLY",
+    "target_order": [
+      "CLASSIFIED",
+      "COEFFICIENT_COMPUTED",
+      "QME_RESTORED",
+      "RESIDUAL_TRANSFERRED",
+      "LORENTZIAN_CERTIFIED"
+    ],
+    "states_reached_for_full_weyl_bv": [],
+    "rule": "No quantum correction may transfer before QME restoration, and no Lorentzian certification follows from local, Euclidean, reduced-mode, scalar, or scoped-background evidence."
+  },
+  "forbidden_inferences": [
+    "scalar Box^2 formula implies the Weyl kinetic operator is factorized",
+    "principal-symbol agreement implies a two-sided Green operator",
+    "metric-sector inversion implies a full BV propagator",
+    "a residual deformation class is a one-particle state",
+    "a scoped no-go refutes the classical BRST complex or physical spectrum",
+    "causal support implies Hadamard wavefront control",
+    "Euclidean or reduced-mode evidence implies LORENTZIAN-CAUSAL"
+  ],
+  "provenance": {
+    "inputs": [
+      {
+        "path": "foundations/results/FOUNDATIONAL_SCALAR_MINKOWSKI_BIWAVE_GREEN_V1.json",
+        "sha256": "4487e84fd56b666bb32b10ad1d2531eaa97ebda4499d03760fa903c71b920e99",
+        "role": "proved scalar source"
+      },
+      {
+        "path": "foundations/results/FOUNDATIONAL_TYPED_BIWAVE_GREEN_DEPENDENCY_AUDIT_V1.json",
+        "sha256": "f00e642c25fec883441346884467a7251c4ee61b4980b0370f124845b9cba8d6",
+        "role": "general analytic dependency cut"
+      },
+      {
+        "path": "foundations/results/FOUNDATIONAL_NORMAL_HYPERBOLIC_FACTOR_ATLAS_V1.json",
+        "sha256": "40836e986d2ba7b957cc51298c1bd724ace32ef59f846a7abc63b8980143a6c4",
+        "role": "normally-hyperbolic literature boundary"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_CERTIFICATE.json",
+        "sha256": "eb48675fb36489e7d33724b2d06f1f0ebfe6867d043bf71d1536015f9862b2d6",
+        "role": "authoritative fail-closed classical import gate"
+      },
+      {
+        "path": "d_quotient_classical/certificates/NARIAI_METRIC_BIWAVE_GREEN_HOMOTOPY_V1.json",
+        "sha256": "5d755293ffbe32585fb1d6afc4ccb3643784306236e4b456777040858f5266bc",
+        "role": "scoped positive four-row Weyl metric BV example"
+      },
+      {
+        "path": "quantum-weyl/lorentzian/certificates/BERGER_METRIC_MIXED_ORDER_GREEN_CONTRACT.json",
+        "sha256": "9d701483ffaab72b4f3f8d964e001e1625976589c3a9a2aab7348e639c73ec9c",
+        "role": "Berger mixed-order realization contract"
+      },
+      {
+        "path": "covariant_completion/certificates/final_claim_dependencies.json",
+        "sha256": "7ebb80ebc44ef2f07151e26c15e29d15e456a75235b8a9dd8eba3917183b59da",
+        "role": "24-field scalar-symbol no-go scope"
+      },
+      {
+        "path": "covariant_completion/certificates/curved_expanded_relative_witness_r6_first_order_no_go.json",
+        "sha256": "253964ca422718b2200957e59a4df318844340959ae2090b2eff801e62a90e77",
+        "role": "46-parameter fixed-temporal no-go scope"
+      },
+      {
+        "path": "quantum-weyl/lorentzian/certificates/CURVATURE_IMAGE_PRESYMPLECTIC_CCR_ALGEBRA.json",
+        "sha256": "772db76938c91eb4b41a22ce4b4634c26ffd6bb68d7778a45a13ceac00ef80ed",
+        "role": "residual-class particle firewall"
+      }
+    ]
+  },
+  "independent_checker": {
+    "path": "foundations/check_scalar_biwave_to_weyl_bv_delta.py",
+    "checks": [
+      "sixteen unique typed gates",
+      "status-vocabulary closure",
+      "source-versus-target positive-claim firewall",
+      "classical gate exact replay",
+      "quantum lifecycle remains empty",
+      "scoped no-go language",
+      "provenance hashes",
+      "canonical digest"
+    ],
+    "expected_digest": "a347442a5b6effbe928b3641e1c9686a252d6dcdd9957c59fda8dadc47d2915c"
+  },
+  "claim_flags": {
+    "scalar_biwave_green_imported": true,
+    "transfer_requirements_classified": true,
+    "scoped_nariai_weyl_result_recorded": true,
+    "scoped_architectural_no_gos_recorded": true,
+    "classical_import_gate_passed": false,
+    "full_weyl_bv_propagator_constructed": false,
+    "brst_compatible_hadamard_state_constructed": false,
+    "renormalized_lorentzian_products_constructed": false,
+    "causal_paqft_constructed": false,
+    "lorentzian_qme_restored": false,
+    "residual_quantum_transfer_completed": false,
+    "lorentzian_full_complex_certified": false
+  },
+  "does_not_establish": [
+    "a full off-shell Lorentzian Weyl metric BV propagator",
+    "a BRST-compatible Hadamard state",
+    "renormalized Lorentzian time-ordered products",
+    "a causal perturbative AQFT construction",
+    "a Lorentzian quantum-master-equation theorem",
+    "a passed classical import freeze gate",
+    "that the two scoped no-go theorems rule out other architectures",
+    "that the centered Weyl-square deformation classes are particles",
+    "a weakest-base reversal for curved tensor PDE",
+    "empirical adequacy or a complete physical theory"
+  ],
+  "next_gate": "The most direct positive route is to close the Berger causal Volterra resolvent and full 26-row Green homotopy while independently repairing the authoritative classical import gate; the Nariai four-row result is the control showing that a scoped Weyl BV Green homotopy is possible.",
+  "human_report": "foundations/reports/scalar-biwave-to-weyl-bv-dependency-delta-v1.md"
+}

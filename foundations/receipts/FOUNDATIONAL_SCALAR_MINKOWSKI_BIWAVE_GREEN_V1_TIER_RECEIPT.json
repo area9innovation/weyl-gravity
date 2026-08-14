@@ -1,0 +1,27 @@
+{
+  "receipt_id":"FOUNDATIONAL_SCALAR_MINKOWSKI_BIWAVE_GREEN_V1_TIER_RECEIPT",
+  "schema_version":"foundational-tier-receipt-v0",
+  "created":"2026-08-14",
+  "result_id":"FOUNDATIONAL_SCALAR_MINKOWSKI_BIWAVE_GREEN_V1",
+  "dependency_tags":["LOCAL-ALGEBRAIC","LORENTZIAN-CAUSAL"],
+  "base_commit":"3cd7ba62550edc5d19dabd7099fe31dc15d0db38",
+  "tiers":{
+    "tier_0":{"status":"PASS","command":"python3 -m py_compile on changed Python; parse changed JSON; git diff --check on explicit foundations/paper paths"},
+    "tier_1_checker":{"status":"PASS","command":"python3 foundations/check_scalar_minkowski_biwave_green.py","result":"4 exact rational fixtures; 8 right-inverse checks; 32 endpoint-jet checks; 4 duality checks; 8 support checks"},
+    "tier_1_verifier":{"status":"PASS","command":"python3 foundations/verify_scalar_minkowski_biwave_green.py","result":"schema, deterministic generation, exact identities, support, energy boundary, and scalar-to-BV firewall"},
+    "tier_1_tests":{"status":"PASS","command":"python3 -m unittest foundations.tests.test_scalar_minkowski_biwave_green","result":"8/8 mutation and repository tests pass"},
+    "tier_2":{"status":"PASS","command":"python3 foundations/verify_refined_intersection_cube_v15.py && python3 foundations/verify_matrix_site_v2.py && python3 paper/verify_21_reverse_foundations_claim_map.py","result":"cube, explorer, and paper consumers pass"},
+    "tier_3":{"status":"NOT_RUN","criterion":"No classical or quantum freeze, release, shared core-algebra change, or full-complex lifecycle promotion."}
+  },
+  "content_hashes":{
+    "foundations/build_scalar_minkowski_biwave_green.py":"a2fd4910be2acc7fcd751e9dde79e854fe3878e75b56e8755871f0344d3d39d9",
+    "foundations/check_scalar_minkowski_biwave_green.py":"ad2a2c07c9cbe4770e8d05b441c30ea995ffbfc7c36a5ffeb47f440324277177",
+    "foundations/verify_scalar_minkowski_biwave_green.py":"af63d72813fa19c3a3d344eb7be93c29a5ada9b55b6a6ed230b13c7e125dea17",
+    "foundations/schema/foundational-scalar-minkowski-biwave-green-v1.schema.json":"e1695d1643ee2d6b20c9d04fc758f3879e51c2b8dbfa7a1320d6b2481dd7cae2",
+    "foundations/tests/test_scalar_minkowski_biwave_green.py":"31296e48d481f20faeb7fbafc0603f3d02938b872967cc183547980bc270f376",
+    "foundations/results/FOUNDATIONAL_SCALAR_MINKOWSKI_BIWAVE_GREEN_V1.json":"4487e84fd56b666bb32b10ad1d2531eaa97ebda4499d03760fa903c71b920e99",
+    "foundations/reports/scalar-minkowski-biwave-green-v1.md":"f1280abee3c0366e3d3716a6454a6c2b975c79705137b6cccefe9e3831635129"
+  },
+  "scope_receipt":{"changed_scope":"foundations scalar causal benchmark plus generated cube/site/paper consumers"},
+  "claim_boundary":"A genuine LORENTZIAN-CAUSAL result for the displayed flat scalar 1+1 biwave operator only. It establishes no variable-coefficient tensor operator, full Weyl BV propagator, Hadamard state, renormalized Lorentzian product, causal pAQFT construction, or Lorentzian QME."
+}

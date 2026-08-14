@@ -9,7 +9,7 @@
 ## Outcome
 
 `foundations/site/index.html` presents all **576** Cartesian coordinates.
-All **576** are now emitted by cube v14 and have separate coverage and migration
+All **576** are now emitted by cube v15 and have separate coverage and migration
 review fields: **576 reviewed**, **0 pending**.
 The surface has **169 `REVIEWED_GAP`** cells and **0
 `NOT_MAPPED`** cells. A reviewed gap is a formulated open question with a typed

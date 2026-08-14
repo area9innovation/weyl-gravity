@@ -375,8 +375,8 @@ window.MATRIX_EXPLORER_DATA = {
     "not_mapped": 0,
     "dual_direct": 8,
     "mark_counts": {
-      "G": 29,
-      "Gl": 1,
+      "G": 28,
+      "Gl": 2,
       "L": 112,
       "LR": 8,
       "Lr": 7,
@@ -390,8 +390,8 @@ window.MATRIX_EXPLORER_DATA = {
     },
     "evidence_role_counts": {
       "DIRECT_LITERATURE": 84,
-      "DIRECT_LOCAL": 123,
-      "SUPPORTING": 453,
+      "DIRECT_LOCAL": 125,
+      "SUPPORTING": 455,
       "UNREVIEWED": 191
     },
     "synthetic_not_mapped": 0,
@@ -411,7 +411,7 @@ window.MATRIX_EXPLORER_DATA = {
       "REVIEWED_NO_TRANSFER": 88,
       "REVIEWED_OVERLAY": 11
     },
-    "evidence_records": 81
+    "evidence_records": 83
   },
   "cells": [
     {
@@ -6378,10 +6378,11 @@ window.MATRIX_EXPLORER_DATA = {
         "FOUNDATIONAL_CODED_LOCAL_WEAK_WAVE_TEST_CLASS_V1",
         "FOUNDATIONAL_CODED_WEAK_WAVE_H2_TEST_COMPLETION_V1",
         "FOUNDATIONAL_SUPPORT_INDEXED_TEST_SPACE_COMPARISON_V1",
-        "FOUNDATIONAL_SCALAR_MINKOWSKI_GREEN_CHOICE_AUDIT_V1"
+        "FOUNDATIONAL_SCALAR_MINKOWSKI_GREEN_CHOICE_AUDIT_V1",
+        "FOUNDATIONAL_SCALAR_MINKOWSKI_BIWAVE_GREEN_V1"
       ],
-      "summary": "The named weak-wave rail now has a canonical flat scalar 1+1 retarded/advanced evolution with an explicit energy modulus and zero-data uniqueness in the represented energy image.",
-      "boundary": "The Green result is scalar and flat; arbitrary-distribution uniqueness, variable coefficients, gauge systems, and Weyl/BV evolution remain open.",
+      "summary": "The flat scalar rail now includes both the wave equation and its fourth-order biwave square, with canonical retarded/advanced maps, four past-zero Cauchy data, and a finite-horizon two-stage energy modulus.",
+      "boundary": "The biwave extension is flat and scalar; it proves no variable-coefficient tensor or Weyl BV evolution theorem.",
       "evidence_roles": {
         "FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V1": "SUPPORTING",
         "weihrauch-zhong-2002": "SUPPORTING",
@@ -6390,7 +6391,8 @@ window.MATRIX_EXPLORER_DATA = {
         "FOUNDATIONAL_CODED_LOCAL_WEAK_WAVE_TEST_CLASS_V1": "SUPPORTING",
         "FOUNDATIONAL_CODED_WEAK_WAVE_H2_TEST_COMPLETION_V1": "DIRECT_LOCAL",
         "FOUNDATIONAL_SUPPORT_INDEXED_TEST_SPACE_COMPARISON_V1": "SUPPORTING",
-        "FOUNDATIONAL_SCALAR_MINKOWSKI_GREEN_CHOICE_AUDIT_V1": "DIRECT_LOCAL"
+        "FOUNDATIONAL_SCALAR_MINKOWSKI_GREEN_CHOICE_AUDIT_V1": "DIRECT_LOCAL",
+        "FOUNDATIONAL_SCALAR_MINKOWSKI_BIWAVE_GREEN_V1": "DIRECT_LOCAL"
       },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "REVIEWED_V1_OVERLAY",
@@ -6424,6 +6426,13 @@ window.MATRIX_EXPLORER_DATA = {
         "evidence": {
           "FOUNDATIONAL_SUPPORT_INDEXED_TEST_SPACE_COMPARISON_V1": "SUPPORTING",
           "FOUNDATIONAL_SCALAR_MINKOWSKI_GREEN_CHOICE_AUDIT_V1": "DIRECT_LOCAL"
+        }
+      },
+      "biwave_delta_revision": {
+        "previous_status": "LOCAL_RESULT",
+        "new_status": "LOCAL_RESULT",
+        "evidence": {
+          "FOUNDATIONAL_SCALAR_MINKOWSKI_BIWAVE_GREEN_V1": "DIRECT_LOCAL"
         }
       },
       "emitted": true
@@ -7324,15 +7333,19 @@ window.MATRIX_EXPLORER_DATA = {
         "FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V1",
         "FOUNDATIONAL_TYPED_BIWAVE_GREEN_DEPENDENCY_AUDIT_V1",
         "FOUNDATIONAL_SUPPORT_INDEXED_TEST_SPACE_COMPARISON_V1",
-        "FOUNDATIONAL_SCALAR_MINKOWSKI_GREEN_CHOICE_AUDIT_V1"
+        "FOUNDATIONAL_SCALAR_MINKOWSKI_GREEN_CHOICE_AUDIT_V1",
+        "FOUNDATIONAL_SCALAR_MINKOWSKI_BIWAVE_GREEN_V1",
+        "FOUNDATIONAL_SCALAR_BIWAVE_TO_WEYL_BV_DEPENDENCY_DELTA_V1"
       ],
-      "summary": "Canonical exact retarded and advanced Green maps for the flat 1+1 scalar wave operator satisfy both inverse identities on their code domains, strict causal support, and adjoint duality; supplied source names extend the construction over RCA_0.",
-      "boundary": "The LORENTZIAN-CAUSAL claim is confined to the scalar benchmark and is not a Weyl/BV propagator or quantum causal construction.",
+      "summary": "Canonical exact Green maps now cover P and P^2 on the declared flat scalar code domains. A separate fail-closed delta identifies sixteen gates between this benchmark and a Lorentzian Weyl BV propagator.",
+      "boundary": "Two scalar factors do not transfer across tensor, gauge, chain, microlocal, or classical-import gates.",
       "evidence_roles": {
         "FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V1": "SUPPORTING",
         "FOUNDATIONAL_TYPED_BIWAVE_GREEN_DEPENDENCY_AUDIT_V1": "SUPPORTING",
         "FOUNDATIONAL_SUPPORT_INDEXED_TEST_SPACE_COMPARISON_V1": "SUPPORTING",
-        "FOUNDATIONAL_SCALAR_MINKOWSKI_GREEN_CHOICE_AUDIT_V1": "DIRECT_LOCAL"
+        "FOUNDATIONAL_SCALAR_MINKOWSKI_GREEN_CHOICE_AUDIT_V1": "DIRECT_LOCAL",
+        "FOUNDATIONAL_SCALAR_MINKOWSKI_BIWAVE_GREEN_V1": "DIRECT_LOCAL",
+        "FOUNDATIONAL_SCALAR_BIWAVE_TO_WEYL_BV_DEPENDENCY_DELTA_V1": "SUPPORTING"
       },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "REVIEWED_V1_OVERLAY",
@@ -7348,6 +7361,14 @@ window.MATRIX_EXPLORER_DATA = {
         "evidence": {
           "FOUNDATIONAL_SUPPORT_INDEXED_TEST_SPACE_COMPARISON_V1": "SUPPORTING",
           "FOUNDATIONAL_SCALAR_MINKOWSKI_GREEN_CHOICE_AUDIT_V1": "DIRECT_LOCAL"
+        }
+      },
+      "biwave_delta_revision": {
+        "previous_status": "LOCAL_RESULT",
+        "new_status": "LOCAL_RESULT",
+        "evidence": {
+          "FOUNDATIONAL_SCALAR_MINKOWSKI_BIWAVE_GREEN_V1": "DIRECT_LOCAL",
+          "FOUNDATIONAL_SCALAR_BIWAVE_TO_WEYL_BV_DEPENDENCY_DELTA_V1": "SUPPORTING"
         }
       },
       "emitted": true
@@ -8304,15 +8325,26 @@ window.MATRIX_EXPLORER_DATA = {
       "carrier": "SMOOTH_DISTRIBUTIONAL",
       "obligation": "GAUGE_BV_COHOMOLOGY",
       "status": "PRIORITY_GAP",
-      "evidence": [],
-      "evidence_roles": {},
+      "evidence": [
+        "FOUNDATIONAL_SCALAR_BIWAVE_TO_WEYL_BV_DEPENDENCY_DELTA_V1"
+      ],
+      "evidence_roles": {
+        "FOUNDATIONAL_SCALAR_BIWAVE_TO_WEYL_BV_DEPENDENCY_DELTA_V1": "SUPPORTING"
+      },
       "parent_obligation": "GAUGE_BV_COHOMOLOGY",
       "migration_relation": "EXACT_ONE_TO_ONE",
-      "summary": "The continuum BV complex has not been encoded over a weak base.",
-      "boundary": "Finite certificates do not fill this cell.",
+      "summary": "The continuum BV gap now has a typed missing-object ledger, including carrier, gauge-fixing, degreewise inverse, BRST-compatibility, constraint, microlocal, and classical-freeze gates.",
+      "boundary": "A classified dependency gap remains a PRIORITY_GAP, not a constructed continuum BV complex.",
       "migration_status": "EXACT_PARENT_TRANSFER",
       "migration_evidence": [],
       "migration_rationale": "The v0 obligation was not split, so its reviewed status and evidence transfer exactly.",
+      "biwave_delta_revision": {
+        "previous_status": "PRIORITY_GAP",
+        "new_status": "PRIORITY_GAP",
+        "evidence": {
+          "FOUNDATIONAL_SCALAR_BIWAVE_TO_WEYL_BV_DEPENDENCY_DELTA_V1": "SUPPORTING"
+        }
+      },
       "emitted": true
     },
     {
@@ -16660,6 +16692,92 @@ window.MATRIX_EXPLORER_DATA = {
       "report_link": "sources/foundations/reports/normal-hyperbolic-factor-foundations.md",
       "sha256": "40836e986d2ba7b957cc51298c1bd724ace32ef59f846a7abc63b8980143a6c4"
     },
+    "FOUNDATIONAL_SCALAR_BIWAVE_TO_WEYL_BV_DEPENDENCY_DELTA_V1": {
+      "id": "FOUNDATIONAL_SCALAR_BIWAVE_TO_WEYL_BV_DEPENDENCY_DELTA_V1",
+      "kind": "LOCAL_RESULT",
+      "result_kind": "FAIL_CLOSED_CROSS_THEORY_DEPENDENCY_DELTA",
+      "lifecycle": "CERTIFIED_DEPENDENCY_DELTA",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "claim_flags": {
+        "scalar_biwave_green_imported": true,
+        "transfer_requirements_classified": true,
+        "scoped_nariai_weyl_result_recorded": true,
+        "scoped_architectural_no_gos_recorded": true,
+        "classical_import_gate_passed": false,
+        "full_weyl_bv_propagator_constructed": false,
+        "brst_compatible_hadamard_state_constructed": false,
+        "renormalized_lorentzian_products_constructed": false,
+        "causal_paqft_constructed": false,
+        "lorentzian_qme_restored": false,
+        "residual_quantum_transfer_completed": false,
+        "lorentzian_full_complex_certified": false
+      },
+      "does_not_establish": [
+        "a full off-shell Lorentzian Weyl metric BV propagator",
+        "a BRST-compatible Hadamard state",
+        "renormalized Lorentzian time-ordered products",
+        "a causal perturbative AQFT construction",
+        "a Lorentzian quantum-master-equation theorem",
+        "a passed classical import freeze gate",
+        "that the two scoped no-go theorems rule out other architectures",
+        "that the centered Weyl-square deformation classes are particles",
+        "a weakest-base reversal for curved tensor PDE",
+        "empirical adequacy or a complete physical theory"
+      ],
+      "result_path": "foundations/results/FOUNDATIONAL_SCALAR_BIWAVE_TO_WEYL_BV_DEPENDENCY_DELTA_V1.json",
+      "result_link": "sources/foundations/results/FOUNDATIONAL_SCALAR_BIWAVE_TO_WEYL_BV_DEPENDENCY_DELTA_V1.json",
+      "report_path": "foundations/reports/scalar-biwave-to-weyl-bv-dependency-delta-v1.md",
+      "report_link": "sources/foundations/reports/scalar-biwave-to-weyl-bv-dependency-delta-v1.md",
+      "sha256": "efdeafe832cc315ff1d0f36984fabe0114e7fbc19d6f78335b14478228fcda65"
+    },
+    "FOUNDATIONAL_SCALAR_MINKOWSKI_BIWAVE_GREEN_V1": {
+      "id": "FOUNDATIONAL_SCALAR_MINKOWSKI_BIWAVE_GREEN_V1",
+      "kind": "LOCAL_RESULT",
+      "result_kind": "SCALAR_FOURTH_ORDER_LORENTZIAN_GREEN_CONSTRUCTION",
+      "lifecycle": "CERTIFIED",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "claim_flags": {
+        "scalar_biwave_retarded_green_constructed": true,
+        "scalar_biwave_advanced_green_constructed": true,
+        "two_sided_test_code_identities_proved": true,
+        "strict_causal_support_proved": true,
+        "adjoint_duality_proved": true,
+        "four_zero_data_selection_proved": true,
+        "named_finite_horizon_extension_proved": true,
+        "canonical_construction_avoids_choice": true,
+        "global_bounded_energy_proved": false,
+        "arbitrary_distributional_uniqueness_proved": false,
+        "variable_coefficient_tensor_green_constructed": false,
+        "weyl_bv_propagator_constructed": false,
+        "brst_compatible_green_constructed": false,
+        "hadamard_state_constructed": false,
+        "renormalized_products_constructed": false,
+        "lorentzian_qme_proved": false
+      },
+      "does_not_establish": [
+        "a global bounded-energy estimate for persistent retarded biwave solutions",
+        "uniqueness among arbitrary distributional solutions",
+        "support, horizon, or convergence data selected from a bare extensional source",
+        "a curved or variable-coefficient tensor Green operator",
+        "a gauge-fixed Green-hyperbolic Weyl BV complex",
+        "BRST-compatible causal homotopies",
+        "a Hadamard state or wavefront-set theorem",
+        "renormalized Lorentzian time-ordered products, causal pAQFT, or a Lorentzian QME",
+        "a weakest-base reversal",
+        "empirical adequacy or a complete physical theory"
+      ],
+      "result_path": "foundations/results/FOUNDATIONAL_SCALAR_MINKOWSKI_BIWAVE_GREEN_V1.json",
+      "result_link": "sources/foundations/results/FOUNDATIONAL_SCALAR_MINKOWSKI_BIWAVE_GREEN_V1.json",
+      "report_path": "foundations/reports/scalar-minkowski-biwave-green-v1.md",
+      "report_link": "sources/foundations/reports/scalar-minkowski-biwave-green-v1.md",
+      "sha256": "4487e84fd56b666bb32b10ad1d2531eaa97ebda4499d03760fa903c71b920e99"
+    },
     "FOUNDATIONAL_SCALAR_MINKOWSKI_GREEN_CHOICE_AUDIT_V1": {
       "id": "FOUNDATIONAL_SCALAR_MINKOWSKI_GREEN_CHOICE_AUDIT_V1",
       "kind": "LOCAL_RESULT",
@@ -18018,15 +18136,15 @@ window.MATRIX_EXPLORER_DATA = {
   ],
   "boundaries": {
     "cube": [
-      "a support or convergence modulus selected from a bare extensional function",
-      "the full locally convex LF topology or a single metrization of C_c-infinity",
-      "surjectivity of the smooth-test embedding onto H2",
-      "uniqueness among arbitrary distributional weak solutions",
-      "a variable-coefficient or curved-spacetime Green operator",
-      "a Lorentzian Weyl/BV propagator",
-      "a Hadamard state, causal perturbative AQFT construction, or Lorentzian quantum master equation",
-      "empirical calibration or observational agreement",
-      "that all 576 coordinates are jointly realizable",
+      "a variable-coefficient or curved-spacetime tensor Green operator",
+      "a full off-shell Lorentzian Weyl BV propagator",
+      "a passed classical import freeze gate",
+      "BRST-compatible causal homotopies",
+      "a Hadamard state or microlocal spectrum theorem",
+      "renormalized Lorentzian products, causal pAQFT, or a Lorentzian QME",
+      "that scoped no-go results rule out neighboring architectures",
+      "a weakest-base reversal",
+      "empirical adequacy",
       "a complete physical theory"
     ],
     "migration_audit": [
@@ -18060,7 +18178,7 @@ window.MATRIX_EXPLORER_DATA = {
     ]
   },
   "source_links": {
-    "cube": "sources/foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V14.json",
+    "cube": "sources/foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V15.json",
     "full_surface_audit": "sources/foundations/results/FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1.json",
     "migration_audit": "sources/foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_MIGRATION_AUDIT_V2.json",
     "ladder": "sources/foundations/results/FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V2.json",
@@ -18079,5 +18197,5 @@ window.MATRIX_EXPLORER_DATA = {
     "migration_audit_report": "sources/foundations/reports/intersection-cube-migration-audit-v2.md",
     "ladder_report": "sources/foundations/reports/cylinder-wave-strength-ladder-v2.md"
   },
-  "canonical_digest": "9e16d02dc4cf3cb8f2b55fb812d4d50c51d82cd8109f849b3fa4af2f227a5b47"
+  "canonical_digest": "d508873edf698fa2a01b8f7e5317b8691736635f78430925c80df29b32100473"
 };

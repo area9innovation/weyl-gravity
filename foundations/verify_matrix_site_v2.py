@@ -45,7 +45,7 @@ def verify(*, result=None, report=None) -> tuple[list[str], list[str]]:
         "migration_reviewed": 576,
         "migration_pending": 0,
         "reviewed_no_transfer": 88,
-        "evidence_records": 81,
+        "evidence_records": 83,
         "graph_edges": 10,
         "ladder_levels": 6,
         "theory_profiles": 36,
@@ -65,7 +65,7 @@ def verify(*, result=None, report=None) -> tuple[list[str], list[str]]:
         "numerical_reproduction_records": 1,
         "certified_assembly_interface_instances": 5,
         "dual_direct_cells": 8,
-        "mark_counts": {"G": 29, "Gl": 1, "L": 112, "LR": 8, "Lr": 7, "Ol": 169, "P": 19, "Pl": 78, "Plr": 12, "Pr": 51, "R": 87, "Rl": 3},
+        "mark_counts": {"G": 28, "Gl": 2, "L": 112, "LR": 8, "Lr": 7, "Ol": 169, "P": 19, "Pl": 78, "Plr": 12, "Pr": 51, "R": 87, "Rl": 3},
     }
     if summary != expected_summary:
         errors.append("expected independent summary")

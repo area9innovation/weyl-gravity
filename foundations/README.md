@@ -150,6 +150,31 @@ python3 foundations/verify_typed_biwave_green_dependencies.py
 python3 -m unittest foundations.tests.test_typed_biwave_green_dependencies
 ```
 
+The flat causal benchmark now extends from the scalar wave equation to the
+[`exact scalar biwave Green construction`](reports/scalar-minkowski-biwave-green-v1.md).
+It composes the canonical retarded and advanced maps, checks both inverse
+identities and adjoint duality with exact rational fixtures, and records the
+finite-horizon four-data energy boundary:
+
+```bash
+python3 foundations/check_scalar_minkowski_biwave_green.py
+python3 foundations/verify_scalar_minkowski_biwave_green.py
+python3 -m unittest foundations.tests.test_scalar_minkowski_biwave_green
+```
+
+The companion
+[`scalar-biwave-to-Weyl-BV dependency delta`](reports/scalar-biwave-to-weyl-bv-dependency-delta-v1.md)
+classifies sixteen transfer gates. It imports the scoped positive Nariai
+four-row result, the open Berger route, both scoped architectural no-go
+theorems, and the still-failed authoritative classical import gate without
+promoting a full Lorentzian Weyl BV propagator:
+
+```bash
+python3 foundations/check_scalar_biwave_to_weyl_bv_delta.py
+python3 foundations/verify_scalar_biwave_to_weyl_bv_delta.py
+python3 -m unittest foundations.tests.test_scalar_biwave_to_weyl_bv_delta
+```
+
 The first topos/Weyl-BV artifact is the
 [`glossary and obstruction ledger`](reports/topos-weyl-bv-obstruction-ledger.md).
 It maps ordinary objects to candidate internal objects and checks the

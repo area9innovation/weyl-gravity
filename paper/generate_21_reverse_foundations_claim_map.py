@@ -22,7 +22,7 @@ ATLAS_DATA = "foundations/site/data.json"
 ASSEMBLY_DATA = "foundations/site/assemblies.json"
 
 AUTHORITY_PATHS = {
-    "intersection_cube": "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V14.json",
+    "intersection_cube": "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V15.json",
     "bt_euclidean_import": "foundations/results/FOUNDATIONAL_BT_EUCLIDEAN_LATTICE_IMPORT_V1.json",
     "bt_free_reconstruction_obstruction": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_FREE_RECONSTRUCTION_OBSTRUCTION_V1.json",
     "bt_interacting_os_preflight": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_OS_WITNESS_PREFLIGHT_V1.json",
@@ -67,6 +67,8 @@ AUTHORITY_PATHS = {
     "fixed_support_smooth_to_h2_translator": "foundations/results/FOUNDATIONAL_FIXED_SUPPORT_SMOOTH_TO_H2_TRANSLATOR_V1.json",
     "support_indexed_test_space_comparison": "foundations/results/FOUNDATIONAL_SUPPORT_INDEXED_TEST_SPACE_COMPARISON_V1.json",
     "scalar_minkowski_green_choice_audit": "foundations/results/FOUNDATIONAL_SCALAR_MINKOWSKI_GREEN_CHOICE_AUDIT_V1.json",
+    "scalar_minkowski_biwave_green": "foundations/results/FOUNDATIONAL_SCALAR_MINKOWSKI_BIWAVE_GREEN_V1.json",
+    "scalar_biwave_to_weyl_bv_delta": "foundations/results/FOUNDATIONAL_SCALAR_BIWAVE_TO_WEYL_BV_DEPENDENCY_DELTA_V1.json",
     "finite_graph_causality": "foundations/results/FOUNDATIONAL_FINITE_GRAPH_WAVE_CAUSALITY_V1.json",
     "finite_bv": "foundations/results/FOUNDATIONAL_FREE_BV_ENERGY2_PRA_SDR_V1.json",
 }
@@ -137,6 +139,8 @@ def build() -> dict:
     smooth_translator = loaded["fixed_support_smooth_to_h2_translator"]
     support_indexed = loaded["support_indexed_test_space_comparison"]
     scalar_green = loaded["scalar_minkowski_green_choice_audit"]
+    scalar_biwave = loaded["scalar_minkowski_biwave_green"]
+    weyl_bv_delta = loaded["scalar_biwave_to_weyl_bv_delta"]
     atlas_data = json.loads((ROOT / ATLAS_DATA).read_text())
     assembly_data = json.loads((ROOT / ASSEMBLY_DATA).read_text())
     evidence = atlas_data["evidence"]
@@ -554,6 +558,20 @@ def build() -> dict:
                 "authorities": ["scalar_minkowski_green_choice_audit"],
                 "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
             },
+            {
+                "claim_id": "RF-22-SCALAR-MINKOWSKI-BIWAVE-GREEN",
+                "statement": "For the flat scalar 1+1 biwave operator B=P^2, the canonical compositions of scalar retarded and advanced Green maps satisfy exact two-sided code identities, strict causal support, and adjoint duality in PRA; supplied fast L2 names extend over RCA_0 on a finite observation horizon with four past-zero Cauchy data and no global bounded-energy claim.",
+                "status": "SCOPED_SCALAR_FOURTH_ORDER_LORENTZIAN_CAUSAL_CERTIFICATE",
+                "authorities": ["scalar_minkowski_biwave_green"],
+                "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
+            },
+            {
+                "claim_id": "RF-23-SCALAR-BIWAVE-TO-WEYL-BV-DELTA",
+                "statement": "Sixteen typed gates separate the flat scalar biwave certificate from a full Lorentzian Weyl BV propagator. The delta records a positive four-row Nariai control, an open Berger route, two scoped architectural no-go theorems, and the failed authoritative classical import gate; it constructs no full-complex propagator, Hadamard state, renormalized products, causal pAQFT, or Lorentzian QME.",
+                "status": "FAIL_CLOSED_CROSS_THEORY_DEPENDENCY_DELTA",
+                "authorities": ["scalar_biwave_to_weyl_bv_delta"],
+                "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
+            },
         ],
         "literature_scope": [
             {"source_id": "simpson-2009", "url": "https://doi.org/10.1017/CBO9780511581007", "role": "reverse mathematics and subsystem calibration"},
@@ -671,6 +689,11 @@ def build() -> dict:
             "scalar_minkowski_green_certified": True,
             "scalar_minkowski_causal_support_proved": True,
             "scalar_green_promoted_to_weyl_bv": False,
+            "scalar_minkowski_biwave_certified": scalar_biwave["claim_flags"]["strict_causal_support_proved"],
+            "scalar_biwave_four_zero_data_certified": scalar_biwave["claim_flags"]["four_zero_data_selection_proved"],
+            "weyl_bv_dependency_delta_certified": weyl_bv_delta["claim_flags"]["transfer_requirements_classified"],
+            "weyl_bv_classical_import_gate_passed": weyl_bv_delta["claim_flags"]["classical_import_gate_passed"],
+            "full_weyl_bv_propagator_constructed": weyl_bv_delta["claim_flags"]["full_weyl_bv_propagator_constructed"],
             "weakest_foundation_proved": False,
             "global_physics_implies_choice_theorem": False,
             "axes_independent_proved": False,

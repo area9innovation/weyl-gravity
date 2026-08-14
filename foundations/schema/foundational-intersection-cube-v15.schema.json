@@ -1,0 +1,5 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema","type":"object",
+  "required":["schema_version","result_id","result_kind","lifecycle","created","repository_base_commit","dependency_tags","purpose","compatibility","axes","cell_statuses","migration_statuses","evidence_role_vocabulary","evidence_role_rule","dimensions","certified_interfaces","certified_carrier_interfaces","cells","provenance","independent_checker","claim_flags","does_not_establish","human_report"],
+  "properties":{"schema_version":{"const":"foundational-intersection-cube-v15"},"result_id":{"const":"FOUNDATIONAL_INTERSECTION_CUBE_V15"},"result_kind":{"const":"FULL_CARTESIAN_ASSESSMENT_CUBE_WITH_SCALAR_BIWAVE_TO_WEYL_BV_DELTA"},"lifecycle":{"const":"EVIDENCE_AUGMENTED_FULL_CARTESIAN_SURFACE"},"repository_base_commit":{"type":"string","pattern":"^[0-9a-f]{40}$"},"cells":{"type":"array","minItems":576,"maxItems":576},"human_report":{"const":"foundations/reports/refined-intersection-cube-v15.md"}}
+}

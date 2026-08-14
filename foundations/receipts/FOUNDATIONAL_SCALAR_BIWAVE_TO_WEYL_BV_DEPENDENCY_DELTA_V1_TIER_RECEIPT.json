@@ -1,0 +1,30 @@
+{
+  "receipt_id":"FOUNDATIONAL_SCALAR_BIWAVE_TO_WEYL_BV_DEPENDENCY_DELTA_V1_TIER_RECEIPT",
+  "schema_version":"foundational-tier-receipt-v0",
+  "created":"2026-08-14",
+  "result_id":"FOUNDATIONAL_SCALAR_BIWAVE_TO_WEYL_BV_DEPENDENCY_DELTA_V1",
+  "dependency_tags":["LOCAL-ALGEBRAIC","LORENTZIAN-CAUSAL"],
+  "base_commit":"3cd7ba62550edc5d19dabd7099fe31dc15d0db38",
+  "tiers":{
+    "tier_0":{"status":"PASS","command":"python3 -m py_compile on changed Python; parse changed JSON; git diff --check on explicit foundations/paper paths"},
+    "tier_1_checker":{"status":"PASS","command":"python3 foundations/check_scalar_biwave_to_weyl_bv_delta.py","result":"16 typed gates, 8 missing certificates, 1 scoped positive Weyl result, 2 scoped no-go results, 10 blocked classical-import checks"},
+    "tier_1_verifier":{"status":"PASS","command":"python3 foundations/verify_scalar_biwave_to_weyl_bv_delta.py","result":"schema, deterministic generation, status closure, provenance, lifecycle, and no-go boundaries"},
+    "tier_1_tests":{"status":"PASS","command":"python3 -m unittest foundations.tests.test_scalar_biwave_to_weyl_bv_delta","result":"8/8 mutation and repository tests pass"},
+    "tier_2":{"status":"PASS","command":"python3 foundations/verify_refined_intersection_cube_v15.py && python3 foundations/verify_matrix_site_v2.py && python3 paper/verify_21_reverse_foundations_claim_map.py","result":"cube v15, 83-record explorer, and RF-22/RF-23 paper integration pass"},
+    "tier_3":{"status":"NOT_RUN","criterion":"The result explicitly retains CLASSICAL_IMPORT_PENDING and promotes no full-complex Lorentzian or quantum lifecycle state."}
+  },
+  "content_hashes":{
+    "foundations/build_scalar_biwave_to_weyl_bv_delta.py":"7746f199708344fbf1b62fd945e84e7d65ca119e86279cad8474d700ff018dfa",
+    "foundations/check_scalar_biwave_to_weyl_bv_delta.py":"a5b4fe9e9a14202f8003f262a36fe03dc44e5f356782c0a0303157d1ec2322a2",
+    "foundations/verify_scalar_biwave_to_weyl_bv_delta.py":"8f201d0eb07e2498f56f0131f47d6f21e9eacece3b816c78fbbcbd116ddb47b1",
+    "foundations/schema/foundational-scalar-biwave-to-weyl-bv-dependency-delta-v1.schema.json":"dc47e01ceb265fb8d560b2b0811af41e531324f4e72871648055858ebed3da9d",
+    "foundations/tests/test_scalar_biwave_to_weyl_bv_delta.py":"703889feaa75c27b594b3ae81000ac4023237c0444ceddd7ea59d6dcb7b0697c",
+    "foundations/results/FOUNDATIONAL_SCALAR_BIWAVE_TO_WEYL_BV_DEPENDENCY_DELTA_V1.json":"efdeafe832cc315ff1d0f36984fabe0114e7fbc19d6f78335b14478228fcda65",
+    "foundations/reports/scalar-biwave-to-weyl-bv-dependency-delta-v1.md":"172424fd8a2af7a9165dbc09e857a81882a4bbb7184c8d2bd25ca2404257fde5",
+    "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V15.json":"4217ab90d360070b76bafead71302e3113632eef35a6c3bb9df1c2da0ebb2761",
+    "foundations/site/data.json":"41dd45b97bd09dc152fb09ba0333b4412d8cea28e09aedae168a63212c949cdb",
+    "paper/21-reverse-foundations-of-physics-claim-map.json":"a654fad9e61b10a07fa84480488042ad690a3f007014d58b119b7c4fe50a38e0"
+  },
+  "scope_receipt":{"changed_scope":"foundations dependency delta, cube v15, explorer, and Paper 21 integration"},
+  "claim_boundary":"This certifies the dependency classification, not the target propagator. The authoritative classical import remains FAIL_CLOSED; no full off-shell Lorentzian Weyl BV propagator, BRST-compatible Hadamard state, renormalized time-ordered products, causal pAQFT construction, residual quantum transfer, or Lorentzian QME is established."
+}

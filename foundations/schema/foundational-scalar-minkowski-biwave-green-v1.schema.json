@@ -1,0 +1,30 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"foundational-scalar-minkowski-biwave-green-v1.schema.json",
+  "type":"object",
+  "required":["schema_version","result_id","result_kind","lifecycle","created","repository_base_commit","dependency_tags","theorem","spacetime_and_operator","source_codes","green_formulas","exact_identities","cauchy_data","energy_extension","choice_audit","formal_proof","fixtures","support_samples","literature_context","provenance","independent_checker","claim_flags","does_not_establish","next_gate","human_report"],
+  "properties":{
+    "schema_version":{"const":"foundational-scalar-minkowski-biwave-green-v1"},
+    "result_id":{"const":"FOUNDATIONAL_SCALAR_MINKOWSKI_BIWAVE_GREEN_V1"},
+    "result_kind":{"const":"SCALAR_FOURTH_ORDER_LORENTZIAN_GREEN_CONSTRUCTION"},
+    "lifecycle":{"const":"CERTIFIED"},
+    "repository_base_commit":{"type":"string","pattern":"^[0-9a-f]{40}$"},
+    "dependency_tags":{"const":["LOCAL-ALGEBRAIC","LORENTZIAN-CAUSAL"]},
+    "theorem":{"type":"string","minLength":300},
+    "green_formulas":{"type":"object","required":["retarded","advanced","null_retarded","null_advanced","construction","choice_use"],"properties":{"construction":{"const":"CANONICAL_COMPOSITION"},"choice_use":{"const":"NONE"}}},
+    "exact_identities":{"type":"object","required":["B_H_ret","B_H_adv","H_ret_B","H_adv_B","retarded_support","advanced_support","adjoint_duality","base"],"properties":{"base":{"const":"PRA"}}},
+    "cauchy_data":{"type":"object","required":["factorization","retarded_zero_data","equivalent_fourth_order_data","selection"]},
+    "energy_extension":{"type":"object","required":["input_name","intermediate_estimate","biwave_estimate","base","global_bounded_energy","arbitrary_distributional_uniqueness"],"properties":{"base":{"const":"RCA_0"},"global_bounded_energy":{"const":false},"arbitrary_distributional_uniqueness":{"const":false}}},
+    "choice_audit":{"type":"array","minItems":8,"maxItems":8},
+    "formal_proof":{"type":"array","minItems":8,"maxItems":8},
+    "fixtures":{"type":"array","minItems":4,"maxItems":4},
+    "support_samples":{"type":"array","minItems":8,"maxItems":8},
+    "literature_context":{"type":"array","minItems":2},
+    "provenance":{"type":"object","required":["inputs"]},
+    "independent_checker":{"type":"object","required":["path","checks","expected_digest"]},
+    "claim_flags":{"type":"object","required":["scalar_biwave_retarded_green_constructed","scalar_biwave_advanced_green_constructed","two_sided_test_code_identities_proved","strict_causal_support_proved","adjoint_duality_proved","four_zero_data_selection_proved","named_finite_horizon_extension_proved","canonical_construction_avoids_choice","global_bounded_energy_proved","arbitrary_distributional_uniqueness_proved","variable_coefficient_tensor_green_constructed","weyl_bv_propagator_constructed","brst_compatible_green_constructed","hadamard_state_constructed","renormalized_products_constructed","lorentzian_qme_proved"]},
+    "does_not_establish":{"type":"array","minItems":10},
+    "next_gate":{"type":"string","minLength":180},
+    "human_report":{"const":"foundations/reports/scalar-minkowski-biwave-green-v1.md"}
+  }
+}

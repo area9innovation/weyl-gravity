@@ -195,8 +195,8 @@
       "PRIORITY_GAP": 30,
       "REVIEWED_GAP": 169
     },
-    "evidence_records": 81,
-    "evidence_records_used_by_matrix": 81,
+    "evidence_records": 83,
+    "evidence_records_used_by_matrix": 83,
     "external_calibration_benchmark_families": 3,
     "external_calibration_records": 4,
     "gr_cassini_bounded_complete": true,
@@ -209,7 +209,7 @@
     "implication_nodes": 12,
     "literature_complete": false,
     "literature_records": 51,
-    "local_result_records": 30,
+    "local_result_records": 32,
     "mannheim_ngc3198_empirically_supported": false,
     "mannheim_ngc3198_endpoint_coarse_gate_passed": true,
     "mannheim_ngc3198_interfaces": 6,
@@ -594,7 +594,7 @@
       "lifecycle": "VERIFIED_NAVIGATION_ARTIFACT",
       "path": "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json",
       "result_id": "FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2",
-      "sha256": "845d64482052c51efb13a28448ef2e9818d433401042a2ddabbd640bef85fda7"
+      "sha256": "c2601968b8a7d95a1ad040cdb37d8200af1a99be1cf26301120925f5908c1cc1"
     },
     "finite_bv": {
       "dependency_tags": [
@@ -655,9 +655,9 @@
         "LORENTZIAN-CAUSAL"
       ],
       "lifecycle": "EVIDENCE_AUGMENTED_FULL_CARTESIAN_SURFACE",
-      "path": "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V14.json",
-      "result_id": "FOUNDATIONAL_INTERSECTION_CUBE_V14",
-      "sha256": "b9249ff2d51a0768be50afde8f4f3c3f4e4ab4913e3d54c42c9a2266894598c0"
+      "path": "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V15.json",
+      "result_id": "FOUNDATIONAL_INTERSECTION_CUBE_V15",
+      "sha256": "4217ab90d360070b76bafead71302e3113632eef35a6c3bb9df1c2da0ebb2761"
     },
     "krein_state_selection": {
       "dependency_tags": [
@@ -686,6 +686,26 @@
       "path": "foundations/results/FOUNDATIONAL_NGC3198_COMMON_FIT_COMPARISON_V1.json",
       "result_id": "FOUNDATIONAL_NGC3198_COMMON_FIT_COMPARISON_V1",
       "sha256": "e9c9ecd8e6778a98cf15754970ac2e8fa6c117edca630f3a89b30aea1a03eaeb"
+    },
+    "scalar_biwave_to_weyl_bv_delta": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "lifecycle": "CERTIFIED_DEPENDENCY_DELTA",
+      "path": "foundations/results/FOUNDATIONAL_SCALAR_BIWAVE_TO_WEYL_BV_DEPENDENCY_DELTA_V1.json",
+      "result_id": "FOUNDATIONAL_SCALAR_BIWAVE_TO_WEYL_BV_DEPENDENCY_DELTA_V1",
+      "sha256": "efdeafe832cc315ff1d0f36984fabe0114e7fbc19d6f78335b14478228fcda65"
+    },
+    "scalar_minkowski_biwave_green": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "lifecycle": "CERTIFIED",
+      "path": "foundations/results/FOUNDATIONAL_SCALAR_MINKOWSKI_BIWAVE_GREEN_V1.json",
+      "result_id": "FOUNDATIONAL_SCALAR_MINKOWSKI_BIWAVE_GREEN_V1",
+      "sha256": "4487e84fd56b666bb32b10ad1d2531eaa97ebda4499d03760fa903c71b920e99"
     },
     "scalar_minkowski_green_choice_audit": {
       "dependency_tags": [
@@ -727,10 +747,10 @@
       "lifecycle": "VERIFIED_NAVIGATION_ARTIFACT",
       "path": "foundations/results/FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1.json",
       "result_id": "FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1",
-      "sha256": "3182339b6fc77d8652204cc115d87cd4afc4dea193cd48cf189f153cf59718d6"
+      "sha256": "a12bd41e3d0227bc24ae72943461046e7b5678a45ec93dd819721c8e810e9bc9"
     }
   },
-  "canonical_digest": "a8a081f0bf7360b15ef21f33a83e611d12ee581edb232db1d0e0c1883731e6a5",
+  "canonical_digest": "9da86432ab088766e19bce7d0107f6364b3df4245fb6514a0c7cd3ab6c83f899",
   "claim_flags": {
     "atlas_exhaustive": false,
     "axes_independent_proved": false,
@@ -814,6 +834,7 @@
     "evidence_usage_crosswalk_generated": true,
     "fixed_support_smooth_to_h2_translator_certified": true,
     "fixed_support_translator_uses_choice": false,
+    "full_weyl_bv_propagator_constructed": false,
     "global_physics_implies_choice_theorem": false,
     "literature_complete": false,
     "mannheim_ngc3198_mixed_assembly_registered": true,
@@ -823,14 +844,18 @@
     "programme_definition_supplied": true,
     "quantum_lifecycle_promoted": false,
     "research_programme_lenses_explained": true,
+    "scalar_biwave_four_zero_data_certified": true,
     "scalar_green_promoted_to_weyl_bv": false,
+    "scalar_minkowski_biwave_certified": true,
     "scalar_minkowski_causal_support_proved": true,
     "scalar_minkowski_green_certified": true,
     "static_atlas_appendix_generated": true,
     "support_indexed_full_lf_topology_reconstructed": false,
     "support_indexed_name_equivalence_certified": true,
     "typed_relations_supplied": true,
-    "weakest_foundation_proved": false
+    "weakest_foundation_proved": false,
+    "weyl_bv_classical_import_gate_passed": false,
+    "weyl_bv_dependency_delta_certified": true
   },
   "claims": [
     {
@@ -1108,6 +1133,30 @@
       ],
       "statement": "For the flat scalar 1+1 wave operator, canonical exact retarded and advanced Green maps satisfy two-sided code identities, strict causal support, and adjoint duality in PRA and extend to supplied fast source names over RCA_0 without choice; this is not a Weyl/BV propagator or quantum causal construction.",
       "status": "SCOPED_SCALAR_LORENTZIAN_CAUSAL_GREEN_CERTIFICATE"
+    },
+    {
+      "authorities": [
+        "scalar_minkowski_biwave_green"
+      ],
+      "claim_id": "RF-22-SCALAR-MINKOWSKI-BIWAVE-GREEN",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "statement": "For the flat scalar 1+1 biwave operator B=P^2, the canonical compositions of scalar retarded and advanced Green maps satisfy exact two-sided code identities, strict causal support, and adjoint duality in PRA; supplied fast L2 names extend over RCA_0 on a finite observation horizon with four past-zero Cauchy data and no global bounded-energy claim.",
+      "status": "SCOPED_SCALAR_FOURTH_ORDER_LORENTZIAN_CAUSAL_CERTIFICATE"
+    },
+    {
+      "authorities": [
+        "scalar_biwave_to_weyl_bv_delta"
+      ],
+      "claim_id": "RF-23-SCALAR-BIWAVE-TO-WEYL-BV-DELTA",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "statement": "Sixteen typed gates separate the flat scalar biwave certificate from a full Lorentzian Weyl BV propagator. The delta records a positive four-row Nariai control, an open Berger route, two scoped architectural no-go theorems, and the failed authoritative classical import gate; it constructs no full-complex propagator, Hadamard state, renormalized products, causal pAQFT, or Lorentzian QME.",
+      "status": "FAIL_CLOSED_CROSS_THEORY_DEPENDENCY_DELTA"
     }
   ],
   "created": "2026-08-14",
@@ -1294,19 +1343,19 @@
   ],
   "paper": {
     "appendix": {
-      "assembly_source_canonical_digest": "72dc55c6d5b64976022eb968ccf0c19b2594324c9bb03142b4a59900c2ab3983",
+      "assembly_source_canonical_digest": "a6efad119e04e81151ea4e0253d78acd3ef187ff913d7a0c2bc10992c21cd386",
       "assembly_source_path": "foundations/site/assemblies.json",
-      "assembly_source_sha256": "3182339b6fc77d8652204cc115d87cd4afc4dea193cd48cf189f153cf59718d6",
+      "assembly_source_sha256": "a12bd41e3d0227bc24ae72943461046e7b5678a45ec93dd819721c8e810e9bc9",
       "generator_path": "paper/generate_21_reverse_foundations_appendices.py",
       "generator_sha256": "f46fd7cd15f93d83c0f2ec292fa9e0cbae6bdc9f7a503dd39ff61565424db364",
       "path": "paper/21-reverse-foundations-of-physics-appendices.tex",
-      "sha256": "b6b14b9d50938360d1ade48c5b3b0a3d267a566ff16d6a77aa42d0a67f7a1df7",
-      "source_canonical_digest": "9e16d02dc4cf3cb8f2b55fb812d4d50c51d82cd8109f849b3fa4af2f227a5b47",
+      "sha256": "ba621c56ab8073e637c1e1fc7b9130b077d8707097cd954c2186bdf65d622150",
+      "source_canonical_digest": "d508873edf698fa2a01b8f7e5317b8691736635f78430925c80df29b32100473",
       "source_path": "foundations/site/data.json",
-      "source_sha256": "a1f9eaee9ab4099cfa41bd947b9d74801fa2fe783adfd2a00bbf7b0fb56d1229"
+      "source_sha256": "41dd45b97bd09dc152fb09ba0333b4412d8cea28e09aedae168a63212c949cdb"
     },
     "path": "paper/21-reverse-foundations-of-physics.tex",
-    "sha256": "c7ac4888956fc4276ef8e0fa897cfd56360f8aa96b571b75467995417dc668ff"
+    "sha256": "4ba9dadd2b7c8abceba0154dad3999cff7208647221abc5c5bba7114205a5d79"
   },
   "result_id": "PAPER21_REVERSE_FOUNDATIONS_INTRODUCTION_V1",
   "result_kind": "PROGRAMME_SYNTHESIS_AND_TYPED_CASE_STUDY_MAP",

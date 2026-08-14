@@ -126,12 +126,12 @@ def main() -> int:
     require(atlas["synthetic_complements"] == 0, "synthetic complement mismatch")
     require(atlas["total_not_mapped_in_explorer"] == site["counts"]["not_mapped"] == 0, "explorer not-mapped mismatch")
     require(atlas["reviewed_open_gaps"] == site["counts"]["reviewed_gap"] == 169, "reviewed-gap mismatch")
-    require(atlas["evidence_records"] == site["counts"]["evidence_records"] == 81, "evidence-record mismatch")
+    require(atlas["evidence_records"] == site["counts"]["evidence_records"] == 83, "evidence-record mismatch")
     require(atlas["literature_records"] == 51, "literature-record mismatch")
-    require(atlas["local_result_records"] == 30, "local-result-record mismatch")
+    require(atlas["local_result_records"] == 32, "local-result-record mismatch")
     require(atlas["content_pinned_literature"] == 39, "content-pinned literature mismatch")
     require(atlas["metadata_only_literature"] == 12, "metadata-only literature mismatch")
-    require(atlas["evidence_records_used_by_matrix"] == 81, "matrix evidence usage is incomplete")
+    require(atlas["evidence_records_used_by_matrix"] == 83, "matrix evidence usage is incomplete")
     require(atlas["migration_pending_cells"] == 0, "migration must remain fully reviewed")
     require(atlas["all_cells_assessed"] is True, "full-surface assessment flag is not certified")
     require(atlas["coded_wave_observable_cutoff"] == coded_wave_observable["cutoff_theorem"]["cutoff"] == "N(k)=k+ell(K)+1", "coded observable cutoff drift")
@@ -322,6 +322,8 @@ def main() -> int:
         (19, "FIXED-SUPPORT-SMOOTH-TO-H2-TRANSLATOR"),
         (20, "SUPPORT-INDEXED-TEST-SPACE-COMPARISON"),
         (21, "SCALAR-MINKOWSKI-GREEN-CHOICE-AUDIT"),
+        (22, "SCALAR-MINKOWSKI-BIWAVE-GREEN"),
+        (23, "SCALAR-BIWAVE-TO-WEYL-BV-DELTA"),
     ]}, "claim set drift")
 
     flags = data["claim_flags"]
@@ -414,6 +416,11 @@ def main() -> int:
     require(flags["scalar_minkowski_green_certified"] is True, "scalar Green flag missing")
     require(flags["scalar_minkowski_causal_support_proved"] is True, "scalar causal-support flag missing")
     require(flags["scalar_green_promoted_to_weyl_bv"] is False, "scalar Green flag promoted to Weyl/BV")
+    require(flags["scalar_minkowski_biwave_certified"] is True, "scalar biwave flag missing")
+    require(flags["scalar_biwave_four_zero_data_certified"] is True, "scalar biwave four-data flag missing")
+    require(flags["weyl_bv_dependency_delta_certified"] is True, "Weyl/BV dependency delta flag missing")
+    require(flags["weyl_bv_classical_import_gate_passed"] is False, "classical import gate promoted")
+    require(flags["full_weyl_bv_propagator_constructed"] is False, "dependency delta promoted to full propagator")
     require(flags["new_lorentzian_claim"] is True, "scoped scalar Lorentzian claim missing")
     for false_flag in [
         "weakest_foundation_proved",
@@ -483,7 +490,7 @@ def main() -> int:
     for token in ("Bateman--Turok", "Mannheim conformal-gravity programme", "Pure-Weyl BV--BFV"):
         require(token in appendix, f"research-programme lens missing from appendix: {token}")
     require(r"All obligations & 127 & 90 & 160 & 30 & 169 & 0 & 576" in appendix, "appendix coverage totals drift")
-    require("contains 81 evidence records: 30 local result records and 51 literature records" in appendix, "appendix evidence summary drift")
+    require("contains 83 evidence records: 32 local result records and 51 literature records" in appendix, "appendix evidence summary drift")
     require("BT positive Euclidean lattice programme" in appendix, "BT Euclidean prototype missing")
     require("COARSE REPRODUCTION ONLY" in appendix, "BT numerical boundary missing")
     require("The classical-standard mixed-carrier reference has complete direct coverage" in appendix, "classical reference calibration missing")
@@ -524,8 +531,8 @@ def main() -> int:
         require(rf"\cert{{{evidence_id}}}" in appendix, f"linked evidence missing from appendix: {evidence_id}")
 
     evidence = atlas_data["evidence"]
-    require(appendix.count(r"\hypertarget{atlas-evidence-") == 81, "evidence-register anchor count drift")
-    require(appendix.count(r"\hyperlink{atlas-evidence-") == 81, "evidence-crosswalk link count drift")
+    require(appendix.count(r"\hypertarget{atlas-evidence-") == 83, "evidence-register anchor count drift")
+    require(appendix.count(r"\hyperlink{atlas-evidence-") == 83, "evidence-crosswalk link count drift")
     cell_usage = {evidence_id: [] for evidence_id in evidence}
     for cell in atlas_data["cells"]:
         for evidence_id in cell.get("evidence", []):
@@ -624,6 +631,8 @@ def main() -> int:
         r"FOUNDATIONAL_FIXED_SUPPORT_SMOOTH_TO_H2_TRANSLATOR_V1",
         r"FOUNDATIONAL_SUPPORT_INDEXED_TEST_SPACE_COMPARISON_V1",
         r"FOUNDATIONAL_SCALAR_MINKOWSKI_GREEN_CHOICE_AUDIT_V1",
+        r"FOUNDATIONAL_SCALAR_MINKOWSKI_BIWAVE_GREEN_V1",
+        r"FOUNDATIONAL_SCALAR_BIWAVE_TO_WEYL_BV_DEPENDENCY_DELTA_V1",
         r"This is a genuine \rtype{LORENTZIAN-CAUSAL} result",
         r"not a Weyl/BV propagator or quantum causal construction",
         r"Exact finite causality is not continuum causality",

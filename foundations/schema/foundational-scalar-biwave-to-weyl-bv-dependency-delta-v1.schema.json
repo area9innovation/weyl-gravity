@@ -1,0 +1,27 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"foundational-scalar-biwave-to-weyl-bv-dependency-delta-v1.schema.json",
+  "type":"object",
+  "required":["schema_version","result_id","result_kind","lifecycle","created","repository_base_commit","dependency_tags","question","answer","status_vocabulary","dependency_delta","existing_scoped_architectures","classical_import_gate","lifecycle_gate","forbidden_inferences","provenance","independent_checker","claim_flags","does_not_establish","next_gate","human_report"],
+  "properties":{
+    "schema_version":{"const":"foundational-scalar-biwave-to-weyl-bv-dependency-delta-v1"},
+    "result_id":{"const":"FOUNDATIONAL_SCALAR_BIWAVE_TO_WEYL_BV_DEPENDENCY_DELTA_V1"},
+    "result_kind":{"const":"FAIL_CLOSED_CROSS_THEORY_DEPENDENCY_DELTA"},
+    "lifecycle":{"const":"CERTIFIED_DEPENDENCY_DELTA"},
+    "repository_base_commit":{"type":"string","pattern":"^[0-9a-f]{40}$"},
+    "dependency_tags":{"const":["LOCAL-ALGEBRAIC","LORENTZIAN-CAUSAL"]},
+    "question":{"type":"string","minLength":100},"answer":{"type":"string","minLength":400},
+    "status_vocabulary":{"type":"array","minItems":7,"maxItems":7},
+    "dependency_delta":{"type":"array","minItems":16,"maxItems":16},
+    "existing_scoped_architectures":{"type":"array","minItems":2,"maxItems":2},
+    "classical_import_gate":{"type":"object","required":["source","status","claim_state","publishable_quantum_results_allowed","blocked_or_failed_checks","missing_exports"],"properties":{"status":{"const":"FAIL_CLOSED"},"claim_state":{"const":"CLASSICAL_IMPORT_PENDING"},"publishable_quantum_results_allowed":{"const":false}}},
+    "lifecycle_gate":{"type":"object","required":["current_highest","target_order","states_reached_for_full_weyl_bv","rule"],"properties":{"states_reached_for_full_weyl_bv":{"const":[]}}},
+    "forbidden_inferences":{"type":"array","minItems":7,"maxItems":7},
+    "provenance":{"type":"object","required":["inputs"]},
+    "independent_checker":{"type":"object","required":["path","checks","expected_digest"]},
+    "claim_flags":{"type":"object","required":["scalar_biwave_green_imported","transfer_requirements_classified","scoped_nariai_weyl_result_recorded","scoped_architectural_no_gos_recorded","classical_import_gate_passed","full_weyl_bv_propagator_constructed","brst_compatible_hadamard_state_constructed","renormalized_lorentzian_products_constructed","causal_paqft_constructed","lorentzian_qme_restored","residual_quantum_transfer_completed","lorentzian_full_complex_certified"]},
+    "does_not_establish":{"type":"array","minItems":10},
+    "next_gate":{"type":"string","minLength":200},
+    "human_report":{"const":"foundations/reports/scalar-biwave-to-weyl-bv-dependency-delta-v1.md"}
+  }
+}
