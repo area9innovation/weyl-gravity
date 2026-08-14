@@ -1,0 +1,158 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-complete-g4-connected-normalization-v1.schema.json",
+  "type": "object",
+  "required": [
+    "certificate",
+    "schema_version",
+    "created",
+    "dependency_tags",
+    "lifecycle_state",
+    "result_kind",
+    "question",
+    "answer",
+    "connected_identity",
+    "square_root_alignment",
+    "connected_pairing_audit",
+    "BT_extensive_W1_variance",
+    "exact_gaussian_fixture",
+    "numerical_preflight",
+    "method_disposition",
+    "checks",
+    "does_not_establish",
+    "missing_object_ledger",
+    "next_gate",
+    "provenance",
+    "report",
+    "schema",
+    "verification_commands"
+  ],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_EUCLIDEAN_COMPLETE_G4_CONNECTED_NORMALIZATION_V1"},
+    "schema_version": {"const": "reverse-physics-bt-euclidean-complete-g4-connected-normalization-v1"},
+    "created": {"const": "2026-08-14"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "lifecycle_state": {"const": "COMPLETE_G4_CONNECTED_REORGANIZATION_PROVED_CANCELLATION_DECISION_OPEN"},
+    "result_kind": {"type": "string"},
+    "question": {"type": "string"},
+    "answer": {"type": "string"},
+    "connected_identity": {
+      "type": "object",
+      "required": ["definitions", "formula", "expanded_covariance", "meaning", "status"],
+      "properties": {
+        "definitions": {"type": "string"},
+        "formula": {"const": "M4=E0[B^2+2*A*C-2*A*B*W1]+Cov0(A^2,R0)"},
+        "expanded_covariance": {"type": "string"},
+        "meaning": {"type": "string"},
+        "status": {"const": "PROVED_BY_EXACT_REARRANGEMENT_OF_CERTIFIED_COMPLETE_G4_FORMULA"}
+      },
+      "additionalProperties": false
+    },
+    "square_root_alignment": {
+      "type": "object",
+      "required": ["H", "mean", "H_centered", "E_decomposition", "second_chaos", "exact_cancellation", "method_boundary", "status"],
+      "properties": {
+        "H": {"type": "string"},
+        "mean": {"const": "E0[H]=-E0[W1^2]/8"},
+        "H_centered": {"type": "string"},
+        "E_decomposition": {"type": "string"},
+        "second_chaos": {"type": "string"},
+        "exact_cancellation": {"type": "string"},
+        "method_boundary": {"type": "string"},
+        "status": {"const": "EXACT_NORMALIZATION_ALIGNED_SECTOR_ISOLATED"}
+      },
+      "additionalProperties": false
+    },
+    "connected_pairing_audit": {
+      "type": "object",
+      "required": ["homogeneous_dictionary", "covariance_rule", "momentum_rule", "loop_rank", "surviving_loop_ranks", "labeled_pairing_table", "result", "status"],
+      "properties": {
+        "homogeneous_dictionary": {"type": "string"},
+        "covariance_rule": {"type": "string"},
+        "momentum_rule": {"type": "string"},
+        "loop_rank": {"type": "string"},
+        "surviving_loop_ranks": {"const": [0, 1, 2]},
+        "labeled_pairing_table": {
+          "type": "array",
+          "minItems": 13,
+          "maxItems": 13,
+          "items": {
+            "type": "object",
+            "required": ["name", "coefficient", "v_power", "atoms", "classification"],
+            "properties": {
+              "name": {"type": "string"},
+              "coefficient": {"type": "object"},
+              "v_power": {"type": "integer", "minimum": 0, "maximum": 3},
+              "atoms": {"type": "array", "items": {"type": "string"}},
+              "classification": {"type": "object", "additionalProperties": {"type": "integer", "minimum": 1}}
+            },
+            "additionalProperties": false
+          }
+        },
+        "result": {"type": "string"},
+        "status": {"const": "PROVED_BY_EXHAUSTIVE_EXACT_LABELED_WICK_ENUMERATION"}
+      },
+      "additionalProperties": false
+    },
+    "BT_extensive_W1_variance": {
+      "type": "object",
+      "required": ["third_chaos", "exact_fixture", "variance_positivity", "fixed_UV_lower_bound", "consequence", "status"],
+      "properties": {
+        "third_chaos": {"type": "string"},
+        "exact_fixture": {"type": "string"},
+        "variance_positivity": {"type": "string"},
+        "fixed_UV_lower_bound": {"type": "string"},
+        "consequence": {"type": "string"},
+        "status": {"const": "PROVED_EXTENSIVE_POSITIVE_NORMALIZATION_ALIGNMENT"}
+      },
+      "additionalProperties": false
+    },
+    "exact_gaussian_fixture": {
+      "type": "object",
+      "required": ["law", "polynomials", "values", "status"],
+      "properties": {
+        "law": {"const": "X is standard Gaussian"},
+        "polynomials": {"type": "object"},
+        "values": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "required": ["numerator", "denominator"],
+            "properties": {
+              "numerator": {"type": "integer"},
+              "denominator": {"type": "integer", "minimum": 1}
+            },
+            "additionalProperties": false
+          }
+        },
+        "status": {"const": "EXACT_DIRECT_CONNECTED_AND_SQUARE_ROOT_IDENTITY_FIXTURE"}
+      },
+      "additionalProperties": false
+    },
+    "numerical_preflight": {
+      "type": "object",
+      "required": ["evidence_type", "source", "source_sha256", "data", "data_sha256", "rows", "interpretation", "status"],
+      "properties": {
+        "evidence_type": {"const": "BINARY64_STREAMING_FREE_GAUSSIAN_SUPPORTING_ONLY"},
+        "source": {"const": "reverse_physics/bt_euclidean_complete_g4_preflight.c"},
+        "source_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "data": {"const": "reverse_physics/data/bt_euclidean_complete_g4_preflight_v1.json"},
+        "data_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "rows": {"type": "array", "minItems": 2, "maxItems": 2},
+        "interpretation": {"type": "string"},
+        "status": {"const": "SUPPORTING_ONLY_EXACT_CANCELLATION_HYPOTHESIS"}
+      },
+      "additionalProperties": false
+    },
+    "method_disposition": {"type": "object"},
+    "checks": {"type": "object", "additionalProperties": {"const": true}},
+    "does_not_establish": {"type": "array", "items": {"type": "string"}},
+    "missing_object_ledger": {"type": "array", "items": {"type": "string"}},
+    "next_gate": {"type": "string"},
+    "provenance": {"type": "object"},
+    "report": {"const": "reverse_physics/reports/bt-euclidean-complete-g4-connected-normalization.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-euclidean-complete-g4-connected-normalization-v1.schema.json"},
+    "verification_commands": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": false
+}

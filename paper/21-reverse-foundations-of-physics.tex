@@ -1634,6 +1634,30 @@ Thus the open calculation is an explicit momentum-diagonal bulk plus a
 finite-mode correction.  The Fourier sums and their weighted norm bound have
 not been evaluated, so the whole-lattice order-$g^4$ decision remains open.
 
+There is, however, a normalization subtlety that changes the correct object
+to estimate.  Certificate
+\cert{REVERSE_PHYSICS_BT_EUCLIDEAN_COMPLETE_G4_CONNECTED_NORMALIZATION_V1}
+proves
+
+\[
+ M_4=\mathbb E_0[B^2+2AC-2ABW_1]
+     +\operatorname{Cov}_0\!\left(A^2,\frac12W_1^2-W_2\right).
+\]
+
+In the square-root representation the coefficient multiplying \(A\) has
+mean \(-\mathbb E_0[W_1^2]/8\), and
+\(\mathbb E_0[W_1^2]\geq cN\) on fixed ultraviolet boxes.  Its disconnected
+cross contribution cancels the matching term in \(\|D\|_0^2\) only after the
+two pieces are recombined.  Consequently a separate or triangle estimate of
+that aligned sector is obstructed, although an internal cancellation in the
+fully combined \(\Pi_2E\) remains possible.  Exact labeled Wick enumeration
+of the connected formula leaves only zero-, one-, and two-loop lattice sums;
+no three-loop topology survives covariance subtraction and momentum support.
+The streaming \(L=4,8\) preflight is consistent with \(M_4=0\), but is
+supporting only.  Exact rational \(L=4\) evaluation of the connected two-loop
+kernel is now the active fixed-order calculation; neither cancellation nor a
+weighted bound has been proved.
+
 \subsection{A finite BV contraction does not freeze the quantum theory}
 
 The energy-two free BV block provides another finite exact case.  The
@@ -2018,9 +2042,12 @@ summation.  Bounding or computing that complement is now the precise
 fixed-order gate.  Wiener-chaos orthogonality reduces this signed complement
 to one effective second-chaos three-leg kernel: a linear-soft weighted norm
 bound for that kernel would make the only negative cross term negligible.
-Its expected-Hessian formula is now exact, and real-cosine conditioning has
-been isolated as a rank-one correction.  The explicit Fourier kernel and its
-norm bound are the active calculation and remain open.
+Its expected-Hessian formula is exact, and real-cosine conditioning has been
+isolated as a rank-one correction.  The extensive normalization-aligned
+sector cancels only in the connected covariance form of the complete
+coefficient; an exhaustive Wick audit reduces that form to at most two loop
+sums.  Exact rational \(L=4\) evaluation of those connected sums is the active
+calculation.  The cancellation decision and weighted bound remain open.
 The logarithmic coefficient is not evidence that the resummed interacting
 moment diverges.  Only after the normalized marginal closes should the
 programme sum Fourier shells.  Another fixed-origin, pointwise,

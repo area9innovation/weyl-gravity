@@ -115,6 +115,7 @@ def main() -> int:
     bt_complete_g4 = json.loads((ROOT / data["authorities"]["bt_complete_g4_uv_noncancellation"]["path"]).read_text())
     bt_g4_chaos = json.loads((ROOT / data["authorities"]["bt_complete_g4_chaos_gate"]["path"]).read_text())
     bt_g4_hessian = json.loads((ROOT / data["authorities"]["bt_complete_g4_effective_hessian"]["path"]).read_text())
+    bt_g4_connected = json.loads((ROOT / data["authorities"]["bt_complete_g4_connected_normalization"]["path"]).read_text())
     dims = cube["dimensions"]
     atlas = data["atlas_snapshot"]
     require(atlas["axis_sizes"] == [6, 6, 16], "unexpected axis sizes")
@@ -285,6 +286,11 @@ def main() -> int:
     require(atlas["bt_g4_conditioned_covariance_decomposition_status"] == bt_g4_hessian["method_disposition"]["conditioned_bulk_plus_rank_one_decomposition"] == "PROVED", "BT conditioned covariance decomposition drift")
     require(atlas["bt_g4_explicit_momentum_kernel_status"] == bt_g4_hessian["method_disposition"]["explicit_lattice_momentum_kernel"] == "OPEN", "BT Hessian formula promoted to explicit momentum kernel")
     require(atlas["bt_g4_hessian_kernel_bound_status"] == bt_g4_hessian["method_disposition"]["effective_second_chaos_kernel_norm_bound"] == "OPEN", "BT Hessian formula promoted to kernel bound")
+    require(atlas["bt_g4_connected_reorganization_status"] == bt_g4_connected["method_disposition"]["complete_M4_connected_covariance_reorganization"] == "PROVED", "BT connected reorganization drift")
+    require(atlas["bt_g4_normalization_alignment_status"] == bt_g4_connected["method_disposition"]["normalization_aligned_A_sector"] == "PROVED_EXTENSIVE", "BT normalization alignment drift")
+    require(atlas["bt_g4_termwise_alignment_bound_status"] == bt_g4_connected["method_disposition"]["separate_or_triangle_bound_on_aligned_sector"] == "OBSTRUCTED_AS_FORMULATED", "BT termwise alignment-bound obstruction drift")
+    require(atlas["bt_g4_connected_maximum_loop_rank"] == bt_g4_connected["method_disposition"]["complete_connected_M4_maximum_loop_rank"] == "TWO", "BT connected loop-rank drift")
+    require(atlas["bt_g4_exact_cancellation_status"] == bt_g4_connected["method_disposition"]["exact_whole_lattice_M4_cancellation"] == "OPEN_NUMERICALLY_SUPPORTED", "BT numerical preflight promoted to exact cancellation")
 
     allowed_tags = {"LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE", "LORENTZIAN-CAUSAL"}
     claim_ids = set()
@@ -380,6 +386,11 @@ def main() -> int:
     require(flags["bt_complete_order_g_four_signed_gate_reduced_to_second_chaos"] is True, "BT signed second-chaos reduction omitted")
     require(flags["bt_complete_order_g_four_expected_hessian_formula_established"] is True, "BT expected-Hessian formula omitted")
     require(flags["bt_complete_order_g_four_conditioning_finite_rank_decomposition_established"] is True, "BT conditioning finite-rank split omitted")
+    require(flags["bt_complete_order_g_four_connected_reorganization_established"] is True, "BT connected reorganization omitted")
+    require(flags["bt_complete_order_g_four_normalization_alignment_established"] is True, "BT normalization alignment omitted")
+    require(flags["bt_complete_order_g_four_termwise_alignment_bound_obstructed"] is True, "BT termwise alignment obstruction omitted")
+    require(flags["bt_complete_order_g_four_connected_maximum_loop_rank_two"] is True, "BT connected loop-rank result omitted")
+    require(flags["bt_complete_order_g_four_exact_cancellation_established"] is False, "BT connected preflight promoted to exact cancellation")
     require(flags["bt_complete_order_g_four_explicit_momentum_kernel_established"] is False, "BT expected-Hessian formula promoted to explicit momentum kernel")
     require(flags["bt_complete_order_g_four_effective_kernel_bound_established"] is False, "BT effective second-chaos kernel bound promoted")
     require(flags["bt_complete_order_g_four_power_survival_established"] is False, "BT chaos reduction promoted to whole-lattice power survival")

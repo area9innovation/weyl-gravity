@@ -1,0 +1,58 @@
+{
+  "evidence_type": "BINARY64_STREAMING_FREE_GAUSSIAN_SUPPORTING_ONLY",
+  "created": "2026-08-14",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "source": "reverse_physics/bt_euclidean_complete_g4_preflight.c",
+  "source_sha256": "c0fb83ffb77314d830588ee9ea09f9d92c51d40e340e8a18d651e9ecefd13746",
+  "compile_command": "cc -std=c11 -O2 -Wall -Wextra -Werror reverse_physics/bt_euclidean_complete_g4_preflight.c -lm -o /tmp/bt-complete-g4-preflight",
+  "rows": [
+    {
+      "length": 4,
+      "volume": 256,
+      "samples": 100000,
+      "seed": 404,
+      "z2": -5.571244449494809,
+      "A2": 64.56840454655146,
+      "B2": 2.5954425981870897,
+      "D2": 107.14168482816264,
+      "cross": -107.66689885844283,
+      "cross_over_D2": -1.004902051252251,
+      "M4": -0.5252140302801828,
+      "M4_standard_error": 1.7670625324695314,
+      "M4_z_score": -0.29722435999261326,
+      "M4_over_N_omega": -0.0010258086528909823,
+      "standard_error_over_N_omega": 0.0034512940087295544,
+      "M4_over_N_omega2": -0.0005129043264454913
+    },
+    {
+      "length": 8,
+      "volume": 4096,
+      "samples": 30000,
+      "seed": 804,
+      "z2": -95.91146209796319,
+      "A2": 130.5384998689198,
+      "B2": 11.407062456417858,
+      "D2": 3315.5538747307152,
+      "cross": -3383.744531818758,
+      "cross_over_D2": -1.020566897617847,
+      "M4": -68.19065708804265,
+      "M4_standard_error": 80.14963125879958,
+      "M4_z_score": -0.8507919003127795,
+      "M4_over_N_omega": -0.028420100861465848,
+      "standard_error_over_N_omega": 0.033404291755736824,
+      "M4_over_N_omega2": -0.04851614690261399
+    }
+  ],
+  "interpretation": "At both sampled powers-of-two volumes, the nonnegative D2 term and signed second-chaos cross are individually large and nearly opposite. The complete M4 estimate is within one standard error of zero. This motivates testing an exact cancellation identity in the certified connected kernel, whose surviving topologies have at most two loop sums. It neither proves M4=0 nor establishes its sign, scaling, norm bound, interacting moment, or continuum limit.",
+  "does_not_establish": [
+    "an exact whole-order cancellation",
+    "the sign or scaling of M4 at either finite volume",
+    "the effective-kernel norm bound",
+    "a nonperturbative annealed score or interacting H^-1 theorem",
+    "continuum, Born, Krein, or Lorentzian physics"
+  ],
+  "status": "SUPPORTING_ONLY_EXACT_CANCELLATION_HYPOTHESIS"
+}

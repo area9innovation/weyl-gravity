@@ -1,0 +1,494 @@
+{
+  "BT_extensive_W1_variance": {
+    "consequence": "The displayed aligned coefficient E0[W1^2]/8 is at least order N. It is a mandatory cancellation sector, not a term to estimate independently.",
+    "exact_fixture": "On L=4 choose h along an inert axis and eta=cos(pi*x1/2)+cos(pi*x2/2)+cos(pi*(x1+x2)/2). Then U32=0 by momentum support and the certified position/Fourier cubic fixture gives W1=U30=-1024.",
+    "fixed_UV_lower_bound": "The certified V3(2,2,4)=-16 fixture has a fixed open momentum neighborhood away from zero and +/-p. Restricting the positive third-chaos norm to two independent boxes gives order N^2 momentum pairs, a 1/N vertex-normalization square, and bounded propagators; hence E0[W1^2]>=||Pi3(W1)||^2>=c*N for all sufficiently large L, with c>0 independent of L.",
+    "status": "PROVED_EXTENSIVE_POSITIVE_NORMALIZATION_ALIGNMENT",
+    "third_chaos": "W1=U30+v*U32, with U30=S1(eta) cubic and v*U32 linear; therefore Pi3(W1)=Pi3(U30)",
+    "variance_positivity": "The conditioned free Gaussian has full support on its orthogonal background space. Since W1 is a nonzero polynomial, E0[W1^2]>0."
+  },
+  "answer": "It must first be recombined. Write R0=W1^2/2-W2 and z2=E0[R0]. The complete coefficient is exactly M4=E0[B^2+2AC-2ABW1]+Cov0(A^2,R0), so every fully disconnected R0 vacuum factor cancels before estimation. In the square-root form, however, E=C-W1B/2+H A with H=W1^2/8-W2/2-z2/2, and E0[H]=-E0[W1^2]/8. Hence Pi2(E)=Pi2(E_connected)-(E0[W1^2]/8)A, where E_connected uses H-E0[H]. The explicit A-aligned term is extensive: the third chaos of W1 contains the cubic BT vertex, whose exact nonzero quarter-mode fixture and fixed UV boxes give E0[W1^2]>=cN. Its disconnected contribution to 2<A,E> cancels exactly against the matching piece inside ||D||^2, but only after the two terms are recombined. Therefore separate termwise or triangle bounds on this sector are obstructed as formulated, while a sufficiently strong bound on the fully combined Pi2(E) remains logically possible through an internal cancellation. The correct next object is the connected M4 kernel. A streaming preflight at L=4 and 8 finds D norm and cross nearly opposite and M4 statistically consistent with zero, motivating but not proving an exact cancellation identity.",
+  "certificate": "REVERSE_PHYSICS_BT_EUCLIDEAN_COMPLETE_G4_CONNECTED_NORMALIZATION_V1",
+  "checks": {
+    "BT_W1_is_nonzero_on_exact_quarter_mode_fixture": true,
+    "BT_W1_variance_has_extensive_fixed_UV_lower_bound": true,
+    "H_mean_is_minus_one_eighth_E_W1_squared": true,
+    "aligned_disconnected_terms_cancel_only_after_D_norm_is_recombined": true,
+    "centered_H_has_zero_mean": true,
+    "complete_M4_is_exact_connected_covariance": true,
+    "connected_pairing_has_no_three_loop_sum": true,
+    "connected_pairing_loop_ranks_are_zero_one_two": true,
+    "effective_E_has_explicit_A_aligned_normalization_sector": true,
+    "fixture_three_M4_forms_agree": true,
+    "full_Pi2E_internal_cancellation_remains_open": true,
+    "no_continuum_born_krein_or_lorentzian_promotion": true,
+    "preflight_is_supporting_only": true,
+    "preflight_rows_are_within_two_standard_errors_of_zero": true,
+    "termwise_bound_on_aligned_sector_is_power_large": true,
+    "whole_lattice_order_g_four_decision_remains_open": true
+  },
+  "connected_identity": {
+    "definitions": "R0=W1^2/2-W2 and z2=E0[R0]",
+    "expanded_covariance": "Cov0(A^2,R0)=E0[A^2*R0]-E0[A^2]*E0[R0]",
+    "formula": "M4=E0[B^2+2*A*C-2*A*B*W1]+Cov0(A^2,R0)",
+    "meaning": "The partition-function normalization is kept as a covariance. Fully disconnected vacuum factors are removed before any absolute value or power count.",
+    "status": "PROVED_BY_EXACT_REARRANGEMENT_OF_CERTIFIED_COMPLETE_G4_FORMULA"
+  },
+  "connected_pairing_audit": {
+    "covariance_rule": "In Cov0(U31^2,R0), discard exactly the Wick pairings with no covariance edge crossing from either U31 factor to an R0 vertex",
+    "homogeneous_dictionary": "U_nr is the coefficient of t^r in S_(n-2)(eta+t*h), with eta degree n-r; A=U31, B=U41, Cscore=U51, W1=U30+v*U32",
+    "labeled_pairing_table": [
+      {
+        "atoms": [
+          "U41",
+          "U41"
+        ],
+        "classification": {
+          "SURVIVING_LOOP_2": 15
+        },
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "name": "U41^2",
+        "v_power": 0
+      },
+      {
+        "atoms": [
+          "U31",
+          "U51"
+        ],
+        "classification": {
+          "SURVIVING_LOOP_2": 12,
+          "VANISHES_BY_COMPONENT_MOMENTUM": 3
+        },
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 2
+        },
+        "name": "2*U31*U51",
+        "v_power": 0
+      },
+      {
+        "atoms": [
+          "U31",
+          "U41",
+          "U30"
+        ],
+        "classification": {
+          "SURVIVING_LOOP_2": 90,
+          "VANISHES_BY_COMPONENT_MOMENTUM": 15
+        },
+        "coefficient": {
+          "denominator": 1,
+          "numerator": -2
+        },
+        "name": "-2*U31*U41*U30",
+        "v_power": 0
+      },
+      {
+        "atoms": [
+          "U31",
+          "U41",
+          "U32"
+        ],
+        "classification": {
+          "SURVIVING_LOOP_1": 12,
+          "VANISHES_BY_COMPONENT_MOMENTUM": 3
+        },
+        "coefficient": {
+          "denominator": 1,
+          "numerator": -2
+        },
+        "name": "-2*v*U31*U41*U32",
+        "v_power": 1
+      },
+      {
+        "atoms": [
+          "U31",
+          "U31",
+          "U30",
+          "U30"
+        ],
+        "classification": {
+          "CANCELED_BY_COVARIANCE_SUBTRACTION": 30,
+          "SURVIVING_LOOP_2": 720,
+          "VANISHES_BY_COMPONENT_MOMENTUM": 195
+        },
+        "coefficient": {
+          "denominator": 2,
+          "numerator": 1
+        },
+        "name": "Cov(U31^2,U30^2)",
+        "v_power": 0
+      },
+      {
+        "atoms": [
+          "U31",
+          "U31",
+          "U30",
+          "U32"
+        ],
+        "classification": {
+          "CANCELED_BY_COVARIANCE_SUBTRACTION": 6,
+          "SURVIVING_LOOP_1": 72,
+          "VANISHES_BY_COMPONENT_MOMENTUM": 27
+        },
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "name": "Cov(U31^2,U30*U32)",
+        "v_power": 1
+      },
+      {
+        "atoms": [
+          "U31",
+          "U31",
+          "U32",
+          "U32"
+        ],
+        "classification": {
+          "CANCELED_BY_COVARIANCE_SUBTRACTION": 2,
+          "SURVIVING_LOOP_0": 8,
+          "VANISHES_BY_COMPONENT_MOMENTUM": 5
+        },
+        "coefficient": {
+          "denominator": 2,
+          "numerator": 3
+        },
+        "name": "Cov(U31^2,U32^2)",
+        "v_power": 2
+      },
+      {
+        "atoms": [
+          "U31",
+          "U31",
+          "U40"
+        ],
+        "classification": {
+          "CANCELED_BY_COVARIANCE_SUBTRACTION": 6,
+          "SURVIVING_LOOP_2": 72,
+          "VANISHES_BY_COMPONENT_MOMENTUM": 27
+        },
+        "coefficient": {
+          "denominator": 1,
+          "numerator": -1
+        },
+        "name": "Cov(U31^2,-U40)",
+        "v_power": 0
+      },
+      {
+        "atoms": [
+          "U31",
+          "U31",
+          "U42"
+        ],
+        "classification": {
+          "CANCELED_BY_COVARIANCE_SUBTRACTION": 2,
+          "SURVIVING_LOOP_1": 8,
+          "VANISHES_BY_COMPONENT_MOMENTUM": 5
+        },
+        "coefficient": {
+          "denominator": 1,
+          "numerator": -1
+        },
+        "name": "Cov(U31^2,-v*U42)",
+        "v_power": 1
+      },
+      {
+        "atoms": [
+          "U31",
+          "U31",
+          "U44"
+        ],
+        "classification": {
+          "CANCELED_BY_COVARIANCE_SUBTRACTION": 2,
+          "VANISHES_BY_COMPONENT_MOMENTUM": 1
+        },
+        "coefficient": {
+          "denominator": 1,
+          "numerator": -3
+        },
+        "name": "Cov(U31^2,-3*v^2*U44)",
+        "v_power": 2
+      },
+      {
+        "atoms": [
+          "U31",
+          "U31",
+          "U31",
+          "U31"
+        ],
+        "classification": {
+          "CANCELED_BY_COVARIANCE_SUBTRACTION": 4,
+          "SURVIVING_LOOP_1": 48,
+          "SURVIVING_LOOP_2": 8,
+          "VANISHES_BY_COMPONENT_MOMENTUM": 45
+        },
+        "coefficient": {
+          "denominator": 2,
+          "numerator": 1
+        },
+        "name": "Cov(U31^2,v*U31^2/2)",
+        "v_power": 1
+      },
+      {
+        "atoms": [
+          "U31",
+          "U31",
+          "U31",
+          "U33"
+        ],
+        "classification": {
+          "TERM_VANISHES_BY_U33_MOMENTUM": 1
+        },
+        "coefficient": {
+          "denominator": 1,
+          "numerator": 3
+        },
+        "name": "Cov(U31^2,3*v^2*U31*U33)",
+        "v_power": 2
+      },
+      {
+        "atoms": [
+          "U31",
+          "U31",
+          "U33",
+          "U33"
+        ],
+        "classification": {
+          "TERM_VANISHES_BY_U33_MOMENTUM": 1
+        },
+        "coefficient": {
+          "denominator": 2,
+          "numerator": 15
+        },
+        "name": "Cov(U31^2,15*v^3*U33^2/2)",
+        "v_power": 3
+      }
+    ],
+    "loop_rank": "beta=sum_components(E_component-V_component+1), ignoring eta-degree-zero constants",
+    "momentum_rule": "Each Wick component vanishes unless its signed fixed-h transfer contains zero; U33 terms vanish identically for L>=4",
+    "result": "After the covariance subtraction and exact momentum-support zeros, every complete-M4 graph has at most two freely summed lattice momenta. The next exact object is therefore a finite two-loop connected kernel, not the standalone expected-Hessian norm.",
+    "status": "PROVED_BY_EXHAUSTIVE_EXACT_LABELED_WICK_ENUMERATION",
+    "surviving_loop_ranks": [
+      0,
+      1,
+      2
+    ]
+  },
+  "created": "2026-08-14",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "does_not_establish": [
+    "that the norm of the fully combined Pi2(E) violates the earlier sufficient bound",
+    "an exact identity M4=0 or the sign/scaling of M4 at any finite volume",
+    "survival or cancellation of the unrestricted whole-lattice order-g^4 power coefficient",
+    "a nonperturbative annealed score or interacting H^-1 theorem",
+    "tightness, continuum identification, a Born rule, Krein reconstruction, or anything LORENTZIAN-CAUSAL"
+  ],
+  "exact_gaussian_fixture": {
+    "law": "X is standard Gaussian",
+    "polynomials": {
+      "A": "X^2-1",
+      "B": "X^3-X",
+      "Cscore": "X^4-3*X^2",
+      "W1": "2*X^3-5*X",
+      "W2": "X^4-4*X^2+4"
+    },
+    "status": "EXACT_DIRECT_CONNECTED_AND_SQUARE_ROOT_IDENTITY_FIXTURE",
+    "values": {
+      "D_norm_squared": {
+        "denominator": 2,
+        "numerator": 653
+      },
+      "E_W1_squared": {
+        "denominator": 1,
+        "numerator": 25
+      },
+      "E_W2": {
+        "denominator": 1,
+        "numerator": 3
+      },
+      "M4_connected": {
+        "denominator": 1,
+        "numerator": 590
+      },
+      "M4_direct": {
+        "denominator": 1,
+        "numerator": 590
+      },
+      "M4_square_root_norm": {
+        "denominator": 1,
+        "numerator": 590
+      },
+      "aligned_coefficient": {
+        "denominator": 8,
+        "numerator": 25
+      },
+      "disconnected_D_contribution": {
+        "denominator": 2,
+        "numerator": 25
+      },
+      "disconnected_cross_contribution": {
+        "denominator": 2,
+        "numerator": -25
+      },
+      "mean_H": {
+        "denominator": 8,
+        "numerator": -25
+      },
+      "mean_H_centered": {
+        "denominator": 1,
+        "numerator": 0
+      },
+      "twice_A_E": {
+        "denominator": 2,
+        "numerator": 527
+      },
+      "twice_A_E_connected": {
+        "denominator": 1,
+        "numerator": 276
+      },
+      "z2": {
+        "denominator": 2,
+        "numerator": 19
+      }
+    }
+  },
+  "lifecycle_state": "COMPLETE_G4_CONNECTED_REORGANIZATION_PROVED_CANCELLATION_DECISION_OPEN",
+  "method_disposition": {
+    "actual_interacting_h_minus_one_second_moment": "OPEN",
+    "born_rule": "NOT_ESTABLISHED",
+    "complete_M4_connected_covariance_reorganization": "PROVED",
+    "complete_connected_M4_maximum_loop_rank": "TWO",
+    "continuum_limit": "NOT_ESTABLISHED",
+    "exact_whole_lattice_M4_cancellation": "OPEN_NUMERICALLY_SUPPORTED",
+    "full_combined_Pi2E_norm_bound": "OPEN_INTERNAL_CANCELLATION_REQUIRED",
+    "krein_reconstruction": "NOT_ASSESSED",
+    "lorentzian_transfer": "NOT_ESTABLISHED",
+    "nonperturbative_annealed_zero_fiber_score_bound": "OPEN",
+    "normalization_aligned_A_sector": "PROVED_EXTENSIVE",
+    "normalized_lowest_mode_second_moment": "OPEN",
+    "separate_or_triangle_bound_on_aligned_sector": "OBSTRUCTED_AS_FORMULATED",
+    "whole_lattice_order_g_four_power_survival": "OPEN"
+  },
+  "missing_object_ledger": [
+    "the explicit momentum-space values of the certified zero-, one-, and two-loop connected Wick topologies",
+    "an exact finite-volume test of the numerically suggested M4=0 identity, beginning with rational L=4 Fourier covariance",
+    "if M4 is not identically zero, a hard/one-soft/all-soft bound for its surviving connected kernel",
+    "after the fixed-order decision, a whole-composite nonperturbative score estimate and H^-1 shell sum"
+  ],
+  "next_gate": "Abandon separate estimates of ||D||^2 and <A,Pi2(E)>. Use the exhaustive connected Wick table, in which the extensive A-aligned normalization sector has already canceled and no topology exceeds two loop sums. Evaluate the remaining rational L=4 zero-, one-, and two-loop kernel exactly. If it vanishes, seek the vertex/Ward identity responsible; if not, identify the first nonzero connected topology and bound its combined momentum sum.",
+  "numerical_preflight": {
+    "data": "reverse_physics/data/bt_euclidean_complete_g4_preflight_v1.json",
+    "data_sha256": "af6d8e5a15d1e80645888ff5ce32d46c559826b8045084587dd74923ac5e3b0e",
+    "evidence_type": "BINARY64_STREAMING_FREE_GAUSSIAN_SUPPORTING_ONLY",
+    "interpretation": "At both sampled powers-of-two volumes, the nonnegative D2 term and signed second-chaos cross are individually large and nearly opposite. The complete M4 estimate is within one standard error of zero. This motivates testing an exact cancellation identity in the certified connected kernel, whose surviving topologies have at most two loop sums. It neither proves M4=0 nor establishes its sign, scaling, norm bound, interacting moment, or continuum limit.",
+    "rows": [
+      {
+        "A2": 64.56840454655146,
+        "B2": 2.59544259818709,
+        "D2": 107.14168482816264,
+        "M4": -0.5252140302801828,
+        "M4_over_N_omega": -0.0010258086528909824,
+        "M4_over_N_omega2": -0.0005129043264454913,
+        "M4_standard_error": 1.7670625324695315,
+        "M4_z_score": -0.29722435999261326,
+        "cross": -107.66689885844283,
+        "cross_over_D2": -1.004902051252251,
+        "length": 4,
+        "samples": 100000,
+        "seed": 404,
+        "standard_error_over_N_omega": 0.0034512940087295546,
+        "volume": 256,
+        "z2": -5.571244449494809
+      },
+      {
+        "A2": 130.5384998689198,
+        "B2": 11.407062456417858,
+        "D2": 3315.553874730715,
+        "M4": -68.19065708804266,
+        "M4_over_N_omega": -0.028420100861465847,
+        "M4_over_N_omega2": -0.04851614690261399,
+        "M4_standard_error": 80.14963125879957,
+        "M4_z_score": -0.8507919003127795,
+        "cross": -3383.744531818758,
+        "cross_over_D2": -1.020566897617847,
+        "length": 8,
+        "samples": 30000,
+        "seed": 804,
+        "standard_error_over_N_omega": 0.03340429175573682,
+        "volume": 4096,
+        "z2": -95.9114620979632
+      }
+    ],
+    "source": "reverse_physics/bt_euclidean_complete_g4_preflight.c",
+    "source_sha256": "c0fb83ffb77314d830588ee9ea09f9d92c51d40e340e8a18d651e9ecefd13746",
+    "status": "SUPPORTING_ONLY_EXACT_CANCELLATION_HYPOTHESIS"
+  },
+  "provenance": {
+    "assumptions": [
+      "the fixed-UV extensive lower bound is asymptotic and uses boxes separated from zero and the conditioned real-cosine block",
+      "the numerical near-cancellation is a hypothesis generator and never a sign, zero, or scaling theorem",
+      "no connected fixed-order result is promoted to a resummed, interacting H^-1, continuum, Born, Krein, or Lorentzian statement"
+    ],
+    "exact_arithmetic": "Python Fraction polynomial arithmetic and exact standard-Gaussian moments for the direct/connected/square-root fixture; analytic Gaussian-chaos orthogonality and fixed-UV box counting for the BT W1 variance",
+    "inputs": [
+      {
+        "path": "planning/work-items/reverse-physics-bateman-euclidean-continuum-reconstruction.json",
+        "sha256": "6e7146c21f056740edf9fe6feaaa8a14aaab945fe11f1b6a23110ecd5b85bf5a"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_CUBIC_SCORE_LOG_OBSTRUCTION_V1.json",
+        "sha256": "dc69e440ea9608c0bd94622e306501c819695877647d27c9481e88ab691cb7c7"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_COMPLETE_G4_UV_NONCANCELLATION_V1.json",
+        "sha256": "3a3e2c87161689224cc66d644b558e870901d6e5aae496e320df87855b6dda1e"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_COMPLETE_G4_CHAOS_GATE_V1.json",
+        "sha256": "29b0e29c3a5739bb6ed6bc24e5f618014d5c6cdabbea9c40bd271bce9f1edd6a"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_COMPLETE_G4_EFFECTIVE_HESSIAN_V1.json",
+        "sha256": "a7dd0bd915d243d8afd0771911f772f2909fa1eed53a4f1230c0217fc7dd8002"
+      },
+      {
+        "path": "reverse_physics/bt_euclidean_complete_g4_preflight.c",
+        "sha256": "c0fb83ffb77314d830588ee9ea09f9d92c51d40e340e8a18d651e9ecefd13746"
+      },
+      {
+        "path": "reverse_physics/data/bt_euclidean_complete_g4_preflight_v1.json",
+        "sha256": "af6d8e5a15d1e80645888ff5ce32d46c559826b8045084587dd74923ac5e3b0e"
+      }
+    ],
+    "numerical_arithmetic": "Streaming binary64 radix-two FFT with fixed seeds and long-double online covariance accumulation; supporting only",
+    "repository_base_commit": "b5601e3e848e31f642d40b8d2a92c763a463129d"
+  },
+  "question": "Can the remaining order-g^4 decision be closed by bounding the second-chaos kernel Pi2(E) as a standalone object, or must its normalization-aligned sector first be recombined with the nonnegative D norm?",
+  "report": "reverse_physics/reports/bt-euclidean-complete-g4-connected-normalization.md",
+  "result_kind": "exact connected-covariance reorganization and normalization-aligned obstruction for the BT order-g^4 score gate",
+  "schema": "reverse_physics/schema/reverse-physics-bt-euclidean-complete-g4-connected-normalization-v1.schema.json",
+  "schema_version": "reverse-physics-bt-euclidean-complete-g4-connected-normalization-v1",
+  "square_root_alignment": {
+    "E_decomposition": "E=Ec-(E0[W1^2]/8)*A, where Ec=C-W1*B/2+Hc*A and E0[Hc]=0",
+    "H": "H=W1^2/8-W2/2-z2/2",
+    "H_centered": "Hc=H-E0[H]=(W1^2-E0[W1^2])/8-(W2-E0[W2])/2",
+    "exact_cancellation": "The aligned cross contributes -(E0[W1^2]/4)*||A||^2. The W1^2 part of ||D||^2 contains +(E0[W1^2]/4)*||A||^2 plus +(1/4)*Cov0(A^2,W1^2), so the fully disconnected pieces cancel exactly.",
+    "mean": "E0[H]=-E0[W1^2]/8",
+    "method_boundary": "Bounding the aligned summand separately or applying a triangle inequality before this cancellation is obstructed. This does not prove that the norm of the already combined Pi2(E) is large, because Pi2(Ec) may contain a canceling A component.",
+    "second_chaos": "Pi2(E)=Pi2(Ec)-(E0[W1^2]/8)*A because A is pure second chaos",
+    "status": "EXACT_NORMALIZATION_ALIGNED_SECTOR_ISOLATED"
+  },
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_euclidean_complete_g4_connected_normalization.py --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_euclidean_complete_g4_connected_normalization.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_euclidean_complete_g4_connected_normalization",
+    "cc -std=c11 -O2 -Wall -Wextra -Werror reverse_physics/bt_euclidean_complete_g4_preflight.c -lm -o /tmp/bt-complete-g4-preflight"
+  ]
+}

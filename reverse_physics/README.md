@@ -222,6 +222,12 @@ bt_euclidean_complete_g4_effective_hessian.py
                                        momentum-diagonal bulk plus finite-rank
                                        correction; Fourier evaluation and the
                                        norm bound remain open
+bt_euclidean_complete_g4_connected_normalization.py
+                                       recombines the extensive normalization-
+                                       aligned sector into the connected M4
+                                       covariance and exhaustively reduces its
+                                       surviving Wick graphs to at most two
+                                       loop sums; exact evaluation remains open
 bt_four_point_bubble_log_jet.py        first virtual coefficient: arbitrary-mass
                                        bubble logarithm and four-leg interference jet
 bt_triangle_box_log_jet.py             complete triangle and box logarithmic jets;
