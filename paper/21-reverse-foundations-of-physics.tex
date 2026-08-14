@@ -788,6 +788,29 @@ The second inequality concerns any lowest axial coefficient.  It is uniform
 action-sublevel control, not a normalized Gibbs moment bound: an annealed
 remainder or marginal-partition estimate is still missing.
 
+The deterministic control can be sharpened to a bilaplacian radial envelope.
+Certificate
+\cert{REVERSE_PHYSICS_BT_EUCLIDEAN_BILAPLACIAN_REFERENCE_BRIDGE_V1}
+proves, with \(B_\phi=\sum_x(\Delta\phi_x)^2\) on a \(q\)-regular periodic
+graph,
+\[
+ S_\lambda(\phi)\geq\frac{B_\phi}{4N}
+       +\frac{\lambda^2B_\phi^2}{16q^2N}.
+\]
+The normalized radial reference measure defined by the right-hand side has
+the volume-uniform bound
+
+\[
+ \sup_L\mathbb E_\nu\|\Phi_L\|_{H^{-1}}^2
+ \leq\frac{q\sqrt{15}}{4|\lambda|}=5\sqrt{15}
+ \quad(q=8,\ \lambda=0.4).
+\]
+This is not yet a bound for the actual BT measure.  Pointwise domination does
+not compare normalized moments, and an exact \(6^4\) witness gives a
+directional Hessian below \(-31/3\) for the actual action minus the reference
+action.  Thus convex-perturbation transfer is obstructed; a genuinely
+nonconvex, annealed, coarea, or direct-marginal bridge remains open.
+
 \subsection{A finite BV contraction does not freeze the quantum theory}
 
 The energy-two free BV block provides another finite exact case.  The
@@ -1076,7 +1099,10 @@ tend to zero.  A direct or annealed covariance estimate is therefore the next
 analytic gate.  The direct pointwise Schwinger--Dyson sign route is now also
 obstructed, although the exact residual-sum identity supplies uniform quartic
 action confinement of each lowest normalized Fourier mode.  The remaining
-gate is specifically annealed or normalized-marginal control.
+gate is specifically annealed or normalized-marginal control.  A sharper
+bilaplacian envelope already gives the required uniform \(H^{-1}\) bound for
+its normalized radial reference measure, but an exact negative Hessian rules
+out transferring that bound by standard convex-perturbation comparison.
 
 \section{Limits of the present paper}
 \label{sec:limits}

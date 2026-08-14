@@ -1,0 +1,224 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-bilaplacian-reference-bridge-v1.schema.json",
+  "title": "BT Euclidean bilaplacian radial-reference bridge certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "certificate", "schema_version", "created", "dependency_tags",
+    "lifecycle_state", "result_kind", "question", "answer",
+    "all_volume_bilaplacian_envelope", "normalized_radial_reference",
+    "convex_transfer_obstruction", "disposition", "missing_object_ledger",
+    "next_gate", "does_not_establish", "provenance",
+    "verification_commands", "tier_receipt", "checks", "report", "schema"
+  ],
+  "$defs": {
+    "fraction": {
+      "type": "object", "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      }
+    },
+    "algebraic": {
+      "type": "object", "additionalProperties": false,
+      "required": ["rational_prefactor", "squarefree_radicand"],
+      "properties": {
+        "rational_prefactor": {"$ref": "#/$defs/fraction"},
+        "squarefree_radicand": {"const": 15}
+      }
+    },
+    "text": {"type": "string", "minLength": 1}
+  },
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_EUCLIDEAN_BILAPLACIAN_REFERENCE_BRIDGE_V1"},
+    "schema_version": {"const": "reverse-physics-bt-euclidean-bilaplacian-reference-bridge-v1"},
+    "created": {"const": "2026-08-14"},
+    "dependency_tags": {
+      "type": "array",
+      "prefixItems": [
+        {"const": "LOCAL-ALGEBRAIC"},
+        {"const": "EUCLIDEAN-SPECTRAL"}
+      ],
+      "items": false
+    },
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "all_volume_bilaplacian_envelope": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "scope", "definitions", "positive_part_lemma",
+        "positive_part_proof", "positive_part_fixtures", "first_bound",
+        "spectral_step", "second_bound", "combined_theorem", "phi_form",
+        "status"
+      ],
+      "properties": {
+        "scope": {"$ref": "#/$defs/text"},
+        "definitions": {"type": "array", "minItems": 5, "items": {"$ref": "#/$defs/text"}},
+        "positive_part_lemma": {"$ref": "#/$defs/text"},
+        "positive_part_proof": {"$ref": "#/$defs/text"},
+        "positive_part_fixtures": {
+          "type": "array", "minItems": 4,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["mean_zero_vector", "positive_square_fraction", "one_over_dimension", "bound_holds"],
+            "properties": {
+              "mean_zero_vector": {"type": "array", "minItems": 2, "items": {"type": "integer"}},
+              "positive_square_fraction": {"$ref": "#/$defs/fraction"},
+              "one_over_dimension": {"$ref": "#/$defs/fraction"},
+              "bound_holds": {"const": true}
+            }
+          }
+        },
+        "first_bound": {"const": "A>=B/(2N)"},
+        "spectral_step": {"$ref": "#/$defs/text"},
+        "second_bound": {"const": "A>=B^2/(8q^2N)"},
+        "combined_theorem": {"const": "A>=B/(4N)+B^2/(16q^2N)"},
+        "phi_form": {"const": "S_lambda(phi)>=B_phi/(4N)+lambda^2*B_phi^2/(16q^2N)"},
+        "status": {"const": "PROVED"}
+      }
+    },
+    "normalized_radial_reference": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "definition", "bilaplacian_coordinates", "radial_virial_identity",
+        "bilaplacian_energy_bound", "isotropic_covariance_multiplier",
+        "minimum_lattice", "imported_free_h_minus_one_trace_bound",
+        "uniform_h_minus_one_theorem", "lambda_0p4_q8_bound",
+        "lambda_0p4_q8_reading", "status"
+      ],
+      "properties": {
+        "definition": {"$ref": "#/$defs/text"},
+        "bilaplacian_coordinates": {"$ref": "#/$defs/text"},
+        "radial_virial_identity": {"$ref": "#/$defs/text"},
+        "bilaplacian_energy_bound": {"$ref": "#/$defs/text"},
+        "isotropic_covariance_multiplier": {"$ref": "#/$defs/text"},
+        "minimum_lattice": {
+          "type": "object", "additionalProperties": false,
+          "required": ["dimensions", "minimum_length", "minimum_volume", "bound"],
+          "properties": {
+            "dimensions": {"const": 4},
+            "minimum_length": {"const": 2},
+            "minimum_volume": {"const": 16},
+            "bound": {"const": "sqrt(N/(N-1))<=4/sqrt(15)"}
+          }
+        },
+        "imported_free_h_minus_one_trace_bound": {"$ref": "#/$defs/fraction"},
+        "uniform_h_minus_one_theorem": {"$ref": "#/$defs/text"},
+        "lambda_0p4_q8_bound": {"$ref": "#/$defs/algebraic"},
+        "lambda_0p4_q8_reading": {"const": "5*sqrt(15)"},
+        "status": {"const": "PROVED_FOR_REFERENCE_MEASURE"}
+      }
+    },
+    "convex_transfer_obstruction": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "actual_minus_reference", "lattice", "spatial_volume", "center",
+        "direction", "family_parameter", "center_time",
+        "center_bilaplacian_integer_per_spatial_site",
+        "direction_bilaplacian_per_spatial_site",
+        "center_direction_bilaplacian_cross_term",
+        "actual_directional_hessian_full", "log_two_lower_bound",
+        "reference_directional_hessian_strict_lower_bound",
+        "difference_directional_hessian_strict_upper_bound", "conclusion",
+        "status"
+      ],
+      "properties": {
+        "actual_minus_reference": {"$ref": "#/$defs/text"},
+        "lattice": {
+          "type": "object", "additionalProperties": false,
+          "required": ["length", "dimensions", "volume"],
+          "properties": {"length": {"const": 6}, "dimensions": {"const": 4}, "volume": {"const": 1296}}
+        },
+        "spatial_volume": {"const": 216},
+        "center": {"$ref": "#/$defs/text"},
+        "direction": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"type": "integer"}},
+        "family_parameter": {"const": 3},
+        "center_time": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"type": "integer"}},
+        "center_bilaplacian_integer_per_spatial_site": {"const": 252},
+        "direction_bilaplacian_per_spatial_site": {"const": 16},
+        "center_direction_bilaplacian_cross_term": {"const": 0},
+        "actual_directional_hessian_full": {"$ref": "#/$defs/fraction"},
+        "log_two_lower_bound": {
+          "type": "object", "additionalProperties": false,
+          "required": ["method", "value", "strictly_above"],
+          "properties": {
+            "method": {"$ref": "#/$defs/text"},
+            "value": {"$ref": "#/$defs/fraction"},
+            "strictly_above": {"$ref": "#/$defs/fraction"}
+          }
+        },
+        "reference_directional_hessian_strict_lower_bound": {"$ref": "#/$defs/fraction"},
+        "difference_directional_hessian_strict_upper_bound": {"$ref": "#/$defs/fraction"},
+        "conclusion": {"$ref": "#/$defs/text"},
+        "status": {"const": "CONVEX_PERTURBATION_TRANSFER_OBSTRUCTED"}
+      }
+    },
+    "disposition": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "actual_all_volume_bilaplacian_envelope",
+        "radial_reference_uniform_h_minus_one_bound",
+        "pointwise_actual_over_reference_action_domination",
+        "convex_perturbation_moment_transfer",
+        "general_nonconvex_or_annealed_moment_transfer",
+        "actual_interacting_h_minus_one_second_moment_bound",
+        "interacting_tightness", "continuum_limit", "born_rule",
+        "krein_reconstruction", "lorentzian_transfer"
+      ],
+      "properties": {
+        "actual_all_volume_bilaplacian_envelope": {"const": "PROVED"},
+        "radial_reference_uniform_h_minus_one_bound": {"const": "PROVED"},
+        "pointwise_actual_over_reference_action_domination": {"const": "PROVED"},
+        "convex_perturbation_moment_transfer": {"const": "OBSTRUCTED"},
+        "general_nonconvex_or_annealed_moment_transfer": {"const": "OPEN"},
+        "actual_interacting_h_minus_one_second_moment_bound": {"const": "OPEN"},
+        "interacting_tightness": {"const": "NOT_ESTABLISHED"},
+        "continuum_limit": {"const": "NOT_ESTABLISHED"},
+        "born_rule": {"const": "NOT_ESTABLISHED"},
+        "krein_reconstruction": {"const": "NOT_ASSESSED"},
+        "lorentzian_transfer": {"const": "NOT_ESTABLISHED"}
+      }
+    },
+    "missing_object_ledger": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/text"}},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "does_not_establish": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/text"}},
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["repository_base_commit", "inputs", "arithmetic"],
+      "properties": {
+        "repository_base_commit": {"const": "492ddb2c210805b2ba786ba326d62bc76af1785d"},
+        "inputs": {
+          "type": "array", "minItems": 3, "maxItems": 3,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["path", "sha256"],
+            "properties": {
+              "path": {"$ref": "#/$defs/text"},
+              "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+            }
+          }
+        },
+        "arithmetic": {"$ref": "#/$defs/text"}
+      }
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "items": {"$ref": "#/$defs/text"}},
+    "tier_receipt": {"type": "object", "minProperties": 5},
+    "checks": {
+      "type": "object", "additionalProperties": false,
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"const": 13},
+        "total": {"const": 13},
+        "failures": {"type": "array", "maxItems": 0},
+        "details": {"type": "object", "minProperties": 13, "maxProperties": 13, "additionalProperties": {"const": true}}
+      }
+    },
+    "report": {"const": "reverse_physics/reports/bt-euclidean-bilaplacian-reference-bridge.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-euclidean-bilaplacian-reference-bridge-v1.schema.json"}
+  }
+}
