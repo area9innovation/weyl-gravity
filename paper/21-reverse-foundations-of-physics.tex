@@ -882,51 +882,11 @@ an alternating rational upper bound on \(\log(101/100)\) proves
 \]
 
 Thus the pointwise virial inequality with coefficient two cannot be used to
-deduce \(\mathbb E[S_\lambda]/N<1/2\) by Gibbs integration by parts.  The
-required action-density control nevertheless follows from an affine virial
-theorem.  Put
-
-\[
- s_x=\sum_{y\sim x}e^{\psi_y-\psi_x},\qquad r_x=s_x-q,
- \qquad t_x=\sum_{y\sim x}e^{\psi_y-\psi_x}(\psi_y-\psi_x).
-\]
-
-Certificate
-\cert{REVERSE_PHYSICS_BT_EUCLIDEAN_AFFINE_VIRIAL_ACTION_DENSITY_V1}
-uses convexity and superadditivity of \(u\log u\) to prove, on every finite
-\(q\)-regular graph,
-
-\[
- D=\sum_xr_xt_x
- \geq2A-Nq^2\left(1+\frac14\log q\right).
-\]
-
-For \(q=8\), the rational Taylor certificate
-\(e^{7/10}>482921/240000>2\) gives
-
-\[
-                    D\geq2A-\frac{488}{5}N.
-\]
-
-Radial integration by parts for the actual measure
-\(e^{-A/\lambda^2}d\psi\) on the \((N-1)\)-dimensional mean-zero hyperplane
-then gives, at \(\lambda=2/5\),
-
-\[
- \frac1N\mathbb E[A]\leq\frac{1222}{25},
- \qquad
- \mathbb E\sqrt{1+\frac AN}\leq\frac{\sqrt{1247}}5.
-\]
-
-The constant is crude but independent of volume.  The same theorem and the
-certified bilaplacian envelope give genuine actual-measure bounds
-\(\mathbb E[B_\psi^2]/N^2\leq1251328/25\) and
-\(\mathbb E[B_\phi]/N\leq40\sqrt{1222}\).  These bounds do not control how
-bilaplacian energy is distributed among the lowest modes.  Consequently the
-annealed half-action factor is established, but the orthogonal-Hessian
-curvature gate, the interacting \(H^{-1}\) moment, tightness, continuum
-measure, positive-Hilbert reconstruction, Krein bridge, Born rule, and every
-Lorentzian statement remain open.
+deduce \(\mathbb E[S_\lambda]/N<1/2\) by Gibbs integration by parts.  A
+weaker positive virial constant, a direct annealed action-density estimate,
+or a normalized low-mode marginal bound remains open.  No interacting
+\(H^{-1}\) moment, tightness, continuum measure, positive-Hilbert
+reconstruction, Krein bridge, Born rule, or Lorentzian statement follows.
 
 \subsection{A finite BV contraction does not freeze the quantum theory}
 
@@ -1237,15 +1197,10 @@ bilaplacian envelope already gives the required uniform \(H^{-1}\) bound for
 its normalized radial reference measure, but an exact negative Hessian rules
 out transferring that bound by standard convex-perturbation comparison.  A
 mode-specific repair also fails: ultraviolet relaxation drives the exact
-lowest-mode Hessian Schur complement to zero.  The exact affine virial theorem
-now supplies the previously missing volume-uniform expectation of the
-half-action-density weight under the actual Gibbs measure.  The remaining
-inverse-Hessian route is therefore narrower: prove global positivity or a
-variational replacement for the orthogonal Hessian block and a pointwise
-half-action-density curvature lower bound.  If either fails, direct normalized
-lowest-mode marginal control is the fallback.  Neither the action-density nor
-bilaplacian-density theorem alone is an \(H^{-1}\) estimate because energy may
-concentrate in the infrared modes.
+lowest-mode Hessian Schur complement to zero.  Because the degenerating
+backgrounds have quartically growing action, the next live route is an
+action-weighted annealed inverse-Hessian estimate, with direct marginal
+control as the fallback.
 
 \section{Limits of the present paper}
 \label{sec:limits}
