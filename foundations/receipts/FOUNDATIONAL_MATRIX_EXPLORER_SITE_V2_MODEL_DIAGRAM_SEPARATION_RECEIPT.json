@@ -1,0 +1,77 @@
+{
+  "schema_version": "science-forge-tier-receipt-v1",
+  "receipt_id": "FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2_MODEL_DIAGRAM_SEPARATION_RECEIPT",
+  "created": "2026-08-14",
+  "repository_base_commit": "ee90495d73f5dcee04bcda6db41a854acc9cea80",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "scope": "Separate two visually redundant NGC 3198 diagrams by replacing the no-refit Mannheim velocity overlay with a signed standardized-residual audit while retaining the common-fit velocity comparison as the sole multi-model curve chart.",
+  "tiers": {
+    "tier_0_compile": {
+      "status": "PASS",
+      "command": "python3 -m py_compile foundations/build_matrix_site_v2.py foundations/check_matrix_site_v2.py foundations/verify_matrix_site_v2.py foundations/tests/test_matrix_site.py",
+      "elapsed_seconds": 0.01
+    },
+    "tier_0_diff_check": {
+      "status": "PASS",
+      "command": "git diff --check over the explicit delivery paths"
+    },
+    "tier_1_generator_current": {
+      "status": "PASS",
+      "command": "python3 foundations/build_matrix_site_v2.py --check",
+      "elapsed_seconds": 0.05,
+      "result": "All generated site artifacts are byte-current."
+    },
+    "tier_1_independent_checks": {
+      "status": "PASS",
+      "command": "python3 foundations/check_matrix_site_v2.py && python3 foundations/verify_matrix_site_v2.py",
+      "elapsed_seconds": 0.14,
+      "result": "The 576-coordinate surface, evidence closure, assembly projections, manifest, deterministic build, and fail-closed claim flags pass."
+    },
+    "tier_1_tests": {
+      "status": "PASS",
+      "command": "python3 -m unittest foundations.tests.test_matrix_site",
+      "elapsed_seconds": 0.64,
+      "result": "9/9 tests pass, including explicit residual-audit interface tokens."
+    },
+    "tier_1_browser_smoke": {
+      "status": "PASS",
+      "command": "serve foundations/site and render #view=assemblies in headless Google Chrome at 1600 x 4200 and 430 x 7200",
+      "result": "Desktop and phone-width renders were visually inspected. The first NGC 3198 diagram is now a zero-centered residual diagnostic with pointwise tension exposed; the later diagram remains a distinct multi-model velocity comparison. Explanatory text reflows at phone width and the wide SVG remains horizontally scrollable."
+    },
+    "tier_2": {
+      "status": "NOT_RUN",
+      "criterion": "No mathematical input, shared operator, schema, scientific certificate, or claim used by a transitive certificate chain changed; the authoritative numerical points and fit outputs are unchanged."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No classical or quantum freeze, theorem promotion, shared core-algebra change, release preparation, or explicit full-suite request applies."
+    }
+  },
+  "presentation_checks": {
+    "no_refit_chart": "signed standardized residuals versus radius",
+    "comparison_chart": "observed and fitted circular speeds versus radius",
+    "pointwise_reference_band": "absolute standardized residual at most 2",
+    "aggregate_gate_kept_distinct": true,
+    "residual_sign_convention_displayed": "prediction minus observation",
+    "tooltip_values_present": true,
+    "desktop_visual_check": true,
+    "phone_width_visual_check": true
+  },
+  "artifact_hashes": {
+    "foundations/build_matrix_site_v2.py": "f75096430a64f2d33acd7e7c4fb04f90fa363d356e45dd2495b5414301676df5",
+    "foundations/matrix_site_assets/app.js": "4d0c6b3e409203f033b73408a60ce309d644b942b3774066a9c9b68ff949903b",
+    "foundations/matrix_site_assets/styles.css": "f83a25df98db2c2e2bb45050c54dc669cbce6b20d3c561113e40287285942f69",
+    "foundations/site/app.js": "4d0c6b3e409203f033b73408a60ce309d644b942b3774066a9c9b68ff949903b",
+    "foundations/site/styles.css": "f83a25df98db2c2e2bb45050c54dc669cbce6b20d3c561113e40287285942f69",
+    "foundations/site/manifest.json": "f8507f3adfb8acda85bd164d2c1e7553c14d8f63e7b9f302daecab91b7fdd139",
+    "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json": "100d88a09ba4472d7283608704845f7a5927f4330bc43bd933c275137657a9cd",
+    "foundations/reports/theory-assembly-atlas-v1.md": "a0d20a3964a5e61fbe7c36e68cbaa7b1d26ce4bec1036873edef1d1fdb42a357",
+    "foundations/tests/test_matrix_site.py": "63848f00f7ebe752338c74510205df02a5342b1b733b18ce23619d648ec76f05"
+  },
+  "claim_boundary": "This is a presentation-level separation of two existing empirical views. It changes no numerical datum, fit parameter, model ranking, gate outcome, evidence assignment, cube status, interface certification, physical theorem, or Lorentzian claim. The plus-or-minus-two shading is explicitly a pointwise visual reference and is not substituted for the registered aggregate reduced-chi-squared gate."
+}

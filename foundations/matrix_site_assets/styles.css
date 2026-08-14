@@ -189,6 +189,18 @@ main { padding: 1.6rem max(4vw, 1.2rem) 6rem; }
 .mannheim-metrics .failed-metric { border-top: 5px solid #a8492f; background: #fff5f2; }
 .curve-panel { margin: 1rem 0; padding: .8rem; background: white; border: 1px solid var(--line); border-radius: .65rem; overflow-x: auto; }
 .curve-panel svg { display: block; min-width: 44rem; width: 100%; height: auto; }
+.residual-panel { border-left: 5px solid #a8492f; }
+.residual-panel-head { display: grid; grid-template-columns: minmax(16rem, .8fr) minmax(20rem, 1.2fr); gap: 1rem; align-items: end; margin-bottom: .7rem; }
+.residual-panel-head h3 { margin: .15rem 0 0; }
+.residual-panel-head > p { margin: 0; color: var(--muted); }
+.residual-band { fill: #e4f1ec; }
+.residual-zero { stroke: #29473e; stroke-width: 1.8; }
+.residual-stems line { stroke: #71877f; stroke-width: 1.1; }
+.residual-points circle { stroke: white; stroke-width: 1; }
+.residual-points .inside, .residual-dot.inside { fill: var(--teal); background: var(--teal); }
+.residual-points .outside, .residual-dot.outside { fill: #a8492f; background: #a8492f; }
+.residual-dot { display: inline-block; width: .55rem; height: .55rem; border-radius: 50%; }
+.residual-band-key { display: inline-block; width: 1.5rem; height: .65rem; background: #e4f1ec; border: 1px solid #9db8ae; }
 .fit-comparison-assembly { background: #f7f8fb; border-color: #8797ae; border-left-color: #496681; }
 .model-disposition.comparative { background: #315d7a; }
 .fit-curve { fill: none; stroke-width: 3.2; stroke-linecap: round; stroke-linejoin: round; }
@@ -391,7 +403,7 @@ dialog::backdrop { background: #0b1f1990; }
 footer { padding: 2rem max(4vw, 1.2rem); background: var(--forest); color: #dbe7e1; }
 footer a { color: #f2c66d; }
 footer #digest { font: .72rem ui-monospace, monospace; overflow-wrap: anywhere; }
-@media (max-width: 900px) { .hero, .section-head, .profile-detail, .viability-controls, .portfolio-controls, .assembly-selector, .model-assembly-head, .model-scope, .model-comparison, .camp-profile > header, .camp-profile-grid, .guide-examples, .guide-group-heading { grid-template-columns: 1fr; gap: .6rem; } .guide-equation { grid-template-columns: 1fr; } .guide-equation > i { text-align: center; line-height: .7; } .rail-grid { grid-template-columns: 1fr; } .stats { grid-template-columns: repeat(3, 1fr); } .search { grid-template-columns: 1fr; gap: .3rem; } .ladder-step { grid-template-columns: 1fr; } .ladder-step:not(:last-child)::after { left: 2.7rem; } .ladder-columns { grid-template-columns: 1fr; } }
+@media (max-width: 900px) { .hero, .section-head, .profile-detail, .viability-controls, .portfolio-controls, .assembly-selector, .model-assembly-head, .model-scope, .model-comparison, .camp-profile > header, .camp-profile-grid, .guide-examples, .guide-group-heading, .residual-panel-head { grid-template-columns: 1fr; gap: .6rem; } .guide-equation { grid-template-columns: 1fr; } .guide-equation > i { text-align: center; line-height: .7; } .rail-grid { grid-template-columns: 1fr; } .stats { grid-template-columns: repeat(3, 1fr); } .search { grid-template-columns: 1fr; gap: .3rem; } .ladder-step { grid-template-columns: 1fr; } .ladder-step:not(:last-child)::after { left: 2.7rem; } .ladder-columns { grid-template-columns: 1fr; } }
 @media (max-width: 560px) { .stats { grid-template-columns: repeat(2, 1fr); } .tabs { overflow-x: auto; } .tabs a { display: none; } .comparison { grid-template-columns: 1fr; } .assembly-subtabs { position: static; grid-template-columns: 1fr; } }
 @media (max-width: 900px) { .metric-reading { grid-template-columns: 1fr; gap: .6rem; } }
 @media print { .tabs, .controls, .inspector, .compare-tray, .assembly-subtabs { display: none !important; } .view, .assembly-panel { display: block !important; break-before: page; } }

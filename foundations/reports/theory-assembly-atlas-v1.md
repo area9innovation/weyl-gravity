@@ -41,7 +41,7 @@ The disposition is `BOUNDED_PREDICTION_ASSEMBLY_COMPLETE`, not complete theory.
 `FOUNDATIONAL_MANNHEIM_NGC3198_MODEL_ASSEMBLY_V1` follows one declared
 Mannheim--Kazanas phenomenological model through seven stages: the Weyl action,
 the certified static vacuum family and circular-orbit law, the published thin-disk
-formula, the NGC 3198 parameter row, endpoint reproduction, and a no-refit comparison
+formula, the NGC 3198 parameter row, endpoint reproduction, and a no-refit residual audit
 with the later SPARC curve. The endpoint relative velocity residual is 2.893 percent,
 and the SPARC RMS residual is 4.538 km/s. Both pass their declared coarse audit gates.
 The reduced chi-squared using SPARC random errors alone is 5.592, which fails the declared gate of 2.
