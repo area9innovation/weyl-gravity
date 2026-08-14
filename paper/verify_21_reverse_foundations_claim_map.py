@@ -118,6 +118,7 @@ def main() -> int:
     bt_g4_connected = json.loads((ROOT / data["authorities"]["bt_complete_g4_connected_normalization"]["path"]).read_text())
     bt_g4_l4 = json.loads((ROOT / data["authorities"]["bt_complete_g4_l4_decision"]["path"]).read_text())
     bt_g4_general_l = json.loads((ROOT / data["authorities"]["bt_complete_g4_general_l_two_loop"]["path"]).read_text())
+    bt_g4_seven = json.loads((ROOT / data["authorities"]["bt_complete_g4_seven_kernel_reduction"]["path"]).read_text())
     dims = cube["dimensions"]
     atlas = data["atlas_snapshot"]
     require(atlas["axis_sizes"] == [6, 6, 16], "unexpected axis sizes")
@@ -304,6 +305,11 @@ def main() -> int:
     require(atlas["bt_g4_factorized_tuned_branch_status"] == bt_g4_general_l["method_disposition"]["factorized_conditioning_sector_on_tuned_running_branch"] == "UNIFORMLY_BOUNDED", "BT tuned factorized-sector conclusion drift")
     require(atlas["bt_g4_remaining_fourteen_kernel_status"] == bt_g4_general_l["method_disposition"]["remaining_fourteen_unfactorized_two_loop_kernel_bound"] == "OPEN", "BT factorized result promoted to remaining kernels")
     require(atlas["bt_g4_general_l_surviving_integrands"] == bt_g4_general_l["two_loop_atlas"]["statistics"]["surviving_integrand_count"] == 16, "BT general-L integrand count drift")
+    require(atlas["bt_g4_seven_kernel_reduction_status"] == bt_g4_seven["method_disposition"]["fourteen_to_seven_inversion_reduction"] == "PROVED", "BT seven-kernel reduction drift")
+    require(atlas["bt_g4_paired_quartic_status"] == bt_g4_seven["method_disposition"]["paired_quartic_uniform_product_bound"] == "PROVED", "BT paired-quartic bound drift")
+    require(atlas["bt_g4_negative_nested_carrier_status"] == bt_g4_seven["method_disposition"]["negative_nested_one_soft_carrier"] == "NEGATIVE_ORDER_L_SQUARED_MAGNITUDE", "BT negative nested carrier drift")
+    require(atlas["bt_g4_termwise_tuned_g4_status"] == bt_g4_seven["method_disposition"]["termwise_tuned_order_g_four_uniformity"] == "OBSTRUCTED", "BT termwise tuned-g4 obstruction drift")
+    require(atlas["bt_g4_combined_seven_kernel_status"] == bt_g4_seven["method_disposition"]["combined_seven_kernel_large_volume_sign_and_scaling"] == "OPEN", "BT isolated carrier promoted to combined seven-kernel scaling")
 
     allowed_tags = {"LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE", "LORENTZIAN-CAUSAL"}
     claim_ids = set()
@@ -415,6 +421,11 @@ def main() -> int:
     require(flags["bt_complete_order_g_four_factorized_conditioning_log_squared_bound_established"] is True, "BT factorized conditioning bound omitted")
     require(flags["bt_complete_order_g_four_factorized_tuned_branch_uniformity_established"] is True, "BT tuned factorized-sector consequence omitted")
     require(flags["bt_complete_order_g_four_remaining_fourteen_kernel_bound_established"] is False, "BT factorized sector promoted to remaining kernels")
+    require(flags["bt_complete_order_g_four_fourteen_to_seven_reduction_established"] is True, "BT fourteen-to-seven reduction omitted")
+    require(flags["bt_complete_order_g_four_paired_quartic_bound_established"] is True, "BT paired-quartic bound omitted")
+    require(flags["bt_complete_order_g_four_negative_nested_L2_carrier_established"] is True, "BT negative nested L2 carrier omitted")
+    require(flags["bt_complete_order_g_four_termwise_tuned_uniformity_obstructed"] is True, "BT termwise tuned uniformity obstruction omitted")
+    require(flags["bt_complete_order_g_four_combined_seven_kernel_scaling_established"] is False, "BT isolated carrier promoted to combined scaling")
     require(flags["bt_complete_order_g_four_explicit_momentum_kernel_established"] is False, "BT expected-Hessian formula promoted to explicit momentum kernel")
     require(flags["bt_complete_order_g_four_effective_kernel_bound_established"] is False, "BT effective second-chaos kernel bound promoted")
     require(flags["bt_complete_order_g_four_power_survival_established"] is False, "BT chaos reduction promoted to whole-lattice power survival")

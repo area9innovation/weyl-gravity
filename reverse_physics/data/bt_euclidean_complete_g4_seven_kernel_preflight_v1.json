@@ -1,0 +1,88 @@
+{
+  "result_id": "REVERSE_PHYSICS_BT_EUCLIDEAN_COMPLETE_G4_SEVEN_KERNEL_PREFLIGHT_V1",
+  "evidence_type": "SUPPORTING_ONLY_BINARY64_STREAMING_SEVEN_KERNEL_SUM",
+  "created": "2026-08-15",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "source": "reverse_physics/bt_euclidean_complete_g4_seven_kernel_preflight.c",
+  "source_sha256": "d299c22b0ab6dcca8c69e56c5c8f507fb78d33cfa44d2bb996f56e97116fd593",
+  "compile_command": "cc -std=c11 -O3 -Wall -Wextra -Werror reverse_physics/bt_euclidean_complete_g4_seven_kernel_preflight.c -lm -o /tmp/bt-g4-seven-kernel",
+  "formula_scope": "the fourteen unfactorized s=0 atlas entries after exact pairing under global momentum inversion; the factorized conditioning bubble square and lower-loop sectors are excluded",
+  "rows": [
+    {
+      "length": 5,
+      "volume": 625,
+      "omega_p": 1.381966011250105,
+      "kernels": [
+        16.57539222785454,
+        14.096044282743353,
+        -16.46649541937635,
+        -33.599737364274546,
+        -10.90364438948069,
+        8.89766206396193,
+        4.87475755471529
+      ],
+      "sum": -16.526021043856474,
+      "sum_over_N_omega_p": -0.019133345867349997
+    },
+    {
+      "length": 6,
+      "volume": 1296,
+      "omega_p": 0.9999999999999998,
+      "kernels": [
+        20.819148103494328,
+        17.000179064438893,
+        -19.59767867263301,
+        -44.9985588717299,
+        -13.922784896378458,
+        10.674767527578732,
+        6.906041598535444
+      ],
+      "sum": -23.118886146693967,
+      "sum_over_N_omega_p": -0.017838646718128067
+    },
+    {
+      "length": 7,
+      "volume": 2401,
+      "omega_p": 0.7530203962825329,
+      "kernels": [
+        24.493002513638164,
+        19.231968006642493,
+        -22.124203363315527,
+        -56.92724185812802,
+        -16.535385924205602,
+        12.087722018792242,
+        9.295788208067586
+      ],
+      "sum": -30.478350398508663,
+      "sum_over_N_omega_p": -0.016857476307757923
+    },
+    {
+      "length": 8,
+      "volume": 4096,
+      "omega_p": 0.585786437626905,
+      "kernels": [
+        27.711601446986624,
+        20.982416857904223,
+        -24.220354923889776,
+        -69.56018750757123,
+        -18.8085014029746,
+        13.237001026780396,
+        12.046876183499043
+      ],
+      "sum": -38.61114831926532,
+      "sum_over_N_omega_p": -0.016092127227836275
+    }
+  ],
+  "observed_pattern": "At L=5,6,7,8 the seven-kernel sum is negative and its ratio to N*omega(p) is -0.01913, -0.01784, -0.01686, -0.01609. This locates a plausible nonzero power carrier but is not an asymptotic sign or scaling proof.",
+  "does_not_establish": [
+    "the sign at any uncomputed volume",
+    "an asymptotic coefficient or bound",
+    "the sign or scaling of the complete M4 coefficient after the factorized and lower-loop sectors are restored",
+    "boundedness or divergence of the nonperturbative Gibbs score or interacting H^-1 moment",
+    "continuum, Born, Krein, or Lorentzian physics"
+  ],
+  "status": "SUPPORTING_ONLY_ANALYTIC_POWER_CARRIER_TARGET"
+}

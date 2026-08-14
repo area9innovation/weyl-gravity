@@ -1,0 +1,226 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-complete-g4-seven-kernel-reduction-v1.schema.json",
+  "title": "Exact BT complete-g4 seven-kernel reduction",
+  "type": "object",
+  "required": [
+    "certificate",
+    "schema_version",
+    "created",
+    "dependency_tags",
+    "lifecycle_state",
+    "result_kind",
+    "question",
+    "answer",
+    "data",
+    "data_sha256",
+    "producer",
+    "producer_sha256",
+    "inversion_reduction",
+    "paired_quartic_theorem",
+    "green_sum",
+    "negative_nested_carrier",
+    "supporting_preflight",
+    "method_disposition",
+    "checks",
+    "does_not_establish",
+    "missing_object_ledger",
+    "next_gate",
+    "provenance",
+    "schema",
+    "report",
+    "independent_verifier",
+    "verification_commands"
+  ],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_EUCLIDEAN_COMPLETE_G4_SEVEN_KERNEL_REDUCTION_V1"},
+    "schema_version": {"const": "reverse-physics-bt-euclidean-complete-g4-seven-kernel-reduction-v1"},
+    "created": {"const": "2026-08-15"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "lifecycle_state": {"const": "SEVEN_KERNEL_REDUCTION_AND_ISOLATED_POWER_CARRIER_PROVED_COMBINED_BOUND_OPEN"},
+    "result_kind": {"type": "string", "minLength": 1},
+    "question": {"type": "string", "minLength": 1},
+    "answer": {"type": "string", "minLength": 1},
+    "data": {"const": "reverse_physics/data/bt_euclidean_complete_g4_seven_kernel_reduction_v1.json"},
+    "data_sha256": {"$ref": "#/$defs/sha256"},
+    "producer": {"const": "reverse_physics/bt_euclidean_complete_g4_seven_kernel_reduction.py"},
+    "producer_sha256": {"$ref": "#/$defs/sha256"},
+    "inversion_reduction": {
+      "type": "object",
+      "required": ["involution", "pairs", "status"],
+      "properties": {
+        "involution": {"type": "string"},
+        "pairs": {
+          "type": "array",
+          "minItems": 7,
+          "maxItems": 7,
+          "items": {"$ref": "#/$defs/pair"}
+        },
+        "status": {"const": "FOURTEEN_UNFACTORIZED_ROWS_REDUCED_EXACTLY_TO_SEVEN"}
+      },
+      "additionalProperties": false
+    },
+    "paired_quartic_theorem": {
+      "type": "object",
+      "required": ["definitions", "lattice_identity", "kernel_identity", "auxiliary_bounds", "two_sided_bound", "status"],
+      "properties": {
+        "definitions": {"type": "string"},
+        "lattice_identity": {"const": "u+t=2*w+2*v-C, hence x+y=C"},
+        "kernel_identity": {"const": "24*K4(k,-k,r,-r)=x^2+y^2+2*(w+v)*C+4*w*v"},
+        "auxiliary_bounds": {"type": "string"},
+        "two_sided_bound": {"const": "w*v/6 <= K4(k,-k,r,-r) <= (19/6)*w*v"},
+        "status": {"const": "EXACT_NONNEGATIVITY_AND_TWO_SIDED_PRODUCT_BOUND_PROVED"}
+      },
+      "additionalProperties": false
+    },
+    "green_sum": {
+      "type": "object",
+      "required": ["definition", "lower_bound", "upper_bound", "tadpole_definition", "tadpole_bound", "status"],
+      "properties": {
+        "definition": {"type": "string"},
+        "lower_bound": {"const": "(N-1)/16 <= G1(L)"},
+        "upper_bound": {"type": "string"},
+        "tadpole_definition": {"type": "string"},
+        "tadpole_bound": {"type": "string"},
+        "status": {"const": "EXACT_ALL_VOLUME_BOUNDS_PROVED"}
+      },
+      "additionalProperties": false
+    },
+    "negative_nested_carrier": {
+      "type": "object",
+      "required": ["atlas_rows_one_based", "definition", "sign", "transverse_fixture", "exact_bound", "explicit_growth_bound", "consequence", "status"],
+      "properties": {
+        "atlas_rows_one_based": {"const": [7, 10]},
+        "definition": {"type": "string"},
+        "sign": {"const": "T_L<0"},
+        "transverse_fixture": {"type": "string"},
+        "exact_bound": {"const": "T_L <= -4*G1(L)/(N*omega(p)) <= -(N-1)/(4*N*omega(p))"},
+        "explicit_growth_bound": {"const": "T_L <= -(624/625)*L^2/(16*pi^2) for every L>=5"},
+        "consequence": {"type": "string"},
+        "status": {"const": "ISOLATED_NEGATIVE_POWER_CARRIER_PROVED_TERM_BY_TERM_UNIFORMITY_OBSTRUCTED"}
+      },
+      "additionalProperties": false
+    },
+    "supporting_preflight": {
+      "type": "object",
+      "required": ["rows", "interpretation", "status"],
+      "properties": {
+        "rows": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {"$ref": "#/$defs/preflight_row"}
+        },
+        "interpretation": {"type": "string"},
+        "status": {"const": "SUPPORTING_ONLY_ANALYTIC_POWER_CARRIER_TARGET"}
+      },
+      "additionalProperties": false
+    },
+    "method_disposition": {
+      "type": "object",
+      "required": ["fourteen_to_seven_inversion_reduction", "paired_quartic_nonnegativity", "paired_quartic_uniform_product_bound", "negative_nested_one_soft_carrier", "termwise_tuned_order_g_four_uniformity", "combined_seven_kernel_large_volume_sign_and_scaling", "complete_M4_large_volume_sign_and_scaling", "nonperturbative_annealed_score", "actual_interacting_h_minus_one_second_moment", "continuum_limit", "born_rule", "krein_reconstruction", "lorentzian_transfer"],
+      "properties": {
+        "fourteen_to_seven_inversion_reduction": {"const": "PROVED"},
+        "paired_quartic_nonnegativity": {"const": "PROVED"},
+        "paired_quartic_uniform_product_bound": {"const": "PROVED"},
+        "negative_nested_one_soft_carrier": {"const": "NEGATIVE_ORDER_L_SQUARED_MAGNITUDE"},
+        "termwise_tuned_order_g_four_uniformity": {"const": "OBSTRUCTED"},
+        "combined_seven_kernel_large_volume_sign_and_scaling": {"const": "OPEN"},
+        "complete_M4_large_volume_sign_and_scaling": {"const": "OPEN"},
+        "nonperturbative_annealed_score": {"const": "OPEN"},
+        "actual_interacting_h_minus_one_second_moment": {"const": "OPEN"},
+        "continuum_limit": {"const": "NOT_ESTABLISHED"},
+        "born_rule": {"const": "NOT_ESTABLISHED"},
+        "krein_reconstruction": {"const": "NOT_ASSESSED"},
+        "lorentzian_transfer": {"const": "NOT_ESTABLISHED"}
+      },
+      "additionalProperties": false
+    },
+    "checks": {"type": "object", "minProperties": 8, "additionalProperties": {"const": true}},
+    "does_not_establish": {"type": "array", "minItems": 5, "items": {"type": "string"}},
+    "missing_object_ledger": {"type": "array", "minItems": 5, "items": {"type": "string"}},
+    "next_gate": {"type": "string", "minLength": 1},
+    "provenance": {
+      "type": "object",
+      "required": ["repository_base_commit", "inputs", "exact_arithmetic", "assumptions"],
+      "properties": {
+        "repository_base_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "inputs": {"type": "array", "minItems": 8, "items": {"$ref": "#/$defs/input"}},
+        "exact_arithmetic": {"type": "string"},
+        "assumptions": {"type": "array", "minItems": 3, "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    },
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-euclidean-complete-g4-seven-kernel-reduction-v1.schema.json"},
+    "report": {"const": "reverse_physics/reports/bt-euclidean-complete-g4-seven-kernel-reduction.md"},
+    "independent_verifier": {"const": "reverse_physics/verify_bt_euclidean_complete_g4_seven_kernel_reduction.py"},
+    "verification_commands": {"type": "array", "minItems": 5, "items": {"type": "string"}}
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "rational": {
+      "type": "object",
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      },
+      "additionalProperties": false
+    },
+    "form": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "integer"}},
+    "kernel": {
+      "type": "object",
+      "required": ["degree", "arguments"],
+      "properties": {
+        "degree": {"enum": [3, 4, 5]},
+        "arguments": {"type": "array", "minItems": 3, "maxItems": 5, "items": {"$ref": "#/$defs/form"}}
+      },
+      "additionalProperties": false
+    },
+    "representative": {
+      "type": "object",
+      "required": ["kernels", "propagators"],
+      "properties": {
+        "kernels": {"type": "array", "minItems": 2, "maxItems": 4, "items": {"$ref": "#/$defs/kernel"}},
+        "propagators": {"type": "array", "minItems": 3, "maxItems": 5, "items": {"$ref": "#/$defs/form"}}
+      },
+      "additionalProperties": false
+    },
+    "pair": {
+      "type": "object",
+      "required": ["pair", "atlas_row_indices_one_based", "origin", "single_coefficient", "paired_coefficient", "representative"],
+      "properties": {
+        "pair": {"type": "integer", "minimum": 1, "maximum": 7},
+        "atlas_row_indices_one_based": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "integer", "minimum": 1, "maximum": 14}},
+        "origin": {"type": "string"},
+        "single_coefficient": {"$ref": "#/$defs/rational"},
+        "paired_coefficient": {"$ref": "#/$defs/rational"},
+        "representative": {"$ref": "#/$defs/representative"}
+      },
+      "additionalProperties": false
+    },
+    "preflight_row": {
+      "type": "object",
+      "required": ["length", "volume", "omega_p", "kernels", "sum", "sum_over_N_omega_p"],
+      "properties": {
+        "length": {"enum": [5, 6, 7, 8]},
+        "volume": {"type": "integer", "minimum": 625},
+        "omega_p": {"type": "number", "exclusiveMinimum": 0},
+        "kernels": {"type": "array", "minItems": 7, "maxItems": 7, "items": {"type": "number"}},
+        "sum": {"type": "number"},
+        "sum_over_N_omega_p": {"type": "number"}
+      },
+      "additionalProperties": false
+    },
+    "input": {
+      "type": "object",
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {"type": "string"},
+        "sha256": {"$ref": "#/$defs/sha256"}
+      },
+      "additionalProperties": false
+    }
+  }
+}

@@ -1,0 +1,964 @@
+{
+  "answer": "Yes. Global momentum inversion pairs the fourteen entries into seven exact sums. The paired quartic vertex obeys an exact positive identity and w*v/6<=K4(k,-k,r,-r)<=19*w*v/6. Consequently its momentum-dependent tadpole Y_L(k) is positive and comparable to omega(k)*G1(L). The inversion pair from Cov(U31^2,-U40) factorizes as a strictly negative nested carrier T_L. Restricting q to one transverse lowest mode gives T_L<=-(N-1)/(4*N*omega(p))<=-(624/625)*L^2/(16*pi^2). Thus g_L^4*abs(T_L) diverges on the tuned asymptotically free branch, obstructing every termwise order-g^4 uniform estimate. The other six kernels can still cancel this carrier. Their combined power coefficient, the restored factorized and lower-loop sectors, full M4, the nonperturbative score, and the actual interacting H^-1 moment remain open.",
+  "certificate": "REVERSE_PHYSICS_BT_EUCLIDEAN_COMPLETE_G4_SEVEN_KERNEL_REDUCTION_V1",
+  "checks": {
+    "actual_interacting_H_minus_one_remains_open": true,
+    "combined_seven_kernel_scaling_remains_open": true,
+    "complete_M4_scaling_remains_open": true,
+    "fourteen_unfactorized_rows_are_seven_inversion_pairs": true,
+    "negative_carrier_has_explicit_quadratic_growth": true,
+    "no_continuum_born_krein_or_lorentzian_promotion": true,
+    "paired_quartic_is_nonnegative_with_two_sided_bound": true,
+    "reduction_checks_all_pass": true
+  },
+  "created": "2026-08-15",
+  "data": "reverse_physics/data/bt_euclidean_complete_g4_seven_kernel_reduction_v1.json",
+  "data_sha256": "cf72dffd8fdb7a3584c9c3b259584d2e7613b7599b6af5f5d6a1d8ba2348818c",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "does_not_establish": [
+    "the sign or scaling of the sum of all seven kernels",
+    "the sign or scaling of complete M4 after the factorized conditioning and lower-loop sectors are restored",
+    "divergence of the perturbative series, resummed score, actual Gibbs moment, or interacting H^-1 moment",
+    "tightness or continuum identification",
+    "a Born rule, Krein reconstruction, or any LORENTZIAN-CAUSAL statement"
+  ],
+  "green_sum": {
+    "definition": "G1(L)=sum_(r!=0) 1/omega(r)",
+    "lower_bound": "(N-1)/16 <= G1(L)",
+    "status": "EXACT_ALL_VOLUME_BOUNDS_PROVED",
+    "tadpole_bound": "omega(k)*G1(L)/6 <= Y_L(k) <= 19*omega(k)*G1(L)/6 <= (19/3)*N*omega(k)",
+    "tadpole_definition": "Y_L(k)=sum_(r!=0) K4(k,-k,r,-r)/omega(r)^2",
+    "upper_bound": "G1(L)<=L^2*[2*R*(R+1)+H_R]<=2*N, R=floor(L/2)"
+  },
+  "independent_verifier": "reverse_physics/verify_bt_euclidean_complete_g4_seven_kernel_reduction.py",
+  "inversion_reduction": {
+    "involution": "replace p by -p and then change loop variables q->-q, r->-r; omega is even and every K_d is invariant when all of its arguments are negated",
+    "pairs": [
+      {
+        "atlas_row_indices_one_based": [
+          1,
+          4
+        ],
+        "origin": "Cov(U31^2,U30^2)",
+        "pair": 1,
+        "paired_coefficient": {
+          "denominator": 1,
+          "numerator": 324
+        },
+        "representative": {
+          "kernels": [
+            {
+              "arguments": [
+                [
+                  -1,
+                  -1,
+                  -1
+                ],
+                [
+                  0,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ]
+              ],
+              "degree": 3
+            },
+            {
+              "arguments": [
+                [
+                  -1,
+                  -1,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  -1
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "degree": 3
+            },
+            {
+              "arguments": [
+                [
+                  -1,
+                  -1,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  0,
+                  0
+                ]
+              ],
+              "degree": 3
+            },
+            {
+              "arguments": [
+                [
+                  -1,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  -1,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ]
+              ],
+              "degree": 3
+            }
+          ],
+          "propagators": [
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              1,
+              1,
+              0
+            ],
+            [
+              1,
+              1,
+              0
+            ],
+            [
+              1,
+              1,
+              1
+            ]
+          ]
+        },
+        "single_coefficient": {
+          "denominator": 1,
+          "numerator": 162
+        }
+      },
+      {
+        "atlas_row_indices_one_based": [
+          2,
+          5
+        ],
+        "origin": "Cov(U31^2,U30^2)",
+        "pair": 2,
+        "paired_coefficient": {
+          "denominator": 1,
+          "numerator": 324
+        },
+        "representative": {
+          "kernels": [
+            {
+              "arguments": [
+                [
+                  -1,
+                  -1,
+                  -1
+                ],
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ]
+              ],
+              "degree": 3
+            },
+            {
+              "arguments": [
+                [
+                  -1,
+                  -1,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  -1
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "degree": 3
+            },
+            {
+              "arguments": [
+                [
+                  -1,
+                  0,
+                  -1
+                ],
+                [
+                  0,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  0
+                ]
+              ],
+              "degree": 3
+            },
+            {
+              "arguments": [
+                [
+                  -1,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  -1,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ]
+              ],
+              "degree": 3
+            }
+          ],
+          "propagators": [
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              1,
+              0,
+              1
+            ],
+            [
+              1,
+              1,
+              0
+            ],
+            [
+              1,
+              1,
+              1
+            ]
+          ]
+        },
+        "single_coefficient": {
+          "denominator": 1,
+          "numerator": 162
+        }
+      },
+      {
+        "atlas_row_indices_one_based": [
+          3,
+          6
+        ],
+        "origin": "-2*U31*U41*U30",
+        "pair": 3,
+        "paired_coefficient": {
+          "denominator": 1,
+          "numerator": -432
+        },
+        "representative": {
+          "kernels": [
+            {
+              "arguments": [
+                [
+                  -1,
+                  -1,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  -1
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "degree": 3
+            },
+            {
+              "arguments": [
+                [
+                  -1,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  -1,
+                  0
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ]
+              ],
+              "degree": 3
+            },
+            {
+              "arguments": [
+                [
+                  -1,
+                  -1,
+                  -1
+                ],
+                [
+                  0,
+                  0,
+                  1
+                ],
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  0,
+                  0
+                ]
+              ],
+              "degree": 4
+            }
+          ],
+          "propagators": [
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              1,
+              1,
+              0
+            ],
+            [
+              1,
+              1,
+              1
+            ]
+          ]
+        },
+        "single_coefficient": {
+          "denominator": 1,
+          "numerator": -216
+        }
+      },
+      {
+        "atlas_row_indices_one_based": [
+          7,
+          10
+        ],
+        "origin": "Cov(U31^2,-U40)",
+        "pair": 4,
+        "paired_coefficient": {
+          "denominator": 1,
+          "numerator": -216
+        },
+        "representative": {
+          "kernels": [
+            {
+              "arguments": [
+                [
+                  -1,
+                  0,
+                  -1
+                ],
+                [
+                  0,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  0
+                ]
+              ],
+              "degree": 3
+            },
+            {
+              "arguments": [
+                [
+                  -1,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  -1
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ]
+              ],
+              "degree": 3
+            },
+            {
+              "arguments": [
+                [
+                  -1,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  -1,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  0,
+                  0
+                ]
+              ],
+              "degree": 4
+            }
+          ],
+          "propagators": [
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              1,
+              0,
+              1
+            ]
+          ]
+        },
+        "single_coefficient": {
+          "denominator": 1,
+          "numerator": -108
+        }
+      },
+      {
+        "atlas_row_indices_one_based": [
+          8,
+          11
+        ],
+        "origin": "Cov(U31^2,-U40)",
+        "pair": 5,
+        "paired_coefficient": {
+          "denominator": 1,
+          "numerator": -108
+        },
+        "representative": {
+          "kernels": [
+            {
+              "arguments": [
+                [
+                  -1,
+                  0,
+                  -1
+                ],
+                [
+                  0,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  0
+                ]
+              ],
+              "degree": 3
+            },
+            {
+              "arguments": [
+                [
+                  0,
+                  -1,
+                  1
+                ],
+                [
+                  0,
+                  0,
+                  -1
+                ],
+                [
+                  0,
+                  1,
+                  0
+                ]
+              ],
+              "degree": 3
+            },
+            {
+              "arguments": [
+                [
+                  -1,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  -1,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  -1
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ]
+              ],
+              "degree": 4
+            }
+          ],
+          "propagators": [
+            [
+              0,
+              1,
+              -1
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              1,
+              0,
+              1
+            ]
+          ]
+        },
+        "single_coefficient": {
+          "denominator": 1,
+          "numerator": -54
+        }
+      },
+      {
+        "atlas_row_indices_one_based": [
+          9,
+          12
+        ],
+        "origin": "2*U31*U51",
+        "pair": 6,
+        "paired_coefficient": {
+          "denominator": 1,
+          "numerator": 180
+        },
+        "representative": {
+          "kernels": [
+            {
+              "arguments": [
+                [
+                  -1,
+                  0,
+                  -1
+                ],
+                [
+                  0,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  0
+                ]
+              ],
+              "degree": 3
+            },
+            {
+              "arguments": [
+                [
+                  -1,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  -1,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  -1
+                ],
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ]
+              ],
+              "degree": 5
+            }
+          ],
+          "propagators": [
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              1,
+              0,
+              1
+            ]
+          ]
+        },
+        "single_coefficient": {
+          "denominator": 1,
+          "numerator": 90
+        }
+      },
+      {
+        "atlas_row_indices_one_based": [
+          13,
+          14
+        ],
+        "origin": "U41^2",
+        "pair": 7,
+        "paired_coefficient": {
+          "denominator": 1,
+          "numerator": 48
+        },
+        "representative": {
+          "kernels": [
+            {
+              "arguments": [
+                [
+                  -1,
+                  -1,
+                  -1
+                ],
+                [
+                  0,
+                  0,
+                  1
+                ],
+                [
+                  0,
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  0,
+                  0
+                ]
+              ],
+              "degree": 4
+            },
+            {
+              "arguments": [
+                [
+                  -1,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  -1,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  -1
+                ],
+                [
+                  1,
+                  1,
+                  1
+                ]
+              ],
+              "degree": 4
+            }
+          ],
+          "propagators": [
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              1,
+              1,
+              1
+            ]
+          ]
+        },
+        "single_coefficient": {
+          "denominator": 1,
+          "numerator": 24
+        }
+      }
+    ],
+    "status": "FOURTEEN_UNFACTORIZED_ROWS_REDUCED_EXACTLY_TO_SEVEN"
+  },
+  "lifecycle_state": "SEVEN_KERNEL_REDUCTION_AND_ISOLATED_POWER_CARRIER_PROVED_COMBINED_BOUND_OPEN",
+  "method_disposition": {
+    "actual_interacting_h_minus_one_second_moment": "OPEN",
+    "born_rule": "NOT_ESTABLISHED",
+    "combined_seven_kernel_large_volume_sign_and_scaling": "OPEN",
+    "complete_M4_large_volume_sign_and_scaling": "OPEN",
+    "continuum_limit": "NOT_ESTABLISHED",
+    "fourteen_to_seven_inversion_reduction": "PROVED",
+    "krein_reconstruction": "NOT_ASSESSED",
+    "lorentzian_transfer": "NOT_ESTABLISHED",
+    "negative_nested_one_soft_carrier": "NEGATIVE_ORDER_L_SQUARED_MAGNITUDE",
+    "nonperturbative_annealed_score": "OPEN",
+    "paired_quartic_nonnegativity": "PROVED",
+    "paired_quartic_uniform_product_bound": "PROVED",
+    "termwise_tuned_order_g_four_uniformity": "OBSTRUCTED"
+  },
+  "missing_object_ledger": [
+    "the common N*omega(p) coefficient of all seven inversion-paired kernels",
+    "a hard/one-soft/all-soft remainder bound after that coefficient is extracted",
+    "the factorized and lower-loop recombination needed to decide complete M4",
+    "a whole-composite nonperturbative annealed score estimate",
+    "dyadic Fourier-shell control of the actual interacting H^-1 moment"
+  ],
+  "negative_nested_carrier": {
+    "atlas_rows_one_based": [
+      7,
+      10
+    ],
+    "consequence": "This single signed carrier has magnitude at least c*L^2. On the certified tuned branch g_L^2*log(L)->8*pi^2/5, g_L^4*abs(T_L) diverges. Therefore a termwise order-g^4 uniform estimate is obstructed; only cancellation within the complete seven-kernel plus lower-loop expression can still restore uniformity.",
+    "definition": "T_L=-(216/N)*sum_(q!=0,-p) K3(p,q,-p-q)^2*Y_L(q)/[omega(q)^4*omega(p+q)^2]",
+    "exact_bound": "T_L <= -4*G1(L)/(N*omega(p)) <= -(N-1)/(4*N*omega(p))",
+    "explicit_growth_bound": "T_L <= -(624/625)*L^2/(16*pi^2) for every L>=5",
+    "sign": "T_L<0",
+    "status": "ISOLATED_NEGATIVE_POWER_CARRIER_PROVED_TERM_BY_TERM_UNIFORMITY_OBSTRUCTED",
+    "transverse_fixture": "q=e_2 has omega(q)=omega(p)=w, omega(p+q)=2*w, and K3(p,q,-p-q)=-(2/3)*w^2"
+  },
+  "next_gate": "Keep the seven inversion pairs together. Extract the N*omega(p) coefficient by a common hard/one-soft/all-soft partition. The q=O(p) nested carrier must be combined with the quartic-square sunset and the other five pairs before any absolute value. Then restore the factorized and lower-loop sectors before deciding M4.",
+  "paired_quartic_theorem": {
+    "auxiliary_bounds": "0<=C<=w*v, w+v<=32, and |x|,|y|<=2*sqrt(w*v)",
+    "definitions": "w=omega(k), v=omega(r), u=omega(k+r), t=omega(k-r), x=w+v-u=B(k,r), y=w+v-t=B(k,-r), C=sum_j omega_j(k)*omega_j(r)",
+    "kernel_identity": "24*K4(k,-k,r,-r)=x^2+y^2+2*(w+v)*C+4*w*v",
+    "lattice_identity": "u+t=2*w+2*v-C, hence x+y=C",
+    "status": "EXACT_NONNEGATIVITY_AND_TWO_SIDED_PRODUCT_BOUND_PROVED",
+    "two_sided_bound": "w*v/6 <= K4(k,-k,r,-r) <= (19/6)*w*v"
+  },
+  "producer": "reverse_physics/bt_euclidean_complete_g4_seven_kernel_reduction.py",
+  "producer_sha256": "f7d4ae7cfb51474ff2b8091b3dfc6c4706347f0b3c47c03c2cfef9defadc7e21",
+  "provenance": {
+    "assumptions": [
+      "L is an integer at least five and p is the lowest axial lattice momentum",
+      "the tuned-branch consequence imports only the previously certified g_L^2*log(L) limit",
+      "an isolated perturbative carrier is not identified with the summed perturbative coefficient or actual Gibbs observable"
+    ],
+    "exact_arithmetic": "integer affine momentum forms, Fraction coefficients, exact dispersion identities, and rational inequality constants; binary64 values are a separately tagged supporting preflight",
+    "inputs": [
+      {
+        "path": "planning/work-items/reverse-physics-bateman-euclidean-continuum-reconstruction.json",
+        "sha256": "6e7146c21f056740edf9fe6feaaa8a14aaab945fe11f1b6a23110ecd5b85bf5a"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_COMPLETE_G4_GENERAL_L_TWO_LOOP_V1.json",
+        "sha256": "8b8dfccb7295b5201995c8010f061e203ca2c9d42f82fa1d183be957abb62f24"
+      },
+      {
+        "path": "reverse_physics/data/bt_euclidean_complete_g4_general_l_two_loop_v1.json",
+        "sha256": "a5cad3a417321e6b928a2c0d6839bc31660861f9fca13680e56b625e0b400b55"
+      },
+      {
+        "path": "reverse_physics/bt_euclidean_complete_g4_seven_kernel_reduction.py",
+        "sha256": "f7d4ae7cfb51474ff2b8091b3dfc6c4706347f0b3c47c03c2cfef9defadc7e21"
+      },
+      {
+        "path": "reverse_physics/data/bt_euclidean_complete_g4_seven_kernel_reduction_v1.json",
+        "sha256": "cf72dffd8fdb7a3584c9c3b259584d2e7613b7599b6af5f5d6a1d8ba2348818c"
+      },
+      {
+        "path": "reverse_physics/bt_euclidean_complete_g4_seven_kernel_preflight.c",
+        "sha256": "d299c22b0ab6dcca8c69e56c5c8f507fb78d33cfa44d2bb996f56e97116fd593"
+      },
+      {
+        "path": "reverse_physics/bt_euclidean_complete_g4_seven_kernel_preflight.py",
+        "sha256": "39927cd544ab39bca6df1486b8779899ec5561542e175e729a1cab80f833148f"
+      },
+      {
+        "path": "reverse_physics/data/bt_euclidean_complete_g4_seven_kernel_preflight_v1.json",
+        "sha256": "9b84cedb8f7c9c31fb75dfc27854ac7e49624b2ff8dbde97b6a87f16e3725780"
+      }
+    ],
+    "repository_base_commit": "c1ce96974bf36e4566e706fd448bc213baf5150d"
+  },
+  "question": "Can the fourteen remaining generic-volume two-loop kernels be reduced further, and can any signed one-soft carrier be proved large enough to obstruct a termwise tuned-branch estimate?",
+  "report": "reverse_physics/reports/bt-euclidean-complete-g4-seven-kernel-reduction.md",
+  "result_kind": "exact seven-kernel inversion reduction, paired-quartic positivity theorem, and isolated one-soft power-carrier obstruction",
+  "schema": "reverse_physics/schema/reverse-physics-bt-euclidean-complete-g4-seven-kernel-reduction-v1.schema.json",
+  "schema_version": "reverse-physics-bt-euclidean-complete-g4-seven-kernel-reduction-v1",
+  "supporting_preflight": {
+    "interpretation": "At L=5,6,7,8 the seven-kernel sum is negative and its ratio to N*omega(p) is -0.01913, -0.01784, -0.01686, -0.01609. This locates a plausible nonzero power carrier but is not an asymptotic sign or scaling proof.",
+    "rows": [
+      {
+        "kernels": [
+          16.57539222785454,
+          14.096044282743353,
+          -16.46649541937635,
+          -33.599737364274546,
+          -10.90364438948069,
+          8.89766206396193,
+          4.87475755471529
+        ],
+        "length": 5,
+        "omega_p": 1.381966011250105,
+        "sum": -16.526021043856474,
+        "sum_over_N_omega_p": -0.019133345867349997,
+        "volume": 625
+      },
+      {
+        "kernels": [
+          20.819148103494328,
+          17.000179064438893,
+          -19.59767867263301,
+          -44.9985588717299,
+          -13.922784896378458,
+          10.674767527578732,
+          6.906041598535444
+        ],
+        "length": 6,
+        "omega_p": 0.9999999999999998,
+        "sum": -23.118886146693967,
+        "sum_over_N_omega_p": -0.017838646718128067,
+        "volume": 1296
+      },
+      {
+        "kernels": [
+          24.493002513638164,
+          19.231968006642493,
+          -22.124203363315527,
+          -56.92724185812802,
+          -16.535385924205602,
+          12.087722018792242,
+          9.295788208067586
+        ],
+        "length": 7,
+        "omega_p": 0.7530203962825329,
+        "sum": -30.478350398508663,
+        "sum_over_N_omega_p": -0.016857476307757923,
+        "volume": 2401
+      },
+      {
+        "kernels": [
+          27.711601446986624,
+          20.982416857904223,
+          -24.220354923889776,
+          -69.56018750757123,
+          -18.8085014029746,
+          13.237001026780396,
+          12.046876183499043
+        ],
+        "length": 8,
+        "omega_p": 0.585786437626905,
+        "sum": -38.61114831926532,
+        "sum_over_N_omega_p": -0.016092127227836275,
+        "volume": 4096
+      }
+    ],
+    "status": "SUPPORTING_ONLY_ANALYTIC_POWER_CARRIER_TARGET"
+  },
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_euclidean_complete_g4_seven_kernel_reduction.py --check",
+    "ulimit -v 500000; python3 reverse_physics/bt_euclidean_complete_g4_seven_kernel_decision.py --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_euclidean_complete_g4_seven_kernel_reduction.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_euclidean_complete_g4_seven_kernel_reduction",
+    "ulimit -v 500000; python3 reverse_physics/bt_euclidean_complete_g4_seven_kernel_preflight.py --smoke"
+  ]
+}

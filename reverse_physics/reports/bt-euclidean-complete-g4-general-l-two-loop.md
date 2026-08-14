@@ -51,8 +51,11 @@ surviving conditioning-scale contribution is the positive bubble square
  \boxed{R_L=\frac{162X_L^2}{N\omega_p^2}.}
 \]
 
-Fourteen two-loop integrands remain outside this factorized sector.  Their
-combined hard, one-soft, and all-soft estimate is the active fixed-order gate.
+Fourteen two-loop integrands remain outside this factorized sector.  The
+successor seven-kernel certificate pairs them exactly under global momentum
+inversion, proves a positive two-sided bound for the paired quartic vertex,
+and isolates one negative \(L^2\) carrier.  Their combined hard, one-soft, and
+all-soft power coefficient is the active fixed-order gate.
 
 ## Why the formula is valid for every L at least five
 
@@ -169,10 +172,14 @@ only the factorized conditioning sector.  It is not a bound for the remaining
 
 The earlier barrier was the apparent cancellation of two individually huge
 bulk and rank-one sums.  That cancellation is now performed exactly wherever
-it factorizes through \(X_L,Y_L\).  The remaining problem is narrower: estimate
-the 14 explicitly listed affine kernels jointly, retaining any cancellation
-within common hard, one-soft, and all-soft regions.  Lower-loop terms must then
-be recombined before deciding the large-volume sign or scaling of \(M_4\).
+it factorizes through \(X_L,Y_L\).  The remaining problem is narrower.
+Certificate
+`REVERSE_PHYSICS_BT_EUCLIDEAN_COMPLETE_G4_SEVEN_KERNEL_REDUCTION_V1`
+reduces the 14 entries to seven inversion pairs and proves that one negative
+nested carrier alone has magnitude at least \(cL^2\).  Estimate the seven
+kernels jointly, retaining their cancellation within common hard, one-soft,
+and all-soft regions.  Lower-loop terms must then be recombined before
+deciding the large-volume sign or scaling of \(M_4\).
 
 No whole-\(M_4\) asymptotic theorem, nonperturbative annealed score estimate,
 actual interacting \(H^{-1}\) moment, tightness, continuum identification,

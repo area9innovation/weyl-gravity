@@ -1685,9 +1685,30 @@ and rank-one covariance terms.  The conditioning-scale remainder is
 
 Consequently \(g_L^4R_L\) is bounded on the already certified tuned
 asymptotically free refinement branch.  This closes only the factorized
-conditioning sector.  Fourteen unfactorized two-loop kernels, the lower-loop
-recombination, the large-volume sign and scaling, the nonperturbative score,
-and the interacting \(H^{-1}\) moment remain open.
+conditioning sector.  Certificate
+\cert{REVERSE_PHYSICS_BT_EUCLIDEAN_COMPLETE_G4_SEVEN_KERNEL_REDUCTION_V1}
+pairs the remaining fourteen entries into seven exact inversion pairs.  It
+also proves
+
+\[
+ \frac{\omega_k\omega_r}{6}
+ \leq K_4(k,-k,r,-r)
+ \leq\frac{19}{6}\omega_k\omega_r
+\]
+
+and factorizes one pair as a strictly negative nested tadpole carrier \(T_L\)
+with
+
+\[
+ T_L\leq-\frac{N-1}{4N\omega_p}
+ \leq-\frac{624}{625}\frac{L^2}{16\pi^2},\qquad L\geq5.
+\]
+
+Thus the tuned running coupling cannot control the order-\(g^4\) terms
+separately.  Cancellation of the common \(N\omega_p\) coefficient across all
+seven kernels, the lower-loop recombination, the large-volume sign and
+scaling, the nonperturbative score, and the interacting \(H^{-1}\) moment
+remain open.
 
 \subsection{A finite BV contraction does not freeze the quantum theory}
 
@@ -2118,8 +2139,13 @@ common integrands.  Five cancel before absolute values, including every
 power-sized quartic-tadpole square and cubic-bubble--quartic-tadpole cross.
 The remaining conditioning factor is the positive
 \(162X_L^2/(N\omega_p^2)=O((1+\log L)^2)\), which is controlled by \(g_L^4\)
-on the tuned refinement branch.  Fourteen unfactorized two-loop kernels, the
-lower-loop recombination, and the interacting \(H^{-1}\) estimate remain open.
+on the tuned refinement branch.  The fourteen other entries reduce to seven
+inversion pairs.  The paired quartic vertex is nonnegative and comparable to
+the product of its two dispersions, and one negative nested pair has magnitude
+at least \(cL^2\).  Hence termwise tuned-\(g_L^4\) bounds are obstructed: the
+common \(N\omega_p\) coefficient of all seven pairs must be computed before
+absolute values.  The lower-loop recombination and interacting \(H^{-1}\)
+estimate remain open.
 The logarithmic coefficient is not evidence that the resummed interacting
 moment diverges.  Only after the normalized marginal closes should the
 programme sum Fourier shells.  Another fixed-origin, pointwise,
