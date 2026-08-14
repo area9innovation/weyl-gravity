@@ -68,6 +68,16 @@
     "metadata_only_literature": 12,
     "migration_pending_cells": 0,
     "model_scoped_assemblies": 2,
+    "ngc3198_common_fit_complete_theory_selected": false,
+    "ngc3198_common_fit_models": 3,
+    "ngc3198_common_fit_random_error_passes": [
+      "GR_NFW_DARK_HALO"
+    ],
+    "ngc3198_common_fit_ranking_AICc": [
+      "GR_NFW_DARK_HALO",
+      "MANNHEIM_CONFORMAL_GRAVITY",
+      "NEWTONIAN_BARYONS_ONLY"
+    ],
     "prototype_assemblies": 9,
     "research_programme_lenses": 9,
     "reviewed_open_gaps": 172,
@@ -197,7 +207,7 @@
       "lifecycle": "VERIFIED_NAVIGATION_ARTIFACT",
       "path": "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json",
       "result_id": "FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2",
-      "sha256": "48ee638592aee273e64d6deb14c543430d33a7dd917ff8065c21653b989d15e9"
+      "sha256": "f63bdd893c24f0c66eeb7ad058c375e79afc26ea95c3ef3ef8d103710f412fa8"
     },
     "finite_bv": {
       "dependency_tags": [
@@ -271,6 +281,15 @@
       "result_id": "FOUNDATIONAL_MANNHEIM_NGC3198_MODEL_ASSEMBLY_V1",
       "sha256": "d4e7b8774f6593136b512453108a2d39396cd91969fdfc73681ee14d936e0154"
     },
+    "ngc3198_common_fit_comparison": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC"
+      ],
+      "lifecycle": null,
+      "path": "foundations/results/FOUNDATIONAL_NGC3198_COMMON_FIT_COMPARISON_V1.json",
+      "result_id": "FOUNDATIONAL_NGC3198_COMMON_FIT_COMPARISON_V1",
+      "sha256": "e9c9ecd8e6778a98cf15754970ac2e8fa6c117edca630f3a89b30aea1a03eaeb"
+    },
     "separable_cstar_state_chain": {
       "dependency_tags": [
         "LOCAL-ALGEBRAIC",
@@ -291,10 +310,10 @@
       "lifecycle": "VERIFIED_NAVIGATION_ARTIFACT",
       "path": "foundations/results/FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1.json",
       "result_id": "FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1",
-      "sha256": "5ff1b8fec12baf9d72758dd18eb04e695e9efa4444a722e5d008abea26d6b4b3"
+      "sha256": "0bd9f6adf1907cd25928a479e12e95e6c994659aa0100cf4b5363a86d5005e7b"
     }
   },
-  "canonical_digest": "068f954b5c71f5bb5a63f373eb6b3b764aceefe08f416e177f650c0cbbe043cc",
+  "canonical_digest": "2f99d10cd976b54a486f6994cb36e73b3279692f94522b16bee6d074f8f94468",
   "claim_flags": {
     "atlas_exhaustive": false,
     "axes_independent_proved": false,
@@ -316,6 +335,7 @@
     "mannheim_ngc3198_mixed_assembly_registered": true,
     "model_scoped_end_to_end_assembly_generated": true,
     "new_lorentzian_claim": false,
+    "ngc3198_common_fit_comparison_registered": true,
     "programme_definition_supplied": true,
     "quantum_lifecycle_promoted": false,
     "research_programme_lenses_explained": true,
@@ -497,6 +517,17 @@
       ],
       "statement": "For the declared Mannheim--Kazanas NGC 3198 thin-disk model, independent evaluation coarsely reproduces the paper's endpoint and passes a no-refit SPARC RMS gate, but fails the declared reduced-chi-squared gate from SPARC random errors alone; the mixed comparison does not establish empirical support.",
       "status": "NUMERICAL_REPRODUCTION_WITH_MIXED_CROSS_DATASET_COMPARISON"
+    },
+    {
+      "authorities": [
+        "ngc3198_common_fit_comparison"
+      ],
+      "claim_id": "RF-15-NGC3198-COMMON-FIT-CONTROL",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC"
+      ],
+      "statement": "Under one bounded NGC 3198 protocol with common velocities and analytic baryonic geometry, GR plus NFW has the lowest AICc and is the only tested family passing the declared random-error gate; this does not select a complete theory or generalize beyond one galaxy.",
+      "status": "BOUNDED_SINGLE_GALAXY_COMMON_PROTOCOL_MODEL_COMPARISON"
     }
   ],
   "created": "2026-08-14",
@@ -519,6 +550,7 @@
     "promotion of any quantum lifecycle state",
     "reproduction of the Cassini raw-data reduction, likelihood, covariance analysis, or systematic-error budget",
     "a complete standard-GR theory or empirical support for a Weyl-gravity model",
+    "a population-level model ranking or complete-theory selection from the NGC 3198 common-fit control",
     "a continuum, empirical, Born-rule, or Lorentzian promotion from the BT Euclidean finite lattice",
     "reflection-positivity failure at every nonzero coupling or in a continuum limit"
   ],
@@ -652,19 +684,19 @@
   ],
   "paper": {
     "appendix": {
-      "assembly_source_canonical_digest": "ad3ed091a3a1cc12e0748c27029933e6e2c2629a776843585b9902194d1fcab4",
+      "assembly_source_canonical_digest": "fde8c31dd5b414e65d0b5e9a1e3bd1b6d8519c68774bb62649e308926372b0bf",
       "assembly_source_path": "foundations/site/assemblies.json",
-      "assembly_source_sha256": "5ff1b8fec12baf9d72758dd18eb04e695e9efa4444a722e5d008abea26d6b4b3",
+      "assembly_source_sha256": "0bd9f6adf1907cd25928a479e12e95e6c994659aa0100cf4b5363a86d5005e7b",
       "generator_path": "paper/generate_21_reverse_foundations_appendices.py",
-      "generator_sha256": "d6a25b50e0fadf923c51888285e0eff6306d5b39cd6b1f97db307c3dbe8637b3",
+      "generator_sha256": "f46fd7cd15f93d83c0f2ec292fa9e0cbae6bdc9f7a503dd39ff61565424db364",
       "path": "paper/21-reverse-foundations-of-physics-appendices.tex",
-      "sha256": "7dba9dbb1595422631473fd329fd523dc1ae3a2cfc2ed40f36f5b96de1098b8e",
+      "sha256": "7f5172ab20ce9134991dea1de13183a6ed54bc64357f5e8716417575d60dac35",
       "source_canonical_digest": "e4c79e8ec537c2d9f9271d9ccbd042da2a5529b0b5f0f11fa6917cc3af0386cd",
       "source_path": "foundations/site/data.json",
       "source_sha256": "c8ecc8ea14f565cb32ed9e9d6f22b26335a27c01a54cf3129dfbdbff8b83475b"
     },
     "path": "paper/21-reverse-foundations-of-physics.tex",
-    "sha256": "aa0d56c315d72cfda16feb24d8c67c7886b24a54dc44e0983b84e0c1fcabb80a"
+    "sha256": "1266557412f203662f54a8f2e3c398e0edf11c2a665689e785f00dca1b2e9c5a"
   },
   "result_id": "PAPER21_REVERSE_FOUNDATIONS_INTRODUCTION_V1",
   "result_kind": "PROGRAMME_SYNTHESIS_AND_TYPED_CASE_STUDY_MAP",
