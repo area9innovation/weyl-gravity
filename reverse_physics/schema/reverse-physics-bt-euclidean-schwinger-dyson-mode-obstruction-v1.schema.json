@@ -1,0 +1,184 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-schwinger-dyson-mode-obstruction-v1.schema.json",
+  "title": "BT Euclidean Schwinger-Dyson mode-route obstruction certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "certificate", "schema_version", "created", "dependency_tags",
+    "lifecycle_state", "result_kind", "question", "answer",
+    "schwinger_dyson_identity", "exact_lowest_mode_counterexample",
+    "all_volume_quartic_coercivity", "method_disposition",
+    "missing_object_ledger", "next_gate", "does_not_establish",
+    "provenance", "verification_commands", "tier_receipt", "checks",
+    "report", "schema"
+  ],
+  "$defs": {
+    "fraction": {
+      "type": "object", "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      }
+    },
+    "text": {"type": "string", "minLength": 1}
+  },
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_EUCLIDEAN_SCHWINGER_DYSON_MODE_OBSTRUCTION_V1"},
+    "schema_version": {"const": "reverse-physics-bt-euclidean-schwinger-dyson-mode-obstruction-v1"},
+    "created": {"const": "2026-08-14"},
+    "dependency_tags": {
+      "type": "array",
+      "prefixItems": [
+        {"const": "LOCAL-ALGEBRAIC"},
+        {"const": "EUCLIDEAN-SPECTRAL"}
+      ],
+      "items": false
+    },
+    "lifecycle_state": {"const": "OBSTRUCTION_PROVED"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "schwinger_dyson_identity": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "carrier", "test_direction", "identity", "proof", "free_mode_split",
+        "remainder", "sufficient_but_false_pointwise_route"
+      ],
+      "properties": {
+        "carrier": {"$ref": "#/$defs/text"},
+        "test_direction": {"$ref": "#/$defs/text"},
+        "identity": {"$ref": "#/$defs/text"},
+        "proof": {"$ref": "#/$defs/text"},
+        "free_mode_split": {"$ref": "#/$defs/text"},
+        "remainder": {"$ref": "#/$defs/text"},
+        "sufficient_but_false_pointwise_route": {"$ref": "#/$defs/text"}
+      }
+    },
+    "exact_lowest_mode_counterexample": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "coupling", "lattice", "coordinates",
+        "spatially_constant_time_center",
+        "spatially_constant_lowest_mode_direction",
+        "negative_laplacian_eigenvalue", "per_spatial_site", "full_lattice",
+        "exact_sign_factorization", "disposition"
+      ],
+      "properties": {
+        "coupling": {"$ref": "#/$defs/fraction"},
+        "lattice": {"type": "object"},
+        "coordinates": {"$ref": "#/$defs/text"},
+        "spatially_constant_time_center": {
+          "type": "array", "minItems": 6, "maxItems": 6,
+          "items": {"type": "integer"}
+        },
+        "spatially_constant_lowest_mode_direction": {
+          "type": "array", "minItems": 6, "maxItems": 6,
+          "items": {"type": "integer"}
+        },
+        "negative_laplacian_eigenvalue": {"const": 1},
+        "per_spatial_site": {"type": "object"},
+        "full_lattice": {"type": "object"},
+        "exact_sign_factorization": {"$ref": "#/$defs/text"},
+        "disposition": {"const": "POINTWISE_MODE_REMAINDER_SIGN_OBSTRUCTED"}
+      }
+    },
+    "all_volume_quartic_coercivity": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "scope", "definitions", "residual_sum_identity", "scalar_inequality",
+        "cauchy_schwarz", "theorem", "lowest_axial_fourier_consequence",
+        "probabilistic_shortfall"
+      ],
+      "properties": {
+        "scope": {"$ref": "#/$defs/text"},
+        "definitions": {
+          "type": "array", "minItems": 4, "items": {"$ref": "#/$defs/text"}
+        },
+        "residual_sum_identity": {"$ref": "#/$defs/text"},
+        "scalar_inequality": {"$ref": "#/$defs/text"},
+        "cauchy_schwarz": {"$ref": "#/$defs/text"},
+        "theorem": {"const": "S_lambda(phi)>=(lambda^2/(2N))*E_grad(phi)^2"},
+        "lowest_axial_fourier_consequence": {
+          "type": "object", "additionalProperties": false,
+          "required": [
+            "coefficient", "eigenvalue", "spectral_step", "elementary_bound",
+            "all_volume_bound", "lambda_0p4_coefficient", "status"
+          ],
+          "properties": {
+            "coefficient": {"$ref": "#/$defs/text"},
+            "eigenvalue": {"$ref": "#/$defs/text"},
+            "spectral_step": {"$ref": "#/$defs/text"},
+            "elementary_bound": {"$ref": "#/$defs/text"},
+            "all_volume_bound": {"const": "S_lambda(phi)>=128*lambda^2*|hat(Phi_L)(e_mu)|^4"},
+            "lambda_0p4_coefficient": {"$ref": "#/$defs/fraction"},
+            "status": {"const": "DETERMINISTIC_ACTION_SUBLEVEL_BOUND_PROVED"}
+          }
+        },
+        "probabilistic_shortfall": {"$ref": "#/$defs/text"}
+      }
+    },
+    "method_disposition": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "finite_volume_schwinger_dyson_identity",
+        "all_volume_quartic_gradient_action_bound",
+        "uniform_lowest_mode_action_sublevel_bound",
+        "pointwise_nonnegative_mode_remainder", "annealed_nonnegative_mode_remainder",
+        "interacting_h_minus_one_second_moment_bound", "interacting_tightness",
+        "continuum_limit", "born_rule", "krein_reconstruction", "lorentzian_transfer"
+      ],
+      "properties": {
+        "finite_volume_schwinger_dyson_identity": {"const": "PROVED"},
+        "all_volume_quartic_gradient_action_bound": {"const": "PROVED"},
+        "uniform_lowest_mode_action_sublevel_bound": {"const": "PROVED"},
+        "pointwise_nonnegative_mode_remainder": {"const": "OBSTRUCTED"},
+        "annealed_nonnegative_mode_remainder": {"const": "OPEN"},
+        "interacting_h_minus_one_second_moment_bound": {"const": "OPEN"},
+        "interacting_tightness": {"const": "NOT_ESTABLISHED"},
+        "continuum_limit": {"const": "NOT_ESTABLISHED"},
+        "born_rule": {"const": "NOT_ESTABLISHED"},
+        "krein_reconstruction": {"const": "NOT_ASSESSED"},
+        "lorentzian_transfer": {"const": "NOT_ESTABLISHED"}
+      }
+    },
+    "missing_object_ledger": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/text"}},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "does_not_establish": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/text"}},
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["repository_base_commit", "inputs", "arithmetic"],
+      "properties": {
+        "repository_base_commit": {"const": "2be651e7642d86cc09d362b5d5596c4937297b27"},
+        "inputs": {
+          "type": "array", "minItems": 4, "maxItems": 4,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["path", "sha256"],
+            "properties": {
+              "path": {"$ref": "#/$defs/text"},
+              "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+            }
+          }
+        },
+        "arithmetic": {"$ref": "#/$defs/text"}
+      }
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "items": {"$ref": "#/$defs/text"}},
+    "tier_receipt": {"type": "object"},
+    "checks": {
+      "type": "object", "additionalProperties": false,
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"type": "integer", "minimum": 1},
+        "total": {"type": "integer", "minimum": 1},
+        "failures": {"type": "array", "maxItems": 0},
+        "details": {"type": "object", "minProperties": 1, "additionalProperties": {"const": true}}
+      }
+    },
+    "report": {"const": "reverse_physics/reports/bt-euclidean-schwinger-dyson-mode-obstruction.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-euclidean-schwinger-dyson-mode-obstruction-v1.schema.json"}
+  }
+}

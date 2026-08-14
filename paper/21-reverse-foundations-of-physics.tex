@@ -766,6 +766,28 @@ nonconvexity or failure of the interacting \(H^{-1}\) estimate; it directs the
 next analysis toward Schwinger--Dyson, annealed-Hessian, or multiscale
 control.
 
+The direct mode identity has also been decided at the pointwise level.
+Certificate
+\cert{REVERSE_PHYSICS_BT_EUCLIDEAN_SCHWINGER_DYSON_MODE_OBSTRUCTION_V1}
+proves, for every mean-zero lattice mode \(h\),
+\[
+ \mathbb E[\langle h,\phi\rangle\langle h,\nabla S_\lambda\rangle]
+ =\|h\|_2^2.
+\]
+For a Laplacian eigenmode this splits into its free covariance term and an
+interaction remainder.  A lowest-mode configuration on the \(6^4\) lattice
+makes that remainder strictly negative, so a pointwise sign cannot yield
+free covariance domination.  The same certificate proves the all-volume
+deterministic estimate
+\[
+ S_\lambda(\phi)\geq\frac{\lambda^2}{2L^4}
+ \left[\sum_{\{x,y\}}|\phi_y-\phi_x|^2\right]^2
+ \geq128\lambda^2|\widehat\Phi_L(e_\mu)|^4.
+\]
+The second inequality concerns any lowest axial coefficient.  It is uniform
+action-sublevel control, not a normalized Gibbs moment bound: an annealed
+remainder or marginal-partition estimate is still missing.
+
 \subsection{A finite BV contraction does not freeze the quantum theory}
 
 The energy-two free BV block provides another finite exact case.  The
@@ -1051,7 +1073,10 @@ axioms and carrier-matching theorem; no Euclidean result here supplies a
 Krein/Lorentzian observable map.  Global bilaplacian strong convexity cannot
 supply the estimate: an exact fixed-volume family makes its comparison ratio
 tend to zero.  A direct or annealed covariance estimate is therefore the next
-analytic gate.
+analytic gate.  The direct pointwise Schwinger--Dyson sign route is now also
+obstructed, although the exact residual-sum identity supplies uniform quartic
+action confinement of each lowest normalized Fourier mode.  The remaining
+gate is specifically annealed or normalized-marginal control.
 
 \section{Limits of the present paper}
 \label{sec:limits}

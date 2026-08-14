@@ -1,0 +1,205 @@
+{
+  "certificate": "REVERSE_PHYSICS_BT_EUCLIDEAN_SCHWINGER_DYSON_MODE_OBSTRUCTION_V1",
+  "schema_version": "reverse-physics-bt-euclidean-schwinger-dyson-mode-obstruction-v1",
+  "created": "2026-08-14",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "lifecycle_state": "OBSTRUCTION_PROVED",
+  "result_kind": "exact all-volume action estimate and obstruction to pointwise Schwinger-Dyson mode domination",
+  "question": "Can the interacting H^-1 moment bound be obtained from the exact mode Schwinger-Dyson identity by a pointwise nonnegative interaction remainder, and what all-volume deterministic control does the nonlinear residual provide?",
+  "answer": "The pointwise sign route is obstructed: an exact lowest-mode configuration on the 6^4 lattice has a strictly negative interaction remainder. Independently, every periodic volume obeys S_lambda(phi)>=(lambda^2/(2N))*E_grad(phi)^2, giving uniform quartic action confinement of each continuum-normalized lowest Fourier coefficient. This deterministic estimate does not by itself bound its normalized Gibbs moment; the annealed remainder sign and the interacting H^-1 estimate remain open.",
+  "schwinger_dyson_identity": {
+    "carrier": "mean-zero hyperplane of the finite periodic L^4 lattice",
+    "test_direction": "any fixed mean-zero real vector h",
+    "identity": "E[(h.phi)*(h.grad S_lambda(phi))]=||h||_2^2",
+    "proof": "Integrate the divergence of (h.phi)*h*exp(-S_lambda) on the mean-zero hyperplane; certified finite-volume coercivity removes the boundary term.",
+    "free_mode_split": "If (-Delta_L)h=omega*h, then omega^2*E[(h.phi)^2] +E[R_h(phi)]=||h||_2^2.",
+    "remainder": "R_h(phi)=(h.phi)*h.(grad S_lambda-grad S_0)",
+    "sufficient_but_false_pointwise_route": "R_h(phi)>=0 for every phi would imply the free covariance bound in direction h."
+  },
+  "exact_lowest_mode_counterexample": {
+    "coupling": {
+      "numerator": 2,
+      "denominator": 5
+    },
+    "lattice": {
+      "length": 6,
+      "dimensions": 4,
+      "volume": 1296,
+      "spatial_volume": 216
+    },
+    "coordinates": "psi=lambda*phi=k*log(2)",
+    "spatially_constant_time_center": [
+      -8,
+      8,
+      -2,
+      -8,
+      2,
+      8
+    ],
+    "spatially_constant_lowest_mode_direction": [
+      2,
+      1,
+      -1,
+      -2,
+      -1,
+      1
+    ],
+    "negative_laplacian_eigenvalue": 1,
+    "per_spatial_site": {
+      "nonlinear_action": {
+        "numerator": 36897146342847812673,
+        "denominator": 4294967296
+      },
+      "center_direction_dot": {
+        "numerator": 16,
+        "denominator": 1
+      },
+      "direction_norm_squared": {
+        "numerator": 12,
+        "denominator": 1
+      },
+      "nonlinear_directional_action": {
+        "numerator": -36885875918835948063,
+        "denominator": 2147483648
+      },
+      "free_directional_action": {
+        "numerator": 16,
+        "denominator": 1
+      }
+    },
+    "full_lattice": {
+      "center_direction_dot": {
+        "numerator": 3456,
+        "denominator": 1
+      },
+      "direction_norm_squared": {
+        "numerator": 2592,
+        "denominator": 1
+      },
+      "nonlinear_directional_action": {
+        "numerator": -995918649808570597701,
+        "denominator": 268435456
+      },
+      "free_directional_action": {
+        "numerator": 3456,
+        "denominator": 1
+      }
+    },
+    "exact_sign_factorization": "R_h=(216^2*16*log(2)/lambda^2)*(D_h A-16*log(2)); the prefactor is positive and both D_h A<0 and -16*log(2)<0, hence R_h<0.",
+    "disposition": "POINTWISE_MODE_REMAINDER_SIGN_OBSTRUCTED"
+  },
+  "all_volume_quartic_coercivity": {
+    "scope": "every finite q-regular periodic undirected multigraph, with edges counted with lattice multiplicity",
+    "definitions": [
+      "psi=lambda*phi",
+      "r_x=sum_(y~x)[exp(psi_y-psi_x)-1]",
+      "E_grad(phi)=sum_unoriented_edges (phi_y-phi_x)^2",
+      "S_lambda=(1/(2*lambda^2))*sum_x r_x^2"
+    ],
+    "residual_sum_identity": "sum_x r_x=2*sum_edges[cosh(psi_y-psi_x)-1]",
+    "scalar_inequality": "2*(cosh u-1)-u^2=2*sum_(m>=2)u^(2m)/(2m)!>=0",
+    "cauchy_schwarz": "sum_x r_x^2 >= (sum_x r_x)^2/N",
+    "theorem": "S_lambda(phi)>=(lambda^2/(2N))*E_grad(phi)^2",
+    "lowest_axial_fourier_consequence": {
+      "coefficient": "hat(Phi_L)(e_mu)=N^-1*sum_x phi_x*exp(-2*pi*i*x_mu/L)",
+      "eigenvalue": "omega_L=4*sin(pi/L)^2",
+      "spectral_step": "E_grad(phi)>=N*omega_L*|hat(Phi_L)(e_mu)|^2",
+      "elementary_bound": "sin(pi/L)>=2/L for L>=2, so N*omega_L^2>=256 in d=4",
+      "all_volume_bound": "S_lambda(phi)>=128*lambda^2*|hat(Phi_L)(e_mu)|^4",
+      "lambda_0p4_coefficient": {
+        "numerator": 512,
+        "denominator": 25
+      },
+      "status": "DETERMINISTIC_ACTION_SUBLEVEL_BOUND_PROVED"
+    },
+    "probabilistic_shortfall": "A pointwise lower action bound does not control the ratio of the tail integral to the volume-dependent partition function; an annealed or normalized marginal estimate is still required."
+  },
+  "method_disposition": {
+    "finite_volume_schwinger_dyson_identity": "PROVED",
+    "all_volume_quartic_gradient_action_bound": "PROVED",
+    "uniform_lowest_mode_action_sublevel_bound": "PROVED",
+    "pointwise_nonnegative_mode_remainder": "OBSTRUCTED",
+    "annealed_nonnegative_mode_remainder": "OPEN",
+    "interacting_h_minus_one_second_moment_bound": "OPEN",
+    "interacting_tightness": "NOT_ESTABLISHED",
+    "continuum_limit": "NOT_ESTABLISHED",
+    "born_rule": "NOT_ESTABLISHED",
+    "krein_reconstruction": "NOT_ASSESSED",
+    "lorentzian_transfer": "NOT_ESTABLISHED"
+  },
+  "missing_object_ledger": [
+    "a normalized marginal or annealed Fourier-mode covariance estimate",
+    "an L-uniform interacting H^-1 second-moment estimate",
+    "tightness in a topology compactly weaker than the moment bound",
+    "identification and uniqueness of any Euclidean limit"
+  ],
+  "next_gate": "Estimate the Gibbs expectation of the exact mode remainder or control the normalized one-mode marginal; pointwise signs and global strong convexity are both unavailable.",
+  "does_not_establish": [
+    "a negative Gibbs expectation of the mode remainder",
+    "failure of the interacting H^-1 moment bound",
+    "failure of every Schwinger-Dyson or covariance method",
+    "tightness or a continuum BT Euclidean measure",
+    "a Born rule or Krein reconstruction",
+    "anything LORENTZIAN-CAUSAL"
+  ],
+  "provenance": {
+    "repository_base_commit": "2be651e7642d86cc09d362b5d5596c4937297b27",
+    "inputs": [
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_LATTICE_PILOT_V1.json",
+        "sha256": "4171ff54d9a92f7555337e8865029a7dbb65aaf0b4cf930017732fb0c6051320"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_FREE_RECONSTRUCTION_OBSTRUCTION_V1.json",
+        "sha256": "3ff1ba1578d5bc11ea7f2a6fc806fedb49d127a0f3f29fc220d987d9305371a9"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_LAMBDA04_OS_KERNEL_OBSTRUCTION_V1.json",
+        "sha256": "9872d3d610daf5146fee84e19246319a7bcfa72748be116a2a8caa7b9f57f40b"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_UNIFORM_CONVEXITY_OBSTRUCTION_V1.json",
+        "sha256": "c6aeb2e6cbb7bd6066534304a76a977f9efec57b52d145bd9bfaae438e51f550"
+      }
+    ],
+    "arithmetic": "Python Fraction arithmetic for dyadic residuals, directional actions, graph scaling, and the lambda=2/5 coefficient"
+  },
+  "verification_commands": [
+    "python3 reverse_physics/bt_euclidean_schwinger_dyson_mode_obstruction.py --check",
+    "python3 reverse_physics/verify_bt_euclidean_schwinger_dyson_mode_obstruction.py",
+    "python3 -m unittest -v reverse_physics.tests.test_bt_euclidean_schwinger_dyson_mode_obstruction"
+  ],
+  "tier_receipt": {
+    "tier_0": "parse, strict schema, deterministic generation, scoped git diff --check, and staged-diff inspection",
+    "tier_1": "exact producer, method-distinct full 6^4 verifier, symbolic proof-structure checks, unit tests, and mutation rejection",
+    "tier_2": "predecessor certificates checked by content hash; no sampler rerun because no numerical Gibbs expectation is promoted",
+    "tier_3": "not run: no freeze, release, shared classical operator, quantum lifecycle, or Lorentzian claim changes",
+    "memory_policy": "all commands sequential under a 500000 KiB virtual-memory ceiling where relevant"
+  },
+  "checks": {
+    "ok": true,
+    "passed": 13,
+    "total": 13,
+    "failures": [],
+    "details": {
+      "coupling_is_exactly_two_fifths": true,
+      "center_is_mean_zero": true,
+      "direction_is_mean_zero": true,
+      "direction_is_lowest_cycle_mode": true,
+      "center_direction_dot_is_sixteen": true,
+      "direction_norm_squared_is_twelve": true,
+      "free_directional_action_is_sixteen": true,
+      "nonlinear_directional_action_is_exact_negative": true,
+      "pointwise_mode_remainder_is_strictly_negative": true,
+      "quartic_gradient_coercivity_has_all_volume_proof": true,
+      "lowest_axial_mode_coefficient_is_512_over_25": true,
+      "annealed_remainder_sign_and_h_minus_one_bound_remain_open": true,
+      "no_continuum_born_krein_or_lorentzian_promotion": true
+    }
+  },
+  "report": "reverse_physics/reports/bt-euclidean-schwinger-dyson-mode-obstruction.md",
+  "schema": "reverse_physics/schema/reverse-physics-bt-euclidean-schwinger-dyson-mode-obstruction-v1.schema.json"
+}
