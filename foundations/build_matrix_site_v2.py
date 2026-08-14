@@ -211,7 +211,7 @@ def build_dataset() -> dict[str, Any]:
         status_counts.setdefault(status, 0)
     dataset = {
         "schema_version": "foundational-matrix-explorer-data-v2",
-        "title": "Reverse Mathematics × Physics Atlas",
+        "title": "Reverse Physics Atlas",
         "created": CREATED,
         "dependency_tags": cube["dependency_tags"],
         "axes": guided_axes(cube["axes"]),

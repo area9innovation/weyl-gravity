@@ -42,6 +42,12 @@ class MatrixSiteTests(unittest.TestCase):
             self.assertTrue(path.is_file(), path)
             self.assertEqual(path.read_bytes(), content, path)
 
+    def test_public_title_names_the_reverse_physics_programme(self):
+        html = (ROOT / "foundations/matrix_site_assets/index.html").read_text()
+        self.assertIn("<title>Reverse Physics Atlas — Mathematics, Theories, and Evidence</title>", html)
+        self.assertIn("<h1>Reverse Physics <span>Atlas</span></h1>", html)
+        self.assertEqual(build_dataset()["title"], "Reverse Physics Atlas")
+
     def test_independent_checker(self):
         errors, summary = check()
         self.assertEqual(errors, [])

@@ -1,0 +1,67 @@
+{
+  "schema_version": "science-forge-tier-receipt-v1",
+  "receipt_id": "FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2_REVERSE_PHYSICS_TITLE_RECEIPT",
+  "created": "2026-08-14",
+  "repository_base_commit": "1fb5967496262e3a22cf82230fedaca39fbcbb0f",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "scope": "Rename the public explorer as the Reverse Physics Atlas and state its full assumption-to-evidence purpose in the browser title, metadata, hero, and generated dataset title.",
+  "tiers": {
+    "tier_0_compile": {
+      "status": "PASS",
+      "command": "python3 -m py_compile foundations/build_matrix_site_v2.py foundations/check_matrix_site_v2.py foundations/verify_matrix_site_v2.py foundations/tests/test_matrix_site.py"
+    },
+    "tier_0_json": {
+      "status": "PASS",
+      "command": "parse the changed result, site data, manifest, and this receipt with json.tool"
+    },
+    "tier_0_diff_check": {
+      "status": "PASS",
+      "command": "git diff --check over the explicit delivery paths"
+    },
+    "tier_1_generator_current": {
+      "status": "PASS",
+      "command": "python3 foundations/build_matrix_site_v2.py --check",
+      "result": "All generated site artifacts are byte-current."
+    },
+    "tier_1_independent_checks": {
+      "status": "PASS",
+      "command": "python3 foundations/check_matrix_site_v2.py && python3 foundations/verify_matrix_site_v2.py",
+      "result": "The static surface, content-addressed manifest, evidence closure, and fail-closed claim flags pass."
+    },
+    "tier_1_tests": {
+      "status": "PASS",
+      "command": "python3 -m unittest foundations.tests.test_matrix_site",
+      "elapsed_seconds": 0.71,
+      "result": "10/10 tests pass, including the public title contract."
+    },
+    "tier_1_browser_smoke": {
+      "status": "PASS",
+      "command": "google-chrome --headless --dump-dom foundations/site/index.html",
+      "result": "The rendered DOM contains the Reverse Physics Atlas browser title, programme-scale eyebrow, hero title, and assumption-to-evidence explanation."
+    },
+    "tier_2": {
+      "status": "NOT_RUN",
+      "criterion": "No scientific input, schema, operator, certificate payload, evidence assignment, or claim boundary changed."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No freeze, theorem promotion, release, shared core-algebra change, or explicit full-suite request applies."
+    }
+  },
+  "artifact_hashes": {
+    "foundations/build_matrix_site_v2.py": "430602a94907d17906ff7eb39c6be7031fc49515492583fc3fbcab4e823d2f9f",
+    "foundations/matrix_site_assets/index.html": "d812e31db2b4b18e2224830adc80941825cb237fbf384dcbaa64d5d90eb89929",
+    "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json": "7ca336efd377ffd2982edb1f312dfa6712864f2184fbca893be938887d03bbe8",
+    "foundations/site/data.js": "44ffe8af8127dbf96296594cd427c2aba79d8ede6ca9717f62763aafe8bd551d",
+    "foundations/site/data.json": "93c1ec7d51d089034cd6041d5f86e46e1ac48da39a4e67ab75ef1ad0beec7f3d",
+    "foundations/site/index.html": "723320f559b6a15cc3b1d38a63b0c6bb79f4526a7b16dcb76108bebb7b5cdc19",
+    "foundations/site/manifest.json": "aad6c7b8956c7e11c55003fccbd5823f9009ecd2a86a45bc9ce7400f4cda9574",
+    "foundations/tests/test_matrix_site.py": "82ac54a0893f30e1b00bde11a07fb0d04c374dbdae52429a74743fa63b1c7b03"
+  },
+  "claim_boundary": "This is an expository and navigational rename. It changes no numerical result, mathematical result, model comparison, gate outcome, evidence state, physical theorem, quantum lifecycle state, or Lorentzian claim."
+}
