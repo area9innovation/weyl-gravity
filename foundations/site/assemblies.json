@@ -3,7 +3,7 @@
   "result_id": "FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1",
   "result_kind": "FAIL_CLOSED_THEORY_ASSEMBLY_AND_EMPIRICAL_LEDGER",
   "lifecycle": "VERIFIED_NAVIGATION_ARTIFACT",
-  "title": "Candidate theory assemblies, maturity rails, and calibration control",
+  "title": "Model-scoped prediction assemblies, theory prototypes, maturity rails, and calibration controls",
   "created": "2026-08-14",
   "dependency_tags": [
     "LOCAL-ALGEBRAIC",
@@ -2898,6 +2898,502 @@
       "empirically_supported": false
     }
   ],
+  "model_scoped_assemblies": [
+    {
+      "schema_version": "foundational-gr-cassini-model-assembly-v1",
+      "result_id": "FOUNDATIONAL_GR_CASSINI_MODEL_ASSEMBLY_V1",
+      "result_kind": "MODEL_SCOPED_END_TO_END_PREDICTION_ASSEMBLY",
+      "lifecycle": "MODEL_SCOPED_EMPIRICAL_COMPARISON_REGISTERED",
+      "created": "2026-08-14",
+      "repository_base_commit": "be5b23b72ea73f6b5dd099e9a3bd3126e6778922",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "title": "Standard GR solar-system prediction assembly: field equations to Cassini",
+      "model_identity": {
+        "id": "STANDARD_GR_VACUUM_SOLAR_EXTERIOR",
+        "theory": "Four-dimensional standard general relativity",
+        "sector": "Static, spherically symmetric, asymptotically flat vacuum exterior of the Sun",
+        "field_equations": "G_mu_nu=0 with Lambda=0 outside the source",
+        "matter_coupling": "Radio photons are minimally coupled and follow null geodesics of the same metric",
+        "approximation": "Exact exterior solution followed by a first post-Newtonian expansion for the observable map",
+        "benchmark": "SOLAR_SYSTEM",
+        "comparison_id": "GR_CASSINI_SHAPIRO_2003"
+      },
+      "applicability_mask": [
+        {
+          "obligation": "KINEMATICS_OBSERVABLES",
+          "status": "IN_SCOPE_REQUIRED",
+          "reason": "The metric, null paths, PPN gamma, and radio time/frequency response are the declared configurations and observables."
+        },
+        {
+          "obligation": "STATE_EXISTENCE",
+          "status": "OUT_OF_SCOPE",
+          "reason": "This bounded classical static prediction does not require this quantum, state-selection, spectral, Cauchy-evolution, renormalization, or residual-transfer obligation."
+        },
+        {
+          "obligation": "STATE_REPRESENTATION",
+          "status": "OUT_OF_SCOPE",
+          "reason": "This bounded classical static prediction does not require this quantum, state-selection, spectral, Cauchy-evolution, renormalization, or residual-transfer obligation."
+        },
+        {
+          "obligation": "PROBABILITY_RULE",
+          "status": "OUT_OF_SCOPE",
+          "reason": "This bounded classical static prediction does not require this quantum, state-selection, spectral, Cauchy-evolution, renormalization, or residual-transfer obligation."
+        },
+        {
+          "obligation": "PHYSICAL_STATE_SELECTION",
+          "status": "OUT_OF_SCOPE",
+          "reason": "This bounded classical static prediction does not require this quantum, state-selection, spectral, Cauchy-evolution, renormalization, or residual-transfer obligation."
+        },
+        {
+          "obligation": "GENERATOR_SPECTRAL_DYNAMICS",
+          "status": "OUT_OF_SCOPE",
+          "reason": "This bounded classical static prediction does not require this quantum, state-selection, spectral, Cauchy-evolution, renormalization, or residual-transfer obligation."
+        },
+        {
+          "obligation": "EVOLUTION_WELLPOSEDNESS",
+          "status": "OUT_OF_SCOPE",
+          "reason": "This bounded classical static prediction does not require this quantum, state-selection, spectral, Cauchy-evolution, renormalization, or residual-transfer obligation."
+        },
+        {
+          "obligation": "CAUSAL_PROPAGATION_GREEN",
+          "status": "TOUCHED_NOT_REQUIRED",
+          "reason": "A null-geodesic propagation law is used, but no retarded/advanced Green operator or Cauchy-support theorem is required or established."
+        },
+        {
+          "obligation": "GAUGE_BV_COHOMOLOGY",
+          "status": "TOUCHED_NOT_REQUIRED",
+          "reason": "Areal and isotropic coordinate gauges are related exactly, but no BV complex or gauge cohomology is required or established."
+        },
+        {
+          "obligation": "INTERACTION_CONSTRUCTION",
+          "status": "IN_SCOPE_REQUIRED",
+          "reason": "The nonlinear Einstein vacuum field equation and its exact Schwarzschild exterior solution define the gravitational model used by the prediction."
+        },
+        {
+          "obligation": "COUNTERTERM_CLASSIFICATION",
+          "status": "OUT_OF_SCOPE",
+          "reason": "This bounded classical static prediction does not require this quantum, state-selection, spectral, Cauchy-evolution, renormalization, or residual-transfer obligation."
+        },
+        {
+          "obligation": "ANOMALY_CLASSIFICATION",
+          "status": "OUT_OF_SCOPE",
+          "reason": "This bounded classical static prediction does not require this quantum, state-selection, spectral, Cauchy-evolution, renormalization, or residual-transfer obligation."
+        },
+        {
+          "obligation": "RENORMALIZED_PRODUCTS",
+          "status": "OUT_OF_SCOPE",
+          "reason": "This bounded classical static prediction does not require this quantum, state-selection, spectral, Cauchy-evolution, renormalization, or residual-transfer obligation."
+        },
+        {
+          "obligation": "QME_RESTORATION",
+          "status": "OUT_OF_SCOPE",
+          "reason": "This bounded classical static prediction does not require this quantum, state-selection, spectral, Cauchy-evolution, renormalization, or residual-transfer obligation."
+        },
+        {
+          "obligation": "RESIDUAL_QUANTUM_TRANSFER",
+          "status": "OUT_OF_SCOPE",
+          "reason": "This bounded classical static prediction does not require this quantum, state-selection, spectral, Cauchy-evolution, renormalization, or residual-transfer obligation."
+        },
+        {
+          "obligation": "RECONSTRUCTION_LIMITS",
+          "status": "IN_SCOPE_REQUIRED",
+          "reason": "The isotropic weak-field map identifies the formal metric coefficient with the operational PPN gamma fitted by Cassini."
+        }
+      ],
+      "applicability_summary": {
+        "total_atlas_obligations": 16,
+        "required": 3,
+        "required_satisfied": 3,
+        "touched_not_required": 2,
+        "out_of_scope": 11
+      },
+      "shared_object_ledger": [
+        {
+          "id": "MODEL",
+          "object": "STANDARD_GR_VACUUM_SOLAR_EXTERIOR",
+          "used_by": [
+            "FIELD_EQUATIONS",
+            "EXTERIOR_SOLUTION",
+            "PPN_REDUCTION",
+            "NULL_OBSERVABLE"
+          ],
+          "identity_status": "IDENTICAL_MODEL"
+        },
+        {
+          "id": "MASS_M",
+          "object": "m=G M_sun in c=1 units",
+          "used_by": [
+            "EXTERIOR_SOLUTION",
+            "PPN_REDUCTION",
+            "NULL_OBSERVABLE"
+          ],
+          "identity_status": "IDENTICAL_PARAMETER"
+        },
+        {
+          "id": "PPN_GAMMA",
+          "object": "the spatial-curvature parameter gamma",
+          "used_by": [
+            "PPN_REDUCTION",
+            "NULL_OBSERVABLE",
+            "CASSINI_PARAMETER_MAP",
+            "EMPIRICAL_COMPARISON"
+          ],
+          "identity_status": "EXACT_TO_OPERATIONAL_TRANSLATION"
+        },
+        {
+          "id": "RADIO_NULL_SIGNAL",
+          "object": "Cassini radio photons near solar conjunction",
+          "used_by": [
+            "NULL_OBSERVABLE",
+            "CASSINI_PARAMETER_MAP"
+          ],
+          "identity_status": "CONDITIONAL_OPERATIONAL_IDENTIFICATION"
+        }
+      ],
+      "stages": [
+        {
+          "id": "FIELD_EQUATIONS",
+          "label": "Vacuum Einstein equations",
+          "status": "CERTIFIED_EXACT",
+          "establishes": "The declared model uses G_mu_nu=0 in the exterior sector."
+        },
+        {
+          "id": "EXTERIOR_SOLUTION",
+          "label": "Static spherical exterior",
+          "status": "CERTIFIED_EXACT",
+          "establishes": "The field equations integrate to f(r)=1-2m/r under the declared boundary normalization."
+        },
+        {
+          "id": "PPN_REDUCTION",
+          "label": "Isotropic weak-field reduction",
+          "status": "CERTIFIED_EXACT",
+          "establishes": "Exact coordinate translation and formal series give beta=gamma=1."
+        },
+        {
+          "id": "NULL_OBSERVABLE",
+          "label": "Null-delay observable",
+          "status": "CERTIFIED_EXACT",
+          "establishes": "The first-order delay coefficient is 1+gamma=2."
+        },
+        {
+          "id": "CASSINI_PARAMETER_MAP",
+          "label": "Cassini fitted parameter",
+          "status": "LITERATURE_SCOPED",
+          "establishes": "The publisher abstract identifies bending/delay and the measured frequency shift with gamma+1."
+        },
+        {
+          "id": "EMPIRICAL_COMPARISON",
+          "label": "Published Cassini comparison",
+          "status": "SUPPORTED_REPORTED_BAND",
+          "establishes": "The exact prediction gamma-1=0 lies inside the displayed reported plus-minus band."
+        }
+      ],
+      "interfaces": [
+        {
+          "id": "FIELD_EQUATION_TO_SOLUTION",
+          "from": "FIELD_EQUATIONS",
+          "to": "EXTERIOR_SOLUTION",
+          "relation": "EXACT_DERIVATION",
+          "status": "CERTIFIED",
+          "basis": "The reduced Einstein equation is an exact first-order ODE and the angular residual vanishes after substitution."
+        },
+        {
+          "id": "SOLUTION_TO_PPN",
+          "from": "EXTERIOR_SOLUTION",
+          "to": "PPN_REDUCTION",
+          "relation": "EXACT_TRANSLATION",
+          "status": "CERTIFIED",
+          "basis": "The areal-to-isotropic coordinate map is exact and the series coefficients are rational."
+        },
+        {
+          "id": "PPN_TO_NULL_DELAY",
+          "from": "PPN_REDUCTION",
+          "to": "NULL_OBSERVABLE",
+          "relation": "EXACT_ASYMPTOTIC_DERIVATION",
+          "status": "CERTIFIED",
+          "basis": "The Lorentzian null condition fixes the first-order coefficient 1+gamma."
+        },
+        {
+          "id": "NULL_DELAY_TO_CASSINI_PARAMETER",
+          "from": "NULL_OBSERVABLE",
+          "to": "CASSINI_PARAMETER_MAP",
+          "relation": "CONDITIONAL_OPERATIONAL_BRIDGE",
+          "status": "REGISTERED",
+          "basis": "Assumes minimally coupled radio photons follow metric null geodesics and imports the experiment's identification of its fitted gamma parameter."
+        },
+        {
+          "id": "PREDICTION_TO_REPORTED_ESTIMATE",
+          "from": "CASSINI_PARAMETER_MAP",
+          "to": "EMPIRICAL_COMPARISON",
+          "relation": "LITERATURE_SCOPED_COMPARISON",
+          "status": "REGISTERED",
+          "basis": "Compares the exact theoretical value only with the publisher's displayed estimate; no raw-data or likelihood reconstruction is claimed."
+        }
+      ],
+      "exact_prediction_rail": {
+        "arithmetic": "EXACT_RATIONAL_AND_FORMAL_SERIES",
+        "conventions": {
+          "dimension": 4,
+          "signature": "(-,+,+,+)",
+          "units": "c=1",
+          "mass_length": "m=G M_sun",
+          "weak_field_variable": "x=m/rho"
+        },
+        "field_equation_derivation": {
+          "starting_equations": "G_mu_nu=0 in the vacuum exterior; Lambda=0",
+          "ansatz": "ds^2=-f(r)dt^2+f(r)^(-1)dr^2+r^2 dOmega^2",
+          "independent_equations": [
+            "G^t_t=G^r_r=(r f'(r)+f(r)-1)/r^2=0",
+            "G^theta_theta=G^phi_phi=f'(r)/r+f''(r)/2=0"
+          ],
+          "integration": "(r f)'=1, hence f=1+C/r; Newtonian normalization fixes C=-2m",
+          "solution": "f(r)=1-2m/r",
+          "substitution_residuals": {
+            "r_fprime_plus_f_minus_1": {
+              "numerator": 0,
+              "denominator": 1
+            },
+            "fprime_over_r_plus_half_fsecond": {
+              "numerator": 0,
+              "denominator": 1
+            }
+          },
+          "scope": "Exact within the static, spherically symmetric, asymptotically flat vacuum ansatz."
+        },
+        "isotropic_translation": {
+          "coordinate_map": "r=rho(1+m/(2rho))^2=rho(1+x/2)^2",
+          "lapse_factor": "A(x)=((1-x/2)/(1+x/2))^2",
+          "spatial_factor": "B(x)=(1+x/2)^4",
+          "coordinate_identity": "(dr/drho)^2/A=B and r^2=rho^2 B",
+          "A_coefficients_through_x2": [
+            {
+              "numerator": 1,
+              "denominator": 1
+            },
+            {
+              "numerator": -2,
+              "denominator": 1
+            },
+            {
+              "numerator": 2,
+              "denominator": 1
+            }
+          ],
+          "B_coefficients_through_x2": [
+            {
+              "numerator": 1,
+              "denominator": 1
+            },
+            {
+              "numerator": 2,
+              "denominator": 1
+            },
+            {
+              "numerator": 3,
+              "denominator": 2
+            }
+          ],
+          "gtt_coefficients_through_x2": [
+            {
+              "numerator": -1,
+              "denominator": 1
+            },
+            {
+              "numerator": 2,
+              "denominator": 1
+            },
+            {
+              "numerator": -2,
+              "denominator": 1
+            }
+          ]
+        },
+        "ppn_identification": {
+          "template": "g_tt=-1+2U-2 beta U^2+O(U^3); g_ij=(1+2 gamma U+O(U^2))delta_ij",
+          "potential_identification": "U=x=m/rho",
+          "beta": {
+            "numerator": 1,
+            "denominator": 1
+          },
+          "gamma": {
+            "numerator": 1,
+            "denominator": 1
+          },
+          "gamma_minus_one": {
+            "numerator": 0,
+            "denominator": 1
+          }
+        },
+        "null_delay": {
+          "null_condition": "dt/dl=sqrt(B/A)=1+(1+gamma)U+O(U^2)",
+          "sqrt_B_over_A_coefficients_through_x2": [
+            {
+              "numerator": 1,
+              "denominator": 1
+            },
+            {
+              "numerator": 2,
+              "denominator": 1
+            },
+            {
+              "numerator": 7,
+              "denominator": 4
+            }
+          ],
+          "first_order_delay_coefficient": {
+            "numerator": 2,
+            "denominator": 1
+          },
+          "one_way_excess": "Delta t=(1+gamma)m[asinh(z_receiver/b)+asinh(z_emitter/b)]+O(m^2)",
+          "observable_parameter": "gamma+1"
+        }
+      },
+      "empirical_comparison_rail": {
+        "type": "IMPORTED_REPORTED_ESTIMATE_WITH_EXACT_ARITHMETIC_COMPARISON",
+        "source_record_id": "GR_CASSINI_SHAPIRO_2003",
+        "citation": "B. Bertotti, L. Iess, and P. Tortora, A test of general relativity using radio links with the Cassini spacecraft, Nature 425, 374-376 (2003).",
+        "stable_url": "https://doi.org/10.1038/nature01997",
+        "publisher_reported_expression": "gamma=1+(2.1+/-2.3)e-5",
+        "reported_gamma_minus_one": {
+          "numerator": 21,
+          "denominator": 1000000
+        },
+        "reported_plus_minus_uncertainty": {
+          "numerator": 23,
+          "denominator": 1000000
+        },
+        "reported_band": {
+          "lower": {
+            "numerator": -1,
+            "denominator": 500000
+          },
+          "upper": {
+            "numerator": 11,
+            "denominator": 250000
+          }
+        },
+        "exact_prediction_gamma_minus_one": {
+          "numerator": 0,
+          "denominator": 1
+        },
+        "prediction_inside_reported_band": true,
+        "absolute_standardized_distance": {
+          "numerator": 21,
+          "denominator": 23
+        },
+        "comparison_status": "SUPPORTED_WITHIN_REPORTED_PLUS_MINUS_BAND",
+        "data_lifecycle": "LITERATURE_TRANSCRIPTION_NOT_RAW_DATA_REANALYSIS",
+        "boundary": "The arithmetic comparison is exact after transcription. The spacecraft data reduction, plasma correction, covariance model, and likelihood are imported from the paper and are not reproduced."
+      },
+      "maturity_rails": [
+        {
+          "id": "MODEL_IDENTITY",
+          "status": "SATISFIED",
+          "basis": "Every exact stage uses the same declared standard-GR solar-exterior model and mass parameter."
+        },
+        {
+          "id": "APPLICABILITY",
+          "status": "SATISFIED",
+          "basis": "All 3 obligations required by this bounded prediction are satisfied; other obligations are explicitly masked."
+        },
+        {
+          "id": "CROSS_STAGE_COMPOSITION",
+          "status": "SATISFIED_WITH_TYPED_BOUNDARY",
+          "basis": "All 5 joins are registered: 3 exact and 2 literature-scoped operational/comparison joins."
+        },
+        {
+          "id": "PREDICTION_DERIVATION",
+          "status": "SATISFIED",
+          "basis": "The exact field-equation, coordinate, PPN, and null-condition chain gives gamma=1 and gamma+1=2."
+        },
+        {
+          "id": "OBSERVABLE_IDENTIFICATION",
+          "status": "SATISFIED_WITH_TYPED_BOUNDARY",
+          "basis": "The fitted Cassini gamma is connected to the null-delay coefficient under the declared photon-coupling and experimental-model assumptions."
+        },
+        {
+          "id": "EMPIRICAL_COMPARISON",
+          "status": "SUPPORTED_IN_DECLARED_SCOPE",
+          "basis": "gamma-1=0 lies in the publisher's displayed (2.1+/-2.3)e-5 band."
+        },
+        {
+          "id": "ROBUSTNESS_OUT_OF_SAMPLE",
+          "status": "NOT_ASSESSED",
+          "basis": "No second solar-system dataset or held-out comparison is included in this assembly."
+        }
+      ],
+      "assembly_disposition": {
+        "status": "BOUNDED_PREDICTION_ASSEMBLY_COMPLETE",
+        "complete_within_declared_scope": true,
+        "empirically_supported_within_declared_scope": true,
+        "complete_theory": false
+      },
+      "provenance": {
+        "inputs": [
+          {
+            "path": "reverse_physics/certificates/REVERSE_PHYSICS_EINSTEIN_CLASSIFICATION_V1.json",
+            "sha256": "2d833db3fd07390c75f0693fba124f86d83910a93a650e688f2cbe7bac1482f3",
+            "role": "local exact D=4 Einstein field-equation classification and Schwarzschild vacuum control"
+          },
+          {
+            "path": "foundations/standard-gr-observational-control-v1.json",
+            "sha256": "b65311888e0852aaf36ae9f95568e0b9aaeeb97758752eeffd02e4ba1d0b26e7",
+            "role": "typed Cassini primary-source comparison record"
+          }
+        ],
+        "remote_source": {
+          "locator": "https://doi.org/10.1038/nature01997",
+          "artifact_status": "PUBLISHER_METADATA_LIVE_SOURCE",
+          "retrieved": "2026-08-14",
+          "reported_fact": "gamma=1+(2.1+/-2.3)e-5 and bending/delay proportional to gamma+1",
+          "pinning_boundary": "The evolving publisher HTML is not treated as a stable byte artifact; the local typed control ledger is the content-addressed transcription authority."
+        }
+      },
+      "independent_checker": {
+        "path": "foundations/check_gr_cassini_assembly.py",
+        "method": "Direct rational coefficient identities, ODE residual checks, source-pin closure, applicability closure, and comparison-band arithmetic; it does not reuse the producer's series routines."
+      },
+      "claim_flags": {
+        "single_model_identity_declared": true,
+        "applicability_mask_complete": true,
+        "vacuum_field_equation_to_solution_derived": true,
+        "isotropic_coordinate_translation_exact": true,
+        "ppn_gamma_equals_one_derived_exactly": true,
+        "null_delay_gamma_plus_one_coefficient_derived": true,
+        "cassini_observable_map_registered": true,
+        "prediction_inside_reported_band": true,
+        "bounded_prediction_assembly_complete": true,
+        "raw_cassini_data_reanalysed": false,
+        "cassini_likelihood_reproduced": false,
+        "robustness_out_of_sample_assessed": false,
+        "all_solar_system_tests_covered": false,
+        "complete_standard_gr_theory_established": false,
+        "weyl_gravity_empirically_supported": false,
+        "quantum_lifecycle_promoted": false
+      },
+      "does_not_establish": [
+        "the Einstein equations outside the declared four-dimensional local metric and vacuum exterior assumptions",
+        "solar interior structure, multipoles, rotation, plasma physics, spacecraft dynamics, or the Cassini data-reduction pipeline",
+        "a retarded or advanced Green operator, full Cauchy well-posedness theorem, or BV gauge construction",
+        "reproduction of the Cassini likelihood, covariance analysis, or systematic-error budget",
+        "robustness against a second or held-out solar-system dataset",
+        "agreement of standard GR in the other five benchmark families",
+        "a complete classical, quantum, cosmological, or ultraviolet theory",
+        "any empirical support for Mannheim--Kazanas or another Weyl-gravity model"
+      ],
+      "human_report": "foundations/reports/gr-cassini-model-assembly-v1.md",
+      "canonical_digest": "bdbe75d140525fa6b1a83c4ca1d5ca9298fb9ce2cbf5322e32869361ee4f2603"
+    }
+  ],
+  "model_scoped_sources": [
+    {
+      "path": "foundations/results/FOUNDATIONAL_GR_CASSINI_MODEL_ASSEMBLY_V1.json",
+      "sha256": "f87aa0453de1af594175d1c23c39b48d644064a8582a56785bd9ea4ce279a902"
+    }
+  ],
   "calibration_controls": [
     {
       "schema_version": "standard-gr-observational-control-v1",
@@ -3136,6 +3632,9 @@
     "empirical_record_schema_declared": true,
     "external_positive_control_registered": true,
     "missing_and_failed_states_separated": true,
+    "model_scoped_prediction_assembly_registered": true,
+    "bounded_prediction_chain_established": true,
+    "bounded_empirical_agreement_assessed": true,
     "cross_cell_composability_established": false,
     "prediction_chain_established": false,
     "empirical_agreement_assessed": false,
@@ -3152,5 +3651,5 @@
     "a complete theory, a new Lorentzian-causal result, or a quantum lifecycle promotion"
   ],
   "source_atlas_digest": "4ba28f1320371b129b8f97dca3668acd02711ab4aefb980d21964cd90cefd30d",
-  "canonical_digest": "0199375cd15d134ffcca579c29a675d73f21949205e912fa876e0305f4ddce66"
+  "canonical_digest": "823418839c58fb4efdeae7448fe18555f88e758a15ba569c2013aa1a656ee736"
 }

@@ -5,8 +5,16 @@
   "canonical_data_digest": "4ba28f1320371b129b8f97dca3668acd02711ab4aefb980d21964cd90cefd30d",
   "inputs": [
     {
+      "path": "foundations/build_gr_cassini_assembly.py",
+      "sha256": "85a588ac66dd939276ff8681971c71dd840e2ca3bbc08539fbb0cd029109fe8e"
+    },
+    {
       "path": "foundations/build_matrix_site_v2.py",
-      "sha256": "183becd37453d14a8615e436d02a6707b286a04e0ed58082c812e27c2fe139af"
+      "sha256": "6782457a1a9f6128032dfde52dd07600d36c83ea14b5f522c8f0b98e3a08ea3a"
+    },
+    {
+      "path": "foundations/check_gr_cassini_assembly.py",
+      "sha256": "f6b2f1e355f038ada697bf7038214009b528029f1f2e546c8227eb422cac7b7d"
     },
     {
       "path": "foundations/literature-causal-green-atlas-v1.json",
@@ -30,15 +38,15 @@
     },
     {
       "path": "foundations/matrix_site_assets/app.js",
-      "sha256": "95f8be217240c42eb0e5e004138f0c49636bf37fd75033e4564af9a57b5703ba"
+      "sha256": "86cb1eeb9b93deaa2eb0521081f2592171c284104a248d53bf852aad7f0a0964"
     },
     {
       "path": "foundations/matrix_site_assets/index.html",
-      "sha256": "bd76ca81719a15344bfd50ea3c23cd27d428c1a1a6f75fe6950d4f2a4d76eb75"
+      "sha256": "30efde42ffcb32f9cda38a6dce2675ef728f184e9d87bc69a06bd47aea3e87dd"
     },
     {
       "path": "foundations/matrix_site_assets/styles.css",
-      "sha256": "9ef82f429c4fd6a584b4f89b6e89fbab74c4b9621f1907bddf1852b999dc0da0"
+      "sha256": "889f1ecbe4f130bd44290f6918dcd0371be96d5d6d7e58cea3ccbaa133c3ec15"
     },
     {
       "path": "foundations/matrix_site_v2_assets/app-v2.js",
@@ -103,6 +111,10 @@
     {
       "path": "foundations/reports/full-surface-gap-audit.md",
       "sha256": "d96f817007d749b37d2b40f4e2e50febfc5cf77ed95da9bf88e33a6fa8a2284f"
+    },
+    {
+      "path": "foundations/reports/gr-cassini-model-assembly-v1.md",
+      "sha256": "b8c1aee7fe6deaf4c3c48c758a53dbf37db0e0563298e03f1123fc0c248a527e"
     },
     {
       "path": "foundations/reports/hardy-continuity-kn-foundational-audit.md",
@@ -221,6 +233,10 @@
       "sha256": "7c3d467e07b07ca54b0d875c08a7cac5769fab769c412e8e71fc823f515669fd"
     },
     {
+      "path": "foundations/results/FOUNDATIONAL_GR_CASSINI_MODEL_ASSEMBLY_V1.json",
+      "sha256": "f87aa0453de1af594175d1c23c39b48d644064a8582a56785bd9ea4ce279a902"
+    },
+    {
       "path": "foundations/results/FOUNDATIONAL_HARDY_CONTINUITY_KN_AUDIT_V1.json",
       "sha256": "225c89304bd9625ee2a08ab330b2dbb615279e277cd37410324a39b2732598be"
     },
@@ -281,6 +297,10 @@
       "sha256": "f00e642c25fec883441346884467a7251c4ee61b4980b0370f124845b9cba8d6"
     },
     {
+      "path": "foundations/schema/foundational-gr-cassini-model-assembly-v1.schema.json",
+      "sha256": "6480a5d0fa41b61321573044cb7071af70546ba36703e7c523b05e2aaae5adeb"
+    },
+    {
       "path": "foundations/schema/standard-gr-observational-control-v1.schema.json",
       "sha256": "f70cfa44fbd22ce76b12217291924fc35caf1fd20bfe73e86ba014a122f8bba3"
     },
@@ -290,28 +310,32 @@
     },
     {
       "path": "foundations/theory_assembly.py",
-      "sha256": "a288cf26d7d8c8bf83e9f245ad655364019bae21e201dcea92f3dca7977948f3"
+      "sha256": "e777bb2918dcad2419aef001a4ed0f9a8cc2a99a4da5cae461fb6be9b10c2c9b"
     },
     {
       "path": "foundations/theory_viability.py",
       "sha256": "f88c37286494e64ee8de194f277c8bd6c267e558d348354792d412d1aaaed099"
+    },
+    {
+      "path": "foundations/verify_gr_cassini_assembly.py",
+      "sha256": "5de051c8784a08546d7a62c262e5cec537a51f0f1205849398e74e3531d27fdd"
     }
   ],
   "outputs": [
     {
       "path": "foundations/site/app.js",
-      "sha256": "95f8be217240c42eb0e5e004138f0c49636bf37fd75033e4564af9a57b5703ba",
-      "bytes": 67907
+      "sha256": "86cb1eeb9b93deaa2eb0521081f2592171c284104a248d53bf852aad7f0a0964",
+      "bytes": 72310
     },
     {
       "path": "foundations/site/assemblies.js",
-      "sha256": "6d8a801d1ce7e80b8f3682c5d05b8375d56d807bb78c1a5cf72d376829c6bfa3",
-      "bytes": 133779
+      "sha256": "8bc8cb345cc7927361f950913a3617009b2ee334118eea877e728ac2fe63b0a6",
+      "bytes": 155039
     },
     {
       "path": "foundations/site/assemblies.json",
-      "sha256": "7d8e1adea94a059cae77dc415e6a1271bdb5db0fdebbaeedab4325c9ef7d1f87",
-      "bytes": 133748
+      "sha256": "10b9aa14fb51d591bdb54644051d4b6d13ea52adff751795f3332045a4f96673",
+      "bytes": 155008
     },
     {
       "path": "foundations/site/data.js",
@@ -325,8 +349,8 @@
     },
     {
       "path": "foundations/site/index.html",
-      "sha256": "a93b0c539230e3c05dd699ff8425d9eb7047f86458389b9907f43734ad483616",
-      "bytes": 6549
+      "sha256": "3b5d03ec71189b8e2c2dcf7ce3eed6050355a38be2914e4007a04878c6044b00",
+      "bytes": 6582
     },
     {
       "path": "foundations/site/migration-review.js",
@@ -432,6 +456,11 @@
       "path": "foundations/site/sources/foundations/reports/full-surface-gap-audit.md",
       "sha256": "d96f817007d749b37d2b40f4e2e50febfc5cf77ed95da9bf88e33a6fa8a2284f",
       "bytes": 3243
+    },
+    {
+      "path": "foundations/site/sources/foundations/reports/gr-cassini-model-assembly-v1.md",
+      "sha256": "b8c1aee7fe6deaf4c3c48c758a53dbf37db0e0563298e03f1123fc0c248a527e",
+      "bytes": 6908
     },
     {
       "path": "foundations/site/sources/foundations/reports/hardy-continuity-kn-foundational-audit.md",
@@ -579,6 +608,11 @@
       "bytes": 393974
     },
     {
+      "path": "foundations/site/sources/foundations/results/FOUNDATIONAL_GR_CASSINI_MODEL_ASSEMBLY_V1.json",
+      "sha256": "f87aa0453de1af594175d1c23c39b48d644064a8582a56785bd9ea4ce279a902",
+      "bytes": 18876
+    },
+    {
       "path": "foundations/site/sources/foundations/results/FOUNDATIONAL_HARDY_CONTINUITY_KN_AUDIT_V1.json",
       "sha256": "225c89304bd9625ee2a08ab330b2dbb615279e277cd37410324a39b2732598be",
       "bytes": 6024
@@ -654,9 +688,14 @@
       "bytes": 7138
     },
     {
+      "path": "foundations/site/sources/foundations/schema/foundational-gr-cassini-model-assembly-v1.schema.json",
+      "sha256": "6480a5d0fa41b61321573044cb7071af70546ba36703e7c523b05e2aaae5adeb",
+      "bytes": 8260
+    },
+    {
       "path": "foundations/site/styles.css",
-      "sha256": "9ef82f429c4fd6a584b4f89b6e89fbab74c4b9621f1907bddf1852b999dc0da0",
-      "bytes": 25559
+      "sha256": "889f1ecbe4f130bd44290f6918dcd0371be96d5d6d7e58cea3ccbaa133c3ec15",
+      "bytes": 29094
     },
     {
       "path": "foundations/site/viability.js",

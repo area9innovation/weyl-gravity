@@ -453,10 +453,37 @@ Evidence record & Matrix use & Graph and ladder use \\
 \end{longtable}
 \endgroup
 
-\subsection{Prototype assemblies and empirical calibration}
+\subsection{Model-scoped assembly, prototype envelopes, and empirical calibration}
 \label{app:assembly-calibration}
 The assembly view no longer treats missing downstream work as a failed test.  Its six maturity rails are reported independently: direct obligation coverage may be complete while composition is partial and prediction or empirical records remain unregistered.  Red is reserved for an explicit incompatibility, obstruction, or failed comparison.
 
+\paragraph{First bounded end-to-end assembly.}
+Standard GR solar-system prediction assembly: field equations to Cassini.  This is one model identity and one declared observational sector, not a maximum assembled from unrelated cells.  Its applicability mask requires 3 of the atlas's sixteen obligations, touches 2 others without requiring them, and explicitly places 11 outside this prediction.
+
+\begin{table}[htbp]
+\centering
+\scriptsize
+\begin{tabularx}{\textwidth}{@{}p{0.22\textwidth}p{0.20\textwidth}Y@{}}
+\toprule
+Stage & Status & What is established \\
+\midrule
+Vacuum Einstein equations & certified exact & The declared model uses \(G_{\mu\nu}=0\) in the exterior sector. \\
+Static spherical exterior & certified exact & The field equations integrate to \(f(r)=1-2m/r\) under the declared boundary normalization. \\
+Isotropic weak-field reduction & certified exact & Exact coordinate translation and formal series give \(\beta=\gamma=1\). \\
+Null-delay observable & certified exact & The first-order delay coefficient is \(1+\gamma=2\). \\
+Cassini fitted parameter & literature scoped & The publisher abstract identifies bending/delay and the measured frequency shift with \(\gamma+1\). \\
+Published Cassini comparison & supported reported band & The exact prediction \(\gamma-1=0\) lies inside the displayed reported plus-minus band. \\
+\bottomrule
+\end{tabularx}
+\caption{The six typed stages of the standard-GR solar-exterior assembly.  The first four are exact local derivations; the last two are explicitly literature-scoped bridges.}
+\label{tab:gr-cassini-assembly}
+\end{table}
+
+The exact rail derives \(g_{tt}=-1+2U-2\beta U^2+O(U^3)\) and \(g_{ij}=(1+2\gamma U+O(U^2))\delta_{ij}\), obtains \(\beta=\gamma=1\), and therefore fixes the first-order null-delay coefficient \(1+\gamma=2\).  The separately typed empirical rail imports the publisher's displayed Cassini estimate \(\gamma=1+(2.1\mathbin{\pm}2.3)\times10^{-5}\).  Exact rational comparison puts the prediction \(\gamma-1=0\) inside that displayed band, at absolute standardized distance \(21/23\) from its centre.
+
+All three required obligations are satisfied and all five stage interfaces are registered (three exact and two literature-scoped).  The resulting disposition is bounded prediction assembly complete.  It does not reproduce the Cassini raw-data reduction or likelihood, assess an independent held-out test, establish a complete theory, or transfer empirical support to Weyl gravity.
+
+\paragraph{Cube-selected prototype envelopes.}
 \begin{table}[htbp]
 \centering
 \scriptsize
@@ -492,10 +519,10 @@ Benchmark & Primary source & Registered finding and boundary \\
 Benchmark & Primary source & Registered finding and boundary \\
 \midrule
 \endhead
-Solar-system dynamics & B. Bertotti, L. Iess, and P. Tortora, A test of general relativity using radio links with the Cassini spacecraft, Nature 425, 374-376 (2003). https://doi.org/10.1038/nature01997 & The reported estimate is consistent with the standard-GR prediction within the experiment's stated uncertainty. Boundary: Does not test strong-field dynamics, gravitational radiation, galactic phenomenology, cosmology, quantum gravity, or a foundations-cube composition map. \\
-Compact binaries & M. Kramer et al., Strong-Field Gravity Tests with the Double Pulsar, Physical Review X 11, 041050 (2021). https://doi.org/10.1103/PhysRevX.11.041050 & The tested post-Keplerian and radiative predictions are mutually consistent with GR at the reported precision. Boundary: A high-precision strong-field binary test, not a proof of GR in arbitrary compact objects, cosmology, or the quantum domain. \\
-Gravitational waves & LIGO Scientific Collaboration, Virgo Collaboration, and KAGRA Collaboration, Tests of General Relativity with GWTC-3, arXiv:2112.06861 (2021). https://arxiv.org/abs/2112.06861 & The reported tests find no evidence for deviations from GR in the analysed GWTC-3 signals. Boundary: Consistency within the analysed catalogue and waveform systematics is not proof of GR for every source, propagation environment, polarization model, or cosmological history. \\
-Gravitational waves & B. P. Abbott et al., Gravitational Waves and Gamma-rays from a Binary Neutron Star Merger: GW170817 and GRB 170817A, Astrophysical Journal Letters 848, L13 (2017). https://arxiv.org/abs/1710.05834 & The observed delay yields stringent bounds compatible with standard luminal GR propagation in the tested setting. Boundary: Does not isolate all modified-gravity effects, determine waveform generation by itself, or provide a universal propagation theorem. \\
+Solar-system dynamics & B. Bertotti, L. Iess, and P. Tortora, A test of general relativity using radio links with the Cassini spacecraft, Nature 425, 374-376 (2003). \url{https://doi.org/10.1038/nature01997} & The reported estimate is consistent with the standard-GR prediction within the experiment's stated uncertainty. Boundary: Does not test strong-field dynamics, gravitational radiation, galactic phenomenology, cosmology, quantum gravity, or a foundations-cube composition map. \\
+Compact binaries & M. Kramer et al., Strong-Field Gravity Tests with the Double Pulsar, Physical Review X 11, 041050 (2021). \url{https://doi.org/10.1103/PhysRevX.11.041050} & The tested post-Keplerian and radiative predictions are mutually consistent with GR at the reported precision. Boundary: A high-precision strong-field binary test, not a proof of GR in arbitrary compact objects, cosmology, or the quantum domain. \\
+Gravitational waves & LIGO Scientific Collaboration, Virgo Collaboration, and KAGRA Collaboration, Tests of General Relativity with GWTC-3, arXiv:2112.06861 (2021). \url{https://arxiv.org/abs/2112.06861} & The reported tests find no evidence for deviations from GR in the analysed GWTC-3 signals. Boundary: Consistency within the analysed catalogue and waveform systematics is not proof of GR for every source, propagation environment, polarization model, or cosmological history. \\
+Gravitational waves & B. P. Abbott et al., Gravitational Waves and Gamma-rays from a Binary Neutron Star Merger: GW170817 and GRB 170817A, Astrophysical Journal Letters 848, L13 (2017). \url{https://arxiv.org/abs/1710.05834} & The observed delay yields stringent bounds compatible with standard luminal GR propagation in the tested setting. Boundary: Does not isolate all modified-gravity effects, determine waveform generation by itself, or provide a universal propagation theorem. \\
 \bottomrule
 \end{longtable}
 \endgroup
@@ -503,4 +530,4 @@ Gravitational waves & B. P. Abbott et al., Gravitational Waves and Gamma-rays fr
 The control populates three of six benchmark families with four records.  It is outside the cube, does not make GR complete, and transfers no observational support to a Weyl-gravity prototype.
 
 The complete normalized dataset is \cert{foundations/site/data.json} (SHA-256 \cert{9e2dcefdc4eb94e32e9d08b81bd7cbf16916a5ed2bf8f8d18275908472b842d5}; canonical digest \cert{4ba28f1320371b129b8f97dca3668acd02711ab4aefb980d21964cd90cefd30d}).  These tables are generated from that file and contain no hand-copied coverage counts, relation edges, evidence roles, boundaries, or citations.
-The assembly and calibration tables are generated from \cert{foundations/site/assemblies.json} (SHA-256 \cert{7d8e1adea94a059cae77dc415e6a1271bdb5db0fdebbaeedab4325c9ef7d1f87}; canonical digest \cert{0199375cd15d134ffcca579c29a675d73f21949205e912fa876e0305f4ddce66}).
+The assembly and calibration tables are generated from \cert{foundations/site/assemblies.json} (SHA-256 \cert{10b9aa14fb51d591bdb54644051d4b6d13ea52adff751795f3332045a4f96673}; canonical digest \cert{823418839c58fb4efdeae7448fe18555f88e758a15ba569c2013aa1a656ee736}).

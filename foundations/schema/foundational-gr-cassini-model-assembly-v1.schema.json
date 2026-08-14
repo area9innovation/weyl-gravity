@@ -1,0 +1,169 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$defs": {
+    "fraction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      }
+    }
+  },
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "result_id", "result_kind", "lifecycle", "created",
+    "repository_base_commit", "dependency_tags", "title", "model_identity",
+    "applicability_mask", "applicability_summary", "shared_object_ledger",
+    "stages", "interfaces", "exact_prediction_rail", "empirical_comparison_rail",
+    "maturity_rails", "assembly_disposition", "provenance", "independent_checker",
+    "claim_flags", "does_not_establish", "human_report", "canonical_digest"
+  ],
+  "properties": {
+    "schema_version": {"const": "foundational-gr-cassini-model-assembly-v1"},
+    "result_id": {"const": "FOUNDATIONAL_GR_CASSINI_MODEL_ASSEMBLY_V1"},
+    "result_kind": {"const": "MODEL_SCOPED_END_TO_END_PREDICTION_ASSEMBLY"},
+    "lifecycle": {"const": "MODEL_SCOPED_EMPIRICAL_COMPARISON_REGISTERED"},
+    "created": {"type": "string", "format": "date"},
+    "repository_base_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "title": {"type": "string", "minLength": 1},
+    "model_identity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "theory", "sector", "field_equations", "matter_coupling", "approximation", "benchmark", "comparison_id"],
+      "properties": {
+        "id": {"const": "STANDARD_GR_VACUUM_SOLAR_EXTERIOR"},
+        "theory": {"type": "string", "minLength": 1},
+        "sector": {"type": "string", "minLength": 1},
+        "field_equations": {"type": "string", "minLength": 1},
+        "matter_coupling": {"type": "string", "minLength": 1},
+        "approximation": {"type": "string", "minLength": 1},
+        "benchmark": {"const": "SOLAR_SYSTEM"},
+        "comparison_id": {"const": "GR_CASSINI_SHAPIRO_2003"}
+      }
+    },
+    "applicability_mask": {
+      "type": "array",
+      "minItems": 16,
+      "maxItems": 16,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["obligation", "status", "reason"],
+        "properties": {
+          "obligation": {"type": "string", "pattern": "^[A-Z0-9_]+$"},
+          "status": {"enum": ["IN_SCOPE_REQUIRED", "TOUCHED_NOT_REQUIRED", "OUT_OF_SCOPE"]},
+          "reason": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "applicability_summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["total_atlas_obligations", "required", "required_satisfied", "touched_not_required", "out_of_scope"],
+      "properties": {
+        "total_atlas_obligations": {"const": 16},
+        "required": {"const": 3},
+        "required_satisfied": {"const": 3},
+        "touched_not_required": {"const": 2},
+        "out_of_scope": {"const": 11}
+      }
+    },
+    "shared_object_ledger": {"type": "array", "minItems": 4, "maxItems": 4},
+    "stages": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "label", "status", "establishes"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^[A-Z0-9_]+$"},
+          "label": {"type": "string", "minLength": 1},
+          "status": {"enum": ["CERTIFIED_EXACT", "LITERATURE_SCOPED", "SUPPORTED_REPORTED_BAND"]},
+          "establishes": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "interfaces": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "from", "to", "relation", "status", "basis"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^[A-Z0-9_]+$"},
+          "from": {"type": "string", "pattern": "^[A-Z0-9_]+$"},
+          "to": {"type": "string", "pattern": "^[A-Z0-9_]+$"},
+          "relation": {"enum": ["EXACT_DERIVATION", "EXACT_TRANSLATION", "EXACT_ASYMPTOTIC_DERIVATION", "CONDITIONAL_OPERATIONAL_BRIDGE", "LITERATURE_SCOPED_COMPARISON"]},
+          "status": {"enum": ["CERTIFIED", "REGISTERED"]},
+          "basis": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "exact_prediction_rail": {
+      "type": "object",
+      "required": ["arithmetic", "conventions", "field_equation_derivation", "isotropic_translation", "ppn_identification", "null_delay"],
+      "properties": {
+        "arithmetic": {"const": "EXACT_RATIONAL_AND_FORMAL_SERIES"},
+        "ppn_identification": {
+          "type": "object",
+          "required": ["template", "potential_identification", "beta", "gamma", "gamma_minus_one"],
+          "properties": {
+            "beta": {"$ref": "#/$defs/fraction"},
+            "gamma": {"$ref": "#/$defs/fraction"},
+            "gamma_minus_one": {"$ref": "#/$defs/fraction"}
+          }
+        }
+      }
+    },
+    "empirical_comparison_rail": {
+      "type": "object",
+      "required": ["type", "source_record_id", "citation", "stable_url", "publisher_reported_expression", "reported_gamma_minus_one", "reported_plus_minus_uncertainty", "reported_band", "exact_prediction_gamma_minus_one", "prediction_inside_reported_band", "absolute_standardized_distance", "comparison_status", "data_lifecycle", "boundary"],
+      "properties": {
+        "type": {"const": "IMPORTED_REPORTED_ESTIMATE_WITH_EXACT_ARITHMETIC_COMPARISON"},
+        "source_record_id": {"const": "GR_CASSINI_SHAPIRO_2003"},
+        "stable_url": {"type": "string", "format": "uri"},
+        "reported_gamma_minus_one": {"$ref": "#/$defs/fraction"},
+        "reported_plus_minus_uncertainty": {"$ref": "#/$defs/fraction"},
+        "reported_band": {
+          "type": "object",
+          "required": ["lower", "upper"],
+          "properties": {"lower": {"$ref": "#/$defs/fraction"}, "upper": {"$ref": "#/$defs/fraction"}}
+        },
+        "exact_prediction_gamma_minus_one": {"$ref": "#/$defs/fraction"},
+        "prediction_inside_reported_band": {"const": true},
+        "absolute_standardized_distance": {"$ref": "#/$defs/fraction"},
+        "comparison_status": {"const": "SUPPORTED_WITHIN_REPORTED_PLUS_MINUS_BAND"},
+        "data_lifecycle": {"const": "LITERATURE_TRANSCRIPTION_NOT_RAW_DATA_REANALYSIS"}
+      }
+    },
+    "maturity_rails": {"type": "array", "minItems": 7, "maxItems": 7},
+    "assembly_disposition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "complete_within_declared_scope", "empirically_supported_within_declared_scope", "complete_theory"],
+      "properties": {
+        "status": {"const": "BOUNDED_PREDICTION_ASSEMBLY_COMPLETE"},
+        "complete_within_declared_scope": {"const": true},
+        "empirically_supported_within_declared_scope": {"const": true},
+        "complete_theory": {"const": false}
+      }
+    },
+    "provenance": {"type": "object", "required": ["inputs", "remote_source"]},
+    "independent_checker": {"type": "object", "required": ["path", "method"]},
+    "claim_flags": {
+      "type": "object",
+      "required": ["single_model_identity_declared", "applicability_mask_complete", "vacuum_field_equation_to_solution_derived", "isotropic_coordinate_translation_exact", "ppn_gamma_equals_one_derived_exactly", "null_delay_gamma_plus_one_coefficient_derived", "cassini_observable_map_registered", "prediction_inside_reported_band", "bounded_prediction_assembly_complete", "raw_cassini_data_reanalysed", "cassini_likelihood_reproduced", "robustness_out_of_sample_assessed", "all_solar_system_tests_covered", "complete_standard_gr_theory_established", "weyl_gravity_empirically_supported", "quantum_lifecycle_promoted"]
+    },
+    "does_not_establish": {"type": "array", "minItems": 8, "items": {"type": "string", "minLength": 1}},
+    "human_report": {"const": "foundations/reports/gr-cassini-model-assembly-v1.md"},
+    "canonical_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

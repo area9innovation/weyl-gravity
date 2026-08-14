@@ -1,0 +1,195 @@
+{
+  "schema_version": "science-forge-tier-receipt-v1",
+  "receipt_id": "FOUNDATIONAL_GR_CASSINI_MODEL_ASSEMBLY_V1_TIER_RECEIPT",
+  "result_id": "FOUNDATIONAL_GR_CASSINI_MODEL_ASSEMBLY_V1",
+  "created": "2026-08-14",
+  "source_base_commit": "be5b23b72ea73f6b5dd099e9a3bd3126e6778922",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "scope": "One model-scoped standard-GR solar-vacuum prediction assembly from the vacuum field equations through the Schwarzschild and PPN reductions to a separately typed comparison with the publisher-reported Cassini gamma band. The existing explorer and Paper 21 are generated consumers.",
+  "artifacts": [
+    {
+      "path": "foundations/results/FOUNDATIONAL_GR_CASSINI_MODEL_ASSEMBLY_V1.json",
+      "sha256": "f87aa0453de1af594175d1c23c39b48d644064a8582a56785bd9ea4ce279a902",
+      "role": "machine-readable model identity, applicability mask, exact prediction rail, empirical comparison rail, maturity rails, and fail-closed claim boundary"
+    },
+    {
+      "path": "foundations/reports/gr-cassini-model-assembly-v1.md",
+      "sha256": "b8c1aee7fe6deaf4c3c48c758a53dbf37db0e0563298e03f1123fc0c248a527e",
+      "role": "human-readable bounded-result report"
+    },
+    {
+      "path": "foundations/schema/foundational-gr-cassini-model-assembly-v1.schema.json",
+      "sha256": "6480a5d0fa41b61321573044cb7071af70546ba36703e7c523b05e2aaae5adeb",
+      "role": "fail-closed result schema"
+    },
+    {
+      "path": "foundations/build_gr_cassini_assembly.py",
+      "sha256": "85a588ac66dd939276ff8681971c71dd840e2ca3bbc08539fbb0cd029109fe8e",
+      "role": "deterministic exact-rational producer"
+    },
+    {
+      "path": "foundations/check_gr_cassini_assembly.py",
+      "sha256": "f6b2f1e355f038ada697bf7038214009b528029f1f2e546c8227eb422cac7b7d",
+      "role": "independent algebra, applicability, provenance, and comparison checker"
+    },
+    {
+      "path": "foundations/verify_gr_cassini_assembly.py",
+      "sha256": "5de051c8784a08546d7a62c262e5cec537a51f0f1205849398e74e3531d27fdd",
+      "role": "schema, source-pin, deterministic-output, and report verifier"
+    },
+    {
+      "path": "foundations/results/FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1.json",
+      "sha256": "10b9aa14fb51d591bdb54644051d4b6d13ea52adff751795f3332045a4f96673",
+      "role": "integrated assembly projection"
+    },
+    {
+      "path": "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json",
+      "sha256": "03e316260ce52929aca40ea2feace4d38fecfcaae155aed19598fc217e93b09e",
+      "role": "existing static explorer regenerated in place"
+    },
+    {
+      "path": "paper/21-reverse-foundations-of-physics-claim-map.json",
+      "sha256": "9f8d1b8b22ad38c665c775b29385088ff579abd89f51d7175f21f9b2822317d2",
+      "role": "Paper 21 machine-readable claim and authority projection"
+    },
+    {
+      "path": "paper/21-reverse-foundations-of-physics.pdf",
+      "sha256": "7c74ec964a73a43f326aff0bda987997a220d708790a803240f87cad3d4b363d",
+      "role": "compiled 36-page manuscript with model-scoped assembly appendix"
+    }
+  ],
+  "source_pins": [
+    {
+      "path": "reverse_physics/certificates/REVERSE_PHYSICS_EINSTEIN_CLASSIFICATION_V1.json",
+      "sha256": "2d833db3fd07390c75f0693fba124f86d83910a93a650e688f2cbe7bac1482f3",
+      "role": "unchanged local exact Einstein-equation and Schwarzschild control"
+    },
+    {
+      "path": "foundations/standard-gr-observational-control-v1.json",
+      "sha256": "b65311888e0852aaf36ae9f95568e0b9aaeeb97758752eeffd02e4ba1d0b26e7",
+      "role": "content-addressed typed transcription of the primary Cassini comparison record"
+    }
+  ],
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "python3 -m py_compile <changed Python files>; python3 -m json.tool foundations/schema/foundational-gr-cassini-model-assembly-v1.schema.json; python3 -m json.tool foundations/results/FOUNDATIONAL_GR_CASSINI_MODEL_ASSEMBLY_V1.json",
+          "elapsed_seconds": 0.17,
+          "status": "PASS"
+        },
+        {
+          "command": "cd paper && pdflatex -interaction=nonstopmode -halt-on-error 21-reverse-foundations-of-physics.tex (twice)",
+          "elapsed_seconds": 1.33,
+          "status": "PASS",
+          "output": "36 pages; no undefined references or citations, overfull boxes, or LaTeX warnings on the final pass"
+        },
+        {
+          "command": "google-chrome --headless --window-size=1600,3200 --screenshot=<temporary>/assemblies-full.png http://127.0.0.1:8000/#view=assemblies; repeat at 430x1200",
+          "elapsed_seconds": 3.0,
+          "status": "PASS",
+          "output": "desktop and narrow-screen inspections show the six-stage chain, bounded disposition, seven maturity rails, applicability disclosure, and prototype separation without overlap"
+        },
+        {
+          "command": "node --check foundations/matrix_site_assets/app.js foundations/site/app.js",
+          "status": "NOT_RUN",
+          "criterion": "node is not installed in the environment; browser execution and the deterministic site tests exercised both generated JavaScript copies"
+        }
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "python3 foundations/build_gr_cassini_assembly.py --check",
+          "elapsed_seconds": 0.06,
+          "status": "PASS"
+        },
+        {
+          "command": "python3 foundations/check_gr_cassini_assembly.py",
+          "elapsed_seconds": 0.04,
+          "status": "PASS",
+          "output": "gamma=1, delay coefficient=2, 3/3 required obligations, 3 exact plus 2 registered interfaces, and exact 21/23 comparison distance"
+        },
+        {
+          "command": "python3 foundations/verify_gr_cassini_assembly.py",
+          "elapsed_seconds": 0.13,
+          "status": "PASS"
+        },
+        {
+          "command": "python3 -m unittest foundations.tests.test_gr_cassini_assembly foundations.tests.test_theory_assembly foundations.tests.test_matrix_site",
+          "elapsed_seconds": 0.83,
+          "status": "PASS",
+          "output": "21 tests"
+        }
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "criterion": "The new mathematical result and schema change the assembly, static-site, and Paper 21 generated consumers, so the affected chain was regenerated and independently verified.",
+      "commands": [
+        {
+          "command": "python3 foundations/build_matrix_site_v2.py --check",
+          "elapsed_seconds": 0.11,
+          "status": "PASS"
+        },
+        {
+          "command": "python3 foundations/check_matrix_site_v2.py",
+          "elapsed_seconds": 0.05,
+          "status": "PASS",
+          "output": "one bounded-complete model assembly, six stages, five interfaces, and all existing atlas counts independently audited"
+        },
+        {
+          "command": "python3 foundations/verify_theory_assembly.py",
+          "elapsed_seconds": 0.09,
+          "status": "PASS"
+        },
+        {
+          "command": "python3 foundations/verify_matrix_site_v2.py",
+          "elapsed_seconds": 0.18,
+          "status": "PASS"
+        },
+        {
+          "command": "python3 paper/generate_21_reverse_foundations_appendices.py --check; python3 paper/generate_21_reverse_foundations_claim_map.py --check; python3 paper/verify_21_reverse_foundations_claim_map.py",
+          "elapsed_seconds": 0.15,
+          "status": "PASS"
+        }
+      ],
+      "unchanged_predecessor_policy": "The exact Einstein-classification predecessor was checked by its pinned SHA-256 rather than reproduced; rerunning a producer would not constitute independent verification."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "This is a bounded model-scoped assembly and working-paper update, not a classical or quantum freeze, release, shared-core algebra change, theorem lifecycle promotion, or quantum lifecycle promotion."
+    }
+  },
+  "claim_flags": {
+    "single_model_identity_declared": true,
+    "applicability_mask_complete": true,
+    "exact_prediction_chain_independently_checked": true,
+    "cassini_comparison_separately_typed": true,
+    "bounded_prediction_assembly_complete": true,
+    "existing_site_updated_in_place": true,
+    "paper_21_updated_and_compiles": true,
+    "raw_cassini_data_reanalysed": false,
+    "robustness_out_of_sample_assessed": false,
+    "complete_standard_gr_theory_established": false,
+    "weyl_gravity_empirically_supported": false,
+    "quantum_lifecycle_promoted": false
+  },
+  "preexisting_unrelated_work_preserved": [
+    "foundations/build_bt_euclidean_lattice_import.py and its result/report/schema/test/verifiers",
+    "foundations/refine_intersection_cube_v10.py and its result/report/schema/test/verifiers"
+  ],
+  "does_not_establish": [
+    "the Einstein equations beyond the declared four-dimensional local metric and vacuum exterior assumptions",
+    "the Cassini data-reduction pipeline, likelihood, covariance analysis, or systematic-error budget",
+    "robustness against a second or held-out solar-system dataset",
+    "agreement of standard GR in every observational sector or a complete standard-GR theory",
+    "empirical support for Mannheim--Kazanas or another Weyl-gravity model",
+    "a new full-complex Lorentzian-causal or quantum lifecycle result"
+  ]
+}

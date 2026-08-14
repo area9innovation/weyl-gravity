@@ -564,8 +564,12 @@
     SATISFIED: "complete", OPEN: "open", PARTIALLY_CERTIFIED: "partial",
     NOT_ASSESSED: "missing", NOT_EVALUABLE: "neutral", NOT_REGISTERED: "missing",
     NO_RECORDS: "missing", BLOCKED: "blocked", FAILED: "blocked",
-    REGISTERED_IN_DOMAINS: "control", SUPPORTED_IN_DOMAINS: "complete", MULTI_DOMAIN_SUPPORT: "complete"
+    REGISTERED_IN_DOMAINS: "control", SUPPORTED_IN_DOMAINS: "complete", MULTI_DOMAIN_SUPPORT: "complete",
+    CERTIFIED_EXACT: "complete", LITERATURE_SCOPED: "control", SUPPORTED_REPORTED_BAND: "complete",
+    SATISFIED_WITH_TYPED_BOUNDARY: "control", SUPPORTED_IN_DECLARED_SCOPE: "complete"
   };
+
+  function assemblyFraction(value) { return value.denominator === 1 ? `${value.numerator}` : `${value.numerator}/${value.denominator}`; }
 
   function renderAssemblies() {
     const assembly = ASSEMBLIES.assemblies.find(item => item.id === state.assembly) || ASSEMBLIES.assemblies[0];
@@ -585,6 +589,11 @@
     const vocabulary = ASSEMBLIES.interface_vocabulary.map(item => `<details><summary>${esc(item.id.replaceAll("_", " "))}</summary><p>${esc(item.meaning)}</p></details>`).join("");
     const benchmarks = ASSEMBLIES.empirical_ledger.benchmarks.map(item => `<article><span class="quality">${esc(item.status.replaceAll("_", " "))}</span><h3>${esc(item.label)}</h3><p>${esc(item.question)}</p></article>`).join("");
     const control = ASSEMBLIES.calibration_controls[0];
+    const model = ASSEMBLIES.model_scoped_assemblies[0];
+    const modelStages = model.stages.map((stage, index) => `<article class="model-stage ${ASSEMBLY_GATE_STYLE[stage.status] || "missing"}"><span>${index + 1}</span><small>${esc(stage.status.replaceAll("_", " "))}</small><h3>${esc(stage.label)}</h3><p>${esc(stage.establishes)}</p></article>`).join("");
+    const modelRails = model.maturity_rails.map(rail => `<article class="model-rail ${ASSEMBLY_GATE_STYLE[rail.status] || "missing"}"><small>${esc(rail.status.replaceAll("_", " "))}</small><h3>${esc(title(rail.id))}</h3><p>${esc(rail.basis)}</p></article>`).join("");
+    const applicability = model.applicability_mask.map(item => `<tr><th>${esc(title(item.obligation))}</th><td><span class="applicability-pill applicability-${item.status.toLowerCase()}">${esc(item.status.replaceAll("_", " "))}</span></td><td>${esc(item.reason)}</td></tr>`).join("");
+    const empirical = model.empirical_comparison_rail;
     const controlRails = control.rail_summary.map((rail, index) => `<article class="assembly-gate ${ASSEMBLY_GATE_STYLE[rail.status] || "control"}"><span>${index + 1}</span><div><small>${esc(rail.status.replaceAll("_", " "))}</small><h3>${esc(title(rail.id))}</h3><p>${esc(rail.basis)}</p></div></article>`).join("");
     const controlByBenchmark = new Map(control.benchmark_coverage.map(item => [item.benchmark, item]));
     const controlBenchmarks = ASSEMBLIES.empirical_ledger.benchmarks.map(item => {
@@ -596,6 +605,14 @@
     const completeCoverage = assembly.coverage.complete_direct ? "Coverage complete" : "Coverage still open";
     const certifiedCount = assembly.interfaces.filter(item => item.certification_status === "CERTIFIED").length;
     document.getElementById("assemblyExplorer").innerHTML = `
+      <section class="model-assembly"><div class="model-assembly-head"><div><p class="eyebrow">First model-scoped end-to-end result</p><h2>Field equations to Cassini</h2><p>${esc(model.title)}</p></div><div class="model-disposition"><b>Bounded assembly complete</b><span>Empirically supported in its declared scope</span><small>Complete theory: NO</small></div></div>
+      <div class="model-scope"><p><b>One model:</b> ${esc(model.model_identity.theory)} — ${esc(model.model_identity.sector)}.</p><p><b>Declared coupling:</b> ${esc(model.model_identity.matter_coupling)}.</p></div>
+      <div class="section-head compact-head"><div><p class="eyebrow">One object chain, not a coverage maximum</p><h3>Six composed stages</h3></div><p>Three joins are certified exactly; two operational and empirical joins are registered with literature-scoped boundaries.</p></div><div class="model-stages">${modelStages}</div>
+      <div class="model-comparison"><div><p class="eyebrow">Exact prediction</p><b>PPN γ = ${assemblyFraction(model.exact_prediction_rail.ppn_identification.gamma)}</b><span>Null-delay coefficient 1 + γ = ${assemblyFraction(model.exact_prediction_rail.null_delay.first_order_delay_coefficient)}</span></div><div><p class="eyebrow">Published Cassini estimate</p><b>${esc(empirical.publisher_reported_expression)}</b><span>Exact prediction lies inside the displayed band; normalized distance ${assemblyFraction(empirical.absolute_standardized_distance)}.</span></div><div><p class="eyebrow">Evidence type</p><b>Literature-scoped comparison</b><span>Arithmetic rechecked; raw spacecraft reduction and likelihood not reproduced.</span></div></div>
+      <div class="section-head compact-head"><div><p class="eyebrow">Bounded success</p><h3>Model maturity rails</h3></div><p>Green applies only inside the declared solar-exterior prediction scope. Robustness remains unassessed.</p></div><div class="model-rails">${modelRails}</div>
+      <details class="applicability-details"><summary>Applicability mask: ${model.applicability_summary.required_satisfied}/${model.applicability_summary.required} required obligations satisfied</summary><p>Out-of-scope obligations are not failed tests. “Touched, not required” records a nearby concept without claiming its full atlas theorem.</p><div class="assembly-table-wrap"><table class="assembly-table applicability-table"><thead><tr><th>Atlas obligation</th><th>Role in this assembly</th><th>Reason</th></tr></thead><tbody>${applicability}</tbody></table></div></details>
+      <p class="model-boundary"><b>Boundary:</b> ${esc(model.empirical_comparison_rail.boundary)} <a href="sources/foundations/results/FOUNDATIONAL_GR_CASSINI_MODEL_ASSEMBLY_V1.json">Open certificate</a>.</p></section>
+      <div class="section-head"><div><p class="eyebrow">Coverage envelopes</p><h2>Prototype assemblies are still not composed theories</h2></div><p>The bounded GR/Cassini result above succeeds because it declares one model and one applicable sector. The selectors below maximize atlas coverage across records and therefore remain navigational prototypes.</p></div>
       <article class="assembly-boundary calibrated"><p class="eyebrow">Calibrated reading</p><h3>${esc(completeCoverage)}: ${assembly.coverage.direct}/${assembly.coverage.total} obligations have direct results; composition is ${certifiedCount}/${assembly.interfaces.length} certified.</h3><p>These are separate maturity statements. Grey means unregistered or not yet evaluable, not failure. Orange means partial/open. Red is reserved for an explicit incompatibility, obstruction, or failed comparison; none is currently registered for this prototype.</p></article>
       <section class="assembly-selector"><label><b>Prototype assembly</b><select id="assemblySelect">${options}</select></label><div><p class="eyebrow">Aim</p><p>${esc(assembly.aim)}</p></div><div class="assembly-score"><b>${assembly.coverage.direct}/${assembly.coverage.total}</b><span>obligations direct</span><strong>End-to-end status: NOT ESTABLISHED</strong></div></section>
       <div class="section-head compact-head"><div><p class="eyebrow">Do not collapse distinct questions</p><h2>Six independent maturity rails</h2></div><p>The rails have dependencies, but they are reported separately. Missing records are neutral; they are not failed tests.</p></div>

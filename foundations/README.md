@@ -276,8 +276,8 @@ strength ladder, and the resolved evidence catalogue. The **Theory profiles**
 view adds a 36-profile coverage map, selectable obligation gates, six
 foundation-specific carrier envelopes, and a non-scalar Pareto view. It keeps
 three rails separate: obligation coverage is computed; cross-cell composition
-is partially assessed; and observational agreement is not represented by the current
-schema. A multi-carrier maximum is therefore labelled a coverage envelope, not
+is partially assessed; and observational agreement is not registered for those
+cross-cell profiles. A multi-carrier maximum is therefore labelled a coverage envelope, not
 a completed theory. The **Assemblies** view adds seven named prototype
 envelopes, six separately reported maturity rails, and 49 explicitly typed
 cross-cell joins. Missing, premature, blocked, and failed work are distinct
@@ -286,7 +286,28 @@ Two scoped joins are now certified
 `CONDITIONAL_BRIDGE` relations: finite-corner state-to-probability and free
 ground-state-to-dynamics. Each appears in two compatible prototypes. The other
 joins remain `NOT_ASSESSED`, and the candidate empirical ledger is empty, so
-every prototype remains fail-closed before theory or observational completion.
+every cube-selected prototype remains fail-closed before theory or observational
+completion.
+
+The view now leads with the first model-scoped vertical slice:
+[`FOUNDATIONAL_GR_CASSINI_MODEL_ASSEMBLY_V1`](reports/gr-cassini-model-assembly-v1.md).
+It keeps one standard-GR solar-vacuum model identity from the Einstein field
+equations through the Schwarzschild solution, exact isotropic translation,
+the PPN result `gamma=1`, the null-delay coefficient `gamma+1=2`, and a
+separately typed comparison with the publisher's reported Cassini band. Its
+applicability mask requires 3 of 16 atlas obligations, touches 2, and places 11
+outside this bounded calculation. All five interfaces are registered (three
+exact and two literature-scoped), so the assembly is complete within its
+declared scope while remaining explicitly false for complete-theory, raw-data
+reanalysis, held-out robustness, and Weyl-gravity-support claims:
+
+```bash
+python3 foundations/build_gr_cassini_assembly.py --check
+python3 foundations/check_gr_cassini_assembly.py
+python3 foundations/verify_gr_cassini_assembly.py
+python3 -m unittest foundations.tests.test_gr_cassini_assembly
+```
+
 A separately labelled external standard-GR positive control supplies four
 primary-source comparison records across three benchmark families; it
 calibrates the display and is neither a cube-selected assembly nor evidence

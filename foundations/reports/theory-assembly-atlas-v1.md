@@ -17,6 +17,17 @@ linked, incompatible, or not assessed. Two scoped relations are now
 certified and produce 4 compatible prototype-interface instances; the other
 required joins remain `NOT_ASSESSED`, so coverage cannot silently promote them.
 
+## First model-scoped assembly
+
+`FOUNDATIONAL_GR_CASSINI_MODEL_ASSEMBLY_V1` is the first bounded
+end-to-end assembly. It keeps one model identity from the vacuum Einstein
+equations through the Schwarzschild exterior, isotropic PPN reduction,
+null-delay coefficient, Cassini fitted parameter, and published comparison.
+All 5 stage joins are registered; the first three are exact and
+the last two are explicitly literature-scoped. The exact prediction
+`gamma-1=0` lies inside the publisher's displayed `(2.1+/-2.3)e-5` band.
+The disposition is `BOUNDED_PREDICTION_ASSEMBLY_COMPLETE`, not complete theory.
+
 ## Independent maturity rails
 
 Every prototype is displayed against six separately reported rails: obligation coverage,

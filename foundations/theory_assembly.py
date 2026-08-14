@@ -16,6 +16,7 @@ from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
 GR_CONTROL = ROOT / "foundations/standard-gr-observational-control-v1.json"
+GR_CASSINI_ASSEMBLY = ROOT / "foundations/results/FOUNDATIONAL_GR_CASSINI_MODEL_ASSEMBLY_V1.json"
 
 
 DIRECT = {"LOCAL_RESULT", "LITERATURE_RESULT"}
@@ -213,18 +214,26 @@ def build_assembly_assessment(dataset: dict[str, Any]) -> dict[str, Any]:
     certified_interfaces = dataset.get("cross_cell_interfaces", [])
     assemblies = [_assembly(config, obligations, cell_map, certified_interfaces) for config in ASSEMBLY_CONFIGS]
     calibration_control = json.loads(GR_CONTROL.read_text())
+    gr_cassini = json.loads(GR_CASSINI_ASSEMBLY.read_text())
     value = {
         "schema_version": "foundational-theory-assembly-atlas-v1",
         "result_id": "FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1",
         "result_kind": "FAIL_CLOSED_THEORY_ASSEMBLY_AND_EMPIRICAL_LEDGER",
         "lifecycle": "VERIFIED_NAVIGATION_ARTIFACT",
-        "title": "Candidate theory assemblies, maturity rails, and calibration control",
+        "title": "Model-scoped prediction assemblies, theory prototypes, maturity rails, and calibration controls",
         "created": dataset["created"],
         "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
         "unit": "A prototype assembly is a deterministic coverage envelope over selected cells, not a composed theory.",
         "interface_vocabulary": INTERFACE_VOCABULARY,
         "certified_interface_records": certified_interfaces,
         "assemblies": assemblies,
+        "model_scoped_assemblies": [gr_cassini],
+        "model_scoped_sources": [
+            {
+                "path": "foundations/results/FOUNDATIONAL_GR_CASSINI_MODEL_ASSEMBLY_V1.json",
+                "sha256": hashlib.sha256(GR_CASSINI_ASSEMBLY.read_bytes()).hexdigest(),
+            }
+        ],
         "calibration_controls": [calibration_control],
         "calibration_source": {
             "path": "foundations/standard-gr-observational-control-v1.json",
@@ -243,6 +252,9 @@ def build_assembly_assessment(dataset: dict[str, Any]) -> dict[str, Any]:
             "empirical_record_schema_declared": True,
             "external_positive_control_registered": True,
             "missing_and_failed_states_separated": True,
+            "model_scoped_prediction_assembly_registered": True,
+            "bounded_prediction_chain_established": True,
+            "bounded_empirical_agreement_assessed": True,
             "cross_cell_composability_established": False,
             "prediction_chain_established": False,
             "empirical_agreement_assessed": False,

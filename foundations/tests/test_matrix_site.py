@@ -78,6 +78,9 @@ class MatrixSiteTests(unittest.TestCase):
         self.assertIn("No complete observationally validated theory is certified", base_app)
         self.assertIn("paretoProfiles", base_app)
         self.assertIn("Six independent maturity rails", base_app)
+        self.assertIn("Bounded assembly complete", base_app)
+        self.assertIn("Field equations to Cassini", base_app)
+        self.assertIn("Applicability mask", base_app)
         self.assertIn("External positive control", base_app)
         self.assertIn("red is reserved for an explicit incompatibility", base_app.lower())
         self.assertIn("CERTIFIED ·", base_app)
@@ -109,6 +112,7 @@ class MatrixSiteTests(unittest.TestCase):
         self.assertTrue((ROOT / "foundations/site/sources/foundations/results/FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1.json").is_file())
         self.assertTrue((ROOT / "foundations/site/sources/foundations/results/FOUNDATIONAL_BT_CORNER_BORN_INTERFACE_V1.json").is_file())
         self.assertTrue((ROOT / "foundations/site/sources/foundations/results/FOUNDATIONAL_KREIN_FOCK_GROUND_STATE_DYNAMICS_INTERFACE_V1.json").is_file())
+        self.assertTrue((ROOT / "foundations/site/sources/foundations/results/FOUNDATIONAL_GR_CASSINI_MODEL_ASSEMBLY_V1.json").is_file())
         self.assertTrue((ROOT / "foundations/site/sources/foundations/results/FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V2.json").is_file())
         self.assertTrue((ROOT / "foundations/site/sources/foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_MIGRATION_AUDIT_V2.json").is_file())
 

@@ -52,6 +52,20 @@ def tex(value: object) -> str:
     return text
 
 
+def scientific_tex(value: object) -> str:
+    text = tex(value)
+    for plain, formula in [
+        (r"G\_mu\_nu=0", r"\(G_{\mu\nu}=0\)"),
+        ("f(r)=1-2m/r", r"\(f(r)=1-2m/r\)"),
+        ("beta=gamma=1", r"\(\beta=\gamma=1\)"),
+        ("gamma-1=0", r"\(\gamma-1=0\)"),
+        ("1+gamma=2", r"\(1+\gamma=2\)"),
+        ("gamma+1", r"\(\gamma+1\)"),
+    ]:
+        text = text.replace(plain, formula)
+    return text
+
+
 def main() -> int:
     data = json.loads(CLAIM_MAP.read_text())
     require(data["result_id"] == "PAPER21_REVERSE_FOUNDATIONS_INTRODUCTION_V1", "wrong result id")
@@ -69,6 +83,7 @@ def main() -> int:
 
     cube = json.loads((ROOT / data["authorities"]["intersection_cube"]["path"]).read_text())
     site = json.loads((ROOT / data["authorities"]["explorer_snapshot"]["path"]).read_text())
+    gr_cassini = json.loads((ROOT / data["authorities"]["gr_cassini_assembly"]["path"]).read_text())
     dims = cube["dimensions"]
     atlas = data["atlas_snapshot"]
     require(atlas["axis_sizes"] == [6, 6, 16], "unexpected axis sizes")
@@ -105,6 +120,7 @@ def main() -> int:
         (6, "EVOLUTION-CAUSALITY-SPLIT"),
         (7, "FINITE-CONTINUUM-SPLIT"),
         (8, "FINITE-BV-BOUNDARY"),
+        (9, "GR-CASSINI-ASSEMBLY"),
     ]}, "claim set drift")
 
     flags = data["claim_flags"]
@@ -112,6 +128,8 @@ def main() -> int:
     require(flags["complete_evidence_register_generated"] is True, "complete evidence register flag is not certified")
     require(flags["complete_literature_register_generated"] is True, "complete literature register flag is not certified")
     require(flags["evidence_usage_crosswalk_generated"] is True, "evidence crosswalk flag is not certified")
+    require(flags["model_scoped_end_to_end_assembly_generated"] is True, "model-scoped assembly flag is not certified")
+    require(flags["bounded_empirical_comparison_registered"] is True, "bounded empirical comparison flag is not certified")
     for false_flag in [
         "weakest_foundation_proved",
         "global_physics_implies_choice_theorem",
@@ -144,6 +162,18 @@ def main() -> int:
     require(atlas["implication_edges"] == len(atlas_data["graph"]["edges"]) == 10, "appendix implication-edge mismatch")
     require(atlas["strength_ladder_levels"] == len(atlas_data["ladder"]) == 6, "appendix ladder-level mismatch")
     require(atlas["prototype_assemblies"] == len(assembly_data["assemblies"]) == 7, "appendix assembly-count mismatch")
+    require(atlas["model_scoped_assemblies"] == len(assembly_data["model_scoped_assemblies"]) == 1, "model-scoped assembly-count mismatch")
+    model = assembly_data["model_scoped_assemblies"][0]
+    require(model["result_id"] == gr_cassini["result_id"], "GR/Cassini model assembly identity drift")
+    require(model["canonical_digest"] == gr_cassini["canonical_digest"], "GR/Cassini embedded assembly digest drift")
+    require(atlas["gr_cassini_stages"] == len(gr_cassini["stages"]) == 6, "GR/Cassini stage-count mismatch")
+    require(atlas["gr_cassini_interfaces"] == len(gr_cassini["interfaces"]) == 5, "GR/Cassini interface-count mismatch")
+    require(atlas["gr_cassini_required_obligations"] == gr_cassini["applicability_summary"]["required"] == 3, "GR/Cassini applicability count mismatch")
+    require(atlas["gr_cassini_required_obligations_satisfied"] == 3, "GR/Cassini required obligations are not closed")
+    require(atlas["gr_cassini_bounded_complete"] is gr_cassini["assembly_disposition"]["complete_within_declared_scope"] is True, "GR/Cassini bounded completion is not certified")
+    require(atlas["gr_cassini_prediction_inside_reported_band"] is gr_cassini["empirical_comparison_rail"]["prediction_inside_reported_band"] is True, "GR/Cassini comparison is not supported in the reported band")
+    require(gr_cassini["assembly_disposition"]["complete_theory"] is False, "bounded GR assembly promoted to complete theory")
+    require(gr_cassini["claim_flags"]["raw_cassini_data_reanalysed"] is False, "Cassini literature comparison promoted to raw-data reanalysis")
     standard = next(item for item in assembly_data["assemblies"] if item["id"] == "STANDARD_MIXED_REFERENCE")
     require(atlas["standard_reference_direct_obligations"] == standard["coverage"]["direct"] == 16, "classical reference coverage mismatch")
     control = assembly_data["calibration_controls"][0]
@@ -154,6 +184,13 @@ def main() -> int:
     require(r"All obligations & 115 & 93 & 163 & 30 & 175 & 0 & 576" in appendix, "appendix coverage totals drift")
     require("contains 74 evidence records: 23 local result records and 51 literature records" in appendix, "appendix evidence summary drift")
     require("The classical-standard mixed-carrier reference has complete direct coverage" in appendix, "classical reference calibration missing")
+    require("First bounded end-to-end assembly" in appendix, "model-scoped GR/Cassini appendix section missing")
+    require("The six typed stages of the standard-GR solar-exterior assembly" in appendix, "GR/Cassini stage table missing")
+    require(tex(gr_cassini["assembly_disposition"]["status"].replace("_", " ").lower()) in appendix, "GR/Cassini bounded disposition missing")
+    require("applicability mask requires 3" in appendix, "GR/Cassini applicability summary missing")
+    for stage in gr_cassini["stages"]:
+        require(tex(stage["label"]) in appendix, f"GR/Cassini stage missing: {stage['id']}")
+        require(scientific_tex(stage["establishes"]) in appendix, f"GR/Cassini stage boundary missing: {stage['id']}")
     for record in control["records"]:
         require(tex(record["citation"]) in appendix, f"calibration citation missing: {record['id']}")
         require(tex(record["boundary"]) in appendix, f"calibration boundary missing: {record['id']}")
@@ -266,6 +303,7 @@ def main() -> int:
         r"Weak wave evolution is not causal Green theory",
         r"Exact finite causality is not continuum causality",
         r"none of the case studies constructs a complete Lorentzian off-shell",
+        r"bounded prediction assembly",
         r"reverse-foundations-of-physics-appendices.tex",
     ]:
         require(phrase in prose, f"required boundary missing from paper: {phrase}")

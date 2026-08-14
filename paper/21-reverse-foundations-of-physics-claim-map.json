@@ -23,6 +23,12 @@
     "evidence_records_used_by_matrix": 74,
     "external_calibration_benchmark_families": 3,
     "external_calibration_records": 4,
+    "gr_cassini_bounded_complete": true,
+    "gr_cassini_interfaces": 5,
+    "gr_cassini_prediction_inside_reported_band": true,
+    "gr_cassini_required_obligations": 3,
+    "gr_cassini_required_obligations_satisfied": 3,
+    "gr_cassini_stages": 6,
     "implication_edges": 10,
     "implication_nodes": 12,
     "literature_complete": false,
@@ -30,6 +36,7 @@
     "local_result_records": 23,
     "metadata_only_literature": 12,
     "migration_pending_cells": 0,
+    "model_scoped_assemblies": 1,
     "prototype_assemblies": 7,
     "reviewed_open_gaps": 175,
     "standard_reference_direct_obligations": 16,
@@ -67,7 +74,7 @@
       "lifecycle": "VERIFIED_NAVIGATION_ARTIFACT",
       "path": "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json",
       "result_id": "FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2",
-      "sha256": "b68479455de8e8c67d392d5a4edf7fbf9f3d69021fbf8af6391a5fa98b2763f0"
+      "sha256": "03e316260ce52929aca40ea2feace4d38fecfcaae155aed19598fc217e93b09e"
     },
     "finite_bv": {
       "dependency_tags": [
@@ -99,6 +106,16 @@
       "path": "foundations/results/FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1.json",
       "result_id": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
       "sha256": "7c3d467e07b07ca54b0d875c08a7cac5769fab769c412e8e71fc823f515669fd"
+    },
+    "gr_cassini_assembly": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "lifecycle": "MODEL_SCOPED_EMPIRICAL_COMPARISON_REGISTERED",
+      "path": "foundations/results/FOUNDATIONAL_GR_CASSINI_MODEL_ASSEMBLY_V1.json",
+      "result_id": "FOUNDATIONAL_GR_CASSINI_MODEL_ASSEMBLY_V1",
+      "sha256": "f87aa0453de1af594175d1c23c39b48d644064a8582a56785bd9ea4ce279a902"
     },
     "intersection_cube": {
       "dependency_tags": [
@@ -140,19 +157,21 @@
       "lifecycle": "VERIFIED_NAVIGATION_ARTIFACT",
       "path": "foundations/results/FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1.json",
       "result_id": "FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1",
-      "sha256": "7d8e1adea94a059cae77dc415e6a1271bdb5db0fdebbaeedab4325c9ef7d1f87"
+      "sha256": "10b9aa14fb51d591bdb54644051d4b6d13ea52adff751795f3332045a4f96673"
     }
   },
-  "canonical_digest": "799f1c962577aa9857327a800c28862a412e4f86fb82bc52dde3610f4bf5715a",
+  "canonical_digest": "17ae4397c4838e98d1f820eefd0dfe09ec48f7de699549b407183efacc381b44",
   "claim_flags": {
     "atlas_exhaustive": false,
     "axes_independent_proved": false,
+    "bounded_empirical_comparison_registered": true,
     "case_study_authorities_pinned": true,
     "complete_evidence_register_generated": true,
     "complete_literature_register_generated": true,
     "evidence_usage_crosswalk_generated": true,
     "global_physics_implies_choice_theorem": false,
     "literature_complete": false,
+    "model_scoped_end_to_end_assembly_generated": true,
     "new_lorentzian_claim": false,
     "programme_definition_supplied": true,
     "quantum_lifecycle_promoted": false,
@@ -257,6 +276,18 @@
       ],
       "statement": "One explicitly presented finite energy-two BV contraction is PRA-checkable; this does not establish an infinite classical freeze or a quantum promotion.",
       "status": "SUFFICIENT_OVER_BASE"
+    },
+    {
+      "authorities": [
+        "gr_cassini_assembly"
+      ],
+      "claim_id": "RF-09-GR-CASSINI-ASSEMBLY",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "statement": "For the declared standard-GR solar-vacuum model, the exact field-equation-to-null-delay chain gives gamma=1 and the resulting prediction lies inside the publisher's displayed Cassini band; the operational and empirical joins remain literature-scoped.",
+      "status": "MODEL_SCOPED_EMPIRICAL_COMPARISON"
     }
   ],
   "created": "2026-08-14",
@@ -275,7 +306,9 @@
     "a BRST-compatible Hadamard state for the full metric BV complex",
     "renormalized Lorentzian time-ordered products or causal perturbative AQFT",
     "restoration of a Lorentzian quantum master equation",
-    "promotion of any quantum lifecycle state"
+    "promotion of any quantum lifecycle state",
+    "reproduction of the Cassini raw-data reduction, likelihood, covariance analysis, or systematic-error budget",
+    "a complete standard-GR theory or empirical support for a Weyl-gravity model"
   ],
   "formal_object": {
     "coordinates": {
@@ -397,19 +430,19 @@
   ],
   "paper": {
     "appendix": {
-      "assembly_source_canonical_digest": "0199375cd15d134ffcca579c29a675d73f21949205e912fa876e0305f4ddce66",
+      "assembly_source_canonical_digest": "823418839c58fb4efdeae7448fe18555f88e758a15ba569c2013aa1a656ee736",
       "assembly_source_path": "foundations/site/assemblies.json",
-      "assembly_source_sha256": "7d8e1adea94a059cae77dc415e6a1271bdb5db0fdebbaeedab4325c9ef7d1f87",
+      "assembly_source_sha256": "10b9aa14fb51d591bdb54644051d4b6d13ea52adff751795f3332045a4f96673",
       "generator_path": "paper/generate_21_reverse_foundations_appendices.py",
-      "generator_sha256": "a1b37b9fc17da12dcc5bc075b721b6b669eb897ecc67c3cb3c045052a5a1bf00",
+      "generator_sha256": "f2c1454ec50ac99e12e816eae87bca61b5cd61559e0a9473a254d7ab9dd54342",
       "path": "paper/21-reverse-foundations-of-physics-appendices.tex",
-      "sha256": "45cf31801d67346135c156d216fcc31f27d42c88e4bfcc0c6deb18d945cecce1",
+      "sha256": "fa319dd159c245926066ee64abcd18f6f314ec67f522184f65f5028e9cbc8ea9",
       "source_canonical_digest": "4ba28f1320371b129b8f97dca3668acd02711ab4aefb980d21964cd90cefd30d",
       "source_path": "foundations/site/data.json",
       "source_sha256": "9e2dcefdc4eb94e32e9d08b81bd7cbf16916a5ed2bf8f8d18275908472b842d5"
     },
     "path": "paper/21-reverse-foundations-of-physics.tex",
-    "sha256": "bbf0bf14466bfa6793c9cfcda55d229841cb7371b914e19245b49309814ff46b"
+    "sha256": "a38457c4aeb8da00ffb297699a1cc795dd740870e94249da94723f5124ceb89c"
   },
   "result_id": "PAPER21_REVERSE_FOUNDATIONS_INTRODUCTION_V1",
   "result_kind": "PROGRAMME_SYNTHESIS_AND_TYPED_CASE_STUDY_MAP",

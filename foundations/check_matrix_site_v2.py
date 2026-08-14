@@ -167,6 +167,11 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
         errors.append("external positive-control closure")
     if any(rail.get("status") in {"BLOCKED", "FAILED"} for item in assemblies.get("assemblies", []) for rail in item.get("maturity_rails", [])):
         errors.append("missing work mislabeled as failure")
+    model_assemblies = assemblies.get("model_scoped_assemblies", [])
+    if len(model_assemblies) != 1 or model_assemblies[0].get("result_id") != "FOUNDATIONAL_GR_CASSINI_MODEL_ASSEMBLY_V1":
+        errors.append("model-scoped assembly closure")
+    elif model_assemblies[0].get("assembly_disposition") != {"status": "BOUNDED_PREDICTION_ASSEMBLY_COMPLETE", "complete_within_declared_scope": True, "empirically_supported_within_declared_scope": True, "complete_theory": False}:
+        errors.append("model-scoped bounded disposition")
 
     calculated_digest = digest(data)
     if calculated_digest != data.get("canonical_digest") or calculated_digest != result.get("independent_checker", {}).get("expected_digest"):
@@ -186,7 +191,7 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
     app = (SITE / "app.js").read_text() + (SITE / "migration-review.js").read_text() + (SITE / "assemblies.js").read_text()
     if "https://" in html or "http://" in html or '<script src="data.js"></script>' not in html or '<script src="viability.js"></script>' not in html or '<script src="assemblies.js"></script>' not in html or '<script src="migration-review.js"></script>' not in html:
         errors.append("offline/no-remote-code shell")
-    for token in ("matrixGroups", "viabilityView", "Theory profiles", "Coverage readiness map", "Coverage envelope, not a composed theory", "No complete observationally validated theory is certified", "paretoProfiles", "assembliesView", "Six independent maturity rails", "External positive control", "Typed interface ledger", "Empirical benchmark ledger", "NOT_ASSESSED", "guideView", "dimensionGuide", "Regime × carrier × obligation", "Reviewed open gap", "Reviewed gap versus priority gap", "graphView", "GRAPH_PATHWAYS", "Relation ledger", "graph-edge-hit", "No direct certificate yet", "ladderView", "evidenceView", "compareDialog", "exportJson", "exportCsv", "downloadBrief", "column-label", "Migration review", "migration_evidence", "175-coordinate surface audit", "data-dual", "directKinds", "role-badge", "Local + literature result", "Directness unreviewed", "Why some cells are marked", "is not a finding that the record fails to support the cell", "data-marklen", "supportingKinds", "legend-note", "Upper case is a certified direct grade", "An ingredient is not a result", "Ingredients never promote a cell"):
+    for token in ("matrixGroups", "viabilityView", "Theory profiles", "Coverage readiness map", "Coverage envelope, not a composed theory", "No complete observationally validated theory is certified", "paretoProfiles", "assembliesView", "Bounded assembly complete", "Field equations to Cassini", "Applicability mask", "Six independent maturity rails", "External positive control", "Typed interface ledger", "Empirical benchmark ledger", "NOT_ASSESSED", "guideView", "dimensionGuide", "Regime × carrier × obligation", "Reviewed open gap", "Reviewed gap versus priority gap", "graphView", "GRAPH_PATHWAYS", "Relation ledger", "graph-edge-hit", "No direct certificate yet", "ladderView", "evidenceView", "compareDialog", "exportJson", "exportCsv", "downloadBrief", "column-label", "Migration review", "migration_evidence", "175-coordinate surface audit", "data-dual", "directKinds", "role-badge", "Local + literature result", "Directness unreviewed", "Why some cells are marked", "is not a finding that the record fails to support the cell", "data-marklen", "supportingKinds", "legend-note", "Upper case is a certified direct grade", "An ingredient is not a result", "Ingredients never promote a cell"):
         if token not in html + app:
             errors.append("interface token " + token)
     if "No stronger interpretation is licensed" in app:
@@ -221,6 +226,10 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
         "empirical_comparisons": len(assemblies.get("empirical_ledger", {}).get("records", [])),
         "calibration_comparisons": sum(len(item.get("records", [])) for item in assemblies.get("calibration_controls", [])),
         "calibration_benchmark_families": sum(item.get("status") == "SUPPORTED_CONTROL" for control in assemblies.get("calibration_controls", []) for item in control.get("benchmark_coverage", [])),
+        "model_scoped_assemblies": len(assemblies.get("model_scoped_assemblies", [])),
+        "model_scoped_stages": sum(len(item.get("stages", [])) for item in assemblies.get("model_scoped_assemblies", [])),
+        "model_scoped_interfaces": sum(len(item.get("interfaces", [])) for item in assemblies.get("model_scoped_assemblies", [])),
+        "bounded_complete_assemblies": sum(item.get("assembly_disposition", {}).get("complete_within_declared_scope") is True for item in assemblies.get("model_scoped_assemblies", [])),
         "certified_cross_cell_interfaces": len(interfaces),
         "certified_assembly_interface_instances": sum(interface.get("certification_status") == "CERTIFIED" for assembly in assemblies.get("assemblies", []) for interface in assembly.get("interfaces", [])),
         "dual_direct_cells": dual,

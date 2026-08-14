@@ -16,6 +16,7 @@ RESULT = ROOT / "foundations/results/FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1.json"
 SCHEMA = ROOT / "foundations/schema/foundational-theory-assembly-atlas-v1.schema.json"
 CONTROL = ROOT / "foundations/standard-gr-observational-control-v1.json"
 CONTROL_SCHEMA = ROOT / "foundations/schema/standard-gr-observational-control-v1.schema.json"
+MODEL_ASSEMBLY = ROOT / "foundations/results/FOUNDATIONAL_GR_CASSINI_MODEL_ASSEMBLY_V1.json"
 REPORT = ROOT / "foundations/reports/theory-assembly-atlas-v1.md"
 SITE_JSON = ROOT / "foundations/site/assemblies.json"
 SITE_JS = ROOT / "foundations/site/assemblies.js"
@@ -67,6 +68,20 @@ def verify(*, value: dict[str, Any] | None = None) -> tuple[list[str], list[str]
     if any(item.get("artifact", {}).get("status") == "CONTENT_PINNED" and not item.get("artifact", {}).get("sha256") for item in control.get("records", [])):
         errors.append("external calibration content pin")
     checks.append("external positive-control schema, records, and content pins")
+    model_assembly = load(MODEL_ASSEMBLY)
+    if result.get("model_scoped_assemblies") != [model_assembly] or result.get("model_scoped_sources") != [{
+        "path": "foundations/results/FOUNDATIONAL_GR_CASSINI_MODEL_ASSEMBLY_V1.json",
+        "sha256": hashlib.sha256(MODEL_ASSEMBLY.read_bytes()).hexdigest(),
+    }]:
+        errors.append("model-scoped assembly projection and source pin")
+    if model_assembly.get("assembly_disposition") != {
+        "status": "BOUNDED_PREDICTION_ASSEMBLY_COMPLETE",
+        "complete_within_declared_scope": True,
+        "empirically_supported_within_declared_scope": True,
+        "complete_theory": False,
+    }:
+        errors.append("model-scoped bounded disposition")
+    checks.append("model-scoped end-to-end assembly projection")
     if digest(result) != result.get("canonical_digest") or result.get("source_atlas_digest") != atlas.get("canonical_digest"):
         errors.append("content digest or source-atlas pin")
     checks.append("content-addressed assembly and source atlas")
@@ -134,7 +149,7 @@ def verify(*, value: dict[str, Any] | None = None) -> tuple[list[str], list[str]
     if ledger.get("records") != [] or len(ledger.get("benchmarks", [])) != 6 or any(item.get("status") != "NOT_REGISTERED" for item in ledger.get("benchmarks", [])):
         errors.append("empty empirical ledger and benchmark closure")
     flags = result.get("claim_flags", {})
-    for name in ("prototype_assemblies_generated", "selected_cells_content_addressed", "interface_and_coverage_states_separated", "at_least_one_cross_cell_interface_certified", "empirical_record_schema_declared", "external_positive_control_registered", "missing_and_failed_states_separated"):
+    for name in ("prototype_assemblies_generated", "selected_cells_content_addressed", "interface_and_coverage_states_separated", "at_least_one_cross_cell_interface_certified", "empirical_record_schema_declared", "external_positive_control_registered", "missing_and_failed_states_separated", "model_scoped_prediction_assembly_registered", "bounded_prediction_chain_established", "bounded_empirical_agreement_assessed"):
         if flags.get(name) is not True:
             errors.append("positive flag " + name)
     for name in ("cross_cell_composability_established", "prediction_chain_established", "empirical_agreement_assessed", "complete_observationally_valid_theory_identified"):
@@ -148,10 +163,10 @@ def verify(*, value: dict[str, Any] | None = None) -> tuple[list[str], list[str]
         if SITE_JS.read_bytes() != b"window.THEORY_ASSEMBLY_DATA = " + SITE_JSON.read_bytes().rstrip() + b";\n":
             errors.append("offline assembly assignment")
         combined = (ROOT / "foundations/site/index.html").read_text() + (ROOT / "foundations/site/app.js").read_text()
-        for token in ("Assemblies", "assembliesView", "Six independent maturity rails", "External positive control", "Typed interface ledger", "Empirical benchmark ledger", "NOT_ASSESSED"):
+        for token in ("Assemblies", "assembliesView", "Bounded assembly complete", "Field equations to Cassini", "Six independent maturity rails", "External positive control", "Typed interface ledger", "Empirical benchmark ledger", "NOT_ASSESSED"):
             if token not in combined + SITE_JS.read_text():
                 errors.append("interface token " + token)
-        for token in ("seven", "coverage envelope", "NOT_ASSESSED", "positive control", "does not establish"):
+        for token in ("seven", "coverage envelope", "model-scoped", "Cassini", "NOT_ASSESSED", "positive control", "does not establish"):
             if token not in REPORT.read_text():
                 errors.append("report token " + token)
     checks.append("offline assembly interface, parity, and report")

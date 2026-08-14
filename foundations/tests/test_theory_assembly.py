@@ -23,6 +23,9 @@ class TheoryAssemblyTests(unittest.TestCase):
         self.assertEqual(value["empirical_ledger"]["records"], [])
         self.assertEqual(len(value["calibration_controls"]), 1)
         self.assertEqual(len(value["calibration_controls"][0]["records"]), 4)
+        self.assertEqual(len(value["model_scoped_assemblies"]), 1)
+        self.assertTrue(value["model_scoped_assemblies"][0]["assembly_disposition"]["complete_within_declared_scope"])
+        self.assertFalse(value["model_scoped_assemblies"][0]["assembly_disposition"]["complete_theory"])
         self.assertTrue(all(rail["status"] not in {"BLOCKED", "FAILED"} for item in value["assemblies"] for rail in item["maturity_rails"]))
 
     def test_classical_reference_reports_complete_coverage_and_partial_composition(self):
@@ -48,6 +51,13 @@ class TheoryAssemblyTests(unittest.TestCase):
         promoted["claim_flags"]["empirical_agreement_assessed"] = True
         promoted["canonical_digest"] = canonical_digest(promoted)
         self.assertIn("fail-closed flag empirical_agreement_assessed", verify(value=promoted)[0])
+
+    def test_model_scoped_source_tampering_fails(self):
+        value = build_assembly_assessment(build_dataset())
+        tampered = copy.deepcopy(value)
+        tampered["model_scoped_assemblies"][0]["model_identity"]["id"] = "MIXED_MODEL"
+        tampered["canonical_digest"] = canonical_digest(tampered)
+        self.assertIn("model-scoped assembly projection and source pin", verify(value=tampered)[0])
 
 
 if __name__ == "__main__":

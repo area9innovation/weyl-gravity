@@ -69,6 +69,21 @@ def tex(value: object) -> str:
     return text
 
 
+def scientific_tex(value: object) -> str:
+    """Escape prose while typesetting the small certified formula vocabulary."""
+    text = tex(value)
+    for plain, formula in [
+        (r"G\_mu\_nu=0", r"\(G_{\mu\nu}=0\)"),
+        ("f(r)=1-2m/r", r"\(f(r)=1-2m/r\)"),
+        ("beta=gamma=1", r"\(\beta=\gamma=1\)"),
+        ("gamma-1=0", r"\(\gamma-1=0\)"),
+        ("1+gamma=2", r"\(1+\gamma=2\)"),
+        ("gamma+1", r"\(\gamma+1\)"),
+    ]:
+        text = text.replace(plain, formula)
+    return text
+
+
 def joined(values: list[str] | None) -> str:
     return tex("; ".join(values or []) if values else "---")
 
@@ -478,10 +493,52 @@ def build(data: dict, assemblies: dict) -> str:
             r"\end{longtable}",
             r"\endgroup",
             "",
-            r"\subsection{Prototype assemblies and empirical calibration}",
+            r"\subsection{Model-scoped assembly, prototype envelopes, and empirical calibration}",
             r"\label{app:assembly-calibration}",
             "The assembly view no longer treats missing downstream work as a failed test.  Its six maturity rails are reported independently: direct obligation coverage may be complete while composition is partial and prediction or empirical records remain unregistered.  Red is reserved for an explicit incompatibility, obstruction, or failed comparison.",
             "",
+        ]
+    )
+    model = assemblies["model_scoped_assemblies"][0]
+    lines.extend(
+        [
+            r"\paragraph{First bounded end-to-end assembly.}",
+            tex(model["title"]) + ".  This is one model identity and one declared observational sector, not a maximum assembled from unrelated cells.  Its applicability mask requires "
+            + str(model["applicability_summary"]["required"])
+            + " of the atlas's sixteen obligations, touches "
+            + str(model["applicability_summary"]["touched_not_required"])
+            + " others without requiring them, and explicitly places "
+            + str(model["applicability_summary"]["out_of_scope"])
+            + " outside this prediction.",
+            "",
+            r"\begin{table}[htbp]",
+            r"\centering",
+            r"\scriptsize",
+            r"\begin{tabularx}{\textwidth}{@{}p{0.22\textwidth}p{0.20\textwidth}Y@{}}",
+            r"\toprule",
+            r"Stage & Status & What is established \\",
+            r"\midrule",
+        ]
+    )
+    for stage in model["stages"]:
+        lines.append(
+            f"{tex(stage['label'])} & {tex(stage['status'].replace('_', ' ').lower())} & {scientific_tex(stage['establishes'])}" + r" \\"
+        )
+    lines.extend(
+        [
+            r"\bottomrule",
+            r"\end{tabularx}",
+            r"\caption{The six typed stages of the standard-GR solar-exterior assembly.  The first four are exact local derivations; the last two are explicitly literature-scoped bridges.}",
+            r"\label{tab:gr-cassini-assembly}",
+            r"\end{table}",
+            "",
+            r"The exact rail derives \(g_{tt}=-1+2U-2\beta U^2+O(U^3)\) and \(g_{ij}=(1+2\gamma U+O(U^2))\delta_{ij}\), obtains \(\beta=\gamma=1\), and therefore fixes the first-order null-delay coefficient \(1+\gamma=2\).  The separately typed empirical rail imports the publisher's displayed Cassini estimate \(\gamma=1+(2.1\mathbin{\pm}2.3)\times10^{-5}\).  Exact rational comparison puts the prediction \(\gamma-1=0\) inside that displayed band, at absolute standardized distance \(21/23\) from its centre.",
+            "",
+            "All three required obligations are satisfied and all five stage interfaces are registered (three exact and two literature-scoped).  The resulting disposition is "
+            + tex(model["assembly_disposition"]["status"].replace("_", " ").lower())
+            + ".  It does not reproduce the Cassini raw-data reduction or likelihood, assess an independent held-out test, establish a complete theory, or transfer empirical support to Weyl gravity.",
+            "",
+            r"\paragraph{Cube-selected prototype envelopes.}",
             r"\begin{table}[htbp]",
             r"\centering",
             r"\scriptsize",
@@ -527,9 +584,9 @@ def build(data: dict, assemblies: dict) -> str:
     )
     benchmark_labels = {item["id"]: item["label"] for item in assemblies["empirical_ledger"]["benchmarks"]}
     for record in control["records"]:
-        source = f"{record['citation']} {record['stable_url']}"
+        source = tex(record["citation"]) + rf" \url{{{record['stable_url']}}}"
         finding = f"{record['finding']} Boundary: {record['boundary']}"
-        lines.append(f"{tex(benchmark_labels[record['benchmark']])} & {tex(source)} & {tex(finding)}" + r" \\")
+        lines.append(f"{tex(benchmark_labels[record['benchmark']])} & {source} & {tex(finding)}" + r" \\")
     lines.extend(
         [
             r"\bottomrule",
