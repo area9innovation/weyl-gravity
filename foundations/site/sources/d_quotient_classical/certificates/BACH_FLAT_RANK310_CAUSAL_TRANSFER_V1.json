@@ -1,0 +1,88 @@
+{
+  "claim_boundary": {
+    "not_claimed": [
+      "a pure normal-tractor-parent to metric SDR",
+      "an ambient-open class in all smooth Lorentzian metrics",
+      "exact same-bundle factorization of the metric Bach witness",
+      "Hadamard wavefront-set control",
+      "nonlinear stability or a quantum theorem"
+    ],
+    "statement": "The natural rank-310 curvature-corrected mapping cone has exact advanced and retarded all-row Green homotopies on every background in the certified relative-open Bach-flat ADM class, obtained by cyclic SDR lift from the four-row metric Bach homotopy."
+  },
+  "dependency_refs": {
+    "abstract_transfer": {
+      "artifact_id": "ABSTRACT_CYCLIC_CAUSAL_TRANSFER",
+      "path": "d_quotient_classical/certificates/ABSTRACT_CYCLIC_CAUSAL_TRANSFER.json",
+      "sha256": "cb8f55fe5152a515a86dcfaf32e54c9c0d4ad68487e6bed7c1ed3ae517dbd04b"
+    },
+    "metric_homotopy": {
+      "artifact_id": "BACH_FLAT_METRIC_BIWAVE_GREEN_HOMOTOPY_V1",
+      "path": "d_quotient_classical/certificates/BACH_FLAT_METRIC_BIWAVE_GREEN_HOMOTOPY_V1.json",
+      "sha256": "f6f428c1d27526c918bfc0cc57975097452161ee9a0e61c5b3a34d1a3bf531ad"
+    },
+    "rank310_SDR": {
+      "artifact_id": "BACH_FLAT_RANK310_NATURAL_SDR_V1",
+      "path": "d_quotient_classical/certificates/BACH_FLAT_RANK310_NATURAL_SDR_V1.json",
+      "sha256": "17b8805944409299ac9a3d3cb25fb6ffae5e6f9fe70b3b1f40b177e778137355"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "exact_checks": {
+    "advanced_retarded_chain_identity": true,
+    "all_310_rows_included": true,
+    "cyclic_adjoint_reversal": true,
+    "finite_order_support_local_SDR": true,
+    "metric_descent_exact": true,
+    "metric_endpoint_causal": true,
+    "same_sided_causal_support": true
+  },
+  "flags": {
+    "BACH_FLAT_METRIC_GREEN_HOMOTOPY_ON_CLASS": true,
+    "BACH_FLAT_RANK310_CAUSAL_TRANSFER_V1": true,
+    "BACH_FLAT_RANK310_GREEN_HOMOTOPY_ON_CLASS": true,
+    "EXACT_SAME_BUNDLE_FACTORIZATION_ON_CLASS": false,
+    "HADAMARD_STATE": false,
+    "NONLINEAR_EXTENSION": false,
+    "PURE_PARENT_TO_METRIC_SDR": false,
+    "QUANTUM_CLAIM": false
+  },
+  "next_gate": "CAUSAL_ATLAS_AND_COVARIANT_TRANSPORT_CONSUMERS",
+  "result_id": "BACH_FLAT_RANK310_CAUSAL_TRANSFER_V1",
+  "result_state": "RELATIVE_G3_BACH_FLAT_RANK310_ALL_ROW_CAUSAL_HOMOTOPY_EXACT",
+  "schema": "pure-weyl-bach-flat-rank310-causal-transfer-v1",
+  "scope": {
+    "carrier": "ten-block rank-310 curvature-corrected automorphism/parent-detour mapping cone",
+    "class": "the certified radius-1/4 relative ADM neighborhood of unit Nariai inside the smooth Bach-flat locus",
+    "degree_ranks": [
+      15,
+      140,
+      140,
+      15
+    ],
+    "manifold": "R x S1 x S2",
+    "support": "compact sources to advanced/retarded causal support; smooth spacelike-compact solutions"
+  },
+  "source_manifest": {
+    "d_quotient_classical/causal_transfer/bach_flat_rank310_causal_transfer.py": "7faf4453df66f1020815f86576b3968099077b24466dc27c71c5d10625c4c76d",
+    "d_quotient_classical/causal_transfer/tests/test_bach_flat_rank310_causal_transfer.py": "50ff92ba2fac41ee8d1556c165e286d1951000ffb781d0683d547fe5b4ffdc19",
+    "d_quotient_classical/causal_transfer/verify_bach_flat_rank310_causal_transfer.py": "c535f9dc562801bcfb7f45adda6906d1b2986804f364941ba9715406429641eb",
+    "d_quotient_classical/schema/bach-flat-rank310-causal-transfer-v1.schema.json": "18cbe373b610f97b895b076d9f6356712161620266cdf3904a3d9f8fd5c313da"
+  },
+  "transfer": {
+    "SDR_convention": "Q310 H+H Q310=1-I pi and pi I=1",
+    "cyclic_adjoint": "follows from the cyclic SDR and complementary-degree metric advanced/retarded reversal",
+    "formula": "Lambda310,+/-=H+I Lambda_metric,+/- pi",
+    "identity": "Q310 Lambda310,+/-+Lambda310,+/- Q310=1",
+    "metric_descent": "pi Lambda310,+/- I=Lambda_metric,+/-",
+    "support": "H, I and pi are finite-order support-nonincreasing; Lambda_metric,+/- is same-sided causal"
+  },
+  "verification_commands": [
+    "PYTHONPATH=. python3 d_quotient_classical/causal_transfer/bach_flat_rank310_causal_transfer.py --check --guards",
+    "PYTHONPATH=. python3 d_quotient_classical/causal_transfer/verify_bach_flat_rank310_causal_transfer.py",
+    "python3 -m unittest d_quotient_classical.causal_transfer.tests.test_bach_flat_rank310_causal_transfer",
+    "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/bach-flat-rank310-causal-transfer-v1.schema.json -d d_quotient_classical/certificates/BACH_FLAT_RANK310_CAUSAL_TRANSFER_V1.json"
+  ]
+}

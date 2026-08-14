@@ -1,0 +1,152 @@
+{
+  "claim_boundary": "The retained Ward theorem proves that C26=[H26_plus,q26] is smooth, while the imported endpoint theorems expose only existence statements and symbolic pullback formulas. They do not select or serialize one normalized H26_plus representative. Consequently exact x/y past-, future- and time-compact support and pairing-null status are undefined, not false. The classical one-sided homotopies therefore cannot yet act on C26. No BRST Hadamard covariance, positivity, particle interpretation, renormalized product, Lorentzian QME, scattering or unitarity claim is established.",
+  "claim_flags": {
+    "C26_PAIRING_NULL_CERTIFIED": false,
+    "C26_SERIALIZED": false,
+    "C26_SMOOTH": true,
+    "C26_X_SUPPORT_PROFILE_CERTIFIED": false,
+    "C26_Y_SUPPORT_PROFILE_CERTIFIED": false,
+    "LORENTZIAN_QME_RESTORED": false,
+    "NORMALIZED_H26_REPRESENTATIVE_SUPPLIED": false,
+    "PHYSICAL_POSITIVITY_CERTIFIED": false,
+    "QUANTUM_CLAIM": false,
+    "RETAINED_26_BRST_HADAMARD": false
+  },
+  "classical_consumer_disposition": {
+    "C26_positive_domain_membership": "NOT_DECIDABLE_FROM_CURRENT_EXPORT",
+    "C26_specific_smooth_correction": "NOT_CONSTRUCTED",
+    "next_action": "serialize a normalized H26_plus and compute C26 before re-entering the classical support gate",
+    "one_sided_homotopies_available": true
+  },
+  "dependency_refs": {
+    "classical_support_gate": {
+      "path": "d_quotient_classical/certificates/BERGER_26_ROW_SMOOTH_BIKERNEL_HOMOTOPY_SUPPORT_GATE_V1.json",
+      "result_id": "BERGER_26_ROW_SMOOTH_BIKERNEL_HOMOTOPY_SUPPORT_GATE_V1",
+      "sha256": "c1641afda62662377492f821d1875b7cfcef5f7d98dee4590fa68794fb733d55"
+    },
+    "free_dilation_pair": {
+      "path": "quantum-weyl/lorentzian/certificates/BERGER_FREE_DILATION_KREIN_CCR_COVARIANCE.json",
+      "result_id": "BERGER_FREE_DILATION_KREIN_CCR_COVARIANCE",
+      "sha256": "34ef69351b814f678fd63f646b41f2c260aee204256c81587cfeedf25c10b16c"
+    },
+    "ghost_identity_pair": {
+      "path": "quantum-weyl/lorentzian/certificates/BERGER_GHOST_IDENTITY_GLOBAL_HADAMARD_PAIR.json",
+      "result_id": "BERGER_GHOST_IDENTITY_GLOBAL_HADAMARD_PAIR",
+      "sha256": "16cb18e0d12c6b98c3da4b6fbe41df3d4fded9b75895ea9d35982099eb7ba188"
+    },
+    "metric_endpoint_pair": {
+      "path": "quantum-weyl/lorentzian/certificates/BERGER_REGULAR_GRAPH_INTERTWINER_OBSTRUCTION_AND_ENDPOINT_DESCENT.json",
+      "result_id": "BERGER_REGULAR_GRAPH_INTERTWINER_OBSTRUCTION_AND_ENDPOINT_DESCENT",
+      "sha256": "8bece00c7a4dda8327e8c0dd6bc4ddf15f4e3712ac383048bb73bda861fa749e"
+    },
+    "ward_reduction": {
+      "path": "quantum-weyl/lorentzian/certificates/BERGER_RETAINED26_HADAMARD_WARD_REDUCTION.json",
+      "result_id": "BERGER_RETAINED26_HADAMARD_WARD_REDUCTION",
+      "sha256": "35bb185bbc975bbad80a6a4a029815bbc07781fdaa08f654e7652f2b2f6c9218"
+    }
+  },
+  "dependency_tags": [
+    "LORENTZIAN-CAUSAL"
+  ],
+  "exact_checks": {
+    "all_dependencies_match_expected_result_ids": true,
+    "classical_full_smooth_factorization_obstruction_imported": true,
+    "classical_positive_domain_membership_is_not_exported": true,
+    "endpoint_exports_are_symbolic_or_existential": true,
+    "no_endpoint_block_serializes_a_kernel_or_mode_table": true,
+    "unknown_support_is_not_encoded_as_false": true,
+    "ward_remainder_formula_and_smoothness_imported": true,
+    "ward_vanishing_remains_not_decided": true
+  },
+  "first_obstruction": {
+    "classification": "NO_CERTIFIED_MAP",
+    "consumer_typed_need": "C26_BIKERNEL_SUPPORT_PROFILE_OR_SERIALIZED_SMOOTH_REMAINDER",
+    "minimal_next_payload": [
+      "one fixed content-addressed H26_plus representative",
+      "per-block mode indices, frequencies and exact coefficient matrices or an executable distribution evaluator",
+      "the convergence topology defining the global distribution",
+      "the q26 action in both kernel variables",
+      "the explicit smooth remainder relative to the pinned local Hadamard parametrix",
+      "the resulting serialized commutator C26=[H26_plus,q26]",
+      "exact x/y support booleans and a pairing-null witness or counterexample"
+    ],
+    "obstruction_id": "MISSING_NORMALIZED_SERIALIZED_H26_REPRESENTATIVE",
+    "typed_response": "C26_SUPPORT_PROFILE_UNDEFINED_AT_EXISTENTIAL_STATE_SELECTION"
+  },
+  "lifecycle_layer": "LORENTZIAN_RETAINED_BV_HADAMARD_RESTRICTION",
+  "next_gate": "SERIALIZE_NORMALIZED_H26_THEN_COMPUTE_C26_SUPPORT_AND_PAIRING_NULL_STATUS",
+  "provenance": {
+    "proof_type": "PINNED_EXPORT_AUDIT_WITH_INDEPENDENT_NONDEFINITION_REPLAY",
+    "source_manifest": {
+      "../reports/berger-c26-bikernel-support-profile-nondefinition.md": "0336c387dd5636f04a123e07a5f111e311145c4ac5a4544a7e58c1142a354451",
+      "berger_c26_bikernel_support_profile_nondefinition.py": "1803b0e3ae386d6752c76489ca837d52f2158f53fa19ef9a7625baaa14a117eb",
+      "berger_c26_bikernel_support_profile_nondefinition_certificate.py": "d5027f9e259e333054fd41321c998cc8d636a4c42018846f3267bdfdc2822b55",
+      "schema/berger-c26-bikernel-support-profile-nondefinition-v1.schema.json": "c7ced37fa10b23c0e3596cdcbe2ec9a90cbd181abb82e1be6e4500651501823a",
+      "tests/test_berger_c26_bikernel_support_profile_nondefinition.py": "3b8f96354795c297c1545493f7f9df075144319462643086acfa824f463b6440",
+      "verify_berger_c26_bikernel_support_profile_nondefinition.py": "1096b8d7f1095c9d0b2decaab6a47c5abeac3d013c11cc1c02581eefb8959f1b"
+    },
+    "source_manifest_sha256": "2285cf468169a76cd0cb353c9b83ccbd2cfd634a9ea8edc9be07cb0f7034c311"
+  },
+  "representation_audit": {
+    "C26_content_addressed_bikernel": false,
+    "C26_formula": "C26=[H26_plus,q26]",
+    "C26_regularness": "SMOOTH_WITH_EMPTY_WAVEFRONT_SET",
+    "H26_fixed_representative": false,
+    "H26_formula": "H26_plus=diag(H_ghost_plus,H_metric_plus,H_metric_adjoint_plus,H_identity_plus)",
+    "blocks": [
+      {
+        "block_id": "ghost_identity",
+        "declared_formula": "W_gi=K_gi^dagger W_Dgi K_gi",
+        "executable_distribution_evaluator": false,
+        "representation_kind": "SYMBOLIC_PULLBACK_PLUS_EXISTENCE_THEOREM",
+        "serialized_bikernel": false,
+        "smooth_part_normalization_fixed": false,
+        "source_result_id": "BERGER_GHOST_IDENTITY_GLOBAL_HADAMARD_PAIR",
+        "stationary_mode_table": false
+      },
+      {
+        "block_id": "metric_metric_adjoint",
+        "declared_formula": "W_A_direct_sum_Adagger=K_src^dagger W_D K_src",
+        "executable_distribution_evaluator": false,
+        "representation_kind": "SYMBOLIC_PULLBACK_MATRIX",
+        "serialized_bikernel": false,
+        "smooth_part_normalization_fixed": false,
+        "source_result_id": "BERGER_REGULAR_GRAPH_INTERTWINER_OBSTRUCTION_AND_ENDPOINT_DESCENT",
+        "stationary_mode_table": false
+      },
+      {
+        "block_id": "free_dilation_seed",
+        "declared_formula": "W_Dfree=+i(GFsym,Dfree-Gadv,Dfree)",
+        "executable_distribution_evaluator": false,
+        "representation_kind": "SYMBOLIC_FEYNMAN_EXISTENCE_SELECTION",
+        "serialized_bikernel": false,
+        "smooth_part_normalization_fixed": false,
+        "source_result_id": "BERGER_FREE_DILATION_KREIN_CCR_COVARIANCE",
+        "stationary_mode_table": false
+      }
+    ],
+    "conclusion": "EXISTENCE_AND_SYMBOLIC_FORMULAS_DO_NOT_DEFINE_THE_REPRESENTATIVE_DEPENDENT_SUPPORT_PROFILE"
+  },
+  "representative_ambiguity": {
+    "K_type": "smooth graded exact bisolution preserving the fixed antisymmetric Pauli-Jordan part and endpoint equations",
+    "allowed_replacement": "H26_plus -> H26_plus+K",
+    "induced_remainder": "C26 -> C26+[K,q26]",
+    "scope": "This identity proves that a support profile requires a fixed representative. It does not assert that every admissible K changes support or that no equivariant representative exists."
+  },
+  "result_id": "BERGER_C26_BIKERNEL_SUPPORT_PROFILE_NONDEFINITION",
+  "result_state": "C26_SYMBOLIC_SMOOTHNESS_CERTIFIED_SUPPORT_AND_PAIRING_NULL_UNDEFINED_UNTIL_NORMALIZED_H26_IS_SERIALIZED",
+  "schema": "quantum-weyl-berger-c26-support-profile-nondefinition-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized",
+  "support_profile": {
+    "full_smooth_class_membership": "CERTIFIED_BY_SMOOTHNESS",
+    "full_smooth_factorized_homotopy": "OBSTRUCTED_BY_CLASSICAL_CUTOFF_ESCAPE_THEOREM",
+    "pairing_null_on_closed_exact_pairs": "UNDEFINED_NO_NORMALIZED_SERIALIZED_H26_REPRESENTATIVE",
+    "stationary_harmonic_support": "UNDEFINED_NO_NORMALIZED_SERIALIZED_H26_REPRESENTATIVE",
+    "x_future_compact": "UNDEFINED_NO_NORMALIZED_SERIALIZED_H26_REPRESENTATIVE",
+    "x_past_compact": "UNDEFINED_NO_NORMALIZED_SERIALIZED_H26_REPRESENTATIVE",
+    "x_time_compact": "UNDEFINED_NO_NORMALIZED_SERIALIZED_H26_REPRESENTATIVE",
+    "y_future_compact": "UNDEFINED_NO_NORMALIZED_SERIALIZED_H26_REPRESENTATIVE",
+    "y_past_compact": "UNDEFINED_NO_NORMALIZED_SERIALIZED_H26_REPRESENTATIVE",
+    "y_time_compact": "UNDEFINED_NO_NORMALIZED_SERIALIZED_H26_REPRESENTATIVE"
+  }
+}

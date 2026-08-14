@@ -64,6 +64,8 @@ BT_EUCLIDEAN_IMPORT = FOUNDATIONS / "results/FOUNDATIONAL_BT_EUCLIDEAN_LATTICE_I
 AUDIT = FOUNDATIONS / "results/FOUNDATIONAL_INTERSECTION_CUBE_MIGRATION_AUDIT_V2.json"
 FULL_SURFACE_AUDIT = FOUNDATIONS / "results/FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1.json"
 LADDER = FOUNDATIONS / "results/FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V2.json"
+COMPLETION_ATLAS = FOUNDATIONS / "results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V2.json"
+COMPLETION_REPORT = FOUNDATIONS / "reports/lorentzian-weyl-bv-completion-atlas-v2.md"
 LEDGERS = v1.LEDGERS
 CREATED = "2026-08-14"
 BASE_COMMIT = "8d2ceae41e73b748f4f6ca53277423e82697a29c"
@@ -193,13 +195,14 @@ def cell_mark(cell: dict[str, Any], evidence: dict[str, dict[str, Any]]) -> str:
 def canonical_digest(dataset: dict[str, Any]) -> str:
     projection = {
         key: dataset[key]
-        for key in ("axes", "cells", "evidence", "ladder", "graph", "cross_cell_interfaces", "carrier_interfaces", "numerical_reproducibility_records")
+        for key in ("axes", "cells", "evidence", "ladder", "graph", "completion_atlas", "cross_cell_interfaces", "carrier_interfaces", "numerical_reproducibility_records")
     }
     return v1.sha_bytes(json.dumps(projection, sort_keys=True, separators=(",", ":"), ensure_ascii=False).encode())
 
 
 def build_dataset() -> dict[str, Any]:
     cube, audit, ladder, bt_import = v1.load(CUBE), v1.load(AUDIT), v1.load(LADDER), v1.load(BT_EUCLIDEAN_IMPORT)
+    completion_atlas = v1.load(COMPLETION_ATLAS)
     interface_results = [v1.load(CORNER_BORN_INTERFACE), v1.load(GROUND_STATE_DYNAMICS_INTERFACE)]
     if cube.get("certified_interfaces") != [item.get("interface") for item in interface_results]:
         raise ValueError("cube/interface projection mismatch")
@@ -248,6 +251,7 @@ def build_dataset() -> dict[str, Any]:
         "evidence": evidence,
         "ladder": ladder["ladder"],
         "graph": ladder["typed_relation_graph"],
+        "completion_atlas": completion_atlas,
         "cross_cell_interfaces": cube["certified_interfaces"],
         "carrier_interfaces": cube["certified_carrier_interfaces"],
         "numerical_reproducibility_records": bt_import["numerical_reproducibility_records"],
@@ -284,6 +288,8 @@ def build_dataset() -> dict[str, Any]:
             "ground_state_dynamics_interface_report": site_link("foundations/reports/krein-fock-ground-state-dynamics-interface.md"),
             "migration_audit_report": site_link("foundations/reports/intersection-cube-migration-audit-v2.md"),
             "ladder_report": site_link("foundations/reports/cylinder-wave-strength-ladder-v2.md"),
+            "completion_atlas": site_link(rel(COMPLETION_ATLAS)),
+            "completion_atlas_report": site_link(rel(COMPLETION_REPORT)),
         },
     }
     dataset["canonical_digest"] = canonical_digest(dataset)
@@ -325,6 +331,13 @@ Cube v14 also preserves the positive BT Euclidean finite lattice import into fiv
 is coarse numerical reproduction, not empirical validation. A separate carrier
 interface refuses only identification of the positive Euclidean measure with the
 all-real BT/Krein path integral; controlled conditional bridges remain open.
+
+The **Weyl BV routes** view projects the audited Lorentzian completion atlas as
+seven architectures across eleven ordered gates, for 77 separately typed cells.
+It also exposes five ranked next constructions and the eleven-step Berger H26/C26
+decision chain.  The ranking is a planning aid, not a theorem; in particular,
+the rational non-cone feasibility control prevents the scoped 104-row failures
+from being promoted to a general non-cone no-go.
 
 The new reconstruction import supplies the first explicit weak-arithmetic
 finite-approximant theorem for a declared bounded wave observable. Its rational
@@ -568,7 +581,20 @@ def generated() -> dict[Path, bytes]:
     data_json = (json.dumps(dataset, indent=2, ensure_ascii=False) + "\n").encode()
     viability_json = (json.dumps(viability, indent=2, ensure_ascii=False) + "\n").encode()
     assembly_json = (json.dumps(assemblies, indent=2, ensure_ascii=False) + "\n").encode()
+    app = (ASSETS / "app.js").read_text().replace(
+        '["matrix", "viability", "assemblies", "guide", "graph", "ladder", "evidence"]',
+        '["matrix", "viability", "assemblies", "guide", "graph", "ladder", "completion", "evidence"]',
+    ).replace(
+        '["viability", "assemblies", "guide", "graph", "ladder"].includes(view)',
+        '["viability", "assemblies", "guide", "graph", "ladder", "completion"].includes(view)',
+    ).encode()
     index = (ASSETS / "index.html").read_text().replace(
+        '    <button class="tab" data-view="evidence">Evidence</button>',
+        '    <button class="tab" data-view="completion">Weyl BV routes</button>\n    <button class="tab" data-view="evidence">Evidence</button>',
+    ).replace(
+        '    <section id="evidenceView" class="view">',
+        '    <section id="completionView" class="view">\n      <div class="section-head"><div><p class="eyebrow">From survey to causal construction</p><h2>Lorentzian Weyl BV completion routes</h2></div><p>Seven architectures cross eleven gates. A colored cell reports a scoped evidence state—not a probability that the theory is true.</p></div>\n      <div id="completionExplorer"></div>\n    </section>\n\n    <section id="evidenceView" class="view">',
+    ).replace(
         '<script src="data.js"></script>',
         '<script src="data.js"></script>\n  <script src="viability.js"></script>\n  <script src="assemblies.js"></script>',
     ).replace(
@@ -577,8 +603,8 @@ def generated() -> dict[Path, bytes]:
     ).encode()
     outputs: dict[Path, bytes] = {
         SITE / "index.html": index,
-        SITE / "styles.css": (ASSETS / "styles.css").read_bytes(),
-        SITE / "app.js": (ASSETS / "app.js").read_bytes(),
+        SITE / "styles.css": (ASSETS / "styles.css").read_bytes() + b"\n" + (V2_ASSETS / "styles-v2.css").read_bytes(),
+        SITE / "app.js": app,
         SITE / "migration-review.js": (V2_ASSETS / "app-v2.js").read_bytes(),
         SITE / "data.json": data_json,
         SITE / "data.js": b"window.MATRIX_EXPLORER_DATA = " + data_json.rstrip() + b";\n",
@@ -589,6 +615,7 @@ def generated() -> dict[Path, bytes]:
     }
     local_evidence_paths = [ROOT / item["result_path"] for item in dataset["evidence"].values() if item["kind"] == "LOCAL_RESULT"]
     local_report_paths = [ROOT / item["report_path"] for item in dataset["evidence"].values() if item["kind"] == "LOCAL_RESULT" and item.get("report_path")]
+    completion_evidence_paths = [ROOT / item["path"] for item in dataset["completion_atlas"]["provenance"]["inputs"]]
     reports = [
         FOUNDATIONS / "reports/refined-intersection-cube-v14.md",
         FOUNDATIONS / "reports/refined-intersection-cube-v13.md",
@@ -608,11 +635,13 @@ def generated() -> dict[Path, bytes]:
         GR_CASSINI_REPORT,
         MANNHEIM_NGC3198_REPORT,
         NGC3198_COMMON_FIT_REPORT,
+        COMPLETION_REPORT,
     ]
-    bundled_sources = sorted(set([CUBE, *PREVIOUS_CUBES, FULL_SURFACE_AUDIT, CORNER_BORN_INTERFACE, GROUND_STATE_DYNAMICS_INTERFACE, BT_EUCLIDEAN_IMPORT, GR_CASSINI_RESULT, GR_CASSINI_SCHEMA, MANNHEIM_NGC3198_RESULT, MANNHEIM_NGC3198_SCHEMA, MANNHEIM_NGC3198_PARAMETERS, MANNHEIM_NGC3198_SPARC, MANNHEIM_NGC3198_CPP, NGC3198_COMMON_FIT_RESULT, NGC3198_COMMON_FIT_SCHEMA, NGC3198_COMMON_FIT_PROTOCOL, NGC3198_COMMON_FIT_CPP, AUDIT, LADDER, *LEDGERS, *local_evidence_paths, *local_report_paths, *reports]))
+    bundled_sources = sorted(set([CUBE, *PREVIOUS_CUBES, FULL_SURFACE_AUDIT, CORNER_BORN_INTERFACE, GROUND_STATE_DYNAMICS_INTERFACE, BT_EUCLIDEAN_IMPORT, GR_CASSINI_RESULT, GR_CASSINI_SCHEMA, MANNHEIM_NGC3198_RESULT, MANNHEIM_NGC3198_SCHEMA, MANNHEIM_NGC3198_PARAMETERS, MANNHEIM_NGC3198_SPARC, MANNHEIM_NGC3198_CPP, NGC3198_COMMON_FIT_RESULT, NGC3198_COMMON_FIT_SCHEMA, NGC3198_COMMON_FIT_PROTOCOL, NGC3198_COMMON_FIT_CPP, AUDIT, LADDER, COMPLETION_ATLAS, *LEDGERS, *local_evidence_paths, *local_report_paths, *reports]))
+    bundled_sources = sorted(set([*bundled_sources, *completion_evidence_paths]))
     for source in bundled_sources:
         outputs[SITE / "sources" / source.relative_to(ROOT)] = source.read_bytes()
-    input_paths = sorted(set([Path(__file__).resolve(), FOUNDATIONS / "theory_viability.py", FOUNDATIONS / "theory_assembly.py", FOUNDATIONS / "build_gr_cassini_assembly.py", FOUNDATIONS / "check_gr_cassini_assembly.py", FOUNDATIONS / "verify_gr_cassini_assembly.py", FOUNDATIONS / "build_mannheim_ngc3198_assembly.py", FOUNDATIONS / "check_mannheim_ngc3198_assembly.py", FOUNDATIONS / "verify_mannheim_ngc3198_assembly.py", FOUNDATIONS / "build_ngc3198_common_fit_comparison.py", FOUNDATIONS / "check_ngc3198_common_fit_comparison.py", FOUNDATIONS / "verify_ngc3198_common_fit_comparison.py", FOUNDATIONS / "standard-gr-observational-control-v1.json", FOUNDATIONS / "schema/standard-gr-observational-control-v1.schema.json", *bundled_sources, ASSETS / "index.html", ASSETS / "styles.css", ASSETS / "app.js", V2_ASSETS / "app-v2.js"]))
+    input_paths = sorted(set([Path(__file__).resolve(), FOUNDATIONS / "theory_viability.py", FOUNDATIONS / "theory_assembly.py", FOUNDATIONS / "build_gr_cassini_assembly.py", FOUNDATIONS / "check_gr_cassini_assembly.py", FOUNDATIONS / "verify_gr_cassini_assembly.py", FOUNDATIONS / "build_mannheim_ngc3198_assembly.py", FOUNDATIONS / "check_mannheim_ngc3198_assembly.py", FOUNDATIONS / "verify_mannheim_ngc3198_assembly.py", FOUNDATIONS / "build_ngc3198_common_fit_comparison.py", FOUNDATIONS / "check_ngc3198_common_fit_comparison.py", FOUNDATIONS / "verify_ngc3198_common_fit_comparison.py", FOUNDATIONS / "standard-gr-observational-control-v1.json", FOUNDATIONS / "schema/standard-gr-observational-control-v1.schema.json", *bundled_sources, ASSETS / "index.html", ASSETS / "styles.css", ASSETS / "app.js", V2_ASSETS / "app-v2.js", V2_ASSETS / "styles-v2.css"]))
     manifest = {
         "schema_version": "foundational-matrix-explorer-manifest-v2",
         "created": CREATED,
@@ -631,15 +660,16 @@ def generated() -> dict[Path, bytes]:
         "created": CREATED,
         "repository_base_commit": BASE_COMMIT,
         "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
-        "scope": "Deterministic static exploration surface over the migration-reviewed foundations cube and cylinder implication ladder.",
+        "scope": "Deterministic static exploration surface over the migration-reviewed foundations cube, cylinder implication ladder, and Lorentzian Weyl BV completion routes.",
         "counts": dataset["counts"],
         "features": ["sixteen 6x6 heatmaps", "complete 576-coordinate assessment surface", "reviewed-open-gap state distinct from priority and result", "dual local+literature cell marks", "per-evidence directness roles", "general-audience three-question dimensions guide", "grouped five-stage physical-obligation journey", "progressive-disclosure glossary and reviewer mechanics", "plain-language guide for all 28 axis options", "separate coverage and migration-review states", "migration evidence inspector", "multi-select filters", "full-text search", "cell inspector", "one-axis neighbors", "two-cell comparison", "URL permalinks", "filtered JSON and CSV export", "research-brief export", "three-pathway typed argument map with linked relation ledger", "strength ladder", "evidence catalogue", "theory-profile readiness map", "researcher-selectable obligation gates", "multi-carrier coverage-envelope composer", "non-scalar Pareto navigation", "separate composition, numerical-reproduction, and empirical-agreement rails", "three-way assembly subnavigation for bounded models, research programmes, and interface/calibration ledgers", "nine named research-programme lenses with explicit scope cautions", "first model-scoped GR-to-Cassini bounded prediction assembly", "second bounded Mannheim-to-NGC3198 assembly with a no-refit standardized-residual audit and mixed pass/fail gates", "first explicit uniform finite-approximant reconstruction of a declared bounded wave observable", "finite localized rank-10 chiral test class with coefficient-wise weak wave identities", "named H2 test completion with explicit residual modulus and distributional state map", "fixed-support smooth-name to rational H2 translator", "support-indexed represented test-space comparison with LF boundary", "exact flat scalar 1+1 retarded, advanced, and biwave Green benchmarks", "fail-closed sixteen-gate scalar-biwave-to-Weyl-BV dependency delta", "typed applicability mask", "exact field-equation-to-PPN-to-null-delay chain", "typed cross-cell interface ledger", "two certified scoped cross-cell bridges", "one certified scoped carrier non-identity", "independent maturity rails with missing distinct from failure", "empty fail-closed candidate empirical benchmark ledger", "external standard-GR positive control with four primary-source records", "ten-cell exact finite-operator closure", "twenty-cell exact finite-BRST closure"],
-        "provenance": {"manifest": rel(SITE / "manifest.json"), "manifest_sha256": v1.sha_bytes(manifest_bytes), "canonical_data_digest": dataset["canonical_digest"], "viability_digest": viability["canonical_digest"], "assembly_digest": assemblies["canonical_digest"]},
+        "provenance": {"manifest": rel(SITE / "manifest.json"), "manifest_sha256": v1.sha_bytes(manifest_bytes), "canonical_data_digest": dataset["canonical_digest"], "viability_digest": viability["canonical_digest"], "assembly_digest": assemblies["canonical_digest"], "completion_atlas_sha256": v1.sha(COMPLETION_ATLAS)},
         "independent_checker": {"path": "foundations/check_matrix_site_v2.py", "expected_cells": 576, "expected_emitted": 576, "expected_synthetic_not_mapped": 0, "expected_total_not_mapped": 0, "expected_reviewed_gaps": 169, "expected_evidence_records": 83, "expected_digest": dataset["canonical_digest"], "expected_viability_digest": viability["canonical_digest"], "expected_assembly_digest": assemblies["canonical_digest"]},
         "claim_flags": {"static_site_generated": True, "all_cartesian_coordinates_visible": True, "all_cartesian_coordinates_assessed": True, "zero_not_mapped": True, "reviewed_gaps_distinguished_from_results": True, "all_emitted_migrations_reviewed": True, "coverage_and_migration_separated": True, "all_used_evidence_resolved": True, "theory_profiles_generated": True, "theory_assembly_atlas_generated": True, "bounded_observable_reconstruction_exposed": True, "localized_coefficient_weak_wave_exposed": True, "named_h2_test_completion_exposed": True, "smooth_to_h2_translator_exposed": True, "support_indexed_test_comparison_exposed": True, "scalar_green_choice_audit_exposed": True, "at_least_one_cross_cell_interface_certified": True, "composition_and_observation_rails_separated": True, "scientific_claims_duplicated_by_hand": False, "literature_complete": False, "unmapped_means_absent": False, "reviewed_gap_means_absent": False, "reviewed_no_transfer_means_absent": False, "priority_score_is_theorem": False, "complete_observationally_valid_theory_identified": False, "new_lorentzian_claim": True},
         "does_not_establish": ["literature completeness", "a result for any of the 169 reviewed open gaps", "that REVIEWED_GAP or NOT_MAPPED means no literature exists", "that an UNREVIEWED evidence role is an absence of direct support", "that a dual LR mark composes its two records into a stronger result", "that all 576 coordinates are jointly realizable", "a weakest mathematical base", "full-state, representation-invariant, causal, or Weyl reconstruction from the single coded wave observable", "the unrestricted LF smooth-test topology from the represented support-indexed union", "surjectivity of the smooth-test embedding onto H2", "uniqueness among arbitrary distributional solutions from energy-image uniqueness", "a variable-coefficient, curved-spacetime, Weyl, or metric-BV Green operator from the scalar 1+1 benchmark", "a Hadamard state, causal perturbative AQFT construction, or Lorentzian quantum master equation", "continuum renormalized products from finite regulated-product closure", "a Weyl QME or Weyl residual transfer from a finite toy BRST complex", "equivalence of carrier categories from one finite realization", "a theorem ranking from interface order, Pareto membership, or neighbor counts", "composition beyond the two certified scoped cross-cell interfaces", "precision sampler equivalence, continuum reconstruction, or empirical support from the BT finite lattice", "a complete observationally validated theory"],
         "human_report": "foundations/reports/matrix-explorer-site-v2.md",
     }
+    result["claim_flags"]["completion_atlas_exposed"] = True
     outputs[RESULT] = (json.dumps(result, indent=2) + "\n").encode()
     outputs[REPORT] = render_report(result).encode()
     outputs[VIABILITY_RESULT] = viability_json

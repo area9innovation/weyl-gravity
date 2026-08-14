@@ -1,0 +1,179 @@
+{
+  "candidate_status": {
+    "Ward_defect_formula_computed": true,
+    "Ward_defect_is_smooth": true,
+    "Ward_defect_vanishes": "NOT_DECIDED",
+    "all_26_endpoint_rows_have_global_Hadamard_carriers": true,
+    "full_exact_graded_CCR_from_cyclic_witness": true,
+    "retained_26_BRST_Hadamard": false,
+    "smooth_correction_constructed": false
+  },
+  "claim_boundary": "All four degreewise endpoint sectors now have global exact Hadamard carriers, and the cyclic witness assembles an exact-CCR 26-row candidate. Its BRST Ward defect is exactly W26[H26,q26] and is smooth. The existing advanced/retarded chain homotopies are certified on compactly supported test sources, not on the arbitrary smooth two-variable defect class, so they cannot silently be applied as a global correction. A declared bikernel support class and continuous homotopy, or a directly q26-equivariant Feynman selection, remains required. No retained BRST Hadamard, 54-row lift, positivity, particle, renormalized Lorentzian product, Lorentzian QME or quantum theory is certified.",
+  "claim_flags": {
+    "BERGER_26_ROW_BRST_HADAMARD": false,
+    "BERGER_26_ROW_HADAMARD_EXACT_CCR_CANDIDATE": true,
+    "BERGER_26_ROW_WARD_DEFECT_SMOOTH": true,
+    "BERGER_54_ROW_BRST_HADAMARD": false,
+    "BERGER_ALL_26_ENDPOINT_HADAMARD_CARRIERS": true,
+    "BERGER_HADAMARD_DATA": false,
+    "BERGER_PHYSICAL_OBSERVABLE_POSITIVITY": false,
+    "BERGER_RETAINED26_HADAMARD_KREIN_COVARIANCE": false,
+    "BERGER_SMOOTH_Q26_WARD_COMPLETION": false,
+    "LORENTZIAN_QME_RESTORED": false,
+    "QUANTUM_CLAIM": false,
+    "RENORMALIZED_LORENTZIAN_PRODUCTS": false
+  },
+  "classical_commit": "743183594a7a33dbb869154dafd7eb2c3482bac0",
+  "dependency_refs": {
+    "causal_chain_import": {
+      "result_id": "BERGER_CAUSAL_CHAIN_V2_IMPORT",
+      "sha256": "b035e828a468f6ffd2b9459b43500ed58591349eb658e499b610df0ce795d0f1"
+    },
+    "classical_26_row_causal_homotopy": {
+      "result_id": "BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY_V2",
+      "sha256": "61c0ce89045434676d99e723f7618da749f7208e5f49716b0ea9fc86bbaf7abb"
+    },
+    "ghost_identity_Hadamard_pair": {
+      "result_id": "BERGER_GHOST_IDENTITY_GLOBAL_HADAMARD_PAIR",
+      "sha256": "16cb18e0d12c6b98c3da4b6fbe41df3d4fded9b75895ea9d35982099eb7ba188"
+    },
+    "graded_state_space_contract": {
+      "result_id": "BERGER_GRADED_CAUSAL_STATE_SPACE_CONTRACT",
+      "sha256": "99768cf1e444ef3525f19621702ee64a68aea83f83349a1c5d6223d9c959ca35"
+    },
+    "local_Hadamard_parametrix": {
+      "result_id": "BERGER_BASE_WAVE_HADAMARD_PARAMETRIX",
+      "sha256": "1a2bb5b124734a5aa63fdd8c1285d4847b8ff5ea02aed8d6b840db19dfe23fc1"
+    },
+    "metric_endpoint_Hadamard_pair": {
+      "result_id": "BERGER_REGULAR_GRAPH_INTERTWINER_OBSTRUCTION_AND_ENDPOINT_DESCENT",
+      "sha256": "8bece00c7a4dda8327e8c0dd6bc4ddf15f4e3712ac383048bb73bda861fa749e"
+    }
+  },
+  "dependency_tags": [
+    "LORENTZIAN-CAUSAL"
+  ],
+  "exact_input_checks": {
+    "classical_Hadamard_kernel_still_absent": true,
+    "classical_chain_homotopy_checks_complete": true,
+    "ghost_identity_six_row_global_Hadamard_exact_CCR_pair": true,
+    "graded_causal_CCR_and_cyclicity_certified": true,
+    "local_parametrix_left_right_and_adjoint_checks": true,
+    "metric_twenty_row_global_Hadamard_exact_CCR_pair": true,
+    "retained_26_causal_homotopy_imported": true
+  },
+  "lifecycle_layer": "LORENTZIAN_RETAINED_BV_HADAMARD_RESTRICTION",
+  "negative_controls": {
+    "pretend_compact_source_homotopy_acts_on_all_bikernels": {
+      "all_pass": false,
+      "available": "q26 Lambda26,+/-+Lambda26,+/- q26=I on compactly supported smooth sources, with advanced/retarded support",
+      "checks": {
+        "compact_source_advanced_retarded_chain_homotopies_exist": true,
+        "compact_source_identity_alone_does_not_act_on_arbitrary_bikernels": true,
+        "global_smooth_bikernel_support_class_not_declared": false,
+        "no_automatic_Ward_promotion": false,
+        "smooth_Hadamard_Ward_defect_identified": true
+      },
+      "missing": "a declared past/future-compact or time-slice extension acting continuously on the smooth two-variable Ward-defect class",
+      "required_output": "either a q26-equivariant global Feynman/Hadamard selection or a smooth correction S26 with its support-class proof",
+      "status": "SMOOTH_KERNEL_HOMOTOPY_AVAILABLE"
+    },
+    "remove_kinetic_witness_identity": {
+      "Ward_calculation": "delta_q Omega26_plus=q26 W26 H26_plus+W26 H26_plus q26=P26 H26_plus+W26(H26_plus q26-q26 H26_plus)=W26[H26_plus,q26]",
+      "all_pass": false,
+      "candidate": "Omega26_plus=W26 H26_plus",
+      "checks": {
+        "H26_is_degreewise_exact_global_Hadamard_bisolution": true,
+        "Omega26_is_W26_H26": true,
+        "P26_equals_q26_W26_plus_W26_q26": false,
+        "PH_term_vanishes": false,
+        "Ward_expansion_is_PH_plus_W_times_Hq_minus_qH": false,
+        "cyclicity_and_degreewise_CCR_give_full_exact_CCR": true,
+        "exact_Ward_defect_is_W26_times_Hq_minus_qH": false,
+        "local_Hadamard_singular_part_intertwines_q26": true,
+        "remaining_Ward_defect_is_smooth": false
+      },
+      "degreewise_kernel": "H26_plus=diag(H_ghost_plus,H_metric_plus,H_metric_adjoint_plus,H_identity_plus)",
+      "exact_CCR": "Omega26_plus-Omega26_plus^sharp_graded=i Delta26",
+      "kinetic_identity": "P26=q26 W26+W26 q26",
+      "minimal_equation": "find smooth S26 with delta_q S26=-W26 C26",
+      "smooth_defect": "C26=[H26_plus,q26] is a smooth kernel",
+      "sufficient_zero_condition": "[H26_plus,q26]=0"
+    },
+    "remove_local_singular_intertwining": {
+      "Ward_calculation": "delta_q Omega26_plus=q26 W26 H26_plus+W26 H26_plus q26=P26 H26_plus+W26(H26_plus q26-q26 H26_plus)=W26[H26_plus,q26]",
+      "all_pass": false,
+      "candidate": "Omega26_plus=W26 H26_plus",
+      "checks": {
+        "H26_is_degreewise_exact_global_Hadamard_bisolution": true,
+        "Omega26_is_W26_H26": true,
+        "P26_equals_q26_W26_plus_W26_q26": true,
+        "PH_term_vanishes": true,
+        "Ward_expansion_is_PH_plus_W_times_Hq_minus_qH": true,
+        "cyclicity_and_degreewise_CCR_give_full_exact_CCR": true,
+        "exact_Ward_defect_is_W26_times_Hq_minus_qH": true,
+        "local_Hadamard_singular_part_intertwines_q26": false,
+        "remaining_Ward_defect_is_smooth": false
+      },
+      "degreewise_kernel": "H26_plus=diag(H_ghost_plus,H_metric_plus,H_metric_adjoint_plus,H_identity_plus)",
+      "exact_CCR": "Omega26_plus-Omega26_plus^sharp_graded=i Delta26",
+      "kinetic_identity": "P26=q26 W26+W26 q26",
+      "minimal_equation": "find smooth S26 with delta_q S26=-W26 C26",
+      "smooth_defect": "C26=[H26_plus,q26] is a smooth kernel",
+      "sufficient_zero_condition": "[H26_plus,q26]=0"
+    }
+  },
+  "next_gate": "CONSTRUCT_Q26_EQUIVARIANT_GLOBAL_FEYNMAN_SELECTION_OR_SMOOTH_WARD_CORRECTION_WITH_DECLARED_BIKERNEL_SUPPORT_CLASS",
+  "provenance": {
+    "proof_type": "EXACT_KINETIC_WITNESS_EXPANSION_LOCAL_HADAMARD_INTERTWINING_AND_SUPPORT_CLASS_AUDIT",
+    "source_manifest": {
+      "../reports/berger-retained26-hadamard-ward-reduction.md": "3b870acc06ac0c7d991af04c57fe7773cfa4ea269c572a4e6cca96da7c79fc25",
+      "berger_retained26_hadamard_ward_reduction.py": "2a8b68d60503f40c9818d729aa9ebfa3c8f87a9d6d5613e28e2ded13ce92c6bb",
+      "berger_retained26_hadamard_ward_reduction_certificate.py": "89d21250d94a0098d362a871eb13fdb39e9229318fc46524166853b061201053",
+      "schema/berger-retained26-hadamard-ward-reduction-v1.schema.json": "cdd5b40c5bc61a89c673b31b67a305142d728455eb34ff938b8aa103b19fa57c",
+      "tests/test_berger_retained26_hadamard_ward_reduction.py": "45b9ecdb69e7361694f5bd91228efe3d19d2257aa4e7f8fba7d147891becfd91",
+      "verify_berger_retained26_hadamard_ward_reduction.py": "d027de38487241f665505baea7aa253e8837059ac70e2e03d1c4abce2f0fe6b3"
+    },
+    "source_manifest_sha256": "ba726074d64fc0909a98deb4cd86ffd9a76ab166ffb1f8ecb1de3e7d9c1423f5"
+  },
+  "result_id": "BERGER_RETAINED26_HADAMARD_WARD_REDUCTION",
+  "result_state": "ALL_26_ENDPOINT_ROWS_GLOBAL_HADAMARD_EXACT_CCR_CANDIDATE_ASSEMBLED_SMOOTH_Q26_WARD_CARRIER_OPEN",
+  "schema": "quantum-weyl-berger-retained26-hadamard-ward-reduction-v1",
+  "setting_id": "compact_positive_berger_clock_fixed_coupling_linearized",
+  "smooth_support_class_audit": {
+    "all_pass": true,
+    "available": "q26 Lambda26,+/-+Lambda26,+/- q26=I on compactly supported smooth sources, with advanced/retarded support",
+    "checks": {
+      "compact_source_advanced_retarded_chain_homotopies_exist": true,
+      "compact_source_identity_alone_does_not_act_on_arbitrary_bikernels": true,
+      "global_smooth_bikernel_support_class_not_declared": true,
+      "no_automatic_Ward_promotion": true,
+      "smooth_Hadamard_Ward_defect_identified": true
+    },
+    "missing": "a declared past/future-compact or time-slice extension acting continuously on the smooth two-variable Ward-defect class",
+    "required_output": "either a q26-equivariant global Feynman/Hadamard selection or a smooth correction S26 with its support-class proof",
+    "status": "MISSING_SMOOTH_KERNEL_HOMOTOPY_CARRIER"
+  },
+  "ward_reduction": {
+    "Ward_calculation": "delta_q Omega26_plus=q26 W26 H26_plus+W26 H26_plus q26=P26 H26_plus+W26(H26_plus q26-q26 H26_plus)=W26[H26_plus,q26]",
+    "all_pass": true,
+    "candidate": "Omega26_plus=W26 H26_plus",
+    "checks": {
+      "H26_is_degreewise_exact_global_Hadamard_bisolution": true,
+      "Omega26_is_W26_H26": true,
+      "P26_equals_q26_W26_plus_W26_q26": true,
+      "PH_term_vanishes": true,
+      "Ward_expansion_is_PH_plus_W_times_Hq_minus_qH": true,
+      "cyclicity_and_degreewise_CCR_give_full_exact_CCR": true,
+      "exact_Ward_defect_is_W26_times_Hq_minus_qH": true,
+      "local_Hadamard_singular_part_intertwines_q26": true,
+      "remaining_Ward_defect_is_smooth": true
+    },
+    "degreewise_kernel": "H26_plus=diag(H_ghost_plus,H_metric_plus,H_metric_adjoint_plus,H_identity_plus)",
+    "exact_CCR": "Omega26_plus-Omega26_plus^sharp_graded=i Delta26",
+    "kinetic_identity": "P26=q26 W26+W26 q26",
+    "minimal_equation": "find smooth S26 with delta_q S26=-W26 C26",
+    "smooth_defect": "C26=[H26_plus,q26] is a smooth kernel",
+    "sufficient_zero_condition": "[H26_plus,q26]=0"
+  }
+}

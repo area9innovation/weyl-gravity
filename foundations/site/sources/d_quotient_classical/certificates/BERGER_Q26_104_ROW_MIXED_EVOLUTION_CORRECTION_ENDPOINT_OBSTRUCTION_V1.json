@@ -1,0 +1,93 @@
+{
+  "claim_boundary": "This exact characteristic-zero theorem closes only the fully-mixed correction ansatz A_ext=N tensor A, q_ext=N tensor q+(I-N) tensor s at the left endpoint. It does not obstruct every 104-row non-cone completion, raise the global lower bound, or establish a cyclic pairing, real structure, retained SDR, Hadamard state, positivity, QME, particle, scattering or unitarity result.",
+  "classification": {
+    "Hadamard_or_quantum_claim": false,
+    "PBW_operator_completion_constructed": false,
+    "all_rational_104_row_completions_obstructed": false,
+    "cyclic_pairing_constructed": false,
+    "declared_mixed_correction_ansatz_closes": false,
+    "global_104_row_lower_bound_raised": false,
+    "real_involution_constructed": false,
+    "retained_SDR_constructed": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "exact_obstruction": {
+    "artifact_id": "BERGER_Q26_104_ROW_MIXED_EVOLUTION_RATIONAL_ENDPOINT_WITNESS_V1",
+    "attainable_neighbor_ranks": [
+      22,
+      24
+    ],
+    "path": "d_quotient_classical/generated/berger_q26_104_row_mixed_evolution_endpoint_obstruction_v1/rational_endpoint_witness.json",
+    "proof": "Every one-dimensional rational kernel of an A-equivariant correction is an A-invariant rational line. The source characteristic polynomial has no rational root except zero and ker(A_-1) is one-dimensional, so every rank-11 correction kills that unique line. The frozen old q also kills it, hence the induced off-diagonal map on ker(s) is zero and rank(q_ext)=2 rank(s)=22. Rank-12 corrections give rank 24; rank at most 10 gives rank at most 2r+(12-r)<=22. Therefore rank 23 is absent.",
+    "required_left_endpoint_rank": 23,
+    "sha256": "40c03ae027c97efb2d52e90dd8d2f574634232003014a665029e8fbff6563b74"
+  },
+  "lifecycle_status": "OBSTRUCTED",
+  "next_gate": "GENERAL_NONCONE_SIMULTANEOUS_TWO_FREE_DIFFERENTIAL_COMPLETION_OR_CHARACTERISTIC_ZERO_SEPARATOR",
+  "partial_solver_disposition": {
+    "forge_commit": "814484bc9",
+    "remaining_capability": "two-free-differential bilinear completion with rank strata, cyclicity and full SDR side conditions",
+    "result": "the structured rational slice is exactly obstructed before the free middle differential is solved",
+    "usable_slice": "one free differential with adjacent differential and evolution frozen"
+  },
+  "pinned_inputs": {
+    "A104": {
+      "artifact_id": "global_A104",
+      "path": "quantum-weyl/lorentzian/generated/berger_a104_endpoint_completion/global_A104.json",
+      "sha256": "37f0881c793f196175100e5e4784d18f6315e3654e3945c9972d9b212e662154"
+    },
+    "forge_partial_solver": {
+      "artifact_id": "FORGE_M9C_ONE_FREE_DIFFERENTIAL_SOLVER",
+      "path": "/home/alstrup/area9/tango/forge/lib/math/sdrsolve.forge",
+      "sha256": "74b9338be7f499b69058fadd6039d9e25136eec9a286898e0e0bd757b50617a9"
+    },
+    "module_lower_bound": {
+      "artifact_id": "BERGER_Q26_FINITE_ROW_MODULE_CLOSURE_LOWER_BOUND_V1",
+      "path": "d_quotient_classical/certificates/BERGER_Q26_FINITE_ROW_MODULE_CLOSURE_LOWER_BOUND_V1.json",
+      "sha256": "6b59cdc0c54978ef5a9bb07ff8b17dcbc6d9771ce631206cecc8b85686f2fb78"
+    },
+    "prior_cone_obstruction": {
+      "artifact_id": "BERGER_Q26_104_ROW_CANONICAL_CONE_LIFT_OBSTRUCTION_V1",
+      "path": "d_quotient_classical/certificates/BERGER_Q26_104_ROW_CANONICAL_CONE_LIFT_OBSTRUCTION_V1.json",
+      "sha256": "9471e07167aff1aaa8abd1d46f148fd40fee9da4033dac8010c1bbb1df4f6c21"
+    },
+    "q_Cauchy": {
+      "artifact_id": "rejected_candidate_q_Cauchy_104",
+      "path": "quantum-weyl/lorentzian/generated/berger_canonical_graph_q_cauchy_obstruction/rejected_candidate_q_Cauchy_104.json",
+      "sha256": "116ea6304aa27d30c881bfac092c6058cf9d4571aa407ca5f47f1366d993bf50"
+    }
+  },
+  "provenance": {
+    "source_manifest": {
+      "d_quotient_classical/causal_transfer/berger_q26_104_row_mixed_evolution_endpoint_obstruction.py": "e28b2ae2a351c9c46d64c30fcb46625ff8d0511d5736c64d1db50228a7505a9c",
+      "d_quotient_classical/causal_transfer/tests/test_berger_q26_104_row_mixed_evolution_endpoint_obstruction.py": "518272be323770a0b289fc64e0cb4ee57028e2ea2ede307b4e1406bb8b52940d",
+      "d_quotient_classical/causal_transfer/verify_berger_q26_104_row_mixed_evolution_endpoint_obstruction.py": "d686cc5e993b1227a1733d5a528619edd82f7b9cced27400abec362624318e93",
+      "d_quotient_classical/schema/berger-q26-104-row-mixed-evolution-endpoint-obstruction-v1.schema.json": "6f2bcf3b29645052cb3c7be0ab1d147027f1a50a01ded379ac81d8e6e9600e7d"
+    },
+    "verification_commands": [
+      "PYTHONPATH=. python3 -m d_quotient_classical.causal_transfer.berger_q26_104_row_mixed_evolution_endpoint_obstruction --check --guards",
+      "PYTHONPATH=. python3 -m d_quotient_classical.causal_transfer.verify_berger_q26_104_row_mixed_evolution_endpoint_obstruction",
+      "PYTHONPATH=. python3 -m unittest d_quotient_classical.causal_transfer.tests.test_berger_q26_104_row_mixed_evolution_endpoint_obstruction",
+      "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/berger-q26-104-row-mixed-evolution-endpoint-obstruction-v1.schema.json -d d_quotient_classical/certificates/BERGER_Q26_104_ROW_MIXED_EVOLUTION_CORRECTION_ENDPOINT_OBSTRUCTION_V1.json"
+    ]
+  },
+  "result_id": "BERGER_Q26_104_ROW_MIXED_EVOLUTION_CORRECTION_ENDPOINT_OBSTRUCTION_V1",
+  "result_state": "RATIONAL_FULLY_MIXED_CORRECTION_ANSATZ_MISSES_REQUIRED_LEFT_ENDPOINT_RANK",
+  "schema": "pure-weyl-berger-q26-104-row-mixed-evolution-endpoint-obstruction-v1",
+  "scope": {
+    "background": "fixed rational positive Berger clock",
+    "boundaries": "R_t x compact Berger S3; no spatial boundary",
+    "carrier": "104 old rows plus one same-profile 104-row copy in the fully-mixed correction ansatz",
+    "charge_sector": "unquotiented retained-26 formal Cauchy carrier",
+    "degree": "left endpoint -1 to 0",
+    "ell": "not harmonic-reduced",
+    "k": "derivative generators specialized to zero",
+    "m": "not harmonic-reduced",
+    "omega": "stationary A104 rational compression",
+    "parity": "BV grading only; cyclic pairing not reached",
+    "theory": "retained minimal pure-Weyl Berger BV complex"
+  }
+}

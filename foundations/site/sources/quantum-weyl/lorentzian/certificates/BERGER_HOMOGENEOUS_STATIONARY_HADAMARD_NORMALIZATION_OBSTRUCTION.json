@@ -1,0 +1,317 @@
+{
+  "claim_boundary": "This exact homogeneous reduced-mode theorem obstructs only the real D-invariant compatible-complex-structure normalization on the full retained carrier. It does not rule out a nonstationary Krein Hadamard representative, show that the growth eigenlines survive BRST cohomology, serialize C26, prove positivity, define renormalized products or establish a Lorentzian QME.",
+  "claim_flags": {
+    "C26_SERIALIZED": false,
+    "HOMOGENEOUS_REAL_GROWTH_EIGENLINES_CERTIFIED": true,
+    "KREIN_COVARIANCE_WITHOUT_COMPLEX_STRUCTURE_RULED_OUT": false,
+    "LORENTZIAN_QME_CERTIFIED": false,
+    "NONSTATIONARY_HADAMARD_REPRESENTATIVE_RULED_OUT": false,
+    "PHYSICAL_BRST_QUOTIENT_INSTABILITY_CERTIFIED": false,
+    "PHYSICAL_POSITIVITY_CERTIFIED": false,
+    "RETAINED_BRST_HADAMARD_CERTIFIED": false,
+    "STATIONARY_FULL_CARRIER_COMPLEX_STRUCTURE_EXISTS": false
+  },
+  "declared_normalized_class": {
+    "class_id": "REAL_D_INVARIANT_COMPATIBLE_COMPLEX_STRUCTURE_POSITIVE_FREQUENCY_NORMALIZATION",
+    "completeness_scope": "all real complex structures commuting with the specialized homogeneous A104; no locality or polynomial ansatz restriction",
+    "requirements": [
+      "J is real linear",
+      "J^2=-I",
+      "[J,A104]=0",
+      "J preserves the declared full retained homogeneous carrier"
+    ]
+  },
+  "dependency_refs": {
+    "A104_certificate": {
+      "path": "quantum-weyl/lorentzian/certificates/BERGER_A104_ENDPOINT_COMPLETION.json",
+      "result_id": "BERGER_A104_ENDPOINT_COMPLETION",
+      "sha256": "9461f484e51ba7ef27cf0924d532d262b7b4c1fd846fd35dec093204508f9e1c"
+    },
+    "A104_payload": {
+      "path": "quantum-weyl/lorentzian/generated/berger_a104_endpoint_completion/global_A104.json",
+      "result_id": "A104_EXACT_SPARSE_PAYLOAD",
+      "sha256": "37f0881c793f196175100e5e4784d18f6315e3654e3945c9972d9b212e662154"
+    },
+    "C26_nondefinition": {
+      "path": "quantum-weyl/lorentzian/certificates/BERGER_C26_BIKERNEL_SUPPORT_PROFILE_NONDEFINITION.json",
+      "result_id": "BERGER_C26_BIKERNEL_SUPPORT_PROFILE_NONDEFINITION",
+      "sha256": "b3a4058c83f5fc2dc77dc1e50a6b1f3624eebbbe049c43de0ce45d62d768184a"
+    },
+    "canonical_q_Cauchy_obstruction": {
+      "path": "quantum-weyl/lorentzian/certificates/BERGER_CANONICAL_GRAPH_Q_CAUCHY_OBSTRUCTION.json",
+      "result_id": "BERGER_CANONICAL_GRAPH_Q_CAUCHY_OBSTRUCTION",
+      "sha256": "2ee25f93c1e8cab4c6053c4cc76f7efeafc99e266b718fcb8d3dad4f07a231df"
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "exact_checks": {
+    "all_104_coordinates_imported": true,
+    "canonical_q_Cauchy_mutation_not_reused": true,
+    "degree_blocks_cover_A104": true,
+    "first_positive_root_bracket": true,
+    "instability_factor_multiplicity_one": true,
+    "instability_polynomial_divides_metric_characteristic": true,
+    "instability_polynomial_squarefree": true,
+    "metric_and_antifield_characteristics_match": true,
+    "positive_clock_fixture": true,
+    "second_positive_root_bracket": true
+  },
+  "homogeneous_spectral_data": {
+    "blocks": [
+      {
+        "block_id": "ghost",
+        "characteristic_polynomial": "lambda**2*(lambda**2 + 16)**2*(2*lambda**2 + 1)*(2*lambda**2 + 41)**2/8",
+        "indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57
+        ],
+        "nonzero_entries": 14,
+        "rank": 12,
+        "zero_nullities": [
+          1,
+          2,
+          2
+        ]
+      },
+      {
+        "block_id": "metric",
+        "characteristic_polynomial": "lambda**2*(lambda**2 + 16)**4*(lambda**2 + 35)**2*(2*lambda**2 + 1)*(2*lambda**2 + 41)**2*(lambda**4 + 187*lambda**2 + 8720)**2*(9*lambda**12 + 39*lambda**10 - 116*lambda**8 + 900*lambda**6 - 3160*lambda**4 - 300*lambda**2 + 4800)/72",
+        "indices": [
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73,
+          74,
+          75,
+          76,
+          77
+        ],
+        "nonzero_entries": 84,
+        "rank": 40,
+        "zero_nullities": [
+          1,
+          2,
+          2
+        ]
+      },
+      {
+        "block_id": "metric_antifield",
+        "characteristic_polynomial": "lambda**2*(lambda**2 + 16)**4*(lambda**2 + 35)**2*(2*lambda**2 + 1)*(2*lambda**2 + 41)**2*(lambda**4 + 187*lambda**2 + 8720)**2*(9*lambda**12 + 39*lambda**10 - 116*lambda**8 + 900*lambda**6 - 3160*lambda**4 - 300*lambda**2 + 4800)/72",
+        "indices": [
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          78,
+          79,
+          80,
+          81,
+          82,
+          83,
+          84,
+          85,
+          86,
+          87,
+          88,
+          89,
+          90,
+          91,
+          92,
+          93,
+          94,
+          95,
+          96,
+          97
+        ],
+        "nonzero_entries": 84,
+        "rank": 40,
+        "zero_nullities": [
+          1,
+          2,
+          2
+        ]
+      },
+      {
+        "block_id": "identity",
+        "characteristic_polynomial": "lambda**2*(lambda**2 + 16)**2*(2*lambda**2 + 1)*(2*lambda**2 + 41)**2/8",
+        "indices": [
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          98,
+          99,
+          100,
+          101,
+          102,
+          103
+        ],
+        "nonzero_entries": 14,
+        "rank": 12,
+        "zero_nullities": [
+          1,
+          2,
+          2
+        ]
+      }
+    ],
+    "conclusion": "each positive simple x root gives simple real A104 eigenvalues lambda=plus_or_minus sqrt(x) in both metric and metric-antifield blocks",
+    "exact_signs": {
+      "p_2": {
+        "denominator": 1,
+        "numerator": -1272
+      },
+      "p_3": {
+        "denominator": 1,
+        "numerator": 6402
+      },
+      "p_3_over_2": {
+        "denominator": 64,
+        "numerator": 5691
+      },
+      "p_5_over_2": {
+        "denominator": 64,
+        "numerator": -10425
+      }
+    },
+    "instability_polynomial_coefficients_descending": [
+      9,
+      39,
+      -116,
+      900,
+      -3160,
+      -300,
+      4800
+    ],
+    "instability_polynomial_in_x": "9*x**6 + 39*x**5 - 116*x**4 + 900*x**3 - 3160*x**2 - 300*x + 4800",
+    "positive_root_intervals": [
+      [
+        {
+          "denominator": 2,
+          "numerator": 3
+        },
+        {
+          "denominator": 1,
+          "numerator": 2
+        }
+      ],
+      [
+        {
+          "denominator": 2,
+          "numerator": 5
+        },
+        {
+          "denominator": 1,
+          "numerator": 3
+        }
+      ]
+    ]
+  },
+  "next_gate": "IMPORT_CORRECTED_Q_CAUCHY_AND_SELECT_A_NONSTATIONARY_CONTENT_ADDRESSED_KREIN_CAUCHY_COVARIANCE",
+  "obstruction": {
+    "classification": "OBSTRUCTED",
+    "obstructed_object": "stationary positive-frequency normalization by a real compatible complex structure on the full retained carrier",
+    "proof": "A real operator J commuting with A104 preserves each simple real eigenline. On a one-dimensional real eigenline J is multiplication by a real scalar, whose square cannot be -1.",
+    "smallest_open_enlargement": "NONSTATIONARY_KREIN_HADAMARD_REPRESENTATIVE_WITH_CONTENT_ADDRESSED_CAUCHY_TIME_NORMALIZATION"
+  },
+  "provenance": {
+    "proof_type": "EXACT_CHARPOLY_IVT_AND_SIMPLE_EIGENLINE_OBSTRUCTION",
+    "source_manifest": {
+      "../reports/berger-homogeneous-stationary-hadamard-normalization-obstruction.md": "a1538a3a4d4bdf86c7a2ebe0c48d8f152cde7be315a135cb32e8cf1c3b4eb2c7",
+      "berger_homogeneous_stationary_hadamard_normalization_obstruction.py": "a5f366ed69b46e81d303fb64d7fecd0e7ab2f274572c6f4d218be77f6c6b711d",
+      "berger_homogeneous_stationary_hadamard_normalization_obstruction_certificate.py": "71f1e32fce9c2b6d87f91790e19ef6147d27d9531e2a6439a4fd4289d92f6c20",
+      "schema/berger-homogeneous-stationary-hadamard-normalization-obstruction-v1.schema.json": "ffd23b93b70a7fc01041b5dbd02e5c5acbf87e67732973f60c542ad40f99379e",
+      "tests/test_berger_homogeneous_stationary_hadamard_normalization_obstruction.py": "f28a8854af84f294ec2550b56201556dc6812d8616ab911905cccb4dce246263",
+      "verify_berger_homogeneous_stationary_hadamard_normalization_obstruction.py": "d5182edff26c23905fa34da90f450f3a7925e9d97a4b2f7340397f4dab0af80c"
+    }
+  },
+  "result_id": "BERGER_HOMOGENEOUS_STATIONARY_HADAMARD_NORMALIZATION_OBSTRUCTION",
+  "result_state": "FULL_RETAINED_STATIONARY_COMPLEX_STRUCTURE_CLASS_OBSTRUCTED_ON_POSITIVE_HOMOGENEOUS_FIXTURE",
+  "schema": "quantum-weyl-berger-homogeneous-stationary-hadamard-normalization-obstruction-v1",
+  "setting": {
+    "background": "compact positive Berger clock",
+    "carrier": "full rank-104 retained Cauchy carrier",
+    "fixture": {
+      "alpha_B": {
+        "denominator": 1,
+        "numerator": 1
+      },
+      "rho_squared": {
+        "denominator": 1,
+        "numerator": 2
+      },
+      "u": {
+        "denominator": 1,
+        "numerator": 1
+      },
+      "v": {
+        "denominator": 1,
+        "numerator": 5
+      }
+    },
+    "mode": "left-invariant homogeneous sections, e1=e2=e3=0"
+  }
+}

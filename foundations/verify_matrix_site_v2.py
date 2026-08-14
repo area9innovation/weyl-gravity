@@ -48,6 +48,11 @@ def verify(*, result=None, report=None) -> tuple[list[str], list[str]]:
         "evidence_records": 83,
         "graph_edges": 10,
         "ladder_levels": 6,
+        "completion_branches": 7,
+        "completion_stages": 11,
+        "completion_cells": 77,
+        "completion_routes": 5,
+        "completion_decisions": 11,
         "theory_profiles": 36,
         "carrier_envelopes": 6,
         "pareto_profiles": 4,
@@ -81,6 +86,8 @@ def verify(*, result=None, report=None) -> tuple[list[str], list[str]]:
     for key in ("static_site_generated", "all_cartesian_coordinates_visible", "all_cartesian_coordinates_assessed", "zero_not_mapped", "reviewed_gaps_distinguished_from_results", "all_emitted_migrations_reviewed", "coverage_and_migration_separated", "all_used_evidence_resolved", "theory_profiles_generated", "theory_assembly_atlas_generated", "bounded_observable_reconstruction_exposed", "localized_coefficient_weak_wave_exposed", "named_h2_test_completion_exposed", "smooth_to_h2_translator_exposed", "support_indexed_test_comparison_exposed", "scalar_green_choice_audit_exposed", "at_least_one_cross_cell_interface_certified", "composition_and_observation_rails_separated", "new_lorentzian_claim"):
         if flags.get(key) is not True:
             errors.append("positive flag " + key)
+    if flags.get("completion_atlas_exposed") is not True:
+        errors.append("positive flag completion_atlas_exposed")
     for key in ("scientific_claims_duplicated_by_hand", "literature_complete", "unmapped_means_absent", "reviewed_gap_means_absent", "reviewed_no_transfer_means_absent", "priority_score_is_theorem", "complete_observationally_valid_theory_identified"):
         if flags.get(key) is not False:
             errors.append("boundary flag " + key)

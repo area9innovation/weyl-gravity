@@ -1,0 +1,67 @@
+/* V2-only completion-route explorer. Appended by build_matrix_site_v2.py. */
+.completion-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(16rem, 1fr);
+  gap: 1.25rem;
+  padding: 1.4rem;
+  border: 1px solid var(--line);
+  border-left: .45rem solid #236c58;
+  border-radius: 1rem;
+  background: var(--paper);
+}
+.completion-intro h3 { margin: .15rem 0 .65rem; font-size: clamp(1.35rem, 2.2vw, 2rem); }
+.completion-intro aside { padding: 1rem; border-radius: .75rem; background: #edf3ef; }
+.completion-intro aside p { margin: .45rem 0 .8rem; }
+.completion-layout { display: grid; grid-template-columns: minmax(0, 1fr) 19rem; gap: 1.2rem; align-items: start; }
+.completion-table-wrap { overflow-x: auto; padding-bottom: .5rem; }
+.completion-table { width: 100%; min-width: 82rem; border-collapse: separate; border-spacing: .28rem; table-layout: fixed; }
+.completion-table thead th { height: 10.5rem; vertical-align: bottom; font-size: .72rem; }
+.completion-table thead th:first-child { width: 15rem; height: auto; text-align: left; }
+.completion-table thead th:not(:first-child) span,
+.completion-table thead th:not(:first-child) b { display: block; margin: auto; writing-mode: vertical-rl; transform: rotate(180deg); }
+.completion-table thead th:not(:first-child) span { color: var(--muted); margin-bottom: .35rem; }
+.completion-table tbody > tr > th { padding: .65rem; text-align: left; border-radius: .55rem; background: #edf0eb; }
+.completion-table tbody > tr > th small { display: block; margin-top: .3rem; color: var(--muted); font-weight: 400; }
+.completion-table td { padding: 0; vertical-align: stretch; }
+.completion-cell { min-height: 4.25rem; height: 100%; border-radius: .55rem; color: #fff; }
+.completion-cell summary { display: grid; min-height: 4.25rem; padding: .35rem; place-items: center; cursor: pointer; text-align: center; font-size: .61rem; font-weight: 800; overflow-wrap: anywhere; }
+.completion-cell[open] { position: relative; z-index: 3; min-width: 18rem; color: var(--ink); background: var(--paper); box-shadow: 0 .5rem 1.5rem #18332833; }
+.completion-cell[open] summary { min-height: auto; color: #fff; }
+.completion-cell p { padding: 0 .75rem; font-size: .78rem; }
+.completion-cell p:last-child { padding-bottom: .75rem; }
+.status-certified, .status-scoped_certified { background: #1d7c61; }
+.status-partial_certified, .status-open_seeded { background: #c67a12; }
+.status-conditional { background: #387da6; }
+.status-obstructed_scoped { background: #954b49; }
+.status-fail_closed, .status-forbidden_transfer { background: #6e437f; }
+.status-not_applicable { background: #7d8781; }
+.completion-legend { position: sticky; top: 1rem; padding: 1rem; border: 1px solid var(--line); border-radius: .8rem; background: var(--paper); }
+.completion-legend h3 { margin-top: 0; }
+.completion-legend ul { margin: 0; padding: 0; list-style: none; }
+.completion-legend li { display: grid; grid-template-columns: 1rem 1fr auto; gap: .35rem .55rem; align-items: center; margin: .65rem 0; }
+.completion-legend li small { grid-column: 2 / 4; color: var(--muted); }
+.completion-legend li em { font-style: normal; font-variant-numeric: tabular-nums; }
+.completion-swatch { width: .9rem; height: .9rem; border-radius: .25rem; }
+.route-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr)); gap: .9rem; }
+.route-card { display: grid; grid-template-columns: 2.4rem 1fr; gap: .8rem; padding: 1rem; border: 1px solid var(--line); border-radius: .8rem; background: var(--paper); }
+.route-rank { display: grid; width: 2.25rem; height: 2.25rem; margin: 0; place-items: center; border-radius: 50%; background: #173f35; color: white; font-weight: 800; }
+.route-card h3 { margin: .1rem 0 .45rem; }
+.route-card dl { display: grid; grid-template-columns: repeat(3, 1fr); gap: .35rem; margin-bottom: 0; }
+.route-card dl div { padding: .45rem; border-radius: .4rem; background: #edf0eb; }
+.route-card dt { color: var(--muted); font-size: .7rem; }
+.route-card dd { margin: .15rem 0 0; font-size: .78rem; font-weight: 700; }
+.decision-chain { margin-top: 1.25rem; padding: 1rem; border: 1px solid var(--line); border-radius: .8rem; background: var(--paper); }
+.decision-chain > summary { cursor: pointer; }
+.decision-chain > summary span, .decision-chain > summary small { display: block; }
+.decision-chain > summary small { margin-top: .25rem; color: var(--muted); }
+.decision-chain ol { margin: 1rem 0; padding: 0; list-style: none; }
+.decision-chain li { display: grid; grid-template-columns: 2rem 1fr; gap: .75rem; padding: .75rem 0; border-top: 1px solid var(--line); }
+.decision-chain li > span { display: grid; width: 1.8rem; height: 1.8rem; place-items: center; border-radius: 50%; background: #7d4545; color: white; font-weight: 700; }
+.decision-chain li.decision-control > span { background: #1d7c61; }
+.decision-chain h4, .decision-chain p { margin: 0 0 .25rem; }
+.completion-boundary { padding: .8rem; border-left: .35rem solid #1d7c61; background: #edf3ef; }
+.completion-links { text-align: right; }
+@media (max-width: 900px) {
+  .completion-intro, .completion-layout { grid-template-columns: 1fr; }
+  .completion-legend { position: static; }
+}

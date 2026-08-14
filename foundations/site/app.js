@@ -200,7 +200,7 @@
 
   function parseHash() {
     const params = new URLSearchParams(location.hash.slice(1));
-    if (params.get("view") && ["matrix", "viability", "assemblies", "guide", "graph", "ladder", "evidence"].includes(params.get("view"))) state.view = params.get("view");
+    if (params.get("view") && ["matrix", "viability", "assemblies", "guide", "graph", "ladder", "completion", "evidence"].includes(params.get("view"))) state.view = params.get("view");
     if (ASSEMBLIES.assemblies.some(item => item.id === params.get("assembly"))) state.assembly = params.get("assembly");
     if (["models", "programmes", "ledgers"].includes(params.get("panel"))) state.assemblyPanel = params.get("panel");
     state.q = params.get("q") || "";
@@ -767,7 +767,7 @@
     state.view = view;
     document.querySelectorAll(".tab").forEach(x => x.classList.toggle("active", x.dataset.view === view));
     document.querySelectorAll(".view").forEach(x => x.classList.toggle("active", x.id === `${view}View`));
-    document.querySelector(".controls").hidden = ["viability", "assemblies", "guide", "graph", "ladder"].includes(view);
+    document.querySelector(".controls").hidden = ["viability", "assemblies", "guide", "graph", "ladder", "completion"].includes(view);
     updateHash();
   }
 

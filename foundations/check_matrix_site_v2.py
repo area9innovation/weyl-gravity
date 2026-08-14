@@ -17,6 +17,7 @@ VIABILITY = ROOT / "foundations/site/viability.json"
 ASSEMBLIES = ROOT / "foundations/site/assemblies.json"
 CUBE = ROOT / "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V15.json"
 LADDER = ROOT / "foundations/results/FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V2.json"
+COMPLETION_ATLAS = ROOT / "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V2.json"
 STATUSES = {"LOCAL_RESULT", "LITERATURE_RESULT", "PIECES_ONLY", "PRIORITY_GAP", "REVIEWED_GAP", "NOT_MAPPED"}
 MIGRATIONS = {"EXACT_PARENT_TRANSFER", "CAPABILITY_QUALIFIED", "REVIEWED_OVERLAY", "REVIEWED_NO_TRANSFER", "REVIEWED_CHILD_GAP", "DIRECT_COORDINATE_REVIEW", "NOT_REVIEWED"}
 
@@ -30,13 +31,13 @@ def sha(path: Path) -> str:
 
 
 def digest(data: dict[str, Any]) -> str:
-    projection = {key: data[key] for key in ("axes", "cells", "evidence", "ladder", "graph", "cross_cell_interfaces", "carrier_interfaces", "numerical_reproducibility_records")}
+    projection = {key: data[key] for key in ("axes", "cells", "evidence", "ladder", "graph", "completion_atlas", "cross_cell_interfaces", "carrier_interfaces", "numerical_reproducibility_records")}
     return hashlib.sha256(json.dumps(projection, sort_keys=True, separators=(",", ":"), ensure_ascii=False).encode()).hexdigest()
 
 
 def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]]:
     data = load(DATA) if data is None else data
-    cube, ladder, result, manifest, viability, assemblies = load(CUBE), load(LADDER), load(RESULT), load(MANIFEST), load(VIABILITY), load(ASSEMBLIES)
+    cube, ladder, completion_source, result, manifest, viability, assemblies = load(CUBE), load(LADDER), load(COMPLETION_ATLAS), load(RESULT), load(MANIFEST), load(VIABILITY), load(ASSEMBLIES)
     errors: list[str] = []
     axes = {x.get("id"): x for x in data.get("axes", [])}
     keys = {axis_id: [x.get("id") for x in axes.get(axis_id, {}).get("keys", [])] for axis_id in ("FOUNDATION", "CARRIER", "REFINED_OBLIGATION")}
@@ -149,6 +150,16 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
         errors.append("typed implication graph")
     if data.get("ladder") != ladder.get("ladder") or len(data.get("ladder", [])) != 6:
         errors.append("strength ladder projection")
+    completion = data.get("completion_atlas", {})
+    if completion != completion_source:
+        errors.append("Lorentzian completion atlas projection")
+    if len(completion.get("branches", [])) != 7 or len(completion.get("stages", [])) != 11 or sum(len(item.get("stages", [])) for item in completion.get("branches", [])) != 77:
+        errors.append("Lorentzian completion branch/stage closure")
+    if len(completion.get("route_selection", [])) != 5 or len(completion.get("berger_h26_c26_decision_chain", [])) != 11:
+        errors.append("Lorentzian completion route/decision closure")
+    completion_flags = completion.get("claim_flags", {})
+    if completion_flags.get("general_noncone_104_row_no_go") is not False or completion_flags.get("lorentzian_full_theory_certified") is not False:
+        errors.append("Lorentzian completion fail-closed boundary")
     if viability.get("source_atlas_digest") != data.get("canonical_digest") or viability.get("canonical_digest") != result.get("independent_checker", {}).get("expected_viability_digest"):
         errors.append("theory viability source/digest pin")
     if len(viability.get("profiles", [])) != 36 or len(viability.get("carrier_envelopes", [])) != 6:
@@ -217,6 +228,9 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
     for token in ("NGC 3198 head-to-head control", "Scoped winner: GR + NFW", "Why RMS and χ² disagree", "FOUNDATIONAL_NGC3198_COMMON_FIT_COMPARISON_V1"):
         if token not in app:
             errors.append("common-fit interface token " + token)
+    for token in ("completionView", "Weyl BV routes", "completionExplorer", "77 separately typed cells", "Where effort has the highest expected value", "RANK_ONLY_FEASIBLE", "general non-cone 104-row no-go"):
+        if token not in html + app + json.dumps(data):
+            errors.append("completion interface token " + token)
 
     status_counts = Counter(x.get("status") for x in cells)
     all_migrations = Counter(x.get("migration_status") for x in cells)
@@ -239,6 +253,11 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
         "evidence_records": len(evidence),
         "graph_edges": len(graph.get("edges", [])),
         "ladder_levels": len(data.get("ladder", [])),
+        "completion_branches": len(completion.get("branches", [])),
+        "completion_stages": len(completion.get("stages", [])),
+        "completion_cells": sum(len(item.get("stages", [])) for item in completion.get("branches", [])),
+        "completion_routes": len(completion.get("route_selection", [])),
+        "completion_decisions": len(completion.get("berger_h26_c26_decision_chain", [])),
         "theory_profiles": len(viability.get("profiles", [])),
         "carrier_envelopes": len(viability.get("carrier_envelopes", [])),
         "pareto_profiles": sum(item.get("pareto_default") is True for item in viability.get("profiles", [])),

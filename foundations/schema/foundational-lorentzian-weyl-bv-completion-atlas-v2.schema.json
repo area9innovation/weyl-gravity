@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "foundational-lorentzian-weyl-bv-completion-atlas-v2.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "result_id", "result_kind", "lifecycle", "created", "repository_base_commit", "dependency_tags", "question", "answer", "predecessor", "status_vocabulary", "stages", "branches", "frontier_summary", "classical_import_reconciliation", "berger_h26_c26_decision_chain", "route_selection", "research_queue", "provenance", "claim_flags", "does_not_establish", "independent_checker", "human_report"],
+  "properties": {
+    "schema_version": {"const": "foundational-lorentzian-weyl-bv-completion-atlas-v2"},
+    "result_id": {"const": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V2"},
+    "result_kind": {"const": "BRANCH_BY_STAGE_COMPLETION_ATLAS"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "created": {"type": "string", "format": "date"},
+    "repository_base_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "dependency_tags": {"type": "array", "minItems": 4, "maxItems": 4, "uniqueItems": true, "items": {"enum": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]}},
+    "question": {"type": "string", "minLength": 100},
+    "answer": {"type": "string", "minLength": 900},
+    "predecessor": {"type": "object", "additionalProperties": false, "required": ["result_id", "path", "sha256", "preserved"], "properties": {"result_id": {"const": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V1"}, "path": {"type": "string"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "preserved": {"const": true}}},
+    "status_vocabulary": {"type": "array", "minItems": 9, "maxItems": 9},
+    "stages": {"type": "array", "minItems": 11, "maxItems": 11},
+    "branches": {"type": "array", "minItems": 7, "maxItems": 7, "items": {"$ref": "#/$defs/branch"}},
+    "frontier_summary": {"type": "object", "minProperties": 4},
+    "classical_import_reconciliation": {"type": "object", "additionalProperties": false, "required": ["result_id", "gate", "claim_state", "standalone_history_replay", "missing_payload_families", "rule"], "properties": {"result_id": {"const": "CLASSICAL_IMPORT_GATE_V2_RECONCILIATION"}, "gate": {"const": "FAIL_CLOSED"}, "claim_state": {"const": "CLASSICAL_IMPORT_PARTIALLY_REPAIRED"}, "standalone_history_replay": {"const": "VERIFIED_BY_EXACT_CONTENT"}, "missing_payload_families": {"type": "array", "minItems": 6, "maxItems": 6}, "rule": {"type": "string", "minLength": 100}}},
+    "berger_h26_c26_decision_chain": {"type": "array", "minItems": 11, "maxItems": 11, "items": {"$ref": "#/$defs/decision"}},
+    "route_selection": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"$ref": "#/$defs/route"}},
+    "research_queue": {"type": "array", "minItems": 5, "maxItems": 5},
+    "provenance": {"type": "object", "additionalProperties": false, "required": ["inputs"], "properties": {"inputs": {"type": "array", "minItems": 31, "maxItems": 31, "items": {"$ref": "#/$defs/input"}}}},
+    "claim_flags": {"type": "object", "additionalProperties": {"type": "boolean"}},
+    "does_not_establish": {"type": "array", "minItems": 12, "items": {"type": "string", "minLength": 25}},
+    "independent_checker": {"type": "object", "additionalProperties": false, "required": ["path", "checks", "expected_digest"], "properties": {"path": {"const": "foundations/check_lorentzian_weyl_bv_completion_atlas_v2.py"}, "checks": {"type": "array", "minItems": 8, "maxItems": 8}, "expected_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}},
+    "human_report": {"const": "foundations/reports/lorentzian-weyl-bv-completion-atlas-v2.md"}
+  },
+  "$defs": {
+    "input": {"type": "object", "additionalProperties": false, "required": ["path", "sha256", "role"], "properties": {"path": {"type": "string"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "role": {"type": "string"}}},
+    "cell": {"type": "object", "additionalProperties": false, "required": ["stage", "status", "statement", "evidence", "boundary"], "properties": {"stage": {"type": "string", "pattern": "^S[0-9]+_"}, "status": {"enum": ["CERTIFIED", "SCOPED_CERTIFIED", "PARTIAL_CERTIFIED", "CONDITIONAL", "OPEN_SEEDED", "OBSTRUCTED_SCOPED", "FAIL_CLOSED", "FORBIDDEN_TRANSFER", "NOT_APPLICABLE"]}, "statement": {"type": "string", "minLength": 20}, "evidence": {"type": "array", "items": {"type": "string"}}, "boundary": {"type": "string", "minLength": 20}}},
+    "branch": {"type": "object", "additionalProperties": false, "required": ["id", "name", "relation_to_target", "scope", "stages", "first_unclosed_gate", "next_decisive_object"], "properties": {"id": {"type": "string"}, "name": {"type": "string"}, "relation_to_target": {"type": "string"}, "scope": {"type": "string", "minLength": 50}, "stages": {"type": "array", "minItems": 11, "maxItems": 11, "items": {"$ref": "#/$defs/cell"}}, "first_unclosed_gate": {"type": "string"}, "next_decisive_object": {"type": "string", "minLength": 100}}},
+    "decision": {"type": "object", "additionalProperties": false, "required": ["sequence", "classification", "result_id", "result_state", "implication", "does_not_imply", "evidence"], "properties": {"sequence": {"type": "integer", "minimum": 1, "maximum": 11}, "classification": {"type": "string"}, "result_id": {"type": "string"}, "result_state": {"type": "string"}, "implication": {"type": "string", "minLength": 50}, "does_not_imply": {"type": "string", "minLength": 40}, "evidence": {"type": "string"}}},
+    "route": {"type": "object", "additionalProperties": false, "required": ["rank", "route", "branch", "scientific_leverage", "tractability", "dependency_depth", "recommendation"], "properties": {"rank": {"type": "integer", "minimum": 1, "maximum": 5}, "route": {"type": "string"}, "branch": {"type": "string"}, "scientific_leverage": {"enum": ["VERY_HIGH", "HIGH"]}, "tractability": {"enum": ["MEDIUM", "LOW", "VERY_LOW"]}, "dependency_depth": {"enum": ["LOW", "MEDIUM", "HIGH"]}, "recommendation": {"type": "string", "minLength": 70}}}
+  }
+}

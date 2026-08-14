@@ -1,0 +1,105 @@
+{
+  "claim_boundary": "This exact representation/module theorem proves that the next right/adjoint lift defect of the canonical same-profile cone regenerates a full free orbit and therefore forces at least another 104 rows in that architecture. It does not prove that a general non-cone 104-row completion fails, does not raise the global 104-row lower bound, and constructs no 312-row carrier, physical pairing, retained contraction, Hadamard state, QME or quantum theory.",
+  "classification": {
+    "Hadamard_or_quantum_claim": false,
+    "all_non_cone_104_row_completions_obstructed": false,
+    "canonical_cone_next_defect_closure_full_on_spin4": true,
+    "canonical_same_profile_cone_tower_312_row_carrier_constructed": false,
+    "canonical_same_profile_cone_tower_needs_at_least_208_new_rows": true,
+    "global_minimum_added_rows_raised_above_104": false,
+    "no_finite_closure_theorem": false,
+    "physical_Cauchy_pairing_constructed": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "exact_payload": {
+    "artifact_id": "BERGER_Q26_SPIN4_CONE_NEXT_DEFECT_CLOSURE_WITNESS_V1",
+    "path": "d_quotient_classical/generated/berger_q26_104_row_cone_next_defect_module_v1/spin4_next_defect_closure_witness.json",
+    "sha256": "e4f79385b254eb8c67e4029d888981ec69a4e26fc1ddb1e911eba6b62c99ace5"
+  },
+  "lifecycle_status": "CLASSIFIED",
+  "next_defect_module": {
+    "additional_free_rows_in_this_tower_at_least": 104,
+    "ambient_dimension": 936,
+    "canonical_tower_total_added_rows_at_least": 208,
+    "canonical_tower_total_carrier_rows_at_least": 312,
+    "closure_actions": [
+      "q",
+      "A104",
+      "q^vee",
+      "A104^vee"
+    ],
+    "full_closure": true,
+    "full_minor_determinant_mod_1009": 411,
+    "left_adjoint_generator": "transpose Im(ker(q^T)^T*A*q)",
+    "level_independent_columns": [
+      97,
+      344,
+      856,
+      936
+    ],
+    "right_generator": "Im(q*A|ker(q))",
+    "spin4_raw_ranks": {
+      "combined_next_defect": 97,
+      "kernel_q": 585,
+      "left_adjoint_cokernel_image": 70,
+      "q": 351,
+      "right_lift_cokernel_image": 27
+    }
+  },
+  "next_gate": "LEAVE_THE_CANONICAL_CONE_TOWER_AND_SOLVE_THE_COMPLETE_NON_CONE_104_ROW_FACTOR_SYSTEM",
+  "pinned_inputs": {
+    "canonical_cone_obstruction": {
+      "artifact_id": "BERGER_Q26_104_ROW_CANONICAL_CONE_LIFT_OBSTRUCTION_V1",
+      "path": "d_quotient_classical/certificates/BERGER_Q26_104_ROW_CANONICAL_CONE_LIFT_OBSTRUCTION_V1.json",
+      "sha256": "9471e07167aff1aaa8abd1d46f148fd40fee9da4033dac8010c1bbb1df4f6c21"
+    },
+    "canonical_cone_rational_witness": {
+      "artifact_id": "BERGER_Q26_CANONICAL_CONE_RATIONAL_TRIVIAL_REPRESENTATION_WITNESS_V1",
+      "path": "d_quotient_classical/generated/berger_q26_104_row_canonical_cone_lift_obstruction_v1/rational_trivial_representation_witness.json",
+      "sha256": "992ac08884cb065857d00bf2616f29350e20b710b595ab1a01542567abdd1d58"
+    },
+    "module_lower_bound": {
+      "artifact_id": "BERGER_Q26_FINITE_ROW_MODULE_CLOSURE_LOWER_BOUND_V1",
+      "path": "d_quotient_classical/certificates/BERGER_Q26_FINITE_ROW_MODULE_CLOSURE_LOWER_BOUND_V1.json",
+      "sha256": "6b59cdc0c54978ef5a9bb07ff8b17dcbc6d9771ce631206cecc8b85686f2fb78"
+    }
+  },
+  "proof": {
+    "finite_field_lift": "All denominators are invertible modulo 1009. The nonzero 936-by-936 minor proves rational rank 936.",
+    "row_bound": "One free PBW row evaluates to at most nine dimensions, so the regenerated 936-dimensional orbit needs at least 104 additional rows.",
+    "scope": "The generator is the residual Dq=qA/free-adjoint cokernel of the canonical cone, not the complete general non-cone 104-row equation system."
+  },
+  "provenance": {
+    "source_manifest": {
+      "d_quotient_classical/causal_transfer/berger_q26_104_row_cone_next_defect_module.py": "339b2ba3fd8f787aad89b0a16525373540cd498c3c4e23123cbe0f5b570f80f5",
+      "d_quotient_classical/causal_transfer/tests/test_berger_q26_104_row_cone_next_defect_module.py": "2a4c20b125dc370d9899d2314454479c316d0196e0d1efacde18b7b13df0ba66",
+      "d_quotient_classical/causal_transfer/verify_berger_q26_104_row_cone_next_defect_module.py": "29acb7e81cf29140fb2d088deed8e82fb3a6fb6c04daaea8c7692ed18c4efe7a",
+      "d_quotient_classical/schema/berger-q26-104-row-cone-next-defect-module-v1.schema.json": "2f371e85e5dfa6209f8b4070d133bb660b47b84fc8b027dad454c4c3b46d621d"
+    },
+    "verification_commands": [
+      "PYTHONPATH=. python3 -m d_quotient_classical.causal_transfer.berger_q26_104_row_cone_next_defect_module --check --guards",
+      "PYTHONPATH=. python3 -m d_quotient_classical.causal_transfer.verify_berger_q26_104_row_cone_next_defect_module",
+      "PYTHONPATH=. python3 -m unittest d_quotient_classical.causal_transfer.tests.test_berger_q26_104_row_cone_next_defect_module",
+      "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/berger-q26-104-row-cone-next-defect-module-v1.schema.json -d d_quotient_classical/certificates/BERGER_Q26_104_ROW_CONE_NEXT_DEFECT_MODULE_V1.json"
+    ]
+  },
+  "result_id": "BERGER_Q26_104_ROW_CONE_NEXT_DEFECT_MODULE_V1",
+  "result_state": "CANONICAL_CONE_LIFT_DEFECT_REGENERATES_FULL_104_ROW_FREE_ORBIT",
+  "schema": "pure-weyl-berger-q26-104-row-cone-next-defect-module-v1",
+  "scope": {
+    "background": "fixed rational positive Berger clock",
+    "boundaries": "R_t x compact Berger S3; no spatial boundary",
+    "carrier": "canonical same-profile doubled-cone repair tower only",
+    "charge_sector": "unquotiented retained-26 formal companion/Cauchy carrier",
+    "degree": "each free orbit has profile (-1:12,0:40,1:40,2:12)",
+    "ell": "not harmonic-reduced",
+    "k": "all finite-order Berger PBW derivatives",
+    "m": "not harmonic-reduced",
+    "omega": "stationary A104 formal evolution; no spectral split",
+    "parity": "right lift plus free algebraic-dual lift",
+    "theory": "retained minimal pure-Weyl Berger BV complex"
+  }
+}

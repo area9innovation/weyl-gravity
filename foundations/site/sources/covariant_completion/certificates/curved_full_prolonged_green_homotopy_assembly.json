@@ -1,0 +1,156 @@
+{
+  "causal_green_homotopy": true,
+  "curvature_causal_green_operators": false,
+  "dependency_tag": "LORENTZIAN-CAUSAL",
+  "dimension_ledger": {
+    "algebraically_contracted": 356,
+    "causal_endpoint": 30,
+    "identity": "386=356+30",
+    "prolonged": 386
+  },
+  "endpoint_channel_assembly": {
+    "canonical_D_TF_inverse_claimed": false,
+    "complete_30_component_endpoint_ready": true,
+    "easy_channel_same_sided_inverses_exact": true,
+    "endpoint_witness_identity": "D_end=q W0+W0 q",
+    "explicit_trace_Weyl_shear": {
+      "U_E": "identity on TF-dual+trace-dual",
+      "U_G_inverse": [
+        [
+          "1",
+          "0"
+        ],
+        [
+          "d",
+          "1"
+        ]
+      ],
+      "U_G_shifted_to_unshifted": [
+        [
+          "1",
+          "0"
+        ],
+        [
+          "-d",
+          "1"
+        ]
+      ],
+      "U_I_inverse": [
+        [
+          "1",
+          "-d^sharp"
+        ],
+        [
+          "0",
+          "1"
+        ]
+      ],
+      "U_I_shifted_to_unshifted": [
+        [
+          "1",
+          "d^sharp"
+        ],
+        [
+          "0",
+          "1"
+        ]
+      ],
+      "U_M": "identity on TF+trace",
+      "cyclic_U_sharp_equals_U_inverse": true,
+      "d": "div/2",
+      "first_arrow_split": "diag(K_TF,1)",
+      "first_arrow_unshifted": "[[K_TF,0],[d,1]]",
+      "inverse_checks_exact": true,
+      "last_arrow_split": "diag(C_TF,1)",
+      "last_arrow_unshifted": "[[C_TF,d^sharp],[0,1]]",
+      "q_U_equals_U_q_split": true,
+      "trace_complex_order": [
+        "G_trace",
+        "M_trace",
+        "E_trace",
+        "I_trace"
+      ],
+      "trace_h_nonzero": [
+        "M_trace->G_trace=1",
+        "I_trace->E_trace=1"
+      ],
+      "trace_q_nonzero": [
+        "G_trace->M_trace=1",
+        "E_trace->I_trace=1"
+      ],
+      "trace_qh_plus_hq": "identity_4"
+    },
+    "finite_triangular_chain_extension": true,
+    "full_endpoint_ranks": [
+      5,
+      10,
+      10,
+      5
+    ],
+    "ghost_green": "[[G_R,+/-,0],[-(div/2)G_R,+/-,1]]",
+    "global_W0_G_end_identification_claimed": false,
+    "graded_adjoint_exact_conditionally": true,
+    "homotopy_formula": "Lambda_end,+/-=U (Lambda_TF,+/- direct-sum h_tr) U^-1",
+    "homotopy_identity_exact_conditionally": true,
+    "identity_green": "advanced/retarded adjoint of ghost block",
+    "shear_differential_order": 1,
+    "shear_inverse_Laplacian_or_curl": false,
+    "shear_support_local": true,
+    "trace_Weyl_contraction": "pointwise identity doublets",
+    "trace_Weyl_ranks": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "tracefree_complex_ranks": [
+      4,
+      9,
+      9,
+      4
+    ],
+    "tracefree_transfer_ready": true
+  },
+  "fail_closed": true,
+  "full_hybrid_assembly": {
+    "adjoint": "H_alg^sharp=H_alg, i_end^sharp=p_end and Lambda_end,+^sharp=Lambda_end,- imply Lambda_full,+^sharp=Lambda_full,-",
+    "algebraic_identity_exact_conditionally": true,
+    "causal_support_exact_conditionally": true,
+    "derivation": "Q Lambda_full+Lambda_full Q=P_alg+i_end(q Lambda_end+Lambda_end q)p_end=P_alg+P_end=1",
+    "formula": "Lambda_full,+/-=H_alg+i_end Lambda_end,+/- p_end",
+    "graded_adjoint_exact_conditionally": true,
+    "projector_identities": [
+      "Q H_alg+H_alg Q=P_alg",
+      "P_end=i_end p_end",
+      "P_alg+P_end=1",
+      "Q i_end=i_end q",
+      "p_end Q=q p_end",
+      "p_end i_end=1"
+    ],
+    "support": "H_alg, i_end and p_end are finite-order local; local terms preserve support and endpoint causal support stays inside J^+/- of the source"
+  },
+  "future_gate": {
+    "all_row_causal_homotopy_ready": true,
+    "authoritative_certificate": "adjoint_tractor_bgg_curved_pbw.json",
+    "upstream_curved_PBW_sha256": "bd760f10032ffc2d46160db8290c674efa09e6acf2b736235ef11b4080a03c03",
+    "upstream_green_transfer_ready": true
+  },
+  "input_certificate_sha256": {
+    "adjoint_tractor_green_transfer": "f0aef5cca1c6bf506842e9bcf114e293a461ca89f5d094535b1e7b74bc3b1984",
+    "curved_trace_Weyl_rows": "ab27d6b89a9d1214b8285d897e4ff64d8e3463551ecea03408fd529a3f60878d",
+    "endpoint_backward_witness": "f96ae76717f2be4edc39ff233137e4420cb1693efbbb8225053de7fa411570ec",
+    "endpoint_green_filtration": "7f0d180064bca9cb0d47b02dfb96201f8ea895026f9ef4c059d8fce5b74fd53d",
+    "hybrid_algebraic_projector": "c3867f2de2c3bff40f36d5ce8d8875119202acc24f4085f5905bede1ae0c5ade",
+    "metric_endpoint_complex": "584e875444f303643d0408874a92bbe65ce61c07fc78122f00d037d776367771"
+  },
+  "prolonged_green_witness": false,
+  "proof_boundary": "the all-row algebra, support and graded-adjoint transfer are exact and the SHA-bound curved PBW receipt activates the trace-free transfer, hence the complete causal homotopy",
+  "schema": "pure-weyl-full-prolonged-green-homotopy-assembly-v1",
+  "status_flags_promoted": [
+    "causal_green_homotopy"
+  ],
+  "warranted_atomic_flags": [
+    "full_prolonged_hybrid_homotopy_assembly_theorem_exact",
+    "endpoint_triangular_channel_assembly_theorem_exact"
+  ]
+}

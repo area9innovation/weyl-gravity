@@ -736,11 +736,26 @@ remaining Ward defect is smooth.  The atlas also reconciles the historical
 fail-closed import gate with later exact repair receipts without treating those
 receipts as an implicit replacement freeze certificate.
 
+The audited
+[`V2 completion atlas`](reports/lorentzian-weyl-bv-completion-atlas-v2.md)
+incorporates the repaired standalone import replay and the complete eleven-step
+Berger H26/C26 carrier decision chain.  It separates scoped failures from a
+rational non-cone rank-feasibility control, so the known 104-row obstructions
+are not misreported as a global no-go.  Its ranked research queue selects the
+strict residual SDR payload as the most tractable high-leverage target-theory
+gate and direct nonstationary q26-equivariant Hadamard selection as the leading
+high-risk analytic experiment.  The existing static explorer exposes the same
+seven-by-eleven route surface under **Weyl BV routes**.
+
 ```bash
 python3 foundations/build_lorentzian_weyl_bv_completion_atlas.py --check
 python3 foundations/check_lorentzian_weyl_bv_completion_atlas.py
 python3 foundations/verify_lorentzian_weyl_bv_completion_atlas.py
 python3 -m unittest foundations.tests.test_lorentzian_weyl_bv_completion_atlas
+python3 foundations/build_lorentzian_weyl_bv_completion_atlas_v2.py --check
+python3 foundations/check_lorentzian_weyl_bv_completion_atlas_v2.py
+python3 foundations/verify_lorentzian_weyl_bv_completion_atlas_v2.py
+python3 -m unittest foundations.tests.test_lorentzian_weyl_bv_completion_atlas_v2
 ```
 
 ## Lifecycle

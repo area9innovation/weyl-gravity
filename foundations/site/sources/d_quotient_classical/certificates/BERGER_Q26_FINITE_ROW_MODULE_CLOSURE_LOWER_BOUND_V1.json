@@ -1,0 +1,118 @@
+{
+  "claim_boundary": "This exact multiplicative-representation theorem computes the defect-generated, free-algebraic-dual-saturated module closure required by the current gate and raises the necessary free-row extension bound from ten to 104. It is a lower bound, not a 104-row construction or proof of sufficiency. It does not decide more economical non-free/projective module presentations unless they are admitted explicitly, construct the physical Cauchy/Krein pairing or real involution, prove a no-finite-closure theorem, or provide Hadamard, positivity, QME, particle, scattering or unitarity data.",
+  "classification": {
+    "Hadamard_or_quantum_claim": false,
+    "defect_and_free_dual_closure_full_on_spin4": true,
+    "minimum_added_free_rows_at_least": 104,
+    "no_finite_closure_theorem": false,
+    "one_hundred_four_row_extension_sufficient": false,
+    "physical_Cauchy_pairing_constructed": false,
+    "real_involution_constructed": false,
+    "smallest_finite_extension_constructed": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "exact_payload": {
+    "artifact_id": "BERGER_Q26_SPIN4_MODULE_CLOSURE_WITNESS_V1",
+    "path": "d_quotient_classical/generated/berger_q26_finite_row_module_closure_v1/spin4_closure_witness.json",
+    "sha256": "ecd819590e8c18a7c38f2a70b3455c1018cbb370c05cf8a307df5970be320826"
+  },
+  "lifecycle_status": "CLASSIFIED",
+  "next_gate": "SOLVE_OR_OBSTRUCT_THE_104_ROW_FREE_ADJOINT_COMPLETION_WITH_RETAINED_SOLUTION_MAP_AND_PHYSICAL_PAIRING",
+  "pinned_inputs": {
+    "A104": {
+      "path": "quantum-weyl/lorentzian/generated/berger_a104_endpoint_completion/global_A104.json",
+      "sha256": "37f0881c793f196175100e5e4784d18f6315e3654e3945c9972d9b212e662154"
+    },
+    "original_obstruction": {
+      "commit": "988f8ee6c59b539ae516eb8a8f882a57a95f71e0",
+      "path": "physics/symplectic-reconstruction/d_quotient_classical/certificates/BERGER_Q26_CAUCHY_BV_CARRIER_OBSTRUCTION_V1.json",
+      "sha256": "24d2db35fb3dc696081d1e93208fdbd0b8f31922cdac7a063033650a9e686a01"
+    },
+    "q_Cauchy": {
+      "path": "quantum-weyl/lorentzian/generated/berger_canonical_graph_q_cauchy_obstruction/rejected_candidate_q_Cauchy_104.json",
+      "sha256": "116ea6304aa27d30c881bfac092c6058cf9d4571aa407ca5f47f1366d993bf50"
+    },
+    "six_row_terminal": {
+      "path": "d_quotient_classical/certificates/BERGER_Q26_MINIMAL_SIX_ROW_CYCLIC_OBSTRUCTION_V1.json",
+      "result_id": "BERGER_Q26_MINIMAL_SIX_ROW_CYCLIC_OBSTRUCTION_V1",
+      "sha256": "9c7e4c6db7eb39274852ba3fe5b45e9e0e25c6442fe20bbc4091ec6afec0cda7"
+    }
+  },
+  "proof": {
+    "field_redefinition_invariance": "Invertible degree-preserving support-local row and field redefinitions preserve free module rank and represented closure dimension.",
+    "finite_field_lift": "Every denominator is invertible modulo 1009. A nonzero 936-by-936 minor after exact reduction modulo 1009 is a nonzero rational minor, so the rational represented closure has full dimension 936.",
+    "row_bound": "One free PBW carrier row evaluates to at most nine dimensions in the spin-4 representation. Factoring a 936-dimensional closure therefore requires at least ceil(936/9)=104 rows.",
+    "strict_improvement": "The previous cyclic rank bound was ten rows; defect-module and free-dual saturation raises the necessary bound to 104 rows."
+  },
+  "provenance": {
+    "source_manifest": {
+      "d_quotient_classical/causal_transfer/berger_q26_finite_row_module_closure.py": "ac32f44ce49833342038c80f9576d54a4ec4c0caa0ef2af4878ebff9cc8522b1",
+      "d_quotient_classical/causal_transfer/tests/test_berger_q26_finite_row_module_closure.py": "40a1f337acd0118cb72111a6f472c15ac739aeee60fb31700f8eb7cd2060889d",
+      "d_quotient_classical/causal_transfer/verify_berger_q26_finite_row_module_closure.py": "dcacd435d023e53f4a06ae56d7e39e1b54399bc9b40c94e4ce5221dae8bb57a2",
+      "d_quotient_classical/schema/berger-q26-finite-row-module-closure-lower-bound-v1.schema.json": "9e999ed0a697c52718bdc9886982791e3235801cfe962adcbd0edc9eebe5c352"
+    },
+    "verification_commands": [
+      "PYTHONPATH=quantum-weyl:. python3 -m d_quotient_classical.causal_transfer.berger_q26_finite_row_module_closure --check --guards",
+      "PYTHONPATH=quantum-weyl:. python3 -m d_quotient_classical.causal_transfer.verify_berger_q26_finite_row_module_closure",
+      "PYTHONPATH=quantum-weyl:. python3 -m unittest d_quotient_classical.causal_transfer.tests.test_berger_q26_finite_row_module_closure",
+      "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/berger-q26-finite-row-module-closure-lower-bound-v1.schema.json -d d_quotient_classical/certificates/BERGER_Q26_FINITE_ROW_MODULE_CLOSURE_LOWER_BOUND_V1.json"
+    ]
+  },
+  "representation_module_closure": {
+    "Berger_relations_verified": true,
+    "added_rows_at_least": 104,
+    "ambient_dimension": 936,
+    "closure_actions": [
+      "q_C",
+      "A104",
+      "q_C^vee",
+      "A104^vee"
+    ],
+    "closure_generators": [
+      "Im(q_C^2)",
+      "Im([A104,q_C])"
+    ],
+    "coefficient_field": "GF(1009)",
+    "compression_role": "deterministic candidate selection only; the nonzero finite-field minor is the exact certificate",
+    "final_minor_determinant_mod_1009": 384,
+    "forced_free_row_degree_profile_at_least": {
+      "degree_0": 40,
+      "degree_minus1": 12,
+      "degree_plus1": 40,
+      "degree_plus2": 12
+    },
+    "full_closure": true,
+    "level_independent_columns": [
+      139,
+      522,
+      936
+    ],
+    "multiplicative": true,
+    "rational_specialization": {
+      "alpha_B": 2,
+      "u": 1,
+      "v": 3
+    },
+    "representation": "9-dimensional rational spin-4 harmonic-polynomial representation",
+    "row_generator_bound": "9*n_new >= 936"
+  },
+  "result_id": "BERGER_Q26_FINITE_ROW_MODULE_CLOSURE_LOWER_BOUND_V1",
+  "result_state": "DEFECT_AND_FREE_DUAL_MODULE_CLOSURE_FORCES_AT_LEAST_104_ADDED_ROWS",
+  "schema": "pure-weyl-berger-q26-finite-row-module-closure-lower-bound-v1",
+  "scope": {
+    "background": "fixed rational positive Berger clock",
+    "boundaries": "R_t x compact Berger S3; no spatial boundary",
+    "carrier": "finite free representation-graded support-local extensions of the frozen 104-row carrier",
+    "charge_sector": "unquotiented retained-26 formal companion/Cauchy carrier",
+    "degree": "-1,0,1,2 on the frozen carrier",
+    "ell": "not harmonic-reduced",
+    "k": "all finite-order Berger PBW derivatives",
+    "m": "not harmonic-reduced",
+    "omega": "stationary A104 formal evolution; no spectral split",
+    "parity": "free algebraic dual completion; physical Cauchy/Krein pairing still open",
+    "theory": "retained minimal pure-Weyl Berger BV complex"
+  }
+}

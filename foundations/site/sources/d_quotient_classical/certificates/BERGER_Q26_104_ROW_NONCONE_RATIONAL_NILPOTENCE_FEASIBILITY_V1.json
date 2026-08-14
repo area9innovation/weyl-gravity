@@ -1,0 +1,87 @@
+{
+  "claim_boundary": "This exact rational multiplicative-specialization witness proves that the frozen old-old q blocks admit a non-cone square-zero 208-row completion with the retained degreewise cohomology dimensions. It is a feasibility control, not a rational PBW operator completion. It does not construct or prove existence of an A104-equivariant extension, cyclic pairing, real involution, retained SDR, Cauchy/Krein form, Hadamard state or quantum theory.",
+  "classification": {
+    "A104_evolution_lift_constructed": false,
+    "Hadamard_or_quantum_claim": false,
+    "cyclic_pairing_constructed": false,
+    "nilpotence_rank_only_global_104_row_obstruction": false,
+    "rational_PBW_operator_completion_constructed": false,
+    "real_involution_constructed": false,
+    "retained_SDR_constructed": false,
+    "retained_cohomology_rank_only_global_104_row_obstruction": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "exact_witness": {
+    "added_degree_profile": [
+      12,
+      40,
+      40,
+      12
+    ],
+    "artifact_id": "BERGER_Q26_104_ROW_NONCONE_RATIONAL_DIFFERENTIAL_WITNESS_V1",
+    "coefficient_field": "QQ",
+    "cohomology_dimensions": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "differential_ranks": [
+      23,
+      56,
+      23
+    ],
+    "multiplicative_specialization": true,
+    "old_old_q_blocks_fixed": true,
+    "path": "d_quotient_classical/generated/berger_q26_104_row_noncone_rational_nilpotence_feasibility_v1/rational_noncone_differential.json",
+    "q_ext_squared_zero": true,
+    "sha256": "bd32fd13b56ae3284040d487b5bd284730381e00040cb98d44bf41456a33f1b2"
+  },
+  "lifecycle_status": "CLASSIFIED",
+  "next_gate": "SOLVE_OR_OBSTRUCT_EVOLUTION_EQUIVARIANCE_AND_CYCLICITY_FOR_A_PBW_NONCONE_104_ROW_COMPLETION",
+  "pinned_inputs": {
+    "mixed_cone_SDR_obstruction": {
+      "artifact_id": "BERGER_Q26_104_ROW_FULLY_MIXED_CONE_SDR_OBSTRUCTION_V1",
+      "path": "d_quotient_classical/certificates/BERGER_Q26_104_ROW_FULLY_MIXED_CONE_SDR_OBSTRUCTION_V1.json",
+      "sha256": "0a7a960ed84293c04477e4b80ccc601ca82e9ede577687ceff44ff0f8a07f32e"
+    },
+    "q_Cauchy": {
+      "artifact_id": "rejected_candidate_q_Cauchy_104",
+      "path": "quantum-weyl/lorentzian/generated/berger_canonical_graph_q_cauchy_obstruction/rejected_candidate_q_Cauchy_104.json",
+      "sha256": "116ea6304aa27d30c881bfac092c6058cf9d4571aa407ca5f47f1366d993bf50"
+    }
+  },
+  "provenance": {
+    "source_manifest": {
+      "d_quotient_classical/causal_transfer/berger_q26_104_row_noncone_rational_nilpotence_feasibility.py": "2d1dfd1886302d3edf1cd0e209a639a6a2957088ee9051949595fd6929a788e3",
+      "d_quotient_classical/causal_transfer/tests/test_berger_q26_104_row_noncone_rational_nilpotence_feasibility.py": "19291f5db78eade4bf0a0517ac1a48621b877af0f1cc598c41660f82d675fbb0",
+      "d_quotient_classical/causal_transfer/verify_berger_q26_104_row_noncone_rational_nilpotence_feasibility.py": "579ef580a1c4b1c10e5c3a1d35071ab1071c015807349760fbac7bb0f03c382f",
+      "d_quotient_classical/schema/berger-q26-104-row-noncone-rational-nilpotence-feasibility-v1.schema.json": "9943f999722bcd2fb10b569fd99abad8cf3c12df245648d3f324974f6bee46e4"
+    },
+    "verification_commands": [
+      "PYTHONPATH=. python3 -m d_quotient_classical.causal_transfer.berger_q26_104_row_noncone_rational_nilpotence_feasibility --check --guards",
+      "PYTHONPATH=. python3 -m d_quotient_classical.causal_transfer.verify_berger_q26_104_row_noncone_rational_nilpotence_feasibility",
+      "PYTHONPATH=. python3 -m unittest d_quotient_classical.causal_transfer.tests.test_berger_q26_104_row_noncone_rational_nilpotence_feasibility",
+      "npx --yes ajv-cli@5 validate --spec=draft2020 --strict=true -s d_quotient_classical/schema/berger-q26-104-row-noncone-rational-nilpotence-feasibility-v1.schema.json -d d_quotient_classical/certificates/BERGER_Q26_104_ROW_NONCONE_RATIONAL_NILPOTENCE_FEASIBILITY_V1.json"
+    ]
+  },
+  "result_id": "BERGER_Q26_104_ROW_NONCONE_RATIONAL_NILPOTENCE_FEASIBILITY_V1",
+  "result_state": "RATIONAL_TRIVIAL_REPRESENTATION_NONCONE_NILPOTENCE_AND_RETAINED_COHOMOLOGY_FEASIBLE",
+  "schema": "pure-weyl-berger-q26-104-row-noncone-rational-nilpotence-feasibility-v1",
+  "scope": {
+    "background": "fixed rational positive Berger clock",
+    "boundaries": "R_t x compact Berger S3; no spatial boundary",
+    "carrier": "rational trivial-representation specialization of a general non-cone 208-row differential",
+    "charge_sector": "unquotiented retained-26 formal Cauchy carrier",
+    "degree": "-1,0,1,2",
+    "ell": "not harmonic-reduced",
+    "k": "derivative generators specialized to zero",
+    "m": "not harmonic-reduced",
+    "omega": "evolution lift not constructed",
+    "parity": "BV grading only; cyclic pairing not constructed",
+    "theory": "retained minimal pure-Weyl Berger BV complex"
+  }
+}

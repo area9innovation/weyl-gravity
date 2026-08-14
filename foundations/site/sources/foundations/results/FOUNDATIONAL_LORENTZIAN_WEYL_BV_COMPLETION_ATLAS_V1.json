@@ -1,0 +1,1014 @@
+{
+  "schema_version": "foundational-lorentzian-weyl-bv-completion-atlas-v1",
+  "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V1",
+  "result_kind": "BRANCH_BY_STAGE_COMPLETION_ATLAS",
+  "lifecycle": "CLASSIFIED",
+  "created": "2026-08-15",
+  "repository_base_commit": "03b850e81ace1414419cbc6b0263e72d5603114d",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "question": "Which current Weyl-gravity architecture is closest to a complete Lorentzian BV quantum theory, and what is the first missing theorem on each route?",
+  "answer": "There is no single winning ladder. Strict pure Weyl is the identity-preserving target and already has a scoped complete 386-row classical causal homotopy, but its repository-wide classical import remains fail-closed and its fixed-field-content local Euclidean QME is obstructed. The Berger positive-clock route is the analytic-maturity leader: 54-row causal control and cyclic D-Cartan closure through arity three are certified, and a 26-row exact-CCR Hadamard candidate has only a smooth Ward defect. Its next decisive theorem is a content-addressed nonstationary Krein normalization plus an admissible BRST Ward correction. Bach-flat and Einstein/Nariai branches are strong curved causal controls; reduced vacuum-cylinder modes are the genuine Hadamard control; compensator routes show that local-QME and causal completion can move in opposite directions.",
+  "status_vocabulary": [
+    {
+      "id": "CERTIFIED",
+      "meaning": "The complete requirement is certified for the branch exactly as declared."
+    },
+    {
+      "id": "SCOPED_CERTIFIED",
+      "meaning": "The requirement is certified only on the named background, carrier, arity or theory variant."
+    },
+    {
+      "id": "PARTIAL_CERTIFIED",
+      "meaning": "Several required pieces are certified, but the complete stage is not."
+    },
+    {
+      "id": "CONDITIONAL",
+      "meaning": "A theorem exists only under an explicit unconstructed hypothesis."
+    },
+    {
+      "id": "OPEN_SEEDED",
+      "meaning": "Concrete inputs or a candidate exist, but the stage theorem is absent."
+    },
+    {
+      "id": "OBSTRUCTED_SCOPED",
+      "meaning": "An exact obstruction rules out the declared subclass, not all neighboring routes."
+    },
+    {
+      "id": "FAIL_CLOSED",
+      "meaning": "The acceptance conditions are not all met; no positive promotion is allowed."
+    },
+    {
+      "id": "FORBIDDEN_TRANSFER",
+      "meaning": "Earlier evidence is of the wrong type or lifecycle to justify this stage."
+    },
+    {
+      "id": "NOT_APPLICABLE",
+      "meaning": "The branch intentionally does not target this full-theory stage."
+    }
+  ],
+  "stages": [
+    {
+      "id": "S0_CLASSICAL_AUTHORITY",
+      "name": "Classical authority",
+      "completion_test": "A content-pinned classical BV snapshot passes the receiver's nilpotency, contraction, chain-map, cyclicity, residual-cohomology and pairing checks."
+    },
+    {
+      "id": "S1_OFF_SHELL_BV",
+      "name": "Off-shell BV carrier",
+      "completion_test": "The complete declared fields, ghosts, antifields and nonminimal rows carry exact differentials and pairings."
+    },
+    {
+      "id": "S2_CAUSAL_GREEN",
+      "name": "Causal Green homotopy",
+      "completion_test": "Advanced and retarded homotopies exist on every required row with declared support and two-sided chain identities."
+    },
+    {
+      "id": "S3_NONLINEAR_CARTAN",
+      "name": "Nonlinear cyclic compatibility",
+      "completion_test": "The causal contraction is compatible with support-local interactions and the cyclic D-Cartan recurrence to the declared arity."
+    },
+    {
+      "id": "S4_HADAMARD_CCR",
+      "name": "Hadamard/CCR carrier",
+      "completion_test": "A normalized global two-point distribution has the required singularity and commutator on the same carrier and background."
+    },
+    {
+      "id": "S5_BRST_WARD",
+      "name": "BRST Ward identity",
+      "completion_test": "The two-point distribution is compatible with the BV differential, or a valid smooth correction is constructed in a declared bikernel support class."
+    },
+    {
+      "id": "S6_PHYSICAL_POSITIVITY",
+      "name": "Physical positivity",
+      "completion_test": "Positivity is proved on the physical BRST quotient; an indefinite Krein covariance is kept distinct from a Hilbert state."
+    },
+    {
+      "id": "S7_RENORMALIZED_PRODUCTS",
+      "name": "Renormalized products",
+      "completion_test": "Lorentzian time-ordered products satisfying the required causal, microlocal and symmetry axioms are constructed."
+    },
+    {
+      "id": "S8_QME",
+      "name": "Quantum master equation",
+      "completion_test": "The anomaly class is classified, coefficients are computed in the same theory, and the local Lorentzian QME is restored."
+    },
+    {
+      "id": "S9_RESIDUAL_TRANSFER",
+      "name": "Residual transfer",
+      "completion_test": "Only after QME restoration is the quantum correction transferred through pi_cl to the certified residual complex."
+    },
+    {
+      "id": "S10_LORENTZIAN_CERTIFIED",
+      "name": "Lorentzian completion",
+      "completion_test": "The full declared theory, rather than a reduced mode or changed action, has passed the causal quantum lifecycle."
+    }
+  ],
+  "branches": [
+    {
+      "id": "STRICT_PURE_WEYL_386",
+      "name": "Strict pure-Weyl full BV",
+      "relation_to_target": "TARGET_THEORY",
+      "scope": "The fixed-field-content pure-Weyl action, including the certified 386-row prolonged vacuum-cylinder causal complex.",
+      "stages": [
+        {
+          "stage": "S0_CLASSICAL_AUTHORITY",
+          "status": "FAIL_CLOSED",
+          "statement": "The historical all-check receiver gate remains red, although later minimal-BV and snapshot-compatibility repairs are certified.",
+          "evidence": [
+            "CLASSICAL_IMPORT_CERTIFICATE",
+            "CLASSICAL_MINIMAL_BV_ANTIFIELD_IMPORT_V2",
+            "REPOSITORY_CLASSICAL_SNAPSHOT_COMPATIBILITY"
+          ],
+          "boundary": "Separate successor receipts do not silently constitute a replacement full freeze certificate."
+        },
+        {
+          "stage": "S1_OFF_SHELL_BV",
+          "status": "SCOPED_CERTIFIED",
+          "statement": "A complete prolonged 386-row classical BV carrier is certified on the vacuum-cylinder architecture.",
+          "evidence": [
+            "pure-weyl-full-prolonged-green-homotopy-assembly-v1"
+          ],
+          "boundary": "This does not by itself pass the independent quantum import/freeze gate."
+        },
+        {
+          "stage": "S2_CAUSAL_GREEN",
+          "status": "SCOPED_CERTIFIED",
+          "statement": "The prolonged carrier has an all-row causal Green homotopy assembled from 356 algebraic and 30 causal endpoint rows.",
+          "evidence": [
+            "pure-weyl-full-prolonged-green-homotopy-assembly-v1"
+          ],
+          "boundary": "The theorem is architecture/background scoped and is not a Hadamard construction."
+        },
+        {
+          "stage": "S3_NONLINEAR_CARTAN",
+          "status": "OPEN_SEEDED",
+          "statement": "Local BV interaction and Cartan ingredients exist, but no coefficient-bearing closed strict Lorentzian D-Cartan defect is classified.",
+          "evidence": [
+            "QUANTUM_CARTAN_D_ONE_LOOP_DISPOSITION"
+          ],
+          "boundary": "A local source ledger is not a causal nonlinear contraction."
+        },
+        {
+          "stage": "S4_HADAMARD_CCR",
+          "status": "OPEN_SEEDED",
+          "statement": "Reduced physical-mode Hadamard evidence exists on the same vacuum cylinder, but no full 386-row BRST covariance is constructed.",
+          "evidence": [
+            "VACUUM_CYLINDER_REDUCED_BRIDGE4_HADAMARD"
+          ],
+          "boundary": "Reduced-mode kernels cannot be promoted to the off-shell BV carrier."
+        },
+        {
+          "stage": "S5_BRST_WARD",
+          "status": "FAIL_CLOSED",
+          "statement": "No full-carrier BRST-compatible Hadamard covariance is certified.",
+          "evidence": [],
+          "boundary": "A causal Green homotopy supplies the commutator, not a BRST Hadamard state."
+        },
+        {
+          "stage": "S6_PHYSICAL_POSITIVITY",
+          "status": "OPEN_SEEDED",
+          "statement": "The reduced E branch is positive, while A and L remain negative-Krein; no positive full physical quotient is certified.",
+          "evidence": [
+            "VACUUM_CYLINDER_REDUCED_BRIDGE4_HADAMARD"
+          ],
+          "boundary": "Krein covariance is not Hilbert-space positivity."
+        },
+        {
+          "stage": "S7_RENORMALIZED_PRODUCTS",
+          "status": "FAIL_CLOSED",
+          "statement": "No renormalized Lorentzian time-ordered products exist for the full theory.",
+          "evidence": [],
+          "boundary": "Euclidean determinants and local counterterm classifications are different objects."
+        },
+        {
+          "stage": "S8_QME",
+          "status": "OBSTRUCTED_SCOPED",
+          "statement": "The strict fixed-field-content local Euclidean BV QME is obstructed at one loop.",
+          "evidence": [
+            "REGULATED_SLAVNOV_QME_DISPOSITION"
+          ],
+          "boundary": "This does not rule out anomaly-cancelling matter or a genuinely different compensator theory, and it is not a Lorentzian QME theorem."
+        },
+        {
+          "stage": "S9_RESIDUAL_TRANSFER",
+          "status": "FORBIDDEN_TRANSFER",
+          "statement": "Residual quantum transfer is not authorized before QME restoration.",
+          "evidence": [],
+          "boundary": "The centered [W_+^2] and [W_-^2] classes remain deformation/vertex classes, not particle states."
+        },
+        {
+          "stage": "S10_LORENTZIAN_CERTIFIED",
+          "status": "FAIL_CLOSED",
+          "statement": "The strict target theory has not completed the Lorentzian quantum lifecycle.",
+          "evidence": [],
+          "boundary": "Classical causal completion is necessary but not sufficient."
+        }
+      ],
+      "first_unclosed_gate": "S0_CLASSICAL_AUTHORITY",
+      "next_decisive_object": "A replacement full classical-import certificate that folds the later exact repairs into every original freeze check without weakening the acceptance contract."
+    },
+    {
+      "id": "PURE_WEYL_BACH_FLAT_RANK310",
+      "name": "Pure-Weyl Bach-flat rank-310",
+      "relation_to_target": "TARGET_THEORY_SCOPED_BACKGROUND",
+      "scope": "A relative-open Bach-flat ADM class and its natural curvature-corrected rank-310 mapping-cone carrier.",
+      "stages": [
+        {
+          "stage": "S0_CLASSICAL_AUTHORITY",
+          "status": "SCOPED_CERTIFIED",
+          "statement": "The classical construction and cyclic transfer inputs are content-pinned inside the branch certificate.",
+          "evidence": [
+            "BACH_FLAT_RANK310_CAUSAL_TRANSFER_V1"
+          ],
+          "boundary": "This is not the quantum programme's full repository freeze gate."
+        },
+        {
+          "stage": "S1_OFF_SHELL_BV",
+          "status": "SCOPED_CERTIFIED",
+          "statement": "The natural rank-310 all-row mapping-cone carrier is exact on the declared class.",
+          "evidence": [
+            "BACH_FLAT_RANK310_CAUSAL_TRANSFER_V1"
+          ],
+          "boundary": "No pure normal-tractor-parent-to-metric SDR is claimed."
+        },
+        {
+          "stage": "S2_CAUSAL_GREEN",
+          "status": "SCOPED_CERTIFIED",
+          "statement": "Advanced and retarded all-row homotopies transfer from the metric Bach complex.",
+          "evidence": [
+            "BACH_FLAT_RANK310_CAUSAL_TRANSFER_V1"
+          ],
+          "boundary": "The class is relative-open, not all smooth Lorentzian metrics."
+        },
+        {
+          "stage": "S3_NONLINEAR_CARTAN",
+          "status": "OPEN_SEEDED",
+          "statement": "Cyclic transfer machinery exists, but no branch-specific nonlinear D-Cartan closure is certified.",
+          "evidence": [
+            "BACH_FLAT_RANK310_CAUSAL_TRANSFER_V1"
+          ],
+          "boundary": "Unary cyclic Green transfer is not interacting closure."
+        },
+        {
+          "stage": "S4_HADAMARD_CCR",
+          "status": "FAIL_CLOSED",
+          "statement": "No rank-310 Hadamard covariance is constructed.",
+          "evidence": [],
+          "boundary": "Causal support does not establish wavefront-set control."
+        },
+        {
+          "stage": "S5_BRST_WARD",
+          "status": "FAIL_CLOSED",
+          "statement": "No rank-310 BRST Ward covariance is constructed.",
+          "evidence": [],
+          "boundary": "No state exists here on which to impose the identity."
+        },
+        {
+          "stage": "S6_PHYSICAL_POSITIVITY",
+          "status": "FAIL_CLOSED",
+          "statement": "No physical quotient positivity theorem is present.",
+          "evidence": [],
+          "boundary": "No particle interpretation follows from the residual deformation complex."
+        },
+        {
+          "stage": "S7_RENORMALIZED_PRODUCTS",
+          "status": "FAIL_CLOSED",
+          "statement": "Lorentzian products are absent.",
+          "evidence": [],
+          "boundary": "Classical transfer is not renormalization."
+        },
+        {
+          "stage": "S8_QME",
+          "status": "FAIL_CLOSED",
+          "statement": "No Lorentzian QME is defined on this branch.",
+          "evidence": [],
+          "boundary": "Local or Euclidean coefficients cannot be transferred without common-theory typing."
+        },
+        {
+          "stage": "S9_RESIDUAL_TRANSFER",
+          "status": "FORBIDDEN_TRANSFER",
+          "statement": "Quantum residual transfer is not authorized.",
+          "evidence": [],
+          "boundary": "QME restoration must precede transfer."
+        },
+        {
+          "stage": "S10_LORENTZIAN_CERTIFIED",
+          "status": "FAIL_CLOSED",
+          "statement": "The branch is classically causal, not quantum-complete.",
+          "evidence": [],
+          "boundary": "The positive result ends at the classical causal stage."
+        }
+      ],
+      "first_unclosed_gate": "S3_NONLINEAR_CARTAN",
+      "next_decisive_object": "A support-local q2/q3 import and cyclic D-Cartan recurrence on the same rank-310 Bach-flat carrier, or a proof that the transfer preserves the required nonlinear brackets."
+    },
+    {
+      "id": "EINSTEIN_NARIAI_KS",
+      "name": "Einstein/Nariai metric and rank-310 controls",
+      "relation_to_target": "TARGET_THEORY_CONTROL_CLASS",
+      "scope": "Globally hyperbolic Einstein backgrounds with Ric=g, including certified common Kantowski--Sachs slabs and unit Nariai.",
+      "stages": [
+        {
+          "stage": "S0_CLASSICAL_AUTHORITY",
+          "status": "SCOPED_CERTIFIED",
+          "statement": "Exact metric and transferred complexes are pinned by their branch certificates.",
+          "evidence": [
+            "EINSTEIN_METRIC_BIWAVE_GREEN_HOMOTOPY_V1",
+            "NARIAI_KS_RANK310_COMMON_SLAB_GREEN_TRANSFER_V1"
+          ],
+          "boundary": "This does not replace the repository-wide quantum import gate."
+        },
+        {
+          "stage": "S1_OFF_SHELL_BV",
+          "status": "SCOPED_CERTIFIED",
+          "statement": "The complete gauge-fixed four-row metric Bach complex and a natural rank-310 common-slab transfer are certified.",
+          "evidence": [
+            "EINSTEIN_METRIC_BIWAVE_GREEN_HOMOTOPY_V1",
+            "NARIAI_KS_RANK310_COMMON_SLAB_GREEN_TRANSFER_V1"
+          ],
+          "boundary": "The rank-310 theorem is limited to certified common slabs."
+        },
+        {
+          "stage": "S2_CAUSAL_GREEN",
+          "status": "SCOPED_CERTIFIED",
+          "statement": "Exact advanced and retarded homotopies exist on the four-row metric complex and transfer to the rank-310 common-slab carrier.",
+          "evidence": [
+            "EINSTEIN_METRIC_BIWAVE_GREEN_HOMOTOPY_V1",
+            "NARIAI_KS_RANK310_COMMON_SLAB_GREEN_TRANSFER_V1"
+          ],
+          "boundary": "No whole-cylinder nonzero KS family is claimed."
+        },
+        {
+          "stage": "S3_NONLINEAR_CARTAN",
+          "status": "OPEN_SEEDED",
+          "statement": "The branch supplies a curved causal control but no certified nonlinear D-Cartan recurrence.",
+          "evidence": [],
+          "boundary": "A free metric complex is not an interacting BV theory."
+        },
+        {
+          "stage": "S4_HADAMARD_CCR",
+          "status": "OPEN_SEEDED",
+          "statement": "Normally-hyperbolic factorization makes Hadamard construction plausible, but no branch covariance is serialized.",
+          "evidence": [
+            "EINSTEIN_METRIC_BIWAVE_GREEN_HOMOTOPY_V1"
+          ],
+          "boundary": "Applicability of a theorem is not an explicit normalized state."
+        },
+        {
+          "stage": "S5_BRST_WARD",
+          "status": "FAIL_CLOSED",
+          "statement": "No BRST Ward covariance is constructed.",
+          "evidence": [],
+          "boundary": "Metric-sector Hadamard data would still require ghost and antifield compatibility."
+        },
+        {
+          "stage": "S6_PHYSICAL_POSITIVITY",
+          "status": "FAIL_CLOSED",
+          "statement": "No physical positivity theorem is present.",
+          "evidence": [],
+          "boundary": "Fourth-order factorization can carry indefinite sectors."
+        },
+        {
+          "stage": "S7_RENORMALIZED_PRODUCTS",
+          "status": "FAIL_CLOSED",
+          "statement": "Lorentzian products are absent.",
+          "evidence": [],
+          "boundary": "Free causal control is not pAQFT."
+        },
+        {
+          "stage": "S8_QME",
+          "status": "FAIL_CLOSED",
+          "statement": "No branch-specific Lorentzian QME is defined.",
+          "evidence": [],
+          "boundary": "Background trace anomalies are not BV master-equation breakings."
+        },
+        {
+          "stage": "S9_RESIDUAL_TRANSFER",
+          "status": "FORBIDDEN_TRANSFER",
+          "statement": "Quantum transfer is not authorized.",
+          "evidence": [],
+          "boundary": "The lifecycle has not reached QME restoration."
+        },
+        {
+          "stage": "S10_LORENTZIAN_CERTIFIED",
+          "status": "FAIL_CLOSED",
+          "statement": "The branch is a strong curved control, not a completed theory.",
+          "evidence": [],
+          "boundary": "Its value is analytic generality through the causal stage."
+        }
+      ],
+      "first_unclosed_gate": "S3_NONLINEAR_CARTAN",
+      "next_decisive_object": "A nonlinear support-local BV interaction and cyclic causal transfer theorem on the same Einstein/Nariai carrier; independently, serialize one normalized factorwise Hadamard covariance as the analytic control."
+    },
+    {
+      "id": "BERGER_POSITIVE_CLOCK_54",
+      "name": "Berger positive-clock 54-row BV",
+      "relation_to_target": "NEIGHBORING_CLOCK_ARCHITECTURE",
+      "scope": "The frozen rational Berger fixture with a positive clock, 26 retained rows and the complete 54-row gauge-fixed classical complex.",
+      "stages": [
+        {
+          "stage": "S0_CLASSICAL_AUTHORITY",
+          "status": "SCOPED_CERTIFIED",
+          "statement": "The complete support-local q2 tensor is imported and independently replayed with exact Q(sqrt(10)) arithmetic.",
+          "evidence": [
+            "BERGER_SUPPORT_LOCAL_Q2_SCIENTIFIC_REPLAY"
+          ],
+          "boundary": "This is Berger-specific and not the strict pure-Weyl freeze."
+        },
+        {
+          "stage": "S1_OFF_SHELL_BV",
+          "status": "CERTIFIED",
+          "statement": "The declared 54-row gauge-fixed classical Berger BV carrier and pairing/Koszul structure are complete at the fixture.",
+          "evidence": [
+            "BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY_V2",
+            "BERGER_ARITY_THREE_D_CARTAN_FULL_4D"
+          ],
+          "boundary": "Certification is fixture-specific."
+        },
+        {
+          "stage": "S2_CAUSAL_GREEN",
+          "status": "CERTIFIED",
+          "statement": "Advanced and retarded chain homotopies exist on all 26 retained and all 54 gauge-fixed rows.",
+          "evidence": [
+            "BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY_V2",
+            "BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY_V2"
+          ],
+          "boundary": "This remains classical causal data."
+        },
+        {
+          "stage": "S3_NONLINEAR_CARTAN",
+          "status": "SCOPED_CERTIFIED",
+          "statement": "The cyclic two-sided-causal D-Cartan recurrence closes through arity three on the complete 54-row four-dimensional complex.",
+          "evidence": [
+            "BERGER_ARITY_THREE_D_CARTAN_FULL_4D"
+          ],
+          "boundary": "Arity four and separately retarded higher primitives are not claimed."
+        },
+        {
+          "stage": "S4_HADAMARD_CCR",
+          "status": "PARTIAL_CERTIFIED",
+          "statement": "All 26 endpoint rows have global exact Hadamard carriers and an exact-CCR candidate; a real stationary compatible-complex-structure normalization is obstructed on the full homogeneous retained carrier.",
+          "evidence": [
+            "BERGER_RETAINED26_HADAMARD_WARD_REDUCTION",
+            "BERGER_HOMOGENEOUS_STATIONARY_HADAMARD_NORMALIZATION_OBSTRUCTION"
+          ],
+          "boundary": "The obstruction leaves nonstationary Krein representatives open."
+        },
+        {
+          "stage": "S5_BRST_WARD",
+          "status": "OPEN_SEEDED",
+          "statement": "The exact Ward defect C26=[H26_plus,q26] is smooth, but no normalized H26 representative or admissible global bikernel correction is defined.",
+          "evidence": [
+            "BERGER_RETAINED26_HADAMARD_WARD_REDUCTION",
+            "BERGER_C26_BIKERNEL_SUPPORT_PROFILE_NONDEFINITION"
+          ],
+          "boundary": "Compact-source homotopies cannot silently act on an arbitrary smooth two-variable defect."
+        },
+        {
+          "stage": "S6_PHYSICAL_POSITIVITY",
+          "status": "FAIL_CLOSED",
+          "statement": "No positive physical BRST quotient is certified.",
+          "evidence": [],
+          "boundary": "A Krein covariance is not positivity."
+        },
+        {
+          "stage": "S7_RENORMALIZED_PRODUCTS",
+          "status": "FAIL_CLOSED",
+          "statement": "Renormalized Lorentzian products are absent.",
+          "evidence": [],
+          "boundary": "A free covariance is only the input to renormalization."
+        },
+        {
+          "stage": "S8_QME",
+          "status": "FAIL_CLOSED",
+          "statement": "The coefficient-bearing Berger Cartan defect is analytically undefined and no Lorentzian QME is restored.",
+          "evidence": [
+            "QUANTUM_CARTAN_D_ONE_LOOP_DISPOSITION"
+          ],
+          "boundary": "Classical D-Cartan closure does not cancel the quantum anomaly."
+        },
+        {
+          "stage": "S9_RESIDUAL_TRANSFER",
+          "status": "FORBIDDEN_TRANSFER",
+          "statement": "Quantum residual transfer is not authorized.",
+          "evidence": [],
+          "boundary": "QME restoration must come first."
+        },
+        {
+          "stage": "S10_LORENTZIAN_CERTIFIED",
+          "status": "FAIL_CLOSED",
+          "statement": "The branch is the analytically most advanced full classical route, but not a Lorentzian quantum theory.",
+          "evidence": [],
+          "boundary": "The first quantum obstruction is explicit rather than absent."
+        }
+      ],
+      "first_unclosed_gate": "S5_BRST_WARD",
+      "next_decisive_object": "A content-addressed nonstationary Krein H26_plus with declared Cauchy-time normalization, followed by exact C26 support/pairing classification and either a continuous bikernel homotopy correction or direct q26-equivariant Feynman selection."
+    },
+    {
+      "id": "VACUUM_CYLINDER_REDUCED",
+      "name": "Vacuum-cylinder reduced physical modes",
+      "relation_to_target": "REDUCED_MODE_CONTROL",
+      "scope": "The free E/A/L physical cohomology carrier on the unit vacuum conformal cylinder.",
+      "stages": [
+        {
+          "stage": "S0_CLASSICAL_AUTHORITY",
+          "status": "SCOPED_CERTIFIED",
+          "statement": "Normalized classical modes, reduced Green blocks and current pairing are imported on one background.",
+          "evidence": [
+            "VACUUM_CYLINDER_REDUCED_BRIDGE4_HADAMARD"
+          ],
+          "boundary": "This is reduced cohomology, not the off-shell BV snapshot."
+        },
+        {
+          "stage": "S1_OFF_SHELL_BV",
+          "status": "NOT_APPLICABLE",
+          "statement": "The branch intentionally omits ghosts, antifields and contractible rows.",
+          "evidence": [],
+          "boundary": "It cannot certify a full-BV claim."
+        },
+        {
+          "stage": "S2_CAUSAL_GREEN",
+          "status": "SCOPED_CERTIFIED",
+          "statement": "Advanced and retarded reduced Green blocks are certified on the same background.",
+          "evidence": [
+            "VACUUM_CYLINDER_REDUCED_BRIDGE4_HADAMARD"
+          ],
+          "boundary": "Reduced propagation cannot be used as a full-complex homotopy."
+        },
+        {
+          "stage": "S3_NONLINEAR_CARTAN",
+          "status": "NOT_APPLICABLE",
+          "statement": "The result is free and reduced.",
+          "evidence": [],
+          "boundary": "No interacting D-Cartan claim is targeted."
+        },
+        {
+          "stage": "S4_HADAMARD_CCR",
+          "status": "SCOPED_CERTIFIED",
+          "statement": "Global stationary spectral Krein two-point distributions are certified on the E/A/L carrier.",
+          "evidence": [
+            "VACUUM_CYLINDER_REDUCED_BRIDGE4_HADAMARD"
+          ],
+          "boundary": "This is a REDUCED-MODE plus LORENTZIAN-CAUSAL result."
+        },
+        {
+          "stage": "S5_BRST_WARD",
+          "status": "NOT_APPLICABLE",
+          "statement": "The off-shell BRST differential is absent from the carrier.",
+          "evidence": [],
+          "boundary": "Physical-cohomology construction does not prove the off-shell Ward identity."
+        },
+        {
+          "stage": "S6_PHYSICAL_POSITIVITY",
+          "status": "PARTIAL_CERTIFIED",
+          "statement": "The E sector is positive; A and L have negative Krein sign, so the direct sum is indefinite.",
+          "evidence": [
+            "VACUUM_CYLINDER_REDUCED_BRIDGE4_HADAMARD"
+          ],
+          "boundary": "No positive graviton Hilbert space is certified."
+        },
+        {
+          "stage": "S7_RENORMALIZED_PRODUCTS",
+          "status": "NOT_APPLICABLE",
+          "statement": "No interacting product construction is attempted.",
+          "evidence": [],
+          "boundary": "A free reduced quasifree functional is not pAQFT."
+        },
+        {
+          "stage": "S8_QME",
+          "status": "NOT_APPLICABLE",
+          "statement": "No off-shell BV Laplacian or interacting master equation exists on this reduced carrier.",
+          "evidence": [],
+          "boundary": "Reduced data cannot repair the strict QME."
+        },
+        {
+          "stage": "S9_RESIDUAL_TRANSFER",
+          "status": "FORBIDDEN_TRANSFER",
+          "statement": "This is already a classical/free reduced carrier, not a post-QME quantum transfer.",
+          "evidence": [],
+          "boundary": "The lifecycle order cannot be reversed."
+        },
+        {
+          "stage": "S10_LORENTZIAN_CERTIFIED",
+          "status": "NOT_APPLICABLE",
+          "statement": "The branch is a control for states, not a full theory completion.",
+          "evidence": [],
+          "boundary": "Its strength is the genuine Hadamard/Krein result at reduced scope."
+        }
+      ],
+      "first_unclosed_gate": "S1_OFF_SHELL_BV",
+      "next_decisive_object": "A same-background lift from the reduced E/A/L covariance to a complete off-shell BV covariance with ghost/antifield rows and a verified BRST Ward identity."
+    },
+    {
+      "id": "TAU_ADIC_COMPENSATOR",
+      "name": "Tau-adic compensator extension",
+      "relation_to_target": "CHANGED_THEORY_FORMAL_EXTENSION",
+      "scope": "A formal compensator theory used to study local anomaly cancellation; it is not strict pure Weyl gravity.",
+      "stages": [
+        {
+          "stage": "S0_CLASSICAL_AUTHORITY",
+          "status": "SCOPED_CERTIFIED",
+          "statement": "The strict 386-row input and formal Wess--Zumino cotangent/Cartan data are pinned.",
+          "evidence": [
+            "TAU_ADIC_VACUUM_CYLINDER_CAUSAL_BV_TRACE_OBSTRUCTION_V1"
+          ],
+          "boundary": "The combined tau-adic carrier does not pass the causal contraction gate."
+        },
+        {
+          "stage": "S1_OFF_SHELL_BV",
+          "status": "PARTIAL_CERTIFIED",
+          "statement": "A canonical scalar extension is assembled, but the dressed trace remains nontrivial unary homology in the declared finite differential class.",
+          "evidence": [
+            "TAU_ADIC_VACUUM_CYLINDER_CAUSAL_BV_TRACE_OBSTRUCTION_V1"
+          ],
+          "boundary": "Formal local algebra does not supply a causal BV carrier."
+        },
+        {
+          "stage": "S2_CAUSAL_GREEN",
+          "status": "OBSTRUCTED_SCOPED",
+          "statement": "No all-row causal homotopy can exist in the declared tau-adic finite differential class because the compactly supported dressed trace survives.",
+          "evidence": [
+            "TAU_ADIC_VACUUM_CYLINDER_CAUSAL_BV_TRACE_OBSTRUCTION_V1"
+          ],
+          "boundary": "Adding the missing conformal gauge generator or changing the action remains open."
+        },
+        {
+          "stage": "S3_NONLINEAR_CARTAN",
+          "status": "OPEN_SEEDED",
+          "statement": "Formal D-Cartan and compensator ingredients exist, but no common causal nonlinear contraction is certified.",
+          "evidence": [
+            "QUANTUM_CARTAN_D_ONE_LOOP_DISPOSITION"
+          ],
+          "boundary": "The raw generators and theories are not identified."
+        },
+        {
+          "stage": "S4_HADAMARD_CCR",
+          "status": "FAIL_CLOSED",
+          "statement": "No full tau-adic BRST Hadamard kernel exists.",
+          "evidence": [],
+          "boundary": "The causal carrier is already obstructed in the declared class."
+        },
+        {
+          "stage": "S5_BRST_WARD",
+          "status": "FAIL_CLOSED",
+          "statement": "No state exists on which to close the Ward identity.",
+          "evidence": [],
+          "boundary": "Local cohomology does not create a covariance."
+        },
+        {
+          "stage": "S6_PHYSICAL_POSITIVITY",
+          "status": "FAIL_CLOSED",
+          "statement": "No physical positivity theorem exists.",
+          "evidence": [],
+          "boundary": "The extension is formal and changed-theory."
+        },
+        {
+          "stage": "S7_RENORMALIZED_PRODUCTS",
+          "status": "CONDITIONAL",
+          "statement": "An all-order local induction assumes a suitable quantum action principle/regulator, which is not constructed.",
+          "evidence": [
+            "TAU_ADIC_ALL_LOOP_LOCAL_QME_STABILITY"
+          ],
+          "boundary": "This is not a Lorentzian product construction."
+        },
+        {
+          "stage": "S8_QME",
+          "status": "CONDITIONAL",
+          "statement": "Formal local all-loop QME restoration is proved only under the declared quantum action principle and regular coupling-chart assumptions.",
+          "evidence": [
+            "TAU_ADIC_ALL_LOOP_LOCAL_QME_STABILITY"
+          ],
+          "boundary": "It neither repairs strict pure Weyl nor establishes a Lorentzian QME."
+        },
+        {
+          "stage": "S9_RESIDUAL_TRANSFER",
+          "status": "FORBIDDEN_TRANSFER",
+          "statement": "No residual transfer is authorized.",
+          "evidence": [],
+          "boundary": "The conditional local theorem and causal obstruction prevent promotion."
+        },
+        {
+          "stage": "S10_LORENTZIAN_CERTIFIED",
+          "status": "FAIL_CLOSED",
+          "statement": "The formal extension is not Lorentzian-complete.",
+          "evidence": [],
+          "boundary": "Its local-QME strength and causal weakness must remain visibly separate."
+        }
+      ],
+      "first_unclosed_gate": "S2_CAUSAL_GREEN",
+      "next_decisive_object": "A new, explicitly chosen theory with either the missing conformal gauge generator or a dressed-trace kinetic term, followed by a fresh all-row causal BV certificate."
+    },
+    {
+      "id": "COMPLEX_COMPENSATOR_CHANGED_ACTION",
+      "name": "Complex compensator changed-action parent",
+      "relation_to_target": "CHANGED_CLASSICAL_ACTION",
+      "scope": "One exact unequal-kinetic polar compensator action on the unit vacuum cylinder, with 390 classical BV rows.",
+      "stages": [
+        {
+          "stage": "S0_CLASSICAL_AUTHORITY",
+          "status": "SCOPED_CERTIFIED",
+          "statement": "The changed action, carrier and strict complement are content-pinned at one fixture.",
+          "evidence": [
+            "COMPLEX_COMPENSATOR_VACUUM_CYLINDER_CAUSAL_PARENT_V1"
+          ],
+          "boundary": "This is not strict pure Weyl gravity or the Berger theory."
+        },
+        {
+          "stage": "S1_OFF_SHELL_BV",
+          "status": "CERTIFIED",
+          "statement": "A complete 390-row classical BV parent is constructed; the dressed trace and phase have causal kinetic blocks.",
+          "evidence": [
+            "COMPLEX_COMPENSATOR_VACUUM_CYLINDER_CAUSAL_PARENT_V1"
+          ],
+          "boundary": "The negative R^2 coefficient is not claimed stable or positive."
+        },
+        {
+          "stage": "S2_CAUSAL_GREEN",
+          "status": "CERTIFIED",
+          "statement": "The changed carrier has complete classical causal Green data at the fixture.",
+          "evidence": [
+            "COMPLEX_COMPENSATOR_VACUUM_CYLINDER_CAUSAL_PARENT_V1"
+          ],
+          "boundary": "The result is action- and background-specific."
+        },
+        {
+          "stage": "S3_NONLINEAR_CARTAN",
+          "status": "OPEN_SEEDED",
+          "statement": "The exact action supplies a concrete nonlinear target, but raw D-Cartan closure is unproved.",
+          "evidence": [
+            "COMPLEX_COMPENSATOR_VACUUM_CYLINDER_CAUSAL_PARENT_V1"
+          ],
+          "boundary": "The classical causal parent is not yet a cyclic interacting contraction."
+        },
+        {
+          "stage": "S4_HADAMARD_CCR",
+          "status": "OPEN_SEEDED",
+          "statement": "The first analytic quantum gate is an all-row BRST-compatible Hadamard/Feynman selection.",
+          "evidence": [
+            "COMPLEX_COMPENSATOR_VACUUM_CYLINDER_CAUSAL_PARENT_V1"
+          ],
+          "boundary": "No state is constructed by the classical certificate."
+        },
+        {
+          "stage": "S5_BRST_WARD",
+          "status": "FAIL_CLOSED",
+          "statement": "No BRST covariance or smooth Ward correction is certified.",
+          "evidence": [],
+          "boundary": "It must be built on the exact 390-row carrier."
+        },
+        {
+          "stage": "S6_PHYSICAL_POSITIVITY",
+          "status": "FAIL_CLOSED",
+          "statement": "No positivity theorem exists and the scalar sector has an explicit stability concern.",
+          "evidence": [],
+          "boundary": "Causal propagation does not decide energy sign."
+        },
+        {
+          "stage": "S7_RENORMALIZED_PRODUCTS",
+          "status": "FAIL_CLOSED",
+          "statement": "No Lorentzian products are defined.",
+          "evidence": [],
+          "boundary": "Same-action quantum consumers must first be reissued."
+        },
+        {
+          "stage": "S8_QME",
+          "status": "FAIL_CLOSED",
+          "statement": "No anomaly classification or QME restoration exists for this exact changed action.",
+          "evidence": [],
+          "boundary": "The tau-adic formal theorem cannot be silently identified with this action."
+        },
+        {
+          "stage": "S9_RESIDUAL_TRANSFER",
+          "status": "FORBIDDEN_TRANSFER",
+          "statement": "No residual transfer is authorized.",
+          "evidence": [],
+          "boundary": "Changed residual cohomology has not been constructed and the QME is open."
+        },
+        {
+          "stage": "S10_LORENTZIAN_CERTIFIED",
+          "status": "FAIL_CLOSED",
+          "statement": "The branch is a viable classical causal parent, not a quantum completion.",
+          "evidence": [],
+          "boundary": "It is a neighboring theory rather than evidence that strict pure Weyl is complete."
+        }
+      ],
+      "first_unclosed_gate": "S3_NONLINEAR_CARTAN",
+      "next_decisive_object": "Reissue the nonlinear and quantum consumers against the exact 390-row action/carrier hash, then construct a BRST-compatible Hadamard/Feynman selection on that same carrier."
+    }
+  ],
+  "frontier_summary": {
+    "identity_preserving_front": {
+      "branch": "STRICT_PURE_WEYL_386",
+      "strength": "complete scoped classical causal BV homotopy on the target action",
+      "first_gate": "replacement full classical-import freeze certificate",
+      "independent_quantum_obstruction": "strict fixed-field-content local Euclidean one-loop QME obstruction"
+    },
+    "analytic_maturity_front": {
+      "branch": "BERGER_POSITIVE_CLOCK_54",
+      "strength": "complete 54-row causal complex, D-Cartan through arity three, and a 26-row exact-CCR Hadamard candidate with smooth Ward defect",
+      "first_gate": "normalized nonstationary Krein H26_plus and admissible C26 Ward correction",
+      "theory_boundary": "positive-clock Berger architecture, not strict pure Weyl"
+    },
+    "curved_generality_front": {
+      "branch": "PURE_WEYL_BACH_FLAT_RANK310",
+      "strength": "rank-310 all-row causal transfer on a relative-open Bach-flat ADM class",
+      "first_gate": "same-carrier nonlinear cyclic compatibility, followed by Hadamard data"
+    },
+    "state_control_front": {
+      "branch": "VACUUM_CYLINDER_REDUCED",
+      "strength": "genuine reduced-mode Lorentzian Hadamard/Krein construction with E positivity and explicit A/L negative signs",
+      "first_gate": "same-background full off-shell BRST lift"
+    }
+  },
+  "classical_import_reconciliation": {
+    "historical_gate": "FAIL_CLOSED",
+    "later_certified_repairs": [
+      "CLASSICAL_MINIMAL_BV_ANTIFIELD_IMPORT_V2",
+      "REPOSITORY_CLASSICAL_SNAPSHOT_COMPATIBILITY",
+      "BERGER_SUPPORT_LOCAL_Q2_SCIENTIFIC_REPLAY"
+    ],
+    "current_disposition": "PARTIALLY_REPAIRED_REPLACEMENT_FREEZE_CERTIFICATE_ABSENT",
+    "rule": "The old gate remains historical evidence, while later repairs are positive evidence. Neither may be erased; only a new all-check receiver certificate may supersede the old gate for publication authority."
+  },
+  "research_queue": [
+    {
+      "priority": 1,
+      "branch": "STRICT_PURE_WEYL_386",
+      "object": "replacement full classical-import freeze certificate",
+      "why": "It removes evidence drift and determines which quantum claims may use the authoritative classical snapshot."
+    },
+    {
+      "priority": 2,
+      "branch": "BERGER_POSITIVE_CLOCK_54",
+      "object": "normalized nonstationary Krein H26_plus and C26 support/pairing ledger",
+      "why": "It is the shortest known path from a complete causal BV complex to a genuine full-carrier BRST Hadamard covariance."
+    },
+    {
+      "priority": 3,
+      "branch": "BERGER_POSITIVE_CLOCK_54",
+      "object": "continuous smooth-bikernel homotopy or direct q26-equivariant Feynman selection",
+      "why": "It decides whether the smooth Ward defect can be removed without violating support and pairing constraints."
+    },
+    {
+      "priority": 4,
+      "branch": "PURE_WEYL_BACH_FLAT_RANK310",
+      "object": "same-carrier nonlinear D-Cartan transfer",
+      "why": "It tests whether the broadest curved causal target branch survives interaction compatibility."
+    },
+    {
+      "priority": 5,
+      "branch": "COMPLEX_COMPENSATOR_CHANGED_ACTION",
+      "object": "same-action nonlinear and Hadamard consumers",
+      "why": "It supplies an independently viable changed-theory control after the tau-adic causal obstruction."
+    }
+  ],
+  "provenance": {
+    "inputs": [
+      {
+        "path": "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_CERTIFICATE.json",
+        "sha256": "eb48675fb36489e7d33724b2d06f1f0ebfe6867d043bf71d1536015f9862b2d6",
+        "role": "historical all-check import gate"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/CLASSICAL_MINIMAL_BV_ANTIFIELD_IMPORT_V2.json",
+        "sha256": "43adca2070ac9f63d9c70a1439de136521b61fd2c9f8ca69e7f90c0b904d69f8",
+        "role": "successor minimal-BV import repair"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/REPOSITORY_CLASSICAL_SNAPSHOT_COMPATIBILITY.json",
+        "sha256": "03953fd210a94b332eddb5e2d98a1dbde67a4bf6a8a4534f98989dd7a1956bac",
+        "role": "cross-commit classical snapshot bridge"
+      },
+      {
+        "path": "quantum-weyl/transfer/certificates/BERGER_SUPPORT_LOCAL_Q2_SCIENTIFIC_REPLAY.json",
+        "sha256": "5367b4d5b3dcea2cd63f8087de26722a7f624c072e2acd3a21bae2daead3de7f",
+        "role": "independent Berger q2 replay"
+      },
+      {
+        "path": "covariant_completion/certificates/curved_full_prolonged_green_homotopy_assembly.json",
+        "sha256": "1f8aae727a06fb82c70732f7207499d427894247d09fea22f677a0f9b38be0ee",
+        "role": "strict 386-row causal BV homotopy"
+      },
+      {
+        "path": "d_quotient_classical/certificates/BACH_FLAT_RANK310_CAUSAL_TRANSFER_V1.json",
+        "sha256": "b7fc3559345c59a02686388d101d2db76d597949f77450de1083c65b289fb86e",
+        "role": "Bach-flat rank-310 causal branch"
+      },
+      {
+        "path": "d_quotient_classical/certificates/EINSTEIN_METRIC_BIWAVE_GREEN_HOMOTOPY_V1.json",
+        "sha256": "e2978cf23f577ab365729d139c8eabf0bcbc2277bc2a124d872c03c94b7b8a75",
+        "role": "Einstein metric biwave branch"
+      },
+      {
+        "path": "d_quotient_classical/certificates/NARIAI_KS_RANK310_COMMON_SLAB_GREEN_TRANSFER_V1.json",
+        "sha256": "58a266aa66d3070816038f229346c0676c88cbb812790700f6fa7eb264750e0e",
+        "role": "Nariai/KS rank-310 transfer"
+      },
+      {
+        "path": "d_quotient_classical/certificates/BERGER_26_ROW_CAUSAL_GREEN_HOMOTOPY_V2.json",
+        "sha256": "61c0ce89045434676d99e723f7618da749f7208e5f49716b0ea9fc86bbaf7abb",
+        "role": "Berger retained causal homotopy"
+      },
+      {
+        "path": "d_quotient_classical/certificates/BERGER_54_ROW_CAUSAL_GREEN_HOMOTOPY_V2.json",
+        "sha256": "e92642b3225ab87b6058987f73f9ade3909646f2d0d3b95cc45cc9c5712b9c3b",
+        "role": "Berger complete gauge-fixed causal homotopy"
+      },
+      {
+        "path": "d_quotient_classical/certificates/BERGER_ARITY_THREE_D_CARTAN_FULL_4D.json",
+        "sha256": "0c304ca0dced538c4514dd8efbf8bf9e33a415772944818f7dadec1e88b7a829",
+        "role": "Berger nonlinear cyclic compatibility"
+      },
+      {
+        "path": "quantum-weyl/lorentzian/certificates/BERGER_RETAINED26_HADAMARD_WARD_REDUCTION.json",
+        "sha256": "35bb185bbc975bbad80a6a4a029815bbc07781fdaa08f654e7652f2b2f6c9218",
+        "role": "Berger Hadamard/CCR candidate and Ward defect"
+      },
+      {
+        "path": "quantum-weyl/lorentzian/certificates/BERGER_C26_BIKERNEL_SUPPORT_PROFILE_NONDEFINITION.json",
+        "sha256": "b3a4058c83f5fc2dc77dc1e50a6b1f3624eebbbe049c43de0ce45d62d768184a",
+        "role": "Berger Ward-correction nondefinition"
+      },
+      {
+        "path": "quantum-weyl/lorentzian/certificates/BERGER_HOMOGENEOUS_STATIONARY_HADAMARD_NORMALIZATION_OBSTRUCTION.json",
+        "sha256": "016844933f79cdb275cb6d21d2de79f24fbbcdb549b09a0c8eba6715be302010",
+        "role": "scoped stationary normalization obstruction"
+      },
+      {
+        "path": "quantum-weyl/lorentzian/certificates/VACUUM_CYLINDER_REDUCED_BRIDGE4_HADAMARD.json",
+        "sha256": "f49edce04b39d1e600d0072bfabc784b8ef6edf0d5a1fc39c8ad89f7fe031d48",
+        "role": "reduced physical-mode Hadamard control"
+      },
+      {
+        "path": "quantum-weyl/anomalies/certificates/REGULATED_SLAVNOV_QME_DISPOSITION.json",
+        "sha256": "e05d88bf5671c1c090371f49909bfc82bd25d20c352ef9a757f82a5fb6badd23",
+        "role": "strict local Euclidean one-loop obstruction"
+      },
+      {
+        "path": "quantum-weyl/anomalies/certificates/TAU_ADIC_ALL_LOOP_LOCAL_QME_STABILITY.json",
+        "sha256": "3649925e44d99bea0020f3d1c20a16c54a44f6c9714a3c273c20a6e6d8f84dbc",
+        "role": "conditional changed-theory local QME theorem"
+      },
+      {
+        "path": "d_quotient_classical/certificates/TAU_ADIC_VACUUM_CYLINDER_CAUSAL_BV_TRACE_OBSTRUCTION_V1.json",
+        "sha256": "db1f998a0920adb94cf4fcbffb1b9eb2ea6537876aff9513aac4e4d9ec2b51b9",
+        "role": "tau-adic causal extension obstruction"
+      },
+      {
+        "path": "d_quotient_classical/certificates/COMPLEX_COMPENSATOR_VACUUM_CYLINDER_CAUSAL_PARENT_V1.json",
+        "sha256": "be7847102b7c219fd09865b68c4982c84e280e09c73364c509dcb9aaca91d6c4",
+        "role": "changed-action causal parent"
+      },
+      {
+        "path": "quantum-weyl/cartan/certificates/QUANTUM_CARTAN_D_ONE_LOOP_DISPOSITION.json",
+        "sha256": "e5ef8ef2122d93ed40a74d62c1bd118b56d136ab0d34838eeec5fafb8386c2d9",
+        "role": "quantum D-Cartan coefficient disposition"
+      }
+    ]
+  },
+  "claim_flags": {
+    "architectures_classified": true,
+    "historical_import_gate_reconciled": true,
+    "strict_pure_weyl_scoped_full_causal_homotopy_recorded": true,
+    "berger_54_row_causal_homotopy_recorded": true,
+    "berger_arity_three_d_cartan_recorded": true,
+    "berger_brst_hadamard_state_constructed": false,
+    "strict_pure_weyl_qme_restored": false,
+    "renormalized_lorentzian_products_constructed": false,
+    "residual_quantum_transfer_authorized": false,
+    "lorentzian_full_theory_certified": false
+  },
+  "does_not_establish": [
+    "a passed repository-wide classical freeze gate",
+    "a BRST-compatible Hadamard state on any complete off-shell Weyl BV carrier",
+    "physical Hilbert-space positivity for the full theory",
+    "renormalized Lorentzian time-ordered products",
+    "a causal perturbative AQFT construction",
+    "a Lorentzian quantum-master-equation theorem",
+    "residual quantum transfer",
+    "equivalence of strict pure Weyl, Berger, tau-adic and changed-action compensator theories",
+    "that reduced-mode or Euclidean evidence proves a Lorentzian full-complex claim",
+    "that [W_+^2] or [W_-^2] is a one-particle graviton state",
+    "a complete observationally validated theory"
+  ],
+  "independent_checker": {
+    "path": "foundations/check_lorentzian_weyl_bv_completion_atlas.py",
+    "checks": [
+      "stage and branch closure",
+      "first-gate consistency",
+      "evidence-id closure",
+      "status firewall",
+      "provenance hashes",
+      "claim-flag firewall",
+      "canonical atlas digest"
+    ],
+    "expected_digest": "d75a1d700cbe6f10e40e86782d36392499c105f8964dd653e12ffa59a07902cf"
+  },
+  "human_report": "foundations/reports/lorentzian-weyl-bv-completion-atlas-v1.md"
+}

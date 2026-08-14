@@ -1,0 +1,187 @@
+{
+  "claim_boundary": "This LOCAL-ALGEBRAIC theorem proves an order-by-order formal local QME restoration induction for the changed tau-adic compensator theory, conditional on the explicitly declared quantum action principle and regular formal coupling chart. The complete H14 module is zero and the stable H04 module contains C(g_hat)^2, E4(g_hat), R(g_hat)^2 and the parity-odd Pontryagin direction, with total derivatives, canonical transformations and coupling redefinitions separated. It does not construct the required regulator, prove convergence, exclude global anomalies, repair strict pure-Weyl gravity, or establish Lorentzian products, a QME, residual transfer, states, positivity, particles, scattering or unitarity.",
+  "claim_flags": {
+    "CONSTRUCTED_ALL_LOOP_REGULATOR": false,
+    "GLOBAL_ANOMALIES_EXCLUDED": false,
+    "HADAMARD_STATE_CERTIFIED_HERE": false,
+    "LORENTZIAN_QME_CERTIFIED": false,
+    "PARTICLE_OR_UNITARITY_THEOREM": false,
+    "RESIDUAL_TRANSFERRED": false,
+    "STRICT_AND_COMPENSATOR_THEORIES_EQUIVALENT": false,
+    "STRICT_THEORY_ANOMALY_FREE": false,
+    "UNCONDITIONAL_ALL_LOOP_QME": false
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "exact_checks": {
+    "H04_Rhat2_direction_retained": true,
+    "H04_even_odd_module_complete": true,
+    "H14_all_parities_zero": true,
+    "canonical_transformations_accounted": true,
+    "constructed_regulator_not_claimed": true,
+    "coupling_redefinitions_accounted": true,
+    "filtered_HPL_inverse_exact": true,
+    "formal_induction_closes_under_QAP": true,
+    "positive_antifield_sector_included": true,
+    "requested_input_commits_and_hashes_pinned": true,
+    "tau_adic_quartet_contraction_imported": true,
+    "total_derivative_accounted": true
+  },
+  "filtered_deformation_stability": {
+    "endpoint_interpretation": "the sole final coefficient is the first omitted order; every fixed formal coefficient stabilizes exactly",
+    "filtration_ideal": "(hbar,z_C,z_E,z_R2,z_P)",
+    "inverse": "(1+h delta_ct)^-1=sum_{k>=0}(-h delta_ct)^k",
+    "inverse_coefficients_through_order_12": [
+      1,
+      -1,
+      1,
+      -1,
+      1,
+      -1,
+      1,
+      -1,
+      1,
+      -1,
+      1,
+      -1,
+      1
+    ],
+    "perturbation": "delta_ct is the BV differential change induced by the four H04 coupling directions and raises the filtration",
+    "positive_antifield_stability": "the complete filtered spectral sequence has zero ghost-one E1 page and therefore zero ghost-one abutment; the perturbed Koszul-Tate contraction is the formal HPL contraction",
+    "truncated_product_coefficients": [
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1
+    ],
+    "unbounded_tau_series_status": "NO_NEW_INDEPENDENT_COHOMOLOGY_GENERATORS: each dressed invariant has an infinite but filtration-complete tau expansion"
+  },
+  "formal_local_algebra": {
+    "coefficient_ring": "Q[[hbar,z_C,z_E,z_R2,z_P]] with nonzero classical C2 kinetic normalization and formal finite-renormalization parameters",
+    "completion": "(hbar,z_C,z_E,z_R2,z_P,tau)-adically complete local covariant jets of g_hat, its BV cotangent, Diff ghosts, the Weyl quartet and pointwise nonminimal doublets",
+    "dimension_policy": "homogeneous engineering dimension four in a massless logarithmic subtraction scheme; no dimensionful spurion or power-divergent relevant operator is admitted",
+    "kind": "FORMAL_TAU_ADIC_LOCAL_ANALYTIC_JET_ALGEBRA",
+    "locality_policy": "finite jet order at each coefficient; formal tau series allowed; inverse differential operators and nonlocal form factors excluded",
+    "parity_policy": "even and odd modules retained separately; a parity Ward identity may set the odd coupling to zero but is not built into the cohomology",
+    "regularity_scope": "formal coupling neighbourhood of the certified regular Bach-locus chart"
+  },
+  "input_pins": {
+    "extended_local_BV": {
+      "path": "quantum-weyl/anomalies/certificates/WESS_ZUMINO_EXTENDED_LOCAL_BV_COHOMOLOGY.json",
+      "sha256": "fa21fc6071ae52277d9953b68c47773686117f1426cc50899fdf8c124d2ba616",
+      "source_commit": "69f01998d255455aebe3bbcb0872ae82cc698621"
+    },
+    "local_anomaly_audit": {
+      "path": "quantum-weyl/local_bv/certificates/LOCAL_ANOMALY_ANTIFIELD_COMPLETION_AUDIT.json",
+      "sha256": "07bf332cf1bece92f8a041002f3c787fe7e85e798871e4878fbbc3cd7b20bd3b",
+      "source_commit": "c6d1c0bad4d7e609fccb8dc5581fab107a819d33"
+    }
+  },
+  "lifecycle": {
+    "Lorentzian_QME": "OPEN",
+    "constructed_all_loop_regulator": "OPEN",
+    "global_anomalies": "OPEN",
+    "residual_transfer": "NO_CERTIFIED_MAP",
+    "states_and_unitarity": "OPEN",
+    "strict_fixed_field_content": "OBSTRUCTED_AT_ONE_LOOP",
+    "tau_adic_all_loop_formal_local": "CONDITIONAL_QME_RESTORED_UNDER_DECLARED_QAP",
+    "tau_adic_one_loop_local_Euclidean": "QME_RESTORED"
+  },
+  "lifecycle_status": "QME_RESTORED",
+  "next_gate": "Construct an all-order subtraction/regulator scheme satisfying the declared tau-adic quantum action principle, or independently prove that a standard algebraic-renormalization scheme supplies it on the formal regular coupling chart.",
+  "provenance": {
+    "primary_references": [
+      "https://arxiv.org/abs/hep-th/0002245",
+      "https://arxiv.org/abs/hep-th/9405109",
+      "https://arxiv.org/abs/hep-th/9505173"
+    ],
+    "proof_type": "EXACT_COHOMOLOGY_MODULE_AND_FILTERED_ALGEBRAIC_RENORMALIZATION_INDUCTION",
+    "source_manifest": {
+      "../reports/tau-adic-all-loop-local-qme-stability.md": "9e05c2946ada6f1f951307875f1e520d2f2a9fb8c27dd26e735273274eaf7a5d",
+      "schema/tau-adic-all-loop-local-qme-stability-v1.schema.json": "9e9be846c101b029a51c35467aa54d75e1c3da62f3d544864ef1308aa9d968c5",
+      "tau_adic_all_loop_qme_stability.py": "5c0890df7326b5878e5dc31e43f142f890946ebe8b608560fbff5422bea0f884",
+      "tau_adic_all_loop_qme_stability_certificate.py": "1ca20a6a99b64977248b983eea26c7e673eae5169b6c35e320f7911481b15a6b",
+      "tests/test_tau_adic_all_loop_qme_stability.py": "a4d2b813973299d2885e05832a0268ea616e5d90aa93bc42298c2e3e1f0c1f3c",
+      "verify_tau_adic_all_loop_qme_stability.py": "9eadd3e18b4724cab27f85f86526af35f6a244ef8158f4fcc502d838bff88dba"
+    }
+  },
+  "quantum_action_principle": {
+    "assumptions": [
+      "after restoration through order n-1, the first order-n Slavnov/QME breaking is an integrated local ghost-one dimension-four functional in the declared completed algebra",
+      "the order-n breaking obeys the linearized Wess-Zumino consistency equation modulo d_h",
+      "subtractions and finite canonical transformations remain continuous in the formal filtration and preserve the declared local domain",
+      "the regular Koszul-Tate chart persists as a formal coupling deformation; singular strata are excluded"
+    ],
+    "not_supplied": [
+      "an all-order regularized functional integral",
+      "a regulator preserving the completed tau-adic domain",
+      "renormalized Lorentzian time-ordered products"
+    ],
+    "status": "DECLARED_HYPOTHESIS_NOT_CONSTRUCTED_REGULATOR"
+  },
+  "recursive_QME_induction": {
+    "base_order": "the imported coefficient-bearing one-loop Wess-Zumino counterterm restores the local Euclidean QME",
+    "closure": "the repair remains in the completed algebra and raises the filtration, so the induction repeats for every finite n",
+    "cohomology_step": "H14(s_ext,n-1|d_h)=0 implies A_n=s_ext,n-1 B_n+d_h C_n",
+    "induction_hypothesis": "Gamma through hbar^(n-1) satisfies the QME and has couplings and canonical coordinates in the stable H04 module",
+    "order_n_breaking": "A_n is local by the declared QAP and obeys s_ext,n-1 A_n+d_h a_n=0",
+    "repair": "Gamma_n -> Gamma_n-B_n removes the order-n breaking; its H04 ambiguity is absorbed by coupling redefinitions and s_ext-exact canonical transformations",
+    "verdict": "CONDITIONAL_ALL_ORDER_FORMAL_LOCAL_QME_RESTORABLE"
+  },
+  "result_id": "TAU_ADIC_ALL_LOOP_LOCAL_QME_STABILITY",
+  "result_state": "CONDITIONAL_FORMAL_ALL_LOOP_LOCAL_QME_RESTORATION_THEOREM",
+  "schema": "quantum-weyl-tau-adic-all-loop-local-qme-stability-v1",
+  "stable_H04_module": {
+    "canonical_directions": "all s_ext-exact ghost-zero local functionals, including positive-antifield canonical transformations",
+    "coupling_redefinitions": "arbitrary formal redefinitions of z_C,z_E,z_R2,z_P",
+    "engineering_dimension": 4,
+    "essential_running_couplings": [
+      "z_C * C(g_hat)^2",
+      "z_R2 * R(g_hat)^2"
+    ],
+    "even_free_generators": [
+      "C(g_hat)^2",
+      "E4(g_hat)",
+      "R(g_hat)^2"
+    ],
+    "form_degree": 4,
+    "ghost_number": 0,
+    "horizontal_exact_direction": "Box R(g_hat)=d_h(nabla R(g_hat))",
+    "independent_generator_count": {
+      "even": 3,
+      "odd": 1
+    },
+    "odd_free_generators": [
+      "C(g_hat) dual C(g_hat)"
+    ],
+    "positive_antifield_independent_classes": [],
+    "stability_status": "CLOSED_UNDER_RECURSIVE_LOCAL_COUNTERTERMS_IN_DECLARED_ALGEBRA",
+    "topological_or_theta_directions": [
+      "z_E * E4(g_hat)",
+      "z_P * C(g_hat) dual C(g_hat)"
+    ]
+  },
+  "stable_H14_module": {
+    "Weyl_and_mixed_quotient_dimension": 0,
+    "engineering_dimension": 4,
+    "even_quotient_dimension": 0,
+    "form_degree": 4,
+    "ghost_number": 1,
+    "imported_boundary_rank": 4,
+    "odd_quotient_dimension": 0,
+    "positive_antifield_independent_classes": [],
+    "pure_Diff_quotient_dimension": 0,
+    "status": "ZERO_IN_ALL_PARITIES_AND_ANTIFIELD_NUMBERS_IN_DECLARED_ALGEBRA"
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "schema_version": "science-forge-tier-receipt-v1",
+  "receipt_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V2_TIER_RECEIPT",
+  "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V2",
+  "created": "2026-08-15",
+  "repository_base_commit": "940f680da46eb1d4ebecf210472ee2192e90bccc",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "scope": "Reconcile the repaired standalone classical-import gate with the complete Berger H26/C26 exact carrier decision chain, preserve the V1 seven-by-eleven atlas, rank the next strict and neighboring-theory constructions without collapsing leverage and tractability, and expose the audited result in the existing offline researcher site.",
+  "tiers": {
+    "tier_0_compile_and_parse": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile foundations/build_lorentzian_weyl_bv_completion_atlas_v2.py foundations/check_lorentzian_weyl_bv_completion_atlas_v2.py foundations/verify_lorentzian_weyl_bv_completion_atlas_v2.py foundations/build_matrix_site_v2.py foundations/check_matrix_site_v2.py foundations/verify_matrix_site_v2.py",
+        "jq empty foundations/schema/foundational-lorentzian-weyl-bv-completion-atlas-v2.schema.json",
+        "deno check foundations/matrix_site_v2_assets/app-v2.js",
+        "git diff --check"
+      ],
+      "result": "Python, JSON Schema, and V2 JavaScript parse; the scoped diff has no whitespace errors."
+    },
+    "tier_1_completion_atlas": {
+      "status": "PASS",
+      "elapsed_seconds": 0.23,
+      "command": "completion-atlas V2 build --check, independent checker, schema/provenance verifier, and foundations.tests.test_lorentzian_weyl_bv_completion_atlas_v2",
+      "result": "7 branches x 11 stages = 77 cells; 11 ordered Berger decisions; 31 pinned inputs; 8/8 mutation and regression tests pass."
+    },
+    "tier_1_site": {
+      "status": "PASS",
+      "elapsed_seconds": 0.82,
+      "command": "matrix-site V2 build --check, independent checker, schema/provenance verifier, and foundations.tests.test_matrix_site",
+      "result": "The existing offline site exposes the Weyl BV routes tab, 77-cell table, five-route planning queue, eleven-step decision chain, and all 31 completion inputs in the content-addressed source bundle; 10/10 tests pass."
+    },
+    "tier_1_browser_smoke": {
+      "status": "PASS",
+      "command": "google-chrome --headless --no-sandbox --virtual-time-budget=1000 --window-size=1600,2400 --screenshot=/tmp/weyl-completion-site-tall.png file:///home/alstrup/area9/weyl-gravity/foundations/site/index.html#view=completion",
+      "result": "The completion permalink opens the correct tab; unrelated matrix controls are hidden; rotated eleven-gate headers, seven branch rows, status legend, and horizontal overflow are legible."
+    },
+    "tier_2_affected_site_consumers": {
+      "status": "PASS",
+      "elapsed_seconds": 1.47,
+      "command": "theory viability and theory assembly generator freshness/verifiers plus foundations.tests.test_matrix_site, foundations.tests.test_theory_viability, and foundations.tests.test_theory_assembly",
+      "result": "22/22 tests pass after the site canonical digest acquired the completion-atlas projection. No profile, assembly, evidence count, or empirical disposition was promoted."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No freeze, release, quantum lifecycle promotion, paper theorem promotion, or shared core-algebra change applies."
+    }
+  },
+  "counts": {
+    "branches": 7,
+    "stages": 11,
+    "classified_cells": 77,
+    "berger_decision_nodes": 11,
+    "ranked_routes": 5,
+    "pinned_inputs": 31,
+    "strict_gate_a_missing_payload_families": 6
+  },
+  "artifact_hashes": {
+    "foundations/build_lorentzian_weyl_bv_completion_atlas_v2.py": "dd4f28684b45a11d180080138ed086c676b7c3e43ad8ff1f8556d5876f8dcfbb",
+    "foundations/check_lorentzian_weyl_bv_completion_atlas_v2.py": "36dc2d688adaf56668f79b6a58e0026a391e0b8630b729ca8be4c3992f52bf3e",
+    "foundations/verify_lorentzian_weyl_bv_completion_atlas_v2.py": "28d7ca3d34493e50f633267517437610cb769712a74b376c23379ba17bbf5eff",
+    "foundations/schema/foundational-lorentzian-weyl-bv-completion-atlas-v2.schema.json": "72fe8c76a3d49efa5be09211d6e61c1be6208e7a306d1f584885ec622c828828",
+    "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V2.json": "f33324484ac15569be78b1a4ff1371c2b103165a91a284ac81383f68c74036f9",
+    "foundations/reports/lorentzian-weyl-bv-completion-atlas-v2.md": "76235d05c92552593751ffacf64fcc8685fb923d6b24efe7d6b441d5faedb1b0",
+    "foundations/site/manifest.json": "a4fd7331e11b44f75fcca8902ebded7c780b2d45fd12278a40cb7b4c7ec75a30",
+    "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json": "02e4129e0ca963a86d26e78abc7419c674a155135d13664dee7022e3d66cfa31",
+    "foundations/site/data.json": "84924fe9b1fe4288a4a105d5225c3d29d48b8178d2a3465f8c98575bf7b27c3b",
+    "foundations/site/index.html": "37e7f7aba73f3fdd68a1eb551cc736d594d0a67c1ebe93acb8494ffd402e677a"
+  },
+  "claim_boundary": "This classifies and navigates completion routes. It does not pass the strict classical freeze gate, construct a full Berger or strict BRST Hadamard state, establish a general non-cone 104-row no-go, construct Lorentzian time-ordered products, restore a Lorentzian QME, authorize residual transfer, or certify a complete Lorentzian quantum theory. The route order is a planning aid, not a theorem or probability ranking."
+}
