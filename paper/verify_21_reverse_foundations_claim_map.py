@@ -85,6 +85,7 @@ def main() -> int:
     site = json.loads((ROOT / data["authorities"]["explorer_snapshot"]["path"]).read_text())
     gr_cassini = json.loads((ROOT / data["authorities"]["gr_cassini_assembly"]["path"]).read_text())
     mannheim_ngc3198 = json.loads((ROOT / data["authorities"]["mannheim_ngc3198_assembly"]["path"]).read_text())
+    ngc3198_common_fit = json.loads((ROOT / data["authorities"]["ngc3198_common_fit_comparison"]["path"]).read_text())
     bt_euclidean = json.loads((ROOT / data["authorities"]["bt_euclidean_import"]["path"]).read_text())
     bt_free_obstruction = json.loads((ROOT / data["authorities"]["bt_free_reconstruction_obstruction"]["path"]).read_text())
     bt_interacting_os = json.loads((ROOT / data["authorities"]["bt_interacting_os_preflight"]["path"]).read_text())
@@ -152,6 +153,7 @@ def main() -> int:
         (12, "BT-INTERACTING-OS-PREFLIGHT"),
         (13, "BT-INTERACTING-RECONSTRUCTION-FRONTIER"),
         (14, "MANNHEIM-NGC3198-ASSEMBLY"),
+        (15, "NGC3198-COMMON-FIT-CONTROL"),
     ]}, "claim set drift")
 
     flags = data["claim_flags"]
@@ -162,6 +164,7 @@ def main() -> int:
     require(flags["model_scoped_end_to_end_assembly_generated"] is True, "model-scoped assembly flag is not certified")
     require(flags["bounded_empirical_comparison_registered"] is True, "bounded empirical comparison flag is not certified")
     require(flags["mannheim_ngc3198_mixed_assembly_registered"] is True, "Mannheim mixed assembly flag is not certified")
+    require(flags["ngc3198_common_fit_comparison_registered"] is True, "NGC 3198 common-fit flag is not certified")
     require(flags["bt_euclidean_finite_capabilities_imported"] is True, "BT finite import flag is not certified")
     require(flags["bt_euclidean_coarse_reproduction_separated"] is True, "BT numerical separation flag is not certified")
     require(flags["bt_free_os_obstruction_certified"] is True, "BT OS obstruction flag is not certified")
@@ -224,6 +227,10 @@ def main() -> int:
     require(atlas["mannheim_ngc3198_sparc_coarse_gate_passed"] is True, "Mannheim SPARC coarse RMS gate did not pass")
     require(atlas["mannheim_ngc3198_sparc_random_error_gate_passed"] is False, "Mannheim random-error gate incorrectly promoted")
     require(atlas["mannheim_ngc3198_empirically_supported"] is False, "Mannheim assembly incorrectly promoted to empirical support")
+    require(atlas["ngc3198_common_fit_models"] == len(ngc3198_common_fit["models"]) == 3, "common-fit family count drift")
+    require(atlas["ngc3198_common_fit_ranking_AICc"] == ngc3198_common_fit["ranking_by_AICc"], "common-fit AICc ranking drift")
+    require(atlas["ngc3198_common_fit_random_error_passes"] == ["GR_NFW_DARK_HALO"], "common-fit gate disposition drift")
+    require(atlas["ngc3198_common_fit_complete_theory_selected"] is False, "common-fit promoted to complete theory")
     require(abs(atlas["mannheim_ngc3198_sparc_rms_km_s"] - 4.5382719695501885) < 1e-12, "Mannheim SPARC RMS drift")
     require(abs(atlas["mannheim_ngc3198_sparc_reduced_chi2"] - 5.592211904260559) < 1e-12, "Mannheim SPARC chi-squared drift")
     standard = next(item for item in assembly_data["assemblies"] if item["id"] == "STANDARD_MIXED_REFERENCE")
@@ -251,6 +258,9 @@ def main() -> int:
     require("The seven typed stages of the Mannheim conformal-gravity NGC 3198 assembly" in appendix, "Mannheim stage table missing")
     require("No parameter is refitted" in appendix, "Mannheim no-refit boundary missing")
     require(r"reduced $\chi^2$" in appendix, "Mannheim failed random-error metric missing")
+    require("Common-protocol NGC 3198 control" in appendix, "common-fit appendix section missing")
+    require("GR plus NFW dark halo" in appendix, "common-fit NFW row missing")
+    require("AICc penalizes the two extra NFW parameters" in appendix, "common-fit penalty boundary missing")
     for stage in mannheim_ngc3198["stages"]:
         require(tex(stage["label"]) in appendix, f"Mannheim stage missing: {stage['id']}")
         require(scientific_tex(stage["establishes"]) in appendix, f"Mannheim stage boundary missing: {stage['id']}")

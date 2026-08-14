@@ -37,6 +37,7 @@ AUTHORITY_PATHS = {
     "theory_assembly": "foundations/results/FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1.json",
     "gr_cassini_assembly": "foundations/results/FOUNDATIONAL_GR_CASSINI_MODEL_ASSEMBLY_V1.json",
     "mannheim_ngc3198_assembly": "foundations/results/FOUNDATIONAL_MANNHEIM_NGC3198_MODEL_ASSEMBLY_V1.json",
+    "ngc3198_common_fit_comparison": "foundations/results/FOUNDATIONAL_NGC3198_COMMON_FIT_COMPARISON_V1.json",
     "explicit_krein": "foundations/results/FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1.json",
     "krein_state_selection": "foundations/results/FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1.json",
     "separable_cstar_state_chain": "foundations/results/FOUNDATIONAL_BT_SEPARABLE_STATE_CHAIN_ZF_V1.json",
@@ -85,6 +86,7 @@ def build() -> dict:
     site = loaded["explorer_snapshot"]
     gr_cassini = loaded["gr_cassini_assembly"]
     mannheim_ngc3198 = loaded["mannheim_ngc3198_assembly"]
+    ngc3198_common_fit = loaded["ngc3198_common_fit_comparison"]
     atlas_data = json.loads((ROOT / ATLAS_DATA).read_text())
     assembly_data = json.loads((ROOT / ASSEMBLY_DATA).read_text())
     evidence = atlas_data["evidence"]
@@ -189,6 +191,10 @@ def build() -> dict:
             "mannheim_ngc3198_sparc_coarse_gate_passed": mannheim_ngc3198["empirical_comparison_rail"]["coarse_rms_gate_passed"],
             "mannheim_ngc3198_sparc_random_error_gate_passed": mannheim_ngc3198["empirical_comparison_rail"]["random_error_reduced_chi2_gate_passed"],
             "mannheim_ngc3198_empirically_supported": mannheim_ngc3198["assembly_disposition"]["empirically_supported_within_declared_scope"],
+            "ngc3198_common_fit_models": len(ngc3198_common_fit["models"]),
+            "ngc3198_common_fit_ranking_AICc": ngc3198_common_fit["ranking_by_AICc"],
+            "ngc3198_common_fit_random_error_passes": [item["model_id"] for item in ngc3198_common_fit["models"] if item["random_error_gate"]["passed"]],
+            "ngc3198_common_fit_complete_theory_selected": ngc3198_common_fit["claim_flags"]["complete_theory_selected"],
             "bt_euclidean_direct_capabilities": sum(item["evidence_role"] == "DIRECT_LOCAL" for item in bt_euclidean["capability_decisions"]),
             "bt_euclidean_reconstruction_status": next(item["new_status"] for item in bt_euclidean["capability_decisions"] if item["coordinate"]["obligation"] == "RECONSTRUCTION_LIMITS"),
             "bt_euclidean_numerical_status": bt_euclidean["numerical_reproducibility_records"][0]["status"],
@@ -316,6 +322,13 @@ def build() -> dict:
                 "authorities": ["mannheim_ngc3198_assembly"],
                 "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
             },
+            {
+                "claim_id": "RF-15-NGC3198-COMMON-FIT-CONTROL",
+                "statement": "Under one bounded NGC 3198 protocol with common velocities and analytic baryonic geometry, GR plus NFW has the lowest AICc and is the only tested family passing the declared random-error gate; this does not select a complete theory or generalize beyond one galaxy.",
+                "status": "BOUNDED_SINGLE_GALAXY_COMMON_PROTOCOL_MODEL_COMPARISON",
+                "authorities": ["ngc3198_common_fit_comparison"],
+                "dependency_tags": ["LOCAL-ALGEBRAIC"],
+            },
         ],
         "literature_scope": [
             {"source_id": "simpson-2009", "url": "https://doi.org/10.1017/CBO9780511581007", "role": "reverse mathematics and subsystem calibration"},
@@ -348,6 +361,7 @@ def build() -> dict:
             "model_scoped_end_to_end_assembly_generated": True,
             "bounded_empirical_comparison_registered": True,
             "mannheim_ngc3198_mixed_assembly_registered": True,
+            "ngc3198_common_fit_comparison_registered": True,
             "bt_euclidean_finite_capabilities_imported": True,
             "bt_euclidean_coarse_reproduction_separated": True,
             "bt_free_os_obstruction_certified": True,
@@ -378,6 +392,7 @@ def build() -> dict:
             "promotion of any quantum lifecycle state",
             "reproduction of the Cassini raw-data reduction, likelihood, covariance analysis, or systematic-error budget",
             "a complete standard-GR theory or empirical support for a Weyl-gravity model",
+            "a population-level model ranking or complete-theory selection from the NGC 3198 common-fit control",
             "a continuum, empirical, Born-rule, or Lorentzian promotion from the BT Euclidean finite lattice",
             "reflection-positivity failure at every nonzero coupling or in a continuum limit",
         ],
