@@ -1,0 +1,147 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-lambda04-os-kernel-obstruction-v1.schema.json",
+  "title": "BT lambda=0.4 Euclidean OS kernel obstruction certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "certificate",
+    "schema_version",
+    "created",
+    "dependency_tags",
+    "lifecycle_state",
+    "result_kind",
+    "question",
+    "answer",
+    "finite_volume_kernel_obstruction",
+    "disposition",
+    "missing_object_ledger",
+    "next_gate",
+    "does_not_establish",
+    "provenance",
+    "verification_commands",
+    "tier_receipt",
+    "checks",
+    "report",
+    "schema"
+  ],
+  "properties": {
+    "certificate": {
+      "const": "REVERSE_PHYSICS_BT_EUCLIDEAN_LAMBDA04_OS_KERNEL_OBSTRUCTION_V1"
+    },
+    "schema_version": {
+      "const": "reverse-physics-bt-euclidean-lambda04-os-kernel-obstruction-v1"
+    },
+    "created": {"const": "2026-08-14"},
+    "dependency_tags": {
+      "type": "array",
+      "prefixItems": [
+        {"const": "LOCAL-ALGEBRAIC"},
+        {"const": "EUCLIDEAN-SPECTRAL"}
+      ],
+      "items": false
+    },
+    "lifecycle_state": {"const": "OBSTRUCTION_PROVED"},
+    "result_kind": {"type": "string"},
+    "question": {"type": "string"},
+    "answer": {"type": "string"},
+    "finite_volume_kernel_obstruction": {
+      "type": "object",
+      "required": [
+        "coupling",
+        "lattice",
+        "zero_mode_constraint",
+        "reflection",
+        "positive_time_half",
+        "half_centers",
+        "actions_per_spatial_site",
+        "full_actions",
+        "log_kernel_convexity_gap_full_lattice",
+        "density_kernel",
+        "determinant_identity",
+        "bump_cylinder_lemma",
+        "disposition"
+      ]
+    },
+    "disposition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ordinary_os_reflection_positivity_at_lambda_zero",
+        "ordinary_os_reflection_positivity_near_lambda_zero",
+        "ordinary_os_reflection_positivity_at_lambda_0p4",
+        "lambda_0p4_numerical_preflight_role",
+        "ordinary_os_reflection_positivity_at_every_nonzero_coupling",
+        "krein_compatible_reconstruction",
+        "interacting_uniform_estimate",
+        "continuum_limit",
+        "born_rule",
+        "lorentzian_transfer"
+      ],
+      "properties": {
+        "ordinary_os_reflection_positivity_at_lambda_zero": {
+          "const": "OBSTRUCTED"
+        },
+        "ordinary_os_reflection_positivity_near_lambda_zero": {
+          "const": "OBSTRUCTED_ON_SOME_OPEN_INTERVAL"
+        },
+        "ordinary_os_reflection_positivity_at_lambda_0p4": {
+          "const": "OBSTRUCTED"
+        },
+        "lambda_0p4_numerical_preflight_role": {
+          "const": "SUPPORTING_ONLY"
+        },
+        "ordinary_os_reflection_positivity_at_every_nonzero_coupling": {
+          "const": "NOT_ESTABLISHED"
+        },
+        "krein_compatible_reconstruction": {"const": "NOT_ASSESSED"},
+        "interacting_uniform_estimate": {"const": "OPEN"},
+        "continuum_limit": {"const": "NOT_ESTABLISHED"},
+        "born_rule": {"const": "NOT_ESTABLISHED"},
+        "lorentzian_transfer": {"const": "NOT_ESTABLISHED"}
+      }
+    },
+    "missing_object_ledger": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string"}
+    },
+    "next_gate": {"type": "string"},
+    "does_not_establish": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string"}
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["repository_base_commit", "inputs", "arithmetic"]
+    },
+    "verification_commands": {
+      "type": "array",
+      "minItems": 3,
+      "items": {"type": "string"}
+    },
+    "tier_receipt": {"type": "object"},
+    "checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"type": "boolean"},
+        "passed": {"type": "integer"},
+        "total": {"type": "integer"},
+        "failures": {"type": "array", "items": {"type": "string"}},
+        "details": {
+          "type": "object",
+          "additionalProperties": {"type": "boolean"}
+        }
+      }
+    },
+    "report": {
+      "const": "reverse_physics/reports/bt-euclidean-lambda04-os-kernel-obstruction.md"
+    },
+    "schema": {
+      "const": "reverse_physics/schema/reverse-physics-bt-euclidean-lambda04-os-kernel-obstruction-v1.schema.json"
+    }
+  }
+}
