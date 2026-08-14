@@ -260,6 +260,22 @@ python3 foundations/build_cylinder_wave_strength_ladder_v2.py --check
 python3 foundations/verify_cylinder_wave_strength_ladder_v2.py
 ```
 
+The follow-on
+[`coded observable reconstruction`](reports/coded-wave-observable-reconstruction-v1.md)
+names a rational periodic detector and constructs finite rational dyadic-time
+interpolants for three declared rational wave data.  Over `RCA_0` they converge
+uniformly on every rational bounded time interval with the explicit,
+data-dependent cutoff `N(k)=k+ell(K)+1`; all fixed-code arithmetic is primitive
+recursive.  This reconstructs one bounded smeared observable, not the full
+field or causal support:
+
+```bash
+python3 foundations/build_coded_wave_observable_reconstruction.py --check
+python3 foundations/check_coded_wave_observable_reconstruction.py
+python3 foundations/verify_coded_wave_observable_reconstruction.py
+python3 -m unittest foundations.tests.test_coded_wave_observable_reconstruction
+```
+
 The generated
 [`static matrix explorer`](site/index.html) turns the complete refined surface
 into a browser-based research instrument. It displays all 576 coordinates as
@@ -554,6 +570,12 @@ local results and the reconstruction coordinate receives supporting evidence
 without promotion. It adds the carrier non-identity on a separate interface
 ledger rather than treating it as one of the seven theory-composition joins.
 
+The append-only [`cube v11`](reports/refined-intersection-cube-v11.md) imports
+the coded observable theorem into exactly two weak-arithmetic Hilbert/operator
+coordinates.  Kinematics/observables and reconstruction/limits become direct
+local results in that declared scalar-wave scope; the other 574 cells and all
+interface ledgers remain byte-preserved.
+
 ```bash
 python3 foundations/build_full_surface_gap_audit.py --check
 python3 foundations/check_full_surface_gap_audit.py
@@ -564,9 +586,13 @@ python3 foundations/verify_refined_intersection_cube_v9.py
 python3 foundations/refine_intersection_cube_v10.py --check
 python3 foundations/check_refined_intersection_cube_v10.py
 python3 foundations/verify_refined_intersection_cube_v10.py
+python3 foundations/refine_intersection_cube_v11.py --check
+python3 foundations/check_refined_intersection_cube_v11.py
+python3 foundations/verify_refined_intersection_cube_v11.py
 python3 -m unittest foundations.tests.test_full_surface_gap_audit \
   foundations.tests.test_refined_intersection_cube_v9 \
-  foundations.tests.test_refined_intersection_cube_v10
+  foundations.tests.test_refined_intersection_cube_v10 \
+  foundations.tests.test_refined_intersection_cube_v11
 ```
 
 The append-only

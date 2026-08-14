@@ -1,0 +1,93 @@
+{
+  "schema_version": "science-forge-tier-receipt-v1",
+  "receipt_id": "FOUNDATIONAL_CODED_WAVE_OBSERVABLE_RECONSTRUCTION_V1_TIER_RECEIPT",
+  "created": "2026-08-14",
+  "repository_base_commit": "af7d4974",
+  "integration_head_observed": "8a8d19d857459bff553d86eda68116b27a55f85a",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "scope": "For three declared rational coded-circle initial-data fixtures and one declared tent detector, construct exact finite rational time approximants and prove uniform convergence on every bounded time interval with the explicit cutoff N(k)=k+ell(K)+1 over RCA_0; refine exactly two cube cells, regenerate the canonical explorer, and repair the content-addressed Bateman provenance chain exposed by the complete foundations suite.",
+  "tiers": {
+    "tier_0_compile": {
+      "status": "PASS",
+      "command": "python3 -m py_compile foundations/build_coded_wave_observable_reconstruction.py foundations/check_coded_wave_observable_reconstruction.py foundations/verify_coded_wave_observable_reconstruction.py foundations/refine_intersection_cube_v11.py foundations/check_refined_intersection_cube_v11.py foundations/verify_refined_intersection_cube_v11.py foundations/build_finite_operator_ten_cell_closure.py foundations/build_finite_brst_twenty_cell_closure.py foundations/build_matrix_site_v2.py foundations/check_matrix_site_v2.py foundations/verify_matrix_site_v2.py",
+      "elapsed_seconds": 0.07
+    },
+    "tier_0_json": {
+      "status": "PASS",
+      "command": "parse every foundations/**/*.json with json.loads",
+      "result": "219 foundations JSON files parsed after adding this receipt."
+    },
+    "tier_0_diff_check": {
+      "status": "PASS",
+      "command": "git diff --check -- foundations"
+    },
+    "tier_1_reconstruction": {
+      "status": "PASS",
+      "command": "python3 foundations/build_coded_wave_observable_reconstruction.py --check && python3 foundations/check_coded_wave_observable_reconstruction.py && python3 foundations/verify_coded_wave_observable_reconstruction.py && python3 -m unittest foundations.tests.test_coded_wave_observable_reconstruction",
+      "result": "Three exact rational fixtures, 18 cutoff/hash checks, 1,568 exact fine-grid stress points, eight mutation tests, independent digest 0b63ce1d2b5262c946917ac8a5e4eb3003876d1bfa689946f987d92b67fa8cb8."
+    },
+    "tier_1_cube": {
+      "status": "PASS",
+      "command": "python3 foundations/refine_intersection_cube_v11.py --check && python3 foundations/check_refined_intersection_cube_v11.py && python3 foundations/verify_refined_intersection_cube_v11.py && python3 -m unittest foundations.tests.test_refined_intersection_cube_v11",
+      "result": "All 576 v10 coordinates preserved except the two declared weak-arithmetic/Hilbert cells; six mutation and preservation tests pass; independent digest 167aaa3b8ad7ec6f5d59ee0c8fd459a9c47e06d2b282b0877e7f35d092083cf0."
+    },
+    "tier_1_browser_smoke": {
+      "status": "PASS",
+      "command": "serve foundations/site with python3 -m http.server and open #cell=WEAK_ARITHMETIC%7CHILBERT_OPERATOR%7CRECONSTRUCTION_LIMITS in headless Chromium",
+      "result": "The existing explorer renders the promoted Local result, named RCA_0 base, explicit cutoff, claim boundary, and linked evidence without layout regression."
+    },
+    "tier_2_affected_certificate_chain": {
+      "status": "PASS",
+      "command": "verify the coded polygonal source; reconstruction theorem; Bateman corner/Born provenance repair; finite-operator and finite-BRST closures; cube v5 through v11 with the intervening full-surface gap audit; matrix explorer; theory viability; and theory assembly",
+      "result": "Every generator is current and every independent checker/verifier passes. The explorer contains 576 classified cells, 76 evidence records, zero migration-pending cells, and the expected v11 status counts."
+    },
+    "tier_2_complete_foundations_suite": {
+      "status": "PASS",
+      "command": "python3 -m unittest discover -s foundations/tests -p 'test_*.py'",
+      "elapsed_seconds": 60.56,
+      "result": "374/374 tests pass."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No classical or quantum freeze/tag, paper-theorem promotion, quantum lifecycle promotion, shared classical core-algebra change, release preparation, or explicit full-repository-suite request applies. The complete foundations suite and full transitive foundations certificate chain were run."
+    }
+  },
+  "observed_and_repaired": [
+    {
+      "status": "FAIL_THEN_REPAIRED",
+      "observation": "The first complete-foundations run refused the pre-existing BT corner/Born result because notes/bateman-turok-embedding.md had changed on master after its provenance pin was issued.",
+      "repair": "Regenerated the designed narrative-note provenance audit, updated the two independent checker digests whose payloads include source hashes, and propagated those hashes through finite operator, finite BRST, gap-audit, cube, viability, assembly, and site artifacts.",
+      "boundary": "No Bateman mathematical formula, probability, cell grade, interface status, or scientific claim changed; this was a content-addressed provenance repair. The final complete suite is the recorded PASS."
+    }
+  ],
+  "artifact_hashes": {
+    "foundations/build_coded_wave_observable_reconstruction.py": "756b9e36afdd7bc7b1f3836653bf6067d432660c50fb6a2a2d080db9598decec",
+    "foundations/check_coded_wave_observable_reconstruction.py": "ead4791ebfee984541fab7df1311da881d8cf17e021ac6a18588a2a1ff43eab4",
+    "foundations/verify_coded_wave_observable_reconstruction.py": "58ee90f2f8f6d1b7745aa19fac86f5a58c69dd8b65837c6d4aa717f175da5128",
+    "foundations/results/FOUNDATIONAL_CODED_WAVE_OBSERVABLE_RECONSTRUCTION_V1.json": "cf90e90abb824e19a2a0e7caf2d32c4772f408a70107e4c9ea6013edc0e8e215",
+    "foundations/reports/coded-wave-observable-reconstruction-v1.md": "936db3b00a38a51e1cca26703e7a99bdb3f576fffc16453c8e99cab87289729b",
+    "foundations/schema/foundational-coded-wave-observable-reconstruction-v1.schema.json": "07dbedf82b135b18b3164d16a77b788609f573cd29e4ad17658673c0d41494e3",
+    "foundations/tests/test_coded_wave_observable_reconstruction.py": "29459cc2666ebd1b24c7f19d0720a3117b28d4c559b3bd108aad0e86a8075bd1",
+    "foundations/refine_intersection_cube_v11.py": "a224081cabeabfae0f77e54e7a690dc1cf059ab899ade89a5548154a0f03b8e2",
+    "foundations/check_refined_intersection_cube_v11.py": "776d32a8ea73e3b5ec06fc5d3663f6ac77f7f0db17614d4773aa765991364511",
+    "foundations/verify_refined_intersection_cube_v11.py": "9a61d38fd6a59ecde2a5d593d397945649cc4e25c73fd10cea143f36a723ea12",
+    "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V11.json": "8f40b641b5acc9d85dd59b02719bd4111ceeb078d2bc00456429148dc47a9ef9",
+    "foundations/site/data.json": "bdd74ad5edb31df891704b25667e58bdcf4eb8d798afa039b607677843f9ff38",
+    "foundations/site/manifest.json": "9b0244645fdfaf1251f67f0d8f3ae4284a3b755aba84d9d1f721600ca5fbcb17",
+    "foundations/results/FOUNDATIONAL_BT_CORNER_BORN_INTERFACE_V1.json": "af3fb7837b0ccfe82c2ba90b288065d422105989455def03e263e54fa84dc643",
+    "foundations/results/FOUNDATIONAL_FINITE_OPERATOR_TEN_CELL_CLOSURE_V1.json": "650cff5c0bbf1620566dfad24bfd7200c8ff35e9a238c0c7ef172fab9c8b0e41",
+    "foundations/results/FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1.json": "6a71309a3ac823a31ed836e5ca4177229a631b5519cced95088b1f9d7fe8d016",
+    "foundations/results/FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1.json": "1487d2b80babf29f1729d80b98a1275a5275881e5a216c77d0695a9cebec6d0a"
+  },
+  "unresolved": [
+    "RCA_0 is a sufficient named upper bound, not a necessity or weakest-base reversal.",
+    "The theorem reconstructs one declared smeared observable, not the full state, field, or a separating observable algebra.",
+    "No localized spacetime distribution, finite-propagation theorem, advanced/retarded Green operator, curved-background, metric-BV, or interacting reconstruction is certified.",
+    "No empirical calibration or observational validation follows from the exact detector fixture.",
+    "The introduction paper was not edited in this commit because substantial concurrent paper and Bateman work was visible in the shared tree; the result and report are bundled into the canonical researcher-facing site instead."
+  ],
+  "claim_boundary": "This receipt certifies an exact representation-sensitive observable reconstruction theorem for declared rational fixtures over RCA_0 and two bounded atlas promotions. It establishes no weakest base, full-state reconstruction, new LORENTZIAN-CAUSAL result, empirical fit, or complete physical theory."
+}

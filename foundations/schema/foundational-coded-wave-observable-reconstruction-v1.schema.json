@@ -1,0 +1,116 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "result_id",
+    "result_kind",
+    "lifecycle",
+    "created",
+    "repository_base_commit",
+    "dependency_tags",
+    "theorem",
+    "declared_observable",
+    "finite_approximant",
+    "cutoff_theorem",
+    "formal_proof",
+    "fixtures",
+    "provenance",
+    "independent_checker",
+    "claim_flags",
+    "does_not_establish",
+    "next_gate",
+    "human_report"
+  ],
+  "properties": {
+    "schema_version": {"const": "foundational-coded-wave-observable-reconstruction-v1"},
+    "result_id": {"const": "FOUNDATIONAL_CODED_WAVE_OBSERVABLE_RECONSTRUCTION_V1"},
+    "result_kind": {"const": "EXPLICIT_UNIFORM_OBSERVABLE_RECONSTRUCTION"},
+    "lifecycle": {"const": "CERTIFIED"},
+    "dependency_tags": {
+      "type": "array",
+      "uniqueItems": true,
+      "allOf": [
+        {"contains": {"const": "LOCAL-ALGEBRAIC"}},
+        {"contains": {"const": "REDUCED-MODE"}}
+      ]
+    },
+    "theorem": {"type": "string", "minLength": 200},
+    "declared_observable": {
+      "type": "object",
+      "required": ["id", "test_breaks", "test_values", "test_l2_squared", "formula", "operational_reading"],
+      "properties": {
+        "id": {"const": "PERIODIC_TENT_SMEARED_CHIRAL_AMPLITUDE"},
+        "test_breaks": {"type": "array", "minItems": 3, "maxItems": 3},
+        "test_values": {"type": "array", "minItems": 3, "maxItems": 3}
+      }
+    },
+    "finite_approximant": {
+      "type": "object",
+      "required": ["definition", "finiteness", "time_domain"]
+    },
+    "cutoff_theorem": {
+      "type": "object",
+      "required": ["input", "data_constant", "binary_ceiling", "cutoff", "uniform_bound", "logical_strength"]
+    },
+    "formal_proof": {"type": "array", "minItems": 7, "maxItems": 7},
+    "fixtures": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "required": ["id", "source_state", "component_l1_norms", "test_lipschitz_constant", "observable_lipschitz_constant", "binary_ceiling_exponent", "cutoff_formula", "anchor_values", "approximants"],
+        "properties": {
+          "approximants": {
+            "type": "array",
+            "minItems": 6,
+            "maxItems": 6,
+            "items": {
+              "type": "object",
+              "required": ["precision", "cutoff_index", "grid_intervals", "sample_count", "uniform_error_bound", "requested_tolerance", "sample_sha256"]
+            }
+          }
+        }
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": [
+        "declared_rational_initial_data",
+        "declared_bounded_linear_observable",
+        "finite_rational_approximants_constructed",
+        "uniform_bounded_time_convergence_proved",
+        "explicit_cutoff_function_proved",
+        "rca0_upper_bound_proved",
+        "fixed_fixture_arithmetic_primitive_recursive",
+        "weakest_base_proved",
+        "full_state_reconstruction_proved",
+        "localized_spacetime_distribution_proved",
+        "causal_support_proved",
+        "green_operator_constructed",
+        "empirical_calibration_proved",
+        "new_lorentzian_claim"
+      ],
+      "properties": {
+        "declared_rational_initial_data": {"const": true},
+        "declared_bounded_linear_observable": {"const": true},
+        "finite_rational_approximants_constructed": {"const": true},
+        "uniform_bounded_time_convergence_proved": {"const": true},
+        "explicit_cutoff_function_proved": {"const": true},
+        "rca0_upper_bound_proved": {"const": true},
+        "fixed_fixture_arithmetic_primitive_recursive": {"const": true},
+        "weakest_base_proved": {"const": false},
+        "full_state_reconstruction_proved": {"const": false},
+        "localized_spacetime_distribution_proved": {"const": false},
+        "causal_support_proved": {"const": false},
+        "green_operator_constructed": {"const": false},
+        "empirical_calibration_proved": {"const": false},
+        "new_lorentzian_claim": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "does_not_establish": {"type": "array", "minItems": 9},
+    "human_report": {"const": "foundations/reports/coded-wave-observable-reconstruction-v1.md"}
+  }
+}

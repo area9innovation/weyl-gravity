@@ -1,0 +1,798 @@
+{
+  "schema_version": "foundational-coded-wave-observable-reconstruction-v1",
+  "result_id": "FOUNDATIONAL_CODED_WAVE_OBSERVABLE_RECONSTRUCTION_V1",
+  "result_kind": "EXPLICIT_UNIFORM_OBSERVABLE_RECONSTRUCTION",
+  "lifecycle": "CERTIFIED",
+  "created": "2026-08-14",
+  "repository_base_commit": "af7d497462698fc5c612d8a68bf84f9b72722c02",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "theorem": "RCA_0 proves that, for each declared mean-zero rational step-pair p and the declared rational periodic polygonal detector h, the finite dyadic rational polygonal approximants A_N(k) converge uniformly to the smeared chiral observable O_h on every rational bounded time interval. The explicit cutoff is N(k)=k+ell(K)+1, where K=Lip(h)(norm_1(a)+norm_1(b)) and ell(K) is the least natural ell with K<=2^ell; the certified error is at most K 2^-N(k)<=2^-(k+1)<2^-k.",
+  "declared_observable": {
+    "id": "PERIODIC_TENT_SMEARED_CHIRAL_AMPLITUDE",
+    "test_breaks": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "test_values": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "test_l2_squared": [
+      1,
+      3
+    ],
+    "formula": "O_h(t;p)=integral_0^1 h(x)[T_t a(x)+T_-t b(x)] dx",
+    "operational_reading": "A bounded spatially smeared amplitude of the two chiral wave components; h is a declared detector profile, not a probability rule."
+  },
+  "finite_approximant": {
+    "definition": "A_m is the periodic piecewise-linear interpolation in time through the exact rational samples (j/2^m,O_h(j/2^m;p)) for 0<=j<=2^m.",
+    "finiteness": "A_m contains 2^m intervals and 2^m+1 rational sample values; no completed function or numerical oracle is stored in a finite approximant.",
+    "time_domain": "The observable and every approximant are one-periodic. Therefore the global circle bound restricts to every interval [-T,T] for positive rational T without changing the cutoff."
+  },
+  "cutoff_theorem": {
+    "input": "precision k in N and the exact rational finite codes for p and h",
+    "data_constant": "K=Lip(h)(norm_1(a)+norm_1(b))",
+    "binary_ceiling": "ell(K)=least ell in N with K<=2^ell; ell(0)=0",
+    "cutoff": "N(k)=k+ell(K)+1",
+    "uniform_bound": "sup_{|t|<=T}|A_N(k)(t)-O_h(t;p)|<=K*2^-N(k)<=2^-(k+1)<2^-k for every positive rational T",
+    "logical_strength": "The finite codes, K, ell(K), samples, and cutoff are primitive recursive; RCA_0 supplies the coded real-time extension and the uniform-limit statement."
+  },
+  "formal_proof": [
+    {
+      "id": "EXACT_RATIONAL_SAMPLES",
+      "base": "PRA",
+      "statement": "For a rational step-pair p, rational periodic polygonal detector h, and dyadic q, the translated partition and O_h(q;p) are finite rational data computable by bounded exact arithmetic."
+    },
+    {
+      "id": "BOUNDED_LINEAR_OBSERVABLE",
+      "base": "RCA_0",
+      "depends_on": [
+        "EXACT_RATIONAL_SAMPLES"
+      ],
+      "statement": "Cauchy-Schwarz gives |O_h(t;p)-O_h(t;p')|^2<=2 norm_2(h)^2 d(p,p')^2. Thus the rational smeared functional is linear and extends uniquely and boundedly to the coded energy completion."
+    },
+    {
+      "id": "OBSERVABLE_LIPSCHITZ_BOUND",
+      "base": "PRA",
+      "depends_on": [
+        "EXACT_RATIONAL_SAMPLES"
+      ],
+      "statement": "With K=Lip(h)(norm_1(a)+norm_1(b)), change of variables and the polygonal Lipschitz inequality give |O_h(t;p)-O_h(s;p)|<=K d_circle(t,s) first for rational s,t."
+    },
+    {
+      "id": "FINITE_DYADIC_INTERPOLANT",
+      "base": "PRA",
+      "depends_on": [
+        "EXACT_RATIONAL_SAMPLES"
+      ],
+      "statement": "A_m is the periodic rational polygonal interpolation of the 2^m+1 exact samples O_h(j/2^m;p); it is a finite code."
+    },
+    {
+      "id": "UNIFORM_INTERPOLATION_BOUND",
+      "base": "RCA_0",
+      "depends_on": [
+        "OBSERVABLE_LIPSCHITZ_BOUND",
+        "FINITE_DYADIC_INTERPOLANT"
+      ],
+      "statement": "The rational Lipschitz map has a unique real-time extension, and every t between adjacent dyadic nodes satisfies |A_m(t)-O_h(t;p)|<=K 2^-m; hence the same bound holds uniformly on every coded bounded interval."
+    },
+    {
+      "id": "EXPLICIT_CUTOFF",
+      "base": "PRA",
+      "depends_on": [
+        "OBSERVABLE_LIPSCHITZ_BOUND"
+      ],
+      "statement": "Let ell(K) be the least natural ell with K<=2^ell, taking ell(0)=0. The primitive-recursive cutoff N(k)=k+ell(K)+1 gives K 2^-N(k)<=2^-(k+1)<2^-k."
+    },
+    {
+      "id": "UNIFORM_RECONSTRUCTION",
+      "base": "RCA_0",
+      "depends_on": [
+        "BOUNDED_LINEAR_OBSERVABLE",
+        "UNIFORM_INTERPOLATION_BOUND",
+        "EXPLICIT_CUTOFF"
+      ],
+      "statement": "The subsequence A_N(k) is a prescribed-rate uniform Cauchy name for O_h on the coded circle and therefore converges uniformly on every rational bounded time interval with the displayed cutoff."
+    }
+  ],
+  "fixtures": [
+    {
+      "id": "TRIANGLE_RIGHT",
+      "source_state": {
+        "breaks": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "right": [
+          [
+            1,
+            1
+          ],
+          [
+            -1,
+            1
+          ]
+        ],
+        "left": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ]
+        ]
+      },
+      "component_l1_norms": [
+        [
+          1,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "test_lipschitz_constant": [
+        2,
+        1
+      ],
+      "observable_lipschitz_constant": [
+        2,
+        1
+      ],
+      "binary_ceiling_exponent": 1,
+      "cutoff_formula": "N(k)=k+2",
+      "anchor_values": [
+        {
+          "phase": [
+            0,
+            1
+          ],
+          "value": [
+            0,
+            1
+          ]
+        },
+        {
+          "phase": [
+            1,
+            4
+          ],
+          "value": [
+            1,
+            4
+          ]
+        },
+        {
+          "phase": [
+            1,
+            2
+          ],
+          "value": [
+            0,
+            1
+          ]
+        },
+        {
+          "phase": [
+            3,
+            4
+          ],
+          "value": [
+            -1,
+            4
+          ]
+        }
+      ],
+      "approximants": [
+        {
+          "precision": 1,
+          "cutoff_index": 3,
+          "grid_intervals": 8,
+          "sample_count": 9,
+          "uniform_error_bound": [
+            1,
+            4
+          ],
+          "requested_tolerance": [
+            1,
+            2
+          ],
+          "sample_sha256": "87bc7c80107e640cad2c237360522400716ebb60cb37b3a46d3e4f505c196d97"
+        },
+        {
+          "precision": 2,
+          "cutoff_index": 4,
+          "grid_intervals": 16,
+          "sample_count": 17,
+          "uniform_error_bound": [
+            1,
+            8
+          ],
+          "requested_tolerance": [
+            1,
+            4
+          ],
+          "sample_sha256": "2a95ad32b12d7bbd40824222944e9fdf964b8391947b2844b5ef8966085a2103"
+        },
+        {
+          "precision": 3,
+          "cutoff_index": 5,
+          "grid_intervals": 32,
+          "sample_count": 33,
+          "uniform_error_bound": [
+            1,
+            16
+          ],
+          "requested_tolerance": [
+            1,
+            8
+          ],
+          "sample_sha256": "44cf190fcba5139b379a9556df63edb57b04e3423414de1b1c00715675015fc8"
+        },
+        {
+          "precision": 4,
+          "cutoff_index": 6,
+          "grid_intervals": 64,
+          "sample_count": 65,
+          "uniform_error_bound": [
+            1,
+            32
+          ],
+          "requested_tolerance": [
+            1,
+            16
+          ],
+          "sample_sha256": "8d54585abaf5e101a255c2ae58dc827a6c43b7598f3993e33f9619f7c8361c9a"
+        },
+        {
+          "precision": 5,
+          "cutoff_index": 7,
+          "grid_intervals": 128,
+          "sample_count": 129,
+          "uniform_error_bound": [
+            1,
+            64
+          ],
+          "requested_tolerance": [
+            1,
+            32
+          ],
+          "sample_sha256": "88048751c0d710a5d93beb14f9d6d6cb189a642d2b04ee869212dcbfe0f9ea8a"
+        },
+        {
+          "precision": 6,
+          "cutoff_index": 8,
+          "grid_intervals": 256,
+          "sample_count": 257,
+          "uniform_error_bound": [
+            1,
+            128
+          ],
+          "requested_tolerance": [
+            1,
+            64
+          ],
+          "sample_sha256": "6e6ebb38c8e1e4e7ea5a6592740c12e037938eb251b9ccb51a8e93c10c464629"
+        }
+      ]
+    },
+    {
+      "id": "QUARTER_MIXED",
+      "source_state": {
+        "breaks": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "right": [
+          [
+            2,
+            1
+          ],
+          [
+            -1,
+            1
+          ],
+          [
+            -1,
+            1
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "left": [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            -1,
+            1
+          ],
+          [
+            -1,
+            1
+          ]
+        ]
+      },
+      "component_l1_norms": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "test_lipschitz_constant": [
+        2,
+        1
+      ],
+      "observable_lipschitz_constant": [
+        4,
+        1
+      ],
+      "binary_ceiling_exponent": 2,
+      "cutoff_formula": "N(k)=k+3",
+      "anchor_values": [
+        {
+          "phase": [
+            0,
+            1
+          ],
+          "value": [
+            -1,
+            4
+          ]
+        },
+        {
+          "phase": [
+            1,
+            4
+          ],
+          "value": [
+            -1,
+            8
+          ]
+        },
+        {
+          "phase": [
+            1,
+            2
+          ],
+          "value": [
+            1,
+            4
+          ]
+        },
+        {
+          "phase": [
+            3,
+            4
+          ],
+          "value": [
+            1,
+            8
+          ]
+        }
+      ],
+      "approximants": [
+        {
+          "precision": 1,
+          "cutoff_index": 4,
+          "grid_intervals": 16,
+          "sample_count": 17,
+          "uniform_error_bound": [
+            1,
+            4
+          ],
+          "requested_tolerance": [
+            1,
+            2
+          ],
+          "sample_sha256": "14a8dae7c28615d721c28bbe62a5dc4d71d47b7d6767e02336dc7c4cba6271d1"
+        },
+        {
+          "precision": 2,
+          "cutoff_index": 5,
+          "grid_intervals": 32,
+          "sample_count": 33,
+          "uniform_error_bound": [
+            1,
+            8
+          ],
+          "requested_tolerance": [
+            1,
+            4
+          ],
+          "sample_sha256": "03d8c32556f2ca930e22c2df4bdbe5672e48b5625a7f82e2e8ccc5a0e09a56cc"
+        },
+        {
+          "precision": 3,
+          "cutoff_index": 6,
+          "grid_intervals": 64,
+          "sample_count": 65,
+          "uniform_error_bound": [
+            1,
+            16
+          ],
+          "requested_tolerance": [
+            1,
+            8
+          ],
+          "sample_sha256": "b33ef815cce886dabbf952f340eeca5a3c35829a1fd8637b77a38a29f7879dca"
+        },
+        {
+          "precision": 4,
+          "cutoff_index": 7,
+          "grid_intervals": 128,
+          "sample_count": 129,
+          "uniform_error_bound": [
+            1,
+            32
+          ],
+          "requested_tolerance": [
+            1,
+            16
+          ],
+          "sample_sha256": "71600b058bc1fe5572a96f3465c299e098dbb2cf3927553954fc5515e366bffc"
+        },
+        {
+          "precision": 5,
+          "cutoff_index": 8,
+          "grid_intervals": 256,
+          "sample_count": 257,
+          "uniform_error_bound": [
+            1,
+            64
+          ],
+          "requested_tolerance": [
+            1,
+            32
+          ],
+          "sample_sha256": "b674686ab7687bd75432de33e882a3f3d1b874ac79c2e5aa06c56a2a0c355f60"
+        },
+        {
+          "precision": 6,
+          "cutoff_index": 9,
+          "grid_intervals": 512,
+          "sample_count": 513,
+          "uniform_error_bound": [
+            1,
+            128
+          ],
+          "requested_tolerance": [
+            1,
+            64
+          ],
+          "sample_sha256": "3cc2833617e004ee6f5d60cacb2caa3617d7a7011bdae96152bfbf8e2219bde1"
+        }
+      ]
+    },
+    {
+      "id": "NONUNIFORM_MIXED",
+      "source_state": {
+        "breaks": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            6
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "right": [
+          [
+            3,
+            1
+          ],
+          [
+            -3,
+            2
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "left": [
+          [
+            0,
+            1
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            -2,
+            1
+          ],
+          [
+            -2,
+            1
+          ]
+        ]
+      },
+      "component_l1_norms": [
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "test_lipschitz_constant": [
+        2,
+        1
+      ],
+      "observable_lipschitz_constant": [
+        6,
+        1
+      ],
+      "binary_ceiling_exponent": 3,
+      "cutoff_formula": "N(k)=k+4",
+      "anchor_values": [
+        {
+          "phase": [
+            0,
+            1
+          ],
+          "value": [
+            -1,
+            12
+          ]
+        },
+        {
+          "phase": [
+            1,
+            4
+          ],
+          "value": [
+            -29,
+            48
+          ]
+        },
+        {
+          "phase": [
+            1,
+            2
+          ],
+          "value": [
+            1,
+            12
+          ]
+        },
+        {
+          "phase": [
+            3,
+            4
+          ],
+          "value": [
+            29,
+            48
+          ]
+        }
+      ],
+      "approximants": [
+        {
+          "precision": 1,
+          "cutoff_index": 5,
+          "grid_intervals": 32,
+          "sample_count": 33,
+          "uniform_error_bound": [
+            3,
+            16
+          ],
+          "requested_tolerance": [
+            1,
+            2
+          ],
+          "sample_sha256": "765f908a6aff94eab948af4f03c861f4c453f2121dcbf10e3f88549975267177"
+        },
+        {
+          "precision": 2,
+          "cutoff_index": 6,
+          "grid_intervals": 64,
+          "sample_count": 65,
+          "uniform_error_bound": [
+            3,
+            32
+          ],
+          "requested_tolerance": [
+            1,
+            4
+          ],
+          "sample_sha256": "0f1a3459fa26629d38cd221703095f3978b4e0fbf606602e419a12c52c44f8a1"
+        },
+        {
+          "precision": 3,
+          "cutoff_index": 7,
+          "grid_intervals": 128,
+          "sample_count": 129,
+          "uniform_error_bound": [
+            3,
+            64
+          ],
+          "requested_tolerance": [
+            1,
+            8
+          ],
+          "sample_sha256": "c6d395d1f191903a8d202cfacb053a5f12e3e8a4b13428075158beff96f70ed5"
+        },
+        {
+          "precision": 4,
+          "cutoff_index": 8,
+          "grid_intervals": 256,
+          "sample_count": 257,
+          "uniform_error_bound": [
+            3,
+            128
+          ],
+          "requested_tolerance": [
+            1,
+            16
+          ],
+          "sample_sha256": "f2c70a1c198398e74249fd89a80eef541d32eb92822a7ee801a6227c79965b09"
+        },
+        {
+          "precision": 5,
+          "cutoff_index": 9,
+          "grid_intervals": 512,
+          "sample_count": 513,
+          "uniform_error_bound": [
+            3,
+            256
+          ],
+          "requested_tolerance": [
+            1,
+            32
+          ],
+          "sample_sha256": "8db4aa181d9f0901b4307753cc4bcacc70311f066a9cac81c022bc7f548c1915"
+        },
+        {
+          "precision": 6,
+          "cutoff_index": 10,
+          "grid_intervals": 1024,
+          "sample_count": 1025,
+          "uniform_error_bound": [
+            3,
+            512
+          ],
+          "requested_tolerance": [
+            1,
+            64
+          ],
+          "sample_sha256": "5b2ffb13ea6577b6e3871b84da5804b00e5031a650d80dbe203e9eb1708059e6"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "source": "foundations/results/FOUNDATIONAL_CODED_POLYGONAL_WAVE_RCA0_V1.json",
+    "source_sha256": "4138c860c53fe85ba4fa1f2ece93cc5b6c0fce9468c7e5dfa69e314663b56ac7",
+    "source_result_id": "FOUNDATIONAL_CODED_POLYGONAL_WAVE_RCA0_V1"
+  },
+  "independent_checker": {
+    "path": "foundations/check_coded_wave_observable_reconstruction.py",
+    "checks": [
+      "source fixture identity",
+      "periodic polygonal detector closure",
+      "exact L1 and Lipschitz constants",
+      "primitive-recursive cutoff inequality",
+      "exact dyadic sample hashes",
+      "independent fine-grid stress bound",
+      "formal dependency DAG",
+      "canonical digest"
+    ],
+    "expected_digest": "0b63ce1d2b5262c946917ac8a5e4eb3003876d1bfa689946f987d92b67fa8cb8"
+  },
+  "claim_flags": {
+    "declared_rational_initial_data": true,
+    "declared_bounded_linear_observable": true,
+    "finite_rational_approximants_constructed": true,
+    "uniform_bounded_time_convergence_proved": true,
+    "explicit_cutoff_function_proved": true,
+    "rca0_upper_bound_proved": true,
+    "fixed_fixture_arithmetic_primitive_recursive": true,
+    "weakest_base_proved": false,
+    "full_state_reconstruction_proved": false,
+    "localized_spacetime_distribution_proved": false,
+    "causal_support_proved": false,
+    "green_operator_constructed": false,
+    "empirical_calibration_proved": false,
+    "new_lorentzian_claim": false
+  },
+  "does_not_establish": [
+    "that RCA_0 is necessary or the weakest base",
+    "uniform reconstruction for unnamed convergent data without a supplied rate or finite rational code",
+    "reconstruction of the full wave state from this one smeared observable",
+    "a point-local field observable or probability rule",
+    "a localized spacetime-distributional weak equation",
+    "finite propagation, causal support, or an advanced/retarded Green operator",
+    "a variable-coefficient, curved-spacetime, biwave, or metric-BV theorem",
+    "empirical calibration of the detector profile",
+    "a new LORENTZIAN-CAUSAL result"
+  ],
+  "next_gate": "Replace the single detector profile by a coded separating localized test class and prove the coefficient-weak spacetime equation without promoting strict causal support.",
+  "human_report": "foundations/reports/coded-wave-observable-reconstruction-v1.md"
+}

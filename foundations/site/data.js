@@ -377,29 +377,29 @@ window.MATRIX_EXPLORER_DATA = {
     "mark_counts": {
       "G": 29,
       "Gl": 1,
-      "L": 106,
+      "L": 108,
       "LR": 8,
       "Lr": 6,
       "Ol": 172,
-      "P": 20,
+      "P": 19,
       "Pl": 79,
       "Plr": 13,
       "Pr": 51,
-      "R": 88,
+      "R": 87,
       "Rl": 3
     },
     "evidence_role_counts": {
       "DIRECT_LITERATURE": 84,
-      "DIRECT_LOCAL": 111,
+      "DIRECT_LOCAL": 113,
       "SUPPORTING": 447,
       "UNREVIEWED": 191
     },
     "synthetic_not_mapped": 0,
     "status_counts": {
-      "LITERATURE_RESULT": 91,
-      "LOCAL_RESULT": 120,
+      "LITERATURE_RESULT": 90,
+      "LOCAL_RESULT": 122,
       "NOT_MAPPED": 0,
-      "PIECES_ONLY": 163,
+      "PIECES_ONLY": 162,
       "PRIORITY_GAP": 30,
       "REVIEWED_GAP": 172
     },
@@ -411,7 +411,7 @@ window.MATRIX_EXPLORER_DATA = {
       "REVIEWED_NO_TRANSFER": 88,
       "REVIEWED_OVERLAY": 11
     },
-    "evidence_records": 75
+    "evidence_records": 76
   },
   "cells": [
     {
@@ -596,25 +596,33 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "WEAK_ARITHMETIC",
       "carrier": "HILBERT_OPERATOR",
       "obligation": "KINEMATICS_OBSERVABLES",
-      "status": "PIECES_ONLY",
+      "status": "LOCAL_RESULT",
       "evidence": [
         "brown-simpson-1986",
-        "humphreys-simpson-1999"
+        "humphreys-simpson-1999",
+        "FOUNDATIONAL_CODED_WAVE_OBSERVABLE_RECONSTRUCTION_V1"
       ],
       "evidence_roles": {
         "brown-simpson-1986": "UNREVIEWED",
-        "humphreys-simpson-1999": "UNREVIEWED"
+        "humphreys-simpson-1999": "UNREVIEWED",
+        "FOUNDATIONAL_CODED_WAVE_OBSERVABLE_RECONSTRUCTION_V1": "DIRECT_LOCAL"
       },
       "parent_obligation": "KINEMATICS_OBSERVABLES",
       "migration_relation": "EXACT_ONE_TO_ONE",
-      "summary": "Reverse functional analysis calibrates separation principles used around Hilbert/Banach carriers.",
-      "boundary": "No relativistic gauge theory is encoded in the cited reversals.",
+      "summary": "For the declared coded scalar-wave carrier, a rational periodic polygonal detector defines a bounded linear smeared chiral observable, with exact rational samples on every dyadic time grid.",
+      "boundary": "This is one scalar-circle detector profile. It is not a separating observable algebra, a probability rule, a gauge-invariant Weyl observable, or an empirically calibrated instrument.",
       "migration_status": "EXACT_PARENT_TRANSFER",
       "migration_evidence": [
         "brown-simpson-1986",
         "humphreys-simpson-1999"
       ],
       "migration_rationale": "The v0 obligation was not split, so its reviewed status and evidence transfer exactly.",
+      "observable_reconstruction_revision": {
+        "certificate": "FOUNDATIONAL_CODED_WAVE_OBSERVABLE_RECONSTRUCTION_V1",
+        "previous_status": "PIECES_ONLY",
+        "new_status": "LOCAL_RESULT",
+        "evidence_role": "DIRECT_LOCAL"
+      },
       "emitted": true
     },
     {
@@ -14728,23 +14736,25 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "WEAK_ARITHMETIC",
       "carrier": "HILBERT_OPERATOR",
       "obligation": "RECONSTRUCTION_LIMITS",
-      "status": "LITERATURE_RESULT",
+      "status": "LOCAL_RESULT",
       "evidence": [
         "brown-simpson-1986",
         "humphreys-simpson-1999",
         "humphreys-simpson-1996",
-        "brattka-2008"
+        "brattka-2008",
+        "FOUNDATIONAL_CODED_WAVE_OBSERVABLE_RECONSTRUCTION_V1"
       ],
       "evidence_roles": {
         "brown-simpson-1986": "UNREVIEWED",
         "humphreys-simpson-1999": "UNREVIEWED",
         "humphreys-simpson-1996": "UNREVIEWED",
-        "brattka-2008": "UNREVIEWED"
+        "brattka-2008": "UNREVIEWED",
+        "FOUNDATIONAL_CODED_WAVE_OBSERVABLE_RECONSTRUCTION_V1": "DIRECT_LOCAL"
       },
       "parent_obligation": "RECONSTRUCTION_LIMITS",
       "migration_relation": "EXACT_ONE_TO_ONE",
-      "summary": "Reverse mathematics calibrates specific separable Hahn-Banach, separation, and weak-star closure statements, with representation-sensitive strength. For this obligation, the evidence directly supplies reconstruction, comparison, covariance, or continuum-limit obligations.",
-      "boundary": "No reverse implication over a fixed weak base is inferred unless the cited source states one. Domain, completion, and spectral-measure hypotheses remain part of the result. Still open here: a prediction-preserving comparison or controlled continuum theorem.",
+      "summary": "RCA_0 proves uniform reconstruction of the declared smeared observable from finite rational dyadic interpolants, with the explicit cutoff N(k)=k+ell(K)+1 on every rational bounded time interval.",
+      "boundary": "The theorem reconstructs one bounded observable from named rational data. It does not reconstruct the full state, establish representation invariance, causal support, a continuum Weyl limit, or empirical equivalence.",
       "migration_status": "EXACT_PARENT_TRANSFER",
       "migration_evidence": [
         "brown-simpson-1986",
@@ -14753,6 +14763,12 @@ window.MATRIX_EXPLORER_DATA = {
         "brattka-2008"
       ],
       "migration_rationale": "The v0 obligation was not split, so its reviewed status and evidence transfer exactly.",
+      "observable_reconstruction_revision": {
+        "certificate": "FOUNDATIONAL_CODED_WAVE_OBSERVABLE_RECONSTRUCTION_V1",
+        "previous_status": "LITERATURE_RESULT",
+        "new_status": "LOCAL_RESULT",
+        "evidence_role": "DIRECT_LOCAL"
+      },
       "emitted": true
     },
     {
@@ -15578,7 +15594,7 @@ window.MATRIX_EXPLORER_DATA = {
       "result_link": "sources/foundations/results/FOUNDATIONAL_BT_CORNER_BORN_INTERFACE_V1.json",
       "report_path": "foundations/reports/bt-corner-born-interface.md",
       "report_link": "sources/foundations/reports/bt-corner-born-interface.md",
-      "sha256": "f223e9f70deba7aba0fdcd0759ded22f2bfe79c254ef159311cb47e23e856a06"
+      "sha256": "af3fb7837b0ccfe82c2ba90b288065d422105989455def03e263e54fa84dc643"
     },
     "FOUNDATIONAL_BT_EUCLIDEAN_LATTICE_IMPORT_V1": {
       "id": "FOUNDATIONAL_BT_EUCLIDEAN_LATTICE_IMPORT_V1",
@@ -15728,6 +15744,48 @@ window.MATRIX_EXPLORER_DATA = {
       "report_path": "foundations/reports/coded-wave-frontier-v2.md",
       "report_link": "sources/foundations/reports/coded-wave-frontier-v2.md",
       "sha256": "d8832e2b5e2f8e762b885bdcd61263abd7a296bd0a4c691106331326c2397dde"
+    },
+    "FOUNDATIONAL_CODED_WAVE_OBSERVABLE_RECONSTRUCTION_V1": {
+      "id": "FOUNDATIONAL_CODED_WAVE_OBSERVABLE_RECONSTRUCTION_V1",
+      "kind": "LOCAL_RESULT",
+      "result_kind": "EXPLICIT_UNIFORM_OBSERVABLE_RECONSTRUCTION",
+      "lifecycle": "CERTIFIED",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE"
+      ],
+      "claim_flags": {
+        "declared_rational_initial_data": true,
+        "declared_bounded_linear_observable": true,
+        "finite_rational_approximants_constructed": true,
+        "uniform_bounded_time_convergence_proved": true,
+        "explicit_cutoff_function_proved": true,
+        "rca0_upper_bound_proved": true,
+        "fixed_fixture_arithmetic_primitive_recursive": true,
+        "weakest_base_proved": false,
+        "full_state_reconstruction_proved": false,
+        "localized_spacetime_distribution_proved": false,
+        "causal_support_proved": false,
+        "green_operator_constructed": false,
+        "empirical_calibration_proved": false,
+        "new_lorentzian_claim": false
+      },
+      "does_not_establish": [
+        "that RCA_0 is necessary or the weakest base",
+        "uniform reconstruction for unnamed convergent data without a supplied rate or finite rational code",
+        "reconstruction of the full wave state from this one smeared observable",
+        "a point-local field observable or probability rule",
+        "a localized spacetime-distributional weak equation",
+        "finite propagation, causal support, or an advanced/retarded Green operator",
+        "a variable-coefficient, curved-spacetime, biwave, or metric-BV theorem",
+        "empirical calibration of the detector profile",
+        "a new LORENTZIAN-CAUSAL result"
+      ],
+      "result_path": "foundations/results/FOUNDATIONAL_CODED_WAVE_OBSERVABLE_RECONSTRUCTION_V1.json",
+      "result_link": "sources/foundations/results/FOUNDATIONAL_CODED_WAVE_OBSERVABLE_RECONSTRUCTION_V1.json",
+      "report_path": "foundations/reports/coded-wave-observable-reconstruction-v1.md",
+      "report_link": "sources/foundations/reports/coded-wave-observable-reconstruction-v1.md",
+      "sha256": "cf90e90abb824e19a2a0e7caf2d32c4772f408a70107e4c9ea6013edc0e8e215"
     },
     "FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V1": {
       "id": "FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V1",
@@ -15924,7 +15982,7 @@ window.MATRIX_EXPLORER_DATA = {
       "result_link": "sources/foundations/results/FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1.json",
       "report_path": "foundations/reports/finite-brst-twenty-cell-closure.md",
       "report_link": "sources/foundations/reports/finite-brst-twenty-cell-closure.md",
-      "sha256": "9126813652d51b80b9a18024cbb87300f50b86b2493c1648770387aafecbd6d0"
+      "sha256": "6a71309a3ac823a31ed836e5ca4177229a631b5519cced95088b1f9d7fe8d016"
     },
     "FOUNDATIONAL_FINITE_FIELD_FINITE_MODE_NON_EQUIVALENCE_V1": {
       "id": "FOUNDATIONAL_FINITE_FIELD_FINITE_MODE_NON_EQUIVALENCE_V1",
@@ -16031,7 +16089,7 @@ window.MATRIX_EXPLORER_DATA = {
       "result_link": "sources/foundations/results/FOUNDATIONAL_FINITE_OPERATOR_TEN_CELL_CLOSURE_V1.json",
       "report_path": "foundations/reports/finite-operator-ten-cell-closure.md",
       "report_link": "sources/foundations/reports/finite-operator-ten-cell-closure.md",
-      "sha256": "2da6cc719447c94057a2cc3226660822e42231848646e7db20fbe671c0722d80"
+      "sha256": "650cff5c0bbf1620566dfad24bfd7200c8ff35e9a238c0c7ef172fab9c8b0e41"
     },
     "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1": {
       "id": "FOUNDATIONAL_FINITE_QUBIT_INTERACTION_CORE_V1",
@@ -16143,7 +16201,7 @@ window.MATRIX_EXPLORER_DATA = {
       "result_link": "sources/foundations/results/FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1.json",
       "report_path": "foundations/reports/full-surface-gap-audit.md",
       "report_link": "sources/foundations/reports/full-surface-gap-audit.md",
-      "sha256": "7c3d467e07b07ca54b0d875c08a7cac5769fab769c412e8e71fc823f515669fd"
+      "sha256": "1487d2b80babf29f1729d80b98a1275a5275881e5a216c77d0695a9cebec6d0a"
     },
     "FOUNDATIONAL_HARDY_CONTINUITY_KN_AUDIT_V1": {
       "id": "FOUNDATIONAL_HARDY_CONTINUITY_KN_AUDIT_V1",
@@ -17654,16 +17712,15 @@ window.MATRIX_EXPLORER_DATA = {
   ],
   "boundaries": {
     "cube": [
-      "that the five finite Euclidean capabilities form a continuum theory",
-      "that zero-mode fixing is physical-state selection",
-      "that a positive Euclidean Gibbs measure is a Born rule or reflection-positive quantum theory",
-      "that coarse sampler reproduction is empirical validation",
-      "a controlled continuum or infinite-volume limit",
-      "an analytic-continuation map to the BT Krein carrier",
-      "that the scoped carrier incompatibility forbids every conditional bridge",
+      "that RCA_0 is necessary or weakest",
+      "a separating observable algebra from one detector profile",
+      "full state or field reconstruction from one smeared observable",
+      "representation invariance or a general finite-to-continuum theorem",
+      "a localized weak spacetime equation or causal Green support",
+      "a Weyl, Bateman-Turok, metric-BV, or interacting reconstruction theorem",
+      "empirical calibration or observational agreement",
       "that all 576 coordinates are jointly realizable",
-      "a complete Weyl theory or quantum completion",
-      "a new LORENTZIAN-CAUSAL conclusion"
+      "a complete physical theory or new LORENTZIAN-CAUSAL result"
     ],
     "migration_audit": [
       "literature completeness",
@@ -17696,11 +17753,11 @@ window.MATRIX_EXPLORER_DATA = {
     ]
   },
   "source_links": {
-    "cube": "sources/foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V10.json",
+    "cube": "sources/foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V11.json",
     "full_surface_audit": "sources/foundations/results/FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1.json",
     "migration_audit": "sources/foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_MIGRATION_AUDIT_V2.json",
     "ladder": "sources/foundations/results/FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V2.json",
-    "cube_report": "sources/foundations/reports/refined-intersection-cube-v10.md",
+    "cube_report": "sources/foundations/reports/refined-intersection-cube-v11.md",
     "bt_euclidean_import": "sources/foundations/results/FOUNDATIONAL_BT_EUCLIDEAN_LATTICE_IMPORT_V1.json",
     "bt_euclidean_import_report": "sources/foundations/reports/bt-euclidean-lattice-foundational-import.md",
     "full_surface_audit_report": "sources/foundations/reports/full-surface-gap-audit.md",
@@ -17715,5 +17772,5 @@ window.MATRIX_EXPLORER_DATA = {
     "migration_audit_report": "sources/foundations/reports/intersection-cube-migration-audit-v2.md",
     "ladder_report": "sources/foundations/reports/cylinder-wave-strength-ladder-v2.md"
   },
-  "canonical_digest": "e4c79e8ec537c2d9f9271d9ccbd042da2a5529b0b5f0f11fa6917cc3af0386cd"
+  "canonical_digest": "65c1967435f8a4d87c47143dc948ad039eb5906da00dfcac2ecc2883d6988911"
 };

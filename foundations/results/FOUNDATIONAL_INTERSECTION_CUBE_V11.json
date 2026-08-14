@@ -1,17 +1,17 @@
 {
-  "schema_version": "foundational-intersection-cube-v10",
-  "result_id": "FOUNDATIONAL_INTERSECTION_CUBE_V10",
-  "result_kind": "FULL_CARTESIAN_ASSESSMENT_CUBE_WITH_EUCLIDEAN_LATTICE_IMPORT",
+  "schema_version": "foundational-intersection-cube-v11",
+  "result_id": "FOUNDATIONAL_INTERSECTION_CUBE_V11",
+  "result_kind": "FULL_CARTESIAN_ASSESSMENT_CUBE_WITH_OBSERVABLE_RECONSTRUCTION",
   "lifecycle": "EVIDENCE_AUGMENTED_FULL_CARTESIAN_SURFACE",
   "created": "2026-08-14",
-  "repository_base_commit": "be5b23b72ea73f6b5dd099e9a3bd3126e6778922",
+  "repository_base_commit": "af7d497462698fc5c612d8a68bf84f9b72722c02",
   "dependency_tags": [
     "LOCAL-ALGEBRAIC",
     "EUCLIDEAN-SPECTRAL",
     "REDUCED-MODE",
     "LORENTZIAN-CAUSAL"
   ],
-  "purpose": "Preserve the complete cube-v9 surface while importing the certified finite Euclidean BT capabilities, numerical-reproduction boundary, and scoped Euclidean/Krein carrier non-identity.",
+  "purpose": "Preserve cube v10 while importing the first exact weak-arithmetic finite-approximant theorem for a declared bounded wave observable.",
   "compatibility": {
     "v0_unchanged": true,
     "v1_unchanged": true,
@@ -29,7 +29,11 @@
     "v9_full_surface_preserved": true,
     "v9_cells_preserved_except_six_declared_import_decisions": true,
     "v9_cross_cell_interfaces_preserved": true,
-    "bt_euclidean_import": "FOUNDATIONAL_BT_EUCLIDEAN_LATTICE_IMPORT_V1"
+    "bt_euclidean_import": "FOUNDATIONAL_BT_EUCLIDEAN_LATTICE_IMPORT_V1",
+    "v10_full_surface_preserved": true,
+    "v10_cells_preserved_except_two_declared_reconstruction_decisions": true,
+    "v10_interfaces_preserved": true,
+    "coded_observable_reconstruction": "FOUNDATIONAL_CODED_WAVE_OBSERVABLE_RECONSTRUCTION_V1"
   },
   "axes": [
     {
@@ -318,10 +322,10 @@
     "newly_classified_cells": 175,
     "new_reviewed_gap_cells": 175,
     "status_counts": {
-      "LITERATURE_RESULT": 91,
-      "LOCAL_RESULT": 120,
+      "LITERATURE_RESULT": 90,
+      "LOCAL_RESULT": 122,
       "NOT_MAPPED": 0,
-      "PIECES_ONLY": 163,
+      "PIECES_ONLY": 162,
       "PRIORITY_GAP": 30,
       "REVIEWED_GAP": 172
     },
@@ -335,7 +339,7 @@
     },
     "evidence_role_counts": {
       "DIRECT_LITERATURE": 84,
-      "DIRECT_LOCAL": 111,
+      "DIRECT_LOCAL": 113,
       "SUPPORTING": 447,
       "UNREVIEWED": 191
     },
@@ -344,7 +348,9 @@
     "bt_euclidean_imported_cells": 6,
     "bt_euclidean_direct_cells": 5,
     "bt_euclidean_supporting_cells": 1,
-    "bt_euclidean_status_promotions": 5
+    "bt_euclidean_status_promotions": 5,
+    "observable_reconstruction_imported_cells": 2,
+    "observable_reconstruction_status_promotions": 2
   },
   "certified_interfaces": [
     {
@@ -3221,25 +3227,33 @@
       "foundation": "WEAK_ARITHMETIC",
       "carrier": "HILBERT_OPERATOR",
       "obligation": "KINEMATICS_OBSERVABLES",
-      "status": "PIECES_ONLY",
+      "status": "LOCAL_RESULT",
       "evidence": [
         "brown-simpson-1986",
-        "humphreys-simpson-1999"
+        "humphreys-simpson-1999",
+        "FOUNDATIONAL_CODED_WAVE_OBSERVABLE_RECONSTRUCTION_V1"
       ],
       "evidence_roles": {
         "brown-simpson-1986": "UNREVIEWED",
-        "humphreys-simpson-1999": "UNREVIEWED"
+        "humphreys-simpson-1999": "UNREVIEWED",
+        "FOUNDATIONAL_CODED_WAVE_OBSERVABLE_RECONSTRUCTION_V1": "DIRECT_LOCAL"
       },
       "parent_obligation": "KINEMATICS_OBSERVABLES",
       "migration_relation": "EXACT_ONE_TO_ONE",
-      "summary": "Reverse functional analysis calibrates separation principles used around Hilbert/Banach carriers.",
-      "boundary": "No relativistic gauge theory is encoded in the cited reversals.",
+      "summary": "For the declared coded scalar-wave carrier, a rational periodic polygonal detector defines a bounded linear smeared chiral observable, with exact rational samples on every dyadic time grid.",
+      "boundary": "This is one scalar-circle detector profile. It is not a separating observable algebra, a probability rule, a gauge-invariant Weyl observable, or an empirically calibrated instrument.",
       "migration_status": "EXACT_PARENT_TRANSFER",
       "migration_evidence": [
         "brown-simpson-1986",
         "humphreys-simpson-1999"
       ],
-      "migration_rationale": "The v0 obligation was not split, so its reviewed status and evidence transfer exactly."
+      "migration_rationale": "The v0 obligation was not split, so its reviewed status and evidence transfer exactly.",
+      "observable_reconstruction_revision": {
+        "certificate": "FOUNDATIONAL_CODED_WAVE_OBSERVABLE_RECONSTRUCTION_V1",
+        "previous_status": "PIECES_ONLY",
+        "new_status": "LOCAL_RESULT",
+        "evidence_role": "DIRECT_LOCAL"
+      }
     },
     {
       "foundation": "WEAK_ARITHMETIC",
@@ -3666,23 +3680,25 @@
       "foundation": "WEAK_ARITHMETIC",
       "carrier": "HILBERT_OPERATOR",
       "obligation": "RECONSTRUCTION_LIMITS",
-      "status": "LITERATURE_RESULT",
+      "status": "LOCAL_RESULT",
       "evidence": [
         "brown-simpson-1986",
         "humphreys-simpson-1999",
         "humphreys-simpson-1996",
-        "brattka-2008"
+        "brattka-2008",
+        "FOUNDATIONAL_CODED_WAVE_OBSERVABLE_RECONSTRUCTION_V1"
       ],
       "evidence_roles": {
         "brown-simpson-1986": "UNREVIEWED",
         "humphreys-simpson-1999": "UNREVIEWED",
         "humphreys-simpson-1996": "UNREVIEWED",
-        "brattka-2008": "UNREVIEWED"
+        "brattka-2008": "UNREVIEWED",
+        "FOUNDATIONAL_CODED_WAVE_OBSERVABLE_RECONSTRUCTION_V1": "DIRECT_LOCAL"
       },
       "parent_obligation": "RECONSTRUCTION_LIMITS",
       "migration_relation": "EXACT_ONE_TO_ONE",
-      "summary": "Reverse mathematics calibrates specific separable Hahn-Banach, separation, and weak-star closure statements, with representation-sensitive strength. For this obligation, the evidence directly supplies reconstruction, comparison, covariance, or continuum-limit obligations.",
-      "boundary": "No reverse implication over a fixed weak base is inferred unless the cited source states one. Domain, completion, and spectral-measure hypotheses remain part of the result. Still open here: a prediction-preserving comparison or controlled continuum theorem.",
+      "summary": "RCA_0 proves uniform reconstruction of the declared smeared observable from finite rational dyadic interpolants, with the explicit cutoff N(k)=k+ell(K)+1 on every rational bounded time interval.",
+      "boundary": "The theorem reconstructs one bounded observable from named rational data. It does not reconstruct the full state, establish representation invariance, causal support, a continuum Weyl limit, or empirical equivalence.",
       "migration_status": "EXACT_PARENT_TRANSFER",
       "migration_evidence": [
         "brown-simpson-1986",
@@ -3690,7 +3706,13 @@
         "humphreys-simpson-1996",
         "brattka-2008"
       ],
-      "migration_rationale": "The v0 obligation was not split, so its reviewed status and evidence transfer exactly."
+      "migration_rationale": "The v0 obligation was not split, so its reviewed status and evidence transfer exactly.",
+      "observable_reconstruction_revision": {
+        "certificate": "FOUNDATIONAL_CODED_WAVE_OBSERVABLE_RECONSTRUCTION_V1",
+        "previous_status": "LITERATURE_RESULT",
+        "new_status": "LOCAL_RESULT",
+        "evidence_role": "DIRECT_LOCAL"
+      }
     },
     {
       "foundation": "WEAK_ARITHMETIC",
@@ -14985,52 +15007,50 @@
   "provenance": {
     "inputs": [
       {
-        "path": "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V9.json",
-        "sha256": "cadbe2d544e46787a6ac2246ce645ff264b58cbcdcc5bf0ebccc0e42826987ae"
+        "path": "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V10.json",
+        "sha256": "ca02630b494fe664a4f679708f376a9f4540eb858772e25e19486e695ec13e91"
       },
       {
-        "path": "foundations/results/FOUNDATIONAL_BT_EUCLIDEAN_LATTICE_IMPORT_V1.json",
-        "sha256": "f8791f9209682cd01b29a5868ea8f353b958f9fb8ce24d77d9b8af6bc92b7f94"
+        "path": "foundations/results/FOUNDATIONAL_CODED_WAVE_OBSERVABLE_RECONSTRUCTION_V1.json",
+        "sha256": "cf90e90abb824e19a2a0e7caf2d32c4772f408a70107e4c9ea6013edc0e8e215"
       }
     ]
   },
   "independent_checker": {
-    "path": "foundations/check_refined_intersection_cube_v10.py",
+    "path": "foundations/check_refined_intersection_cube_v11.py",
     "checks": [
       "exact 576-cell surface",
-      "570 cube-v9 cells unchanged",
-      "five direct local imports and one supporting-only reconstruction record",
-      "status and evidence-role closure",
-      "two cross-cell interfaces preserved",
-      "one scoped carrier interface added",
+      "574 cube-v10 cells unchanged",
+      "two declared direct-local promotions",
+      "evidence-role closure",
+      "all interfaces preserved",
       "canonical digest"
     ],
-    "expected_digest": "9e8b01f187ae2f0e481b31aacca4175af407fb67e209d05278c693cea30b9bcc"
+    "expected_digest": "167aaa3b8ad7ec6f5d59ee0c8fd459a9c47e06d2b282b0877e7f35d092083cf0"
   },
   "claim_flags": {
-    "v9_surface_preserved": true,
+    "v10_surface_preserved": true,
     "all_576_coordinates_assessed": true,
-    "five_finite_euclidean_capabilities_imported": true,
-    "reconstruction_priority_gap_preserved": true,
-    "coarse_numerical_reproduction_separated": true,
-    "all_obligations_solved": false,
-    "literature_complete": false,
-    "continuum_reconstruction_established": false,
+    "declared_wave_observable_imported": true,
+    "uniform_observable_reconstruction_imported": true,
+    "explicit_cutoff_imported": true,
+    "full_state_reconstruction_established": false,
+    "representation_invariance_established": false,
+    "causal_support_established": false,
     "empirical_agreement_assessed": false,
     "complete_physical_theory_established": false,
     "new_lorentzian_claim": false
   },
   "does_not_establish": [
-    "that the five finite Euclidean capabilities form a continuum theory",
-    "that zero-mode fixing is physical-state selection",
-    "that a positive Euclidean Gibbs measure is a Born rule or reflection-positive quantum theory",
-    "that coarse sampler reproduction is empirical validation",
-    "a controlled continuum or infinite-volume limit",
-    "an analytic-continuation map to the BT Krein carrier",
-    "that the scoped carrier incompatibility forbids every conditional bridge",
+    "that RCA_0 is necessary or weakest",
+    "a separating observable algebra from one detector profile",
+    "full state or field reconstruction from one smeared observable",
+    "representation invariance or a general finite-to-continuum theorem",
+    "a localized weak spacetime equation or causal Green support",
+    "a Weyl, Bateman-Turok, metric-BV, or interacting reconstruction theorem",
+    "empirical calibration or observational agreement",
     "that all 576 coordinates are jointly realizable",
-    "a complete Weyl theory or quantum completion",
-    "a new LORENTZIAN-CAUSAL conclusion"
+    "a complete physical theory or new LORENTZIAN-CAUSAL result"
   ],
-  "human_report": "foundations/reports/refined-intersection-cube-v10.md"
+  "human_report": "foundations/reports/refined-intersection-cube-v11.md"
 }

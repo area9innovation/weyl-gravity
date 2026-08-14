@@ -869,26 +869,22 @@
       "foundation": "WEAK_ARITHMETIC",
       "carrier": "HILBERT_OPERATOR",
       "counts": {
-        "LOCAL_RESULT": 2,
-        "LITERATURE_RESULT": 1,
-        "PIECES_ONLY": 2,
+        "LOCAL_RESULT": 4,
+        "LITERATURE_RESULT": 0,
+        "PIECES_ONLY": 1,
         "PRIORITY_GAP": 0,
         "REVIEWED_GAP": 11,
         "NOT_MAPPED": 0
       },
-      "direct": 3,
+      "direct": 4,
       "assessed": 16,
       "default_gate": {
         "preset": "PREDICTIVE_PHYSICS",
-        "direct": 3,
+        "direct": 4,
         "assessed": 10,
         "total": 10,
         "complete_direct": false,
         "blockers": [
-          {
-            "obligation": "KINEMATICS_OBSERVABLES",
-            "status": "PIECES_ONLY"
-          },
           {
             "obligation": "STATE_EXISTENCE",
             "status": "REVIEWED_GAP"
@@ -915,26 +911,26 @@
           }
         ]
       },
-      "reconstruction_status": "LITERATURE_RESULT",
+      "reconstruction_status": "LOCAL_RESULT",
       "bundles": [
         {
           "bundle": "KINEMATICS_STATES",
           "counts": {
-            "LOCAL_RESULT": 0,
+            "LOCAL_RESULT": 1,
             "LITERATURE_RESULT": 0,
-            "PIECES_ONLY": 1,
+            "PIECES_ONLY": 0,
             "PRIORITY_GAP": 0,
             "REVIEWED_GAP": 2,
             "NOT_MAPPED": 0
           },
-          "direct": 0,
+          "direct": 1,
           "total": 3
         },
         {
           "bundle": "PREDICTION_OBSERVATION",
           "counts": {
-            "LOCAL_RESULT": 0,
-            "LITERATURE_RESULT": 1,
+            "LOCAL_RESULT": 1,
+            "LITERATURE_RESULT": 0,
             "PIECES_ONLY": 0,
             "PRIORITY_GAP": 0,
             "REVIEWED_GAP": 2,
@@ -4413,6 +4409,7 @@
           ],
           "contributing_carriers": [
             "FINITE_EXACT",
+            "HILBERT_OPERATOR",
             "KREIN_INDEFINITE"
           ]
         },
@@ -4570,7 +4567,6 @@
           "obligation": "RECONSTRUCTION_LIMITS",
           "readiness_rank": 3,
           "statuses": [
-            "LITERATURE_RESULT",
             "LOCAL_RESULT"
           ],
           "contributing_carriers": [
@@ -5498,6 +5494,6 @@
     "that Pareto-frontier profiles are physically preferred or more likely true",
     "a complete observationally validated theory under any regime or carrier portfolio"
   ],
-  "source_atlas_digest": "e4c79e8ec537c2d9f9271d9ccbd042da2a5529b0b5f0f11fa6917cc3af0386cd",
-  "canonical_digest": "e7d853c6452549915d3e85470f167136331766630b13ec46e58dc483585f2380"
+  "source_atlas_digest": "65c1967435f8a4d87c47143dc948ad039eb5906da00dfcac2ecc2883d6988911",
+  "canonical_digest": "698a63d189b61fe8639c20c31aa57bf6904da1b00102cd9c01a3dc0e345889f3"
 }

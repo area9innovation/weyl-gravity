@@ -121,7 +121,7 @@ def build() -> dict[str, Any]:
         ],
         "proof_authority": {"status": "INDEPENDENT_EXACT_REDERIVATION", "meaning": "The checker reconstructs the rational matrices, cohomology, contraction, QME sequence, Krein adjoint, and 1296 products without importing the producer."},
         "provenance": {"inputs": [{"path": str(SOURCE.relative_to(ROOT)), "sha256": sha(SOURCE), "role": "previously certified finite Hilbert/Krein carrier realization"}]},
-        "independent_checker": {"path": "foundations/check_finite_brst_twenty_cell_closure.py", "expected_digest": "624f04a8bfad75d794911d18e8db715a7db10768f3ce9faae9ba0b7c16d22be4", "checks": ["source hash", "exact twenty coordinates", "rational nilpotency and cohomology", "contraction identities", "QME lifecycle order", "Hilbert boundedness", "Krein adjoint", "1296 matrix-unit products", "claim boundaries"]},
+        "independent_checker": {"path": "foundations/check_finite_brst_twenty_cell_closure.py", "expected_digest": "033084968e63734f65a692a0b2e8fc43f827e9b0c449d6155d361ca2db104b28", "checks": ["source hash", "exact twenty coordinates", "rational nilpotency and cohomology", "contraction identities", "QME lifecycle order", "Hilbert boundedness", "Krein adjoint", "1296 matrix-unit products", "claim boundaries"]},
         "claim_flags": {
             "exactly_twenty_previously_unmapped_cells_classified": True,
             "seventeen_local_results": True,

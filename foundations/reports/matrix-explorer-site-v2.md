@@ -9,7 +9,7 @@
 ## Outcome
 
 `foundations/site/index.html` presents all **576** Cartesian coordinates.
-All **576** are now emitted by cube v10 and have separate coverage and migration
+All **576** are now emitted by cube v11 and have separate coverage and migration
 review fields: **576 reviewed**, **0 pending**.
 The surface has **172 `REVIEWED_GAP`** cells and **0
 `NOT_MAPPED`** cells. A reviewed gap is a formulated open question with a typed
@@ -20,17 +20,23 @@ The full-surface audit preserves all 401 prior positive, partial, and priority
 classifications. It revises 51 emitted blanks and directly assesses the 124
 formerly synthetic coordinates without transferring evidence from neighbors.
 
-Cube v10 preserves two certified `CONDITIONAL_BRIDGE` relations. The first maps an
+Cube v11 preserves two certified `CONDITIONAL_BRIDGE` relations. The first maps an
 algebraic finite-corner state to a Krein probability rule under five explicit
 hypotheses. The second uses the free Fock energy gap to select the unique normal
 zero-energy vacuum state and proves that the same state is invariant under the
 generated Krein--Fock dynamics. The other assembly interfaces remain open.
 
-Cube v10 also imports the positive BT Euclidean finite lattice into five direct
+Cube v11 also preserves the positive BT Euclidean finite lattice import into five direct
 `FINITE_DISCRETE × SMOOTH_DISTRIBUTIONAL` cells. Its independent-sampler record
 is coarse numerical reproduction, not empirical validation. A separate carrier
 interface refuses only identification of the positive Euclidean measure with the
 all-real BT/Krein path integral; controlled conditional bridges remain open.
+
+The new reconstruction import supplies the first explicit weak-arithmetic
+finite-approximant theorem for a declared bounded wave observable. Its rational
+dyadic interpolants converge uniformly on every rational bounded time interval
+with cutoff `N(k)=k+ell(K)+1`. It reconstructs one smeared scalar observable,
+not the full field, causal support, or a Weyl-gravity prediction.
 
 Coverage is assessed for **576** emitted cells. The
 finite-BRST pass classifies exactly twenty additional empty cells: seventeen
@@ -78,6 +84,7 @@ This site does not establish:
 - that a dual LR mark composes its two records into a stronger result
 - that all 576 coordinates are jointly realizable
 - a weakest mathematical base
+- full-state, representation-invariant, causal, or Weyl reconstruction from the single coded wave observable
 - continuum renormalized products from finite regulated-product closure
 - a Weyl QME or Weyl residual transfer from a finite toy BRST complex
 - equivalence of carrier categories from one finite realization

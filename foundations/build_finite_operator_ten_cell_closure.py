@@ -141,7 +141,7 @@ def build() -> dict[str, Any]:
         },
         "independent_checker": {
             "path": "foundations/check_finite_operator_ten_cell_closure.py",
-            "expected_digest": "80ae23dbd42ef9a0947bfca14a44bc02260d6f0211bf50a7f2755d7c520f77d8",
+            "expected_digest": "9e4fde63e1ad6e14a002b0a65c4cebe4200e77267001c0cf8c1590913313ac80",
             "checks": ["source identities and hashes", "ten unique target coordinates", "Pauli trace orthogonality", "nonzero entangling interaction", "Krein adjoint", "parity counterterm basis", "256 regulated products", "exact finite-corner probabilities", "claim boundaries"],
         },
         "claim_flags": {
