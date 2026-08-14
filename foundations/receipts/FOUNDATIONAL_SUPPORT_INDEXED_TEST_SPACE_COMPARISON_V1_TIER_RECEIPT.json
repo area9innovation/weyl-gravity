@@ -1,0 +1,27 @@
+{
+  "schema_version": "science-forge-tier-receipt-v1",
+  "receipt_id": "FOUNDATIONAL_SUPPORT_INDEXED_TEST_SPACE_COMPARISON_V1_TIER_RECEIPT",
+  "created": "2026-08-14",
+  "repository_base_commit": "8d2ceae41e73b748f4f6ca53277423e82697a29c",
+  "integration_head_observed": "8d2ceae41e73b748f4f6ca53277423e82697a29c",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "scope": "Construct a support-indexed represented union, prove exact two-way translation with conventional smooth-test names carrying discrete support advice, and assemble the stagewise H2 weak-test embedding while refusing identification with the full LF topology.",
+  "tiers": {
+    "tier_0_compile_json_diff": {"status": "PASS", "command": "py_compile all new/changed foundations Python; json.loads all new results, schemas, receipts, site data, and paper claim map; git diff --check on scoped paths"},
+    "tier_1_certificate": {"status": "PASS", "command": "python3 foundations/build_support_indexed_test_space_comparison.py --check && python3 foundations/check_support_indexed_test_space_comparison.py && python3 foundations/verify_support_indexed_test_space_comparison.py && python3 -m unittest foundations.tests.test_support_indexed_test_space_comparison", "result": "Six exact dyadic support stages, six exact name roundtrips, 15 inclusion comparisons, translator shifts, proof DAG, provenance, deterministic artifacts, and eight mutation tests pass; digest 5d84385b9cdc1f2bd8f6d7cb38a1d544c31314bfe316b6daeac854a774829fe7."},
+    "tier_2_vertical_slice": {"status": "PASS", "command": "verify cube v14, matrix explorer, paper claim map, generated appendices, two pdflatex passes, and manuscript pins", "result": "The comparison closes the declared represented-name bridge and promotes reconstruction/limits with explicit non-surjectivity and LF-topology boundaries."},
+    "tier_2_complete_foundations_suite": {"status": "PASS", "command": "python3 -m unittest discover -s foundations/tests -p 'test_*.py'", "elapsed_seconds": 64.19, "result": "437/437 tests pass."},
+    "tier_3": {"status": "NOT_RUN", "criterion": "No freeze/tag, quantum lifecycle promotion, shared classical core-algebra change, release preparation, or explicit full-repository-suite request applies."}
+  },
+  "artifact_hashes": {
+    "foundations/build_support_indexed_test_space_comparison.py": "0232d8549ed6c9791033814496261c9e4565cf5069446a16be27a0a39125402b",
+    "foundations/check_support_indexed_test_space_comparison.py": "92bffccf824b5ab83c4a51c798818ec59f167d88e323493005da42971e4734dd",
+    "foundations/verify_support_indexed_test_space_comparison.py": "605dfefb1fa3c044a9bcf68dbd77c995c9cc0f689edb873dc93d04dc1dbb651a",
+    "foundations/results/FOUNDATIONAL_SUPPORT_INDEXED_TEST_SPACE_COMPARISON_V1.json": "d0f853a43affb516fc86563d1ba89e25c1a47ab635388cc4e4a20ae7dd30e24a",
+    "foundations/reports/support-indexed-test-space-comparison-v1.md": "f91c339a8eb273f8c0f207b140e6014b0a6062187e367658b3e14370dab31274",
+    "foundations/schema/foundational-support-indexed-test-space-comparison-v1.schema.json": "d32ae96a2071663cbef5c065aac512a6ccc6d2bcd7c349560274198ab24c41e9",
+    "foundations/tests/test_support_indexed_test_space_comparison.py": "327c0a0f99bfe157dcd674374abd38e2f1ee98bef1239ac499bb2beb4bd070f3"
+  },
+  "unresolved": ["The represented name equivalence does not identify the full locally convex LF topology.", "The smooth-test embedding is not surjective onto the H2 completion, and no support tag is selected from a bare function."],
+  "claim_boundary": "This receipt certifies equivalence of two declared name formats and coherent stage inclusions, not a topological isomorphism with the classical LF space or a single metric completion."
+}

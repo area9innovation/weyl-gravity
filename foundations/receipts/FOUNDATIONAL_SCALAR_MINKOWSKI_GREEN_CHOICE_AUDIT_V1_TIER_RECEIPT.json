@@ -1,0 +1,27 @@
+{
+  "schema_version": "science-forge-tier-receipt-v1",
+  "receipt_id": "FOUNDATIONAL_SCALAR_MINKOWSKI_GREEN_CHOICE_AUDIT_V1_TIER_RECEIPT",
+  "created": "2026-08-14",
+  "repository_base_commit": "8d2ceae41e73b748f4f6ca53277423e82697a29c",
+  "integration_head_observed": "8d2ceae41e73b748f4f6ca53277423e82697a29c",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
+  "scope": "Construct and audit canonical retarded and advanced Green maps for the flat scalar 1+1 wave operator, including exact two-sided code identities, causal support, adjoint duality, named energy extension, and an explicit firewall against Weyl/BV or quantum promotion.",
+  "tiers": {
+    "tier_0_compile_json_diff": {"status": "PASS", "command": "py_compile all new/changed foundations Python; json.loads all new results, schemas, receipts, site data, and paper claim map; git diff --check on scoped paths"},
+    "tier_1_certificate": {"status": "PASS", "command": "python3 foundations/build_scalar_minkowski_green_choice_audit.py --check && python3 foundations/check_scalar_minkowski_green_choice_audit.py && python3 foundations/verify_scalar_minkowski_green_choice_audit.py && python3 -m unittest foundations.tests.test_scalar_minkowski_green_choice_audit", "result": "Four exact null-monomial fixtures, eight P G checks, eight G P checks, four adjoint pairings, four energy estimates, eight support samples, proof DAG, provenance, deterministic artifacts, and eight mutation tests pass; digest 6b2deaf6efaea78ce317b1eb692a684c576cc1d16774320911dcfd53564b925a."},
+    "tier_2_vertical_slice": {"status": "PASS", "command": "verify cube v14, matrix explorer, paper claim map, generated appendices, two pdflatex passes, and manuscript pins", "result": "Causal propagation/Green becomes a local result only at WEAK_ARITHMETIC x SMOOTH_DISTRIBUTIONAL; the site and RF-21 display the scalar flat 1+1 scope and exact LORENTZIAN-CAUSAL firewall."},
+    "tier_2_complete_foundations_suite": {"status": "PASS", "command": "python3 -m unittest discover -s foundations/tests -p 'test_*.py'", "elapsed_seconds": 64.19, "result": "437/437 tests pass."},
+    "tier_3": {"status": "NOT_RUN", "criterion": "No freeze/tag, quantum lifecycle promotion, shared classical core-algebra change, release preparation, or explicit full-repository-suite request applies."}
+  },
+  "artifact_hashes": {
+    "foundations/build_scalar_minkowski_green_choice_audit.py": "6935b24e2da09ae138d3b4b3892f15b516823fbdb999eabc4de1e2dbad5bff56",
+    "foundations/check_scalar_minkowski_green_choice_audit.py": "8b9550ab9ebc111c85acd7503aad75f70447b72d96626de7a80e6e3561939f4b",
+    "foundations/verify_scalar_minkowski_green_choice_audit.py": "4d91f00fe84e518c4781e105d8cfedc1fb5a0b98d038e805477c7b7ed58ebcfe",
+    "foundations/results/FOUNDATIONAL_SCALAR_MINKOWSKI_GREEN_CHOICE_AUDIT_V1.json": "5a08ba2ff2881084b60097c1d28f124d5b94a12a2ff7ce3babbd7ad8f14a0779",
+    "foundations/reports/scalar-minkowski-green-choice-audit-v1.md": "71ed54e2cd74595a75aee41888c55f7605f78a1fa9aa826a7cb4ad4362dbe2c6",
+    "foundations/schema/foundational-scalar-minkowski-green-choice-audit-v1.schema.json": "df794c711e81d3be1ed272f95945130517ed6fe5d1e02a76736682b6935c75a2",
+    "foundations/tests/test_scalar_minkowski_green_choice_audit.py": "5cd5e1aba51b92b523c36e212b2056ac28d9f11be2029076716560e1f47096cb"
+  },
+  "unresolved": ["Bare-source support and convergence data, a weakest-base reversal, and arbitrary-distribution uniqueness remain open.", "No variable-coefficient, curved-spacetime, Weyl/BV, Hadamard, pAQFT, or Lorentzian QME theorem follows."],
+  "claim_boundary": "This receipt carries a genuine LORENTZIAN-CAUSAL claim only for the displayed flat scalar 1+1 operator; it is not evidence for a Lorentzian Weyl/BV propagator or quantum causal construction."
+}

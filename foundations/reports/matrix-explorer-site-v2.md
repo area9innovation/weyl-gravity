@@ -9,7 +9,7 @@
 ## Outcome
 
 `foundations/site/index.html` presents all **576** Cartesian coordinates.
-All **576** are now emitted by cube v13 and have separate coverage and migration
+All **576** are now emitted by cube v14 and have separate coverage and migration
 review fields: **576 reviewed**, **0 pending**.
 The surface has **169 `REVIEWED_GAP`** cells and **0
 `NOT_MAPPED`** cells. A reviewed gap is a formulated open question with a typed
@@ -20,13 +20,13 @@ The full-surface audit preserves all 401 prior positive, partial, and priority
 classifications. It revises 51 emitted blanks and directly assesses the 124
 formerly synthetic coordinates without transferring evidence from neighbors.
 
-Cube v13 preserves two certified `CONDITIONAL_BRIDGE` relations. The first maps an
+Cube v14 preserves two certified `CONDITIONAL_BRIDGE` relations. The first maps an
 algebraic finite-corner state to a Krein probability rule under five explicit
 hypotheses. The second uses the free Fock energy gap to select the unique normal
 zero-energy vacuum state and proves that the same state is invariant under the
 generated Krein--Fock dynamics. The other assembly interfaces remain open.
 
-Cube v13 also preserves the positive BT Euclidean finite lattice import into five direct
+Cube v14 also preserves the positive BT Euclidean finite lattice import into five direct
 `FINITE_DISCRETE × SMOOTH_DISTRIBUTIONAL` cells. Its independent-sampler record
 is coarse numerical reproduction, not empirical validation. A separate carrier
 interface refuses only identification of the positive Euclidean measure with the
@@ -49,6 +49,15 @@ piecewise-polynomial carrier.  A supplied fast H2 name gives explicit residual
 cutoffs and a continuous distributional field-state map on the fixed slab.  The
 name is representation data: this does not reconstruct the unrestricted
 nonmetrizable LF test topology or prove uniqueness among arbitrary distributions.
+
+The new representation-to-causality slice closes the next three declared gates.
+A fixed-support smooth name with explicit derivative and support advice now translates
+to the rational H2 carrier with an exact cutoff modulus.  Support tags assemble these
+fixed stages into a represented compact-test union, with a firewall against identifying
+that union with the full locally convex LF topology.  Finally, canonical retarded and
+advanced Green maps for the flat scalar 1+1 wave operator satisfy exact inverse
+identities, causal support, and adjoint duality.  That `LORENTZIAN-CAUSAL` result is a
+scalar benchmark, not a Weyl/BV propagator or quantum causal construction.
 
 Coverage is assessed for **576** emitted cells. The
 finite-BRST pass classifies exactly twenty additional empty cells: seventeen
@@ -97,9 +106,11 @@ This site does not establish:
 - that all 576 coordinates are jointly realizable
 - a weakest mathematical base
 - full-state, representation-invariant, causal, or Weyl reconstruction from the single coded wave observable
-- the unrestricted LF smooth-test topology from the named fixed-slab H2 completion
+- the unrestricted LF smooth-test topology from the represented support-indexed union
+- surjectivity of the smooth-test embedding onto H2
 - uniqueness among arbitrary distributional solutions from energy-image uniqueness
-- strict causal support or a Green operator from weak identities
+- a variable-coefficient, curved-spacetime, Weyl, or metric-BV Green operator from the scalar 1+1 benchmark
+- a Hadamard state, causal perturbative AQFT construction, or Lorentzian quantum master equation
 - continuum renormalized products from finite regulated-product closure
 - a Weyl QME or Weyl residual transfer from a finite toy BRST complex
 - equivalence of carrier categories from one finite realization
@@ -107,4 +118,3 @@ This site does not establish:
 - composition beyond the two certified scoped cross-cell interfaces
 - precision sampler equivalence, continuum reconstruction, or empirical support from the BT finite lattice
 - a complete observationally validated theory
-- a new Lorentzian-causal result

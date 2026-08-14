@@ -4,7 +4,7 @@
   "result_kind": "STATIC_EVIDENCE_EXPLORER",
   "lifecycle": "VERIFIED_NAVIGATION_ARTIFACT",
   "created": "2026-08-14",
-  "repository_base_commit": "2a211e2931cd391b78f16d8ec374369ec09a4a24",
+  "repository_base_commit": "8d2ceae41e73b748f4f6ca53277423e82697a29c",
   "dependency_tags": [
     "LOCAL-ALGEBRAIC",
     "EUCLIDEAN-SPECTRAL",
@@ -27,12 +27,12 @@
     "mark_counts": {
       "G": 29,
       "Gl": 1,
-      "L": 110,
+      "L": 112,
       "LR": 8,
       "Lr": 7,
       "Ol": 169,
       "P": 19,
-      "Pl": 80,
+      "Pl": 78,
       "Plr": 12,
       "Pr": 51,
       "R": 87,
@@ -40,16 +40,16 @@
     },
     "evidence_role_counts": {
       "DIRECT_LITERATURE": 84,
-      "DIRECT_LOCAL": 117,
-      "SUPPORTING": 450,
+      "DIRECT_LOCAL": 123,
+      "SUPPORTING": 453,
       "UNREVIEWED": 191
     },
     "synthetic_not_mapped": 0,
     "status_counts": {
       "LITERATURE_RESULT": 90,
-      "LOCAL_RESULT": 125,
+      "LOCAL_RESULT": 127,
       "NOT_MAPPED": 0,
-      "PIECES_ONLY": 162,
+      "PIECES_ONLY": 160,
       "PRIORITY_GAP": 30,
       "REVIEWED_GAP": 169
     },
@@ -61,7 +61,7 @@
       "REVIEWED_NO_TRANSFER": 88,
       "REVIEWED_OVERLAY": 11
     },
-    "evidence_records": 78
+    "evidence_records": 81
   },
   "features": [
     "sixteen 6x6 heatmaps",
@@ -98,6 +98,9 @@
     "first explicit uniform finite-approximant reconstruction of a declared bounded wave observable",
     "finite localized rank-10 chiral test class with coefficient-wise weak wave identities",
     "named H2 test completion with explicit residual modulus and distributional state map",
+    "fixed-support smooth-name to rational H2 translator",
+    "support-indexed represented test-space comparison with LF boundary",
+    "exact flat scalar 1+1 retarded and advanced Green benchmark",
     "typed applicability mask",
     "exact field-equation-to-PPN-to-null-delay chain",
     "typed cross-cell interface ledger",
@@ -111,10 +114,10 @@
   ],
   "provenance": {
     "manifest": "foundations/site/manifest.json",
-    "manifest_sha256": "4ebf39da024d3df8d0d510655ce9b4ec90dd8faba6f1d5f3cc0f7bcb6dbea27d",
-    "canonical_data_digest": "c0783aa221f774c07b556b006841d12c0f5c87504ce715d3674b0577e6788766",
-    "viability_digest": "30738aec0a957140b73f03e18cb6100ec5885ae7744f296b62ac4fef866e3742",
-    "assembly_digest": "5b8c44b61cf3237244b0e3d82801e5d150c714363921f8b0a4bb63458de77011"
+    "manifest_sha256": "2beeb652691e278f1c89c641b2127d355b97a1a45fdb21a2cce508aa36aae28e",
+    "canonical_data_digest": "9e16d02dc4cf3cb8f2b55fb812d4d50c51d82cd8109f849b3fa4af2f227a5b47",
+    "viability_digest": "9ea352c42489f9d0a562a3cae3832d2308c45c1f219a96ed04f22a4633124f4e",
+    "assembly_digest": "72dc55c6d5b64976022eb968ccf0c19b2594324c9bb03142b4a59900c2ab3983"
   },
   "independent_checker": {
     "path": "foundations/check_matrix_site_v2.py",
@@ -123,10 +126,10 @@
     "expected_synthetic_not_mapped": 0,
     "expected_total_not_mapped": 0,
     "expected_reviewed_gaps": 169,
-    "expected_evidence_records": 78,
-    "expected_digest": "c0783aa221f774c07b556b006841d12c0f5c87504ce715d3674b0577e6788766",
-    "expected_viability_digest": "30738aec0a957140b73f03e18cb6100ec5885ae7744f296b62ac4fef866e3742",
-    "expected_assembly_digest": "5b8c44b61cf3237244b0e3d82801e5d150c714363921f8b0a4bb63458de77011"
+    "expected_evidence_records": 81,
+    "expected_digest": "9e16d02dc4cf3cb8f2b55fb812d4d50c51d82cd8109f849b3fa4af2f227a5b47",
+    "expected_viability_digest": "9ea352c42489f9d0a562a3cae3832d2308c45c1f219a96ed04f22a4633124f4e",
+    "expected_assembly_digest": "72dc55c6d5b64976022eb968ccf0c19b2594324c9bb03142b4a59900c2ab3983"
   },
   "claim_flags": {
     "static_site_generated": true,
@@ -142,6 +145,9 @@
     "bounded_observable_reconstruction_exposed": true,
     "localized_coefficient_weak_wave_exposed": true,
     "named_h2_test_completion_exposed": true,
+    "smooth_to_h2_translator_exposed": true,
+    "support_indexed_test_comparison_exposed": true,
+    "scalar_green_choice_audit_exposed": true,
     "at_least_one_cross_cell_interface_certified": true,
     "composition_and_observation_rails_separated": true,
     "scientific_claims_duplicated_by_hand": false,
@@ -151,7 +157,7 @@
     "reviewed_no_transfer_means_absent": false,
     "priority_score_is_theorem": false,
     "complete_observationally_valid_theory_identified": false,
-    "new_lorentzian_claim": false
+    "new_lorentzian_claim": true
   },
   "does_not_establish": [
     "literature completeness",
@@ -162,17 +168,18 @@
     "that all 576 coordinates are jointly realizable",
     "a weakest mathematical base",
     "full-state, representation-invariant, causal, or Weyl reconstruction from the single coded wave observable",
-    "the unrestricted LF smooth-test topology from the named fixed-slab H2 completion",
+    "the unrestricted LF smooth-test topology from the represented support-indexed union",
+    "surjectivity of the smooth-test embedding onto H2",
     "uniqueness among arbitrary distributional solutions from energy-image uniqueness",
-    "strict causal support or a Green operator from weak identities",
+    "a variable-coefficient, curved-spacetime, Weyl, or metric-BV Green operator from the scalar 1+1 benchmark",
+    "a Hadamard state, causal perturbative AQFT construction, or Lorentzian quantum master equation",
     "continuum renormalized products from finite regulated-product closure",
     "a Weyl QME or Weyl residual transfer from a finite toy BRST complex",
     "equivalence of carrier categories from one finite realization",
     "a theorem ranking from interface order, Pareto membership, or neighbor counts",
     "composition beyond the two certified scoped cross-cell interfaces",
     "precision sampler equivalence, continuum reconstruction, or empirical support from the BT finite lattice",
-    "a complete observationally validated theory",
-    "a new Lorentzian-causal result"
+    "a complete observationally validated theory"
   ],
   "human_report": "foundations/reports/matrix-explorer-site-v2.md"
 }

@@ -1,0 +1,609 @@
+{
+  "schema_version": "foundational-fixed-support-smooth-to-h2-translator-v1",
+  "result_id": "FOUNDATIONAL_FIXED_SUPPORT_SMOOTH_TO_H2_TRANSLATOR_V1",
+  "result_kind": "REPRESENTATION_TRANSLATOR_WITH_EXPLICIT_SUPPORT_AND_MODULUS",
+  "lifecycle": "CERTIFIED",
+  "created": "2026-08-14",
+  "repository_base_commit": "8d2ceae41e73b748f4f6ca53277423e82697a29c",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "theorem": "Over RCA_0, every periodic smooth test on the unit cylinder carrying rational fixed-support advice and a supplied uniform derivative approximation rate through order two translates uniformly into the rational compact-time H2 test-code completion, with an explicit primitive-recursive index shift and without an application of choice.",
+  "input_representation": {
+    "id": "FIXED_SUPPORT_SMOOTH_DERIVATIVE_NAME_V1",
+    "support_advice": "rationals a<b and delta>0, with support(phi) inside [a,b]x(R/Z) and [a-delta,b+delta] inside (0,1)",
+    "approximants": "rational periodic C2 piecewise-polynomial codes p_m",
+    "rate": "max_{|alpha|<=2} ||D^alpha(p_m-phi)||_infinity <= 2^-m",
+    "advice_is_input": true,
+    "bare_extensional_function_is_not_input": true
+  },
+  "cutoff_code": {
+    "smoothstep": "h(r)=3r^2-2r^3 for 0<=r<=1",
+    "left_collar": "chi(t)=h((t-a+delta)/delta) on [a-delta,a]",
+    "core": "chi(t)=1 on [a,b]",
+    "right_collar": "chi(t)=h((b+delta-t)/delta) on [b,b+delta]",
+    "outside": "chi(t)=0 outside [a-delta,b+delta]",
+    "regularity": "global C1 and rational piecewise cubic",
+    "support_preserved": true
+  },
+  "translation": {
+    "formula": "q_n=chi p_(n+s)",
+    "target_representation": "H2_TEST_NAME_UNIT_CYLINDER_V1",
+    "target_carrier": "FOUNDATIONAL_CODED_WEAK_WAVE_H2_TEST_COMPLETION_V1",
+    "h2_derivative_order": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        0,
+        2
+      ]
+    ],
+    "constant_rule": "C1=3/(2 delta), C2=6/delta^2, C_H2=sum of squares of [1,1+C1,1,1+2C1+C2,1+C1,1]",
+    "shift_rule": "A=ceil(C_H2); s is least natural with A<=4^s",
+    "fast_bound": "||q_n-phi||_H2^2<=C_H2 4^-(n+s)<=4^-n",
+    "choice_use": "NONE: support collar and derivative modulus are supplied name data"
+  },
+  "formal_proof": [
+    {
+      "id": "SUPPORT_ADVISED_SMOOTH_NAME",
+      "base": "RCA_0",
+      "statement": "Input consists of rational a<b and delta>0 with [a-delta,b+delta] inside the unit slab, together with rational periodic C2 approximant codes p_m satisfying the supplied uniform derivative bound max over |alpha|<=2 of ||D^alpha(p_m-phi)||_infinity <= 2^-m and supp(phi) contained in [a,b] times the circle."
+    },
+    {
+      "id": "RATIONAL_CUTOFF",
+      "base": "PRA",
+      "depends_on": [
+        "SUPPORT_ADVISED_SMOOTH_NAME"
+      ],
+      "statement": "The cubic smoothstep h(r)=3r^2-2r^3 on each rational collar defines a rational global-C1 piecewise-polynomial cutoff chi, equal to one on [a,b] and zero outside [a-delta,b+delta], with |chi'|<=3/(2 delta) and |chi''|<=6/delta^2."
+    },
+    {
+      "id": "PRODUCT_CODE",
+      "base": "PRA",
+      "depends_on": [
+        "RATIONAL_CUTOFF"
+      ],
+      "statement": "For q_n=chi p_(n+s), finite rational polynomial multiplication and partition refinement produce a rational periodic compact-time C1 piecewise-polynomial H2 test code in the prior carrier."
+    },
+    {
+      "id": "EXACT_H2_MODULUS",
+      "base": "RCA_0",
+      "depends_on": [
+        "PRODUCT_CODE"
+      ],
+      "statement": "The six product-rule factors for derivatives 1,t,x,tt,tx,xx are 1, 1+C1, 1, 1+2C1+C2, 1+C1, 1. Their squared sum C_H2 bounds ||q_n-phi||_H2^2 by C_H2 4^-(n+s). Taking A=ceil(C_H2) and the least s with A<=4^s yields the fast bound 4^-n."
+    },
+    {
+      "id": "TRANSLATOR",
+      "base": "RCA_0",
+      "depends_on": [
+        "EXACT_H2_MODULUS"
+      ],
+      "statement": "The map from the support-advised derivative name to the sequence q_n is uniform and supplies a valid name in the declared rational H2 completion. No choice principle selects support or a convergence modulus because both are components of the input name."
+    },
+    {
+      "id": "REPRESENTATION_BOUNDARY",
+      "base": "RCA_0",
+      "depends_on": [
+        "TRANSLATOR"
+      ],
+      "statement": "This is a translator between two declared representations. It does not turn a bare extensional smooth function into a name, identify the unrestricted LF topology, or prove a weakest-base reversal."
+    }
+  ],
+  "fixtures": [
+    {
+      "margin": [
+        1,
+        8
+      ],
+      "cutoff_first_derivative_bound": [
+        12,
+        1
+      ],
+      "cutoff_second_derivative_bound": [
+        384,
+        1
+      ],
+      "component_factors": [
+        [
+          1,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          409,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "h2_squared_constant": [
+        167622,
+        1
+      ],
+      "integer_majorant": 167622,
+      "index_shift": 9,
+      "precision_samples": [
+        {
+          "precision": 1,
+          "input_index": 10,
+          "h2_squared_error_bound": [
+            83811,
+            524288
+          ],
+          "target_bound": [
+            1,
+            4
+          ]
+        },
+        {
+          "precision": 2,
+          "input_index": 11,
+          "h2_squared_error_bound": [
+            83811,
+            2097152
+          ],
+          "target_bound": [
+            1,
+            16
+          ]
+        },
+        {
+          "precision": 3,
+          "input_index": 12,
+          "h2_squared_error_bound": [
+            83811,
+            8388608
+          ],
+          "target_bound": [
+            1,
+            64
+          ]
+        },
+        {
+          "precision": 4,
+          "input_index": 13,
+          "h2_squared_error_bound": [
+            83811,
+            33554432
+          ],
+          "target_bound": [
+            1,
+            256
+          ]
+        },
+        {
+          "precision": 5,
+          "input_index": 14,
+          "h2_squared_error_bound": [
+            83811,
+            134217728
+          ],
+          "target_bound": [
+            1,
+            1024
+          ]
+        },
+        {
+          "precision": 6,
+          "input_index": 15,
+          "h2_squared_error_bound": [
+            83811,
+            536870912
+          ],
+          "target_bound": [
+            1,
+            4096
+          ]
+        },
+        {
+          "precision": 7,
+          "input_index": 16,
+          "h2_squared_error_bound": [
+            83811,
+            2147483648
+          ],
+          "target_bound": [
+            1,
+            16384
+          ]
+        },
+        {
+          "precision": 8,
+          "input_index": 17,
+          "h2_squared_error_bound": [
+            83811,
+            8589934592
+          ],
+          "target_bound": [
+            1,
+            65536
+          ]
+        }
+      ]
+    },
+    {
+      "margin": [
+        1,
+        16
+      ],
+      "cutoff_first_derivative_bound": [
+        24,
+        1
+      ],
+      "cutoff_second_derivative_bound": [
+        1536,
+        1
+      ],
+      "component_factors": [
+        [
+          1,
+          1
+        ],
+        [
+          25,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1585,
+          1
+        ],
+        [
+          25,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "h2_squared_constant": [
+        2513478,
+        1
+      ],
+      "integer_majorant": 2513478,
+      "index_shift": 11,
+      "precision_samples": [
+        {
+          "precision": 1,
+          "input_index": 12,
+          "h2_squared_error_bound": [
+            1256739,
+            8388608
+          ],
+          "target_bound": [
+            1,
+            4
+          ]
+        },
+        {
+          "precision": 2,
+          "input_index": 13,
+          "h2_squared_error_bound": [
+            1256739,
+            33554432
+          ],
+          "target_bound": [
+            1,
+            16
+          ]
+        },
+        {
+          "precision": 3,
+          "input_index": 14,
+          "h2_squared_error_bound": [
+            1256739,
+            134217728
+          ],
+          "target_bound": [
+            1,
+            64
+          ]
+        },
+        {
+          "precision": 4,
+          "input_index": 15,
+          "h2_squared_error_bound": [
+            1256739,
+            536870912
+          ],
+          "target_bound": [
+            1,
+            256
+          ]
+        },
+        {
+          "precision": 5,
+          "input_index": 16,
+          "h2_squared_error_bound": [
+            1256739,
+            2147483648
+          ],
+          "target_bound": [
+            1,
+            1024
+          ]
+        },
+        {
+          "precision": 6,
+          "input_index": 17,
+          "h2_squared_error_bound": [
+            1256739,
+            8589934592
+          ],
+          "target_bound": [
+            1,
+            4096
+          ]
+        },
+        {
+          "precision": 7,
+          "input_index": 18,
+          "h2_squared_error_bound": [
+            1256739,
+            34359738368
+          ],
+          "target_bound": [
+            1,
+            16384
+          ]
+        },
+        {
+          "precision": 8,
+          "input_index": 19,
+          "h2_squared_error_bound": [
+            1256739,
+            137438953472
+          ],
+          "target_bound": [
+            1,
+            65536
+          ]
+        }
+      ]
+    },
+    {
+      "margin": [
+        1,
+        32
+      ],
+      "cutoff_first_derivative_bound": [
+        48,
+        1
+      ],
+      "cutoff_second_derivative_bound": [
+        6144,
+        1
+      ],
+      "component_factors": [
+        [
+          1,
+          1
+        ],
+        [
+          49,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          6241,
+          1
+        ],
+        [
+          49,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "h2_squared_constant": [
+        38954886,
+        1
+      ],
+      "integer_majorant": 38954886,
+      "index_shift": 13,
+      "precision_samples": [
+        {
+          "precision": 1,
+          "input_index": 14,
+          "h2_squared_error_bound": [
+            19477443,
+            134217728
+          ],
+          "target_bound": [
+            1,
+            4
+          ]
+        },
+        {
+          "precision": 2,
+          "input_index": 15,
+          "h2_squared_error_bound": [
+            19477443,
+            536870912
+          ],
+          "target_bound": [
+            1,
+            16
+          ]
+        },
+        {
+          "precision": 3,
+          "input_index": 16,
+          "h2_squared_error_bound": [
+            19477443,
+            2147483648
+          ],
+          "target_bound": [
+            1,
+            64
+          ]
+        },
+        {
+          "precision": 4,
+          "input_index": 17,
+          "h2_squared_error_bound": [
+            19477443,
+            8589934592
+          ],
+          "target_bound": [
+            1,
+            256
+          ]
+        },
+        {
+          "precision": 5,
+          "input_index": 18,
+          "h2_squared_error_bound": [
+            19477443,
+            34359738368
+          ],
+          "target_bound": [
+            1,
+            1024
+          ]
+        },
+        {
+          "precision": 6,
+          "input_index": 19,
+          "h2_squared_error_bound": [
+            19477443,
+            137438953472
+          ],
+          "target_bound": [
+            1,
+            4096
+          ]
+        },
+        {
+          "precision": 7,
+          "input_index": 20,
+          "h2_squared_error_bound": [
+            19477443,
+            549755813888
+          ],
+          "target_bound": [
+            1,
+            16384
+          ]
+        },
+        {
+          "precision": 8,
+          "input_index": 21,
+          "h2_squared_error_bound": [
+            19477443,
+            2199023255552
+          ],
+          "target_bound": [
+            1,
+            65536
+          ]
+        }
+      ]
+    }
+  ],
+  "literature_context": [
+    {
+      "id": "pauly-steinberg-2018-representations",
+      "citation": "Arno Pauly and Florian Steinberg, Comparing Representations for Function Spaces in Computable Analysis, Theory of Computing Systems 62 (2018), 557-582",
+      "doi": "10.1007/s00224-016-9745-6",
+      "url": "https://doi.org/10.1007/s00224-016-9745-6",
+      "role": "Context for support advice and representation-sensitive function spaces.",
+      "import_boundary": "The paper does not supply this exact cutoff or RCA_0 modulus certificate."
+    },
+    {
+      "id": "van-schaftingen-2014-sobolev-interpolation",
+      "citation": "Jean Van Schaftingen, Approximation in Sobolev spaces by piecewise affine interpolation, Journal of Mathematical Analysis and Applications 420 (2014), 40-47",
+      "doi": "10.1016/j.jmaa.2014.05.036",
+      "url": "https://doi.org/10.1016/j.jmaa.2014.05.036",
+      "role": "Classical context for direct piecewise-polynomial Sobolev approximation.",
+      "import_boundary": "No uniform name constructor or reverse-mathematical calibration is imported."
+    }
+  ],
+  "provenance": {
+    "inputs": [
+      {
+        "path": "foundations/results/FOUNDATIONAL_CODED_WEAK_WAVE_H2_TEST_COMPLETION_V1.json",
+        "sha256": "d61f1be5be86a3e756b0e448c5d559d76664f76ddd9a58b5099b22c3a6c0be6d",
+        "role": "target H2 representation and carrier"
+      }
+    ]
+  },
+  "independent_checker": {
+    "path": "foundations/check_fixed_support_smooth_to_h2_translator.py",
+    "checks": [
+      "proof DAG",
+      "cubic cutoff endpoint jets",
+      "three exact rational collars",
+      "six product-rule factors",
+      "minimal base-four shifts",
+      "24 exact H2 inequalities",
+      "source hash",
+      "canonical digest"
+    ],
+    "expected_digest": "6dc912a6446cd2fda976718322a539c633e241b51c61cc4803dad456f5cdc9d0"
+  },
+  "claim_flags": {
+    "fixed_support_smooth_name_translated": true,
+    "rational_h2_fast_name_constructed": true,
+    "explicit_cutoff_and_modulus_constructed": true,
+    "choice_principle_used": false,
+    "bare_extensional_smooth_function_uniformly_named": false,
+    "support_advice_eliminated": false,
+    "full_lf_topology_identified": false,
+    "weakest_base_or_reversal_proved": false,
+    "causal_or_green_result_proved": false,
+    "weyl_or_metric_bv_result_proved": false
+  },
+  "does_not_establish": [
+    "a name for a bare extensional smooth function without support and rate advice",
+    "a uniform selection of compact support bounds",
+    "the unrestricted LF topology of compactly supported smooth tests",
+    "a weakest-base reversal or equivalence",
+    "strict causal support or an advanced or retarded Green operator",
+    "a variable-coefficient, curved-spacetime, Weyl, or metric-BV theorem"
+  ],
+  "next_gate": "Assemble the fixed-support translators over an explicit support index and compare the resulting represented union with the conventional LF test-function space without conflating sequential names with the full nonmetrizable topology.",
+  "human_report": "foundations/reports/fixed-support-smooth-to-h2-translator-v1.md"
+}

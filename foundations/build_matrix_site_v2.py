@@ -42,7 +42,7 @@ NGC3198_COMMON_FIT_REPORT = FOUNDATIONS / "reports/ngc3198-common-fit-comparison
 NGC3198_COMMON_FIT_SCHEMA = FOUNDATIONS / "schema/foundational-ngc3198-common-fit-comparison-v1.schema.json"
 NGC3198_COMMON_FIT_PROTOCOL = FOUNDATIONS / "data/ngc3198-common-fit-protocol-v1.json"
 NGC3198_COMMON_FIT_CPP = FOUNDATIONS / "ngc3198_common_fit_checker.cpp"
-CUBE = FOUNDATIONS / "results/FOUNDATIONAL_INTERSECTION_CUBE_V13.json"
+CUBE = FOUNDATIONS / "results/FOUNDATIONAL_INTERSECTION_CUBE_V14.json"
 PREVIOUS_CUBES = [
     FOUNDATIONS / "results/FOUNDATIONAL_INTERSECTION_CUBE_V4.json",
     FOUNDATIONS / "results/FOUNDATIONAL_INTERSECTION_CUBE_V5.json",
@@ -53,6 +53,7 @@ PREVIOUS_CUBES = [
     FOUNDATIONS / "results/FOUNDATIONAL_INTERSECTION_CUBE_V10.json",
     FOUNDATIONS / "results/FOUNDATIONAL_INTERSECTION_CUBE_V11.json",
     FOUNDATIONS / "results/FOUNDATIONAL_INTERSECTION_CUBE_V12.json",
+    FOUNDATIONS / "results/FOUNDATIONAL_INTERSECTION_CUBE_V13.json",
 ]
 TEN_CELL_CLOSURE = FOUNDATIONS / "results/FOUNDATIONAL_FINITE_OPERATOR_TEN_CELL_CLOSURE_V1.json"
 TWENTY_CELL_CLOSURE = FOUNDATIONS / "results/FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1.json"
@@ -64,7 +65,7 @@ FULL_SURFACE_AUDIT = FOUNDATIONS / "results/FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_
 LADDER = FOUNDATIONS / "results/FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V2.json"
 LEDGERS = v1.LEDGERS
 CREATED = "2026-08-14"
-BASE_COMMIT = "2a211e2931cd391b78f16d8ec374369ec09a4a24"
+BASE_COMMIT = "8d2ceae41e73b748f4f6ca53277423e82697a29c"
 
 PLAIN_AXIS_GUIDE = {
     "FOUNDATION": {
@@ -268,7 +269,7 @@ def build_dataset() -> dict[str, Any]:
             "full_surface_audit": site_link(rel(FULL_SURFACE_AUDIT)),
             "migration_audit": site_link(rel(AUDIT)),
             "ladder": site_link(rel(LADDER)),
-            "cube_report": site_link("foundations/reports/refined-intersection-cube-v13.md"),
+            "cube_report": site_link("foundations/reports/refined-intersection-cube-v14.md"),
             "bt_euclidean_import": site_link(rel(BT_EUCLIDEAN_IMPORT)),
             "bt_euclidean_import_report": site_link("foundations/reports/bt-euclidean-lattice-foundational-import.md"),
             "full_surface_audit_report": site_link("foundations/reports/full-surface-gap-audit.md"),
@@ -301,7 +302,7 @@ def render_report(result: dict[str, Any]) -> str:
 ## Outcome
 
 `foundations/site/index.html` presents all **576** Cartesian coordinates.
-All **576** are now emitted by cube v13 and have separate coverage and migration
+All **576** are now emitted by cube v14 and have separate coverage and migration
 review fields: **{counts['migration_reviewed']} reviewed**, **{counts['migration_pending']} pending**.
 The surface has **{counts['reviewed_gap']} `REVIEWED_GAP`** cells and **{counts['not_mapped']}
 `NOT_MAPPED`** cells. A reviewed gap is a formulated open question with a typed
@@ -312,13 +313,13 @@ The full-surface audit preserves all 401 prior positive, partial, and priority
 classifications. It revises 51 emitted blanks and directly assesses the 124
 formerly synthetic coordinates without transferring evidence from neighbors.
 
-Cube v13 preserves two certified `CONDITIONAL_BRIDGE` relations. The first maps an
+Cube v14 preserves two certified `CONDITIONAL_BRIDGE` relations. The first maps an
 algebraic finite-corner state to a Krein probability rule under five explicit
 hypotheses. The second uses the free Fock energy gap to select the unique normal
 zero-energy vacuum state and proves that the same state is invariant under the
 generated Krein--Fock dynamics. The other assembly interfaces remain open.
 
-Cube v13 also preserves the positive BT Euclidean finite lattice import into five direct
+Cube v14 also preserves the positive BT Euclidean finite lattice import into five direct
 `FINITE_DISCRETE × SMOOTH_DISTRIBUTIONAL` cells. Its independent-sampler record
 is coarse numerical reproduction, not empirical validation. A separate carrier
 interface refuses only identification of the positive Euclidean measure with the
@@ -341,6 +342,15 @@ piecewise-polynomial carrier.  A supplied fast H2 name gives explicit residual
 cutoffs and a continuous distributional field-state map on the fixed slab.  The
 name is representation data: this does not reconstruct the unrestricted
 nonmetrizable LF test topology or prove uniqueness among arbitrary distributions.
+
+The new representation-to-causality slice closes the next three declared gates.
+A fixed-support smooth name with explicit derivative and support advice now translates
+to the rational H2 carrier with an exact cutoff modulus.  Support tags assemble these
+fixed stages into a represented compact-test union, with a firewall against identifying
+that union with the full locally convex LF topology.  Finally, canonical retarded and
+advanced Green maps for the flat scalar 1+1 wave operator satisfy exact inverse
+identities, causal support, and adjoint duality.  That `LORENTZIAN-CAUSAL` result is a
+scalar benchmark, not a Weyl/BV propagator or quantum causal construction.
 
 Coverage is assessed for **{counts['coverage_classified']}** emitted cells. The
 finite-BRST pass classifies exactly twenty additional empty cells: seventeen
@@ -579,6 +589,7 @@ def generated() -> dict[Path, bytes]:
     local_evidence_paths = [ROOT / item["result_path"] for item in dataset["evidence"].values() if item["kind"] == "LOCAL_RESULT"]
     local_report_paths = [ROOT / item["report_path"] for item in dataset["evidence"].values() if item["kind"] == "LOCAL_RESULT" and item.get("report_path")]
     reports = [
+        FOUNDATIONS / "reports/refined-intersection-cube-v14.md",
         FOUNDATIONS / "reports/refined-intersection-cube-v13.md",
         FOUNDATIONS / "reports/refined-intersection-cube-v12.md",
         FOUNDATIONS / "reports/refined-intersection-cube-v11.md",
@@ -621,11 +632,11 @@ def generated() -> dict[Path, bytes]:
         "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
         "scope": "Deterministic static exploration surface over the migration-reviewed foundations cube and cylinder implication ladder.",
         "counts": dataset["counts"],
-        "features": ["sixteen 6x6 heatmaps", "complete 576-coordinate assessment surface", "reviewed-open-gap state distinct from priority and result", "dual local+literature cell marks", "per-evidence directness roles", "general-audience three-question dimensions guide", "grouped five-stage physical-obligation journey", "progressive-disclosure glossary and reviewer mechanics", "plain-language guide for all 28 axis options", "separate coverage and migration-review states", "migration evidence inspector", "multi-select filters", "full-text search", "cell inspector", "one-axis neighbors", "two-cell comparison", "URL permalinks", "filtered JSON and CSV export", "research-brief export", "three-pathway typed argument map with linked relation ledger", "strength ladder", "evidence catalogue", "theory-profile readiness map", "researcher-selectable obligation gates", "multi-carrier coverage-envelope composer", "non-scalar Pareto navigation", "separate composition, numerical-reproduction, and empirical-agreement rails", "three-way assembly subnavigation for bounded models, research programmes, and interface/calibration ledgers", "nine named research-programme lenses with explicit scope cautions", "first model-scoped GR-to-Cassini bounded prediction assembly", "second bounded Mannheim-to-NGC3198 assembly with a no-refit standardized-residual audit and mixed pass/fail gates", "first explicit uniform finite-approximant reconstruction of a declared bounded wave observable", "finite localized rank-10 chiral test class with coefficient-wise weak wave identities", "named H2 test completion with explicit residual modulus and distributional state map", "typed applicability mask", "exact field-equation-to-PPN-to-null-delay chain", "typed cross-cell interface ledger", "two certified scoped cross-cell bridges", "one certified scoped carrier non-identity", "independent maturity rails with missing distinct from failure", "empty fail-closed candidate empirical benchmark ledger", "external standard-GR positive control with four primary-source records", "ten-cell exact finite-operator closure", "twenty-cell exact finite-BRST closure"],
+        "features": ["sixteen 6x6 heatmaps", "complete 576-coordinate assessment surface", "reviewed-open-gap state distinct from priority and result", "dual local+literature cell marks", "per-evidence directness roles", "general-audience three-question dimensions guide", "grouped five-stage physical-obligation journey", "progressive-disclosure glossary and reviewer mechanics", "plain-language guide for all 28 axis options", "separate coverage and migration-review states", "migration evidence inspector", "multi-select filters", "full-text search", "cell inspector", "one-axis neighbors", "two-cell comparison", "URL permalinks", "filtered JSON and CSV export", "research-brief export", "three-pathway typed argument map with linked relation ledger", "strength ladder", "evidence catalogue", "theory-profile readiness map", "researcher-selectable obligation gates", "multi-carrier coverage-envelope composer", "non-scalar Pareto navigation", "separate composition, numerical-reproduction, and empirical-agreement rails", "three-way assembly subnavigation for bounded models, research programmes, and interface/calibration ledgers", "nine named research-programme lenses with explicit scope cautions", "first model-scoped GR-to-Cassini bounded prediction assembly", "second bounded Mannheim-to-NGC3198 assembly with a no-refit standardized-residual audit and mixed pass/fail gates", "first explicit uniform finite-approximant reconstruction of a declared bounded wave observable", "finite localized rank-10 chiral test class with coefficient-wise weak wave identities", "named H2 test completion with explicit residual modulus and distributional state map", "fixed-support smooth-name to rational H2 translator", "support-indexed represented test-space comparison with LF boundary", "exact flat scalar 1+1 retarded and advanced Green benchmark", "typed applicability mask", "exact field-equation-to-PPN-to-null-delay chain", "typed cross-cell interface ledger", "two certified scoped cross-cell bridges", "one certified scoped carrier non-identity", "independent maturity rails with missing distinct from failure", "empty fail-closed candidate empirical benchmark ledger", "external standard-GR positive control with four primary-source records", "ten-cell exact finite-operator closure", "twenty-cell exact finite-BRST closure"],
         "provenance": {"manifest": rel(SITE / "manifest.json"), "manifest_sha256": v1.sha_bytes(manifest_bytes), "canonical_data_digest": dataset["canonical_digest"], "viability_digest": viability["canonical_digest"], "assembly_digest": assemblies["canonical_digest"]},
-        "independent_checker": {"path": "foundations/check_matrix_site_v2.py", "expected_cells": 576, "expected_emitted": 576, "expected_synthetic_not_mapped": 0, "expected_total_not_mapped": 0, "expected_reviewed_gaps": 169, "expected_evidence_records": 78, "expected_digest": dataset["canonical_digest"], "expected_viability_digest": viability["canonical_digest"], "expected_assembly_digest": assemblies["canonical_digest"]},
-        "claim_flags": {"static_site_generated": True, "all_cartesian_coordinates_visible": True, "all_cartesian_coordinates_assessed": True, "zero_not_mapped": True, "reviewed_gaps_distinguished_from_results": True, "all_emitted_migrations_reviewed": True, "coverage_and_migration_separated": True, "all_used_evidence_resolved": True, "theory_profiles_generated": True, "theory_assembly_atlas_generated": True, "bounded_observable_reconstruction_exposed": True, "localized_coefficient_weak_wave_exposed": True, "named_h2_test_completion_exposed": True, "at_least_one_cross_cell_interface_certified": True, "composition_and_observation_rails_separated": True, "scientific_claims_duplicated_by_hand": False, "literature_complete": False, "unmapped_means_absent": False, "reviewed_gap_means_absent": False, "reviewed_no_transfer_means_absent": False, "priority_score_is_theorem": False, "complete_observationally_valid_theory_identified": False, "new_lorentzian_claim": False},
-        "does_not_establish": ["literature completeness", "a result for any of the 169 reviewed open gaps", "that REVIEWED_GAP or NOT_MAPPED means no literature exists", "that an UNREVIEWED evidence role is an absence of direct support", "that a dual LR mark composes its two records into a stronger result", "that all 576 coordinates are jointly realizable", "a weakest mathematical base", "full-state, representation-invariant, causal, or Weyl reconstruction from the single coded wave observable", "the unrestricted LF smooth-test topology from the named fixed-slab H2 completion", "uniqueness among arbitrary distributional solutions from energy-image uniqueness", "strict causal support or a Green operator from weak identities", "continuum renormalized products from finite regulated-product closure", "a Weyl QME or Weyl residual transfer from a finite toy BRST complex", "equivalence of carrier categories from one finite realization", "a theorem ranking from interface order, Pareto membership, or neighbor counts", "composition beyond the two certified scoped cross-cell interfaces", "precision sampler equivalence, continuum reconstruction, or empirical support from the BT finite lattice", "a complete observationally validated theory", "a new Lorentzian-causal result"],
+        "independent_checker": {"path": "foundations/check_matrix_site_v2.py", "expected_cells": 576, "expected_emitted": 576, "expected_synthetic_not_mapped": 0, "expected_total_not_mapped": 0, "expected_reviewed_gaps": 169, "expected_evidence_records": 81, "expected_digest": dataset["canonical_digest"], "expected_viability_digest": viability["canonical_digest"], "expected_assembly_digest": assemblies["canonical_digest"]},
+        "claim_flags": {"static_site_generated": True, "all_cartesian_coordinates_visible": True, "all_cartesian_coordinates_assessed": True, "zero_not_mapped": True, "reviewed_gaps_distinguished_from_results": True, "all_emitted_migrations_reviewed": True, "coverage_and_migration_separated": True, "all_used_evidence_resolved": True, "theory_profiles_generated": True, "theory_assembly_atlas_generated": True, "bounded_observable_reconstruction_exposed": True, "localized_coefficient_weak_wave_exposed": True, "named_h2_test_completion_exposed": True, "smooth_to_h2_translator_exposed": True, "support_indexed_test_comparison_exposed": True, "scalar_green_choice_audit_exposed": True, "at_least_one_cross_cell_interface_certified": True, "composition_and_observation_rails_separated": True, "scientific_claims_duplicated_by_hand": False, "literature_complete": False, "unmapped_means_absent": False, "reviewed_gap_means_absent": False, "reviewed_no_transfer_means_absent": False, "priority_score_is_theorem": False, "complete_observationally_valid_theory_identified": False, "new_lorentzian_claim": True},
+        "does_not_establish": ["literature completeness", "a result for any of the 169 reviewed open gaps", "that REVIEWED_GAP or NOT_MAPPED means no literature exists", "that an UNREVIEWED evidence role is an absence of direct support", "that a dual LR mark composes its two records into a stronger result", "that all 576 coordinates are jointly realizable", "a weakest mathematical base", "full-state, representation-invariant, causal, or Weyl reconstruction from the single coded wave observable", "the unrestricted LF smooth-test topology from the represented support-indexed union", "surjectivity of the smooth-test embedding onto H2", "uniqueness among arbitrary distributional solutions from energy-image uniqueness", "a variable-coefficient, curved-spacetime, Weyl, or metric-BV Green operator from the scalar 1+1 benchmark", "a Hadamard state, causal perturbative AQFT construction, or Lorentzian quantum master equation", "continuum renormalized products from finite regulated-product closure", "a Weyl QME or Weyl residual transfer from a finite toy BRST complex", "equivalence of carrier categories from one finite realization", "a theorem ranking from interface order, Pareto membership, or neighbor counts", "composition beyond the two certified scoped cross-cell interfaces", "precision sampler equivalence, continuum reconstruction, or empirical support from the BT finite lattice", "a complete observationally validated theory"],
         "human_report": "foundations/reports/matrix-explorer-site-v2.md",
     }
     outputs[RESULT] = (json.dumps(result, indent=2) + "\n").encode()

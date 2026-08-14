@@ -377,12 +377,12 @@ window.MATRIX_EXPLORER_DATA = {
     "mark_counts": {
       "G": 29,
       "Gl": 1,
-      "L": 110,
+      "L": 112,
       "LR": 8,
       "Lr": 7,
       "Ol": 169,
       "P": 19,
-      "Pl": 80,
+      "Pl": 78,
       "Plr": 12,
       "Pr": 51,
       "R": 87,
@@ -390,16 +390,16 @@ window.MATRIX_EXPLORER_DATA = {
     },
     "evidence_role_counts": {
       "DIRECT_LITERATURE": 84,
-      "DIRECT_LOCAL": 117,
-      "SUPPORTING": 450,
+      "DIRECT_LOCAL": 123,
+      "SUPPORTING": 453,
       "UNREVIEWED": 191
     },
     "synthetic_not_mapped": 0,
     "status_counts": {
       "LITERATURE_RESULT": 90,
-      "LOCAL_RESULT": 125,
+      "LOCAL_RESULT": 127,
       "NOT_MAPPED": 0,
-      "PIECES_ONLY": 162,
+      "PIECES_ONLY": 160,
       "PRIORITY_GAP": 30,
       "REVIEWED_GAP": 169
     },
@@ -411,7 +411,7 @@ window.MATRIX_EXPLORER_DATA = {
       "REVIEWED_NO_TRANSFER": 88,
       "REVIEWED_OVERLAY": 11
     },
-    "evidence_records": 78
+    "evidence_records": 81
   },
   "cells": [
     {
@@ -684,12 +684,16 @@ window.MATRIX_EXPLORER_DATA = {
       "evidence": [
         "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
         "FOUNDATIONAL_CODED_LOCAL_WEAK_WAVE_TEST_CLASS_V1",
-        "FOUNDATIONAL_CODED_WEAK_WAVE_H2_TEST_COMPLETION_V1"
+        "FOUNDATIONAL_CODED_WEAK_WAVE_H2_TEST_COMPLETION_V1",
+        "FOUNDATIONAL_FIXED_SUPPORT_SMOOTH_TO_H2_TRANSLATOR_V1",
+        "FOUNDATIONAL_SUPPORT_INDEXED_TEST_SPACE_COMPARISON_V1"
       ],
       "evidence_roles": {
         "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING",
         "FOUNDATIONAL_CODED_LOCAL_WEAK_WAVE_TEST_CLASS_V1": "DIRECT_LOCAL",
-        "FOUNDATIONAL_CODED_WEAK_WAVE_H2_TEST_COMPLETION_V1": "DIRECT_LOCAL"
+        "FOUNDATIONAL_CODED_WEAK_WAVE_H2_TEST_COMPLETION_V1": "DIRECT_LOCAL",
+        "FOUNDATIONAL_FIXED_SUPPORT_SMOOTH_TO_H2_TRANSLATOR_V1": "DIRECT_LOCAL",
+        "FOUNDATIONAL_SUPPORT_INDEXED_TEST_SPACE_COMPARISON_V1": "DIRECT_LOCAL"
       },
       "parent_obligation": null,
       "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
@@ -698,8 +702,8 @@ window.MATRIX_EXPLORER_DATA = {
         "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
       ],
       "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
-      "summary": "The finite localized tests now embed in a countable rational C1 piecewise-polynomial test carrier with an explicit H2 name and exact derivative-square arithmetic.",
-      "boundary": "The named fixed-slab H2 carrier is not the unrestricted nonmetrizable LF topology of all compactly supported smooth tests.",
+      "summary": "Support-advised smooth names now translate exactly into the rational H2 carrier, and their fixed-support stages assemble coherently as a represented compact-test union.",
+      "boundary": "This is name-level and carrier-level kinematics; it does not identify the full locally convex LF topology.",
       "classification_revision": {
         "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
         "previous_status": "NOT_EMITTED",
@@ -718,6 +722,14 @@ window.MATRIX_EXPLORER_DATA = {
         "new_status": "LOCAL_RESULT",
         "evidence_role": "DIRECT_LOCAL",
         "certificate": "FOUNDATIONAL_CODED_WEAK_WAVE_H2_TEST_COMPLETION_V1"
+      },
+      "vertical_slice_revision": {
+        "previous_status": "LOCAL_RESULT",
+        "new_status": "LOCAL_RESULT",
+        "evidence": {
+          "FOUNDATIONAL_FIXED_SUPPORT_SMOOTH_TO_H2_TRANSLATOR_V1": "DIRECT_LOCAL",
+          "FOUNDATIONAL_SUPPORT_INDEXED_TEST_SPACE_COMPARISON_V1": "DIRECT_LOCAL"
+        }
       },
       "emitted": true
     },
@@ -6364,17 +6376,21 @@ window.MATRIX_EXPLORER_DATA = {
         "FOUNDATIONAL_CODED_POLYGONAL_WAVE_RCA0_V1",
         "simpson-1984-ode",
         "FOUNDATIONAL_CODED_LOCAL_WEAK_WAVE_TEST_CLASS_V1",
-        "FOUNDATIONAL_CODED_WEAK_WAVE_H2_TEST_COMPLETION_V1"
+        "FOUNDATIONAL_CODED_WEAK_WAVE_H2_TEST_COMPLETION_V1",
+        "FOUNDATIONAL_SUPPORT_INDEXED_TEST_SPACE_COMPARISON_V1",
+        "FOUNDATIONAL_SCALAR_MINKOWSKI_GREEN_CHOICE_AUDIT_V1"
       ],
-      "summary": "The unique coded energy evolution has a continuous weak representation on every supplied fast H2 test name, with explicit primitive-recursive transport and wave-residual cutoffs.",
-      "boundary": "Uniqueness is inside the represented energy-solution image; no uniqueness theorem is claimed among all abstract distributional weak solutions.",
+      "summary": "The named weak-wave rail now has a canonical flat scalar 1+1 retarded/advanced evolution with an explicit energy modulus and zero-data uniqueness in the represented energy image.",
+      "boundary": "The Green result is scalar and flat; arbitrary-distribution uniqueness, variable coefficients, gauge systems, and Weyl/BV evolution remain open.",
       "evidence_roles": {
         "FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V1": "SUPPORTING",
         "weihrauch-zhong-2002": "SUPPORTING",
         "FOUNDATIONAL_CODED_POLYGONAL_WAVE_RCA0_V1": "UNREVIEWED",
         "simpson-1984-ode": "UNREVIEWED",
         "FOUNDATIONAL_CODED_LOCAL_WEAK_WAVE_TEST_CLASS_V1": "SUPPORTING",
-        "FOUNDATIONAL_CODED_WEAK_WAVE_H2_TEST_COMPLETION_V1": "DIRECT_LOCAL"
+        "FOUNDATIONAL_CODED_WEAK_WAVE_H2_TEST_COMPLETION_V1": "DIRECT_LOCAL",
+        "FOUNDATIONAL_SUPPORT_INDEXED_TEST_SPACE_COMPARISON_V1": "SUPPORTING",
+        "FOUNDATIONAL_SCALAR_MINKOWSKI_GREEN_CHOICE_AUDIT_V1": "DIRECT_LOCAL"
       },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "REVIEWED_V1_OVERLAY",
@@ -6401,6 +6417,14 @@ window.MATRIX_EXPLORER_DATA = {
         "new_status": "LOCAL_RESULT",
         "evidence_role": "DIRECT_LOCAL",
         "certificate": "FOUNDATIONAL_CODED_WEAK_WAVE_H2_TEST_COMPLETION_V1"
+      },
+      "vertical_slice_revision": {
+        "previous_status": "LOCAL_RESULT",
+        "new_status": "LOCAL_RESULT",
+        "evidence": {
+          "FOUNDATIONAL_SUPPORT_INDEXED_TEST_SPACE_COMPARISON_V1": "SUPPORTING",
+          "FOUNDATIONAL_SCALAR_MINKOWSKI_GREEN_CHOICE_AUDIT_V1": "DIRECT_LOCAL"
+        }
       },
       "emitted": true
     },
@@ -7295,16 +7319,20 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "WEAK_ARITHMETIC",
       "carrier": "SMOOTH_DISTRIBUTIONAL",
       "obligation": "CAUSAL_PROPAGATION_GREEN",
-      "status": "PIECES_ONLY",
+      "status": "LOCAL_RESULT",
       "evidence": [
         "FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V1",
-        "FOUNDATIONAL_TYPED_BIWAVE_GREEN_DEPENDENCY_AUDIT_V1"
+        "FOUNDATIONAL_TYPED_BIWAVE_GREEN_DEPENDENCY_AUDIT_V1",
+        "FOUNDATIONAL_SUPPORT_INDEXED_TEST_SPACE_COMPARISON_V1",
+        "FOUNDATIONAL_SCALAR_MINKOWSKI_GREEN_CHOICE_AUDIT_V1"
       ],
-      "summary": "The exact antipodal obstruction separates spectral approximation from the conditional causal Green dependency shell.",
-      "boundary": "No causal PDE theorem has been formalized over a weak base.",
+      "summary": "Canonical exact retarded and advanced Green maps for the flat 1+1 scalar wave operator satisfy both inverse identities on their code domains, strict causal support, and adjoint duality; supplied source names extend the construction over RCA_0.",
+      "boundary": "The LORENTZIAN-CAUSAL claim is confined to the scalar benchmark and is not a Weyl/BV propagator or quantum causal construction.",
       "evidence_roles": {
         "FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V1": "SUPPORTING",
-        "FOUNDATIONAL_TYPED_BIWAVE_GREEN_DEPENDENCY_AUDIT_V1": "SUPPORTING"
+        "FOUNDATIONAL_TYPED_BIWAVE_GREEN_DEPENDENCY_AUDIT_V1": "SUPPORTING",
+        "FOUNDATIONAL_SUPPORT_INDEXED_TEST_SPACE_COMPARISON_V1": "SUPPORTING",
+        "FOUNDATIONAL_SCALAR_MINKOWSKI_GREEN_CHOICE_AUDIT_V1": "DIRECT_LOCAL"
       },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "REVIEWED_V1_OVERLAY",
@@ -7314,6 +7342,14 @@ window.MATRIX_EXPLORER_DATA = {
         "FOUNDATIONAL_TYPED_BIWAVE_GREEN_DEPENDENCY_AUDIT_V1"
       ],
       "migration_rationale": "A child-specific v1 review overrides the mechanical migration.",
+      "vertical_slice_revision": {
+        "previous_status": "PIECES_ONLY",
+        "new_status": "LOCAL_RESULT",
+        "evidence": {
+          "FOUNDATIONAL_SUPPORT_INDEXED_TEST_SPACE_COMPARISON_V1": "SUPPORTING",
+          "FOUNDATIONAL_SCALAR_MINKOWSKI_GREEN_CHOICE_AUDIT_V1": "DIRECT_LOCAL"
+        }
+      },
       "emitted": true
     },
     {
@@ -14873,16 +14909,22 @@ window.MATRIX_EXPLORER_DATA = {
       "foundation": "WEAK_ARITHMETIC",
       "carrier": "SMOOTH_DISTRIBUTIONAL",
       "obligation": "RECONSTRUCTION_LIMITS",
-      "status": "PIECES_ONLY",
+      "status": "LOCAL_RESULT",
       "evidence": [
         "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
         "FOUNDATIONAL_CODED_LOCAL_WEAK_WAVE_TEST_CLASS_V1",
-        "FOUNDATIONAL_CODED_WEAK_WAVE_H2_TEST_COMPLETION_V1"
+        "FOUNDATIONAL_CODED_WEAK_WAVE_H2_TEST_COMPLETION_V1",
+        "FOUNDATIONAL_FIXED_SUPPORT_SMOOTH_TO_H2_TRANSLATOR_V1",
+        "FOUNDATIONAL_SUPPORT_INDEXED_TEST_SPACE_COMPARISON_V1",
+        "FOUNDATIONAL_SCALAR_MINKOWSKI_GREEN_CHOICE_AUDIT_V1"
       ],
       "evidence_roles": {
         "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING",
         "FOUNDATIONAL_CODED_LOCAL_WEAK_WAVE_TEST_CLASS_V1": "SUPPORTING",
-        "FOUNDATIONAL_CODED_WEAK_WAVE_H2_TEST_COMPLETION_V1": "SUPPORTING"
+        "FOUNDATIONAL_CODED_WEAK_WAVE_H2_TEST_COMPLETION_V1": "SUPPORTING",
+        "FOUNDATIONAL_FIXED_SUPPORT_SMOOTH_TO_H2_TRANSLATOR_V1": "DIRECT_LOCAL",
+        "FOUNDATIONAL_SUPPORT_INDEXED_TEST_SPACE_COMPARISON_V1": "DIRECT_LOCAL",
+        "FOUNDATIONAL_SCALAR_MINKOWSKI_GREEN_CHOICE_AUDIT_V1": "SUPPORTING"
       },
       "parent_obligation": null,
       "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
@@ -14891,8 +14933,8 @@ window.MATRIX_EXPLORER_DATA = {
         "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
       ],
       "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
-      "summary": "A named H2 completion closes the finite-to-completed weak-test extension, while the translator from conventional smooth-test names and the global support topology remain explicit reconstruction gates.",
-      "boundary": "Density is by declared fast-name representation; no uniform name is extracted from a bare extensional smooth function.",
+      "summary": "The previously open representation bridge is now explicit: fixed-support smooth names translate to rational H2 names, conventional support advice is equivalent to a tagged represented union, and the exact boundary with the classical LF topology is recorded.",
+      "boundary": "This comparison does not metrize the LF space, make the H2 embedding surjective, select support advice, or reconstruct a complete physical theory.",
       "classification_revision": {
         "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
         "previous_status": "NOT_EMITTED",
@@ -14911,6 +14953,15 @@ window.MATRIX_EXPLORER_DATA = {
         "new_status": "PIECES_ONLY",
         "evidence_role": "SUPPORTING",
         "certificate": "FOUNDATIONAL_CODED_WEAK_WAVE_H2_TEST_COMPLETION_V1"
+      },
+      "vertical_slice_revision": {
+        "previous_status": "PIECES_ONLY",
+        "new_status": "LOCAL_RESULT",
+        "evidence": {
+          "FOUNDATIONAL_FIXED_SUPPORT_SMOOTH_TO_H2_TRANSLATOR_V1": "DIRECT_LOCAL",
+          "FOUNDATIONAL_SUPPORT_INDEXED_TEST_SPACE_COMPARISON_V1": "DIRECT_LOCAL",
+          "FOUNDATIONAL_SCALAR_MINKOWSKI_GREEN_CHOICE_AUDIT_V1": "SUPPORTING"
+        }
       },
       "emitted": true
     },
@@ -16271,6 +16322,41 @@ window.MATRIX_EXPLORER_DATA = {
       "report_link": "sources/foundations/reports/finite-qubit-interaction-core.md",
       "sha256": "8c92b0482802a4c54a6876f46fc78ff9a571a1298a5c5649014116e79872512e"
     },
+    "FOUNDATIONAL_FIXED_SUPPORT_SMOOTH_TO_H2_TRANSLATOR_V1": {
+      "id": "FOUNDATIONAL_FIXED_SUPPORT_SMOOTH_TO_H2_TRANSLATOR_V1",
+      "kind": "LOCAL_RESULT",
+      "result_kind": "REPRESENTATION_TRANSLATOR_WITH_EXPLICIT_SUPPORT_AND_MODULUS",
+      "lifecycle": "CERTIFIED",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE"
+      ],
+      "claim_flags": {
+        "fixed_support_smooth_name_translated": true,
+        "rational_h2_fast_name_constructed": true,
+        "explicit_cutoff_and_modulus_constructed": true,
+        "choice_principle_used": false,
+        "bare_extensional_smooth_function_uniformly_named": false,
+        "support_advice_eliminated": false,
+        "full_lf_topology_identified": false,
+        "weakest_base_or_reversal_proved": false,
+        "causal_or_green_result_proved": false,
+        "weyl_or_metric_bv_result_proved": false
+      },
+      "does_not_establish": [
+        "a name for a bare extensional smooth function without support and rate advice",
+        "a uniform selection of compact support bounds",
+        "the unrestricted LF topology of compactly supported smooth tests",
+        "a weakest-base reversal or equivalence",
+        "strict causal support or an advanced or retarded Green operator",
+        "a variable-coefficient, curved-spacetime, Weyl, or metric-BV theorem"
+      ],
+      "result_path": "foundations/results/FOUNDATIONAL_FIXED_SUPPORT_SMOOTH_TO_H2_TRANSLATOR_V1.json",
+      "result_link": "sources/foundations/results/FOUNDATIONAL_FIXED_SUPPORT_SMOOTH_TO_H2_TRANSLATOR_V1.json",
+      "report_path": "foundations/reports/fixed-support-smooth-to-h2-translator-v1.md",
+      "report_link": "sources/foundations/reports/fixed-support-smooth-to-h2-translator-v1.md",
+      "sha256": "1403506997a12454a3bce1eda5c4457da17bc81973c31b0ca6f94b0f75a2a85e"
+    },
     "FOUNDATIONAL_FREE_BV_ENERGY2_PRA_SDR_V1": {
       "id": "FOUNDATIONAL_FREE_BV_ENERGY2_PRA_SDR_V1",
       "kind": "LOCAL_RESULT",
@@ -16573,6 +16659,83 @@ window.MATRIX_EXPLORER_DATA = {
       "report_path": "foundations/reports/normal-hyperbolic-factor-foundations.md",
       "report_link": "sources/foundations/reports/normal-hyperbolic-factor-foundations.md",
       "sha256": "40836e986d2ba7b957cc51298c1bd724ace32ef59f846a7abc63b8980143a6c4"
+    },
+    "FOUNDATIONAL_SCALAR_MINKOWSKI_GREEN_CHOICE_AUDIT_V1": {
+      "id": "FOUNDATIONAL_SCALAR_MINKOWSKI_GREEN_CHOICE_AUDIT_V1",
+      "kind": "LOCAL_RESULT",
+      "result_kind": "SCALAR_LORENTZIAN_GREEN_OPERATOR_AND_CHOICE_DEPENDENCY_AUDIT",
+      "lifecycle": "CERTIFIED",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "claim_flags": {
+        "scalar_retarded_green_constructed": true,
+        "scalar_advanced_green_constructed": true,
+        "two_sided_test_code_identities_proved": true,
+        "strict_causal_support_proved": true,
+        "adjoint_duality_proved": true,
+        "named_energy_extension_proved": true,
+        "canonical_construction_avoids_choice": true,
+        "lorentzian_causal_scalar_claim": true,
+        "arbitrary_distributional_uniqueness_proved": false,
+        "bare_source_support_uniformly_selected": false,
+        "variable_coefficient_green_constructed": false,
+        "weyl_bv_propagator_constructed": false,
+        "hadamard_state_constructed": false,
+        "lorentzian_quantum_master_equation_proved": false
+      },
+      "does_not_establish": [
+        "uniqueness among all arbitrary distributional solutions",
+        "support or convergence data selected from a bare extensional source",
+        "a variable-coefficient or curved-spacetime Green operator",
+        "a Green operator for conformal Weyl gravity or the metric BV complex",
+        "a BRST-compatible Hadamard state or renormalized time-ordered products",
+        "a causal perturbative AQFT construction or Lorentzian quantum master equation",
+        "a weakest-base reversal",
+        "empirical adequacy or a complete physical theory"
+      ],
+      "result_path": "foundations/results/FOUNDATIONAL_SCALAR_MINKOWSKI_GREEN_CHOICE_AUDIT_V1.json",
+      "result_link": "sources/foundations/results/FOUNDATIONAL_SCALAR_MINKOWSKI_GREEN_CHOICE_AUDIT_V1.json",
+      "report_path": "foundations/reports/scalar-minkowski-green-choice-audit-v1.md",
+      "report_link": "sources/foundations/reports/scalar-minkowski-green-choice-audit-v1.md",
+      "sha256": "5a08ba2ff2881084b60097c1d28f124d5b94a12a2ff7ce3babbd7ad8f14a0779"
+    },
+    "FOUNDATIONAL_SUPPORT_INDEXED_TEST_SPACE_COMPARISON_V1": {
+      "id": "FOUNDATIONAL_SUPPORT_INDEXED_TEST_SPACE_COMPARISON_V1",
+      "kind": "LOCAL_RESULT",
+      "result_kind": "SUPPORT_INDEXED_REPRESENTED_UNION_COMPARISON_WITH_LF_BOUNDARY",
+      "lifecycle": "CERTIFIED",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE"
+      ],
+      "claim_flags": {
+        "support_indexed_represented_union_constructed": true,
+        "conventional_and_tagged_names_equivalent": true,
+        "stage_inclusion_compatibility_proved": true,
+        "every_represented_smooth_test_embedded_in_h2": true,
+        "weak_identity_assembled_over_named_tests": true,
+        "choice_principle_used": false,
+        "uniform_support_bound_selected_from_bare_function": false,
+        "h2_embedding_surjective": false,
+        "full_lf_locally_convex_topology_identified": false,
+        "single_metric_completion_of_test_space_constructed": false,
+        "weyl_or_metric_bv_result_proved": false
+      },
+      "does_not_establish": [
+        "a support bound selected uniformly from a bare extensional function",
+        "equality between the represented quotient topology and the full classical locally convex LF topology",
+        "surjectivity of the smooth-test embedding onto the H2 completion",
+        "a single metrization or metric completion of the classical test-function LF space",
+        "a weakest-base reversal",
+        "causal Green propagation, a Weyl equation, or a metric-BV theorem"
+      ],
+      "result_path": "foundations/results/FOUNDATIONAL_SUPPORT_INDEXED_TEST_SPACE_COMPARISON_V1.json",
+      "result_link": "sources/foundations/results/FOUNDATIONAL_SUPPORT_INDEXED_TEST_SPACE_COMPARISON_V1.json",
+      "report_path": "foundations/reports/support-indexed-test-space-comparison-v1.md",
+      "report_link": "sources/foundations/reports/support-indexed-test-space-comparison-v1.md",
+      "sha256": "d0f853a43affb516fc86563d1ba89e25c1a47ab635388cc4e4a20ae7dd30e24a"
     },
     "FOUNDATIONAL_TOPOS_WEYL_BV_OBSTRUCTION_LEDGER_V0": {
       "id": "FOUNDATIONAL_TOPOS_WEYL_BV_OBSTRUCTION_LEDGER_V0",
@@ -17855,15 +18018,16 @@ window.MATRIX_EXPLORER_DATA = {
   ],
   "boundaries": {
     "cube": [
-      "a uniform H2 name constructor for every bare extensional smooth test",
-      "the unrestricted LF topology of compactly supported smooth tests",
+      "a support or convergence modulus selected from a bare extensional function",
+      "the full locally convex LF topology or a single metrization of C_c-infinity",
+      "surjectivity of the smooth-test embedding onto H2",
       "uniqueness among arbitrary distributional weak solutions",
-      "strict finite propagation or causal Green support",
-      "an advanced or retarded Green operator",
-      "a Weyl, Bateman-Turok, metric-BV, or interacting equation",
+      "a variable-coefficient or curved-spacetime Green operator",
+      "a Lorentzian Weyl/BV propagator",
+      "a Hadamard state, causal perturbative AQFT construction, or Lorentzian quantum master equation",
       "empirical calibration or observational agreement",
       "that all 576 coordinates are jointly realizable",
-      "a complete physical theory or new LORENTZIAN-CAUSAL result"
+      "a complete physical theory"
     ],
     "migration_audit": [
       "literature completeness",
@@ -17896,11 +18060,11 @@ window.MATRIX_EXPLORER_DATA = {
     ]
   },
   "source_links": {
-    "cube": "sources/foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V13.json",
+    "cube": "sources/foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V14.json",
     "full_surface_audit": "sources/foundations/results/FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1.json",
     "migration_audit": "sources/foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_MIGRATION_AUDIT_V2.json",
     "ladder": "sources/foundations/results/FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V2.json",
-    "cube_report": "sources/foundations/reports/refined-intersection-cube-v13.md",
+    "cube_report": "sources/foundations/reports/refined-intersection-cube-v14.md",
     "bt_euclidean_import": "sources/foundations/results/FOUNDATIONAL_BT_EUCLIDEAN_LATTICE_IMPORT_V1.json",
     "bt_euclidean_import_report": "sources/foundations/reports/bt-euclidean-lattice-foundational-import.md",
     "full_surface_audit_report": "sources/foundations/reports/full-surface-gap-audit.md",
@@ -17915,5 +18079,5 @@ window.MATRIX_EXPLORER_DATA = {
     "migration_audit_report": "sources/foundations/reports/intersection-cube-migration-audit-v2.md",
     "ladder_report": "sources/foundations/reports/cylinder-wave-strength-ladder-v2.md"
   },
-  "canonical_digest": "c0783aa221f774c07b556b006841d12c0f5c87504ce715d3674b0577e6788766"
+  "canonical_digest": "9e16d02dc4cf3cb8f2b55fb812d4d50c51d82cd8109f849b3fa4af2f227a5b47"
 };

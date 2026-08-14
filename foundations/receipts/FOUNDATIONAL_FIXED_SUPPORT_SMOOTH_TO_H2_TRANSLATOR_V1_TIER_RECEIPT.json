@@ -1,0 +1,27 @@
+{
+  "schema_version": "science-forge-tier-receipt-v1",
+  "receipt_id": "FOUNDATIONAL_FIXED_SUPPORT_SMOOTH_TO_H2_TRANSLATOR_V1_TIER_RECEIPT",
+  "created": "2026-08-14",
+  "repository_base_commit": "8d2ceae41e73b748f4f6ca53277423e82697a29c",
+  "integration_head_observed": "8d2ceae41e73b748f4f6ca53277423e82697a29c",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+  "scope": "Translate support-advised periodic smooth derivative names uniformly into the rational compact-time H2 completion with an exact cubic cutoff and base-four modulus over RCA_0, without selecting support or convergence advice from a bare extensional function.",
+  "tiers": {
+    "tier_0_compile_json_diff": {"status": "PASS", "command": "py_compile all new/changed foundations Python; json.loads all new results, schemas, receipts, site data, and paper claim map; git diff --check on scoped paths"},
+    "tier_1_certificate": {"status": "PASS", "command": "python3 foundations/build_fixed_support_smooth_to_h2_translator.py --check && python3 foundations/check_fixed_support_smooth_to_h2_translator.py && python3 foundations/verify_fixed_support_smooth_to_h2_translator.py && python3 -m unittest foundations.tests.test_fixed_support_smooth_to_h2_translator", "result": "Three exact collar fixtures, three minimal shifts, 24 rational H2 inequalities, proof DAG, provenance, deterministic artifacts, and eight mutation tests pass; digest 6dc912a6446cd2fda976718322a539c633e241b51c61cc4803dad456f5cdc9d0."},
+    "tier_2_vertical_slice": {"status": "PASS", "command": "verify cube v14, matrix explorer, paper claim map, generated appendices, two pdflatex passes, and manuscript pins", "result": "The translator is imported with direct-local scope; reconstruction is promoted only together with the support-indexed comparison, while full LF topology and bare-function naming remain false."},
+    "tier_2_complete_foundations_suite": {"status": "PASS", "command": "python3 -m unittest discover -s foundations/tests -p 'test_*.py'", "elapsed_seconds": 64.19, "result": "437/437 tests pass."},
+    "tier_3": {"status": "NOT_RUN", "criterion": "No freeze/tag, quantum lifecycle promotion, shared classical core-algebra change, release preparation, or explicit full-repository-suite request applies."}
+  },
+  "artifact_hashes": {
+    "foundations/build_fixed_support_smooth_to_h2_translator.py": "7b16bb17ec542d25f98a9d0f616d7f49feaf654489f0b090089b5afbcd0834b8",
+    "foundations/check_fixed_support_smooth_to_h2_translator.py": "124230f632ad02b52e81a4643f4be9552bb8c7fda90eb339eefc0446affc3a58",
+    "foundations/verify_fixed_support_smooth_to_h2_translator.py": "a32e6593f335f22e9aa258aa14fff37c986b1243a58750e5a0c91ce675de94e1",
+    "foundations/results/FOUNDATIONAL_FIXED_SUPPORT_SMOOTH_TO_H2_TRANSLATOR_V1.json": "1403506997a12454a3bce1eda5c4457da17bc81973c31b0ca6f94b0f75a2a85e",
+    "foundations/reports/fixed-support-smooth-to-h2-translator-v1.md": "8339d3e6ee43dda0408b4750b31b80e168796da565ab7a89f9285fdbebc3d327",
+    "foundations/schema/foundational-fixed-support-smooth-to-h2-translator-v1.schema.json": "040fe199076d43b4f18b75bdee24ce41cf445a7ca3577784c0c787e411dd1c13",
+    "foundations/tests/test_fixed_support_smooth_to_h2_translator.py": "74670331cc23eae5d144a9e00811b638e041811adb1b14a638aa27f95bc71ad2"
+  },
+  "unresolved": ["No support or derivative-rate advice is selected from a bare extensional smooth function.", "The full locally convex LF topology and a weakest-base reversal remain open."],
+  "claim_boundary": "This receipt certifies a representation translator with supplied support and modulus data; it is not a choice-elimination theorem for unnamed functions, an LF-topology theorem, or a causal result."
+}

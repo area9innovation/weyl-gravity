@@ -149,7 +149,7 @@ class MatrixSiteTests(unittest.TestCase):
         self.assertTrue((ROOT / "foundations/site/sources/foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V8.json").is_file())
         self.assertTrue((ROOT / "foundations/site/sources/foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V9.json").is_file())
         self.assertTrue((ROOT / "foundations/site/sources/foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V11.json").is_file())
-        self.assertTrue((ROOT / "foundations/site/sources/foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V13.json").is_file())
+        self.assertTrue((ROOT / "foundations/site/sources/foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V14.json").is_file())
         self.assertIn("FOUNDATIONAL_CODED_WAVE_OBSERVABLE_RECONSTRUCTION_V1", assembly_data + base_app + (ROOT / "foundations/site/data.json").read_text())
         self.assertIn("FOUNDATIONAL_CODED_LOCAL_WEAK_WAVE_TEST_CLASS_V1", assembly_data + base_app + (ROOT / "foundations/site/data.json").read_text())
         self.assertTrue((ROOT / "foundations/site/sources/foundations/results/FOUNDATIONAL_BT_EUCLIDEAN_LATTICE_IMPORT_V1.json").is_file())

@@ -1,0 +1,31 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"foundational-scalar-minkowski-green-choice-audit-v1.schema.json",
+  "type":"object",
+  "required":["schema_version","result_id","result_kind","lifecycle","created","repository_base_commit","dependency_tags","theorem","spacetime_and_operator","source_codes","green_formulas","exact_identities","energy_extension","choice_audit","formal_proof","fixtures","support_samples","literature_context","provenance","independent_checker","claim_flags","does_not_establish","next_gate","human_report"],
+  "properties":{
+    "schema_version":{"const":"foundational-scalar-minkowski-green-choice-audit-v1"},
+    "result_id":{"const":"FOUNDATIONAL_SCALAR_MINKOWSKI_GREEN_CHOICE_AUDIT_V1"},
+    "result_kind":{"const":"SCALAR_LORENTZIAN_GREEN_OPERATOR_AND_CHOICE_DEPENDENCY_AUDIT"},
+    "lifecycle":{"const":"CERTIFIED"},
+    "repository_base_commit":{"type":"string","pattern":"^[0-9a-f]{40}$"},
+    "dependency_tags":{"const":["LOCAL-ALGEBRAIC","LORENTZIAN-CAUSAL"]},
+    "theorem":{"type":"string","minLength":200},
+    "spacetime_and_operator":{"type":"object","required":["spacetime","metric_signature","operator","null_coordinates","null_form","volume_form","scope"]},
+    "source_codes":{"type":"object","required":["carrier","regularity","exact_arithmetic","represented_completion"]},
+    "green_formulas":{"type":"object","required":["retarded","advanced","null_retarded","null_advanced","construction","choice_use"],"properties":{"construction":{"const":"CANONICAL_FORMULA"},"choice_use":{"const":"NONE"}}},
+    "exact_identities":{"type":"object","required":["P_G_ret","P_G_adv","G_ret_P","G_adv_P","retarded_support","advanced_support","adjoint_duality","base"],"properties":{"base":{"const":"PRA"}}},
+    "energy_extension":{"type":"object","required":["input_name","estimate","uniqueness","support_limit","base","arbitrary_distributional_uniqueness"],"properties":{"base":{"const":"RCA_0"},"arbitrary_distributional_uniqueness":{"const":false}}},
+    "choice_audit":{"type":"array","minItems":8,"maxItems":8},
+    "formal_proof":{"type":"array","minItems":8,"maxItems":8},
+    "fixtures":{"type":"array","minItems":4,"maxItems":4},
+    "support_samples":{"type":"array","minItems":8,"maxItems":8},
+    "literature_context":{"type":"array","minItems":2},
+    "provenance":{"type":"object","required":["inputs"]},
+    "independent_checker":{"type":"object","required":["path","checks","expected_digest"]},
+    "claim_flags":{"type":"object","required":["scalar_retarded_green_constructed","scalar_advanced_green_constructed","two_sided_test_code_identities_proved","strict_causal_support_proved","adjoint_duality_proved","named_energy_extension_proved","canonical_construction_avoids_choice","lorentzian_causal_scalar_claim","arbitrary_distributional_uniqueness_proved","bare_source_support_uniformly_selected","variable_coefficient_green_constructed","weyl_bv_propagator_constructed","hadamard_state_constructed","lorentzian_quantum_master_equation_proved"]},
+    "does_not_establish":{"type":"array","minItems":8},
+    "next_gate":{"type":"string","minLength":140},
+    "human_report":{"const":"foundations/reports/scalar-minkowski-green-choice-audit-v1.md"}
+  }
+}

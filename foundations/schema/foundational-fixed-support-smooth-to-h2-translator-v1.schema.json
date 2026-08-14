@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "foundational-fixed-support-smooth-to-h2-translator-v1.schema.json",
+  "type": "object",
+  "required": ["schema_version", "result_id", "result_kind", "lifecycle", "created", "repository_base_commit", "dependency_tags", "theorem", "input_representation", "cutoff_code", "translation", "formal_proof", "fixtures", "literature_context", "provenance", "independent_checker", "claim_flags", "does_not_establish", "next_gate", "human_report"],
+  "properties": {
+    "schema_version": {"const": "foundational-fixed-support-smooth-to-h2-translator-v1"},
+    "result_id": {"const": "FOUNDATIONAL_FIXED_SUPPORT_SMOOTH_TO_H2_TRANSLATOR_V1"},
+    "result_kind": {"const": "REPRESENTATION_TRANSLATOR_WITH_EXPLICIT_SUPPORT_AND_MODULUS"},
+    "lifecycle": {"const": "CERTIFIED"},
+    "repository_base_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "theorem": {"type": "string", "minLength": 150},
+    "input_representation": {"type": "object", "required": ["id", "support_advice", "approximants", "rate", "advice_is_input", "bare_extensional_function_is_not_input"], "properties": {"advice_is_input": {"const": true}, "bare_extensional_function_is_not_input": {"const": true}}},
+    "cutoff_code": {"type": "object", "required": ["smoothstep", "left_collar", "core", "right_collar", "outside", "regularity", "support_preserved"], "properties": {"support_preserved": {"const": true}}},
+    "translation": {"type": "object", "required": ["formula", "target_representation", "target_carrier", "h2_derivative_order", "constant_rule", "shift_rule", "fast_bound", "choice_use"]},
+    "formal_proof": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"type": "object", "required": ["id", "base", "statement"]}},
+    "fixtures": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "object", "required": ["margin", "cutoff_first_derivative_bound", "cutoff_second_derivative_bound", "component_factors", "h2_squared_constant", "integer_majorant", "index_shift", "precision_samples"], "properties": {"component_factors": {"type": "array", "minItems": 6, "maxItems": 6}, "precision_samples": {"type": "array", "minItems": 8, "maxItems": 8}}}},
+    "literature_context": {"type": "array", "minItems": 2},
+    "provenance": {"type": "object", "required": ["inputs"]},
+    "independent_checker": {"type": "object", "required": ["path", "checks", "expected_digest"]},
+    "claim_flags": {"type": "object", "required": ["fixed_support_smooth_name_translated", "rational_h2_fast_name_constructed", "explicit_cutoff_and_modulus_constructed", "choice_principle_used", "bare_extensional_smooth_function_uniformly_named", "support_advice_eliminated", "full_lf_topology_identified", "weakest_base_or_reversal_proved", "causal_or_green_result_proved", "weyl_or_metric_bv_result_proved"]},
+    "does_not_establish": {"type": "array", "minItems": 6},
+    "next_gate": {"type": "string", "minLength": 100},
+    "human_report": {"const": "foundations/reports/fixed-support-smooth-to-h2-translator-v1.md"}
+  }
+}

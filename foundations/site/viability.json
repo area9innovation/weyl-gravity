@@ -1237,18 +1237,18 @@
       "foundation": "WEAK_ARITHMETIC",
       "carrier": "SMOOTH_DISTRIBUTIONAL",
       "counts": {
-        "LOCAL_RESULT": 3,
+        "LOCAL_RESULT": 5,
         "LITERATURE_RESULT": 0,
-        "PIECES_ONLY": 3,
+        "PIECES_ONLY": 1,
         "PRIORITY_GAP": 7,
         "REVIEWED_GAP": 3,
         "NOT_MAPPED": 0
       },
-      "direct": 3,
+      "direct": 5,
       "assessed": 16,
       "default_gate": {
         "preset": "PREDICTIVE_PHYSICS",
-        "direct": 3,
+        "direct": 5,
         "assessed": 10,
         "total": 10,
         "complete_direct": false,
@@ -1270,20 +1270,12 @@
             "status": "PIECES_ONLY"
           },
           {
-            "obligation": "CAUSAL_PROPAGATION_GREEN",
-            "status": "PIECES_ONLY"
-          },
-          {
             "obligation": "INTERACTION_CONSTRUCTION",
             "status": "PRIORITY_GAP"
-          },
-          {
-            "obligation": "RECONSTRUCTION_LIMITS",
-            "status": "PIECES_ONLY"
           }
         ]
       },
-      "reconstruction_status": "PIECES_ONLY",
+      "reconstruction_status": "LOCAL_RESULT",
       "bundles": [
         {
           "bundle": "KINEMATICS_STATES",
@@ -1301,27 +1293,27 @@
         {
           "bundle": "PREDICTION_OBSERVATION",
           "counts": {
-            "LOCAL_RESULT": 0,
+            "LOCAL_RESULT": 1,
             "LITERATURE_RESULT": 0,
-            "PIECES_ONLY": 1,
+            "PIECES_ONLY": 0,
             "PRIORITY_GAP": 0,
             "REVIEWED_GAP": 2,
             "NOT_MAPPED": 0
           },
-          "direct": 0,
+          "direct": 1,
           "total": 3
         },
         {
           "bundle": "DYNAMICS_CAUSALITY",
           "counts": {
-            "LOCAL_RESULT": 1,
+            "LOCAL_RESULT": 2,
             "LITERATURE_RESULT": 0,
-            "PIECES_ONLY": 2,
+            "PIECES_ONLY": 1,
             "PRIORITY_GAP": 0,
             "REVIEWED_GAP": 0,
             "NOT_MAPPED": 0
           },
-          "direct": 1,
+          "direct": 2,
           "total": 3
         },
         {
@@ -4472,15 +4464,11 @@
         },
         {
           "obligation": "CAUSAL_PROPAGATION_GREEN",
-          "readiness_rank": 2,
+          "readiness_rank": 3,
           "statuses": [
-            "PIECES_ONLY"
+            "LOCAL_RESULT"
           ],
           "contributing_carriers": [
-            "FINITE_EXACT",
-            "HILBERT_OPERATOR",
-            "KREIN_INDEFINITE",
-            "ALGEBRAIC_CSTAR",
             "SMOOTH_DISTRIBUTIONAL"
           ]
         },
@@ -4562,15 +4550,17 @@
           ],
           "contributing_carriers": [
             "FINITE_EXACT",
-            "HILBERT_OPERATOR"
+            "HILBERT_OPERATOR",
+            "SMOOTH_DISTRIBUTIONAL"
           ]
         }
       ],
-      "maximum_direct_obligations": 9,
-      "minimum_carriers_for_that_maximum": 1,
+      "maximum_direct_obligations": 10,
+      "minimum_carriers_for_that_maximum": 2,
       "minimal_maximum_subsets": [
         [
-          "FINITE_EXACT"
+          "FINITE_EXACT",
+          "SMOOTH_DISTRIBUTIONAL"
         ]
       ],
       "composition_status": "NOT_ASSESSED"
@@ -5485,6 +5475,6 @@
     "that Pareto-frontier profiles are physically preferred or more likely true",
     "a complete observationally validated theory under any regime or carrier portfolio"
   ],
-  "source_atlas_digest": "c0783aa221f774c07b556b006841d12c0f5c87504ce715d3674b0577e6788766",
-  "canonical_digest": "30738aec0a957140b73f03e18cb6100ec5885ae7744f296b62ac4fef866e3742"
+  "source_atlas_digest": "9e16d02dc4cf3cb8f2b55fb812d4d50c51d82cd8109f849b3fa4af2f227a5b47",
+  "canonical_digest": "9ea352c42489f9d0a562a3cae3832d2308c45c1f219a96ed04f22a4633124f4e"
 }
