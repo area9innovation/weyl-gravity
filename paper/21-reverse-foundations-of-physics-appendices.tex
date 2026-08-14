@@ -512,6 +512,27 @@ Independent evaluation predicts 153.9 km/s at the paper's endpoint, compared wit
 
 No parameter is refitted.  SPARC is a later 3.6-micrometre photometric reduction, not the original heterogeneous blue-band dataset, and its random-error column omits inclination and other systematics.  The result is therefore a no-refit external stress test with a mixed disposition, not a reproduction of the original likelihood and not evidence sufficient to promote the model to empirical support.  The massive-tracer matter-coupling assumption is recorded but not resolved.
 
+\paragraph{Common-protocol NGC 3198 control.}
+The same 39 velocities, random-error-only objective, distance rescaling, and analytic stellar/gas geometry are used for all three families.  The stellar scale is fitted in every family; the NFW family additionally fits halo speed and concentration.
+
+\begin{table}[htbp]
+\centering
+\scriptsize
+\begin{tabularx}{\textwidth}{@{}Yp{0.25\textwidth}rrrr@{}}
+\toprule
+Family & Fitted parameters & RMS (km/s) & Reduced $\chi^2$ & AICc & Gate \\
+\midrule
+Newtonian baryons only & q*=1.6321 & 23.896 & 128.722 & 4893.56 & FAIL \\
+GR plus NFW dark halo & q*=0.8254, V200=116.32, c200=6.802 & 5.148 & 0.965 & 41.44 & PASS \\
+Mannheim conformal gravity & q*=1.0645 & 4.694 & 3.202 & 123.78 & FAIL \\
+\bottomrule
+\end{tabularx}
+\caption{Common-protocol NGC 3198 fit.  AICc penalizes the two extra NFW parameters.  The ranking is scoped to this one-galaxy, random-error-only analytic-disk comparison.}
+\label{tab:ngc3198-common-fit}
+\end{table}
+
+Mannheim has a lower unweighted RMS than NFW, while NFW has the lower uncertainty-weighted chi-squared and AICc.  NFW is the only family passing the declared reduced-chi-squared gate.  This does not include distance, inclination, photometric, gas-profile, or other systematic marginalization; use the full SPARC numerical mass model; impose a halo concentration--mass prior; generalize beyond NGC 3198; or select a complete physical theory.
+
 \paragraph{Cube-selected prototype envelopes.}
 \begin{table}[htbp]
 \centering
@@ -563,4 +584,4 @@ Gravitational waves & B. P. Abbott et al., Gravitational Waves and Gamma-rays fr
 The control populates three of six benchmark families with four records.  It is outside the cube, does not make GR complete, and transfers no observational support to a Weyl-gravity prototype.
 
 The complete normalized dataset is \cert{foundations/site/data.json} (SHA-256 \cert{c8ecc8ea14f565cb32ed9e9d6f22b26335a27c01a54cf3129dfbdbff8b83475b}; canonical digest \cert{e4c79e8ec537c2d9f9271d9ccbd042da2a5529b0b5f0f11fa6917cc3af0386cd}).  These tables are generated from that file and contain no hand-copied coverage counts, relation edges, evidence roles, boundaries, or citations.
-The assembly and calibration tables are generated from \cert{foundations/site/assemblies.json} (SHA-256 \cert{5ff1b8fec12baf9d72758dd18eb04e695e9efa4444a722e5d008abea26d6b4b3}; canonical digest \cert{ad3ed091a3a1cc12e0748c27029933e6e2c2629a776843585b9902194d1fcab4}).
+The assembly and calibration tables are generated from \cert{foundations/site/assemblies.json} (SHA-256 \cert{0bd9f6adf1907cd25928a479e12e95e6c994659aa0100cf4b5363a86d5005e7b}; canonical digest \cert{fde8c31dd5b414e65d0b5e9a1e3bd1b6d8519c68774bb62649e308926372b0bf}).

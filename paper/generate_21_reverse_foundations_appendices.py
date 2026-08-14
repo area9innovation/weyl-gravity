@@ -501,6 +501,7 @@ def build(data: dict, assemblies: dict) -> str:
     )
     model = next(item for item in assemblies["model_scoped_assemblies"] if item["result_id"] == "FOUNDATIONAL_GR_CASSINI_MODEL_ASSEMBLY_V1")
     mannheim = next(item for item in assemblies["model_scoped_assemblies"] if item["result_id"] == "FOUNDATIONAL_MANNHEIM_NGC3198_MODEL_ASSEMBLY_V1")
+    common_fit = assemblies["model_comparisons"][0]
     lines.extend(
         [
             r"\paragraph{First bounded end-to-end assembly.}",
@@ -580,6 +581,42 @@ def build(data: dict, assemblies: dict) -> str:
             + r" and fails the declared gate $\chi^2_\nu\leq2$.",
             "",
             "No parameter is refitted.  SPARC is a later 3.6-micrometre photometric reduction, not the original heterogeneous blue-band dataset, and its random-error column omits inclination and other systematics.  The result is therefore a no-refit external stress test with a mixed disposition, not a reproduction of the original likelihood and not evidence sufficient to promote the model to empirical support.  The massive-tracer matter-coupling assumption is recorded but not resolved.",
+            "",
+            r"\paragraph{Common-protocol NGC 3198 control.}",
+            "The same 39 velocities, random-error-only objective, distance rescaling, and analytic stellar/gas geometry are used for all three families.  The stellar scale is fitted in every family; the NFW family additionally fits halo speed and concentration.",
+            "",
+            r"\begin{table}[htbp]",
+            r"\centering",
+            r"\scriptsize",
+            r"\begin{tabularx}{\textwidth}{@{}Yp{0.25\textwidth}rrrr@{}}",
+            r"\toprule",
+            r"Family & Fitted parameters & RMS (km/s) & Reduced $\chi^2$ & AICc & Gate \\",
+            r"\midrule",
+        ]
+    )
+    fit_labels = {
+        "NEWTONIAN_BARYONS_ONLY": "Newtonian baryons only",
+        "GR_NFW_DARK_HALO": "GR plus NFW dark halo",
+        "MANNHEIM_CONFORMAL_GRAVITY": "Mannheim conformal gravity",
+    }
+    for fitted in common_fit["models"]:
+        parameters = fitted["fitted_parameters"]
+        parameter_text = "q*=" + format(parameters["q_star"], ".4f")
+        if "V200_km_s" in parameters:
+            parameter_text += ", V200=" + format(parameters["V200_km_s"], ".2f") + ", c200=" + format(parameters["concentration_c200"], ".3f")
+        metrics = fitted["metrics"]
+        lines.append(
+            f"{tex(fit_labels[fitted['model_id']])} & {tex(parameter_text)} & {metrics['unweighted_rms_residual_km_s']:.3f} & {metrics['reduced_chi_squared']:.3f} & {metrics['AICc']:.2f} & {'PASS' if fitted['random_error_gate']['passed'] else 'FAIL'}" + r" \\"
+        )
+    lines.extend(
+        [
+            r"\bottomrule",
+            r"\end{tabularx}",
+            r"\caption{Common-protocol NGC 3198 fit.  AICc penalizes the two extra NFW parameters.  The ranking is scoped to this one-galaxy, random-error-only analytic-disk comparison.}",
+            r"\label{tab:ngc3198-common-fit}",
+            r"\end{table}",
+            "",
+            "Mannheim has a lower unweighted RMS than NFW, while NFW has the lower uncertainty-weighted chi-squared and AICc.  NFW is the only family passing the declared reduced-chi-squared gate.  This does not include distance, inclination, photometric, gas-profile, or other systematic marginalization; use the full SPARC numerical mass model; impose a halo concentration--mass prior; generalize beyond NGC 3198; or select a complete physical theory.",
             "",
             r"\paragraph{Cube-selected prototype envelopes.}",
             r"\begin{table}[htbp]",
