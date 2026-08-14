@@ -99,6 +99,7 @@ def main() -> int:
     bt_residual_curvature = json.loads((ROOT / data["authorities"]["bt_residual_boundary_curvature_obstruction"]["path"]).read_text())
     bt_residual_tilt = json.loads((ROOT / data["authorities"]["bt_residual_tilt_jacobian_cancellation"]["path"]).read_text())
     bt_centered_fiber = json.loads((ROOT / data["authorities"]["bt_centered_fiber_domination_obstruction"]["path"]).read_text())
+    bt_conditional_escape = json.loads((ROOT / data["authorities"]["bt_conditional_mass_escape_obstruction"]["path"]).read_text())
     dims = cube["dimensions"]
     atlas = data["atlas_snapshot"]
     require(atlas["axis_sizes"] == [6, 6, 16], "unexpected axis sizes")
@@ -186,6 +187,13 @@ def main() -> int:
     require(atlas["bt_centered_fiber_all_n_ratio_bound"] == "A(eta_n+t_n h)/A(eta_n)<=9/(4*x^2)=9/(4*4^n)", "BT all-n centered fiber bound drift")
     require(bt_centered_fiber["method_disposition"]["normalized_lowest_mode_second_moment_bound"] == "OPEN", "BT centered fiber obstruction promoted to a marginal moment theorem")
     require(bt_centered_fiber["method_disposition"]["actual_interacting_h_minus_one_second_moment_bound"] == "OPEN", "BT centered fiber obstruction promoted to H^-1")
+    require(atlas["bt_conditional_mass_escape_status"] == bt_conditional_escape["method_disposition"]["conditional_mass_escape_on_exact_family"] == "PROVED", "BT conditional mass-escape theorem drift")
+    require(atlas["bt_uniform_raw_conditional_moment_status"] == bt_conditional_escape["method_disposition"]["uniform_backgroundwise_raw_conditional_second_moment"] == "OBSTRUCTED", "BT raw conditional-moment obstruction drift")
+    require(atlas["bt_uniform_recentered_conditional_variance_status"] == bt_conditional_escape["method_disposition"]["uniform_recentered_conditional_variance"] == "OPEN", "BT recentered conditional variance promoted")
+    require(atlas["bt_annealed_center_second_moment_status"] == bt_conditional_escape["method_disposition"]["annealed_center_second_moment"] == "OPEN", "BT annealed center moment promoted")
+    require(atlas["bt_conditional_escape_m2_tail_exponent"] == bt_conditional_escape["exact_m2_fixture"]["binary_tail_exponent"], "BT conditional escape fixture drift")
+    require(bt_conditional_escape["method_disposition"]["normalized_lowest_mode_second_moment"] == "OPEN", "BT conditional escape promoted to integrated marginal theorem")
+    require(bt_conditional_escape["method_disposition"]["actual_interacting_h_minus_one_second_moment"] == "OPEN", "BT conditional escape promoted to H^-1 theorem")
 
     allowed_tags = {"LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE", "LORENTZIAN-CAUSAL"}
     claim_ids = set()
@@ -249,6 +257,10 @@ def main() -> int:
     require(flags["bt_centered_pointwise_fiber_domination_obstructed"] is True, "BT centered fiber obstruction flag missing")
     require(flags["bt_integrated_lowest_mode_marginal_evenness_established"] is True, "BT marginal evenness flag missing")
     require(flags["bt_annealed_recentered_fiber_bound_established"] is False, "BT annealed fiber bound promoted")
+    require(flags["bt_conditional_mass_escape_established"] is True, "BT conditional mass escape flag missing")
+    require(flags["bt_uniform_backgroundwise_raw_conditional_moment_obstructed"] is True, "BT raw conditional moment obstruction flag missing")
+    require(flags["bt_uniform_recentered_conditional_variance_established"] is False, "BT recentered conditional variance promoted")
+    require(flags["bt_annealed_center_second_moment_established"] is False, "BT annealed center moment promoted")
     require(flags["research_programme_lenses_explained"] is True, "research-programme exposition flag is not certified")
     require(flags["coded_wave_observable_reconstruction_certified"] is True, "coded observable reconstruction flag is not certified")
     require(flags["coded_local_weak_wave_test_class_certified"] is True, "localized weak-wave flag is not certified")
@@ -482,6 +494,10 @@ def main() -> int:
         r"\frac{9}{4\,4^n}",
         r"m_h(t)=m_h(-t)",
         r"annealed or background-recentered",
+        r"q_m\{u\geq-m\}\leq2^{-m}",
+        r"\mathbb E_{q_m}[u^2]",
+        r"recentered conditional width",
+        r"annealed second moment of the moving center",
     ]:
         require(phrase in prose, f"required boundary missing from paper: {phrase}")
     for citation in [

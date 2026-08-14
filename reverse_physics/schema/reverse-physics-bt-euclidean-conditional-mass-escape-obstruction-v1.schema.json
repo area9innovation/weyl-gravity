@@ -1,0 +1,352 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-conditional-mass-escape-obstruction-v1.schema.json",
+  "title": "BT Euclidean conditional-mass escape obstruction certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "certificate",
+    "schema_version",
+    "created",
+    "dependency_tags",
+    "lifecycle_state",
+    "result_kind",
+    "question",
+    "answer",
+    "finite_volume_carrier",
+    "exact_orthogonal_family",
+    "right_tail_lower_bound",
+    "candidate_well_lower_normalization",
+    "all_m_comparison",
+    "exact_m2_fixture",
+    "method_disposition",
+    "foundational_dependency_cut",
+    "missing_object_ledger",
+    "next_gate",
+    "does_not_establish",
+    "provenance",
+    "verification_commands",
+    "tier_receipt",
+    "checks",
+    "report",
+    "schema"
+  ],
+  "properties": {
+    "certificate": {
+      "const": "REVERSE_PHYSICS_BT_EUCLIDEAN_CONDITIONAL_MASS_ESCAPE_OBSTRUCTION_V1"
+    },
+    "schema_version": {
+      "const": "reverse-physics-bt-euclidean-conditional-mass-escape-obstruction-v1"
+    },
+    "created": {"const": "2026-08-14"},
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]
+    },
+    "lifecycle_state": {"const": "OBSTRUCTION_PROVED"},
+    "result_kind": {"type": "string", "minLength": 1},
+    "question": {"type": "string", "minLength": 1},
+    "answer": {"type": "string", "minLength": 1},
+    "finite_volume_carrier": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "lattice",
+        "volume",
+        "spatial_replication_factor",
+        "coupling",
+        "full_action",
+        "conditional_inverse_temperature",
+        "conditional_density"
+      ],
+      "properties": {
+        "lattice": {"const": "periodic 6^4 lattice"},
+        "volume": {"const": 1296},
+        "spatial_replication_factor": {"const": 216},
+        "coupling": {"$ref": "#/$defs/fraction"},
+        "full_action": {"type": "string"},
+        "conditional_inverse_temperature": {"const": 1350},
+        "conditional_density": {"type": "string"}
+      }
+    },
+    "exact_orthogonal_family": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "parameter",
+        "background_coefficients",
+        "lowest_mode_coefficients",
+        "background_mode_dot_product",
+        "background_field",
+        "fiber_coordinate",
+        "candidate_well_coordinate",
+        "center_threshold",
+        "shifted_coefficients_at_candidate",
+        "shifted_adjacent_differences",
+        "mode_adjacent_differences"
+      ],
+      "properties": {
+        "parameter": {"const": "m>=2 integer"},
+        "background_coefficients": {"$ref": "#/$defs/integer_six"},
+        "lowest_mode_coefficients": {"$ref": "#/$defs/integer_six"},
+        "background_mode_dot_product": {"const": 0},
+        "background_field": {"type": "string"},
+        "fiber_coordinate": {"type": "string"},
+        "candidate_well_coordinate": {"const": "u_0=-4m"},
+        "center_threshold": {"const": "u=-m"},
+        "shifted_coefficients_at_candidate": {"$ref": "#/$defs/integer_six"},
+        "shifted_adjacent_differences": {"$ref": "#/$defs/integer_six"},
+        "mode_adjacent_differences": {"$ref": "#/$defs/integer_six"}
+      }
+    },
+    "right_tail_lower_bound": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scope",
+        "time_site",
+        "residual",
+        "residual_lower_bound",
+        "cycle_action_lower_bound",
+        "C_m",
+        "tail_integral_inequality",
+        "analytic_lemma"
+      ],
+      "properties": {
+        "scope": {"type": "string"},
+        "time_site": {"const": 3},
+        "residual": {"const": "r_3=2^(16m+u)+2^(24m+u)-2"},
+        "residual_lower_bound": {"type": "string"},
+        "cycle_action_lower_bound": {"type": "string"},
+        "C_m": {"const": "2^(46m-3)"},
+        "tail_integral_inequality": {"type": "string"},
+        "analytic_lemma": {"const": "4^v>=1+v for v>=0"}
+      }
+    },
+    "candidate_well_lower_normalization": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "interval",
+        "delta_m",
+        "edge_exponent_bound",
+        "residual_absolute_bound",
+        "cycle_action_upper_bound",
+        "normalization_lower_bound"
+      ],
+      "properties": {
+        "interval": {"const": "|u+4m|<=delta_m"},
+        "delta_m": {"const": "2^(-50m)"},
+        "edge_exponent_bound": {"type": "string"},
+        "residual_absolute_bound": {"type": "string"},
+        "cycle_action_upper_bound": {"type": "string"},
+        "normalization_lower_bound": {"type": "string"}
+      }
+    },
+    "all_m_comparison": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "C_m",
+        "M_m",
+        "C_exceeds_M_proof",
+        "D_m",
+        "D_lower_bound",
+        "tail_probability_bound",
+        "global_minimizer_consequence",
+        "raw_second_moment_bound",
+        "physical_coordinate_bound",
+        "status"
+      ],
+      "properties": {
+        "C_m": {"const": "2^(46m-3)"},
+        "M_m": {"const": "243*2^(40m)"},
+        "C_exceeds_M_proof": {"type": "string"},
+        "D_m": {"const": "1350*(C_m-M_m)"},
+        "D_lower_bound": {"type": "string"},
+        "tail_probability_bound": {"type": "string"},
+        "global_minimizer_consequence": {"type": "string"},
+        "raw_second_moment_bound": {"type": "string"},
+        "physical_coordinate_bound": {"type": "string"},
+        "status": {
+          "const": "UNIFORM_BACKGROUNDWISE_RAW_CONDITIONAL_MOMENT_OBSTRUCTED"
+        }
+      }
+    },
+    "exact_m2_fixture": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "m",
+        "n",
+        "candidate_u",
+        "threshold_u",
+        "candidate_coefficients",
+        "threshold_coefficients",
+        "candidate_cycle_action",
+        "threshold_cycle_action",
+        "C_m",
+        "M_m",
+        "D_m",
+        "binary_tail_exponent"
+      ],
+      "properties": {
+        "m": {"const": 2},
+        "n": {"const": 8},
+        "candidate_u": {"const": -8},
+        "threshold_u": {"const": -2},
+        "candidate_coefficients": {"$ref": "#/$defs/integer_six"},
+        "threshold_coefficients": {"$ref": "#/$defs/integer_six"},
+        "candidate_cycle_action": {"$ref": "#/$defs/fraction"},
+        "threshold_cycle_action": {"$ref": "#/$defs/fraction"},
+        "C_m": {"type": "integer", "minimum": 1},
+        "M_m": {"type": "integer", "minimum": 1},
+        "D_m": {"type": "integer", "minimum": 1},
+        "binary_tail_exponent": {"type": "integer", "maximum": -2}
+      }
+    },
+    "method_disposition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "centered_pointwise_relative_action_domination",
+        "uniform_backgroundwise_raw_conditional_second_moment",
+        "uniform_backgroundwise_fiber_minimizer_location",
+        "conditional_mass_escape_on_exact_family",
+        "uniform_recentered_conditional_variance",
+        "annealed_center_second_moment",
+        "normalized_lowest_mode_second_moment",
+        "actual_interacting_h_minus_one_second_moment",
+        "interacting_tightness",
+        "continuum_limit",
+        "born_rule",
+        "krein_reconstruction",
+        "lorentzian_transfer"
+      ],
+      "properties": {
+        "centered_pointwise_relative_action_domination": {"const": "OBSTRUCTED"},
+        "uniform_backgroundwise_raw_conditional_second_moment": {"const": "OBSTRUCTED"},
+        "uniform_backgroundwise_fiber_minimizer_location": {"const": "OBSTRUCTED"},
+        "conditional_mass_escape_on_exact_family": {"const": "PROVED"},
+        "uniform_recentered_conditional_variance": {"const": "OPEN"},
+        "annealed_center_second_moment": {"const": "OPEN"},
+        "normalized_lowest_mode_second_moment": {"const": "OPEN"},
+        "actual_interacting_h_minus_one_second_moment": {"const": "OPEN"},
+        "interacting_tightness": {"const": "NOT_ESTABLISHED"},
+        "continuum_limit": {"const": "NOT_ESTABLISHED"},
+        "born_rule": {"const": "NOT_ESTABLISHED"},
+        "krein_reconstruction": {"const": "NOT_ASSESSED"},
+        "lorentzian_transfer": {"const": "NOT_ESTABLISHED"}
+      }
+    },
+    "foundational_dependency_cut": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "finite_exact_layer",
+        "finite_dimensional_analytic_layer",
+        "uniform_limit_layer",
+        "classification",
+        "weakest_base_or_reversal"
+      ],
+      "properties": {
+        "finite_exact_layer": {"type": "string"},
+        "finite_dimensional_analytic_layer": {"type": "string"},
+        "uniform_limit_layer": {"type": "string"},
+        "classification": {"const": "USED_BY_DISPLAYED_PROOF"},
+        "weakest_base_or_reversal": {"const": "NOT_ESTABLISHED"}
+      }
+    },
+    "missing_object_ledger": {
+      "type": "array",
+      "minItems": 6,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "next_gate": {"type": "string", "minLength": 1},
+    "does_not_establish": {
+      "type": "array",
+      "minItems": 9,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["repository_base_commit", "inputs", "arithmetic"],
+      "properties": {
+        "repository_base_commit": {"pattern": "^[0-9a-f]{40}$"},
+        "inputs": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {"$ref": "#/$defs/input"}
+        },
+        "arithmetic": {"type": "string"}
+      }
+    },
+    "verification_commands": {
+      "type": "array",
+      "minItems": 3,
+      "items": {"type": "string"}
+    },
+    "tier_receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["tier_0", "tier_1", "tier_2", "tier_3", "memory_policy"],
+      "properties": {
+        "tier_0": {"type": "string"},
+        "tier_1": {"type": "string"},
+        "tier_2": {"type": "string"},
+        "tier_3": {"type": "string"},
+        "memory_policy": {"type": "string"}
+      }
+    },
+    "checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"const": 20},
+        "total": {"const": 20},
+        "failures": {"const": []},
+        "details": {
+          "type": "object",
+          "minProperties": 20,
+          "maxProperties": 20,
+          "additionalProperties": {"const": true}
+        }
+      }
+    },
+    "report": {
+      "const": "reverse_physics/reports/bt-euclidean-conditional-mass-escape-obstruction.md"
+    },
+    "schema": {
+      "const": "reverse_physics/schema/reverse-physics-bt-euclidean-conditional-mass-escape-obstruction-v1.schema.json"
+    }
+  },
+  "$defs": {
+    "fraction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      }
+    },
+    "integer_six": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {"type": "integer"}
+    },
+    "input": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"pattern": "^[0-9a-f]{64}$"}
+      }
+    }
+  }
+}

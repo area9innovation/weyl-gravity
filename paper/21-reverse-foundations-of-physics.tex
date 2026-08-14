@@ -1149,6 +1149,30 @@ while the annealed marginal remains centered by symmetry.  The live gate is
 an annealed or background-recentered fiber estimate; marginal evenness alone
 does not bound its second moment.
 
+The successor obstruction shows that recentering is not optional.  Certificate
+\cert{REVERSE_PHYSICS_BT_EUCLIDEAN_CONDITIONAL_MASS_ESCAPE_OBSTRUCTION_V1}
+uses the subsequence
+
+\[
+ \eta_m=4m\log2\,(-1,-1,1,-3,3,1),\qquad m\geq2,
+\]
+
+and writes the fiber coordinate as $t=u\log2$.  If $q_m$ is the normalized
+conditional Gibbs density on this fiber, then exact action barriers and a
+certified distant well give
+
+\[
+ q_m\{u\geq-m\}\leq2^{-m},\qquad
+ \mathbb E_{q_m}[u^2]\geq m^2(1-2^{-m}).
+\]
+
+Moreover every global fiber minimizer satisfies $u_m^*<-m$.  Thus no bound
+on the raw conditional second moment can be uniform in the orthogonal
+background, even at this fixed volume.  This still does not prove divergence
+of the integrated marginal: the exceptional backgrounds can have vanishing
+marginal weight.  The remaining problem has two distinct terms, a recentered
+conditional width and the annealed second moment of the moving center.
+
 \subsection{A finite BV contraction does not freeze the quantum theory}
 
 The energy-two free BV block provides another finite exact case.  The
@@ -1486,9 +1510,12 @@ tilt, so its log convexity supplies no extra confinement.  The live gate is
 not a comparison of each orthogonal background with its mode-zero value: an
 exact fixed-volume family makes the centered action ratio tend to zero under
 unbounded lowest-mode shifts.  Half-period translation keeps the integrated
-marginal even.  The remaining object is therefore an annealed or recentered
-action-weighted conditional-fiber estimate in the flat log-field chart, not
-another pointwise, global-curvature, or coarea comparison.
+marginal even.  On a subsequence of those backgrounds the global fiber minima
+and all but at most $2^{-m}$ of the conditional mass escape below $u=-m$,
+so a uniform raw conditional moment is also impossible.  The remaining object
+is therefore a uniform recentered width together with an annealed bound on the
+moving center in the flat log-field chart, not another fixed-origin,
+pointwise, global-curvature, or coarea comparison.
 
 \section{Limits of the present paper}
 \label{sec:limits}
@@ -1550,6 +1577,7 @@ The principal machine-readable authorities are
 \cert{REVERSE_PHYSICS_BT_EUCLIDEAN_OS_WITNESS_PREFLIGHT_V1},
 \cert{REVERSE_PHYSICS_BT_EUCLIDEAN_RESIDUAL_TILT_JACOBIAN_CANCELLATION_V1},
 \cert{REVERSE_PHYSICS_BT_EUCLIDEAN_CENTERED_FIBER_DOMINATION_OBSTRUCTION_V1},
+\cert{REVERSE_PHYSICS_BT_EUCLIDEAN_CONDITIONAL_MASS_ESCAPE_OBSTRUCTION_V1},
 \cert{FOUNDATIONAL_CODED_POLYGONAL_WAVE_RCA0_V1},
 \cert{FOUNDATIONAL_FINITE_GRAPH_WAVE_CAUSALITY_V1}, and
 \cert{FOUNDATIONAL_FREE_BV_ENERGY2_PRA_SDR_V1}.  The static atlas appendices

@@ -10,6 +10,7 @@
     "bt_actual_action_density_status": "PROVED",
     "bt_actual_half_action_factor_status": "PROVED",
     "bt_affine_virial_status": "PROVED",
+    "bt_annealed_center_second_moment_status": "OPEN",
     "bt_annealed_recentered_fiber_status": "OPEN",
     "bt_centered_fiber_all_n_ratio_bound": "A(eta_n+t_n h)/A(eta_n)<=9/(4*x^2)=9/(4*4^n)",
     "bt_centered_fiber_boltzmann_status": "OBSTRUCTED",
@@ -18,6 +19,8 @@
       "numerator": 2627836
     },
     "bt_centered_fiber_relative_domination_status": "OBSTRUCTED",
+    "bt_conditional_escape_m2_tail_exponent": -439021411393052584794547814301,
+    "bt_conditional_mass_escape_status": "PROVED",
     "bt_direct_action_fiber_bound_status": "OPEN",
     "bt_euclidean_carrier_relation": "INCOMPATIBLE",
     "bt_euclidean_direct_capabilities": 5,
@@ -87,6 +90,8 @@
       "numerator": -398039
     },
     "bt_residual_weighted_mean_curvature_status": "OBSTRUCTED_AT_LAMBDA_0P4",
+    "bt_uniform_raw_conditional_moment_status": "OBSTRUCTED",
+    "bt_uniform_recentered_conditional_variance_status": "OPEN",
     "cartesian_total": 576,
     "coded_local_weak_wave_all_smooth_tests": false,
     "coded_local_weak_wave_basis_tests": 10,
@@ -189,6 +194,16 @@
       "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_CENTERED_FIBER_DOMINATION_OBSTRUCTION_V1.json",
       "result_id": "REVERSE_PHYSICS_BT_EUCLIDEAN_CENTERED_FIBER_DOMINATION_OBSTRUCTION_V1",
       "sha256": "d889a559d0b334492f85fc86be4ba5084311f718017b526104f0cd8f1f279467"
+    },
+    "bt_conditional_mass_escape_obstruction": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL"
+      ],
+      "lifecycle": "OBSTRUCTION_PROVED",
+      "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_CONDITIONAL_MASS_ESCAPE_OBSTRUCTION_V1.json",
+      "result_id": "REVERSE_PHYSICS_BT_EUCLIDEAN_CONDITIONAL_MASS_ESCAPE_OBSTRUCTION_V1",
+      "sha256": "3b5a231046ef56cd6d2459f5bd93b6785bf00463c9d3ddb9c5cc162a118dea76"
     },
     "bt_euclidean_import": {
       "dependency_tags": [
@@ -456,15 +471,17 @@
       "sha256": "8655e099904efff61a80cd4e140e7c070dbae31a13f4499309b38249edf3fef3"
     }
   },
-  "canonical_digest": "ba6f52002d0b6e76d37c6f7181f93e31f1e72290ea38575eccc60283f8927717",
+  "canonical_digest": "e97522419e3997c134c5fb286ebc25aa12ee082ba2cf8a67612cd40ee7ddd98f",
   "claim_flags": {
     "atlas_exhaustive": false,
     "axes_independent_proved": false,
     "bounded_empirical_comparison_registered": true,
     "bt_actual_annealed_half_action_factor_established": true,
     "bt_actual_interacting_action_density_established": true,
+    "bt_annealed_center_second_moment_established": false,
     "bt_annealed_recentered_fiber_bound_established": false,
     "bt_centered_pointwise_fiber_domination_obstructed": true,
+    "bt_conditional_mass_escape_established": true,
     "bt_direct_action_fiber_bound_established": false,
     "bt_euclidean_coarse_reproduction_separated": true,
     "bt_euclidean_finite_capabilities_imported": true,
@@ -485,6 +502,8 @@
     "bt_residual_uniform_positive_curvature_established": false,
     "bt_standard_boundary_curvature_spectral_gap_route_obstructed": true,
     "bt_tree_log_convexity_extra_tilt_confinement_obstructed": true,
+    "bt_uniform_backgroundwise_raw_conditional_moment_obstructed": true,
+    "bt_uniform_recentered_conditional_variance_established": false,
     "bt_vertex_transitive_entropy_jacobian_minimum_established": true,
     "case_study_authorities_pinned": true,
     "coded_local_weak_wave_all_smooth_tests_covered": false,
@@ -666,15 +685,16 @@
         "bt_residual_spectrahedral_pushforward",
         "bt_residual_boundary_curvature_obstruction",
         "bt_residual_tilt_jacobian_cancellation",
-        "bt_centered_fiber_domination_obstruction"
+        "bt_centered_fiber_domination_obstruction",
+        "bt_conditional_mass_escape_obstruction"
       ],
       "claim_id": "RF-13-BT-INTERACTING-RECONSTRUCTION-FRONTIER",
       "dependency_tags": [
         "LOCAL-ALGEBRAIC",
         "EUCLIDEAN-SPECTRAL"
       ],
-      "statement": "At lambda=0.4 on the 6^4 lattice, an exact two-point reflected density-kernel minor obstructs ordinary OS positivity. The affine virial theorem proves a volume-uniform actual Gibbs action-density bound and annealed half-action factor. Exact period-four data obstruct the global Schur route. The residual map identifies positive fields modulo scale with a Schr\u00f6dinger spectrahedral boundary and gives the exact normalized Gaussian-surface/tree-Jacobian pushforward. Its curvature and tree-Jacobian shortcuts are obstructed. On a fixed 6^4 lattice, an exact orthogonal-background family also makes the action after an unbounded lowest-mode shift smaller than the centered action by a factor at most 9/(4*4^n), obstructing every centered pointwise relative-action and Boltzmann comparison. Half-period translation nevertheless proves the fully integrated marginal is even. The annealed or recentered fiber bound and actual interacting H^-1 moment remain open.",
-      "status": "EXACT_FINITE_OS_GLOBAL_CURVATURE_TREE_TILT_AND_CENTERED_FIBER_ROUTE_OBSTRUCTIONS_WITH_ACTION_DENSITY_EVEN_MARGINAL_AND_NORMALIZED_RESIDUAL_REFORMULATION"
+      "statement": "At lambda=0.4 on the 6^4 lattice, an exact two-point reflected density-kernel minor obstructs ordinary OS positivity. The affine virial theorem proves a volume-uniform actual Gibbs action-density bound and annealed half-action factor. Exact period-four data obstruct the global Schur route. The residual map identifies positive fields modulo scale with a Schr\u00f6dinger spectrahedral boundary and gives the exact normalized Gaussian-surface/tree-Jacobian pushforward. Its curvature and tree-Jacobian shortcuts are obstructed. An exact orthogonal-background family makes centered pointwise relative-action domination fail. On the subsequence eta_m=4m log(2) a, every global fiber minimizer lies below u=-m and the conditional probability of u>=-m is at most 2^-m, so the background-uniform raw conditional second moment is also obstructed. Half-period translation nevertheless proves the fully integrated marginal is even. Uniform recentered width, the annealed center moment, and the actual interacting H^-1 moment remain open.",
+      "status": "EXACT_FINITE_OS_GLOBAL_CURVATURE_TREE_TILT_CENTERED_FIBER_AND_RAW_CONDITIONAL_MOMENT_ROUTE_OBSTRUCTIONS_WITH_ACTION_DENSITY_EVEN_MARGINAL_AND_NORMALIZED_RESIDUAL_REFORMULATION"
     },
     {
       "authorities": [
@@ -751,7 +771,8 @@
     "a continuum, empirical, Born-rule, or Lorentzian promotion from the BT Euclidean finite lattice",
     "reflection-positivity failure at every nonzero coupling or in a continuum limit",
     "a volume-uniform BT action-weighted conditional-fiber or one-mode marginal bound",
-    "divergence of the BT lowest-mode second moment from the centered pointwise fiber obstruction"
+    "divergence of the BT lowest-mode second moment from the centered pointwise fiber obstruction",
+    "divergence of the integrated BT lowest-mode marginal from conditional mass escape on exceptional backgrounds"
   ],
   "formal_object": {
     "coordinates": {
@@ -895,7 +916,7 @@
       "source_sha256": "4f5cbd42e41ad98361b769caea36cca2879f4c3a74fbe058d83bfce2fb6af222"
     },
     "path": "paper/21-reverse-foundations-of-physics.tex",
-    "sha256": "1b980c15add5bc44985bee6096b5837252e0fa723b8f88aa535b449148df3e76"
+    "sha256": "3732cb8a840a027f656faad133ac16dfc41a511df260a8d6ec5182d3f49b0d25"
   },
   "result_id": "PAPER21_REVERSE_FOUNDATIONS_INTRODUCTION_V1",
   "result_kind": "PROGRAMME_SYNTHESIS_AND_TYPED_CASE_STUDY_MAP",

@@ -1,0 +1,235 @@
+{
+  "certificate": "REVERSE_PHYSICS_BT_EUCLIDEAN_CONDITIONAL_MASS_ESCAPE_OBSTRUCTION_V1",
+  "schema_version": "reverse-physics-bt-euclidean-conditional-mass-escape-obstruction-v1",
+  "created": "2026-08-14",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "lifecycle_state": "OBSTRUCTION_PROVED",
+  "result_kind": "exact fixed-volume conditional-mass escape and obstruction to uniform backgroundwise raw fiber moments",
+  "question": "Can the lowest-mode marginal be controlled by a uniform bound on the uncentered conditional second moment for every orthogonal background?",
+  "answer": "No. On the fixed 6^4 lattice, for every integer m>=2 an exact orthogonal background eta_m=4m*log(2)*a has a conditional lowest-mode law q_m. Its probability of u>=-m is at most 2^-m, while every global fiber minimizer lies below -m. Therefore E_qm[u^2]>=m^2(1-2^-m), so no background-uniform raw conditional second-moment bound exists. This is not divergence of the annealed marginal: the exceptional backgrounds may have vanishing marginal weight. A successful proof must control recentered widths and the Gibbs-weighted distribution of centers.",
+  "finite_volume_carrier": {
+    "lattice": "periodic 6^4 lattice",
+    "volume": 1296,
+    "spatial_replication_factor": 216,
+    "coupling": {
+      "numerator": 2,
+      "denominator": 5
+    },
+    "full_action": "A_full=216*A_cycle on the spatially constant sector",
+    "conditional_inverse_temperature": 1350,
+    "conditional_density": "q_m(u)=Z_m^-1*exp[-1350*A_m(u)] with fiber field psi=4m*log(2)*a+u*log(2)*h"
+  },
+  "exact_orthogonal_family": {
+    "parameter": "m>=2 integer",
+    "background_coefficients": [
+      -1,
+      -1,
+      1,
+      -3,
+      3,
+      1
+    ],
+    "lowest_mode_coefficients": [
+      2,
+      1,
+      -1,
+      -2,
+      -1,
+      1
+    ],
+    "background_mode_dot_product": 0,
+    "background_field": "eta_m=4m*log(2)*a",
+    "fiber_coordinate": "t=u*log(2)",
+    "candidate_well_coordinate": "u_0=-4m",
+    "center_threshold": "u=-m",
+    "shifted_coefficients_at_candidate": [
+      -3,
+      -2,
+      2,
+      -1,
+      4,
+      0
+    ],
+    "shifted_adjacent_differences": [
+      1,
+      4,
+      -3,
+      5,
+      -4,
+      -3
+    ],
+    "mode_adjacent_differences": [
+      -1,
+      -2,
+      -1,
+      1,
+      2,
+      1
+    ]
+  },
+  "right_tail_lower_bound": {
+    "scope": "m>=2 and u=-m+v with v>=0",
+    "time_site": 3,
+    "residual": "r_3=2^(16m+u)+2^(24m+u)-2",
+    "residual_lower_bound": "r_3>=2^(23m+v-1)",
+    "cycle_action_lower_bound": "A_m(-m+v)>=C_m*4^v",
+    "C_m": "2^(46m-3)",
+    "tail_integral_inequality": "integral_0^infinity exp[-1350*C_m*4^v]dv <=exp[-1350*C_m]/(1350*C_m)",
+    "analytic_lemma": "4^v>=1+v for v>=0"
+  },
+  "candidate_well_lower_normalization": {
+    "interval": "|u+4m|<=delta_m",
+    "delta_m": "2^(-50m)",
+    "edge_exponent_bound": "absolute exponent <=20m+2",
+    "residual_absolute_bound": "|r_j|<=9*2^(20m)",
+    "cycle_action_upper_bound": "A_m(u)<=M_m=243*2^(40m)",
+    "normalization_lower_bound": "Z_m>=2*delta_m*exp[-1350*M_m]"
+  },
+  "all_m_comparison": {
+    "C_m": "2^(46m-3)",
+    "M_m": "243*2^(40m)",
+    "C_exceeds_M_proof": "C_m/M_m=2^(6m-3)/243>=512/243>1 for m>=2",
+    "D_m": "1350*(C_m-M_m)",
+    "D_lower_bound": "D_m>=1350*269*m>51m because 2^(40m)>=m and 2^(6m-3)-243>=269",
+    "tail_probability_bound": "q_m({u>=-m})<=2^(50m-1-D_m)<=2^(-m)",
+    "global_minimizer_consequence": "every global minimizer u_m^* satisfies u_m^*<-m",
+    "raw_second_moment_bound": "E_qm[u^2]>=m^2*(1-2^(-m))",
+    "physical_coordinate_bound": "E_qm[t^2]>=(log(2))^2*m^2*(1-2^(-m))",
+    "status": "UNIFORM_BACKGROUNDWISE_RAW_CONDITIONAL_MOMENT_OBSTRUCTED"
+  },
+  "exact_m2_fixture": {
+    "m": 2,
+    "n": 8,
+    "candidate_u": -8,
+    "threshold_u": -2,
+    "candidate_coefficients": [
+      -24,
+      -16,
+      16,
+      -8,
+      32,
+      0
+    ],
+    "threshold_coefficients": [
+      -12,
+      -10,
+      10,
+      -20,
+      26,
+      6
+    ],
+    "candidate_cycle_action": {
+      "numerator": 1461590840986913587158017595991408367272764506625,
+      "denominator": 2417851639229258349412352
+    },
+    "threshold_cycle_action": {
+      "numerator": 24520676948400143338293314763970196041574472202921705473,
+      "denominator": 9903520314283042199192993792
+    },
+    "C_m": 618970019642690137449562112,
+    "M_m": 293768974166354889453600768,
+    "D_m": 439021411393052584794547814400,
+    "binary_tail_exponent": -439021411393052584794547814301
+  },
+  "method_disposition": {
+    "centered_pointwise_relative_action_domination": "OBSTRUCTED",
+    "uniform_backgroundwise_raw_conditional_second_moment": "OBSTRUCTED",
+    "uniform_backgroundwise_fiber_minimizer_location": "OBSTRUCTED",
+    "conditional_mass_escape_on_exact_family": "PROVED",
+    "uniform_recentered_conditional_variance": "OPEN",
+    "annealed_center_second_moment": "OPEN",
+    "normalized_lowest_mode_second_moment": "OPEN",
+    "actual_interacting_h_minus_one_second_moment": "OPEN",
+    "interacting_tightness": "NOT_ESTABLISHED",
+    "continuum_limit": "NOT_ESTABLISHED",
+    "born_rule": "NOT_ESTABLISHED",
+    "krein_reconstruction": "NOT_ASSESSED",
+    "lorentzian_transfer": "NOT_ESTABLISHED"
+  },
+  "foundational_dependency_cut": {
+    "finite_exact_layer": "integer vectors, dyadic actions, exponent comparisons, and the m=2 fixture",
+    "finite_dimensional_analytic_layer": "coercive one-dimensional integration, 4^v>=1+v, and normalization comparison",
+    "uniform_limit_layer": "no volume-uniform Gibbs marginal, H^-1 estimate, compactness, or represented limit is established",
+    "classification": "USED_BY_DISPLAYED_PROOF",
+    "weakest_base_or_reversal": "NOT_ESTABLISHED"
+  },
+  "missing_object_ledger": [
+    "a uniform recentered conditional-width theorem or obstruction",
+    "an annealed bound on the Gibbs-weighted conditional centers",
+    "a normalized one-mode second-moment estimate for the actual marginal",
+    "a dyadic Fourier-shell estimate yielding the actual interacting H^-1 bound",
+    "tightness in a compactly weaker topology",
+    "represented convergence and limit identification"
+  ],
+  "next_gate": "Separate the conditional variance about a moving center from the annealed second moment of that center. Uniform control relative to the fixed origin is now ruled out even at fixed volume.",
+  "does_not_establish": [
+    "divergence of the fully integrated lowest-mode marginal",
+    "divergence of the actual interacting H^-1 moment",
+    "failure of a uniformly recentered conditional-variance bound",
+    "failure of an annealed center estimate",
+    "failure of every conditional-fiber or transport method",
+    "tightness or a continuum BT Euclidean measure",
+    "a Born rule or Krein reconstruction",
+    "anything LORENTZIAN-CAUSAL",
+    "a weakest-foundation reversal"
+  ],
+  "provenance": {
+    "repository_base_commit": "31d9f5a73059f7250c72e6c3813295acc3ac9152",
+    "inputs": [
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_CENTERED_FIBER_DOMINATION_OBSTRUCTION_V1.json",
+        "sha256": "d889a559d0b334492f85fc86be4ba5084311f718017b526104f0cd8f1f279467"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_AFFINE_VIRIAL_ACTION_DENSITY_V1.json",
+        "sha256": "5ca8a2a7bc0d48300b0af031990e3c9c177fdec0d35f763666d2e397b495e1e0"
+      }
+    ],
+    "arithmetic": "Python Fraction and integer arithmetic for dyadic actions, all displayed constants, and the exact m=2 fixture"
+  },
+  "verification_commands": [
+    "python3 reverse_physics/bt_euclidean_conditional_mass_escape_obstruction.py --check",
+    "python3 reverse_physics/verify_bt_euclidean_conditional_mass_escape_obstruction.py",
+    "python3 -m unittest -v reverse_physics.tests.test_bt_euclidean_conditional_mass_escape_obstruction"
+  ],
+  "tier_receipt": {
+    "tier_0": "parse, strict schema, deterministic generation, scoped diff check, and exact staged-diff inspection",
+    "tier_1": "exact producer, method-distinct verifier, direct cycle-action fixtures, all-m integer inequalities, and mutation rejection",
+    "tier_2": "predecessor certificates checked by content hash; no sampler rerun because no numerical Gibbs claim is promoted",
+    "tier_3": "not run: no freeze, release, shared operator, continuum theorem, quantum lifecycle, or Lorentzian claim",
+    "memory_policy": "all commands sequential under a 500000 KiB virtual-memory ceiling"
+  },
+  "checks": {
+    "ok": true,
+    "passed": 20,
+    "total": 20,
+    "failures": [],
+    "details": {
+      "coupling_is_two_fifths": true,
+      "spatial_replication_is_216": true,
+      "background_is_mean_zero": true,
+      "mode_is_mean_zero": true,
+      "background_is_mode_orthogonal": true,
+      "shifted_vector_is_exact": true,
+      "shifted_maximum_edge_jump_is_five": true,
+      "mode_maximum_edge_jump_is_two": true,
+      "right_tail_residual_exponents_are_16m_plus_u_and_24m_plus_u": true,
+      "full_gibbs_inverse_temperature_is_1350": true,
+      "m2_candidate_coefficients_are_exact": true,
+      "m2_candidate_action_below_well_upper": true,
+      "m2_threshold_action_above_center_lower": true,
+      "m2_center_lower_exceeds_well_upper": true,
+      "m2_binary_tail_exponent_beats_minus_m": true,
+      "all_m_center_well_gap_proof_retained": true,
+      "all_m_tail_probability_proof_retained": true,
+      "conditional_raw_second_moment_is_unbounded": true,
+      "annealed_and_recentered_moments_remain_open": true,
+      "no_continuum_born_krein_or_lorentzian_promotion": true
+    }
+  },
+  "report": "reverse_physics/reports/bt-euclidean-conditional-mass-escape-obstruction.md",
+  "schema": "reverse_physics/schema/reverse-physics-bt-euclidean-conditional-mass-escape-obstruction-v1.schema.json"
+}

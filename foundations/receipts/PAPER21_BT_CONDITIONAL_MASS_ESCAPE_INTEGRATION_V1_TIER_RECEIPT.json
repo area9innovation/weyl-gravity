@@ -1,0 +1,192 @@
+{
+  "schema_version": "science-forge-tier-receipt-v1",
+  "receipt_id": "PAPER21_BT_CONDITIONAL_MASS_ESCAPE_INTEGRATION_V1_TIER_RECEIPT",
+  "result_id": "REVERSE_PHYSICS_BT_EUCLIDEAN_CONDITIONAL_MASS_ESCAPE_OBSTRUCTION_V1",
+  "created": "2026-08-14",
+  "source_base_commit": "31d9f5a73059f7250c72e6c3813295acc3ac9152",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "scope": "Certify exact fixed-volume escape of the global minima and normalized conditional mass from the BT lowest-mode fiber origin, obstruct background-uniform raw conditional moments, and integrate the resulting recentered-width plus annealed-center split into Paper 21 and the active Science Forge work item without promoting an integrated marginal, H-minus-one, continuum, Born, Krein, or Lorentzian theorem.",
+  "inputs": [
+    {
+      "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_CENTERED_FIBER_DOMINATION_OBSTRUCTION_V1.json",
+      "sha256": "d889a559d0b334492f85fc86be4ba5084311f718017b526104f0cd8f1f279467",
+      "role": "exact predecessor centered-pointwise obstruction"
+    },
+    {
+      "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_AFFINE_VIRIAL_ACTION_DENSITY_V1.json",
+      "sha256": "5ca8a2a7bc0d48300b0af031990e3c9c177fdec0d35f763666d2e397b495e1e0",
+      "role": "actual Gibbs action-density theorem and rational logarithm bound"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_CONDITIONAL_MASS_ESCAPE_OBSTRUCTION_V1.json",
+      "sha256": "3b5a231046ef56cd6d2459f5bd93b6785bf00463c9d3ddb9c5cc162a118dea76"
+    },
+    {
+      "path": "reverse_physics/schema/reverse-physics-bt-euclidean-conditional-mass-escape-obstruction-v1.schema.json",
+      "sha256": "1af9f346497ea49e401f36c294f85f4b475094e529b2bd868ec2d8d0a5035b67"
+    },
+    {
+      "path": "reverse_physics/bt_euclidean_conditional_mass_escape_obstruction.py",
+      "sha256": "5a04eb87e3bebb383cf7af9439e2d612ffc3fefb69cbd65869bd0e5725b973c6"
+    },
+    {
+      "path": "reverse_physics/verify_bt_euclidean_conditional_mass_escape_obstruction.py",
+      "sha256": "831a5ef92d5548955e41b7bf8c19e65c7fbe971584c5b627f9f4618932fea303"
+    },
+    {
+      "path": "reverse_physics/tests/test_bt_euclidean_conditional_mass_escape_obstruction.py",
+      "sha256": "4ec9f37ccae302b9ee6bf58474807eca47428c8cd7f7520457868fb1fcd821c4"
+    },
+    {
+      "path": "reverse_physics/reports/bt-euclidean-conditional-mass-escape-obstruction.md",
+      "sha256": "66c7432515fa0cd659ea7b61477dc0d7c7e9825d1dda59d20956c2008fb88410"
+    },
+    {
+      "path": "planning/events/reverse-physics-bateman-euclidean-continuum-reconstruction-ACTIVE-fd3e62ae457154f1.json",
+      "sha256": "bc1222eb1d9c01a9f073b94b5a9552e31c4074641202f40234293d075413bfc8"
+    },
+    {
+      "path": "paper/21-reverse-foundations-of-physics.tex",
+      "sha256": "3732cb8a840a027f656faad133ac16dfc41a511df260a8d6ec5182d3f49b0d25"
+    },
+    {
+      "path": "paper/21-reverse-foundations-of-physics.pdf",
+      "sha256": "5621d6ffbe6321d13f30ffeb9a7f65c64ad7d41150a724faa0b8f4dcd705f35c"
+    },
+    {
+      "path": "paper/21-reverse-foundations-of-physics-claim-map.json",
+      "sha256": "fc3eaadf79a3cb1b1a7ce16bc54d44bfcaf0402dc02d278f37cf368c5c178fa0"
+    },
+    {
+      "path": "paper/generate_21_reverse_foundations_claim_map.py",
+      "sha256": "428e3d56d51f5a01bba80ca8d32ef948253e7c78fd7a233f15cb869d9ca229b7"
+    },
+    {
+      "path": "paper/verify_21_reverse_foundations_claim_map.py",
+      "sha256": "98a5eecc7eec3cbb6d50f61c7d1c9c942f44205ea964256f1998cced70188e6e"
+    }
+  ],
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "python3 -m py_compile <three conditional-mass Python paths> paper/generate_21_reverse_foundations_claim_map.py paper/verify_21_reverse_foundations_claim_map.py",
+          "status": "PASS"
+        },
+        {
+          "command": "python3 -m json.tool <certificate, schema, event, and Paper 21 claim map>",
+          "status": "PASS"
+        },
+        {
+          "command": "cd paper && pdflatex -interaction=nonstopmode -halt-on-error 21-reverse-foundations-of-physics.tex (twice)",
+          "elapsed_seconds": 1.54,
+          "peak_rss_kb": 53180,
+          "status": "PASS",
+          "output": "46 pages; no compile error."
+        },
+        {
+          "command": "git diff --check -- <thirteen scoped scientific, planning, receipt, and Paper 21 paths>",
+          "status": "PASS"
+        }
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "python3 reverse_physics/bt_euclidean_conditional_mass_escape_obstruction.py --check",
+          "elapsed_seconds": 0.04,
+          "peak_rss_kb": 20504,
+          "status": "PASS",
+          "output": "20/20 exact producer checks"
+        },
+        {
+          "command": "python3 reverse_physics/verify_bt_euclidean_conditional_mass_escape_obstruction.py",
+          "elapsed_seconds": 0.1,
+          "peak_rss_kb": 30452,
+          "status": "PASS",
+          "output": "15/15 independent checks"
+        },
+        {
+          "command": "python3 -m unittest reverse_physics.tests.test_bt_euclidean_conditional_mass_escape_obstruction",
+          "elapsed_seconds": 0.13,
+          "peak_rss_kb": 30780,
+          "status": "PASS",
+          "output": "15 tests, including fail-closed mutations"
+        },
+        {
+          "command": "python3 paper/generate_21_reverse_foundations_appendices.py --check",
+          "status": "PASS"
+        },
+        {
+          "command": "python3 paper/generate_21_reverse_foundations_claim_map.py --check",
+          "elapsed_seconds": 0.06,
+          "peak_rss_kb": 29896,
+          "status": "PASS"
+        },
+        {
+          "command": "python3 paper/verify_21_reverse_foundations_claim_map.py",
+          "elapsed_seconds": 0.06,
+          "peak_rss_kb": 26056,
+          "status": "PASS"
+        },
+        {
+          "command": "python3 ci/verify_paper_manuscript_pins.py",
+          "status": "PASS",
+          "output": "7 explicit manuscript/PDF bindings"
+        },
+        {
+          "command": "GOMEMLIMIT=300MiB GOGC=50 sfc conform planning/work-items",
+          "elapsed_seconds": 1.05,
+          "peak_rss_kb": 5484,
+          "status": "PASS",
+          "output": "CLEAN"
+        }
+      ]
+    },
+    "tier_2": {
+      "status": "NOT_RUN",
+      "criterion": "The new result is an isolated exact fixed-lattice conditional-fiber certificate. It changes no shared operator or imported classical datum; predecessor inputs are content-addressed, and the decisive actions and all-m integer inequalities are independently rederived."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "The obstruction promotes no integrated marginal, interacting H-minus-one estimate, tightness, continuum theorem, lifecycle state, freeze, shared-core algebra, or release."
+    }
+  },
+  "advisory": {
+    "kind": "ADVISORY_FINDING",
+    "certifying": false,
+    "command": "forge/tools/science-forge/paper_prose_advisory.sh paper/21-reverse-foundations-of-physics.tex",
+    "result": "Emphasis, em-dash, sentence-length, novelty, and vocabulary rails are within advisory budgets. Parenthetical density and abstract length remain over their non-gating advisory budgets; the abstract contains one numeric group."
+  },
+  "claim_flags": {
+    "fixed_volume_conditional_mass_escape_established": true,
+    "uniform_backgroundwise_raw_conditional_moment_obstructed": true,
+    "global_fiber_minimizer_escape_established": true,
+    "paper_claim_map_current": true,
+    "science_forge_event_appended": true,
+    "uniform_recentered_conditional_variance_established": false,
+    "annealed_center_second_moment_established": false,
+    "normalized_lowest_mode_second_moment_established": false,
+    "bt_interacting_h_minus_one_established": false,
+    "continuum_measure_established": false,
+    "born_rule_established": false,
+    "krein_reconstruction_established": false,
+    "new_lorentzian_claim": false
+  },
+  "does_not_establish": [
+    "divergence of the fully integrated BT lowest-mode marginal",
+    "divergence or boundedness of the actual interacting H-minus-one moment",
+    "failure of a uniformly recentered conditional-width estimate",
+    "failure of an annealed bound on the moving fiber center",
+    "tightness, represented convergence, or a continuum Euclidean measure",
+    "a Born, Krein, gravitational, empirical, or LORENTZIAN-CAUSAL promotion",
+    "a weakest-foundation reversal"
+  ]
+}
