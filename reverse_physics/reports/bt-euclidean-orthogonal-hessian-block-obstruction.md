@@ -139,6 +139,15 @@ dyadic Fourier shells.  A positive result must yield an actual, volume-uniform
 sequence for the normalized Gibbs expectation, not merely another bad
 background.
 
+The successor
+`REVERSE_PHYSICS_BT_EUCLIDEAN_RESIDUAL_SPECTRAHEDRAL_PUSHFORWARD_V1`
+now supplies exact normalized coordinates for this gate.  Positive fields
+modulo scale are the positive ground states on the smooth boundary of
+`{-Delta+diag(r)>=0}`, and the Gibbs measure becomes a Gaussian surface
+weight divided by an explicit spanning-tree coarea Jacobian.  This exposes
+the missing entropy factor but does not bound it; the lowest log-ground-state
+Fourier marginal remains the live theorem.
+
 ## Boundaries
 
 This certificate does not establish failure of every local, annealed, or

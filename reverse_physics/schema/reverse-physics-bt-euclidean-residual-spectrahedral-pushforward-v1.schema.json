@@ -1,0 +1,251 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-residual-spectrahedral-pushforward-v1.schema.json",
+  "title": "BT residual spectrahedral pushforward certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "certificate",
+    "schema_version",
+    "created",
+    "dependency_tags",
+    "lifecycle_state",
+    "result_kind",
+    "question",
+    "answer",
+    "finite_graph_theorem",
+    "differential_and_tree_jacobian",
+    "normalized_pushforward",
+    "exact_cycle_fixture",
+    "method_disposition",
+    "foundational_dependency_cut",
+    "missing_object_ledger",
+    "next_gate",
+    "does_not_establish",
+    "provenance",
+    "verification_commands",
+    "tier_receipt",
+    "checks",
+    "report",
+    "schema"
+  ],
+  "$defs": {
+    "fraction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      }
+    },
+    "text": {"type": "string", "minLength": 1},
+    "text_array": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/text"}
+    },
+    "fraction_array": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {"$ref": "#/$defs/fraction"}
+    },
+    "fraction_matrix": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {"$ref": "#/$defs/fraction_array"}
+    },
+    "proved_section": {
+      "type": "object",
+      "minProperties": 2,
+      "additionalProperties": {"$ref": "#/$defs/text"},
+      "required": ["status"],
+      "properties": {
+        "status": {"const": "PROVED"}
+      }
+    }
+  },
+  "properties": {
+    "certificate": {
+      "const": "REVERSE_PHYSICS_BT_EUCLIDEAN_RESIDUAL_SPECTRAHEDRAL_PUSHFORWARD_V1"
+    },
+    "schema_version": {
+      "const": "reverse-physics-bt-euclidean-residual-spectrahedral-pushforward-v1"
+    },
+    "created": {"const": "2026-08-14"},
+    "dependency_tags": {
+      "type": "array",
+      "prefixItems": [
+        {"const": "LOCAL-ALGEBRAIC"},
+        {"const": "EUCLIDEAN-SPECTRAL"}
+      ],
+      "items": false
+    },
+    "lifecycle_state": {"const": "REFORMULATION_PROVED"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "finite_graph_theorem": {"$ref": "#/$defs/proved_section"},
+    "differential_and_tree_jacobian": {"$ref": "#/$defs/proved_section"},
+    "normalized_pushforward": {
+      "type": "object",
+      "minProperties": 6,
+      "additionalProperties": {"$ref": "#/$defs/text"},
+      "required": ["status"],
+      "properties": {
+        "status": {"const": "EXACT_NORMALIZED_REFORMULATION_ONLY"}
+      }
+    },
+    "exact_cycle_fixture": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "graph",
+        "omega",
+        "product_omega",
+        "residual",
+        "action",
+        "schrodinger_matrix",
+        "residual_jacobian",
+        "boundary_normal",
+        "tree_cofactors",
+        "undirected_tree_terms",
+        "tree_density",
+        "domain_gram_determinant",
+        "image_gram_determinant",
+        "restricted_jacobian_squared",
+        "restricted_jacobian",
+        "status"
+      ],
+      "properties": {
+        "graph": {"const": "four-cycle C4 with degree two"},
+        "omega": {"$ref": "#/$defs/fraction_array"},
+        "product_omega": {"$ref": "#/$defs/fraction"},
+        "residual": {"$ref": "#/$defs/fraction_array"},
+        "action": {"$ref": "#/$defs/fraction"},
+        "schrodinger_matrix": {"$ref": "#/$defs/fraction_matrix"},
+        "residual_jacobian": {"$ref": "#/$defs/fraction_matrix"},
+        "boundary_normal": {"$ref": "#/$defs/fraction_array"},
+        "tree_cofactors": {"$ref": "#/$defs/fraction_array"},
+        "undirected_tree_terms": {"$ref": "#/$defs/fraction_array"},
+        "tree_density": {"$ref": "#/$defs/fraction"},
+        "domain_gram_determinant": {"$ref": "#/$defs/fraction"},
+        "image_gram_determinant": {"$ref": "#/$defs/fraction"},
+        "restricted_jacobian_squared": {"$ref": "#/$defs/fraction"},
+        "restricted_jacobian": {"$ref": "#/$defs/fraction"},
+        "status": {"const": "EXACT_RATIONAL_FIXTURE"}
+      }
+    },
+    "method_disposition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "hidden_orthogonal_fiber_partition",
+        "residual_spectrahedral_boundary_coordinates",
+        "ground_state_tree_jacobian",
+        "vertex_transitive_entropy_jacobian_minimum",
+        "normalized_lowest_mode_marginal_bound",
+        "actual_interacting_h_minus_one_second_moment_bound",
+        "interacting_tightness",
+        "continuum_limit",
+        "ordinary_os_at_lambda_0p4",
+        "born_rule",
+        "krein_reconstruction",
+        "lorentzian_transfer"
+      ],
+      "properties": {
+        "hidden_orthogonal_fiber_partition": {"const": "REPLACED_BY_EXACT_COAREA_WEIGHT"},
+        "residual_spectrahedral_boundary_coordinates": {"const": "PROVED"},
+        "ground_state_tree_jacobian": {"const": "PROVED"},
+        "vertex_transitive_entropy_jacobian_minimum": {"const": "PROVED"},
+        "normalized_lowest_mode_marginal_bound": {"const": "OPEN"},
+        "actual_interacting_h_minus_one_second_moment_bound": {"const": "OPEN"},
+        "interacting_tightness": {"const": "NOT_ESTABLISHED"},
+        "continuum_limit": {"const": "NOT_ESTABLISHED"},
+        "ordinary_os_at_lambda_0p4": {"const": "OBSTRUCTED_BY_PREDECESSOR"},
+        "born_rule": {"const": "NOT_ESTABLISHED"},
+        "krein_reconstruction": {"const": "NOT_ASSESSED"},
+        "lorentzian_transfer": {"const": "NOT_ESTABLISHED"}
+      }
+    },
+    "foundational_dependency_cut": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "finite_exact_layer",
+        "finite_analytic_layer",
+        "uniform_limit_layer",
+        "classification",
+        "weakest_base_or_reversal"
+      ],
+      "properties": {
+        "finite_exact_layer": {"$ref": "#/$defs/text"},
+        "finite_analytic_layer": {"$ref": "#/$defs/text"},
+        "uniform_limit_layer": {"$ref": "#/$defs/text"},
+        "classification": {"const": "USED_BY_DISPLAYED_PROOF"},
+        "weakest_base_or_reversal": {"const": "NOT_ESTABLISHED"}
+      }
+    },
+    "missing_object_ledger": {"$ref": "#/$defs/text_array"},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "does_not_establish": {"$ref": "#/$defs/text_array"},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["repository_base_commit", "inputs", "arithmetic"],
+      "properties": {
+        "repository_base_commit": {"pattern": "^[0-9a-f]{40}$"},
+        "inputs": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["path", "sha256"],
+            "properties": {
+              "path": {"$ref": "#/$defs/text"},
+              "sha256": {"pattern": "^[0-9a-f]{64}$"}
+            }
+          }
+        },
+        "arithmetic": {"$ref": "#/$defs/text"}
+      }
+    },
+    "verification_commands": {"$ref": "#/$defs/text_array"},
+    "tier_receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["command_results", "tier_0", "tier_1", "tier_2", "tier_3", "resource_policy"],
+      "properties": {
+        "command_results": {"type": "array"},
+        "tier_0": {"$ref": "#/$defs/text"},
+        "tier_1": {"$ref": "#/$defs/text"},
+        "tier_2": {"$ref": "#/$defs/text"},
+        "tier_3": {"$ref": "#/$defs/text"},
+        "resource_policy": {"$ref": "#/$defs/text"}
+      }
+    },
+    "checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"const": 19},
+        "total": {"const": 19},
+        "failures": {"type": "array", "maxItems": 0},
+        "details": {
+          "type": "object",
+          "minProperties": 19,
+          "maxProperties": 19,
+          "additionalProperties": {"const": true}
+        }
+      }
+    },
+    "report": {"const": "reverse_physics/reports/bt-euclidean-residual-spectrahedral-pushforward.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-euclidean-residual-spectrahedral-pushforward-v1.schema.json"}
+  }
+}

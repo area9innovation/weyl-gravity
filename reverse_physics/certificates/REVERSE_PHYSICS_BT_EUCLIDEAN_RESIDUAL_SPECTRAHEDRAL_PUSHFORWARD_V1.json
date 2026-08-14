@@ -1,0 +1,431 @@
+{
+  "answer": "Yes as an exact reformulation, not yet as a moment bound. On every finite connected graph, positive fields modulo scale map analytically and bijectively by r=(Delta Omega)/Omega onto the smooth boundary of the convex spectrahedron {-Delta+diag(r)>=0}. The positive field is the unique ground state. The residual derivative is similar to the negative Schrodinger operator, and its restricted Jacobian is an exact directed-tree factor. Coarea therefore pushes the BT Gibbs measure to a Gaussian surface weight divided by that tree Jacobian. The desired Fourier marginal is now the logarithm of the positive ground state under this explicit normalized measure. Bounding that ground-state/tree marginal uniformly in volume remains the active estimate.",
+  "certificate": "REVERSE_PHYSICS_BT_EUCLIDEAN_RESIDUAL_SPECTRAHEDRAL_PUSHFORWARD_V1",
+  "checks": {
+    "details": {
+      "actual_h_minus_one_moment_remains_open": true,
+      "coarea_pushforward_includes_inverse_tree_jacobian": true,
+      "coupling_is_two_fifths": true,
+      "cycle_jacobian_exceeds_vertex_transitive_minimum": true,
+      "directed_tree_cofactors_follow_omega_squared": true,
+      "fixture_action_is_eleven_fourths": true,
+      "fixture_residual_is_exact": true,
+      "ground_state_transform_is_positive": true,
+      "jacobian_has_constant_right_kernel": true,
+      "jacobian_image_is_tangent": true,
+      "no_continuum_born_krein_or_lorentzian_promotion": true,
+      "normalized_low_mode_marginal_is_reexpressed_not_bounded": true,
+      "omega_square_norm_squared_is_289_over_16": true,
+      "positive_fixture_has_unit_product": true,
+      "residual_map_is_exact_boundary_coordinate": true,
+      "restricted_jacobian_is_eighty_five_over_two": true,
+      "schrodinger_kills_positive_ground_vector": true,
+      "tree_density_is_five": true,
+      "undirected_tree_polynomial_is_five": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 19,
+    "total": 19
+  },
+  "created": "2026-08-14",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "differential_and_tree_jacobian": {
+    "boundary_normal": "the outward normal is proportional to Omega^2 and Omega^2^T J_psi=0",
+    "derivative": "J_psi=Dr=-diag(Omega)^(-1) K(r) diag(Omega), with J_psi*1=0",
+    "directed_laplacian": "-J has off-diagonal entries -Omega_y/Omega_x and is the directed weighted graph Laplacian",
+    "restricted_jacobian": "Jac_H(r)(psi)=sqrt(N)*||Omega^2||_2*tau_psi, the product of the N-1 singular values from 1^perp to (Omega^2)^perp",
+    "status": "PROVED",
+    "tilt_log_convexity": "For Omega_x(t)=Omega_x exp(t h_x), log(tau(t)) is a log-sum-exp of affine tree exponents and log(||Omega(t)^2||_2) is log-sum-exp up to a factor; hence log(Jac_H(t)) is convex for every real direction h",
+    "tree_density": "tau_psi=cofactor_i(-J)/Omega_i^2 is independent of i by the directed matrix-tree theorem",
+    "undirected_tree_formula": "tau_psi=sum_T product_{edges {x,y} in T}(Omega_x Omega_y) / product_x Omega_x^2, summed over undirected spanning trees",
+    "vertex_transitive_minimum": "If G is vertex transitive and sum psi=0, AM-GM over all kappa(G) spanning trees gives tau_psi>=kappa(G), while ||Omega^2||_2>=sqrt(N); hence Jac_H(psi)>=N*kappa(G), with equality at the constant field"
+  },
+  "does_not_establish": [
+    "a uniform bound for the normalized lowest-mode marginal",
+    "the actual interacting H^-1 moment bound or its divergence",
+    "tightness or a continuum Euclidean BT measure",
+    "ordinary reflection positivity, which is obstructed at lambda=0.4 by a predecessor",
+    "a Born rule or Krein reconstruction",
+    "anything LORENTZIAN-CAUSAL",
+    "a literature-novelty claim for the finite graph ground-state transform or matrix-tree identity"
+  ],
+  "exact_cycle_fixture": {
+    "action": {
+      "denominator": 4,
+      "numerator": 11
+    },
+    "boundary_normal": [
+      {
+        "denominator": 1,
+        "numerator": 1
+      },
+      {
+        "denominator": 1,
+        "numerator": 4
+      },
+      {
+        "denominator": 1,
+        "numerator": 1
+      },
+      {
+        "denominator": 4,
+        "numerator": 1
+      }
+    ],
+    "domain_gram_determinant": {
+      "denominator": 1,
+      "numerator": 4
+    },
+    "graph": "four-cycle C4 with degree two",
+    "image_gram_determinant": {
+      "denominator": 1,
+      "numerator": 7225
+    },
+    "omega": [
+      {
+        "denominator": 1,
+        "numerator": 1
+      },
+      {
+        "denominator": 1,
+        "numerator": 2
+      },
+      {
+        "denominator": 1,
+        "numerator": 1
+      },
+      {
+        "denominator": 2,
+        "numerator": 1
+      }
+    ],
+    "product_omega": {
+      "denominator": 1,
+      "numerator": 1
+    },
+    "residual": [
+      {
+        "denominator": 2,
+        "numerator": 1
+      },
+      {
+        "denominator": 1,
+        "numerator": -1
+      },
+      {
+        "denominator": 2,
+        "numerator": 1
+      },
+      {
+        "denominator": 1,
+        "numerator": 2
+      }
+    ],
+    "residual_jacobian": [
+      [
+        {
+          "denominator": 2,
+          "numerator": -5
+        },
+        {
+          "denominator": 1,
+          "numerator": 2
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 2,
+          "numerator": 1
+        }
+      ],
+      [
+        {
+          "denominator": 2,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": -1
+        },
+        {
+          "denominator": 2,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 2
+        },
+        {
+          "denominator": 2,
+          "numerator": -5
+        },
+        {
+          "denominator": 2,
+          "numerator": 1
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 2
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 2
+        },
+        {
+          "denominator": 1,
+          "numerator": -4
+        }
+      ]
+    ],
+    "restricted_jacobian": {
+      "denominator": 2,
+      "numerator": 85
+    },
+    "restricted_jacobian_squared": {
+      "denominator": 4,
+      "numerator": 7225
+    },
+    "schrodinger_matrix": [
+      [
+        {
+          "denominator": 2,
+          "numerator": 5
+        },
+        {
+          "denominator": 1,
+          "numerator": -1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": -1
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": -1
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": -1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": -1
+        },
+        {
+          "denominator": 2,
+          "numerator": 5
+        },
+        {
+          "denominator": 1,
+          "numerator": -1
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": -1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": -1
+        },
+        {
+          "denominator": 1,
+          "numerator": 4
+        }
+      ]
+    ],
+    "status": "EXACT_RATIONAL_FIXTURE",
+    "tree_cofactors": [
+      {
+        "denominator": 1,
+        "numerator": 5
+      },
+      {
+        "denominator": 1,
+        "numerator": 20
+      },
+      {
+        "denominator": 1,
+        "numerator": 5
+      },
+      {
+        "denominator": 4,
+        "numerator": 5
+      }
+    ],
+    "tree_density": {
+      "denominator": 1,
+      "numerator": 5
+    },
+    "undirected_tree_terms": [
+      {
+        "denominator": 2,
+        "numerator": 1
+      },
+      {
+        "denominator": 2,
+        "numerator": 1
+      },
+      {
+        "denominator": 1,
+        "numerator": 2
+      },
+      {
+        "denominator": 1,
+        "numerator": 2
+      }
+    ]
+  },
+  "finite_graph_theorem": {
+    "boundary_identity": "K(r(Omega))*Omega=0 and the ground-state identity is v^T K v=sum_{edges {x,y}} Omega_x Omega_y (v_x/Omega_x-v_y/Omega_y)^2",
+    "geometry": "C_G is convex, its boundary is smooth because the ground eigenvalue is simple, and the residual map is an analytic diffeomorphism from the mean-zero log-field carrier",
+    "graph_laplacian": "(Delta Omega)_x=sum_(y~x) Omega_y-degree(x)*Omega_x",
+    "inverse": "Every boundary point has a simple strictly positive null vector by connected Perron-Frobenius; normalize its geometric mean to one and take psi=log(Omega)",
+    "positive_carrier": "Omega in (0,infinity)^N modulo positive scale; the section sum_x log(Omega_x)=0 fixes the representative",
+    "residual_map": "r_x=(Delta Omega)_x/Omega_x",
+    "scope": "every finite connected undirected graph",
+    "spectrahedron": "C_G={r in R^N: K(r)=-Delta+diag(r) is positive semidefinite}",
+    "status": "PROVED"
+  },
+  "foundational_dependency_cut": {
+    "classification": "USED_BY_DISPLAYED_PROOF",
+    "finite_analytic_layer": "Perron-Frobenius simplicity, analytic dependence of the positive ground vector, and finite-dimensional coarea",
+    "finite_exact_layer": "rational graph matrices, the ground-state sum-of-squares identity, cofactors, and the C4 witness",
+    "uniform_limit_layer": "an all-volume estimate for the log-ground-state/tree marginal; not supplied by the finite diffeomorphism",
+    "weakest_base_or_reversal": "NOT_ESTABLISHED"
+  },
+  "lifecycle_state": "REFORMULATION_PROVED",
+  "method_disposition": {
+    "actual_interacting_h_minus_one_second_moment_bound": "OPEN",
+    "born_rule": "NOT_ESTABLISHED",
+    "continuum_limit": "NOT_ESTABLISHED",
+    "ground_state_tree_jacobian": "PROVED",
+    "hidden_orthogonal_fiber_partition": "REPLACED_BY_EXACT_COAREA_WEIGHT",
+    "interacting_tightness": "NOT_ESTABLISHED",
+    "krein_reconstruction": "NOT_ASSESSED",
+    "lorentzian_transfer": "NOT_ESTABLISHED",
+    "normalized_lowest_mode_marginal_bound": "OPEN",
+    "ordinary_os_at_lambda_0p4": "OBSTRUCTED_BY_PREDECESSOR",
+    "residual_spectrahedral_boundary_coordinates": "PROVED",
+    "vertex_transitive_entropy_jacobian_minimum": "PROVED"
+  },
+  "missing_object_ledger": [
+    "an L-uniform bound on the lowest log-ground-state Fourier marginal under the coarea weight",
+    "a dyadic-shell summation proving or obstructing the actual interacting H^-1 moment",
+    "tightness in a compactly weaker topology after a positive moment theorem",
+    "identification and uniqueness of any Euclidean subsequential limit"
+  ],
+  "next_gate": "Use the exact surface density to estimate ratios under a lowest-mode multiplicative tilt of the positive ground state. The new analytic object is the joint variation of the Gaussian residual norm, boundary surface element, and directed-tree Jacobian. Prove a uniform bound or a controlled divergence sequence before proceeding to dyadic shells.",
+  "normalized_pushforward": {
+    "lowest_mode_observable": "hat(Phi_L)(k)=lambda^(-1) N^(-1) sum_x log(Omega_x(r))*exp(-2*pi*i*k.x/L)",
+    "normalization_gain": "the full orthogonal-field entropy is represented by the surface geometry and inverse tree Jacobian rather than an uncontrolled fiber partition function",
+    "original_measure": "dmu_L(psi)=Z_L^(-1) exp[-||r(psi)||_2^2/(2 lambda^2)] dpsi on sum psi=0",
+    "remaining_estimate": "control the log-ground-state Fourier marginal jointly with the reciprocal tree Jacobian, first at the lowest axial mode and then on dyadic shells",
+    "status": "EXACT_NORMALIZED_REFORMULATION_ONLY",
+    "surface_measure": "dnu_L(r)=Z_L^(-1) exp[-||r||_2^2/(2 lambda^2)] [sqrt(N)*||Omega(r)^2||_2*tau(r)]^(-1) dH^(N-1)(r) on boundary C_G"
+  },
+  "provenance": {
+    "arithmetic": "Exact Fraction arithmetic for the independent C4 fixture; the general theorem uses finite graph identities, Perron-Frobenius simplicity, coarea, and the directed matrix-tree theorem",
+    "inputs": [
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_LATTICE_PILOT_V1.json",
+        "sha256": "4171ff54d9a92f7555337e8865029a7dbb65aaf0b4cf930017732fb0c6051320"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_ORTHOGONAL_HESSIAN_BLOCK_OBSTRUCTION_V1.json",
+        "sha256": "f984df873bb6f41476b15acb7bc01e9737fa1438782ddd970d1d62033e5a430e"
+      }
+    ],
+    "repository_base_commit": "8a8d19d857459bff553d86eda68116b27a55f85a"
+  },
+  "question": "Can the normalized BT low-mode marginal be rewritten in exact coordinates that expose, rather than hide, the orthogonal-mode entropy left uncontrolled by action sublevel bounds?",
+  "report": "reverse_physics/reports/bt-euclidean-residual-spectrahedral-pushforward.md",
+  "result_kind": "exact finite-graph residual-coordinate diffeomorphism, ground-state transform, and normalized coarea pushforward",
+  "schema": "reverse_physics/schema/reverse-physics-bt-euclidean-residual-spectrahedral-pushforward-v1.schema.json",
+  "schema_version": "reverse-physics-bt-euclidean-residual-spectrahedral-pushforward-v1",
+  "tier_receipt": {
+    "command_results": [
+      {
+        "command": "ulimit -v 500000; python3 reverse_physics/bt_euclidean_residual_spectrahedral_pushforward.py --check",
+        "elapsed_seconds": "0.03",
+        "peak_rss_kib": 21276,
+        "status": "PASS_19_OF_19"
+      },
+      {
+        "command": "ulimit -v 500000; python3 reverse_physics/verify_bt_euclidean_residual_spectrahedral_pushforward.py",
+        "elapsed_seconds": "0.09",
+        "peak_rss_kib": 30572,
+        "status": "PASS_15_OF_15"
+      },
+      {
+        "command": "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_euclidean_residual_spectrahedral_pushforward",
+        "elapsed_seconds": "0.12",
+        "peak_rss_kib": 30604,
+        "status": "PASS_10_TESTS"
+      },
+      {
+        "command": "GOMEMLIMIT=300MiB GOGC=50 /home/alstrup/tmp/sf-sfc-1000 conform planning/work-items",
+        "elapsed_seconds": "1.04",
+        "peak_rss_kib": 5492,
+        "status": "PASS_CLEAN"
+      }
+    ],
+    "resource_policy": "all scientific commands run sequentially under ulimit -v 500000",
+    "tier_0": "parse, strict schema, deterministic generation, scoped git diff --check, and exact staged-diff inspection",
+    "tier_1": "producer, independent residual/Schrodinger/matrix-tree/coarea verifier, and mutation tests",
+    "tier_2": "NOT_RUN_FOR_THIS_SCOPED_COMMIT: Paper 21 projection is deferred because a concurrent foundations v11 update changed the atlas evidence count during validation; predecessor scientific certificates are reused by content hash",
+    "tier_3": "NOT_RUN: no freeze, release, continuum, quantum lifecycle, or Lorentzian promotion"
+  },
+  "verification_commands": [
+    "python3 reverse_physics/bt_euclidean_residual_spectrahedral_pushforward.py --check",
+    "python3 reverse_physics/verify_bt_euclidean_residual_spectrahedral_pushforward.py",
+    "python3 -m unittest -v reverse_physics.tests.test_bt_euclidean_residual_spectrahedral_pushforward"
+  ]
+}
