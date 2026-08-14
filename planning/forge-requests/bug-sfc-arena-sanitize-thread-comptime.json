@@ -1,0 +1,20 @@
+{
+  "id": "sf:forge-request/bug-sfc-arena-sanitize-thread-comptime",
+  "kind": "work",
+  "schema": "work-v0",
+  "body": {
+    "owner": "reverse-foundations",
+    "state": "REQUESTED",
+    "objective": "Restore the Science Forge coordinator build so the Lorentzian Weyl BV completion programme can acquire and report its required append-only lease. The current s-f write path rebuilds sfc and fails in forge/lib/alloc/arena.forge before any work command executes.",
+    "depends_on": [
+      "sf:program/work/reverse-foundations-lorentzian-weyl-bv-completion"
+    ],
+    "stop_condition": "From /home/alstrup/area9/weyl-gravity, `SF_PROGRAM=/home/alstrup/area9/weyl-gravity/planning/work-items s-f work show --item sf:program/work/reverse-foundations-lorentzian-weyl-bv-completion` and the corresponding `s-f work pull` must compile and execute without the arena `sanitize_thread` comptime error. Add a Forge-side regression that compiles sfc against the current arena API and record the landed commit and gate here.",
+    "forbid": "no physics-repository special case; no disabling arena thread-safety checks; no use of a stale cached sfc for mutating commands; no hand-authored fake lease or lifecycle event; no weakening append-only programme validation.",
+    "notes": [
+      "Minimal reproduction on 2026-08-15: `/home/alstrup/.local/bin/forge -I /home/alstrup/area9/tango/forge/tools/datalog -I /home/alstrup/area9/tango/forge/tools/science-forge/conflux /home/alstrup/area9/tango/forge/tools/science-forge/sfc.forge -- --help`.",
+      "Observed error: `forge/lib/alloc/arena.forge:401:16: comptime: sanitize_thread is not a compile-time name (a comptime local, parameter, or comptime let)`.",
+      "The physics work continues under the documented explicit-path manual Git fallback; no Science Forge lease event will be fabricated while the coordinator is unavailable."
+    ]
+  }
+}
