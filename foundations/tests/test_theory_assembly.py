@@ -29,9 +29,13 @@ class TheoryAssemblyTests(unittest.TestCase):
         self.assertEqual(rails["ROBUSTNESS_OUT_OF_SAMPLE"], "NO_RECORDS")
         self.assertEqual(len(value["calibration_controls"]), 1)
         self.assertEqual(len(value["calibration_controls"][0]["records"]), 4)
-        self.assertEqual(len(value["model_scoped_assemblies"]), 1)
+        self.assertEqual(len(value["model_scoped_assemblies"]), 2)
         self.assertTrue(value["model_scoped_assemblies"][0]["assembly_disposition"]["complete_within_declared_scope"])
         self.assertFalse(value["model_scoped_assemblies"][0]["assembly_disposition"]["complete_theory"])
+        mannheim = value["model_scoped_assemblies"][1]
+        self.assertFalse(mannheim["assembly_disposition"]["complete_within_declared_scope"])
+        self.assertTrue(mannheim["assembly_disposition"]["formula_endpoint_coarsely_reproduced"])
+        self.assertFalse(mannheim["assembly_disposition"]["cross_dataset_random_error_gate_passed"])
         self.assertTrue(all(rail["status"] not in {"BLOCKED", "FAILED"} for item in value["assemblies"] for rail in item["maturity_rails"]))
 
     def test_named_programme_lenses_are_explanatory_and_bounded(self):

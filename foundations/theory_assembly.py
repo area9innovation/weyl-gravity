@@ -17,6 +17,7 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 GR_CONTROL = ROOT / "foundations/standard-gr-observational-control-v1.json"
 GR_CASSINI_ASSEMBLY = ROOT / "foundations/results/FOUNDATIONAL_GR_CASSINI_MODEL_ASSEMBLY_V1.json"
+MANNHEIM_NGC3198_ASSEMBLY = ROOT / "foundations/results/FOUNDATIONAL_MANNHEIM_NGC3198_MODEL_ASSEMBLY_V1.json"
 
 
 DIRECT = {"LOCAL_RESULT", "LITERATURE_RESULT"}
@@ -306,6 +307,7 @@ def build_assembly_assessment(dataset: dict[str, Any]) -> dict[str, Any]:
     assemblies = [_assembly(config, obligations, cell_map, certified_interfaces, numerical_records) for config in ASSEMBLY_CONFIGS]
     calibration_control = json.loads(GR_CONTROL.read_text())
     gr_cassini = json.loads(GR_CASSINI_ASSEMBLY.read_text())
+    mannheim_ngc3198 = json.loads(MANNHEIM_NGC3198_ASSEMBLY.read_text())
     value = {
         "schema_version": "foundational-theory-assembly-atlas-v1",
         "result_id": "FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1",
@@ -319,12 +321,16 @@ def build_assembly_assessment(dataset: dict[str, Any]) -> dict[str, Any]:
         "certified_interface_records": certified_interfaces,
         "certified_carrier_interface_records": carrier_interfaces,
         "assemblies": assemblies,
-        "model_scoped_assemblies": [gr_cassini],
+        "model_scoped_assemblies": [gr_cassini, mannheim_ngc3198],
         "model_scoped_sources": [
             {
                 "path": "foundations/results/FOUNDATIONAL_GR_CASSINI_MODEL_ASSEMBLY_V1.json",
                 "sha256": hashlib.sha256(GR_CASSINI_ASSEMBLY.read_bytes()).hexdigest(),
-            }
+            },
+            {
+                "path": "foundations/results/FOUNDATIONAL_MANNHEIM_NGC3198_MODEL_ASSEMBLY_V1.json",
+                "sha256": hashlib.sha256(MANNHEIM_NGC3198_ASSEMBLY.read_bytes()).hexdigest(),
+            },
         ],
         "calibration_controls": [calibration_control],
         "calibration_source": {
@@ -352,6 +358,8 @@ def build_assembly_assessment(dataset: dict[str, Any]) -> dict[str, Any]:
             "external_positive_control_registered": True,
             "missing_and_failed_states_separated": True,
             "model_scoped_prediction_assembly_registered": True,
+            "second_model_scoped_mannheim_assembly_registered": True,
+            "mixed_empirical_result_preserved": True,
             "bounded_prediction_chain_established": True,
             "bounded_empirical_agreement_assessed": True,
             "cross_cell_composability_established": False,
@@ -368,6 +376,7 @@ def build_assembly_assessment(dataset: dict[str, Any]) -> dict[str, Any]:
             "that coarse independent-sampler compatibility is precision equivalence, empirical validation, or out-of-sample robustness",
             "that the scoped Euclidean/Krein carrier non-identity forbids every conditional bridge",
             "that any prototype agrees with observations",
+            "that the Mannheim NGC 3198 coarse endpoint reproduction or RMS gate overrules its failed SPARC random-error gate",
             "that the external standard-GR control is selected from the cube or transfers empirical support to a prototype",
             "that the benchmark catalogue is a complete set of physical tests",
             "a complete theory, a new Lorentzian-causal result, or a quantum lifecycle promotion",

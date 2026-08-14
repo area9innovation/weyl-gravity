@@ -4480,12 +4480,811 @@ window.THEORY_ASSEMBLY_DATA = {
       ],
       "human_report": "foundations/reports/gr-cassini-model-assembly-v1.md",
       "canonical_digest": "bdbe75d140525fa6b1a83c4ca1d5ca9298fb9ce2cbf5322e32869361ee4f2603"
+    },
+    {
+      "schema_version": "foundational-mannheim-ngc3198-model-assembly-v1",
+      "result_id": "FOUNDATIONAL_MANNHEIM_NGC3198_MODEL_ASSEMBLY_V1",
+      "result_kind": "MODEL_SCOPED_PREDICTION_AND_CROSS_DATASET_ASSEMBLY",
+      "lifecycle": "NUMERICAL_REPRODUCTION_WITH_MIXED_EMPIRICAL_COMPARISON",
+      "created": "2026-08-14",
+      "repository_base_commit": "a1980849c6e7c18802a0392cc21c9f3da199f9d3",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC"
+      ],
+      "title": "Mannheim conformal-gravity NGC 3198 assembly: field equation to rotation curve",
+      "model_identity": {
+        "id": "MANNHEIM_OBRIEN_NGC3198_THIN_DISK",
+        "theory": "Four-dimensional pure metric conformal gravity in the Mannheim--Kazanas phenomenological branch",
+        "sector": "Static weak-field circular motion for the NGC 3198 stellar and gas disks",
+        "field_equations": "B_mu_nu=0 in the exterior, with published thin-disk convolution and global gamma_0/kappa terms",
+        "matter_coupling": "Massive tracers are assumed to respond to the displayed metric; the macroscopic-versus-microscopic scalar dispute is not resolved",
+        "approximation": "Leading weak field, infinitesimally thin exponential stellar and gas disks, gas scale length 4 R0, no bulge",
+        "benchmark": "GALACTIC_DYNAMICS",
+        "comparison_id": "MANNHEIM_OBRIEN_2012_NGC3198_AND_SPARC_2016"
+      },
+      "applicability_mask": [
+        {
+          "obligation": "KINEMATICS_OBSERVABLES",
+          "status": "IN_SCOPE_REQUIRED",
+          "reason": "The static metric, circular speed, disk light/mass model, and measured rotation curve are the declared configurations and observables."
+        },
+        {
+          "obligation": "STATE_EXISTENCE",
+          "status": "OUT_OF_SCOPE",
+          "reason": "This bounded static classical comparison does not require this state, quantum, spectral, Cauchy, renormalization, or residual-transfer obligation."
+        },
+        {
+          "obligation": "STATE_REPRESENTATION",
+          "status": "OUT_OF_SCOPE",
+          "reason": "This bounded static classical comparison does not require this state, quantum, spectral, Cauchy, renormalization, or residual-transfer obligation."
+        },
+        {
+          "obligation": "PROBABILITY_RULE",
+          "status": "OUT_OF_SCOPE",
+          "reason": "This bounded static classical comparison does not require this state, quantum, spectral, Cauchy, renormalization, or residual-transfer obligation."
+        },
+        {
+          "obligation": "PHYSICAL_STATE_SELECTION",
+          "status": "OUT_OF_SCOPE",
+          "reason": "This bounded static classical comparison does not require this state, quantum, spectral, Cauchy, renormalization, or residual-transfer obligation."
+        },
+        {
+          "obligation": "GENERATOR_SPECTRAL_DYNAMICS",
+          "status": "OUT_OF_SCOPE",
+          "reason": "This bounded static classical comparison does not require this state, quantum, spectral, Cauchy, renormalization, or residual-transfer obligation."
+        },
+        {
+          "obligation": "EVOLUTION_WELLPOSEDNESS",
+          "status": "OUT_OF_SCOPE",
+          "reason": "This bounded static classical comparison does not require this state, quantum, spectral, Cauchy, renormalization, or residual-transfer obligation."
+        },
+        {
+          "obligation": "CAUSAL_PROPAGATION_GREEN",
+          "status": "OUT_OF_SCOPE",
+          "reason": "This bounded static classical comparison does not require this state, quantum, spectral, Cauchy, renormalization, or residual-transfer obligation."
+        },
+        {
+          "obligation": "GAUGE_BV_COHOMOLOGY",
+          "status": "TOUCHED_NOT_REQUIRED",
+          "reason": "The exact predecessor uses a conformal and radial gauge, but no BV complex or gauge cohomology is required or established."
+        },
+        {
+          "obligation": "INTERACTION_CONSTRUCTION",
+          "status": "IN_SCOPE_REQUIRED",
+          "reason": "The nonlinear Bach equation and its static spherical vacuum family define the gravitational model feeding the weak-field prediction."
+        },
+        {
+          "obligation": "COUNTERTERM_CLASSIFICATION",
+          "status": "OUT_OF_SCOPE",
+          "reason": "This bounded static classical comparison does not require this state, quantum, spectral, Cauchy, renormalization, or residual-transfer obligation."
+        },
+        {
+          "obligation": "ANOMALY_CLASSIFICATION",
+          "status": "OUT_OF_SCOPE",
+          "reason": "This bounded static classical comparison does not require this state, quantum, spectral, Cauchy, renormalization, or residual-transfer obligation."
+        },
+        {
+          "obligation": "RENORMALIZED_PRODUCTS",
+          "status": "OUT_OF_SCOPE",
+          "reason": "This bounded static classical comparison does not require this state, quantum, spectral, Cauchy, renormalization, or residual-transfer obligation."
+        },
+        {
+          "obligation": "QME_RESTORATION",
+          "status": "OUT_OF_SCOPE",
+          "reason": "This bounded static classical comparison does not require this state, quantum, spectral, Cauchy, renormalization, or residual-transfer obligation."
+        },
+        {
+          "obligation": "RESIDUAL_QUANTUM_TRANSFER",
+          "status": "OUT_OF_SCOPE",
+          "reason": "This bounded static classical comparison does not require this state, quantum, spectral, Cauchy, renormalization, or residual-transfer obligation."
+        },
+        {
+          "obligation": "RECONSTRUCTION_LIMITS",
+          "status": "IN_SCOPE_REQUIRED",
+          "reason": "The weak-field circular-orbit and disk integrations connect the metric coefficients to the observed velocity-radius curve."
+        }
+      ],
+      "applicability_summary": {
+        "total_atlas_obligations": 16,
+        "required": 3,
+        "required_satisfied": 3,
+        "touched_not_required": 1,
+        "out_of_scope": 12
+      },
+      "stages": [
+        {
+          "id": "WEYL_FIELD_EQUATION",
+          "label": "Weyl action and Bach equation",
+          "status": "DECLARED_MODEL_INPUT",
+          "establishes": "The classical model is four-dimensional pure metric conformal gravity with Bach equation B_mu_nu=0 in the exterior."
+        },
+        {
+          "id": "STATIC_VACUUM_FAMILY",
+          "label": "Mannheim--Kazanas vacuum family",
+          "status": "CERTIFIED_LOCAL_PREDECESSOR",
+          "establishes": "The local BH0B certificate derives the complete static spherical Bach-flat family in the declared conformal gauge."
+        },
+        {
+          "id": "CIRCULAR_ORBIT_LAW",
+          "label": "Weak-field circular-orbit law",
+          "status": "CERTIFIED_LOCAL_PREDECESSOR",
+          "establishes": "The local BH0C certificate derives the leading weak-field beta/r + gamma r/2 - k r^2 circular-speed law and records its exact-family correction."
+        },
+        {
+          "id": "EXPONENTIAL_DISK_MODEL",
+          "label": "Luminous exponential-disk prediction",
+          "status": "PUBLISHED_MODEL_TRANSCRIPTION",
+          "establishes": "Mannheim--O'Brien Eqs. (5) and (20) integrate the Newtonian and linear kernels over thin stellar and gas disks and add universal linear and quadratic terms."
+        },
+        {
+          "id": "NGC3198_PARAMETER_ROW",
+          "label": "Published NGC 3198 parameters",
+          "status": "CONTENT_PINNED_TRANSCRIPTION",
+          "establishes": "The model uses the paper's distance, scale length, stellar and HI masses, fitted M/L, endpoint radius, and fixed universal constants without refitting."
+        },
+        {
+          "id": "PUBLISHED_ENDPOINT",
+          "label": "Published endpoint reproduction",
+          "status": "COARSE_NUMERICAL_REPRODUCTION",
+          "establishes": "Independent evaluation of the displayed equations predicts the endpoint velocity within the declared five-percent coarse gate of the velocity reconstructed from the paper's endpoint acceleration."
+        },
+        {
+          "id": "SPARC_CROSS_DATASET",
+          "label": "Independent SPARC curve comparison",
+          "status": "MIXED_RANDOM_ERROR_GATE_FAILED",
+          "establishes": "Without refitting, the curve passes the declared five km/s RMS shape gate but fails the reduced-chi-squared gate based on SPARC random errors alone."
+        }
+      ],
+      "interfaces": [
+        {
+          "id": "ACTION_TO_BACH",
+          "from": "WEYL_FIELD_EQUATION",
+          "to": "STATIC_VACUUM_FAMILY",
+          "relation": "DECLARED_THEORY_TO_CERTIFIED_SECTOR",
+          "status": "CERTIFIED_WITH_SCOPE",
+          "basis": "BH0B verifies the static spherical exterior classification in conformal gauge, not the full matter-coupled theory."
+        },
+        {
+          "id": "VACUUM_TO_ORBIT",
+          "from": "STATIC_VACUUM_FAMILY",
+          "to": "CIRCULAR_ORBIT_LAW",
+          "relation": "EXACT_TO_LEADING_WEAK_FIELD",
+          "status": "CERTIFIED_WITH_SCOPE",
+          "basis": "BH0C derives the orbit law and explicitly records the O(beta gamma) correction from the exact Bach-flat family."
+        },
+        {
+          "id": "ORBIT_TO_DISK",
+          "from": "CIRCULAR_ORBIT_LAW",
+          "to": "EXPONENTIAL_DISK_MODEL",
+          "relation": "PUBLISHED_THIN_DISK_INTEGRATION",
+          "status": "REGISTERED",
+          "basis": "Imports the paper's thin exponential stellar/gas geometry and Bessel-kernel integration; it does not solve a galactic interior matter sector."
+        },
+        {
+          "id": "DISK_TO_PARAMETERS",
+          "from": "EXPONENTIAL_DISK_MODEL",
+          "to": "NGC3198_PARAMETER_ROW",
+          "relation": "PUBLISHED_FIT_PARAMETER_INSTANTIATION",
+          "status": "REGISTERED",
+          "basis": "The reported stellar mass-to-light ratio is a fitted input; all other displayed parameters are transcribed as fixed model/data inputs."
+        },
+        {
+          "id": "PARAMETERS_TO_ENDPOINT",
+          "from": "NGC3198_PARAMETER_ROW",
+          "to": "PUBLISHED_ENDPOINT",
+          "relation": "INDEPENDENT_NUMERICAL_EVALUATION",
+          "status": "CERTIFIED_NUMERIC",
+          "basis": "The producer evaluates Bessel integrals directly and the checker uses std::cyl_bessel_i/k; agreement is tested independently."
+        },
+        {
+          "id": "ENDPOINT_TO_SPARC",
+          "from": "PUBLISHED_ENDPOINT",
+          "to": "SPARC_CROSS_DATASET",
+          "relation": "NONIDENTICAL_DATASET_COMPARISON",
+          "status": "REGISTERED_WITH_WARNING",
+          "basis": "SPARC observations are from the same galaxy and observational lineage but a later, non-identical photometric/data reduction; no empirical support is transferred automatically."
+        }
+      ],
+      "published_parameter_rail": {
+        "source": {
+          "citation": "P. D. Mannheim and J. G. O'Brien, Fitting galactic rotation curves with conformal gravity and a global quadratic potential, Phys. Rev. D 85 (2012) 124020",
+          "arxiv": "https://arxiv.org/abs/1011.3495",
+          "source_archive": "https://export.arxiv.org/e-print/1011.3495",
+          "source_archive_sha256": "e366db37bc99ce08c96609f751d9b0ffb779dd4ce1c0140a2e226c1aefc075c1",
+          "source_member": "fitting5.tex",
+          "parameter_table": "Table 1, NGC 3198 row",
+          "equations": [
+            "(5)",
+            "(20)"
+          ],
+          "retrieved": "2026-08-14"
+        },
+        "constants_cgs": {
+          "beta_star_cm": "1.48e5",
+          "gamma_star_per_cm": "5.42e-41",
+          "gamma_0_per_cm": "3.06e-30",
+          "kappa_per_cm2": "9.54e-54",
+          "speed_of_light_cm_per_s": "2.99792458e10",
+          "kpc_cm": "3.0856775814913673e21"
+        },
+        "ngc3198_row": {
+          "distance_mpc": "14.1",
+          "blue_luminosity_1e10_solar": "3.241",
+          "stellar_scale_length_kpc": "4.0",
+          "last_radius_kpc": "38.6",
+          "hi_mass_1e10_solar": "1.06",
+          "stellar_disk_mass_1e10_solar": "3.644",
+          "stellar_mass_to_blue_light": "1.12",
+          "observed_last_v2_over_c2r_1e30_per_cm": "2.09"
+        },
+        "modelling_assumptions": {
+          "stellar_geometry": "infinitesimally thin exponential disk",
+          "gas_geometry": "infinitesimally thin exponential disk with scale length four times the optical scale length",
+          "gas_helium_multiplier": "1.4",
+          "bulge": "none for NGC 3198",
+          "free_parameter": "stellar mass-to-blue-light ratio; the table reports the fitted value 1.12",
+          "universal_parameters": "beta_star, gamma_star, gamma_0, and kappa are held fixed at the published values"
+        },
+        "parameter_fit_scope": "The stellar M/L=1.12 is imported from the published fit; this assembly performs no fit."
+      },
+      "numerical_reproduction_rail": {
+        "arithmetic": "BINARY64_NUMERIC_DISTINCT_FROM_EXACT_LOCAL_PREDECESSORS",
+        "producer_method": "I_0/I_1 power series and K_0/K_1 integral definitions with 4096-panel composite Simpson quadrature",
+        "independent_method": "C++17 std::cyl_bessel_i and std::cyl_bessel_k",
+        "published_last_radius_kpc": 38.6,
+        "published_observed_endpoint_acceleration_per_cm": 2.09e-30,
+        "observed_endpoint_velocity_reconstructed_km_s": 149.5762947830398,
+        "predicted_endpoint": {
+          "radius_kpc": 38.6,
+          "velocity_km_s": 153.90402121008415,
+          "v2_over_c2r_per_cm": 2.2126905381295745e-30,
+          "components_v2_km2_s2": {
+            "stellar_newtonian": 4328.92141015455,
+            "stellar_linear": 10392.09897333534,
+            "gas_newtonian": 1533.9591136164609,
+            "gas_linear": 3216.791759864909,
+            "global_linear": 16378.37032553345,
+            "global_quadratic": -12163.693837870676
+          }
+        },
+        "producer_refinement_absolute_velocity_difference_km_s": 0.0,
+        "endpoint_residual_km_s": 4.327726427044354,
+        "endpoint_relative_velocity_residual": 0.02893323727079692,
+        "declared_relative_gate": 0.05,
+        "gate_passed": true,
+        "status": "COARSE_ENDPOINT_REPRODUCED",
+        "boundary": "The table endpoint carries no pointwise uncertainty and is not the full curve. The five-percent gate is an audit threshold chosen here, not a publisher confidence interval."
+      },
+      "empirical_comparison_rail": {
+        "type": "NO_REFIT_NONIDENTICAL_SPARC_CROSS_DATASET_CHECK",
+        "protocol": {
+          "fit_performed": false,
+          "radius_rescaling": "Multiply each SPARC radius by 14.1/13.8 to use the distance adopted in the published conformal-gravity fit",
+          "velocity_rescaling": "None",
+          "comparison_window": "Rescaled radius less than or equal to the published last radius 38.6 kpc",
+          "uncertainty": "SPARC e_Vobs random errors only; inclination and other systematic uncertainties are not included",
+          "coarse_rms_gate_km_per_s": "5.0",
+          "random_error_reduced_chi2_gate": "2.0",
+          "endpoint_relative_velocity_gate": "0.05"
+        },
+        "source": {
+          "citation": "F. Lelli, S. S. McGaugh, and J. M. Schombert, SPARC: Mass Models for 175 Disk Galaxies with Spitzer Photometry and Accurate Rotation Curves, Astron. J. 152 (2016) 157",
+          "url": "https://astroweb.case.edu/SPARC/MassModels_Lelli2016c.mrt",
+          "full_source_sha256": "9108994b12cc401b94a1768beca61c53ec354779385c9c9cc571049f3043244c",
+          "local_extract": "foundations/data/ngc3198-sparc-mass-model-v1.tsv",
+          "selection": "All 43 rows whose fixed-width ID field is NGC3198, copied without numerical alteration",
+          "retrieved": "2026-08-14"
+        },
+        "points_total_source": 43,
+        "points_inside_published_radius": 39,
+        "points": [
+          {
+            "source_radius_kpc": 0.32,
+            "rescaled_radius_kpc": 0.32695652173913037,
+            "observed_velocity_km_s": 24.4,
+            "random_error_km_s": 35.9,
+            "predicted_velocity_km_s": 22.695284849168115,
+            "residual_km_s": -1.704715150831884,
+            "standardized_residual": -0.04748510169448145
+          },
+          {
+            "source_radius_kpc": 0.64,
+            "rescaled_radius_kpc": 0.6539130434782607,
+            "observed_velocity_km_s": 43.3,
+            "random_error_km_s": 16.3,
+            "predicted_velocity_km_s": 37.71262210737579,
+            "residual_km_s": -5.587377892624204,
+            "standardized_residual": -0.3427839197928959
+          },
+          {
+            "source_radius_kpc": 0.96,
+            "rescaled_radius_kpc": 0.9808695652173912,
+            "observed_velocity_km_s": 45.5,
+            "random_error_km_s": 16.1,
+            "predicted_velocity_km_s": 50.26965048714948,
+            "residual_km_s": 4.769650487149477,
+            "standardized_residual": 0.2962515830527625
+          },
+          {
+            "source_radius_kpc": 1.28,
+            "rescaled_radius_kpc": 1.3078260869565215,
+            "observed_velocity_km_s": 58.5,
+            "random_error_km_s": 15.4,
+            "predicted_velocity_km_s": 61.12273955986217,
+            "residual_km_s": 2.6227395598621683,
+            "standardized_residual": 0.1703077636274135
+          },
+          {
+            "source_radius_kpc": 1.61,
+            "rescaled_radius_kpc": 1.645,
+            "observed_velocity_km_s": 68.8,
+            "random_error_km_s": 7.61,
+            "predicted_velocity_km_s": 70.92994886870265,
+            "residual_km_s": 2.1299488687026553,
+            "standardized_residual": 0.27988815620271423
+          },
+          {
+            "source_radius_kpc": 1.93,
+            "rescaled_radius_kpc": 1.9719565217391302,
+            "observed_velocity_km_s": 76.9,
+            "random_error_km_s": 10.3,
+            "predicted_velocity_km_s": 79.33925448367964,
+            "residual_km_s": 2.4392544836796333,
+            "standardized_residual": 0.2368208236582168
+          },
+          {
+            "source_radius_kpc": 2.24,
+            "rescaled_radius_kpc": 2.2886956521739132,
+            "observed_velocity_km_s": 82.0,
+            "random_error_km_s": 8.09,
+            "predicted_velocity_km_s": 86.61061492371104,
+            "residual_km_s": 4.61061492371104,
+            "standardized_residual": 0.5699153181348628
+          },
+          {
+            "source_radius_kpc": 2.57,
+            "rescaled_radius_kpc": 2.625869565217391,
+            "observed_velocity_km_s": 86.9,
+            "random_error_km_s": 7.6,
+            "predicted_velocity_km_s": 93.53356046050949,
+            "residual_km_s": 6.633560460509486,
+            "standardized_residual": 0.8728369026986166
+          },
+          {
+            "source_radius_kpc": 2.89,
+            "rescaled_radius_kpc": 2.952826086956522,
+            "observed_velocity_km_s": 97.6,
+            "random_error_km_s": 3.03,
+            "predicted_velocity_km_s": 99.54187558333885,
+            "residual_km_s": 1.941875583338856,
+            "standardized_residual": 0.6408830308049029
+          },
+          {
+            "source_radius_kpc": 3.21,
+            "rescaled_radius_kpc": 3.2797826086956516,
+            "observed_velocity_km_s": 100.0,
+            "random_error_km_s": 5.31,
+            "predicted_velocity_km_s": 104.93767792995632,
+            "residual_km_s": 4.9376779299563225,
+            "standardized_residual": 0.9298828493326409
+          },
+          {
+            "source_radius_kpc": 3.54,
+            "rescaled_radius_kpc": 3.61695652173913,
+            "observed_velocity_km_s": 107.0,
+            "random_error_km_s": 7.51,
+            "predicted_velocity_km_s": 109.93177621379725,
+            "residual_km_s": 2.9317762137972494,
+            "standardized_residual": 0.3903829845269307
+          },
+          {
+            "source_radius_kpc": 3.85,
+            "rescaled_radius_kpc": 3.933695652173913,
+            "observed_velocity_km_s": 113.0,
+            "random_error_km_s": 7.32,
+            "predicted_velocity_km_s": 114.15122495736566,
+            "residual_km_s": 1.151224957365656,
+            "standardized_residual": 0.15727116903902405
+          },
+          {
+            "source_radius_kpc": 4.17,
+            "rescaled_radius_kpc": 4.260652173913043,
+            "observed_velocity_km_s": 117.0,
+            "random_error_km_s": 5.21,
+            "predicted_velocity_km_s": 118.07597178121802,
+            "residual_km_s": 1.0759717812180156,
+            "standardized_residual": 0.2065204954353197
+          },
+          {
+            "source_radius_kpc": 4.5,
+            "rescaled_radius_kpc": 4.5978260869565215,
+            "observed_velocity_km_s": 119.0,
+            "random_error_km_s": 5.67,
+            "predicted_velocity_km_s": 121.71030504955321,
+            "residual_km_s": 2.710305049553213,
+            "standardized_residual": 0.47800794524748025
+          },
+          {
+            "source_radius_kpc": 4.82,
+            "rescaled_radius_kpc": 4.9247826086956525,
+            "observed_velocity_km_s": 127.0,
+            "random_error_km_s": 5.39,
+            "predicted_velocity_km_s": 124.87313039095174,
+            "residual_km_s": -2.1268696090482564,
+            "standardized_residual": -0.39459547477704204
+          },
+          {
+            "source_radius_kpc": 5.15,
+            "rescaled_radius_kpc": 5.261956521739131,
+            "observed_velocity_km_s": 132.0,
+            "random_error_km_s": 4.34,
+            "predicted_velocity_km_s": 127.79831856541175,
+            "residual_km_s": -4.201681434588252,
+            "standardized_residual": -0.968129362808353
+          },
+          {
+            "source_radius_kpc": 5.46,
+            "rescaled_radius_kpc": 5.578695652173913,
+            "observed_velocity_km_s": 134.0,
+            "random_error_km_s": 2.36,
+            "predicted_velocity_km_s": 130.26428954441386,
+            "residual_km_s": -3.735710455586144,
+            "standardized_residual": -1.5829281591466713
+          },
+          {
+            "source_radius_kpc": 5.78,
+            "rescaled_radius_kpc": 5.905652173913044,
+            "observed_velocity_km_s": 137.0,
+            "random_error_km_s": 0.89,
+            "predicted_velocity_km_s": 132.55006014537616,
+            "residual_km_s": -4.449939854623835,
+            "standardized_residual": -4.999932420925657
+          },
+          {
+            "source_radius_kpc": 6.1,
+            "rescaled_radius_kpc": 6.232608695652173,
+            "observed_velocity_km_s": 140.0,
+            "random_error_km_s": 2.84,
+            "predicted_velocity_km_s": 134.59619845925477,
+            "residual_km_s": -5.403801540745235,
+            "standardized_residual": -1.9027470213891673
+          },
+          {
+            "source_radius_kpc": 6.43,
+            "rescaled_radius_kpc": 6.569782608695651,
+            "observed_velocity_km_s": 142.0,
+            "random_error_km_s": 0.88,
+            "predicted_velocity_km_s": 136.47875611873224,
+            "residual_km_s": -5.521243881267765,
+            "standardized_residual": -6.274140774167915
+          },
+          {
+            "source_radius_kpc": 6.74,
+            "rescaled_radius_kpc": 6.886521739130435,
+            "observed_velocity_km_s": 144.0,
+            "random_error_km_s": 1.23,
+            "predicted_velocity_km_s": 138.0562628209297,
+            "residual_km_s": -5.943737179070297,
+            "standardized_residual": -4.832306649650648
+          },
+          {
+            "source_radius_kpc": 7.06,
+            "rescaled_radius_kpc": 7.2134782608695645,
+            "observed_velocity_km_s": 146.0,
+            "random_error_km_s": 1.57,
+            "predicted_velocity_km_s": 139.50863277470748,
+            "residual_km_s": -6.491367225292521,
+            "standardized_residual": -4.134628805918803
+          },
+          {
+            "source_radius_kpc": 8.04,
+            "rescaled_radius_kpc": 8.214782608695652,
+            "observed_velocity_km_s": 147.0,
+            "random_error_km_s": 3.0,
+            "predicted_velocity_km_s": 143.01044768437725,
+            "residual_km_s": -3.9895523156227455,
+            "standardized_residual": -1.3298507718742485
+          },
+          {
+            "source_radius_kpc": 9.04,
+            "rescaled_radius_kpc": 9.236521739130433,
+            "observed_velocity_km_s": 148.0,
+            "random_error_km_s": 3.0,
+            "predicted_velocity_km_s": 145.4217740958412,
+            "residual_km_s": -2.5782259041588134,
+            "standardized_residual": -0.8594086347196045
+          },
+          {
+            "source_radius_kpc": 10.04,
+            "rescaled_radius_kpc": 10.258260869565216,
+            "observed_velocity_km_s": 152.0,
+            "random_error_km_s": 2.0,
+            "predicted_velocity_km_s": 146.98181845017842,
+            "residual_km_s": -5.018181549821577,
+            "standardized_residual": -2.5090907749107885
+          },
+          {
+            "source_radius_kpc": 11.04,
+            "rescaled_radius_kpc": 11.28,
+            "observed_velocity_km_s": 155.0,
+            "random_error_km_s": 2.0,
+            "predicted_velocity_km_s": 147.93769799904186,
+            "residual_km_s": -7.062302000958141,
+            "standardized_residual": -3.5311510004790705
+          },
+          {
+            "source_radius_kpc": 12.05,
+            "rescaled_radius_kpc": 12.31195652173913,
+            "observed_velocity_km_s": 156.0,
+            "random_error_km_s": 2.0,
+            "predicted_velocity_km_s": 148.48067304063485,
+            "residual_km_s": -7.519326959365145,
+            "standardized_residual": -3.7596634796825725
+          },
+          {
+            "source_radius_kpc": 14.05,
+            "rescaled_radius_kpc": 14.355434782608697,
+            "observed_velocity_km_s": 157.0,
+            "random_error_km_s": 2.0,
+            "predicted_velocity_km_s": 148.8342950027545,
+            "residual_km_s": -8.165704997245513,
+            "standardized_residual": -4.082852498622756
+          },
+          {
+            "source_radius_kpc": 16.07,
+            "rescaled_radius_kpc": 16.419347826086955,
+            "observed_velocity_km_s": 153.0,
+            "random_error_km_s": 2.0,
+            "predicted_velocity_km_s": 148.7943158054567,
+            "residual_km_s": -4.205684194543295,
+            "standardized_residual": -2.1028420972716475
+          },
+          {
+            "source_radius_kpc": 18.13,
+            "rescaled_radius_kpc": 18.524130434782606,
+            "observed_velocity_km_s": 153.0,
+            "random_error_km_s": 2.0,
+            "predicted_velocity_km_s": 148.7435126019058,
+            "residual_km_s": -4.256487398094208,
+            "standardized_residual": -2.128243699047104
+          },
+          {
+            "source_radius_kpc": 20.05,
+            "rescaled_radius_kpc": 20.48586956521739,
+            "observed_velocity_km_s": 154.0,
+            "random_error_km_s": 2.0,
+            "predicted_velocity_km_s": 148.84322679172308,
+            "residual_km_s": -5.156773208276917,
+            "standardized_residual": -2.5783866041384584
+          },
+          {
+            "source_radius_kpc": 22.12,
+            "rescaled_radius_kpc": 22.60086956521739,
+            "observed_velocity_km_s": 153.0,
+            "random_error_km_s": 2.0,
+            "predicted_velocity_km_s": 149.1540792931556,
+            "residual_km_s": -3.845920706844396,
+            "standardized_residual": -1.922960353422198
+          },
+          {
+            "source_radius_kpc": 24.03,
+            "rescaled_radius_kpc": 24.55239130434782,
+            "observed_velocity_km_s": 150.0,
+            "random_error_km_s": 2.0,
+            "predicted_velocity_km_s": 149.6103288441686,
+            "residual_km_s": -0.3896711558313939,
+            "standardized_residual": -0.19483557791569694
+          },
+          {
+            "source_radius_kpc": 26.1,
+            "rescaled_radius_kpc": 26.667391304347824,
+            "observed_velocity_km_s": 149.0,
+            "random_error_km_s": 2.0,
+            "predicted_velocity_km_s": 150.2405966591556,
+            "residual_km_s": 1.2405966591556137,
+            "standardized_residual": 0.6202983295778068
+          },
+          {
+            "source_radius_kpc": 28.16,
+            "rescaled_radius_kpc": 28.772173913043474,
+            "observed_velocity_km_s": 148.0,
+            "random_error_km_s": 2.0,
+            "predicted_velocity_km_s": 150.95035978604338,
+            "residual_km_s": 2.9503597860433786,
+            "standardized_residual": 1.4751798930216893
+          },
+          {
+            "source_radius_kpc": 30.08,
+            "rescaled_radius_kpc": 30.733913043478257,
+            "observed_velocity_km_s": 146.0,
+            "random_error_km_s": 2.0,
+            "predicted_velocity_km_s": 151.63623091118765,
+            "residual_km_s": 5.636230911187653,
+            "standardized_residual": 2.8181154555938264
+          },
+          {
+            "source_radius_kpc": 32.14,
+            "rescaled_radius_kpc": 32.83869565217391,
+            "observed_velocity_km_s": 147.0,
+            "random_error_km_s": 2.0,
+            "predicted_velocity_km_s": 152.3516637104803,
+            "residual_km_s": 5.351663710480295,
+            "standardized_residual": 2.6758318552401477
+          },
+          {
+            "source_radius_kpc": 34.06,
+            "rescaled_radius_kpc": 34.8004347826087,
+            "observed_velocity_km_s": 148.0,
+            "random_error_km_s": 2.0,
+            "predicted_velocity_km_s": 152.96416864659454,
+            "residual_km_s": 4.964168646594544,
+            "standardized_residual": 2.482084323297272
+          },
+          {
+            "source_radius_kpc": 36.12,
+            "rescaled_radius_kpc": 36.90521739130435,
+            "observed_velocity_km_s": 148.0,
+            "random_error_km_s": 2.0,
+            "predicted_velocity_km_s": 153.53182764986138,
+            "residual_km_s": 5.531827649861384,
+            "standardized_residual": 2.765913824930692
+          }
+        ],
+        "unweighted_rms_residual_km_s": 4.538271969550304,
+        "maximum_absolute_residual_km_s": 8.165704997245513,
+        "chi_squared_random_errors_only": 218.0962642661716,
+        "reduced_chi_squared_no_refit": 5.59221190426081,
+        "coarse_rms_gate_passed": true,
+        "random_error_reduced_chi2_gate_passed": false,
+        "comparison_status": "MIXED_COARSE_SHAPE_PASS_RANDOM_ERROR_GATE_FAILED",
+        "data_lifecycle": "CONTENT_PINNED_EXTRACT_DIFFERENT_PHOTOMETRIC_REDUCTION",
+        "boundary": "SPARC supplies a later 3.6-micron photometric reduction, whereas the published fit used heterogeneous blue-band luminosities and its own gas approximation. Random errors exclude inclination and other systematics. This is an external no-refit stress test, not a reproduction of the original likelihood."
+      },
+      "maturity_rails": [
+        {
+          "id": "MODEL_IDENTITY",
+          "status": "SATISFIED_WITH_MATTER_BOUNDARY",
+          "basis": "All stages retain the Mannheim--O'Brien NGC 3198 thin-disk model; the disputed massive-tracer coupling is declared, not resolved."
+        },
+        {
+          "id": "APPLICABILITY",
+          "status": "SATISFIED",
+          "basis": "All three obligations required by this bounded prediction are present; quantum and causal-PDE obligations are explicitly out of scope."
+        },
+        {
+          "id": "CROSS_STAGE_COMPOSITION",
+          "status": "PARTIALLY_CERTIFIED",
+          "basis": "The local metric/orbit and numerical joins are checked; thin-disk, fitted-parameter, and non-identical-dataset joins remain typed imports."
+        },
+        {
+          "id": "PREDICTION_DERIVATION",
+          "status": "SATISFIED_WITH_PUBLISHED_MODEL_INPUT",
+          "basis": "The local exact predecessors and published disk equations determine a curve after the table parameters are supplied."
+        },
+        {
+          "id": "OBSERVABLE_IDENTIFICATION",
+          "status": "SATISFIED_WITH_MATTER_BOUNDARY",
+          "basis": "Circular speed is the displayed observable only under the declared massive-tracer response assumption."
+        },
+        {
+          "id": "NUMERICAL_REPRODUCIBILITY",
+          "status": "COARSE_ENDPOINT_REPRODUCED",
+          "basis": "Endpoint relative velocity residual 0.0289 is below the declared 0.05 audit gate."
+        },
+        {
+          "id": "EMPIRICAL_COMPARISON",
+          "status": "MIXED_RANDOM_ERROR_GATE_FAILED",
+          "basis": "No-refit SPARC RMS is 4.538 km/s, while reduced chi-squared using random errors alone is 5.592 and exceeds 2.0."
+        },
+        {
+          "id": "ROBUSTNESS_OUT_OF_SAMPLE",
+          "status": "NOT_ASSESSED",
+          "basis": "One galaxy and one later cross-dataset are insufficient for robustness or the published 111-galaxy population claim."
+        }
+      ],
+      "assembly_disposition": {
+        "status": "BOUNDED_ASSEMBLY_PARTIAL_MIXED_COMPARISON",
+        "complete_within_declared_scope": false,
+        "formula_endpoint_coarsely_reproduced": true,
+        "cross_dataset_coarse_shape_gate_passed": true,
+        "cross_dataset_random_error_gate_passed": false,
+        "empirically_supported_within_declared_scope": false,
+        "complete_theory": false
+      },
+      "provenance": {
+        "inputs": [
+          {
+            "path": "foundations/data/mannheim-ngc3198-parameters-v1.json",
+            "sha256": "4297b3bdf9c1bf1fff0a1d44a26941aacdb3d98bd3729b9134b8f187a924f6e5",
+            "role": "content-addressed literature/data transcription and comparison protocol"
+          },
+          {
+            "path": "foundations/data/ngc3198-sparc-mass-model-v1.tsv",
+            "sha256": "0c84615d0df5792dfbb0d7ee4f1ed71bffc180a7b8505e0a6614d6947a4f6315",
+            "role": "43-row content-pinned NGC 3198 SPARC extract"
+          },
+          {
+            "path": "black_hole_programme/certificates/BH0B_GENERAL_STATIC_SPHERICAL_COMPLETENESS.json",
+            "sha256": "12f20c69f42681bd49d4117bd27273576519327c49e36ff807aaabf0d5b97b0b",
+            "role": "unchanged exact static spherical Bach-vacuum classification"
+          },
+          {
+            "path": "black_hole_programme/certificates/BH0C_TULLY_FISHER_SCALING.json",
+            "sha256": "1b58887d9ffdbeda4e7393565d0f0eaaee10e09303830ef00448725da080f5a9",
+            "role": "unchanged local circular-orbit and Tully--Fisher conditional with correction ledger"
+          }
+        ],
+        "remote_source_pins": [
+          {
+            "citation": "P. D. Mannheim and J. G. O'Brien, Fitting galactic rotation curves with conformal gravity and a global quadratic potential, Phys. Rev. D 85 (2012) 124020",
+            "arxiv": "https://arxiv.org/abs/1011.3495",
+            "source_archive": "https://export.arxiv.org/e-print/1011.3495",
+            "source_archive_sha256": "e366db37bc99ce08c96609f751d9b0ffb779dd4ce1c0140a2e226c1aefc075c1",
+            "source_member": "fitting5.tex",
+            "parameter_table": "Table 1, NGC 3198 row",
+            "equations": [
+              "(5)",
+              "(20)"
+            ],
+            "retrieved": "2026-08-14"
+          },
+          {
+            "citation": "F. Lelli, S. S. McGaugh, and J. M. Schombert, SPARC: Mass Models for 175 Disk Galaxies with Spitzer Photometry and Accurate Rotation Curves, Astron. J. 152 (2016) 157",
+            "url": "https://astroweb.case.edu/SPARC/MassModels_Lelli2016c.mrt",
+            "full_source_sha256": "9108994b12cc401b94a1768beca61c53ec354779385c9c9cc571049f3043244c",
+            "local_extract": "foundations/data/ngc3198-sparc-mass-model-v1.tsv",
+            "selection": "All 43 rows whose fixed-width ID field is NGC3198, copied without numerical alteration",
+            "retrieved": "2026-08-14"
+          }
+        ]
+      },
+      "independent_checker": {
+        "path": "foundations/check_mannheim_ngc3198_assembly.py",
+        "numeric_source": "foundations/mannheim_ngc3198_numeric_checker.cpp",
+        "method": "Independent C++17 Bessel evaluation, source/data hash closure, stage/interface/applicability audit, and fail-closed gate recomputation."
+      },
+      "claim_flags": {
+        "single_model_identity_declared": true,
+        "applicability_mask_complete": true,
+        "exact_local_predecessors_imported_by_hash": true,
+        "published_parameters_content_pinned": true,
+        "independent_numeric_bessel_rail": true,
+        "published_endpoint_coarsely_reproduced": true,
+        "sparc_cross_dataset_coarse_shape_gate_passed": true,
+        "sparc_cross_dataset_random_error_gate_passed": false,
+        "original_full_curve_digitized": false,
+        "original_fit_likelihood_reproduced": false,
+        "mass_to_light_ratio_refit": false,
+        "matter_coupling_dispute_resolved": false,
+        "galaxy_population_claim_assessed": false,
+        "empirical_support_established": false,
+        "bounded_prediction_assembly_complete": false,
+        "complete_conformal_gravity_theory_established": false,
+        "quantum_lifecycle_promoted": false
+      },
+      "does_not_establish": [
+        "that the macroscopic scalar conformal frame is irrelevant to massive-particle trajectories or that Mannheim's matter-sector response is correct",
+        "an interior galactic solution of the Bach equation with baryonic matter",
+        "identity of the 2012 heterogeneous blue-band fit data with the 2016 SPARC 3.6-micron reduction",
+        "reproduction of the original pointwise curve, fitting algorithm, likelihood, covariance model, distance uncertainty, or systematic-error budget",
+        "that the fitted stellar mass-to-light ratio is independently preferred; it is imported without refitting",
+        "empirical support under the SPARC random-error gate, which fails",
+        "the published 111- or 141-galaxy population claims, lensing, cosmology, or another observational sector",
+        "ghost freedom, quantum unitarity, a Mannheim C operator, or any quantum lifecycle promotion",
+        "a complete observationally validated conformal-gravity theory"
+      ],
+      "human_report": "foundations/reports/mannheim-ngc3198-model-assembly-v1.md",
+      "canonical_digest": "73895aeee6238a689d3f38e2bbd5ef241fd5cf5d37735d2deed879f9b63b5740"
     }
   ],
   "model_scoped_sources": [
     {
       "path": "foundations/results/FOUNDATIONAL_GR_CASSINI_MODEL_ASSEMBLY_V1.json",
       "sha256": "f87aa0453de1af594175d1c23c39b48d644064a8582a56785bd9ea4ce279a902"
+    },
+    {
+      "path": "foundations/results/FOUNDATIONAL_MANNHEIM_NGC3198_MODEL_ASSEMBLY_V1.json",
+      "sha256": "d4e7b8774f6593136b512453108a2d39396cd91969fdfc73681ee14d936e0154"
     }
   ],
   "calibration_controls": [
@@ -4753,6 +5552,8 @@ window.THEORY_ASSEMBLY_DATA = {
     "external_positive_control_registered": true,
     "missing_and_failed_states_separated": true,
     "model_scoped_prediction_assembly_registered": true,
+    "second_model_scoped_mannheim_assembly_registered": true,
+    "mixed_empirical_result_preserved": true,
     "bounded_prediction_chain_established": true,
     "bounded_empirical_agreement_assessed": true,
     "cross_cell_composability_established": false,
@@ -4769,10 +5570,11 @@ window.THEORY_ASSEMBLY_DATA = {
     "that coarse independent-sampler compatibility is precision equivalence, empirical validation, or out-of-sample robustness",
     "that the scoped Euclidean/Krein carrier non-identity forbids every conditional bridge",
     "that any prototype agrees with observations",
+    "that the Mannheim NGC 3198 coarse endpoint reproduction or RMS gate overrules its failed SPARC random-error gate",
     "that the external standard-GR control is selected from the cube or transfers empirical support to a prototype",
     "that the benchmark catalogue is a complete set of physical tests",
     "a complete theory, a new Lorentzian-causal result, or a quantum lifecycle promotion"
   ],
   "source_atlas_digest": "e4c79e8ec537c2d9f9271d9ccbd042da2a5529b0b5f0f11fa6917cc3af0386cd",
-  "canonical_digest": "0911e53250de46266bf587feda146df9321d7da87bef1628eb1ccc7e028da608"
+  "canonical_digest": "ad3ed091a3a1cc12e0748c27029933e6e2c2629a776843585b9902194d1fcab4"
 };

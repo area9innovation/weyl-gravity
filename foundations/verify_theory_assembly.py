@@ -17,6 +17,7 @@ SCHEMA = ROOT / "foundations/schema/foundational-theory-assembly-atlas-v1.schema
 CONTROL = ROOT / "foundations/standard-gr-observational-control-v1.json"
 CONTROL_SCHEMA = ROOT / "foundations/schema/standard-gr-observational-control-v1.schema.json"
 MODEL_ASSEMBLY = ROOT / "foundations/results/FOUNDATIONAL_GR_CASSINI_MODEL_ASSEMBLY_V1.json"
+MANNHEIM_MODEL_ASSEMBLY = ROOT / "foundations/results/FOUNDATIONAL_MANNHEIM_NGC3198_MODEL_ASSEMBLY_V1.json"
 REPORT = ROOT / "foundations/reports/theory-assembly-atlas-v1.md"
 SITE_JSON = ROOT / "foundations/site/assemblies.json"
 SITE_JS = ROOT / "foundations/site/assemblies.js"
@@ -69,10 +70,13 @@ def verify(*, value: dict[str, Any] | None = None) -> tuple[list[str], list[str]
         errors.append("external calibration content pin")
     checks.append("external positive-control schema, records, and content pins")
     model_assembly = load(MODEL_ASSEMBLY)
-    if result.get("model_scoped_assemblies") != [model_assembly] or result.get("model_scoped_sources") != [{
-        "path": "foundations/results/FOUNDATIONAL_GR_CASSINI_MODEL_ASSEMBLY_V1.json",
-        "sha256": hashlib.sha256(MODEL_ASSEMBLY.read_bytes()).hexdigest(),
-    }]:
+    mannheim_model = load(MANNHEIM_MODEL_ASSEMBLY)
+    expected_models = [model_assembly, mannheim_model]
+    expected_sources = [
+        {"path": "foundations/results/FOUNDATIONAL_GR_CASSINI_MODEL_ASSEMBLY_V1.json", "sha256": hashlib.sha256(MODEL_ASSEMBLY.read_bytes()).hexdigest()},
+        {"path": "foundations/results/FOUNDATIONAL_MANNHEIM_NGC3198_MODEL_ASSEMBLY_V1.json", "sha256": hashlib.sha256(MANNHEIM_MODEL_ASSEMBLY.read_bytes()).hexdigest()},
+    ]
+    if result.get("model_scoped_assemblies") != expected_models or result.get("model_scoped_sources") != expected_sources:
         errors.append("model-scoped assembly projection and source pin")
     if model_assembly.get("assembly_disposition") != {
         "status": "BOUNDED_PREDICTION_ASSEMBLY_COMPLETE",
@@ -81,7 +85,9 @@ def verify(*, value: dict[str, Any] | None = None) -> tuple[list[str], list[str]
         "complete_theory": False,
     }:
         errors.append("model-scoped bounded disposition")
-    checks.append("model-scoped end-to-end assembly projection")
+    if mannheim_model.get("assembly_disposition", {}).get("status") != "BOUNDED_ASSEMBLY_PARTIAL_MIXED_COMPARISON" or mannheim_model.get("assembly_disposition", {}).get("complete_within_declared_scope") is not False or mannheim_model.get("assembly_disposition", {}).get("cross_dataset_random_error_gate_passed") is not False:
+        errors.append("Mannheim mixed model-scoped disposition")
+    checks.append("complete GR and mixed Mannheim model-scoped assembly projections")
     if digest(result) != result.get("canonical_digest") or result.get("source_atlas_digest") != atlas.get("canonical_digest"):
         errors.append("content digest or source-atlas pin")
     checks.append("content-addressed assembly and source atlas")
@@ -168,7 +174,7 @@ def verify(*, value: dict[str, Any] | None = None) -> tuple[list[str], list[str]
     if ledger.get("records") != [] or len(ledger.get("benchmarks", [])) != 6 or any(item.get("status") != "NOT_REGISTERED" for item in ledger.get("benchmarks", [])):
         errors.append("empty empirical ledger and benchmark closure")
     flags = result.get("claim_flags", {})
-    for name in ("prototype_assemblies_generated", "research_camp_lenses_declared", "selected_cells_content_addressed", "interface_and_coverage_states_separated", "at_least_one_cross_cell_interface_certified", "scoped_carrier_interface_registered", "numerical_reproducibility_rail_declared", "empirical_record_schema_declared", "external_positive_control_registered", "missing_and_failed_states_separated", "model_scoped_prediction_assembly_registered", "bounded_prediction_chain_established", "bounded_empirical_agreement_assessed"):
+    for name in ("prototype_assemblies_generated", "research_camp_lenses_declared", "selected_cells_content_addressed", "interface_and_coverage_states_separated", "at_least_one_cross_cell_interface_certified", "scoped_carrier_interface_registered", "numerical_reproducibility_rail_declared", "empirical_record_schema_declared", "external_positive_control_registered", "missing_and_failed_states_separated", "model_scoped_prediction_assembly_registered", "second_model_scoped_mannheim_assembly_registered", "mixed_empirical_result_preserved", "bounded_prediction_chain_established", "bounded_empirical_agreement_assessed"):
         if flags.get(name) is not True:
             errors.append("positive flag " + name)
     for name in ("cross_cell_composability_established", "prediction_chain_established", "empirical_agreement_assessed", "complete_observationally_valid_theory_identified"):

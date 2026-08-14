@@ -36,6 +36,18 @@ the last two are explicitly literature-scoped. The exact prediction
 `gamma-1=0` lies inside the publisher's displayed `(2.1+/-2.3)e-5` band.
 The disposition is `BOUNDED_PREDICTION_ASSEMBLY_COMPLETE`, not complete theory.
 
+## Second model-scoped assembly: a mixed result
+
+`FOUNDATIONAL_MANNHEIM_NGC3198_MODEL_ASSEMBLY_V1` follows one declared
+Mannheim--Kazanas phenomenological model through seven stages: the Weyl action,
+the certified static vacuum family and circular-orbit law, the published thin-disk
+formula, the NGC 3198 parameter row, endpoint reproduction, and a no-refit comparison
+with the later SPARC curve. The endpoint relative velocity residual is 2.893 percent,
+and the SPARC RMS residual is 4.538 km/s. Both pass their declared coarse audit gates.
+The reduced chi-squared using SPARC random errors alone is 5.592, which fails the declared gate of 2.
+No parameter is refitted, and SPARC is a later non-identical data reduction, so the
+mixed disposition remains partial and does not establish empirical support.
+
 ## Independent maturity rails
 
 Every prototype is displayed against seven separately reported rails: obligation coverage,
@@ -81,6 +93,7 @@ Each selected cell links back to the exact matrix coordinate.
 - This does not establish that coarse independent-sampler compatibility is precision equivalence, empirical validation, or out-of-sample robustness.
 - This does not establish that the scoped Euclidean/Krein carrier non-identity forbids every conditional bridge.
 - This does not establish that any prototype agrees with observations.
+- This does not establish that the Mannheim NGC 3198 coarse endpoint reproduction or RMS gate overrules its failed SPARC random-error gate.
 - This does not establish that the external standard-GR control is selected from the cube or transfers empirical support to a prototype.
 - This does not establish that the benchmark catalogue is a complete set of physical tests.
 - This does not establish a complete theory, a new Lorentzian-causal result, or a quantum lifecycle promotion.

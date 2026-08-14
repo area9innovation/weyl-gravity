@@ -616,10 +616,30 @@
     COARSE_REPRODUCTION_ONLY: "partial",
     REGISTERED_IN_DOMAINS: "control", SUPPORTED_IN_DOMAINS: "complete", MULTI_DOMAIN_SUPPORT: "complete",
     CERTIFIED_EXACT: "complete", LITERATURE_SCOPED: "control", SUPPORTED_REPORTED_BAND: "complete",
-    SATISFIED_WITH_TYPED_BOUNDARY: "control", SUPPORTED_IN_DECLARED_SCOPE: "complete"
+    SATISFIED_WITH_TYPED_BOUNDARY: "control", SUPPORTED_IN_DECLARED_SCOPE: "complete",
+    DECLARED_MODEL_INPUT: "control", CERTIFIED_LOCAL_PREDECESSOR: "complete",
+    PUBLISHED_MODEL_TRANSCRIPTION: "control", CONTENT_PINNED_TRANSCRIPTION: "control",
+    COARSE_NUMERICAL_REPRODUCTION: "partial", MIXED_RANDOM_ERROR_GATE_FAILED: "blocked",
+    SATISFIED_WITH_MATTER_BOUNDARY: "control", SATISFIED_WITH_PUBLISHED_MODEL_INPUT: "control",
+    COARSE_ENDPOINT_REPRODUCED: "partial"
   };
 
   function assemblyFraction(value) { return value.denominator === 1 ? `${value.numerator}` : `${value.numerator}/${value.denominator}`; }
+
+  function mannheimCurveSvg(model) {
+    const points = model.empirical_comparison_rail.points;
+    const width = 820, height = 300, left = 54, right = 18, top = 18, bottom = 42;
+    const xmax = model.numerical_reproduction_rail.published_last_radius_kpc;
+    const ymax = 180;
+    const x = value => left + value / xmax * (width - left - right);
+    const y = value => top + (ymax - value) / ymax * (height - top - bottom);
+    const predicted = points.map(point => `${x(point.rescaled_radius_kpc).toFixed(2)},${y(point.predicted_velocity_km_s).toFixed(2)}`).join(" ");
+    const errorBars = points.map(point => `<line x1="${x(point.rescaled_radius_kpc).toFixed(2)}" x2="${x(point.rescaled_radius_kpc).toFixed(2)}" y1="${y(Math.min(ymax, point.observed_velocity_km_s + point.random_error_km_s)).toFixed(2)}" y2="${y(Math.max(0, point.observed_velocity_km_s - point.random_error_km_s)).toFixed(2)}"></line>`).join("");
+    const observed = points.map(point => `<circle cx="${x(point.rescaled_radius_kpc).toFixed(2)}" cy="${y(point.observed_velocity_km_s).toFixed(2)}" r="2.7"></circle>`).join("");
+    const xTicks = [0, 10, 20, 30, 38.6].map(value => `<g><line x1="${x(value)}" x2="${x(value)}" y1="${height-bottom}" y2="${height-bottom+5}"></line><text x="${x(value)}" y="${height-bottom+20}" text-anchor="middle">${value}</text></g>`).join("");
+    const yTicks = [0, 50, 100, 150].map(value => `<g><line x1="${left-5}" x2="${left}" y1="${y(value)}" y2="${y(value)}"></line><text x="${left-9}" y="${y(value)+4}" text-anchor="end">${value}</text></g>`).join("");
+    return `<div class="curve-panel"><div class="curve-legend"><span><i class="curve-line"></i>Published model, no refit</span><span><i class="curve-point"></i>SPARC observations ± random error</span></div><svg viewBox="0 0 ${width} ${height}" role="img" aria-label="No-refit Mannheim model curve compared with SPARC NGC 3198 velocities"><g class="curve-axes"><line x1="${left}" x2="${width-right}" y1="${height-bottom}" y2="${height-bottom}"></line><line x1="${left}" x2="${left}" y1="${top}" y2="${height-bottom}"></line>${xTicks}${yTicks}<text x="${(left+width-right)/2}" y="${height-5}" text-anchor="middle">Radius at 14.1 Mpc (kpc)</text><text transform="translate(14 ${(top+height-bottom)/2}) rotate(-90)" text-anchor="middle">Circular speed (km/s)</text></g><g class="curve-errors">${errorBars}</g><polyline class="curve-prediction" points="${predicted}"></polyline><g class="curve-observed">${observed}</g></svg></div>`;
+  }
 
   function renderAssemblies() {
     const assembly = ASSEMBLIES.assemblies.find(item => item.id === state.assembly) || ASSEMBLIES.assemblies[0];
@@ -648,11 +668,16 @@
     }).join("");
     const benchmarks = ASSEMBLIES.empirical_ledger.benchmarks.map(item => `<article><span class="quality">${esc(item.status.replaceAll("_", " "))}</span><h3>${esc(item.label)}</h3><p>${esc(item.question)}</p></article>`).join("");
     const control = ASSEMBLIES.calibration_controls[0];
-    const model = ASSEMBLIES.model_scoped_assemblies[0];
+    const model = ASSEMBLIES.model_scoped_assemblies.find(item => item.result_id === "FOUNDATIONAL_GR_CASSINI_MODEL_ASSEMBLY_V1");
+    const mannheim = ASSEMBLIES.model_scoped_assemblies.find(item => item.result_id === "FOUNDATIONAL_MANNHEIM_NGC3198_MODEL_ASSEMBLY_V1");
     const modelStages = model.stages.map((stage, index) => `<article class="model-stage ${ASSEMBLY_GATE_STYLE[stage.status] || "missing"}"><span>${index + 1}</span><small>${esc(stage.status.replaceAll("_", " "))}</small><h3>${esc(stage.label)}</h3><p>${esc(stage.establishes)}</p></article>`).join("");
     const modelRails = model.maturity_rails.map(rail => `<article class="model-rail ${ASSEMBLY_GATE_STYLE[rail.status] || "missing"}"><small>${esc(rail.status.replaceAll("_", " "))}</small><h3>${esc(title(rail.id))}</h3><p>${esc(rail.basis)}</p></article>`).join("");
     const applicability = model.applicability_mask.map(item => `<tr><th>${esc(title(item.obligation))}</th><td><span class="applicability-pill applicability-${item.status.toLowerCase()}">${esc(item.status.replaceAll("_", " "))}</span></td><td>${esc(item.reason)}</td></tr>`).join("");
     const empirical = model.empirical_comparison_rail;
+    const mannheimStages = mannheim.stages.map((stage, index) => `<article class="model-stage ${ASSEMBLY_GATE_STYLE[stage.status] || "missing"}"><span>${index + 1}</span><small>${esc(stage.status.replaceAll("_", " "))}</small><h3>${esc(stage.label)}</h3><p>${esc(stage.establishes)}</p></article>`).join("");
+    const mannheimRails = mannheim.maturity_rails.map(rail => `<article class="model-rail ${ASSEMBLY_GATE_STYLE[rail.status] || "missing"}"><small>${esc(rail.status.replaceAll("_", " "))}</small><h3>${esc(title(rail.id))}</h3><p>${esc(rail.basis)}</p></article>`).join("");
+    const mannheimNumeric = mannheim.numerical_reproduction_rail;
+    const mannheimEmpirical = mannheim.empirical_comparison_rail;
     const controlRails = control.rail_summary.map((rail, index) => `<article class="assembly-gate ${ASSEMBLY_GATE_STYLE[rail.status] || "control"}"><span>${index + 1}</span><div><small>${esc(rail.status.replaceAll("_", " "))}</small><h3>${esc(title(rail.id))}</h3><p>${esc(rail.basis)}</p></div></article>`).join("");
     const controlByBenchmark = new Map(control.benchmark_coverage.map(item => [item.benchmark, item]));
     const controlBenchmarks = ASSEMBLIES.empirical_ledger.benchmarks.map(item => {
@@ -671,7 +696,14 @@
       <div class="section-head compact-head"><div><p class="eyebrow">Bounded success</p><h3>Model maturity rails</h3></div><p>Green applies only inside the declared solar-exterior prediction scope. Robustness remains unassessed.</p></div><div class="model-rails">${modelRails}</div>
       <details class="applicability-details"><summary>Applicability mask: ${model.applicability_summary.required_satisfied}/${model.applicability_summary.required} required obligations satisfied</summary><p>Out-of-scope obligations are not failed tests. “Touched, not required” records a nearby concept without claiming its full atlas theorem.</p><div class="assembly-table-wrap"><table class="assembly-table applicability-table"><thead><tr><th>Atlas obligation</th><th>Role in this assembly</th><th>Reason</th></tr></thead><tbody>${applicability}</tbody></table></div></details>
       <p class="model-boundary"><b>Boundary:</b> ${esc(model.empirical_comparison_rail.boundary)} <a href="sources/foundations/results/FOUNDATIONAL_GR_CASSINI_MODEL_ASSEMBLY_V1.json">Open certificate</a>.</p></section>
-      <div class="section-head"><div><p class="eyebrow">Coverage envelopes</p><h2>Prototype assemblies are still not composed theories</h2></div><p>The bounded GR/Cassini result above succeeds because it declares one model and one applicable sector. The selectors below maximize atlas coverage across records and therefore remain navigational prototypes.</p></div>
+      <section class="model-assembly mannheim-assembly"><div class="model-assembly-head"><div><p class="eyebrow">Second model-scoped assembly — mixed result</p><h2>Weyl action to NGC 3198</h2><p>${esc(mannheim.title)}</p></div><div class="model-disposition mixed"><b>Partial — random-error gate failed</b><span>Endpoint and coarse curve shape reproduced</span><small>Empirical support: NO · complete theory: NO</small></div></div>
+      <div class="model-scope"><p><b>One model:</b> ${esc(mannheim.model_identity.theory)} — ${esc(mannheim.model_identity.sector)}.</p><p><b>Declared coupling:</b> ${esc(mannheim.model_identity.matter_coupling)}.</p></div>
+      <div class="section-head compact-head"><div><p class="eyebrow">A checkable chain with an explicit failed gate</p><h3>Seven composed stages</h3></div><p>Exact local predecessors, published disk equations, a content-pinned parameter row, independent numerics, and a later cross-dataset check remain distinct objects.</p></div><div class="model-stages mannheim-stages">${mannheimStages}</div>
+      ${mannheimCurveSvg(mannheim)}
+      <div class="model-comparison mannheim-metrics"><div><p class="eyebrow">Published endpoint</p><b>${mannheimNumeric.predicted_endpoint.velocity_km_s.toFixed(1)} vs ${mannheimNumeric.observed_endpoint_velocity_reconstructed_km_s.toFixed(1)} km/s</b><span>${(100 * mannheimNumeric.endpoint_relative_velocity_residual).toFixed(2)}% relative residual; passes the declared 5% coarse audit gate.</span></div><div><p class="eyebrow">Later SPARC curve</p><b>RMS ${mannheimEmpirical.unweighted_rms_residual_km_s.toFixed(3)} km/s</b><span>Passes the declared 5 km/s coarse shape gate across ${mannheimEmpirical.points_inside_published_radius} points.</span></div><div class="failed-metric"><p class="eyebrow">Random-error gate</p><b>Reduced χ² ${mannheimEmpirical.reduced_chi_squared_no_refit.toFixed(3)}</b><span>Fails the declared ≤2 gate using SPARC random errors alone. This blocks empirical promotion.</span></div></div>
+      <div class="section-head compact-head"><div><p class="eyebrow">No averaged verdict</p><h3>Eight independent maturity rails</h3></div><p>The green, orange, grey, and red states are not collapsed into a score. A close-looking curve does not erase a failed uncertainty-sensitive comparison.</p></div><div class="model-rails mannheim-rails">${mannheimRails}</div>
+      <p class="model-boundary"><b>Boundary:</b> No parameter is refitted. SPARC is a later 3.6 μm reduction, not the paper's original heterogeneous blue-band dataset; the comparison is therefore an external stress test, not an original likelihood reproduction. ${esc(mannheimEmpirical.boundary)} <a href="sources/foundations/results/FOUNDATIONAL_MANNHEIM_NGC3198_MODEL_ASSEMBLY_V1.json">Open certificate</a>.</p></section>
+      <div class="section-head"><div><p class="eyebrow">Coverage envelopes</p><h2>Prototype assemblies are still not composed theories</h2></div><p>The two bounded chains above keep their model identities and gate outcomes intact: GR/Cassini is complete only in its declared sector, while Mannheim/NGC 3198 remains partial after a failed comparison gate. The selectors below instead maximize atlas coverage and remain navigational prototypes.</p></div>
       <div class="section-head compact-head"><div><p class="eyebrow">People organize around questions, not axis codes</p><h2>Meet the research programmes</h2></div><p>Each card is a fair explanatory lens over the evidence cube: what the programme is trying to do, which ideas distinguish it, what this atlas currently samples, and where the analogy stops.</p></div>
       <div class="camp-gallery">${campCards}</div>
       <section class="camp-profile"><header><div><p class="eyebrow">${esc(CAMP_KIND_LABEL[assembly.camp_kind] || assembly.camp_kind)}</p><h2>${esc(assembly.label)}</h2><p>${esc(assembly.camp_summary)}</p></div><label><b>Choose another programme</b><select id="assemblySelect">${options}</select></label></header><div class="camp-question"><small>Central question</small><b>${esc(assembly.central_question)}</b></div><div class="camp-profile-grid"><article><h3>Lineage and conversation</h3><ul>${campLineage}</ul></article><article><h3>Signature ideas</h3><ul>${campIdeas}</ul></article><article><h3>What this atlas samples</h3><p>${esc(assembly.atlas_window)}</p></article></div><p class="camp-scope"><b>Important boundary:</b> ${esc(assembly.scope_note)}</p></section>

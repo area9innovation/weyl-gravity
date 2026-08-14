@@ -1,0 +1,169 @@
+{
+  "schema_version": "science-forge-tier-receipt-v1",
+  "receipt_id": "FOUNDATIONAL_MANNHEIM_NGC3198_MODEL_ASSEMBLY_V1_TIER_RECEIPT",
+  "result_id": "FOUNDATIONAL_MANNHEIM_NGC3198_MODEL_ASSEMBLY_V1",
+  "created": "2026-08-14",
+  "source_base_commit": "a1980849c6e7c18802a0392cc21c9f3da199f9d3",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "scope": "One Mannheim--Kazanas NGC 3198 thin-disk assembly from exact local Bach-vacuum and circular-orbit predecessors through content-pinned published equations and parameters, an independent endpoint evaluation, and a no-refit comparison with the later non-identical SPARC rotation curve. Coarse endpoint and RMS gates pass; the SPARC random-error reduced-chi-squared gate fails, so empirical support is fail-closed.",
+  "artifacts": [
+    {
+      "path": "foundations/results/FOUNDATIONAL_MANNHEIM_NGC3198_MODEL_ASSEMBLY_V1.json",
+      "sha256": "d4e7b8774f6593136b512453108a2d39396cd91969fdfc73681ee14d936e0154",
+      "role": "machine-readable model, provenance, seven-stage chain, independent numerical rail, mixed empirical comparison, and claim boundary"
+    },
+    {
+      "path": "foundations/reports/mannheim-ngc3198-model-assembly-v1.md",
+      "sha256": "2d4187e5b151b8c03dccb0be226dfda65a69128b65146be860e45c0734dd7052",
+      "role": "human-readable scientific report"
+    },
+    {
+      "path": "foundations/schema/foundational-mannheim-ngc3198-model-assembly-v1.schema.json",
+      "sha256": "0a79382d7aa2db13396fb748721134ae749f413d3f4af748b5180e9d1b1684fc",
+      "role": "fail-closed result schema"
+    },
+    {
+      "path": "foundations/data/mannheim-ngc3198-parameters-v1.json",
+      "sha256": "4297b3bdf9c1bf1fff0a1d44a26941aacdb3d98bd3729b9134b8f187a924f6e5",
+      "role": "content-pinned literature transcription and comparison protocol"
+    },
+    {
+      "path": "foundations/data/ngc3198-sparc-mass-model-v1.tsv",
+      "sha256": "0c84615d0df5792dfbb0d7ee4f1ed71bffc180a7b8505e0a6614d6947a4f6315",
+      "role": "43-row NGC 3198 extract from the content-pinned official SPARC table"
+    },
+    {
+      "path": "foundations/mannheim_ngc3198_numeric_checker.cpp",
+      "sha256": "9a5211e29b4da8491050a873470d750c5bbe5ab3d0abadcbd78557c31fa1356a",
+      "role": "independent C++17 standard-library Bessel-function checker"
+    },
+    {
+      "path": "foundations/results/FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1.json",
+      "sha256": "5ff1b8fec12baf9d72758dd18eb04e695e9efa4444a722e5d008abea26d6b4b3",
+      "role": "two-model assembly projection"
+    },
+    {
+      "path": "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json",
+      "sha256": "87b59a97e193e67a5ff1c27d6b0919054eba3c8d4a1e618ed44dd68b12cf6e2d",
+      "role": "existing static explorer regenerated in place with plotted mixed result"
+    },
+    {
+      "path": "paper/21-reverse-foundations-of-physics-claim-map.json",
+      "sha256": "4dc3e5bc4aebe8c6263b159f62701de80e4418e8b300f987ba5c91cc4f47d358",
+      "role": "Paper 21 authority and claim projection"
+    },
+    {
+      "path": "paper/21-reverse-foundations-of-physics.pdf",
+      "sha256": "2937c52fa8036c2fd6cf9662f2ca657a19ac78ebdea4c554c96605db04960969",
+      "role": "compiled 39-page working manuscript"
+    }
+  ],
+  "source_pins": [
+    {
+      "source": "Mannheim and O'Brien arXiv source archive 1011.3495",
+      "sha256": "e366db37bc99ce08c96609f751d9b0ffb779dd4ce1c0140a2e226c1aefc075c1",
+      "scope": "source member fitting5.tex, equations (5) and (20), Table 1 NGC 3198 row"
+    },
+    {
+      "source": "official SPARC MassModels_Lelli2016c.mrt",
+      "sha256": "9108994b12cc401b94a1768beca61c53ec354779385c9c9cc571049f3043244c",
+      "scope": "full remote table from which all 43 NGC 3198 rows were copied"
+    }
+  ],
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "python3 -m py_compile on changed Python sources; python3 -m json.tool on changed schemas, results, and receipt; git diff --check on scoped paths",
+          "status": "PASS"
+        },
+        {
+          "command": "node --check foundations/matrix_site_assets/app.js foundations/site/app.js",
+          "status": "NOT_RUN",
+          "criterion": "node is not installed; both JavaScript copies executed successfully in headless Chrome and were exercised by the deterministic site checker and tests"
+        },
+        {
+          "command": "cd paper && pdflatex -interaction=nonstopmode -halt-on-error 21-reverse-foundations-of-physics.tex (twice)",
+          "status": "PASS",
+          "output": "39 pages; final pass completed without undefined references or citations; pre-existing longtable underfull-box and infinite-glue diagnostics remain non-fatal"
+        },
+        {
+          "command": "google-chrome headless desktop 1440x5000 and mobile 390x5000 screenshots of #view=assemblies; pdftoppm inspection of Paper 21 pages 35--36",
+          "status": "PASS",
+          "output": "both model cards, seven-stage Mannheim chain, no-refit curve, metric gates, horizontal narrow-screen rails, and paper tables inspected without overlap in the principal layout"
+        }
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "python3 foundations/build_mannheim_ngc3198_assembly.py --check; python3 foundations/check_mannheim_ngc3198_assembly.py; python3 foundations/verify_mannheim_ngc3198_assembly.py",
+          "status": "PASS",
+          "output": "endpoint residual 2.893%; no-refit SPARC RMS 4.538 km/s; reduced chi-squared 5.592; mixed disposition preserved"
+        },
+        {
+          "command": "python3 -m unittest foundations.tests.test_mannheim_ngc3198_assembly foundations.tests.test_theory_assembly foundations.tests.test_matrix_site reverse_physics.tests.test_bt_euclidean_os_witness_preflight",
+          "status": "PASS",
+          "output": "31 tests; the concurrent BT preflight paper authority and its mutation tests were included as a direct Paper 21 consumer"
+        }
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "criterion": "The new model result and schema change the theory-atlas, static-site, and Paper 21 consumer chain, so all affected generated artifacts were rebuilt and independently verified.",
+      "commands": [
+        {
+          "command": "python3 foundations/verify_theory_assembly.py; python3 foundations/build_matrix_site_v2.py --check; python3 foundations/check_matrix_site_v2.py; python3 foundations/verify_matrix_site_v2.py",
+          "status": "PASS",
+          "output": "two model-scoped assemblies, 13 stages, 11 interfaces, one bounded-complete assembly, and one mixed partial assembly"
+        },
+        {
+          "command": "python3 paper/generate_21_reverse_foundations_appendices.py --check; python3 paper/generate_21_reverse_foundations_claim_map.py --check; python3 paper/verify_21_reverse_foundations_claim_map.py",
+          "status": "PASS"
+        },
+        {
+          "command": "ci/science-forge-shadow.sh",
+          "status": "ADVISORY_FINDING",
+          "output": "The read-only rail exited zero but reported a Forge stdlib/binary mismatch, bridge-audit E9118, and expected corpus-count drift (1641 certificates versus the 2026-07-19 baseline of 976). These substrate/baseline findings are outside this scoped assembly and were not promoted to PASS."
+        }
+      ],
+      "unchanged_predecessor_policy": "The BH0B and BH0C exact local predecessors were imported by pinned SHA-256. Re-running their producers would be reproduction rather than an independent check of this numerical assembly."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "This is a bounded numerical/literature assembly and working-paper update, not a classical or quantum freeze, release, shared-core algebra change, theorem lifecycle promotion, or quantum lifecycle promotion."
+    }
+  },
+  "claim_flags": {
+    "single_model_identity_declared": true,
+    "published_equations_and_parameters_content_pinned": true,
+    "endpoint_coarsely_reproduced": true,
+    "sparc_no_refit_coarse_rms_gate_passed": true,
+    "sparc_random_error_reduced_chi2_gate_passed": false,
+    "empirical_support_established": false,
+    "matter_coupling_dispute_resolved": false,
+    "complete_theory_established": false,
+    "new_lorentzian_claim": false,
+    "quantum_lifecycle_promoted": false
+  },
+  "preexisting_unrelated_work_preserved": [
+    "reverse_physics/bt_euclidean_os_witness_experiment.py",
+    "reverse_physics/bt_euclidean_os_witness_preflight.py",
+    "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_OS_WITNESS_PREFLIGHT_V1.json",
+    "reverse_physics/data/bt_euclidean_os_witness_observations_v1.json",
+    "reverse_physics/schema/reverse-physics-bt-euclidean-os-witness-preflight-v1.schema.json"
+  ],
+  "does_not_establish": [
+    "identity of the 2012 published fit dataset with the later SPARC reduction",
+    "reproduction of the original full rotation curve, likelihood, covariance model, or systematic-error budget",
+    "that the imported fitted mass-to-light ratio is independently preferred",
+    "resolution of the massive-tracer matter-coupling dispute",
+    "empirical support under the failed SPARC random-error gate",
+    "the published multi-galaxy population claims, lensing, cosmology, or a complete conformal-gravity theory",
+    "a quantum or Lorentzian-causal lifecycle promotion"
+  ]
+}

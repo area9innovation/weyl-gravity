@@ -22,6 +22,10 @@
       "denominator": 1296,
       "numerator": -1
     },
+    "bt_interacting_os_cross_sampler_z": -0.6439112862910602,
+    "bt_interacting_os_hmc_z": -6.254432004803571,
+    "bt_interacting_os_local_z": -2.5326776073871837,
+    "bt_interacting_os_numerical_status": "TWO_SAMPLER_NEGATIVE_SIGN_SUPPORT_NOT_EXACT",
     "cartesian_total": 576,
     "content_pinned_literature": 39,
     "coverage_classified_cells": 576,
@@ -49,9 +53,17 @@
     "literature_complete": false,
     "literature_records": 51,
     "local_result_records": 24,
+    "mannheim_ngc3198_empirically_supported": false,
+    "mannheim_ngc3198_endpoint_coarse_gate_passed": true,
+    "mannheim_ngc3198_interfaces": 6,
+    "mannheim_ngc3198_sparc_coarse_gate_passed": true,
+    "mannheim_ngc3198_sparc_random_error_gate_passed": false,
+    "mannheim_ngc3198_sparc_reduced_chi2": 5.59221190426081,
+    "mannheim_ngc3198_sparc_rms_km_s": 4.538271969550304,
+    "mannheim_ngc3198_stages": 7,
     "metadata_only_literature": 12,
     "migration_pending_cells": 0,
-    "model_scoped_assemblies": 1,
+    "model_scoped_assemblies": 2,
     "prototype_assemblies": 9,
     "research_programme_lenses": 9,
     "reviewed_open_gaps": 172,
@@ -80,6 +92,16 @@
       "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_FREE_RECONSTRUCTION_OBSTRUCTION_V1.json",
       "result_id": "REVERSE_PHYSICS_BT_EUCLIDEAN_FREE_RECONSTRUCTION_OBSTRUCTION_V1",
       "sha256": "3ff1ba1578d5bc11ea7f2a6fc806fedb49d127a0f3f29fc220d987d9305371a9"
+    },
+    "bt_interacting_os_preflight": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL"
+      ],
+      "lifecycle": "CLASSIFIED",
+      "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_OS_WITNESS_PREFLIGHT_V1.json",
+      "result_id": "REVERSE_PHYSICS_BT_EUCLIDEAN_OS_WITNESS_PREFLIGHT_V1",
+      "sha256": "6964ebbdd6c8dd0dcbb4b0905142cb66cf7645e2939ecc2f9c02666d551c3387"
     },
     "coded_wave": {
       "dependency_tags": [
@@ -111,7 +133,7 @@
       "lifecycle": "VERIFIED_NAVIGATION_ARTIFACT",
       "path": "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json",
       "result_id": "FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2",
-      "sha256": "78810545a9087f79bdb7167aedbaa58ebc478752e1a3518c25e925c222f8c11c"
+      "sha256": "87b59a97e193e67a5ff1c27d6b0919054eba3c8d4a1e618ed44dd68b12cf6e2d"
     },
     "finite_bv": {
       "dependency_tags": [
@@ -176,6 +198,15 @@
       "result_id": "FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1",
       "sha256": "d1593c67e67a99c8b14b12dae5ac1364e26f34631c86b12cefaffd9ade9fd3ff"
     },
+    "mannheim_ngc3198_assembly": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC"
+      ],
+      "lifecycle": "NUMERICAL_REPRODUCTION_WITH_MIXED_EMPIRICAL_COMPARISON",
+      "path": "foundations/results/FOUNDATIONAL_MANNHEIM_NGC3198_MODEL_ASSEMBLY_V1.json",
+      "result_id": "FOUNDATIONAL_MANNHEIM_NGC3198_MODEL_ASSEMBLY_V1",
+      "sha256": "d4e7b8774f6593136b512453108a2d39396cd91969fdfc73681ee14d936e0154"
+    },
     "separable_cstar_state_chain": {
       "dependency_tags": [
         "LOCAL-ALGEBRAIC",
@@ -196,10 +227,10 @@
       "lifecycle": "VERIFIED_NAVIGATION_ARTIFACT",
       "path": "foundations/results/FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1.json",
       "result_id": "FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1",
-      "sha256": "288fb963d20f1e2caa41ff436512a02fcdd186d6506ff451ee4b321fc5c801d6"
+      "sha256": "5ff1b8fec12baf9d72758dd18eb04e695e9efa4444a722e5d008abea26d6b4b3"
     }
   },
-  "canonical_digest": "da8cd0f3fa4494f0254815749ecfff9d99eefea14b9aa521a90f5bded7572492",
+  "canonical_digest": "3530ee5193d883f3262e86f7ceeb0c02f7b97ba547a89c1596eeacd7c3b7de5d",
   "claim_flags": {
     "atlas_exhaustive": false,
     "axes_independent_proved": false,
@@ -209,12 +240,14 @@
     "bt_free_h_minus_one_estimate_certified": true,
     "bt_free_os_obstruction_certified": true,
     "bt_lambda_0p4_os_status_decided": false,
+    "bt_lambda_0p4_two_sampler_sign_support": true,
     "case_study_authorities_pinned": true,
     "complete_evidence_register_generated": true,
     "complete_literature_register_generated": true,
     "evidence_usage_crosswalk_generated": true,
     "global_physics_implies_choice_theorem": false,
     "literature_complete": false,
+    "mannheim_ngc3198_mixed_assembly_registered": true,
     "model_scoped_end_to_end_assembly_generated": true,
     "new_lorentzian_claim": false,
     "programme_definition_supplied": true,
@@ -357,6 +390,30 @@
       ],
       "statement": "On the zero-mode-fixed 6^4 free BT lattice, a shift-invariant positive-time slice observable has exact reflected norm -1/1296; fixed-volume continuity extends the ordinary-OS obstruction to some open coupling interval around zero, while lambda=0.4 remains open. The free L^4 family has a uniform H^-1 second-moment bound 15/32 and a logarithmically divergent L2 second moment.",
       "status": "SCOPED_OS_OBSTRUCTION_AND_FREE_UNIFORM_ESTIMATE"
+    },
+    {
+      "authorities": [
+        "bt_interacting_os_preflight"
+      ],
+      "claim_id": "RF-12-BT-INTERACTING-OS-PREFLIGHT",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL"
+      ],
+      "statement": "At lambda=0.4 on 6^4, all eight independent HMC and local-Metropolis chain means for the reflected witness are negative; equal-replica scores are -6.25 and -2.53 standard errors and the algorithm means differ by 0.64 combined standard errors. This is numerical sign support, not an exact or all-observable OS obstruction.",
+      "status": "NUMERICAL_FINITE_VOLUME_OBSERVED_WITH_EXACT_STATUS_OPEN"
+    },
+    {
+      "authorities": [
+        "mannheim_ngc3198_assembly"
+      ],
+      "claim_id": "RF-13-MANNHEIM-NGC3198-ASSEMBLY",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE"
+      ],
+      "statement": "For the declared Mannheim--Kazanas NGC 3198 thin-disk model, independent evaluation coarsely reproduces the paper's endpoint and passes a no-refit SPARC RMS gate, but fails the declared reduced-chi-squared gate from SPARC random errors alone; the mixed comparison does not establish empirical support.",
+      "status": "NUMERICAL_REPRODUCTION_WITH_MIXED_CROSS_DATASET_COMPARISON"
     }
   ],
   "created": "2026-08-14",
@@ -498,23 +555,33 @@
       "role": "standard-GR multimessenger propagation positive control",
       "source_id": "abbott-et-al-gw170817-2017",
       "url": "https://arxiv.org/abs/1710.05834"
+    },
+    {
+      "role": "published conformal-gravity rotation-curve equations and NGC 3198 parameter row",
+      "source_id": "mannheim-obrien-2012",
+      "url": "https://arxiv.org/abs/1011.3495"
+    },
+    {
+      "role": "official later SPARC NGC 3198 cross-dataset rotation curve",
+      "source_id": "lelli-mcgaugh-schombert-2016",
+      "url": "https://astroweb.case.edu/SPARC/"
     }
   ],
   "paper": {
     "appendix": {
-      "assembly_source_canonical_digest": "0911e53250de46266bf587feda146df9321d7da87bef1628eb1ccc7e028da608",
+      "assembly_source_canonical_digest": "ad3ed091a3a1cc12e0748c27029933e6e2c2629a776843585b9902194d1fcab4",
       "assembly_source_path": "foundations/site/assemblies.json",
-      "assembly_source_sha256": "288fb963d20f1e2caa41ff436512a02fcdd186d6506ff451ee4b321fc5c801d6",
+      "assembly_source_sha256": "5ff1b8fec12baf9d72758dd18eb04e695e9efa4444a722e5d008abea26d6b4b3",
       "generator_path": "paper/generate_21_reverse_foundations_appendices.py",
-      "generator_sha256": "299fd8e2848cf295e95ac4bb6a7e0cb4bef99b633c73ae82a7c05312da7170c6",
+      "generator_sha256": "d6a25b50e0fadf923c51888285e0eff6306d5b39cd6b1f97db307c3dbe8637b3",
       "path": "paper/21-reverse-foundations-of-physics-appendices.tex",
-      "sha256": "3ae0959510dafa84d2770897d340458ec8f2295ec4cc77dd764ad928a2acc46c",
+      "sha256": "7dba9dbb1595422631473fd329fd523dc1ae3a2cfc2ed40f36f5b96de1098b8e",
       "source_canonical_digest": "e4c79e8ec537c2d9f9271d9ccbd042da2a5529b0b5f0f11fa6917cc3af0386cd",
       "source_path": "foundations/site/data.json",
       "source_sha256": "c8ecc8ea14f565cb32ed9e9d6f22b26335a27c01a54cf3129dfbdbff8b83475b"
     },
     "path": "paper/21-reverse-foundations-of-physics.tex",
-    "sha256": "8ecd6759cda3df3d7c53b65047f32d441fa62c618905daff208ac2321071e8a7"
+    "sha256": "d4353c69e2b6c5a30089f0c344b1cbaf50afc3c264ef7bbc7d35c8fc078c6a42"
   },
   "result_id": "PAPER21_REVERSE_FOUNDATIONS_INTRODUCTION_V1",
   "result_kind": "PROGRAMME_SYNTHESIS_AND_TYPED_CASE_STUDY_MAP",

@@ -14,7 +14,7 @@ Website view & Static counterpart \\
 Matrix & Overall counts, a \(6\times6\) three-way coverage roll-up, and status counts for every obligation. \\
 Dimensions guide & All 28 axis options with their non-specialist descriptions. \\
 Theory profiles & Coverage-envelope and Pareto navigation; these are not composed theories. \\
-Assemblies & Eight cube-selected prototypes, seven independent maturity rails, typed joins, and an external standard-GR calibration control. \\
+Assemblies & Nine cube-selected prototypes, two model-scoped chains with independent maturity rails, typed joins, and an external standard-GR calibration control. \\
 Implications & The complete typed relation ledger: ten directed edges with their exact assertion and evidence. \\
 Strength ladder & All six cylinder-wave gates, including what each adds, establishes, and leaves open. \\
 Evidence & The complete literature register, local-certificate register, and usage crosswalk for all 75 records. \\
@@ -457,7 +457,7 @@ Evidence record & Matrix use & Graph and ladder use \\
 
 \subsection{Model-scoped assembly, prototype envelopes, and empirical calibration}
 \label{app:assembly-calibration}
-The assembly view no longer treats missing downstream work as a failed test.  Its seven maturity rails are reported independently: direct obligation coverage may be complete while composition is partial and numerical, prediction, or empirical records remain separately typed.  Red is reserved for an explicit incompatibility, obstruction, or failed comparison.
+The assembly view no longer treats missing downstream work as a failed test.  Its model-specific maturity rails are reported independently: direct obligation coverage may be complete while composition is partial and numerical, prediction, or empirical records remain separately typed.  Red is reserved for an explicit incompatibility, obstruction, or failed comparison.
 
 \paragraph{First bounded end-to-end assembly.}
 Standard GR solar-system prediction assembly: field equations to Cassini.  This is one model identity and one declared observational sector, not a maximum assembled from unrelated cells.  Its applicability mask requires 3 of the atlas's sixteen obligations, touches 2 others without requiring them, and explicitly places 11 outside this prediction.
@@ -484,6 +484,33 @@ Published Cassini comparison & supported reported band & The exact prediction \(
 The exact rail derives \(g_{tt}=-1+2U-2\beta U^2+O(U^3)\) and \(g_{ij}=(1+2\gamma U+O(U^2))\delta_{ij}\), obtains \(\beta=\gamma=1\), and therefore fixes the first-order null-delay coefficient \(1+\gamma=2\).  The separately typed empirical rail imports the publisher's displayed Cassini estimate \(\gamma=1+(2.1\mathbin{\pm}2.3)\times10^{-5}\).  Exact rational comparison puts the prediction \(\gamma-1=0\) inside that displayed band, at absolute standardized distance \(21/23\) from its centre.
 
 All three required obligations are satisfied and all five stage interfaces are registered (three exact and two literature-scoped).  The resulting disposition is bounded prediction assembly complete.  It does not reproduce the Cassini raw-data reduction or likelihood, assess an independent held-out test, establish a complete theory, or transfer empirical support to Weyl gravity.
+
+\paragraph{Second bounded assembly: mixed result.}
+Mannheim conformal-gravity NGC 3198 assembly: field equation to rotation curve.  This chain retains one declared Mannheim--Kazanas phenomenological model from the Weyl action through certified local static-vacuum and orbit-law predecessors, the published thin-disk formula and NGC 3198 parameter row, an independently evaluated endpoint, and a no-refit comparison with a later SPARC rotation curve.
+
+\begin{table}[htbp]
+\centering
+\scriptsize
+\begin{tabularx}{\textwidth}{@{}p{0.22\textwidth}p{0.20\textwidth}Y@{}}
+\toprule
+Stage & Status & What is established \\
+\midrule
+Weyl action and Bach equation & declared model input & The classical model is four-dimensional pure metric conformal gravity with Bach equation B\_mu\_nu=0 in the exterior. \\
+Mannheim--Kazanas vacuum family & certified local predecessor & The local BH0B certificate derives the complete static spherical Bach-flat family in the declared conformal gauge. \\
+Weak-field circular-orbit law & certified local predecessor & The local BH0C certificate derives the leading weak-field beta/r + gamma r/2 - k r\textasciicircum{}2 circular-speed law and records its exact-family correction. \\
+Luminous exponential-disk prediction & published model transcription & Mannheim--O'Brien Eqs. (5) and (20) integrate the Newtonian and linear kernels over thin stellar and gas disks and add universal linear and quadratic terms. \\
+Published NGC 3198 parameters & content pinned transcription & The model uses the paper's distance, scale length, stellar and HI masses, fitted M/L, endpoint radius, and fixed universal constants without refitting. \\
+Published endpoint reproduction & coarse numerical reproduction & Independent evaluation of the displayed equations predicts the endpoint velocity within the declared five-percent coarse gate of the velocity reconstructed from the paper's endpoint acceleration. \\
+Independent SPARC curve comparison & mixed random error gate failed & Without refitting, the curve passes the declared five km/s RMS shape gate but fails the reduced-chi-squared gate based on SPARC random errors alone. \\
+\bottomrule
+\end{tabularx}
+\caption{The seven typed stages of the Mannheim conformal-gravity NGC 3198 assembly.  A failed uncertainty-sensitive comparison remains visible rather than being averaged with the coarser passing checks.}
+\label{tab:mannheim-ngc3198-assembly}
+\end{table}
+
+Independent evaluation predicts 153.9 km/s at the paper's endpoint, compared with 149.6 km/s reconstructed from its displayed endpoint acceleration.  The relative residual is 2.893\%, which passes the declared 5\% coarse audit gate.  Across 39 later SPARC points inside that radius, the no-refit RMS residual is 4.538 km/s and passes the declared 5 km/s coarse shape gate, while the reduced $\chi^2$ from SPARC random errors alone is 5.592 and fails the declared gate $\chi^2_\nu\leq2$.
+
+No parameter is refitted.  SPARC is a later 3.6-micrometre photometric reduction, not the original heterogeneous blue-band dataset, and its random-error column omits inclination and other systematics.  The result is therefore a no-refit external stress test with a mixed disposition, not a reproduction of the original likelihood and not evidence sufficient to promote the model to empirical support.  The massive-tracer matter-coupling assumption is recorded but not resolved.
 
 \paragraph{Cube-selected prototype envelopes.}
 \begin{table}[htbp]
@@ -536,4 +563,4 @@ Gravitational waves & B. P. Abbott et al., Gravitational Waves and Gamma-rays fr
 The control populates three of six benchmark families with four records.  It is outside the cube, does not make GR complete, and transfers no observational support to a Weyl-gravity prototype.
 
 The complete normalized dataset is \cert{foundations/site/data.json} (SHA-256 \cert{c8ecc8ea14f565cb32ed9e9d6f22b26335a27c01a54cf3129dfbdbff8b83475b}; canonical digest \cert{e4c79e8ec537c2d9f9271d9ccbd042da2a5529b0b5f0f11fa6917cc3af0386cd}).  These tables are generated from that file and contain no hand-copied coverage counts, relation edges, evidence roles, boundaries, or citations.
-The assembly and calibration tables are generated from \cert{foundations/site/assemblies.json} (SHA-256 \cert{288fb963d20f1e2caa41ff436512a02fcdd186d6506ff451ee4b321fc5c801d6}; canonical digest \cert{0911e53250de46266bf587feda146df9321d7da87bef1628eb1ccc7e028da608}).
+The assembly and calibration tables are generated from \cert{foundations/site/assemblies.json} (SHA-256 \cert{5ff1b8fec12baf9d72758dd18eb04e695e9efa4444a722e5d008abea26d6b4b3}; canonical digest \cert{ad3ed091a3a1cc12e0748c27029933e6e2c2629a776843585b9902194d1fcab4}).

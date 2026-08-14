@@ -1,0 +1,65 @@
+{
+  "schema_version": "mannheim-ngc3198-parameters-v1",
+  "created": "2026-08-14",
+  "model": "Mannheim--O'Brien thin exponential-disk conformal-gravity rotation model",
+  "published_model_source": {
+    "citation": "P. D. Mannheim and J. G. O'Brien, Fitting galactic rotation curves with conformal gravity and a global quadratic potential, Phys. Rev. D 85 (2012) 124020",
+    "arxiv": "https://arxiv.org/abs/1011.3495",
+    "source_archive": "https://export.arxiv.org/e-print/1011.3495",
+    "source_archive_sha256": "e366db37bc99ce08c96609f751d9b0ffb779dd4ce1c0140a2e226c1aefc075c1",
+    "source_member": "fitting5.tex",
+    "parameter_table": "Table 1, NGC 3198 row",
+    "equations": ["(5)", "(20)"],
+    "retrieved": "2026-08-14"
+  },
+  "independent_observation_source": {
+    "citation": "F. Lelli, S. S. McGaugh, and J. M. Schombert, SPARC: Mass Models for 175 Disk Galaxies with Spitzer Photometry and Accurate Rotation Curves, Astron. J. 152 (2016) 157",
+    "url": "https://astroweb.case.edu/SPARC/MassModels_Lelli2016c.mrt",
+    "full_source_sha256": "9108994b12cc401b94a1768beca61c53ec354779385c9c9cc571049f3043244c",
+    "local_extract": "foundations/data/ngc3198-sparc-mass-model-v1.tsv",
+    "selection": "All 43 rows whose fixed-width ID field is NGC3198, copied without numerical alteration",
+    "retrieved": "2026-08-14"
+  },
+  "published_constants_cgs": {
+    "beta_star_cm": "1.48e5",
+    "gamma_star_per_cm": "5.42e-41",
+    "gamma_0_per_cm": "3.06e-30",
+    "kappa_per_cm2": "9.54e-54",
+    "speed_of_light_cm_per_s": "2.99792458e10",
+    "kpc_cm": "3.0856775814913673e21"
+  },
+  "published_ngc3198_row": {
+    "distance_mpc": "14.1",
+    "blue_luminosity_1e10_solar": "3.241",
+    "stellar_scale_length_kpc": "4.0",
+    "last_radius_kpc": "38.6",
+    "hi_mass_1e10_solar": "1.06",
+    "stellar_disk_mass_1e10_solar": "3.644",
+    "stellar_mass_to_blue_light": "1.12",
+    "observed_last_v2_over_c2r_1e30_per_cm": "2.09"
+  },
+  "published_modelling_assumptions": {
+    "stellar_geometry": "infinitesimally thin exponential disk",
+    "gas_geometry": "infinitesimally thin exponential disk with scale length four times the optical scale length",
+    "gas_helium_multiplier": "1.4",
+    "bulge": "none for NGC 3198",
+    "free_parameter": "stellar mass-to-blue-light ratio; the table reports the fitted value 1.12",
+    "universal_parameters": "beta_star, gamma_star, gamma_0, and kappa are held fixed at the published values"
+  },
+  "cross_dataset_protocol": {
+    "fit_performed": false,
+    "radius_rescaling": "Multiply each SPARC radius by 14.1/13.8 to use the distance adopted in the published conformal-gravity fit",
+    "velocity_rescaling": "None",
+    "comparison_window": "Rescaled radius less than or equal to the published last radius 38.6 kpc",
+    "uncertainty": "SPARC e_Vobs random errors only; inclination and other systematic uncertainties are not included",
+    "coarse_rms_gate_km_per_s": "5.0",
+    "random_error_reduced_chi2_gate": "2.0",
+    "endpoint_relative_velocity_gate": "0.05"
+  },
+  "does_not_establish": [
+    "identity of the SPARC 2016 photometric reduction with the heterogeneous data and blue-band photometry used in the 2012 fit",
+    "reproduction of the original fitting algorithm, likelihood, covariance model, or full 111-galaxy analysis",
+    "that the fitted mass-to-light ratio is independently preferred by the SPARC data",
+    "that the matter-coupling and conformal-frame assumptions required for massive bodies to follow the displayed metric are physically correct"
+  ]
+}

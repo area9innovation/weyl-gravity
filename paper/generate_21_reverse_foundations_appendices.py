@@ -185,7 +185,7 @@ def build(data: dict, assemblies: dict) -> str:
         r"Matrix & Overall counts, a \(6\times6\) three-way coverage roll-up, and status counts for every obligation. \\",
         r"Dimensions guide & All 28 axis options with their non-specialist descriptions. \\",
         r"Theory profiles & Coverage-envelope and Pareto navigation; these are not composed theories. \\",
-        r"Assemblies & Eight cube-selected prototypes, seven independent maturity rails, typed joins, and an external standard-GR calibration control. \\",
+        r"Assemblies & Nine cube-selected prototypes, two model-scoped chains with independent maturity rails, typed joins, and an external standard-GR calibration control. \\",
         r"Implications & The complete typed relation ledger: ten directed edges with their exact assertion and evidence. \\",
         r"Strength ladder & All six cylinder-wave gates, including what each adds, establishes, and leaves open. \\",
         rf"Evidence & The complete literature register, local-certificate register, and usage crosswalk for all {len(evidence)} records. \\",
@@ -495,11 +495,12 @@ def build(data: dict, assemblies: dict) -> str:
             "",
             r"\subsection{Model-scoped assembly, prototype envelopes, and empirical calibration}",
             r"\label{app:assembly-calibration}",
-            "The assembly view no longer treats missing downstream work as a failed test.  Its seven maturity rails are reported independently: direct obligation coverage may be complete while composition is partial and numerical, prediction, or empirical records remain separately typed.  Red is reserved for an explicit incompatibility, obstruction, or failed comparison.",
+            "The assembly view no longer treats missing downstream work as a failed test.  Its model-specific maturity rails are reported independently: direct obligation coverage may be complete while composition is partial and numerical, prediction, or empirical records remain separately typed.  Red is reserved for an explicit incompatibility, obstruction, or failed comparison.",
             "",
         ]
     )
-    model = assemblies["model_scoped_assemblies"][0]
+    model = next(item for item in assemblies["model_scoped_assemblies"] if item["result_id"] == "FOUNDATIONAL_GR_CASSINI_MODEL_ASSEMBLY_V1")
+    mannheim = next(item for item in assemblies["model_scoped_assemblies"] if item["result_id"] == "FOUNDATIONAL_MANNHEIM_NGC3198_MODEL_ASSEMBLY_V1")
     lines.extend(
         [
             r"\paragraph{First bounded end-to-end assembly.}",
@@ -537,6 +538,48 @@ def build(data: dict, assemblies: dict) -> str:
             "All three required obligations are satisfied and all five stage interfaces are registered (three exact and two literature-scoped).  The resulting disposition is "
             + tex(model["assembly_disposition"]["status"].replace("_", " ").lower())
             + ".  It does not reproduce the Cassini raw-data reduction or likelihood, assess an independent held-out test, establish a complete theory, or transfer empirical support to Weyl gravity.",
+            "",
+            r"\paragraph{Second bounded assembly: mixed result.}",
+            tex(mannheim["title"]) + ".  This chain retains one declared Mannheim--Kazanas phenomenological model from the Weyl action through certified local static-vacuum and orbit-law predecessors, the published thin-disk formula and NGC 3198 parameter row, an independently evaluated endpoint, and a no-refit comparison with a later SPARC rotation curve.",
+            "",
+            r"\begin{table}[htbp]",
+            r"\centering",
+            r"\scriptsize",
+            r"\begin{tabularx}{\textwidth}{@{}p{0.22\textwidth}p{0.20\textwidth}Y@{}}",
+            r"\toprule",
+            r"Stage & Status & What is established \\",
+            r"\midrule",
+        ]
+    )
+    for stage in mannheim["stages"]:
+        lines.append(
+            f"{tex(stage['label'])} & {tex(stage['status'].replace('_', ' ').lower())} & {scientific_tex(stage['establishes'])}" + r" \\"
+        )
+    numeric = mannheim["numerical_reproduction_rail"]
+    comparison = mannheim["empirical_comparison_rail"]
+    lines.extend(
+        [
+            r"\bottomrule",
+            r"\end{tabularx}",
+            r"\caption{The seven typed stages of the Mannheim conformal-gravity NGC 3198 assembly.  A failed uncertainty-sensitive comparison remains visible rather than being averaged with the coarser passing checks.}",
+            r"\label{tab:mannheim-ngc3198-assembly}",
+            r"\end{table}",
+            "",
+            "Independent evaluation predicts "
+            + format(numeric["predicted_endpoint"]["velocity_km_s"], ".1f")
+            + r" km/s at the paper's endpoint, compared with "
+            + format(numeric["observed_endpoint_velocity_reconstructed_km_s"], ".1f")
+            + r" km/s reconstructed from its displayed endpoint acceleration.  The relative residual is "
+            + format(100 * numeric["endpoint_relative_velocity_residual"], ".3f")
+            + r"\%, which passes the declared 5\% coarse audit gate.  Across "
+            + str(comparison["points_inside_published_radius"])
+            + " later SPARC points inside that radius, the no-refit RMS residual is "
+            + format(comparison["unweighted_rms_residual_km_s"], ".3f")
+            + r" km/s and passes the declared 5 km/s coarse shape gate, while the reduced $\chi^2$ from SPARC random errors alone is "
+            + format(comparison["reduced_chi_squared_no_refit"], ".3f")
+            + r" and fails the declared gate $\chi^2_\nu\leq2$.",
+            "",
+            "No parameter is refitted.  SPARC is a later 3.6-micrometre photometric reduction, not the original heterogeneous blue-band dataset, and its random-error column omits inclination and other systematics.  The result is therefore a no-refit external stress test with a mixed disposition, not a reproduction of the original likelihood and not evidence sufficient to promote the model to empirical support.  The massive-tracer matter-coupling assumption is recorded but not resolved.",
             "",
             r"\paragraph{Cube-selected prototype envelopes.}",
             r"\begin{table}[htbp]",

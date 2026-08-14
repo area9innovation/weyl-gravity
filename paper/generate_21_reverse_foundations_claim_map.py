@@ -25,10 +25,12 @@ AUTHORITY_PATHS = {
     "intersection_cube": "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V10.json",
     "bt_euclidean_import": "foundations/results/FOUNDATIONAL_BT_EUCLIDEAN_LATTICE_IMPORT_V1.json",
     "bt_free_reconstruction_obstruction": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_FREE_RECONSTRUCTION_OBSTRUCTION_V1.json",
+    "bt_interacting_os_preflight": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_OS_WITNESS_PREFLIGHT_V1.json",
     "full_surface_gap_audit": "foundations/results/FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1.json",
     "explorer_snapshot": "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json",
     "theory_assembly": "foundations/results/FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1.json",
     "gr_cassini_assembly": "foundations/results/FOUNDATIONAL_GR_CASSINI_MODEL_ASSEMBLY_V1.json",
+    "mannheim_ngc3198_assembly": "foundations/results/FOUNDATIONAL_MANNHEIM_NGC3198_MODEL_ASSEMBLY_V1.json",
     "explicit_krein": "foundations/results/FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1.json",
     "krein_state_selection": "foundations/results/FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1.json",
     "separable_cstar_state_chain": "foundations/results/FOUNDATIONAL_BT_SEPARABLE_STATE_CHAIN_ZF_V1.json",
@@ -71,8 +73,10 @@ def build() -> dict:
     cube = loaded["intersection_cube"]
     bt_euclidean = loaded["bt_euclidean_import"]
     bt_free_obstruction = loaded["bt_free_reconstruction_obstruction"]
+    bt_interacting_os = loaded["bt_interacting_os_preflight"]
     site = loaded["explorer_snapshot"]
     gr_cassini = loaded["gr_cassini_assembly"]
+    mannheim_ngc3198 = loaded["mannheim_ngc3198_assembly"]
     atlas_data = json.loads((ROOT / ATLAS_DATA).read_text())
     assembly_data = json.loads((ROOT / ASSEMBLY_DATA).read_text())
     evidence = atlas_data["evidence"]
@@ -169,6 +173,14 @@ def build() -> dict:
             "gr_cassini_required_obligations_satisfied": gr_cassini["applicability_summary"]["required_satisfied"],
             "gr_cassini_bounded_complete": gr_cassini["assembly_disposition"]["complete_within_declared_scope"],
             "gr_cassini_prediction_inside_reported_band": gr_cassini["empirical_comparison_rail"]["prediction_inside_reported_band"],
+            "mannheim_ngc3198_stages": len(mannheim_ngc3198["stages"]),
+            "mannheim_ngc3198_interfaces": len(mannheim_ngc3198["interfaces"]),
+            "mannheim_ngc3198_endpoint_coarse_gate_passed": mannheim_ngc3198["numerical_reproduction_rail"]["gate_passed"],
+            "mannheim_ngc3198_sparc_rms_km_s": mannheim_ngc3198["empirical_comparison_rail"]["unweighted_rms_residual_km_s"],
+            "mannheim_ngc3198_sparc_reduced_chi2": mannheim_ngc3198["empirical_comparison_rail"]["reduced_chi_squared_no_refit"],
+            "mannheim_ngc3198_sparc_coarse_gate_passed": mannheim_ngc3198["empirical_comparison_rail"]["coarse_rms_gate_passed"],
+            "mannheim_ngc3198_sparc_random_error_gate_passed": mannheim_ngc3198["empirical_comparison_rail"]["random_error_reduced_chi2_gate_passed"],
+            "mannheim_ngc3198_empirically_supported": mannheim_ngc3198["assembly_disposition"]["empirically_supported_within_declared_scope"],
             "bt_euclidean_direct_capabilities": sum(item["evidence_role"] == "DIRECT_LOCAL" for item in bt_euclidean["capability_decisions"]),
             "bt_euclidean_reconstruction_status": next(item["new_status"] for item in bt_euclidean["capability_decisions"] if item["coordinate"]["obligation"] == "RECONSTRUCTION_LIMITS"),
             "bt_euclidean_numerical_status": bt_euclidean["numerical_reproducibility_records"][0]["status"],
@@ -178,6 +190,10 @@ def build() -> dict:
             "bt_free_os_lambda_0p4_status": bt_free_obstruction["disposition"]["ordinary_os_reflection_positivity_at_lambda_0p4"],
             "bt_free_h_minus_one_bound": bt_free_obstruction["free_volume_uniform_estimate"]["uniform_result"]["bound"],
             "bt_free_l2_status": bt_free_obstruction["disposition"]["free_uniform_l2_estimate"],
+            "bt_interacting_os_numerical_status": bt_interacting_os["disposition"]["lambda_0p4_reflected_witness"],
+            "bt_interacting_os_local_z": bt_interacting_os["algorithm_summaries"]["local_metropolis"]["z_from_zero"],
+            "bt_interacting_os_hmc_z": bt_interacting_os["algorithm_summaries"]["hmc"]["z_from_zero"],
+            "bt_interacting_os_cross_sampler_z": bt_interacting_os["cross_sampler_mean_z"],
             "standard_reference_direct_obligations": next(item for item in assembly_data["assemblies"] if item["id"] == "STANDARD_MIXED_REFERENCE")["coverage"]["direct"],
             "external_calibration_records": len(assembly_data["calibration_controls"][0]["records"]),
             "external_calibration_benchmark_families": sum(item["status"] == "SUPPORTED_CONTROL" for item in assembly_data["calibration_controls"][0]["benchmark_coverage"]),
@@ -260,6 +276,20 @@ def build() -> dict:
                 "authorities": ["bt_free_reconstruction_obstruction"],
                 "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"],
             },
+            {
+                "claim_id": "RF-12-BT-INTERACTING-OS-PREFLIGHT",
+                "statement": "At lambda=0.4 on 6^4, all eight independent HMC and local-Metropolis chain means for the reflected witness are negative; equal-replica scores are -6.25 and -2.53 standard errors and the algorithm means differ by 0.64 combined standard errors. This is numerical sign support, not an exact or all-observable OS obstruction.",
+                "status": "NUMERICAL_FINITE_VOLUME_OBSERVED_WITH_EXACT_STATUS_OPEN",
+                "authorities": ["bt_interacting_os_preflight"],
+                "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"],
+            },
+            {
+                "claim_id": "RF-13-MANNHEIM-NGC3198-ASSEMBLY",
+                "statement": "For the declared Mannheim--Kazanas NGC 3198 thin-disk model, independent evaluation coarsely reproduces the paper's endpoint and passes a no-refit SPARC RMS gate, but fails the declared reduced-chi-squared gate from SPARC random errors alone; the mixed comparison does not establish empirical support.",
+                "status": "NUMERICAL_REPRODUCTION_WITH_MIXED_CROSS_DATASET_COMPARISON",
+                "authorities": ["mannheim_ngc3198_assembly"],
+                "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"],
+            },
         ],
         "literature_scope": [
             {"source_id": "simpson-2009", "url": "https://doi.org/10.1017/CBO9780511581007", "role": "reverse mathematics and subsystem calibration"},
@@ -278,6 +308,8 @@ def build() -> dict:
             {"source_id": "kramer-et-al-2021", "url": "https://doi.org/10.1103/PhysRevX.11.041050", "role": "standard-GR compact-binary positive control"},
             {"source_id": "lvk-gwtc3-2021", "url": "https://arxiv.org/abs/2112.06861", "role": "standard-GR gravitational-wave positive control"},
             {"source_id": "abbott-et-al-gw170817-2017", "url": "https://arxiv.org/abs/1710.05834", "role": "standard-GR multimessenger propagation positive control"},
+            {"source_id": "mannheim-obrien-2012", "url": "https://arxiv.org/abs/1011.3495", "role": "published conformal-gravity rotation-curve equations and NGC 3198 parameter row"},
+            {"source_id": "lelli-mcgaugh-schombert-2016", "url": "https://astroweb.case.edu/SPARC/", "role": "official later SPARC NGC 3198 cross-dataset rotation curve"},
         ],
         "claim_flags": {
             "programme_definition_supplied": True,
@@ -289,11 +321,13 @@ def build() -> dict:
             "evidence_usage_crosswalk_generated": True,
             "model_scoped_end_to_end_assembly_generated": True,
             "bounded_empirical_comparison_registered": True,
+            "mannheim_ngc3198_mixed_assembly_registered": True,
             "bt_euclidean_finite_capabilities_imported": True,
             "bt_euclidean_coarse_reproduction_separated": True,
             "bt_free_os_obstruction_certified": True,
             "bt_free_h_minus_one_estimate_certified": True,
             "bt_lambda_0p4_os_status_decided": False,
+            "bt_lambda_0p4_two_sampler_sign_support": True,
             "research_programme_lenses_explained": True,
             "weakest_foundation_proved": False,
             "global_physics_implies_choice_theorem": False,

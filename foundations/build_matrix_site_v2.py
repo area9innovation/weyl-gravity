@@ -31,6 +31,12 @@ ASSEMBLY_REPORT = FOUNDATIONS / "reports/theory-assembly-atlas-v1.md"
 GR_CASSINI_RESULT = FOUNDATIONS / "results/FOUNDATIONAL_GR_CASSINI_MODEL_ASSEMBLY_V1.json"
 GR_CASSINI_REPORT = FOUNDATIONS / "reports/gr-cassini-model-assembly-v1.md"
 GR_CASSINI_SCHEMA = FOUNDATIONS / "schema/foundational-gr-cassini-model-assembly-v1.schema.json"
+MANNHEIM_NGC3198_RESULT = FOUNDATIONS / "results/FOUNDATIONAL_MANNHEIM_NGC3198_MODEL_ASSEMBLY_V1.json"
+MANNHEIM_NGC3198_REPORT = FOUNDATIONS / "reports/mannheim-ngc3198-model-assembly-v1.md"
+MANNHEIM_NGC3198_SCHEMA = FOUNDATIONS / "schema/foundational-mannheim-ngc3198-model-assembly-v1.schema.json"
+MANNHEIM_NGC3198_PARAMETERS = FOUNDATIONS / "data/mannheim-ngc3198-parameters-v1.json"
+MANNHEIM_NGC3198_SPARC = FOUNDATIONS / "data/ngc3198-sparc-mass-model-v1.tsv"
+MANNHEIM_NGC3198_CPP = FOUNDATIONS / "mannheim_ngc3198_numeric_checker.cpp"
 CUBE = FOUNDATIONS / "results/FOUNDATIONAL_INTERSECTION_CUBE_V10.json"
 PREVIOUS_CUBES = [
     FOUNDATIONS / "results/FOUNDATIONAL_INTERSECTION_CUBE_V4.json",
@@ -412,7 +418,8 @@ def render_assembly_report(assessment: dict[str, Any]) -> str:
         for assembly in assessment["assemblies"]
         for interface in assembly["interfaces"]
     )
-    model_assembly = assessment["model_scoped_assemblies"][0]
+    model_assembly = next(item for item in assessment["model_scoped_assemblies"] if item["result_id"] == "FOUNDATIONAL_GR_CASSINI_MODEL_ASSEMBLY_V1")
+    mannheim_assembly = next(item for item in assessment["model_scoped_assemblies"] if item["result_id"] == "FOUNDATIONAL_MANNHEIM_NGC3198_MODEL_ASSEMBLY_V1")
     lines = [
         "# Candidate theory assembly atlas v1",
         "",
@@ -451,6 +458,18 @@ def render_assembly_report(assessment: dict[str, Any]) -> str:
         "the last two are explicitly literature-scoped. The exact prediction",
         "`gamma-1=0` lies inside the publisher's displayed `(2.1+/-2.3)e-5` band.",
         "The disposition is `BOUNDED_PREDICTION_ASSEMBLY_COMPLETE`, not complete theory.",
+        "",
+        "## Second model-scoped assembly: a mixed result",
+        "",
+        "`FOUNDATIONAL_MANNHEIM_NGC3198_MODEL_ASSEMBLY_V1` follows one declared",
+        "Mannheim--Kazanas phenomenological model through seven stages: the Weyl action,",
+        "the certified static vacuum family and circular-orbit law, the published thin-disk",
+        "formula, the NGC 3198 parameter row, endpoint reproduction, and a no-refit comparison",
+        "with the later SPARC curve. The endpoint relative velocity residual is " + format(100 * mannheim_assembly["numerical_reproduction_rail"]["endpoint_relative_velocity_residual"], ".3f") + " percent,",
+        "and the SPARC RMS residual is " + format(mannheim_assembly["empirical_comparison_rail"]["unweighted_rms_residual_km_s"], ".3f") + " km/s. Both pass their declared coarse audit gates.",
+        "The reduced chi-squared using SPARC random errors alone is " + format(mannheim_assembly["empirical_comparison_rail"]["reduced_chi_squared_no_refit"], ".3f") + ", which fails the declared gate of 2.",
+        "No parameter is refitted, and SPARC is a later non-identical data reduction, so the",
+        "mixed disposition remains partial and does not establish empirical support.",
         "",
         "## Independent maturity rails",
         "",
@@ -536,11 +555,12 @@ def generated() -> dict[Path, bytes]:
         FOUNDATIONS / "reports/cylinder-wave-strength-ladder.md",
         FOUNDATIONS / "reports/full-surface-gap-audit.md",
         GR_CASSINI_REPORT,
+        MANNHEIM_NGC3198_REPORT,
     ]
-    bundled_sources = sorted(set([CUBE, *PREVIOUS_CUBES, FULL_SURFACE_AUDIT, CORNER_BORN_INTERFACE, GROUND_STATE_DYNAMICS_INTERFACE, BT_EUCLIDEAN_IMPORT, GR_CASSINI_RESULT, GR_CASSINI_SCHEMA, AUDIT, LADDER, *LEDGERS, *local_evidence_paths, *local_report_paths, *reports]))
+    bundled_sources = sorted(set([CUBE, *PREVIOUS_CUBES, FULL_SURFACE_AUDIT, CORNER_BORN_INTERFACE, GROUND_STATE_DYNAMICS_INTERFACE, BT_EUCLIDEAN_IMPORT, GR_CASSINI_RESULT, GR_CASSINI_SCHEMA, MANNHEIM_NGC3198_RESULT, MANNHEIM_NGC3198_SCHEMA, MANNHEIM_NGC3198_PARAMETERS, MANNHEIM_NGC3198_SPARC, MANNHEIM_NGC3198_CPP, AUDIT, LADDER, *LEDGERS, *local_evidence_paths, *local_report_paths, *reports]))
     for source in bundled_sources:
         outputs[SITE / "sources" / source.relative_to(ROOT)] = source.read_bytes()
-    input_paths = sorted(set([Path(__file__).resolve(), FOUNDATIONS / "theory_viability.py", FOUNDATIONS / "theory_assembly.py", FOUNDATIONS / "build_gr_cassini_assembly.py", FOUNDATIONS / "check_gr_cassini_assembly.py", FOUNDATIONS / "verify_gr_cassini_assembly.py", FOUNDATIONS / "standard-gr-observational-control-v1.json", FOUNDATIONS / "schema/standard-gr-observational-control-v1.schema.json", *bundled_sources, ASSETS / "index.html", ASSETS / "styles.css", ASSETS / "app.js", V2_ASSETS / "app-v2.js"]))
+    input_paths = sorted(set([Path(__file__).resolve(), FOUNDATIONS / "theory_viability.py", FOUNDATIONS / "theory_assembly.py", FOUNDATIONS / "build_gr_cassini_assembly.py", FOUNDATIONS / "check_gr_cassini_assembly.py", FOUNDATIONS / "verify_gr_cassini_assembly.py", FOUNDATIONS / "build_mannheim_ngc3198_assembly.py", FOUNDATIONS / "check_mannheim_ngc3198_assembly.py", FOUNDATIONS / "verify_mannheim_ngc3198_assembly.py", FOUNDATIONS / "standard-gr-observational-control-v1.json", FOUNDATIONS / "schema/standard-gr-observational-control-v1.schema.json", *bundled_sources, ASSETS / "index.html", ASSETS / "styles.css", ASSETS / "app.js", V2_ASSETS / "app-v2.js"]))
     manifest = {
         "schema_version": "foundational-matrix-explorer-manifest-v2",
         "created": CREATED,
@@ -561,7 +581,7 @@ def generated() -> dict[Path, bytes]:
         "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
         "scope": "Deterministic static exploration surface over the migration-reviewed foundations cube and cylinder implication ladder.",
         "counts": dataset["counts"],
-        "features": ["sixteen 6x6 heatmaps", "complete 576-coordinate assessment surface", "reviewed-open-gap state distinct from priority and result", "dual local+literature cell marks", "per-evidence directness roles", "general-audience three-question dimensions guide", "grouped five-stage physical-obligation journey", "progressive-disclosure glossary and reviewer mechanics", "plain-language guide for all 28 axis options", "separate coverage and migration-review states", "migration evidence inspector", "multi-select filters", "full-text search", "cell inspector", "one-axis neighbors", "two-cell comparison", "URL permalinks", "filtered JSON and CSV export", "research-brief export", "three-pathway typed argument map with linked relation ledger", "strength ladder", "evidence catalogue", "theory-profile readiness map", "researcher-selectable obligation gates", "multi-carrier coverage-envelope composer", "non-scalar Pareto navigation", "separate composition, numerical-reproduction, and empirical-agreement rails", "nine named research-programme lenses with explicit scope cautions", "first model-scoped GR-to-Cassini bounded prediction assembly", "typed applicability mask", "exact field-equation-to-PPN-to-null-delay chain", "typed cross-cell interface ledger", "two certified scoped cross-cell bridges", "one certified scoped carrier non-identity", "seven independent maturity rails with missing distinct from failure", "empty fail-closed candidate empirical benchmark ledger", "external standard-GR positive control with four primary-source records", "ten-cell exact finite-operator closure", "twenty-cell exact finite-BRST closure"],
+        "features": ["sixteen 6x6 heatmaps", "complete 576-coordinate assessment surface", "reviewed-open-gap state distinct from priority and result", "dual local+literature cell marks", "per-evidence directness roles", "general-audience three-question dimensions guide", "grouped five-stage physical-obligation journey", "progressive-disclosure glossary and reviewer mechanics", "plain-language guide for all 28 axis options", "separate coverage and migration-review states", "migration evidence inspector", "multi-select filters", "full-text search", "cell inspector", "one-axis neighbors", "two-cell comparison", "URL permalinks", "filtered JSON and CSV export", "research-brief export", "three-pathway typed argument map with linked relation ledger", "strength ladder", "evidence catalogue", "theory-profile readiness map", "researcher-selectable obligation gates", "multi-carrier coverage-envelope composer", "non-scalar Pareto navigation", "separate composition, numerical-reproduction, and empirical-agreement rails", "nine named research-programme lenses with explicit scope cautions", "first model-scoped GR-to-Cassini bounded prediction assembly", "second bounded Mannheim-to-NGC3198 assembly with a no-refit SPARC curve and mixed pass/fail gates", "typed applicability mask", "exact field-equation-to-PPN-to-null-delay chain", "typed cross-cell interface ledger", "two certified scoped cross-cell bridges", "one certified scoped carrier non-identity", "independent maturity rails with missing distinct from failure", "empty fail-closed candidate empirical benchmark ledger", "external standard-GR positive control with four primary-source records", "ten-cell exact finite-operator closure", "twenty-cell exact finite-BRST closure"],
         "provenance": {"manifest": rel(SITE / "manifest.json"), "manifest_sha256": v1.sha_bytes(manifest_bytes), "canonical_data_digest": dataset["canonical_digest"], "viability_digest": viability["canonical_digest"], "assembly_digest": assemblies["canonical_digest"]},
         "independent_checker": {"path": "foundations/check_matrix_site_v2.py", "expected_cells": 576, "expected_emitted": 576, "expected_synthetic_not_mapped": 0, "expected_total_not_mapped": 0, "expected_reviewed_gaps": 172, "expected_evidence_records": 75, "expected_digest": dataset["canonical_digest"], "expected_viability_digest": viability["canonical_digest"], "expected_assembly_digest": assemblies["canonical_digest"]},
         "claim_flags": {"static_site_generated": True, "all_cartesian_coordinates_visible": True, "all_cartesian_coordinates_assessed": True, "zero_not_mapped": True, "reviewed_gaps_distinguished_from_results": True, "all_emitted_migrations_reviewed": True, "coverage_and_migration_separated": True, "all_used_evidence_resolved": True, "theory_profiles_generated": True, "theory_assembly_atlas_generated": True, "at_least_one_cross_cell_interface_certified": True, "composition_and_observation_rails_separated": True, "scientific_claims_duplicated_by_hand": False, "literature_complete": False, "unmapped_means_absent": False, "reviewed_gap_means_absent": False, "reviewed_no_transfer_means_absent": False, "priority_score_is_theorem": False, "complete_observationally_valid_theory_identified": False, "new_lorentzian_claim": False},

@@ -1,0 +1,139 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "result_id", "result_kind", "lifecycle", "created",
+    "repository_base_commit", "dependency_tags", "title", "model_identity",
+    "applicability_mask", "applicability_summary", "stages", "interfaces",
+    "published_parameter_rail", "numerical_reproduction_rail",
+    "empirical_comparison_rail", "maturity_rails", "assembly_disposition",
+    "provenance", "independent_checker", "claim_flags", "does_not_establish",
+    "human_report", "canonical_digest"
+  ],
+  "properties": {
+    "schema_version": {"const": "foundational-mannheim-ngc3198-model-assembly-v1"},
+    "result_id": {"const": "FOUNDATIONAL_MANNHEIM_NGC3198_MODEL_ASSEMBLY_V1"},
+    "result_kind": {"const": "MODEL_SCOPED_PREDICTION_AND_CROSS_DATASET_ASSEMBLY"},
+    "lifecycle": {"const": "NUMERICAL_REPRODUCTION_WITH_MIXED_EMPIRICAL_COMPARISON"},
+    "created": {"type": "string", "format": "date"},
+    "repository_base_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "title": {"type": "string", "minLength": 1},
+    "model_identity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "theory", "sector", "field_equations", "matter_coupling", "approximation", "benchmark", "comparison_id"],
+      "properties": {
+        "id": {"const": "MANNHEIM_OBRIEN_NGC3198_THIN_DISK"},
+        "theory": {"type": "string", "minLength": 1},
+        "sector": {"type": "string", "minLength": 1},
+        "field_equations": {"type": "string", "minLength": 1},
+        "matter_coupling": {"type": "string", "minLength": 1},
+        "approximation": {"type": "string", "minLength": 1},
+        "benchmark": {"const": "GALACTIC_DYNAMICS"},
+        "comparison_id": {"const": "MANNHEIM_OBRIEN_2012_NGC3198_AND_SPARC_2016"}
+      }
+    },
+    "applicability_mask": {
+      "type": "array", "minItems": 16, "maxItems": 16,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["obligation", "status", "reason"],
+        "properties": {
+          "obligation": {"type": "string", "pattern": "^[A-Z0-9_]+$"},
+          "status": {"enum": ["IN_SCOPE_REQUIRED", "TOUCHED_NOT_REQUIRED", "OUT_OF_SCOPE"]},
+          "reason": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "applicability_summary": {
+      "const": {"total_atlas_obligations": 16, "required": 3, "required_satisfied": 3, "touched_not_required": 1, "out_of_scope": 12}
+    },
+    "stages": {
+      "type": "array", "minItems": 7, "maxItems": 7,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["id", "label", "status", "establishes"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^[A-Z0-9_]+$"},
+          "label": {"type": "string", "minLength": 1},
+          "status": {"enum": ["DECLARED_MODEL_INPUT", "CERTIFIED_LOCAL_PREDECESSOR", "PUBLISHED_MODEL_TRANSCRIPTION", "CONTENT_PINNED_TRANSCRIPTION", "COARSE_NUMERICAL_REPRODUCTION", "MIXED_RANDOM_ERROR_GATE_FAILED"]},
+          "establishes": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "interfaces": {
+      "type": "array", "minItems": 6, "maxItems": 6,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["id", "from", "to", "relation", "status", "basis"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^[A-Z0-9_]+$"},
+          "from": {"type": "string", "pattern": "^[A-Z0-9_]+$"},
+          "to": {"type": "string", "pattern": "^[A-Z0-9_]+$"},
+          "relation": {"enum": ["DECLARED_THEORY_TO_CERTIFIED_SECTOR", "EXACT_TO_LEADING_WEAK_FIELD", "PUBLISHED_THIN_DISK_INTEGRATION", "PUBLISHED_FIT_PARAMETER_INSTANTIATION", "INDEPENDENT_NUMERICAL_EVALUATION", "NONIDENTICAL_DATASET_COMPARISON"]},
+          "status": {"enum": ["CERTIFIED_WITH_SCOPE", "REGISTERED", "CERTIFIED_NUMERIC", "REGISTERED_WITH_WARNING"]},
+          "basis": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "published_parameter_rail": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source", "constants_cgs", "ngc3198_row", "modelling_assumptions", "parameter_fit_scope"],
+      "properties": {
+        "source": {"type": "object"},
+        "constants_cgs": {"type": "object"},
+        "ngc3198_row": {"type": "object"},
+        "modelling_assumptions": {"type": "object"},
+        "parameter_fit_scope": {"type": "string", "minLength": 1}
+      }
+    },
+    "numerical_reproduction_rail": {
+      "type": "object",
+      "required": ["arithmetic", "producer_method", "independent_method", "published_last_radius_kpc", "published_observed_endpoint_acceleration_per_cm", "observed_endpoint_velocity_reconstructed_km_s", "predicted_endpoint", "producer_refinement_absolute_velocity_difference_km_s", "endpoint_residual_km_s", "endpoint_relative_velocity_residual", "declared_relative_gate", "gate_passed", "status", "boundary"],
+      "properties": {
+        "arithmetic": {"const": "BINARY64_NUMERIC_DISTINCT_FROM_EXACT_LOCAL_PREDECESSORS"},
+        "gate_passed": {"const": true},
+        "status": {"const": "COARSE_ENDPOINT_REPRODUCED"},
+        "endpoint_relative_velocity_residual": {"type": "number", "minimum": 0, "exclusiveMaximum": 0.05},
+        "producer_refinement_absolute_velocity_difference_km_s": {"type": "number", "minimum": 0, "maximum": 1e-9}
+      }
+    },
+    "empirical_comparison_rail": {
+      "type": "object",
+      "required": ["type", "protocol", "source", "points_total_source", "points_inside_published_radius", "points", "unweighted_rms_residual_km_s", "maximum_absolute_residual_km_s", "chi_squared_random_errors_only", "reduced_chi_squared_no_refit", "coarse_rms_gate_passed", "random_error_reduced_chi2_gate_passed", "comparison_status", "data_lifecycle", "boundary"],
+      "properties": {
+        "type": {"const": "NO_REFIT_NONIDENTICAL_SPARC_CROSS_DATASET_CHECK"},
+        "points_total_source": {"const": 43},
+        "points_inside_published_radius": {"const": 39},
+        "points": {"type": "array", "minItems": 39, "maxItems": 39},
+        "coarse_rms_gate_passed": {"const": true},
+        "random_error_reduced_chi2_gate_passed": {"const": false},
+        "comparison_status": {"const": "MIXED_COARSE_SHAPE_PASS_RANDOM_ERROR_GATE_FAILED"},
+        "data_lifecycle": {"const": "CONTENT_PINNED_EXTRACT_DIFFERENT_PHOTOMETRIC_REDUCTION"}
+      }
+    },
+    "maturity_rails": {"type": "array", "minItems": 8, "maxItems": 8},
+    "assembly_disposition": {
+      "const": {
+        "status": "BOUNDED_ASSEMBLY_PARTIAL_MIXED_COMPARISON",
+        "complete_within_declared_scope": false,
+        "formula_endpoint_coarsely_reproduced": true,
+        "cross_dataset_coarse_shape_gate_passed": true,
+        "cross_dataset_random_error_gate_passed": false,
+        "empirically_supported_within_declared_scope": false,
+        "complete_theory": false
+      }
+    },
+    "provenance": {"type": "object", "required": ["inputs", "remote_source_pins"]},
+    "independent_checker": {"type": "object", "required": ["path", "numeric_source", "method"]},
+    "claim_flags": {
+      "type": "object",
+      "required": ["single_model_identity_declared", "applicability_mask_complete", "exact_local_predecessors_imported_by_hash", "published_parameters_content_pinned", "independent_numeric_bessel_rail", "published_endpoint_coarsely_reproduced", "sparc_cross_dataset_coarse_shape_gate_passed", "sparc_cross_dataset_random_error_gate_passed", "original_full_curve_digitized", "original_fit_likelihood_reproduced", "mass_to_light_ratio_refit", "matter_coupling_dispute_resolved", "galaxy_population_claim_assessed", "empirical_support_established", "bounded_prediction_assembly_complete", "complete_conformal_gravity_theory_established", "quantum_lifecycle_promoted"]
+    },
+    "does_not_establish": {"type": "array", "minItems": 9, "items": {"type": "string", "minLength": 1}},
+    "human_report": {"const": "foundations/reports/mannheim-ngc3198-model-assembly-v1.md"},
+    "canonical_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

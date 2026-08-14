@@ -325,7 +325,7 @@ observation. Worked GR and constructive-causality examples, a short glossary,
 and a collapsed reviewer section keep the conceptual story separate from the
 evidence-code mechanics.
 
-The view now leads with the first model-scoped vertical slice:
+The view now leads with two model-scoped vertical slices. The first is
 [`FOUNDATIONAL_GR_CASSINI_MODEL_ASSEMBLY_V1`](reports/gr-cassini-model-assembly-v1.md).
 It keeps one standard-GR solar-vacuum model identity from the Einstein field
 equations through the Schwarzschild solution, exact isotropic translation,
@@ -342,6 +342,24 @@ python3 foundations/build_gr_cassini_assembly.py --check
 python3 foundations/check_gr_cassini_assembly.py
 python3 foundations/verify_gr_cassini_assembly.py
 python3 -m unittest foundations.tests.test_gr_cassini_assembly
+```
+
+The second,
+[`FOUNDATIONAL_MANNHEIM_NGC3198_MODEL_ASSEMBLY_V1`](reports/mannheim-ngc3198-model-assembly-v1.md),
+keeps one Mannheim--Kazanas NGC 3198 thin-disk model fixed from the Weyl action
+through local static/orbit certificates, the published disk equations and
+parameter row, an independently evaluated endpoint, and a no-refit comparison
+with a later SPARC curve. The endpoint and unweighted RMS pass declared coarse
+audit gates, but the reduced-chi-squared gate based on SPARC random errors
+fails. The assembly therefore remains partial and does not claim empirical
+support. SPARC is explicitly recorded as a non-identical later data reduction,
+and the massive-tracer matter-coupling dispute remains open:
+
+```bash
+python3 foundations/build_mannheim_ngc3198_assembly.py --check
+python3 foundations/check_mannheim_ngc3198_assembly.py
+python3 foundations/verify_mannheim_ngc3198_assembly.py
+python3 -m unittest foundations.tests.test_mannheim_ngc3198_assembly
 ```
 
 A separately labelled external standard-GR positive control supplies four

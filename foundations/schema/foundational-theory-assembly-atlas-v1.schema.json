@@ -50,20 +50,20 @@
       }
     },
     "model_scoped_assemblies": {
-      "type": "array", "minItems": 1, "maxItems": 1,
+      "type": "array", "minItems": 2, "maxItems": 2,
       "items": {
         "type": "object",
         "required": ["result_id", "model_identity", "applicability_mask", "stages", "interfaces", "maturity_rails", "assembly_disposition", "canonical_digest"],
-        "properties": {"result_id": {"const": "FOUNDATIONAL_GR_CASSINI_MODEL_ASSEMBLY_V1"}}
+        "properties": {"result_id": {"enum": ["FOUNDATIONAL_GR_CASSINI_MODEL_ASSEMBLY_V1", "FOUNDATIONAL_MANNHEIM_NGC3198_MODEL_ASSEMBLY_V1"]}}
       }
     },
     "model_scoped_sources": {
-      "type": "array", "minItems": 1, "maxItems": 1,
+      "type": "array", "minItems": 2, "maxItems": 2,
       "items": {
         "type": "object",
         "required": ["path", "sha256"],
         "properties": {
-          "path": {"const": "foundations/results/FOUNDATIONAL_GR_CASSINI_MODEL_ASSEMBLY_V1.json"},
+          "path": {"enum": ["foundations/results/FOUNDATIONAL_GR_CASSINI_MODEL_ASSEMBLY_V1.json", "foundations/results/FOUNDATIONAL_MANNHEIM_NGC3198_MODEL_ASSEMBLY_V1.json"]},
           "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
         }
       }
@@ -96,7 +96,7 @@
     },
     "claim_flags": {
       "type": "object",
-      "required": ["prototype_assemblies_generated", "research_camp_lenses_declared", "selected_cells_content_addressed", "interface_and_coverage_states_separated", "at_least_one_cross_cell_interface_certified", "scoped_carrier_interface_registered", "numerical_reproducibility_rail_declared", "empirical_record_schema_declared", "external_positive_control_registered", "missing_and_failed_states_separated", "model_scoped_prediction_assembly_registered", "bounded_prediction_chain_established", "bounded_empirical_agreement_assessed", "cross_cell_composability_established", "prediction_chain_established", "empirical_agreement_assessed", "complete_observationally_valid_theory_identified"]
+      "required": ["prototype_assemblies_generated", "research_camp_lenses_declared", "selected_cells_content_addressed", "interface_and_coverage_states_separated", "at_least_one_cross_cell_interface_certified", "scoped_carrier_interface_registered", "numerical_reproducibility_rail_declared", "empirical_record_schema_declared", "external_positive_control_registered", "missing_and_failed_states_separated", "model_scoped_prediction_assembly_registered", "second_model_scoped_mannheim_assembly_registered", "mixed_empirical_result_preserved", "bounded_prediction_chain_established", "bounded_empirical_agreement_assessed", "cross_cell_composability_established", "prediction_chain_established", "empirical_agreement_assessed", "complete_observationally_valid_theory_identified"]
     },
     "does_not_establish": {"type": "array", "minItems": 7, "items": {"type": "string", "minLength": 1}},
     "source_atlas_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},

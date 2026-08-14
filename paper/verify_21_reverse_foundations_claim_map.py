@@ -84,8 +84,10 @@ def main() -> int:
     cube = json.loads((ROOT / data["authorities"]["intersection_cube"]["path"]).read_text())
     site = json.loads((ROOT / data["authorities"]["explorer_snapshot"]["path"]).read_text())
     gr_cassini = json.loads((ROOT / data["authorities"]["gr_cassini_assembly"]["path"]).read_text())
+    mannheim_ngc3198 = json.loads((ROOT / data["authorities"]["mannheim_ngc3198_assembly"]["path"]).read_text())
     bt_euclidean = json.loads((ROOT / data["authorities"]["bt_euclidean_import"]["path"]).read_text())
     bt_free_obstruction = json.loads((ROOT / data["authorities"]["bt_free_reconstruction_obstruction"]["path"]).read_text())
+    bt_interacting_os = json.loads((ROOT / data["authorities"]["bt_interacting_os_preflight"]["path"]).read_text())
     dims = cube["dimensions"]
     atlas = data["atlas_snapshot"]
     require(atlas["axis_sizes"] == [6, 6, 16], "unexpected axis sizes")
@@ -115,6 +117,11 @@ def main() -> int:
     require(atlas["bt_free_h_minus_one_bound"] == {"numerator": 15, "denominator": 32}, "BT H^-1 bound drift")
     require(atlas["bt_free_l2_status"] == "OBSTRUCTED", "BT L2 obstruction drift")
     require(bt_free_obstruction["disposition"]["continuum_limit"] == "NOT_ESTABLISHED", "BT free estimate promoted to continuum")
+    require(atlas["bt_interacting_os_numerical_status"] == "TWO_SAMPLER_NEGATIVE_SIGN_SUPPORT_NOT_EXACT", "BT interacting numerical status drift")
+    require(abs(atlas["bt_interacting_os_local_z"] + 2.5326776073871837) < 1e-12, "BT local sign score drift")
+    require(abs(atlas["bt_interacting_os_hmc_z"] + 6.254432004803571) < 1e-12, "BT HMC sign score drift")
+    require(abs(atlas["bt_interacting_os_cross_sampler_z"] + 0.6439112862910602) < 1e-12, "BT cross-sampler score drift")
+    require(bt_interacting_os["disposition"]["ordinary_os_reflection_positivity_at_lambda_0p4"] == "OPEN", "BT numerical preflight promoted to exact OS obstruction")
 
     allowed_tags = {"LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE", "LORENTZIAN-CAUSAL"}
     claim_ids = set()
@@ -136,6 +143,8 @@ def main() -> int:
         (9, "GR-CASSINI-ASSEMBLY"),
         (10, "BT-EUCLIDEAN-LATTICE"),
         (11, "BT-FREE-RECONSTRUCTION-OBSTRUCTION"),
+        (12, "BT-INTERACTING-OS-PREFLIGHT"),
+        (13, "MANNHEIM-NGC3198-ASSEMBLY"),
     ]}, "claim set drift")
 
     flags = data["claim_flags"]
@@ -145,11 +154,13 @@ def main() -> int:
     require(flags["evidence_usage_crosswalk_generated"] is True, "evidence crosswalk flag is not certified")
     require(flags["model_scoped_end_to_end_assembly_generated"] is True, "model-scoped assembly flag is not certified")
     require(flags["bounded_empirical_comparison_registered"] is True, "bounded empirical comparison flag is not certified")
+    require(flags["mannheim_ngc3198_mixed_assembly_registered"] is True, "Mannheim mixed assembly flag is not certified")
     require(flags["bt_euclidean_finite_capabilities_imported"] is True, "BT finite import flag is not certified")
     require(flags["bt_euclidean_coarse_reproduction_separated"] is True, "BT numerical separation flag is not certified")
     require(flags["bt_free_os_obstruction_certified"] is True, "BT OS obstruction flag is not certified")
     require(flags["bt_free_h_minus_one_estimate_certified"] is True, "BT free uniform estimate flag is not certified")
     require(flags["bt_lambda_0p4_os_status_decided"] is False, "BT lambda=0.4 OS status promoted")
+    require(flags["bt_lambda_0p4_two_sampler_sign_support"] is True, "BT interacting sign-support flag missing")
     require(flags["research_programme_lenses_explained"] is True, "research-programme exposition flag is not certified")
     for false_flag in [
         "weakest_foundation_proved",
@@ -184,8 +195,9 @@ def main() -> int:
     require(atlas["strength_ladder_levels"] == len(atlas_data["ladder"]) == 6, "appendix ladder-level mismatch")
     require(atlas["prototype_assemblies"] == len(assembly_data["assemblies"]) == 9, "appendix assembly-count mismatch")
     require(atlas["research_programme_lenses"] == 9, "research-programme lens metadata mismatch")
-    require(atlas["model_scoped_assemblies"] == len(assembly_data["model_scoped_assemblies"]) == 1, "model-scoped assembly-count mismatch")
-    model = assembly_data["model_scoped_assemblies"][0]
+    require(atlas["model_scoped_assemblies"] == len(assembly_data["model_scoped_assemblies"]) == 2, "model-scoped assembly-count mismatch")
+    model = next(item for item in assembly_data["model_scoped_assemblies"] if item["result_id"] == gr_cassini["result_id"])
+    mannheim_model = next(item for item in assembly_data["model_scoped_assemblies"] if item["result_id"] == mannheim_ngc3198["result_id"])
     require(model["result_id"] == gr_cassini["result_id"], "GR/Cassini model assembly identity drift")
     require(model["canonical_digest"] == gr_cassini["canonical_digest"], "GR/Cassini embedded assembly digest drift")
     require(atlas["gr_cassini_stages"] == len(gr_cassini["stages"]) == 6, "GR/Cassini stage-count mismatch")
@@ -196,6 +208,15 @@ def main() -> int:
     require(atlas["gr_cassini_prediction_inside_reported_band"] is gr_cassini["empirical_comparison_rail"]["prediction_inside_reported_band"] is True, "GR/Cassini comparison is not supported in the reported band")
     require(gr_cassini["assembly_disposition"]["complete_theory"] is False, "bounded GR assembly promoted to complete theory")
     require(gr_cassini["claim_flags"]["raw_cassini_data_reanalysed"] is False, "Cassini literature comparison promoted to raw-data reanalysis")
+    require(mannheim_model["canonical_digest"] == mannheim_ngc3198["canonical_digest"], "Mannheim embedded assembly digest drift")
+    require(atlas["mannheim_ngc3198_stages"] == len(mannheim_ngc3198["stages"]) == 7, "Mannheim stage-count mismatch")
+    require(atlas["mannheim_ngc3198_interfaces"] == len(mannheim_ngc3198["interfaces"]) == 6, "Mannheim interface-count mismatch")
+    require(atlas["mannheim_ngc3198_endpoint_coarse_gate_passed"] is True, "Mannheim endpoint coarse gate not reproduced")
+    require(atlas["mannheim_ngc3198_sparc_coarse_gate_passed"] is True, "Mannheim SPARC coarse RMS gate did not pass")
+    require(atlas["mannheim_ngc3198_sparc_random_error_gate_passed"] is False, "Mannheim random-error gate incorrectly promoted")
+    require(atlas["mannheim_ngc3198_empirically_supported"] is False, "Mannheim assembly incorrectly promoted to empirical support")
+    require(abs(atlas["mannheim_ngc3198_sparc_rms_km_s"] - 4.5382719695501885) < 1e-12, "Mannheim SPARC RMS drift")
+    require(abs(atlas["mannheim_ngc3198_sparc_reduced_chi2"] - 5.592211904260559) < 1e-12, "Mannheim SPARC chi-squared drift")
     standard = next(item for item in assembly_data["assemblies"] if item["id"] == "STANDARD_MIXED_REFERENCE")
     require(atlas["standard_reference_direct_obligations"] == standard["coverage"]["direct"] == 16, "classical reference coverage mismatch")
     control = assembly_data["calibration_controls"][0]
@@ -217,6 +238,13 @@ def main() -> int:
     for stage in gr_cassini["stages"]:
         require(tex(stage["label"]) in appendix, f"GR/Cassini stage missing: {stage['id']}")
         require(scientific_tex(stage["establishes"]) in appendix, f"GR/Cassini stage boundary missing: {stage['id']}")
+    require("Second bounded assembly: mixed result" in appendix, "Mannheim mixed appendix section missing")
+    require("The seven typed stages of the Mannheim conformal-gravity NGC 3198 assembly" in appendix, "Mannheim stage table missing")
+    require("No parameter is refitted" in appendix, "Mannheim no-refit boundary missing")
+    require(r"reduced $\chi^2$" in appendix, "Mannheim failed random-error metric missing")
+    for stage in mannheim_ngc3198["stages"]:
+        require(tex(stage["label"]) in appendix, f"Mannheim stage missing: {stage['id']}")
+        require(scientific_tex(stage["establishes"]) in appendix, f"Mannheim stage boundary missing: {stage['id']}")
     for record in control["records"]:
         require(tex(record["citation"]) in appendix, f"calibration citation missing: {record['id']}")
         require(tex(record["boundary"]) in appendix, f"calibration boundary missing: {record['id']}")
