@@ -1,0 +1,220 @@
+{
+  "answer": "Let V_eta(t)=S_lambda(eta+t*h), kappa_L=(2/9)*N*omega_L^2, m(eta) be its unique mode, and nu be the exact background marginal. Strong convexity proves m(eta)^2<=V_eta'(0)^2/kappa_L^2 and places the conditional mean within squared distance 1/kappa_L of m. Therefore E_nu[V_eta'(0)^2]<=C_s*N*omega_L^2 would imply E[t^2]<=(27+81*C_s)/(2*N*omega_L^2). Curvature, half-period symmetry, and an extensive action/virial bound do not imply this score estimate by themselves: an exact shifted-Gaussian family has all three and arbitrarily large center variance. Deterministic finite-volume Metropolis diagnostics at L=4 and L=6 show N*omega_L^2*E[m^2] approximately 0.036 and 0.040 and E[V_eta'(0)^2]/(N*omega_L^2) approximately 0.010 and 0.012. These observations support, but do not prove, the required uniform score bound.",
+  "certificate": "REVERSE_PHYSICS_BT_EUCLIDEAN_ANNEALED_CENTER_SCORE_REDUCTION_V1",
+  "checks": {
+    "all_numeric_root_residuals_are_below_one_e_minus_eight": true,
+    "all_sampled_center_score_inequalities_pass": true,
+    "annealed_score_theorem_remains_open": true,
+    "both_observed_center_fractions_are_below_one_twentieth": true,
+    "both_observed_scaled_centers_are_below_one_tenth": true,
+    "both_observed_scaled_scores_are_below_one_fiftieth": true,
+    "center_score_constant_is_inverse_kappa_squared": true,
+    "conditional_mode_mean_square_constant_is_inverse_kappa": true,
+    "conditional_variance_constant_is_inverse_kappa": true,
+    "curvature_coefficient_is_two_ninths": true,
+    "gaussian_counterexample_center_variance_is_twenty_five": true,
+    "gaussian_counterexample_hessian_is_positive": true,
+    "gaussian_counterexample_score_variance_is_one_hundred": true,
+    "gaussian_counterexample_total_variance_is_fifty_one_halves": true,
+    "integrated_moment_constant_is_27_plus_81C_over_two": true,
+    "no_continuum_born_krein_or_lorentzian_promotion": true,
+    "sufficient_score_to_mode_constant_is_four_over_eighty_one": true
+  },
+  "created": "2026-08-14",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "does_not_establish": [
+    "a volume-uniform annealed center or zero-fiber-score estimate",
+    "the normalized interacting lowest-mode or H^-1 second moment",
+    "tightness or a continuum Euclidean measure",
+    "a Born rule, Krein reconstruction, gravitational lift, or anything LORENTZIAN-CAUSAL"
+  ],
+  "exact_center_reduction": {
+    "background_marginal": "dnu(eta)=Z_eta*deta/Z, Z_eta=integral_R exp[-V_eta(t)]dt",
+    "conditional_mode_mean_identity": "E_q[(T-m)*V_eta'(T)]=1",
+    "conditional_variance_bound": "Var_q(T)<=1/kappa_L",
+    "curvature": "V_eta''(t)>=kappa_L=(2/9)*N*omega_L^2",
+    "curvature_coefficient": {
+      "denominator": 9,
+      "numerator": 2
+    },
+    "fiber": "V_eta(t)=S_lambda(eta+t*h), eta orthogonal to h",
+    "integrated_consequence": "E_mu[T^2]<=(27+81*C_s)/(2*N*omega_L^2), using the exact even marginal",
+    "mode": "m(eta) is the unique solution V_eta'(m)=0",
+    "mode_mean_square_bound": "E_q[(T-m)^2]<=1/kappa_L and |E_q[T]-m|^2<=1/kappa_L",
+    "status": "PROVED_REDUCTION_ONLY",
+    "sufficient_score_normalization_coefficient": {
+      "denominator": 81,
+      "numerator": 4
+    },
+    "sufficient_score_theorem": "E_nu[V_eta'(0)^2]<=C_s*N*omega_L^2",
+    "zero_fiber_score_bound": "m(eta)^2<=V_eta'(0)^2/kappa_L^2"
+  },
+  "finite_volume_diagnostic": {
+    "evidence_type": "NUMERICAL_FINITE_VOLUME_OBSERVED",
+    "interpretation": "At both sampled volumes the mode-center term is below two percent of the raw t second moment and the two dimensionless score/center scalings are similar. Autocorrelation, two-volume reach, one sampler, and binary64 root finding prevent a uniform theorem or precision scaling claim.",
+    "observation_path": "reverse_physics/data/bt_euclidean_center_score_observations_v1.json",
+    "observation_sha256": "a314e50188b8ddd76b25808c43d1d843fb2d6c15df97d9fd109027e2f765d841",
+    "summaries": [
+      {
+        "acceptance_rate": 0.7070247395833333,
+        "certified_conditional_variance_upper_bound": 0.004394531250000002,
+        "free_real_mode_variance": 0.001953125000000001,
+        "length": 4,
+        "maximum_absolute_mode_center": 0.021562365604906757,
+        "maximum_absolute_mode_score_residual": 9.37582540353975e-10,
+        "maximum_center_score_inequality_residual": 0.0,
+        "mean_action_density": 0.49902290655338255,
+        "mean_mode_center2": 3.5016303667533974e-05,
+        "mean_recentered_about_mode2": 0.0030257480398380625,
+        "mean_t2": 0.0031276211559709234,
+        "mean_zero_fiber_score2": 10.306149839238245,
+        "mode_center_fraction_jackknife_error": 0.0040491552577133156,
+        "mode_center_fraction_of_raw_t2": 0.011195826451258188,
+        "omega": 1.9999999999999996,
+        "sample_count": 400,
+        "scaled_mode_center2_N_omega2": 0.035856694955554776,
+        "scaled_mode_center2_jackknife_error": 0.004383111423100916,
+        "scaled_zero_fiber_score2_jackknife_error": 0.0012676922255075713,
+        "scaled_zero_fiber_score2_over_N_omega2": 0.010064599452381104,
+        "volume": 256
+      },
+      {
+        "acceptance_rate": 0.7076932367149759,
+        "certified_conditional_variance_upper_bound": 0.0034722222222222233,
+        "free_real_mode_variance": 0.0015432098765432104,
+        "length": 6,
+        "maximum_absolute_mode_center": 0.015021323881569858,
+        "maximum_absolute_mode_score_residual": 7.14386508282594e-10,
+        "maximum_center_score_inequality_residual": 0.0,
+        "mean_action_density": 0.4959593689987134,
+        "mean_mode_center2": 3.084241205052174e-05,
+        "mean_recentered_about_mode2": 0.001634471875736675,
+        "mean_t2": 0.0015697050616110208,
+        "mean_zero_fiber_score2": 15.752643301478095,
+        "mode_center_fraction_jackknife_error": 0.005280323694158013,
+        "mode_center_fraction_of_raw_t2": 0.01964853959180557,
+        "omega": 0.9999999999999998,
+        "sample_count": 200,
+        "scaled_mode_center2_N_omega2": 0.039971766017476165,
+        "scaled_mode_center2_jackknife_error": 0.0039039894679578817,
+        "scaled_zero_fiber_score2_jackknife_error": 0.0011989576254647116,
+        "scaled_zero_fiber_score2_over_N_omega2": 0.012154817362251621,
+        "volume": 1296
+      }
+    ]
+  },
+  "lifecycle_state": "EXACT_REDUCTION_PROVED_WITH_FINITE_VOLUME_DIAGNOSTIC",
+  "logical_input_obstruction": {
+    "disposition": "All-background fiber curvature, inversion symmetry, and an extensive affine-virial/action expectation do not logically imply annealed center control. This abstract family does not reproduce every BT locality or quartic-coercivity property and is not an obstruction to a model-specific BT theorem.",
+    "exact_fixture": {
+      "R": {
+        "denominator": 1,
+        "numerator": 5
+      },
+      "center_variance": {
+        "denominator": 1,
+        "numerator": 25
+      },
+      "conditional_variance": {
+        "denominator": 2,
+        "numerator": 1
+      },
+      "hessian_determinant": {
+        "denominator": 25,
+        "numerator": 2
+      },
+      "kappa": {
+        "denominator": 1,
+        "numerator": 2
+      },
+      "mean_action": {
+        "denominator": 1,
+        "numerator": 1
+      },
+      "potential": "V(t,y)=(t-y)^2+y^2/50",
+      "radial_virial_expectation": {
+        "denominator": 1,
+        "numerator": 2
+      },
+      "total_t_variance": {
+        "denominator": 2,
+        "numerator": 51
+      },
+      "zero_fiber_score_variance": {
+        "denominator": 1,
+        "numerator": 100
+      }
+    },
+    "extensive_dimension_extension": "Adjoining independent centered unit Gaussian spectator coordinates preserves the shifted t-y block, gives pointwise radial virial equality for the full homogeneous quadratic potential, and makes the mean action proportional to dimension while Var(m)=R^2 remains arbitrary.",
+    "family": "V_R(t,y)=(kappa/2)*(t-y)^2+y^2/(2*R^2), R>0",
+    "properties": [
+      "V_R is a positive-definite homogeneous quadratic potential",
+      "V_R(-t,-y)=V_R(t,y)",
+      "the t-fiber curvature is exactly kappa",
+      "the conditional center is m(y)=y",
+      "x dot grad V_R=2*V_R pointwise and E[V_R]=1",
+      "Var(m)=R^2 is unbounded as R tends to infinity"
+    ]
+  },
+  "method_disposition": {
+    "actual_interacting_h_minus_one_second_moment": "OPEN",
+    "annealed_center_to_zero_fiber_score_reduction": "PROVED",
+    "annealed_zero_fiber_score_bound": "OPEN",
+    "born_rule": "NOT_ESTABLISHED",
+    "continuum_limit": "NOT_ESTABLISHED",
+    "curvature_symmetry_virial_alone_suffice": "OBSTRUCTED_AS_A_LOGICAL_INFERENCE",
+    "finite_volume_center_scaling": "OBSERVED_L4_L6_NOT_CERTIFIED_UNIFORM",
+    "krein_reconstruction": "NOT_ASSESSED",
+    "lorentzian_transfer": "NOT_ESTABLISHED",
+    "mode_mean_center_equivalence_up_to_width": "PROVED",
+    "normalized_lowest_mode_second_moment": "OPEN"
+  },
+  "missing_object_ledger": [
+    "a nonperturbative background-marginal estimate E_nu[V_eta'(0)^2]<=C_s*N*omega_L^2",
+    "a proof mechanism using BT locality, shift-derivative momentum cancellation, or a controlled multiscale decomposition",
+    "after the score bound, a Fourier-shell extension beyond one axial lowest mode"
+  ],
+  "next_gate": "Derive the zero-fiber score as a low-momentum projection of local nonlinear residual composites and prove its background-marginal second moment has the extra omega_L factor suggested by shift symmetry and the two-volume diagnostic; alternatively construct a BT volume sequence violating that scaling.",
+  "perturbative_interface": {
+    "claim_boundary": "PERTURBATIVE_SOURCE_ONLY_NOT_USED_AS_NONPERTURBATIVE_EVIDENCE",
+    "source": "Anderson--Bateman--Herzog--Turok, arXiv:2608.12210v1",
+    "source_disposition": "The source proves all-orders Euclidean off-shell perturbative IR finiteness from derivative-vertex momentum factors and states the perfect-square renormalization Ward identity. This supports the expected low-score cancellation mechanism but does not supply a nonperturbative finite-volume background-marginal score bound.",
+    "source_record": "reverse_physics/data/anderson_bateman_herzog_turok_divergences_source_v1.json"
+  },
+  "provenance": {
+    "exact_arithmetic": "Python Fraction arithmetic for all reduction and shifted-Gaussian constants",
+    "inputs": [
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_ALL_BACKGROUND_LOWEST_MODE_CURVATURE_V1.json",
+        "sha256": "49e2d144667818f57e4d994a7e41534e6ded204b52eaa6f35b8923f30907e6d0"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_AFFINE_VIRIAL_ACTION_DENSITY_V1.json",
+        "sha256": "5ca8a2a7bc0d48300b0af031990e3c9c177fdec0d35f763666d2e397b495e1e0"
+      },
+      {
+        "path": "reverse_physics/data/anderson_bateman_herzog_turok_divergences_source_v1.json",
+        "sha256": "dd157f5f83d5aec974c8c22c9854fdde4fc985841b30d341b90b207413d74ab3"
+      },
+      {
+        "path": "reverse_physics/data/bt_euclidean_center_score_observations_v1.json",
+        "sha256": "a314e50188b8ddd76b25808c43d1d843fb2d6c15df97d9fd109027e2f765d841"
+      }
+    ],
+    "numerical_arithmetic": "IEEE-754 binary64; Python random.Random deterministic seeds",
+    "repository_base_commit": "0aecdac4ed8ed7a6e3b76eac977cf4118cc40261"
+  },
+  "question": "What theorem is now exactly sufficient to convert the all-background conditional width into the normalized interacting lowest-mode second moment, and do the first two simulated volumes show center growth?",
+  "report": "reverse_physics/reports/bt-euclidean-annealed-center-score-reduction.md",
+  "result_kind": "exact annealed-center reduction, logical input obstruction, and finite-volume numerical diagnostic",
+  "schema": "reverse_physics/schema/reverse-physics-bt-euclidean-annealed-center-score-reduction-v1.schema.json",
+  "schema_version": "reverse-physics-bt-euclidean-annealed-center-score-reduction-v1",
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_euclidean_annealed_center_score_reduction.py --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_euclidean_annealed_center_score_reduction.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_euclidean_annealed_center_score_reduction"
+  ]
+}

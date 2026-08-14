@@ -188,6 +188,13 @@ bt_euclidean_lattice_step_scaling_experiment.py
 bt_euclidean_lattice_step_scaling_preflight.py
                                        coarse cross-sampler reproduction passes;
                                        precision continuum step remains unresolved
+bt_euclidean_annealed_center_score_reduction.py
+                                       exact center-to-score reduction, a logical
+                                       input no-go, and finite L=4,6 diagnostics
+bt_euclidean_cubic_score_log_obstruction.py
+                                       exact soft-leg cubic vertex and a rigorous
+                                       logarithmic obstruction to the fixed-bare-
+                                       coupling coefficientwise score route
 bt_four_point_bubble_log_jet.py        first virtual coefficient: arbitrary-mass
                                        bubble logarithm and four-leg interference jet
 bt_triangle_box_log_jet.py             complete triangle and box logarithmic jets;

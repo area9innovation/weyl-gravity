@@ -1331,6 +1331,74 @@ the integrated lowest-mode moment and the interacting $H^{-1}$ estimate still
 remain open, but their missing ledger has narrowed to the annealed center term
 followed by Fourier-shell summation.
 
+Certificate
+\cert{REVERSE_PHYSICS_BT_EUCLIDEAN_ANNEALED_CENTER_SCORE_REDUCTION_V1}
+makes that center term explicit.  If
+$V_\eta(t)=S_\lambda(\eta+th)$,
+$\kappa_L=(2/9)N\omega_L^2$, and $m(\eta)$ is the unique zero of
+$V_\eta'$, then strong monotonicity gives
+
+\[
+ m(\eta)^2\leq\frac{V_\eta'(0)^2}{\kappa_L^2}.
+\]
+
+Integration by parts also puts the conditional mean within squared distance
+$\kappa_L^{-1}$ of $m$.  Hence the single sufficient estimate
+
+\[
+ \mathbb E_\nu[V_\eta'(0)^2]\leq C_sN\omega_L^2
+\]
+
+would imply
+
+\[
+ \mathbb E_\mu[t^2]\leq
+ \frac{27+81C_s}{2N\omega_L^2}.
+\]
+
+An exact shifted-Gaussian family proves that curvature, inversion symmetry,
+and extensive virial/action control alone cannot imply this score estimate.
+Deterministic $L=4,6$ Metropolis diagnostics give the scaled center moments
+$0.0359,0.0400$ and scaled score moments $0.0101,0.0122$, but these are only
+finite-volume observations.
+
+The first perturbative test of the sufficient estimate produces a sharper
+method boundary.  Certificate
+\cert{REVERSE_PHYSICS_BT_EUCLIDEAN_CUBIC_SCORE_LOG_OBSTRUCTION_V1}
+derives the exact lattice cubic vertex
+
+\[
+ V_3(a,b,c)=a^2+b^2+c^2-2(ab+ac+bc)=-16\mathcal A^2,
+\]
+
+where $a,b,c$ are the three lattice dispersions and $\mathcal A$ is the
+Heron triangle area of their square roots.  Thus every leg carries the
+expected soft factor.  Nevertheless the free orthogonal-background
+coefficient $C_L$ in
+
+\[
+ \operatorname{Var}_0[V_\eta'(0)]
+ =\lambda^2N\omega_L^2C_L+O(\lambda^3)
+\]
+
+obeys the exact lower bound
+
+\[
+ C_L\geq\frac{J_L}{4665600},\qquad
+ J_L=\#\{j\geq0:16\,2^j\leq L\}.
+\]
+
+It is therefore logarithmically unbounded.  This obstructs a fixed-bare-
+coupling proof that bounds perturbative coefficients separately.  It does
+not prove divergence of the resummed Gibbs score or the actual moment:
+running coupling, field-strength renormalization, or a nonperturbative
+multiscale cancellation may still supply the missing estimate.  The live
+gate has accordingly moved from a bare score bound to an explicit scale
+setting, its finite-volume Ward/RG normalization, and then a nonperturbative
+annealed estimate.  At fixed physical torus size the logarithm is read along
+the ultraviolet refinement; at fixed lattice spacing it accompanies the
+soft lowest-momentum/large-volume limit.
+
 \subsection{A finite BV contraction does not freeze the quantum theory}
 
 The energy-two free BV block provides another finite exact case.  The
@@ -1677,9 +1745,22 @@ bound on the moving center in the flat log-field chart.  The first term is now
 proved: a plaquette absorption inequality controls the signed spatial
 remainder and gives conditional variance at most
 $9/(2N\omega_L^2)$ for every background and every $L\geq4$.  The live gate is
-only the Gibbs-weighted second moment of the unique conditional centers,
-followed by the normalized marginal and Fourier shells.  Another fixed-origin,
-pointwise, global-curvature, or coarea comparison cannot close that gate.
+the Gibbs-weighted second moment of the unique conditional centers, and it
+reduces exactly to a zero-fiber-score second moment.  The leading cubic score
+does retain a soft factor on every leg, but its free orthogonal-background
+coefficient has an exact logarithmic lower bound in the lattice-size limit.
+Therefore a
+fixed-bare-coupling, coefficient-by-coefficient estimate cannot close the
+gate.  The next viable route must first declare the physical scale setting,
+then derive the score's finite-volume Ward/RG identity, test its running
+normalization on the matched-volume asymptotically free trajectory or its
+soft-volume normalization at fixed spacing, and finally prove a genuinely
+nonperturbative multiscale estimate.
+The logarithmic coefficient is not evidence that the resummed interacting
+moment diverges.  Only after the normalized marginal closes should the
+programme sum Fourier shells.  Another fixed-origin, pointwise,
+global-curvature, bare perturbative, or coarea comparison cannot close that
+gate.
 
 \section{Limits of the present paper}
 \label{sec:limits}

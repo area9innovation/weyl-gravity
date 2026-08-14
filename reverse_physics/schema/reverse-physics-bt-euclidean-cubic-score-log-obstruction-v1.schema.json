@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-cubic-score-log-obstruction-v1.schema.json",
+  "type": "object",
+  "required": ["certificate", "schema_version", "created", "dependency_tags", "lifecycle_state", "result_kind", "question", "answer", "exact_cubic_expansion", "leading_score_coefficient", "rigorous_logarithmic_lower_bound", "numerical_preflight", "method_disposition", "checks", "does_not_establish", "missing_object_ledger", "next_gate", "provenance", "report", "schema", "verification_commands"],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_EUCLIDEAN_CUBIC_SCORE_LOG_OBSTRUCTION_V1"},
+    "schema_version": {"const": "reverse-physics-bt-euclidean-cubic-score-log-obstruction-v1"},
+    "created": {"const": "2026-08-14"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "lifecycle_state": {"const": "FIXED_ORDER_VOLUME_UNIFORM_SCORE_ROUTE_OBSTRUCTED"},
+    "result_kind": {"type": "string"},
+    "question": {"type": "string"},
+    "answer": {"type": "string"},
+    "exact_cubic_expansion": {"type": "object"},
+    "leading_score_coefficient": {"type": "object"},
+    "rigorous_logarithmic_lower_bound": {"type": "object"},
+    "numerical_preflight": {"type": "object"},
+    "method_disposition": {"type": "object"},
+    "checks": {"type": "object", "additionalProperties": {"const": true}},
+    "does_not_establish": {"type": "array", "items": {"type": "string"}},
+    "missing_object_ledger": {"type": "array", "items": {"type": "string"}},
+    "next_gate": {"type": "string"},
+    "provenance": {"type": "object"},
+    "report": {"const": "reverse_physics/reports/bt-euclidean-cubic-score-log-obstruction.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-euclidean-cubic-score-log-obstruction-v1.schema.json"},
+    "verification_commands": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": false
+}

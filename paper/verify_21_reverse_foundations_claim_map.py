@@ -107,6 +107,8 @@ def main() -> int:
     bt_runaway_width = json.loads((ROOT / data["authorities"]["bt_runaway_fiber_width_bound"]["path"]).read_text())
     bt_separable_curvature = json.loads((ROOT / data["authorities"]["bt_separable_lowest_mode_curvature"]["path"]).read_text())
     bt_all_background_curvature = json.loads((ROOT / data["authorities"]["bt_all_background_lowest_mode_curvature"]["path"]).read_text())
+    bt_center_score = json.loads((ROOT / data["authorities"]["bt_annealed_center_score_reduction"]["path"]).read_text())
+    bt_cubic_score = json.loads((ROOT / data["authorities"]["bt_cubic_score_log_obstruction"]["path"]).read_text())
     dims = cube["dimensions"]
     atlas = data["atlas_snapshot"]
     require(atlas["axis_sizes"] == [6, 6, 16], "unexpected axis sizes")
@@ -237,6 +239,14 @@ def main() -> int:
     require(atlas["bt_annealed_center_after_width_status"] == bt_all_background_curvature["method_disposition"]["annealed_center_second_moment"] == "OPEN", "BT annealed center promoted after width theorem")
     require(bt_all_background_curvature["method_disposition"]["normalized_lowest_mode_second_moment"] == "OPEN", "BT width theorem promoted to normalized marginal")
     require(bt_all_background_curvature["method_disposition"]["actual_interacting_h_minus_one_second_moment"] == "OPEN", "BT width theorem promoted to H^-1")
+    require(atlas["bt_center_to_score_reduction_status"] == bt_center_score["method_disposition"]["annealed_center_to_zero_fiber_score_reduction"] == "PROVED", "BT center-to-score reduction drift")
+    require(atlas["bt_center_score_bound_status"] == bt_center_score["method_disposition"]["annealed_zero_fiber_score_bound"] == "OPEN", "BT numerical center diagnostic promoted to a score theorem")
+    require(atlas["bt_center_score_integrated_moment_status"] == bt_center_score["method_disposition"]["normalized_lowest_mode_second_moment"] == "OPEN", "BT center reduction promoted to an integrated moment")
+    require(atlas["bt_cubic_soft_leg_status"] == bt_cubic_score["method_disposition"]["lattice_cubic_soft_leg_factor"] == "PROVED", "BT cubic soft-leg factor drift")
+    require(atlas["bt_cubic_fixed_order_uniform_score_status"] == bt_cubic_score["method_disposition"]["fixed_bare_coupling_coefficientwise_uniform_score_proof"] == "OBSTRUCTED_AS_FORMULATED", "BT fixed-order score obstruction drift")
+    require(atlas["bt_cubic_nonperturbative_score_status"] == bt_cubic_score["method_disposition"]["nonperturbative_annealed_zero_fiber_score_bound"] == "OPEN", "BT fixed-order obstruction promoted to nonperturbative failure")
+    require(atlas["bt_cubic_dyadic_block_lower_bound"] == {"numerator": 1, "denominator": 4665600}, "BT cubic dyadic lower-bound constant drift")
+    require(bt_cubic_score["method_disposition"]["actual_interacting_h_minus_one_second_moment"] == "OPEN", "BT cubic coefficient obstruction promoted to H^-1 failure")
 
     allowed_tags = {"LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE", "LORENTZIAN-CAUSAL"}
     claim_ids = set()
@@ -311,6 +321,9 @@ def main() -> int:
     require(flags["bt_all_background_lowest_mode_curvature_absorption_established"] is True, "BT plaquette absorption theorem omitted")
     require(flags["bt_all_background_recentered_conditional_variance_established"] is True, "BT all-background conditional variance theorem omitted")
     require(flags["bt_annealed_center_second_moment_established"] is False, "BT width theorem promoted to annealed center bound")
+    require(flags["bt_center_to_zero_fiber_score_reduction_established"] is True, "BT center-to-score reduction omitted")
+    require(flags["bt_fixed_bare_coefficientwise_score_route_obstructed"] is True, "BT fixed-order score obstruction omitted")
+    require(flags["bt_nonperturbative_annealed_score_established"] is False, "BT fixed-order obstruction promoted to a nonperturbative result")
     require(flags["bt_runaway_family_recentered_conditional_variance_established"] is True, "BT runaway-family recentered variance flag missing")
     require(flags["bt_runaway_family_conditional_mean_escape_established"] is True, "BT runaway-family conditional-mean escape flag missing")
     require(flags["bt_annealed_center_second_moment_established"] is False, "BT annealed center moment promoted")

@@ -1,0 +1,218 @@
+{
+  "answer": "No for that proof architecture. The exact cubic lattice vertex is V3(a,b,c)=a^2+b^2+c^2-2(ab+ac+bc)=-16*Area(sqrt(a),sqrt(b),sqrt(c))^2. It therefore has a soft factor on every leg. Nevertheless, for a lowest real cosine mode in four dimensions, the free orthogonal-background coefficient C_L of lambda^2*N*omega_L^2 in the zero-fiber-score variance obeys C_L>=J_L/4665600, where J_L is the number of powers M=1,2,4,... with 16M<=L. Hence C_L diverges at least logarithmically. A fixed-bare-coupling coefficientwise uniform score proof is obstructed. This does not prove divergence of the resummed interacting score or Gibbs moment; scale setting, running coupling, wave-function renormalization, or a nonperturbative cancellation can still change the conclusion.",
+  "certificate": "REVERSE_PHYSICS_BT_EUCLIDEAN_CUBIC_SCORE_LOG_OBSTRUCTION_V1",
+  "checks": {
+    "actual_annealed_score_bound_remains_open": true,
+    "actual_interacting_moment_remains_open": true,
+    "all_numerical_coefficients_are_positive": true,
+    "axial_dispersion_upper_constant_is_below_256": true,
+    "cubic_vertex_fixture_is_minus_sixteen": true,
+    "dyadic_block_count_diverges": true,
+    "dyadic_box_has_M_to_the_four_points": true,
+    "each_dyadic_block_lower_bound_is_one_over_4665600": true,
+    "no_continuum_born_krein_or_lorentzian_promotion": true,
+    "orthogonal_axis_fixture_is_minus_four_ab": true,
+    "orthogonal_background_removes_external_cosine_block": true,
+    "position_fourier_cubic_fixture_is_minus_1024": true,
+    "real_cosine_wick_prefactor_is_one_quarter": true,
+    "sampled_coefficients_increase": true,
+    "transverse_dispersion_lower_constant_is_256": true,
+    "transverse_dispersion_upper_constant_is_1080": true
+  },
+  "created": "2026-08-14",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "does_not_establish": [
+    "divergence of the full finite-coupling zero-fiber score or conditional centers",
+    "failure of the normalized interacting lowest-mode or H^-1 second moment",
+    "absence of a renormalized continuum limit",
+    "a Born rule, Krein reconstruction, gravitational lift, or anything LORENTZIAN-CAUSAL"
+  ],
+  "exact_cubic_expansion": {
+    "action": "S_lambda(phi)=(1/(2*lambda^2))*sum_x R_x(lambda*phi)^2, R_x(psi)=sum_(delta directed nearest neighbour)[exp(psi_(x+delta)-psi_x)-1]",
+    "bilinear_edge_symbol": "B(q,r)=omega_q+omega_r-omega_(q+r)",
+    "cubic_action": "S_lambda^(3)=lambda/(6*sqrt(N))*sum_(p+q+r=0) V3(p,q,r)*z_p*z_q*z_r",
+    "dispersion": "omega_k=4*sum_(j=1)^4 sin(k_j/2)^2",
+    "exact_fixture": {
+      "dispersions": [
+        {
+          "denominator": 1,
+          "numerator": 2
+        },
+        {
+          "denominator": 1,
+          "numerator": 2
+        },
+        {
+          "denominator": 1,
+          "numerator": 4
+        }
+      ],
+      "vertex": {
+        "denominator": 1,
+        "numerator": -16
+      }
+    },
+    "fourier_normalization": "phi_x=N^(-1/2)*sum_k z_k*exp(i*k*x), z_(-k)=conjugate(z_k)",
+    "heron_identity": "V3=-16*Area(sqrt(omega_p),sqrt(omega_q),sqrt(omega_r))^2<=0",
+    "position_fourier_l4_fixture": {
+      "field": "phi_x=cos(pi*x_1/2)+cos(pi*x_2/2)+cos(pi*(x_1+x_2)/2), replicated over two inert axes",
+      "fourier_amplitude_per_mode": {
+        "denominator": 1,
+        "numerator": 8
+      },
+      "fourier_vertex_cubic_coefficient": {
+        "denominator": 1,
+        "numerator": -1024
+      },
+      "nonzero_fourier_modes": 6,
+      "ordered_resonant_triples": 12,
+      "position_space_half_sum_Delta_phi_times_edge_square": {
+        "denominator": 1,
+        "numerator": -1024
+      }
+    },
+    "soft_leg_bound": "abs(V3)<=4*min(omega_p*omega_q,omega_p*omega_r,omega_q*omega_r)",
+    "status": "PROVED",
+    "vertex": "V3(p,q,r)=omega_p^2+omega_q^2+omega_r^2-2*(omega_p*omega_q+omega_p*omega_r+omega_q*omega_r)"
+  },
+  "leading_score_coefficient": {
+    "coefficient": "C_L=(1/(4*N*omega_p^2))*sum_(q != 0,-p) V3(p,q,-p-q)^2/(omega_q^2*omega_(p+q)^2)-delta_L",
+    "complex_quadratic_score": "Q_p=(1/(2*sqrt(N)))*sum_q V3(p,q,-p-q)*z_q*z_(-p-q)",
+    "external_mode": "p=(2*pi/L,0,0,0), h_x=cos(p*x_1), L>=4",
+    "free_background": "mean-zero Gaussian restricted to the hyperplane orthogonal to the real external cosine h",
+    "orthogonal_projection_correction": "delta_L removes the real external-cosine/internal-doubled-mode block: it is V3(p,p,-2p)^2/(4*N*omega_p^4*omega_(2p)^2) for L>4 and twice that at L=4, where 2p is self-conjugate",
+    "real_cosine_normalization": "Var_free_perp[V_eta'(0)]=lambda^2*N*omega_p^2*C_L+O(lambda^3)",
+    "status": "PROVED_AS_FORMAL_LEADING_COEFFICIENT",
+    "wick_identity": "E[Q_p*Q_(-p)]=(1/(2*N))*sum_q V3(p,q,-p-q)^2/(omega_q^2*omega_(p+q)^2)"
+  },
+  "lifecycle_state": "FIXED_ORDER_VOLUME_UNIFORM_SCORE_ROUTE_OBSTRUCTED",
+  "method_disposition": {
+    "actual_interacting_h_minus_one_second_moment": "OPEN",
+    "born_rule": "NOT_ESTABLISHED",
+    "continuum_limit": "NOT_ESTABLISHED",
+    "fixed_bare_coupling_coefficientwise_uniform_score_proof": "OBSTRUCTED_AS_FORMULATED",
+    "krein_reconstruction": "NOT_ASSESSED",
+    "lattice_cubic_soft_leg_factor": "PROVED",
+    "leading_free_gaussian_score_coefficient_uniform_in_L": "OBSTRUCTED",
+    "lorentzian_transfer": "NOT_ESTABLISHED",
+    "nonperturbative_annealed_zero_fiber_score_bound": "OPEN",
+    "normalized_lowest_mode_second_moment": "OPEN",
+    "renormalized_or_running_coupling_score_bound": "OPEN"
+  },
+  "missing_object_ledger": [
+    "the interaction between the logarithmic score coefficient and the BT running coupling or field-strength renormalization",
+    "a nonperturbative multiscale estimate or a controlled resummation for the background-marginal score",
+    "after the lowest-mode bound, a volume-uniform Fourier-shell estimate for the interacting H^-1 moment"
+  ],
+  "next_gate": "Declare the physical scale-setting branch, then renormalize the score target rather than estimate its bare perturbative coefficients separately: derive the finite-volume Ward/RG identity for the zero-fiber score, determine whether lambda_L^2*C_L stays bounded on the matched-volume asymptotically free trajectory (or obtain the corresponding soft-volume control at fixed spacing), and then seek a nonperturbative multiscale inequality with that normalization.",
+  "numerical_preflight": {
+    "evidence_type": "BINARY64_DIRECT_FINITE_SUM_SUPPORTING_ONLY",
+    "interpretation": "The direct finite sums grow slowly and C_L/log(L) is nearly stable over the sampled range. The exact dyadic-box theorem, not this table, certifies unboundedness.",
+    "table": [
+      {
+        "coefficient_C_L": 0.0637706938244047,
+        "coefficient_over_log_L": 0.046000831867258556,
+        "length": 4,
+        "omega_external": 1.9999999999999996,
+        "rigorous_dyadic_lower_bound": 0.0,
+        "volume": 256
+      },
+      {
+        "coefficient_C_L": 0.08175168048143894,
+        "coefficient_over_log_L": 0.045626481615113255,
+        "length": 6,
+        "omega_external": 0.9999999999999998,
+        "rigorous_dyadic_lower_bound": 0.0,
+        "volume": 1296
+      },
+      {
+        "coefficient_C_L": 0.09292919586373453,
+        "coefficient_over_log_L": 0.04468949667546966,
+        "length": 8,
+        "omega_external": 0.585786437626905,
+        "rigorous_dyadic_lower_bound": 0.0,
+        "volume": 4096
+      },
+      {
+        "coefficient_C_L": 0.1076513098393532,
+        "coefficient_over_log_L": 0.04332207402983829,
+        "length": 12,
+        "omega_external": 0.26794919243112264,
+        "rigorous_dyadic_lower_bound": 0.0,
+        "volume": 20736
+      },
+      {
+        "coefficient_C_L": 0.11757129396276907,
+        "coefficient_over_log_L": 0.042404880687746366,
+        "length": 16,
+        "omega_external": 0.15224093497742647,
+        "rigorous_dyadic_lower_bound": 2.1433470507544582e-07,
+        "volume": 65536
+      },
+      {
+        "coefficient_C_L": 0.1310864626077474,
+        "coefficient_over_log_L": 0.041247401587718086,
+        "length": 24,
+        "omega_external": 0.0681483474218634,
+        "rigorous_dyadic_lower_bound": 2.1433470507544582e-07,
+        "volume": 331776
+      },
+      {
+        "coefficient_C_L": 0.14046824599764138,
+        "coefficient_over_log_L": 0.04053056838063364,
+        "length": 32,
+        "omega_external": 0.038429439193539104,
+        "rigorous_dyadic_lower_bound": 4.2866941015089163e-07,
+        "volume": 1048576
+      }
+    ]
+  },
+  "provenance": {
+    "exact_arithmetic": "Python Fraction arithmetic for proof constants and exact fixtures; the asymptotic theorem uses only integer box counts and the elementary inequalities sin(x)>=2*x/pi on [0,pi/2], sin(x)<=x, and pi^2<10",
+    "inputs": [
+      {
+        "path": "planning/work-items/reverse-physics-bateman-euclidean-continuum-reconstruction.json",
+        "sha256": "6e7146c21f056740edf9fe6feaaa8a14aaab945fe11f1b6a23110ecd5b85bf5a"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_ALL_BACKGROUND_LOWEST_MODE_CURVATURE_V1.json",
+        "sha256": "49e2d144667818f57e4d994a7e41534e6ded204b52eaa6f35b8923f30907e6d0"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_ANNEALED_CENTER_SCORE_REDUCTION_V1.json",
+        "sha256": "16b72c5b3976f5eecea27d3e40b89b7318f08d9116c4d845826a30aa334483e4"
+      }
+    ],
+    "numerical_arithmetic": "Python binary64 direct finite sums with constant memory; numerical rows are supporting only",
+    "repository_base_commit": "52d4c7a2091c0c77f3f191693b656101ef205970"
+  },
+  "question": "Can the missing annealed zero-fiber-score estimate be proved uniformly in lattice refinement by expanding at fixed bare coupling and bounding its first nonlinear coefficient term by term?",
+  "report": "reverse_physics/reports/bt-euclidean-cubic-score-log-obstruction.md",
+  "result_kind": "exact lattice cubic vertex and rigorous leading free-Gaussian score logarithm",
+  "rigorous_logarithmic_lower_bound": {
+    "asymptotic_disposition": "C_L is unbounded and grows at least logarithmically in the lattice-size limit; ultraviolet-refinement versus soft-large-volume interpretation depends on scale setting",
+    "block_count": "J_L=#{j>=0:16*2^j<=L}",
+    "block_scales": "M=2^j with 16*M<=L",
+    "decomposition": "omega_q=x+u and omega_(p+q)=y+u, with x,y axial and u transverse",
+    "dispersion_bounds": "256*M^2/L^2<=u<=1080*M^2/L^2 and x,y<=u",
+    "lower_bound_per_block": {
+      "denominator": 4665600,
+      "numerator": 1
+    },
+    "momentum_boxes": "q_1 in [M,2M), q_2 in [4M,5M), q_3,q_4 in [0,M)",
+    "points_per_block": "M^4",
+    "status": "PROVED",
+    "theorem": "C_L>=J_L/4665600 for every integer L>=16; the selected boxes avoid the projected external-cosine block and contribute as independent nonnegative Gaussian quadratic blocks",
+    "vertex_identity": "V3(omega_p,x+u,y+u)=V3(omega_p,x,y)-4*omega_p*u<=-4*omega_p*u"
+  },
+  "schema": "reverse_physics/schema/reverse-physics-bt-euclidean-cubic-score-log-obstruction-v1.schema.json",
+  "schema_version": "reverse-physics-bt-euclidean-cubic-score-log-obstruction-v1",
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_euclidean_cubic_score_log_obstruction.py --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_euclidean_cubic_score_log_obstruction.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_euclidean_cubic_score_log_obstruction"
+  ]
+}
