@@ -1173,6 +1173,42 @@ of the integrated marginal: the exceptional backgrounds can have vanishing
 marginal weight.  The remaining problem has two distinct terms, a recentered
 conditional width and the annealed second moment of the moving center.
 
+The same runaway family has a sharply different behavior after recentering.
+Certificate
+\cert{REVERSE_PHYSICS_BT_EUCLIDEAN_RUNAWAY_FIBER_WIDTH_BOUND_V1}
+writes $R=2^{4m}\geq256$, $z=2^u$, and differentiates the complete
+six-site fiber action exactly.  Its curvature is
+
+\[
+ A_m''(u)=(\log2)^2K_m(z),\qquad K_m(z)\geq\frac{115}{4}
+ \quad(m\geq2, z>0).
+\]
+
+The spatial factor and $\lambda=2/5$ give conditional inverse temperature
+$216/\lambda^2=1350$.  The one-dimensional Brascamp--Lieb inequality
+therefore yields
+
+\[
+ \operatorname{Var}_{q_m}(u)
+ \leq\frac{2}{77625(\log2)^2}
+ \leq\frac{8}{77625},
+\]
+
+where the last step uses
+$\log2=\int_1^2dx/x\geq1/2$.  If the conditional mean were at least
+$-m/2$, the predecessor bound $q_m\{u<-m\}\geq1-2^{-m}$ would force the
+variance to be at least $(1-2^{-m})m^2/4\geq3/4$, a contradiction.  Hence
+
+\[
+                         \mathbb E_{q_m}[u]<-\frac m2.
+\]
+
+Thus the certified raw-moment growth on this family is caused by a moving
+conditional center, not a widening conditional packet.  This is uniform only
+in $m$ on the declared exact family.  It neither proves an all-background
+recentered-width estimate nor controls the Gibbs-weighted distribution of
+centers.
+
 \subsection{A finite BV contraction does not freeze the quantum theory}
 
 The energy-two free BV block provides another finite exact case.  The
@@ -1513,9 +1549,12 @@ unbounded lowest-mode shifts.  Half-period translation keeps the integrated
 marginal even.  On a subsequence of those backgrounds the global fiber minima
 and all but at most $2^{-m}$ of the conditional mass escape below $u=-m$,
 so a uniform raw conditional moment is also impossible.  The remaining object
-is therefore a uniform recentered width together with an annealed bound on the
-moving center in the flat log-field chart, not another fixed-origin,
-pointwise, global-curvature, or coarea comparison.
+is therefore an all-background recentered width together with an annealed
+bound on the moving center in the flat log-field chart.  On the exact runaway
+family the first term is now uniformly bounded, proving that its obstruction
+comes entirely from center motion; the corresponding all-background theorem
+remains open.  Another fixed-origin, pointwise, global-curvature, or coarea
+comparison cannot close that gate.
 
 \section{Limits of the present paper}
 \label{sec:limits}

@@ -10,6 +10,7 @@
     "bt_actual_action_density_status": "PROVED",
     "bt_actual_half_action_factor_status": "PROVED",
     "bt_affine_virial_status": "PROVED",
+    "bt_all_background_recentered_variance_status": "OPEN",
     "bt_annealed_center_second_moment_status": "OPEN",
     "bt_annealed_recentered_fiber_status": "OPEN",
     "bt_centered_fiber_all_n_ratio_bound": "A(eta_n+t_n h)/A(eta_n)<=9/(4*x^2)=9/(4*4^n)",
@@ -90,6 +91,12 @@
       "numerator": -398039
     },
     "bt_residual_weighted_mean_curvature_status": "OBSTRUCTED_AT_LAMBDA_0P4",
+    "bt_runaway_family_conditional_mean_escape_status": "PROVED",
+    "bt_runaway_family_curvature_lower_bound": {
+      "denominator": 4,
+      "numerator": 115
+    },
+    "bt_runaway_family_recentered_variance_status": "PROVED",
     "bt_uniform_raw_conditional_moment_status": "OBSTRUCTED",
     "bt_uniform_recentered_conditional_variance_status": "OPEN",
     "cartesian_total": 576,
@@ -295,6 +302,16 @@
       "result_id": "REVERSE_PHYSICS_BT_EUCLIDEAN_RESIDUAL_TILT_JACOBIAN_CANCELLATION_V1",
       "sha256": "04f79c742344a615b82275850c7e90deb73cf81423847c985f166e0d5edda057"
     },
+    "bt_runaway_fiber_width_bound": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL"
+      ],
+      "lifecycle": "BOUNDED_FAMILY_THEOREM_PROVED",
+      "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_RUNAWAY_FIBER_WIDTH_BOUND_V1.json",
+      "result_id": "REVERSE_PHYSICS_BT_EUCLIDEAN_RUNAWAY_FIBER_WIDTH_BOUND_V1",
+      "sha256": "96667b3b3f38bbdc8f9981b2615a9b3165e0c4e6a6654eecc7a96d7e23ca2ecf"
+    },
     "bt_schwinger_dyson_mode_obstruction": {
       "dependency_tags": [
         "LOCAL-ALGEBRAIC",
@@ -471,7 +488,7 @@
       "sha256": "8655e099904efff61a80cd4e140e7c070dbae31a13f4499309b38249edf3fef3"
     }
   },
-  "canonical_digest": "e97522419e3997c134c5fb286ebc25aa12ee082ba2cf8a67612cd40ee7ddd98f",
+  "canonical_digest": "dc7415ec1a15318aa40c40e78687f695fc960b04ade90976d58d079be9c26b0a",
   "claim_flags": {
     "atlas_exhaustive": false,
     "axes_independent_proved": false,
@@ -500,6 +517,8 @@
     "bt_residual_spectrahedral_pushforward_established": true,
     "bt_residual_tilt_jacobian_cancellation_established": true,
     "bt_residual_uniform_positive_curvature_established": false,
+    "bt_runaway_family_conditional_mean_escape_established": true,
+    "bt_runaway_family_recentered_conditional_variance_established": true,
     "bt_standard_boundary_curvature_spectral_gap_route_obstructed": true,
     "bt_tree_log_convexity_extra_tilt_confinement_obstructed": true,
     "bt_uniform_backgroundwise_raw_conditional_moment_obstructed": true,
@@ -686,15 +705,16 @@
         "bt_residual_boundary_curvature_obstruction",
         "bt_residual_tilt_jacobian_cancellation",
         "bt_centered_fiber_domination_obstruction",
-        "bt_conditional_mass_escape_obstruction"
+        "bt_conditional_mass_escape_obstruction",
+        "bt_runaway_fiber_width_bound"
       ],
       "claim_id": "RF-13-BT-INTERACTING-RECONSTRUCTION-FRONTIER",
       "dependency_tags": [
         "LOCAL-ALGEBRAIC",
         "EUCLIDEAN-SPECTRAL"
       ],
-      "statement": "At lambda=0.4 on the 6^4 lattice, an exact two-point reflected density-kernel minor obstructs ordinary OS positivity. The affine virial theorem proves a volume-uniform actual Gibbs action-density bound and annealed half-action factor. Exact period-four data obstruct the global Schur route. The residual map identifies positive fields modulo scale with a Schr\u00f6dinger spectrahedral boundary and gives the exact normalized Gaussian-surface/tree-Jacobian pushforward. Its curvature and tree-Jacobian shortcuts are obstructed. An exact orthogonal-background family makes centered pointwise relative-action domination fail. On the subsequence eta_m=4m log(2) a, every global fiber minimizer lies below u=-m and the conditional probability of u>=-m is at most 2^-m, so the background-uniform raw conditional second moment is also obstructed. Half-period translation nevertheless proves the fully integrated marginal is even. Uniform recentered width, the annealed center moment, and the actual interacting H^-1 moment remain open.",
-      "status": "EXACT_FINITE_OS_GLOBAL_CURVATURE_TREE_TILT_CENTERED_FIBER_AND_RAW_CONDITIONAL_MOMENT_ROUTE_OBSTRUCTIONS_WITH_ACTION_DENSITY_EVEN_MARGINAL_AND_NORMALIZED_RESIDUAL_REFORMULATION"
+      "statement": "At lambda=0.4 on the 6^4 lattice, an exact two-point reflected density-kernel minor obstructs ordinary OS positivity. The affine virial theorem proves a volume-uniform actual Gibbs action-density bound and annealed half-action factor. Exact period-four data obstruct the global Schur route. The residual map identifies positive fields modulo scale with a Schr\u00f6dinger spectrahedral boundary and gives the exact normalized Gaussian-surface/tree-Jacobian pushforward. Its curvature and tree-Jacobian shortcuts are obstructed. An exact orthogonal-background family makes centered pointwise relative-action domination fail. On the subsequence eta_m=4m log(2) a, every global fiber minimizer lies below u=-m and the conditional probability of u>=-m is at most 2^-m, so the background-uniform raw conditional second moment is obstructed. On that same runaway family, however, K_m(2^u)>=115/4 proves a uniform recentered conditional-variance bound and E_qm[u]<-m/2: the obstruction is moving center rather than widening fiber. Half-period translation proves the fully integrated marginal is even. All-background recentered width, the annealed center moment, and the actual interacting H^-1 moment remain open.",
+      "status": "EXACT_FINITE_OS_GLOBAL_CURVATURE_TREE_TILT_CENTERED_FIBER_AND_RAW_CONDITIONAL_MOMENT_ROUTE_OBSTRUCTIONS_WITH_RUNAWAY_FAMILY_WIDTH_BOUND_ACTION_DENSITY_EVEN_MARGINAL_AND_NORMALIZED_RESIDUAL_REFORMULATION"
     },
     {
       "authorities": [
@@ -916,7 +936,7 @@
       "source_sha256": "4f5cbd42e41ad98361b769caea36cca2879f4c3a74fbe058d83bfce2fb6af222"
     },
     "path": "paper/21-reverse-foundations-of-physics.tex",
-    "sha256": "3732cb8a840a027f656faad133ac16dfc41a511df260a8d6ec5182d3f49b0d25"
+    "sha256": "05f4f3380e2ffef2a40bee8765960b0bcd1b1b48da7b8b7276377709ddb07586"
   },
   "result_id": "PAPER21_REVERSE_FOUNDATIONS_INTRODUCTION_V1",
   "result_kind": "PROGRAMME_SYNTHESIS_AND_TYPED_CASE_STUDY_MAP",

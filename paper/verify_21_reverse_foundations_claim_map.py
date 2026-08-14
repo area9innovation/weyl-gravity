@@ -100,6 +100,7 @@ def main() -> int:
     bt_residual_tilt = json.loads((ROOT / data["authorities"]["bt_residual_tilt_jacobian_cancellation"]["path"]).read_text())
     bt_centered_fiber = json.loads((ROOT / data["authorities"]["bt_centered_fiber_domination_obstruction"]["path"]).read_text())
     bt_conditional_escape = json.loads((ROOT / data["authorities"]["bt_conditional_mass_escape_obstruction"]["path"]).read_text())
+    bt_runaway_width = json.loads((ROOT / data["authorities"]["bt_runaway_fiber_width_bound"]["path"]).read_text())
     dims = cube["dimensions"]
     atlas = data["atlas_snapshot"]
     require(atlas["axis_sizes"] == [6, 6, 16], "unexpected axis sizes")
@@ -194,6 +195,12 @@ def main() -> int:
     require(atlas["bt_conditional_escape_m2_tail_exponent"] == bt_conditional_escape["exact_m2_fixture"]["binary_tail_exponent"], "BT conditional escape fixture drift")
     require(bt_conditional_escape["method_disposition"]["normalized_lowest_mode_second_moment"] == "OPEN", "BT conditional escape promoted to integrated marginal theorem")
     require(bt_conditional_escape["method_disposition"]["actual_interacting_h_minus_one_second_moment"] == "OPEN", "BT conditional escape promoted to H^-1 theorem")
+    require(atlas["bt_runaway_family_recentered_variance_status"] == bt_runaway_width["method_disposition"]["runaway_family_recentered_conditional_variance"] == "PROVED", "BT runaway-family width theorem drift")
+    require(atlas["bt_runaway_family_curvature_lower_bound"] == bt_runaway_width["uniform_lower_bound"]["lower_bound"] == {"numerator": 115, "denominator": 4}, "BT runaway-family curvature bound drift")
+    require(atlas["bt_runaway_family_conditional_mean_escape_status"] == bt_runaway_width["method_disposition"]["runaway_family_conditional_mean_escape"] == "PROVED", "BT runaway-family conditional-mean escape drift")
+    require(atlas["bt_all_background_recentered_variance_status"] == bt_runaway_width["method_disposition"]["all_background_uniform_recentered_conditional_variance"] == "OPEN", "BT exact-family width theorem widened to all backgrounds")
+    require(bt_runaway_width["method_disposition"]["annealed_center_second_moment"] == "OPEN", "BT runaway-family theorem promoted to annealed center bound")
+    require(bt_runaway_width["method_disposition"]["actual_interacting_h_minus_one_second_moment"] == "OPEN", "BT runaway-family theorem promoted to H^-1")
 
     allowed_tags = {"LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE", "LORENTZIAN-CAUSAL"}
     claim_ids = set()
@@ -260,6 +267,8 @@ def main() -> int:
     require(flags["bt_conditional_mass_escape_established"] is True, "BT conditional mass escape flag missing")
     require(flags["bt_uniform_backgroundwise_raw_conditional_moment_obstructed"] is True, "BT raw conditional moment obstruction flag missing")
     require(flags["bt_uniform_recentered_conditional_variance_established"] is False, "BT recentered conditional variance promoted")
+    require(flags["bt_runaway_family_recentered_conditional_variance_established"] is True, "BT runaway-family recentered variance flag missing")
+    require(flags["bt_runaway_family_conditional_mean_escape_established"] is True, "BT runaway-family conditional-mean escape flag missing")
     require(flags["bt_annealed_center_second_moment_established"] is False, "BT annealed center moment promoted")
     require(flags["research_programme_lenses_explained"] is True, "research-programme exposition flag is not certified")
     require(flags["coded_wave_observable_reconstruction_certified"] is True, "coded observable reconstruction flag is not certified")

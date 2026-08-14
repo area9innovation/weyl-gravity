@@ -39,6 +39,7 @@ AUTHORITY_PATHS = {
     "bt_residual_tilt_jacobian_cancellation": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_RESIDUAL_TILT_JACOBIAN_CANCELLATION_V1.json",
     "bt_centered_fiber_domination_obstruction": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_CENTERED_FIBER_DOMINATION_OBSTRUCTION_V1.json",
     "bt_conditional_mass_escape_obstruction": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_CONDITIONAL_MASS_ESCAPE_OBSTRUCTION_V1.json",
+    "bt_runaway_fiber_width_bound": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_RUNAWAY_FIBER_WIDTH_BOUND_V1.json",
     "full_surface_gap_audit": "foundations/results/FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1.json",
     "explorer_snapshot": "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json",
     "theory_assembly": "foundations/results/FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1.json",
@@ -99,6 +100,7 @@ def build() -> dict:
     bt_residual_tilt = loaded["bt_residual_tilt_jacobian_cancellation"]
     bt_centered_fiber = loaded["bt_centered_fiber_domination_obstruction"]
     bt_conditional_escape = loaded["bt_conditional_mass_escape_obstruction"]
+    bt_runaway_width = loaded["bt_runaway_fiber_width_bound"]
     site = loaded["explorer_snapshot"]
     gr_cassini = loaded["gr_cassini_assembly"]
     mannheim_ngc3198 = loaded["mannheim_ngc3198_assembly"]
@@ -271,6 +273,10 @@ def build() -> dict:
             "bt_uniform_recentered_conditional_variance_status": bt_conditional_escape["method_disposition"]["uniform_recentered_conditional_variance"],
             "bt_annealed_center_second_moment_status": bt_conditional_escape["method_disposition"]["annealed_center_second_moment"],
             "bt_conditional_escape_m2_tail_exponent": bt_conditional_escape["exact_m2_fixture"]["binary_tail_exponent"],
+            "bt_runaway_family_recentered_variance_status": bt_runaway_width["method_disposition"]["runaway_family_recentered_conditional_variance"],
+            "bt_runaway_family_curvature_lower_bound": bt_runaway_width["uniform_lower_bound"]["lower_bound"],
+            "bt_runaway_family_conditional_mean_escape_status": bt_runaway_width["method_disposition"]["runaway_family_conditional_mean_escape"],
+            "bt_all_background_recentered_variance_status": bt_runaway_width["method_disposition"]["all_background_uniform_recentered_conditional_variance"],
             "standard_reference_direct_obligations": next(item for item in assembly_data["assemblies"] if item["id"] == "STANDARD_MIXED_REFERENCE")["coverage"]["direct"],
             "external_calibration_records": len(assembly_data["calibration_controls"][0]["records"]),
             "external_calibration_benchmark_families": sum(item["status"] == "SUPPORTED_CONTROL" for item in assembly_data["calibration_controls"][0]["benchmark_coverage"]),
@@ -362,8 +368,8 @@ def build() -> dict:
             },
             {
                 "claim_id": "RF-13-BT-INTERACTING-RECONSTRUCTION-FRONTIER",
-                "statement": "At lambda=0.4 on the 6^4 lattice, an exact two-point reflected density-kernel minor obstructs ordinary OS positivity. The affine virial theorem proves a volume-uniform actual Gibbs action-density bound and annealed half-action factor. Exact period-four data obstruct the global Schur route. The residual map identifies positive fields modulo scale with a Schrödinger spectrahedral boundary and gives the exact normalized Gaussian-surface/tree-Jacobian pushforward. Its curvature and tree-Jacobian shortcuts are obstructed. An exact orthogonal-background family makes centered pointwise relative-action domination fail. On the subsequence eta_m=4m log(2) a, every global fiber minimizer lies below u=-m and the conditional probability of u>=-m is at most 2^-m, so the background-uniform raw conditional second moment is also obstructed. Half-period translation nevertheless proves the fully integrated marginal is even. Uniform recentered width, the annealed center moment, and the actual interacting H^-1 moment remain open.",
-                "status": "EXACT_FINITE_OS_GLOBAL_CURVATURE_TREE_TILT_CENTERED_FIBER_AND_RAW_CONDITIONAL_MOMENT_ROUTE_OBSTRUCTIONS_WITH_ACTION_DENSITY_EVEN_MARGINAL_AND_NORMALIZED_RESIDUAL_REFORMULATION",
+                "statement": "At lambda=0.4 on the 6^4 lattice, an exact two-point reflected density-kernel minor obstructs ordinary OS positivity. The affine virial theorem proves a volume-uniform actual Gibbs action-density bound and annealed half-action factor. Exact period-four data obstruct the global Schur route. The residual map identifies positive fields modulo scale with a Schrödinger spectrahedral boundary and gives the exact normalized Gaussian-surface/tree-Jacobian pushforward. Its curvature and tree-Jacobian shortcuts are obstructed. An exact orthogonal-background family makes centered pointwise relative-action domination fail. On the subsequence eta_m=4m log(2) a, every global fiber minimizer lies below u=-m and the conditional probability of u>=-m is at most 2^-m, so the background-uniform raw conditional second moment is obstructed. On that same runaway family, however, K_m(2^u)>=115/4 proves a uniform recentered conditional-variance bound and E_qm[u]<-m/2: the obstruction is moving center rather than widening fiber. Half-period translation proves the fully integrated marginal is even. All-background recentered width, the annealed center moment, and the actual interacting H^-1 moment remain open.",
+                "status": "EXACT_FINITE_OS_GLOBAL_CURVATURE_TREE_TILT_CENTERED_FIBER_AND_RAW_CONDITIONAL_MOMENT_ROUTE_OBSTRUCTIONS_WITH_RUNAWAY_FAMILY_WIDTH_BOUND_ACTION_DENSITY_EVEN_MARGINAL_AND_NORMALIZED_RESIDUAL_REFORMULATION",
                 "authorities": [
                     "bt_lambda04_os_kernel_obstruction",
                     "bt_uniform_convexity_obstruction",
@@ -378,6 +384,7 @@ def build() -> dict:
                     "bt_residual_tilt_jacobian_cancellation",
                     "bt_centered_fiber_domination_obstruction",
                     "bt_conditional_mass_escape_obstruction",
+                    "bt_runaway_fiber_width_bound",
                 ],
                 "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"],
             },
@@ -470,6 +477,8 @@ def build() -> dict:
             "bt_conditional_mass_escape_established": True,
             "bt_uniform_backgroundwise_raw_conditional_moment_obstructed": True,
             "bt_uniform_recentered_conditional_variance_established": False,
+            "bt_runaway_family_recentered_conditional_variance_established": True,
+            "bt_runaway_family_conditional_mean_escape_established": True,
             "bt_annealed_center_second_moment_established": False,
             "research_programme_lenses_explained": True,
             "coded_wave_observable_reconstruction_certified": True,

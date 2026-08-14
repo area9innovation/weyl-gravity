@@ -1,0 +1,233 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-runaway-fiber-width-bound-v1.schema.json",
+  "title": "BT Euclidean runaway-fiber width bound certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "certificate", "schema_version", "created", "dependency_tags",
+    "lifecycle_state", "result_kind", "question", "answer",
+    "finite_volume_carrier", "exact_family", "exact_curvature",
+    "uniform_lower_bound", "conditional_variance", "conditional_center_escape", "method_disposition",
+    "foundational_dependency_cut", "missing_object_ledger", "next_gate",
+    "does_not_establish", "provenance", "verification_commands",
+    "tier_receipt", "checks", "report", "schema"
+  ],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_EUCLIDEAN_RUNAWAY_FIBER_WIDTH_BOUND_V1"},
+    "schema_version": {"const": "reverse-physics-bt-euclidean-runaway-fiber-width-bound-v1"},
+    "created": {"const": "2026-08-14"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "lifecycle_state": {"const": "BOUNDED_FAMILY_THEOREM_PROVED"},
+    "result_kind": {"type": "string", "minLength": 1},
+    "question": {"type": "string", "minLength": 1},
+    "answer": {"type": "string", "minLength": 1},
+    "finite_volume_carrier": {
+      "type": "object", "additionalProperties": false,
+      "required": ["lattice", "spatial_replication_factor", "coupling", "conditional_inverse_temperature", "conditional_density"],
+      "properties": {
+        "lattice": {"const": "periodic 6^4 lattice"},
+        "spatial_replication_factor": {"const": 216},
+        "coupling": {"$ref": "#/$defs/fraction"},
+        "conditional_inverse_temperature": {"const": 1350},
+        "conditional_density": {"type": "string"}
+      }
+    },
+    "exact_family": {
+      "type": "object", "additionalProperties": false,
+      "required": ["parameter", "background_coefficients", "lowest_mode_coefficients", "field", "R", "z", "raw_moment_predecessor"],
+      "properties": {
+        "parameter": {"const": "m>=2 integer"},
+        "background_coefficients": {"$ref": "#/$defs/integer_six"},
+        "lowest_mode_coefficients": {"$ref": "#/$defs/integer_six"},
+        "field": {"type": "string"},
+        "R": {"const": "R=2^(4m)>=256"},
+        "z": {"const": "z=2^u>0"},
+        "raw_moment_predecessor": {"type": "string"}
+      }
+    },
+    "exact_curvature": {
+      "type": "object", "additionalProperties": false,
+      "required": ["definition", "bivariate_terms", "six_term_form", "coefficients", "fixtures"],
+      "properties": {
+        "definition": {"const": "A_m''(u)=(log(2))^2*K_m(z)"},
+        "bivariate_terms": {
+          "type": "array", "minItems": 23, "maxItems": 23,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["R_power", "z_power", "coefficient"],
+            "properties": {
+              "R_power": {"type": "integer"},
+              "z_power": {"type": "integer"},
+              "coefficient": {"type": "integer"}
+            }
+          }
+        },
+        "six_term_form": {"type": "string"},
+        "coefficients": {
+          "type": "object", "additionalProperties": false,
+          "required": ["A", "B", "C", "D"],
+          "properties": {
+            "A": {"type": "string"}, "B": {"type": "string"},
+            "C": {"type": "string"}, "D": {"type": "string"}
+          }
+        },
+        "fixtures": {
+          "type": "array", "minItems": 5, "maxItems": 5,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["m", "u", "R", "z", "direct_K", "laurent_K", "matches", "above_bound"],
+            "properties": {
+              "m": {"type": "integer", "minimum": 2},
+              "u": {"type": "integer"},
+              "R": {"type": "integer", "minimum": 256},
+              "z": {"$ref": "#/$defs/fraction"},
+              "direct_K": {"$ref": "#/$defs/fraction"},
+              "laurent_K": {"$ref": "#/$defs/fraction"},
+              "matches": {"const": true},
+              "above_bound": {"const": true}
+            }
+          }
+        }
+      }
+    },
+    "uniform_lower_bound": {
+      "type": "object", "additionalProperties": false,
+      "required": ["scope", "coefficient_bounds", "exact_universal_sign_method", "cleared_polynomial_shift_checks", "first_square", "second_square", "outer_am_gm", "conclusion", "lower_bound"],
+      "properties": {
+        "scope": {"const": "R>=256 and z>0"},
+        "coefficient_bounds": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "string"}},
+        "exact_universal_sign_method": {"type": "string", "minLength": 1},
+        "cleared_polynomial_shift_checks": {
+          "type": "object", "minProperties": 5, "maxProperties": 5,
+          "additionalProperties": {
+            "type": "object", "additionalProperties": false,
+            "required": ["degree", "all_shifted_coefficients_nonnegative", "positive_constant_coefficient"],
+            "properties": {
+              "degree": {"type": "integer", "minimum": 1},
+              "all_shifted_coefficients_nonnegative": {"const": true},
+              "positive_constant_coefficient": {"const": true}
+            }
+          }
+        },
+        "first_square": {"const": "A*z^-2-B*z^-1>=-B^2/(4A)>=-1"},
+        "second_square": {"const": "D*z^2-C*z>=-C^2/(4D)>=-9/4"},
+        "outer_am_gm": {"const": "16*(R^4*z^-4+R^-4*z^4)>=32"},
+        "conclusion": {"const": "K_m(z)>=32-1-9/4=115/4"},
+        "lower_bound": {"$ref": "#/$defs/fraction"}
+      }
+    },
+    "conditional_variance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["analytic_input", "potential_curvature", "centering", "variance_bound", "rational_prefactor", "elementary_log_bound", "rationalized_variance_bound", "rationalized_bound", "status"],
+      "properties": {
+        "analytic_input": {"type": "string"},
+        "potential_curvature": {"type": "string"},
+        "centering": {"const": "conditional mean E_qm[u]"},
+        "variance_bound": {"const": "Var_qm(u)<=2/[77625*(log(2))^2]"},
+        "rational_prefactor": {"$ref": "#/$defs/fraction"},
+        "elementary_log_bound": {"const": "log(2)=integral_1^2 dx/x>=1/2"},
+        "rationalized_variance_bound": {"const": "Var_qm(u)<=8/77625"},
+        "rationalized_bound": {"$ref": "#/$defs/fraction"},
+        "status": {"const": "PROVED_UNIFORMLY_IN_M_ON_EXACT_RUNAWAY_FAMILY"}
+      }
+    },
+    "conditional_center_escape": {
+      "type": "object", "additionalProperties": false,
+      "required": ["predecessor_mass_bound", "contradiction_hypothesis", "variance_lower_bound_under_hypothesis", "variance_upper_bound", "conclusion", "status"],
+      "properties": {
+        "predecessor_mass_bound": {"const": "q_m({u>=-m})<=2^(-m)"},
+        "contradiction_hypothesis": {"const": "mu_m=E_qm[u]>=-m/2"},
+        "variance_lower_bound_under_hypothesis": {"const": "Var_qm(u)>=(1-2^(-m))*m^2/4>=3/4"},
+        "variance_upper_bound": {"const": "Var_qm(u)<=8/77625<3/4"},
+        "conclusion": {"const": "E_qm[u]<-m/2 for every m>=2"},
+        "status": {"const": "PROVED_ESCAPE_TO_MINUS_INFINITY_ON_EXACT_RUNAWAY_FAMILY"}
+      }
+    },
+    "method_disposition": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "runaway_family_uniform_strong_convexity", "runaway_family_recentered_conditional_variance", "runaway_family_conditional_mean_escape",
+        "all_background_uniform_recentered_conditional_variance", "annealed_center_second_moment",
+        "normalized_lowest_mode_second_moment", "actual_interacting_h_minus_one_second_moment",
+        "interacting_tightness", "continuum_limit", "born_rule", "krein_reconstruction", "lorentzian_transfer"
+      ],
+      "properties": {
+        "runaway_family_uniform_strong_convexity": {"const": "PROVED"},
+        "runaway_family_recentered_conditional_variance": {"const": "PROVED"},
+        "runaway_family_conditional_mean_escape": {"const": "PROVED"},
+        "all_background_uniform_recentered_conditional_variance": {"const": "OPEN"},
+        "annealed_center_second_moment": {"const": "OPEN"},
+        "normalized_lowest_mode_second_moment": {"const": "OPEN"},
+        "actual_interacting_h_minus_one_second_moment": {"const": "OPEN"},
+        "interacting_tightness": {"const": "NOT_ESTABLISHED"},
+        "continuum_limit": {"const": "NOT_ESTABLISHED"},
+        "born_rule": {"const": "NOT_ESTABLISHED"},
+        "krein_reconstruction": {"const": "NOT_ASSESSED"},
+        "lorentzian_transfer": {"const": "NOT_ESTABLISHED"}
+      }
+    },
+    "foundational_dependency_cut": {"$ref": "#/$defs/foundational_cut"},
+    "missing_object_ledger": {"type": "array", "minItems": 5, "items": {"type": "string", "minLength": 1}},
+    "next_gate": {"type": "string", "minLength": 1},
+    "does_not_establish": {"type": "array", "minItems": 8, "items": {"type": "string", "minLength": 1}},
+    "provenance": {"$ref": "#/$defs/provenance"},
+    "verification_commands": {"type": "array", "minItems": 3, "items": {"type": "string", "minLength": 1}},
+    "tier_receipt": {"$ref": "#/$defs/tier_receipt"},
+    "checks": {"$ref": "#/$defs/checks"},
+    "report": {"const": "reverse_physics/reports/bt-euclidean-runaway-fiber-width-bound.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-euclidean-runaway-fiber-width-bound-v1.schema.json"}
+  },
+  "$defs": {
+    "fraction": {
+      "type": "object", "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {"numerator": {"type": "integer"}, "denominator": {"type": "integer", "minimum": 1}}
+    },
+    "integer_six": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"type": "integer"}},
+    "input": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {"path": {"type": "string"}, "sha256": {"pattern": "^[0-9a-f]{64}$"}}
+    },
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["repository_base_commit", "inputs", "arithmetic"],
+      "properties": {
+        "repository_base_commit": {"pattern": "^[0-9a-f]{40}$"},
+        "inputs": {"type": "array", "minItems": 1, "maxItems": 1, "items": {"$ref": "#/$defs/input"}},
+        "arithmetic": {"type": "string"}
+      }
+    },
+    "foundational_cut": {
+      "type": "object", "additionalProperties": false,
+      "required": ["finite_exact_layer", "finite_dimensional_analytic_layer", "uniform_limit_layer", "classification", "weakest_base_or_reversal"],
+      "properties": {
+        "finite_exact_layer": {"type": "string"},
+        "finite_dimensional_analytic_layer": {"type": "string"},
+        "uniform_limit_layer": {"type": "string"},
+        "classification": {"const": "USED_BY_DISPLAYED_PROOF"},
+        "weakest_base_or_reversal": {"const": "NOT_ESTABLISHED"}
+      }
+    },
+    "tier_receipt": {
+      "type": "object", "additionalProperties": false,
+      "required": ["tier_0", "tier_1", "tier_2", "tier_3", "memory_policy"],
+      "properties": {
+        "tier_0": {"type": "string"}, "tier_1": {"type": "string"},
+        "tier_2": {"type": "string"}, "tier_3": {"type": "string"},
+        "memory_policy": {"type": "string"}
+      }
+    },
+    "checks": {
+      "type": "object", "additionalProperties": false,
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true}, "passed": {"type": "integer", "minimum": 1},
+        "total": {"type": "integer", "minimum": 1},
+        "failures": {"const": []},
+        "details": {"type": "object", "additionalProperties": {"const": true}}
+      }
+    }
+  }
+}

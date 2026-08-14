@@ -1,0 +1,193 @@
+{
+  "schema_version": "science-forge-tier-receipt-v1",
+  "receipt_id": "PAPER21_BT_RUNAWAY_FIBER_WIDTH_BOUND_INTEGRATION_V1_TIER_RECEIPT",
+  "result_id": "REVERSE_PHYSICS_BT_EUCLIDEAN_RUNAWAY_FIBER_WIDTH_BOUND_V1",
+  "created": "2026-08-14",
+  "source_base_commit": "315464c9afb64a77abfc7a0f8d9a5385a03d88d8",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "scope": "Prove an exact uniform recentered conditional-variance bound on the already-certified fixed-volume runaway background family, distinguish center escape from fiber widening, and integrate that bounded-family theorem into Paper 21 and the active Science Forge stream without promoting an all-background width estimate, annealed center moment, interacting H-minus-one bound, continuum measure, Born rule, Krein reconstruction, or Lorentzian theorem.",
+  "inputs": [
+    {
+      "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_CONDITIONAL_MASS_ESCAPE_OBSTRUCTION_V1.json",
+      "sha256": "3b5a231046ef56cd6d2459f5bd93b6785bf00463c9d3ddb9c5cc162a118dea76",
+      "role": "exact predecessor runaway family, normalized conditional law, and raw-moment escape theorem"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_RUNAWAY_FIBER_WIDTH_BOUND_V1.json",
+      "sha256": "96667b3b3f38bbdc8f9981b2615a9b3165e0c4e6a6654eecc7a96d7e23ca2ecf"
+    },
+    {
+      "path": "reverse_physics/schema/reverse-physics-bt-euclidean-runaway-fiber-width-bound-v1.schema.json",
+      "sha256": "424d5d3a3619eb5ce7483c06c17ac4783f1c9e985fdc8c2378f2e4fadaa3bb67"
+    },
+    {
+      "path": "reverse_physics/bt_euclidean_runaway_fiber_width_bound.py",
+      "sha256": "c6fc07d2dca5b0277153c0d36c2862209e5339ef0b632a1665af865fe766b672"
+    },
+    {
+      "path": "reverse_physics/verify_bt_euclidean_runaway_fiber_width_bound.py",
+      "sha256": "fa83c283eee72d63ae082d32821fc03d2432e86e4f1162ae098f41dadfb69ffb"
+    },
+    {
+      "path": "reverse_physics/tests/test_bt_euclidean_runaway_fiber_width_bound.py",
+      "sha256": "fbf6c4d133fc69e8edbb672ab487a06fc9842ede35f03f71ee73e13c4fd9b56d"
+    },
+    {
+      "path": "reverse_physics/reports/bt-euclidean-runaway-fiber-width-bound.md",
+      "sha256": "78b344957105251a13055306c52778fb7aecb091b8506f47b00343d7ca2fca8b"
+    },
+    {
+      "path": "planning/events/reverse-physics-bateman-euclidean-continuum-reconstruction-ACTIVE-3cc47d82ea1a16b4.json",
+      "sha256": "66a539f8f86beb24341a64b86dd618ee2051b707186ac043f5366f1613490a9a"
+    },
+    {
+      "path": "paper/21-reverse-foundations-of-physics.tex",
+      "sha256": "05f4f3380e2ffef2a40bee8765960b0bcd1b1b48da7b8b7276377709ddb07586"
+    },
+    {
+      "path": "paper/21-reverse-foundations-of-physics.pdf",
+      "sha256": "8541b07965b2aa202b3e83147c8454d545a1333fd982013377efda3e7a9e2201"
+    },
+    {
+      "path": "paper/21-reverse-foundations-of-physics-claim-map.json",
+      "sha256": "4833fd11d0016b9b2f2eab51efa5f70b46fa762256b3abb0c04c8056489c0062"
+    },
+    {
+      "path": "paper/generate_21_reverse_foundations_claim_map.py",
+      "sha256": "77fc678e3b8f7b4622669d044092f840218d1a8b4239515663f3d192d9e787a9"
+    },
+    {
+      "path": "paper/verify_21_reverse_foundations_claim_map.py",
+      "sha256": "334ecc1d85e4bd1e1d0b4dcc1fc8d8cc2b194880e666152ccc69aba99c13f4d0"
+    }
+  ],
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "python3 -m py_compile <three runaway-width Python paths> paper/generate_21_reverse_foundations_claim_map.py paper/verify_21_reverse_foundations_claim_map.py",
+          "status": "PASS"
+        },
+        {
+          "command": "python3 -m json.tool <certificate, schema, event, receipt, and Paper 21 claim map>",
+          "status": "PASS"
+        },
+        {
+          "command": "cd paper && pdflatex -interaction=nonstopmode -halt-on-error 21-reverse-foundations-of-physics.tex (twice)",
+          "elapsed_seconds": [0.78, 0.75],
+          "peak_rss_kb": 53276,
+          "status": "PASS",
+          "output": "46 pages; no compile error."
+        },
+        {
+          "command": "git diff --check -- <thirteen scoped scientific, planning, receipt, and Paper 21 paths>",
+          "status": "PASS"
+        }
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "python3 reverse_physics/bt_euclidean_runaway_fiber_width_bound.py --check",
+          "elapsed_seconds": 0.04,
+          "peak_rss_kb": 20900,
+          "status": "PASS",
+          "output": "16/16 exact producer checks"
+        },
+        {
+          "command": "python3 reverse_physics/verify_bt_euclidean_runaway_fiber_width_bound.py",
+          "elapsed_seconds": 0.10,
+          "peak_rss_kb": 30616,
+          "status": "PASS",
+          "output": "13/13 independent checks"
+        },
+        {
+          "command": "python3 -m unittest -q reverse_physics.tests.test_bt_euclidean_runaway_fiber_width_bound",
+          "elapsed_seconds": 0.14,
+          "peak_rss_kb": 30840,
+          "status": "PASS",
+          "output": "13 tests, including fail-closed mutations"
+        },
+        {
+          "command": "python3 paper/generate_21_reverse_foundations_appendices.py --check",
+          "status": "PASS"
+        },
+        {
+          "command": "python3 paper/generate_21_reverse_foundations_claim_map.py --check",
+          "elapsed_seconds": 0.06,
+          "peak_rss_kb": 29784,
+          "status": "PASS"
+        },
+        {
+          "command": "python3 paper/verify_21_reverse_foundations_claim_map.py",
+          "elapsed_seconds": 0.06,
+          "peak_rss_kb": 26000,
+          "status": "PASS"
+        },
+        {
+          "command": "python3 ci/verify_paper_manuscript_pins.py",
+          "status": "PASS",
+          "output": "7 explicit manuscript/PDF bindings"
+        },
+        {
+          "command": "GOMEMLIMIT=300MiB GOGC=50 sfc conform planning/work-items",
+          "elapsed_seconds": 8.02,
+          "peak_rss_kb": 214988,
+          "status": "PASS",
+          "output": "CLEAN"
+        }
+      ]
+    },
+    "tier_2": {
+      "status": "NOT_RUN",
+      "criterion": "The new result is an isolated exact one-dimensional theorem on a content-addressed predecessor family. It changes no shared operator, classical import, sampler, or volume-dependent input; the complete Laurent differentiation and universal coefficient inequalities are reconstructed by the independent rail."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "The theorem promotes no all-background estimate, integrated marginal, interacting H-minus-one estimate, tightness, continuum theorem, lifecycle state, freeze, shared-core algebra, or release."
+    }
+  },
+  "memory_receipt": {
+    "python_and_latex_policy": "Commands ran sequentially under a 500000 KiB virtual-memory ceiling.",
+    "go_policy": "The Go audit ran with GOMEMLIMIT=300MiB and GOGC=50 because the Go runtime requires a virtual address reservation larger than the shell virtual-memory ceiling.",
+    "recorded_nonpass": {
+      "command": "ulimit -v 500000; GOMEMLIMIT=300MiB GOGC=50 sfc conform planning/work-items",
+      "status": "FAIL",
+      "elapsed_seconds": 0.00,
+      "peak_rss_kb": 3672,
+      "reason": "Go runtime could not reserve page-summary virtual address space before executing the audit; no repository write occurred.",
+      "disposition": "Reran with the Go heap limit retained and the incompatible shell virtual-address ceiling removed; the rerun passed at 214988 KiB peak RSS."
+    }
+  },
+  "claim_flags": {
+    "runaway_family_uniform_strong_convexity_established": true,
+    "runaway_family_recentered_conditional_variance_established": true,
+    "runaway_family_conditional_mean_escape_established": true,
+    "raw_conditional_moment_escape_remains_established": true,
+    "paper_claim_map_current": true,
+    "science_forge_event_appended": true,
+    "all_background_recentered_conditional_variance_established": false,
+    "annealed_center_second_moment_established": false,
+    "normalized_lowest_mode_second_moment_established": false,
+    "bt_interacting_h_minus_one_established": false,
+    "continuum_measure_established": false,
+    "born_rule_established": false,
+    "krein_reconstruction_established": false,
+    "new_lorentzian_claim": false
+  },
+  "does_not_establish": [
+    "a recentered conditional-variance bound for arbitrary orthogonal backgrounds",
+    "an annealed second moment of the moving conditional centers",
+    "a bound or divergence theorem for the fully integrated BT lowest-mode marginal",
+    "an interacting H-minus-one moment, tightness, or continuum-limit theorem",
+    "a Born rule, Krein reconstruction, gravitational lift, empirical result, or LORENTZIAN-CAUSAL promotion",
+    "a weakest-foundation reversal"
+  ]
+}
