@@ -1,0 +1,327 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-residual-boundary-curvature-obstruction-v1.schema.json",
+  "title": "BT residual-boundary curvature obstruction certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "certificate",
+    "schema_version",
+    "created",
+    "dependency_tags",
+    "lifecycle_state",
+    "result_kind",
+    "question",
+    "answer",
+    "finite_graph_geometry",
+    "cycle_family",
+    "lambda_point_four_fixture",
+    "closed_form_mean_curvature",
+    "literature_applicability",
+    "method_disposition",
+    "foundational_dependency_cut",
+    "missing_object_ledger",
+    "next_gate",
+    "does_not_establish",
+    "provenance",
+    "verification_commands",
+    "tier_receipt",
+    "checks",
+    "report",
+    "schema"
+  ],
+  "$defs": {
+    "fraction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      }
+    },
+    "text": {"type": "string", "minLength": 1},
+    "text_array": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/text"}
+    },
+    "fraction_array": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {"$ref": "#/$defs/fraction"}
+    },
+    "fraction_matrix": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {"$ref": "#/$defs/fraction_array"}
+    },
+    "proved_section": {
+      "type": "object",
+      "minProperties": 2,
+      "required": ["status"],
+      "properties": {"status": {"const": "PROVED"}},
+      "additionalProperties": {"$ref": "#/$defs/text"}
+    }
+  },
+  "properties": {
+    "certificate": {
+      "const": "REVERSE_PHYSICS_BT_EUCLIDEAN_RESIDUAL_BOUNDARY_CURVATURE_OBSTRUCTION_V1"
+    },
+    "schema_version": {
+      "const": "reverse-physics-bt-euclidean-residual-boundary-curvature-obstruction-v1"
+    },
+    "created": {"const": "2026-08-14"},
+    "dependency_tags": {
+      "type": "array",
+      "prefixItems": [
+        {"const": "LOCAL-ALGEBRAIC"},
+        {"const": "EUCLIDEAN-SPECTRAL"}
+      ],
+      "items": false
+    },
+    "lifecycle_state": {"const": "METHOD_OBSTRUCTION_PROVED"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "finite_graph_geometry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scope",
+        "ground_state",
+        "outward_unit_normal",
+        "tangent_space",
+        "second_fundamental_form",
+        "strictness",
+        "mean_curvature",
+        "gaussian_weighted_mean_curvature",
+        "status"
+      ],
+      "properties": {
+        "scope": {"$ref": "#/$defs/text"},
+        "ground_state": {"$ref": "#/$defs/text"},
+        "outward_unit_normal": {"const": "n_out=-Omega^2/||Omega^2||_2"},
+        "tangent_space": {"$ref": "#/$defs/text"},
+        "second_fundamental_form": {"$ref": "#/$defs/text"},
+        "strictness": {"$ref": "#/$defs/text"},
+        "mean_curvature": {"$ref": "#/$defs/text"},
+        "gaussian_weighted_mean_curvature": {"$ref": "#/$defs/text"},
+        "status": {"const": "PROVED"}
+      }
+    },
+    "cycle_family": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "graph",
+        "parameter",
+        "omega",
+        "residual",
+        "tangent",
+        "pseudoinverse_quadratic",
+        "trial_normal_curvature",
+        "curvature_asymptotic",
+        "conclusion",
+        "status"
+      ],
+      "properties": {
+        "graph": {"const": "four-cycle C4 with degree two"},
+        "parameter": {"const": "rational q>0"},
+        "omega": {"$ref": "#/$defs/text"},
+        "residual": {"$ref": "#/$defs/text"},
+        "tangent": {"$ref": "#/$defs/text"},
+        "pseudoinverse_quadratic": {"$ref": "#/$defs/text"},
+        "trial_normal_curvature": {"$ref": "#/$defs/text"},
+        "curvature_asymptotic": {"$ref": "#/$defs/text"},
+        "conclusion": {"$ref": "#/$defs/text"},
+        "status": {"const": "EXACT_RATIONAL_FAMILY"}
+      }
+    },
+    "lambda_point_four_fixture": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "q",
+        "coupling",
+        "omega",
+        "residual",
+        "schrodinger_matrix",
+        "schrodinger_pseudoinverse",
+        "tangent",
+        "pseudoinverse_quadratic",
+        "second_fundamental_value",
+        "trial_normal_curvature",
+        "mean_curvature",
+        "residual_outward_normal",
+        "gaussian_weighted_mean_curvature",
+        "status"
+      ],
+      "properties": {
+        "q": {"$ref": "#/$defs/fraction"},
+        "coupling": {"$ref": "#/$defs/fraction"},
+        "omega": {"$ref": "#/$defs/fraction_array"},
+        "residual": {"$ref": "#/$defs/fraction_array"},
+        "schrodinger_matrix": {"$ref": "#/$defs/fraction_matrix"},
+        "schrodinger_pseudoinverse": {"$ref": "#/$defs/fraction_matrix"},
+        "tangent": {"$ref": "#/$defs/fraction_array"},
+        "pseudoinverse_quadratic": {"$ref": "#/$defs/fraction"},
+        "second_fundamental_value": {"$ref": "#/$defs/fraction"},
+        "trial_normal_curvature": {"$ref": "#/$defs/fraction"},
+        "mean_curvature": {"$ref": "#/$defs/fraction"},
+        "residual_outward_normal": {"$ref": "#/$defs/fraction"},
+        "gaussian_weighted_mean_curvature": {"$ref": "#/$defs/fraction"},
+        "status": {"const": "EXACT_RATIONAL_NEGATIVE_WEIGHTED_MEAN_CURVATURE"}
+      }
+    },
+    "closed_form_mean_curvature": {"$ref": "#/$defs/proved_section"},
+    "literature_applicability": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "gaussian_boundary_reference",
+        "spectral_gap_reference",
+        "uniform_second_fundamental_form_hypothesis",
+        "positive_weighted_mean_curvature_hypothesis",
+        "actual_inverse_tree_jacobian_measure_covered_directly",
+        "disposition"
+      ],
+      "properties": {
+        "gaussian_boundary_reference": {"$ref": "#/$defs/text"},
+        "spectral_gap_reference": {"$ref": "#/$defs/text"},
+        "uniform_second_fundamental_form_hypothesis": {"const": "OBSTRUCTED"},
+        "positive_weighted_mean_curvature_hypothesis": {"const": "OBSTRUCTED_AT_LAMBDA_0P4"},
+        "actual_inverse_tree_jacobian_measure_covered_directly": {"const": "NO"},
+        "disposition": {"const": "STANDARD_CURVATURE_LOWER_BOUND_ROUTE_OBSTRUCTED"}
+      }
+    },
+    "method_disposition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "residual_boundary_geometry",
+        "pointwise_strict_convexity",
+        "uniform_positive_principal_curvature",
+        "global_positive_gaussian_weighted_mean_curvature",
+        "known_curvature_hypothesis_spectral_gap_route",
+        "other_boundary_or_intrinsic_inequalities",
+        "normalized_lowest_mode_marginal_bound",
+        "actual_interacting_h_minus_one_second_moment_bound",
+        "interacting_tightness",
+        "continuum_limit",
+        "born_rule",
+        "krein_reconstruction",
+        "lorentzian_transfer"
+      ],
+      "properties": {
+        "residual_boundary_geometry": {"const": "PROVED"},
+        "pointwise_strict_convexity": {"const": "PROVED"},
+        "uniform_positive_principal_curvature": {"const": "OBSTRUCTED"},
+        "global_positive_gaussian_weighted_mean_curvature": {"const": "OBSTRUCTED_AT_LAMBDA_0P4"},
+        "known_curvature_hypothesis_spectral_gap_route": {"const": "OBSTRUCTED_AS_FORMULATED"},
+        "other_boundary_or_intrinsic_inequalities": {"const": "NOT_ASSESSED"},
+        "normalized_lowest_mode_marginal_bound": {"const": "OPEN"},
+        "actual_interacting_h_minus_one_second_moment_bound": {"const": "OPEN"},
+        "interacting_tightness": {"const": "NOT_ESTABLISHED"},
+        "continuum_limit": {"const": "NOT_ESTABLISHED"},
+        "born_rule": {"const": "NOT_ESTABLISHED"},
+        "krein_reconstruction": {"const": "NOT_ASSESSED"},
+        "lorentzian_transfer": {"const": "NOT_ESTABLISHED"}
+      }
+    },
+    "foundational_dependency_cut": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "finite_exact_layer",
+        "finite_analytic_layer",
+        "uniform_limit_layer",
+        "classification",
+        "weakest_base_or_reversal"
+      ],
+      "properties": {
+        "finite_exact_layer": {"$ref": "#/$defs/text"},
+        "finite_analytic_layer": {"$ref": "#/$defs/text"},
+        "uniform_limit_layer": {"$ref": "#/$defs/text"},
+        "classification": {"const": "USED_BY_DISPLAYED_PROOF"},
+        "weakest_base_or_reversal": {"const": "NOT_ESTABLISHED"}
+      }
+    },
+    "missing_object_ledger": {"$ref": "#/$defs/text_array"},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "does_not_establish": {"$ref": "#/$defs/text_array"},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["repository_base_commit", "inputs", "literature", "arithmetic"],
+      "properties": {
+        "repository_base_commit": {"pattern": "^[0-9a-f]{40}$"},
+        "inputs": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["path", "sha256"],
+            "properties": {
+              "path": {"$ref": "#/$defs/text"},
+              "sha256": {"pattern": "^[0-9a-f]{64}$"}
+            }
+          }
+        },
+        "literature": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["citation", "arxiv", "url"],
+            "properties": {
+              "citation": {"$ref": "#/$defs/text"},
+              "arxiv": {"pattern": "^[0-9]{4}\\.[0-9]{5}$"},
+              "url": {"pattern": "^https://arxiv\\.org/abs/[0-9]{4}\\.[0-9]{5}$"}
+            }
+          }
+        },
+        "arithmetic": {"$ref": "#/$defs/text"}
+      }
+    },
+    "verification_commands": {"$ref": "#/$defs/text_array"},
+    "tier_receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["command_results", "tier_0", "tier_1", "tier_2", "tier_3", "resource_policy"],
+      "properties": {
+        "command_results": {"type": "array", "minItems": 3},
+        "tier_0": {"$ref": "#/$defs/text"},
+        "tier_1": {"$ref": "#/$defs/text"},
+        "tier_2": {"$ref": "#/$defs/text"},
+        "tier_3": {"$ref": "#/$defs/text"},
+        "resource_policy": {"$ref": "#/$defs/text"}
+      }
+    },
+    "checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"const": 21},
+        "total": {"const": 21},
+        "failures": {"type": "array", "maxItems": 0},
+        "details": {
+          "type": "object",
+          "minProperties": 21,
+          "maxProperties": 21,
+          "additionalProperties": {"const": true}
+        }
+      }
+    },
+    "report": {"const": "reverse_physics/reports/bt-euclidean-residual-boundary-curvature-obstruction.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-euclidean-residual-boundary-curvature-obstruction-v1.schema.json"}
+  }
+}

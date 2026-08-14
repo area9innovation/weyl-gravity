@@ -36,6 +36,7 @@
       "numerator": 1222
     },
     "bt_lambda_0p4_exact_os_status": "OBSTRUCTED",
+    "bt_normalized_lowest_mode_marginal_status": "OPEN",
     "bt_orthogonal_hessian_cell_value": {
       "denominator": 81,
       "numerator": -13880
@@ -43,6 +44,24 @@
     "bt_pointwise_action_weight_necessary_exponent": "AT_LEAST_ONE_HALF",
     "bt_pointwise_half_action_curvature_route_status": "OBSTRUCTED_AS_FORMULATED",
     "bt_pointwise_virial_constant_two_status": "POINTWISE_VIRIAL_CONSTANT_TWO_OBSTRUCTED",
+    "bt_residual_boundary_coordinate_status": "PROVED",
+    "bt_residual_cycle_jacobian": {
+      "denominator": 2,
+      "numerator": 85
+    },
+    "bt_residual_entropy_jacobian_minimum_status": "PROVED",
+    "bt_residual_pointwise_strict_convexity_status": "PROVED",
+    "bt_residual_tree_jacobian_status": "PROVED",
+    "bt_residual_trial_curvature_q2": {
+      "denominator": 2601,
+      "numerator": 80
+    },
+    "bt_residual_uniform_curvature_status": "OBSTRUCTED",
+    "bt_residual_weighted_mean_curvature_q2": {
+      "denominator": 88434,
+      "numerator": -398039
+    },
+    "bt_residual_weighted_mean_curvature_status": "OBSTRUCTED_AT_LAMBDA_0P4",
     "cartesian_total": 576,
     "content_pinned_literature": 39,
     "coverage_classified_cells": 576,
@@ -55,8 +74,8 @@
       "PRIORITY_GAP": 30,
       "REVIEWED_GAP": 172
     },
-    "evidence_records": 75,
-    "evidence_records_used_by_matrix": 75,
+    "evidence_records": 76,
+    "evidence_records_used_by_matrix": 76,
     "external_calibration_benchmark_families": 3,
     "external_calibration_records": 4,
     "gr_cassini_bounded_complete": true,
@@ -69,7 +88,7 @@
     "implication_nodes": 12,
     "literature_complete": false,
     "literature_records": 51,
-    "local_result_records": 24,
+    "local_result_records": 25,
     "mannheim_ngc3198_empirically_supported": false,
     "mannheim_ngc3198_endpoint_coarse_gate_passed": true,
     "mannheim_ngc3198_interfaces": 6,
@@ -190,6 +209,26 @@
       "result_id": "REVERSE_PHYSICS_BT_EUCLIDEAN_ORTHOGONAL_HESSIAN_BLOCK_OBSTRUCTION_V1",
       "sha256": "f984df873bb6f41476b15acb7bc01e9737fa1438782ddd970d1d62033e5a430e"
     },
+    "bt_residual_boundary_curvature_obstruction": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL"
+      ],
+      "lifecycle": "METHOD_OBSTRUCTION_PROVED",
+      "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_RESIDUAL_BOUNDARY_CURVATURE_OBSTRUCTION_V1.json",
+      "result_id": "REVERSE_PHYSICS_BT_EUCLIDEAN_RESIDUAL_BOUNDARY_CURVATURE_OBSTRUCTION_V1",
+      "sha256": "3c277bf9de7c7f2ecefcc43ed738f37d01bd3a3fe52c3e7c3ebff900633158d2"
+    },
+    "bt_residual_spectrahedral_pushforward": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL"
+      ],
+      "lifecycle": "REFORMULATION_PROVED",
+      "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_RESIDUAL_SPECTRAHEDRAL_PUSHFORWARD_V1.json",
+      "result_id": "REVERSE_PHYSICS_BT_EUCLIDEAN_RESIDUAL_SPECTRAHEDRAL_PUSHFORWARD_V1",
+      "sha256": "31bc26ff9822cdfc663b5fb0fc47e7970f592afbc6526f1aadf2e4447dd324e0"
+    },
     "bt_schwinger_dyson_mode_obstruction": {
       "dependency_tags": [
         "LOCAL-ALGEBRAIC",
@@ -240,7 +279,7 @@
       "lifecycle": "VERIFIED_NAVIGATION_ARTIFACT",
       "path": "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json",
       "result_id": "FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2",
-      "sha256": "7ca336efd377ffd2982edb1f312dfa6712864f2184fbca893be938887d03bbe8"
+      "sha256": "c27cdde4ab6759f732784a840b41c357fb20acce3ac1ff9180c33ceaa683e207"
     },
     "finite_bv": {
       "dependency_tags": [
@@ -271,7 +310,7 @@
       "lifecycle": "CLASSIFIED",
       "path": "foundations/results/FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1.json",
       "result_id": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
-      "sha256": "7c3d467e07b07ca54b0d875c08a7cac5769fab769c412e8e71fc823f515669fd"
+      "sha256": "1487d2b80babf29f1729d80b98a1275a5275881e5a216c77d0695a9cebec6d0a"
     },
     "gr_cassini_assembly": {
       "dependency_tags": [
@@ -293,7 +332,7 @@
       "lifecycle": "EVIDENCE_AUGMENTED_FULL_CARTESIAN_SURFACE",
       "path": "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V10.json",
       "result_id": "FOUNDATIONAL_INTERSECTION_CUBE_V10",
-      "sha256": "2e85d0cd04191a707d69bfc0f3cc3c695fccabb4bca2295e27d84ed9a933d6d5"
+      "sha256": "ca02630b494fe664a4f679708f376a9f4540eb858772e25e19486e695ec13e91"
     },
     "krein_state_selection": {
       "dependency_tags": [
@@ -343,10 +382,10 @@
       "lifecycle": "VERIFIED_NAVIGATION_ARTIFACT",
       "path": "foundations/results/FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1.json",
       "result_id": "FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1",
-      "sha256": "0bd9f6adf1907cd25928a479e12e95e6c994659aa0100cf4b5363a86d5005e7b"
+      "sha256": "67b04f749d17f4e40c25ebaa06e75a1d0fc66770cf3a544b1630595ee6ca54ba"
     }
   },
-  "canonical_digest": "7ec96ec6dd8cfa86f776fa45fe9137960ef6e670e77156df66decccbb86d9a48",
+  "canonical_digest": "ca94caac6f5c8f4f3c7d9c9199d121e8373c416e03dc709ba1942fb22bdb3ab5",
   "claim_flags": {
     "atlas_exhaustive": false,
     "axes_independent_proved": false,
@@ -362,7 +401,14 @@
     "bt_interacting_uniform_h_minus_one_established": false,
     "bt_lambda_0p4_os_status_decided": true,
     "bt_lambda_0p4_two_sampler_sign_support": true,
+    "bt_normalized_lowest_mode_marginal_established": false,
     "bt_pointwise_half_action_curvature_route_obstructed": true,
+    "bt_residual_pointwise_strict_convexity_established": true,
+    "bt_residual_positive_weighted_mean_curvature_established": false,
+    "bt_residual_spectrahedral_pushforward_established": true,
+    "bt_residual_uniform_positive_curvature_established": false,
+    "bt_standard_boundary_curvature_spectral_gap_route_obstructed": true,
+    "bt_vertex_transitive_entropy_jacobian_minimum_established": true,
     "case_study_authorities_pinned": true,
     "complete_evidence_register_generated": true,
     "complete_literature_register_generated": true,
@@ -535,15 +581,17 @@
         "bt_low_mode_uv_schur_obstruction",
         "bt_action_weight_virial_obstruction",
         "bt_affine_virial_action_density",
-        "bt_orthogonal_hessian_block_obstruction"
+        "bt_orthogonal_hessian_block_obstruction",
+        "bt_residual_spectrahedral_pushforward",
+        "bt_residual_boundary_curvature_obstruction"
       ],
       "claim_id": "RF-13-BT-INTERACTING-RECONSTRUCTION-FRONTIER",
       "dependency_tags": [
         "LOCAL-ALGEBRAIC",
         "EUCLIDEAN-SPECTRAL"
       ],
-      "statement": "At lambda=0.4 on the 6^4 lattice, an exact two-point reflected density-kernel minor obstructs ordinary OS positivity. The affine virial theorem proves a volume-uniform actual Gibbs action-density bound and annealed half-action factor. An exact period-four family then makes the Hessian block orthogonal to the full lowest axial eigenspace indefinite on an unbounded volume sequence, obstructing the global Schur/pointwise half-action curvature route; the direct normalized marginal and actual interacting H^-1 moment remain open.",
-      "status": "EXACT_FINITE_OS_AND_ORTHOGONAL_HESSIAN_OBSTRUCTIONS_WITH_ACTUAL_ACTION_DENSITY_BOUND"
+      "statement": "At lambda=0.4 on the 6^4 lattice, an exact two-point reflected density-kernel minor obstructs ordinary OS positivity. The affine virial theorem proves a volume-uniform actual Gibbs action-density bound and annealed half-action factor. Exact period-four data obstruct the global Schur route. The residual map identifies positive fields modulo scale with a Schr\u00f6dinger spectrahedral boundary and gives the exact normalized Gaussian-surface/tree-Jacobian pushforward. That boundary is pointwise strictly convex, but an exact C4 family has trial curvature tending to zero and negative Gaussian weighted mean curvature at lambda=0.4, obstructing the standard uniform positive-curvature spectral-gap route. The lowest log-ground-state marginal and actual interacting H^-1 moment remain open.",
+      "status": "EXACT_FINITE_OS_HESSIAN_AND_BOUNDARY_CURVATURE_ROUTE_OBSTRUCTIONS_WITH_ACTION_DENSITY_AND_NORMALIZED_RESIDUAL_REFORMULATION"
     },
     {
       "authorities": [
@@ -723,19 +771,19 @@
   ],
   "paper": {
     "appendix": {
-      "assembly_source_canonical_digest": "fde8c31dd5b414e65d0b5e9a1e3bd1b6d8519c68774bb62649e308926372b0bf",
+      "assembly_source_canonical_digest": "758f507751da155b7d7b0c0cccf61b09013d1ebd69c9dce9c6d028fe44c5c411",
       "assembly_source_path": "foundations/site/assemblies.json",
-      "assembly_source_sha256": "0bd9f6adf1907cd25928a479e12e95e6c994659aa0100cf4b5363a86d5005e7b",
+      "assembly_source_sha256": "67b04f749d17f4e40c25ebaa06e75a1d0fc66770cf3a544b1630595ee6ca54ba",
       "generator_path": "paper/generate_21_reverse_foundations_appendices.py",
       "generator_sha256": "f46fd7cd15f93d83c0f2ec292fa9e0cbae6bdc9f7a503dd39ff61565424db364",
       "path": "paper/21-reverse-foundations-of-physics-appendices.tex",
-      "sha256": "7f5172ab20ce9134991dea1de13183a6ed54bc64357f5e8716417575d60dac35",
-      "source_canonical_digest": "e4c79e8ec537c2d9f9271d9ccbd042da2a5529b0b5f0f11fa6917cc3af0386cd",
+      "sha256": "584ac0e2c140e25e722adfd96ca274327c736ea7f056730a40b9d3e117c33219",
+      "source_canonical_digest": "65c1967435f8a4d87c47143dc948ad039eb5906da00dfcac2ecc2883d6988911",
       "source_path": "foundations/site/data.json",
-      "source_sha256": "93c1ec7d51d089034cd6041d5f86e46e1ac48da39a4e67ab75ef1ad0beec7f3d"
+      "source_sha256": "bdd74ad5edb31df891704b25667e58bdcf4eb8d798afa039b607677843f9ff38"
     },
     "path": "paper/21-reverse-foundations-of-physics.tex",
-    "sha256": "cb48dffab881de9f8e469fb2e494ee5599c9815f84f2e6992d36cb339badb536"
+    "sha256": "c42efd66a13656f3aa4111b104faaafa7c71650b2a20d48088460a6fbfd1415c"
   },
   "result_id": "PAPER21_REVERSE_FOUNDATIONS_INTRODUCTION_V1",
   "result_kind": "PROGRAMME_SYNTHESIS_AND_TYPED_CASE_STUDY_MAP",

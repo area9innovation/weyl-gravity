@@ -1,0 +1,431 @@
+{
+  "answer": "No for that standard route. The principal BT boundary is pointwise strictly convex, but on C4 the exact reciprocal family Omega=(q,1,1,q^-1) has a tangent normal curvature tending to zero as 4 q^-6. At lambda=2/5 its Gaussian weighted mean curvature is already -398039/88434 at q=2 and tends to -25/2. Hence neither a positive uniform curvature lower bound nor global positive weighted mean curvature is available. This obstructs the stated curvature-hypothesis method, not the actual normalized BT moment.",
+  "certificate": "REVERSE_PHYSICS_BT_EUCLIDEAN_RESIDUAL_BOUNDARY_CURVATURE_OBSTRUCTION_V1",
+  "checks": {
+    "details": {
+      "actual_low_mode_and_h_minus_one_moments_remain_open": true,
+      "bordered_inverse_is_moore_penrose_inverse": true,
+      "closed_forms_match_bordered_inverse_at_fifteen_exact_points": true,
+      "mean_curvature_is_exact": true,
+      "no_born_krein_continuum_or_lorentzian_promotion": true,
+      "omega_square_norm_is_seventeen_fourths": true,
+      "outward_normal_is_negative_omega_squared": true,
+      "pointwise_strict_convexity_does_not_give_uniform_curvature": true,
+      "positive_reciprocal_family_has_unit_product": true,
+      "pseudoinverse_quadratic_is_ten_ninths": true,
+      "residual_formula_at_q_two_is_exact": true,
+      "residual_outward_normal_is_exact": true,
+      "schrodinger_matrix_kills_positive_ground_state": true,
+      "second_fundamental_value_is_eighty_over_153": true,
+      "standard_positive_curvature_spectral_gap_route_is_obstructed": true,
+      "tangent_source_is_ground_state_orthogonal": true,
+      "trial_curvature_limit_is_zero_by_degree": true,
+      "trial_direction_is_boundary_tangent": true,
+      "trial_normal_curvature_is_eighty_over_2601": true,
+      "weighted_mean_curvature_is_strictly_negative": true,
+      "weighted_mean_curvature_limit_is_negative_twenty_five_halves": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 21,
+    "total": 21
+  },
+  "closed_form_mean_curvature": {
+    "asymptotic": "lim_(q->infinity) H_2/5(q)=-25/2",
+    "exact_identity_certificate": "After clearing the displayed nonzero denominators, the bordered-inverse formulas have numerator degree at most 14. Exact agreement at q=1,...,15 certifies the polynomial identities; the independent verifier reconstructs all 15 bordered inverses separately.",
+    "mean_curvature": "H(q)=2q^2 P10(q)/((q+1)^2(q^4+1)^3), where P10=q^10+3q^9+3q^8+2q^6+2q^5+2q^4+3q^2+3q+1",
+    "residual_outward_normal": "<r,n_out>=2(q-1)^2(q^2+q+1)/(q^4+1)",
+    "status": "PROVED",
+    "weighted_at_lambda_point_four": "H_2/5(q)=-P14(q)/(2(q+1)^2(q^4+1)^3), where P14=25q^14+25q^13-29q^12-62q^11+13q^10+75q^9-33q^8-108q^7-33q^6+75q^5+13q^4-62q^3-29q^2+25q+25"
+  },
+  "created": "2026-08-14",
+  "cycle_family": {
+    "conclusion": "the smallest principal curvature is at most kappa_trial(q), so no positive field-uniform lower bound exists even on C4",
+    "curvature_asymptotic": "lim_(q->infinity) kappa_trial(q)=0 and lim_(q->infinity) q^6 kappa_trial(q)=4",
+    "graph": "four-cycle C4 with degree two",
+    "omega": "Omega(q)=(q,1,1,q^-1), so product_x Omega_x=1",
+    "parameter": "rational q>0",
+    "pseudoinverse_quadratic": "<diag(h)Omega,K^+diag(h)Omega>=q(2q+1)/(q+1)^2",
+    "residual": "r(q)=(-(q-1)(2q+1)/q^2, q-1, -(q-1)/q, (q-1)(q+2))",
+    "status": "EXACT_RATIONAL_FAMILY",
+    "tangent": "h(q)=(0,0,1,-q^2), with <Omega(q)^2,h(q)>=0",
+    "trial_normal_curvature": "kappa_trial(q)=2 q^3(2q+1)/((q+1)^2(q^4+1)^2)"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "does_not_establish": [
+    "failure of every Poincare, transport, or intrinsic boundary inequality",
+    "failure or divergence of the normalized lowest-mode marginal",
+    "failure or divergence of the actual interacting H^-1 moment",
+    "tightness or a continuum Euclidean BT measure",
+    "a Born rule or Krein reconstruction",
+    "anything LORENTZIAN-CAUSAL",
+    "a literature-priority claim for the boundary perturbation formulas"
+  ],
+  "finite_graph_geometry": {
+    "gaussian_weighted_mean_curvature": "H_lambda=H-<r,n_out>/lambda^2 and <r,n_out>=Omega^T(-Delta)Omega/||Omega^2||_2",
+    "ground_state": "K(r) Omega=0 with Omega>0 and ||Omega||_2 arbitrary",
+    "mean_curvature": "H=2 tr(P_T diag(Omega) K^+ diag(Omega) P_T)/||Omega^2||_2, with P_T the Euclidean tangent projector",
+    "outward_unit_normal": "n_out=-Omega^2/||Omega^2||_2",
+    "scope": "principal smooth boundary of C_G for every finite connected graph G",
+    "second_fundamental_form": "II_r(h,h)=2 <diag(h)Omega, K(r)^+ diag(h)Omega>/||Omega^2||_2",
+    "status": "PROVED",
+    "strictness": "II_r(h,h)>0 for every nonzero tangent h because diag(h)Omega lies in Omega^perp and K^+ is positive definite there",
+    "tangent_space": "T_r boundary(C_G)={h: sum_x Omega_x^2 h_x=0}"
+  },
+  "foundational_dependency_cut": {
+    "classification": "USED_BY_DISPLAYED_PROOF",
+    "finite_analytic_layer": "simple-eigenvalue perturbation, the Moore--Penrose inverse, and differential geometry establish the general formula",
+    "finite_exact_layer": "the C4 rational family, bordered inverse, curvature witness, and negative weighted mean curvature use exact rational arithmetic",
+    "uniform_limit_layer": "the actual all-volume log-ground-state marginal and H^-1 estimate remain unsupplied",
+    "weakest_base_or_reversal": "NOT_ESTABLISHED"
+  },
+  "lambda_point_four_fixture": {
+    "coupling": {
+      "denominator": 5,
+      "numerator": 2
+    },
+    "gaussian_weighted_mean_curvature": {
+      "denominator": 88434,
+      "numerator": -398039
+    },
+    "mean_curvature": {
+      "denominator": 44217,
+      "numerator": 28568
+    },
+    "omega": [
+      {
+        "denominator": 1,
+        "numerator": 2
+      },
+      {
+        "denominator": 1,
+        "numerator": 1
+      },
+      {
+        "denominator": 1,
+        "numerator": 1
+      },
+      {
+        "denominator": 2,
+        "numerator": 1
+      }
+    ],
+    "pseudoinverse_quadratic": {
+      "denominator": 9,
+      "numerator": 10
+    },
+    "q": {
+      "denominator": 1,
+      "numerator": 2
+    },
+    "residual": [
+      {
+        "denominator": 4,
+        "numerator": -5
+      },
+      {
+        "denominator": 1,
+        "numerator": 1
+      },
+      {
+        "denominator": 2,
+        "numerator": -1
+      },
+      {
+        "denominator": 1,
+        "numerator": 4
+      }
+    ],
+    "residual_outward_normal": {
+      "denominator": 17,
+      "numerator": 14
+    },
+    "schrodinger_matrix": [
+      [
+        {
+          "denominator": 4,
+          "numerator": 3
+        },
+        {
+          "denominator": 1,
+          "numerator": -1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": -1
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": -1
+        },
+        {
+          "denominator": 1,
+          "numerator": 3
+        },
+        {
+          "denominator": 1,
+          "numerator": -1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": -1
+        },
+        {
+          "denominator": 2,
+          "numerator": 3
+        },
+        {
+          "denominator": 1,
+          "numerator": -1
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": -1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": -1
+        },
+        {
+          "denominator": 1,
+          "numerator": 6
+        }
+      ]
+    ],
+    "schrodinger_pseudoinverse": [
+      [
+        {
+          "denominator": 5625,
+          "numerator": 1372
+        },
+        {
+          "denominator": 5625,
+          "numerator": -764
+        },
+        {
+          "denominator": 5625,
+          "numerator": -1864
+        },
+        {
+          "denominator": 5625,
+          "numerator": -232
+        }
+      ],
+      [
+        {
+          "denominator": 5625,
+          "numerator": -764
+        },
+        {
+          "denominator": 5625,
+          "numerator": 1393
+        },
+        {
+          "denominator": 5625,
+          "numerator": 218
+        },
+        {
+          "denominator": 5625,
+          "numerator": -166
+        }
+      ],
+      [
+        {
+          "denominator": 5625,
+          "numerator": -1864
+        },
+        {
+          "denominator": 5625,
+          "numerator": 218
+        },
+        {
+          "denominator": 5625,
+          "numerator": 3418
+        },
+        {
+          "denominator": 5625,
+          "numerator": 184
+        }
+      ],
+      [
+        {
+          "denominator": 5625,
+          "numerator": -232
+        },
+        {
+          "denominator": 5625,
+          "numerator": -166
+        },
+        {
+          "denominator": 5625,
+          "numerator": 184
+        },
+        {
+          "denominator": 5625,
+          "numerator": 892
+        }
+      ]
+    ],
+    "second_fundamental_value": {
+      "denominator": 153,
+      "numerator": 80
+    },
+    "status": "EXACT_RATIONAL_NEGATIVE_WEIGHTED_MEAN_CURVATURE",
+    "tangent": [
+      {
+        "denominator": 1,
+        "numerator": 0
+      },
+      {
+        "denominator": 1,
+        "numerator": 0
+      },
+      {
+        "denominator": 1,
+        "numerator": 1
+      },
+      {
+        "denominator": 1,
+        "numerator": -4
+      }
+    ],
+    "trial_normal_curvature": {
+      "denominator": 2601,
+      "numerator": 80
+    }
+  },
+  "lifecycle_state": "METHOD_OBSTRUCTION_PROVED",
+  "literature_applicability": {
+    "actual_inverse_tree_jacobian_measure_covered_directly": "NO",
+    "disposition": "STANDARD_CURVATURE_LOWER_BOUND_ROUTE_OBSTRUCTED",
+    "gaussian_boundary_reference": "Kolesnikov--Milman arXiv:1601.02925 Theorem 1.1 is a curvature-weighted boundary inequality, not an unrestricted dimension-free variance inequality for the BT observable",
+    "positive_weighted_mean_curvature_hypothesis": "OBSTRUCTED_AT_LAMBDA_0P4",
+    "spectral_gap_reference": "Kolesnikov--Milman arXiv:1711.08825 Theorem 1.3 assumes II>=sigma g and positive weighted mean curvature H_mu>=xi",
+    "uniform_second_fundamental_form_hypothesis": "OBSTRUCTED"
+  },
+  "method_disposition": {
+    "actual_interacting_h_minus_one_second_moment_bound": "OPEN",
+    "born_rule": "NOT_ESTABLISHED",
+    "continuum_limit": "NOT_ESTABLISHED",
+    "global_positive_gaussian_weighted_mean_curvature": "OBSTRUCTED_AT_LAMBDA_0P4",
+    "interacting_tightness": "NOT_ESTABLISHED",
+    "known_curvature_hypothesis_spectral_gap_route": "OBSTRUCTED_AS_FORMULATED",
+    "krein_reconstruction": "NOT_ASSESSED",
+    "lorentzian_transfer": "NOT_ESTABLISHED",
+    "normalized_lowest_mode_marginal_bound": "OPEN",
+    "other_boundary_or_intrinsic_inequalities": "NOT_ASSESSED",
+    "pointwise_strict_convexity": "PROVED",
+    "residual_boundary_geometry": "PROVED",
+    "uniform_positive_principal_curvature": "OBSTRUCTED"
+  },
+  "missing_object_ledger": [
+    "a direct normalized one-mode marginal estimate or controlled divergence sequence",
+    "an inequality adapted to the inverse-tree-Jacobian surface measure without false uniform-curvature assumptions",
+    "a dyadic-shell summation proving or obstructing the actual interacting H^-1 moment",
+    "tightness in a compactly weaker topology after a positive moment theorem",
+    "identification and uniqueness of any Euclidean subsequential limit"
+  ],
+  "next_gate": "Do not pursue a global positive-curvature boundary spectral gap. Return to the exact multiplicative one-mode tilt and control its normalized marginal directly, using the Gaussian residual action and tree Jacobian jointly; alternatively produce a controlled volume sequence on which the actual marginal diverges.",
+  "provenance": {
+    "arithmetic": "Exact Fraction arithmetic for C4, including a rational bordered inverse; no floating-point value enters the claim",
+    "inputs": [
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_RESIDUAL_SPECTRAHEDRAL_PUSHFORWARD_V1.json",
+        "sha256": "31bc26ff9822cdfc663b5fb0fc47e7970f592afbc6526f1aadf2e4447dd324e0"
+      }
+    ],
+    "literature": [
+      {
+        "arxiv": "1601.02925",
+        "citation": "Kolesnikov and Milman, Sharp Poincare-type inequality for the Gaussian measure on the boundary of convex sets",
+        "url": "https://arxiv.org/abs/1601.02925"
+      },
+      {
+        "arxiv": "1711.08825",
+        "citation": "Kolesnikov and Milman, Poincare and Brunn--Minkowski inequalities on the boundary of weighted Riemannian manifolds",
+        "url": "https://arxiv.org/abs/1711.08825"
+      }
+    ],
+    "repository_base_commit": "779e5d38022a6b4c1f46e4e07b78fccccf169834"
+  },
+  "question": "Does the convex residual-spectrahedral boundary satisfy the uniform positive second-fundamental-form and Gaussian weighted mean-curvature hypotheses that would turn known boundary spectral-gap estimates into the missing BT low-mode bound?",
+  "report": "reverse_physics/reports/bt-euclidean-residual-boundary-curvature-obstruction.md",
+  "result_kind": "exact finite-graph boundary geometry and scoped obstruction to uniform positive-curvature spectral-gap hypotheses",
+  "schema": "reverse_physics/schema/reverse-physics-bt-euclidean-residual-boundary-curvature-obstruction-v1.schema.json",
+  "schema_version": "reverse-physics-bt-euclidean-residual-boundary-curvature-obstruction-v1",
+  "tier_receipt": {
+    "command_results": [
+      {
+        "command": "ulimit -v 500000; python3 reverse_physics/bt_euclidean_residual_boundary_curvature_obstruction.py --check",
+        "elapsed_seconds": "0.03",
+        "peak_rss_kib": 17224,
+        "status": "PASS_21_OF_21"
+      },
+      {
+        "command": "ulimit -v 500000; python3 reverse_physics/verify_bt_euclidean_residual_boundary_curvature_obstruction.py",
+        "elapsed_seconds": "0.08",
+        "peak_rss_kib": 24784,
+        "status": "PASS_18_OF_18"
+      },
+      {
+        "command": "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_euclidean_residual_boundary_curvature_obstruction",
+        "elapsed_seconds": "0.19",
+        "peak_rss_kib": 24936,
+        "status": "PASS_12_TESTS"
+      },
+      {
+        "command": "ulimit -v 500000; python3 paper/generate_21_reverse_foundations_appendices.py --check && python3 paper/generate_21_reverse_foundations_claim_map.py --check && python3 paper/verify_21_reverse_foundations_claim_map.py",
+        "elapsed_seconds": "0.14",
+        "peak_rss_kib": 25072,
+        "status": "PASS_PAPER_PROJECTION"
+      },
+      {
+        "command": "ulimit -v 500000; timeout 60 pdflatex -interaction=nonstopmode -halt-on-error paper/21-reverse-foundations-of-physics.tex (two stable passes)",
+        "elapsed_seconds": "0.70_FINAL_PASS",
+        "peak_rss_kib": 53160,
+        "status": "PASS_44_PAGES_NO_FATAL_OR_OVERFULL"
+      },
+      {
+        "command": "ulimit -v 500000; GOMEMLIMIT=300MiB GOGC=50 /home/alstrup/tmp/sf-sfc-1000 conform planning/work-items",
+        "elapsed_seconds": "1.02",
+        "peak_rss_kib": 5488,
+        "status": "PASS_CLEAN"
+      }
+    ],
+    "resource_policy": "all scientific commands run sequentially under ulimit -v 500000",
+    "tier_0": "parse, strict schema, deterministic generation, scoped git diff --check, and exact staged-diff inspection",
+    "tier_1": "producer, independent exact curvature verifier, and mutation tests",
+    "tier_2": "predecessor residual-pushforward input reused by content hash; Paper 21 appendices, claim map, authority hashes, atlas counts, claim boundaries, and 44-page PDF projection passed",
+    "tier_3": "NOT_RUN: no freeze, release, continuum, quantum lifecycle, or Lorentzian promotion"
+  },
+  "verification_commands": [
+    "python3 reverse_physics/bt_euclidean_residual_boundary_curvature_obstruction.py --check",
+    "python3 reverse_physics/verify_bt_euclidean_residual_boundary_curvature_obstruction.py",
+    "python3 -m unittest -v reverse_physics.tests.test_bt_euclidean_residual_boundary_curvature_obstruction"
+  ]
+}

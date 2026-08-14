@@ -93,6 +93,8 @@ def main() -> int:
     bt_action_weight = json.loads((ROOT / data["authorities"]["bt_action_weight_virial_obstruction"]["path"]).read_text())
     bt_affine_virial = json.loads((ROOT / data["authorities"]["bt_affine_virial_action_density"]["path"]).read_text())
     bt_orthogonal_hessian = json.loads((ROOT / data["authorities"]["bt_orthogonal_hessian_block_obstruction"]["path"]).read_text())
+    bt_residual_pushforward = json.loads((ROOT / data["authorities"]["bt_residual_spectrahedral_pushforward"]["path"]).read_text())
+    bt_residual_curvature = json.loads((ROOT / data["authorities"]["bt_residual_boundary_curvature_obstruction"]["path"]).read_text())
     dims = cube["dimensions"]
     atlas = data["atlas_snapshot"]
     require(atlas["axis_sizes"] == [6, 6, 16], "unexpected axis sizes")
@@ -103,12 +105,12 @@ def main() -> int:
     require(atlas["synthetic_complements"] == 0, "synthetic complement mismatch")
     require(atlas["total_not_mapped_in_explorer"] == site["counts"]["not_mapped"] == 0, "explorer not-mapped mismatch")
     require(atlas["reviewed_open_gaps"] == site["counts"]["reviewed_gap"] == 172, "reviewed-gap mismatch")
-    require(atlas["evidence_records"] == site["counts"]["evidence_records"] == 75, "evidence-record mismatch")
+    require(atlas["evidence_records"] == site["counts"]["evidence_records"] == 76, "evidence-record mismatch")
     require(atlas["literature_records"] == 51, "literature-record mismatch")
-    require(atlas["local_result_records"] == 24, "local-result-record mismatch")
+    require(atlas["local_result_records"] == 25, "local-result-record mismatch")
     require(atlas["content_pinned_literature"] == 39, "content-pinned literature mismatch")
     require(atlas["metadata_only_literature"] == 12, "metadata-only literature mismatch")
-    require(atlas["evidence_records_used_by_matrix"] == 75, "matrix evidence usage is incomplete")
+    require(atlas["evidence_records_used_by_matrix"] == 76, "matrix evidence usage is incomplete")
     require(atlas["migration_pending_cells"] == 0, "migration must remain fully reviewed")
     require(atlas["all_cells_assessed"] is True, "full-surface assessment flag is not certified")
     require(atlas["bt_euclidean_direct_capabilities"] == 5, "BT direct-capability count mismatch")
@@ -141,6 +143,21 @@ def main() -> int:
     require(atlas["bt_orthogonal_hessian_cell_value"] == {"numerator": -13880, "denominator": 81}, "BT orthogonal Hessian value drift")
     require(bt_orthogonal_hessian["method_disposition"]["direct_normalized_low_mode_marginal"] == "OPEN", "BT direct marginal promoted")
     require(bt_orthogonal_hessian["method_disposition"]["actual_interacting_h_minus_one_second_moment_bound"] == "OPEN", "BT Hessian obstruction promoted to H^-1 failure")
+    require(atlas["bt_residual_boundary_coordinate_status"] == bt_residual_pushforward["method_disposition"]["residual_spectrahedral_boundary_coordinates"] == "PROVED", "BT residual boundary coordinate theorem drift")
+    require(atlas["bt_residual_tree_jacobian_status"] == bt_residual_pushforward["method_disposition"]["ground_state_tree_jacobian"] == "PROVED", "BT residual tree Jacobian theorem drift")
+    require(atlas["bt_residual_entropy_jacobian_minimum_status"] == bt_residual_pushforward["method_disposition"]["vertex_transitive_entropy_jacobian_minimum"] == "PROVED", "BT residual entropy Jacobian minimum drift")
+    require(atlas["bt_residual_cycle_jacobian"] == bt_residual_pushforward["exact_cycle_fixture"]["restricted_jacobian"] == {"numerator": 85, "denominator": 2}, "BT residual C4 Jacobian drift")
+    require(atlas["bt_normalized_lowest_mode_marginal_status"] == bt_residual_pushforward["method_disposition"]["normalized_lowest_mode_marginal_bound"] == "OPEN", "BT normalized lowest-mode marginal promoted")
+    require(bt_residual_pushforward["method_disposition"]["actual_interacting_h_minus_one_second_moment_bound"] == "OPEN", "BT residual reformulation promoted to H^-1 theorem")
+    require(bt_residual_pushforward["foundational_dependency_cut"]["weakest_base_or_reversal"] == "NOT_ESTABLISHED", "BT residual dependency cut promoted to reversal")
+    require(atlas["bt_residual_pointwise_strict_convexity_status"] == bt_residual_curvature["method_disposition"]["pointwise_strict_convexity"] == "PROVED", "BT residual strict convexity theorem drift")
+    require(atlas["bt_residual_uniform_curvature_status"] == bt_residual_curvature["method_disposition"]["uniform_positive_principal_curvature"] == "OBSTRUCTED", "BT residual uniform-curvature obstruction drift")
+    require(atlas["bt_residual_weighted_mean_curvature_status"] == bt_residual_curvature["method_disposition"]["global_positive_gaussian_weighted_mean_curvature"] == "OBSTRUCTED_AT_LAMBDA_0P4", "BT residual weighted-mean-curvature obstruction drift")
+    require(atlas["bt_residual_trial_curvature_q2"] == bt_residual_curvature["lambda_point_four_fixture"]["trial_normal_curvature"] == {"numerator": 80, "denominator": 2601}, "BT residual q=2 trial curvature drift")
+    require(atlas["bt_residual_weighted_mean_curvature_q2"] == bt_residual_curvature["lambda_point_four_fixture"]["gaussian_weighted_mean_curvature"] == {"numerator": -398039, "denominator": 88434}, "BT residual q=2 weighted mean curvature drift")
+    require(bt_residual_curvature["method_disposition"]["other_boundary_or_intrinsic_inequalities"] == "NOT_ASSESSED", "BT boundary obstruction widened to other inequalities")
+    require(bt_residual_curvature["method_disposition"]["normalized_lowest_mode_marginal_bound"] == "OPEN", "BT boundary obstruction promoted to marginal result")
+    require(bt_residual_curvature["method_disposition"]["actual_interacting_h_minus_one_second_moment_bound"] == "OPEN", "BT boundary obstruction promoted to H^-1 result")
 
     allowed_tags = {"LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE", "LORENTZIAN-CAUSAL"}
     claim_ids = set()
@@ -189,6 +206,13 @@ def main() -> int:
     require(flags["bt_actual_annealed_half_action_factor_established"] is True, "BT annealed half-action theorem missing")
     require(flags["bt_global_orthogonal_hessian_block_obstructed"] is True, "BT orthogonal Hessian obstruction flag missing")
     require(flags["bt_pointwise_half_action_curvature_route_obstructed"] is True, "BT half-action curvature obstruction flag missing")
+    require(flags["bt_residual_spectrahedral_pushforward_established"] is True, "BT residual spectrahedral pushforward flag missing")
+    require(flags["bt_vertex_transitive_entropy_jacobian_minimum_established"] is True, "BT entropy Jacobian minimum flag missing")
+    require(flags["bt_normalized_lowest_mode_marginal_established"] is False, "BT normalized marginal flag promoted")
+    require(flags["bt_residual_pointwise_strict_convexity_established"] is True, "BT residual strict-convexity flag missing")
+    require(flags["bt_residual_uniform_positive_curvature_established"] is False, "BT residual uniform-curvature flag promoted")
+    require(flags["bt_residual_positive_weighted_mean_curvature_established"] is False, "BT residual weighted-mean-curvature flag promoted")
+    require(flags["bt_standard_boundary_curvature_spectral_gap_route_obstructed"] is True, "BT boundary curvature route obstruction flag missing")
     require(flags["research_programme_lenses_explained"] is True, "research-programme exposition flag is not certified")
     for false_flag in [
         "weakest_foundation_proved",
@@ -258,8 +282,8 @@ def main() -> int:
     appendix = appendix_path.read_text()
     for token in ("Bateman--Turok", "Mannheim conformal-gravity programme", "Pure-Weyl BV--BFV"):
         require(token in appendix, f"research-programme lens missing from appendix: {token}")
-    require(r"All obligations & 120 & 91 & 163 & 30 & 172 & 0 & 576" in appendix, "appendix coverage totals drift")
-    require("contains 75 evidence records: 24 local result records and 51 literature records" in appendix, "appendix evidence summary drift")
+    require(r"All obligations & 122 & 90 & 162 & 30 & 172 & 0 & 576" in appendix, "appendix coverage totals drift")
+    require("contains 76 evidence records: 25 local result records and 51 literature records" in appendix, "appendix evidence summary drift")
     require("BT positive Euclidean lattice programme" in appendix, "BT Euclidean prototype missing")
     require("COARSE REPRODUCTION ONLY" in appendix, "BT numerical boundary missing")
     require("The classical-standard mixed-carrier reference has complete direct coverage" in appendix, "classical reference calibration missing")
@@ -300,8 +324,8 @@ def main() -> int:
         require(rf"\cert{{{evidence_id}}}" in appendix, f"linked evidence missing from appendix: {evidence_id}")
 
     evidence = atlas_data["evidence"]
-    require(appendix.count(r"\hypertarget{atlas-evidence-") == 75, "evidence-register anchor count drift")
-    require(appendix.count(r"\hyperlink{atlas-evidence-") == 75, "evidence-crosswalk link count drift")
+    require(appendix.count(r"\hypertarget{atlas-evidence-") == 76, "evidence-register anchor count drift")
+    require(appendix.count(r"\hyperlink{atlas-evidence-") == 76, "evidence-crosswalk link count drift")
     cell_usage = {evidence_id: [] for evidence_id in evidence}
     for cell in atlas_data["cells"]:
         for evidence_id in cell.get("evidence", []):
@@ -398,6 +422,14 @@ def main() -> int:
         r"\mathbb E\sqrt{1+\frac AN}\leq\frac{\sqrt{1247}}5",
         r"\operatorname{Hess}A[v,v]=72-\frac{19712}{81}",
         r"=-\frac{13880}{81}<0",
+        r"\mathcal C_G=\{r:K(r)\succeq0\}",
+        r"\mathcal J_H(\psi)=\sqrt N\,\|\Omega^2\|_2\,\tau_\psi",
+        r"\mathcal J_H(\psi)\geq N\kappa(G)",
+        r"no weakest-base reversal is claimed",
+        r"\mathrm{II}_r(h,h)=\frac{2}{\|\Omega^2\|_2}",
+        r"\lim_{q\to\infty}q^6\kappa_{\mathrm{trial}}(q)=4",
+        r"H_{2/5}=-\frac{398039}{88434}<0",
+        r"not an obstruction to every intrinsic",
     ]:
         require(phrase in prose, f"required boundary missing from paper: {phrase}")
     for citation in [

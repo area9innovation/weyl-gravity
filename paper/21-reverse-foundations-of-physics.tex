@@ -362,7 +362,7 @@ local anomaly classification does not restore a quantum master equation.
 \subsection{Coverage is metadata, not truth}
 
 In the current evidence snapshot, all 576 coordinates are emitted and assessed.
-Of these, 91 are marked as literature results, 120 as local results, 163 as
+Of these, 90 are marked as literature results, 122 as local results, 162 as
 having only pieces, 30 as selected priority gaps, and 172 as reviewed open
 gaps; zero remain not mapped.  A reviewed open gap is a formulated research
 question with a foundation requirement, carrier requirement, and typed missing
@@ -954,6 +954,96 @@ interacting \(H^{-1}\) moment, tightness, continuum measure, positive-Hilbert
 reconstruction, Krein bridge, Born rule, and every Lorentzian statement remain
 open.
 
+There is now an exact coordinate system for that normalized marginal.
+Certificate
+\cert{REVERSE_PHYSICS_BT_EUCLIDEAN_RESIDUAL_SPECTRAHEDRAL_PUSHFORWARD_V1}
+sets \(\Omega=e^\psi>0\), \(r=(\Delta\Omega)/\Omega\), and
+
+\[
+ K(r)=-\Delta+\operatorname{diag}(r),\qquad
+ \mathcal C_G=\{r:K(r)\succeq0\}.
+\]
+
+On every finite connected graph, the residual map is an analytic
+diffeomorphism from positive fields modulo scale onto the smooth boundary of
+the convex spectrahedron \(\mathcal C_G\).  The inverse extracts the unique
+positive ground state of \(K(r)\).  The exact ground-state transform is
+
+\[
+ v^TK(r)v=\sum_{\{x,y\}\in E}\Omega_x\Omega_y
+ \left(\frac{v_x}{\Omega_x}-\frac{v_y}{\Omega_y}\right)^2.
+\]
+
+If \(J_\psi=Dr(\psi)\), the directed matrix-tree theorem gives the
+restricted coarea Jacobian
+
+\[
+ \mathcal J_H(\psi)=\sqrt N\,\|\Omega^2\|_2\,\tau_\psi,
+ \qquad
+ \tau_\psi=\sum_T
+ \frac{\prod_{\{x,y\}\in T}\Omega_x\Omega_y}
+      {\prod_x\Omega_x^2}.
+\]
+
+Thus the actual normalized measure pushes forward exactly to
+
+\[
+ Z_L^{-1}\frac{e^{-\|r\|_2^2/(2\lambda^2)}}
+ {\sqrt N\,\|\Omega(r)^2\|_2\tau(r)}
+ \,d\mathcal H^{N-1}(r),
+ \qquad r\in\partial\mathcal C_G.
+\]
+
+The logarithm of the displayed Jacobian is convex under every multiplicative
+field tilt, because both factors are log-sum-exp functions.  On every
+vertex-transitive graph, AM--GM over spanning trees and
+\(\sum_x\psi_x=0\) sharpen this to the global bound
+\[
+                   \mathcal J_H(\psi)\geq N\kappa(G),
+\]
+where \(\kappa(G)\) is the number of spanning trees; equality holds at the
+constant field.  Thus the reciprocal Jacobian cannot favor a nonconstant
+field relative to its vacuum value.  This replaces an
+implicit orthogonal-field partition factor by an explicit Gaussian surface,
+positive-ground-state, and spanning-tree problem.  It is a normalized
+reformulation, not the missing estimate: an all-volume bound for the lowest
+Fourier coefficient of \(\lambda^{-1}\log\Omega(r)\), followed by a dyadic
+shell sum, remains open.  Foundationally, the graph identities and cofactors
+are finite exact algebra, Perron--Frobenius and coarea are finite-dimensional
+analysis, and the uniform limit is a third unsupplied layer.  This is only
+\rtype{USED-BY-DISPLAYED-PROOF}; no weakest-base reversal is claimed.
+
+The most immediate convex-boundary shortcut is also decided.  Certificate
+\cert{REVERSE_PHYSICS_BT_EUCLIDEAN_RESIDUAL_BOUNDARY_CURVATURE_OBSTRUCTION_V1}
+derives the outward second fundamental form
+\[
+ \mathrm{II}_r(h,h)=\frac{2}{\|\Omega^2\|_2}
+ \left\langle\operatorname{diag}(h)\Omega,
+ K(r)^+\operatorname{diag}(h)\Omega\right\rangle .
+\]
+It is strictly positive at each finite principal-boundary point.  However,
+on the four-cycle the exact family
+\(\Omega(q)=(q,1,1,q^{-1})\) and tangent
+\(h(q)=(0,0,1,-q^2)\) give
+\[
+ \kappa_{\mathrm{trial}}(q)
+ =\frac{2q^3(2q+1)}{(q+1)^2(q^4+1)^2},
+ \qquad
+ \lim_{q\to\infty}q^6\kappa_{\mathrm{trial}}(q)=4.
+\]
+Thus no positive field-uniform principal-curvature lower bound exists even
+on \(C_4\).  For the Gaussian surface reference density at
+\(\lambda=2/5\), its weighted mean curvature at \(q=2\) is exactly
+\[
+                         H_{2/5}=-\frac{398039}{88434}<0.
+\]
+Consequently the standard boundary spectral-gap route requiring uniform
+positive second fundamental form and positive weighted mean curvature is
+obstructed as formulated.  This is not an obstruction to every intrinsic
+boundary inequality and not a divergence theorem for the actual
+inverse-tree-Jacobian BT measure.  The normalized low-mode moment remains
+open.
+
 \subsection{A finite BV contraction does not freeze the quantum theory}
 
 The energy-two free BV block provides another finite exact case.  The
@@ -1274,6 +1364,18 @@ direct normalized low-frequency marginal estimate, first for one axial mode
 and then across Fourier shells.  Neither the action-density nor
 bilaplacian-density theorem alone is an \(H^{-1}\) estimate because energy may
 concentrate in the infrared modes.
+The residual-spectrahedral pushforward now makes the normalization exact: the
+field is the logarithm of the positive ground state of
+\(-\Delta+\operatorname{diag}(r)\), while the measure is a Gaussian surface
+weight divided by its spanning-tree coarea Jacobian.  The next theorem must
+control this log-ground-state marginal uniformly in volume; the coordinate
+change itself supplies no moment bound.
+The boundary is pointwise strictly convex, but an exact four-cycle family
+makes its least-curvature upper bound tend to zero and makes the Gaussian
+weighted mean curvature negative at \(\lambda=0.4\).  Hence a global
+positive-curvature boundary spectral gap cannot supply the estimate.  The
+live gate is a direct normalized one-mode tilt controlling the residual
+action and tree Jacobian jointly, not another global curvature comparison.
 
 \section{Limits of the present paper}
 \label{sec:limits}
