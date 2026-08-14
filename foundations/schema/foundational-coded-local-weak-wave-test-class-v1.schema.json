@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "foundational-coded-local-weak-wave-test-class-v1.schema.json",
+  "type": "object",
+  "required": ["schema_version", "result_id", "result_kind", "lifecycle", "created", "repository_base_commit", "dependency_tags", "theorem", "carrier", "localized_test_class", "separation", "weak_equations", "formal_proof", "fixtures", "provenance", "independent_checker", "claim_flags", "does_not_establish", "next_gate", "human_report"],
+  "properties": {
+    "schema_version": {"const": "foundational-coded-local-weak-wave-test-class-v1"},
+    "result_id": {"const": "FOUNDATIONAL_CODED_LOCAL_WEAK_WAVE_TEST_CLASS_V1"},
+    "result_kind": {"const": "FINITE_LOCALIZED_SEPARATING_TEST_CLASS_AND_COEFFICIENT_WEAK_EQUATION"},
+    "lifecycle": {"const": "CERTIFIED"},
+    "created": {"type": "string", "format": "date"},
+    "repository_base_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "theorem": {"type": "string", "minLength": 100},
+    "carrier": {
+      "type": "object",
+      "required": ["kind", "common_partition", "cell_widths", "ambient_coefficient_dimension", "mean_zero_constraint_rank", "mean_zero_subcarrier_dimension", "meaning"],
+      "properties": {
+        "kind": {"const": "DECLARED_LABELLED_CHIRAL_STEP_CARRIER"},
+        "common_partition": {"type": "array", "minItems": 6, "maxItems": 6},
+        "cell_widths": {"type": "array", "minItems": 5, "maxItems": 5},
+        "ambient_coefficient_dimension": {"const": 10},
+        "mean_zero_constraint_rank": {"const": 2},
+        "mean_zero_subcarrier_dimension": {"const": 8},
+        "meaning": {"type": "string", "minLength": 30}
+      }
+    },
+    "localized_test_class": {
+      "type": "object",
+      "required": ["time_interval", "bump_definition", "bump_moment_formula", "basis_size", "rational_span", "tests"],
+      "properties": {
+        "basis_size": {"const": 10},
+        "tests": {"type": "array", "minItems": 10, "maxItems": 10, "items": {"type": "object", "required": ["id", "chirality", "spatial_cell", "time_interval", "formula", "support", "regularity", "time_moment", "spatial_moment", "measurement_normalization"]}}
+      }
+    },
+    "separation": {
+      "type": "object",
+      "required": ["measurement", "matrix_shape", "matrix_form", "diagonal", "determinant", "rank", "separates_ambient_carrier", "separates_mean_zero_subcarrier", "does_not_separate"],
+      "properties": {
+        "matrix_shape": {"const": [10, 10]},
+        "matrix_form": {"const": "DIAGONAL"},
+        "diagonal": {"type": "array", "minItems": 10, "maxItems": 10},
+        "rank": {"const": 10},
+        "separates_ambient_carrier": {"const": true},
+        "separates_mean_zero_subcarrier": {"const": true}
+      }
+    },
+    "weak_equations": {
+      "type": "object",
+      "required": ["right_transport", "left_transport", "scalar_wave", "basis_coefficients_checked_per_fixture", "transport_residuals_checked_per_fixture", "scalar_residuals_checked_per_fixture", "scope"],
+      "properties": {
+        "basis_coefficients_checked_per_fixture": {"const": 10},
+        "transport_residuals_checked_per_fixture": {"const": 20},
+        "scalar_residuals_checked_per_fixture": {"const": 10}
+      }
+    },
+    "formal_proof": {"type": "array", "minItems": 7, "maxItems": 7, "items": {"type": "object", "required": ["id", "base", "statement"]}},
+    "fixtures": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "object", "required": ["id", "refined_right_coefficients", "refined_left_coefficients", "zero_mean_checks", "measurements"]}},
+    "provenance": {"type": "object", "required": ["inputs"]},
+    "independent_checker": {"type": "object", "required": ["path", "checks", "expected_digest"]},
+    "claim_flags": {
+      "type": "object",
+      "required": ["finite_localized_test_class_constructed", "labelled_finite_carrier_separated", "coefficient_transport_identities_proved", "coefficient_scalar_weak_wave_identity_proved", "pra_finite_certificate", "rca0_completion_transfer", "all_smooth_tests_covered", "unlabelled_scalar_field_separated", "full_state_reconstruction_proved", "strict_causal_support_proved", "green_operator_constructed", "weyl_or_metric_bv_equation_proved", "empirical_calibration_proved", "new_lorentzian_claim"]
+    },
+    "does_not_establish": {"type": "array", "minItems": 10, "items": {"type": "string", "minLength": 10}},
+    "next_gate": {"type": "string", "minLength": 50},
+    "human_report": {"const": "foundations/reports/coded-local-weak-wave-test-class-v1.md"}
+  }
+}

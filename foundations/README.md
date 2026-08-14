@@ -276,6 +276,23 @@ python3 foundations/verify_coded_wave_observable_reconstruction.py
 python3 -m unittest foundations.tests.test_coded_wave_observable_reconstruction
 ```
 
+The next
+[`localized weak-wave test certificate`](reports/coded-local-weak-wave-test-class-v1.md)
+uses ten compact-time rational polynomial bumps on the common five-cell
+partition of the declared fixtures.  Their labelled chiral measurement matrix
+is diagonal of exact rank ten, so the tests separate the declared finite
+coefficient carrier.  PRA verifies every pairing and coefficient residual;
+`RCA_0` transfers the finitely many bounded weak identities to the represented
+completion.  The result is deliberately not a theorem for every smooth test,
+an unlabelled scalar reconstruction, causal support, or a Green operator:
+
+```bash
+python3 foundations/build_coded_local_weak_wave_test_class.py --check
+python3 foundations/check_coded_local_weak_wave_test_class.py
+python3 foundations/verify_coded_local_weak_wave_test_class.py
+python3 -m unittest foundations.tests.test_coded_local_weak_wave_test_class
+```
+
 The generated
 [`static matrix explorer`](site/index.html) turns the complete refined surface
 into a browser-based research instrument. It displays all 576 coordinates as
@@ -576,6 +593,13 @@ coordinates.  Kinematics/observables and reconstruction/limits become direct
 local results in that declared scalar-wave scope; the other 574 cells and all
 interface ledgers remain byte-preserved.
 
+The append-only [`cube v12`](reports/refined-intersection-cube-v12.md) imports
+the localized coefficient-weak theorem into exactly three weak-arithmetic
+smooth/distributional coordinates.  Kinematics/observables becomes a direct
+local result; reconstruction moves to pieces-only; distributional
+well-posedness remains pieces-only because a finite test span is compatibility
+evidence, not an existence-and-uniqueness theorem.
+
 ```bash
 python3 foundations/build_full_surface_gap_audit.py --check
 python3 foundations/check_full_surface_gap_audit.py
@@ -589,10 +613,14 @@ python3 foundations/verify_refined_intersection_cube_v10.py
 python3 foundations/refine_intersection_cube_v11.py --check
 python3 foundations/check_refined_intersection_cube_v11.py
 python3 foundations/verify_refined_intersection_cube_v11.py
+python3 foundations/refine_intersection_cube_v12.py --check
+python3 foundations/check_refined_intersection_cube_v12.py
+python3 foundations/verify_refined_intersection_cube_v12.py
 python3 -m unittest foundations.tests.test_full_surface_gap_audit \
   foundations.tests.test_refined_intersection_cube_v9 \
   foundations.tests.test_refined_intersection_cube_v10 \
-  foundations.tests.test_refined_intersection_cube_v11
+  foundations.tests.test_refined_intersection_cube_v11 \
+  foundations.tests.test_refined_intersection_cube_v12
 ```
 
 The append-only

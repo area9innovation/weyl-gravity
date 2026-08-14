@@ -1,0 +1,81 @@
+{
+  "schema_version": "science-forge-tier-receipt-v1",
+  "receipt_id": "FOUNDATIONAL_CODED_LOCAL_WEAK_WAVE_TEST_CLASS_V1_TIER_RECEIPT",
+  "created": "2026-08-14",
+  "repository_base_commit": "3c295ffacc222271143df0018bdae167eae87a81",
+  "integration_head_observed": "3c295ffacc222271143df0018bdae167eae87a81",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "scope": "Construct an exact finite family of rational characteristic-localized C1 test functions that separates the ten-dimensional labelled chiral step carrier, certify the right- and left-moving weak transport equations and their induced scalar weak wave equation coefficient by coefficient for three declared fixtures, refine exactly three weak-arithmetic/smooth-distributional cube cells without a well-posedness promotion, and regenerate the canonical explorer and its direct assessment consumers.",
+  "tiers": {
+    "tier_0_compile": {
+      "status": "PASS",
+      "command": "python3 -m py_compile foundations/build_coded_local_weak_wave_test_class.py foundations/check_coded_local_weak_wave_test_class.py foundations/verify_coded_local_weak_wave_test_class.py foundations/refine_intersection_cube_v12.py foundations/check_refined_intersection_cube_v12.py foundations/verify_refined_intersection_cube_v12.py foundations/build_matrix_site_v2.py foundations/check_matrix_site_v2.py foundations/verify_matrix_site_v2.py",
+      "elapsed_seconds": 0.07
+    },
+    "tier_0_json": {
+      "status": "PASS",
+      "command": "parse every foundations/**/*.json with json.loads",
+      "result": "226 foundations JSON files parsed after adding this receipt."
+    },
+    "tier_0_diff_check": {
+      "status": "PASS",
+      "command": "git diff --check -- foundations"
+    },
+    "tier_1_localized_test_class": {
+      "status": "PASS",
+      "command": "python3 foundations/build_coded_local_weak_wave_test_class.py && python3 foundations/check_coded_local_weak_wave_test_class.py && python3 foundations/verify_coded_local_weak_wave_test_class.py && python3 -m unittest foundations.tests.test_coded_local_weak_wave_test_class",
+      "result": "Five rational spatial cells, ten localized tests, exact rank ten, 30 measurement pairings, 60 chiral transport residuals, 30 scalar wave residuals, and eight mutation tests pass; independent checker digest 76b3911530c5bb8c77a031834377dd4791891aefe3e4e2278a073ed8d18ac461."
+    },
+    "tier_1_cube": {
+      "status": "PASS",
+      "command": "python3 foundations/refine_intersection_cube_v12.py && python3 foundations/check_refined_intersection_cube_v12.py && python3 foundations/verify_refined_intersection_cube_v12.py && python3 -m unittest foundations.tests.test_refined_intersection_cube_v12",
+      "result": "All 576 v11 coordinates and all interfaces are preserved except the declared evidence augmentation on exactly three weak-arithmetic/smooth-distributional cells; two statuses change, the well-posedness cell remains PIECES_ONLY, seven tests pass, and the independent digest is 9a0d953d3a6fbaa472524a2b519b14be815601c49f18e12b282ec48ab073b2af."
+    },
+    "tier_2_direct_consumers": {
+      "status": "PASS",
+      "command": "regenerate and verify the matrix explorer, theory viability assessment, theory assembly atlas, and run their 22 direct-consumer tests",
+      "result": "The explorer contains 576 classified cells, 77 evidence records, zero migration-pending cells, one bounded-complete assembly, and the expected v12 status counts: 123 local, 90 literature, 163 pieces-only, 30 priority gaps, and 170 reviewed gaps."
+    },
+    "tier_2_complete_foundations_suite": {
+      "status": "PASS",
+      "command": "python3 -m unittest discover -s foundations/tests -p 'test_*.py'",
+      "elapsed_seconds": 65.13,
+      "result": "389/389 tests pass."
+    },
+    "paper_worktree_audit": {
+      "status": "PASS_NOT_OWNED",
+      "command": "python3 paper/generate_21_reverse_foundations_claim_map.py && python3 paper/verify_21_reverse_foundations_claim_map.py && python3 ci/verify_paper_manuscript_pins.py && two pdflatex passes",
+      "result": "The working-draft introduction compiles to 45 pages and its authority hashes, atlas counts, claim boundaries, and seven PDF bindings pass. The paper paths also contain substantial concurrent Bateman work and are therefore deliberately excluded from this scoped foundations commit."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No classical or quantum freeze/tag, quantum lifecycle promotion, shared classical core-algebra change, release preparation, or explicit full-repository-suite request applies. The complete foundations suite and all direct paper checks were run; the paper remains explicitly a working draft."
+    }
+  },
+  "artifact_hashes": {
+    "foundations/build_coded_local_weak_wave_test_class.py": "03f108f0e151a38403d27d00e56aac9913eacda3348239dab78c02c394cb8fa3",
+    "foundations/check_coded_local_weak_wave_test_class.py": "029201784b065856f23ea93a7ab64951de2895f657af085336641fb6e330e960",
+    "foundations/verify_coded_local_weak_wave_test_class.py": "22cac113add41ea09c752eff4d362005ab0a9b9ca83cbcd67d12a3f351804475",
+    "foundations/results/FOUNDATIONAL_CODED_LOCAL_WEAK_WAVE_TEST_CLASS_V1.json": "ee6591f100f7f73aaf3462949a6c4ce27e6f090cfcced51e5e7e4c20fd28281c",
+    "foundations/reports/coded-local-weak-wave-test-class-v1.md": "f278e992b2f9e9538d24584b8a31b0556ba8165f14a1a69cda33c618d159b112",
+    "foundations/schema/foundational-coded-local-weak-wave-test-class-v1.schema.json": "300e544560652f88e6907bc2162e20c42f6f39436f4e4026c75d5afff20d0c4b",
+    "foundations/tests/test_coded_local_weak_wave_test_class.py": "4d9ec6e7972fc2b5f0c757623ad3207238ca3e68323d18f4c28dc68b65dc604c",
+    "foundations/refine_intersection_cube_v12.py": "97f90431bbc4af225af9da23ecb2e98c7a7e5cf6f2b298d227625a7c77c433f9",
+    "foundations/check_refined_intersection_cube_v12.py": "cd166236b32dec7f8b5ac54c11fe9ccce9f6a6a4f7f5eb516001c741a2cde097",
+    "foundations/verify_refined_intersection_cube_v12.py": "0539bd0559b8e4d8fe87518749311ba46cb8b62799a530c213ec47bb7a042c08",
+    "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V12.json": "5a93c5d2661f2a5591db75b60e72da3dccd0f3587b75f67dddc2c19c71a84f05",
+    "foundations/site/data.json": "4f5cbd42e41ad98361b769caea36cca2879f4c3a74fbe058d83bfce2fb6af222",
+    "foundations/site/manifest.json": "ecb67ecaf7181296a76ba1108b0a4ffc6e5b6987a841f59079350ad56bb6e67f"
+  },
+  "unresolved": [
+    "The ten tests separate a labelled finite chiral carrier; they do not establish separation for an unlabelled scalar distribution space or for every smooth compactly supported test.",
+    "RCA_0 is a sufficient bounded-transfer base for represented fast-Cauchy completion, not a weakest-base reversal.",
+    "The coefficient-wise weak identities do not establish global existence, uniqueness, stability, finite propagation, causal support, or advanced/retarded Green operators.",
+    "No curved-background, Weyl/BV, interacting, quantum, or empirical theorem follows from this finite reduced-mode certificate.",
+    "The remaining low-hanging question is a density or convergence bridge from the finite rational test span to a declared broader test-function topology."
+  ],
+  "claim_boundary": "This receipt certifies a separating localized finite test family and coefficient-wise weak transport/wave identities for declared rational reduced-mode fixtures. It adds no LORENTZIAN-CAUSAL claim and does not certify a complete physical theory."
+}

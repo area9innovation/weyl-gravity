@@ -32,7 +32,7 @@ class MatrixSiteTests(unittest.TestCase):
         reviewed = [x for x in data["cells"] if x["migration_status"] == "REVIEWED_NO_TRANSFER"]
         synthetic = [x for x in data["cells"] if not x["emitted"]]
         self.assertEqual((len(reviewed), len(synthetic)), (88, 0))
-        self.assertEqual(sum(x["status"] == "REVIEWED_GAP" for x in data["cells"]), 172)
+        self.assertEqual(sum(x["status"] == "REVIEWED_GAP" for x in data["cells"]), 170)
         self.assertEqual(sum(x["status"] == "NOT_MAPPED" for x in data["cells"]), 0)
         self.assertTrue(all(x["evidence"] and x["migration_evidence"] for x in reviewed))
         self.assertEqual(sum(x["migration_status"] == "DIRECT_COORDINATE_REVIEW" for x in data["cells"]), 124)
@@ -149,7 +149,9 @@ class MatrixSiteTests(unittest.TestCase):
         self.assertTrue((ROOT / "foundations/site/sources/foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V8.json").is_file())
         self.assertTrue((ROOT / "foundations/site/sources/foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V9.json").is_file())
         self.assertTrue((ROOT / "foundations/site/sources/foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V11.json").is_file())
+        self.assertTrue((ROOT / "foundations/site/sources/foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V12.json").is_file())
         self.assertIn("FOUNDATIONAL_CODED_WAVE_OBSERVABLE_RECONSTRUCTION_V1", assembly_data + base_app + (ROOT / "foundations/site/data.json").read_text())
+        self.assertIn("FOUNDATIONAL_CODED_LOCAL_WEAK_WAVE_TEST_CLASS_V1", assembly_data + base_app + (ROOT / "foundations/site/data.json").read_text())
         self.assertTrue((ROOT / "foundations/site/sources/foundations/results/FOUNDATIONAL_BT_EUCLIDEAN_LATTICE_IMPORT_V1.json").is_file())
         self.assertTrue((ROOT / "foundations/site/sources/foundations/results/FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1.json").is_file())
         self.assertTrue((ROOT / "foundations/site/sources/foundations/results/FOUNDATIONAL_FINITE_BRST_TWENTY_CELL_CLOSURE_V1.json").is_file())

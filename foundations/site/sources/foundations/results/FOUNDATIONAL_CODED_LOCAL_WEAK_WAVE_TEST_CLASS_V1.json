@@ -1,0 +1,1648 @@
+{
+  "schema_version": "foundational-coded-local-weak-wave-test-class-v1",
+  "result_id": "FOUNDATIONAL_CODED_LOCAL_WEAK_WAVE_TEST_CLASS_V1",
+  "result_kind": "FINITE_LOCALIZED_SEPARATING_TEST_CLASS_AND_COEFFICIENT_WEAK_EQUATION",
+  "lifecycle": "CERTIFIED",
+  "created": "2026-08-14",
+  "repository_base_commit": "3c295ffacc222271143df0018bdae167eae87a81",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "theorem": "PRA certifies a ten-element characteristic-localized rational polynomial test family that separates the declared labelled finite chiral coefficient carrier and annihilates every coefficient of its two weak transport equations and derived scalar weak wave equation. RCA_0 transfers those finitely many bounded weak identities to the represented fast-Cauchy energy completion.",
+  "carrier": {
+    "kind": "DECLARED_LABELLED_CHIRAL_STEP_CARRIER",
+    "common_partition": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        6
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "cell_widths": [
+      [
+        1,
+        6
+      ],
+      [
+        1,
+        12
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        1,
+        4
+      ]
+    ],
+    "ambient_coefficient_dimension": 10,
+    "mean_zero_constraint_rank": 2,
+    "mean_zero_subcarrier_dimension": 8,
+    "meaning": "The carrier retains the right/left labels present in the source representation; it is not a scalar-field quotient or a gauge-invariant observable algebra."
+  },
+  "localized_test_class": {
+    "time_interval": [
+      [
+        1,
+        8
+      ],
+      [
+        3,
+        8
+      ]
+    ],
+    "bump_definition": "B_[a,b](s)=((s-a)(b-s))^2 for a<=s<=b and 0 otherwise",
+    "bump_moment_formula": "mu([a,b])=integral B_[a,b]=(b-a)^5/30",
+    "basis_size": 10,
+    "rational_span": "All finite rational linear combinations of the ten displayed basis tests.",
+    "tests": [
+      {
+        "id": "RIGHT_CELL_0",
+        "chirality": "RIGHT",
+        "spatial_cell": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            6
+          ]
+        ],
+        "time_interval": [
+          [
+            1,
+            8
+          ],
+          [
+            3,
+            8
+          ]
+        ],
+        "formula": "B_I(t) B_J((x-t) mod 1)",
+        "support": "compact in the declared time interval and in one characteristic spatial strip",
+        "regularity": "periodic C1 piecewise rational polynomial; second weak derivatives are piecewise polynomial",
+        "time_moment": [
+          1,
+          30720
+        ],
+        "spatial_moment": [
+          1,
+          233280
+        ],
+        "measurement_normalization": [
+          1,
+          7166361600
+        ]
+      },
+      {
+        "id": "RIGHT_CELL_1",
+        "chirality": "RIGHT",
+        "spatial_cell": [
+          [
+            1,
+            6
+          ],
+          [
+            1,
+            4
+          ]
+        ],
+        "time_interval": [
+          [
+            1,
+            8
+          ],
+          [
+            3,
+            8
+          ]
+        ],
+        "formula": "B_I(t) B_J((x-t) mod 1)",
+        "support": "compact in the declared time interval and in one characteristic spatial strip",
+        "regularity": "periodic C1 piecewise rational polynomial; second weak derivatives are piecewise polynomial",
+        "time_moment": [
+          1,
+          30720
+        ],
+        "spatial_moment": [
+          1,
+          7464960
+        ],
+        "measurement_normalization": [
+          1,
+          229323571200
+        ]
+      },
+      {
+        "id": "RIGHT_CELL_2",
+        "chirality": "RIGHT",
+        "spatial_cell": [
+          [
+            1,
+            4
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        "time_interval": [
+          [
+            1,
+            8
+          ],
+          [
+            3,
+            8
+          ]
+        ],
+        "formula": "B_I(t) B_J((x-t) mod 1)",
+        "support": "compact in the declared time interval and in one characteristic spatial strip",
+        "regularity": "periodic C1 piecewise rational polynomial; second weak derivatives are piecewise polynomial",
+        "time_moment": [
+          1,
+          30720
+        ],
+        "spatial_moment": [
+          1,
+          30720
+        ],
+        "measurement_normalization": [
+          1,
+          943718400
+        ]
+      },
+      {
+        "id": "RIGHT_CELL_3",
+        "chirality": "RIGHT",
+        "spatial_cell": [
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            4
+          ]
+        ],
+        "time_interval": [
+          [
+            1,
+            8
+          ],
+          [
+            3,
+            8
+          ]
+        ],
+        "formula": "B_I(t) B_J((x-t) mod 1)",
+        "support": "compact in the declared time interval and in one characteristic spatial strip",
+        "regularity": "periodic C1 piecewise rational polynomial; second weak derivatives are piecewise polynomial",
+        "time_moment": [
+          1,
+          30720
+        ],
+        "spatial_moment": [
+          1,
+          30720
+        ],
+        "measurement_normalization": [
+          1,
+          943718400
+        ]
+      },
+      {
+        "id": "RIGHT_CELL_4",
+        "chirality": "RIGHT",
+        "spatial_cell": [
+          [
+            3,
+            4
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "time_interval": [
+          [
+            1,
+            8
+          ],
+          [
+            3,
+            8
+          ]
+        ],
+        "formula": "B_I(t) B_J((x-t) mod 1)",
+        "support": "compact in the declared time interval and in one characteristic spatial strip",
+        "regularity": "periodic C1 piecewise rational polynomial; second weak derivatives are piecewise polynomial",
+        "time_moment": [
+          1,
+          30720
+        ],
+        "spatial_moment": [
+          1,
+          30720
+        ],
+        "measurement_normalization": [
+          1,
+          943718400
+        ]
+      },
+      {
+        "id": "LEFT_CELL_0",
+        "chirality": "LEFT",
+        "spatial_cell": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            6
+          ]
+        ],
+        "time_interval": [
+          [
+            1,
+            8
+          ],
+          [
+            3,
+            8
+          ]
+        ],
+        "formula": "B_I(t) B_J((x+t) mod 1)",
+        "support": "compact in the declared time interval and in one characteristic spatial strip",
+        "regularity": "periodic C1 piecewise rational polynomial; second weak derivatives are piecewise polynomial",
+        "time_moment": [
+          1,
+          30720
+        ],
+        "spatial_moment": [
+          1,
+          233280
+        ],
+        "measurement_normalization": [
+          1,
+          7166361600
+        ]
+      },
+      {
+        "id": "LEFT_CELL_1",
+        "chirality": "LEFT",
+        "spatial_cell": [
+          [
+            1,
+            6
+          ],
+          [
+            1,
+            4
+          ]
+        ],
+        "time_interval": [
+          [
+            1,
+            8
+          ],
+          [
+            3,
+            8
+          ]
+        ],
+        "formula": "B_I(t) B_J((x+t) mod 1)",
+        "support": "compact in the declared time interval and in one characteristic spatial strip",
+        "regularity": "periodic C1 piecewise rational polynomial; second weak derivatives are piecewise polynomial",
+        "time_moment": [
+          1,
+          30720
+        ],
+        "spatial_moment": [
+          1,
+          7464960
+        ],
+        "measurement_normalization": [
+          1,
+          229323571200
+        ]
+      },
+      {
+        "id": "LEFT_CELL_2",
+        "chirality": "LEFT",
+        "spatial_cell": [
+          [
+            1,
+            4
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        "time_interval": [
+          [
+            1,
+            8
+          ],
+          [
+            3,
+            8
+          ]
+        ],
+        "formula": "B_I(t) B_J((x+t) mod 1)",
+        "support": "compact in the declared time interval and in one characteristic spatial strip",
+        "regularity": "periodic C1 piecewise rational polynomial; second weak derivatives are piecewise polynomial",
+        "time_moment": [
+          1,
+          30720
+        ],
+        "spatial_moment": [
+          1,
+          30720
+        ],
+        "measurement_normalization": [
+          1,
+          943718400
+        ]
+      },
+      {
+        "id": "LEFT_CELL_3",
+        "chirality": "LEFT",
+        "spatial_cell": [
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            4
+          ]
+        ],
+        "time_interval": [
+          [
+            1,
+            8
+          ],
+          [
+            3,
+            8
+          ]
+        ],
+        "formula": "B_I(t) B_J((x+t) mod 1)",
+        "support": "compact in the declared time interval and in one characteristic spatial strip",
+        "regularity": "periodic C1 piecewise rational polynomial; second weak derivatives are piecewise polynomial",
+        "time_moment": [
+          1,
+          30720
+        ],
+        "spatial_moment": [
+          1,
+          30720
+        ],
+        "measurement_normalization": [
+          1,
+          943718400
+        ]
+      },
+      {
+        "id": "LEFT_CELL_4",
+        "chirality": "LEFT",
+        "spatial_cell": [
+          [
+            3,
+            4
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "time_interval": [
+          [
+            1,
+            8
+          ],
+          [
+            3,
+            8
+          ]
+        ],
+        "formula": "B_I(t) B_J((x+t) mod 1)",
+        "support": "compact in the declared time interval and in one characteristic spatial strip",
+        "regularity": "periodic C1 piecewise rational polynomial; second weak derivatives are piecewise polynomial",
+        "time_moment": [
+          1,
+          30720
+        ],
+        "spatial_moment": [
+          1,
+          30720
+        ],
+        "measurement_normalization": [
+          1,
+          943718400
+        ]
+      }
+    ]
+  },
+  "separation": {
+    "measurement": "Pair a labelled chiral component with the matching labelled characteristic bump.",
+    "matrix_shape": [
+      10,
+      10
+    ],
+    "matrix_form": "DIAGONAL",
+    "diagonal": [
+      [
+        1,
+        7166361600
+      ],
+      [
+        1,
+        229323571200
+      ],
+      [
+        1,
+        943718400
+      ],
+      [
+        1,
+        943718400
+      ],
+      [
+        1,
+        943718400
+      ],
+      [
+        1,
+        7166361600
+      ],
+      [
+        1,
+        229323571200
+      ],
+      [
+        1,
+        943718400
+      ],
+      [
+        1,
+        943718400
+      ],
+      [
+        1,
+        943718400
+      ]
+    ],
+    "determinant": [
+      1,
+      1907872573782423865167417410644607865594840555469441483848718720792644707942400000000000000000000
+    ],
+    "rank": 10,
+    "separates_ambient_carrier": true,
+    "separates_mean_zero_subcarrier": true,
+    "does_not_separate": "unlabelled scalar fields, arbitrary L2 states, observables modulo gauge, or a continuum test-function topology"
+  },
+  "weak_equations": {
+    "right_transport": "R_plus(r;phi)=integral r(t,x)(phi_t+phi_x) dt dx=0",
+    "left_transport": "R_minus(l;phi)=integral l(t,x)(phi_t-phi_x) dt dx=0",
+    "scalar_wave": "W(u;phi)=integral u(t,x)(phi_tt-phi_xx) dt dx=R_plus-R_minus=0",
+    "basis_coefficients_checked_per_fixture": 10,
+    "transport_residuals_checked_per_fixture": 20,
+    "scalar_residuals_checked_per_fixture": 10,
+    "scope": "The equation is certified against the finite rational span of the displayed localized tests, not against every smooth compactly supported test."
+  },
+  "formal_proof": [
+    {
+      "id": "COMMON_RATIONAL_CARRIER",
+      "base": "PRA",
+      "statement": "The union of the three declared rational partitions gives five spatial cells. A labelled right/left step pair has ten rational coefficients; the two exact mean-zero equations define an eight-dimensional subcarrier."
+    },
+    {
+      "id": "LOCALIZED_BUMP_CODE",
+      "base": "PRA",
+      "depends_on": [
+        "COMMON_RATIONAL_CARRIER"
+      ],
+      "statement": "For a rational interval J, B_J(s)=((s-a)(b-s))^2 on J and zero outside is a periodic C1 finite rational polynomial code. Multiplying one temporal and one characteristic bump gives ten compact-time localized spacetime tests."
+    },
+    {
+      "id": "FINITE_SEPARATION",
+      "base": "PRA",
+      "depends_on": [
+        "LOCALIZED_BUMP_CODE"
+      ],
+      "statement": "Pairing each labelled chiral component with its matching cell test gives a diagonal 10 by 10 rational matrix with entries mu(I)mu(J), where mu([a,b])=(b-a)^5/30. Every entry is positive, so the tests separate the ambient coefficient carrier and hence its mean-zero subcarrier."
+    },
+    {
+      "id": "CHARACTERISTIC_CHAIN_RULE",
+      "base": "PRA",
+      "depends_on": [
+        "LOCALIZED_BUMP_CODE"
+      ],
+      "statement": "At fixed y=x-t, d_t phi(t,y+t)=(partial_t+partial_x)phi. At fixed z=x+t, d_t phi(t,z-t)=(partial_t-partial_x)phi. These are exact polynomial identities on every branch."
+    },
+    {
+      "id": "COEFFICIENT_TRANSPORT_IDENTITY",
+      "base": "PRA",
+      "depends_on": [
+        "CHARACTERISTIC_CHAIN_RULE"
+      ],
+      "statement": "For r=a(x-t) and l=b(x+t), every basis-test residual integral r(phi_t+phi_x) and l(phi_t-phi_x) is a temporal boundary term. The time bump vanishes at both endpoints, so all twenty transport coefficients vanish exactly for each fixture."
+    },
+    {
+      "id": "SCALAR_WEAK_WAVE_IDENTITY",
+      "base": "PRA",
+      "depends_on": [
+        "COEFFICIENT_TRANSPORT_IDENTITY"
+      ],
+      "statement": "For the polygonal primitives u=f(x-t)+g(x+t), u_t=-r+l and u_x=r+l. One integration by parts gives integral u(phi_tt-phi_xx)=R_plus(r;phi)-R_minus(l;phi)=0 coefficient by coefficient for all ten tests."
+    },
+    {
+      "id": "COMPLETION_TRANSFER",
+      "base": "RCA_0",
+      "depends_on": [
+        "FINITE_SEPARATION",
+        "SCALAR_WEAK_WAVE_IDENTITY"
+      ],
+      "statement": "The finitely coded test derivatives define bounded rational functionals on the coded energy carrier. Density, the supplied fast-Cauchy rates, and the bounded mean-zero primitive map transfer the ten weak identities to completed names without compactness or subsequence choice."
+    }
+  ],
+  "fixtures": [
+    {
+      "id": "TRIANGLE_RIGHT",
+      "refined_right_coefficients": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          -1,
+          1
+        ]
+      ],
+      "refined_left_coefficients": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "zero_mean_checks": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "measurements": [
+        {
+          "test_id": "RIGHT_CELL_0",
+          "coefficient": [
+            1,
+            1
+          ],
+          "normalization": [
+            1,
+            7166361600
+          ],
+          "pairing": [
+            1,
+            7166361600
+          ],
+          "right_transport_residual": [
+            0,
+            1
+          ],
+          "left_transport_residual": [
+            0,
+            1
+          ],
+          "scalar_wave_residual": [
+            0,
+            1
+          ]
+        },
+        {
+          "test_id": "RIGHT_CELL_1",
+          "coefficient": [
+            1,
+            1
+          ],
+          "normalization": [
+            1,
+            229323571200
+          ],
+          "pairing": [
+            1,
+            229323571200
+          ],
+          "right_transport_residual": [
+            0,
+            1
+          ],
+          "left_transport_residual": [
+            0,
+            1
+          ],
+          "scalar_wave_residual": [
+            0,
+            1
+          ]
+        },
+        {
+          "test_id": "RIGHT_CELL_2",
+          "coefficient": [
+            1,
+            1
+          ],
+          "normalization": [
+            1,
+            943718400
+          ],
+          "pairing": [
+            1,
+            943718400
+          ],
+          "right_transport_residual": [
+            0,
+            1
+          ],
+          "left_transport_residual": [
+            0,
+            1
+          ],
+          "scalar_wave_residual": [
+            0,
+            1
+          ]
+        },
+        {
+          "test_id": "RIGHT_CELL_3",
+          "coefficient": [
+            -1,
+            1
+          ],
+          "normalization": [
+            1,
+            943718400
+          ],
+          "pairing": [
+            -1,
+            943718400
+          ],
+          "right_transport_residual": [
+            0,
+            1
+          ],
+          "left_transport_residual": [
+            0,
+            1
+          ],
+          "scalar_wave_residual": [
+            0,
+            1
+          ]
+        },
+        {
+          "test_id": "RIGHT_CELL_4",
+          "coefficient": [
+            -1,
+            1
+          ],
+          "normalization": [
+            1,
+            943718400
+          ],
+          "pairing": [
+            -1,
+            943718400
+          ],
+          "right_transport_residual": [
+            0,
+            1
+          ],
+          "left_transport_residual": [
+            0,
+            1
+          ],
+          "scalar_wave_residual": [
+            0,
+            1
+          ]
+        },
+        {
+          "test_id": "LEFT_CELL_0",
+          "coefficient": [
+            0,
+            1
+          ],
+          "normalization": [
+            1,
+            7166361600
+          ],
+          "pairing": [
+            0,
+            1
+          ],
+          "right_transport_residual": [
+            0,
+            1
+          ],
+          "left_transport_residual": [
+            0,
+            1
+          ],
+          "scalar_wave_residual": [
+            0,
+            1
+          ]
+        },
+        {
+          "test_id": "LEFT_CELL_1",
+          "coefficient": [
+            0,
+            1
+          ],
+          "normalization": [
+            1,
+            229323571200
+          ],
+          "pairing": [
+            0,
+            1
+          ],
+          "right_transport_residual": [
+            0,
+            1
+          ],
+          "left_transport_residual": [
+            0,
+            1
+          ],
+          "scalar_wave_residual": [
+            0,
+            1
+          ]
+        },
+        {
+          "test_id": "LEFT_CELL_2",
+          "coefficient": [
+            0,
+            1
+          ],
+          "normalization": [
+            1,
+            943718400
+          ],
+          "pairing": [
+            0,
+            1
+          ],
+          "right_transport_residual": [
+            0,
+            1
+          ],
+          "left_transport_residual": [
+            0,
+            1
+          ],
+          "scalar_wave_residual": [
+            0,
+            1
+          ]
+        },
+        {
+          "test_id": "LEFT_CELL_3",
+          "coefficient": [
+            0,
+            1
+          ],
+          "normalization": [
+            1,
+            943718400
+          ],
+          "pairing": [
+            0,
+            1
+          ],
+          "right_transport_residual": [
+            0,
+            1
+          ],
+          "left_transport_residual": [
+            0,
+            1
+          ],
+          "scalar_wave_residual": [
+            0,
+            1
+          ]
+        },
+        {
+          "test_id": "LEFT_CELL_4",
+          "coefficient": [
+            0,
+            1
+          ],
+          "normalization": [
+            1,
+            943718400
+          ],
+          "pairing": [
+            0,
+            1
+          ],
+          "right_transport_residual": [
+            0,
+            1
+          ],
+          "left_transport_residual": [
+            0,
+            1
+          ],
+          "scalar_wave_residual": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "id": "QUARTER_MIXED",
+      "refined_right_coefficients": [
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "refined_left_coefficients": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          -1,
+          1
+        ]
+      ],
+      "zero_mean_checks": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "measurements": [
+        {
+          "test_id": "RIGHT_CELL_0",
+          "coefficient": [
+            2,
+            1
+          ],
+          "normalization": [
+            1,
+            7166361600
+          ],
+          "pairing": [
+            1,
+            3583180800
+          ],
+          "right_transport_residual": [
+            0,
+            1
+          ],
+          "left_transport_residual": [
+            0,
+            1
+          ],
+          "scalar_wave_residual": [
+            0,
+            1
+          ]
+        },
+        {
+          "test_id": "RIGHT_CELL_1",
+          "coefficient": [
+            2,
+            1
+          ],
+          "normalization": [
+            1,
+            229323571200
+          ],
+          "pairing": [
+            1,
+            114661785600
+          ],
+          "right_transport_residual": [
+            0,
+            1
+          ],
+          "left_transport_residual": [
+            0,
+            1
+          ],
+          "scalar_wave_residual": [
+            0,
+            1
+          ]
+        },
+        {
+          "test_id": "RIGHT_CELL_2",
+          "coefficient": [
+            -1,
+            1
+          ],
+          "normalization": [
+            1,
+            943718400
+          ],
+          "pairing": [
+            -1,
+            943718400
+          ],
+          "right_transport_residual": [
+            0,
+            1
+          ],
+          "left_transport_residual": [
+            0,
+            1
+          ],
+          "scalar_wave_residual": [
+            0,
+            1
+          ]
+        },
+        {
+          "test_id": "RIGHT_CELL_3",
+          "coefficient": [
+            -1,
+            1
+          ],
+          "normalization": [
+            1,
+            943718400
+          ],
+          "pairing": [
+            -1,
+            943718400
+          ],
+          "right_transport_residual": [
+            0,
+            1
+          ],
+          "left_transport_residual": [
+            0,
+            1
+          ],
+          "scalar_wave_residual": [
+            0,
+            1
+          ]
+        },
+        {
+          "test_id": "RIGHT_CELL_4",
+          "coefficient": [
+            0,
+            1
+          ],
+          "normalization": [
+            1,
+            943718400
+          ],
+          "pairing": [
+            0,
+            1
+          ],
+          "right_transport_residual": [
+            0,
+            1
+          ],
+          "left_transport_residual": [
+            0,
+            1
+          ],
+          "scalar_wave_residual": [
+            0,
+            1
+          ]
+        },
+        {
+          "test_id": "LEFT_CELL_0",
+          "coefficient": [
+            1,
+            1
+          ],
+          "normalization": [
+            1,
+            7166361600
+          ],
+          "pairing": [
+            1,
+            7166361600
+          ],
+          "right_transport_residual": [
+            0,
+            1
+          ],
+          "left_transport_residual": [
+            0,
+            1
+          ],
+          "scalar_wave_residual": [
+            0,
+            1
+          ]
+        },
+        {
+          "test_id": "LEFT_CELL_1",
+          "coefficient": [
+            1,
+            1
+          ],
+          "normalization": [
+            1,
+            229323571200
+          ],
+          "pairing": [
+            1,
+            229323571200
+          ],
+          "right_transport_residual": [
+            0,
+            1
+          ],
+          "left_transport_residual": [
+            0,
+            1
+          ],
+          "scalar_wave_residual": [
+            0,
+            1
+          ]
+        },
+        {
+          "test_id": "LEFT_CELL_2",
+          "coefficient": [
+            1,
+            1
+          ],
+          "normalization": [
+            1,
+            943718400
+          ],
+          "pairing": [
+            1,
+            943718400
+          ],
+          "right_transport_residual": [
+            0,
+            1
+          ],
+          "left_transport_residual": [
+            0,
+            1
+          ],
+          "scalar_wave_residual": [
+            0,
+            1
+          ]
+        },
+        {
+          "test_id": "LEFT_CELL_3",
+          "coefficient": [
+            -1,
+            1
+          ],
+          "normalization": [
+            1,
+            943718400
+          ],
+          "pairing": [
+            -1,
+            943718400
+          ],
+          "right_transport_residual": [
+            0,
+            1
+          ],
+          "left_transport_residual": [
+            0,
+            1
+          ],
+          "scalar_wave_residual": [
+            0,
+            1
+          ]
+        },
+        {
+          "test_id": "LEFT_CELL_4",
+          "coefficient": [
+            -1,
+            1
+          ],
+          "normalization": [
+            1,
+            943718400
+          ],
+          "pairing": [
+            -1,
+            943718400
+          ],
+          "right_transport_residual": [
+            0,
+            1
+          ],
+          "left_transport_residual": [
+            0,
+            1
+          ],
+          "scalar_wave_residual": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "id": "NONUNIFORM_MIXED",
+      "refined_right_coefficients": [
+        [
+          3,
+          1
+        ],
+        [
+          -3,
+          2
+        ],
+        [
+          -3,
+          2
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "refined_left_coefficients": [
+        [
+          0,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          -2,
+          1
+        ],
+        [
+          -2,
+          1
+        ]
+      ],
+      "zero_mean_checks": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "measurements": [
+        {
+          "test_id": "RIGHT_CELL_0",
+          "coefficient": [
+            3,
+            1
+          ],
+          "normalization": [
+            1,
+            7166361600
+          ],
+          "pairing": [
+            1,
+            2388787200
+          ],
+          "right_transport_residual": [
+            0,
+            1
+          ],
+          "left_transport_residual": [
+            0,
+            1
+          ],
+          "scalar_wave_residual": [
+            0,
+            1
+          ]
+        },
+        {
+          "test_id": "RIGHT_CELL_1",
+          "coefficient": [
+            -3,
+            2
+          ],
+          "normalization": [
+            1,
+            229323571200
+          ],
+          "pairing": [
+            -1,
+            152882380800
+          ],
+          "right_transport_residual": [
+            0,
+            1
+          ],
+          "left_transport_residual": [
+            0,
+            1
+          ],
+          "scalar_wave_residual": [
+            0,
+            1
+          ]
+        },
+        {
+          "test_id": "RIGHT_CELL_2",
+          "coefficient": [
+            -3,
+            2
+          ],
+          "normalization": [
+            1,
+            943718400
+          ],
+          "pairing": [
+            -1,
+            629145600
+          ],
+          "right_transport_residual": [
+            0,
+            1
+          ],
+          "left_transport_residual": [
+            0,
+            1
+          ],
+          "scalar_wave_residual": [
+            0,
+            1
+          ]
+        },
+        {
+          "test_id": "RIGHT_CELL_3",
+          "coefficient": [
+            0,
+            1
+          ],
+          "normalization": [
+            1,
+            943718400
+          ],
+          "pairing": [
+            0,
+            1
+          ],
+          "right_transport_residual": [
+            0,
+            1
+          ],
+          "left_transport_residual": [
+            0,
+            1
+          ],
+          "scalar_wave_residual": [
+            0,
+            1
+          ]
+        },
+        {
+          "test_id": "RIGHT_CELL_4",
+          "coefficient": [
+            0,
+            1
+          ],
+          "normalization": [
+            1,
+            943718400
+          ],
+          "pairing": [
+            0,
+            1
+          ],
+          "right_transport_residual": [
+            0,
+            1
+          ],
+          "left_transport_residual": [
+            0,
+            1
+          ],
+          "scalar_wave_residual": [
+            0,
+            1
+          ]
+        },
+        {
+          "test_id": "LEFT_CELL_0",
+          "coefficient": [
+            0,
+            1
+          ],
+          "normalization": [
+            1,
+            7166361600
+          ],
+          "pairing": [
+            0,
+            1
+          ],
+          "right_transport_residual": [
+            0,
+            1
+          ],
+          "left_transport_residual": [
+            0,
+            1
+          ],
+          "scalar_wave_residual": [
+            0,
+            1
+          ]
+        },
+        {
+          "test_id": "LEFT_CELL_1",
+          "coefficient": [
+            3,
+            1
+          ],
+          "normalization": [
+            1,
+            229323571200
+          ],
+          "pairing": [
+            1,
+            76441190400
+          ],
+          "right_transport_residual": [
+            0,
+            1
+          ],
+          "left_transport_residual": [
+            0,
+            1
+          ],
+          "scalar_wave_residual": [
+            0,
+            1
+          ]
+        },
+        {
+          "test_id": "LEFT_CELL_2",
+          "coefficient": [
+            3,
+            1
+          ],
+          "normalization": [
+            1,
+            943718400
+          ],
+          "pairing": [
+            1,
+            314572800
+          ],
+          "right_transport_residual": [
+            0,
+            1
+          ],
+          "left_transport_residual": [
+            0,
+            1
+          ],
+          "scalar_wave_residual": [
+            0,
+            1
+          ]
+        },
+        {
+          "test_id": "LEFT_CELL_3",
+          "coefficient": [
+            -2,
+            1
+          ],
+          "normalization": [
+            1,
+            943718400
+          ],
+          "pairing": [
+            -1,
+            471859200
+          ],
+          "right_transport_residual": [
+            0,
+            1
+          ],
+          "left_transport_residual": [
+            0,
+            1
+          ],
+          "scalar_wave_residual": [
+            0,
+            1
+          ]
+        },
+        {
+          "test_id": "LEFT_CELL_4",
+          "coefficient": [
+            -2,
+            1
+          ],
+          "normalization": [
+            1,
+            943718400
+          ],
+          "pairing": [
+            -1,
+            471859200
+          ],
+          "right_transport_residual": [
+            0,
+            1
+          ],
+          "left_transport_residual": [
+            0,
+            1
+          ],
+          "scalar_wave_residual": [
+            0,
+            1
+          ]
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "inputs": [
+      {
+        "path": "foundations/results/FOUNDATIONAL_CODED_POLYGONAL_WAVE_RCA0_V1.json",
+        "sha256": "4138c860c53fe85ba4fa1f2ece93cc5b6c0fce9468c7e5dfa69e314663b56ac7",
+        "role": "coded rational wave carrier and exact fixtures"
+      },
+      {
+        "path": "foundations/results/FOUNDATIONAL_CODED_WAVE_OBSERVABLE_RECONSTRUCTION_V1.json",
+        "sha256": "cf90e90abb824e19a2a0e7caf2d32c4772f408a70107e4c9ea6013edc0e8e215",
+        "role": "preceding bounded-observable reconstruction boundary"
+      }
+    ]
+  },
+  "independent_checker": {
+    "path": "foundations/check_coded_local_weak_wave_test_class.py",
+    "checks": [
+      "common refinement",
+      "zero-mean fixtures",
+      "exact bump moments",
+      "diagonal rank and determinant",
+      "fixture measurement coefficients",
+      "characteristic chain rules",
+      "transport and scalar residual closure",
+      "proof DAG",
+      "source hashes",
+      "canonical digest"
+    ],
+    "expected_digest": "76b3911530c5bb8c77a031834377dd4791891aefe3e4e2278a073ed8d18ac461"
+  },
+  "claim_flags": {
+    "finite_localized_test_class_constructed": true,
+    "labelled_finite_carrier_separated": true,
+    "coefficient_transport_identities_proved": true,
+    "coefficient_scalar_weak_wave_identity_proved": true,
+    "pra_finite_certificate": true,
+    "rca0_completion_transfer": true,
+    "all_smooth_tests_covered": false,
+    "unlabelled_scalar_field_separated": false,
+    "full_state_reconstruction_proved": false,
+    "strict_causal_support_proved": false,
+    "green_operator_constructed": false,
+    "weyl_or_metric_bv_equation_proved": false,
+    "empirical_calibration_proved": false,
+    "new_lorentzian_claim": false
+  },
+  "does_not_establish": [
+    "separation after forgetting the declared right/left chiral labels",
+    "a separating algebra for arbitrary completed L2 states or gauge equivalence classes",
+    "the weak wave equation against every smooth compactly supported test",
+    "a representation-independent distributional solution theorem",
+    "pointwise differentiability of the step components",
+    "strict finite propagation or causal support",
+    "an advanced or retarded Green operator",
+    "a variable-coefficient, curved-spacetime, Weyl, or metric-BV equation",
+    "a probability rule or empirically calibrated detector",
+    "a new LORENTZIAN-CAUSAL result"
+  ],
+  "next_gate": "Enlarge the finite characteristic bump span with an explicit density/modulus theorem in a named test-function topology, then ask whether the weak identity extends to every test in that topology; keep causal support as a separate later gate.",
+  "human_report": "foundations/reports/coded-local-weak-wave-test-class-v1.md"
+}

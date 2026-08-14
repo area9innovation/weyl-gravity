@@ -21,18 +21,18 @@
     "migration_pending": 0,
     "migration_unresolved": 0,
     "reviewed_no_transfer": 88,
-    "reviewed_gap": 172,
+    "reviewed_gap": 170,
     "not_mapped": 0,
     "dual_direct": 8,
     "mark_counts": {
       "G": 29,
       "Gl": 1,
-      "L": 108,
+      "L": 109,
       "LR": 8,
       "Lr": 6,
-      "Ol": 172,
+      "Ol": 170,
       "P": 19,
-      "Pl": 79,
+      "Pl": 80,
       "Plr": 13,
       "Pr": 51,
       "R": 87,
@@ -40,18 +40,18 @@
     },
     "evidence_role_counts": {
       "DIRECT_LITERATURE": 84,
-      "DIRECT_LOCAL": 113,
-      "SUPPORTING": 447,
+      "DIRECT_LOCAL": 114,
+      "SUPPORTING": 449,
       "UNREVIEWED": 191
     },
     "synthetic_not_mapped": 0,
     "status_counts": {
       "LITERATURE_RESULT": 90,
-      "LOCAL_RESULT": 122,
+      "LOCAL_RESULT": 123,
       "NOT_MAPPED": 0,
-      "PIECES_ONLY": 162,
+      "PIECES_ONLY": 163,
       "PRIORITY_GAP": 30,
-      "REVIEWED_GAP": 172
+      "REVIEWED_GAP": 170
     },
     "migration_status_counts": {
       "CAPABILITY_QUALIFIED": 257,
@@ -61,7 +61,7 @@
       "REVIEWED_NO_TRANSFER": 88,
       "REVIEWED_OVERLAY": 11
     },
-    "evidence_records": 76
+    "evidence_records": 77
   },
   "features": [
     "sixteen 6x6 heatmaps",
@@ -96,6 +96,7 @@
     "first model-scoped GR-to-Cassini bounded prediction assembly",
     "second bounded Mannheim-to-NGC3198 assembly with a no-refit standardized-residual audit and mixed pass/fail gates",
     "first explicit uniform finite-approximant reconstruction of a declared bounded wave observable",
+    "finite localized rank-10 chiral test class with coefficient-wise weak wave identities",
     "typed applicability mask",
     "exact field-equation-to-PPN-to-null-delay chain",
     "typed cross-cell interface ledger",
@@ -109,10 +110,10 @@
   ],
   "provenance": {
     "manifest": "foundations/site/manifest.json",
-    "manifest_sha256": "9b0244645fdfaf1251f67f0d8f3ae4284a3b755aba84d9d1f721600ca5fbcb17",
-    "canonical_data_digest": "65c1967435f8a4d87c47143dc948ad039eb5906da00dfcac2ecc2883d6988911",
-    "viability_digest": "698a63d189b61fe8639c20c31aa57bf6904da1b00102cd9c01a3dc0e345889f3",
-    "assembly_digest": "758f507751da155b7d7b0c0cccf61b09013d1ebd69c9dce9c6d028fe44c5c411"
+    "manifest_sha256": "ecb67ecaf7181296a76ba1108b0a4ffc6e5b6987a841f59079350ad56bb6e67f",
+    "canonical_data_digest": "8e0ebd6ce6e0d62b1ef5881df70bb289f0747d5fafce8f7f99b0237e33058849",
+    "viability_digest": "6b5b967e6e9e42e8d1e4df3a0ffe8f30e788abb0f958cffbbc5ea7821ad93c3b",
+    "assembly_digest": "eadfd095860843a43908d2f848370533718cda9e1251944af0b6b4b92e0f72d3"
   },
   "independent_checker": {
     "path": "foundations/check_matrix_site_v2.py",
@@ -120,11 +121,11 @@
     "expected_emitted": 576,
     "expected_synthetic_not_mapped": 0,
     "expected_total_not_mapped": 0,
-    "expected_reviewed_gaps": 172,
-    "expected_evidence_records": 76,
-    "expected_digest": "65c1967435f8a4d87c47143dc948ad039eb5906da00dfcac2ecc2883d6988911",
-    "expected_viability_digest": "698a63d189b61fe8639c20c31aa57bf6904da1b00102cd9c01a3dc0e345889f3",
-    "expected_assembly_digest": "758f507751da155b7d7b0c0cccf61b09013d1ebd69c9dce9c6d028fe44c5c411"
+    "expected_reviewed_gaps": 170,
+    "expected_evidence_records": 77,
+    "expected_digest": "8e0ebd6ce6e0d62b1ef5881df70bb289f0747d5fafce8f7f99b0237e33058849",
+    "expected_viability_digest": "6b5b967e6e9e42e8d1e4df3a0ffe8f30e788abb0f958cffbbc5ea7821ad93c3b",
+    "expected_assembly_digest": "eadfd095860843a43908d2f848370533718cda9e1251944af0b6b4b92e0f72d3"
   },
   "claim_flags": {
     "static_site_generated": true,
@@ -138,6 +139,7 @@
     "theory_profiles_generated": true,
     "theory_assembly_atlas_generated": true,
     "bounded_observable_reconstruction_exposed": true,
+    "localized_coefficient_weak_wave_exposed": true,
     "at_least_one_cross_cell_interface_certified": true,
     "composition_and_observation_rails_separated": true,
     "scientific_claims_duplicated_by_hand": false,
@@ -151,13 +153,15 @@
   },
   "does_not_establish": [
     "literature completeness",
-    "a result for any of the 172 reviewed open gaps",
+    "a result for any of the 170 reviewed open gaps",
     "that REVIEWED_GAP or NOT_MAPPED means no literature exists",
     "that an UNREVIEWED evidence role is an absence of direct support",
     "that a dual LR mark composes its two records into a stronger result",
     "that all 576 coordinates are jointly realizable",
     "a weakest mathematical base",
     "full-state, representation-invariant, causal, or Weyl reconstruction from the single coded wave observable",
+    "a weak distributional theorem against every smooth test from the finite localized test span",
+    "strict causal support or a Green operator from coefficient-wise weak identities",
     "continuum renormalized products from finite regulated-product closure",
     "a Weyl QME or Weyl residual transfer from a finite toy BRST complex",
     "equivalence of carrier categories from one finite realization",

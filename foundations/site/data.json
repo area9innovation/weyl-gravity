@@ -371,18 +371,18 @@
     "migration_pending": 0,
     "migration_unresolved": 0,
     "reviewed_no_transfer": 88,
-    "reviewed_gap": 172,
+    "reviewed_gap": 170,
     "not_mapped": 0,
     "dual_direct": 8,
     "mark_counts": {
       "G": 29,
       "Gl": 1,
-      "L": 108,
+      "L": 109,
       "LR": 8,
       "Lr": 6,
-      "Ol": 172,
+      "Ol": 170,
       "P": 19,
-      "Pl": 79,
+      "Pl": 80,
       "Plr": 13,
       "Pr": 51,
       "R": 87,
@@ -390,18 +390,18 @@
     },
     "evidence_role_counts": {
       "DIRECT_LITERATURE": 84,
-      "DIRECT_LOCAL": 113,
-      "SUPPORTING": 447,
+      "DIRECT_LOCAL": 114,
+      "SUPPORTING": 449,
       "UNREVIEWED": 191
     },
     "synthetic_not_mapped": 0,
     "status_counts": {
       "LITERATURE_RESULT": 90,
-      "LOCAL_RESULT": 122,
+      "LOCAL_RESULT": 123,
       "NOT_MAPPED": 0,
-      "PIECES_ONLY": 162,
+      "PIECES_ONLY": 163,
       "PRIORITY_GAP": 30,
-      "REVIEWED_GAP": 172
+      "REVIEWED_GAP": 170
     },
     "migration_status_counts": {
       "CAPABILITY_QUALIFIED": 257,
@@ -411,7 +411,7 @@
       "REVIEWED_NO_TRANSFER": 88,
       "REVIEWED_OVERLAY": 11
     },
-    "evidence_records": 76
+    "evidence_records": 77
   },
   "cells": [
     {
@@ -680,12 +680,14 @@
       "foundation": "WEAK_ARITHMETIC",
       "carrier": "SMOOTH_DISTRIBUTIONAL",
       "obligation": "KINEMATICS_OBSERVABLES",
-      "status": "REVIEWED_GAP",
+      "status": "LOCAL_RESULT",
       "evidence": [
-        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "FOUNDATIONAL_CODED_LOCAL_WEAK_WAVE_TEST_CLASS_V1"
       ],
       "evidence_roles": {
-        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING",
+        "FOUNDATIONAL_CODED_LOCAL_WEAK_WAVE_TEST_CLASS_V1": "DIRECT_LOCAL"
       },
       "parent_obligation": null,
       "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
@@ -694,14 +696,20 @@
         "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
       ],
       "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
-      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
-      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "summary": "A ten-element characteristic-localized rational polynomial test family separates the declared labelled finite chiral carrier, and all pairings are exact rational data.",
+      "boundary": "Separation retains the right/left labels and fixed rational resolution. It is not separation of arbitrary scalar distributions, gauge classes, or a continuum observable algebra.",
       "classification_revision": {
         "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
         "previous_status": "NOT_EMITTED",
         "new_status": "REVIEWED_GAP",
         "evidence_role": "SUPPORTING",
         "status_change": true
+      },
+      "local_weak_wave_revision": {
+        "certificate": "FOUNDATIONAL_CODED_LOCAL_WEAK_WAVE_TEST_CLASS_V1",
+        "previous_status": "REVIEWED_GAP",
+        "new_status": "LOCAL_RESULT",
+        "evidence_role": "DIRECT_LOCAL"
       },
       "emitted": true
     },
@@ -6338,15 +6346,17 @@
         "FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V1",
         "weihrauch-zhong-2002",
         "FOUNDATIONAL_CODED_POLYGONAL_WAVE_RCA0_V1",
-        "simpson-1984-ode"
+        "simpson-1984-ode",
+        "FOUNDATIONAL_CODED_LOCAL_WEAK_WAVE_TEST_CLASS_V1"
       ],
-      "summary": "An exact finite-to-coded ladder and computable Sobolev wave result identify a specific RCA_0 formalization target. Frontier evidence: The local carrier and the ODE reversal clarify coding and strength, but no localized spacetime-distribution theorem is proved.",
-      "boundary": "No second-order-arithmetic upper bound or reversal has been proved.",
+      "summary": "The existing RCA_0 coded energy evolution now has a finite localized weak-equation compatibility certificate, but no independent distributional existence/uniqueness theorem is added.",
+      "boundary": "Coefficient-wise compatibility with ten tests does not prove well-posedness in a distribution topology or against every smooth test.",
       "evidence_roles": {
         "FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V1": "SUPPORTING",
         "weihrauch-zhong-2002": "SUPPORTING",
         "FOUNDATIONAL_CODED_POLYGONAL_WAVE_RCA0_V1": "UNREVIEWED",
-        "simpson-1984-ode": "UNREVIEWED"
+        "simpson-1984-ode": "UNREVIEWED",
+        "FOUNDATIONAL_CODED_LOCAL_WEAK_WAVE_TEST_CLASS_V1": "SUPPORTING"
       },
       "parent_obligation": "DYNAMICS_PROPAGATION",
       "migration_relation": "REVIEWED_V1_OVERLAY",
@@ -6361,6 +6371,12 @@
         "status_change": false,
         "evidence_overlay": true,
         "previous_status": "PIECES_ONLY"
+      },
+      "local_weak_wave_revision": {
+        "certificate": "FOUNDATIONAL_CODED_LOCAL_WEAK_WAVE_TEST_CLASS_V1",
+        "previous_status": "PIECES_ONLY",
+        "new_status": "PIECES_ONLY",
+        "evidence_role": "SUPPORTING"
       },
       "emitted": true
     },
@@ -14833,12 +14849,14 @@
       "foundation": "WEAK_ARITHMETIC",
       "carrier": "SMOOTH_DISTRIBUTIONAL",
       "obligation": "RECONSTRUCTION_LIMITS",
-      "status": "REVIEWED_GAP",
+      "status": "PIECES_ONLY",
       "evidence": [
-        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
+        "FOUNDATIONAL_CODED_LOCAL_WEAK_WAVE_TEST_CLASS_V1"
       ],
       "evidence_roles": {
-        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING"
+        "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1": "SUPPORTING",
+        "FOUNDATIONAL_CODED_LOCAL_WEAK_WAVE_TEST_CLASS_V1": "SUPPORTING"
       },
       "parent_obligation": null,
       "migration_relation": "DIRECT_FULL_SURFACE_ASSESSMENT",
@@ -14847,14 +14865,20 @@
         "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1"
       ],
       "migration_rationale": "This coordinate was not inherited from a broad parent; the full-surface audit formulates and assesses it directly.",
-      "summary": "This coordinate has now been explicitly formulated and reviewed as a coherent open research question, but no direct local or literature result is certified for it in the atlas.",
-      "boundary": "REVIEWED_GAP is an assessment state, not a result, priority assignment, literature-absence claim, impossibility theorem, or evidence that adjacent records transfer.",
+      "summary": "The localized measurements exactly reconstruct the ten labelled coefficients at the declared finite resolution, exposing the next density/modulus gate toward a distributional reconstruction theorem.",
+      "boundary": "This finite labelled separation is not full-state reconstruction, representation invariance, or separation after forgetting chirality labels.",
       "classification_revision": {
         "certificate": "FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1",
         "previous_status": "NOT_EMITTED",
         "new_status": "REVIEWED_GAP",
         "evidence_role": "SUPPORTING",
         "status_change": true
+      },
+      "local_weak_wave_revision": {
+        "certificate": "FOUNDATIONAL_CODED_LOCAL_WEAK_WAVE_TEST_CLASS_V1",
+        "previous_status": "REVIEWED_GAP",
+        "new_status": "PIECES_ONLY",
+        "evidence_role": "SUPPORTING"
       },
       "emitted": true
     },
@@ -15668,6 +15692,49 @@
       "report_path": "foundations/reports/bt-separable-cstar-state-chain.md",
       "report_link": "sources/foundations/reports/bt-separable-cstar-state-chain.md",
       "sha256": "08389e96d349766e29a34cde8109d4b1271288b59d44f3b29fcb456065641998"
+    },
+    "FOUNDATIONAL_CODED_LOCAL_WEAK_WAVE_TEST_CLASS_V1": {
+      "id": "FOUNDATIONAL_CODED_LOCAL_WEAK_WAVE_TEST_CLASS_V1",
+      "kind": "LOCAL_RESULT",
+      "result_kind": "FINITE_LOCALIZED_SEPARATING_TEST_CLASS_AND_COEFFICIENT_WEAK_EQUATION",
+      "lifecycle": "CERTIFIED",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE"
+      ],
+      "claim_flags": {
+        "finite_localized_test_class_constructed": true,
+        "labelled_finite_carrier_separated": true,
+        "coefficient_transport_identities_proved": true,
+        "coefficient_scalar_weak_wave_identity_proved": true,
+        "pra_finite_certificate": true,
+        "rca0_completion_transfer": true,
+        "all_smooth_tests_covered": false,
+        "unlabelled_scalar_field_separated": false,
+        "full_state_reconstruction_proved": false,
+        "strict_causal_support_proved": false,
+        "green_operator_constructed": false,
+        "weyl_or_metric_bv_equation_proved": false,
+        "empirical_calibration_proved": false,
+        "new_lorentzian_claim": false
+      },
+      "does_not_establish": [
+        "separation after forgetting the declared right/left chiral labels",
+        "a separating algebra for arbitrary completed L2 states or gauge equivalence classes",
+        "the weak wave equation against every smooth compactly supported test",
+        "a representation-independent distributional solution theorem",
+        "pointwise differentiability of the step components",
+        "strict finite propagation or causal support",
+        "an advanced or retarded Green operator",
+        "a variable-coefficient, curved-spacetime, Weyl, or metric-BV equation",
+        "a probability rule or empirically calibrated detector",
+        "a new LORENTZIAN-CAUSAL result"
+      ],
+      "result_path": "foundations/results/FOUNDATIONAL_CODED_LOCAL_WEAK_WAVE_TEST_CLASS_V1.json",
+      "result_link": "sources/foundations/results/FOUNDATIONAL_CODED_LOCAL_WEAK_WAVE_TEST_CLASS_V1.json",
+      "report_path": "foundations/reports/coded-local-weak-wave-test-class-v1.md",
+      "report_link": "sources/foundations/reports/coded-local-weak-wave-test-class-v1.md",
+      "sha256": "ee6591f100f7f73aaf3462949a6c4ce27e6f090cfcced51e5e7e4c20fd28281c"
     },
     "FOUNDATIONAL_CODED_POLYGONAL_WAVE_RCA0_V1": {
       "id": "FOUNDATIONAL_CODED_POLYGONAL_WAVE_RCA0_V1",
@@ -17712,12 +17779,13 @@
   ],
   "boundaries": {
     "cube": [
-      "that RCA_0 is necessary or weakest",
-      "a separating observable algebra from one detector profile",
-      "full state or field reconstruction from one smeared observable",
-      "representation invariance or a general finite-to-continuum theorem",
-      "a localized weak spacetime equation or causal Green support",
-      "a Weyl, Bateman-Turok, metric-BV, or interacting reconstruction theorem",
+      "a weak equation against every smooth compactly supported test",
+      "separation of arbitrary scalar distributions or gauge classes",
+      "full state or representation-independent field reconstruction",
+      "well-posedness in a distribution topology from coefficient compatibility alone",
+      "strict finite propagation or causal Green support",
+      "an advanced or retarded Green operator",
+      "a Weyl, Bateman-Turok, metric-BV, or interacting equation",
       "empirical calibration or observational agreement",
       "that all 576 coordinates are jointly realizable",
       "a complete physical theory or new LORENTZIAN-CAUSAL result"
@@ -17753,11 +17821,11 @@
     ]
   },
   "source_links": {
-    "cube": "sources/foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V11.json",
+    "cube": "sources/foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V12.json",
     "full_surface_audit": "sources/foundations/results/FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1.json",
     "migration_audit": "sources/foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_MIGRATION_AUDIT_V2.json",
     "ladder": "sources/foundations/results/FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V2.json",
-    "cube_report": "sources/foundations/reports/refined-intersection-cube-v11.md",
+    "cube_report": "sources/foundations/reports/refined-intersection-cube-v12.md",
     "bt_euclidean_import": "sources/foundations/results/FOUNDATIONAL_BT_EUCLIDEAN_LATTICE_IMPORT_V1.json",
     "bt_euclidean_import_report": "sources/foundations/reports/bt-euclidean-lattice-foundational-import.md",
     "full_surface_audit_report": "sources/foundations/reports/full-surface-gap-audit.md",
@@ -17772,5 +17840,5 @@
     "migration_audit_report": "sources/foundations/reports/intersection-cube-migration-audit-v2.md",
     "ladder_report": "sources/foundations/reports/cylinder-wave-strength-ladder-v2.md"
   },
-  "canonical_digest": "65c1967435f8a4d87c47143dc948ad039eb5906da00dfcac2ecc2883d6988911"
+  "canonical_digest": "8e0ebd6ce6e0d62b1ef5881df70bb289f0747d5fafce8f7f99b0237e33058849"
 }
