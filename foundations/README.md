@@ -279,13 +279,18 @@ three rails separate: obligation coverage is computed; cross-cell composition
 is partially assessed; and observational agreement is not represented by the current
 schema. A multi-carrier maximum is therefore labelled a coverage envelope, not
 a completed theory. The **Assemblies** view adds seven named prototype
-envelopes, a six-stage hard-gate chain, 49 explicitly typed cross-cell joins,
-and an empirical benchmark ledger. Two scoped joins are now certified
+envelopes, six separately reported maturity rails, and 49 explicitly typed
+cross-cell joins. Missing, premature, blocked, and failed work are distinct
+states: red is reserved for an explicit obstruction or failed comparison.
+Two scoped joins are now certified
 `CONDITIONAL_BRIDGE` relations: finite-corner state-to-probability and free
 ground-state-to-dynamics. Each appears in two compatible prototypes. The other
-joins remain `NOT_ASSESSED`, and the empirical ledger is
-empty, so every prototype remains fail-closed before theory or observational
-completion:
+joins remain `NOT_ASSESSED`, and the candidate empirical ledger is empty, so
+every prototype remains fail-closed before theory or observational completion.
+A separately labelled external standard-GR positive control supplies four
+primary-source comparison records across three benchmark families; it
+calibrates the display and is neither a cube-selected assembly nor evidence
+for Weyl gravity:
 
 ```bash
 python3 foundations/build_matrix_site.py

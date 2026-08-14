@@ -12,6 +12,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "foundations/site/data.json"
+ASSEMBLY_SOURCE = ROOT / "foundations/site/assemblies.json"
 OUTPUT = ROOT / "paper/21-reverse-foundations-of-physics-appendices.tex"
 
 STATUS_ORDER = [
@@ -121,7 +122,7 @@ def coverage_counts(cells: list[dict], field: str, value: str) -> collections.Co
     return collections.Counter(cell["status"] for cell in cells if cell[field] == value)
 
 
-def build(data: dict) -> str:
+def build(data: dict, assemblies: dict) -> str:
     axes = {axis["id"]: axis for axis in data["axes"]}
     labels = axis_lookup(data)
     cells = data["cells"]
@@ -158,7 +159,7 @@ def build(data: dict) -> str:
         r"\section{Static companion to the evidence atlas}",
         r"\label{app:atlas-companion}",
         "",
-        "The interactive atlas exposes five views of the same normalized evidence: matrix, dimensions guide, typed implications, strength ladder, and evidence catalogue.  This appendix preserves their key research content in a citable static form.  It is a snapshot, not a replacement for cell inspection, filtering, neighboring-cell comparison, or the complete downloadable dataset.",
+        "The interactive atlas exposes seven views of the same normalized evidence and derived assessments: matrix, dimensions guide, theory profiles, assemblies, typed implications, strength ladder, and evidence catalogue.  This appendix preserves their key research content in a citable static form.  It is a snapshot, not a replacement for cell inspection, filtering, neighboring-cell comparison, or the complete downloadable dataset.",
         "",
         r"\begin{center}",
         r"\small",
@@ -168,6 +169,8 @@ def build(data: dict) -> str:
         r"\midrule",
         r"Matrix & Overall counts, a \(6\times6\) three-way coverage roll-up, and status counts for every obligation. \\",
         r"Dimensions guide & All 28 axis options with their non-specialist descriptions. \\",
+        r"Theory profiles & Coverage-envelope and Pareto navigation; these are not composed theories. \\",
+        r"Assemblies & Seven cube-selected prototypes, independent maturity rails, typed joins, and an external standard-GR calibration control. \\",
         r"Implications & The complete typed relation ledger: ten directed edges with their exact assertion and evidence. \\",
         r"Strength ladder & All six cylinder-wave gates, including what each adds, establishes, and leaves open. \\",
         rf"Evidence & The complete literature register, local-certificate register, and usage crosswalk for all {len(evidence)} records. \\",
@@ -475,7 +478,68 @@ def build(data: dict) -> str:
             r"\end{longtable}",
             r"\endgroup",
             "",
+            r"\subsection{Prototype assemblies and empirical calibration}",
+            r"\label{app:assembly-calibration}",
+            "The assembly view no longer treats missing downstream work as a failed test.  Its six maturity rails are reported independently: direct obligation coverage may be complete while composition is partial and prediction or empirical records remain unregistered.  Red is reserved for an explicit incompatibility, obstruction, or failed comparison.",
+            "",
+            r"\begin{table}[htbp]",
+            r"\centering",
+            r"\scriptsize",
+            r"\begin{tabularx}{\textwidth}{@{}Yrrrr@{}}",
+            r"\toprule",
+            r"Prototype & Direct obligations & Certified joins & Coverage rail & Composition rail \\",
+            r"\midrule",
+        ]
+    )
+    for assembly in assemblies["assemblies"]:
+        rails = {rail["id"]: rail["status"] for rail in assembly["maturity_rails"]}
+        certified_joins = sum(item["certification_status"] == "CERTIFIED" for item in assembly["interfaces"])
+        lines.append(
+            f"{tex(assembly['label'])} & {assembly['coverage']['direct']}/{assembly['coverage']['total']} & "
+            f"{certified_joins}/{len(assembly['interfaces'])} & {tex(rails['OBLIGATION_COVERAGE'])} & "
+            f"{tex(rails['CROSS_CELL_COMPOSITION'])}" + r" \\"
+        )
+    control = assemblies["calibration_controls"][0]
+    lines.extend(
+        [
+            r"\bottomrule",
+            r"\end{tabularx}",
+            r"\caption{Cube-selected coverage and composition maturity.  The classical-standard mixed-carrier reference has complete direct coverage; this does not certify the unregistered joins.}",
+            r"\label{tab:assembly-maturity}",
+            r"\end{table}",
+            "",
+            r"\paragraph{External positive control.}",
+            tex(control["label"]) + ". " + tex(control["scope"]),
+            "",
+            r"\begingroup",
+            r"\scriptsize",
+            r"\begin{longtable}{@{}p{0.19\textwidth}p{0.27\textwidth}p{0.46\textwidth}@{}}",
+            r"\caption{Registered standard-GR control comparisons.}\label{tab:gr-positive-control}\\",
+            r"\toprule",
+            r"Benchmark & Primary source & Registered finding and boundary \\",
+            r"\midrule",
+            r"\endfirsthead",
+            r"\toprule",
+            r"Benchmark & Primary source & Registered finding and boundary \\",
+            r"\midrule",
+            r"\endhead",
+        ]
+    )
+    benchmark_labels = {item["id"]: item["label"] for item in assemblies["empirical_ledger"]["benchmarks"]}
+    for record in control["records"]:
+        source = f"{record['citation']} {record['stable_url']}"
+        finding = f"{record['finding']} Boundary: {record['boundary']}"
+        lines.append(f"{tex(benchmark_labels[record['benchmark']])} & {tex(source)} & {tex(finding)}" + r" \\")
+    lines.extend(
+        [
+            r"\bottomrule",
+            r"\end{longtable}",
+            r"\endgroup",
+            "",
+            "The control populates three of six benchmark families with four records.  It is outside the cube, does not make GR complete, and transfers no observational support to a Weyl-gravity prototype.",
+            "",
             rf"The complete normalized dataset is \cert{{foundations/site/data.json}} (SHA-256 \cert{{{sha256(SOURCE)}}}; canonical digest \cert{{{data['canonical_digest']}}}).  These tables are generated from that file and contain no hand-copied coverage counts, relation edges, evidence roles, boundaries, or citations.",
+            rf"The assembly and calibration tables are generated from \cert{{foundations/site/assemblies.json}} (SHA-256 \cert{{{sha256(ASSEMBLY_SOURCE)}}}; canonical digest \cert{{{assemblies['canonical_digest']}}}).",
             "",
         ]
     )
@@ -487,7 +551,8 @@ def main() -> int:
     parser.add_argument("--check", action="store_true")
     args = parser.parse_args()
     data = json.loads(SOURCE.read_text())
-    expected = build(data)
+    assemblies = json.loads(ASSEMBLY_SOURCE.read_text())
+    expected = build(data, assemblies)
     if args.check:
         if not OUTPUT.exists() or OUTPUT.read_text() != expected:
             raise SystemExit(f"stale generated appendix: {OUTPUT.relative_to(ROOT)}")

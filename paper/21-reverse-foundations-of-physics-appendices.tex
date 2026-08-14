@@ -3,7 +3,7 @@
 \section{Static companion to the evidence atlas}
 \label{app:atlas-companion}
 
-The interactive atlas exposes five views of the same normalized evidence: matrix, dimensions guide, typed implications, strength ladder, and evidence catalogue.  This appendix preserves their key research content in a citable static form.  It is a snapshot, not a replacement for cell inspection, filtering, neighboring-cell comparison, or the complete downloadable dataset.
+The interactive atlas exposes seven views of the same normalized evidence and derived assessments: matrix, dimensions guide, theory profiles, assemblies, typed implications, strength ladder, and evidence catalogue.  This appendix preserves their key research content in a citable static form.  It is a snapshot, not a replacement for cell inspection, filtering, neighboring-cell comparison, or the complete downloadable dataset.
 
 \begin{center}
 \small
@@ -13,6 +13,8 @@ Website view & Static counterpart \\
 \midrule
 Matrix & Overall counts, a \(6\times6\) three-way coverage roll-up, and status counts for every obligation. \\
 Dimensions guide & All 28 axis options with their non-specialist descriptions. \\
+Theory profiles & Coverage-envelope and Pareto navigation; these are not composed theories. \\
+Assemblies & Seven cube-selected prototypes, independent maturity rails, typed joins, and an external standard-GR calibration control. \\
 Implications & The complete typed relation ledger: ten directed edges with their exact assertion and evidence. \\
 Strength ladder & All six cylinder-wave gates, including what each adds, establishes, and leaves open. \\
 Evidence & The complete literature register, local-certificate register, and usage crosswalk for all 74 records. \\
@@ -451,4 +453,54 @@ Evidence record & Matrix use & Graph and ladder use \\
 \end{longtable}
 \endgroup
 
+\subsection{Prototype assemblies and empirical calibration}
+\label{app:assembly-calibration}
+The assembly view no longer treats missing downstream work as a failed test.  Its six maturity rails are reported independently: direct obligation coverage may be complete while composition is partial and prediction or empirical records remain unregistered.  Red is reserved for an explicit incompatibility, obstruction, or failed comparison.
+
+\begin{table}[htbp]
+\centering
+\scriptsize
+\begin{tabularx}{\textwidth}{@{}Yrrrr@{}}
+\toprule
+Prototype & Direct obligations & Certified joins & Coverage rail & Composition rail \\
+\midrule
+Classical-standard mixed-carrier reference & 16/16 & 2/7 & SATISFIED & PARTIALLY\_CERTIFIED \\
+Classical-standard algebraic profile & 12/16 & 0/7 & OPEN & NOT\_ASSESSED \\
+Finite exact programme & 10/16 & 0/7 & OPEN & NOT\_ASSESSED \\
+Weak-base finite-exact programme & 9/16 & 0/7 & OPEN & NOT\_ASSESSED \\
+Krein and algebraic programme & 14/16 & 2/7 & OPEN & PARTIALLY\_CERTIFIED \\
+Constructive/computable programme & 12/16 & 0/7 & OPEN & NOT\_ASSESSED \\
+Topos/internal programme & 9/16 & 0/7 & OPEN & NOT\_ASSESSED \\
+\bottomrule
+\end{tabularx}
+\caption{Cube-selected coverage and composition maturity.  The classical-standard mixed-carrier reference has complete direct coverage; this does not certify the unregistered joins.}
+\label{tab:assembly-maturity}
+\end{table}
+
+\paragraph{External positive control.}
+Standard general relativity: observational-domain control. A calibration control showing that the atlas can distinguish registered predictions and successful empirical comparisons from missing records. It is not selected from the foundations cube and is not a candidate Weyl-gravity assembly.
+
+\begingroup
+\scriptsize
+\begin{longtable}{@{}p{0.19\textwidth}p{0.27\textwidth}p{0.46\textwidth}@{}}
+\caption{Registered standard-GR control comparisons.}\label{tab:gr-positive-control}\\
+\toprule
+Benchmark & Primary source & Registered finding and boundary \\
+\midrule
+\endfirsthead
+\toprule
+Benchmark & Primary source & Registered finding and boundary \\
+\midrule
+\endhead
+Solar-system dynamics & B. Bertotti, L. Iess, and P. Tortora, A test of general relativity using radio links with the Cassini spacecraft, Nature 425, 374-376 (2003). https://doi.org/10.1038/nature01997 & The reported estimate is consistent with the standard-GR prediction within the experiment's stated uncertainty. Boundary: Does not test strong-field dynamics, gravitational radiation, galactic phenomenology, cosmology, quantum gravity, or a foundations-cube composition map. \\
+Compact binaries & M. Kramer et al., Strong-Field Gravity Tests with the Double Pulsar, Physical Review X 11, 041050 (2021). https://doi.org/10.1103/PhysRevX.11.041050 & The tested post-Keplerian and radiative predictions are mutually consistent with GR at the reported precision. Boundary: A high-precision strong-field binary test, not a proof of GR in arbitrary compact objects, cosmology, or the quantum domain. \\
+Gravitational waves & LIGO Scientific Collaboration, Virgo Collaboration, and KAGRA Collaboration, Tests of General Relativity with GWTC-3, arXiv:2112.06861 (2021). https://arxiv.org/abs/2112.06861 & The reported tests find no evidence for deviations from GR in the analysed GWTC-3 signals. Boundary: Consistency within the analysed catalogue and waveform systematics is not proof of GR for every source, propagation environment, polarization model, or cosmological history. \\
+Gravitational waves & B. P. Abbott et al., Gravitational Waves and Gamma-rays from a Binary Neutron Star Merger: GW170817 and GRB 170817A, Astrophysical Journal Letters 848, L13 (2017). https://arxiv.org/abs/1710.05834 & The observed delay yields stringent bounds compatible with standard luminal GR propagation in the tested setting. Boundary: Does not isolate all modified-gravity effects, determine waveform generation by itself, or provide a universal propagation theorem. \\
+\bottomrule
+\end{longtable}
+\endgroup
+
+The control populates three of six benchmark families with four records.  It is outside the cube, does not make GR complete, and transfers no observational support to a Weyl-gravity prototype.
+
 The complete normalized dataset is \cert{foundations/site/data.json} (SHA-256 \cert{9e2dcefdc4eb94e32e9d08b81bd7cbf16916a5ed2bf8f8d18275908472b842d5}; canonical digest \cert{4ba28f1320371b129b8f97dca3668acd02711ab4aefb980d21964cd90cefd30d}).  These tables are generated from that file and contain no hand-copied coverage counts, relation edges, evidence roles, boundaries, or citations.
+The assembly and calibration tables are generated from \cert{foundations/site/assemblies.json} (SHA-256 \cert{7d8e1adea94a059cae77dc415e6a1271bdb5db0fdebbaeedab4325c9ef7d1f87}; canonical digest \cert{0199375cd15d134ffcca579c29a675d73f21949205e912fa876e0305f4ddce66}).

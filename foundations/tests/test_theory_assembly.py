@@ -21,6 +21,18 @@ class TheoryAssemblyTests(unittest.TestCase):
         self.assertEqual(len(certified), 4)
         self.assertTrue(all(interface["relation"] == "CONDITIONAL_BRIDGE" for interface in certified))
         self.assertEqual(value["empirical_ledger"]["records"], [])
+        self.assertEqual(len(value["calibration_controls"]), 1)
+        self.assertEqual(len(value["calibration_controls"][0]["records"]), 4)
+        self.assertTrue(all(rail["status"] not in {"BLOCKED", "FAILED"} for item in value["assemblies"] for rail in item["maturity_rails"]))
+
+    def test_classical_reference_reports_complete_coverage_and_partial_composition(self):
+        value = build_assembly_assessment(build_dataset())
+        assembly = next(item for item in value["assemblies"] if item["id"] == "STANDARD_MIXED_REFERENCE")
+        rails = {item["id"]: item["status"] for item in assembly["maturity_rails"]}
+        self.assertEqual(assembly["coverage"], {"direct": 16, "assessed": 16, "total": 16, "complete_direct": True})
+        self.assertEqual(rails["OBLIGATION_COVERAGE"], "SATISFIED")
+        self.assertEqual(rails["CROSS_CELL_COMPOSITION"], "PARTIALLY_CERTIFIED")
+        self.assertEqual(rails["PREDICTION_DERIVATION"], "NOT_EVALUABLE")
 
     def test_selected_cells_cover_all_obligations(self):
         value = build_assembly_assessment(build_dataset())

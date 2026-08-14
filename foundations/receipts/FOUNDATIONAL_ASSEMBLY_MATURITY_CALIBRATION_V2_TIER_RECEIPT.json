@@ -1,0 +1,155 @@
+{
+  "schema_version": "science-forge-tier-receipt-v1",
+  "result_id": "FOUNDATIONAL_ASSEMBLY_MATURITY_CALIBRATION_V2_TIER_RECEIPT",
+  "result_kind": "ASSEMBLY_MATURITY_SEMANTICS_AND_EXTERNAL_CONTROL_RECEIPT",
+  "lifecycle": "VERIFIED_NAVIGATION_ARTIFACT",
+  "created": "2026-08-14",
+  "repository_base_commit": "bb903e5cd8713832b3871fe637405e0142139db2",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "scope": "Recalibrated the existing theory-assembly assessment and site so complete direct obligation coverage, partial cross-cell composition, missing downstream records, explicit obstruction, and empirical failure are distinct states. Added standard general relativity as a separately labelled external positive control with four primary-source comparisons in three benchmark families, and projected the calibrated interpretation into Paper 21 without transferring support to a Weyl-gravity prototype.",
+  "inputs": [
+    {
+      "path": "foundations/standard-gr-observational-control-v1.json",
+      "sha256": "b65311888e0852aaf36ae9f95568e0b9aaeeb97758752eeffd02e4ba1d0b26e7",
+      "role": "typed external calibration ledger"
+    },
+    {
+      "locator": "https://doi.org/10.1038/nature01997",
+      "artifact_status": "METADATA_ONLY",
+      "sha256": null,
+      "role": "Cassini solar-system control comparison"
+    },
+    {
+      "locator": "https://arxiv.org/pdf/2112.06795v2",
+      "artifact_status": "CONTENT_PINNED",
+      "sha256": "9d1b5b4dc304b1d6b1b11059a26d96ca97d1c0d43857523058f973c12bddc6a4",
+      "role": "Double Pulsar compact-binary control comparison"
+    },
+    {
+      "locator": "https://arxiv.org/pdf/2112.06861v3",
+      "artifact_status": "CONTENT_PINNED",
+      "sha256": "10451d67f3cefd425d52e12f78269891f6b1b9a2c25ef83dbca519d2f8b9c1c2",
+      "role": "GWTC-3 gravitational-wave control comparison"
+    },
+    {
+      "locator": "https://arxiv.org/pdf/1710.05834v2",
+      "artifact_status": "CONTENT_PINNED",
+      "sha256": "bf06bd2ae6a23cf7f7092307677c2b681ce02abab3b5bbe37bbce76a8960140a",
+      "role": "GW170817 multimessenger propagation control comparison"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "foundations/results/FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1.json",
+      "sha256": "7d8e1adea94a059cae77dc415e6a1271bdb5db0fdebbaeedab4325c9ef7d1f87"
+    },
+    {
+      "path": "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json",
+      "sha256": "b68479455de8e8c67d392d5a4edf7fbf9f3d69021fbf8af6391a5fa98b2763f0"
+    },
+    {
+      "path": "foundations/site/manifest.json",
+      "sha256": "06afc08b0f6dcb1983129e8e4879dc0534d4d71e7d32f2833133c57a84968415"
+    },
+    {
+      "path": "paper/21-reverse-foundations-of-physics-appendices.tex",
+      "sha256": "45cf31801d67346135c156d216fcc31f27d42c88e4bfcc0c6deb18d945cecce1"
+    },
+    {
+      "path": "paper/21-reverse-foundations-of-physics-claim-map.json",
+      "sha256": "77d39f2708931e675e198a9341e0a54d51e01a3fd99d5dbde1e975bf9836a82c"
+    },
+    {
+      "path": "paper/21-reverse-foundations-of-physics.tex",
+      "sha256": "bbf0bf14466bfa6793c9cfcda55d229841cb7371b914e19245b49309814ff46b"
+    },
+    {
+      "path": "paper/21-reverse-foundations-of-physics.pdf",
+      "sha256": "9399289fbdb4ad9679d4e0ac6a1d29d1c3c9478910afdcde71cc6c89f79f8887"
+    }
+  ],
+  "assessment": {
+    "prototype_assemblies": 7,
+    "standard_mixed_reference_direct_coverage": "16/16",
+    "standard_mixed_reference_certified_interfaces": "2/7",
+    "candidate_empirical_records": 0,
+    "external_control_records": 4,
+    "external_control_supported_benchmark_families": "3/6",
+    "explicit_failure_or_obstruction_states_registered_for_prototypes": 0
+  },
+  "tests": {
+    "tier_0": [
+      {
+        "command": "python3 -m py_compile foundations/theory_assembly.py foundations/verify_theory_assembly.py foundations/build_matrix_site_v2.py foundations/check_matrix_site_v2.py foundations/verify_matrix_site_v2.py paper/generate_21_reverse_foundations_appendices.py paper/generate_21_reverse_foundations_claim_map.py paper/verify_21_reverse_foundations_claim_map.py; python3 -m json.tool on the two changed schemas and the control ledger; git diff --check on scoped paths",
+        "status": "PASS"
+      }
+    ],
+    "tier_1": [
+      {
+        "command": "python3 foundations/build_matrix_site_v2.py --check && python3 foundations/check_matrix_site_v2.py && python3 foundations/verify_matrix_site_v2.py && python3 foundations/verify_theory_assembly.py",
+        "elapsed_seconds": 0.46,
+        "status": "PASS"
+      },
+      {
+        "command": "python3 -m unittest foundations.tests.test_theory_assembly foundations.tests.test_matrix_site",
+        "elapsed_seconds": 0.75,
+        "status": "PASS",
+        "output": "14 tests passed"
+      },
+      {
+        "command": "python3 paper/generate_21_reverse_foundations_appendices.py --check && python3 paper/generate_21_reverse_foundations_claim_map.py --check && python3 paper/verify_21_reverse_foundations_claim_map.py",
+        "elapsed_seconds": 0.15,
+        "status": "PASS"
+      },
+      {
+        "command": "cd paper && pdflatex -interaction=nonstopmode -halt-on-error 21-reverse-foundations-of-physics.tex (twice)",
+        "elapsed_seconds": 1.35,
+        "status": "PASS",
+        "output": "35-page PDF; no undefined references or overfull boxes"
+      },
+      {
+        "command": "google-chrome --headless --disable-gpu --no-sandbox --window-size=1600,5200 --virtual-time-budget=2500 --screenshot=/tmp/assembly-calibrated.png http://127.0.0.1:8000/index.html#view=assemblies&assembly=STANDARD_MIXED_REFERENCE",
+        "status": "PASS",
+        "output": "Visual inspection confirmed legible six-rail layout, 16/16 coverage, 2/7 composition, neutral missing states, and the external control."
+      }
+    ],
+    "tier_2": {
+      "status": "NOT_RUN",
+      "criterion": "No mathematical input, shared operator, certificate chain, quantum lifecycle state, or classical freeze claim changed. This is a derived navigation semantic, a scoped literature calibration ledger, and paper/site projection over content-addressed existing certificates."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No freeze, theorem promotion, shared core algebra change, or release was requested."
+    }
+  },
+  "claim_flags": {
+    "complete_classical_reference_coverage_displayed": true,
+    "partial_composition_displayed": true,
+    "missing_and_failure_states_separated": true,
+    "external_positive_control_registered": true,
+    "standard_gr_complete_theory_established": false,
+    "weyl_empirical_support_established": false,
+    "complete_observationally_valid_theory_identified": false,
+    "new_lorentzian_claim": false,
+    "quantum_lifecycle_promoted": false
+  },
+  "does_not_establish": [
+    "composition of any prototype beyond the two existing certified scoped interfaces",
+    "an end-to-end prediction chain for any cube-selected prototype",
+    "empirical support for a Weyl-gravity assembly",
+    "coverage of standard general relativity in the local-gravity, galactic, or cosmological benchmark families",
+    "completeness or uniqueness of standard general relativity",
+    "a new Lorentzian-causal result or quantum lifecycle promotion"
+  ],
+  "unrelated_worktree_changes_excluded": [
+    "reverse_physics/bt_euclidean_lattice_step_scaling_experiment.py",
+    "reverse_physics/bt_euclidean_lattice_step_scaling_preflight.py",
+    "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_STEP_SCALING_PREFLIGHT_V1.json",
+    "reverse_physics/data/bt_euclidean_lattice_step_scaling_observations_v1.json",
+    "reverse_physics/schema/reverse-physics-bt-euclidean-step-scaling-preflight-v1.schema.json"
+  ]
+}

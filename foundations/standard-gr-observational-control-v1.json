@@ -1,0 +1,171 @@
+{
+  "schema_version": "standard-gr-observational-control-v1",
+  "control_id": "STANDARD_GENERAL_RELATIVITY_DOMAIN_CONTROL",
+  "created": "2026-08-14",
+  "kind": "EXTERNAL_POSITIVE_CONTROL",
+  "label": "Standard general relativity: observational-domain control",
+  "scope": "A calibration control showing that the atlas can distinguish registered predictions and successful empirical comparisons from missing records. It is not selected from the foundations cube and is not a candidate Weyl-gravity assembly.",
+  "dependency_tags": [
+    "LORENTZIAN-CAUSAL"
+  ],
+  "rail_summary": [
+    {
+      "id": "PREDICTION_DERIVATION",
+      "status": "REGISTERED_IN_DOMAINS",
+      "basis": "Four primary-source records identify a GR prediction in three benchmark families."
+    },
+    {
+      "id": "OBSERVABLE_IDENTIFICATION",
+      "status": "REGISTERED_IN_DOMAINS",
+      "basis": "Each record names the measured observable and comparison domain."
+    },
+    {
+      "id": "EMPIRICAL_COMPARISON",
+      "status": "SUPPORTED_IN_DOMAINS",
+      "basis": "The cited analyses report consistency with the tested GR prediction within their stated scope."
+    },
+    {
+      "id": "ROBUSTNESS_OUT_OF_SAMPLE",
+      "status": "MULTI_DOMAIN_SUPPORT",
+      "basis": "Independent solar-system, binary-pulsar, gravitational-wave, and multimessenger analyses test distinct regimes; this is not a universal out-of-sample theorem."
+    }
+  ],
+  "records": [
+    {
+      "id": "GR_CASSINI_SHAPIRO_2003",
+      "benchmark": "SOLAR_SYSTEM",
+      "citation": "B. Bertotti, L. Iess, and P. Tortora, A test of general relativity using radio links with the Cassini spacecraft, Nature 425, 374-376 (2003).",
+      "stable_url": "https://doi.org/10.1038/nature01997",
+      "artifact": {
+        "status": "METADATA_ONLY",
+        "locator": "https://doi.org/10.1038/nature01997",
+        "sha256": null
+      },
+      "observable_map": "Radio-frequency shifts during solar conjunction constrain the post-Newtonian light-time-delay parameter gamma.",
+      "dataset": "Cassini spacecraft radio links around the 2002 solar conjunction.",
+      "prediction": "The standard-GR value of the post-Newtonian parameter gamma.",
+      "comparison_method": "Relativistic Doppler/time-delay fit with plasma-noise suppression.",
+      "uncertainty": "Use the uncertainty and systematic model reported by the source; this ledger does not recompute the fit.",
+      "parameter_fit_scope": "Solar-system weak-field propagation with nuisance/systematic modelling as specified in the source.",
+      "out_of_sample_status": "INDEPENDENT_DOMAIN_TEST",
+      "finding": "The reported estimate is consistent with the standard-GR prediction within the experiment's stated uncertainty.",
+      "boundary": "Does not test strong-field dynamics, gravitational radiation, galactic phenomenology, cosmology, quantum gravity, or a foundations-cube composition map."
+    },
+    {
+      "id": "GR_DOUBLE_PULSAR_2021",
+      "benchmark": "COMPACT_BINARIES",
+      "citation": "M. Kramer et al., Strong-Field Gravity Tests with the Double Pulsar, Physical Review X 11, 041050 (2021).",
+      "stable_url": "https://doi.org/10.1103/PhysRevX.11.041050",
+      "artifact": {
+        "status": "CONTENT_PINNED",
+        "locator": "https://arxiv.org/pdf/2112.06795v2",
+        "sha256": "9d1b5b4dc304b1d6b1b11059a26d96ca97d1c0d43857523058f973c12bddc6a4"
+      },
+      "observable_map": "Relativistic timing parameters and orbital decay map to conservative and radiative strong-field predictions.",
+      "dataset": "Sixteen years of timing observations of PSR J0737-3039A/B.",
+      "prediction": "Multiple post-Keplerian relations and the GR quadrupolar gravitational-radiation prediction for the double-pulsar system.",
+      "comparison_method": "Joint pulsar-timing model with propagation, kinematic, and mass-loss corrections described in the source.",
+      "uncertainty": "The source reports validation of the GR quadrupolar radiation prediction at 1.3e-4 (95% confidence).",
+      "parameter_fit_scope": "A specific relativistic binary system under the timing and correction model in the paper.",
+      "out_of_sample_status": "INDEPENDENT_DOMAIN_TEST",
+      "finding": "The tested post-Keplerian and radiative predictions are mutually consistent with GR at the reported precision.",
+      "boundary": "A high-precision strong-field binary test, not a proof of GR in arbitrary compact objects, cosmology, or the quantum domain."
+    },
+    {
+      "id": "GR_GWTC3_TESTS_2021",
+      "benchmark": "GRAVITATIONAL_WAVES",
+      "citation": "LIGO Scientific Collaboration, Virgo Collaboration, and KAGRA Collaboration, Tests of General Relativity with GWTC-3, arXiv:2112.06861 (2021).",
+      "stable_url": "https://arxiv.org/abs/2112.06861",
+      "artifact": {
+        "status": "CONTENT_PINNED",
+        "locator": "https://arxiv.org/pdf/2112.06861v3",
+        "sha256": "10451d67f3cefd425d52e12f78269891f6b1b9a2c25ef83dbca519d2f8b9c1c2"
+      },
+      "observable_map": "Compact-binary gravitational-wave phase, amplitude, residual, polarization, dispersion, and remnant-consistency observables map to parameterized deviations from GR.",
+      "dataset": "The confident compact-binary coalescences used by the GWTC-3 general-relativity tests.",
+      "prediction": "GR waveform generation and propagation, tested through multiple parameterized and residual analyses.",
+      "comparison_method": "A suite of waveform-consistency, residual, polarization, dispersion, and parameterized-deviation analyses.",
+      "uncertainty": "Analysis-specific credible intervals and systematic qualifications are those reported in the source.",
+      "parameter_fit_scope": "The event populations, waveform models, priors, and analysis selections specified in the source.",
+      "out_of_sample_status": "MULTI_EVENT_DOMAIN_TEST",
+      "finding": "The reported tests find no evidence for deviations from GR in the analysed GWTC-3 signals.",
+      "boundary": "Consistency within the analysed catalogue and waveform systematics is not proof of GR for every source, propagation environment, polarization model, or cosmological history."
+    },
+    {
+      "id": "GR_GW170817_SPEED_2017",
+      "benchmark": "GRAVITATIONAL_WAVES",
+      "citation": "B. P. Abbott et al., Gravitational Waves and Gamma-rays from a Binary Neutron Star Merger: GW170817 and GRB 170817A, Astrophysical Journal Letters 848, L13 (2017).",
+      "stable_url": "https://arxiv.org/abs/1710.05834",
+      "artifact": {
+        "status": "CONTENT_PINNED",
+        "locator": "https://arxiv.org/pdf/1710.05834v2",
+        "sha256": "bf06bd2ae6a23cf7f7092307677c2b681ce02abab3b5bbe37bbce76a8960140a"
+      },
+      "observable_map": "The gravitational-wave/gamma-ray arrival-time difference constrains relative propagation speed and violations of gravitational versus electromagnetic propagation.",
+      "dataset": "GW170817 and GRB 170817A multimessenger observations.",
+      "prediction": "Near-luminal gravitational-wave propagation and the associated arrival-time relation, modulo source-emission delay.",
+      "comparison_method": "Bound propagation differences using the observed arrival delay and stated assumptions about emission timing and distance.",
+      "uncertainty": "The source's bounds are conditional on the stated source-delay and propagation assumptions.",
+      "parameter_fit_scope": "One multimessenger binary-neutron-star event and its source-model assumptions.",
+      "out_of_sample_status": "INDEPENDENT_MESSENGER_TEST",
+      "finding": "The observed delay yields stringent bounds compatible with standard luminal GR propagation in the tested setting.",
+      "boundary": "Does not isolate all modified-gravity effects, determine waveform generation by itself, or provide a universal propagation theorem."
+    }
+  ],
+  "benchmark_coverage": [
+    {
+      "benchmark": "LOCAL_GRAVITY",
+      "status": "NOT_REGISTERED",
+      "record_ids": []
+    },
+    {
+      "benchmark": "SOLAR_SYSTEM",
+      "status": "SUPPORTED_CONTROL",
+      "record_ids": [
+        "GR_CASSINI_SHAPIRO_2003"
+      ]
+    },
+    {
+      "benchmark": "COMPACT_BINARIES",
+      "status": "SUPPORTED_CONTROL",
+      "record_ids": [
+        "GR_DOUBLE_PULSAR_2021"
+      ]
+    },
+    {
+      "benchmark": "GRAVITATIONAL_WAVES",
+      "status": "SUPPORTED_CONTROL",
+      "record_ids": [
+        "GR_GWTC3_TESTS_2021",
+        "GR_GW170817_SPEED_2017"
+      ]
+    },
+    {
+      "benchmark": "GALACTIC_LENSING_DYNAMICS",
+      "status": "NOT_REGISTERED",
+      "record_ids": []
+    },
+    {
+      "benchmark": "COSMOLOGY",
+      "status": "NOT_REGISTERED",
+      "record_ids": []
+    }
+  ],
+  "claim_flags": {
+    "positive_control_registered": true,
+    "prediction_records_registered": true,
+    "empirical_comparisons_registered": true,
+    "three_benchmark_families_supported": true,
+    "selected_from_foundations_cube": false,
+    "all_benchmark_families_supported": false,
+    "complete_theory_established": false,
+    "evidence_for_weyl_gravity": false
+  },
+  "does_not_establish": [
+    "that standard general relativity is complete across all six benchmark families",
+    "that the observational papers certify the foundations-cube obligation or interface structure",
+    "that agreement in these domains excludes every alternative theory",
+    "that standard general relativity is ultraviolet complete or quantum complete",
+    "that any candidate Weyl-gravity assembly inherits this empirical support"
+  ]
+}

@@ -21,6 +21,8 @@
     },
     "evidence_records": 74,
     "evidence_records_used_by_matrix": 74,
+    "external_calibration_benchmark_families": 3,
+    "external_calibration_records": 4,
     "implication_edges": 10,
     "implication_nodes": 12,
     "literature_complete": false,
@@ -28,7 +30,9 @@
     "local_result_records": 23,
     "metadata_only_literature": 12,
     "migration_pending_cells": 0,
+    "prototype_assemblies": 7,
     "reviewed_open_gaps": 175,
+    "standard_reference_direct_obligations": 16,
     "strength_ladder_levels": 6,
     "synthetic_complements": 0,
     "total_not_mapped_in_explorer": 0
@@ -63,7 +67,7 @@
       "lifecycle": "VERIFIED_NAVIGATION_ARTIFACT",
       "path": "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json",
       "result_id": "FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2",
-      "sha256": "a0c047e7b26f17f734661b735e67dc4a2e4fd7ab60b173c49c5b10154f7acbf0"
+      "sha256": "b68479455de8e8c67d392d5a4edf7fbf9f3d69021fbf8af6391a5fa98b2763f0"
     },
     "finite_bv": {
       "dependency_tags": [
@@ -126,9 +130,20 @@
       "path": "foundations/results/FOUNDATIONAL_BT_SEPARABLE_STATE_CHAIN_ZF_V1.json",
       "result_id": "FOUNDATIONAL_BT_SEPARABLE_STATE_CHAIN_ZF_V1",
       "sha256": "08389e96d349766e29a34cde8109d4b1271288b59d44f3b29fcb456065641998"
+    },
+    "theory_assembly": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "lifecycle": "VERIFIED_NAVIGATION_ARTIFACT",
+      "path": "foundations/results/FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1.json",
+      "result_id": "FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1",
+      "sha256": "7d8e1adea94a059cae77dc415e6a1271bdb5db0fdebbaeedab4325c9ef7d1f87"
     }
   },
-  "canonical_digest": "2c45e1991140ff11e9bbb2ecadda551b2b25465aa25df4085cb653171defe567",
+  "canonical_digest": "799f1c962577aa9857327a800c28862a412e4f86fb82bc52dde3610f4bf5715a",
   "claim_flags": {
     "atlas_exhaustive": false,
     "axes_independent_proved": false,
@@ -358,20 +373,43 @@
       "role": "proof mining for nonlinear semigroups",
       "source_id": "pischke-2025",
       "url": "https://arxiv.org/abs/2304.01723"
+    },
+    {
+      "role": "standard-GR solar-system positive control",
+      "source_id": "bertotti-iess-tortora-2003",
+      "url": "https://doi.org/10.1038/nature01997"
+    },
+    {
+      "role": "standard-GR compact-binary positive control",
+      "source_id": "kramer-et-al-2021",
+      "url": "https://doi.org/10.1103/PhysRevX.11.041050"
+    },
+    {
+      "role": "standard-GR gravitational-wave positive control",
+      "source_id": "lvk-gwtc3-2021",
+      "url": "https://arxiv.org/abs/2112.06861"
+    },
+    {
+      "role": "standard-GR multimessenger propagation positive control",
+      "source_id": "abbott-et-al-gw170817-2017",
+      "url": "https://arxiv.org/abs/1710.05834"
     }
   ],
   "paper": {
     "appendix": {
+      "assembly_source_canonical_digest": "0199375cd15d134ffcca579c29a675d73f21949205e912fa876e0305f4ddce66",
+      "assembly_source_path": "foundations/site/assemblies.json",
+      "assembly_source_sha256": "7d8e1adea94a059cae77dc415e6a1271bdb5db0fdebbaeedab4325c9ef7d1f87",
       "generator_path": "paper/generate_21_reverse_foundations_appendices.py",
-      "generator_sha256": "e15e870a4989e0b8db6a44af3e39fa636712a7a0fb57dd97711c2ee235d8de0d",
+      "generator_sha256": "a1b37b9fc17da12dcc5bc075b721b6b669eb897ecc67c3cb3c045052a5a1bf00",
       "path": "paper/21-reverse-foundations-of-physics-appendices.tex",
-      "sha256": "a9edf9fcef8693c59a4998917d34ae8805c0ccd691409fe17f6cd041ddd8213d",
+      "sha256": "45cf31801d67346135c156d216fcc31f27d42c88e4bfcc0c6deb18d945cecce1",
       "source_canonical_digest": "4ba28f1320371b129b8f97dca3668acd02711ab4aefb980d21964cd90cefd30d",
       "source_path": "foundations/site/data.json",
       "source_sha256": "9e2dcefdc4eb94e32e9d08b81bd7cbf16916a5ed2bf8f8d18275908472b842d5"
     },
     "path": "paper/21-reverse-foundations-of-physics.tex",
-    "sha256": "59f2c0a9fdd457b3ebbf46b72f12b9425e2c8f086198eb76109795c8dbd884ce"
+    "sha256": "bbf0bf14466bfa6793c9cfcda55d229841cb7371b914e19245b49309814ff46b"
   },
   "result_id": "PAPER21_REVERSE_FOUNDATIONS_INTRODUCTION_V1",
   "result_kind": "PROGRAMME_SYNTHESIS_AND_TYPED_CASE_STUDY_MAP",

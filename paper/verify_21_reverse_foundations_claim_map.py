@@ -128,21 +128,35 @@ def main() -> int:
     appendix_record = data["paper"]["appendix"]
     appendix_path = ROOT / appendix_record["path"]
     atlas_data_path = ROOT / appendix_record["source_path"]
+    assembly_data_path = ROOT / appendix_record["assembly_source_path"]
     appendix_generator_path = ROOT / appendix_record["generator_path"]
     require(appendix_path.is_file(), "generated paper appendix is missing")
     require(sha256(appendix_path) == appendix_record["sha256"], "generated appendix hash drift")
     require(sha256(atlas_data_path) == appendix_record["source_sha256"], "appendix atlas-source hash drift")
+    require(sha256(assembly_data_path) == appendix_record["assembly_source_sha256"], "appendix assembly-source hash drift")
     require(sha256(appendix_generator_path) == appendix_record["generator_sha256"], "appendix generator hash drift")
     atlas_data = json.loads(atlas_data_path.read_text())
+    assembly_data = json.loads(assembly_data_path.read_text())
     require(atlas_data["canonical_digest"] == appendix_record["source_canonical_digest"], "appendix atlas-source digest drift")
+    require(assembly_data["canonical_digest"] == appendix_record["assembly_source_canonical_digest"], "appendix assembly-source digest drift")
     require(atlas["axis_options"] == sum(len(axis["keys"]) for axis in atlas_data["axes"]) == 28, "appendix axis-option mismatch")
     require(atlas["implication_nodes"] == len(atlas_data["graph"]["nodes"]) == 12, "appendix implication-node mismatch")
     require(atlas["implication_edges"] == len(atlas_data["graph"]["edges"]) == 10, "appendix implication-edge mismatch")
     require(atlas["strength_ladder_levels"] == len(atlas_data["ladder"]) == 6, "appendix ladder-level mismatch")
+    require(atlas["prototype_assemblies"] == len(assembly_data["assemblies"]) == 7, "appendix assembly-count mismatch")
+    standard = next(item for item in assembly_data["assemblies"] if item["id"] == "STANDARD_MIXED_REFERENCE")
+    require(atlas["standard_reference_direct_obligations"] == standard["coverage"]["direct"] == 16, "classical reference coverage mismatch")
+    control = assembly_data["calibration_controls"][0]
+    require(atlas["external_calibration_records"] == len(control["records"]) == 4, "calibration record mismatch")
+    require(atlas["external_calibration_benchmark_families"] == sum(item["status"] == "SUPPORTED_CONTROL" for item in control["benchmark_coverage"]) == 3, "calibration benchmark mismatch")
 
     appendix = appendix_path.read_text()
     require(r"All obligations & 115 & 93 & 163 & 30 & 175 & 0 & 576" in appendix, "appendix coverage totals drift")
     require("contains 74 evidence records: 23 local result records and 51 literature records" in appendix, "appendix evidence summary drift")
+    require("The classical-standard mixed-carrier reference has complete direct coverage" in appendix, "classical reference calibration missing")
+    for record in control["records"]:
+        require(tex(record["citation"]) in appendix, f"calibration citation missing: {record['id']}")
+        require(tex(record["boundary"]) in appendix, f"calibration boundary missing: {record['id']}")
     for axis in atlas_data["axes"]:
         for option in axis["keys"]:
             require(option["label"] in appendix, f"axis option missing from appendix: {option['id']}")
@@ -266,6 +280,10 @@ def main() -> int:
         "GibbonsHoffmanWootters2004",
         "Baer2015",
         "Pischke2025",
+        "Bertotti2003",
+        "Kramer2021",
+        "LVKGWTC32021",
+        "AbbottGW1708172017",
     ]:
         require(f"bibitem{{{citation}}}" in paper, f"missing bibliography entry: {citation}")
 

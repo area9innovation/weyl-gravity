@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "additionalProperties": false,
-  "required": ["schema_version", "result_id", "result_kind", "lifecycle", "title", "created", "dependency_tags", "unit", "interface_vocabulary", "certified_interface_records", "assemblies", "empirical_ledger", "claim_flags", "does_not_establish", "source_atlas_digest", "canonical_digest"],
+  "required": ["schema_version", "result_id", "result_kind", "lifecycle", "title", "created", "dependency_tags", "unit", "interface_vocabulary", "certified_interface_records", "assemblies", "calibration_controls", "calibration_source", "empirical_ledger", "claim_flags", "does_not_establish", "source_atlas_digest", "canonical_digest"],
   "properties": {
     "schema_version": {"const": "foundational-theory-assembly-atlas-v1"},
     "result_id": {"const": "FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1"},
@@ -21,14 +21,32 @@
       "type": "array", "minItems": 7, "maxItems": 7,
       "items": {
         "type": "object",
-        "required": ["id", "label", "aim", "foundations", "carriers", "kind", "selection_rule", "selected_cells", "coverage", "interfaces", "hard_gates", "complete_theory", "empirically_supported"],
+        "required": ["id", "label", "aim", "foundations", "carriers", "kind", "selection_rule", "selected_cells", "coverage", "interfaces", "maturity_rails", "complete_theory", "empirically_supported"],
         "properties": {
           "selected_cells": {"type": "array", "minItems": 16, "maxItems": 16},
           "interfaces": {"type": "array", "minItems": 7, "maxItems": 7},
-          "hard_gates": {"type": "array", "minItems": 6, "maxItems": 6},
+          "maturity_rails": {
+            "type": "array", "minItems": 6, "maxItems": 6,
+            "items": {
+              "type": "object",
+              "required": ["id", "label", "status", "basis"],
+              "properties": {
+                "status": {"enum": ["SATISFIED", "OPEN", "PARTIALLY_CERTIFIED", "NOT_ASSESSED", "NOT_EVALUABLE", "NOT_REGISTERED", "NO_RECORDS", "BLOCKED", "FAILED"]}
+              }
+            }
+          },
           "complete_theory": {"const": false},
           "empirically_supported": {"const": false}
         }
+      }
+    },
+    "calibration_controls": {"type": "array", "minItems": 1, "maxItems": 1},
+    "calibration_source": {
+      "type": "object",
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {"const": "foundations/standard-gr-observational-control-v1.json"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
       }
     },
     "empirical_ledger": {
@@ -42,7 +60,7 @@
     },
     "claim_flags": {
       "type": "object",
-      "required": ["prototype_assemblies_generated", "selected_cells_content_addressed", "interface_and_coverage_states_separated", "at_least_one_cross_cell_interface_certified", "empirical_record_schema_declared", "cross_cell_composability_established", "prediction_chain_established", "empirical_agreement_assessed", "complete_observationally_valid_theory_identified"]
+      "required": ["prototype_assemblies_generated", "selected_cells_content_addressed", "interface_and_coverage_states_separated", "at_least_one_cross_cell_interface_certified", "empirical_record_schema_declared", "external_positive_control_registered", "missing_and_failed_states_separated", "cross_cell_composability_established", "prediction_chain_established", "empirical_agreement_assessed", "complete_observationally_valid_theory_identified"]
     },
     "does_not_establish": {"type": "array", "minItems": 7, "items": {"type": "string", "minLength": 1}},
     "source_atlas_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},

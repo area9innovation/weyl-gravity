@@ -560,13 +560,18 @@
     document.querySelectorAll("[data-portfolio-carrier]").forEach(input => input.addEventListener("change", () => { input.checked ? state.viability.carriers.add(input.dataset.portfolioCarrier) : state.viability.carriers.delete(input.dataset.portfolioCarrier); renderTheoryProfiles(); }));
   }
 
-  const ASSEMBLY_GATE_STYLE = {SATISFIED: "complete", OPEN: "open", BLOCKED: "blocked", NO_RECORDS: "missing"};
+  const ASSEMBLY_GATE_STYLE = {
+    SATISFIED: "complete", OPEN: "open", PARTIALLY_CERTIFIED: "partial",
+    NOT_ASSESSED: "missing", NOT_EVALUABLE: "neutral", NOT_REGISTERED: "missing",
+    NO_RECORDS: "missing", BLOCKED: "blocked", FAILED: "blocked",
+    REGISTERED_IN_DOMAINS: "control", SUPPORTED_IN_DOMAINS: "complete", MULTI_DOMAIN_SUPPORT: "complete"
+  };
 
   function renderAssemblies() {
     const assembly = ASSEMBLIES.assemblies.find(item => item.id === state.assembly) || ASSEMBLIES.assemblies[0];
     state.assembly = assembly.id;
     const options = ASSEMBLIES.assemblies.map(item => `<option value="${item.id}" ${item.id === assembly.id ? "selected" : ""}>${esc(item.label)}</option>`).join("");
-    const gates = assembly.hard_gates.map((gate, index) => `<article class="assembly-gate ${ASSEMBLY_GATE_STYLE[gate.status] || "missing"}"><span>${index + 1}</span><div><small>${esc(gate.status.replaceAll("_", " "))}</small><h3>${esc(gate.label)}</h3><p>${esc(gate.basis)}</p></div></article>`).join("");
+    const gates = assembly.maturity_rails.map((gate, index) => `<article class="assembly-gate ${ASSEMBLY_GATE_STYLE[gate.status] || "missing"}"><span>${index + 1}</span><div><small>${esc(gate.status.replaceAll("_", " "))}</small><h3>${esc(gate.label)}</h3><p>${esc(gate.basis)}</p></div></article>`).join("");
     const cells = assembly.selected_cells.map(cell => {
       const source = cellByKey.get(`${cell.foundation}|${cell.carrier}|${cell.obligation}`);
       const roles = Object.values(cell.evidence_roles || {});
@@ -579,10 +584,21 @@
     }).join("");
     const vocabulary = ASSEMBLIES.interface_vocabulary.map(item => `<details><summary>${esc(item.id.replaceAll("_", " "))}</summary><p>${esc(item.meaning)}</p></details>`).join("");
     const benchmarks = ASSEMBLIES.empirical_ledger.benchmarks.map(item => `<article><span class="quality">${esc(item.status.replaceAll("_", " "))}</span><h3>${esc(item.label)}</h3><p>${esc(item.question)}</p></article>`).join("");
+    const control = ASSEMBLIES.calibration_controls[0];
+    const controlRails = control.rail_summary.map((rail, index) => `<article class="assembly-gate ${ASSEMBLY_GATE_STYLE[rail.status] || "control"}"><span>${index + 1}</span><div><small>${esc(rail.status.replaceAll("_", " "))}</small><h3>${esc(title(rail.id))}</h3><p>${esc(rail.basis)}</p></div></article>`).join("");
+    const controlByBenchmark = new Map(control.benchmark_coverage.map(item => [item.benchmark, item]));
+    const controlBenchmarks = ASSEMBLIES.empirical_ledger.benchmarks.map(item => {
+      const coverage = controlByBenchmark.get(item.id);
+      const records = control.records.filter(record => coverage.record_ids.includes(record.id));
+      const details = records.map(record => `<details><summary>${esc(record.id.replaceAll("_", " "))}</summary><p><b>Finding:</b> ${esc(record.finding)}</p><p><b>Observable:</b> ${esc(record.observable_map)}</p><p><b>Boundary:</b> ${esc(record.boundary)}</p><p><a href="${esc(record.stable_url)}" target="_blank" rel="noopener">Primary source</a> · ${esc(record.artifact.status.replaceAll("_", " "))}</p></details>`).join("");
+      return `<article class="control-benchmark ${coverage.status === "SUPPORTED_CONTROL" ? "supported" : "unregistered"}"><span class="quality">${esc(coverage.status.replaceAll("_", " "))}</span><h3>${esc(item.label)}</h3><p>${coverage.status === "SUPPORTED_CONTROL" ? `${records.length} registered comparison${records.length === 1 ? "" : "s"}.` : "This control has no registered record in this release."}</p>${details}</article>`;
+    }).join("");
+    const completeCoverage = assembly.coverage.complete_direct ? "Coverage complete" : "Coverage still open";
+    const certifiedCount = assembly.interfaces.filter(item => item.certification_status === "CERTIFIED").length;
     document.getElementById("assemblyExplorer").innerHTML = `
-      <article class="assembly-boundary"><p class="eyebrow">Current conclusion</p><h3>Two cross-cell relations are certified; no prototype yet passes the full composition or empirical gates.</h3><p>The atlas now contains the finite-corner state-to-probability bridge and the free ground-state-to-dynamics bridge. Both are scoped by explicit hypotheses. Every other join remains independently gated: a selected cell is not proof that adjacent inputs share objects, assumptions, parameters, or observational meaning.</p></article>
-      <section class="assembly-selector"><label><b>Prototype assembly</b><select id="assemblySelect">${options}</select></label><div><p class="eyebrow">Aim</p><p>${esc(assembly.aim)}</p></div><div class="assembly-score"><b>${assembly.coverage.direct}/${assembly.coverage.total}</b><span>obligations direct</span><strong>Complete theory: NO</strong></div></section>
-      <div class="section-head compact-head"><div><p class="eyebrow">Ordered hard gates</p><h2>Assembly hard-gate chain</h2></div><p>A downstream gate cannot be credited from upstream coverage. The chain stops at the first open or blocked gate.</p></div>
+      <article class="assembly-boundary calibrated"><p class="eyebrow">Calibrated reading</p><h3>${esc(completeCoverage)}: ${assembly.coverage.direct}/${assembly.coverage.total} obligations have direct results; composition is ${certifiedCount}/${assembly.interfaces.length} certified.</h3><p>These are separate maturity statements. Grey means unregistered or not yet evaluable, not failure. Orange means partial/open. Red is reserved for an explicit incompatibility, obstruction, or failed comparison; none is currently registered for this prototype.</p></article>
+      <section class="assembly-selector"><label><b>Prototype assembly</b><select id="assemblySelect">${options}</select></label><div><p class="eyebrow">Aim</p><p>${esc(assembly.aim)}</p></div><div class="assembly-score"><b>${assembly.coverage.direct}/${assembly.coverage.total}</b><span>obligations direct</span><strong>End-to-end status: NOT ESTABLISHED</strong></div></section>
+      <div class="section-head compact-head"><div><p class="eyebrow">Do not collapse distinct questions</p><h2>Six independent maturity rails</h2></div><p>The rails have dependencies, but they are reported separately. Missing records are neutral; they are not failed tests.</p></div>
       <div class="assembly-gates">${gates}</div>
       <div class="section-head compact-head"><div><p class="eyebrow">Inputs selected from the cube</p><h2>Obligation source map</h2></div><p>The deterministic selector uses the strongest recorded status inside this prototype's declared region. Open any grade to inspect its exact boundary and evidence.</p></div>
       <div class="assembly-table-wrap"><table class="assembly-table"><thead><tr><th>Physical obligation</th><th>Selected regime / carrier</th><th>Recorded grade</th><th>Reviewed direct kind</th><th>Records</th></tr></thead><tbody>${cells}</tbody></table></div>
@@ -591,6 +607,7 @@
       <div class="assembly-table-wrap"><table class="assembly-table interface-table"><thead><tr><th>Join</th><th>From</th><th>Relation</th><th>To</th><th>Why this state</th></tr></thead><tbody>${interfaces}</tbody></table></div>
       <div class="section-head compact-head"><div><p class="eyebrow">No benchmark name is evidence</p><h2>Empirical benchmark ledger</h2></div><p>A future record must identify observables, data, prediction, comparison method, uncertainty, fit scope, and out-of-sample status. The ledger currently contains ${ASSEMBLIES.empirical_ledger.records.length} comparison records.</p></div>
       <div class="benchmark-grid">${benchmarks}</div>
+      <article class="positive-control"><p class="eyebrow">External positive control — not a candidate assembly</p><h2>${esc(control.label)}</h2><p>${esc(control.scope)}</p><div class="control-rails">${controlRails}</div><div class="section-head compact-head"><div><p class="eyebrow">Domain-specific evidence</p><h3>What a populated empirical rail looks like</h3></div><p>${control.records.length} primary-source comparison records support ${control.benchmark_coverage.filter(item => item.status === "SUPPORTED_CONTROL").length}/${control.benchmark_coverage.length} benchmark families. Unregistered domains remain grey.</p></div><div class="benchmark-grid control-grid">${controlBenchmarks}</div><p class="control-boundary"><b>Boundary:</b> ${esc(control.does_not_establish[4])}. ${esc(control.does_not_establish[0])}.</p></article>
       <article class="viability-warning boundary"><b>Fail-closed boundary.</b> ${esc(ASSEMBLIES.unit)} ${esc(ASSEMBLIES.does_not_establish[4])}.</article>`;
     document.getElementById("assemblySelect").addEventListener("change", event => { state.assembly = event.target.value; renderAssemblies(); updateHash(); });
     document.querySelectorAll(".assembly-cell-jump").forEach(button => button.addEventListener("click", () => openCell(button.dataset.cellJump)));

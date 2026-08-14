@@ -54,6 +54,8 @@ def verify(*, result=None, report=None) -> tuple[list[str], list[str]]:
         "prototype_assemblies": 7,
         "assembly_interfaces": 49,
         "empirical_comparisons": 0,
+        "calibration_comparisons": 4,
+        "calibration_benchmark_families": 3,
         "certified_cross_cell_interfaces": 2,
         "certified_assembly_interface_instances": 4,
         "dual_direct_cells": 7,

@@ -17,13 +17,15 @@ linked, incompatible, or not assessed. Two scoped relations are now
 certified and produce 4 compatible prototype-interface instances; the other
 required joins remain `NOT_ASSESSED`, so coverage cannot silently promote them.
 
-## Hard-gate chain
+## Independent maturity rails
 
-Every prototype is displayed against six ordered gates: obligation coverage,
+Every prototype is displayed against six separately reported rails: obligation coverage,
 cross-cell composition, prediction derivation, observable identification,
-empirical comparison, and robustness/out-of-sample performance. The latter
-five remain blocked or have no records. Certifying two joins does not bypass
-the remaining interfaces.
+empirical comparison, and robustness/out-of-sample performance. A complete
+classical coverage envelope is therefore shown as complete even when composition
+is only partial. Missing or premature downstream work is `NOT_ASSESSED`,
+`NOT_EVALUABLE`, `NOT_REGISTERED`, or `NO_RECORDS`; red failure states are
+reserved for an explicit obstruction, incompatibility, or failed comparison.
 
 ## Empirical ledger
 
@@ -31,9 +33,18 @@ The ledger declares six benchmark families and the fields a future comparison
 must carry. It is intentionally empty. A benchmark name is not observational
 evidence, and reconstruction coverage is not an empirical comparison.
 
+## External positive control
+
+Standard general relativity is included as an external positive control, not as
+a cube-selected prototype. Four primary-source records populate prediction,
+observable, and comparison rails in three benchmark families: solar-system
+propagation, compact binaries, and gravitational waves. The other benchmark
+families remain unregistered. This calibrates the display without transferring
+observational support to Weyl gravity or claiming that GR is complete.
+
 ## Interface
 
-The **Assemblies** tab synchronizes the hard-gate chain, selected obligation
+The **Assemblies** tab synchronizes the maturity rails, selected obligation
 cells, typed interface ledger, and empirical benchmark ledger for one prototype.
 Each selected cell links back to the exact matrix coordinate.
 
@@ -44,5 +55,6 @@ Each selected cell links back to the exact matrix coordinate.
 - This does not establish that direct coverage composes into an end-to-end prediction.
 - This does not establish that a reduced or finite construction has a controlled continuum limit.
 - This does not establish that any prototype agrees with observations.
+- This does not establish that the external standard-GR control is selected from the cube or transfers empirical support to a prototype.
 - This does not establish that the benchmark catalogue is a complete set of physical tests.
 - This does not establish a complete theory, a new Lorentzian-causal result, or a quantum lifecycle promotion.

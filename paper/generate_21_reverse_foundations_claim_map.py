@@ -19,11 +19,13 @@ PAPER = "paper/21-reverse-foundations-of-physics.tex"
 APPENDIX = "paper/21-reverse-foundations-of-physics-appendices.tex"
 APPENDIX_GENERATOR = "paper/generate_21_reverse_foundations_appendices.py"
 ATLAS_DATA = "foundations/site/data.json"
+ASSEMBLY_DATA = "foundations/site/assemblies.json"
 
 AUTHORITY_PATHS = {
     "intersection_cube": "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V9.json",
     "full_surface_gap_audit": "foundations/results/FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1.json",
     "explorer_snapshot": "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json",
+    "theory_assembly": "foundations/results/FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1.json",
     "explicit_krein": "foundations/results/FOUNDATIONAL_KREIN_EXPLICIT_J_ZF_V1.json",
     "krein_state_selection": "foundations/results/FOUNDATIONAL_KREIN_STATE_SELECTION_ZF_V1.json",
     "separable_cstar_state_chain": "foundations/results/FOUNDATIONAL_BT_SEPARABLE_STATE_CHAIN_ZF_V1.json",
@@ -66,6 +68,7 @@ def build() -> dict:
     cube = loaded["intersection_cube"]
     site = loaded["explorer_snapshot"]
     atlas_data = json.loads((ROOT / ATLAS_DATA).read_text())
+    assembly_data = json.loads((ROOT / ASSEMBLY_DATA).read_text())
     evidence = atlas_data["evidence"]
     literature = [entry for entry in evidence.values() if entry["kind"] == "LITERATURE"]
     local_results = [entry for entry in evidence.values() if entry["kind"] == "LOCAL_RESULT"]
@@ -90,6 +93,9 @@ def build() -> dict:
                 "source_path": ATLAS_DATA,
                 "source_sha256": sha256(ROOT / ATLAS_DATA),
                 "source_canonical_digest": atlas_data["canonical_digest"],
+                "assembly_source_path": ASSEMBLY_DATA,
+                "assembly_source_sha256": sha256(ROOT / ASSEMBLY_DATA),
+                "assembly_source_canonical_digest": assembly_data["canonical_digest"],
                 "generator_path": APPENDIX_GENERATOR,
                 "generator_sha256": sha256(ROOT / APPENDIX_GENERATOR),
             },
@@ -144,6 +150,10 @@ def build() -> dict:
             "strength_ladder_levels": len(atlas_data["ladder"]),
             "literature_complete": cube["claim_flags"]["literature_complete"],
             "all_cells_assessed": cube["claim_flags"]["all_576_coordinates_assessed"],
+            "prototype_assemblies": len(assembly_data["assemblies"]),
+            "standard_reference_direct_obligations": next(item for item in assembly_data["assemblies"] if item["id"] == "STANDARD_MIXED_REFERENCE")["coverage"]["direct"],
+            "external_calibration_records": len(assembly_data["calibration_controls"][0]["records"]),
+            "external_calibration_benchmark_families": sum(item["status"] == "SUPPORTED_CONTROL" for item in assembly_data["calibration_controls"][0]["benchmark_coverage"]),
         },
         "claims": [
             {
@@ -216,6 +226,10 @@ def build() -> dict:
             {"source_id": "baer-2015", "url": "https://arxiv.org/abs/1310.0738", "role": "classical Green-hyperbolic theory"},
             {"source_id": "weihrauch-zhong-2006", "url": "https://doi.org/10.1137/S0097539704446360", "role": "computable fundamental solutions"},
             {"source_id": "pischke-2025", "url": "https://arxiv.org/abs/2304.01723", "role": "proof mining for nonlinear semigroups"},
+            {"source_id": "bertotti-iess-tortora-2003", "url": "https://doi.org/10.1038/nature01997", "role": "standard-GR solar-system positive control"},
+            {"source_id": "kramer-et-al-2021", "url": "https://doi.org/10.1103/PhysRevX.11.041050", "role": "standard-GR compact-binary positive control"},
+            {"source_id": "lvk-gwtc3-2021", "url": "https://arxiv.org/abs/2112.06861", "role": "standard-GR gravitational-wave positive control"},
+            {"source_id": "abbott-et-al-gw170817-2017", "url": "https://arxiv.org/abs/1710.05834", "role": "standard-GR multimessenger propagation positive control"},
         ],
         "claim_flags": {
             "programme_definition_supplied": True,

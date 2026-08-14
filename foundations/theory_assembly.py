@@ -10,7 +10,12 @@ from __future__ import annotations
 
 import hashlib
 import json
+from pathlib import Path
 from typing import Any
+
+
+ROOT = Path(__file__).resolve().parents[1]
+GR_CONTROL = ROOT / "foundations/standard-gr-observational-control-v1.json"
 
 
 DIRECT = {"LOCAL_RESULT", "LITERATURE_RESULT"}
@@ -188,11 +193,11 @@ def _assembly(
         "selected_cells": selected,
         "coverage": {"direct": direct, "assessed": assessed, "total": len(selected), "complete_direct": direct == len(selected)},
         "interfaces": interfaces,
-        "hard_gates": [
+        "maturity_rails": [
             {"id": "OBLIGATION_COVERAGE", "label": "Obligation coverage", "status": "SATISFIED" if direct == len(selected) else "OPEN", "basis": f"{direct}/{len(selected)} obligations have a direct recorded result."},
-            {"id": "CROSS_CELL_COMPOSITION", "label": "Cross-cell composition", "status": "BLOCKED", "basis": f"{certified_count}/{len(interfaces)} required interfaces are certified; the remainder block assembly composition."},
-            {"id": "PREDICTION_DERIVATION", "label": "Prediction derivation", "status": "BLOCKED", "basis": "No registered end-to-end derivation connects the selected cells."},
-            {"id": "OBSERVABLE_IDENTIFICATION", "label": "Observable identification", "status": "BLOCKED", "basis": "No assembly-level map from formal quantities to measured observables is registered."},
+            {"id": "CROSS_CELL_COMPOSITION", "label": "Cross-cell composition", "status": "PARTIALLY_CERTIFIED" if certified_count else "NOT_ASSESSED", "basis": f"{certified_count}/{len(interfaces)} required interfaces are certified; unassessed joins are missing work, not incompatibility results."},
+            {"id": "PREDICTION_DERIVATION", "label": "Prediction derivation", "status": "NOT_EVALUABLE", "basis": "An end-to-end prediction test is premature until the required cross-cell joins are registered."},
+            {"id": "OBSERVABLE_IDENTIFICATION", "label": "Observable identification", "status": "NOT_REGISTERED", "basis": "No assembly-level map from formal quantities to measured observables is registered."},
             {"id": "EMPIRICAL_COMPARISON", "label": "Empirical comparison", "status": "NO_RECORDS", "basis": "The empirical ledger contains no comparison for this assembly."},
             {"id": "ROBUSTNESS_OUT_OF_SAMPLE", "label": "Robustness / out-of-sample", "status": "NO_RECORDS", "basis": "No robustness or held-out prediction record is registered."},
         ],
@@ -207,18 +212,24 @@ def build_assembly_assessment(dataset: dict[str, Any]) -> dict[str, Any]:
     cell_map = {(cell["foundation"], cell["carrier"], cell["obligation"]): cell for cell in dataset["cells"]}
     certified_interfaces = dataset.get("cross_cell_interfaces", [])
     assemblies = [_assembly(config, obligations, cell_map, certified_interfaces) for config in ASSEMBLY_CONFIGS]
+    calibration_control = json.loads(GR_CONTROL.read_text())
     value = {
         "schema_version": "foundational-theory-assembly-atlas-v1",
         "result_id": "FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1",
         "result_kind": "FAIL_CLOSED_THEORY_ASSEMBLY_AND_EMPIRICAL_LEDGER",
         "lifecycle": "VERIFIED_NAVIGATION_ARTIFACT",
-        "title": "Candidate theory assemblies and missing interfaces",
+        "title": "Candidate theory assemblies, maturity rails, and calibration control",
         "created": dataset["created"],
         "dependency_tags": ["LOCAL-ALGEBRAIC", "REDUCED-MODE", "LORENTZIAN-CAUSAL"],
         "unit": "A prototype assembly is a deterministic coverage envelope over selected cells, not a composed theory.",
         "interface_vocabulary": INTERFACE_VOCABULARY,
         "certified_interface_records": certified_interfaces,
         "assemblies": assemblies,
+        "calibration_controls": [calibration_control],
+        "calibration_source": {
+            "path": "foundations/standard-gr-observational-control-v1.json",
+            "sha256": hashlib.sha256(GR_CONTROL.read_bytes()).hexdigest(),
+        },
         "empirical_ledger": {
             "record_schema": ["assembly", "benchmark", "observable_map", "dataset", "prediction", "comparison_method", "uncertainty", "parameter_fit_scope", "out_of_sample_status", "evidence"],
             "benchmarks": [{**item, "status": "NOT_REGISTERED"} for item in BENCHMARKS],
@@ -230,6 +241,8 @@ def build_assembly_assessment(dataset: dict[str, Any]) -> dict[str, Any]:
             "interface_and_coverage_states_separated": True,
             "at_least_one_cross_cell_interface_certified": bool(certified_interfaces),
             "empirical_record_schema_declared": True,
+            "external_positive_control_registered": True,
+            "missing_and_failed_states_separated": True,
             "cross_cell_composability_established": False,
             "prediction_chain_established": False,
             "empirical_agreement_assessed": False,
@@ -241,6 +254,7 @@ def build_assembly_assessment(dataset: dict[str, Any]) -> dict[str, Any]:
             "that direct coverage composes into an end-to-end prediction",
             "that a reduced or finite construction has a controlled continuum limit",
             "that any prototype agrees with observations",
+            "that the external standard-GR control is selected from the cube or transfers empirical support to a prototype",
             "that the benchmark catalogue is a complete set of physical tests",
             "a complete theory, a new Lorentzian-causal result, or a quantum lifecycle promotion",
         ],
