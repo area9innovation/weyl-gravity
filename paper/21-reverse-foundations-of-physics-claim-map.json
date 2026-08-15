@@ -546,6 +546,16 @@
       "result_id": "REVERSE_PHYSICS_BT_EUCLIDEAN_CONDITIONAL_MASS_ESCAPE_OBSTRUCTION_V1",
       "sha256": "3b5a231046ef56cd6d2459f5bd93b6785bf00463c9d3ddb9c5cc162a118dea76"
     },
+    "bt_corrector_slab_cylinder_suppression": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL"
+      ],
+      "lifecycle": "POSITIVE_RADIUS_SLAB_CYLINDER_GIBBS_SUPPRESSION_PROVED_GLOBAL_CORRECTOR_GATE_OPEN",
+      "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_CORRECTOR_SLAB_CYLINDER_SUPPRESSION_V1.json",
+      "result_id": "REVERSE_PHYSICS_BT_EUCLIDEAN_CORRECTOR_SLAB_CYLINDER_SUPPRESSION_V1",
+      "sha256": "752028d97102617b41774989bacfb068493bc863e101145da782401ad03a489d"
+    },
     "bt_corrector_slab_fiber_stability": {
       "dependency_tags": [
         "LOCAL-ALGEBRAIC",
@@ -1137,7 +1147,7 @@
       "sha256": "968860c80c2fcc837a7307ec1051de109f05de4a4cc4e5067352ef8ebd9592c5"
     }
   },
-  "canonical_digest": "f5fec1e3285dec29e556d93f7a006da4165f9eb811f836802427bd342e65056f",
+  "canonical_digest": "7f20bdfa5c7d6064f3c48f62381f8331a92d5c7e4d3166be27ebe12e39a31d02",
   "claim_flags": {
     "atlas_exhaustive": false,
     "axes_independent_proved": false,
@@ -1205,10 +1215,11 @@
     "bt_complete_order_g_four_zero_loop_limit_established": true,
     "bt_conditional_mass_escape_established": true,
     "bt_corrector_Gibbs_hyperuniformity_established": false,
+    "bt_corrector_global_tail_established": false,
     "bt_corrector_pointwise_action_route_obstructed": true,
     "bt_corrector_pointwise_dirichlet_route_obstructed": true,
     "bt_corrector_slab_fiber_stability_established": true,
-    "bt_corrector_slab_neighborhood_probability_established": false,
+    "bt_corrector_slab_neighborhood_probability_established": true,
     "bt_corrector_slab_point_density_suppression_established": true,
     "bt_dilute_bubble_score_activity_vanishes": true,
     "bt_direct_action_fiber_bound_established": false,
@@ -1751,6 +1762,18 @@
       ],
       "statement": "The exact slab that obstructs deterministic corrector-energy bounds retains action at least (2683/800)L^3 after adding any field in the complete removed lowest cosine-sine plane; the proof relaxes that plane to arbitrary positive time-row multipliers. At lambda=2/5, strong convexity then bounds its integrated-background density relative to zero by (99/5600)L^2 exp[-(2683/128)L^3+96800/49]. This excludes the specified slab as a marginal low-action escape but proves neither a neighborhood probability nor the Gibbs corrector moment.",
       "status": "EXACT_FIBER_STABILITY_AND_POINT_DENSITY_SUPPRESSION_WITH_NEIGHBORHOOD_GATE_OPEN"
+    },
+    {
+      "authorities": [
+        "bt_corrector_slab_cylinder_suppression"
+      ],
+      "claim_id": "RF-34-BT-CORRECTOR-SLAB-CYLINDER-SUPPRESSION",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL"
+      ],
+      "statement": "The exact slab point-density comparison upgrades to a genuine positive-radius probability bound. On a six-time-row cylinder of sup-norm radius 1/400 around arbitrary time-row fields, rational interval arithmetic over all eight lattice neighbors proves a uniform action-translation gap (g/8)L^3, where g=403338322161150510073/354498257782024320000. Consequently, at lambda=2/5, the translated slab cylinder has actual normalized Gibbs probability at most exp[-c_cyl L^3], with c_cyl=403338322161150510073/453757769960991129600. Translation avoids a neighborhood-entropy factor. This controls one structured cylinder, not every large-corrector environment, the Gibbs corrector moment, interacting H^-1 estimate, or continuum limit.",
+      "status": "POSITIVE_RADIUS_SLAB_CYLINDER_EXPONENTIALLY_SUPPRESSED_GLOBAL_CORRECTOR_GATE_OPEN"
     }
   ],
   "created": "2026-08-14",
@@ -1958,7 +1981,7 @@
       "source_sha256": "06271ed77497dc8f1fdc10d8ee473f82c9ed91a60ea860e55bd1e52813f365d1"
     },
     "path": "paper/21-reverse-foundations-of-physics.tex",
-    "sha256": "5cf0547f6eb0ab17532e071f101eb5639972f197496b1104332990dc996d6151"
+    "sha256": "d1e046c318e91b70e73667fe398ed97bbd473ce1f1530721b03e3ebd669f1234"
   },
   "result_id": "PAPER21_REVERSE_FOUNDATIONS_INTRODUCTION_V1",
   "result_kind": "PROGRAMME_SYNTHESIS_AND_TYPED_CASE_STUDY_MAP",

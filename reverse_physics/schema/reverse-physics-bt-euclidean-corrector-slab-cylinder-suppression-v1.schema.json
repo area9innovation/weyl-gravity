@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-corrector-slab-cylinder-suppression-v1.schema.json",
+  "title": "BT Euclidean corrector slab cylinder suppression V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["certificate", "schema_version", "created", "dependency_tags", "lifecycle_state", "result_kind", "question", "answer", "unperturbed_translation", "robust_interval_certificate", "gibbs_cylinder_probability", "method_disposition", "does_not_establish", "missing_object_ledger", "next_gate", "checks", "provenance", "schema", "report", "independent_verifier", "verification_commands"],
+  "$defs": {
+    "rational": {"type": "object", "additionalProperties": false, "required": ["numerator", "denominator"], "properties": {"numerator": {"type": "integer"}, "denominator": {"type": "integer", "minimum": 1}}},
+    "text": {"type": "string", "minLength": 1},
+    "coefficient": {"type": "object", "additionalProperties": false, "required": ["exponents_A_B_C_D_E", "lower", "upper"], "properties": {"exponents_A_B_C_D_E": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"type": "integer"}}, "lower": {"$ref": "#/$defs/rational"}, "upper": {"$ref": "#/$defs/rational"}}},
+    "input": {"type": "object", "additionalProperties": false, "required": ["path", "sha256"], "properties": {"path": {"$ref": "#/$defs/text"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}}
+  },
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_EUCLIDEAN_CORRECTOR_SLAB_CYLINDER_SUPPRESSION_V1"},
+    "schema_version": {"const": "reverse-physics-bt-euclidean-corrector-slab-cylinder-suppression-v1"},
+    "created": {"const": "2026-08-15"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "lifecycle_state": {"const": "POSITIVE_RADIUS_SLAB_CYLINDER_GIBBS_SUPPRESSION_PROVED_GLOBAL_CORRECTOR_GATE_OPEN"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "unperturbed_translation": {"type": "object", "additionalProperties": false, "required": ["time_edge_variables", "difference", "coefficient_ledger", "coarse_completion", "coarse_gap", "status"], "properties": {"time_edge_variables": {"$ref": "#/$defs/text"}, "difference": {"$ref": "#/$defs/text"}, "coefficient_ledger": {"type": "array", "minItems": 17, "maxItems": 17, "items": {"$ref": "#/$defs/coefficient"}}, "coarse_completion": {"$ref": "#/$defs/text"}, "coarse_gap": {"$ref": "#/$defs/rational"}, "status": {"const": "EXACT_POSITIVE_TRANSLATION_GAP_FOR_ARBITRARY_TIME_ROW_FACTORS"}}},
+    "robust_interval_certificate": {"type": "object", "additionalProperties": false, "required": ["cylinder_radius", "buffer_time_rows", "edge_log_increment_bound", "edge_multiplier_interval", "exponential_lemma", "relaxation", "coefficient_ledger", "square_floor_alpha", "negative_linear_magnitude_beta", "constant_floor", "completion", "residual_square_gap", "status"], "properties": {"cylinder_radius": {"$ref": "#/$defs/rational"}, "buffer_time_rows": {"const": [-1, 0, 1, 2, 3, 4]}, "edge_log_increment_bound": {"$ref": "#/$defs/rational"}, "edge_multiplier_interval": {"type": "object", "additionalProperties": false, "required": ["lower", "upper"], "properties": {"lower": {"$ref": "#/$defs/rational"}, "upper": {"$ref": "#/$defs/rational"}}}, "exponential_lemma": {"$ref": "#/$defs/text"}, "relaxation": {"$ref": "#/$defs/text"}, "coefficient_ledger": {"type": "array", "minItems": 17, "maxItems": 17, "items": {"$ref": "#/$defs/coefficient"}}, "square_floor_alpha": {"$ref": "#/$defs/rational"}, "negative_linear_magnitude_beta": {"$ref": "#/$defs/rational"}, "constant_floor": {"$ref": "#/$defs/rational"}, "completion": {"$ref": "#/$defs/text"}, "residual_square_gap": {"$ref": "#/$defs/rational"}, "status": {"const": "POSITIVE_RADIUS_TRANSLATION_GAP_CERTIFIED"}}},
+    "gibbs_cylinder_probability": {"type": "object", "additionalProperties": false, "required": ["reference_cylinder", "slab_cylinder", "changed_residual_rows", "multiplicity", "action_gap", "action_gap_coefficient", "translation_argument", "lambda_point_four_bound", "lambda_point_four_exponent", "marginal_scope", "status"], "properties": {"reference_cylinder": {"$ref": "#/$defs/text"}, "slab_cylinder": {"$ref": "#/$defs/text"}, "changed_residual_rows": {"const": [0, 1, 2, 3]}, "multiplicity": {"$ref": "#/$defs/text"}, "action_gap": {"$ref": "#/$defs/text"}, "action_gap_coefficient": {"$ref": "#/$defs/rational"}, "translation_argument": {"$ref": "#/$defs/text"}, "lambda_point_four_bound": {"$ref": "#/$defs/text"}, "lambda_point_four_exponent": {"$ref": "#/$defs/rational"}, "marginal_scope": {"$ref": "#/$defs/text"}, "status": {"const": "ACTUAL_POSITIVE_RADIUS_GIBBS_CYLINDER_PROBABILITY_SUPPRESSION"}}},
+    "method_disposition": {"type": "object", "minProperties": 13, "additionalProperties": {"type": "string", "minLength": 1}},
+    "does_not_establish": {"type": "array", "minItems": 5, "items": {"$ref": "#/$defs/text"}},
+    "missing_object_ledger": {"type": "array", "minItems": 5, "items": {"$ref": "#/$defs/text"}},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "checks": {"type": "object", "minProperties": 19, "additionalProperties": {"const": true}},
+    "provenance": {"type": "object", "additionalProperties": false, "required": ["repository_base_commit", "inputs", "exact_arithmetic", "analytic_arithmetic", "assumptions"], "properties": {"repository_base_commit": {"const": "f4ca51aac8f44117686464d17f2c61767d0d780a"}, "inputs": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"$ref": "#/$defs/input"}}, "exact_arithmetic": {"$ref": "#/$defs/text"}, "analytic_arithmetic": {"$ref": "#/$defs/text"}, "assumptions": {"type": "array", "minItems": 3, "items": {"$ref": "#/$defs/text"}}}},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-euclidean-corrector-slab-cylinder-suppression-v1.schema.json"},
+    "report": {"const": "reverse_physics/reports/bt-euclidean-corrector-slab-cylinder-suppression.md"},
+    "independent_verifier": {"const": "reverse_physics/verify_bt_euclidean_corrector_slab_cylinder_suppression.py"},
+    "verification_commands": {"type": "array", "minItems": 3, "items": {"$ref": "#/$defs/text"}}
+  }
+}

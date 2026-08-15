@@ -144,6 +144,7 @@ def main() -> int:
     bt_weighted_current_v2 = json.loads((ROOT / data["authorities"]["bt_full_phase_weighted_current_gate_v2"]["path"]).read_text())
     bt_corrector_energy_no_go = json.loads((ROOT / data["authorities"]["bt_flux_corrector_pointwise_energy_no_go"]["path"]).read_text())
     bt_corrector_slab_fiber = json.loads((ROOT / data["authorities"]["bt_corrector_slab_fiber_stability"]["path"]).read_text())
+    bt_corrector_slab_cylinder = json.loads((ROOT / data["authorities"]["bt_corrector_slab_cylinder_suppression"]["path"]).read_text())
     dims = cube["dimensions"]
     atlas = data["atlas_snapshot"]
     require(atlas["axis_sizes"] == [6, 6, 16], "unexpected axis sizes")
@@ -391,6 +392,7 @@ def main() -> int:
         (31, "STRICT-WEYL-COMPONENT-PAIRING-SERIALIZATION"),
         (32, "BT-CORRECTOR-POINTWISE-ENERGY-NO-GO"),
         (33, "BT-CORRECTOR-SLAB-FIBER-STABILITY"),
+        (34, "BT-CORRECTOR-SLAB-CYLINDER-SUPPRESSION"),
     ]}, "claim set drift")
 
     flags = data["claim_flags"]
@@ -587,7 +589,11 @@ def main() -> int:
     require(flags["bt_corrector_Gibbs_hyperuniformity_established"] is False, "BT pointwise no-go promoted to Gibbs theorem")
     require(flags["bt_corrector_slab_fiber_stability_established"] is True, "BT slab fiber stability omitted")
     require(flags["bt_corrector_slab_point_density_suppression_established"] is True, "BT slab point-density suppression omitted")
-    require(flags["bt_corrector_slab_neighborhood_probability_established"] is False, "BT point-density suppression promoted to neighborhood probability")
+    require(flags["bt_corrector_slab_neighborhood_probability_established"] is True, "BT slab-cylinder probability theorem omitted")
+    require(flags["bt_corrector_global_tail_established"] is False, "single slab cylinder promoted to global corrector tail")
+    require(bt_corrector_slab_cylinder["method_disposition"]["localized_slab_positive_radius_cylinder_probability"] == "PROVED_EXPONENTIALLY_SUPPRESSED", "BT slab-cylinder authority drift")
+    require(bt_corrector_slab_cylinder["gibbs_cylinder_probability"]["lambda_point_four_exponent"] == {"numerator": 403338322161150510073, "denominator": 453757769960991129600}, "BT slab-cylinder exponent drift")
+    require(bt_corrector_slab_cylinder["method_disposition"]["all_large_corrector_backgrounds_contain_certified_cylinders"] == "OPEN", "BT slab cylinder promoted to all large correctors")
     require(flags["bt_translation_invariant_flux_corrector_established"] is False, "BT flux corrector promoted")
     require(flags["bt_translation_invariant_current_susceptibility_established"] is False, "BT current susceptibility promoted")
     require(flags["bt_exact_interacting_score_scaling_established"] is False, "BT exact interacting score promoted")

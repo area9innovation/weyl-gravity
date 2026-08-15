@@ -1,0 +1,756 @@
+{
+  "answer": "Yes for a six-time-row cylinder around the certified slab, modulo arbitrary time-row fields. If the perturbation is at most 1/400 in sup norm on rows -1 through 4, exact rational interval arithmetic proves that translating by the slab raises the residual-square sum by at least g=403338322161150510073/354498257782024320000 per four-site spatial period and inert site, uniformly in all positive time-row ratios. Hence the action rises by at least (g/8)L^3. Translation of the cylinder then gives its normalized Gibbs probability at most exp[-g L^3/(8 lambda^2)], with exponent coefficient 403338322161150510073/453757769960991129600 at lambda=2/5. This is a real positive-radius probability bound and avoids an entropy count. It covers one structured slab tube, not every configuration with a large corrector or the required H^-1 moment.",
+  "certificate": "REVERSE_PHYSICS_BT_EUCLIDEAN_CORRECTOR_SLAB_CYLINDER_SUPPRESSION_V1",
+  "checks": {
+    "action_gap_coefficient_is_exact": true,
+    "all_large_corrector_tail_and_H_minus_one_remain_open": true,
+    "all_other_robust_lower_coefficients_are_nonnegative": true,
+    "edge_multiplier_lower_is_199_over_200": true,
+    "edge_multiplier_upper_is_200_over_199": true,
+    "lambda_point_four_probability_exponent_is_exact": true,
+    "no_continuum_born_krein_or_lorentzian_promotion": true,
+    "positive_radius_cylinder_probability_is_established": true,
+    "robust_constant_floor_is_exact": true,
+    "robust_negative_linear_coefficients_agree": true,
+    "robust_negative_linear_magnitude_is_exact": true,
+    "robust_residual_square_gap_is_exact": true,
+    "robust_residual_square_gap_is_positive": true,
+    "robust_square_coefficients_agree": true,
+    "robust_square_floor_is_exact": true,
+    "sup_norm_radius_is_one_over_400": true,
+    "translation_preserves_mean_log_slice": true,
+    "unperturbed_coarse_gap_is_349_over_144": true,
+    "unperturbed_translation_polynomial_is_exact": true
+  },
+  "created": "2026-08-15",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "does_not_establish": [
+    "a tail estimate for every background with a large corrector coefficient",
+    "that large corrector environments must contain many compatible translates of this slab cylinder",
+    "the Gibbs corrector hyperuniformity or weighted-potential mass estimate",
+    "the translation-invariant current susceptibility or interacting H^-1 moment",
+    "tightness, continuum identification, a Born rule, Krein reconstruction, or LORENTZIAN-CAUSAL physics"
+  ],
+  "gibbs_cylinder_probability": {
+    "action_gap": "A(psi+eta_L)-A(psi)>=(1/2)*(L^3/4)*g=(g/8)L^3 for every psi in C_0",
+    "action_gap_coefficient": {
+      "denominator": 2835986062256194560000,
+      "numerator": 403338322161150510073
+    },
+    "changed_residual_rows": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "lambda_point_four_bound": "mu_(2/5)(C_eta)<=exp[-c_cyl L^3]",
+    "lambda_point_four_exponent": {
+      "denominator": 453757769960991129600,
+      "numerator": 403338322161150510073
+    },
+    "marginal_scope": "C_0 is invariant under every time-only row shift, hence in particular under the removed lowest cosine-sine plane; the bound descends to the exact integrated background marginal.",
+    "multiplicity": "(L/4)*L^2=L^3/4 four-site spatial periods and inert-site pairs",
+    "reference_cylinder": "C_0 contains every mean-log-gauge field psi for which some time-only row field T_t satisfies |psi_x-T_t|<=1/400 on the six rows t=-1,0,1,2,3,4; all other rows are unconstrained.",
+    "slab_cylinder": "C_eta=eta_L+C_0, where eta_L=(log 2)n_L is the exact E_p-perpendicular slab.",
+    "status": "ACTUAL_POSITIVE_RADIUS_GIBBS_CYLINDER_PROBABILITY_SUPPRESSION",
+    "translation_argument": "Lebesgue translation on the mean-log slice maps C_0 bijectively to C_eta. Therefore mu_lambda(C_eta)<=exp[-g L^3/(8 lambda^2)] mu_lambda(C_0)<=exp[-g L^3/(8 lambda^2)]. No denominator lower bound or neighborhood-volume entropy estimate is needed."
+  },
+  "independent_verifier": "reverse_physics/verify_bt_euclidean_corrector_slab_cylinder_suppression.py",
+  "lifecycle_state": "POSITIVE_RADIUS_SLAB_CYLINDER_GIBBS_SUPPRESSION_PROVED_GLOBAL_CORRECTOR_GATE_OPEN",
+  "method_disposition": {
+    "Gibbs_corrector_hyperuniformity_bound": "OPEN",
+    "actual_interacting_H_minus_one_second_moment": "OPEN",
+    "all_large_corrector_backgrounds_contain_certified_cylinders": "OPEN",
+    "born_rule": "NOT_ESTABLISHED",
+    "continuum_limit": "NOT_ESTABLISHED",
+    "krein_reconstruction": "NOT_ASSESSED",
+    "localized_slab_integrated_marginal_point_density_escape": "OBSTRUCTED",
+    "localized_slab_positive_radius_cylinder_probability": "PROVED_EXPONENTIALLY_SUPPRESSED",
+    "lorentzian_transfer": "NOT_ESTABLISHED",
+    "multi_block_compatibility_and_counting": "OPEN",
+    "six_row_cylinder_entropy_problem": "AVOIDED_BY_TRANSLATION_INJECTION",
+    "translation_invariant_current_susceptibility_bound": "OPEN",
+    "weighted_potential_mass_structure_factor_bound": "OPEN"
+  },
+  "missing_object_ledger": [
+    "a deterministic block-extraction lemma from a large lowest-mode corrector to many costly local patterns",
+    "a compatibility or polymer estimate for simultaneously translated slab blocks",
+    "the complementary weighted-potential mass structure-factor estimate",
+    "the resulting current susceptibility and dyadic H^-1 shell theorem",
+    "a rigorously controlled divergence sequence if the positive route fails"
+  ],
+  "next_gate": "Prove a corrector-to-block extraction lemma: a large lowest axial corrector must force a positive density of disjoint local flux motifs whose translated cylinders retain a uniform action gap. Then control compatibility between motifs and sum the resulting Gibbs tail. Failure should be witnessed by an explicit large-corrector family that avoids every such motif; only an actual Gibbs-weighted family can obstruct the H^-1 estimate itself.",
+  "provenance": {
+    "analytic_arithmetic": "The elementary exponential enclosure converts the sup-norm cylinder to rational edge intervals; Gibbs translation converts the uniform action difference into a normalized probability bound without estimating partition functions or event volume.",
+    "assumptions": [
+      "The finite-volume action, mean-log slice and slab conventions are those certified by the two inputs.",
+      "L is divisible by four and L>=8, so the six buffer rows are distinct and the slab replication is exact.",
+      "Only LOCAL-ALGEBRAIC and EUCLIDEAN-SPECTRAL conclusions are drawn."
+    ],
+    "exact_arithmetic": "Fraction interval arithmetic reconstructs the complete Laurent-polynomial coefficient enclosure for the four changed residual rows, including all eight lattice neighbors, and proves the rational square-completion gap.",
+    "inputs": [
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_CORRECTOR_SLAB_FIBER_STABILITY_V1.json",
+        "sha256": "cbef5c1e3c8e4c019f3e6954a584853bc9ba1ddaa2706a05b5b99441f95cff34"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_FLUX_CORRECTOR_POINTWISE_ENERGY_NO_GO_V1.json",
+        "sha256": "4d2a0475038660d93ca9f83da2eb0e69330f1a6b89a22721945a33bef4f3e001"
+      }
+    ],
+    "repository_base_commit": "f4ca51aac8f44117686464d17f2c61767d0d780a"
+  },
+  "question": "Can the exact point-density suppression of the slice-valid slab be upgraded to a genuine positive-radius Gibbs probability estimate without paying a volume-four entropy factor?",
+  "report": "reverse_physics/reports/bt-euclidean-corrector-slab-cylinder-suppression.md",
+  "result_kind": "exact robust action-translation gap and finite-volume Gibbs probability bound for a positive-radius tube around the localized corrector slab",
+  "robust_interval_certificate": {
+    "buffer_time_rows": [
+      -1,
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "coefficient_ledger": [
+      {
+        "exponents_A_B_C_D_E": [
+          0,
+          -2,
+          0,
+          0,
+          0
+        ],
+        "lower": {
+          "denominator": 6336160000,
+          "numerator": 13987109613
+        },
+        "upper": {
+          "denominator": 1584040000,
+          "numerator": 3631760799
+        }
+      },
+      {
+        "exponents_A_B_C_D_E": [
+          0,
+          -1,
+          0,
+          0,
+          0
+        ],
+        "lower": {
+          "denominator": 6336160000,
+          "numerator": 84919212077
+        },
+        "upper": {
+          "denominator": 3168080000,
+          "numerator": 44666971993
+        }
+      },
+      {
+        "exponents_A_B_C_D_E": [
+          0,
+          -1,
+          1,
+          0,
+          0
+        ],
+        "lower": {
+          "denominator": 3168080000,
+          "numerator": 7714152809
+        },
+        "upper": {
+          "denominator": 792020000,
+          "numerator": 2031760799
+        }
+      },
+      {
+        "exponents_A_B_C_D_E": [
+          0,
+          0,
+          -2,
+          0,
+          0
+        ],
+        "lower": {
+          "denominator": 6336160000,
+          "numerator": 13987109613
+        },
+        "upper": {
+          "denominator": 1584040000,
+          "numerator": 3631760799
+        }
+      },
+      {
+        "exponents_A_B_C_D_E": [
+          0,
+          0,
+          -1,
+          0,
+          0
+        ],
+        "lower": {
+          "denominator": 1584040000,
+          "numerator": 5939709611
+        },
+        "upper": {
+          "denominator": 792020000,
+          "numerator": 3366862399
+        }
+      },
+      {
+        "exponents_A_B_C_D_E": [
+          0,
+          0,
+          -1,
+          1,
+          0
+        ],
+        "lower": {
+          "denominator": 3168080000,
+          "numerator": 7714152809
+        },
+        "upper": {
+          "denominator": 792020000,
+          "numerator": 2031760799
+        }
+      },
+      {
+        "exponents_A_B_C_D_E": [
+          0,
+          0,
+          0,
+          -2,
+          0
+        ],
+        "lower": {
+          "denominator": 6336160000,
+          "numerator": 13987109613
+        },
+        "upper": {
+          "denominator": 1584040000,
+          "numerator": 3631760799
+        }
+      },
+      {
+        "exponents_A_B_C_D_E": [
+          0,
+          0,
+          0,
+          -1,
+          0
+        ],
+        "lower": {
+          "denominator": 4975,
+          "numerator": -10549
+        },
+        "upper": {
+          "denominator": 4975,
+          "numerator": -9352
+        }
+      },
+      {
+        "exponents_A_B_C_D_E": [
+          0,
+          0,
+          0,
+          -1,
+          1
+        ],
+        "lower": {
+          "denominator": 792020000,
+          "numerator": 768239201
+        },
+        "upper": {
+          "denominator": 1584040000,
+          "numerator": 1631760799
+        }
+      },
+      {
+        "exponents_A_B_C_D_E": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "lower": {
+          "denominator": 25344640000,
+          "numerator": 54646591421
+        },
+        "upper": {
+          "denominator": 3168080000,
+          "numerator": 14155576801
+        }
+      },
+      {
+        "exponents_A_B_C_D_E": [
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        "lower": {
+          "denominator": 1584040000,
+          "numerator": 10660228013
+        },
+        "upper": {
+          "denominator": 792020000,
+          "numerator": 5758882399
+        }
+      },
+      {
+        "exponents_A_B_C_D_E": [
+          0,
+          0,
+          0,
+          2,
+          0
+        ],
+        "lower": {
+          "denominator": 6336160000,
+          "numerator": 13987109613
+        },
+        "upper": {
+          "denominator": 1584040000,
+          "numerator": 3631760799
+        }
+      },
+      {
+        "exponents_A_B_C_D_E": [
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "lower": {
+          "denominator": 6336160000,
+          "numerator": 47281471253
+        },
+        "upper": {
+          "denominator": 3168080000,
+          "numerator": 25466971993
+        }
+      },
+      {
+        "exponents_A_B_C_D_E": [
+          0,
+          0,
+          2,
+          0,
+          0
+        ],
+        "lower": {
+          "denominator": 6336160000,
+          "numerator": 13987109613
+        },
+        "upper": {
+          "denominator": 1584040000,
+          "numerator": 3631760799
+        }
+      },
+      {
+        "exponents_A_B_C_D_E": [
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        "lower": {
+          "denominator": 4975,
+          "numerator": -10549
+        },
+        "upper": {
+          "denominator": 4975,
+          "numerator": -9352
+        }
+      },
+      {
+        "exponents_A_B_C_D_E": [
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        "lower": {
+          "denominator": 6336160000,
+          "numerator": 13987109613
+        },
+        "upper": {
+          "denominator": 1584040000,
+          "numerator": 3631760799
+        }
+      },
+      {
+        "exponents_A_B_C_D_E": [
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "lower": {
+          "denominator": 792020000,
+          "numerator": 768239201
+        },
+        "upper": {
+          "denominator": 1584040000,
+          "numerator": 1631760799
+        }
+      }
+    ],
+    "completion": "All robust coefficient lower endpoints are nonnegative except the B and D^-1 terms, each bounded below by -beta times its positive variable. The B^2 and D^-2 coefficients are at least alpha. Two square completions give D>=constant-beta^2/(2 alpha)=g.",
+    "constant_floor": {
+      "denominator": 25344640000,
+      "numerator": 54646591421
+    },
+    "cylinder_radius": {
+      "denominator": 400,
+      "numerator": 1
+    },
+    "edge_log_increment_bound": {
+      "denominator": 200,
+      "numerator": 1
+    },
+    "edge_multiplier_interval": {
+      "lower": {
+        "denominator": 200,
+        "numerator": 199
+      },
+      "upper": {
+        "denominator": 199,
+        "numerator": 200
+      }
+    },
+    "exponential_lemma": "If |z|<=1/200, then exp(z) lies in [199/200,200/199]: exp(-x)>=1-x and exp(x)<=1/(1-x) for 0<=x<1.",
+    "negative_linear_magnitude_beta": {
+      "denominator": 4975,
+      "numerator": 10549
+    },
+    "relaxation": "Every directed perturbation multiplier is independently enclosed by the rational interval. Correlations between opposite edges and common site values are discarded, so the interval result is a rigorous relaxation.",
+    "residual_square_gap": {
+      "denominator": 354498257782024320000,
+      "numerator": 403338322161150510073
+    },
+    "square_floor_alpha": {
+      "denominator": 6336160000,
+      "numerator": 13987109613
+    },
+    "status": "POSITIVE_RADIUS_TRANSLATION_GAP_CERTIFIED"
+  },
+  "schema": "reverse_physics/schema/reverse-physics-bt-euclidean-corrector-slab-cylinder-suppression-v1.schema.json",
+  "schema_version": "reverse-physics-bt-euclidean-corrector-slab-cylinder-suppression-v1",
+  "unperturbed_translation": {
+    "coarse_completion": "Only -2B and -2/D are negative. Completing the squares (9/4)B^2-2B and (9/4)D^-2-2D^-1 and dropping every other nonnegative monomial gives D>=53/16-8/9=349/144.",
+    "coarse_gap": {
+      "denominator": 144,
+      "numerator": 349
+    },
+    "coefficient_ledger": [
+      {
+        "exponents_A_B_C_D_E": [
+          0,
+          -2,
+          0,
+          0,
+          0
+        ],
+        "lower": {
+          "denominator": 4,
+          "numerator": 9
+        },
+        "upper": {
+          "denominator": 4,
+          "numerator": 9
+        }
+      },
+      {
+        "exponents_A_B_C_D_E": [
+          0,
+          -1,
+          0,
+          0,
+          0
+        ],
+        "lower": {
+          "denominator": 4,
+          "numerator": 55
+        },
+        "upper": {
+          "denominator": 4,
+          "numerator": 55
+        }
+      },
+      {
+        "exponents_A_B_C_D_E": [
+          0,
+          -1,
+          1,
+          0,
+          0
+        ],
+        "lower": {
+          "denominator": 2,
+          "numerator": 5
+        },
+        "upper": {
+          "denominator": 2,
+          "numerator": 5
+        }
+      },
+      {
+        "exponents_A_B_C_D_E": [
+          0,
+          0,
+          -2,
+          0,
+          0
+        ],
+        "lower": {
+          "denominator": 4,
+          "numerator": 9
+        },
+        "upper": {
+          "denominator": 4,
+          "numerator": 9
+        }
+      },
+      {
+        "exponents_A_B_C_D_E": [
+          0,
+          0,
+          -1,
+          0,
+          0
+        ],
+        "lower": {
+          "denominator": 1,
+          "numerator": 4
+        },
+        "upper": {
+          "denominator": 1,
+          "numerator": 4
+        }
+      },
+      {
+        "exponents_A_B_C_D_E": [
+          0,
+          0,
+          -1,
+          1,
+          0
+        ],
+        "lower": {
+          "denominator": 2,
+          "numerator": 5
+        },
+        "upper": {
+          "denominator": 2,
+          "numerator": 5
+        }
+      },
+      {
+        "exponents_A_B_C_D_E": [
+          0,
+          0,
+          0,
+          -2,
+          0
+        ],
+        "lower": {
+          "denominator": 4,
+          "numerator": 9
+        },
+        "upper": {
+          "denominator": 4,
+          "numerator": 9
+        }
+      },
+      {
+        "exponents_A_B_C_D_E": [
+          0,
+          0,
+          0,
+          -1,
+          0
+        ],
+        "lower": {
+          "denominator": 1,
+          "numerator": -2
+        },
+        "upper": {
+          "denominator": 1,
+          "numerator": -2
+        }
+      },
+      {
+        "exponents_A_B_C_D_E": [
+          0,
+          0,
+          0,
+          -1,
+          1
+        ],
+        "lower": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "upper": {
+          "denominator": 1,
+          "numerator": 1
+        }
+      },
+      {
+        "exponents_A_B_C_D_E": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "lower": {
+          "denominator": 16,
+          "numerator": 53
+        },
+        "upper": {
+          "denominator": 16,
+          "numerator": 53
+        }
+      },
+      {
+        "exponents_A_B_C_D_E": [
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        "lower": {
+          "denominator": 1,
+          "numerator": 7
+        },
+        "upper": {
+          "denominator": 1,
+          "numerator": 7
+        }
+      },
+      {
+        "exponents_A_B_C_D_E": [
+          0,
+          0,
+          0,
+          2,
+          0
+        ],
+        "lower": {
+          "denominator": 4,
+          "numerator": 9
+        },
+        "upper": {
+          "denominator": 4,
+          "numerator": 9
+        }
+      },
+      {
+        "exponents_A_B_C_D_E": [
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        "lower": {
+          "denominator": 4,
+          "numerator": 31
+        },
+        "upper": {
+          "denominator": 4,
+          "numerator": 31
+        }
+      },
+      {
+        "exponents_A_B_C_D_E": [
+          0,
+          0,
+          2,
+          0,
+          0
+        ],
+        "lower": {
+          "denominator": 4,
+          "numerator": 9
+        },
+        "upper": {
+          "denominator": 4,
+          "numerator": 9
+        }
+      },
+      {
+        "exponents_A_B_C_D_E": [
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        "lower": {
+          "denominator": 1,
+          "numerator": -2
+        },
+        "upper": {
+          "denominator": 1,
+          "numerator": -2
+        }
+      },
+      {
+        "exponents_A_B_C_D_E": [
+          0,
+          2,
+          0,
+          0,
+          0
+        ],
+        "lower": {
+          "denominator": 4,
+          "numerator": 9
+        },
+        "upper": {
+          "denominator": 4,
+          "numerator": 9
+        }
+      },
+      {
+        "exponents_A_B_C_D_E": [
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        "lower": {
+          "denominator": 1,
+          "numerator": 1
+        },
+        "upper": {
+          "denominator": 1,
+          "numerator": 1
+        }
+      }
+    ],
+    "difference": "D=sum_(t=0)^3 sum_(s mod 4)[r(psi+eta)^2-r(psi)^2]",
+    "status": "EXACT_POSITIVE_TRANSLATION_GAP_FOR_ARBITRARY_TIME_ROW_FACTORS",
+    "time_edge_variables": "A=q_-1/q_0, B=q_1/q_0, C=q_2/q_1, D=q_3/q_2, E=q_4/q_3, all positive"
+  },
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_euclidean_corrector_slab_cylinder_suppression.py --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_euclidean_corrector_slab_cylinder_suppression.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_euclidean_corrector_slab_cylinder_suppression"
+  ]
+}

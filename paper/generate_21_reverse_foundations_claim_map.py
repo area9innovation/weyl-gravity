@@ -67,6 +67,7 @@ AUTHORITY_PATHS = {
     "bt_full_phase_weighted_current_gate_v2": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_FULL_PHASE_WEIGHTED_CURRENT_GATE_V2.json",
     "bt_flux_corrector_pointwise_energy_no_go": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_FLUX_CORRECTOR_POINTWISE_ENERGY_NO_GO_V1.json",
     "bt_corrector_slab_fiber_stability": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_CORRECTOR_SLAB_FIBER_STABILITY_V1.json",
+    "bt_corrector_slab_cylinder_suppression": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_CORRECTOR_SLAB_CYLINDER_SUPPRESSION_V1.json",
     "full_surface_gap_audit": "foundations/results/FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1.json",
     "explorer_snapshot": "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json",
     "theory_assembly": "foundations/results/FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1.json",
@@ -173,6 +174,7 @@ def build() -> dict:
     bt_weighted_current_v2 = loaded["bt_full_phase_weighted_current_gate_v2"]
     bt_corrector_energy_no_go = loaded["bt_flux_corrector_pointwise_energy_no_go"]
     bt_corrector_slab_fiber = loaded["bt_corrector_slab_fiber_stability"]
+    bt_corrector_slab_cylinder = loaded["bt_corrector_slab_cylinder_suppression"]
     site = loaded["explorer_snapshot"]
     gr_cassini = loaded["gr_cassini_assembly"]
     mannheim_ngc3198 = loaded["mannheim_ngc3198_assembly"]
@@ -759,6 +761,13 @@ def build() -> dict:
                 "authorities": ["bt_corrector_slab_fiber_stability"],
                 "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"],
             },
+            {
+                "claim_id": "RF-34-BT-CORRECTOR-SLAB-CYLINDER-SUPPRESSION",
+                "statement": "The exact slab point-density comparison upgrades to a genuine positive-radius probability bound. On a six-time-row cylinder of sup-norm radius 1/400 around arbitrary time-row fields, rational interval arithmetic over all eight lattice neighbors proves a uniform action-translation gap (g/8)L^3, where g=403338322161150510073/354498257782024320000. Consequently, at lambda=2/5, the translated slab cylinder has actual normalized Gibbs probability at most exp[-c_cyl L^3], with c_cyl=403338322161150510073/453757769960991129600. Translation avoids a neighborhood-entropy factor. This controls one structured cylinder, not every large-corrector environment, the Gibbs corrector moment, interacting H^-1 estimate, or continuum limit.",
+                "status": "POSITIVE_RADIUS_SLAB_CYLINDER_EXPONENTIALLY_SUPPRESSED_GLOBAL_CORRECTOR_GATE_OPEN",
+                "authorities": ["bt_corrector_slab_cylinder_suppression"],
+                "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"],
+            },
         ],
         "literature_scope": [
             {"source_id": "simpson-2009", "url": "https://doi.org/10.1017/CBO9780511581007", "role": "reverse mathematics and subsystem calibration"},
@@ -921,7 +930,8 @@ def build() -> dict:
             "bt_corrector_Gibbs_hyperuniformity_established": False,
             "bt_corrector_slab_fiber_stability_established": True,
             "bt_corrector_slab_point_density_suppression_established": True,
-            "bt_corrector_slab_neighborhood_probability_established": False,
+            "bt_corrector_slab_neighborhood_probability_established": True,
+            "bt_corrector_global_tail_established": False,
             "bt_translation_invariant_flux_corrector_established": False,
             "bt_translation_invariant_current_susceptibility_established": False,
             "bt_exact_interacting_score_scaling_established": False,

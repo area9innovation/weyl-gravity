@@ -2005,10 +2005,42 @@ the gap with the all-phase strong-convexity theorem gives, at \(\lambda=2/5\),
 \]
 
 This is an exponential comparison of the actual integrated-background
-density at the slab with its value at zero.  It is not a neighborhood probability
-and does not control every large-corrector environment.  The next
-gate is a robust block version with entropy control, followed by the Gibbs
-corrector structure factor.
+density at the slab with its value at zero.  By itself it is not a
+neighborhood probability and does not control every large-corrector
+environment.
+
+Certificate
+
+\cert{REVERSE_PHYSICS_BT_EUCLIDEAN_CORRECTOR_SLAB_CYLINDER_SUPPRESSION_V1}
+
+closes the positive-radius gate for this slab family.  Let \(C_0\) be the
+six-time-row cylinder of fields which, after subtraction of an arbitrary
+time-only row field, have sup norm at most \(1/400\) on rows
+\(-1,0,1,2,3,4\).  Exact rational interval arithmetic retains all eight
+lattice neighbors and proves
+
+\[
+ A(\psi+\eta_L)-A(\psi)\geq\frac{g}{8}L^3,
+ \qquad
+ g=\frac{403338322161150510073}{354498257782024320000},
+ \qquad \psi\in C_0.
+\]
+
+Lebesgue translation maps \(C_0\) to \(C_\eta=\eta_L+C_0\), so no separate
+event-volume or partition-function estimate is required.  At
+\(\lambda=2/5\),
+
+\[
+ \mu_{2/5}(C_\eta)
+ \leq\exp\left[-
+ \frac{403338322161150510073}{453757769960991129600}L^3\right].
+\]
+
+Thus the earlier point-density result has become a genuine positive-radius
+Gibbs probability theorem for one structured slab tube.  It still does not
+control every large-corrector environment.  The next gate is a
+corrector-to-block extraction and compatibility theorem, followed by the
+Gibbs corrector structure factor.
 
 \subsection{A finite BV contraction does not freeze the quantum theory}
 
