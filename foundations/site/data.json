@@ -18030,24 +18030,24 @@
     ]
   },
   "completion_atlas": {
-    "schema_version": "foundational-lorentzian-weyl-bv-completion-atlas-v17",
-    "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V17",
+    "schema_version": "foundational-lorentzian-weyl-bv-completion-atlas-v18",
+    "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V18",
     "result_kind": "BRANCH_BY_STAGE_COMPLETION_ATLAS",
     "lifecycle": "CLASSIFIED",
     "created": "2026-08-15",
-    "repository_base_commit": "2040f0c7964077686b7171b528be69cde62d4772",
+    "repository_base_commit": "907095c2753a91c6bc4b1d1ee0dbb8bf55373e5f",
     "dependency_tags": [
       "LOCAL-ALGEBRAIC",
       "EUCLIDEAN-SPECTRAL",
       "REDUCED-MODE",
       "LORENTZIAN-CAUSAL"
     ],
-    "question": "Does the strict 386-row theory admit an exact q2 completion compatible with q1, cyclicity and D, and what remains once a receiver-constructed stabilization is distinguished from an authoritative classical import?",
-    "answer": "Atlas V17 resolves the algebraic part of the first-ranked V16 route while exposing a sharper import boundary. Extend the certified minimal q2 by zero on the 356 split contractible rows and transport it by the exact BV-canonical shear. The resulting compositional graph action has 140 ordered-component channels, 68 potentially nonzero block triples and 110-row input/output envelopes; 196 rows remain interaction-inert in both roles. The candidate satisfies q1/q2, Koszul symmetry, q2 cyclicity and D/q2 exactly by direct-sum reasoning, canonical conjugation and stationary tensor naturality. This is a valid cyclic L-infinity stabilization, but it is a quantum-receiver construction rather than an authoritative nonlinear classical export. Gate V7 therefore records its q2 hash as an unaccepted candidate and narrows M2 to source-certified theory identity: either export the intended full q2 or certify a cyclic L-infinity equivalence to the stabilization. All 77 typed atlas cells are preserved, Gate A still accepts zero hashes, and Hadamard, products, QME and residual transfer remain false.",
+    "question": "Does the exact stabilized q2 candidate compose causally with the represented strict 386-row Green homotopies, and which mathematical assumptions enter before recursive interaction, Hadamard and QME gates?",
+    "answer": "Atlas V18 advances the strict architecture from separate nonlinear and causal ingredients to one certified first nonlinear causal response. The candidate q2 and unary-causal snapshot have identical basis, pairing and graph-q1 hashes. Both sign-oriented compositions B_plus/minus=Lambda_plus/minus q2_candidate are well-defined continuous bilinear names for compact smooth inputs, obey causal support, and satisfy the exact arity-two homotopy-response identity; their causal difference is q1-compatible. The proof cleanly stratifies finite exact local algebra from the genuinely infinite analytic Green layer. It does not identify the candidate as the authoritative classical q2, certify recursive causal trees, or promote Hadamard, products, QME or residual transfer. All 77 branch-stage cells are preserved and the classical import gate remains fail closed.",
     "predecessor": {
-      "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V16",
-      "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V16.json",
-      "sha256": "43edb517e421d10ac36a16a81193080f61421e123714936f31c591659e36f757",
+      "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V17",
+      "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V17.json",
+      "sha256": "69c0ed2f87cff195ecdf58a2d873c39a745e62d093aa69cbb8e3fb53cd070145",
       "preserved": true
     },
     "status_vocabulary": [
@@ -18203,11 +18203,12 @@
           {
             "stage": "S3_NONLINEAR_CARTAN",
             "status": "OPEN_SEEDED",
-            "statement": "Local BV interaction and Cartan ingredients exist, but no coefficient-bearing closed strict Lorentzian D-Cartan defect is classified.",
+            "statement": "The first strict nonlinear causal response is certified for the stabilized candidate: both sign-oriented Green compositions have causal support and exact arity-two homotopy identities on common 386-row bytes. Authoritative q2 identity, recursive causal-tree domains and the D-Cartan classification remain open.",
             "evidence": [
-              "QUANTUM_CARTAN_D_ONE_LOOP_DISPOSITION"
+              "QUANTUM_CARTAN_D_ONE_LOOP_DISPOSITION",
+              "STRICT_386_STABILIZED_Q2_GREEN_COMPOSITION_PREFLIGHT_V1"
             ],
-            "boundary": "A local source ledger is not a causal nonlinear contraction."
+            "boundary": "One Green application after one candidate q2 interaction is not an authoritative nonlinear theory, a recursive perturbative solution, a D-Cartan homotopy, a Hadamard state or a QME theorem."
           },
           {
             "stage": "S4_HADAMARD_CCR",
@@ -18266,7 +18267,7 @@
           }
         ],
         "first_unclosed_gate": "S0_CLASSICAL_AUTHORITY",
-        "next_decisive_object": "Source-certify the strict nonlinear q2 theory identity by exporting the full 386-row interaction ledger or a cyclic L-infinity equivalence to the stabilized candidate."
+        "next_decisive_object": "Source-certify q2 theory identity; in parallel, declare and prove domains for recursive causal q2/Green trees when causal outputs re-enter the local interaction."
       },
       {
         "id": "PURE_WEYL_BACH_FLAT_RANK310",
@@ -18889,6 +18890,13 @@
         "branch": "VACUUM_CYLINDER_REDUCED",
         "strength": "genuine reduced-mode Lorentzian Hadamard/Krein construction with E positivity and explicit A/L negative signs",
         "first_gate": "same-background full off-shell BRST lift"
+      },
+      "strict_nonlinear_causal_front": {
+        "branch": "STRICT_PURE_WEYL_386",
+        "stage": "S3_NONLINEAR_CARTAN",
+        "current_fact": "Both first-response sign orientations compose on exact common carrier bytes and the causal difference is q1-compatible.",
+        "best_next_object": "A recursive-tree domain/continuity theorem, kept candidate-scoped until authoritative q2 identity is imported.",
+        "foundational_boundary": "Finite exact q2 algebra is PRA-bounded conditionally, while the represented Green factor uses completed LF/Frechet spaces and countable spectral convergence."
       }
     },
     "classical_import_reconciliation": {
@@ -19019,70 +19027,79 @@
         "scientific_leverage": "VERY_HIGH",
         "tractability": "MEDIUM",
         "dependency_depth": "HIGH",
-        "recommendation": "Export the authoritative full nonlinear q2 or a source-certified cyclic L-infinity equivalence to the exact stabilized candidate; independently compare it and bind the q2 hash."
+        "recommendation": "Export the authoritative full nonlinear q2 or a source-certified cyclic L-infinity equivalence; compare it to the candidate and bind its hash."
       },
       {
         "rank": 2,
+        "route": "STRICT_RECURSIVE_CAUSAL_TREE_DOMAINS",
+        "branch": "STRICT_PURE_WEYL_386",
+        "scientific_leverage": "VERY_HIGH",
+        "tractability": "MEDIUM",
+        "dependency_depth": "HIGH",
+        "recommendation": "Extend the certified first response to declared retarded/advanced tree domains and prove continuity/support when causal outputs re-enter q2, without assuming authoritative identity."
+      },
+      {
+        "rank": 3,
         "route": "STRICT_RESIDUAL_SDR_COMMON_CARRIER",
         "branch": "STRICT_PURE_WEYL_386",
         "scientific_leverage": "VERY_HIGH",
         "tractability": "LOW",
         "dependency_depth": "HIGH",
-        "recommendation": "Extend or reconstruct iota_cl, pi_cl and s_cl beyond the D-finite control on the same support-local carrier and replay every contraction and chain-map identity."
+        "recommendation": "Extend or reconstruct iota_cl, pi_cl and s_cl beyond the D-finite control and replay every common-carrier identity."
       },
       {
-        "rank": 3,
+        "rank": 4,
         "route": "STRICT_FULL_CYCLIC_PAIRING",
         "branch": "STRICT_PURE_WEYL_386",
         "scientific_leverage": "VERY_HIGH",
         "tractability": "MEDIUM",
         "dependency_depth": "HIGH",
-        "recommendation": "Bind the full pairing/sign convention to all nonminimal, auxiliary and residual rows so residual-SDR side conditions share exact bytes."
+        "recommendation": "Bind the full pairing/sign convention to all nonminimal, auxiliary and residual rows."
       },
       {
-        "rank": 4,
+        "rank": 5,
         "route": "STRICT_RESIDUAL_EXACT_PAYLOAD",
         "branch": "STRICT_PURE_WEYL_386",
         "scientific_leverage": "HIGH",
         "tractability": "LOW",
         "dependency_depth": "HIGH",
-        "recommendation": "Serialize ordered primal/dual fifteen-mode bases, exact SO(4,2) structure constants, representation matrices and q_res on one residual carrier."
+        "recommendation": "Serialize ordered primal/dual modes, exact SO(4,2) constants and representation matrices."
       },
       {
-        "rank": 5,
+        "rank": 6,
         "route": "STRICT_CENTERED_REPRESENTATIVES",
         "branch": "STRICT_PURE_WEYL_386",
         "scientific_leverage": "HIGH",
         "tractability": "LOW",
         "dependency_depth": "HIGH",
-        "recommendation": "Export exact normalized W-plus-squared and W-minus-squared representative vectors together with centered H3, H4 and H5 bases."
+        "recommendation": "Export exact normalized centered representative vectors and H3/H4/H5 bases."
       },
       {
-        "rank": 6,
+        "rank": 7,
         "route": "DIRECT_SPACETIME_Q26_HADAMARD",
         "branch": "BERGER_POSITIVE_CLOCK_54",
         "scientific_leverage": "VERY_HIGH",
         "tractability": "LOW",
         "dependency_depth": "MEDIUM",
-        "recommendation": "Retain the analytically mature independent Hadamard route as a control while refusing to use its q2 or D as strict-theory Gate-A evidence."
+        "recommendation": "Keep the analytically mature independent Hadamard route as a control without importing its theory identity."
       },
       {
-        "rank": 7,
+        "rank": 8,
         "route": "STRICT_D_CARTAN_AND_CHARGE_DECISION",
         "branch": "STRICT_PURE_WEYL_386",
         "scientific_leverage": "HIGH",
         "tractability": "LOW",
         "dependency_depth": "HIGH",
-        "recommendation": "With a candidate nonlinear q2 now available, classify whether D admits a Cartan homotopy and is proper gauge, charged or sector-dependent without confusing that question with D/q2 equivariance."
+        "recommendation": "Classify the nonlinear D-Cartan homotopy and proper-gauge/charge status on the strict carrier."
       },
       {
-        "rank": 8,
-        "route": "STRICT_GREEN_NAME_EFFECTIVE_REFINEMENT",
+        "rank": 9,
+        "route": "STRICT_GREEN_FOUNDATIONAL_CALIBRATION",
         "branch": "STRICT_PURE_WEYL_386",
         "scientific_leverage": "MEDIUM",
-        "tractability": "LOW",
+        "tractability": "MEDIUM",
         "dependency_depth": "MEDIUM",
-        "recommendation": "Optionally add effective projector/tail algorithms or kernel bytes without making them prerequisites for the certified classical convergent name."
+        "recommendation": "Calibrate the weakest reverse-mathematical and choice principles behind S3 spectral completeness and the normally-hyperbolic Green theorem."
       }
     ],
     "research_queue": [
@@ -19090,49 +19107,55 @@
         "priority": 1,
         "branch": "STRICT_PURE_WEYL_386",
         "object": "STRICT_386_AUTHORITATIVE_Q2_IDENTITY",
-        "why": "Export the authoritative full nonlinear q2 or a source-certified cyclic L-infinity equivalence to the exact stabilized candidate; independently compare it and bind the q2 hash."
+        "why": "Export the authoritative full nonlinear q2 or a source-certified cyclic L-infinity equivalence; compare it to the candidate and bind its hash."
       },
       {
         "priority": 2,
         "branch": "STRICT_PURE_WEYL_386",
-        "object": "STRICT_RESIDUAL_SDR_COMMON_CARRIER",
-        "why": "Extend or reconstruct iota_cl, pi_cl and s_cl beyond the D-finite control on the same support-local carrier and replay every contraction and chain-map identity."
+        "object": "STRICT_RECURSIVE_CAUSAL_TREE_DOMAINS",
+        "why": "Extend the certified first response to declared retarded/advanced tree domains and prove continuity/support when causal outputs re-enter q2, without assuming authoritative identity."
       },
       {
         "priority": 3,
         "branch": "STRICT_PURE_WEYL_386",
-        "object": "STRICT_FULL_CYCLIC_PAIRING",
-        "why": "Bind the full pairing/sign convention to all nonminimal, auxiliary and residual rows so residual-SDR side conditions share exact bytes."
+        "object": "STRICT_RESIDUAL_SDR_COMMON_CARRIER",
+        "why": "Extend or reconstruct iota_cl, pi_cl and s_cl beyond the D-finite control and replay every common-carrier identity."
       },
       {
         "priority": 4,
         "branch": "STRICT_PURE_WEYL_386",
-        "object": "STRICT_RESIDUAL_EXACT_PAYLOAD",
-        "why": "Serialize ordered primal/dual fifteen-mode bases, exact SO(4,2) structure constants, representation matrices and q_res on one residual carrier."
+        "object": "STRICT_FULL_CYCLIC_PAIRING",
+        "why": "Bind the full pairing/sign convention to all nonminimal, auxiliary and residual rows."
       },
       {
         "priority": 5,
         "branch": "STRICT_PURE_WEYL_386",
-        "object": "STRICT_CENTERED_REPRESENTATIVES",
-        "why": "Export exact normalized W-plus-squared and W-minus-squared representative vectors together with centered H3, H4 and H5 bases."
+        "object": "STRICT_RESIDUAL_EXACT_PAYLOAD",
+        "why": "Serialize ordered primal/dual modes, exact SO(4,2) constants and representation matrices."
       },
       {
         "priority": 6,
-        "branch": "BERGER_POSITIVE_CLOCK_54",
-        "object": "DIRECT_SPACETIME_Q26_HADAMARD",
-        "why": "Retain the analytically mature independent Hadamard route as a control while refusing to use its q2 or D as strict-theory Gate-A evidence."
+        "branch": "STRICT_PURE_WEYL_386",
+        "object": "STRICT_CENTERED_REPRESENTATIVES",
+        "why": "Export exact normalized centered representative vectors and H3/H4/H5 bases."
       },
       {
         "priority": 7,
-        "branch": "STRICT_PURE_WEYL_386",
-        "object": "STRICT_D_CARTAN_AND_CHARGE_DECISION",
-        "why": "With a candidate nonlinear q2 now available, classify whether D admits a Cartan homotopy and is proper gauge, charged or sector-dependent without confusing that question with D/q2 equivariance."
+        "branch": "BERGER_POSITIVE_CLOCK_54",
+        "object": "DIRECT_SPACETIME_Q26_HADAMARD",
+        "why": "Keep the analytically mature independent Hadamard route as a control without importing its theory identity."
       },
       {
         "priority": 8,
         "branch": "STRICT_PURE_WEYL_386",
-        "object": "STRICT_GREEN_NAME_EFFECTIVE_REFINEMENT",
-        "why": "Optionally add effective projector/tail algorithms or kernel bytes without making them prerequisites for the certified classical convergent name."
+        "object": "STRICT_D_CARTAN_AND_CHARGE_DECISION",
+        "why": "Classify the nonlinear D-Cartan homotopy and proper-gauge/charge status on the strict carrier."
+      },
+      {
+        "priority": 9,
+        "branch": "STRICT_PURE_WEYL_386",
+        "object": "STRICT_GREEN_FOUNDATIONAL_CALIBRATION",
+        "why": "Calibrate the weakest reverse-mathematical and choice principles behind S3 spectral completeness and the normally-hyperbolic Green theorem."
       }
     ],
     "provenance": {
@@ -19476,6 +19499,16 @@
           "path": "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V7_RECONCILIATION.json",
           "sha256": "07bf0a7ffc23f9b2fe1a28aea84b04377d4b16dd5ed780d7cfc3106a86b469de",
           "role": "Gate-A V7 candidate/import reconciliation"
+        },
+        {
+          "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V17.json",
+          "sha256": "69c0ed2f87cff195ecdf58a2d873c39a745e62d093aa69cbb8e3fb53cd070145",
+          "role": "immutable V17 atlas predecessor"
+        },
+        {
+          "path": "quantum-weyl/classical_import/certificates/STRICT_386_STABILIZED_Q2_GREEN_COMPOSITION_PREFLIGHT_V1.json",
+          "sha256": "d9ea0e618ff31a92dcb83459d0b0b491783569b0b25523776af92fe02fe4bfd5",
+          "role": "strict candidate q2/Green first-response and foundations preflight"
         }
       ]
     },
@@ -19568,7 +19601,16 @@
       "strict_386_stabilized_q2_cyclicity_verified": true,
       "strict_386_stabilized_d_q2_derivation_verified": true,
       "strict_386_authoritative_full_q2_imported": false,
-      "strict_386_candidate_theory_identity_certified": false
+      "strict_386_candidate_theory_identity_certified": false,
+      "v17_preserved": true,
+      "strict_386_candidate_q2_green_same_carrier_verified": true,
+      "strict_386_candidate_first_nonlinear_causal_response_certified": true,
+      "strict_386_candidate_q2_green_causal_support_certified": true,
+      "strict_386_candidate_q2_green_response_identity_verified": true,
+      "strict_386_q2_green_foundations_stratified": true,
+      "strict_386_authoritative_q2_green_compatibility_certified": false,
+      "strict_386_recursive_nonlinear_green_trees_certified": false,
+      "strict_386_full_bv_hadamard_state_constructed": false
     },
     "does_not_establish": [
       "a passed strict pure-Weyl classical import gate",
@@ -19642,23 +19684,25 @@
       "a nonlinear D-Cartan homotopy or a proper-gauge/charge decision for the cylinder generator",
       "a silently rebound replay of the five drifted Gate-V5 transitive provenance files",
       "that the receiver-constructed q2 stabilization is the authoritative nonlinear classical extension",
-      "a source-certified cyclic L-infinity equivalence or an accepted q2 Gate-A hash"
+      "a source-certified cyclic L-infinity equivalence or an accepted q2 Gate-A hash",
+      "authoritative strict q2/Green compatibility rather than candidate first-response compatibility",
+      "recursive nonlinear causal trees or closure when two noncompact causal outputs re-enter q2",
+      "a weakest reverse-mathematical or choice-free proof of the analytic Green layer"
     ],
     "independent_checker": {
-      "path": "foundations/check_lorentzian_weyl_bv_completion_atlas_v17.py",
+      "path": "foundations/check_lorentzian_weyl_bv_completion_atlas_v18.py",
       "checks": [
-        "V16 predecessor and 77-cell preservation",
-        "q2 support-envelope projection",
-        "candidate q1q2/Koszul/cyclicity/Dq2 zero-defect projection",
-        "Gate-V7 count/hash firewall",
-        "authoritative theory-identity frontier",
-        "eight-route deterministic ranking",
-        "quantum lifecycle firewall",
-        "append-only provenance"
+        "V17 predecessor and all 77 cells preserved",
+        "candidate q2/Green carrier-hash projection",
+        "two response names, support and zero-defect identity projection",
+        "finite/infinite foundational boundary",
+        "candidate/authority and recursive-tree firewalls",
+        "nine-route deterministic queue",
+        "Hadamard/QME/lifecycle firewall"
       ],
-      "expected_digest": "a366b208b0366299adb6d15c64c209214d80f6ea067e449252111311869ad305"
+      "expected_digest": "9c3b6b5546699f6062b917b8dc3163c273d3ad311d0cf879f0940276f74e1b08"
     },
-    "human_report": "foundations/reports/lorentzian-weyl-bv-completion-atlas-v17.md",
+    "human_report": "foundations/reports/lorentzian-weyl-bv-completion-atlas-v18.md",
     "strict_gate_a_progress": {
       "status": "STABILIZED_Q2_CANDIDATE_CERTIFIED_AUTHORITATIVE_IDENTITY_REQUIRED",
       "evidence": [
@@ -20413,6 +20457,31 @@
         "M6_CENTERED_REPRESENTATIVES"
       ],
       "next_gate": "Move the q2 decision to the authoritative classical programme. Export either the full nonlinear 386-row q2, including every intended nonminimal and generalized-auxiliary interaction, or a cyclic L-infinity equivalence identifying that extension with STRICT_386_STABILIZED_Q2_LIFT_PREFLIGHT_V1. The quantum receiver must independently compare the export, preserve the candidate q1q2/cyclicity/Dq2 identities, and only then bind an authoritative q2 hash into the complete Gate-A manifest. M1 and M3-M6 remain independent blockers; no Hadamard or QME lifecycle promotion is authorized."
+    },
+    "strict_q2_green_composition_preflight": {
+      "result_id": "STRICT_386_STABILIZED_Q2_GREEN_COMPOSITION_PREFLIGHT_V1",
+      "status": "CANDIDATE_Q2_GREEN_RESPONSE_CERTIFIED_AUTHORITATIVE_AND_RECURSIVE_COMPLETION_OPEN",
+      "carrier_rows": 386,
+      "basis_match": true,
+      "pairing_match": true,
+      "graph_q1_match": true,
+      "causal_orientations_composed": 2,
+      "per_input_derivative_order_bound": 10,
+      "total_derivative_order_bound": 13,
+      "response_identity_defects": 0,
+      "causal_difference_identity_defects": 0,
+      "plus_response_name_sha256": "7cba7df37fff026c5102f8810995938d9f503f19aaebae563133bfaca72a816a",
+      "minus_response_name_sha256": "50ce9c7808e39c17eec8dd88eb64c3cef46bf209b632c6631942a311f7aecbcd",
+      "causal_difference_name_sha256": "c734f59e1ac444d3c3b7b3308f1321f41bcf1acc5e4c3f1de52b2508454791ce",
+      "foundational_classification": "STRATIFIED_FINITE_EXACT_PLUS_CLASSICAL_INFINITE_ANALYSIS",
+      "finite_exact_layer": "PRA conditional on the pinned tensor-natural differential identities",
+      "completed_infinite_spaces_required": true,
+      "new_choice_beyond_green_theorem": false,
+      "weakest_complete_foundational_base": "NOT_ESTABLISHED",
+      "candidate_only": true,
+      "authoritative_q2_green_compatibility": false,
+      "recursive_nonlinear_green_trees": false,
+      "next_gate": "Obtain authoritative q2 theory identity. In parallel, define domains for recursive causal trees and prove continuity/support when causal outputs re-enter q2; only after authoritative identity and those analytic closure checks may the strict route advance from first response toward interacting Hadamard/renormalized products and QME."
     }
   },
   "cross_cell_interfaces": [
@@ -20582,8 +20651,8 @@
     "ground_state_dynamics_interface_report": "sources/foundations/reports/krein-fock-ground-state-dynamics-interface.md",
     "migration_audit_report": "sources/foundations/reports/intersection-cube-migration-audit-v2.md",
     "ladder_report": "sources/foundations/reports/cylinder-wave-strength-ladder-v2.md",
-    "completion_atlas": "sources/foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V17.json",
-    "completion_atlas_report": "sources/foundations/reports/lorentzian-weyl-bv-completion-atlas-v17.md",
+    "completion_atlas": "sources/foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V18.json",
+    "completion_atlas_report": "sources/foundations/reports/lorentzian-weyl-bv-completion-atlas-v18.md",
     "completion_gate": "sources/quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V7_RECONCILIATION.json",
     "completion_gate_report": "sources/quantum-weyl/classical_import/REPORT_GATE_V7.md",
     "completion_sdr": "sources/quantum-weyl/classical_import/certificates/STRICT_DFINITE_RESIDUAL_SDR_V1.json",
@@ -20617,7 +20686,9 @@
     "completion_full_d": "sources/quantum-weyl/classical_import/certificates/STRICT_386_FULL_D_ACTION_V1.json",
     "completion_full_d_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_386_FULL_D_ACTION_V1.md",
     "completion_q2_preflight": "sources/quantum-weyl/classical_import/certificates/STRICT_386_STABILIZED_Q2_LIFT_PREFLIGHT_V1.json",
-    "completion_q2_preflight_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_386_STABILIZED_Q2_LIFT_PREFLIGHT_V1.md"
+    "completion_q2_preflight_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_386_STABILIZED_Q2_LIFT_PREFLIGHT_V1.md",
+    "completion_q2_green": "sources/quantum-weyl/classical_import/certificates/STRICT_386_STABILIZED_Q2_GREEN_COMPOSITION_PREFLIGHT_V1.json",
+    "completion_q2_green_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_386_STABILIZED_Q2_GREEN_COMPOSITION_PREFLIGHT_V1.md"
   },
-  "canonical_digest": "60a2015b58b3397a8af2fe8206b01c1e0e8927c59f8a4bf1fcb7ecd789081743"
+  "canonical_digest": "bd5293a5f3f18041d33260af45680f0cbcb066a65364e4a48d1b321f780097ed"
 }

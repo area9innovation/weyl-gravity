@@ -1,0 +1,262 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "strict-386-stabilized-q2-green-composition-preflight-v1.schema.json",
+  "title": "Strict 386-row stabilized q2/Green composition preflight v1",
+  "type": "object",
+  "required": [
+    "$schema",
+    "schema",
+    "schema_path",
+    "result_id",
+    "result_kind",
+    "result_state",
+    "lifecycle",
+    "created",
+    "repository_base_commit",
+    "dependency_tags",
+    "question",
+    "answer",
+    "scope",
+    "carrier_alignment",
+    "local_q2_continuity",
+    "response_names",
+    "causal_response_difference",
+    "homotopy_response_replay",
+    "foundational_strength",
+    "authority_boundary",
+    "response_snapshot",
+    "claim_flags",
+    "does_not_establish",
+    "next_gate",
+    "canonical_hashes",
+    "provenance",
+    "independent_checker",
+    "human_report"
+  ],
+  "properties": {
+    "$schema": {"const": "../schema/strict-386-stabilized-q2-green-composition-preflight-v1.schema.json"},
+    "schema": {"const": "strict-386-stabilized-q2-green-composition-preflight-v1"},
+    "schema_path": {"type": "string", "minLength": 1},
+    "result_id": {"const": "STRICT_386_STABILIZED_Q2_GREEN_COMPOSITION_PREFLIGHT_V1"},
+    "result_kind": {"const": "CANDIDATE_FIRST_NONLINEAR_CAUSAL_RESPONSE_AND_FOUNDATIONAL_STRATIFICATION"},
+    "result_state": {"const": "CANDIDATE_Q2_GREEN_RESPONSE_CERTIFIED_AUTHORITATIVE_AND_RECURSIVE_COMPLETION_OPEN"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "created": {"type": "string", "format": "date"},
+    "repository_base_commit": {"$ref": "#/$defs/git_commit"},
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]
+    },
+    "question": {"type": "string", "minLength": 1},
+    "answer": {"type": "string", "minLength": 1},
+    "scope": {
+      "type": "object",
+      "required": ["theory", "background", "carrier", "inputs", "degree", "causal_orientations"],
+      "properties": {
+        "theory": {"type": "string"},
+        "background": {"type": "string"},
+        "carrier": {"type": "string"},
+        "inputs": {"type": "string"},
+        "degree": {"type": "string"},
+        "causal_orientations": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    },
+    "carrier_alignment": {
+      "type": "object",
+      "required": ["carrier_rows", "basis_match", "pairing_match", "graph_q1_match", "status", "sha256"],
+      "properties": {
+        "carrier_rows": {"const": 386},
+        "basis_candidate_sha256": {"$ref": "#/$defs/sha256"},
+        "basis_unary_sha256": {"$ref": "#/$defs/sha256"},
+        "pairing_candidate_sha256": {"$ref": "#/$defs/sha256"},
+        "pairing_unary_sha256": {"$ref": "#/$defs/sha256"},
+        "graph_q1_candidate_sha256": {"$ref": "#/$defs/sha256"},
+        "graph_q1_unary_sha256": {"$ref": "#/$defs/sha256"},
+        "basis_match": {"const": true},
+        "pairing_match": {"const": true},
+        "graph_q1_match": {"const": true},
+        "unary_snapshot_sha256": {"$ref": "#/$defs/sha256"},
+        "candidate_q2_sha256": {"$ref": "#/$defs/sha256"},
+        "status": {"const": "SAME_RECEIVER_BYTES_PREFLIGHT_NOT_GATE_A_ACCEPTED"},
+        "sha256": {"$ref": "#/$defs/sha256"}
+      },
+      "additionalProperties": false
+    },
+    "local_q2_continuity": {
+      "type": "object",
+      "required": ["domain", "codomain", "topology", "reason", "minimal_q2_maximum_total_derivative_order", "inverse_shear_maximum_order", "forward_shear_maximum_order", "conservative_per_input_derivative_order_bound", "conservative_total_derivative_order_bound", "support_rule", "support_local", "continuous_bilinear_on_declared_source", "effective_seminorm_constants_serialized", "sha256"],
+      "properties": {
+        "domain": {"type": "string"},
+        "codomain": {"type": "string"},
+        "topology": {"type": "string"},
+        "reason": {"type": "string"},
+        "minimal_q2_maximum_total_derivative_order": {"const": 4},
+        "inverse_shear_maximum_order": {"const": 3},
+        "forward_shear_maximum_order": {"const": 3},
+        "conservative_per_input_derivative_order_bound": {"const": 10},
+        "conservative_total_derivative_order_bound": {"const": 13},
+        "support_rule": {"type": "string"},
+        "support_local": {"const": true},
+        "continuous_bilinear_on_declared_source": {"const": true},
+        "effective_seminorm_constants_serialized": {"const": false},
+        "sha256": {"$ref": "#/$defs/sha256"}
+      },
+      "additionalProperties": false
+    },
+    "response_names": {
+      "type": "object",
+      "required": ["plus", "minus"],
+      "properties": {
+        "plus": {"$ref": "#/$defs/response"},
+        "minus": {"$ref": "#/$defs/response"}
+      },
+      "additionalProperties": false
+    },
+    "causal_response_difference": {
+      "type": "object",
+      "required": ["formula", "name", "support", "continuous_bilinear", "canonical_name_sha256"],
+      "properties": {
+        "formula": {"const": "B_causal=B_plus-B_minus"},
+        "name": {"type": "object"},
+        "support": {"type": "string"},
+        "continuous_bilinear": {"const": true},
+        "canonical_name_sha256": {"$ref": "#/$defs/sha256"}
+      },
+      "additionalProperties": false
+    },
+    "homotopy_response_replay": {
+      "type": "object",
+      "required": ["inputs", "q1_q2_identity", "green_homotopy_identity", "response_identity", "causal_difference_identity", "derivation", "sign_orientations_checked", "q1_q2_input_defects", "green_homotopy_input_defects", "response_identity_structural_defects", "causal_difference_identity_structural_defects", "status", "sha256"],
+      "properties": {
+        "inputs": {"type": "string"},
+        "q1_q2_identity": {"type": "string"},
+        "green_homotopy_identity": {"type": "string"},
+        "response_identity": {"type": "string"},
+        "causal_difference_identity": {"type": "string"},
+        "derivation": {"type": "array", "minItems": 4, "items": {"type": "string"}},
+        "sign_orientations_checked": {"const": 2},
+        "q1_q2_input_defects": {"const": 0},
+        "green_homotopy_input_defects": {"const": 0},
+        "response_identity_structural_defects": {"const": 0},
+        "causal_difference_identity_structural_defects": {"const": 0},
+        "status": {"const": "EXACT_STRUCTURAL_REPLAY_ON_THE_CANDIDATE"},
+        "sha256": {"$ref": "#/$defs/sha256"}
+      },
+      "additionalProperties": false
+    },
+    "foundational_strength": {
+      "type": "object",
+      "required": ["classification", "layers", "axiom_of_choice_status", "constructive_status", "finitary_status", "weakest_complete_foundational_base", "sha256"],
+      "properties": {
+        "classification": {"const": "STRATIFIED_FINITE_EXACT_PLUS_CLASSICAL_INFINITE_ANALYSIS"},
+        "layers": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "object"}},
+        "axiom_of_choice_status": {"type": "string"},
+        "constructive_status": {"type": "string"},
+        "finitary_status": {"type": "string"},
+        "weakest_complete_foundational_base": {"const": "NOT_ESTABLISHED"},
+        "sha256": {"$ref": "#/$defs/sha256"}
+      },
+      "additionalProperties": false
+    },
+    "authority_boundary": {
+      "type": "object",
+      "required": ["candidate_q2_status", "authoritative_full_q2_imported", "candidate_authoritative_equivalence_certified", "q2_green_result_status", "candidate_q2_hash_accepted_by_gate_a", "classical_import_gate_a_status", "why", "sha256"],
+      "properties": {
+        "candidate_q2_status": {"const": "CERTIFIED_CONSTRUCTION_NOT_AUTHORITATIVE_IMPORT"},
+        "authoritative_full_q2_imported": {"const": false},
+        "candidate_authoritative_equivalence_certified": {"const": false},
+        "q2_green_result_status": {"const": "CERTIFIED_FOR_CANDIDATE_ONLY"},
+        "candidate_q2_hash_accepted_by_gate_a": {"const": false},
+        "classical_import_gate_a_status": {"const": "FAIL_CLOSED"},
+        "why": {"type": "string"},
+        "sha256": {"$ref": "#/$defs/sha256"}
+      },
+      "additionalProperties": false
+    },
+    "response_snapshot": {"type": "object"},
+    "claim_flags": {
+      "type": "object",
+      "required": [
+        "STRICT_386_CANDIDATE_Q2_GREEN_SAME_CARRIER_VERIFIED",
+        "STRICT_386_CANDIDATE_Q2_GREEN_RESPONSE_NAMES_SERIALIZED",
+        "STRICT_386_CANDIDATE_Q2_GREEN_CAUSAL_SUPPORT_CERTIFIED",
+        "STRICT_386_CANDIDATE_Q2_GREEN_RESPONSE_IDENTITY_VERIFIED",
+        "STRICT_386_CANDIDATE_Q2_GREEN_FOUNDATIONS_STRATIFIED",
+        "STRICT_386_AUTHORITATIVE_Q2_GREEN_COMPATIBILITY_CERTIFIED",
+        "STRICT_386_RECURSIVE_NONLINEAR_GREEN_TREES_CERTIFIED",
+        "CLASSICAL_IMPORT_GATE_PASSED",
+        "HADAMARD_STATE_CONSTRUCTED",
+        "RENORMALIZED_LORENTZIAN_PRODUCTS",
+        "QME_RESTORED",
+        "RESIDUAL_TRANSFERRED",
+        "LORENTZIAN_QUANTUM_THEORY"
+      ],
+      "properties": {
+        "STRICT_386_CANDIDATE_Q2_GREEN_SAME_CARRIER_VERIFIED": {"const": true},
+        "STRICT_386_CANDIDATE_Q2_GREEN_RESPONSE_NAMES_SERIALIZED": {"const": true},
+        "STRICT_386_CANDIDATE_Q2_GREEN_CAUSAL_SUPPORT_CERTIFIED": {"const": true},
+        "STRICT_386_CANDIDATE_Q2_GREEN_RESPONSE_IDENTITY_VERIFIED": {"const": true},
+        "STRICT_386_CANDIDATE_Q2_GREEN_FOUNDATIONS_STRATIFIED": {"const": true},
+        "STRICT_386_AUTHORITATIVE_Q2_GREEN_COMPATIBILITY_CERTIFIED": {"const": false},
+        "STRICT_386_RECURSIVE_NONLINEAR_GREEN_TREES_CERTIFIED": {"const": false},
+        "CLASSICAL_IMPORT_GATE_PASSED": {"const": false},
+        "HADAMARD_STATE_CONSTRUCTED": {"const": false},
+        "RENORMALIZED_LORENTZIAN_PRODUCTS": {"const": false},
+        "QME_RESTORED": {"const": false},
+        "RESIDUAL_TRANSFERRED": {"const": false},
+        "LORENTZIAN_QUANTUM_THEORY": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "does_not_establish": {"type": "array", "minItems": 8, "items": {"type": "string"}},
+    "next_gate": {"type": "string", "minLength": 1},
+    "canonical_hashes": {
+      "type": "object",
+      "minProperties": 9,
+      "additionalProperties": {"$ref": "#/$defs/sha256"}
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["inputs"],
+      "properties": {
+        "inputs": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/provenance"}}
+      },
+      "additionalProperties": false
+    },
+    "independent_checker": {"type": "object"},
+    "human_report": {"type": "string", "minLength": 1}
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "git_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "response": {
+      "type": "object",
+      "required": ["sign", "orientation", "formula", "name", "input_space", "output_space", "well_defined", "continuous_bilinear", "support", "canonical_name_sha256"],
+      "properties": {
+        "sign": {"enum": ["plus", "minus"]},
+        "orientation": {"type": "string"},
+        "formula": {"type": "string"},
+        "name": {"type": "object"},
+        "input_space": {"type": "string"},
+        "output_space": {"type": "string"},
+        "well_defined": {"const": true},
+        "continuous_bilinear": {"const": true},
+        "support": {"type": "string"},
+        "canonical_name_sha256": {"$ref": "#/$defs/sha256"}
+      },
+      "additionalProperties": false
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["path", "result_or_artifact_id", "sha256", "role"],
+      "properties": {
+        "path": {"type": "string"},
+        "result_or_artifact_id": {"type": "string"},
+        "sha256": {"$ref": "#/$defs/sha256"},
+        "role": {"type": "string"}
+      },
+      "additionalProperties": false
+    }
+  }
+}

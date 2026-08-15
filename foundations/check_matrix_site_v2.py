@@ -17,11 +17,12 @@ VIABILITY = ROOT / "foundations/site/viability.json"
 ASSEMBLIES = ROOT / "foundations/site/assemblies.json"
 CUBE = ROOT / "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V15.json"
 LADDER = ROOT / "foundations/results/FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V2.json"
-COMPLETION_ATLAS = ROOT / "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V17.json"
+COMPLETION_ATLAS = ROOT / "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V18.json"
 COMPLETION_GREEN_ACTION_NAME = ROOT / "quantum-weyl/classical_import/certificates/STRICT_386_GRAPH_GREEN_ACTION_NAME_V1.json"
 COMPLETION_UNARY_CAUSAL_SNAPSHOT = ROOT / "quantum-weyl/classical_import/certificates/STRICT_386_UNARY_CAUSAL_COMMON_SNAPSHOT_V1.json"
 COMPLETION_FULL_D = ROOT / "quantum-weyl/classical_import/certificates/STRICT_386_FULL_D_ACTION_V1.json"
 COMPLETION_Q2_PREFLIGHT = ROOT / "quantum-weyl/classical_import/certificates/STRICT_386_STABILIZED_Q2_LIFT_PREFLIGHT_V1.json"
+COMPLETION_Q2_GREEN = ROOT / "quantum-weyl/classical_import/certificates/STRICT_386_STABILIZED_Q2_GREEN_COMPOSITION_PREFLIGHT_V1.json"
 COMPLETION_GATE_V7 = ROOT / "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V7_RECONCILIATION.json"
 STATUSES = {"LOCAL_RESULT", "LITERATURE_RESULT", "PIECES_ONLY", "PRIORITY_GAP", "REVIEWED_GAP", "NOT_MAPPED"}
 MIGRATIONS = {"EXACT_PARENT_TRANSFER", "CAPABILITY_QUALIFIED", "REVIEWED_OVERLAY", "REVIEWED_NO_TRANSFER", "REVIEWED_CHILD_GAP", "DIRECT_COORDINATE_REVIEW", "NOT_REVIEWED"}
@@ -44,7 +45,7 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
     data = load(DATA) if data is None else data
     cube, ladder, completion_source, result, manifest, viability, assemblies = load(CUBE), load(LADDER), load(COMPLETION_ATLAS), load(RESULT), load(MANIFEST), load(VIABILITY), load(ASSEMBLIES)
     green_source, unary_causal_source = load(COMPLETION_GREEN_ACTION_NAME), load(COMPLETION_UNARY_CAUSAL_SNAPSHOT)
-    full_d_source, q2_preflight_source, gate_v7_source = load(COMPLETION_FULL_D), load(COMPLETION_Q2_PREFLIGHT), load(COMPLETION_GATE_V7)
+    full_d_source, q2_preflight_source, q2_green_source, gate_v7_source = load(COMPLETION_FULL_D), load(COMPLETION_Q2_PREFLIGHT), load(COMPLETION_Q2_GREEN), load(COMPLETION_GATE_V7)
     errors: list[str] = []
     axes = {x.get("id"): x for x in data.get("axes", [])}
     keys = {axis_id: [x.get("id") for x in axes.get(axis_id, {}).get("keys", [])] for axis_id in ("FOUNDATION", "CARRIER", "REFINED_OBLIGATION")}
@@ -162,12 +163,12 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
         errors.append("Lorentzian completion atlas projection")
     if len(completion.get("branches", [])) != 7 or len(completion.get("stages", [])) != 11 or sum(len(item.get("stages", [])) for item in completion.get("branches", [])) != 77:
         errors.append("Lorentzian completion branch/stage closure")
-    if len(completion.get("route_selection", [])) != 8 or len(completion.get("berger_h26_c26_decision_chain", [])) != 11:
+    if len(completion.get("route_selection", [])) != 9 or len(completion.get("berger_h26_c26_decision_chain", [])) != 11:
         errors.append("Lorentzian completion route/decision closure")
     completion_flags = completion.get("claim_flags", {})
     if completion_flags.get("general_noncone_104_row_no_go") is not False or completion_flags.get("lorentzian_full_theory_certified") is not False:
         errors.append("Lorentzian completion fail-closed boundary")
-    if completion.get("result_id") != "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V17":
+    if completion.get("result_id") != "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V18":
         errors.append("Lorentzian completion atlas version")
     transport = completion.get("strict_causal_sign_transport", {})
     if transport.get("full_dimension") != 386 or transport.get("positive_signs") != 381 or transport.get("negative_signs") != 5 or transport.get("causal_stage_preserved") is not True:
@@ -315,16 +316,33 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
         errors.append("strict Gate-V7 projection")
     if (gate_v7.get("transitive_provenance_files_checked"), gate_v7.get("transitive_provenance_drifted_files")) != (23, 5) or gate_v7.get("candidate_q2_hash_accepted") is not False:
         errors.append("strict Gate-V7 drift/boundary")
+    q2_green = completion.get("strict_q2_green_composition_preflight", {})
+    if (q2_green.get("result_id"), q2_green.get("carrier_rows"), q2_green.get("basis_match"), q2_green.get("pairing_match"), q2_green.get("graph_q1_match"), q2_green.get("causal_orientations_composed")) != (q2_green_source.get("result_id"), 386, True, True, True, 2):
+        errors.append("strict candidate q2/Green carrier projection")
+    if (q2_green.get("response_identity_defects"), q2_green.get("causal_difference_identity_defects"), q2_green.get("per_input_derivative_order_bound"), q2_green.get("total_derivative_order_bound")) != (0, 0, 10, 13):
+        errors.append("strict candidate q2/Green response replay")
+    if q2_green.get("plus_response_name_sha256") != q2_green_source.get("canonical_hashes", {}).get("plus_response_name_sha256") or q2_green.get("minus_response_name_sha256") != q2_green_source.get("canonical_hashes", {}).get("minus_response_name_sha256"):
+        errors.append("strict candidate q2/Green name binding")
+    if q2_green.get("completed_infinite_spaces_required") is not True or q2_green.get("new_choice_beyond_green_theorem") is not False or q2_green.get("weakest_complete_foundational_base") != "NOT_ESTABLISHED":
+        errors.append("strict candidate q2/Green foundations boundary")
+    if q2_green.get("candidate_only") is not True or q2_green.get("authoritative_q2_green_compatibility") is not False or q2_green.get("recursive_nonlinear_green_trees") is not False:
+        errors.append("strict candidate q2/Green authority/recursion firewall")
     if completion_flags.get("strict_386_full_local_d_action_certified") is not True or completion_flags.get("strict_386_d_q1_commutator_replayed") is not True or completion_flags.get("strict_386_d_formal_skew_adjoint_replayed") is not True or completion_flags.get("strict_386_unary_causal_d_scoped_snapshot_accepted") is not True:
         errors.append("strict V16 D successor flags")
     if completion_flags.get("strict_386_stabilized_q2_candidate_certified") is not True or completion_flags.get("strict_386_stabilized_d_q2_derivation_verified") is not True:
         errors.append("strict V17 candidate-q2 flags")
+    if completion_flags.get("strict_386_candidate_first_nonlinear_causal_response_certified") is not True or completion_flags.get("strict_386_candidate_q2_green_response_identity_verified") is not True or completion_flags.get("strict_386_q2_green_foundations_stratified") is not True:
+        errors.append("strict V18 q2/Green successor flags")
+    if completion_flags.get("strict_386_authoritative_q2_green_compatibility_certified") is not False or completion_flags.get("strict_386_recursive_nonlinear_green_trees_certified") is not False:
+        errors.append("strict V18 q2/Green promotion firewall")
     if completion_flags.get("strict_386_authoritative_full_q2_imported") is not False or completion_flags.get("strict_386_candidate_theory_identity_certified") is not False or completion_flags.get("strict_386_full_carrier_q2_certified") is not False or completion_flags.get("strict_386_d_q2_derivation_replayed") is not False or completion_flags.get("strict_pure_weyl_classical_gate_passed") is not False:
         errors.append("strict V17 authoritative q2/Gate firewall")
     if completion.get("route_selection", [{}])[0].get("route") != "STRICT_386_AUTHORITATIVE_Q2_IDENTITY":
-        errors.append("strict V17 route frontier")
+        errors.append("strict V18 route frontier")
+    if completion.get("route_selection", [{}, {}])[1].get("route") != "STRICT_RECURSIVE_CAUSAL_TREE_DOMAINS":
+        errors.append("strict V18 recursive-domain frontier")
     result_flags = result.get("claim_flags", {})
-    if result_flags.get("strict_graph_green_names_exposed") is not True or result_flags.get("strict_unary_causal_snapshot_exposed") is not True or result_flags.get("strict_full_d_action_exposed") is not True or result_flags.get("strict_d_q1_replay_exposed") is not True or result_flags.get("strict_stabilized_q2_candidate_exposed") is not True or result_flags.get("strict_stabilized_d_q2_derivation_exposed") is not True or result_flags.get("strict_authoritative_full_carrier_q2_exposed") is not False or result_flags.get("strict_full_carrier_q2_exposed") is not False or result_flags.get("strict_classical_gate_a_passed") is not False:
+    if result_flags.get("strict_graph_green_names_exposed") is not True or result_flags.get("strict_unary_causal_snapshot_exposed") is not True or result_flags.get("strict_full_d_action_exposed") is not True or result_flags.get("strict_d_q1_replay_exposed") is not True or result_flags.get("strict_stabilized_q2_candidate_exposed") is not True or result_flags.get("strict_stabilized_d_q2_derivation_exposed") is not True or result_flags.get("strict_candidate_q2_green_first_response_exposed") is not True or result_flags.get("strict_candidate_q2_green_foundations_exposed") is not True or result_flags.get("strict_authoritative_q2_green_compatibility_exposed") is not False or result_flags.get("strict_recursive_nonlinear_green_trees_exposed") is not False or result_flags.get("strict_authoritative_full_carrier_q2_exposed") is not False or result_flags.get("strict_full_carrier_q2_exposed") is not False or result_flags.get("strict_classical_gate_a_passed") is not False:
         errors.append("site completion exposure flags")
     if viability.get("source_atlas_digest") != data.get("canonical_digest") or viability.get("canonical_digest") != result.get("independent_checker", {}).get("expected_viability_digest"):
         errors.append("theory viability source/digest pin")

@@ -896,7 +896,7 @@
       "lifecycle": "VERIFIED_NAVIGATION_ARTIFACT",
       "path": "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json",
       "result_id": "FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2",
-      "sha256": "6837ce75f9b483f4e777d1f87c51d12e4f363e9886c67d0ccba189c2e6985982"
+      "sha256": "29ad25830fca59d742f7b581776507c0926f7b83bad322142ed08cff4bb2a51e"
     },
     "finite_bv": {
       "dependency_tags": [
@@ -1066,6 +1066,18 @@
       "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V17.json",
       "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V17",
       "sha256": "69c0ed2f87cff195ecdf58a2d873c39a745e62d093aa69cbb8e3fb53cd070145"
+    },
+    "lorentzian_weyl_bv_completion_atlas_v18": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL",
+        "REDUCED-MODE",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "lifecycle": "CLASSIFIED",
+      "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V18.json",
+      "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V18",
+      "sha256": "1646208c095c513877e2a86c04d31b04582206f108be40e762fa5dbdfde5f520"
     },
     "lorentzian_weyl_bv_completion_atlas_v4": {
       "dependency_tags": [
@@ -1273,6 +1285,16 @@
       "result_id": "STRICT_386_LOCAL_SDR_COMPONENT_MAPS_V1",
       "sha256": "f9da17b642571442a5785186ed587a7244e7549b57e3712ca01588381c88017f"
     },
+    "strict_386_stabilized_q2_green_composition_preflight": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "lifecycle": "CLASSIFIED",
+      "path": "quantum-weyl/classical_import/certificates/STRICT_386_STABILIZED_Q2_GREEN_COMPOSITION_PREFLIGHT_V1.json",
+      "result_id": "STRICT_386_STABILIZED_Q2_GREEN_COMPOSITION_PREFLIGHT_V1",
+      "sha256": "d9ea0e618ff31a92dcb83459d0b0b491783569b0b25523776af92fe02fe4bfd5"
+    },
     "strict_386_stabilized_q2_lift_preflight": {
       "dependency_tags": [
         "LOCAL-ALGEBRAIC",
@@ -1350,10 +1372,10 @@
       "lifecycle": "VERIFIED_NAVIGATION_ARTIFACT",
       "path": "foundations/results/FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1.json",
       "result_id": "FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1",
-      "sha256": "a87f9671510fdca2a98730b32af455242c7f5d52b4f351d46db8e1f1b2b86b78"
+      "sha256": "5695d771795211ec0ec497f101edac8d7621d35cb75f4f1d6bd00c5319866c69"
     }
   },
-  "canonical_digest": "78b852f1bd368f95bfe70dad5629e83accdf066a61f203b0b20294d99ead5d41",
+  "canonical_digest": "55b19e27bd0fd3a86bbd2116ea072ef9a2cef7c764ab465b7ecd914f21f0e677",
   "claim_flags": {
     "atlas_exhaustive": false,
     "axes_independent_proved": false,
@@ -1514,6 +1536,11 @@
     "static_atlas_appendix_generated": true,
     "strict_386_all_operator_component_adjoints_replayed": false,
     "strict_386_authoritative_full_q2_imported": false,
+    "strict_386_authoritative_q2_green_compatibility_certified": false,
+    "strict_386_candidate_first_nonlinear_causal_response_certified": true,
+    "strict_386_candidate_q2_green_causal_support_certified": true,
+    "strict_386_candidate_q2_green_response_identity_verified": true,
+    "strict_386_candidate_q2_green_same_carrier_verified": true,
     "strict_386_candidate_theory_identity_certified": false,
     "strict_386_canonical_shear_bv_canonicality_replayed": true,
     "strict_386_canonical_shear_component_jets_serialized": true,
@@ -1543,6 +1570,8 @@
     "strict_386_local_sdr_cyclicity_replayed": true,
     "strict_386_local_sdr_identities_replayed": true,
     "strict_386_pairing_suspension_bridge_certified": true,
+    "strict_386_q2_green_foundations_stratified": true,
+    "strict_386_recursive_nonlinear_green_trees_certified": false,
     "strict_386_represented_green_actions_serialized": true,
     "strict_386_stabilized_d_q2_derivation_verified": true,
     "strict_386_stabilized_q1_q2_identity_verified": true,
@@ -2141,6 +2170,19 @@
       ],
       "statement": "Gate V7 records the stabilized q2 hash as an unaccepted candidate and reclassifies strict-carrier D/q2 as supporting evidence rather than a freeze promotion. Eleven of twenty exports and eight of ten freeze checks remain receiver-verified in bounded scopes; one further check is supporting evidence, one is blocked, and zero of seven authoritative hashes is accepted. M2 is now narrowed to source-certified theory identity: import the intended full 386-row nonlinear q2 or a cyclic L-infinity equivalence to the exact stabilization. Five of 23 inherited provenance records drift and remain explicitly recorded without rebinding. Atlas V17 preserves all 77 cells and ranks authoritative q2 identity first. Gate A, Hadamard, renormalized products, QME restoration and residual transfer remain open.",
       "status": "GATE_V7_CANDIDATE_IMPORT_BOUNDARY_CERTIFIED_AUTHORITATIVE_Q2_AND_GATE_A_OPEN"
+    },
+    {
+      "authorities": [
+        "strict_386_stabilized_q2_green_composition_preflight",
+        "lorentzian_weyl_bv_completion_atlas_v18"
+      ],
+      "claim_id": "RF-45-STRICT-WEYL-CANDIDATE-Q2-GREEN-FIRST-RESPONSE",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "statement": "The stabilized q2 candidate and accepted unary-causal snapshot agree exactly on the 386-row basis, odd pairing, and graph-q1 hashes. For two compactly supported smooth inputs, the finite-order local q2 output is again compactly supported, so both represented Green orientations define continuous bilinear first-response names B_plus/minus=Lambda_plus/minus q2_candidate with the corresponding causal-support bounds. The Green homotopy and arity-two master identities imply an exact response identity, and B_plus-B_minus is q1-compatible, with zero structural defects. This is candidate-scoped first response, not authoritative q2/Green compatibility or recursive perturbation theory. The proof stratifies PRA-bounded finite exact algebra from completed LF/Frechet spaces, countable Hodge-projector convergence, and imported normally-hyperbolic Green theory; the weakest analytic base remains uncalibrated. No Hadamard, renormalized-product, QME, residual-transfer or Lorentzian-quantum state is promoted.",
+      "status": "CANDIDATE_FIRST_NONLINEAR_CAUSAL_RESPONSE_CERTIFIED_AUTHORITY_AND_RECURSION_OPEN"
     }
   ],
   "created": "2026-08-15",
@@ -2339,19 +2381,19 @@
   ],
   "paper": {
     "appendix": {
-      "assembly_source_canonical_digest": "d7b636188f360c7d71f4944ce476229bbeff5985e812aaee361c2ef3135f39d1",
+      "assembly_source_canonical_digest": "81c317b3729fa310db48576b47646296c035187b65bc18aab4b00582eec49d18",
       "assembly_source_path": "foundations/site/assemblies.json",
-      "assembly_source_sha256": "a87f9671510fdca2a98730b32af455242c7f5d52b4f351d46db8e1f1b2b86b78",
+      "assembly_source_sha256": "5695d771795211ec0ec497f101edac8d7621d35cb75f4f1d6bd00c5319866c69",
       "generator_path": "paper/generate_21_reverse_foundations_appendices.py",
-      "generator_sha256": "8c9915cea88086834923d2ee615eab9cbc737d06e41682a87fe990b690bcf2d2",
+      "generator_sha256": "e881231cb807852f4d002a77cdae068c49e65fcd0ee2c63d9ed1b24102fc85e7",
       "path": "paper/21-reverse-foundations-of-physics-appendices.tex",
-      "sha256": "5e919d30cbaa1e71c7ebf7f8ec40a773802e26c450985fe0c669ebedb4c1f494",
-      "source_canonical_digest": "60a2015b58b3397a8af2fe8206b01c1e0e8927c59f8a4bf1fcb7ecd789081743",
+      "sha256": "4052b08d456a0163da63c252b3e7456cb44b16bcb44f0774bf39bd3b6aadc16c",
+      "source_canonical_digest": "bd5293a5f3f18041d33260af45680f0cbcb066a65364e4a48d1b321f780097ed",
       "source_path": "foundations/site/data.json",
-      "source_sha256": "583b30045f6af308da713347549ead963edb2d0124691d1efaf624fddab63f82"
+      "source_sha256": "6a8888735668a319bf3e3dcb1ac408c707159458f752cc7f2bacc13ef99a3893"
     },
     "path": "paper/21-reverse-foundations-of-physics.tex",
-    "sha256": "b42c3f3e412e9d9f0244911c70be21d6a4cf4eaf42c4e721509de509b3a056ec"
+    "sha256": "c226d54a4d2d6fe9c843a663512ed50e6b6086233f3025778b010550ebfa2b21"
   },
   "result_id": "PAPER21_REVERSE_FOUNDATIONS_INTRODUCTION_V1",
   "result_kind": "PROGRAMME_SYNTHESIS_AND_TYPED_CASE_STUDY_MAP",

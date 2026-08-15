@@ -135,6 +135,9 @@ This site does not establish:
 - a variable-coefficient, curved-spacetime, Weyl, or metric-BV Green operator from the scalar 1+1 benchmark
 - an effective strict 386-row Green solver or serialized distribution-kernel bytes
 - that the exact stabilized-q2 candidate is the authoritative nonlinear classical Weyl BV extension
+- authoritative q2/Green compatibility from candidate first-response compatibility
+- recursive nonlinear Green trees or closure when causal outputs re-enter q2
+- a weakest-base or choice-free proof of the infinite analytic Green layer
 - a source-certified cyclic L-infinity equivalence or accepted q2 Gate-A hash
 - a D-Cartan homotopy or physical charge classification from the stabilized D/q2 derivation
 - the authoritative twenty-export, seven-hash classical Gate A from the scoped candidate evidence

@@ -1,0 +1,59 @@
+{
+  "receipt_id": "STRICT_386_STABILIZED_Q2_GREEN_COMPOSITION_PREFLIGHT_V1_TIER_RECEIPT",
+  "result_id": "STRICT_386_STABILIZED_Q2_GREEN_COMPOSITION_PREFLIGHT_V1",
+  "created": "2026-08-15",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "scope": "Candidate-scoped exact composition of the stabilized 386-row binary operation with both represented Green homotopies, including carrier equality, causal support, the first-response identity, foundation stratification and fail-closed authority and recursive-domain boundaries.",
+  "test_tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "elapsed_seconds": 0.2,
+      "commands": [
+        "python3 -m py_compile <explicit q2/Green builder, checker, verifier and test paths>",
+        "python3 -m json.tool <explicit q2/Green schema, certificate and receipt paths>",
+        "git diff --check -- <explicit q2/Green paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 0.4,
+      "commands": [
+        "python3 quantum-weyl/classical_import/build_strict_386_stabilized_q2_green_composition_preflight.py --check",
+        "python3 quantum-weyl/classical_import/check_strict_386_stabilized_q2_green_composition_preflight.py",
+        "python3 quantum-weyl/classical_import/verify_strict_386_stabilized_q2_green_composition_preflight.py",
+        "python3 -m unittest quantum-weyl/classical_import/tests/test_strict_386_stabilized_q2_green_composition_preflight.py"
+      ],
+      "checks": {
+        "carrier_rows": 386,
+        "green_orientations": 2,
+        "response_identity_defects": 0,
+        "causal_difference_defects": 0,
+        "mutation_tests": "11/11 PASS",
+        "authoritative_q2_identity": "NOT_ESTABLISHED",
+        "recursive_causal_tree_domains": "NOT_ESTABLISHED"
+      }
+    },
+    "tier_2": {
+      "status": "PASS",
+      "elapsed_seconds": 0.8,
+      "commands": [
+        "python3 quantum-weyl/classical_import/check_strict_386_stabilized_q2_lift_preflight.py",
+        "python3 quantum-weyl/classical_import/check_strict_386_unary_causal_common_snapshot.py",
+        "python3 quantum-weyl/classical_import/check_strict_386_stabilized_q2_green_composition_preflight.py"
+      ],
+      "criterion": "The exact candidate and accepted unary-causal carrier were independently replayed before checking their composition; no producer rerun was counted as verification."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No classical freeze, lifecycle promotion, shared core algebra change, Hadamard state, QME result or Lorentzian quantum completion was claimed."
+    }
+  },
+  "artifact_sha256": {
+    "quantum-weyl/classical_import/certificates/STRICT_386_STABILIZED_Q2_GREEN_COMPOSITION_PREFLIGHT_V1.json": "d9ea0e618ff31a92dcb83459d0b0b491783569b0b25523776af92fe02fe4bfd5",
+    "quantum-weyl/classical_import/REPORT_STRICT_386_STABILIZED_Q2_GREEN_COMPOSITION_PREFLIGHT_V1.md": "b0071f72e10c6ee0d5a1a4ed3159ba2afbe6cd27d03bdb690c3cf6072a9bb020"
+  },
+  "claim_boundary": "This establishes two candidate-scoped first nonlinear causal response names and their exact structural identities. It does not establish authoritative q2 identity, recursive nonlinear closure, a Hadamard state, renormalized Lorentzian products, QME restoration, residual transfer or a quantum theory."
+}
