@@ -1,0 +1,66 @@
+{
+  "receipt_id": "STRICT_PORTABLE_LOCAL_Q1_AST_V1_TIER_RECEIPT",
+  "result_id": "STRICT_PORTABLE_LOCAL_Q1_AST_V1",
+  "created": "2026-08-15",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "base_commit": "b06af47e",
+  "content_hashes": {
+    "quantum-weyl/classical_import/local_q1_bach_flat.py": "cbc9fba8989dc78c1d843aa68bfcf83b2263da5ac688c039cd1a6553fcb8f674",
+    "quantum-weyl/classical_import/build_strict_portable_local_q1_ast.py": "d0d7152e3d6dd211c6024489117e0c988310450c4f1fe331bbe829c6ae1636d9",
+    "quantum-weyl/classical_import/check_strict_portable_local_q1_ast.py": "d04be8d4951fcdf69e34fb5af5a813c42ebd8e39ec023fe8e13866fad9179ef4",
+    "quantum-weyl/classical_import/verify_strict_portable_local_q1_ast.py": "b22c87e50ce939d2b86c6cd3c6f85ba723f1fc323c75e2a9f238bf5e45b7bcf9",
+    "quantum-weyl/classical_import/schema/strict-portable-local-q1-ast-v1.schema.json": "ddd113f428d9af6f0bb6a61a67534a7dfe47b9cce9330b922b0c6ea70ba966c0",
+    "quantum-weyl/classical_import/certificates/STRICT_PORTABLE_LOCAL_Q1_AST_V1.json": "bcd78cf73f494517304f1ae5aedffa48036443a9c45566a94b3ed972de83b338",
+    "quantum-weyl/classical_import/REPORT_STRICT_PORTABLE_LOCAL_Q1_AST_V1.md": "0fdaf5e86d560f5632c9451d46e3eb082d9dd064a03f28660c497147df65cc3b",
+    "quantum-weyl/classical_import/tests/test_strict_portable_local_q1_ast.py": "9925d8bda1b122649835c1f5ac547a6f68266dcb9bec8b9d143b3aa7c5fef16f"
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "python3 -m py_compile quantum-weyl/classical_import/local_q1_bach_flat.py quantum-weyl/classical_import/build_strict_portable_local_q1_ast.py quantum-weyl/classical_import/check_strict_portable_local_q1_ast.py quantum-weyl/classical_import/verify_strict_portable_local_q1_ast.py quantum-weyl/classical_import/tests/test_strict_portable_local_q1_ast.py",
+          "elapsed_seconds": 0.07,
+          "status": "PASS"
+        },
+        {
+          "command": "jq empty quantum-weyl/classical_import/schema/strict-portable-local-q1-ast-v1.schema.json quantum-weyl/classical_import/certificates/STRICT_PORTABLE_LOCAL_Q1_AST_V1.json",
+          "elapsed_seconds": 0.0,
+          "status": "PASS"
+        }
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "build --check; independent checker; schema verifier; 8 focused unittest cases",
+          "elapsed_seconds": 8.8,
+          "status": "PASS",
+          "independent_rail": "reconstructs all five unary components and re-evaluates every nontrivial q1-square composition on cylinder, Minkowski, and Brinkmann five-jets"
+        }
+      ]
+    },
+    "tier_2": {
+      "status": "NOT_REQUIRED",
+      "reason": "The portable Bach AST, six-row q2 ledger, and authoritative minimal BV export are unchanged SHA-pinned inputs; the new result is a downstream unary composition."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "No freeze/tag, release, shared core-algebra change, or quantum lifecycle promotion."
+    }
+  },
+  "advisory_science_forge": {
+    "command": "ci/science-forge-shadow.sh",
+    "elapsed_seconds": 2.23,
+    "status": "ADVISORY_FINDINGS",
+    "findings": [
+      "Forge 0.0.2 stdlib hash mismatch",
+      "bridge audit failed closed at E9118 atomic memory-order literal",
+      "coverage census drift: 1720 certificates versus baseline 976"
+    ]
+  },
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC receipt certifies the five-component Bach-flat strict minimal unary BV complex and q1 squared zero by natural covariance/Noether identities with exact three-background fixtures. It does not establish q1q2, D, pairing, Gate A, Lorentzian causal propagation, Hadamard, QME, positivity, or quantum theory."
+}

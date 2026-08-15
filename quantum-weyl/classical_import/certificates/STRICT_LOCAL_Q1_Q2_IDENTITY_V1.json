@@ -1,0 +1,1720 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema": "strict-local-q1-q2-identity-v1",
+  "result_id": "STRICT_LOCAL_Q1_Q2_IDENTITY_V1",
+  "result_kind": "PORTABLE_SUPPORT_LOCAL_ARITY_TWO_MASTER_IDENTITY",
+  "result_state": "Q1_Q2_ARITY_TWO_IDENTITY_CERTIFIED_D_AND_PAIRING_OPEN",
+  "lifecycle": "CLASSIFIED",
+  "created": "2026-08-15",
+  "repository_base_commit": "b06af47e",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "convention": "suspended-graded-symmetric-factorial-v1",
+  "scope": {
+    "theory": "strict pure-Weyl minimal Diff x Weyl BV theory",
+    "background_class": "smooth nondegenerate four-dimensional Bach-flat pseudo-Riemannian metrics",
+    "carrier": "compactly supported smooth minimal BV sections with external graded-commutative coefficients",
+    "identity": "[q1,q2](x,y)=q1(q2(x,y))+q2(q1(x),y)+(-1)^|x| q2(x,q1(y))=0",
+    "locality": "SUPPORT_LOCAL_POLYDIFFERENTIAL",
+    "coefficient_field": "Q for exact fixtures; tensor-natural real smooth operator semantics",
+    "maximum_metric_fixture_jet_order": 5,
+    "support_rule": "each composed output support lies in the intersection of the two input supports"
+  },
+  "channel_inventory": {
+    "channel_count": 18,
+    "composable_path_count": 51,
+    "q1_component_count": 5,
+    "ordered_q2_component_count": 22,
+    "all_q1_components_used": true,
+    "all_ordered_q2_components_used": true,
+    "channels": [
+      {
+        "output": "c_star",
+        "inputs": [
+          "c",
+          "h_star"
+        ],
+        "paths": [
+          {
+            "kind": "post",
+            "q1_component_id": "q1_cstar_hstar",
+            "q2_component_id": "q2_hstar_chstar__forward",
+            "multiplier": 1
+          },
+          {
+            "kind": "pre_left",
+            "q1_component_id": "q1_h_c",
+            "q2_component_id": "q2_cstar_hhstar__forward",
+            "multiplier": 1
+          },
+          {
+            "kind": "pre_right",
+            "q1_component_id": "q1_cstar_hstar",
+            "q2_component_id": "q2_cstar_ccstar__forward",
+            "multiplier": -1
+          }
+        ]
+      },
+      {
+        "output": "c_star",
+        "inputs": [
+          "h",
+          "h"
+        ],
+        "paths": [
+          {
+            "kind": "post",
+            "q1_component_id": "q1_cstar_hstar",
+            "q2_component_id": "q2_hstar_hh",
+            "multiplier": 1
+          },
+          {
+            "kind": "pre_right",
+            "q1_component_id": "q1_hstar_h",
+            "q2_component_id": "q2_cstar_hhstar__forward",
+            "multiplier": 1
+          },
+          {
+            "kind": "pre_left",
+            "q1_component_id": "q1_hstar_h",
+            "q2_component_id": "q2_cstar_hhstar__reverse",
+            "multiplier": 1
+          }
+        ]
+      },
+      {
+        "output": "c_star",
+        "inputs": [
+          "h_star",
+          "c"
+        ],
+        "paths": [
+          {
+            "kind": "post",
+            "q1_component_id": "q1_cstar_hstar",
+            "q2_component_id": "q2_hstar_chstar__reverse",
+            "multiplier": -1
+          },
+          {
+            "kind": "pre_right",
+            "q1_component_id": "q1_h_c",
+            "q2_component_id": "q2_cstar_hhstar__reverse",
+            "multiplier": -1
+          },
+          {
+            "kind": "pre_left",
+            "q1_component_id": "q1_cstar_hstar",
+            "q2_component_id": "q2_cstar_ccstar__reverse",
+            "multiplier": 1
+          }
+        ]
+      },
+      {
+        "output": "c_star",
+        "inputs": [
+          "h_star",
+          "omega"
+        ],
+        "paths": [
+          {
+            "kind": "post",
+            "q1_component_id": "q1_cstar_hstar",
+            "q2_component_id": "q2_hstar_omegahstar__reverse",
+            "multiplier": -1
+          },
+          {
+            "kind": "pre_right",
+            "q1_component_id": "q1_h_omega",
+            "q2_component_id": "q2_cstar_hhstar__reverse",
+            "multiplier": -1
+          },
+          {
+            "kind": "pre_left",
+            "q1_component_id": "q1_omegastar_hstar",
+            "q2_component_id": "q2_cstar_omegaomegastar__reverse",
+            "multiplier": 1
+          }
+        ]
+      },
+      {
+        "output": "c_star",
+        "inputs": [
+          "omega",
+          "h_star"
+        ],
+        "paths": [
+          {
+            "kind": "post",
+            "q1_component_id": "q1_cstar_hstar",
+            "q2_component_id": "q2_hstar_omegahstar__forward",
+            "multiplier": 1
+          },
+          {
+            "kind": "pre_left",
+            "q1_component_id": "q1_h_omega",
+            "q2_component_id": "q2_cstar_hhstar__forward",
+            "multiplier": 1
+          },
+          {
+            "kind": "pre_right",
+            "q1_component_id": "q1_omegastar_hstar",
+            "q2_component_id": "q2_cstar_omegaomegastar__forward",
+            "multiplier": -1
+          }
+        ]
+      },
+      {
+        "output": "h",
+        "inputs": [
+          "c",
+          "c"
+        ],
+        "paths": [
+          {
+            "kind": "post",
+            "q1_component_id": "q1_h_c",
+            "q2_component_id": "q2_c_cc",
+            "multiplier": 1
+          },
+          {
+            "kind": "pre_right",
+            "q1_component_id": "q1_h_c",
+            "q2_component_id": "q2_h_ch__forward",
+            "multiplier": -1
+          },
+          {
+            "kind": "pre_left",
+            "q1_component_id": "q1_h_c",
+            "q2_component_id": "q2_h_ch__reverse",
+            "multiplier": 1
+          }
+        ]
+      },
+      {
+        "output": "h",
+        "inputs": [
+          "c",
+          "omega"
+        ],
+        "paths": [
+          {
+            "kind": "post",
+            "q1_component_id": "q1_h_omega",
+            "q2_component_id": "q2_omega_comega__forward",
+            "multiplier": 1
+          },
+          {
+            "kind": "pre_right",
+            "q1_component_id": "q1_h_omega",
+            "q2_component_id": "q2_h_ch__forward",
+            "multiplier": -1
+          },
+          {
+            "kind": "pre_left",
+            "q1_component_id": "q1_h_c",
+            "q2_component_id": "q2_h_omegah__reverse",
+            "multiplier": 1
+          }
+        ]
+      },
+      {
+        "output": "h",
+        "inputs": [
+          "omega",
+          "c"
+        ],
+        "paths": [
+          {
+            "kind": "post",
+            "q1_component_id": "q1_h_omega",
+            "q2_component_id": "q2_omega_comega__reverse",
+            "multiplier": -1
+          },
+          {
+            "kind": "pre_left",
+            "q1_component_id": "q1_h_omega",
+            "q2_component_id": "q2_h_ch__reverse",
+            "multiplier": 1
+          },
+          {
+            "kind": "pre_right",
+            "q1_component_id": "q1_h_c",
+            "q2_component_id": "q2_h_omegah__forward",
+            "multiplier": -1
+          }
+        ]
+      },
+      {
+        "output": "h",
+        "inputs": [
+          "omega",
+          "omega"
+        ],
+        "paths": [
+          {
+            "kind": "pre_right",
+            "q1_component_id": "q1_h_omega",
+            "q2_component_id": "q2_h_omegah__forward",
+            "multiplier": -1
+          },
+          {
+            "kind": "pre_left",
+            "q1_component_id": "q1_h_omega",
+            "q2_component_id": "q2_h_omegah__reverse",
+            "multiplier": 1
+          }
+        ]
+      },
+      {
+        "output": "h_star",
+        "inputs": [
+          "c",
+          "h"
+        ],
+        "paths": [
+          {
+            "kind": "post",
+            "q1_component_id": "q1_hstar_h",
+            "q2_component_id": "q2_h_ch__forward",
+            "multiplier": 1
+          },
+          {
+            "kind": "pre_left",
+            "q1_component_id": "q1_h_c",
+            "q2_component_id": "q2_hstar_hh",
+            "multiplier": 1
+          },
+          {
+            "kind": "pre_right",
+            "q1_component_id": "q1_hstar_h",
+            "q2_component_id": "q2_hstar_chstar__forward",
+            "multiplier": -1
+          }
+        ]
+      },
+      {
+        "output": "h_star",
+        "inputs": [
+          "h",
+          "c"
+        ],
+        "paths": [
+          {
+            "kind": "post",
+            "q1_component_id": "q1_hstar_h",
+            "q2_component_id": "q2_h_ch__reverse",
+            "multiplier": 1
+          },
+          {
+            "kind": "pre_right",
+            "q1_component_id": "q1_h_c",
+            "q2_component_id": "q2_hstar_hh",
+            "multiplier": 1
+          },
+          {
+            "kind": "pre_left",
+            "q1_component_id": "q1_hstar_h",
+            "q2_component_id": "q2_hstar_chstar__reverse",
+            "multiplier": -1
+          }
+        ]
+      },
+      {
+        "output": "h_star",
+        "inputs": [
+          "h",
+          "omega"
+        ],
+        "paths": [
+          {
+            "kind": "post",
+            "q1_component_id": "q1_hstar_h",
+            "q2_component_id": "q2_h_omegah__reverse",
+            "multiplier": 1
+          },
+          {
+            "kind": "pre_right",
+            "q1_component_id": "q1_h_omega",
+            "q2_component_id": "q2_hstar_hh",
+            "multiplier": 1
+          },
+          {
+            "kind": "pre_left",
+            "q1_component_id": "q1_hstar_h",
+            "q2_component_id": "q2_hstar_omegahstar__reverse",
+            "multiplier": -1
+          }
+        ]
+      },
+      {
+        "output": "h_star",
+        "inputs": [
+          "omega",
+          "h"
+        ],
+        "paths": [
+          {
+            "kind": "post",
+            "q1_component_id": "q1_hstar_h",
+            "q2_component_id": "q2_h_omegah__forward",
+            "multiplier": 1
+          },
+          {
+            "kind": "pre_left",
+            "q1_component_id": "q1_h_omega",
+            "q2_component_id": "q2_hstar_hh",
+            "multiplier": 1
+          },
+          {
+            "kind": "pre_right",
+            "q1_component_id": "q1_hstar_h",
+            "q2_component_id": "q2_hstar_omegahstar__forward",
+            "multiplier": -1
+          }
+        ]
+      },
+      {
+        "output": "omega_star",
+        "inputs": [
+          "c",
+          "h_star"
+        ],
+        "paths": [
+          {
+            "kind": "post",
+            "q1_component_id": "q1_omegastar_hstar",
+            "q2_component_id": "q2_hstar_chstar__forward",
+            "multiplier": 1
+          },
+          {
+            "kind": "pre_left",
+            "q1_component_id": "q1_h_c",
+            "q2_component_id": "q2_omegastar_hhstar__forward",
+            "multiplier": 1
+          },
+          {
+            "kind": "pre_right",
+            "q1_component_id": "q1_omegastar_hstar",
+            "q2_component_id": "q2_omegastar_comegastar__forward",
+            "multiplier": -1
+          }
+        ]
+      },
+      {
+        "output": "omega_star",
+        "inputs": [
+          "h",
+          "h"
+        ],
+        "paths": [
+          {
+            "kind": "post",
+            "q1_component_id": "q1_omegastar_hstar",
+            "q2_component_id": "q2_hstar_hh",
+            "multiplier": 1
+          },
+          {
+            "kind": "pre_right",
+            "q1_component_id": "q1_hstar_h",
+            "q2_component_id": "q2_omegastar_hhstar__forward",
+            "multiplier": 1
+          },
+          {
+            "kind": "pre_left",
+            "q1_component_id": "q1_hstar_h",
+            "q2_component_id": "q2_omegastar_hhstar__reverse",
+            "multiplier": 1
+          }
+        ]
+      },
+      {
+        "output": "omega_star",
+        "inputs": [
+          "h_star",
+          "c"
+        ],
+        "paths": [
+          {
+            "kind": "post",
+            "q1_component_id": "q1_omegastar_hstar",
+            "q2_component_id": "q2_hstar_chstar__reverse",
+            "multiplier": -1
+          },
+          {
+            "kind": "pre_right",
+            "q1_component_id": "q1_h_c",
+            "q2_component_id": "q2_omegastar_hhstar__reverse",
+            "multiplier": -1
+          },
+          {
+            "kind": "pre_left",
+            "q1_component_id": "q1_omegastar_hstar",
+            "q2_component_id": "q2_omegastar_comegastar__reverse",
+            "multiplier": 1
+          }
+        ]
+      },
+      {
+        "output": "omega_star",
+        "inputs": [
+          "h_star",
+          "omega"
+        ],
+        "paths": [
+          {
+            "kind": "post",
+            "q1_component_id": "q1_omegastar_hstar",
+            "q2_component_id": "q2_hstar_omegahstar__reverse",
+            "multiplier": -1
+          },
+          {
+            "kind": "pre_right",
+            "q1_component_id": "q1_h_omega",
+            "q2_component_id": "q2_omegastar_hhstar__reverse",
+            "multiplier": -1
+          }
+        ]
+      },
+      {
+        "output": "omega_star",
+        "inputs": [
+          "omega",
+          "h_star"
+        ],
+        "paths": [
+          {
+            "kind": "post",
+            "q1_component_id": "q1_omegastar_hstar",
+            "q2_component_id": "q2_hstar_omegahstar__forward",
+            "multiplier": 1
+          },
+          {
+            "kind": "pre_left",
+            "q1_component_id": "q1_h_omega",
+            "q2_component_id": "q2_omegastar_hhstar__forward",
+            "multiplier": 1
+          }
+        ]
+      }
+    ]
+  },
+  "natural_identity_families": [
+    {
+      "family_id": "DIFF_X_WEYL_GAUGE_ACTION_CLOSURE",
+      "output": "h",
+      "channel_count": 4,
+      "channel_ids": [
+        "q1q2__h__c__c",
+        "q1q2__h__c__omega",
+        "q1q2__h__omega__c",
+        "q1q2__h__omega__omega"
+      ],
+      "general_identity": "closure of the semidirect Diff action on metrics and Weyl scalars"
+    },
+    {
+      "family_id": "BACH_EULER_DIFF_X_WEYL_EQUIVARIANCE",
+      "output": "h_star",
+      "channel_count": 4,
+      "channel_ids": [
+        "q1q2__h_star__c__h",
+        "q1q2__h_star__h__c",
+        "q1q2__h_star__h__omega",
+        "q1q2__h_star__omega__h"
+      ],
+      "general_identity": "second Frechet derivative of Diff/Weyl covariance of the natural Bach Euler density"
+    },
+    {
+      "family_id": "DIFFERENTIATED_DIFF_NOETHER_AND_COTANGENT_COVARIANCE",
+      "output": "c_star",
+      "channel_count": 5,
+      "channel_ids": [
+        "q1q2__c_star__c__h_star",
+        "q1q2__c_star__h__h",
+        "q1q2__c_star__h_star__c",
+        "q1q2__c_star__h_star__omega",
+        "q1q2__c_star__omega__h_star"
+      ],
+      "general_identity": "first and second Frechet derivatives of the Diff Noether identity, including cotangent transport"
+    },
+    {
+      "family_id": "DIFFERENTIATED_WEYL_NOETHER_AND_DENSITY_COVARIANCE",
+      "output": "omega_star",
+      "channel_count": 5,
+      "channel_ids": [
+        "q1q2__omega_star__c__h_star",
+        "q1q2__omega_star__h__h",
+        "q1q2__omega_star__h_star__c",
+        "q1q2__omega_star__h_star__omega",
+        "q1q2__omega_star__omega__h_star"
+      ],
+      "general_identity": "first and second Frechet derivatives of the Weyl trace identity, including density transport"
+    }
+  ],
+  "proof_basis": {
+    "status": "CERTIFIED",
+    "argument": [
+      "The imported strict minimal BV vector field is nilpotent on its exact derived-atom calculus.",
+      "The portable q1 and q2 rows are respectively the first and second Taylor coefficients of those same natural Diff x Weyl, Bach Euler, and cotangent/Noether formulas at a Bach-flat base point.",
+      "The arity-two coefficient of Q squared is therefore the four displayed differentiated natural identities; the typed receiver exhausts their 18 channels rather than sampling a subset.",
+      "Exact five-jet evaluations are independent regression witnesses for the serialized signs, ordered-slot orientations, density terms, Hessian normalization, and Leibniz propagation; finite backgrounds are not used as the proof of generality."
+    ],
+    "legacy_matrix_cartan_helper_used": false,
+    "reason": "the local receiver must propagate coordinate derivatives and the Leibniz rule through natural operators"
+  },
+  "exact_receiver": {
+    "engine": "quantum-weyl/classical_import/local_q1_q2_receiver.py",
+    "fixture_records": [
+      {
+        "background": "conformal_cylinder",
+        "left_seed": 11,
+        "right_seed": 23,
+        "channel_count": 18,
+        "path_count": 51,
+        "all_channels_zero": true,
+        "rows": [
+          {
+            "channel_id": "q1q2__c_star__c__h_star",
+            "output": "c_star",
+            "inputs": [
+              "c",
+              "h_star"
+            ],
+            "path_count": 3,
+            "defect": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "defect_zero": true
+          },
+          {
+            "channel_id": "q1q2__c_star__h__h",
+            "output": "c_star",
+            "inputs": [
+              "h",
+              "h"
+            ],
+            "path_count": 3,
+            "defect": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "defect_zero": true
+          },
+          {
+            "channel_id": "q1q2__c_star__h_star__c",
+            "output": "c_star",
+            "inputs": [
+              "h_star",
+              "c"
+            ],
+            "path_count": 3,
+            "defect": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "defect_zero": true
+          },
+          {
+            "channel_id": "q1q2__c_star__h_star__omega",
+            "output": "c_star",
+            "inputs": [
+              "h_star",
+              "omega"
+            ],
+            "path_count": 3,
+            "defect": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "defect_zero": true
+          },
+          {
+            "channel_id": "q1q2__c_star__omega__h_star",
+            "output": "c_star",
+            "inputs": [
+              "omega",
+              "h_star"
+            ],
+            "path_count": 3,
+            "defect": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "defect_zero": true
+          },
+          {
+            "channel_id": "q1q2__h__c__c",
+            "output": "h",
+            "inputs": [
+              "c",
+              "c"
+            ],
+            "path_count": 3,
+            "defect": [
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "defect_zero": true
+          },
+          {
+            "channel_id": "q1q2__h__c__omega",
+            "output": "h",
+            "inputs": [
+              "c",
+              "omega"
+            ],
+            "path_count": 3,
+            "defect": [
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "defect_zero": true
+          },
+          {
+            "channel_id": "q1q2__h__omega__c",
+            "output": "h",
+            "inputs": [
+              "omega",
+              "c"
+            ],
+            "path_count": 3,
+            "defect": [
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "defect_zero": true
+          },
+          {
+            "channel_id": "q1q2__h__omega__omega",
+            "output": "h",
+            "inputs": [
+              "omega",
+              "omega"
+            ],
+            "path_count": 2,
+            "defect": [
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "defect_zero": true
+          },
+          {
+            "channel_id": "q1q2__h_star__c__h",
+            "output": "h_star",
+            "inputs": [
+              "c",
+              "h"
+            ],
+            "path_count": 3,
+            "defect": [
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "defect_zero": true
+          },
+          {
+            "channel_id": "q1q2__h_star__h__c",
+            "output": "h_star",
+            "inputs": [
+              "h",
+              "c"
+            ],
+            "path_count": 3,
+            "defect": [
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "defect_zero": true
+          },
+          {
+            "channel_id": "q1q2__h_star__h__omega",
+            "output": "h_star",
+            "inputs": [
+              "h",
+              "omega"
+            ],
+            "path_count": 3,
+            "defect": [
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "defect_zero": true
+          },
+          {
+            "channel_id": "q1q2__h_star__omega__h",
+            "output": "h_star",
+            "inputs": [
+              "omega",
+              "h"
+            ],
+            "path_count": 3,
+            "defect": [
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "defect_zero": true
+          },
+          {
+            "channel_id": "q1q2__omega_star__c__h_star",
+            "output": "omega_star",
+            "inputs": [
+              "c",
+              "h_star"
+            ],
+            "path_count": 3,
+            "defect": [
+              "0"
+            ],
+            "defect_zero": true
+          },
+          {
+            "channel_id": "q1q2__omega_star__h__h",
+            "output": "omega_star",
+            "inputs": [
+              "h",
+              "h"
+            ],
+            "path_count": 3,
+            "defect": [
+              "0"
+            ],
+            "defect_zero": true
+          },
+          {
+            "channel_id": "q1q2__omega_star__h_star__c",
+            "output": "omega_star",
+            "inputs": [
+              "h_star",
+              "c"
+            ],
+            "path_count": 3,
+            "defect": [
+              "0"
+            ],
+            "defect_zero": true
+          },
+          {
+            "channel_id": "q1q2__omega_star__h_star__omega",
+            "output": "omega_star",
+            "inputs": [
+              "h_star",
+              "omega"
+            ],
+            "path_count": 2,
+            "defect": [
+              "0"
+            ],
+            "defect_zero": true
+          },
+          {
+            "channel_id": "q1q2__omega_star__omega__h_star",
+            "output": "omega_star",
+            "inputs": [
+              "omega",
+              "h_star"
+            ],
+            "path_count": 2,
+            "defect": [
+              "0"
+            ],
+            "defect_zero": true
+          }
+        ]
+      },
+      {
+        "background": "minkowski",
+        "left_seed": 13,
+        "right_seed": 29,
+        "channel_count": 18,
+        "path_count": 51,
+        "all_channels_zero": true,
+        "rows": [
+          {
+            "channel_id": "q1q2__c_star__c__h_star",
+            "output": "c_star",
+            "inputs": [
+              "c",
+              "h_star"
+            ],
+            "path_count": 3,
+            "defect": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "defect_zero": true
+          },
+          {
+            "channel_id": "q1q2__c_star__h__h",
+            "output": "c_star",
+            "inputs": [
+              "h",
+              "h"
+            ],
+            "path_count": 3,
+            "defect": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "defect_zero": true
+          },
+          {
+            "channel_id": "q1q2__c_star__h_star__c",
+            "output": "c_star",
+            "inputs": [
+              "h_star",
+              "c"
+            ],
+            "path_count": 3,
+            "defect": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "defect_zero": true
+          },
+          {
+            "channel_id": "q1q2__c_star__h_star__omega",
+            "output": "c_star",
+            "inputs": [
+              "h_star",
+              "omega"
+            ],
+            "path_count": 3,
+            "defect": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "defect_zero": true
+          },
+          {
+            "channel_id": "q1q2__c_star__omega__h_star",
+            "output": "c_star",
+            "inputs": [
+              "omega",
+              "h_star"
+            ],
+            "path_count": 3,
+            "defect": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "defect_zero": true
+          },
+          {
+            "channel_id": "q1q2__h__c__c",
+            "output": "h",
+            "inputs": [
+              "c",
+              "c"
+            ],
+            "path_count": 3,
+            "defect": [
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "defect_zero": true
+          },
+          {
+            "channel_id": "q1q2__h__c__omega",
+            "output": "h",
+            "inputs": [
+              "c",
+              "omega"
+            ],
+            "path_count": 3,
+            "defect": [
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "defect_zero": true
+          },
+          {
+            "channel_id": "q1q2__h__omega__c",
+            "output": "h",
+            "inputs": [
+              "omega",
+              "c"
+            ],
+            "path_count": 3,
+            "defect": [
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "defect_zero": true
+          },
+          {
+            "channel_id": "q1q2__h__omega__omega",
+            "output": "h",
+            "inputs": [
+              "omega",
+              "omega"
+            ],
+            "path_count": 2,
+            "defect": [
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "defect_zero": true
+          },
+          {
+            "channel_id": "q1q2__h_star__c__h",
+            "output": "h_star",
+            "inputs": [
+              "c",
+              "h"
+            ],
+            "path_count": 3,
+            "defect": [
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "defect_zero": true
+          },
+          {
+            "channel_id": "q1q2__h_star__h__c",
+            "output": "h_star",
+            "inputs": [
+              "h",
+              "c"
+            ],
+            "path_count": 3,
+            "defect": [
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "defect_zero": true
+          },
+          {
+            "channel_id": "q1q2__h_star__h__omega",
+            "output": "h_star",
+            "inputs": [
+              "h",
+              "omega"
+            ],
+            "path_count": 3,
+            "defect": [
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "defect_zero": true
+          },
+          {
+            "channel_id": "q1q2__h_star__omega__h",
+            "output": "h_star",
+            "inputs": [
+              "omega",
+              "h"
+            ],
+            "path_count": 3,
+            "defect": [
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "defect_zero": true
+          },
+          {
+            "channel_id": "q1q2__omega_star__c__h_star",
+            "output": "omega_star",
+            "inputs": [
+              "c",
+              "h_star"
+            ],
+            "path_count": 3,
+            "defect": [
+              "0"
+            ],
+            "defect_zero": true
+          },
+          {
+            "channel_id": "q1q2__omega_star__h__h",
+            "output": "omega_star",
+            "inputs": [
+              "h",
+              "h"
+            ],
+            "path_count": 3,
+            "defect": [
+              "0"
+            ],
+            "defect_zero": true
+          },
+          {
+            "channel_id": "q1q2__omega_star__h_star__c",
+            "output": "omega_star",
+            "inputs": [
+              "h_star",
+              "c"
+            ],
+            "path_count": 3,
+            "defect": [
+              "0"
+            ],
+            "defect_zero": true
+          },
+          {
+            "channel_id": "q1q2__omega_star__h_star__omega",
+            "output": "omega_star",
+            "inputs": [
+              "h_star",
+              "omega"
+            ],
+            "path_count": 2,
+            "defect": [
+              "0"
+            ],
+            "defect_zero": true
+          },
+          {
+            "channel_id": "q1q2__omega_star__omega__h_star",
+            "output": "omega_star",
+            "inputs": [
+              "omega",
+              "h_star"
+            ],
+            "path_count": 2,
+            "defect": [
+              "0"
+            ],
+            "defect_zero": true
+          }
+        ]
+      },
+      {
+        "background": "flat_brinkmann",
+        "left_seed": 17,
+        "right_seed": 31,
+        "channel_count": 18,
+        "path_count": 51,
+        "all_channels_zero": true,
+        "rows": [
+          {
+            "channel_id": "q1q2__c_star__c__h_star",
+            "output": "c_star",
+            "inputs": [
+              "c",
+              "h_star"
+            ],
+            "path_count": 3,
+            "defect": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "defect_zero": true
+          },
+          {
+            "channel_id": "q1q2__c_star__h__h",
+            "output": "c_star",
+            "inputs": [
+              "h",
+              "h"
+            ],
+            "path_count": 3,
+            "defect": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "defect_zero": true
+          },
+          {
+            "channel_id": "q1q2__c_star__h_star__c",
+            "output": "c_star",
+            "inputs": [
+              "h_star",
+              "c"
+            ],
+            "path_count": 3,
+            "defect": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "defect_zero": true
+          },
+          {
+            "channel_id": "q1q2__c_star__h_star__omega",
+            "output": "c_star",
+            "inputs": [
+              "h_star",
+              "omega"
+            ],
+            "path_count": 3,
+            "defect": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "defect_zero": true
+          },
+          {
+            "channel_id": "q1q2__c_star__omega__h_star",
+            "output": "c_star",
+            "inputs": [
+              "omega",
+              "h_star"
+            ],
+            "path_count": 3,
+            "defect": [
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "defect_zero": true
+          },
+          {
+            "channel_id": "q1q2__h__c__c",
+            "output": "h",
+            "inputs": [
+              "c",
+              "c"
+            ],
+            "path_count": 3,
+            "defect": [
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "defect_zero": true
+          },
+          {
+            "channel_id": "q1q2__h__c__omega",
+            "output": "h",
+            "inputs": [
+              "c",
+              "omega"
+            ],
+            "path_count": 3,
+            "defect": [
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "defect_zero": true
+          },
+          {
+            "channel_id": "q1q2__h__omega__c",
+            "output": "h",
+            "inputs": [
+              "omega",
+              "c"
+            ],
+            "path_count": 3,
+            "defect": [
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "defect_zero": true
+          },
+          {
+            "channel_id": "q1q2__h__omega__omega",
+            "output": "h",
+            "inputs": [
+              "omega",
+              "omega"
+            ],
+            "path_count": 2,
+            "defect": [
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "defect_zero": true
+          },
+          {
+            "channel_id": "q1q2__h_star__c__h",
+            "output": "h_star",
+            "inputs": [
+              "c",
+              "h"
+            ],
+            "path_count": 3,
+            "defect": [
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "defect_zero": true
+          },
+          {
+            "channel_id": "q1q2__h_star__h__c",
+            "output": "h_star",
+            "inputs": [
+              "h",
+              "c"
+            ],
+            "path_count": 3,
+            "defect": [
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "defect_zero": true
+          },
+          {
+            "channel_id": "q1q2__h_star__h__omega",
+            "output": "h_star",
+            "inputs": [
+              "h",
+              "omega"
+            ],
+            "path_count": 3,
+            "defect": [
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "defect_zero": true
+          },
+          {
+            "channel_id": "q1q2__h_star__omega__h",
+            "output": "h_star",
+            "inputs": [
+              "omega",
+              "h"
+            ],
+            "path_count": 3,
+            "defect": [
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            "defect_zero": true
+          },
+          {
+            "channel_id": "q1q2__omega_star__c__h_star",
+            "output": "omega_star",
+            "inputs": [
+              "c",
+              "h_star"
+            ],
+            "path_count": 3,
+            "defect": [
+              "0"
+            ],
+            "defect_zero": true
+          },
+          {
+            "channel_id": "q1q2__omega_star__h__h",
+            "output": "omega_star",
+            "inputs": [
+              "h",
+              "h"
+            ],
+            "path_count": 3,
+            "defect": [
+              "0"
+            ],
+            "defect_zero": true
+          },
+          {
+            "channel_id": "q1q2__omega_star__h_star__c",
+            "output": "omega_star",
+            "inputs": [
+              "h_star",
+              "c"
+            ],
+            "path_count": 3,
+            "defect": [
+              "0"
+            ],
+            "defect_zero": true
+          },
+          {
+            "channel_id": "q1q2__omega_star__h_star__omega",
+            "output": "omega_star",
+            "inputs": [
+              "h_star",
+              "omega"
+            ],
+            "path_count": 2,
+            "defect": [
+              "0"
+            ],
+            "defect_zero": true
+          },
+          {
+            "channel_id": "q1q2__omega_star__omega__h_star",
+            "output": "omega_star",
+            "inputs": [
+              "omega",
+              "h_star"
+            ],
+            "path_count": 2,
+            "defect": [
+              "0"
+            ],
+            "defect_zero": true
+          }
+        ]
+      }
+    ],
+    "mutation_records": [
+      {
+        "channel_id": "q1q2__h__c__c",
+        "mutated_path_index": 0,
+        "old_multiplier": 1,
+        "new_multiplier": -1,
+        "defect": [
+          "827/18",
+          "-97/6",
+          "-269/12",
+          "-5/6",
+          "400/9",
+          "50/3",
+          "79/3",
+          "-101/2",
+          "-233/6",
+          "52"
+        ],
+        "nonzero_component_count": 10
+      },
+      {
+        "channel_id": "q1q2__h_star__c__h",
+        "mutated_path_index": 0,
+        "old_multiplier": 1,
+        "new_multiplier": -1,
+        "defect": [
+          "-8599/54",
+          "-31117/54",
+          "-37783/72",
+          "-272/27",
+          "-18352/27",
+          "22705/72",
+          "-10651/54",
+          "829/9",
+          "-1079/18",
+          "23131/54"
+        ],
+        "nonzero_component_count": 10
+      },
+      {
+        "channel_id": "q1q2__c_star__h__h",
+        "mutated_path_index": 0,
+        "old_multiplier": 1,
+        "new_multiplier": -1,
+        "defect": [
+          "-185/18",
+          "4178/9",
+          "1417/18",
+          "-6082/9"
+        ],
+        "nonzero_component_count": 4
+      },
+      {
+        "channel_id": "q1q2__omega_star__h__h",
+        "mutated_path_index": 0,
+        "old_multiplier": 1,
+        "new_multiplier": -1,
+        "defect": [
+          "-4100/3"
+        ],
+        "nonzero_component_count": 1
+      }
+    ],
+    "routine_independent_replay_background": "conformal_cylinder",
+    "exhaustive_producer_background_count": 3
+  },
+  "proof_checks": [
+    {
+      "check_id": "q1_q2_channel_exhaustion",
+      "status": "VERIFIED",
+      "evidence": "18 typed channels and 51 composable paths use all five q1 and all twenty-two ordered q2 components"
+    },
+    {
+      "check_id": "q1_q2_arity_two_nilpotency",
+      "status": "VERIFIED",
+      "evidence": "all four natural identity families vanish; three exact five-jet background fixtures replay every channel"
+    },
+    {
+      "check_id": "receiver_mutation_sensitivity",
+      "status": "VERIFIED",
+      "evidence": "one sign flip in each of the four output families produces a nonzero exact defect"
+    },
+    {
+      "check_id": "D_q1_commutator_zero",
+      "status": "NOT_REPLAYED",
+      "evidence": "the full local D action is not serialized"
+    },
+    {
+      "check_id": "D_q2_derivation",
+      "status": "NOT_REPLAYED",
+      "evidence": "the full local D action is not serialized"
+    },
+    {
+      "check_id": "BV_cyclicity_q2",
+      "status": "NOT_REPLAYED",
+      "evidence": "the common support-local BV pairing receiver is not serialized"
+    }
+  ],
+  "canonical_hashes": {
+    "channel_inventory_sha256": "bca9633143e51bd10cf78dce4a18ec8e806dec0cd511fbbd00db1d8768c18f70",
+    "natural_identity_families_sha256": "7973bf5167f0b22876882d95b98036387c1bfb995b045bbd46f61a00be10168e",
+    "proof_basis_sha256": "aba4950215c18af9b4ea88a00f4da5d5a342281b327382ff19e79a6b3fc0cd45",
+    "exact_receiver_sha256": "f57075c7e703970396c5061b02193439f114273ddaebc4f88345bd7a28ca85f6",
+    "proof_checks_sha256": "046a7dd95a95a34e26a91cc71860738482aa461908ee6de32d26a9cf5969b4a7"
+  },
+  "provenance": {
+    "inputs": [
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_PORTABLE_LOCAL_Q1_AST_V1.json",
+        "result_or_artifact_id": "STRICT_PORTABLE_LOCAL_Q1_AST_V1",
+        "sha256": "bcd78cf73f494517304f1ae5aedffa48036443a9c45566a94b3ed972de83b338",
+        "role": "portable Bach-flat unary differential and square-zero theorem"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_SIX_ROW_SUSPENDED_Q2_AST_V1.json",
+        "result_or_artifact_id": "STRICT_SIX_ROW_SUSPENDED_Q2_AST_V1",
+        "sha256": "513b43a90a936e1837947078e8f72da772f37461996b0b27b7df938ab355fbb3",
+        "role": "twenty-two ordered components of the complete six-row minimal q2 ledger"
+      },
+      {
+        "path": "d_quotient_classical/certificates/CLASSICAL_MINIMAL_BV_ANTIFIELD_EXPORT_V2.json",
+        "result_or_artifact_id": "CLASSICAL_MINIMAL_BV_ANTIFIELD_EXPORT_V2",
+        "sha256": "3fa276bd04fce3b0142e910e907cab3ad3e4d39bbd60b966de90fa11860c03dc",
+        "role": "authoritative strict minimal Q rows and nilpotent derived-atom calculus"
+      }
+    ],
+    "implementation": [
+      {
+        "path": "quantum-weyl/classical_import/local_q1_q2_receiver.py",
+        "sha256": "d1502a51ea0947a0efadbed56c76e2d4e3b0fbf366969c58228999b4e596da68",
+        "role": "independent exact local arity-two receiver"
+      }
+    ]
+  },
+  "claim_flags": {
+    "Q1_Q2_CHANNEL_INVENTORY_EXHAUSTIVE": true,
+    "Q1_Q2_ARITY_TWO_NILPOTENCY_REPLAYED": true,
+    "Q1_Q2_RECEIVER_MUTATION_SENSITIVE": true,
+    "STRICT_FULL_LOCAL_D_ACTION_CERTIFIED": false,
+    "D_Q1_COMMUTATOR_REPLAYED": false,
+    "D_Q2_DERIVATION_REPLAYED": false,
+    "BV_CYCLICITY_Q2_REPLAYED": false,
+    "STRICT_SUPPORT_LOCAL_Q2_COMPLETE": false,
+    "CLASSICAL_IMPORT_GATE_PASSED": false,
+    "LORENTZIAN_CAUSAL_CERTIFIED": false,
+    "QME_RESTORED": false
+  },
+  "does_not_establish": [
+    "a complete local D action, D/q1 commutation, or D/q2 derivation identity",
+    "BV cyclicity for q1 or q2 on a common support-local pairing",
+    "the complete seven-proof SUPPORT_LOCAL_Q2_EXPORT_CONTRACT",
+    "a passed classical import Gate A",
+    "a gauge-fixed normally or strongly hyperbolic Lorentzian BV operator",
+    "a causal Green homotopy, Hadamard state, renormalized products, restored QME, positivity, or Lorentzian quantum theory"
+  ],
+  "schema_path": "quantum-weyl/classical_import/schema/strict-local-q1-q2-identity-v1.schema.json",
+  "independent_checker": "quantum-weyl/classical_import/check_strict_local_q1_q2_identity.py",
+  "human_report": "quantum-weyl/classical_import/REPORT_STRICT_LOCAL_Q1_Q2_IDENTITY_V1.md"
+}

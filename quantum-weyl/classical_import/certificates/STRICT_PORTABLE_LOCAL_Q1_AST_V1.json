@@ -1,0 +1,366 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema": "strict-portable-local-q1-ast-v1",
+  "result_id": "STRICT_PORTABLE_LOCAL_Q1_AST_V1",
+  "result_kind": "PORTABLE_BACH_FLAT_MINIMAL_BV_UNARY_COMPLEX",
+  "result_state": "PORTABLE_Q1_AND_Q1_SQUARED_CERTIFIED_ARITY_TWO_IDENTITY_OPEN",
+  "lifecycle": "CLASSIFIED",
+  "created": "2026-08-15",
+  "repository_base_commit": "b06af47e",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "convention": "suspended-graded-symmetric-factorial-v1",
+  "scope": {
+    "theory": "strict pure-Weyl minimal Diff x Weyl BV theory",
+    "background_class": "smooth nondegenerate four-dimensional Bach-flat pseudo-Riemannian metrics",
+    "background_equation": "E_g(gbar)=0",
+    "carrier": "compactly supported smooth minimal BV sections with external graded-commutative coefficients",
+    "coefficient_field": "Q for exact fixtures; tensor-natural real smooth operator semantics",
+    "maximum_input_jet_order": 4,
+    "maximum_noether_fixture_metric_jet_order": 5,
+    "support_rule": "every unary output support lies in the support of its input"
+  },
+  "generator_ledger": [
+    {
+      "symbol": "h",
+      "local_tangent_degree": 0,
+      "Grassmann_parity": 0,
+      "q1_output_status": "NONZERO"
+    },
+    {
+      "symbol": "c",
+      "local_tangent_degree": -1,
+      "Grassmann_parity": 1,
+      "q1_output_status": "ZERO"
+    },
+    {
+      "symbol": "omega",
+      "local_tangent_degree": -1,
+      "Grassmann_parity": 1,
+      "q1_output_status": "ZERO"
+    },
+    {
+      "symbol": "h_star",
+      "local_tangent_degree": 1,
+      "Grassmann_parity": 1,
+      "q1_output_status": "NONZERO"
+    },
+    {
+      "symbol": "c_star",
+      "local_tangent_degree": 2,
+      "Grassmann_parity": 0,
+      "q1_output_status": "NONZERO"
+    },
+    {
+      "symbol": "omega_star",
+      "local_tangent_degree": 2,
+      "Grassmann_parity": 0,
+      "q1_output_status": "NONZERO"
+    }
+  ],
+  "local_q1_ast": {
+    "schema": "strict-pure-weyl-local-q1-ast-v1",
+    "expression_schema_version": "strict-pure-weyl-local-q1-bach-flat-v1",
+    "coefficient_field": "Q",
+    "background_condition": "E_g(gbar)=0",
+    "nodes": [
+      {
+        "node_id": "gbar",
+        "operation": "bach_flat_background_metric",
+        "inputs": [],
+        "parameters": {
+          "condition": "E_g(gbar)=0"
+        },
+        "declared_output_type": "symmetric_covariant_2",
+        "maximum_input_jet_orders": []
+      },
+      {
+        "node_id": "R_diff",
+        "operation": "background_lie_derivative_metric",
+        "inputs": [
+          "gbar"
+        ],
+        "parameters": {
+          "formula": "(L_c gbar)_ab=c^rho partial_rho gbar_ab+gbar_rho_b partial_a c^rho+gbar_a_rho partial_b c^rho"
+        },
+        "declared_output_type": "c_to_symmetric_covariant_2",
+        "maximum_input_jet_orders": [
+          1
+        ]
+      },
+      {
+        "node_id": "R_weyl",
+        "operation": "background_weyl_metric_action",
+        "inputs": [
+          "gbar"
+        ],
+        "parameters": {
+          "formula": "2 omega gbar_ab"
+        },
+        "declared_output_type": "omega_to_symmetric_covariant_2",
+        "maximum_input_jet_orders": [
+          0
+        ]
+      },
+      {
+        "node_id": "B_linear",
+        "operation": "frechet_derivative_of_portable_E_g",
+        "inputs": [
+          "gbar"
+        ],
+        "parameters": {
+          "formula": "[a]E_g(gbar+a h)",
+          "portable_parent_result_id": "STRICT_BACH_NATURAL_OPERATOR_AST_V1",
+          "parent_node": "E_g"
+        },
+        "declared_output_type": "h_to_symmetric_contravariant_density_weight_plus_1",
+        "maximum_input_jet_orders": [
+          4
+        ]
+      },
+      {
+        "node_id": "N_diff_linear",
+        "operation": "formal_adjoint_diff_gauge_map",
+        "inputs": [
+          "gbar"
+        ],
+        "parameters": {
+          "formula": "H^ab partial_lambda gbar_ab-2 partial_a(H^ab gbar_lambda_b)"
+        },
+        "declared_output_type": "h_star_to_covector_density",
+        "maximum_input_jet_orders": [
+          1
+        ]
+      },
+      {
+        "node_id": "N_weyl_linear",
+        "operation": "formal_adjoint_weyl_gauge_map",
+        "inputs": [
+          "gbar"
+        ],
+        "parameters": {
+          "formula": "2 gbar_ab H^ab"
+        },
+        "declared_output_type": "h_star_to_scalar_density",
+        "maximum_input_jet_orders": [
+          0
+        ]
+      }
+    ],
+    "components": [
+      {
+        "component_id": "q1_h_c",
+        "output": "h",
+        "input": "c",
+        "operator_node": "R_diff",
+        "coefficient": 1
+      },
+      {
+        "component_id": "q1_h_omega",
+        "output": "h",
+        "input": "omega",
+        "operator_node": "R_weyl",
+        "coefficient": 1
+      },
+      {
+        "component_id": "q1_hstar_h",
+        "output": "h_star",
+        "input": "h",
+        "operator_node": "B_linear",
+        "coefficient": 1
+      },
+      {
+        "component_id": "q1_cstar_hstar",
+        "output": "c_star",
+        "input": "h_star",
+        "operator_node": "N_diff_linear",
+        "coefficient": 1
+      },
+      {
+        "component_id": "q1_omegastar_hstar",
+        "output": "omega_star",
+        "input": "h_star",
+        "operator_node": "N_weyl_linear",
+        "coefficient": 1
+      }
+    ],
+    "zero_output_rows": [
+      "c",
+      "omega"
+    ],
+    "canonical_nodes_sha256": "1f0e46a1f3f0e7bc16ca671a9adebba04c121f87c7171189a13164618c17c962",
+    "canonical_components_sha256": "d3f9419f76b41ffae8d162cd41cf4e30710227bf32220e7bc2e8b5b2ae99e998"
+  },
+  "square_zero_theorem": {
+    "status": "CERTIFIED",
+    "background_hypothesis": "E_g(gbar)=0",
+    "compositions": [
+      {
+        "source": "c",
+        "intermediate": "h",
+        "target": "h_star",
+        "identity": "B_linear R_diff=0",
+        "result": "ZERO"
+      },
+      {
+        "source": "omega",
+        "intermediate": "h",
+        "target": "h_star",
+        "identity": "B_linear R_weyl=0",
+        "result": "ZERO"
+      },
+      {
+        "source": "h",
+        "intermediate": "h_star",
+        "target": "c_star",
+        "identity": "N_diff_linear B_linear=0",
+        "result": "ZERO"
+      },
+      {
+        "source": "h",
+        "intermediate": "h_star",
+        "target": "omega_star",
+        "identity": "N_weyl_linear B_linear=0",
+        "result": "ZERO"
+      },
+      {
+        "source": "h_star",
+        "intermediate": "c_star or omega_star",
+        "target": "zero",
+        "identity": "q1 has no output rows c or omega, equivalently q1(c_star)=q1(omega_star)=0",
+        "result": "ZERO"
+      }
+    ],
+    "derivation": [
+      "The natural Euler density is Diff-equivariant; differentiating at a solution kills infinitesimal Diff gauge directions.",
+      "The four-dimensional Weyl action is invariant; differentiating its Euler trace identity at a solution kills infinitesimal Weyl gauge directions.",
+      "The formal adjoints of the two gauge maps are the Diff and Weyl Noether operators, so both annihilate the linearized Euler map.",
+      "The background field equation is essential: away from the Bach-flat locus the linearized gauge identities acquire Lie or Weyl transport of E_g(gbar)."
+    ],
+    "exact_fixture_records": [
+      {
+        "background": "conformal_cylinder",
+        "vector_seed": 2,
+        "scalar_seed": 3,
+        "metric_seed": 4,
+        "checks": {
+          "background_Bach_flat": true,
+          "B_linear_after_R_diff_zero": true,
+          "B_linear_after_R_weyl_zero": true,
+          "N_diff_linear_after_B_linear_zero": true,
+          "N_weyl_linear_after_B_linear_zero": true
+        },
+        "zero_payload_sha256": "3b8867e1a476be1285d34dd971fb0ce7243de51667b5edb7770cd3d39791baec"
+      },
+      {
+        "background": "minkowski",
+        "vector_seed": 3,
+        "scalar_seed": 4,
+        "metric_seed": 5,
+        "checks": {
+          "background_Bach_flat": true,
+          "B_linear_after_R_diff_zero": true,
+          "B_linear_after_R_weyl_zero": true,
+          "N_diff_linear_after_B_linear_zero": true,
+          "N_weyl_linear_after_B_linear_zero": true
+        },
+        "zero_payload_sha256": "3b8867e1a476be1285d34dd971fb0ce7243de51667b5edb7770cd3d39791baec"
+      },
+      {
+        "background": "flat_brinkmann",
+        "vector_seed": 4,
+        "scalar_seed": 5,
+        "metric_seed": 6,
+        "checks": {
+          "background_Bach_flat": true,
+          "B_linear_after_R_diff_zero": true,
+          "B_linear_after_R_weyl_zero": true,
+          "N_diff_linear_after_B_linear_zero": true,
+          "N_weyl_linear_after_B_linear_zero": true
+        },
+        "zero_payload_sha256": "3b8867e1a476be1285d34dd971fb0ce7243de51667b5edb7770cd3d39791baec"
+      }
+    ]
+  },
+  "proof_checks": [
+    {
+      "check_id": "q1_component_coverage",
+      "status": "VERIFIED",
+      "evidence": "five nonzero unary components and the two zero ghost rows cover all six minimal outputs"
+    },
+    {
+      "check_id": "q1_cohomological_degree_one",
+      "status": "VERIFIED",
+      "evidence": "each nonzero component has degree(output)-degree(input)=1 and odd parity"
+    },
+    {
+      "check_id": "q1_squared_zero",
+      "status": "VERIFIED_ON_DECLARED_BACH_FLAT_NATURAL_COMPLEX",
+      "evidence": "compositional Diff/Weyl covariance and Noether adjoint identities, with exact independent fixtures on three Bach-flat backgrounds"
+    },
+    {
+      "check_id": "q1_q2_arity_two_nilpotency",
+      "status": "NOT_REPLAYED",
+      "evidence": "the common arity-two receiver must differentiate all five q1 components against the twenty-two ordered q2 components"
+    }
+  ],
+  "canonical_hashes": {
+    "generator_ledger_sha256": "fbae9e9a0d2b54b029703e7c9e84351bcd78d04cbbe2187c7991c27c5b7789b1",
+    "local_q1_ast_sha256": "608efc192f2394b4b3e673176881b72d3eddb8716ec8fe9fa98b493228f22781",
+    "square_zero_theorem_sha256": "4f148459c638df09b603698c116e8068f040f17057d0174bebf20085fd59e394",
+    "proof_checks_sha256": "b13ba44b94cba93315ca80c5940bf3b1c5e11132e236ccb7e57ecb5acc2f10f4"
+  },
+  "provenance": {
+    "inputs": [
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_BACH_NATURAL_OPERATOR_AST_V1.json",
+        "result_or_artifact_id": "STRICT_BACH_NATURAL_OPERATOR_AST_V1",
+        "sha256": "cea2952bc7e91170169c37b31bc102da74bbe956aac995e6565db0eb03a71098",
+        "role": "portable action-normalized Bach Euler map and Hessian parent"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_SIX_ROW_SUSPENDED_Q2_AST_V1.json",
+        "result_or_artifact_id": "STRICT_SIX_ROW_SUSPENDED_Q2_AST_V1",
+        "sha256": "513b43a90a936e1837947078e8f72da772f37461996b0b27b7df938ab355fbb3",
+        "role": "common suspension, grading, and generator convention"
+      },
+      {
+        "path": "d_quotient_classical/certificates/CLASSICAL_MINIMAL_BV_ANTIFIELD_EXPORT_V2.json",
+        "result_or_artifact_id": "CLASSICAL_MINIMAL_BV_ANTIFIELD_EXPORT_V2",
+        "sha256": "3fa276bd04fce3b0142e910e907cab3ad3e4d39bbd60b966de90fa11860c03dc",
+        "role": "authoritative strict minimal BV Q rows and derived Noether atoms"
+      }
+    ],
+    "implementation": [
+      {
+        "path": "quantum-weyl/classical_import/local_q1_bach_flat.py",
+        "sha256": "cbc9fba8989dc78c1d843aa68bfcf83b2263da5ac688c039cd1a6553fcb8f674",
+        "role": "typed AST and exact fixture evaluator"
+      }
+    ]
+  },
+  "claim_flags": {
+    "PORTABLE_LOCAL_Q1_AST_CERTIFIED": true,
+    "Q1_SQUARED_ZERO_CERTIFIED": true,
+    "BACH_FLAT_BACKGROUND_HYPOTHESIS_EXPLICIT": true,
+    "Q1_Q2_ARITY_TWO_NILPOTENCY_REPLAYED": false,
+    "STRICT_FULL_LOCAL_D_ACTION_CERTIFIED": false,
+    "BV_CYCLICITY_Q1_REPLAYED": false,
+    "STRICT_SUPPORT_LOCAL_Q2_COMPLETE": false,
+    "CLASSICAL_IMPORT_GATE_PASSED": false,
+    "LORENTZIAN_CAUSAL_CERTIFIED": false,
+    "QME_RESTORED": false
+  },
+  "does_not_establish": [
+    "q1q2=0 or any nonlinear master identity",
+    "the local D action, D equivariance, or BV cyclicity",
+    "q1 nilpotency away from a Bach-flat background without the corresponding curved/tadpole terms",
+    "the complete seven-proof SUPPORT_LOCAL_Q2_EXPORT_CONTRACT",
+    "a passed classical import Gate A",
+    "a causal Green homotopy, Hadamard state, Lorentzian QME, positivity, or Lorentzian quantum theory"
+  ],
+  "schema_path": "quantum-weyl/classical_import/schema/strict-portable-local-q1-ast-v1.schema.json",
+  "independent_checker": "quantum-weyl/classical_import/check_strict_portable_local_q1_ast.py",
+  "human_report": "quantum-weyl/classical_import/REPORT_STRICT_PORTABLE_LOCAL_Q1_AST_V1.md"
+}

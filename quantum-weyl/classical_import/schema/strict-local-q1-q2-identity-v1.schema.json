@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "strict-local-q1-q2-identity-v1.schema.json",
+  "title": "Strict local q1/q2 arity-two identity v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema", "schema", "result_id", "result_kind", "result_state",
+    "lifecycle", "created", "repository_base_commit", "dependency_tags",
+    "convention", "scope", "channel_inventory", "natural_identity_families",
+    "proof_basis", "exact_receiver", "proof_checks", "canonical_hashes",
+    "provenance", "claim_flags", "does_not_establish", "schema_path",
+    "independent_checker", "human_report"
+  ],
+  "properties": {
+    "$schema": {"const": "https://json-schema.org/draft/2020-12/schema"},
+    "schema": {"const": "strict-local-q1-q2-identity-v1"},
+    "result_id": {"const": "STRICT_LOCAL_Q1_Q2_IDENTITY_V1"},
+    "result_kind": {"const": "PORTABLE_SUPPORT_LOCAL_ARITY_TWO_MASTER_IDENTITY"},
+    "result_state": {"const": "Q1_Q2_ARITY_TWO_IDENTITY_CERTIFIED_D_AND_PAIRING_OPEN"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "created": {"type": "string"},
+    "repository_base_commit": {"type": "string"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "convention": {"const": "suspended-graded-symmetric-factorial-v1"},
+    "scope": {"type": "object", "minProperties": 8},
+    "channel_inventory": {
+      "type": "object",
+      "required": ["channel_count", "composable_path_count", "q1_component_count", "ordered_q2_component_count", "all_q1_components_used", "all_ordered_q2_components_used", "channels"],
+      "properties": {
+        "channel_count": {"const": 18},
+        "composable_path_count": {"const": 51},
+        "q1_component_count": {"const": 5},
+        "ordered_q2_component_count": {"const": 22},
+        "all_q1_components_used": {"const": true},
+        "all_ordered_q2_components_used": {"const": true},
+        "channels": {"type": "array", "minItems": 18, "maxItems": 18}
+      }
+    },
+    "natural_identity_families": {"type": "array", "minItems": 4, "maxItems": 4},
+    "proof_basis": {"type": "object", "required": ["status", "argument", "legacy_matrix_cartan_helper_used", "reason"]},
+    "exact_receiver": {"type": "object", "required": ["engine", "fixture_records", "mutation_records", "routine_independent_replay_background", "exhaustive_producer_background_count"]},
+    "proof_checks": {"type": "array", "minItems": 6, "maxItems": 6},
+    "canonical_hashes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["channel_inventory_sha256", "natural_identity_families_sha256", "proof_basis_sha256", "exact_receiver_sha256", "proof_checks_sha256"],
+      "properties": {
+        "channel_inventory_sha256": {"$ref": "#/$defs/sha256"},
+        "natural_identity_families_sha256": {"$ref": "#/$defs/sha256"},
+        "proof_basis_sha256": {"$ref": "#/$defs/sha256"},
+        "exact_receiver_sha256": {"$ref": "#/$defs/sha256"},
+        "proof_checks_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "provenance": {"type": "object", "required": ["inputs", "implementation"]},
+    "claim_flags": {"type": "object", "minProperties": 11},
+    "does_not_establish": {"type": "array", "minItems": 6, "items": {"type": "string"}},
+    "schema_path": {"const": "quantum-weyl/classical_import/schema/strict-local-q1-q2-identity-v1.schema.json"},
+    "independent_checker": {"const": "quantum-weyl/classical_import/check_strict_local_q1_q2_identity.py"},
+    "human_report": {"const": "quantum-weyl/classical_import/REPORT_STRICT_LOCAL_Q1_Q2_IDENTITY_V1.md"}
+  },
+  "$defs": {"sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+}

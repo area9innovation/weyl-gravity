@@ -879,6 +879,24 @@
       "result_id": "FOUNDATIONAL_BT_SEPARABLE_STATE_CHAIN_ZF_V1",
       "sha256": "08389e96d349766e29a34cde8109d4b1271288b59d44f3b29fcb456065641998"
     },
+    "strict_local_q1_q2_identity": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC"
+      ],
+      "lifecycle": "CLASSIFIED",
+      "path": "quantum-weyl/classical_import/certificates/STRICT_LOCAL_Q1_Q2_IDENTITY_V1.json",
+      "result_id": "STRICT_LOCAL_Q1_Q2_IDENTITY_V1",
+      "sha256": "8300dddd6120632958a307e1924f27fb4e24ae6802e3163a825bd1dce54de738"
+    },
+    "strict_portable_local_q1": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC"
+      ],
+      "lifecycle": "CLASSIFIED",
+      "path": "quantum-weyl/classical_import/certificates/STRICT_PORTABLE_LOCAL_Q1_AST_V1.json",
+      "result_id": "STRICT_PORTABLE_LOCAL_Q1_AST_V1",
+      "sha256": "bcd78cf73f494517304f1ae5aedffa48036443a9c45566a94b3ed972de83b338"
+    },
     "support_indexed_test_space_comparison": {
       "dependency_tags": [
         "LOCAL-ALGEBRAIC",
@@ -902,7 +920,7 @@
       "sha256": "7619ce964d21c0057038b299a63c89c8f56a2a4f052bc8551baa14ca7de037ba"
     }
   },
-  "canonical_digest": "4911fef42139ce5883dea0c718a208c77cf2777787863c6807b3d534dfefc952",
+  "canonical_digest": "26e395833d428bd66d5e309452ded931ef8a7b8150e2f363be948ccdd1fab732",
   "claim_flags": {
     "atlas_exhaustive": false,
     "axes_independent_proved": false,
@@ -1038,6 +1056,7 @@
     "scalar_minkowski_causal_support_proved": true,
     "scalar_minkowski_green_certified": true,
     "static_atlas_appendix_generated": true,
+    "strict_pure_weyl_local_q1_q2_certified": true,
     "support_indexed_full_lf_topology_reconstructed": false,
     "support_indexed_name_equivalence_certified": true,
     "typed_relations_supplied": true,
@@ -1354,6 +1373,18 @@
       ],
       "statement": "Sixteen typed gates separate the flat scalar biwave certificate from a full Lorentzian Weyl BV propagator. The delta records a positive four-row Nariai control, an open Berger route, two scoped architectural no-go theorems, and the failed authoritative classical import gate; it constructs no full-complex propagator, Hadamard state, renormalized products, causal pAQFT, or Lorentzian QME.",
       "status": "FAIL_CLOSED_CROSS_THEORY_DEPENDENCY_DELTA"
+    },
+    {
+      "authorities": [
+        "strict_portable_local_q1",
+        "strict_local_q1_q2_identity"
+      ],
+      "claim_id": "RF-24-STRICT-WEYL-LOCAL-Q1-Q2",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC"
+      ],
+      "statement": "On the declared Bach-flat strict pure-Weyl minimal BV carrier, the portable unary complex is square zero and the arity-two master identity exhausts 18 typed channels and 51 composable paths using all five q1 and all twenty-two ordered q2 components. Full local D, common BV pairing and cyclicity, Gate A, causal propagation and quantum lifecycle promotions remain open.",
+      "status": "LOCAL_ALGEBRAIC_ARITY_TWO_MASTER_IDENTITY_WITH_GATE_BOUNDARY"
     }
   ],
   "created": "2026-08-14",
@@ -1557,7 +1588,7 @@
       "source_sha256": "e0ae0418b415f4a7b6cd8d0968316b537755fa091135d8d7cd35d6fc25927d2a"
     },
     "path": "paper/21-reverse-foundations-of-physics.tex",
-    "sha256": "e773f064fa9fa87cd03c5743df28cc3bbb005c80d4c488c4f85c9cf2cf5797f6"
+    "sha256": "b3c3610dfade75278d13bbe5fdabf06ce73728e2ea0ae2e15812b7edbc6b8683"
   },
   "result_id": "PAPER21_REVERSE_FOUNDATIONS_INTRODUCTION_V1",
   "result_kind": "PROGRAMME_SYNTHESIS_AND_TYPED_CASE_STUDY_MAP",

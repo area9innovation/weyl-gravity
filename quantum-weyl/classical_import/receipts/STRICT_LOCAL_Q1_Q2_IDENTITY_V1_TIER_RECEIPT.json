@@ -1,0 +1,94 @@
+{
+  "receipt_id": "STRICT_LOCAL_Q1_Q2_IDENTITY_V1_TIER_RECEIPT",
+  "result_id": "STRICT_LOCAL_Q1_Q2_IDENTITY_V1",
+  "created": "2026-08-15",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "base_commit": "b06af47e",
+  "content_hashes": {
+    "quantum-weyl/classical_import/local_q1_q2_receiver.py": "d1502a51ea0947a0efadbed56c76e2d4e3b0fbf366969c58228999b4e596da68",
+    "quantum-weyl/classical_import/build_strict_local_q1_q2_identity.py": "d0fbb84a8f252355cb8bc61beb05a3b8077207bd69dc0061a92eb2c7fd0b5bc3",
+    "quantum-weyl/classical_import/check_strict_local_q1_q2_identity.py": "e54a34f45a80ba72f9bb1df7577517139088726072569ca5926135a6ef9e175e",
+    "quantum-weyl/classical_import/verify_strict_local_q1_q2_identity.py": "913589dc3e83ed454c517f7dc573e3e6fa68c5074d5cf6a56295d810bce34a89",
+    "quantum-weyl/classical_import/schema/strict-local-q1-q2-identity-v1.schema.json": "5537f97b0ff6693f5d6f04daf0ed90a51c815f818a0460741f637fa777183d4e",
+    "quantum-weyl/classical_import/certificates/STRICT_LOCAL_Q1_Q2_IDENTITY_V1.json": "8300dddd6120632958a307e1924f27fb4e24ae6802e3163a825bd1dce54de738",
+    "quantum-weyl/classical_import/REPORT_STRICT_LOCAL_Q1_Q2_IDENTITY_V1.md": "7650b7b462e782f18a0c77b0bb447fa938f280eb3984fca4ba86e6ca22e1f1f8",
+    "quantum-weyl/classical_import/tests/test_strict_local_q1_q2_identity.py": "88435b3863d1233b1387620cf0204308f14e77fc8bff9d2d3e9b3a8fd9fa0e5c",
+    "paper/21-reverse-foundations-of-physics.tex": "b3c3610dfade75278d13bbe5fdabf06ce73728e2ea0ae2e15812b7edbc6b8683",
+    "paper/generate_21_reverse_foundations_claim_map.py": "52487e1f61682aae566ebd22b61168643c6387f315c3a4528606516fe9f8dfc8",
+    "paper/verify_21_reverse_foundations_claim_map.py": "0b0030a059d6f8934a21d4c1c7b033355a755afd98a828e61bfd479e09a774bc",
+    "paper/21-reverse-foundations-of-physics-claim-map.json": "7b8e57e8754cde7d6024cebc11d01699914cce364911c9503fb0ba2c5d37f989"
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "python3 -m py_compile quantum-weyl/classical_import/local_q1_q2_receiver.py quantum-weyl/classical_import/build_strict_local_q1_q2_identity.py quantum-weyl/classical_import/check_strict_local_q1_q2_identity.py quantum-weyl/classical_import/verify_strict_local_q1_q2_identity.py quantum-weyl/classical_import/tests/test_strict_local_q1_q2_identity.py",
+          "elapsed_seconds": 0.07,
+          "status": "PASS"
+        },
+        {
+          "command": "jq empty quantum-weyl/classical_import/schema/strict-local-q1-q2-identity-v1.schema.json quantum-weyl/classical_import/certificates/STRICT_LOCAL_Q1_Q2_IDENTITY_V1.json",
+          "elapsed_seconds": 0.0,
+          "status": "PASS"
+        }
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "PYTHONPATH=quantum-weyl/classical_import python3 quantum-weyl/classical_import/check_strict_local_q1_q2_identity.py",
+          "elapsed_seconds": 39.31,
+          "status": "PASS",
+          "independent_rail": "reconstructs 18 channels and 51 paths, replays all cylinder defects, and flips one decisive sign in each output family"
+        },
+        {
+          "command": "PYTHONPATH=quantum-weyl/classical_import python3 quantum-weyl/classical_import/verify_strict_local_q1_q2_identity.py",
+          "elapsed_seconds": 0.13,
+          "status": "PASS"
+        },
+        {
+          "command": "PYTHONPATH=quantum-weyl/classical_import python3 -m unittest quantum-weyl/classical_import/tests/test_strict_local_q1_q2_identity.py -v",
+          "elapsed_seconds": 39.34,
+          "status": "PASS",
+          "tests": 7
+        },
+        {
+          "command": "python3 paper/generate_21_reverse_foundations_claim_map.py --check && python3 paper/verify_21_reverse_foundations_claim_map.py",
+          "elapsed_seconds": 0.3,
+          "status": "PASS",
+          "independent_rail": "pins both new LOCAL-ALGEBRAIC authorities, checks the 18/51 counts, and preserves false D/cyclicity/Gate-A boundaries"
+        }
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "commands": [
+        {
+          "command": "PYTHONPATH=quantum-weyl/classical_import python3 quantum-weyl/classical_import/build_strict_local_q1_q2_identity.py --check",
+          "elapsed_seconds": 61.87,
+          "status": "PASS",
+          "cost_boundary": "exhaustive producer separated from the under-60-second routine receiver; evaluates all 18 channels on three Bach-flat backgrounds and four mutation witnesses"
+        }
+      ]
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "reason": "No freeze/tag, release, shared core-algebra change, or quantum lifecycle promotion; Gate A remains fail closed."
+    }
+  },
+  "advisory_science_forge": {
+    "command": "ci/science-forge-shadow.sh",
+    "elapsed_seconds": 2.23,
+    "status": "ADVISORY_FINDINGS",
+    "findings": [
+      "Forge 0.0.2 stdlib hash mismatch",
+      "bridge audit failed closed at E9118 atomic memory-order literal",
+      "coverage census drift: 1720 certificates versus baseline 976"
+    ]
+  },
+  "claim_boundary": "This exact LOCAL-ALGEBRAIC receipt certifies [q1,q2]=0 for the Bach-flat strict minimal pure-Weyl BV complex: 18 typed channels and 51 paths use every portable q1 and ordered q2 component, with three exact background replays and four mutation witnesses. It does not establish D equivariance, BV cyclicity, the complete support-local export contract, Gate A, Lorentzian causal propagation, Hadamard, QME, positivity, or quantum theory."
+}

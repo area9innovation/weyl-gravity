@@ -180,9 +180,31 @@ exact Koszul partner, the metric self-pair binds the portable Bach root, and
 the odd Diff-ghost self-pair binds the antisymmetric vector bracket. All six
 minimal output ledgers are complete, degree one and support-local, so the
 portable `h_star` and suspension deficits are closed. This is still not the
-complete support-local export: a common executable `q1`, the arity-two master
-identity, full local `D`, its derivation identity and BV cyclicity remain
-fail closed.
+complete support-local export: full local `D`, its derivation identity and BV
+cyclicity remain fail closed.
+
+The common unary receiver is now supplied by
+[`STRICT_PORTABLE_LOCAL_Q1_AST_V1`](REPORT_STRICT_PORTABLE_LOCAL_Q1_AST_V1.md).
+It serializes the five nonzero arrows of the Bach-flat tangent complex in the
+same suspended convention as `q2`: the Diff and Weyl gauge maps into metric
+perturbations, the linearized natural Bach Euler map, and the two formal-
+adjoint Noether maps. The square-zero theorem follows compositionally from
+Diff/Weyl covariance and the Noether identities at a Bach-flat base point;
+exact rational five-jet receivers replay every nontrivial composition on the
+conformal cylinder, Minkowski and flat Brinkmann backgrounds. The background
+field equation is explicit: this is not an off-shell background complex.
+
+The first nonlinear master identity is then closed by
+[`STRICT_LOCAL_Q1_Q2_IDENTITY_V1`](REPORT_STRICT_LOCAL_Q1_Q2_IDENTITY_V1.md).
+Independent typed composition expands `[q1,q2]` into eighteen channels and
+fifty-one paths, using all five unary and all twenty-two ordered bilinear
+components. The channels form four natural families: semidirect Diff/Weyl
+gauge closure, Bach-Euler equivariance, differentiated Diff Noether, and
+differentiated Weyl Noether. All vanish compositionally and in three exact
+five-jet background replays; one sign mutation in each family produces a
+nonzero defect. Thus `q1q2=0` is now certified, while the `D` and common BV-
+pairing identities, the seven-proof support-local export contract, Gate A,
+causal propagation and every quantum lifecycle promotion remain fail closed.
 
 ## Antifield/Koszul--Tate handoff contract
 

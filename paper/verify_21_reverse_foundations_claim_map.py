@@ -92,6 +92,8 @@ def main() -> int:
     smooth_translator = json.loads((ROOT / data["authorities"]["fixed_support_smooth_to_h2_translator"]["path"]).read_text())
     support_indexed = json.loads((ROOT / data["authorities"]["support_indexed_test_space_comparison"]["path"]).read_text())
     scalar_green = json.loads((ROOT / data["authorities"]["scalar_minkowski_green_choice_audit"]["path"]).read_text())
+    strict_q1 = json.loads((ROOT / data["authorities"]["strict_portable_local_q1"]["path"]).read_text())
+    strict_q1q2 = json.loads((ROOT / data["authorities"]["strict_local_q1_q2_identity"]["path"]).read_text())
     bt_euclidean = json.loads((ROOT / data["authorities"]["bt_euclidean_import"]["path"]).read_text())
     bt_free_obstruction = json.loads((ROOT / data["authorities"]["bt_free_reconstruction_obstruction"]["path"]).read_text())
     bt_interacting_os = json.loads((ROOT / data["authorities"]["bt_interacting_os_preflight"]["path"]).read_text())
@@ -362,9 +364,17 @@ def main() -> int:
         (21, "SCALAR-MINKOWSKI-GREEN-CHOICE-AUDIT"),
         (22, "SCALAR-MINKOWSKI-BIWAVE-GREEN"),
         (23, "SCALAR-BIWAVE-TO-WEYL-BV-DELTA"),
+        (24, "STRICT-WEYL-LOCAL-Q1-Q2"),
     ]}, "claim set drift")
 
     flags = data["claim_flags"]
+    require(flags["strict_pure_weyl_local_q1_q2_certified"] is True, "strict pure-Weyl q1/q2 flag missing")
+    require(strict_q1["claim_flags"]["Q1_SQUARED_ZERO_CERTIFIED"] is True, "strict q1 square-zero authority drift")
+    require(strict_q1q2["channel_inventory"]["channel_count"] == 18, "strict q1/q2 channel count drift")
+    require(strict_q1q2["channel_inventory"]["composable_path_count"] == 51, "strict q1/q2 path count drift")
+    require(strict_q1q2["claim_flags"]["Q1_Q2_ARITY_TWO_NILPOTENCY_REPLAYED"] is True, "strict q1/q2 authority drift")
+    require(strict_q1q2["claim_flags"]["STRICT_FULL_LOCAL_D_ACTION_CERTIFIED"] is False, "strict local D action promoted")
+    require(strict_q1q2["claim_flags"]["BV_CYCLICITY_Q2_REPLAYED"] is False, "strict BV cyclicity promoted")
     require(flags["static_atlas_appendix_generated"] is True, "static atlas appendix flag is not certified")
     require(flags["complete_evidence_register_generated"] is True, "complete evidence register flag is not certified")
     require(flags["complete_literature_register_generated"] is True, "complete literature register flag is not certified")

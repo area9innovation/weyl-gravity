@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "strict-portable-local-q1-ast-v1.schema.json",
+  "title": "Portable Bach-flat strict local q1 AST v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema",
+    "schema",
+    "result_id",
+    "result_kind",
+    "result_state",
+    "lifecycle",
+    "created",
+    "repository_base_commit",
+    "dependency_tags",
+    "convention",
+    "scope",
+    "generator_ledger",
+    "local_q1_ast",
+    "square_zero_theorem",
+    "proof_checks",
+    "canonical_hashes",
+    "provenance",
+    "claim_flags",
+    "does_not_establish",
+    "schema_path",
+    "independent_checker",
+    "human_report"
+  ],
+  "properties": {
+    "$schema": {"const": "https://json-schema.org/draft/2020-12/schema"},
+    "schema": {"const": "strict-portable-local-q1-ast-v1"},
+    "result_id": {"const": "STRICT_PORTABLE_LOCAL_Q1_AST_V1"},
+    "result_kind": {"const": "PORTABLE_BACH_FLAT_MINIMAL_BV_UNARY_COMPLEX"},
+    "result_state": {"const": "PORTABLE_Q1_AND_Q1_SQUARED_CERTIFIED_ARITY_TWO_IDENTITY_OPEN"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "created": {"type": "string"},
+    "repository_base_commit": {"type": "string"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "convention": {"const": "suspended-graded-symmetric-factorial-v1"},
+    "scope": {"type": "object", "minProperties": 8},
+    "generator_ledger": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["symbol", "local_tangent_degree", "Grassmann_parity", "q1_output_status"],
+        "properties": {
+          "symbol": {"enum": ["h", "c", "omega", "h_star", "c_star", "omega_star"]},
+          "local_tangent_degree": {"type": "integer"},
+          "Grassmann_parity": {"enum": [0, 1]},
+          "q1_output_status": {"enum": ["ZERO", "NONZERO"]}
+        }
+      }
+    },
+    "local_q1_ast": {
+      "type": "object",
+      "required": ["schema", "expression_schema_version", "coefficient_field", "background_condition", "nodes", "components", "zero_output_rows", "canonical_nodes_sha256", "canonical_components_sha256"]
+    },
+    "square_zero_theorem": {
+      "type": "object",
+      "required": ["status", "background_hypothesis", "compositions", "derivation", "exact_fixture_records"]
+    },
+    "proof_checks": {"type": "array", "minItems": 4, "maxItems": 4},
+    "canonical_hashes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["generator_ledger_sha256", "local_q1_ast_sha256", "square_zero_theorem_sha256", "proof_checks_sha256"],
+      "properties": {
+        "generator_ledger_sha256": {"$ref": "#/$defs/sha256"},
+        "local_q1_ast_sha256": {"$ref": "#/$defs/sha256"},
+        "square_zero_theorem_sha256": {"$ref": "#/$defs/sha256"},
+        "proof_checks_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "provenance": {"type": "object", "required": ["inputs", "implementation"]},
+    "claim_flags": {"type": "object", "minProperties": 10},
+    "does_not_establish": {"type": "array", "minItems": 6, "items": {"type": "string"}},
+    "schema_path": {"const": "quantum-weyl/classical_import/schema/strict-portable-local-q1-ast-v1.schema.json"},
+    "independent_checker": {"const": "quantum-weyl/classical_import/check_strict_portable_local_q1_ast.py"},
+    "human_report": {"const": "quantum-weyl/classical_import/REPORT_STRICT_PORTABLE_LOCAL_Q1_AST_V1.md"}
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}
