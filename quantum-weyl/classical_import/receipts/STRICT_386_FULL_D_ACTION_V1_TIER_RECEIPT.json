@@ -1,0 +1,71 @@
+{
+  "receipt_id": "STRICT_386_FULL_D_ACTION_V1_TIER_RECEIPT",
+  "result_id": "STRICT_386_FULL_D_ACTION_V1",
+  "created": "2026-08-15",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "scope": "Exact local cylinder flow on the strict 386-row graph carrier, independent [D,q1] composition replay, formal skew-adjoint replay against the complete odd pairing, and a fourteen-hash scoped unary-causal-D extension.",
+  "test_tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "elapsed_seconds": 0.36,
+      "commands": [
+        "python3 -m py_compile foundations/build_matrix_site_v2.py foundations/check_matrix_site_v2.py foundations/tests/test_matrix_site.py paper/generate_21_reverse_foundations_claim_map.py paper/generate_21_reverse_foundations_appendices.py paper/verify_21_reverse_foundations_claim_map.py",
+        "python3 -m json.tool <explicit D, Gate-V6, Atlas-V16, site-result and paper-claim-map JSON paths>",
+        "deno check foundations/matrix_site_v2_assets/app-v2.js",
+        "git diff --check -- <explicit scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 0.96,
+      "commands": [
+        "python3 quantum-weyl/classical_import/build_strict_386_full_d_action.py --check",
+        "python3 quantum-weyl/classical_import/check_strict_386_full_d_action.py",
+        "python3 quantum-weyl/classical_import/verify_strict_386_full_d_action.py",
+        "python3 -m unittest quantum-weyl/classical_import/tests/test_strict_386_full_d_action.py"
+      ],
+      "checks": {
+        "carrier_rows": 386,
+        "component_blocks": 22,
+        "D_coefficients": 386,
+        "q1_tables": 27,
+        "q1_multiindices": 70,
+        "q1_coefficients": 4374,
+        "D_q1_commutator_defects": 0,
+        "pairing_entries": 410,
+        "formal_skew_adjoint_defects": 0,
+        "scoped_snapshot_hashes": 14,
+        "mutation_tests": "11/11 PASS"
+      }
+    },
+    "tier_2": {
+      "status": "PASS",
+      "commands": [
+        "python3 quantum-weyl/classical_import/check_classical_import_gate_v6_reconciliation.py",
+        "python3 foundations/check_lorentzian_weyl_bv_completion_atlas_v16.py",
+        "python3 foundations/check_matrix_site_v2.py",
+        "python3 paper/verify_21_reverse_foundations_claim_map.py"
+      ],
+      "criterion": "The D action changes Gate M2, the completion frontier, the site and the paper; every direct consumer was regenerated and independently checked."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No classical or quantum freeze, shared core algebra, theorem lifecycle or release state was promoted. The result is a scoped local-algebraic/causal certificate and accepts zero Gate-A top-level hashes."
+    }
+  },
+  "artifact_sha256": {
+    "quantum-weyl/classical_import/certificates/STRICT_386_FULL_D_ACTION_V1.json": "c83c53250e3c8b8bc913f902a8cd4a4aff1a918c88b42167e9076e4aa96dc148",
+    "quantum-weyl/classical_import/REPORT_STRICT_386_FULL_D_ACTION_V1.md": "03351872140a7fb3642f8283fe301734446e0c44ef9006bb63303af9e1fc283d"
+  },
+  "advisory_shadow_rail": {
+    "command": "ci/science-forge-shadow.sh",
+    "exit_status": 0,
+    "bridge_audit": "FAIL_CLOSED: external bp2transformer verifier lacks sympy; Forge binary/stdlib revisions also differ",
+    "coverage_census": "DRIFT: 1784 certificates versus baseline 976",
+    "disposition": "Advisory findings are recorded and are not laundered into a pass for the scoped certificate."
+  },
+  "claim_boundary": "The exact real table serializes T=partial_t; D=iT is a convention after complexification. This is not the Berger helical generator or a finite mode-weight matrix. It does not establish full-carrier q2, D/q2, a D-Cartan homotopy, the physical gauge/charge status of D, Gate A, Hadamard data, renormalized products, QME restoration, residual transfer or a Lorentzian quantum theory."
+}

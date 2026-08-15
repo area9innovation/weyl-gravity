@@ -1,0 +1,69 @@
+{
+  "receipt_id": "CLASSICAL_IMPORT_GATE_V6_RECONCILIATION_TIER_RECEIPT",
+  "result_id": "CLASSICAL_IMPORT_GATE_V6_RECONCILIATION",
+  "created": "2026-08-15",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "scope": "Append-only reconciliation of the certified strict local D action and [D,q1] replay into the classical import ledger, with inherited provenance drift recorded and Gate A kept fail closed.",
+  "test_tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "elapsed_seconds": 0.36,
+      "commands": [
+        "python3 -m py_compile <explicit Gate-V6, Atlas-V16, site and paper Python paths>",
+        "python3 -m json.tool quantum-weyl/classical_import/schema/classical-import-gate-v6-reconciliation-v1.schema.json",
+        "python3 -m json.tool quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V6_RECONCILIATION.json",
+        "git diff --check -- <explicit scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 0.35,
+      "commands": [
+        "python3 quantum-weyl/classical_import/build_classical_import_gate_v6_reconciliation.py --check",
+        "python3 quantum-weyl/classical_import/check_classical_import_gate_v6_reconciliation.py",
+        "python3 quantum-weyl/classical_import/verify_classical_import_gate_v6_reconciliation.py",
+        "python3 -m unittest quantum-weyl/classical_import/tests/test_classical_import_gate_v6_reconciliation.py"
+      ],
+      "checks": {
+        "exports_total": 20,
+        "receiver_verified_scoped_exports": 11,
+        "freeze_checks_total": 10,
+        "receiver_verified_scoped_checks": 8,
+        "accepted_top_level_hashes": 0,
+        "transitive_provenance_files_checked": 21,
+        "transitive_provenance_drifted_files": 5,
+        "gate_a": "FAIL_CLOSED",
+        "mutation_tests": "11/11 PASS"
+      }
+    },
+    "tier_2": {
+      "status": "PASS",
+      "commands": [
+        "python3 quantum-weyl/classical_import/check_strict_386_full_d_action.py",
+        "python3 foundations/check_lorentzian_weyl_bv_completion_atlas_v16.py",
+        "python3 foundations/check_matrix_site_v2.py",
+        "python3 paper/verify_21_reverse_foundations_claim_map.py"
+      ],
+      "criterion": "Gate V6 consumes the D certificate and is consumed by Atlas V16, the static site and paper. The transitive consumer chain was rebuilt and independently checked."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "Gate A remains FAIL_CLOSED with zero accepted top-level hashes. No freeze/tag, shared classical core, theorem promotion, quantum lifecycle promotion or release preparation occurred."
+    }
+  },
+  "artifact_sha256": {
+    "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V6_RECONCILIATION.json": "b3d0fa7c73ca25166c1c3b6356272d55b6b045ecb213b353ffafa4bcb3c9fe77",
+    "quantum-weyl/classical_import/REPORT_GATE_V6.md": "ff6496a24223b7f515ff3b0fd1d1b1ba9ef568ec442a095a18299d50f62575bb"
+  },
+  "advisory_shadow_rail": {
+    "command": "ci/science-forge-shadow.sh",
+    "exit_status": 0,
+    "bridge_audit": "FAIL_CLOSED: external bp2transformer verifier lacks sympy; Forge binary/stdlib revisions also differ",
+    "coverage_census": "DRIFT: 1784 certificates versus baseline 976",
+    "disposition": "Advisory findings and the five-file Gate provenance drift remain explicit; neither is used as positive Gate evidence."
+  },
+  "claim_boundary": "V6 promotes only the strict local D action, [D,q1], and formal D-adjoint replay to receiver-verified scoped evidence. Full-carrier q2, D/q2, five other missing bundles, all seven authoritative hashes, Gate A, Hadamard data, renormalized products, QME restoration, residual transfer and Lorentzian quantum completion remain open."
+}

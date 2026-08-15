@@ -1,0 +1,160 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "classical-import-gate-v6-reconciliation-v1.schema.json",
+  "title": "Classical import Gate-A reconciliation v6",
+  "type": "object",
+  "required": [
+    "schema", "result_id", "result_state", "lifecycle", "created",
+    "repository_base_commit", "dependency_tags", "question", "answer",
+    "supersedes_for_current_status", "historical_certificate_preserved",
+    "standalone_history_replay", "status_vocabulary", "export_reconciliation",
+    "freeze_check_reconciliation", "required_hash_disposition",
+    "minimal_missing_bundle", "gate_disposition", "m3_scoped_resolution",
+    "m2_minimal_resolution", "m2_d_resolution", "m4_minimal_resolution",
+    "provenance", "transitive_provenance_drift", "claim_flags", "does_not_establish", "next_gate",
+    "independent_checker", "human_report"
+  ],
+  "properties": {
+    "schema": {"const": "quantum-weyl-classical-import-gate-v6-reconciliation-v1"},
+    "result_id": {"const": "CLASSICAL_IMPORT_GATE_V6_RECONCILIATION"},
+    "result_state": {"const": "FULL_D_AND_D_Q1_SCOPED_CERTIFIED_FULL_CARRIER_Q2_OPEN"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "created": {"type": "string", "format": "date"},
+    "repository_base_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "question": {"type": "string", "minLength": 220},
+    "answer": {"type": "string", "minLength": 1000},
+    "supersedes_for_current_status": {"const": "CLASSICAL_IMPORT_GATE_V5_RECONCILIATION"},
+    "historical_certificate_preserved": {"const": true},
+    "standalone_history_replay": {"type": "object", "minProperties": 8},
+    "status_vocabulary": {"type": "array", "minItems": 6, "maxItems": 6},
+    "export_reconciliation": {"type": "array", "minItems": 20, "maxItems": 20, "items": {"$ref": "#/$defs/reconciliation"}},
+    "freeze_check_reconciliation": {"type": "array", "minItems": 10, "maxItems": 10, "items": {"$ref": "#/$defs/reconciliation"}},
+    "required_hash_disposition": {
+      "type": "object", "minProperties": 7, "maxProperties": 7,
+      "required": ["field_dictionary_hash", "differential_hash", "q2_hash", "D_action_hash", "zero_mode_basis_hash", "pairing_hash", "representative_hash"],
+      "properties": {"D_action_hash": {"$ref": "#/$defs/hash_disposition"}},
+      "additionalProperties": {"$ref": "#/$defs/hash_disposition"}
+    },
+    "minimal_missing_bundle": {"type": "array", "minItems": 6, "maxItems": 6},
+    "gate_disposition": {
+      "type": "object",
+      "required": [
+        "gate_a_status", "claim_state", "publishable_quantum_results_allowed_by_gate_a",
+        "exports_total", "same_theory_receiver_verified_scoped", "different_theory_controls",
+        "supporting_evidence_only", "freeze_checks_total", "freeze_checks_receiver_verified_scoped",
+        "freeze_checks_different_theory", "freeze_checks_blocked", "accepted_common_snapshot_hashes"
+      ],
+      "properties": {
+        "gate_a_status": {"const": "FAIL_CLOSED"},
+        "claim_state": {"const": "CLASSICAL_IMPORT_STRICT_FULL_D_AND_D_Q1_SCOPED_CERTIFIED_FULL_Q2_OPEN"},
+        "publishable_quantum_results_allowed_by_gate_a": {"const": false},
+        "exports_total": {"const": 20},
+        "same_theory_receiver_verified_scoped": {"const": 11},
+        "different_theory_controls": {"const": 0},
+        "supporting_evidence_only": {"const": 6},
+        "freeze_checks_total": {"const": 10},
+        "freeze_checks_receiver_verified_scoped": {"const": 8},
+        "freeze_checks_different_theory": {"const": 1},
+        "freeze_checks_blocked": {"const": 1},
+        "accepted_common_snapshot_hashes": {"const": 0}
+      },
+      "additionalProperties": true
+    },
+    "m3_scoped_resolution": {"type": "object", "minProperties": 8},
+    "m2_minimal_resolution": {"type": "object", "minProperties": 10},
+    "m2_d_resolution": {
+      "type": "object",
+      "required": [
+        "status", "evidence", "carrier_rows", "component_blocks", "D_component_coefficients",
+        "q1_operator_tables_checked", "q1_rational_coefficients_checked", "D_q1_commutator_defects",
+        "pairing_entries_checked", "scoped_snapshot_hashes", "D_action_sha256", "remaining", "boundary"
+      ],
+      "properties": {
+        "status": {"const": "STRICT_386_FULL_D_AND_D_Q1_RECEIVER_VERIFIED_SCOPED"},
+        "evidence": {"const": "STRICT_386_FULL_D_ACTION_V1"},
+        "carrier_rows": {"const": 386},
+        "component_blocks": {"const": 22},
+        "D_component_coefficients": {"const": 386},
+        "q1_operator_tables_checked": {"const": 27},
+        "q1_rational_coefficients_checked": {"const": 4374},
+        "D_q1_commutator_defects": {"const": 0},
+        "pairing_entries_checked": {"const": 410},
+        "scoped_snapshot_hashes": {"const": 14},
+        "D_action_sha256": {"$ref": "#/$defs/hash"},
+        "remaining": {"type": "string", "minLength": 100},
+        "boundary": {"type": "string", "minLength": 100}
+      },
+      "additionalProperties": false
+    },
+    "m4_minimal_resolution": {"type": "object", "minProperties": 9},
+    "provenance": {"type": "object", "required": ["inputs"], "properties": {"inputs": {"type": "array", "minItems": 23, "maxItems": 23}}},
+    "transitive_provenance_drift": {
+      "type": "object",
+      "required": ["files_checked", "drifted_files", "status", "entries"],
+      "properties": {
+        "files_checked": {"const": 21},
+        "drifted_files": {"type": "integer", "minimum": 1},
+        "status": {"const": "DRIFT_RECORDED_GATE_REMAINS_FAIL_CLOSED"},
+        "entries": {
+          "type": "array", "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["path", "historical_v5_sha256", "current_worktree_sha256", "status", "disposition"],
+            "properties": {
+              "path": {"type": "string"},
+              "historical_v5_sha256": {"$ref": "#/$defs/hash"},
+              "current_worktree_sha256": {"type": ["string", "null"], "pattern": "^[0-9a-f]{64}$"},
+              "status": {"const": "RECORDED_NOT_SILENTLY_REBOUND"},
+              "disposition": {"type": "string", "minLength": 80}
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "claim_flags": {"type": "object", "additionalProperties": {"type": "boolean"}},
+    "does_not_establish": {"type": "array", "minItems": 18, "items": {"type": "string"}},
+    "next_gate": {"type": "string", "minLength": 500},
+    "independent_checker": {
+      "type": "object", "required": ["path", "checks", "expected_digest"],
+      "properties": {
+        "path": {"const": "quantum-weyl/classical_import/check_classical_import_gate_v6_reconciliation.py"},
+        "checks": {"type": "array", "minItems": 11},
+        "expected_digest": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "human_report": {"const": "quantum-weyl/classical_import/REPORT_GATE_V6.md"}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "hash_disposition": {
+      "type": "object",
+      "required": ["accepted", "candidate", "candidate_scope"],
+      "properties": {
+        "accepted": {"type": ["string", "null"], "pattern": "^[0-9a-f]{64}$"},
+        "candidate": {"type": ["string", "null"], "pattern": "^[0-9a-f]{64}$"},
+        "candidate_scope": {"type": "string", "minLength": 8}
+      },
+      "additionalProperties": false
+    },
+    "reconciliation": {
+      "type": "object",
+      "required": ["status", "evidence", "established", "remaining_for_gate_a", "boundary"],
+      "properties": {
+        "export_id": {"type": "string"}, "check_id": {"type": "string"},
+        "status": {"type": "string"}, "evidence": {"type": "array", "items": {"type": "string"}},
+        "established": {"type": "string", "minLength": 50},
+        "remaining_for_gate_a": {"type": "string", "minLength": 50},
+        "boundary": {"type": "string", "minLength": 50}
+      },
+      "oneOf": [
+        {"required": ["export_id"], "not": {"required": ["check_id"]}},
+        {"required": ["check_id"], "not": {"required": ["export_id"]}}
+      ],
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

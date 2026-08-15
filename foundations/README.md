@@ -892,6 +892,20 @@ six bundles open.  The rank-one successor is now the local cylinder-generator
 compatibility.  An effective Green solver, kernel bytes, weakest analytic
 base, Hadamard state and QME also remain open.
 
+The append-only
+[`V16 completion atlas`](reports/lorentzian-weyl-bv-completion-atlas-v16.md)
+closes the next local-algebraic step on the same strict graph carrier.  The
+real cylinder flow `T=partial_t` is serialized on all 386 rows; `D=iT` is the
+Hermitian convention only after complexification.  Independent composition
+checks `[D,q1]=0` across 27 tables, 70 derivative multiindices and 4,374 exact
+coefficients, while formal skew-adjointness replays on all 410 pairing entries.
+The resulting unary-causal-D scope binds fourteen hashes.  Gate V6 promotes
+the local `D` and `[D,q1]` entries to receiver-verified scoped evidence, but
+still accepts zero of seven authoritative hashes.  It also records, without
+silently rebinding, drift in five of 21 transitive provenance files inherited
+from Gate V5.  Full-carrier `q2`, `D/q2`, residual data, Hadamard and QME work
+remain open; the common-carrier `q2` extension is now the rank-one route.
+
 ```bash
 python3 foundations/build_lorentzian_weyl_bv_completion_atlas.py --check
 python3 foundations/check_lorentzian_weyl_bv_completion_atlas.py
@@ -957,6 +971,16 @@ python3 quantum-weyl/classical_import/check_strict_386_graph_green_action_name.p
 python3 quantum-weyl/classical_import/verify_strict_386_graph_green_action_name.py
 python3 quantum-weyl/classical_import/check_strict_386_unary_causal_common_snapshot.py
 python3 quantum-weyl/classical_import/verify_strict_386_unary_causal_common_snapshot.py
+python3 quantum-weyl/classical_import/build_strict_386_full_d_action.py --check
+python3 quantum-weyl/classical_import/check_strict_386_full_d_action.py
+python3 quantum-weyl/classical_import/verify_strict_386_full_d_action.py
+python3 quantum-weyl/classical_import/build_classical_import_gate_v6_reconciliation.py --check
+python3 quantum-weyl/classical_import/check_classical_import_gate_v6_reconciliation.py
+python3 quantum-weyl/classical_import/verify_classical_import_gate_v6_reconciliation.py
+python3 foundations/build_lorentzian_weyl_bv_completion_atlas_v16.py --check
+python3 foundations/check_lorentzian_weyl_bv_completion_atlas_v16.py
+python3 foundations/verify_lorentzian_weyl_bv_completion_atlas_v16.py
+python3 -m unittest foundations.tests.test_lorentzian_weyl_bv_completion_atlas_v16
 ```
 
 ## Lifecycle

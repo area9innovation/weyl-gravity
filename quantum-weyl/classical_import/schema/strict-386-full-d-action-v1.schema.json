@@ -1,0 +1,230 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/strict-386-full-d-action-v1.schema.json",
+  "title": "Strict 386-row full cylinder D action v1",
+  "type": "object",
+  "required": [
+    "$schema", "schema", "schema_path", "result_id", "result_kind", "result_state",
+    "lifecycle", "created", "repository_base_commit", "dependency_tags", "question",
+    "answer", "scope", "generator_selection", "D_action", "exact_replay",
+    "extended_common_snapshot", "support_and_foundations", "gate_disposition",
+    "claim_flags", "does_not_establish", "next_gate", "canonical_hashes",
+    "provenance", "independent_checker", "human_report"
+  ],
+  "properties": {
+    "$schema": {"const": "https://json-schema.org/draft/2020-12/schema"},
+    "schema": {"const": "strict-386-full-d-action-v1"},
+    "result_id": {"const": "STRICT_386_FULL_D_ACTION_V1"},
+    "result_kind": {"const": "EXACT_SUPPORT_LOCAL_CYLINDER_FLOW_ACTION_AND_UNARY_EQUIVARIANCE"},
+    "result_state": {"const": "FULL_D_AND_D_Q1_CERTIFIED_SAME_CARRIER_Q2_OPEN"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "created": {"type": "string", "format": "date"},
+    "repository_base_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "scope": {
+      "type": "object",
+      "required": ["carrier_rows", "endpoint_rows", "contracted_rows", "component_blocks", "arithmetic"],
+      "properties": {
+        "carrier_rows": {"const": 386},
+        "endpoint_rows": {"const": 30},
+        "contracted_rows": {"const": 356},
+        "component_blocks": {"const": 22}
+      },
+      "additionalProperties": true
+    },
+    "generator_selection": {
+      "type": "object",
+      "required": [
+        "spacetime", "metric", "selected_real_generator", "complete_killing_flow",
+        "background_stationary", "parallel_curvature", "mixed_time_space_curvature",
+        "frame_lie_dragged", "density_correction", "formal_adjoint_on_compact_support",
+        "not_minkowski_dilation", "not_berger_helical_generator", "not_a_mode_weight_truncation"
+      ],
+      "properties": {
+        "spacetime": {"type": "string"},
+        "metric": {"type": "string"},
+        "selected_real_generator": {"const": "T=partial_t"},
+        "complete_killing_flow": {"const": true},
+        "background_stationary": {"const": true},
+        "parallel_curvature": {"const": true},
+        "mixed_time_space_curvature": {"const": "zero"},
+        "frame_lie_dragged": {"const": true},
+        "density_correction": {"type": "string"},
+        "formal_adjoint_on_compact_support": {"const": "T^sharp=-T"},
+        "not_minkowski_dilation": {"const": true},
+        "not_berger_helical_generator": {"const": true},
+        "not_a_mode_weight_truncation": {"const": true}
+      },
+      "additionalProperties": false
+    },
+    "D_action": {
+      "type": "object",
+      "required": [
+        "operator_id", "geometric_generator", "hermitian_mode_convention",
+        "coordinate_frame", "component_formula", "shape", "degree", "differential_order",
+        "orientation", "temporal_multiindex", "coefficient_field", "nonzero_coefficients",
+        "entries", "row_ledger", "block_counts", "degree_counts", "sha256"
+      ],
+      "properties": {
+        "operator_id": {"const": "T_CYLINDER_REAL_LOCAL_ACTION"},
+        "geometric_generator": {"type": "string"},
+        "hermitian_mode_convention": {"type": "string"},
+        "coordinate_frame": {"type": "string"},
+        "component_formula": {"type": "string"},
+        "shape": {"const": [386, 386]},
+        "degree": {"const": 0},
+        "differential_order": {"const": 1},
+        "orientation": {"const": "entry[target_global_index,source_global_index]"},
+        "temporal_multiindex": {"const": [1, 0, 0, 0]},
+        "coefficient_field": {"const": "Q"},
+        "nonzero_coefficients": {"const": 386},
+        "entries": {
+          "type": "array", "minItems": 386, "maxItems": 386,
+          "items": {
+            "type": "array", "minItems": 3, "maxItems": 3,
+            "prefixItems": [
+              {"type": "integer", "minimum": 0, "maximum": 385},
+              {"type": "integer", "minimum": 0, "maximum": 385},
+              {"const": "1"}
+            ]
+          }
+        },
+        "row_ledger": {"type": "array", "minItems": 386, "maxItems": 386, "items": {"$ref": "#/$defs/row"}},
+        "block_counts": {"type": "object", "minProperties": 22, "maxProperties": 22, "additionalProperties": {"type": "integer", "minimum": 1}},
+        "degree_counts": {"type": "object", "minProperties": 6, "maxProperties": 6, "additionalProperties": {"type": "integer", "minimum": 1}},
+        "sha256": {"$ref": "#/$defs/sha256"}
+      },
+      "additionalProperties": false
+    },
+    "exact_replay": {
+      "type": "object",
+      "required": [
+        "D_rows_checked", "D_diagonal_coefficients_checked", "q1_operator_tables_checked",
+        "q1_derivative_multiindices_checked", "q1_rational_coefficients_checked",
+        "left_composition_multiindices", "right_composition_multiindices",
+        "D_q1_commutator_defects", "D_q1_commutator_zero",
+        "temporal_spatial_covariant_commutator_defects", "coefficient_time_derivative_defects",
+        "formal_skew_adjoint_pairing_entries_checked", "formal_skew_adjoint_defects", "proof_rule"
+      ],
+      "properties": {
+        "D_rows_checked": {"const": 386},
+        "D_diagonal_coefficients_checked": {"const": 386},
+        "q1_operator_tables_checked": {"const": 27},
+        "q1_derivative_multiindices_checked": {"const": 70},
+        "q1_rational_coefficients_checked": {"const": 4374},
+        "left_composition_multiindices": {"const": 70},
+        "right_composition_multiindices": {"const": 70},
+        "D_q1_commutator_defects": {"const": 0},
+        "D_q1_commutator_zero": {"const": true},
+        "temporal_spatial_covariant_commutator_defects": {"const": 0},
+        "coefficient_time_derivative_defects": {"const": 0},
+        "formal_skew_adjoint_pairing_entries_checked": {"const": 410},
+        "formal_skew_adjoint_defects": {"const": 0},
+        "proof_rule": {"type": "string", "minLength": 40}
+      },
+      "additionalProperties": false
+    },
+    "extended_common_snapshot": {
+      "type": "object",
+      "required": [
+        "kind", "parent_unary_causal_snapshot_sha256", "D_action_sha256", "graph_q1_sha256",
+        "basis_sha256", "pairing_sha256", "accepted_object_hashes", "receiver_status", "sha256"
+      ],
+      "properties": {
+        "kind": {"const": "STRICT_386_UNARY_CAUSAL_D_SCOPED_SNAPSHOT"},
+        "accepted_object_hashes": {"const": 14},
+        "receiver_status": {"const": "ACCEPTED_SCOPED_D_EXTENSION"},
+        "parent_unary_causal_snapshot_sha256": {"$ref": "#/$defs/sha256"},
+        "D_action_sha256": {"$ref": "#/$defs/sha256"},
+        "graph_q1_sha256": {"$ref": "#/$defs/sha256"},
+        "basis_sha256": {"$ref": "#/$defs/sha256"},
+        "pairing_sha256": {"$ref": "#/$defs/sha256"},
+        "sha256": {"$ref": "#/$defs/sha256"}
+      },
+      "additionalProperties": false
+    },
+    "gate_disposition": {
+      "type": "object",
+      "required": [
+        "M2_D_action_status", "M2_D_q1_status", "M2_full_carrier_q2_status",
+        "M2_D_q2_derivation_status", "top_level_gate_a_hashes_accepted_by_this_result",
+        "classical_import_gate_a_status", "reason"
+      ],
+      "properties": {
+        "M2_D_action_status": {"const": "RECEIVER_VERIFIED_SCOPED"},
+        "M2_D_q1_status": {"const": "RECEIVER_VERIFIED_SCOPED"},
+        "M2_full_carrier_q2_status": {"const": "OPEN"},
+        "M2_D_q2_derivation_status": {"const": "OPEN"},
+        "top_level_gate_a_hashes_accepted_by_this_result": {"const": 0},
+        "classical_import_gate_a_status": {"const": "FAIL_CLOSED"},
+        "reason": {"type": "string", "minLength": 60}
+      },
+      "additionalProperties": false
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": [
+        "STRICT_386_FULL_LOCAL_D_ACTION_CERTIFIED", "STRICT_386_D_Q1_COMMUTATOR_REPLAYED",
+        "STRICT_386_D_FORMAL_SKEW_ADJOINT_REPLAYED", "STRICT_386_UNARY_CAUSAL_D_SCOPED_SNAPSHOT_ACCEPTED",
+        "STRICT_386_FULL_Q2_D_COMMON_SNAPSHOT", "STRICT_386_D_Q2_DERIVATION_REPLAYED",
+        "STRICT_386_D_CARTAN_HOMOTOPY_CONSTRUCTED", "D_PROPER_GAUGE_OR_CHARGED_DECIDED",
+        "CLASSICAL_IMPORT_GATE_PASSED", "HADAMARD_STATE_CONSTRUCTED",
+        "RENORMALIZED_LORENTZIAN_PRODUCTS", "QME_RESTORED", "RESIDUAL_TRANSFERRED",
+        "LORENTZIAN_QUANTUM_THEORY"
+      ],
+      "properties": {
+        "STRICT_386_FULL_LOCAL_D_ACTION_CERTIFIED": {"const": true},
+        "STRICT_386_D_Q1_COMMUTATOR_REPLAYED": {"const": true},
+        "STRICT_386_D_FORMAL_SKEW_ADJOINT_REPLAYED": {"const": true},
+        "STRICT_386_UNARY_CAUSAL_D_SCOPED_SNAPSHOT_ACCEPTED": {"const": true},
+        "STRICT_386_FULL_Q2_D_COMMON_SNAPSHOT": {"const": false},
+        "STRICT_386_D_Q2_DERIVATION_REPLAYED": {"const": false},
+        "STRICT_386_D_CARTAN_HOMOTOPY_CONSTRUCTED": {"const": false},
+        "D_PROPER_GAUGE_OR_CHARGED_DECIDED": {"const": false},
+        "CLASSICAL_IMPORT_GATE_PASSED": {"const": false},
+        "HADAMARD_STATE_CONSTRUCTED": {"const": false},
+        "RENORMALIZED_LORENTZIAN_PRODUCTS": {"const": false},
+        "QME_RESTORED": {"const": false},
+        "RESIDUAL_TRANSFERRED": {"const": false},
+        "LORENTZIAN_QUANTUM_THEORY": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "does_not_establish": {"type": "array", "minItems": 7, "items": {"type": "string", "minLength": 20}},
+    "next_gate": {"type": "string", "minLength": 160},
+    "canonical_hashes": {"type": "object", "minProperties": 6, "maxProperties": 6, "additionalProperties": {"$ref": "#/$defs/sha256"}},
+    "provenance": {
+      "type": "object",
+      "required": ["inputs"],
+      "properties": {"inputs": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"$ref": "#/$defs/provenance"}}},
+      "additionalProperties": false
+    }
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "row": {
+      "type": "object",
+      "required": ["index", "row_id", "block", "degree", "action"],
+      "properties": {
+        "index": {"type": "integer", "minimum": 0, "maximum": 385},
+        "row_id": {"type": "string", "minLength": 1},
+        "block": {"type": "string", "minLength": 2},
+        "degree": {"type": "integer", "minimum": -2, "maximum": 3},
+        "action": {"const": "Lie_partial_t"}
+      },
+      "additionalProperties": false
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["path", "result_or_schema_id", "sha256", "role"],
+      "properties": {
+        "path": {"type": "string", "minLength": 3},
+        "result_or_schema_id": {"type": "string", "minLength": 3},
+        "sha256": {"$ref": "#/$defs/sha256"},
+        "role": {"type": "string", "minLength": 10}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": true
+}

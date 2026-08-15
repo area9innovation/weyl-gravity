@@ -1,0 +1,87 @@
+{
+  "receipt_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V16_INTEGRATION_TIER_RECEIPT",
+  "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V16",
+  "created": "2026-08-15",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "scope": "Append-only V16 projection of the exact full-cylinder D action and Gate-V6 reconciliation into the 77-cell completion atlas, existing static researcher site and reverse-foundations paper, with q2, Gate A and every quantum lifecycle boundary preserved.",
+  "test_tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "elapsed_seconds": 0.37,
+      "commands": [
+        "python3 -m py_compile <explicit V16, site and paper generator/checker/test paths>",
+        "python3 -m json.tool <explicit V16, site-result and paper-claim-map JSON paths>",
+        "deno check foundations/matrix_site_v2_assets/app-v2.js",
+        "git diff --check -- <explicit scoped paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 10.1,
+      "commands": [
+        "python3 foundations/build_lorentzian_weyl_bv_completion_atlas_v16.py --check",
+        "python3 foundations/check_lorentzian_weyl_bv_completion_atlas_v16.py",
+        "python3 foundations/verify_lorentzian_weyl_bv_completion_atlas_v16.py",
+        "python3 -m unittest foundations/tests/test_lorentzian_weyl_bv_completion_atlas_v16.py",
+        "python3 foundations/build_matrix_site_v2.py --check",
+        "python3 foundations/check_matrix_site_v2.py",
+        "python3 foundations/verify_matrix_site_v2.py",
+        "python3 -m unittest foundations/tests/test_matrix_site.py",
+        "python3 paper/generate_21_reverse_foundations_appendices.py --check",
+        "python3 paper/generate_21_reverse_foundations_claim_map.py --check",
+        "python3 paper/verify_21_reverse_foundations_claim_map.py",
+        "cd paper && pdflatex -interaction=nonstopmode -halt-on-error 21-reverse-foundations-of-physics.tex (two passes)"
+      ],
+      "checks": {
+        "atlas_cells_preserved": 77,
+        "atlas_routes": 8,
+        "atlas_mutation_tests": "11/11 PASS",
+        "site_cells": 576,
+        "site_status": "PASS",
+        "site_tests": "10/10 PASS",
+        "paper_claims": 42,
+        "paper_claim_map": "PASS",
+        "paper_pdf_pages": 64,
+        "top_ranked_route": "STRICT_386_Q2_D_COMMON_CARRIER",
+        "classical_gate_a": "FAIL_CLOSED"
+      }
+    },
+    "tier_2": {
+      "status": "PASS",
+      "commands": [
+        "python3 quantum-weyl/classical_import/check_strict_386_full_d_action.py",
+        "python3 quantum-weyl/classical_import/check_classical_import_gate_v6_reconciliation.py",
+        "python3 foundations/check_lorentzian_weyl_bv_completion_atlas_v16.py",
+        "python3 foundations/check_matrix_site_v2.py",
+        "python3 paper/verify_21_reverse_foundations_claim_map.py"
+      ],
+      "criterion": "All changed mathematical evidence, receiver reconciliation, atlas projection, site links, generated appendices and paper claims were checked across independent consumer rails. Five inherited provenance changes were recorded rather than silently accepted."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No classical/quantum freeze, release tag, shared core algebra, paper theorem lifecycle or QME state was promoted. Atlas V16 explicitly keeps full-carrier q2, Gate A and every quantum completion flag false."
+    }
+  },
+  "artifact_sha256": {
+    "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V16.json": "43edb517e421d10ac36a16a81193080f61421e123714936f31c591659e36f757",
+    "foundations/reports/lorentzian-weyl-bv-completion-atlas-v16.md": "f192c1dc76341008cda4841c8f3b725ab56ba8f9846a5764e135eb72cb314594",
+    "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json": "7b6bb327474ae71e623c869dae0ac5a069ee81a1460a37469242f35f820d7fb0",
+    "foundations/site/manifest.json": "54f2149e08f59d28b47d423001caddcff6ca7bfef1dedf980d3c325f953f163d",
+    "paper/21-reverse-foundations-of-physics-claim-map.json": "fff425ed9a97114b4a78303f582a97290e067c39a1bfc95a01fc7ba4a38e4813",
+    "paper/21-reverse-foundations-of-physics-appendices.tex": "bdd2d9b59d573f3497eb83958786201705a8a7f6311a1a948b67efeaea8a4ee5",
+    "paper/21-reverse-foundations-of-physics.pdf": "a1be36b8a303abf29324e1fd608f6489d9c02dc0c4b1634b95b3d3226d1dea88"
+  },
+  "advisory_shadow_rail": {
+    "command": "ci/science-forge-shadow.sh",
+    "exit_status": 0,
+    "bridge_audit": "FAIL_CLOSED: external bp2transformer verifier lacks sympy; Forge binary/stdlib revisions also differ",
+    "coverage_census": "DRIFT: 1784 certificates versus baseline 976",
+    "disposition": "Advisory findings are preserved without being used to promote or invalidate the scoped V16 integration."
+  },
+  "claim_boundary": "Atlas V16, the site and paper expose an exact local cylinder flow on the strict unary-causal carrier. They do not claim full-carrier q2, D/q2, a D-Cartan homotopy, physical D charge status, an effective Green solver, kernel bytes, a weakest base, the authoritative classical Gate A, a complete residual SDR/payload, Hadamard state, positivity, renormalized products, QME restoration, residual transfer or a completed Lorentzian quantum theory."
+}

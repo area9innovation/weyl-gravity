@@ -17,9 +17,11 @@ VIABILITY = ROOT / "foundations/site/viability.json"
 ASSEMBLIES = ROOT / "foundations/site/assemblies.json"
 CUBE = ROOT / "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V15.json"
 LADDER = ROOT / "foundations/results/FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V2.json"
-COMPLETION_ATLAS = ROOT / "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V15.json"
+COMPLETION_ATLAS = ROOT / "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V16.json"
 COMPLETION_GREEN_ACTION_NAME = ROOT / "quantum-weyl/classical_import/certificates/STRICT_386_GRAPH_GREEN_ACTION_NAME_V1.json"
 COMPLETION_UNARY_CAUSAL_SNAPSHOT = ROOT / "quantum-weyl/classical_import/certificates/STRICT_386_UNARY_CAUSAL_COMMON_SNAPSHOT_V1.json"
+COMPLETION_FULL_D = ROOT / "quantum-weyl/classical_import/certificates/STRICT_386_FULL_D_ACTION_V1.json"
+COMPLETION_GATE_V6 = ROOT / "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V6_RECONCILIATION.json"
 STATUSES = {"LOCAL_RESULT", "LITERATURE_RESULT", "PIECES_ONLY", "PRIORITY_GAP", "REVIEWED_GAP", "NOT_MAPPED"}
 MIGRATIONS = {"EXACT_PARENT_TRANSFER", "CAPABILITY_QUALIFIED", "REVIEWED_OVERLAY", "REVIEWED_NO_TRANSFER", "REVIEWED_CHILD_GAP", "DIRECT_COORDINATE_REVIEW", "NOT_REVIEWED"}
 
@@ -41,6 +43,7 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
     data = load(DATA) if data is None else data
     cube, ladder, completion_source, result, manifest, viability, assemblies = load(CUBE), load(LADDER), load(COMPLETION_ATLAS), load(RESULT), load(MANIFEST), load(VIABILITY), load(ASSEMBLIES)
     green_source, unary_causal_source = load(COMPLETION_GREEN_ACTION_NAME), load(COMPLETION_UNARY_CAUSAL_SNAPSHOT)
+    full_d_source, gate_v6_source = load(COMPLETION_FULL_D), load(COMPLETION_GATE_V6)
     errors: list[str] = []
     axes = {x.get("id"): x for x in data.get("axes", [])}
     keys = {axis_id: [x.get("id") for x in axes.get(axis_id, {}).get("keys", [])] for axis_id in ("FOUNDATION", "CARRIER", "REFINED_OBLIGATION")}
@@ -163,7 +166,7 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
     completion_flags = completion.get("claim_flags", {})
     if completion_flags.get("general_noncone_104_row_no_go") is not False or completion_flags.get("lorentzian_full_theory_certified") is not False:
         errors.append("Lorentzian completion fail-closed boundary")
-    if completion.get("result_id") != "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V15":
+    if completion.get("result_id") != "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V16":
         errors.append("Lorentzian completion atlas version")
     transport = completion.get("strict_causal_sign_transport", {})
     if transport.get("full_dimension") != 386 or transport.get("positive_signs") != 381 or transport.get("negative_signs") != 5 or transport.get("causal_stage_preserved") is not True:
@@ -291,11 +294,27 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
     if unary_causal.get("missing_bundle_ids") != missing_ids or missing_ids != ["M1_COMMON_STRICT_SNAPSHOT", "M2_STRICT_Q2_D", "M3_RESIDUAL_SDR", "M4_FULL_CYCLIC_PAIRING", "M5_RESIDUAL_EXACT_PAYLOAD", "M6_CENTERED_REPRESENTATIVES"]:
         errors.append("strict unary-causal missing-bundle ledger")
     if completion_flags.get("strict_386_unary_causal_common_snapshot_accepted") is not True or completion_flags.get("strict_386_effective_numeric_green_solver") is not False or completion_flags.get("strict_386_distribution_kernel_bytes_serialized") is not False:
-        errors.append("strict V15 successor flags")
-    if completion.get("route_selection", [{}])[0].get("route") != "STRICT_386_FULL_D_ACTION":
-        errors.append("strict V15 route frontier")
+        errors.append("strict V15 inherited flags")
+    full_d = completion.get("strict_full_d_action", {})
+    if (full_d.get("result_id"), full_d.get("carrier_rows"), full_d.get("component_blocks"), full_d.get("D_coefficients"), tuple(full_d.get("temporal_multiindex", []))) != (full_d_source.get("result_id"), 386, 22, 386, (1, 0, 0, 0)):
+        errors.append("strict full-D projection")
+    if (full_d.get("q1_tables_checked"), full_d.get("q1_multiindices_checked"), full_d.get("q1_coefficients_checked"), full_d.get("D_q1_commutator_defects"), full_d.get("pairing_entries_checked"), full_d.get("formal_skew_adjoint_defects"), full_d.get("scoped_snapshot_hashes")) != (27, 70, 4374, 0, 410, 0, 14):
+        errors.append("strict full-D exact replay")
+    if full_d.get("D_action_sha256") != full_d_source.get("canonical_hashes", {}).get("D_action_sha256") or full_d.get("full_q2_common_snapshot") is not False or full_d.get("D_q2_derivation") is not False or full_d.get("D_gauge_or_charge_decided") is not False:
+        errors.append("strict full-D binding/boundary")
+    gate_v6 = completion.get("strict_gate_v6_reconciliation", {})
+    if (gate_v6.get("result_id"), gate_v6.get("exports_total"), gate_v6.get("exports_receiver_verified_scoped"), gate_v6.get("freeze_checks_total"), gate_v6.get("freeze_checks_receiver_verified_scoped"), gate_v6.get("accepted_top_level_hashes"), gate_v6.get("gate_a_status")) != (gate_v6_source.get("result_id"), 20, 11, 10, 8, 0, "FAIL_CLOSED"):
+        errors.append("strict Gate-V6 projection")
+    if (gate_v6.get("transitive_provenance_files_checked"), gate_v6.get("transitive_provenance_drifted_files")) != (21, 5) or gate_v6.get("D_candidate_hash_accepted") is not False:
+        errors.append("strict Gate-V6 drift/boundary")
+    if completion_flags.get("strict_386_full_local_d_action_certified") is not True or completion_flags.get("strict_386_d_q1_commutator_replayed") is not True or completion_flags.get("strict_386_d_formal_skew_adjoint_replayed") is not True or completion_flags.get("strict_386_unary_causal_d_scoped_snapshot_accepted") is not True:
+        errors.append("strict V16 D successor flags")
+    if completion_flags.get("strict_386_full_carrier_q2_certified") is not False or completion_flags.get("strict_386_d_q2_derivation_replayed") is not False or completion_flags.get("strict_pure_weyl_classical_gate_passed") is not False:
+        errors.append("strict V16 q2/Gate firewall")
+    if completion.get("route_selection", [{}])[0].get("route") != "STRICT_386_Q2_D_COMMON_CARRIER":
+        errors.append("strict V16 route frontier")
     result_flags = result.get("claim_flags", {})
-    if result_flags.get("strict_graph_green_names_exposed") is not True or result_flags.get("strict_unary_causal_snapshot_exposed") is not True or result_flags.get("strict_classical_gate_a_passed") is not False:
+    if result_flags.get("strict_graph_green_names_exposed") is not True or result_flags.get("strict_unary_causal_snapshot_exposed") is not True or result_flags.get("strict_full_d_action_exposed") is not True or result_flags.get("strict_d_q1_replay_exposed") is not True or result_flags.get("strict_full_carrier_q2_exposed") is not False or result_flags.get("strict_classical_gate_a_passed") is not False:
         errors.append("site completion exposure flags")
     if viability.get("source_atlas_digest") != data.get("canonical_digest") or viability.get("canonical_digest") != result.get("independent_checker", {}).get("expected_viability_digest"):
         errors.append("theory viability source/digest pin")
@@ -365,7 +384,7 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
     for token in ("NGC 3198 head-to-head control", "Scoped winner: GR + NFW", "Why RMS and χ² disagree", "FOUNDATIONAL_NGC3198_COMMON_FIT_COMPARISON_V1"):
         if token not in app:
             errors.append("common-fit interface token " + token)
-    for token in ("completionView", "Weyl BV routes", "completionExplorer", "77 separately typed cells", "Where effort has the highest expected value", "RANK_ONLY_FEASIBLE", "general non-cone 104-row no-go", "Finite residual control", "Gate A still closed", "Gate V5", "Causal convention crosswalk", "Endpoint search completed", "arrow_tables_matching", "bach_columns_matching", "619", "Suspension question resolved", "54", "30", "376", "10", "Full component pairing serialized", "356=36+320", "410", "Three portability contracts", "FINITE_COMPONENT_JET_TABLE", "FINITE_SPARSE_COMPONENT_MAP", "ANALYTIC_GREEN_ACTION", "Complete unary snapshot", "STRICT_386_FULL_Q1_COMPONENT_JET_TABLE_V1", "Exact split local SDR", "STRICT_386_LOCAL_SDR_COMPONENT_MAPS_V1", "H_alg", "190", "Canonical coordinate bridge certified", "STRICT_386_CANONICAL_SHEAR_COMPONENT_JETS_V1", "1321", "A(-Tsharp)", "T(-Asharp)", "Represented Green action certified", "Hodge eigenspace projectors", "STRICT_386_GRAPH_GREEN_ACTION_NAME_V1", "Scoped common snapshot accepted", "hashes bind one unary-causal carrier", "STRICT_386_UNARY_CAUSAL_COMMON_SNAPSHOT_V1", "STRICT_386_FULL_D_ACTION", "graph coordinates"):
+    for token in ("completionView", "Weyl BV routes", "completionExplorer", "77 separately typed cells", "Where effort has the highest expected value", "RANK_ONLY_FEASIBLE", "general non-cone 104-row no-go", "Finite residual control", "Gate A still closed", "Gate V6", "Causal convention crosswalk", "Endpoint search completed", "arrow_tables_matching", "bach_columns_matching", "619", "Suspension question resolved", "54", "30", "376", "10", "Full component pairing serialized", "356=36+320", "410", "Three portability contracts", "FINITE_COMPONENT_JET_TABLE", "FINITE_SPARSE_COMPONENT_MAP", "ANALYTIC_GREEN_ACTION", "Complete unary snapshot", "STRICT_386_FULL_Q1_COMPONENT_JET_TABLE_V1", "Exact split local SDR", "STRICT_386_LOCAL_SDR_COMPONENT_MAPS_V1", "H_alg", "190", "Canonical coordinate bridge certified", "STRICT_386_CANONICAL_SHEAR_COMPONENT_JETS_V1", "1321", "A(-Tsharp)", "T(-Asharp)", "Represented Green action certified", "Hodge eigenspace projectors", "STRICT_386_GRAPH_GREEN_ACTION_NAME_V1", "Scoped common snapshot accepted", "hashes bind one unary-causal carrier", "STRICT_386_UNARY_CAUSAL_COMMON_SNAPSHOT_V1", "Full cylinder flow certified", "STRICT_386_FULL_D_ACTION_V1", "4,374", "Fourteen hashes", "STRICT_386_Q2_D_COMMON_CARRIER", "graph coordinates"):
         if token not in html + app + json.dumps(data):
             errors.append("completion interface token " + token)
 
