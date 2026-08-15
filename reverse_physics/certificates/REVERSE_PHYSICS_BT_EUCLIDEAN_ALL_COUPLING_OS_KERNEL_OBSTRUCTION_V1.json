@@ -1,0 +1,530 @@
+{
+  "answer": "It obstructs the whole interacting axis. In physical log-field coordinates psi=lambda*phi, the same two half-configurations have an unscaled action gap Delta A>0. For every finite lambda!=0 the exponent gap is Delta A/lambda^2>0, so the two-by-two reflected density kernel has negative determinant. Padding both half-configurations by zeros proves the same sign on every even periodic L>=8, while the original witness covers L=6. Compact bump localization turns each point-kernel sign into an admissible negative OS quadratic form. The free L=6 endpoint remains covered by its separate Gaussian witness.",
+  "certificate": "REVERSE_PHYSICS_BT_EUCLIDEAN_ALL_COUPLING_OS_KERNEL_OBSTRUCTION_V1",
+  "checks": {
+    "details": {
+      "all_checked_extra_paddings_preserve_gap": true,
+      "compact_bump_lemma_applies_at_each_declared_volume": true,
+      "continuum_os_restoration_for_fixed_observables_is_not_decided": true,
+      "density_kernel_determinant_is_negative_for_every_lambda_nonzero": true,
+      "free_endpoint_l6_obstruction_is_imported_separately": true,
+      "half_seeds_have_zero_sum": true,
+      "interacting_h_minus_one_remains_open": true,
+      "l6_full_unscaled_gap_is_774441_over_128": true,
+      "l6_reflection_kernel_is_symmetric": true,
+      "l6_unscaled_gap_is_28683_over_1024": true,
+      "l8_reflection_kernel_is_symmetric": true,
+      "l8_unscaled_gap_is_1023_over_4": true,
+      "no_born_krein_or_lorentzian_promotion": true,
+      "nonzero_coupling_only_rescales_gap_positively": true,
+      "ordinary_os_is_obstructed_for_all_even_L_at_least_6": true,
+      "zero_padding_adds_only_zero_residual_sites": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 16,
+    "total": 16
+  },
+  "created": "2026-08-15",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "does_not_establish": [
+    "failure of every possible continuum OS limit for a fixed cutoff-independent observable class",
+    "failure or construction of a Krein or other modified reconstruction",
+    "boundedness or divergence of the interacting H^-1 moment",
+    "tightness or identification of a continuum Euclidean BT measure",
+    "a Born rule, scattering probability, or anything LORENTZIAN-CAUSAL"
+  ],
+  "exact_fixtures": {
+    "L6": {
+      "action_pp": {
+        "denominator": 8192,
+        "numerator": 262209153
+      },
+      "action_pq": {
+        "denominator": 524288,
+        "numerator": 76834914593
+      },
+      "action_qp": {
+        "denominator": 524288,
+        "numerator": 76834914593
+      },
+      "action_qq": {
+        "denominator": 262144,
+        "numerator": 68451564545
+      },
+      "gap_per_spatial_site": {
+        "denominator": 1024,
+        "numerator": 28683
+      },
+      "half_length": 3,
+      "length": 6,
+      "p": [
+        -7,
+        0,
+        7
+      ],
+      "profile_pp": [
+        -7,
+        -7,
+        0,
+        7,
+        7,
+        0
+      ],
+      "profile_pq": [
+        -7,
+        -6,
+        3,
+        3,
+        7,
+        0
+      ],
+      "profile_qp": [
+        -6,
+        -7,
+        0,
+        7,
+        3,
+        3
+      ],
+      "profile_qq": [
+        -6,
+        -6,
+        3,
+        3,
+        3,
+        3
+      ],
+      "q": [
+        -6,
+        3,
+        3
+      ],
+      "residual_pp": [
+        {
+          "denominator": 1,
+          "numerator": 127
+        },
+        {
+          "denominator": 1,
+          "numerator": 127
+        },
+        {
+          "denominator": 128,
+          "numerator": 16129
+        },
+        {
+          "denominator": 128,
+          "numerator": -127
+        },
+        {
+          "denominator": 128,
+          "numerator": -127
+        },
+        {
+          "denominator": 128,
+          "numerator": 16129
+        }
+      ],
+      "residual_pq": [
+        {
+          "denominator": 1,
+          "numerator": 128
+        },
+        {
+          "denominator": 2,
+          "numerator": 1021
+        },
+        {
+          "denominator": 512,
+          "numerator": -511
+        },
+        {
+          "denominator": 1,
+          "numerator": 15
+        },
+        {
+          "denominator": 128,
+          "numerator": -247
+        },
+        {
+          "denominator": 128,
+          "numerator": 16129
+        }
+      ],
+      "residual_qp": [
+        {
+          "denominator": 2,
+          "numerator": 1021
+        },
+        {
+          "denominator": 1,
+          "numerator": 128
+        },
+        {
+          "denominator": 128,
+          "numerator": 16129
+        },
+        {
+          "denominator": 128,
+          "numerator": -247
+        },
+        {
+          "denominator": 1,
+          "numerator": 15
+        },
+        {
+          "denominator": 512,
+          "numerator": -511
+        }
+      ],
+      "residual_qq": [
+        {
+          "denominator": 1,
+          "numerator": 511
+        },
+        {
+          "denominator": 1,
+          "numerator": 511
+        },
+        {
+          "denominator": 512,
+          "numerator": -511
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 512,
+          "numerator": -511
+        }
+      ]
+    },
+    "L8_stable_padding": {
+      "action_pp": {
+        "denominator": 16384,
+        "numerator": 788724229
+      },
+      "action_pq": {
+        "denominator": 524288,
+        "numerator": 81017154641
+      },
+      "action_qp": {
+        "denominator": 524288,
+        "numerator": 81017154641
+      },
+      "action_qq": {
+        "denominator": 262144,
+        "numerator": 68464610305
+      },
+      "gap_per_spatial_site": {
+        "denominator": 4,
+        "numerator": 1023
+      },
+      "half_length": 4,
+      "length": 8,
+      "p": [
+        -7,
+        0,
+        7,
+        0
+      ],
+      "profile_pp": [
+        -7,
+        -7,
+        0,
+        7,
+        0,
+        0,
+        7,
+        0
+      ],
+      "profile_pq": [
+        -7,
+        -6,
+        3,
+        3,
+        0,
+        0,
+        7,
+        0
+      ],
+      "profile_qp": [
+        -6,
+        -7,
+        0,
+        7,
+        0,
+        0,
+        3,
+        3
+      ],
+      "profile_qq": [
+        -6,
+        -6,
+        3,
+        3,
+        0,
+        0,
+        3,
+        3
+      ],
+      "q": [
+        -6,
+        3,
+        3,
+        0
+      ],
+      "residual_pp": [
+        {
+          "denominator": 1,
+          "numerator": 127
+        },
+        {
+          "denominator": 1,
+          "numerator": 127
+        },
+        {
+          "denominator": 128,
+          "numerator": 16129
+        },
+        {
+          "denominator": 64,
+          "numerator": -127
+        },
+        {
+          "denominator": 1,
+          "numerator": 127
+        },
+        {
+          "denominator": 1,
+          "numerator": 127
+        },
+        {
+          "denominator": 64,
+          "numerator": -127
+        },
+        {
+          "denominator": 128,
+          "numerator": 16129
+        }
+      ],
+      "residual_pq": [
+        {
+          "denominator": 1,
+          "numerator": 128
+        },
+        {
+          "denominator": 2,
+          "numerator": 1021
+        },
+        {
+          "denominator": 512,
+          "numerator": -511
+        },
+        {
+          "denominator": 8,
+          "numerator": -7
+        },
+        {
+          "denominator": 1,
+          "numerator": 7
+        },
+        {
+          "denominator": 1,
+          "numerator": 127
+        },
+        {
+          "denominator": 64,
+          "numerator": -127
+        },
+        {
+          "denominator": 128,
+          "numerator": 16129
+        }
+      ],
+      "residual_qp": [
+        {
+          "denominator": 2,
+          "numerator": 1021
+        },
+        {
+          "denominator": 1,
+          "numerator": 128
+        },
+        {
+          "denominator": 128,
+          "numerator": 16129
+        },
+        {
+          "denominator": 64,
+          "numerator": -127
+        },
+        {
+          "denominator": 1,
+          "numerator": 127
+        },
+        {
+          "denominator": 1,
+          "numerator": 7
+        },
+        {
+          "denominator": 8,
+          "numerator": -7
+        },
+        {
+          "denominator": 512,
+          "numerator": -511
+        }
+      ],
+      "residual_qq": [
+        {
+          "denominator": 1,
+          "numerator": 511
+        },
+        {
+          "denominator": 1,
+          "numerator": 511
+        },
+        {
+          "denominator": 512,
+          "numerator": -511
+        },
+        {
+          "denominator": 8,
+          "numerator": -7
+        },
+        {
+          "denominator": 1,
+          "numerator": 7
+        },
+        {
+          "denominator": 1,
+          "numerator": 7
+        },
+        {
+          "denominator": 8,
+          "numerator": -7
+        },
+        {
+          "denominator": 512,
+          "numerator": -511
+        }
+      ]
+    },
+    "checked_padding_half_lengths": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "stable_gap_per_spatial_site": {
+      "denominator": 4,
+      "numerator": 1023
+    }
+  },
+  "lifecycle_state": "ALL_NONZERO_COUPLING_EVEN_VOLUME_ORDINARY_OS_OBSTRUCTION_PROVED",
+  "missing_object_ledger": [
+    "an interacting L-uniform lowest-mode and H^-1 second-moment estimate or controlled divergence",
+    "tightness and identification of any continuum Euclidean limit",
+    "a theorem deciding whether OS positivity can emerge on a fixed observable class only after a scaling limit",
+    "a separately axiomatized Krein or other modified reconstruction"
+  ],
+  "next_gate": "Return to the annealed conditional-center or full-Witten Schur estimate at the bilaplacian omega_L^2 scale. The all-coupling OS obstruction neither proves nor obstructs that positive-measure moment bound.",
+  "padding_proof": {
+    "boundary_rows": "the nonzero residual rows and all four reduced actions are exactly those of the n=4 fixture",
+    "consequence": "the per-spatial-site gap 1023/4 is independent of n for every n>=4",
+    "finite_support": "for half length n>=4, the reflected profiles differ from zero only in the same two boundary neighborhoods",
+    "new_sites": "increasing n inserts sites whose value and two neighbors are zero, hence their residual is zero"
+  },
+  "provenance": {
+    "arithmetic": "exact Fraction arithmetic for all powers of two, residuals, reduced actions, zero-padding fixtures, and determinant exponent gaps",
+    "inputs": [
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_LAMBDA04_OS_KERNEL_OBSTRUCTION_V1.json",
+        "sha256": "9872d3d610daf5146fee84e19246319a7bcfa72748be116a2a8caa7b9f57f40b"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_FREE_RECONSTRUCTION_OBSTRUCTION_V1.json",
+        "sha256": "3ff1ba1578d5bc11ea7f2a6fc806fedb49d127a0f3f29fc220d987d9305371a9"
+      }
+    ],
+    "repository_base_commit": "dab6c761997f09fad3ca1f9aa87b009ec98ec1ad"
+  },
+  "question": "Does the exact BT density-kernel witness obstruct ordinary OS reflection positivity only at lambda=0.4 and L=6, or throughout the interacting coupling axis and an unbounded volume sequence?",
+  "report": "reverse_physics/reports/bt-euclidean-all-coupling-os-kernel-obstruction.md",
+  "research_consequence": {
+    "active_gate": "prove or obstruct the interacting volume-uniform H^-1 estimate; OS is no longer coupling- or even-volume-local",
+    "continuum_caution": "the negative cylinder functions move to phi-amplitude O(1/lambda), so the theorem alone does not rule out positivity emerging for a fixed cutoff-independent observable class in a scaling limit",
+    "regulator_statement": "no finite nonzero coupling restores ordinary OS positivity on any even L>=6 in this lattice family",
+    "supersedes_narrow_scope": "the predecessor's lambda=0.4-only nonclaim is removed by keeping the unscaled action gap before dividing by lambda^2"
+  },
+  "result_kind": "exact all-coupling finite-volume ordinary Osterwalder-Schrader kernel obstruction",
+  "schema": "reverse_physics/schema/reverse-physics-bt-euclidean-all-coupling-os-kernel-obstruction-v1.schema.json",
+  "schema_version": "reverse-physics-bt-euclidean-all-coupling-os-kernel-obstruction-v1",
+  "scope_disposition": {
+    "born_rule": "NOT_ESTABLISHED",
+    "continuum_measure": "NOT_ESTABLISHED",
+    "continuum_os_for_fixed_cutoff_independent_observables": "NOT_DECIDED",
+    "interacting_uniform_h_minus_one": "OPEN",
+    "krein_or_modified_reconstruction": "NOT_ASSESSED",
+    "lorentzian_transfer": "NOT_ESTABLISHED",
+    "ordinary_os_at_every_lambda_nonzero_L6": "OBSTRUCTED",
+    "ordinary_os_at_every_lambda_nonzero_even_L_at_least_6": "OBSTRUCTED",
+    "ordinary_os_at_lambda_0_L6": "IMPORTED_OBSTRUCTED",
+    "ordinary_os_positive_regulator_reconstruction": "OBSTRUCTED_ON_THE_DECLARED_FAMILY"
+  },
+  "theorem": {
+    "action": "A_L(psi)=(1/2)*sum_x r_x(psi)^2 and S_lambda=A_L/lambda^2",
+    "bump_upgrade": "equal compact bumps around the two half-fields converge after rescaling to the negative two-point kernel form",
+    "coordinates": "psi=lambda*phi; the displayed integer k means psi=k*log(2)",
+    "coupling_scaled_gap": "Delta S_lambda=Delta A_L/lambda^2>0",
+    "coupling_scope": "every finite real lambda!=0",
+    "gap_L6": "A(p,p)+A(q,q)-2A(p,q)=6^3*(28683/1024)=774441/128",
+    "gap_even_L_at_least_8": "A(p_L,p_L)+A(q_L,q_L)-2A(p_L,q_L)=L^3*(1023/4)",
+    "half_seed_p": [
+      -7,
+      0,
+      7
+    ],
+    "half_seed_q": [
+      -6,
+      3,
+      3
+    ],
+    "half_sums": "sum p_L=sum q_L=0, so every reflected pair obeys the global zero-mode constraint",
+    "kernel_determinant": "det K_lambda=exp(-S_pp-S_qq)*(1-exp(Delta S_lambda))<0",
+    "lattice_family": "periodic four-dimensional L^4 lattice with every even L>=6",
+    "padding": "append L/2-3 zeros to each seed",
+    "positive_half": "t=1,...,L/2",
+    "reflection": "theta(t,x)=(1-t mod L,x)",
+    "status": "PROVED_EXACTLY"
+  },
+  "tier_receipt": {
+    "memory_policy": "all Python commands run under ulimit -v 500000",
+    "paper": "Paper 21 claim map regenerated and independently verified; two pdflatex passes produced 70 pages with no undefined references or overfull boxes in 0.79 and 0.80 s at at most 54008 KiB",
+    "repository_audits": "planning import accepted 1685 nodes with 0 invalid items and 0 malformed events in 6.54 s at 222676 KiB under GOMEMLIMIT=300MiB and GOGC=50. The 2.96 s advisory shadow wrapper exited zero but its bridge audit failed closed because the external bp2transformer verifier lacks sympy; it also reported corpus drift 1839 versus baseline 976. Neither advisory finding is counted as a scientific pass.",
+    "tier_0": "changed Python compiled; schema, certificate, claim map, and planning JSON parsed; scoped diff check and exact staged-diff inspection run before commit",
+    "tier_1": "producer 16/16 in 0.04 s at 20468 KiB; nonimporting verifier 12/12 in 0.22 s at 30732 KiB; eleven direct and adversarial tests in 1.11 s at 31448 KiB",
+    "tier_2": "unchanged lambda=0.4 and free OS predecessor certificates are content-hashed; the direct Paper 21 claim-map consumer was regenerated and independently verified",
+    "tier_3": "not run: this strengthens an existing finite-volume obstruction but does not promote H^-1, continuum, quantum, Krein, or Lorentzian lifecycle state"
+  },
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_euclidean_all_coupling_os_kernel_obstruction.py --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_euclidean_all_coupling_os_kernel_obstruction.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_euclidean_all_coupling_os_kernel_obstruction"
+  ],
+  "verifier": "reverse_physics/verify_bt_euclidean_all_coupling_os_kernel_obstruction.py"
+}

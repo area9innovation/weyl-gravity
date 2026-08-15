@@ -1,0 +1,154 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-all-coupling-os-kernel-obstruction-v1.schema.json",
+  "title": "BT all-coupling OS kernel obstruction certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "certificate", "schema_version", "created", "dependency_tags",
+    "lifecycle_state", "result_kind", "question", "answer", "theorem",
+    "exact_fixtures", "padding_proof", "scope_disposition",
+    "research_consequence", "missing_object_ledger", "next_gate",
+    "does_not_establish", "provenance", "verification_commands",
+    "tier_receipt", "checks", "schema", "report", "verifier"
+  ],
+  "properties": {
+    "certificate": {
+      "const": "REVERSE_PHYSICS_BT_EUCLIDEAN_ALL_COUPLING_OS_KERNEL_OBSTRUCTION_V1"
+    },
+    "schema_version": {
+      "const": "reverse-physics-bt-euclidean-all-coupling-os-kernel-obstruction-v1"
+    },
+    "created": {"const": "2026-08-15"},
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]
+    },
+    "lifecycle_state": {
+      "const": "ALL_NONZERO_COUPLING_EVEN_VOLUME_ORDINARY_OS_OBSTRUCTION_PROVED"
+    },
+    "result_kind": {"$ref": "#/$defs/text"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "theorem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "lattice_family", "reflection", "positive_half", "coupling_scope",
+        "coordinates", "action", "half_seed_p", "half_seed_q", "padding",
+        "half_sums", "gap_L6", "gap_even_L_at_least_8",
+        "coupling_scaled_gap", "kernel_determinant", "bump_upgrade", "status"
+      ],
+      "properties": {
+        "lattice_family": {"const": "periodic four-dimensional L^4 lattice with every even L>=6"},
+        "reflection": {"const": "theta(t,x)=(1-t mod L,x)"},
+        "positive_half": {"const": "t=1,...,L/2"},
+        "coupling_scope": {"const": "every finite real lambda!=0"},
+        "coordinates": {"$ref": "#/$defs/text"},
+        "action": {"$ref": "#/$defs/text"},
+        "half_seed_p": {"const": [-7, 0, 7]},
+        "half_seed_q": {"const": [-6, 3, 3]},
+        "padding": {"$ref": "#/$defs/text"},
+        "half_sums": {"$ref": "#/$defs/text"},
+        "gap_L6": {"$ref": "#/$defs/text"},
+        "gap_even_L_at_least_8": {"$ref": "#/$defs/text"},
+        "coupling_scaled_gap": {"const": "Delta S_lambda=Delta A_L/lambda^2>0"},
+        "kernel_determinant": {"const": "det K_lambda=exp(-S_pp-S_qq)*(1-exp(Delta S_lambda))<0"},
+        "bump_upgrade": {"$ref": "#/$defs/text"},
+        "status": {"const": "PROVED_EXACTLY"}
+      }
+    },
+    "exact_fixtures": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["L6", "L8_stable_padding", "checked_padding_half_lengths", "stable_gap_per_spatial_site"],
+      "properties": {
+        "L6": {"$ref": "#/$defs/fixture"},
+        "L8_stable_padding": {"$ref": "#/$defs/fixture"},
+        "checked_padding_half_lengths": {
+          "type": "array", "const": [5, 6, 7, 8, 9, 10, 11, 12]
+        },
+        "stable_gap_per_spatial_site": {"$ref": "#/$defs/rational"}
+      }
+    },
+    "padding_proof": {"type": "object"},
+    "scope_disposition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ordinary_os_at_lambda_0_L6",
+        "ordinary_os_at_every_lambda_nonzero_L6",
+        "ordinary_os_at_every_lambda_nonzero_even_L_at_least_6",
+        "ordinary_os_positive_regulator_reconstruction",
+        "continuum_os_for_fixed_cutoff_independent_observables",
+        "krein_or_modified_reconstruction", "interacting_uniform_h_minus_one",
+        "continuum_measure", "born_rule", "lorentzian_transfer"
+      ],
+      "properties": {
+        "ordinary_os_at_lambda_0_L6": {"const": "IMPORTED_OBSTRUCTED"},
+        "ordinary_os_at_every_lambda_nonzero_L6": {"const": "OBSTRUCTED"},
+        "ordinary_os_at_every_lambda_nonzero_even_L_at_least_6": {"const": "OBSTRUCTED"},
+        "ordinary_os_positive_regulator_reconstruction": {"const": "OBSTRUCTED_ON_THE_DECLARED_FAMILY"},
+        "continuum_os_for_fixed_cutoff_independent_observables": {"const": "NOT_DECIDED"},
+        "krein_or_modified_reconstruction": {"const": "NOT_ASSESSED"},
+        "interacting_uniform_h_minus_one": {"const": "OPEN"},
+        "continuum_measure": {"const": "NOT_ESTABLISHED"},
+        "born_rule": {"const": "NOT_ESTABLISHED"},
+        "lorentzian_transfer": {"const": "NOT_ESTABLISHED"}
+      }
+    },
+    "research_consequence": {"type": "object"},
+    "missing_object_ledger": {"$ref": "#/$defs/textArray"},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "does_not_establish": {"$ref": "#/$defs/textArray"},
+    "provenance": {"type": "object"},
+    "verification_commands": {"$ref": "#/$defs/textArray"},
+    "tier_receipt": {"type": "object"},
+    "checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"const": 16},
+        "total": {"const": 16},
+        "failures": {"type": "array", "maxItems": 0},
+        "details": {
+          "type": "object", "minProperties": 16, "maxProperties": 16,
+          "additionalProperties": {"const": true}
+        }
+      }
+    },
+    "schema": {
+      "const": "reverse_physics/schema/reverse-physics-bt-euclidean-all-coupling-os-kernel-obstruction-v1.schema.json"
+    },
+    "report": {
+      "const": "reverse_physics/reports/bt-euclidean-all-coupling-os-kernel-obstruction.md"
+    },
+    "verifier": {
+      "const": "reverse_physics/verify_bt_euclidean_all_coupling_os_kernel_obstruction.py"
+    }
+  },
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "textArray": {
+      "type": "array", "minItems": 1, "items": {"$ref": "#/$defs/text"}
+    },
+    "rational": {
+      "type": "object", "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      }
+    },
+    "fixture": {
+      "type": "object",
+      "required": [
+        "half_length", "length", "p", "q", "profile_pp", "profile_qq",
+        "profile_pq", "profile_qp", "residual_pp", "residual_qq",
+        "residual_pq", "residual_qp", "action_pp", "action_qq",
+        "action_pq", "action_qp", "gap_per_spatial_site"
+      ]
+    }
+  }
+}

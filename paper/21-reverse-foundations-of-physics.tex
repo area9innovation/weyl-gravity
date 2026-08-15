@@ -799,10 +799,10 @@ There is also a precise carrier boundary.  The lattice uses $\Omega>0$,
 whereas the two-field BT/Krein path integral ranges over all real $\Omega$.
 They cannot be identified as the same full nonperturbative configuration space
 and measure.  This scoped non-identity does not rule out a conditional
-perturbative, reflection-positive, or analytic-continuation bridge.  Such a
-bridge would still have to supply the missing uniform estimates, represented
-convergence, limit identification, and Lorentzian observable map.  The
-reconstruction cell therefore remains a priority gap.
+perturbative, scaling-limit, modified-Euclidean, or analytic-continuation
+bridge.  Such a bridge would still have to supply the missing uniform
+estimates, represented convergence, limit identification, and Lorentzian
+observable map.  The reconstruction cell therefore remains a priority gap.
 
 The first reconstruction decision is now exact at the free endpoint.  On the
 periodic \(6^4\) lattice with link reflection
@@ -817,8 +817,10 @@ computes
 Thus the positive density fails ordinary Osterwalder--Schrader reflection
 positivity on this finite free lattice.  Fixed-volume coercivity supplies a
 common Gaussian dominating function, so continuity preserves the strict
-negative sign on some unquantified open coupling interval around zero.
-This does not decide \(\lambda=0.4\), and it does not obstruct a specifically
+negative sign on some unquantified open coupling interval around zero.  This
+free-witness argument alone does not quantify that interval; the all-coupling
+density-kernel theorem below closes the nonzero-coupling question by a
+different observable.  Neither theorem obstructs a specifically
 Krein-compatible reconstruction.
 
 The same certificate also isolates the first viable free continuum topology.
@@ -854,11 +856,20 @@ the exact action gap is
 \]
 It follows that the kernel determinant is strictly negative.  Smooth compact
 bumps around the two configurations convert this point-kernel direction into
-an admissible positive-time cylinder function with negative OS form.  Thus
-ordinary reflection positivity is obstructed at \(\lambda=0.4\) on the
-declared \(6^4\) lattice; the numerical preflight is supporting only.  This
-does not decide every nonzero coupling, construct an interacting uniform
-estimate, or obstruct an indefinite-metric reconstruction.
+an admissible positive-time cylinder function with negative OS form.  The
+successor certificate
+\cert{REVERSE_PHYSICS_BT_EUCLIDEAN_ALL_COUPLING_OS_KERNEL_OBSTRUCTION_V1}
+keeps the physical-field action gap before inserting \(\lambda=2/5\).  Its
+unscaled value is \(\Delta A_6=774441/128>0\), so at every finite nonzero
+coupling the exponent gap is \(\Delta A_6/\lambda^2>0\) and the same kernel
+minor remains negative.  Appending zeros to both half-configurations gives
+the exact per-spatial-site gap \(1023/4\) on every even \(L\geq8\); together
+with \(L=6\), ordinary OS positivity is therefore obstructed for every
+nonzero coupling and every even \(L\geq6\).  The numerical preflight is
+supporting only.  The cutoff-dependent negative test functions do not by
+themselves rule out positivity emerging for a fixed observable class only in
+a scaling limit, construct an interacting uniform estimate, or obstruct an
+indefinite-metric reconstruction.
 
 The first natural route to that interacting estimate is itself now exactly
 obstructed.  Certificate
@@ -2907,11 +2918,13 @@ justified.
 \subsection{The BT reconstruction fork}
 
 The next BT question is no longer whether a positive finite measure exists.
-Ordinary OS reconstruction is obstructed both near the free endpoint and,
-through an exact density-kernel witness, at \(\lambda=0.4\) on the \(6^4\)
-lattice.  The active analytic gate is now an \(L\)-uniform interacting
-negative-Sobolev estimate.  Only after that estimate should one attempt
-tightness and Schwinger-function convergence.  A specifically
+Ordinary OS reconstruction is obstructed at the free endpoint on \(6^4\)
+and, through an exact density-kernel witness, at every finite nonzero coupling
+on every even \(L^4\) lattice with \(L\geq6\).  This is a regulator theorem;
+it does not decide whether positivity could emerge for a fixed observable
+class only after a scaling limit.  The active analytic gate is now an
+\(L\)-uniform interacting negative-Sobolev estimate.  Only after that estimate
+should one attempt tightness and Schwinger-function convergence.  A specifically
 indefinite-metric reconstruction is a separate branch requiring its own
 axioms and carrier-matching theorem; no Euclidean result here supplies a
 Krein/Lorentzian observable map.  Global bilaplacian strong convexity cannot
