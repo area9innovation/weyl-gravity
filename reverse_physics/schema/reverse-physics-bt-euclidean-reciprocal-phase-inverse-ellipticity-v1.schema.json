@@ -1,0 +1,316 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-reciprocal-phase-inverse-ellipticity-v1.schema.json",
+  "title": "BT Euclidean reciprocal-phase inverse ellipticity certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "certificate", "schema_version", "created", "dependency_tags",
+    "lifecycle_state", "result_kind", "question", "answer", "scope",
+    "reciprocal_edge_identity", "weighted_phase_uncertainty",
+    "pointwise_localization_bound", "normalized_gibbs_lift",
+    "inverse_phase_ellipticity", "sharpness_family", "exact_tensor_fixture",
+    "method_disposition", "missing_object_ledger", "next_gate",
+    "does_not_establish", "provenance", "verification_commands",
+    "tier_receipt", "checks", "schema", "report", "verifier"
+  ],
+  "properties": {
+    "certificate": {
+      "const": "REVERSE_PHYSICS_BT_EUCLIDEAN_RECIPROCAL_PHASE_INVERSE_ELLIPTICITY_V1"
+    },
+    "schema_version": {
+      "const": "reverse-physics-bt-euclidean-reciprocal-phase-inverse-ellipticity-v1"
+    },
+    "created": {"const": "2026-08-15"},
+    "dependency_tags": {
+      "const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE"]
+    },
+    "lifecycle_state": {
+      "const": "NORMALIZED_RECIPROCAL_PHASE_INVERSE_ELLIPTICITY_PROVED"
+    },
+    "result_kind": {"$ref": "#/$defs/text"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["lattice", "field", "residual", "phase", "phase_matrix"],
+      "properties": {
+        "lattice": {"$ref": "#/$defs/text"},
+        "field": {"$ref": "#/$defs/text"},
+        "residual": {"$ref": "#/$defs/text"},
+        "phase": {"$ref": "#/$defs/text"},
+        "phase_matrix": {"$ref": "#/$defs/text"}
+      }
+    },
+    "reciprocal_edge_identity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["identity", "positivity", "site_cauchy", "status"],
+      "properties": {
+        "identity": {"$ref": "#/$defs/text"},
+        "positivity": {"$ref": "#/$defs/text"},
+        "site_cauchy": {
+          "const": "sum_x pi_x*r_x^2>=Q(pi)^2"
+        },
+        "status": {"const": "PROVED_POINTWISE"}
+      }
+    },
+    "weighted_phase_uncertainty": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "centered_phase", "telescoping_identity", "edge_harmonic_factor",
+        "weighted_cauchy", "edge_potential_bound",
+        "summed_potential_bound", "consequence", "status"
+      ],
+      "properties": {
+        "centered_phase": {"$ref": "#/$defs/text"},
+        "telescoping_identity": {"$ref": "#/$defs/text"},
+        "edge_harmonic_factor": {"$ref": "#/$defs/text"},
+        "weighted_cauchy": {
+          "const": "4*s_L^2*c^2<=Q_mu(pi)*B"
+        },
+        "edge_potential_bound": {"$ref": "#/$defs/text"},
+        "summed_potential_bound": {"const": "B<=delta"},
+        "consequence": {"const": "Q(pi)>=4*s_L^2*c^2/delta"},
+        "status": {"const": "PROVED_POINTWISE"}
+      }
+    },
+    "pointwise_localization_bound": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["theorem", "strict_domain", "constant", "status"],
+      "properties": {
+        "theorem": {
+          "const": "sum_x pi_x*r_x^2>=16*s_L^4*c^4/delta^2"
+        },
+        "strict_domain": {"$ref": "#/$defs/text"},
+        "constant": {"$ref": "#/$defs/text"},
+        "status": {"const": "PROVED_EXACT_ALL_FIELD"}
+      }
+    },
+    "normalized_gibbs_lift": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "measure", "ward_input", "diversity_bound",
+        "localization_moment", "inverse_defect_moment", "status"
+      ],
+      "properties": {
+        "measure": {"$ref": "#/$defs/text"},
+        "ward_input": {
+          "const": "E_mu[sum_x pi_x*r_x^2]=lambda^2*E_mu[1-sum_x pi_x^2]"
+        },
+        "diversity_bound": {"const": "1-sum_x pi_x^2<=1-1/N"},
+        "localization_moment": {
+          "const": "E_mu[c^4/delta^2]<=lambda^2*(1-1/N)/(16*s_L^4)"
+        },
+        "inverse_defect_moment": {
+          "const": "E_mu[delta^-2]<=4+lambda^2*(1-1/N)/s_L^4"
+        },
+        "status": {"const": "PROVED_NORMALIZED_ACTUAL_GIBBS_ESTIMATE"}
+      }
+    },
+    "inverse_phase_ellipticity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "inverse_norm", "exact_bound", "scaled_bound",
+        "lambda_two_fifths", "frequency_comparison", "status"
+      ],
+      "properties": {
+        "inverse_norm": {"const": "operator_norm(G^-1)=2/delta"},
+        "exact_bound": {
+          "const": "E_mu[operator_norm(G^-1)^2]<=16+4*lambda^2*(1-1/N)/s_L^4"
+        },
+        "scaled_bound": {
+          "const": "E_mu[(s_L^2*operator_norm(G^-1))^2]<=16*s_L^4+4*lambda^2*(1-1/N)<=16+4*lambda^2"
+        },
+        "lambda_two_fifths": {"$ref": "#/$defs/text"},
+        "frequency_comparison": {"$ref": "#/$defs/text"},
+        "status": {
+          "const": "PROVED_VOLUME_UNIFORM_UNREGULARIZED_INVERSE_ESTIMATE"
+        }
+      }
+    },
+    "sharpness_family": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "definition", "contrast", "residuals", "energy",
+        "lower_bound", "ratio", "status"
+      ],
+      "properties": {
+        "definition": {"$ref": "#/$defs/text"},
+        "contrast": {"$ref": "#/$defs/text"},
+        "residuals": {"$ref": "#/$defs/text"},
+        "energy": {"$ref": "#/$defs/text"},
+        "lower_bound": {"$ref": "#/$defs/text"},
+        "ratio": {"$ref": "#/$defs/text"},
+        "status": {"const": "ASYMPTOTIC_SHARPNESS_PROVED"}
+      }
+    },
+    "exact_tensor_fixture": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "lattice", "epsilon", "even_site_probability",
+        "odd_site_probability", "contrast", "phase_defect",
+        "sine_squared", "even_residual", "odd_residual",
+        "weighted_residual_energy", "reciprocal_edge_sum",
+        "harmonic_edge_factor", "telescoping_magnitude",
+        "weighted_cauchy_product", "pointwise_lower_bound",
+        "lower_bound_ratio", "participation", "diversity"
+      ],
+      "properties": {
+        "lattice": {"const": "periodic 4^4 torus"},
+        "epsilon": {"$ref": "#/$defs/fraction"},
+        "even_site_probability": {"$ref": "#/$defs/fraction"},
+        "odd_site_probability": {"$ref": "#/$defs/fraction"},
+        "contrast": {"$ref": "#/$defs/fraction"},
+        "phase_defect": {"$ref": "#/$defs/fraction"},
+        "sine_squared": {"$ref": "#/$defs/fraction"},
+        "even_residual": {"$ref": "#/$defs/fraction"},
+        "odd_residual": {"$ref": "#/$defs/fraction"},
+        "weighted_residual_energy": {"$ref": "#/$defs/fraction"},
+        "reciprocal_edge_sum": {"$ref": "#/$defs/fraction"},
+        "harmonic_edge_factor": {"$ref": "#/$defs/fraction"},
+        "telescoping_magnitude": {"$ref": "#/$defs/fraction"},
+        "weighted_cauchy_product": {"$ref": "#/$defs/fraction"},
+        "pointwise_lower_bound": {"$ref": "#/$defs/fraction"},
+        "lower_bound_ratio": {"$ref": "#/$defs/fraction"},
+        "participation": {"$ref": "#/$defs/fraction"},
+        "diversity": {"$ref": "#/$defs/fraction"}
+      }
+    },
+    "method_disposition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "reciprocal_second_harmonic_localization_barrier",
+        "unregularized_inverse_phase_matrix_second_moment",
+        "normalized_conjugate_score_coercivity",
+        "normalized_lowest_mode_second_moment",
+        "actual_interacting_h_minus_one_second_moment",
+        "continuum_limit", "ordinary_os_reconstruction",
+        "born_transfer", "krein_transfer", "lorentzian_transfer"
+      ],
+      "properties": {
+        "reciprocal_second_harmonic_localization_barrier": {
+          "const": "CONTROLLED_AT_THE_LOWEST_FREQUENCY_SCALE"
+        },
+        "unregularized_inverse_phase_matrix_second_moment": {
+          "const": "PROVED"
+        },
+        "normalized_conjugate_score_coercivity": {"const": "OPEN"},
+        "normalized_lowest_mode_second_moment": {"const": "OPEN"},
+        "actual_interacting_h_minus_one_second_moment": {"const": "OPEN"},
+        "continuum_limit": {"const": "NOT_ESTABLISHED"},
+        "ordinary_os_reconstruction": {
+          "const": "OBSTRUCTED_IN_CERTIFIED_SCOPE"
+        },
+        "born_transfer": {"const": "NOT_ASSESSED"},
+        "krein_transfer": {"const": "NOT_ASSESSED"},
+        "lorentzian_transfer": {"const": "NOT_ESTABLISHED"}
+      }
+    },
+    "missing_object_ledger": {"$ref": "#/$defs/textArray"},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "does_not_establish": {"$ref": "#/$defs/textArray"},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["repository_base_commit", "inputs", "arithmetic"],
+      "properties": {
+        "repository_base_commit": {
+          "const": "3a406da8decd06721570180c90043842fa9a8590"
+        },
+        "inputs": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["path", "sha256"],
+            "properties": {
+              "path": {"$ref": "#/$defs/text"},
+              "sha256": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$"
+              }
+            }
+          }
+        },
+        "arithmetic": {"$ref": "#/$defs/text"}
+      }
+    },
+    "verification_commands": {"$ref": "#/$defs/textArray"},
+    "tier_receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "tier_0", "tier_1", "tier_2", "tier_3",
+        "memory_policy", "elapsed_seconds_and_peak_kib",
+        "repository_audits"
+      ],
+      "properties": {
+        "tier_0": {"$ref": "#/$defs/text"},
+        "tier_1": {"$ref": "#/$defs/text"},
+        "tier_2": {"$ref": "#/$defs/text"},
+        "tier_3": {"$ref": "#/$defs/text"},
+        "memory_policy": {"$ref": "#/$defs/text"},
+        "elapsed_seconds_and_peak_kib": {"$ref": "#/$defs/textObject"},
+        "repository_audits": {"$ref": "#/$defs/textObject"}
+      }
+    },
+    "checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"type": "integer", "minimum": 1},
+        "total": {"type": "integer", "minimum": 1},
+        "failures": {"type": "array", "maxItems": 0},
+        "details": {
+          "type": "object",
+          "minProperties": 1,
+          "additionalProperties": {"const": true}
+        }
+      }
+    },
+    "schema": {
+      "const": "reverse_physics/schema/reverse-physics-bt-euclidean-reciprocal-phase-inverse-ellipticity-v1.schema.json"
+    },
+    "report": {
+      "const": "reverse_physics/reports/bt-euclidean-reciprocal-phase-inverse-ellipticity.md"
+    },
+    "verifier": {
+      "const": "reverse_physics/verify_bt_euclidean_reciprocal_phase_inverse_ellipticity.py"
+    }
+  },
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "textArray": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"$ref": "#/$defs/text"}
+    },
+    "textObject": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {"$ref": "#/$defs/text"}
+    },
+    "fraction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      }
+    }
+  }
+}
