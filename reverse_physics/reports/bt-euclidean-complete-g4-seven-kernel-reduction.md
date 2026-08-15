@@ -186,8 +186,12 @@ new exact structure says instead:
    all seven \(N\omega_p\) carriers before restoring the already bounded
    factorized sector and the lower-loop terms.
 
-The active calculation is now the common power coefficient of these seven
-kernels.  If it is nonzero, the tuned fixed-order route is obstructed.  If it
+The successor certificate
+`REVERSE_PHYSICS_BT_EUCLIDEAN_COMPLETE_G4_SUBPOWER_PAIR_BOUNDS_V1` proves
+explicit (O(\log^2L)) bounds for pairs 1, 2, and 5.  Those pairs are
+(o(N\omega_p)) and therefore cannot affect a nonzero power coefficient.
+The active calculation is now the common power coefficient of pairs 3, 4, 6,
+and 7.  If it is nonzero, the tuned fixed-order route is obstructed.  If it
 cancels, the remainder needs a polylogarithmic bound before returning to the
 whole-composite nonperturbative score.
 

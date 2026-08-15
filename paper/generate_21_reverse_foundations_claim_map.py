@@ -54,6 +54,7 @@ AUTHORITY_PATHS = {
     "bt_complete_g4_l4_decision": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_COMPLETE_G4_L4_DECISION_V1.json",
     "bt_complete_g4_general_l_two_loop": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_COMPLETE_G4_GENERAL_L_TWO_LOOP_V1.json",
     "bt_complete_g4_seven_kernel_reduction": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_COMPLETE_G4_SEVEN_KERNEL_REDUCTION_V1.json",
+    "bt_complete_g4_subpower_pair_bounds": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_COMPLETE_G4_SUBPOWER_PAIR_BOUNDS_V1.json",
     "full_surface_gap_audit": "foundations/results/FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1.json",
     "explorer_snapshot": "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json",
     "theory_assembly": "foundations/results/FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1.json",
@@ -135,6 +136,7 @@ def build() -> dict:
     bt_g4_l4 = loaded["bt_complete_g4_l4_decision"]
     bt_g4_general_l = loaded["bt_complete_g4_general_l_two_loop"]
     bt_g4_seven = loaded["bt_complete_g4_seven_kernel_reduction"]
+    bt_g4_subpower = loaded["bt_complete_g4_subpower_pair_bounds"]
     site = loaded["explorer_snapshot"]
     gr_cassini = loaded["gr_cassini_assembly"]
     mannheim_ngc3198 = loaded["mannheim_ngc3198_assembly"]
@@ -402,6 +404,10 @@ def build() -> dict:
             "bt_g4_negative_nested_carrier_status": bt_g4_seven["method_disposition"]["negative_nested_one_soft_carrier"],
             "bt_g4_termwise_tuned_g4_status": bt_g4_seven["method_disposition"]["termwise_tuned_order_g_four_uniformity"],
             "bt_g4_combined_seven_kernel_status": bt_g4_seven["method_disposition"]["combined_seven_kernel_large_volume_sign_and_scaling"],
+            "bt_g4_subpower_pairs": bt_g4_subpower["power_sector_reduction"]["subpower_pairs"],
+            "bt_g4_power_capable_pairs": bt_g4_subpower["power_sector_reduction"]["pairs_still_capable_of_N_omega_p_scale"],
+            "bt_g4_three_pair_tuned_uniformity_status": bt_g4_subpower["method_disposition"]["pairs_1_2_5_tuned_g_four_uniformity"],
+            "bt_g4_four_pair_power_coefficient_status": bt_g4_subpower["method_disposition"]["combined_pairs_3_4_6_7_power_coefficient"],
             "standard_reference_direct_obligations": next(item for item in assembly_data["assemblies"] if item["id"] == "STANDARD_MIXED_REFERENCE")["coverage"]["direct"],
             "external_calibration_records": len(assembly_data["calibration_controls"][0]["records"]),
             "external_calibration_benchmark_families": sum(item["status"] == "SUPPORTED_CONTROL" for item in assembly_data["calibration_controls"][0]["benchmark_coverage"]),
@@ -493,8 +499,8 @@ def build() -> dict:
             },
             {
                 "claim_id": "RF-13-BT-INTERACTING-RECONSTRUCTION-FRONTIER",
-                "statement": "At lambda=0.4 on the 6^4 lattice, an exact two-point reflected density-kernel minor obstructs ordinary OS positivity. The affine virial theorem proves a volume-uniform actual Gibbs action-density bound and annealed half-action factor. Exact period-four data obstruct the global Schur route. The residual map identifies positive fields modulo scale with a Schrödinger spectrahedral boundary and gives the exact normalized Gaussian-surface/tree-Jacobian pushforward. Its curvature and tree-Jacobian shortcuts are obstructed. An exact orthogonal-background family makes centered pointwise relative-action domination fail. On the subsequence eta_m=4m log(2) a, every global fiber minimizer lies below u=-m and the conditional probability of u>=-m is at most 2^-m, so the background-uniform raw conditional second moment is obstructed. On that same runaway family, however, K_m(2^u)>=115/4 proves a uniform recentered conditional-variance bound and E_qm[u]<-m/2: the obstruction is moving center rather than widening fiber. A plaquette absorption theorem proves for every background and L>=4 that the lowest axial curvature is at least (2/9)*N*omega_L^2 and conditional variance is at most 9/(2*N*omega_L^2). Strong convexity reduces the annealed center to one zero-fiber-score estimate. Its leading free orthogonal-background coefficient has residue 5/(16*pi^2) times log L, obstructing fixed-bare coefficientwise uniformity. On a fixed-physical-volume asymptotically free trajectory, however, g_L^2 log L tends to 8*pi^2/5 and the leading normalized score coefficient tends exactly to 1/2. This restores leading-log uniformity only on the tuned refinement branch. The exact ordinary equation-of-motion Ward identity controls the sampled full score, and a shifted-Gaussian fixture with full-score variance 2 but zero-fiber-score variance 100 obstructs its general transfer to the missing target. Exact disintegration further proves that constrained and integrated-marginal identities weight backgrounds by q_eta(0), while the target requires division by q_eta(0). On the actual BT runaway family the u-density obeys q_m^(u)(0)<=2^-m/m; the t-density differs only by the fixed factor 1/log(2), so no pointwise uniform lower bound can remove that weight. The annealed estimate may still succeed by exploiting the Gibbs rarity of those backgrounds. At complete order g^4, the fourteen unfactorized two-loop entries reduce to seven inversion pairs; one negative nested carrier has magnitude at least c*L^2, obstructing termwise tuned-g_L^4 bounds while leaving cancellation in the seven-kernel sum open. Fixed-spacing large volume, all-order resummation, and the nonperturbative Gibbs score remain open. Half-period translation proves the fully integrated marginal is even. The all-background width is closed; a nonperturbative center estimate and the actual interacting H^-1 moment remain open.",
-                "status": "EXACT_FINITE_OS_AND_METHOD_OBSTRUCTIONS_WITH_ALL_BACKGROUND_WIDTH_RG_MATCHED_LEADING_LOG_WARD_WEIGHT_QUARTIC_POWER_UV_G4_NONCANCELLATION_CHAOS_HESSIAN_CONNECTED_L4_GENERAL_L_AND_SEVEN_KERNEL_POWER_CARRIER_GATES",
+                "statement": "At lambda=0.4 on the 6^4 lattice, an exact two-point reflected density-kernel minor obstructs ordinary OS positivity. The affine virial theorem proves a volume-uniform actual Gibbs action-density bound and annealed half-action factor. Exact period-four data obstruct the global Schur route. The residual map identifies positive fields modulo scale with a Schrödinger spectrahedral boundary and gives the exact normalized Gaussian-surface/tree-Jacobian pushforward. Its curvature and tree-Jacobian shortcuts are obstructed. An exact orthogonal-background family makes centered pointwise relative-action domination fail. On the subsequence eta_m=4m log(2) a, every global fiber minimizer lies below u=-m and the conditional probability of u>=-m is at most 2^-m, so the background-uniform raw conditional second moment is obstructed. On that same runaway family, however, K_m(2^u)>=115/4 proves a uniform recentered conditional-variance bound and E_qm[u]<-m/2: the obstruction is moving center rather than widening fiber. A plaquette absorption theorem proves for every background and L>=4 that the lowest axial curvature is at least (2/9)*N*omega_L^2 and conditional variance is at most 9/(2*N*omega_L^2). Strong convexity reduces the annealed center to one zero-fiber-score estimate. Its leading free orthogonal-background coefficient has residue 5/(16*pi^2) times log L, obstructing fixed-bare coefficientwise uniformity. On a fixed-physical-volume asymptotically free trajectory, however, g_L^2 log L tends to 8*pi^2/5 and the leading normalized score coefficient tends exactly to 1/2. This restores leading-log uniformity only on the tuned refinement branch. The exact ordinary equation-of-motion Ward identity controls the sampled full score, and a shifted-Gaussian fixture with full-score variance 2 but zero-fiber-score variance 100 obstructs its general transfer to the missing target. Exact disintegration further proves that constrained and integrated-marginal identities weight backgrounds by q_eta(0), while the target requires division by q_eta(0). On the actual BT runaway family the u-density obeys q_m^(u)(0)<=2^-m/m; the t-density differs only by the fixed factor 1/log(2), so no pointwise uniform lower bound can remove that weight. The annealed estimate may still succeed by exploiting the Gibbs rarity of those backgrounds. At complete order g^4, the fourteen unfactorized two-loop entries reduce to seven inversion pairs; one negative nested carrier has magnitude at least c*L^2, obstructing termwise tuned-g_L^4 bounds. Exact bounds show that pairs 1, 2, and 5 are O(log(L)^2) and cannot contribute to the N*omega(p) coefficient, reducing the open power decision to pairs 3, 4, 6, and 7. Fixed-spacing large volume, all-order resummation, and the nonperturbative Gibbs score remain open. Half-period translation proves the fully integrated marginal is even. The all-background width is closed; a nonperturbative center estimate and the actual interacting H^-1 moment remain open.",
+                "status": "EXACT_FINITE_OS_AND_METHOD_OBSTRUCTIONS_WITH_ALL_BACKGROUND_WIDTH_RG_MATCHED_LEADING_LOG_WARD_WEIGHT_QUARTIC_POWER_UV_G4_NONCANCELLATION_CHAOS_HESSIAN_CONNECTED_L4_GENERAL_L_SEVEN_KERNEL_AND_SUBPOWER_REDUCTION_GATES",
                 "authorities": [
                     "bt_lambda04_os_kernel_obstruction",
                     "bt_uniform_convexity_obstruction",
@@ -524,6 +530,7 @@ def build() -> dict:
                     "bt_complete_g4_l4_decision",
                     "bt_complete_g4_general_l_two_loop",
                     "bt_complete_g4_seven_kernel_reduction",
+                    "bt_complete_g4_subpower_pair_bounds",
                 ],
                 "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"],
             },
@@ -708,6 +715,10 @@ def build() -> dict:
             "bt_complete_order_g_four_negative_nested_L2_carrier_established": True,
             "bt_complete_order_g_four_termwise_tuned_uniformity_obstructed": True,
             "bt_complete_order_g_four_combined_seven_kernel_scaling_established": False,
+            "bt_complete_order_g_four_pairs_1_2_5_log_squared_established": True,
+            "bt_complete_order_g_four_pairs_1_2_5_tuned_uniformity_established": True,
+            "bt_complete_order_g_four_power_gate_reduced_to_pairs_3_4_6_7": True,
+            "bt_complete_order_g_four_four_pair_power_coefficient_established": False,
             "bt_complete_order_g_four_explicit_momentum_kernel_established": False,
             "bt_complete_order_g_four_effective_kernel_bound_established": False,
             "bt_complete_order_g_four_power_survival_established": False,
@@ -774,6 +785,7 @@ def build() -> dict:
             "a large-volume M4 sign or scaling law from the exact finite-volume L=4 decision",
             "a bound for the 14 unfactorized two-loop kernels, the full M4 asymptotics, or the interacting H^-1 moment from the factorized log-squared bound",
             "the sign or scaling of the combined seven-kernel sum, complete M4, or the actual interacting H^-1 moment from the isolated negative L^2 carrier",
+            "the common power coefficient of pairs 3, 4, 6, and 7, complete M4, or the actual interacting H^-1 moment from the three subpower-pair bounds",
         ],
         "authorities": authorities,
         "independent_checker": {
@@ -845,7 +857,11 @@ def build() -> dict:
                 "that product, and one strictly negative nested pair obeys "
                 "T_L<=-(N-1)/[4*N*omega(p)], hence has at least c*L^2 magnitude. "
                 "This obstructs termwise tuned-g_L^4 bounds, but not a cancellation "
-                "inside the complete seven-kernel sum. Its common power coefficient, "
+                "inside the complete seven-kernel sum. Exact soft-factor and shifted-"
+                "convolution bounds prove that pairs 1, 2, and 5 are O(log(L)^2), "
+                "little-o of N*omega(p), and tuned-g_L^4 uniformly bounded. They cannot "
+                "affect a nonzero power coefficient. The common coefficient of pairs "
+                "3, 4, 6, and 7, "
                 "lower-loop recombination, full M4 asymptotics, and the interacting "
                 "H^-1 moment remain open."
             )

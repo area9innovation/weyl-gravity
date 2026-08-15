@@ -244,6 +244,10 @@ bt_euclidean_complete_g4_seven_kernel_reduction.py
                                        pairs the 14 kernels into seven, proves
                                        paired-K4 positivity, and isolates a
                                        negative term of at least L^2 magnitude
+bt_euclidean_complete_g4_subpower_pair_bounds.py
+                                       proves exact O(log(L)^2) bounds for
+                                       inversion pairs 1, 2, and 5, reducing
+                                       the power gate to pairs 3, 4, 6, and 7
 bt_four_point_bubble_log_jet.py        first virtual coefficient: arbitrary-mass
                                        bubble logarithm and four-leg interference jet
 bt_triangle_box_log_jet.py             complete triangle and box logarithmic jets;

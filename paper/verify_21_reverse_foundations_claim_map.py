@@ -119,6 +119,7 @@ def main() -> int:
     bt_g4_l4 = json.loads((ROOT / data["authorities"]["bt_complete_g4_l4_decision"]["path"]).read_text())
     bt_g4_general_l = json.loads((ROOT / data["authorities"]["bt_complete_g4_general_l_two_loop"]["path"]).read_text())
     bt_g4_seven = json.loads((ROOT / data["authorities"]["bt_complete_g4_seven_kernel_reduction"]["path"]).read_text())
+    bt_g4_subpower = json.loads((ROOT / data["authorities"]["bt_complete_g4_subpower_pair_bounds"]["path"]).read_text())
     dims = cube["dimensions"]
     atlas = data["atlas_snapshot"]
     require(atlas["axis_sizes"] == [6, 6, 16], "unexpected axis sizes")
@@ -310,6 +311,10 @@ def main() -> int:
     require(atlas["bt_g4_negative_nested_carrier_status"] == bt_g4_seven["method_disposition"]["negative_nested_one_soft_carrier"] == "NEGATIVE_ORDER_L_SQUARED_MAGNITUDE", "BT negative nested carrier drift")
     require(atlas["bt_g4_termwise_tuned_g4_status"] == bt_g4_seven["method_disposition"]["termwise_tuned_order_g_four_uniformity"] == "OBSTRUCTED", "BT termwise tuned-g4 obstruction drift")
     require(atlas["bt_g4_combined_seven_kernel_status"] == bt_g4_seven["method_disposition"]["combined_seven_kernel_large_volume_sign_and_scaling"] == "OPEN", "BT isolated carrier promoted to combined seven-kernel scaling")
+    require(atlas["bt_g4_subpower_pairs"] == bt_g4_subpower["power_sector_reduction"]["subpower_pairs"] == [1, 2, 5], "BT subpower pair set drift")
+    require(atlas["bt_g4_power_capable_pairs"] == bt_g4_subpower["power_sector_reduction"]["pairs_still_capable_of_N_omega_p_scale"] == [3, 4, 6, 7], "BT four-pair power gate drift")
+    require(atlas["bt_g4_three_pair_tuned_uniformity_status"] == bt_g4_subpower["method_disposition"]["pairs_1_2_5_tuned_g_four_uniformity"] == "PROVED", "BT three-pair tuned uniformity drift")
+    require(atlas["bt_g4_four_pair_power_coefficient_status"] == bt_g4_subpower["method_disposition"]["combined_pairs_3_4_6_7_power_coefficient"] == "OPEN", "BT subpower result promoted to four-pair coefficient")
 
     allowed_tags = {"LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE", "LORENTZIAN-CAUSAL"}
     claim_ids = set()
@@ -426,6 +431,10 @@ def main() -> int:
     require(flags["bt_complete_order_g_four_negative_nested_L2_carrier_established"] is True, "BT negative nested L2 carrier omitted")
     require(flags["bt_complete_order_g_four_termwise_tuned_uniformity_obstructed"] is True, "BT termwise tuned uniformity obstruction omitted")
     require(flags["bt_complete_order_g_four_combined_seven_kernel_scaling_established"] is False, "BT isolated carrier promoted to combined scaling")
+    require(flags["bt_complete_order_g_four_pairs_1_2_5_log_squared_established"] is True, "BT three-pair log-squared bounds omitted")
+    require(flags["bt_complete_order_g_four_pairs_1_2_5_tuned_uniformity_established"] is True, "BT three-pair tuned uniformity omitted")
+    require(flags["bt_complete_order_g_four_power_gate_reduced_to_pairs_3_4_6_7"] is True, "BT four-pair power reduction omitted")
+    require(flags["bt_complete_order_g_four_four_pair_power_coefficient_established"] is False, "BT four-pair power coefficient promoted")
     require(flags["bt_complete_order_g_four_explicit_momentum_kernel_established"] is False, "BT expected-Hessian formula promoted to explicit momentum kernel")
     require(flags["bt_complete_order_g_four_effective_kernel_bound_established"] is False, "BT effective second-chaos kernel bound promoted")
     require(flags["bt_complete_order_g_four_power_survival_established"] is False, "BT chaos reduction promoted to whole-lattice power survival")
@@ -696,6 +705,8 @@ def main() -> int:
         r"\mathbb E_{q_m}[u^2]",
         r"recentered conditional width",
         r"annealed second moment of the moving center",
+        r"pairs 3, 4, 6, and 7",
+        r"REVERSE_PHYSICS_BT_EUCLIDEAN_COMPLETE_G4_SUBPOWER_PAIR_BOUNDS_V1",
     ]:
         require(phrase in prose, f"required boundary missing from paper: {phrase}")
     for citation in [

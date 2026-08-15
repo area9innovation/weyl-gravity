@@ -87,6 +87,7 @@
     "bt_g4_explicit_momentum_kernel_status": "OPEN",
     "bt_g4_factorized_conditioning_status": "POSITIVE_O_LOG_SQUARED",
     "bt_g4_factorized_tuned_branch_status": "UNIFORMLY_BOUNDED",
+    "bt_g4_four_pair_power_coefficient_status": "OPEN",
     "bt_g4_general_l_surviving_integrands": 16,
     "bt_g4_general_l_two_loop_formula_status": "PROVED",
     "bt_g4_hessian_kernel_bound_status": "OPEN",
@@ -100,12 +101,24 @@
     "bt_g4_normalization_alignment_status": "PROVED_EXTENSIVE",
     "bt_g4_paired_quartic_status": "PROVED",
     "bt_g4_positive_norm_power_status": "PROVED",
+    "bt_g4_power_capable_pairs": [
+      3,
+      4,
+      6,
+      7
+    ],
     "bt_g4_power_tadpole_survival_status": "CANCELED_EXACTLY",
     "bt_g4_remaining_fourteen_kernel_status": "OPEN",
     "bt_g4_seven_kernel_reduction_status": "PROVED",
     "bt_g4_signed_second_chaos_status": "PROVED",
+    "bt_g4_subpower_pairs": [
+      1,
+      2,
+      5
+    ],
     "bt_g4_termwise_alignment_bound_status": "OBSTRUCTED_AS_FORMULATED",
     "bt_g4_termwise_tuned_g4_status": "OBSTRUCTED",
+    "bt_g4_three_pair_tuned_uniformity_status": "PROVED",
     "bt_g4_whole_lattice_survival_status": "OPEN",
     "bt_global_orthogonal_hessian_block_status": "OBSTRUCTED",
     "bt_integrated_lowest_mode_marginal_evenness_status": "PROVED",
@@ -393,6 +406,16 @@
       "result_id": "REVERSE_PHYSICS_BT_EUCLIDEAN_COMPLETE_G4_SEVEN_KERNEL_REDUCTION_V1",
       "sha256": "b31ee4ff3454290e4ca0bd5214226d9068c4598f4e57f4aab9011a8e34a789d8"
     },
+    "bt_complete_g4_subpower_pair_bounds": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL"
+      ],
+      "lifecycle": "THREE_SUBPOWER_PAIR_BOUNDS_PROVED_FOUR_PAIR_POWER_GATE_OPEN",
+      "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_COMPLETE_G4_SUBPOWER_PAIR_BOUNDS_V1.json",
+      "result_id": "REVERSE_PHYSICS_BT_EUCLIDEAN_COMPLETE_G4_SUBPOWER_PAIR_BOUNDS_V1",
+      "sha256": "6cd549635616e635ce5bcba5e492e9c5b19d1be9542babf2685fc8dae12c42a6"
+    },
     "bt_complete_g4_uv_noncancellation": {
       "dependency_tags": [
         "LOCAL-ALGEBRAIC",
@@ -643,7 +666,7 @@
       "lifecycle": "VERIFIED_NAVIGATION_ARTIFACT",
       "path": "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json",
       "result_id": "FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2",
-      "sha256": "02e4129e0ca963a86d26e78abc7419c674a155135d13664dee7022e3d66cfa31"
+      "sha256": "14a024a1f94ac3d7c671c51cb2d514cef9247b77729f581868a6f230b3b05eb2"
     },
     "finite_bv": {
       "dependency_tags": [
@@ -796,10 +819,10 @@
       "lifecycle": "VERIFIED_NAVIGATION_ARTIFACT",
       "path": "foundations/results/FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1.json",
       "result_id": "FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1",
-      "sha256": "398cf9f2f8c8e4c3d92d40addcbefbaa762fe0161a542af004e2dd8125d80ba5"
+      "sha256": "7619ce964d21c0057038b299a63c89c8f56a2a4f052bc8551baa14ca7de037ba"
     }
   },
-  "canonical_digest": "ca8cab850e88bde33203de567e00a200852f4fb4b16bf1783cc912105c46e1fd",
+  "canonical_digest": "0538ac033a4a2e57e6e8c03de8eb439a0db9c52fd0aefd50a72121f2145e925c",
   "claim_flags": {
     "atlas_exhaustive": false,
     "axes_independent_proved": false,
@@ -827,6 +850,7 @@
     "bt_complete_order_g_four_factorized_conditioning_log_squared_bound_established": true,
     "bt_complete_order_g_four_factorized_tuned_branch_uniformity_established": true,
     "bt_complete_order_g_four_formula_established": true,
+    "bt_complete_order_g_four_four_pair_power_coefficient_established": false,
     "bt_complete_order_g_four_fourteen_to_seven_reduction_established": true,
     "bt_complete_order_g_four_general_l_two_loop_formula_established": true,
     "bt_complete_order_g_four_ir_complement_bounded": false,
@@ -835,6 +859,9 @@
     "bt_complete_order_g_four_negative_nested_L2_carrier_established": true,
     "bt_complete_order_g_four_normalization_alignment_established": true,
     "bt_complete_order_g_four_paired_quartic_bound_established": true,
+    "bt_complete_order_g_four_pairs_1_2_5_log_squared_established": true,
+    "bt_complete_order_g_four_pairs_1_2_5_tuned_uniformity_established": true,
+    "bt_complete_order_g_four_power_gate_reduced_to_pairs_3_4_6_7": true,
     "bt_complete_order_g_four_power_survival_established": false,
     "bt_complete_order_g_four_power_tadpoles_canceled": true,
     "bt_complete_order_g_four_remaining_fourteen_kernel_bound_established": false,
@@ -1095,15 +1122,16 @@
         "bt_complete_g4_connected_normalization",
         "bt_complete_g4_l4_decision",
         "bt_complete_g4_general_l_two_loop",
-        "bt_complete_g4_seven_kernel_reduction"
+        "bt_complete_g4_seven_kernel_reduction",
+        "bt_complete_g4_subpower_pair_bounds"
       ],
       "claim_id": "RF-13-BT-INTERACTING-RECONSTRUCTION-FRONTIER",
       "dependency_tags": [
         "LOCAL-ALGEBRAIC",
         "EUCLIDEAN-SPECTRAL"
       ],
-      "statement": "At lambda=0.4 on the 6^4 lattice, an exact two-point reflected density-kernel minor obstructs ordinary OS positivity. The affine virial theorem proves a volume-uniform actual Gibbs action-density bound and annealed half-action factor. Exact period-four data obstruct the global Schur route. The residual map identifies positive fields modulo scale with a Schr\u00f6dinger spectrahedral boundary and gives the exact normalized Gaussian-surface/tree-Jacobian pushforward. Its curvature and tree-Jacobian shortcuts are obstructed. An exact orthogonal-background family makes centered pointwise relative-action domination fail. On the subsequence eta_m=4m log(2) a, every global fiber minimizer lies below u=-m and the conditional probability of u>=-m is at most 2^-m, so the background-uniform raw conditional second moment is obstructed. On that same runaway family, however, K_m(2^u)>=115/4 proves a uniform recentered conditional-variance bound and E_qm[u]<-m/2: the obstruction is moving center rather than widening fiber. A plaquette absorption theorem proves for every background and L>=4 that the lowest axial curvature is at least (2/9)*N*omega_L^2 and conditional variance is at most 9/(2*N*omega_L^2). Strong convexity reduces the annealed center to one zero-fiber-score estimate. Its leading free orthogonal-background coefficient has residue 5/(16*pi^2) times log L, obstructing fixed-bare coefficientwise uniformity. On a fixed-physical-volume asymptotically free trajectory, however, g_L^2 log L tends to 8*pi^2/5 and the leading normalized score coefficient tends exactly to 1/2. This restores leading-log uniformity only on the tuned refinement branch. The exact ordinary equation-of-motion Ward identity controls the sampled full score, and a shifted-Gaussian fixture with full-score variance 2 but zero-fiber-score variance 100 obstructs its general transfer to the missing target. Exact disintegration further proves that constrained and integrated-marginal identities weight backgrounds by q_eta(0), while the target requires division by q_eta(0). On the actual BT runaway family the u-density obeys q_m^(u)(0)<=2^-m/m; the t-density differs only by the fixed factor 1/log(2), so no pointwise uniform lower bound can remove that weight. The annealed estimate may still succeed by exploiting the Gibbs rarity of those backgrounds. At complete order g^4, the fourteen unfactorized two-loop entries reduce to seven inversion pairs; one negative nested carrier has magnitude at least c*L^2, obstructing termwise tuned-g_L^4 bounds while leaving cancellation in the seven-kernel sum open. Fixed-spacing large volume, all-order resummation, and the nonperturbative Gibbs score remain open. Half-period translation proves the fully integrated marginal is even. The all-background width is closed; a nonperturbative center estimate and the actual interacting H^-1 moment remain open. The exact quartic zero-fiber-score kernel is linearly soft, with derivative -1/3 at a quarter-period fixture, and its isolated free square grows at least as L^2 after normalization. Since g_L^4 is only logarithmically small, cubic RG matching alone cannot control this term. This does not prove divergence: exact cancellation in the complete order-g^4 composite remains the next gate. The complete normalized order-g^4 background-score formula is now assembled. On fixed ultraviolet carriers its signed corrections start at p^4, so they cannot cancel the positive p^2 quartic-square sector. The unrestricted coefficient remains open because such a cancellation could still be nonuniform and arise from the shrinking infrared complement. Wiener-chaos orthogonality further reduces every potentially negative contribution to the second-chaos projection of one effective three-leg kernel; a linear-soft weighted norm bound for that kernel would make the signed cross term negligible and decide survival of the full power. That norm bound remains open. The remaining projection is now represented by the single expected Hessian K_E=E_0[D^2E]. The conditioned covariance splits exactly into a translation-invariant bulk and a rank-one real-cosine correction: the bulk selects transfer p, the single-rank terms can also sample transfer 3p, and the double-rank cross term vanishes for L>=4. This removes the Wick-pairing inventory but does not evaluate the Fourier kernel or prove its norm bound. The standalone norm route is badly conditioned: the coefficient multiplying A contains an extensive normalization-aligned mean whose disconnected cross cancels a matching part of ||D||^2 only in the complete connected covariance. Exact labeled Wick enumeration of that connected form leaves only zero-, one-, and two-loop sums. The bulk table's momentum-forbidden labels do not by themselves cover rank-one covariance insertions, but an exact all-volume signed-source audit proves that the conditioned formula still has maximum loop rank two. Exact rational evaluation gives M4(4)=-338835474713437/204838502400000, and an independent modular enumeration proves the same value. This refutes an all-volume zero identity but does not decide the large-volume sign or scaling. For every integer L>=5, an exact affine-flow atlas combines 96 source-conserving oriented topology flows into 21 common integrands after zero-mode removal. Five cancel exactly. In particular, every power-sized quartic-tadpole square Y_L^2 and bubble-tadpole cross X_L*Y_L cancels between fixed-p bulk propagators and rank-one covariances before absolute values. The conditioning-scale remainder is the positive 162*X_L^2/[N*omega(p)^2], with an exact O(log(L)^2) bound, so g_L^4 times this sector is bounded on the certified tuned refinement branch. The fourteen unfactorized entries reduce exactly to seven inversion pairs. The paired quartic vertex lies between omega(k)*omega(r)/6 and 19/6 times that product, and one strictly negative nested pair obeys T_L<=-(N-1)/[4*N*omega(p)], hence has at least c*L^2 magnitude. This obstructs termwise tuned-g_L^4 bounds, but not a cancellation inside the complete seven-kernel sum. Its common power coefficient, lower-loop recombination, full M4 asymptotics, and the interacting H^-1 moment remain open.",
-      "status": "EXACT_FINITE_OS_AND_METHOD_OBSTRUCTIONS_WITH_ALL_BACKGROUND_WIDTH_RG_MATCHED_LEADING_LOG_WARD_WEIGHT_QUARTIC_POWER_UV_G4_NONCANCELLATION_CHAOS_HESSIAN_CONNECTED_L4_GENERAL_L_AND_SEVEN_KERNEL_POWER_CARRIER_GATES"
+      "statement": "At lambda=0.4 on the 6^4 lattice, an exact two-point reflected density-kernel minor obstructs ordinary OS positivity. The affine virial theorem proves a volume-uniform actual Gibbs action-density bound and annealed half-action factor. Exact period-four data obstruct the global Schur route. The residual map identifies positive fields modulo scale with a Schr\u00f6dinger spectrahedral boundary and gives the exact normalized Gaussian-surface/tree-Jacobian pushforward. Its curvature and tree-Jacobian shortcuts are obstructed. An exact orthogonal-background family makes centered pointwise relative-action domination fail. On the subsequence eta_m=4m log(2) a, every global fiber minimizer lies below u=-m and the conditional probability of u>=-m is at most 2^-m, so the background-uniform raw conditional second moment is obstructed. On that same runaway family, however, K_m(2^u)>=115/4 proves a uniform recentered conditional-variance bound and E_qm[u]<-m/2: the obstruction is moving center rather than widening fiber. A plaquette absorption theorem proves for every background and L>=4 that the lowest axial curvature is at least (2/9)*N*omega_L^2 and conditional variance is at most 9/(2*N*omega_L^2). Strong convexity reduces the annealed center to one zero-fiber-score estimate. Its leading free orthogonal-background coefficient has residue 5/(16*pi^2) times log L, obstructing fixed-bare coefficientwise uniformity. On a fixed-physical-volume asymptotically free trajectory, however, g_L^2 log L tends to 8*pi^2/5 and the leading normalized score coefficient tends exactly to 1/2. This restores leading-log uniformity only on the tuned refinement branch. The exact ordinary equation-of-motion Ward identity controls the sampled full score, and a shifted-Gaussian fixture with full-score variance 2 but zero-fiber-score variance 100 obstructs its general transfer to the missing target. Exact disintegration further proves that constrained and integrated-marginal identities weight backgrounds by q_eta(0), while the target requires division by q_eta(0). On the actual BT runaway family the u-density obeys q_m^(u)(0)<=2^-m/m; the t-density differs only by the fixed factor 1/log(2), so no pointwise uniform lower bound can remove that weight. The annealed estimate may still succeed by exploiting the Gibbs rarity of those backgrounds. At complete order g^4, the fourteen unfactorized two-loop entries reduce to seven inversion pairs; one negative nested carrier has magnitude at least c*L^2, obstructing termwise tuned-g_L^4 bounds. Exact bounds show that pairs 1, 2, and 5 are O(log(L)^2) and cannot contribute to the N*omega(p) coefficient, reducing the open power decision to pairs 3, 4, 6, and 7. Fixed-spacing large volume, all-order resummation, and the nonperturbative Gibbs score remain open. Half-period translation proves the fully integrated marginal is even. The all-background width is closed; a nonperturbative center estimate and the actual interacting H^-1 moment remain open. The exact quartic zero-fiber-score kernel is linearly soft, with derivative -1/3 at a quarter-period fixture, and its isolated free square grows at least as L^2 after normalization. Since g_L^4 is only logarithmically small, cubic RG matching alone cannot control this term. This does not prove divergence: exact cancellation in the complete order-g^4 composite remains the next gate. The complete normalized order-g^4 background-score formula is now assembled. On fixed ultraviolet carriers its signed corrections start at p^4, so they cannot cancel the positive p^2 quartic-square sector. The unrestricted coefficient remains open because such a cancellation could still be nonuniform and arise from the shrinking infrared complement. Wiener-chaos orthogonality further reduces every potentially negative contribution to the second-chaos projection of one effective three-leg kernel; a linear-soft weighted norm bound for that kernel would make the signed cross term negligible and decide survival of the full power. That norm bound remains open. The remaining projection is now represented by the single expected Hessian K_E=E_0[D^2E]. The conditioned covariance splits exactly into a translation-invariant bulk and a rank-one real-cosine correction: the bulk selects transfer p, the single-rank terms can also sample transfer 3p, and the double-rank cross term vanishes for L>=4. This removes the Wick-pairing inventory but does not evaluate the Fourier kernel or prove its norm bound. The standalone norm route is badly conditioned: the coefficient multiplying A contains an extensive normalization-aligned mean whose disconnected cross cancels a matching part of ||D||^2 only in the complete connected covariance. Exact labeled Wick enumeration of that connected form leaves only zero-, one-, and two-loop sums. The bulk table's momentum-forbidden labels do not by themselves cover rank-one covariance insertions, but an exact all-volume signed-source audit proves that the conditioned formula still has maximum loop rank two. Exact rational evaluation gives M4(4)=-338835474713437/204838502400000, and an independent modular enumeration proves the same value. This refutes an all-volume zero identity but does not decide the large-volume sign or scaling. For every integer L>=5, an exact affine-flow atlas combines 96 source-conserving oriented topology flows into 21 common integrands after zero-mode removal. Five cancel exactly. In particular, every power-sized quartic-tadpole square Y_L^2 and bubble-tadpole cross X_L*Y_L cancels between fixed-p bulk propagators and rank-one covariances before absolute values. The conditioning-scale remainder is the positive 162*X_L^2/[N*omega(p)^2], with an exact O(log(L)^2) bound, so g_L^4 times this sector is bounded on the certified tuned refinement branch. The fourteen unfactorized entries reduce exactly to seven inversion pairs. The paired quartic vertex lies between omega(k)*omega(r)/6 and 19/6 times that product, and one strictly negative nested pair obeys T_L<=-(N-1)/[4*N*omega(p)], hence has at least c*L^2 magnitude. This obstructs termwise tuned-g_L^4 bounds, but not a cancellation inside the complete seven-kernel sum. Exact soft-factor and shifted-convolution bounds prove that pairs 1, 2, and 5 are O(log(L)^2), little-o of N*omega(p), and tuned-g_L^4 uniformly bounded. They cannot affect a nonzero power coefficient. The common coefficient of pairs 3, 4, 6, and 7, lower-loop recombination, full M4 asymptotics, and the interacting H^-1 moment remain open.",
+      "status": "EXACT_FINITE_OS_AND_METHOD_OBSTRUCTIONS_WITH_ALL_BACKGROUND_WIDTH_RG_MATCHED_LEADING_LOG_WARD_WEIGHT_QUARTIC_POWER_UV_G4_NONCANCELLATION_CHAOS_HESSIAN_CONNECTED_L4_GENERAL_L_SEVEN_KERNEL_AND_SUBPOWER_REDUCTION_GATES"
     },
     {
       "authorities": [
@@ -1264,7 +1292,8 @@
     "the explicit BT lattice momentum kernel or its norm bound from the expected-Hessian formula alone",
     "a large-volume M4 sign or scaling law from the exact finite-volume L=4 decision",
     "a bound for the 14 unfactorized two-loop kernels, the full M4 asymptotics, or the interacting H^-1 moment from the factorized log-squared bound",
-    "the sign or scaling of the combined seven-kernel sum, complete M4, or the actual interacting H^-1 moment from the isolated negative L^2 carrier"
+    "the sign or scaling of the combined seven-kernel sum, complete M4, or the actual interacting H^-1 moment from the isolated negative L^2 carrier",
+    "the common power coefficient of pairs 3, 4, 6, and 7, complete M4, or the actual interacting H^-1 moment from the three subpower-pair bounds"
   ],
   "formal_object": {
     "coordinates": {
@@ -1411,19 +1440,19 @@
   ],
   "paper": {
     "appendix": {
-      "assembly_source_canonical_digest": "77b60644526af4f10a3d18ab581d46c4590fbb4c0c1c45f9a724cb34bb3942ec",
+      "assembly_source_canonical_digest": "26ff28ccaf6bba3b9355d8d95da2ed731b958253a7d063ee71d9f941cbfccd86",
       "assembly_source_path": "foundations/site/assemblies.json",
-      "assembly_source_sha256": "398cf9f2f8c8e4c3d92d40addcbefbaa762fe0161a542af004e2dd8125d80ba5",
+      "assembly_source_sha256": "7619ce964d21c0057038b299a63c89c8f56a2a4f052bc8551baa14ca7de037ba",
       "generator_path": "paper/generate_21_reverse_foundations_appendices.py",
       "generator_sha256": "f46fd7cd15f93d83c0f2ec292fa9e0cbae6bdc9f7a503dd39ff61565424db364",
       "path": "paper/21-reverse-foundations-of-physics-appendices.tex",
       "sha256": "ba621c56ab8073e637c1e1fc7b9130b077d8707097cd954c2186bdf65d622150",
-      "source_canonical_digest": "95bfac9a0ad10263a0fdf7cd6e0c378f4e69a7e6135a7a0952b5680827f644d4",
+      "source_canonical_digest": "102a164cd77a7ea9edc5aa201fc4eb9614e681d652e4fec8a519c7bb950abfd3",
       "source_path": "foundations/site/data.json",
-      "source_sha256": "84924fe9b1fe4288a4a105d5225c3d29d48b8178d2a3465f8c98575bf7b27c3b"
+      "source_sha256": "e0ae0418b415f4a7b6cd8d0968316b537755fa091135d8d7cd35d6fc25927d2a"
     },
     "path": "paper/21-reverse-foundations-of-physics.tex",
-    "sha256": "fa7321c2b56f68e14b2fd0b56288c87d12b2b4fcfd7a8ebfe4a5790ec46d0bf7"
+    "sha256": "ddbd0dbb1fe7be7761d9476abc9c5b4d7664ec049ff0a948ecc0abde57208b0f"
   },
   "result_id": "PAPER21_REVERSE_FOUNDATIONS_INTRODUCTION_V1",
   "result_kind": "PROGRAMME_SYNTHESIS_AND_TYPED_CASE_STUDY_MAP",
