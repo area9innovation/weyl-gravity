@@ -158,6 +158,20 @@ row is therefore assembled at the declared basepoint, but the portable
 six-row `q2`, suspended graded polarization, complete `q1q2=0`, `D` derivation
 and BV cyclicity remain fail closed. Consequently Gate A remains closed.
 
+The coordinate-globalization deficit for its hard coefficient kernel is now
+closed by
+[`STRICT_BACH_NATURAL_OPERATOR_AST_V1`](REPORT_STRICT_BACH_NATURAL_OPERATOR_AST_V1.md).
+Instead of extrapolating the cylinder table, this result serializes and
+executes the action-normalized Bach Euler density as a typed ten-node natural
+operator DAG. Pullback naturality follows compositionally from the metric,
+Levi-Civita curvature, Schouten/Weyl/Cotton/Bach, contraction, absolute-density
+and mixed Frechet primitives. Exact receiver comparisons pass on cylinder,
+Minkowski and Brinkmann backgrounds, three pp-wave pairs, and a signed
+coordinate permutation. The finite coordinate replay is an implementation
+regression, not the proof of the general theorem. The portable kernel must
+still be integrated with the already certified cotangent terms and suspended
+across all six rows before any interaction identity or Gate-A promotion.
+
 ## Antifield/Koszul--Tate handoff contract
 
 The required shape of the local antifield export is now executable rather

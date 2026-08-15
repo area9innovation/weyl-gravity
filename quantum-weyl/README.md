@@ -140,6 +140,13 @@ or quantum-master-equation result.
   to the independently replayed minimal-BV export and variational origins in
   the displayed master action. The metric-antifield/Bach row, suspended graded
   polarization, arity-two identities, local `D` and cyclicity remain open.
+- [`classical_import/REPORT_STRICT_BACH_NATURAL_OPERATOR_AST_V1.md`](classical_import/REPORT_STRICT_BACH_NATURAL_OPERATOR_AST_V1.md)
+  replaces the hard Bach kernel's one-frame globalization placeholder with a
+  typed, executable ten-node natural-operator DAG. Its compositional pullback
+  theorem, exact cylinder/Minkowski/Brinkmann comparisons, pp-wave restrictions
+  and signed-coordinate regression certify the portable fourth-order
+  polarized metric kernel. Integration into the complete metric-antifield row,
+  suspended six-row `q2`, interaction identities and Gate A remain open.
 - [`reports/branch-a-local-bv-bootstrap.md`](reports/branch-a-local-bv-bootstrap.md)
   records the exact minimal jet/BRST substrate and its uncomputed quotients.
 - [`reports/local-curvature-canonicalization.md`](reports/local-curvature-canonicalization.md)

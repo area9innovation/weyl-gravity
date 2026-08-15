@@ -1,0 +1,444 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema": "strict-bach-natural-operator-ast-v1",
+  "result_id": "STRICT_BACH_NATURAL_OPERATOR_AST_V1",
+  "result_kind": "PORTABLE_EXECUTABLE_TENSOR_NATURAL_POLARIZED_BACH_OPERATOR",
+  "result_state": "PORTABLE_NATURAL_BACH_HESSIAN_CERTIFIED_HSTAR_INTEGRATION_AND_SUSPENSION_OPEN",
+  "lifecycle": "CLASSIFIED",
+  "created": "2026-08-15",
+  "repository_base_commit": "dec9e0ce4315d99c46b52077763c95961563027e",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "scope": {
+    "theory": "strict pure-Weyl metric Euler row",
+    "background_class": "arbitrary smooth nondegenerate four-dimensional pseudo-Riemannian metric jets",
+    "input": "two compactly supported symmetric covariant metric variations",
+    "output": "symmetric contravariant absolute density of weight plus one",
+    "coefficient_field": "Q",
+    "maximum_metric_jet_order": 4,
+    "taylor_convention": "coefficient of a*b with no hidden factor of 1/2",
+    "action_normalization": "E_g^{mu nu}:=delta S/delta g_{mu nu}=-2 sqrt(abs(g)) B^{mu nu}",
+    "support_rule": "support K_g(h1,h2) is contained in support(h1) intersect support(h2)"
+  },
+  "natural_operator_ast": {
+    "schema": "strict-pure-weyl-bach-natural-operator-ast-v1",
+    "expression_schema_version": "strict-pure-weyl-bach-natural-operator-v1",
+    "spacetime_dimension": 4,
+    "coefficient_field": "Q",
+    "nodes": [
+      {
+        "node_id": "g_ab",
+        "operation": "metric_two_parameter_family",
+        "inputs": [],
+        "parameters": {
+          "base": "gbar",
+          "left_direction": "h_left",
+          "right_direction": "h_right",
+          "formal_parameters": [
+            "a",
+            "b"
+          ]
+        },
+        "declared_output_type": "symmetric_covariant_2",
+        "declared_metric_jet_order": 0
+      },
+      {
+        "node_id": "g_inverse",
+        "operation": "inverse_metric",
+        "inputs": [
+          "g_ab"
+        ],
+        "parameters": {},
+        "declared_output_type": "symmetric_contravariant_2",
+        "declared_metric_jet_order": 0
+      },
+      {
+        "node_id": "geometry",
+        "operation": "levi_civita_geometry",
+        "inputs": [
+          "g_ab",
+          "g_inverse"
+        ],
+        "parameters": {
+          "curvature_sign": "R^a_bcd=partial_c Gamma^a_db-partial_d Gamma^a_cb+Gamma^e_db Gamma^a_ce-Gamma^e_cb Gamma^a_de"
+        },
+        "declared_output_type": "levi_civita_geometry_bundle",
+        "declared_metric_jet_order": 2
+      },
+      {
+        "node_id": "P_and_C",
+        "operation": "schouten_and_weyl_4d",
+        "inputs": [
+          "geometry"
+        ],
+        "parameters": {
+          "schouten": "P_ab=(Ric_ab-(R/6)g_ab)/2",
+          "weyl": "C_abcd=R_abcd-(g_ac P_db-g_ad P_cb-g_bc P_da+g_bd P_ca)"
+        },
+        "declared_output_type": "schouten_cov2_and_weyl_cov4_bundle",
+        "declared_metric_jet_order": 2
+      },
+      {
+        "node_id": "Cotton",
+        "operation": "cotton_4d",
+        "inputs": [
+          "geometry",
+          "P_and_C"
+        ],
+        "parameters": {
+          "formula": "A_cab=nabla_c P_ab-nabla_a P_bc"
+        },
+        "declared_output_type": "cotton_covariant_3",
+        "declared_metric_jet_order": 3
+      },
+      {
+        "node_id": "B_lower",
+        "operation": "bach_4d",
+        "inputs": [
+          "geometry",
+          "P_and_C",
+          "Cotton"
+        ],
+        "parameters": {
+          "formula": "B_ab=nabla^c A_cab+P^cd C_acbd"
+        },
+        "declared_output_type": "symmetric_covariant_2",
+        "declared_metric_jet_order": 4
+      },
+      {
+        "node_id": "B_upper",
+        "operation": "raise_symmetric_two_tensor",
+        "inputs": [
+          "g_inverse",
+          "B_lower"
+        ],
+        "parameters": {
+          "formula": "B^ab=g^ac g^bd B_cd"
+        },
+        "declared_output_type": "symmetric_contravariant_2",
+        "declared_metric_jet_order": 4
+      },
+      {
+        "node_id": "volume",
+        "operation": "absolute_metric_volume_density",
+        "inputs": [
+          "g_ab"
+        ],
+        "parameters": {
+          "formula": "sqrt(abs(det(g)))"
+        },
+        "declared_output_type": "absolute_metric_density_weight_plus_1",
+        "declared_metric_jet_order": 0
+      },
+      {
+        "node_id": "E_g",
+        "operation": "densitize_and_scale",
+        "inputs": [
+          "volume",
+          "B_upper"
+        ],
+        "parameters": {
+          "coefficient": -2,
+          "formula": "E^ab=-2 sqrt(abs(g)) B^ab"
+        },
+        "declared_output_type": "symmetric_contravariant_density_weight_plus_1",
+        "declared_metric_jet_order": 4
+      },
+      {
+        "node_id": "K_hh",
+        "operation": "mixed_frechet_coefficient",
+        "inputs": [
+          "E_g"
+        ],
+        "parameters": {
+          "coefficient": "[a*b]",
+          "left_direction": "h_left",
+          "right_direction": "h_right",
+          "hidden_factorial": false
+        },
+        "declared_output_type": "symmetric_bilinear_metric_jet_operator_to_symmetric_contravariant_density_weight_plus_1",
+        "declared_metric_jet_order": 4
+      }
+    ],
+    "root_node": "K_hh",
+    "canonical_node_sha256": "8193af18cda76e0b92d8d66e002d151748da2c1e63434550d4e9ed10f93259b2"
+  },
+  "primitive_contracts": [
+    {
+      "operation": "metric_two_parameter_family",
+      "naturality": "pullback of metrics and metric variations",
+      "requires": [],
+      "preserves_locality": true
+    },
+    {
+      "operation": "inverse_metric",
+      "naturality": "inverse is equivariant under pullback of nondegenerate metrics",
+      "requires": [
+        "metric_two_parameter_family"
+      ],
+      "preserves_locality": true
+    },
+    {
+      "operation": "levi_civita_geometry",
+      "naturality": "the Levi-Civita connection and its curvature commute with metric pullback",
+      "requires": [
+        "metric_two_parameter_family",
+        "inverse_metric"
+      ],
+      "preserves_locality": true
+    },
+    {
+      "operation": "schouten_and_weyl_4d",
+      "naturality": "four-dimensional Schouten and Weyl tensors are contractions and rational linear combinations of natural curvature tensors",
+      "requires": [
+        "levi_civita_geometry"
+      ],
+      "preserves_locality": true
+    },
+    {
+      "operation": "cotton_4d",
+      "naturality": "covariant differentiation and alternation of a natural tensor are natural",
+      "requires": [
+        "levi_civita_geometry",
+        "schouten_and_weyl_4d"
+      ],
+      "preserves_locality": true
+    },
+    {
+      "operation": "bach_4d",
+      "naturality": "covariant differentiation, raising, contraction and tensor product preserve naturality",
+      "requires": [
+        "levi_civita_geometry",
+        "schouten_and_weyl_4d",
+        "cotton_4d"
+      ],
+      "preserves_locality": true
+    },
+    {
+      "operation": "raise_symmetric_two_tensor",
+      "naturality": "raising indices with the inverse metric commutes with pullback",
+      "requires": [
+        "inverse_metric",
+        "bach_4d"
+      ],
+      "preserves_locality": true
+    },
+    {
+      "operation": "absolute_metric_volume_density",
+      "naturality": "the absolute metric volume is a pullback-natural density, including orientation reversal",
+      "requires": [
+        "metric_two_parameter_family"
+      ],
+      "preserves_locality": true
+    },
+    {
+      "operation": "densitize_and_scale",
+      "naturality": "tensor product with a natural density and exact scalar multiplication preserve naturality",
+      "requires": [
+        "absolute_metric_volume_density",
+        "raise_symmetric_two_tensor"
+      ],
+      "preserves_locality": true
+    },
+    {
+      "operation": "mixed_frechet_coefficient",
+      "naturality": "differentiating an equivariant smooth natural map twice gives an equivariant symmetric bilinear natural operator",
+      "requires": [
+        "densitize_and_scale"
+      ],
+      "preserves_locality": true
+    }
+  ],
+  "compositional_naturality": {
+    "proof_kind": "COMPOSITIONAL_NATURAL_OPERATOR_THEOREM_WITH_EXECUTABLE_SEMANTICS",
+    "domain_category": "four-dimensional smooth pseudo-Riemannian metrics and local diffeomorphisms on nondegenerate metric jets",
+    "source_bundle": "two symmetric covariant metric variations",
+    "target_bundle": "symmetric contravariant tensor density of absolute weight plus one",
+    "derivation": [
+      "Every node before mixed Frechet extraction is a standard pullback-natural metric construction listed in primitive_contracts.",
+      "Finite composition, contraction, covariant differentiation, tensor product and exact rational linear combination preserve pullback naturality.",
+      "Therefore E(g)=-2 sqrt(abs(g)) B(g)^sharp is a fourth-order natural differential operator.",
+      "Differentiating phi^*E(g)=E(phi^*g) twice in two metric directions proves phi^*D^2E_g(h1,h2)=D^2E_{phi^*g}(phi^*h1,phi^*h2)."
+    ],
+    "conclusion": "K_g(h1,h2)=[a*b]E(g+a h1+b h2) is a symmetric, fourth-order, support-local tensor-natural bilinear operator",
+    "orientation_boundary": "the target uses the absolute metric density, so the statement includes orientation-reversing coordinate changes",
+    "finite_coordinate_test_role": "the signed-permutation replay is an implementation regression only; the general conclusion follows from the compositional theorem",
+    "status": "CERTIFIED"
+  },
+  "exact_evaluator_checks": {
+    "background_crosschecks": [
+      {
+        "background": "conformal_cylinder",
+        "left_seed": 1,
+        "right_seed": 2,
+        "nonzero_output_count": 9,
+        "output_sha256": "0b7b62aaefa891d6b9f6c3fbb8b0042c49d7936567cf0632d187be2ac4342bd1",
+        "natural_ast_equals_independent_point_evaluator": true
+      },
+      {
+        "background": "minkowski",
+        "left_seed": 2,
+        "right_seed": 3,
+        "nonzero_output_count": 9,
+        "output_sha256": "caaf8401c6e60adb1830e1217f3051c5f70a6185d7c86a4334a66f61b5227480",
+        "natural_ast_equals_independent_point_evaluator": true
+      },
+      {
+        "background": "flat_brinkmann",
+        "left_seed": 3,
+        "right_seed": 4,
+        "nonzero_output_count": 3,
+        "output_sha256": "7492e7e35d1a876de899805c344ad2f70b1489015fad50345a747cc9dc4d7476",
+        "natural_ast_equals_independent_point_evaluator": true
+      }
+    ],
+    "ppwave_restriction_crosschecks": [
+      {
+        "left_seed": 1,
+        "right_seed": 2,
+        "all_ten_outputs_zero": true,
+        "output_sha256": "08531b1a77b523e191f265d72593411a4c7934eeb1aa8e4297e176f3ef0aebb1"
+      },
+      {
+        "left_seed": 2,
+        "right_seed": 4,
+        "all_ten_outputs_zero": true,
+        "output_sha256": "08531b1a77b523e191f265d72593411a4c7934eeb1aa8e4297e176f3ef0aebb1"
+      },
+      {
+        "left_seed": 3,
+        "right_seed": 5,
+        "all_ten_outputs_zero": true,
+        "output_sha256": "08531b1a77b523e191f265d72593411a4c7934eeb1aa8e4297e176f3ef0aebb1"
+      }
+    ],
+    "signed_coordinate_permutation": {
+      "coordinate_rule": "x[p[i]]=s[i] y[i]",
+      "permutation": [
+        0,
+        2,
+        3,
+        1
+      ],
+      "signs": [
+        -1,
+        1,
+        -1,
+        1
+      ],
+      "left_seed": 5,
+      "right_seed": 6,
+      "transformed_output_sha256": "4bbf99d3b6a73a268960eac8d23937b17cebd9d0c5a9a7bc629891c4c2ad0e5e",
+      "expected_tensor_density_output_sha256": "4bbf99d3b6a73a268960eac8d23937b17cebd9d0c5a9a7bc629891c4c2ad0e5e",
+      "exact_covariance": true
+    },
+    "input_swap_symmetry": true,
+    "all_arithmetic_exact": true
+  },
+  "cross_background_evidence": {
+    "cylinder_universal_table": {
+      "result_id": "STRICT_CYLINDER_BACH_UNIVERSAL_EXPORT_V1",
+      "table_sha256": "2aac70a9b5f0691433deda6544cbdc65437d2514cee25581f4c7af25bf46e11b",
+      "relationship": "the portable AST receiver agrees with the same independently checked point semantics to which the exhaustive cylinder table was compared"
+    },
+    "Nariai_action_Hessian": {
+      "result_id": "NARIAI_TRANSVERSE_ACTION_BACH_HESSIAN_VARIATION_V1",
+      "sha256": "8d18f7b7817bc424a4bb39a98875086a0b2bd0e6534f3409fdaa1b5f7a571817",
+      "relationship": "independent covariant-Bach derivation with the same action normalization; no component adapter equality is claimed here"
+    }
+  },
+  "gate_advancement": [
+    {
+      "gate": "P4_PORTABLE_AST_EXPORT",
+      "status": "PASS",
+      "evidence": "content-addressed typed DAG, exact evaluator, compositional naturality theorem and multi-background regressions"
+    },
+    {
+      "gate": "HSTAR_PORTABLE_INTEGRATION",
+      "status": "OPEN",
+      "evidence": "replace the cylinder K reference in the h-star row by this AST and combine with its already certified cotangent terms"
+    },
+    {
+      "gate": "SUSPENDED_GRADED_POLARIZATION",
+      "status": "OPEN",
+      "evidence": "the repository suspension and odd diagonal convention have not yet been replayed across all six rows"
+    },
+    {
+      "gate": "SIX_ROW_INTERACTION_IDENTITIES",
+      "status": "OPEN",
+      "evidence": "q1q2, D derivation and BV cyclicity require the integrated six-row receiver"
+    }
+  ],
+  "canonical_hashes": {
+    "natural_operator_ast_sha256": "38ec270de6d3cdf2ad4a24c0fffa11e293aebde484204a4e53130e6d61f1f7f8",
+    "primitive_contracts_sha256": "0d2f04e0295e67d58be45ccc92dc6788d59304dcfd866815981214559b6d1ce9",
+    "compositional_naturality_sha256": "83f66480dbae03b7efb62ca4b08ff0a284113fc0b17bca82a748b8390b8feb4b",
+    "exact_evaluator_checks_sha256": "baf932bde8edf1cd07a4d1a41f1083f63367bab8c6be2c3d0a47ad3a647785fb",
+    "cross_background_evidence_sha256": "d374f346cdea8c9b8caefc97fcb50e93ad94bf94954709368c26d6c4f2abe037",
+    "gate_advancement_sha256": "80dd271142adbec1c92570e57e1be94e10a83af6bba17b43ef1a17d795101673"
+  },
+  "provenance": {
+    "inputs": [
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_CYLINDER_BACH_UNIVERSAL_EXPORT_V1.json",
+        "result_or_artifact_id": "STRICT_CYLINDER_BACH_UNIVERSAL_EXPORT_V1",
+        "sha256": "0935383606b6213db25762603fe45faa570babc32baa16b39afe4a7bb88293d9",
+        "role": "exact exhaustive cylinder-frame coefficient table"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_CYLINDER_HSTAR_BASEPOINT_ROW_V1.json",
+        "result_or_artifact_id": "STRICT_CYLINDER_HSTAR_BASEPOINT_ROW_V1",
+        "sha256": "edc39ae4c7274cc78e04f8c7deb883bf2122fdca1a9e3070419ae1e045f5fb19",
+        "role": "assembled metric-antifield diagonal row"
+      },
+      {
+        "path": "d_quotient_classical/minimal_bv_antifield/foundation/action_normalization.json",
+        "result_or_artifact_id": "PURE_WEYL_ACTION_NORMALIZATION_V2",
+        "sha256": "1d0db9cd5a408e4fb9e745856da8a884ea600ab27ab90539d30252b7c226e48f",
+        "role": "action-normalized Euler density"
+      },
+      {
+        "path": "d_quotient_classical/certificates/NARIAI_TRANSVERSE_ACTION_BACH_HESSIAN_VARIATION_V1.json",
+        "result_or_artifact_id": "NARIAI_TRANSVERSE_ACTION_BACH_HESSIAN_VARIATION_V1",
+        "sha256": "8d18f7b7817bc424a4bb39a98875086a0b2bd0e6534f3409fdaa1b5f7a571817",
+        "role": "independent Nariai action-Hessian evidence and normalization"
+      }
+    ],
+    "implementations": [
+      {
+        "path": "quantum-weyl/classical_import/bach_natural_operator_ast.py",
+        "sha256": "e8a9c8c91ab290880e57555f412f873abf37e08b3bccde29c1a19c69a630b380",
+        "role": "typed AST and exact semantic receiver"
+      },
+      {
+        "path": "quantum-weyl/classical_import/cylinder_polarized_bach_evaluator.py",
+        "sha256": "2503bcfdeafbe1dc4fc6146ddfcb1642326e19f449bebba6fd1d7580b2cebc73",
+        "role": "independent exact point evaluator crosscheck"
+      }
+    ]
+  },
+  "claim_flags": {
+    "BACH_EULER_NATURAL_MAP_PORTABLE": true,
+    "POLARIZED_BACH_KERNEL_PORTABLE": true,
+    "GENERAL_DIFF_NATURALITY_COMPOSITIONALLY_CERTIFIED": true,
+    "SIGNED_COORDINATE_COVARIANCE_REPLAYED": true,
+    "PORTABLE_TENSOR_NATURAL_HSTAR_ROW": false,
+    "SUSPENDED_GRADED_POLARIZATION_REPLAYED": false,
+    "STRICT_SUPPORT_LOCAL_Q2_COMPLETE": false,
+    "CLASSICAL_IMPORT_GATE_PASSED": false,
+    "LORENTZIAN_CAUSAL_CERTIFIED": false,
+    "QME_RESTORED": false
+  },
+  "does_not_establish": [
+    "the integrated metric-antifield row including its cotangent terms",
+    "the repository suspended graded bilinear q2 or its Koszul symmetry",
+    "q1q2=0, a complete local D action, D derivation, or BV cyclicity",
+    "a passed classical import Gate A",
+    "a causal Green homotopy, Hadamard state, Lorentzian QME, or Lorentzian quantum theory",
+    "a direct component equality with the separately normalized Nariai PBW action-Hessian table"
+  ],
+  "schema_path": "quantum-weyl/classical_import/schema/strict-bach-natural-operator-ast-v1.schema.json",
+  "independent_checker": "quantum-weyl/classical_import/check_strict_bach_natural_operator_ast.py",
+  "human_report": "quantum-weyl/classical_import/REPORT_STRICT_BACH_NATURAL_OPERATOR_AST_V1.md"
+}

@@ -1,0 +1,91 @@
+{
+  "receipt_id": "STRICT_BACH_NATURAL_OPERATOR_AST_V1_TIER_RECEIPT",
+  "result_id": "STRICT_BACH_NATURAL_OPERATOR_AST_V1",
+  "created": "2026-08-15",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "repository_base_commit": "dec9e0ce4315d99c46b52077763c95961563027e",
+  "changed_artifact_hashes": {
+    "quantum-weyl/README.md": "077ff538bf69ac6b0fa885260c73ce0e5fca7a0cae1a7090363dac6d13974102",
+    "quantum-weyl/classical_import/REPORT.md": "db5fb1fe2cd9ad0c850cb2adf0c6a4147b629a191a2e7ac6dccd8300e29291fa",
+    "quantum-weyl/classical_import/REPORT_STRICT_BACH_NATURAL_OPERATOR_AST_V1.md": "779e77dcf01856ccd2ace94040d5717d4df16fa4c95d0f2986530a5089588961",
+    "quantum-weyl/classical_import/bach_natural_operator_ast.py": "e8a9c8c91ab290880e57555f412f873abf37e08b3bccde29c1a19c69a630b380",
+    "quantum-weyl/classical_import/build_strict_bach_natural_operator_ast.py": "d51c2611896270254af41b6ec44d765f8e524adccb07e1413c169f2c0ae4102a",
+    "quantum-weyl/classical_import/certificates/STRICT_BACH_NATURAL_OPERATOR_AST_V1.json": "cea2952bc7e91170169c37b31bc102da74bbe956aac995e6565db0eb03a71098",
+    "quantum-weyl/classical_import/check_strict_bach_natural_operator_ast.py": "4a40b3b3e6a318d735f727d6a3f996af6b65784020867a172791182c462d5f63",
+    "quantum-weyl/classical_import/schema/strict-bach-natural-operator-ast-v1.schema.json": "54c1359694efee9e7f100df45c7bffe1a9ca9687d93a0e2fa456ed4f7925f032",
+    "quantum-weyl/classical_import/tests/test_strict_bach_natural_operator_ast.py": "a54f3d969d4b49c9677be18c56a17d66e5407d9d251dcb216312bb310dcdca48",
+    "quantum-weyl/classical_import/verify_strict_bach_natural_operator_ast.py": "da9f7ccf03eec2bc4fd4be2ce0506f3871ead59f0206002cdb1ce7ba400cf54e"
+  },
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "checks": [
+        {
+          "command": "python3 -m py_compile quantum-weyl/classical_import/bach_natural_operator_ast.py quantum-weyl/classical_import/build_strict_bach_natural_operator_ast.py quantum-weyl/classical_import/check_strict_bach_natural_operator_ast.py quantum-weyl/classical_import/verify_strict_bach_natural_operator_ast.py quantum-weyl/classical_import/tests/test_strict_bach_natural_operator_ast.py",
+          "elapsed_seconds": "0.06",
+          "maximum_resident_kib": 16508,
+          "result": "PASS"
+        },
+        {
+          "command": "jq empty quantum-weyl/classical_import/schema/strict-bach-natural-operator-ast-v1.schema.json quantum-weyl/classical_import/certificates/STRICT_BACH_NATURAL_OPERATOR_AST_V1.json",
+          "elapsed_seconds": "0.00",
+          "maximum_resident_kib": 3692,
+          "result": "PASS"
+        }
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "checks": [
+        {
+          "command": "PYTHONPATH=quantum-weyl/classical_import python3 quantum-weyl/classical_import/build_strict_bach_natural_operator_ast.py --check",
+          "elapsed_seconds": "1.56",
+          "maximum_resident_kib": 28224,
+          "result": "PASS; generated artifacts current"
+        },
+        {
+          "command": "PYTHONPATH=quantum-weyl/classical_import python3 quantum-weyl/classical_import/check_strict_bach_natural_operator_ast.py",
+          "elapsed_seconds": "1.62",
+          "maximum_resident_kib": 26144,
+          "result": "PASS; exact typed DAG, point semantics and coordinate witness replayed"
+        },
+        {
+          "command": "PYTHONPATH=quantum-weyl/classical_import python3 quantum-weyl/classical_import/verify_strict_bach_natural_operator_ast.py",
+          "elapsed_seconds": "1.67",
+          "maximum_resident_kib": 35272,
+          "result": "PASS; schema, exactness and claim boundaries verified"
+        },
+        {
+          "command": "PYTHONPATH=quantum-weyl/classical_import python3 -m unittest quantum-weyl/classical_import/tests/test_strict_bach_natural_operator_ast.py -v",
+          "elapsed_seconds": "14.27",
+          "maximum_resident_kib": 38704,
+          "result": "PASS; 11 tests including coefficient, jet-order, float, covariance, adapter and lifecycle mutations"
+        }
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "criterion": "The new certificate is the terminal consumer in its affected chain. It pins unchanged upstream cylinder, h-star, normalization and Nariai artifacts by content hash, then independently executes the new natural AST on three backgrounds, three pp-wave pairs and a signed coordinate transformation. No upstream producer or downstream interface changed.",
+      "higher_chain_rebuilds": "NOT_REQUIRED_BY_CONTENT_ADDRESSING"
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No classical or quantum freeze, paper theorem, lifecycle promotion beyond CLASSIFIED, shared core algebra change, release or tag is made. Gate A and every Lorentzian or QME flag remain false."
+    }
+  },
+  "science_forge_shadow": {
+    "command": "ci/science-forge-shadow.sh",
+    "elapsed_seconds": "2.12",
+    "maximum_resident_kib": 342512,
+    "process_exit": 0,
+    "certifying_status": "ADVISORY_NON_CERTIFYING",
+    "findings": [
+      "Forge 0.0.2 embedded stdlib hash differs from the current forge/lib tree",
+      "bridge audit fails closed with E9118 at forge/lib/prelude.forge:682",
+      "coverage census reports 1715 certificates versus the 2026-07-19 baseline of 976"
+    ]
+  },
+  "claim_boundary": "This LOCAL-ALGEBRAIC receipt certifies a typed, content-addressed and executable fourth-order natural-operator DAG for the action-normalized polarized Bach Euler density. Compositional pullback naturality is the general theorem; exact cylinder, Minkowski, Brinkmann, pp-wave and signed-coordinate checks are implementation falsification rails. It does not integrate the cotangent terms into a portable metric-antifield row, suspend all six q2 rows, prove Koszul symmetry or q1q2/D/cyclicity identities, pass Gate A, construct causal Green or Hadamard data, restore a QME, or establish a Lorentzian quantum theory."
+}

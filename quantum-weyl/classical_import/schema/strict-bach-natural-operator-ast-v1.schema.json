@@ -1,0 +1,134 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/strict-bach-natural-operator-ast-v1.json",
+  "title": "Portable tensor-natural Bach-Hessian AST certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema", "schema", "result_id", "result_kind", "result_state",
+    "lifecycle", "created", "repository_base_commit", "dependency_tags",
+    "scope", "natural_operator_ast", "primitive_contracts",
+    "compositional_naturality", "exact_evaluator_checks",
+    "cross_background_evidence", "gate_advancement", "canonical_hashes",
+    "provenance", "claim_flags", "does_not_establish", "schema_path",
+    "independent_checker", "human_report"
+  ],
+  "properties": {
+    "$schema": {"const": "https://json-schema.org/draft/2020-12/schema"},
+    "schema": {"const": "strict-bach-natural-operator-ast-v1"},
+    "result_id": {"const": "STRICT_BACH_NATURAL_OPERATOR_AST_V1"},
+    "result_kind": {"const": "PORTABLE_EXECUTABLE_TENSOR_NATURAL_POLARIZED_BACH_OPERATOR"},
+    "result_state": {"const": "PORTABLE_NATURAL_BACH_HESSIAN_CERTIFIED_HSTAR_INTEGRATION_AND_SUSPENSION_OPEN"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "created": {"type": "string", "format": "date"},
+    "repository_base_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["theory", "background_class", "input", "output", "coefficient_field", "maximum_metric_jet_order", "taylor_convention", "action_normalization", "support_rule"],
+      "properties": {
+        "theory": {"type": "string", "minLength": 1},
+        "background_class": {"type": "string", "minLength": 1},
+        "input": {"type": "string", "minLength": 1},
+        "output": {"type": "string", "minLength": 1},
+        "coefficient_field": {"const": "Q"},
+        "maximum_metric_jet_order": {"const": 4},
+        "taylor_convention": {"type": "string", "minLength": 1},
+        "action_normalization": {"type": "string", "minLength": 1},
+        "support_rule": {"type": "string", "minLength": 1}
+      }
+    },
+    "natural_operator_ast": {"$ref": "#/$defs/ast"},
+    "primitive_contracts": {
+      "type": "array", "minItems": 10, "maxItems": 10,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["operation", "naturality", "requires", "preserves_locality"],
+        "properties": {
+          "operation": {"type": "string", "minLength": 1},
+          "naturality": {"type": "string", "minLength": 1},
+          "requires": {"type": "array", "items": {"type": "string"}},
+          "preserves_locality": {"const": true}
+        }
+      }
+    },
+    "compositional_naturality": {
+      "type": "object", "additionalProperties": false,
+      "required": ["proof_kind", "domain_category", "source_bundle", "target_bundle", "derivation", "conclusion", "orientation_boundary", "finite_coordinate_test_role", "status"],
+      "properties": {
+        "proof_kind": {"const": "COMPOSITIONAL_NATURAL_OPERATOR_THEOREM_WITH_EXECUTABLE_SEMANTICS"},
+        "domain_category": {"type": "string", "minLength": 1},
+        "source_bundle": {"type": "string", "minLength": 1},
+        "target_bundle": {"type": "string", "minLength": 1},
+        "derivation": {"type": "array", "minItems": 4, "items": {"type": "string", "minLength": 1}},
+        "conclusion": {"type": "string", "minLength": 1},
+        "orientation_boundary": {"type": "string", "minLength": 1},
+        "finite_coordinate_test_role": {"type": "string", "minLength": 1},
+        "status": {"const": "CERTIFIED"}
+      }
+    },
+    "exact_evaluator_checks": {"type": "object", "minProperties": 5},
+    "cross_background_evidence": {"type": "object", "minProperties": 2},
+    "gate_advancement": {
+      "type": "array", "minItems": 4, "maxItems": 4,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["gate", "status", "evidence"],
+        "properties": {
+          "gate": {"type": "string", "minLength": 1},
+          "status": {"enum": ["PASS", "OPEN"]},
+          "evidence": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "canonical_hashes": {
+      "type": "object", "additionalProperties": false,
+      "required": ["natural_operator_ast_sha256", "primitive_contracts_sha256", "compositional_naturality_sha256", "exact_evaluator_checks_sha256", "cross_background_evidence_sha256", "gate_advancement_sha256"],
+      "properties": {
+        "natural_operator_ast_sha256": {"$ref": "#/$defs/sha256"},
+        "primitive_contracts_sha256": {"$ref": "#/$defs/sha256"},
+        "compositional_naturality_sha256": {"$ref": "#/$defs/sha256"},
+        "exact_evaluator_checks_sha256": {"$ref": "#/$defs/sha256"},
+        "cross_background_evidence_sha256": {"$ref": "#/$defs/sha256"},
+        "gate_advancement_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "provenance": {"type": "object", "minProperties": 2},
+    "claim_flags": {"type": "object", "minProperties": 10},
+    "does_not_establish": {"type": "array", "minItems": 6, "items": {"type": "string", "minLength": 1}},
+    "schema_path": {"const": "quantum-weyl/classical_import/schema/strict-bach-natural-operator-ast-v1.schema.json"},
+    "independent_checker": {"const": "quantum-weyl/classical_import/check_strict_bach_natural_operator_ast.py"},
+    "human_report": {"const": "quantum-weyl/classical_import/REPORT_STRICT_BACH_NATURAL_OPERATOR_AST_V1.md"}
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "ast": {
+      "type": "object", "additionalProperties": false,
+      "required": ["schema", "expression_schema_version", "spacetime_dimension", "coefficient_field", "nodes", "root_node", "canonical_node_sha256"],
+      "properties": {
+        "schema": {"const": "strict-pure-weyl-bach-natural-operator-ast-v1"},
+        "expression_schema_version": {"const": "strict-pure-weyl-bach-natural-operator-v1"},
+        "spacetime_dimension": {"const": 4},
+        "coefficient_field": {"const": "Q"},
+        "nodes": {
+          "type": "array", "minItems": 10, "maxItems": 10,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["node_id", "operation", "inputs", "parameters", "declared_output_type", "declared_metric_jet_order"],
+            "properties": {
+              "node_id": {"type": "string", "minLength": 1},
+              "operation": {"type": "string", "minLength": 1},
+              "inputs": {"type": "array", "items": {"type": "string"}},
+              "parameters": {"type": "object"},
+              "declared_output_type": {"type": "string", "minLength": 1},
+              "declared_metric_jet_order": {"type": "integer", "minimum": 0, "maximum": 4}
+            }
+          }
+        },
+        "root_node": {"const": "K_hh"},
+        "canonical_node_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    }
+  }
+}
