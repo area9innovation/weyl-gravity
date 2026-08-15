@@ -139,6 +139,7 @@ def main() -> int:
     bt_log_bubble = json.loads((ROOT / data["authorities"]["bt_log_bubble_virial_no_go"]["path"]).read_text())
     bt_bubble_balance = json.loads((ROOT / data["authorities"]["bt_log_bubble_entropy_soft_score_balance"]["path"]).read_text())
     bt_full_phase_current = json.loads((ROOT / data["authorities"]["bt_full_phase_current_gate"]["path"]).read_text())
+    bt_weighted_current_v2 = json.loads((ROOT / data["authorities"]["bt_full_phase_weighted_current_gate_v2"]["path"]).read_text())
     dims = cube["dimensions"]
     atlas = data["atlas_snapshot"]
     require(atlas["axis_sizes"] == [6, 6, 16], "unexpected axis sizes")
@@ -556,6 +557,8 @@ def main() -> int:
     require(flags["bt_full_phase_background_translation_invariance_established"] is True, "BT full-phase translation invariance omitted")
     require(flags["bt_full_phase_current_divergence_identity_established"] is True, "BT canonical-current identity omitted")
     require(flags["bt_canonical_current_pointwise_second_factor_obstructed"] is True, "BT canonical second-factor obstruction omitted")
+    require(flags["bt_weighted_random_conductance_current_identity_established"] is True, "BT weighted-current identity omitted")
+    require(flags["bt_translation_invariant_flux_corrector_established"] is False, "BT flux corrector promoted")
     require(flags["bt_translation_invariant_current_susceptibility_established"] is False, "BT current susceptibility promoted")
     require(flags["bt_exact_interacting_score_scaling_established"] is False, "BT exact interacting score promoted")
     require(flags["bt_actual_interacting_H_minus_one_established"] is False, "BT interacting H-minus-one promoted")
@@ -581,9 +584,14 @@ def main() -> int:
     require(bt_bubble_balance["dependency_tags"] == ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"], "BT bubble-balance dependency boundary drift")
     require(atlas["bt_full_phase_background_translation_status"] == bt_full_phase_current["method_disposition"]["full_cosine_sine_background_translation_invariance"] == "PROVED", "BT full-phase translation status drift")
     require(atlas["bt_full_phase_current_identity_status"] == bt_full_phase_current["method_disposition"]["canonical_current_divergence_identity"] == "PROVED", "BT canonical-current identity drift")
-    require(atlas["bt_full_phase_pointwise_second_factor_status"] == bt_full_phase_current["method_disposition"]["pointwise_second_factor_from_canonical_current_gradient"] == "OBSTRUCTED", "BT pointwise second-factor status drift")
-    require(atlas["bt_full_phase_current_susceptibility_status"] == bt_full_phase_current["method_disposition"]["translation_invariant_current_susceptibility_bound"] == "OPEN", "BT current susceptibility promoted")
-    require(atlas["bt_full_phase_fixture_current_zero_mode"] == bt_full_phase_current["exact_current_fixture"]["full_current_zero_mode"] == {"numerator": -444, "denominator": 1}, "BT exact current fixture drift")
+    require(atlas["bt_full_phase_pointwise_second_factor_status"] == bt_weighted_current_v2["method_disposition"]["slice_valid_unweighted_periodic_gradient_identity"] == "OBSTRUCTED", "BT slice-valid second-factor status drift")
+    require(atlas["bt_full_phase_weighted_current_status"] == bt_weighted_current_v2["method_disposition"]["weighted_random_conductance_gradient_identity"] == "PROVED", "BT weighted-current identity drift")
+    require(atlas["bt_full_phase_flux_corrector_status"] == bt_weighted_current_v2["method_disposition"]["translation_invariant_flux_corrector_bound"] == "OPEN", "BT flux corrector promoted")
+    require(atlas["bt_full_phase_current_susceptibility_status"] == bt_weighted_current_v2["method_disposition"]["translation_invariant_current_susceptibility_bound"] == "OPEN", "BT current susceptibility promoted")
+    require(atlas["bt_full_phase_fixture_current_zero_mode"] == bt_weighted_current_v2["slice_valid_fixture"]["full_time_current_zero_mode"] == {"numerator": -24, "denominator": 1}, "BT slice-valid current fixture drift")
+    require(bt_weighted_current_v2["method_disposition"]["v1_fixture_as_full_phase_slice_witness"] == "WITHDRAWN_SCOPE_ERROR", "BT V1 fixture scope error omitted")
+    require(bt_weighted_current_v2["method_disposition"]["actual_interacting_H_minus_one_second_moment"] == "OPEN", "BT weighted-current gate promoted to H-minus-one theorem")
+    require(bt_weighted_current_v2["dependency_tags"] == ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"], "BT weighted-current dependency boundary drift")
     require(bt_full_phase_current["method_disposition"]["actual_interacting_H_minus_one_second_moment"] == "OPEN", "BT full-phase reduction promoted to H-minus-one theorem")
     require(bt_full_phase_current["dependency_tags"] == ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"], "BT full-phase dependency boundary drift")
     require(atlas["bt_g4_interacting_H_minus_one_status"] == "OPEN", "BT interacting H-minus-one atlas promotion")
@@ -864,9 +872,11 @@ def main() -> int:
         r"negative pair 4 and positive pair 7",
         r"c_4<-0.01613",
         r"c_7<0.016103194",
-        r"REVERSE_PHYSICS_BT_EUCLIDEAN_FULL_PHASE_CURRENT_GATE_V1",
-        r"\sum_xJ_{x,1}=-444",
+        r"REVERSE_PHYSICS_BT_EUCLIDEAN_FULL_PHASE_WEIGHTED_CURRENT_GATE_V2",
+        r"\sum_xJ_{x,1}=-24",
         r"susceptibility estimate",
+        r"J_{xy}=\Omega_x\Omega_y(u_x-u_y)",
+        r"K_{x,i}=(\Omega_x\Omega_{x+e_i}-1)(u_x-u_{x+e_i})",
     ]:
         require(phrase in prose, f"required boundary missing from paper: {phrase}")
     for citation in [

@@ -1881,7 +1881,7 @@ lattice translations rotate \(E_p\) and preserve its orthogonal complement.
 Consequently the exact background marginal is translation invariant.  The
 certificate
 
-\cert{REVERSE_PHYSICS_BT_EUCLIDEAN_FULL_PHASE_CURRENT_GATE_V1}
+\cert{REVERSE_PHYSICS_BT_EUCLIDEAN_FULL_PHASE_WEIGHTED_CURRENT_GATE_V2}
 
 combines the all-phase curvature theorem with the canonical oriented current
 
@@ -1906,17 +1906,45 @@ susceptibility estimate
  \leq C_J g^2N\omega_p.
 \]
 
-The divergence supplies one external momentum factor exactly, but not two.
-On a rational \(4^4\) fixture the current has
+The V2 certificate corrects the scope of the first rational fixture: that row
+was not in \(E_p^\perp\).  A replacement two-axis rational \(4^4\) field is
+mean zero and exactly orthogonal to both lowest phases, yet its current has
 
 \[
- \sum_xJ_{x,1}=-444,
+ \sum_xJ_{x,1}=-24.
 \]
 
-so this canonical current is not a periodic gradient.  A second soft factor,
-if true, must therefore arise statistically under the Gibbs marginal rather
-than from that pointwise identity.  The susceptibility bound, interacting
-\(H^{-1}\) estimate, and continuum limit remain open.
+Thus the canonical current is not an ordinary periodic gradient even on the
+required slice.  It does, however, have the exact weighted normal form
+
+\[
+ J_{xy}=\Omega_x\Omega_y(u_x-u_y),\qquad
+ u_x=\frac{r_x}{\Omega_x^2},\qquad
+ \sum_x\Omega_x^3u_x=0.
+\]
+
+The second soft factor is therefore a stationary nonlinear
+random-conductance flux-corrector problem.  Multiplication by the fluctuating
+conductance mixes Fourier momenta, so the weighted-gradient identity alone is
+not the susceptibility estimate.  In mean-log gauge the exact split
+
+\[
+ J_{x,i}=(u_x-u_{x+e_i})+K_{x,i},\qquad
+ K_{x,i}=(\Omega_x\Omega_{x+e_i}-1)(u_x-u_{x+e_i})
+\]
+
+reduces it to two explicit subgates:
+
+\[
+ \mathbb E_{\nu_p}|\widehat u(p)|^2\leq C_u g^2N,
+ \qquad
+ \mathbb E_{\nu_p}|\widehat K_1(p)|^2
+ \leq C_Kg^2N\omega_p.
+\]
+
+The slice-valid fixture's entire nonzero current zero mode lies in \(K\), so
+the corrector gate cannot be omitted.  Both estimates, the interacting
+\(H^{-1}\) bound, and the continuum limit remain open.
 
 \subsection{A finite BV contraction does not freeze the quantum theory}
 

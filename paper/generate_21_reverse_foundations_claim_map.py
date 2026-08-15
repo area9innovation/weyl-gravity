@@ -64,6 +64,7 @@ AUTHORITY_PATHS = {
     "bt_log_bubble_virial_no_go": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_LOG_BUBBLE_VIRIAL_NO_GO_V1.json",
     "bt_log_bubble_entropy_soft_score_balance": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_LOG_BUBBLE_ENTROPY_SOFT_SCORE_BALANCE_V1.json",
     "bt_full_phase_current_gate": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_FULL_PHASE_CURRENT_GATE_V1.json",
+    "bt_full_phase_weighted_current_gate_v2": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_FULL_PHASE_WEIGHTED_CURRENT_GATE_V2.json",
     "full_surface_gap_audit": "foundations/results/FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1.json",
     "explorer_snapshot": "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json",
     "theory_assembly": "foundations/results/FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1.json",
@@ -165,6 +166,7 @@ def build() -> dict:
     bt_log_bubble = loaded["bt_log_bubble_virial_no_go"]
     bt_bubble_balance = loaded["bt_log_bubble_entropy_soft_score_balance"]
     bt_full_phase_current = loaded["bt_full_phase_current_gate"]
+    bt_weighted_current_v2 = loaded["bt_full_phase_weighted_current_gate_v2"]
     site = loaded["explorer_snapshot"]
     gr_cassini = loaded["gr_cassini_assembly"]
     mannheim_ngc3198 = loaded["mannheim_ngc3198_assembly"]
@@ -465,9 +467,11 @@ def build() -> dict:
             "bt_bubble_positive_entropy_gap": bt_bubble_balance["tuned_entropy_balance"]["positive_entropy_gap"],
             "bt_full_phase_background_translation_status": bt_full_phase_current["method_disposition"]["full_cosine_sine_background_translation_invariance"],
             "bt_full_phase_current_identity_status": bt_full_phase_current["method_disposition"]["canonical_current_divergence_identity"],
-            "bt_full_phase_pointwise_second_factor_status": bt_full_phase_current["method_disposition"]["pointwise_second_factor_from_canonical_current_gradient"],
-            "bt_full_phase_current_susceptibility_status": bt_full_phase_current["method_disposition"]["translation_invariant_current_susceptibility_bound"],
-            "bt_full_phase_fixture_current_zero_mode": bt_full_phase_current["exact_current_fixture"]["full_current_zero_mode"],
+            "bt_full_phase_pointwise_second_factor_status": bt_weighted_current_v2["method_disposition"]["slice_valid_unweighted_periodic_gradient_identity"],
+            "bt_full_phase_weighted_current_status": bt_weighted_current_v2["method_disposition"]["weighted_random_conductance_gradient_identity"],
+            "bt_full_phase_flux_corrector_status": bt_weighted_current_v2["method_disposition"]["translation_invariant_flux_corrector_bound"],
+            "bt_full_phase_current_susceptibility_status": bt_weighted_current_v2["method_disposition"]["translation_invariant_current_susceptibility_bound"],
+            "bt_full_phase_fixture_current_zero_mode": bt_weighted_current_v2["slice_valid_fixture"]["full_time_current_zero_mode"],
             "bt_g4_interacting_H_minus_one_status": "OPEN",
             "standard_reference_direct_obligations": next(item for item in assembly_data["assemblies"] if item["id"] == "STANDARD_MIXED_REFERENCE")["coverage"]["direct"],
             "external_calibration_records": len(assembly_data["calibration_controls"][0]["records"]),
@@ -708,9 +712,9 @@ def build() -> dict:
             },
             {
                 "claim_id": "RF-29-BT-FULL-PHASE-CURRENT-GATE",
-                "statement": "Removing the full lowest axial cosine-sine eigenspace makes the exact orthogonal-background marginal translation invariant. The two-mode center problem then reduces to a translation-invariant canonical-current susceptibility bound, because the two real scores are exactly the Fourier divergence of one local current. This current supplies one external momentum factor. An exact rational 4^4 fixture has current zero mode -444, obstructing the shortcut that declares the canonical current to be a periodic gradient and extracts a second factor pointwise. The statistical current-susceptibility bound, interacting H^-1 estimate, and continuum limit remain open.",
-                "status": "EXACT_FULL_PHASE_CURRENT_REDUCTION_WITH_CANONICAL_POINTWISE_SECOND_FACTOR_OBSTRUCTION",
-                "authorities": ["bt_full_phase_current_gate"],
+                "statement": "Removing the full lowest axial cosine-sine eigenspace makes the exact orthogonal-background marginal translation invariant. The two-mode center problem reduces to a canonical-current susceptibility bound. V2 corrects the earlier fixture scope: an exact E_p-perpendicular rational 4^4 field has current zero mode -24, so the canonical current is not an ordinary periodic gradient even on the required slice. For every positive field it nevertheless has the exact weighted form J_xy=Omega_x Omega_y(u_x-u_y), with sum Omega_x^3 u_x=0. Splitting J=grad(u)+K reduces the theorem to a mass structure-factor estimate for u and a hyperuniformity estimate for the conductance corrector K; the fixture puts its entire nonzero current zero mode in K. Both estimates, the susceptibility, interacting H^-1 estimate, and continuum limit remain open.",
+                "status": "SLICE_VALID_WEIGHTED_FLUX_NORMAL_FORM_WITH_CORRECTOR_GATE_OPEN",
+                "authorities": ["bt_full_phase_weighted_current_gate_v2"],
                 "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"],
             },
             {
@@ -873,6 +877,8 @@ def build() -> dict:
             "bt_full_phase_background_translation_invariance_established": True,
             "bt_full_phase_current_divergence_identity_established": True,
             "bt_canonical_current_pointwise_second_factor_obstructed": True,
+            "bt_weighted_random_conductance_current_identity_established": True,
+            "bt_translation_invariant_flux_corrector_established": False,
             "bt_translation_invariant_current_susceptibility_established": False,
             "bt_exact_interacting_score_scaling_established": False,
             "bt_actual_interacting_H_minus_one_established": False,
@@ -948,6 +954,7 @@ def build() -> dict:
             "failure of a Gibbs-weighted block estimate, divergence of the interacting moment, or nonexistence of a continuum measure from the logarithmic-bubble pointwise virial obstruction",
             "an actual bubble probability, interacting cluster expansion, annealed score theorem, or H^-1 estimate from the dilute logarithmic-bubble entropy/soft-score balance",
             "the translation-invariant current-susceptibility bound, statistical second soft factor, interacting H^-1 estimate, or continuum measure from the full-phase current reduction",
+            "the stationary flux-corrector or hyperuniformity estimate from the exact weighted-current normal form alone",
         ],
         "authorities": authorities,
         "independent_checker": {

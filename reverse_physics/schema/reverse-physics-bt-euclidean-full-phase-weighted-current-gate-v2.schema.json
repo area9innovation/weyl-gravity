@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-full-phase-weighted-current-gate-v2.schema.json",
+  "title": "BT Euclidean full-phase weighted-current gate V2",
+  "type": "object",
+  "required": ["certificate", "schema_version", "created", "dependency_tags", "lifecycle_state", "result_kind", "question", "answer", "supersession", "weighted_current_normal_form", "plain_gradient_corrector_split", "slice_valid_fixture", "method_disposition", "checks", "does_not_establish", "missing_object_ledger", "next_gate", "provenance", "schema", "report", "independent_verifier", "verification_commands"],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_EUCLIDEAN_FULL_PHASE_WEIGHTED_CURRENT_GATE_V2"},
+    "schema_version": {"const": "reverse-physics-bt-euclidean-full-phase-weighted-current-gate-v2"},
+    "created": {"const": "2026-08-15"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "lifecycle_state": {"const": "SLICE_VALID_WEIGHTED_FLUX_NORMAL_FORM_PROVED_CORRECTOR_GATE_OPEN"},
+    "result_kind": {"type": "string", "minLength": 1},
+    "question": {"type": "string", "minLength": 1},
+    "answer": {"type": "string", "minLength": 1},
+    "supersession": {"type": "object", "required": ["predecessor", "retained", "corrected_boundary", "status"], "properties": {"predecessor": {"const": "REVERSE_PHYSICS_BT_EUCLIDEAN_FULL_PHASE_CURRENT_GATE_V1"}, "retained": {"type": "array", "minItems": 4, "items": {"type": "string"}}, "corrected_boundary": {"type": "string"}, "status": {"const": "V1_FIXTURE_SCOPE_NARROWED_V2_SLICE_VALID_OBSTRUCTION"}}, "additionalProperties": false},
+    "weighted_current_normal_form": {"type": "object", "required": ["positive_field", "residual", "weighted_potential", "conductance", "identity", "weighted_zero_mean", "current_divergence", "interpretation", "status"], "properties": {"status": {"const": "EXACT_FOR_EVERY_POSITIVE_FINITE_PERIODIC_FIELD"}}, "additionalProperties": {"type": "string"}},
+    "plain_gradient_corrector_split": {"type": "object", "required": ["gauge", "plain_gradient", "conductance_corrector", "decomposition", "axial_fourier_identity", "deterministic_square_bound", "sufficient_potential_estimate", "sufficient_corrector_estimate", "consequence", "fixture_corrector_time_zero_mode", "status"], "properties": {"fixture_corrector_time_zero_mode": {"$ref": "#/$defs/rational"}, "status": {"const": "EXACT_TWO_SUBGATE_REDUCTION"}}, "additionalProperties": {"type": "string"}},
+    "slice_valid_fixture": {"type": "object", "required": ["lattice", "lowest_axis", "positive_field", "exponent_matrix_time_by_space", "mean_zero_exponent_sum", "lowest_cosine_projection", "lowest_sine_projection", "active_residual_matrix", "active_forward_time_current_matrix", "inert_replication_factor", "full_time_current_zero_mode", "full_action", "weighted_dirichlet_energy", "weighted_potential_mean", "status"], "properties": {"lowest_axis": {"const": 0}, "exponent_matrix_time_by_space": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "integer"}}}, "mean_zero_exponent_sum": {"const": 0}, "lowest_cosine_projection": {"const": 0}, "lowest_sine_projection": {"const": 0}, "active_residual_matrix": {"$ref": "#/$defs/rational_matrix"}, "active_forward_time_current_matrix": {"$ref": "#/$defs/rational_matrix"}, "inert_replication_factor": {"const": 16}, "full_time_current_zero_mode": {"$ref": "#/$defs/rational"}, "full_action": {"$ref": "#/$defs/rational"}, "weighted_dirichlet_energy": {"$ref": "#/$defs/rational"}, "weighted_potential_mean": {"$ref": "#/$defs/rational"}, "status": {"const": "EXACT_RATIONAL_E_P_ORTHOGONAL_UNWEIGHTED_GRADIENT_OBSTRUCTION"}}, "additionalProperties": {"type": "string"}},
+    "method_disposition": {"type": "object", "minProperties": 12, "additionalProperties": {"type": "string"}},
+    "checks": {"type": "object", "minProperties": 16, "additionalProperties": {"const": true}},
+    "does_not_establish": {"type": "array", "minItems": 5, "items": {"type": "string"}},
+    "missing_object_ledger": {"type": "array", "minItems": 5, "items": {"type": "string"}},
+    "next_gate": {"type": "string", "minLength": 1},
+    "provenance": {"type": "object", "required": ["repository_base_commit", "inputs", "exact_arithmetic", "analytic_arithmetic", "assumptions"], "properties": {"repository_base_commit": {"const": "f21cc5b29b7f11a51006ec7f098a013e2fef9cc6"}, "inputs": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"$ref": "#/$defs/input"}}, "exact_arithmetic": {"type": "string"}, "analytic_arithmetic": {"type": "string"}, "assumptions": {"type": "array", "minItems": 3, "items": {"type": "string"}}}, "additionalProperties": false},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-euclidean-full-phase-weighted-current-gate-v2.schema.json"},
+    "report": {"const": "reverse_physics/reports/bt-euclidean-full-phase-weighted-current-gate-v2.md"},
+    "independent_verifier": {"const": "reverse_physics/verify_bt_euclidean_full_phase_weighted_current_gate_v2.py"},
+    "verification_commands": {"type": "array", "minItems": 3, "items": {"type": "string"}}
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "rational": {"type": "object", "required": ["numerator", "denominator"], "properties": {"numerator": {"type": "integer"}, "denominator": {"type": "integer", "minimum": 1}}, "additionalProperties": false},
+    "rational_matrix": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/rational"}}},
+    "input": {"type": "object", "required": ["path", "sha256"], "properties": {"path": {"type": "string"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}, "additionalProperties": false}
+  }
+}

@@ -1,0 +1,332 @@
+{
+  "answer": "Yes, the unweighted pointwise shortcut is obstructed on the actual slice, but the current has a stronger weighted structure. On the 4^4 torus the mean-zero exponent matrix n with rows (0,0,0,0), (0,0,1,-1), (0,1,0,-1), (0,0,0,0), replicated in two inert axes, gives Omega_x=2^n_x and lies exactly in E_p^perp for the lowest axial cosine-sine pair. Its canonical time-current zero mode is -24 and its action is 837/2, so the canonical current is not an unweighted periodic gradient even after restriction to E_p^perp. For every positive field, however, setting u_x=r_x/Omega_x^2 gives the exact conductance-flux identity J_xy=Omega_x*Omega_y*(u_x-u_y) and sum_x Omega_x^3*u_x=0. Thus the live theorem is an L-uniform hyperuniformity or flux-corrector estimate for this nonlinear random-conductance current under the exact translation-invariant background Gibbs marginal. No such statistical estimate is proved here.",
+  "certificate": "REVERSE_PHYSICS_BT_EUCLIDEAN_FULL_PHASE_WEIGHTED_CURRENT_GATE_V2",
+  "checks": {
+    "actual_H_minus_one_bound_remains_open": true,
+    "current_susceptibility_remains_open": true,
+    "exponent_field_is_cosine_orthogonal": true,
+    "exponent_field_is_mean_zero": true,
+    "exponent_field_is_sine_orthogonal": true,
+    "fixture_action_is_837_over_2": true,
+    "fixture_lies_in_full_phase_background_slice": true,
+    "flux_corrector_estimate_remains_open": true,
+    "no_continuum_born_krein_or_lorentzian_promotion": true,
+    "plain_gradient_has_zero_periodic_current_mode": true,
+    "slice_fixture_time_zero_mode_is_entirely_corrector": true,
+    "time_current_zero_mode_is_minus_twenty_four": true,
+    "unweighted_pointwise_second_factor_is_obstructed_on_slice": true,
+    "v1_fixture_did_not_certify_slice_restriction": true,
+    "weighted_dirichlet_energy_is_290295_over_16": true,
+    "weighted_flux_normal_form_is_exact": true,
+    "weighted_gradient_identity_holds_on_every_positive_edge": true,
+    "weighted_potential_has_exact_zero_mean": true
+  },
+  "created": "2026-08-15",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "does_not_establish": [
+    "the flux-corrector or current-susceptibility bound",
+    "boundedness or divergence of the actual annealed score",
+    "the interacting H^-1 estimate or a Fourier-shell theorem",
+    "tightness or identification of a continuum Euclidean measure",
+    "a Born rule, Krein reconstruction, or Lorentzian causal statement"
+  ],
+  "independent_verifier": "reverse_physics/verify_bt_euclidean_full_phase_weighted_current_gate_v2.py",
+  "lifecycle_state": "SLICE_VALID_WEIGHTED_FLUX_NORMAL_FORM_PROVED_CORRECTOR_GATE_OPEN",
+  "method_disposition": {
+    "actual_annealed_zero_fiber_score_bound": "OPEN",
+    "actual_interacting_H_minus_one_second_moment": "OPEN",
+    "born_rule": "NOT_ESTABLISHED",
+    "conductance_corrector_hyperuniformity_bound": "OPEN",
+    "continuum_limit": "NOT_ESTABLISHED",
+    "krein_reconstruction": "NOT_ASSESSED",
+    "lorentzian_transfer": "NOT_ESTABLISHED",
+    "plain_gradient_corrector_split": "PROVED",
+    "slice_valid_unweighted_periodic_gradient_identity": "OBSTRUCTED",
+    "translation_invariant_current_susceptibility_bound": "OPEN",
+    "translation_invariant_flux_corrector_bound": "OPEN",
+    "v1_fixture_as_full_phase_slice_witness": "WITHDRAWN_SCOPE_ERROR",
+    "weighted_potential_mass_structure_factor_bound": "OPEN",
+    "weighted_potential_zero_mean_identity": "PROVED",
+    "weighted_random_conductance_gradient_identity": "PROVED"
+  },
+  "missing_object_ledger": [
+    "an L-uniform structure-factor estimate for c*grad(u) at the lowest nonzero momentum",
+    "an L-uniform mass estimate E_nu[|uhat(p)|^2]<=C*g^2*N for the weighted potential",
+    "a flux-corrector decomposition whose remainder retains one additional external momentum under the background Gibbs law",
+    "large-field control of the conductances Omega_x*Omega_y and the weighted potential u",
+    "the resulting two-mode center theorem and dyadic Fourier-shell sum",
+    "tightness and continuum identification only after the actual H^-1 theorem"
+  ],
+  "next_gate": "Use the exact stationary conductance flux J=c*grad(u). Prove an L-uniform flux-corrector/hyperuniformity estimate E_nu[|Jhat_1(p)|^2]<=C*g^2*N*omega_p on the tuned branch, with large-conductance blocks controlled before Fourier summation; or construct an actual Gibbs-weighted correlated environment for which this normalized structure factor diverges. Translation invariance or the weighted-gradient identity alone is not the theorem.",
+  "plain_gradient_corrector_split": {
+    "axial_fourier_identity": "Jhat_1(p)=(1-exp(-i*p_1))*uhat(p)+Khat_1(p)",
+    "conductance_corrector": "K_(x,i)=(Omega_x*Omega_(x+e_i)-1)*(u_x-u_(x+e_i))",
+    "consequence": "the two sufficient estimates imply E_nu[|Jhat_1(p)|^2]<=2*(C_u+C_K)*g^2*N*omega_p",
+    "decomposition": "J_(x,i)=(grad_i u)_x+K_(x,i)",
+    "deterministic_square_bound": "|Jhat_1(p)|^2<=2*omega_p*|uhat(p)|^2+2*|Khat_1(p)|^2",
+    "fixture_corrector_time_zero_mode": {
+      "denominator": 1,
+      "numerator": -24
+    },
+    "gauge": "sum_x psi_x=0, equivalently product_x Omega_x=1",
+    "plain_gradient": "(grad_i u)_x=u_x-u_(x+e_i)",
+    "status": "EXACT_TWO_SUBGATE_REDUCTION",
+    "sufficient_corrector_estimate": "E_nu[|Khat_1(p)|^2]<=C_K*g^2*N*omega_p",
+    "sufficient_potential_estimate": "E_nu[|uhat(p)|^2]<=C_u*g^2*N"
+  },
+  "provenance": {
+    "analytic_arithmetic": "Direct substitution proves J_xy=Omega_x*Omega_y*(r_x/Omega_x^2-r_y/Omega_y^2) and the periodic Laplacian sum proves the weighted zero-mean identity.",
+    "assumptions": [
+      "The BT action, current, and Fourier normalizations are those of the V1 current-gate certificate.",
+      "Mean-zero logarithmic gauge fixes the otherwise irrelevant global scale of Omega.",
+      "Only LOCAL-ALGEBRAIC and EUCLIDEAN-SPECTRAL conclusions are drawn."
+    ],
+    "exact_arithmetic": "Fraction arithmetic enumerates all 256 sites, four positive edge directions, the full-phase projections, residuals, currents, weighted potential, action, and conductance Dirichlet energy.",
+    "inputs": [
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_FULL_PHASE_CURRENT_GATE_V1.json",
+        "sha256": "9b98de173b3c00f283bbfdc9b71ac68beac742c1f3b9f33e8201b667331f27ab"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_RESIDUAL_SPECTRAHEDRAL_PUSHFORWARD_V1.json",
+        "sha256": "31bc26ff9822cdfc663b5fb0fc47e7970f592afbc6526f1aadf2e4447dd324e0"
+      }
+    ],
+    "repository_base_commit": "f21cc5b29b7f11a51006ec7f098a013e2fef9cc6"
+  },
+  "question": "Does the canonical-current obstruction survive on the actual full-phase background slice, and what exact structure remains available for the statistical susceptibility theorem?",
+  "report": "reverse_physics/reports/bt-euclidean-full-phase-weighted-current-gate-v2.md",
+  "result_kind": "exact weighted-current normal form and slice-valid rational obstruction to an unweighted second factor",
+  "schema": "reverse_physics/schema/reverse-physics-bt-euclidean-full-phase-weighted-current-gate-v2.schema.json",
+  "schema_version": "reverse-physics-bt-euclidean-full-phase-weighted-current-gate-v2",
+  "slice_valid_fixture": {
+    "active_forward_time_current_matrix": [
+      [
+        {
+          "denominator": 2,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": -2
+        },
+        {
+          "denominator": 8,
+          "numerator": 25
+        },
+        {
+          "denominator": 4,
+          "numerator": -41
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": -1
+        },
+        {
+          "denominator": 1,
+          "numerator": 5
+        },
+        {
+          "denominator": 8,
+          "numerator": -33
+        },
+        {
+          "denominator": 1,
+          "numerator": 2
+        }
+      ],
+      [
+        {
+          "denominator": 2,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": -3
+        },
+        {
+          "denominator": 2,
+          "numerator": 3
+        },
+        {
+          "denominator": 4,
+          "numerator": 25
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": -1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ]
+    ],
+    "active_residual_matrix": [
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 2,
+          "numerator": -1
+        }
+      ],
+      [
+        {
+          "denominator": 2,
+          "numerator": -1
+        },
+        {
+          "denominator": 1,
+          "numerator": 2
+        },
+        {
+          "denominator": 4,
+          "numerator": -9
+        },
+        {
+          "denominator": 1,
+          "numerator": 5
+        }
+      ],
+      [
+        {
+          "denominator": 2,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": -2
+        },
+        {
+          "denominator": 2,
+          "numerator": 3
+        },
+        {
+          "denominator": 1,
+          "numerator": 3
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 2,
+          "numerator": -1
+        }
+      ]
+    ],
+    "exponent_matrix_time_by_space": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        -1
+      ],
+      [
+        0,
+        1,
+        0,
+        -1
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "full_action": {
+      "denominator": 2,
+      "numerator": 837
+    },
+    "full_time_current_zero_mode": {
+      "denominator": 1,
+      "numerator": -24
+    },
+    "inert_replication_factor": 16,
+    "lattice": "4^4 periodic torus; exponent depends on axes 0 and 1 and is replicated over axes 2 and 3",
+    "lowest_axis": 0,
+    "lowest_cosine_projection": 0,
+    "lowest_sine_projection": 0,
+    "mean_zero_exponent_sum": 0,
+    "positive_field": "Omega_x=2^n_x",
+    "status": "EXACT_RATIONAL_E_P_ORTHOGONAL_UNWEIGHTED_GRADIENT_OBSTRUCTION",
+    "weighted_dirichlet_energy": {
+      "denominator": 16,
+      "numerator": 290295
+    },
+    "weighted_potential_mean": {
+      "denominator": 1,
+      "numerator": 0
+    }
+  },
+  "supersession": {
+    "corrected_boundary": "The V1 row (1,1,2,4) was mean-zero only after gauge fixing but was not orthogonal to the lowest cosine-sine eigenspace. It refuted a universal unweighted-gradient identity, not its restriction to E_p^perp. The V2 two-axis fixture closes that restricted-domain gap.",
+    "predecessor": "REVERSE_PHYSICS_BT_EUCLIDEAN_FULL_PHASE_CURRENT_GATE_V1",
+    "retained": [
+      "full cosine-sine background translation invariance",
+      "two-mode center-score reduction",
+      "canonical current-divergence and score identities",
+      "the current-susceptibility theorem remains the live gate"
+    ],
+    "status": "V1_FIXTURE_SCOPE_NARROWED_V2_SLICE_VALID_OBSTRUCTION"
+  },
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_euclidean_full_phase_weighted_current_gate_v2.py --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_euclidean_full_phase_weighted_current_gate_v2.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_euclidean_full_phase_weighted_current_gate_v2"
+  ],
+  "weighted_current_normal_form": {
+    "conductance": "c_xy=Omega_x*Omega_y=c_yx>0",
+    "current_divergence": "partial A/partial psi_x=-sum_(y~x) J_xy",
+    "identity": "J_xy=c_xy*(u_x-u_y)",
+    "interpretation": "The missing second softness is a statistical flux-corrector or hyperuniformity theorem for a nonlinear random-conductance gradient, not an unweighted pointwise gradient identity.",
+    "positive_field": "Omega_x=exp(psi_x)",
+    "residual": "r_x=(Delta Omega)_x/Omega_x=sum_(y~x)(Omega_y/Omega_x-1)",
+    "status": "EXACT_FOR_EVERY_POSITIVE_FINITE_PERIODIC_FIELD",
+    "weighted_potential": "u_x=r_x/Omega_x^2=(Delta Omega)_x/Omega_x^3",
+    "weighted_zero_mean": "sum_x Omega_x^3*u_x=sum_x (Delta Omega)_x=0"
+  }
+}
