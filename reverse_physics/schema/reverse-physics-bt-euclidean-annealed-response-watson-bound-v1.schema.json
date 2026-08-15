@@ -1,0 +1,154 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-annealed-response-watson-bound-v1.schema.json",
+  "title": "BT Euclidean annealed-response Watson bound certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "certificate",
+    "schema_version",
+    "created",
+    "dependency_tags",
+    "lifecycle_state",
+    "result_kind",
+    "question",
+    "answer",
+    "watson_return_series",
+    "derivative_moment_potential_kernel",
+    "large_volume_decision",
+    "method_consequence",
+    "method_disposition",
+    "missing_object_ledger",
+    "next_gate",
+    "does_not_establish",
+    "provenance",
+    "verification_commands",
+    "tier_receipt",
+    "checks",
+    "report",
+    "schema",
+    "verifier"
+  ],
+  "properties": {
+    "certificate": {
+      "const": "REVERSE_PHYSICS_BT_EUCLIDEAN_ANNEALED_RESPONSE_WATSON_BOUND_V1"
+    },
+    "schema_version": {
+      "const": "reverse-physics-bt-euclidean-annealed-response-watson-bound-v1"
+    },
+    "created": {"const": "2026-08-16"},
+    "dependency_tags": {
+      "type": "array",
+      "const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE"]
+    },
+    "lifecycle_state": {"const": "COEFFICIENT_COMPUTED"},
+    "result_kind": {"type": "string", "minLength": 30},
+    "question": {"type": "string", "minLength": 30},
+    "answer": {"type": "string", "minLength": 120},
+    "watson_return_series": {
+      "type": "object",
+      "required": [
+        "definition",
+        "walk_representation",
+        "coefficient_formula",
+        "recurrence",
+        "initial_values",
+        "truncation_n",
+        "partial_fraction_sha256",
+        "partial_numerator_decimal_digits",
+        "partial_denominator_decimal_digits",
+        "tail_proof",
+        "tail_upper",
+        "computed_upper_below",
+        "certified_bound",
+        "certified_upper"
+      ]
+    },
+    "derivative_moment_potential_kernel": {
+      "type": "object",
+      "required": [
+        "definition",
+        "diagonal_site",
+        "identity_steps",
+        "series",
+        "endpoint_formula",
+        "nonnegative_tail_proof",
+        "truncation_n",
+        "origin_counts",
+        "endpoint_counts",
+        "partial_potential",
+        "partial_exceeds",
+        "exact_i_upper_from_partial",
+        "certified_bound",
+        "certified_upper"
+      ]
+    },
+    "large_volume_decision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "imported_formula",
+        "substituted_strict_upper",
+        "upper",
+        "sign",
+        "status"
+      ],
+      "properties": {
+        "imported_formula": {
+          "const": "b_(2,infinity)=-85/5184+W4/18+5*I4/288"
+        },
+        "substituted_strict_upper": {"type": "string"},
+        "upper": {"$ref": "#/$defs/fraction"},
+        "sign": {"const": "STRICTLY_NEGATIVE"},
+        "status": {"const": "LARGE_VOLUME_ONE_LOOP_SIGN_CERTIFIED"}
+      }
+    },
+    "method_consequence": {"type": "object"},
+    "method_disposition": {"type": "object"},
+    "missing_object_ledger": {
+      "type": "array",
+      "minItems": 3,
+      "items": {"type": "string"}
+    },
+    "next_gate": {"type": "string", "minLength": 100},
+    "does_not_establish": {
+      "type": "array",
+      "minItems": 6,
+      "items": {"type": "string"}
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["repository_base_commit", "inputs", "arithmetic"]
+    },
+    "verification_commands": {
+      "type": "array",
+      "minItems": 3,
+      "items": {"type": "string"}
+    },
+    "tier_receipt": {"type": "object"},
+    "checks": {
+      "type": "object",
+      "required": ["ok", "passed", "total", "failures", "details"]
+    },
+    "report": {
+      "const": "reverse_physics/reports/bt-euclidean-annealed-response-watson-bound.md"
+    },
+    "schema": {
+      "const": "reverse_physics/schema/reverse-physics-bt-euclidean-annealed-response-watson-bound-v1.schema.json"
+    },
+    "verifier": {
+      "const": "reverse_physics/verify_bt_euclidean_annealed_response_watson_bound.py"
+    }
+  },
+  "$defs": {
+    "fraction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      }
+    }
+  }
+}
