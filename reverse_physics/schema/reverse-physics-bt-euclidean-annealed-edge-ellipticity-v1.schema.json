@@ -1,0 +1,174 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-annealed-edge-ellipticity-v1.schema.json",
+  "title": "BT Euclidean annealed edge-ellipticity certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "certificate", "schema_version", "created", "dependency_tags",
+    "lifecycle_state", "result_kind", "question", "answer", "theorem",
+    "proof_chain", "exact_fixture", "method_disposition",
+    "missing_object_ledger", "next_gate", "does_not_establish", "provenance",
+    "verification_commands", "tier_receipt", "checks", "report", "schema",
+    "verifier"
+  ],
+  "$defs": {
+    "fraction": {
+      "type": "object", "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      }
+    },
+    "string": {"type": "string", "minLength": 1}
+  },
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_EUCLIDEAN_ANNEALED_EDGE_ELLIPTICITY_V1"},
+    "schema_version": {"const": "reverse-physics-bt-euclidean-annealed-edge-ellipticity-v1"},
+    "created": {"const": "2026-08-15"},
+    "dependency_tags": {
+      "type": "array",
+      "prefixItems": [{"const": "LOCAL-ALGEBRAIC"}, {"const": "EUCLIDEAN-SPECTRAL"}],
+      "items": false
+    },
+    "lifecycle_state": {"const": "CLASSIFIED"},
+    "result_kind": {"$ref": "#/$defs/string"},
+    "question": {"$ref": "#/$defs/string"},
+    "answer": {"$ref": "#/$defs/string"},
+    "theorem": {
+      "type": "object", "additionalProperties": false,
+      "required": ["scope", "coupling", "definitions", "bounds"],
+      "properties": {
+        "scope": {"const": "every edge of every four-dimensional periodic BT lattice"},
+        "coupling": {"const": "lambda=2/5"},
+        "definitions": {
+          "type": "object", "additionalProperties": false,
+          "required": ["ratio", "jump", "residual", "current"],
+          "properties": {
+            "ratio": {"$ref": "#/$defs/string"},
+            "jump": {"$ref": "#/$defs/string"},
+            "residual": {"$ref": "#/$defs/string"},
+            "current": {"$ref": "#/$defs/string"}
+          }
+        },
+        "bounds": {
+          "type": "object", "additionalProperties": false,
+          "required": ["expected_residual_square", "directed_ratio_second_moment", "absolute_jump_exponential_moment", "absolute_current_first_moment", "single_edge_tail", "bad_edge_density", "bad_edge_fraction_tail", "maximum_jump_tail"],
+          "properties": {
+            "expected_residual_square": {"const": "E[r_x^2]<=2444/25"},
+            "directed_ratio_second_moment": {"const": "E[w_xy^2]<=8088/25"},
+            "absolute_jump_exponential_moment": {"const": "E[exp(2|d_xy|)]<=16176/25"},
+            "absolute_current_first_moment": {"const": "E[|J_xy|]<=8932/25"},
+            "single_edge_tail": {"$ref": "#/$defs/string"},
+            "bad_edge_density": {"$ref": "#/$defs/string"},
+            "bad_edge_fraction_tail": {"$ref": "#/$defs/string"},
+            "maximum_jump_tail": {"$ref": "#/$defs/string"}
+          }
+        }
+      }
+    },
+    "proof_chain": {
+      "type": "object", "additionalProperties": false,
+      "required": ["action_to_residual", "residual_to_ratio", "ratio_to_jump", "current", "tails"],
+      "properties": {
+        "action_to_residual": {"$ref": "#/$defs/string"},
+        "residual_to_ratio": {"$ref": "#/$defs/string"},
+        "ratio_to_jump": {"$ref": "#/$defs/string"},
+        "current": {"$ref": "#/$defs/string"},
+        "tails": {"$ref": "#/$defs/string"}
+      }
+    },
+    "exact_fixture": {
+      "type": "object", "additionalProperties": false,
+      "required": ["graph", "omega", "residual", "directed_edges"],
+      "properties": {
+        "graph": {"const": "four-cycle C4"},
+        "omega": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/fraction"}},
+        "residual": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/fraction"}},
+        "directed_edges": {
+          "type": "array", "minItems": 8, "maxItems": 8,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["tail", "ratio", "ratio_square", "row_sum", "pointwise_ratio_square_envelope", "exp_twice_absolute_jump", "two_orientation_envelope", "current"],
+            "properties": {
+              "tail": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "integer", "minimum": 0, "maximum": 3}},
+              "ratio": {"$ref": "#/$defs/fraction"},
+              "ratio_square": {"$ref": "#/$defs/fraction"},
+              "row_sum": {"$ref": "#/$defs/fraction"},
+              "pointwise_ratio_square_envelope": {"$ref": "#/$defs/fraction"},
+              "exp_twice_absolute_jump": {"$ref": "#/$defs/fraction"},
+              "two_orientation_envelope": {"$ref": "#/$defs/fraction"},
+              "current": {"$ref": "#/$defs/fraction"}
+            }
+          }
+        }
+      }
+    },
+    "method_disposition": {
+      "type": "object", "additionalProperties": false,
+      "required": ["single_edge_ratio_second_moment", "single_edge_log_jump_exponential_tail", "single_edge_current_first_moment", "coherent_path_or_block_decorrelation", "background_marginal_current_hyperuniformity", "all_field_gradient_bound", "interacting_h_minus_one_bound", "continuum_reconstruction", "born_rule", "krein_reconstruction", "lorentzian_transfer"],
+      "properties": {
+        "single_edge_ratio_second_moment": {"const": "PROVED_VOLUME_UNIFORM"},
+        "single_edge_log_jump_exponential_tail": {"const": "PROVED_VOLUME_UNIFORM"},
+        "single_edge_current_first_moment": {"const": "PROVED_VOLUME_UNIFORM"},
+        "coherent_path_or_block_decorrelation": {"const": "OPEN"},
+        "background_marginal_current_hyperuniformity": {"const": "OPEN"},
+        "all_field_gradient_bound": {"const": "OPEN"},
+        "interacting_h_minus_one_bound": {"const": "OPEN"},
+        "continuum_reconstruction": {"const": "NOT_ESTABLISHED"},
+        "born_rule": {"const": "NOT_ESTABLISHED"},
+        "krein_reconstruction": {"const": "NOT_ASSESSED"},
+        "lorentzian_transfer": {"const": "NOT_ESTABLISHED"}
+      }
+    },
+    "missing_object_ledger": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/string"}},
+    "next_gate": {"$ref": "#/$defs/string"},
+    "does_not_establish": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/string"}},
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["repository_base_commit", "inputs", "arithmetic"],
+      "properties": {
+        "repository_base_commit": {"const": "b2c9b1bca6c45982097024876c20c6f4deea70aa"},
+        "inputs": {
+          "type": "array", "minItems": 2, "maxItems": 2,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["path", "sha256"],
+            "properties": {
+              "path": {"$ref": "#/$defs/string"},
+              "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+            }
+          }
+        },
+        "arithmetic": {"$ref": "#/$defs/string"}
+      }
+    },
+    "verification_commands": {"type": "array", "minItems": 3, "items": {"$ref": "#/$defs/string"}},
+    "tier_receipt": {
+      "type": "object", "additionalProperties": false,
+      "required": ["tier_0", "tier_1", "tier_2", "tier_3", "memory_policy"],
+      "properties": {
+        "tier_0": {"$ref": "#/$defs/string"},
+        "tier_1": {"$ref": "#/$defs/string"},
+        "tier_2": {"$ref": "#/$defs/string"},
+        "tier_3": {"$ref": "#/$defs/string"},
+        "memory_policy": {"$ref": "#/$defs/string"}
+      }
+    },
+    "checks": {
+      "type": "object", "additionalProperties": false,
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"type": "integer", "minimum": 1},
+        "total": {"type": "integer", "minimum": 1},
+        "failures": {"type": "array", "maxItems": 0},
+        "details": {"type": "object", "minProperties": 1, "additionalProperties": {"const": true}}
+      }
+    },
+    "report": {"const": "reverse_physics/reports/bt-euclidean-annealed-edge-ellipticity.md"},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-euclidean-annealed-edge-ellipticity-v1.schema.json"},
+    "verifier": {"const": "reverse_physics/verify_bt_euclidean_annealed_edge_ellipticity.py"}
+  }
+}

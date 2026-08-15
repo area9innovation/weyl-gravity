@@ -1,0 +1,427 @@
+{
+  "certificate": "REVERSE_PHYSICS_BT_EUCLIDEAN_ANNEALED_EDGE_ELLIPTICITY_V1",
+  "schema_version": "reverse-physics-bt-euclidean-annealed-edge-ellipticity-v1",
+  "created": "2026-08-15",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "lifecycle_state": "CLASSIFIED",
+  "result_kind": "actual normalized Gibbs local-ratio and current-moment theorem",
+  "question": "Does the actual positive BT Gibbs law suppress the local edge spikes through which the bounded-oscillation gradient theorem can fail?",
+  "answer": "Yes locally, uniformly in volume. At lambda=2/5 every directed edge ratio w=exp(psi_y-psi_x) has E[w^2]<=8088/25, every undirected log jump d has E[exp(2|d|)]<=16176/25, and the canonical edge current has E|J|<=8932/25. Hence local jump tails are exponentially small. This does not decorrelate moderate jumps along long paths and therefore does not yet prove current hyperuniformity or the H^-1 estimate.",
+  "theorem": {
+    "scope": "every edge of every four-dimensional periodic BT lattice",
+    "coupling": "lambda=2/5",
+    "definitions": {
+      "ratio": "w_xy=exp(psi_y-psi_x)",
+      "jump": "d_xy=psi_y-psi_x",
+      "residual": "r_x=sum_(z~x) w_xz-8",
+      "current": "J_xy=r_x w_xy-r_y w_yx"
+    },
+    "bounds": {
+      "expected_residual_square": "E[r_x^2]<=2444/25",
+      "directed_ratio_second_moment": "E[w_xy^2]<=8088/25",
+      "absolute_jump_exponential_moment": "E[exp(2|d_xy|)]<=16176/25",
+      "absolute_current_first_moment": "E[|J_xy|]<=8932/25",
+      "single_edge_tail": "P(|d_xy|>=u)<=(16176/25) exp(-2u) for u>=0",
+      "bad_edge_density": "E[# undirected edges with |d|>=u]/N<=(64704/25) exp(-2u)",
+      "bad_edge_fraction_tail": "P(#bad edges>=rho*N)<=(64704/(25*rho)) exp(-2u)",
+      "maximum_jump_tail": "P(max_edge |d|>=u)<=(64704/25) N exp(-2u)"
+    }
+  },
+  "proof_chain": {
+    "action_to_residual": "translation invariance gives E[r_x^2]=2E[A]/N<=2444/25",
+    "residual_to_ratio": "positivity gives w_xy<=r_x+8<=|r_x|+8 and (|r_x|+8)^2<=2r_x^2+128",
+    "ratio_to_jump": "exp(2|d_xy|)=max(w_xy^2,w_yx^2)<=w_xy^2+w_yx^2",
+    "current": "|r_x|w_xy<=r_x^2+8|r_x|<=(3/2)r_x^2+32, and the reverse endpoint supplies the second term",
+    "tails": "Markov's inequality followed by the four-N undirected-edge union/count bound"
+  },
+  "exact_fixture": {
+    "graph": "four-cycle C4",
+    "omega": [
+      {
+        "numerator": 1,
+        "denominator": 1
+      },
+      {
+        "numerator": 2,
+        "denominator": 1
+      },
+      {
+        "numerator": 4,
+        "denominator": 1
+      },
+      {
+        "numerator": 2,
+        "denominator": 1
+      }
+    ],
+    "residual": [
+      {
+        "numerator": 2,
+        "denominator": 1
+      },
+      {
+        "numerator": 1,
+        "denominator": 2
+      },
+      {
+        "numerator": -1,
+        "denominator": 1
+      },
+      {
+        "numerator": 1,
+        "denominator": 2
+      }
+    ],
+    "directed_edges": [
+      {
+        "tail": [
+          0,
+          3
+        ],
+        "ratio": {
+          "numerator": 2,
+          "denominator": 1
+        },
+        "ratio_square": {
+          "numerator": 4,
+          "denominator": 1
+        },
+        "row_sum": {
+          "numerator": 4,
+          "denominator": 1
+        },
+        "pointwise_ratio_square_envelope": {
+          "numerator": 16,
+          "denominator": 1
+        },
+        "exp_twice_absolute_jump": {
+          "numerator": 4,
+          "denominator": 1
+        },
+        "two_orientation_envelope": {
+          "numerator": 17,
+          "denominator": 4
+        },
+        "current": {
+          "numerator": 15,
+          "denominator": 4
+        }
+      },
+      {
+        "tail": [
+          0,
+          1
+        ],
+        "ratio": {
+          "numerator": 2,
+          "denominator": 1
+        },
+        "ratio_square": {
+          "numerator": 4,
+          "denominator": 1
+        },
+        "row_sum": {
+          "numerator": 4,
+          "denominator": 1
+        },
+        "pointwise_ratio_square_envelope": {
+          "numerator": 16,
+          "denominator": 1
+        },
+        "exp_twice_absolute_jump": {
+          "numerator": 4,
+          "denominator": 1
+        },
+        "two_orientation_envelope": {
+          "numerator": 17,
+          "denominator": 4
+        },
+        "current": {
+          "numerator": 15,
+          "denominator": 4
+        }
+      },
+      {
+        "tail": [
+          1,
+          0
+        ],
+        "ratio": {
+          "numerator": 1,
+          "denominator": 2
+        },
+        "ratio_square": {
+          "numerator": 1,
+          "denominator": 4
+        },
+        "row_sum": {
+          "numerator": 5,
+          "denominator": 2
+        },
+        "pointwise_ratio_square_envelope": {
+          "numerator": 17,
+          "denominator": 2
+        },
+        "exp_twice_absolute_jump": {
+          "numerator": 4,
+          "denominator": 1
+        },
+        "two_orientation_envelope": {
+          "numerator": 17,
+          "denominator": 4
+        },
+        "current": {
+          "numerator": -15,
+          "denominator": 4
+        }
+      },
+      {
+        "tail": [
+          1,
+          2
+        ],
+        "ratio": {
+          "numerator": 2,
+          "denominator": 1
+        },
+        "ratio_square": {
+          "numerator": 4,
+          "denominator": 1
+        },
+        "row_sum": {
+          "numerator": 5,
+          "denominator": 2
+        },
+        "pointwise_ratio_square_envelope": {
+          "numerator": 17,
+          "denominator": 2
+        },
+        "exp_twice_absolute_jump": {
+          "numerator": 4,
+          "denominator": 1
+        },
+        "two_orientation_envelope": {
+          "numerator": 17,
+          "denominator": 4
+        },
+        "current": {
+          "numerator": 3,
+          "denominator": 2
+        }
+      },
+      {
+        "tail": [
+          2,
+          1
+        ],
+        "ratio": {
+          "numerator": 1,
+          "denominator": 2
+        },
+        "ratio_square": {
+          "numerator": 1,
+          "denominator": 4
+        },
+        "row_sum": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "pointwise_ratio_square_envelope": {
+          "numerator": 10,
+          "denominator": 1
+        },
+        "exp_twice_absolute_jump": {
+          "numerator": 4,
+          "denominator": 1
+        },
+        "two_orientation_envelope": {
+          "numerator": 17,
+          "denominator": 4
+        },
+        "current": {
+          "numerator": -3,
+          "denominator": 2
+        }
+      },
+      {
+        "tail": [
+          2,
+          3
+        ],
+        "ratio": {
+          "numerator": 1,
+          "denominator": 2
+        },
+        "ratio_square": {
+          "numerator": 1,
+          "denominator": 4
+        },
+        "row_sum": {
+          "numerator": 1,
+          "denominator": 1
+        },
+        "pointwise_ratio_square_envelope": {
+          "numerator": 10,
+          "denominator": 1
+        },
+        "exp_twice_absolute_jump": {
+          "numerator": 4,
+          "denominator": 1
+        },
+        "two_orientation_envelope": {
+          "numerator": 17,
+          "denominator": 4
+        },
+        "current": {
+          "numerator": -3,
+          "denominator": 2
+        }
+      },
+      {
+        "tail": [
+          3,
+          2
+        ],
+        "ratio": {
+          "numerator": 2,
+          "denominator": 1
+        },
+        "ratio_square": {
+          "numerator": 4,
+          "denominator": 1
+        },
+        "row_sum": {
+          "numerator": 5,
+          "denominator": 2
+        },
+        "pointwise_ratio_square_envelope": {
+          "numerator": 17,
+          "denominator": 2
+        },
+        "exp_twice_absolute_jump": {
+          "numerator": 4,
+          "denominator": 1
+        },
+        "two_orientation_envelope": {
+          "numerator": 17,
+          "denominator": 4
+        },
+        "current": {
+          "numerator": 3,
+          "denominator": 2
+        }
+      },
+      {
+        "tail": [
+          3,
+          0
+        ],
+        "ratio": {
+          "numerator": 1,
+          "denominator": 2
+        },
+        "ratio_square": {
+          "numerator": 1,
+          "denominator": 4
+        },
+        "row_sum": {
+          "numerator": 5,
+          "denominator": 2
+        },
+        "pointwise_ratio_square_envelope": {
+          "numerator": 17,
+          "denominator": 2
+        },
+        "exp_twice_absolute_jump": {
+          "numerator": 4,
+          "denominator": 1
+        },
+        "two_orientation_envelope": {
+          "numerator": 17,
+          "denominator": 4
+        },
+        "current": {
+          "numerator": -15,
+          "denominator": 4
+        }
+      }
+    ]
+  },
+  "method_disposition": {
+    "single_edge_ratio_second_moment": "PROVED_VOLUME_UNIFORM",
+    "single_edge_log_jump_exponential_tail": "PROVED_VOLUME_UNIFORM",
+    "single_edge_current_first_moment": "PROVED_VOLUME_UNIFORM",
+    "coherent_path_or_block_decorrelation": "OPEN",
+    "background_marginal_current_hyperuniformity": "OPEN",
+    "all_field_gradient_bound": "OPEN",
+    "interacting_h_minus_one_bound": "OPEN",
+    "continuum_reconstruction": "NOT_ESTABLISHED",
+    "born_rule": "NOT_ESTABLISHED",
+    "krein_reconstruction": "NOT_ASSESSED",
+    "lorentzian_transfer": "NOT_ESTABLISHED"
+  },
+  "missing_object_ledger": [
+    "a block/path decorrelation or extraction theorem for moderate edge jumps under the relevant background marginal",
+    "a volume-uniform low-momentum current structure-factor or alternative Witten bound",
+    "an actual interacting H^-1 moment theorem or controlled divergence"
+  ],
+  "next_gate": "Use the local exponential jump tail in a multiscale path/block decomposition. Prove that a large low-momentum corrector forces many separated moderate-jump blocks with compatible resampling costs, or construct a translation-covariant coherent-path family that evades this extraction and test it in the full Witten form.",
+  "does_not_establish": [
+    "independence or decay of correlations between edge jumps",
+    "current hyperuniformity under the integrated background marginal",
+    "an all-field volume-uniform gradient constant",
+    "a Poincare inequality, Witten coercivity, or interacting H^-1 bound",
+    "a continuum measure, Born rule, or Krein reconstruction",
+    "anything LORENTZIAN-CAUSAL"
+  ],
+  "provenance": {
+    "repository_base_commit": "b2c9b1bca6c45982097024876c20c6f4deea70aa",
+    "inputs": [
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_AFFINE_VIRIAL_ACTION_DENSITY_V1.json",
+        "sha256": "5ca8a2a7bc0d48300b0af031990e3c9c177fdec0d35f763666d2e397b495e1e0"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_BOUNDED_OSCILLATION_GRADIENT_COERCIVITY_V1.json",
+        "sha256": "af4b94d56181a3ae9e351c7a15dd5e0d1bf586cd86e56c2efc1ba13a7860740d"
+      }
+    ],
+    "arithmetic": "exact rational propagation of the certified action-density constant; Fraction reconstruction of the C4 residual, ratios, currents, and pointwise envelopes"
+  },
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_euclidean_annealed_edge_ellipticity.py --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_euclidean_annealed_edge_ellipticity.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_euclidean_annealed_edge_ellipticity"
+  ],
+  "tier_receipt": {
+    "tier_0": "Python compilation and strict JSON/schema parsing passed; the planning import accepted 1691 nodes with zero invalid items and zero malformed events in 6.61 s at 185288 KB peak RSS; scoped diff and staged-diff checks are required before commit",
+    "tier_1": "exact producer passed 10/10 in 0.03 s at 20612 KB, the nonimporting verifier passed 10/10 in 0.09 s at 29948 KB, and nine focused tests including mutation rejection passed in 0.11 s at 30800 KB",
+    "tier_2": "the unchanged action-density and bounded-oscillation inputs are content-hash pinned",
+    "tier_3": "not required absent an H^-1/reconstruction lifecycle promotion, freeze, release, or shared-core change",
+    "memory_policy": "all Python commands ran sequentially under a 500000 KiB virtual-memory ceiling; Go used GOMEMLIMIT=300MiB and GOGC=50; the advisory Science Forge shadow rail was not rerun because its immediately preceding memory-capped attempt in this session aborted external indexing without an audit disposition, and that skip is not a pass"
+  },
+  "checks": {
+    "ok": true,
+    "passed": 10,
+    "total": 10,
+    "failures": [],
+    "details": {
+      "action_density_constant_imported": true,
+      "residual_second_moment_constant_exact": true,
+      "ratio_second_moment_constant_exact": true,
+      "absolute_jump_exponential_constant_exact": true,
+      "current_first_moment_constant_exact": true,
+      "fixture_ratio_envelopes_hold": true,
+      "fixture_absolute_jump_envelopes_hold": true,
+      "bounds_are_independent_of_volume": true,
+      "coherent_path_correlations_remain_open": true,
+      "no_h_minus_one_or_lorentzian_promotion": true
+    }
+  },
+  "report": "reverse_physics/reports/bt-euclidean-annealed-edge-ellipticity.md",
+  "schema": "reverse_physics/schema/reverse-physics-bt-euclidean-annealed-edge-ellipticity-v1.schema.json",
+  "verifier": "reverse_physics/verify_bt_euclidean_annealed_edge_ellipticity.py"
+}
