@@ -131,6 +131,8 @@ def main() -> int:
     completion_atlas_v20 = json.loads((ROOT / data["authorities"]["lorentzian_weyl_bv_completion_atlas_v20"]["path"]).read_text())
     strict_386_field_inverse = json.loads((ROOT / data["authorities"]["strict_386_field_equation_green_quotient_inverse"]["path"]).read_text())
     completion_atlas_v21 = json.loads((ROOT / data["authorities"]["lorentzian_weyl_bv_completion_atlas_v21"]["path"]).read_text())
+    strict_386_quadratic_obstruction = json.loads((ROOT / data["authorities"]["strict_386_quadratic_truncation_lambda2_source_obstruction"]["path"]).read_text())
+    completion_atlas_v22 = json.loads((ROOT / data["authorities"]["lorentzian_weyl_bv_completion_atlas_v22"]["path"]).read_text())
     bt_euclidean = json.loads((ROOT / data["authorities"]["bt_euclidean_import"]["path"]).read_text())
     bt_free_obstruction = json.loads((ROOT / data["authorities"]["bt_free_reconstruction_obstruction"]["path"]).read_text())
     bt_interacting_os = json.loads((ROOT / data["authorities"]["bt_interacting_os_preflight"]["path"]).read_text())
@@ -434,6 +436,7 @@ def main() -> int:
         (46, "STRICT-WEYL-CANDIDATE-POLARIZED-CAUSAL-TREES"),
         (47, "STRICT-WEYL-POLARIZED-FORMAL-COEFFICIENTS-AND-BV-GATE"),
         (48, "STRICT-WEYL-FIELD-EQUATION-GREEN-QUOTIENT-INVERSE"),
+        (49, "STRICT-WEYL-QUADRATIC-TRUNCATION-Q3-NECESSITY"),
     ]}, "claim set drift")
 
     flags = data["claim_flags"]
@@ -679,7 +682,11 @@ def main() -> int:
     require(obstruction["full_left_inverse_of_K_on_C0"] is False and obstruction["full_right_inverse_of_K_on_C1"] is False and obstruction["status"] == "EXACT_GAUGE_COMPLEX_OBSTRUCTION", "full ungauge-fixed inverse obstruction drift")
     require(completion_atlas_v21["strict_field_equation_green_quotient_inverse"]["constrained_right_inverse"] is True and completion_atlas_v21["strict_field_equation_green_quotient_inverse"]["quotient_left_inverse"] is True and completion_atlas_v21["strict_field_equation_green_quotient_inverse"]["full_ungauge_fixed_two_sided_inverse"] is False, "completion atlas V21 typed inverse projection drift")
     require(len(completion_atlas_v21["route_selection"]) == 11 and [item["route"] for item in completion_atlas_v21["route_selection"][:2]] == ["STRICT_386_AUTHORITATIVE_Q2_IDENTITY", "STRICT_Q2_Q3_SOURCE_COCYCLE_CLOSURE"], "completion atlas V21 frontier ordering drift")
-    require(flags["strict_386_field_equation_green_component_typed"] is True and flags["strict_386_field_equation_constrained_right_inverse_certified"] is True and flags["strict_386_field_equation_quotient_left_inverse_certified"] is True and flags["strict_386_ungauge_fixed_full_inverse_obstructed"] is True and flags["strict_386_all_order_nonlinear_source_closure_certified"] is False, "typed inverse lifecycle firewall drift")
+    quadratic = strict_386_quadratic_obstruction["quadratic_truncation_disposition"]
+    require(quadratic["quadratic_only_lambda_squared_source_closed"] is False and quadratic["witness_jacobiator_weyl_identity"] == "75760/27" and quadratic["witness_source_closure_defect"] == "37880/27" and quadratic["required_q3_q1_image_on_witness"] == "-75760/9", "quadratic-truncation obstruction drift")
+    require(completion_atlas_v22["strict_quadratic_truncation_lambda2_source_obstruction"]["authoritative_q3_required"] is True and completion_atlas_v22["strict_quadratic_truncation_lambda2_source_obstruction"]["authoritative_q3_imported"] is False and completion_atlas_v22["strict_quadratic_truncation_lambda2_source_obstruction"]["not_a_full_weyl_no_go"] is True, "completion atlas V22 q3 boundary drift")
+    require([item["route"] for item in completion_atlas_v22["route_selection"][:2]] == ["STRICT_AUTHORITATIVE_Q2_Q3_ARITY_THREE_EXPORT", "STRICT_LAMBDA2_FULL_SOURCE_COCYCLE_CLOSURE"], "completion atlas V22 frontier ordering drift")
+    require(flags["strict_386_field_equation_green_component_typed"] is True and flags["strict_386_field_equation_constrained_right_inverse_certified"] is True and flags["strict_386_field_equation_quotient_left_inverse_certified"] is True and flags["strict_386_ungauge_fixed_full_inverse_obstructed"] is True and flags["strict_386_q2_only_lambda2_source_obstructed"] is True and flags["strict_386_authoritative_q3_cancellation_target_exact"] is True and flags["strict_386_authoritative_q3_imported"] is False and flags["strict_386_full_weyl_lambda2_source_closure_certified"] is False and flags["strict_386_all_order_nonlinear_source_closure_certified"] is False, "typed inverse/nonlinear lifecycle firewall drift")
     require(flags["static_atlas_appendix_generated"] is True, "static atlas appendix flag is not certified")
     require(flags["complete_evidence_register_generated"] is True, "complete evidence register flag is not certified")
     require(flags["complete_literature_register_generated"] is True, "complete literature register flag is not certified")
@@ -1118,12 +1125,16 @@ def main() -> int:
         r"FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V20",
         r"STRICT_386_FIELD_EQUATION_GREEN_QUOTIENT_INVERSE_V1",
         r"FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V21",
+        r"STRICT_386_QUADRATIC_TRUNCATION_LAMBDA2_SOURCE_OBSTRUCTION_V1",
+        r"FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V22",
         r"140 ordered-component channels",
         r"68 potentially nonzero block triples",
         r"cyclic \(L_\infty\) isomorphism",
         r"zero of seven authoritative hashes",
-        r"STRICT_386_AUTHORITATIVE_Q2_IDENTITY",
-        r"STRICT_Q2_Q3_SOURCE_COCYCLE_CLOSURE",
+        r"STRICT_AUTHORITATIVE_Q2_Q3_ARITY_THREE_EXPORT",
+        r"STRICT_LAMBDA2_FULL_SOURCE_COCYCLE_CLOSURE",
+        r"37880/27",
+        r"q_1(q_3(x,x,x))",
         r"Catalan",
         r"lambda squared",
         r"first nonlinear causal response",
@@ -1191,6 +1202,7 @@ def main() -> int:
         "GibbonsHoffmanWootters2004",
         "Baer2015",
         "HawkinsRejzner2020",
+        "HohmZwiebach2017",
         "Pischke2025",
         "Bertotti2003",
         "Kramer2021",

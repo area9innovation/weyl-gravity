@@ -1,0 +1,64 @@
+{
+  "receipt_id": "STRICT_386_QUADRATIC_TRUNCATION_LAMBDA2_SOURCE_OBSTRUCTION_V1_TIER_RECEIPT",
+  "result_id": "STRICT_386_QUADRATIC_TRUNCATION_LAMBDA2_SOURCE_OBSTRUCTION_V1",
+  "created": "2026-08-15",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
+  "scope": "Exact rational q2-only lambda-squared source-closure obstruction on a q1-closed pure-diffeomorphism fixture, derivation of the required authoritative q3 cancellation target, and fail-closed full-Weyl boundary.",
+  "test_tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile <explicit obstruction builder/checker/verifier/test paths>",
+        "python3 -m json.tool <obstruction schema, certificate, receipt and planning event>",
+        "git diff --check -- <explicit checkpoint paths>"
+      ]
+    },
+    "tier_1": {
+      "status": "PASS",
+      "commands": [
+        "python3 quantum-weyl/classical_import/build_strict_386_quadratic_truncation_lambda2_source_obstruction.py --check",
+        "python3 quantum-weyl/classical_import/check_strict_386_quadratic_truncation_lambda2_source_obstruction.py",
+        "python3 quantum-weyl/classical_import/verify_strict_386_quadratic_truncation_lambda2_source_obstruction.py",
+        "PYTHONPATH=. python3 -m unittest quantum-weyl.classical_import.tests.test_strict_386_quadratic_truncation_lambda2_source_obstruction"
+      ],
+      "checks": {
+        "fixture": "FLAT_PURE_DIFF_GAUGE_SEED_1",
+        "q1_fixture_defects": 0,
+        "q2_jacobiator_diff_rows": 0,
+        "q2_jacobiator_weyl_identity": "75760/27",
+        "q2_only_lambda2_source_defect": "37880/27",
+        "required_q3_q1_image": "-75760/9",
+        "mutation_tests": "13/13 PASS"
+      }
+    },
+    "tier_2": {
+      "status": "PASS",
+      "commands": [
+        "python3 quantum-weyl/classical_import/check_strict_386_stabilized_q2_lift_preflight.py",
+        "python3 quantum-weyl/classical_import/check_strict_386_polarized_formal_moller_coefficients.py",
+        "python3 quantum-weyl/classical_import/check_strict_386_field_equation_green_quotient_inverse.py"
+      ],
+      "checks": "The direct candidate-q2, formal-coefficient and typed Green predecessors pass independently; the new checker recomputes the witness from the exact Bach evaluator instead of trusting serialized output."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No classical or quantum freeze, release, shared core algebra change, theorem lifecycle promotion, Hadamard state, QME restoration or Lorentzian quantum completion is claimed."
+    }
+  },
+  "artifact_sha256": {
+    "quantum-weyl/classical_import/certificates/STRICT_386_QUADRATIC_TRUNCATION_LAMBDA2_SOURCE_OBSTRUCTION_V1.json": "048bed4c425d89fe6d6999c70c1d408d28a2a00421e545ce9a43ee123c21dd1b",
+    "quantum-weyl/classical_import/REPORT_STRICT_386_QUADRATIC_TRUNCATION_LAMBDA2_SOURCE_OBSTRUCTION_V1.md": "580f12afcb732cec2507829a7864d6ca510458912a25f4f2422f41174a1f5df7"
+  },
+  "literature_pin": {
+    "citation": "Olaf Hohm and Barton Zwiebach, L-infinity Algebras and Field Theory, Fortschritte der Physik 65 (2017), 1700014",
+    "url": "https://arxiv.org/abs/1701.08824",
+    "pdf_sha256": "91006d01123242f2e5cb8c673cde0263caf2e3de6110f44e928167203240d893",
+    "boundary": "Equations (2.8) and (2.11) supply the suspended arity identities and factorial Maurer-Cartan convention. The Weyl-specific fixture, rational values and export contract are repository-derived."
+  },
+  "advisory_shadow": {
+    "status": "FAIL_RECORDED_NOT_A_PASS",
+    "command": "ci/science-forge-shadow.sh",
+    "finding": "The advisory rail exited zero by design but its bridge audit failed closed because the stale bp2transformer target lacks sympy; the corpus census also reports expected baseline drift (1806 versus 976 certificates). Neither finding is counted as a scientific pass."
+  },
+  "claim_boundary": "The q2-only receiver truncation is exactly nonclosed on one q1-closed fixture and therefore cannot be a standalone Weyl-BV Moller map. This does not certify authoritative q2 or q3, does not prove or disprove closure of the full Weyl source, and is not a no-go theorem for full Weyl gravity."
+}

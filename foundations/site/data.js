@@ -18030,24 +18030,24 @@ window.MATRIX_EXPLORER_DATA = {
     ]
   },
   "completion_atlas": {
-    "schema_version": "foundational-lorentzian-weyl-bv-completion-atlas-v21",
-    "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V21",
+    "schema_version": "foundational-lorentzian-weyl-bv-completion-atlas-v22",
+    "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V22",
     "result_kind": "BRANCH_BY_STAGE_COMPLETION_ATLAS",
     "lifecycle": "CLASSIFIED",
     "created": "2026-08-15",
-    "repository_base_commit": "f828b7b249d8ce762e4cabec6f2bae2ee0f381c6",
+    "repository_base_commit": "aa45be6ffca005e79c38c43dfafefe3c8c76a366",
     "dependency_tags": [
       "LOCAL-ALGEBRAIC",
       "EUCLIDEAN-SPECTRAL",
       "REDUCED-MODE",
       "LORENTZIAN-CAUSAL"
     ],
-    "question": "Does the 386-row Green homotopy supply the field-equation inverse needed by the formal response series, and what gate remains after the types are corrected?",
-    "answer": "Atlas V21 closes the typed unary Green route by correcting its target. The degree-one-to-zero component of each accepted Green homotopy is an exact right inverse of the field equation on Noether-compatible sources and an exact left inverse modulo gauge. A two-sided inverse on the full ungauge-fixed spaces is not merely absent but impossible because the certified gauge and Noether maps are nonzero and satisfy K R=0 and N K=0. Hence a full Hessian inverse is neither available nor required. The decisive nonlinear gate is now coefficientwise source-cocycle closure N S_m=0 from authoritative q2/q3/higher identities. First order passes for the candidate; lambda squared remains undecided. All 77 cells and the Gate-A/Hadamard/QME firewalls are preserved.",
+    "question": "Does the surviving strict q2-only response close at lambda squared, and what exact classical export is required if it does not?",
+    "answer": "Atlas V22 decides the first nonlinear source question negatively for the quadratic receiver truncation. An exact q1-closed pure-diffeomorphism metric fixture has q2 Jacobiator 75760/27 in the Weyl Noether row, so the q2-only lambda-squared source has nonzero closure defect 37880/27. The quadratic candidate therefore cannot by itself be a Weyl-BV Maurer-Cartan or Moller map. This is not a no-go for full Weyl gravity: the arity-three identity requires q1 q3=-3 q2 q2, fixing the missing q3 witness value at -75760/9. The highest-leverage route is now an authoritative classical q2/q3 export and arity-three carrier bridge, followed by exact full-source closure. All 77 cells and Gate-A/Hadamard/QME firewalls remain preserved.",
     "predecessor": {
-      "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V20",
-      "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V20.json",
-      "sha256": "fa7fe84c2856c0450e727500aabbd4c7707d1db6727a6ca4bf24d28453a3fd47",
+      "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V21",
+      "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V21.json",
+      "sha256": "56fc3be36610cb1a95a5d655540e544a7d1505177011500a946483fff7bdf8d3",
       "preserved": true
     },
     "status_vocabulary": [
@@ -18202,16 +18202,17 @@ window.MATRIX_EXPLORER_DATA = {
           },
           {
             "stage": "S3_NONLINEAR_CARTAN",
-            "status": "PARTIAL_CERTIFIED",
-            "statement": "The field/equation restriction of both Green homotopies is now typed: it is a right inverse on Noether-compatible sources and a left inverse modulo gauge. A full ungauge-fixed two-sided inverse is exactly obstructed by the nonzero gauge and Noether maps. The candidate first-order nonlinear source is a certified cocycle; lambda-squared and all-order source closure remain open pending authoritative q2/q3/higher identities.",
+            "status": "PARTIAL_CERTIFIED_WITH_SCOPED_OBSTRUCTION",
+            "statement": "The typed unary inverse remains closed on compatible sources. The q2-only nonlinear candidate now fails source closure at lambda squared on an exact q1-closed fixture: its Weyl-Noether defect is 37880/27. An authoritative q3 satisfying q1 q3=-3 q2 q2 is necessary and would cancel this scoped defect; full Weyl source closure is not yet decided.",
             "evidence": [
               "QUANTUM_CARTAN_D_ONE_LOOP_DISPOSITION",
               "STRICT_386_STABILIZED_Q2_GREEN_COMPOSITION_PREFLIGHT_V1",
               "STRICT_386_RECURSIVE_CAUSAL_TREE_DOMAINS_V1",
               "STRICT_386_POLARIZED_FORMAL_MOLLER_COEFFICIENTS_V1",
-              "STRICT_386_FIELD_EQUATION_GREEN_QUOTIENT_INVERSE_V1"
+              "STRICT_386_FIELD_EQUATION_GREEN_QUOTIENT_INVERSE_V1",
+              "STRICT_386_QUADRATIC_TRUNCATION_LAMBDA2_SOURCE_OBSTRUCTION_V1"
             ],
-            "boundary": "The quotient inverse does not select a gauge, certify authoritative q2/q3, close the lambda-squared source, construct an analytic Moller map, pass Gate A, select Hadamard data or restore the QME."
+            "boundary": "The nonzero witness rules out only the receiver q2-only truncation. It neither supplies authoritative q2/q3 nor obstructs the full Weyl theory, whose arity-three term may cancel it."
           },
           {
             "stage": "S4_HADAMARD_CCR",
@@ -18270,7 +18271,7 @@ window.MATRIX_EXPLORER_DATA = {
           }
         ],
         "first_unclosed_gate": "S0_CLASSICAL_AUTHORITY",
-        "next_decisive_object": "Source-certify q2/q3/higher identities and replay N S_m=0, beginning with the displayed lambda-squared source; the unary Green inverse route is closed in its correct quotient/constrained form."
+        "next_decisive_object": "Export authoritative q2/q3 and a source-certified arity-three bridge; require the q3 witness image -75760/9 and then replay N S2=0 exactly."
       },
       {
         "id": "PURE_WEYL_BACH_FLAT_RANK310",
@@ -18897,9 +18898,10 @@ window.MATRIX_EXPLORER_DATA = {
       "strict_nonlinear_causal_front": {
         "branch": "STRICT_PURE_WEYL_386",
         "stage": "S3_NONLINEAR_CARTAN",
-        "current_fact": "The accepted Green homotopy induces the exact field-equation inverse on ker N and modulo im R; no full ungauge-fixed inverse can exist. The first candidate source closes, while lambda-squared source closure is undecided.",
-        "best_next_object": "Authoritative q2/q3/higher source identities plus an exact coefficientwise N S_m=0 replay.",
-        "foundational_boundary": "The quotient proof is finite exact algebra and selects no representative; the Green action retains its imported classical infinite-analysis assumptions."
+        "current_fact": "The unary quotient inverse is complete, but the q2-only lambda-squared source is exactly nonclosed with defect 37880/27 on a q1-closed fixture.",
+        "best_next_object": "Authoritative q2/q3 Taylor exports plus q1 q3+q3 q1+q2 q2=0 on a content-addressed common carrier.",
+        "falsification_target": "q1(q3(x,x,x))_omega_star=-75760/9 on FLAT_PURE_DIFF_GAUGE_SEED_1.",
+        "foundational_boundary": "The obstruction is finite exact rational jet algebra; the later Green action retains its imported smooth infinite-analysis assumptions."
       }
     },
     "classical_import_reconciliation": {
@@ -19025,21 +19027,21 @@ window.MATRIX_EXPLORER_DATA = {
     "route_selection": [
       {
         "rank": 1,
-        "route": "STRICT_386_AUTHORITATIVE_Q2_IDENTITY",
+        "route": "STRICT_AUTHORITATIVE_Q2_Q3_ARITY_THREE_EXPORT",
         "branch": "STRICT_PURE_WEYL_386",
         "scientific_leverage": "VERY_HIGH",
         "tractability": "MEDIUM",
         "dependency_depth": "HIGH",
-        "recommendation": "Export authoritative nonlinear brackets or a source-certified cyclic L-infinity equivalence and bind their exact hashes."
+        "recommendation": "Export authoritative q2 and q3, their convention and carrier bridge; replay q1 q3+q3 q1+q2 q2=0 and the fixed -75760/9 witness target."
       },
       {
         "rank": 2,
-        "route": "STRICT_Q2_Q3_SOURCE_COCYCLE_CLOSURE",
+        "route": "STRICT_LAMBDA2_FULL_SOURCE_COCYCLE_CLOSURE",
         "branch": "STRICT_PURE_WEYL_386",
         "scientific_leverage": "VERY_HIGH",
-        "tractability": "LOW",
+        "tractability": "HIGH",
         "dependency_depth": "HIGH",
-        "recommendation": "Apply the authoritative identities to N S_m=0, beginning with the lambda-squared B(q2) source, and continue coefficientwise only when each source closes."
+        "recommendation": "After the authoritative export, assemble S2=q2(x,r1)+(1/6)q3(x,x,x) and replay N S2=0 before any Green action."
       },
       {
         "rank": 3,
@@ -19102,7 +19104,7 @@ window.MATRIX_EXPLORER_DATA = {
         "scientific_leverage": "MEDIUM",
         "tractability": "LOW",
         "dependency_depth": "HIGH",
-        "recommendation": "Only after source closure, derive seminorm majorants and a nonzero convergence domain; lambda-adic stabilization is not evidence for this route."
+        "recommendation": "Only after all-order source closure, derive seminorm majorants and a nonzero convergence domain."
       },
       {
         "rank": 10,
@@ -19111,7 +19113,7 @@ window.MATRIX_EXPLORER_DATA = {
         "scientific_leverage": "MEDIUM",
         "tractability": "MEDIUM",
         "dependency_depth": "MEDIUM",
-        "recommendation": "Test weighted or decaying opposite-polarity domains against the scalar zero-mode witness; polarized recursion does not require this."
+        "recommendation": "Test weighted opposite-polarity domains against the scalar zero-mode witness; polarized recursion does not require this."
       },
       {
         "rank": 11,
@@ -19127,14 +19129,14 @@ window.MATRIX_EXPLORER_DATA = {
       {
         "priority": 1,
         "branch": "STRICT_PURE_WEYL_386",
-        "object": "STRICT_386_AUTHORITATIVE_Q2_IDENTITY",
-        "why": "Export authoritative nonlinear brackets or a source-certified cyclic L-infinity equivalence and bind their exact hashes."
+        "object": "STRICT_AUTHORITATIVE_Q2_Q3_ARITY_THREE_EXPORT",
+        "why": "Export authoritative q2 and q3, their convention and carrier bridge; replay q1 q3+q3 q1+q2 q2=0 and the fixed -75760/9 witness target."
       },
       {
         "priority": 2,
         "branch": "STRICT_PURE_WEYL_386",
-        "object": "STRICT_Q2_Q3_SOURCE_COCYCLE_CLOSURE",
-        "why": "Apply the authoritative identities to N S_m=0, beginning with the lambda-squared B(q2) source, and continue coefficientwise only when each source closes."
+        "object": "STRICT_LAMBDA2_FULL_SOURCE_COCYCLE_CLOSURE",
+        "why": "After the authoritative export, assemble S2=q2(x,r1)+(1/6)q3(x,x,x) and replay N S2=0 before any Green action."
       },
       {
         "priority": 3,
@@ -19176,13 +19178,13 @@ window.MATRIX_EXPLORER_DATA = {
         "priority": 9,
         "branch": "STRICT_PURE_WEYL_386",
         "object": "STRICT_ANALYTIC_MOLLER_CONVERGENCE",
-        "why": "Only after source closure, derive seminorm majorants and a nonzero convergence domain; lambda-adic stabilization is not evidence for this route."
+        "why": "Only after all-order source closure, derive seminorm majorants and a nonzero convergence domain."
       },
       {
         "priority": 10,
         "branch": "STRICT_PURE_WEYL_386",
         "object": "STRICT_MIXED_WEIGHTED_CAUSAL_DOMAIN",
-        "why": "Test weighted or decaying opposite-polarity domains against the scalar zero-mode witness; polarized recursion does not require this."
+        "why": "Test weighted opposite-polarity domains against the scalar zero-mode witness; polarized recursion does not require this."
       },
       {
         "priority": 11,
@@ -19572,6 +19574,16 @@ window.MATRIX_EXPLORER_DATA = {
           "path": "quantum-weyl/classical_import/certificates/STRICT_386_FIELD_EQUATION_GREEN_QUOTIENT_INVERSE_V1.json",
           "sha256": "d9e64a9aaf41ec9041edf9d70bd85ab5600fc72c7ea8101a4fd16b61b95f5fb6",
           "role": "typed field-equation quotient inverse and full inverse obstruction"
+        },
+        {
+          "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V21.json",
+          "sha256": "56fc3be36610cb1a95a5d655540e544a7d1505177011500a946483fff7bdf8d3",
+          "role": "immutable V21 atlas predecessor"
+        },
+        {
+          "path": "quantum-weyl/classical_import/certificates/STRICT_386_QUADRATIC_TRUNCATION_LAMBDA2_SOURCE_OBSTRUCTION_V1.json",
+          "sha256": "048bed4c425d89fe6d6999c70c1d408d28a2a00421e545ce9a43ee123c21dd1b",
+          "role": "exact q2-only lambda2 source obstruction and q3 export contract"
         }
       ]
     },
@@ -19702,7 +19714,14 @@ window.MATRIX_EXPLORER_DATA = {
       "strict_386_ungauge_fixed_two_sided_green_inverse_obstructed": true,
       "strict_386_ungauge_fixed_two_sided_green_inverse_constructed": false,
       "strict_386_candidate_first_order_source_cocycle_certified": true,
-      "strict_386_all_order_nonlinear_source_closure_certified": false
+      "strict_386_all_order_nonlinear_source_closure_certified": false,
+      "v21_preserved": true,
+      "strict_386_q2_only_lambda2_source_obstructed": true,
+      "strict_386_q2_jacobiator_nonzero_witness_certified": true,
+      "strict_386_authoritative_q3_required": true,
+      "strict_386_authoritative_q3_imported": false,
+      "strict_386_full_weyl_lambda2_source_closure_certified": false,
+      "strict_386_quadratic_truncation_moller_map_certified": false
     },
     "does_not_establish": [
       "a passed strict pure-Weyl classical import gate",
@@ -19791,22 +19810,25 @@ window.MATRIX_EXPLORER_DATA = {
       "a full two-sided inverse of the ungauge-fixed field-equation operator",
       "a selected gauge fixing or quotient representative",
       "all-order nonlinear source-cocycle closure",
-      "authoritative q2, q3 or higher source identities"
+      "authoritative q2, q3 or higher source identities",
+      "that the q2-only receiver obstruction is a no-go theorem for full Weyl gravity",
+      "an authoritative q3 or arity-three carrier bridge",
+      "lambda-squared source closure after the full Weyl q3 term is included"
     ],
     "independent_checker": {
-      "path": "foundations/check_lorentzian_weyl_bv_completion_atlas_v21.py",
+      "path": "foundations/check_lorentzian_weyl_bv_completion_atlas_v22.py",
       "checks": [
-        "V20 predecessor and all 77 cells preserved",
-        "116/116 typed field/equation and 425/3264/425 coefficient projection",
-        "constrained-right and quotient-left identities",
-        "full ungauge-fixed inverse no-go and no representative selection",
-        "first-order versus all-order source-cocycle firewall",
-        "eleven-route deterministic queue with the impossible route retired",
+        "V21 predecessor and all 77 cells preserved",
+        "q1-closed fixture and 75760/27 Jacobiator projection",
+        "37880/27 q2-only source defect and -75760/9 q3 target",
+        "q2-only obstruction versus full-Weyl no-go firewall",
+        "authoritative q3 import and full-source closure remain false",
+        "eleven-route deterministic queue",
         "Gate-A/Hadamard/QME lifecycle firewalls"
       ],
-      "expected_digest": "1851e27f631ebb079374c977293202ac38afe33e6b09e16851ce3550df96ca51"
+      "expected_digest": "33e28f201eebc2b2a36cfb1ec4345fa5f169185abfb8b1e09c07c77f7aa6f4eb"
     },
-    "human_report": "foundations/reports/lorentzian-weyl-bv-completion-atlas-v21.md",
+    "human_report": "foundations/reports/lorentzian-weyl-bv-completion-atlas-v22.md",
     "strict_gate_a_progress": {
       "status": "STABILIZED_Q2_CANDIDATE_CERTIFIED_AUTHORITATIVE_IDENTITY_REQUIRED",
       "evidence": [
@@ -20655,6 +20677,26 @@ window.MATRIX_EXPLORER_DATA = {
       "foundational_classification": "FINITE_EXACT_TYPED_RESTRICTION_OVER_IMPORTED_CLASSICAL_GREEN_HOMOTOPY",
       "weakest_complete_foundational_base": "NOT_ESTABLISHED",
       "next_gate": "Retire the impossible full ungauge-fixed inverse target. Source-certify the authoritative q2 and any q3/higher brackets, then replay N S_m=0 coefficientwise, beginning with the displayed lambda-squared source. Only after nonlinear source closure and Gate-A identity may the formal response series be promoted toward a Weyl-BV Moller map."
+    },
+    "strict_quadratic_truncation_lambda2_source_obstruction": {
+      "result_id": "STRICT_386_QUADRATIC_TRUNCATION_LAMBDA2_SOURCE_OBSTRUCTION_V1",
+      "status": "Q2_ONLY_SOURCE_OBSTRUCTED_Q3_CANCELLATION_NECESSARY_AUTHORITATIVE_Q3_OPEN",
+      "fixture_id": "FLAT_PURE_DIFF_GAUGE_SEED_1",
+      "q1_closed_fixture": true,
+      "q2_jacobiator_nonzero": true,
+      "q2_jacobiator_weyl_identity_value": "75760/27",
+      "q2_only_lambda2_source_closed": false,
+      "q2_only_lambda2_source_defect": "37880/27",
+      "authoritative_q3_required": true,
+      "required_q3_q1_image": "-75760/9",
+      "authoritative_q3_imported": false,
+      "full_weyl_lambda2_source_closure": false,
+      "not_a_full_weyl_no_go": true,
+      "export_contract_id": "STRICT_PURE_WEYL_AUTHORITATIVE_Q3_SOURCE_CLOSURE_EXPORT_V1",
+      "export_contract_gate": "M2_SOURCE_Q3_ARITY_THREE_EXPORT_MISSING",
+      "analytic_green_action_needed_for_obstruction": false,
+      "foundational_classification": "FINITE_EXACT_RATIONAL_JET_OBSTRUCTION_OVER_A_CONTENT_PINNED_L_INFINITY_IDENTITY",
+      "next_gate": "Export authoritative q2 and q3 from the classical BV-BFV programme on a content-addressed carrier, replay q1 q3+q3 q1+q2 q2=0, and require q1(q3(x,x,x))_omega_star=-75760/9 on the pinned witness before re-testing N S2=0."
     }
   },
   "cross_cell_interfaces": [
@@ -20824,8 +20866,8 @@ window.MATRIX_EXPLORER_DATA = {
     "ground_state_dynamics_interface_report": "sources/foundations/reports/krein-fock-ground-state-dynamics-interface.md",
     "migration_audit_report": "sources/foundations/reports/intersection-cube-migration-audit-v2.md",
     "ladder_report": "sources/foundations/reports/cylinder-wave-strength-ladder-v2.md",
-    "completion_atlas": "sources/foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V21.json",
-    "completion_atlas_report": "sources/foundations/reports/lorentzian-weyl-bv-completion-atlas-v21.md",
+    "completion_atlas": "sources/foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V22.json",
+    "completion_atlas_report": "sources/foundations/reports/lorentzian-weyl-bv-completion-atlas-v22.md",
     "completion_gate": "sources/quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V7_RECONCILIATION.json",
     "completion_gate_report": "sources/quantum-weyl/classical_import/REPORT_GATE_V7.md",
     "completion_sdr": "sources/quantum-weyl/classical_import/certificates/STRICT_DFINITE_RESIDUAL_SDR_V1.json",
@@ -20867,7 +20909,9 @@ window.MATRIX_EXPLORER_DATA = {
     "completion_formal_coefficients": "sources/quantum-weyl/classical_import/certificates/STRICT_386_POLARIZED_FORMAL_MOLLER_COEFFICIENTS_V1.json",
     "completion_formal_coefficients_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_386_POLARIZED_FORMAL_MOLLER_COEFFICIENTS_V1.md",
     "completion_field_equation_quotient_inverse": "sources/quantum-weyl/classical_import/certificates/STRICT_386_FIELD_EQUATION_GREEN_QUOTIENT_INVERSE_V1.json",
-    "completion_field_equation_quotient_inverse_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_386_FIELD_EQUATION_GREEN_QUOTIENT_INVERSE_V1.md"
+    "completion_field_equation_quotient_inverse_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_386_FIELD_EQUATION_GREEN_QUOTIENT_INVERSE_V1.md",
+    "completion_quadratic_obstruction": "sources/quantum-weyl/classical_import/certificates/STRICT_386_QUADRATIC_TRUNCATION_LAMBDA2_SOURCE_OBSTRUCTION_V1.json",
+    "completion_quadratic_obstruction_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_386_QUADRATIC_TRUNCATION_LAMBDA2_SOURCE_OBSTRUCTION_V1.md"
   },
-  "canonical_digest": "1d634fb32639c9db058973e9fe203cebbf1307cfee542a9115a5ac77e708f6d5"
+  "canonical_digest": "bf599901898d09ac67b9830ad2703698e673178a3d24ef924c1e5b00f42d5410"
 };

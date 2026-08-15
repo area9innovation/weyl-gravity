@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "foundational-lorentzian-weyl-bv-completion-atlas-v22.schema.json",
+  "title": "Foundational Lorentzian Weyl BV completion atlas v22",
+  "type": "object",
+  "required": ["schema_version", "result_id", "result_kind", "lifecycle", "created", "repository_base_commit", "dependency_tags", "question", "answer", "predecessor", "status_vocabulary", "stages", "branches", "frontier_summary", "route_selection", "research_queue", "provenance", "claim_flags", "does_not_establish", "strict_field_equation_green_quotient_inverse", "strict_quadratic_truncation_lambda2_source_obstruction", "independent_checker", "human_report"],
+  "properties": {
+    "schema_version": {"const": "foundational-lorentzian-weyl-bv-completion-atlas-v22"},
+    "result_id": {"const": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V22"},
+    "result_kind": {"type": "string"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "created": {"type": "string", "format": "date"},
+    "repository_base_commit": {"type": "string", "minLength": 8, "maxLength": 40, "pattern": "^[0-9a-f]+$"},
+    "dependency_tags": {"type": "array", "contains": {"const": "LORENTZIAN-CAUSAL"}},
+    "predecessor": {
+      "type": "object",
+      "required": ["result_id", "path", "sha256", "preserved"],
+      "properties": {
+        "result_id": {"const": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V21"},
+        "sha256": {"$ref": "#/$defs/hash"},
+        "preserved": {"const": true}
+      }
+    },
+    "stages": {"type": "array", "minItems": 11, "maxItems": 11},
+    "branches": {"type": "array", "minItems": 7, "maxItems": 7},
+    "route_selection": {"type": "array", "minItems": 11, "maxItems": 11},
+    "research_queue": {"type": "array", "minItems": 11, "maxItems": 11},
+    "does_not_establish": {"type": "array", "minItems": 8, "items": {"type": "string"}},
+    "strict_quadratic_truncation_lambda2_source_obstruction": {
+      "type": "object",
+      "required": ["result_id", "status", "fixture_id", "q1_closed_fixture", "q2_jacobiator_nonzero", "q2_jacobiator_weyl_identity_value", "q2_only_lambda2_source_closed", "q2_only_lambda2_source_defect", "authoritative_q3_required", "required_q3_q1_image", "authoritative_q3_imported", "full_weyl_lambda2_source_closure", "not_a_full_weyl_no_go", "export_contract_id", "export_contract_gate", "analytic_green_action_needed_for_obstruction", "foundational_classification", "next_gate"],
+      "properties": {
+        "result_id": {"const": "STRICT_386_QUADRATIC_TRUNCATION_LAMBDA2_SOURCE_OBSTRUCTION_V1"},
+        "status": {"type": "string"},
+        "fixture_id": {"const": "FLAT_PURE_DIFF_GAUGE_SEED_1"},
+        "q1_closed_fixture": {"const": true},
+        "q2_jacobiator_nonzero": {"const": true},
+        "q2_jacobiator_weyl_identity_value": {"const": "75760/27"},
+        "q2_only_lambda2_source_closed": {"const": false},
+        "q2_only_lambda2_source_defect": {"const": "37880/27"},
+        "authoritative_q3_required": {"const": true},
+        "required_q3_q1_image": {"const": "-75760/9"},
+        "authoritative_q3_imported": {"const": false},
+        "full_weyl_lambda2_source_closure": {"const": false},
+        "not_a_full_weyl_no_go": {"const": true},
+        "export_contract_id": {"const": "STRICT_PURE_WEYL_AUTHORITATIVE_Q3_SOURCE_CLOSURE_EXPORT_V1"},
+        "analytic_green_action_needed_for_obstruction": {"const": false}
+      },
+      "additionalProperties": true
+    },
+    "independent_checker": {"type": "object"},
+    "human_report": {"type": "string"}
+  },
+  "$defs": {"hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+}

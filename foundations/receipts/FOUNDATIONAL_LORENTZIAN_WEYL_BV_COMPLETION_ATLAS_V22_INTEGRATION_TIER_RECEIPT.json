@@ -1,0 +1,39 @@
+{
+  "receipt_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V22_INTEGRATION_TIER_RECEIPT",
+  "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V22",
+  "created": "2026-08-15",
+  "dependency_tags": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"],
+  "scope": "Projection of the exact quadratic-truncation obstruction and q3 cancellation target into the 77-cell completion atlas, static explorer, Paper 21 appendices and RF-49 claim map.",
+  "test_tiers": {
+    "tier_0": {"status": "PASS", "commands": ["python3 -m py_compile <explicit Atlas V22, site and paper paths>", "deno check foundations/matrix_site_v2_assets/app-v2.js", "python3 -m json.tool <explicit generated JSON paths>", "git diff --check -- <explicit checkpoint paths>"]},
+    "tier_1": {
+      "status": "PASS",
+      "commands": [
+        "python3 foundations/build_lorentzian_weyl_bv_completion_atlas_v22.py --check && python3 foundations/check_lorentzian_weyl_bv_completion_atlas_v22.py && python3 foundations/verify_lorentzian_weyl_bv_completion_atlas_v22.py",
+        "PYTHONPATH=. python3 -m unittest foundations.tests.test_lorentzian_weyl_bv_completion_atlas_v22",
+        "python3 foundations/build_matrix_site_v2.py --check && python3 foundations/check_matrix_site_v2.py && python3 foundations/verify_matrix_site_v2.py",
+        "PYTHONPATH=. python3 -m unittest foundations.tests.test_matrix_site",
+        "python3 paper/generate_21_reverse_foundations_appendices.py --check && python3 paper/generate_21_reverse_foundations_claim_map.py --check && python3 paper/verify_21_reverse_foundations_claim_map.py",
+        "cd paper && pdflatex -interaction=nonstopmode -halt-on-error 21-reverse-foundations-of-physics.tex (two passes)",
+        "python3 ci/verify_paper_manuscript_pins.py"
+      ],
+      "checks": {"atlas_cells": 77, "atlas_routes": 11, "atlas_mutation_tests": "10/10 PASS", "site_cells": 576, "site_tests": "10/10 PASS", "paper_claim": "RF-49", "paper_pages": 68}
+    },
+    "tier_2": {"status": "PASS", "commands": ["exact obstruction predecessor chain plus deterministic Atlas/site/paper regeneration"], "checks": "Atlas V21 is hash-bound and all 77 cells are preserved except the intended strict nonlinear cell. The q2-only obstruction is projected without promoting authoritative q3, full source closure, Gate A, Hadamard or QME."},
+    "tier_3": {"status": "NOT_RUN", "criterion": "The integration changes no frozen classical input, shared core algebra, quantum lifecycle state or release boundary."}
+  },
+  "artifact_sha256": {
+    "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V22.json": "761f3d227501912bd8426fb5a4319de2eaa8d96c84fa5f395dfd615204598950",
+    "foundations/reports/lorentzian-weyl-bv-completion-atlas-v22.md": "c4e6d7a80f2230425807358ae91c2bc2de8002214500eba4d163321d908f69ac",
+    "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json": "85e42f908fce1ac118629646eef8626614c51fc600af54b936f870edc3a5c837",
+    "foundations/site/manifest.json": "feb41d88f64f507cb1f327a2ad7318a5cf378a615a7c1511bf10a5b7724a4345",
+    "paper/21-reverse-foundations-of-physics-claim-map.json": "f973f8a0a9f2cc04305cba5adb6a4f8b23b6688a65b5b8f6a5803470bd3b4921",
+    "paper/21-reverse-foundations-of-physics.pdf": "e51c445ab5e90ab914b817ac58be9224be9606706371304b9767d85cc9411704"
+  },
+  "advisory_shadow": {
+    "status": "FAIL_RECORDED_NOT_A_PASS",
+    "command": "ci/science-forge-shadow.sh",
+    "finding": "The advisory rail exited zero by design but its bridge audit failed closed because the stale bp2transformer target lacks sympy; the corpus census also reports expected baseline drift (1806 versus 976 certificates). Neither finding is counted as a scientific pass."
+  },
+  "claim_boundary": "Atlas V22 and its interfaces expose an exact obstruction to the q2-only lambda-squared source and the required q3 cancellation target. They do not supply the authoritative q3, certify full Weyl source closure, pass Gate A, construct a Hadamard state, restore the QME or complete Lorentzian quantum Weyl gravity."
+}

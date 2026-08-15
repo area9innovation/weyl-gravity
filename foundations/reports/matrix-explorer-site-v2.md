@@ -39,12 +39,16 @@ eleven-step Berger H26/C26 decision chain.  The ranking is a planning aid, not a
 the rational non-cone feasibility control prevents the scoped 104-row failures
 from being promoted to a general non-cone no-go.
 
-Atlas V21 also resolves the field-equation type question.  The degree-one-to-zero
+Atlas V22 preserves the field-equation type result.  The degree-one-to-zero
 Green component is an exact right inverse on Noether-compatible sources and a
 left inverse modulo gauge.  The stronger full ungauge-fixed inverse is impossible:
 the exact nonzero gauge and Noether maps obey `K R=0` and `N K=0`.  The retired
-inverse route is replaced by the coefficientwise nonlinear-source test `N S_m=0`;
-first order passes for the candidate, while lambda squared remains open.
+inverse route is replaced by the coefficientwise nonlinear-source test `N S_m=0`.
+At lambda squared, an exact pure-diffeomorphism fixture now proves that the
+quadratic-only source is not closed: its Weyl Noether defect is `37880/27`.
+The arity-three identity therefore requires an authoritative cubic bracket whose
+q1 image is `-75760/9` on that fixture.  This is a scoped truncation obstruction,
+not a no-go theorem for full Weyl gravity.
 
 The strict thirty-row endpoint is no longer a type-only match.  The Gate-V5 and
 causal-endpoint unary operators agree in all 80 multiindex tables, including all
@@ -148,7 +152,8 @@ This site does not establish:
 - unrestricted mixed-sign or arbitrary causal-difference trees from the certified polarized finite recursion
 - a Weyl-BV Maurer-Cartan or Moller map from the candidate formal fixed-point coefficients
 - analytic convergence, a convergence radius, or a nonperturbative Moller inverse from lambda-adic stabilization
-- vanishing or nonvanishing of the lambda-squared B(q2) residual
+- an authoritative q3 bracket or full Weyl lambda-squared source closure from the exact quadratic-truncation obstruction
+- a no-go theorem for full Weyl gravity from the quadratic-only obstruction
 - all-order nonlinear source-cocycle closure
 - q3 or higher causal brackets
 - a weakest-base or choice-free proof of the infinite analytic Green layer
