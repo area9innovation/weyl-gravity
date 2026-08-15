@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/classical-import-gate-v14-reconciliation-v1.schema.json",
+  "type": "object",
+  "required": ["schema", "result_id", "result_state", "lifecycle", "dependency_tags", "export_reconciliation", "freeze_check_reconciliation", "required_hash_disposition", "minimal_missing_bundle", "gate_disposition", "m2_source_q2_assembly_resolution", "claim_flags", "does_not_establish", "provenance", "human_report", "next_gate", "independent_checker"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-classical-import-gate-v14-reconciliation-v1"},
+    "result_id": {"const": "CLASSICAL_IMPORT_GATE_V14_RECONCILIATION"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "dependency_tags": {"contains": {"const": "LOCAL-ALGEBRAIC"}},
+    "export_reconciliation": {"type": "array", "minItems": 20, "maxItems": 20},
+    "freeze_check_reconciliation": {"type": "array", "minItems": 10, "maxItems": 10},
+    "m2_source_q2_assembly_resolution": {"type": "object", "required": ["status", "evidence", "accepted_q2_sha256", "minimal_ordered_symbolic_components", "auxiliary_ordered_component_coefficients", "q1_q2_defects", "cyclicity_defects", "D_q2_defects", "full_source_q3_assembled"], "properties": {"status": {"const": "ACCEPTED_ARITY_TWO_COMMON_SNAPSHOT"}, "minimal_ordered_symbolic_components": {"const": 22}, "auxiliary_ordered_component_coefficients": {"const": 2064}, "q1_q2_defects": {"const": 0}, "cyclicity_defects": {"const": 0}, "D_q2_defects": {"const": 0}, "full_source_q3_assembled": {"const": false}}},
+    "human_report": {"const": "quantum-weyl/classical_import/REPORT_GATE_V14.md"},
+    "next_gate": {"type": "string", "minLength": 40}
+  }
+}

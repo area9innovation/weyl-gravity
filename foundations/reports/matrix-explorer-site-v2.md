@@ -39,7 +39,7 @@ eleven-step Berger H26/C26 decision chain.  The ranking is a planning aid, not a
 the rational non-cone feasibility control prevents the scoped 104-row failures
 from being promoted to a general non-cone no-go.
 
-Atlas V31 preserves the field-equation type result.  The degree-one-to-zero
+Atlas V32 preserves the field-equation type result.  The degree-one-to-zero
 Green component is an exact right inverse on Noether-compatible sources and a
 left inverse modulo gauge.  The stronger full ungauge-fixed inverse is impossible:
 the exact nonzero gauge and Noether maps obey `K R=0` and `N K=0`.  The retired
@@ -80,10 +80,22 @@ antifield, and 704 `c_star` coefficients with zero variational or Koszul defect.
 All seven known-required families are therefore component-complete.  The
 primary-source completion of Metsaev's nonlinear boost law now proves that the
 Weyl/boost internal algebra is Abelian and the shifted auxiliary tensor is
-invariant.  Thus the seven auxiliary families are exhaustive in the declared
-source scope and no additional Weyl/boost ghost-antifield family is required.
-Gate V13 still accepts zero authoritative hashes because the common 386-row
-source q2/q3 assembly and its q1/q2, cyclicity, and D identities remain open.
+invariant.  Thus the seven previously tracked auxiliary families are
+exhaustive in the declared source scope and no additional Weyl/boost
+ghost-antifield family is required.  In shifted source coordinates, three of
+the seven are type-II coordinate-map data rather than source-vector-field
+operations.  The actual source q2 has sixteen families: twelve minimal plus
+the shifted-mass vertex and three auxiliary Diff representations.  The
+shifted-mass lift has 392 ordered q2 coefficients and zero defects in 3,000
+cyclic equalities.  A common replay then exposed a receiver convention
+mismatch: auxiliary Diff V1 left 336 exact q1/q2 defects.  Applying the already
+certified `T(c_star)=-c_star` translation in append-only V2 removes all 336.
+The accepted common q2 snapshot now binds 22 minimal operations with 2,064
+auxiliary coefficients, extends by zero over the receiver-added split cone,
+and transports canonically to graph coordinates.  Its q1/q2, cyclicity and
+stationary D/q2 defect counts are all zero.  Gate V14 therefore accepts one q2
+hash, while remaining fail closed because auxiliary q3, six other hashes and
+the final common cyclic contraction remain open.
 The complete Berger q3 remains a different-theory Weyl-plus-clock result on a fixed
 54-row carrier; no certified same-theory cyclic map authorizes its direct import.
 
@@ -100,8 +112,9 @@ ledgers and propagated through the full covariant suite with 82/82 terminal
 overclaim guards. The full q1 is now a content-addressed unary snapshot:
 18 operator tables, 127 jet tables and 2,193 rational coefficients on all
 386 rows, with exact nilpotency and zero suspended-cyclicity defects. Local
-SDR and canonical-shear tables plus represented Green actions remain open,
-as do the accepted common Gate-A snapshot, q2/D, Hadamard and QME.
+The unary SDR, canonical shear and represented Green actions are serialized.
+What remains open at the nonlinear frontier is auxiliary q3, q2/Green
+compatibility, the complete Gate-A freeze, Hadamard and QME.
 
 The new reconstruction import supplies the first explicit weak-arithmetic
 finite-approximant theorem for a declared bounded wave observable. Its rational
@@ -195,9 +208,9 @@ This site does not establish:
 - all-order nonlinear source-cocycle closure
 - q3 or higher causal brackets
 - a weakest-base or choice-free proof of the infinite analytic Green layer
-- a source-certified cyclic L-infinity equivalence or accepted q2 Gate-A hash
+- the metric-dependent auxiliary q3, full arity-three source assembly, or q2/Green compatibility
 - a D-Cartan homotopy or physical charge classification from the stabilized D/q2 derivation
-- the authoritative twenty-export, seven-hash classical Gate A from the scoped candidate evidence
+- the complete twenty-export, seven-hash classical Gate A from the one accepted q2 hash
 - a Hadamard state, causal perturbative AQFT construction, or Lorentzian quantum master equation
 - continuum renormalized products from finite regulated-product closure
 - a Weyl QME or Weyl residual transfer from a finite toy BRST complex

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/strict-386-diff-auxiliary-bv-representation-v2.schema.json",
+  "type": "object",
+  "required": ["schema", "result_id", "result_kind", "result_state", "lifecycle", "dependency_tags", "scope", "repair_of", "canonical_sign_repair", "BV_representation_lifts", "component_summary", "inventory_completeness", "claim_flags", "does_not_establish", "canonical_hashes", "provenance", "schema_path", "independent_checker", "human_report", "next_gate"],
+  "properties": {
+    "schema": {"const": "strict-386-diff-auxiliary-bv-representation-v2"},
+    "result_id": {"const": "STRICT_386_DIFF_AUXILIARY_BV_REPRESENTATION_V2"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "repair_of": {"const": "STRICT_386_DIFF_AUXILIARY_BV_REPRESENTATION_V1"},
+    "canonical_sign_repair": {"type": "object", "required": ["translated_coefficients", "unrepaired_q1_q2_nonzero_coefficients", "repaired_q1_q2_nonzero_coefficients", "canonical_q2_cyclicity_defects", "master_density_coefficients_checked"], "properties": {"translated_coefficients": {"const": 704}, "unrepaired_q1_q2_nonzero_coefficients": {"const": 336}, "repaired_q1_q2_nonzero_coefficients": {"const": 0}, "canonical_q2_cyclicity_defects": {"const": 0}, "master_density_coefficients_checked": {"const": 264}}},
+    "BV_representation_lifts": {"type": "array", "minItems": 3, "maxItems": 3},
+    "claim_flags": {"type": "object", "required": ["THREE_DIFF_AUXILIARY_BV_COTANGENT_LIFTS_SERIALIZED", "CANONICAL_C_STAR_TRANSLATION_APPLIED", "COUPLED_SHIFTED_MASS_DIFF_Q1_Q2_REPLAYED", "CANONICAL_AUXILIARY_DIFF_Q2_CYCLICITY_REPLAYED", "SCOPED_NONLINEAR_GHOST_FAMILY_CENSUS_EXHAUSTIVE", "FULL_SOURCE_Q2_COMMON_UNION_ASSEMBLED", "FULL_SOURCE_Q3_PULLBACK_REPLAYED", "CLASSICAL_IMPORT_GATE_PASSED", "HADAMARD_STATE_CONSTRUCTED", "QME_RESTORED"]},
+    "human_report": {"const": "quantum-weyl/classical_import/REPORT_STRICT_386_DIFF_AUXILIARY_BV_REPRESENTATION_V2.md"}
+  },
+  "additionalProperties": true
+}

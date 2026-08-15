@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/foundational-lorentzian-weyl-bv-completion-atlas-v32.schema.json",
+  "type": "object",
+  "required": ["schema_version", "result_id", "lifecycle", "dependency_tags", "stages", "branches", "frontier_summary", "classical_import_reconciliation", "strict_gate_v14_reconciliation", "strict_source_q2_common_assembly", "route_selection", "research_queue", "claim_flags", "provenance", "independent_checker"],
+  "properties": {
+    "schema_version": {"const": "foundational-lorentzian-weyl-bv-completion-atlas-v32"},
+    "result_id": {"const": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V32"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "dependency_tags": {"contains": {"const": "LORENTZIAN-CAUSAL"}},
+    "stages": {"type": "array", "minItems": 11, "maxItems": 11},
+    "branches": {"type": "array", "minItems": 7, "maxItems": 7},
+    "route_selection": {"type": "array", "minItems": 10, "maxItems": 10},
+    "research_queue": {"type": "array", "minItems": 10, "maxItems": 10},
+    "strict_source_q2_common_assembly": {"type": "object", "required": ["result_id", "accepted_source_q2_sha256", "minimal_ordered_symbolic_components", "auxiliary_ordered_component_coefficients", "q1_q2_defects", "q2_cyclicity_defects", "D_q2_defects", "full_source_q3_assembled"], "properties": {"minimal_ordered_symbolic_components": {"const": 22}, "auxiliary_ordered_component_coefficients": {"const": 2064}, "q1_q2_defects": {"const": 0}, "q2_cyclicity_defects": {"const": 0}, "D_q2_defects": {"const": 0}, "full_source_q3_assembled": {"const": false}}},
+    "strict_gate_v14_reconciliation": {"type": "object", "required": ["result_id", "gate_a_status", "accepted_top_level_hashes", "full_source_q2_assembled", "full_source_q3_assembled"]},
+    "independent_checker": {"type": "object", "required": ["path", "checks", "expected_digest"]}
+  }
+}

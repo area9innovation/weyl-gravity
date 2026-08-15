@@ -1,0 +1,811 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema": "strict-386-source-q2-common-assembly-v1",
+  "result_id": "STRICT_386_SOURCE_Q2_COMMON_ASSEMBLY_V1",
+  "result_kind": "AUTHORITATIVE_SHIFTED_SOURCE_Q2_COMMON_SNAPSHOT_AND_CANONICAL_GRAPH_TRANSPORT",
+  "result_state": "FULL_SOURCE_Q2_ASSEMBLED_IDENTITIES_ZERO_AUXILIARY_Q3_OPEN_GATE_FAIL_CLOSED",
+  "lifecycle": "CLASSIFIED",
+  "created": "2026-08-15",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "scope": {
+    "theory": "strict pure-Weyl ordinary-derivative generalized-auxiliary BV theory",
+    "background": "unit ultrastatic conformal cylinder",
+    "carrier_rows": 386,
+    "source_rows": 66,
+    "receiver_added_split_cone_rows": 320,
+    "coefficient_field": "Q",
+    "arity": 2
+  },
+  "family_census": {
+    "minimal_primary_q2_families": 12,
+    "shifted_source_auxiliary_q2_families": 4,
+    "total_shifted_source_q2_families": 16,
+    "auxiliary_family_ids": [
+      "SHIFTED_MASS_H_F_HAT_F_HAT",
+      "DIFF_C_F_HAT_F_HAT_STAR",
+      "DIFF_C_V_V_STAR",
+      "DIFF_C_ETA_ETA_STAR"
+    ],
+    "nonlinear_internal_additional_families": 0,
+    "type_II_coordinate_map_families_excluded_from_source_vector_field": [
+      "TYPE_II_F_HAT_STAR_V_V",
+      "TYPE_II_F_HAT_STAR_H_H",
+      "TYPE_II_F_HAT_STAR_H_V"
+    ],
+    "scoped_family_census_exhaustive": true
+  },
+  "source_q2_snapshot": {
+    "coordinate_presentation": "SHIFTED_SPLIT_SOURCE_COORDINATES",
+    "carrier_rows": 386,
+    "source_theory_rows": 66,
+    "receiver_added_split_cone_rows_extended_by_zero": 320,
+    "minimal_ordered_symbolic_components": 22,
+    "auxiliary_ordered_component_coefficients": 2064,
+    "auxiliary_component_collisions": 0,
+    "minimal_ordered_components_sha256": "5d11498d8bccccb1fe37c2dc7f53402aa7f994f4facfaaea0a76b560674f7453",
+    "auxiliary_component_ledger_sha256": "b356129bc3b80487639b49429b9b50fccc6a2be263292f73bcaa2cb5b37a26eb",
+    "family_census_sha256": "e7e6e7ca4a12517a14a61ba13251088dfad90dd1388b90d0853fd850ce822a27",
+    "source_q2_complete_at_arity_two": true,
+    "sha256": "0f1e23a5653db0666cbd02dea49f8961927d03ff4c72ed402fd24ba8f2ba4800"
+  },
+  "q1_q2_replay": {
+    "minimal_endpoint": {
+      "channels": 18,
+      "composable_paths": 51,
+      "defects": 0,
+      "authority": "STRICT_LOCAL_Q1_Q2_IDENTITY_V1"
+    },
+    "auxiliary_coupled": {
+      "component_channels": 926,
+      "row_level_composable_paths": 3568,
+      "exact_nonzero_residual_coefficients": 0,
+      "authority": "STRICT_386_DIFF_AUXILIARY_BV_REPRESENTATION_V2"
+    },
+    "minimal_auxiliary_channel_overlap": 0,
+    "source66_to_zero_cone_q1_crossings": 0,
+    "split_386_q1_q2_defects": 0,
+    "graph_386_q1_q2_defects": 0,
+    "graph_reason": "exact conjugation by the certified degree-zero canonical shear"
+  },
+  "q2_cyclicity_replay": {
+    "minimal_q2_defects": 0,
+    "shifted_mass_equalities_checked": 3000,
+    "shifted_mass_defects": 0,
+    "auxiliary_Diff_master_density_coefficients_checked": 264,
+    "auxiliary_Diff_defects": 0,
+    "orthogonal_source_family_cross_pairings": 0,
+    "split_386_q2_cyclicity_defects": 0,
+    "graph_386_q2_cyclicity_defects": 0,
+    "graph_reason": "the shear is exactly BV-canonical"
+  },
+  "D_q2_replay": {
+    "background": "unit stationary ultrastatic conformal cylinder",
+    "D_generator": "Lie_partial_t",
+    "minimal_tensor_natural_families": 12,
+    "auxiliary_tensor_natural_families": 4,
+    "stationary_coefficient_defects": 0,
+    "split_D_q2_derivation_defects": 0,
+    "graph_D_q2_derivation_defects": 0,
+    "graph_transport_authority": "STRICT_386_STABILIZED_Q2_LIFT_PREFLIGHT_V1"
+  },
+  "graph_transport": {
+    "source_block_triples": 31,
+    "graph_block_triples": 110,
+    "graph_block_triple_ledger": [
+      {
+        "output_block": "AUX_ETA",
+        "left_input_block": "AUX_ETA",
+        "right_input_block": "CONE_X_ID_SHARP"
+      },
+      {
+        "output_block": "AUX_ETA",
+        "left_input_block": "AUX_ETA",
+        "right_input_block": "ENDPOINT_G"
+      },
+      {
+        "output_block": "AUX_ETA",
+        "left_input_block": "CONE_X_ID_SHARP",
+        "right_input_block": "AUX_ETA"
+      },
+      {
+        "output_block": "AUX_ETA",
+        "left_input_block": "ENDPOINT_G",
+        "right_input_block": "AUX_ETA"
+      },
+      {
+        "output_block": "AUX_ETA_STAR",
+        "left_input_block": "AUX_ETA_STAR",
+        "right_input_block": "CONE_X_ID_SHARP"
+      },
+      {
+        "output_block": "AUX_ETA_STAR",
+        "left_input_block": "AUX_ETA_STAR",
+        "right_input_block": "ENDPOINT_G"
+      },
+      {
+        "output_block": "AUX_ETA_STAR",
+        "left_input_block": "CONE_X_ID_SHARP",
+        "right_input_block": "AUX_ETA_STAR"
+      },
+      {
+        "output_block": "AUX_ETA_STAR",
+        "left_input_block": "ENDPOINT_G",
+        "right_input_block": "AUX_ETA_STAR"
+      },
+      {
+        "output_block": "AUX_F_HAT",
+        "left_input_block": "AUX_F_HAT",
+        "right_input_block": "CONE_X_ID_SHARP"
+      },
+      {
+        "output_block": "AUX_F_HAT",
+        "left_input_block": "AUX_F_HAT",
+        "right_input_block": "ENDPOINT_G"
+      },
+      {
+        "output_block": "AUX_F_HAT",
+        "left_input_block": "CONE_X_ID_SHARP",
+        "right_input_block": "AUX_F_HAT"
+      },
+      {
+        "output_block": "AUX_F_HAT",
+        "left_input_block": "ENDPOINT_G",
+        "right_input_block": "AUX_F_HAT"
+      },
+      {
+        "output_block": "AUX_F_HAT_STAR",
+        "left_input_block": "AUX_F_HAT",
+        "right_input_block": "CONE_X_EQ_SHARP"
+      },
+      {
+        "output_block": "AUX_F_HAT_STAR",
+        "left_input_block": "AUX_F_HAT",
+        "right_input_block": "ENDPOINT_M"
+      },
+      {
+        "output_block": "AUX_F_HAT_STAR",
+        "left_input_block": "AUX_F_HAT_STAR",
+        "right_input_block": "CONE_X_ID_SHARP"
+      },
+      {
+        "output_block": "AUX_F_HAT_STAR",
+        "left_input_block": "AUX_F_HAT_STAR",
+        "right_input_block": "ENDPOINT_G"
+      },
+      {
+        "output_block": "AUX_F_HAT_STAR",
+        "left_input_block": "CONE_X_EQ_SHARP",
+        "right_input_block": "AUX_F_HAT"
+      },
+      {
+        "output_block": "AUX_F_HAT_STAR",
+        "left_input_block": "CONE_X_ID_SHARP",
+        "right_input_block": "AUX_F_HAT_STAR"
+      },
+      {
+        "output_block": "AUX_F_HAT_STAR",
+        "left_input_block": "ENDPOINT_G",
+        "right_input_block": "AUX_F_HAT_STAR"
+      },
+      {
+        "output_block": "AUX_F_HAT_STAR",
+        "left_input_block": "ENDPOINT_M",
+        "right_input_block": "AUX_F_HAT"
+      },
+      {
+        "output_block": "AUX_V",
+        "left_input_block": "AUX_V",
+        "right_input_block": "CONE_X_ID_SHARP"
+      },
+      {
+        "output_block": "AUX_V",
+        "left_input_block": "AUX_V",
+        "right_input_block": "ENDPOINT_G"
+      },
+      {
+        "output_block": "AUX_V",
+        "left_input_block": "CONE_X_ID_SHARP",
+        "right_input_block": "AUX_V"
+      },
+      {
+        "output_block": "AUX_V",
+        "left_input_block": "ENDPOINT_G",
+        "right_input_block": "AUX_V"
+      },
+      {
+        "output_block": "AUX_V_STAR",
+        "left_input_block": "AUX_V_STAR",
+        "right_input_block": "CONE_X_ID_SHARP"
+      },
+      {
+        "output_block": "AUX_V_STAR",
+        "left_input_block": "AUX_V_STAR",
+        "right_input_block": "ENDPOINT_G"
+      },
+      {
+        "output_block": "AUX_V_STAR",
+        "left_input_block": "CONE_X_ID_SHARP",
+        "right_input_block": "AUX_V_STAR"
+      },
+      {
+        "output_block": "AUX_V_STAR",
+        "left_input_block": "ENDPOINT_G",
+        "right_input_block": "AUX_V_STAR"
+      },
+      {
+        "output_block": "CONE_X_EQ",
+        "left_input_block": "AUX_F_HAT",
+        "right_input_block": "AUX_F_HAT"
+      },
+      {
+        "output_block": "CONE_X_EQ",
+        "left_input_block": "CONE_X_EQ_SHARP",
+        "right_input_block": "CONE_X_EQ_SHARP"
+      },
+      {
+        "output_block": "CONE_X_EQ",
+        "left_input_block": "CONE_X_EQ_SHARP",
+        "right_input_block": "ENDPOINT_M"
+      },
+      {
+        "output_block": "CONE_X_EQ",
+        "left_input_block": "CONE_X_ID_SHARP",
+        "right_input_block": "CONE_X_U_SHARP"
+      },
+      {
+        "output_block": "CONE_X_EQ",
+        "left_input_block": "CONE_X_ID_SHARP",
+        "right_input_block": "ENDPOINT_E"
+      },
+      {
+        "output_block": "CONE_X_EQ",
+        "left_input_block": "CONE_X_U_SHARP",
+        "right_input_block": "CONE_X_ID_SHARP"
+      },
+      {
+        "output_block": "CONE_X_EQ",
+        "left_input_block": "CONE_X_U_SHARP",
+        "right_input_block": "ENDPOINT_G"
+      },
+      {
+        "output_block": "CONE_X_EQ",
+        "left_input_block": "ENDPOINT_E",
+        "right_input_block": "CONE_X_ID_SHARP"
+      },
+      {
+        "output_block": "CONE_X_EQ",
+        "left_input_block": "ENDPOINT_E",
+        "right_input_block": "ENDPOINT_G"
+      },
+      {
+        "output_block": "CONE_X_EQ",
+        "left_input_block": "ENDPOINT_G",
+        "right_input_block": "CONE_X_U_SHARP"
+      },
+      {
+        "output_block": "CONE_X_EQ",
+        "left_input_block": "ENDPOINT_G",
+        "right_input_block": "ENDPOINT_E"
+      },
+      {
+        "output_block": "CONE_X_EQ",
+        "left_input_block": "ENDPOINT_M",
+        "right_input_block": "CONE_X_EQ_SHARP"
+      },
+      {
+        "output_block": "CONE_X_EQ",
+        "left_input_block": "ENDPOINT_M",
+        "right_input_block": "ENDPOINT_M"
+      },
+      {
+        "output_block": "CONE_X_ID",
+        "left_input_block": "AUX_ETA",
+        "right_input_block": "AUX_ETA_STAR"
+      },
+      {
+        "output_block": "CONE_X_ID",
+        "left_input_block": "AUX_ETA_STAR",
+        "right_input_block": "AUX_ETA"
+      },
+      {
+        "output_block": "CONE_X_ID",
+        "left_input_block": "AUX_F_HAT",
+        "right_input_block": "AUX_F_HAT_STAR"
+      },
+      {
+        "output_block": "CONE_X_ID",
+        "left_input_block": "AUX_F_HAT_STAR",
+        "right_input_block": "AUX_F_HAT"
+      },
+      {
+        "output_block": "CONE_X_ID",
+        "left_input_block": "AUX_V",
+        "right_input_block": "AUX_V_STAR"
+      },
+      {
+        "output_block": "CONE_X_ID",
+        "left_input_block": "AUX_V_STAR",
+        "right_input_block": "AUX_V"
+      },
+      {
+        "output_block": "CONE_X_ID",
+        "left_input_block": "CONE_X_EQ_SHARP",
+        "right_input_block": "CONE_X_U_SHARP"
+      },
+      {
+        "output_block": "CONE_X_ID",
+        "left_input_block": "CONE_X_EQ_SHARP",
+        "right_input_block": "ENDPOINT_E"
+      },
+      {
+        "output_block": "CONE_X_ID",
+        "left_input_block": "CONE_X_ID_SHARP",
+        "right_input_block": "ENDPOINT_I"
+      },
+      {
+        "output_block": "CONE_X_ID",
+        "left_input_block": "CONE_X_U_SHARP",
+        "right_input_block": "CONE_X_EQ_SHARP"
+      },
+      {
+        "output_block": "CONE_X_ID",
+        "left_input_block": "CONE_X_U_SHARP",
+        "right_input_block": "ENDPOINT_M"
+      },
+      {
+        "output_block": "CONE_X_ID",
+        "left_input_block": "ENDPOINT_E",
+        "right_input_block": "CONE_X_EQ_SHARP"
+      },
+      {
+        "output_block": "CONE_X_ID",
+        "left_input_block": "ENDPOINT_E",
+        "right_input_block": "ENDPOINT_M"
+      },
+      {
+        "output_block": "CONE_X_ID",
+        "left_input_block": "ENDPOINT_G",
+        "right_input_block": "ENDPOINT_I"
+      },
+      {
+        "output_block": "CONE_X_ID",
+        "left_input_block": "ENDPOINT_I",
+        "right_input_block": "CONE_X_ID_SHARP"
+      },
+      {
+        "output_block": "CONE_X_ID",
+        "left_input_block": "ENDPOINT_I",
+        "right_input_block": "ENDPOINT_G"
+      },
+      {
+        "output_block": "CONE_X_ID",
+        "left_input_block": "ENDPOINT_M",
+        "right_input_block": "CONE_X_U_SHARP"
+      },
+      {
+        "output_block": "CONE_X_ID",
+        "left_input_block": "ENDPOINT_M",
+        "right_input_block": "ENDPOINT_E"
+      },
+      {
+        "output_block": "CONE_X_U",
+        "left_input_block": "CONE_X_EQ_SHARP",
+        "right_input_block": "CONE_X_ID_SHARP"
+      },
+      {
+        "output_block": "CONE_X_U",
+        "left_input_block": "CONE_X_EQ_SHARP",
+        "right_input_block": "ENDPOINT_G"
+      },
+      {
+        "output_block": "CONE_X_U",
+        "left_input_block": "CONE_X_ID_SHARP",
+        "right_input_block": "CONE_X_EQ_SHARP"
+      },
+      {
+        "output_block": "CONE_X_U",
+        "left_input_block": "CONE_X_ID_SHARP",
+        "right_input_block": "ENDPOINT_M"
+      },
+      {
+        "output_block": "CONE_X_U",
+        "left_input_block": "ENDPOINT_G",
+        "right_input_block": "CONE_X_EQ_SHARP"
+      },
+      {
+        "output_block": "CONE_X_U",
+        "left_input_block": "ENDPOINT_G",
+        "right_input_block": "ENDPOINT_M"
+      },
+      {
+        "output_block": "CONE_X_U",
+        "left_input_block": "ENDPOINT_M",
+        "right_input_block": "CONE_X_ID_SHARP"
+      },
+      {
+        "output_block": "CONE_X_U",
+        "left_input_block": "ENDPOINT_M",
+        "right_input_block": "ENDPOINT_G"
+      },
+      {
+        "output_block": "ENDPOINT_E",
+        "left_input_block": "AUX_F_HAT",
+        "right_input_block": "AUX_F_HAT"
+      },
+      {
+        "output_block": "ENDPOINT_E",
+        "left_input_block": "CONE_X_EQ_SHARP",
+        "right_input_block": "CONE_X_EQ_SHARP"
+      },
+      {
+        "output_block": "ENDPOINT_E",
+        "left_input_block": "CONE_X_EQ_SHARP",
+        "right_input_block": "ENDPOINT_M"
+      },
+      {
+        "output_block": "ENDPOINT_E",
+        "left_input_block": "CONE_X_ID_SHARP",
+        "right_input_block": "CONE_X_U_SHARP"
+      },
+      {
+        "output_block": "ENDPOINT_E",
+        "left_input_block": "CONE_X_ID_SHARP",
+        "right_input_block": "ENDPOINT_E"
+      },
+      {
+        "output_block": "ENDPOINT_E",
+        "left_input_block": "CONE_X_U_SHARP",
+        "right_input_block": "CONE_X_ID_SHARP"
+      },
+      {
+        "output_block": "ENDPOINT_E",
+        "left_input_block": "CONE_X_U_SHARP",
+        "right_input_block": "ENDPOINT_G"
+      },
+      {
+        "output_block": "ENDPOINT_E",
+        "left_input_block": "ENDPOINT_E",
+        "right_input_block": "CONE_X_ID_SHARP"
+      },
+      {
+        "output_block": "ENDPOINT_E",
+        "left_input_block": "ENDPOINT_E",
+        "right_input_block": "ENDPOINT_G"
+      },
+      {
+        "output_block": "ENDPOINT_E",
+        "left_input_block": "ENDPOINT_G",
+        "right_input_block": "CONE_X_U_SHARP"
+      },
+      {
+        "output_block": "ENDPOINT_E",
+        "left_input_block": "ENDPOINT_G",
+        "right_input_block": "ENDPOINT_E"
+      },
+      {
+        "output_block": "ENDPOINT_E",
+        "left_input_block": "ENDPOINT_M",
+        "right_input_block": "CONE_X_EQ_SHARP"
+      },
+      {
+        "output_block": "ENDPOINT_E",
+        "left_input_block": "ENDPOINT_M",
+        "right_input_block": "ENDPOINT_M"
+      },
+      {
+        "output_block": "ENDPOINT_G",
+        "left_input_block": "CONE_X_ID_SHARP",
+        "right_input_block": "CONE_X_ID_SHARP"
+      },
+      {
+        "output_block": "ENDPOINT_G",
+        "left_input_block": "CONE_X_ID_SHARP",
+        "right_input_block": "ENDPOINT_G"
+      },
+      {
+        "output_block": "ENDPOINT_G",
+        "left_input_block": "ENDPOINT_G",
+        "right_input_block": "CONE_X_ID_SHARP"
+      },
+      {
+        "output_block": "ENDPOINT_G",
+        "left_input_block": "ENDPOINT_G",
+        "right_input_block": "ENDPOINT_G"
+      },
+      {
+        "output_block": "ENDPOINT_I",
+        "left_input_block": "AUX_ETA",
+        "right_input_block": "AUX_ETA_STAR"
+      },
+      {
+        "output_block": "ENDPOINT_I",
+        "left_input_block": "AUX_ETA_STAR",
+        "right_input_block": "AUX_ETA"
+      },
+      {
+        "output_block": "ENDPOINT_I",
+        "left_input_block": "AUX_F_HAT",
+        "right_input_block": "AUX_F_HAT_STAR"
+      },
+      {
+        "output_block": "ENDPOINT_I",
+        "left_input_block": "AUX_F_HAT_STAR",
+        "right_input_block": "AUX_F_HAT"
+      },
+      {
+        "output_block": "ENDPOINT_I",
+        "left_input_block": "AUX_V",
+        "right_input_block": "AUX_V_STAR"
+      },
+      {
+        "output_block": "ENDPOINT_I",
+        "left_input_block": "AUX_V_STAR",
+        "right_input_block": "AUX_V"
+      },
+      {
+        "output_block": "ENDPOINT_I",
+        "left_input_block": "CONE_X_EQ_SHARP",
+        "right_input_block": "CONE_X_U_SHARP"
+      },
+      {
+        "output_block": "ENDPOINT_I",
+        "left_input_block": "CONE_X_EQ_SHARP",
+        "right_input_block": "ENDPOINT_E"
+      },
+      {
+        "output_block": "ENDPOINT_I",
+        "left_input_block": "CONE_X_ID_SHARP",
+        "right_input_block": "ENDPOINT_I"
+      },
+      {
+        "output_block": "ENDPOINT_I",
+        "left_input_block": "CONE_X_U_SHARP",
+        "right_input_block": "CONE_X_EQ_SHARP"
+      },
+      {
+        "output_block": "ENDPOINT_I",
+        "left_input_block": "CONE_X_U_SHARP",
+        "right_input_block": "ENDPOINT_M"
+      },
+      {
+        "output_block": "ENDPOINT_I",
+        "left_input_block": "ENDPOINT_E",
+        "right_input_block": "CONE_X_EQ_SHARP"
+      },
+      {
+        "output_block": "ENDPOINT_I",
+        "left_input_block": "ENDPOINT_E",
+        "right_input_block": "ENDPOINT_M"
+      },
+      {
+        "output_block": "ENDPOINT_I",
+        "left_input_block": "ENDPOINT_G",
+        "right_input_block": "ENDPOINT_I"
+      },
+      {
+        "output_block": "ENDPOINT_I",
+        "left_input_block": "ENDPOINT_I",
+        "right_input_block": "CONE_X_ID_SHARP"
+      },
+      {
+        "output_block": "ENDPOINT_I",
+        "left_input_block": "ENDPOINT_I",
+        "right_input_block": "ENDPOINT_G"
+      },
+      {
+        "output_block": "ENDPOINT_I",
+        "left_input_block": "ENDPOINT_M",
+        "right_input_block": "CONE_X_U_SHARP"
+      },
+      {
+        "output_block": "ENDPOINT_I",
+        "left_input_block": "ENDPOINT_M",
+        "right_input_block": "ENDPOINT_E"
+      },
+      {
+        "output_block": "ENDPOINT_M",
+        "left_input_block": "CONE_X_EQ_SHARP",
+        "right_input_block": "CONE_X_ID_SHARP"
+      },
+      {
+        "output_block": "ENDPOINT_M",
+        "left_input_block": "CONE_X_EQ_SHARP",
+        "right_input_block": "ENDPOINT_G"
+      },
+      {
+        "output_block": "ENDPOINT_M",
+        "left_input_block": "CONE_X_ID_SHARP",
+        "right_input_block": "CONE_X_EQ_SHARP"
+      },
+      {
+        "output_block": "ENDPOINT_M",
+        "left_input_block": "CONE_X_ID_SHARP",
+        "right_input_block": "ENDPOINT_M"
+      },
+      {
+        "output_block": "ENDPOINT_M",
+        "left_input_block": "ENDPOINT_G",
+        "right_input_block": "CONE_X_EQ_SHARP"
+      },
+      {
+        "output_block": "ENDPOINT_M",
+        "left_input_block": "ENDPOINT_G",
+        "right_input_block": "ENDPOINT_M"
+      },
+      {
+        "output_block": "ENDPOINT_M",
+        "left_input_block": "ENDPOINT_M",
+        "right_input_block": "CONE_X_ID_SHARP"
+      },
+      {
+        "output_block": "ENDPOINT_M",
+        "left_input_block": "ENDPOINT_M",
+        "right_input_block": "ENDPOINT_G"
+      }
+    ],
+    "active_graph_input_blocks": [
+      "AUX_ETA",
+      "AUX_ETA_STAR",
+      "AUX_F_HAT",
+      "AUX_F_HAT_STAR",
+      "AUX_V",
+      "AUX_V_STAR",
+      "CONE_X_EQ_SHARP",
+      "CONE_X_ID_SHARP",
+      "CONE_X_U_SHARP",
+      "ENDPOINT_E",
+      "ENDPOINT_G",
+      "ENDPOINT_I",
+      "ENDPOINT_M"
+    ],
+    "active_graph_output_blocks": [
+      "AUX_ETA",
+      "AUX_ETA_STAR",
+      "AUX_F_HAT",
+      "AUX_F_HAT_STAR",
+      "AUX_V",
+      "AUX_V_STAR",
+      "CONE_X_EQ",
+      "CONE_X_ID",
+      "CONE_X_U",
+      "ENDPOINT_E",
+      "ENDPOINT_G",
+      "ENDPOINT_I",
+      "ENDPOINT_M"
+    ],
+    "active_graph_input_row_envelope": 146,
+    "active_graph_output_row_envelope": 146,
+    "transport_formula": "q2_graph(x,y)=S q2_shifted_split(S^-1 x,S^-1 y)",
+    "flattened_graph_tensor_exported": false,
+    "exact_compositional_DAG_exported": true
+  },
+  "q3_boundary": {
+    "minimal_q3_available": true,
+    "auxiliary_metric_dependent_q3_available": false,
+    "first_missing_vertex": "D_h^2 D_f_hat^2 S_aux, equivalently q3(h,h,f_hat) and q3(h,f_hat,f_hat) paired outputs",
+    "full_source_q3_assembled": false,
+    "Gate_A_disposition": "FAIL_CLOSED"
+  },
+  "foundational_strength": {
+    "exact_rational_component_arithmetic": true,
+    "finite_ledgers": true,
+    "support_local": true,
+    "choice_principle_used": false,
+    "infinite_selection_used": false,
+    "spectral_decomposition_used": false,
+    "Green_operator_used": false,
+    "analytic_input": "stationary tensor naturality only for the D/q2 statement",
+    "weakest_finite_kernel": "PRA conditional on pinned tensor-natural identities"
+  },
+  "claim_flags": {
+    "FULL_SHIFTED_SOURCE_Q2_COMMON_UNION_ASSEMBLED": true,
+    "FULL_386_GRAPH_Q2_COMPOSITIONAL_DAG_ASSEMBLED": true,
+    "FULL_386_Q1_Q2_IDENTITY_REPLAYED": true,
+    "FULL_386_Q2_CYCLICITY_REPLAYED": true,
+    "FULL_386_D_Q2_DERIVATION_REPLAYED": true,
+    "FULL_SOURCE_Q3_ASSEMBLED": false,
+    "CLASSICAL_IMPORT_GATE_PASSED": false,
+    "LORENTZIAN_GREEN_Q2_COMPATIBILITY_CERTIFIED": false,
+    "HADAMARD_STATE_CONSTRUCTED": false,
+    "QME_RESTORED": false
+  },
+  "does_not_establish": [
+    "a flattened graph-coordinate 386^3 coefficient tensor; the exact graph object is a compositional DAG",
+    "the metric-dependent auxiliary q3 or higher Taylor operations",
+    "q2 compatibility with advanced/retarded Green homotopies",
+    "an accepted Gate-A freeze, Hadamard state, renormalized Lorentzian products, QME restoration, residual transfer, positivity, particles or unitarity"
+  ],
+  "canonical_hashes": {
+    "family_census_sha256": "e7e6e7ca4a12517a14a61ba13251088dfad90dd1388b90d0853fd850ce822a27",
+    "source_q2_snapshot_sha256": "14706d6eb60b6996baf2b6df6aaff765bbe38f4a8e3ba0394ced107669efd62f",
+    "q1_q2_replay_sha256": "ed50cd5d8411be955e02a487d25b5c85b1674dd03638a06c6c707fe2a38465b4",
+    "q2_cyclicity_replay_sha256": "013c3333bc748b761d7fafc79f1508d058449b3cb76c31e7bc65e8e916869f04",
+    "D_q2_replay_sha256": "ced8b4aef3f1bc8fd9ec5c5644cb3e9926d04f9148bbfc4c7c84f8327ad7cf36",
+    "graph_transport_sha256": "ef1b90766be72fe7aef8600a786312e4a02b69997125c878eb9ffe8289f1e706",
+    "q3_boundary_sha256": "34c8dd76a8585423d7e7facc32ce62466adf6bc1eb6873b0adaa7def720066d1",
+    "foundational_strength_sha256": "6ada4e202a6c240450dfb80dd72b7dfc60a9a2b11a989f8b34994a206b4ddc20"
+  },
+  "provenance": {
+    "inputs": [
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_FULL_Q1_COMPONENT_JET_TABLE_V1.json",
+        "result_id": "STRICT_386_FULL_Q1_COMPONENT_JET_TABLE_V1",
+        "sha256": "9b0e9da9e8838a0ade6e1f1214e16457e9a94af981d9d020c137d105f9e9c21e",
+        "role": "split-coordinate full unary table"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_GRAPH_Q1_SDR_COMPONENT_JETS_V1.json",
+        "result_id": "STRICT_386_GRAPH_Q1_SDR_COMPONENT_JETS_V1",
+        "sha256": "b805bd81b35f13325d938e93be91495e1d46aa5900fd168e55bdcde1afbfa8e2",
+        "role": "graph-coordinate q1 and exact conjugation"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1.json",
+        "result_id": "STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1",
+        "sha256": "3b9d8a2fc5a70d20770452eb0a2a4891f59314c21c83188bfb59de0941cac4b2",
+        "role": "fixed basis and odd pairing"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_CANONICAL_SHEAR_COMPONENT_JETS_V1.json",
+        "result_id": "STRICT_386_CANONICAL_SHEAR_COMPONENT_JETS_V1",
+        "sha256": "5f9240a362ce8568f0ac502e25978a4675f9744cc750dee5b1378828033eb301",
+        "role": "BV-canonical graph shear and inverse"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_SIX_ROW_SUSPENDED_Q2_AST_V1.json",
+        "result_id": "STRICT_SIX_ROW_SUSPENDED_Q2_AST_V1",
+        "sha256": "513b43a90a936e1837947078e8f72da772f37461996b0b27b7df938ab355fbb3",
+        "role": "complete strict minimal q2 AST"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_LOCAL_Q1_Q2_IDENTITY_V1.json",
+        "result_id": "STRICT_LOCAL_Q1_Q2_IDENTITY_V1",
+        "sha256": "8300dddd6120632958a307e1924f27fb4e24ae6802e3163a825bd1dce54de738",
+        "role": "minimal q1/q2 theorem"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_MINIMAL_BV_CYCLIC_SIGN_RECONCILIATION_V1.json",
+        "result_id": "STRICT_MINIMAL_BV_CYCLIC_SIGN_RECONCILIATION_V1",
+        "sha256": "c4cd8b1399e176e9eb1eadbfa0c5b85901d7361f39c706a7e7d4469e945e5169",
+        "role": "minimal canonical cyclicity"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_STABILIZED_Q2_LIFT_PREFLIGHT_V1.json",
+        "result_id": "STRICT_386_STABILIZED_Q2_LIFT_PREFLIGHT_V1",
+        "sha256": "ee6a88080cc13547c809f53b9c033da59138be73eff69c0654659c18ddd2c65b",
+        "role": "stationary D and graph-transport theorem"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_FULL_D_ACTION_V1.json",
+        "result_id": "STRICT_386_FULL_D_ACTION_V1",
+        "sha256": "c83c53250e3c8b8bc913f902a8cd4a4aff1a918c88b42167e9076e4aa96dc148",
+        "role": "unit-cylinder local D action"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_SHIFTED_MASS_BV_Q2_LIFT_V1.json",
+        "result_id": "STRICT_386_SHIFTED_MASS_BV_Q2_LIFT_V1",
+        "sha256": "485b23a2274ef99197ef69d0906b5eef2f8e1bbd4105145dcd4b3a2805519d17",
+        "role": "exact shifted-mass q2 component tables"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_DIFF_AUXILIARY_BV_REPRESENTATION_V2.json",
+        "result_id": "STRICT_386_DIFF_AUXILIARY_BV_REPRESENTATION_V2",
+        "sha256": "93c29efd0bdd34ed80452ec9ceb18b95147b8cbae248fca1ce11652bf7096d76",
+        "role": "canonically translated auxiliary Diff q2 tables"
+      },
+      {
+        "path": "d_quotient_classical/certificates/CLASSICAL_NONLINEAR_WEYL_BOOST_GHOST_MANIFEST_V1.json",
+        "result_id": "CLASSICAL_NONLINEAR_WEYL_BOOST_GHOST_MANIFEST_V1",
+        "sha256": "b4cea7dc000aea74e4fb466d9b98da1786df8c03b4a1ebb614d5e8c275a295ba",
+        "role": "exhaustive nonlinear internal ghost-family census"
+      }
+    ]
+  },
+  "schema_path": "quantum-weyl/classical_import/schema/strict-386-source-q2-common-assembly-v1.schema.json",
+  "independent_checker": "quantum-weyl/classical_import/check_strict_386_source_q2_common_assembly.py",
+  "human_report": "quantum-weyl/classical_import/REPORT_STRICT_386_SOURCE_Q2_COMMON_ASSEMBLY_V1.md",
+  "next_gate": "Compute the second metric variation of the exact shifted auxiliary mass density, lift it to q3 with the fixed pairing, and assemble it with minimal q3 before replaying the arity-three identity and cyclicity on common bytes."
+}

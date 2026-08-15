@@ -1,0 +1,93 @@
+{
+  "receipt_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_SOURCE_Q2_ASSEMBLY_V1_TIER_RECEIPT",
+  "result_id": "STRICT_386_SOURCE_Q2_COMMON_ASSEMBLY_V1",
+  "created": "2026-08-15",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "scope": "Exact shifted-mass BV q2 lift, append-only auxiliary c_star convention repair, common 386-row source-q2 assembly, Gate V14 reconciliation, Atlas V32 projection, static-site refresh, and Paper 21 RF-62 integration.",
+  "test_tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "elapsed_seconds": 0.6,
+      "commands": [
+        "python3 -m py_compile <explicit q2, Gate V14, Atlas V32, site and Paper 21 paths>",
+        "deno check foundations/matrix_site_v2_assets/app-v2.js",
+        "python3 -m json.tool <six explicit generated JSON artifacts>",
+        "git diff --check -- <explicit delivery paths>"
+      ],
+      "checks": "Python parsing, JavaScript static checking, JSON parsing, and scoped whitespace validation passed."
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 3.6,
+      "commands": [
+        "python3 quantum-weyl/classical_import/check_strict_386_shifted_mass_bv_q2_lift.py && python3 quantum-weyl/classical_import/verify_strict_386_shifted_mass_bv_q2_lift.py",
+        "python3 quantum-weyl/classical_import/check_strict_386_diff_auxiliary_bv_representation_v2.py && python3 quantum-weyl/classical_import/verify_strict_386_diff_auxiliary_bv_representation_v2.py",
+        "python3 quantum-weyl/classical_import/check_strict_386_source_q2_common_assembly.py && python3 quantum-weyl/classical_import/verify_strict_386_source_q2_common_assembly.py",
+        "python3 quantum-weyl/classical_import/check_classical_import_gate_v14_reconciliation.py && python3 quantum-weyl/classical_import/verify_classical_import_gate_v14_reconciliation.py",
+        "python3 foundations/check_lorentzian_weyl_bv_completion_atlas_v32.py && python3 foundations/verify_lorentzian_weyl_bv_completion_atlas_v32.py",
+        "python3 -m unittest <five explicit new test modules>"
+      ],
+      "checks": {
+        "new_tests": "23/23 PASS",
+        "shifted_mass_q2_coefficients": 392,
+        "shifted_mass_cyclicity_equalities": 3000,
+        "historical_q1_q2_defects": 336,
+        "repaired_q1_q2_defects": 0,
+        "source_q2_families": 16,
+        "auxiliary_component_coefficients": 2064,
+        "accepted_q2_sha256": "0f1e23a5653db0666cbd02dea49f8961927d03ff4c72ed402fd24ba8f2ba4800",
+        "gate_a_status": "FAIL_CLOSED"
+      }
+    },
+    "tier_2": {
+      "status": "PASS",
+      "elapsed_seconds": 7.9,
+      "commands": [
+        "python3 foundations/build_matrix_site_v2.py --check && python3 foundations/check_matrix_site_v2.py && python3 foundations/verify_matrix_site_v2.py",
+        "python3 -m unittest foundations.tests.test_matrix_site foundations.tests.test_theory_assembly foundations.tests.test_theory_viability",
+        "python3 paper/generate_21_reverse_foundations_appendices.py --check && python3 paper/verify_21_reverse_foundations_claim_map.py",
+        "cd paper && pdflatex -interaction=nonstopmode -halt-on-error 21-reverse-foundations-of-physics.tex (two passes)",
+        "scan Paper 21 log for overfull boxes, undefined references/citations and rerun warnings"
+      ],
+      "checks": {
+        "site_cells": 576,
+        "completion_cells": 77,
+        "site_consumer_tests": "22/22 PASS",
+        "paper_claim": "RF-62",
+        "paper_pages": 71,
+        "paper_log_findings": 0
+      }
+    },
+    "tier_3": {
+      "status": "NOT_RUN_NOT_A_PASS",
+      "criterion": "This delivery promotes no freeze or theorem lifecycle, changes no shared core algebra, and leaves Gate A fail closed at CLASSIFIED. The affected certificate chain was run at Tier 2; the full repository suite is reserved for a classical/quantum freeze, shared-core change, lifecycle promotion, or release."
+    }
+  },
+  "artifact_sha256": {
+    "quantum-weyl/classical_import/certificates/STRICT_386_SHIFTED_MASS_BV_Q2_LIFT_V1.json": "485b23a2274ef99197ef69d0906b5eef2f8e1bbd4105145dcd4b3a2805519d17",
+    "quantum-weyl/classical_import/certificates/STRICT_386_DIFF_AUXILIARY_BV_REPRESENTATION_V2.json": "93c29efd0bdd34ed80452ec9ceb18b95147b8cbae248fca1ce11652bf7096d76",
+    "quantum-weyl/classical_import/certificates/STRICT_386_SOURCE_Q2_COMMON_ASSEMBLY_V1.json": "2a93236ba5ae929bde285339286fbc24ceb98415b6b1750b90b546f921f658ed",
+    "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V14_RECONCILIATION.json": "5732c4d04bc96592dd5a8e2b3fec1f199f4c9d8464c619cf3d4ff94020d82313",
+    "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V32.json": "ba121944001a7dd24bd95b1d8a187f2283cfb5d46583577579021036f91411b1",
+    "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json": "2c49f94cb222286dd2cfe176270ab0499aefbb27cbade71d4d7b2b1a88e35df7",
+    "foundations/site/manifest.json": "f25da5101934c442874b2bcbcd53a8ecd0a5034cbbae23348329510691f4c5b6",
+    "paper/21-reverse-foundations-of-physics.tex": "c477e202a5aeb7a20235ce0952800f166cfb85bc65899bcee27d9a256dcf92c6",
+    "paper/21-reverse-foundations-of-physics-appendices.tex": "130c4e6a29fae806b095b34df8adf73d45332fd79611b28489b485d3c4dd4c6d",
+    "paper/21-reverse-foundations-of-physics-claim-map.json": "5a14707da2c691afd09f08568f57d860470831e27506ae70b70fc24e47392f23",
+    "paper/21-reverse-foundations-of-physics.pdf": "8d344fe93106970ef8e7e8d7114caca0a6521446c1c83ac5b2d89c615c155c00"
+  },
+  "paper_prose_advisory": {
+    "status": "ADVISORY_FINDING_NOT_A_GATE",
+    "command": "/home/alstrup/area9/tango/forge/tools/science-forge/paper_prose_advisory.sh --json paper/21-reverse-foundations-of-physics.tex",
+    "finding": "The long working paper remains above the advisory parenthesis and abstract-length budgets. Emphasis, em-dash, mean-sentence and novelty budgets are within the advisory thresholds. No prose heuristic is counted as scientific verification."
+  },
+  "science_forge_shadow": {
+    "status": "FAIL_RECORDED_NOT_A_PASS",
+    "command": "ci/science-forge-shadow.sh",
+    "finding": "The advisory rail exited zero by design, but its bridge audit failed closed because the configured stale bp2transformer target lacks sympy. The corpus census also reports baseline drift: 1872 certificates versus 976 on 2026-07-19. Neither finding is counted as a scientific pass."
+  },
+  "claim_boundary": "The common arity-two source q2 and its q1/q2, cyclicity, and stationary D/q2 identities are exact on the declared 386-row carrier. This does not supply the metric-dependent auxiliary q3, pass the full seven-hash and ten-check classical freeze gate, prove q2/Green compatibility, construct a Hadamard state, define renormalized Lorentzian products, restore the QME, or authorize residual quantum transfer."
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/strict-386-source-q2-common-assembly-v1.schema.json",
+  "type": "object",
+  "required": ["schema", "result_id", "result_kind", "result_state", "lifecycle", "dependency_tags", "scope", "family_census", "source_q2_snapshot", "q1_q2_replay", "q2_cyclicity_replay", "D_q2_replay", "graph_transport", "q3_boundary", "foundational_strength", "claim_flags", "does_not_establish", "canonical_hashes", "provenance", "schema_path", "independent_checker", "human_report", "next_gate"],
+  "properties": {
+    "schema": {"const": "strict-386-source-q2-common-assembly-v1"},
+    "result_id": {"const": "STRICT_386_SOURCE_Q2_COMMON_ASSEMBLY_V1"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "source_q2_snapshot": {"type": "object", "required": ["carrier_rows", "source_theory_rows", "receiver_added_split_cone_rows_extended_by_zero", "minimal_ordered_symbolic_components", "auxiliary_ordered_component_coefficients", "auxiliary_component_collisions", "source_q2_complete_at_arity_two", "sha256"], "properties": {"carrier_rows": {"const": 386}, "source_theory_rows": {"const": 66}, "receiver_added_split_cone_rows_extended_by_zero": {"const": 320}, "minimal_ordered_symbolic_components": {"const": 22}, "auxiliary_ordered_component_coefficients": {"const": 2064}, "auxiliary_component_collisions": {"const": 0}, "source_q2_complete_at_arity_two": {"const": true}}},
+    "q1_q2_replay": {"type": "object", "properties": {"split_386_q1_q2_defects": {"const": 0}, "graph_386_q1_q2_defects": {"const": 0}}},
+    "q2_cyclicity_replay": {"type": "object", "properties": {"split_386_q2_cyclicity_defects": {"const": 0}, "graph_386_q2_cyclicity_defects": {"const": 0}}},
+    "q3_boundary": {"type": "object", "properties": {"full_source_q3_assembled": {"const": false}, "Gate_A_disposition": {"const": "FAIL_CLOSED"}}},
+    "claim_flags": {"type": "object", "required": ["FULL_SHIFTED_SOURCE_Q2_COMMON_UNION_ASSEMBLED", "FULL_386_GRAPH_Q2_COMPOSITIONAL_DAG_ASSEMBLED", "FULL_386_Q1_Q2_IDENTITY_REPLAYED", "FULL_386_Q2_CYCLICITY_REPLAYED", "FULL_386_D_Q2_DERIVATION_REPLAYED", "FULL_SOURCE_Q3_ASSEMBLED", "CLASSICAL_IMPORT_GATE_PASSED", "LORENTZIAN_GREEN_Q2_COMPATIBILITY_CERTIFIED", "HADAMARD_STATE_CONSTRUCTED", "QME_RESTORED"]},
+    "human_report": {"const": "quantum-weyl/classical_import/REPORT_STRICT_386_SOURCE_Q2_COMMON_ASSEMBLY_V1.md"}
+  },
+  "additionalProperties": true
+}
