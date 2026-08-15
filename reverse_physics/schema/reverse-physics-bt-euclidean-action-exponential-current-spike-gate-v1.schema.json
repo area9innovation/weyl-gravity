@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-action-exponential-current-spike-gate-v1.schema.json",
+  "title": "BT Euclidean action exponential current spike gate V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["certificate", "schema_version", "created", "dependency_tags", "lifecycle_state", "result_kind", "question", "answer", "radial_scaling_theorem", "actual_gibbs_exponential_moment", "lambda_point_four_bulk_tail", "current_spike_morphology", "compact_slice_current_motif", "method_disposition", "does_not_establish", "missing_object_ledger", "next_gate", "checks", "provenance", "schema", "report", "independent_verifier", "verification_commands"],
+  "$defs": {
+    "rational": {"type": "object", "additionalProperties": false, "required": ["numerator", "denominator"], "properties": {"numerator": {"type": "integer"}, "denominator": {"type": "integer", "minimum": 1}}},
+    "text": {"type": "string", "minLength": 1},
+    "input": {"type": "object", "additionalProperties": false, "required": ["path", "sha256"], "properties": {"path": {"$ref": "#/$defs/text"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}},
+    "support": {"type": "object", "additionalProperties": false, "required": ["site", "exponent"], "properties": {"site": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "integer", "minimum": 0}}, "exponent": {"type": "integer", "minimum": -1, "maximum": 1}}}
+  },
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_EUCLIDEAN_ACTION_EXPONENTIAL_CURRENT_SPIKE_GATE_V1"},
+    "schema_version": {"const": "reverse-physics-bt-euclidean-action-exponential-current-spike-gate-v1"},
+    "created": {"const": "2026-08-15"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "lifecycle_state": {"const": "ACTUAL_GIBBS_ACTION_EXPONENTIAL_TAIL_PROVED_MODERATE_CURRENT_COHERENCE_GATE_OPEN"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "radial_scaling_theorem": {"type": "object", "minProperties": 5, "additionalProperties": {"type": "string", "minLength": 1}},
+    "actual_gibbs_exponential_moment": {"type": "object", "additionalProperties": false, "required": ["measure", "scope", "partition_change", "bound", "affine_shift", "status"], "properties": {"measure": {"$ref": "#/$defs/text"}, "scope": {"$ref": "#/$defs/text"}, "partition_change": {"$ref": "#/$defs/text"}, "bound": {"$ref": "#/$defs/text"}, "affine_shift": {"$ref": "#/$defs/rational"}, "status": {"const": "ACTUAL_NORMALIZED_GIBBS_MGF_BOUND"}}},
+    "lambda_point_four_bulk_tail": {"type": "object", "additionalProperties": false, "required": ["lambda", "theta", "action_density_cutoff", "log_two_upper_bound", "chernoff_calculation", "tail_rate", "probability_bound", "status"], "properties": {"lambda": {"$ref": "#/$defs/rational"}, "theta": {"$ref": "#/$defs/rational"}, "action_density_cutoff": {"$ref": "#/$defs/rational"}, "log_two_upper_bound": {"$ref": "#/$defs/rational"}, "chernoff_calculation": {"$ref": "#/$defs/text"}, "tail_rate": {"$ref": "#/$defs/rational"}, "probability_bound": {"$ref": "#/$defs/text"}, "status": {"const": "EXPONENTIAL_IN_VOLUME_BULK_ACTION_TAIL"}}},
+    "current_spike_morphology": {"type": "object", "minProperties": 9, "additionalProperties": {"type": "string", "minLength": 1}},
+    "compact_slice_current_motif": {"type": "object", "additionalProperties": false, "required": ["scope", "exponent_support", "positive_field", "slice_proof", "action", "total_time_current", "nonzero_residual_count", "nonzero_current_count", "interpretation", "status"], "properties": {"scope": {"const": "every L^4 torus with L>=5"}, "exponent_support": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/support"}}, "positive_field": {"$ref": "#/$defs/text"}, "slice_proof": {"$ref": "#/$defs/text"}, "action": {"$ref": "#/$defs/rational"}, "total_time_current": {"$ref": "#/$defs/rational"}, "nonzero_residual_count": {"type": "integer", "minimum": 1}, "nonzero_current_count": {"type": "integer", "minimum": 1}, "interpretation": {"$ref": "#/$defs/text"}, "status": {"const": "EXACT_COMPACT_E_P_PERP_CURRENT_MOTIF"}}},
+    "method_disposition": {"type": "object", "minProperties": 14, "additionalProperties": {"type": "string", "minLength": 1}},
+    "does_not_establish": {"type": "array", "minItems": 5, "items": {"$ref": "#/$defs/text"}},
+    "missing_object_ledger": {"type": "array", "minItems": 5, "items": {"$ref": "#/$defs/text"}},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "checks": {"type": "object", "minProperties": 22, "additionalProperties": {"const": true}},
+    "provenance": {"type": "object", "additionalProperties": false, "required": ["repository_base_commit", "inputs", "exact_arithmetic", "analytic_arithmetic", "assumptions"], "properties": {"repository_base_commit": {"const": "7ddd6b6acdaaae9723a770ff983033c902d61260"}, "inputs": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/input"}}, "exact_arithmetic": {"$ref": "#/$defs/text"}, "analytic_arithmetic": {"$ref": "#/$defs/text"}, "assumptions": {"type": "array", "minItems": 4, "items": {"$ref": "#/$defs/text"}}}},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-euclidean-action-exponential-current-spike-gate-v1.schema.json"},
+    "report": {"const": "reverse_physics/reports/bt-euclidean-action-exponential-current-spike-gate.md"},
+    "independent_verifier": {"const": "reverse_physics/verify_bt_euclidean_action_exponential_current_spike_gate.py"},
+    "verification_commands": {"type": "array", "minItems": 3, "items": {"$ref": "#/$defs/text"}}
+  }
+}

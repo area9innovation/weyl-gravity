@@ -1,0 +1,210 @@
+{
+  "actual_gibbs_exponential_moment": {
+    "affine_shift": {
+      "denominator": 5,
+      "numerator": 244
+    },
+    "bound": "E_mu_lambda[exp(theta A)]<=exp[(244/5)theta N]*(1-theta lambda^2)^(-(N-1)/2).",
+    "measure": "dmu_lambda=Z(lambda)^-1 exp[-A/lambda^2]dpsi on the mean-zero carrier",
+    "partition_change": "Set lambda'=lambda/sqrt(1-theta lambda^2), t=lambda'/lambda, and change variables psi=t phi.",
+    "scope": "every 0<=theta<lambda^-2",
+    "status": "ACTUAL_NORMALIZED_GIBBS_MGF_BOUND"
+  },
+  "answer": "Yes. Integrating the affine virial inequality D>=2A-(488/5)N along outward radial dilations gives A(t psi)>=t^2 A(psi)-(244/5)N(t^2-1). A change of variables between couplings then proves E_lambda exp(theta A)<=exp[(244/5)theta N]*(1-theta lambda^2)^(-(N-1)/2) for 0<=theta<lambda^-2. At lambda=2/5, theta=25/8 and log 2<7/10 imply P(A>=50N)<=exp[-17N/5]. The exact pointwise current inequality |J_xy|<=|r_x|(|r_x|+8)+|r_y|(|r_y|+8) then gives P(max_edge |J_edge|>=360N)<=exp[-17N/5]. On the complementary event, sum_edges |J_edge|<1440N and at most 1440N/h edges can exceed any threshold h. A compact rowwise-zero four-site motif nevertheless carries nonzero current, so the unresolved branch is coherent moderate local current, not only giant slabs. These full-Gibbs bounds are not yet the background-marginal susceptibility or H^-1 theorem.",
+  "certificate": "REVERSE_PHYSICS_BT_EUCLIDEAN_ACTION_EXPONENTIAL_CURRENT_SPIKE_GATE_V1",
+  "checks": {
+    "action_below_50N_bounds_every_residual_by_10_sqrt_N": true,
+    "actual_gibbs_bulk_action_tail_is_established": true,
+    "actual_gibbs_exponential_action_moment_is_established": true,
+    "actual_interacting_H_minus_one_remains_open": true,
+    "affine_virial_defect_is_488_over_5": true,
+    "background_marginal_transfer_remains_open": true,
+    "bulk_action_tail_rate_is_seventeen_fifths": true,
+    "compact_motif_action_is_2085_over_16": true,
+    "compact_motif_current_is_339_over_16": true,
+    "compact_motif_is_rowwise_zero": true,
+    "compact_motif_support_is_volume_stable": true,
+    "coupling_is_two_fifths": true,
+    "current_l1_coefficient_is_1440": true,
+    "current_threshold_coefficient_is_360": true,
+    "cutoff_exceeds_shifted_action_by_six_fifths": true,
+    "degree_is_eight": true,
+    "moderate_current_coherence_remains_open": true,
+    "no_continuum_born_krein_or_lorentzian_promotion": true,
+    "rational_log_two_upper_is_seven_tenths": true,
+    "shifted_action_is_244_over_5": true,
+    "superextensive_single_current_spike_tail_is_established": true,
+    "theta_is_half_the_mgf_radius": true
+  },
+  "compact_slice_current_motif": {
+    "action": {
+      "denominator": 16,
+      "numerator": 2085
+    },
+    "exponent_support": [
+      {
+        "exponent": -1,
+        "site": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "exponent": 1,
+        "site": [
+          0,
+          1,
+          0,
+          0
+        ]
+      },
+      {
+        "exponent": 1,
+        "site": [
+          1,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "exponent": -1,
+        "site": [
+          1,
+          2,
+          0,
+          0
+        ]
+      }
+    ],
+    "interpretation": "The exact background slice contains compact finite-action carriers of canonical current. Therefore a morphology theorem cannot identify all current with macroscopic slabs; it must control coherent populations of bounded local motifs.",
+    "nonzero_current_count": 46,
+    "nonzero_residual_count": 29,
+    "positive_field": "Omega_x=2^n_x and Omega=1 off the four displayed sites",
+    "scope": "every L^4 torus with L>=5",
+    "slice_proof": "Each active time row has exponent sum zero, so the motif has zero mean and zero projection onto both phases of every nonzero axial time momentum.",
+    "status": "EXACT_COMPACT_E_P_PERP_CURRENT_MOTIF",
+    "total_time_current": {
+      "denominator": 16,
+      "numerator": 339
+    }
+  },
+  "created": "2026-08-15",
+  "current_spike_morphology": {
+    "current": "J_xy=r_x exp(psi_y-psi_x)-r_y exp(psi_x-psi_y)",
+    "current_l1_bound": "sum_undirected_edges |J_edge|<=16A+64sqrt(2NA), hence it is <1440N when A<50N.",
+    "edge_ratio_bound": "exp(psi_y-psi_x)<=r_x+8<=|r_x|+8 and the reverse ratio is <=|r_y|+8.",
+    "good_action_current_bound": "A<50N implies max_edge |J_edge|<200N+160sqrt(N)<=360N.",
+    "good_action_residual_bound": "A<50N implies max_x |r_x|<10 sqrt(N).",
+    "pointwise_bound": "|J_xy|<=|r_x|(|r_x|+8)+|r_y|(|r_y|+8).",
+    "status": "BULK_ACTION_AND_SUPEREXTENSIVE_SPIKE_BRANCHES_CONTROLLED",
+    "superextensive_spike_probability": "mu_(2/5)(max_edge |J_edge|>=360N)<=exp[-(17/5)N].",
+    "threshold_count_bound": "On A<50N, #{edges: |J_edge|>=h}<1440N/h for every h>0."
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "does_not_establish": [
+    "an exponential tail for the zero-fiber action under the integrated background marginal",
+    "decorrelation or cancellation among the remaining moderate local currents",
+    "the current-susceptibility, annealed score, or interacting H^-1 estimate",
+    "tightness or identification of a continuum Euclidean measure",
+    "a Born rule, Krein reconstruction, or LORENTZIAN-CAUSAL physics"
+  ],
+  "independent_verifier": "reverse_physics/verify_bt_euclidean_action_exponential_current_spike_gate.py",
+  "lambda_point_four_bulk_tail": {
+    "action_density_cutoff": {
+      "denominator": 1,
+      "numerator": 50
+    },
+    "chernoff_calculation": "theta*(50-244/5)-(1/2)*(7/10)=17/5",
+    "lambda": {
+      "denominator": 5,
+      "numerator": 2
+    },
+    "log_two_upper_bound": {
+      "denominator": 10,
+      "numerator": 7
+    },
+    "probability_bound": "mu_(2/5)(A>=50N)<=exp[-(17/5)N].",
+    "status": "EXPONENTIAL_IN_VOLUME_BULK_ACTION_TAIL",
+    "tail_rate": {
+      "denominator": 5,
+      "numerator": 17
+    },
+    "theta": {
+      "denominator": 8,
+      "numerator": 25
+    }
+  },
+  "lifecycle_state": "ACTUAL_GIBBS_ACTION_EXPONENTIAL_TAIL_PROVED_MODERATE_CURRENT_COHERENCE_GATE_OPEN",
+  "method_disposition": {
+    "actual_action_exponential_moment": "PROVED",
+    "actual_bulk_action_density_tail": "PROVED_EXPONENTIALLY_IN_VOLUME",
+    "actual_interacting_H_minus_one_second_moment": "OPEN",
+    "actual_uniform_action_first_moment": "PROVED_BY_PREDECESSOR",
+    "all_current_carried_by_macroscopic_slabs": "OBSTRUCTED_BY_COMPACT_SLICE_MOTIF",
+    "background_marginal_zero_fiber_action_tail": "OPEN",
+    "born_rule": "NOT_ESTABLISHED",
+    "continuum_limit": "NOT_ESTABLISHED",
+    "deterministic_high_current_edge_count_on_good_action": "PROVED",
+    "krein_reconstruction": "NOT_ASSESSED",
+    "lorentzian_transfer": "NOT_ESTABLISHED",
+    "moderate_current_phase_coherence": "OPEN",
+    "superextensive_single_current_spike_tail": "PROVED_EXPONENTIALLY_IN_VOLUME",
+    "translation_invariant_current_susceptibility_bound": "OPEN"
+  },
+  "missing_object_ledger": [
+    "a transfer of suitable local exponential moments to the exact full-phase background marginal",
+    "an observable-weighted block decomposition for bounded and moderate canonical currents",
+    "a compatibility/decorrelation estimate for separated compact current motifs",
+    "the resulting lowest-mode current susceptibility or a rigorously extensive lower susceptibility",
+    "the dyadic shell theorem for the actual interacting H^-1 moment or divergence"
+  ],
+  "next_gate": "Condition on the exponentially likely event A<50N, dyadically decompose the at-most-linear current mass into bounded local motifs, and exploit translation/reflection symmetry plus finite interaction range to decide whether their lowest-momentum phases decorrelate or retain an extensive zero-momentum susceptibility. The compact rowwise-zero motif is the minimal adversarial block. A proof must be under the exact background marginal or transferred back to the actual mode moment before any H^-1 conclusion.",
+  "provenance": {
+    "analytic_arithmetic": "A first-order differential inequality integrates the affine virial bound along radial dilations. A coupling change of variables yields the normalized MGF. Positivity of every directed edge ratio gives the current-spike inequalities.",
+    "assumptions": [
+      "The finite-volume BT measure is normalizable and radial boundary terms/coercivity are those certified by the affine-virial input.",
+      "N denotes the full number of lattice sites and the logarithmic carrier dimension is N-1.",
+      "The current and residual conventions are those of the weighted-current input.",
+      "Only LOCAL-ALGEBRAIC and EUCLIDEAN-SPECTRAL conclusions are drawn."
+    ],
+    "exact_arithmetic": "Fraction arithmetic verifies every virial/MGF/Chernoff constant, current threshold, and the compact dyadic motif on two torus sizes. The motif enumeration uses all lattice residuals and forward time currents.",
+    "inputs": [
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_AFFINE_VIRIAL_ACTION_DENSITY_V1.json",
+        "sha256": "5ca8a2a7bc0d48300b0af031990e3c9c177fdec0d35f763666d2e397b495e1e0"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_FULL_PHASE_WEIGHTED_CURRENT_GATE_V2.json",
+        "sha256": "b4888413276ea6572cfc8cbf6456c3927cada9205761cf84629dc46e958d828a"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_CORRECTOR_SLAB_ALL_AMPLITUDE_SUPPRESSION_V1.json",
+        "sha256": "40578e5585652c853d366996ee868614efa553e63f11ab6d7ff6e0fd04eb477e"
+      }
+    ],
+    "repository_base_commit": "7ddd6b6acdaaae9723a770ff983033c902d61260"
+  },
+  "question": "Can the affine virial theorem control more than the mean action and rigorously remove the bulk-action and superextensive single-spike branches from the current-susceptibility morphology problem?",
+  "radial_scaling_theorem": {
+    "carrier": "the (N-1)-dimensional mean-zero logarithmic field hyperplane on every finite connected eight-regular periodic lattice",
+    "differential_identity": "For f(t)=A(t psi), d[f(t)/t^2]/dt>=-(488/5)N/t^3.",
+    "imported_virial": "D(psi)=psi dot grad A(psi)>=2A(psi)-(488/5)N",
+    "outward_bound": "A(t psi)>=t^2 A(psi)-(244/5)N(t^2-1) for every t>=1.",
+    "status": "PROVED_FROM_AFFINE_VIRIAL"
+  },
+  "report": "reverse_physics/reports/bt-euclidean-action-exponential-current-spike-gate.md",
+  "result_kind": "exact exponential action-density moment and current-spike morphology bounds under the positive BT finite-volume Gibbs measure",
+  "schema": "reverse_physics/schema/reverse-physics-bt-euclidean-action-exponential-current-spike-gate-v1.schema.json",
+  "schema_version": "reverse-physics-bt-euclidean-action-exponential-current-spike-gate-v1",
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_euclidean_action_exponential_current_spike_gate.py --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_euclidean_action_exponential_current_spike_gate.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_euclidean_action_exponential_current_spike_gate"
+  ]
+}
