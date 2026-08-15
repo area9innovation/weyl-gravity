@@ -1,0 +1,460 @@
+{
+  "answer": "No. On the 16^4 periodic lattice at lambda=2/5, a rational two-well ground field has A/N=5121/160<50. Along a mean-zero hyperplane-splitting potential direction, exact longitudinal curvature plus a rigorous upper bound for all 4095 nonzero transverse blocks is strictly negative. Thus that particular good-action convexity plus tail strategy is obstructed on the actual lattice family. This is a method obstruction, not a divergence theorem for the interacting moment.",
+  "certificate": "REVERSE_PHYSICS_BT_EUCLIDEAN_LOW_ACTION_FLAT_CONVEXITY_OBSTRUCTION_V1",
+  "checks": {
+    "details": {
+      "action_density_is_5121_over_160": true,
+      "action_density_is_below_certified_tail_cutoff": true,
+      "actual_interacting_moment_remains_open": true,
+      "curvature_upper_bound_is_exact": true,
+      "direction_is_mean_zero": true,
+      "fixture_has_sixteen_longitudinal_sites": true,
+      "full_flat_effective_curvature_is_strictly_negative": true,
+      "good_action_global_convexity_route_is_obstructed": true,
+      "ground_vector_is_strictly_positive": true,
+      "imported_tail_parameters_are_exact": true,
+      "kinetic_kills_positive_ground_vector": true,
+      "lowest_eigenvalue_is_concave_in_direction": true,
+      "no_born_krein_or_lorentzian_promotion": true,
+      "rational_transverse_trace_factor_is_320_over_3": true,
+      "residual_mean_is_36_over_5": true,
+      "transverse_mode_count_is_4095": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 16,
+    "total": 16
+  },
+  "created": "2026-08-15",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "does_not_establish": [
+    "nonconvexity throughout the full low-action region or at every volume",
+    "failure of every localized, determinant-resolvent, or Stein estimate",
+    "a lower bound or divergence sequence for the actual Gibbs H^-1 moment",
+    "the normalized lowest-mode estimate, tightness, or a continuum measure",
+    "Born probabilities, a Krein reconstruction, or Lorentzian dynamics"
+  ],
+  "exact_longitudinal_fixture": {
+    "centered_potential": [
+      {
+        "denominator": 1,
+        "numerator": -9
+      },
+      {
+        "denominator": 10,
+        "numerator": 9
+      },
+      {
+        "denominator": 10,
+        "numerator": 9
+      },
+      {
+        "denominator": 10,
+        "numerator": 9
+      },
+      {
+        "denominator": 10,
+        "numerator": 33
+      },
+      {
+        "denominator": 5,
+        "numerator": 6
+      },
+      {
+        "denominator": 10,
+        "numerator": 9
+      },
+      {
+        "denominator": 10,
+        "numerator": 9
+      },
+      {
+        "denominator": 1,
+        "numerator": -9
+      },
+      {
+        "denominator": 10,
+        "numerator": 9
+      },
+      {
+        "denominator": 10,
+        "numerator": 9
+      },
+      {
+        "denominator": 5,
+        "numerator": 6
+      },
+      {
+        "denominator": 10,
+        "numerator": 33
+      },
+      {
+        "denominator": 10,
+        "numerator": 9
+      },
+      {
+        "denominator": 10,
+        "numerator": 9
+      },
+      {
+        "denominator": 10,
+        "numerator": 9
+      }
+    ],
+    "coupling": {
+      "denominator": 5,
+      "numerator": 2
+    },
+    "direction": [
+      {
+        "denominator": 1,
+        "numerator": 1
+      },
+      {
+        "denominator": 1,
+        "numerator": 0
+      },
+      {
+        "denominator": 1,
+        "numerator": 0
+      },
+      {
+        "denominator": 1,
+        "numerator": 0
+      },
+      {
+        "denominator": 1,
+        "numerator": 0
+      },
+      {
+        "denominator": 1,
+        "numerator": 0
+      },
+      {
+        "denominator": 1,
+        "numerator": 0
+      },
+      {
+        "denominator": 1,
+        "numerator": 0
+      },
+      {
+        "denominator": 1,
+        "numerator": -1
+      },
+      {
+        "denominator": 1,
+        "numerator": 0
+      },
+      {
+        "denominator": 1,
+        "numerator": 0
+      },
+      {
+        "denominator": 1,
+        "numerator": 0
+      },
+      {
+        "denominator": 1,
+        "numerator": 0
+      },
+      {
+        "denominator": 1,
+        "numerator": 0
+      },
+      {
+        "denominator": 1,
+        "numerator": 0
+      },
+      {
+        "denominator": 1,
+        "numerator": 0
+      }
+    ],
+    "four_dimensional_gaussian_second_derivative": {
+      "denominator": 10189088606001902723181089,
+      "numerator": 19843106611118848621586489506871756800
+    },
+    "full_four_dimensional_curvature_upper_bound": {
+      "denominator": 59081288175090511897125080246062762727536819609,
+      "numerator": -172511934113812002844255298492122939661512764763404478974825
+    },
+    "full_four_dimensional_curvature_upper_bound_decimal": -2919908137455.6997,
+    "graph": "cycle C16",
+    "ground_eigenvalue": {
+      "denominator": 5,
+      "numerator": -36
+    },
+    "ground_norm_squared": {
+      "denominator": 12500000,
+      "numerator": 216792929
+    },
+    "log_pseudodeterminant_second_derivative": {
+      "denominator": 59081288175090511897125080246062762727536819609,
+      "numerator": -304613668824740795726090737612548579985967713389969642955625
+    },
+    "log_pseudodeterminant_second_derivative_terms": [
+      {
+        "denominator": 11423921335040280026367467563685863462277,
+        "numerator": 11706827733684913692313245731021610788364661786383850
+      },
+      {
+        "denominator": 59081288175090511897125080246062762727536819609,
+        "numerator": -425702415429428238167025636051375544892105301165146993526075
+      },
+      {
+        "denominator": 2208922362735679470931504481719681,
+        "numerator": 2263622972165145260555834290226346070625000000
+      }
+    ],
+    "longitudinal_gaussian_second_derivative": {
+      "denominator": 20378177212003805446362178,
+      "numerator": 9689016899960375303509028079527225
+    },
+    "lowest_eigenvalue_first_derivative": {
+      "denominator": 216792929,
+      "numerator": 187500000
+    },
+    "lowest_eigenvalue_second_derivative": {
+      "denominator": 10189088606001902723181089,
+      "numerator": -6728482722852693140424625000000
+    },
+    "mean_residual": {
+      "denominator": 5,
+      "numerator": 36
+    },
+    "omega": [
+      {
+        "denominator": 1,
+        "numerator": 4
+      },
+      {
+        "denominator": 5,
+        "numerator": 2
+      },
+      {
+        "denominator": 25,
+        "numerator": 1
+      },
+      {
+        "denominator": 250,
+        "numerator": 1
+      },
+      {
+        "denominator": 2500,
+        "numerator": 1
+      },
+      {
+        "denominator": 1000,
+        "numerator": 1
+      },
+      {
+        "denominator": 100,
+        "numerator": 1
+      },
+      {
+        "denominator": 10,
+        "numerator": 1
+      },
+      {
+        "denominator": 1,
+        "numerator": 1
+      },
+      {
+        "denominator": 10,
+        "numerator": 1
+      },
+      {
+        "denominator": 100,
+        "numerator": 1
+      },
+      {
+        "denominator": 1000,
+        "numerator": 1
+      },
+      {
+        "denominator": 2500,
+        "numerator": 1
+      },
+      {
+        "denominator": 250,
+        "numerator": 1
+      },
+      {
+        "denominator": 25,
+        "numerator": 1
+      },
+      {
+        "denominator": 5,
+        "numerator": 2
+      }
+    ],
+    "residual": [
+      {
+        "denominator": 5,
+        "numerator": -9
+      },
+      {
+        "denominator": 10,
+        "numerator": 81
+      },
+      {
+        "denominator": 10,
+        "numerator": 81
+      },
+      {
+        "denominator": 10,
+        "numerator": 81
+      },
+      {
+        "denominator": 2,
+        "numerator": 21
+      },
+      {
+        "denominator": 5,
+        "numerator": 42
+      },
+      {
+        "denominator": 10,
+        "numerator": 81
+      },
+      {
+        "denominator": 10,
+        "numerator": 81
+      },
+      {
+        "denominator": 5,
+        "numerator": -9
+      },
+      {
+        "denominator": 10,
+        "numerator": 81
+      },
+      {
+        "denominator": 10,
+        "numerator": 81
+      },
+      {
+        "denominator": 5,
+        "numerator": 42
+      },
+      {
+        "denominator": 2,
+        "numerator": 21
+      },
+      {
+        "denominator": 10,
+        "numerator": 81
+      },
+      {
+        "denominator": 10,
+        "numerator": 81
+      },
+      {
+        "denominator": 10,
+        "numerator": 81
+      }
+    ],
+    "status": "EXACT_RATIONAL_NEGATIVE_UPPER_BOUND"
+  },
+  "four_torus_construction": {
+    "centered_potential": "u=r-(36/5)*1",
+    "direction": "h_x=1 on x1=0, h_x=-1 on x1=8, and h_x=0 otherwise",
+    "ground_eigenvalue": "ell_0=-36/5",
+    "ground_field": "Omega(x)=omega_(x1), with the exact rational longitudinal vector recorded in the fixture",
+    "lattice": "Lambda=(Z/16Z)^4 with N=16^4",
+    "positivity": "the ground-state transform makes K=-Delta+diag(r) positive semidefinite with the unique positive null vector Omega",
+    "residual": "r_x=(Omega_(x-e1)+Omega_(x+e1))/Omega_x-2; transverse constant directions contribute zero",
+    "status": "EXACT_RATIONAL_CONSTRUCTION"
+  },
+  "independent_verifier": "reverse_physics/verify_bt_euclidean_low_action_flat_convexity_obstruction.py",
+  "lifecycle_state": "LOW_ACTION_FLAT_CONVEXITY_ROUTE_OBSTRUCTED",
+  "low_action_statement": {
+    "action": "A=(1/2)*sum_x r_x^2",
+    "action_density": {
+      "denominator": 160,
+      "numerator": 5121
+    },
+    "certified_tail_cutoff_density": {
+      "denominator": 1,
+      "numerator": 50
+    },
+    "coupling": {
+      "denominator": 5,
+      "numerator": 2
+    },
+    "imported_tail_statement": "at lambda=2/5, nu(A>=50N)<=exp(-17N/5)",
+    "status": "INSIDE_CERTIFIED_LOW_ACTION_REGION",
+    "strictly_below_cutoff": true,
+    "tail_rate": {
+      "denominator": 5,
+      "numerator": 17
+    }
+  },
+  "method_disposition": {
+    "actual_action_exponential_tail": "IMPORTED_PROVED",
+    "actual_interacting_h_minus_one_second_moment": "OPEN",
+    "all_localized_nonconvex_estimates": "NOT_OBSTRUCTED",
+    "born_rule": "NOT_ESTABLISHED",
+    "continuum_limit": "NOT_ESTABLISHED",
+    "controlled_bad_volume_sequence_for_actual_moment": "OPEN",
+    "convex_good_region_plus_action_tail_strategy": "OBSTRUCTED_AS_FORMULATED",
+    "flat_potential_determinant_pushforward": "IMPORTED_PROVED",
+    "global_convexity_on_A_below_50N": "OBSTRUCTED_BY_EXACT_16_TO_THE_FOUR_WITNESS",
+    "interacting_tightness": "NOT_ESTABLISHED",
+    "krein_reconstruction": "NOT_ASSESSED",
+    "lorentzian_transfer": "NOT_ESTABLISHED",
+    "noninduced_resolvent_stein_or_localization_estimate": "OPEN",
+    "normalized_lowest_mode_second_moment": "OPEN",
+    "ordinary_os_at_lambda_0p4": "OBSTRUCTED_BY_PREDECESSOR"
+  },
+  "missing_object_ledger": [
+    "a Gibbs-weighted nonconvex localization or resolvent estimate",
+    "or a controlled volume sequence for the actual interacting moment",
+    "the dyadic Fourier-shell sum after a positive one-mode estimate"
+  ],
+  "next_gate": "Use a genuinely noninduced resolvent-adapted Stein/localization field, with the low-action double-well region treated nonconvexly, or construct a controlled bad-volume sequence for the actual interacting H^-1 moment.",
+  "provenance": {
+    "arithmetic": "exact fractions for the C16 ground-state-resolvent jet and curvature; exact rational inequalities for the transverse spectral bound; no floating point enters any claim",
+    "inputs": [
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_FLAT_POTENTIAL_DETERMINANT_PUSHFORWARD_V1.json",
+        "sha256": "99970f00030bbfcd9223bfa5580efb6dda414ac05f03aeffb1bdf6127de9f831"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_ACTION_EXPONENTIAL_CURRENT_SPIKE_GATE_V1.json",
+        "sha256": "443dd1bec36fce25054e22ac4d0be84a422ffc8bc12f86ffd8ec935583105e2f"
+      }
+    ],
+    "repository_base_commit": "da2521d7"
+  },
+  "question": "Can the exact action tail at A>=50N be combined with global convexity of the flat effective potential on A<50N?",
+  "report": "reverse_physics/reports/bt-euclidean-low-action-flat-convexity-obstruction.md",
+  "result_kind": "exact rational finite-volume obstruction to convexity of the flat-potential BT effective potential inside the certified low-action region on the physical four-dimensional torus",
+  "schema": "reverse_physics/schema/reverse-physics-bt-euclidean-low-action-flat-convexity-obstruction-v1.schema.json",
+  "schema_version": "reverse-physics-bt-euclidean-low-action-flat-convexity-obstruction-v1",
+  "transverse_block_bound": {
+    "decomposition": "K_4(t)=K_1(t) tensor I + I tensor Delta_perp; the zero transverse block contributes log det_prime K_1(t)",
+    "modewise_upper_bound": "C_w<=(-ell_0'')*16/w",
+    "nonzero_mode_formula": "C_w=-ell_0''*tr((K_1+wI)^(-1))-tr(((K_1+wI)^(-1)K_1')^2)",
+    "nonzero_transverse_mode_count": 4095,
+    "spectral_gap_bound": "w>=2-2*cos(pi/8)>3/20; the rational proof uses cos(pi/8)<37/40, reduced to sqrt(2)<569/400",
+    "status": "PROVED_UPPER_BOUND",
+    "summed_curvature_upper_bound": {
+      "denominator": 10189088606001902723181089,
+      "numerator": 2939001253342056363737476200000000000
+    },
+    "summed_trace_factor": {
+      "denominator": 1,
+      "numerator": 436800
+    }
+  },
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_euclidean_low_action_flat_convexity_obstruction.py --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_euclidean_low_action_flat_convexity_obstruction.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_euclidean_low_action_flat_convexity_obstruction"
+  ]
+}
