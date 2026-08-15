@@ -1,0 +1,290 @@
+{
+  "answer": "The complete-mode proposal is an exact symmetric Metropolis move on the mean-zero carrier: it shifts one full lowest cosine or sine phase and uses the full BT action difference, so detailed balance holds at every finite volume. The source Hessian D_J^2 log Z[J] at J=0 is the actual field covariance. At L=8 the local-only and mode-augmented chains agree on bulk action but differ on M2 by more than six combined block errors. The local-only lowest-mode diagnostic is therefore rejected as an equilibration guide. The augmented L=6 and L=8 observations are each consistent within two block errors with omega^2 M2=1, motivating the bilaplacian-scale Witten/center target, but one seed and one update architecture do not establish equilibration or a scaling theorem.",
+  "certificate": "REVERSE_PHYSICS_BT_EUCLIDEAN_SOURCE_RESPONSE_MIXING_GATE_V1",
+  "checks": {
+    "details": {
+      "augmented_l6_bilaplacian_ratio_is_within_two_block_errors_of_one": true,
+      "augmented_l8_bilaplacian_ratio_is_within_two_block_errors_of_one": true,
+      "every_action_recompute_residual_is_small": true,
+      "fixture_action_difference_is_exact": true,
+      "fixture_geometric_mean_is_preserved": true,
+      "fixture_proposed_residual_is_exact": true,
+      "fixture_residual_is_exact": true,
+      "interacting_h_minus_one_remains_open": true,
+      "l8_bulk_action_agrees_within_three_block_errors": true,
+      "l8_mode_observable_disagrees_beyond_six_block_errors": true,
+      "metropolis_kernel_obeys_detailed_balance": true,
+      "no_born_krein_or_lorentzian_promotion": true,
+      "numerical_scaling_is_not_promoted_to_theorem": true,
+      "observation_has_declared_three_runs": true,
+      "source_hessian_is_covariance": true,
+      "whole_mode_proposal_density_is_symmetric": true,
+      "whole_mode_proposal_preserves_mean_zero_carrier": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 17,
+    "total": 17
+  },
+  "created": "2026-08-15",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "equilibration of the mode-augmented L=8 chain or a scaling law",
+    "a volume-uniform lowest-mode or interacting H^-1 estimate or divergence",
+    "tightness or a continuum Euclidean measure",
+    "a Born rule, Krein reconstruction, or anything LORENTZIAN-CAUSAL"
+  ],
+  "exact_cycle_four_tensor_fixture": {
+    "action_per_transverse_line": {
+      "denominator": 4,
+      "numerator": 11
+    },
+    "axial_omega": [
+      {
+        "denominator": 1,
+        "numerator": 1
+      },
+      {
+        "denominator": 1,
+        "numerator": 2
+      },
+      {
+        "denominator": 1,
+        "numerator": 1
+      },
+      {
+        "denominator": 2,
+        "numerator": 1
+      }
+    ],
+    "full_4_to_the_4_delta_action": {
+      "denominator": 1,
+      "numerator": 1372
+    },
+    "phase_multiplier": [
+      {
+        "denominator": 1,
+        "numerator": 1
+      },
+      {
+        "denominator": 1,
+        "numerator": 2
+      },
+      {
+        "denominator": 1,
+        "numerator": 1
+      },
+      {
+        "denominator": 2,
+        "numerator": 1
+      }
+    ],
+    "proposed_action_per_transverse_line": {
+      "denominator": 16,
+      "numerator": 387
+    },
+    "proposed_omega": [
+      {
+        "denominator": 1,
+        "numerator": 1
+      },
+      {
+        "denominator": 1,
+        "numerator": 4
+      },
+      {
+        "denominator": 1,
+        "numerator": 1
+      },
+      {
+        "denominator": 4,
+        "numerator": 1
+      }
+    ],
+    "proposed_residual": [
+      {
+        "denominator": 4,
+        "numerator": 9
+      },
+      {
+        "denominator": 2,
+        "numerator": -3
+      },
+      {
+        "denominator": 4,
+        "numerator": 9
+      },
+      {
+        "denominator": 1,
+        "numerator": 6
+      }
+    ],
+    "residual": [
+      {
+        "denominator": 2,
+        "numerator": 1
+      },
+      {
+        "denominator": 1,
+        "numerator": -1
+      },
+      {
+        "denominator": 2,
+        "numerator": 1
+      },
+      {
+        "denominator": 1,
+        "numerator": 2
+      }
+    ]
+  },
+  "lifecycle_state": "SOURCE_RESPONSE_KERNEL_PROVED_LOCAL_ONLY_L8_DIAGNOSTIC_REJECTED",
+  "method_disposition": {
+    "actual_interacting_h_minus_one_second_moment": "OPEN",
+    "bilaplacian_scale_witten_or_center_coercivity": "OPEN",
+    "local_only_l8_source_scaling": "REJECTED_BY_CROSS_KERNEL_DISAGREEMENT",
+    "mode_augmented_l6_l8_bilaplacian_scaling": "OBSERVED_SUPPORTING_ONLY",
+    "source_hessian_as_actual_covariance": "PROVED_FINITE_VOLUME",
+    "twist_response_to_scalar_source": "OBSTRUCTED_BY_PREDECESSOR",
+    "whole_mode_metropolis_kernel": "PROVED_FINITE_VOLUME"
+  },
+  "next_gate": "Use at least four independent seeds and a genuinely global second sampler or autocorrelation-certified mode/background update before extending the source diagnostic. Analytically, retain the bilaplacian omega^2 target and prove conditional marginal-score or full-Witten coercivity; a valid negative result still requires an actual normalized low-Rayleigh or diverging-moment volume sequence.",
+  "numerical_preflight": {
+    "arithmetic": "IEEE-754 binary64; fixed seeds; ten stored blocks per run",
+    "disposition": "LOCAL_ONLY_L8_SOURCE_OBSERVABLE_REJECTED_AS_MIXING_GUIDE; MODE_AUGMENTED_SCALING_SUPPORTING_ONLY",
+    "evidence_type": "NUMERICAL_FINITE_VOLUME_OBSERVED",
+    "l8_action_difference_in_combined_block_standard_errors": 1.994174309832824,
+    "l8_mode2_difference": 1.8842969923524602,
+    "l8_mode2_difference_in_combined_block_standard_errors": 6.374675283955113,
+    "rows": [
+      {
+        "action_density": 0.49387292110486836,
+        "action_density_block_standard_error": 0.002566458693863885,
+        "algorithm": "local random-scan Metropolis plus symmetric whole-lowest-mode Metropolis",
+        "bilaplacian_ratio": 0.8577855989874544,
+        "bilaplacian_ratio_block_standard_error": 0.07736372308654395,
+        "final_action_recompute_residual": 0.0,
+        "length": 6,
+        "local_acceptance_rate": 0.7072052469135802,
+        "mode2": 0.8577855989874548,
+        "mode2_block_standard_error": 0.07736372308654398,
+        "omega": 0.9999999999999998,
+        "samples": 100,
+        "tension_ratio": 0.8577855989874545,
+        "whole_mode_acceptance_rate": 0.748,
+        "whole_mode_proposals_per_sweep": 1
+      },
+      {
+        "action_density": 0.49365001372153616,
+        "action_density_block_standard_error": 0.001447138390140749,
+        "algorithm": "local random-scan Metropolis",
+        "bilaplacian_ratio": 0.4002084423865785,
+        "bilaplacian_ratio_block_standard_error": 0.03206122708228427,
+        "final_action_recompute_residual": 1.1368683772161603e-11,
+        "length": 8,
+        "local_acceptance_rate": 0.70744873046875,
+        "mode2": 1.1662928705791784,
+        "mode2_block_standard_error": 0.09343326278951639,
+        "omega": 0.585786437626905,
+        "samples": 100,
+        "tension_ratio": 0.6831985458862339,
+        "whole_mode_acceptance_rate": null,
+        "whole_mode_proposals_per_sweep": 0
+      },
+      {
+        "action_density": 0.497373432839875,
+        "action_density_block_standard_error": 0.001179844545919655,
+        "algorithm": "local random-scan Metropolis plus symmetric whole-lowest-mode Metropolis",
+        "bilaplacian_ratio": 1.0467969480066142,
+        "bilaplacian_ratio_block_standard_error": 0.09623038932100908,
+        "final_action_recompute_residual": 0.0,
+        "length": 8,
+        "local_acceptance_rate": 0.7071611328125,
+        "mode2": 3.0505898629316386,
+        "mode2_block_standard_error": 0.2804359056717277,
+        "omega": 0.585786437626905,
+        "samples": 100,
+        "tension_ratio": 1.7869941684674728,
+        "whole_mode_acceptance_rate": 0.792,
+        "whole_mode_proposals_per_sweep": 1
+      }
+    ]
+  },
+  "provenance": {
+    "exact_arithmetic": "rational C4 tensor fixture and analytic finite-dimensional calculus",
+    "generated_inputs": [
+      {
+        "path": "reverse_physics/data/bt_euclidean_source_response_observations_v1.json",
+        "sha256": "018d1db86b4c6b1a3415a1bb0fe2b68a57c186e8273611a9918a283972ed6763"
+      },
+      {
+        "path": "reverse_physics/bt_euclidean_source_response_experiment.py",
+        "sha256": "4f612b24c3d02f483e4eee3c4549379b91d7d0398bb4f1d2834bbf4355535090"
+      }
+    ],
+    "inputs": [
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_RIEMANNIAN_ELECTRICAL_WITTEN_BRIDGE_V1.json",
+        "sha256": "3345dcce66cd6fa51e541ceadd6927b1aca38747a6ccb678186034f3f8f47a28"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_CANONICAL_PHASE_SCORE_CONNECTION_V1.json",
+        "sha256": "90aeef314b3b4c61999c96fb6406f7424e39120aa1691b0df22164780e3288d8"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_INHOMOGENEOUS_TWIST_GAUGE_OBSTRUCTION_V1.json",
+        "sha256": "1c8824a5e7fc5fe6ba7fa2d308981e41386c0fbc28f411794d95acaea81a5a9b"
+      }
+    ],
+    "numerical_arithmetic": "binary64 deterministic Metropolis observations, supporting only",
+    "repository_base_commit": "a004672f18a9011ff65b7e79b498d4a3f7985bec"
+  },
+  "question": "Can the actual lowest-mode source susceptibility be diagnosed by the existing local chain, and does a complete-mode update preserve the BT law?",
+  "report": "reverse_physics/reports/bt-euclidean-source-response-mixing-gate.md",
+  "result_kind": "exact finite-volume source-response and reversible whole-mode kernel, with binary64 sampler-mixing preflight",
+  "schema": "reverse_physics/schema/reverse-physics-bt-euclidean-source-response-mixing-gate-v1.schema.json",
+  "schema_version": "reverse-physics-bt-euclidean-source-response-mixing-gate-v1",
+  "source_response_identity": {
+    "first_derivative": "D_J log Z[J][h]=E_J[<h,psi>]",
+    "partition_function": "Z[J]=Integral_H exp[-A(psi)/lambda^2+<J,psi>] dpsi",
+    "second_derivative": "D_J^2 log Z[J][h,k]=Cov_J(<h,psi>,<k,psi>)",
+    "status": "PROVED_FINITE_VOLUME"
+  },
+  "tier_receipt": {
+    "elapsed_seconds_and_peak_kib": {
+      "focused_tests": "PASS: 0.25 s, 31,504 KiB; 10 tests",
+      "independent_verifier": "PASS: 0.11 s, 29,628 KiB; 9/9 checks",
+      "producer_check": "PASS: 0.04 s, 21,096 KiB",
+      "sampler_smoke": "PASS: 0.13 s, 21,784 KiB"
+    },
+    "memory_policy": "all Python commands run under ulimit -v 500000",
+    "observation_production": "PASS: 31.54 s, 25,444 KiB peak RSS",
+    "repository_audits": {
+      "planning_import": "PASS: 1,683 nodes, 0 invalid items, 0 malformed events; 17.25 s, 279,400 KiB under GOMEMLIMIT=300MiB and GOGC=50",
+      "science_forge_shadow": "ADVISORY wrapper exit 0 in 4.85 s at 336,688 KiB; bridge audit FAIL because the external bp2transformer verifier lacks sympy; coverage DRIFT 1,836 certificates versus baseline 976; neither finding is a scientific pass"
+    },
+    "tier_0": "Python compile; JSON/schema parse; scoped git diff --check",
+    "tier_1": "producer drift check, non-importing verifier, focused mutation tests, and bounded sampler smoke",
+    "tier_2": "unchanged content-addressed Witten, canonical-score, and twist inputs are checked by hash",
+    "tier_3": "not run: no H^-1 theorem, reconstruction promotion, freeze, shared-core change, or release"
+  },
+  "verification_commands": [
+    "python3 reverse_physics/bt_euclidean_source_response_mixing_gate.py --check",
+    "python3 reverse_physics/verify_bt_euclidean_source_response_mixing_gate.py",
+    "python3 -m unittest -v reverse_physics.tests.test_bt_euclidean_source_response_mixing_gate",
+    "python3 reverse_physics/bt_euclidean_source_response_experiment.py --smoke"
+  ],
+  "verifier": "reverse_physics/verify_bt_euclidean_source_response_mixing_gate.py",
+  "whole_mode_kernel": {
+    "acceptance": "min(1,exp[-S(phi')+S(phi)])",
+    "action_evaluation": "full independent residual and action recomputation",
+    "carrier": "sum_x h_x=0, so the mean-zero field carrier is preserved",
+    "detailed_balance": "the proposal density is symmetric and Metropolis acceptance gives reversibility with respect to the finite positive BT Gibbs law",
+    "proposal": "choose one lowest cosine/sine phase h and delta uniformly from [-w,w], then propose phi'=phi+delta*h",
+    "status": "PROVED_FINITE_VOLUME"
+  }
+}

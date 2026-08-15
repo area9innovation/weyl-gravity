@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-source-response-mixing-gate-v1.schema.json",
+  "title": "BT source-response mixing gate certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "certificate", "schema_version", "created", "dependency_tags",
+    "lifecycle_state", "result_kind", "question", "answer",
+    "source_response_identity", "whole_mode_kernel",
+    "exact_cycle_four_tensor_fixture", "numerical_preflight",
+    "method_disposition", "next_gate", "does_not_establish",
+    "provenance", "verification_commands", "tier_receipt", "checks",
+    "schema", "report", "verifier"
+  ],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_EUCLIDEAN_SOURCE_RESPONSE_MIXING_GATE_V1"},
+    "schema_version": {"const": "reverse-physics-bt-euclidean-source-response-mixing-gate-v1"},
+    "created": {"const": "2026-08-15"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE"]},
+    "lifecycle_state": {"const": "SOURCE_RESPONSE_KERNEL_PROVED_LOCAL_ONLY_L8_DIAGNOSTIC_REJECTED"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "source_response_identity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["partition_function", "first_derivative", "second_derivative", "status"],
+      "properties": {
+        "partition_function": {"$ref": "#/$defs/text"},
+        "first_derivative": {"$ref": "#/$defs/text"},
+        "second_derivative": {"const": "D_J^2 log Z[J][h,k]=Cov_J(<h,psi>,<k,psi>)"},
+        "status": {"const": "PROVED_FINITE_VOLUME"}
+      }
+    },
+    "whole_mode_kernel": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["proposal", "carrier", "acceptance", "action_evaluation", "detailed_balance", "status"],
+      "properties": {
+        "proposal": {"$ref": "#/$defs/text"},
+        "carrier": {"$ref": "#/$defs/text"},
+        "acceptance": {"$ref": "#/$defs/text"},
+        "action_evaluation": {"const": "full independent residual and action recomputation"},
+        "detailed_balance": {"$ref": "#/$defs/text"},
+        "status": {"const": "PROVED_FINITE_VOLUME"}
+      }
+    },
+    "exact_cycle_four_tensor_fixture": {"type": "object"},
+    "numerical_preflight": {
+      "type": "object",
+      "required": ["evidence_type", "arithmetic", "rows", "l8_mode2_difference", "l8_mode2_difference_in_combined_block_standard_errors", "l8_action_difference_in_combined_block_standard_errors", "disposition"],
+      "properties": {
+        "evidence_type": {"const": "NUMERICAL_FINITE_VOLUME_OBSERVED"},
+        "arithmetic": {"$ref": "#/$defs/text"},
+        "rows": {"type": "array", "minItems": 3, "maxItems": 3},
+        "l8_mode2_difference": {"type": "number", "exclusiveMinimum": 0},
+        "l8_mode2_difference_in_combined_block_standard_errors": {"type": "number", "exclusiveMinimum": 6},
+        "l8_action_difference_in_combined_block_standard_errors": {"type": "number", "minimum": 0, "exclusiveMaximum": 3},
+        "disposition": {"const": "LOCAL_ONLY_L8_SOURCE_OBSERVABLE_REJECTED_AS_MIXING_GUIDE; MODE_AUGMENTED_SCALING_SUPPORTING_ONLY"}
+      },
+      "additionalProperties": false
+    },
+    "method_disposition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["twist_response_to_scalar_source", "source_hessian_as_actual_covariance", "whole_mode_metropolis_kernel", "local_only_l8_source_scaling", "mode_augmented_l6_l8_bilaplacian_scaling", "bilaplacian_scale_witten_or_center_coercivity", "actual_interacting_h_minus_one_second_moment"],
+      "properties": {
+        "twist_response_to_scalar_source": {"const": "OBSTRUCTED_BY_PREDECESSOR"},
+        "source_hessian_as_actual_covariance": {"const": "PROVED_FINITE_VOLUME"},
+        "whole_mode_metropolis_kernel": {"const": "PROVED_FINITE_VOLUME"},
+        "local_only_l8_source_scaling": {"const": "REJECTED_BY_CROSS_KERNEL_DISAGREEMENT"},
+        "mode_augmented_l6_l8_bilaplacian_scaling": {"const": "OBSERVED_SUPPORTING_ONLY"},
+        "bilaplacian_scale_witten_or_center_coercivity": {"const": "OPEN"},
+        "actual_interacting_h_minus_one_second_moment": {"const": "OPEN"}
+      }
+    },
+    "next_gate": {"$ref": "#/$defs/text"},
+    "does_not_establish": {"$ref": "#/$defs/textArray"},
+    "provenance": {"type": "object"},
+    "verification_commands": {"$ref": "#/$defs/textArray"},
+    "tier_receipt": {"type": "object"},
+    "checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"const": 17},
+        "total": {"const": 17},
+        "failures": {"type": "array", "maxItems": 0},
+        "details": {"type": "object", "minProperties": 17, "maxProperties": 17, "additionalProperties": {"const": true}}
+      }
+    },
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-euclidean-source-response-mixing-gate-v1.schema.json"},
+    "report": {"const": "reverse_physics/reports/bt-euclidean-source-response-mixing-gate.md"},
+    "verifier": {"const": "reverse_physics/verify_bt_euclidean_source_response_mixing_gate.py"}
+  },
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "textArray": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/text"}}
+  }
+}

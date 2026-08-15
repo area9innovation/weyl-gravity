@@ -1,0 +1,299 @@
+{
+  "arithmetic": "IEEE-754 binary64; Python random.Random deterministic seeds",
+  "dependency_tags": [
+    "EUCLIDEAN-SPECTRAL",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "an equilibrated L=8 source susceptibility or scaling law",
+    "a volume-uniform lowest-mode or interacting H^-1 estimate",
+    "a continuum measure, Born rule, Krein reconstruction, or LORENTZIAN-CAUSAL claim"
+  ],
+  "evidence_type": "NUMERICAL_FINITE_VOLUME_OBSERVED",
+  "per_configuration_fields": {
+    "mode2": "axis average of the complete lowest complex-mode modulus squared",
+    "mode2_square": "square of that axis-averaged mode2; not the axis average of individual fourth powers"
+  },
+  "runs": [
+    {
+      "algorithm": "local random-scan Metropolis plus symmetric whole-lowest-mode Metropolis",
+      "block_count": 10,
+      "blocks": [
+        {
+          "sample_count": 10,
+          "sum_action_density": 5.036308027736949,
+          "sum_mode2": 12.53696889644301,
+          "sum_mode2_square": 15.850021493019334
+        },
+        {
+          "sample_count": 10,
+          "sum_action_density": 4.9940101708142475,
+          "sum_mode2": 9.162529338130247,
+          "sum_mode2_square": 8.815993192180624
+        },
+        {
+          "sample_count": 10,
+          "sum_action_density": 4.975439479559537,
+          "sum_mode2": 8.668960953137153,
+          "sum_mode2_square": 7.743449657241207
+        },
+        {
+          "sample_count": 10,
+          "sum_action_density": 5.006912866460928,
+          "sum_mode2": 9.028644950867989,
+          "sum_mode2_square": 8.343920928665735
+        },
+        {
+          "sample_count": 10,
+          "sum_action_density": 4.9233212994110715,
+          "sum_mode2": 10.44207188854196,
+          "sum_mode2_square": 11.485166506138018
+        },
+        {
+          "sample_count": 10,
+          "sum_action_density": 4.7968535215303785,
+          "sum_mode2": 6.6867255635266325,
+          "sum_mode2_square": 4.739045681369184
+        },
+        {
+          "sample_count": 10,
+          "sum_action_density": 4.809993773770714,
+          "sum_mode2": 3.6751011601075323,
+          "sum_mode2_square": 1.4822513681112492
+        },
+        {
+          "sample_count": 10,
+          "sum_action_density": 4.940040463941711,
+          "sum_mode2": 7.208137120011538,
+          "sum_mode2_square": 5.220297512774234
+        },
+        {
+          "sample_count": 10,
+          "sum_action_density": 4.910961745988732,
+          "sum_mode2": 10.587747538927237,
+          "sum_mode2_square": 11.722544892039162
+        },
+        {
+          "sample_count": 10,
+          "sum_action_density": 4.993450761272567,
+          "sum_mode2": 7.781672489052177,
+          "sum_mode2_square": 6.723428930291222
+        }
+      ],
+      "coupling": 0.4,
+      "elapsed_seconds": 6.529036230000202,
+      "final_action_recompute_residual": 0.0,
+      "lattice": {
+        "boundary": "PERIODIC",
+        "dimensions": 4,
+        "length": 6,
+        "volume": 1296
+      },
+      "local_acceptance_rate": 0.7072052469135802,
+      "local_proposal_width": 0.18,
+      "mode": {
+        "axis_average": true,
+        "bilaplacian_ratio": "omega^2*M2",
+        "field_coordinate": "phi with psi=lambda*phi",
+        "free_mode2": 1.0000000000000004,
+        "omega": 0.9999999999999998,
+        "phase_pair": "complete lowest cosine-sine pair",
+        "tension_ratio": "omega*M2"
+      },
+      "recorded_samples": 100,
+      "seed": 150826106,
+      "thinning_sweeps": 2,
+      "warmup_sweeps": 300,
+      "whole_mode_acceptance_rate": 0.748,
+      "whole_mode_proposal_width": 0.05,
+      "whole_mode_proposals_per_sweep": 1
+    },
+    {
+      "algorithm": "local random-scan Metropolis",
+      "block_count": 10,
+      "blocks": [
+        {
+          "sample_count": 10,
+          "sum_action_density": 4.959435081208353,
+          "sum_mode2": 15.271948518434868,
+          "sum_mode2_square": 23.3421553433794
+        },
+        {
+          "sample_count": 10,
+          "sum_action_density": 4.943841066681473,
+          "sum_mode2": 16.74267090385697,
+          "sum_mode2_square": 28.28172087094212
+        },
+        {
+          "sample_count": 10,
+          "sum_action_density": 4.931319257213206,
+          "sum_mode2": 13.507421752522575,
+          "sum_mode2_square": 18.277921138539178
+        },
+        {
+          "sample_count": 10,
+          "sum_action_density": 4.969884256409318,
+          "sum_mode2": 12.855956508215224,
+          "sum_mode2_square": 16.65792662115364
+        },
+        {
+          "sample_count": 10,
+          "sum_action_density": 5.004198364328156,
+          "sum_mode2": 9.006517835629339,
+          "sum_mode2_square": 8.227731815738073
+        },
+        {
+          "sample_count": 10,
+          "sum_action_density": 4.960256992968857,
+          "sum_mode2": 8.522174670893698,
+          "sum_mode2_square": 7.287142622816273
+        },
+        {
+          "sample_count": 10,
+          "sum_action_density": 4.953001577962817,
+          "sum_mode2": 8.924873275583083,
+          "sum_mode2_square": 8.031184455847933
+        },
+        {
+          "sample_count": 10,
+          "sum_action_density": 4.920929284938733,
+          "sum_mode2": 8.703181355469805,
+          "sum_mode2_square": 7.610074105981637
+        },
+        {
+          "sample_count": 10,
+          "sum_action_density": 4.854572932372451,
+          "sum_mode2": 10.622869494522378,
+          "sum_mode2_square": 11.456901422680366
+        },
+        {
+          "sample_count": 10,
+          "sum_action_density": 4.867562558070247,
+          "sum_mode2": 12.471672742789888,
+          "sum_mode2_square": 15.749684352386366
+        }
+      ],
+      "coupling": 0.4,
+      "elapsed_seconds": 11.372393505997024,
+      "final_action_recompute_residual": 1.1368683772161603e-11,
+      "lattice": {
+        "boundary": "PERIODIC",
+        "dimensions": 4,
+        "length": 8,
+        "volume": 4096
+      },
+      "local_acceptance_rate": 0.70744873046875,
+      "local_proposal_width": 0.18,
+      "mode": {
+        "axis_average": true,
+        "bilaplacian_ratio": "omega^2*M2",
+        "field_coordinate": "phi with psi=lambda*phi",
+        "free_mode2": 2.914213562373095,
+        "omega": 0.585786437626905,
+        "phase_pair": "complete lowest cosine-sine pair",
+        "tension_ratio": "omega*M2"
+      },
+      "recorded_samples": 100,
+      "seed": 150826008,
+      "thinning_sweeps": 2,
+      "warmup_sweeps": 300,
+      "whole_mode_acceptance_rate": null,
+      "whole_mode_proposal_width": null,
+      "whole_mode_proposals_per_sweep": 0
+    },
+    {
+      "algorithm": "local random-scan Metropolis plus symmetric whole-lowest-mode Metropolis",
+      "block_count": 10,
+      "blocks": [
+        {
+          "sample_count": 10,
+          "sum_action_density": 4.942597362925506,
+          "sum_mode2": 39.09637842290758,
+          "sum_mode2_square": 155.46864485743234
+        },
+        {
+          "sample_count": 10,
+          "sum_action_density": 5.051096135960292,
+          "sum_mode2": 49.08939687336817,
+          "sum_mode2_square": 244.596447656939
+        },
+        {
+          "sample_count": 10,
+          "sum_action_density": 4.996338851524151,
+          "sum_mode2": 32.21688132000157,
+          "sum_mode2_square": 109.10303308702777
+        },
+        {
+          "sample_count": 10,
+          "sum_action_density": 4.9813509312450845,
+          "sum_mode2": 17.892238155292635,
+          "sum_mode2_square": 32.56312828797316
+        },
+        {
+          "sample_count": 10,
+          "sum_action_density": 4.992019948705523,
+          "sum_mode2": 27.204061675904832,
+          "sum_mode2_square": 79.960177166303
+        },
+        {
+          "sample_count": 10,
+          "sum_action_density": 4.927303902501231,
+          "sum_mode2": 28.689663542972813,
+          "sum_mode2_square": 84.61394036116869
+        },
+        {
+          "sample_count": 10,
+          "sum_action_density": 4.9885911428441965,
+          "sum_mode2": 26.430495465373944,
+          "sum_mode2_square": 71.45839123958469
+        },
+        {
+          "sample_count": 10,
+          "sum_action_density": 4.977509938740085,
+          "sum_mode2": 33.41421206774214,
+          "sum_mode2_square": 113.12682846532576
+        },
+        {
+          "sample_count": 10,
+          "sum_action_density": 4.944727372249998,
+          "sum_mode2": 29.84263978452332,
+          "sum_mode2_square": 89.15712479835922
+        },
+        {
+          "sample_count": 10,
+          "sum_action_density": 4.935807697291434,
+          "sum_mode2": 21.183018985076835,
+          "sum_mode2_square": 46.09546596580529
+        }
+      ],
+      "coupling": 0.4,
+      "elapsed_seconds": 13.490428409015294,
+      "final_action_recompute_residual": 0.0,
+      "lattice": {
+        "boundary": "PERIODIC",
+        "dimensions": 4,
+        "length": 8,
+        "volume": 4096
+      },
+      "local_acceptance_rate": 0.7071611328125,
+      "local_proposal_width": 0.18,
+      "mode": {
+        "axis_average": true,
+        "bilaplacian_ratio": "omega^2*M2",
+        "field_coordinate": "phi with psi=lambda*phi",
+        "free_mode2": 2.914213562373095,
+        "omega": 0.585786437626905,
+        "phase_pair": "complete lowest cosine-sine pair",
+        "tension_ratio": "omega*M2"
+      },
+      "recorded_samples": 100,
+      "seed": 150826108,
+      "thinning_sweeps": 2,
+      "warmup_sweeps": 300,
+      "whole_mode_acceptance_rate": 0.792,
+      "whole_mode_proposal_width": 0.035,
+      "whole_mode_proposals_per_sweep": 1
+    }
+  ],
+  "schema_version": "bt-euclidean-source-response-observations-v1"
+}
