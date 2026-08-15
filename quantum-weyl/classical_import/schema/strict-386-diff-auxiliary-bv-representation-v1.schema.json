@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/strict-386-diff-auxiliary-bv-representation-v1.schema.json",
+  "type": "object",
+  "required": ["schema", "result_id", "result_kind", "result_state", "lifecycle", "dependency_tags", "scope", "BV_representation_lifts", "component_summary", "required_cubic_family_inventory", "inventory_completeness", "structural_replay", "claim_flags", "does_not_establish", "canonical_hashes", "provenance", "human_report", "next_gate"],
+  "properties": {
+    "schema": {"const": "strict-386-diff-auxiliary-bv-representation-v1"},
+    "result_id": {"const": "STRICT_386_DIFF_AUXILIARY_BV_REPRESENTATION_V1"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "BV_representation_lifts": {"type": "array", "minItems": 3, "maxItems": 3},
+    "component_summary": {
+      "type": "object",
+      "required": ["carrier_rows", "completed_families", "master_density_coefficients", "field_output_coefficients", "antifield_output_coefficients", "c_star_output_coefficients", "formal_variational_defects", "Koszul_symmetry_defects"],
+      "properties": {
+        "carrier_rows": {"const": 386},
+        "completed_families": {"const": 3},
+        "formal_variational_defects": {"const": 0},
+        "Koszul_symmetry_defects": {"const": 0}
+      }
+    },
+    "inventory_completeness": {
+      "type": "object",
+      "required": ["known_required_cubic_block_families_enumerated", "component_coefficient_complete_families", "component_coefficient_open_families", "diffeomorphism_BV_representation_component_complete", "exhaustive_full_nonlinear_BV_family_census", "full_source_q2_q3_pullback_replayed"]
+    },
+    "claim_flags": {"type": "object", "required": ["THREE_DIFF_AUXILIARY_FIELD_TABLES_IMPORTED", "THREE_DIFF_AUXILIARY_BV_COTANGENT_LIFTS_SERIALIZED", "THREE_DIFF_AUXILIARY_C_STAR_MOMENTUM_MAPS_SERIALIZED", "SEVEN_KNOWN_REQUIRED_CUBIC_FAMILIES_COMPONENT_COMPLETE", "EXHAUSTIVE_FULL_NONLINEAR_BV_FAMILY_CENSUS", "FULL_SOURCE_Q2_PULLBACK_REPLAYED", "FULL_SOURCE_Q3_PULLBACK_REPLAYED", "FULL_Q1_Q2_IDENTITY_REPLAYED", "CLASSICAL_IMPORT_GATE_PASSED", "HADAMARD_STATE_CONSTRUCTED", "QME_RESTORED"]},
+    "human_report": {"const": "quantum-weyl/classical_import/REPORT_STRICT_386_DIFF_AUXILIARY_BV_REPRESENTATION_V1.md"}
+  },
+  "additionalProperties": true
+}

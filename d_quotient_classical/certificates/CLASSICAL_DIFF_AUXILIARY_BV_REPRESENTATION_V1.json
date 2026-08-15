@@ -1,0 +1,3149 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema": "classical-diff-auxiliary-bv-representation-v1",
+  "result_id": "CLASSICAL_DIFF_AUXILIARY_BV_REPRESENTATION_V1",
+  "result_kind": "AUTHORITATIVE_CLASSICAL_DIFF_AUXILIARY_FIELD_REPRESENTATION_EXPORT",
+  "result_state": "THREE_SOURCE_FORCED_DIFF_FIELD_ACTIONS_COMPONENT_SERIALIZED_COTANGENT_RECEIVER_REQUIRED",
+  "lifecycle": "CLASSIFIED",
+  "created": "2026-08-15",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "scope": {
+    "theory": "strict pure-Weyl curved generalized-auxiliary BV theory",
+    "background": "unit conformal cylinder normal coordinate point",
+    "coefficient_field": "Q",
+    "spacetime_dimension": 4,
+    "maximum_input_jet_order": 1,
+    "support_rule": "each output support lies in the intersection of the two input supports"
+  },
+  "source_master_terms": [
+    "int <f_hat_star,L_c f_hat>",
+    "int <v_star,L_c v>",
+    "int <eta_star,L_c eta>"
+  ],
+  "naturality_derivation": {
+    "phi_hat_definition": "phi_hat=phi-A_g^-1 G^b(g,b)",
+    "phi_hat_tensor_type": "symmetric covariant rank-two tensor in the receiver convention",
+    "reason": "phi, A_g, and G^b are natural tensor operations and the exact shifted Diff defect is zero",
+    "v_tensor_type": "covector inherited from b",
+    "eta_definition": "eta=xi_0-d sigma",
+    "eta_tensor_type": "odd covector under the Diff semidirect action",
+    "all_three_actions_source_forced": true
+  },
+  "representation_tables": [
+    {
+      "family_id": "DIFF_C_F_HAT_F_HAT_STAR",
+      "field_symbol": "f_hat",
+      "tensor_type": "symmetric covariant rank-two tensor",
+      "Grassmann_parity": 0,
+      "coordinate_formula": "(L_c f_hat)_{mu nu}=c^rho partial_rho f_hat_{mu nu}+f_hat_{rho nu} partial_mu c^rho+f_hat_{mu rho} partial_nu c^rho",
+      "ordered_field_action_entries": [
+        {
+          "output_row": "f_hat_00",
+          "ghost_row": "c_0",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "field_row": "f_hat_00",
+          "field_jet": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_00",
+          "ghost_row": "c_0",
+          "ghost_jet": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "field_row": "f_hat_00",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "2"
+        },
+        {
+          "output_row": "f_hat_00",
+          "ghost_row": "c_1",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "field_row": "f_hat_00",
+          "field_jet": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_00",
+          "ghost_row": "c_1",
+          "ghost_jet": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "field_row": "f_hat_01",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "2"
+        },
+        {
+          "output_row": "f_hat_00",
+          "ghost_row": "c_2",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "field_row": "f_hat_00",
+          "field_jet": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_00",
+          "ghost_row": "c_2",
+          "ghost_jet": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "field_row": "f_hat_02",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "2"
+        },
+        {
+          "output_row": "f_hat_00",
+          "ghost_row": "c_3",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "field_row": "f_hat_00",
+          "field_jet": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_00",
+          "ghost_row": "c_3",
+          "ghost_jet": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "field_row": "f_hat_03",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "2"
+        },
+        {
+          "output_row": "f_hat_01",
+          "ghost_row": "c_0",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "field_row": "f_hat_01",
+          "field_jet": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_01",
+          "ghost_row": "c_0",
+          "ghost_jet": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "field_row": "f_hat_00",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_01",
+          "ghost_row": "c_0",
+          "ghost_jet": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "field_row": "f_hat_01",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_01",
+          "ghost_row": "c_1",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "field_row": "f_hat_01",
+          "field_jet": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_01",
+          "ghost_row": "c_1",
+          "ghost_jet": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "field_row": "f_hat_01",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_01",
+          "ghost_row": "c_1",
+          "ghost_jet": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "field_row": "f_hat_11",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_01",
+          "ghost_row": "c_2",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "field_row": "f_hat_01",
+          "field_jet": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_01",
+          "ghost_row": "c_2",
+          "ghost_jet": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "field_row": "f_hat_02",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_01",
+          "ghost_row": "c_2",
+          "ghost_jet": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "field_row": "f_hat_12",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_01",
+          "ghost_row": "c_3",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "field_row": "f_hat_01",
+          "field_jet": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_01",
+          "ghost_row": "c_3",
+          "ghost_jet": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "field_row": "f_hat_03",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_01",
+          "ghost_row": "c_3",
+          "ghost_jet": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "field_row": "f_hat_13",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_02",
+          "ghost_row": "c_0",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "field_row": "f_hat_02",
+          "field_jet": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_02",
+          "ghost_row": "c_0",
+          "ghost_jet": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "field_row": "f_hat_00",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_02",
+          "ghost_row": "c_0",
+          "ghost_jet": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "field_row": "f_hat_02",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_02",
+          "ghost_row": "c_1",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "field_row": "f_hat_02",
+          "field_jet": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_02",
+          "ghost_row": "c_1",
+          "ghost_jet": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "field_row": "f_hat_01",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_02",
+          "ghost_row": "c_1",
+          "ghost_jet": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "field_row": "f_hat_12",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_02",
+          "ghost_row": "c_2",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "field_row": "f_hat_02",
+          "field_jet": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_02",
+          "ghost_row": "c_2",
+          "ghost_jet": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "field_row": "f_hat_02",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_02",
+          "ghost_row": "c_2",
+          "ghost_jet": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "field_row": "f_hat_22",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_02",
+          "ghost_row": "c_3",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "field_row": "f_hat_02",
+          "field_jet": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_02",
+          "ghost_row": "c_3",
+          "ghost_jet": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "field_row": "f_hat_03",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_02",
+          "ghost_row": "c_3",
+          "ghost_jet": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "field_row": "f_hat_23",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_03",
+          "ghost_row": "c_0",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "field_row": "f_hat_03",
+          "field_jet": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_03",
+          "ghost_row": "c_0",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "field_row": "f_hat_00",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_03",
+          "ghost_row": "c_0",
+          "ghost_jet": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "field_row": "f_hat_03",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_03",
+          "ghost_row": "c_1",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "field_row": "f_hat_03",
+          "field_jet": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_03",
+          "ghost_row": "c_1",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "field_row": "f_hat_01",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_03",
+          "ghost_row": "c_1",
+          "ghost_jet": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "field_row": "f_hat_13",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_03",
+          "ghost_row": "c_2",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "field_row": "f_hat_03",
+          "field_jet": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_03",
+          "ghost_row": "c_2",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "field_row": "f_hat_02",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_03",
+          "ghost_row": "c_2",
+          "ghost_jet": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "field_row": "f_hat_23",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_03",
+          "ghost_row": "c_3",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "field_row": "f_hat_03",
+          "field_jet": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_03",
+          "ghost_row": "c_3",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "field_row": "f_hat_03",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_03",
+          "ghost_row": "c_3",
+          "ghost_jet": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "field_row": "f_hat_33",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_11",
+          "ghost_row": "c_0",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "field_row": "f_hat_11",
+          "field_jet": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_11",
+          "ghost_row": "c_0",
+          "ghost_jet": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "field_row": "f_hat_01",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "2"
+        },
+        {
+          "output_row": "f_hat_11",
+          "ghost_row": "c_1",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "field_row": "f_hat_11",
+          "field_jet": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_11",
+          "ghost_row": "c_1",
+          "ghost_jet": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "field_row": "f_hat_11",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "2"
+        },
+        {
+          "output_row": "f_hat_11",
+          "ghost_row": "c_2",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "field_row": "f_hat_11",
+          "field_jet": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_11",
+          "ghost_row": "c_2",
+          "ghost_jet": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "field_row": "f_hat_12",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "2"
+        },
+        {
+          "output_row": "f_hat_11",
+          "ghost_row": "c_3",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "field_row": "f_hat_11",
+          "field_jet": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_11",
+          "ghost_row": "c_3",
+          "ghost_jet": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "field_row": "f_hat_13",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "2"
+        },
+        {
+          "output_row": "f_hat_12",
+          "ghost_row": "c_0",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "field_row": "f_hat_12",
+          "field_jet": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_12",
+          "ghost_row": "c_0",
+          "ghost_jet": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "field_row": "f_hat_01",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_12",
+          "ghost_row": "c_0",
+          "ghost_jet": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "field_row": "f_hat_02",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_12",
+          "ghost_row": "c_1",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "field_row": "f_hat_12",
+          "field_jet": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_12",
+          "ghost_row": "c_1",
+          "ghost_jet": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "field_row": "f_hat_11",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_12",
+          "ghost_row": "c_1",
+          "ghost_jet": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "field_row": "f_hat_12",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_12",
+          "ghost_row": "c_2",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "field_row": "f_hat_12",
+          "field_jet": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_12",
+          "ghost_row": "c_2",
+          "ghost_jet": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "field_row": "f_hat_12",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_12",
+          "ghost_row": "c_2",
+          "ghost_jet": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "field_row": "f_hat_22",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_12",
+          "ghost_row": "c_3",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "field_row": "f_hat_12",
+          "field_jet": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_12",
+          "ghost_row": "c_3",
+          "ghost_jet": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "field_row": "f_hat_13",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_12",
+          "ghost_row": "c_3",
+          "ghost_jet": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "field_row": "f_hat_23",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_13",
+          "ghost_row": "c_0",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "field_row": "f_hat_13",
+          "field_jet": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_13",
+          "ghost_row": "c_0",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "field_row": "f_hat_01",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_13",
+          "ghost_row": "c_0",
+          "ghost_jet": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "field_row": "f_hat_03",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_13",
+          "ghost_row": "c_1",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "field_row": "f_hat_13",
+          "field_jet": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_13",
+          "ghost_row": "c_1",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "field_row": "f_hat_11",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_13",
+          "ghost_row": "c_1",
+          "ghost_jet": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "field_row": "f_hat_13",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_13",
+          "ghost_row": "c_2",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "field_row": "f_hat_13",
+          "field_jet": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_13",
+          "ghost_row": "c_2",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "field_row": "f_hat_12",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_13",
+          "ghost_row": "c_2",
+          "ghost_jet": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "field_row": "f_hat_23",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_13",
+          "ghost_row": "c_3",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "field_row": "f_hat_13",
+          "field_jet": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_13",
+          "ghost_row": "c_3",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "field_row": "f_hat_13",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_13",
+          "ghost_row": "c_3",
+          "ghost_jet": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "field_row": "f_hat_33",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_22",
+          "ghost_row": "c_0",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "field_row": "f_hat_22",
+          "field_jet": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_22",
+          "ghost_row": "c_0",
+          "ghost_jet": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "field_row": "f_hat_02",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "2"
+        },
+        {
+          "output_row": "f_hat_22",
+          "ghost_row": "c_1",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "field_row": "f_hat_22",
+          "field_jet": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_22",
+          "ghost_row": "c_1",
+          "ghost_jet": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "field_row": "f_hat_12",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "2"
+        },
+        {
+          "output_row": "f_hat_22",
+          "ghost_row": "c_2",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "field_row": "f_hat_22",
+          "field_jet": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_22",
+          "ghost_row": "c_2",
+          "ghost_jet": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "field_row": "f_hat_22",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "2"
+        },
+        {
+          "output_row": "f_hat_22",
+          "ghost_row": "c_3",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "field_row": "f_hat_22",
+          "field_jet": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_22",
+          "ghost_row": "c_3",
+          "ghost_jet": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "field_row": "f_hat_23",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "2"
+        },
+        {
+          "output_row": "f_hat_23",
+          "ghost_row": "c_0",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "field_row": "f_hat_23",
+          "field_jet": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_23",
+          "ghost_row": "c_0",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "field_row": "f_hat_02",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_23",
+          "ghost_row": "c_0",
+          "ghost_jet": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "field_row": "f_hat_03",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_23",
+          "ghost_row": "c_1",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "field_row": "f_hat_23",
+          "field_jet": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_23",
+          "ghost_row": "c_1",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "field_row": "f_hat_12",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_23",
+          "ghost_row": "c_1",
+          "ghost_jet": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "field_row": "f_hat_13",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_23",
+          "ghost_row": "c_2",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "field_row": "f_hat_23",
+          "field_jet": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_23",
+          "ghost_row": "c_2",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "field_row": "f_hat_22",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_23",
+          "ghost_row": "c_2",
+          "ghost_jet": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "field_row": "f_hat_23",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_23",
+          "ghost_row": "c_3",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "field_row": "f_hat_23",
+          "field_jet": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_23",
+          "ghost_row": "c_3",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "field_row": "f_hat_23",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_23",
+          "ghost_row": "c_3",
+          "ghost_jet": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "field_row": "f_hat_33",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_33",
+          "ghost_row": "c_0",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "field_row": "f_hat_33",
+          "field_jet": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_33",
+          "ghost_row": "c_0",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "field_row": "f_hat_03",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "2"
+        },
+        {
+          "output_row": "f_hat_33",
+          "ghost_row": "c_1",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "field_row": "f_hat_33",
+          "field_jet": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_33",
+          "ghost_row": "c_1",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "field_row": "f_hat_13",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "2"
+        },
+        {
+          "output_row": "f_hat_33",
+          "ghost_row": "c_2",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "field_row": "f_hat_33",
+          "field_jet": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_33",
+          "ghost_row": "c_2",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "field_row": "f_hat_23",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "2"
+        },
+        {
+          "output_row": "f_hat_33",
+          "ghost_row": "c_3",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "field_row": "f_hat_33",
+          "field_jet": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "f_hat_33",
+          "ghost_row": "c_3",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "field_row": "f_hat_33",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "2"
+        }
+      ],
+      "nonzero_ordered_field_coefficients": 104,
+      "maximum_input_jet_order": 1,
+      "sha256": "878aadd511fd27a8125a07bd6adc44eaca21eff39a685e02c803341a21a4d537"
+    },
+    {
+      "family_id": "DIFF_C_V_V_STAR",
+      "field_symbol": "v",
+      "tensor_type": "covector",
+      "Grassmann_parity": 0,
+      "coordinate_formula": "(L_c v)_mu=c^rho partial_rho v_mu+v_rho partial_mu c^rho",
+      "ordered_field_action_entries": [
+        {
+          "output_row": "v_0",
+          "ghost_row": "c_0",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "field_row": "v_0",
+          "field_jet": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "v_0",
+          "ghost_row": "c_0",
+          "ghost_jet": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "field_row": "v_0",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "v_0",
+          "ghost_row": "c_1",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "field_row": "v_0",
+          "field_jet": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "v_0",
+          "ghost_row": "c_1",
+          "ghost_jet": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "field_row": "v_1",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "v_0",
+          "ghost_row": "c_2",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "field_row": "v_0",
+          "field_jet": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "v_0",
+          "ghost_row": "c_2",
+          "ghost_jet": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "field_row": "v_2",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "v_0",
+          "ghost_row": "c_3",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "field_row": "v_0",
+          "field_jet": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "v_0",
+          "ghost_row": "c_3",
+          "ghost_jet": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "field_row": "v_3",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "v_1",
+          "ghost_row": "c_0",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "field_row": "v_1",
+          "field_jet": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "v_1",
+          "ghost_row": "c_0",
+          "ghost_jet": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "field_row": "v_0",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "v_1",
+          "ghost_row": "c_1",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "field_row": "v_1",
+          "field_jet": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "v_1",
+          "ghost_row": "c_1",
+          "ghost_jet": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "field_row": "v_1",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "v_1",
+          "ghost_row": "c_2",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "field_row": "v_1",
+          "field_jet": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "v_1",
+          "ghost_row": "c_2",
+          "ghost_jet": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "field_row": "v_2",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "v_1",
+          "ghost_row": "c_3",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "field_row": "v_1",
+          "field_jet": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "v_1",
+          "ghost_row": "c_3",
+          "ghost_jet": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "field_row": "v_3",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "v_2",
+          "ghost_row": "c_0",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "field_row": "v_2",
+          "field_jet": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "v_2",
+          "ghost_row": "c_0",
+          "ghost_jet": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "field_row": "v_0",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "v_2",
+          "ghost_row": "c_1",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "field_row": "v_2",
+          "field_jet": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "v_2",
+          "ghost_row": "c_1",
+          "ghost_jet": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "field_row": "v_1",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "v_2",
+          "ghost_row": "c_2",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "field_row": "v_2",
+          "field_jet": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "v_2",
+          "ghost_row": "c_2",
+          "ghost_jet": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "field_row": "v_2",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "v_2",
+          "ghost_row": "c_3",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "field_row": "v_2",
+          "field_jet": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "v_2",
+          "ghost_row": "c_3",
+          "ghost_jet": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "field_row": "v_3",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "v_3",
+          "ghost_row": "c_0",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "field_row": "v_3",
+          "field_jet": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "v_3",
+          "ghost_row": "c_0",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "field_row": "v_0",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "v_3",
+          "ghost_row": "c_1",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "field_row": "v_3",
+          "field_jet": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "v_3",
+          "ghost_row": "c_1",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "field_row": "v_1",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "v_3",
+          "ghost_row": "c_2",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "field_row": "v_3",
+          "field_jet": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "v_3",
+          "ghost_row": "c_2",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "field_row": "v_2",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "v_3",
+          "ghost_row": "c_3",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "field_row": "v_3",
+          "field_jet": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "v_3",
+          "ghost_row": "c_3",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "field_row": "v_3",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        }
+      ],
+      "nonzero_ordered_field_coefficients": 32,
+      "maximum_input_jet_order": 1,
+      "sha256": "63efea03d016583873554a1ebe1e5a3d505d08aea3e3d7fac487d7d8edd8cfa1"
+    },
+    {
+      "family_id": "DIFF_C_ETA_ETA_STAR",
+      "field_symbol": "eta",
+      "tensor_type": "odd covector ghost",
+      "Grassmann_parity": 1,
+      "coordinate_formula": "(L_c eta)_mu=c^rho partial_rho eta_mu+eta_rho partial_mu c^rho",
+      "ordered_field_action_entries": [
+        {
+          "output_row": "eta_0",
+          "ghost_row": "c_0",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "field_row": "eta_0",
+          "field_jet": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "eta_0",
+          "ghost_row": "c_0",
+          "ghost_jet": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "field_row": "eta_0",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "eta_0",
+          "ghost_row": "c_1",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "field_row": "eta_0",
+          "field_jet": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "eta_0",
+          "ghost_row": "c_1",
+          "ghost_jet": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "field_row": "eta_1",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "eta_0",
+          "ghost_row": "c_2",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "field_row": "eta_0",
+          "field_jet": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "eta_0",
+          "ghost_row": "c_2",
+          "ghost_jet": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "field_row": "eta_2",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "eta_0",
+          "ghost_row": "c_3",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "field_row": "eta_0",
+          "field_jet": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "eta_0",
+          "ghost_row": "c_3",
+          "ghost_jet": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "field_row": "eta_3",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "eta_1",
+          "ghost_row": "c_0",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "field_row": "eta_1",
+          "field_jet": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "eta_1",
+          "ghost_row": "c_0",
+          "ghost_jet": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "field_row": "eta_0",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "eta_1",
+          "ghost_row": "c_1",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "field_row": "eta_1",
+          "field_jet": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "eta_1",
+          "ghost_row": "c_1",
+          "ghost_jet": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "field_row": "eta_1",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "eta_1",
+          "ghost_row": "c_2",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "field_row": "eta_1",
+          "field_jet": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "eta_1",
+          "ghost_row": "c_2",
+          "ghost_jet": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "field_row": "eta_2",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "eta_1",
+          "ghost_row": "c_3",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "field_row": "eta_1",
+          "field_jet": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "eta_1",
+          "ghost_row": "c_3",
+          "ghost_jet": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "field_row": "eta_3",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "eta_2",
+          "ghost_row": "c_0",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "field_row": "eta_2",
+          "field_jet": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "eta_2",
+          "ghost_row": "c_0",
+          "ghost_jet": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "field_row": "eta_0",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "eta_2",
+          "ghost_row": "c_1",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "field_row": "eta_2",
+          "field_jet": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "eta_2",
+          "ghost_row": "c_1",
+          "ghost_jet": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "field_row": "eta_1",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "eta_2",
+          "ghost_row": "c_2",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "field_row": "eta_2",
+          "field_jet": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "eta_2",
+          "ghost_row": "c_2",
+          "ghost_jet": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "field_row": "eta_2",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "eta_2",
+          "ghost_row": "c_3",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "field_row": "eta_2",
+          "field_jet": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "eta_2",
+          "ghost_row": "c_3",
+          "ghost_jet": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "field_row": "eta_3",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "eta_3",
+          "ghost_row": "c_0",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "field_row": "eta_3",
+          "field_jet": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "eta_3",
+          "ghost_row": "c_0",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "field_row": "eta_0",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "eta_3",
+          "ghost_row": "c_1",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "field_row": "eta_3",
+          "field_jet": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "eta_3",
+          "ghost_row": "c_1",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "field_row": "eta_1",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "eta_3",
+          "ghost_row": "c_2",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "field_row": "eta_3",
+          "field_jet": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "eta_3",
+          "ghost_row": "c_2",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "field_row": "eta_2",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "eta_3",
+          "ghost_row": "c_3",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "field_row": "eta_3",
+          "field_jet": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "coefficient": "1"
+        },
+        {
+          "output_row": "eta_3",
+          "ghost_row": "c_3",
+          "ghost_jet": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "field_row": "eta_3",
+          "field_jet": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "coefficient": "1"
+        }
+      ],
+      "nonzero_ordered_field_coefficients": 32,
+      "maximum_input_jet_order": 1,
+      "sha256": "54afe36ae94e2c5e7e9dc9b1379a63b02ad11c8bdb84d69c884122bdc5db0a16"
+    }
+  ],
+  "component_summary": {
+    "families": 3,
+    "ordered_field_coefficients": 168,
+    "by_family": {
+      "DIFF_C_F_HAT_F_HAT_STAR": 104,
+      "DIFF_C_V_V_STAR": 32,
+      "DIFF_C_ETA_ETA_STAR": 32
+    }
+  },
+  "claim_flags": {
+    "THREE_DIFF_AUXILIARY_FIELD_ACTIONS_SOURCE_FORCED": true,
+    "THREE_DIFF_AUXILIARY_FIELD_COMPONENT_TABLES_SERIALIZED": true,
+    "THREE_DIFF_AUXILIARY_BV_COTANGENT_LIFTS_SERIALIZED": false,
+    "FULL_SOURCE_Q2_PULLBACK_REPLAYED": false,
+    "EXHAUSTIVE_FULL_NONLINEAR_BV_FAMILY_CENSUS": false,
+    "CLASSICAL_IMPORT_GATE_PASSED": false,
+    "HADAMARD_STATE_CONSTRUCTED": false,
+    "QME_RESTORED": false
+  },
+  "does_not_establish": [
+    "the 386-row antifield and c-star component tables",
+    "the arity-two q1/q2 identity or cyclicity on the receiver pairing",
+    "absence of additional nonlinear Weyl or conformal-boost ghost-antifield families",
+    "the complete source q2/q3 pullback, Gate A, Hadamard data, or QME restoration"
+  ],
+  "canonical_hashes": {
+    "representation_tables_sha256": "8fbbb810703f814d5101107d1b86e087e8bf077059451ac9cb9682ce07a8b6ad",
+    "naturality_derivation_sha256": "8904a5dc8fd740978420a829731ec8d05d8ed326e35df0663a5d0a5bc8c1708f"
+  },
+  "provenance": {
+    "inputs": [
+      {
+        "path": "covariant_completion/certificates/curved_auxiliary_action_definition.json",
+        "result_or_artifact_id": "pure-weyl-covariant-auxiliary-action-definition-v1",
+        "sha256": "6acb586df9784c925fc994701ae910cc243e6898d635626513f4a1adfbdab4db",
+        "role": "authoritative curved source action and Diff transformations"
+      },
+      {
+        "path": "covariant_completion/certificates/curved_auxiliary_canonical_split.json",
+        "result_or_artifact_id": "pure-weyl-curved-auxiliary-canonical-split-v1",
+        "sha256": "e8326afd4f8cf919f2d3c20de8065a767a40f40f509968fb542efe43a6a80343",
+        "role": "exact natural shifted variables and zero Diff defect"
+      },
+      {
+        "path": "d_quotient_classical/certificates/CLASSICAL_HH_HV_AUXILIARY_SHIFT_V1.json",
+        "result_or_artifact_id": "CLASSICAL_HH_HV_AUXILIARY_SHIFT_V1",
+        "sha256": "81f2373e018214e8491140747db6fc54d0fc66a8107240df5598f302d68048af",
+        "role": "curved nonlinear source-to-split field map"
+      }
+    ]
+  },
+  "human_report": "d_quotient_classical/reports/classical-diff-auxiliary-bv-representation-v1.md",
+  "next_gate": "Import the three field tables onto the fixed 386-row carrier and derive both formal cotangent and Diff-momentum-map rows using its exact odd pairing."
+}

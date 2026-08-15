@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/classical-import-gate-v12-reconciliation-v1.schema.json",
+  "type": "object",
+  "required": ["schema", "result_id", "result_state", "lifecycle", "dependency_tags", "export_reconciliation", "freeze_check_reconciliation", "required_hash_disposition", "minimal_missing_bundle", "gate_disposition", "m2_shifted_cubic_inventory_resolution", "m2_hh_hv_cotangent_resolution", "m2_diff_auxiliary_resolution", "claim_flags", "does_not_establish", "provenance", "human_report", "next_gate"],
+  "properties": {
+    "schema": {"const": "quantum-weyl-classical-import-gate-v12-reconciliation-v1"},
+    "result_id": {"const": "CLASSICAL_IMPORT_GATE_V12_RECONCILIATION"},
+    "result_state": {"const": "SEVEN_KNOWN_CUBIC_FAMILIES_COMPONENT_COMPLETE_EXHAUSTIVE_GHOST_MANIFEST_AND_SOURCE_Q2_OPEN_GATE_FAIL_CLOSED"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "export_reconciliation": {"type": "array", "minItems": 20, "maxItems": 20},
+    "freeze_check_reconciliation": {"type": "array", "minItems": 10, "maxItems": 10},
+    "m2_diff_auxiliary_resolution": {"type": "object", "required": ["status", "carrier_rows", "completed_families", "master_density_coefficients", "field_output_coefficients", "antifield_output_coefficients", "c_star_output_coefficients", "formal_variational_defects", "Koszul_symmetry_defects", "known_required_cubic_families", "known_required_component_complete_families", "exhaustive_full_nonlinear_BV_family_census", "full_source_q2_q3_pullback_replayed"]},
+    "claim_flags": {"type": "object", "required": ["STRICT_386_DIFF_BV_REPRESENTATION_COMPONENT_COMPLETE", "STRICT_386_SEVEN_KNOWN_REQUIRED_CUBIC_FAMILIES_COMPONENT_COMPLETE", "STRICT_386_EXHAUSTIVE_FULL_NONLINEAR_BV_FAMILY_CENSUS", "STRICT_386_FULL_SOURCE_Q2_PULLBACK_REPLAYED", "STRICT_386_FULL_SOURCE_Q3_PULLBACK_REPLAYED", "CLASSICAL_IMPORT_GATE_PASSED", "HADAMARD_STATE_CONSTRUCTED", "QME_RESTORED"]},
+    "human_report": {"const": "quantum-weyl/classical_import/REPORT_GATE_V12.md"}
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/foundational-lorentzian-weyl-bv-completion-atlas-v30.schema.json",
+  "type": "object",
+  "required": ["schema_version", "result_id", "created", "dependency_tags", "stages", "branches", "frontier_summary", "strict_diff_auxiliary_bv_representation", "strict_gate_v12_reconciliation", "route_selection", "research_queue", "claim_flags", "does_not_establish", "provenance", "human_report"],
+  "properties": {
+    "schema_version": {"const": "foundational-lorentzian-weyl-bv-completion-atlas-v30"},
+    "result_id": {"const": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V30"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE", "LORENTZIAN-CAUSAL"]},
+    "strict_diff_auxiliary_bv_representation": {"type": "object", "required": ["carrier_rows", "master_density_coefficients", "field_output_coefficients", "antifield_output_coefficients", "c_star_output_coefficients", "known_required_cubic_families", "component_complete_families", "component_open_families", "exhaustive_full_nonlinear_BV_family_census"]},
+    "strict_gate_v12_reconciliation": {"type": "object", "required": ["result_id", "gate_a_status", "accepted_top_level_hashes", "seven_known_required_cubic_families_component_complete", "exhaustive_full_nonlinear_BV_family_census", "complete_source_q2_q3_pullback_replayed"]},
+    "route_selection": {"type": "array", "minItems": 11, "maxItems": 11},
+    "research_queue": {"type": "array", "minItems": 11, "maxItems": 11},
+    "human_report": {"const": "foundations/reports/lorentzian-weyl-bv-completion-atlas-v30.md"}
+  },
+  "additionalProperties": true
+}

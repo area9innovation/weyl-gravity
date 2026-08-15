@@ -1,0 +1,130 @@
+{
+  "result_id": "STRICT_386_DIFF_AUXILIARY_BV_REPRESENTATION_V1_TIER_RECEIPT",
+  "receipt_id": "STRICT_386_DIFF_AUXILIARY_BV_REPRESENTATION_V1_TIER_RECEIPT",
+  "result_kind": "AFFECTED_CERTIFICATE_CHAIN_TEST_RECEIPT",
+  "lifecycle": "CLASSIFIED",
+  "recorded_at": "2026-08-15",
+  "repository_base_commit": "f60175ff985351544e464660b47d339c5f969b69",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "result_ids": [
+    "CLASSICAL_DIFF_AUXILIARY_BV_REPRESENTATION_V1",
+    "STRICT_386_DIFF_AUXILIARY_BV_REPRESENTATION_V1",
+    "CLASSICAL_IMPORT_GATE_V12_RECONCILIATION",
+    "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V30",
+    "FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2",
+    "PAPER21_REVERSE_FOUNDATIONS_INTRODUCTION_V1"
+  ],
+  "output_hashes": {
+    "classical_diff_auxiliary_bv_representation": "56383354a3a2237c78ef3e0f9e009da57f665be945850651582ca1b4d9581d37",
+    "classical_diff_auxiliary_report": "897c5a90ffaea0099b3b32eb4eed02c768194ca013ed3c83c5efc0ffaf2f2a6c",
+    "strict_386_diff_auxiliary_bv_representation": "c605f06ddc237c7984c8ad48909285399a397e78917a373b9a4c178d1ad88dab",
+    "strict_386_diff_auxiliary_report": "852d8f28acc1d26c426eef2d96adea7bcbc88a6befe182d7fef09afaba194ca8",
+    "classical_import_gate_v12": "6cc2a98d1cf81ec12a38e02bc5d1959907240a6c06e51aae92911be8f243c6db",
+    "classical_import_gate_v12_report": "3bbf25c1791dab4b976315fa3e97878553f708ecaa45a00577521f4e1865a47f",
+    "completion_atlas_v30": "5eddc65453bdfea8d13a7973fef7e1a76eefacc548d5595018ca842663819fe7",
+    "completion_atlas_v30_report": "a8038edb3153ca42d92e65131d36e73d0ed9b074ec40c37a70a37418356f1c59",
+    "static_site_result": "e7f0bf3ab416a823c3a2fa4e6ec3626100f667fb96f836311322ed467b34a9d3",
+    "static_site_manifest": "682e462cae587b918bbfbbfe9fc900acf27f85b4cd6c39ed251f543ad0ba30c7",
+    "paper_claim_map": "37f55a0dec351af34a65f817c120ebd272fd647ee7940e006a94868f4d372354",
+    "paper_appendices": "302b37838880d58f187a77ee7f952786ff714a30cb56fae3fa6607474658943a",
+    "paper_pdf": "111a1cb60eb02ee746a510b1bea40e2b4b7398cbfc65488c5efb1b270ac053ab"
+  },
+  "test_tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "checks": [
+        {
+          "command": "python3 -m py_compile <changed Python producers, independent checkers, verifiers, tests, site and paper generators>",
+          "elapsed_seconds": 0.13,
+          "status": "PASS"
+        },
+        {
+          "command": "python3 -m json.tool <changed and generated JSON artifacts>",
+          "elapsed_seconds": 0.45,
+          "status": "PASS"
+        },
+        {
+          "command": "git diff --check -- <scoped paths>",
+          "status": "PASS"
+        }
+      ]
+    },
+    "tier_1": {
+      "status": "PASS_WITH_NONCERTIFYING_TOOL_GAP_RECORDED",
+      "checks": [
+        {
+          "command": "python3 d_quotient_classical/nonminimal_identity/classical_diff_auxiliary_bv_representation_v1.py --check && python3 d_quotient_classical/nonminimal_identity/check_classical_diff_auxiliary_bv_representation_v1.py && python3 d_quotient_classical/nonminimal_identity/verify_classical_diff_auxiliary_bv_representation_v1.py",
+          "elapsed_seconds": 0.24,
+          "status": "PASS_168_ORDERED_FIELD_COEFFICIENTS_IN_THREE_DIFF_FAMILIES"
+        },
+        {
+          "command": "python3 quantum-weyl/classical_import/build_strict_386_diff_auxiliary_bv_representation.py --check && python3 quantum-weyl/classical_import/check_strict_386_diff_auxiliary_bv_representation.py && python3 quantum-weyl/classical_import/verify_strict_386_diff_auxiliary_bv_representation.py",
+          "elapsed_seconds": 0.33,
+          "status": "PASS_264_MASTER_336_FIELD_632_ANTIFIELD_704_CSTAR_ZERO_DEFECTS"
+        },
+        {
+          "command": "python3 -m unittest d_quotient_classical.nonminimal_identity.tests.test_classical_diff_auxiliary_bv_representation_v1 quantum-weyl.classical_import.tests.test_strict_386_diff_auxiliary_bv_representation quantum-weyl.classical_import.tests.test_classical_import_gate_v12_reconciliation foundations.tests.test_lorentzian_weyl_bv_completion_atlas_v30 foundations.tests.test_matrix_site foundations.tests.test_theory_assembly foundations.tests.test_theory_viability",
+          "elapsed_seconds": 3.33,
+          "status": "PASS_42_TESTS"
+        },
+        {
+          "command": "python3 paper/verify_21_reverse_foundations_claim_map.py && cd paper && pdflatex -interaction=nonstopmode -halt-on-error 21-reverse-foundations-of-physics.tex (two passes)",
+          "elapsed_seconds": 1.97,
+          "status": "PASS_71_PAGES_NO_UNDEFINED_REFERENCES"
+        },
+        {
+          "command": "node --check foundations/matrix_site_v2_assets/app-v2.js",
+          "status": "NOT_RUN_NOT_A_PASS",
+          "reason": "The node executable is unavailable. The independent Python site checker, schema verifier, deterministic-build comparison, content-addressed manifest checks, browser-source token checks, and unit tests pass; they do not constitute a JavaScript parser result."
+        }
+      ]
+    },
+    "tier_2": {
+      "status": "PASS",
+      "checks": [
+        {
+          "command": "python3 quantum-weyl/classical_import/build_classical_import_gate_v12_reconciliation.py --check && python3 quantum-weyl/classical_import/check_classical_import_gate_v12_reconciliation.py && python3 quantum-weyl/classical_import/verify_classical_import_gate_v12_reconciliation.py",
+          "elapsed_seconds": 0.17,
+          "status": "PASS_GATE_FAIL_CLOSED_ZERO_ACCEPTED_COMMON_HASHES"
+        },
+        {
+          "command": "python3 foundations/build_lorentzian_weyl_bv_completion_atlas_v30.py --check && python3 foundations/check_lorentzian_weyl_bv_completion_atlas_v30.py && python3 foundations/verify_lorentzian_weyl_bv_completion_atlas_v30.py",
+          "elapsed_seconds": 0.18,
+          "status": "PASS_77_CELLS_AND_11_ROUTE_FRONTIER"
+        },
+        {
+          "command": "python3 foundations/build_matrix_site_v2.py --check && python3 foundations/check_matrix_site_v2.py && python3 foundations/verify_matrix_site_v2.py && python3 foundations/verify_theory_assembly.py && python3 foundations/verify_theory_viability.py",
+          "elapsed_seconds": 1.32,
+          "status": "PASS_SITE_SCHEMA_DETERMINISM_MANIFEST_ASSEMBLY_VIABILITY_AND_BOUNDARIES"
+        },
+        {
+          "command": "python3 paper/generate_21_reverse_foundations_claim_map.py --check && python3 paper/verify_21_reverse_foundations_claim_map.py && python3 paper/generate_21_reverse_foundations_appendices.py --check",
+          "elapsed_seconds": 0.38,
+          "status": "PASS_PAPER_AUTHORITIES_HASHES_APPENDICES_AND_CLAIM_BOUNDARIES"
+        }
+      ],
+      "criterion": "The affected chain from the authoritative curved auxiliary Diff representation through the independently reconstructed 386-row variational receiver, Gate V12, Atlas V30, static explorer and Paper 21 was rebuilt and independently replayed."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No freeze, release, theorem-lifecycle promotion or shared-core-algebra change is made. Gate A, exhaustive nonlinear Weyl/boost family census, source q2/q3 pullback, Hadamard construction, renormalized products, QME restoration, residual transfer and Lorentzian certification remain false."
+    }
+  },
+  "science_forge_shadow": {
+    "command": "ci/science-forge-shadow.sh",
+    "elapsed_seconds": 2.85,
+    "maximum_resident_kib": 336372,
+    "process_exit": 0,
+    "certifying_status": "ADVISORY_NON_CERTIFYING_WITH_FINDINGS",
+    "findings": [
+      "The local bridge audit still resolves through the bp2transformer tree rather than this repository.",
+      "That external bridge audit fails because SymPy is unavailable.",
+      "The corpus census reports 1856 certificates against the 2026-07-19 baseline of 976.",
+      "The Forge binary is an unpinned dirty development build whose embedded revision differs from the current forge/lib checkout."
+    ]
+  },
+  "claim_boundary": "The curved auxiliary source export fixes the Diff action on f_hat, v and eta as exact first-jet Lie derivatives with 168 ordered coefficients. The independent 386-row receiver derives 264 master-density coefficients, 336 field-output coefficients, 632 antifield-output coefficients and 704 c_star momentum-map coefficients through the exact non-diagonal pairing, with zero formal-variational and Koszul defects. All seven currently known required cubic families are component-complete. This is not an exhaustive nonlinear BV family census: an authoritative nonlinear Weyl/conformal-boost ghost-antifield manifest remains missing. Gate V12 therefore remains FAIL_CLOSED with zero accepted common hashes. No complete source q2/q3 pullback, causal lambda-squared closure, full Lorentzian off-shell BV propagator, full-complex Hadamard state, renormalized Lorentzian products, causal pAQFT construction, QME restoration, residual transfer or Lorentzian quantum theory is claimed."
+}

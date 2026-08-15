@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/classical-diff-auxiliary-bv-representation-v1.schema.json",
+  "type": "object",
+  "required": ["schema", "result_id", "result_kind", "result_state", "lifecycle", "dependency_tags", "scope", "source_master_terms", "naturality_derivation", "representation_tables", "component_summary", "claim_flags", "does_not_establish", "canonical_hashes", "provenance", "human_report", "next_gate"],
+  "properties": {
+    "schema": {"const": "classical-diff-auxiliary-bv-representation-v1"},
+    "result_id": {"const": "CLASSICAL_DIFF_AUXILIARY_BV_REPRESENTATION_V1"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "representation_tables": {"type": "array", "minItems": 3, "maxItems": 3},
+    "component_summary": {
+      "type": "object",
+      "required": ["families", "ordered_field_coefficients", "by_family"],
+      "properties": {
+        "families": {"const": 3},
+        "ordered_field_coefficients": {"const": 168}
+      }
+    },
+    "claim_flags": {"type": "object", "required": ["THREE_DIFF_AUXILIARY_FIELD_ACTIONS_SOURCE_FORCED", "THREE_DIFF_AUXILIARY_FIELD_COMPONENT_TABLES_SERIALIZED", "THREE_DIFF_AUXILIARY_BV_COTANGENT_LIFTS_SERIALIZED", "FULL_SOURCE_Q2_PULLBACK_REPLAYED", "EXHAUSTIVE_FULL_NONLINEAR_BV_FAMILY_CENSUS", "CLASSICAL_IMPORT_GATE_PASSED", "HADAMARD_STATE_CONSTRUCTED", "QME_RESTORED"]},
+    "human_report": {"const": "d_quotient_classical/reports/classical-diff-auxiliary-bv-representation-v1.md"}
+  },
+  "additionalProperties": true
+}

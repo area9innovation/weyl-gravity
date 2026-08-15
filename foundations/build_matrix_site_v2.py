@@ -64,10 +64,10 @@ BT_EUCLIDEAN_IMPORT = FOUNDATIONS / "results/FOUNDATIONAL_BT_EUCLIDEAN_LATTICE_I
 AUDIT = FOUNDATIONS / "results/FOUNDATIONAL_INTERSECTION_CUBE_MIGRATION_AUDIT_V2.json"
 FULL_SURFACE_AUDIT = FOUNDATIONS / "results/FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1.json"
 LADDER = FOUNDATIONS / "results/FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V2.json"
-COMPLETION_ATLAS = FOUNDATIONS / "results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V29.json"
-COMPLETION_REPORT = FOUNDATIONS / "reports/lorentzian-weyl-bv-completion-atlas-v29.md"
-COMPLETION_GATE = ROOT / "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V11_RECONCILIATION.json"
-COMPLETION_GATE_REPORT = ROOT / "quantum-weyl/classical_import/REPORT_GATE_V11.md"
+COMPLETION_ATLAS = FOUNDATIONS / "results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V30.json"
+COMPLETION_REPORT = FOUNDATIONS / "reports/lorentzian-weyl-bv-completion-atlas-v30.md"
+COMPLETION_GATE = ROOT / "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V12_RECONCILIATION.json"
+COMPLETION_GATE_REPORT = ROOT / "quantum-weyl/classical_import/REPORT_GATE_V12.md"
 COMPLETION_SDR = ROOT / "quantum-weyl/classical_import/certificates/STRICT_DFINITE_RESIDUAL_SDR_V1.json"
 COMPLETION_SDR_REPORT = ROOT / "quantum-weyl/classical_import/REPORT_STRICT_DFINITE_RESIDUAL_SDR_V1.md"
 COMPLETION_CYCLIC = ROOT / "quantum-weyl/classical_import/certificates/STRICT_MINIMAL_BV_CYCLIC_SIGN_RECONCILIATION_V1.json"
@@ -128,6 +128,8 @@ COMPLETION_CUBIC_INVENTORY = ROOT / "quantum-weyl/classical_import/certificates/
 COMPLETION_CUBIC_INVENTORY_REPORT = ROOT / "quantum-weyl/classical_import/REPORT_STRICT_386_SHIFTED_AUXILIARY_CUBIC_INVENTORY_V1.md"
 COMPLETION_HH_HV_LIFT = ROOT / "quantum-weyl/classical_import/certificates/STRICT_386_HH_HV_AUXILIARY_COTANGENT_LIFT_V1.json"
 COMPLETION_HH_HV_LIFT_REPORT = ROOT / "quantum-weyl/classical_import/REPORT_STRICT_386_HH_HV_AUXILIARY_COTANGENT_LIFT_V1.md"
+COMPLETION_DIFF_AUXILIARY = ROOT / "quantum-weyl/classical_import/certificates/STRICT_386_DIFF_AUXILIARY_BV_REPRESENTATION_V1.json"
+COMPLETION_DIFF_AUXILIARY_REPORT = ROOT / "quantum-weyl/classical_import/REPORT_STRICT_386_DIFF_AUXILIARY_BV_REPRESENTATION_V1.md"
 LEDGERS = v1.LEDGERS
 CREATED = "2026-08-15"
 BASE_COMMIT = "229fd0f2147e8ed611c5147328459f7678b1f605"
@@ -414,6 +416,8 @@ def build_dataset() -> dict[str, Any]:
             "completion_cubic_inventory_report": site_link(rel(COMPLETION_CUBIC_INVENTORY_REPORT)),
             "completion_hh_hv_lift": site_link(rel(COMPLETION_HH_HV_LIFT)),
             "completion_hh_hv_lift_report": site_link(rel(COMPLETION_HH_HV_LIFT_REPORT)),
+            "completion_diff_auxiliary": site_link(rel(COMPLETION_DIFF_AUXILIARY)),
+            "completion_diff_auxiliary_report": site_link(rel(COMPLETION_DIFF_AUXILIARY_REPORT)),
         },
     }
     dataset["canonical_digest"] = canonical_digest(dataset)
@@ -458,12 +462,12 @@ all-real BT/Krein path integral; controlled conditional bridges remain open.
 
 The **Weyl BV routes** view projects the current audited Lorentzian completion atlas as
 seven architectures across eleven ordered gates, for 77 separately typed cells.
-It exposes the finite residual-SDR repair, twelve ranked next constructions and the
+It exposes the finite residual-SDR repair, eleven ranked next constructions and the
 eleven-step Berger H26/C26 decision chain.  The ranking is a planning aid, not a theorem; in particular,
 the rational non-cone feasibility control prevents the scoped 104-row failures
 from being promoted to a general non-cone no-go.
 
-Atlas V29 preserves the field-equation type result.  The degree-one-to-zero
+Atlas V30 preserves the field-equation type result.  The degree-one-to-zero
 Green component is an exact right inverse on Noether-compatible sources and a
 left inverse modulo gauge.  The stronger full ungauge-fixed inverse is impossible:
 the exact nonzero gauge and Noether maps obey `K R=0` and `N K=0`.  The retired
@@ -498,9 +502,12 @@ Weyl/boost ghost-antifield families remain explicit fronts.  The successor now
 closes the curved hh/hv route: 1,392 hh, 76 hv, and 22 vv field coefficients
 induce 3,907 collected cotangent coefficients with zero formal-adjoint defect.
 Thus the complete quadratic auxiliary canonical lift is serialized and four of
-seven known families are component-complete.  Gate V11 records that bounded
-advance while still accepting zero authoritative hashes; the three Diff families,
-exhaustive nonlinear ghost census, and complete source q2/q3 pullback remain open.
+seven known families are component-complete.  The successor closes the three
+Diff families as well: 264 master-density coefficients generate 336 field, 632
+antifield, and 704 `c_star` coefficients with zero variational or Koszul defect.
+All seven known-required families are therefore component-complete.  Gate V12
+still accepts zero authoritative hashes because the exhaustive nonlinear
+Weyl/conformal-boost ghost manifest and complete source q2/q3 pullback remain open.
 The complete Berger q3 remains a different-theory Weyl-plus-clock result on a fixed
 54-row carrier; no certified same-theory cyclic map authorizes its direct import.
 
@@ -835,9 +842,10 @@ def generated() -> dict[Path, bytes]:
         COMPLETION_QUADRATIC_ELIMINATION_REPORT,
         COMPLETION_CUBIC_INVENTORY_REPORT,
         COMPLETION_HH_HV_LIFT_REPORT,
+        COMPLETION_DIFF_AUXILIARY_REPORT,
     ]
     bundled_sources = sorted(set([CUBE, *PREVIOUS_CUBES, FULL_SURFACE_AUDIT, CORNER_BORN_INTERFACE, GROUND_STATE_DYNAMICS_INTERFACE, BT_EUCLIDEAN_IMPORT, GR_CASSINI_RESULT, GR_CASSINI_SCHEMA, MANNHEIM_NGC3198_RESULT, MANNHEIM_NGC3198_SCHEMA, MANNHEIM_NGC3198_PARAMETERS, MANNHEIM_NGC3198_SPARC, MANNHEIM_NGC3198_CPP, NGC3198_COMMON_FIT_RESULT, NGC3198_COMMON_FIT_SCHEMA, NGC3198_COMMON_FIT_PROTOCOL, NGC3198_COMMON_FIT_CPP, AUDIT, LADDER, COMPLETION_ATLAS, COMPLETION_REPORT, COMPLETION_GATE, COMPLETION_GATE_REPORT, COMPLETION_SDR, COMPLETION_SDR_REPORT, COMPLETION_CYCLIC, COMPLETION_CYCLIC_REPORT, COMPLETION_TRANSPORT, COMPLETION_TRANSPORT_REPORT, COMPLETION_ENDPOINT, COMPLETION_ENDPOINT_REPORT, COMPLETION_SUSPENSION, COMPLETION_SUSPENSION_REPORT, COMPLETION_COMPONENT_PAIRING, COMPLETION_COMPONENT_PAIRING_REPORT, COMPLETION_OPERATOR_PORTABILITY, COMPLETION_OPERATOR_PORTABILITY_REPORT, COMPLETION_Q1_SIGN_GATE, COMPLETION_Q1_SIGN_GATE_REPORT, COMPLETION_Q1_SIGN_REPAIR, COMPLETION_Q1_SIGN_REPAIR_REPORT, COMPLETION_FULL_Q1, COMPLETION_FULL_Q1_REPORT, COMPLETION_LOCAL_SDR, COMPLETION_LOCAL_SDR_REPORT, COMPLETION_CANONICAL_SHEAR, COMPLETION_CANONICAL_SHEAR_REPORT, COMPLETION_GREEN_ACTION_NAME, COMPLETION_GREEN_ACTION_NAME_REPORT, COMPLETION_UNARY_CAUSAL_SNAPSHOT, COMPLETION_UNARY_CAUSAL_SNAPSHOT_REPORT, COMPLETION_FULL_D, COMPLETION_FULL_D_REPORT, COMPLETION_Q2_PREFLIGHT, COMPLETION_Q2_PREFLIGHT_REPORT, COMPLETION_Q2_GREEN, COMPLETION_Q2_GREEN_REPORT, COMPLETION_RECURSIVE_TREES, COMPLETION_RECURSIVE_TREES_REPORT, COMPLETION_FORMAL_COEFFICIENTS, COMPLETION_FORMAL_COEFFICIENTS_REPORT, COMPLETION_FIELD_EQUATION_QUOTIENT_INVERSE, COMPLETION_FIELD_EQUATION_QUOTIENT_INVERSE_REPORT, COMPLETION_QUADRATIC_OBSTRUCTION, COMPLETION_QUADRATIC_OBSTRUCTION_REPORT, COMPLETION_Q3_WITNESS, COMPLETION_Q3_WITNESS_REPORT, COMPLETION_MINIMAL_Q3, COMPLETION_MINIMAL_Q3_REPORT, COMPLETION_ARITY3, COMPLETION_ARITY3_REPORT, COMPLETION_Q3_CYCLICITY, COMPLETION_Q3_CYCLICITY_REPORT, COMPLETION_CUBIC_INVENTORY, COMPLETION_CUBIC_INVENTORY_REPORT, COMPLETION_HH_HV_LIFT, COMPLETION_HH_HV_LIFT_REPORT, *LEDGERS, *local_evidence_paths, *local_report_paths, *reports]))
-    bundled_sources = sorted(set([*bundled_sources, *completion_evidence_paths]))
+    bundled_sources = sorted(set([*bundled_sources, COMPLETION_DIFF_AUXILIARY, COMPLETION_DIFF_AUXILIARY_REPORT, *completion_evidence_paths]))
     for source in bundled_sources:
         outputs[SITE / "sources" / source.relative_to(ROOT)] = source.read_bytes()
     input_paths = sorted(set([Path(__file__).resolve(), FOUNDATIONS / "theory_viability.py", FOUNDATIONS / "theory_assembly.py", FOUNDATIONS / "build_gr_cassini_assembly.py", FOUNDATIONS / "check_gr_cassini_assembly.py", FOUNDATIONS / "verify_gr_cassini_assembly.py", FOUNDATIONS / "build_mannheim_ngc3198_assembly.py", FOUNDATIONS / "check_mannheim_ngc3198_assembly.py", FOUNDATIONS / "verify_mannheim_ngc3198_assembly.py", FOUNDATIONS / "build_ngc3198_common_fit_comparison.py", FOUNDATIONS / "check_ngc3198_common_fit_comparison.py", FOUNDATIONS / "verify_ngc3198_common_fit_comparison.py", FOUNDATIONS / "standard-gr-observational-control-v1.json", FOUNDATIONS / "schema/standard-gr-observational-control-v1.schema.json", *bundled_sources, ASSETS / "index.html", ASSETS / "styles.css", ASSETS / "app.js", V2_ASSETS / "app-v2.js", V2_ASSETS / "styles-v2.css"]))
@@ -868,11 +876,14 @@ def generated() -> dict[Path, bytes]:
         "does_not_establish": ["literature completeness", "a result for any of the 169 reviewed open gaps", "that REVIEWED_GAP or NOT_MAPPED means no literature exists", "that an UNREVIEWED evidence role is an absence of direct support", "that a dual LR mark composes its two records into a stronger result", "that all 576 coordinates are jointly realizable", "a weakest mathematical base", "full-state, representation-invariant, causal, or Weyl reconstruction from the single coded wave observable", "the unrestricted LF smooth-test topology from the represented support-indexed union", "surjectivity of the smooth-test embedding onto H2", "uniqueness among arbitrary distributional solutions from energy-image uniqueness", "a variable-coefficient, curved-spacetime, Weyl, or metric-BV Green operator from the scalar 1+1 benchmark", "an effective strict 386-row Green solver or serialized distribution-kernel bytes", "a full two-sided inverse on the ungauge-fixed Weyl field/equation spaces", "a selected gauge representative from the quotient inverse", "that the exact stabilized-q2 candidate is the authoritative nonlinear classical Weyl BV extension", "authoritative q2/Green compatibility from candidate first-response compatibility", "unrestricted mixed-sign or arbitrary causal-difference trees from the certified polarized finite recursion", "a Weyl-BV Maurer-Cartan or Moller map from the candidate formal fixed-point coefficients", "analytic convergence, a convergence radius, or a nonperturbative Moller inverse from lambda-adic stabilization", "a 386-row cyclic q3 stabilization or general source closure from the completed minimal q3 package", "a direct strict pure-Weyl import of the complete Berger-plus-clock q3", "a no-go theorem for full Weyl gravity from the quadratic-only obstruction", "all-order nonlinear source-cocycle closure", "q3 or higher causal brackets", "a weakest-base or choice-free proof of the infinite analytic Green layer", "a source-certified cyclic L-infinity equivalence or accepted q2 Gate-A hash", "a D-Cartan homotopy or physical charge classification from the stabilized D/q2 derivation", "the authoritative twenty-export, seven-hash classical Gate A from the scoped candidate evidence", "a Hadamard state, causal perturbative AQFT construction, or Lorentzian quantum master equation", "continuum renormalized products from finite regulated-product closure", "a Weyl QME or Weyl residual transfer from a finite toy BRST complex", "equivalence of carrier categories from one finite realization", "a theorem ranking from interface order, Pareto membership, or neighbor counts", "composition beyond the two certified scoped cross-cell interfaces", "precision sampler equivalence, continuum reconstruction, or empirical support from the BT finite lattice", "a complete observationally validated theory"],
         "human_report": "foundations/reports/matrix-explorer-site-v2.md",
     }
+    result["features"] = [item for item in result["features"] if not item.startswith("Gate V11 reconciliation")]
+    result["features"].append("Gate V12 reconciliation with all seven known cubic families component-complete and an explicit exhaustive-census firewall")
     result["features"].append("exact 386-row candidate q3 stabilization with 16 ternary block channels and strict authority firewall")
     result["features"].append("exact source-versus-candidate auxiliary cubic witness refuting literal and linear-shear theory identity")
     result["features"].append("exact first nonlinear auxiliary-elimination component closing the f-hat-v-v channel with full BV pullback still open")
     result["features"].append("seven-family exact shifted-cubic inventory with a 22+16 coefficient canonical vv BV lift")
     result["features"].append("complete curved quadratic auxiliary canonical lift with 1392 hh, 76 hv, 22 vv and 3907 cotangent coefficients")
+    result["features"].append("three exact auxiliary Diff BV lifts with 264 master-density, 336 field, 632 antifield and 704 c-star coefficients")
     result["does_not_establish"].extend([
         "that the exact stabilized-q3 candidate is the authoritative nonminimal pure-Weyl BV interaction",
         "general lambda-squared causal source closure from the candidate q3 stabilization",
@@ -909,7 +920,8 @@ def generated() -> dict[Path, bytes]:
     result["claim_flags"]["strict_386_hh_hv_bv_cotangent_lift_component_complete"] = True
     result["claim_flags"]["strict_386_full_bv_cotangent_lift_serialized"] = True
     result["claim_flags"]["strict_386_full_quadratic_bv_cotangent_lift_serialized"] = True
-    result["claim_flags"]["strict_386_diff_bv_representation_component_complete"] = False
+    result["claim_flags"]["strict_386_diff_bv_representation_component_complete"] = True
+    result["claim_flags"]["strict_386_seven_known_required_cubic_families_component_complete"] = True
     result["claim_flags"]["strict_386_full_source_q2_pullback_replayed"] = False
     result["claim_flags"]["strict_386_full_source_q3_pullback_replayed"] = False
     outputs[RESULT] = (json.dumps(result, indent=2) + "\n").encode()
