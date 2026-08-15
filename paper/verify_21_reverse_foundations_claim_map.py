@@ -136,6 +136,7 @@ def main() -> int:
     bt_radial_convexity = json.loads((ROOT / data["authorities"]["bt_radial_convexity_obstruction"]["path"]).read_text())
     bt_log_bubble = json.loads((ROOT / data["authorities"]["bt_log_bubble_virial_no_go"]["path"]).read_text())
     bt_bubble_balance = json.loads((ROOT / data["authorities"]["bt_log_bubble_entropy_soft_score_balance"]["path"]).read_text())
+    bt_full_phase_current = json.loads((ROOT / data["authorities"]["bt_full_phase_current_gate"]["path"]).read_text())
     dims = cube["dimensions"]
     atlas = data["atlas_snapshot"]
     require(atlas["axis_sizes"] == [6, 6, 16], "unexpected axis sizes")
@@ -378,6 +379,7 @@ def main() -> int:
         (26, "BT-HOMOGENEOUS-VIRIAL-NO-GO"),
         (27, "BT-BUBBLE-ENTROPY-SOFT-SCORE-BALANCE"),
         (28, "STRICT-WEYL-ENDPOINT-Q1-CONTENT-BRIDGE"),
+        (29, "BT-FULL-PHASE-CURRENT-GATE"),
     ]}, "claim set drift")
 
     flags = data["claim_flags"]
@@ -534,6 +536,10 @@ def main() -> int:
     require(flags["bt_quadratic_bubble_score_soft_factor_established"] is True, "BT quadratic bubble soft factor omitted")
     require(flags["bt_dilute_bubble_score_activity_vanishes"] is True, "BT dilute score activity balance omitted")
     require(flags["bt_interacting_multibubble_cluster_bound_established"] is False, "BT dilute balance promoted to cluster theorem")
+    require(flags["bt_full_phase_background_translation_invariance_established"] is True, "BT full-phase translation invariance omitted")
+    require(flags["bt_full_phase_current_divergence_identity_established"] is True, "BT canonical-current identity omitted")
+    require(flags["bt_canonical_current_pointwise_second_factor_obstructed"] is True, "BT canonical second-factor obstruction omitted")
+    require(flags["bt_translation_invariant_current_susceptibility_established"] is False, "BT current susceptibility promoted")
     require(flags["bt_exact_interacting_score_scaling_established"] is False, "BT exact interacting score promoted")
     require(flags["bt_actual_interacting_H_minus_one_established"] is False, "BT interacting H-minus-one promoted")
     require(atlas["bt_g4_zero_loop_limit"] == bt_g4_lower_loops["zero_loop"]["large_volume_limit"] == "lim_(L->infinity) M4_zero(L)=111/(32*pi^4)", "BT zero-loop limit drift")
@@ -556,6 +562,13 @@ def main() -> int:
     require(atlas["bt_bubble_positive_entropy_gap"] == bt_bubble_balance["tuned_entropy_balance"]["positive_entropy_gap"] == {"numerator": 1902925399, "denominator": 2933186256}, "BT bubble entropy gap drift")
     require(bt_bubble_balance["method_disposition"]["actual_annealed_zero_fiber_score_bound"] == "OPEN", "BT dilute balance promoted to actual score theorem")
     require(bt_bubble_balance["dependency_tags"] == ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"], "BT bubble-balance dependency boundary drift")
+    require(atlas["bt_full_phase_background_translation_status"] == bt_full_phase_current["method_disposition"]["full_cosine_sine_background_translation_invariance"] == "PROVED", "BT full-phase translation status drift")
+    require(atlas["bt_full_phase_current_identity_status"] == bt_full_phase_current["method_disposition"]["canonical_current_divergence_identity"] == "PROVED", "BT canonical-current identity drift")
+    require(atlas["bt_full_phase_pointwise_second_factor_status"] == bt_full_phase_current["method_disposition"]["pointwise_second_factor_from_canonical_current_gradient"] == "OBSTRUCTED", "BT pointwise second-factor status drift")
+    require(atlas["bt_full_phase_current_susceptibility_status"] == bt_full_phase_current["method_disposition"]["translation_invariant_current_susceptibility_bound"] == "OPEN", "BT current susceptibility promoted")
+    require(atlas["bt_full_phase_fixture_current_zero_mode"] == bt_full_phase_current["exact_current_fixture"]["full_current_zero_mode"] == {"numerator": -444, "denominator": 1}, "BT exact current fixture drift")
+    require(bt_full_phase_current["method_disposition"]["actual_interacting_H_minus_one_second_moment"] == "OPEN", "BT full-phase reduction promoted to H-minus-one theorem")
+    require(bt_full_phase_current["dependency_tags"] == ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"], "BT full-phase dependency boundary drift")
     require(atlas["bt_g4_interacting_H_minus_one_status"] == "OPEN", "BT interacting H-minus-one atlas promotion")
     require(flags["bt_complete_order_g_four_explicit_momentum_kernel_established"] is False, "BT expected-Hessian formula promoted to explicit momentum kernel")
     require(flags["bt_complete_order_g_four_effective_kernel_bound_established"] is False, "BT effective second-chaos kernel bound promoted")
@@ -834,6 +847,9 @@ def main() -> int:
         r"negative pair 4 and positive pair 7",
         r"c_4<-0.01613",
         r"c_7<0.016103194",
+        r"REVERSE_PHYSICS_BT_EUCLIDEAN_FULL_PHASE_CURRENT_GATE_V1",
+        r"\sum_xJ_{x,1}=-444",
+        r"susceptibility estimate",
     ]:
         require(phrase in prose, f"required boundary missing from paper: {phrase}")
     for citation in [

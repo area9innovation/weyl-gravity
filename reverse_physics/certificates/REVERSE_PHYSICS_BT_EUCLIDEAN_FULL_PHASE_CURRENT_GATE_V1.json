@@ -1,0 +1,191 @@
+{
+  "answer": "Remove the full lowest axial cosine-sine eigenspace E_p. The orthogonal background marginal is then exactly translation invariant, and the all-phase curvature theorem makes every two-dimensional conditional potential kappa_L-strongly convex with kappa_L=(2/9)*N*omega_p^2. If G_x=partial A/partial psi_x and J_(x,i)=r_x*exp(psi_(x+e_i)-psi_x)-r_(x+e_i)*exp(psi_x-psi_(x+e_i)), then Ghat(p)=sum_i(exp(i*p_i)-1)*Jhat_i(p). For an axial p, the two real zero-fiber scores obey s_cos^2+s_sin^2=(omega_p/g^2)*|Jhat_1(p)|^2. Therefore the missing score bound is exactly E_nu[|Jhat_1(p)|^2]<=C_J*g^2*N*omega_p. A rational spatially constant fixture on the 4^4 torus has sum_x J_(x,1)=-444, so the canonical current has no pointwise algebraic zero at p=0 and cannot supply the second soft factor by an exact gradient identity. The remaining factor must be a statistical current-susceptibility theorem under the translation-invariant background Gibbs marginal. That theorem is not proved here.",
+  "certificate": "REVERSE_PHYSICS_BT_EUCLIDEAN_FULL_PHASE_CURRENT_GATE_V1",
+  "checks": {
+    "action_per_spatial_site_is_189_over_32": true,
+    "actual_H_minus_one_bound_remains_open": true,
+    "canonical_current_has_no_pointwise_second_soft_factor": true,
+    "complex_score_is_exact_current_divergence": true,
+    "current_row_is_exact": true,
+    "current_susceptibility_bound_remains_open": true,
+    "current_zero_mode_per_spatial_site_is_minus_111_over_16": true,
+    "full_action_is_378": true,
+    "full_current_zero_mode_is_minus_444": true,
+    "full_phase_background_is_translation_invariant": true,
+    "no_born_krein_or_lorentzian_promotion": true,
+    "pair_center_coefficient_is_eighty_one_halves": true,
+    "pair_width_coefficient_is_eighteen": true,
+    "residual_row_is_exact": true,
+    "score_bound_is_equivalent_to_current_susceptibility_bound": true,
+    "two_dimensional_curvature_coefficient_is_two_ninths": true
+  },
+  "created": "2026-08-15",
+  "current_identity": {
+    "action": "A=(1/2)*sum_x r_x^2",
+    "action_gradient": "G_x=partial A/partial psi_x=-sum_i[J_(x,i)-J_(x-e_i,i)]",
+    "axial_score_identity": "s_cos^2+s_sin^2=(omega_p/g^2)*|Jhat_1(p)|^2",
+    "canonical_oriented_current": "J_(x,i)=r_x*w_(x,x+e_i)-r_(x+e_i)*w_(x+e_i,x)",
+    "equivalent_current_gate": "E_nu[|Jhat_1(p)|^2]<=C_J*g^2*N*omega_p",
+    "fourier_divergence": "Ghat(p)=sum_i[exp(i*p_i)-1]*Jhat_i(p)",
+    "residual": "r_x=sum_(y~x)[exp(psi_y-psi_x)-1]",
+    "status": "EXACT_ONE_SOFT_FACTOR_AND_EQUIVALENT_SUSCEPTIBILITY_GATE"
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL"
+  ],
+  "does_not_establish": [
+    "the translation-invariant current susceptibility bound",
+    "the annealed score, lowest-mode, or interacting H^-1 estimate",
+    "failure of a statistical second soft factor under the Gibbs law",
+    "tightness or a continuum Euclidean measure",
+    "a Born rule, Krein reconstruction, or Lorentzian causal statement"
+  ],
+  "exact_current_fixture": {
+    "action_per_spatial_site": {
+      "denominator": 32,
+      "numerator": 189
+    },
+    "consequence": "the canonical local current is not pointwise divisible by an external lattice momentum; its second soft factor cannot be obtained by declaring this current to be a periodic gradient",
+    "current_zero_mode_per_spatial_site": {
+      "denominator": 16,
+      "numerator": -111
+    },
+    "forward_current_time_row": [
+      {
+        "denominator": 1,
+        "numerator": 2
+      },
+      {
+        "denominator": 4,
+        "numerator": 7
+      },
+      {
+        "denominator": 8,
+        "numerator": 13
+      },
+      {
+        "denominator": 16,
+        "numerator": -197
+      }
+    ],
+    "full_action": {
+      "denominator": 1,
+      "numerator": 378
+    },
+    "full_current_zero_mode": {
+      "denominator": 1,
+      "numerator": -444
+    },
+    "lattice": "4^4 periodic torus, field constant in three spatial coordinates",
+    "mean_zero_gauge": "subtract (1/4)*log(8) from the logarithmic field; all weights, residuals, currents, and action are unchanged",
+    "positive_field_time_row": [
+      {
+        "denominator": 1,
+        "numerator": 1
+      },
+      {
+        "denominator": 1,
+        "numerator": 1
+      },
+      {
+        "denominator": 1,
+        "numerator": 2
+      },
+      {
+        "denominator": 1,
+        "numerator": 4
+      }
+    ],
+    "residual_time_row": [
+      {
+        "denominator": 1,
+        "numerator": 3
+      },
+      {
+        "denominator": 1,
+        "numerator": 1
+      },
+      {
+        "denominator": 2,
+        "numerator": 1
+      },
+      {
+        "denominator": 4,
+        "numerator": -5
+      }
+    ],
+    "spatial_replication_factor": 64,
+    "status": "EXACT_RATIONAL_CANONICAL_SECOND_FACTOR_OBSTRUCTION"
+  },
+  "full_phase_reduction": {
+    "background": "eta in the mean-zero carrier intersect E_p^perp",
+    "conditional_width": "E[|T-m|^2|eta]<=2/kappa_L by E[(T-m) dot grad V(T)]=2 and strong monotonicity",
+    "curvature": "Hess V_eta >= kappa_L*I_2 with kappa_L=(2/9)*N*omega_p^2",
+    "eigenspace": "E_p=span{h_c,h_s}, h_c(x)=cos(2*pi*x_1/L), h_s(x)=sin(2*pi*x_1/L)",
+    "mode_bound": "|m(eta)|^2<=|grad V_eta(0)|^2/kappa_L^2",
+    "resulting_pair_moment": "E[|T|^2]<=(36+81*C_s)/(2*N*omega_p^2)",
+    "status": "EXACT_TRANSLATION_INVARIANT_TWO_MODE_REDUCTION",
+    "sufficient_score_bound": "E_nu[|grad V_eta(0)|^2]<=C_s*N*omega_p^2",
+    "translation_invariance": "lattice translations preserve E_p and its orthogonal complement, rotate (h_c,h_s), preserve the action, and therefore preserve the exact background marginal nu_p"
+  },
+  "independent_verifier": "reverse_physics/verify_bt_euclidean_full_phase_current_gate.py",
+  "lifecycle_state": "FULL_PHASE_SCORE_REDUCED_CANONICAL_SECOND_SOFT_FACTOR_OBSTRUCTED",
+  "method_disposition": {
+    "actual_annealed_zero_fiber_score_bound": "OPEN",
+    "actual_interacting_H_minus_one_second_moment": "OPEN",
+    "born_rule": "NOT_ESTABLISHED",
+    "canonical_current_divergence_identity": "PROVED",
+    "continuum_limit": "NOT_ESTABLISHED",
+    "first_external_momentum_factor": "PROVED",
+    "full_cosine_sine_background_translation_invariance": "PROVED",
+    "krein_reconstruction": "NOT_ASSESSED",
+    "lorentzian_transfer": "NOT_ESTABLISHED",
+    "pointwise_second_factor_from_canonical_current_gradient": "OBSTRUCTED",
+    "single_cosine_background_translation_invariance": "ABSENT",
+    "translation_invariant_current_susceptibility_bound": "OPEN",
+    "two_mode_center_score_reduction": "PROVED"
+  },
+  "missing_object_ledger": [
+    "a Gibbs estimate E_nu[|Jhat_1(p)|^2]<=C*g^2*N*omega_p",
+    "an observable-weighted block decomposition of the canonical current",
+    "control or a counterexample for correlated multibubble current phases",
+    "the resulting two-mode center theorem and dyadic Fourier-shell sum",
+    "tightness and continuum identification only after the actual H^-1 theorem"
+  ],
+  "next_gate": "Work with the full cosine-sine background marginal, not the single-cosine marginal. Prove the longitudinal canonical-current susceptibility bound using an observable-weighted block decomposition and the tuned Gibbs measure, or construct a translation-covariant correlated background sequence for which |Jhat_1(p)|^2/(g^2*N*omega_p) diverges. No pointwise second-gradient identity for the canonical current is available.",
+  "provenance": {
+    "analytic_arithmetic": "Finite-dimensional strong monotonicity, translation covariance of the full phase eigenspace, and the exact lattice Fourier divergence prove the reduction.",
+    "assumptions": [
+      "The coupling, Fourier mode, and action normalizations are those of the imported BT certificates.",
+      "The all-background curvature theorem applies to every real phase in the lowest axial eigenspace.",
+      "Only LOCAL-ALGEBRAIC and EUCLIDEAN-SPECTRAL conclusions are drawn."
+    ],
+    "exact_arithmetic": "Fraction arithmetic reconstructs the rational positive-field row, residual, current, action, spatial replication, and all center-reduction constants.",
+    "inputs": [
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_ALL_BACKGROUND_LOWEST_MODE_CURVATURE_V1.json",
+        "sha256": "49e2d144667818f57e4d994a7e41534e6ded204b52eaa6f35b8923f30907e6d0"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_ANNEALED_CENTER_SCORE_REDUCTION_V1.json",
+        "sha256": "16b72c5b3976f5eecea27d3e40b89b7318f08d9116c4d845826a30aa334483e4"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_LOG_BUBBLE_ENTROPY_SOFT_SCORE_BALANCE_V1.json",
+        "sha256": "6e5efc898857d8ebaf8daf25967c5a9e51b2aeea6ea0de12f02c1e02ade66043"
+      }
+    ],
+    "repository_base_commit": "d07ce6c0c0d621b704e319e636839bf5510b13e5"
+  },
+  "question": "After the logarithmic-bubble balance, what translation-invariant observable must be bounded to prove the lowest-mode score theorem, and is its second external soft factor a pointwise identity?",
+  "report": "reverse_physics/reports/bt-euclidean-full-phase-current-gate.md",
+  "result_kind": "exact full-phase center reduction, current-divergence identity, and rational obstruction to a pointwise second current factor",
+  "schema": "reverse_physics/schema/reverse-physics-bt-euclidean-full-phase-current-gate-v1.schema.json",
+  "schema_version": "reverse-physics-bt-euclidean-full-phase-current-gate-v1",
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_euclidean_full_phase_current_gate.py --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_euclidean_full_phase_current_gate.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_euclidean_full_phase_current_gate"
+  ]
+}

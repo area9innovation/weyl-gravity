@@ -85,6 +85,14 @@
       "denominator": 1296,
       "numerator": -1
     },
+    "bt_full_phase_background_translation_status": "PROVED",
+    "bt_full_phase_current_identity_status": "PROVED",
+    "bt_full_phase_current_susceptibility_status": "OPEN",
+    "bt_full_phase_fixture_current_zero_mode": {
+      "denominator": 1,
+      "numerator": -444
+    },
+    "bt_full_phase_pointwise_second_factor_status": "OBSTRUCTED",
     "bt_g4_all_volume_zero_identity_status": "OBSTRUCTED_BY_L4_COUNTEREXAMPLE",
     "bt_g4_chaos_decomposition_status": "PROVED",
     "bt_g4_combined_seven_kernel_status": "OPEN",
@@ -551,6 +559,16 @@
       "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_FREE_RECONSTRUCTION_OBSTRUCTION_V1.json",
       "result_id": "REVERSE_PHYSICS_BT_EUCLIDEAN_FREE_RECONSTRUCTION_OBSTRUCTION_V1",
       "sha256": "3ff1ba1578d5bc11ea7f2a6fc806fedb49d127a0f3f29fc220d987d9305371a9"
+    },
+    "bt_full_phase_current_gate": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL"
+      ],
+      "lifecycle": "FULL_PHASE_SCORE_REDUCED_CANONICAL_SECOND_SOFT_FACTOR_OBSTRUCTED",
+      "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_FULL_PHASE_CURRENT_GATE_V1.json",
+      "result_id": "REVERSE_PHYSICS_BT_EUCLIDEAN_FULL_PHASE_CURRENT_GATE_V1",
+      "sha256": "9b98de173b3c00f283bbfdc9b71ac68beac742c1f3b9f33e8201b667331f27ab"
     },
     "bt_interacting_os_preflight": {
       "dependency_tags": [
@@ -1029,7 +1047,7 @@
       "sha256": "1e4db10a9a71c2182a9326f94987ff7b39e194fc55b1db321ec32169b53c3e6f"
     }
   },
-  "canonical_digest": "5e6db319e352e19b436977d7fd07da08a52c81bc9a23506cc010714d244b7c56",
+  "canonical_digest": "8d3f358f3c84d49d996b7c73c6943b3687240a5af07d3894e7740fee5757cd0d",
   "claim_flags": {
     "atlas_exhaustive": false,
     "axes_independent_proved": false,
@@ -1043,6 +1061,7 @@
     "bt_annealed_center_second_moment_established": false,
     "bt_annealed_recentered_fiber_bound_established": false,
     "bt_any_nonnegative_homogeneous_virial_obstructed": true,
+    "bt_canonical_current_pointwise_second_factor_obstructed": true,
     "bt_center_to_zero_fiber_score_reduction_established": true,
     "bt_centered_pointwise_fiber_domination_obstructed": true,
     "bt_complete_order_g_four_all_volume_zero_identity_obstructed": true,
@@ -1106,6 +1125,8 @@
     "bt_fixed_spacing_large_volume_score_established": false,
     "bt_free_h_minus_one_estimate_certified": true,
     "bt_free_os_obstruction_certified": true,
+    "bt_full_phase_background_translation_invariance_established": true,
+    "bt_full_phase_current_divergence_identity_established": true,
     "bt_gibbs_weighted_block_estimate_established": false,
     "bt_global_orthogonal_hessian_block_obstructed": true,
     "bt_half_action_density_candidate_established": false,
@@ -1137,6 +1158,7 @@
     "bt_specific_zero_fiber_ward_identity_established": false,
     "bt_standard_boundary_curvature_spectral_gap_route_obstructed": true,
     "bt_subunit_positive_homogeneous_virial_established": false,
+    "bt_translation_invariant_current_susceptibility_established": false,
     "bt_tree_log_convexity_extra_tilt_confinement_obstructed": true,
     "bt_tuned_fixed_order_uniform_remainder_obstructed": true,
     "bt_tuned_leading_power_compensation_required": true,
@@ -1563,6 +1585,18 @@
       ],
       "statement": "On the unit conformal cylinder, an exact rational basis bridge identifies the Gate-V5 minimal unary complex with the actual thirty-row endpoint of the certified 386-row causal architecture: 80/80 multiindex tables, including 700/700 independent Bach four-jet columns, agree and define one common q1 digest with 619 nonzero coefficients. The simultaneously transported causal ghost pairing pulls back to -I_5 rather than Gate-canonical I_5, so the full 386-row paired Green replay, q2/D compatibility, Gate A, Hadamard and QME remain open.",
       "status": "SAME_THEORY_ENDPOINT_Q1_CONTENT_IDENTIFIED_WITH_PAIRING_SUSPENSION_BOUNDARY"
+    },
+    {
+      "authorities": [
+        "bt_full_phase_current_gate"
+      ],
+      "claim_id": "RF-29-BT-FULL-PHASE-CURRENT-GATE",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL"
+      ],
+      "statement": "Removing the full lowest axial cosine-sine eigenspace makes the exact orthogonal-background marginal translation invariant. The two-mode center problem then reduces to a translation-invariant canonical-current susceptibility bound, because the two real scores are exactly the Fourier divergence of one local current. This current supplies one external momentum factor. An exact rational 4^4 fixture has current zero mode -444, obstructing the shortcut that declares the canonical current to be a periodic gradient and extracts a second factor pointwise. The statistical current-susceptibility bound, interacting H^-1 estimate, and continuum limit remain open.",
+      "status": "EXACT_FULL_PHASE_CURRENT_REDUCTION_WITH_CANONICAL_POINTWISE_SECOND_FACTOR_OBSTRUCTION"
     }
   ],
   "created": "2026-08-14",
@@ -1609,7 +1643,8 @@
     "the common power coefficient of pairs 4 and 7, tuned control of the subleading sector, complete M4, or the actual interacting H^-1 moment from the pair-3 and pair-6 bounds",
     "noncancellation of the explicit pair-4 and pair-7 coefficient normal forms, tuned control, complete M4, or the actual interacting H^-1 moment from existence of the two limits alone",
     "failure of a Gibbs-weighted block estimate, divergence of the interacting moment, or nonexistence of a continuum measure from the logarithmic-bubble pointwise virial obstruction",
-    "an actual bubble probability, interacting cluster expansion, annealed score theorem, or H^-1 estimate from the dilute logarithmic-bubble entropy/soft-score balance"
+    "an actual bubble probability, interacting cluster expansion, annealed score theorem, or H^-1 estimate from the dilute logarithmic-bubble entropy/soft-score balance",
+    "the translation-invariant current-susceptibility bound, statistical second soft factor, interacting H^-1 estimate, or continuum measure from the full-phase current reduction"
   ],
   "formal_object": {
     "coordinates": {
@@ -1768,7 +1803,7 @@
       "source_sha256": "c8778135a01e857d8823e875853bdf0bbd2d73f05830ca6f03b81852b189247c"
     },
     "path": "paper/21-reverse-foundations-of-physics.tex",
-    "sha256": "82c491e4aa1ac5e9376be85970b4224f80ec6f0d801baa83e01da783b6c47b9c"
+    "sha256": "7db938cbea3cb983b960919b72f88d8ac9523153ed8ed28d207ba7b13f57a8d7"
   },
   "result_id": "PAPER21_REVERSE_FOUNDATIONS_INTRODUCTION_V1",
   "result_kind": "PROGRAMME_SYNTHESIS_AND_TYPED_CASE_STUDY_MAP",

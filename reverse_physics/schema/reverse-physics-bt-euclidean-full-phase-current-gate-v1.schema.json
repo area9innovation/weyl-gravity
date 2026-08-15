@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-full-phase-current-gate-v1.schema.json",
+  "title": "BT Euclidean full-phase current gate certificate",
+  "type": "object",
+  "required": ["certificate", "schema_version", "created", "dependency_tags", "lifecycle_state", "result_kind", "question", "answer", "full_phase_reduction", "current_identity", "exact_current_fixture", "method_disposition", "checks", "does_not_establish", "missing_object_ledger", "next_gate", "provenance", "schema", "report", "independent_verifier", "verification_commands"],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_EUCLIDEAN_FULL_PHASE_CURRENT_GATE_V1"},
+    "schema_version": {"const": "reverse-physics-bt-euclidean-full-phase-current-gate-v1"},
+    "created": {"const": "2026-08-15"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"]},
+    "lifecycle_state": {"const": "FULL_PHASE_SCORE_REDUCED_CANONICAL_SECOND_SOFT_FACTOR_OBSTRUCTED"},
+    "result_kind": {"type": "string", "minLength": 1},
+    "question": {"type": "string", "minLength": 1},
+    "answer": {"type": "string", "minLength": 1},
+    "full_phase_reduction": {"type": "object", "required": ["eigenspace", "background", "translation_invariance", "curvature", "mode_bound", "conditional_width", "sufficient_score_bound", "resulting_pair_moment", "status"], "properties": {"status": {"const": "EXACT_TRANSLATION_INVARIANT_TWO_MODE_REDUCTION"}}, "additionalProperties": {"type": "string"}},
+    "current_identity": {"type": "object", "required": ["residual", "action", "canonical_oriented_current", "action_gradient", "fourier_divergence", "axial_score_identity", "equivalent_current_gate", "status"], "properties": {"status": {"const": "EXACT_ONE_SOFT_FACTOR_AND_EQUIVALENT_SUSCEPTIBILITY_GATE"}}, "additionalProperties": {"type": "string"}},
+    "exact_current_fixture": {"type": "object", "required": ["lattice", "positive_field_time_row", "mean_zero_gauge", "residual_time_row", "forward_current_time_row", "current_zero_mode_per_spatial_site", "spatial_replication_factor", "full_current_zero_mode", "action_per_spatial_site", "full_action", "consequence", "status"], "properties": {"positive_field_time_row": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/rational"}}, "residual_time_row": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/rational"}}, "forward_current_time_row": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/rational"}}, "current_zero_mode_per_spatial_site": {"$ref": "#/$defs/rational"}, "spatial_replication_factor": {"const": 64}, "full_current_zero_mode": {"$ref": "#/$defs/rational"}, "action_per_spatial_site": {"$ref": "#/$defs/rational"}, "full_action": {"$ref": "#/$defs/rational"}, "status": {"const": "EXACT_RATIONAL_CANONICAL_SECOND_FACTOR_OBSTRUCTION"}}, "additionalProperties": {"type": "string"}},
+    "method_disposition": {"type": "object", "minProperties": 13, "additionalProperties": {"type": "string"}},
+    "checks": {"type": "object", "minProperties": 16, "additionalProperties": {"const": true}},
+    "does_not_establish": {"type": "array", "minItems": 5, "items": {"type": "string"}},
+    "missing_object_ledger": {"type": "array", "minItems": 5, "items": {"type": "string"}},
+    "next_gate": {"type": "string", "minLength": 1},
+    "provenance": {"type": "object", "required": ["repository_base_commit", "inputs", "exact_arithmetic", "analytic_arithmetic", "assumptions"], "properties": {"repository_base_commit": {"const": "d07ce6c0c0d621b704e319e636839bf5510b13e5"}, "inputs": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/input"}}, "exact_arithmetic": {"type": "string"}, "analytic_arithmetic": {"type": "string"}, "assumptions": {"type": "array", "minItems": 3, "items": {"type": "string"}}}, "additionalProperties": false},
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-euclidean-full-phase-current-gate-v1.schema.json"},
+    "report": {"const": "reverse_physics/reports/bt-euclidean-full-phase-current-gate.md"},
+    "independent_verifier": {"const": "reverse_physics/verify_bt_euclidean_full_phase_current_gate.py"},
+    "verification_commands": {"type": "array", "minItems": 3, "items": {"type": "string"}}
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "rational": {"type": "object", "required": ["numerator", "denominator"], "properties": {"numerator": {"type": "integer"}, "denominator": {"type": "integer", "minimum": 1}}, "additionalProperties": false},
+    "input": {"type": "object", "required": ["path", "sha256"], "properties": {"path": {"type": "string"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}, "additionalProperties": false}
+  }
+}

@@ -1870,6 +1870,54 @@ The surviving route is an observable-weighted block estimate that preserves
 this soft factor.  Fluctuation neighborhoods, interacting multibubbles, and
 the actual Gibbs score remain open.
 
+The next exact reduction uses the full lowest axial phase plane rather than a
+single cosine.  For
+
+\[
+ E_p=\operatorname{span}\{\cos(2\pi x_1/L),\sin(2\pi x_1/L)\},
+\]
+
+lattice translations rotate \(E_p\) and preserve its orthogonal complement.
+Consequently the exact background marginal is translation invariant.  The
+certificate
+
+\cert{REVERSE_PHYSICS_BT_EUCLIDEAN_FULL_PHASE_CURRENT_GATE_V1}
+
+combines the all-phase curvature theorem with the canonical oriented current
+
+\[
+ J_{x,i}=r_x e^{\psi_{x+e_i}-\psi_x}
+          -r_{x+e_i}e^{\psi_x-\psi_{x+e_i}}.
+\]
+
+The two real zero-fiber scores are exactly its Fourier divergence.  For the
+lowest axial momentum \(p\),
+
+\[
+ s_{\cos}^2+s_{\sin}^2
+ =\frac{\omega_p}{g^2}\lvert\widehat J_1(p)\rvert^2.
+\]
+
+Thus the center theorem is reduced to the single translation-invariant
+susceptibility estimate
+
+\[
+ \mathbb E_{\nu_p}\lvert\widehat J_1(p)\rvert^2
+ \leq C_J g^2N\omega_p.
+\]
+
+The divergence supplies one external momentum factor exactly, but not two.
+On a rational \(4^4\) fixture the current has
+
+\[
+ \sum_xJ_{x,1}=-444,
+\]
+
+so this canonical current is not a periodic gradient.  A second soft factor,
+if true, must therefore arise statistically under the Gibbs marginal rather
+than from that pointwise identity.  The susceptibility bound, interacting
+\(H^{-1}\) estimate, and continuum limit remain open.
+
 \subsection{A finite BV contraction does not freeze the quantum theory}
 
 The energy-two free BV block provides another finite exact case.  The
