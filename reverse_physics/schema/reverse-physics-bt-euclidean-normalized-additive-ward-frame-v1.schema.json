@@ -1,0 +1,344 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-normalized-additive-ward-frame-v1.schema.json",
+  "title": "BT normalized additive Ward-frame certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "certificate", "schema_version", "created", "dependency_tags",
+    "lifecycle_state", "result_kind", "question", "answer",
+    "normalized_additive_frame", "stein_ward_identity",
+    "constant_frame_corollary", "fourier_source_corollary",
+    "full_phase_stein_matrix", "diversity_flow", "exact_cycle_fixture", "method_disposition",
+    "missing_object_ledger", "next_gate", "does_not_establish",
+    "provenance", "verification_commands", "tier_receipt", "checks",
+    "schema", "report", "verifier"
+  ],
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "textArray": {
+      "type": "array", "minItems": 1,
+      "items": {"$ref": "#/$defs/text"}
+    },
+    "fraction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": {"type": "integer"},
+        "denominator": {"type": "integer", "minimum": 1}
+      }
+    },
+    "fractionArray": {
+      "type": "array", "items": {"$ref": "#/$defs/fraction"}
+    },
+    "textObject": {
+      "type": "object", "minProperties": 1,
+      "additionalProperties": {"$ref": "#/$defs/text"}
+    }
+  },
+  "properties": {
+    "certificate": {
+      "const": "REVERSE_PHYSICS_BT_EUCLIDEAN_NORMALIZED_ADDITIVE_WARD_FRAME_V1"
+    },
+    "schema_version": {
+      "const": "reverse-physics-bt-euclidean-normalized-additive-ward-frame-v1"
+    },
+    "created": {"const": "2026-08-15"},
+    "dependency_tags": {
+      "type": "array",
+      "prefixItems": [
+        {"const": "LOCAL-ALGEBRAIC"},
+        {"const": "EUCLIDEAN-SPECTRAL"},
+        {"const": "REDUCED-MODE"}
+      ],
+      "items": false
+    },
+    "lifecycle_state": {
+      "const": "NORMALIZED_WEIGHTED_RESIDUAL_ESTIMATE_PROVED"
+    },
+    "result_kind": {"$ref": "#/$defs/text"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "normalized_additive_frame": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scope", "measure", "reciprocal_probability", "modulation",
+        "vector_field", "boundedness", "restricted_divergence",
+        "action_pairing", "reason", "status"
+      ],
+      "properties": {
+        "scope": {"$ref": "#/$defs/text"},
+        "measure": {"$ref": "#/$defs/text"},
+        "reciprocal_probability": {"$ref": "#/$defs/text"},
+        "modulation": {"$ref": "#/$defs/text"},
+        "vector_field": {"const": "X_a=P_H(a*pi)"},
+        "boundedness": {"$ref": "#/$defs/text"},
+        "restricted_divergence": {
+          "const": "div_H X_a=-sum_x a_x*pi_x*(1-pi_x)"
+        },
+        "action_pairing": {
+          "const": "X_a dot grad A=sum_x pi_x*(r_x*(Delta a)_x-a_x*r_x^2)"
+        },
+        "reason": {"$ref": "#/$defs/text"},
+        "status": {"const": "PROVED_EXACT_FINITE_VOLUME"}
+      }
+    },
+    "stein_ward_identity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["test_class", "identity", "conjugate_score", "centering", "status"],
+      "properties": {
+        "test_class": {"$ref": "#/$defs/text"},
+        "identity": {"const": "E[X_a dot grad f]=E[f*Y_a]"},
+        "conjugate_score": {
+          "const": "Y_a=lambda^-2*sum_x pi_x*(r_x*(Delta a)_x-a_x*r_x^2)+sum_x a_x*pi_x*(1-pi_x)"
+        },
+        "centering": {"const": "E[Y_a]=0"},
+        "status": {"const": "PROVED_NORMALIZED_ACTUAL_GIBBS_IDENTITY"}
+      }
+    },
+    "constant_frame_corollary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "direction", "vector_field", "diversity", "pointwise_divergence",
+        "pointwise_action_pairing", "exact_expectation",
+        "volume_uniform_bound", "lambda_two_fifths_bound",
+        "periodic_site_identity", "simplex_form", "status"
+      ],
+      "properties": {
+        "direction": {"$ref": "#/$defs/text"},
+        "vector_field": {"const": "X_1=pi-N^-1*1"},
+        "diversity": {"const": "D(pi)=1-sum_x pi_x^2"},
+        "pointwise_divergence": {"const": "div_H X_1=-D(pi)"},
+        "pointwise_action_pairing": {
+          "const": "X_1 dot grad A=-sum_x pi_x*r_x^2"
+        },
+        "exact_expectation": {
+          "const": "E_mu[sum_x pi_x*r_x^2]=lambda^2*E_mu[D(pi)]"
+        },
+        "volume_uniform_bound": {
+          "const": "E_mu[sum_x pi_x*r_x^2]<=lambda^2*(1-1/N)"
+        },
+        "lambda_two_fifths_bound": {"$ref": "#/$defs/text"},
+        "periodic_site_identity": {
+          "const": "E_mu[pi_x*r_x^2]=lambda^2*(1/N-E_mu[pi_x^2])"
+        },
+        "simplex_form": {"$ref": "#/$defs/text"},
+        "status": {"const": "PROVED_VOLUME_UNIFORM_NORMALIZED_ESTIMATE"}
+      }
+    },
+    "fourier_source_corollary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scope", "field_observable", "source_identity", "translation_input",
+        "lowest_real_phase", "meaning", "missing_inequality", "status"
+      ],
+      "properties": {
+        "scope": {"$ref": "#/$defs/text"},
+        "field_observable": {"$ref": "#/$defs/text"},
+        "source_identity": {
+          "const": "E_mu[F_b*Y_a]=N^-1*sum_x a_x*b_x"
+        },
+        "translation_input": {"const": "E_mu[pi_x]=1/N"},
+        "lowest_real_phase": {"$ref": "#/$defs/text"},
+        "meaning": {"$ref": "#/$defs/text"},
+        "missing_inequality": {"$ref": "#/$defs/text"},
+        "status": {"const": "EXACT_SOURCE_NORMALIZATION_PROVED_VARIANCE_OPEN"}
+      }
+    },
+    "full_phase_stein_matrix": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "phases", "observable", "score", "diffusion_matrix", "stein_identity",
+        "trace", "second_harmonic", "eigenvalues", "source_normalization",
+        "mean_matrix", "remaining_degeneracy", "status"
+      ],
+      "properties": {
+        "phases": {"$ref": "#/$defs/text"},
+        "observable": {"$ref": "#/$defs/text"},
+        "score": {"$ref": "#/$defs/text"},
+        "diffusion_matrix": {
+          "const": "G_ij(psi)=sum_x pi_x*h_i(x)*h_j(x)"
+        },
+        "stein_identity": {"$ref": "#/$defs/text"},
+        "trace": {
+          "const": "tr G=sum_x pi_x*(h_c(x)^2+h_s(x)^2)=1"
+        },
+        "second_harmonic": {"$ref": "#/$defs/text"},
+        "eigenvalues": {
+          "const": "eigenvalues(G)=(1+|z_2|)/2,(1-|z_2|)/2"
+        },
+        "source_normalization": {"const": "E[F_j*Y_i]=delta_ij/2"},
+        "mean_matrix": {"const": "E[G]=I_2/2 by lattice translation invariance"},
+        "remaining_degeneracy": {"$ref": "#/$defs/text"},
+        "status": {"const": "PROVED_EXACT_TWO_PHASE_MARGINAL_FRAME"}
+      }
+    },
+    "diversity_flow": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["constant_frame_flow", "derivative", "reason", "meaning", "status"],
+      "properties": {
+        "constant_frame_flow": {"$ref": "#/$defs/text"},
+        "derivative": {
+          "const": "D_{X_1}D(pi)=2*(sum_x pi_x^3-(sum_x pi_x^2)^2)>=0"
+        },
+        "reason": {"$ref": "#/$defs/text"},
+        "meaning": {"$ref": "#/$defs/text"},
+        "status": {"const": "PROVED_POINTWISE_MONOTONICITY"}
+      }
+    },
+    "exact_cycle_fixture": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "graph", "omega", "reciprocal", "total_reciprocal", "pi",
+        "residual", "modulation", "source", "delta_modulation",
+        "modulated_vector", "modulated_divergence",
+        "modulated_action_pairing", "modulated_source_pairing",
+        "participation", "diversity", "normalized_residual_energy",
+        "constant_frame_vector", "constant_frame_divergence",
+        "constant_frame_action_pairing", "lowest_phase_gram",
+        "lowest_phase_second_harmonic", "diversity_flow_derivative", "status"
+      ],
+      "properties": {
+        "graph": {"const": "four-cycle C4"},
+        "omega": {"$ref": "#/$defs/fractionArray"},
+        "reciprocal": {"$ref": "#/$defs/fractionArray"},
+        "total_reciprocal": {"$ref": "#/$defs/fraction"},
+        "pi": {"$ref": "#/$defs/fractionArray"},
+        "residual": {"$ref": "#/$defs/fractionArray"},
+        "modulation": {"$ref": "#/$defs/fractionArray"},
+        "source": {"$ref": "#/$defs/fractionArray"},
+        "delta_modulation": {"$ref": "#/$defs/fractionArray"},
+        "modulated_vector": {"$ref": "#/$defs/fractionArray"},
+        "modulated_divergence": {"$ref": "#/$defs/fraction"},
+        "modulated_action_pairing": {"$ref": "#/$defs/fraction"},
+        "modulated_source_pairing": {"$ref": "#/$defs/fraction"},
+        "participation": {"$ref": "#/$defs/fraction"},
+        "diversity": {"$ref": "#/$defs/fraction"},
+        "normalized_residual_energy": {"$ref": "#/$defs/fraction"},
+        "constant_frame_vector": {"$ref": "#/$defs/fractionArray"},
+        "constant_frame_divergence": {"$ref": "#/$defs/fraction"},
+        "constant_frame_action_pairing": {"$ref": "#/$defs/fraction"},
+        "lowest_phase_gram": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "array", "minItems": 2, "maxItems": 2,
+            "items": {"$ref": "#/$defs/fraction"}
+          }
+        },
+        "lowest_phase_second_harmonic": {"$ref": "#/$defs/fraction"},
+        "diversity_flow_derivative": {"$ref": "#/$defs/fraction"},
+        "status": {"const": "EXACT_RATIONAL_POINTWISE_FRAME_CHECK"}
+      }
+    },
+    "method_disposition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ratio_of_reciprocal_size_biased_expectations",
+        "normalized_reciprocal_weighted_residual_energy",
+        "normalized_modulated_stein_ward_frame",
+        "lowest_fourier_source_normalization",
+        "full_phase_marginal_stein_matrix",
+        "coercivity_of_normalized_conjugate_score",
+        "normalized_lowest_mode_second_moment",
+        "actual_interacting_h_minus_one_second_moment", "interacting_tightness",
+        "continuum_limit", "born_rule", "krein_reconstruction", "lorentzian_transfer"
+      ],
+      "properties": {
+        "ratio_of_reciprocal_size_biased_expectations": {
+          "const": "IMPROVED_TO_NORMALIZED_EXPECTATION"
+        },
+        "normalized_reciprocal_weighted_residual_energy": {"const": "PROVED"},
+        "normalized_modulated_stein_ward_frame": {"const": "PROVED"},
+        "lowest_fourier_source_normalization": {"const": "PROVED"},
+        "full_phase_marginal_stein_matrix": {"const": "PROVED"},
+        "coercivity_of_normalized_conjugate_score": {"const": "OPEN"},
+        "normalized_lowest_mode_second_moment": {"const": "OPEN"},
+        "actual_interacting_h_minus_one_second_moment": {"const": "OPEN"},
+        "interacting_tightness": {"const": "NOT_ESTABLISHED"},
+        "continuum_limit": {"const": "NOT_ESTABLISHED"},
+        "born_rule": {"const": "NOT_ESTABLISHED"},
+        "krein_reconstruction": {"const": "NOT_ASSESSED"},
+        "lorentzian_transfer": {"const": "NOT_ESTABLISHED"}
+      }
+    },
+    "missing_object_ledger": {"$ref": "#/$defs/textArray"},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "does_not_establish": {"$ref": "#/$defs/textArray"},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["repository_base_commit", "inputs", "arithmetic"],
+      "properties": {
+        "repository_base_commit": {
+          "const": "b6241f152eaceac22aa82967b73bc96476cb5978"
+        },
+        "inputs": {
+          "type": "array", "minItems": 2, "maxItems": 2,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["path", "sha256"],
+            "properties": {
+              "path": {"$ref": "#/$defs/text"},
+              "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+            }
+          }
+        },
+        "arithmetic": {"$ref": "#/$defs/text"}
+      }
+    },
+    "verification_commands": {"$ref": "#/$defs/textArray"},
+    "tier_receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "tier_0", "tier_1", "tier_2", "tier_3", "memory_policy",
+        "elapsed_seconds_and_peak_kib", "repository_audits"
+      ],
+      "properties": {
+        "tier_0": {"$ref": "#/$defs/text"},
+        "tier_1": {"$ref": "#/$defs/text"},
+        "tier_2": {"$ref": "#/$defs/text"},
+        "tier_3": {"$ref": "#/$defs/text"},
+        "memory_policy": {"$ref": "#/$defs/text"},
+        "elapsed_seconds_and_peak_kib": {"$ref": "#/$defs/textObject"},
+        "repository_audits": {"$ref": "#/$defs/textObject"}
+      }
+    },
+    "checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"type": "integer", "minimum": 1},
+        "total": {"type": "integer", "minimum": 1},
+        "failures": {"type": "array", "maxItems": 0},
+        "details": {
+          "type": "object", "minProperties": 1,
+          "additionalProperties": {"const": true}
+        }
+      }
+    },
+    "schema": {
+      "const": "reverse_physics/schema/reverse-physics-bt-euclidean-normalized-additive-ward-frame-v1.schema.json"
+    },
+    "report": {
+      "const": "reverse_physics/reports/bt-euclidean-normalized-additive-ward-frame.md"
+    },
+    "verifier": {
+      "const": "reverse_physics/verify_bt_euclidean_normalized_additive_ward_frame.py"
+    }
+  }
+}

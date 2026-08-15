@@ -1,0 +1,10 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/reverse-physics-bateman-euclidean-continuum-reconstruction-ACTIVE-68ccc4aea371cad9",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work item transitioned",
+  "source": {"path": "tools/science-forge/program/events/reverse-physics-bateman-euclidean-continuum-reconstruction-ACTIVE-68ccc4aea371cad9.json", "span": null},
+  "body": {"event_kind": "WORK_ITEM_TRANSITIONED", "actor": "codex", "base_revision": "science-forge-ir-v0", "predecessors": [], "when": "2026-08-15", "seq": 58, "predecessor": "sf:program/event/reverse-physics-bateman-euclidean-continuum-reconstruction-ACTIVE-e1fcb62717ed576f", "payload": {"target": "sf:program/work/reverse-physics-bateman-euclidean-continuum-reconstruction", "to_state": "ACTIVE", "note": "Normalized additive Ward-frame checkpoint: with pi_x=exp(-psi_x)/sum_y exp(-psi_y), the bounded field X_a=P_H(a*pi) has exact divergence -sum a*pi*(1-pi) and action pairing sum pi*(r*Delta a-a*r^2). Integration by parts under the actual normalized BT Gibbs measure gives a full Stein identity. For a=1 this proves E[sum pi*r^2]=lambda^2 E[1-sum pi^2]<=lambda^2(1-1/N), improving the earlier ratio of size-biased expectations to a normalized volume-uniform estimate. The complete lowest cosine-sine frame has random diffusion matrix G_ij=sum pi*h_i*h_j, trace one, eigenvalues (1+|z_2|)/2 and (1-|z_2|)/2, mean I/2, and exact source normalization E[F_j Y_i]=delta_ij/2. This does not yet bound the field or H^-1 moment. The active gate is a BT-specific bound on reciprocal-probability second-harmonic localization together with coercivity of the conjugate score, or an actual normalized divergence sequence."}, "native": {"authored_by": "sfc work-event", "policy": "append-only (SPEC 4.5); one content-addressed file per event; the work-item file is never rewritten — the effective state is the fold of these events over the base state."}},
+  "edges": [{"rel": "TRANSITIONS", "to": "sf:program/work/reverse-physics-bateman-euclidean-continuum-reconstruction"}]
+}
