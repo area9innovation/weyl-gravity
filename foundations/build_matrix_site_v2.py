@@ -64,8 +64,8 @@ BT_EUCLIDEAN_IMPORT = FOUNDATIONS / "results/FOUNDATIONAL_BT_EUCLIDEAN_LATTICE_I
 AUDIT = FOUNDATIONS / "results/FOUNDATIONAL_INTERSECTION_CUBE_MIGRATION_AUDIT_V2.json"
 FULL_SURFACE_AUDIT = FOUNDATIONS / "results/FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1.json"
 LADDER = FOUNDATIONS / "results/FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V2.json"
-COMPLETION_ATLAS = FOUNDATIONS / "results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V6.json"
-COMPLETION_REPORT = FOUNDATIONS / "reports/lorentzian-weyl-bv-completion-atlas-v6.md"
+COMPLETION_ATLAS = FOUNDATIONS / "results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V7.json"
+COMPLETION_REPORT = FOUNDATIONS / "reports/lorentzian-weyl-bv-completion-atlas-v7.md"
 COMPLETION_GATE = ROOT / "quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V5_RECONCILIATION.json"
 COMPLETION_GATE_REPORT = ROOT / "quantum-weyl/classical_import/REPORT_GATE_V5.md"
 COMPLETION_SDR = ROOT / "quantum-weyl/classical_import/certificates/STRICT_DFINITE_RESIDUAL_SDR_V1.json"
@@ -78,9 +78,11 @@ COMPLETION_ENDPOINT = ROOT / "quantum-weyl/classical_import/certificates/STRICT_
 COMPLETION_ENDPOINT_REPORT = ROOT / "quantum-weyl/classical_import/REPORT_STRICT_386_ENDPOINT_Q1_CONTENT_BRIDGE_V1.md"
 COMPLETION_SUSPENSION = ROOT / "quantum-weyl/classical_import/certificates/STRICT_386_SUSPENDED_ADJOINT_BRIDGE_V1.json"
 COMPLETION_SUSPENSION_REPORT = ROOT / "quantum-weyl/classical_import/REPORT_STRICT_386_SUSPENDED_ADJOINT_BRIDGE_V1.md"
+COMPLETION_COMPONENT_PAIRING = ROOT / "quantum-weyl/classical_import/certificates/STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1.json"
+COMPLETION_COMPONENT_PAIRING_REPORT = ROOT / "quantum-weyl/classical_import/REPORT_STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1.md"
 LEDGERS = v1.LEDGERS
 CREATED = "2026-08-15"
-BASE_COMMIT = "f2d898b68309a437d66b3efeec6307580a4fd269"
+BASE_COMMIT = "7066e14d17bb37e6ad8dacdc10726dbb830ebec4"
 
 PLAIN_AXIS_GUIDE = {
     "FOUNDATION": {
@@ -314,6 +316,8 @@ def build_dataset() -> dict[str, Any]:
             "completion_endpoint_report": site_link(rel(COMPLETION_ENDPOINT_REPORT)),
             "completion_suspension": site_link(rel(COMPLETION_SUSPENSION)),
             "completion_suspension_report": site_link(rel(COMPLETION_SUSPENSION_REPORT)),
+            "completion_component_pairing": site_link(rel(COMPLETION_COMPONENT_PAIRING)),
+            "completion_component_pairing_report": site_link(rel(COMPLETION_COMPONENT_PAIRING_REPORT)),
         },
     }
     dataset["canonical_digest"] = canonical_digest(dataset)
@@ -365,11 +369,14 @@ from being promoted to a general non-cone no-go.
 
 The strict thirty-row endpoint is no longer a type-only match.  The Gate-V5 and
 causal-endpoint unary operators agree in all 80 multiindex tables, including all
-700 independent Bach four-jet columns.  The remaining endpoint boundary is the
-five-row transported ghost-pairing sign.  It is now resolved as the exact Gate
-suspension character, and the full projector-level suspended Green adjoint
-replays.  The 356 component pairing bytes, q2/D, Hadamard and QME gates remain
-open.
+700 independent Bach four-jet columns.  The five-row transported ghost-pairing
+sign is the exact Gate suspension character.  The pre-pullback endpoint pairing
+has 54 ordered nonzero entries, while its pullback to the thirty Gate coordinates
+has 30.  The full 386-row hybrid basis and rank-386 pairing are now serialized:
+the 356-row complement splits as 36 auxiliary plus 320 cone rows and the full
+pairing has 410 ordered entries.  The componentwise T adjoint replays exactly.
+Full q1, projector and Green component tables—and therefore all operator-level
+component adjoints—remain open, as do q2/D, Hadamard and QME.
 
 The new reconstruction import supplies the first explicit weak-arithmetic
 finite-approximant theorem for a declared bounded wave observable. Its rational
@@ -669,7 +676,7 @@ def generated() -> dict[Path, bytes]:
         NGC3198_COMMON_FIT_REPORT,
         COMPLETION_REPORT,
     ]
-    bundled_sources = sorted(set([CUBE, *PREVIOUS_CUBES, FULL_SURFACE_AUDIT, CORNER_BORN_INTERFACE, GROUND_STATE_DYNAMICS_INTERFACE, BT_EUCLIDEAN_IMPORT, GR_CASSINI_RESULT, GR_CASSINI_SCHEMA, MANNHEIM_NGC3198_RESULT, MANNHEIM_NGC3198_SCHEMA, MANNHEIM_NGC3198_PARAMETERS, MANNHEIM_NGC3198_SPARC, MANNHEIM_NGC3198_CPP, NGC3198_COMMON_FIT_RESULT, NGC3198_COMMON_FIT_SCHEMA, NGC3198_COMMON_FIT_PROTOCOL, NGC3198_COMMON_FIT_CPP, AUDIT, LADDER, COMPLETION_ATLAS, COMPLETION_REPORT, COMPLETION_GATE, COMPLETION_GATE_REPORT, COMPLETION_SDR, COMPLETION_SDR_REPORT, COMPLETION_CYCLIC, COMPLETION_CYCLIC_REPORT, COMPLETION_TRANSPORT, COMPLETION_TRANSPORT_REPORT, COMPLETION_ENDPOINT, COMPLETION_ENDPOINT_REPORT, COMPLETION_SUSPENSION, COMPLETION_SUSPENSION_REPORT, *LEDGERS, *local_evidence_paths, *local_report_paths, *reports]))
+    bundled_sources = sorted(set([CUBE, *PREVIOUS_CUBES, FULL_SURFACE_AUDIT, CORNER_BORN_INTERFACE, GROUND_STATE_DYNAMICS_INTERFACE, BT_EUCLIDEAN_IMPORT, GR_CASSINI_RESULT, GR_CASSINI_SCHEMA, MANNHEIM_NGC3198_RESULT, MANNHEIM_NGC3198_SCHEMA, MANNHEIM_NGC3198_PARAMETERS, MANNHEIM_NGC3198_SPARC, MANNHEIM_NGC3198_CPP, NGC3198_COMMON_FIT_RESULT, NGC3198_COMMON_FIT_SCHEMA, NGC3198_COMMON_FIT_PROTOCOL, NGC3198_COMMON_FIT_CPP, AUDIT, LADDER, COMPLETION_ATLAS, COMPLETION_REPORT, COMPLETION_GATE, COMPLETION_GATE_REPORT, COMPLETION_SDR, COMPLETION_SDR_REPORT, COMPLETION_CYCLIC, COMPLETION_CYCLIC_REPORT, COMPLETION_TRANSPORT, COMPLETION_TRANSPORT_REPORT, COMPLETION_ENDPOINT, COMPLETION_ENDPOINT_REPORT, COMPLETION_SUSPENSION, COMPLETION_SUSPENSION_REPORT, COMPLETION_COMPONENT_PAIRING, COMPLETION_COMPONENT_PAIRING_REPORT, *LEDGERS, *local_evidence_paths, *local_report_paths, *reports]))
     bundled_sources = sorted(set([*bundled_sources, *completion_evidence_paths]))
     for source in bundled_sources:
         outputs[SITE / "sources" / source.relative_to(ROOT)] = source.read_bytes()

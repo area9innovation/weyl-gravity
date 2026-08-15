@@ -18030,24 +18030,24 @@ window.MATRIX_EXPLORER_DATA = {
     ]
   },
   "completion_atlas": {
-    "schema_version": "foundational-lorentzian-weyl-bv-completion-atlas-v6",
-    "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V6",
+    "schema_version": "foundational-lorentzian-weyl-bv-completion-atlas-v7",
+    "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V7",
     "result_kind": "BRANCH_BY_STAGE_COMPLETION_ATLAS",
     "lifecycle": "CLASSIFIED",
     "created": "2026-08-15",
-    "repository_base_commit": "f2d898b68309a437d66b3efeec6307580a4fd269",
+    "repository_base_commit": "7066e14d17bb37e6ad8dacdc10726dbb830ebec4",
     "dependency_tags": [
       "LOCAL-ALGEBRAIC",
       "EUCLIDEAN-SPECTRAL",
       "REDUCED-MODE",
       "LORENTZIAN-CAUSAL"
     ],
-    "question": "Does the five-row pairing sign left open by atlas V5 obstruct the strict causal architecture, and what exact object now blocks a common 386-row Gate carrier?",
-    "answer": "No new unary causal obstruction remains at the sign boundary. The exact endpoint pairing has 54 nonzero ordered entries. For the already certified q1 transport T=diag(I_5,I_10,I_10,-I_5), rational matrix algebra gives T^{sharp_G}=diag(-I_5,I_10,I_10,I_5) with respect to the untransported Gate-canonical endpoint pairing. Their product R=T^{sharp_G}T=diag(-I_5,I_10,I_10,-I_5) is an involutive suspension character. For every transported operator A'=TAT, defining A^ddagger=R A^{sharp_G}R gives (A')^ddagger=T A^sharp T. It therefore transports both Gate odd cyclicity and the advanced/retarded Green adjoint relation without changing the homotopy or support identities. Because the hybrid P_alg/P_end splitting is cyclic and formally self-adjoint, R extends by I_356 to all 386 rows, with 376 positive and ten negative signs, and the full projector-level suspended Green-adjoint theorem replays. The previous five-row mismatch is thus classified as the explicit difference between ordinary and suspended adjoints, not a no-go. Gate A nevertheless remains fail closed: the 356 complement still lacks a portable component basis and pairing table in the Gate convention, so there is no accepted common full-carrier hash or componentwise replay. Local D and q2 are also absent from those causal bytes. The new first-ranked task is concrete pairing serialization rather than another convention choice. Hadamard, Ward, positivity, renormalized products, QME and residual quantum transfer remain unpromoted.",
+    "question": "After fixing the suspension convention, can the full strict 386-row carrier and pairing be serialized componentwise, and which exact operator bytes now block Gate A?",
+    "answer": "Yes. Atlas V7 imports an explicit hybrid Gate basis with 386 unique component rows: thirty Gate-canonical endpoint rows, thirty-six ordered generalized-auxiliary doublet rows and all 320 split curvature mapping-cylinder cone/cotangent rows. The algebraic complement is therefore concretely 356=36+320 rather than only a projector rank. The odd pairing is a complete exact rational table with 410 ordered nonzero entries and rank 386: 30 endpoint, 60 auxiliary-complement and 320 cone-complement entries. Every entry has total degree one and the reverse coefficient is its negative. The full T, T^sharp_G and R diagonals are serialized on those same row indices; T^T Omega=Omega T^sharp_G and R=T^sharp_G T replay componentwise with the certified 381/5, 381/5 and 376/10 sign counts. V7 also corrects a coordinate label: the earlier count 54 describes the endpoint DeWitt/ghost pairing before Gate pullback, whereas the Gate-coordinate endpoint pairing has 30 entries; the suspension algebra is unchanged. Gate A remains fail closed because the full prolonged q1, H_alg, endpoint inclusion/projection and advanced/retarded Green operator coefficient tables are still represented by formal block identities and hashes rather than one portable component snapshot. Thus not every component operator adjoint or homotopy identity has been independently replayed. Local D, q2, Hadamard, Ward, positivity, renormalized products, QME and residual transfer remain open.",
     "predecessor": {
-      "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V5",
-      "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V5.json",
-      "sha256": "51cbd8a422f328ee9e3aedc860bd81700f44b26d4eb12ab91b856f542b104397",
+      "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V6",
+      "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V6.json",
+      "sha256": "b7fcd520462bd32753eebac0ea1852c2e00bc27d08a44d460b4b19f9281bf825",
       "preserved": true
     },
     "status_vocabulary": [
@@ -18155,13 +18155,14 @@ window.MATRIX_EXPLORER_DATA = {
           {
             "stage": "S0_CLASSICAL_AUTHORITY",
             "status": "FAIL_CLOSED",
-            "statement": "Gate V5 remains fail closed. The common thirty-row q1 is exact and the former five-row pairing mismatch is now identified as the Gate suspension character R=diag(-I_5,I_10,I_10,-I_5), extended over the cyclic 356+30 decomposition.",
+            "statement": "The common endpoint q1, suspension character and full 386-row hybrid component basis/pairing are now exact. The basis has 30 endpoint, 36 generalized-auxiliary and 320 mapping-cylinder rows; its rank-386 odd pairing has 410 ordered rational entries.",
             "evidence": [
               "CLASSICAL_IMPORT_GATE_V5_RECONCILIATION",
               "STRICT_386_ENDPOINT_Q1_CONTENT_BRIDGE_V1",
-              "STRICT_386_SUSPENDED_ADJOINT_BRIDGE_V1"
+              "STRICT_386_SUSPENDED_ADJOINT_BRIDGE_V1",
+              "STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1"
             ],
-            "boundary": "The abstract full-carrier suspended adjoint is fixed, but the 356 complement's component pairing rows, one common full-carrier hash, local D, q2 and residual extension remain absent."
+            "boundary": "Gate A still lacks full prolonged q1, H_alg, endpoint inclusion/projection and Green operator component tables, one common accepted operator snapshot hash, local D, q2 and the full residual extension."
           },
           {
             "stage": "S1_OFF_SHELL_BV",
@@ -18175,14 +18176,13 @@ window.MATRIX_EXPLORER_DATA = {
           {
             "stage": "S2_CAUSAL_GREEN",
             "status": "SCOPED_CERTIFIED",
-            "statement": "The 386-row Green homotopy now has an exact Gate-suspended adjoint replay. With A^ddagger=R A^sharp_G R, the transported homotopies obey (Lambda'_+)^ddagger=Lambda'_-, while both homotopy identities and causal support remain unchanged.",
+            "statement": "The projector-level suspended Green adjoint remains certified, and T^T Omega=Omega T^sharp now replays on all 410 serialized pairing entries. The full Green operators themselves are not component coefficient tables in this basis.",
             "evidence": [
               "pure-weyl-full-prolonged-green-homotopy-assembly-v1",
-              "STRICT_386_CAUSAL_SIGN_TRANSPORT_V1",
-              "STRICT_386_ENDPOINT_Q1_CONTENT_BRIDGE_V1",
-              "STRICT_386_SUSPENDED_ADJOINT_BRIDGE_V1"
+              "STRICT_386_SUSPENDED_ADJOINT_BRIDGE_V1",
+              "STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1"
             ],
-            "boundary": "This is a projector-level full-carrier convention theorem, not a serialized 386-row Gate pairing or a nonlinear q2/D theorem."
+            "boundary": "A component-by-component q1/projector/Green adjoint and homotopy replay awaits portable operator coefficient tables; q2 and D are not established."
           },
           {
             "stage": "S3_NONLINEAR_CARTAN",
@@ -18250,7 +18250,7 @@ window.MATRIX_EXPLORER_DATA = {
           }
         ],
         "first_unclosed_gate": "S0_CLASSICAL_AUTHORITY",
-        "next_decisive_object": "Serialize the 356 complement's component basis and pairing in the now-fixed Gate suspension convention, bind those rows to P_alg/P_end and replay all component adjoints. Then add local D and q2 on exactly those bytes."
+        "next_decisive_object": "Serialize full prolonged q1, H_alg, endpoint inclusion/projection and advanced/retarded Green coefficient tables in the fixed 386-row hybrid basis, then independently replay every component adjoint and homotopy identity."
       },
       {
         "id": "PURE_WEYL_BACH_FLAT_RANK310",
@@ -18855,8 +18855,8 @@ window.MATRIX_EXPLORER_DATA = {
       "theory_identity_front": {
         "branch": "STRICT_PURE_WEYL_386",
         "first_gate": "S0_CLASSICAL_AUTHORITY",
-        "current_fact": "The endpoint q1 bytes agree and the five-row sign is exactly the Gate suspension character; the full 386-row Green adjoint theorem replays abstractly over the cyclic 356+30 split.",
-        "best_next_object": "A portable 356-row component basis and pairing table in the fixed Gate suspension convention, followed by component adjoint, local-D and q2 replay."
+        "current_fact": "The common endpoint q1, suspension character, all 386 hybrid row names and the rank-386 odd pairing are exact; T adjointness replays on all 410 pairing entries.",
+        "best_next_object": "Portable component coefficient tables for full prolonged q1, H_alg, endpoint inclusion/projection and both Green operators, followed by an independent all-row replay."
       },
       "analytic_maturity_front": {
         "branch": "BERGER_POSITIVE_CLOCK_54",
@@ -18998,12 +18998,12 @@ window.MATRIX_EXPLORER_DATA = {
     "route_selection": [
       {
         "rank": 1,
-        "route": "STRICT_386_COMPONENT_PAIRING_SERIALIZATION",
+        "route": "STRICT_386_OPERATOR_COMPONENT_SERIALIZATION",
         "branch": "STRICT_PURE_WEYL_386",
         "scientific_leverage": "VERY_HIGH",
         "tractability": "MEDIUM",
         "dependency_depth": "LOW",
-        "recommendation": "Emit the 356 complement row basis and pairing table in the fixed Gate suspension convention and replay every component adjoint."
+        "recommendation": "Emit q1, H_alg, endpoint inclusion/projection and both Green operators on the fixed 386-row basis and replay every component identity."
       },
       {
         "rank": 2,
@@ -19012,7 +19012,7 @@ window.MATRIX_EXPLORER_DATA = {
         "scientific_leverage": "VERY_HIGH",
         "tractability": "LOW",
         "dependency_depth": "MEDIUM",
-        "recommendation": "Serialize cylinder-time D on the common paired carrier and verify its q1 commutator before nonlinear transfer."
+        "recommendation": "Serialize cylinder-time D on the accepted operator carrier and verify its q1 commutator before nonlinear transfer."
       },
       {
         "rank": 3,
@@ -19021,7 +19021,7 @@ window.MATRIX_EXPLORER_DATA = {
         "scientific_leverage": "HIGH",
         "tractability": "LOW",
         "dependency_depth": "HIGH",
-        "recommendation": "Bind the target-action q2 to the same paired D-equivariant causal carrier and test contraction compatibility."
+        "recommendation": "Bind target-action q2 to the same paired D-equivariant causal carrier and test contraction compatibility."
       },
       {
         "rank": 4,
@@ -19046,20 +19046,20 @@ window.MATRIX_EXPLORER_DATA = {
       {
         "priority": 1,
         "branch": "STRICT_PURE_WEYL_386",
-        "object": "356-row component pairing serialization",
-        "why": "The suspension convention is fixed; explicit complement bytes are now the smallest missing Gate-A object."
+        "object": "all-row operator component serialization",
+        "why": "The basis and pairing are exact; portable q1/projector/Green bytes are the smallest remaining same-carrier object."
       },
       {
         "priority": 2,
         "branch": "STRICT_PURE_WEYL_386",
         "object": "same-carrier local D",
-        "why": "D equivariance is the next unary admission gate once the component pairing is portable."
+        "why": "D equivariance is the next admission gate after component operator replay."
       },
       {
         "priority": 3,
         "branch": "STRICT_PURE_WEYL_386",
         "object": "same-carrier q2/Green compatibility",
-        "why": "This is the first nonlinear target-theory test after pairing and D."
+        "why": "This is the first nonlinear target-theory test after the complete unary carrier."
       },
       {
         "priority": 4,
@@ -19290,6 +19290,16 @@ window.MATRIX_EXPLORER_DATA = {
           "path": "quantum-weyl/classical_import/certificates/STRICT_386_SUSPENDED_ADJOINT_BRIDGE_V1.json",
           "sha256": "11e0533823321ca06b22d9ca85e82947b442276b4294f809a683ae5eac2a5a2e",
           "role": "exact full-carrier suspended-adjoint bridge"
+        },
+        {
+          "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V6.json",
+          "sha256": "b7fcd520462bd32753eebac0ea1852c2e00bc27d08a44d460b4b19f9281bf825",
+          "role": "immutable V6 atlas predecessor"
+        },
+        {
+          "path": "quantum-weyl/classical_import/certificates/STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1.json",
+          "sha256": "e760565a08c4b551551ebff8ec5cdac26beb7715e976fe8612407278ee315303",
+          "role": "exact 386-row component basis and pairing serialization"
         }
       ]
     },
@@ -19313,7 +19323,7 @@ window.MATRIX_EXPLORER_DATA = {
       "strict_386_sign_transport_certified": true,
       "strict_386_causal_stage_preserved_under_sign_transport": true,
       "strict_386_common_bytes_identified": false,
-      "strict_full_386_pairing_serialized": false,
+      "strict_full_386_pairing_serialized": true,
       "strict_386_q2_green_compatibility_certified": false,
       "v4_preserved": true,
       "strict_386_endpoint_q1_content_identified": true,
@@ -19321,8 +19331,12 @@ window.MATRIX_EXPLORER_DATA = {
       "strict_386_pairing_suspension_bridge_certified": true,
       "v5_preserved": true,
       "strict_386_full_suspended_green_adjoint_replayed": true,
-      "strict_386_component_pairing_serialized": false,
-      "strict_386_local_d_certified": false
+      "strict_386_component_pairing_serialized": true,
+      "strict_386_local_d_certified": false,
+      "v6_preserved": true,
+      "strict_386_component_basis_serialized": true,
+      "strict_386_componentwise_t_adjoint_replayed": true,
+      "strict_386_all_operator_component_adjoints_replayed": false
     },
     "does_not_establish": [
       "a passed strict pure-Weyl classical import gate",
@@ -19339,41 +19353,42 @@ window.MATRIX_EXPLORER_DATA = {
       "that a numerical route rank is a theorem or proof of eventual success",
       "that the finite D x SO(4) residual contraction is an arbitrary-support or causal Green homotopy",
       "that zero missing serialized objects means the common full-carrier Gate A has passed",
-      "a canonical odd pairing and cyclic convention on all 386 rows",
       "that the PRA classification of the finite sign wrapper calibrates the imported analytic causal theorem",
       "compatibility of strict q2 or D with the transported 386-row Green homotopy",
       "that convention stability is a passed Gate A, Hadamard state or Lorentzian quantum completion",
       "q2 or local D compatibility on the common causal bytes",
       "a passed Gate A, Hadamard state, Ward theorem, QME restoration, residual transfer or Lorentzian quantum theory",
-      "a serialized 356-row complement pairing or one accepted common 386-row component hash",
       "local D or q2 compatibility on the common causal carrier",
-      "a passed Gate A, Hadamard state, Ward theorem, QME restoration, residual transfer or Lorentzian quantum theory"
+      "portable full prolonged q1, H_alg, endpoint inclusion/projection or Green operator component tables",
+      "an independent component-by-component replay of every operator adjoint and homotopy identity",
+      "one accepted common Gate-A operator hash, local D, q2, Hadamard, QME or Lorentzian quantum theory"
     ],
     "independent_checker": {
-      "path": "foundations/check_lorentzian_weyl_bv_completion_atlas_v6.py",
+      "path": "foundations/check_lorentzian_weyl_bv_completion_atlas_v7.py",
       "checks": [
-        "V5 preservation",
+        "V6 preservation",
         "77-cell closure",
-        "suspension matrix/count projection",
-        "full Green-adjoint replay",
-        "component-pairing firewall",
-        "Gate-A/q2/D firewalls",
-        "Berger-chain preservation",
+        "386=30+36+320 row projection",
+        "410-entry rank-386 pairing projection",
+        "54-to-30 coordinate terminology repair",
+        "componentwise suspension replay",
+        "operator-byte and Gate-A firewalls",
         "route ranking",
         "content hashes",
         "canonical digest"
       ],
-      "expected_digest": "3259059e8d2351f2f76d04da6ac5a4f73cd4dda7ecfa6556b59d3b1efd5cfe71"
+      "expected_digest": "49d59eb717622b2c887d2cc9636e31b8c589fe5ad6cdf4d1ba58fedbeebc45a9"
     },
-    "human_report": "foundations/reports/lorentzian-weyl-bv-completion-atlas-v6.md",
+    "human_report": "foundations/reports/lorentzian-weyl-bv-completion-atlas-v7.md",
     "strict_gate_a_progress": {
-      "status": "FULL_SUSPENDED_GREEN_ADJOINT_REPLAYED_COMPONENT_PAIRING_D_Q2_OPEN",
+      "status": "FULL_COMPONENT_BASIS_PAIRING_AND_SUSPENSION_SERIALIZED_OPERATOR_TABLES_D_Q2_OPEN",
       "evidence": [
         "CLASSICAL_IMPORT_GATE_V5_RECONCILIATION",
         "STRICT_MINIMAL_BV_CYCLIC_SIGN_RECONCILIATION_V1",
         "STRICT_386_CAUSAL_SIGN_TRANSPORT_V1",
         "STRICT_386_ENDPOINT_Q1_CONTENT_BRIDGE_V1",
-        "STRICT_386_SUSPENDED_ADJOINT_BRIDGE_V1"
+        "STRICT_386_SUSPENDED_ADJOINT_BRIDGE_V1",
+        "STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1"
       ],
       "finite_control": {
         "energies": [
@@ -19417,22 +19432,33 @@ window.MATRIX_EXPLORER_DATA = {
           "q2_omegastar_hhstar__reverse"
         ]
       },
-      "remaining_common_carrier": "Serialize the 356-row complement pairing and row basis in the Gate suspension convention, bind them to the existing cyclic P_alg/P_end maps, and replay every component adjoint identity. Then add local D and q2 on those same bytes.",
-      "boundary": "The sign convention is no longer open. Gate A still requires the 356 component pairing bytes, common hashes, local D, q2 and residual-SDR extension.",
+      "remaining_common_carrier": "Serialize the full prolonged q1, H_alg, endpoint inclusion/projection and advanced/retarded Green coefficient tables in this exact 386-row hybrid basis, then independently replay every component adjoint and homotopy identity before introducing local D or q2.",
+      "boundary": "The component basis and pairing are closed. Gate A still requires portable all-row operator tables, component adjoint/homotopy replay, common hashes, local D, q2 and residual-SDR extension.",
       "endpoint_q1_control": {
         "dimension": 30,
         "arrow_tables_matching": 80,
         "bach_columns_matching": 700,
         "common_nonzero_coefficients": 619,
         "common_q1_sha256": "fc2bf578e09f12c0f55f745bf10966c94e338d3e14254fedb1ad68b544f25c48",
-        "full_pairing_open": true
+        "full_pairing_open": false,
+        "full_operator_snapshot_open": true
       },
       "suspended_adjoint_control": {
-        "endpoint_pairing_entries": 54,
+        "endpoint_pairing_entries": 30,
         "R_386_positive": 376,
         "R_386_negative": 10,
         "full_green_suspended_adjoint_replayed": true,
-        "full_component_pairing_serialized": false
+        "full_component_pairing_serialized": true,
+        "endpoint_pairing_entries_pre_pullback": 54,
+        "all_operator_component_adjoints_replayed": false
+      },
+      "component_pairing_control": {
+        "rows": 386,
+        "complement_split": "356=36+320",
+        "pairing_entries": 410,
+        "pairing_rank": 386,
+        "T_negative": 5,
+        "R_negative": 10
       }
     },
     "strict_causal_sign_transport": {
@@ -19482,6 +19508,22 @@ window.MATRIX_EXPLORER_DATA = {
       "finite_bridge_base": "PRA",
       "analytic_causal_weakest_base": "NOT_ESTABLISHED",
       "next_gate": "Serialize the 356-row complement pairing and row basis in the Gate suspension convention, bind them to the existing cyclic P_alg/P_end maps, and replay every component adjoint identity. Then add local D and q2 on those same bytes."
+    },
+    "strict_component_pairing_serialization": {
+      "result_id": "STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1",
+      "status": "FULL_386_COMPONENT_BASIS_AND_PAIRING_SERIALIZED_OPERATOR_ADJOINT_BYTES_OPEN",
+      "full_rows": 386,
+      "endpoint_rows": 30,
+      "algebraic_complement_rows": 356,
+      "algebraic_complement_split": "356=36+320",
+      "pairing_entries": 410,
+      "pairing_rank": 386,
+      "endpoint_pairing_entries_gate_coordinates": 30,
+      "endpoint_pairing_entries_pre_pullback": 54,
+      "componentwise_T_adjoint_replayed": true,
+      "all_operator_component_adjoints_replayed": false,
+      "finite_serialization_base": "PRA",
+      "next_gate": "Serialize the full prolonged q1, H_alg, endpoint inclusion/projection and advanced/retarded Green coefficient tables in this exact 386-row hybrid basis, then independently replay every component adjoint and homotopy identity before introducing local D or q2."
     }
   },
   "cross_cell_interfaces": [
@@ -19651,8 +19693,8 @@ window.MATRIX_EXPLORER_DATA = {
     "ground_state_dynamics_interface_report": "sources/foundations/reports/krein-fock-ground-state-dynamics-interface.md",
     "migration_audit_report": "sources/foundations/reports/intersection-cube-migration-audit-v2.md",
     "ladder_report": "sources/foundations/reports/cylinder-wave-strength-ladder-v2.md",
-    "completion_atlas": "sources/foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V6.json",
-    "completion_atlas_report": "sources/foundations/reports/lorentzian-weyl-bv-completion-atlas-v6.md",
+    "completion_atlas": "sources/foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V7.json",
+    "completion_atlas_report": "sources/foundations/reports/lorentzian-weyl-bv-completion-atlas-v7.md",
     "completion_gate": "sources/quantum-weyl/classical_import/certificates/CLASSICAL_IMPORT_GATE_V5_RECONCILIATION.json",
     "completion_gate_report": "sources/quantum-weyl/classical_import/REPORT_GATE_V5.md",
     "completion_sdr": "sources/quantum-weyl/classical_import/certificates/STRICT_DFINITE_RESIDUAL_SDR_V1.json",
@@ -19664,7 +19706,9 @@ window.MATRIX_EXPLORER_DATA = {
     "completion_endpoint": "sources/quantum-weyl/classical_import/certificates/STRICT_386_ENDPOINT_Q1_CONTENT_BRIDGE_V1.json",
     "completion_endpoint_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_386_ENDPOINT_Q1_CONTENT_BRIDGE_V1.md",
     "completion_suspension": "sources/quantum-weyl/classical_import/certificates/STRICT_386_SUSPENDED_ADJOINT_BRIDGE_V1.json",
-    "completion_suspension_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_386_SUSPENDED_ADJOINT_BRIDGE_V1.md"
+    "completion_suspension_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_386_SUSPENDED_ADJOINT_BRIDGE_V1.md",
+    "completion_component_pairing": "sources/quantum-weyl/classical_import/certificates/STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1.json",
+    "completion_component_pairing_report": "sources/quantum-weyl/classical_import/REPORT_STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1.md"
   },
-  "canonical_digest": "237025c8456b96ee667dd5a009cbe3300d611cee52c3a251a01a452358262ba8"
+  "canonical_digest": "c83ff6cddba8d587b4e647c7c533bb9fc5d020dcea27c1b23ad59f96bcd2dcad"
 };

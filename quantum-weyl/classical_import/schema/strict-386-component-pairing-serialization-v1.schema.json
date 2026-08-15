@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/strict-386-component-pairing-serialization-v1.schema.json",
+  "type": "object",
+  "required": ["schema", "result_id", "result_kind", "result_state", "lifecycle", "created", "repository_base_commit", "dependency_tags", "question", "answer", "scope", "terminology_reconciliation", "component_basis", "pairing_serialization", "suspension_serialization", "operator_adjoint_disposition", "foundational_strength", "gate_disposition", "claim_flags", "does_not_establish", "next_gate", "canonical_hashes", "provenance", "independent_checker", "human_report"],
+  "properties": {
+    "schema": {"const": "strict-386-component-pairing-serialization-v1"},
+    "result_id": {"const": "STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1"},
+    "result_kind": {"const": "SAME_THEORY_FULL_COMPONENT_BASIS_AND_ODD_PAIRING_SERIALIZATION"},
+    "result_state": {"const": "FULL_386_COMPONENT_BASIS_AND_PAIRING_SERIALIZED_OPERATOR_ADJOINT_BYTES_OPEN"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "created": {"type": "string", "format": "date"},
+    "repository_base_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "question": {"type": "string", "minLength": 150},
+    "answer": {"type": "string", "minLength": 1200},
+    "scope": {"type": "object", "required": ["theory", "background", "basis", "arithmetic", "full_dimension"], "properties": {"full_dimension": {"const": 386}}},
+    "terminology_reconciliation": {"type": "object", "required": ["suspension_v1_field", "suspension_v1_value", "precise_meaning", "gate_coordinate_endpoint_pairing_nonzero_entries", "consequence"], "properties": {"suspension_v1_value": {"const": 54}, "gate_coordinate_endpoint_pairing_nonzero_entries": {"const": 30}}},
+    "component_basis": {
+      "type": "object",
+      "required": ["ordering", "dimension", "endpoint_dimension", "algebraic_complement_dimension", "algebraic_complement_split", "sector_counts", "degree_counts", "rows"],
+      "properties": {
+        "dimension": {"const": 386},
+        "endpoint_dimension": {"const": 30},
+        "algebraic_complement_dimension": {"const": 356},
+        "algebraic_complement_split": {"const": "356=36+320"},
+        "rows": {"type": "array", "minItems": 386, "maxItems": 386, "items": {"type": "object", "required": ["index", "row_id", "block", "local_index", "degree", "sector", "basis_source"]}}
+      }
+    },
+    "pairing_serialization": {
+      "type": "object",
+      "required": ["kind", "degree", "rank", "nonzero_ordered_entry_count", "sector_nonzero_ordered_entry_counts", "entries"],
+      "properties": {
+        "degree": {"const": -1},
+        "rank": {"const": 386},
+        "nonzero_ordered_entry_count": {"const": 410},
+        "entries": {"type": "array", "minItems": 410, "maxItems": 410, "items": {"type": "object", "required": ["left_index", "right_index", "left", "right", "coefficient", "source"]}}
+      }
+    },
+    "suspension_serialization": {
+      "type": "object",
+      "required": ["T_diagonal", "T_positive", "T_negative", "T_sharp_gate_diagonal", "T_sharp_gate_positive", "T_sharp_gate_negative", "R_diagonal", "R_positive", "R_negative", "componentwise_T_adjoint_relation_replayed", "R_equals_T_sharp_T_componentwise"],
+      "properties": {
+        "T_diagonal": {"type": "array", "minItems": 386, "maxItems": 386},
+        "T_positive": {"const": 381}, "T_negative": {"const": 5},
+        "T_sharp_gate_diagonal": {"type": "array", "minItems": 386, "maxItems": 386},
+        "T_sharp_gate_positive": {"const": 381}, "T_sharp_gate_negative": {"const": 5},
+        "R_diagonal": {"type": "array", "minItems": 386, "maxItems": 386},
+        "R_positive": {"const": 376}, "R_negative": {"const": 10},
+        "componentwise_T_adjoint_relation_replayed": {"const": true},
+        "R_equals_T_sharp_T_componentwise": {"const": true}
+      }
+    },
+    "operator_adjoint_disposition": {"type": "object", "required": ["projector_level_suspended_green_adjoint_replayed", "componentwise_T_pairing_adjoint_replayed", "full_q1_component_table_serialized", "full_H_alg_component_table_serialized", "full_endpoint_inclusion_projection_component_tables_serialized", "full_advanced_retarded_green_component_tables_serialized", "every_component_operator_adjoint_replayed"]},
+    "foundational_strength": {"type": "object", "required": ["finite_serialization_base", "choice_operation_added", "infinite_selection_added", "weakest_base_for_imported_analytic_causal_theorem"], "properties": {"finite_serialization_base": {"const": "PRA"}, "choice_operation_added": {"const": false}, "infinite_selection_added": {"const": false}, "weakest_base_for_imported_analytic_causal_theorem": {"const": "NOT_ESTABLISHED"}}},
+    "gate_disposition": {"type": "object", "required": ["full_386_component_basis_serialized", "full_386_component_pairing_serialized", "one_common_operator_snapshot_hash_accepted", "classical_import_gate_a_status", "q2_d_same_carrier_established"], "properties": {"full_386_component_basis_serialized": {"const": true}, "full_386_component_pairing_serialized": {"const": true}, "one_common_operator_snapshot_hash_accepted": {"const": false}, "classical_import_gate_a_status": {"const": "FAIL_CLOSED"}, "q2_d_same_carrier_established": {"const": false}}},
+    "claim_flags": {"type": "object", "additionalProperties": {"type": "boolean"}},
+    "does_not_establish": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"type": "string", "minLength": 40}},
+    "next_gate": {"type": "string", "minLength": 180},
+    "canonical_hashes": {"type": "object", "minProperties": 3, "maxProperties": 3, "additionalProperties": {"$ref": "#/$defs/hash"}},
+    "provenance": {"type": "object", "required": ["inputs"], "properties": {"inputs": {"type": "array", "minItems": 9, "maxItems": 9}}},
+    "independent_checker": {"type": "object", "required": ["path", "expected_digest"], "properties": {"path": {"const": "quantum-weyl/classical_import/check_strict_386_component_pairing_serialization.py"}, "expected_digest": {"$ref": "#/$defs/hash"}}},
+    "human_report": {"const": "quantum-weyl/classical_import/REPORT_STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1.md"}
+  },
+  "$defs": {"hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+}

@@ -1,0 +1,61 @@
+{
+  "receipt_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V7_INTEGRATION_TIER_RECEIPT",
+  "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V7",
+  "created": "2026-08-15",
+  "repository_base_commit": "7066e14d17bb37e6ad8dacdc10726dbb830ebec4",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "scope": "Append-only atlas V7, in-place static explorer refresh and Paper 21 integration of the exact strict 386-row component basis and pairing serialization.",
+  "claim_boundary": "The full component basis and odd pairing are exact, including the 54 pre-pullback versus 30 Gate-coordinate endpoint distinction, and the T adjoint replays componentwise. Full q1/projector/Green operator tables, all operator-level component adjoints, local D, q2, Gate A, Hadamard, renormalized products, QME and residual transfer remain fail closed.",
+  "tiers": [
+    {
+      "tier": 0,
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile <changed component, atlas, site and Paper-21 Python sources>",
+        "jq empty <changed certificate, atlas, site, claim-map, receipt and schema JSON artifacts>",
+        "git diff --check -- <scoped V7 integration paths>"
+      ],
+      "elapsed_seconds": 0.4,
+      "result": "Changed sources and structured artifacts parse; the scoped whitespace audit passes."
+    },
+    {
+      "tier": 1,
+      "status": "PASS",
+      "commands": [
+        "python3 foundations/build_lorentzian_weyl_bv_completion_atlas_v7.py --check && python3 foundations/check_lorentzian_weyl_bv_completion_atlas_v7.py && python3 foundations/verify_lorentzian_weyl_bv_completion_atlas_v7.py && python3 -m unittest foundations/tests/test_lorentzian_weyl_bv_completion_atlas_v7.py -v",
+        "python3 foundations/build_matrix_site_v2.py --check && python3 foundations/check_matrix_site_v2.py && python3 foundations/verify_matrix_site_v2.py && python3 -m unittest foundations/tests/test_matrix_site.py -v",
+        "python3 paper/generate_21_reverse_foundations_appendices.py --check && python3 paper/generate_21_reverse_foundations_claim_map.py --check && python3 paper/verify_21_reverse_foundations_claim_map.py",
+        "cd paper && pdflatex -interaction=nonstopmode -halt-on-error 21-reverse-foundations-of-physics.tex (two passes), followed by an Overfull/undefined-reference/rerun scan"
+      ],
+      "elapsed_seconds": 6.1,
+      "result": "Atlas V7 passes its 77-cell audit and eight mutations; the deterministic 177-artifact site passes its checker and ten tests; Paper 21 pins claim RF-31 and compiles to a clean 60-page PDF."
+    },
+    {
+      "tier": 2,
+      "status": "PASS",
+      "commands": [
+        "strict component-pairing and its strict minimal cyclic-sign, endpoint-q1 and suspended-adjoint producer/checker/verifier/mutation chains"
+      ],
+      "elapsed_seconds": 10.3,
+      "result": "Every direct predecessor remains current, Atlas V7 preserves all 77 cells, and all operator, D, q2 and quantum lifecycle flags remain negative."
+    },
+    {
+      "tier": 3,
+      "status": "NOT_RUN",
+      "criterion": "This is not a freeze, release, shared-core algebra change or Lorentzian quantum lifecycle promotion."
+    }
+  ],
+  "content_hashes": {
+    "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V7.json": "0151f9d2401b7a09e89487a83caff708cae86604d797c26150d1e6fda2b7cc64",
+    "foundations/reports/lorentzian-weyl-bv-completion-atlas-v7.md": "68b6fc7595cc913e36ebd8c2073da07ccf7d99b3fdf60f89ed06969f8f306fe3",
+    "foundations/site/manifest.json": "218e115ad5446febe33140931e24a05f9add4601a38b5ea7d498b5edf7fa10c5",
+    "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json": "2684539ea485cec397d8f074e58fba6f39facf7b83a10bcab8cea901f74dfe2f",
+    "paper/21-reverse-foundations-of-physics-claim-map.json": "32a5d74cf70017ffdad37bce3c4d76e4be8cddfc37005316d5ef75e36562e9d3",
+    "paper/21-reverse-foundations-of-physics.pdf": "fbde91b1b420e177a15c0bb8a867c40e116f2d763f2bbda6ce3c9c9fc0b45ce7"
+  }
+}

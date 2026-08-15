@@ -780,15 +780,27 @@ first.
 
 The append-only
 [`V6 completion atlas`](reports/lorentzian-weyl-bv-completion-atlas-v6.md)
-resolves that pairing sign as an exact suspension convention.  The 54-entry
-endpoint pairing determines `R=diag(-I_5,I_10,I_10,-I_5)`, and the suspended
-adjoint `A^ddagger=R A^sharp_G R` restores the transported advanced/retarded
-Green relation.  Extending `R` over the cyclic `356+30` projector splitting
-gives 376 positive and 10 negative signs and replays the full projector-level
-Green adjoint.  V6 does not claim that the 356 component basis and pairing
-coefficients have been serialized.  That artifact is now the first-ranked
-route, followed by local `D` and same-carrier `q2` compatibility; Gate A,
-Hadamard and QME remain fail closed.
+resolves that pairing sign as an exact suspension convention.  The endpoint
+DeWitt/ghost pairing has 54 ordered nonzero entries before Gate pullback and
+determines `R=diag(-I_5,I_10,I_10,-I_5)`.  The suspended adjoint
+`A^ddagger=R A^sharp_G R` restores the transported advanced/retarded Green
+relation.  Extending `R` over the cyclic `356+30` projector splitting gives
+376 positive and 10 negative signs and replays the full projector-level Green
+adjoint.  V6 did not serialize the 356 component basis and pairing.
+
+The append-only
+[`V7 completion atlas`](reports/lorentzian-weyl-bv-completion-atlas-v7.md)
+now closes that component object.  It names all 386 rows as 30 Gate endpoint,
+36 generalized-auxiliary and 320 mapping-cylinder cone/cotangent rows.  The
+exact odd pairing has 410 ordered rational entries and rank 386; its endpoint
+part has 30 entries after Gate pullback, reconciling the earlier pre-pullback
+count 54.  The complete `T`, `T^sharp_G` and `R` diagonals are serialized and
+`T^T Omega=Omega T^sharp_G` replays componentwise.  Full `q1`, `H_alg`,
+endpoint inclusion/projection and Green operator coefficient tables are still
+open, so every operator adjoint and homotopy identity has not yet been replayed
+componentwise.  That operator serialization is now the first-ranked route,
+followed by local `D` and same-carrier `q2`; Gate A, Hadamard and QME remain
+fail closed.
 
 ```bash
 python3 foundations/build_lorentzian_weyl_bv_completion_atlas.py --check
@@ -815,6 +827,10 @@ python3 foundations/build_lorentzian_weyl_bv_completion_atlas_v6.py --check
 python3 foundations/check_lorentzian_weyl_bv_completion_atlas_v6.py
 python3 foundations/verify_lorentzian_weyl_bv_completion_atlas_v6.py
 python3 -m unittest foundations.tests.test_lorentzian_weyl_bv_completion_atlas_v6
+python3 foundations/build_lorentzian_weyl_bv_completion_atlas_v7.py --check
+python3 foundations/check_lorentzian_weyl_bv_completion_atlas_v7.py
+python3 foundations/verify_lorentzian_weyl_bv_completion_atlas_v7.py
+python3 -m unittest foundations.tests.test_lorentzian_weyl_bv_completion_atlas_v7
 ```
 
 ## Lifecycle

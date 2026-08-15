@@ -1,0 +1,59 @@
+{
+  "receipt_id": "STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1_TIER_RECEIPT",
+  "result_id": "STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1",
+  "created": "2026-08-15",
+  "repository_base_commit": "7066e14d17bb37e6ad8dacdc10726dbb830ebec4",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "scope": "Exact finite serialization of the strict 386-row hybrid component basis, its rank-386 odd rational pairing, and the T/T^sharp_G/R suspension diagonals on the same row indices.",
+  "claim_boundary": {
+    "established": "The basis splits as 386=30+36+320. Its odd pairing has 410 ordered nonzero rational entries and exact rank 386. The endpoint has 30 entries in Gate coordinates versus 54 before pullback, and T^T Omega=Omega T^sharp_G replays componentwise.",
+    "open": "Full prolonged q1, H_alg, endpoint inclusion/projection and advanced/retarded Green component tables are absent, so every component operator adjoint and homotopy identity has not been independently replayed. Common Gate-A bytes, local D, q2, Hadamard, QME and residual transfer remain open."
+  },
+  "tiers": [
+    {
+      "tier": 0,
+      "status": "PASS",
+      "commands": [
+        "python3 -m py_compile quantum-weyl/classical_import/{build_strict_386_component_pairing_serialization.py,check_strict_386_component_pairing_serialization.py,verify_strict_386_component_pairing_serialization.py,tests/test_strict_386_component_pairing_serialization.py}",
+        "jq empty quantum-weyl/classical_import/certificates/STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1.json quantum-weyl/classical_import/schema/strict-386-component-pairing-serialization-v1.schema.json",
+        "git diff --check -- <scoped component-pairing paths>"
+      ],
+      "elapsed_seconds": 0.3,
+      "result": "Changed Python and JSON artifacts parse; the scoped whitespace audit passes."
+    },
+    {
+      "tier": 1,
+      "status": "PASS",
+      "commands": [
+        "python3 quantum-weyl/classical_import/build_strict_386_component_pairing_serialization.py --check",
+        "python3 quantum-weyl/classical_import/check_strict_386_component_pairing_serialization.py",
+        "python3 quantum-weyl/classical_import/verify_strict_386_component_pairing_serialization.py",
+        "python3 -m unittest quantum-weyl/classical_import/tests/test_strict_386_component_pairing_serialization.py -v"
+      ],
+      "elapsed_seconds": 2.4,
+      "result": "Producer determinism, two independent exact-rational rank-386 eliminations, Draft 2020-12 schema/provenance verification and nine mutation tests pass."
+    },
+    {
+      "tier": 2,
+      "status": "PASS",
+      "commands": [
+        "strict minimal cyclic-sign, strict endpoint-q1 and strict suspended-adjoint producer/checker/verifier/mutation chains",
+        "content-hash checks for generalized auxiliary, ordinary auxiliary, hybrid projector and mapping-cylinder inputs"
+      ],
+      "elapsed_seconds": 11.9,
+      "result": "The three transitive certificate chains pass, and every unchanged covariant-completion input matches the hash pinned in the new certificate."
+    },
+    {
+      "tier": 3,
+      "status": "NOT_RUN",
+      "criterion": "No freeze, release, shared-core algebra change or quantum lifecycle promotion. The result remains CLASSIFIED."
+    }
+  ],
+  "content_hashes": {
+    "quantum-weyl/classical_import/certificates/STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1.json": "e760565a08c4b551551ebff8ec5cdac26beb7715e976fe8612407278ee315303",
+    "quantum-weyl/classical_import/REPORT_STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1.md": "ef10ca26bbc087e1b95fb1d09b65cdb4141cd3375ea16e01c2a597b1be0b38bf"
+  }
+}

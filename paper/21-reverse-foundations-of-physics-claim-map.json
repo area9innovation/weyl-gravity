@@ -832,7 +832,7 @@
       "lifecycle": "VERIFIED_NAVIGATION_ARTIFACT",
       "path": "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json",
       "result_id": "FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2",
-      "sha256": "bb75c0d69983e1436b56ec9c8f793ffc118568a5169cda28a655e1e33a44db78"
+      "sha256": "2684539ea485cec397d8f074e58fba6f39facf7b83a10bcab8cea901f74dfe2f"
     },
     "finite_bv": {
       "dependency_tags": [
@@ -943,6 +943,18 @@
       "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V6",
       "sha256": "b7fcd520462bd32753eebac0ea1852c2e00bc27d08a44d460b4b19f9281bf825"
     },
+    "lorentzian_weyl_bv_completion_atlas_v7": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL",
+        "REDUCED-MODE",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "lifecycle": "CLASSIFIED",
+      "path": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V7.json",
+      "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V7",
+      "sha256": "0151f9d2401b7a09e89487a83caff708cae86604d797c26150d1e6fda2b7cc64"
+    },
     "mannheim_ngc3198_assembly": {
       "dependency_tags": [
         "LOCAL-ALGEBRAIC"
@@ -1011,6 +1023,16 @@
       "result_id": "STRICT_386_CAUSAL_SIGN_TRANSPORT_V1",
       "sha256": "5845c4170505e24c116249dfbdf4c8e2099c23adb9480fe2f65f8c1e3bff73cd"
     },
+    "strict_386_component_pairing_serialization": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "lifecycle": "CLASSIFIED",
+      "path": "quantum-weyl/classical_import/certificates/STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1.json",
+      "result_id": "STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1",
+      "sha256": "e760565a08c4b551551ebff8ec5cdac26beb7715e976fe8612407278ee315303"
+    },
     "strict_386_endpoint_q1_content_bridge": {
       "dependency_tags": [
         "LOCAL-ALGEBRAIC",
@@ -1078,10 +1100,10 @@
       "lifecycle": "VERIFIED_NAVIGATION_ARTIFACT",
       "path": "foundations/results/FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1.json",
       "result_id": "FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1",
-      "sha256": "f0d3d53b596433e21fedb6220d6716bbb1fb2959fafd689aef61e43bc2a6805c"
+      "sha256": "ca8e11e33adb9a40b0e5e2cb05062fa6124dca7b59c16350b268538d42d233c5"
     }
   },
-  "canonical_digest": "a85b43b0295991780cf0b285ac49a19dffee14638d6e29f1a110532565ac944f",
+  "canonical_digest": "d45bf56c0a06ef52f14a37fe3f41487d78b9d7abd50ace9b05c7ce684018c3d9",
   "claim_flags": {
     "atlas_exhaustive": false,
     "axes_independent_proved": false,
@@ -1233,8 +1255,11 @@
     "scalar_minkowski_causal_support_proved": true,
     "scalar_minkowski_green_certified": true,
     "static_atlas_appendix_generated": true,
+    "strict_386_all_operator_component_adjoints_replayed": false,
     "strict_386_causal_convention_stability_certified": true,
-    "strict_386_component_pairing_serialized": false,
+    "strict_386_component_basis_serialized": true,
+    "strict_386_component_pairing_serialized": true,
+    "strict_386_componentwise_t_adjoint_replayed": true,
     "strict_386_endpoint_all_700_bach_columns_match": true,
     "strict_386_endpoint_q1_content_identified": true,
     "strict_386_full_suspended_green_adjoint_replayed": true,
@@ -1647,8 +1672,21 @@
         "LOCAL-ALGEBRAIC",
         "LORENTZIAN-CAUSAL"
       ],
-      "statement": "The thirty-row endpoint Gate pairing has 54 nonzero ordered entries and determines the exact suspension character R=diag(-I_5,I_10,I_10,-I_5). With A^ddagger=R A^{sharp_G} R, the transported advanced/retarded Green adjoint relation replays without a residual sign. Extending R as I_356 direct-sum R over the certified cyclic 356+30 projector split gives 376 positive and 10 negative signs and establishes the full projector-level suspended Green adjoint. The 356 component basis and pairing coefficients are not serialized, and local D, same-carrier q2 compatibility, Gate A, Hadamard and QME remain open.",
+      "statement": "The endpoint DeWitt/ghost pairing before Gate pullback has 54 nonzero ordered entries and determines the exact suspension character R=diag(-I_5,I_10,I_10,-I_5). With A^ddagger=R A^{sharp_G} R, the transported advanced/retarded Green adjoint relation replays without a residual sign. Extending R as I_356 direct-sum R over the certified cyclic 356+30 projector split gives 376 positive and 10 negative signs and establishes the full projector-level suspended Green adjoint. This projector-level result did not yet serialize the 356-row complement, and local D, same-carrier q2 compatibility, Gate A, Hadamard and QME remained open.",
       "status": "SAME_THEORY_FULL_PROJECTOR_SUSPENDED_ADJOINT_REPLAY_WITH_COMPONENT_SERIALIZATION_BOUNDARY"
+    },
+    {
+      "authorities": [
+        "strict_386_component_pairing_serialization",
+        "lorentzian_weyl_bv_completion_atlas_v7"
+      ],
+      "claim_id": "RF-31-STRICT-WEYL-COMPONENT-PAIRING-SERIALIZATION",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "LORENTZIAN-CAUSAL"
+      ],
+      "statement": "The strict causal carrier now has an explicit hybrid 386-row component basis: 30 Gate-canonical endpoint rows, 36 generalized-auxiliary rows and 320 mapping-cylinder cone/cotangent rows. Its exact odd pairing has 410 ordered rational nonzero entries and rank 386. The endpoint table has 30 entries after Gate pullback, reconciling the earlier pre-pullback count 54 without changing T^sharp or R. The T, T^sharp_G and R diagonals are serialized and T^T Omega=Omega T^sharp_G replays componentwise. Full q1, H_alg, endpoint inclusion/projection and advanced/retarded Green coefficient tables are not yet serialized, so not every component operator adjoint or homotopy identity has been independently replayed; common Gate-A bytes, local D, q2, Hadamard and QME remain open.",
+      "status": "EXACT_FULL_COMPONENT_BASIS_AND_PAIRING_WITH_OPERATOR_SERIALIZATION_BOUNDARY"
     }
   ],
   "created": "2026-08-14",
@@ -1844,19 +1882,19 @@
   ],
   "paper": {
     "appendix": {
-      "assembly_source_canonical_digest": "4d4727add5d663f264b0fb216af5d3438e5e38f8b4d8dfddcf9c082de106c569",
+      "assembly_source_canonical_digest": "678065ba94d98a76e92f326dbae80cca1c2695377c6ae2a51e3945c0df17db90",
       "assembly_source_path": "foundations/site/assemblies.json",
-      "assembly_source_sha256": "f0d3d53b596433e21fedb6220d6716bbb1fb2959fafd689aef61e43bc2a6805c",
+      "assembly_source_sha256": "ca8e11e33adb9a40b0e5e2cb05062fa6124dca7b59c16350b268538d42d233c5",
       "generator_path": "paper/generate_21_reverse_foundations_appendices.py",
       "generator_sha256": "f46fd7cd15f93d83c0f2ec292fa9e0cbae6bdc9f7a503dd39ff61565424db364",
       "path": "paper/21-reverse-foundations-of-physics-appendices.tex",
-      "sha256": "3b46286906853375d1c296110fae27aa6b0c39e0b1d07d09b96047c81bcf3e48",
-      "source_canonical_digest": "237025c8456b96ee667dd5a009cbe3300d611cee52c3a251a01a452358262ba8",
+      "sha256": "d8ee6bb393b53bd72eff3778a3f53a4ea164cf42dcfb9b4602ce98c236e2948b",
+      "source_canonical_digest": "c83ff6cddba8d587b4e647c7c533bb9fc5d020dcea27c1b23ad59f96bcd2dcad",
       "source_path": "foundations/site/data.json",
-      "source_sha256": "971e163a6480d340a0a915bc29ca7b7095c75fc0b3647c642380b0143d84a5f0"
+      "source_sha256": "735063c38d7f53964a53631df718bbf09e658e9944b28497a13fba37a0c7ab8c"
     },
     "path": "paper/21-reverse-foundations-of-physics.tex",
-    "sha256": "e2b48bbc27b7d0d1f6d5b5fdb1d2a04e74a31a13dbcc5b9cab0a8e0aac0ca8e9"
+    "sha256": "cc99f23e09cb015ce1e30fe856d7ae9c3afd0f515eb4e2d76b86dd170c8d55e8"
   },
   "result_id": "PAPER21_REVERSE_FOUNDATIONS_INTRODUCTION_V1",
   "result_kind": "PROGRAMME_SYNTHESIS_AND_TYPED_CASE_STUDY_MAP",
