@@ -1,0 +1,172 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-riemannian-electrical-witten-bridge-v1.schema.json",
+  "title": "BT Euclidean Riemannian electrical Witten bridge certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "certificate", "schema_version", "created", "dependency_tags", "lifecycle_state",
+    "result_kind", "question", "answer", "riemannian_coordinate_theorem",
+    "electrical_source_theorem", "parallel_source_witten_identity", "nonlinear_score_factorization", "cycle_four_fixture",
+    "method_disposition", "missing_object_ledger", "next_gate", "does_not_establish",
+    "provenance", "verification_commands", "tier_receipt", "checks", "schema", "report", "verifier"
+  ],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_EUCLIDEAN_RIEMANNIAN_ELECTRICAL_WITTEN_BRIDGE_V1"},
+    "schema_version": {"const": "reverse-physics-bt-euclidean-riemannian-electrical-witten-bridge-v1"},
+    "created": {"const": "2026-08-15"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE"]},
+    "lifecycle_state": {"const": "COORDINATE_CORRECT_ELECTRICAL_WITTEN_REDUCTION_PROVED"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "riemannian_coordinate_theorem": {
+      "type": "object", "additionalProperties": false,
+      "required": ["log_field_carrier", "flat_map", "metric", "cometric", "volume_density", "physical_measure", "scalar_dirichlet_form", "status"],
+      "properties": {
+        "log_field_carrier": {"$ref": "#/$defs/text"},
+        "flat_map": {"$ref": "#/$defs/text"},
+        "metric": {"const": "g_u=L_psi^(-T)*L_psi^(-1)"},
+        "cometric": {"const": "g_u^(-1)=L_psi*L_psi^T"},
+        "volume_density": {"$ref": "#/$defs/text"},
+        "physical_measure": {"$ref": "#/$defs/text"},
+        "scalar_dirichlet_form": {"$ref": "#/$defs/text"},
+        "status": {"const": "PROVED_FINITE_GRAPH"}
+      }
+    },
+    "electrical_source_theorem": {
+      "type": "object", "additionalProperties": false,
+      "required": ["conductance_operator", "conductances", "source", "weighted_gauge_problem", "flat_source_covector", "pinned_gff_formula", "coordinate_invariant_norm", "vacuum_fourier_limit", "status"],
+      "properties": {
+        "conductance_operator": {"const": "B=diag(Omega)*K*diag(Omega)"},
+        "conductances": {"const": "c_xy=w_xy*Omega_x*Omega_y"},
+        "source": {"$ref": "#/$defs/text"},
+        "weighted_gauge_problem": {"const": "B phi=h with sum_x Omega_x^2 phi_x=0"},
+        "flat_source_covector": {"const": "d_u F_h=-diag(Omega^2)*phi=L_psi^(-T)h"},
+        "pinned_gff_formula": {"$ref": "#/$defs/text"},
+        "coordinate_invariant_norm": {"const": "|dF_h|_(g^(-1))^2=||h||_2^2"},
+        "vacuum_fourier_limit": {"$ref": "#/$defs/text"},
+        "status": {"const": "PROVED_FINITE_GRAPH"}
+      }
+    },
+    "parallel_source_witten_identity": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_one_form", "parallelism", "operator_identity", "quadratic_form_identity", "current_form", "vacuum_value", "interpretation", "status"],
+      "properties": {
+        "source_one_form": {"const": "alpha_h=d_u F_h=L_psi^(-T)h"},
+        "parallelism": {"$ref": "#/$defs/text"},
+        "operator_identity": {"const": "L_1(dF_h)=d(L_0 F_h)=d(D_h S)"},
+        "quadratic_form_identity": {"$ref": "#/$defs/text"},
+        "current_form": {"$ref": "#/$defs/text"},
+        "vacuum_value": {"$ref": "#/$defs/text"},
+        "interpretation": {"$ref": "#/$defs/text"},
+        "status": {"const": "PROVED_FINITE_VOLUME_IDENTITY"}
+      }
+    },
+    "nonlinear_score_factorization": {
+      "type": "object", "additionalProperties": false,
+      "required": ["action", "weighted_potential", "current", "score", "directional_score", "electrical_cauchy_schwarz", "operator_identification", "status"],
+      "properties": {
+        "action": {"$ref": "#/$defs/text"},
+        "weighted_potential": {"const": "w_x=r_x/Omega_x^2"},
+        "current": {"const": "J_xy=c_xy*(w_x-w_y)"},
+        "score": {"const": "grad_psi A=-B w=-div_c(w)"},
+        "directional_score": {"const": "D_h A=-h^T B w"},
+        "electrical_cauchy_schwarz": {"$ref": "#/$defs/text"},
+        "operator_identification": {"$ref": "#/$defs/text"},
+        "status": {"const": "PROVED_FINITE_GRAPH"}
+      }
+    },
+    "cycle_four_fixture": {
+      "type": "object", "additionalProperties": false,
+      "required": ["omega", "conductance_laplacian", "source", "pinned_green_potential_root_3", "omega_squared_mean_zero_potential", "flat_source_covector", "electrical_energy", "weighted_potential", "action_score_vector", "directional_action_score", "weighted_potential_energy", "source_conductance_energy", "coordinate_jacobian", "riemannian_metric", "riemannian_cometric", "coordinate_source_covector", "physical_source_norm", "relative_volume_factor_squared"],
+      "properties": {
+        "omega": {"$ref": "#/$defs/fractionVector4"},
+        "conductance_laplacian": {"$ref": "#/$defs/fractionMatrix4"},
+        "source": {"$ref": "#/$defs/fractionVector4"},
+        "pinned_green_potential_root_3": {"$ref": "#/$defs/fractionVector4"},
+        "omega_squared_mean_zero_potential": {"$ref": "#/$defs/fractionVector4"},
+        "flat_source_covector": {"$ref": "#/$defs/fractionVector4"},
+        "electrical_energy": {"$ref": "#/$defs/fraction"},
+        "weighted_potential": {"$ref": "#/$defs/fractionVector4"},
+        "action_score_vector": {"$ref": "#/$defs/fractionVector4"},
+        "directional_action_score": {"$ref": "#/$defs/fraction"},
+        "weighted_potential_energy": {"$ref": "#/$defs/fraction"},
+        "source_conductance_energy": {"$ref": "#/$defs/fraction"},
+        "coordinate_jacobian": {"$ref": "#/$defs/fractionMatrix3"},
+        "riemannian_metric": {"$ref": "#/$defs/fractionMatrix3"},
+        "riemannian_cometric": {"$ref": "#/$defs/fractionMatrix3"},
+        "coordinate_source_covector": {"$ref": "#/$defs/fractionVector3"},
+        "physical_source_norm": {"$ref": "#/$defs/fraction"},
+        "relative_volume_factor_squared": {"$ref": "#/$defs/fraction"}
+      }
+    },
+    "method_disposition": {
+      "type": "object", "additionalProperties": false,
+      "required": ["bosonic_lift_as_positive_volume_representation", "flat_potential_euclidean_dirichlet_substitution", "physical_witten_metric_and_cometric", "parallel_source_connection_cancellation", "parallel_source_current_susceptibility_identity", "pinned_gff_representation_of_source_resolvent", "weighted_current_and_bosonic_operator_identification", "volume_uniform_annealed_witten_coercivity", "controlled_full_witten_low_rayleigh_sequence", "actual_interacting_h_minus_one_second_moment"],
+      "properties": {
+        "bosonic_lift_as_positive_volume_representation": {"const": "PROVED"},
+        "flat_potential_euclidean_dirichlet_substitution": {"const": "OBSTRUCTED_AS_WRONG_METRIC"},
+        "physical_witten_metric_and_cometric": {"const": "PROVED"},
+        "parallel_source_connection_cancellation": {"const": "PROVED"},
+        "parallel_source_current_susceptibility_identity": {"const": "PROVED"},
+        "pinned_gff_representation_of_source_resolvent": {"const": "PROVED"},
+        "weighted_current_and_bosonic_operator_identification": {"const": "PROVED"},
+        "volume_uniform_annealed_witten_coercivity": {"const": "OPEN"},
+        "controlled_full_witten_low_rayleigh_sequence": {"const": "OPEN"},
+        "actual_interacting_h_minus_one_second_moment": {"const": "OPEN"}
+      }
+    },
+    "missing_object_ledger": {"$ref": "#/$defs/textArray"},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "does_not_establish": {"$ref": "#/$defs/textArray"},
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["repository_base_commit", "inputs", "arithmetic"],
+      "properties": {
+        "repository_base_commit": {"const": "a2263f6e22fc4eeeb7ffd0db1dff4beb0b67192b"},
+        "inputs": {
+          "type": "array", "minItems": 4, "maxItems": 4,
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["path", "sha256"],
+            "properties": {"path": {"$ref": "#/$defs/text"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
+          }
+        },
+        "arithmetic": {"$ref": "#/$defs/text"}
+      }
+    },
+    "verification_commands": {"$ref": "#/$defs/textArray"},
+    "tier_receipt": {
+      "type": "object", "additionalProperties": false,
+      "required": ["tier_0", "tier_1", "tier_2", "tier_3", "memory_policy", "repository_audits"],
+      "properties": {
+        "tier_0": {"$ref": "#/$defs/text"}, "tier_1": {"$ref": "#/$defs/text"},
+        "tier_2": {"$ref": "#/$defs/text"}, "tier_3": {"$ref": "#/$defs/text"},
+        "memory_policy": {"$ref": "#/$defs/text"}, "repository_audits": {"$ref": "#/$defs/textObject"}
+      }
+    },
+    "checks": {
+      "type": "object", "additionalProperties": false,
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true}, "passed": {"const": 15}, "total": {"const": 15},
+        "failures": {"type": "array", "maxItems": 0},
+        "details": {"type": "object", "minProperties": 15, "maxProperties": 15, "additionalProperties": {"const": true}}
+      }
+    },
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-euclidean-riemannian-electrical-witten-bridge-v1.schema.json"},
+    "report": {"const": "reverse_physics/reports/bt-euclidean-riemannian-electrical-witten-bridge.md"},
+    "verifier": {"const": "reverse_physics/verify_bt_euclidean_riemannian_electrical_witten_bridge.py"}
+  },
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "textArray": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/text"}},
+    "textObject": {"type": "object", "minProperties": 1, "additionalProperties": {"$ref": "#/$defs/text"}},
+    "fraction": {"type": "object", "additionalProperties": false, "required": ["numerator", "denominator"], "properties": {"numerator": {"type": "integer"}, "denominator": {"type": "integer", "minimum": 1}}},
+    "fractionVector3": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/fraction"}},
+    "fractionVector4": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/fraction"}},
+    "fractionMatrix3": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/fractionVector3"}},
+    "fractionMatrix4": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/fractionVector4"}}
+  }
+}

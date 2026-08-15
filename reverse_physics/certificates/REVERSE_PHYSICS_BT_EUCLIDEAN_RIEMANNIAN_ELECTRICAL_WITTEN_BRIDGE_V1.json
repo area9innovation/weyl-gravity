@@ -1,0 +1,516 @@
+{
+  "answer": "The inverse determinant is the Riemannian volume density of the physical flat log-field metric, not an extra Euclidean confining weight. If L_psi=D_psi u, then g=L_psi^(-T)L_psi^(-1), sqrt(det g) relative to the fixed mean-zero carrier is 1/det'(K), and the physical cometric is L_psi L_psi^T. With B=diag(Omega)K diag(Omega), the differential of a physical Fourier observable F_h=<h,psi> is -diag(Omega^2)phi, where B phi=h and sum Omega^2 phi=0. The pinned version of phi is exactly a bosonic/GFF covariance. The same B factorizes the full nonlinear action score: grad_psi A=-B w for w=r/Omega^2, equivalently the score is the divergence of the certified conductance current. Thus the bosonic, source-resolvent, and score-current constructions are one operator. A Euclidean Poincare inequality in the flat potential coordinates would use the wrong Dirichlet form. The correct annealed Witten estimate remains open.",
+  "certificate": "REVERSE_PHYSICS_BT_EUCLIDEAN_RIEMANNIAN_ELECTRICAL_WITTEN_BRIDGE_V1",
+  "checks": {
+    "details": {
+      "action_score_factorization_is_exact": true,
+      "electrical_energy_is_nine_over_twenty": true,
+      "euclidean_flat_metric_not_substituted": true,
+      "ground_state_transform_is_exact": true,
+      "no_born_krein_or_lorentzian_promotion": true,
+      "parallel_source_witten_numerator_is_current_susceptibility": true,
+      "physical_source_is_riemannian_parallel": true,
+      "physical_source_norm_is_coordinate_invariant": true,
+      "pinned_green_solution_is_exact": true,
+      "riemannian_volume_is_inverse_pseudodeterminant": true,
+      "source_conductance_energy_is_21_over_2": true,
+      "source_covector_matches_flat_resolvent": true,
+      "weighted_energy_is_117_over_2": true,
+      "weighted_gauge_solution_is_exact": true,
+      "witten_coercivity_and_actual_moment_remain_open": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 15,
+    "total": 15
+  },
+  "created": "2026-08-15",
+  "cycle_four_fixture": {
+    "action_score_vector": [
+      {
+        "denominator": 4,
+        "numerator": 9
+      },
+      {
+        "denominator": 1,
+        "numerator": 3
+      },
+      {
+        "denominator": 4,
+        "numerator": 9
+      },
+      {
+        "denominator": 2,
+        "numerator": -15
+      }
+    ],
+    "conductance_laplacian": [
+      [
+        {
+          "denominator": 2,
+          "numerator": 5
+        },
+        {
+          "denominator": 1,
+          "numerator": -2
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 2,
+          "numerator": -1
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": -2
+        },
+        {
+          "denominator": 1,
+          "numerator": 4
+        },
+        {
+          "denominator": 1,
+          "numerator": -2
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        }
+      ],
+      [
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 1,
+          "numerator": -2
+        },
+        {
+          "denominator": 2,
+          "numerator": 5
+        },
+        {
+          "denominator": 2,
+          "numerator": -1
+        }
+      ],
+      [
+        {
+          "denominator": 2,
+          "numerator": -1
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 2,
+          "numerator": -1
+        },
+        {
+          "denominator": 1,
+          "numerator": 1
+        }
+      ]
+    ],
+    "coordinate_jacobian": [
+      [
+        {
+          "denominator": 4,
+          "numerator": -15
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 4,
+          "numerator": -5
+        }
+      ],
+      [
+        {
+          "denominator": 4,
+          "numerator": -1
+        },
+        {
+          "denominator": 2,
+          "numerator": -5
+        },
+        {
+          "denominator": 4,
+          "numerator": -1
+        }
+      ],
+      [
+        {
+          "denominator": 4,
+          "numerator": -5
+        },
+        {
+          "denominator": 1,
+          "numerator": 0
+        },
+        {
+          "denominator": 4,
+          "numerator": -15
+        }
+      ]
+    ],
+    "coordinate_source_covector": [
+      {
+        "denominator": 25,
+        "numerator": -8
+      },
+      {
+        "denominator": 5,
+        "numerator": 2
+      },
+      {
+        "denominator": 25,
+        "numerator": 2
+      }
+    ],
+    "directional_action_score": {
+      "denominator": 4,
+      "numerator": -3
+    },
+    "electrical_energy": {
+      "denominator": 20,
+      "numerator": 9
+    },
+    "flat_source_covector": [
+      {
+        "denominator": 25,
+        "numerator": -9
+      },
+      {
+        "denominator": 25,
+        "numerator": 9
+      },
+      {
+        "denominator": 25,
+        "numerator": 1
+      },
+      {
+        "denominator": 25,
+        "numerator": -1
+      }
+    ],
+    "omega": [
+      {
+        "denominator": 1,
+        "numerator": 1
+      },
+      {
+        "denominator": 1,
+        "numerator": 2
+      },
+      {
+        "denominator": 1,
+        "numerator": 1
+      },
+      {
+        "denominator": 2,
+        "numerator": 1
+      }
+    ],
+    "omega_squared_mean_zero_potential": [
+      {
+        "denominator": 25,
+        "numerator": 9
+      },
+      {
+        "denominator": 100,
+        "numerator": -9
+      },
+      {
+        "denominator": 25,
+        "numerator": -1
+      },
+      {
+        "denominator": 25,
+        "numerator": 4
+      }
+    ],
+    "physical_source_norm": {
+      "denominator": 1,
+      "numerator": 2
+    },
+    "pinned_green_potential_root_3": [
+      {
+        "denominator": 5,
+        "numerator": 1
+      },
+      {
+        "denominator": 4,
+        "numerator": -1
+      },
+      {
+        "denominator": 5,
+        "numerator": -1
+      },
+      {
+        "denominator": 1,
+        "numerator": 0
+      }
+    ],
+    "relative_volume_factor_squared": {
+      "denominator": 15625,
+      "numerator": 16
+    },
+    "riemannian_cometric": [
+      [
+        {
+          "denominator": 8,
+          "numerator": 75
+        },
+        {
+          "denominator": 2,
+          "numerator": -5
+        },
+        {
+          "denominator": 8,
+          "numerator": 25
+        }
+      ],
+      [
+        {
+          "denominator": 2,
+          "numerator": -5
+        },
+        {
+          "denominator": 8,
+          "numerator": 33
+        },
+        {
+          "denominator": 2,
+          "numerator": -5
+        }
+      ],
+      [
+        {
+          "denominator": 8,
+          "numerator": 25
+        },
+        {
+          "denominator": 2,
+          "numerator": -5
+        },
+        {
+          "denominator": 8,
+          "numerator": 75
+        }
+      ]
+    ],
+    "riemannian_metric": [
+      [
+        {
+          "denominator": 625,
+          "numerator": 83
+        },
+        {
+          "denominator": 125,
+          "numerator": 8
+        },
+        {
+          "denominator": 625,
+          "numerator": -17
+        }
+      ],
+      [
+        {
+          "denominator": 125,
+          "numerator": 8
+        },
+        {
+          "denominator": 25,
+          "numerator": 8
+        },
+        {
+          "denominator": 125,
+          "numerator": 8
+        }
+      ],
+      [
+        {
+          "denominator": 625,
+          "numerator": -17
+        },
+        {
+          "denominator": 125,
+          "numerator": 8
+        },
+        {
+          "denominator": 625,
+          "numerator": 83
+        }
+      ]
+    ],
+    "source": [
+      {
+        "denominator": 1,
+        "numerator": 1
+      },
+      {
+        "denominator": 1,
+        "numerator": -1
+      },
+      {
+        "denominator": 1,
+        "numerator": 0
+      },
+      {
+        "denominator": 1,
+        "numerator": 0
+      }
+    ],
+    "source_conductance_energy": {
+      "denominator": 2,
+      "numerator": 21
+    },
+    "weighted_potential": [
+      {
+        "denominator": 2,
+        "numerator": 1
+      },
+      {
+        "denominator": 4,
+        "numerator": -1
+      },
+      {
+        "denominator": 2,
+        "numerator": 1
+      },
+      {
+        "denominator": 1,
+        "numerator": 8
+      }
+    ],
+    "weighted_potential_energy": {
+      "denominator": 2,
+      "numerator": 117
+    }
+  },
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "a Euclidean flat-coordinate Poincare inequality relevant to the physical BT field",
+    "annealed Witten coercivity or a full-Witten low-Rayleigh sequence",
+    "boundedness or divergence of the actual interacting H^-1 moment",
+    "continuum tightness or identification, Born probability, Krein reconstruction, or Lorentzian physics"
+  ],
+  "electrical_source_theorem": {
+    "conductance_operator": "B=diag(Omega)*K*diag(Omega)",
+    "conductances": "c_xy=w_xy*Omega_x*Omega_y",
+    "coordinate_invariant_norm": "|dF_h|_(g^(-1))^2=||h||_2^2",
+    "flat_source_covector": "d_u F_h=-diag(Omega^2)*phi=L_psi^(-T)h",
+    "pinned_gff_formula": "for root o and pinned GFF zeta with covariance (B^(o))^(-1), phi_x^(o)=E[zeta_x*(sum_y h_y zeta_y)] solves B phi^(o)=h, phi_o=0",
+    "source": "h in H_psi",
+    "status": "PROVED_FINITE_GRAPH",
+    "vacuum_fourier_limit": "Omega=1 gives B=-Delta, phi=(-Delta)^+ h; for an omega(p) eigenmode the electrical energy is ||h||^2/omega(p)",
+    "weighted_gauge_problem": "B phi=h with sum_x Omega_x^2 phi_x=0"
+  },
+  "lifecycle_state": "COORDINATE_CORRECT_ELECTRICAL_WITTEN_REDUCTION_PROVED",
+  "method_disposition": {
+    "actual_interacting_h_minus_one_second_moment": "OPEN",
+    "bosonic_lift_as_positive_volume_representation": "PROVED",
+    "controlled_full_witten_low_rayleigh_sequence": "OPEN",
+    "flat_potential_euclidean_dirichlet_substitution": "OBSTRUCTED_AS_WRONG_METRIC",
+    "parallel_source_connection_cancellation": "PROVED",
+    "parallel_source_current_susceptibility_identity": "PROVED",
+    "physical_witten_metric_and_cometric": "PROVED",
+    "pinned_gff_representation_of_source_resolvent": "PROVED",
+    "volume_uniform_annealed_witten_coercivity": "OPEN",
+    "weighted_current_and_bosonic_operator_identification": "PROVED"
+  },
+  "missing_object_ledger": [
+    "an annealed estimate retaining the random cometric L_psi L_psi^T",
+    "a volume-uniform lower Witten-form bound on the dT cyclic sector or a genuine low-Rayleigh sequence",
+    "a BT Gibbs estimate for the joint conductance Green/current factors, not only a pointwise electrical inequality",
+    "the actual lowest-mode moment followed by every dyadic H^-1 shell"
+  ],
+  "next_gate": "Write the connection-corrected Witten Schur form using B, its pinned Green kernel, and the random cometric. Test whether the exact GFF corrector cancels the B-current coupling at the free omega(p)^2 scale. A negative result must be a normalized full-Witten low-Rayleigh family with dT overlap; an effective-resistance or pointwise-energy failure alone is not sufficient.",
+  "nonlinear_score_factorization": {
+    "action": "A(psi)=one_half*sum_x r_x(psi)^2",
+    "current": "J_xy=c_xy*(w_x-w_y)",
+    "directional_score": "D_h A=-h^T B w",
+    "electrical_cauchy_schwarz": "|D_h A|^2<=(h^T B h)*(w^T B w); this identity alone is not volume-uniform because both random factors require annealed control",
+    "operator_identification": "B is simultaneously the bosonic/GFF precision, the physical-source electrical operator, and the nonlinear score-current divergence operator",
+    "score": "grad_psi A=-B w=-div_c(w)",
+    "status": "PROVED_FINITE_GRAPH",
+    "weighted_potential": "w_x=r_x/Omega_x^2"
+  },
+  "parallel_source_witten_identity": {
+    "current_form": "for S=A/lambda^2 and grad A=-B w, D_h S=-(h^T B w)/lambda^2",
+    "interpretation": "the exact GFF/Green variation is a coordinate connection and carries no extra Witten derivative cost for the physical parallel source",
+    "operator_identity": "L_1(dF_h)=d(L_0 F_h)=d(D_h S)",
+    "parallelism": "nabla_g alpha_h=0 because alpha_h is the coordinate transform of the constant one-form h dot dpsi",
+    "quadratic_form_identity": "Q_1(dF_h)=<dF_h,L_1 dF_h>=E_mu[(D_h S)^2]=E_mu[D_h^2 S]",
+    "source_one_form": "alpha_h=d_u F_h=L_psi^(-T)h",
+    "status": "PROVED_FINITE_VOLUME_IDENTITY",
+    "vacuum_value": "Q_1(dF_h)=omega(p)^2*||h||^2/lambda^2 for a vacuum Fourier mode"
+  },
+  "provenance": {
+    "arithmetic": "exact rational finite-graph linear algebra; no floating point",
+    "inputs": [
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_BOSONIC_GROUND_STATE_LIFT_V1.json",
+        "sha256": "62ba6848fb43128d2f24f5e2281a962c0512d78333529876e152013f324c795c"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_FLAT_POTENTIAL_PIOLA_WARD_CANCELLATION_V1.json",
+        "sha256": "00d48c4bc9b9bd024867edd8ff5cfca80b575393f59802a7c0a60ab1b140a61a"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_FULL_PHASE_WEIGHTED_CURRENT_GATE_V2.json",
+        "sha256": "b4888413276ea6572cfc8cbf6456c3927cada9205761cf84629dc46e958d828a"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_WITTEN_ONE_FORM_SCHUR_GATE_V1.json",
+        "sha256": "c594809f535ec73a8e9adceb86c92bd4228d99f042c780ec9b17df1169fe0df1"
+      }
+    ],
+    "repository_base_commit": "a2263f6e22fc4eeeb7ffd0db1dff4beb0b67192b"
+  },
+  "question": "How does the positive inverse-determinant lift enter the physical BT Witten operator after the flat-potential coordinate change?",
+  "report": "reverse_physics/reports/bt-euclidean-riemannian-electrical-witten-bridge.md",
+  "result_kind": "exact finite-graph Riemannian interpretation of the flat BT law and electrical representation of its physical source and nonlinear score",
+  "riemannian_coordinate_theorem": {
+    "cometric": "g_u^(-1)=L_psi*L_psi^T",
+    "flat_map": "u(psi)=r(psi)-mean(r(psi))*1 and L_psi=D_psi u",
+    "log_field_carrier": "H_psi={psi:sum psi=0} with Euclidean metric",
+    "metric": "g_u=L_psi^(-T)*L_psi^(-1)",
+    "physical_measure": "dmu=Z^(-1)*exp[-G(u)]*dvol_g(u)",
+    "scalar_dirichlet_form": "E_mu[grad_u f dot (L_psi L_psi^T) grad_u f], not E_mu[|grad_u f|^2]",
+    "status": "PROVED_FINITE_GRAPH",
+    "volume_density": "dvol_g(u)=du/abs(det_H L_psi)=du/det'(K(u))"
+  },
+  "schema": "reverse_physics/schema/reverse-physics-bt-euclidean-riemannian-electrical-witten-bridge-v1.schema.json",
+  "schema_version": "reverse-physics-bt-euclidean-riemannian-electrical-witten-bridge-v1",
+  "tier_receipt": {
+    "memory_policy": "all Python commands run under ulimit -v 500000",
+    "repository_audits": {
+      "planning_import": "PASS: 1678 nodes, 0 invalid items, 0 malformed events",
+      "science_forge_shadow": "ADVISORY exit 0 with bridge-audit FAIL from absent sympy in an external bp2transformer verifier and coverage drift 1820 versus baseline 976; no pass claimed"
+    },
+    "tier_0": "PASS: Python compilation; certificate and schema JSON parse; scoped diff check and staged inspection",
+    "tier_1": "PASS: producer 15/15 in 0.05 s at 21080 KiB; independent verifier 9/9 in 0.12 s at 30608 KiB; 11 focused tests including seven mutations in 0.16 s at 30712 KiB",
+    "tier_2": "unchanged content-addressed inputs checked by hash",
+    "tier_3": "not run: no interacting-moment or reconstruction lifecycle promotion"
+  },
+  "verification_commands": [
+    "python3 reverse_physics/bt_euclidean_riemannian_electrical_witten_bridge.py --check",
+    "python3 reverse_physics/verify_bt_euclidean_riemannian_electrical_witten_bridge.py",
+    "python3 -m unittest -v reverse_physics.tests.test_bt_euclidean_riemannian_electrical_witten_bridge"
+  ],
+  "verifier": "reverse_physics/verify_bt_euclidean_riemannian_electrical_witten_bridge.py"
+}
