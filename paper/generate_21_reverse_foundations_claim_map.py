@@ -60,6 +60,7 @@ AUTHORITY_PATHS = {
     "bt_complete_g4_two_pair_noncancellation": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_COMPLETE_G4_TWO_PAIR_NONCANCELLATION_V1.json",
     "bt_complete_g4_lower_loop_bounds": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_COMPLETE_G4_LOWER_LOOP_BOUNDS_V1.json",
     "bt_tuned_remainder_compensation": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_TUNED_REMAINDER_COMPENSATION_V1.json",
+    "bt_radial_convexity_obstruction": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_RADIAL_CONVEXITY_OBSTRUCTION_V1.json",
     "full_surface_gap_audit": "foundations/results/FOUNDATIONAL_FULL_SURFACE_GAP_AUDIT_V1.json",
     "explorer_snapshot": "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json",
     "theory_assembly": "foundations/results/FOUNDATIONAL_THEORY_ASSEMBLY_ATLAS_V1.json",
@@ -151,6 +152,7 @@ def build() -> dict:
     bt_g4_two_pair_noncancellation = loaded["bt_complete_g4_two_pair_noncancellation"]
     bt_g4_lower_loops = loaded["bt_complete_g4_lower_loop_bounds"]
     bt_tuned_remainder = loaded["bt_tuned_remainder_compensation"]
+    bt_radial_convexity = loaded["bt_radial_convexity_obstruction"]
     site = loaded["explorer_snapshot"]
     gr_cassini = loaded["gr_cassini_assembly"]
     mannheim_ngc3198 = loaded["mannheim_ngc3198_assembly"]
@@ -439,6 +441,9 @@ def build() -> dict:
             "bt_tuned_remainder_compensation_status": bt_tuned_remainder["exact_balance"]["status"],
             "bt_tuned_remainder_gap": bt_tuned_remainder["coefficient_gap"]["gap"],
             "bt_tuned_exact_score_status": bt_tuned_remainder["method_disposition"]["sign_or_scaling_of_exact_interacting_score"],
+            "bt_radial_convexity_status": bt_radial_convexity["method_disposition"]["radial_convexity_of_A_rho_psi"],
+            "bt_unit_virial_status": bt_radial_convexity["method_disposition"]["pointwise_D_ge_A"],
+            "bt_subunit_positive_virial_status": bt_radial_convexity["method_disposition"]["pointwise_D_ge_cA_for_0_lt_c_lt_1"],
             "bt_g4_interacting_H_minus_one_status": "OPEN",
             "standard_reference_direct_obligations": next(item for item in assembly_data["assemblies"] if item["id"] == "STANDARD_MIXED_REFERENCE")["coverage"]["direct"],
             "external_calibration_records": len(assembly_data["calibration_controls"][0]["records"]),
@@ -568,6 +573,7 @@ def build() -> dict:
                     "bt_complete_g4_two_pair_noncancellation",
                     "bt_complete_g4_lower_loop_bounds",
                     "bt_tuned_remainder_compensation",
+                    "bt_radial_convexity_obstruction",
                 ],
                 "dependency_tags": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL"],
             },
@@ -781,6 +787,9 @@ def build() -> dict:
             "bt_complete_order_g_four_tuned_perturbative_uniformity_established": False,
             "bt_tuned_fixed_order_uniform_remainder_obstructed": True,
             "bt_tuned_leading_power_compensation_required": True,
+            "bt_radial_convexity_obstructed": True,
+            "bt_unit_homogeneous_virial_obstructed": True,
+            "bt_subunit_positive_homogeneous_virial_established": False,
             "bt_exact_interacting_score_scaling_established": False,
             "bt_actual_interacting_H_minus_one_established": False,
             "bt_complete_order_g_four_explicit_momentum_kernel_established": False,

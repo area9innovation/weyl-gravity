@@ -1,0 +1,35 @@
+{
+  "ir": "science-forge-ir-v0",
+  "id": "sf:program/event/reverse-physics-bateman-euclidean-continuum-reconstruction-ACTIVE-3a8f10c9b7246d51",
+  "kind": "event",
+  "schema": "event-v0",
+  "title": "work item transitioned",
+  "source": {
+    "path": "planning/events/reverse-physics-bateman-euclidean-continuum-reconstruction-ACTIVE-3a8f10c9b7246d51.json",
+    "span": null
+  },
+  "body": {
+    "event_kind": "WORK_ITEM_TRANSITIONED",
+    "actor": "codex",
+    "base_revision": "science-forge-ir-v0",
+    "predecessors": [],
+    "when": "2026-08-15",
+    "seq": 24,
+    "predecessor": "sf:program/event/reverse-physics-bateman-euclidean-continuum-reconstruction-ACTIVE-19eabee832adbd8b",
+    "payload": {
+      "target": "sf:program/work/reverse-physics-bateman-euclidean-continuum-reconstruction",
+      "to_state": "ACTIVE",
+      "note": "Radial-convexity checkpoint: an exact layered field on the period-six four-torus, with all edge weights powers of 101/100, has 0<D<A and negative second radial action derivative. Direct site enumeration and an independent orbit-type reconstruction prove both signs with rational arithmetic and the alternating upper bound log(101/100)<29851/3000000. Therefore radial convexity and the pointwise unit inequality D>=A are obstructed. The predecessor affine virial and actual action-density theorem remain valid; D>=cA for 0<c<1 and pointwise D>=0 remain open. This is a method obstruction, not failure of the actual interacting H^-1 moment, continuum reconstruction, Born probability, Krein reconstruction, or Lorentzian physics. The next gate is either reciprocal-edge control for a subunit positive constant or a genuinely Gibbs-weighted block estimate of the whole zero-fiber score."
+    },
+    "native": {
+      "authored_by": "exact site enumerator, independent orbit-type verifier, mutation tests, and Paper 21 claim-map integration",
+      "policy": "append-only (SPEC 4.5); one content-addressed file per event; method failure is not promoted to failure of the actual Gibbs moment"
+    }
+  },
+  "edges": [
+    {
+      "rel": "TRANSITIONS",
+      "to": "sf:program/work/reverse-physics-bateman-euclidean-continuum-reconstruction"
+    }
+  ]
+}

@@ -170,6 +170,7 @@
     "bt_quartic_kernel_status": "PROVED",
     "bt_quartic_power_cancellation_status": "OPEN",
     "bt_quartic_soft_degree": "LINEAR_NONZERO",
+    "bt_radial_convexity_status": "OBSTRUCTED",
     "bt_residual_boundary_coordinate_status": "PROVED",
     "bt_residual_cycle_jacobian": {
       "denominator": 2,
@@ -219,6 +220,7 @@
     "bt_separable_conditional_variance_status": "PROVED",
     "bt_separable_lowest_mode_curvature_status": "PROVED",
     "bt_specific_zero_fiber_ward_status": "OPEN",
+    "bt_subunit_positive_virial_status": "OPEN",
     "bt_tuned_exact_score_status": "OPEN",
     "bt_tuned_remainder_compensation_status": "LEADING_POWER_COMPENSATION_FORCED",
     "bt_tuned_remainder_gap": {
@@ -227,6 +229,7 @@
     },
     "bt_uniform_raw_conditional_moment_status": "OBSTRUCTED",
     "bt_uniform_recentered_conditional_variance_status": "OPEN",
+    "bt_unit_virial_status": "OBSTRUCTED",
     "bt_zero_fiber_change_of_measure_status": "PROVED",
     "cartesian_total": 576,
     "coded_h2_arbitrary_distribution_uniqueness": false,
@@ -586,6 +589,16 @@
       "result_id": "REVERSE_PHYSICS_BT_EUCLIDEAN_QUARTIC_SCORE_POWER_OBSTRUCTION_V1",
       "sha256": "a4f3924ed977a33446e2f4b84c0f88c7c776ad0ca564b620d133132cde6a6d1d"
     },
+    "bt_radial_convexity_obstruction": {
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "EUCLIDEAN-SPECTRAL"
+      ],
+      "lifecycle": "POINTWISE_RADIAL_CONVEXITY_AND_UNIT_VIRIAL_OBSTRUCTED",
+      "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_RADIAL_CONVEXITY_OBSTRUCTION_V1.json",
+      "result_id": "REVERSE_PHYSICS_BT_EUCLIDEAN_RADIAL_CONVEXITY_OBSTRUCTION_V1",
+      "sha256": "b7570296184055d04f244ad1b8c095124990ddeaac33d6ba64c2ba87a61600ca"
+    },
     "bt_residual_boundary_curvature_obstruction": {
       "dependency_tags": [
         "LOCAL-ALGEBRAIC",
@@ -939,7 +952,7 @@
       "sha256": "7619ce964d21c0057038b299a63c89c8f56a2a4f052bc8551baa14ca7de037ba"
     }
   },
-  "canonical_digest": "75d75ab70885b764daa82107d90d2476035929663e9c54b9886dc71bbda39ef3",
+  "canonical_digest": "785374684a12e862920edc09131e685f175b32350457ee2e7fc8fae48052505b",
   "claim_flags": {
     "atlas_exhaustive": false,
     "axes_independent_proved": false,
@@ -1026,6 +1039,7 @@
     "bt_pointwise_half_action_curvature_route_obstructed": true,
     "bt_quartic_power_cancellation_established": false,
     "bt_quartic_score_kernel_established": true,
+    "bt_radial_convexity_obstructed": true,
     "bt_residual_pointwise_strict_convexity_established": true,
     "bt_residual_positive_weighted_mean_curvature_established": false,
     "bt_residual_spectrahedral_pushforward_established": true,
@@ -1038,11 +1052,13 @@
     "bt_separable_lowest_mode_curvature_established": true,
     "bt_specific_zero_fiber_ward_identity_established": false,
     "bt_standard_boundary_curvature_spectral_gap_route_obstructed": true,
+    "bt_subunit_positive_homogeneous_virial_established": false,
     "bt_tree_log_convexity_extra_tilt_confinement_obstructed": true,
     "bt_tuned_fixed_order_uniform_remainder_obstructed": true,
     "bt_tuned_leading_power_compensation_required": true,
     "bt_uniform_backgroundwise_raw_conditional_moment_obstructed": true,
     "bt_uniform_recentered_conditional_variance_established": true,
+    "bt_unit_homogeneous_virial_obstructed": true,
     "bt_vertex_transitive_entropy_jacobian_minimum_established": true,
     "case_study_authorities_pinned": true,
     "coded_h2_arbitrary_distribution_uniqueness_proved": false,
@@ -1265,7 +1281,8 @@
         "bt_complete_g4_two_pair_coefficient_normal_form",
         "bt_complete_g4_two_pair_noncancellation",
         "bt_complete_g4_lower_loop_bounds",
-        "bt_tuned_remainder_compensation"
+        "bt_tuned_remainder_compensation",
+        "bt_radial_convexity_obstruction"
       ],
       "claim_id": "RF-13-BT-INTERACTING-RECONSTRUCTION-FRONTIER",
       "dependency_tags": [
@@ -1610,7 +1627,7 @@
       "source_sha256": "e0ae0418b415f4a7b6cd8d0968316b537755fa091135d8d7cd35d6fc25927d2a"
     },
     "path": "paper/21-reverse-foundations-of-physics.tex",
-    "sha256": "1beef1ba4b8b1f76f69918c553bc9a79ebc3f30bbf08d51910234ce7650fd466"
+    "sha256": "85de8b52943b749526df13f2d47c2282d1d95bc88dc973f311f0ba2a79e0b337"
   },
   "result_id": "PAPER21_REVERSE_FOUNDATIONS_INTRODUCTION_V1",
   "result_kind": "PROGRAMME_SYNTHESIS_AND_TYPED_CASE_STUDY_MAP",
