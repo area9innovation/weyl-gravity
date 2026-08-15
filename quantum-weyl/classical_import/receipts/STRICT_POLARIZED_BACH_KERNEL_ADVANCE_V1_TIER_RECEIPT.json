@@ -1,0 +1,97 @@
+{
+  "receipt_id": "STRICT_POLARIZED_BACH_KERNEL_ADVANCE_V1_TIER_RECEIPT",
+  "result_ids": [
+    "STRICT_POLARIZED_BACH_KERNEL_BENCHMARK_V1",
+    "STRICT_CYLINDER_POLARIZED_BACH_EVALUATOR_V1"
+  ],
+  "recorded_at": "2026-08-15",
+  "base_commit": "99d4020850ef9cd394a5cfd9e1001228f430e2e2",
+  "concurrent_head_integrated": "dd023eef",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "output_hashes": {
+    "benchmark_builder": "fdad0fa56d0d5dad21d17245bdaa617645ac2797877449d6e7b5f4dfa69bd7c1",
+    "benchmark_checker": "22f7c9d0e2d0549b0543c97eb61714596085545747288c441519b3dc9a303893",
+    "benchmark_verifier": "6c709af6cd954fdc71cbda1e903eb5178ee1b163ee558cb889484702c8948510",
+    "benchmark_schema": "acc53af934bae55a44e796b74517a694135dc90fa766a9ce2ffce9d9b9deecc6",
+    "benchmark_mutation_tests": "d4bacae94cb8e5f9fe7444c6ad24d35f13319a836dba7b109bbb20b59d929314",
+    "benchmark_certificate": "7101199c875d3e4650357096293a48f833870a5ec1b879244f1973e835994ad3",
+    "benchmark_report": "f4121600c94411086451a6a2f727f747ac4831f4e90211eb360b1bc20d0f9379",
+    "evaluator_engine": "2770635593bdaa940ba68da77872e135f3b7ce92f5a36c8941329a7ba767bf65",
+    "evaluator_builder": "1ba8091715aae769f355f8b38c485c3f7fe6a01916d90dba28b59ac0057765f2",
+    "evaluator_checker": "3f51a03cbfe4b2c14475b637fa2126f967b994c5d44a9f43e4c8a158dcb1fa2a",
+    "evaluator_verifier": "4aecb0702ebf87436474ae19104f253f8c89068ad54babf100728acb541a60e0",
+    "evaluator_schema": "83cc78b8885b18b82565ada028c90a7b26157438fea071a6dcc62b16b9e302b4",
+    "evaluator_mutation_tests": "f0de03713c17026a994e7cd8b6317fda6f634483799208d1f7e75cc3d6d460bd",
+    "evaluator_certificate": "b93a04827c53af90fdf78c87c4b2434dcc1fa330881251b710bd0b0e78a1e58a",
+    "evaluator_report": "c3c51e83aad6748ed8038b92237b4a9df535fa8e7bc52fbf44ff33f7e2ff5b55",
+    "classical_import_report": "12adbfeb00e5b6c7c8a90a3af00ae999383790e8f04e863dd8fcdf3a39cd3f4f"
+  },
+  "test_tiers": [
+    {
+      "tier": 0,
+      "command": "python3 -m py_compile quantum-weyl/classical_import/build_strict_polarized_bach_benchmark.py quantum-weyl/classical_import/check_strict_polarized_bach_benchmark.py quantum-weyl/classical_import/verify_strict_polarized_bach_benchmark.py quantum-weyl/classical_import/cylinder_polarized_bach_evaluator.py quantum-weyl/classical_import/build_strict_cylinder_polarized_bach_evaluator.py quantum-weyl/classical_import/check_strict_cylinder_polarized_bach_evaluator.py quantum-weyl/classical_import/verify_strict_cylinder_polarized_bach_evaluator.py quantum-weyl/classical_import/tests/test_strict_polarized_bach_benchmark.py quantum-weyl/classical_import/tests/test_strict_cylinder_polarized_bach_evaluator.py",
+      "elapsed_seconds": 0.05,
+      "status": "PASS"
+    },
+    {
+      "tier": 0,
+      "command": "jq empty quantum-weyl/classical_import/schema/strict-polarized-bach-kernel-benchmark-v1.schema.json quantum-weyl/classical_import/schema/strict-cylinder-polarized-bach-evaluator-v1.schema.json quantum-weyl/classical_import/certificates/STRICT_POLARIZED_BACH_KERNEL_BENCHMARK_V1.json quantum-weyl/classical_import/certificates/STRICT_CYLINDER_POLARIZED_BACH_EVALUATOR_V1.json",
+      "elapsed_seconds": 0.0,
+      "status": "PASS"
+    },
+    {
+      "tier": 1,
+      "command": "python3 quantum-weyl/classical_import/build_strict_polarized_bach_benchmark.py --check",
+      "elapsed_seconds": 0.04,
+      "status": "PASS_GENERATED_ARTIFACTS_CURRENT"
+    },
+    {
+      "tier": 1,
+      "command": "python3 quantum-weyl/classical_import/check_strict_polarized_bach_benchmark.py",
+      "elapsed_seconds": 0.02,
+      "status": "PASS_FIVE_SOURCE_REPLAYED_FIXTURE_CLASSES"
+    },
+    {
+      "tier": 1,
+      "command": "python3 quantum-weyl/classical_import/verify_strict_polarized_bach_benchmark.py",
+      "elapsed_seconds": 0.1,
+      "status": "PASS_SCHEMA_PROVENANCE_AND_NO_PROMOTION_BOUNDARY"
+    },
+    {
+      "tier": 1,
+      "command": "python3 -m unittest quantum-weyl/classical_import/tests/test_strict_polarized_bach_benchmark.py -v",
+      "elapsed_seconds": 0.18,
+      "status": "PASS_13_TESTS"
+    },
+    {
+      "tier": 1,
+      "command": "python3 quantum-weyl/classical_import/build_strict_cylinder_polarized_bach_evaluator.py --check",
+      "elapsed_seconds": 0.85,
+      "status": "PASS_GENERATED_ARTIFACTS_CURRENT"
+    },
+    {
+      "tier": 1,
+      "command": "python3 quantum-weyl/classical_import/check_strict_cylinder_polarized_bach_evaluator.py",
+      "elapsed_seconds": 0.8,
+      "status": "PASS_EXACT_GEOMETRIC_AND_RESTRICTED_FIXTURE_REPLAY"
+    },
+    {
+      "tier": 1,
+      "command": "python3 quantum-weyl/classical_import/verify_strict_cylinder_polarized_bach_evaluator.py",
+      "elapsed_seconds": 0.9,
+      "status": "PASS_SCHEMA_IMPLEMENTATION_PROVENANCE_AND_BOUNDARY"
+    },
+    {
+      "tier": 1,
+      "command": "python3 -m unittest quantum-weyl/classical_import/tests/test_strict_cylinder_polarized_bach_evaluator.py -v",
+      "elapsed_seconds": 11.52,
+      "status": "PASS_12_TESTS"
+    }
+  ],
+  "tier_2_not_run": "No upstream mathematical input, shared operator, existing schema, or consumed classical-import artifact changed. The benchmark and evaluator are new, fail-closed packages not yet wired into the complete q2/D receiver chain. Their builders, independent source/implementation replays, schemas, reports, direct consumers, and 25 mutation tests all ran.",
+  "tier_3_not_run": "No freeze, theorem lifecycle promotion, shared core algebra change, release, or tag is made. The universal h-star component AST, differentiated Diff identity, HT1B adapters, complete q2/D receiver, Gate A, causal Green data, Hadamard state and QME remain open.",
+  "claim_boundary": "This LOCAL-ALGEBRAIC advance certifies a five-class exact falsification contract and executes a dependency-free arbitrary-rational-four-jet conformal-cylinder evaluator prototype. The prototype passes exact quotient arithmetic, unit-cylinder geometry, nonzero sparse polarization, input-swap, twice-polarized Weyl-trace, local conformal-unary and three polynomial pp-wave checks. REDUCED-MODE evidence occurs only in the benchmark's HT1B fixtures and is not used for a Lorentzian-causal claim. The work does not export the universal 10-by-10 fourth-jet AST, replay the differentiated Diff identity or HT1B projections, complete the h-star row or q2/D identities, pass Gate A, construct causal Green/Hadamard data, restore a QME, or establish a Lorentzian quantum theory."
+}

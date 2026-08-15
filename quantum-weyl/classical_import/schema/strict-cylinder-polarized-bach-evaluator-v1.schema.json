@@ -1,0 +1,108 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "strict-cylinder-polarized-bach-evaluator-v1.schema.json",
+  "title": "Exact conformal-cylinder polarized Bach evaluator prototype",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "result_id", "result_kind", "result_state", "lifecycle", "created", "repository_base_commit", "dependency_tags", "scope", "algorithm", "exact_checks", "cylinder_background_invariants", "arbitrary_sparse_trial", "ppwave_restriction_trials", "conformal_unary_trial", "benchmark_stage_progress", "open_acceptance_gates", "canonical_hashes", "implementation", "provenance", "claim_flags", "does_not_establish", "independent_checker", "human_report"],
+  "properties": {
+    "schema": {"const": "strict-cylinder-polarized-bach-evaluator-v1"},
+    "result_id": {"const": "STRICT_CYLINDER_POLARIZED_BACH_EVALUATOR_V1"},
+    "result_kind": {"const": "EXACT_ARBITRARY_RATIONAL_JET_EVALUATOR_PROTOTYPE"},
+    "result_state": {"const": "EVALUATOR_PROTOTYPE_EXECUTED_UNIVERSAL_AST_AND_DIFF_IDENTITY_OPEN"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "created": {"type": "string", "format": "date"},
+    "repository_base_commit": {"$ref": "#/$defs/commit"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC"]},
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["target", "input_interface", "input_metric_jet_order", "parameter_algebra", "taylor_factorial", "action_normalization", "output_scalar_type", "support_boundary"],
+      "properties": {
+        "target": {"type": "string", "minLength": 80},
+        "input_interface": {"type": "string", "minLength": 100},
+        "input_metric_jet_order": {"const": 4},
+        "parameter_algebra": {"const": "Q[a,b]/(a^2,b^2)"},
+        "taylor_factorial": {"type": "string", "minLength": 75},
+        "action_normalization": {"const": "B_action=-2 B_standard"},
+        "output_scalar_type": {"const": "fractions.Fraction"},
+        "support_boundary": {"type": "string", "minLength": 100}
+      }
+    },
+    "algorithm": {"const": ["metric_inverse", "levi_civita_connection", "curvature", "weyl_tensor", "bach_standard", "action_normalize", "raise_and_densitize", "polarized_coefficient"]},
+    "exact_checks": {"type": "object", "minProperties": 10, "maxProperties": 10, "additionalProperties": {"const": true}},
+    "cylinder_background_invariants": {
+      "type": "object", "additionalProperties": false,
+      "required": ["ricci_lower", "scalar", "weyl_background_nonzero_components", "bach_background_nonzero_components"],
+      "properties": {
+        "ricci_lower": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "string"}}},
+        "scalar": {"const": "6"},
+        "weyl_background_nonzero_components": {"const": 0},
+        "bach_background_nonzero_components": {"const": 0}
+      }
+    },
+    "arbitrary_sparse_trial": {
+      "type": "object", "additionalProperties": false,
+      "required": ["input_kind", "left_seed", "right_seed", "output", "nonzero_output_count", "swapped_output_sha256", "trace_identity_defect"],
+      "properties": {
+        "input_kind": {"type": "string", "minLength": 50},
+        "left_seed": {"const": 1}, "right_seed": {"const": 2},
+        "output": {"type": "array", "minItems": 10, "maxItems": 10, "items": {"$ref": "#/$defs/output"}},
+        "nonzero_output_count": {"const": 9},
+        "swapped_output_sha256": {"$ref": "#/$defs/hash"},
+        "trace_identity_defect": {"const": "0"}
+      }
+    },
+    "ppwave_restriction_trials": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/ppwave"}},
+    "conformal_unary_trial": {
+      "type": "object", "additionalProperties": false,
+      "required": ["omega_jet", "all_ten_outputs_zero", "result_sha256"],
+      "properties": {
+        "omega_jet": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"$ref": "#/$defs/coefficient"}},
+        "all_ten_outputs_zero": {"const": true},
+        "result_sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "benchmark_stage_progress": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"$ref": "#/$defs/stage"}},
+    "open_acceptance_gates": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"type": "string", "minLength": 60}},
+    "canonical_hashes": {
+      "type": "object", "additionalProperties": false,
+      "required": ["scope_sha256", "exact_checks_sha256", "arbitrary_sparse_trial_sha256", "ppwave_restriction_trials_sha256", "benchmark_stage_progress_sha256"],
+      "properties": {
+        "scope_sha256": {"$ref": "#/$defs/hash"}, "exact_checks_sha256": {"$ref": "#/$defs/hash"},
+        "arbitrary_sparse_trial_sha256": {"$ref": "#/$defs/hash"}, "ppwave_restriction_trials_sha256": {"$ref": "#/$defs/hash"},
+        "benchmark_stage_progress_sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "implementation": {"$ref": "#/$defs/artifact"},
+    "provenance": {"type": "object", "additionalProperties": false, "required": ["inputs"], "properties": {"inputs": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/input"}}}},
+    "claim_flags": {
+      "type": "object", "additionalProperties": false,
+      "required": ["EXACT_ARBITRARY_RATIONAL_JET_INTERFACE_EXECUTED", "CYLINDER_GEOMETRIC_PIPELINE_PROTOTYPE_EXECUTED", "GENERAL_UNIVERSAL_COMPONENT_AST_EXPORTED", "ALL_BENCHMARK_GATES_PASSED", "STRICT_HSTAR_Q2_ROW_PORTABLE", "STRICT_SUPPORT_LOCAL_Q2_COMPLETE", "CLASSICAL_IMPORT_GATE_PASSED", "LORENTZIAN_CAUSAL_CERTIFIED", "QME_RESTORED"],
+      "properties": {
+        "EXACT_ARBITRARY_RATIONAL_JET_INTERFACE_EXECUTED": {"const": true},
+        "CYLINDER_GEOMETRIC_PIPELINE_PROTOTYPE_EXECUTED": {"const": true},
+        "GENERAL_UNIVERSAL_COMPONENT_AST_EXPORTED": {"const": false},
+        "ALL_BENCHMARK_GATES_PASSED": {"const": false},
+        "STRICT_HSTAR_Q2_ROW_PORTABLE": {"const": false},
+        "STRICT_SUPPORT_LOCAL_Q2_COMPLETE": {"const": false},
+        "CLASSICAL_IMPORT_GATE_PASSED": {"const": false},
+        "LORENTZIAN_CAUSAL_CERTIFIED": {"const": false},
+        "QME_RESTORED": {"const": false}
+      }
+    },
+    "does_not_establish": {"type": "array", "minItems": 7, "items": {"type": "string", "minLength": 45}},
+    "independent_checker": {"const": "quantum-weyl/classical_import/check_strict_cylinder_polarized_bach_evaluator.py"},
+    "human_report": {"const": "quantum-weyl/classical_import/REPORT_STRICT_CYLINDER_POLARIZED_BACH_EVALUATOR_V1.md"}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "output": {"type": "object", "additionalProperties": false, "required": ["output_pair", "coefficient"], "properties": {"output_pair": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "integer", "minimum": 0, "maximum": 3}}, "coefficient": {"type": "string", "pattern": "^-?[0-9]+(/[1-9][0-9]*)?$"}}},
+    "coefficient": {"type": "object", "additionalProperties": false, "required": ["multiindex", "coefficient"], "properties": {"multiindex": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "integer", "minimum": 0, "maximum": 4}}, "coefficient": {"type": "string", "pattern": "^-?[0-9]+(/[1-9][0-9]*)?$"}}},
+    "ppwave": {"type": "object", "additionalProperties": false, "required": ["left_seed", "right_seed", "all_ten_outputs_zero", "result_sha256"], "properties": {"left_seed": {"type": "integer"}, "right_seed": {"type": "integer"}, "all_ten_outputs_zero": {"const": true}, "result_sha256": {"$ref": "#/$defs/hash"}}},
+    "stage": {"type": "object", "additionalProperties": false, "required": ["stage", "status", "evidence"], "properties": {"stage": {"type": "string", "minLength": 8}, "status": {"enum": ["PROTOTYPE_EXECUTED", "PARTIAL", "OPEN"]}, "evidence": {"type": "string", "minLength": 60}}},
+    "artifact": {"type": "object", "additionalProperties": false, "required": ["path", "sha256"], "properties": {"path": {"type": "string", "minLength": 15}, "sha256": {"$ref": "#/$defs/hash"}}},
+    "input": {"type": "object", "additionalProperties": false, "required": ["path", "result_or_artifact_id", "sha256", "role"], "properties": {"path": {"type": "string", "minLength": 15}, "result_or_artifact_id": {"type": "string", "minLength": 8}, "sha256": {"$ref": "#/$defs/hash"}, "role": {"type": "string", "minLength": 20}}}
+  }
+}

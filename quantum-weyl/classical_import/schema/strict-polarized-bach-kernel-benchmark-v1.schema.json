@@ -1,0 +1,178 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "strict-polarized-bach-kernel-benchmark-v1.schema.json",
+  "title": "Strict polarized Bach-kernel multi-fixture benchmark contract",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "result_id", "result_kind", "result_state", "lifecycle", "created",
+    "repository_base_commit", "dependency_tags", "question", "answer", "target_contract",
+    "candidate_program_contract", "fixture_ledger", "acceptance_gates", "coverage_diagnosis",
+    "implementation_stages", "canonical_hashes", "provenance", "claim_flags",
+    "does_not_establish", "independent_checker", "human_report"
+  ],
+  "properties": {
+    "schema": {"const": "strict-polarized-bach-kernel-benchmark-v1"},
+    "result_id": {"const": "STRICT_POLARIZED_BACH_KERNEL_BENCHMARK_V1"},
+    "result_kind": {"const": "EXACT_MULTI_FIXTURE_ACCEPTANCE_CONTRACT"},
+    "result_state": {"const": "BENCHMARK_CONTRACT_CERTIFIED_GENERAL_KERNEL_ABSENT"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "created": {"type": "string", "format": "date"},
+    "repository_base_commit": {"$ref": "#/$defs/commit"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]},
+    "question": {"type": "string", "minLength": 80},
+    "answer": {"type": "string", "minLength": 300},
+    "target_contract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["theory", "background", "inputs", "taylor_convention", "action_normalization", "output", "maximum_metric_jet_order", "support_rule", "coefficient_policy"],
+      "properties": {
+        "theory": {"type": "string", "minLength": 20},
+        "background": {"const": "unit conformal cylinder R x S3"},
+        "inputs": {"type": "string", "minLength": 70},
+        "taylor_convention": {"type": "string", "minLength": 60},
+        "action_normalization": {"const": "B_action=-2 B_standard"},
+        "output": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["symbol", "component_count", "tensor_type", "form_degree", "Weyl_weight"],
+          "properties": {
+            "symbol": {"const": "h_star"},
+            "component_count": {"const": 10},
+            "tensor_type": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["contravariant_rank", "covariant_rank", "symmetry"],
+              "properties": {
+                "contravariant_rank": {"const": 2},
+                "covariant_rank": {"const": 0},
+                "symmetry": {"const": "symmetric_contravariant_density"}
+              }
+            },
+            "form_degree": {"const": 4},
+            "Weyl_weight": {"const": -2}
+          }
+        },
+        "maximum_metric_jet_order": {"const": 4},
+        "support_rule": {"type": "string", "minLength": 60},
+        "coefficient_policy": {"type": "string", "minLength": 70}
+      }
+    },
+    "candidate_program_contract": {"type": "array", "minItems": 8, "maxItems": 8, "items": {"$ref": "#/$defs/program_step"}},
+    "fixture_ledger": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"$ref": "#/$defs/fixture"}},
+    "acceptance_gates": {"type": "array", "minItems": 10, "maxItems": 10, "items": {"$ref": "#/$defs/gate"}},
+    "coverage_diagnosis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["fixture_count", "cylinder_fixture_count", "nonzero_cylinder_channel_count", "direct_curvature_probe_count", "arbitrary_profile_zero_slices", "restricted_complete_hessian_variations", "general_arbitrary_input_cylinder_tensor_available", "why_not_reconstructible"],
+      "properties": {
+        "fixture_count": {"const": 5},
+        "cylinder_fixture_count": {"const": 3},
+        "nonzero_cylinder_channel_count": {"const": 2},
+        "direct_curvature_probe_count": {"const": 8},
+        "arbitrary_profile_zero_slices": {"const": 1},
+        "restricted_complete_hessian_variations": {"const": 1},
+        "general_arbitrary_input_cylinder_tensor_available": {"const": false},
+        "why_not_reconstructible": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "string", "minLength": 70}}
+      }
+    },
+    "implementation_stages": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"$ref": "#/$defs/stage"}},
+    "canonical_hashes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["target_contract_sha256", "candidate_program_contract_sha256", "fixture_ledger_sha256", "acceptance_gates_sha256", "coverage_diagnosis_sha256", "implementation_stages_sha256"],
+      "properties": {
+        "target_contract_sha256": {"$ref": "#/$defs/hash"},
+        "candidate_program_contract_sha256": {"$ref": "#/$defs/hash"},
+        "fixture_ledger_sha256": {"$ref": "#/$defs/hash"},
+        "acceptance_gates_sha256": {"$ref": "#/$defs/hash"},
+        "coverage_diagnosis_sha256": {"$ref": "#/$defs/hash"},
+        "implementation_stages_sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["inputs"],
+      "properties": {"inputs": {"type": "array", "minItems": 7, "maxItems": 7, "items": {"$ref": "#/$defs/input"}}}
+    },
+    "claim_flags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["MULTI_FIXTURE_BENCHMARK_CONTRACT_CERTIFIED", "GENERAL_ARBITRARY_INPUT_CYLINDER_BACH_KERNEL_AVAILABLE", "STRICT_HSTAR_Q2_ROW_PORTABLE", "STRICT_SUPPORT_LOCAL_Q2_COMPLETE", "CLASSICAL_IMPORT_GATE_PASSED", "LORENTZIAN_CAUSAL_CERTIFIED", "QME_RESTORED"],
+      "properties": {
+        "MULTI_FIXTURE_BENCHMARK_CONTRACT_CERTIFIED": {"const": true},
+        "GENERAL_ARBITRARY_INPUT_CYLINDER_BACH_KERNEL_AVAILABLE": {"const": false},
+        "STRICT_HSTAR_Q2_ROW_PORTABLE": {"const": false},
+        "STRICT_SUPPORT_LOCAL_Q2_COMPLETE": {"const": false},
+        "CLASSICAL_IMPORT_GATE_PASSED": {"const": false},
+        "LORENTZIAN_CAUSAL_CERTIFIED": {"const": false},
+        "QME_RESTORED": {"const": false}
+      }
+    },
+    "does_not_establish": {"type": "array", "minItems": 7, "items": {"type": "string", "minLength": 40}},
+    "independent_checker": {"const": "quantum-weyl/classical_import/check_strict_polarized_bach_benchmark.py"},
+    "human_report": {"const": "quantum-weyl/classical_import/REPORT_STRICT_POLARIZED_BACH_KERNEL_BENCHMARK_V1.md"}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "program_step": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["order", "operation", "output", "maximum_metric_jet_order"],
+      "properties": {
+        "order": {"type": "integer", "minimum": 1, "maximum": 8},
+        "operation": {"type": "string", "minLength": 5},
+        "output": {"type": "string", "minLength": 3},
+        "maximum_metric_jet_order": {"type": "integer", "minimum": 0, "maximum": 4}
+      }
+    },
+    "fixture": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["fixture_id", "evidence_class", "background", "input_scope", "expected", "acceptance_role", "cannot_establish", "dependency_tags"],
+      "properties": {
+        "fixture_id": {"type": "string", "minLength": 15},
+        "evidence_class": {"type": "string", "minLength": 20},
+        "background": {"type": "string", "minLength": 10},
+        "input_scope": {"type": "string", "minLength": 30},
+        "expected": {"type": "object", "minProperties": 2},
+        "acceptance_role": {"type": "string", "minLength": 60},
+        "cannot_establish": {"type": "string", "minLength": 45},
+        "dependency_tags": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"enum": ["LOCAL-ALGEBRAIC", "REDUCED-MODE"]}}
+      }
+    },
+    "gate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["gate_id", "requirement", "status"],
+      "properties": {
+        "gate_id": {"type": "string", "minLength": 8},
+        "requirement": {"type": "string", "minLength": 65},
+        "status": {"const": "NOT_RUN_NO_GENERAL_EVALUATOR"}
+      }
+    },
+    "stage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["stage", "deliverable", "status"],
+      "properties": {
+        "stage": {"type": "string", "minLength": 8},
+        "deliverable": {"type": "string", "minLength": 45},
+        "status": {"const": "OPEN"}
+      }
+    },
+    "input": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "result_or_artifact_id", "sha256", "role"],
+      "properties": {
+        "path": {"type": "string", "minLength": 10},
+        "result_or_artifact_id": {"type": "string", "minLength": 8},
+        "sha256": {"$ref": "#/$defs/hash"},
+        "role": {"type": "string", "minLength": 20}
+      }
+    }
+  }
+}

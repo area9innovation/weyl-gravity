@@ -1,0 +1,464 @@
+{
+  "schema": "strict-polarized-bach-kernel-benchmark-v1",
+  "result_id": "STRICT_POLARIZED_BACH_KERNEL_BENCHMARK_V1",
+  "result_kind": "EXACT_MULTI_FIXTURE_ACCEPTANCE_CONTRACT",
+  "result_state": "BENCHMARK_CONTRACT_CERTIFIED_GENERAL_KERNEL_ABSENT",
+  "lifecycle": "CLASSIFIED",
+  "created": "2026-08-15",
+  "repository_base_commit": "99d4020850ef9cd394a5cfd9e1001228f430e2e2",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "REDUCED-MODE"
+  ],
+  "question": "What exact evidence can falsify a candidate arbitrary-input polarized second Bach evaluator, and what remains missing after all existing fixtures are combined?",
+  "answer": "Five complementary fixture classes constrain normalization, nonzero projections, direct local densities, an infinite-dimensional exact zero slice, and a complete restricted-background Hessian variation. They are a strong falsification suite but do not reconstruct the general cylinder tensor. The missing object is still an exact arbitrary-input, support-local, ten-output symmetric contravariant density K^ab[h1,h2] through metric-jet order four, together with differentiated Diff/Weyl identities.",
+  "target_contract": {
+    "theory": "strict pure-Weyl minimal Diff x Weyl BV theory",
+    "background": "unit conformal cylinder R x S3",
+    "inputs": "two arbitrary compactly supported smooth symmetric covariant metric perturbations h1_ab and h2_ab",
+    "taylor_convention": "coefficient of a*b in E(gbar+a*h1+b*h2), with no hidden factor of 1/2",
+    "action_normalization": "B_action=-2 B_standard",
+    "output": {
+      "symbol": "h_star",
+      "component_count": 10,
+      "tensor_type": {
+        "contravariant_rank": 2,
+        "covariant_rank": 0,
+        "symmetry": "symmetric_contravariant_density"
+      },
+      "form_degree": 4,
+      "Weyl_weight": -2
+    },
+    "maximum_metric_jet_order": 4,
+    "support_rule": "supp K(h1,h2) subset supp(h1) intersection supp(h2) for compact inputs",
+    "coefficient_policy": "exact rational or algebraic arithmetic only; numeric approximation is a distinct non-certifying type"
+  },
+  "candidate_program_contract": [
+    {
+      "order": 1,
+      "operation": "metric_inverse",
+      "output": "g^ab",
+      "maximum_metric_jet_order": 0
+    },
+    {
+      "order": 2,
+      "operation": "levi_civita_connection",
+      "output": "Gamma^a_bc",
+      "maximum_metric_jet_order": 1
+    },
+    {
+      "order": 3,
+      "operation": "curvature",
+      "output": "R^a_bcd, Ric_ab, R",
+      "maximum_metric_jet_order": 2
+    },
+    {
+      "order": 4,
+      "operation": "weyl_tensor",
+      "output": "C_abcd",
+      "maximum_metric_jet_order": 2
+    },
+    {
+      "order": 5,
+      "operation": "bach_standard",
+      "output": "B_standard_ab=nabla^c nabla^d C_acbd+(1/2)Ric^cd C_acbd",
+      "maximum_metric_jet_order": 4
+    },
+    {
+      "order": 6,
+      "operation": "action_normalize",
+      "output": "B_action_ab=-2 B_standard_ab",
+      "maximum_metric_jet_order": 4
+    },
+    {
+      "order": 7,
+      "operation": "raise_and_densitize",
+      "output": "E^ab=sqrt(-g) g^(a mu) g^(b nu) B_action_munu",
+      "maximum_metric_jet_order": 4
+    },
+    {
+      "order": 8,
+      "operation": "polarized_coefficient",
+      "output": "K^ab[h1,h2]=coefficient of a*b in E^ab(gbar+a h1+b h2)",
+      "maximum_metric_jet_order": 4
+    }
+  ],
+  "fixture_ledger": [
+    {
+      "fixture_id": "CYLINDER_LINEARIZED_ACTION_NORMALIZATION",
+      "evidence_class": "UNARY_FORMULA_AND_EXHAUSTIVE_JET_CONTROL",
+      "background": "conformal cylinder R x S3",
+      "input_scope": "arbitrary metric one-jet through differential order four",
+      "expected": {
+        "construction": "B_lin=-2[nabla^c nabla^d C_1(acbd)+(1/2)Ric^{cd}C_1(acbd)]",
+        "normalization": "-2 times the displayed standard Bach convention, fixed on every trace-free fourth principal jet against the repository action Hessian",
+        "gauge_maximum_order": 3,
+        "principal_maximum_order": 4,
+        "principal_tracefree_components": 9
+      },
+      "acceptance_role": "fixes the unary convention and fourth-order principal normalization used by the same geometric pipeline",
+      "cannot_establish": "any quadratic coefficient of the arbitrary-input polarized kernel",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC"
+      ]
+    },
+    {
+      "fixture_id": "CYLINDER_HT1B_NONZERO_MODE_CHANNELS",
+      "evidence_class": "NONZERO_MODE_SPECIALIZED_LOCAL_DENSITY_AND_INTEGRATED_PROJECTION",
+      "background": "conformal cylinder R x S3 in a stereographic radial chart",
+      "input_scope": "two named mixed E/A/L mode pairs, not arbitrary-support inputs",
+      "expected": {
+        "channel_count": 2,
+        "channels": [
+          {
+            "channel_id": "negative_A3_to_E2",
+            "external_modes": [
+              {
+                "chirality": "Integer(1)",
+                "energy": 2,
+                "family": "E",
+                "magnetic_left": "Integer(2)",
+                "magnetic_right": "Integer(0)",
+                "polarization": "bra",
+                "signed_frequency": 2
+              },
+              {
+                "chirality": "Rational(1, 2)",
+                "energy": 3,
+                "family": "A",
+                "magnetic_left": "Rational(3, 2)",
+                "magnetic_right": "Rational(1, 2)",
+                "polarization": "ket",
+                "signed_frequency": -3
+              }
+            ],
+            "bilinear_taylor_convention": "coefficient of a*b in E(gbar+a*h1+b*h2)",
+            "local_radial_density": "Mul(Integer(-1), Rational(1, 240), Pow(Integer(5), Rational(1, 2)), Pow(pi, Integer(-3)), Symbol('t', positive=True, real=True), Pow(Add(Pow(Symbol('t', positive=True, real=True), Integer(2)), Integer(1)), Integer(-2)), Add(Mul(Integer(11), Pow(Symbol('t', positive=True, real=True), Integer(2))), Integer(1)))",
+            "integrated_taub_charge": "Mul(Integer(-1), Rational(1, 5), Pow(Integer(5), Rational(1, 2)), Pow(pi, Integer(-1)))",
+            "raw_residual_kernel_entry": "Mul(Integer(-1), Rational(1, 5), Pow(Integer(5), Rational(1, 2)), Pow(pi, Integer(-1)))",
+            "canonical_residual_kernel_entry": "Mul(Integer(-1), Rational(1, 5), Pow(Integer(10), Rational(1, 2)))"
+          },
+          {
+            "channel_id": "positive_A3_to_L4",
+            "external_modes": [
+              {
+                "chirality": "Integer(-1)",
+                "energy": 4,
+                "family": "L",
+                "magnetic_left": "Integer(0)",
+                "magnetic_right": "Integer(2)",
+                "polarization": "bra",
+                "signed_frequency": 4
+              },
+              {
+                "chirality": "Rational(-1, 2)",
+                "energy": 3,
+                "family": "A",
+                "magnetic_left": "Rational(1, 2)",
+                "magnetic_right": "Rational(3, 2)",
+                "polarization": "ket",
+                "signed_frequency": -3
+              }
+            ],
+            "bilinear_taylor_convention": "coefficient of a*b in E(gbar+a*h1+b*h2)",
+            "local_radial_density": "Mul(Rational(1, 480), Pow(Integer(10), Rational(1, 2)), Pow(pi, Integer(-3)), Symbol('t', positive=True, real=True), Pow(Add(Pow(Symbol('t', positive=True, real=True), Integer(2)), Integer(1)), Integer(-2)), Add(Mul(Integer(35), Pow(Symbol('t', positive=True, real=True), Integer(2))), Integer(-11)))",
+            "integrated_taub_charge": "Mul(Rational(1, 5), Pow(Integer(10), Rational(1, 2)), Pow(pi, Integer(-1)))",
+            "raw_residual_kernel_entry": "Mul(Rational(1, 5), Pow(Integer(10), Rational(1, 2)), Pow(pi, Integer(-1)))",
+            "canonical_residual_kernel_entry": "Mul(Rational(2, 5), Pow(Integer(5), Rational(1, 2)))"
+          }
+        ]
+      },
+      "acceptance_role": "detects a zero or wrongly normalized nonlinear evaluator on two independent physical channels",
+      "cannot_establish": "the unprojected ten-component tensor or any untested coefficient",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE"
+      ]
+    },
+    {
+      "fixture_id": "CYLINDER_DIRECT_CURVATURE_PROBES",
+      "evidence_class": "DIRECT_EXACT_CURVATURE_PROBES",
+      "background": "conformal cylinder R x S3 in a stereographic radial chart",
+      "input_scope": "six forward slice/gauge probes and two reverse slice probes for the two HT1B channels",
+      "expected": {
+        "probe_count": 8,
+        "probes": [
+          {
+            "side": "negative",
+            "reverse": false,
+            "probe": "slice",
+            "local_radial_density": "Mul(Integer(-1), Rational(1, 80), Pow(Integer(5), Rational(1, 2)), I, Pow(pi, Integer(-3)), Symbol('t', positive=True, real=True), Pow(Add(Pow(Symbol('t', positive=True, real=True), Integer(2)), Integer(1)), Integer(-2)), Add(Mul(Integer(7), Pow(Symbol('t', positive=True, real=True), Integer(2))), Integer(-11)))",
+            "integrated_action_coefficient": "Mul(Rational(1, 5), Pow(Integer(5), Rational(1, 2)), I, Pow(pi, Integer(-1)))"
+          },
+          {
+            "side": "negative",
+            "reverse": false,
+            "probe": "gauge-0",
+            "local_radial_density": "Mul(Rational(7, 120), Pow(Integer(5), Rational(1, 2)), Pow(pi, Integer(-3)), Symbol('t', positive=True, real=True), Add(Symbol('t', positive=True, real=True), Integer(-1)), Add(Symbol('t', positive=True, real=True), Integer(1)), Pow(Add(Pow(Symbol('t', positive=True, real=True), Integer(2)), Integer(1)), Integer(-2)))",
+            "integrated_action_coefficient": "Integer(0)"
+          },
+          {
+            "side": "negative",
+            "reverse": false,
+            "probe": "gauge-1",
+            "local_radial_density": "Mul(Rational(3, 20), Pow(Integer(5), Rational(1, 2)), I, Pow(pi, Integer(-3)), Symbol('t', positive=True, real=True), Add(Symbol('t', positive=True, real=True), Integer(-1)), Add(Symbol('t', positive=True, real=True), Integer(1)), Pow(Add(Pow(Symbol('t', positive=True, real=True), Integer(2)), Integer(1)), Integer(-2)))",
+            "integrated_action_coefficient": "Integer(0)"
+          },
+          {
+            "side": "positive",
+            "reverse": false,
+            "probe": "slice",
+            "local_radial_density": "Mul(Rational(1, 160), Pow(Integer(10), Rational(1, 2)), I, Pow(pi, Integer(-3)), Symbol('t', positive=True, real=True), Pow(Add(Pow(Symbol('t', positive=True, real=True), Integer(2)), Integer(1)), Integer(-2)), Add(Mul(Integer(11), Pow(Symbol('t', positive=True, real=True), Integer(2))), Integer(-3)))",
+            "integrated_action_coefficient": "Mul(Rational(1, 5), Pow(Integer(10), Rational(1, 2)), I, Pow(pi, Integer(-1)))"
+          },
+          {
+            "side": "positive",
+            "reverse": false,
+            "probe": "gauge-0",
+            "local_radial_density": "Mul(Rational(1, 120), Pow(Integer(10), Rational(1, 2)), Pow(pi, Integer(-3)), Symbol('t', positive=True, real=True), Add(Symbol('t', positive=True, real=True), Integer(-1)), Add(Symbol('t', positive=True, real=True), Integer(1)), Pow(Add(Pow(Symbol('t', positive=True, real=True), Integer(2)), Integer(1)), Integer(-2)))",
+            "integrated_action_coefficient": "Integer(0)"
+          },
+          {
+            "side": "positive",
+            "reverse": false,
+            "probe": "gauge-1",
+            "local_radial_density": "Mul(Rational(1, 40), Pow(Integer(10), Rational(1, 2)), I, Pow(pi, Integer(-3)), Symbol('t', positive=True, real=True), Add(Symbol('t', positive=True, real=True), Integer(-1)), Add(Symbol('t', positive=True, real=True), Integer(1)), Pow(Add(Pow(Symbol('t', positive=True, real=True), Integer(2)), Integer(1)), Integer(-2)))",
+            "integrated_action_coefficient": "Integer(0)"
+          },
+          {
+            "side": "negative",
+            "reverse": true,
+            "probe": "slice",
+            "local_radial_density": "Mul(Integer(-1), Rational(1, 160), Pow(Integer(10), Rational(1, 2)), I, Pow(pi, Integer(-3)), Symbol('t', positive=True, real=True), Pow(Add(Pow(Symbol('t', positive=True, real=True), Integer(2)), Integer(1)), Integer(-2)), Add(Mul(Integer(11), Pow(Symbol('t', positive=True, real=True), Integer(2))), Integer(-3)))",
+            "integrated_action_coefficient": "Mul(Integer(-1), Rational(1, 5), Pow(Integer(10), Rational(1, 2)), I, Pow(pi, Integer(-1)))"
+          },
+          {
+            "side": "positive",
+            "reverse": true,
+            "probe": "slice",
+            "local_radial_density": "Mul(Rational(1, 80), Pow(Integer(5), Rational(1, 2)), I, Pow(pi, Integer(-3)), Symbol('t', positive=True, real=True), Pow(Add(Pow(Symbol('t', positive=True, real=True), Integer(2)), Integer(1)), Integer(-2)), Add(Mul(Integer(7), Pow(Symbol('t', positive=True, real=True), Integer(2))), Integer(-11)))",
+            "integrated_action_coefficient": "Mul(Integer(-1), Rational(1, 5), Pow(Integer(5), Rational(1, 2)), I, Pow(pi, Integer(-1)))"
+          }
+        ]
+      },
+      "acceptance_role": "independently reevaluates local curvature densities and distinguishes nonzero slice currents from vanishing integrated gauge probes",
+      "cannot_establish": "arbitrary-input completeness or reverse local densities without reverse gauge probes",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC",
+        "REDUCED-MODE"
+      ]
+    },
+    {
+      "fixture_id": "PPWAVE_ARBITRARY_PROFILE_ZERO_SLICE",
+      "evidence_class": "ARBITRARY_PROFILE_RESTRICTED_NONLINEAR_ZERO",
+      "background": "ds^2=2 du dv+dx^2+dy^2+H(u,x,y)du^2",
+      "input_scope": "restricted support-local Brinkmann/Kerr-Schild field sector; no mode truncation",
+      "expected": {
+        "taylor_convention": "q2(F,G)=d_a d_b B[Hbar+aF+bG]|a=b=0",
+        "q2_entries": {
+          "Einstein_Einstein": "0",
+          "Einstein_extraWeyl": "0",
+          "extraWeyl_extraWeyl": "0"
+        },
+        "all_higher_taylor_coefficients_zero": true
+      },
+      "acceptance_role": "rejects spurious nonlinear terms on an infinite-dimensional exact slice",
+      "cannot_establish": "any nonaligned interaction coefficient or complete BV q2",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC"
+      ]
+    },
+    {
+      "fixture_id": "NARIAI_TRANSVERSE_HESSIAN_VARIATION",
+      "evidence_class": "RESTRICTED_BACKGROUND_COMPLETE_HESSIAN_VARIATION",
+      "background": "unit Nariai dS2 x S2",
+      "input_scope": "delta a=-(1/3)sinh(2t), delta b=sinh(t), fixed-Lambda linearized Einstein",
+      "expected": {
+        "action_normalization": "B_action=-2 B_standard",
+        "orders_above_two_absent": true,
+        "authoritative_order_two_sha256": "fc68776c8662429b61d4cdfc6e1135367243af446f6fa7c4b989dc5d4fe097bc",
+        "full_variation_sha256": "53cacf6abec009b20f9e0a8d98bbf3ae5aed13eae244b56075e34a2815af5f2d",
+        "full_variation_nonzero_coefficients": 174,
+        "coefficient_map_shape": [
+          60,
+          45
+        ],
+        "coefficient_map_rank": 45,
+        "unique_completion": true
+      },
+      "acceptance_role": "cross-background method benchmark for direct leading derivation plus differentiated-Noether completion",
+      "cannot_establish": "the cylinder kernel, a rank-310 SDR, or causal transfer",
+      "dependency_tags": [
+        "LOCAL-ALGEBRAIC"
+      ]
+    }
+  ],
+  "acceptance_gates": [
+    {
+      "gate_id": "TYPE_AND_EXACTNESS",
+      "requirement": "ten symmetric contravariant density outputs with exact rational/algebraic coefficients and no floats",
+      "status": "NOT_RUN_NO_GENERAL_EVALUATOR"
+    },
+    {
+      "gate_id": "ARBITRARY_INPUT_COMPLETENESS",
+      "requirement": "all 10 x 10 unordered metric-component input pairs and all coefficient jets through total differential order four are addressable",
+      "status": "NOT_RUN_NO_GENERAL_EVALUATOR"
+    },
+    {
+      "gate_id": "POLARIZATION_SYMMETRY",
+      "requirement": "K[h1,h2]=K[h2,h1] under the declared coefficient-of-a*b convention",
+      "status": "NOT_RUN_NO_GENERAL_EVALUATOR"
+    },
+    {
+      "gate_id": "SUPPORT_INTERSECTION",
+      "requirement": "the local bidifferential AST contains no inverse differential operator and obeys supp K(u,v) subset supp(u) intersection supp(v)",
+      "status": "NOT_RUN_NO_GENERAL_EVALUATOR"
+    },
+    {
+      "gate_id": "DIFFERENTIATED_WEYL_IDENTITY",
+      "requirement": "the twice-polarized identity derived from g_ab E^ab(g)=0 vanishes, including the two unary cross terms",
+      "status": "NOT_RUN_NO_GENERAL_EVALUATOR"
+    },
+    {
+      "gate_id": "DIFFERENTIATED_DIFF_NOETHER_IDENTITY",
+      "requirement": "the twice-polarized covariant-divergence identity vanishes with connection and density variations retained",
+      "status": "NOT_RUN_NO_GENERAL_EVALUATOR"
+    },
+    {
+      "gate_id": "CYLINDER_UNARY_NORMALIZATION",
+      "requirement": "the shared pipeline reproduces the exhaustive action-normalized linearized cylinder operator",
+      "status": "NOT_RUN_NO_GENERAL_EVALUATOR"
+    },
+    {
+      "gate_id": "PPWAVE_ZERO_SLICE",
+      "requirement": "the evaluator returns zero for arbitrary aligned pp-wave profile pairs before projection",
+      "status": "NOT_RUN_NO_GENERAL_EVALUATOR"
+    },
+    {
+      "gate_id": "HT1B_NONZERO_CHANNELS",
+      "requirement": "mode adapters and exact S3 integration reproduce both nonzero local-density/Taub channels",
+      "status": "NOT_RUN_NO_GENERAL_EVALUATOR"
+    },
+    {
+      "gate_id": "NARIAI_PORTABILITY",
+      "requirement": "a background-generic implementation reproduces the restricted Nariai Hessian-variation hash; cylinder-only implementations must mark this NOT_APPLICABLE, never PASS",
+      "status": "NOT_RUN_NO_GENERAL_EVALUATOR"
+    }
+  ],
+  "coverage_diagnosis": {
+    "fixture_count": 5,
+    "cylinder_fixture_count": 3,
+    "nonzero_cylinder_channel_count": 2,
+    "direct_curvature_probe_count": 8,
+    "arbitrary_profile_zero_slices": 1,
+    "restricted_complete_hessian_variations": 1,
+    "general_arbitrary_input_cylinder_tensor_available": false,
+    "why_not_reconstructible": [
+      "two projected nonzero mode channels do not determine ten tensor outputs over all fourth-order input jets",
+      "a zero theorem on the aligned pp-wave slice contains no information about nonaligned coefficients",
+      "the Nariai result varies one fixed tangent in a nine-row transverse frame on a different background",
+      "the unary cylinder operator fixes first variation and normalization, not the second variation"
+    ]
+  },
+  "implementation_stages": [
+    {
+      "stage": "P0_BIVARIATE_EXACT_JETS",
+      "deliverable": "exact a,b coefficient algebra with coordinate derivatives through order four",
+      "status": "OPEN"
+    },
+    {
+      "stage": "P1_CYLINDER_GEOMETRIC_PIPELINE",
+      "deliverable": "executable inverse/connection/curvature/Weyl/Bach/raise-density pipeline at a homogeneous cylinder chart",
+      "status": "OPEN"
+    },
+    {
+      "stage": "P2_LOCAL_IDENTITIES",
+      "deliverable": "independent polarization, differentiated Weyl and Diff Noether replays",
+      "status": "OPEN"
+    },
+    {
+      "stage": "P3_PHYSICAL_FIXTURE_ADAPTERS",
+      "deliverable": "pp-wave restriction and HT1B mode/integration adapters",
+      "status": "OPEN"
+    },
+    {
+      "stage": "P4_PORTABLE_AST_EXPORT",
+      "deliverable": "content-addressed tensor-natural component payload consumable by the strict q2 receiver",
+      "status": "OPEN"
+    }
+  ],
+  "canonical_hashes": {
+    "target_contract_sha256": "24e2e00185863907fb2f1a0c144bb15cb12450a6eb8d53b1e1839dd089bf7588",
+    "candidate_program_contract_sha256": "be6c7a559eea37493bbcedc57ad2ed0021db2d8c8441c6591adbc114c33c7a0f",
+    "fixture_ledger_sha256": "206b637532580c51f4b48e2f4ceda8a3fe632410e0de6f69736a979f606d7fb1",
+    "acceptance_gates_sha256": "dcd39cc8a6ce259e62b6e1f0dc3cc81c4d3fc80a9faf2f1a8196bbd334ab3b58",
+    "coverage_diagnosis_sha256": "a133cf45071401496d9a3feb71cfeefff4c7da124dfe568d5aad1c1fadf77b7f",
+    "implementation_stages_sha256": "193059f084dab8576b041df9f8770a0f1c57dec698d176e275ada4a50da02f03"
+  },
+  "provenance": {
+    "inputs": [
+      {
+        "path": "covariant_completion/certificates/linearized_bach.json",
+        "result_or_artifact_id": "LINEARIZED_BACH_CYLINDER",
+        "sha256": "2afe8d15bb78d93c03d2bf44be2f44c5961fa393c78e2942ad63a6c842fbc583",
+        "role": "cylinder action normalization and exhaustive unary jet controls"
+      },
+      {
+        "path": "quantum-weyl/transfer/certificates/HT1B_LOCAL_BACH_SEED_LIFT.json",
+        "result_or_artifact_id": "HT1B_LOCAL_BACH_SEED_LIFT",
+        "sha256": "f08976200d4e07dc4fb349fa785c960ab4aa8a0d685fc82fe1a2cb30c5ff26c5",
+        "role": "two nonzero mode-specialized local cylinder channels"
+      },
+      {
+        "path": "quantum-weyl/transfer/certificates/HT1B_DIRECT_CURVATURE_AUDIT.json",
+        "result_or_artifact_id": "HT1B_DIRECT_CURVATURE_AUDIT",
+        "sha256": "f04cb4d64144b95fce2690ca0db56c835daacb44bb82311b7d81beaf9bc63257",
+        "role": "independent direct-curvature probe evaluation"
+      },
+      {
+        "path": "bridge/certificates/ppwave_bach_branch_closure.json",
+        "result_or_artifact_id": "PPWAVE_BACH_BRANCH_CLOSURE",
+        "sha256": "6934bd0aeae5ef54bc80f46b558e30e8ddd85fa044347433bf5b88b8f102b339",
+        "role": "arbitrary-profile exact nonlinear zero slice"
+      },
+      {
+        "path": "d_quotient_classical/certificates/NARIAI_TRANSVERSE_ACTION_BACH_HESSIAN_VARIATION_V1.json",
+        "result_or_artifact_id": "NARIAI_TRANSVERSE_ACTION_BACH_HESSIAN_VARIATION_V1",
+        "sha256": "8d18f7b7817bc424a4bb39a98875086a0b2bd0e6534f3409fdaa1b5f7a571817",
+        "role": "complete restricted-background Hessian-variation method fixture"
+      },
+      {
+        "path": "d_quotient_classical/certificates/CLASSICAL_MINIMAL_BV_ANTIFIELD_EXPORT_V2.json",
+        "result_or_artifact_id": "CLASSICAL_MINIMAL_BV_ANTIFIELD_EXPORT_V2",
+        "sha256": "3fa276bd04fce3b0142e910e907cab3ad3e4d39bbd60b966de90fa11860c03dc",
+        "role": "authoritative metric-antifield tensor type"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_Q2_KINEMATIC_COTANGENT_AST_V1.json",
+        "result_or_artifact_id": "STRICT_Q2_KINEMATIC_COTANGENT_AST_V1",
+        "sha256": "1927a795da01fc5fb06cdbe1ecd3de88f14abaab378f180f6b2ea5d486df81d2",
+        "role": "five-row partial q2 export and open h-star boundary"
+      }
+    ]
+  },
+  "claim_flags": {
+    "MULTI_FIXTURE_BENCHMARK_CONTRACT_CERTIFIED": true,
+    "GENERAL_ARBITRARY_INPUT_CYLINDER_BACH_KERNEL_AVAILABLE": false,
+    "STRICT_HSTAR_Q2_ROW_PORTABLE": false,
+    "STRICT_SUPPORT_LOCAL_Q2_COMPLETE": false,
+    "CLASSICAL_IMPORT_GATE_PASSED": false,
+    "LORENTZIAN_CAUSAL_CERTIFIED": false,
+    "QME_RESTORED": false
+  },
+  "does_not_establish": [
+    "the arbitrary-input polarized second Bach tensor on the conformal cylinder",
+    "a portable h-star q2 component row or complete six-row support-local q2",
+    "polarization symmetry or differentiated Diff/Weyl identities for a candidate evaluator",
+    "that the reduced-mode HT1B channels determine unprojected local coefficients",
+    "that the pp-wave zero slice constrains nonaligned nonlinear interactions",
+    "that the Nariai transverse variation is a cylinder or open-background theorem",
+    "a passed classical import gate, causal Green homotopy, Hadamard state, restored QME, or Lorentzian quantum theory"
+  ],
+  "independent_checker": "quantum-weyl/classical_import/check_strict_polarized_bach_benchmark.py",
+  "human_report": "quantum-weyl/classical_import/REPORT_STRICT_POLARIZED_BACH_KERNEL_BENCHMARK_V1.md"
+}

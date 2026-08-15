@@ -113,6 +113,30 @@ convention is not yet adequate for that row. The `h_star` Bach row and the
 suspended graded polarization therefore remain fail closed, as do all complete
 `q2/D` identities.
 
+The hard Bach row now has a source-replayed acceptance surface rather than an
+informal to-do. The
+[`STRICT_POLARIZED_BACH_KERNEL_BENCHMARK_V1`](REPORT_STRICT_POLARIZED_BACH_KERNEL_BENCHMARK_V1.md)
+contract separates five evidence classes: the exhaustive unary cylinder
+normalization, two nonzero HT1B mode channels, eight direct-curvature probes,
+the arbitrary-profile pp-wave zero slice, and the complete restricted Nariai
+Hessian variation. These fixtures constrain different parts of a candidate
+and cannot be substituted for one another. In particular, neither two
+projected nonzero channels nor an infinite-dimensional zero slice determines
+the universal ten-output fourth-jet tensor.
+
+An executable first construction is recorded in
+[`STRICT_CYLINDER_POLARIZED_BACH_EVALUATOR_V1`](REPORT_STRICT_CYLINDER_POLARIZED_BACH_EVALUATOR_V1.md).
+It implements exact bivariate Taylor arithmetic without optional symbolic
+dependencies and evaluates the full inverse-metric, connection, curvature,
+Weyl, Bach, action-normalization and Euler-density pipeline on any supplied
+rational metric four-jets. Exact cylinder, polarization, nonlinear Weyl-trace,
+local conformal and pp-wave checks pass, including a non-special trial with
+nine nonzero outputs. This materially constructs the missing coefficient
+kernel as an evaluator, but it is not yet the portable universal component
+AST: the differentiated Diff identity, HT1B mode adapters, exhaustive unary
+comparison and independent coefficient-table replay remain open. Gate A and
+the complete `h_star` row therefore remain fail closed.
+
 ## Antifield/Koszul--Tate handoff contract
 
 The required shape of the local antifield export is now executable rather

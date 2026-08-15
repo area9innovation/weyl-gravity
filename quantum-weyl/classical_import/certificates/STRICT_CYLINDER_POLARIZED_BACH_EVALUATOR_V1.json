@@ -1,0 +1,306 @@
+{
+  "schema": "strict-cylinder-polarized-bach-evaluator-v1",
+  "result_id": "STRICT_CYLINDER_POLARIZED_BACH_EVALUATOR_V1",
+  "result_kind": "EXACT_ARBITRARY_RATIONAL_JET_EVALUATOR_PROTOTYPE",
+  "result_state": "EVALUATOR_PROTOTYPE_EXECUTED_UNIVERSAL_AST_AND_DIFF_IDENTITY_OPEN",
+  "lifecycle": "CLASSIFIED",
+  "created": "2026-08-15",
+  "repository_base_commit": "99d4020850ef9cd394a5cfd9e1001228f430e2e2",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC"
+  ],
+  "scope": {
+    "target": "coefficient of a*b in the ten-component contravariant action Euler density on the unit conformal cylinder",
+    "input_interface": "two arbitrary mappings from symmetric metric component and four-coordinate multiindex to exact rational normalized Taylor coefficient",
+    "input_metric_jet_order": 4,
+    "parameter_algebra": "Q[a,b]/(a^2,b^2)",
+    "taylor_factorial": "coordinate coefficients are derivative/alpha!; the a*b coefficient has no hidden factor",
+    "action_normalization": "B_action=-2 B_standard",
+    "output_scalar_type": "fractions.Fraction",
+    "support_boundary": "pointwise local four-jet evaluation implies no inverse differential operator, but a portable support-local AST is not yet exported"
+  },
+  "algorithm": [
+    "metric_inverse",
+    "levi_civita_connection",
+    "curvature",
+    "weyl_tensor",
+    "bach_standard",
+    "action_normalize",
+    "raise_and_densitize",
+    "polarized_coefficient"
+  ],
+  "exact_checks": {
+    "reciprocal_exact_in_square_free_bivariate_quotient": true,
+    "sqrt_exact_in_square_free_bivariate_quotient": true,
+    "coordinate_derivative_leibniz_exact": true,
+    "no_floating_point_scalar_type": true,
+    "cylinder_background_geometry_exact": true,
+    "arbitrary_sparse_trial_swap_symmetric": true,
+    "arbitrary_sparse_trial_nonlinear_nonzero": true,
+    "twice_polarized_weyl_trace_identity_zero": true,
+    "three_ppwave_polynomial_trials_zero": true,
+    "local_conformal_unary_trial_zero": true
+  },
+  "cylinder_background_invariants": {
+    "ricci_lower": [
+      [
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "2",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "2",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "2"
+      ]
+    ],
+    "scalar": "6",
+    "weyl_background_nonzero_components": 0,
+    "bach_background_nonzero_components": 0
+  },
+  "arbitrary_sparse_trial": {
+    "input_kind": "two deterministic non-special sparse rational cylinder four-jets",
+    "left_seed": 1,
+    "right_seed": 2,
+    "output": [
+      {
+        "output_pair": [
+          0,
+          0
+        ],
+        "coefficient": "-119/24"
+      },
+      {
+        "output_pair": [
+          0,
+          1
+        ],
+        "coefficient": "5/2"
+      },
+      {
+        "output_pair": [
+          0,
+          2
+        ],
+        "coefficient": "0"
+      },
+      {
+        "output_pair": [
+          0,
+          3
+        ],
+        "coefficient": "9"
+      },
+      {
+        "output_pair": [
+          1,
+          1
+        ],
+        "coefficient": "-29/12"
+      },
+      {
+        "output_pair": [
+          1,
+          2
+        ],
+        "coefficient": "-11/8"
+      },
+      {
+        "output_pair": [
+          1,
+          3
+        ],
+        "coefficient": "-1/6"
+      },
+      {
+        "output_pair": [
+          2,
+          2
+        ],
+        "coefficient": "19/3"
+      },
+      {
+        "output_pair": [
+          2,
+          3
+        ],
+        "coefficient": "31/6"
+      },
+      {
+        "output_pair": [
+          3,
+          3
+        ],
+        "coefficient": "-7/8"
+      }
+    ],
+    "nonzero_output_count": 9,
+    "swapped_output_sha256": "1aba35d6492fe51560800c76c4e91407d0a978c7a02cef7d880251eceda99d86",
+    "trace_identity_defect": "0"
+  },
+  "ppwave_restriction_trials": [
+    {
+      "left_seed": 3,
+      "right_seed": 7,
+      "all_ten_outputs_zero": true,
+      "result_sha256": "d9dd97b93ddaa40a7748bbb5a3b14de7d92e9a4eba45f1ba11b51112cfd0e461"
+    },
+    {
+      "left_seed": 1,
+      "right_seed": 9,
+      "all_ten_outputs_zero": true,
+      "result_sha256": "d9dd97b93ddaa40a7748bbb5a3b14de7d92e9a4eba45f1ba11b51112cfd0e461"
+    },
+    {
+      "left_seed": 4,
+      "right_seed": 6,
+      "all_ten_outputs_zero": true,
+      "result_sha256": "d9dd97b93ddaa40a7748bbb5a3b14de7d92e9a4eba45f1ba11b51112cfd0e461"
+    }
+  ],
+  "conformal_unary_trial": {
+    "omega_jet": [
+      {
+        "multiindex": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "coefficient": "3/2"
+      },
+      {
+        "multiindex": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "coefficient": "-2"
+      },
+      {
+        "multiindex": [
+          0,
+          1,
+          1,
+          0
+        ],
+        "coefficient": "5/3"
+      },
+      {
+        "multiindex": [
+          0,
+          0,
+          0,
+          4
+        ],
+        "coefficient": "-1/7"
+      }
+    ],
+    "all_ten_outputs_zero": true,
+    "result_sha256": "d9dd97b93ddaa40a7748bbb5a3b14de7d92e9a4eba45f1ba11b51112cfd0e461"
+  },
+  "benchmark_stage_progress": [
+    {
+      "stage": "P0_BIVARIATE_EXACT_JETS",
+      "status": "PROTOTYPE_EXECUTED",
+      "evidence": "exact reciprocal, square-root and Leibniz identities over Fraction in Q[a,b]/(a^2,b^2)"
+    },
+    {
+      "stage": "P1_CYLINDER_GEOMETRIC_PIPELINE",
+      "status": "PROTOTYPE_EXECUTED",
+      "evidence": "inverse, Levi-Civita, curvature, Schouten, Weyl, Cotton/Bach, action normalization, raising and densitization evaluated through jet order four"
+    },
+    {
+      "stage": "P2_LOCAL_IDENTITIES",
+      "status": "PARTIAL",
+      "evidence": "swap symmetry and the differentiated Weyl trace identity pass; differentiated Diff Noether remains open"
+    },
+    {
+      "stage": "P3_PHYSICAL_FIXTURE_ADAPTERS",
+      "status": "PARTIAL",
+      "evidence": "three exact Brinkmann polynomial pairs replay the pp-wave zero slice; HT1B cylinder mode adapters remain open"
+    },
+    {
+      "stage": "P4_PORTABLE_AST_EXPORT",
+      "status": "OPEN",
+      "evidence": "the evaluator accepts concrete exact jets but has not serialized the universal coefficient table"
+    }
+  ],
+  "open_acceptance_gates": [
+    "independent exhaustive comparison with the serialized cylinder linearized Bach operator",
+    "differentiated Diff Noether identity with connection and density variations",
+    "HT1B E/A/L mode adapters and exact S3 integrations for both nonzero channels",
+    "universal 10 x 10 fourth-jet component table and portable tensor-natural AST",
+    "independent second implementation or coefficient-level receiver replay"
+  ],
+  "canonical_hashes": {
+    "scope_sha256": "b628696d800acb7a4f2a597106200176d78916f5f8f78bf68cca784076b7fcb9",
+    "exact_checks_sha256": "1e333d83ebe681334bea101ff6ab02a972cf3f8fc71a85cf133690b0103af4ba",
+    "arbitrary_sparse_trial_sha256": "fb78597536aac797507fbe522f9764ac0ab1b27cea0a83e42763d659db49a161",
+    "ppwave_restriction_trials_sha256": "e229ce6e82b5a141310d71c20afc49e66dc947934f138161e3a25c3072d75440",
+    "benchmark_stage_progress_sha256": "c4ab8f4b457f36182419af9fe9a9c89d0408bdd7a85848d29782c07f8aab2656"
+  },
+  "implementation": {
+    "path": "quantum-weyl/classical_import/cylinder_polarized_bach_evaluator.py",
+    "sha256": "2770635593bdaa940ba68da77872e135f3b7ce92f5a36c8941329a7ba767bf65"
+  },
+  "provenance": {
+    "inputs": [
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_POLARIZED_BACH_KERNEL_BENCHMARK_V1.json",
+        "result_or_artifact_id": "STRICT_POLARIZED_BACH_KERNEL_BENCHMARK_V1",
+        "sha256": "7101199c875d3e4650357096293a48f833870a5ec1b879244f1973e835994ad3",
+        "role": "fail-closed multi-fixture target contract"
+      },
+      {
+        "path": "covariant_completion/certificates/linearized_bach.json",
+        "result_or_artifact_id": "LINEARIZED_BACH_CYLINDER",
+        "sha256": "2afe8d15bb78d93c03d2bf44be2f44c5961fa393c78e2942ad63a6c842fbc583",
+        "role": "action-normalized unary cylinder control"
+      },
+      {
+        "path": "bridge/certificates/ppwave_bach_branch_closure.json",
+        "result_or_artifact_id": "PPWAVE_BACH_BRANCH_CLOSURE",
+        "sha256": "6934bd0aeae5ef54bc80f46b558e30e8ddd85fa044347433bf5b88b8f102b339",
+        "role": "arbitrary-profile pp-wave zero theorem"
+      }
+    ]
+  },
+  "claim_flags": {
+    "EXACT_ARBITRARY_RATIONAL_JET_INTERFACE_EXECUTED": true,
+    "CYLINDER_GEOMETRIC_PIPELINE_PROTOTYPE_EXECUTED": true,
+    "GENERAL_UNIVERSAL_COMPONENT_AST_EXPORTED": false,
+    "ALL_BENCHMARK_GATES_PASSED": false,
+    "STRICT_HSTAR_Q2_ROW_PORTABLE": false,
+    "STRICT_SUPPORT_LOCAL_Q2_COMPLETE": false,
+    "CLASSICAL_IMPORT_GATE_PASSED": false,
+    "LORENTZIAN_CAUSAL_CERTIFIED": false,
+    "QME_RESTORED": false
+  },
+  "does_not_establish": [
+    "a universal symbolic coefficient table or portable tensor-natural h-star q2 row",
+    "exhaustive agreement with the independently serialized unary cylinder operator",
+    "the differentiated diffeomorphism Noether identity for arbitrary fifth test jets",
+    "the two nonzero HT1B mode-channel densities or their exact S3 projections",
+    "that three polynomial pp-wave evaluations replace the existing arbitrary-profile theorem",
+    "a complete six-row support-local q2, local D action, or any interaction receiver identity",
+    "a passed classical import gate, causal Green homotopy, Hadamard state, QME restoration, or Lorentzian quantum theory"
+  ],
+  "independent_checker": "quantum-weyl/classical_import/check_strict_cylinder_polarized_bach_evaluator.py",
+  "human_report": "quantum-weyl/classical_import/REPORT_STRICT_CYLINDER_POLARIZED_BACH_EVALUATOR_V1.md"
+}
