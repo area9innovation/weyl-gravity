@@ -17,7 +17,7 @@ VIABILITY = ROOT / "foundations/site/viability.json"
 ASSEMBLIES = ROOT / "foundations/site/assemblies.json"
 CUBE = ROOT / "foundations/results/FOUNDATIONAL_INTERSECTION_CUBE_V15.json"
 LADDER = ROOT / "foundations/results/FOUNDATIONAL_CYLINDER_WAVE_STRENGTH_LADDER_V2.json"
-COMPLETION_ATLAS = ROOT / "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V8.json"
+COMPLETION_ATLAS = ROOT / "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V9.json"
 STATUSES = {"LOCAL_RESULT", "LITERATURE_RESULT", "PIECES_ONLY", "PRIORITY_GAP", "REVIEWED_GAP", "NOT_MAPPED"}
 MIGRATIONS = {"EXACT_PARENT_TRANSFER", "CAPABILITY_QUALIFIED", "REVIEWED_OVERLAY", "REVIEWED_NO_TRANSFER", "REVIEWED_CHILD_GAP", "DIRECT_COORDINATE_REVIEW", "NOT_REVIEWED"}
 
@@ -155,12 +155,12 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
         errors.append("Lorentzian completion atlas projection")
     if len(completion.get("branches", [])) != 7 or len(completion.get("stages", [])) != 11 or sum(len(item.get("stages", [])) for item in completion.get("branches", [])) != 77:
         errors.append("Lorentzian completion branch/stage closure")
-    if len(completion.get("route_selection", [])) != 8 or len(completion.get("berger_h26_c26_decision_chain", [])) != 11:
+    if len(completion.get("route_selection", [])) != 9 or len(completion.get("berger_h26_c26_decision_chain", [])) != 11:
         errors.append("Lorentzian completion route/decision closure")
     completion_flags = completion.get("claim_flags", {})
     if completion_flags.get("general_noncone_104_row_no_go") is not False or completion_flags.get("lorentzian_full_theory_certified") is not False:
         errors.append("Lorentzian completion fail-closed boundary")
-    if completion.get("result_id") != "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V8":
+    if completion.get("result_id") != "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V9":
         errors.append("Lorentzian completion atlas version")
     transport = completion.get("strict_causal_sign_transport", {})
     if transport.get("full_dimension") != 386 or transport.get("positive_signs") != 381 or transport.get("negative_signs") != 5 or transport.get("causal_stage_preserved") is not True:
@@ -194,6 +194,13 @@ def check(data: dict[str, Any] | None = None) -> tuple[list[str], dict[str, Any]
         errors.append("strict endpoint portability counts")
     if portability.get("full_q1_portable") is not False or portability.get("local_sdr_portable") is not False or portability.get("endpoint_green_action_portable") is not False or portability.get("full_green_action_portable") is not False or portability.get("causal_green_theorem_preserved") is not True:
         errors.append("strict operator-portability boundary")
+    sign_gate = completion.get("strict_full_q1_split_sign_gate", {})
+    if (sign_gate.get("carrier_rows"), sign_gate.get("auxiliary_rows"), sign_gate.get("executable_sign"), sign_gate.get("declared_sign")) != (386, 36, "+I_4", "-I_4"):
+        errors.append("strict split-q1 sign-gate projection")
+    if sign_gate.get("executable_cyclicity_defects") != 0 or sign_gate.get("declared_cyclicity_defects") != 8 or sign_gate.get("both_nilpotent") is not True or sign_gate.get("both_contractible") is not True:
+        errors.append("strict split-q1 exact replay")
+    if sign_gate.get("repair_applied") is not False or completion_flags.get("strict_386_auxiliary_q_sign_repair_applied") is not False or completion_flags.get("strict_full_386_q1_portable_component_bytes") is not False:
+        errors.append("strict split-q1 repair/full-q1 firewall")
     if viability.get("source_atlas_digest") != data.get("canonical_digest") or viability.get("canonical_digest") != result.get("independent_checker", {}).get("expected_viability_digest"):
         errors.append("theory viability source/digest pin")
     if len(viability.get("profiles", [])) != 36 or len(viability.get("carrier_envelopes", [])) != 6:

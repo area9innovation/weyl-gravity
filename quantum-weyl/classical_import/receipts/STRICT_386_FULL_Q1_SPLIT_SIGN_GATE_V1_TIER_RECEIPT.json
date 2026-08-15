@@ -1,0 +1,54 @@
+{
+  "receipt_id": "STRICT_386_FULL_Q1_SPLIT_SIGN_GATE_V1_TIER_RECEIPT",
+  "result_id": "STRICT_386_FULL_Q1_SPLIT_SIGN_GATE_V1",
+  "created": "2026-08-15",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "lifecycle": "CLASSIFIED",
+  "scope": "Exact fail-closed text/matrix sign-consistency gate on the 36-row generalized-auxiliary summand preceding full split-basis q1 serialization.",
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "elapsed_seconds": 0.2,
+      "commands": [
+        "python3 -m py_compile quantum-weyl/classical_import/produce_strict_386_auxiliary_q_sign_witness.py quantum-weyl/classical_import/build_strict_386_full_q1_split_sign_gate.py quantum-weyl/classical_import/check_strict_386_full_q1_split_sign_gate.py quantum-weyl/classical_import/verify_strict_386_full_q1_split_sign_gate.py quantum-weyl/classical_import/tests/test_strict_386_full_q1_split_sign_gate.py",
+        "git diff --check -- <scoped sign-gate paths>"
+      ],
+      "result": "Changed Python sources compile, structured artifacts parse through the verifier, and scoped whitespace checks pass."
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 5.7,
+      "command": "python3 quantum-weyl/classical_import/build_strict_386_full_q1_split_sign_gate.py --check && python3 quantum-weyl/classical_import/check_strict_386_full_q1_split_sign_gate.py && python3 quantum-weyl/classical_import/verify_strict_386_full_q1_split_sign_gate.py && python3 -m unittest quantum-weyl/classical_import/tests/test_strict_386_full_q1_split_sign_gate.py -v",
+      "result": "Deterministic build, independent exact receiver, Draft 2020-12 schema/report verification, and 8/8 mutation tests pass."
+    },
+    "tier_2": {
+      "status": "PASS_BY_AFFECTED_PRODUCER_REPLAY",
+      "elapsed_seconds": 37.0,
+      "command": "PYTHONPATH=/tmp/weyl-sympy/root/usr/lib/python3/dist-packages python3 quantum-weyl/classical_import/produce_strict_386_auxiliary_q_sign_witness.py --check",
+      "result": "The authoritative SymPy generalized-auxiliary producer was rerun. Its exact 36x36 matrix remains current, has 30 nonzero entries, and matches the certified matrix SHA-256. The observed v_star-to-eta_star block is +I4."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No repair, freeze, lifecycle promotion, release, or shared algebra change was made; the result is a CLASSIFIED obstruction and leaves the import gate closed."
+    }
+  },
+  "content_hashes": {
+    "quantum-weyl/classical_import/produce_strict_386_auxiliary_q_sign_witness.py": "2e6d91a38c83aba0ae6df623cbe1f2f26fd50c36268be8792ce7b3c8c297c119",
+    "quantum-weyl/classical_import/certificates/STRICT_386_AUXILIARY_Q_SIGN_WITNESS_V1.json": "e451eadc156ee322304e45fd43c45f74786713f8b6bcd422c71c50588ca0ac16",
+    "quantum-weyl/classical_import/build_strict_386_full_q1_split_sign_gate.py": "7dd870ecf6b137765842320c24baf6394ee88127494ed8e2e75aa85fd48f461c",
+    "quantum-weyl/classical_import/check_strict_386_full_q1_split_sign_gate.py": "17cbf9420aa7904e0dd461ae261fdecba18b81954fe629f2417cd2dadc0a34d2",
+    "quantum-weyl/classical_import/verify_strict_386_full_q1_split_sign_gate.py": "292f50c23b02ef49bd76dc6b67157e488f3d6edf978dc17093aaa004960dc937",
+    "quantum-weyl/classical_import/schema/strict-386-full-q1-split-sign-gate-v1.schema.json": "2e74b2af00e5f2308a792c8de29ff0140f2d62e13a282a67f8582457ed4dd9fe",
+    "quantum-weyl/classical_import/tests/test_strict_386_full_q1_split_sign_gate.py": "e5ea7e1bf09364f6f28f5d83753dfeb46133bc13d6eec8f6ea80a13047dea7b3",
+    "quantum-weyl/classical_import/certificates/STRICT_386_FULL_Q1_SPLIT_SIGN_GATE_V1.json": "385a9fe8802fbea9e687f7c09796744763ce45f7734ed9bdabffc15a135c55e7",
+    "quantum-weyl/classical_import/REPORT_STRICT_386_FULL_Q1_SPLIT_SIGN_GATE_V1.md": "e3f1673d47b1bcee57b7b3e1df67267a558eba694c45a02c295c7db1ce8234d0"
+  },
+  "boundaries": [
+    "The executable +I4 candidate is cyclic with the serialized pairing; this receipt does not apply the preferred repair to the classical source or ledgers.",
+    "The declared -I4 candidate remains nilpotent and contractible but has eight exact cyclicity defects; nilpotency or contraction alone cannot resolve the convention.",
+    "Full q1, Gate A, Green actions, Hadamard, QME, residual transfer, and Lorentzian quantum certification remain fail closed."
+  ]
+}

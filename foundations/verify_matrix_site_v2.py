@@ -51,7 +51,7 @@ def verify(*, result=None, report=None) -> tuple[list[str], list[str]]:
         "completion_branches": 7,
         "completion_stages": 11,
         "completion_cells": 77,
-        "completion_routes": 8,
+        "completion_routes": 9,
         "completion_decisions": 11,
         "theory_profiles": 36,
         "carrier_envelopes": 6,

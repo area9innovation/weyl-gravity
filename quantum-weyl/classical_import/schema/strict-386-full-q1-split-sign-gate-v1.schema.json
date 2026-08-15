@@ -1,0 +1,110 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/strict-386-full-q1-split-sign-gate-v1.schema.json",
+  "type": "object",
+  "required": ["schema", "result_id", "result_kind", "result_state", "lifecycle", "created", "repository_base_commit", "dependency_tags", "question", "answer", "carrier", "coordinate_diagnosis", "sign_conflict", "exact_replay", "repair_analysis", "foundational_strength", "claim_flags", "does_not_establish", "next_gate", "provenance", "independent_checker", "human_report"],
+  "properties": {
+    "schema": {"const": "strict-386-full-q1-split-sign-gate-v1"},
+    "result_id": {"const": "STRICT_386_FULL_Q1_SPLIT_SIGN_GATE_V1"},
+    "result_kind": {"const": "EXACT_CLASSICAL_IMPORT_TEXT_MATRIX_SIGN_CONSISTENCY_GATE"},
+    "result_state": {"const": "FULL_Q1_SERIALIZATION_BLOCKED_BY_AUXILIARY_COTANGENT_SIGN_CONFLICT"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "created": {"type": "string", "format": "date"},
+    "repository_base_commit": {"$ref": "#/$defs/git_hash"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "LORENTZIAN-CAUSAL"]},
+    "question": {"type": "string", "minLength": 120},
+    "answer": {"type": "string", "minLength": 700},
+    "carrier": {
+      "type": "object",
+      "required": ["basis_result", "rows", "auxiliary_rows", "auxiliary_global_range", "pairing_entries_on_auxiliary_rows"],
+      "properties": {
+        "rows": {"const": 386},
+        "auxiliary_rows": {"const": 36},
+        "auxiliary_global_range": {"const": [30, 65]}
+      }
+    },
+    "coordinate_diagnosis": {
+      "type": "object",
+      "required": ["published_basis", "full_q1_target_presentation", "T_A_B_location", "consequence"]
+    },
+    "sign_conflict": {
+      "type": "object",
+      "required": ["block", "global_source_rows", "global_target_rows", "executable_matrix_sign", "factorized_source_and_certificate_sign", "executable_matrix_sha256", "generalized_authority_matrix_sha256", "text_matrix_consistent"],
+      "properties": {
+        "block": {"const": "AUX_V_STAR -> AUX_ETA_STAR"},
+        "global_source_rows": {"const": [58, 59, 60, 61]},
+        "global_target_rows": {"const": [62, 63, 64, 65]},
+        "executable_matrix_sign": {"const": "+I_4"},
+        "factorized_source_and_certificate_sign": {"const": "-I_4"},
+        "executable_matrix_sha256": {"$ref": "#/$defs/hash"},
+        "generalized_authority_matrix_sha256": {"$ref": "#/$defs/hash"},
+        "text_matrix_consistent": {"const": false}
+      }
+    },
+    "exact_replay": {
+      "type": "object",
+      "required": ["executable_plus_sign", "declared_minus_sign", "discriminator"],
+      "properties": {
+        "executable_plus_sign": {"$ref": "#/$defs/replay_pass"},
+        "declared_minus_sign": {
+          "type": "object",
+          "required": ["q_squared_defects", "contraction_defects", "cyclicity_defects", "cyclicity_defect_entries"],
+          "properties": {
+            "q_squared_defects": {"const": 0},
+            "contraction_defects": {"const": 0},
+            "cyclicity_defects": {"const": 8},
+            "cyclicity_defect_entries": {"type": "array", "minItems": 8, "maxItems": 8, "items": {"type": "object", "required": ["left_index", "right_index", "left", "right", "coefficient"]}}
+          }
+        },
+        "discriminator": {"type": "string", "minLength": 80}
+      }
+    },
+    "repair_analysis": {
+      "type": "object",
+      "required": ["preferred_repair", "alternative", "alternative_cost", "repair_applied"],
+      "properties": {"repair_applied": {"const": false}}
+    },
+    "foundational_strength": {
+      "type": "object",
+      "required": ["exact_sign_gate_upper_bound", "choice_operation_added", "analytic_or_infinite_argument_used"],
+      "properties": {
+        "exact_sign_gate_upper_bound": {"const": "PRA"},
+        "choice_operation_added": {"const": false},
+        "analytic_or_infinite_argument_used": {"const": false}
+      }
+    },
+    "claim_flags": {
+      "type": "object",
+      "required": ["STRICT_386_AUXILIARY_Q_TEXT_MATRIX_SIGN_CONFLICT_CERTIFIED", "STRICT_386_EXECUTABLE_AUXILIARY_Q_CYCLIC_WITH_SERIALIZED_PAIRING", "STRICT_386_DECLARED_MINUS_SIGN_CYCLIC_WITH_SERIALIZED_PAIRING", "STRICT_386_SPLIT_COORDINATE_LOCATION_CLASSIFIED", "STRICT_FULL_386_Q1_PORTABLE_COMPONENT_BYTES", "STRICT_386_ALL_OPERATOR_COMPONENT_ADJOINTS_REPLAYED", "CLASSICAL_IMPORT_GATE_PASSED", "HADAMARD_STATE_CONSTRUCTED", "QME_RESTORED", "LORENTZIAN_QUANTUM_THEORY"]
+    },
+    "does_not_establish": {"type": "array", "minItems": 5, "maxItems": 5, "uniqueItems": true, "items": {"type": "string", "minLength": 60}},
+    "next_gate": {"type": "string", "minLength": 240},
+    "provenance": {
+      "type": "object",
+      "required": ["inputs"],
+      "properties": {"inputs": {"type": "array", "minItems": 8, "maxItems": 8, "items": {"type": "object", "required": ["path", "result_or_schema_id", "sha256", "role"]}}}
+    },
+    "independent_checker": {
+      "type": "object",
+      "required": ["path", "expected_digest"],
+      "properties": {
+        "path": {"const": "quantum-weyl/classical_import/check_strict_386_full_q1_split_sign_gate.py"},
+        "expected_digest": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "human_report": {"const": "quantum-weyl/classical_import/REPORT_STRICT_386_FULL_Q1_SPLIT_SIGN_GATE_V1.md"}
+  },
+  "$defs": {
+    "git_hash": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "replay_pass": {
+      "type": "object",
+      "required": ["q_squared_defects", "contraction_defects", "cyclicity_defects"],
+      "properties": {
+        "q_squared_defects": {"const": 0},
+        "contraction_defects": {"const": 0},
+        "cyclicity_defects": {"const": 0}
+      }
+    }
+  }
+}

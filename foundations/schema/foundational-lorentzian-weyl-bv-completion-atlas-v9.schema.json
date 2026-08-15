@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://area9.dk/schemas/foundational-lorentzian-weyl-bv-completion-atlas-v9.schema.json",
+  "type": "object",
+  "required": ["schema_version", "result_id", "result_kind", "lifecycle", "created", "repository_base_commit", "dependency_tags", "question", "answer", "predecessor", "status_vocabulary", "stages", "branches", "frontier_summary", "classical_import_reconciliation", "strict_gate_a_progress", "strict_causal_sign_transport", "strict_endpoint_q1_content_bridge", "strict_suspended_adjoint_bridge", "strict_component_pairing_serialization", "strict_operator_portability", "strict_full_q1_split_sign_gate", "berger_h26_c26_decision_chain", "route_selection", "research_queue", "provenance", "claim_flags", "does_not_establish", "independent_checker", "human_report"],
+  "properties": {
+    "schema_version": {"const": "foundational-lorentzian-weyl-bv-completion-atlas-v9"},
+    "result_id": {"const": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V9"},
+    "result_kind": {"const": "BRANCH_BY_STAGE_COMPLETION_ATLAS"},
+    "lifecycle": {"const": "CLASSIFIED"},
+    "created": {"type": "string", "format": "date"},
+    "repository_base_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "dependency_tags": {"type": "array", "minItems": 4, "maxItems": 4, "uniqueItems": true},
+    "question": {"type": "string", "minLength": 180},
+    "answer": {"type": "string", "minLength": 1400},
+    "predecessor": {
+      "type": "object",
+      "required": ["result_id", "path", "sha256", "preserved"],
+      "properties": {
+        "result_id": {"const": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V8"},
+        "path": {"const": "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V8.json"},
+        "sha256": {"$ref": "#/$defs/hash"},
+        "preserved": {"const": true}
+      }
+    },
+    "status_vocabulary": {"type": "array", "minItems": 9, "maxItems": 9},
+    "stages": {"type": "array", "minItems": 11, "maxItems": 11},
+    "branches": {"type": "array", "minItems": 7, "maxItems": 7, "items": {"$ref": "#/$defs/branch"}},
+    "frontier_summary": {"type": "object", "minProperties": 4},
+    "classical_import_reconciliation": {"type": "object"},
+    "strict_gate_a_progress": {
+      "type": "object",
+      "required": ["status", "operator_portability_control", "full_q1_split_sign_control"],
+      "properties": {
+        "status": {"const": "AUXILIARY_Q_TEXT_MATRIX_SIGN_REPAIR_REQUIRED"},
+        "full_q1_split_sign_control": {"$ref": "#/$defs/sign_gate"}
+      }
+    },
+    "strict_causal_sign_transport": {"type": "object"},
+    "strict_endpoint_q1_content_bridge": {"type": "object"},
+    "strict_suspended_adjoint_bridge": {"type": "object"},
+    "strict_component_pairing_serialization": {"type": "object"},
+    "strict_operator_portability": {"type": "object"},
+    "strict_full_q1_split_sign_gate": {"$ref": "#/$defs/sign_gate"},
+    "berger_h26_c26_decision_chain": {"type": "array", "minItems": 11, "maxItems": 11},
+    "route_selection": {"type": "array", "minItems": 9, "maxItems": 9, "items": {"$ref": "#/$defs/route"}},
+    "research_queue": {"type": "array", "minItems": 9, "maxItems": 9},
+    "provenance": {"type": "object", "required": ["inputs"], "properties": {"inputs": {"type": "array", "minItems": 49, "maxItems": 49}}},
+    "claim_flags": {"type": "object", "additionalProperties": {"type": "boolean"}},
+    "does_not_establish": {"type": "array", "minItems": 25, "uniqueItems": true, "items": {"type": "string", "minLength": 25}},
+    "independent_checker": {
+      "type": "object",
+      "required": ["path", "checks", "expected_digest"],
+      "properties": {
+        "path": {"const": "foundations/check_lorentzian_weyl_bv_completion_atlas_v9.py"},
+        "checks": {"type": "array", "minItems": 13, "maxItems": 13},
+        "expected_digest": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "human_report": {"const": "foundations/reports/lorentzian-weyl-bv-completion-atlas-v9.md"}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "cell": {"type": "object", "required": ["stage", "status", "statement", "evidence", "boundary"]},
+    "branch": {"type": "object", "required": ["id", "name", "relation_to_target", "scope", "stages", "first_unclosed_gate", "next_decisive_object"], "properties": {"stages": {"type": "array", "minItems": 11, "maxItems": 11, "items": {"$ref": "#/$defs/cell"}}}},
+    "sign_gate": {
+      "type": "object",
+      "required": ["result_id", "status", "carrier_rows", "auxiliary_rows", "block", "executable_sign", "declared_sign", "executable_cyclicity_defects", "declared_cyclicity_defects", "both_nilpotent", "both_contractible", "repair_applied", "split_coordinate_classified", "foundational_upper_bound", "choice_operation_added", "next_gate"],
+      "properties": {
+        "result_id": {"const": "STRICT_386_FULL_Q1_SPLIT_SIGN_GATE_V1"},
+        "carrier_rows": {"const": 386},
+        "auxiliary_rows": {"const": 36},
+        "block": {"const": "AUX_V_STAR -> AUX_ETA_STAR"},
+        "executable_sign": {"const": "+I_4"},
+        "declared_sign": {"const": "-I_4"},
+        "executable_cyclicity_defects": {"const": 0},
+        "declared_cyclicity_defects": {"const": 8},
+        "both_nilpotent": {"const": true},
+        "both_contractible": {"const": true},
+        "repair_applied": {"const": false},
+        "split_coordinate_classified": {"const": true},
+        "foundational_upper_bound": {"const": "PRA"},
+        "choice_operation_added": {"const": false}
+      }
+    },
+    "route": {"type": "object", "required": ["rank", "route", "branch", "scientific_leverage", "tractability", "dependency_depth", "recommendation"], "properties": {"rank": {"type": "integer", "minimum": 1, "maximum": 9}, "recommendation": {"type": "string", "minLength": 80}}}
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "receipt_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V9_INTEGRATION_TIER_RECEIPT",
+  "result_id": "FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V9",
+  "created": "2026-08-15",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL",
+    "REDUCED-MODE",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "lifecycle": "CLASSIFIED",
+  "scope": "Append-only atlas V9 and in-place static explorer integration of the exact auxiliary-q text/matrix sign gate.",
+  "tiers": {
+    "tier_0": {
+      "status": "PASS",
+      "elapsed_seconds": 0.4,
+      "commands": [
+        "python3 -m py_compile foundations/build_lorentzian_weyl_bv_completion_atlas_v9.py foundations/check_lorentzian_weyl_bv_completion_atlas_v9.py foundations/verify_lorentzian_weyl_bv_completion_atlas_v9.py foundations/tests/test_lorentzian_weyl_bv_completion_atlas_v9.py foundations/build_matrix_site_v2.py foundations/check_matrix_site_v2.py foundations/verify_matrix_site_v2.py",
+        "git diff --check -- <scoped atlas and site paths>"
+      ],
+      "result": "All changed Python sources compile, schemas parse through their verifiers, and the scoped diff has no whitespace errors. JavaScript syntax was exercised by the generated-site tests; node was unavailable for a separate node --check rail."
+    },
+    "tier_1": {
+      "status": "PASS",
+      "elapsed_seconds": 2.6,
+      "commands": [
+        "python3 foundations/build_lorentzian_weyl_bv_completion_atlas_v9.py --check && python3 foundations/check_lorentzian_weyl_bv_completion_atlas_v9.py && python3 foundations/verify_lorentzian_weyl_bv_completion_atlas_v9.py && python3 -m unittest foundations/tests/test_lorentzian_weyl_bv_completion_atlas_v9.py -v",
+        "python3 foundations/build_matrix_site_v2.py --check && python3 foundations/check_matrix_site_v2.py && python3 foundations/verify_matrix_site_v2.py && python3 -m unittest foundations/tests/test_matrix_site.py -v"
+      ],
+      "result": "Atlas determinism, independent checker, schema/report verifier, and 8/8 mutation tests pass. The existing explorer passes its deterministic 576-cell audit and 10/10 tests with 77 completion cells and nine ranked routes."
+    },
+    "tier_2": {
+      "status": "PASS_BY_AFFECTED_CHAIN",
+      "elapsed_seconds": 0.8,
+      "command": "exact auxiliary sign gate -> immutable atlas V8 -> atlas V9 -> matrix-site deterministic generation and independent verification",
+      "result": "The transitive changed certificate chain is content-pinned and independently verified. V8 and its unchanged authority chain were checked by hash rather than rebuilt."
+    },
+    "tier_3": {
+      "status": "NOT_RUN",
+      "criterion": "No classical repair, freeze, release, theorem lifecycle promotion, or shared core algebra change; V9 is an append-only CLASSIFIED integration."
+    }
+  },
+  "content_hashes": {
+    "foundations/build_lorentzian_weyl_bv_completion_atlas_v9.py": "10e29bbdbc763c7c7c4ccdcb8a57afedfd6af2bd261df4b2904e4e93a9413775",
+    "foundations/check_lorentzian_weyl_bv_completion_atlas_v9.py": "4bf75591369c1097fe86c0a424c0ba718603ec45f859bcfe00c945f863bf67de",
+    "foundations/verify_lorentzian_weyl_bv_completion_atlas_v9.py": "b140531b796abf28fad9cbd2d4a888f22911fb3f7ce15c21c8e8f039b3ab4540",
+    "foundations/schema/foundational-lorentzian-weyl-bv-completion-atlas-v9.schema.json": "edd0e99959d8ec1bb6bd2abd6494978adedb84e220439b01d667c2e7770c7208",
+    "foundations/tests/test_lorentzian_weyl_bv_completion_atlas_v9.py": "85f3b781b20b24a6f420597348fbb17dc31018d45a6501db94979a9e8b4da080",
+    "foundations/results/FOUNDATIONAL_LORENTZIAN_WEYL_BV_COMPLETION_ATLAS_V9.json": "019de2f4bd6864a0028c274b30eeae39265810999bf79c172b90f0abd2cd6f58",
+    "foundations/reports/lorentzian-weyl-bv-completion-atlas-v9.md": "eb814ea033013b501eda77abb8b595128e8c6988670d43db0b9a90b206002c3c",
+    "foundations/build_matrix_site_v2.py": "cc93f63adb16b0139f187bfb951fa5c8d4d6a3fc2231da8ef5ea3d155e158a10",
+    "foundations/check_matrix_site_v2.py": "7f83abc9b613569fe80a76847de864b44df040b28660b7e292f64d3d46300d0d",
+    "foundations/verify_matrix_site_v2.py": "0a349aeb68601402d5b33103fe75dedc9d42facaf10e55430fcc5d4e1f80bc03",
+    "foundations/matrix_site_v2_assets/app-v2.js": "f359829512c5c01e5023ca10809a84af98adefd1f65908d1c7f846d465549322",
+    "foundations/tests/test_matrix_site.py": "91e7562382ea960f237f903ca5df06c6bbfe200871264ca99e46d6f9418dcc18",
+    "foundations/results/FOUNDATIONAL_MATRIX_EXPLORER_SITE_V2.json": "4dcca6c2759799b64646325add488018d144e488c58a25cce281d383bdabd604",
+    "foundations/site/data.json": "a8779066e63ca077a5e67d53cba967641191979e2f1bf6aefeda4fbe480922ef",
+    "foundations/site/manifest.json": "8f707d000f8dfd86d670b34174b32636741c22a97863aaf62ef6bc03c8c0f836"
+  },
+  "boundaries": [
+    "Atlas V9 classifies the sign conflict and repair order; it does not apply the classical repair or serialize full q1.",
+    "The route ranking is a research decision aid, not a theorem or probability ranking.",
+    "The causal theorem remains preserved while Gate A, D, q2, Hadamard, Ward, QME, residual transfer, and Lorentzian quantum certification remain fail closed."
+  ]
+}

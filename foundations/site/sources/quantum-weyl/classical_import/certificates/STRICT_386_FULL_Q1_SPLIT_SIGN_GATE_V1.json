@@ -1,0 +1,211 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema": "strict-386-full-q1-split-sign-gate-v1",
+  "result_id": "STRICT_386_FULL_Q1_SPLIT_SIGN_GATE_V1",
+  "result_kind": "EXACT_CLASSICAL_IMPORT_TEXT_MATRIX_SIGN_CONSISTENCY_GATE",
+  "result_state": "FULL_Q1_SERIALIZATION_BLOCKED_BY_AUXILIARY_COTANGENT_SIGN_CONFLICT",
+  "lifecycle": "CLASSIFIED",
+  "created": "2026-08-15",
+  "repository_base_commit": "5d640c50974b09a12b8bc6e0bfcbafc084636f25",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "LORENTZIAN-CAUSAL"
+  ],
+  "question": "Do the executable generalized-auxiliary q bytes, the factorized curved-Q declaration and the serialized odd pairing define one cyclic 36-row summand before they are embedded into the full 386-row q1 table?",
+  "answer": "No. The executable generalized-auxiliary matrix whose SHA-256 is already certified contains v_star -> +eta_star on four rows. The factorized actual-curved-Q source and both generalized/curved human ledgers instead declare v_star -> -eta_star. Nilpotency and the 36-row contraction hold for either sign, so the existing algebraic checks cannot detect the mismatch. The serialized exact odd pairing does: the executable plus sign has zero component cyclicity defects, while the declared minus sign has eight exact defects, two orientations for each of four components. The published 386-row carrier is the split mapping-cylinder presentation, so T, A and B belong to the separate canonical shear and endpoint inclusion/projection, not to the primitive split q1 arrows. Full q1 serialization must therefore pause at this sign gate. The minimal repair is to change the factorized dual arrow and textual ledgers to plus, matching both the executable matrix and the current pairing, and then rerun the affected classical chain. No causal theorem is revoked and no Hadamard or QME claim is promoted.",
+  "carrier": {
+    "basis_result": "STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1",
+    "rows": 386,
+    "auxiliary_rows": 36,
+    "auxiliary_global_range": [
+      30,
+      65
+    ],
+    "pairing_entries_on_auxiliary_rows": 60
+  },
+  "coordinate_diagnosis": {
+    "published_basis": "Gate endpoint 30; ordered generalized-auxiliary complement 36; split mapping-cylinder complement 320",
+    "full_q1_target_presentation": "factorized curved auxiliary split plus split curvature mapping cylinder",
+    "T_A_B_location": "degree-zero canonical shear, inclusion/projection and unshifted graph presentation; not primitive arrows of q1 in the published split basis",
+    "consequence": "The first full-q1 table should serialize the split differential and serialize the canonical shear separately."
+  },
+  "sign_conflict": {
+    "block": "AUX_V_STAR -> AUX_ETA_STAR",
+    "global_source_rows": [
+      58,
+      59,
+      60,
+      61
+    ],
+    "global_target_rows": [
+      62,
+      63,
+      64,
+      65
+    ],
+    "executable_matrix_sign": "+I_4",
+    "factorized_source_and_certificate_sign": "-I_4",
+    "executable_matrix_sha256": "438e949785ac9ac40ff29aa1e37087240c19aebc5809c36079a5d720aae62c56",
+    "generalized_authority_matrix_sha256": "438e949785ac9ac40ff29aa1e37087240c19aebc5809c36079a5d720aae62c56",
+    "text_matrix_consistent": false
+  },
+  "exact_replay": {
+    "executable_plus_sign": {
+      "q_squared_defects": 0,
+      "contraction_defects": 0,
+      "cyclicity_defects": 0
+    },
+    "declared_minus_sign": {
+      "q_squared_defects": 0,
+      "contraction_defects": 0,
+      "cyclicity_defects": 8,
+      "cyclicity_defect_entries": [
+        {
+          "left_index": 30,
+          "right_index": 58,
+          "left": "eta_0",
+          "right": "v_star_0",
+          "coefficient": "2"
+        },
+        {
+          "left_index": 31,
+          "right_index": 59,
+          "left": "eta_1",
+          "right": "v_star_1",
+          "coefficient": "-2"
+        },
+        {
+          "left_index": 32,
+          "right_index": 60,
+          "left": "eta_2",
+          "right": "v_star_2",
+          "coefficient": "-2"
+        },
+        {
+          "left_index": 33,
+          "right_index": 61,
+          "left": "eta_3",
+          "right": "v_star_3",
+          "coefficient": "-2"
+        },
+        {
+          "left_index": 58,
+          "right_index": 30,
+          "left": "v_star_0",
+          "right": "eta_0",
+          "coefficient": "2"
+        },
+        {
+          "left_index": 59,
+          "right_index": 31,
+          "left": "v_star_1",
+          "right": "eta_1",
+          "coefficient": "-2"
+        },
+        {
+          "left_index": 60,
+          "right_index": 32,
+          "left": "v_star_2",
+          "right": "eta_2",
+          "coefficient": "-2"
+        },
+        {
+          "left_index": 61,
+          "right_index": 33,
+          "left": "v_star_3",
+          "right": "eta_3",
+          "coefficient": "-2"
+        }
+      ]
+    },
+    "discriminator": "Nilpotency and contractibility do not distinguish the signs; the serialized exact odd pairing does."
+  },
+  "repair_analysis": {
+    "preferred_repair": "Change the factorized curved q dual arrow and textual certificate ledgers to v_star -> +eta_star, matching the executable matrix and current odd pairing.",
+    "alternative": "Flip an auxiliary pairing orientation and reverify the entire canonical lift.",
+    "alternative_cost": "The alternative changes already serialized pairing bytes and has a wider affected chain.",
+    "repair_applied": false
+  },
+  "foundational_strength": {
+    "exact_sign_gate_upper_bound": "PRA",
+    "choice_operation_added": false,
+    "analytic_or_infinite_argument_used": false
+  },
+  "claim_flags": {
+    "STRICT_386_AUXILIARY_Q_TEXT_MATRIX_SIGN_CONFLICT_CERTIFIED": true,
+    "STRICT_386_EXECUTABLE_AUXILIARY_Q_CYCLIC_WITH_SERIALIZED_PAIRING": true,
+    "STRICT_386_DECLARED_MINUS_SIGN_CYCLIC_WITH_SERIALIZED_PAIRING": false,
+    "STRICT_386_SPLIT_COORDINATE_LOCATION_CLASSIFIED": true,
+    "STRICT_FULL_386_Q1_PORTABLE_COMPONENT_BYTES": false,
+    "STRICT_386_ALL_OPERATOR_COMPONENT_ADJOINTS_REPLAYED": false,
+    "CLASSICAL_IMPORT_GATE_PASSED": false,
+    "HADAMARD_STATE_CONSTRUCTED": false,
+    "QME_RESTORED": false,
+    "LORENTZIAN_QUANTUM_THEORY": false
+  },
+  "does_not_establish": [
+    "that the preferred sign repair has been applied to the authoritative classical source and affected certificate chain",
+    "a receiver-readable full 386-row q1 component jet table or accepted common operator snapshot hash",
+    "componentwise nilpotency and cyclicity of the endpoint and curvature-cone blocks in one combined artifact",
+    "portable local SDR maps, endpoint/full Green actions, local D or q2 compatibility",
+    "a Hadamard state, Ward theorem, QME restoration, residual transfer or Lorentzian quantum theory"
+  ],
+  "next_gate": "Repair the factorized curved auxiliary dual-arrow sign to +I_4 or explicitly replace the auxiliary pairing convention, then regenerate and verify the affected classical certificate chain. Only after the repaired source and serialized pairing agree should the full split-basis q1 table be emitted.",
+  "provenance": {
+    "inputs": [
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1.json",
+        "result_or_schema_id": "STRICT_386_COMPONENT_PAIRING_SERIALIZATION_V1",
+        "sha256": "e760565a08c4b551551ebff8ec5cdac26beb7715e976fe8612407278ee315303",
+        "role": "fixed 386-row basis and exact odd pairing"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_OPERATOR_PORTABILITY_AUDIT_V1.json",
+        "result_or_schema_id": "STRICT_386_OPERATOR_PORTABILITY_AUDIT_V1",
+        "sha256": "50c3a41250cad38ea49a8815da664a9b5608f568ab200f3489318a2d5b1117ad",
+        "role": "predecessor operator portability classification"
+      },
+      {
+        "path": "quantum-weyl/classical_import/certificates/STRICT_386_AUXILIARY_Q_SIGN_WITNESS_V1.json",
+        "result_or_schema_id": "strict-386-auxiliary-q-sign-witness-v1",
+        "sha256": "e451eadc156ee322304e45fd43c45f74786713f8b6bcd422c71c50588ca0ac16",
+        "role": "producer-observed 36-row executable q entries"
+      },
+      {
+        "path": "covariant_completion/certificates/generalized_auxiliary_contraction.json",
+        "result_or_schema_id": "pure-weyl-support-local-generalized-auxiliary-retract-v1",
+        "sha256": "ced687fa4dfff290cc3eb143a6ce53689db4928de769a36c9d585385a82116cc",
+        "role": "matrix digest and textual arrow declaration"
+      },
+      {
+        "path": "covariant_completion/certificates/curved_auxiliary_canonical_split.json",
+        "result_or_schema_id": "pure-weyl-curved-auxiliary-canonical-split-v1",
+        "sha256": "21730550e236ba4d4b2f9fa8f68b40468fdba9afd9b982082600a59d1f6a6a46",
+        "role": "factorized actual-curved-Q declaration"
+      },
+      {
+        "path": "covariant_completion/curved_retract/factorized_q_split.py",
+        "result_or_schema_id": "EXECUTABLE_SOURCE",
+        "sha256": "fd9d22e2741cdecde2f2431c0ac4f3820d236c36152303e8c75b7944cfa2b53c",
+        "role": "factorized actual-curved-Q sign declaration"
+      },
+      {
+        "path": "covariant_completion/auxiliary_equivalence/generalized_retract.py",
+        "result_or_schema_id": "EXECUTABLE_SOURCE",
+        "sha256": "9f920acf590175bffdc8c8429c1478291e27656df573ee0fa3cc863a3bf4d80f",
+        "role": "producer of the hashed executable 36-row matrix"
+      },
+      {
+        "path": "covariant_completion/curved_retract/universal_split.py",
+        "result_or_schema_id": "EXECUTABLE_SOURCE",
+        "sha256": "b21532df73368f3186533e83644906b11be17b6b6bfed947346adf061761376e",
+        "role": "universal split consumer and textual sign declaration"
+      }
+    ]
+  },
+  "independent_checker": {
+    "path": "quantum-weyl/classical_import/check_strict_386_full_q1_split_sign_gate.py",
+    "expected_digest": "6ee421ca77ce4367e847c5544aaed7090a51b489b5d1bd4e5b8d2730ad2778d6"
+  },
+  "human_report": "quantum-weyl/classical_import/REPORT_STRICT_386_FULL_Q1_SPLIT_SIGN_GATE_V1.md"
+}
