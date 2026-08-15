@@ -1,0 +1,261 @@
+{
+  "answer": "Hypercubic symmetry, range two, and the constant-shift Ward identity reduce every axial expected-Hessian eigenvalue exactly to Hhat_L(p)=alpha_L*omega(p)+c_L*omega(p)^2, with alpha_L=-(b_L+4*c_L+6*d_L). The affine action-density theorem gives volume-uniform bounds on b_L,c_L,d_L and hence Hhat_L(p)<=14052*omega(p)/5 at lambda=2/5. Score-covariance positivity gives alpha_L>=-c_L*omega_min, so every large-volume accumulation point is nonnegative. Deterministic full-Gibbs observations give alpha_6=0.09713(75) and alpha_8=0.09553(59), evidence for a nonzero p^2 term in this expected-Hessian numerator, not a proof of its infinite-volume positivity or of a physical stiffness. This full-measure Hessian is not the conditioned background score and establishes no H^-1 bound or divergence.",
+  "certificate": "REVERSE_PHYSICS_BT_EUCLIDEAN_EXPECTED_HESSIAN_AXIAL_SYMBOL_V1",
+  "checks": {
+    "details": {
+      "alpha_absolute_bound_is_62172_over_25": true,
+      "axial_linear_bound_is_14052_over_5": true,
+      "b_absolute_bound_is_5964_over_5": true,
+      "both_observed_alpha_means_are_positive": true,
+      "c_upper_bound_is_2022_over_25": true,
+      "d_upper_bound_is_4044_over_25": true,
+      "fixture_alpha_is_three_halves": true,
+      "fixture_b_is_minus_133_over_12": true,
+      "fixture_c_is_59_over_48": true,
+      "fixture_d_is_7_over_3": true,
+      "fixture_formula_and_direct_b_agree": true,
+      "fixture_formula_and_direct_c_agree": true,
+      "fixture_formula_and_direct_d_agree": true,
+      "h_minus_one_claim_remains_open": true,
+      "no_lorentzian_promotion": true,
+      "observation_action_recomputes_are_small": true,
+      "observed_alpha_means_agree_within_one_hundredth": true,
+      "psi_variance_constant_is_one_over_17565": true,
+      "residual_second_moment_bound_is_2444_over_25": true,
+      "s_second_moment_bound_is_8088_over_25": true
+    },
+    "failures": [],
+    "ok": true,
+    "passed": 20,
+    "total": 20
+  },
+  "created": "2026-08-15",
+  "dependency_tags": [
+    "LOCAL-ALGEBRAIC",
+    "EUCLIDEAN-SPECTRAL",
+    "REDUCED-MODE"
+  ],
+  "does_not_establish": [
+    "a nonzero infinite-volume p^2 coefficient",
+    "the conditioned lowest-mode score estimate",
+    "an upper bound or divergence theorem for the actual interacting H^-1 moment",
+    "tightness, a continuum measure, a Born rule, Krein reconstruction, or anything LORENTZIAN-CAUSAL"
+  ],
+  "exact_fixture": {
+    "alpha": {
+      "denominator": 2,
+      "numerator": 3
+    },
+    "b": {
+      "denominator": 12,
+      "numerator": -133
+    },
+    "c": {
+      "denominator": 48,
+      "numerator": 59
+    },
+    "d": {
+      "denominator": 3,
+      "numerator": 7
+    },
+    "dimensions": 2,
+    "direct_sparse_hessian_matches_local_formulas": true,
+    "lattice": "C6 x C6",
+    "omega_profile_first_axis": [
+      {
+        "denominator": 1,
+        "numerator": 1
+      },
+      {
+        "denominator": 1,
+        "numerator": 2
+      },
+      {
+        "denominator": 1,
+        "numerator": 1
+      },
+      {
+        "denominator": 2,
+        "numerator": 1
+      },
+      {
+        "denominator": 1,
+        "numerator": 1
+      },
+      {
+        "denominator": 1,
+        "numerator": 1
+      }
+    ],
+    "residual_square_density": {
+      "denominator": 12,
+      "numerator": 13
+    }
+  },
+  "exact_symbol_theorem": {
+    "action": "A=(1/2)*sum_x r_x^2, r_x=sum_(y~x) exp(psi_y-psi_x)-2D",
+    "axial_symbol_general_D": "Hhat(p*e_1)=alpha_L*omega(p)+c_L*omega(p)^2, alpha_L=-(b_L+4*c_L+2*(D-1)*d_L)",
+    "expected_kernel": "H_L(z)=E_mu[partial_psi_0 partial_psi_z A]",
+    "four_dimensions": "alpha_L=-(b_L+4*c_L+6*d_L)",
+    "full_symbol": "a+2*b*sum_mu cos(p_mu)+2*c*sum_mu cos(2*p_mu)+4*d*sum_(mu<nu) cos(p_mu)cos(p_nu)",
+    "gibbs_ward": "E_mu[Hess A]=lambda^(-2)*E_mu[grad A tensor grad A] on the mean-zero carrier",
+    "omega": "2*(1-cos(p))",
+    "orbit_coefficients": "a=H(0), b=H(e_mu), c=H(2e_mu), d=H(e_mu+/-e_nu)",
+    "positivity_consequence": "alpha_L>=-c_L*omega(2*pi/L), hence liminf alpha_L>=0 along any sequence where c_L is uniformly bounded",
+    "row_sum": "a+2D*b+2D*c+2D*(D-1)*d=0",
+    "status": "PROVED_FINITE_VOLUME_AND_UNIFORM_LARGE_VOLUME_SIGN_LIMINF",
+    "support": "H_L(z)=0 beyond graph distance two"
+  },
+  "finite_volume_diagnostic": {
+    "evidence_type": "NUMERICAL_FINITE_VOLUME_OBSERVED",
+    "interpretation": "The L=6 and L=8 local full-Gibbs coefficients are volume-stable and show alpha_L near 0.096. Binary64 arithmetic, finite chains, two volumes, and one local sampler prohibit an infinite-volume or nonzero-alpha theorem.",
+    "observation_path": "reverse_physics/data/bt_euclidean_hessian_symbol_observations_v1.json",
+    "observation_sha256": "7b99d6592a51e058468ae8962308ff62e3cf61db9d7019fbf0c8d8391c58e330",
+    "summaries": [
+      {
+        "acceptance_rate": 0.7073746141975309,
+        "action_recompute_residual": 2.921751729445532e-11,
+        "blocked_standard_error_action_density": 0.00287154653933321,
+        "blocked_standard_error_alpha": 0.0007498748911151738,
+        "blocked_standard_error_b": 0.0016684927930414046,
+        "blocked_standard_error_c": 4.575116705004044e-05,
+        "blocked_standard_error_d": 0.000124341415115104,
+        "length": 6,
+        "mean_action_density": 0.4992253453727546,
+        "mean_alpha": 0.09712524829010015,
+        "mean_b": -16.224474713526483,
+        "mean_c": 1.0076109594081566,
+        "mean_d": 2.0161509379339595,
+        "sample_count": 200,
+        "volume": 1296
+      },
+      {
+        "acceptance_rate": 0.7073515625,
+        "action_recompute_residual": 5.502442945726216e-11,
+        "blocked_standard_error_action_density": 0.0019213989749178153,
+        "blocked_standard_error_alpha": 0.0005849554038529379,
+        "blocked_standard_error_b": 0.0012812087039310814,
+        "blocked_standard_error_c": 3.131677325651659e-05,
+        "blocked_standard_error_d": 9.703322405212241e-05,
+        "length": 8,
+        "mean_action_density": 0.4925772775583396,
+        "mean_alpha": 0.09553331083116254,
+        "mean_b": -16.220745343645845,
+        "mean_c": 1.007472422411508,
+        "mean_d": 2.0158870571947753,
+        "sample_count": 100,
+        "volume": 4096
+      }
+    ]
+  },
+  "lifecycle_state": "EXPECTED_HESSIAN_SYMBOL_AND_UNIFORM_COEFFICIENT_BOUNDS_PROVED",
+  "local_hessian_formulas": {
+    "axial_distance_two": "H_(x,x+2e)=t_(x+e,x)*t_(x+e,x+2e)",
+    "definitions": "t_xy=exp(psi_y-psi_x), s_x=sum_y t_xy=q+r_x",
+    "edge": "H_(x,x+e)=-(q+2*r_x)*t_(x,x+e)-(q+2*r_(x+e))*t_(x+e,x)",
+    "jensen_lower_bounds": "c_L>=1 and d_L>=2",
+    "mixed_distance_two": "H_(x,x+e+f)=t_(x+e,x)*t_(x+e,x+e+f)+t_(x+f,x)*t_(x+f,x+e+f)",
+    "status": "PROVED_BY_DIRECT_DIFFERENTIATION"
+  },
+  "method_disposition": {
+    "actual_interacting_h_minus_one_second_moment": "OPEN",
+    "actual_mode_cramer_rao_lower_bound": "PROVED",
+    "conditioned_background_score_bound": "OPEN_SEPARATE_OBJECT",
+    "exact_interacting_alpha_cancellation": "NOT_SUPPORTED_BY_L6_L8_OBSERVATION",
+    "exact_noninteracting_p4_cancellation": "PROVED_AT_VACUUM",
+    "full_gibbs_axial_expected_hessian_symbol": "PROVED",
+    "nonzero_infinite_volume_alpha": "OBSERVED_NOT_PROVED",
+    "uniform_full_gibbs_symbol_upper_bound": "PROVED",
+    "volume_uniform_witten_coercivity": "OPEN"
+  },
+  "missing_object_ledger": [
+    "a rigorous positive lower bound or zero theorem for the infinite-volume expected-Hessian twist-curvature coefficient alpha",
+    "a transfer from local expected-Hessian information to a lower bound on the full one-form Witten operator",
+    "an upper bound on actual Fourier-mode variances and its dyadic H^-1 shell sum",
+    "tightness in a topology compactly weaker than any proved uniform moment topology"
+  ],
+  "next_gate": "Treat alpha_L as the diamagnetic uniform-twist curvature, not yet the helicity modulus: derive the matching paramagnetic integrated-current variance and their free-energy difference. Seek a rigorous positive lower bound or cancellation theorem for that complete twist response, then determine whether it supplies Witten coercivity; keep the conditioned background score as a separate rail.",
+  "provenance": {
+    "arithmetic": "exact rational inequalities and exact rational fixture; finite-volume observation is separately typed IEEE-754 binary64",
+    "inputs": [
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_AFFINE_VIRIAL_ACTION_DENSITY_V1.json",
+        "sha256": "5ca8a2a7bc0d48300b0af031990e3c9c177fdec0d35f763666d2e397b495e1e0"
+      },
+      {
+        "path": "reverse_physics/certificates/REVERSE_PHYSICS_BT_EUCLIDEAN_RIEMANNIAN_ELECTRICAL_WITTEN_BRIDGE_V1.json",
+        "sha256": "3345dcce66cd6fa51e541ceadd6927b1aca38747a6ccb678186034f3f8f47a28"
+      },
+      {
+        "path": "reverse_physics/data/bt_euclidean_hessian_symbol_observations_v1.json",
+        "sha256": "7b99d6592a51e058468ae8962308ff62e3cf61db9d7019fbf0c8d8391c58e330"
+      }
+    ],
+    "repository_base_commit": "1a1e5ce6ee2dfbaa1d4594847aea72167c8883ad"
+  },
+  "question": "Does the full interacting BT Witten numerator retain an exact p^4 symbol, or can the Gibbs measure generate an ordinary p^2 stiffness?",
+  "report": "reverse_physics/reports/bt-euclidean-expected-hessian-axial-symbol.md",
+  "result_kind": "exact full-Gibbs expected-Hessian symbol reduction with finite-volume binary64 diagnostic",
+  "schema": "reverse_physics/schema/reverse-physics-bt-euclidean-expected-hessian-axial-symbol-v1.schema.json",
+  "schema_version": "reverse-physics-bt-euclidean-expected-hessian-axial-symbol-v1",
+  "tier_receipt": {
+    "memory_policy": "Python commands run under ulimit -v 500000; expensive observation reproduction is optional and separate from the fast commit rail",
+    "repository_audits": "planning import accepted 1679 nodes with 0 invalid items and 0 malformed events in 15.66 s at 279820 KiB under GOMEMLIMIT=300MiB and GOGC=50. The 3.20 s advisory shadow wrapper exited zero but its bridge audit failed closed because the external bp2transformer verifier lacks sympy; it also reported corpus drift 1823 versus baseline 976. Neither advisory finding is counted as a scientific pass.",
+    "tier_0": "changed Python compiled; schema, certificate, observation, and planning JSON parsed; scoped git diff check and exact staged-diff inspection run before commit",
+    "tier_1": "producer 20/20 in 0.18 s at 22020 KiB; independent verifier 8/8 in 0.26 s at 30704 KiB; ten direct and adversarial tests in 1.63 s at 31952 KiB; L=6 smoke observer in 1.74 s at 22436 KiB",
+    "tier_2": "not required: imported affine action-density and Witten bridge certificates are unchanged and content-hashed",
+    "tier_3": "not run: no H^-1 lifecycle promotion, freeze, release, or shared-core algebra change"
+  },
+  "uniform_full_gibbs_bounds": {
+    "C_H": {
+      "denominator": 5,
+      "numerator": 14052
+    },
+    "absolute_alpha": {
+      "denominator": 25,
+      "numerator": 62172
+    },
+    "absolute_b": {
+      "denominator": 5,
+      "numerator": 5964
+    },
+    "axial_symbol_bound": "0<=Hhat_L(p)<=C_H*omega(p)",
+    "cramer_rao_actual_mode_lower_bound_phi": "Var_mu(<h,phi>)>=5/(14052*omega(p)), phi=psi/lambda",
+    "cramer_rao_actual_mode_lower_bound_psi": "Var_mu(<h,psi>)>=1/(17565*omega(p)) for every unit real axial Fourier mode h",
+    "input": "E[A/N]<=1222/25",
+    "interpretation": "This is a lower bound on mode variance. It is not the upper bound required for H^-1 tightness and does not prove H^-1 divergence.",
+    "phi_constant": {
+      "denominator": 14052,
+      "numerator": 5
+    },
+    "psi_constant": {
+      "denominator": 17565,
+      "numerator": 1
+    },
+    "residual_second_moment": {
+      "denominator": 25,
+      "numerator": 2444
+    },
+    "s_second_moment": {
+      "denominator": 25,
+      "numerator": 8088
+    },
+    "scope": "D=4, q=8, lambda=2/5, every periodic L^4 torus with unaliased range-two orbits",
+    "status": "PROVED_FOR_ACTUAL_INTERACTING_GIBBS_MEASURE",
+    "upper_c": {
+      "denominator": 25,
+      "numerator": 2022
+    },
+    "upper_d": {
+      "denominator": 25,
+      "numerator": 4044
+    }
+  },
+  "verification_commands": [
+    "ulimit -v 500000; python3 reverse_physics/bt_euclidean_expected_hessian_axial_symbol.py --check",
+    "ulimit -v 500000; python3 reverse_physics/verify_bt_euclidean_expected_hessian_axial_symbol.py",
+    "ulimit -v 500000; python3 -m unittest -v reverse_physics.tests.test_bt_euclidean_expected_hessian_axial_symbol",
+    "ulimit -v 500000; python3 reverse_physics/bt_euclidean_hessian_symbol_experiment.py --smoke"
+  ],
+  "verifier": "reverse_physics/verify_bt_euclidean_expected_hessian_axial_symbol.py"
+}

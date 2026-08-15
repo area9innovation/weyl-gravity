@@ -1,0 +1,111 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reverse-physics-bt-euclidean-expected-hessian-axial-symbol-v1.schema.json",
+  "title": "BT Euclidean expected-Hessian axial symbol certificate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "certificate", "schema_version", "created", "dependency_tags",
+    "lifecycle_state", "result_kind", "question", "answer",
+    "exact_symbol_theorem", "local_hessian_formulas",
+    "uniform_full_gibbs_bounds", "exact_fixture",
+    "finite_volume_diagnostic", "method_disposition",
+    "missing_object_ledger", "next_gate", "does_not_establish",
+    "provenance", "verification_commands", "tier_receipt", "checks",
+    "schema", "report", "verifier"
+  ],
+  "properties": {
+    "certificate": {"const": "REVERSE_PHYSICS_BT_EUCLIDEAN_EXPECTED_HESSIAN_AXIAL_SYMBOL_V1"},
+    "schema_version": {"const": "reverse-physics-bt-euclidean-expected-hessian-axial-symbol-v1"},
+    "created": {"const": "2026-08-15"},
+    "dependency_tags": {"const": ["LOCAL-ALGEBRAIC", "EUCLIDEAN-SPECTRAL", "REDUCED-MODE"]},
+    "lifecycle_state": {"const": "EXPECTED_HESSIAN_SYMBOL_AND_UNIFORM_COEFFICIENT_BOUNDS_PROVED"},
+    "result_kind": {"$ref": "#/$defs/text"},
+    "question": {"$ref": "#/$defs/text"},
+    "answer": {"$ref": "#/$defs/text"},
+    "exact_symbol_theorem": {"type": "object"},
+    "local_hessian_formulas": {"type": "object"},
+    "uniform_full_gibbs_bounds": {
+      "type": "object",
+      "required": ["scope", "input", "residual_second_moment", "s_second_moment", "absolute_b", "upper_c", "upper_d", "absolute_alpha", "axial_symbol_bound", "C_H", "cramer_rao_actual_mode_lower_bound_psi", "cramer_rao_actual_mode_lower_bound_phi", "psi_constant", "phi_constant", "interpretation", "status"],
+      "properties": {
+        "scope": {"$ref": "#/$defs/text"},
+        "input": {"$ref": "#/$defs/text"},
+        "residual_second_moment": {"$ref": "#/$defs/fraction"},
+        "s_second_moment": {"$ref": "#/$defs/fraction"},
+        "absolute_b": {"$ref": "#/$defs/fraction"},
+        "upper_c": {"$ref": "#/$defs/fraction"},
+        "upper_d": {"$ref": "#/$defs/fraction"},
+        "absolute_alpha": {"$ref": "#/$defs/fraction"},
+        "axial_symbol_bound": {"const": "0<=Hhat_L(p)<=C_H*omega(p)"},
+        "C_H": {"$ref": "#/$defs/fraction"},
+        "cramer_rao_actual_mode_lower_bound_psi": {"$ref": "#/$defs/text"},
+        "cramer_rao_actual_mode_lower_bound_phi": {"$ref": "#/$defs/text"},
+        "psi_constant": {"$ref": "#/$defs/fraction"},
+        "phi_constant": {"$ref": "#/$defs/fraction"},
+        "interpretation": {"$ref": "#/$defs/text"},
+        "status": {"const": "PROVED_FOR_ACTUAL_INTERACTING_GIBBS_MEASURE"}
+      },
+      "additionalProperties": false
+    },
+    "exact_fixture": {"type": "object"},
+    "finite_volume_diagnostic": {
+      "type": "object",
+      "required": ["evidence_type", "observation_path", "observation_sha256", "summaries", "interpretation"],
+      "properties": {
+        "evidence_type": {"const": "NUMERICAL_FINITE_VOLUME_OBSERVED"},
+        "observation_path": {"const": "reverse_physics/data/bt_euclidean_hessian_symbol_observations_v1.json"},
+        "observation_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "summaries": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "object"}},
+        "interpretation": {"$ref": "#/$defs/text"}
+      },
+      "additionalProperties": false
+    },
+    "method_disposition": {
+      "type": "object",
+      "required": ["full_gibbs_axial_expected_hessian_symbol", "uniform_full_gibbs_symbol_upper_bound", "actual_mode_cramer_rao_lower_bound", "exact_noninteracting_p4_cancellation", "exact_interacting_alpha_cancellation", "nonzero_infinite_volume_alpha", "conditioned_background_score_bound", "volume_uniform_witten_coercivity", "actual_interacting_h_minus_one_second_moment"],
+      "properties": {
+        "full_gibbs_axial_expected_hessian_symbol": {"const": "PROVED"},
+        "uniform_full_gibbs_symbol_upper_bound": {"const": "PROVED"},
+        "actual_mode_cramer_rao_lower_bound": {"const": "PROVED"},
+        "exact_noninteracting_p4_cancellation": {"const": "PROVED_AT_VACUUM"},
+        "exact_interacting_alpha_cancellation": {"const": "NOT_SUPPORTED_BY_L6_L8_OBSERVATION"},
+        "nonzero_infinite_volume_alpha": {"const": "OBSERVED_NOT_PROVED"},
+        "conditioned_background_score_bound": {"const": "OPEN_SEPARATE_OBJECT"},
+        "volume_uniform_witten_coercivity": {"const": "OPEN"},
+        "actual_interacting_h_minus_one_second_moment": {"const": "OPEN"}
+      },
+      "additionalProperties": false
+    },
+    "missing_object_ledger": {"$ref": "#/$defs/textArray"},
+    "next_gate": {"$ref": "#/$defs/text"},
+    "does_not_establish": {"$ref": "#/$defs/textArray"},
+    "provenance": {"type": "object"},
+    "verification_commands": {"$ref": "#/$defs/textArray"},
+    "tier_receipt": {"type": "object"},
+    "checks": {
+      "type": "object",
+      "required": ["ok", "passed", "total", "failures", "details"],
+      "properties": {
+        "ok": {"const": true},
+        "passed": {"const": 20},
+        "total": {"const": 20},
+        "failures": {"type": "array", "maxItems": 0},
+        "details": {"type": "object", "minProperties": 20, "maxProperties": 20, "additionalProperties": {"const": true}}
+      },
+      "additionalProperties": false
+    },
+    "schema": {"const": "reverse_physics/schema/reverse-physics-bt-euclidean-expected-hessian-axial-symbol-v1.schema.json"},
+    "report": {"const": "reverse_physics/reports/bt-euclidean-expected-hessian-axial-symbol.md"},
+    "verifier": {"const": "reverse_physics/verify_bt_euclidean_expected_hessian_axial_symbol.py"}
+  },
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "textArray": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/text"}},
+    "fraction": {
+      "type": "object", "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {"numerator": {"type": "integer"}, "denominator": {"type": "integer", "minimum": 1}}
+    }
+  }
+}
